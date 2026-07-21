@@ -1,0 +1,13 @@
+============================================================================
+Part D: the inversion pass at (2,4) and (2,5) (toward the uniform (2,n) theorem)
+============================================================================
+  (2,4): completion branches: 1
+[PASS] (2,4): completion solves symbolically
+  (2,4) branch 0: explicit polynomial inverse verified (frees [B_11])
+[PASS] (2,4): every branch explicitly invertible (THEOREM at (2,4))
+  (2,5): completion branches: 1
+[PASS] (2,5): completion solves symbolically
+  (2,5) branch 0: explicit polynomial inverse verified (frees [B_15])
+[PASS] (2,5): every branch explicitly invertible (THEOREM at (2,5))
+
+RESULT: ALL CHECKS PASS.

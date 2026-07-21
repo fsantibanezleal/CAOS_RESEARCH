@@ -1,0 +1,10 @@
+============================================================================
+Part C: the (2, 3) theorem attempt (explicit inverse for the complete family)
+============================================================================
+  completion branches over QQ(alpha, beta): 1
+[PASS] C: the completion solves symbolically
+  branch 0: Q = -alpha**3*x**2/beta - 2*alpha**2*x*y - alpha*beta*y**2 + y  (frees: [])
+    branch 0: explicit polynomial inverse verified: G(u,v) = (-alpha**2*u**2 - 2*alpha*beta*u*v - beta**2*v**2 + u, (alpha**3*u**2 + 2*alpha**2*beta*u*v + alpha*beta**2*v**2 + beta*v)/beta)
+[PASS] C: EVERY branch has an explicit polynomial inverse (JC(2) at (2,3) as a theorem)
+
+RESULT: ALL CHECKS PASS.

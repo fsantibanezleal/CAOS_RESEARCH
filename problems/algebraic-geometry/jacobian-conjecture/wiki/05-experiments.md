@@ -18,6 +18,9 @@
 | [EXP-016](../experiments/EXP-016-cascade-verification/) | Is the consequence cascade real? | **confirmed** | All five chains verified from primary sources; corollaries now assertable (Mathieu false for SU(3); GMC, vanishing, Image false; full Dixmier false with Dixmier(1) open). |
 | [EXP-015](../experiments/EXP-015-jc2-certificate-checker/) | Tooling: how is a JC(2) claim adjudicated? | **confirmed** | Exact certificate checker + the executable m = 1 bridge extractor, tested in CI. |
 | [EXP-017](../experiments/EXP-017-bilinear-exhaustive-jc2/) | Can the (2,3)/(3,3) exhaustives be completed? | **confirmed** | The bilinear harness (linear in Q per P): (2,3) over a 216-vector grid and (3,3) over 45 vectors, exhaustive in Q, all injective; old solver artifact resolved by design. |
+| [EXP-018](../experiments/EXP-018-cascade-closure/) | Are the last cascade chains real? | **confirmed** | Poisson equivalence verified (full Poisson conjecture false); symmetric/gradient corollary; sweep for further chains executed. |
+| [EXP-019](../experiments/EXP-019-keller-floors/) | Is the descent linear algebra? | **confirmed** | Floor identities + h-divisibility certified; wider certificates (2,4)/(2,5)/(3,4); the (2,3) consistency ideal is ONE equation: the discriminant square, as the theory predicted. |
+| [EXP-020](../experiments/EXP-020-jc2-machine/) | Does the machine prove a full case? | **confirmed** | THEOREM: every normalized (2,3) Keller map is invertible, with an explicit inverse; the (2,4) consistency ideal equals the (2,3) one (degree-independent locus); (3,4) elimination attempted (see verdict). |
 
 Planned next: JC-P3 continuation (global-minimality search, degrees 3..6, GPU-widened ansatz
 enumeration), JC-P4 cascade verification from primary sources, optional formal hardening of the

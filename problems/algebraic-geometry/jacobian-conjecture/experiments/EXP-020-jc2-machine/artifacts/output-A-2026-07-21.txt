@@ -1,0 +1,10 @@
+============================================================================
+Part A: (2, 4) elimination and the theory check
+============================================================================
+(2,4): GB size 63; consistency generators: 1
+    16*A_0**2*A_2**2 - 8*A_0*A_1**2*A_2 + A_1**4 = 0
+[PASS] (2,4): consistency ideal computed  1 generators
+[PASS] (2,4): the rank-1 locus (disc = 0) lies ON the consistency variety
+[PASS] (2,4): a power of the discriminant reduces to 0 mod the consistency ideal (variety inside disc = 0)
+
+RESULT: ALL CHECKS PASS.

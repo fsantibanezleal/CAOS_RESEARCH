@@ -154,3 +154,15 @@
   ideal in advance (JCB-021 continues: (2,4)/(3,4) eliminations, branch tightening of (2,3)).
 - Also this day (sessions 7 side): the cascade carousel shipped in the management repo and the
   cascade post links the companion manuscript PDF directly.
+
+## 2026-07-21 (session 9) - Theorems: the (2,n) column falls for n = 3, 4, 5
+
+- **EXP-020 (confirmed):** the machine's full loop validated end to end and it PROVES cases:
+  (1) THEOREM: every normalized (2,3) Keller map is invertible, with the explicit inverse
+  G(u,v) = (u - (au+bv)^2, v + (a/b)(au+bv)^2) verified by exact composition (b = 0 stratum
+  forces the affine case). (2) The (2,4) consistency ideal EQUALS the (2,3) one (the
+  discriminant-square locus is completion-degree independent, as the leading-form theory
+  predicted). (3) THEOREMS at (2,4) and (2,5) too: one-branch completions with a free family
+  parameter, explicitly invertible symbolically including the free. (4) The (3,4) monolithic
+  elimination exceeded the compute window; staged strategy queued (JCB-021). Next theorem
+  attempt: the uniform all-n statement for the (2,n) column (JCB-025).
