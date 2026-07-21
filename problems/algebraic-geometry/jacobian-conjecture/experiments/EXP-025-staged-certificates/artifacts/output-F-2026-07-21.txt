@@ -1,0 +1,20 @@
+============================================================================
+Part F: probe the E-candidate locus {4 a s = u^2} on p20+p21+p03
+============================================================================
+  F locus (a=1, u=2, s=1, w=1): INCONSISTENT
+  F locus (a=1, u=2, s=1, w=-2): INCONSISTENT
+  F locus (a=1, u=2, s=1, w=1/3): INCONSISTENT
+  F locus (a=1, u=4, s=4, w=1): INCONSISTENT
+  F locus (a=1, u=4, s=4, w=-2): INCONSISTENT
+  F locus (a=1, u=4, s=4, w=1/3): INCONSISTENT
+  F locus (a=1/2, u=1, s=1/2, w=1): INCONSISTENT
+  F locus (a=1/2, u=1, s=1/2, w=-2): INCONSISTENT
+  F locus (a=1/2, u=1, s=1/2, w=1/3): INCONSISTENT
+[PASS] F(i): the locus is empty at every probed numeric point
+  F[w symbolic]: 41 eqs, 25 unknowns, 16 null vectors, 4 nonzero pairings, 1.8 s
+  F: gcd over QQ(w) = 12
+[PASS] F(ii): certificate over QQ(w): the locus point family is empty for ALL w
+  F[locus, 3-param]: 41 eqs, 25 unknowns, 16 null vectors, 4 nonzero pairings, 3.8 s
+  F: gcd over QQ(al, be, w) = 12*al_**6
+[PASS] F(iii): the ENTIRE locus is empty for all (al != 0, be, w): part E closes completely
+RESULT: ALL CHECKS PASS.

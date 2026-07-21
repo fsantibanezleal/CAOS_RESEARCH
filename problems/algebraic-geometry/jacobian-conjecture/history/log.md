@@ -210,3 +210,20 @@
   generic-only). Pure slice P = x + a (xy)^2: the single pairing is -8 a^2, so the (4, <= 6)
   window is empty for EVERY a != 0 (theorem on the slice, exceptional-locus gap closed). The
   8-parameter certificate capped at 540 s (documented); staged variants queued (JCB-028).
+
+## 2026-07-21 (session 13) - Slices, windows, a locus closed; sources verified; the web reader
+
+- **EXP-025 (confirmed):** (A/D/E) the (4, <= 6) window is empty for ALL parameter values on
+  every slice with up to THREE lower coefficients on (7 + 21 + 35 slices; union arguments via
+  radical membership where pairings degenerate). (C) pure-slice windows: no partner of degree
+  <= 10, <= 14, <= 18 for any a != 0: the rungs where the descent has no move die there.
+  (F) the one genuine candidate locus (4 a s = u^2 on p20+p21+p03, the translation orbit of
+  the pure slice) closed COMPLETELY via the polynomial parametrization (gcd 12 al^6).
+- **JCB-029 closed:** Magnus 1954 (gcd 1; year corrected from 1955) and Appelgate-Onishi 1985
+  + Nagata (gcd prime; coverage {1,8} u P u 2P) verified; plane JC is classically EQUIVALENT
+  to divisibility, i.e. our primitive-stratum framing. Honest consequence: the whole (4, *)
+  ladder has gcd 2 and is literature-covered (our certificates are independent replications);
+  the open frontier is composite gcd 9, 12: bidegrees (18,27), (24,36).
+- **Web:** every experiment record is now readable in place: feed and log titles open a modal
+  with the full hypothesis, verdict and artifact inventory (baked into experiments.json);
+  lazy-loaded renderer; screenshot-verified in both themes on both pages.

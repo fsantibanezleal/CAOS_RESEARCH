@@ -11,6 +11,8 @@ export type Portfolio = {
 export type ExperimentRec = {
   problem: string; area: string; id: string; slug: string;
   title: string; verdict: string; date: string;
+  hypothesis_md: string; verdict_md: string;
+  artifacts: { name: string; bytes: number }[];
 };
 export type FamilyRow = {
   seed: string; det: number; degrees: number[]; fiber: number;

@@ -1,0 +1,20 @@
+============================================================================
+Part A: two-parameter slice certificates at (4, <= 6)
+============================================================================
+  A[p20]: 38 eqs, 25 unknowns, 13 null vectors, 2 nonzero pairings, 1.1 s
+  A[p20]: gcd = 16*a_**2  -> ALL (a != 0, s) empty
+  A[p11]: 38 eqs, 25 unknowns, 13 null vectors, 2 nonzero pairings, 0.5 s
+  A[p11]: gcd = 8*a_**3  -> ALL (a != 0, s) empty
+  A[p02]: 38 eqs, 25 unknowns, 13 null vectors, 1 nonzero pairings, 0.6 s
+  A[p02]: gcd = -8*a_**3  -> ALL (a != 0, s) empty
+  A[p30]: 39 eqs, 25 unknowns, 14 null vectors, 2 nonzero pairings, 0.8 s
+  A[p30]: gcd = 27*s_**3  -> S-DEPENDENT
+  A[p30]: s^3 lies in the ideal: unresolved locus is inside {s = 0, a != 0}, which EXP-024 emptied. Slice covered by union.
+  A[p21]: 39 eqs, 25 unknowns, 14 null vectors, 2 nonzero pairings, 0.8 s
+  A[p21]: gcd = 384*a_**4  -> ALL (a != 0, s) empty
+  A[p12]: 39 eqs, 25 unknowns, 14 null vectors, 2 nonzero pairings, 0.9 s
+  A[p12]: gcd = 1024*a_**6  -> ALL (a != 0, s) empty
+  A[p03]: 39 eqs, 25 unknowns, 14 null vectors, 1 nonzero pairings, 0.7 s
+  A[p03]: gcd = -128*a_**4  -> ALL (a != 0, s) empty
+[PASS] A: every run slice certified empty for ALL (a != 0, s arbitrary)  slices: p20, p11, p02, p30, p21, p12, p03
+RESULT: ALL CHECKS PASS.

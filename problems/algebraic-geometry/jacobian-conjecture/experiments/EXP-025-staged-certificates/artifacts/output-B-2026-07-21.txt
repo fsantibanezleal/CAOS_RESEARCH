@@ -1,0 +1,7 @@
+============================================================================
+Part B: the pure-slice (4, <= 10) window, all a != 0
+============================================================================
+  B: 82 eqs, 63 unknowns, 20 null vectors, 1 nonzero pairings, 2.2 s
+  gcd of pairings: -128*a_**4
+[PASS] B: NO Keller partner of degree <= 10 for ANY a != 0 (the (4,10) rung dies on the pure slice)
+RESULT: ALL CHECKS PASS.

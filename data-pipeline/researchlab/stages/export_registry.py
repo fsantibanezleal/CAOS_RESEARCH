@@ -41,20 +41,31 @@ def _read_experiments() -> list[dict]:
                 continue
             rec = {"problem": probdir.name, "area": probdir.parent.name,
                    "id": expdir.name.split("-")[1], "slug": expdir.name,
-                   "title": "", "verdict": "", "date": ""}
+                   "title": "", "verdict": "", "date": "",
+                   "hypothesis_md": "", "verdict_md": "", "artifacts": []}
             hyp = expdir / "hypothesis.md"
             if hyp.exists():
-                first = hyp.read_text(encoding="utf-8").splitlines()[0]
+                text = hyp.read_text(encoding="utf-8")
+                first = text.splitlines()[0]
                 rec["title"] = first.lstrip("# ").split(" - ", 1)[-1].strip()
+                rec["hypothesis_md"] = text
             ver = expdir / "verdict.md"
             if ver.exists():
-                first = ver.read_text(encoding="utf-8").splitlines()[0]
+                text = ver.read_text(encoding="utf-8")
+                first = text.splitlines()[0]
                 m = VERDICT_RE.search(first)
                 if m:
                     rec["verdict"] = m.group(1).strip().lower()
                 dm = DATE_RE.search(first)
                 if dm:
                     rec["date"] = dm.group(1)
+                rec["verdict_md"] = text
+            arts = expdir / "artifacts"
+            if arts.is_dir():
+                rec["artifacts"] = sorted(
+                    [{"name": f.name, "bytes": f.stat().st_size}
+                     for f in arts.iterdir() if f.is_file()],
+                    key=lambda r: r["name"])
             out.append(rec)
     return out
 

@@ -3,6 +3,21 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.15.000], 2026-07-21
+
+### Added
+- EXP-025: staged certificates: ALL 63 slices with up to three lower coefficients certified
+  empty for every parameter value at (4, <= 6); pure-slice windows extended (no partner of
+  degree <= 10 / 14 / 18 for any a != 0); the one candidate locus (a perfect-square
+  translation orbit) closed completely via polynomial parametrization; primary sources
+  verified (Magnus 1954, Appelgate-Onishi 1985 + Nagata) and the records unhedged: the
+  (4,*) ladder is literature-covered, the genuinely open frontier is composite gcd (9, 12).
+- Web: full experiment records readable in place: every feed/log entry opens a modal with
+  the complete hypothesis, verdict and artifact inventory (baked full markdown in
+  experiments.json; lazy-loaded renderer; verified in both themes on both pages).
+- Manuscript: verified-source citations (Magnus 1954, Appelgate-Onishi 1985) wired into the
+  machine section and the bibliography.
+
 ## [0.14.000], 2026-07-21
 
 ### Added

@@ -1,13 +1,15 @@
-import { useEffect, useState } from 'react';
+import { Suspense, lazy, useEffect, useState } from 'react';
 import { Callout } from '@fasl-work/caos-app-shell';
 import { useT } from '../lib/i18n';
 import { loadPortfolio, loadExperiments, type Portfolio, type ExperimentRec } from '../api/data';
 import { Link } from 'react-router-dom';
+const ExperimentModal = lazy(() => import('../components/ExperimentModal'));
 
 export default function Home() {
   const t = useT();
   const [portfolio, setPortfolio] = useState<Portfolio | null>(null);
   const [experiments, setExperiments] = useState<ExperimentRec[]>([]);
+  const [open, setOpen] = useState<ExperimentRec | null>(null);
   useEffect(() => {
     loadPortfolio().then(setPortfolio).catch(() => setPortfolio(null));
     loadExperiments().then((e) => setExperiments(e.sort((p, q) => (q.date + q.id).localeCompare(p.date + p.id)).slice(0, 20))).catch(() => setExperiments([]));
@@ -98,12 +100,23 @@ export default function Home() {
             </span>
             <span className="date rs-readout">{e.date}</span>
             <span>
-              {e.title}{' '}
+              <button type="button" className="rs-exp-open" onClick={() => setOpen(e)}>
+                {e.title}
+              </button>{' '}
               {e.verdict && <span className={`rs-badge ${e.verdict.split(' ')[0].replace(',', '')}`}>{e.verdict}</span>}
             </span>
           </li>
         ))}
       </ul>
+      <p className="rs-readout">
+        {t('Click any experiment title to read its full record (hypothesis, verdict, artifacts) without leaving the page.',
+           'Haga clic en el titulo de un experimento para leer su registro completo (hipotesis, veredicto, artefactos) sin salir de la pagina.')}
+      </p>
+      {open && (
+        <Suspense fallback={null}>
+          <ExperimentModal exp={open} onClose={() => setOpen(null)} />
+        </Suspense>
+      )}
     </div>
   );
 }
