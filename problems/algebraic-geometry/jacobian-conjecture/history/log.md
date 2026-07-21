@@ -59,3 +59,18 @@
 - **EXP-009 (confirmed):** P3 reduces mod 13 and 101 to explicit non-injective Keller maps over
   F_ell of degree 12 < ell (collision certificate survives reduction). Explicit certificates
   the char-p literature could not have before July 2026.
+
+## 2026-07-21 (session 3) - 2D rigidity becomes a THEOREM; real census done
+
+- **EXP-010 (confirmed):** 2D equivariant rigidity proved for ARBITRARY weights: equivariant
+  components are monomial times f(v); det factors through a bracket identity (648 symbolic
+  checks); Keller forces the (x f, y g)/swap shapes (mixed shapes: empty solve); the Keller ODE
+  fg + v(w1 fg' + w2 f'g) = c kills all nonconstant (f, g) via the strictly positive factor
+  1 + w1 dg + w2 df (empty constrained solves, 8 weight pairs, bidegrees to 5). Every
+  Gm-equivariant Keller map of C^2 is LINEAR. The wiki-04 conjecture is upgraded to a theorem;
+  a 2D counterexample, if any, must be genuinely non-equivariant.
+- **EXP-011 (confirmed):** real fiber census of F: 1 or 3 real preimages, separated by the
+  discriminant wall (D > 0: 3; D < 0: 1); two independent exact routes agree at all samples; no
+  empty real fiber on a 36-target grid (real surjectivity; odd-degree argument). Recorded
+  corollary: F|_R^3 is a surjective, orientation-reversing, non-injective real Keller map
+  (constant-Jacobian real analogue in dimension 3 falls with the same example).

@@ -1,0 +1,47 @@
+============================================================================
+Prediction 1: the determinant identity, generic symbolic f and g
+============================================================================
+[PASS] det JF identity holds for 648 (weights x exponents) cases, generic f, g
+
+============================================================================
+Prediction 2: the mixed shapes (P = xy f, Q = g) and swap are never Keller
+============================================================================
+[PASS] (w1,w2)=(1,1), shape (1,1,0,0): no Keller solution
+[PASS] (w1,w2)=(1,1), shape (0,0,1,1): no Keller solution
+[PASS] (w1,w2)=(2,1), shape (1,1,0,0): no Keller solution
+[PASS] (w1,w2)=(2,1), shape (0,0,1,1): no Keller solution
+[PASS] (w1,w2)=(3,1), shape (1,1,0,0): no Keller solution
+[PASS] (w1,w2)=(3,1), shape (0,0,1,1): no Keller solution
+[PASS] (w1,w2)=(3,2), shape (1,1,0,0): no Keller solution
+[PASS] (w1,w2)=(3,2), shape (0,0,1,1): no Keller solution
+[PASS] (w1,w2)=(5,2), shape (1,1,0,0): no Keller solution
+[PASS] (w1,w2)=(5,2), shape (0,0,1,1): no Keller solution
+[PASS] (w1,w2)=(5,3), shape (1,1,0,0): no Keller solution
+[PASS] (w1,w2)=(5,3), shape (0,0,1,1): no Keller solution
+[PASS] (w1,w2)=(4,3), shape (1,1,0,0): no Keller solution
+[PASS] (w1,w2)=(4,3), shape (0,0,1,1): no Keller solution
+[PASS] (w1,w2)=(1,0), shape (1,1,0,0): no Keller solution
+[PASS] (w1,w2)=(1,0), shape (0,0,1,1): no Keller solution
+
+============================================================================
+Prediction 3: surviving shapes: no solutions of exact bidegree (df, dg) != (0, 0)
+============================================================================
+[PASS] (w1,w2)=(1,1): only constant (f, g) satisfy the Keller ODE (df,dg <= 5)  []
+[PASS] (w1,w2)=(2,1): only constant (f, g) satisfy the Keller ODE (df,dg <= 5)  []
+[PASS] (w1,w2)=(3,1): only constant (f, g) satisfy the Keller ODE (df,dg <= 5)  []
+[PASS] (w1,w2)=(3,2): only constant (f, g) satisfy the Keller ODE (df,dg <= 5)  []
+[PASS] (w1,w2)=(5,2): only constant (f, g) satisfy the Keller ODE (df,dg <= 5)  []
+[PASS] (w1,w2)=(5,3): only constant (f, g) satisfy the Keller ODE (df,dg <= 5)  []
+[PASS] (w1,w2)=(4,3): only constant (f, g) satisfy the Keller ODE (df,dg <= 5)  []
+[PASS] (w1,w2)=(1,0): only constant (f, g) satisfy the Keller ODE (df,dg <= 5)  []
+
+============================================================================
+Prediction 4: the kill factor 1 + w1 dg + w2 df is positive on the sweep ranges
+============================================================================
+[PASS] kill factor strictly positive for all sweep weights and degrees up to 19
+
+RESULT: ALL CHECKS PASS. Classification certified on the sweeps: an equivariant Keller
+map of C^2 must have shape (x f(v), y g(v)) or the swap, and the Keller ODE admits only
+constant (f, g). Combined with the general top-coefficient argument (factor
+1 + w1 dg + w2 df > 0 for all degrees), every Gm-equivariant Keller map of C^2 is
+LINEAR: the 2D equivariant rigidity conjecture is now a theorem for this class.

@@ -3,6 +3,20 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.03.000], 2026-07-21
+
+### Added
+- EXP-010: 2D equivariant rigidity proved for ARBITRARY weights: every Gm-equivariant Keller
+  map of C^2 is LINEAR (classification via the bracket determinant identity, 648 symbolic
+  checks; mixed shapes never Keller; the Keller ODE kills nonconstant (f, g) through the
+  strictly positive factor 1 + w1 dg + w2 df). The wiki-04 conjecture is now a theorem.
+- EXP-011: real fiber census of F: 1 or 3 real preimages split by the discriminant wall
+  (D > 0: 3, D < 0: 1); two independent exact routes agree; real surjectivity certified on a
+  36-target grid; recorded corollary: the constant-Jacobian real statement in dimension 3
+  falls with the same example.
+- Wiki 04/05 updated (conjecture upgraded to theorem; census section); manuscript v0.03 with
+  the rigidity and real-census theorems; PDF rebuilt.
+
 ## [0.02.000], 2026-07-20
 
 ### Added

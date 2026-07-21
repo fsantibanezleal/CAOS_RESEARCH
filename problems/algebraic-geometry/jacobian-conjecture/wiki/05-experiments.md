@@ -11,8 +11,10 @@
 | [EXP-007](../experiments/EXP-007-asymptotic-variety/) | Where do preimages escape? | **confirmed** | Family theorem: escape roots = multiple fiber roots ($s = -W'/m$). $A(F) = \{C=0\} \cup \{27A^2C^2 - 18ABC + 16A + B^3C - B^2 = 0\}$; end-to-end escape demo; collisions are generic, off the locus. |
 | [EXP-008](../experiments/EXP-008-degree-laws-minimality/) | Degree laws and minimality? | **confirmed** | Degrees $(5d-3, 5d-4, 4)$ for $d = 2..5$; fiber floor 3; NEW fiber-degree-6 counterexample (seed $w - 3w^5$, det $-20$); $(7,6,4)$ = announced F is minimal within the family; global degrees 3..6 open. |
 | [EXP-009](../experiments/EXP-009-char-p-reductions/) | Does the certificate survive char p? | **confirmed** | P3 mod 13 and mod 101: explicit non-injective Keller maps over $\mathbb{F}_\ell$ of degree $12 < \ell$ (below the characteristic, unlike $x - x^p$). |
+| [EXP-010](../experiments/EXP-010-2d-rigidity-all-weights/) | Rigidity for ALL weights? | **confirmed** | THEOREM: every $\mathbb{G}_m$-equivariant Keller map of $\mathbb{C}^2$ is linear (classification + positive kill factor; 648 identity checks; empty constrained solves). |
+| [EXP-011](../experiments/EXP-011-real-fiber-census/) | The real picture of F? | **confirmed** | Census 1 or 3 real preimages split by the discriminant wall ($D > 0$: 3, $D < 0$: 1); two exact routes agree; real surjectivity on a 36-target grid; real Keller corollary recorded. |
 
-Planned next: EXP-010 (2D widening: general weight pairs, higher degrees), JC-P3 continuation
-(global-minimality search, degrees 3..6, GPU-widened ansatz enumeration), JC-P4 cascade
-verification from primary sources (see
+Planned next: JC-P3 continuation (global-minimality search, degrees 3..6, GPU-widened ansatz
+enumeration), JC-P4 cascade verification from primary sources, optional formal hardening of the
+rigidity theorem (Lean), M3 web app with the baked census/wall artifacts (see
 [../../../../program/jacobian-conjecture/backlog.md](../../../../program/jacobian-conjecture/backlog.md)).

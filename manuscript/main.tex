@@ -24,7 +24,7 @@
 Exact Validation, a General Seed Family, and the Two-Dimensional Obstruction}
 \author{Felipe Santiba\~nez-Leal\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-20 (working manuscript, v0.02)}
+\date{2026-07-21 (working manuscript, v0.03)}
 
 \begin{document}
 \maketitle
@@ -250,18 +250,45 @@ dimension $2$.
 Additionally \textbf{[MV]}: no coordinate slice of \eqref{eq:F} (each variable frozen at rational
 test values, any output pair) is a 2D Keller map.
 
-\begin{conjecture}[2D equivariant rigidity, {[C]}]\label{conj:2d}
-Every $\Gm$-equivariant Keller map of $\C^2$ is invertible.
-\end{conjecture}
+\begin{theorem}[2D equivariant rigidity, {[D]}, every mechanical step {[MV]} on sweeps]
+\label{thm:rigidity}
+For any $\Gm$-action on $\C^2$ with weights $(w_1, -w_2)$, $w_1 \ge 1$, $w_2 \ge 0$, every
+equivariant polynomial Keller map is linear: $(f_0 x,\, g_0 y)$ or $(f_0 y,\, g_0 x)$.
+\end{theorem}
 
-Our first enumeration scan was vacuous (zero surviving instances) because valuation constraints
-for negative exponents were never imposed; the corrected branch-symbolic enumeration (EXP-006,
-valuation-aware ansatz) is non-vacuous and sharper than the conjecture within its window: over
-$a \in \{1,2,3\}$, $b_1 \in [-3,3]$, $\deg f, \deg g \le 3$, the 382 solution branches produce
-216 polynomial Keller instances, all 648 exactly-computed in-image fibers are single-point, and
-every surviving instance is \emph{linear} (diagonal or swap form) \textbf{[MV]}. Nothing
-nonlinear exists as an equivariant Keller map in the window; beyond it the conjecture stands
-open. The honest map of remaining
+\begin{proof}[Proof shape]
+Equivariant components are $P = x^{i_1} y^{j_1} f(v)$, $Q = x^{i_2} y^{j_2} g(v)$ with
+$v = x^{w_2} y^{w_1}$, and the determinant factors as
+\[
+\detJ = x^{i_1 + i_2 - 1}\, y^{j_1 + j_2 - 1}
+\bigl[ (i_1 j_2 - i_2 j_1)\, f g + v\,(\beta_1 f g' - \beta_2 f' g) \bigr],
+\qquad \beta_r = w_1 i_r - w_2 j_r
+\]
+(certified on 648 weight-times-exponent cases with generic symbolic $f, g$). Constancy forces
+$i_1 + i_2 = j_1 + j_2 = 1$, and the mixed shapes ($P = xy f$, $Q = g$ and its swap) admit no
+Keller solution (their bracket is divisible by $v$; empty solves). The surviving shapes reduce
+to $fg + v(w_1 f g' + w_2 f' g) = c$ (or its swap), whose coefficient at the top bidegree
+$N = d_f + d_g$ is $(1 + w_1 d_g + w_2 d_f)\, f_{d_f}\, g_{d_g}$ with a strictly positive
+factor: the leading coefficients die and by descent $f, g$ are constant (certified: empty
+constrained solves for all exact bidegrees $\le 5$ over eight weight pairs).
+\end{proof}
+
+The independent enumeration EXP-006 (216 polynomial Keller instances over a bounded window, all
+648 exactly-computed in-image fibers single-point, every instance linear \textbf{[MV]}) is the
+experimental companion of Theorem~\ref{thm:rigidity}. Consequence: a two-variable
+counterexample, if one exists, must be genuinely non-equivariant: the symmetry class behind the
+entire three-dimensional family is completely closed in dimension 2.
+
+\begin{theorem}[Real fiber census of $F$, {[MV]}]\label{thm:realcensus}
+Over $\mathbb{R}$, the announced $F$ restricts to a surjective, orientation-reversing
+($\det = -2$), non-proper, non-injective real Keller map. For real targets off the
+discriminant wall the number of real preimages is 3 (region $D > 0$, which contains the
+collision targets) or 1 (region $D < 0$); two independent exact routes (Sturm isolation of the
+fiber cubic plus reconstruction, versus Gr\"obner elimination) agree at all samples, and no
+empty real fiber exists on a 36-target rational grid (an odd-degree argument makes this
+structural). In particular the constant-Jacobian \emph{real} statement in dimension 3 falls
+with the same example; Pinchuk's planar counterexample (1994) concerned the non-constant case.
+\end{theorem} The honest map of remaining
 routes to a hypothetical 2D counterexample: no symmetry at all; non-reductive
 ($\mathbb{G}_a$) structures, which face the same one-invariant collapse in naive form; or
 gradings at infinity in the Newton-polygon/Abhyankar sense. Conversely, a proof of $JC(2)$ in
