@@ -3,6 +3,20 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.06.000], 2026-07-21
+
+### Added
+- EXP-013: the leading-form cascade: at every sampled weight ray, real planar Keller maps are
+  the degenerate boundary of the EXP-010 equivariant classification (the certified bridge to
+  the Newton-polygon program); exhaustive JC(2) certificate at degrees (2, 2) in the affine
+  gauge; the (2, 3) sympy empty-solve documented as a solver artifact with an explicit witness
+  (continuation queued, JCB-021).
+- EXP-016: the consequence cascade verified from primary sources and flags lifted (Mathieu
+  false for SU(3); Gaussian moments, vanishing and Image conjectures false; full Dixmier false,
+  Dixmier(1) open). Wiki 01 cascade section and the manuscript discussion updated accordingly.
+- Program: JCB-020..024 (cascade continuation, Puiseux obstructions, JC(2) certificate checker,
+  Hessian-nilpotent quartic extraction).
+
 ## [0.05.000], 2026-07-21
 
 ### Added

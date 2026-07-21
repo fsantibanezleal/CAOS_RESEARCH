@@ -37,10 +37,16 @@ thing only: a Keller map with a repeated value.
 - **Open.** JC(2). The evidential status of the 2-variable case has always been distinguished
   from the general one; see [04-two-dimensional-frontier.md](04-two-dimensional-frontier.md).
 
-## Consequence cascade (to be re-verified from primary sources; UNVERIFIED as stated)
+## Consequence cascade (verified from primary sources, EXP-016)
 
-Via known implications, the refutation propagates to: the Mathieu conjecture (fails for SU(3)),
-the Gaussian moments conjecture (fails at some finite N), Zhao's vanishing conjecture, the Image
-conjecture, and (via stable equivalence, Tsuchimoto 2005 / Belov-Kanel-Kontsevich 2007) the
-Dixmier conjecture. Each chain is queued for primary-source verification (JCB-009) before this
-wiki asserts it without the UNVERIFIED flag.
+The refutation propagates through implications now checked against their primary records:
+the **Mathieu conjecture is false for SU(3)** (Mathieu 1997: Mathieu for SU(N) implies JC(N);
+abelian case Duistermaat-van der Kallen 1998; review arXiv:2511.16561); the **Gaussian moments
+conjecture is false** (GMC implies JC: Derksen-van den Essen-Zhao, Israel J. Math. 2017,
+arXiv:1506.05192); **Zhao's vanishing conjecture is false** (equivalent to JC:
+arXiv:math/0409534, arXiv:0704.1691); the **Image conjecture is false in some dimension**
+(implies the vanishing conjecture: van den Essen, arXiv:1006.5801); and the **full Dixmier
+conjecture is false** (stable equivalence JC(2n) iff Dixmier(n): Belov-Kanel-Kontsevich
+arXiv:math/0512171, independently Tsuchimoto, Osaka J. Math. 2005; JC(4) false gives Dixmier(2)
+false; Dixmier(1) remains open). An explicit failing Hessian-nilpotent quartic is a queued
+computational target (JCB-024).

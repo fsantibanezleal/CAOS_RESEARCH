@@ -1,0 +1,9 @@
+============================================================================
+Part 3: exhaustive small-degree JC(2) (direct exact solves)
+============================================================================
+  (2,2): Keller branches: 2
+  (2,2): instances fiber-tested: 6
+[PASS] (2,2): scan non-vacuous
+[PASS] (2,2): every Keller instance has in-image fiber <= 1 (JC(2) holds here)  []
+
+RESULT: ALL CHECKS PASS.

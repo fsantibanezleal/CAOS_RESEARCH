@@ -22,4 +22,7 @@
   corollary). Manuscript v0.03.
 - **Next experiments:** JC-P3 continuation (global-minimality search, degrees 3..6, GPU); JC-P4
   cascade verification from primary sources; optional Lean hardening of the rigidity theorem.
+
+- **Session 5 (2026-07-21):** EXP-013 (ray-sweep bridge certified; (2,2) exhaustive JC(2));
+  EXP-016 (cascade verified from primary sources, flags lifted). Queued: JCB-021..024.
 - **Blocked on:** nothing.
