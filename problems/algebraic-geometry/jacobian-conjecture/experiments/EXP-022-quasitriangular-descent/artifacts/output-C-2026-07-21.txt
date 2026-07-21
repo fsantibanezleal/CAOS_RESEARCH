@@ -1,0 +1,14 @@
+============================================================================
+Part C: the descent inverter over the library (explicit inverses end to end)
+============================================================================
+  map 0: 0 descent steps -> explicit inverse VERIFIED
+  map 1: 0 descent steps -> explicit inverse VERIFIED
+  map 2: 0 descent steps -> explicit inverse VERIFIED
+  map 3: 0 descent steps -> explicit inverse VERIFIED
+  map 4: 4 descent steps -> explicit inverse VERIFIED
+  map 5: 0 descent steps -> explicit inverse VERIFIED
+  map 6: 0 descent steps -> explicit inverse VERIFIED
+  map 7: 1 descent steps -> explicit inverse VERIFIED
+[PASS] C: the inverter explicitly inverts EVERY library map (no primitive hits)
+
+RESULT: ALL CHECKS PASS.

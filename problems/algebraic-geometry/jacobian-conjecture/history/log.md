@@ -181,3 +181,13 @@
   JC(2)'s frontier formally moves to min degree >= 3 (JCB-026: the quasi-triangular
   conjecture is the next theorem attempt).
 - Web: the Home feed is now a summary (20 most recent, newest first, problem-labeled).
+
+## 2026-07-21 (session 11) - Quasi-triangular closure; forced alignment; the descent runs
+
+- **EXP-022 (confirmed):** (A) the shear closure holds for ANY f: J = 1 and the closed
+  inverse, generically + spot checks: the uniform theorem's true scope is P ~ x + f(ell), any
+  degree. (B) (3,3) cube case: alignment FORCED at the radical level (A0^2, A1^6 in the ideal
+  with a inverted): the quasi-triangular conjecture holds at (3,3). (C) the descent inverter
+  explicitly inverted all 8 library maps (0-4 steps), no primitive hits. JC(2) sharpened to:
+  can a Keller pair be PRIMITIVE (shared base h of degree >= 2, non-power tops)? That stratum
+  is the next target (JCB-027).

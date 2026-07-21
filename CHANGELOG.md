@@ -3,6 +3,15 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.12.000], 2026-07-21
+
+### Added
+- EXP-022: the quasi-triangular program: shear closure for ANY section f (with the closed
+  inverse); the (3,3) cube-case alignment FORCED at the radical level (quasi-triangular
+  conjecture holds there); and the descent inverter as running code (all 8 library maps
+  explicitly inverted, 0-4 steps, no primitive hits). JC(2) sharpened to the primitive
+  stratum (shared base of degree >= 2, non-power tops): JCB-027.
+
 ## [0.11.000], 2026-07-21
 
 ### Added

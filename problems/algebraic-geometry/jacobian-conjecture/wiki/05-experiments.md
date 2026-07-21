@@ -21,6 +21,8 @@
 | [EXP-018](../experiments/EXP-018-cascade-closure/) | Are the last cascade chains real? | **confirmed** | Poisson equivalence verified (full Poisson conjecture false); symmetric/gradient corollary; sweep for further chains executed. |
 | [EXP-019](../experiments/EXP-019-keller-floors/) | Is the descent linear algebra? | **confirmed** | Floor identities + h-divisibility certified; wider certificates (2,4)/(2,5)/(3,4); the (2,3) consistency ideal is ONE equation: the discriminant square, as the theory predicted. |
 | [EXP-020](../experiments/EXP-020-jc2-machine/) | Does the machine prove a full case? | **confirmed** | THEOREM: every normalized (2,3) Keller map is invertible, with an explicit inverse; the (2,4) consistency ideal equals the (2,3) one (degree-independent locus); (3,4) elimination attempted (see verdict). |
+| [EXP-021](../experiments/EXP-021-uniform-2n-theorem/) | The whole (2,n) column at once? | **confirmed** | THE UNIFORM THEOREM: min degree <= 2 implies (x + ell^2, ell/beta + H(P)), one closed inverse; certified by the shear PDE, exact kernel dimensions, verified compositions. |
+| [EXP-022](../experiments/EXP-022-quasitriangular-descent/) | Min degree 3: alignment and descent? | **confirmed** | Shear closure for ANY f; the (3,3) cube-case alignment FORCED (radical membership); the descent inverter explicitly inverts the library. Open core sharpened to the primitive stratum. |
 
 Planned next: JC-P3 continuation (global-minimality search, degrees 3..6, GPU-widened ansatz
 enumeration), JC-P4 cascade verification from primary sources, optional formal hardening of the
