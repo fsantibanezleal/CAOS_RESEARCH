@@ -3,6 +3,18 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.13.000], 2026-07-21
+
+### Added
+- EXP-023: first contact with the primitive stratum: the (4, <= 6) completion window is EMPTY
+  on the sampled slice (25/25 primitive-top samples admit no Keller partner of degree <= 6;
+  one descent step extends the exclusion to <= 8); positive controls certify the scan
+  non-vacuous. Residual ladder (4, 4k+2) and composite gcd queued (JCB-028/029).
+- Manuscript v0.06: new section on the planar machine (uniform theorem, quasi-triangular
+  closure, the descent algorithm, the primitive stratum), clearing the EXP-021/022 debt.
+- Wiki 04: uniform theorem + descent + primitive stratum section; repaired a latent
+  alpha/beta escape corruption in the machine section.
+
 ## [0.12.000], 2026-07-21
 
 ### Added

@@ -1,0 +1,56 @@
+============================================================================
+Part A: the (4,6) primitive scan, h = xy (rank 2)
+============================================================================
+  A pure-generic-a: INCONSISTENT (no Keller completion at deg <= 6)
+  A pure-a1: INCONSISTENT (no Keller completion at deg <= 6)
+  A single-p20: INCONSISTENT (no Keller completion at deg <= 6)
+  A single-p11: INCONSISTENT (no Keller completion at deg <= 6)
+  A single-p02: INCONSISTENT (no Keller completion at deg <= 6)
+  A single-p30: INCONSISTENT (no Keller completion at deg <= 6)
+  A single-p21: INCONSISTENT (no Keller completion at deg <= 6)
+  A single-p12: INCONSISTENT (no Keller completion at deg <= 6)
+  A single-p03: INCONSISTENT (no Keller completion at deg <= 6)
+  A dense-1: INCONSISTENT (no Keller completion at deg <= 6)
+  A dense-2: INCONSISTENT (no Keller completion at deg <= 6)
+  A dense-3: INCONSISTENT (no Keller completion at deg <= 6)
+  A dense-4: INCONSISTENT (no Keller completion at deg <= 6)
+  totals: 13 inconsistent, 0 consistent, 0 primitive hits
+[PASS] A: no primitive (4,6) realization over the declared samples  13 samples
+[PASS] A: deg6-any and primitive-realizable agree on every sample (dependence cross-check)
+
+============================================================================
+Part B: rank sweep h_gamma = x^2 + gamma y^2, gamma in {1, -1, 0}
+============================================================================
+  B[g=1] pure-generic-a: INCONSISTENT (no Keller completion at deg <= 6)
+  B[g=1] pure-a1: INCONSISTENT (no Keller completion at deg <= 6)
+  B[g=1] single-p11: INCONSISTENT (no Keller completion at deg <= 6)
+  B[g=1] single-p03: INCONSISTENT (no Keller completion at deg <= 6)
+  B[g=1] dense-1: INCONSISTENT (no Keller completion at deg <= 6)
+  B[g=1] dense-2: INCONSISTENT (no Keller completion at deg <= 6)
+  gamma=1: 6 inconsistent, 0 consistent, 0 hits
+  B[g=-1] pure-generic-a: INCONSISTENT (no Keller completion at deg <= 6)
+  B[g=-1] pure-a1: INCONSISTENT (no Keller completion at deg <= 6)
+  B[g=-1] single-p11: INCONSISTENT (no Keller completion at deg <= 6)
+  B[g=-1] single-p03: INCONSISTENT (no Keller completion at deg <= 6)
+  B[g=-1] dense-1: INCONSISTENT (no Keller completion at deg <= 6)
+  B[g=-1] dense-2: INCONSISTENT (no Keller completion at deg <= 6)
+  gamma=-1: 6 inconsistent, 0 consistent, 0 hits
+  B[g=0] pure-generic-a: INCONSISTENT (no Keller completion at deg <= 6)
+  B[g=0] pure-a1: INCONSISTENT (no Keller completion at deg <= 6)
+  B[g=0] single-p11: INCONSISTENT (no Keller completion at deg <= 6)
+  B[g=0] single-p03: INCONSISTENT (no Keller completion at deg <= 6)
+  B[g=0] dense-1: INCONSISTENT (no Keller completion at deg <= 6)
+  B[g=0] dense-2: INCONSISTENT (no Keller completion at deg <= 6)
+  gamma=0: 6 inconsistent, 0 consistent, 0 hits
+[PASS] B: no primitive (4,6) realization at any gamma (incl. rank-1 control)
+[PASS] B: dependence cross-check agrees on every sample
+
+============================================================================
+Part C: positive controls (the all-inconsistent scan must not be vacuous)
+============================================================================
+  C1 x+(x+y)^4: consistent, 0 free, generic deg 4, deg6-any=False
+[PASS] C1: harness FINDS completions when they exist (quasi-triangular deg 4)
+  C2 x+(x+y)^2: consistent, 2 free, deg6-any=True, top-prop-h3 realizable=True
+[PASS] C2: the detector FIRES on a genuine deg-6 realization (positive path)
+
+RESULT: ALL CHECKS PASS.

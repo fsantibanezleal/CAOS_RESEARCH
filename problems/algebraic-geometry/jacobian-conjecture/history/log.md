@@ -191,3 +191,14 @@
   explicitly inverted all 8 library maps (0-4 steps), no primitive hits. JC(2) sharpened to:
   can a Keller pair be PRIMITIVE (shared base h of degree >= 2, non-power tops)? That stratum
   is the next target (JCB-027).
+
+## 2026-07-21 (session 12) - First contact with the primitive stratum
+
+- **EXP-023 (confirmed):** the (4, <= 6) completion window is EMPTY on the primitive slice:
+  all 25 structured samples of P = x + P2 + P3 + a h^2 (h rank 2 and the rank-1 control) admit
+  NO Keller completion of degree <= 6 (linear inconsistency every time), and one descent step
+  extends the exclusion to degree <= 8. Positive controls prove the scan non-vacuous (the
+  harness finds quasi-triangular completions; the detector fires on a genuine degree-6
+  realization). Literature context [C, primary fetch queued]: gcd = 1 (Magnus) and gcd = prime
+  (Appelgate-Onishi, Nagata) are classically excluded; our gcd-2 emptiness replicates a slice
+  independently; the open ladder is (4, 4k+2), k >= 2, and composite gcd >= 4 ((8,12)).
