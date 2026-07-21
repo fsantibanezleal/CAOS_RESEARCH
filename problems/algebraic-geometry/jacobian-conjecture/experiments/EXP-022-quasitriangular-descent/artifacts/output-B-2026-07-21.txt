@@ -1,0 +1,16 @@
+============================================================================
+Part B: the cube case at (3,3), gauge ell = y
+============================================================================
+  GB size 40; consistency generators: 7
+    16*A0**2*A2**2 - 8*A0*A1**2*A2 + 4*A0*A1*a_ + A1**4 = 0
+    4*A0**2*A2*a_ - A0*A1**2*a_ = 0
+    A0**2*a_**2 = 0
+    4*A0*A1*A2*a_ - 6*A0*a_**2 - A1**3*a_ = 0
+    A0*A1*a_**2 = 0
+    6*A0*a_**3 + A1**3*a_**2 = 0
+[PASS] B: consistency ideal computed  7 generators
+[PASS] B: the quasi-triangular locus (A0 = A1 = 0) lies ON the variety
+[PASS] B: with a != 0, A0^2 lies in the ideal (radical forces the alignment)  residue: 0
+[PASS] B: with a != 0, A1^6 lies in the ideal (radical forces the alignment)  residue: 0
+
+RESULT: ALL CHECKS PASS.

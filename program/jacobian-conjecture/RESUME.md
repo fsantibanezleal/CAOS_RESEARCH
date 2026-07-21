@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-21, session 10 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-21, session 11 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -58,31 +58,31 @@ census) · 012 conf 1-4/refuted 5 (landscape; uniqueness) · 013 conf 1-2/partia
 bridge; (2,2) exhaustive) · 015 confirmed (checker + bridge tooling) · 016 confirmed (cascade
 verified) · 017 confirmed (bilinear exhaustives (2,3)/(3,3)) · 018 confirmed (Poisson +
 symmetric closure) · 019 confirmed (floors; (2,3) full closure ideal) · 020 confirmed
-(THEOREMS (2,3)/(2,4)/(2,5); (3,4) elimination cap-out documented) · 021 confirmed (THE UNIFORM min-degree-2 THEOREM).
+(THEOREMS (2,3)/(2,4)/(2,5); (3,4) elimination cap-out documented) · 021 confirmed (THE UNIFORM min-degree-2 THEOREM) · 022 confirmed (shear closure for ANY f; (3,3) cube alignment FORCED; the descent inverter runs, library fully inverted).
 
 ## 4. In flight
 
-Nothing mid-run. EXP-021 CLOSED (confirmed): THE UNIFORM THEOREM: every planar Keller map with
-min degree <= 2 is (x + ell^2, ell/beta + H(x + ell^2)) up to affine gauge, invertible by the
-closed formula ell = beta(v - H(u)), x = u - ell^2, y = (ell - alpha x)/beta. Certified via
-the shear-PDE characterization (sufficiency generic; completeness = kernel dims floor(n/2)+1,
-n = 3..6; inverse generic at deg H <= 1 + exact spot checks at 3, 4). The JC(2) frontier is
-now formally min degree >= 3.
+Nothing mid-run. Session 11 closed EXP-022: the shear closure holds for ANY f (P ~ x + f(ell)
+closes at every degree); the (3,3) cube-case alignment is FORCED at the radical level; and
+the descent inverter runs (Q -> Q - c P^k subtractions + the closed-form finish), explicitly
+inverting the whole library. JC(2) is sharpened to the PRIMITIVE stratum: pairs whose tops
+share a base h of degree >= 2 without a power relationship ((4,6)-type). That stratum is the
+open core and the next target.
 
 ## 5. Next actions, ordered
 
-1. JCB-026 (the next theorem attempt): the quasi-triangular conjecture at min degree 3:
-   test that the (3, n) consistency variety = {P linear-equivalent to x + f(ell)} via the
-   machine (parametrized completions + sampled converse); on the locus the same shear-PDE
-   closes it with explicit inverses (mirror EXP-021 parts A-C with f cubic).
-2. JCB-021 staged (3,4) elimination (degreewise/blockwise; the monolithic lex run cap-out is
-   documented in EXP-020 part B).
+1. JCB-027 (the sharpened core): the primitive stratum: consistency ideals for shared-base
+   pairs (h quadratic, e.g. degrees (4,6): P top = a h^2, Q top = b h^3), leading-form
+   constraints, and a search harness adjudicated by the EXP-015 checker. Start: parametrize
+   h = x y (or x^2 + y^2 up to rotation? h rank matters), eliminate the completion, read the
+   consistency ideal.
+2. JCB-021 staged (3,4) elimination (degreewise/blockwise); remaining (3,n) strata sweeps.
 3. JCB-022 EXP-014 Puiseux escape obstructions at min degree 3; the genuinely hard territory
    beyond: shared-top cases with deg h >= 2 ((4,6)-type).
 4. JCB-024 Hessian-nilpotent quartic extraction (fetch the de Bondt-van den Essen
    symmetrization construction first).
-5. Wiki 04/05 rows for EXP-021 and the manuscript's uniform-theorem subsection are PENDING
-   (deferred at session close; add in the next consolidation pass).
+5. Wiki 04/05 rows for EXP-021/022 and the manuscript's uniform-theorem + descent
+   subsection are PENDING (deferred two sessions; add in the next consolidation pass).
 6. Diffusion: both post drafts await Felipe's review; publish only on his go.
 
 ## 6. Where everything lives

@@ -1,0 +1,8 @@
+============================================================================
+Part A: shear closure for ANY f (generic f deg <= 4, H deg <= 2)
+============================================================================
+[PASS] A: J == 1 identically (generic f deg <= 4, H deg <= 2)
+[PASS] A: G o F == id (generic f deg <= 3, H deg <= 1)
+[PASS] A: exact spot check (f deg 4, H deg 2): G o F == id
+
+RESULT: ALL CHECKS PASS.
