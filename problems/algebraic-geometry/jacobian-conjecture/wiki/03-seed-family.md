@@ -39,6 +39,25 @@ $$F_{p,k,q} = \left(\frac{a_1}{x^2},\ \frac{b_1}{x},\ x\,c_1\right)\bigg|_{v = x
 | P3 | $w - 2w^3$ | 3 | $-3$ | $(12, 11, 4)$ | 4 | $(-\tfrac{1}{15}, 18, 5130)$ and $(\tfrac{1}{24}, -18, -10368) \mapsto (-54, -54, 1)$ |
 | P4 | $8w - 12w^2 + 4w^3 - 5w^4$ | 14 | $-350$ | $(17, 16, 4)$ | 5 | verified (see EXP-004 artifacts) |
 | P5 | $2w - 3w^2$, $q$-tail $v^2$ | 2 | $-2$ | $(8, 7, 5)$ | 3 | verified (see EXP-004 artifacts) |
+| P5d5 | $w - 3w^5$ | 5 | $-20$ | $(22, 21, 4)$ | 6 | $(-\tfrac{1}{70}, 75, 399000)$ and $(\tfrac{1}{160}, -150, -3824000) \mapsto (-750, -750, 1)$ (EXP-008) |
+
+## Degree laws and minimality within the family (EXP-008)
+
+For affine sections $q$ the component degrees are exactly $(5d - 3,\, 5d - 4,\, 4)$ (verified
+$d = 2..5$); the scale $k$ never changes degrees; $q$-tails strictly increase them; and degree-1
+seeds are impossible (the integral condition kills them), so the fiber-degree floor is 3.
+Consequently the minimum degree vector over the whole family is $(7, 6, 4)$, attained exactly at
+the announced map $F$: **the July 2026 counterexample is THE smallest instance of its own
+family.** Whether any $\mathbb{C}^3$ counterexample of total degree 3 to 6 exists (outside the
+family) is open; Wang's theorem excludes degree 2 only.
+
+## Characteristic p (EXP-009)
+
+P3 reduces mod $\ell = 13$ and $\ell = 101$ to explicit non-injective Keller maps over
+$\mathbb{F}_\ell$ of total degree $12 < \ell$ (the collision certificate survives reduction,
+e.g. mod 13: $(6, 5, 8)$ and $(6, 8, 6)$ both map to $(11, 11, 1)$). Unlike the classical
+char-$p$ example $x - x^p$ (degree $= p$), these have degree strictly below the characteristic;
+expected from standard reduction arguments, now explicitly certified.
 
 The $q$-tail axis (instance P5) changes the component-degree pattern at fixed fiber degree and
 determinant: the family is strictly larger than the seed-only family. Collisions are engineered

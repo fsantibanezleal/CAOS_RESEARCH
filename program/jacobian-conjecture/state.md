@@ -1,16 +1,17 @@
 # Jacobian conjecture - state (heartbeat)
 
 - **State:** exploring (opened 2026-07-20).
-- **Done (2026-07-20):** EXP-001 confirmed (exact validation; 3-point fiber). EXP-002 confirmed
-  (structure owned: weighted skew-product, reduced 2-variable Keller identity, fiber cubic).
-  EXP-003 partially refuted (v1 lift wrong for d >= 3; d = 2 rigidity sharp). EXP-004 confirmed
-  (constructor v2: general seed family, det = -k p(1)^2, fiber degree d + 1, NEW counterexamples
-  P3/P4/P5 with exact rational collision certificates, q-tail axis beyond the announced family).
-  EXP-005 confirmed with caveats (2D equivariant reduction proved; one-invariant collapse;
-  injectivity scan vacuous). Wiki pages 01-05 written from verdicts. Manuscript v0 in
-  `manuscript/`.
-- **Now:** consolidation of this session's results into the deployed surfaces (web app pending,
-  M3) and manuscript upkeep.
-- **Next experiments:** EXP-006 (branch-symbolic 2D enumeration, JCB-014), EXP-007 (asymptotic
-  variety, JCB-015), then JC-P3 minimality and JC-P4 cascade verification.
+- **Done (2026-07-20, sessions 1-2):** EXP-001 confirmed (exact validation; 3-point fiber).
+  EXP-002 confirmed (structure owned). EXP-003 partially refuted (v1 lift; d = 2 rigidity).
+  EXP-004 confirmed (constructor v2; new counterexamples P3/P4/P5 with rational collisions).
+  EXP-005 confirmed with caveats (2D reduction; caveats honest). EXP-006 confirmed (2D scan
+  non-vacuous: 216 instances, all LINEAR, all injective). EXP-007 confirmed (asymptotic variety
+  explicit: A(F) = {C=0} union discriminant surface; escape = multiple fiber root). EXP-008
+  confirmed (degree law (5d-3, 5d-4, 4); fiber floor 3; NEW fiber-degree-6 instance; F minimal
+  within family). EXP-009 confirmed (char-p certificates: degree 12 < ell for ell = 13, 101).
+  Wiki 01-05 current; manuscript v0.02 (LaTeX + PDF) built.
+- **Now:** diffusion post (management repo difusion/); then M3 web app.
+- **Next experiments:** EXP-010 (2D widening: general weight pairs, higher degrees); JC-P3
+  continuation (global-minimality search, degrees 3..6); JC-P4 cascade verification from
+  primary sources.
 - **Blocked on:** nothing.

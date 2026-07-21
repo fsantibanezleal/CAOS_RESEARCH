@@ -24,7 +24,7 @@
 Exact Validation, a General Seed Family, and the Two-Dimensional Obstruction}
 \author{Felipe Santiba\~nez-Leal\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-20 (working manuscript, v0.01)}
+\date{2026-07-20 (working manuscript, v0.02)}
 
 \begin{document}
 \maketitle
@@ -187,6 +187,46 @@ The section-tail instance changes the component-degree pattern at fixed fiber de
 determinant: the family is strictly larger than the seed-only family circulating informally.
 Every negative rational number is realized as a Keller determinant within the family.
 
+\begin{theorem}[Degree laws and family-internal minimality, {[MV]} for $d \le 5$]\label{thm:degrees}
+For affine sections $q$ the component total degrees of $F_{p,k,q}$ are exactly
+$(5d - 3,\, 5d - 4,\, 4)$, $d = \deg p$ (verified $d = 2, \dots, 5$; the $d = 5$ instance, seed
+$w - 3w^5$, $k = 5$, $\det = -20$, degrees $(22, 21, 4)$, fiber degree 6, carries its own
+rational collision certificate). The scale $k$ never changes degrees; section tails strictly
+increase them; degree-1 seeds are impossible (the integral condition forces $p = 0$), so the
+fiber-degree floor is 3. Consequently the minimal degree vector over the family is $(7, 6, 4)$,
+attained exactly at the announced map: \emph{the July 2026 counterexample is the smallest
+instance of its own family}. Globally, only Wang's degree-2 theorem constrains $\C^3$; the
+existence of a counterexample of total degree $3$ to $6$ remains open.
+\end{theorem}
+
+\begin{remark}[Characteristic $p$, {[MV]}]
+The $d = 3$ instance reduces mod $\ell = 13$ and $\ell = 101$ to explicit non-injective Keller
+maps over $\mathbb{F}_\ell$ of total degree $12 < \ell$ (the rational collision reduces to
+distinct points with a common image, e.g. mod 13: $(6,5,8)$ and $(6,8,6)$ both to $(11,11,1)$).
+Unlike the classical char-$p$ example $x - x^p$ (degree $= p$), the degree sits strictly below
+the characteristic; expected from standard integer-model reductions, now explicitly certified.
+\end{remark}
+
+\section{The asymptotic variety: where sheets merge}
+
+\begin{theorem}[Escape $=$ multiple fiber root, {[MV]} on $F$ and the $d=3$ instance]
+\label{thm:asymptotic}
+In the potential form, the fiber polynomial $W(w) = k^2\Phi(w) - wBC + AC^2$ satisfies
+$W'(w) = k^2 p(w) - BC$ identically, and the reconstruction scale is $s = -W'(w)/m$. Hence a
+fiber root fails to reconstruct a finite preimage (the preimage escapes to infinity) precisely
+when it is a \emph{multiple} root of $W$: over $C \ne 0$ the non-properness locus is the
+discriminant locus of $W$. For the announced $F$,
+\[
+A(F) \;=\; \{C = 0\} \;\cup\; \{\, 27 A^2 C^2 - 18 A B C + 16 A + B^3 C - B^2 = 0 \,\}.
+\]
+Verified end to end: the target $(0, 1, 1)$ lies on the surface and its exact fiber is the
+single point $(2, -\tfrac12, \tfrac98)$ (two sheets escaped); over generic $(A, B, 0)$ the
+fiber is the single flat-sheet point $(0, B, A - 4B^2)$; the collision target $(-16, -16, 1)$
+lies off the surface with a full 3-point rational fiber. Collisions are generic; escapes are
+codimension 1. Kraus's ``ramification at infinity'' is, for this family, the discriminant of a
+univariate polynomial.
+\end{theorem}
+
 \section{The two-dimensional obstruction (EXP-005)}
 
 \begin{theorem}[{[MV]} with generic symbolic $f, g$]\label{thm:2d}
@@ -214,8 +254,14 @@ test values, any output pair) is a 2D Keller map.
 Every $\Gm$-equivariant Keller map of $\C^2$ is invertible.
 \end{conjecture}
 
-Our first enumeration scan was vacuous (zero surviving instances at the tested degrees) and is
-recorded as such; a branch-symbolic enumeration is queued (EXP-006). The honest map of remaining
+Our first enumeration scan was vacuous (zero surviving instances) because valuation constraints
+for negative exponents were never imposed; the corrected branch-symbolic enumeration (EXP-006,
+valuation-aware ansatz) is non-vacuous and sharper than the conjecture within its window: over
+$a \in \{1,2,3\}$, $b_1 \in [-3,3]$, $\deg f, \deg g \le 3$, the 382 solution branches produce
+216 polynomial Keller instances, all 648 exactly-computed in-image fibers are single-point, and
+every surviving instance is \emph{linear} (diagonal or swap form) \textbf{[MV]}. Nothing
+nonlinear exists as an equivariant Keller map in the window; beyond it the conjecture stands
+open. The honest map of remaining
 routes to a hypothetical 2D counterexample: no symmetry at all; non-reductive
 ($\mathbb{G}_a$) structures, which face the same one-invariant collapse in naive form; or
 gradings at infinity in the Newton-polygon/Abhyankar sense. Conversely, a proof of $JC(2)$ in
@@ -233,14 +279,14 @@ the potential form; valuation conditions at the origin. \textbf{Consequence casc
 (UNVERIFIED here).} Via known implications the refutation propagates to the Mathieu conjecture
 for $SU(3)$, the Gaussian moments conjecture, Zhao's vanishing conjecture, the Image conjecture,
 and, via stable equivalence, the Dixmier conjecture; primary-source verification of each chain
-is queued before this program asserts them. \textbf{Next experiments.} EXP-006
-(branch-symbolic 2D enumeration for Conjecture~\ref{conj:2d}); EXP-007 (exact asymptotic
-varieties of $F$ and the new instances); minimality of the degree vector $(7, 6, 4)$; the
-Bass--Connell--Wright push-through of $F$ to explicit cubic form.
+is queued before this program asserts them. \textbf{Next experiments.} EXP-010 (2D widening:
+general weight pairs, higher degrees); the global-minimality search in degrees 3 to 6
+(GPU-widened ansatz enumeration); the Bass--Connell--Wright push-through of $F$ to explicit
+cubic form; primary-source verification of the consequence cascade.
 
 \subsection*{Reproducibility}
 Every theorem labeled [MV] is an exact sympy computation over $\Q$ with a persisted script and
-output in the repository (experiments EXP-001 through EXP-005 under
+output in the repository (experiments EXP-001 through EXP-009 under
 \texttt{problems/algebraic-geometry/jacobian-conjecture/}); each experiment declares its
 hypothesis before the run and records an adversarial-validation route with its verdict.
 

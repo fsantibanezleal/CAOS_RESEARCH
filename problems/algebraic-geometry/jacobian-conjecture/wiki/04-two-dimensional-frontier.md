@@ -20,12 +20,15 @@ the announced $F$ is a 2D Keller map.
 ## What we conjecture (not yet proved)
 
 **Conjecture (2D equivariant rigidity).** Every $\mathbb{G}_m$-equivariant Keller map of
-$\mathbb{C}^2$ is invertible. Motivation: the Keller ODE above has a very rigid polynomial
-solution structure (for $b_1 b_2 \ne 0$ it forces relations of the type
-$d\,(f^{b_2} g^{-b_1}$-primitives$)$ that generate de Joncquieres-like maps). Status: our first
-enumeration scan came back VACUOUS (0 instances survived the instantiation heuristic), so this
-stands as a conjecture with a queued proper experiment (EXP-006, branch-symbolic enumeration).
-We do not claim it.
+$\mathbb{C}^2$ is invertible. Status after EXP-006 (branch-symbolic enumeration with a
+valuation-aware ansatz, which fixed EXP-005's vacuous scan): the scan is now real, and the
+outcome is SHARPER than the conjecture within its window. Over $a \in \{1,2,3\}$,
+$b_1 \in [-3, 3]$, $\deg f, \deg g \le 3$: 382 solution branches produced 216 polynomial Keller
+instances, 648 in-image fibers were computed exactly, every fiber has one preimage, and every
+surviving instance is LINEAR (diagonal or swap form): nothing nonlinear even exists as an
+equivariant Keller map in the window. The conjecture stands unrefuted with real supporting
+coverage; beyond the window it remains a conjecture (general weight pairs and higher degrees
+are the queued widening).
 
 ## The honest map of the remaining routes to a 2D counterexample
 

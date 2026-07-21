@@ -36,7 +36,21 @@ finite point (that would force $\det JF \to 0$). What fails is PROPERNESS: preim
 to infinity while their images stay bounded, so $F$ is not a covering onto its image and global
 injectivity is lost. This is the classical loophole (a proper Keller map IS invertible), the same
 one exploited in the real setting by Pinchuk (1994), and the modern face of Kraus's 1884 gap
-(ramification at infinity). The exact asymptotic variety of $F$ is queued as JCB-005/EXP-007.
+(ramification at infinity).
+
+## The asymptotic variety, explicitly (EXP-007)
+
+The escape locus is now exact. In the potential form the fiber polynomial
+$W(w) = k^2\Phi(w) - wBC + AC^2$ satisfies $W'(w) = k^2 p(w) - BC$ identically, and the
+reconstruction scale is $s = -W'(w)/m$: **a preimage escapes to infinity precisely when its
+fiber root is a multiple root of $W$**. Sheets merge exactly at infinity, never at finite
+points. For the announced $F$:
+$$A(F) = \{C = 0\} \;\cup\; \{\,27 A^2 C^2 - 18 A B C + 16 A + B^3 C - B^2 = 0\,\}$$
+(the discriminant surface of the fiber cubic). Verified end to end: the target $(0, 1, 1)$ lies
+on the surface and its exact fiber is the single point $(2, -\tfrac12, \tfrac98)$ (two sheets
+escaped); over generic $(A, B, 0)$ the fiber is the single flat-sheet point $(0, B, A - 4B^2)$;
+the collision target $(-16, -16, 1)$ lies OFF the surface with a full 3-point rational fiber:
+collisions are generic, escapes are codimension 1.
 
 ## The generating identity
 
