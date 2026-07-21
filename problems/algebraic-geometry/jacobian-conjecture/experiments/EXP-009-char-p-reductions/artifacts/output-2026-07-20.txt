@@ -1,0 +1,26 @@
+P3 instance: det = -3, total degrees = [12, 11, 4]
+[PASS] exact images of both collision points equal (-54, -54, 1)
+
+============================================================================
+Prime ell = 13
+============================================================================
+[PASS] ell = 13: all component coefficients are ell-integral (reduction well defined)
+[PASS] ell = 13: det J = -3 is nonzero mod ell  det mod 13 = 10
+  reduced points mod 13: [(6, 5, 8), (6, 8, 6)]; reduced target: (11, 11, 1)
+[PASS] ell = 13: the two reduced points are DISTINCT in F_ell^3
+[PASS] ell = 13: total degree 12 < ell
+  conclusion: an explicit non-injective Keller map over F_13 of degree 12 < 13
+
+============================================================================
+Prime ell = 101
+============================================================================
+[PASS] ell = 101: all component coefficients are ell-integral (reduction well defined)
+[PASS] ell = 101: det J = -3 is nonzero mod ell  det mod 101 = 98
+  reduced points mod 101: [(74, 18, 80), (80, 83, 35)]; reduced target: (47, 47, 1)
+[PASS] ell = 101: the two reduced points are DISTINCT in F_ell^3
+[PASS] ell = 101: total degree 12 < ell
+  conclusion: an explicit non-injective Keller map over F_101 of degree 12 < 101
+
+RESULT: ALL CHECKS PASS. P3 reduces at ell = 13 and ell = 101 to explicit non-injective
+Keller maps over F_ell with total degree 12 strictly below the characteristic; the
+collision certificate survives reduction (exact images + distinct reduced points).

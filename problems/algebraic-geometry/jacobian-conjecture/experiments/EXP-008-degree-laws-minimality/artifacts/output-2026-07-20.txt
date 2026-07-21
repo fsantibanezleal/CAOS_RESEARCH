@@ -1,0 +1,40 @@
+============================================================================
+Prediction 1: fiber-degree floor: seed degree 1 is impossible
+============================================================================
+[PASS] constructor rejects p = w (integral condition)  seed must satisfy integral_0^1 p = 0
+[PASS] integral_0^1 p1 w dw = 0 forces p1 = 0 (fiber degree >= 3 in the family)
+
+============================================================================
+Prediction 2: degree law (5d-3, 5d-4, 4) for affine q, d = 2..5
+============================================================================
+[PASS] d = 2: degrees == (7, 6, 4)  degrees = [7, 6, 4]
+[PASS] d = 3: degrees == (12, 11, 4)  degrees = [12, 11, 4]
+[PASS] d = 4: degrees == (17, 16, 4)  degrees = [17, 16, 4]
+[PASS] d = 5: degrees == (22, 21, 4)  degrees = [22, 21, 4]
+
+============================================================================
+Prediction 3: the d = 5 instance (seed w - 3w^5, k = 5): full verification
+============================================================================
+  m = 10, beta = -6, predicted det = -20, degrees = [22, 21, 4]
+[PASS] P5d5: component P is a polynomial
+[PASS] P5d5: component Q is a polynomial
+[PASS] P5d5: component R is a polynomial
+[PASS] P5d5: det JF == -20 (constant)  det = -20
+[PASS] P5d5: generic fiber degree == 6  deg = 6
+[PASS] P5d5: fiber polynomial squarefree at the random target
+[PASS] P5d5: reconstruction inverse verified modulo the fiber polynomial
+  engineered target: (-750, -750, 1); collision points: [(-1/70, 75, 399000), (1/160, -150, -3824000)]
+[PASS] P5d5: two DISTINCT rational points with the same image
+
+============================================================================
+Predictions 4-5: q-tail monotonicity and family-internal minimality
+============================================================================
+[PASS] q-tail v^2: degrees [8, 7, 5] strictly dominate [7, 6, 4] rowwise
+[PASS] q-tail v^3: degrees [10, 9, 7] strictly dominate [7, 6, 4] rowwise
+[PASS] scale k does not change degrees (k = 7 gives (7, 6, 4))  [7, 6, 4]
+[PASS] minimum of the family degree vector is (7, 6, 4) at d = 2, q affine (the announced F)
+
+RESULT: ALL CHECKS PASS. Degree law (5d-3, 5d-4, 4) verified for d = 2..5; fiber-degree
+floor 3; a NEW fiber-degree-6 counterexample (seed w - 3w^5, k = 5, det = -20, degrees
+(22, 21, 4)) fully verified with a rational collision; the announced F is degree-minimal
+WITHIN the family (global minimality below degree 7 remains open, degrees 3..6).

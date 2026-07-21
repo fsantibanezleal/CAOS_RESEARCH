@@ -1,0 +1,20 @@
+Scan statistics:
+  branches: 382
+  instances: 216
+  bad_residual: 930
+  nonpoly: 0
+  degenerate: 0
+  fibers_checked: 648
+  distinct instance shapes (a, b1, b2, deg f, deg g): 6
+    (1, -1, 1, 1, 0)
+    (1, 1, -1, 0, 1)
+    (2, -2, 1, 1, 0)
+    (2, 1, -2, 0, 1)
+    (3, -3, 1, 1, 0)
+    (3, 1, -3, 0, 1)
+[PASS] scan is NON-vacuous (instances > 0)  instances = 216
+[PASS] every in-image fiber has exactly one preimage (no multi-point fiber found)  []
+
+RESULT: ALL CHECKS PASS. The 2D equivariant Keller scan is now non-vacuous and every
+tested instance is injective on in-image targets: the 2D equivariant rigidity conjecture
+survives a real (bounded-degree) attack.

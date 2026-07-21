@@ -38,3 +38,24 @@
   (0 instances; EXP-006 queued) and the collapse check is a proposition, not a discovery.
 - Novel-direction pool updated (JCB-012): non-reductive symmetries (Ga-actions), no-symmetry
   searches, char-p behavior of the potential form.
+
+## 2026-07-20 (session 2) - 2D scan real; asymptotic variety explicit; degree laws; char p
+
+- **EXP-006 (confirmed):** the 2D equivariant scan is now NON-vacuous (valuation-aware ansatz):
+  382 branches, 216 polynomial Keller instances, 648 in-image fibers, ALL single-preimage.
+  Sharper than predicted: every surviving instance is LINEAR (six shapes, all diagonal/swap
+  forms). Within the window (a <= 3, |b1| <= 3, deg <= 3) nothing nonlinear even exists.
+- **EXP-007 (confirmed):** family theorem: W'(w) = k^2 p(w) - BC and s = -W'/m, so escape roots
+  are EXACTLY multiple fiber roots. A(F) = {C = 0} union
+  {27 A^2 C^2 - 18 A B C + 16 A + B^3 C - B^2 = 0} (discriminant surface). Concrete escape
+  verified end to end: fiber over (0, 1, 1) is the single point (2, -1/2, 9/8); generic C = 0
+  fibers are the single flat-sheet point; the collision target has a full 3-point fiber
+  (collisions are generic, not asymptotic).
+- **EXP-008 (confirmed):** degree law (5d-3, 5d-4, 4) for d = 2..5; fiber-degree floor 3;
+  q-tails strictly increase degrees; k never changes them; hence (7, 6, 4) = the announced F is
+  degree-minimal WITHIN the family. NEW fiber-degree-6 counterexample: seed w - 3w^5, k = 5,
+  det = -20, degrees (22, 21, 4), rational collision (-1/70, 75, 399000) and
+  (1/160, -150, -3824000) to (-750, -750, 1). Global minimality (degrees 3..6) remains open.
+- **EXP-009 (confirmed):** P3 reduces mod 13 and 101 to explicit non-injective Keller maps over
+  F_ell of degree 12 < ell (collision certificate survives reduction). Explicit certificates
+  the char-p literature could not have before July 2026.

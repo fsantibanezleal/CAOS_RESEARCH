@@ -1,0 +1,39 @@
+============================================================================
+Prediction 1: escape roots ARE multiple fiber roots (W' = k^2 p - BC)
+============================================================================
+[PASS] F (P2): W'(w) == k^2 p(w) - BC identically
+[PASS] F (P2): s == -W'(w)/m identically
+[PASS] P3: W'(w) == k^2 p(w) - BC identically
+[PASS] P3: s == -W'(w)/m identically
+
+============================================================================
+Prediction 2: escape target (0, 1, 1) for F: D = 0 and a ONE-point fiber
+============================================================================
+  disc_w(W) = -16*C**2*(27*A**2*C**2 - 18*A*B*C + 16*A + B**3*C - B**2)
+[PASS] D(A, B, C) is a nonconstant polynomial
+[PASS] D(0, 1, 1) == 0 (target on the asymptotic variety)  D = 0
+  exact fiber of F over (0, 1, 1): [(2, -1/2, 9/8)]
+[PASS] the fiber over (0, 1, 1) has EXACTLY ONE point
+[PASS] that point is (2, -1/2, 9/8), as the reconstruction predicts
+
+============================================================================
+Prediction 3: the plane C = 0: exactly one (flat-sheet) preimage
+============================================================================
+  fiber over (3/5, -2/7, 0): [(0, -2/7, 67/245)]
+[PASS] fiber over (3/5, -2/7, 0) == [flat-sheet point (0, -2/7, 67/245)]
+  fiber over (5, 1/3, 0): [(0, 1/3, 41/9)]
+[PASS] fiber over (5, 1/3, 0) == [flat-sheet point (0, 1/3, 41/9)]
+
+============================================================================
+Prediction 4: the EXP-004 collision target (-16, -16, 1): D != 0, full 3-point fiber
+============================================================================
+[PASS] D(-16, -16, 1) != 0 (off the asymptotic variety)  D = 36864
+  exact fiber over (-16, -16, 1): [(-1/6, 8, 432), (1/24, -28, -10656), (1/8, -4, -288)]
+[PASS] the fiber over (-16, -16, 1) has EXACTLY THREE (finite, rational) points
+[PASS] it contains both EXP-004 collision points
+
+RESULT: ALL CHECKS PASS. The asymptotic variety of F is characterized exactly:
+over C != 0 it is the DISCRIMINANT locus of the fiber polynomial (escape roots are
+precisely multiple fiber roots: sheets merge at infinity), and the plane C = 0 is
+asymptotic with exactly one finite (flat-sheet) preimage. Collisions are generic and
+live OFF the asymptotic variety.
