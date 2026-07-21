@@ -3,6 +3,17 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.08.000], 2026-07-21
+
+### Added
+- EXP-018: cascade closure: the Poisson equivalence verified (full Poisson conjecture false,
+  minimal dimension open) and the symmetric/gradient corollary recorded; sweep for further
+  X-implies-JC statements executed (none found; exclusions documented).
+- Web: "Collateral impact" tab on the Jacobian page: the eight status rows (was/now/chain)
+  baked from the cascade payload, credit-first framing, screenshot-verified.
+- manuscript-cascade/: the companion document "The Collateral Impact of the Three-Dimensional
+  Jacobian Counterexample: a Source-Verified Cascade" (built PDF committed).
+
 ## [0.07.001], 2026-07-21
 
 ### Changed

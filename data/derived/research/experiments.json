@@ -107,6 +107,51 @@
    "slug": "EXP-012-weight-system-landscape",
    "title": "The weighted mechanism landscape in C^3: a parity law, a JC(2) bridge, and a new family at m = 4",
    "verdict": "confirmed 1-4, refuted 5"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-21",
+   "id": "013",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-013-leading-form-cascade",
+   "title": "The leading-form cascade: our rigidity theorem as the local model of JC(2)",
+   "verdict": "confirmed 1-2, partial 3"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-21",
+   "id": "015",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-015-jc2-certificate-checker",
+   "title": "The JC(2) certificate checker and the m = 1 bridge extractor (tooling)",
+   "verdict": "confirmed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-21",
+   "id": "016",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-016-cascade-verification",
+   "title": "Consequence-cascade verification from primary sources (literature experiment)",
+   "verdict": "confirmed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-21",
+   "id": "017",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-017-bilinear-exhaustive-jc2",
+   "title": "The bilinear harness: exhaustive-in-Q JC(2) certificates at (2,3) and (3,3)",
+   "verdict": "confirmed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-21",
+   "id": "018",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-018-cascade-closure",
+   "title": "Cascade closure: the Poisson chain and the symmetric-form corollary",
+   "verdict": "confirmed"
   }
  ]
 }
