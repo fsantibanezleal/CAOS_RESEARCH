@@ -20,4 +20,9 @@
 | JCB-010 | JC(2) primary-literature deep pass (Moh, Abhyankar, Newton polygon, properness results) | P5 | todo | 2026-07-20 | |
 | JCB-011 | Small-degree 2D Keller-map search (exact, then GPU-widened) | P5 | todo | 2026-07-20 | |
 | JCB-012 | Novel-approach pool: other weight lattices, unipotent flows, several-t invariant rings; char-p behavior DONE (EXP-009: explicit F_ell certificates, degree < ell) | P5+ | doing | 2026-07-20 | promoted when active experiments run dry |
-| JCB-013 | Wiki + SVGs + web page + manuscript chapter | P6 | todo | 2026-07-20 | rolling |
+| JCB-013 | Wiki + SVGs + web page + manuscript chapter | P6 | doing | 2026-07-21 | web LIVE; SVG pass pending |
+| JCB-020 | EXP-013 leading-form cascade (done: ray-sweep bridge certified; (2,2) exhaustive) | P5 | done | 2026-07-21 | continuation = JCB-021 |
+| JCB-021 | EXP-013 continuation: triangular-decomposition solver for (2,3)/(3,3) exhaustive JC(2) + the descent floors | P5 | todo | 2026-07-21 | sympy solve artifact documented |
+| JCB-022 | EXP-014 Puiseux escape obstructions for planar Keller maps | P5 | todo | 2026-07-21 | hypothesis design ready in log |
+| JCB-023 | EXP-015 JC(2) certificate checker + m=1 bridge extractor | P5 | todo | 2026-07-21 | tooling |
+| JCB-024 | EXP-016 done: cascade verified from primary sources; NEW: extract an explicit failing Hessian-nilpotent quartic | P4 | doing | 2026-07-21 | flags lifted |

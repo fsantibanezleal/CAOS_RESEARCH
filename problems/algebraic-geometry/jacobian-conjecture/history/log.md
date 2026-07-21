@@ -90,3 +90,24 @@
   findings strip), post v3 with the uniqueness item and hashtags.
 - Felipe reminder logged: M3 web app (GitHub Pages) is next; ADR-0016/0017/0056/0057/0058 bind
   the shell, header/footer, references and page structure.
+
+## 2026-07-21 (session 5) - Toward JC(2): the cascade foundation + literature debt cleared
+
+- **EXP-013 (confirmed 1-2, partial 3):** the leading-form cascade. On a library of real Keller
+  maps: at EVERY sampled ray, the weighted leading pair is Jacobian-dependent with a common
+  radical form: every planar Keller map is, ray by ray, the degenerate boundary of the EXP-010
+  equivariant classification (the certified bridge between our rigidity theorem and the
+  classical Newton-polygon program; 56 (map, ray) checks). Exhaustive JC(2) verified at (2, 2)
+  in the affine gauge (2 branches, all injective). HONEST: (2, 3)/(3, 3) unresolved: sympy's
+  empty solve at (2, 3) is a solver artifact (explicit triangular witness exists); a
+  triangular-decomposition harness is queued (JCB-021). A naive two-floor coprime kill was
+  discarded before running (floor 2 admits solutions).
+- **EXP-016 (confirmed):** the consequence cascade verified from primary sources and the flags
+  lifted: Mathieu SU(N) => JC(N) (Mathieu 1997; review arXiv:2511.16561; DvdK abelian 1998),
+  GMC => JC (arXiv:1506.05192), vanishing <=> JC (arXiv:math/0409534, 0704.1691), Image =>
+  vanishing (arXiv:1006.5801), Dixmier stably equivalent (arXiv:math/0512171; Tsuchimoto 2005).
+  Corollaries now assertable: Mathieu false for SU(3); GMC false; vanishing false; Image false;
+  full Dixmier false with Dixmier(1) open and smallest failing rank in {1, 2}. New target:
+  an explicit failing Hessian-nilpotent quartic (queued).
+- Queued honestly (budget): EXP-014 Puiseux escape obstructions (JCB-022) and EXP-015 JC(2)
+  certificate checker + m = 1 bridge extractor (JCB-023).

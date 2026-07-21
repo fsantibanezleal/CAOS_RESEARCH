@@ -1,0 +1,27 @@
+============================================================================
+Part 1: dependence + common-form structure at the top ray (library)
+============================================================================
+[PASS] map 0: Keller (det = 1), degrees (1, 1)
+[PASS] map 1: Keller (det = 1), degrees (1, 2)
+[PASS] map 1: J(P_+, Q_+) == 0 and common radical form  radical ratio = 1
+[PASS] map 2: Keller (det = 1), degrees (1, 2)
+[PASS] map 2: J(P_+, Q_+) == 0 and common radical form  radical ratio = 1
+[PASS] map 3: Keller (det = 1), degrees (2, 2)
+[PASS] map 3: J(P_+, Q_+) == 0 and common radical form  radical ratio = 1
+[PASS] map 4: Keller (det = 1), degrees (6, 6)
+[PASS] map 4: J(P_+, Q_+) == 0 and common radical form  radical ratio = 1
+[PASS] map 5: Keller (det = 1), degrees (3, 1)
+[PASS] map 5: J(P_+, Q_+) == 0 and common radical form  radical ratio = 1
+[PASS] map 6: Keller (det = 1), degrees (1, 2)
+[PASS] map 6: J(P_+, Q_+) == 0 and common radical form  radical ratio = 1
+[PASS] map 7: Keller (det = 1), degrees (4, 4)
+[PASS] map 7: J(P_+, Q_+) == 0 and common radical form  radical ratio = 1
+[PASS] Part 1 scanned nontrivially  nontrivial = 7
+
+============================================================================
+Part 2: ray sweep: the local model at every sampled ray (library)
+============================================================================
+  (map, ray) pairs checked: 56
+[PASS] every positive-degree top pair is dependent with a common radical form  []
+
+RESULT: ALL CHECKS PASS.

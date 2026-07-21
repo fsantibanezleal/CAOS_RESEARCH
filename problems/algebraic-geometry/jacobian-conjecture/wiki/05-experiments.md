@@ -14,6 +14,8 @@
 | [EXP-010](../experiments/EXP-010-2d-rigidity-all-weights/) | Rigidity for ALL weights? | **confirmed** | THEOREM: every $\mathbb{G}_m$-equivariant Keller map of $\mathbb{C}^2$ is linear (classification + positive kill factor; 648 identity checks; empty constrained solves). |
 | [EXP-011](../experiments/EXP-011-real-fiber-census/) | The real picture of F? | **confirmed** | Census 1 or 3 real preimages split by the discriminant wall ($D > 0$: 3, $D < 0$: 1); two exact routes agree; real surjectivity on a 36-target grid; real Keller corollary recorded. |
 | [EXP-012](../experiments/EXP-012-weight-system-landscape/) | Do sibling weighted mechanisms exist? | **confirmed 1-4, refuted 5** | Landscape mapped: m = 1 is the JC(2) bridge (93 instances injective); m = 3 empty (valuation proof) or rigid (60 instances); the m = 4 potential family is EMPTY (Groebner certificate). The m = 2 mechanism is UNIQUE among scanned systems. |
+| [EXP-013](../experiments/EXP-013-leading-form-cascade/) | The tropical route to JC(2)? | **confirmed 1-2, partial 3** | At every sampled ray, real Keller maps are the degenerate boundary of the EXP-010 classification (56 checks); exhaustive JC(2) certificate at (2,2); (2,3)/(3,3) queued behind a solver artifact (documented with an explicit witness). |
+| [EXP-016](../experiments/EXP-016-cascade-verification/) | Is the consequence cascade real? | **confirmed** | All five chains verified from primary sources; corollaries now assertable (Mathieu false for SU(3); GMC, vanishing, Image false; full Dixmier false with Dixmier(1) open). |
 
 Planned next: JC-P3 continuation (global-minimality search, degrees 3..6, GPU-widened ansatz
 enumeration), JC-P4 cascade verification from primary sources, optional formal hardening of the
