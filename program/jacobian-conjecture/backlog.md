@@ -25,7 +25,9 @@
 | JCB-021 | JC(2) machine: (2,3) THEOREM (EXP-020: explicit inverse); (2,4) same consistency ideal; staged (3,4) elimination queued | P5 | doing | 2026-07-21 | the machine loop validated end to end |
 | JCB-025 | The uniform (2,n) theorem | P5 | done | 2026-07-21 | EXP-021: min degree <= 2 closed uniformly with one inverse formula |
 | JCB-026 | Quasi-triangular at (3,3) cube case: DONE (EXP-022: alignment forced; closure for any f; descent inverter runs) | P5 | done | 2026-07-21 | remaining (3,n) strata folded into JCB-027 |
-| JCB-027 | The primitive stratum: shared base deg h >= 2 with non-power tops ((4,6)-type): consistency ideals, leading-form constraints, search harness with the EXP-015 checker | P5 | todo | 2026-07-21 | the sharpened open core of JC(2) |
+| JCB-027 | Primitive stratum first contact: DONE (EXP-023: (4, <= 6) window empty on the sampled slice, +8 by one descent step; controls non-vacuous) | P5 | done | 2026-07-21 | ladder continues as JCB-028 |
+| JCB-028 | Variety-level inconsistency certificate at (4,6) (eliminate P-params too, 1 in the ideal, degrevlex); the (4,10) window; the composite-gcd ladder (8,12) staged | P5 | todo | 2026-07-21 | the residual open ladder |
+| JCB-029 | Primary-source fetch: Magnus 1955 (gcd 1), Appelgate-Onishi 1985 / Nagata (gcd prime) via van den Essen's monograph; unhedge the literature context | P3 | todo | 2026-07-21 | required before manuscript states it plainly |
 | JCB-022 | EXP-014 Puiseux escape obstructions for planar Keller maps | P5 | todo | 2026-07-21 | hypothesis design ready in log |
 | JCB-023 | EXP-015 checker + bridge extractor | P5 | done | 2026-07-21 | shipped, pytest/CI-permanent |
 | JCB-024 | EXP-016 done: cascade verified from primary sources; NEW: extract an explicit failing Hessian-nilpotent quartic | P4 | doing | 2026-07-21 | flags lifted |

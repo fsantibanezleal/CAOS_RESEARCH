@@ -73,10 +73,45 @@ linearly, and either invert explicitly or fiber-test.
 Results so far: the $(2,3)$ consistency ideal is the single equation
 $(4A_0A_2 - A_1^2)^2 = 0$ (the top form of $P$ must be a perfect square, exactly the
 leading-form degeneracy); the $(2,4)$ elimination returns the SAME ideal (the locus is
-completion-degree independent); and on the parametrized variety $P = x + (lpha x + eta y)^2$
+completion-degree independent); and on the parametrized variety $P = x + (\alpha x + \beta y)^2$
 the complete $(2,3)$ family is the single branch
-$Q = y - lpha^3 x^2/eta - 2lpha^2 xy - lphaeta y^2$, with the explicit polynomial
-inverse verified by exact composition ($eta = 0$ forces the affine case). **Every normalized
+$Q = y - \alpha^3 x^2/\beta - 2\alpha^2 xy - \alpha\beta y^2$, with the explicit polynomial
+inverse verified by exact composition ($\beta = 0$ forces the affine case). **Every normalized
 $(2,3)$ Keller map is invertible, constructively.** Exhaustive certificates also cover
 $(2,2)$, $(2,4)$, $(2,5)$, $(3,3)$, $(3,4)$ windows. Classical in content; ours in mechanical
 form, and the machine scales.
+
+## The uniform theorem, the descent, and the primitive stratum (EXP-021/022/023)
+
+The column closes uniformly. In shear coordinates $(u_1, u_2) = (\ell, x)$ with
+$\ell = \alpha x + \beta y$, the Keller condition for $P = x + \ell^2$ becomes the linear
+first-order PDE $2u_1 Q_{u_2} - Q_{u_1} = c$, whose characteristic invariant is exactly $P$.
+The complete solution space is $Q = \ell/\beta + H(P)$ with $H$ an arbitrary polynomial, and
+one closed formula inverts everything:
+$$\ell = \beta\,(v - H(u)), \qquad x = u - \ell^2, \qquad y = (\ell - \alpha x)/\beta.$$
+**Uniform theorem [MV at the certified degrees]: every planar Keller map with
+$\min(\deg P, \deg Q) \le 2$ is invertible by that formula** (sufficiency generic; completeness
+as exact kernel dimensions $\lfloor n/2 \rfloor + 1$ for $n = 3..6$; the inverse verified by
+exact composition). EXP-022 extended the closure to ANY section $f$: the whole quasi-triangular
+class $P \sim x + f(\ell)$ closes at every degree, and the $(3,3)$ cube case FORCES the
+quasi-triangular alignment at the radical level ($A_0^2$ and $A_1^6$ lie in the consistency
+ideal once the cube coefficient is inverted).
+
+The classical degree descent is now running code: while the tops are power-proportional,
+subtract $c\,P^k$ from $Q$; finish with the closed inverse; replay the elementary steps on the
+value side. It explicitly inverted the entire deterministic library (0 to 4 steps per map).
+Its failure signature, a PRIMITIVE pair (tops sharing a base form $h$ with $\deg h \ge 2$ and
+no power relationship), is exactly the residual open core of JC(2).
+
+First contact with that core (EXP-023): at the smallest primitive bidegrees $(4,6)$, the
+completion window is EMPTY on a structured sampled slice. For
+$P = x + P_2 + P_3 + a\,h^2$ ($h = xy$ and the rank sweep $x^2 + \gamma y^2$, $a \ne 0$,
+25 samples), NO Keller partner of degree $\le 6$ exists at all: the complete linear system is
+inconsistent every time, and one descent step extends the exclusion to degree $\le 8$.
+Positive controls prove the scan is not vacuous (the harness finds the quasi-triangular
+completions of $x + (x+y)^4$; the detector fires on the genuine degree-6 realization above
+$x + (x+y)^2$). Literature context, pending primary-source verification (JCB-029): small gcd
+is classically excluded (Magnus: gcd 1; Appelgate-Onishi, Nagata: gcd prime, as cited in van
+den Essen's monograph), so our gcd-2 emptiness independently replicates a known slice with a
+different instrument; the genuinely open ladder is $(4, 4k+2)$ for $k \ge 2$ and composite
+gcd $\ge 4$, beginning near $(8, 12)$. That ladder is JCB-028.

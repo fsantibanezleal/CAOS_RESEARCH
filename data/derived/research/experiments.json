@@ -152,6 +152,51 @@
    "slug": "EXP-018-cascade-closure",
    "title": "Cascade closure: the Poisson chain and the symmetric-form corollary",
    "verdict": "confirmed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-21",
+   "id": "019",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-019-keller-floors",
+   "title": "The Keller floors: the descent as linear algebra, and wider exhaustive certificates",
+   "verdict": "confirmed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-21",
+   "id": "020",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-020-jc2-machine",
+   "title": "The JC(2) machine, run: eliminations at (2,4)/(3,4) and the full (2,3) theorem attempt",
+   "verdict": "confirmed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-21",
+   "id": "021",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-021-uniform-2n-theorem",
+   "title": "The uniform (2, n) theorem: the whole column at once",
+   "verdict": "confirmed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-21",
+   "id": "022",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-022-quasitriangular-descent",
+   "title": "Quasi-triangular closure, the cube case at (3,3), and the descent inverter",
+   "verdict": "confirmed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-21",
+   "id": "023",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-023-primitive-stratum",
+   "title": "First contact with the primitive stratum: the (4,6) scan",
+   "verdict": "confirmed"
   }
  ]
 }

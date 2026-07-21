@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-21, session 11 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-21, session 12 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -58,31 +58,37 @@ census) · 012 conf 1-4/refuted 5 (landscape; uniqueness) · 013 conf 1-2/partia
 bridge; (2,2) exhaustive) · 015 confirmed (checker + bridge tooling) · 016 confirmed (cascade
 verified) · 017 confirmed (bilinear exhaustives (2,3)/(3,3)) · 018 confirmed (Poisson +
 symmetric closure) · 019 confirmed (floors; (2,3) full closure ideal) · 020 confirmed
-(THEOREMS (2,3)/(2,4)/(2,5); (3,4) elimination cap-out documented) · 021 confirmed (THE UNIFORM min-degree-2 THEOREM) · 022 confirmed (shear closure for ANY f; (3,3) cube alignment FORCED; the descent inverter runs, library fully inverted).
+(THEOREMS (2,3)/(2,4)/(2,5); (3,4) elimination cap-out documented) · 021 confirmed (THE UNIFORM min-degree-2 THEOREM) · 022 confirmed (shear closure for ANY f; (3,3) cube alignment FORCED; the descent inverter runs, library fully inverted) · 023 confirmed (the (4, <= 6) primitive window is EMPTY on the sampled slice, +8 via one descent step; controls non-vacuous).
 
 ## 4. In flight
 
-Nothing mid-run. Session 11 closed EXP-022: the shear closure holds for ANY f (P ~ x + f(ell)
-closes at every degree); the (3,3) cube-case alignment is FORCED at the radical level; and
-the descent inverter runs (Q -> Q - c P^k subtractions + the closed-form finish), explicitly
-inverting the whole library. JC(2) is sharpened to the PRIMITIVE stratum: pairs whose tops
-share a base h of degree >= 2 without a power relationship ((4,6)-type). That stratum is the
-open core and the next target.
+Nothing mid-run. Session 12 closed EXP-023 (first contact with the primitive stratum): at
+bidegrees (4,6), NO Keller partner of degree <= 6 exists on the sampled slice (linear
+inconsistency 25/25, h = xy and the rank sweep, generic symbolic a included), and one descent
+step extends the exclusion to <= 8. Positive controls (quasi-triangular finds; detector fires
+on a genuine deg-6 realization) certify non-vacuity. Literature context [C, primary fetch
+queued, JCB-029]: Magnus (gcd 1) and Appelgate-Onishi/Nagata (gcd prime) classically exclude
+small gcd; our gcd-2 emptiness replicates a slice independently. The open ladder: (4, 4k+2)
+for k >= 2 and composite gcd >= 4 near (8,12). Session 12 also cleared the wiki/manuscript
+debt (wiki 04 section + manuscript v0.06 machine section) and repaired a latent alpha/beta
+escape corruption in wiki 04 (a bash heredoc had eaten backslashes; the fix needed the Write
+tool, shell byte-patching would not land).
 
 ## 5. Next actions, ordered
 
-1. JCB-027 (the sharpened core): the primitive stratum: consistency ideals for shared-base
-   pairs (h quadratic, e.g. degrees (4,6): P top = a h^2, Q top = b h^3), leading-form
-   constraints, and a search harness adjudicated by the EXP-015 checker. Start: parametrize
-   h = x y (or x^2 + y^2 up to rotation? h rank matters), eliminate the completion, read the
-   consistency ideal.
-2. JCB-021 staged (3,4) elimination (degreewise/blockwise); remaining (3,n) strata sweeps.
+1. JCB-028: (a) variety-level inconsistency certificate at (4,6): keep the P-parameters
+   symbolic, add Rabinowitsch t*a - 1, ask whether 1 lies in the ideal (degrevlex suffices
+   for 1-membership; ~34 vars bilinear, cap 570 s, document a cap-out honestly); (b) widen
+   the window to (4, <= 10) (33 B-unknowns, still linear per sample); (c) the composite-gcd
+   ladder (8,12) staged.
+2. JCB-029: primary-source fetch (Magnus 1955; Appelgate-Onishi 1985; Nagata) via van den
+   Essen's monograph; unhedge the literature context in wiki 04 / manuscript.
+3. JCB-021 staged (3,4) elimination (degreewise/blockwise); remaining (3,n) strata sweeps.
 3. JCB-022 EXP-014 Puiseux escape obstructions at min degree 3; the genuinely hard territory
    beyond: shared-top cases with deg h >= 2 ((4,6)-type).
 4. JCB-024 Hessian-nilpotent quartic extraction (fetch the de Bondt-van den Essen
    symmetrization construction first).
-5. Wiki 04/05 rows for EXP-021/022 and the manuscript's uniform-theorem + descent
-   subsection are PENDING (deferred two sessions; add in the next consolidation pass).
+5. Wiki/manuscript debt CLEARED in session 12 (wiki 04 machine section; manuscript v0.06).
 6. Diffusion: both post drafts await Felipe's review; publish only on his go.
 
 ## 6. Where everything lives

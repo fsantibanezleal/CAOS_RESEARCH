@@ -25,7 +25,7 @@ Exact Validation, a General Seed Family, the Geometry of Non-Properness,\\
 and Two-Dimensional Equivariant Rigidity}
 \author{Felipe Santiba\~nez-Leal\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-21 (working manuscript, v0.05)}
+\date{2026-07-21 (working manuscript, v0.06)}
 
 \begin{document}
 \maketitle
@@ -303,6 +303,56 @@ this program's terms is a properness statement: the reconstruction inverse of
 Theorem~\ref{thm:family} shows exactly how asymptotic values are produced in dimension 3
 (denominators $BC = k^2 p(w)$), and whether one-invariant geometry leaves room for such escape
 is, in our view, the sharpest transferable open question.
+
+\section{The planar machine: uniform closure, descent, and the primitive stratum}
+
+The Keller condition $\det J(P,Q) = 1$ is bilinear in the coefficient vectors of $P$ and $Q$,
+hence linear in one side given the other. In the affine gauge (identity linear parts) this
+yields a machine per degree pair $(m, n)$: eliminate the large side (a lexicographic Groebner
+elimination produces the consistency ideal in the small side's coefficients), parametrize the
+consistency variety, complete linearly, and invert explicitly or fiber-test. The $(2,3)$
+consistency ideal is the single equation $(4A_0A_2 - A_1^2)^2 = 0$: the top form of $P$ must
+be a perfect square, exactly the leading-form degeneracy; the $(2,4)$ elimination returns the
+same ideal.
+
+\begin{theorem}[Uniform closure at min degree $\le 2$; machine-verified at the certified
+degrees]\label{thm:uniform}
+Write $\ell = \alpha x + \beta y$, $\beta \ne 0$. In shear coordinates $(u_1, u_2) = (\ell, x)$
+the Keller condition for $P = x + \ell^2$ is the linear first-order PDE
+$2u_1 Q_{u_2} - Q_{u_1} = c$ with characteristic invariant $P$; its complete polynomial
+solution space is $Q = \ell/\beta + H(P)$, $H$ arbitrary. Consequently every planar Keller map
+with $\min(\deg P, \deg Q) \le 2$ is invertible, with the closed inverse
+$\ell = \beta(v - H(u))$, $x = u - \ell^2$, $y = (\ell - \alpha x)/\beta$.
+\end{theorem}
+
+Sufficiency is verified generically; completeness as exact kernel dimensions
+$\lfloor n/2 \rfloor + 1$ ($n = 3..6$, three rational $(\alpha, \beta)$ samples); the inverse
+by exact composition. The closure extends verbatim to any section polynomial: the whole
+quasi-triangular class $P \sim x + f(\ell)$ is invertible at every degree by the same formula
+with $f$ in place of $\ell^2$. At bidegrees $(3,3)$ the machine also forces the alignment: for
+$P = x + A_0 x^2 + A_1 xy + A_2 y^2 + a y^3$ the consistency ideal contains $A_0^2$ and
+$A_1^6$ once $a$ is inverted, so a cube-top cubic $P$ admits completions only in
+quasi-triangular form.
+
+The classical degree descent is, on this machine, an algorithm: while the leading forms are
+power-proportional, subtract $c\,P^k$ from $Q$; when the minimum degree reaches $2$, finish
+with the closed inverse of Theorem~\ref{thm:uniform}; replay the elementary steps on the value
+side to assemble the inverse of the original map. The implementation explicitly inverted an
+entire deterministic library of composed Keller maps ($0$ to $4$ steps each), verified by
+exact composition. Its failure signature is precise: a \emph{primitive} pair, i.e.\ leading
+forms sharing a base form $h$ with $\deg h \ge 2$ and no power relationship. $JC(2)$ is
+exactly the statement that no Keller pair is primitive.
+
+First contact with that stratum, at the smallest primitive bidegrees $(4,6)$
+($P_{\mathrm{top}} = a h^2$, $Q_{\mathrm{top}} = b h^3$, $h$ quadratic): on a structured
+sampled slice ($h = xy$ and the rank sweep $x^2 + \gamma y^2$, $25$ samples, $a \ne 0$,
+including a generic symbolic $a$), the completion window is empty: no Keller partner of degree
+$\le 6$ exists at all (the complete linear system is inconsistent in every sample), and one
+descent step extends the exclusion to degree $\le 8$. Positive controls certify the scan is
+not vacuous. Pending primary-source verification, this replicates with a different instrument
+the classically excluded small-gcd territory (Magnus for $\gcd = 1$; Appelgate--Onishi and
+Nagata for $\gcd$ prime); the genuinely open ladder is $(4, 4k+2)$, $k \ge 2$, and composite
+$\gcd \ge 4$, beginning near $(8,12)$.
 
 \section{Discussion and program}
 
