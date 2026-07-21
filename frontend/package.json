@@ -1,7 +1,7 @@
 {
   "name": "caos-research-frontend",
   "private": true,
-  "version": "0.14.0",
+  "version": "0.15.0",
   "type": "module",
   "scripts": {
     "predev": "node copy-data.mjs",
@@ -17,7 +17,9 @@
     "lucide-react": "^0.469.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.1.1"
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.1.1",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@types/katex": "^0.16.8",

@@ -26,8 +26,9 @@
 | JCB-025 | The uniform (2,n) theorem | P5 | done | 2026-07-21 | EXP-021: min degree <= 2 closed uniformly with one inverse formula |
 | JCB-026 | Quasi-triangular at (3,3) cube case: DONE (EXP-022: alignment forced; closure for any f; descent inverter runs) | P5 | done | 2026-07-21 | remaining (3,n) strata folded into JCB-027 |
 | JCB-027 | Primitive stratum first contact: DONE (EXP-023: (4, <= 6) window empty on the sampled slice, +8 by one descent step; controls non-vacuous) | P5 | done | 2026-07-21 | ladder continues as JCB-028 |
-| JCB-028 | (4,6) certificates: pure-slice DONE (EXP-024: -8 a^2 pairing, all a != 0); full 8-param certificate CAPPED (staged variants queued); the (4,10) window; the (8,12) ladder | P5 | in-progress | 2026-07-21 | the residual open ladder |
-| JCB-029 | Primary-source fetch: Magnus 1955 (gcd 1), Appelgate-Onishi 1985 / Nagata (gcd prime) via van den Essen's monograph; unhedge the literature context | P3 | todo | 2026-07-21 | required before manuscript states it plainly |
+| JCB-028 | (4,6) staged certificates: 63 slices (up to 3 lower coeffs) ALL certified empty (EXP-025); pure-slice windows <= 18 empty; E-locus closed. Remaining: 4+ coeff slices / full 8-param; closed-form all-degree certificate [C] | P5 | in-progress | 2026-07-21 | (4,*) ladder literature-covered (gcd 2); machine value = replication |
+| JCB-030 | Composite-gcd frontier: structural constraints at gcd 9 and 12 (bidegrees (18,27), (24,36)): leading-form theory + Newton polygon + staged slices; beyond direct elimination | P5 | todo | 2026-07-21 | the genuinely open territory |
+| JCB-029 | Primary sources verified: Magnus 1954 (gcd 1; year corrected), Appelgate-Onishi 1985 + Nagata (gcd prime; {1,8} u P u 2P); wiki 04 + manuscript unhedged; full-text pass optional | P3 | done | 2026-07-21 | EXP-025 part 5 |
 | JCB-022 | EXP-014 Puiseux escape obstructions for planar Keller maps | P5 | todo | 2026-07-21 | hypothesis design ready in log |
 | JCB-023 | EXP-015 checker + bridge extractor | P5 | done | 2026-07-21 | shipped, pytest/CI-permanent |
 | JCB-024 | EXP-016 done: cascade verified from primary sources; NEW: extract an explicit failing Hessian-nilpotent quartic | P4 | doing | 2026-07-21 | flags lifted |

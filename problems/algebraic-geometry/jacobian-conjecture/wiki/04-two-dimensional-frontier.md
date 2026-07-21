@@ -110,8 +110,14 @@ $P = x + P_2 + P_3 + a\,h^2$ ($h = xy$ and the rank sweep $x^2 + \gamma y^2$, $a
 inconsistent every time, and one descent step extends the exclusion to degree $\le 8$.
 Positive controls prove the scan is not vacuous (the harness finds the quasi-triangular
 completions of $x + (x+y)^4$; the detector fires on the genuine degree-6 realization above
-$x + (x+y)^2$). Literature context, pending primary-source verification (JCB-029): small gcd
-is classically excluded (Magnus: gcd 1; Appelgate-Onishi, Nagata: gcd prime, as cited in van
-den Essen's monograph), so our gcd-2 emptiness independently replicates a known slice with a
-different instrument; the genuinely open ladder is $(4, 4k+2)$ for $k \ge 2$ and composite
-gcd $\ge 4$, beginning near $(8, 12)$. That ladder is JCB-028.
+$x + (x+y)^2$). Literature context, now verified from primary sources (JCB-029 closed):
+Magnus proved gcd of the degrees equal 1 implies automorphism (A. Magnus, Volume preserving
+transformations in several complex variables, Proc. Amer. Math. Soc. 5 (1954), 256-266), and
+Appelgate-Onishi (The Jacobian conjecture in two variables, J. Pure Appl. Algebra 37 (1985),
+215-227) with Nagata extended this to gcd equal a prime; the refined coverage is gcd in
+{1, 8}, primes, and twice-primes. The plane conjecture is classically EQUIVALENT to the
+divisibility statement (deg P divides deg Q or conversely), which is exactly the primitive
+stratum framing of our machine. Our gcd-2 emptiness therefore independently replicates
+classically covered territory with a different instrument (a validation, not a new theorem);
+the genuinely open gcd values start at 9 and 12, i.e. bidegrees like $(18, 27)$ and
+$(24, 36)$. That composite-gcd ladder is JCB-028's frontier.

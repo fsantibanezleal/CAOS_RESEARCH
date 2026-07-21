@@ -25,6 +25,7 @@
 | [EXP-022](../experiments/EXP-022-quasitriangular-descent/) | Min degree 3: alignment and descent? | **confirmed** | Shear closure for ANY f; the (3,3) cube-case alignment FORCED (radical membership); the descent inverter explicitly inverts the library. Open core sharpened to the primitive stratum. |
 | [EXP-023](../experiments/EXP-023-primitive-stratum/) | Does any Keller pair realize primitive (4,6)? | **confirmed** | The (4, <= 6) completion window is EMPTY on the sampled primitive slice (25/25 inconsistent; +8 by one descent step); positive controls prove the scan non-vacuous. Residual ladder: (4, 4k+2), composite gcd. |
 | [EXP-024](../experiments/EXP-024-46-certificate/) | From samples to a certificate at (4,6)? | **confirmed** | Sound left-null certificates (RREF instrument refuted first: generic-only). Pure slice: pairing -8 a^2, so the window is empty for EVERY a != 0. Full 8-param certificate capped at 540 s (documented, staged). |
+| [EXP-025](../experiments/EXP-025-staged-certificates/) | Slices, windows, the E-locus, the sources? | **confirmed** | ALL 63 slices (up to 3 lower coeffs) empty for all values; pure-slice windows <= 18 empty; the candidate locus closed via polynomial parametrization (12 al^6); Magnus 1954 / Appelgate-Onishi 1985 verified: the (4,*) ladder is literature-covered, the open frontier is composite gcd (9, 12). |
 
 Planned next: JC-P3 continuation (global-minimality search, degrees 3..6, GPU-widened ansatz
 enumeration), JC-P4 cascade verification from primary sources, optional formal hardening of the

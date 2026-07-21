@@ -87,4 +87,18 @@ export const CITATIONS: Citation[] = [
       'Santibañez-Leal F. (2026). CAOS_RESEARCH: experiment records EXP-001..012, exact scripts, artifacts and the working manuscript (MIT).',
     url: 'https://github.com/fsantibanezleal/CAOS_RESEARCH',
   },
+  {
+    id: 'magnus1954',
+    label: 'Magnus 1954',
+    citation:
+      'Magnus A. (1954). Volume preserving transformations in several complex variables. Proc. Amer. Math. Soc. 5, 256-266.',
+    url: 'https://doi.org/10.1090/S0002-9939-1954-0060050-7',
+  },
+  {
+    id: 'appelgateonishi1985',
+    label: 'Appelgate-Onishi 1985',
+    citation:
+      'Appelgate H., Onishi H. (1985). The Jacobian conjecture in two variables. J. Pure Appl. Algebra 37, 215-227.',
+    url: 'https://doi.org/10.1016/0022-4049(85)90099-4',
+  },
 ];

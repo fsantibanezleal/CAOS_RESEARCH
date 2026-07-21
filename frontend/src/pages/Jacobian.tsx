@@ -1,14 +1,16 @@
-import { useEffect, useState } from 'react';
+import { Suspense, lazy, useEffect, useState } from 'react';
 import { Callout, Cite, Equation, InlineMath, Refs, Tabs, type TabDef } from '@fasl-work/caos-app-shell';
 import { useT } from '../lib/i18n';
 import { loadExperiments, loadJacobian, type ExperimentRec, type JacobianData } from '../api/data';
 import WallCanvas from '../components/WallCanvas';
 import CubicExplorer from '../components/CubicExplorer';
+const ExperimentModal = lazy(() => import('../components/ExperimentModal'));
 
 export default function Jacobian() {
   const t = useT();
   const [jac, setJac] = useState<JacobianData | null>(null);
   const [exps, setExps] = useState<ExperimentRec[]>([]);
+  const [open, setOpen] = useState<ExperimentRec | null>(null);
   useEffect(() => {
     loadJacobian().then(setJac).catch(() => setJac(null));
     loadExperiments().then((e) => setExps(e.filter((x) => x.problem === 'jacobian-conjecture'))).catch(() => setExps([]));
@@ -64,7 +66,7 @@ export default function Jacobian() {
               </tbody>
             </table>
           </div>
-          <Refs label={t('References', 'Referencias')} ids={['rodriguez2026', 'keller1939', 'moh1983', 'bcw1982', 'druzkowski1983', 'pinchuk1994', 'smale1998', 'vandenessen2000', 'wikipedia-jc']} />
+          <Refs label={t('References', 'Referencias')} ids={['rodriguez2026', 'keller1939', 'magnus1954', 'moh1983', 'bcw1982', 'druzkowski1983', 'appelgateonishi1985', 'pinchuk1994', 'smale1998', 'vandenessen2000', 'wikipedia-jc']} />
         </section>
       ),
     },
@@ -145,13 +147,19 @@ export default function Jacobian() {
           </p>
           <WallCanvas />
           <h3>{t('The experiment log', 'El registro de experimentos')}</h3>
+          <p className="rs-readout">
+            {t('Click a title to read the full record (hypothesis, verdict, artifacts) in place.',
+               'Haga clic en un titulo para leer el registro completo (hipotesis, veredicto, artefactos) aqui mismo.')}
+          </p>
           <ul className="rs-timeline">
             {exps.map((e) => (
               <li key={e.slug}>
                 <span className="exp">EXP-{e.id}</span>
                 <span className="date rs-readout">{e.date}</span>
                 <span>
-                  {e.title}{' '}
+                  <button type="button" className="rs-exp-open" onClick={() => setOpen(e)}>
+                    {e.title}
+                  </button>{' '}
                   {e.verdict && <span className={`rs-badge ${e.verdict.split(' ')[0].replace(',', '')}`}>{e.verdict}</span>}
                 </span>
               </li>
@@ -223,6 +231,11 @@ export default function Jacobian() {
       <p className="rs-kicker">{t('Problem 1 · algebraic geometry · exploring', 'Problema 1 · geometria algebraica · explorando')}</p>
       <h1>{t('The Jacobian conjecture', 'La conjetura jacobiana')}</h1>
       <Tabs tabs={tabs} ariaLabel={t('Jacobian conjecture sections', 'Secciones de la conjetura jacobiana')} />
+      {open && (
+        <Suspense fallback={null}>
+          <ExperimentModal exp={open} onClose={() => setOpen(null)} />
+        </Suspense>
+      )}
     </div>
   );
 }

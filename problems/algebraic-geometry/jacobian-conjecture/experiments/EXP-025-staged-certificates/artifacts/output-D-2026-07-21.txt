@@ -1,0 +1,47 @@
+============================================================================
+Part D: three-parameter slice certificates at (4, <= 6) (pairs of lower coeffs)
+============================================================================
+  D[p20+p11]: 39 eqs, 25 unknowns, 14 null vectors, 3 nonzero pairings, 1.8 s
+  D[p20+p11]: gcd = 48*a_**3  -> ALL (a != 0, s, u) empty
+  D[p20+p02]: 39 eqs, 25 unknowns, 14 null vectors, 2 nonzero pairings, 1.0 s
+  D[p20+p02]: gcd = 96*a_**2*s_**2; (s*u)^2 in the ideal: unresolved locus inside the union of certified 2-param slices. Covered.
+  D[p20+p30]: 39 eqs, 25 unknowns, 14 null vectors, 3 nonzero pairings, 2.0 s
+  D[p20+p30]: gcd = 243*u_**5; (s*u)^5 in the ideal: unresolved locus inside the union of certified 2-param slices. Covered.
+  D[p20+p21]: 39 eqs, 25 unknowns, 14 null vectors, 3 nonzero pairings, 3.3 s
+  D[p20+p21]: gcd = 192*a_**4  -> ALL (a != 0, s, u) empty
+  D[p20+p12]: 40 eqs, 25 unknowns, 15 null vectors, 3 nonzero pairings, 2.3 s
+  D[p20+p12]: gcd = 768*a_**4*s_**2; (s*u)^2 in the ideal: unresolved locus inside the union of certified 2-param slices. Covered.
+  D[p20+p03]: 40 eqs, 25 unknowns, 15 null vectors, 2 nonzero pairings, 1.6 s
+  D[p20+p03]: gcd = 32*a_**3  -> ALL (a != 0, s, u) empty
+  D[p11+p02]: 39 eqs, 25 unknowns, 14 null vectors, 2 nonzero pairings, 0.9 s
+  D[p11+p02]: gcd = 8*a_**3  -> ALL (a != 0, s, u) empty
+  D[p11+p30]: 40 eqs, 25 unknowns, 15 null vectors, 6 nonzero pairings, 2.1 s
+  D[p11+p30]: gcd = 54*a_**3*u_**3; (s*u)^3 in the ideal: unresolved locus inside the union of certified 2-param slices. Covered.
+  D[p11+p21]: 40 eqs, 25 unknowns, 15 null vectors, 3 nonzero pairings, 2.5 s
+  D[p11+p21]: gcd = 192*a_**4  -> ALL (a != 0, s, u) empty
+  D[p11+p12]: 40 eqs, 25 unknowns, 15 null vectors, 3 nonzero pairings, 3.1 s
+  D[p11+p12]: gcd = 512*a_**7  -> ALL (a != 0, s, u) empty
+  D[p11+p03]: 40 eqs, 25 unknowns, 15 null vectors, 2 nonzero pairings, 1.5 s
+  D[p11+p03]: gcd = 64*a_**4  -> ALL (a != 0, s, u) empty
+  D[p02+p30]: 40 eqs, 25 unknowns, 15 null vectors, 2 nonzero pairings, 2.1 s
+  D[p02+p30]: gcd = 27*u_**3; (s*u)^3 in the ideal: unresolved locus inside the union of certified 2-param slices. Covered.
+  D[p02+p21]: 40 eqs, 25 unknowns, 15 null vectors, 2 nonzero pairings, 2.3 s
+  D[p02+p21]: gcd = 384*a_**4*u_**4; (s*u)^4 in the ideal: unresolved locus inside the union of certified 2-param slices. Covered.
+  D[p02+p12]: 39 eqs, 25 unknowns, 14 null vectors, 2 nonzero pairings, 2.7 s
+  D[p02+p12]: gcd = 1024*a_**6  -> ALL (a != 0, s, u) empty
+  D[p02+p03]: 39 eqs, 25 unknowns, 14 null vectors, 1 nonzero pairings, 1.3 s
+  D[p02+p03]: gcd = -128*a_**4  -> ALL (a != 0, s, u) empty
+  D[p30+p21]: 39 eqs, 25 unknowns, 14 null vectors, 4 nonzero pairings, 8.7 s
+  D[p30+p21]: gcd = 972*a_**4*s_**5; (s*u)^5 in the ideal: unresolved locus inside the union of certified 2-param slices. Covered.
+  D[p30+p12]: 41 eqs, 25 unknowns, 16 null vectors, 3 nonzero pairings, 2.3 s
+  D[p30+p12]: gcd = 27*s_**3; (s*u)^3 in the ideal: unresolved locus inside the union of certified 2-param slices. Covered.
+  D[p30+p03]: 41 eqs, 25 unknowns, 16 null vectors, 2 nonzero pairings, 1.8 s
+  D[p30+p03]: gcd = 27*s_**3; (s*u)^3 in the ideal: unresolved locus inside the union of certified 2-param slices. Covered.
+  D[p21+p12]: 41 eqs, 25 unknowns, 16 null vectors, 3 nonzero pairings, 4.8 s
+  D[p21+p12]: gcd = 384*a_**4*s_**4; (s*u)^4 in the ideal: unresolved locus inside the union of certified 2-param slices. Covered.
+  D[p21+p03]: 41 eqs, 25 unknowns, 16 null vectors, 2 nonzero pairings, 3.0 s
+  D[p21+p03]: gcd = 384*a_**4*s_**3; (s*u)^3 in the ideal: unresolved locus inside the union of certified 2-param slices. Covered.
+  D[p12+p03]: 39 eqs, 25 unknowns, 14 null vectors, 3 nonzero pairings, 2.4 s
+  D[p12+p03]: gcd = 1024*a_**6  -> ALL (a != 0, s, u) empty
+[PASS] D: every run pair-slice certified empty for ALL (a != 0, s, u arbitrary)  21 pair slices
+RESULT: ALL CHECKS PASS.
