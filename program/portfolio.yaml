@@ -1,0 +1,27 @@
+# Machine-readable portfolio board (baked into the web home page by the data-pipeline).
+# States per methodology/01-lifecycle.md. Feasibility: A real experimental surface, B verification/
+# visualization surface, C mainly expository.
+updated: "2026-07-20"
+areas:
+  - { slug: algebraic-geometry,      name: "Algebraic geometry and polynomial maps" }
+  - { slug: number-theory,           name: "Number theory and L-functions" }
+  - { slug: analysis-pde,            name: "Analysis and PDE" }
+  - { slug: dynamical-systems,       name: "Dynamical systems and celestial mechanics" }
+  - { slug: computation-complexity,  name: "Computation and complexity" }
+  - { slug: optimization-geometry,   name: "Optimization and discrete geometry" }
+  - { slug: mathematical-physics,    name: "Mathematical physics" }
+problems:
+  - { slug: jacobian-conjecture,   area: algebraic-geometry,     state: exploring, feasibility: A,  gpu: true,    opened: "2026-07-20" }
+  - { slug: central-configurations, area: dynamical-systems,     state: scoped,    feasibility: A,  gpu: true }
+  - { slug: sphere-log-energy,     area: optimization-geometry,  state: scoped,    feasibility: A,  gpu: true }
+  - { slug: tau-conjecture,        area: computation-complexity, state: scoped,    feasibility: A,  gpu: true }
+  - { slug: riemann-hypothesis,    area: number-theory,          state: scoped,    feasibility: A,  gpu: true }
+  - { slug: diophantine-2var,      area: computation-complexity, state: proposed,  feasibility: B,  gpu: partial }
+  - { slug: hilbert-16,            area: dynamical-systems,      state: proposed,  feasibility: A,  gpu: true }
+  - { slug: linear-programming,    area: computation-complexity, state: proposed,  feasibility: B,  gpu: partial }
+  - { slug: navier-stokes,         area: analysis-pde,           state: proposed,  feasibility: B,  gpu: true }
+  - { slug: yang-mills-mass-gap,   area: mathematical-physics,   state: proposed,  feasibility: B,  gpu: true }
+  - { slug: bsd,                   area: number-theory,          state: proposed,  feasibility: B,  gpu: false }
+  - { slug: p-vs-np,               area: computation-complexity, state: proposed,  feasibility: C,  gpu: partial }
+  - { slug: centralizers,          area: dynamical-systems,      state: proposed,  feasibility: C,  gpu: false }
+  - { slug: hodge,                 area: algebraic-geometry,     state: proposed,  feasibility: C,  gpu: false }

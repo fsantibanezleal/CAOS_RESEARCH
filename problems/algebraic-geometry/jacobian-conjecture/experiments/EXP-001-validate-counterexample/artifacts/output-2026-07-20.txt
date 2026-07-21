@@ -1,0 +1,36 @@
+========================================================================
+Claim (A): det J(F) == -2 identically
+========================================================================
+  det J (expanded) = -2
+[PASS] det J is the constant -2
+
+========================================================================
+Claim (B): three distinct points map to (-1/4, 0, 0)
+========================================================================
+  F(0, 0, -1/4) = (-1/4, 0, 0)
+[PASS] F(0, 0, -1/4) == (-1/4, 0, 0)
+  F(1, -3/2, 13/2) = (-1/4, 0, 0)
+[PASS] F(1, -3/2, 13/2) == (-1/4, 0, 0)
+  F(-1, 3/2, 13/2) = (-1/4, 0, 0)
+[PASS] F(-1, 3/2, 13/2) == (-1/4, 0, 0)
+[PASS] the three preimages are pairwise distinct
+
+========================================================================
+Consequence: F is a Keller map (det J = -2 != 0, constant) that is NOT
+injective, hence NOT invertible: the Jacobian conjecture fails for N=3
+(and, by adding dummy coordinates, for every N >= 3).
+========================================================================
+
+========================================================================
+Claim (C): full fiber over (-1/4, 0, 0) via lex Groebner basis
+========================================================================
+  lex Groebner basis of the fiber ideal:
+    (3*x + 2*y)/3 = 0
+    (12*y**2 - 4*z - 1)/12 = 0
+    y*(2*z - 13)/2 = 0
+    (2*z - 13)*(4*z + 1)/8 = 0
+  univariate eliminant in z: z**2 - 25*z/4 - 13/8 (degree 2)
+  its roots (with multiplicity): {13/2: 1, -1/4: 1}
+
+RESULT: ALL CHECKS PASS. The counterexample is VALID: the Jacobian
+conjecture is false for N >= 3 over C (exact symbolic verification).

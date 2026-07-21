@@ -1,0 +1,83 @@
+============================================================================
+Prediction 1a (general lemma): skew-product determinant identity, generic data
+============================================================================
+[PASS] det JF * c1^2 == -J2 for GENERIC (a1, b1, c1) with symbolic coefficients
+
+
+============================================================================
+P2 (announced F): p = -3*w**2 + 2*w, k = 2, q_tail = 0
+============================================================================
+  m = 2, beta = -3, predicted det = -2
+[PASS] P2 (announced F): reduced identity J2 == m^2 c1^2 / k
+[PASS] P2 (announced F): component P is a polynomial in (x, y, z)  []
+[PASS] P2 (announced F): component Q is a polynomial in (x, y, z)  []
+[PASS] P2 (announced F): component R is a polynomial in (x, y, z)  []
+[PASS] P2 (announced F): det JF == -2 (constant)  det = -2
+  component total degrees: [7, 6, 4]
+[PASS] P2 (announced F): reproduces the announced F exactly
+[PASS] P2 (announced F): generic fiber degree == 3  deg = 3
+[PASS] P2 (announced F): fiber polynomial squarefree at the random target
+[PASS] P2 (announced F): reconstruction inverse verified modulo the fiber polynomial
+  engineered target: (-16, -16, 1)
+  collision points: [(-1/6, 8, 432), (1/8, -4, -288)]
+[PASS] P2 (announced F): two DISTINCT rational points
+[PASS] P2 (announced F): both map exactly to the engineered target
+
+============================================================================
+P3 (d=3, ours): p = -2*w**3 + w, k = 3, q_tail = 0
+============================================================================
+  m = 3, beta = -4, predicted det = -3
+[PASS] P3 (d=3, ours): reduced identity J2 == m^2 c1^2 / k
+[PASS] P3 (d=3, ours): component P is a polynomial in (x, y, z)  []
+[PASS] P3 (d=3, ours): component Q is a polynomial in (x, y, z)  []
+[PASS] P3 (d=3, ours): component R is a polynomial in (x, y, z)  []
+[PASS] P3 (d=3, ours): det JF == -3 (constant)  det = -3
+  component total degrees: [12, 11, 4]
+[PASS] P3 (d=3, ours): generic fiber degree == 4  deg = 4
+[PASS] P3 (d=3, ours): fiber polynomial squarefree at the random target
+[PASS] P3 (d=3, ours): reconstruction inverse verified modulo the fiber polynomial
+  engineered target: (-54, -54, 1)
+  collision points: [(-1/15, 18, 5130), (1/24, -18, -10368)]
+[PASS] P3 (d=3, ours): two DISTINCT rational points
+[PASS] P3 (d=3, ours): both map exactly to the engineered target
+
+============================================================================
+P4 (d=4, ours): p = -5*w**4 + 4*w**3 - 12*w**2 + 8*w, k = 14, q_tail = 0
+============================================================================
+  m = 70, beta = -19, predicted det = -350
+[PASS] P4 (d=4, ours): reduced identity J2 == m^2 c1^2 / k
+[PASS] P4 (d=4, ours): component P is a polynomial in (x, y, z)  []
+[PASS] P4 (d=4, ours): component Q is a polynomial in (x, y, z)  []
+[PASS] P4 (d=4, ours): component R is a polynomial in (x, y, z)  []
+[PASS] P4 (d=4, ours): det JF == -350 (constant)  det = -350
+  component total degrees: [17, 16, 4]
+[PASS] P4 (d=4, ours): generic fiber degree == 5  deg = 5
+[PASS] P4 (d=4, ours): fiber polynomial squarefree at the random target
+[PASS] P4 (d=4, ours): reconstruction inverse verified modulo the fiber polynomial
+  engineered target: (-6272, -6272, 1)
+  collision points: [(-5/378, 448/5, 80099712/125), (5/672, -532/5, -237890688/125)]
+[PASS] P4 (d=4, ours): two DISTINCT rational points
+[PASS] P4 (d=4, ours): both map exactly to the engineered target
+
+============================================================================
+P5 (q-tail, beyond announced family): p = -3*w**2 + 2*w, k = 2, q_tail = v**2
+============================================================================
+  m = 2, beta = -3, predicted det = -2
+[PASS] P5 (q-tail, beyond announced family): reduced identity J2 == m^2 c1^2 / k
+[PASS] P5 (q-tail, beyond announced family): component P is a polynomial in (x, y, z)  []
+[PASS] P5 (q-tail, beyond announced family): component Q is a polynomial in (x, y, z)  []
+[PASS] P5 (q-tail, beyond announced family): component R is a polynomial in (x, y, z)  []
+[PASS] P5 (q-tail, beyond announced family): det JF == -2 (constant)  det = -2
+  component total degrees: [8, 7, 5]
+[PASS] P5 (q-tail, beyond announced family): generic fiber degree == 3  deg = 3
+[PASS] P5 (q-tail, beyond announced family): fiber polynomial squarefree at the random target
+[PASS] P5 (q-tail, beyond announced family): reconstruction inverse verified modulo the fiber polynomial
+  engineered target: (-16, -16, 1)
+  collision points: [(-1/6, 8, 496), (1/8, -4, -272)]
+[PASS] P5 (q-tail, beyond announced family): two DISTINCT rational points
+[PASS] P5 (q-tail, beyond announced family): both map exactly to the engineered target
+
+RESULT: ALL CHECKS PASS. Constructor v2 is established exactly: for any admissible
+(p, k, q) the map is a polynomial Keller map with det = -k p(1)^2, generic fiber degree
+deg(p) + 1, an exact reconstruction inverse, and engineered rational collisions. The
+q-tail instances lie beyond the announced family shape.

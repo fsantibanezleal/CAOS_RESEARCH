@@ -1,0 +1,268 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\definecolor{linknavy}{RGB}{25, 55, 125}
+\usepackage[colorlinks=true, linkcolor=linknavy, citecolor=linknavy, urlcolor=linknavy]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Gm}{\mathbb{G}_m}
+\newcommand{\detJ}{\det JF}
+
+\title{The Jacobian Conjecture after the Three-Dimensional Counterexample:\\
+Exact Validation, a General Seed Family, and the Two-Dimensional Obstruction}
+\author{Felipe Santiba\~nez-Leal\\
+\small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
+\date{2026-07-20 (working manuscript, v0.01)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+On 2026-07-19, Levent Alp\"oge announced (crediting the language model Claude Fable 5 and a
+question posed by Akhil) an explicit polynomial map $F : \C^3 \to \C^3$ with constant Jacobian
+determinant $-2$ and a repeated value, refuting the Jacobian conjecture for every $N \ge 3$. We
+report the results of an exact-arithmetic experimental program built on this event. First, we
+validate the counterexample independently and compute the full fiber over the announced target:
+it consists of exactly the three announced points. Second, we reverse-engineer the structure of
+$F$: it is a weighted skew-product over the invariants $v = xy$, $t = x^2 z$, its Keller
+property reduces to a two-variable identity, and its fibers are governed by a cubic in a single
+composite variable. Third, we derive and verify a general constructor: every admissible triple
+(seed polynomial $p$, scale $k$, section $q$) yields a Keller map with determinant $-k\,p(1)^2$
+and generic fiber degree $\deg p + 1$; the announced map is the minimal instance, and the section
+tail is a generalization axis beyond the announced family. We exhibit new explicit
+counterexamples with rational collision certificates in fiber degrees $4$ and $5$. Fourth, we
+localize why the mechanism cannot reach the still-open two-variable case: a nontrivial
+$\Gm$-action on $\C^2$ has a single weight-0 invariant, the equivariant Keller condition
+collapses to one univariate differential identity, and the two-invariant potential form that
+generates the family has no room. All computations are exact (rational or symbolic) and
+reproducible from the repository; every claim below is labeled as machine-verified, derived, or
+conjectural.
+\end{abstract}
+
+\section{Introduction}
+
+Let $k$ be a field of characteristic $0$. A polynomial map $F = (F_1, \dots, F_N) : k^N \to k^N$
+is a \emph{Keller map} if $\detJ$ is a nonzero constant. The Jacobian conjecture $JC(N)$,
+stated in two variables by Kraus in 1884 (with a flawed proof whose gap, control of ramification
+at infinity, remained the subject's central obstacle \cite{Rodriguez2026}) and popularized by
+Keller in 1939 \cite{Keller1939}, asserted that every Keller map has a polynomial inverse. Over
+$\C$, invertibility is equivalent to injectivity, so a refutation requires exactly one repeated
+value. The classical positive ladder includes Wang's degree-2 theorem, Moh's verification of
+$JC(2)$ up to degree 100, the Bass--Connell--Wright reduction to cubic homogeneous form
+\cite{BCW1982}, and Dru\.zkowski's cubic-linear form \cite{Druzkowski1983}; Pinchuk
+\cite{Pinchuk1994} refuted the strong real variant by a non-proper local diffeomorphism with
+non-constant Jacobian. The conjecture is Problem 16 of Smale's list \cite{Smale1998}.
+
+On 2026-07-19/20, Alp\"oge announced the map, with $u = 1 + xy$,
+\begin{equation}\label{eq:F}
+F = \bigl(\,u^3 z + y^2 u (4 + 3xy),\;\; y + 3x u^2 z + 3x y^2 (4 + 3xy),\;\; 2x - 3x^2 y - x^3 z\,\bigr),
+\end{equation}
+with $\detJ \equiv -2$ and
+$F(0, 0, -\tfrac14) = F(1, -\tfrac32, \tfrac{13}{2}) = F(-1, \tfrac32, \tfrac{13}{2}) =
+(-\tfrac14, 0, 0)$ \cite{Alpoge2026}. Appending identity coordinates refutes $JC(N)$ for all
+$N \ge 3$; the case $N = 2$ remains open. At the time of writing no formal paper exists; the
+announcement is a machine-checkable certificate, which makes an exact experimental program both
+possible and necessary. This manuscript maps the findings of that program (repository:
+CAOS\_RESEARCH, problem \texttt{algebraic-geometry/jacobian-conjecture}; experiments cited as
+EXP-$nnn$). Each claim is labeled: \textbf{[MV]} machine-verified exact identity,
+\textbf{[D]} derived analytically and certified on instances, \textbf{[C]} conjecture.
+
+\section{Exact validation and the full fiber (EXP-001)}
+
+\begin{theorem}[{[MV]}]\label{thm:valid}
+For $F$ as in \eqref{eq:F}: $\detJ = -2$ identically; the three announced points are pairwise
+distinct with the common image $(-\tfrac14, 0, 0)$; and the fiber
+$F^{-1}(-\tfrac14, 0, 0)$ consists of exactly those three points. In particular $F$ is a
+non-injective Keller map and $JC(N)$ is false for every $N \ge 3$.
+\end{theorem}
+
+The fiber computation is a lex Gr\"obner basis over $\Q$: the eliminant in $z$ is
+$\tfrac18(2z - 13)(4z + 1)$, and on the fiber $3x + 2y = 0$, $12y^2 = 4z + 1$. All coefficients
+of \eqref{eq:F} are rational, so non-injectivity holds equally over $\mathbb{R}$.
+
+\section{The structure of the counterexample (EXP-002)}
+
+\begin{theorem}[{[MV]}]\label{thm:structure}
+$F$ is equivariant for the $\Gm$-action with source weights $(1, -1, -2)$ and target weights
+$(-2, -1, 1)$. Writing $v = xy$, $t = x^2 z$, $u = 1 + v$, the reduced data
+\[
+a_1 = x^2 P, \qquad b_1 = x Q, \qquad c_1 = R / x = 2 - 3v - t
+\]
+are polynomials in $(v, t)$; each component of $F$ is affine in $z$ with coefficient vector
+$(u^3, 3xu^2, -x^3)$; and the generating identity
+$a_1 = \tfrac{u b_1}{2} - u^2 + \tfrac{u^3 c_1}{2}$ holds.
+\end{theorem}
+
+\begin{lemma}[Skew-product determinant lemma, {[MV]} with generic symbolic coefficients]
+\label{lem:skew}
+For \emph{any} polynomials $a_1, b_1, c_1$ in $(v, t)$, the map
+$(a_1/x^2,\, b_1/x,\, x c_1)|_{v = xy,\, t = x^2 z}$ satisfies
+\[
+\detJ \cdot c_1^2 = -J_2, \qquad
+J_2 = \det \frac{\partial (V', T')}{\partial (v, t)}, \quad V' = b_1 c_1, \; T' = a_1 c_1^2 .
+\]
+\end{lemma}
+
+For $F$, $J_2 = 2 c_1^2$ \textbf{[MV]}: the Keller property is a \emph{two-variable} identity;
+the third dimension only carries weights. Fibers are governed by a single cubic:
+with $w = u c_1 / 2$ and $\Phi(w) = w^2 - w^3$,
+\begin{equation}\label{eq:fiber}
+\Phi(w) = \tfrac14\left(w\, QR - P R^2\right) \quad \text{identically \textbf{[MV]}},
+\end{equation}
+so preimages of $(A, B, C)$ correspond to roots of $4\Phi(w) - w BC + A C^2 = 0$; at the
+announced target this degenerates to $\Phi(w) = 0$ with roots $\{0, 0, 1\}$, matching the three
+preimages' $w$-values $(1, 0, 0)$ \textbf{[MV]}. Injectivity dies by \emph{non-properness}: a
+Keller map is a local diffeomorphism, so sheets merge only at infinity; this is Pinchuk's
+loophole and the modern face of Kraus's gap.
+
+\section{The seed family: a general counterexample constructor (EXP-003/004)}
+
+The identification $c_1 = h(v) - t$ with $h = p/w$ is a degree-2 coincidence: an initial
+constructor built on it is \emph{provably unsolvable} for $\deg p \ge 3$ (EXP-003, an exact
+unsolvability statement). The failure analysis yields the correct \emph{potential form}.
+
+\begin{theorem}[Constructor v2, {[D]}, certified on instances {[MV]}]\label{thm:family}
+Let $p(w) = \sum_{i=1}^{d} p_i w^i$ satisfy
+\[
+p(0) = 0, \qquad \int_0^1 p = 0, \qquad p(1) \ne 0, \qquad p'(1) \ne 2 p(1),
+\]
+let $k \ne 0$, $m = -k\,p(1)$, and let $q(v)$ be any polynomial with $q(0) = k$ and
+$q'(0) = k\,(p(1) - p'(1))/(p'(1) - 2p(1))$, with arbitrary higher-order tail. Set
+$\Phi(w) = \int_0^w p$, $s = c_1 = q(v) - t$, $w = u s / k$, and define
+\[
+V' = k^2 p(w) + m s, \qquad T' = w V' - k^2 \Phi(w), \qquad
+b_1 = V'/s, \qquad a_1 = T'/s^2 .
+\]
+Then $a_1, b_1$ are polynomials in $(v, t)$, and
+$F_{p, k, q} = (a_1 / x^2,\; b_1 / x,\; x c_1)$ is a polynomial Keller map of $\C^3$ with
+\[
+\det J F_{p,k,q} = -\frac{m^2}{k} = -k\,p(1)^2 \quad (\text{constant, for every admissible } (p,k,q)),
+\]
+generic fiber degree $d + 1$, and the exact reconstruction inverse: from a root $w$ of the fiber
+polynomial $k^2\Phi(w) - (w\,BC - AC^2)$,
+\[
+s = \frac{BC - k^2 p(w)}{m}, \quad u = \frac{k w}{s}, \quad x = \frac{C}{s}, \quad v = u - 1,
+\quad t = q(v) - s, \quad y = \frac{v}{x}, \quad z = \frac{t}{x^2}.
+\]
+The announced map \eqref{eq:F} is the instance $p = 2w - 3w^2$, $k = 2$, $q$ affine; at $d = 2$
+this shape is rigid up to the scale $k$ \textbf{[MV]}.
+\end{theorem}
+
+The three admissibility conditions are exactly the low-weight polynomiality constraints at the
+origin; the potential form makes $J_2 = m^2 s^2 / k$ automatic, so \emph{the Keller property
+costs nothing}: this is the structural reason the conjecture is false in dimension $\ge 3$.
+
+\begin{theorem}[New explicit counterexamples, {[MV]}]\label{thm:instances}
+The following maps are non-injective polynomial Keller maps of $\C^3$, each certified by an
+engineered rational collision:
+\begin{center}
+\begin{tabular}{lllll}
+\toprule
+Seed $p$ & $k$ & $\det$ & Component degrees & Generic fiber degree \\
+\midrule
+$w - 2w^3$ & $3$ & $-3$ & $(12, 11, 4)$ & $4$ \\
+$8w - 12w^2 + 4w^3 - 5w^4$ & $14$ & $-350$ & $(17, 16, 4)$ & $5$ \\
+$2w - 3w^2$, section tail $v^2$ & $2$ & $-2$ & $(8, 7, 5)$ & $3$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+For the first: $(-\tfrac{1}{15}, 18, 5130)$ and $(\tfrac{1}{24}, -18, -10368)$ both map exactly
+to $(-54, -54, 1)$. Collisions are engineered by prescribing two rational roots $w_1 \ne w_2$ and
+solving the linear system $w_i \tilde V - \tilde T = k^2 \Phi(w_i)$ for the target invariants.
+\end{theorem}
+
+The section-tail instance changes the component-degree pattern at fixed fiber degree and
+determinant: the family is strictly larger than the seed-only family circulating informally.
+Every negative rational number is realized as a Keller determinant within the family.
+
+\section{The two-dimensional obstruction (EXP-005)}
+
+\begin{theorem}[{[MV]} with generic symbolic $f, g$]\label{thm:2d}
+Let $\Gm$ act on $\C^2$ with weights $(1, -a)$, $a \ge 1$, and let $F = (x^{b_1} f(v),\,
+x^{b_2} g(v))$, $v = x^a y$, be an equivariant polynomial map. Then
+\[
+\detJ = x^{\,b_1 + b_2 + a - 1}\left(b_1 f g' - b_2 f' g\right),
+\]
+so the Keller condition forces $b_1 + b_2 = 1 - a$ and the single univariate identity
+$b_1 f g' - b_2 f' g = \mathrm{const} \ne 0$.
+\end{theorem}
+
+\begin{proposition}[One-invariant collapse]\label{prop:collapse}
+If the reduced data $(V', T')$ of a weighted skew-product depend on a single variable, then
+$dV' \wedge dT' = 0$, hence $J_2 \equiv 0$ and $\detJ \equiv 0$: no Keller map arises. Since a
+nontrivial $\Gm$-action on $\C^2$ has one independent weight-0 invariant (against two in
+$\C^3$), the potential-form mechanism of Theorem~\ref{thm:family} is structurally unavailable in
+dimension $2$.
+\end{proposition}
+
+Additionally \textbf{[MV]}: no coordinate slice of \eqref{eq:F} (each variable frozen at rational
+test values, any output pair) is a 2D Keller map.
+
+\begin{conjecture}[2D equivariant rigidity, {[C]}]\label{conj:2d}
+Every $\Gm$-equivariant Keller map of $\C^2$ is invertible.
+\end{conjecture}
+
+Our first enumeration scan was vacuous (zero surviving instances at the tested degrees) and is
+recorded as such; a branch-symbolic enumeration is queued (EXP-006). The honest map of remaining
+routes to a hypothetical 2D counterexample: no symmetry at all; non-reductive
+($\mathbb{G}_a$) structures, which face the same one-invariant collapse in naive form; or
+gradings at infinity in the Newton-polygon/Abhyankar sense. Conversely, a proof of $JC(2)$ in
+this program's terms is a properness statement: the reconstruction inverse of
+Theorem~\ref{thm:family} shows exactly how asymptotic values are produced in dimension 3
+(denominators $BC = k^2 p(w)$), and whether one-invariant geometry leaves room for such escape
+is, in our view, the sharpest transferable open question.
+
+\section{Discussion and program}
+
+\textbf{Why the conjecture is false.} In the equivariant class, being Keller is a two-variable
+potential identity, satisfiable for free at any fiber degree $\ge 3$; nothing in the
+determinant sees properness. \textbf{What is essential.} Two independent weight-0 invariants;
+the potential form; valuation conditions at the origin. \textbf{Consequence cascade
+(UNVERIFIED here).} Via known implications the refutation propagates to the Mathieu conjecture
+for $SU(3)$, the Gaussian moments conjecture, Zhao's vanishing conjecture, the Image conjecture,
+and, via stable equivalence, the Dixmier conjecture; primary-source verification of each chain
+is queued before this program asserts them. \textbf{Next experiments.} EXP-006
+(branch-symbolic 2D enumeration for Conjecture~\ref{conj:2d}); EXP-007 (exact asymptotic
+varieties of $F$ and the new instances); minimality of the degree vector $(7, 6, 4)$; the
+Bass--Connell--Wright push-through of $F$ to explicit cubic form.
+
+\subsection*{Reproducibility}
+Every theorem labeled [MV] is an exact sympy computation over $\Q$ with a persisted script and
+output in the repository (experiments EXP-001 through EXP-005 under
+\texttt{problems/algebraic-geometry/jacobian-conjecture/}); each experiment declares its
+hypothesis before the run and records an adversarial-validation route with its verdict.
+
+\begin{thebibliography}{9}
+\bibitem{Alpoge2026} L. Alp\"oge, announcement of the counterexample, X (@\_\_alpoge\_\_),
+2026-07-20; question posed by Akhil, map produced with Claude Fable 5. Independent press
+coverage: M. Sparkes, \emph{New Scientist}, 2026-07-20.
+\bibitem{BCW1982} H. Bass, E. H. Connell, D. Wright, The Jacobian conjecture: reduction of
+degree and formal expansion of the inverse, \emph{Bull. Amer. Math. Soc. (N.S.)} \textbf{7}
+(1982), 287--330.
+\bibitem{Druzkowski1983} L. M. Dru\.zkowski, An effective approach to Keller's Jacobian
+conjecture, \emph{Math. Ann.} \textbf{264} (1983), 303--313.
+\bibitem{Keller1939} O.-H. Keller, Ganze Cremona-Transformationen, \emph{Monatsh. Math. Phys.}
+\textbf{47} (1939), 299--306. doi:10.1007/BF01695502.
+\bibitem{Pinchuk1994} S. Pinchuk, A counterexample to the strong real Jacobian conjecture,
+\emph{Math. Z.} \textbf{217} (1994), 1--4.
+\bibitem{Rodriguez2026} L. O. Rodr\'iguez D\'iaz, On the origin of the Jacobian conjecture,
+\emph{C. R. Math.} \textbf{364} (2026), 363--370. arXiv:2512.23614.
+\bibitem{Smale1998} S. Smale, Mathematical problems for the next century, \emph{Math.
+Intelligencer} \textbf{20} (1998), 7--15.
+\bibitem{vdEssen2000} A. van den Essen, \emph{Polynomial Automorphisms and the Jacobian
+Conjecture}, Progress in Mathematics 190, Birkh\"auser, 2000.
+\end{thebibliography}
+
+\end{document}

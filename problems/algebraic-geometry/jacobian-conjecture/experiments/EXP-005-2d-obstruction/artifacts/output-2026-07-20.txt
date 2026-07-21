@@ -1,0 +1,25 @@
+============================================================================
+Prediction 1: 2D equivariant determinant reduction (generic symbolic f, g)
+============================================================================
+[PASS] det JF == x^(b1+b2+a-1) (b1 f g' - b2 f' g) for a in {1,2,3}, several (b1, b2)
+
+============================================================================
+Prediction 2: exhaustive small-degree 2D equivariant Keller solutions -> injectivity
+============================================================================
+  Keller-solvable polynomial instances tested: 0
+[PASS] every tested 2D equivariant Keller instance has fiber degree <= 1 (injective/empty)  []
+
+============================================================================
+Prediction 3: killing the second invariant t collapses the reduced Jacobian
+============================================================================
+[PASS] P2 seed: J2 == 0 identically once s is a function of v alone
+[PASS] P3 seed: J2 == 0 identically once s is a function of v alone
+
+============================================================================
+Prediction 4: no 2x2 slice of the announced F is Keller
+============================================================================
+[PASS] no coordinate slice (any fixed variable at 3 rational values, any output pair) is Keller  []
+
+RESULT: ALL CHECKS PASS. The 2D obstruction is exact in this scope: the equivariant
+mechanism cannot produce a 2D counterexample (small-degree null result); the second
+weight-0 invariant is load-bearing (J2 collapses without it); no slice of F is Keller.

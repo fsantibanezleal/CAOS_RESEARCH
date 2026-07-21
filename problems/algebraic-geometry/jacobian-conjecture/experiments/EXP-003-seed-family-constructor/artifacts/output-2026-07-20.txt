@@ -1,0 +1,24 @@
+============================================================================
+Part A: d = 2 general seed p = p1 w + p2 w^2, constants (k, m)
+============================================================================
+  polynomiality residue equations: 3
+  solve(residues) for (p1, p2, m) given k: [{m: 0, p1: 0, p2: 0}, {m: k**2/2, p1: k, p2: -3*k/2}]
+  branch {m: k**2/2, p1: k, p2: -3*k/2}: det J = -k**3/4
+    instance (2, -3, k=2): det = -2; reproduces announced F: True
+[PASS] A: constructor family is Keller (det constant, nonzero) for the solved branch
+[PASS] A: announced F is the (p1,p2,k,m)=(2,-3,2,2) instance
+[PASS] A: at least one valid branch found
+
+============================================================================
+Part: instance G (d=3 seed w - 2w^3): p = -2*w**3 + w
+============================================================================
+  (k, m) solutions from polynomiality: []
+[FAIL] G (d=3 seed w - 2w^3): polynomiality admits (k, m)
+
+============================================================================
+Part: instance H (d=4 seed, ours): p = -5*w**4 + 4*w**3 - 12*w**2 + 8*w
+============================================================================
+  (k, m) solutions from polynomiality: []
+[FAIL] H (d=4 seed, ours): polynomiality admits (k, m)
+
+RESULT: 2 check(s) FAILED: ['G (d=3 seed w - 2w^3): polynomiality admits (k, m)', 'H (d=4 seed, ours): polynomiality admits (k, m)']
