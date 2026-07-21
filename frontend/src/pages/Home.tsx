@@ -10,7 +10,7 @@ export default function Home() {
   const [experiments, setExperiments] = useState<ExperimentRec[]>([]);
   useEffect(() => {
     loadPortfolio().then(setPortfolio).catch(() => setPortfolio(null));
-    loadExperiments().then(setExperiments).catch(() => setExperiments([]));
+    loadExperiments().then((e) => setExperiments(e.sort((p, q) => (q.date + q.id).localeCompare(p.date + p.id)).slice(0, 20))).catch(() => setExperiments([]));
   }, []);
 
   return (
@@ -81,8 +81,8 @@ export default function Home() {
       <h2>{t('Latest experiments across the program', 'Ultimos experimentos del programa')}</h2>
       <p>
         {t(
-          'The cross-problem feed: every record labels its problem (each problem page keeps its own filtered log). Refuted attempts are part of the record; both refutations so far produced the next result.',
-          'El feed entre problemas: cada registro etiqueta su problema (cada pagina de problema mantiene su propio registro filtrado). Los intentos refutados son parte del registro; las dos refutaciones habidas produjeron el siguiente resultado.',
+          'A summary feed: the 20 most recent records across all problems, newest first, each labeled with its problem. The exhaustive per-problem logs live on the problem pages. Refuted attempts are part of the record.',
+          'Un feed resumen: los 20 registros mas recientes de todos los problemas, de mas nuevo a mas antiguo, cada uno etiquetado con su problema. Los registros exhaustivos por problema viven en las paginas de problema. Los intentos refutados son parte del registro.',
         )}
       </p>
       <ul className="rs-timeline rs-timeline-wide">

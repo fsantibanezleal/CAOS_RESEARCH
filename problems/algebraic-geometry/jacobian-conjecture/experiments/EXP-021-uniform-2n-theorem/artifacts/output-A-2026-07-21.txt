@@ -1,0 +1,5 @@
+============================================================================
+Part A: sufficiency: J(P, ell/beta + H(P)) == 1 for generic H (deg H <= 4)
+============================================================================
+[PASS] A: identity J == 1 holds over QQ(alpha, beta, h0..h3)  deg Q = 6
+RESULT (A): ALL CHECKS PASS.
