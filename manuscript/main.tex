@@ -21,7 +21,8 @@
 \newcommand{\detJ}{\det JF}
 
 \title{The Jacobian Conjecture after the Three-Dimensional Counterexample:\\
-Exact Validation, a General Seed Family, and the Two-Dimensional Obstruction}
+Exact Validation, a General Seed Family, the Geometry of Non-Properness,\\
+and Two-Dimensional Equivariant Rigidity}
 \author{Felipe Santiba\~nez-Leal\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
 \date{2026-07-21 (working manuscript, v0.03)}
@@ -40,15 +41,21 @@ $F$: it is a weighted skew-product over the invariants $v = xy$, $t = x^2 z$, it
 property reduces to a two-variable identity, and its fibers are governed by a cubic in a single
 composite variable. Third, we derive and verify a general constructor: every admissible triple
 (seed polynomial $p$, scale $k$, section $q$) yields a Keller map with determinant $-k\,p(1)^2$
-and generic fiber degree $\deg p + 1$; the announced map is the minimal instance, and the section
-tail is a generalization axis beyond the announced family. We exhibit new explicit
-counterexamples with rational collision certificates in fiber degrees $4$ and $5$. Fourth, we
-localize why the mechanism cannot reach the still-open two-variable case: a nontrivial
-$\Gm$-action on $\C^2$ has a single weight-0 invariant, the equivariant Keller condition
-collapses to one univariate differential identity, and the two-invariant potential form that
-generates the family has no room. All computations are exact (rational or symbolic) and
-reproducible from the repository; every claim below is labeled as machine-verified, derived, or
-conjectural.
+and generic fiber degree $\deg p + 1$; we exhibit new explicit counterexamples with rational
+collision certificates in fiber degrees $4$, $5$ and $6$, plus a section-tail instance beyond
+the announced family shape, prove the degree law $(5d - 3, 5d - 4, 4)$ within the family, and
+show the announced map is its smallest member. Fourth, we make the failure geometry exact: a
+preimage escapes to infinity precisely when its fiber root is a multiple root, so the
+asymptotic variety of $F$ is the plane $C = 0$ together with the explicit discriminant surface
+$27A^2C^2 - 18ABC + 16A + B^3C - B^2 = 0$; over $\mathbb{R}$ this wall separates a three-sheet
+from a one-sheet region, and $F$ restricts to a surjective, non-injective real Keller map. The
+counterexamples reduce at suitable primes to non-injective Keller maps over $\mathbb{F}_\ell$
+of degree below the characteristic. Fifth, we prove that the mechanism cannot reach the
+still-open two-variable case: for arbitrary weights, every $\Gm$-equivariant Keller map of
+$\C^2$ is linear (a classification with a positive-factor kill at the top degree), so a planar
+counterexample, if any, must be genuinely non-equivariant. All computations are exact (rational
+or symbolic) and reproducible from the repository; every claim below is labeled as
+machine-verified, derived, or conjectural.
 \end{abstract}
 
 \section{Introduction}
@@ -227,7 +234,7 @@ codimension 1. Kraus's ``ramification at infinity'' is, for this family, the dis
 univariate polynomial.
 \end{theorem}
 
-\section{The two-dimensional obstruction (EXP-005)}
+\section{The two-dimensional frontier: obstruction, rigidity, real census (EXP-005/006/010/011)}
 
 \begin{theorem}[{[MV]} with generic symbolic $f, g$]\label{thm:2d}
 Let $\Gm$ act on $\C^2$ with weights $(1, -a)$, $a \ge 1$, and let $F = (x^{b_1} f(v),\,
