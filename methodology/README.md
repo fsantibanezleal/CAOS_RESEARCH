@@ -12,6 +12,7 @@ given session. The six documents below are binding for every problem folder.
 | [04-code-standards.md](04-code-standards.md) | Environments, exact-vs-float policy, GPU usage, tests, CI guards. |
 | [05-writing-standards.md](05-writing-standards.md) | Markdown/KaTeX/SVG/reference rules for context, history and wiki content. |
 | [06-web-publication.md](06-web-publication.md) | What may appear on the web app, and when (the `published` gate). |
+| [07-session-handoff.md](07-session-handoff.md) | The resume contract: `program/<problem>/RESUME.md`, updated every session, so a new session resumes with zero loss. |
 
 ## Principles (non-negotiable)
 
