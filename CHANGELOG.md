@@ -3,6 +3,14 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.17.000], 2026-07-21
+
+### Added
+- EXP-027: the gcd-12 certificate: at (24, <= 36), h = x^5 y^7, no Keller partner exists for
+  ANY a != 0 (700 completion unknowns, one pairing, gcd -80 a^2). Both literature-uncovered
+  composite gcds (9 and 12) now carry certified pure-slice exclusions; Moh-range framing
+  honest throughout.
+
 ## [0.16.000], 2026-07-21
 
 ### Added
