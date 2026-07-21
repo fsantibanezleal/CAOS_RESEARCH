@@ -248,3 +248,18 @@
 - **EXP-027 (confirmed):** at (24, <= 36), h = x^5 y^7: no Keller partner for ANY a != 0
   (700 unknowns, one pairing, gcd -80 a^2, 227 s). Both uncovered composite gcds (9, 12) now
   carry certified pure-slice exclusions; same Moh-range framing as EXP-026.
+
+## 2026-07-21 (session 15) - The strategy shift: polygons explain the machine
+
+- **EXP-028 (confirmed):** (A) the lattice sieve from Abhyankar similarity is exact
+  (admissible partner degrees = multiples of deg P only). (B) the DECISIVE window: (18, <= 36)
+  contains the first admissible rung n = 36 and is EMPTY anyway. (C) certified: no partner of
+  degree <= 36 for any a != 0 (one pairing, gcd -576 a^3). (D) obstruction anatomy: the
+  certificate vector is supported EXACTLY on the ray parallel to P's Newton-edge direction:
+  each certificate is a weighted edge residue (closed form conjectured, JCB-032).
+- **Derived [D, conditional]:** P = x + a h^2 (h = x^p y^q, p != q) is NEVER a Keller
+  component at ANY degree (similarity sieve + edge descent + machine shadow through 36);
+  hardens when the similarity theorem's hypotheses are read from the primary text.
+- **Sources:** Abhyankar similarity primary-cited (similar TRIANGLES, ratio deg f : deg g);
+  Moh 1983 (<= 100, six candidate shapes eliminated); arXiv:2204.14178 raises the floor to
+  108: beyond-current-knowledge starts above ~108 (e.g. gcd 45 at (90, 135)).

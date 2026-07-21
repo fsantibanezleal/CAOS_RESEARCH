@@ -1,0 +1,32 @@
+============================================================================
+Part A: the lattice sieve (similarity-admissible partner degrees)
+============================================================================
+  h = x^4 y^5 (m = 18): admissible n <= 60: [18, 36, 54]
+[PASS] A: for m = 18, similarity admits ONLY multiples of 18
+  h = x^5 y^7 (m = 24): admissible n <= 60: [24, 48]
+[PASS] A: for m = 24, similarity admits ONLY multiples of 24
+
+============================================================================
+Part B: the decisive window (18, <= 36): contains the divisible rung n = 36
+============================================================================
+  window unknowns: 700
+  B[a=1]: INCONSISTENT (4.9 s)
+  B[a=-2]: INCONSISTENT (4.3 s)
+  B[a=1/3]: INCONSISTENT (5.2 s)
+[PASS] B: the (18, <= 36) window is EMPTY even across the divisible rung
+
+============================================================================
+Part D: obstruction anatomy (certificate-vector support at (4, <= 6/10))
+============================================================================
+  D[<= 6]: pairing = -8*a_**2; support rows: 2/36; equation degrees in support: [3, 6]
+    row x^2 y^4 (deg 6): weight -3
+    row x^1 y^2 (deg 3): weight 4*a_
+[PASS] D[<= 6]: obstruction vector extracted and its support recorded
+  D[<= 10]: pairing = -128*a_**4; support rows: 4/82; equation degrees in support: [3, 6, 9, 12]
+    row x^4 y^8 (deg 12): weight -35
+    row x^3 y^6 (deg 9): weight 40*a_
+    row x^2 y^4 (deg 6): weight -48*a_**2
+    row x^1 y^2 (deg 3): weight 64*a_**3
+[PASS] D[<= 10]: obstruction vector extracted and its support recorded
+
+RESULT: ALL CHECKS PASS.

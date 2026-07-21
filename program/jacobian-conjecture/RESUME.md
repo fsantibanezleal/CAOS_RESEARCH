@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-21, session 14 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-21, session 15 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -58,26 +58,31 @@ census) · 012 conf 1-4/refuted 5 (landscape; uniqueness) · 013 conf 1-2/partia
 bridge; (2,2) exhaustive) · 015 confirmed (checker + bridge tooling) · 016 confirmed (cascade
 verified) · 017 confirmed (bilinear exhaustives (2,3)/(3,3)) · 018 confirmed (Poisson +
 symmetric closure) · 019 confirmed (floors; (2,3) full closure ideal) · 020 confirmed
-(THEOREMS (2,3)/(2,4)/(2,5); (3,4) elimination cap-out documented) · 021 confirmed (THE UNIFORM min-degree-2 THEOREM) · 022 confirmed (shear closure for ANY f; (3,3) cube alignment FORCED; the descent inverter runs, library fully inverted) · 023 confirmed (the (4, <= 6) primitive window is EMPTY on the sampled slice, +8 via one descent step; controls non-vacuous) · 024 confirmed (pure-slice certificate -8 a^2: empty for EVERY a != 0; full 8-param certificate capped, staged) - 025 confirmed (ALL 63 slices up to 3 lower coeffs empty; windows <= 18 empty; E-locus closed; sources verified: (4,*) ladder literature-covered, open frontier = composite gcd 9, 12) . 026 confirmed (FIRST composite-gcd exclusions: (18, <= 27) certified empty for all a != 0, gcd -144 a^2; h-sweep + gcd-12 probe empty; inside Moh range, certificate is the new content) . 027 confirmed (the gcd-12 certificate: (24, <= 36) empty for all a != 0, gcd -80 a^2).
+(THEOREMS (2,3)/(2,4)/(2,5); (3,4) elimination cap-out documented) · 021 confirmed (THE UNIFORM min-degree-2 THEOREM) · 022 confirmed (shear closure for ANY f; (3,3) cube alignment FORCED; the descent inverter runs, library fully inverted) · 023 confirmed (the (4, <= 6) primitive window is EMPTY on the sampled slice, +8 via one descent step; controls non-vacuous) · 024 confirmed (pure-slice certificate -8 a^2: empty for EVERY a != 0; full 8-param certificate capped, staged) - 025 confirmed (ALL 63 slices up to 3 lower coeffs empty; windows <= 18 empty; E-locus closed; sources verified: (4,*) ladder literature-covered, open frontier = composite gcd 9, 12) . 026 confirmed (FIRST composite-gcd exclusions: (18, <= 27) certified empty for all a != 0, gcd -144 a^2; h-sweep + gcd-12 probe empty; inside Moh range, certificate is the new content) . 027 confirmed (gcd-12 certificate: (24, <= 36) empty for all a != 0, gcd -80 a^2) . 028 confirmed (polygon strategy: sieve exact; (18, <= 36) certified PAST the divisible rung, gcd -576 a^3; obstruction = edge residue on the P-edge ray; all-degree non-component statement [D]; floor is ~108 per arXiv:2204.14178).
 
 ## 4. In flight
 
-Nothing mid-run. Session 14 made first contact with the composite-gcd frontier (EXP-026):
-instrument validated at scale, the (18, <= 27) window empty at numeric samples and across
-three degree-9 base shapes, THE CERTIFICATE for h = x^4 y^5 (no partner degree <= 27 for any
-a != 0; 312 null vectors, one pairing, gcd -144 a^2), and the gcd-12 reach probe empty
-((24, <= 36), 700 unknowns, 9.4 s). Honest framing everywhere: gcd 9 is outside the
-gcd-coverage theorems but (18, 27) is inside Moh's degree-100 range, so the certificate is
-the new content; beyond-Moh degrees are the target. The rigidity novelty pass (bounded, 2
-searches) found no statement of our theorem; wiki 04 records it; JCB-031 queues the
-full-text pass (including a primary read of Moh's coverage claim).
+Nothing mid-run. Session 15 validated the STRATEGY SHIFT (EXP-028): window certificates are
+weighted edge residues (certificate support lies exactly on the P-edge ray; weights recorded:
+(4a, -3) at window 6, (64a^3, -48a^2, 40a, -35) at window 10); the Abhyankar similarity sieve
+is exact (admissible partner degrees = multiples of deg P); and the decisive (18, <= 36)
+window, which contains the first admissible rung, is EMPTY and certified for all a != 0
+(gcd -576 a^3). Derived [D, conditional on the similarity theorem's hypotheses]: P = x + a h^2
+(h = x^p y^q, p != q) is NEVER a Keller component at any degree. Sources: Abhyankar
+similarity (similar triangles, ratio deg f : deg g) cited; Moh 1983 (<= 100, six shapes);
+arXiv:2204.14178 raises the verified floor to 108, so beyond-current-knowledge starts there
+(e.g. gcd 45 at (90, 135)).
 
 ## 5. Next actions, ordered
 
-1. JCB-030 (continue): (a) DONE (EXP-027); (b) slice widening at (18, 27) (the
-   EXP-025 slice-and-union program at these degrees); (c) windows past 27; (d) design the
-   beyond-Moh rung (smallest uncovered bidegrees > 100: e.g. gcd 9 at (108, 162)? verify
-   Moh's exact coverage claim first, JCB-031).
+1. JCB-032 (the new instrument): derive the edge-residue functional in CLOSED FORM from
+   the EXP-028 anatomy (support on the P-edge ray; weight patterns recorded). Route: project
+   the completion system onto the edge-ray monomials; the pairing should be the resultant-
+   like obstruction of the edge ODE. Validate against every known pairing (-8a^2, -128a^4,
+   -256a^5, -1024a^6, -144a^2, -80a^2, -576a^3), then evaluate beyond the ~108 floor
+   (gcd 45 at (90, 135)): a certified exclusion there is genuinely new in every sense.
+2. JCB-030 (continue): slice widening at (18, 27) (the EXP-025 slice-and-union program at
+   these degrees); windows past 36 as cross-checks of the [D] statement.
 2. JCB-031: full-text pass: Moh 1983 (exact coverage statement), the Newton-polygon
    literature around minimal counterexamples, and the rigidity novelty check; unhedge or
    qualify the manuscript accordingly.

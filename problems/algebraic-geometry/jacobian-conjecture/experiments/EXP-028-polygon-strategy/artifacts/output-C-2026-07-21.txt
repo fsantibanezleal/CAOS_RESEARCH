@@ -1,0 +1,7 @@
+============================================================================
+Part C: the certificate at (18, <= 36), a symbolic
+============================================================================
+  C: 1156 eqs, 700 unknowns, 457 null vectors, 1 pairings, gcd = -576*a_**3, 182.4 s
+[PASS] C: NO Keller partner of degree <= 36 for ANY a != 0 (past the divisible rung)
+
+RESULT: ALL CHECKS PASS.

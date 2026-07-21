@@ -3,6 +3,17 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.18.000], 2026-07-21
+
+### Added
+- EXP-028: the strategy shift validated: the Abhyankar lattice sieve is exact; the decisive
+  (18, <= 36) window (containing the first similarity-admissible rung) is empty and
+  CERTIFIED for all a != 0 (gcd -576 a^3); the obstruction is a weighted edge residue
+  (support exactly on the P-edge ray); all-degree non-component statement recorded [D,
+  conditional]; Abhyankar similarity, Moh 1983 and the 108-floor preprint cited. New
+  instrument queued: the edge-residue functional in closed form (JCB-032), aimed beyond the
+  ~108 verified floor.
+
 ## [0.17.000], 2026-07-21
 
 ### Added

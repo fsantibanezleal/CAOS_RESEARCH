@@ -135,3 +135,24 @@ a gcd-12 reach probe at $(24, \le 36)$. Honest framing: these bidegrees sit insi
 degree-100 verified range, so the new content is the explicit, per-pair machine certificate
 (Moh's verification is not constructive per pair); the beyond-Moh rungs are the standing
 target (JCB-030).
+
+## The polygon strategy: from windows to all degrees (EXP-028)
+
+The window certificates kept producing exactly ONE obstruction pairing, from 25 to 700
+completion unknowns. EXP-028 identified why: the certificate vector's support lies exactly on
+the ray parallel to $P$'s Newton-edge direction, so each certificate is a weighted EDGE
+RESIDUE, the machine shadow of the classical polygon calculus. Abhyankar's similarity theorem
+(early 1970s; the Newton polygons of a Jacobian pair with both degrees $> 1$ are similar
+triangles with ratio $\deg f : \deg g$) gives a lattice sieve: for $P = x + a h^2$
+($h = x^p y^q$, $p \ne q$) the admissible partner degrees are exactly the multiples of
+$\deg P$, machine-enumerated. The decisive test: the $(18, \le 36)$ window CONTAINS the
+first admissible rung $n = 36$ and is empty anyway, certified for every $a \ne 0$ (pairing
+gcd $-576\,a^3$): the divisible rungs die by edge descent into previously emptied windows.
+
+Derived statement [D, conditional]: $P = x + a h^2$ is NEVER a Keller component at ANY
+partner degree. It hardens to a theorem once the similarity theorem's exact hypotheses are
+read from the primary text (JCB-031); the windows through degree 36 are its unconditional
+machine-verified shadow. The successor instrument (JCB-032) is the edge-residue functional in
+closed form; with it, rungs beyond the current verified floor (Moh 1983 to degree 100;
+raised to 108 by arXiv:2204.14178), e.g. gcd 45 at bidegrees $(90, 135)$, become reachable,
+where a certified exclusion would be a statement nobody has verified in any form.
