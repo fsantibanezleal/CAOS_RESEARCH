@@ -16,6 +16,8 @@
 | [EXP-012](../experiments/EXP-012-weight-system-landscape/) | Do sibling weighted mechanisms exist? | **confirmed 1-4, refuted 5** | Landscape mapped: m = 1 is the JC(2) bridge (93 instances injective); m = 3 empty (valuation proof) or rigid (60 instances); the m = 4 potential family is EMPTY (Groebner certificate). The m = 2 mechanism is UNIQUE among scanned systems. |
 | [EXP-013](../experiments/EXP-013-leading-form-cascade/) | The tropical route to JC(2)? | **confirmed 1-2, partial 3** | At every sampled ray, real Keller maps are the degenerate boundary of the EXP-010 classification (56 checks); exhaustive JC(2) certificate at (2,2); (2,3)/(3,3) queued behind a solver artifact (documented with an explicit witness). |
 | [EXP-016](../experiments/EXP-016-cascade-verification/) | Is the consequence cascade real? | **confirmed** | All five chains verified from primary sources; corollaries now assertable (Mathieu false for SU(3); GMC, vanishing, Image false; full Dixmier false with Dixmier(1) open). |
+| [EXP-015](../experiments/EXP-015-jc2-certificate-checker/) | Tooling: how is a JC(2) claim adjudicated? | **confirmed** | Exact certificate checker + the executable m = 1 bridge extractor, tested in CI. |
+| [EXP-017](../experiments/EXP-017-bilinear-exhaustive-jc2/) | Can the (2,3)/(3,3) exhaustives be completed? | **confirmed** | The bilinear harness (linear in Q per P): (2,3) over a 216-vector grid and (3,3) over 45 vectors, exhaustive in Q, all injective; old solver artifact resolved by design. |
 
 Planned next: JC-P3 continuation (global-minimality search, degrees 3..6, GPU-widened ansatz
 enumeration), JC-P4 cascade verification from primary sources, optional formal hardening of the
