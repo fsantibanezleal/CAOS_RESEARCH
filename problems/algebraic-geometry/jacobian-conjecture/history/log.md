@@ -111,3 +111,17 @@
   an explicit failing Hessian-nilpotent quartic (queued).
 - Queued honestly (budget): EXP-014 Puiseux escape obstructions (JCB-022) and EXP-015 JC(2)
   certificate checker + m = 1 bridge extractor (JCB-023).
+
+## 2026-07-21 (session 6) - The bilinear harness completes; the tooling ships
+
+- **EXP-017 (confirmed):** the bilinear harness: det J is bilinear in the coefficient vectors,
+  so the gauge Keller condition is LINEAR in Q given P: solved completely per P-sample. (2, 3):
+  216-vector P-grid, 16 consistent, 32 instances, triangular witnesses recovered exactly where
+  the old solver failed; (3, 3): 45 structured vectors, 10 instances; every instance injective.
+  JC(2) certificates now: (2, 2) exhaustive; (2, 3), (3, 3) exhaustive-in-Q over structured
+  grids. Next stage: the consistency variety in P (rank conditions) for the full-A statement.
+- **EXP-015 (confirmed):** the JC(2) certificate checker and the m = 1 bridge extractor ship as
+  tested library code (CI-permanent): exact adjudication for any claimed planar Keller map or
+  collision; the EXP-012 bridge is now executable.
+- Still queued: EXP-014 Puiseux escape obstructions (JCB-022), the Hessian-nilpotent quartic
+  extraction (JCB-024), the rank-conditions completion and higher-degree scans (JCB-021).

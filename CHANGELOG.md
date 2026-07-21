@@ -3,6 +3,17 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.07.000], 2026-07-21
+
+### Added
+- EXP-017: the bilinear harness (the Keller condition is linear in Q's coefficients per fixed
+  P): exhaustive-in-Q JC(2) certificates at (2, 3) (216-vector P-grid, 32 instances) and
+  (3, 3) (45 vectors, 10 instances), all injective; the EXP-013 solver artifact resolved by
+  design (triangular witnesses recovered at the A = 0 samples).
+- EXP-015: the JC(2) certificate checker and the executable m = 1 bridge extractor
+  (jclib.jc2), tested in CI: exact adjudication for any claimed planar Keller map or collision.
+- Wiki 05 and program records updated; JCB-021 advances to the rank-conditions stage.
+
 ## [0.06.000], 2026-07-21
 
 ### Added

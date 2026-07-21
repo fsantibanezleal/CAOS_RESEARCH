@@ -1,0 +1,12 @@
+============================================================================
+(3,3): degrees (3, 3), 45 A-samples, exhaustive in B per sample
+============================================================================
+  consistent: 5
+  inconsistent: 40
+  instances: 10
+  triangular_seen: 2
+[PASS] (3,3): scan non-vacuous
+[PASS] (3,3): triangular witnesses appear (A = 0 sample consistent)
+[PASS] (3,3): every Keller instance has in-image fiber <= 1 (JC(2) holds here)  []
+
+RESULT: ALL CHECKS PASS.
