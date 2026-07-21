@@ -1,0 +1,134 @@
+{
+ "areas": [
+  {
+   "name": "Algebraic geometry and polynomial maps",
+   "slug": "algebraic-geometry"
+  },
+  {
+   "name": "Number theory and L-functions",
+   "slug": "number-theory"
+  },
+  {
+   "name": "Analysis and PDE",
+   "slug": "analysis-pde"
+  },
+  {
+   "name": "Dynamical systems and celestial mechanics",
+   "slug": "dynamical-systems"
+  },
+  {
+   "name": "Computation and complexity",
+   "slug": "computation-complexity"
+  },
+  {
+   "name": "Optimization and discrete geometry",
+   "slug": "optimization-geometry"
+  },
+  {
+   "name": "Mathematical physics",
+   "slug": "mathematical-physics"
+  }
+ ],
+ "problems": [
+  {
+   "area": "algebraic-geometry",
+   "feasibility": "A",
+   "gpu": true,
+   "opened": "2026-07-20",
+   "slug": "jacobian-conjecture",
+   "state": "exploring"
+  },
+  {
+   "area": "dynamical-systems",
+   "feasibility": "A",
+   "gpu": true,
+   "slug": "central-configurations",
+   "state": "scoped"
+  },
+  {
+   "area": "optimization-geometry",
+   "feasibility": "A",
+   "gpu": true,
+   "slug": "sphere-log-energy",
+   "state": "scoped"
+  },
+  {
+   "area": "computation-complexity",
+   "feasibility": "A",
+   "gpu": true,
+   "slug": "tau-conjecture",
+   "state": "scoped"
+  },
+  {
+   "area": "number-theory",
+   "feasibility": "A",
+   "gpu": true,
+   "slug": "riemann-hypothesis",
+   "state": "scoped"
+  },
+  {
+   "area": "computation-complexity",
+   "feasibility": "B",
+   "gpu": "partial",
+   "slug": "diophantine-2var",
+   "state": "proposed"
+  },
+  {
+   "area": "dynamical-systems",
+   "feasibility": "A",
+   "gpu": true,
+   "slug": "hilbert-16",
+   "state": "proposed"
+  },
+  {
+   "area": "computation-complexity",
+   "feasibility": "B",
+   "gpu": "partial",
+   "slug": "linear-programming",
+   "state": "proposed"
+  },
+  {
+   "area": "analysis-pde",
+   "feasibility": "B",
+   "gpu": true,
+   "slug": "navier-stokes",
+   "state": "proposed"
+  },
+  {
+   "area": "mathematical-physics",
+   "feasibility": "B",
+   "gpu": true,
+   "slug": "yang-mills-mass-gap",
+   "state": "proposed"
+  },
+  {
+   "area": "number-theory",
+   "feasibility": "B",
+   "gpu": false,
+   "slug": "bsd",
+   "state": "proposed"
+  },
+  {
+   "area": "computation-complexity",
+   "feasibility": "C",
+   "gpu": "partial",
+   "slug": "p-vs-np",
+   "state": "proposed"
+  },
+  {
+   "area": "dynamical-systems",
+   "feasibility": "C",
+   "gpu": false,
+   "slug": "centralizers",
+   "state": "proposed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "feasibility": "C",
+   "gpu": false,
+   "slug": "hodge",
+   "state": "proposed"
+  }
+ ],
+ "updated": "2026-07-20"
+}

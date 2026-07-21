@@ -1,0 +1,13 @@
+{
+ "artifact": {
+  "bytes": 3458,
+  "path": "research/experiments.json",
+  "sha256": "61f6d5611780f3cac2c7dcac8edf47644c592d9f0276fb6a20f746e288ba1433"
+ },
+ "case_id": "experiments",
+ "gate": {
+  "lane": "precompute",
+  "reason": "baked registry export; the web replays it"
+ },
+ "lane": "precompute"
+}

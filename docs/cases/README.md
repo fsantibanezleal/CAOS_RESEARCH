@@ -1,20 +1,13 @@
-# Cases + categories
+# Cases: the baked registry artifacts
 
-Each case (`data-pipeline/researchlab/cases/`) declares a **CATEGORY** (the domain problem-type taxonomy), its
-params, an expected band (what a domain expert should see), and a real|synthetic flag. `registry.list_categories()`
-groups them. The **App shows ONE selected case**; **Experiments/Benchmark show cross-case summaries by category**
-(never mixed into the App).
+This repository's "cases" are the three registry artifacts the export pipeline bakes for the
+web app (CONTRACT 2), one manifest each under `data/derived/manifests/`:
 
-## Coverage matrix (EXAMPLE, SIR; replace with your real, varied matrix)
+| Case | Content | Source of truth |
+|---|---|---|
+| `portfolio` | The program board: areas, problems, lifecycle states, feasibility, GPU relevance. | `program/portfolio.yaml` |
+| `experiments` | The experiment log: id, title, verdict and date per EXP-NNN record. | `problems/<area>/<slug>/experiments/EXP-*/{hypothesis,verdict}.md` |
+| `jacobian` | The Jacobian problem payload: the announced map, the family table, the degree laws, the escape wall and census, the landscape survey. | Transcribed from the exact verdicts (EXP-004/007/008/011/012). |
 
-| id | category | expected band | real/synthetic |
-|---|---|---|---|
-| `EX01_subcritical` | sub-critical (R0<1) | no outbreak; attack rate ≈ 0 | synthetic |
-| `EX02_epidemic` | epidemic (R0>1) | clear single peak; attack rate ≈ 0.7–0.9 | synthetic |
-| `EX03_fast_burn` | fast-burn (high R0) | early sharp peak; attack rate → ~1 | synthetic |
-| `EX04_slow_spread` | slow-spread (R0~1.2) | broad low peak | synthetic |
-| `CTRL_degenerate` | control: degenerate | `I0=0` → no dynamics (must not crash) | synthetic |
-
-A real product fills a matrix spanning its real axes (not "two of everything") + explicit negative/sanity
-controls, and adds one `docs/cases/<category>/<case-id>.md` per case (formalization + expected results + anchor).
-Copy [`00_TEMPLATE.md`](00_TEMPLATE.md) as the starting point for each per-case page.
+Every value is traceable to a persisted experiment artifact; the bake is deterministic and the
+artifact guard (`scripts/check_artifacts.py`) verifies bytes against the manifests in CI.

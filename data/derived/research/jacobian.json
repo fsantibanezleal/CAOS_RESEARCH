@@ -1,0 +1,184 @@
+{
+ "family": [
+  {
+   "degrees": [
+    7,
+    6,
+    4
+   ],
+   "det": -2,
+   "fiber": 3,
+   "seed": "2w - 3w^2 (announced)"
+  },
+  {
+   "collision": {
+    "points": [
+     [
+      "-1/15",
+      "18",
+      "5130"
+     ],
+     [
+      "1/24",
+      "-18",
+      "-10368"
+     ]
+    ],
+    "target": [
+     "-54",
+     "-54",
+     "1"
+    ]
+   },
+   "degrees": [
+    12,
+    11,
+    4
+   ],
+   "det": -3,
+   "fiber": 4,
+   "seed": "w - 2w^3"
+  },
+  {
+   "degrees": [
+    17,
+    16,
+    4
+   ],
+   "det": -350,
+   "fiber": 5,
+   "seed": "8w - 12w^2 + 4w^3 - 5w^4"
+  },
+  {
+   "degrees": [
+    22,
+    21,
+    4
+   ],
+   "det": -20,
+   "fiber": 6,
+   "seed": "w - 3w^5"
+  },
+  {
+   "degrees": [
+    8,
+    7,
+    5
+   ],
+   "det": -2,
+   "fiber": 3,
+   "seed": "2w - 3w^2, section tail v^2"
+  }
+ ],
+ "fiber_cubic": {
+  "equation": "4 Phi(w) - w BC + A C^2 = 0",
+  "phi": "w^2 - w^3"
+ },
+ "landscape": [
+  {
+   "m": 1,
+   "o": [
+    -1,
+    -1,
+    1
+   ],
+   "status": "JC(2) bridge; 93 instances, all injective"
+  },
+  {
+   "m": 2,
+   "o": [
+    -2,
+    -1,
+    1
+   ],
+   "status": "THE mechanism (announced map + our family)"
+  },
+  {
+   "m": 3,
+   "o": [
+    -2,
+    -2,
+    1
+   ],
+   "status": "EMPTY (valuation proof)"
+  },
+  {
+   "m": 3,
+   "o": [
+    -3,
+    -1,
+    1
+   ],
+   "status": "rigid in scans (60 instances)"
+  },
+  {
+   "m": 4,
+   "o": [
+    -3,
+    -2,
+    1
+   ],
+   "status": "potential family EMPTY (Groebner certificate)"
+  }
+ ],
+ "laws": {
+  "degrees": "(5d-3, 5d-4, 4)",
+  "det": "-k p(1)^2",
+  "fiber_degree": "deg p + 1"
+ },
+ "map": {
+  "P": "u^3 z + y^2 u (4+3xy)",
+  "Q": "y + 3x u^2 z + 3x y^2 (4+3xy)",
+  "R": "2x - 3x^2 y - x^3 z",
+  "collision_points": [
+   [
+    0,
+    0,
+    -0.25
+   ],
+   [
+    1,
+    -1.5,
+    6.5
+   ],
+   [
+    -1,
+    1.5,
+    6.5
+   ]
+  ],
+  "collision_target": [
+   -0.25,
+   0,
+   0
+  ],
+  "det": -2,
+  "u": "1 + xy"
+ },
+ "wall": {
+  "bracket_coeffs": {
+   "A": 16,
+   "A2C2": 27,
+   "ABC": -18,
+   "B2": -1,
+   "B3C": 1
+  },
+  "census": {
+   "bracket_negative": 3,
+   "bracket_positive": 1
+  },
+  "equation": "27 A^2 C^2 - 18 A B C + 16 A + B^3 C - B^2 = 0",
+  "escape_demo": {
+   "surviving_point": [
+    2,
+    -0.5,
+    1.125
+   ],
+   "target": [
+    0,
+    1,
+    1
+   ]
+  }
+ }
+}

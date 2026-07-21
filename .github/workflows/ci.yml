@@ -22,7 +22,7 @@ jobs:
       - name: Tests
         run: pytest
       - name: Pipeline smoke (regenerate one case)
-        run: python -m researchlab.pipeline EX02_epidemic
+        run: python -m researchlab.pipeline all
       - name: CONTRACT 2, manifests <-> artifacts consistent (no drift)
         run: python scripts/check_artifacts.py
 

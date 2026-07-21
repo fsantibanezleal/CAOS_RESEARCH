@@ -3,6 +3,25 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.05.000], 2026-07-21
+
+### Added
+- M3, the web app: shell-based SPA (@fasl-work/caos-app-shell ^0.3.0; header/footer, EN/ES,
+  light/dark, KaTeX, ADR-0058 architecture modal with four theme-aware SVGs). Pages: Program
+  (portfolio board + experiment log), Methodology (the six binding documents + the loop), and
+  the Jacobian problem page with five tabs (summary, context and history, strategy, experiments
+  and results, open questions), inline Cite/Refs against 12 primary sources, the family table,
+  and two interactive replays of exact results: the fiber-cubic explorer and the escape-wall
+  census map (redraw-on-input only, no animation loops).
+- Real export pipeline (researchlab): the SIR template example is fully replaced by the
+  export_registry stage baking portfolio/experiments/jacobian JSON artifacts with SHA-256
+  manifests (CONTRACT 2 kept; artifact guard green); tests rewritten (bake contract, tmp-only
+  writes); template residue guard green (205 files clean).
+- Screenshot verification: all 3 routes x 2 themes x 5 problem tabs captured headless with zero
+  console/page errors; census wall rendered as a crisp sign-change edge; cubic explorer window
+  covers all three roots of the default collision target.
+- GitHub Pages deploy via Actions (bake + build + deploy-pages) at research.fasl-work.com.
+
 ## [0.04.000], 2026-07-21
 
 ### Added
