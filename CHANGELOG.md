@@ -3,6 +3,21 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.04.000], 2026-07-21
+
+### Added
+- EXP-012: the weighted mechanism landscape (weights (1, -1, -m)): determinant lemma and
+  pairing reductions certified generically; m = 1 identified as the JC(2) bridge class (93
+  instances, all injective); m = 3 classes empty (valuation proof) or rigid (60 instances);
+  the m = 4 potential-form family proved EMPTY (Groebner certificate, seed degree <= 5). The
+  parity-law design hypothesis was refuted by its own experiment; the finding is the
+  UNIQUENESS of the m = 2 mechanism within the scanned landscape.
+- Wiki 03/05 landscape sections; manuscript v0.04 (landscape subsection); PDF rebuilt.
+
+### Changed
+- EXP-012 runs as parts (A..E) after a monolithic timeout; instrumentation lessons (t-free
+  sections, auxiliary-symbol filters) recorded in the verdict.
+
 ## [0.03.000], 2026-07-21
 
 ### Added

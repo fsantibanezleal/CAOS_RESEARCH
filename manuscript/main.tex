@@ -25,7 +25,7 @@ Exact Validation, a General Seed Family, the Geometry of Non-Properness,\\
 and Two-Dimensional Equivariant Rigidity}
 \author{Felipe Santiba\~nez-Leal\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-21 (working manuscript, v0.03)}
+\date{2026-07-21 (working manuscript, v0.04)}
 
 \begin{document}
 \maketitle
@@ -318,9 +318,25 @@ general weight pairs, higher degrees); the global-minimality search in degrees 3
 (GPU-widened ansatz enumeration); the Bass--Connell--Wright push-through of $F$ to explicit
 cubic form; primary-source verification of the consequence cascade.
 
+
+\subsection*{The weighted landscape: uniqueness of the mechanism (EXP-012)}
+Generalizing to source weights $(1, -1, -m)$, the determinant lemma
+$\detJ = x^{\sigma+m} D$ and the pairing reductions $J_2 = \pm c_1^{\,r_a+r_b-1} D$ hold
+generically \textbf{[MV]}, and the reduced Jacobian vanishes to order $m-1$ along the section.
+The survey outcome: at $m = 1$ the reduced pair is itself a planar Keller map, so that class is
+a \emph{bridge} to $JC(2)$ (93 scanned instances, all injective; a collision there would refute
+$JC(2)$); at $m = 3$ the class $o = (-2,-2,1)$ is \emph{empty} (a one-line valuation proof,
+machine-certified) and $o = (-3,-1,1)$ is rigid in scans (60 instances); at $m = 4$ the
+potential-form family does \emph{not} exist: with seed degree up to 5 the admissibility system
+has Gr\"obner basis $[1]$ under $\mu \ne 0$ \textbf{[MV]}. Our design hypothesis (a parity law
+producing families at every even $m$) was thereby refuted by its own experiment; the finding is
+stronger: \emph{within the scanned weighted landscape, the announced counterexample's weight
+system is the unique collision-capable mechanism}. Scope: sparse bounded scans, quantified in
+the experiment record; wider weight systems and higher-degree seeds are queued.
+
 \subsection*{Reproducibility}
 Every theorem labeled [MV] is an exact sympy computation over $\Q$ with a persisted script and
-output in the repository (experiments EXP-001 through EXP-009 under
+output in the repository (experiments EXP-001 through EXP-012 under
 \texttt{problems/algebraic-geometry/jacobian-conjecture/}); each experiment declares its
 hypothesis before the run and records an adversarial-validation route with its verdict.
 

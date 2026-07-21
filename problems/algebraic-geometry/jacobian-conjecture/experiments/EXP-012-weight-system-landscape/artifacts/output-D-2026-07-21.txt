@@ -1,0 +1,9 @@
+============================================================================
+Part D: m = 3, o = (-2, -2, 1): lattice-level Keller scan (rigidity probe)
+============================================================================
+[PASS] D(i): o = (-2, -2, 1) class is EMPTY (D(0, 0) == 0 identically, generic ansatz)
+  polynomial Keller instances fiber-tested: 60
+[PASS] D(ii): (-3, -1, 1) scan result recorded  instances = 60
+[PASS] D(ii): no m = 3 lattice Keller instance with fiber size > 1 (odd-m rigidity holds here)  []
+
+RESULT (D): ALL CHECKS PASS.

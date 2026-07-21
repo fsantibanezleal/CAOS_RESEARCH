@@ -74,3 +74,23 @@ $w_i\,\tilde V - \tilde T = k^2 \Phi(w_i)$ for the target invariants, reconstruc
 - **What is essential?** Two independent weight-0 invariants + the potential form + valuation
   conditions at the origin. Exactly the first ingredient fails in dimension 2
   ([04-two-dimensional-frontier.md](04-two-dimensional-frontier.md)).
+
+## The landscape: this mechanism is unique among scanned weight systems (EXP-012)
+
+Generalizing the invariant framework to weights $(1, -1, -m)$: the determinant lemma
+$\det JF = x^{\sigma+m}\,D$ and the pairing reductions $J_2 = \pm c_1^{r_a+r_b-1} D$ hold for
+all scanned $(m, o)$, and the reduced Jacobian vanishes to order $m-1$ along the section. The
+survey outcome:
+
+| $m$ | Class | Result |
+|---|---|---|
+| 1 | $o = (-1, -1, 1)$ | The JC(2) bridge: the reduced pair is itself a 2D Keller map; 93 scanned instances, all injective. A collision here would refute JC(2). |
+| 2 | $o = (-2, -1, 1)$ | THE mechanism (the announced map and our family). |
+| 3 | $o = (-2, -2, 1)$ | EMPTY (valuation proof: $D(0,0) = 0$ identically). |
+| 3 | $o = (-3, -1, 1)$ | Rigid in scans (60 instances, all injective). |
+| 4 | $o = (-3, -2, 1)$, potential form | Does NOT exist: Groebner emptiness certificate (seed degree $\le 5$). |
+
+The design hypothesis (families at every even $m$) was refuted by its own experiment; the
+finding is stronger: **within the scanned weighted landscape, the announced counterexample's
+weight system is the unique one that collides.** Scope and queued widenings in the EXP-012
+verdict (JCB-019).

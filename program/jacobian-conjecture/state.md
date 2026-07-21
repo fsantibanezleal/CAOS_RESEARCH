@@ -10,7 +10,12 @@
   confirmed (degree law (5d-3, 5d-4, 4); fiber floor 3; NEW fiber-degree-6 instance; F minimal
   within family). EXP-009 confirmed (char-p certificates: degree 12 < ell for ell = 13, 101).
   Wiki 01-05 current; manuscript v0.02 (LaTeX + PDF) built.
-- **Now:** M3 web app (baked census/wall artifacts ready from EXP-007/011).
+- **Also done (2026-07-21, session 4):** EXP-012 confirmed 1-4 / refuted 5: landscape mapped;
+  the m = 2 mechanism is UNIQUE among scanned weighted systems (m = 1 = JC(2) bridge; m = 3
+  empty/rigid; m = 4 potential form empty by Groebner certificate).
+- **Now:** M3 web app (GitHub Pages per ADR-0016/0017/0056/0057/0058: shared shell,
+  header/footer, references, page structure; baked census/wall artifacts ready from
+  EXP-007/011; portfolio board from program/portfolio.yaml).
 - **Also done (2026-07-21, session 3):** EXP-010 confirmed (2D equivariant rigidity THEOREM,
   all weights: every equivariant Keller map of C^2 is linear). EXP-011 confirmed (real census:
   1 or 3 real preimages split by the discriminant wall; real surjectivity; real Keller
