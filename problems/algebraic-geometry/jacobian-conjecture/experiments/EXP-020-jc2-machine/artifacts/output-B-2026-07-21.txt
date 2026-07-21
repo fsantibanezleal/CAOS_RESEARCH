@@ -1,0 +1,5 @@
+Part B: (3, 4) elimination attempt (12 B-vars + 7 A-vars, lex).
+OUTCOME: the monolithic Groebner elimination did not finish within the 570 s compute cap
+(process killed; no partial basis emitted by sympy). Recorded per the hypothesis's
+"failure documented" clause; the staged strategy (blockwise / degreewise elimination using the
+floor linearity) is queued as JCB-021. See verdict.md.
