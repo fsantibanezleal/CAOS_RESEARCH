@@ -242,3 +242,9 @@
 - **Rigidity novelty pass (bounded):** two targeted searches found adjacent work but no
   statement of the equivariant rigidity theorem; recorded in wiki 04; full-text pass queued
   (JCB-031).
+
+## 2026-07-21 (session 14, addendum) - The gcd-12 certificate
+
+- **EXP-027 (confirmed):** at (24, <= 36), h = x^5 y^7: no Keller partner for ANY a != 0
+  (700 unknowns, one pairing, gcd -80 a^2, 227 s). Both uncovered composite gcds (9, 12) now
+  carry certified pure-slice exclusions; same Moh-range framing as EXP-026.

@@ -1,0 +1,5 @@
+  validate (18,<=27): 715 eqs, 403 unknowns, 312 null vectors, 1 pairings, gcd = -144*a_**2, 75.3 s
+[PASS] validation: EXP-026 certificate reproduces  gcd = -144*a_**2
+  certify (24,<=36): 1261 eqs, 700 unknowns, 561 null vectors, 1 pairings, gcd = -80*a_**2, 226.7 s
+[PASS] THE CERTIFICATE: no Keller partner of degree <= 36 for ANY a != 0 (gcd 12)  gcd = -80*a_**2
+RESULT: ALL CHECKS PASS.
