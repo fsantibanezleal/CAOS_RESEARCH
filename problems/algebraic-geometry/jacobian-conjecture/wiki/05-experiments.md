@@ -13,6 +13,7 @@
 | [EXP-009](../experiments/EXP-009-char-p-reductions/) | Does the certificate survive char p? | **confirmed** | P3 mod 13 and mod 101: explicit non-injective Keller maps over $\mathbb{F}_\ell$ of degree $12 < \ell$ (below the characteristic, unlike $x - x^p$). |
 | [EXP-010](../experiments/EXP-010-2d-rigidity-all-weights/) | Rigidity for ALL weights? | **confirmed** | THEOREM: every $\mathbb{G}_m$-equivariant Keller map of $\mathbb{C}^2$ is linear (classification + positive kill factor; 648 identity checks; empty constrained solves). |
 | [EXP-011](../experiments/EXP-011-real-fiber-census/) | The real picture of F? | **confirmed** | Census 1 or 3 real preimages split by the discriminant wall ($D > 0$: 3, $D < 0$: 1); two exact routes agree; real surjectivity on a 36-target grid; real Keller corollary recorded. |
+| [EXP-012](../experiments/EXP-012-weight-system-landscape/) | Do sibling weighted mechanisms exist? | **confirmed 1-4, refuted 5** | Landscape mapped: m = 1 is the JC(2) bridge (93 instances injective); m = 3 empty (valuation proof) or rigid (60 instances); the m = 4 potential family is EMPTY (Groebner certificate). The m = 2 mechanism is UNIQUE among scanned systems. |
 
 Planned next: JC-P3 continuation (global-minimality search, degrees 3..6, GPU-widened ansatz
 enumeration), JC-P4 cascade verification from primary sources, optional formal hardening of the

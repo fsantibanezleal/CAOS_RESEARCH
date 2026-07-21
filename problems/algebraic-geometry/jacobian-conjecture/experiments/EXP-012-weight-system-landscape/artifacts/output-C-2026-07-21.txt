@@ -1,0 +1,8 @@
+============================================================================
+Part C: m = 1, o = (-1, -1, 1): sparse-pattern Keller scan (JC(2) bridge class)
+============================================================================
+  polynomial Keller instances fiber-tested: 93
+[PASS] C: scan non-vacuous  instances = 93
+[PASS] C: every instance has in-image fiber size <= 1 (bridge class rigid here)  []
+
+RESULT (C): ALL CHECKS PASS.

@@ -1,0 +1,9 @@
+============================================================================
+Part E: m = 4, o = (-3, -2, 1): the NEW family (V' = k^2 p + mu s^2)
+============================================================================
+  low-weight polynomiality conditions: 5
+  Groebner certificate: the admissibility system is EMPTY (no mu != 0 solution)
+[PASS] E-REFUTED (recorded): no admissible m = 4 potential-form instance exists (seed degree <= 5, pairing (-3, -2, 1), gauge Q0 = 1)
+[FAIL] E: an explicit m = 4 instance was built  prediction 5 REFUTED: the m = 4 family does not exist at these sizes
+
+RESULT (E): 1 FAILED: ['E: an explicit m = 4 instance was built']

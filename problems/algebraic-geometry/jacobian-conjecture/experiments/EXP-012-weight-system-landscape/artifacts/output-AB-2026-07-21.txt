@@ -1,0 +1,14 @@
+============================================================================
+Part A: determinant lemma for weights (1, -1, -m) [sparse generic f_i]
+============================================================================
+[PASS] A: det JF == x^(sigma+m) * D for 20 (m, o) cases
+
+============================================================================
+Part B: pairing reductions J2 == (+/-) c1^(ra+rb-1) * D [sparse generic]
+============================================================================
+[PASS] B: m = 1: J2 == (+1) c1^1 D identically
+[PASS] B: m = 2: J2 == (-1) c1^2 D identically
+[PASS] B: m = 3: J2 == (+1) c1^3 D identically
+[PASS] B: m = 4: J2 == (-1) c1^4 D identically
+
+RESULT (A+B): ALL CHECKS PASS.

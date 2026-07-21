@@ -74,3 +74,19 @@
   empty real fiber on a 36-target grid (real surjectivity; odd-degree argument). Recorded
   corollary: F|_R^3 is a surjective, orientation-reversing, non-injective real Keller map
   (constant-Jacobian real analogue in dimension 3 falls with the same example).
+
+## 2026-07-21 (session 4) - The landscape: the m = 2 mechanism is unique
+
+- **EXP-012 (confirmed 1-4, REFUTED 5):** the weighted mechanism landscape for weights
+  (1, -1, -m). Determinant lemma + pairing reductions certified generically (orders m - 1 along
+  the section). m = 1 is the JC(2) bridge class: 93 instances, all injective (a collision there
+  would refute JC(2)). m = 3: the (-2, -2, 1) class is EMPTY (valuation proof at the origin);
+  (-3, -1, 1): 60 instances, all injective. m = 4: the potential-form family does NOT exist:
+  Groebner emptiness certificate (seed degree <= 5, gauge Q0 = 1, mu != 0 Rabinowitsch). The
+  parity-law design hypothesis is refuted; the finding is UNIQUENESS: within everything
+  scanned, the announced counterexample's weight system is the only collision-capable weighted
+  mechanism. Instrumentation lessons recorded (t-free sections; auxiliary-symbol filters).
+- Diffusion updated (Felipe direction): house-style carousel rebuilt (card 1 = origin + our
+  findings strip), post v3 with the uniqueness item and hashtags.
+- Felipe reminder logged: M3 web app (GitHub Pages) is next; ADR-0016/0017/0056/0057/0058 bind
+  the shell, header/footer, references and page structure.
