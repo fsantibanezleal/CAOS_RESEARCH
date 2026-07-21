@@ -5,7 +5,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]
                        / "problems" / "algebraic-geometry" / "jacobian-conjecture" / "code"))
 
-from sympy import Rational, symbols  # noqa: E402
+from sympy import Rational  # noqa: E402
 from jclib.jc2 import bridge_extract, check_collision2, check_keller2, x, y, v, t  # noqa: E402
 
 
