@@ -1,0 +1,8 @@
+============================================================================
+Part A: pure slice P = x + a (xy)^2, all a != 0 (certificate)
+============================================================================
+  A: 36 eqs, 25 unknowns, 11 left-null vectors, 1 nonzero pairings
+  gcd of certificate pairings: -8*a_**2
+[PASS] A: certificate pairings exist and their gcd is (unit) * a^k: the (4, <= 6) window is empty for EVERY a != 0 (sound, not merely generic)
+
+RESULT: ALL CHECKS PASS.

@@ -1,0 +1,3 @@
+Part B: fraction-field nullspace over QQ(a, p20..p03) exceeded the 540 s cap (exit 124,
+no partial output). Cap-out documented per the EXP-020 precedent; staged variants queued in
+JCB-028 (mixed numeric/symbolic parameter slices; bilinear block elimination).
