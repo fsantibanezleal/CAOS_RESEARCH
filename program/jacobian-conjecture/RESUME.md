@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-21, session 13 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-21, session 14 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -58,33 +58,33 @@ census) · 012 conf 1-4/refuted 5 (landscape; uniqueness) · 013 conf 1-2/partia
 bridge; (2,2) exhaustive) · 015 confirmed (checker + bridge tooling) · 016 confirmed (cascade
 verified) · 017 confirmed (bilinear exhaustives (2,3)/(3,3)) · 018 confirmed (Poisson +
 symmetric closure) · 019 confirmed (floors; (2,3) full closure ideal) · 020 confirmed
-(THEOREMS (2,3)/(2,4)/(2,5); (3,4) elimination cap-out documented) · 021 confirmed (THE UNIFORM min-degree-2 THEOREM) · 022 confirmed (shear closure for ANY f; (3,3) cube alignment FORCED; the descent inverter runs, library fully inverted) · 023 confirmed (the (4, <= 6) primitive window is EMPTY on the sampled slice, +8 via one descent step; controls non-vacuous) · 024 confirmed (pure-slice certificate -8 a^2: empty for EVERY a != 0; full 8-param certificate capped, staged) - 025 confirmed (ALL 63 slices up to 3 lower coeffs empty; windows <= 18 empty; E-locus closed; sources verified: (4,*) ladder literature-covered, open frontier = composite gcd 9, 12).
+(THEOREMS (2,3)/(2,4)/(2,5); (3,4) elimination cap-out documented) · 021 confirmed (THE UNIFORM min-degree-2 THEOREM) · 022 confirmed (shear closure for ANY f; (3,3) cube alignment FORCED; the descent inverter runs, library fully inverted) · 023 confirmed (the (4, <= 6) primitive window is EMPTY on the sampled slice, +8 via one descent step; controls non-vacuous) · 024 confirmed (pure-slice certificate -8 a^2: empty for EVERY a != 0; full 8-param certificate capped, staged) - 025 confirmed (ALL 63 slices up to 3 lower coeffs empty; windows <= 18 empty; E-locus closed; sources verified: (4,*) ladder literature-covered, open frontier = composite gcd 9, 12) . 026 confirmed (FIRST composite-gcd exclusions: (18, <= 27) certified empty for all a != 0, gcd -144 a^2; h-sweep + gcd-12 probe empty; inside Moh range, certificate is the new content).
 
 ## 4. In flight
 
-Nothing mid-run. Session 13 closed EXP-025 (staged certificates): every slice with up to 3
-lower coefficients (7 + 21 + 35) is empty for ALL parameter values at (4, <= 6); pure-slice
-windows <= 10/14/18 all empty (pairings -128a^4, -256a^5, -1024a^6; exponent pattern noted,
-closed-form all-degree certificate conjectured [C]); the one genuine candidate locus
-(4as = u^2 on p20+p21+p03: the translation orbit of the pure slice) closed COMPLETELY via
-a = al^2, u = 2 al be, s = be^2 (gcd 12 al^6). JCB-029 closed: Magnus 1954 (gcd 1; YEAR
-CORRECTED from 1955), Appelgate-Onishi 1985 + Nagata (gcd prime; coverage {1,8} u P u 2P);
-plane JC is classically EQUIVALENT to divisibility = our primitive framing. HONEST
-consequence: every (4, 4k+2) rung has gcd 2, so the whole (4,*) ladder is literature-covered;
-our certificates there are independent replications. The genuinely open frontier: composite
-gcd 9 and 12, bidegrees (18,27) and (24,36) (JCB-030). The web app now opens every experiment
-record in a full modal reader (hypothesis + verdict + artifacts baked into experiments.json),
-screenshot-verified in both themes.
+Nothing mid-run. Session 14 made first contact with the composite-gcd frontier (EXP-026):
+instrument validated at scale, the (18, <= 27) window empty at numeric samples and across
+three degree-9 base shapes, THE CERTIFICATE for h = x^4 y^5 (no partner degree <= 27 for any
+a != 0; 312 null vectors, one pairing, gcd -144 a^2), and the gcd-12 reach probe empty
+((24, <= 36), 700 unknowns, 9.4 s). Honest framing everywhere: gcd 9 is outside the
+gcd-coverage theorems but (18, 27) is inside Moh's degree-100 range, so the certificate is
+the new content; beyond-Moh degrees are the target. The rigidity novelty pass (bounded, 2
+searches) found no statement of our theorem; wiki 04 records it; JCB-031 queues the
+full-text pass (including a primary read of Moh's coverage claim).
 
 ## 5. Next actions, ordered
 
-1. JCB-030 (the genuinely open frontier): composite gcd 9 / 12: structural constraints at
-   bidegrees (18,27), (24,36): leading-form theory (tops a h^2 vs b h^3 with deg h = 9, or
-   h-powers at gcd 12), Newton-polygon constraints, and staged slice scans where linear
-   algebra reaches. Direct elimination is out of range; design the structural route first.
-2. JCB-028 (optional depth): 4-coefficient slices at (4, <= 6); the closed-form all-degree
+1. JCB-030 (continue): (a) the gcd-12 certificate: symbolic a at (24, <= 36) (the probe ran
+   9.4 s numeric; symbolic expect ~10-20x: feasible); (b) slice widening at (18, 27) (the
+   EXP-025 slice-and-union program at these degrees); (c) windows past 27; (d) design the
+   beyond-Moh rung (smallest uncovered bidegrees > 100: e.g. gcd 9 at (108, 162)? verify
+   Moh's exact coverage claim first, JCB-031).
+2. JCB-031: full-text pass: Moh 1983 (exact coverage statement), the Newton-polygon
+   literature around minimal counterexamples, and the rigidity novelty check; unhedge or
+   qualify the manuscript accordingly.
+3. JCB-028 (optional depth): 4-coefficient slices at (4, <= 6); the closed-form all-degree
    pure-slice certificate [C] (exponent pattern 2,4,5,6 at windows 6,10,14,18).
-3. JCB-021 staged (3,4) elimination (degreewise/blockwise); remaining (3,n) strata sweeps.
+4. JCB-021 staged (3,4) elimination (degreewise/blockwise); remaining (3,n) strata sweeps.
 3. JCB-022 EXP-014 Puiseux escape obstructions at min degree 3; the genuinely hard territory
    beyond: shared-top cases with deg h >= 2 ((4,6)-type).
 4. JCB-024 Hessian-nilpotent quartic extraction (fetch the de Bondt-van den Essen

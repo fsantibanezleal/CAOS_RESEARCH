@@ -227,3 +227,18 @@
 - **Web:** every experiment record is now readable in place: feed and log titles open a modal
   with the full hypothesis, verdict and artifact inventory (baked into experiments.json);
   lazy-loaded renderer; screenshot-verified in both themes on both pages.
+
+## 2026-07-21 (session 14) - First exclusions at composite gcd; the reach test; the novelty pass
+
+- **EXP-026 (confirmed):** first contact with gcd 9 territory, bidegrees (18, 27): the
+  (18, <= 27) completion window is empty numerically (3 samples, ~3 s each at 403 unknowns)
+  and for three structurally different degree-9 bases; THE CERTIFICATE: for h = x^4 y^5, no
+  Keller partner of degree <= 27 exists for ANY a != 0 (pairing gcd -144 a^2). gcd 9 is
+  outside the gcd-coverage theorems ({1,8} u P u 2P); honest framing: (18,27) sits inside
+  Moh's degree-100 verified range, so the new content is the explicit machine certificate,
+  not the truth itself; beyond-Moh degrees are the next rung. The gcd-12 reach test
+  ((24, <= 36), 700 unknowns) is empty at the probe in 9.4 s: the full gcd-12 certificate is
+  within reach.
+- **Rigidity novelty pass (bounded):** two targeted searches found adjacent work but no
+  statement of the equivariant rigidity theorem; recorded in wiki 04; full-text pass queued
+  (JCB-031).

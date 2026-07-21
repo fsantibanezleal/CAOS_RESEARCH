@@ -1,0 +1,23 @@
+============================================================================
+Part C: h-shape sweep at a = 1 (monomial / split factor / binomial tail)
+============================================================================
+  C[x^5y^4]: INCONSISTENT (2.1 s)
+  C[(xy)^4(x+y)]: INCONSISTENT (5.2 s)
+  C[x^4y^5+y^9]: INCONSISTENT (5.5 s)
+[PASS] C: the window is EMPTY for every h shape
+
+============================================================================
+Part D: the certificate, h = x^4 y^5, a symbolic (all a != 0)
+============================================================================
+  D[(18,<=27)]: 715 eqs, 403 unknowns, 312 null vectors, 1 nonzero pairings, 81.6 s
+  D: gcd of pairings = -144*a_**2
+[PASS] D: NO Keller partner of degree <= 27 for ANY a != 0 (gcd 9 territory: literature-uncovered)
+
+============================================================================
+Part E: reach test at gcd 12: the (24, <= 36) window, h = x^5 y^7, a = 1
+============================================================================
+  window unknowns: 700
+  E[a=1]: INCONSISTENT (9.4 s)
+[PASS] E: the (24, <= 36) window is EMPTY at the probe sample
+
+RESULT: ALL CHECKS PASS.
