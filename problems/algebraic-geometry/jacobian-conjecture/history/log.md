@@ -140,3 +140,17 @@
   remains open, the method note), built clean.
 - Diffusion: difusion/jacobian-cascade/ post drafted in the management repo (honoring the
   origin; our role = source-verified evaluation).
+
+## 2026-07-21 (session 8) - The descent becomes linear algebra; (2,3) closes in full
+
+- **EXP-019 (confirmed):** the Keller floors. (1) Floor identities 2-3 certified on the
+  library; h-divisibility exhibited (up to p = 6). (2) Wider exhaustive certificates: (2,4)
+  256-grid, (2,5), (3,4): all injective, witnesses recovered. (3) THE HEADLINE: full-A closure
+  of (2,3): the consistency ideal of the linear Keller system is ONE generator,
+  (4 A0 A2 - A1^2)^2 = 0: a quadratic P completes iff its top form is a perfect square,
+  exactly the leading-form degeneracy EXP-013 predicted. Theory and elimination met in one
+  equation. The JC(2) machine is now: eliminate -> parametrize -> complete linearly ->
+  fiber-test, degree pair by degree pair, with the tropical theory predicting each consistency
+  ideal in advance (JCB-021 continues: (2,4)/(3,4) eliminations, branch tightening of (2,3)).
+- Also this day (sessions 7 side): the cascade carousel shipped in the management repo and the
+  cascade post links the companion manuscript PDF directly.

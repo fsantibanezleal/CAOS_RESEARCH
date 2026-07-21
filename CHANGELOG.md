@@ -3,6 +3,16 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.09.000], 2026-07-21
+
+### Added
+- EXP-019: the Keller floors: floor identities and h-divisibility certified on the library;
+  wider exhaustive JC(2) certificates at (2,4), (2,5), (3,4); and the FULL-A closure of
+  (2,3): the consistency ideal is the single equation (4 A0 A2 - A1^2)^2 = 0, exactly the
+  leading-form degeneracy predicted by EXP-013: the tropical theory and the elimination agree
+  in one equation. The JC(2) machine (eliminate, parametrize, complete linearly, fiber-test)
+  is established.
+
 ## [0.08.000], 2026-07-21
 
 ### Added
