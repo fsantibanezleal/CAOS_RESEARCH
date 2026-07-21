@@ -197,6 +197,15 @@
    "slug": "EXP-023-primitive-stratum",
    "title": "First contact with the primitive stratum: the (4,6) scan",
    "verdict": "confirmed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-21",
+   "id": "024",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-024-46-certificate",
+   "title": "The (4,6) window: from samples to a certificate",
+   "verdict": "confirmed"
   }
  ]
 }

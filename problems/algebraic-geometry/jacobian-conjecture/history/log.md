@@ -202,3 +202,11 @@
   realization). Literature context [C, primary fetch queued]: gcd = 1 (Magnus) and gcd = prime
   (Appelgate-Onishi, Nagata) are classically excluded; our gcd-2 emptiness replicates a slice
   independently; the open ladder is (4, 4k+2), k >= 2, and composite gcd >= 4 ((8,12)).
+
+## 2026-07-21 (session 12, addendum) - The (4,6) pure-slice certificate
+
+- **EXP-024 (confirmed):** sound all-parameter certificates via cleared left-null vectors
+  (the fraction-field RREF instrument was first refuted: it normalizes the obstruction to 1,
+  generic-only). Pure slice P = x + a (xy)^2: the single pairing is -8 a^2, so the (4, <= 6)
+  window is empty for EVERY a != 0 (theorem on the slice, exceptional-locus gap closed). The
+  8-parameter certificate capped at 540 s (documented); staged variants queued (JCB-028).

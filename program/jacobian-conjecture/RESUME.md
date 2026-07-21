@@ -58,7 +58,7 @@ census) · 012 conf 1-4/refuted 5 (landscape; uniqueness) · 013 conf 1-2/partia
 bridge; (2,2) exhaustive) · 015 confirmed (checker + bridge tooling) · 016 confirmed (cascade
 verified) · 017 confirmed (bilinear exhaustives (2,3)/(3,3)) · 018 confirmed (Poisson +
 symmetric closure) · 019 confirmed (floors; (2,3) full closure ideal) · 020 confirmed
-(THEOREMS (2,3)/(2,4)/(2,5); (3,4) elimination cap-out documented) · 021 confirmed (THE UNIFORM min-degree-2 THEOREM) · 022 confirmed (shear closure for ANY f; (3,3) cube alignment FORCED; the descent inverter runs, library fully inverted) · 023 confirmed (the (4, <= 6) primitive window is EMPTY on the sampled slice, +8 via one descent step; controls non-vacuous).
+(THEOREMS (2,3)/(2,4)/(2,5); (3,4) elimination cap-out documented) · 021 confirmed (THE UNIFORM min-degree-2 THEOREM) · 022 confirmed (shear closure for ANY f; (3,3) cube alignment FORCED; the descent inverter runs, library fully inverted) · 023 confirmed (the (4, <= 6) primitive window is EMPTY on the sampled slice, +8 via one descent step; controls non-vacuous) · 024 confirmed (pure-slice certificate -8 a^2: empty for EVERY a != 0; full 8-param certificate capped, staged).
 
 ## 4. In flight
 
@@ -76,11 +76,10 @@ tool, shell byte-patching would not land).
 
 ## 5. Next actions, ordered
 
-1. JCB-028: (a) variety-level inconsistency certificate at (4,6): keep the P-parameters
-   symbolic, add Rabinowitsch t*a - 1, ask whether 1 lies in the ideal (degrevlex suffices
-   for 1-membership; ~34 vars bilinear, cap 570 s, document a cap-out honestly); (b) widen
-   the window to (4, <= 10) (33 B-unknowns, still linear per sample); (c) the composite-gcd
-   ladder (8,12) staged.
+1. JCB-028 (continue): the full 8-parameter (4,6) certificate BEYOND the 540 s cap: staged
+   slices (fix P3 numeric, keep P2 + a symbolic and vice versa; the left-null certificate
+   method of EXP-024 is the sound instrument, NEVER fraction-field RREF); then (4, <= 10)
+   windows (33 B-unknowns, linear per sample); then the (8,12) composite-gcd ladder.
 2. JCB-029: primary-source fetch (Magnus 1955; Appelgate-Onishi 1985; Nagata) via van den
    Essen's monograph; unhedge the literature context in wiki 04 / manuscript.
 3. JCB-021 staged (3,4) elimination (degreewise/blockwise); remaining (3,n) strata sweeps.

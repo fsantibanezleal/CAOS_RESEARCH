@@ -3,6 +3,15 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.14.000], 2026-07-21
+
+### Added
+- EXP-024: sound all-parameter certificates for the (4,6) window via cleared left-null
+  vectors (the fraction-field RREF instrument was refuted first: it normalizes the
+  obstruction away). Pure-slice theorem: the pairing -8 a^2 empties the (4, <= 6) window for
+  EVERY a != 0. The 8-parameter certificate capped at 540 s, documented; staged variants
+  queued (JCB-028).
+
 ## [0.13.000], 2026-07-21
 
 ### Added
