@@ -61,3 +61,22 @@ invertible). Our 3D family shows exactly HOW asymptotic values are produced (the
 inverse has denominators vanishing as $w$ approaches roots of $BC = k^2 p(w)$); the 2D question
 is whether the one-invariant geometry leaves room for that escape. This is the sharpest
 transferable question our results produce, and it is where the program pushes next (EXP-006/007).
+
+## The JC(2) machine and the first full closures (EXP-017/019/020)
+
+The Keller condition is bilinear in the coefficient vectors, so in the affine gauge it is
+LINEAR in one side given the other. The machine per degree pair: eliminate the large side
+(a Groebner elimination gives the consistency ideal in the small side, whose shape the
+leading-form theory predicts in advance), parametrize the consistency variety, complete
+linearly, and either invert explicitly or fiber-test.
+
+Results so far: the $(2,3)$ consistency ideal is the single equation
+$(4A_0A_2 - A_1^2)^2 = 0$ (the top form of $P$ must be a perfect square, exactly the
+leading-form degeneracy); the $(2,4)$ elimination returns the SAME ideal (the locus is
+completion-degree independent); and on the parametrized variety $P = x + (lpha x + eta y)^2$
+the complete $(2,3)$ family is the single branch
+$Q = y - lpha^3 x^2/eta - 2lpha^2 xy - lphaeta y^2$, with the explicit polynomial
+inverse verified by exact composition ($eta = 0$ forces the affine case). **Every normalized
+$(2,3)$ Keller map is invertible, constructively.** Exhaustive certificates also cover
+$(2,2)$, $(2,4)$, $(2,5)$, $(3,3)$, $(3,4)$ windows. Classical in content; ours in mechanical
+form, and the machine scales.

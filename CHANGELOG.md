@@ -3,6 +3,16 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.10.000], 2026-07-21
+
+### Added
+- EXP-020: the JC(2) machine proves full cases: THEOREMS at (2,3), (2,4) and (2,5) (one-branch
+  completions on the discriminant variety, explicit polynomial inverses verified by exact
+  composition, symbolically in all parameters); the (2,4) consistency ideal equals the (2,3)
+  one (completion-degree independence, as predicted); the (3,4) monolithic elimination
+  documented as exceeding the window (staged strategy queued). Next: the uniform (2,n)
+  theorem attempt (JCB-025).
+
 ## [0.09.000], 2026-07-21
 
 ### Added
