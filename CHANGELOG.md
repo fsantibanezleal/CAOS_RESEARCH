@@ -3,6 +3,17 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.07.001], 2026-07-21
+
+### Changed
+- Home: "The experiment log" is now the cross-problem feed "Latest experiments across the
+  program": every entry carries a problem chip linked to its problem page (scales to wave-2
+  problems; each problem page keeps its own filtered log). Screenshot-verified.
+
+### Fixed
+- Version drift: the shell footer reads the frontend package version, which had lagged the
+  repository version; frontend/pyproject/researchlab now move together (0.7.1 / 0.07.001).
+
 ## [0.07.000], 2026-07-21
 
 ### Added

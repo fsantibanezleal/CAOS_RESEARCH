@@ -43,8 +43,11 @@
 .rs-timeline { list-style: none; padding: 0; margin: 0.8rem 0; }
 .rs-timeline li { display: grid; grid-template-columns: 96px 132px 1fr; gap: 0.7rem;
   padding: 0.5rem 0; border-bottom: 1px solid var(--rs-border); align-items: baseline; }
+.rs-timeline-wide li { grid-template-columns: 88px 190px 110px 1fr; }
+.rs-timeline .prob a { text-decoration: none; }
 .rs-timeline .exp { font-weight: 600; color: var(--rs-accent); white-space: nowrap; }
 .rs-mono { font-family: ui-monospace, monospace; font-size: 0.9em; }
 .rs-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 @media (max-width: 760px) { .rs-grid2 { grid-template-columns: 1fr; }
-  .rs-timeline li { grid-template-columns: 84px 1fr; } .rs-timeline .date { display: none; } }
+  .rs-timeline li, .rs-timeline-wide li { grid-template-columns: 84px 1fr; }
+  .rs-timeline .date, .rs-timeline-wide .prob { display: none; } }

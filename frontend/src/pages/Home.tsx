@@ -78,17 +78,24 @@ export default function Home() {
         <p className="rs-readout">{t('Loading the baked portfolio…', 'Cargando el portafolio horneado…')}</p>
       )}
 
-      <h2>{t('The experiment log so far', 'El registro de experimentos hasta ahora')}</h2>
+      <h2>{t('Latest experiments across the program', 'Ultimos experimentos del programa')}</h2>
       <p>
         {t(
-          'Twelve experiments on the Jacobian program in the first three days, including one refuted constructor and one refuted design hypothesis; both refutations produced the next result.',
-          'Doce experimentos del programa jacobiano en los primeros tres dias, incluyendo un constructor refutado y una hipotesis de diseño refutada; ambas refutaciones produjeron el siguiente resultado.',
+          'The cross-problem feed: every record labels its problem (each problem page keeps its own filtered log). Refuted attempts are part of the record; both refutations so far produced the next result.',
+          'El feed entre problemas: cada registro etiqueta su problema (cada pagina de problema mantiene su propio registro filtrado). Los intentos refutados son parte del registro; las dos refutaciones habidas produjeron el siguiente resultado.',
         )}
       </p>
-      <ul className="rs-timeline">
+      <ul className="rs-timeline rs-timeline-wide">
         {experiments.map((e) => (
-          <li key={e.slug}>
+          <li key={`${e.problem}-${e.slug}`}>
             <span className="exp">EXP-{e.id}</span>
+            <span className="prob">
+              {e.problem === 'jacobian-conjecture' ? (
+                <Link to="/problems/jacobian-conjecture" className="rs-badge state">{e.problem}</Link>
+              ) : (
+                <span className="rs-badge state">{e.problem}</span>
+              )}
+            </span>
             <span className="date rs-readout">{e.date}</span>
             <span>
               {e.title}{' '}
