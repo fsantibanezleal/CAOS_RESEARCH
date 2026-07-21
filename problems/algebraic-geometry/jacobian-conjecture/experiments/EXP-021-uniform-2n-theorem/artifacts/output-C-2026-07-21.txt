@@ -1,0 +1,25 @@
+============================================================================
+Part A: sufficiency: J(P, ell/beta + H(P)) == 1 for generic H (deg H <= 4)
+============================================================================
+[PASS] A: identity J == 1 holds over QQ(alpha, beta, h0..h3)  deg Q = 6
+
+============================================================================
+Part B: completeness: dim ker L on deg <= n equals floor(n/2) + 1 (n = 3..8)
+============================================================================
+[PASS] B: n = 3: kernel dimension == 2 at all samples
+[PASS] B: n = 4: kernel dimension == 3 at all samples
+[PASS] B: n = 5: kernel dimension == 3 at all samples
+[PASS] B: n = 6: kernel dimension == 4 at all samples
+
+============================================================================
+Part C: the closed inverse: generic at deg H <= 1; exact spot checks at deg H = 3, 4
+============================================================================
+[PASS] C: generic H of degree 1 (symbolic alpha, beta, g0, g1): G o F == id and F o G == id
+[PASS] C: exact spot check 0 (deg H = 3): G o F == id
+[PASS] C: exact spot check 1 (deg H = 4): G o F == id
+
+RESULT: ALL CHECKS PASS. Assembled theorem [D]: with the consistency ideals
+(EXP-019/020: a degree-2 component forces the rank-1 top; beta = 0 forces affine) and
+Wang's degree-2 case, EVERY planar Keller map with min degree <= 2 equals
+(x + ell^2, ell/beta + H(x + ell^2)) up to affine gauge, and is invertible by the
+closed formula above. The open frontier moves to min degree >= 3.

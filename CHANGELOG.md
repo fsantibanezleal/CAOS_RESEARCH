@@ -3,6 +3,19 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.11.000], 2026-07-21
+
+### Added
+- EXP-021: THE UNIFORM THEOREM: every planar Keller map with min degree <= 2 is
+  (x + ell^2, ell/beta + H(x + ell^2)) up to affine gauge, invertible by one closed formula
+  (shear-PDE sufficiency generic; completeness by exact kernel dimensions; inverse verified).
+  The JC(2) frontier moves to min degree >= 3 (JCB-026: the quasi-triangular conjecture).
+- methodology/07-session-handoff.md + program/jacobian-conjecture/RESUME.md: the resume
+  contract: every session closes by persisting the full problem state for zero-loss restart.
+
+### Changed
+- Home feed: a summary of the 20 most recent experiments, newest first, problem-labeled.
+
 ## [0.10.000], 2026-07-21
 
 ### Added

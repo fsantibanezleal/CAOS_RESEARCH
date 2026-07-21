@@ -166,3 +166,18 @@
   parameter, explicitly invertible symbolically including the free. (4) The (3,4) monolithic
   elimination exceeded the compute window; staged strategy queued (JCB-021). Next theorem
   attempt: the uniform all-n statement for the (2,n) column (JCB-025).
+
+## 2026-07-21 (session 10) - The uniform theorem; the resume contract; the feed summary
+
+- **Methodology 07 (session handoff) + program RESUME.md shipped:** every session now closes
+  by updating the problem's RESUME (state, objects, in-flight, next actions, gotchas): a new
+  session resumes with zero loss.
+- **EXP-021 (confirmed): THE UNIFORM THEOREM.** Every planar Keller map with min degree <= 2
+  is (x + ell^2, ell/beta + H(x + ell^2)) up to affine gauge, invertible by one closed
+  formula. Certified: shear-PDE sufficiency (generic H); completeness by exact kernel
+  dimensions (floor(n/2) + 1, n = 3..6); the closed inverse (generic deg <= 1 + exact spot
+  checks at 3, 4). Three independent routes now agree (elimination ideals, leading forms,
+  PDE characteristics); EXP-020's free parameters are H's coefficients, retro-explained.
+  JC(2)'s frontier formally moves to min degree >= 3 (JCB-026: the quasi-triangular
+  conjecture is the next theorem attempt).
+- Web: the Home feed is now a summary (20 most recent, newest first, problem-labeled).

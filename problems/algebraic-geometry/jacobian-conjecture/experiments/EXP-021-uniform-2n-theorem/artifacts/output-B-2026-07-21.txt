@@ -1,0 +1,13 @@
+============================================================================
+Part A: sufficiency: J(P, ell/beta + H(P)) == 1 for generic H (deg H <= 4)
+============================================================================
+[PASS] A: identity J == 1 holds over QQ(alpha, beta, h0..h3)  deg Q = 6
+
+============================================================================
+Part B: completeness: dim ker L on deg <= n equals floor(n/2) + 1 (n = 3..8)
+============================================================================
+[PASS] B: n = 3: kernel dimension == 2 at all samples
+[PASS] B: n = 4: kernel dimension == 3 at all samples
+[PASS] B: n = 5: kernel dimension == 3 at all samples
+[PASS] B: n = 6: kernel dimension == 4 at all samples
+RESULT (B): ALL CHECKS PASS.
