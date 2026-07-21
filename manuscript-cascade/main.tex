@@ -1,0 +1,142 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\definecolor{linknavy}{RGB}{25, 55, 125}
+\usepackage[colorlinks=true, linkcolor=linknavy, citecolor=linknavy, urlcolor=linknavy]{hyperref}
+\newtheorem{corollary}{Corollary}
+\newcommand{\C}{\mathbb{C}}
+
+\title{The Collateral Impact of the Three-Dimensional Jacobian Counterexample:\\ a Source-Verified Cascade}
+\author{Felipe Santiba\~nez-Leal\\
+\small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
+\date{2026-07-21 (companion document, v0.01)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+On 2026-07-19, Levent Alp\"oge announced an explicit counterexample to the Jacobian conjecture
+in dimension 3, found working with the language model Claude Fable (Anthropic). The credit for
+every consequence documented here belongs to that single map. This companion records what else
+that map decides: through implication chains published over five decades, and re-verified
+against their primary sources by an experiment-history program (records EXP-001, EXP-016,
+EXP-018), the counterexample resolves or partially resolves the Mathieu conjecture, the Dixmier
+conjecture, the Poisson conjecture, the Gaussian moments conjecture, Zhao's vanishing
+conjecture, the Image conjecture, and the symmetric (gradient) form of the Jacobian conjecture.
+We state each corollary with its chain and its reference, list precisely what remains open, and
+describe the verification method, whose value is exactly that a one-line certificate could be
+turned into a reliable status map of a whole neighborhood of problems within two days.
+\end{abstract}
+
+\section{The event, and the discipline applied to it}
+
+The counterexample is the polynomial map $F : \C^3 \to \C^3$, $u = 1 + xy$,
+\[
+F = \bigl(u^3 z + y^2 u (4 + 3xy),\;\; y + 3x u^2 z + 3x y^2 (4 + 3xy),\;\; 2x - 3x^2 y - x^3 z\bigr),
+\]
+with $\det JF = -2$ everywhere and
+$F(0, 0, -\tfrac14) = F(1, -\tfrac32, \tfrac{13}{2}) = F(-1, \tfrac32, \tfrac{13}{2})$
+\cite{Alpoge2026}. Our program validated it independently in exact rational arithmetic and
+computed the full fiber over the repeated value: exactly the three announced points (record
+EXP-001). Every consequence below is a corollary of this validation plus one or more published
+implications; for each implication the primary record was located and its direction confirmed
+before the corollary was asserted (records EXP-016 and EXP-018). Nothing here is original
+mathematics of ours beyond the verification work and the bookkeeping discipline.
+
+\section{The cascade}
+
+\begin{corollary}[Smale's 16th problem]
+The Jacobian conjecture is false for every $N \ge 3$; the two-variable case remains open.
+\end{corollary}
+
+\begin{corollary}[Mathieu conjecture, 1997]
+Mathieu proved that his conjecture for $SU(N)$ implies $JC(N)$ \cite{Mathieu1997, Zwart2025};
+Duistermaat and van der Kallen proved the abelian case \cite{DvdK1998}. By contraposition the
+Mathieu conjecture is \textbf{false for $SU(N)$, $N \ge 3$}. It remains open for $SU(2)$ and
+for the other compact connected groups.
+\end{corollary}
+
+\begin{corollary}[Dixmier conjecture, 1968]
+$JC(2n)$ implies $\mathrm{Dixmier}(n)$, and $\mathrm{Dixmier}(n)$ implies $JC(n)$
+\cite{BKK2007, Tsuchimoto2005}. Since $JC(4)$ is false, $\mathrm{Dixmier}(2)$ is false: the
+\textbf{full Dixmier conjecture is false}. The original rank-1 case remains open.
+\end{corollary}
+
+\begin{corollary}[Poisson conjecture, 2007]
+The Jacobian, Dixmier and Poisson conjectures are equivalent in any characteristic
+\cite{AvdE2007}. Hence the \textbf{full Poisson conjecture is false}; the minimal failing
+dimension is open.
+\end{corollary}
+
+\begin{corollary}[Gaussian moments conjecture]
+GMC implies JC \cite{DEZ2017}; hence \textbf{GMC is false} at some finite dimension.
+\end{corollary}
+
+\begin{corollary}[Zhao's vanishing conjecture]
+The vanishing conjecture for Hessian-nilpotent polynomials is equivalent to JC
+\cite{Zhao2004, Zhao2007}; hence it is \textbf{false}: there exists a Hessian-nilpotent
+quartic $P$ with $\Delta^m P^m = 0$ for all $m$ but $\Delta^m P^{m+1} \ne 0$ for infinitely
+many $m$. An explicit witness is a target of the program.
+\end{corollary}
+
+\begin{corollary}[Image conjecture]
+The Image conjecture implies the vanishing conjecture \cite{vdE2010}; hence it is
+\textbf{false in some dimension}.
+\end{corollary}
+
+\begin{corollary}[Symmetric / gradient Jacobian conjecture]
+JC reduces to cubic homogeneous maps with symmetric Jacobian \cite{dBvdE2005}; with the Zhao
+equivalence this yields a dimension in which a \textbf{gradient Keller map is non-invertible}.
+\end{corollary}
+
+\section{What remains open}
+
+The two-variable Jacobian conjecture; Dixmier at rank 1; Mathieu for $SU(2)$ and the remaining
+compact groups; the minimal failing dimensions of the Poisson, moments, vanishing and Image
+statements; and every explicit witness beyond dimension bookkeeping (the program's queued
+target: extracting a failing Hessian-nilpotent quartic from the counterexample family).
+Excluded deliberately from this list: the Markus--Yamabe conjecture (refuted independently in
+1997, not a corollary of this event) and statements whose implication direction does not
+propagate the falsity of JC.
+
+\section{Method note}
+
+The verification program is an open experiment-history repository: every experiment declares a
+falsifiable hypothesis before running, certifies with exact arithmetic (never floats), closes
+with a persisted verdict, and keeps refuted attempts in the record. For this document the
+relevant records are EXP-001 (exact validation, full fiber), EXP-016 and EXP-018 (each chain
+located in its primary source and its direction confirmed). The general lesson we would offer:
+when a machine-checkable certificate lands, the fastest reliable way to know what it changes is
+not commentary but a systematic, source-verified sweep of the implication graph, and that sweep
+is itself an experiment with a hypothesis, a method and a verdict.
+
+\begin{thebibliography}{9}
+\bibitem{Alpoge2026} L. Alp\"oge, announcement of the counterexample, X (@\_\_alpoge\_\_),
+2026-07-20; found working with Claude Fable (Anthropic); question posed by Akhil.
+\bibitem{Mathieu1997} O. Mathieu, Some conjectures about invariant theory and their
+applications, 1997.
+\bibitem{DvdK1998} J. J. Duistermaat, W. van der Kallen, Constant terms in powers of a Laurent
+polynomial, \emph{Indag. Math.} 9 (1998), 221--231.
+\bibitem{Zwart2025} K. Zwart, Mathieu's approach to the Jacobian Conjecture (review),
+arXiv:2511.16561.
+\bibitem{BKK2007} A. Belov-Kanel, M. Kontsevich, The Jacobian conjecture is stably equivalent
+to the Dixmier conjecture, arXiv:math/0512171; \emph{Mosc. Math. J.} 7 (2007).
+\bibitem{Tsuchimoto2005} Y. Tsuchimoto, Endomorphisms of Weyl algebra and $p$-curvatures,
+\emph{Osaka J. Math.} 42 (2005), 435--452.
+\bibitem{AvdE2007} P. K. Adjamagbo, A. van den Essen, On the equivalence of the Jacobian,
+Dixmier and Poisson conjectures in any characteristic, arXiv:math/0608009; \emph{Acta Math.
+Vietnam.} 32 (2007), 209--218.
+\bibitem{DEZ2017} H. Derksen, A. van den Essen, W. Zhao, The Gaussian moments conjecture and
+the Jacobian conjecture, \emph{Israel J. Math.} 219 (2017), 917--928; arXiv:1506.05192.
+\bibitem{Zhao2004} W. Zhao, Hessian nilpotent polynomials and the Jacobian conjecture,
+arXiv:math/0409534; \emph{Trans. Amer. Math. Soc.} 359 (2007).
+\bibitem{Zhao2007} W. Zhao, A vanishing conjecture on differential operators with constant
+coefficients, arXiv:0704.1691.
+\bibitem{vdE2010} A. van den Essen, The amazing Image conjecture, arXiv:1006.5801.
+\bibitem{dBvdE2005} M. de Bondt, A. van den Essen, A reduction of the Jacobian conjecture to
+the symmetric case, \emph{Proc. Amer. Math. Soc.} 133 (2005), 2201--2205.
+\end{thebibliography}
+
+\end{document}

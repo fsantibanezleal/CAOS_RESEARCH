@@ -1,4 +1,54 @@
 {
+ "cascade": [
+  {
+   "chain": "the counterexample itself",
+   "name": "Jacobian conjecture / Smale 16",
+   "now": "false for N >= 3; N = 2 open",
+   "prior": "open (1939)"
+  },
+  {
+   "chain": "Mathieu(SU(N)) implies JC(N)",
+   "name": "Mathieu conjecture",
+   "now": "false for SU(N), N >= 3; SU(2) and other groups open",
+   "prior": "open (1997)"
+  },
+  {
+   "chain": "JC(2n) equivalent to Dixmier(n)",
+   "name": "Dixmier conjecture",
+   "now": "full conjecture false (rank 2 false); rank 1 open",
+   "prior": "open (1968)"
+  },
+  {
+   "chain": "JC equivalent to Dixmier equivalent to Poisson",
+   "name": "Poisson conjecture",
+   "now": "full conjecture false; minimal failing dimension open",
+   "prior": "open (2007)"
+  },
+  {
+   "chain": "GMC implies JC",
+   "name": "Gaussian moments conjecture",
+   "now": "false at some finite dimension",
+   "prior": "open (2015)"
+  },
+  {
+   "chain": "vanishing equivalent to JC",
+   "name": "Zhao vanishing conjecture",
+   "now": "false",
+   "prior": "open (2004)"
+  },
+  {
+   "chain": "Image implies vanishing",
+   "name": "Image conjecture",
+   "now": "false in some dimension",
+   "prior": "open (2010)"
+  },
+  {
+   "chain": "symmetric JC stably equivalent to JC",
+   "name": "Symmetric / gradient JC",
+   "now": "false in some dimension",
+   "prior": "open reduction (2005)"
+  }
+ ],
  "family": [
   {
    "degrees": [

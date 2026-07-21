@@ -125,3 +125,18 @@
   collision; the EXP-012 bridge is now executable.
 - Still queued: EXP-014 Puiseux escape obstructions (JCB-022), the Hessian-nilpotent quartic
   extraction (JCB-024), the rank-conditions completion and higher-degree scans (JCB-021).
+
+## 2026-07-21 (session 7) - The collateral impact, closed and published
+
+- **EXP-018 (confirmed):** cascade closure: the Poisson chain verified (Adjamagbo-van den
+  Essen, arXiv:math/0608009: three-way equivalence, any characteristic: full Poisson conjecture
+  false, minimal dimension open) and the symmetric/gradient corollary recorded (de Bondt-van
+  den Essen reduction + Zhao equivalence: a non-invertible gradient Keller map exists in some
+  dimension). Sweep found no further named open conjecture proven to imply JC;
+  Markus-Yamabe and factorial excluded deliberately with reasons.
+- Web: new "Collateral impact" tab on the problem page, baked from the jacobian.json cascade
+  payload (8 status rows: was/now/chain), screenshot-verified, zero errors; credit line first.
+- `manuscript-cascade/`: the companion document (corollaries with chains and references, what
+  remains open, the method note), built clean.
+- Diffusion: difusion/jacobian-cascade/ post drafted in the management repo (honoring the
+  origin; our role = source-verified evaluation).

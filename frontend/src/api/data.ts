@@ -24,6 +24,7 @@ export type JacobianData = {
   wall: { equation: string; census: { bracket_negative: number; bracket_positive: number };
           escape_demo: { target: number[]; surviving_point: number[] } };
   fiber_cubic: { phi: string; equation: string };
+  cascade: { name: string; prior: string; now: string; chain: string }[];
   landscape: { m: number; o: number[]; status: string }[];
 };
 

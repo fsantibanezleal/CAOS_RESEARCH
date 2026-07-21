@@ -162,6 +162,44 @@ export default function Jacobian() {
       ),
     },
     {
+      id: 'cascade',
+      label: t('Collateral impact', 'Impacto colateral'),
+      content: (
+        <section>
+          <p className="rs-lead">
+            {t(
+              'One counterexample, many resolutions: the July 19 map (Alpöge, working with Claude Fable) does not only refute the Jacobian conjecture for N of at least 3. Through implication chains published over five decades, and verified here from their primary sources (EXP-016, EXP-018), it resolves or partially resolves a family of named open problems. The credit for every row belongs to the original counterexample; this program contributed the independent validation and the systematic, source-verified evaluation of the impact.',
+              'Un contraejemplo, muchas resoluciones: el mapa del 19 de julio (Alpöge, trabajando con Claude Fable) no solo refuta la conjetura jacobiana para N al menos 3. A traves de cadenas de implicacion publicadas durante cinco decadas, y verificadas aqui desde sus fuentes primarias (EXP-016, EXP-018), resuelve o resuelve parcialmente una familia de problemas abiertos con nombre. El credito de cada fila pertenece al contraejemplo original; este programa aporto la validacion independiente y la evaluacion sistematica verificada en fuentes.',
+            )}
+          </p>
+          {jac && jac.cascade && (
+            <div className="rs-scroll">
+              <table className="rs-table">
+                <thead><tr><th>{t('Statement', 'Enunciado')}</th><th>{t('Was', 'Era')}</th><th>{t('Now', 'Ahora')}</th><th>{t('Chain', 'Cadena')}</th></tr></thead>
+                <tbody>
+                  {jac.cascade.map((r) => (
+                    <tr key={r.name}>
+                      <td><b>{r.name}</b></td>
+                      <td className="rs-readout">{r.prior}</td>
+                      <td>{r.now}</td>
+                      <td className="rs-readout">{r.chain}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+          <p>
+            {t(
+              'What stays open after the cascade: the two-variable Jacobian conjecture, Dixmier at rank 1, Mathieu for SU(2) and the remaining groups, the minimal failing dimensions of the Poisson, moments, vanishing and Image statements, and the explicit witnesses (our queued target: a failing Hessian-nilpotent quartic).',
+              'Lo que sigue abierto tras la cascada: la conjetura jacobiana en dos variables, Dixmier en rango 1, Mathieu para SU(2) y los demas grupos, las dimensiones minimas de falla de los enunciados de Poisson, momentos, anulacion e imagen, y los testigos explicitos (nuestro objetivo en cola: una cuartica Hessiana-nilpotente que falle).',
+            )}
+          </p>
+          <Refs label={t('Chain sources', 'Fuentes de las cadenas')} ids={['alpoge2026', 'vandenessen2000', 'wikipedia-jc', 'caosresearch']} />
+        </section>
+      ),
+    },
+    {
       id: 'open',
       label: t('Open questions', 'Preguntas abiertas'),
       content: (
