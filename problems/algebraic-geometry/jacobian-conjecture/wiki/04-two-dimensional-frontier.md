@@ -17,18 +17,31 @@ $\det JF \equiv 0$ (a one-line proposition, recorded in EXP-005 as such). **The 
 killed JC(3) is structurally unavailable in dimension 2.** Also checked: no coordinate slice of
 the announced $F$ is a 2D Keller map.
 
-## What we conjecture (not yet proved)
+## The rigidity theorem (EXP-010; formerly our conjecture)
 
-**Conjecture (2D equivariant rigidity).** Every $\mathbb{G}_m$-equivariant Keller map of
-$\mathbb{C}^2$ is invertible. Status after EXP-006 (branch-symbolic enumeration with a
-valuation-aware ansatz, which fixed EXP-005's vacuous scan): the scan is now real, and the
-outcome is SHARPER than the conjecture within its window. Over $a \in \{1,2,3\}$,
-$b_1 \in [-3, 3]$, $\deg f, \deg g \le 3$: 382 solution branches produced 216 polynomial Keller
-instances, 648 in-image fibers were computed exactly, every fiber has one preimage, and every
-surviving instance is LINEAR (diagonal or swap form): nothing nonlinear even exists as an
-equivariant Keller map in the window. The conjecture stands unrefuted with real supporting
-coverage; beyond the window it remains a conjecture (general weight pairs and higher degrees
-are the queued widening).
+**Theorem (2D equivariant rigidity).** For any $\mathbb{G}_m$-action with weights
+$(w_1, -w_2)$, $w_1 \ge 1$, $w_2 \ge 0$, every equivariant polynomial Keller map of
+$\mathbb{C}^2$ is LINEAR: $(f_0 x, g_0 y)$ or $(f_0 y, g_0 x)$.
+
+Proof shape (every mechanical step machine-certified on sweeps, EXP-010): equivariant
+components are a monomial times $f(v)$, $v = x^{w_2} y^{w_1}$; the determinant factors as a
+monomial times the bracket $(i_1 j_2 - i_2 j_1) fg + v(\beta_1 f g' - \beta_2 f' g)$; constancy
+forces the shapes $(x f, y g)$ or the swap (mixed shapes are never Keller); and the resulting
+ODE $fg + v(w_1 f g' + w_2 f' g) = c$ has only constant solutions because its top coefficient
+carries the strictly positive factor $1 + w_1 d_g + w_2 d_f$. EXP-006's 216 empirical instances
+(all linear) are the experimental companion of this statement.
+
+Consequence: a 2D counterexample, if one exists, must be genuinely NON-equivariant; the
+symmetry class that produced the entire 3D counterexample family is completely closed in
+dimension 2.
+
+## The real picture of the 3D map (EXP-011)
+
+Over $\mathbb{R}$, the announced $F$ restricts to a surjective, orientation-reversing
+($\det = -2$), non-proper, non-injective real Keller map. The census: 1 or 3 real preimages,
+separated by the discriminant wall ($D > 0$: three sheets; $D < 0$: one), with escapes exactly
+on the wall. This also records that the constant-Jacobian REAL statement in dimension 3 falls
+with the same example (Pinchuk 1994 covered the non-constant case in the plane).
 
 ## The honest map of the remaining routes to a 2D counterexample
 
