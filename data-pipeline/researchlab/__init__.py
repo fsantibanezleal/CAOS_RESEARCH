@@ -1,8 +1,9 @@
-"""researchlab, the offline+live engine for the CAOS product-repo template (ADR-0057).
+"""researchlab: the CAOS Research engine package.
 
-Rename this package to `<slug>lab` per product and replace the EXAMPLE engine (model/ + the stage bodies) with the
-deep-research-chosen SOTA engine. Everything else (the two data contracts, the staged pipeline, the lane gate, the
-manifest/trace, the cases-by-category registry) is the FROZEN base, instantiate it, do not redesign it.
+The real engine of this repository is the experiment layer under problems/ (exact, hypothesis-
+declared sympy runs); this package holds the offline export pipeline that bakes the program
+registry and per-problem payloads into the JSON artifacts the static web app replays (ADR-0057
+precompute lane), plus the generic io/core base.
 """
 
-__version__ = "0.01.000"  # display X.XX.XXX; PEP 440 form in pyproject.toml (0.1.0)
+__version__ = "0.05.000"  # display X.XX.XXX; PEP 440 form in pyproject.toml

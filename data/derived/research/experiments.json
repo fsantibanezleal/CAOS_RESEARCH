@@ -1,0 +1,112 @@
+{
+ "experiments": [
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-20",
+   "id": "001",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-001-validate-counterexample",
+   "title": "Validate the announced N=3 counterexample to the Jacobian conjecture",
+   "verdict": "confirmed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-20",
+   "id": "002",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-002-structure-reverse-engineering",
+   "title": "Reverse-engineer the structure of F, exactly and independently",
+   "verdict": "confirmed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-20",
+   "id": "003",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-003-seed-family-constructor",
+   "title": "A general seed-family constructor, derived and verified by us",
+   "verdict": "partially refuted"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-20",
+   "id": "004",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-004-constructor-v2-potential-form",
+   "title": "Constructor v2 (potential form): the general seed family, ours",
+   "verdict": "confirmed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-20",
+   "id": "005",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-005-2d-obstruction",
+   "title": "The 2D obstruction: where the mechanism needs dimension 3",
+   "verdict": "confirmed with caveats"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-20",
+   "id": "006",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-006-2d-branch-symbolic-enumeration",
+   "title": "Branch-symbolic enumeration of 2D equivariant Keller maps",
+   "verdict": "confirmed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-20",
+   "id": "007",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-007-asymptotic-variety",
+   "title": "The asymptotic variety: where and how preimages escape",
+   "verdict": "confirmed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-20",
+   "id": "008",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-008-degree-laws-minimality",
+   "title": "Degree laws and family-internal minimality",
+   "verdict": "confirmed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-20",
+   "id": "009",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-009-char-p-reductions",
+   "title": "Characteristic-p reductions: explicit non-injective Keller maps over F_ell with degree < ell",
+   "verdict": "confirmed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-21",
+   "id": "010",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-010-2d-rigidity-all-weights",
+   "title": "2D equivariant rigidity for arbitrary weights: from conjecture to theorem",
+   "verdict": "confirmed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-21",
+   "id": "011",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-011-real-fiber-census",
+   "title": "Real fiber census of F: the 1-or-3 structure over the discriminant surface",
+   "verdict": "confirmed"
+  },
+  {
+   "area": "algebraic-geometry",
+   "date": "2026-07-21",
+   "id": "012",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-012-weight-system-landscape",
+   "title": "The weighted mechanism landscape in C^3: a parity law, a JC(2) bridge, and a new family at m = 4",
+   "verdict": "confirmed 1-4, refuted 5"
+  }
+ ]
+}

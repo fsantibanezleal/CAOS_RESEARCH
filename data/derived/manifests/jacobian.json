@@ -1,0 +1,13 @@
+{
+ "artifact": {
+  "bytes": 2432,
+  "path": "research/jacobian.json",
+  "sha256": "b628d73d4e9ee3e14fe5e0c0a03548f43ba366b2674b75f4e5eebfcaf81caf39"
+ },
+ "case_id": "jacobian",
+ "gate": {
+  "lane": "precompute",
+  "reason": "baked registry export; the web replays it"
+ },
+ "lane": "precompute"
+}
