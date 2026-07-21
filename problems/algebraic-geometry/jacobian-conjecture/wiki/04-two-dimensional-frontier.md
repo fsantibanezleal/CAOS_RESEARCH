@@ -35,6 +35,14 @@ Consequence: a 2D counterexample, if one exists, must be genuinely NON-equivaria
 symmetry class that produced the entire 3D counterexample family is completely closed in
 dimension 2.
 
+Novelty status (bounded literature pass, 2026-07-21, recorded in EXP-026): two targeted
+searches found adjacent work (Newton-polygon shape constraints on minimal counterexamples;
+quasi-homogeneous sufficient conditions for the REAL Jacobian conjecture) but no statement of
+this theorem. It may be folklore among specialists via Newton-polygon arguments; the full
+weight-generality and the machine-certified proof are, to our knowledge, ours. A full-text
+literature pass stays queued (JCB-031) before the manuscript presents rigidity as
+unqualifiedly new.
+
 ## The real picture of the 3D map (EXP-011)
 
 Over $\mathbb{R}$, the announced $F$ restricts to a surjective, orientation-reversing
@@ -120,4 +128,10 @@ divisibility statement (deg P divides deg Q or conversely), which is exactly the
 stratum framing of our machine. Our gcd-2 emptiness therefore independently replicates
 classically covered territory with a different instrument (a validation, not a new theorem);
 the genuinely open gcd values start at 9 and 12, i.e. bidegrees like $(18, 27)$ and
-$(24, 36)$. That composite-gcd ladder is JCB-028's frontier.
+$(24, 36)$. First contact is made (EXP-026): the $(18, \le 27)$ completion window on the
+pure slice $P = x + a\,(x^4 y^5)^2$ is EMPTY for every $a \ne 0$ (certificate pairing
+$-144\,a^2$), with the same emptiness across three structurally different degree-9 bases and
+a gcd-12 reach probe at $(24, \le 36)$. Honest framing: these bidegrees sit inside Moh's
+degree-100 verified range, so the new content is the explicit, per-pair machine certificate
+(Moh's verification is not constructive per pair); the beyond-Moh rungs are the standing
+target (JCB-030).

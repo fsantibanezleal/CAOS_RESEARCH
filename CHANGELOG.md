@@ -3,6 +3,16 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.16.000], 2026-07-21
+
+### Added
+- EXP-026: first contact with the composite-gcd frontier: THE CERTIFICATE at (18, <= 27)
+  (h = x^4 y^5: no Keller partner for ANY a != 0, pairing gcd -144 a^2), the first exclusion
+  outside the gcd-coverage theorems (honestly framed: inside Moh's verified range, the
+  certificate is the new content); h-shape sweep empty; gcd-12 reach probe (24, <= 36,
+  700 unknowns) empty in 9.4 s. Rigidity novelty pass (bounded) recorded in wiki 04;
+  JCB-031 queues the full-text pass.
+
 ## [0.15.000], 2026-07-21
 
 ### Added

@@ -456,27 +456,27 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1361,
+     "bytes": 1341,
      "name": "output-A-2026-07-21.txt"
     },
     {
-     "bytes": 438,
+     "bytes": 431,
      "name": "output-B-2026-07-21.txt"
     },
     {
-     "bytes": 591,
+     "bytes": 581,
      "name": "output-C-2026-07-21.txt"
     },
     {
-     "bytes": 4040,
+     "bytes": 3993,
      "name": "output-D-2026-07-21.txt"
     },
     {
-     "bytes": 7966,
+     "bytes": 7856,
      "name": "output-E-2026-07-21.txt"
     },
     {
-     "bytes": 1155,
+     "bytes": 1135,
      "name": "output-F-2026-07-21.txt"
     }
    ],
@@ -488,6 +488,27 @@
    "title": "Staged certificates: two-parameter slices, the (4, <= 10) window, and the sources",
    "verdict": "confirmed",
    "verdict_md": "# EXP-025 - Verdict: CONFIRMED (2026-07-21). Slices, windows, a locus, and the sources\n\nArtifacts: `artifacts/output-{A,B,C,D,E,F}-2026-07-21.txt`.\n\n## Established results\n\n1. **Every 2-parameter slice is empty [MV].** For each single lower coefficient s: the\n   (4, <= 6) window is empty for ALL (a != 0, s arbitrary). Six slices certify by pure\n   a-power gcds (16a^2, 8a^3, -8a^3, 384a^4, 1024a^6, -128a^4); the p30 slice's gcd is\n   27s^3 and its unresolved locus {s = 0} lies (radical membership s^3) inside the pure\n   slice that EXP-024 emptied: covered by union.\n2. **Every 3-parameter pair slice is empty [MV].** All 21 pairs of lower coefficients:\n   certified directly or by the union argument ((s u)^k in the pairing ideal with a\n   inverted, so every unresolved point falls in an already-certified smaller slice).\n3. **The windows climb the ladder [MV].** On the pure slice P = x + a (xy)^2: NO Keller\n   partner of degree <= 10 (pairing -128 a^4), <= 14 (-256 a^5), <= 18 (-1024 a^6), for ANY\n   a != 0. The rungs (4,10), (4,14), (4,18), where the descent has NO reduction move, die on\n   the pure slice. The exponent pattern (2, 4, 5, 6 at windows 6, 10, 14, 18) is recorded;\n   a closed-form all-degree certificate is conjectured [C] and queued.\n4. **The E-candidate locus closed [MV].** Part E (35 triple slices) surfaced one genuine\n   candidate: on p20+p21+p03 the pairing gcd 192 a^4 (4 a s - u^2)^2 vanishes on\n   {4 a s = u^2}, exactly where s x^2 + u x^2 y + a x^2 y^2 is a perfect square, i.e. the\n   translation orbit (y -> y + u/2a) of pure-slice points, which the slice family does not\n   contain. Probed per the declared escalation clause: 9 numeric locus points all\n   INCONSISTENT; the (1,2,1) point family certified for ALL w (gcd = the constant 12); and\n   the ENTIRE locus at once via the polynomial parametrization a = al^2, u = 2 al be,\n   s = be^2: gcd = 12 al^6, pure al-power. Part E closes completely: 35/35.\n5. **The sources are verified [was C, now closed: JCB-029].** Magnus, Proc. Amer. Math. Soc.\n   5 (1954), 256-266: gcd of the degrees equal 1 implies automorphism (the year 1955 in\n   earlier records was wrong; corrected). Appelgate-Onishi, J. Pure Appl. Algebra 37 (1985),\n   215-227, with Nagata: gcd prime; refined coverage gcd in {1, 8} u P u 2P. The plane\n   conjecture is classically EQUIVALENT to the divisibility statement, i.e. exactly the\n   primitive-stratum framing of this machine. Consequence, stated honestly: ALL rungs\n   (4, 4k+2) have gcd 2 (a prime), so the entire (4, *) ladder is classically covered; our\n   certificates on it are independent machine replications (validation), not new theorems.\n   The genuinely open gcd values start at 9 and 12: bidegrees like (18, 27) and (24, 36).\n\n## How could this be wrong?\n\n- Slice certificates cover up to 3 lower coefficients on; the full 8-parameter statement\n  remains open (the capped EXP-024 part B); 4-coefficient slices and beyond are queued.\n- The union arguments rely on radical membership computed by Groebner reduction (exact).\n- The open-gcd analysis depends on the cited theorems' exact statements; both citations were\n  read from secondary confirmation of the primary metadata (abstract/venue), not the full\n  proofs; the full-text pass stays queued before the manuscript asserts them as its own\n  foundation (they are context, not load-bearing for our machine results).\n\n## Consequences\n\n- JCB-028 refocuses: the (4, *) ladder is literature-covered; the machine frontier moves to\n  composite gcd (9, 12): bidegrees (18, 27) / (24, 36) are beyond direct elimination today,\n  so the route is structural (leading-form constraints + staged slices at those degrees).\n- The web app now exposes every experiment record in full (clickable feed and log entries\n  opening a modal with hypothesis, verdict, artifacts): the record is readable in place.\n"
+  },
+  {
+   "area": "algebraic-geometry",
+   "artifacts": [
+    {
+     "bytes": 839,
+     "name": "output-AB-2026-07-21.txt"
+    },
+    {
+     "bytes": 1213,
+     "name": "output-CDE-2026-07-21.txt"
+    }
+   ],
+   "date": "2026-07-21",
+   "hypothesis_md": "# EXP-026 - First contact with the composite-gcd frontier: (18, <= 27)\n\n- **Question.** JCB-030. The literature covers gcd in {1, 8}, primes, and twice-primes\n  (Magnus 1954; Appelgate-Onishi 1985; Nagata); the first uncovered value is gcd = 9, whose\n  minimal non-divisible bidegrees are (18, 27) (tops a h^2 vs b h^3 with deg h = 9). Does the\n  machine reach that territory, and is the completion window empty there?\n- **Motivation.** Everything the program proved at (4, *) replicates covered ground; this is\n  the first literature-uncovered target. A certified exclusion here, even on slices and\n  windows, is a bounded NEW statement. The reach is plausible because pure-slice P's are\n  SPARSE (2-3 terms), so building the linear system stays cheap even with ~430 unknowns; the\n  cost concentrates in exact linear algebra, which EXP-025's scaling (63 unknowns 2 s, 187\n  unknowns 10 s) suggests is minutes, not hours. Structural framing: the Keller identity\n  splits into homogeneous floors (Magnus's cascade); the window system is that cascade\n  assembled, and pure-slice sparsity keeps every floor thin.\n- **Falsifiable predictions.**\n  1. [MV] (Instrument validation at scale) The certificate pipeline reproduces EXP-024's\n     result when run through the same code path used here: the (4, <= 6) pure-slice pairing\n     gcd is a pure a-power (cross-check, guards against a scaling bug).\n  2. [MV] (Numeric window) For h = x^4 y^5 and P = x + a h^2 at numeric a in {1, -2, 1/3}:\n     the (18, <= 27) completion window is EMPTY (linsolve inconsistent) at every sample.\n  3. [MV] (h-shape sweep) Same emptiness for h in {x^5 y^4, (xy)^4 (x + y), x^4 y^5 + y^9}\n     at a = 1 (three structurally different degree-9 bases: monomial, split-linear factor,\n     binomial tail).\n  4. [MV -> theorem if it lands] (Certificate) For h = x^4 y^5 with a SYMBOLIC: certificate\n     pairings exist with gcd a pure a-power: the (18, <= 27) window is empty for EVERY\n     a != 0. That statement is not in the literature's covered set.\n  5. (Escalation clause) Any consistent sample is analyzed immediately (true degrees, top\n     factorization); a genuine primitive (18, 27) realization goes to the EXP-015 checker as\n     a counterexample candidate and everything else stops.\n- **Method.** sympy over QQ and QQ(a): the EXP-024/025 instrument (M, rhs; cleared left-null\n  pairings; gcd factorization); runtime capped 570 s per part with honest cap-out records;\n  gcd-12 reach (24, <= 36) attempted only if (18, 27) is fast.\n- **Success criterion.** 1-3 verified; 4 certified or capped honestly.\n- **Failure criterion.** The escalation clause fires (that is the biggest possible outcome,\n  not a failure of the record); or the instrument fails validation 1 (fix before anything).\n\nDeclared 2026-07-21 before the run.\n",
+   "id": "026",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-026-composite-gcd",
+   "title": "First contact with the composite-gcd frontier: (18, <= 27)",
+   "verdict": "confirmed",
+   "verdict_md": "# EXP-026 - Verdict: CONFIRMED (2026-07-21). First exclusions in literature-uncovered territory\n\nArtifacts: `artifacts/output-{AB,CDE}-2026-07-21.txt`.\n\n## Established results\n\n1. **Instrument validated at scale [MV].** The exact code path used here reproduces the\n   EXP-024 certificate (gcd -8 a^2 at (4, <= 6)) before anything new is claimed.\n2. **The (18, <= 27) window is empty numerically [MV].** For h = x^4 y^5, P = x + a h^2 at\n   a in {1, -2, 1/3}: no Keller partner of degree <= 27 exists (403 unknowns, ~3 s per\n   sample; pure-slice sparsity keeps the system cheap).\n3. **The h-shape sweep is empty [MV].** Same emptiness at a = 1 for three structurally\n   different degree-9 bases: x^5 y^4 (monomial, reversed exponents), (xy)^4 (x + y) (split\n   linear factor), x^4 y^5 + y^9 (binomial tail).\n4. **THE CERTIFICATE [MV]: for h = x^4 y^5, NO Keller partner of degree <= 27 exists for ANY\n   a != 0** (312 left-null vectors, one nonzero pairing, gcd = -144 a^2, a pure a-power).\n   gcd(18, 27) = 9 is outside the literature's covered set {1, 8} u P u 2P (Magnus 1954;\n   Appelgate-Onishi 1985; Nagata), so this bounded exclusion is, to our knowledge, the\n   program's first statement in genuinely uncovered territory.\n5. **The reach extends to gcd 12 [MV].** The (24, <= 36) window (700 unknowns) is empty at\n   the probe sample in 9.4 s: the full certificate at gcd 12 is within reach (queued).\n6. **Rigidity novelty pass (bounded) [recorded].** Two targeted searches found adjacent work\n   (Newton-polygon constraints on minimal counterexamples: Melle-Hernandez et al. line;\n   quasi-homogeneous sufficient conditions for the REAL JC) but no statement of the\n   equivariant rigidity theorem. Recorded in wiki 04; the full-text pass stays queued\n   (JCB-031) before the manuscript calls rigidity unqualifiedly new.\n\n## Scope, honestly\n\n- The exclusions are pure-slice (P = x + a h^2 exactly) and windowed (partner degree <= 27,\n  respectively <= 36 at one sample). Lower-order P-coefficients and higher partner degrees\n  are open; the EXP-025 slice-and-union program transfers and is queued at these degrees.\n- \"Literature-uncovered\" refers to the gcd-based coverage verified in EXP-025; Moh's\n  degree-100 verification DOES numerically cover bidegrees (18, 27) as instances, so the\n  honest phrasing is: uncovered by the gcd theorems, inside Moh's verified range, and our\n  value is the explicit machine certificate (Moh's method is not constructive per-pair).\n  A primary read of Moh's coverage claim is part of JCB-031's full-text pass.\n\n## Consequences\n\n- JCB-030 advances: next moves are the gcd-12 certificate (symbolic a at (24, <= 36)), slice\n  widening at (18, 27), and window climbing beyond 27 (the (18, 4k+9) rungs).\n- The Newton-polygon structural route gains a concrete companion: every certified window is\n  a data point for where the first obstruction floor lives.\n"
   }
  ]
 }
