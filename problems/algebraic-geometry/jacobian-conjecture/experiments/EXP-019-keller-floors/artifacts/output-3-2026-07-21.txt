@@ -1,0 +1,9 @@
+============================================================================
+Part 3: full-A elimination at (2, 3)
+============================================================================
+  GB size: 27; B-free consistency generators: 1
+    16*A_0**2*A_2**2 - 8*A_0*A_1**2*A_2 + A_1**4 = 0
+[PASS] elimination completed: consistency ideal in A computed  1 generators
+[PASS] A = 0 (triangular locus) lies on the consistency variety
+
+RESULT: ALL CHECKS PASS.

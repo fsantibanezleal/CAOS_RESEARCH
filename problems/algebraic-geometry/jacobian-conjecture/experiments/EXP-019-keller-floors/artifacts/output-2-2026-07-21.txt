@@ -1,0 +1,26 @@
+============================================================================
+Part 2: wider bilinear certificates
+============================================================================
+(2,4): grid on the degree-2 side: 64 samples
+  consistent: 6
+  inconsistent: 58
+  instances: 12
+  triangular_seen: 2
+[PASS] (2,4): non-vacuous with triangular witnesses
+[PASS] (2,4): every Keller instance injective (JC(2) holds here)  []
+(2,5): grid on the degree-2 side: 27 samples
+  consistent: 3
+  inconsistent: 24
+  instances: 6
+  triangular_seen: 2
+[PASS] (2,5): non-vacuous with triangular witnesses
+[PASS] (2,5): every Keller instance injective (JC(2) holds here)  []
+(3,4): grid on the degree-3 side: 35 samples
+  consistent: 5
+  inconsistent: 30
+  instances: 10
+  triangular_seen: 2
+[PASS] (3,4): non-vacuous with triangular witnesses
+[PASS] (3,4): every Keller instance injective (JC(2) holds here)  []
+
+RESULT: ALL CHECKS PASS.

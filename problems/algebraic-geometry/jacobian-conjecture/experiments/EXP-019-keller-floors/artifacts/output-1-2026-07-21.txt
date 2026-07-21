@@ -1,0 +1,15 @@
+============================================================================
+Part 1: floor framework + h-divisibility on the library
+============================================================================
+[PASS] map 3: floor-2 identity holds
+[PASS] map 3: h divides J(P_top, Q_sub) (p = 2)
+[PASS] map 4: floor-2 identity holds
+[PASS] map 4: floor-3 identity holds
+[PASS] map 4: h divides J(P_top, Q_sub) (p = 6)
+[PASS] map 5: floor-2 identity holds
+[PASS] map 5: h divides J(P_top, Q_sub) (p = 3)
+[PASS] map 7: floor-2 identity holds
+[PASS] map 7: floor-3 identity holds
+[PASS] Part 1 exhibited divisibility on maps with p >= 2  shown = 3
+
+RESULT: ALL CHECKS PASS.
