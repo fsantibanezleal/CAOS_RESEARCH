@@ -4,4 +4,5 @@
 # template installs instantly with no native build; a real product adds e.g. yade / pychrono / ortools / mintpy /
 # torch here, each PINNED to the version it installs+verifies.
 numpy==2.4.6
+sympy==1.14.0           # exact CAS: the entire experiment corpus (jclib, EXP runners) and tests/
 PyYAML>=6.0             # program/portfolio.yaml -> baked registry (export stage)
