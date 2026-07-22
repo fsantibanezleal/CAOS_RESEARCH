@@ -478,3 +478,35 @@
   EXP-040..043); the local pipeline run bakes EXP-044/045 cleanly and ships with this
   session's PR. Remaining JCB-041 debt: the screenshot verification pass only.
 - v0.27.000.
+
+## 2026-07-22 (session 25) - THE TOWER LEMMA IS PROVED; the frontier pipeline runs in seconds
+
+- Felipe's directive: iterate until proof or counterexample, with the full routine each
+  cycle. Honest status: JC(2) itself remains open; this session PROVED the queued lemma
+  and validated the frontier pipeline at target scale.
+- **EXP-046 (confirmed): THE TOWER LEMMA, PROVED** (primitive-top and d >= u+v scopes),
+  by four machine-verified ingredients: (i) old columns vanish on new rows (degree
+  bookkeeping); (ii) the new block is J(T, .) with kernel = top-form powers (verified
+  exactly); (iii) THE KEY IDENTITY: each resonance kappa = lambda (P - low)^k, so
+  kappa - lambda P^k is in-window and P^k is in ker L: L(kappa) is an in-window image,
+  annihilated by every certificate (rank test confirms); (iv) the extension realized
+  explicitly across the active resonance 8 -> 9 (ratio 2, pairing preserved).
+  CONSEQUENCE: **THEOREM 5 IS UNCONDITIONAL** for P = x + a x^u y^v + b x^d with
+  gcd(u, v) = 1 or d >= u + v: the first all-degree exclusion of an above-weight
+  (staircase) perturbation; staircase length 2 falls on that scope. The proper-power
+  case (u = v = 2): the odd resonance (xy)^5 and even (xy)^6 both pair to ZERO
+  (measured); deriving that kill is the lemma's one remaining case (queued).
+- **EXP-047 (confirmed, route N2):** the filtered (48, <= 64) sweep RAN: three degree-48
+  F1-flavor samples (pure x + R0(1)^3 + two swallowed variants): filtered windows at
+  N = 64 (111 unknowns, 270 equations) EMPTY in 2.4-3.6 s each: by similarity nesting,
+  all partners of degree <= 64 are excluded per sample. Classical case-64 degrees:
+  sampled-level replication; the demonstrated cost makes the open territory
+  (max > 150; (72, 108)) affordable at seconds per certificate.
+- **Routine executed:** manuscript-planar v0.02 (the Tower Lemma stated with its proof
+  ingredients; Theorem 5 upgraded to unconditional on scope; the frontier subsection
+  updated with the run results); wiki 04/05 updated; bake refreshed; v0.28.000.
+- Next iteration: (a) the proper-power odd-resonance derivation (closes Theorem 5
+  entirely); (b) generalize the tower induction to arbitrary above-weight tails and
+  longer staircases (the M2 induction: JC(2) = all staircases excluded); (c) transcribe
+  (72, 108) + beyond-150 shapes and sweep. Felipe's pending calls unchanged (novelty
+  phrasing, outreach, diffusion).

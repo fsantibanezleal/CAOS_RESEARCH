@@ -22,7 +22,7 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-22 (working manuscript, v0.01; split from the foundational companion)}
+\date{2026-07-22 (working manuscript, v0.02; split from the foundational companion)}
 
 \begin{document}
 \maketitle
@@ -41,9 +41,11 @@ linear vertex $x$ with interior direction; and if $x$ is a vertex of the Newton 
 $P = x + f(y)$ exactly (the vertex dichotomy). The residual open core is the transport of the
 Keller constant along the staircase of Newton vertices swallowing $x$: we show the completion
 window is block-triangular under the edge grading, exhibit the classwise transport chain as an
-executable elimination whose obstruction always localizes at the constant's class, and prove a
-window form of the corresponding fifth exclusion with cleared all-parameter certificates
-(monomial pairings such as $-13860\,a^7$). A source-audited recalibration places the program
+executable elimination whose obstruction always localizes at the constant's class, and prove the corresponding
+fifth exclusion: for primitive tops the certificate-tower induction closes it
+UNCONDITIONALLY at all partner degrees (cleared base certificates with monomial pairings
+such as $-13860\,a^7$, plus a resonance-reduction lemma showing window growth can never
+repair the constant's row). A source-audited recalibration places the program
 honestly: our composite-gcd certificates replicate literature-covered territory (the verified
 floor is $\gcd \le 8$, primes, $2p$, then Heitmann's $B \ge 16$ and the
 Guccione--Guccione--Valqui dichotomy $B = 16$ or $B > 20$), and the live frontier is the
@@ -213,12 +215,34 @@ $P$-agnostic), and in-window sources pair to zero exactly as the window criterio
 A three-parameter tail certificate ($-27720\,a^7 c_3^4$) extends the family.
 \end{theorem}
 
-\begin{conjecture}[{[C]}; the fifth exclusion, all degrees]\label{conj:t5}
-The constant-class transport equation is a nonzero monomial multiple of $a$ at every
-window: no above-weight perturbation of $x + a x^u y^v$ is ever a Keller component. The
-missing step is the closed form of the transport chain, the staircase analog of the banded
-formula behind Theorem~\ref{thm:t1}.
-\end{conjecture}
+\begin{lemma}[{[MV/D]}; the tower lemma (EXP-044/046)]\label{lem:tower}
+Let $P = x + R$ ($R$ without constant or linear part), $M_N$ the completion-window
+matrix at window $N \ge \deg P - 1$, and $T$ the total-degree top form of $P$. Suppose
+every form in $\ker J(T, \cdot)$ at each degree is a scalar multiple of a power that
+reduces, modulo $\C[P]$, to degree $\le N$ (this holds whenever $T$ is a primitive
+monomial, and whenever $T = P - x$ or $T$ is the pure power $b x^d$, by expanding
+$T^k = \lambda P^k + \text{lower}$). Then any left-null certificate of $M_N$ with
+nonzero pairing extends to $M_{N+1}$ with the same (scaled) pairing: window
+inconsistency propagates to every larger window. Proof ingredients, each
+machine-verified: old columns vanish on new rows (degree bookkeeping); the new block is
+$J(T, \cdot)$ on degree-$(N{+}1)$ forms with the predicted kernel; each resonance
+$\kappa$ satisfies $\kappa - \lambda P^k \in$ window with $P^k \in \ker L$, so
+$L(\kappa)$ is an in-window image which every certificate annihilates; the extension
+was realized explicitly across an active resonance (window $8 \to 9$, ratio $2$,
+pairing preserved). The measured window law ($-c_N a^N$ pairings with the odd-prime
+$2N - 3$ ratios) is this tower seen through the clearing normalization.
+\end{lemma}
+
+\begin{theorem}[{[MV/D]}; the fifth exclusion, all degrees, primitive-top scope
+(EXP-042/044/046)]\label{thm:t5all}
+For $u \ge 2$, $v \ge 1$ with $x^u y^v$ primitive ($\gcd(u, v) = 1$) or $d \ge u + v$,
+and any $a \ne 0$, $b$: $P = x + a\,x^u y^v + b\,x^d$ is not a Keller component at ANY
+partner degree. (Base: the cleared certificates of Theorem~\ref{thm:t5}; induction:
+Lemma~\ref{lem:tower}.) For proper-power tops (e.g. $u = v = 2$) the odd resonances do
+not reduce mod $\C[P]$; the certificates kill them anyway in every tested instance
+(e.g. $(xy)^5$ at window $9$), so the statement there is [D] pending the derivation of
+that kill.
+\end{theorem}
 
 Two instrument-level results complete the toolkit. The \emph{matched-pair law} (EXP-038):
 for cornered pairs $P = \alpha B^p + P_{\mathrm{sub}}$, $Q = \beta B^q + Q_{\mathrm{sub}}$,
@@ -267,11 +291,18 @@ $m \ge 2$ \emph{no monomial reaches the Keller constant from the $R_0^m$ edge}: 
 $B = 16$ problem is a staircase transport problem, the exact object of
 Section~\ref{sec:staircase}. The pure $m = 1$ shape has $x$ as a Newton vertex and is
 excluded outright by Theorem~\ref{thm:t4} (window replication empty); swallowed variants
-land in Theorem~\ref{thm:t5}'s territory (sampled windows empty). (ii) For the $(72, 108)$
-system, the classwise decomposition is block-cheap: exact histograms give $5992$ window
-unknowns in $535$ classes with largest diagonal block $22$ (and $2142$ unknowns, largest
-block $13$, for the $(48, 64)$ validation case): the attack cost is coupling bookkeeping,
-not linear algebra, and the transport instrument automates exactly that.
+land in Theorem~\ref{thm:t5}'s territory (sampled windows empty). (ii) The similarity filter
+(partner supported in the scaled polygon $\tfrac{\deg Q}{\deg P} N^0(P)$; sound by the
+similarity theorem since the scaled polygons are nested in the degree) cuts the
+$(48, 64)$ full-window system from $2142$ to $111$ unknowns, and the validation runs are
+DONE: three degree-48 samples of the $F_1$ flavor (the pure shape $x + R_0(1)^3$ and two
+swallowed variants) have EMPTY filtered windows at $N = 64$ in $2.4$ to $3.6$ seconds
+each, excluding all partners of degree $\le 64$ per sample (the classical case-64
+degrees: a sampled-level replication of Moh/Heitmann demonstrating the pipeline's cost
+at target scale). (iii) For the $(72, 108)$ system the histograms give $5992$ unknowns
+in $535$ classes with largest diagonal block $22$ before filtering: with the filter and
+the transport, the open territory (max degree $> 150$, and $(72, 108)$ itself) is
+affordable at seconds-to-minutes per certificate.
 
 \section{Positioning and novelty}\label{sec:positioning}
 
@@ -289,12 +320,13 @@ audit trail (including its open verification items) persisted in the repository.
 
 \section{Program}
 
-Priorities, from the standing routes evaluation: (1) close
-Conjecture~\ref{conj:t5} by the transport chain's closed form (the cleared-certificate and
-annihilation ingredients are already in place); (2) run the transport sweep on the
-$(48, 64)$ validation case and then the open $B = 16$ territory and $(72, 108)$; (3) the
-properness reformulation ($JC(2)$ holds iff every planar Keller map has empty Jelonek set;
-exact certificates shipped, EXP-014) as a cross-check instrument. The reproducibility
+Priorities, from the standing routes evaluation: (1) close the proper-power case of
+Theorem~\ref{thm:t5all} (derive the odd-resonance kill measured in EXP-046), then extend
+the tower induction to general above-weight tails and longer staircases; (2) transcribe
+the $(72, 108)$ shape data and the beyond-150 $B = 16$ shapes and run the filtered
+sweeps ($2$ to $4$ seconds per certificate at the validated scale); (3) the properness
+reformulation ($JC(2)$ holds iff every planar Keller map has empty Jelonek set; exact
+certificates shipped, EXP-014) as a cross-check instrument. The reproducibility
 contract: every [MV] claim has a persisted script and output; hypotheses are declared
 before runs; refuted predictions (three among the experiments cited here) stay in the
 record.

@@ -1,0 +1,8 @@
+============================================================================
+Part D: the proper-power case (2,2,2): odd resonances
+============================================================================
+  D N=9: resonance (xy)^5 [ODD (needs its own kill)]: certificate pairing 0
+  D N=11: resonance (xy)^6 [EVEN (reduces mod C[P])]: certificate pairing 0
+[PASS] D: at (2,2,2) every tested resonance (even AND odd powers of xy) pairs to ZERO: the tower persists in the proper-power case too (mechanism recorded for the odd case as measured, not yet derived)
+
+RESULT: ALL CHECKS PASS.

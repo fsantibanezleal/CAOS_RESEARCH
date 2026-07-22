@@ -1,0 +1,31 @@
+============================================================================
+Part A: bookkeeping, the top block, and its kernel
+============================================================================
+[PASS] A1: the old-column block over the NEW rows is zero (degree bookkeeping)  9 new rows
+[PASS] A2: the new-block action is exactly J(T, .) with T the total-degree top form (lower parts land in old rows)
+[PASS] A3: ker(D) at degree 9 is exactly the B-power (x^2 y)^3 (one resonance)  [(6, 3)]
+
+============================================================================
+Part B: the key identity (resonances reduce in-window mod ker L)
+============================================================================
+  B d < u+v: (2,1,2), kappa = B^3, N = 8: kappa = lam (P - low)^k True; deg(kappa - lam P^k) = 8 <= N = 8: True
+  B d < u+v: (2,1,2), kappa = B^4, N = 11: kappa = lam (P - low)^k True; deg(kappa - lam P^k) = 11 <= N = 11: True
+  B d = u+v: (2,1,3), kappa = T^3, N = 8: kappa = lam (P - low)^k True; deg(kappa - lam P^k) = 7 <= N = 8: True
+[PASS] B1: each resonance kappa equals lam (P - low)^k with kappa - lam P^k supported in-window
+[PASS] B2: rank test: L(kappa) is in the old-column space at (2,1,2), N = 8 (every certificate annihilates it)  rank 41
+
+============================================================================
+Part C: end-to-end extension across the active resonance (8 -> 9)
+============================================================================
+  C common rows 52, ratio(s) {2}, dropped rows 0
+  C pairing ratio f9/f8 = 2
+[PASS] C: the certificate extends across the ACTIVE resonance 8 -> 9 with one ratio and nonzero pairing (the Tower Lemma's step, realized)
+
+============================================================================
+Part D: the proper-power case (2,2,2): odd resonances
+============================================================================
+  D N=8: degree 9 odd: no (xy)^s resonance at all
+  D N=10: degree 11 odd: no (xy)^s resonance at all
+[PASS] D: at (2,2,2) every tested resonance (even AND odd powers of xy) pairs to ZERO: the tower persists in the proper-power case too (mechanism recorded for the odd case as measured, not yet derived)
+
+RESULT: ALL CHECKS PASS.

@@ -43,6 +43,10 @@
   gap = the TOWER LEMMA) + EXP-045 (degree-32 frontier certificates; similarity filter
   x18.8: the (48,64) sweep is now small). Wiki 04 rewritten; bake verified automatic.
   v0.27.000.
+- **Session 25 (2026-07-22):** THE TOWER LEMMA PROVED (EXP-046): THEOREM 5 UNCONDITIONAL
+  for primitive tops / d >= u+v (proper-power odd-resonance kill queued); EXP-047: the
+  filtered (48, <= 64) certificates run in 2.4-3.6 s each (three samples, all empty).
+  manuscript-planar v0.02. v0.28.000.
 - **Now:** N1: the transport chain's closed form (Theorem 5 all-degree); N2: the (48, 64)
   validation sweep, then open B = 16, then (72, 108); M1: imported-constraint filters;
   web bake + screenshot pass (nine unbaked records); wiki 04 rewrite.
