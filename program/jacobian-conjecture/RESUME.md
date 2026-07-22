@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-22, session 29 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-22, session 30 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -93,14 +93,13 @@ the standing decision rule: every new experiment names its route).
    currently Theorem 6 or full-window towers; map what escapes ALL current lemmas;
    (b) the y-anchored (quasi-triangular-type) completions classification (JCB-035,
    the endgame frame): JC(2) = the triangular family is everything.
-2. N2 / JCB-040: EXP-053 landed THE 576 CERTIFICATE: on the reduced system with the
-   forced top edge symbolic, the cleared pairing is the CONSTANT 576 (all t,
-   identical across sampled lower strata; support = 5 rows: (2,0) + the ray
-   (9,16),(16,32),(17,33),(18,34)). FIRST TASK NEXT ROUND: the support-entry
-   analysis (do generic lower coefficients enter those five rows at all?); if not,
-   the certificate is UNIVERSAL: (72,108) closes and the floor rises to 125; then
-   the dossier's remaining forced parameters (lambda1, alpha) and the Prop 4.3
-   assembly.
+2. N2 / JCB-040: EXP-053 = per-stratum 576 certificates; EXP-054 REFUTED rigid
+   universality (51 entering combinations) while confirming the 576 pairing is
+   stable across strata. FIRST TASK NEXT ROUND: the PERTURBATIVE covector
+   Lambda(eps) (linear-in-Lambda, affine-in-eps nullspace, batched over the 51
+   entering monomials; termination evidenced by 576-stability). Success = the
+   reduced (72,108) stratum closes universally; then the dossier's remaining
+   forcing branches; then the floor rises to 125.
 3. JCB-041 remainder: the screenshot verification pass ONLY (bake is automatic and
    verified; wiki 04 rewritten in session 24). FELIPE still validates the novelty
    phrasing before submission.

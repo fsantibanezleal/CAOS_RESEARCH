@@ -605,3 +605,19 @@
   forced parameters; (c) assembly with GGHV Prop 4.3 = the floor rises to 125.
 - Routine: wiki 05; log; RESUME; v0.32.000; bake. Honest status: JC(2) open; the lone
   open pair below 125 is one support-entry analysis from closure.
+
+## 2026-07-22 (session 30) - The universality refutation sharpens the closure route
+
+- **EXP-054 (predictions 2-3 REFUTED as declared; the methodology at its best):** the
+  fixed five-row 576 covector is NOT universal: 51 lower-point x support-row
+  combinations enter with nonzero bracket factors, and adversarial samples confirm the
+  identity breaks, even though the recomputed per-stratum pairing stays 576 every
+  time. The measured truth: the obstruction VALUE is stable across strata; the
+  covector is stratum-dependent. The closure route is now sharp: build the
+  PERTURBATIVE covector Lambda(eps), polynomial in the lower coefficients (the
+  certificate equation is linear in Lambda, affine in eps: a batched parametrized
+  nullspace solve; termination is evidenced by the 576 stability). Next round's first
+  task; success = the reduced (72,108) stratum closes universally = the floor rises
+  to 125 (modulo the dossier's remaining forcing branches).
+- Routine: wiki 05; log; RESUME; v0.33.000; bake. Honest status: JC(2) open; the
+  refutation cost one covector and bought the correct construction.
