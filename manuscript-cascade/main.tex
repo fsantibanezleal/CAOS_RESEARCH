@@ -7,11 +7,12 @@
 \usepackage[colorlinks=true, linkcolor=linknavy, citecolor=linknavy, urlcolor=linknavy]{hyperref}
 \newtheorem{corollary}{Corollary}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
 
 \title{The Collateral Impact of the Three-Dimensional Jacobian Counterexample:\\ a Source-Verified Cascade}
 \author{Felipe Santiba\~nez-Leal\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-21 (companion document, v0.01)}
+\date{2026-07-22 (companion document, v0.02: the explicit dimension-48 witness added)}
 
 \begin{document}
 \maketitle
@@ -27,7 +28,12 @@ conjecture, the Poisson conjecture, the Gaussian moments conjecture, Zhao's vani
 conjecture, the Image conjecture, and the symmetric (gradient) form of the Jacobian conjecture.
 We state each corollary with its chain and its reference, list precisely what remains open, and
 describe the verification method, whose value is exactly that a one-line certificate could be
-turned into a reliable status map of a whole neighborhood of problems within two days.
+turned into a reliable status map of a whole neighborhood of problems within two days. New in
+this revision: the symmetric/gradient and vanishing rows are upgraded from existential to
+EXPLICIT: a non-invertible gradient Keller map $\mathrm{id} + \nabla f$ on $\C^{48}$, with $f$
+a homogeneous Hessian-nilpotent quartic (382 monomials over $\Q(i)$) and an exact two-point
+collision, built from Thompson's dimension-24 cubic-homogeneous form by the de Bondt--van den
+Essen construction and verified end to end in exact arithmetic.
 \end{abstract}
 
 \section{The event, and the discipline applied to it}
@@ -78,7 +84,7 @@ GMC implies JC \cite{DEZ2017}; hence \textbf{GMC is false} at some finite dimens
 The vanishing conjecture for Hessian-nilpotent polynomials is equivalent to JC
 \cite{Zhao2004, Zhao2007}; hence it is \textbf{false}: there exists a Hessian-nilpotent
 quartic $P$ with $\Delta^m P^m = 0$ for all $m$ but $\Delta^m P^{m+1} \ne 0$ for infinitely
-many $m$. An explicit witness is a target of the program.
+many $m$. \emph{The witness is now explicit}: Section~\ref{sec:witness}.
 \end{corollary}
 
 \begin{corollary}[Image conjecture]
@@ -88,18 +94,54 @@ The Image conjecture implies the vanishing conjecture \cite{vdE2010}; hence it i
 
 \begin{corollary}[Symmetric / gradient Jacobian conjecture]
 JC reduces to cubic homogeneous maps with symmetric Jacobian \cite{dBvdE2005}; with the Zhao
-equivalence this yields a dimension in which a \textbf{gradient Keller map is non-invertible}.
+equivalence this yields a dimension in which a \textbf{gradient Keller map is
+non-invertible}. \emph{The map is now explicit, in dimension 48}: Section~\ref{sec:witness}.
 \end{corollary}
+
+\section{The explicit witness in dimension 48 (record EXP-041)}\label{sec:witness}
+
+As of 2026-07-22 no explicit symmetric, gradient, or Hessian-nilpotent witness had been
+published (a verified sweep; the July 2026 consequence notes are non-constructive in
+dimension). The program constructed one, in three verified steps, all exact.
+
+\emph{Input.} W. Thompson's explicit Bass--Connell--Wright cubic-homogeneous form of the
+counterexample \cite{Thompson2026}: $G = U + H$ on $\Q^{24}$, $H$ cubic homogeneous with 54
+monomials, with a published rational collision pair. We re-verified the artifact in-house
+(homogeneity; the exact collision; nilpotency of $JH$ by an exact sparse chain), with one
+correction: the nilpotency index is $18$, not the claimed $17$ ($(JH)^{18} = 0$ while
+$(JH)^{17}$ retains six terms).
+
+\emph{Construction} (de Bondt--van den Essen \cite{dBvdE2005}). The potential
+$f = -i \sum_{j=1}^{24} H_j(x + iy)\, y_j$ is a homogeneous quartic in 48 variables (382
+monomials over $\Q(i)$) with nilpotent Hessian (their characteristic-polynomial identity
+reduces this to the nilpotency of $JH$). The triangular conjugation
+$S^{-1} \circ (\mathrm{id} + \nabla f) \circ S = (x + H(x),\; y + JH(x)^t y - iH(x))$ was
+verified identically in all 48 components, so
+$\widetilde F = \mathrm{id} + \nabla f$ is a symmetric Keller map ($\det J\widetilde F = 1$).
+
+\emph{The collision.} With $(u, v)$ Thompson's collision pair and
+$w = i\,(I + JH(v)^t)^{-1}(u - v)$, the points $p_1 = (u, 0)$ and $p_2 = (v - iw,\, w)$ are
+distinct and satisfy $\widetilde F(p_1) = \widetilde F(p_2)$ exactly over $\Q(i)$.
+\textbf{Hence the Hessian conjecture fails in dimension 48 with an explicit witness}, and
+$P_\star = -f$ is an explicit homogeneous Hessian-nilpotent quartic falsifying the vanishing
+conjecture (the finite certificate of failure is the collision itself; the sanity
+$\Delta P_\star^2 \ne 0$, forced by Zhao's own Corollary 3.9 for any failing potential,
+holds with 9028 terms). The reality obstruction is intrinsic: a nonzero real
+Hessian-nilpotent polynomial does not exist, so the $\Q(i)$ coefficients are unavoidable.
+Symmetric positive results (dimension $\le 4$ nonhomogeneous, $\le 5$ homogeneous, de
+Bondt--van den Essen and van den Essen--Washburn) leave the minimal witness dimension open
+between those bounds and 48.
 
 \section{What remains open}
 
 The two-variable Jacobian conjecture; Dixmier at rank 1; Mathieu for $SU(2)$ and the remaining
 compact groups; the minimal failing dimensions of the Poisson, moments, vanishing and Image
-statements; and every explicit witness beyond dimension bookkeeping (the program's queued
-target: extracting a failing Hessian-nilpotent quartic from the counterexample family).
-Excluded deliberately from this list: the Markus--Yamabe conjecture (refuted independently in
-1997, not a corollary of this event) and statements whose implication direction does not
-propagate the falsity of JC.
+statements (for the symmetric/vanishing pair the witness of Section~\ref{sec:witness} pins
+the failing dimension at $\le 48$, with the known positive results leaving the minimum open
+above $5$); and explicit witnesses for the remaining non-constructive rows. Excluded
+deliberately from this list: the Markus--Yamabe conjecture (refuted independently in 1997,
+not a corollary of this event) and statements whose implication direction does not propagate
+the falsity of JC.
 
 \section{Method note}
 
@@ -137,6 +179,10 @@ coefficients, arXiv:0704.1691.
 \bibitem{vdE2010} A. van den Essen, The amazing Image conjecture, arXiv:1006.5801.
 \bibitem{dBvdE2005} M. de Bondt, A. van den Essen, A reduction of the Jacobian conjecture to
 the symmetric case, \emph{Proc. Amer. Math. Soc.} 133 (2005), 2201--2205.
+\bibitem{Thompson2026} W. Thompson, Explicit cubic-homogeneous Jacobian counterexample
+(Bass--Connell--Wright form of the Alp\"oge map, dimension 24), 2026-07-21;
+\texttt{github.com/wtho704/explicit-cubic-homogeneous-jacobian-counterexample}; Zenodo
+record 21466221.
 \end{thebibliography}
 
 \end{document}

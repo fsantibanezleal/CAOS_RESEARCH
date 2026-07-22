@@ -25,7 +25,7 @@ Exact Validation, a General Seed Family, the Geometry of Non-Properness,\\
 and Two-Dimensional Equivariant Rigidity}
 \author{Felipe Santiba\~nez-Leal\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-21 (working manuscript, v0.06)}
+\date{2026-07-22 (working manuscript, v0.07; foundational paper of a three-manuscript record)}
 
 \begin{document}
 \maketitle
@@ -66,11 +66,23 @@ stated in two variables by Kraus in 1884 (with a flawed proof whose gap, control
 at infinity, remained the subject's central obstacle \cite{Rodriguez2026}) and popularized by
 Keller in 1939 \cite{Keller1939}, asserted that every Keller map has a polynomial inverse. Over
 $\C$, invertibility is equivalent to injectivity, so a refutation requires exactly one repeated
-value. The classical positive ladder includes Wang's degree-2 theorem, Moh's verification of
-$JC(2)$ up to degree 100, the Bass--Connell--Wright reduction to cubic homogeneous form
-\cite{BCW1982}, and Dru\.zkowski's cubic-linear form \cite{Druzkowski1983}; Pinchuk
-\cite{Pinchuk1994} refuted the strong real variant by a non-proper local diffeomorphism with
-non-constant Jacobian. The conjecture is Problem 16 of Smale's list \cite{Smale1998}.
+value. The classical positive ladder includes Wang's degree-2 theorem, Moh's analysis discarding
+planar counterexamples of degree up to 100 (with complete published detail only for the
+largest exceptional case; the modern audited floor is discussed in the planar companion),
+the Bass--Connell--Wright reduction to cubic homogeneous form \cite{BCW1982}, and
+Dru\.zkowski's cubic-linear form \cite{Druzkowski1983}; Pinchuk \cite{Pinchuk1994} refuted
+the strong real variant by a non-proper local diffeomorphism with non-constant Jacobian. The
+conjecture is Problem 16 of Smale's list \cite{Smale1998}.
+
+This is the \emph{foundational} paper of a three-manuscript record, split so each audience
+reads a self-contained document while the repository log preserves the full history: (A)
+this paper, the three-dimensional aftermath (validation, structure, the seed family, the
+geometry of non-properness, the real census, characteristic $p$, the weighted landscape,
+and two-dimensional equivariant rigidity as the bridge out); (B) the planar-program paper
+(\texttt{manuscript-planar/}: the $JC(2)$ machine, the unconditional Newton-polygon
+exclusion theorems, the staircase transport, and the recalibrated frontier); (C) the
+cascade companion (\texttt{manuscript-cascade/}: the source-verified consequence cascade
+and the explicit dimension-48 symmetric witness).
 
 On 2026-07-19/20, Alp\"oge announced the map, with $u = 1 + xy$,
 \begin{equation}\label{eq:F}
@@ -304,201 +316,17 @@ Theorem~\ref{thm:family} shows exactly how asymptotic values are produced in dim
 (denominators $BC = k^2 p(w)$), and whether one-invariant geometry leaves room for such escape
 is, in our view, the sharpest transferable open question.
 
-\section{The planar machine: uniform closure, descent, and the primitive stratum}
+\section{The planar program (moved to the companion)}
 
-The Keller condition $\det J(P,Q) = 1$ is bilinear in the coefficient vectors of $P$ and $Q$,
-hence linear in one side given the other. In the affine gauge (identity linear parts) this
-yields a machine per degree pair $(m, n)$: eliminate the large side (a lexicographic Groebner
-elimination produces the consistency ideal in the small side's coefficients), parametrize the
-consistency variety, complete linearly, and invert explicitly or fiber-test. The $(2,3)$
-consistency ideal is the single equation $(4A_0A_2 - A_1^2)^2 = 0$: the top form of $P$ must
-be a perfect square, exactly the leading-form degeneracy; the $(2,4)$ elimination returns the
-same ideal.
-
-\begin{theorem}[Uniform closure at min degree $\le 2$; machine-verified at the certified
-degrees]\label{thm:uniform}
-Write $\ell = \alpha x + \beta y$, $\beta \ne 0$. In shear coordinates $(u_1, u_2) = (\ell, x)$
-the Keller condition for $P = x + \ell^2$ is the linear first-order PDE
-$2u_1 Q_{u_2} - Q_{u_1} = c$ with characteristic invariant $P$; its complete polynomial
-solution space is $Q = \ell/\beta + H(P)$, $H$ arbitrary. Consequently every planar Keller map
-with $\min(\deg P, \deg Q) \le 2$ is invertible, with the closed inverse
-$\ell = \beta(v - H(u))$, $x = u - \ell^2$, $y = (\ell - \alpha x)/\beta$.
-\end{theorem}
-
-Sufficiency is verified generically; completeness as exact kernel dimensions
-$\lfloor n/2 \rfloor + 1$ ($n = 3..6$, three rational $(\alpha, \beta)$ samples); the inverse
-by exact composition. The closure extends verbatim to any section polynomial: the whole
-quasi-triangular class $P \sim x + f(\ell)$ is invertible at every degree by the same formula
-with $f$ in place of $\ell^2$. At bidegrees $(3,3)$ the machine also forces the alignment: for
-$P = x + A_0 x^2 + A_1 xy + A_2 y^2 + a y^3$ the consistency ideal contains $A_0^2$ and
-$A_1^6$ once $a$ is inverted, so a cube-top cubic $P$ admits completions only in
-quasi-triangular form.
-
-The classical degree descent is, on this machine, an algorithm: while the leading forms are
-power-proportional, subtract $c\,P^k$ from $Q$; when the minimum degree reaches $2$, finish
-with the closed inverse of Theorem~\ref{thm:uniform}; replay the elementary steps on the value
-side to assemble the inverse of the original map. The implementation explicitly inverted an
-entire deterministic library of composed Keller maps ($0$ to $4$ steps each), verified by
-exact composition. Its failure signature is precise: a \emph{primitive} pair, i.e.\ leading
-forms sharing a base form $h$ with $\deg h \ge 2$ and no power relationship. $JC(2)$ is
-exactly the statement that no Keller pair is primitive.
-
-First contact with that stratum, at the smallest primitive bidegrees $(4,6)$
-($P_{\mathrm{top}} = a h^2$, $Q_{\mathrm{top}} = b h^3$, $h$ quadratic): on a structured
-sampled slice ($h = xy$ and the rank sweep $x^2 + \gamma y^2$, $25$ samples, $a \ne 0$,
-including a generic symbolic $a$), the completion window is empty: no Keller partner of degree
-$\le 6$ exists at all (the complete linear system is inconsistent in every sample), and one
-descent step extends the exclusion to degree $\le 8$. Positive controls certify the scan is
-not vacuous. Verified against the primary sources, this replicates with a different
-instrument classically covered territory: Magnus proved invertibility for $\gcd = 1$
-\cite{Magnus1954}, and Appelgate--Onishi \cite{AppelgateOnishi1985} with Nagata extended
-this to $\gcd$ prime (refined coverage: $\gcd \in \{1, 8\} \cup P \cup 2P$); the plane
-conjecture is classically equivalent to the divisibility statement, which is exactly the
-primitive-stratum framing above. The genuinely open $\gcd$ values start at $9$ and $12$
-(bidegrees like $(18,27)$ and $(24,36)$): that composite-gcd ladder is the frontier. First
-contact is made there: for $h = x^4 y^5$, the machine certifies that $P = x + a h^2$ admits
-NO Keller partner of degree $\le 27$ for any $a 
-e 0$ (a single certificate pairing with
-gcd $-144\,a^2$ over $403$ completion unknowns), with the same emptiness across three
-structurally different degree-$9$ bases and a reach probe at $(24, \le 36)$. Stated
-honestly: these bidegrees lie inside Moh's degree-$100$ verified range, so the contribution
-is the explicit per-pair certificate rather than the truth itself; the beyond-Moh rungs are
-the standing target.
-
-\begin{theorem}[The weight-class theorem; machine-verified at every step]\label{thm:weightclass}
-For $u \ge 2$, $v \ge 1$, $a \ne 0$, the polynomial $P = x + a\,x^u y^v$ is not a Keller
-component: no $Q \in \C[x,y]$, of any degree, satisfies $J(P,Q) \in \C^\times$.
-\end{theorem}
-
-\begin{proof}[Proof sketch]
-Under the weights $(v, 1-u)$ the polynomial $P$ is weighted-homogeneous, so $J(P, \cdot)$
-shifts weight by a constant and the Keller equation decouples into independent weight
-classes. The constant $1$ is reachable only from the class of $y$, spanned by the ray
-$g_s = x^{ks} y^{ms+1}$ with $k = (u-1)/d$, $m = v/d$, $d = \gcd(u-1, v)$; on that ray the
-operator is banded, $J(P, g_s) = (ms+1)\,e_s + a B_s\,e_{s+d}$ with $B_s$ a positive
-integer and $e_t = x^{kt} y^{mt}$. For a polynomial $Q$ the class component is a finite sum
-$\sum_{s \le S} c_s g_s$: the $e_0$ row forces $c_0 \ne 0$, the band recursion keeps the
-chain nonzero, and the row beyond the last entry demands it vanish: a contradiction for
-every truncation $S$.
-\end{proof}
-
-This is the closed form of every pure-slice window certificate above (all seven measured
-pairings are its chain products), and it certifies past every verified range at negligible
-cost (e.g.\ $\deg P = 135$, beyond the degree-$108$ floor of the current literature). The
-proof is elementary once seen and may be folklore; we have not found it stated. Its scope is
-exactly the one-monomial perturbations; non-monomial slices have genuine multi-edge Newton
-polygons, and the multi-edge calculus (edge filtration, conjectured upper-triangularity) is
-the program's next instrument.
-
-\begin{theorem}[Lower-weight perturbations never rescue; machine-shadowed, one derived step]
-\label{thm:perturbed}
-Let $u \ge 2$, $v \ge 1$, $a \ne 0$, and let $R \in \C[x,y]$ be any polynomial whose
-monomials have degree $\ge 2$ and $(v, 1-u)$-weight strictly below $v$. Then
-$P = x + a\,x^u y^v + R$ is not a Keller component.
-\end{theorem}
-
-\begin{proof}[Proof skeleton]
-The operator $L_{\mathrm{top}} = J(x + a x^u y^v, \cdot)$ raises weight by $u - 1$, strictly
-more than any perturbation term, so the top-graded equations are governed by
-$L_{\mathrm{top}}$ alone. Its kernel on the class of weight $kv$ is exactly
-$\langle (x + a x^u y^v)^k \rangle$ (machine-identified; the naive injectivity claim fails
-precisely there, a refutation recorded in the experiment log). Absorbing these kernel
-components of $Q$ as $H(P_{\mathrm{top}})$ turns the perturbation into the sources
-$J(R, P^k)$ in the constant's equation, which Lemma~\ref{lem:annihilation} annihilates
-(they are images of $L = J(P, \cdot)$, and the certificate covector kills that image). The
-constant's equation then reduces to the pure chain, contradicted at every truncation. Certificates over $\mathbb{Q}(a, b, c)$ confirm the
-conclusion directly: with danger-weight tails present, the obstruction pairing remains a
-pure power of $a$.
-\end{proof}
-
-This covers dense-Newton-polygon families of unbounded degree, far beyond every verified
-range, while remaining silent, as it must, on quasi-triangular components (their leading
-monomials violate $u \ge 2$, $v \ge 1$). The frontier moves to perturbations of weight
-$\ge v$, where the top edge itself deforms.
-
-\begin{theorem}[Every $x$-anchored edge falls; leading form unconditional]\label{thm:fulledge}
-Let $z = x^k y^m$ with $k, m \ge 1$ and $E = x\,\varphi(z)$ with $\deg \varphi = g \ge 1$.
-Then $E$ is never the leading form of a Keller component of $\C^2$, and $P = E + R$, for any
-polynomial tail $R$ of strictly lower weight, is never a Keller component, at any degree.
-\end{theorem}
-
-\begin{proof}[Proof of the leading-form statement]
-On the $y$-class ray $g_s = x^{ks} y^{ms+1}$ the operator acts by multiplication:
-$J(E, g_s) = \bigl[(ms+1)\varphi(z) + k z \varphi'(z)\bigr] z^s$ (verified symbolically in
-the edge coefficients). The class equation therefore asks for a polynomial $f$ with
-$m z \varphi f' + (\varphi + k z \varphi') f = 1$. If $\deg f = D$, the coefficient of
-$z^{D+g}$ on the left is $(mD + kg + 1)\,\varphi_g\,c_D$, and every factor is nonzero; so
-$c_D = 0$, and by induction $f = 0$, contradicting the constant. The with-tails statement
-follows the kernel-absorption route of Theorem~\ref{thm:perturbed}, with kernels now the
-powers of the full edge $E$ (machine-identified).
-\end{proof}
-
-Machine confirmations: full completion windows are empty for binomial and trinomial edges
-including perfect-square and perfect-cube $\varphi$ (factorization does not rescue); the
-$\mathbb{Q}(a,b)$ certificate for the binomial edge is $60a^3$, free of the lower edge
-coefficient. Consequently no Keller component of $\C^2$ has a Newton top edge anchored at
-the linear vertex with interior direction: components must carry $y$-anchored
-(quasi-triangular type) tops, and the two-variable conjecture is exactly the statement that
-nothing else lives there. Classifying the $y$-anchored completions is the program's queued
-endgame frame.
-
-\begin{theorem}[The vertex dichotomy]\label{thm:dichotomy}
-Let $P$ be a Keller component of $\C^2$ with linear part $x$. If the monomial $x$ is a
-vertex of the Newton polygon $N(P)$, then $P = x + f(y)$ for some univariate $f$.
-\end{theorem}
-
-\begin{proof}[Proof]
-The two axis directions of the edge fan fall by one-line class arguments: for
-$P = x\varphi(y)$, weights $(1,0)$ make the operator preserve each $x$-degree class, and
-the constant's class equation is $\varphi(y) h'(y) = 1$, impossible for a polynomial $h$
-once $\deg \varphi \ge 1$; for $P = x\varphi(x)$, $J(P,Q) = (x\varphi)'(x) Q_y$ forces a
-non-polynomial $Q_y$. Together with Theorem~\ref{thm:fulledge} (interior directions), every
-edge of $N(P)$ at the vertex $(1,0)$ whose lattice points are all divisible by $x$ is
-excluded; any support monomial $x^i y^j$ with $i \ge 1$, $(i,j) \ne (1,0)$ would create
-such an edge as the first right-boundary edge at the vertex. The only admissible edges join
-$(1,0)$ to pure-$y$ vertices $(0,d)$, and such segments contain no interior lattice points.
-Hence the support of $P$ is $\{x\} \cup \{y^j\}$.
-\end{proof}
-
-The dichotomy's other side is real: $x + (x+y)^2$ and $x + (x+2y)^3$ are components in
-which $x$ is swallowed inside the polygon. Every non-triangular component is of that kind,
-and a linear gauge rotation moves its dominating direction onto a coordinate, where the
-vertex analysis re-applies: the recorded strategy is the resulting induction, whose closure
-on the triangular family would be exactly the two-variable Jacobian conjecture. The
-machine's verification covers all three sides on structured samples (vertex-$x$ mixed
-shapes inconsistent; triangular shapes consistent; swallowed shapes consistent).
-
-\begin{lemma}[Annihilation]\label{lem:annihilation}
-Let $P$ be a polynomial, $L = J(P, \cdot)$, and let $\Lambda$ be a covector annihilating the
-image of $L$ on a space of polynomials containing $P^{k-1} m$. Then $\Lambda$ annihilates
-the source $J(m, P^{k})$.
-\end{lemma}
-
-\begin{proof}
-Since $J(P,P) = 0$, the Leibniz rule gives $J(P, P^{k-1} m) = P^{k-1} J(P, m)$, hence
-$J(m, P^{k}) = -k\,P^{k-1} J(P,m) = -k\,L\!\left(P^{k-1} m\right)$: the source is an image of
-$L$ with the explicit preimage $P^{k-1} m$, and $\Lambda$ kills it.
-\end{proof}
-
-The certificate covectors used throughout are left-null on the completion matrix, whose
-columns are exactly $L(m)$ for the ansatz monomials, so they satisfy the hypothesis
-automatically. The only finite-dimensional subtlety is that the window must contain the
-preimage; truncated computations show spurious nonzero pairings for sources whose preimage
-exceeds the window, and the pairing vanishes precisely when $\deg(P^{k-1}m)$ fits, which
-reproduces the recorded artifact values exactly. With this lemma the tail steps of
-Theorems~\ref{thm:perturbed}, \ref{thm:fulledge} and \ref{thm:dichotomy} are unconditional.
-
-\subsection*{The corner is diagonal; the residual core is the staircase}
-
-For a mixed corner $B = x^i y^j$ ($i, j \ge 1$) the corner operator is diagonal,
-\[
-J\!\left(B^{p},\, x^{a} y^{b}\right) = p\,(ib - ja)\; x^{ip + a - 1} y^{jp + b - 1},
-\]
-with kernel exactly the powers of $B$, and no monomial makes $J(B^p, \cdot)$ carry a constant
-term. The mixed corner, long the suspected hard object, is therefore clean; what resists is
-the transport of the Keller constant along the staircase of Newton vertices joining the
-swallowed linear vertex to the corner. That staircase, the classical shape studied by Moh, is
-the residual open core, and the theorems above apply to it edge by edge.
+The planar arc of this program (the $JC(2)$ machine built on the linearity of the Keller
+condition in one component; the uniform closure of the $\min\deg \le 2$ columns with one
+closed inverse; the four unconditional Newton-polygon exclusion theorems and the
+annihilation lemma; the diagonal-corner reduction and the staircase-transport instrument;
+and the source-audited recalibration of the $\gcd$ and degree-floor landscape) now lives in
+the companion manuscript 	exttt{manuscript-planar/}, where it can grow with the active
+program without destabilizing this foundational record. Every result there keeps its
+experiment label (EXP-013 through EXP-043 at the time of this revision), and the repository
+history log remains the single chronological record for both papers.
 
 \section{Discussion and program}
 
@@ -513,10 +341,12 @@ vanishing conjecture is false (equivalent to JC); the Image conjecture is false 
 dimension (implies the vanishing conjecture); and the full Dixmier conjecture is false (stable
 equivalence $JC(2n) \Leftrightarrow \mathrm{Dixmier}(n)$, Belov-Kanel--Kontsevich and
 Tsuchimoto: $JC(4)$ false gives $\mathrm{Dixmier}(2)$ false; $\mathrm{Dixmier}(1)$ remains
-open). \textbf{Next experiments.} EXP-010 (2D widening:
-general weight pairs, higher degrees); the global-minimality search in degrees 3 to 6
-(GPU-widened ansatz enumeration); the Bass--Connell--Wright push-through of $F$ to explicit
-cubic form; primary-source verification of the consequence cascade.
+open). The cascade is documented, with the explicit dimension-48 symmetric witness
+(a gradient Keller map $\mathrm{id} + \nabla f$ with Hessian-nilpotent quartic potential and
+an exact two-point collision over $\Q(i)$, record EXP-041), in the cascade companion.
+\textbf{Standing work} lives in the planar companion: the transport closure of the fifth
+exclusion, the $B = 16$ normal-form attack, and the $(72, 108)$ system; on this paper's side,
+the global-minimality search in degrees 3 to 6 remains the one open experimental thread.
 
 
 \subsection*{The weighted landscape: uniqueness of the mechanism (EXP-012)}

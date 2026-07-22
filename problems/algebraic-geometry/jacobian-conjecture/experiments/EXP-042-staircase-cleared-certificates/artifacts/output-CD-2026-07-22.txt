@@ -1,0 +1,22 @@
+============================================================================
+Part C: the annihilation window criterion transfers to the family
+============================================================================
+[PASS] C1: J(m, P^k) = -k L(P^{k-1} m) exactly on the family (P-agnostic Leibniz)
+  C m=x^1y^3, k=1: preimage degree 4 IN window 8 -> pairing 0
+  C m=x^0y^2, k=2: preimage degree 5 IN window 8 -> pairing 0
+  C m=x^1y^1, k=2: preimage degree 5 IN window 8 -> pairing 0
+  C m=x^0y^3, k=3: preimage degree 9 OUT window 8 -> pairing nonzero
+[PASS] C2: in-window sources pair to ZERO (the annihilation criterion transfers verbatim: second Theorem 5 closure ingredient)
+
+============================================================================
+Part D: general above-weight tails
+============================================================================
+  D x + 2 x^2y + 3 x^2 + 5 x^3: EMPTY
+  D x + 2 x^2y + 3 x^2 + 5 x^3 y: EMPTY
+  D x + 2 x^2y^2 + 3 x^2 + 5 x^2 y: EMPTY
+  D x + 2 x^2y + 3 x^2 + 5 x^4 y^2 + 7 x^3: EMPTY
+[PASS] D1: multi-term above-weight tails: all sampled windows EMPTY
+  D 3-parameter certificate: pairing -27720*a**7*c3**4
+[PASS] D2: the cleared certificate extends to the 3-parameter tail (monomial pairing: all-parameter emptiness)
+
+RESULT: ALL CHECKS PASS.

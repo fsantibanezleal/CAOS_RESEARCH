@@ -1,0 +1,36 @@
+============================================================================
+Part A: GGV structure facts
+============================================================================
+[PASS] A1: R0 = x(xy^4 - l0)^3 is (4,-1)-homogeneous of weight 4 with collinear x-anchored support  support [(1, 0), (2, 4), (3, 8), (4, 12)]
+[PASS] A2: R1 = y(xy^2 - l1) is (-2,1)-homogeneous of weight 1
+[PASS] A3: R0^m and R0^n are Jacobian-dependent (top compatibility of the pair)
+
+============================================================================
+Part B: the x^m-anchored edge operator (multiplication formula)
+============================================================================
+[PASS] B: J(x^m phi(z), x^a y^b) = x^{m+a-1} y^{b-1} [b m phi + (bk - al) z phi'] identically (symbolic phi; grid)
+
+============================================================================
+Part C: for m >= 2 the R0^m edge cannot make the constant
+============================================================================
+  C constant reached: m=1, g=x^0y^1, term -lambda0**3
+[PASS] C: the ONLY constant-reaching case is m = 1, g = y (term -3*lambda0^3 type); for m >= 2 the constant must travel the staircase
+
+============================================================================
+Part D: our theorems bite the B = 16 shape (m = 1 samples)
+============================================================================
+  D pure shape: linear coeff normalized; window 8 EMPTY
+[PASS] D1: the pure m = 1 B = 16 shape has an EMPTY window (Theorem 4 replication: x is a vertex and P != x + f(y))
+  D swallowed (+x**2): EMPTY
+  D swallowed (+x**3): EMPTY
+  D swallowed (+x**3 + x**2): EMPTY
+[PASS] D2: swallowed variants (x^d fillers) are EMPTY at window 8 (staircase territory extended to the B = 16 shape)
+
+============================================================================
+Part E: scoping the full attacks (exact block histograms)
+============================================================================
+  E (48,64) attack, grading (4,-1): window unknowns 2142, classes 315, largest diagonal block 13, top-5 blocks [13, 13, 13, 13, 13]
+  E  (72,108) attack, grading (2,-3): window unknowns 5992, classes 535, largest diagonal block 22, top-5 blocks [22, 22, 22, 22, 22]
+[PASS] E: block histograms computed: the classwise attack replaces one monolithic solve by many small blocks (largest in the low hundreds)
+
+RESULT: ALL CHECKS PASS.
