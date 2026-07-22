@@ -1,0 +1,337 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\definecolor{linknavy}{RGB}{25, 55, 125}
+\usepackage[colorlinks=true, linkcolor=linknavy, citecolor=linknavy, urlcolor=linknavy]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Gm}{\mathbb{G}_m}
+
+\title{Planar Keller Maps after the Counterexample:\\
+Machine-Certified Newton-Polygon Exclusions,\\
+the Staircase Transport, and the Recalibrated Frontier}
+\author{Felipe Santiba\~nez-Leal\\
+\small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
+\date{2026-07-22 (working manuscript, v0.01; split from the foundational companion)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The July 2026 counterexample settled the Jacobian conjecture in dimensions $N \ge 3$ and left
+$JC(2)$ as the open case. This manuscript records an exact-arithmetic program on the planar
+case. The Keller condition $J(P, Q) = 1$ is linear in $Q$ for fixed $P$; the resulting machine
+(eliminate, parametrize the consistency variety, complete, invert) closes the columns
+$\min\deg \le 2$ uniformly (one closed inverse for the whole quasi-triangular class), forces
+perfect-power tops at bidegrees $(2, n)$ and $(3, n)$, and inverts every consistent stratum it
+has met. Four unconditional exclusion theorems follow from a weight-class calculus: a two-term
+$P = x + a x^u y^v$ is never a Keller component at any partner degree; neither is any
+lower-weight perturbation of it; no Keller component carries a Newton top edge anchored at the
+linear vertex $x$ with interior direction; and if $x$ is a vertex of the Newton polygon then
+$P = x + f(y)$ exactly (the vertex dichotomy). The residual open core is the transport of the
+Keller constant along the staircase of Newton vertices swallowing $x$: we show the completion
+window is block-triangular under the edge grading, exhibit the classwise transport chain as an
+executable elimination whose obstruction always localizes at the constant's class, and prove a
+window form of the corresponding fifth exclusion with cleared all-parameter certificates
+(monomial pairings such as $-13860\,a^7$). A source-audited recalibration places the program
+honestly: our composite-gcd certificates replicate literature-covered territory (the verified
+floor is $\gcd \le 8$, primes, $2p$, then Heitmann's $B \ge 16$ and the
+Guccione--Guccione--Valqui dichotomy $B = 16$ or $B > 20$), and the live frontier is the
+$B = 16$ normal form together with the single surviving degree pair $(72, 108)$ below $125$.
+A new multiplication formula for $x^m$-anchored edges shows the $B = 16$ leading form cannot
+produce the Keller constant on its top edge for $m \ge 2$: that case, too, is a staircase
+transport. All computations are exact and reproducible; every claim is labeled machine-verified
+[MV], derived [D], or conjectural [C].
+\end{abstract}
+
+\section{Introduction}
+
+Let $P, Q \in \C[x, y]$ with $J(P, Q) := P_x Q_y - P_y Q_x \in \C^\times$ (a \emph{Keller
+pair}; each member is a \emph{Keller component}). The two-variable Jacobian conjecture $JC(2)$
+asserts every Keller pair is an automorphism pair. Following the July 2026 counterexample in
+dimension 3 \cite{Alpoge2026}, $JC(2)$ is the surviving case, and the classical planar theory
+(Newton polygons, approximate roots, gcd coverage) is its context. This manuscript is the
+planar half of a two-manuscript record: the foundational companion documents the
+three-dimensional aftermath (validation, the seed family, the geometry of non-properness,
+two-dimensional equivariant rigidity); this one documents the planar program. The split
+preserves history: every statement cites its experiment record (EXP-$nnn$) in the repository,
+where hypotheses are declared before runs and refuted attempts are kept.
+
+Labels: \textbf{[MV]} machine-verified exact identity; \textbf{[D]} derived analytically and
+certified on instances; \textbf{[C]} conjecture. Machine-verification is exact sympy
+arithmetic over $\Q$ or $\Q(i)$; no floats anywhere.
+
+Two structural inputs from the companion are used freely. First, every $\Gm$-equivariant
+Keller map of $\C^2$ is linear (equivariant rigidity, EXP-010), so nothing planar is
+equivariant beyond the affine group. Second, at every weight ray the leading pair of a planar
+Keller map is Jacobian-dependent (the tropical bridge, EXP-013), which is the entry point of
+all edge analyses below.
+
+\section{The planar machine}
+
+The Keller condition is bilinear in the coefficient vectors of $P$ and $Q$, hence
+\emph{linear in $Q$ given $P$}. In the affine gauge (identity linear parts) this yields a
+machine per degree pair: eliminate $Q$ (the consistency ideal in $P$'s coefficients),
+parametrize, complete linearly, and invert or fiber-test (EXP-017, EXP-019, EXP-020).
+
+\begin{theorem}[{[MV]}; uniform closure at $\min\deg \le 2$ (EXP-021/022)]\label{thm:uniform}
+Write $\ell = \alpha x + \beta y$, $\beta \ne 0$. In shear coordinates the Keller condition
+for $P = x + f(\ell)$ (any polynomial $f$) is a linear first-order PDE with characteristic
+invariant $P$; its complete polynomial solution space is $Q = \ell/\beta + H(P)$, $H$
+arbitrary, and the pair inverts by one closed formula. Consequently every planar Keller map
+with $\min(\deg P, \deg Q) \le 2$ is invertible, and the whole quasi-triangular class
+$P \sim x + f(\ell)$ is invertible at every degree.
+\end{theorem}
+
+\begin{theorem}[{[MV]}; forced tops at $(2, n)$ and $(3, n)$ (EXP-019/020/022/039)]
+\label{thm:forced}
+The $(2,3)$ consistency ideal is the single equation $(4A_0A_2 - A_1^2)^2 = 0$ ($P$'s top
+form is a perfect square); the $(2,4)$ elimination returns the same ideal. At $(3, 4)$, the
+$6 \times 5$ linear map $Q_4 \mapsto J(P_3, Q_4)$ is rank-deficient exactly when $P_3$ is a
+perfect cube: all $5 \times 5$ minors vanish on the cube parametrization, every minor lies in
+the Hessian-covariant ideal, and completeness follows from $GL_2$-equivariance
+($J(f \circ A, g \circ A) = \det(A)\, J(f, g) \circ A$, verified identically) plus full rank
+at the two non-cube orbit representatives $x^2 y$ and $x y (x + y)$. On the cube stratum,
+sampled completions are Keller and invert with explicit polynomial inverses ($4/4$ by lex
+Gr\"obner extraction). At $(3,3)$ the consistency ideal forces the quasi-triangular alignment
+at the radical level.
+\end{theorem}
+
+The degree columns close by classical coverage: $\gcd(2, n) \le 2$ and $\gcd(3, n) \in
+\{1, 3\}$ are inside the verified $\gcd$ landscape of Section~\ref{sec:frontier}, so the
+machine's contribution there is the \emph{constructive} loop (explicit consistency varieties
+and inverses), stated as replication. The classical degree descent is an algorithm on this
+machine: subtract $c P^k$ while the tops are power-proportional, finish with
+Theorem~\ref{thm:uniform}; it explicitly inverted a deterministic library of composed Keller
+maps, and rotate-descent (rotation of linear-base tops plus de Jonquieres subtraction,
+EXP-034) linearizes that entire library in $0$ to $6$ steps. Its exact limit: mixed-corner
+tops stay mixed under rotation; those are the classical hard shapes, and they are where the
+exclusion theorems below take over.
+
+\section{Four unconditional exclusions}
+
+Throughout, $P$ has linear part $x$ after affine gauge. The weight-class calculus: under
+$w = (v, 1 - u)$, the operator $J(P, \cdot)$ shifts weight by a constant, so the Keller
+equation decouples into weight classes; the technique goes back to Dixmier and Joseph
+\cite{Joseph1975} and is standard in the polygon literature \cite{GGV2017}; the statements
+below appear to be new in the stated generality (Section~\ref{sec:positioning}).
+
+\begin{theorem}[{[MV/D]}; the weight-class theorem (EXP-029)]\label{thm:t1}
+For $u \ge 2$, $v \ge 1$, $a \ne 0$, the polynomial $P = x + a\,x^u y^v$ is not a Keller
+component: no $Q$, of any degree, satisfies $J(P, Q) \in \C^\times$.
+\end{theorem}
+
+\begin{proof}[Proof shape]
+$P$ is $(v, 1-u)$-homogeneous; the constant is reachable only from the class of $y$, spanned
+by the ray $g_s = x^{ks} y^{ms+1}$ ($k = (u-1)/d$, $m = v/d$, $d = \gcd(u-1, v)$); there the
+operator is banded, $J(P, g_s) = (ms+1)\,e_s + a B_s\,e_{s+d}$ with $B_s$ a positive integer,
+and the chain recursion contradicts the last row of every truncation.
+\end{proof}
+
+\begin{theorem}[{[MV/D]}; lower-weight perturbations never rescue (EXP-030/031)]\label{thm:t2}
+With $u, v, a$ as above and $R$ any polynomial whose monomials have degree $\ge 2$ and
+$(v, 1-u)$-weight strictly below $v$: $P = x + a\,x^u y^v + R$ is not a Keller component.
+\end{theorem}
+
+\begin{theorem}[{[MV/D]}; every $x$-anchored edge falls (EXP-032)]\label{thm:t3}
+Let $z = x^k y^m$, $k, m \ge 1$, and $E = x\,\varphi(z)$, $\deg\varphi = g \ge 1$. On the
+$y$-class the edge operator is \emph{multiplication}:
+$J(E, g_s) = [(ms + 1)\varphi + k z \varphi'] z^s$, and the top coefficient
+$(mD + kg + 1)\varphi_g$ of the class ODE kills every polynomial candidate. Hence $E$ is
+never the leading form of a Keller component, and $P = E + R$ (any strictly lower-weight
+tail) is never a Keller component.
+\end{theorem}
+
+\begin{theorem}[{[MV/D]}; the vertex dichotomy (EXP-033)]\label{thm:t4}
+If the monomial $x$ is a vertex of the Newton polygon $N(P)$ (convex hull of the support
+with the origin) of a Keller component with linear part $x$, then $P = x + f(y)$.
+\end{theorem}
+
+\begin{lemma}[Annihilation (EXP-036)]\label{lem:annihilation}
+For any polynomial $P$, $J(m, P^k) = -k\,L(P^{k-1} m)$ with $L = J(P, \cdot)$ (Leibniz). Any
+covector annihilating the image of $L$ on a space containing the preimage therefore kills the
+source; the certificate covectors used throughout are left-null on the completion matrix,
+whose columns are exactly $L(m)$, so the tail steps of
+Theorems~\ref{thm:t2}--\ref{thm:t4} are unconditional. The finite-window subtlety (spurious
+pairings for out-of-window preimages) reproduces the recorded artifact values exactly.
+\end{lemma}
+
+The dichotomy's other side is real: $x + (x+y)^2$ and $x + (x+2y)^3$ are components in which
+$x$ is \emph{swallowed} inside the polygon (equivalently: a pure power $x^d$, $d \ge 2$,
+appears in the support). Every non-triangular component is of that kind. The residual open
+core is therefore precise: components whose polygon swallows $x$ with a mixed staircase.
+
+\section{The corner is diagonal; the staircase transport}\label{sec:staircase}
+
+\begin{proposition}[{[MV]}; the diagonal corner (EXP-035)]
+For $B = x^i y^j$, $i, j \ge 1$:
+$J(B^p, x^a y^b) = p (ib - ja)\, x^{ip + a - 1} y^{jp + b - 1}$, with kernel exactly the
+powers of $B$; no monomial gives $J(B^p, \cdot)$ a constant term. The mixed corner is clean;
+the obstruction lives on the staircase of Newton vertices joining the swallowed linear
+vertex to the corner.
+\end{proposition}
+
+\begin{theorem}[{[MV]}; block triangularity and the transport chain (EXP-037)]
+\label{thm:transport}
+Fix the $x$-edge grading $w = (v, 1-u)$ and let $s_0$ be the minimal $w$-class of $P$. In
+the completion window (unknown $Q$ of bounded degree), every nonzero matrix entry sits at a
+class offset $s - \sigma$ for a $P$-class $s$ ($\sigma = v + 1 - u$), and the offset
+$s_0 - \sigma$ is minimal: ordering $Q$-classes by $w$-class, the system is block
+triangular. Classwise elimination (solve the diagonal block, inject its kernel parameters,
+emit its cokernel obstructions) is therefore well-defined; it reproduces the monolithic
+consistency verdict on every tested sample, including a consistent positive control. On the
+pure above-weight staircase family the diagonal blocks are the banded operators of
+Theorem~\ref{thm:t1}, and on all $8$ grid samples the first inconsistent transport equation
+sits at the \emph{constant's} class.
+\end{theorem}
+
+\begin{theorem}[{[MV]}; the fifth exclusion, window form (EXP-042)]\label{thm:t5}
+Let $P = x + a\,x^u y^v + b\,x^d$ ($u \ge 2$, $v, d \ge 1$; the minimal shape swallowing
+$x$). For every grid point $(u, v, d) \in \{2,3\} \times \{1,2\} \times \{2,3\}$ and window
+$N = 7$, a cleared certificate covector with polynomial entries satisfies $c^T M = 0$
+identically and pairs with the right-hand side to a \emph{monomial}:
+\[
+-13860\,a^7,\quad -32\,a^4,\quad -630\,a^4,\quad -2730\,a^7,\quad -1155\,a^3,\quad
+-165\,a^4,\quad -4620\,a^7 b,\quad -81\,b^4,
+\]
+so the completion window is empty for \emph{all} parameter values with $a \ne 0$ (the
+$b$-factors vanish only where Theorem~\ref{thm:t1} applies anyway). At $(u, v, d) =
+(2, 1, 2)$ the pairing at window $N$ is $-c_N\,a^N$ with $c_N \in \{420, 1260, 13860,
+180180, \dots\}$ for $N = 5..9$: a nonzero monomial in $a$ alone at every certified window.
+The annihilation mechanism of Lemma~\ref{lem:annihilation} transfers verbatim (it is
+$P$-agnostic), and in-window sources pair to zero exactly as the window criterion demands.
+A three-parameter tail certificate ($-27720\,a^7 c_3^4$) extends the family.
+\end{theorem}
+
+\begin{conjecture}[{[C]}; the fifth exclusion, all degrees]\label{conj:t5}
+The constant-class transport equation is a nonzero monomial multiple of $a$ at every
+window: no above-weight perturbation of $x + a x^u y^v$ is ever a Keller component. The
+missing step is the closed form of the transport chain, the staircase analog of the banded
+formula behind Theorem~\ref{thm:t1}.
+\end{conjecture}
+
+Two instrument-level results complete the toolkit. The \emph{matched-pair law} (EXP-038):
+for cornered pairs $P = \alpha B^p + P_{\mathrm{sub}}$, $Q = \beta B^q + Q_{\mathrm{sub}}$,
+the second class of $J(P, Q)$ is exactly
+$\alpha p (ib - ja) q_{a,b} - \beta q (id - jc) p_{c,d}$ over outputs matched by
+$(a, b) = (c, d) + (q - p)(i, j)$; imposing the pair shape does not change the obstruction
+depth on any tested sample, but it halves the window unknowns: an efficiency tool, not a
+second obstruction source. And the \emph{$x^m$-anchored edge operator} (EXP-043): for
+$E = x^m \varphi(z)$, $z = x^k y^l$,
+\[
+J\left(x^m \varphi(z),\; x^{\alpha} y^{\beta}\right)
+= x^{m + \alpha - 1}\, y^{\beta - 1}\,
+\bigl[\beta m\, \varphi(z) + (\beta k - \alpha l)\, z\varphi'(z)\bigr],
+\]
+verified identically in symbolic edge coefficients; Theorem~\ref{thm:t3}'s operator is the
+case $m = 1$.
+
+\section{The frontier, recalibrated from primary sources}\label{sec:frontier}
+
+An audited literature pass (2026-07-22; dossier in the repository with per-claim sources and
+explicit UNVERIFIED flags) fixes the honest coordinates of the program.
+
+\emph{Verified gcd coverage.} For a counterexample pair, $B := \gcd(\deg P, \deg Q)$
+satisfies: $B \ge 9$ is forced by the classical interval results ($B = 1$: Magnus
+\cite{Magnus1955}; $B \le 2$: Nakai--Baba; $B \le 8$ or prime: Appelgate--Onishi
+\cite{AppelgateOnishi1985} and Nagata \cite{Nagata1989}); $B \ne p$ \cite{Abhyankar2008};
+$B \ge 16$ (Heitmann \cite{Heitmann1990}); $B \ne 2p$ and $B = 16$ or $B > 20$
+\cite{GGV2017}. Zoladek's claimed $B > 33$ has a documented gap \cite{GGV2017} and is not
+used. Consequently our machine certificates at $\gcd = 2, 9, 12, 18$ (EXP-024..028), stated
+in earlier revisions as frontier contact, are \emph{replications} of literature-covered
+territory; we keep them as independent verifications and relabel them accordingly.
+
+\emph{Verified degree floor.} Moh's classical analysis discards $\max\deg \le 100$
+\cite{Moh1983}, with complete published detail only for the largest case ($64$); the
+four exceptional cases correspond to six configurations in the modern corner terminology,
+which the algorithmic audit of Guccione--Guccione--Horruitiner--Valqui enumerates and
+discards \cite{GGHV2017, GGHV2022}. The current floor is: any counterexample has
+$\max\deg \ge 125$, or $(\deg P, \deg Q) \in \{(72, 108), (108, 72)\}$ \cite{GGHV2022};
+that single pair was left open explicitly for compute reasons.
+
+\emph{The live targets.} (i) The $B = 16$ case comes with a forced direction set and
+leading forms $l_{4,-1}(P) = \lambda_P R_0^m$, $R_0 = x (x y^4 - \lambda_0)^3$, and a
+reduced normal form \cite{GGV2017}. We verify [MV] that $R_0$ is $(4,-1)$-homogeneous with
+collinear $x$-anchored support, and, by the $x^m$-anchored operator above, that for
+$m \ge 2$ \emph{no monomial reaches the Keller constant from the $R_0^m$ edge}: the
+$B = 16$ problem is a staircase transport problem, the exact object of
+Section~\ref{sec:staircase}. The pure $m = 1$ shape has $x$ as a Newton vertex and is
+excluded outright by Theorem~\ref{thm:t4} (window replication empty); swallowed variants
+land in Theorem~\ref{thm:t5}'s territory (sampled windows empty). (ii) For the $(72, 108)$
+system, the classwise decomposition is block-cheap: exact histograms give $5992$ window
+unknowns in $535$ classes with largest diagonal block $22$ (and $2142$ unknowns, largest
+block $13$, for the $(48, 64)$ validation case): the attack cost is coupling bookkeeping,
+not linear algebra, and the transport instrument automates exactly that.
+
+\section{Positioning and novelty}\label{sec:positioning}
+
+Per the adversarial novelty pass (same dossier): no prior statement of
+Theorems~\ref{thm:t1}, \ref{thm:t2}, or of the companion's equivariant rigidity theorem was
+found (for the latter, the $C^*$-equivariant analog \emph{fails} on pseudo-planes
+\cite{DuboulozPalka2018}, and the finite-group analog is Miyanishi \cite{Miyanishi2023}, so
+the $\C^2$ statement has content). Theorem~\ref{thm:t3} was not found as stated, but its
+operator identity is within the standard bracket calculus \cite{Joseph1975, GGV2017}: the
+statement appears new, the method is classical. Theorem~\ref{thm:t4}'s counterexample half
+is essentially contained in \cite{GGV2017} (Prop.~4.1) with van den Essen's subrectangular
+normalization \cite{vdEssen2000}; we claim only the sharp dichotomy form. All proofs are
+elementary once seen; a folklore risk remains and is recorded, with the primary-source
+audit trail (including its open verification items) persisted in the repository.
+
+\section{Program}
+
+Priorities, from the standing routes evaluation: (1) close
+Conjecture~\ref{conj:t5} by the transport chain's closed form (the cleared-certificate and
+annihilation ingredients are already in place); (2) run the transport sweep on the
+$(48, 64)$ validation case and then the open $B = 16$ territory and $(72, 108)$; (3) the
+properness reformulation ($JC(2)$ holds iff every planar Keller map has empty Jelonek set;
+exact certificates shipped, EXP-014) as a cross-check instrument. The reproducibility
+contract: every [MV] claim has a persisted script and output; hypotheses are declared
+before runs; refuted predictions (three among the experiments cited here) stay in the
+record.
+
+\begin{thebibliography}{99}
+\bibitem{Alpoge2026} L. Alp\"oge, announcement of the counterexample, X (@\_\_alpoge\_\_),
+2026-07-19/20; map produced with Claude Fable 5 (Anthropic); question posed by Akhil.
+\bibitem{Magnus1955} A. Magnus, On polynomial solutions of a differential equation,
+\emph{Math. Scand.} \textbf{3} (1955), 255--260. (The gcd $=1$ theorem; Magnus' formula is
+in \emph{Proc. Amer. Math. Soc.} \textbf{5} (1954), 256--266.)
+\bibitem{AppelgateOnishi1985} H. Appelgate, H. Onishi, The Jacobian conjecture in two
+variables, \emph{J. Pure Appl. Algebra} \textbf{37} (1985), 215--227.
+\bibitem{Nagata1989} M. Nagata, Some remarks on the two-dimensional Jacobian conjecture,
+\emph{Chinese J. Math.} \textbf{17} (1989), 1--7.
+\bibitem{Moh1983} T.-T. Moh, On the Jacobian conjecture and the configurations of roots,
+\emph{J. Reine Angew. Math.} \textbf{340} (1983), 140--212.
+\bibitem{Heitmann1990} R. Heitmann, On the Jacobian conjecture, \emph{J. Pure Appl.
+Algebra} \textbf{64} (1990), 35--72.
+\bibitem{Abhyankar2008} S. S. Abhyankar, Some thoughts on the Jacobian conjecture, Parts
+II--III, \emph{J. Algebra} \textbf{319} (2008), 1154--1248; \textbf{320} (2008),
+2720--2826.
+\bibitem{GGV2017} J. A. Guccione, J. J. Guccione, C. Valqui, On the shape of possible
+counterexamples to the Jacobian conjecture, \emph{J. Algebra} \textbf{471} (2017), 13--74;
+arXiv:1401.1784.
+\bibitem{GGHV2017} J. A. Guccione, J. J. Guccione, R. Horruitiner, C. Valqui, Some
+algorithms related to the Jacobian Conjecture, arXiv:1708.07936.
+\bibitem{GGHV2022} J. A. Guccione, J. J. Guccione, R. Horruitiner, C. Valqui, Increasing
+the degree of a possible counterexample to the Jacobian Conjecture from 100 to 108,
+arXiv:2204.14178.
+\bibitem{Joseph1975} A. Joseph, The Weyl algebra: semisimple and nilpotent elements,
+\emph{Amer. J. Math.} \textbf{97} (1975), 597--615.
+\bibitem{vdEssen2000} A. van den Essen, \emph{Polynomial Automorphisms and the Jacobian
+Conjecture}, Progress in Mathematics 190, Birkh\"auser, 2000.
+\bibitem{Miyanishi2023} M. Miyanishi, Equivariant Jacobian Conjecture in dimension two,
+\emph{Transform. Groups} \textbf{28} (2023), 951--971.
+\bibitem{DuboulozPalka2018} A. Dubouloz, K. Palka, The Jacobian Conjecture fails for
+pseudo-planes, \emph{Adv. Math.} \textbf{339} (2018), 248--284.
+\end{thebibliography}
+
+\end{document}
