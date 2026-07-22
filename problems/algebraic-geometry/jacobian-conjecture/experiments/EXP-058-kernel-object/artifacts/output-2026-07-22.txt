@@ -1,0 +1,11 @@
+============================================================================
+EXP-058: the kernel object k(t)
+============================================================================
+  nullspace over QQ(t): dim 1 (2 s)
+[PASS] 1: kernel one-dimensional; k(t) computed, cleared, persisted  1/125 nonzero coefficients
+  k support (1 monomials): degree range 0..0; i-j range 0..0
+[FAIL] 2: [P0, k] nonzero and entirely off-pool  bracket is ZERO
+[PASS] 3: for every lower monomial m, the pool part of [m, k] lies in Col(M0) (rank tests at t = 1): the annihilation has the EXP-036 shape  1 s
+  4: identification probes:
+     P0^2|_NQ support differs (9 vs 1 monomials)
+RESULT: 1 FAILED: ['2: [P0, k] nonzero and entirely off-pool']
