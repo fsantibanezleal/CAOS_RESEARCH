@@ -660,3 +660,20 @@
   subsumed); live site verified serving through EXP-055.
 - Routine: wiki 05; log; RESUME; v0.35.000; bake. JC(2) remains open; the closure of
   the reduced stratum is now two lemmas away, both with named proof patterns.
+
+## 2026-07-22 (session 33) - The one-dimensional kernel: the solvability lemma becomes concrete
+
+- **EXP-057 (prediction 1 REFUTED; a structural discovery):** rank(M0) = 124 at every
+  sampled t: the reduced system's right kernel is ONE-DIMENSIONAL, so rung solvability
+  is NOT automatic; the perfect 276/276 record (EXP-055/056) means every ladder
+  right-hand side has annihilated the single kernel object k(t). Via
+  rhs . k = -Lambda_prev([m, k]), the all-orders solvability lemma is now CONCRETE:
+  prove Lambda_prev([m, k]) = 0 for all perturbing monomials m and ladder covectors:
+  the exact Jacobi/Leibniz annihilation pattern of EXP-036, now with an explicit
+  target. (The coded 125-row minor crashed downstream of the refutation: recorded.)
+- Next round, sharp: (a) compute k(t) explicitly; (b) identify its closed form
+  (candidate: a truncation of a bracket-commuting object built from P0); (c) prove the
+  annihilation condition; (d) revisit termination with k in hand (the kernel is also
+  the only rhs-obstruction: the two lemmas may merge).
+- Routine: wiki 05; log; RESUME; v0.36.000; bake. JC(2) remains open; the (72,108)
+  closure now rests on ONE explicit object.

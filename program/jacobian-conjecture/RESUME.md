@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-22, session 32 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-22, session 33 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -93,15 +93,14 @@ the standing decision rule: every new experiment names its route).
    currently Theorem 6 or full-window towers; map what escapes ALL current lemmas;
    (b) the y-anchored (quasi-triangular-type) completions classification (JCB-035,
    the endgame frame): JC(2) = the triangular family is everything.
-2. N2 / JCB-040: EXP-056: PERFECT SOLVABILITY at orders 1-2 (276/276 correctors,
-   576 pinned); termination not yet (order-3 residue 17 percent; profile
-   100 -> 71 -> 17). FIRST TASK NEXT ROUND (EXP-057, the pivot): prove
-   (i) ALL-ORDERS SOLVABILITY: every ladder rhs annihilates ker_right(M0)
-   (Jacobi/Leibniz bracket argument; the annihilation-lemma pattern); and
-   (ii) A PRIORI TERMINATION: fixed row pool + rising eps-degree bounds the order.
-   Together: the universal covector exists WITHOUT computing rungs: the reduced
-   stratum closes; then the edge-normalization branch
-   (72108-assembly-checklist.md); then the floor rises to 125.
+2. N2 / JCB-040: EXP-057 REFUTED automatic solvability: rank(M0) = 124: a
+   ONE-DIMENSIONAL right kernel k(t) exists, and the 276/276 record means every
+   ladder rhs annihilates it. FIRST TASK NEXT ROUND (EXP-058): (a) compute k(t)
+   explicitly (one nullspace vector over QQ(t)); (b) identify its closed form;
+   (c) prove Lambda_prev([m, k]) = 0 structurally (the EXP-036 Jacobi/Leibniz
+   pattern with an explicit target) = ALL-ORDERS SOLVABILITY; (d) termination with
+   k in hand. Then the edge-normalization branch (72108-assembly-checklist.md);
+   then the floor rises to 125.
 3. JCB-041 remainder: the screenshot verification pass ONLY (bake is automatic and
    verified; wiki 04 rewritten in session 24). FELIPE still validates the novelty
    phrasing before submission.
