@@ -1,0 +1,13 @@
+============================================================================
+Part D: in-house nilpotency chain (JH)^17 = 0, exact sparse arithmetic
+============================================================================
+  D terms(JH) = 137
+  D terms(JH^2) = 643; Tr(JH^2) = 0: True
+  D terms(JH^4) = 2423; Tr(JH^4) = 0: True
+  D terms(JH^8) = 5030; Tr(JH^8) = 0: True
+  D terms(JH^16) = 91
+  D terms(JH^17) = 6 (NOT zero yet)
+[PASS] D1: (JH)^k = 0 EXACTLY for some k <= 24 (in-house sparse certificate; the true nilpotency index is recorded)  index = 18 (Thompson's claimed 17 is corrected)
+[PASS] D2: Tr(JH^k) = 0 for k = 1, 2, 4, 8 (Newton-identity consistency)
+
+RESULT: ALL CHECKS PASS.

@@ -1,0 +1,35 @@
+============================================================================
+Part A: weight classification under (v, 1-u) = (2, -1)
+============================================================================
+  A xy: weight 1 -> BELOW (Theorem 2, all degrees)
+  A y^2: weight -2 -> BELOW (Theorem 2, all degrees)
+  A xy^2: weight 0 -> BELOW (Theorem 2, all degrees)
+  A y^3: weight -3 -> BELOW (Theorem 2, all degrees)
+  A x^2: weight 4 -> ABOVE (staircase territory, EXP-037/JCB-038)
+  A x^2y: weight 3 -> ABOVE (staircase territory, EXP-037/JCB-038)
+  A x^3: weight 6 -> ABOVE (staircase territory, EXP-037/JCB-038)
+[PASS] A1: split is 4 below-weight vs 3 above-weight, exactly as derived
+[PASS] A2: the pure slice x + a (xy)^2 is Theorem-1 shaped (u = v = 2, same class as x): the all-degree closed-form certificate [C] is a COROLLARY
+
+============================================================================
+Part B: all-below-weight slice EMPTY at N = 10 (Theorem 2 consistency)
+============================================================================
+[PASS] B: x + 2(xy)^2 + 3xy - y^2 + 5y^3 + xy^2 is EMPTY at N = 10 (deeper than EXP-025; consistent with the unconditional Theorem 2)
+
+============================================================================
+Part C: every 4-subset of the seven coefficients, sampled, EMPTY at (4, <= 6)
+============================================================================
+  C: 105 solves over 1 pure-below and 34 staircase-owner subsets: all EMPTY
+[PASS] C: all 35 4-subsets x 3 value tuples are EMPTY at (4, <= 6)  105 solves
+
+============================================================================
+Part D: recalibration against the verified literature floor
+============================================================================
+  D EXP-024/025 (4, *) ladder: gcd 2 -> literature-excluded (gcd <= 8 interval (Magnus/Nakai-Baba/Appelgate-Onishi/Nagata)) -> our certificate = REPLICATION
+  D EXP-026 (18, 27): gcd 9 -> literature-excluded (B >= 16 (Heitmann 1990, JPAA 64)) -> our certificate = REPLICATION
+  D EXP-027 (24, 36): gcd 12 -> literature-excluded (B >= 16 (Heitmann 1990)) -> our certificate = REPLICATION
+  D EXP-028 (18, 36): gcd 18 -> literature-excluded (B != 2p (GGV 2017) [18 = 2*3^2 not 2p: B = 16 or B > 20 applies: 18 excluded]) -> our certificate = REPLICATION
+  D open frontier: B = 16 (GGV normal form, Thm 8.12/Cor 7.13) or B > 20 composite non-2p; lone surviving pair below 125: (72, 108), gcd 36
+[PASS] D: EXP-024..028 are replications inside the verified floor; the open ladder is B = 16 and B > 20 (with (72, 108) the lone pair below 125)
+
+RESULT: ALL CHECKS PASS.

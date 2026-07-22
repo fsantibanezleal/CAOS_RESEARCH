@@ -25,4 +25,15 @@
 
 - **Session 5 (2026-07-21):** EXP-013 (ray-sweep bridge certified; (2,2) exhaustive JC(2));
   EXP-016 (cascade verified from primary sources, flags lifted). Queued: JCB-021..024.
-- **Blocked on:** nothing.
+- **Session 22 (2026-07-22):** seven experiments (EXP-037/038/039/040/014/041 + the two
+  context dossiers): the staircase transport instrumented (block-triangular, obstruction at
+  the constant's class, generic -2a = 0); pair theory = tool; (3, n) column closed; JCB-028
+  closed by subsumption; the frontier RECALIBRATED to B = 16 + (72, 108) (gcd 9/12
+  certificates are replications); the properness instrument shipped; THE DIM-48 WITNESS
+  (first explicit symmetric/gradient/HN falsification, HC(48) false explicitly). Routes
+  evaluation in routes-2026-07-22.md. v0.25.000.
+- **Now:** JCB-038 cleared certificates toward THEOREM 5; JCB-040 (B = 16 normal form;
+  the (72, 108) system); manuscript/wiki integration pending Felipe's validation of the
+  novelty phrasing; web bake + screenshot pass queued.
+- **Blocked on:** Felipe: novelty phrasing for the manuscript; outreach call on the
+  Thompson index correction (17 -> 18).

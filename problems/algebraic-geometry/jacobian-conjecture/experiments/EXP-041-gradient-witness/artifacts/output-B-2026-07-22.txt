@@ -1,0 +1,7 @@
+============================================================================
+Part B: the conjugation identity (makes Ftil symmetric Keller)
+============================================================================
+[PASS] B1: f_H is homogeneous of degree 4 in 48 variables  382 monomials
+[PASS] B2: S^-1 o (id + grad f) o S = (x + H(x), y + JH(x)^t y - i H(x)) identically (all 48 components)
+
+RESULT: ALL CHECKS PASS.

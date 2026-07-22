@@ -349,3 +349,59 @@
   covector is left-null on the image by construction; rank tests confirm. The window
   criterion RETRODICTS EXP-031's artifacts number for number (15, 30a, 30, 45 at window 6;
   945 a^2 at window 10). JCB-033 CLOSED: THEOREMS 2, 3 AND 4 ARE NOW UNCONDITIONAL.
+
+## 2026-07-22 (session 22) - Seven experiments; the frontier recalibrated; the dim-48 witness
+
+- Felipe's directive: continue with ALL remaining experiments and evaluate ALL proposed
+  reasoning paths and routes, at maximum depth. Two literature agents ran in parallel with
+  the machine work; both dossiers are in context/ (literature pass; symmetrization).
+- **EXP-037 (confirmed; declared prediction 3 refuted):** the STAIRCASE TRANSPORT is real
+  and executable: the Keller window is block-triangular under the x-edge grading (diagonal
+  = the MINIMAL P-class, which also makes the sweep triangular for genuine components);
+  classwise elimination reproduces every monolithic verdict; the obstruction localizes at
+  the CONSTANT'S class 8/8 (NOT at the vertex hand-off, refuting the declared guess); the
+  generic reduced equation on x + a x^u y^v + b x^d is -2a = 0: the Theorem 5 target.
+  JCB-038 steps (a)-(c) instrumented.
+- **EXP-038 (confirmed):** pair-level corner theory: the matched-pair law at the second
+  class is exact; the pair constraint adds NO obstruction depth (4/4 samples), only
+  efficiency (roughly half the unknowns). JCB-039 answered: tool, not a route.
+- **EXP-039 (confirmed):** the (3, n) column closes: (3, 4) tops are forced to perfect
+  cubes (elimination minors + GL2-orbit completeness), the cube stratum completes and
+  inverts (4/4 explicit inverses), non-cube tops empty at (3, <= 4/5/7); gcd(3, n) in
+  {1, 3} is classically covered (Magnus 1955; Appelgate-Onishi/Nagata). JCB-021 closed.
+- **EXP-040 (confirmed):** subsumption + recalibration: pure slice = Theorem 1 corollary;
+  below-weight slices = Theorem 2 corollaries; the 4-subset sweep (105 solves) is clean.
+  THE RECALIBRATION (from the literature dossier, primary sources): verified coverage is
+  the FULL interval gcd <= 8 (the "{1,8}" reading was wrong) + primes + 2p + Heitmann's
+  B >= 16 + GGV's "B = 16 or B > 20"; hence our gcd 2/9/12/18 certificates
+  (EXP-024..028) are REPLICATIONS inside the floor. The live frontier: GGV's B = 16
+  normal form (explicit attack surface) and the lone surviving pair (72, 108) below 125
+  (GGHV 2204.14178; left open for compute). JCB-028 closed; JCB-040 opened.
+- **EXP-014 (confirmed; reserved slot filled):** the properness/escape instrument: exact
+  certificates (8/8 library), controls separating properness from injectivity, and the
+  reduction JC(2) <=> empty Jelonek set for every planar Keller map. JCB-022 first
+  contact done.
+- **EXP-041 (confirmed): THE DIMENSION-48 WITNESS.** First explicit symmetric/gradient
+  witness anywhere (verified sweep): HC(48) is false explicitly: f_H = -i sum_j
+  H_j(x + iy) y_j (382 Q(i) monomials, homogeneous quartic, Hessian nilpotent) built by
+  the de Bondt-van den Essen construction from Thompson's dim-24 BCW artifact
+  (sha256-matched, verified in-house; his nilpotency index claim corrected 17 -> 18 by
+  our exact sparse chain: (JH)^18 = 0, (JH)^17 has 6 terms); the conjugation identity
+  verified in all 48 components; the explicit 2-point Q(i) collision verified; P_star =
+  -f_H falsifies Zhao's Vanishing Conjecture at an explicit polynomial. Two instrument
+  bugs caught and recorded (a per-entry "trace" check; a module-import guard).
+- **Novelty pass (JCB-031, dossier):** Theorems 1, 2 and the equivariant rigidity
+  theorem: NOT FOUND in the literature (rigidity has genuine content: the C* analog
+  FAILS on pseudo-planes, Dubouloz-Palka 2018); Theorem 3: not found as stated, method
+  classical (GGV bracket calculus); Theorem 4: sharp-dichotomy form (GGV Prop 4.1 has
+  the counterexample half). Citation corrections: Magnus gcd 1 = Math. Scand. 1955;
+  never cite Zoladek's B > 33 (documented gap); Moh's <= 100 fully detailed only at 64.
+- **Routes evaluation shipped** (program/jacobian-conjecture/routes-2026-07-22.md): R1
+  staircase transport PURSUE (Theorem 5 via cleared certificates); R4 redeploy the
+  machine at B = 16 + (72, 108) PURSUE (JCB-040); pair theory TOOL; properness HOLD;
+  rotation frame KEEP; equivariant + witness DONE (publish); char-p pool DORMANT; Lean
+  HOLD.
+- Debt queued honestly: manuscript + wiki-04 integration of the recalibration and the
+  witness (Felipe validates the novelty phrasing first); web bake + screenshot pass for
+  the seven new records; upstream index-correction note to the Thompson repo (Felipe's
+  call). v0.25.000.

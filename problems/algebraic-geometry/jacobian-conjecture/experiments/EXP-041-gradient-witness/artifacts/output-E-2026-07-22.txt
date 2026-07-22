@@ -1,0 +1,8 @@
+============================================================================
+Part E: P_star = -f_H, the failing HN quartic; Delta P_star^2 != 0 sanity
+============================================================================
+[PASS] E1: P_star is a homogeneous quartic over Q(i) (Hessian nilpotent by the dBvdE char-poly identity + part D)  382 monomials
+[PASS] E2: Delta P_star^2 != 0 (forced by Zhao Cor 3.9 for any VC-falsifying HNP)  9028 nonzero terms
+  E: P_star persisted to artifacts/witness-Pstar-2026-07-22.txt
+
+RESULT: ALL CHECKS PASS.

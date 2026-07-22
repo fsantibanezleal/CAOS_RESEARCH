@@ -1,39 +1,39 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-21, session 21 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-22, session 22 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
 ## 1. State in one screen
 
-- **World state:** JC is FALSE for every N >= 3 (Alpoge/Fable map, 2026-07-19; our EXP-001
-  validated exactly: det JF = -2, fiber over (-1/4, 0, 0) = exactly the 3 announced points).
-  JC(2) is open and is the program's target.
-- **The mechanism [MV]:** F is a weighted skew-product (weights (1,-1,-2)); with v = xy,
-  t = x^2 z, u = 1 + v: the Keller condition reduces to J_2 = 2 c_1^2 in (v, t); fibers are
-  the roots of 4 Phi(w) - w BC + A C^2, Phi(w) = w^2 - w^3, at w = u c_1 / 2.
-- **The family [MV]:** potential form V' = k^2 p(w) + m s, T' = w V' - k^2 Phi(w)
-  (s = q(v) - t, w = u s/k) gives, for admissible seeds (p(0) = 0, int_0^1 p = 0, p(1) != 0,
-  p'(1) != 2 p(1)), Keller maps with det = -k p(1)^2, fiber degree deg p + 1, degree law
-  (5d-3, 5d-4, 4); new explicit counterexamples at fiber degrees 3..6 with rational collision
-  certificates; the announced F is the smallest member; the mechanism is UNIQUE among scanned
-  weight systems (m = 1 is the JC(2) bridge; m = 3 empty/rigid; m = 4 potential form empty by
-  Groebner certificate).
-- **Escape geometry [MV]:** escape <=> multiple fiber root (s = -W'/m);
-  A(F) = {C = 0} union {27 A^2 C^2 - 18 A B C + 16 A + B^3 C - B^2 = 0}; real census 3-vs-1
-  across that wall; F|_R^3 surjective, non-injective, constant det.
-- **2D rigidity THEOREM [D/MV]:** every Gm-equivariant Keller map of C^2 is linear (all
-  weights; classification + positive kill factor 1 + w1 dg + w2 df).
-- **The JC(2) machine [MV]:** Keller is LINEAR in Q given P (affine gauge). Machine:
-  eliminate Q -> consistency ideal in P (theory predicts it) -> parametrize -> complete ->
-  invert. Results: consistency ideal at (2,3) AND (2,4) is the single equation
-  (4 A0 A2 - A1^2)^2 = 0 (P's top form a perfect square); THEOREMS with explicit inverses at
-  (2,3), (2,4), (2,5): P = x + ell^2 (ell = alpha x + beta y),
-  Q(2,3) = y - alpha^3 x^2/beta - 2 alpha^2 xy - alpha beta y^2, inverse
-  G(u,v) = (u - (alpha u + beta v)^2, v + (alpha/beta)(alpha u + beta v)^2); beta = 0 forces
-  affine.
-- **Cascade [verified, EXP-016/018]:** Mathieu false for SU(N >= 3); GMC, Zhao vanishing,
-  Image, symmetric/gradient JC false (in the stated senses); full Dixmier and Poisson false
-  with Dixmier(1) and minimal dimensions open. Published: web Collateral tab +
-  manuscript-cascade/ + difusion drafts.
+- **World state:** JC is FALSE for every N >= 3 (Alpoge/Fable map; EXP-001 validated
+  exactly). JC(2) is open and is the program's target. NEW (session 22): HC(48) is false
+  with OUR explicit witness (EXP-041): the symmetric/gradient JC and Zhao's Vanishing
+  Conjecture now fall EXPLICITLY, not just existentially.
+- **The theorem ladder (all machine-certified, Theorems 2-4 unconditional):**
+  2D equivariant rigidity (EXP-010); the uniform min-degree-2 theorem + shear closure
+  (EXP-021/022); T1 weight-class (EXP-029); T2 lower-weight tails (EXP-030/031); T3
+  x-anchored edges (EXP-032); T4 vertex dichotomy (EXP-033); annihilation closed form
+  (EXP-036). Novelty (adversarial pass, dossier 2026-07-22): T1, T2, rigidity NOT FOUND;
+  T3 not-as-stated (method classical); T4 sharp-dichotomy form (GGV Prop 4.1 has the
+  counterexample half).
+- **The open core and its instrument:** components must swallow x with a mixed staircase
+  (EXP-033/034/035). THE STAIRCASE TRANSPORT (EXP-037): the Keller window is
+  block-triangular under the x-edge grading (diagonal = MINIMAL P-class); classwise
+  elimination is executable and exact; the obstruction sits at the CONSTANT'S class;
+  generic reduced equation -2a = 0 on x + a x^u y^v + b x^d. THEOREM 5 target: clear the
+  generic elimination into all-parameter certificates + re-instantiate EXP-036.
+- **The recalibrated frontier (EXP-040 + literature dossier):** verified coverage = the
+  FULL interval gcd <= 8, primes, 2p, B >= 16 (Heitmann), B = 16 or B > 20 (GGV): our
+  gcd 2/9/12/18 certificates are replications. LIVE targets (JCB-040): GGV's B = 16
+  normal form (explicit directions + reduced shape) and the lone surviving pair
+  (72, 108) below 125 (closing it raises the floor to 125).
+- **Instruments:** the JC(2) machine (eliminate/complete/invert, validated at
+  (2,3)..(2,5), (3,3), (3,4)); the transport chain (EXP-037); the matched-pair law
+  (EXP-038: halves window unknowns, adds no depth); the properness certificate (EXP-014:
+  one-call proper/escape adjudication; JC(2) <=> empty Jelonek set); jc2 checker + bridge
+  (EXP-015); rotate-descent (EXP-034).
+- **Routes:** program/jacobian-conjecture/routes-2026-07-22.md (R1 transport PURSUE; R4
+  B = 16 + (72,108) PURSUE; pair TOOL; properness HOLD; rotation KEEP; equivariant +
+  witness DONE/publish; char-p DORMANT; Lean HOLD).
 
 ## 2. The objects table
 
@@ -42,97 +42,81 @@ The single first-read for a fresh session (contract: methodology/07-session-hand
 | F | the announced counterexample (u = 1 + xy) | EXP-001/002 |
 | constructor v2 | the seed family (potential form) | EXP-004 (code/jclib) |
 | the wall | 27A^2C^2 - 18ABC + 16A + B^3C - B^2 = 0 | EXP-007 |
-| the landscape | weights (1,-1,-m) survey; uniqueness of m = 2 | EXP-012 |
-| the machine | eliminate/parametrize/complete/invert (bilinear harness) | EXP-017/019/020 |
+| the machine | eliminate/parametrize/complete/invert | EXP-017/019/020/039 |
+| the transport chain | classwise elimination under the x-edge grading | EXP-037 (run.py transport()) |
+| matched-pair law | alpha p (ib-ja) q_ab = beta q (id-jc) p_cd on matched outputs | EXP-038 |
+| properness certificate | resultant leading coefficients constant | EXP-014 |
+| f_H / P_star | the dim-48 witness quartic (382 Q(i) monomials) + collision | EXP-041 (artifacts/) |
 | jc2 checker + bridge | exact certificate adjudication; m = 1 extractor | EXP-015 (code/jclib/jc2.py) |
 | keller2lib | shared planar utilities (library, graded pieces) | code/jclib/keller2lib.py |
 
 ## 3. Experiment index (verdict; load-bearing output)
 
-001 confirmed (validation; 3-point fiber) · 002 confirmed (structure) · 003 partially refuted
-(v1 lift; d = 2 rigidity) · 004 confirmed (constructor v2 + new counterexamples) · 005
-confirmed w/ caveats (2D reduction) · 006 confirmed (2D scan: all linear) · 007 confirmed
-(escape = multiple root; the wall) · 008 confirmed (degree laws; fiber-6 instance) · 009
-confirmed (char-p certificates) · 010 confirmed (2D rigidity THEOREM) · 011 confirmed (real
-census) · 012 conf 1-4/refuted 5 (landscape; uniqueness) · 013 conf 1-2/partial 3 (tropical
-bridge; (2,2) exhaustive) · 015 confirmed (checker + bridge tooling) · 016 confirmed (cascade
-verified) · 017 confirmed (bilinear exhaustives (2,3)/(3,3)) · 018 confirmed (Poisson +
-symmetric closure) · 019 confirmed (floors; (2,3) full closure ideal) · 020 confirmed
-(THEOREMS (2,3)/(2,4)/(2,5); (3,4) elimination cap-out documented) · 021 confirmed (THE UNIFORM min-degree-2 THEOREM) · 022 confirmed (shear closure for ANY f; (3,3) cube alignment FORCED; the descent inverter runs, library fully inverted) · 023 confirmed (the (4, <= 6) primitive window is EMPTY on the sampled slice, +8 via one descent step; controls non-vacuous) · 024 confirmed (pure-slice certificate -8 a^2: empty for EVERY a != 0; full 8-param certificate capped, staged) - 025 confirmed (ALL 63 slices up to 3 lower coeffs empty; windows <= 18 empty; E-locus closed; sources verified: (4,*) ladder literature-covered, open frontier = composite gcd 9, 12) . 026 confirmed (FIRST composite-gcd exclusions: (18, <= 27) certified empty for all a != 0, gcd -144 a^2; h-sweep + gcd-12 probe empty; inside Moh range, certificate is the new content) . 027 confirmed (gcd-12 certificate: (24, <= 36) empty for all a != 0, gcd -80 a^2) . 028 confirmed (polygon strategy: sieve exact; (18, <= 36) certified PAST the divisible rung, gcd -576 a^3; obstruction = edge residue on the P-edge ray; all-degree non-component statement [D]; floor ~108) . 029 confirmed (THE WEIGHT-CLASS THEOREM, unconditional: x + a x^u y^v never a Keller component at ANY degree; all seven pairings = the closed form; beyond-floor at degree 135) . 030 partially refuted (injectivity FALSE: kv-kernels = P_top^k; empirics held) . 031 confirmed (THEOREM 2: absorption + annihilation; lower-weight tails never rescue; danger tails b,c-free) . 032 confirmed (THEOREM 3: every x-anchored edge falls; multiplication structure + univariate kill; frontier sharp: only y-anchored tops can carry components) . 033 confirmed (axis edges fall; THEOREM 4 vertex dichotomy: vertex-x components are EXACTLY x + f(y); escape route real; rotation induction recorded) . 034 confirmed (rotate-descent linearizes the whole library; hard-shape stop = mixed corners; 8 swallowed-mixed windows empty; corner certificates multi-ray) . 035 confirmed (the corner is DIAGONAL, kernel = powers of B, pure corner cannot carry the constant: core moves to the STAIRCASE) . 036 confirmed after refutation (annihilation CLOSED FORM: sources = L(P^{k-1} m); THEOREMS 2-4 UNCONDITIONAL).
+001-036: see wiki/05-experiments.md (unchanged from session 21's index). Session 22 adds:
+037 confirmed, prediction 3 refuted as declared (staircase transport: block-triangular;
+obstruction at the constant's class; generic -2a = 0) . 038 confirmed (pair corner: exact
+matched-pair law; no added depth; half the unknowns) . 039 confirmed ((3,n) closure: cube
+force by elimination + GL2 orbits; 4/4 inverses; column classically covered) . 040
+confirmed (JCB-028 closed by subsumption; frontier recalibrated to B = 16 + (72,108);
+gcd 9/12 demoted to replications) . 014 confirmed (properness instrument; reserved slot
+filled) . 041 confirmed (THE DIM-48 WITNESS: HC(48) false explicitly; Thompson input
+verified with index corrected 17 -> 18; P_star falsifies Zhao's VC explicitly).
 
 ## 4. In flight
 
-Nothing mid-run. Session 21 delivered two results. (1) EXP-035: the mixed corner is DIAGONAL:
-J(B^p, x^a y^b) = p(ib - ja) x^{ip+a-1} y^{jp+b-1} for B = x^i y^j, kernel exactly the powers
-of B, and a pure corner can NEVER carry the constant (output exponents never both zero).
-Hence the constant must travel the STAIRCASE of Newton vertices from the swallowed linear
-vertex (1,0) to the top corner: THE OPEN CORE IS THE STAIRCASE TRANSPORT (JCB-038), not the
-corner. 30 monomial-corner samples: all windows empty. (2) EXP-036: the annihilation lemma is
-CLOSED IN GENERAL, after the first derivation was REFUTED (it used L_top; the machine showed
-nonzero in-window pairings and rank outside the column space). Correct statement: sources are
-J(m, P^k) with the FULL P, and J(m, P^k) = -k L(P^{k-1} m), so every source is an image with
-explicit preimage P^{k-1} m; the certificate covector is left-null on the image by
-construction. The window criterion (pairing vanishes iff deg(P^{k-1} m) <= N) RETRODICTS
-EXP-031's artifact values exactly (15, 30a, 30, 45 at window 6; 945 a^2 at window 10).
-CONSEQUENCE: THEOREMS 2, 3 AND 4 ARE NOW UNCONDITIONAL; no derived gap remains in the
-perturbation machinery.
+Nothing mid-run. Session 22 closed with seven confirmed experiments, two persisted
+context dossiers (literature pass; symmetrization), and the routes evaluation.
 
 ## 5. Next actions, ordered
 
-1. JCB-038 (THE OPEN CORE: the staircase transport). The constant must travel the
-   lower-left Newton boundary from (1,0) to the top corner. Concrete first moves:
-   (a) formalize the staircase as an ordered list of edges, each with its own weight system,
-   so Theorems 1-3 apply EDGE BY EDGE (each edge is an x-anchored or corner-anchored form);
-   (b) derive the vertex-matching (transport) relation between consecutive edges: the class
-   solution produced by edge r must match the class input of edge r+1 at their shared
-   vertex; (c) test whether the composed transport is over-determined on samples (build P
-   with a prescribed 3-vertex staircase, compute both sides of the matching relation);
-   (d) keep widening scans as the empirical map (all empty so far).
-2. JCB-039 (complementary): pair-level corner theory (both components cornered) in the
-   diagonal picture; does the pair constraint add anything beyond the staircase?
-3. JCB-031 (remaining): novelty searches (Theorems 1-4, now unconditional: this raises the
-   stakes on the folklore check); full-text Abhyankar hypotheses; Moh's six shapes (they
-   ARE the staircase shapes: fetch the explicit list as scan targets).
-2. JCB-031: full-text pass: Moh 1983 (exact coverage statement), the Newton-polygon
-   literature around minimal counterexamples, and the rigidity novelty check; unhedge or
-   qualify the manuscript accordingly.
-3. JCB-028 (optional depth): 4-coefficient slices at (4, <= 6); the closed-form all-degree
-   pure-slice certificate [C] (exponent pattern 2,4,5,6 at windows 6,10,14,18).
-4. JCB-021 staged (3,4) elimination (degreewise/blockwise); remaining (3,n) strata sweeps.
-3. JCB-022 EXP-014 Puiseux escape obstructions at min degree 3; the genuinely hard territory
-   beyond: shared-top cases with deg h >= 2 ((4,6)-type).
-4. JCB-024 Hessian-nilpotent quartic extraction (fetch the de Bondt-van den Essen
-   symmetrization construction first).
-5. Wiki/manuscript debt CLEARED in session 12 (wiki 04 machine section; manuscript v0.06).
-6. Diffusion: both post drafts await Felipe's review; publish only on his go.
+1. JCB-038 (THEOREM 5): clear the EXP-037 generic transport into all-parameter
+   certificates (EXP-024-style cleared covectors), re-instantiate the EXP-036
+   annihilation lemma for staircase certificates, state and machine-verify Theorem 5
+   (above-weight perturbations of x + a x^u y^v are never Keller components).
+2. JCB-040: transcribe GGV's B = 16 data (directions, R0/R1 leading forms, Thm 8.12
+   normal form) into a machine attack with the transport + matched-pair instruments;
+   then scope the (72, 108) system ((8,28),(3,2) family) and estimate compute.
+3. JCB-041 (integration debt, blocks the publication gate): manuscript + wiki 04 with
+   the recalibrated floor (replication labels for EXP-024..028; Magnus Math. Scand. 1955
+   for gcd 1; never cite Zoladek B > 33), the novelty phrasing (FELIPE VALIDATES), and
+   the EXP-041 witness section; web bake + screenshot pass for the seven new records.
+4. JCB-042 (Felipe's call): report the index correction (17 -> 18) upstream to the
+   Thompson repo.
+5. JCB-018 (optional): Lean hardening of T1/T2/rigidity after the manuscript pass.
+6. Diffusion: existing drafts still await Felipe; the witness merits its own post
+   (draft only after Felipe validates the framing).
 
 ## 6. Where everything lives
 
 - Experiments: problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-*/
   (hypothesis.md, run.py, artifacts/, verdict.md) · shared code: .../code/jclib/
+- Context dossiers: .../context/2026-07-22-literature-pass-dossier.md (novelty + floor)
+  and .../context/2026-07-22-symmetrization-dossier.md (witness construction; local
+  source PDFs in E:\_Temp\jc-dossier\)
 - Wiki: .../wiki/01..05 · history: .../history/log.md (append-only)
-- Program: program/jacobian-conjecture/{plan,state,backlog,RESUME}.md · board:
-  program/portfolio.yaml
-- Manuscripts: manuscript/ (main, v0.05) · manuscript-cascade/ (companion)
-- Bake -> web: data-pipeline/researchlab (export_registry) -> data/derived -> frontend/ ->
+- Program: program/jacobian-conjecture/{plan,state,backlog,RESUME,routes-2026-07-22}.md
+- Manuscripts: manuscript/ (v0.06 + session-22 debt queued) · manuscript-cascade/
+- Bake -> web: data-pipeline/researchlab -> data/derived -> frontend/ ->
   https://research.fasl-work.com (Pages via Actions on main)
-- Management mirror: CAOS_MANAGE plans/caos-research/ (status, findings F1-F17, history);
-  diffusion drafts in CAOS_MANAGE difusion/jacobian-{conjecture,cascade}/
-- Repo flow: task work on develop -> PR -> main (tags vX.XX.000); push via the vault PAT
-  (see CAOS_MANAGE credentials/general/github/pat.txt; GCM hangs, use the PAT-in-URL form).
+- Management mirror: CAOS_MANAGE plans/caos-research/ (status, findings, history)
+- Repo flow: work on develop -> PR -> main (tags vX.XX.000); push via the vault PAT
+  (CAOS_MANAGE credentials/general/github/pat.txt; GCM hangs, use PAT-in-URL).
 
 ## 7. Gotchas
 
-- sympy nonlinear solve() can return [] on solvable underdetermined systems (EXP-013/017:
-  refuted by explicit witness): use the bilinear/linear structure or Groebner emptiness
-  certificates instead; always keep discard counters (no silent drops).
-- Rabinowitsch auxiliaries and free symbols must be instantiated/filtered explicitly (zoo/nan
-  leaks produced fake findings twice: EXP-012 C/D first passes).
-- Monolithic lex Groebner at ~19 variables exceeds ~10 min (EXP-020 part B): stage
-  eliminations degreewise/blockwise.
-- Poly(..., extension=False) is invalid in sympy 1.14.
-- Runs: cap Bash calls at 600000 ms; long runs in parts (run.py <PART>); artifacts via tee.
-- Frontend footer version reads frontend/package.json: bump it with pyproject and
+- sympy nonlinear solve() can return [] on solvable underdetermined systems: use the
+  linear/bilinear structure or Groebner emptiness; keep discard counters.
+- Fraction-field RREF/nullspace steps are GENERIC-only (EXP-024): sound all-parameter
+  statements need cleared certificates; numeric runs are sound pointwise.
+- Radical membership by raw powers can stall (EXP-039 A4: powers to 8 insufficient);
+  GL2-orbit classification closed it instead: prefer structural completeness arguments.
+- "Trace zero" for matrix polynomials means the SUM of the diagonal entries, not each
+  entry (EXP-041 D bug, fixed); guard experiment drivers with `if __name__ == "__main__"`
+  (an import executed a whole run once).
+- Monolithic lex Groebner at ~19 variables exceeds ~10 min: stage or avoid (top-force
+  arguments are cheaper).
+- Runs: cap Bash calls at 600000 ms; long runs in parts (run.py <PART>); artifacts via
+  tee. Frontend footer version reads frontend/package.json: bump with pyproject and
   researchlab/__init__ together (three places, one version).
 - Screenshot verification: tools/visual-verify in CAOS_MANAGE with
-  PLAYWRIGHT_BROWSERS_PATH=E:/_Temp/ms-playwright; preview server via npx vite preview.
+  PLAYWRIGHT_BROWSERS_PATH=E:/_Temp/ms-playwright; preview via npx vite preview.
