@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-22, session 23 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-22, session 24 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -64,7 +64,9 @@ verified with index corrected 17 -> 18; P_star falsifies Zhao's VC explicitly) .
 confirmed, prediction 2 refuted-replaced (THEOREM 5 WINDOW FORM: cleared all-parameter
 certificates, monomial pairings, window law -c_N a^N; annihilation transfers) . 043
 confirmed (x^m-anchored edge operator NEW; B = 16 core = staircase transport; scoping
-blocks 13/22).
+blocks 13/22) . 044 confirmed (THE CERTIFICATE TOWER: normalized obstruction -2a
+window-independent; Theorem 5 all-degree [D]; gap = TOWER LEMMA) . 045 confirmed
+(degree-32 frontier certificates; similarity filter x18.8: (48,64) drops to 111 unknowns).
 
 ## 4. In flight
 
@@ -75,15 +77,15 @@ the standing decision rule: every new experiment names its route).
 
 ## 5. Next actions, ordered
 
-1. N1 / JCB-038 (THEOREM 5 all-degree): the window form is DONE (EXP-042); the one
-   remaining step is the transport chain's closed form (the staircase analog of the
-   EXP-029 banded formula; the window law -c_N a^N is the target shape).
-2. N2 / JCB-040: run the (48, 64) classwise validation sweep (literature says empty:
-   Moh case 64 / Heitmann), then open B = 16 territory (max > 150), then (72, 108);
-   scoping done (blocks 13/22). M1 / JCB-043 (imported-constraint filters) feeds this.
-3. JCB-041 remainder: web bake + screenshot pass (nine unbaked records: EXP-037..043,
-   014, 041) and the wiki 04 rewrite; the manuscript half is DONE via the split.
-   FELIPE still validates the novelty phrasing before submission.
+1. N1 / JCB-038: prove the TOWER LEMMA (the certificate restriction ratio is a nonzero
+   multiple of a for every N; EXP-044 verified it through N = 11 with the 2N - 3 prime
+   pattern): that single lemma makes Theorem 5 all-degree unconditional.
+2. N2 / JCB-040: the (48, 64) validation sweep is now SMALL (similarity filter: 111
+   unknowns; blocks <= 13; EXP-045): run it (sampled lower classes, filtered windows),
+   then open B = 16 (max > 150), then (72, 108). JCB-043's filter is the instrument.
+3. JCB-041 remainder: the screenshot verification pass ONLY (bake is automatic and
+   verified; wiki 04 rewritten in session 24). FELIPE still validates the novelty
+   phrasing before submission.
 4. JCB-042 (Felipe's call): report the index correction (17 -> 18) upstream to the
    Thompson repo.
 5. JCB-018 (optional): Lean hardening of T1/T2/rigidity after the manuscript pass.

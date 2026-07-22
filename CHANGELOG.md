@@ -3,6 +3,22 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.27.000], 2026-07-22
+
+### Added
+- EXP-044 (route N1): THE CERTIFICATE TOWER: the normalized constant-class transport
+  equation is identically -2a at every window (N <= 13); cleared pairings -c_N a^N with
+  the 2N - 3 prime ratio pattern; single-ratio tower restrictions on all rows;
+  forward-only injection. THEOREM 5 ALL-DEGREE stands at [D]; the residual gap is the
+  TOWER LEMMA.
+- EXP-045 (routes N2 + M1): the x^{m-1}-divisibility one-liner; degree-32 B = 16-flavor
+  certificates (windows 12/16/20 empty); the similarity filter: sound on knowns, x18.8
+  unknown reduction ((48,64): 2142 -> 111), emptiness preserved. JCB-043 value test
+  passed; the frontier sweep is now a small computation.
+- Wiki 04 rewritten: corrected gcd landscape and citations; full-pass rigidity novelty
+  verdict; new sections (staircase transport + Theorem 5 + tower; the frontier engaged;
+  the witness pointer). Baked data refreshed (EXP-044/045 included).
+
 ## [0.26.000], 2026-07-22
 
 ### Added
