@@ -263,3 +263,17 @@
 - **Sources:** Abhyankar similarity primary-cited (similar TRIANGLES, ratio deg f : deg g);
   Moh 1983 (<= 100, six candidate shapes eliminated); arXiv:2204.14178 raises the floor to
   108: beyond-current-knowledge starts above ~108 (e.g. gcd 45 at (90, 135)).
+
+## 2026-07-21 (session 16) - THE WEIGHT-CLASS THEOREM: the machine found a proof
+
+- **EXP-029 (confirmed):** the edge residue in closed form became an unconditional theorem:
+  for u >= 2, v >= 1, a != 0, P = x + a x^u y^v is NEVER a Keller component at ANY degree.
+  Proof: the (v, 1-u) grading makes P w-homogeneous, the Keller system decouples by weight
+  class, the constant's class is one ray, L is banded there with positive integer
+  coefficients, and the chain recursion contradicts the last row. Machine verification: the
+  banded formula exact on grids; ALL SEVEN measured pairings reproduced (they were this
+  formula all along); no second obstruction (full window == ray class, incl. d > 1); and the
+  beyond-floor certificate at degree 135 > 108 (partner degrees to ~1073 checked, all a).
+  Honest caveat: elementary once seen, folklore risk recorded; found by the machine's
+  anatomy. Retires the pure-slice window program; opens the multi-edge calculus (JCB-033)
+  for non-monomial slices: the next reasoning step toward JC(2).

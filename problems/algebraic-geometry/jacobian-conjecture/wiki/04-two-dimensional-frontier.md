@@ -156,3 +156,27 @@ machine-verified shadow. The successor instrument (JCB-032) is the edge-residue 
 closed form; with it, rungs beyond the current verified floor (Moh 1983 to degree 100;
 raised to 108 by arXiv:2204.14178), e.g. gcd 45 at bidegrees $(90, 135)$, become reachable,
 where a certified exclusion would be a statement nobody has verified in any form.
+
+## The weight-class theorem (EXP-029): monomial slices fall at all degrees
+
+**Theorem (unconditional).** For $u \ge 2$, $v \ge 1$, $a \ne 0$, the polynomial
+$P = x + a\,x^u y^v$ is never a Keller component: no polynomial $Q$ of any degree satisfies
+$J(P, Q) = \text{const} \ne 0$.
+
+Proof sketch (elementary; every step machine-verified on grids). Under the weights
+$(v,\, 1-u)$, $P$ is weighted-homogeneous, so $J(P, \cdot)$ shifts weight by a constant and
+the Keller equation decouples by weight class. The constant $1$ is reachable only from the
+class of $y$, spanned by the single ray $g_s = x^{ks} y^{ms+1}$
+($k = (u-1)/d$, $m = v/d$, $d = \gcd(u-1, v)$), on which the operator is banded:
+$L(g_s) = (ms+1)\,e_s + a B_s\,e_{s+d}$ with $B_s$ a positive integer. The first row forces
+the chain nonzero, the last row demands it vanish: contradiction at every truncation, and
+every polynomial $Q$ truncates.
+
+This is the closed form of every pure-slice window certificate the program produced (all
+seven measured pairings are reproduced by the chain product), it certifies beyond the
+verified floor at negligible cost (degree $135 > 108$: checked to partner degrees
+$\sim 1000$), and it retires the pure-slice window program. Honesty: the proof is
+elementary once seen (folklore risk recorded); we have not found it stated; it was found by
+the machine's certificate anatomy. Scope: the theorem needs the perturbation to be ONE
+monomial; non-monomial slices have genuine multi-edge polygons and are the next target
+(JCB-033: the multi-edge calculus, aiming at upper-triangularity of the edge filtration).

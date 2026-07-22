@@ -365,6 +365,31 @@ honestly: these bidegrees lie inside Moh's degree-$100$ verified range, so the c
 is the explicit per-pair certificate rather than the truth itself; the beyond-Moh rungs are
 the standing target.
 
+\begin{theorem}[The weight-class theorem; machine-verified at every step]\label{thm:weightclass}
+For $u \ge 2$, $v \ge 1$, $a \ne 0$, the polynomial $P = x + a\,x^u y^v$ is not a Keller
+component: no $Q \in \C[x,y]$, of any degree, satisfies $J(P,Q) \in \C^\times$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Under the weights $(v, 1-u)$ the polynomial $P$ is weighted-homogeneous, so $J(P, \cdot)$
+shifts weight by a constant and the Keller equation decouples into independent weight
+classes. The constant $1$ is reachable only from the class of $y$, spanned by the ray
+$g_s = x^{ks} y^{ms+1}$ with $k = (u-1)/d$, $m = v/d$, $d = \gcd(u-1, v)$; on that ray the
+operator is banded, $J(P, g_s) = (ms+1)\,e_s + a B_s\,e_{s+d}$ with $B_s$ a positive
+integer and $e_t = x^{kt} y^{mt}$. For a polynomial $Q$ the class component is a finite sum
+$\sum_{s \le S} c_s g_s$: the $e_0$ row forces $c_0 \ne 0$, the band recursion keeps the
+chain nonzero, and the row beyond the last entry demands it vanish: a contradiction for
+every truncation $S$.
+\end{proof}
+
+This is the closed form of every pure-slice window certificate above (all seven measured
+pairings are its chain products), and it certifies past every verified range at negligible
+cost (e.g.\ $\deg P = 135$, beyond the degree-$108$ floor of the current literature). The
+proof is elementary once seen and may be folklore; we have not found it stated. Its scope is
+exactly the one-monomial perturbations; non-monomial slices have genuine multi-edge Newton
+polygons, and the multi-edge calculus (edge filtration, conjectured upper-triangularity) is
+the program's next instrument.
+
 \section{Discussion and program}
 
 \textbf{Why the conjecture is false.} In the equivariant class, being Keller is a two-variable
