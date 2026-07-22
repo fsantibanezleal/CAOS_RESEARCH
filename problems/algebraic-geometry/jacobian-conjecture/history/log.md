@@ -291,3 +291,17 @@
   lower-weight polynomial) is NEVER a Keller component, at any degree: dense-polygon,
   unbounded-degree families, beyond every verified floor. Remaining [D] gap: annihilation in
   closed form. Next frontier: perturbations of weight >= v (the top edge itself deforms).
+
+## 2026-07-22 (session 18) - THEOREM 3: every x-anchored edge falls
+
+- **EXP-032 (confirmed):** on the y-class, the operator for a FULL edge E = x phi(z)
+  (z = x^k y^m, deg phi = g >= 1) is MULTIPLICATION by (ms+1) phi + k z phi' [MV symbolic],
+  so the obstruction is a univariate one-liner: the top coefficient (mD + kg + 1) phi_g of
+  the class ODE kills every polynomial candidate. THEOREM 3: no Keller component has a
+  Newton top edge anchored at the linear vertex x with interior direction, regardless of the
+  edge coefficients (binomial, trinomial, perfect powers: all verified empty; QQ(a,b)
+  certificate 60 a^3 b-free; kernels = E^j; tails never rescue; quasi-triangular control
+  consistent). Subsumes Theorems 1-2's leading forms. One instrument bug (wrong class
+  weights in the kernel scan) caught and fixed mid-run, recorded. The frontier is now
+  SHARP: components must have y-anchored (quasi-triangular-type) tops; JC(2) = nothing else
+  lives there (JCB-035).

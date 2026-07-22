@@ -419,6 +419,32 @@ range, while remaining silent, as it must, on quasi-triangular components (their
 monomials violate $u \ge 2$, $v \ge 1$). The frontier moves to perturbations of weight
 $\ge v$, where the top edge itself deforms.
 
+\begin{theorem}[Every $x$-anchored edge falls; leading form unconditional]\label{thm:fulledge}
+Let $z = x^k y^m$ with $k, m \ge 1$ and $E = x\,\varphi(z)$ with $\deg \varphi = g \ge 1$.
+Then $E$ is never the leading form of a Keller component of $\C^2$, and $P = E + R$, for any
+polynomial tail $R$ of strictly lower weight, is never a Keller component, at any degree.
+\end{theorem}
+
+\begin{proof}[Proof of the leading-form statement]
+On the $y$-class ray $g_s = x^{ks} y^{ms+1}$ the operator acts by multiplication:
+$J(E, g_s) = \bigl[(ms+1)\varphi(z) + k z \varphi'(z)\bigr] z^s$ (verified symbolically in
+the edge coefficients). The class equation therefore asks for a polynomial $f$ with
+$m z \varphi f' + (\varphi + k z \varphi') f = 1$. If $\deg f = D$, the coefficient of
+$z^{D+g}$ on the left is $(mD + kg + 1)\,\varphi_g\,c_D$, and every factor is nonzero; so
+$c_D = 0$, and by induction $f = 0$, contradicting the constant. The with-tails statement
+follows the kernel-absorption route of Theorem~\ref{thm:perturbed}, with kernels now the
+powers of the full edge $E$ (machine-identified).
+\end{proof}
+
+Machine confirmations: full completion windows are empty for binomial and trinomial edges
+including perfect-square and perfect-cube $\varphi$ (factorization does not rescue); the
+$\mathbb{Q}(a,b)$ certificate for the binomial edge is $60a^3$, free of the lower edge
+coefficient. Consequently no Keller component of $\C^2$ has a Newton top edge anchored at
+the linear vertex with interior direction: components must carry $y$-anchored
+(quasi-triangular type) tops, and the two-variable conjecture is exactly the statement that
+nothing else lives there. Classifying the $y$-anchored completions is the program's queued
+endgame frame.
+
 \section{Discussion and program}
 
 \textbf{Why the conjecture is false.} In the equivariant class, being Keller is a two-variable
