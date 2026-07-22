@@ -1,0 +1,9 @@
+============================================================================
+EXP-047: filtered (48, <= 64) sweep; ratio 64/48; any partner deg <= 64 must fit the scaled polygon (similarity, both degs > 1)
+============================================================================
+  pure F1 shape: x + R0(1)^3: deg 48; filtered window N=64: 111 unknowns, 270 equations, 2.4 s: EMPTY
+  swallowed variant: x + R0(1)^3 + x^2: deg 48; filtered window N=64: 111 unknowns, 270 equations, 3.1 s: EMPTY
+  mixed variant: x + R0(1)^3 + x^2 + 5 x^3 y^4: deg 48; filtered window N=64: 111 unknowns, 270 equations, 3.6 s: EMPTY
+[PASS] A+B: all three degree-48 samples have EMPTY filtered windows at N = 64: no Keller partner of ANY degree <= 64 exists for these samples
+  C framing: these are the classical case-64 degrees (Moh detailed case; Heitmann): sampled-level machine replication on frontier-shaped polynomials; the same pipeline at max degree > 150 or at (72, 108) produces NEW territory at comparable cost.
+RESULT: ALL CHECKS PASS.
