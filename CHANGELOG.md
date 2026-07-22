@@ -3,6 +3,15 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.32.000], 2026-07-22
+
+### Added
+- EXP-053: THE 576 CERTIFICATE: stratified cleared certificates on the reduced
+  (72,108) system with the forced top edge symbolic: pairing = the CONSTANT 576 for
+  ALL t, identical across sampled lower strata; 5-row support (target row + a short
+  ray). The open case's obstruction is compact and structural; the universality
+  (support-entry) analysis is the next task, and success closes (72,108).
+
 ## [0.31.000], 2026-07-22
 
 ### Added
