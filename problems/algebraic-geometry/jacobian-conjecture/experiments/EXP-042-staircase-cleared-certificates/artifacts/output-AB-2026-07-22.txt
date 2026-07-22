@@ -1,0 +1,24 @@
+============================================================================
+Part A: cleared certificates over the (u, v, d) grid (window 7)
+============================================================================
+  A (u,v,d)=(2,1,2): pairing -13860*a**7  (support 16 rows; b-free: True)
+  A (u,v,d)=(2,1,3): pairing -4620*a**7*b  (support 11 rows; b-free: False)
+  A (u,v,d)=(2,2,2): pairing -32*a**4  (support 7 rows; b-free: True)
+  A (u,v,d)=(2,2,3): pairing -81*b**4  (support 4 rows; b-free: False)
+  A (u,v,d)=(3,1,2): pairing -630*a**4  (support 7 rows; b-free: True)
+  A (u,v,d)=(3,1,3): pairing -2730*a**7  (support 12 rows; b-free: True)
+  A (u,v,d)=(3,2,2): pairing -1155*a**3  (support 4 rows; b-free: True)
+  A (u,v,d)=(3,2,3): pairing -165*a**4  (support 6 rows; b-free: True)
+[PASS] A: every grid point has a cleared certificate with MONOMIAL pairing (all-parameter emptiness: a != 0 kills the window)  6/8 pairings b-free (exclude ALL b)
+
+============================================================================
+Part B: window stability at (2, 1, 2), N = 5..9
+============================================================================
+  B N=5: pairing -420*a**5 (support 9)
+  B N=6: pairing -1260*a**6 (support 12)
+  B N=7: pairing -13860*a**7 (support 16)
+  B N=8: pairing -180180*a**8 (support 20)
+  B N=9: pairing -180180*a**9 (support 25)
+[PASS] B: at EVERY window N = 5..9 the pairing is a nonzero monomial in a alone (all-parameter, all-b emptiness at each window); measured law: exponent = N  exponent==window: True; forms [(5, (5, 0)), (6, (6, 0)), (7, (7, 0)), (8, (8, 0)), (9, (9, 0))]
+
+RESULT: ALL CHECKS PASS.
