@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-21, session 17 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-21, session 18 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -58,37 +58,37 @@ census) · 012 conf 1-4/refuted 5 (landscape; uniqueness) · 013 conf 1-2/partia
 bridge; (2,2) exhaustive) · 015 confirmed (checker + bridge tooling) · 016 confirmed (cascade
 verified) · 017 confirmed (bilinear exhaustives (2,3)/(3,3)) · 018 confirmed (Poisson +
 symmetric closure) · 019 confirmed (floors; (2,3) full closure ideal) · 020 confirmed
-(THEOREMS (2,3)/(2,4)/(2,5); (3,4) elimination cap-out documented) · 021 confirmed (THE UNIFORM min-degree-2 THEOREM) · 022 confirmed (shear closure for ANY f; (3,3) cube alignment FORCED; the descent inverter runs, library fully inverted) · 023 confirmed (the (4, <= 6) primitive window is EMPTY on the sampled slice, +8 via one descent step; controls non-vacuous) · 024 confirmed (pure-slice certificate -8 a^2: empty for EVERY a != 0; full 8-param certificate capped, staged) - 025 confirmed (ALL 63 slices up to 3 lower coeffs empty; windows <= 18 empty; E-locus closed; sources verified: (4,*) ladder literature-covered, open frontier = composite gcd 9, 12) . 026 confirmed (FIRST composite-gcd exclusions: (18, <= 27) certified empty for all a != 0, gcd -144 a^2; h-sweep + gcd-12 probe empty; inside Moh range, certificate is the new content) . 027 confirmed (gcd-12 certificate: (24, <= 36) empty for all a != 0, gcd -80 a^2) . 028 confirmed (polygon strategy: sieve exact; (18, <= 36) certified PAST the divisible rung, gcd -576 a^3; obstruction = edge residue on the P-edge ray; all-degree non-component statement [D]; floor ~108) . 029 confirmed (THE WEIGHT-CLASS THEOREM, unconditional: x + a x^u y^v never a Keller component at ANY degree; all seven pairings = the closed form; beyond-floor at degree 135) . 030 partially refuted (injectivity FALSE: kv-kernels = P_top^k; empirics held) . 031 confirmed (THEOREM 2: absorption + annihilation; lower-weight tails never rescue; danger tails b,c-free).
+(THEOREMS (2,3)/(2,4)/(2,5); (3,4) elimination cap-out documented) · 021 confirmed (THE UNIFORM min-degree-2 THEOREM) · 022 confirmed (shear closure for ANY f; (3,3) cube alignment FORCED; the descent inverter runs, library fully inverted) · 023 confirmed (the (4, <= 6) primitive window is EMPTY on the sampled slice, +8 via one descent step; controls non-vacuous) · 024 confirmed (pure-slice certificate -8 a^2: empty for EVERY a != 0; full 8-param certificate capped, staged) - 025 confirmed (ALL 63 slices up to 3 lower coeffs empty; windows <= 18 empty; E-locus closed; sources verified: (4,*) ladder literature-covered, open frontier = composite gcd 9, 12) . 026 confirmed (FIRST composite-gcd exclusions: (18, <= 27) certified empty for all a != 0, gcd -144 a^2; h-sweep + gcd-12 probe empty; inside Moh range, certificate is the new content) . 027 confirmed (gcd-12 certificate: (24, <= 36) empty for all a != 0, gcd -80 a^2) . 028 confirmed (polygon strategy: sieve exact; (18, <= 36) certified PAST the divisible rung, gcd -576 a^3; obstruction = edge residue on the P-edge ray; all-degree non-component statement [D]; floor ~108) . 029 confirmed (THE WEIGHT-CLASS THEOREM, unconditional: x + a x^u y^v never a Keller component at ANY degree; all seven pairings = the closed form; beyond-floor at degree 135) . 030 partially refuted (injectivity FALSE: kv-kernels = P_top^k; empirics held) . 031 confirmed (THEOREM 2: absorption + annihilation; lower-weight tails never rescue; danger tails b,c-free) . 032 confirmed (THEOREM 3: every x-anchored edge falls; multiplication structure + univariate kill; frontier sharp: only y-anchored tops can carry components).
 
 ## 4. In flight
 
-Nothing mid-run. Session 17 proved THEOREM 2 through a refute-and-repair cycle: EXP-030's
-naive injectivity step died (L_top kernels on kv-classes are EXACTLY P_top^k) while all its
-empirical predictions held; EXP-031 repaired the proof: absorb kernel components as
-H(P_top), then the ANNIHILATION LEMMA (the chain functional kills every danger source
-J(m, P_top^k); verified with per-source ADEQUATE windows after the first run exposed
-window-truncation artifacts; general case reduces to k = 1 via the exact identity
-J(m, P_top^k) = -k P_top^(k-1) J(P_top, m), closed form still [D]); danger tails certified
-b, c-free at window 10. THEOREM 2: P = x + a x^u y^v + R (u >= 2, v >= 1, a != 0, R any
-polynomial of strictly lower (v, 1-u)-weight, degree >= 2) is never a Keller component at
-any degree. The quasi-triangular control stays consistent (boundary real). GOTCHA reinforced
-this session: NEVER pass backslash-laden Python through bash heredocs (one escape level got
-eaten and wrote a literal backspace into main.tex; caught by the build gate; scripts go
-through the Write tool).
+Nothing mid-run. Session 18 closed EXP-032: THEOREM 3: for E = x phi(z), z = x^k y^m
+(k, m >= 1, deg phi >= 1), the y-class operator is MULTIPLICATION by
+(ms+1) phi + k z phi', and the univariate top-coefficient kill ((mD + kg + 1) phi_g)
+excludes EVERY x-anchored edge, any coefficient pattern (perfect powers included), with any
+lower-weight tail, at any degree. Kernels = E^j [MV]; QQ(a,b) certificate 60 a^3 b-free;
+quasi-triangular control consistent. Instrument bug (wrong class weights in the kernel
+scan) caught and fixed mid-run, recorded in the verdict. THE SHARP FRAME: no Keller
+component has an x-anchored top edge with interior direction; components live only over
+y-anchored (quasi-triangular-type) tops; JC(2) = nothing else lives there. Next: JCB-035
+(classify y-anchored completions: the endgame frame); JCB-033 (annihilation closed form,
+now shared by Theorems 2-3).
 
 ## 5. Next actions, ordered
 
-1. JCB-033 (finish): the annihilation lemma in CLOSED FORM (route: every source is a
-   P_top-multiple of an L_top-image, so it suffices that the functional annihilates
-   P_top^j * Im(L_top) restricted to weight 0; derive from the chain recursion). Then
-   THEOREM 2 is fully unconditional.
-2. JCB-034 (the next frontier): perturbations of weight >= v: the top edge itself deforms
-   (binomial edges x + a x^u y^v + b x^r y^t with wt(r,t) = v on the same edge, and
-   above-weight monomials that CHANGE the polygon). Where is the boundary between excluded
-   and quasi-triangular-like rescue? First machine scan: same-edge binomials at small
-   degrees, full windows + certificates over QQ(a, b).
-3. JCB-031 (remaining): novelty searches (weight-class theorem, Theorem 2, rigidity);
-   full-text Abhyankar hypotheses; Moh's six shapes.
+1. JCB-035 (the endgame frame): classify Y-ANCHORED completions. Normalize P with top
+   edge anchored at y (quasi-triangular type: top = c y^d + edge toward the interior);
+   mirror the class analysis (swap roles of x and y; the multiplication structure should
+   reappear with the roles of the gauge reversed); map exactly which edge polynomials
+   admit completions. Expected outcome: the compositional/triangular family and nothing
+   else within reach; any OTHER consistent y-anchored edge would be a counterexample
+   candidate: escalate to the checker instantly.
+2. JCB-033: the annihilation lemma in closed form (shared gap of Theorems 2-3): route via
+   the univariate picture: sources are P_top-multiples of L_top-images; in the
+   multiplication picture the functional is the z-coefficient extraction against the
+   non-polynomial solution of the class ODE; derive and verify.
+3. JCB-031 (remaining): novelty searches (Theorems 1-3, rigidity); full-text Abhyankar
+   hypotheses; Moh's six shapes.
 2. JCB-031: full-text pass: Moh 1983 (exact coverage statement), the Newton-polygon
    literature around minimal counterexamples, and the rigidity novelty check; unhedge or
    qualify the manuscript accordingly.

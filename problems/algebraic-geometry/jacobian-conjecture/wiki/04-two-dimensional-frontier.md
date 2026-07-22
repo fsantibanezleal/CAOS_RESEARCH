@@ -202,3 +202,27 @@ pairing gcds stay pure $a$-powers. The quasi-triangular components (which DO exi
 the hypothesis (x-power or linear-base tops): the theorem is silent exactly where it must
 be. The next frontier is perturbations of weight $\ge v$, where the top edge itself
 deforms.
+
+## Theorem 3: every x-anchored edge falls (EXP-032)
+
+**Theorem 3.** Let $z = x^k y^m$ ($k, m \ge 1$) and $E = x\,\varphi(z)$ with
+$\deg \varphi = g \ge 1$. Then $E$ is never the leading form of a Keller component, and
+$P = E + R$ (any lower-weight tail $R$) is never a Keller component, at any degree.
+
+The mechanism collapsed to one univariate line: on the $y$-class ray the operator is
+MULTIPLICATION, $J(E, g_s) = [(ms+1)\varphi + k z \varphi'] z^s$ (machine-verified with
+symbolic coefficients), so the class equation is
+$m z \varphi f' + (\varphi + k z \varphi') f = 1$ for a polynomial $f$; its top
+coefficient at degree $D + g$ is $(mD + kg + 1)\varphi_g c_D$, all factors nonzero:
+induction kills $f$. Full windows confirm the whole edge family empty, including
+perfect-square and perfect-cube $\varphi$ (factorization does not rescue); the
+$\mathbb{Q}(a,b)$ certificate for the binomial edge is $60 a^3$, $b$-free; kernels are the
+powers $E^j$; lower tails never rescue; the quasi-triangular control stays consistent.
+
+Consequence, and the program's sharpest frame yet: NO Keller component of $\C^2$ has a
+Newton top edge anchored at the linear vertex $x$ with interior direction. Components must
+have $y$-anchored (quasi-triangular type) tops, and the two-variable Jacobian conjecture is
+exactly the statement that nothing else lives there. Classifying the $y$-anchored
+completions is the queued endgame frame (JCB-035); the single remaining derived gap in the
+with-tails statements is the annihilation lemma in closed form (JCB-033), shared by
+Theorems 2 and 3.

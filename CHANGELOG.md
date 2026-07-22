@@ -3,6 +3,17 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.21.000], 2026-07-22
+
+### Added
+- EXP-032: THEOREM 3: every x-anchored Newton edge falls. The y-class operator for
+  E = x phi(z) is MULTIPLICATION by (ms+1) phi + k z phi' (machine-verified, symbolic
+  coefficients), so a one-line univariate top-coefficient kill excludes every edge
+  coefficient pattern (binomial, trinomial, perfect powers); QQ(a,b) certificate 60 a^3
+  (b-free); kernels = E^j; tails never rescue; the quasi-triangular boundary intact.
+  Subsumes Theorems 1-2's leading forms. The frontier is now sharp: only y-anchored
+  (quasi-triangular-type) tops can carry components (JCB-035, the endgame frame).
+
 ## [0.20.000], 2026-07-22
 
 ### Added

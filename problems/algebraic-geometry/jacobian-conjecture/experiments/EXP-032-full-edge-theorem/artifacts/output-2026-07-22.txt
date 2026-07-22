@@ -1,0 +1,50 @@
+============================================================================
+Part A: the multiplication formula J(x phi(z), g_s) = [(ms+1) phi + k z phi'] e_s
+============================================================================
+[PASS] A: multiplication formula exact for all k, m, g <= 3 (symbolic coefficients), s <= 4
+
+============================================================================
+Part B: the univariate kill (inconsistency over QQ(coeffs), top inverted)
+============================================================================
+  B (k=1,m=1,g=1,D=4): pairing gcd = -60*C1**5 (pure top-coeff power OK)
+  B (k=1,m=1,g=1,D=8): pairing gcd = -2520*C1**9 (pure top-coeff power OK)
+  B (k=1,m=1,g=2,D=4): pairing gcd = 60 (pure top-coeff power OK)
+  B (k=1,m=1,g=2,D=8): pairing gcd = 2520 (pure top-coeff power OK)
+  B (k=2,m=1,g=2,D=4): pairing gcd = 10 (pure top-coeff power OK)
+  B (k=2,m=1,g=2,D=8): pairing gcd = 420 (pure top-coeff power OK)
+  B (k=1,m=2,g=2,D=4): pairing gcd = 1 (pure top-coeff power OK)
+  B (k=1,m=2,g=2,D=8): pairing gcd = 1 (pure top-coeff power OK)
+  B (k=2,m=3,g=3,D=4): pairing gcd = 1 (pure top-coeff power OK)
+  B (k=2,m=3,g=3,D=8): pairing gcd = 1 (pure top-coeff power OK)
+  B (k=3,m=2,g=2,D=4): pairing gcd = 1 (pure top-coeff power OK)
+  B (k=3,m=2,g=2,D=8): pairing gcd = 1 (pure top-coeff power OK)
+[PASS] B: every truncated class system is inconsistent; the certificate is a pure power of the TOP edge coefficient
+
+============================================================================
+Part C: full windows for binomial and trinomial edges (incl. perfect powers)
+============================================================================
+  C binomial (a,b)=(1,1) (window <= 10): INCONSISTENT
+  C binomial perfect square (b,a)=(2,1) (window <= 10): INCONSISTENT
+  C binomial (a,b)=(-1/2,3) (window <= 10): INCONSISTENT
+  C trinomial (b,c,a)=(1,1,1) (window <= 9): INCONSISTENT
+  C trinomial perfect cube (3,3,1) (window <= 9): INCONSISTENT
+[PASS] C: every same-edge window is empty, including perfect-power phi
+
+============================================================================
+Part D: certificate over QQ(a, b) for the binomial edge; kernel structure
+============================================================================
+  D certificate gcd (window <= 8) = 60*a_**3
+[PASS] D1: the pairing gcd vanishes ONLY where the top coefficient a = 0 (b-free pure a-power)  gcd = 60*a_**3
+  D kernel on class 2: dim 1; equals E^1: True
+  D kernel on class 4: dim 1; equals E^2: True
+[PASS] D2: kernels are exactly the powers of the FULL edge E
+
+============================================================================
+Part E: tails on the full edge; the quasi-triangular control
+============================================================================
+  E edge + tail y^2: INCONSISTENT
+  E edge + tails xy^2, y^3: INCONSISTENT
+  E control x + (x+y)^2: CONSISTENT (as it must be)
+[PASS] E: tails never rescue the full edge; the quasi-triangular control stays consistent
+
+RESULT: ALL CHECKS PASS.
