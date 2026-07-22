@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-22, session 25 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-22, session 26 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -70,7 +70,11 @@ window-independent; Theorem 5 all-degree [D]; gap = TOWER LEMMA) . 045 confirmed
 . 046 confirmed (THE TOWER LEMMA PROVED, primitive-top + d >= u+v scope: THEOREM 5
 UNCONDITIONAL there; proper-power odd resonances measured zero, derivation queued) . 047
 confirmed (filtered (48, <= 64) certificates: three degree-48 samples empty, 2.4-3.6 s
-each: the N2 pipeline validated at target scale).
+each: the N2 pipeline validated at target scale) . 048 confirmed, universal-kill refuted
+(THE HALF-PLANE CERTIFICATE mechanism for proper-power odd resonances) . 049 confirmed
+(THEOREM 6, the universal tower: one certified window = all-degree exclusion for
+non-proper-power tops; multi-edge harvest) . 050 confirmed (FIRST certificates at the
+(72,108) degrees, ~1 s each).
 
 ## 4. In flight
 
@@ -81,13 +85,16 @@ the standing decision rule: every new experiment names its route).
 
 ## 5. Next actions, ordered
 
-1. N1 / JCB-038: DONE for primitive tops and d >= u+v (EXP-046: Theorem 5
-   UNCONDITIONAL there). Remaining: (a) the proper-power odd-resonance kill (measured
-   zero; derive it); (b) generalize the tower induction to arbitrary above-weight tails
-   and longer staircases (route M2: JC(2) = every mixed staircase excluded).
-2. N2 / JCB-040: the (48, 64) validation RAN (EXP-047: 2.4-3.6 s per certificate).
-   Next: systematic lower-class sweeps; transcribe the (72, 108) family data and the
-   beyond-150 B = 16 shapes; run the same filtered pipeline there (NEW territory).
+1. THE SINGLE RESIDUAL GAP: derive the general HALF-PLANE certificate construction
+   for proper-power tops (EXP-048 named it; the y-heavy subsystem's inconsistency is
+   the object). It closes Theorem 5 entirely AND unlocks Theorem 6's tower on the
+   frontier shapes (R0^m tops are proper powers). Everything else on the
+   non-proper-power stratum is now covered by THEOREM 6 (EXP-049): one certified
+   window = all-degree exclusion.
+2. N2 / JCB-040: (72,108)-degree certificates RAN (EXP-050, ~1 s each, sampled
+   corner-(16,56) shapes). Next: transcribe the GGHV ((8,28),(3,2)) parametrized family
+   from the primary text and SWEEP it (closing the case raises the JC(2) floor to 125);
+   same for beyond-150 B = 16 shapes with the half-plane construction once derived.
 3. JCB-041 remainder: the screenshot verification pass ONLY (bake is automatic and
    verified; wiki 04 rewritten in session 24). FELIPE still validates the novelty
    phrasing before submission.

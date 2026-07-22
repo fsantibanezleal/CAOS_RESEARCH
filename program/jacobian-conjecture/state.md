@@ -47,6 +47,10 @@
   for primitive tops / d >= u+v (proper-power odd-resonance kill queued); EXP-047: the
   filtered (48, <= 64) certificates run in 2.4-3.6 s each (three samples, all empty).
   manuscript-planar v0.02. v0.28.000.
+- **Session 26 (2026-07-22):** THEOREM 6 (the universal tower: one certified window =
+  all-degree exclusion, non-proper-power tops) + the half-plane mechanism (EXP-048) +
+  FIRST certificates at the (72,108) degrees (EXP-050, ~1 s each). manuscript-planar
+  v0.03. v0.29.000. Residual structural gap: the general half-plane construction.
 - **Now:** N1: the transport chain's closed form (Theorem 5 all-degree); N2: the (48, 64)
   validation sweep, then open B = 16, then (72, 108); M1: imported-constraint filters;
   web bake + screenshot pass (nine unbaked records); wiki 04 rewrite.

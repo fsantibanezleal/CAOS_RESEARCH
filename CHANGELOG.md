@@ -3,6 +3,22 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.29.000], 2026-07-22
+
+### Added
+- EXP-049: THEOREM 6 (THE UNIVERSAL TOWER): for any P = x + R with non-proper-power top
+  form, ONE certified window = exclusion at ALL partner degrees (kernel law verified for
+  monomial/binomial/dense tops; the universal reduction T = P - lower). Harvest of
+  multi-edge all-degree exclusions from single window solves.
+- EXP-048: the proper-power odd-resonance mechanism = THE HALF-PLANE CERTIFICATE
+  (y-heavy support disjoint from x-heavy sources); declared universal-kill prediction
+  refuted as stated, existential truth measured; the general construction is the
+  program's single residual structural gap.
+- EXP-050: FIRST certificates at the (72, 108) degrees (two sampled corner-(16,56)
+  degree-72 shapes, filtered N = 108 windows empty in 1.2-1.4 s each).
+- manuscript-planar v0.03 (Theorem 6 + half-plane + (72,108) first contact); wiki 04/05;
+  bake refreshed.
+
 ## [0.28.000], 2026-07-22
 
 ### Added

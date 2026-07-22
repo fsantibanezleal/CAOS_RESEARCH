@@ -510,3 +510,38 @@
   longer staircases (the M2 induction: JC(2) = all staircases excluded); (c) transcribe
   (72, 108) + beyond-150 shapes and sweep. Felipe's pending calls unchanged (novelty
   phrasing, outreach, diffusion).
+
+## 2026-07-22 (session 26) - THEOREM 6: the universal tower; the half-plane mechanism; (72, 108) reached
+
+- Felipe's directive: keep iterating to proof or counterexample, full routine, max depth.
+  Honest status: JC(2) remains open; this iteration generalized the tower to its
+  universal form and put the machine ON the open pair's degrees.
+- **EXP-048 (confirmed; declared universal-kill prediction refuted as stated):** the
+  proper-power odd-resonance mechanism is THE HALF-PLANE CERTIFICATE: at (2,2,2) the
+  left-null space is 20-dimensional with two pairing-nonzero directions, exactly one of
+  which kills the odd resonance, and its support lies ENTIRELY in the y-heavy half-plane
+  {i < j}, disjoint from the always-x-heavy sources (L((xy)^s) = s x^s y^{s-1}(1+2bx)).
+  Theorem 5's proper-power case stands [D] with the mechanism named; the general
+  half-plane construction is the remaining formalization, and it is exactly what the
+  B = 16 frontier shapes need.
+- **EXP-049 (confirmed): THEOREM 6, THE UNIVERSAL TOWER.** For ANY P = x + R whose
+  total-degree top form is NOT a proper power: one certified window (N >= deg P - 1)
+  excludes P at ALL partner degrees. Proof: the EXP-046 tower with T the FULL top form:
+  ker J(T, .) = T-powers exactly (verified for monomial, binomial and dense-cubic tops),
+  and T = P - lower BY DEFINITION so T^k - P^k is always in-window: every resonance
+  reduces. Harvest: multi-edge staircases now fall at all degrees from single cleared
+  window solves (x + a x^2 y + b x^3: -4620 a^7 b; the THREE-term staircase
+  x + a x^2 y + b x^2 + c x^3 y^2: -4620 c^4; x + a x^3 y + b x^2: -630 a^4;
+  x + a x^2 y + b x^4 y^3: -168 b^3). Route M2's induction collapses to per-shape base
+  certificates on the non-proper-power stratum.
+- **EXP-050 (confirmed, route N2):** FIRST certificates at the (72, 108) degrees: two
+  sampled degree-72 shapes with the GGHV corner (16, 56), filtered windows at N = 108
+  EMPTY in 1.2-1.4 s each: all partners of degree <= 108 excluded per sample. The
+  systematic parametrized sweep (which would close the case and raise the floor to 125)
+  awaits the GGHV shape transcription from the primary text (queued).
+- **Routine executed:** manuscript-planar v0.03 (Theorem 6 + the half-plane remark +
+  the (72,108) first contact); wiki 04/05; bake refreshed; v0.29.000.
+- The program's residual structural gap is now SINGLE: the general half-plane
+  certificate construction for proper-power tops (it closes Theorem 5 entirely AND
+  unlocks the tower on the frontier shapes). Next iteration: derive it; transcribe the
+  GGHV family; sweep.

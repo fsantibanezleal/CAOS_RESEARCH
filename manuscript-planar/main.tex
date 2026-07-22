@@ -22,7 +22,7 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-22 (working manuscript, v0.02; split from the foundational companion)}
+\date{2026-07-22 (working manuscript, v0.03; split from the foundational companion)}
 
 \begin{document}
 \maketitle
@@ -242,6 +242,25 @@ Lemma~\ref{lem:tower}.) For proper-power tops (e.g. $u = v = 2$) the odd resonan
 not reduce mod $\C[P]$; the certificates kill them anyway in every tested instance
 (e.g. $(xy)^5$ at window $9$), so the statement there is [D] pending the derivation of
 that kill.
+\end{theorem}
+
+\begin{theorem}[{[MV/D]}; the universal tower (EXP-049)]\label{thm:t6}
+Let $P = x + R$ ($R$ without constant or linear part) whose total-degree top form
+$T = P_D$ is NOT a proper power. If the completion window is inconsistent with a
+certificate at any single $N \ge \deg P - 1$, then $P$ is not a Keller component at ANY
+partner degree. (The tower argument with $T$ the full top form: $\ker J(T, \cdot)$ on
+degree-$M$ forms is zero unless $\deg T \mid M$ and then the span of $T^{M/\deg T}$;
+and $T = P - \text{lower}$ by definition, so $T^k - P^k$ has degree $\le k \deg P - 1$:
+every resonance reduces in-window modulo $\ker L$.) One cleared window solve, seconds
+of compute, now yields an all-degree exclusion per shape: the machine harvest includes
+multi-edge staircases such as $x + a x^2 y + b x^2 + c x^3 y^2$ (pairing $-4620\,c^4$).
+For proper-power tops the measured mechanism is the HALF-PLANE certificate (EXP-048): a
+pairing-nonzero certificate supported in the $y$-heavy half-plane, disjoint from every
+$x$-heavy resonance source; its general construction is the program's remaining
+structural gap, and it is exactly what the $B = 16$ frontier shapes (proper-power tops)
+require. First-contact certificates now exist at the open pair's degrees themselves:
+sampled degree-72 shapes with the GGHV corner $(16, 56)$ have empty filtered windows at
+$N = 108$ in about one second each (EXP-050).
 \end{theorem}
 
 Two instrument-level results complete the toolkit. The \emph{matched-pair law} (EXP-038):
