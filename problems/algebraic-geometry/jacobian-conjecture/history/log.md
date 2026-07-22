@@ -319,3 +319,17 @@
   components live. Strategy recorded (JCB-036): induction by gauge rotation on the
   dominating direction: the germ of a route to the full classification (JC(2) = the
   induction closes on the triangular family).
+
+## 2026-07-22 (session 20) - The audit: rotation works where it can; the core is the corner
+
+- **EXP-034 (confirmed):** the strategic audit Felipe asked for, with machine data. (A)
+  rotate-descent (rotation of linear-base tops + de Jonquieres subtraction) LINEARIZES the
+  entire library (0-6 steps each): the induction closes on all known components. (B) its
+  exact limit is stated: mixed-corner tops stay mixed under rotation: the "hard-shape" stop
+  is the classical hard territory (Moh shapes), NOT covered by Theorems 1-4 when x is
+  swallowed; eight swallowed-mixed samples all have EMPTY windows: the uncovered territory
+  resists and the exclusions now exceed the proved theorems. (C) certificate anatomy there:
+  support spans many rows across directions (16/42, 25/49): the mixed-corner obstruction is
+  NOT a single-ray residue: the corner calculus must handle multi-edge interaction. The
+  program's standing question is now precise: prove hard-shape (mixed-corner) pairs cannot
+  be Keller; instruments queued.

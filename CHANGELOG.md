@@ -3,6 +3,17 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.23.000], 2026-07-22
+
+### Added
+- EXP-034: the strategic audit with machine data: rotate-descent implemented and validated
+  (the entire library linearizes in 0-6 steps: the rotation induction is mechanized for
+  linear-base tops); its exact limit stated (mixed-corner tops are the hard-shape stop:
+  the classical hard territory); eight swallowed-mixed shapes uncovered by Theorems 1-4
+  all have empty windows (the frontier resists beyond the proved theorems); certificate
+  anatomy shows the mixed-corner obstruction is multi-ray (the corner calculus, JCB-037,
+  must handle multi-edge interaction).
+
 ## [0.22.000], 2026-07-22
 
 ### Added

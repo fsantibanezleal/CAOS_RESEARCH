@@ -1,0 +1,34 @@
+============================================================================
+Part A: rotate-descent linearizes the library (the induction's data)
+============================================================================
+  A map 0: linearized in 0 steps
+  A map 1: linearized in 2 steps
+  A map 2: linearized in 2 steps
+  A map 3: linearized in 3 steps
+  A map 4: linearized in 6 steps
+  A map 5: linearized in 1 steps
+  A map 6: linearized in 2 steps
+  A map 7: linearized in 4 steps
+[PASS] A: every library pair LINEARIZES under rotate-descent (no hard-shape stops)
+
+============================================================================
+Part B: the swallowed-mixed frontier (NOT covered by Theorem 4)
+============================================================================
+  B x + x^2 + x^2 y (window <= 9): INCONSISTENT
+  B x + x^2 + x^3 y (window <= 9): INCONSISTENT
+  B x + x^2 + x^2 y^3 (window <= 9): INCONSISTENT
+  B x + (x+y)^2 + x^2 y^2 (window <= 9): INCONSISTENT
+  B x + x^2 + x^2 y + y^5 (window <= 9): INCONSISTENT
+  B x + (x+y)^2 + x^3 y (window <= 9): INCONSISTENT
+  B x + x^2 - x^2 y + x y^2 (window <= 9): INCONSISTENT
+  B x + x^3 + x^2 y^2 (window <= 9): INCONSISTENT
+[PASS] B: every swallowed-mixed sample window is EMPTY (the uncovered territory resists)
+
+============================================================================
+Part C: certificate anatomy at the new territory
+============================================================================
+  C x + x^2 + x^2 y: pairing = -13860; support 16/42 rows: [(4, 4), (3, 5), (3, 4), (3, 3), (2, 6), (2, 5), (2, 4), (2, 3)]
+  C x + (x+y)^2 + x^2 y^2: pairing = -480; support 25/49 rows: [(7, 2), (7, 1), (6, 3), (6, 2), (5, 4), (5, 3), (5, 2), (5, 1)]
+[PASS] C: certificates extracted; support anatomy recorded (data toward the corner-anchored closed form)
+
+RESULT: ALL CHECKS PASS.
