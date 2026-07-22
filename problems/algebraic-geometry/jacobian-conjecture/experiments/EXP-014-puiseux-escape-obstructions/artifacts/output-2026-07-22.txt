@@ -1,0 +1,30 @@
+============================================================================
+Part A: properness certificates for the 8 library automorphisms
+============================================================================
+  A map 0: lc_x = -1, lc_y = 1 -> PROPER (certified)
+  A map 1: lc_x = 2, lc_y = 1 -> PROPER (certified)
+  A map 2: lc_x = -3, lc_y = 1 -> PROPER (certified)
+  A map 3: lc_x = 4, lc_y = -32 -> PROPER (certified)
+  A map 4: lc_x = 1, lc_y = -2048 -> PROPER (certified)
+  A map 5: lc_x = -1, lc_y = 1 -> PROPER (certified)
+  A map 6: lc_x = -2, lc_y = 3 -> PROPER (certified)
+  A map 7: lc_x = 4, lc_y = 2 -> PROPER (certified)
+[PASS] A: both resultant leading coefficients are nonzero constants for every library pair (exact properness certificates)
+
+============================================================================
+Part B: controls
+============================================================================
+  B (xy, y): lc_x = -v, lc_y = 1
+[PASS] B1: (xy, y) fails the certificate with asymptotic locus in {v = 0} (matches the exact fiber analysis)
+[PASS] B2: fiber of (xy, y) over (1, 0) is EMPTY exactly (escape confirmed)
+  B (x^2, y): lc_x = 1, lc_y = 1
+[PASS] B3: (x^2, y) is certified proper yet non-injective: properness alone does not give injectivity (the Keller hypothesis is the upgrade)
+
+============================================================================
+Part C: the route statement + edge alignment observation
+============================================================================
+  C (xy, y): non-properness locus factor: -v; escape branch (x, y) = (t, c/t), t -> inf, image -> (c, 0): tracks the corner ray of xy
+  C route [D]: proper + Keller => covering of C^2 => invertible (classical); hence JC(2) <=> every planar Keller map has EMPTY Jelonek set: the escape picture is the dual of the staircase obstruction (EXP-035/037)
+[PASS] C: instrument + reduction recorded (observation level [C]/[D], no theorem claimed)
+
+RESULT: ALL CHECKS PASS.
