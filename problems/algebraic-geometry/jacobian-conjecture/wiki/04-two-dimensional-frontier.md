@@ -293,8 +293,14 @@ $-2a$ at every window tested (N up to 13); the cleared pairings follow the law
 $-c_N a^N$ with positive ratios (the odd primes $2N-3$ pattern); and the certificates form
 a coherent TOWER: each window's covector restricts to the previous one on all rows with a
 single common ratio. Window growth adds unknowns only upstream of the constant's row.
-Theorem 5 at all degrees therefore stands at [D], with the single remaining gap stated as
-the TOWER LEMMA (the restriction ratio is a nonzero multiple of $a$ for every N).
+THE TOWER LEMMA IS NOW PROVED (EXP-046) for primitive tops and the d >= u+v regimes:
+old columns vanish on new rows; the new block is the top-form action with kernel spanned
+by top-form powers; each resonance reduces in-window modulo ker L (the key identity
+kappa = lambda(P - low)^k); and the extension was realized across an active resonance
+with the pairing preserved. THEOREM 5 IS THEREFORE UNCONDITIONAL on that scope: the
+first all-degree exclusion of an above-weight staircase perturbation. The proper-power
+case (e.g. u = v = 2) has its odd resonances measured zero (the (xy)^5 pairing at window
+9); the derivation of that kill is the lemma's one remaining case.
 
 Two instrument facts complete the stage: the matched-pair law (EXP-038: the pair adds
 efficiency, roughly halving window unknowns, but no obstruction depth) and the
@@ -315,8 +321,10 @@ certificates now exist at degree 32 ($P = x + R_0(1)^2$: windows 12, 16, 20 all 
 and the imported similarity filter (partner supported in the scaled polygon; verified to
 keep every true partner on library pairs) cuts window unknowns by a factor of ~19: the
 $(48, 64)$ full-window system drops from 2142 to 111 unknowns, and the classwise blocks
-are at most 13. The validation sweep on the classical case 64 and then the open territory
-(max degree > 150, and (72, 108)) is a scheduling decision now, not a compute risk.
+are at most 13. The validation sweep RAN (EXP-047): three degree-48 F1-flavor samples have empty
+filtered windows at N = 64 in 2.4-3.6 seconds each, excluding all partners of degree
+<= 64 per sample; the open territory (max degree > 150, and (72, 108)) is next at
+comparable cost.
 
 ## The witness, and where everything is written
 

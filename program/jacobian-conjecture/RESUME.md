@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-22, session 24 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-22, session 25 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -66,7 +66,11 @@ certificates, monomial pairings, window law -c_N a^N; annihilation transfers) . 
 confirmed (x^m-anchored edge operator NEW; B = 16 core = staircase transport; scoping
 blocks 13/22) . 044 confirmed (THE CERTIFICATE TOWER: normalized obstruction -2a
 window-independent; Theorem 5 all-degree [D]; gap = TOWER LEMMA) . 045 confirmed
-(degree-32 frontier certificates; similarity filter x18.8: (48,64) drops to 111 unknowns).
+(degree-32 frontier certificates; similarity filter x18.8: (48,64) drops to 111 unknowns)
+. 046 confirmed (THE TOWER LEMMA PROVED, primitive-top + d >= u+v scope: THEOREM 5
+UNCONDITIONAL there; proper-power odd resonances measured zero, derivation queued) . 047
+confirmed (filtered (48, <= 64) certificates: three degree-48 samples empty, 2.4-3.6 s
+each: the N2 pipeline validated at target scale).
 
 ## 4. In flight
 
@@ -77,12 +81,13 @@ the standing decision rule: every new experiment names its route).
 
 ## 5. Next actions, ordered
 
-1. N1 / JCB-038: prove the TOWER LEMMA (the certificate restriction ratio is a nonzero
-   multiple of a for every N; EXP-044 verified it through N = 11 with the 2N - 3 prime
-   pattern): that single lemma makes Theorem 5 all-degree unconditional.
-2. N2 / JCB-040: the (48, 64) validation sweep is now SMALL (similarity filter: 111
-   unknowns; blocks <= 13; EXP-045): run it (sampled lower classes, filtered windows),
-   then open B = 16 (max > 150), then (72, 108). JCB-043's filter is the instrument.
+1. N1 / JCB-038: DONE for primitive tops and d >= u+v (EXP-046: Theorem 5
+   UNCONDITIONAL there). Remaining: (a) the proper-power odd-resonance kill (measured
+   zero; derive it); (b) generalize the tower induction to arbitrary above-weight tails
+   and longer staircases (route M2: JC(2) = every mixed staircase excluded).
+2. N2 / JCB-040: the (48, 64) validation RAN (EXP-047: 2.4-3.6 s per certificate).
+   Next: systematic lower-class sweeps; transcribe the (72, 108) family data and the
+   beyond-150 B = 16 shapes; run the same filtered pipeline there (NEW territory).
 3. JCB-041 remainder: the screenshot verification pass ONLY (bake is automatic and
    verified; wiki 04 rewritten in session 24). FELIPE still validates the novelty
    phrasing before submission.

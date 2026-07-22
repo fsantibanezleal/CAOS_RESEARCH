@@ -3,6 +3,22 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.28.000], 2026-07-22
+
+### Added
+- EXP-046: THE TOWER LEMMA IS PROVED (primitive-top and d >= u+v scopes): degree
+  bookkeeping, top-block kernel identification, the key identity (resonances reduce
+  in-window mod ker L), and the realized extension across an active resonance.
+  THEOREM 5 IS UNCONDITIONAL on that scope: the first all-degree exclusion of an
+  above-weight staircase perturbation. Proper-power odd resonances measured zero
+  (derivation queued).
+- EXP-047: the filtered (48, <= 64) sweep: three degree-48 F1-flavor samples, all
+  filtered windows EMPTY in 2.4-3.6 s each (111 unknowns): all partners of degree <= 64
+  excluded per sample; the N2 pipeline validated at the classical case-64 scale.
+- manuscript-planar v0.02: the Tower Lemma and the unconditional Theorem 5 stated with
+  proof ingredients; the frontier subsection updated with the run results. Wiki 04/05
+  updated; bake refreshed.
+
 ## [0.27.000], 2026-07-22
 
 ### Added
