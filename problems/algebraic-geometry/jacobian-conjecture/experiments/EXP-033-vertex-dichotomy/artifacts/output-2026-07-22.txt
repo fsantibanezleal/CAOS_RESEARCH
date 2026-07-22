@@ -1,0 +1,37 @@
+============================================================================
+Part A: k = 0 class structure, kill, kernels
+============================================================================
+[PASS] A1: L(x^s q(y)) = x^s (phi q' - s phi' q) exact (symbolic phi deg 3)
+  A2 s=0 truncation D=3: INCONSISTENT
+  A2 s=0 truncation D=6: INCONSISTENT
+[PASS] A2: the constant's class (phi h' = 1) is inconsistent at every truncation
+  A3 class 1: phi^1 in kernel: True; kernel dim 1
+  A3 class 2: phi^2 in kernel: True; kernel dim 1
+[PASS] A3: class-s kernels are exactly (x phi)^s
+
+============================================================================
+Part B: k = 0 windows and certificate; m = 0 windows
+============================================================================
+  B x(1+y): INCONSISTENT
+  B x(1+y)^2: INCONSISTENT
+  B x(1+y+y^2): INCONSISTENT
+  B x(1+y) + y^3: INCONSISTENT
+  B x + x^2 (m=0): INCONSISTENT
+  B x + x^2 + x^3 (m=0): INCONSISTENT
+[PASS] B1: every k = 0 and m = 0 window is empty (incl. pure-y tails)
+[PASS] B2: certificate for x(1 + c1 y): pairing gcd a pure c1-power  gcd = -c1_**6
+
+============================================================================
+Part C: the vertex dichotomy, three sides
+============================================================================
+  C(i) x + xy^2 + y^5: INCONSISTENT
+  C(i) x + x^2 y + y^4: INCONSISTENT
+  C(i) x + x^2 y^3: INCONSISTENT
+  C(i) x + xy + y^2 (vertex-x mixed): INCONSISTENT
+  C(ii) x + y^2: CONSISTENT (component, as derived)
+  C(ii) x + y^3 - 2y^2: CONSISTENT (component, as derived)
+  C(iii) x + (x+y)^2: CONSISTENT (escape route real)
+  C(iii) x + (x+2y)^3: CONSISTENT (escape route real)
+[PASS] C: all three sides of the dichotomy behave exactly as derived
+
+RESULT: ALL CHECKS PASS.

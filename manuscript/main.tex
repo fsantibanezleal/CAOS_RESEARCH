@@ -445,6 +445,32 @@ the linear vertex with interior direction: components must carry $y$-anchored
 nothing else lives there. Classifying the $y$-anchored completions is the program's queued
 endgame frame.
 
+\begin{theorem}[The vertex dichotomy]\label{thm:dichotomy}
+Let $P$ be a Keller component of $\C^2$ with linear part $x$. If the monomial $x$ is a
+vertex of the Newton polygon $N(P)$, then $P = x + f(y)$ for some univariate $f$.
+\end{theorem}
+
+\begin{proof}[Proof]
+The two axis directions of the edge fan fall by one-line class arguments: for
+$P = x\varphi(y)$, weights $(1,0)$ make the operator preserve each $x$-degree class, and
+the constant's class equation is $\varphi(y) h'(y) = 1$, impossible for a polynomial $h$
+once $\deg \varphi \ge 1$; for $P = x\varphi(x)$, $J(P,Q) = (x\varphi)'(x) Q_y$ forces a
+non-polynomial $Q_y$. Together with Theorem~\ref{thm:fulledge} (interior directions), every
+edge of $N(P)$ at the vertex $(1,0)$ whose lattice points are all divisible by $x$ is
+excluded; any support monomial $x^i y^j$ with $i \ge 1$, $(i,j) \ne (1,0)$ would create
+such an edge as the first right-boundary edge at the vertex. The only admissible edges join
+$(1,0)$ to pure-$y$ vertices $(0,d)$, and such segments contain no interior lattice points.
+Hence the support of $P$ is $\{x\} \cup \{y^j\}$.
+\end{proof}
+
+The dichotomy's other side is real: $x + (x+y)^2$ and $x + (x+2y)^3$ are components in
+which $x$ is swallowed inside the polygon. Every non-triangular component is of that kind,
+and a linear gauge rotation moves its dominating direction onto a coordinate, where the
+vertex analysis re-applies: the recorded strategy is the resulting induction, whose closure
+on the triangular family would be exactly the two-variable Jacobian conjecture. The
+machine's verification covers all three sides on structured samples (vertex-$x$ mixed
+shapes inconsistent; triangular shapes consistent; swallowed shapes consistent).
+
 \section{Discussion and program}
 
 \textbf{Why the conjecture is false.} In the equivariant class, being Keller is a two-variable

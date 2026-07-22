@@ -305,3 +305,17 @@
   weights in the kernel scan) caught and fixed mid-run, recorded. The frontier is now
   SHARP: components must have y-anchored (quasi-triangular-type) tops; JC(2) = nothing else
   lives there (JCB-035).
+
+## 2026-07-22 (session 19) - The edge fan closes: THE VERTEX DICHOTOMY
+
+- **EXP-033 (confirmed):** the two boundary edge directions fall: k = 0 (P = x phi(y): the
+  constant's class reads phi h' = 1, no polynomial solution; kernels (x phi)^s; certificate
+  -c1^6) and m = 0 (P = x phi(x): Q_y = 1/(x phi)', one line). THEOREM 4 (the vertex
+  dichotomy): if the monomial x is a VERTEX of N(P) for a Keller component, then
+  P = x + f(y) exactly: every edge at the vertex is excluded except segments to pure-y
+  vertices (no interior lattice points). Machine-verified on all three sides: vertex-x mixed
+  samples inconsistent; triangular samples consistent; x-swallowed samples (x + (x+y)^2,
+  x + (x+2y)^3) consistent: the escape route is real and is exactly where non-triangular
+  components live. Strategy recorded (JCB-036): induction by gauge rotation on the
+  dominating direction: the germ of a route to the full classification (JC(2) = the
+  induction closes on the triangular family).
