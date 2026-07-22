@@ -51,6 +51,9 @@
   all-degree exclusion, non-proper-power tops) + the half-plane mechanism (EXP-048) +
   FIRST certificates at the (72,108) degrees (EXP-050, ~1 s each). manuscript-planar
   v0.03. v0.29.000. Residual structural gap: the general half-plane construction.
+- **Session 27 (2026-07-22):** THE HALF-PLANE TOWER LEMMA (EXP-051): one H-certificate
+  = all-degree exclusion on the whole y-most-corner staircase stratum (proper-power tops
+  included); FRONTIER PAYOFF: P32 and P72 excluded at ALL partner degrees. v0.30.000.
 - **Now:** N1: the transport chain's closed form (Theorem 5 all-degree); N2: the (48, 64)
   validation sweep, then open B = 16, then (72, 108); M1: imported-constraint filters;
   web bake + screenshot pass (nine unbaked records); wiki 04 rewrite.
