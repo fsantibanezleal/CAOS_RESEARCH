@@ -3,6 +3,14 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.34.000], 2026-07-22
+
+### Added
+- EXP-055: FIRST-ORDER UNIVERSALITY of the perturbative covector PROVED (26/26
+  correctors with the 576 pairing pinned; localized supports); order-1 termination
+  refuted as declared (15/36 second-order residuals nonzero): the corrector ladder
+  continues at order 2 (next round's first task).
+
 ## [0.33.000], 2026-07-22
 
 ### Added

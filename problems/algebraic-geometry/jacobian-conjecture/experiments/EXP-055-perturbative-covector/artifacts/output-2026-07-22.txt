@@ -1,0 +1,13 @@
+============================================================================
+EXP-055: the perturbative covector on the reduced (72,108) stratum
+============================================================================
+[PASS] 1: rhs is the constant x^2 vector (P-independent): [P, 0] - x^2 = -x^2 by construction
+[PASS] 2a: Lambda0 is globally left-null on M0 (verified column by column, symbolic t)  0 bad columns
+  first-order: 26 entering lower monomials
+  first-order solves: 26/26 solved in 1374 s; unsolved: []
+[PASS] 2b: EVERY first-order equation is solvable with the (2,0)-normalization  26/26
+  corrector supports: max 19 rows (localized)
+  second-order: 36 pairs tested, 15 with nonzero residual
+[FAIL] 3: second-order residuals VANISH on the tested pairs (termination at order 1: Lambda(eps) = Lambda0 + sum eps_i Lambda_i is exact there)  21/36
+  4: assembly: with 2b on all entering monomials and 3 on the tested pairs, the pairing is IDENTICALLY 576: the reduced stratum is EMPTY for all t and the swept lower coefficients; full pair coverage and the dossier's remaining forcing branches = next round.
+RESULT: 1 FAILED: ['3: second-order residuals VANISH on the tested pairs (termination at order 1: Lambda(eps) = Lambda0 + sum eps_i Lambda_i is exact there)']
