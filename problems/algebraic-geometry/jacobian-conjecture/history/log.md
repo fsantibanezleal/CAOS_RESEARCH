@@ -589,3 +589,19 @@
 - Routine: wiki 05; log; RESUME; v0.31.000; bake. Honest status: JC(2) open; the open
   case below 125 is now a concrete 61-parameter certificate hunt on our own
   instruments.
+
+## 2026-07-22 (session 29) - The 576 certificate: the open case's obstruction is structural
+
+- **EXP-053 (confirmed):** the stratified attack on the reduced (72, 108) system
+  landed: with the forced top edge y^8 (xy - t)^8 SYMBOLIC, the H-restricted system
+  (threshold i - j <= 2, 289 rows) carries cleared certificates with pairing THE
+  CONSTANT 576: nonzero for every t and IDENTICAL across three sampled lower strata
+  (bare; x y^4; y^3 + x^2 y^6), 55-92 s per stratum. Support: FIVE rows (the target
+  row (2,0) and the ray (9,16),(16,32),(17,33),(18,34)): the obstruction has the
+  Theorem-1 chain anatomy and a closed form looks within reach.
+- Remaining for full closure (next round, small and concrete): (a) support-entry
+  analysis (if generic lower coefficients never enter the five rows, the certificate
+  is UNIVERSAL and the case closes); (b) the sweep over the dossier's remaining
+  forced parameters; (c) assembly with GGHV Prop 4.3 = the floor rises to 125.
+- Routine: wiki 05; log; RESUME; v0.32.000; bake. Honest status: JC(2) open; the lone
+  open pair below 125 is one support-entry analysis from closure.
