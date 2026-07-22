@@ -639,3 +639,24 @@
   point); closure = finish the corrector ladder; then the dossier's remaining forcing
   branches; then the floor rises to 125.
 - Routine: wiki 05; log; RESUME; v0.34.000; bake. JC(2) remains open.
+
+## 2026-07-22 (session 32) - Perfect solvability; the pivot to the structural route
+
+- **EXP-056 (confirmed 1-2; prediction 3 refuted as declared):** the order-2 ladder
+  ran to completion in background (1414 s + 12326 s; cap discipline noted). PERFECT
+  SOLVABILITY: all 26 first-order and all 250 nonzero second-order correctors exist
+  with the (2,0)-pin: 276/276 solves, not one failure: the solvability is structural.
+  Termination at order 2 refuted: 1134/6500 order-3 combinations nonzero; the profile
+  is monotone (100 -> 71 -> 17 percent) but rung costs grow combinatorially. THE
+  PIVOT (EXP-057): prove (i) ALL-ORDERS SOLVABILITY (every ladder rhs annihilates the
+  right kernel of M0: a Jacobi/Leibniz bracket argument, the annihilation-lemma
+  pattern) and (ii) A PRIORI TERMINATION (fixed finite row pool + rising eps-degree
+  per rung bounds the order): together they yield the universal covector WITHOUT
+  computing the rungs, closing the reduced stratum.
+- Parallel routine done while the ladder ran: manuscript-planar v0.05 (the full
+  (72,108) attack subsection); wiki 04 arc section; the assembly checklist
+  (program/jacobian-conjecture/72108-assembly-checklist.md: the one substantive
+  remaining branch is the edge-normalization verification; corners/Q-forcing/scaling
+  subsumed); live site verified serving through EXP-055.
+- Routine: wiki 05; log; RESUME; v0.35.000; bake. JC(2) remains open; the closure of
+  the reduced stratum is now two lemmas away, both with named proof patterns.

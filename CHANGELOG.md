@@ -3,6 +3,15 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.35.000], 2026-07-22
+
+### Added
+- EXP-056: perfect solvability at orders 1-2 (276/276 correctors with the 576 pin);
+  order-2 termination refuted as declared (order-3 residue 17 percent): PIVOT to the
+  structural route (all-orders solvability lemma + a priori termination bound).
+- manuscript-planar v0.05 (the (72,108) attack subsection); wiki 04 arc; the assembly
+  checklist (program/jacobian-conjecture/72108-assembly-checklist.md).
+
 ## [0.34.000], 2026-07-22
 
 ### Added
