@@ -621,3 +621,21 @@
   to 125 (modulo the dossier's remaining forcing branches).
 - Routine: wiki 05; log; RESUME; v0.33.000; bake. Honest status: JC(2) open; the
   refutation cost one covector and bought the correct construction.
+
+## 2026-07-22 (session 31) - First-order universality; the ladder continues at order 2
+
+- **EXP-055 (confirmed 1-2; prediction 3 refuted as declared):** the perturbative
+  covector construction ran (background completion at 1374 s; the 590 s cap discipline
+  is noted in the verdict). SOUND BASE: rhs is the constant x^2 vector and Lambda0 is
+  globally left-null (symbolic t, column by column). FIRST-ORDER UNIVERSALITY PROVED:
+  all 26 entering lower monomials admit correctors Lambda_i with Lambda_i M0 =
+  -Lambda0 M_i and the (2,0)-entry pinned: the pairing stays exactly 576 to first
+  order, with localized supports (<= 19 rows). Order-1 termination REFUTED: 15 of 36
+  tested second-order pairs have nonzero residuals: the ladder continues with order-2
+  correctors (same mechanism; the full 351-pair sweep and the order-3 test are next
+  round's first task).
+- Honest state: the reduced (72,108) stratum is empty for all t and all lower
+  coefficients TO FIRST ORDER (plus exact per-stratum certificates at every sampled
+  point); closure = finish the corrector ladder; then the dossier's remaining forcing
+  branches; then the floor rises to 125.
+- Routine: wiki 05; log; RESUME; v0.34.000; bake. JC(2) remains open.

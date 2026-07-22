@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-22, session 30 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-22, session 31 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -93,13 +93,13 @@ the standing decision rule: every new experiment names its route).
    currently Theorem 6 or full-window towers; map what escapes ALL current lemmas;
    (b) the y-anchored (quasi-triangular-type) completions classification (JCB-035,
    the endgame frame): JC(2) = the triangular family is everything.
-2. N2 / JCB-040: EXP-053 = per-stratum 576 certificates; EXP-054 REFUTED rigid
-   universality (51 entering combinations) while confirming the 576 pairing is
-   stable across strata. FIRST TASK NEXT ROUND: the PERTURBATIVE covector
-   Lambda(eps) (linear-in-Lambda, affine-in-eps nullspace, batched over the 51
-   entering monomials; termination evidenced by 576-stability). Success = the
-   reduced (72,108) stratum closes universally; then the dossier's remaining
-   forcing branches; then the floor rises to 125.
+2. N2 / JCB-040: EXP-055 PROVED first-order universality (26/26 correctors, 576
+   pinned, supports <= 19 rows) and REFUTED order-1 termination (15/36 second-order
+   residuals nonzero). FIRST TASK NEXT ROUND: the order-2 correctors Lambda_ij
+   (same solvability mechanism; batch the full 351 pairs; SPLIT THE RUN INTO PARTS
+   to respect the 590 s cap), then the order-3 termination test. Success = the
+   universal polynomial covector: the reduced (72,108) stratum closes; then the
+   dossier's remaining forcing branches; then the floor rises to 125.
 3. JCB-041 remainder: the screenshot verification pass ONLY (bake is automatic and
    verified; wiki 04 rewritten in session 24). FELIPE still validates the novelty
    phrasing before submission.
