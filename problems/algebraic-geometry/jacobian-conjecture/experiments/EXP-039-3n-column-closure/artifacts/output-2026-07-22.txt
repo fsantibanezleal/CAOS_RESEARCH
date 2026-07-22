@@ -1,0 +1,47 @@
+============================================================================
+Part A: rank deficiency of Q4 -> J(P3, Q4) iff P3 is a perfect cube
+============================================================================
+[PASS] A1: every 5x5 minor vanishes on the cube parametrization (s x + t y)^3
+[PASS] A2: non-cube samples have a nonzero minor (full rank 5: only Q4 = 0)
+[PASS] A3: every minor lies in the Hessian ideal (minors subset cube conditions: rank can only drop on cubes)
+[PASS] A4a: J(f o A, g o A) = det(A) J(f, g) o A identically (rank is GL2-orbit-constant)
+  A4 representative x^2 y: rank 5
+  A4 representative x y (x + y): rank 5
+[PASS] A4b: both non-cube orbit representatives have FULL rank 5: with A4a and the 3-orbit classification of binary cubics, rank drops EXACTLY on cubes
+
+============================================================================
+Part B: the cube stratum at exact bidegree (3, <= 4): complete + invert
+============================================================================
+  B: 64 samples: 4 consistent, 60 empty, 4 inverted, failures []
+[PASS] B: every consistent cube-stratum sample yields a Keller pair with an explicit polynomial inverse  4/4 inverted
+
+============================================================================
+Part C: non-cube tops are EMPTY at (3, 4); replications at (3, 5), (3, 7)
+============================================================================
+  C x + x^2 y at (3, <= 4): EMPTY
+  C x + x^2 y at (3, <= 5): EMPTY
+  C x + x^2 y at (3, <= 7): EMPTY
+  C x + x^3 + y^3 at (3, <= 4): EMPTY
+  C x + x^3 + y^3 at (3, <= 5): EMPTY
+  C x + x^3 + y^3 at (3, <= 7): EMPTY
+  C x + x^2 y - x y^2 at (3, <= 4): EMPTY
+  C x + x^2 y - x y^2 at (3, <= 5): EMPTY
+  C x + x^2 y - x y^2 at (3, <= 7): EMPTY
+[PASS] C: every non-cube top is empty at (3, <= 4), (3, <= 5), (3, <= 7)
+
+============================================================================
+Part D: the (3, n) coverage table
+============================================================================
+  D (3, 3): gcd 3 -> EXP-022 (machine) + gcd 3 prime: Appelgate-Onishi/Nagata
+  D (3, 4): gcd 1 -> Magnus 1954 (gcd 1)
+  D (3, 5): gcd 1 -> Magnus 1954 (gcd 1)
+  D (3, 6): gcd 3 -> Appelgate-Onishi 1985 / Nagata (gcd 3 prime)
+  D (3, 7): gcd 1 -> Magnus 1954 (gcd 1)
+  D (3, 8): gcd 1 -> Magnus 1954 (gcd 1)
+  D (3, 9): gcd 3 -> Appelgate-Onishi 1985 / Nagata (gcd 3 prime)
+  D (3, 10): gcd 1 -> Magnus 1954 (gcd 1)
+  D (3, 11): gcd 1 -> Magnus 1954 (gcd 1)
+  D (3, 12): gcd 3 -> Appelgate-Onishi 1985 / Nagata (gcd 3 prime)
+[PASS] D: gcd(3, n) is always 1 or 3: the whole column is classically covered; the machine's role is replication + explicit inverses
+
+RESULT: ALL CHECKS PASS.
