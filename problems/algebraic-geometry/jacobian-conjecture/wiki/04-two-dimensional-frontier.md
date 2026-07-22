@@ -334,3 +334,17 @@ full consequence cascade, in the cascade companion manuscript. The planar result
 page are the planar-program manuscript (manuscript-planar/); the 3D aftermath is the
 foundational manuscript. The routes map (near-term: the tower lemma; the B = 16 sweep) is
 program/jacobian-conjecture/routes-2026-07-22.md.
+
+## The half-plane tower: proper-power tops close on the staircase stratum (EXP-051)
+
+The last structural gap of the tower program closed on its natural stratum: for any
+P = x + R whose total-degree top corner is the y-most support point (all swallowed
+staircases), the y-heavy half-plane subsystem H = {i <= j} carries the whole
+obstruction: T-power resonances reduce by the universal identity, non-T-power kernel
+elements have x-heavy sources with EMPTY H-support, and columns leaving H vanish from
+the subsystem entirely. ONE H-certificate at one window therefore excludes P at ALL
+partner degrees, proper-power tops included. Machine record: symbolic H-certificates at
+every tested window at (2,2,2); and the frontier payoff: the degree-32 B = 16-flavor
+sample and the degree-72 corner-(16,56) sample are now excluded at all partner degrees
+(pairings -256 and -32). Together, Theorems 5-6 and the half-plane lemma cover the
+entire swallowed-staircase stratum with y-most top corners from single window solves.

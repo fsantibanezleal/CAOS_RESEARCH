@@ -3,6 +3,18 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.30.000], 2026-07-22
+
+### Added
+- EXP-051: THE HALF-PLANE TOWER LEMMA: for shapes whose top corner is the y-most
+  support point, ONE y-heavy-subsystem certificate = exclusion at ALL partner degrees
+  (T-powers reduce; x-heavy sources have empty H-part; straddling columns vacuous).
+  Symbolic H-certificates at every tested window at (2,2,2). FRONTIER PAYOFF: the
+  degree-32 B = 16-flavor sample and the degree-72 corner-(16,56) sample are excluded
+  at ALL partner degrees: the first all-degree frontier exclusions.
+- manuscript-planar v0.04; wiki 04/05; bake refreshed; GGHV (72,108) transcription
+  agent in flight.
+
 ## [0.29.000], 2026-07-22
 
 ### Added

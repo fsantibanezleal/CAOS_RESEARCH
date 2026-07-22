@@ -545,3 +545,28 @@
   certificate construction for proper-power tops (it closes Theorem 5 entirely AND
   unlocks the tower on the frontier shapes). Next iteration: derive it; transcribe the
   GGHV family; sweep.
+
+## 2026-07-22 (session 27) - THE HALF-PLANE TOWER LEMMA; frontier shapes fall at all degrees
+
+- Felipe's directive: non-stop rounds until proof or counterexample. Honest status:
+  JC(2) remains open; this round CLOSED the program's single residual structural gap on
+  its natural stratum and produced the first all-degree frontier exclusions.
+- **EXP-051 (confirmed): THE HALF-PLANE TOWER LEMMA.** For P = x + R whose top corner
+  is the y-most support point (the swallowed-staircase geometry), the y-heavy
+  half-plane subsystem H = {i <= j} has a fully-resolved tower: T-power resonances
+  reduce (universal identity), non-T-power kernel resonances have x-heavy sources with
+  EMPTY H-part, and straddling columns are vacuous (T attains mu; zero violations
+  measured). ONE H-certificate = exclusion at ALL partner degrees, proper-power tops
+  included. Machine record: symbolic monomial-pairing H-certificates at every window
+  7..10 at (2,2,2); case-c sweeps clean on both test shapes. THE FRONTIER PAYOFF:
+  P32 = x + R0(1)^2 + x^2 (degree 32, B = 16 flavor) and P72 = x + 2(x^2 y^7)^8 + x^2
+  (degree 72, the (72,108) corner geometry) carry H-certificates (pairings -256, -32):
+  BOTH EXCLUDED AT ALL PARTNER DEGREES: the first all-degree exclusions on
+  frontier-shaped polynomials.
+- Consequence for the ladder: Theorems 5-6 + the half-plane lemma now cover the entire
+  swallowed-staircase stratum with y-most top corners, at all degrees, from one window
+  solve per shape (seconds).
+- In flight: the GGHV (72,108) shape-transcription agent (dossier lands in context/);
+  the parametrized all-degree sweep is next round's target.
+- Routine: manuscript-planar v0.04 (the half-plane lemma + frontier all-degree
+  results); wiki 04/05; bake refreshed; v0.30.000.

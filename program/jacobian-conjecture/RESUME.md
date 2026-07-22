@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-22, session 26 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-22, session 27 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -74,7 +74,9 @@ each: the N2 pipeline validated at target scale) . 048 confirmed, universal-kill
 (THE HALF-PLANE CERTIFICATE mechanism for proper-power odd resonances) . 049 confirmed
 (THEOREM 6, the universal tower: one certified window = all-degree exclusion for
 non-proper-power tops; multi-edge harvest) . 050 confirmed (FIRST certificates at the
-(72,108) degrees, ~1 s each).
+(72,108) degrees, ~1 s each) . 051 confirmed (THE HALF-PLANE TOWER LEMMA: one
+H-certificate = all-degree exclusion on the y-most-corner staircase stratum; P32 and
+P72 excluded at ALL partner degrees).
 
 ## 4. In flight
 
@@ -85,16 +87,16 @@ the standing decision rule: every new experiment names its route).
 
 ## 5. Next actions, ordered
 
-1. THE SINGLE RESIDUAL GAP: derive the general HALF-PLANE certificate construction
-   for proper-power tops (EXP-048 named it; the y-heavy subsystem's inconsistency is
-   the object). It closes Theorem 5 entirely AND unlocks Theorem 6's tower on the
-   frontier shapes (R0^m tops are proper powers). Everything else on the
-   non-proper-power stratum is now covered by THEOREM 6 (EXP-049): one certified
-   window = all-degree exclusion.
-2. N2 / JCB-040: (72,108)-degree certificates RAN (EXP-050, ~1 s each, sampled
-   corner-(16,56) shapes). Next: transcribe the GGHV ((8,28),(3,2)) parametrized family
-   from the primary text and SWEEP it (closing the case raises the JC(2) floor to 125);
-   same for beyond-150 B = 16 shapes with the half-plane construction once derived.
+1. DONE (EXP-051): the HALF-PLANE TOWER LEMMA covers the y-most-corner staircase
+   stratum at all degrees, proper-power tops included. Remaining theory targets:
+   (a) shapes where the top corner is NOT the y-most support point (y-heavy tails):
+   currently Theorem 6 or full-window towers; map what escapes ALL current lemmas;
+   (b) the y-anchored (quasi-triangular-type) completions classification (JCB-035,
+   the endgame frame): JC(2) = the triangular family is everything.
+2. N2 / JCB-040: the GGHV ((8,28),(3,2)) transcription agent is IN FLIGHT (dossier
+   lands in context/2026-07-22-gghv-72108-dossier.md). Next round: the parametrized
+   ALL-DEGREE sweep with H-certificates (the half-plane lemma now applies to the
+   frontier shapes directly); closing the case raises the JC(2) floor to 125.
 3. JCB-041 remainder: the screenshot verification pass ONLY (bake is automatic and
    verified; wiki 04 rewritten in session 24). FELIPE still validates the novelty
    phrasing before submission.

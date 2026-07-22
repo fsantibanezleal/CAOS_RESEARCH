@@ -1,0 +1,24 @@
+============================================================================
+Part A: H-certificates at (2,2,2), symbolic (a,b), windows 7..10
+============================================================================
+  A N=7: H-rows 25: pairing -32*a**4
+  A N=8: H-rows 31: pairing -64*a**4
+  A N=9: H-rows 37: pairing -64*a**5
+  A N=10: H-rows 44: pairing -512*a**5
+[PASS] A: the H-subsystem carries a cleared MONOMIAL-pairing certificate at every window 7..10 (all parameters)
+
+============================================================================
+Part B: case-c vacuity (T-output outside H implies column H-part zero)
+============================================================================
+  B (2,2,2): mu = 0 attained by T: True; case-c violations at degree 7: 0
+  B P32: mu = -16 attained by T: True; case-c violations at degree 35: 0
+[PASS] B: T attains mu and no straddling column exists (case-c vacuous) on both shapes
+
+============================================================================
+Part C: THE FRONTIER PAYOFF: H-certificates on proper-power-top samples
+============================================================================
+  C P32 = x + R0(1)^2 + x^2 (deg 32, T = x^8 y^24): H-certificate at N=14 (380 H-rows): pairing -256
+  C P72 = x + 2 g^8 + x^2 (deg 72, corner (16,56)): H-certificate at N=12 (135 H-rows): pairing -32
+[PASS] C: both frontier proper-power-top samples carry H-certificates: by the HALF-PLANE TOWER LEMMA they are excluded at ALL partner degrees
+
+RESULT: ALL CHECKS PASS.
