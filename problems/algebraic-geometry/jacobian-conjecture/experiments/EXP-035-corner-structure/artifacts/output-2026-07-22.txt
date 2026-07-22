@@ -1,0 +1,58 @@
+============================================================================
+Part A: the corner operator is DIAGONAL; kernel = powers of B
+============================================================================
+[PASS] A1: J(B^p, x^a y^b) = p(ib - ja) x^{ip+a-1} y^{jp+b-1} exactly (grid i,j<=3, p<=3, a,b<=4)
+[PASS] A2: the kernel is EXACTLY the monomials parallel to (i, j), i.e. powers of B
+
+============================================================================
+Part B: a pure corner cannot produce the constant
+============================================================================
+[PASS] B: no monomial G gives J(B^p, G) a constant term (i, j >= 1): the constant must come from the staircase, not the corner  hits: []
+
+============================================================================
+Part C: staircase mapping (polygon vs certificate support)
+============================================================================
+  C x + x^2 + x^2 y: Newton points [(1, 0), (2, 0), (2, 1)]; staircase [(1, 0), (2, 1)]
+      certificate -13860; support rows 16; x-range 1..4, y-range 1..7
+  C x + x^2 + x^2 y^3: Newton points [(1, 0), (2, 0), (2, 3)]; staircase [(1, 0), (2, 3)]
+      certificate -10; support rows 4; x-range 1..2, y-range 3..9
+  C x + x^3 + x^2 y^2: Newton points [(1, 0), (2, 2), (3, 0)]; staircase [(1, 0), (2, 2)]
+      certificate -81; support rows 4; x-range 2..8, y-range 0..0
+[PASS] C: certificates are multi-row bands (the coupling follows the staircase, not a single ray)
+
+============================================================================
+Part D: widened monomial-corner territory scan
+============================================================================
+  D B=x^1y^1, x + B^1: INCONSISTENT
+  D B=x^1y^1, x + x^2 + B^1: INCONSISTENT
+  D B=x^1y^1, x + x y + B^1: INCONSISTENT
+  D B=x^1y^1, x + B^2: INCONSISTENT
+  D B=x^1y^1, x + x^2 + B^2: INCONSISTENT
+  D B=x^1y^1, x + x y + B^2: INCONSISTENT
+  D B=x^2y^1, x + B^1: INCONSISTENT
+  D B=x^2y^1, x + x^2 + B^1: INCONSISTENT
+  D B=x^2y^1, x + x y + B^1: INCONSISTENT
+  D B=x^2y^1, x + B^2: INCONSISTENT
+  D B=x^2y^1, x + x^2 + B^2: INCONSISTENT
+  D B=x^2y^1, x + x y + B^2: INCONSISTENT
+  D B=x^1y^2, x + B^1: INCONSISTENT
+  D B=x^1y^2, x + x^2 + B^1: INCONSISTENT
+  D B=x^1y^2, x + x y + B^1: INCONSISTENT
+  D B=x^1y^2, x + B^2: INCONSISTENT
+  D B=x^1y^2, x + x^2 + B^2: INCONSISTENT
+  D B=x^1y^2, x + x y + B^2: INCONSISTENT
+  D B=x^2y^2, x + B^1: INCONSISTENT
+  D B=x^2y^2, x + x^2 + B^1: INCONSISTENT
+  D B=x^2y^2, x + x y + B^1: INCONSISTENT
+  D B=x^2y^2, x + B^2: INCONSISTENT
+  D B=x^2y^2, x + x^2 + B^2: INCONSISTENT
+  D B=x^2y^2, x + x y + B^2: INCONSISTENT
+  D B=x^3y^1, x + B^1: INCONSISTENT
+  D B=x^3y^1, x + x^2 + B^1: INCONSISTENT
+  D B=x^3y^1, x + x y + B^1: INCONSISTENT
+  D B=x^3y^1, x + B^2: INCONSISTENT
+  D B=x^3y^1, x + x^2 + B^2: INCONSISTENT
+  D B=x^3y^1, x + x y + B^2: INCONSISTENT
+[PASS] D: every monomial-corner sample window is EMPTY (territory widened)
+
+RESULT: ALL CHECKS PASS.

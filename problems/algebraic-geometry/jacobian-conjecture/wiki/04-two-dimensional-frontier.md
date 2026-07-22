@@ -248,3 +248,26 @@ rotation puts the dominating direction on a coordinate and the vertex analysis r
 an induction whose closure on the triangular family would be JC(2). The open steps
 (rotation normal form, behavior of the excluded shapes under rotation, ties) are the
 program's standing target, stated as strategy, not as a claim.
+
+## The corner is diagonal; the core is the staircase (EXP-035/036)
+
+Two results closed this stage. First, the mixed corner, long suspected to be the hard
+object, is clean: for $B = x^i y^j$ ($i, j \ge 1$),
+$$J(B^p,\; x^a y^b) = p\,(ib - ja)\; x^{ip+a-1} y^{jp+b-1},$$
+a DIAGONAL operator whose eigenvalue is the determinant of the exponent pair against the
+corner direction and whose kernel is exactly the powers of $B$. A pure corner can never
+carry the Keller constant (the output exponents never both vanish). The constant must
+therefore be manufactured along the STAIRCASE of Newton vertices running from the swallowed
+linear vertex $(1,0)$ up to the top corner, and that transport, the classical Moh staircase,
+is the program's residual open core (JCB-038). Thirty monomial-corner samples were scanned:
+every completion window empty.
+
+Second, the annihilation lemma is closed in general, and with it the last derived gap in
+Theorems 2, 3 and 4, which are now UNCONDITIONAL. The route required a refutation first: the
+declared argument used $L_{top}$ and failed both machine tests. The operator that the
+certificate covector annihilates is the FULL $L = J(P, \cdot)$, and the sources satisfy
+$$J(m, P^k) = -k\,L\!\left(P^{k-1} m\right),$$
+so every source is an image with an explicit preimage, and a left-null covector kills the
+whole image at once. The finite-window subtlety is exactly a truncation bookkeeping: the
+pairing vanishes precisely when the preimage fits the window, which retrodicts the artifact
+values recorded in EXP-031 number for number.

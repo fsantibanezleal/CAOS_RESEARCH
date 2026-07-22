@@ -404,12 +404,9 @@ $L_{\mathrm{top}}$ alone. Its kernel on the class of weight $kv$ is exactly
 $\langle (x + a x^u y^v)^k \rangle$ (machine-identified; the naive injectivity claim fails
 precisely there, a refutation recorded in the experiment log). Absorbing these kernel
 components of $Q$ as $H(P_{\mathrm{top}})$ turns the perturbation into the sources
-$J(R, P_{\mathrm{top}}^k)$ in the constant's equation; the identity
-$J(m, P_{\mathrm{top}}^k) = -k P_{\mathrm{top}}^{k-1} J(P_{\mathrm{top}}, m)$ reduces them
-to $k = 1$, and the chain functional of Theorem~\ref{thm:weightclass} annihilates every such
-source (machine-verified on all danger weights at adequate windows; the closed-form general
-step is the one remaining derived gap). The constant's equation then reduces to the pure
-chain, contradicted at every truncation. Certificates over $\mathbb{Q}(a, b, c)$ confirm the
+$J(R, P^k)$ in the constant's equation, which Lemma~\ref{lem:annihilation} annihilates
+(they are images of $L = J(P, \cdot)$, and the certificate covector kills that image). The
+constant's equation then reduces to the pure chain, contradicted at every truncation. Certificates over $\mathbb{Q}(a, b, c)$ confirm the
 conclusion directly: with danger-weight tails present, the obstruction pairing remains a
 pure power of $a$.
 \end{proof}
@@ -470,6 +467,38 @@ vertex analysis re-applies: the recorded strategy is the resulting induction, wh
 on the triangular family would be exactly the two-variable Jacobian conjecture. The
 machine's verification covers all three sides on structured samples (vertex-$x$ mixed
 shapes inconsistent; triangular shapes consistent; swallowed shapes consistent).
+
+\begin{lemma}[Annihilation]\label{lem:annihilation}
+Let $P$ be a polynomial, $L = J(P, \cdot)$, and let $\Lambda$ be a covector annihilating the
+image of $L$ on a space of polynomials containing $P^{k-1} m$. Then $\Lambda$ annihilates
+the source $J(m, P^{k})$.
+\end{lemma}
+
+\begin{proof}
+Since $J(P,P) = 0$, the Leibniz rule gives $J(P, P^{k-1} m) = P^{k-1} J(P, m)$, hence
+$J(m, P^{k}) = -k\,P^{k-1} J(P,m) = -k\,L\!\left(P^{k-1} m\right)$: the source is an image of
+$L$ with the explicit preimage $P^{k-1} m$, and $\Lambda$ kills it.
+\end{proof}
+
+The certificate covectors used throughout are left-null on the completion matrix, whose
+columns are exactly $L(m)$ for the ansatz monomials, so they satisfy the hypothesis
+automatically. The only finite-dimensional subtlety is that the window must contain the
+preimage; truncated computations show spurious nonzero pairings for sources whose preimage
+exceeds the window, and the pairing vanishes precisely when $\deg(P^{k-1}m)$ fits, which
+reproduces the recorded artifact values exactly. With this lemma the tail steps of
+Theorems~\ref{thm:perturbed}, \ref{thm:fulledge} and \ref{thm:dichotomy} are unconditional.
+
+\subsection*{The corner is diagonal; the residual core is the staircase}
+
+For a mixed corner $B = x^i y^j$ ($i, j \ge 1$) the corner operator is diagonal,
+\[
+J\!\left(B^{p},\, x^{a} y^{b}\right) = p\,(ib - ja)\; x^{ip + a - 1} y^{jp + b - 1},
+\]
+with kernel exactly the powers of $B$, and no monomial makes $J(B^p, \cdot)$ carry a constant
+term. The mixed corner, long the suspected hard object, is therefore clean; what resists is
+the transport of the Keller constant along the staircase of Newton vertices joining the
+swallowed linear vertex to the corner. That staircase, the classical shape studied by Moh, is
+the residual open core, and the theorems above apply to it edge by edge.
 
 \section{Discussion and program}
 

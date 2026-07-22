@@ -1,0 +1,42 @@
+============================================================================
+Part A: the Leibniz identity J(f, f^{k-1} g) = f^{k-1} J(f, g)
+============================================================================
+[PASS] A: identity exact for generic symbolic f, g and k <= 4 (J(f, f) = 0 route)
+
+============================================================================
+Part B: the sources are images of the FULL operator L = J(P, .)
+============================================================================
+[PASS] B: J(m, P^k) = -k L(P^{k-1} m) exactly (grid (u,v), k <= 3, 5 monomials): every source IS an image of L, with explicit preimage P^{k-1} m
+
+============================================================================
+Part C: the window criterion (and EXP-031's artifact fully explained)
+============================================================================
+  C window 6 (pairing -8*a_**2):
+    m=x^1y^3,k=1: pre-deg 4 IN -> pairing 0
+    m=x^2y^5,k=1: pre-deg 7 OUT -> pairing 15
+    m=x^0y^3,k=2: pre-deg 7 OUT -> pairing 30*a_
+    m=x^1y^5,k=2: pre-deg 10 OUT -> pairing 30
+    m=x^0y^5,k=3: pre-deg 13 OUT -> pairing 45
+  C window 10 (pairing -128*a_**4):
+    m=x^1y^3,k=1: pre-deg 4 IN -> pairing 0
+    m=x^2y^5,k=1: pre-deg 7 IN -> pairing 0
+    m=x^0y^3,k=2: pre-deg 7 IN -> pairing 0
+    m=x^1y^5,k=2: pre-deg 10 IN -> pairing 0
+    m=x^0y^5,k=3: pre-deg 13 OUT -> pairing 945*a_**2
+  C window 16 (pairing -1024*a_**6):
+    m=x^1y^3,k=1: pre-deg 4 IN -> pairing 0
+    m=x^2y^5,k=1: pre-deg 7 IN -> pairing 0
+    m=x^0y^3,k=2: pre-deg 7 IN -> pairing 0
+    m=x^1y^5,k=2: pre-deg 10 IN -> pairing 0
+    m=x^0y^5,k=3: pre-deg 13 IN -> pairing 0
+[PASS] C: whenever the preimage fits the window, the pairing VANISHES; the earlier nonzeros were exactly the out-of-window preimages (artifact explained)
+
+============================================================================
+Part D: image membership in matrix form (rank test)
+============================================================================
+  D m=x^1y^3, k=1: rank(M)=62, rank([M|S])=62 (in image); preimage in window: True
+  D m=x^0y^3, k=2: rank(M)=62, rank([M|S])=62 (in image); preimage in window: True
+  D m=x^2y^5, k=1: rank(M)=62, rank([M|S])=62 (in image); preimage in window: True
+[PASS] D: each source vector lies in the column space of M (image membership, the matrix form of the closed-form lemma)
+
+RESULT: ALL CHECKS PASS.

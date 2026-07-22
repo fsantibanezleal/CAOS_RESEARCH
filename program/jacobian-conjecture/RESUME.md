@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-21, session 20 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-21, session 21 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -58,33 +58,41 @@ census) · 012 conf 1-4/refuted 5 (landscape; uniqueness) · 013 conf 1-2/partia
 bridge; (2,2) exhaustive) · 015 confirmed (checker + bridge tooling) · 016 confirmed (cascade
 verified) · 017 confirmed (bilinear exhaustives (2,3)/(3,3)) · 018 confirmed (Poisson +
 symmetric closure) · 019 confirmed (floors; (2,3) full closure ideal) · 020 confirmed
-(THEOREMS (2,3)/(2,4)/(2,5); (3,4) elimination cap-out documented) · 021 confirmed (THE UNIFORM min-degree-2 THEOREM) · 022 confirmed (shear closure for ANY f; (3,3) cube alignment FORCED; the descent inverter runs, library fully inverted) · 023 confirmed (the (4, <= 6) primitive window is EMPTY on the sampled slice, +8 via one descent step; controls non-vacuous) · 024 confirmed (pure-slice certificate -8 a^2: empty for EVERY a != 0; full 8-param certificate capped, staged) - 025 confirmed (ALL 63 slices up to 3 lower coeffs empty; windows <= 18 empty; E-locus closed; sources verified: (4,*) ladder literature-covered, open frontier = composite gcd 9, 12) . 026 confirmed (FIRST composite-gcd exclusions: (18, <= 27) certified empty for all a != 0, gcd -144 a^2; h-sweep + gcd-12 probe empty; inside Moh range, certificate is the new content) . 027 confirmed (gcd-12 certificate: (24, <= 36) empty for all a != 0, gcd -80 a^2) . 028 confirmed (polygon strategy: sieve exact; (18, <= 36) certified PAST the divisible rung, gcd -576 a^3; obstruction = edge residue on the P-edge ray; all-degree non-component statement [D]; floor ~108) . 029 confirmed (THE WEIGHT-CLASS THEOREM, unconditional: x + a x^u y^v never a Keller component at ANY degree; all seven pairings = the closed form; beyond-floor at degree 135) . 030 partially refuted (injectivity FALSE: kv-kernels = P_top^k; empirics held) . 031 confirmed (THEOREM 2: absorption + annihilation; lower-weight tails never rescue; danger tails b,c-free) . 032 confirmed (THEOREM 3: every x-anchored edge falls; multiplication structure + univariate kill; frontier sharp: only y-anchored tops can carry components) . 033 confirmed (axis edges fall; THEOREM 4 vertex dichotomy: vertex-x components are EXACTLY x + f(y); escape route real; rotation induction recorded) . 034 confirmed (rotate-descent linearizes the whole library; hard-shape stop = mixed corners; 8 swallowed-mixed windows empty; corner certificates multi-ray).
+(THEOREMS (2,3)/(2,4)/(2,5); (3,4) elimination cap-out documented) · 021 confirmed (THE UNIFORM min-degree-2 THEOREM) · 022 confirmed (shear closure for ANY f; (3,3) cube alignment FORCED; the descent inverter runs, library fully inverted) · 023 confirmed (the (4, <= 6) primitive window is EMPTY on the sampled slice, +8 via one descent step; controls non-vacuous) · 024 confirmed (pure-slice certificate -8 a^2: empty for EVERY a != 0; full 8-param certificate capped, staged) - 025 confirmed (ALL 63 slices up to 3 lower coeffs empty; windows <= 18 empty; E-locus closed; sources verified: (4,*) ladder literature-covered, open frontier = composite gcd 9, 12) . 026 confirmed (FIRST composite-gcd exclusions: (18, <= 27) certified empty for all a != 0, gcd -144 a^2; h-sweep + gcd-12 probe empty; inside Moh range, certificate is the new content) . 027 confirmed (gcd-12 certificate: (24, <= 36) empty for all a != 0, gcd -80 a^2) . 028 confirmed (polygon strategy: sieve exact; (18, <= 36) certified PAST the divisible rung, gcd -576 a^3; obstruction = edge residue on the P-edge ray; all-degree non-component statement [D]; floor ~108) . 029 confirmed (THE WEIGHT-CLASS THEOREM, unconditional: x + a x^u y^v never a Keller component at ANY degree; all seven pairings = the closed form; beyond-floor at degree 135) . 030 partially refuted (injectivity FALSE: kv-kernels = P_top^k; empirics held) . 031 confirmed (THEOREM 2: absorption + annihilation; lower-weight tails never rescue; danger tails b,c-free) . 032 confirmed (THEOREM 3: every x-anchored edge falls; multiplication structure + univariate kill; frontier sharp: only y-anchored tops can carry components) . 033 confirmed (axis edges fall; THEOREM 4 vertex dichotomy: vertex-x components are EXACTLY x + f(y); escape route real; rotation induction recorded) . 034 confirmed (rotate-descent linearizes the whole library; hard-shape stop = mixed corners; 8 swallowed-mixed windows empty; corner certificates multi-ray) . 035 confirmed (the corner is DIAGONAL, kernel = powers of B, pure corner cannot carry the constant: core moves to the STAIRCASE) . 036 confirmed after refutation (annihilation CLOSED FORM: sources = L(P^{k-1} m); THEOREMS 2-4 UNCONDITIONAL).
 
 ## 4. In flight
 
-Nothing mid-run. Session 20 delivered the strategic AUDIT with machine data (EXP-034):
-rotate-descent (rotation of linear-base tops + de Jonquieres subtraction, gauge bookkeeping
-verified) LINEARIZES every library pair in 0-6 steps: the induction is mechanized and
-closes on all known components. Its exact limit: tops that are powers of a MIXED base stay
-mixed under rotation: the "hard-shape" stop is precisely the classical hard territory
-(Moh's shapes), not covered by Theorems 1-4 when x is swallowed. Eight swallowed-mixed
-samples: windows all EMPTY (the uncovered territory resists; exclusions now exceed the
-proved theorems). Certificate anatomy there: multi-ray support (16/42, 25/49 rows),
-constant pairings: the mixed-corner obstruction is NOT a single-ray residue: the corner
-calculus (JCB-037) must handle multi-edge interaction. THE STANDING QUESTION, now precise:
-prove hard-shape (mixed-corner) pairs cannot be Keller.
+Nothing mid-run. Session 21 delivered two results. (1) EXP-035: the mixed corner is DIAGONAL:
+J(B^p, x^a y^b) = p(ib - ja) x^{ip+a-1} y^{jp+b-1} for B = x^i y^j, kernel exactly the powers
+of B, and a pure corner can NEVER carry the constant (output exponents never both zero).
+Hence the constant must travel the STAIRCASE of Newton vertices from the swallowed linear
+vertex (1,0) to the top corner: THE OPEN CORE IS THE STAIRCASE TRANSPORT (JCB-038), not the
+corner. 30 monomial-corner samples: all windows empty. (2) EXP-036: the annihilation lemma is
+CLOSED IN GENERAL, after the first derivation was REFUTED (it used L_top; the machine showed
+nonzero in-window pairings and rank outside the column space). Correct statement: sources are
+J(m, P^k) with the FULL P, and J(m, P^k) = -k L(P^{k-1} m), so every source is an image with
+explicit preimage P^{k-1} m; the certificate covector is left-null on the image by
+construction. The window criterion (pairing vanishes iff deg(P^{k-1} m) <= N) RETRODICTS
+EXP-031's artifact values exactly (15, 30a, 30, 45 at window 6; 945 a^2 at window 10).
+CONSEQUENCE: THEOREMS 2, 3 AND 4 ARE NOW UNCONDITIONAL; no derived gap remains in the
+perturbation machinery.
 
 ## 5. Next actions, ordered
 
-1. JCB-037 (the corner calculus, the open core): prove hard-shape (mixed-corner) pairs
-   cannot be Keller. Machine route: (a) pair-level corner normal form (BOTH components
-   cornered: tops c B^p, c' B^q, B = x^al y^be); (b) the two-corner cascade: the corner
-   constraint at the top vertex plus the next-vertex constraint along each boundary edge;
-   (c) widen the swallowed-mixed scans (degree, shapes) as the empirical map; (d) study
-   the multi-ray certificates' structure (which directions interact) toward a closed form.
-2. JCB-033: the annihilation lemma in closed form (shared by Theorems 2-4's tail steps).
-3. JCB-031 (remaining): novelty searches (Theorems 1-4, rigidity); full-text Abhyankar
-   hypotheses; Moh's six shapes (now directly relevant: they ARE the hard shapes).
+1. JCB-038 (THE OPEN CORE: the staircase transport). The constant must travel the
+   lower-left Newton boundary from (1,0) to the top corner. Concrete first moves:
+   (a) formalize the staircase as an ordered list of edges, each with its own weight system,
+   so Theorems 1-3 apply EDGE BY EDGE (each edge is an x-anchored or corner-anchored form);
+   (b) derive the vertex-matching (transport) relation between consecutive edges: the class
+   solution produced by edge r must match the class input of edge r+1 at their shared
+   vertex; (c) test whether the composed transport is over-determined on samples (build P
+   with a prescribed 3-vertex staircase, compute both sides of the matching relation);
+   (d) keep widening scans as the empirical map (all empty so far).
+2. JCB-039 (complementary): pair-level corner theory (both components cornered) in the
+   diagonal picture; does the pair constraint add anything beyond the staircase?
+3. JCB-031 (remaining): novelty searches (Theorems 1-4, now unconditional: this raises the
+   stakes on the folklore check); full-text Abhyankar hypotheses; Moh's six shapes (they
+   ARE the staircase shapes: fetch the explicit list as scan targets).
 2. JCB-031: full-text pass: Moh 1983 (exact coverage statement), the Newton-polygon
    literature around minimal counterexamples, and the rigidity novelty check; unhedge or
    qualify the manuscript accordingly.

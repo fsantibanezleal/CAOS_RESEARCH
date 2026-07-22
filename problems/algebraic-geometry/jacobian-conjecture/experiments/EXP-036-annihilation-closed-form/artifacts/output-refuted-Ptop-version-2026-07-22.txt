@@ -1,0 +1,42 @@
+============================================================================
+Part A: the Leibniz identity J(f, f^{k-1} g) = f^{k-1} J(f, g)
+============================================================================
+[PASS] A: identity exact for generic symbolic f, g and k <= 4 (J(f, f) = 0 route)
+
+============================================================================
+Part B: every danger source has the EXPLICIT preimage P_top^{k-1} m
+============================================================================
+[PASS] B: L_top(P_top^{k-1} m) = P_top^{k-1} J(P_top, m) exactly (grid (u,v), k <= 3, 5 monomials): every source IS an image, with explicit preimage
+
+============================================================================
+Part C: the window criterion (and EXP-031's artifact fully explained)
+============================================================================
+  C window 6 (pairing -8*a_**2):
+    m=x^1y^3,k=1: pre-deg 4 IN -> pairing -12*a_
+    m=x^2y^5,k=1: pre-deg 7 OUT -> pairing 0
+    m=x^0y^3,k=2: pre-deg 7 OUT -> pairing 0
+    m=x^1y^5,k=2: pre-deg 10 OUT -> pairing 0
+    m=x^0y^5,k=3: pre-deg 13 OUT -> pairing 0
+  C window 10 (pairing -128*a_**4):
+    m=x^1y^3,k=1: pre-deg 4 IN -> pairing -192*a_**3
+    m=x^2y^5,k=1: pre-deg 7 IN -> pairing 240*a_**2
+    m=x^0y^3,k=2: pre-deg 7 IN -> pairing 240*a_**3
+    m=x^1y^5,k=2: pre-deg 10 IN -> pairing -280*a_**2
+    m=x^0y^5,k=3: pre-deg 13 OUT -> pairing 0
+  C window 16 (pairing -1024*a_**6):
+    m=x^1y^3,k=1: pre-deg 4 IN -> pairing -1536*a_**5
+    m=x^2y^5,k=1: pre-deg 7 IN -> pairing 1920*a_**4
+    m=x^0y^3,k=2: pre-deg 7 IN -> pairing 1920*a_**5
+    m=x^1y^5,k=2: pre-deg 10 IN -> pairing -2240*a_**4
+    m=x^0y^5,k=3: pre-deg 13 IN -> pairing 2520*a_**4
+[FAIL] C: whenever the preimage fits the window, the pairing VANISHES; the earlier nonzeros were exactly the out-of-window preimages (artifact explained)
+
+============================================================================
+Part D: image membership in matrix form (rank test)
+============================================================================
+  D m=x^1y^3, k=1: rank(M)=62, rank([M|S])=63 (NOT in image); preimage in window: True
+  D m=x^0y^3, k=2: rank(M)=62, rank([M|S])=63 (NOT in image); preimage in window: True
+  D m=x^2y^5, k=1: rank(M)=62, rank([M|S])=63 (NOT in image); preimage in window: True
+[FAIL] D: each source vector lies in the column space of M (image membership, the matrix form of the closed-form lemma)
+
+RESULT: 2 FAILED: ['C: whenever the preimage fits the window, the pairing VANISHES; the earlier nonzeros were exactly the out-of-window preimages (artifact explained)', 'D: each source vector lies in the column space of M (image membership, the matrix form of the closed-form lemma)']
