@@ -3,6 +3,18 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.20.000], 2026-07-22
+
+### Added
+- EXP-030 (partially refuted, then decisive) + EXP-031 (confirmed): THEOREM 2: lower-weight
+  perturbations never rescue: x + a x^u y^v + R (R any lower-weight polynomial) is never a
+  Keller component, at any degree. The naive injectivity proof died in public (kernels on
+  kv-classes = P_top^k exactly); the repair is kernel absorption + the annihilation lemma
+  (verified at adequate windows; truncation artifacts recorded; reduction identity exact);
+  danger tails certified b, c-free. Dense-polygon, unbounded-degree families excluded beyond
+  every verified floor. Remaining [D]: annihilation in closed form; next: weight >= v
+  perturbations.
+
 ## [0.19.000], 2026-07-21
 
 ### Added

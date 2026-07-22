@@ -390,6 +390,35 @@ exactly the one-monomial perturbations; non-monomial slices have genuine multi-e
 polygons, and the multi-edge calculus (edge filtration, conjectured upper-triangularity) is
 the program's next instrument.
 
+\begin{theorem}[Lower-weight perturbations never rescue; machine-shadowed, one derived step]
+\label{thm:perturbed}
+Let $u \ge 2$, $v \ge 1$, $a \ne 0$, and let $R \in \C[x,y]$ be any polynomial whose
+monomials have degree $\ge 2$ and $(v, 1-u)$-weight strictly below $v$. Then
+$P = x + a\,x^u y^v + R$ is not a Keller component.
+\end{theorem}
+
+\begin{proof}[Proof skeleton]
+The operator $L_{\mathrm{top}} = J(x + a x^u y^v, \cdot)$ raises weight by $u - 1$, strictly
+more than any perturbation term, so the top-graded equations are governed by
+$L_{\mathrm{top}}$ alone. Its kernel on the class of weight $kv$ is exactly
+$\langle (x + a x^u y^v)^k \rangle$ (machine-identified; the naive injectivity claim fails
+precisely there, a refutation recorded in the experiment log). Absorbing these kernel
+components of $Q$ as $H(P_{\mathrm{top}})$ turns the perturbation into the sources
+$J(R, P_{\mathrm{top}}^k)$ in the constant's equation; the identity
+$J(m, P_{\mathrm{top}}^k) = -k P_{\mathrm{top}}^{k-1} J(P_{\mathrm{top}}, m)$ reduces them
+to $k = 1$, and the chain functional of Theorem~\ref{thm:weightclass} annihilates every such
+source (machine-verified on all danger weights at adequate windows; the closed-form general
+step is the one remaining derived gap). The constant's equation then reduces to the pure
+chain, contradicted at every truncation. Certificates over $\mathbb{Q}(a, b, c)$ confirm the
+conclusion directly: with danger-weight tails present, the obstruction pairing remains a
+pure power of $a$.
+\end{proof}
+
+This covers dense-Newton-polygon families of unbounded degree, far beyond every verified
+range, while remaining silent, as it must, on quasi-triangular components (their leading
+monomials violate $u \ge 2$, $v \ge 1$). The frontier moves to perturbations of weight
+$\ge v$, where the top edge itself deforms.
+
 \section{Discussion and program}
 
 \textbf{Why the conjecture is false.} In the equivariant class, being Keller is a two-variable

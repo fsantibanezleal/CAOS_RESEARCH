@@ -1,0 +1,50 @@
+============================================================================
+Part A: shift bookkeeping and the coupling structure
+============================================================================
+[PASS] A: every lower-weight monomial feeds the constant's row only from classes STRICTLY ABOVE the y-class; shift formulas exact
+
+============================================================================
+Part B: injectivity of L_top on every class (incl. x-power classes)
+============================================================================
+  B (u=2,v=2) class 2: KERNEL of dim 1
+  B (u=2,v=2) class 4: KERNEL of dim 1
+  B (u=2,v=2) class 6: KERNEL of dim 1
+  B (u=2,v=2): 36 classes tested, all injective so far: False
+  B (u=3,v=2) class 2: KERNEL of dim 1
+  B (u=3,v=2) class 4: KERNEL of dim 1
+  B (u=3,v=2) class 6: KERNEL of dim 1
+  B (u=3,v=2): 31 classes tested, all injective so far: False
+  B (u=4,v=6) class 6: KERNEL of dim 1
+  B (u=4,v=6) class 12: KERNEL of dim 1
+  B (u=4,v=6) class 18: KERNEL of dim 1
+  B (u=4,v=6): 90 classes tested, all injective so far: False
+  B (u=8,v=10) class 10: KERNEL of dim 1
+  B (u=8,v=10) class 20: KERNEL of dim 1
+  B (u=8,v=10) class 30: KERNEL of dim 1
+  B (u=8,v=10): 799 classes tested, all injective so far: False
+[FAIL] B: L_top is injective on EVERY class in the tested windows (no rescuer exists)
+
+============================================================================
+Part C: end to end: perturbed windows empty; the control stays consistent
+============================================================================
+  C (u=2,v=2, tail [(1, 1), (0, 2)], window <= 10): INCONSISTENT
+  C (u=2,v=2, tail [(1, 2), (0, 3), (2, 5)], window <= 11): INCONSISTENT
+  C (u=3,v=2, tail [(0, 2), (1, 3)], window <= 10): INCONSISTENT
+  C control x + (x+y)^2: CONSISTENT (as it must be)
+[PASS] C: perturbed windows empty; the quasi-triangular control stays consistent (the theorem's boundary is real)
+
+============================================================================
+Part D: the obstruction is b-free (certificates over QQ(a, b))
+============================================================================
+  D tail x^1 y^1: pairing gcd = 8*a_**3 (b-free pure a-power OK)
+  D tail x^0 y^2: pairing gcd = -8*a_**3 (b-free pure a-power OK)
+  D tail x^1 y^2: pairing gcd = 1024*a_**6 (b-free pure a-power OK)
+[PASS] D: the pairing gcd is a pure a-power, b-FREE: the perturbation cancels out of the obstruction exactly as the induction predicts
+
+============================================================================
+Part E: beyond every floor, perturbed: x + a x^54 y^81 + b x^2 y^100
+============================================================================
+  perturbation weight -5138 < v = 81: True (hypothesis holds); P degree 135 > 108; tail degree 102
+[PASS] E: the perturbed beyond-floor instance falls: y-class chain nonzero at every truncation S <= 5 (partner degrees ~800); the tail cannot reach the y-class rows (A) and cannot hide in a kernel (B)
+
+RESULT: 1 FAILED: ['B: L_top is injective on EVERY class in the tested windows (no rescuer exists)']
