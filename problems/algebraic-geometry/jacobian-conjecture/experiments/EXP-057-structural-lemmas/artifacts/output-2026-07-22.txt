@@ -1,0 +1,26 @@
+============================================================================
+EXP-057: structural lemmas for the (72,108) closure
+============================================================================
+  M0: 289 x 125 (0 s to build)
+  1: rank at t = 1: 124 / 125
+  1: rank at t = 2: 124 / 125
+  1: rank at t = -3: 124 / 125
+  1: rank at t = 5/7: 124 / 125
+[FAIL] 1: full column rank at all sampled t
+Traceback (most recent call last):
+  File "D:\_Repos\Research_Caos\CAOS_RESEARCH\problems\algebraic-geometry\jacobian-conjecture\experiments\EXP-057-structural-lemmas\run.py", line 149, in <module>
+    main()
+    ~~~~^^
+  File "D:\_Repos\Research_Caos\CAOS_RESEARCH\problems\algebraic-geometry\jacobian-conjecture\experiments\EXP-057-structural-lemmas\run.py", line 94, in main
+    d = expand(sub.det(method="berkowitz"))
+               ~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "D:\_Repos\Research_Caos\CAOS_RESEARCH\.venv\Lib\site-packages\sympy\matrices\matrixbase.py", line 3078, in det
+    return _det(self, method=method, iszerofunc=iszerofunc)
+  File "D:\_Repos\Research_Caos\CAOS_RESEARCH\.venv\Lib\site-packages\sympy\matrices\determinant.py", line 698, in _det
+    for b in M.strongly_connected_components():
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\_Repos\Research_Caos\CAOS_RESEARCH\.venv\Lib\site-packages\sympy\matrices\matrixbase.py", line 5233, in strongly_connected_components
+    return _strongly_connected_components(self)
+  File "D:\_Repos\Research_Caos\CAOS_RESEARCH\.venv\Lib\site-packages\sympy\matrices\graph.py", line 65, in _strongly_connected_components
+    raise NonSquareMatrixError
+sympy.matrices.exceptions.NonSquareMatrixError

@@ -3,6 +3,14 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.36.000], 2026-07-22
+
+### Added
+- EXP-057: automatic solvability REFUTED: rank(M0) = 124: the reduced system has a
+  ONE-DIMENSIONAL right kernel k(t); the 276/276 ladder record = every rhs
+  annihilates k; the all-orders lemma is now concrete (prove Lambda_prev([m,k]) = 0,
+  the EXP-036 pattern). Next: compute and identify k; prove the annihilation.
+
 ## [0.35.000], 2026-07-22
 
 ### Added
