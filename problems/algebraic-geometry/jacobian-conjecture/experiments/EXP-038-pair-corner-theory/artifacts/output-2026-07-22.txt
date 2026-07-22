@@ -1,0 +1,34 @@
+============================================================================
+Part A: top dependence + top-2 bookkeeping on the library
+============================================================================
+  A map 1: degs (1,2), top-dep True, common-radical True, top-2 classes vanish True
+  A map 2: degs (1,2), top-dep True, common-radical True, top-2 classes vanish True
+  A map 3: degs (2,2), top-dep True, common-radical True, top-2 classes vanish True
+  A map 4: degs (6,6), top-dep True, common-radical True, top-2 classes vanish True
+  A map 5: degs (3,1), top-dep True, common-radical True, top-2 classes vanish True
+  A map 6: degs (1,2), top-dep True, common-radical True, top-2 classes vanish True
+  A map 7: degs (4,4), top-dep True, common-radical True, top-2 classes vanish True
+[PASS] A1: J(P_top, Q_top) = 0 for every library pair
+[PASS] A2: top radicals are proportional (common base) for every library pair
+[PASS] A3: the top-2 class pieces of J(P, Q) vanish identically (bookkeeping)
+
+============================================================================
+Part B: the matched-pair law at the second class (symbolic)
+============================================================================
+  B (i,j,p,q)=(1,1,2,3): matched-pair law EXACT
+  B (i,j,p,q)=(2,1,1,2): matched-pair law EXACT
+  B (i,j,p,q)=(1,2,2,3): matched-pair law EXACT
+  B (i,j,p,q)=(1,1,1,2): matched-pair law EXACT
+[PASS] B: second class of J(P, Q) == alpha p (ib - ja) q_ab - beta q (id - jc) p_cd on matched outputs, exactly
+
+============================================================================
+Part C: obstruction depth, free Q vs pair-constrained Q
+============================================================================
+  C x + x^2 + 2(xy)^2, B=xy: free first-inconsistent N=3 (7 unknowns), constrained N=3 (3 unknowns) SAME DEPTH
+  C x + x^3 + 2(xy)^2, B=xy: free first-inconsistent N=3 (7 unknowns), constrained N=3 (3 unknowns) SAME DEPTH
+  C x + x^2 + 2 x^2 y (corner x^2 y): free first-inconsistent N=3 (7 unknowns), constrained N=3 (4 unknowns) SAME DEPTH
+  C x + x^2 + 2 x^3 y^2 (corner x^3 y^2): free first-inconsistent N=3 (7 unknowns), constrained N=3 (3 unknowns) SAME DEPTH
+[PASS] C1: the pair constraint does NOT change the first-inconsistent window depth (no added obstruction power on these samples)
+[PASS] C2: the constrained system is strictly smaller at equal window (efficiency value quantified)
+
+RESULT: ALL CHECKS PASS.
