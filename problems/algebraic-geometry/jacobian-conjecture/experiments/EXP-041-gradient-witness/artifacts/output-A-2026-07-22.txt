@@ -1,0 +1,8 @@
+============================================================================
+Part A: input verification (Thompson dim-24 artifact)
+============================================================================
+[PASS] A1: all 24 components parsed
+[PASS] A2: H is cubic homogeneous  54 cubic monomials
+[PASS] A3: published collision is exact: G(P) = G(Q), P != Q
+
+RESULT: ALL CHECKS PASS.

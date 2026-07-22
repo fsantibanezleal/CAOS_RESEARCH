@@ -1,0 +1,7 @@
+============================================================================
+Part C: the explicit 2-point collision of Ftil on C^48
+============================================================================
+[PASS] C: Ftil(p1) = Ftil(p2) exactly over Q(i) with p1 != p2: the symmetric Keller map id + grad f_H on C^48 is NOT invertible
+  C: collision persisted to artifacts/witness-collision-2026-07-22.txt
+
+RESULT: ALL CHECKS PASS.
