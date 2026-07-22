@@ -3,6 +3,14 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.33.000], 2026-07-22
+
+### Added
+- EXP-054: rigid universality of the 576 covector REFUTED as declared (51 entering
+  combinations; adversarial identity breaks) while the per-stratum pairing stays 576:
+  the closure route is sharpened to the PERTURBATIVE covector Lambda(eps), next
+  round's first task.
+
 ## [0.32.000], 2026-07-22
 
 ### Added
