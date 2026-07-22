@@ -677,3 +677,22 @@
   the only rhs-obstruction: the two lemmas may merge).
 - Routine: wiki 05; log; RESUME; v0.36.000; bake. JC(2) remains open; the (72,108)
   closure now rests on ONE explicit object.
+
+## 2026-07-22 (session 34) - k = 1: all-orders solvability proved in one line
+
+- **EXP-058 (confirmed 1,3; prediction 2 refuted trivially):** the one-dimensional
+  right kernel of the reduced (72,108) system is THE CONSTANTS: k = 1 (one nonzero
+  coefficient at (0,0); rank exactly 124; the machine confirms nothing else joins).
+  The declared off-pool-bracket prediction was refuted in the cleanest way: [P0, 1] =
+  0 identically: the reasoning had missed the constant polynomial itself.
+  CONSEQUENCE, PROVED IN ONE LINE: a ladder rung solves iff its rhs annihilates the
+  kernel, and the rhs entry at the constant column is -Lambda_prev([m, 1]) = 0
+  IDENTICALLY (brackets kill constants): ALL-ORDERS SOLVABILITY holds for any order
+  and any parameters: the ladder can never stick; the 276/276 record is fully
+  explained. Rank tests (part 3) concur.
+- Remaining for the stratum closure: TERMINATION alone. Two candidate routes queued:
+  the support-drift bound on the fixed pool, and the fixed-P determinantal framing
+  (rank M(eps) = 124 with the x^2 rhs outside the column space for every parameter,
+  now that the kernel is known to be exactly the constants for EVERY P).
+- Routine: wiki 05; log; RESUME; v0.37.000; bake. JC(2) remains open; the (72,108)
+  stratum closure = one termination lemma; then the edge branch; then the floor-raise.
