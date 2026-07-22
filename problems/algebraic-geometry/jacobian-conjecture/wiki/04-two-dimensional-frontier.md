@@ -180,3 +180,25 @@ elementary once seen (folklore risk recorded); we have not found it stated; it w
 the machine's certificate anatomy. Scope: the theorem needs the perturbation to be ONE
 monomial; non-monomial slices have genuine multi-edge polygons and are the next target
 (JCB-033: the multi-edge calculus, aiming at upper-triangularity of the edge filtration).
+
+## Theorem 2: lower-weight perturbations never rescue (EXP-030/031)
+
+**Theorem 2 (machine-shadowed; one [D] step).** Let $u \ge 2$, $v \ge 1$, $a \ne 0$, and
+let $R$ be any polynomial (monomials of degree $\ge 2$) whose every monomial has
+$(v, 1-u)$-weight strictly below $v$. Then $P = x + a\,x^u y^v + R$ is never a Keller
+component, at any partner degree.
+
+The proof went through a public refutation: the naive step (injectivity of
+$L_{top} = J(x + a x^u y^v, \cdot)$ on every weight class) is FALSE: on the classes of
+weight $kv$ the kernel is exactly $\langle P_{top}^k \rangle$. The repair: absorb the
+kernel components of $Q$ as $H(P_{top})$; the perturbation then injects the sources
+$J(R, P_{top}^k)$ into the constant's equation; the ANNIHILATION LEMMA (machine-verified at
+adequate windows; in general it reduces to $k = 1$ via the exact identity
+$J(m, P_{top}^k) = -k P_{top}^{k-1} J(P_{top}, m)$, the closed-form step still labeled [D])
+kills every such source; the constant's equation reduces to the pure chain of the
+weight-class theorem, contradicted at every truncation. Danger-weight tails, the exact
+monomials that feed the sources, are certified harmless over $\mathbb{Q}(a, b, c)$: the
+pairing gcds stay pure $a$-powers. The quasi-triangular components (which DO exist) violate
+the hypothesis (x-power or linear-base tops): the theorem is silent exactly where it must
+be. The next frontier is perturbations of weight $\ge v$, where the top edge itself
+deforms.

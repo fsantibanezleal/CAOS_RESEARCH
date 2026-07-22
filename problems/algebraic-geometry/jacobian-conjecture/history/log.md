@@ -277,3 +277,17 @@
   Honest caveat: elementary once seen, folklore risk recorded; found by the machine's
   anatomy. Retires the pure-slice window program; opens the multi-edge calculus (JCB-033)
   for non-monomial slices: the next reasoning step toward JC(2).
+
+## 2026-07-22 (session 17) - THEOREM 2: refuted proof, repaired proof, perturbations fall
+
+- **EXP-030 (partially refuted, then decisive):** the naive injectivity step DIED in public
+  (L_top has kernels on kv-classes: exactly P_top^k) while every empirical prediction held
+  (perturbed windows empty; quasi-triangular control consistent; b-free pairings;
+  beyond-floor perturbed instance falls). The refutation pointed at the correct proof.
+- **EXP-031 (confirmed):** the repair closes. Kernels identified exactly; the ANNIHILATION
+  LEMMA verified with adequate windows (first-run nonzeros were window-truncation artifacts,
+  recorded); the reduction identity J(m, P_top^k) = -k P_top^(k-1) J(P_top, m) exact; danger
+  tails certified b, c-free. THEOREM 2: P = x + a x^u y^v + R (u >= 2, v >= 1, a != 0, R any
+  lower-weight polynomial) is NEVER a Keller component, at any degree: dense-polygon,
+  unbounded-degree families, beyond every verified floor. Remaining [D] gap: annihilation in
+  closed form. Next frontier: perturbations of weight >= v (the top edge itself deforms).

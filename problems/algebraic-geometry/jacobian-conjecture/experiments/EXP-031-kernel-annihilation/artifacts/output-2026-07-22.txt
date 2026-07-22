@@ -1,0 +1,36 @@
+============================================================================
+Part A: kernels on classes kv are exactly the powers of P_top
+============================================================================
+  A (u=2,v=2) class 1*v: kernel dim 1; equals P_top^1: True
+  A (u=2,v=2) class 2*v: kernel dim 1; equals P_top^2: True
+  A (u=2,v=2) class 3*v: kernel dim 1; equals P_top^3: True
+  A (u=3,v=2) class 1*v: kernel dim 1; equals P_top^1: True
+  A (u=3,v=2) class 2*v: kernel dim 1; equals P_top^2: True
+  A (u=3,v=2) class 3*v: kernel dim 1; equals P_top^3: True
+  A (u=4,v=6) class 1*v: kernel dim 1; equals P_top^1: True
+  A (u=4,v=6) class 2*v: kernel dim 1; equals P_top^2: True
+  A (u=4,v=6) class 3*v: kernel dim 1; equals P_top^3: True
+[PASS] A: every kv-class kernel is 1-dimensional and equals P_top^k exactly
+
+============================================================================
+Part B: the annihilation lemma (adequate windows; truncation artifact recorded)
+============================================================================
+  B window 10: pure pairing -128*a_**4
+  B window 16: pure pairing -1024*a_**6
+    danger m = x^1 y^3 (k = 1, source deg 6, window 10): pairing = 0 OK
+    danger m = x^2 y^5 (k = 1, source deg 9, window 10): pairing = 0 OK
+    danger m = x^0 y^3 (k = 2, source deg 9, window 10): pairing = 0 OK
+    danger m = x^1 y^5 (k = 2, source deg 12, window 16): pairing = 0 OK
+    danger m = x^0 y^5 (k = 3, source deg 15, window 16): pairing = 0 OK
+[PASS] B1: with ADEQUATE windows the functional annihilates every danger source
+[PASS] B2: the reduction identity J(m, P_top^k) = -k P_top^(k-1) J(P_top, m) holds exactly (general lemma reduces to k = 1)
+
+============================================================================
+Part C: danger-tail certificates over QQ(a, b[, c])
+============================================================================
+  C tail b x^1 y^3 (window <= 10): gcd = 32768*a_**11 (b-free OK)
+  C tail b x^0 y^3 (window <= 10): gcd = -512*a_**6 (b-free OK)
+  C combined danger tail (window <= 10): gcd = 229376*a_**11 (b, c-free OK)
+[PASS] C: danger-tail pairing gcds are pure a-powers (b, c-free): the danger sources cannot rescue
+
+RESULT: ALL CHECKS PASS.
