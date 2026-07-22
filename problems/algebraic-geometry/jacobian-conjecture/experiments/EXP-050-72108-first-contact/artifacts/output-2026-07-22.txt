@@ -1,0 +1,8 @@
+============================================================================
+EXP-050: first contact at the (72, 108) degrees; corner (16, 56)
+============================================================================
+  x + 2 g^8 + x^2 (g = x^2 y^7): deg 72; filtered N=108: 143 unknowns, 308 equations, 1.2 s: EMPTY
+  x + 2 g^8 + 3 x^8 y^28 + x^2 (two-term top ladder): deg 72; filtered N=108: 143 unknowns, 333 equations, 1.4 s: EMPTY
+[PASS] 1: both degree-72 corner-(16,56) samples have EMPTY filtered windows at N = 108: the first machine certificates at the open pair's degrees
+  2: cost verdict recorded above; systematic sweep awaits the GGHV shape transcription (queued).
+RESULT: ALL CHECKS PASS.
