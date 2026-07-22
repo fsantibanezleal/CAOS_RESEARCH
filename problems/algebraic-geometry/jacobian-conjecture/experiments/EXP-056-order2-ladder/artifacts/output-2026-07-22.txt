@@ -1,0 +1,11 @@
+============================================================================
+EXP-056: order-2 correctors + order-3 termination test
+============================================================================
+  entering monomials 26; row pool 525
+[PASS] 1: first-order correctors recomputed and persisted  26/26 in 1414 s
+  order-2: 250/351 pairs need correctors (1 s)
+[PASS] 2: ALL nonzero order-2 pairs admit correctors with the (2,0)-pin  250/250 in 12326 s
+  order-3: 6500 triple combinations tested, 1134 nonzero (1 s)
+[FAIL] 3: order-3 residuals VANISH (termination at order 2: the UNIVERSAL covector is explicit and the stratum closes)  5366/6500
+  4: ladder profile recorded; order-3 correctors are the next rung (same mechanism).
+RESULT: 1 FAILED: ['3: order-3 residuals VANISH (termination at order 2: the UNIVERSAL covector is explicit and the stratum closes)']

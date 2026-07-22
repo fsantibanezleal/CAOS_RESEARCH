@@ -22,7 +22,7 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-22 (working manuscript, v0.04; split from the foundational companion)}
+\date{2026-07-22 (working manuscript, v0.05; split from the foundational companion)}
 
 \begin{document}
 \maketitle
@@ -334,6 +334,29 @@ at target scale). (iii) For the $(72, 108)$ system the histograms give $5992$ un
 in $535$ classes with largest diagonal block $22$ before filtering: with the filter and
 the transport, the open territory (max degree $> 150$, and $(72, 108)$ itself) is
 affordable at seconds-to-minutes per certificate.
+
+\subsection*{The $(72, 108)$ attack: the reduced system and the perturbative covector}
+
+The lone surviving degree pair below $125$ reduces (Guccione--Guccione--Horruitiner--
+Valqui \cite{GGHV2022}, Prop.~4.3; transcription verified against the LaTeX sources)
+to the existence of a pair with $[P, Q] = x^2$ supported in SMALL polygons: $N(P)$ with
+corners $(0,0), (1,0), (8,14), (8,16), (0,8)$ (61 lattice points) and $N(Q)$ with
+corners $(0,0), (2,1), (12,21), (12,24), (0,12)$ (125 lattice points); the original
+paper's unsolved system was never printed. Machine results to date (EXP-050 through
+EXP-055): sampled shapes at the original degrees and on the reduced polygons are all
+partner-free (seconds per certificate); on the stratum with the forced top edge
+$y^8 (xy - t)^8$ symbolic, every cleared certificate pairs to the CONSTANT $576$
+(all $t$, identical across sampled lower strata; five-row support); rigid universality
+of that covector was REFUTED by the machine (51 entering lower combinations), which
+pointed to the perturbative construction $\Lambda(arepsilon)$; its base is sound
+(the right-hand side is the constant $x^2$ vector; $\Lambda_0$ globally left-null,
+symbolic $t$) and FIRST-ORDER UNIVERSALITY is proved: all 26 entering lower monomials
+admit correctors with the $576$ pairing pinned and localized supports. Order-1
+termination fails (measured), so the corrector ladder continues at order 2; each rung
+is a batched linear solve, and termination at any finite order yields the explicit
+universal covector, closing the reduced stratum for all parameters. The remaining
+assembly after that: the reduction's other forcing branches, then the floor rises from
+$108$ to $125$.
 
 \section{Positioning and novelty}\label{sec:positioning}
 
