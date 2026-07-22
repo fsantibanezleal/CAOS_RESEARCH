@@ -3,6 +3,18 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.24.000], 2026-07-22
+
+### Added
+- EXP-035: the mixed corner is DIAGONAL (J(B^p, x^a y^b) = p(ib - ja) x^{ip+a-1}
+  y^{jp+b-1}), kernel = powers of B, and a pure corner cannot carry the constant: the open
+  core moves from the corner to the STAIRCASE transport on the lower-left Newton boundary
+  (JCB-038). Thirty monomial-corner samples: all windows empty.
+- EXP-036: the annihilation lemma in CLOSED FORM, after refuting the first derivation (which
+  used L_top): with the full L, J(m, P^k) = -k L(P^{k-1} m), so sources are images and the
+  left-null certificate covector annihilates them all; the window criterion retrodicts
+  EXP-031's artifacts exactly. THEOREMS 2, 3 AND 4 ARE NOW UNCONDITIONAL (JCB-033 closed).
+
 ## [0.23.000], 2026-07-22
 
 ### Added

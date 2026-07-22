@@ -333,3 +333,19 @@
   NOT a single-ray residue: the corner calculus must handle multi-edge interaction. The
   program's standing question is now precise: prove hard-shape (mixed-corner) pairs cannot
   be Keller; instruments queued.
+
+## 2026-07-22 (session 21) - The corner is diagonal; the annihilation gap is CLOSED
+
+- **EXP-035 (confirmed):** the mixed corner is not the hard object. J(B^p, x^a y^b) =
+  p(ib - ja) x^{ip+a-1} y^{jp+b-1}: DIAGONAL, kernel exactly the powers of B, and a pure
+  corner can never carry the constant. So the Keller constant must be manufactured along the
+  STAIRCASE of Newton vertices from the swallowed linear vertex to the corner: the open core
+  is a transport problem on the lower-left boundary (the classical Moh staircase), not the
+  corner. Territory widened: 30 monomial-corner samples, all windows EMPTY.
+- **EXP-036 (confirmed after a REFUTED first derivation):** the declared closed form used
+  L_top and was refuted on both tests (nonzero in-window pairings; rank outside the column
+  space); the operator that matters is the FULL L = J(P, .). Corrected: J(m, P^k) =
+  -k L(P^{k-1} m), so every source is an image with an explicit preimage; the certificate
+  covector is left-null on the image by construction; rank tests confirm. The window
+  criterion RETRODICTS EXP-031's artifacts number for number (15, 30a, 30, 45 at window 6;
+  945 a^2 at window 10). JCB-033 CLOSED: THEOREMS 2, 3 AND 4 ARE NOW UNCONDITIONAL.
