@@ -1,0 +1,18 @@
+============================================================================
+EXP-048: the proper-power odd resonance at (2,2,2)
+============================================================================
+[PASS] 1: L((xy)^s) = s x^s y^{s-1} (1 + 2bx) identically
+[PASS] 2: L((xy)^5) is NOT in the column space at N = 9 (the key identity cannot be the mechanism)  rank 51 -> 52
+  3: N=9, s=5: left-null dim 20, pairing-nonzero 2, of which kill the resonance: 1
+[PASS] 3: a pairing-nonzero certificate EXISTS that kills L((xy)^5) at N = 9
+     cert kills=True: support [(1, 2), (1, 4), (1, 6), (1, 8), (1, 10), (2, 4), (2, 6), (2, 8), (3, 6), (3, 8)]
+       row invariant i - j (class band): [-9, -7, -6, -5, -4, -3, -2, -1]; source rows i - j: [1, 2]
+     cert kills=False: support [(1, 0), (2, 0), (3, 2), (3, 4), (3, 6), (3, 8), (4, 0), (4, 2), (4, 6), (5, 2), (5, 4), (5, 6), (6, 4)]
+       row invariant i - j (class band): [-5, -3, -2, -1, 1, 2, 3, 4]; source rows i - j: [1, 2]
+  3: N=11, s=6: left-null dim 24, pairing-nonzero 2, of which kill the resonance: 2
+[PASS] 3: a pairing-nonzero certificate EXISTS that kills L((xy)^6) at N = 11
+     cert kills=True: support [(1, 2), (1, 4), (1, 6), (1, 8), (1, 10), (1, 12), (2, 4), (2, 6), (2, 8), (2, 10), (3, 6), (3, 8), (3, 10), (4, 8)]
+       row invariant i - j (class band): [-11, -9, -8, -7, -6, -5, -4, -3, -2, -1]; source rows i - j: [1, 2]
+     cert kills=True: support [(1, 0), (2, 0), (3, 2), (3, 4), (3, 6), (3, 8), (3, 10), (4, 0), (4, 2), (4, 6), (4, 8), (5, 2), (5, 4), (5, 6), (5, 8), (6, 0), (6, 2), (6, 4), (7, 2), (7, 4), (7, 6), (8, 4)]
+       row invariant i - j (class band): [-7, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6]; source rows i - j: [1, 2]
+RESULT: ALL CHECKS PASS.
