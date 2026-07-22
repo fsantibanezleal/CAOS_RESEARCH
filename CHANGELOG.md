@@ -3,6 +3,15 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.31.000], 2026-07-22
+
+### Added
+- context: the GGHV (72,108) dossier (Prop 4.3 reduction; solved-case template;
+  family machinery; replication checklist; two source typos flagged).
+- EXP-052: the REDUCED open case on the bench: [P,Q] = x^2 on the Prop 4.3 polygons
+  (61/125 lattice points); five P samples all EMPTY (2-14 s each); next target = the
+  all-P parametrized certificate (closing it raises the JC(2) floor to 125).
+
 ## [0.30.000], 2026-07-22
 
 ### Added

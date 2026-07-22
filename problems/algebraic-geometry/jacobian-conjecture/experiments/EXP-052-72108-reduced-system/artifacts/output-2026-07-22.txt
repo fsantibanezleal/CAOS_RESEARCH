@@ -1,0 +1,13 @@
+============================================================================
+EXP-052: the reduced (72, 108) system: [P, Q] = x^2 on GGHV Prop 4.3 polygons
+============================================================================
+  sizes: N(P) lattice points 61; N(Q) lattice points 125
+[PASS] 1: both reduced polygons enumerated; the Q-side system is a few hundred unknowns  61 / 125
+  2: random P sample 0: 125 unknowns, 302 equations, 12.5 s: EMPTY
+  2: random P sample 1: 125 unknowns, 302 equations, 13.8 s: EMPTY
+  2: random P sample 2: 125 unknowns, 302 equations, 14.4 s: EMPTY
+  2: random P sample 3: 125 unknowns, 302 equations, 14.2 s: EMPTY
+  2: structured P (top edge y^8 (xy - 1)^8 + x + 1): 125 unknowns, 1.9 s: EMPTY
+[PASS] 2: every tested P on the reduced polygon has NO partner with [P, Q] = x^2 (sampled emptiness of the open case's reduced system)
+  3: framing: sampled evidence toward closing (72, 108); the parametrized certificate over ALL P (the system GGHV could not solve) is the next round's target with the transport + certificate instruments on THIS reduced object.
+RESULT: ALL CHECKS PASS.

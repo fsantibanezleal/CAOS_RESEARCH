@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-22, session 27 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-22, session 28 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -93,10 +93,11 @@ the standing decision rule: every new experiment names its route).
    currently Theorem 6 or full-window towers; map what escapes ALL current lemmas;
    (b) the y-anchored (quasi-triangular-type) completions classification (JCB-035,
    the endgame frame): JC(2) = the triangular family is everything.
-2. N2 / JCB-040: the GGHV ((8,28),(3,2)) transcription agent is IN FLIGHT (dossier
-   lands in context/2026-07-22-gghv-72108-dossier.md). Next round: the parametrized
-   ALL-DEGREE sweep with H-certificates (the half-plane lemma now applies to the
-   frontier shapes directly); closing the case raises the JC(2) floor to 125.
+2. N2 / JCB-040: the dossier LANDED and EXP-052 put the REDUCED open case on the
+   bench ([P,Q] = x^2, 61/125 lattice points, five samples EMPTY). NEXT ROUND'S
+   DECISIVE TARGET: the all-P parametrized certificate (cleared covectors polynomial
+   in the 61 P-coefficients) on the reduced system: success = the (72,108) case
+   closes and the JC(2) floor rises to 125.
 3. JCB-041 remainder: the screenshot verification pass ONLY (bake is automatic and
    verified; wiki 04 rewritten in session 24). FELIPE still validates the novelty
    phrasing before submission.

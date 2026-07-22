@@ -570,3 +570,22 @@
   the parametrized all-degree sweep is next round's target.
 - Routine: manuscript-planar v0.04 (the half-plane lemma + frontier all-degree
   results); wiki 04/05; bake refreshed; v0.30.000.
+
+## 2026-07-22 (session 28) - The reduced open case is on the bench
+
+- The GGHV transcription landed (context/2026-07-22-gghv-72108-dossier.md, verified
+  against the LaTeX sources): Prop 4.3 reduces the open (72, 108) case to pairs with
+  [P, Q] = x^2 on SMALL reduced polygons (N(P) corners (0,0),(1,0),(8,14),(8,16),(0,8);
+  N(Q) corners (0,0),(2,1),(12,21),(12,24),(0,12)); the paper never printed the system
+  it could not solve; the solved-case template and family machinery are transcribed;
+  two source typos flagged.
+- **EXP-052 (confirmed):** the reduced system runs: 61 P-side / 125 Q-side lattice
+  points; five P samples (four random with forced corners + one structured top edge
+  y^8 (xy - 1)^8): the linear Q-system is INCONSISTENT every time (2-14 s per sample).
+  Sampled evidence toward closing the lone open pair below 125. THE DECLARED NEXT
+  TARGET: the all-P parametrized certificate (61 parameters, linear in 125 unknowns:
+  exactly the cleared-certificate machinery's shape): closing it would raise the JC(2)
+  floor to 125.
+- Routine: wiki 05; log; RESUME; v0.31.000; bake. Honest status: JC(2) open; the open
+  case below 125 is now a concrete 61-parameter certificate hunt on our own
+  instruments.
