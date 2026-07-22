@@ -1,0 +1,27 @@
+============================================================================
+Part A: kernel classification for non-proper-power tops
+============================================================================
+  A primitive monomial x^2 y: kernel dims at degrees 7,8,9,12 match the T-power law
+  A binomial x^2(2y + 3x): kernel dims at degrees 7,8,9,12 match the T-power law
+  A dense cubic 2x^3 + xy^2 + y^3: kernel dims at degrees 7,8,9,12 match the T-power law
+[PASS] A: ker J(T, .) is zero off multiples of deg T and 1-dimensional (the T-power) on them, for all three non-proper-power tops
+
+============================================================================
+Part B: the universal reduction on multi-term shapes
+============================================================================
+  B x + 2x^2y + 3x^2 + 5x^3 (top x^2(2y+5x)... deg-3 part): deg(T^k - P^k) <= kD - 1 (k = 2, 3); L(T^2) in old columns at N = 5: True
+  B x + 2x^2y + 3x^3 + 7x^3y^2 (top 7x^3y^2): deg(T^k - P^k) <= kD - 1 (k = 2, 3); L(T^2) in old columns at N = 9: True
+  B x + 2x^2y + 3x^2 + 5x^4y^2 + 7x^3 (top 5x^4y^2): deg(T^k - P^k) <= kD - 1 (k = 2, 3); L(T^2) in old columns at N = 11: True
+[PASS] B: the universal reduction holds and L(T-power resonances) lie in the old-column space on all three multi-term shapes
+
+============================================================================
+Part C: THE HARVEST: certified windows -> all-degree exclusions (Theorem 6)
+============================================================================
+  C x + a x^2y + b x^3 (two-edge, top x^2(ay+bx)): cleared certificate at N=7: -4620*a**7*b  -> ALL-DEGREE exclusion by Theorem 6
+  C x + a x^2y + b x^2 + c x^3y^2 (three-term, top c x^3y^2 primitive): cleared certificate at N=8: -4620*c**4  -> ALL-DEGREE exclusion by Theorem 6
+  C x + a x^3y + b x^2 (top x^3y primitive): cleared certificate at N=7: -630*a**4  -> ALL-DEGREE exclusion by Theorem 6
+  C x + a x^2y + b x^4y^3 (top x^4y^3 primitive): cleared certificate at N=9: -168*b**3  -> ALL-DEGREE exclusion by Theorem 6
+[PASS] C: every harvest shape has a cleared window certificate: by Theorem 6 each is excluded at ALL partner degrees (multi-edge staircases included)
+  D scope: frontier R0^m tops are proper powers (gcd(4m,12m) = 4m): they need the EXP-048 half-plane construction, not Theorem 6.
+
+RESULT: ALL CHECKS PASS.
