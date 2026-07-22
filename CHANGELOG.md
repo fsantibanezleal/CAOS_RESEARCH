@@ -3,6 +3,40 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.25.000], 2026-07-22
+
+### Added
+- EXP-037: THE STAIRCASE TRANSPORT instrumented (JCB-038 steps a-c): the Keller window is
+  block-triangular under the x-edge grading; classwise elimination reproduces every
+  monolithic verdict; the obstruction localizes at the CONSTANT'S class (the declared
+  vertex-hand-off prediction refuted); generic reduced equation -2a = 0 on the minimal
+  above-weight family (the Theorem 5 target).
+- EXP-038: pair-level corner theory: the matched-pair law exact at the second class; the
+  pair constraint adds NO obstruction depth, halves window unknowns (tool, not a route).
+- EXP-039: the (3, n) column closes: (3, 4) tops forced to perfect cubes (elimination
+  minors + GL2-orbit completeness), cube stratum inverts 4/4 with explicit inverses;
+  column classically covered (gcd in {1, 3}). JCB-021 closed.
+- EXP-040: subsumption + recalibration audit: JCB-028 closed (Theorem 1/2 corollaries +
+  clean 105-solve sweep); the frontier recalibrated against the verified literature floor
+  (gcd <= 8 interval, primes, 2p, B >= 16 Heitmann, B = 16 or B > 20 GGV): the gcd
+  2/9/12/18 certificates are replications; live targets = GGV's B = 16 normal form and
+  (72, 108). New backlog JCB-040.
+- EXP-014 (reserved slot filled): the properness/escape instrument: 8/8 library
+  properness certificates; JC(2) <=> empty Jelonek set recorded. JCB-022 first contact.
+- EXP-041: THE DIMENSION-48 WITNESS: first explicit symmetric/gradient falsification:
+  HC(48) false with an explicit Q(i) collision; f_H homogeneous Hessian-nilpotent quartic
+  (382 monomials) via de Bondt-van den Essen from Thompson's dim-24 BCW artifact
+  (verified in-house; nilpotency index corrected 17 -> 18); P_star = -f_H falsifies
+  Zhao's Vanishing Conjecture explicitly. JCB-024 done.
+- Two context dossiers (literature pass with novelty verdicts: T1/T2/rigidity NOT FOUND;
+  symmetrization construction) and the routes evaluation
+  (program/jacobian-conjecture/routes-2026-07-22.md).
+
+### Changed
+- Frontier framing corrected across program docs: composite gcd 9/12 are inside the
+  verified floor; Magnus gcd 1 citation moves to Math. Scand. 1955; Zoladek's B > 33 is
+  never to be cited (documented gap).
+
 ## [0.24.000], 2026-07-22
 
 ### Added
