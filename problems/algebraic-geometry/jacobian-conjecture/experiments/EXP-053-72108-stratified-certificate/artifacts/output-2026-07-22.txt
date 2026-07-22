@@ -1,0 +1,10 @@
+============================================================================
+EXP-053: stratified certificates on the reduced (72, 108) system, top edge y^8 (xy - t)^8 symbolic
+============================================================================
+  bare: top + x: H-rows 289: pairing 576  (55.3 s)
+    certificate support (5 rows): [(2, 0), (9, 16), (16, 32), (17, 33), (18, 34)]
+  with x y^4 filler: H-rows 289: pairing 576  (67.3 s)
+  with y^3 + x^2 y^6 fillers: H-rows 289: pairing 576  (92.3 s)
+[PASS] 2: every sampled lower stratum carries a cleared certificate with pairing a nonzero polynomial in t: the reduced open case is EMPTY for ALL t on these strata
+  4: remaining for full closure: the sweep over the other forced-structure parameters (dossier: lambda1, alpha edges) and lower-coefficient generality via the tower/annihilation machinery on this bracket system.
+RESULT: ALL CHECKS PASS.
