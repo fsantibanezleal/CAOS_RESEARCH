@@ -6,4 +6,4 @@ registry and per-problem payloads into the JSON artifacts the static web app rep
 precompute lane), plus the generic io/core base.
 """
 
-__version__ = "0.22.000"  # display X.XX.XXX; PEP 440 form in pyproject.toml
+__version__ = "0.23.000"  # display X.XX.XXX; PEP 440 form in pyproject.toml
