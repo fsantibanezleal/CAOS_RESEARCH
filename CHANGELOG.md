@@ -3,6 +3,16 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.19.000], 2026-07-21
+
+### Added
+- EXP-029: THE WEIGHT-CLASS THEOREM (unconditional, all degrees): x + a x^u y^v (u >= 2,
+  v >= 1, a != 0) is never a Keller component. The (v, 1-u) grading decouples the Keller
+  system; the constant's class is one banded ray; the chain recursion contradicts the last
+  row. All seven measured window pairings reproduced by the closed form; no second
+  obstruction; beyond-floor certificate at degree 135 (> the 108 floor). Retires the
+  pure-slice window program; JCB-033 (multi-edge calculus) queued.
+
 ## [0.18.000], 2026-07-21
 
 ### Added

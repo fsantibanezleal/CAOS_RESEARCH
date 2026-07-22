@@ -1,0 +1,45 @@
+============================================================================
+Part A: the banded formula L(g_s) = A_s e_s + a B_s e_{s+d}
+============================================================================
+[PASS] A1: bidiagonal formula exact for h = x^p y^q (d = 1 cases), grid p,q <= 4, s <= 5
+[PASS] A2: banded structure L(g_s) = (ms+1) e_s + a * (positive integer) e_{s+d} for all u in 2..7, v in 1..7, s <= 4
+
+============================================================================
+Part B: the seven measured pairings from the closed form
+============================================================================
+  B (u=2, v=2, window <= 6): closed form = -8*a_**2/3; measured -8*a^2; a-exponents 2 vs 2 OK
+  B (u=2, v=2, window <= 10): closed form = -128*a_**4/35; measured -128*a^4; a-exponents 4 vs 4 OK
+  B (u=2, v=2, window <= 14): closed form = 256*a_**5/63; measured -256*a^5; a-exponents 5 vs 5 OK
+  B (u=2, v=2, window <= 18): closed form = -1024*a_**6/231; measured -1024*a^6; a-exponents 6 vs 6 OK
+  B (u=8, v=10, window <= 27): closed form = -144*a_**2/11; measured -144*a^2; a-exponents 2 vs 2 OK
+  B (u=10, v=14, window <= 36): closed form = -16*a_**2; measured -80*a^2; a-exponents 2 vs 2 OK
+  B (u=8, v=10, window <= 36): closed form = 192*a_**3/11; measured -576*a^3; a-exponents 3 vs 3 OK
+[PASS] B: all seven measured pairings match the closed form (pure a-power, exact exponent)
+
+============================================================================
+Part C: decoupling end to end (full window == ray subsystem), incl. d > 1
+============================================================================
+  C (u=2, v=2, d=1, window <= 8, a=1): full INCONS; ray INCONS OK
+  C (u=2, v=2, d=1, window <= 8, a=-1/2): full INCONS; ray INCONS OK
+  C (u=3, v=2, d=2, window <= 9, a=1): full INCONS; ray INCONS OK
+  C (u=3, v=2, d=2, window <= 9, a=-1/2): full INCONS; ray INCONS OK
+  C (u=4, v=6, d=3, window <= 11, a=1): full INCONS; ray INCONS OK
+  C (u=4, v=6, d=3, window <= 11, a=-1/2): full INCONS; ray INCONS OK
+[PASS] C: the ray class alone decides the full window (no second obstruction)
+
+============================================================================
+Part D: beyond the verified floor: P = x + a x^54 y^81 (degree 135 > 108)
+============================================================================
+  ray: step x^53, y-step 81, band d = 1; ray degree increment 134
+  D truncation S=0 (covers partner ray-monomials to degree ~1): pairing = 54*a_ OK
+  D truncation S=1 (covers partner ray-monomials to degree ~135): pairing = -3645*a_**2/41 OK
+  D truncation S=2 (covers partner ray-monomials to degree ~269): pairing = 787320*a_**3/6683 OK
+  D truncation S=3 (covers partner ray-monomials to degree ~403): pairing = -58458510*a_**4/407663 OK
+  D truncation S=4 (covers partner ray-monomials to degree ~537): pairing = 4419463356*a_**5/26498095 OK
+  D truncation S=5 (covers partner ray-monomials to degree ~671): pairing = -144895262886*a_**6/768444755 OK
+  D truncation S=6 (covers partner ray-monomials to degree ~805): pairing = 15648688391688*a_**7/74846519137 OK
+  D truncation S=7 (covers partner ray-monomials to degree ~939): pairing = -1214729436404781*a_**8/5314102858727 OK
+  D truncation S=8 (covers partner ray-monomials to degree ~1073): pairing = 5963217233259834*a_**9/24117851435761 OK
+[PASS] D: the class is inconsistent for ALL a != 0 at every truncation S <= 8 (partner degrees ~1000): no Keller partner; degree 135 is past the ~108 floor
+
+RESULT: ALL CHECKS PASS.
