@@ -35,13 +35,13 @@ Consequence: a 2D counterexample, if one exists, must be genuinely NON-equivaria
 symmetry class that produced the entire 3D counterexample family is completely closed in
 dimension 2.
 
-Novelty status (bounded literature pass, 2026-07-21, recorded in EXP-026): two targeted
-searches found adjacent work (Newton-polygon shape constraints on minimal counterexamples;
-quasi-homogeneous sufficient conditions for the REAL Jacobian conjecture) but no statement of
-this theorem. It may be folklore among specialists via Newton-polygon arguments; the full
-weight-generality and the machine-certified proof are, to our knowledge, ours. A full-text
-literature pass stays queued (JCB-031) before the manuscript presents rigidity as
-unqualifiedly new.
+Novelty status (FULL adversarial pass, 2026-07-22, context dossier): NOT FOUND in the
+literature, and the statement has genuine content: the C*-equivariant analog FAILS on
+Q-acyclic pseudo-planes (Dubouloz-Palka, Adv. Math. 339 (2018)), and the known equivariant
+positive result covers only small FINITE groups (Miyanishi, Transform. Groups 28 (2023)).
+The positive-weight case is folklore-trivial; the mixed-weight case is ours as far as the
+pass could determine. Folklore risk stays recorded; the manuscript phrasing awaits Felipe's
+validation.
 
 ## The real picture of the 3D map (EXP-011)
 
@@ -118,17 +118,18 @@ $P = x + P_2 + P_3 + a\,h^2$ ($h = xy$ and the rank sweep $x^2 + \gamma y^2$, $a
 inconsistent every time, and one descent step extends the exclusion to degree $\le 8$.
 Positive controls prove the scan is not vacuous (the harness finds the quasi-triangular
 completions of $x + (x+y)^4$; the detector fires on the genuine degree-6 realization above
-$x + (x+y)^2$). Literature context, now verified from primary sources (JCB-029 closed):
-Magnus proved gcd of the degrees equal 1 implies automorphism (A. Magnus, Volume preserving
-transformations in several complex variables, Proc. Amer. Math. Soc. 5 (1954), 256-266), and
-Appelgate-Onishi (The Jacobian conjecture in two variables, J. Pure Appl. Algebra 37 (1985),
-215-227) with Nagata extended this to gcd equal a prime; the refined coverage is gcd in
-{1, 8}, primes, and twice-primes. The plane conjecture is classically EQUIVALENT to the
-divisibility statement (deg P divides deg Q or conversely), which is exactly the primitive
-stratum framing of our machine. Our gcd-2 emptiness therefore independently replicates
-classically covered territory with a different instrument (a validation, not a new theorem);
-the genuinely open gcd values start at 9 and 12, i.e. bidegrees like $(18, 27)$ and
-$(24, 36)$. First contact is made (EXP-026): the $(18, \le 27)$ completion window on the
+$x + (x+y)^2$). Literature context, RECALIBRATED against the full audited pass (2026-07-22 dossier,
+correcting the earlier reading): for a counterexample pair, B = gcd of the degrees
+satisfies the FULL interval coverage B <= 8 (Magnus, Math. Scand. 3 (1955) for gcd 1;
+Nakai-Baba for <= 2; Appelgate-Onishi, J. Pure Appl. Algebra 37 (1985), with Nagata for
+<= 8 or prime), B != p (Abhyankar 2008), B >= 16 (Heitmann, J. Pure Appl. Algebra 64
+(1990)), and B != 2p with B = 16 or B > 20 (Guccione-Guccione-Valqui, J. Algebra 471
+(2017); Zoladek's claimed B > 33 has a documented gap and is never cited here). The plane
+conjecture is classically EQUIVALENT to the divisibility statement, which is exactly the
+primitive-stratum framing of our machine. Consequently our certificates at gcd 2, 9, 12
+and 18 are ALL replications inside the verified floor (kept as independent machine
+validations); the live frontier is the GGV B = 16 normal form and, below max degree 125,
+the single surviving pair (72, 108). First contact is made (EXP-026): the $(18, \le 27)$ completion window on the
 pure slice $P = x + a\,(x^4 y^5)^2$ is EMPTY for every $a \ne 0$ (certificate pairing
 $-144\,a^2$), with the same emptiness across three structurally different degree-9 bases and
 a gcd-12 reach probe at $(24, \le 36)$. Honest framing: these bidegrees sit inside Moh's
@@ -149,13 +150,14 @@ $\deg P$, machine-enumerated. The decisive test: the $(18, \le 36)$ window CONTA
 first admissible rung $n = 36$ and is empty anyway, certified for every $a \ne 0$ (pairing
 gcd $-576\,a^3$): the divisible rungs die by edge descent into previously emptied windows.
 
-Derived statement [D, conditional]: $P = x + a h^2$ is NEVER a Keller component at ANY
-partner degree. It hardens to a theorem once the similarity theorem's exact hypotheses are
-read from the primary text (JCB-031); the windows through degree 36 are its unconditional
-machine-verified shadow. The successor instrument (JCB-032) is the edge-residue functional in
-closed form; with it, rungs beyond the current verified floor (Moh 1983 to degree 100;
-raised to 108 by arXiv:2204.14178), e.g. gcd 45 at bidegrees $(90, 135)$, become reachable,
-where a certified exclusion would be a statement nobody has verified in any form.
+Derived statement, since subsumed: $P = x + a h^2$ is never a Keller component at any
+partner degree; this is now a corollary of the weight-class theorem below. The similarity
+theorem's exact hypotheses are verified (van den Essen's book, Thm 10.2.1 via Lee-Li:
+N^0 polygons including the origin, BOTH degrees > 1, origin-centered, ratio deg P : deg Q).
+The audited degree floor: Moh 1983 discards max degree <= 100 (complete published detail
+only for the largest case, 64), and GGHV (arXiv:2204.14178, Thm 2.1) prove any
+counterexample has max degree >= 125 OR degrees exactly (72, 108), the lone pair left open
+for compute reasons.
 
 ## The weight-class theorem (EXP-029): monomial slices fall at all degrees
 
@@ -271,3 +273,56 @@ so every source is an image with an explicit preimage, and a left-null covector 
 whole image at once. The finite-window subtlety is exactly a truncation bookkeeping: the
 pairing vanishes precisely when the preimage fits the window, which retrodicts the artifact
 values recorded in EXP-031 number for number.
+
+## The staircase transport and the fifth exclusion (EXP-037/042/044)
+
+The open core got its instrument and its first theorem. Under the x-edge grading
+$(v, 1-u)$, the completion window is BLOCK-TRIANGULAR: every matrix entry sits at a
+P-class offset, the minimal class is the diagonal, and classwise elimination (solve the
+banded diagonal, inject kernel parameters, emit cokernel obstructions) reproduces every
+monolithic verdict, with the obstruction always localizing at the CONSTANT'S class
+(EXP-037; the declared vertex-hand-off guess was refuted by that cleaner fact).
+
+**Theorem 5 (window form, sound at every parameter; EXP-042).** For the minimal swallowed
+family $P = x + a\,x^u y^v + b\,x^d$ across the tested grid, cleared certificate covectors
+(polynomial entries, identity $c^T M = 0$ verified) pair to MONOMIALS such as
+$-13860\,a^7$: the window is empty for every parameter value with $a \ne 0$.
+
+**Toward all degrees (EXP-044).** The normalized constant-class equation is IDENTICALLY
+$-2a$ at every window tested (N up to 13); the cleared pairings follow the law
+$-c_N a^N$ with positive ratios (the odd primes $2N-3$ pattern); and the certificates form
+a coherent TOWER: each window's covector restricts to the previous one on all rows with a
+single common ratio. Window growth adds unknowns only upstream of the constant's row.
+Theorem 5 at all degrees therefore stands at [D], with the single remaining gap stated as
+the TOWER LEMMA (the restriction ratio is a nonzero multiple of $a$ for every N).
+
+Two instrument facts complete the stage: the matched-pair law (EXP-038: the pair adds
+efficiency, roughly halving window unknowns, but no obstruction depth) and the
+$x^m$-anchored edge operator (EXP-043),
+$$J\!\left(x^m \varphi(z),\, x^{\alpha} y^{\beta}\right) = x^{m+\alpha-1} y^{\beta-1}
+\left[\beta m\,\varphi + (\beta k - \alpha l)\, z\varphi'\right], \qquad z = x^k y^l,$$
+of which Theorem 3's operator is the case $m = 1$.
+
+## The frontier engaged (EXP-043/045)
+
+The GGV B = 16 normal form is now inside the program's reach. Its leading form
+$R_0 = x(xy^4 - \lambda_0)^3$ is $(4,-1)$-homogeneous with collinear x-anchored support;
+for standard pairs ($m \ge 2$) the $R_0^m$ edge CANNOT produce the Keller constant (the
+$x^{m-1}$-divisibility one-liner makes the pure form trivially excluded, and the operator
+formula shows no monomial reaches the constant): the B = 16 case is formally a staircase
+transport problem. Theorem 4 excludes the pure $m = 1$ shape outright. Mid-scale
+certificates now exist at degree 32 ($P = x + R_0(1)^2$: windows 12, 16, 20 all empty),
+and the imported similarity filter (partner supported in the scaled polygon; verified to
+keep every true partner on library pairs) cuts window unknowns by a factor of ~19: the
+$(48, 64)$ full-window system drops from 2142 to 111 unknowns, and the classwise blocks
+are at most 13. The validation sweep on the classical case 64 and then the open territory
+(max degree > 150, and (72, 108)) is a scheduling decision now, not a compute risk.
+
+## The witness, and where everything is written
+
+The explicit dimension-48 gradient witness (HC(48) false with an exact $\mathbb{Q}(i)$
+collision; the failing Hessian-nilpotent quartic $P_\star$) is EXP-041 and lives, with the
+full consequence cascade, in the cascade companion manuscript. The planar results of this
+page are the planar-program manuscript (manuscript-planar/); the 3D aftermath is the
+foundational manuscript. The routes map (near-term: the tower lemma; the B = 16 sweep) is
+program/jacobian-conjecture/routes-2026-07-22.md.

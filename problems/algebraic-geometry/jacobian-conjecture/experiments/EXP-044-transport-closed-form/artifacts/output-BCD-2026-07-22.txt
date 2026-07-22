@@ -1,0 +1,32 @@
+============================================================================
+Part B: the clearing law c_N (extended)
+============================================================================
+  B N=5: pairing -420 * a^5  ({2: 2, 3: 1, 5: 1, 7: 1})
+  B N=6: pairing -1260 * a^6  ({2: 2, 3: 2, 5: 1, 7: 1})
+  B N=7: pairing -13860 * a^7  ({2: 2, 3: 2, 5: 1, 7: 1, 11: 1})
+  B N=8: pairing -180180 * a^8  ({2: 2, 3: 2, 5: 1, 7: 1, 11: 1, 13: 1})
+  B N=9: pairing -180180 * a^9  ({2: 2, 3: 2, 5: 1, 7: 1, 11: 1, 13: 1})
+  B N=10: pairing -3063060 * a^10  ({2: 2, 3: 2, 5: 1, 7: 1, 11: 1, 13: 1, 17: 1})
+  B N=11: pairing -58198140 * a^11  ({2: 2, 3: 2, 5: 1, 7: 1, 11: 1, 13: 1, 17: 1, 19: 1})
+  B ratios c_N/c_(N-1): [3, 11, 13, 1, 17, 19]
+[PASS] B: the cleared pairing is -c_N a^N with positive ratios through N = 11
+
+============================================================================
+Part C: the certificate tower (restriction proportionality)
+============================================================================
+  C N=6 -> 7: common rows 12/12, restriction ratio(s) {11*a}
+  C N=7 -> 8: common rows 16/16, restriction ratio(s) {13*a}
+  C N=8 -> 9: common rows 20/20, restriction ratio(s) {a}
+[PASS] C: each window-(N+1) certificate restricts to the window-N certificate up to ONE common ratio on ALL its rows (a coherent tower)
+
+============================================================================
+Part D: forward-only injection of new classes (the induction bookkeeping)
+============================================================================
+  D N=6 -> 7: new classes [-7, -5, -3, -1, 1, 3, 5, 7]; classes feeding the constant's row diagonally: [-1] (upstream, handled by the tower)
+  D N=7 -> 8: new classes [-8, -6, -4, -2, 0, 2, 4, 6, 8]; classes feeding the constant's row diagonally: [] (upstream, handled by the tower)
+  D N=8 -> 9: new classes [-9, -7, -5, -3, -1, 1, 3, 5, 7, 9]; classes feeding the constant's row diagonally: [-1] (upstream, handled by the tower)
+  D N=9 -> 10: new classes [-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10]; classes feeding the constant's row diagonally: [] (upstream, handled by the tower)
+  D N=10 -> 11: new classes [-11, -9, -7, -5, -3, -1, 1, 3, 5, 7, 9, 11]; classes feeding the constant's row diagonally: [-1] (upstream, handled by the tower)
+[PASS] D: window growth adds unknowns only in classes processed BEFORE the constant's row (ascending order); the constant's row itself gains no new unknown: the induction reduces to the tower of part C
+
+RESULT: ALL CHECKS PASS.

@@ -1,0 +1,30 @@
+============================================================================
+Part A: the divisibility one-liner
+============================================================================
+[PASS] A: J(x^m psi(z), Q) is divisible by x^{m-1} (m >= 2, symbolic psi): pure R0^m is NEVER a Keller component, trivially, at every degree
+
+============================================================================
+Part B: degree-32 exclusions on the B = 16 flavor
+============================================================================
+  B P32 = x + R0(1)^2: degree 32, support [(1, 0), (2, 0), (3, 4), (4, 8), (5, 12), (6, 16), (7, 20), (8, 24)]
+  B window N=12 (88 unknowns): EMPTY
+  B window N=16 (150 unknowns): EMPTY
+  B window N=20 (228 unknowns): EMPTY
+[PASS] B: P32 windows N = 12, 16, 20 all EMPTY (new certificates at degree 32, B = 16 flavor)
+
+============================================================================
+Part C: filter correctness on a genuine pair
+============================================================================
+  C pair degs (2,2): every partner monomial inside the scaled polygon
+  C pair degs (4,4): every partner monomial inside the scaled polygon
+[PASS] C: the similarity filter keeps every true partner on the tested library pairs (soundness on knowns)  2 pairs
+
+============================================================================
+Part D: measured filter value
+============================================================================
+  D P32 at partner degree 48: full window 1222 unknowns, filtered 65 (5.3 percent kept, reduction x18.80)
+  D (48, 64) shape: full window 2142 unknowns, filtered 111 (5.2 percent kept)
+  D filtered window N=16 on P32: 33 unknowns, EMPTY
+[PASS] D: the similarity filter cuts window unknowns by more than half on both systems and preserves the emptiness verdict
+
+RESULT: ALL CHECKS PASS.

@@ -39,6 +39,10 @@
   (A foundational v0.07; B planar program v0.01 NEW; C cascade v0.02 with the explicit
   witness); all compile. Routes addendum (current view + N/M/L map + decision rule).
   v0.26.000.
+- **Session 24 (2026-07-22):** EXP-044 (the certificate tower: Theorem 5 all-degree [D];
+  gap = the TOWER LEMMA) + EXP-045 (degree-32 frontier certificates; similarity filter
+  x18.8: the (48,64) sweep is now small). Wiki 04 rewritten; bake verified automatic.
+  v0.27.000.
 - **Now:** N1: the transport chain's closed form (Theorem 5 all-degree); N2: the (48, 64)
   validation sweep, then open B = 16, then (72, 108); M1: imported-constraint filters;
   web bake + screenshot pass (nine unbaked records); wiki 04 rewrite.

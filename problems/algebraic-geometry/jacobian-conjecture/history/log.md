@@ -451,3 +451,30 @@
   a standing decision rule (every new experiment names its route).
 - Remaining debt: web bake + screenshot pass (now nine unbaked records); wiki 04 deep
   rewrite; Felipe's calls: novelty phrasing, Thompson outreach, diffusion. v0.26.000.
+
+## 2026-07-22 (session 24) - The certificate tower; the filter multiplier; debt burned down
+
+- Felipe's directive: continue with all. Routes N1, N2, M1 advanced; JCB-041 debt largely
+  cleared; blocked-on-Felipe items untouched by design.
+- **EXP-044 (confirmed, route N1):** the closed-form push: the NORMALIZED constant-class
+  transport equation is IDENTICALLY -2a at every window (N <= 13, two shapes); the
+  cleared pairings follow -c_N a^N with positive ratios (the odd primes 2N - 3 from
+  N = 7); and THE CERTIFICATE TOWER exists: each window's covector restricts to the
+  previous one on ALL rows with one common ratio, while window growth adds unknowns only
+  upstream of the constant's row. THEOREM 5 ALL-DEGREE now stands at [D]; the single
+  remaining gap is the TOWER LEMMA (the restriction ratio is a nonzero multiple of a for
+  every N; verified through N = 11).
+- **EXP-045 (confirmed, routes N2 + M1):** the x^{m-1}-divisibility one-liner (pure R0^m
+  is trivially never a component); NEW mid-scale certificates at degree 32
+  (P32 = x + R0(1)^2: windows 12, 16, 20 empty; 88-228 unknowns); the similarity filter
+  verified sound on library pairs and worth x18.8: P32's partner-degree-48 window drops
+  1222 -> 65 unknowns and the (48, 64) system drops 2142 -> 111. JCB-043's declared value
+  test PASSED decisively: the (48, 64) validation sweep and beyond are now SMALL
+  computations.
+- **Wiki 04 rewritten** (recalibrated gcd landscape with the corrected coverage and
+  citations; rigidity novelty upgraded to the full-pass verdict; new sections: the
+  staircase transport + Theorem 5 + tower; the frontier engaged; the witness pointer).
+- **Web bake:** verified automatic on main merges (live experiments.json already served
+  EXP-040..043); the local pipeline run bakes EXP-044/045 cleanly and ships with this
+  session's PR. Remaining JCB-041 debt: the screenshot verification pass only.
+- v0.27.000.
