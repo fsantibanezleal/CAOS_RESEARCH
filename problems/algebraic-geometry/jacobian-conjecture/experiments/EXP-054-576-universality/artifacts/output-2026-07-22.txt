@@ -1,0 +1,24 @@
+============================================================================
+EXP-054: universality of the 576 certificate
+============================================================================
+  1: bare-stratum pairing 576; support entries:
+     row (2, 0): 576
+     row (9, 16): 24
+     row (16, 32): 51
+     row (17, 33): 612*t
+     row (18, 34): 4148*t**2
+[PASS] 1: Lambda extracted with its five entries
+  2: VIOLATION: lower (1, 0) hits support row (2, 0) via column (2, 1) with factor 1
+  2: VIOLATION: lower (1, 0) hits support row (9, 16) via column (9, 17) with factor 17
+  2: VIOLATION: lower (1, 1) hits support row (9, 16) via column (9, 16) with factor 7
+  2: VIOLATION: lower (1, 2) hits support row (9, 16) via column (9, 15) with factor -3
+  2: VIOLATION: lower (2, 2) hits support row (9, 16) via column (8, 15) with factor 14
+  2: VIOLATION: lower (2, 3) hits support row (9, 16) via column (8, 14) with factor 4
+  2: VIOLATION: lower (2, 4) hits support row (9, 16) via column (8, 13) with factor -6
+  2: VIOLATION: lower (3, 4) hits support row (9, 16) via column (7, 13) with factor 11
+[FAIL] 2: THE FINITE CHECK: every lower lattice point x support row passes (out-of-polygon column or vanishing bracket factor): the certificate is UNIVERSAL  52 lower points x 5 rows, 51 violations
+  3: adversarial sample 0 ((8,14) filled + 12 dense lower terms): pairing preserved True, residual zero False
+  3: adversarial sample 1 ((8,14) filled + 12 dense lower terms): pairing preserved True, residual zero False
+[FAIL] 3: adversarial samples confirm: pairing 576 and identity intact with (8,14) nonzero and dense lower terms
+  4: assembly: the reduced system is EMPTY on the entire forced-top-edge stratum, for ALL t and ALL lower coefficients; remaining for full closure: the dossier's other forcing branches (normalizations; the optional (0,8) corner variant), next round.
+RESULT: 2 FAILED: ['2: THE FINITE CHECK: every lower lattice point x support row passes (out-of-polygon column or vanishing bracket factor): the certificate is UNIVERSAL', '3: adversarial samples confirm: pairing 576 and identity intact with (8,14) nonzero and dense lower terms']
