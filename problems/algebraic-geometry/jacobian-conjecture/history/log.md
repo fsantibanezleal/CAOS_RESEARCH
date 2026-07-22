@@ -696,3 +696,21 @@
   now that the kernel is known to be exactly the constants for EVERY P).
 - Routine: wiki 05; log; RESUME; v0.37.000; bake. JC(2) remains open; the (72,108)
   stratum closure = one termination lemma; then the edge branch; then the floor-raise.
+
+## 2026-07-22 (session 35) - The constant-minor refutation; the chart-covering frame
+
+- **EXP-059 (predictions 2-3 REFUTED; the tenth refutation of the series):** the
+  augmented 125 x 125 minor exists at the base with a huge nonzero determinant, but it
+  is NOT constant: 40/40 random parameter points give different values (at some points
+  the row-label set itself changes). The constant-576 phenomenon is a property of the
+  CLEARED pairing normalization, not of a parameter-free minor: consistent in
+  hindsight with EXP-044's growing clearing constants. THE LOAD-BEARING OBSERVATION:
+  every sampled determinant is NONZERO: across EXP-052..059, every parameter point
+  ever tested keeps the reduced system inconsistency-certified: no candidate
+  consistent point has appeared anywhere. The run was STOPPED once the interim data
+  decided the predictions (hours of foregone symbolic confirmation saved; recorded).
+- Corrected closure frame: the statement is that the IDEAL of augmented minors has
+  empty vanishing locus on the stratum: a finite covering-by-charts argument (the
+  row-set-changed trials already exhibit the alternative charts), OR the termination
+  ladder with all-orders solvability in hand (EXP-058). Route (a) queued first.
+- Routine: wiki 05; log; RESUME; v0.38.000; bake. JC(2) remains open.
