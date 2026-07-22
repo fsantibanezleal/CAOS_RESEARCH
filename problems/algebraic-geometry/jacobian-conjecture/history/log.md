@@ -405,3 +405,49 @@
   witness (Felipe validates the novelty phrasing first); web bake + screenshot pass for
   the seven new records; upstream index-correction note to the Thompson repo (Felipe's
   call). v0.25.000.
+
+## 2026-07-22 (session 23) - Theorem 5 window form; the frontier engaged; the manuscripts split
+
+- Felipe's directives: improve all manuscripts; run additional experiments; define routes
+  covering more of the current view; and (mid-session) evaluate SPLITTING the manuscript
+  into a preliminary/foundational record and the specific active one, keeping history.
+- **EXP-042 (confirmed; declared prediction 2 refuted, replaced):** THEOREM 5 IN WINDOW
+  FORM: cleared polynomial covectors (c^T M = 0 verified identically; EXP-024 discipline)
+  across the (u, v, d) staircase grid, with MONOMIAL pairings (-13860 a^7, -32 a^4, ...;
+  6/8 b-free, the rest delegating only their b = 0 locus to Theorem 1): the completion
+  window is empty for ALL parameters with a != 0. The declared window-stability guess was
+  refuted by a cleaner law: pairing = -c_N a^N at every window N = 5..9. The annihilation
+  machinery transfers verbatim (the Leibniz identity is P-agnostic; in-window sources pair
+  to zero 4/4). A 3-parameter tail certificate (-27720 a^7 c3^4) extends the family. The
+  all-degree Theorem 5 now needs exactly one thing: the transport chain's closed form.
+- **EXP-043 (confirmed):** the live frontier engaged. GGV's B = 16 data verified [MV]
+  (R0 (4,-1)-homogeneous, collinear x-anchored support; R1; R0-power dependence). NEW
+  OPERATOR: J(x^m phi(z), x^a y^b) = x^{m+a-1} y^{b-1} [b m phi + (bk - al) z phi']
+  identically (Theorem 3 = the m = 1 case). Consequence: for m >= 2 NO monomial reaches
+  the Keller constant from the R0^m edge: the B = 16 problem IS a staircase transport.
+  Theorem 4 excludes the pure m = 1 shape outright (window replication empty); swallowed
+  variants empty. Scoping: the (48, 64) attack has 2142 unknowns in 315 classes with
+  largest diagonal block 13; (72, 108): 5992 unknowns, 535 classes, largest block 22:
+  the classwise attack is block-cheap; the cost is coupling bookkeeping, which the
+  EXP-037 instrument automates.
+- **The manuscript SPLIT (decision taken per Felipe's directive, history preserved):**
+  the record is now THREE papers: A = manuscript/ (foundational 3D aftermath, v0.07:
+  planar sections moved out, Moh phrasing corrected, companions declared);
+  B = manuscript-planar/ (NEW, v0.01: the machine, Theorems 1-4 + annihilation, the
+  staircase transport with Theorem 5 window form and its certificate table, the
+  matched-pair law and the x^m operator, the recalibrated frontier with replication
+  labels, the positioning/novelty section per the dossier); C = manuscript-cascade/
+  (v0.02: the explicit dimension-48 witness section with Thompson credit and the index
+  correction; rows upgraded from existential to explicit). All three PDFs compile clean;
+  nothing deleted: content moved with its EXP labels; the log remains the single
+  chronological record. JCB-041's manuscript half is DONE; the novelty PHRASING still
+  awaits Felipe's validation before submission anywhere.
+- **Routes addendum shipped** (routes-2026-07-22.md): the current view in one paragraph
+  (JC(2) = inconsistency of the transport chain for every mixed staircase); near-term N1
+  (transport closed form) and N2 ((48,64) validation sweep, then open B = 16, then
+  (72,108)); mid-term M1 (NEW route: literature shape restrictions imported as machine
+  window FILTERS: GGV/GGHV/Makar-Limanov/Lee-Li), M2 (staircase-length induction), M3
+  (properness cross-check); long-term L1-L3 (Lean; publication sequence; dormant pools);
+  a standing decision rule (every new experiment names its route).
+- Remaining debt: web bake + screenshot pass (now nine unbaked records); wiki 04 deep
+  rewrite; Felipe's calls: novelty phrasing, Thompson outreach, diffusion. v0.26.000.

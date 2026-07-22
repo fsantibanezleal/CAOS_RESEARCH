@@ -32,8 +32,15 @@
   certificates are replications); the properness instrument shipped; THE DIM-48 WITNESS
   (first explicit symmetric/gradient/HN falsification, HC(48) false explicitly). Routes
   evaluation in routes-2026-07-22.md. v0.25.000.
-- **Now:** JCB-038 cleared certificates toward THEOREM 5; JCB-040 (B = 16 normal form;
-  the (72, 108) system); manuscript/wiki integration pending Felipe's validation of the
-  novelty phrasing; web bake + screenshot pass queued.
-- **Blocked on:** Felipe: novelty phrasing for the manuscript; outreach call on the
-  Thompson index correction (17 -> 18).
+- **Session 23 (2026-07-22):** EXP-042 (THEOREM 5 window form: cleared all-parameter
+  certificates, monomial pairings, window law -c_N a^N; annihilation transfers) + EXP-043
+  (x^m-anchored edge operator NEW; B = 16 core = staircase transport; scoping: largest
+  blocks 13/22: the frontier attack is block-cheap). THE MANUSCRIPT SPLIT: three papers
+  (A foundational v0.07; B planar program v0.01 NEW; C cascade v0.02 with the explicit
+  witness); all compile. Routes addendum (current view + N/M/L map + decision rule).
+  v0.26.000.
+- **Now:** N1: the transport chain's closed form (Theorem 5 all-degree); N2: the (48, 64)
+  validation sweep, then open B = 16, then (72, 108); M1: imported-constraint filters;
+  web bake + screenshot pass (nine unbaked records); wiki 04 rewrite.
+- **Blocked on:** Felipe: novelty phrasing validation (blocks submission, not work);
+  outreach call on the Thompson index correction (17 -> 18); diffusion go/no-go.

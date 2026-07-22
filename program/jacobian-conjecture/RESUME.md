@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-22, session 22 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-22, session 23 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -60,26 +60,30 @@ force by elimination + GL2 orbits; 4/4 inverses; column classically covered) . 0
 confirmed (JCB-028 closed by subsumption; frontier recalibrated to B = 16 + (72,108);
 gcd 9/12 demoted to replications) . 014 confirmed (properness instrument; reserved slot
 filled) . 041 confirmed (THE DIM-48 WITNESS: HC(48) false explicitly; Thompson input
-verified with index corrected 17 -> 18; P_star falsifies Zhao's VC explicitly).
+verified with index corrected 17 -> 18; P_star falsifies Zhao's VC explicitly) . 042
+confirmed, prediction 2 refuted-replaced (THEOREM 5 WINDOW FORM: cleared all-parameter
+certificates, monomial pairings, window law -c_N a^N; annihilation transfers) . 043
+confirmed (x^m-anchored edge operator NEW; B = 16 core = staircase transport; scoping
+blocks 13/22).
 
 ## 4. In flight
 
-Nothing mid-run. Session 22 closed with seven confirmed experiments, two persisted
-context dossiers (literature pass; symmetrization), and the routes evaluation.
+Nothing mid-run. Session 23 closed with EXP-042/043, THE MANUSCRIPT SPLIT (A
+foundational v0.07 / B planar-program v0.01 NEW / C cascade v0.02 with the explicit
+witness; all three PDFs compile), and the routes addendum (current view + N/M/L map +
+the standing decision rule: every new experiment names its route).
 
 ## 5. Next actions, ordered
 
-1. JCB-038 (THEOREM 5): clear the EXP-037 generic transport into all-parameter
-   certificates (EXP-024-style cleared covectors), re-instantiate the EXP-036
-   annihilation lemma for staircase certificates, state and machine-verify Theorem 5
-   (above-weight perturbations of x + a x^u y^v are never Keller components).
-2. JCB-040: transcribe GGV's B = 16 data (directions, R0/R1 leading forms, Thm 8.12
-   normal form) into a machine attack with the transport + matched-pair instruments;
-   then scope the (72, 108) system ((8,28),(3,2) family) and estimate compute.
-3. JCB-041 (integration debt, blocks the publication gate): manuscript + wiki 04 with
-   the recalibrated floor (replication labels for EXP-024..028; Magnus Math. Scand. 1955
-   for gcd 1; never cite Zoladek B > 33), the novelty phrasing (FELIPE VALIDATES), and
-   the EXP-041 witness section; web bake + screenshot pass for the seven new records.
+1. N1 / JCB-038 (THEOREM 5 all-degree): the window form is DONE (EXP-042); the one
+   remaining step is the transport chain's closed form (the staircase analog of the
+   EXP-029 banded formula; the window law -c_N a^N is the target shape).
+2. N2 / JCB-040: run the (48, 64) classwise validation sweep (literature says empty:
+   Moh case 64 / Heitmann), then open B = 16 territory (max > 150), then (72, 108);
+   scoping done (blocks 13/22). M1 / JCB-043 (imported-constraint filters) feeds this.
+3. JCB-041 remainder: web bake + screenshot pass (nine unbaked records: EXP-037..043,
+   014, 041) and the wiki 04 rewrite; the manuscript half is DONE via the split.
+   FELIPE still validates the novelty phrasing before submission.
 4. JCB-042 (Felipe's call): report the index correction (17 -> 18) upstream to the
    Thompson repo.
 5. JCB-018 (optional): Lean hardening of T1/T2/rigidity after the manuscript pass.
@@ -95,7 +99,8 @@ context dossiers (literature pass; symmetrization), and the routes evaluation.
   source PDFs in E:\_Temp\jc-dossier\)
 - Wiki: .../wiki/01..05 · history: .../history/log.md (append-only)
 - Program: program/jacobian-conjecture/{plan,state,backlog,RESUME,routes-2026-07-22}.md
-- Manuscripts: manuscript/ (v0.06 + session-22 debt queued) · manuscript-cascade/
+- Manuscripts (three-paper record, split 2026-07-22): manuscript/ (A foundational,
+  v0.07) · manuscript-planar/ (B planar program, v0.01) · manuscript-cascade/ (C, v0.02)
 - Bake -> web: data-pipeline/researchlab -> data/derived -> frontend/ ->
   https://research.fasl-work.com (Pages via Actions on main)
 - Management mirror: CAOS_MANAGE plans/caos-research/ (status, findings, history)

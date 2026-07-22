@@ -3,6 +3,31 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.26.000], 2026-07-22
+
+### Added
+- EXP-042: THEOREM 5 IN WINDOW FORM: cleared all-parameter certificates across the
+  staircase grid (monomial pairings, 6/8 b-free); the measured window law
+  pairing = -c_N a^N (the declared same-form prediction refuted and replaced); the
+  annihilation machinery transfers verbatim; a 3-parameter tail certificate.
+- EXP-043: the live frontier engaged: GGV B = 16 structure verified; NEW x^m-anchored
+  edge operator (Theorem 3 = m = 1 case); for m >= 2 the R0^m edge cannot make the
+  constant (the B = 16 core is a staircase transport); Theorem 4 kills the pure m = 1
+  shape; scoping histograms: largest diagonal blocks 13 at (48, 64), 22 at (72, 108).
+- manuscript-planar/ (B, NEW, v0.01): the planar-program paper (machine, Theorems 1-4 +
+  annihilation, staircase transport + Theorem 5 window form, matched-pair law, x^m
+  operator, recalibrated frontier, positioning per the novelty dossier).
+- Routes addendum in routes-2026-07-22.md: the current view in one paragraph; N1/N2
+  near-term pushes; M1 imported-constraint filters (new route), M2 staircase-length
+  induction, M3 properness cross-check; L1-L3; a standing decision rule.
+
+### Changed
+- THE MANUSCRIPT SPLIT (three-paper record, history preserved): manuscript/ (A,
+  foundational, v0.07: planar sections moved to B; Moh phrasing corrected; companions
+  declared); manuscript-cascade/ (C, v0.02: the explicit dimension-48 witness section,
+  Thompson credit + nilpotency-index correction 17 -> 18; \\Q preamble fix). All three
+  PDFs compile clean.
+
 ## [0.25.000], 2026-07-22
 
 ### Added
