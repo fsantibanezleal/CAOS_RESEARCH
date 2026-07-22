@@ -348,3 +348,21 @@ every tested window at (2,2,2); and the frontier payoff: the degree-32 B = 16-fl
 sample and the degree-72 corner-(16,56) sample are now excluded at all partner degrees
 (pairings -256 and -32). Together, Theorems 5-6 and the half-plane lemma cover the
 entire swallowed-staircase stratum with y-most top corners from single window solves.
+
+## The (72, 108) attack: the reduced system and the corrector ladder (EXP-050..055)
+
+The lone open degree pair below 125 reduces (GGHV Prop 4.3, transcription verified
+against the LaTeX sources) to pairs with [P, Q] = x^2 on SMALL polygons: N(P) with
+corners (0,0), (1,0), (8,14), (8,16), (0,8) (61 lattice points) and N(Q) with corners
+(0,0), (2,1), (12,21), (12,24), (0,12) (125 lattice points). The machine's state:
+sampled shapes at the original degrees and on the reduced polygons are all
+partner-free (seconds per certificate; EXP-050/052); on the forced-top-edge stratum
+(y^8 (xy - t)^8 symbolic) every cleared certificate pairs to the CONSTANT 576, with a
+five-row support (EXP-053); rigid universality of that covector was REFUTED (51
+entering lower combinations, EXP-054), pointing to the perturbative construction; its
+base is sound and FIRST-ORDER UNIVERSALITY IS PROVED (26/26 correctors with the 576
+pairing pinned, localized supports; EXP-055), with the corrector ladder continuing at
+order 2 (EXP-056, in flight). Termination at any finite order yields the explicit
+universal covector and closes the reduced stratum; the remaining assembly is the
+reduction's other forcing branches, after which the verified JC(2) floor rises from
+108 to 125.
