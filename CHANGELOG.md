@@ -3,6 +3,14 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.38.000], 2026-07-22
+
+### Added
+- EXP-059: the constant-minor predictions REFUTED (the augmented determinant varies
+  at 40/40 sampled points) while EVERY sampled value is NONZERO (inconsistency
+  certified at every parameter point ever tested); corrected frame = the finite
+  chart-covering argument or the termination ladder; run stopped once decided.
+
 ## [0.37.000], 2026-07-22
 
 ### Added
