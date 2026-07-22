@@ -3,6 +3,15 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.22.000], 2026-07-22
+
+### Added
+- EXP-033: the edge fan closes and THE VERTEX DICHOTOMY stands (Theorem 4): the k = 0 and
+  m = 0 axis edges fall by one-line class arguments (phi h' = 1; Q_y = 1/(x phi)'), and if
+  x is a VERTEX of N(P) for a Keller component then P = x + f(y) exactly; non-triangular
+  components must swallow x inside the polygon (both directions machine-verified). The
+  rotation-induction route to the full classification is recorded (JCB-036).
+
 ## [0.21.000], 2026-07-22
 
 ### Added

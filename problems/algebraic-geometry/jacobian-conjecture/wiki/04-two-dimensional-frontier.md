@@ -226,3 +226,25 @@ exactly the statement that nothing else lives there. Classifying the $y$-anchore
 completions is the queued endgame frame (JCB-035); the single remaining derived gap in the
 with-tails statements is the annihilation lemma in closed form (JCB-033), shared by
 Theorems 2 and 3.
+
+## Theorem 4: the vertex dichotomy (EXP-033)
+
+The two boundary directions of the edge fan fall by one-line class arguments: for
+$P = x\,\varphi(y)$ the constant's class equation is $\varphi(y) h'(y) = 1$, which no
+polynomial satisfies once $\deg \varphi \ge 1$ (kernels are $(x\varphi)^s$; certificate
+$-c_1^6$ for $x(1 + c_1 y)$); for $P = x\,\varphi(x)$, $J(P, Q) = (x\varphi)'(x)\,Q_y$
+forces a non-polynomial $Q_y$.
+
+**Theorem 4 (vertex dichotomy).** If the monomial $x$ is a VERTEX of the Newton polygon of
+a Keller component $P$ (linear part $x$), then $P = x + f(y)$: every edge at the vertex is
+an excluded $x$-divisible shape (Theorem 3 and the axis cases) except segments to pure-$y$
+vertices $(0, d)$, which contain no interior lattice points. Machine-verified on all three
+sides: vertex-$x$ samples with mixed monomials are all inconsistent; triangular samples are
+consistent (they are components); and the escape route is real: $x + (x+y)^2$ and
+$x + (x+2y)^3$, where $x$ is swallowed inside the polygon, are components.
+
+The recorded strategy (JCB-036): non-triangular components must swallow $x$; a linear gauge
+rotation puts the dominating direction on a coordinate and the vertex analysis re-applies:
+an induction whose closure on the triangular family would be JC(2). The open steps
+(rotation normal form, behavior of the excluded shapes under rotation, ties) are the
+program's standing target, stated as strategy, not as a claim.
