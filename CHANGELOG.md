@@ -3,6 +3,13 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.37.000], 2026-07-22
+
+### Added
+- EXP-058: THE KERNEL IS THE CONSTANTS (k = 1): all-orders solvability of the
+  corrector ladder PROVED in one line; prediction 2 refuted trivially; termination is
+  the single remaining lemma for the reduced (72,108) stratum closure.
+
 ## [0.36.000], 2026-07-22
 
 ### Added

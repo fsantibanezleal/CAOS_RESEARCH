@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-22, session 33 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-22, session 34 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -93,14 +93,15 @@ the standing decision rule: every new experiment names its route).
    currently Theorem 6 or full-window towers; map what escapes ALL current lemmas;
    (b) the y-anchored (quasi-triangular-type) completions classification (JCB-035,
    the endgame frame): JC(2) = the triangular family is everything.
-2. N2 / JCB-040: EXP-057 REFUTED automatic solvability: rank(M0) = 124: a
-   ONE-DIMENSIONAL right kernel k(t) exists, and the 276/276 record means every
-   ladder rhs annihilates it. FIRST TASK NEXT ROUND (EXP-058): (a) compute k(t)
-   explicitly (one nullspace vector over QQ(t)); (b) identify its closed form;
-   (c) prove Lambda_prev([m, k]) = 0 structurally (the EXP-036 Jacobi/Leibniz
-   pattern with an explicit target) = ALL-ORDERS SOLVABILITY; (d) termination with
-   k in hand. Then the edge-normalization branch (72108-assembly-checklist.md);
-   then the floor rises to 125.
+2. N2 / JCB-040: EXP-058: THE KERNEL IS THE CONSTANTS (k = 1): ALL-ORDERS
+   SOLVABILITY PROVED in one line (rhs at the constant column = bracket with 1 = 0).
+   FIRST TASK NEXT ROUND (EXP-059): TERMINATION, the single remaining lemma for the
+   stratum closure. Two routes, try in order: (a) the fixed-P determinantal framing:
+   show the x^2 rhs stays outside Col(M(eps)) for every parameter via a cleared
+   certificate ON THE QUOTIENT by constants (the kernel is exactly the constants for
+   EVERY P: rank M(eps) = 124 generic + the 576 pairing family); (b) the
+   support-drift bound on the fixed pool. Then the edge-normalization branch
+   (72108-assembly-checklist.md); then the floor rises to 125.
 3. JCB-041 remainder: the screenshot verification pass ONLY (bake is automatic and
    verified; wiki 04 rewritten in session 24). FELIPE still validates the novelty
    phrasing before submission.
