@@ -1,0 +1,28 @@
+============================================================================
+Part A: block triangularity of the window system under w = (v, 1-u)
+============================================================================
+  A x + a x^2 y + b x^2 (u=2,v=1): P-classes [1, 2], offsets [1, 2], allowed [1, 2], diag offset 1
+  A x + a x^2 y^2 + b x^2 (u=2,v=2): P-classes [2, 4], offsets [1, 3], allowed [1, 3], diag offset 1
+  A x + a x^3 y + b x^2 (u=3,v=1): P-classes [1, 2], offsets [2, 3], allowed [2, 3], diag offset 2
+  A x + a x^2 y + b x^3 (u=2,v=1): P-classes [1, 3], offsets [1, 3], allowed [1, 3], diag offset 1
+[PASS] A1: every nonzero entry sits at a P-class offset s - sigma (block-banded exact)
+[PASS] A2: the diagonal offset u - 1 is minimal (block TRIANGULAR, ascending classes)
+
+============================================================================
+Part B: transport elimination == monolithic verdict (minimal family)
+============================================================================
+  transport[x + 2 x^2 y + 3 x^2]: 1 kernel params, 2 transport eqs, consistent=False, first-fail row-class=0
+  B x + 2 x^2 y + 3 x^2: monolithic=EMPTY, transport=EMPTY AGREE
+  transport[x + 2 x^2 y + 3 x^3]: 1 kernel params, 1 transport eqs, consistent=False, first-fail row-class=0
+  B x + 2 x^2 y + 3 x^3: monolithic=EMPTY, transport=EMPTY AGREE
+  transport[x + 2 x^2 y^2 + 3 x^2]: 0 kernel params, 3 transport eqs, consistent=False, first-fail row-class=0
+  B x + 2 x^2 y^2 + 3 x^2: monolithic=EMPTY, transport=EMPTY AGREE
+  transport[x + 2 x^3 y + 3 x^2]: 0 kernel params, 2 transport eqs, consistent=False, first-fail row-class=0
+  B x + 2 x^3 y + 3 x^2: monolithic=EMPTY, transport=EMPTY AGREE
+  transport[x + x^2 + x^2 y (EXP-035 C)]: 1 kernel params, 2 transport eqs, consistent=False, first-fail row-class=0
+  B x + x^2 + x^2 y (EXP-035 C): monolithic=EMPTY, transport=EMPTY AGREE
+  transport[control x+(x+y)^2 (u,v)=(2,1)]: 5 kernel params, 3 transport eqs, consistent=True, first-fail row-class=None
+  B control x+(x+y)^2: monolithic=CONS, transport=CONS
+[PASS] B: classwise transport elimination reproduces the monolithic verdict on every sample, and the positive control stays consistent
+
+RESULT: ALL CHECKS PASS.

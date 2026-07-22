@@ -1,0 +1,15 @@
+============================================================================
+Part E: symbolic transport equations (GENERIC in a, b: fraction-field steps; sound emptiness stays with the numeric runs of B/C)
+============================================================================
+  E (u,v,d)=(2,1,2): consistent=False; transport eqs:
+      class 0: -2*a = 0
+      class 1: -2*b = 0
+  E (u,v,d)=(2,2,2): consistent=False; transport eqs:
+      class 0: -2*a = 0
+      class 6: -12*b**3 = 0
+      class 8: -8*b**4 = 0
+  E (u,v,d)=(2,1,3): consistent=False; transport eqs:
+      class 0: -2*a = 0
+[PASS] E: symbolic (generic) transport is inconsistent with a readable closed pattern per equation
+
+RESULT: ALL CHECKS PASS.
