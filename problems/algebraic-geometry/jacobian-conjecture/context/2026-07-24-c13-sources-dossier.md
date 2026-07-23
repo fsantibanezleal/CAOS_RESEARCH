@@ -50,3 +50,30 @@ q | d0 statement + the DEFINITION of q for a chain: decides whether q1 = 4
 carries to (8,40) or becomes 8); ar5iv-fetch 1605.09430 for Prop/Remark 3.29
 (the last-possible-corner exclusion: decides whether (8,4)-style corners are
 excluded in the form needed at (8,12)/(8,8)). Then EXP-077 decides the fork.
+
+## Fetch 3: [GGV1 = arXiv 1401.1784] Theorem 7.6 TRANSCRIBED [VERIFIED, tex lines 4290-4341]
+
+Source secured at E:\_Temp\ggv-sources\1401\src.tex (arXiv e-print, single tex,
+299 KB; keep until the C13 campaign closes, then delete per temp policy).
+
+The statement (chain A0 < A1 < ... < Ak, directions (rho_i, sigma_i)):
+- (2) d_j := max d with l_{rho_j,sigma_j}(P) = R_j^{m d_j} (exists for j >= 1;
+  also j = 0 when A0 is type II).
+- (3) en_{rho_j,sigma_j}(F_j) = (p_j/q_j) (1/m) en_{rho_j,sigma_j}(P) with
+  p_j, q_j COPRIME: q_j IS DEFINED BY THE EN-POINT RATIO at the chain corner
+  (F_j from the paper's Theorem central).
+- (4) q_i does not divide d_i (i > 0); (5) q_j | d_i for i > j > 0; (6) q_i
+  does not divide q_j (i > j > 0); (7) d_j | D_j := gcd of consecutive corner
+  coordinates, Omega bounds; (8) type-II A0: q_0 does not divide d_0, q_0 | d_i.
+
+## What this decides for C13 (DERIVED, next: EXP-077)
+
+For (8,32): en(F_1)/((1/m)en(P)) = (6,21)/(8,28) = 3/4, so q_1 = 4; with
+d_0 <= 4 (coprime factorization) and the divisibility, d_0 = 4 exactly: the
+unique forcing. For C13 (8,40): the tail (A1, A2) is SHARED, but the en-point
+condition involves v_{rho_1,sigma_1}(A_0), and v_{4,-1}((8,40)) = -8 differs
+from v_{4,-1}((8,32)) = 0: whether en(F_1) stays (6,21) (giving q_1 = 4 and the
+d_0 in {4,8} FORK) or changes (possibly q_1 = 8: unique forcing again, discard
+extends) requires the F_1 construction (GGV1 Theorem central) computed for the
+C13 chain. EXP-077 = that computation + the Prop 3.29 fetch (GGV2 candidate
+1605.09430, same e-print route) + the endgame test at the resulting corner.
