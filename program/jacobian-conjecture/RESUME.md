@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-23, session 41 closed; continuous loop)
+# RESUME - Jacobian conjecture program (updated 2026-07-23, session 42 closed; continuous loop)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -96,18 +96,16 @@ the standing decision rule: every new experiment names its route).
 2. N2 / JCB-040, GATE STATE after session 40: EXP-064 REFUTED the pinned ladder
    (chain stabilizes at dim 39; not a refutation of the certificate: 165-dim gauge)
    and EXP-067 CLOSED DEGREE 1 outright (8 diagonal blocks obstructed; all pairs
-   feasible; full system infeasible mod p, conclusive). THE LIVE ROUTE after session 41: DEGREE-2 STAGE B: EXP-068 proved solvability is
-   AUTOMATIC at every order (the dual annihilation identity: c kills all bracket
-   images; the scalar-obstruction idea was wrong and is corrected in the EXP-067
-   verdict); EXP-069 stage a showed ALL 51 diagonal triples feasible (the 8
-   degree-1 blockers clear at degree 2). The decision is the JOINT order-3
-   system: 23426 triples x 125 rows (about 2.9M sparse mod-p equations) in the
-   joint gauge (u 8415 + v 218790 unknowns). Engineering: sparse elimination mod
-   2147483629 with early-abort on inconsistency; order triples touching the 8
-   blockers FIRST; if impractical, the restricted blockers-neighborhood joint
-   system is the cheap next necessary condition. Feasible = exact confirmation
-   staged (upgrade proposal FOR FELIPE); infeasible = degree 2 closed, move to
-   degree-3 diagonal necessaries or the [125,150] frontier. THEN the
+   feasible; full system infeasible mod p, conclusive). THE LIVE ROUTE after session 42: TRUNCATIONS CLOSED THROUGH DEGREE 2: EXP-067
+   (degree 1: 8 diagonal blockers) and EXP-070 (degree 2: the mixed pair
+   {(2,6),(5,9)} infeasible mod two primes, conclusive) both closed; the
+   obstruction pattern MOVES with the degree. OPTIONS RANKED: (a) degree-3 pair
+   necessaries (the EXP-070 sweep generalizes; calibrated expectation: closure);
+   (b) the PATTERN THEOREM: prove every truncation degree is obstructed, closing
+   the polynomial-covector route honestly and redirecting to rational-in-eps or
+   per-chart certificates; (c) the [125,150] frontier (C13 first). The
+   floor-raise stays GATED; Paper B published scope unchanged. Zenodo v2 drafts
+   (ORCID title pages) await Felipe's publish: 21504299/21504302/21504303. THEN the
    [125,150] frontier: 24 transcribed configurations (C13 first).
    PUBLICATION STATE: all three papers PUBLISHED on Zenodo 2026-07-23 (A
    .21503366, B .21503368, C .21503372); metadata centralized in

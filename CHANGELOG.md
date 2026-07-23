@@ -3,6 +3,16 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.45.000], 2026-07-23
+
+### Added
+- EXP-070: DEGREE 2 CLOSED: the support-restricted order-3 necessaries hit an
+  infeasible pair subsystem at {(2,6),(5,9)} (two primes, conclusive over Q): no
+  degree-2 covector exists. Truncations closed through degree 2; the obstruction
+  pattern moves with the degree.
+- Manuscripts: ORCID icon + profile link on all three title pages (orcidlink);
+  v0.08/v0.08/v0.03; Zenodo new-version drafts created (awaiting publish).
+
 ## [0.44.000], 2026-07-23
 
 ### Added
