@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "title": "A planar program for the two-variable Jacobian conjecture: a theorem ladder, staircase transport, and machine certificates at the (72,108) frontier",
+    "creators": [{"name": "Santibañez-Leal, Felipe"}],
+    "description": "<p>Paper B of a three-paper research record. The two-variable Jacobian conjecture remains open after the 2026 counterexample in dimension 3. This paper develops the planar program: an unconditional theorem ladder (weight-class exclusions through the vertex dichotomy, via an annihilation lemma), the staircase transport with cleared polynomial certificates, and a machine campaign on the lone open degree pair (72,108) below 125, built directly on Guccione-Guccione-Horruitiner-Valqui (arXiv:2204.14178, Proposition 4.3). Stated within the certified scope: the campaign provides strong machine evidence toward the closure of (72,108), not yet a complete proof; the remaining step, a simultaneous-in-all-coefficients certificate, is stated precisely, together with an adversarial audit of the whole chain. Every certificate is verified identically over the rationals and persisted.</p><p>All scripts, artifacts and verdicts: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
+    "keywords": ["Jacobian conjecture", "planar Keller maps", "Newton polygon", "machine certificates", "exact arithmetic", "commutative algebra", "affine algebraic geometry"],
+    "subjects": [{"term": "Jacobian problem", "identifier": "https://mathscinet.ams.org/msc/msc2020.html?t=14R15", "scheme": "url"}],
+    "license": "cc-by-4.0",
+    "related_identifiers": [
+      {"relation": "isSupplementedBy", "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH", "resource_type": "software"},
+      {"relation": "cites", "identifier": "10.48550/arXiv.2204.14178", "resource_type": "publication-preprint"}
+    ],
+    "version": "0.07",
+    "language": "eng"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "title": "The consequence cascade of the Jacobian counterexample, with an explicit dimension-48 witness against the Hessian conjecture",
+    "creators": [{"name": "Santibañez-Leal, Felipe"}],
+    "description": "<p>Paper C of a three-paper research record. The 2026 counterexample to the Jacobian conjecture propagates through the known reduction network; this paper records the cascade with machine verification at each edge. The centerpiece is explicit: starting from Thompson's cubic-homogeneous form in dimension 24 (verified independently; nilpotency index corrected from 17 to 18), the de Bondt-van den Essen construction yields a homogeneous Hessian-nilpotent quartic potential in 48 variables (382 monomials over Q(i)) whose gradient map has an exact two-point collision. The Hessian conjecture therefore fails in dimension 48 with an explicit witness, and Zhao's vanishing conjecture fails at an explicit polynomial. All steps are exact rational arithmetic, scripted and persisted.</p><p>All scripts, artifacts and verdicts: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
+    "keywords": ["Jacobian conjecture", "Hessian conjecture", "Zhao vanishing conjecture", "Hessian nilpotent polynomials", "gradient maps", "explicit counterexample", "exact arithmetic"],
+    "subjects": [{"term": "Jacobian problem", "identifier": "https://mathscinet.ams.org/msc/msc2020.html?t=14R15", "scheme": "url"}],
+    "license": "cc-by-4.0",
+    "related_identifiers": [
+      {"relation": "isSupplementedBy", "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH", "resource_type": "software"}
+    ],
+    "version": "0.02",
+    "language": "eng"
+  }
+}
