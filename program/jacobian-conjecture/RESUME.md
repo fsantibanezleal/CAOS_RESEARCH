@@ -119,8 +119,8 @@ the standing decision rule: every new experiment names its route).
   source PDFs in E:\_Temp\jc-dossier\)
 - Wiki: .../wiki/01..05 · history: .../history/log.md (append-only)
 - Program: program/jacobian-conjecture/{plan,state,backlog,RESUME,routes-2026-07-22}.md
-- Manuscripts (three-paper record, split 2026-07-22): manuscript/ (A foundational,
-  v0.07) · manuscript-planar/ (B planar program, v0.01) · manuscript-cascade/ (C, v0.02)
+- Manuscripts (three-paper record, split 2026-07-22): manuscripts/jacobian-conjecture/ (relocated 2026-07-23): foundational/ (A,
+  v0.07) · planar/ (B planar program, v0.07) · cascade/ (C, v0.02)
 - Bake -> web: data-pipeline/researchlab -> data/derived -> frontend/ ->
   https://research.fasl-work.com (Pages via Actions on main)
 - Management mirror: CAOS_MANAGE plans/caos-research/ (status, findings, history)

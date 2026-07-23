@@ -13,7 +13,7 @@ declared hypotheses and verdicts, and a curated wiki. A static web app showcases
 summary, context, references and alternative approaches, the current strategy, and our results.
 
 All computation runs offline (local CPU/GPU); the web app only replays persisted artifacts.
-Findings are consolidated into a LaTeX manuscript (`manuscript/`).
+Findings are consolidated into LaTeX manuscripts under `manuscripts/<problem>/` (one folder per problem; the jacobian record is three papers: foundational, planar, cascade).
 
 ## Layout
 
@@ -22,7 +22,7 @@ Findings are consolidated into a LaTeX manuscript (`manuscript/`).
 | [`methodology/`](methodology/) | The research operating system: problem lifecycle, experiment standard (EXP-NNN), adversarial validation ladder, code and writing standards, web publication gates. |
 | [`program/`](program/) | The status section: portfolio board (`portfolio.yaml` + README), and per-problem plan / state / backlog. The plan of each problem lives here, inside the repo. |
 | [`problems/<area>/<slug>/`](problems/) | One self-contained folder per problem: `context/` (dossiers, references), `history/` (append-only log), `code/` (tested per-problem package), `scripts/`, `experiments/EXP-NNN-*/`, `wiki/`. |
-| [`manuscript/`](manuscript/) | LaTeX manuscript mapping all findings and approaches (built PDF committed per release). |
+| [`manuscripts/`](manuscripts/) | Global manuscript tree: one subfolder per problem, each holding that problem's LaTeX manuscripts (built PDFs committed per release). |
 | `data-pipeline/`, `frontend/`, `docs/`, `scripts/` | CAOS product-repo base (ADR-0057): offline pipeline that bakes problem/experiment artifacts for the web app, the shared-shell SPA, the repo wiki, and the CI guards. |
 
 ## Problems
