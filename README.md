@@ -13,7 +13,9 @@ declared hypotheses and verdicts, and a curated wiki. A static web app showcases
 summary, context, references and alternative approaches, the current strategy, and our results.
 
 All computation runs offline (local CPU/GPU); the web app only replays persisted artifacts.
-Findings are consolidated into LaTeX manuscripts under `manuscripts/<problem>/` (one folder per problem; the jacobian record is three papers: foundational, planar, cascade).
+Parallel sessions: one problem per session, isolated per
+[methodology/08-parallel-sessions.md](methodology/08-parallel-sessions.md)
+(releases are serialized; rounds are not). Findings are consolidated into LaTeX manuscripts under `manuscripts/<problem>/` (one folder per problem; the jacobian record is three papers: foundational, planar, cascade).
 
 ## Layout
 

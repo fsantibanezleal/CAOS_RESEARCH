@@ -115,6 +115,17 @@ the standing decision rule: every new experiment names its route).
    never from memory.
    THE LIVE ROUTE after session 45: degrees 1-2 CLOSED; degree 3 OPEN through the
    triple tier (EXP-073: all 20825 feasible, gate green); R3 vacuous (EXP-074).
+   ISOLATION RULES (2026-07-24, methodology/08-parallel-sessions.md): rounds close
+   per problem WITHOUT version bumps; the release step (bump + CHANGELOG + bake +
+   build + tag + PR) is serialized, one session at a time; git pull both repos
+   before writing; the mirror is now plans/caos-research/jacobian-conjecture/.
+   FELIPE'S MANUSCRIPT DIRECTIVE (2026-07-24): update manuscripts as results land
+   and REPUBLISH on Zenodo autonomously when a substantive block closes (he
+   reviews after; changes go out as further new versions). Paper B's pending
+   chapter: the truncation ladder (degrees 1-2 closed, the retraction case
+   study, the dual annihilation identity) + the [125,150] frontier opening
+   (C13). Transcribe from verdicts and the dossiers, never memory; two-pass
+   pdflatex; API new-version flow (tools/zenodo in the vault repo).
    SESSION 47 PLAN (46 done: EXP-075 quadruple sweep IN FLIGHT resumable; EXP-076
    C13 probe decided, gap list persisted): (i) adjudicate EXP-075 on its
    notification (or check progress and re-arm; resume via run.py <index> if the
