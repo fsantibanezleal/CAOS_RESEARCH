@@ -59,3 +59,9 @@ Execution order (sessions 47+): S3a and S2a continue now; S1a is the next
 DECLARED experiment after EXP-077 (it is cheap: test the dual annihilation on
 3 other window systems); S5a lands when the quadruple sweep's cost justifies
 it; S4a opens as a dossier in parallel rounds.
+
+SWEEP ECONOMICS NOTE (2026-07-24): EXP-075 measures ~6.4 s/support: the full
+quadruple sweep would take ~18 days. Session 47+ should RESTART it REORDERED
+(supports containing >= 2 of the 8 degree-1 blockers first, ~8k supports,
+~14 h: the degree-2 hit lived in blocker territory) and pursue S5a (compiled
+GF(p) kernel) before any full-space quadruple commitment.
