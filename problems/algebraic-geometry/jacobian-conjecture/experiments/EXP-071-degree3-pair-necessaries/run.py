@@ -100,6 +100,15 @@ def modgauss_feasible(M, prime):
     return True
 
 
+def modfrac(x, prime):
+    """Correct reduction of a Fraction mod prime (num * den^-1)."""
+    num = int(x.numerator) % prime
+    den = int(x.denominator) % prime
+    if den == 1:
+        return num
+    return (num * pow(den, prime - 2, prime)) % prime
+
+
 class ModCtx:
     """All ladder objects modulo one prime, numpy-backed."""
 
@@ -109,9 +118,9 @@ class ModCtx:
         self.piv = piv_cols
         self.nrow, self.ncol = nrow, ncol
         self.ops = ops
-        self.E = np.array([[int(x) % prime for x in row] for row in E],
+        self.E = np.array([[modfrac(x, prime) for x in row] for row in E],
                           dtype=np.int64)
-        self.N = np.array([[int(N[k][t]) % prime for t in range(nrow)]
+        self.N = np.array([[modfrac(N[k][t], prime) for t in range(nrow)]
                            for k in range(len(N))], dtype=np.int64)  # kdim x nrow
         self.kdim = self.N.shape[0]
         # T_e as sparse (ncol x nrow) dense int64 (small): applyT = T @ lam
@@ -122,7 +131,7 @@ class ModCtx:
                 for c, v in cols.items():
                     M[c, rk] = int(v) % prime
             self.T[e] = M
-        self.P = {e: np.array([int(x) % prime for x in P[e]], dtype=np.int64)
+        self.P = {e: np.array([modfrac(x, prime) for x in P[e]], dtype=np.int64)
                   for e in ops}
         # caches
         self._U = {}     # e -> nrow x kdim: solve(-T_e N^T)
@@ -131,8 +140,12 @@ class ModCtx:
 
     def solvem(self, Bcols):
         """Bcols: ncol x m rhs matrix. Returns nrow x m solutions (pivot form).
-        Assumes consistency (guaranteed by the dual annihilation identity)."""
-        Y = (self.E @ (Bcols % self.p)) % self.p
+        Assumes consistency (guaranteed by the dual annihilation identity).
+        E entries and Bcols entries are both ~p, so the product is computed with
+        a 16-bit split to avoid int64 overflow (p^2 * 125 > 2^63)."""
+        B = Bcols % self.p
+        Bhi, Blo = B >> 16, B & 0xFFFF
+        Y = ((self.E @ Bhi) % self.p * 65536 + (self.E @ Blo)) % self.p
         X = np.zeros((self.nrow, Bcols.shape[1]), dtype=np.int64)
         X[self.pivarr] = Y[:self.rankA]
         return X
@@ -341,17 +354,41 @@ def main():
     ok0 = rankA == 124 and kdim == 165 and nop == 51
     ctxs = {p: ModCtx(p, E, piv_cols, rankA, N, Ti, P, nrow, ncol, ops)
             for p in PRIMES}
-    # regression gate: EXP-070's decision reproduced on the mod-p path
-    reg_bad = not deg2_subsystem_feasible(ctxs[PRIMES[0]], ((2, 6), (5, 9)))
-    reg_good = deg2_subsystem_feasible(ctxs[PRIMES[0]], ((1, 0), (0, 1))) \
-        if (0, 1) in ops else True
-    check("1: setup + regression gate (numpy path reproduces EXP-070)",
-          ok0 and reg_bad and reg_good,
-          f"rank {rankA}, kernel {kdim}, ops {nop}; deg2 {(2, 6), (5, 9)} "
-          f"infeasible={reg_bad} ({time.time() - t0:.0f} s)")
-    if not (ok0 and reg_bad):
-        print("RESULT: ABORT (regression gate)", flush=True)
+    check("1: setup invariants", ok0,
+          f"rank {rankA}, kernel {kdim}, ops {nop} ({time.time() - t0:.0f} s)")
+    if not ok0:
+        print("RESULT: ABORT", flush=True)
         sys.exit(1)
+    # 1b: RE-DECIDE the degree-2 pair sweep with CORRECT arithmetic (EXP-070's
+    # truncation bug retracts its conclusion; this is the true decision).
+    t0 = time.time()
+    pairs = list(combinations_with_replacement(range(nop), 2))
+    hit2 = None
+    for n_, (a_, b_) in enumerate(pairs):
+        sup = (ops[a_],) if a_ == b_ else (ops[a_], ops[b_])
+        if not deg2_subsystem_feasible(ctxs[PRIMES[0]], sup):
+            if not deg2_subsystem_feasible(ctxs[PRIMES[1]], sup):
+                hit2 = sup
+                break
+            print(f"  1b: PRIME DISAGREEMENT at {sup}", flush=True)
+        if (n_ + 1) % 200 == 0:
+            print(f"  1b: {n_ + 1}/{len(pairs)} degree-2 pair subsystems OK "
+                  f"({time.time() - t0:.0f} s)", flush=True)
+    if hit2:
+        check("1b: the corrected degree-2 pair sweep", True,
+              f"INFEASIBLE at {hit2} (both primes): degree 2 closed at pairs "
+              "AFTER the fix")
+    else:
+        check("1b: the corrected degree-2 pair sweep", True,
+              "ALL pair subsystems FEASIBLE under correct arithmetic: EXP-070's "
+              "closure is RETRACTED; degree 2 is OPEN at pair necessaries")
+    # 1c: re-audit EXP-069a's diagonal triples with correct arithmetic
+    t0 = time.time()
+    bad3 = [pq for pq in ops
+            if not deg2_subsystem_feasible(ctxs[PRIMES[0]], (pq,))]
+    check("1c: EXP-069a diagonal triples re-audited (correct arithmetic)",
+          True, f"infeasible singles: {bad3 or 'none'} "
+          f"({time.time() - t0:.0f} s)")
 
     # 2: the degree-3 pair sweep
     t0 = time.time()

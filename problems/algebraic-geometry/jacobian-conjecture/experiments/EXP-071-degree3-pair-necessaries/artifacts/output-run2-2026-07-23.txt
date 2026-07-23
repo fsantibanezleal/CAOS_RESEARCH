@@ -1,0 +1,5 @@
+============================================================================
+EXP-071: degree-3 pair necessaries (t = 1, mod-p composed maps)
+============================================================================
+[FAIL] 1: setup + regression gate (numpy path reproduces EXP-070)  rank 124, kernel 165, ops 51; deg2 ((2, 6), (5, 9)) infeasible=False (1 s)
+RESULT: ABORT (regression gate)

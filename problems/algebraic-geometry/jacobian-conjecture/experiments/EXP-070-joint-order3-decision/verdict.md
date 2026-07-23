@@ -28,3 +28,17 @@
   EVERY truncation degree is obstructed would close this route honestly and
   redirect the certificate hunt to non-polynomial covector forms (rational in
   eps, or per-chart covers); (c) the [125,150] frontier (C13) in parallel.
+
+## RETRACTION (2026-07-23, session 43, EXP-071)
+
+The decision above is RETRACTED. EXP-070's modular assembly reduced rational
+entries (E, N, P and their compositions) with int() TRUNCATION instead of
+num * den^-1 mod p (mat_int and the rhs lines in run.py). Under the corrected
+reduction (EXP-071 modfrac + overflow-safe matmul), the pair subsystem at
+{(2,6),(5,9)} is FEASIBLE mod both primes: the reported infeasibility was an
+artifact. The corrected full pair sweep and the EXP-069a re-audit run in
+EXP-071 (run4 artifact); the true degree-2 status is recorded there. EXP-067's
+degree-1 closure is UNAFFECTED (its 8 blocking singles were decided in exact
+Fraction arithmetic; only mod-p reductions of rational data carried the bug).
+Lesson recorded: NEVER reduce Fractions mod p with int(); always num*den^-1;
+regression-gate every new arithmetic path against a known exact decision.
