@@ -3,6 +3,14 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.47.000], 2026-07-23
+
+### Added
+- EXP-072: DEGREE 2 CLOSED on the sound pipeline: the triple support
+  {(0,1),(1,0),(3,5)} is infeasible mod both primes (regression gate green;
+  supersedes the retracted EXP-070 claim with an independent decision). Two
+  degree-1 blockers sit in the obstructing support.
+
 ## [0.46.000], 2026-07-23
 
 ### Changed

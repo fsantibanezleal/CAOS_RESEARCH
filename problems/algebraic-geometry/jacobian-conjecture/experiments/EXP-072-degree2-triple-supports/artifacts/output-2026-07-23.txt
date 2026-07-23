@@ -1,3 +1,7 @@
 ============================================================================
 EXP-072: degree-2 triple-support necessaries (t = 1)
 ============================================================================
+[PASS] 0: setup invariants  (0 s)
+[PASS] 1: regression gate (20 sampled pairs feasible)  bad [] (1 s)
+[PASS] 2: the triple-support sweep  INFEASIBLE at ((0, 1), (1, 0), (3, 5)) (both primes): NO DEGREE-2 COVECTOR: DEGREE 2 CLOSED (correct-arithmetic pipeline)
+RESULT: ALL CHECKS PASS. (degree 2 closed at a triple support)
