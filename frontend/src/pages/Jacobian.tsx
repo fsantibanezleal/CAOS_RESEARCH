@@ -8,9 +8,9 @@ const ExperimentModal = lazy(() => import('../components/ExperimentModal'));
 
 const REPO = 'https://github.com/fsantibanezleal/CAOS_RESEARCH';
 const MANUSCRIPTS = [
-  { slug: 'foundational', en: 'Paper A, foundational: the counterexample, structure, family, escape geometry and the 3D aftermath', es: 'Articulo A, fundacional: el contraejemplo, estructura, familia, geometria de escape y las consecuencias en 3D' },
-  { slug: 'planar', en: 'Paper B, the planar program: the theorem ladder, staircase transport and the (72,108) campaign', es: 'Articulo B, el programa planar: la escalera de teoremas, el transporte de escalera y la campaña (72,108)' },
-  { slug: 'cascade', en: 'Paper C, the consequence cascade: the dimension-48 Hessian witness', es: 'Articulo C, la cascada de consecuencias: el testigo Hessiano en dimension 48' },
+  { slug: 'foundational', doi: '10.5281/zenodo.21503366', en: 'Paper A, foundational: the counterexample, structure, family, escape geometry and the 3D aftermath', es: 'Articulo A, fundacional: el contraejemplo, estructura, familia, geometria de escape y las consecuencias en 3D' },
+  { slug: 'planar', doi: '10.5281/zenodo.21503368', en: 'Paper B, the planar program: the theorem ladder, staircase transport and the (72,108) campaign', es: 'Articulo B, el programa planar: la escalera de teoremas, el transporte de escalera y la campaña (72,108)' },
+  { slug: 'cascade', doi: '10.5281/zenodo.21503372', en: 'Paper C, the consequence cascade: the dimension-48 Hessian witness', es: 'Articulo C, la cascada de consecuencias: el testigo Hessiano en dimension 48' },
 ];
 
 export default function Jacobian() {
@@ -58,7 +58,7 @@ export default function Jacobian() {
                 <a href={`${REPO}/blob/main/manuscripts/jacobian-conjecture/${m.slug}/main.pdf`} target="_blank" rel="noreferrer">
                   {t(m.en, m.es)}
                 </a>{' '}
-                (<a href={`${REPO}/tree/main/manuscripts/jacobian-conjecture/${m.slug}`} target="_blank" rel="noreferrer">{t('source', 'fuente')}</a>)
+                (<a href={`https://doi.org/${m.doi}`} target="_blank" rel="noreferrer">DOI {m.doi}</a> · <a href={`${REPO}/tree/main/manuscripts/jacobian-conjecture/${m.slug}`} target="_blank" rel="noreferrer">{t('source', 'fuente')}</a>)
               </li>
             ))}
           </ul>
