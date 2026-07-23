@@ -1,0 +1,27 @@
+============================================================================
+EXP-065: the a/b interior sweep (chart a1 = 1, a0 = 2)
+============================================================================
+  interior points: 20
+  1: interior (1,1): pairing 400  [3 s]
+  1: interior (1,2): pairing 400  [5 s]
+  1: interior (2,2): pairing 800  [7 s]
+  1: interior (2,3): pairing 2400  [9 s]
+  1: interior (2,4): pairing 400  [11 s]
+  1: interior (3,4): pairing 960  [14 s]
+  1: interior (3,5): pairing 320  [16 s]
+  1: interior (3,6): pairing 320  [18 s]
+  1: interior (4,6): pairing 800  [20 s]
+  1: interior (4,7): pairing 9600  [23 s]
+  1: interior (4,8): pairing 400  [26 s]
+  1: interior (5,8): pairing 39200*epsN  [29 s]
+  1: interior (5,9): pairing 38400*epsN  [33 s]
+  1: interior (5,10): pairing 44800*epsN  [37 s]
+  1: interior (6,10): pairing 215040  [41 s]
+  1: interior (6,11): pairing 8960  [47 s]
+  1: interior (6,12): pairing 2240  [53 s]
+  1: interior (7,12): pairing 56448000  [64 s]
+  1: interior (7,13): pairing 308281344000  [82 s]
+  1: interior (7,14): pairing 786432000  [98 s]
+[PASS] 1: EVERY a/b interior point admits a one-symbol certificate with nonzero polynomial pairing  20 points, failures []
+  2: with EXP-063, hardening task 1 is COMPLETE on both polygon families; the simultaneous statement remains gated on EXP-064.
+RESULT: ALL CHECKS PASS.
