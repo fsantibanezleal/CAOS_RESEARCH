@@ -331,7 +331,7 @@ comparable cost.
 The explicit dimension-48 gradient witness (HC(48) false with an exact $\mathbb{Q}(i)$
 collision; the failing Hessian-nilpotent quartic $P_\star$) is EXP-041 and lives, with the
 full consequence cascade, in the cascade companion manuscript. The planar results of this
-page are the planar-program manuscript (manuscript-planar/); the 3D aftermath is the
+page are the planar-program manuscript (manuscripts/jacobian-conjecture/planar/); the 3D aftermath is the
 foundational manuscript. The routes map (near-term: the tower lemma; the B = 16 sweep) is
 program/jacobian-conjecture/routes-2026-07-22.md.
 

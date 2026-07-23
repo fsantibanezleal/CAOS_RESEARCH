@@ -6,6 +6,13 @@ import WallCanvas from '../components/WallCanvas';
 import CubicExplorer from '../components/CubicExplorer';
 const ExperimentModal = lazy(() => import('../components/ExperimentModal'));
 
+const REPO = 'https://github.com/fsantibanezleal/CAOS_RESEARCH';
+const MANUSCRIPTS = [
+  { slug: 'foundational', en: 'Paper A, foundational: the counterexample, structure, family, escape geometry and the 3D aftermath', es: 'Articulo A, fundacional: el contraejemplo, estructura, familia, geometria de escape y las consecuencias en 3D' },
+  { slug: 'planar', en: 'Paper B, the planar program: the theorem ladder, staircase transport and the (72,108) campaign', es: 'Articulo B, el programa planar: la escalera de teoremas, el transporte de escalera y la campaña (72,108)' },
+  { slug: 'cascade', en: 'Paper C, the consequence cascade: the dimension-48 Hessian witness', es: 'Articulo C, la cascada de consecuencias: el testigo Hessiano en dimension 48' },
+];
+
 export default function Jacobian() {
   const t = useT();
   const [jac, setJac] = useState<JacobianData | null>(null);
@@ -38,6 +45,23 @@ export default function Jacobian() {
             )}
           </p>
           <Refs label={t('Key sources', 'Fuentes clave')} ids={['alpoge2026', 'keller1939', 'smale1998', 'caosresearch']} />
+          <h3>{t('Manuscripts of this problem', 'Manuscritos de este problema')}</h3>
+          <p>
+            {t(
+              'The written record is a three-paper set, versioned with the repository; each link opens the built PDF directly.',
+              'El registro escrito es un conjunto de tres articulos, versionado con el repositorio; cada enlace abre directamente el PDF compilado.',
+            )}
+          </p>
+          <ul>
+            {MANUSCRIPTS.map((m) => (
+              <li key={m.slug}>
+                <a href={`${REPO}/blob/main/manuscripts/jacobian-conjecture/${m.slug}/main.pdf`} target="_blank" rel="noreferrer">
+                  {t(m.en, m.es)}
+                </a>{' '}
+                (<a href={`${REPO}/tree/main/manuscripts/jacobian-conjecture/${m.slug}`} target="_blank" rel="noreferrer">{t('source', 'fuente')}</a>)
+              </li>
+            ))}
+          </ul>
         </section>
       ),
     },
