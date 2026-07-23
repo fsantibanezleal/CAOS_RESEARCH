@@ -1,0 +1,27 @@
+============================================================================
+EXP-071: degree-3 pair necessaries (t = 1, mod-p composed maps)
+============================================================================
+[PASS] 1: setup invariants  rank 124, kernel 165, ops 51 (0 s)
+  1b: 200/1326 degree-2 pair subsystems OK (10 s)
+  1b: 400/1326 degree-2 pair subsystems OK (20 s)
+  1b: 600/1326 degree-2 pair subsystems OK (28 s)
+  1b: 800/1326 degree-2 pair subsystems OK (37 s)
+  1b: 1000/1326 degree-2 pair subsystems OK (45 s)
+  1b: 1200/1326 degree-2 pair subsystems OK (53 s)
+[PASS] 1b: the corrected degree-2 pair sweep  ALL pair subsystems FEASIBLE under correct arithmetic: EXP-070's closure is RETRACTED; degree 2 is OPEN at pair necessaries
+[PASS] 1c: EXP-069a diagonal triples re-audited (correct arithmetic)  infeasible singles: none (0 s)
+  2: 100/1326 degree-3 pair subsystems OK (11 s)
+  2: 200/1326 degree-3 pair subsystems OK (22 s)
+  2: 300/1326 degree-3 pair subsystems OK (33 s)
+  2: 400/1326 degree-3 pair subsystems OK (45 s)
+  2: 500/1326 degree-3 pair subsystems OK (55 s)
+  2: 600/1326 degree-3 pair subsystems OK (66 s)
+  2: 700/1326 degree-3 pair subsystems OK (77 s)
+  2: 800/1326 degree-3 pair subsystems OK (88 s)
+  2: 900/1326 degree-3 pair subsystems OK (99 s)
+  2: 1000/1326 degree-3 pair subsystems OK (109 s)
+  2: 1100/1326 degree-3 pair subsystems OK (120 s)
+  2: 1200/1326 degree-3 pair subsystems OK (130 s)
+  2: 1300/1326 degree-3 pair subsystems OK (140 s)
+[PASS] 2: the degree-3 pair sweep is decided  ALL pair subsystems feasible: degree 3 OPEN at pair necessaries; triple supports staged next
+RESULT: ALL CHECKS PASS. (degree 3 open at pairs)
