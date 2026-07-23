@@ -1203,18 +1203,69 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 0,
+     "bytes": 3007,
      "name": "output-2026-07-22.txt"
     }
    ],
-   "date": "",
+   "date": "2026-07-22",
    "hypothesis_md": "# EXP-063 - The interior sweep and the orientation remark (route N2, the mechanical endgame)\n\n- **Question.** Complete the remaining mechanical steps of the (72, 108) closure:\n  every interior lattice point of the reduced N(P) with its coefficient SYMBOLIC (one\n  at a time, t = 1 gauge), and the orientation swap.\n- **Motivation.** EXP-062 opened the upgrade with constant pairings (368640) at four\n  points; the sweep extends it to all remaining interior points. The (0,0) point is\n  trivially free (brackets kill constants: the P-constant never enters the system).\n  The orientation: (108, 72) is the SAME reduced object read in the other order: if\n  [P, Q] = x^2 then [Q, P] = -x^2, and the sign is absorbed by Q -> -Q (linear), so\n  consistency is orientation-invariant: a remark plus one machine spot-check, not a\n  new family.\n- **Falsifiable predictions.**\n  1. [MV] Every remaining interior point admits the one-symbol certificate at t = 1\n     with a nonzero polynomial pairing (expected: constants/monomials, per the\n     pattern).\n  2. [MV] The orientation spot-check: the sample system with target -x^2 has the\n     same EMPTY verdict as with x^2.\n  3. [D] The assembly document is drafted (program/jacobian-conjecture/\n     72108-closure-statement.md): the claim, its exact evidence chain\n     (EXP-052..063), its stated generality (axis-symbolic + dense-sample interior\n     coverage; the simultaneous-symbolic statement flagged as the honest residual),\n     and the conditionalities: FOR FELIPE'S VALIDATION, nothing leaves the repo.\n- **Method.** sympy over QQ(eps); ~22 one-symbol H-certificates (background, per the\n  cap discipline); one linsolve spot-check.\n- **Success criterion.** 1-2 verified; 3 drafted.\n- **Failure criterion.** An interior point whose pairing vanishes on a locus inside\n  the stratum: adjudicate that locus directly before any claim; escalate genuine\n  consistency immediately.\n\nDeclared 2026-07-22 before the run.\n",
    "id": "063",
    "problem": "jacobian-conjecture",
    "slug": "EXP-063-interior-sweep",
    "title": "The interior sweep and the orientation remark (route N2, the mechanical endgame)",
    "verdict": "",
+   "verdict_md": "# EXP-063 - Verdict: CONFIRMED; the case-c interior axis sweep is COMPLETE (2026-07-22)\n\nArtifacts: `artifacts/output-2026-07-22.txt` (4605 s background; cap discipline noted).\n\n## Findings\n\n1. **[MV]** ALL 44 remaining interior lattice points of the case-c reduced polygon\n   admit one-symbol certificates at t = 1 with NONZERO CONSTANT pairings (368640 at\n   most points; 2949120 / 1105920 / 737280 at edge-adjacent points; up to\n   6957847019520 near the corner): with EXP-062's four points and the trivially-free\n   (0,0), the axis-symbolic interior coverage is COMPLETE: every interior coefficient\n   is certified free for ALL its values with the others sampled.\n2. **[MV]** The orientation spot-check passes (targets x^2 and -x^2 both EMPTY):\n   the (108,72) reading adds nothing.\n3. Hardening task 1a is DONE. Task 1b (the a/b interior sweep) and the gate (task 2,\n   EXP-064, in flight) remain; the amended statement's scope is unchanged until the\n   gate decides.\n\n## How could this be wrong?\n\n- Axis coverage only (the audit's central point stands): the simultaneous-symbolic\n  statement is exactly what EXP-064 is deciding.\n"
+  },
+  {
+   "area": "algebraic-geometry",
+   "artifacts": [
+    {
+     "bytes": 0,
+     "name": "output-2026-07-22.txt"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-064 - The gate: termination as joint nilpotency (hardening task 2)\n\n- **Question.** Decide the simultaneous-symbolic interior certificate: does the\n  corrector ladder terminate for ALL interior coefficients at once?\n- **Motivation (the declared derivation).** With all-orders solvability proved (the\n  kernel is the constants, EXP-058), fix a LINEAR pinned right-inverse sigma of\n  Lambda -> Lambda M0 (one rref-with-transform of M0^T at t = 1; the gauge covers all\n  t != 0). The ladder recursion Lambda_alpha M0 = -sum_i Lambda_{alpha - e_i} M_i\n  becomes Lambda_alpha = (-1)^{|alpha|} (words in the FIXED operators A_i = sigma T_i)\n  applied to Lambda_0. Hence: TERMINATION for all eps simultaneously <=> the A_i are\n  JOINTLY NILPOTENT on the Krylov closure V_inf of Lambda_0 <=> the descending chain\n  W_{k+1} = sum_i A_i W_k (W_0 = V_inf) reaches ZERO in at most dim V_inf steps. Both\n  the Krylov closure and the chain are finite exact computations. If W_K = 0: the\n  polynomial covector Lambda(eps) exists with degree < K: THE SIMULTANEOUS-SYMBOLIC\n  CERTIFICATE EXISTS and the reduced systems close for ALL interior values (at t = 1,\n  hence all t != 0 by the gauge), discharging the audit's central objection. If the\n  chain stabilizes nonzero: THIS sigma's ladder does not terminate; re-pin or fall\n  back to chart covers (recorded honestly).\n- **Falsifiable predictions.**\n  1. [MV] The rref-with-transform right-inverse reproduces two known correctors\n     (spot checks against EXP-056's persisted Lambda_i).\n  2. [MV] The Krylov closure V_inf is computed and SMALL (tens of dimensions,\n     predicted from the localized corrector supports).\n  3. [MV] The descending chain reaches ZERO in at most dim V_inf steps: JOINT\n     NILPOTENCY: termination proved, with the explicit order bound K.\n  4. [D] Assembly: with 3, the amended statement upgrades per the audit's own\n     criterion (the simultaneous-symbolic certificate exists); the remaining\n     hardening tasks 3-8 stay queued; outreach still last and gated.\n- **Method.** sympy over QQ at t = 1; one rref of [M0^T | I]; sparse T_i\n  applications; exact span computations. Background per the cap discipline.\n- **Success criterion.** 1-3 verified either way (a nonzero stable chain is a valid,\n  recorded outcome that redirects to re-pinning/chart covers).\n- **Failure criterion.** The right-inverse failing the spot checks (implementation\n  bug, fix before any claim).\n\nDeclared 2026-07-22 before the run.\n",
+   "id": "064",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-064-joint-nilpotency",
+   "title": "The gate: termination as joint nilpotency (hardening task 2)",
+   "verdict": "",
    "verdict_md": ""
+  },
+  {
+   "area": "algebraic-geometry",
+   "artifacts": [
+    {
+     "bytes": 1404,
+     "name": "output-2026-07-22.txt"
+    }
+   ],
+   "date": "2026-07-22",
+   "hypothesis_md": "# EXP-065 - The a/b interior sweep (hardening task 1b)\n\n- **Question.** Complete hardening task 1: the interior lattice points of the a/b\n  sub-polygon, each with its coefficient SYMBOLIC (one at a time), on the forced\n  R^2 right edge (chart a1 = 1, a0 sampled at 2).\n- **Motivation.** EXP-061 closed the a/b forced edges with interior SAMPLES only;\n  the audit requires the axis-symbolic interior coverage here too (the a/b analog\n  of EXP-062/063). The systems are small (25/47 lattice points): runs are fast.\n- **Predictions.** 1. [MV] Every interior point admits a one-symbol certificate\n  with nonzero polynomial pairing (constants/monomials expected). 2. [D] With\n  EXP-063, hardening task 1 is COMPLETE on both polygon families; the simultaneous\n  statement stays gated on EXP-064.\n- **Method.** sympy over QQ(eps); the EXP-061 harness; background per cap.\n- **Failure criterion.** A vanishing locus inside the stratum: adjudicate directly;\n  escalate genuine consistency.\n\nDeclared 2026-07-22 before the run.\n",
+   "id": "065",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-065-ab-interior-sweep",
+   "title": "The a/b interior sweep (hardening task 1b)",
+   "verdict": "",
+   "verdict_md": "# EXP-065 - Verdict: CONFIRMED; hardening task 1 COMPLETE (2026-07-22)\n\nArtifacts: `artifacts/output-2026-07-22.txt`.\n\n## Findings\n\n1. **[MV]** All 20 interior lattice points of the a/b sub-polygon admit one-symbol\n   certificates (chart a1 = 1, a0 = 2) with nonzero constant pairings (2240 through\n   308281344000), in 98 s total.\n2. **[D]** With EXP-062/063 (case c: 48 points + the trivially-free constant),\n   HARDENING TASK 1 IS COMPLETE: the axis-symbolic interior coverage spans every\n   interior lattice point of BOTH reduced polygon families. The simultaneous\n   statement remains gated on EXP-064 (in flight), exactly per the audit.\n\n## How could this be wrong?\n\n- Axis coverage; one chart with a0 sampled (EXP-061 carries the chart-2 and\n  a0-symbolic evidence); the simultaneous certificate is the gate.\n"
+  },
+  {
+   "area": "algebraic-geometry",
+   "artifacts": [
+    {
+     "bytes": 773,
+     "name": "output-2026-07-22.txt"
+    }
+   ],
+   "date": "2026-07-22",
+   "hypothesis_md": "# EXP-066 - The soundness batch: the beta = 0 hand-off and more gauge orbits (hardening 3 + 5)\n\n- **Question.** Discharge audit hardening tasks 3 and 5 by machine: (3) the beta = 0\n  hand-off in case c (the degenerate right corner must be covered by explicit\n  certificates, not by reference); (5) additional gauge orbits beyond the single\n  EXP-062 sample.\n- **Predictions.** 1. [MV] P = x + edge(1) with beta = 0 (bare and with an interior\n  sample) carries explicit certificates with nonzero pairings on the current\n  harness. 2. [MV] Two more gauge orbits (t = 9 and t = 1/4) transport with\n  identical EMPTY verdicts. 3. [D] Tasks 3 and 5 close; 4 and 6-8 are documentation\n  edits (same session); the gate (EXP-064) stays the decisive item.\n- **Method.** sympy; the standing harness; foreground (small).\n\nDeclared 2026-07-22 before the run.\n",
+   "id": "066",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-066-soundness-batch",
+   "title": "The soundness batch: the beta = 0 hand-off and more gauge orbits (hardening 3 + 5)",
+   "verdict": "",
+   "verdict_md": "# EXP-066 - Verdict: CONFIRMED; hardening tasks 3 and 5 discharged (2026-07-22)\n\nArtifacts: `artifacts/output-2026-07-22.txt`.\n\n1. **[MV] Task 3:** the beta = 0 corner carries EXPLICIT certificates on the current\n   harness (pairing 576, bare and with an interior sample): the hand-off is direct\n   evidence, not a cross-reference.\n2. **[MV] Task 5:** gauge orbits t = 9 and t = 1/4 transport with identical EMPTY\n   verdicts: three orbits total now verify the gauge concretely.\n3. Tasks 4 and 6-8 are documentation edits applied this session; the gate (EXP-064)\n   remains the decisive item for the simultaneous statement.\n"
   }
  ]
 }

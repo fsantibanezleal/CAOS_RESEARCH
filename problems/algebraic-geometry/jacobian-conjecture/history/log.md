@@ -787,3 +787,23 @@
   second half).
 - Routine: wiki 04/05; log; RESUME; closure statement; manuscript v0.07; v0.41.000;
   bake. JC(2) remains open.
+
+## 2026-07-22 (session 39, the continuous loop) - Hardening 1, 3-8 done or disclosed; the gate in flight
+
+- Felipe's directive: continuous non-stop work with wakeups; executed (a fallback
+  wakeup armed; task notifications remain the primary signals).
+- **EXP-063 (confirmed):** the case-c interior AXIS SWEEP IS COMPLETE: all 44
+  remaining points certify with nonzero constant pairings; the orientation reading
+  adds nothing (4605 s background).
+- **EXP-065 (confirmed):** the a/b interior sweep: 20/20 points in 98 s: HARDENING
+  TASK 1 COMPLETE on both polygon families.
+- **EXP-066 (confirmed):** the soundness batch: the beta = 0 corner carries explicit
+  576 certificates (task 3); three gauge orbits verified (task 5). Tasks 4, 6-8
+  clarified/disclosed in the statement's hardening log (the kernel was symbolic-t all
+  along; the R^2 derivation labeled DERIVED; the N() convention and the (66,99)
+  record gap disclosed).
+- **The gate (EXP-064) remains in flight:** the joint-nilpotency chain computes in
+  background; it alone gates the simultaneous-symbolic statement and hence the
+  floor-raise. Task 9 (outreach) stays gated on Felipe.
+- Routine: wiki 05; log; RESUME; the statement's hardening log; v0.42.000; bake.
+  JC(2) remains open.

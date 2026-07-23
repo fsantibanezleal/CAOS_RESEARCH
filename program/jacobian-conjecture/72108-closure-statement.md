@@ -69,3 +69,25 @@ families.
    the collegial route and would also externally audit the residuals.
 3. The interior simultaneous-symbolic upgrade as a hardening task before any
    preprint.
+
+## Hardening progress (updated 2026-07-22, continuous loop)
+
+- Task 1 COMPLETE: the interior axis sweeps cover EVERY interior lattice point of
+  both polygon families (EXP-062/063: case c, 48 points + the trivially-free
+  constant; EXP-065: a/b, 20 points), all with nonzero constant pairings; the
+  orientation reading adds nothing (EXP-063).
+- Task 2 IN FLIGHT: EXP-064 (termination as joint nilpotency) computes in background;
+  it alone gates the simultaneous-symbolic statement.
+- Task 3 DONE (EXP-066): the beta = 0 corner covered by explicit 576 certificates.
+- Task 4 CLARIFIED: the kernel identification (k = the constants) was computed over
+  QQ(t) symbolically (EXP-058), not sampled; the sampled-t caveat applies only to
+  the EXP-057 rank values, whose role is superseded by EXP-058.
+- Task 5 DONE (EXP-066): three gauge orbits verified (t = 4, 9, 1/4).
+- Task 6 DISCLOSED: the R^2 right-edge structure is a DERIVED analog (the dossier's
+  sanity note, unpublished by GGHV); our certificates use FREE edge coefficients,
+  which subsume it either way.
+- Task 7 DISCLOSED: the N() vertex convention rests on the dossier's transcription
+  (verified against the LaTeX sources; the convention question is flagged there).
+- Task 8 DISCLOSED: GGHV Thm 2.1's own published record carries a bridging gap at
+  (66,99) (per the audit's tex-line read); our claim inherits Thm 2.1 as published.
+- Task 9 (outreach): LAST, gated on Felipe.

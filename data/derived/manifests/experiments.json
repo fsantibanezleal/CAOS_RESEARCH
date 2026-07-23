@@ -1,8 +1,8 @@
 {
  "artifact": {
-  "bytes": 358034,
+  "bytes": 366296,
   "path": "research/experiments.json",
-  "sha256": "520e80f66c080bf729019bf1c9d69c7327822ea77a03bf4b2840d3a24cfa4176"
+  "sha256": "49e34d6824ebfd5eb3cb2a47fd16ae4d9e7bc9989b7261ec3d39359640ca6250"
  },
  "case_id": "experiments",
  "gate": {

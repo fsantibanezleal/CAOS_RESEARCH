@@ -1,0 +1,11 @@
+============================================================================
+EXP-066: the soundness batch (beta = 0 hand-off; more gauge orbits)
+============================================================================
+  1: beta = 0, bare: pairing 576
+  1: beta = 0, with interior sample: pairing 576
+[PASS] 1: the beta = 0 corner is covered by EXPLICIT certificates (task 3)
+  2: orbit t = 9 (lambda = mu = 3): original EMPTY True, transported EMPTY True
+  2: orbit t = 1/4 (lambda = mu = 1/2): original EMPTY True, transported EMPTY True
+[PASS] 2: two additional gauge orbits transport with identical EMPTY verdicts (task 5)
+  3: tasks 4 and 6-8 are documentation edits (same session); the gate (EXP-064) remains the decisive item.
+RESULT: ALL CHECKS PASS.
