@@ -857,3 +857,20 @@
 - Routine: verdicts; wiki 05; log; RESUME; v0.44.000; bake; tag; PR; mirror
   (F57 dual annihilation identity, F58 degree-2 stage a). The floor-raise stays
   gated. JC(2) remains open.
+
+## 2026-07-23 (session 42) - DEGREE 2 CLOSED (EXP-070)
+
+- **EXP-070 (decided):** the support-restricted necessaries of the joint order-3
+  system, numpy mod-p over the exact Fraction setup. The sweep hit an INFEASIBLE
+  pair subsystem at {(2,6),(5,9)} (both primes, conclusive over Q): NO DEGREE-2
+  COVECTOR EXISTS. 800+ prior pair subsystems feasible; the obstruction sits at
+  a mixed pair away from the 8 degree-1 blockers: the obstruction pattern MOVES
+  with the degree.
+- Standing: truncation degrees 1 and 2 both closed; the floor-raise stays gated;
+  published Paper B scope unchanged. Declared next: degree-3 necessaries, the
+  all-degrees pattern theorem, or the [125,150] frontier (C13).
+- Also this session block: ORCID icon + link added on all three title pages
+  (orcidlink; v0.08/v0.08/v0.03; PR #53), Zenodo new-version drafts created and
+  AWAITING FELIPE'S PUBLISH (21504299/21504302/21504303).
+- Routine: verdict; wiki 05; log; RESUME; v0.45.000; bake; tag; PR; mirror (F59).
+  JC(2) remains open.

@@ -1,0 +1,16 @@
+============================================================================
+EXP-070: support-restricted order-3 necessaries (t = 1)
+============================================================================
+[PASS] 0: setup invariants  rank 124, kernel 165, ops 51 (0 s)
+  setup done incl. U maps (16 s)
+  Bv cached (16 s)
+  1: 100/1326 pair subsystems, bad 0 (197 s)
+  1: 200/1326 pair subsystems, bad 0 (375 s)
+  1: 300/1326 pair subsystems, bad 0 (615 s)
+  1: 400/1326 pair subsystems, bad 0 (826 s)
+  1: 500/1326 pair subsystems, bad 0 (1007 s)
+  1: 600/1326 pair subsystems, bad 0 (1175 s)
+  1: 700/1326 pair subsystems, bad 0 (1321 s)
+  1: 800/1326 pair subsystems, bad 0 (1437 s)
+[PASS] 1: pair subsystems  INFEASIBLE at ((2, 6), (5, 9)): NO DEGREE-2 COVECTOR: DEGREE 2 CLOSED (conclusive mod two primes)
+RESULT: ALL CHECKS PASS. (degree 2 closed at a pair subsystem)
