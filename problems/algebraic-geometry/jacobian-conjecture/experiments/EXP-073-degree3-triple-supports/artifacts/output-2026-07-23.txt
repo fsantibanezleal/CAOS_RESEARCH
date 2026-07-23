@@ -40,3 +40,9 @@ EXP-073: degree-3 triple-support necessaries (t = 1)
   2: 17500/20825 triple supports OK (11159 s)  [resume index 17500]
   2: 18000/20825 triple supports OK (11577 s)  [resume index 18000]
   2: 18500/20825 triple supports OK (11927 s)  [resume index 18500]
+  2: 19000/20825 triple supports OK (12314 s)  [resume index 19000]
+  2: 19500/20825 triple supports OK (12685 s)  [resume index 19500]
+  2: 20000/20825 triple supports OK (13005 s)  [resume index 20000]
+  2: 20500/20825 triple supports OK (13414 s)  [resume index 20500]
+[PASS] 2: the triple-support sweep  ALL triple supports feasible: degree 3 open through triples; quadruples or the constructive path staged
+RESULT: ALL CHECKS PASS. (degree 3 open through triples)

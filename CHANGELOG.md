@@ -3,6 +3,15 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.48.000], 2026-07-24
+
+### Added
+- EXP-073: degree 3 OPEN through the triple tier (all 20825 supports feasible,
+  gate green). EXP-074: route R3 (rational-in-eps) closed as vacuous (the gate
+  found Lambda0 M0 = 0; homogeneity clears rationals to polynomials).
+- Zenodo v2 published for the three papers (ORCID title pages); the problem
+  page links concept DOIs.
+
 ## [0.47.000], 2026-07-23
 
 ### Added

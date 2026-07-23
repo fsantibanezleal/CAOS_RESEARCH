@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-23, session 44 closed; continuous loop)
+# RESUME - Jacobian conjecture program (updated 2026-07-24, session 45 closed; continuous loop)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -113,17 +113,18 @@ the standing decision rule: every new experiment names its route).
    chapter (degrees 1-2 closed theorems + the retraction story as a soundness
    case study) at the next version. Manuscript updates transcribe from verdicts,
    never from memory.
-   THE LIVE ROUTE after session 44: DEGREES 1 AND 2 CLOSED (EXP-067 exact;
-   EXP-072 sound mod-p at triple support {(0,1),(1,0),(3,5)}, gate-verified,
-   superseding the retracted EXP-070). Degree 3 open at pairs (EXP-071). NEXT:
-   EXP-073 = degree-3 TRIPLE-support sweep (deg3_subsystem_feasible from
-   EXP-071/run.py generalizes; import as in EXP-072; regression gate on sampled
-   deg3 pairs; resumable; heavier rows: 5 gammas -> for degree 3 the triple tier
-   is 15 gamma-blocks x 125 rows, 19 blocks x 165 unknowns). If degree 3 closes:
-   the PATTERN-THEOREM proposal (every truncation degree obstructed; the
-   polynomial-covector route closes; redirect to rational-in-eps or chart
-   covers) GOES TO FELIPE. HARD RULES: modfrac always; regression-gate every
-   arithmetic path. Zenodo v2 drafts await Felipe. THEN the
+   THE LIVE ROUTE after session 45: degrees 1-2 CLOSED; degree 3 OPEN through the
+   triple tier (EXP-073: all 20825 feasible, gate green); R3 vacuous (EXP-074).
+   SESSION 46 PLAN: (i) launch R1 = the degree-3 QUADRUPLE sweep as a resumable
+   multi-day background run (derive run.py from EXP-073 with
+   combinations(51,4), checkpoint the resume index in the artifact every 500);
+   (ii) while it runs, open R5 = the [125,150] frontier at C13 (the transcribed
+   configurations live in context/2026-07-22-beyond125-and-audit-dossier.md
+   Part 1): declare the C13 reduced-system experiment exactly as the (72,108)
+   pipeline began (transcribe polygons, verify against the source, cleared
+   certificates first); (iii) R2 (constructive GF(p) full solve) and R4 (chart
+   covers) stay staged; R6 (manuscript B truncation chapter, transcribed from
+   verdicts) lands at the next manuscript version. THEN the
    [125,150] frontier: 24 transcribed configurations (C13 first).
    PUBLICATION STATE: all three papers PUBLISHED on Zenodo 2026-07-23 (A
    .21503366, B .21503368, C .21503372); metadata centralized in
