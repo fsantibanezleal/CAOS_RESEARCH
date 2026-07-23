@@ -3,6 +3,15 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.39.000], 2026-07-22
+
+### Added
+- The edge-normalization branch VERIFIED from the dossier's verbatim pipeline: our
+  certificate stratum is the exact forced case-c family (assembly checklist updated).
+- EXP-061: Prop 4.3's cases a/b CLOSE on their forced families (monomial pairings on
+  two charts, 2-23 s each; vanishing loci excluded by vertex forcing).
+- EXP-060 (case-c symbolic certificate) recorded as in flight.
+
 ## [0.38.000], 2026-07-22
 
 ### Added
