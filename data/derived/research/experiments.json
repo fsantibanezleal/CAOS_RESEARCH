@@ -1198,6 +1198,23 @@
    "title": "Case c under the torus gauge (route N2, the closure of the last branch)",
    "verdict": "",
    "verdict_md": "# EXP-062 - Verdict: CONFIRMED; case c closes on its forced family (2026-07-22)\n\nArtifacts: `artifacts/output-2026-07-22.txt`.\n\n## Findings\n\n1. **[MV] The gauge works concretely:** the t = 4 system and its transported t = 1\n   companion (rescaled target 8 x^2) give the SAME verdict (both EMPTY): emptiness\n   is invariant along the torus orbit, so t normalizes to 1 WLOG on the stratum.\n2. **[MV] The beta-symbolic certificates at t = 1:** pairing 23592960 beta on the\n   bare family AND both interior-sampled variants (identical): vanishing only at\n   beta = 0, where the (8,14) corner degenerates and the EXP-053/055 stratum\n   certificates take over. CASE C IS CLOSED on its forced family for all t != 0\n   and all beta.\n3. **[MV] The free-interior upgrade opened:** four interior coefficients symbolic,\n   one at a time: pairing the CONSTANT 368640 each time: nonvanishing for ALL\n   values. The mechanical sweep over the remaining interior points is queued.\n\n## Assembly state\n\nAll three Prop 4.3 branches are now certificate-covered on their forced families\n(a/b: EXP-061; c: this record + the gauge). Remaining, mechanical: the rest of the\ninterior sweep; the orientation swap; then the assembled statement ((72,108)\ndiscarded; floor to 125) goes to Felipe for phrasing validation per the checklist.\n\n## How could this be wrong?\n\n- The gauge argument's scalar bookkeeping (target rescaling) was machine-verified on\n  one orbit sample; the general identity is one line of chain rule (stated).\n- Interior generality: 4 of ~30 points symbolic so far + earlier samples; the sweep\n  completes it.\n"
+  },
+  {
+   "area": "algebraic-geometry",
+   "artifacts": [
+    {
+     "bytes": 0,
+     "name": "output-2026-07-22.txt"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-063 - The interior sweep and the orientation remark (route N2, the mechanical endgame)\n\n- **Question.** Complete the remaining mechanical steps of the (72, 108) closure:\n  every interior lattice point of the reduced N(P) with its coefficient SYMBOLIC (one\n  at a time, t = 1 gauge), and the orientation swap.\n- **Motivation.** EXP-062 opened the upgrade with constant pairings (368640) at four\n  points; the sweep extends it to all remaining interior points. The (0,0) point is\n  trivially free (brackets kill constants: the P-constant never enters the system).\n  The orientation: (108, 72) is the SAME reduced object read in the other order: if\n  [P, Q] = x^2 then [Q, P] = -x^2, and the sign is absorbed by Q -> -Q (linear), so\n  consistency is orientation-invariant: a remark plus one machine spot-check, not a\n  new family.\n- **Falsifiable predictions.**\n  1. [MV] Every remaining interior point admits the one-symbol certificate at t = 1\n     with a nonzero polynomial pairing (expected: constants/monomials, per the\n     pattern).\n  2. [MV] The orientation spot-check: the sample system with target -x^2 has the\n     same EMPTY verdict as with x^2.\n  3. [D] The assembly document is drafted (program/jacobian-conjecture/\n     72108-closure-statement.md): the claim, its exact evidence chain\n     (EXP-052..063), its stated generality (axis-symbolic + dense-sample interior\n     coverage; the simultaneous-symbolic statement flagged as the honest residual),\n     and the conditionalities: FOR FELIPE'S VALIDATION, nothing leaves the repo.\n- **Method.** sympy over QQ(eps); ~22 one-symbol H-certificates (background, per the\n  cap discipline); one linsolve spot-check.\n- **Success criterion.** 1-2 verified; 3 drafted.\n- **Failure criterion.** An interior point whose pairing vanishes on a locus inside\n  the stratum: adjudicate that locus directly before any claim; escalate genuine\n  consistency immediately.\n\nDeclared 2026-07-22 before the run.\n",
+   "id": "063",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-063-interior-sweep",
+   "title": "The interior sweep and the orientation remark (route N2, the mechanical endgame)",
+   "verdict": "",
+   "verdict_md": ""
   }
  ]
 }

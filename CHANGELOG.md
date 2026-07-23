@@ -3,6 +3,21 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.41.000], 2026-07-22
+
+### Changed
+- THE AUDIT AMENDMENT: the commissioned adversarial audit caught the closure
+  headline overclaiming (interior generality: axis + samples does not close ALL
+  values; EXP-063 cited pre-artifact; residuals incomplete). All surfaces amended to
+  the certified scope (closure statement; manuscript-planar v0.06 -> v0.07; wiki
+  04/05); the floor-raise is gated on the simultaneous-symbolic certificate; nine
+  ranked hardening tasks queued; GGHV outreach last.
+
+### Added
+- The beyond-125 transcription: the complete [125, 150] frontier (24 configurations,
+  tex-line-referenced) as the next territory after hardening
+  (context/2026-07-22-beyond125-and-audit-dossier.md, Part 1).
+
 ## [0.40.000], 2026-07-22
 
 ### Added

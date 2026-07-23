@@ -366,3 +366,19 @@ order 2 (EXP-056, in flight). Termination at any finite order yields the explici
 universal covector and closes the reduced stratum; the remaining assembly is the
 reduction's other forcing branches, after which the verified JC(2) floor rises from
 108 to 125.
+
+## The audit amendment: the certified scope of the (72, 108) work (2026-07-22)
+
+A commissioned adversarial audit (context/2026-07-22-beyond125-and-audit-dossier.md,
+Part 2) found the closure headline OVERCLAIMED relative to its own residuals: the GGHV
+reduction forces NO interior coefficients, so closure must hold for ALL interior
+values, and axis-symbolic + sampled coverage does not establish that (the program's
+own EXP-054 refutation proves slice extrapolation fails). THE CERTIFIED STATEMENT, to
+which all program surfaces now conform: the three reduced GGHV branches are
+certificate-covered on their FORCED-EDGE families, with interior generality
+axis-symbolic and densely sampled: strong evidence toward, not yet a proof of, the
+(72, 108) closure. The floor-raise to 125 is assertable only after the
+simultaneous-symbolic interior certificate (the audit's hardening task 2). The nine
+ranked hardening tasks are the queue; GGHV outreach is last. The audit also
+transcribed the complete [125, 150] frontier (24 configurations) as the next
+territory once the claim hardens.

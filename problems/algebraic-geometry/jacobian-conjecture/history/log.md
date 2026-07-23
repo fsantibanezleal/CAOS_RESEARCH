@@ -757,3 +757,33 @@
   then the assembled statement ((72,108) discarded, completing GGHV's missing case;
   the JC(2) floor rises from 108 to 125) goes to Felipe for phrasing validation.
 - Routine: wiki 05; log; RESUME; v0.40.000; bake. JC(2) remains open.
+
+## 2026-07-22 (session 38) - Validation, the adversarial audit, and the amendment
+
+- Felipe validated the then-current state ("I validate all the current state") and
+  directed the new paths with deep research and revision. The closure statement was
+  marked VALIDATED and the manuscript gained the closure section (v0.06).
+- **The commissioned adversarial audit landed** (context/2026-07-22-beyond125-and-
+  audit-dossier.md) and CAUGHT AN OVERCLAIM in our own validated statement: (a) the
+  GGHV reduction forces NO interior coefficients, so the closure must hold for ALL
+  interior values, and axis-symbolic + sampled coverage does not establish that (the
+  program's own EXP-054 lesson); (b) the statement cited EXP-063 before its artifact
+  existed; (c) the residuals list was incomplete (beta = 0 hand-off; sampled-t kernel
+  basis; one-sample gauge check; the derived unpublished R^2 edge forcing; the N()
+  convention; an inherited bridging gap at (66,99) in Thm 2.1's published record).
+- **The amendment, applied immediately on all surfaces:** the closure statement
+  downgraded to the certified scope (strong evidence toward, not yet a proof of, the
+  closure; the floor-raise gated on the simultaneous-symbolic certificate);
+  manuscript-planar v0.07 amended likewise; wiki 04/05 aligned. Nothing left the repo
+  at any point. The audit's NINE ranked hardening tasks are the queue; GGHV outreach
+  is last. The eleventh refutation of the series, aimed at ourselves by design.
+- **The new path provisioned:** the same dossier transcribes the complete [125, 150]
+  frontier: 24 configurations (6 family members F2/F7/F8/F9/F11/F24, 18 sporadic),
+  tex-line-referenced, with pipeline inputs for deriving each reduced system and
+  cheap first targets flagged (C13 shares our open case's final corner). Opens after
+  hardening.
+- EXP-063 (the interior sweep + orientation check) still in flight; adjudicated on
+  its notification as hardening task 1's first half (the a/b interior sweep is the
+  second half).
+- Routine: wiki 04/05; log; RESUME; closure statement; manuscript v0.07; v0.41.000;
+  bake. JC(2) remains open.
