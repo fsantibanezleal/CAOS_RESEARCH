@@ -1,0 +1,5 @@
+============================================================================
+EXP-073: degree-3 triple-support necessaries (t = 1)
+============================================================================
+[PASS] 0: setup invariants  (0 s)
+[PASS] 1: regression gate (20 sampled pairs feasible)  bad [] (3 s)
