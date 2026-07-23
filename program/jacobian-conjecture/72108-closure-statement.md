@@ -1,7 +1,9 @@
-# The (72, 108) closure statement - DRAFT PENDING FELIPE'S VALIDATION (2026-07-22)
+# The (72, 108) closure statement - VALIDATED BY FELIPE (2026-07-22)
 
-STATUS: DRAFT. Nothing here leaves the repository (no outreach, no manuscript claim,
-no diffusion) until Felipe validates the phrasing, per 72108-assembly-checklist.md.
+STATUS: VALIDATED (Felipe, 2026-07-22: "I validate all the current state"). The
+claim and phrasing below may now enter the manuscripts and wiki. EXTERNAL actions
+(GGHV contact, Thompson outreach, diffusion posts) each still require an explicit
+per-action go from Felipe: validation of the state is not an instruction to publish.
 
 ## The claim (draft phrasing)
 
