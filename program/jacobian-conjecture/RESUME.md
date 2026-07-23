@@ -96,7 +96,24 @@ the standing decision rule: every new experiment names its route).
 2. N2 / JCB-040, GATE STATE after session 40: EXP-064 REFUTED the pinned ladder
    (chain stabilizes at dim 39; not a refutation of the certificate: 165-dim gauge)
    and EXP-067 CLOSED DEGREE 1 outright (8 diagonal blocks obstructed; all pairs
-   feasible; full system infeasible mod p, conclusive). THE LIVE ROUTE after session 44: DEGREES 1 AND 2 CLOSED (EXP-067 exact;
+   feasible; full system infeasible mod p, conclusive). MAX-DEPTH DIRECTIVE (Felipe, 2026-07-23, session 45): continue at maximum depth
+   with ALL remaining work, non-stop; when a route exhausts, PROPOSE AND EXPLORE
+   NEW ALTERNATIVES; persist every state and result; update all documents
+   (wiki, manuscripts, app, mirror) as results land. THE DEEP ROUTE MAP beyond
+   the truncation tiers: (R1) quadruple supports (next necessary tier; same
+   pipeline); (R2) constructive sparse GF(p) solve of the full joint system
+   (consider the galois/numpy route or block-Krylov over GF(p)); (R3)
+   RATIONAL-IN-EPS covectors: allow denominators d(eps) (clearing multiplies the
+   target; the certificate condition relaxes to c(eps)^T M(eps) = d(eps) * x^2
+   row; a strictly larger search space that the truncation obstructions do NOT
+   exclude); (R4) CHART COVERS: partition the eps-space into charts with a
+   per-chart polynomial covector (the EXP-063/065 axis certificates are the
+   axis charts; the question is a FINITE cover); (R5) the [125,150] frontier
+   (C13 first; runs in parallel rounds); (R6) manuscript B gains the truncation
+   chapter (degrees 1-2 closed theorems + the retraction story as a soundness
+   case study) at the next version. Manuscript updates transcribe from verdicts,
+   never from memory.
+   THE LIVE ROUTE after session 44: DEGREES 1 AND 2 CLOSED (EXP-067 exact;
    EXP-072 sound mod-p at triple support {(0,1),(1,0),(3,5)}, gate-verified,
    superseding the retracted EXP-070). Degree 3 open at pairs (EXP-071). NEXT:
    EXP-073 = degree-3 TRIPLE-support sweep (deg3_subsystem_feasible from
