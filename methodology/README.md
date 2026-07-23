@@ -29,3 +29,4 @@ given session. The six documents below are binding for every problem folder.
    replays persisted, versioned artifacts.
 6. **Primary sources only in claims.** Every transcribed claim cites DOI/arXiv/official URL, or is
    flagged UNVERIFIED until it does. Secondary sources may guide, never certify.
+- [08 - Parallel sessions and per-problem isolation](08-parallel-sessions.md): the binding rules that let multiple sessions drive different problems concurrently (release ownership, bake ownership, start ritual).
