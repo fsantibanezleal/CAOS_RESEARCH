@@ -1,0 +1,16 @@
+============================================================================
+EXP-062: case c under the torus gauge (t normalized to 1)
+============================================================================
+  1: consistency at t=4: False; transformed (t=1-side, rescaled target): False (6 s)
+[PASS] 1: the gauge transports the system with the SAME verdict (both EMPTY)
+  2: t=1, beta symbolic, bare: pairing 23592960*beta (131 s)
+  2: t=1, beta symbolic, interior sample 1: pairing 23592960*beta (179 s)
+  2: t=1, beta symbolic, interior sample 2: pairing 23592960*beta (142 s)
+[PASS] 2: the beta-symbolic certificates exist at t = 1 with nonzero polynomial pairings
+  3: interior (0,1) symbolic: pairing 368640
+  3: interior (0,2) symbolic: pairing 368640
+  3: interior (0,3) symbolic: pairing 368640
+  3: interior (0,4) symbolic: pairing 368640
+[PASS] 3: the free-interior upgrade holds on the tested points (nonzero polynomial pairings)  4 points
+  4: assembly: cases a/b closed (EXP-061); case c closed on the forced family at t = 1 (gauge covers all t != 0); interior upgrade underway (mechanical); remaining: finish the interior sweep + the orientation swap; then the floor-raise statement to Felipe.
+RESULT: ALL CHECKS PASS.
