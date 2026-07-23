@@ -1,0 +1,19 @@
+============================================================================
+EXP-068: the obstruction calculus (t = 1)
+============================================================================
+  setup: rank 124, kernel 165, ops 51 (1 s)
+[FAIL] 1: the functional test reproduces EXP-067's 8 blocked operators  found [] (0 s)
+  1: obstruction scalars: 
+  2: p=2147483629: consistent=True, rank 0/8415 (0 s)
+  2: p=2147483587: consistent=True, rank 0/8415 (0 s)
+[PASS] 2: the level-1 gauge system is decided  FEASIBLE mod both primes (prediction confirmed): all level-2 correctors can be made to exist
+[PASS] 3a: all level-2 particulars exist under the chosen gauge  unsolvable 0/1326 (0 s)
+  3b: 4000/23426 triples, rank 0 (0 s)
+  3b: 8000/23426 triples, rank 0 (0 s)
+  3b: 12000/23426 triples, rank 0 (0 s)
+  3b: 16000/23426 triples, rank 0 (1 s)
+  3b: 20000/23426 triples, rank 0 (1 s)
+  3b: p=2147483629: consistent=True, 23426/23426 eqs, rank 0/218790 (1 s)
+[PASS] 3: the sufficient order-3 probe is decided  FEASIBLE mod p under the fixed u: a DEGREE-2 COVECTOR CANDIDATE exists; the exact confirmation is the staged follow-up (upgrade proposal only after the exact pass, FOR FELIPE)
+RESULT: ALL CHECKS PASS.
+RESULT: 1 FAILED: ["1: the functional test reproduces EXP-067's 8 blocked operators"]

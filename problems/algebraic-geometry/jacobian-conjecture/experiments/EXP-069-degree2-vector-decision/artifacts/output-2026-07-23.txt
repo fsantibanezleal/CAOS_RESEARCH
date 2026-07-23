@@ -1,0 +1,12 @@
+============================================================================
+EXP-069 stage a: diagonal-triple necessary blocks (t = 1)
+============================================================================
+[PASS] 1: setup invariants  rank 124, kernel 165, ops 51 (0 s)
+  setup done (0 s)
+  a: 10/51 ops, infeasible so far [] (3 s)
+  a: 20/51 ops, infeasible so far [] (6 s)
+  a: 30/51 ops, infeasible so far [] (8 s)
+  a: 40/51 ops, infeasible so far [] (11 s)
+  a: 50/51 ops, infeasible so far [] (13 s)
+[PASS] 2: the diagonal-triple decision  ALL 51 diagonal triples feasible (both primes): degree 2 stays open at this necessary condition; the joint order-3 system is the staged follow-up (stage b)
+RESULT: ALL CHECKS PASS.

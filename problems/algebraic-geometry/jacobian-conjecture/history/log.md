@@ -840,3 +840,20 @@
   close) is declared next; then the [125,150] frontier (C13).
 - Routine: verdicts; wiki 05; log; RESUME; backlog; v0.43.000; bake; tag; PR;
   mirror (F55, F56). The floor-raise claim remains gated. JC(2) remains open.
+
+## 2026-07-23 (session 41) - The correction round: the dual annihilation identity; degree 2 stays open
+
+- **EXP-068 (premise refuted; the failure IS the discovery):** the cokernel
+  covector c annihilates EVERY bracket image: all solvability conditions hold
+  automatically at every order (the dual annihilation identity, explaining
+  EXP-058 structurally). My scalar-obstruction reading in the EXP-067 verdict
+  was WRONG and is corrected in place ([SUPERSEDED] block kept for the record);
+  EXP-068's vacuous scalar conclusions are withdrawn in its verdict.
+- **EXP-069 stage a (decided; expectation refuted):** all 51 diagonal-triple
+  necessary blocks for degree 2 are feasible mod both primes: the level-1 gauge
+  clears every diagonal obstruction, including the 8 degree-1 blockers. Degree 2
+  stays OPEN; the joint order-3 system (about 2.9M sparse mod-p equations in
+  227k gauge unknowns) is stage b, blockers-first with early-abort.
+- Routine: verdicts; wiki 05; log; RESUME; v0.44.000; bake; tag; PR; mirror
+  (F57 dual annihilation identity, F58 degree-2 stage a). The floor-raise stays
+  gated. JC(2) remains open.

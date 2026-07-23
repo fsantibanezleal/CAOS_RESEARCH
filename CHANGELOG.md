@@ -3,6 +3,17 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.44.000], 2026-07-23
+
+### Added
+- EXP-068 adjudicated honestly: the scalar-obstruction premise REFUTED and the
+  dual annihilation identity discovered (c annihilates all bracket images:
+  solvability automatic at every order); EXP-067's structural paragraph corrected
+  in place; vacuous conclusions withdrawn.
+- EXP-069 stage a: all 51 diagonal-triple necessary blocks for degree 2 feasible
+  mod both primes (the 8 degree-1 blockers clear at degree 2): degree 2 stays
+  open; the joint order-3 system is stage b.
+
 ## [0.43.000], 2026-07-23
 
 ### Added
