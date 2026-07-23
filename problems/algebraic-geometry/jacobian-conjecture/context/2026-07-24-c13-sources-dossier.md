@@ -77,3 +77,28 @@ d_0 in {4,8} FORK) or changes (possibly q_1 = 8: unique forcing again, discard
 extends) requires the F_1 construction (GGV1 Theorem central) computed for the
 C13 chain. EXP-077 = that computation + the Prop 3.29 fetch (GGV2 candidate
 1605.09430, same e-print route) + the endgame test at the resulting corner.
+
+## Fetch 4: GGV2 candidate 1605.09430 secured [E:\_Temp\ggv-sources\1605\src.tex, 74 KB]
+
+The paper IS the possible-last-lower-corner (pllc) theory: admissible chains,
+Definition pllc, and the program "some points are possible last lower corners
+and some other points are not" (tex lines 839-927): exactly the exclusion
+machinery the (8,4) endgame cites. CAVEAT: source numbering is symbolic
+(labels, not printed numbers): whether "Proposition 3.29" lives HERE or in
+1406.0886 requires matching the compiled numbering next round (download
+1406.0886 too; grep for the specific exclusion criterion that kills (8,4):
+candidates near "condicion para v sub rho sigma" line 509, which states when
+(a0,b0) IS a possible last lower corner via v_{1,-2} > 0). Note the promising
+shape: v_{1,-2}(8,4) = 8 - 8 = 0, v_{1,-2}(8,12) = 8 - 24 = -16: the SIGN
+structure differs between the sibling's corner and C13's: the exclusion may
+work differently at (8,12). DERIVATION NEEDED with the exact statement.
+
+## FELIPE'S DIRECTIVE (2026-07-24): manuscripts + republish
+
+Update the manuscripts as results land (transcribed from verdicts, never
+memory) and PUBLISH NEW ZENODO VERSIONS autonomously when a substantive block
+closes (Felipe reviews post-publication and requests changes as new versions).
+Next manuscript action: Paper B gains the truncation chapter (degrees 1-2
+closed theorems, the retraction case study, the dual annihilation identity,
+the sweep methodology) and the frontier section (C13 campaign state); then
+pdflatex two-pass, version bump, Zenodo new version via the API flow.
