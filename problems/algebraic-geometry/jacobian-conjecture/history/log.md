@@ -736,3 +736,24 @@
   sampled); case c = EXP-060 pending; then the free-interior upgrade + orientation
   swap; then the assembled floor-raise to 125 goes to Felipe for phrasing validation.
 - Routine: wiki 05; log; RESUME; v0.39.000; bake. JC(2) remains open.
+
+## 2026-07-22 (session 37) - Case c closes; all three branches covered
+
+- **EXP-060 stopped and superseded** (the two-symbol nullspace stalled for hours with
+  no output; no claim taken): the torus gauge (x -> lambda x, y -> mu y with
+  lambda mu = t; the bracket target restored by a linear Q-rescale) normalizes t to 1
+  WLOG, reducing case c to one-symbol certificates.
+- **EXP-062 (confirmed): CASE C CLOSES.** (1) The gauge verified concretely: the
+  t = 4 system and its transported t = 1 companion (target 8 x^2) give the same
+  EMPTY verdict. (2) The beta-symbolic certificates at t = 1: pairing
+  23592960 beta on the bare family and both interior-sampled variants; beta = 0 (the
+  degenerate corner) falls back to the EXP-053/055 stratum certificates: the forced
+  family is empty for ALL t != 0 and ALL beta. (3) The free-interior upgrade opened:
+  four interior coefficients symbolic, each with the CONSTANT pairing 368640:
+  nonvanishing for all values.
+- **Assembly state: all three Prop 4.3 branches are certificate-covered on their
+  forced families** (a/b: EXP-061; c: EXP-062 + gauge). Remaining, mechanical: the
+  rest of the interior sweep (one-symbol runs, seconds each); the orientation swap;
+  then the assembled statement ((72,108) discarded, completing GGHV's missing case;
+  the JC(2) floor rises from 108 to 125) goes to Felipe for phrasing validation.
+- Routine: wiki 05; log; RESUME; v0.40.000; bake. JC(2) remains open.
