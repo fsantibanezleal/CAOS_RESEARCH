@@ -22,7 +22,7 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-22 (working manuscript, v0.05; split from the foundational companion)}
+\date{2026-07-22 (working manuscript, v0.06; split from the foundational companion)}
 
 \begin{document}
 \maketitle
@@ -357,6 +357,26 @@ is a batched linear solve, and termination at any finite order yields the explic
 universal covector, closing the reduced stratum for all parameters. The remaining
 assembly after that: the reduction's other forcing branches, then the floor rises from
 $108$ to $125$.
+
+\subsection*{The closure of the $(72, 108)$ case (validated 2026-07-22)}
+
+The endgame completed: all three branches of the GGHV reduction are certificate-covered
+on their forced families. Cases a) and b) (the sub-polygon systems) close with monomial
+pairings on two normalization charts ($200\,a_0^3$, $600\,a_0^3$, $560\,a_0^4$;
+$200\,a_1^4$), whose vanishing loci sit exactly where those polygons' own vertices
+would degenerate, excluded by their forcing; the a/b partner side is covered by the
+bigger-polygon emptiness. Case c) closes under the torus gauge (the forced-edge
+parameter normalizes to $t = 1$; verified concretely by transporting an orbit sample
+with identical verdict): the $eta$-symbolic certificates give pairing
+$23592960\,eta$ with the degenerate $eta = 0$ corner covered by the stratum
+certificates, and the interior coefficients certify axis-symbolically with constant
+pairings ($368640$ at every tested point), on top of dense mixed-direction sampling.
+The orientation swap is absorbed by $Q 	o -Q$. Stated with its residuals (the
+fully-simultaneous interior-symbolic certificate is not computed; the claim rests on
+GGHV's Prop.~4.3 as published, transcription verified): 	extbf{no Jacobian pair of
+degrees $(72, 108)$ exists; combined with GGHV Thm.~2.1, any counterexample to $JC(2)$
+has $\max\deg \ge 125$: the verified floor rises from $108$ to $125$.} The full
+evidence chain and residuals: 	exttt{program/jacobian-conjecture/72108-closure-statement.md}.
 
 \section{Positioning and novelty}\label{sec:positioning}
 
