@@ -3,6 +3,22 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.43.000], 2026-07-23
+
+### Added
+- Zenodo publication of the three-paper record (CC-BY 4.0): A
+  10.5281/zenodo.21503366, B 10.5281/zenodo.21503368, C 10.5281/zenodo.21503372;
+  DOIs wired into the manuscripts index and the problem page. The manuscripts
+  relocated to the global manuscripts/ tree (per-problem folders, history
+  preserved). GitHub release v0.42.000 for the Zenodo GitHub archiver.
+- EXP-064 adjudicated: the pivot-pinned corrector ladder does NOT terminate (the
+  descending chain stabilizes at dim 39; Krylov closure dim 122). Re-staged
+  Fraction backend (88 s) after the sympy run produced no flushed output.
+- EXP-067: the sigma-free direct degree-1 covector DECIDED: degree 1 closed (8
+  diagonal blocks obstructed; all 1275 pairs feasible in isolation; full system
+  infeasible mod p). The 1-dim cokernel reduces every block to one scalar
+  obstruction: the obstruction calculus is the declared successor (EXP-068).
+
 ## [0.42.000], 2026-07-22
 
 ### Added

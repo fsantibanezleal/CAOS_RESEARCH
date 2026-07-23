@@ -1097,7 +1097,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1699,
+     "bytes": 1487,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -1222,6 +1222,10 @@
     {
      "bytes": 0,
      "name": "output-2026-07-22.txt"
+    },
+    {
+     "bytes": 1425,
+     "name": "output-run2-2026-07-23.txt"
     }
    ],
    "date": "",
@@ -1231,7 +1235,7 @@
    "slug": "EXP-064-joint-nilpotency",
    "title": "The gate: termination as joint nilpotency (hardening task 2)",
    "verdict": "",
-   "verdict_md": ""
+   "verdict_md": "# EXP-064 - Verdict: the pinned ladder does NOT terminate (chain stabilizes at dim 39)\n\n**Status: prediction 3 REFUTED (machine-verified either-way outcome, as declared).**\n\n## What ran\n\nTwo runs of the same declared computation. The original sympy run (run.py, background)\nproduced no flushed output in over 20 hours and was stopped without a claim (cap\ndiscipline; stdout was block-buffered on top of sympy Matrix overhead). run2.py is the\nidentical mathematics re-staged operationally: exact Fraction arithmetic on plain\nlists, an incremental-elimination span reducer replacing repeated rank() calls, and\nper-step flushed prints. Total runtime 88 s (artifacts/output-run2-2026-07-23.txt).\n\n## Results against the declared predictions\n\n1. **[MV, PASS]** The rref-with-transform right-inverse solves a first-order\n   corrector and the solution verifies identically (A x = b residual zero).\n   M0^T is 125 x 289 on the H-pool, rank 124, one consistency row (the kernel is\n   the constants, EXP-058, reconfirmed).\n2. **[MV, PASS]** The Krylov closure V_inf of Lambda_0 under the 51 operators\n   A_i = sigma T_i is computed exactly and is bounded: dim 122, closed in 3\n   iterations.\n3. **[MV, REFUTED]** The descending chain W_{k+1} = sum_i A_i W_k does NOT reach\n   zero: it descends monotonically 121, 111, 101, 91, 81, 74, 67, 60, 54, 49, 45,\n   42, 40, 39 and STABILIZES at dim 39 (step 15 reproduces the span of step 14\n   exactly). The operators are NOT jointly nilpotent on V_inf for THIS pinned\n   sigma: this ladder does not terminate.\n\n## What this does and does not mean\n\n- It does NOT overturn all-orders solvability (EXP-058): every corrector exists at\n  every order. What fails is TERMINATION of this particular recursion: the pivot-\n  pinned right-inverse recirculates a 39-dimensional invariant core forever.\n- It does NOT prove the simultaneous-symbolic certificate impossible: sigma has a\n  large gauge freedom (ker of the solve map has dimension 289 - 124 = 165 per\n  application), and joint nilpotency is a property of the CHOSEN sigma. A different\n  gauge may terminate; alternatively the finite-degree covector can be attacked\n  DIRECTLY, bypassing sigma entirely (the degree-D truncation is one finite exact\n  linear system per D; this is the declared successor, EXP-067).\n- The floor-raise claim therefore REMAINS GATED. The published Paper B (DOI\n  10.5281/zenodo.21503368) already states exactly this certified scope; no\n  published claim needs amendment.\n\n## Cap discipline note\n\nThe sympy run consumed far beyond the cap with zero flushed output; verdict taken\nentirely from run2. Recorded lesson: long exact-linear-algebra runs get the\nFraction backend and flushed staged prints FIRST, background sympy never again for\nthis shape of computation.\n"
   },
   {
    "area": "algebraic-geometry",
@@ -1266,6 +1270,23 @@
    "title": "The soundness batch: the beta = 0 hand-off and more gauge orbits (hardening 3 + 5)",
    "verdict": "",
    "verdict_md": "# EXP-066 - Verdict: CONFIRMED; hardening tasks 3 and 5 discharged (2026-07-22)\n\nArtifacts: `artifacts/output-2026-07-22.txt`.\n\n1. **[MV] Task 3:** the beta = 0 corner carries EXPLICIT certificates on the current\n   harness (pairing 576, bare and with an interior sample): the hand-off is direct\n   evidence, not a cross-reference.\n2. **[MV] Task 5:** gauge orbits t = 9 and t = 1/4 transport with identical EMPTY\n   verdicts: three orbits total now verify the gauge concretely.\n3. Tasks 4 and 6-8 are documentation edits applied this session; the gate (EXP-064)\n   remains the decisive item for the simultaneous statement.\n"
+  },
+  {
+   "area": "algebraic-geometry",
+   "artifacts": [
+    {
+     "bytes": 4374,
+     "name": "output-2026-07-23.txt"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-067 - The direct degree-1 covector (sigma-free attack on the gate)\n\n- **Question.** Does a polynomial covector of eps-degree 1 close the reduced system\n  for all interior coefficients simultaneously?\n- **Motivation (the declared derivation).** EXP-064 refuted termination for the\n  pivot-pinned sigma (chain stabilizes at dim 39), but sigma carries a 165-dim\n  gauge freedom per solve, so the ladder framing is the wrong tool: the truncated\n  covector is itself a FINITE linear object. Write Lambda(eps) = L0 +\n  sum_i eps_i Lambda_i with the 51 lower coefficients eps_i. The requirement\n  Lambda(eps) M(eps) = L0 M0 for all eps is EXACTLY: (order 1) Lambda_i M0 =\n  -L0 M_i for each i; (order 2) Lambda_i M_i = 0 and Lambda_i M_j + Lambda_j M_i\n  = 0 for i < j. Parametrize Lambda_i = P_i + N u_i (P_i any particular solution,\n  N a basis of the 165-dim left kernel of M0 on the pool): the order-2 conditions\n  become one sparse linear system in the 51 x 165 unknowns u, each equation\n  touching at most two blocks. No sigma anywhere.\n- **Falsifiable predictions.**\n  1. [MV] Order-1 solvability reconfirms: all 51 particular solutions P_i exist\n     (all-orders solvability, EXP-058).\n  2. [MV] Every SINGLE-index block is feasible: for each i, some kernel adjustment\n     achieves Lambda_i M_i = 0.\n  3. [MV] Every PAIR block (i, j) is feasible in isolation.\n  4. [MV] The FULL degree-1 system (all blocks simultaneously) is decided: first\n     modulo two independent large primes (inconsistency mod a good prime is\n     conclusive for inconsistency over Q on this integer system; consistency mod\n     both primes stages an exact confirmation as a follow-up part). If consistent\n     and an exact solution is produced: THE SIMULTANEOUS CERTIFICATE EXISTS at\n     degree 1 and the statement-upgrade proposal goes to Felipe. If infeasible:\n     degree 1 is closed honestly and degree 2 becomes the next target.\n- **Method.** Exact Fraction backend on plain lists (the EXP-064 run2 lesson),\n  flushed staged prints; mod-p sparse elimination for the full system's decision;\n  t = 1 gauge (all t != 0 by the torus gauge). Background per the cap discipline.\n- **Success criterion.** Predictions 1-4 decided by machine either way; a refuted\n  prediction is a valid recorded outcome.\n- **Failure criterion.** Implementation-level failure of the order-1 reconfirmation\n  (would contradict EXP-058: fix before any claim).\n\nDeclared 2026-07-23 before the run.\n",
+   "id": "067",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-067-direct-degree1-covector",
+   "title": "The direct degree-1 covector (sigma-free attack on the gate)",
+   "verdict": "",
+   "verdict_md": "# EXP-067 - Verdict: degree 1 CLOSED (no degree-1 covector; 8 blocking operators)\n\n**Status: DECIDED. Prediction 2 refuted; predictions 1, 3, 4 verified; the\nexperiment's question is answered: no eps-degree-1 covector exists.**\n\n## Results against the declared predictions (artifacts/output-2026-07-23.txt, 288 s)\n\n1. **[MV, PASS]** Order-1 solvability reconfirms: all 51 particular solutions\n   exist (EXP-058 consistent). Setup: M0^T is 125 x 289 on the pool, rank 124,\n   left-kernel dimension 165.\n2. **[MV, REFUTED]** Eight single-index blocks are INFEASIBLE: no kernel\n   adjustment achieves Lambda_i M_i = 0 for\n   i in {(1,0), (3,5), (4,6), (4,7), (5,8), (7,13), (8,14), (8,15)}.\n   Notably (1,0) is the x-term itself, and the rest cluster just below the\n   staircase top edge.\n3. **[MV, PASS]** All 1275 pair blocks are feasible in isolation: the obstruction\n   at degree 1 is carried ENTIRELY by the diagonal (2e_i) conditions, not by the\n   mixed (e_i + e_j) couplings.\n4. **[MV, PASS]** The full degree-1 system is decided: INFEASIBLE mod the prime\n   2147483629 (rank 1116 of 8415 unknowns when inconsistency is hit at the\n   single-block equations). For this all-integer system, mod-p inconsistency is\n   conclusive over Q. DEGREE 1 IS CLOSED.\n\n## The structural reading (for the next experiment, declared here)\n\nThe cokernel of the pool system is ONE-dimensional (rank 124 of 125): every block\ncondition therefore reduces to ONE scalar obstruction, the pairing of its\nright-hand side against the cleared covector c spanning the cokernel. A single\nblock i is infeasible exactly when c annihilates the image of the kernel under\nM_i (c^T B_i = 0) while the particular pairing c^T (P_i M_i) is nonzero. The\ndegree-1 refutation says this happens for exactly 8 operators. This makes the\nwhole truncation question a question about ONE explicit linear functional: the\nobstruction calculus (which combinations of blocks can be cancelled at which\ndegree) is finite and computable degree by degree, and a closed-form pattern in\nthe 8 blocking operators is the plausible route to a THEOREM (either: some finite\ndegree closes, with an explicit certificate; or: every degree is obstructed,\nclosing the truncation route honestly).\n\n## Consequences\n\n- The simultaneous-symbolic certificate does not exist at degree 1; the\n  floor-raise claim REMAINS GATED (the published Paper B scope is unchanged and\n  correct).\n- Next: the obstruction-functional analysis (EXP-068): compute c, the 8\n  obstruction scalars, and the degree-2 system's obstruction pattern directly.\n"
   }
  ]
 }

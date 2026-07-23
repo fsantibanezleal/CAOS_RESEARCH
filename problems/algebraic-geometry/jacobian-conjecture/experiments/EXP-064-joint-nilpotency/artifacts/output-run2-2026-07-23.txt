@@ -2,3 +2,28 @@
 EXP-064 run2: termination as joint nilpotency (t = 1, Fraction backend)
 ============================================================================
   A: stage A built: M0^T is 125 x 289 (0 s)
+  A: Gauss-Jordan done: rank 124, 1 consistency rows (0 s)
+  A: operators A_i: 51
+[PASS] 1: the transform-based right-inverse solves and verifies a first-order corrector
+  2: Krylov iteration 1: dim 27 (0 s)
+  2: Krylov iteration 2: dim 122 (6 s)
+  2: Krylov iteration 3: dim 122 (19 s)
+[PASS] 2: the Krylov closure computed and bounded  dim 122, iterations 3
+  3: chain step 1: dim 121 (19 s)
+  3: chain step 2: dim 111 (34 s)
+  3: chain step 3: dim 101 (44 s)
+  3: chain step 4: dim 91 (52 s)
+  3: chain step 5: dim 81 (60 s)
+  3: chain step 6: dim 74 (66 s)
+  3: chain step 7: dim 67 (71 s)
+  3: chain step 8: dim 60 (74 s)
+  3: chain step 9: dim 54 (77 s)
+  3: chain step 10: dim 49 (80 s)
+  3: chain step 11: dim 45 (82 s)
+  3: chain step 12: dim 42 (83 s)
+  3: chain step 13: dim 40 (85 s)
+  3: chain step 14: dim 39 (87 s)
+  3: chain step 15: dim 39 (88 s)
+[FAIL] 3: the descending chain reaches ZERO (joint nilpotency)  STABILIZED NONZERO at dim 39
+  outcome: THIS sigma's ladder does not terminate; re-pin or chart covers next (recorded).
+RESULT: 1 FAILED: ['3: the descending chain reaches ZERO (joint nilpotency)']

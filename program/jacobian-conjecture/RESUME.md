@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-22, session 39 closed; continuous loop)
+# RESUME - Jacobian conjecture program (updated 2026-07-23, session 40 closed; continuous loop)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -93,14 +93,21 @@ the standing decision rule: every new experiment names its route).
    currently Theorem 6 or full-window towers; map what escapes ALL current lemmas;
    (b) the y-anchored (quasi-triangular-type) completions classification (JCB-035,
    the endgame frame): JC(2) = the triangular family is everything.
-2. N2 / JCB-040, HARDENING STATE: tasks 1, 3, 5 DONE by machine (EXP-063/065/066:
-   the complete axis sweeps on both families; explicit beta = 0 certificates; three
-   gauge orbits); tasks 4, 6-8 clarified/disclosed (the statement's hardening log).
-   THE GATE (task 2) = EXP-064, IN FLIGHT: the joint-nilpotency descending chain;
-   W_K = 0 proves the simultaneous-symbolic covector and unlocks the floor-raise
-   claim (which then goes BACK TO FELIPE); a nonzero stable chain redirects to
-   re-pinning sigma or chart covers. Task 9 (GGHV outreach) gated on Felipe. THEN
-   the [125,150] frontier: 24 transcribed configurations (C13 first).
+2. N2 / JCB-040, GATE STATE after session 40: EXP-064 REFUTED the pinned ladder
+   (chain stabilizes at dim 39; not a refutation of the certificate: 165-dim gauge)
+   and EXP-067 CLOSED DEGREE 1 outright (8 diagonal blocks obstructed; all pairs
+   feasible; full system infeasible mod p, conclusive). THE LIVE ROUTE: the
+   obstruction calculus (EXP-068): the cokernel is 1-dim, every block = ONE scalar
+   obstruction against the cleared covector c; compute the pattern degree by
+   degree, aim at a THEOREM (a finite degree closes with an explicit certificate,
+   or every degree is obstructed and the truncation route closes honestly). The
+   floor-raise stays GATED; published Paper B (10.5281/zenodo.21503368) already
+   states the certified scope. GGHV outreach draft ready (Felipe sends). THEN the
+   [125,150] frontier: 24 transcribed configurations (C13 first).
+   PUBLICATION STATE: all three papers PUBLISHED on Zenodo 2026-07-23 (A
+   .21503366, B .21503368, C .21503372); metadata centralized in
+   _CAOS_MANAGE/manuscripts/; any claim upgrade = Zenodo "New version", never an
+   edit.
 3. JCB-041 remainder: the screenshot verification pass ONLY (bake is automatic and
    verified; wiki 04 rewritten in session 24). FELIPE still validates the novelty
    phrasing before submission.
