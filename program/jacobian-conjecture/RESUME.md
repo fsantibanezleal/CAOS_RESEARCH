@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-24, session 45 closed; continuous loop)
+# RESUME - Jacobian conjecture program (updated 2026-07-24, session 46 closed; continuous loop)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -115,16 +115,17 @@ the standing decision rule: every new experiment names its route).
    never from memory.
    THE LIVE ROUTE after session 45: degrees 1-2 CLOSED; degree 3 OPEN through the
    triple tier (EXP-073: all 20825 feasible, gate green); R3 vacuous (EXP-074).
-   SESSION 46 PLAN: (i) launch R1 = the degree-3 QUADRUPLE sweep as a resumable
-   multi-day background run (derive run.py from EXP-073 with
-   combinations(51,4), checkpoint the resume index in the artifact every 500);
-   (ii) while it runs, open R5 = the [125,150] frontier at C13 (the transcribed
-   configurations live in context/2026-07-22-beyond125-and-audit-dossier.md
-   Part 1): declare the C13 reduced-system experiment exactly as the (72,108)
-   pipeline began (transcribe polygons, verify against the source, cleared
-   certificates first); (iii) R2 (constructive GF(p) full solve) and R4 (chart
-   covers) stay staged; R6 (manuscript B truncation chapter, transcribed from
-   verdicts) lands at the next manuscript version. THEN the
+   SESSION 47 PLAN (46 done: EXP-075 quadruple sweep IN FLIGHT resumable; EXP-076
+   C13 probe decided, gap list persisted): (i) adjudicate EXP-075 on its
+   notification (or check progress and re-arm; resume via run.py <index> if the
+   session died); (ii) C13 GAP CLOSURE: fetch the primary sources (GGV2 =
+   Guccione-Guccione-Valqui, the paper with Prop 3.29, and GGHV22 arXiv
+   2204.14178 section 3 pp.3-4) via WebFetch/arXiv, transcribe Prop 3.29's
+   statement + Cor 7.4's divisibility hypothesis into a dated context dossier,
+   then EXP-077 decides the three gaps (machine arithmetic where decidable):
+   either the C13 DISCARD closes (first [125,150] floor progress, statement TO
+   FELIPE) or C13's Phase B reduction begins; (iii) rounds close with the
+   routine (v0.50.000 next; mirror F66+). THEN the
    [125,150] frontier: 24 transcribed configurations (C13 first).
    PUBLICATION STATE: all three papers PUBLISHED on Zenodo 2026-07-23 (A
    .21503366, B .21503368, C .21503372); metadata centralized in
