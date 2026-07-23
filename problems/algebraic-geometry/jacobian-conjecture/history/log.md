@@ -807,3 +807,36 @@
   floor-raise. Task 9 (outreach) stays gated on Felipe.
 - Routine: wiki 05; log; RESUME; the statement's hardening log; v0.42.000; bake.
   JC(2) remains open.
+
+## 2026-07-23 (session 40) - The gate adjudicated: pinned ladder refuted, degree 1 closed; the papers PUBLISHED
+
+- **Zenodo publication (Felipe approved and pressed Publish):** the three papers
+  are live under CC-BY 4.0: A 10.5281/zenodo.21503366, B 10.5281/zenodo.21503368,
+  C 10.5281/zenodo.21503372 (concept DOIs .21503365/.21503367/.21503371). Paper B
+  carries the audited certified scope, so no published claim is affected by this
+  session's refutations. DOIs are wired into manuscripts/README.md and the
+  problem page; metadata centralized in the management repo. The manuscripts moved
+  to the global tree manuscripts/jacobian-conjecture/{foundational,planar,cascade}
+  (history preserved); GitHub release v0.42.000 created for the Zenodo GitHub
+  archiver. Thompson index-correction issue filed (their repo, issue #1); GGHV
+  outreach draft committed for Felipe to send.
+- **EXP-064 (prediction 3 refuted, as declared possible):** the descending chain
+  W_{k+1} = sum A_i W_k stabilizes NONZERO at dim 39 (V_inf dim 122, monotone
+  descent 121..39): the pivot-pinned right-inverse does NOT terminate. All-orders
+  solvability stands; the certificate is not refuted (165-dim gauge per solve).
+  Operational lesson recorded: the sympy background run flushed NOTHING in 20 h;
+  the identical mathematics on a plain-Fraction backend with flushed staged
+  prints finished in 88 s.
+- **EXP-067 (decided: DEGREE 1 CLOSED):** the sigma-free direct attack. All 51
+  particular solutions exist; 8 single-index blocks are infeasible ((1,0),
+  (3,5), (4,6), (4,7), (5,8), (7,13), (8,14), (8,15)); all 1275 pair blocks
+  feasible in isolation (the obstruction is purely diagonal at degree 1); the
+  full system is infeasible mod 2147483629, conclusive over Q. No degree-1
+  covector.
+- **The structural discovery:** the cokernel is 1-dimensional, so EVERY block
+  condition reduces to one scalar obstruction against the cleared covector c.
+  The truncation question is an explicit obstruction calculus, finite per degree:
+  EXP-068 (the obstruction functional; aiming at a theorem for which degrees can
+  close) is declared next; then the [125,150] frontier (C13).
+- Routine: verdicts; wiki 05; log; RESUME; backlog; v0.43.000; bake; tag; PR;
+  mirror (F55, F56). The floor-raise claim remains gated. JC(2) remains open.
