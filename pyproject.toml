@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "researchlab"
 # PEP 440 form of the display version X.XX.XXX (see CHANGELOG.md + researchlab.__version__).
-version = "0.43.0"
+version = "0.44.0"
 description = "CAOS Research, an experiment-history repository for open mathematical and physical problems."
 readme = "README.md"
 requires-python = ">=3.11"
