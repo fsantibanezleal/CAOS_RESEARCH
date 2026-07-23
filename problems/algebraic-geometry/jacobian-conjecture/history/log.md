@@ -890,3 +890,15 @@
   arithmetic path carries a declared regression gate against an exact decision.
 - Routine: verdicts; wiki; log; RESUME; v0.46.000; bake; tag; PR; mirror
   (F59 corrected, F60). JC(2) remains open.
+
+## 2026-07-23 (session 44) - DEGREE 2 CLOSED on the sound pipeline (EXP-072)
+
+- **EXP-072 (decided):** with the modfrac pipeline regression-gated (20 sampled
+  pairs reproduce EXP-071 run4), the degree-2 triple-support sweep hit
+  INFEASIBLE at {(0,1),(1,0),(3,5)} (both primes; conclusive): NO DEGREE-2
+  COVECTOR. Two degree-1 blockers in the support: the obstruction pattern
+  persists at triple scope. This SUPERSEDES the retracted EXP-070 claim with an
+  independent decision at a different support on sound arithmetic.
+- Standing: degrees 1 and 2 closed; degree 3 open at pairs, triple tier next;
+  if it closes, the pattern-theorem proposal goes TO FELIPE. Floor-raise gated.
+- Routine: verdict; wiki; log; RESUME; v0.47.000; bake; tag; PR; mirror (F61).
