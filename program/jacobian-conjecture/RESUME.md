@@ -102,7 +102,7 @@ the standing decision rule: every new experiment names its route).
    (wiki, manuscripts, app, mirror) as results land. THE DEEP ROUTE MAP beyond
    the truncation tiers: (R1) quadruple supports (next necessary tier; same
    pipeline); (R2) constructive sparse GF(p) solve of the full joint system
-   (consider the galois/numpy route or block-Krylov over GF(p)); (R3)
+   (consider the galois/numpy route or block-Krylov over GF(p)); (R3, CLOSED AS VACUOUS by EXP-074: Lambda0 M0 = 0, the condition is homogeneous, rationals clear to polynomials)
    RATIONAL-IN-EPS covectors: allow denominators d(eps) (clearing multiplies the
    target; the certificate condition relaxes to c(eps)^T M(eps) = d(eps) * x^2
    row; a strictly larger search space that the truncation obstructions do NOT
