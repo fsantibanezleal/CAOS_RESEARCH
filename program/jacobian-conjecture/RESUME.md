@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-22, session 38 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-22, session 39 closed; continuous loop)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -93,16 +93,14 @@ the standing decision rule: every new experiment names its route).
    currently Theorem 6 or full-window towers; map what escapes ALL current lemmas;
    (b) the y-anchored (quasi-triangular-type) completions classification (JCB-035,
    the endgame frame): JC(2) = the triangular family is everything.
-2. N2 / JCB-040, AMENDED SCOPE (the audit): the three branches are covered on
-   their FORCED-EDGE families; the closure claim is GATED on the
-   simultaneous-symbolic interior certificate. THE HARDENING QUEUE (audit Part 2,
-   ranked): (1) land EXP-063 (in flight) + the missing a/b interior sweep;
-   (2) THE SIMULTANEOUS-SYMBOLIC CERTIFICATE (EXP-064: ladder termination, minor
-   chart cover, or symbolic rank; this gates the floor-raise); (3)-(5) soundness
-   dependencies (beta = 0 hand-off; symbolic-t kernel; more gauge orbits);
-   (6)-(8) disclosure/robustness (R^2 derivation labeled DERIVED; N() convention;
-   the (66,99) record gap noted); (9) GGHV outreach LAST. THEN the [125,150]
-   frontier: 24 transcribed configurations (dossier Part 1; C13 first).
+2. N2 / JCB-040, HARDENING STATE: tasks 1, 3, 5 DONE by machine (EXP-063/065/066:
+   the complete axis sweeps on both families; explicit beta = 0 certificates; three
+   gauge orbits); tasks 4, 6-8 clarified/disclosed (the statement's hardening log).
+   THE GATE (task 2) = EXP-064, IN FLIGHT: the joint-nilpotency descending chain;
+   W_K = 0 proves the simultaneous-symbolic covector and unlocks the floor-raise
+   claim (which then goes BACK TO FELIPE); a nonzero stable chain redirects to
+   re-pinning sigma or chart covers. Task 9 (GGHV outreach) gated on Felipe. THEN
+   the [125,150] frontier: 24 transcribed configurations (C13 first).
 3. JCB-041 remainder: the screenshot verification pass ONLY (bake is automatic and
    verified; wiki 04 rewritten in session 24). FELIPE still validates the novelty
    phrasing before submission.

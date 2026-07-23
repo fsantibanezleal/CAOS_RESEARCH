@@ -3,6 +3,16 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.42.000], 2026-07-22
+
+### Added
+- EXP-063: the case-c interior axis sweep COMPLETE (44/44, nonzero constants;
+  orientation neutral). EXP-065: the a/b interior sweep COMPLETE (20/20, 98 s):
+  hardening task 1 done on both polygon families. EXP-066: the soundness batch
+  (beta = 0 explicit 576 certificates; three gauge orbits): tasks 3 and 5 done;
+  tasks 4, 6-8 clarified/disclosed in the statement's hardening log. The gate
+  (EXP-064, joint nilpotency) in flight and alone gating the floor-raise.
+
 ## [0.41.000], 2026-07-22
 
 ### Changed
