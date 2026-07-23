@@ -21,7 +21,17 @@ experiment's question is answered: no eps-degree-1 covector exists.**
    single-block equations). For this all-integer system, mod-p inconsistency is
    conclusive over Q. DEGREE 1 IS CLOSED.
 
-## The structural reading (for the next experiment, declared here)
+## The structural reading (CORRECTED by EXP-068)
+
+**Correction (2026-07-23, EXP-068):** the paragraph below was WRONG as first
+written. EXP-068 showed the cokernel covector c annihilates ALL bracket images:
+solvability conditions hold automatically at every order (the dual annihilation
+identity), so blocks do NOT reduce to scalar obstructions against c. The
+degree-1 infeasibility found here is a VECTOR-level fact (the 8 singles' 125-dim
+conditions), and higher degrees must be decided at the vector level too
+(EXP-069). The original text is kept below for the record.
+
+## The structural reading (for the next experiment, declared here) [SUPERSEDED]
 
 The cokernel of the pool system is ONE-dimensional (rank 124 of 125): every block
 condition therefore reduces to ONE scalar obstruction, the pairing of its
