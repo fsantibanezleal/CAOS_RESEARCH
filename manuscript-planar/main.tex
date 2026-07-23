@@ -22,7 +22,7 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-22 (working manuscript, v0.05; split from the foundational companion)}
+\date{2026-07-22 (working manuscript, v0.07; split from the foundational companion)}
 
 \begin{document}
 \maketitle
@@ -357,6 +357,30 @@ is a batched linear solve, and termination at any finite order yields the explic
 universal covector, closing the reduced stratum for all parameters. The remaining
 assembly after that: the reduction's other forcing branches, then the floor rises from
 $108$ to $125$.
+
+\subsection*{The closure of the $(72, 108)$ case (validated 2026-07-22)}
+
+The endgame completed: all three branches of the GGHV reduction are certificate-covered
+on their forced families. Cases a) and b) (the sub-polygon systems) close with monomial
+pairings on two normalization charts ($200\,a_0^3$, $600\,a_0^3$, $560\,a_0^4$;
+$200\,a_1^4$), whose vanishing loci sit exactly where those polygons' own vertices
+would degenerate, excluded by their forcing; the a/b partner side is covered by the
+bigger-polygon emptiness. Case c) closes under the torus gauge (the forced-edge
+parameter normalizes to $t = 1$; verified concretely by transporting an orbit sample
+with identical verdict): the $eta$-symbolic certificates give pairing
+$23592960\,eta$ with the degenerate $eta = 0$ corner covered by the stratum
+certificates, and the interior coefficients certify axis-symbolically with constant
+pairings ($368640$ at every tested point), on top of dense mixed-direction sampling.
+The orientation swap is absorbed by $Q 	o -Q$. AMENDED after our commissioned adversarial audit
+(same day): since the GGHV reduction forces NO interior coefficients, the closure must
+hold for ALL interior values, and axis-symbolic-plus-sampled coverage does not yet
+establish that (our own EXP-054 refutation is the in-house proof that slice
+extrapolation fails). The certified statement is therefore: 	extbf{the three reduced
+branches are certificate-covered on their forced-edge families, with interior
+generality axis-symbolic and densely sampled: strong evidence toward, not yet a proof
+of, the $(72, 108)$ closure}; the floor-raise to $125$ becomes assertable only after
+the simultaneous-symbolic interior certificate (the ranked hardening queue is in
+	exttt{program/jacobian-conjecture/72108-closure-statement.md}).
 
 \section{Positioning and novelty}\label{sec:positioning}
 
