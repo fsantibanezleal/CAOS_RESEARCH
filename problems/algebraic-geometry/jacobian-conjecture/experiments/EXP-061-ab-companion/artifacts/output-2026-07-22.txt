@@ -1,0 +1,13 @@
+============================================================================
+EXP-061: the a/b companion (sub-polygon cases of Prop 4.3)
+============================================================================
+  P-polygon lattice points: 25; Q-polygon: 47
+  1: chart a1=1, bare: pairing 200*a0**3 (85 H-rows, 2 s)
+  1: chart a1=1, interior sample 1: pairing 600*a0**3 (89 H-rows, 6 s)
+  1: chart a1=1, interior sample 2: pairing 560*a0**4 (91 H-rows, 23 s)
+[PASS] 1: chart a1 = 1 certificates exist (bare + two interior samples), pairing nonzero polynomial in a0
+  2: chart a0=1, bare: pairing 200*a1**4 (3 s)
+[PASS] 2: chart a0 = 1 certificate exists, pairing nonzero polynomial in a1
+  3: locus vs stratum: adjudicated in the verdict from the printed factorizations (R nonzero excludes a0 = a1 = 0; each chart's pairing covers the other's gauge boundary).
+  4: assembly: with EXP-060 (case c) these certificates cover all three Prop 4.3 branches on their forced families (interior at sampled generality; free-coefficient upgrade + orientation swap queued).
+RESULT: ALL CHECKS PASS.
