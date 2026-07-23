@@ -3,6 +3,14 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.46.000], 2026-07-23
+
+### Changed
+- RETRACTION: EXP-070's "degree 2 closed" withdrawn (int(Fraction) truncation in
+  its mod-p assembly; caught by EXP-071's declared regression gate). Corrected
+  decisions: degree 2 OPEN (all pair subsystems feasible), EXP-069a re-verified,
+  degree 3 OPEN at pair necessaries. Degree 1 (exact) stands.
+
 ## [0.45.000], 2026-07-23
 
 ### Added

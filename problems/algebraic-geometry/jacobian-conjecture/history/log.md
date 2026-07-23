@@ -874,3 +874,19 @@
   AWAITING FELIPE'S PUBLISH (21504299/21504302/21504303).
 - Routine: verdict; wiki 05; log; RESUME; v0.45.000; bake; tag; PR; mirror (F59).
   JC(2) remains open.
+
+## 2026-07-23 (session 43) - THE RETRACTION ROUND: degree 2 re-opened; degree 3 open at pairs
+
+- EXP-071's declared regression gate refused to reproduce EXP-070: the hunt
+  found int(Fraction) TRUNCATION in EXP-070's mod-p assembly (plus an int64
+  overflow fixed on the way). Under correct arithmetic (modfrac) the pair
+  {(2,6),(5,9)} is FEASIBLE: EXP-070's "degree 2 closed" is RETRACTED in its
+  verdict, wiki, and the mirror (F59 corrected). Session 42's headline is
+  WITHDRAWN; v0.45.000's CHANGELOG entry superseded by this correction.
+- Corrected decisions (EXP-071 run4): degree-2 pair sweep ALL FEASIBLE (degree 2
+  OPEN); EXP-069a re-verified; degree-3 pair sweep ALL FEASIBLE (open at pairs).
+  Degree 1 stands (EXP-067 was exact).
+- Lessons hardened: never int() a Fraction for modular reduction; every new
+  arithmetic path carries a declared regression gate against an exact decision.
+- Routine: verdicts; wiki; log; RESUME; v0.46.000; bake; tag; PR; mirror
+  (F59 corrected, F60). JC(2) remains open.

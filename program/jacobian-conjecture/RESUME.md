@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-23, session 42 closed; continuous loop)
+# RESUME - Jacobian conjecture program (updated 2026-07-23, session 43 closed; continuous loop)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -96,16 +96,17 @@ the standing decision rule: every new experiment names its route).
 2. N2 / JCB-040, GATE STATE after session 40: EXP-064 REFUTED the pinned ladder
    (chain stabilizes at dim 39; not a refutation of the certificate: 165-dim gauge)
    and EXP-067 CLOSED DEGREE 1 outright (8 diagonal blocks obstructed; all pairs
-   feasible; full system infeasible mod p, conclusive). THE LIVE ROUTE after session 42: TRUNCATIONS CLOSED THROUGH DEGREE 2: EXP-067
-   (degree 1: 8 diagonal blockers) and EXP-070 (degree 2: the mixed pair
-   {(2,6),(5,9)} infeasible mod two primes, conclusive) both closed; the
-   obstruction pattern MOVES with the degree. OPTIONS RANKED: (a) degree-3 pair
-   necessaries (the EXP-070 sweep generalizes; calibrated expectation: closure);
-   (b) the PATTERN THEOREM: prove every truncation degree is obstructed, closing
-   the polynomial-covector route honestly and redirecting to rational-in-eps or
-   per-chart certificates; (c) the [125,150] frontier (C13 first). The
-   floor-raise stays GATED; Paper B published scope unchanged. Zenodo v2 drafts
-   (ORCID title pages) await Felipe's publish: 21504299/21504302/21504303. THEN the
+   feasible; full system infeasible mod p, conclusive). THE LIVE ROUTE after session 43 (THE RETRACTION ROUND): EXP-070's degree-2
+   closure was RETRACTED (int(Fraction) truncation; the declared regression gate
+   in EXP-071 caught it). CORRECTED STANDING: degree 1 CLOSED (EXP-067, exact);
+   degrees 2 and 3 OPEN at pair necessaries (EXP-071 run4: all 1326 pair
+   subsystems feasible at both degrees; EXP-069a re-verified). NEXT OPTIONS:
+   (a) triple-support necessaries for degree 2; (b) CONSTRUCT a degree-2
+   covector mod p (decide the full joint system constructively; exact
+   confirmation staged; upgrade proposal FOR FELIPE only after the exact pass);
+   (c) the [125,150] frontier (C13 first). HARD RULES: modfrac for any rational
+   mod p; regression-gate every new arithmetic path. Zenodo v2 drafts still
+   await Felipe (21504299/21504302/21504303). THEN the
    [125,150] frontier: 24 transcribed configurations (C13 first).
    PUBLICATION STATE: all three papers PUBLISHED on Zenodo 2026-07-23 (A
    .21503366, B .21503368, C .21503372); metadata centralized in
