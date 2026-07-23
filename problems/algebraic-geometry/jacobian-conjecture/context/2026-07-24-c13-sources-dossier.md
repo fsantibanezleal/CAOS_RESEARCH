@@ -33,3 +33,20 @@ families and test EACH against Prop 3.29 (statement fetch needed: GGV2), or
 1. The [GGHV22] bibliography (arXiv ids of GGV1 and GGV2).
 2. [GGV2, Prop 3.29]: the last-possible-corner exclusion statement.
 3. [GGV1, Thm 7.6(5)]: the q | d0 statement and what q1 is for a given chain.
+
+## Fetch 2 (arXiv author search): the GGV series candidates [VERIFIED ids]
+
+- 1401.1784 On the shape of possible counterexamples to the Jacobian Conjecture
+  (2014, 71 pp): the prime GGV1 candidate (deep numbering; Theorem 7.6 plausible).
+- 1406.0886 A system of polynomial equations related to the JC (2014).
+- 1605.09430 The two-dimensional JC and the lower side of the Newton polygon
+  (2016): GGV2 candidate (corner-focused; our earlier dossier cites GGV2
+  Remarks 3.2 + 3.29).
+- 1708.07936 Some algorithms related to the JC (2017): the Algorithms 1-9 source.
+- 1708.09367 Approximate roots and intersection numbers (2018).
+
+Session 47+ verification order: ar5iv-fetch 1401.1784 for Theorem 7.6(5) (the
+q | d0 statement + the DEFINITION of q for a chain: decides whether q1 = 4
+carries to (8,40) or becomes 8); ar5iv-fetch 1605.09430 for Prop/Remark 3.29
+(the last-possible-corner exclusion: decides whether (8,4)-style corners are
+excluded in the form needed at (8,12)/(8,8)). Then EXP-077 decides the fork.
