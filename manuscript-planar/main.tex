@@ -22,7 +22,7 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-22 (working manuscript, v0.06; split from the foundational companion)}
+\date{2026-07-22 (working manuscript, v0.07; split from the foundational companion)}
 
 \begin{document}
 \maketitle
@@ -371,12 +371,16 @@ with identical verdict): the $eta$-symbolic certificates give pairing
 $23592960\,eta$ with the degenerate $eta = 0$ corner covered by the stratum
 certificates, and the interior coefficients certify axis-symbolically with constant
 pairings ($368640$ at every tested point), on top of dense mixed-direction sampling.
-The orientation swap is absorbed by $Q 	o -Q$. Stated with its residuals (the
-fully-simultaneous interior-symbolic certificate is not computed; the claim rests on
-GGHV's Prop.~4.3 as published, transcription verified): 	extbf{no Jacobian pair of
-degrees $(72, 108)$ exists; combined with GGHV Thm.~2.1, any counterexample to $JC(2)$
-has $\max\deg \ge 125$: the verified floor rises from $108$ to $125$.} The full
-evidence chain and residuals: 	exttt{program/jacobian-conjecture/72108-closure-statement.md}.
+The orientation swap is absorbed by $Q 	o -Q$. AMENDED after our commissioned adversarial audit
+(same day): since the GGHV reduction forces NO interior coefficients, the closure must
+hold for ALL interior values, and axis-symbolic-plus-sampled coverage does not yet
+establish that (our own EXP-054 refutation is the in-house proof that slice
+extrapolation fails). The certified statement is therefore: 	extbf{the three reduced
+branches are certificate-covered on their forced-edge families, with interior
+generality axis-symbolic and densely sampled: strong evidence toward, not yet a proof
+of, the $(72, 108)$ closure}; the floor-raise to $125$ becomes assertable only after
+the simultaneous-symbolic interior certificate (the ranked hardening queue is in
+	exttt{program/jacobian-conjecture/72108-closure-statement.md}).
 
 \section{Positioning and novelty}\label{sec:positioning}
 
