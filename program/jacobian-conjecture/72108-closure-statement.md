@@ -1,16 +1,23 @@
-# The (72, 108) closure statement - VALIDATED BY FELIPE (2026-07-22)
+# The (72, 108) closure statement - AMENDED AFTER THE ADVERSARIAL AUDIT (2026-07-22)
 
-STATUS: VALIDATED (Felipe, 2026-07-22: "I validate all the current state"). The
-claim and phrasing below may now enter the manuscripts and wiki. EXTERNAL actions
-(GGHV contact, Thompson outreach, diffusion posts) each still require an explicit
-per-action go from Felipe: validation of the state is not an instruction to publish.
+STATUS: AMENDED. Felipe validated the prior state (2026-07-22); the commissioned
+adversarial audit (context/2026-07-22-beyond125-and-audit-dossier.md, Part 2) then
+found the headline OVERCLAIMED relative to its own residuals: Prop 4.3 forces NO
+interior coefficients, so the closure must hold for ALL interior values, and
+axis-symbolic + sampled coverage does not suffice (our own EXP-054 proved slice
+extrapolation fails); the statement also cited EXP-063 before its artifact existed.
+The claim below is therefore DOWNGRADED to the certified scope until hardening task 2
+(the simultaneous-symbolic certificate) completes. External actions remain gated.
 
-## The claim (draft phrasing)
+## The claim (AMENDED to the certified scope)
 
-Machine-certified closure of the missing case of the Guccione-Guccione-Horruitiner-
-Valqui program: no Jacobian pair of degrees (72, 108) exists. Combined with GGHV
-(arXiv:2204.14178, Theorem 2.1), any counterexample to the two-variable Jacobian
-conjecture has max degree at least 125: THE VERIFIED FLOOR RISES FROM 108 TO 125.
+Machine certificates cover the three reduced GGHV branches on their FORCED-EDGE
+families with interior coefficients certified axis-symbolically (each free with
+others sampled) plus dense mixed sampling: strong evidence toward, but NOT YET a
+proof of, the closure of (72, 108). The floor-raise statement (108 -> 125) becomes
+assertable ONLY after the simultaneous-symbolic interior certificate (hardening
+task 2: via ladder termination, a minor chart cover, or symbolic rank). The audit's
+nine ranked hardening tasks (dossier Part 2) are the queue; GGHV outreach is LAST.
 
 Division of labor, stated exactly: GGHV's Proposition 4.3 (their reduction, as
 published, verified against their LaTeX sources in our transcription dossier) reduces
