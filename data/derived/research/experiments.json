@@ -1384,6 +1384,40 @@
    "title": "Degree-2 triple-support necessaries (the practical form of the joint decision)",
    "verdict": "degree 2 closed",
    "verdict_md": "# EXP-072 - Verdict: DEGREE 2 CLOSED (triple support, sound pipeline)\n\n**Status: DECIDED. No degree-2 covector exists; the decision now stands on the\ncorrected arithmetic with the regression gate green.**\n\n## Results (artifacts/output-2026-07-23.txt, ~40 s)\n\n0. **[MV, PASS]** Setup invariants (rank 124, kernel 165, 51 ops).\n1. **[MV, PASS]** Regression gate: 20 sampled pair supports reproduce EXP-071\n   run4's feasible verdicts on the imported modfrac pipeline.\n2. **[MV, DECIDED]** The triple-support sweep hit an INFEASIBLE subsystem at\n   support {(0,1), (1,0), (3,5)} (both primes 2147483629 and 2147483587;\n   conclusive over Q for this integer system): NO DEGREE-2 COVECTOR EXISTS.\n   The support contains TWO of the eight degree-1 blockers ((1,0), (3,5)) plus\n   (0,1): the degree-1 obstruction pattern persists at triple scope after all,\n   visible only one support tier up.\n\n## Standing\n\nDegree 1 closed (EXP-067, exact); degree 2 closed (this experiment, sound mod-p,\ntwo primes, gate-verified pipeline; EXP-070's retracted claim is SUPERSEDED by\nthis independent decision at a DIFFERENT support). Degree 3: open at pair scope\n(EXP-071); its triple-support sweep is the declared next tier. If degree 3\ncloses too, the pattern-theorem proposal (every truncation degree obstructed)\ngoes TO FELIPE as a proposal. The floor-raise stays gated; the published Paper B\nscope is unchanged.\n"
+  },
+  {
+   "area": "algebraic-geometry",
+   "artifacts": [
+    {
+     "bytes": 3268,
+     "name": "output-2026-07-23.txt"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-073 - Degree-3 triple-support necessaries\n\n- **Question.** Does any triple-support subsystem of the order-4 conditions\n  obstruct a degree-3 covector?\n- **Motivation.** Degrees 1 and 2 are closed (EXP-067 exact; EXP-072 sound,\n  gate-verified); degree 3 survived the pair tier (EXP-071 run4). The triple\n  tier is the next complete set of necessary conditions: support S, |S| = 3:\n  15 order-4 gamma-blocks x 125 rows; gauges u, v, w over S (19 blocks, 3135\n  unknowns). Any infeasible support closes degree 3 conclusively. Pipeline =\n  EXP-071's imported verbatim (modfrac, overflow-safe solvem,\n  deg3_subsystem_feasible, which handles arbitrary support size), exactly as\n  EXP-072 imported it for degree 2.\n- **Falsifiable predictions.**\n  1. [MV] Regression gate: 20 sampled PAIR supports reproduce EXP-071 run4's\n     feasible degree-3 verdicts (run through deg3_subsystem_feasible).\n  2. [MV] The sweep over combinations(51,3) = 20825 supports is decided with\n     early-abort and two-prime confirmation; resumable by index. No calibrated\n     expectation declared (two prior calibrations were refuted); if a support\n     is infeasible, DEGREE 3 IS CLOSED and the pattern-theorem proposal goes\n     TO FELIPE; all-pass stages quadruples or the constructive path.\n- **Method.** Import EXP-071/run.py; exact setup; numpy mod-p; flushed prints;\n  background with tee; cap-disciplined.\n- **Success criterion.** 1 passing, 2 decided (or honest partial + resume index).\n- **Failure criterion.** The regression gate failing.\n\nDeclared 2026-07-23 before the run.\n",
+   "id": "073",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-073-degree3-triple-supports",
+   "title": "Degree-3 triple-support necessaries",
+   "verdict": "",
+   "verdict_md": "# EXP-073 - Verdict: degree 3 OPEN through the triple tier\n\n**Status: DECIDED (all-pass). Predictions 1-2 verified.**\n\n## Results (artifacts/output-2026-07-23.txt, 13414 s)\n\n1. **[MV, PASS]** Regression gate: 20 sampled pair supports reproduce EXP-071\n   run4's feasible degree-3 verdicts on the imported pipeline.\n2. **[MV, DECIDED]** ALL 20825 degree-3 triple-support subsystems are FEASIBLE\n   mod p: no triple-scope obstruction. Degree 3 remains OPEN (contrast: degree 2\n   fell at a triple support containing two degree-1 blockers).\n\n## Standing and the declared next steps\n\nDegrees 1-2 closed; degree 3 open through triples. Escalation options (RESUME\nroute map): R1 quadruple supports (C(51,4) = 249900, roughly 12x the supports at\nhigher per-\u652fsystem cost: a multi-day resumable background sweep); R2 the\nconstructive sparse GF(p) solve of the full degree-3 joint system (a solution\ncandidate would make degree 3 the certificate degree, exact confirmation\nstaged, upgrade proposal FOR FELIPE). R4 chart covers and R5 the [125,150]\nfrontier (C13) interleave. EXP-074 closed route R3 (rational-in-eps) as vacuous\nthe same day.\n"
+  },
+  {
+   "area": "algebraic-geometry",
+   "artifacts": [
+    {
+     "bytes": 264,
+     "name": "output-2026-07-23.txt"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-074 - The rational-in-eps relaxation: first probe at the 8 blockers\n\n- **Question.** Does the rational-covector form c(eps)/d(eps) escape the\n  degree-1 obstructions?\n- **Motivation (declared derivation).** For c(eps)^T M(eps) = d(eps) b0 with\n  deg d >= 2, the order-2 diagonal conditions relax from Lambda_i M_i = 0 to\n  Lambda_i M_i = s_i b0 (s_i the d-coefficient at 2e_i): ONE extra scalar\n  freedom per blocked condition, which the truncation obstructions (EXP-067)\n  do NOT exclude. Probe: for each of the 8 blocked operators, is\n  B_i u = -(P_i M_i) + s b0 feasible in (u, s)? Any infeasible i keeps the\n  block closed even rationally AT THIS ORDER; all-feasible OPENS the rational\n  route and stages the full rational ladder.\n- **Predictions.** 1. [MV] Setup + gate (b0 has its nonzero at the (2,0) row\n  target: pairing 576). 2. [MV] The 8 relaxed single blocks decided mod two\n  primes (no calibrated expectation).\n- **Method.** Import EXP-072's setup (which imports EXP-071: modfrac pipeline);\n  augmented feasibility [B_i | b0 | rhs] via modgauss; both primes; flushed.\n- **Success.** 2 decided either way. **Failure.** Gate failing.\n\nDeclared 2026-07-23 before the run.\n",
+   "id": "074",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-074-rational-eps-probe",
+   "title": "The rational-in-eps relaxation: first probe at the 8 blockers",
+   "verdict": "",
+   "verdict_md": "# EXP-074 - Verdict: route R3 is VACUOUS (the gate caught it before any claim)\n\n**Status: DECIDED by the declared gate, negatively and informatively.**\n\nThe gate computed b0 = Lambda0 M0 and found it IDENTICALLY ZERO: Lambda0 is a\ntrue left-kernel covector (its 576 pairing is against the TARGET vector, not\nM0). The hypothesis's relaxed condition c(eps)^T M(eps) = d(eps) b0 therefore\ncollapses to the homogeneous condition c(eps)^T M(eps) = 0, and ANY rational\ncovector c(eps)/d(eps) clears denominators to a POLYNOMIAL covector of some\nfinite degree. Route R3 (rational-in-eps) is NOT a new search space: it is the\nunion of the truncation degrees already under attack. R3 is closed as vacuous;\nthe route map narrows to: the all-degrees pattern theorem, chart covers (R4),\nquadruple supports/constructive solves (R1/R2), and the frontier (R5).\n\nPredictions 1-2: prediction 1's gate FAILED as designed (b0 nonzeros = 0),\nwhich DECIDES the experiment; prediction 2 never ran (no freedom to test).\nThe declared-gate discipline again prevented building on a wrong premise.\n"
   }
  ]
 }

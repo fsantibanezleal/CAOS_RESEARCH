@@ -902,3 +902,19 @@
 - Standing: degrees 1 and 2 closed; degree 3 open at pairs, triple tier next;
   if it closes, the pattern-theorem proposal goes TO FELIPE. Floor-raise gated.
 - Routine: verdict; wiki; log; RESUME; v0.47.000; bake; tag; PR; mirror (F61).
+
+## 2026-07-23/24 (session 45) - Degree 3 open through triples; R3 vacuous; Zenodo v2 live
+
+- **EXP-073 (decided):** all 20825 degree-3 triple supports feasible (gate
+  green; 13414 s): degree 3 OPEN through the triple tier. Escalation: R1
+  quadruples (resumable multi-day) or R2 constructive GF(p).
+- **EXP-074 (route closed):** the rational-in-eps route is VACUOUS: the gate
+  found Lambda0 M0 = 0 (homogeneity clears rationals to polynomials). The
+  declared-gate discipline again decided before any wrong build-out.
+- **Publication:** the three Zenodo v2 records PUBLISHED on Felipe's
+  instruction (A/B v0.08, C v0.03: ORCID title pages; concept DOIs resolve to
+  v2); the problem page now links concept DOIs (PR #57).
+- Felipe's MAX-DEPTH DIRECTIVE persisted in RESUME with the route map R1-R6
+  (R3 now closed).
+- Routine: verdicts; wiki; log; RESUME; v0.48.000; bake; tag; PR; mirror
+  (F62, F63). JC(2) remains open.
