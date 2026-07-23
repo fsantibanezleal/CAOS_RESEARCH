@@ -3,6 +3,15 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.40.000], 2026-07-22
+
+### Added
+- EXP-062: CASE C CLOSES on its forced family (the torus gauge normalizes t to 1,
+  verified concretely; beta-symbolic pairing 23592960 beta with the beta = 0 corner
+  covered by the earlier stratum; the interior upgrade opens with constant 368640
+  pairings). All three Prop 4.3 branches now certificate-covered.
+- EXP-060 recorded as stopped and superseded by the gauge (no claim taken).
+
 ## [0.39.000], 2026-07-22
 
 ### Added
