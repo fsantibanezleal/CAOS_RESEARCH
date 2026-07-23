@@ -1,0 +1,10 @@
+[PASS] 1a: v_{4,-1}(A1) = v_{4,-1}(A2) = 4 (direction well-defined)  4, 4
+[PASS] 1b: (8,28) = 4*(2,7), gcd(2,7) = 1
+[PASS] 1c: R = x^2 y^7 (y-1) bidegree (2,8); R^{4m} matches st (8m,32m)
+[PASS] 1d: post-shift corner (8, 32-28) = (8,4)
+[PASS] 2a: v_{4,-1}((8,40)) = -8 (DIFFERS from sibling's 0: recorded)
+[PASS] 2b: (8,40) = 8*(1,5), gcd(1,5) = 1
+[PASS] 2c: R' = x y^4 (y-1) bidegree (1,5); R'^{8m} matches st (8m,40m)
+[PASS] 2d: post-shift corner (8, 40-28) = (8,12)
+  3: [D] GAP LIST (UNVERIFIED, primary-source fetch next round): (i) q' = 8 | d0 divisibility (Cor 7.4 hypothesis at (8,40)); (ii) [GGV2, Prop 3.29] exclusion at the post-shift corner (8,12) (the sibling used it at (8,4)); (iii) whether v_{4,-1}(A0) = -8 vs 0 changes the en-point computation. Until these are sourced, NO discard claim for C13.
+RESULT: ALL CHECKS PASS.

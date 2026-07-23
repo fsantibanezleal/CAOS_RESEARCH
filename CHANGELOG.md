@@ -3,6 +3,15 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.49.000], 2026-07-24
+
+### Added
+- EXP-075: the degree-3 quadruple sweep launched (249900 supports, resumable,
+  multi-day background). EXP-076: the [125,150] frontier OPENS at C13: the
+  sibling-discard arithmetic reproduces, all C13 analogues exist (R' =
+  x y^4 (y-1), corner (8,12)), gap list persisted (Cor 7.4 divisibility,
+  Prop 3.29, en-point); primary-source fetch next.
+
 ## [0.48.000], 2026-07-24
 
 ### Added

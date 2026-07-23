@@ -918,3 +918,17 @@
   (R3 now closed).
 - Routine: verdicts; wiki; log; RESUME; v0.48.000; bake; tag; PR; mirror
   (F62, F63). JC(2) remains open.
+
+## 2026-07-24 (session 46) - The quadruple sweep launched; the [125,150] frontier OPENS at C13
+
+- **EXP-075 (in flight):** the degree-3 quadruple sweep (249900 supports,
+  resumable, gate green) runs as a multi-day background task.
+- **EXP-076 (decided at probe scope):** the frontier opens. The (8,32)
+  sibling-discard arithmetic reproduces by machine, and every analogue exists
+  for C13's (8,40): the forcing shape R' = x y^4 (y-1) (8m-power matches),
+  post-shift corner (8,12); one structural difference recorded (v_{4,-1}(A0) =
+  -8 vs 0). Gap list persisted: Cor 7.4 divisibility, Prop 3.29 at (8,12), the
+  en-point recomputation: NO discard claim until the primary sources (GGV2,
+  GGHV22 sec. 3) are fetched and verified next round.
+- Routine: verdicts; wiki; log; RESUME; v0.49.000; bake; tag; PR; mirror
+  (F64, F65). JC(2) remains open.

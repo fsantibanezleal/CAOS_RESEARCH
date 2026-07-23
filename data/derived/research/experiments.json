@@ -1418,6 +1418,40 @@
    "title": "The rational-in-eps relaxation: first probe at the 8 blockers",
    "verdict": "",
    "verdict_md": "# EXP-074 - Verdict: route R3 is VACUOUS (the gate caught it before any claim)\n\n**Status: DECIDED by the declared gate, negatively and informatively.**\n\nThe gate computed b0 = Lambda0 M0 and found it IDENTICALLY ZERO: Lambda0 is a\ntrue left-kernel covector (its 576 pairing is against the TARGET vector, not\nM0). The hypothesis's relaxed condition c(eps)^T M(eps) = d(eps) b0 therefore\ncollapses to the homogeneous condition c(eps)^T M(eps) = 0, and ANY rational\ncovector c(eps)/d(eps) clears denominators to a POLYNOMIAL covector of some\nfinite degree. Route R3 (rational-in-eps) is NOT a new search space: it is the\nunion of the truncation degrees already under attack. R3 is closed as vacuous;\nthe route map narrows to: the all-degrees pattern theorem, chart covers (R4),\nquadruple supports/constructive solves (R1/R2), and the frontier (R5).\n\nPredictions 1-2: prediction 1's gate FAILED as designed (b0 nonzeros = 0),\nwhich DECIDES the experiment; prediction 2 never ran (no freedom to test).\nThe declared-gate discipline again prevented building on a wrong premise.\n"
+  },
+  {
+   "area": "algebraic-geometry",
+   "artifacts": [
+    {
+     "bytes": 317,
+     "name": "output-2026-07-24.txt"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-075 - Degree-3 quadruple-support necessaries (resumable, multi-day)\n\n- **Question.** Does any quadruple-support subsystem of the order-4 conditions\n  obstruct a degree-3 covector?\n- **Motivation.** Degree 3 survived pairs (EXP-071) and all 20825 triples\n  (EXP-073). The quadruple tier: support S, |S| = 4: 35 order-4 gamma-blocks x\n  125 rows; gauges u, v, w over S (34 blocks, 5610 unknowns). C(51,4) = 249900\n  supports: a multi-day resumable background sweep (resume index checkpointed\n  every 200 in the artifact; restart with run.py <index>). Any infeasible\n  support closes degree 3 conclusively; degree 2 fell at its triple tier, so\n  the quadruple tier is the calibration-free next test.\n- **Predictions.** 1. [MV] Regression gate: 20 sampled pairs reproduce EXP-071\n  run4 through deg3_subsystem_feasible. 2. [MV] The sweep is decided (or an\n  honest partial with resume index): a hit closes degree 3 (pattern-theorem\n  proposal TO FELIPE); completion all-pass stages the constructive path (R2).\n- **Method.** EXP-071 pipeline imported via EXP-072's loader; numpy mod-p;\n  two-prime confirmation; flushed; background tee; cap-disciplined.\n- **Success.** Gate green and progress persisted. **Failure.** Gate failing.\n\nDeclared 2026-07-24 before the run.\n",
+   "id": "075",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-075-degree3-quadruple-supports",
+   "title": "Degree-3 quadruple-support necessaries (resumable, multi-day)",
+   "verdict": "",
+   "verdict_md": ""
+  },
+  {
+   "area": "algebraic-geometry",
+   "artifacts": [
+    {
+     "bytes": 849,
+     "name": "output-2026-07-24.txt"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-076 - C13 first probe: does the (8,32) discard arithmetic extend to (8,40)?\n\n- **Question.** Which parts of [GGHV22] section 3's discard of the (8,32) chain\n  (C13's sibling) carry over arithmetically to C13's (8,40) chain?\n- **Motivation.** Dossier head start: the sibling shares A1 = (8,28), A2 =\n  (11/4,7), (m,n) = (3,2); its discard runs: direction (4,-1) from the A1/A2\n  valuation equality; the Cor 7.4 forcing l_{1,0}(P) = lambda(x^2 y^7(y-1))^{4m}\n  from (8,28) = 4(2,7); post-shift corner (8,4); impossible by [GGV2, Prop 3.29].\n  The analogous objects for (8,40) are computable NOW; the two source-dependent\n  steps (the q | d0 divisibility and Prop 3.29's exclusion at the new corner)\n  are flagged UNVERIFIED pending the primary sources (next round).\n- **Predictions.** 1. [MV] The (8,32) arithmetic reproduces: v_{4,-1}(A1) =\n  v_{4,-1}(A2) = 4; (8,28) = 4(2,7) with gcd 1; R = x^2 y^7 (y-1) has bidegree\n  (2,8) with 4m R-power matching st (8m,32m); post-shift corner (8, 32-28) =\n  (8,4). 2. [MV] The (8,40) analogues: v_{4,-1}((8,40)) = -8 (differs from the\n  sibling's 0: recorded); (8,40) = 8(1,5) gcd 1; R' = x y^4 (y-1) bidegree (1,5)\n  with 8m power matching (8m,40m); post-shift corner (8,12). 3. [D] Gap list\n  persisted: q' = 8 | d0 and Prop 3.29 at (8,12): UNVERIFIED, source fetch next.\n- **Method.** Exact integer arithmetic; tiny script.\n\nDeclared 2026-07-24 before the run.\n",
+   "id": "076",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-076-c13-first-probe",
+   "title": "C13 first probe: does the (8,32) discard arithmetic extend to (8,40)?",
+   "verdict": "",
+   "verdict_md": "# EXP-076 - Verdict: the C13 sibling-discard arithmetic EXTENDS in shape; gaps sourced\n\n**Status: DECIDED at probe scope (all checks pass).**\n\n1. **[MV, PASS]** The (8,32) sibling-discard arithmetic reproduces: the (4,-1)\n   direction is well-defined (v = 4 on both A1 and A2); (8,28) = 4(2,7) coprime;\n   R = x^2 y^7 (y-1) bidegree bookkeeping matches; post-shift corner (8,4).\n2. **[MV, PASS]** The C13 analogues exist: (8,40) = 8(1,5) coprime; R' =\n   x y^4 (y-1) with 8m-power matching the staircase; post-shift corner (8,12);\n   one structural DIFFERENCE recorded: v_{4,-1}(A0) = -8 for C13 vs 0 for the\n   sibling (may change the en-point computation).\n3. **[D]** GAP LIST persisted (no discard claim until sourced): (i) the q' = 8\n   divisibility hypothesis of Cor 7.4 at (8,40); (ii) Prop 3.29 (GGV2) at the\n   corner (8,12); (iii) the en-point recomputation under v(A0) = -8. Next\n   round: fetch GGV2 + GGHV22 section 3 from arXiv, verify the three gaps,\n   then either the C13 discard closes (floor progress in [125,150]) or C13's\n   Phase B reduction begins (our certificate machinery is already tooled for\n   its final corner, shared with (72,108)).\n"
   }
  ]
 }
