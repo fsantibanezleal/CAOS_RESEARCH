@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "title": "The Jacobian counterexample, validated and extended: structure, an infinite family, exact escape geometry, and characteristic-p certificates",
+    "creators": [{"name": "Santibañez-Leal, Felipe"}],
+    "description": "<p>Paper A of a three-paper research record on the Jacobian conjecture after the Alpöge 2026 counterexample in dimension 3. This foundational paper validates the counterexample independently in exact rational arithmetic and builds on it: the structural analysis of the mechanism, an infinite family of new counterexamples, the exact escape geometry and real census, characteristic-p certificates, a rigidity theorem in dimension 2, and a uniqueness result for the mechanism. Every claim is backed by a persisted, hash-manifested machine experiment; refuted predictions remain in the record. The two-variable case remains open.</p><p>All scripts, artifacts and verdicts: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
+    "keywords": ["Jacobian conjecture", "Keller maps", "polynomial automorphisms", "counterexample", "exact arithmetic", "machine-verified mathematics", "affine algebraic geometry"],
+    "subjects": [{"term": "Jacobian problem", "identifier": "https://mathscinet.ams.org/msc/msc2020.html?t=14R15", "scheme": "url"}],
+    "license": "cc-by-4.0",
+    "related_identifiers": [
+      {"relation": "isSupplementedBy", "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH", "resource_type": "software"}
+    ],
+    "version": "0.07",
+    "language": "eng"
+  }
+}
