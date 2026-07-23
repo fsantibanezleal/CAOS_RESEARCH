@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-22, session 35 closed)
+# RESUME - Jacobian conjecture program (updated 2026-07-22, session 36 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -93,15 +93,15 @@ the standing decision rule: every new experiment names its route).
    currently Theorem 6 or full-window towers; map what escapes ALL current lemmas;
    (b) the y-anchored (quasi-triangular-type) completions classification (JCB-035,
    the endgame frame): JC(2) = the triangular family is everything.
-2. N2 / JCB-040: EXP-059 REFUTED the constant-minor hope (determinant varies;
-   EVERY sampled value nonzero: inconsistency holds at every point ever tested).
-   FIRST TASK NEXT ROUND (EXP-060): THE CHART COVERING: (a) enumerate the finitely
-   many row-selection charts observed (the base chart + the row-set-changed
-   variants); (b) show their minors' zero loci have empty intersection on the
-   stratum (resultant/gcd computations on few-variable slices; the charts overlap
-   heavily); fallback (c) the termination ladder with all-orders solvability proved
-   (EXP-058). Then the edge-normalization branch (72108-assembly-checklist.md);
-   then the floor rises to 125.
+2. N2 / JCB-040: SCOPE-CORRECTED to the forced families (the chart covering over
+   26 free coefficients was more than needed). DONE: the verbatim edge verification
+   (our y^8 (xy - t)^8 stratum IS the forced case-c family; checklist updated) and
+   EXP-061 (cases a/b CLOSE: monomial pairings on both charts, loci excluded by
+   vertex forcing). IN FLIGHT: EXP-060, the case-c (t, beta)-symbolic certificate
+   (background; adjudicate on notification; if the pairing misses the stratum,
+   case c closes too). THEN: the free-interior upgrade (EXP-042 discipline) + the
+   orientation swap; then the assembled floor-raise to 125 (Felipe validates the
+   phrasing; the division-of-labor note is in 72108-assembly-checklist.md).
 3. JCB-041 remainder: the screenshot verification pass ONLY (bake is automatic and
    verified; wiki 04 rewritten in session 24). FELIPE still validates the novelty
    phrasing before submission.

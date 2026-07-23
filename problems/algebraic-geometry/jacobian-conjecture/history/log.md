@@ -714,3 +714,25 @@
   row-set-changed trials already exhibit the alternative charts), OR the termination
   ladder with all-orders solvability in hand (EXP-058). Route (a) queued first.
 - Routine: wiki 05; log; RESUME; v0.38.000; bake. JC(2) remains open.
+
+## 2026-07-22 (session 36) - The edge verification lands; cases a/b close; case c in flight
+
+- **The edge-normalization branch VERIFIED** (assembly checklist updated from the
+  dossier's verbatim tex-line-referenced pipeline): under the stated inversion
+  (x -> x^{-1}, y -> x^4 y, sending x^a y^b to x^{4b-a} y^b and [P,Q] to -[P,Q] x^2),
+  the pre-forced factor (x^3 y - alpha_2)^{4m} maps at m = 2 to (xy - alpha_2)^8:
+  OUR certificate stratum y^8 (xy - t)^8 IS the verbatim forced family for case c).
+  The right edge's R^2 relation (R = x^4 y^7 (a0 + a1 y)) is subsumed by
+  free-parameter certificates; cases a/b reduce to one companion run.
+- **EXP-061 (confirmed):** the a/b companion CLOSES: sub-polygon certificates with
+  monomial pairings (chart a1 = 1: 200 a0^3 bare, 600 a0^3 and 560 a0^4 with interior
+  samples; chart a0 = 1: 200 a1^4), 2-23 s each; the vanishing loci sit exactly where
+  the a/b polygons' own vertices would degenerate, which their forcing excludes; the
+  two charts cover the gauge boundary. The a/b Q-side was already covered by the
+  bigger-polygon emptiness.
+- **EXP-060 (in flight):** the case-c (t, beta)-symbolic certificate is computing in
+  background; adjudicated on its notification.
+- State of the (72,108) closure: cases a/b DONE on forced families (interior
+  sampled); case c = EXP-060 pending; then the free-interior upgrade + orientation
+  swap; then the assembled floor-raise to 125 goes to Felipe for phrasing validation.
+- Routine: wiki 05; log; RESUME; v0.39.000; bake. JC(2) remains open.
