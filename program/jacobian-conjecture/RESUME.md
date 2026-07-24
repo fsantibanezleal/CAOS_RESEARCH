@@ -123,7 +123,7 @@ the standing decision rule: every new experiment names its route).
    exclusion / no-covector = counterexample skeleton); REFORMULATION (properness =
    Jelonek set = our EXP-014; annihilation lemma = flat connection, EXP-079);
    DIMENSION-LADDER (n=3 unique unimodular, EXP-088); AT-INFINITY (Newton polygons /
-   Berkovich, S5); EXTERNAL-DIALOGUE (the Tao exchange, all re-derived in-repo).
+   Berkovich, S5); EXTERNAL-DIALOGUE (the Tao exchange, all re-derived in-repo). L1/symplectic (EXP-091): JC(2) routes via LNDs to Rentschler + Abhyankar-Moh recognition theorems (known, mapped); recognition is the through-line uniting EXP-089/090/091.
    NOVEL-APPROACHES SPINE (2026-07-24, program/jacobian-conjecture/novel-approaches-2026-07-24.md):
    the campaign is TWO-SIDED (a covector = exclusion; provably no covector at any
    degree = consistency = counterexample skeleton). Declared next experiments,

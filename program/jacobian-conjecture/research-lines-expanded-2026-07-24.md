@@ -53,3 +53,11 @@ Run invariant-first (lens 4): L4/L5 may yield one-line obstructions like EXP-089
 L1/L2 are the deep reformulations (higher risk, higher payoff). L3 bridges our
 combinatorial machinery to the global-geometric one. Persist each as EXP-09x with a
 declared hypothesis; keep the RESUME lenses ledger current.
+
+## Update (EXP-091): L1 developed - the LND / Rentschler / Abhyankar-Moh route
+The symplectic lens (L1) routes JC(2) to LND theory: {P,.} locally nilpotent =>
+Rentschler => (P,Q) a coordinate system; the residual is whether {P,Q}=1 forces line
+fibres (Abhyankar-Moh-Suzuki). Known connections, now mapped. This makes the
+recognition lens (dim-2 classification is strong) the through-line uniting EXP-089/090
+(incidence recognition) and EXP-091 (LND recognition). Priority next: EXP-092 (fibre
+geometry of the reduced (72,108) pair) and securing the two classification sources.
