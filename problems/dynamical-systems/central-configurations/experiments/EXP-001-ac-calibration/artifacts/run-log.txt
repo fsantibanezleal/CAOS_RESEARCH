@@ -10,3 +10,4 @@
 [22:45:17] RESULT P7-square-shape: fail no positive solution with b^2 = 2a^2
 [22:45:17] RESULT P7-cayley-menger: fail square absent
 [22:45:20] RESULT P4-eliminant-nonzero: pass degree in r23: 54 (3 s)
+[22:52:44] RESULT P1-zerodim-(1, 1, 1): pass saturated GB size 37 in 444 s

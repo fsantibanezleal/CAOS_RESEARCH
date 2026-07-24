@@ -1,0 +1,32 @@
+==========================================================================
+EXP-090: the single controlling invariant n-2 (resultant weight = why n=3)
+==========================================================================
+Under relative scaling (L,Q) -> (lam*L, lam^-1*Q):
+  Res -> lam^{deg Q} * lam^{-deg L} * Res = lam^{(deg Q - deg L)} * Res
+  For the incidence construction: deg L = 1, deg Q = n-1, LQ degree n.
+  n=2: resultant weight under relative scaling = (n-1)-1 = 0  <-- ZERO: Res invariant, cannot rigidify => construction DEGENERATES
+  n=3: resultant weight under relative scaling = (n-1)-1 = 1  = 1: rigidifies AND linear Danielewski core => X_n = A^n (UNIQUE)
+  n=4: resultant weight under relative scaling = (n-1)-1 = 2  = 2>=2: rigidifies but nonlinear core (Cl rank ~ n-3) => X_n != A^n
+  n=5: resultant weight under relative scaling = (n-1)-1 = 3  = 3>=2: rigidifies but nonlinear core (Cl rank ~ n-3) => X_n != A^n
+
+THE UNIFICATION: n-2 is simultaneously
+  (i) the resultant weight under relative L,Q scaling (etale/rigidify test),
+  (ii) the Danielewski core degree {x^{n-2}W = B^{n-2}-1},
+  (iii) the number of boundary components at x=0 (B^{n-2}=1),
+  (iv) the residual-torus support-point count minus 1.
+  n=3 is the UNIQUE dimension with n-2 = 1 (rigidifies AND linear core).
+  n=2 gives n-2 = 0: the resultant is scaling-INVARIANT, so the whole
+  incidence mechanism has no rigidifying normalization and degenerates.
+
+2D (linear x linear): Res = x*delta - beta*gamma, bidegree (1,1), weight (1-1)=0.
+  Sweep normalizations ell(LQ)= p*lead + q*mid + r*const = 1 with Res=1:
+    ell=middle [LQ]_TS: with Res=1 the relative scaling stays UNDETECTED (Res weight 0); the slice is G_m x A^1 or reducible, never A^2.
+    ell=leading: with Res=1 the relative scaling stays UNDETECTED (Res weight 0); the slice is G_m x A^1 or reducible, never A^2.
+    ell=constant: with Res=1 the relative scaling stays UNDETECTED (Res weight 0); the slice is G_m x A^1 or reducible, never A^2.
+    ell=mixed: with Res=1 the relative scaling stays UNDETECTED (Res weight 0); the slice is G_m x A^1 or reducible, never A^2.
+
+RESULT: [MV/D] the incidence/multiplication counterexample mechanism requires
+  resultant weight n-2 != 0 (deg Q != deg L), i.e. n>=3, to even be etale with a
+  rigidifying normalization; and n-2 = 1 (=> n=3) to have X_n = A^n. Dimension 2
+  (n-2=0) fails at the most basic level: the resultant cannot see the relative
+  scaling. This SINGLE invariant n-2 unifies EXP-086/087/088/089.

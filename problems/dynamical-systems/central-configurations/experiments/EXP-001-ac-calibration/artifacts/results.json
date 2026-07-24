@@ -38,5 +38,9 @@
   "P4-eliminant-nonzero": {
     "status": "pass",
     "detail": "degree in r23: 54 (3 s)"
+  },
+  "P1-zerodim-(1, 1, 1)": {
+    "status": "pass",
+    "detail": "saturated GB size 37 in 444 s"
   }
 }
