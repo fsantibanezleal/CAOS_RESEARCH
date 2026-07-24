@@ -42,8 +42,9 @@
    "area": "dynamical-systems",
    "feasibility": "A",
    "gpu": true,
+   "opened": "2026-07-23",
    "slug": "central-configurations",
-   "state": "scoped"
+   "state": "exploring"
   },
   {
    "area": "optimization-geometry",
@@ -130,5 +131,5 @@
    "state": "proposed"
   }
  ],
- "updated": "2026-07-20"
+ "updated": "2026-07-23"
 }

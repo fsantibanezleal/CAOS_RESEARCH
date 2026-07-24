@@ -956,3 +956,23 @@
 - **EXP-075 superseded:** the linear-order quadruple sweep is replaced by
   run2.py (blockers-first order: supports with >= 2 of the 8 degree-1 blockers
   first, then the rest), resumable by index, relaunched in the background.
+
+## 2026-07-24 (session 47 cont.) - C13 already excluded in the literature; frontier re-scoped
+
+- **EXP-082 (decided):** mining GGV2 (arXiv 1605.09430) to source the (8,4)
+  exclusion, its CLOSING REMARK (tex ~1053) states verbatim 'B_0=(8,28) and
+  B_1=(8,40) lead to A_0'=(8,4), which is impossible' - exactly C13's chain. C13
+  ((144,96), (8,40) chain) is DISCARDED IN THE LITERATURE, not an open frontier
+  case. The dossier's 'cheapest first frontier attack' had already been solved by
+  GGV2; we had cited GGV2 Remarks 3.2/3.29 but not the final B0/B1 remark. Honest
+  correction, no floor moved. Our contribution: independent machine forcing
+  (EXP-076/077, incl. catching our own EXP-076 d0=8 error) + the exact source
+  localization + the re-audit mandate.
+- **EXP-083 (declared):** re-audit all 24 configs' forced A0' vs the GGV2
+  excluded family (wp(n',n'-1)) + Heitmann Thm 2.24/2.25 + GGV5 Remark 7.9 to
+  find the GENUINELY-open [125,150] cases before attacking any.
+- A delegated agent resolved the C13 fork (EXP-077) and reordered the quadruple
+  sweep blockers-first (EXP-075 run2, running detached; poll the artifact). A
+  separate session opened central-configurations (parallel, isolated).
+- Routine per methodology/08: rounds close without version bump; this release
+  step folds in all develop commits since v0.49.000.

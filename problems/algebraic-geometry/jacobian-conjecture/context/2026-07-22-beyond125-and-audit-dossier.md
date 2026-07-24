@@ -168,6 +168,7 @@ verified in the LaTeX sources):
 
 Head starts the printed record does give:
 
+- **[CORRECTED 2026-07-24, EXP-082: C13 is ALREADY EXCLUDED in GGV2 (1605.09430) remark tex ~1053, which names B_0=(8,28), B_1=(8,40) -> A_0'=(8,4) impossible. NOT an open case. Re-audit all 24 configs vs that remark before treating any as open.]**
 - C13 ((8,40),(8,28),(11/4,7),(3,2), max 144) ends in the SAME final corner and (m,n)
   as the open (72,108) case, k = 1 [DERIVED]. Its sibling (8,32),(8,28),(11/4,7),(3,2)
   (max 120) was discarded in [GGHV22] section 3 WITHOUT reaching a reduced polygon,

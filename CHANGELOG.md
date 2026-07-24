@@ -3,6 +3,27 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.50.000], 2026-07-24
+
+### Changed (jacobian-conjecture)
+- C13 RESOLVED as already-excluded literature (EXP-082): GGV2 (arXiv 1605.09430)
+  remark tex ~1053 names B_0=(8,28),B_1=(8,40) -> A_0'=(8,4) impossible - C13's
+  chain verbatim. No novel floor progress; the beyond-125 dossier's "cheapest
+  frontier attack" was already solved. EXP-076's d0=8 error corrected in place;
+  the (8,40)/(8,28)->(8,4) forcing independently machine-verified (EXP-076/077).
+- Frontier RE-SCOPED: EXP-083 declared to re-audit all 24 [125,150] configs vs
+  the GGV2 excluded family + Heitmann/GGV5 lists before treating any as open.
+- Novel-approaches dossier: the two-sided reframe (covector=exclusion; provably
+  no covector=consistency=counterexample skeleton), the finite-ceiling decision
+  procedure, the annihilation-lemma-as-flat-connection lead; EXP-078/079/080/081
+  declared. The quadruple sweep reordered blockers-first (EXP-075 run2).
+
+### Added (program-wide)
+- methodology/08 (parallel-session isolation; serialized releases) and
+  methodology/09 (manuscript trigger + Zenodo publication + versioned updates).
+- central-configurations OPENED (separate parallel session): deep-research
+  dossiers + program plan; portfolio scoped -> exploring.
+
 ## [0.49.000], 2026-07-24
 
 ### Added
