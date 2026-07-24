@@ -7,7 +7,7 @@ The in-repo status section: which problems exist, in which lifecycle state (see
 | Problem | Area | State | Feasibility | GPU | Plan |
 |---|---|---|---|---|---|
 | Jacobian conjecture | algebraic-geometry | exploring | A | yes | [jacobian-conjecture/plan.md](jacobian-conjecture/plan.md) |
-| Central configurations (n-body) | dynamical-systems | scoped | A | yes | (opens after Jacobian publishes) |
+| Central configurations (n-body) | dynamical-systems | exploring | A | yes | [central-configurations/plan.md](central-configurations/plan.md) |
 | Log-energy points on S^2 (Smale 7) | optimization-geometry | scoped | A | yes | (wave 2) |
 | Shub-Smale tau conjecture | computation-complexity | scoped | A | yes | (wave 2) |
 | Riemann hypothesis | number-theory | scoped | A | yes | (wave 2) |
