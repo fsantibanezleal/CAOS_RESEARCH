@@ -13,6 +13,7 @@ import pkg from '../package.json';
 import Home from './pages/Home';
 import Methodology from './pages/Methodology';
 import Jacobian from './pages/Jacobian';
+import CentralConfigurations from './pages/CentralConfigurations';
 
 // Display version X.XX.XXX derived from the semver manifest (single source, no drift).
 const displayVersion = pkg.version
@@ -35,6 +36,7 @@ const config: ShellConfig = {
     { path: '/', en: 'Program', es: 'Programa' },
     { path: '/methodology', en: 'Methodology', es: 'Metodología' },
     { path: '/problems/jacobian-conjecture', en: 'Jacobian conjecture', es: 'Conjetura jacobiana' },
+    { path: '/problems/central-configurations', en: 'Central configurations', es: 'Configuraciones centrales' },
   ],
   links: {
     github: 'https://github.com/fsantibanezleal/CAOS_RESEARCH',
@@ -64,6 +66,7 @@ createRoot(document.getElementById('root')!).render(
             <Route path="/" element={<Home />} />
             <Route path="/methodology" element={<Methodology />} />
             <Route path="/problems/jacobian-conjecture" element={<Jacobian />} />
+            <Route path="/problems/central-configurations" element={<CentralConfigurations />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </AppShell>

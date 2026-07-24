@@ -101,4 +101,74 @@ export const CITATIONS: Citation[] = [
       'Appelgate H., Onishi H. (1985). The Jacobian conjecture in two variables. J. Pure Appl. Algebra 37, 215-227.',
     url: 'https://doi.org/10.1016/0022-4049(85)90099-4',
   },
+  // --- central-configurations (Smale 6) reference spine; transcribed from
+  // problems/dynamical-systems/central-configurations/context/references.md ---
+  {
+    id: 'hm2006',
+    label: 'Hampton-Moeckel 2006',
+    citation:
+      'Hampton M., Moeckel R. (2006). Finiteness of relative equilibria of the four-body problem. Inventiones mathematicae 163(2), 289-312.',
+    doi: '10.1007/s00222-005-0461-0',
+  },
+  {
+    id: 'ak2012',
+    label: 'Albouy-Kaloshin 2012',
+    citation:
+      'Albouy A., Kaloshin V. (2012). Finiteness of central configurations of five bodies in the plane. Annals of Mathematics 176(1), 535-588.',
+    doi: '10.4007/annals.2012.176.1.10',
+  },
+  {
+    id: 'hj2011',
+    label: 'Hampton-Jensen 2011',
+    citation:
+      'Hampton M., Jensen A. N. (2011). Finiteness of spatial central configurations in the five-body problem. Celestial Mechanics and Dynamical Astronomy 109(4), 321-332.',
+    doi: '10.1007/s10569-010-9328-9',
+  },
+  {
+    id: 'jl2025',
+    label: 'Jensen-Leykin 2025',
+    citation:
+      "Jensen A., Leykin A. (2025). Smale's 6th problem for generic masses. arXiv:2301.02305v2.",
+    url: 'https://arxiv.org/abs/2301.02305',
+  },
+  {
+    id: 'mz2019',
+    label: 'Moczurad-Zgliczynski 2019',
+    citation:
+      'Moczurad M., Zgliczynski P. (2019). Central configurations in planar n-body problem with equal masses for n = 5, 6, 7. Celestial Mechanics and Dynamical Astronomy 131.',
+    doi: '10.1007/s10569-019-9920-6',
+  },
+  {
+    id: 'roberts1999',
+    label: 'Roberts 1999',
+    citation:
+      'Roberts G. E. (1999). A continuum of relative equilibria in the five-body problem. Physica D 127, 141-145.',
+    doi: '10.1016/S0167-2789(98)00315-7',
+  },
+  {
+    id: 'ac1998',
+    label: 'Albouy-Chenciner 1998',
+    citation:
+      'Albouy A., Chenciner A. (1998). Le probleme des n corps et les distances mutuelles. Inventiones mathematicae 131, 151-184.',
+  },
+  {
+    id: 'changchen2023',
+    label: 'Chang-Chen 2023-2025',
+    citation:
+      'Chang K.-M., Chen K.-C. (2024/2025). Toward finiteness of central configurations for the planar six-body problem by symbolic computations, parts I (J. Symbolic Comput.) and II (SIAM J. Appl. Dyn. Syst. 24(3), 2369-2404).',
+    url: 'https://arxiv.org/abs/2303.02853',
+  },
+  {
+    id: 'moulton1910',
+    label: 'Moulton 1910',
+    citation:
+      'Moulton F. R. (1910). The straight line solutions of the problem of n bodies. Annals of Mathematics 12, 1-17.',
+  },
+  {
+    id: 'ccmanuscript',
+    label: 'Replication record 2026',
+    citation:
+      'Santibañez-Leal F. (2026). Exact replication and screening of tropical finiteness certificates for central configurations. Machine record, versioned with this repository.',
+    url: 'https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/manuscripts/central-configurations/tropical-replication',
+  },
 ];
