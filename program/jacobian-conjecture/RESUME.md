@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-24, session 47 closed; continuous loop)
+# RESUME - Jacobian conjecture program (updated 2026-07-24, session 47 closed [cont.]; continuous loop)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -137,6 +137,13 @@ the standing decision rule: every new experiment names its route).
    study, the dual annihilation identity) + the [125,150] frontier opening
    (C13). Transcribe from verdicts and the dossiers, never memory; two-pass
    pdflatex; API new-version flow (tools/zenodo in the vault repo).
+   FRONTIER RE-SCOPED (EXP-083): the 24 configs are 1 excluded (C13) / 5 verify
+   (C10,C11,C12,C19,C20) / 2 open (C01,C04) / 16 derivation-needed. Next:
+   EXP-084 reconcile GGV5-vs-GGV2 A0' for C10/C11/C19/C20 (likely excludes 4);
+   EXP-085 batch the 16 A0' forcings (EXP-077 method). Then attack the few
+   genuine survivors (C01, C04, and whatever remains). Manuscripts at v0.09
+   (Zenodo republished, corruption repaired). Quadruple sweep at index 1200
+   (all feasible; needs the compiled GF(p) kernel S5a to finish).
    SESSION 48 PLAN (47 done: C13 RESOLVED - already excluded in GGV2 remark tex
    1053, EXP-082; EXP-076 d0=8 error corrected; the frontier is RE-SCOPED):
    (i) EXP-083 = re-audit all 24 [125,150] configs' forced A0' vs the GGV2

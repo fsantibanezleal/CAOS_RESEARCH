@@ -102,3 +102,17 @@ Next manuscript action: Paper B gains the truncation chapter (degrees 1-2
 closed theorems, the retraction case study, the dual annihilation identity,
 the sweep methodology) and the frontier section (C13 campaign state); then
 pdflatex two-pass, version bump, Zenodo new version via the API flow.
+
+## Fetch 5 (session 47 cont.): GGV5 = arXiv 1708.07936 secured [E:\_Temp\ggv-sources\1708]
+
+The possible-last-lower-corner (PLLC) ALGORITHM paper. Two clean, checkable
+exclusion criteria for any candidate corner (a,b) with a>b>0 (staging EXP-084/085):
+- GGV2 Prop 3.25 (tex 300): b <= (a-b-1)^2, i.e. b <= (2a - sqrt(4a-3) - 1)/2.
+- GGV2 Prop 3.29 (tex 304, cited): b + gcd(a,b) != a.
+- casos imposibles (already used): (a,b) != wp(n',n'-1) for n'>=2.
+These apply to a>b>0 corners (t,0 always allowed, consistent). EXP-084: reconcile
+the GGV5 section-5 family A0' (the (1,0)/(2,0) our table prints) vs GGV2's forced
+last-lower-corner A0' (the (2,1)/(6,3) the remark names) - they are DIFFERENT
+notions (GGV5 family start vs GGV2 terminal corner); GGV2's is the exclusion-
+relevant one. EXP-085: force each unprinted A0' via GGV1 Thm 7.6 (shared-bottom-
+vertex d0 + en-point q1, the EXP-077 method) then apply the three criteria.
