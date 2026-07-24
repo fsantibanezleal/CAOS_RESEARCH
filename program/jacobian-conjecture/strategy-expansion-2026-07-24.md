@@ -65,3 +65,43 @@ quadruple sweep would take ~18 days. Session 47+ should RESTART it REORDERED
 (supports containing >= 2 of the 8 degree-1 blockers first, ~8k supports,
 ~14 h: the degree-2 hit lived in blocker territory) and pursue S5a (compiled
 GF(p) kernel) before any full-space quadruple commitment.
+
+## S7. The birational/multiplication structure of the 3D counterexample (from a Tao-ChatGPT exchange, verified 2026-07-24)
+
+A shared exchange (attributed to Tao) reverse-engineered the Alpoge counterexample.
+VERIFIED symbolically in-repo (all identities exact):
+- The map is the COEFFICIENT MAP of the polynomial product (a+bt)(c+dt+et^2)
+  (a linear form times a quadratic), restricted to X = {(a,b,c,d,e): Res(linear,
+  quadratic) = a^2 e - abd + cb^2 = 1, and the middle coeff ad+bc = 1}, with
+  X isomorphic to A^3 (explicit Phi, defined even at a=0), dropping the middle
+  coefficient. This gives G: C^3 -> C^3, det DG = -1, = the counterexample up to
+  linear normalization (F_orig = B o G o A).
+- The constant Jacobian is STRUCTURALLY FORCED by a birational-Laurent
+  cancellation: (x,y,z)->(x,u,r) with u=1+xy, r=2-3xy-x^2 z has Jacobian -x^3;
+  the map in (x,u,r) is a simple Laurent map with Jacobian 2 x^{-3}; the pole
+  cancels the zero. The map is a degree-3 (three-sheeted) cover; the fibers solve
+  a depressed cubic whose discriminant is a perfect square times -4D.
+
+WHAT THIS OPENS FOR JC(2) (routes, ranked):
+- S7a [COUNTEREXAMPLE SIDE, genuinely new to us]: the CONSTRUCTIVE TEMPLATE.
+  A counterexample = (affine variety X isomorphic to A^n, cut by resultant/norm
+  = 1 constraints) + (an algebra-MULTIPLICATION map) + (drop a normalized
+  coordinate). For JC(2) search the 2D analog: multiply a linear by a linear (or
+  the right bidegree) on a unit-resultant variety isomorphic to A^2, drop a
+  coordinate, test the composite. This is a SYNTHESIS search, complementary to
+  our exclusion sweeps; it feeds the two-sided reframe (S0) directly.
+- S7b [EXCLUSION SIDE]: the Laurent-cancellation OBSTRUCTION. A planar Keller map
+  arising from a birational-Laurent factorization needs a pole to cancel a zero;
+  with only two coordinates there is "less room". Attempt to prove no such
+  factorization closes in 2D (a structural exclusion of this family). Connects to
+  S5 (at infinity: the pole lives there).
+- S7c [SUPPORTING]: the mechanism is intrinsically >=3D (cubic cover, needs the
+  third slot for the Laurent cancellation and the degree-3 elimination). This is
+  independent evidence the mechanism does NOT transplant to 2D, consistent with
+  our published rigidity/uniqueness theorems. Our T-theorems constrain exactly
+  the u=1+xy "unit times monomial" shapes this construction rides on.
+- PRELIMINARY [D, to verify in EXP-086]: the FAITHFUL 2D lowering (linear x
+  linear = 3 coeffs; resultant=1 AND middle=1 as the two constraints) is
+  DEGENERATE (ad-bc=1 with ad+bc=1 forces ad=1, bc=0: no smooth A^2). If robust,
+  this is a concrete reason the mechanism resists dimension 2. EXP-086 tests
+  whether any non-degenerate 2D analog exists.
