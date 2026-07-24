@@ -115,6 +115,17 @@ the standing decision rule: every new experiment names its route).
    never from memory.
    THE LIVE ROUTE after session 45: degrees 1-2 CLOSED; degree 3 OPEN through the
    triple tier (EXP-073: all 20825 feasible, gate green); R3 vacuous (EXP-074).
+   NOVEL-APPROACHES SPINE (2026-07-24, program/jacobian-conjecture/novel-approaches-2026-07-24.md):
+   the campaign is TWO-SIDED (a covector = exclusion; provably no covector at any
+   degree = consistency = counterexample skeleton). Declared next experiments,
+   ranked by info/cost: EXP-078 (the FINITE CEILING N: converts the open sweep
+   into a decision procedure - do this FIRST), EXP-080 (sl2/weight closure of the
+   staircase), EXP-079 (the annihilation lemma as a flat connection; regular vs
+   irregular singularity type DECIDES termination - the deep lead), EXP-081 (the
+   3D collision covector projected to 2D vs Lambda0). Section 5 (Berkovich at
+   infinity) is the long-shot all-degrees dossier. A background agent (2026-07-24)
+   owns the C13 fork (EXP-077) and the reordered quadruple sweep; its report lands
+   in wip-c13-and-sweep-2026-07-24.md.
    ISOLATION RULES (2026-07-24, methodology/08-parallel-sessions.md): rounds close
    per problem WITHOUT version bumps; the release step (bump + CHANGELOG + bake +
    build + tag + PR) is serialized, one session at a time; git pull both repos
