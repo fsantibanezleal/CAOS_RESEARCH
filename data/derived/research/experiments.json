@@ -1427,8 +1427,16 @@
      "name": "output-2026-07-24.txt"
     },
     {
-     "bytes": 478,
+     "bytes": 1093,
      "name": "output-run2-2026-07-24.txt"
+    },
+    {
+     "bytes": 937,
+     "name": "output-run2b-2026-07-24.txt"
+    },
+    {
+     "bytes": 478,
+     "name": "output-run2c-2026-07-24.txt"
     }
    ],
    "date": "",
@@ -1517,7 +1525,12 @@
   },
   {
    "area": "algebraic-geometry",
-   "artifacts": [],
+   "artifacts": [
+    {
+     "bytes": 2368,
+     "name": "output-2026-07-24.txt"
+    }
+   ],
    "date": "",
    "hypothesis_md": "# EXP-083 - Re-audit the 24 [125,150] configs against the mined GGV2 remark + Heitmann\n\n- **Question.** Which of the 24 [125,150] configurations are ALREADY excluded\n  in the literature (so not open frontier), and which are genuinely open?\n- **Motivation.** EXP-082 found C13 already discarded by GGV2 remark tex 1053\n  (B0/B1 -> A0' forcing), which our dossier had not fully mined. The same\n  remark and Heitmann Thm 2.24/2.25 + GGV5 Remark 7.9 exclude several A0'\n  patterns: wp(n',n'-1) corners, the (7,21)/(10,25)/(14,35)/(6,15)/(9,21)\n  families. Each of our 24 configs has a chain with an A0'; if that A0' is an\n  excluded corner, the config is already done.\n- **Predictions.** 1. [MV] For each of the 24 configs, compute the forced A0'\n  from its chain data (where derivable by the EXP-077 method: shared-bottom-\n  vertex d0, q1, shift) and test membership in the excluded family / named\n  lists. 2. [D] Partition the 24 into ALREADY-EXCLUDED vs GENUINELY-OPEN vs\n  DERIVATION-NEEDED (A0' not cleanly forcible without more source work).\n- **Method.** Exact arithmetic per config; cite the exact excluding statement\n  for each excluded one; honest DERIVATION NEEDED where the forcing is unclear.\n- **Success.** A clean partition; the genuinely-open set is the real frontier.\n- **Failure.** none (an audit).\n\nDeclared 2026-07-24 before the run.\n",
    "id": "083",
@@ -1525,7 +1538,7 @@
    "slug": "EXP-083-frontier-reaudit",
    "title": "Re-audit the 24 [125,150] configs against the mined GGV2 remark + Heitmann",
    "verdict": "",
-   "verdict_md": ""
+   "verdict_md": "# EXP-083 - Verdict: the [125,150] frontier partitioned; only 2 configs are printed-open\n\n**Status: DECIDED (audit). The 24 configs partition into 1 excluded / 5 verify /\n2 open / 16 derivation-needed.**\n\n## The partition (artifacts/output-2026-07-24.txt)\n\n- **EXCLUDED, sourced (1):** C13 (GGV2 remark tex ~1053: B0=(8,28),B1=(8,40) ->\n  A0'=(8,4) impossible; EXP-082).\n- **VERIFY, source reconciliation (5):** C10, C11 (A0=(7,21): GGV2 remark says\n  the (7,21) families come from A0'=(2,1) IMPOSSIBLE, but our GGV5-sourced table\n  prints A0'=(1,0); the two A0' notions must be reconciled - if GGV2's holds,\n  C10/C11 are ALSO excluded); C19, C20 (A0=(6,15): GGV2 excludes B1=(6,18+6k)\n  with 18+6k not a multiple of 30 -> (6,3); check C19/C20's B1); C12 (A0=(8,28)\n  with A1=(7/4,3), a DIFFERENT chain from C13's; the (8,28) is named but the\n  B0/B1 pattern differs - derive).\n- **OPEN, printed A0' not excluded (2):** C01 (A0'=(1,0)), C04 (A0'=(2,0)):\n  (t,0) is always a possible last lower corner, so these are NOT excluded by\n  casos-imposibles and are genuine open family cases (F2 j=1, F24 j=0).\n- **DERIVATION-NEEDED (16):** the sporadic configs with UNPRINTED A0'\n  (C02,C03,C05-C09,C14-C18,C21-C24): force A0' via the EXP-077 method (GGV1\n  Thm 7.6 en-point/q1 + shared-bottom-vertex d0) then test excluded-family\n  membership. Several may collapse to excluded (like C13 did).\n\n## Reading\n\nThe frontier is MUCH smaller than the naive 24: at most 2 configs (C01, C04)\nare confirmed genuine open family cases; 5 need only a source reconciliation\nthat likely excludes 4-5 of them; 16 need the forcing derivation (cheap per\nconfig, the EXP-077 machine method). This RE-SCOPES the [125,150] program from\n'attack 24 unknowns' to 'reconcile 5 + derive 16 A0' forcings, then attack the\nfew genuine survivors'. The GGV2 remark alone likely clears 5-6 configs we had\ntreated as open.\n\n## Next (declared)\n- EXP-084: reconcile the GGV5-vs-GGV2 A0' notions for C10/C11/C19/C20 (source\n  read of GGV5 section 5 family tables vs GGV2's forced last-lower-corner).\n- EXP-085: batch the 16 A0' forcings via the EXP-077 method.\n"
   },
   {
    "area": "dynamical-systems",

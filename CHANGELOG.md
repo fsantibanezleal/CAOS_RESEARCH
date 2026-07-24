@@ -3,6 +3,20 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.51.000], 2026-07-24
+
+### Changed
+- EXP-083: the [125,150] frontier re-audited and RE-SCOPED. The 24 configs are 1
+  excluded (C13, sourced), 5 verify (GGV2-remark-named), 2 open (C01,C04 family
+  cases), 16 derivation-needed. The genuine open set is far smaller than 24.
+- Manuscripts republished v0.09 (Zenodo): Paper B gains the truncation-ladder
+  chapter (degrees 1-2 closed, retraction honesty note, finite-ceiling + two-
+  sided reading, flat-connection lead); BOTH papers repaired a control-char
+  corruption (VT/BS/TAB where LaTeX escapes belonged) that had shipped in v0.08.
+  DOIs: B 10.5281/zenodo.21522059, A 10.5281/zenodo.21522076.
+- GGV2 Prop 3.25/3.29 criteria + GGV5 source secured for the frontier forcings
+  (EXP-084/085 declared).
+
 ## [0.50.000], 2026-07-24
 
 ### Changed (jacobian-conjecture)
