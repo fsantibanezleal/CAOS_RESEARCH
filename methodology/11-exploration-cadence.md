@@ -1,44 +1,50 @@
-# 11 - Exploration cadence: systematic spine + deliberate exploration moments
+# 11 - Exploration cadence: a new viewpoint every round
 
-Adopted 2026-07-23 (Felipe's directive, central-configurations opening session):
-"persist with systematic programs, but take moments to explore more; open the mindset,
-research and explore more paths, more points of view; persist that as a general
-reasoning constant tool." This document makes that a binding, cross-problem rule; it
-complements 10-research-lenses.md (the WHAT of the lenses) with the WHEN (the cadence).
+Adopted 2026-07-24 (Felipe's directive; the operational half of the multi-factorial
+standing rule in methodology/10). The working vision of every problem is
+MULTI-FACTORIAL and re-derived CONTINUOUSLY, not fixed at plan time. This file
+makes that a per-round obligation, not an aspiration.
 
 ## The rule
 
-1. **The systematic program persists.** The spine (declared experiments, exclusion
-   ladders, calibration rungs) is never abandoned for exploration; exploration is
-   scheduled AROUND it, never instead of it.
-2. **Every working session takes at least one deliberate exploration moment.** Not
-   when stuck: ALWAYS. A time-boxed pause in which the session steps off the spine
-   and deliberately:
-   - rotates to a lens (10-research-lenses.md) not yet exercised on the problem;
-   - hunts analogies: to other problems in this portfolio (instruments and
-     proof-shapes built once, reused), to neighboring fields (dictionaries), to the
-     problem's own history (how did the last rung REALLY fall?);
-   - generates candidate NEW paths (at least one per session), stated concretely
-     enough to become a backlog row with a lens tag.
-3. **Exploration output is ALWAYS persisted**, even when empty: a dated lenses file or
-   addendum in `program/<slug>/` (pattern: `lenses-YYYY-MM-DD.md`), new backlog rows
-   for promoted paths, and a "lenses tried / what each gave" ledger line in RESUME.
-   A null exploration ("rotated to lens 7, no viable dictionary found, reasons")
-   is a first-class record; it prevents re-walking dead ends.
-4. **Promotion stays gated.** An explored path becomes work only through the normal
-   discipline: backlog row, then hypothesis.md BEFORE any run. Exploration widens the
-   funnel; it never bypasses the experiment standard.
-5. **Cross-problem analogies are first-class.** At each exploration moment, ask
-   explicitly: which instrument, certificate form, or proof-shape from ANOTHER problem
-   in `program/` ports here (and vice versa)? Record the port candidates in the lenses
-   file; the portfolio compounds through these transfers.
-6. **Stall trigger, in addition.** When the spine stalls (two consecutive rounds
-   without a decided prediction, or a cap strikes repeatedly), the NEXT session leads
-   with an exploration moment before pushing the spine harder (10's workflow rule,
-   restated as cadence).
+Every round has an EXPLORATION MOMENT that must produce one of:
+- a NEW viewpoint, path, analogy, or lens application (logged as a backlog row or a
+  strategy-file entry the same session), OR
+- an honest record of why none was found this round (what was searched, what was
+  ruled out), so the absence is deliberate and visible, never silent.
 
-## Session shape (the constant tool)
+The exploration moment is a deliverable, ranked alongside the round's spine result.
+A round that only advanced the spine, with no exploration entry, is incomplete.
 
-A standard round therefore reads: (spine work: declare, run, verdict) + (exploration
-moment: rotate lens, hunt analogies, mint >= 1 candidate path, persist) + (close: log,
-RESUME ledger, mirror). The exploration moment is as mandatory as the closing pass.
+## What the exploration moment includes (rotate; not all every round)
+
+1. ONLINE RESEARCH SWEEP. Fresh literature (new/adjacent preprints), new tooling or
+   software, competing programs. Anything relevant feeds the lens mix THIS session,
+   not a future one. Cite sources; verify claims in-repo before use (methodology/10
+   lens 11, external dialogue).
+2. SELF-QUESTIONING. Explicitly ask: is our current spine still the best-known route
+   given what we just learned or measured? Which assumption did the latest
+   result/paper undermine? Record the answer, not just the act.
+3. ANALOGY SCAN. To other portfolio problems, to other fields' machinery, to
+   competing methods. A promising transfer becomes a backlog row immediately.
+4. INVARIANT-FIRST PROBE. Before committing to a heavy sweep, ask whether a single
+   invariant (methodology/10 lens 4) decides the case cheaply. This alone has
+   produced one-line results (EXP-089, EXP-090).
+
+## Recording
+
+- The problem's RESUME lenses ledger is updated each round with what the exploration
+  moment produced.
+- Genuinely new directions go to the problem's strategy / research-lines file (e.g.
+  program/<slug>/research-lines-*.md) with a declared first step, and become
+  EXP-declared experiments when actioned.
+- "Nothing new this round" is a valid, recorded outcome with its search scope named.
+
+## Why this exists
+
+A plan built once and executed blind is the failure mode. The 2026-07-24 Jacobian
+session is the model: engaging an external derivation (lens 11) mid-program, then
+running invariant-first probes (lens 4), turned a stalled exclusion sweep into a
+clean structural exclusion of the counterexample mechanism (EXP-089/090) and six
+new research lines - none of which were in the original plan. That is the yield the
+cadence rule institutionalises.

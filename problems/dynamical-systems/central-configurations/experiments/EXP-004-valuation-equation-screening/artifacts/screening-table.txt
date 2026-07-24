@@ -1,0 +1,7 @@
+n5-S1-V1pow3 | fvec: 1506 4744 8586 8787 4652 993 | pointed(global): YES | rays: 1591, unbounded directions: 85, with a positive coordinate: 0 | 2400s-cap | 225s
+n5-S1-V2squares | fvec: 3586 12012 18531 15625 7072 1357 | pointed(global): NO | rays: 3673, unbounded directions: 87, with a positive coordinate: 2 | 2400s-cap | 362s
+n5-S1-V3pow2 | fvec: 2266 7285 11782 10702 5185 1044 | pointed(global): NO | rays: 2353, unbounded directions: 87, with a positive coordinate: 2 | 2400s-cap | 216s
+n5-S1-V4primes | fvec: 2745 8795 13472 11540 5365 1059 | pointed(global): NO | rays: 2832, unbounded directions: 87, with a positive coordinate: 2 | 2400s-cap | 223s
+n5-S1-V5arith | fvec: 3985 13796 20950 17331 7663 1438 | pointed(global): NO | rays: 4153, unbounded directions: 168, with a positive coordinate: 74 | 2400s-cap | 379s
+n5-S1-V6repeat | fvec: 1953 5151 5569 3039 898 109 | pointed(global): NO | rays: 2124, unbounded directions: 171, with a positive coordinate: 31 | 2400s-cap | 174s
+n5-S2-V1pow3 | fvec: 2839 9330 14440 12590 5984 1192 | pointed(global): NO | rays: 3255, unbounded directions: 416, with a positive coordinate: 316 | 2400s-cap | 87s

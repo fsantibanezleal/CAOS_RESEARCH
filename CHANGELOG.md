@@ -3,6 +3,16 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.53.000], 2026-07-24
+
+### Added
+- methodology/11 (exploration cadence: every round mints a new viewpoint or
+  records why none). Paper B v0.10: new section "The counterexample as an
+  incidence map, and its exclusion in the plane" (the incidence structure,
+  recognition of affine space, and the n-2 invariant excluding the mechanism in
+  dim 2), republished on Zenodo. Web problem-page summary refreshed to the
+  current state (90 experiments, the incidence exclusion).
+
 ## [0.52.000], 2026-07-24
 
 ### Added

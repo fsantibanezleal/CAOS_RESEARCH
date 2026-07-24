@@ -23,7 +23,7 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-24 (working manuscript, v0.09; the truncation ladder + control-char repair)}
+\date{2026-07-24 (working manuscript, v0.10; incidence structure + the plane-exclusion invariant)}
 
 \begin{document}
 \maketitle
@@ -449,6 +449,43 @@ data $(8,28),(8,40)$ forces $A_0' = (8,4)$, which is not a possible last lower
 corner. We had not fully mined that remark; several of the twenty-four
 configurations in $[125,150]$ may be similarly settled, and a re-audit against the
 excluded family $\wp(n', n'-1)$ precedes any new attack (EXP-082, EXP-083).
+
+\subsection*{The counterexample as an incidence map, and its exclusion in the plane}
+
+A complementary lens sharpens why the two-variable case resists the very mechanism
+that settled dimension three. The 2026 counterexample is not an arbitrary polynomial
+map: it is the coefficient map of the product of a linear and a quadratic binary
+form, restricted to a normalized slice. Concretely, on
+$V_1\times V_2\to V_3\times\mathbb{A}^1$, $(L,Q)\mapsto(LQ,\operatorname{Res}(L,Q))$,
+the slice $X_H=\{(L,Q):\operatorname{Res}(L,Q)=1,\ [LQ]_{\text{next}}=1\}$ carries the
+projection $(L,Q)\mapsto LQ$, which is étale on the coprime (nonzero-resultant) locus
+by a one-line argument: multiplication forgets exactly the relative scaling
+$(L,Q)\mapsto(\lambda L,\lambda^{-1}Q)$, and the resultant, of weight $\deg Q-\deg L$
+under that scaling, detects it. The projection is generically $n$-to-one (the choices
+of linear factor), hence not injective. We verified [MV] the full identification: the
+displayed counterexample equals this coefficient map up to linear normalization, with
+$X_H\cong\mathbb{A}^3$. So, for this family, the entire Jacobian question reduces to a
+single \emph{recognition of affine space}: is $X_H\cong\mathbb{A}^n$?
+
+In dimension three the recognition holds by a toric coincidence: the residual
+$\mathbb{G}_m$-grading has weights $(1,-1,-2)$, and the associated semigroup generators
+form a unimodular lattice basis, so $X_3\cong\mathbb{A}^3$. In the plane it \emph{fails},
+and we can say why in one invariant. The controlling quantity is
+$n-2=\deg Q-\deg L$, the resultant weight under the relative scaling; it is
+simultaneously the degree of the Danielewski core
+$\{x^{\,n-2}W=B^{\,n-2}-1\}$ and the number of boundary components. For $n=2$ it is
+$0$: the resultant becomes scaling-invariant, unable to rigidify the normalization,
+and the slice degenerates (reducible; equivalently, the finite-root model is
+$\mathbb{A}^2$ minus the discriminant, which carries a nonconstant unit and is
+therefore not $\mathbb{A}^2$). For $n=3$ it is $1$, the unique value that is both
+nonzero and linear, giving $X_n\cong\mathbb{A}^n$; for $n\ge4$ it is $\ge2$, and the
+class group obstructs. Thus the exact structure of the known counterexample cannot
+occur in the plane [MV], a conclusion consistent with the companion's
+$\mathbb{G}_m$-equivariant rigidity theorem, which forbids the torus-graded planar
+analog independently. This excludes the incidence/root-selection class, the structure
+of every constant-Jacobian noninvertible map known to date; it is strong structural
+evidence for $JC(2)$, not a proof, since a planar counterexample of some entirely
+different structure is not addressed.
 
 \section{Positioning and novelty}\label{sec:positioning}
 
