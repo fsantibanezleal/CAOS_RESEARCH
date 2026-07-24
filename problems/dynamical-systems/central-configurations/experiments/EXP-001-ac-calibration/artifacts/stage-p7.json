@@ -1,0 +1,28 @@
+{
+  "torus_cores": [
+    "2*a**3*b**3 - a**3 - b**3",
+    "4*a**5*b - a**3 - 4*a**2*b + b**3"
+  ],
+  "coprime": true,
+  "n_positive": 2,
+  "solutions": [
+    {
+      "a": "CRootOf(32*x**6 - 32*x**3 + 7, 1)",
+      "b": "CRootOf(4*x**6 - 4*x**3 - 7, 1)",
+      "a_cubed": "CRootOf(32*x**6 - 32*x**3 + 7, 1)**3",
+      "b2_eq_2a2": true,
+      "a_eq_b": false,
+      "cayley_menger": "0",
+      "cm_zero": true
+    },
+    {
+      "a": "1",
+      "b": "1",
+      "a_cubed": "1",
+      "b2_eq_2a2": false,
+      "a_eq_b": true,
+      "cayley_menger": "4",
+      "cm_zero": false
+    }
+  ]
+}

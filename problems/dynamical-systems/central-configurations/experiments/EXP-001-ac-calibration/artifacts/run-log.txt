@@ -3,3 +3,21 @@
 [23:03:01] RESULT sanity-nonvacuous: pass 
 [23:03:01] RESULT fact-line-r13r23-in-VF: pass the line {r13 = r23 = 0} lies in V(F) for ALL masses (why saturation is needed)
 [23:03:01] RESULT P3-equal-masses-symmetric: pass r12 = 90**(1/3)/6, r23 = 90**(1/3)/6
+[23:12:17] RESULT P3-euler-moulton: pass exactly one positive collinear solution per ordering per sample
+[23:12:17] RESULT P6-assembly: pass {"f12": {"n_monomials": 14, "total_degree": 15, "support_affine_dim": 5}, "f13": {"n_monomials": 14, "total_degree": 15, "support_affine_dim": 5}, "f14": {"n_monomials": 14, "total_degree": 15, "support_affine_dim": 5}, "f23": {"n_monomials": 14, "total_degree": 15, "support_affine_dim": 5}, "f24": {"n_monomials": 14, "total_degree": 15, "support_affine_dim": 5}, "f34": {"n_monomials": 14, "total_degree": 15, "support_affine_dim": 5}, "e_CM": {"n_monomials": 22, "total_degree": 6, "support_affine_dim": 5}}
+[23:12:17] P7: reduced to 2 equations; torus cores: ['2*a**3*b**3 - a**3 - b**3', '4*a**5*b - a**3 - 4*a**2*b + b**3']; stripped [['a**9'], ['b**5', 'a**4']]
+[23:12:18] P7 census: eliminants {'a': 'a**5*(a - 1)*(a**2 + a + 1)*(32*a**6 - 32*a**3 + 7)', 'b': 'b**5*(b - 1)*(b**2 + b + 1)*(4*b**6 - 4*b**3 - 7)'}, 6 candidate tuples
+[23:12:19] RESULT P7-unique-positive: fail 2 positive torus solutions of the rhombus-stratum AC system: [{'a': 'CRootOf(32*x**6 - 32*x**3 + 7, 1)', 'b': 'CRootOf(4*x**6 - 4*x**3 - 7, 1)', 'a_cubed': 'CRootOf(32*x**6 - 32*x**3 + 7, 1)**3', 'b2_eq_2a2': True, 'a_eq_b': False, 'cayley_menger': '0', 'cm_zero': True}, {'a': '1', 'b': '1', 'a_cubed': '1', 'b2_eq_2a2': False, 'a_eq_b': True, 'cayley_menger': '4', 'cm_zero': False}]
+[23:12:19] RESULT P7-square-shape: pass square present: a^3 = CRootOf(32*x**6 - 32*x**3 + 7, 1)**3, minpoly 32*x**6 - 32*x**3 + 7; planar (CM = 0) positive solutions: 1
+[23:12:19] RESULT P7-cayley-menger: pass CM at the square = 0
+[23:12:22] RESULT P4-eliminant-nonzero: pass degree in r23: 54 (4 s)
+[23:19:30] RESULT P1-zerodim-(1, 1, 1): pass saturated GB size 37 in 428 s
+[23:34:30] P1 (1, 2, 3): CAP struck after 900 s
+[23:34:30] RESULT P1-zerodim-(1, 2, 3): inconclusive-cap saturation Groebner did not finish within 900 s
+[23:49:30] P1 (2, 3, 5): CAP struck after 900 s
+[23:49:30] RESULT P1-zerodim-(2, 3, 5): inconclusive-cap saturation Groebner did not finish within 900 s
+[00:04:30] P1 (1, 1, 2): CAP struck after 900 s
+[00:04:30] RESULT P1-zerodim-(1, 1, 2): inconclusive-cap saturation Groebner did not finish within 900 s
+[00:34:31] P5 census: CAP struck after 1800 s
+[00:34:31] RESULT P5-census-equal-masses: inconclusive-cap saturated-system solve did not finish within 1800 s
+[00:34:31] done in 5490.02 s; FAIL: ['P7-unique-positive']; CAP: ['P1-zerodim-(1, 2, 3)', 'P1-zerodim-(2, 3, 5)', 'P1-zerodim-(1, 1, 2)', 'P5-census-equal-masses']

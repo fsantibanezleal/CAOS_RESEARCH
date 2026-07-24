@@ -1,4 +1,4 @@
-# RESUME - Central configurations program (updated 2026-07-23, session 1 in progress)
+# RESUME - Central configurations program (updated 2026-07-24, rounds 1-2 closed; ALL ENGLISH always, incl. chat)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -18,8 +18,20 @@ The single first-read for a fresh session (contract: methodology/07-session-hand
   Roberts 1999: with one negative mass a CONTINUUM exists (positivity necessary).
   Equal-mass rigorous counts n = 3..7 (MZ19, mod rotation+reflection+permutation):
   2, 4, 5, 9, 14.
-- **Our state:** program OPENED 2026-07-23. Dossiers persisted; plan/backlog/routes
-  written; EXP-001 (calibration) is the current experiment. No results of our own yet.
+- **Our state:** program OPENED 2026-07-23; EXP-001 (calibration) DECIDED 2026-07-24:
+  the exact AC builder is validated on n = 3 (Euler-Moulton counts exact on 4 mass
+  samples; Lagrange identical in symbolic masses; symbolic Euler eliminant degree 54
+  persisted); the n = 4 planar HM system is assembled with a recorded profile; the
+  equal-mass n = 3 saturated ideal is 0-dim (certificate persisted). THE REFUTATION
+  that recalibrates the pipeline: the bare symmetric AC distance system is
+  DIMENSION-BLIND (regular tetrahedron a = b = 1 coexists with the square
+  a^3 = (4 + sqrt(2))/8, minpoly 32x^6 - 32x^3 + 7, in the equal-mass rhombus
+  stratum; planarity = adjoin Cayley-Menger, then the square is unique there). All
+  planar statements now run on the ENRICHED system (F + G + e_CM + e_IU). Counting
+  instrument of record: the eliminant census (lex-GB univariates + CRootOf + exact
+  residual acceptance); sympy solve_poly_system is BANNED from verdict-bearing counts
+  (returned incomplete lists; caught by hand-check). Open at cap: P1 saturation for
+  unequal masses, P5 full census (instrument upgrade = CCB-007).
 - **The working equations** (exact polynomial forms after clearing denominators;
   $S_{ij} = r_{ij}^{-3} + \Lambda$, fix $\Lambda = -1$):
   symmetric Albouy-Chenciner
@@ -41,21 +53,40 @@ The single first-read for a fresh session (contract: methodology/07-session-hand
 
 ## 3. Experiment index
 
-- EXP-001 (in flight): calibration; exact AC builder; n = 3 classification; n = 4
-  system assembly. Hypothesis committed before run.
+- EXP-001 ac-calibration: confirmed in part / P7-uniqueness REFUTED / P1-unequal +
+  P5 inconclusive at caps. Load-bearing: dimension-blindness of the bare AC system
+  (tetrahedron vs square); the eliminant census instrument; the equal-mass saturation
+  certificate; the n = 4 profile baseline. Long form: wiki/05 + the verdict.
+- EXP-002 enriched-census: confirmed on every decided prediction; P2 inconclusive at
+  caps on (1,2,3), (2,3,5). Load-bearing: F + G + e_IU is 0-dim DIRECTLY (no
+  saturation; 0.7 s/sample); decided censuses perfectly classical; planar rhombus =
+  the square alone; U = M I exact; engine limit measured (sympy census saturates on
+  integer-separated masses).
+- EXP-003 jl25-prevariety-reproduction: CONFIRMED, exact. Both published JL25 n = 5
+  f-vectors digit-for-digit; pointedness independently verified; ~6 wall-min per
+  valuation on 30 threads. THE TROPICAL LANE IS OPEN on validated infrastructure
+  (gfan 0.7 in WSL, hashes recorded; ~25 cpu-min per wall-min throughput; a JL25-
+  scale n = 6 attempt is ~2.8 wall-days here).
 
 ## 4. In flight
 
-EXP-001. Hypothesis declared (see the experiment folder); run pending at last update.
+Nothing mid-run. Rounds 1-3 closed with EXP-001, EXP-002, EXP-003 decided.
 
 ## 5. Next actions, ordered
 
-1. Finish EXP-001: run.py with the repo .venv, artifacts tee'd, verdict.md honoring the
-   machine; wiki 01-05 initial pages; close the round (no version bump).
-2. CCB-002: obtain + read HM06; upgrade [HM-via-*] tags; then design EXP-002 (n = 4
-   equal-mass exact census against the 4-classes / 50-rotation-classes ground truth).
-3. CCB-007: the exact mixed-volume instrument (staged; needed for the BKK rung).
-4. CCB-003/004: AK12 + Chang-Chen reads; transcribe the 24 frontier cases.
+1. CCB-030/031 (hypothesis FIRST; the frontier experiments JL25 explicitly calls
+   for): valuation SCREENING at n = 4/5 (minutes per try; success/failure map,
+   principled n = 6 shortlist) and equation-variant prevariety shrinking (add/remove
+   Dziobek / e_IU / G-subsets; f-vector + pointedness deltas). Goal: an evidenced
+   n = 6 shot (~2.8 wall-days) instead of a blind one.
+2. CCB-025: msolve wrap (WSL; record hashes) toward EXP-004 (P2 completion on the
+   capped samples + the n = 4 equal-mass PLANAR census vs the 4-classes ground
+   truth). sympy stays the verification layer.
+3. Reads: Sun-Xie-You full read (arXiv:2510.25649; gate for CCB-014 Hessian
+   instrument; treats our exact anchors); AK12 full anatomy (CCB-023); Chang-Chen
+   tables (CCB-004).
+4. Statement-level claims and any outreach: to Felipe first, always.
+5. Exploration moment every round (methodology/10 multi-factorial rule + 11).
 
 ## 6. Where everything lives
 
@@ -67,6 +98,16 @@ EXP-001. Hypothesis declared (see the experiment folder); run pending at last up
   (status.md + findings.md + history.md; per-problem, never touch other problems').
 - Heavy data (when it appears): `E:\_Datos\caos-research\central-configurations\` with
   in-repo SHA-256 manifests.
+
+## 6b. Lenses ledger (methodology/10 + the exploration cadence of methodology/11)
+
+Plan-stage declaration (lenses-2026-07-23.md): spine (exclusion) + anatomy (Roberts
+continuum) + invariant (Hessian/critical-value) standing; recognition
+(incidence-dimension certificates) and at-infinity (cluster recursion) as exploratory
+bets; two-sided gated on the Chang-Chen transcription. New paths minted at open:
+CCB-013..020. Session 1 exploration moment: produced lenses-2026-07-23.md itself (11
+lenses swept; 8 new backlog rows). Cadence rule (methodology/11, Felipe 2026-07-23):
+every session = spine work + at least one persisted exploration moment.
 
 ## 7. Gotchas
 
