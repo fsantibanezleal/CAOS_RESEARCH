@@ -976,3 +976,21 @@
   separate session opened central-configurations (parallel, isolated).
 - Routine per methodology/08: rounds close without version bump; this release
   step folds in all develop commits since v0.49.000.
+
+## 2026-07-24 (session 47 cont.) - the frontier re-audited; Paper A/B v0.09 published
+
+- **EXP-083 (decided):** the 24 [125,150] configs partition into 1 EXCLUDED
+  (C13, sourced), 5 VERIFY (C10/C11/C19/C20 named in the GGV2 remark but
+  discrepant with our GGV5-sourced A0'; C12 a different (8,28) chain), 2 OPEN
+  (C01 A0'=(1,0), C04 A0'=(2,0): genuine family cases), 16 DERIVATION-NEEDED
+  (unprinted A0', force via EXP-077 method). The real frontier is FAR smaller
+  than 24; the GGV2 remark alone likely clears 5-6. EXP-084/085 declared.
+- **Manuscripts:** found and repaired control-char corruption (VT/BS/TAB where
+  escapes belonged) in the PUBLISHED planar + foundational LaTeX; added the
+  truncation-ladder chapter to Paper B; both republished on Zenodo v0.09
+  (B 10.5281/zenodo.21522059, A 10.5281/zenodo.21522076; concept DOIs resolve
+  to latest).
+- **Quadruple sweep (EXP-075 run2b):** no degree-3 obstruction through index
+  1200 of the blocker-heavy phase (all feasible; ~3.4 s/support); relaunched to
+  continue. The compiled GF(p) kernel (strategy S5a) is the multiplier this
+  needs.
