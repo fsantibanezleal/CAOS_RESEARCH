@@ -994,3 +994,22 @@
   1200 of the blocker-heavy phase (all feasible; ~3.4 s/support); relaunched to
   continue. The compiled GF(p) kernel (strategy S5a) is the multiplier this
   needs.
+
+## 2026-07-24 (session 47/48 cont.) - the incidence/recognition analysis: the 2026 mechanism excluded in 2D
+
+- Engaging a deep Tao-ChatGPT derivation of the 2026 counterexample (all identities
+  re-verified in-repo): the map is the coefficient map of (linear)x(quadratic) on
+  {resultant=1, middle=1}, = pi|X_H with X_H ~ A^3; the whole Jacobian question (for
+  this family) reduces to recognition-of-affine-space X_H ~ A^n.
+- EXP-086/087/088/089/090: the mechanism is exceptional to n=3 and EXCLUDED in dim 2.
+  Decisive: X_2 is not A^2 (reducible / nonconstant units, EXP-089). Unified by the
+  single invariant n-2 = resultant weight under relative L,Q scaling = Danielewski
+  core degree = boundary count (EXP-090): n=2->0 (degenerate at the root), n=3->1
+  (unique), n>=4->>=2. Consistent with our G_m-equivariant rigidity (EXP-010).
+- methodology/10 (research lenses) + methodology/09 (manuscripts) + 08 (isolation)
+  shipped. Six expanded research lines logged (Poisson/symplectic, Weyl/Dixmier,
+  Jelonek, recognition, sheet-number, char-p).
+- The two-sided reading and the properness=Jelonek bridge connect the external
+  geometry to our own EXP-014/EXP-010. Manuscripts A/B republished v0.09 (Zenodo).
+- The floor-raise stays gated; the (72,108) truncation and [125,150] frontier
+  continue. JC(2) remains open.

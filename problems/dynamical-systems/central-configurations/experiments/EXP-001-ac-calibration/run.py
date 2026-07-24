@@ -142,6 +142,54 @@ def is_real_positive(x) -> bool:
     return bool(v > 0)
 
 
+def census_positive(eqs, gens):
+    """Complete exact census of the REAL POSITIVE common zeros of a 0-dim-in-the-torus
+    polynomial system, WITHOUT solve_poly_system.
+
+    Machine lesson (this experiment): sympy's solve_poly_system silently returns an
+    INCOMPLETE solution list when univariate roots are not radical-expressible or fail
+    its internal lifting (it missed the square in the rhombus stratum, whose b-value is
+    a root of 4b^6 - 4b^3 - 7 with obvious radical form). Here instead:
+      1. per-variable univariate eliminants from lex Groebner bases (elements of the
+         ideal: EVERY solution's coordinate is a root: completeness by construction);
+      2. positive real candidates as exact CRootOf isolations (complete real-root sets);
+      3. every candidate tuple accepted only when EVERY equation's residual is exactly
+         zero (sympy equals(0) on algebraic numbers, decisive True required).
+    Returns (accepted_tuples, meta). Raises RuntimeError if some variable has no
+    univariate eliminant in its lex elimination ideal (system not 0-dim in that chart).
+    """
+    per_var_roots = {}
+    meta = {"eliminants": {}}
+    for v in gens:
+        others = [g for g in gens if g != v]
+        G = sp.groebner(eqs, *(others + [v]), order="lex")
+        univ = [g for g in G.exprs if g.free_symbols <= {v}]
+        if not univ:
+            raise RuntimeError(f"no univariate eliminant for {v}")
+        u = univ[0]
+        for extra in univ[1:]:
+            u = sp.gcd(u, extra)
+        meta["eliminants"][str(v)] = str(sp.factor(u))
+        roots = [r for r in sp.Poly(u, v).real_roots() if r > 0]
+        per_var_roots[v] = roots
+    from itertools import product as iproduct
+    accepted = []
+    n_cand = 1
+    for v in gens:
+        n_cand *= len(per_var_roots[v])
+    meta["candidate_tuples"] = n_cand
+    for combo in iproduct(*[per_var_roots[v] for v in gens]):
+        subs_map = dict(zip(gens, combo))
+        ok = True
+        for e in eqs:
+            if e.subs(subs_map).equals(0) is not True:
+                ok = False
+                break
+        if ok:
+            accepted.append(combo)
+    return accepted, meta
+
+
 def exact_zero_residuals(eqs, subs_map) -> bool:
     """Exact check that every equation vanishes at the (algebraic) point."""
     for e in eqs:
@@ -224,13 +272,15 @@ def _worker_p5(gb_file, outfile):
     gens4 = [R12, R13, R23, t]
     data = json.loads(Path(gb_file).read_text(encoding="utf-8"))
     basis = [spp.sympify(e) for e in data["gb_exprs"]]
-    sols = spp.solve_poly_system([spp.Poly(bb, *gens4) for bb in basis], *gens4)
-    out = []
-    for s in sols:
-        r12v, r13v, r23v, tv = s
-        if all(is_real_positive(x) for x in (r12v, r13v, r23v)):
-            out.append([spp.srepr(r12v), spp.srepr(r13v), spp.srepr(r23v)])
-    Path(outfile).write_text(json.dumps({"n_sols_total": len(sols),
+    # eliminate t (lex, t first) to get the saturated ideal in the r variables,
+    # then run the complete eliminant census on the 3-var system.
+    Gt = spp.groebner(basis, t, R12, R13, R23, order="lex")
+    rsys = [g for g in Gt.exprs if t not in g.free_symbols]
+    accepted, meta = census_positive(rsys, [R12, R13, R23])
+    out = [[spp.srepr(x) for x in combo] for combo in accepted]
+    Path(outfile).write_text(json.dumps({"n_positive": len(accepted),
+                                         "eliminants": meta["eliminants"],
+                                         "candidate_tuples": meta["candidate_tuples"],
                                          "positive": out}), encoding="utf-8")
 
 
@@ -283,15 +333,16 @@ def stage_p3():
             eqs = [sp.expand(f.subs({lhs: rhs})) for f in F.values()]
             eqs = [e for e in eqs if e != 0]
             vars2 = sorted({s for e in eqs for s in e.free_symbols}, key=str)
-            sols = sp.solve_poly_system([sp.Poly(e, *vars2) for e in eqs], *vars2)
-            pos = []
-            for sol in sols:
-                if all(is_real_positive(x) for x in sol):
-                    if exact_zero_residuals(eqs, dict(zip(vars2, sol))):
-                        pos.append(sol)
-                    else:
-                        log(f"P3 WARNING {mv}-{oname}: positive candidate failed exact residual: {sol}")
+            try:
+                pos, _meta = census_positive(eqs, vars2)
+            except RuntimeError as exc:
+                log(f"P3 {mv}-{oname}: census failed: {exc}")
+                pos = None
             key = f"{mv}-{oname}"
+            if pos is None:
+                details[key] = "census-failed"
+                all_ok = False
+                continue
             details[key] = [[str(x) for x in s] for s in pos]
             if len(pos) != 1:
                 all_ok = False
@@ -347,26 +398,21 @@ def stage_p7(F4, cm):
         f" stripped {stripped_info}")
     g = sp.gcd(core[0], core[1]) if len(core) == 2 else sp.Integer(1)
     coprime = sp.total_degree(g) == 0
-    sols = sp.solve_poly_system([sp.Poly(e, a, b) for e in core], a, b)
-    pos = []
-    for s in sols:
-        if all(is_real_positive(x) for x in s):
-            if exact_zero_residuals(core, {a: s[0], b: s[1]}):
-                pos.append(s)
-            else:
-                log(f"P7 WARNING: positive candidate failed exact residual: {s}")
+    pos, cmeta = census_positive(core, [a, b])
+    log(f"P7 census: eliminants {cmeta['eliminants']}, {cmeta['candidate_tuples']} candidate tuples")
     entries = []
     square = None
     for (av, bv) in pos:
-        is_square = sp.simplify(bv ** 2 - 2 * av ** 2) == 0
-        cmv = sp.simplify(cm.subs({rvar(1, 2): av, rvar(2, 3): av, rvar(3, 4): av,
-                                   rvar(1, 4): av, rvar(1, 3): bv, rvar(2, 4): bv}))
+        is_square = (bv ** 2 - 2 * av ** 2).equals(0) is True
+        cmv = cm.subs({rvar(1, 2): av, rvar(2, 3): av, rvar(3, 4): av,
+                       rvar(1, 4): av, rvar(1, 3): bv, rvar(2, 4): bv})
+        cm_zero = cmv == 0 or cmv.equals(0) is True
         ent = {"a": str(av), "b": str(bv),
                "a_cubed": str(sp.simplify(av ** 3)),
                "b2_eq_2a2": bool(is_square),
-               "a_eq_b": bool(sp.simplify(av - bv) == 0),
-               "cayley_menger": str(cmv),
-               "cm_zero": bool(cmv == 0)}
+               "a_eq_b": bool((av - bv).equals(0) is True),
+               "cayley_menger": str(sp.nsimplify(sp.N(cmv, 30), rational=False)) if not cm_zero else "0",
+               "cm_zero": bool(cm_zero)}
         entries.append(ent)
         if is_square:
             square = (av, bv, ent)
@@ -411,16 +457,23 @@ def stage_p1_p5():
         if ok and outfile.exists():
             data = json.loads(outfile.read_text(encoding="utf-8"))
             pos = [[sp.sympify(x) for x in s] for s in data["positive"]]
+
+            def geq0(expr) -> bool:
+                if expr == 0 or expr.equals(0) is True:
+                    return True
+                v = expr.evalf(60)
+                if not v.is_comparable:
+                    v = sp.N(expr, 120)
+                return bool(v > 0)
+
             realizable = []
             for (x, y, z) in pos:  # r12, r13, r23
-                tri = (sp.simplify(x + z - y) >= 0) and (sp.simplify(x + y - z) >= 0) \
-                      and (sp.simplify(y + z - x) >= 0)
-                if tri:
+                if geq0(x + z - y) and geq0(x + y - z) and geq0(y + z - x):
                     realizable.append((x, y, z))
             record("P5-census-equal-masses",
                    "pass" if len(realizable) == 4 else "fail",
                    f"{len(realizable)} realizable of {len(pos)} positive"
-                   f" (total sols {data['n_sols_total']});"
+                   f" (candidates {data['candidate_tuples']}, eliminants {data['eliminants']});"
                    f" realizable = {[[str(v) for v in s] for s in realizable]}")
         else:
             record("P5-census-equal-masses", "inconclusive-cap",

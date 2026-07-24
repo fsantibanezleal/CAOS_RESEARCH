@@ -3,6 +3,20 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.52.000], 2026-07-24
+
+### Added
+- The incidence/recognition analysis (EXP-086..090): the 2026 counterexample is
+  the coefficient map of (linear)x(quadratic) restricted to a resultant/normalization
+  slice (= pi|X_H, X_H ~ A^n); the whole construction reduces to recognition of
+  affine space. DECISIVE: the mechanism is EXCLUDED in dimension 2 (X_2 != A^2,
+  reducible / nonconstant units), unified by the single invariant n-2 (resultant
+  weight = Danielewski core degree = boundary count): n=3 is the unique working
+  dimension; dim 2 fails at the root (weight 0). Consistent with our G_m-rigidity.
+- methodology/10 (research-lenses toolkit) for every problem; six expanded JC(2)
+  research lines (Poisson/symplectic, Weyl/Dixmier, Jelonek, recognition,
+  sheet-number, char-p).
+
 ## [0.51.000], 2026-07-24
 
 ### Changed
