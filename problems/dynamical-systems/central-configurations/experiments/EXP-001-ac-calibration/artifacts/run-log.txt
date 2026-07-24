@@ -1,5 +1,12 @@
-[22:42:33] EXP-001 staged run start
-[22:42:33] RESULT P2-lagrange-symbolic: pass 
-[22:42:33] RESULT sanity-nonvacuous: pass 
-[22:42:33] RESULT fact-line-r13r23-in-VF: pass the line {r13 = r23 = 0} lies in V(F) for ALL masses (why saturation is needed)
-[22:42:33] RESULT P3-equal-masses-symmetric: pass r12 = 90**(1/3)/6, r23 = 90**(1/3)/6
+[22:45:11] EXP-001 staged run start
+[22:45:11] RESULT P2-lagrange-symbolic: pass 
+[22:45:11] RESULT sanity-nonvacuous: pass 
+[22:45:11] RESULT fact-line-r13r23-in-VF: pass the line {r13 = r23 = 0} lies in V(F) for ALL masses (why saturation is needed)
+[22:45:12] RESULT P3-equal-masses-symmetric: pass r12 = 90**(1/3)/6, r23 = 90**(1/3)/6
+[22:45:16] RESULT P3-euler-moulton: fail {"(1, 1, 1)-2-middle": 1, "(1, 1, 1)-3-middle": 1, "(1, 1, 1)-1-middle": 1, "(1, 2, 3)-2-middle": 0, "(1, 2, 3)-3-middle": 0, "(1, 2, 3)-1-middle": 0, "(2, 3, 5)-2-middle": 0, "(2, 3, 5)-3-middle": 0, "(2, 3, 5)-1-middle": 0, "(1, 1, 2)-2-middle": 0, "(1, 1, 2)-3-middle": 1, "(1, 1, 2)-1-middle": 0}
+[22:45:17] RESULT P6-assembly: pass {"f12": {"n_monomials": 14, "total_degree": 15, "support_affine_dim": 5}, "f13": {"n_monomials": 14, "total_degree": 15, "support_affine_dim": 5}, "f14": {"n_monomials": 14, "total_degree": 15, "support_affine_dim": 5}, "f23": {"n_monomials": 14, "total_degree": 15, "support_affine_dim": 5}, "f24": {"n_monomials": 14, "total_degree": 15, "support_affine_dim": 5}, "f34": {"n_monomials": 14, "total_degree": 15, "support_affine_dim": 5}, "e_CM": {"n_monomials": 22, "total_degree": 6, "support_affine_dim": 5}}
+[22:45:17] P7: reduced to 2 equations; torus cores: ['2*a**3*b**3 - a**3 - b**3', '4*a**5*b - a**3 - 4*a**2*b + b**3']; stripped [['a**9'], ['b**5', 'a**4']]
+[22:45:17] RESULT P7-unique-positive: pass 1 positive torus solutions of the rhombus-stratum AC system: [{'a': '1', 'b': '1', 'a_cubed': '1', 'b2_eq_2a2': False, 'a_eq_b': True, 'cayley_menger': '4', 'cm_zero': False}]
+[22:45:17] RESULT P7-square-shape: fail no positive solution with b^2 = 2a^2
+[22:45:17] RESULT P7-cayley-menger: fail square absent
+[22:45:20] RESULT P4-eliminant-nonzero: pass degree in r23: 54 (3 s)

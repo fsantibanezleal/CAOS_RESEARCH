@@ -117,6 +117,45 @@ def strip_monomial_factors(expr, gens):
     return sp.expand(out), stripped
 
 
+def is_real_positive(x) -> bool:
+    """Exact-backed sign decision for an algebraic number.
+
+    sympy's `is_positive` returns None on nested RootOf expressions (silently dropping
+    genuine solutions if used as a filter: the bug found in the first staged run).
+    Here: realness via exact `im(x).equals(0)` (with a simplify fallback), positivity
+    via adaptive-precision evalf on the real part (sympy evalf tracks error for
+    algebraic expressions); callers additionally verify each ACCEPTED solution by an
+    exact residual check against the defining equations.
+    """
+    x = sp.nsimplify(x, rational=False) if x.is_Rational else x
+    im = sp.im(x)
+    if im != 0:
+        ok = im.equals(0)
+        if ok is not True and sp.simplify(im) != 0:
+            return False
+    re = sp.re(x)
+    if re == 0 or re.equals(0):
+        return False
+    v = re.evalf(60)
+    if not v.is_comparable:
+        v = sp.N(re, 120)
+    return bool(v > 0)
+
+
+def exact_zero_residuals(eqs, subs_map) -> bool:
+    """Exact check that every equation vanishes at the (algebraic) point."""
+    for e in eqs:
+        val = e.subs(subs_map)
+        if val == 0:
+            continue
+        z = sp.simplify(val)
+        if z == 0:
+            continue
+        if z.equals(0) is not True:
+            return False
+    return True
+
+
 def support_profile(expr, gens):
     p = sp.Poly(expr, *gens)
     monoms = p.monoms()
@@ -185,13 +224,12 @@ def _worker_p5(gb_file, outfile):
     gens4 = [R12, R13, R23, t]
     data = json.loads(Path(gb_file).read_text(encoding="utf-8"))
     basis = [spp.sympify(e) for e in data["gb_exprs"]]
-    sols = spp.solve_poly_system([spp.Poly(b, *gens4) for b in basis], *gens4)
+    sols = spp.solve_poly_system([spp.Poly(bb, *gens4) for bb in basis], *gens4)
     out = []
     for s in sols:
         r12v, r13v, r23v, tv = s
-        if all(spp.im(x) == 0 for x in (r12v, r13v, r23v)):
-            if all(x.is_positive for x in (r12v, r13v, r23v)):
-                out.append([spp.srepr(r12v), spp.srepr(r13v), spp.srepr(r23v)])
+        if all(is_real_positive(x) for x in (r12v, r13v, r23v)):
+            out.append([spp.srepr(r12v), spp.srepr(r13v), spp.srepr(r23v)])
     Path(outfile).write_text(json.dumps({"n_sols_total": len(sols),
                                          "positive": out}), encoding="utf-8")
 
@@ -248,8 +286,11 @@ def stage_p3():
             sols = sp.solve_poly_system([sp.Poly(e, *vars2) for e in eqs], *vars2)
             pos = []
             for sol in sols:
-                if all(sp.im(x) == 0 for x in sol) and all(x.is_positive for x in sol):
-                    pos.append(sol)
+                if all(is_real_positive(x) for x in sol):
+                    if exact_zero_residuals(eqs, dict(zip(vars2, sol))):
+                        pos.append(sol)
+                    else:
+                        log(f"P3 WARNING {mv}-{oname}: positive candidate failed exact residual: {sol}")
             key = f"{mv}-{oname}"
             details[key] = [[str(x) for x in s] for s in pos]
             if len(pos) != 1:
@@ -307,7 +348,13 @@ def stage_p7(F4, cm):
     g = sp.gcd(core[0], core[1]) if len(core) == 2 else sp.Integer(1)
     coprime = sp.total_degree(g) == 0
     sols = sp.solve_poly_system([sp.Poly(e, a, b) for e in core], a, b)
-    pos = [s for s in sols if all(sp.im(x) == 0 for x in s) and all(x.is_positive for x in s)]
+    pos = []
+    for s in sols:
+        if all(is_real_positive(x) for x in s):
+            if exact_zero_residuals(core, {a: s[0], b: s[1]}):
+                pos.append(s)
+            else:
+                log(f"P7 WARNING: positive candidate failed exact residual: {s}")
     entries = []
     square = None
     for (av, bv) in pos:
