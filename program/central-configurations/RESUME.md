@@ -62,27 +62,31 @@ The single first-read for a fresh session (contract: methodology/07-session-hand
   saturation; 0.7 s/sample); decided censuses perfectly classical; planar rhombus =
   the square alone; U = M I exact; engine limit measured (sympy census saturates on
   integer-separated masses).
+- EXP-003 jl25-prevariety-reproduction: CONFIRMED, exact. Both published JL25 n = 5
+  f-vectors digit-for-digit; pointedness independently verified; ~6 wall-min per
+  valuation on 30 threads. THE TROPICAL LANE IS OPEN on validated infrastructure
+  (gfan 0.7 in WSL, hashes recorded; ~25 cpu-min per wall-min throughput; a JL25-
+  scale n = 6 attempt is ~2.8 wall-days here).
 
 ## 4. In flight
 
-Nothing mid-run. Rounds 1-2 closed with EXP-001 and EXP-002 decided.
+Nothing mid-run. Rounds 1-3 closed with EXP-001, EXP-002, EXP-003 decided.
 
 ## 5. Next actions, ordered
 
-1. CCB-029: install gfan 0.7 (WSL; record binary + hash); reproduce the Jensen-Leykin
-   n = 5 prevariety one-liner; validate both published f-vectors; this opens the
-   tropical lane (the LIVE generic-mass frontier: JL25 direct-read dossier).
-2. EXP-003 (hypothesis FIRST): msolve-engine census completion for P2's capped
-   samples + the n = 4 equal-mass PLANAR census against the 4-classes ground truth
-   (CC-P1 entry). Requires CCB-025 (msolve wrap; WSL/passagemath; sympy stays the
-   verification layer).
-3. CCB-030/031 (the frontier experiments JL25 explicitly calls for): valuation search
-   at n = 5; equation-variant prevariety shrinking at n = 4/5 (our EXP-002 P1
-   phenomenon at prevariety level). Hypothesis-first, after CCB-029 validates.
-4. Reads: Sun degeneracy (arXiv:2510.25649; gate for CCB-014); AK12 full anatomy
-   (CCB-023); Chang-Chen tables (CCB-004).
-5. Exploration moment every round (methodology/10 multi-factorial rule + 11):
-   next lenses on deck: invariant (Hessian, CCB-014) and anatomy (Roberts, CCB-013).
+1. CCB-030/031 (hypothesis FIRST; the frontier experiments JL25 explicitly calls
+   for): valuation SCREENING at n = 4/5 (minutes per try; success/failure map,
+   principled n = 6 shortlist) and equation-variant prevariety shrinking (add/remove
+   Dziobek / e_IU / G-subsets; f-vector + pointedness deltas). Goal: an evidenced
+   n = 6 shot (~2.8 wall-days) instead of a blind one.
+2. CCB-025: msolve wrap (WSL; record hashes) toward EXP-004 (P2 completion on the
+   capped samples + the n = 4 equal-mass PLANAR census vs the 4-classes ground
+   truth). sympy stays the verification layer.
+3. Reads: Sun-Xie-You full read (arXiv:2510.25649; gate for CCB-014 Hessian
+   instrument; treats our exact anchors); AK12 full anatomy (CCB-023); Chang-Chen
+   tables (CCB-004).
+4. Statement-level claims and any outreach: to Felipe first, always.
+5. Exploration moment every round (methodology/10 multi-factorial rule + 11).
 
 ## 6. Where everything lives
 

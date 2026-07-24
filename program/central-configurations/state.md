@@ -17,10 +17,15 @@
   CCB-002 done). Jensen-Leykin arXiv:2301.02305 READ IN FULL (the live generic-mass
   frontier; CCB-029..031 minted). Multi-factorial rule (methodology/10 amendment) +
   English-always persisted.
-- **Now:** round 3: CCB-029 (gfan reproduction of the JL25 n = 5 prevariety) and
-  CCB-025 (msolve engine wrap) in preparation of EXP-003.
-- **Next experiments:** EXP-003 (msolve-engine census completion + n = 4 equal-mass
-  planar census); then CCB-030/031 (valuation search; equation-variant prevariety
-  shrinking: the JL25 call).
+- **Done (2026-07-24, round 3 close):** EXP-003 CONFIRMED, exact: the Jensen-Leykin
+  n = 5 generic-finiteness prevariety certificate reproduced end to end (both
+  published f-vectors digit-for-digit; pointedness independently verified; gfan 0.7
+  built + hashed; ~6 wall-min per valuation on 30 threads). The tropical lane is
+  open; throughput calibrated (a JL25-scale n = 6 attempt = ~2.8 wall-days here).
+- **Now:** round 4: CCB-030/031 declarations (valuation screening + equation-variant
+  prevariety shrinking at n = 4/5: the evidenced path to an n = 6 shot) and CCB-025
+  (msolve wrap toward EXP-004).
+- **Next experiments:** EXP-004 (msolve census completion + n = 4 planar census);
+  EXP-005-class (valuation/equation-variant screening).
 - **Isolation note:** rounds close with NO version bump (methodology/08); the release
   step is serialized and owned elsewhere; a parallel session runs jacobian-conjecture.

@@ -107,3 +107,30 @@
 - Round closes WITHOUT version bump. Next round: CCB-029 (gfan n = 5 reproduction)
   and/or EXP-003 (msolve-engine P2 completion + n = 4 equal-mass planar census);
   reads queued: Sun degeneracy (arXiv:2510.25649), AK12 full anatomy (CCB-023).
+
+## 2026-07-24 (session 1 continued, round 3): EXP-003 CONFIRMED: the JL25 certificate reproduced exactly
+
+- gfan 0.7 built from the author tarball in WSL2 Ubuntu 24.04 (gcc-13 needed a
+  two-line cstdint patch, recorded; tarball + binary SHA-256 in the artifacts);
+  gfan ships dedicated _nbody / _smalessixth applications.
+- EXP-003 (hypothesis committed BEFORE the run, db85647) DECIDED: all three
+  predictions CONFIRMED: the n = 5 system inventory (35 polynomials: 20 asymmetric
+  AC + 10 symmetric + 5 Cayley-Menger); the powers-of-3 prevariety f-vector
+  (1506, 4744, 8586, 8787, 4652, 993) EXACT and its pointedness verified by our own
+  exact parser (1591 rays, 85 unbounded directions, zero with a positive
+  coordinate); the squares-valuation f-vector (3586, 12012, 18531, 15625, 7072,
+  1357) EXACT. About 6 wall-minutes per valuation on 30 threads (~145 cpu-min each).
+  OUR TOOLCHAIN NOW REPRODUCES THE STATE-OF-THE-ART GENERIC-MASS FINITENESS
+  CERTIFICATE FOR n = 5 END TO END.
+- Throughput calibration for the frontier: ~25 cpu-min per wall-min here, so a
+  JL25-scale n = 6 attempt (~100 cpu-days) is ~2.8 wall-days on this machine;
+  valuation/equation-variant SCREENING at n = 4/5 (minutes each) is the rational
+  first move (CCB-030/031), before any multi-day n = 6 shot.
+- Round-3 exploration moment: Sun-Xie-You (arXiv:2510.25649, revised Feb 2026)
+  abstract read: four degeneracy formulations; treats our exact anchor cases (the
+  equal-mass square; equilateral + central mass; rhombus nondegeneracy for
+  arbitrary masses): the CCB-014 Hessian instrument now has a read-first gate
+  satisfied at abstract level; full read queued before building.
+- Round closes WITHOUT version bump. Next: CCB-030/031 experiment declarations
+  (valuation screening; equation-variant prevariety shrinking) and CCB-025 (msolve)
+  toward EXP-004.
