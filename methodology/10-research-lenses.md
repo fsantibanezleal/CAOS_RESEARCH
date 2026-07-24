@@ -89,6 +89,27 @@ Each lens: what it is, when to reach for it, what it produces.
     exchange gave us anatomy + recognition + the EXP-089 exclusion), always
     re-derived exactly before use.
 
+## The multi-factorial standing rule (Felipe, 2026-07-24, binding)
+
+The lenses are NOT a menu to pick one from. The working vision of every problem is
+MULTI-FACTORIAL at all times: several lenses from several areas and topics are ACTIVE
+concurrently, and the mix is re-derived continuously, not at plan time only:
+
+1. **Constant online research.** Every round includes fresh literature/tooling
+   sweeps (new preprints, new software, adjacent fields); insights and results feed
+   back into the lens mix the same session. A plan built once and executed blind is
+   the failure mode this rule exists to prevent.
+2. **Question our own approaches.** Each round explicitly asks: is our current spine
+   still the best-known route given what we just learned or measured? Which of our
+   assumptions did the latest result or paper undermine? Self-questioning is recorded
+   (in the lenses file or verdicts), not just performed.
+3. **Analogies are evaluated continuously**: to other portfolio problems, to other
+   fields' machinery, to competing programs in the literature; promising transfers
+   become backlog rows immediately.
+4. **New points of view are a deliverable of every round**, not a byproduct: each
+   round's exploration moment (11-exploration-cadence.md) must either mint a new
+   viewpoint/path or record honestly why none was found.
+
 ## The workflow (every problem)
 
 - PLAN STAGE: list which lenses apply; commit to the spine (1) plus at least two
