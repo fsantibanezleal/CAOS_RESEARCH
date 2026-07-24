@@ -1,0 +1,1 @@
+See session log + EXP-087 output. Predictions 1-2 [MV]: d=2 forces the excluded Borel/osculating regime (conic tangent has contact 2 = d); the two-constraint slice degenerates. [D] the G_m-shadow is killed by our EXP-010 rigidity. EXP-088 (surface recognition) is the declared deepening.

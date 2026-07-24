@@ -105,3 +105,47 @@ WHAT THIS OPENS FOR JC(2) (routes, ranked):
   DEGENERATE (ad-bc=1 with ad+bc=1 forces ad=1, bc=0: no smooth A^2). If robust,
   this is a concrete reason the mechanism resists dimension 2. EXP-086 tests
   whether any non-degenerate 2D analog exists.
+
+## S8. The incidence/recognition-of-affine-space reframe (Tao-ChatGPT geometric derivation, 2026-07-24)
+
+The full geometric derivation recasts the counterexample invariantly:
+  pi: P^1 x Sym^2(P^1) -> Sym^3(P^1), (p,{q,r}) |-> {p,q,r}  (choose one root of a
+  binary cubic; generically 3:1). R = ramification = {p=q}u{p=r} = resultant
+  vanishing. H = hyperplane TANGENT-BUT-NOT-OSCULATING to the small diagonal (the
+  twisted cubic in Sym^3 ~ P^3). X = (P^1 x Sym^2) \ (R u pi^-1 H) ~ A^3;
+  Y = Sym^3 \ H ~ A^3; pi|X: X -> Y is the counterexample. The constant Jacobian
+  is the canonical-bundle/Schur-complement bookkeeping (det(coeff,resultant)=-rho^2,
+  constraint-block det=x^3, chart det=x^3/2) - NOT a per-term miracle. The whole
+  map is the SL_2-equivariant morphism P(V)xP(Sym^2 V) -> P(Sym^3 V) restricted to
+  boundary-divisor complements; choosing H breaks SL_2 to the torus G_m (the source
+  of the (-2,-1,+1) weights). THE ONLY REAL MIRACLE is X ~ A^3.
+
+DECISIVE REFRAME FOR OUR PROGRAM: JC = (elementary incidence geometry producing an
+etale degree-n cover X -> A^n) + (RECOGNITION that X ~ A^n). The map is easy; the
+recognition is everything. In dim 3, X ~ A^3 is the open miracle (routes: affine
+modifications, flexibility, cancellation, log-Fano/spherical, SL_2 big cell,
+deformation to the osculating case).
+
+WHY THIS MATTERS FOR JC(2) - three converging obstructions (EXP-087, verified):
+- S8a [MV]: the construction's essential ingredient (H with contact exactly 2,
+  NON-osculating) requires the rational normal curve degree d >= 3. For d=2 the
+  small diagonal is a CONIC; every tangent line has contact exactly 2 = d =
+  OSCULATING (Borel stabilizer). So the 2D case is FORCED into the regime the 3D
+  construction had to EXCLUDE. The mechanism does not lower to the plane.
+- S8b [MV]: algebraic shadow - the two constraints (resultant=1, middle=1) that cut
+  smooth A^3 in 3D COINCIDE in 2D (ad-bc=1 with ad+bc=1 => ad=1,bc=0, singular).
+- S8c [D, potential CLOSURE]: the residual symmetry is G_m (weights); OUR published
+  2D equivariant rigidity theorem (foundational ms, EXP-010: every G_m-equivariant
+  Keller map of C^2 is linear) KILLS any G_m-equivariant planar incidence map. The
+  counterexample's own symmetry mechanism is exactly what our theorem forbids in 2D.
+- S8d [the tractable target]: for SURFACES, recognition of A^2 IS a theorem
+  (Miyanishi-Sugie / Fujita characterization). So the 2D incidence X_2 can be
+  DECIDED: either X_2 is not A^2 (no counterexample from the construction) or the
+  degree-2 etale structure is obstructed. Unlike dim 3, dim 2 recognition is not a
+  miracle - it is classification. THIS is the sharpest new route: run the d=2
+  incidence construction and settle X_2 by surface theory. (EXP-088 declared.)
+
+This is the most conceptually valuable external input the program has had: it gives
+JC(2) a NAMED decomposition (incidence + surface-recognition) where the hard half is
+a solved area of geometry, and three independent structural reasons the 2026
+mechanism does not reach the plane - one of them our own theorem.
