@@ -932,3 +932,47 @@
   GGHV22 sec. 3) are fetched and verified next round.
 - Routine: verdicts; wiki; log; RESUME; v0.49.000; bake; tag; PR; mirror
   (F64, F65). JC(2) remains open.
+
+## 2026-07-24 (session 47) - EXP-077: the C13 d_0 fork COLLAPSES; discard's forcing extends
+
+- **EXP-077 (decided; regression gate green):** the fork feared by the dossier /
+  EXP-076 does not exist. From the primary sources (GGV1 = arXiv 1401.1784,
+  GGV2 = arXiv 1605.09430, secured at E:\_Temp\ggv-sources):
+  - [GGV1 Prop "Case II" + Thm 7.6(3)] gives q_1 = 4 for C13, identical to the
+    (8,32) sibling: the (4,-1) leading form is the SHARED edge A1--A2, so
+    en(F_1) = mu(2,7) = (6,21), mu = 3, d = 4, q_1 = 4. v_{4,-1}(A0) = -8 (vs 0)
+    is below the edge and never reaches the en-point.
+  - The perfect-power bound l_{1,0}(P) = R^{m d_0} on the SHARED bottom vertex
+    st_{1,0}(P) = A1 = (8,28) forces d_0 | gcd(8,28) = 4; d_0 = 8 is impossible
+    (28/8 not integer). q_1 = 4 | d_0 then pins d_0 = 4 UNIQUELY. EXP-076's
+    d_0 = 8 / R' = x y^4(y-1) branch (bottom (8,32)) is CORRECTED.
+  - C13's R = x^2 y^7·(cubic), bidegree (2,10), vs the sibling's (2,8): the
+    single-root shift corner is again (8,4), excluded by [GGV2 "casos
+    imposibles" (tex 1009) + remark (tex 1053)]: wp(n',n'-1), n' >= 2, with the
+    explicit list (2,1),(3,2),(6,3),(8,4). This is the published Prop 3.29 analog.
+  - Residual [D] DERIVATION NEEDED: whether C13's degree-3 tail shift terminates
+    at (8,4) as the LAST lower corner (vs a longer admissible sub-chain). No
+    floor-moving claim; routes to the main session.
+- **EXP-075 superseded:** the linear-order quadruple sweep is replaced by
+  run2.py (blockers-first order: supports with >= 2 of the 8 degree-1 blockers
+  first, then the rest), resumable by index, relaunched in the background.
+
+## 2026-07-24 (session 47 cont.) - C13 already excluded in the literature; frontier re-scoped
+
+- **EXP-082 (decided):** mining GGV2 (arXiv 1605.09430) to source the (8,4)
+  exclusion, its CLOSING REMARK (tex ~1053) states verbatim 'B_0=(8,28) and
+  B_1=(8,40) lead to A_0'=(8,4), which is impossible' - exactly C13's chain. C13
+  ((144,96), (8,40) chain) is DISCARDED IN THE LITERATURE, not an open frontier
+  case. The dossier's 'cheapest first frontier attack' had already been solved by
+  GGV2; we had cited GGV2 Remarks 3.2/3.29 but not the final B0/B1 remark. Honest
+  correction, no floor moved. Our contribution: independent machine forcing
+  (EXP-076/077, incl. catching our own EXP-076 d0=8 error) + the exact source
+  localization + the re-audit mandate.
+- **EXP-083 (declared):** re-audit all 24 configs' forced A0' vs the GGV2
+  excluded family (wp(n',n'-1)) + Heitmann Thm 2.24/2.25 + GGV5 Remark 7.9 to
+  find the GENUINELY-open [125,150] cases before attacking any.
+- A delegated agent resolved the C13 fork (EXP-077) and reordered the quadruple
+  sweep blockers-first (EXP-075 run2, running detached; poll the artifact). A
+  separate session opened central-configurations (parallel, isolated).
+- Routine per methodology/08: rounds close without version bump; this release
+  step folds in all develop commits since v0.49.000.

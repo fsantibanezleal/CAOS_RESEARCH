@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-24, session 46 closed; continuous loop)
+# RESUME - Jacobian conjecture program (updated 2026-07-24, session 47 closed; continuous loop)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -115,6 +115,17 @@ the standing decision rule: every new experiment names its route).
    never from memory.
    THE LIVE ROUTE after session 45: degrees 1-2 CLOSED; degree 3 OPEN through the
    triple tier (EXP-073: all 20825 feasible, gate green); R3 vacuous (EXP-074).
+   NOVEL-APPROACHES SPINE (2026-07-24, program/jacobian-conjecture/novel-approaches-2026-07-24.md):
+   the campaign is TWO-SIDED (a covector = exclusion; provably no covector at any
+   degree = consistency = counterexample skeleton). Declared next experiments,
+   ranked by info/cost: EXP-078 (the FINITE CEILING N: converts the open sweep
+   into a decision procedure - do this FIRST), EXP-080 (sl2/weight closure of the
+   staircase), EXP-079 (the annihilation lemma as a flat connection; regular vs
+   irregular singularity type DECIDES termination - the deep lead), EXP-081 (the
+   3D collision covector projected to 2D vs Lambda0). Section 5 (Berkovich at
+   infinity) is the long-shot all-degrees dossier. A background agent (2026-07-24)
+   owns the C13 fork (EXP-077) and the reordered quadruple sweep; its report lands
+   in wip-c13-and-sweep-2026-07-24.md.
    ISOLATION RULES (2026-07-24, methodology/08-parallel-sessions.md): rounds close
    per problem WITHOUT version bumps; the release step (bump + CHANGELOG + bake +
    build + tag + PR) is serialized, one session at a time; git pull both repos
@@ -126,17 +137,17 @@ the standing decision rule: every new experiment names its route).
    study, the dual annihilation identity) + the [125,150] frontier opening
    (C13). Transcribe from verdicts and the dossiers, never memory; two-pass
    pdflatex; API new-version flow (tools/zenodo in the vault repo).
-   SESSION 47 PLAN (46 done: EXP-075 quadruple sweep IN FLIGHT resumable; EXP-076
-   C13 probe decided, gap list persisted): (i) adjudicate EXP-075 on its
-   notification (or check progress and re-arm; resume via run.py <index> if the
-   session died); (ii) C13 GAP CLOSURE: fetch the primary sources (GGV2 =
-   Guccione-Guccione-Valqui, the paper with Prop 3.29, and GGHV22 arXiv
-   2204.14178 section 3 pp.3-4) via WebFetch/arXiv, transcribe Prop 3.29's
-   statement + Cor 7.4's divisibility hypothesis into a dated context dossier,
-   then EXP-077 decides the three gaps (machine arithmetic where decidable):
-   either the C13 DISCARD closes (first [125,150] floor progress, statement TO
-   FELIPE) or C13's Phase B reduction begins; (iii) rounds close with the
-   routine (v0.50.000 next; mirror F66+). THEN the
+   SESSION 48 PLAN (47 done: C13 RESOLVED - already excluded in GGV2 remark tex
+   1053, EXP-082; EXP-076 d0=8 error corrected; the frontier is RE-SCOPED):
+   (i) EXP-083 = re-audit all 24 [125,150] configs' forced A0' vs the GGV2
+   excluded family wp(n',n'-1) + Heitmann Thm 2.24/2.25 + GGV5 Remark 7.9; the
+   genuinely-open set is the real frontier (secure GGV5 = arXiv 1708.07936 and
+   Heitmann if needed via E:\_Temp e-print). (ii) poll the reordered quadruple
+   sweep (EXP-075 run2, detached, artifacts/output-run2-2026-07-24.txt; a hit
+   closes degree 3). (iii) run the NOVEL-APPROACHES experiments EXP-078 (finite
+   ceiling), EXP-080 (sl2), EXP-079 (flat connection) with premises scrutinized.
+   (iv) Paper B truncation chapter + Zenodo republish when the block closes.
+   THEN the
    [125,150] frontier: 24 transcribed configurations (C13 first).
    PUBLICATION STATE: all three papers PUBLISHED on Zenodo 2026-07-23 (A
    .21503366, B .21503368, C .21503372); metadata centralized in
