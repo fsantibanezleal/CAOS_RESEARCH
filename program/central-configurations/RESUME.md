@@ -1,4 +1,4 @@
-# RESUME - Central configurations program (updated 2026-07-23, session 1 in progress)
+# RESUME - Central configurations program (updated 2026-07-24, session 1 closed)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -18,8 +18,20 @@ The single first-read for a fresh session (contract: methodology/07-session-hand
   Roberts 1999: with one negative mass a CONTINUUM exists (positivity necessary).
   Equal-mass rigorous counts n = 3..7 (MZ19, mod rotation+reflection+permutation):
   2, 4, 5, 9, 14.
-- **Our state:** program OPENED 2026-07-23. Dossiers persisted; plan/backlog/routes
-  written; EXP-001 (calibration) is the current experiment. No results of our own yet.
+- **Our state:** program OPENED 2026-07-23; EXP-001 (calibration) DECIDED 2026-07-24:
+  the exact AC builder is validated on n = 3 (Euler-Moulton counts exact on 4 mass
+  samples; Lagrange identical in symbolic masses; symbolic Euler eliminant degree 54
+  persisted); the n = 4 planar HM system is assembled with a recorded profile; the
+  equal-mass n = 3 saturated ideal is 0-dim (certificate persisted). THE REFUTATION
+  that recalibrates the pipeline: the bare symmetric AC distance system is
+  DIMENSION-BLIND (regular tetrahedron a = b = 1 coexists with the square
+  a^3 = (4 + sqrt(2))/8, minpoly 32x^6 - 32x^3 + 7, in the equal-mass rhombus
+  stratum; planarity = adjoin Cayley-Menger, then the square is unique there). All
+  planar statements now run on the ENRICHED system (F + G + e_CM + e_IU). Counting
+  instrument of record: the eliminant census (lex-GB univariates + CRootOf + exact
+  residual acceptance); sympy solve_poly_system is BANNED from verdict-bearing counts
+  (returned incomplete lists; caught by hand-check). Open at cap: P1 saturation for
+  unequal masses, P5 full census (instrument upgrade = CCB-007).
 - **The working equations** (exact polynomial forms after clearing denominators;
   $S_{ij} = r_{ij}^{-3} + \Lambda$, fix $\Lambda = -1$):
   symmetric Albouy-Chenciner
@@ -41,21 +53,29 @@ The single first-read for a fresh session (contract: methodology/07-session-hand
 
 ## 3. Experiment index
 
-- EXP-001 (in flight): calibration; exact AC builder; n = 3 classification; n = 4
-  system assembly. Hypothesis committed before run.
+- EXP-001 ac-calibration: confirmed in part / P7-uniqueness REFUTED / P1-unequal +
+  P5 inconclusive at caps. Load-bearing: dimension-blindness of the bare AC system
+  (tetrahedron vs square); the eliminant census instrument; the equal-mass saturation
+  certificate; the n = 4 profile baseline. Long form: wiki/05 + the verdict.
 
 ## 4. In flight
 
-EXP-001. Hypothesis declared (see the experiment folder); run pending at last update.
+Nothing mid-run. Session 1 closed with EXP-001 decided.
 
 ## 5. Next actions, ordered
 
-1. Finish EXP-001: run.py with the repo .venv, artifacts tee'd, verdict.md honoring the
-   machine; wiki 01-05 initial pages; close the round (no version bump).
-2. CCB-002: obtain + read HM06; upgrade [HM-via-*] tags; then design EXP-002 (n = 4
-   equal-mass exact census against the 4-classes / 50-rotation-classes ground truth).
-3. CCB-007: the exact mixed-volume instrument (staged; needed for the BKK rung).
+1. EXP-002 (declare hypothesis FIRST): the corrected censuses on the ENRICHED system
+   (F + G + e_CM + e_IU): (a) n = 3 full positive census (the P5 question, now on the
+   right object; expect 4 realizable classes); (b) the rhombus-stratum planar census
+   (expect the square alone); success also validates the enriched builder the whole
+   program will use.
+2. CCB-007: saturation/GB instrument upgrade (staged saturation orderings, modular
+   preprocessing, or a wrapped external engine) to clear the P1-unequal and P5 caps.
+3. CCB-002: obtain + read HM06 (Inventiones PDF); upgrade [HM-via-*] tags; then design
+   the n = 4 equal-mass census rung (4 classes / 50 rotation-classes ground truth).
 4. CCB-003/004: AK12 + Chang-Chen reads; transcribe the 24 frontier cases.
+5. Exploration moment (methodology/11): next unused lens on deck: invariant (CCB-014
+   Hessian instrument) or anatomy (CCB-013 Roberts continuum, needs CCB-006 PDF).
 
 ## 6. Where everything lives
 

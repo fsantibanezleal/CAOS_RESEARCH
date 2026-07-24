@@ -1,0 +1,75 @@
+{
+  "experiment": "EXP-001",
+  "date": "2026-07-23",
+  "results": {
+    "P2-lagrange-symbolic": {
+      "status": "pass",
+      "detail": ""
+    },
+    "sanity-nonvacuous": {
+      "status": "pass",
+      "detail": ""
+    },
+    "fact-line-r13r23-in-VF": {
+      "status": "pass",
+      "detail": "the line {r13 = r23 = 0} lies in V(F) for ALL masses (why saturation is needed)"
+    },
+    "P3-equal-masses-symmetric": {
+      "status": "pass",
+      "detail": "r12 = 90**(1/3)/6, r23 = 90**(1/3)/6"
+    },
+    "P3-euler-moulton": {
+      "status": "pass",
+      "detail": "exactly one positive collinear solution per ordering per sample"
+    },
+    "P6-assembly": {
+      "status": "pass",
+      "detail": "{\"f12\": {\"n_monomials\": 14, \"total_degree\": 15, \"support_affine_dim\": 5}, \"f13\": {\"n_monomials\": 14, \"total_degree\": 15, \"support_affine_dim\": 5}, \"f14\": {\"n_monomials\": 14, \"total_degree\": 15, \"support_affine_dim\": 5}, \"f23\": {\"n_monomials\": 14, \"total_degree\": 15, \"support_affine_dim\": 5}, \"f24\": {\"n_monomials\": 14, \"total_degree\": 15, \"support_affine_dim\": 5}, \"f34\": {\"n_monomials\": 14, \"total_degree\": 15, \"support_affine_dim\": 5}, \"e_CM\": {\"n_monomials\": 22, \"total_degree\": 6, \"support_affine_dim\": 5}}"
+    },
+    "P7-unique-positive": {
+      "status": "fail",
+      "detail": "2 positive torus solutions of the rhombus-stratum AC system: [{'a': 'CRootOf(32*x**6 - 32*x**3 + 7, 1)', 'b': 'CRootOf(4*x**6 - 4*x**3 - 7, 1)', 'a_cubed': 'CRootOf(32*x**6 - 32*x**3 + 7, 1)**3', 'b2_eq_2a2': True, 'a_eq_b': False, 'cayley_menger': '0', 'cm_zero': True}, {'a': '1', 'b': '1', 'a_cubed': '1', 'b2_eq_2a2': False, 'a_eq_b': True, 'cayley_menger': '4', 'cm_zero': False}]"
+    },
+    "P7-square-shape": {
+      "status": "pass",
+      "detail": "square present: a^3 = CRootOf(32*x**6 - 32*x**3 + 7, 1)**3, minpoly 32*x**6 - 32*x**3 + 7; planar (CM = 0) positive solutions: 1"
+    },
+    "P7-cayley-menger": {
+      "status": "pass",
+      "detail": "CM at the square = 0"
+    },
+    "P4-eliminant-nonzero": {
+      "status": "pass",
+      "detail": "degree in r23: 54 (4 s)"
+    },
+    "P1-zerodim-(1, 1, 1)": {
+      "status": "pass",
+      "detail": "saturated GB size 37 in 428 s"
+    },
+    "P1-zerodim-(1, 2, 3)": {
+      "status": "inconclusive-cap",
+      "detail": "saturation Groebner did not finish within 900 s"
+    },
+    "P1-zerodim-(2, 3, 5)": {
+      "status": "inconclusive-cap",
+      "detail": "saturation Groebner did not finish within 900 s"
+    },
+    "P1-zerodim-(1, 1, 2)": {
+      "status": "inconclusive-cap",
+      "detail": "saturation Groebner did not finish within 900 s"
+    },
+    "P5-census-equal-masses": {
+      "status": "inconclusive-cap",
+      "detail": "saturated-system solve did not finish within 1800 s"
+    }
+  },
+  "elapsed_s": 5490.02,
+  "sympy_version": "1.14.0",
+  "python_version": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+  "caps": {
+    "P4": 900,
+    "P1_equal": 3600,
+    "P1_other": 900,
+    "P5": 1800
+  }
+}

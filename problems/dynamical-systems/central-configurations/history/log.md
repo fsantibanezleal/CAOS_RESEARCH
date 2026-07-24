@@ -28,3 +28,38 @@
 - Next in this session: program plan (program/central-configurations/), the CAOS_MANAGE
   mirror, then EXP-001 (calibration: exact AC-system builder validated on n = 3, the
   n = 4 HM system assembled; hypothesis BEFORE run).
+
+## 2026-07-24 (session 1 continued): EXP-001 decided; lenses pass; methodology 11
+
+- Program plan + backlog (CCB-001..012) + routes + RESUME written; portfolio row and
+  program/README row flipped; CAOS_MANAGE mirror created (per-problem status/findings/
+  history). Wiki 01-04 transcribed from the dossiers.
+- Felipe's mid-session directive ("systematic programs persist, but take deliberate
+  exploration moments; persist as a general constant tool") landed as
+  methodology/11-exploration-cadence.md; the problem's first exploration moment
+  produced program/central-configurations/lenses-2026-07-23.md (all 11 lenses of
+  methodology/10 applied; analogies to the jacobian toolbox, vortices, homogeneous
+  potentials, Smale 7; new paths CCB-013..020).
+- EXP-001 recorded run (5490 s): CONFIRMED P2 (Lagrange identical in symbolic masses),
+  P3 (Euler-Moulton: exactly one positive collinear solution per ordering, 4 exact
+  mass samples; equal-mass chart value 90^(1/3)/6), P4 (symbolic Euler eliminant,
+  degree 54, persisted), P6 (n = 4 planar HM system profile baseline), P1 at equal
+  masses (saturated ideal 0-dimensional; GB size 37, 428 s). REFUTED P7-uniqueness:
+  the equal-mass rhombus stratum contains TWO positive solutions of the bare AC
+  system: the square (b^2 = 2a^2, CM = 0, a^3 = (4 + sqrt(2))/8, minpoly
+  32x^6 - 32x^3 + 7) AND the regular tetrahedron (a = b = 1, CM = 4): the distance
+  system is dimension-blind; planar statements require Cayley-Menger adjoined (then
+  the square is unique in the stratum). INCONCLUSIVE at caps: P1 for the three
+  unequal-mass samples (900 s each), P5 full equal-mass torus census (1800 s).
+- Two real bugs caught and recorded (adversarial discipline): sympy solve_poly_system
+  returns INCOMPLETE solution lists on these systems (missed the square; banned from
+  verdict-bearing counts; replaced by the eliminant census with exact-residual
+  acceptance) and is_positive returns None on nested RootOf (naive filters drop
+  genuine solutions). A first monolithic runner was aborted at ~78 min inside the
+  uncapped saturation; the staged capped runner replaced it.
+- Dead ends recorded: naive resultant-chain eliminants vanish identically on the bare
+  F-system (coordinate-hyperplane components; the line {r13 = r23 = 0} is in V(F) for
+  all masses, machine-verified symbolically).
+- Round closes WITHOUT version bump (methodology/08). Next: EXP-002 on the enriched
+  system (corrected P7/P5 questions) + CCB-002 (HM06 direct read) + saturation
+  instrument upgrade (CCB-007).
