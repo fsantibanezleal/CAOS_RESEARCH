@@ -149,3 +149,32 @@ This is the most conceptually valuable external input the program has had: it gi
 JC(2) a NAMED decomposition (incidence + surface-recognition) where the hard half is
 a solved area of geometry, and three independent structural reasons the 2026
 mechanism does not reach the plane - one of them our own theorem.
+
+## S9. Toric recognition, the Jelonek/properness bridge, and the consolidated dim-2 verdict (2026-07-24)
+
+The full geometric conversation adds three things, all VERIFIED or tied to our record:
+- TORIC RECOGNITION: X_3 ~ A^3 because the G_m-semigroup (weights 1,-1,-2) is
+  UNIMODULAR (det[[1,-1,-2],[0,1,0],[0,0,1]] = 1). The higher-n normalized slices
+  are generalized Danielewski cores {x^{n-2}W=B^{n-2}-1} x A^{n-2} with n-2 boundary
+  components and Cl ~ Z^{n-3}; n=3 is the unique linear/unimodular/trivial-Cl case.
+- NON-PROPERNESS = OUR EXP-014: the counterexample's sole obstruction is
+  non-properness; its Jelonek set is the cubic discriminant hypersurface V(D),
+  D=-4 Disc(C); a sheet escapes as x=1/C'(zeta)->infinity. This is precisely our
+  properness reformulation of JC(2) (empty Jelonek set <=> automorphism). The
+  external derivation independently centers the same object our EXP-014 uses.
+- CONSOLIDATED DIM-2 VERDICT (EXP-086/087/088): the mechanism is exceptional to
+  n=3 on THREE independent axes - (a) the conic has no tangent-non-osculating line
+  (dim 2 forced into the excluded Borel regime); (b) the Danielewski/toric core
+  degenerates at n=2 (n-2=0) and is non-unimodular for n>=4; (c) our own
+  G_m-equivariant rigidity theorem (EXP-010) forbids a torus-graded planar
+  counterexample. All three converge: no INCIDENCE-TYPE planar counterexample.
+  CAVEAT: this covers incidence/multiplication-type maps, not all planar Keller
+  maps; it is strong structural evidence, not a proof of JC(2).
+
+THE SHARPEST NEW ROUTE (S8d/S9 -> EXP-089): recognition of A^2 is a THEOREM
+(Miyanishi-Sugie: a smooth affine surface with trivial units and Picard and an
+A^1-fibration of the right type is A^2), unlike the open dim-3 miracle. So the 2D
+incidence surface X_2 is DECIDABLE by surface classification + the class-group
+discriminator. This converts "does the mechanism give a planar counterexample" from
+a mystery into a finite surface-theory computation. Secure Miyanishi-Sugie primary
+source before any classification claim.

@@ -1,0 +1,21 @@
+========================================================================
+EXP-088: toric recognition + where dim 2 sits in the incidence family
+========================================================================
+[MV] 3D toric: weight-(1,-1,-2) semigroup basis det = 1 (unimodular => X_3 = A^3)
+[MV] Danielewski core D_n = {x^{n-2} W = B^{n-2} - 1}, x=0 => B^{n-2}=1 (n-2 comps):
+    n=2: core B^0-1 = x^0 W ; n-2=0: x^0 W = B^0-1 = 0 DEGENERATE (below the exceptional case; construction has no faithful d=2 core)
+    n=3: core B^1-1 = x^1 W ; n-2=1: LINEAR in B (xW=B-1) => eliminate B => D_3=A^2 => X_3=A^3 (the exception)
+    n=4: core B^2-1 = x^2 W ; n-2=2: 2 boundary components; NOT A^2; Cl(X_n) rank ~ 1 (excludes A^n)
+    n=5: core B^3-1 = x^3 W ; n-2=3: 3 boundary components; NOT A^3; Cl(X_n) rank ~ 2 (excludes A^n)
+[MV] residual torus needs H cap Delta = 2p+q (exactly 2 support pts) => n-3 extra pts = 0 => n=3 ONLY
+     n=2: conic, tangent = 2p (1 support, double) => Borel (excluded regime)
+     n>=4: generic tangent => >=3 support pts => finite stabilizer (torus lost)
+
+CONCLUSION: n=3 is the UNIQUE dimension where BOTH (a) a generic tangent
+hyperplane keeps a residual torus (2 support points) AND (b) the toric
+Danielewski core is linear/unimodular (n-2=1). Dimension 2 is BELOW this
+exception (Borel regime; degenerate core). The 2026 counterexample mechanism
+is exceptional to n=3 and reaches all n>=3 by reduction, but NOT n=2.
+RESULT: [MV] the toric unimodularity + Danielewski-core + support-count analyses
+        all isolate n=3; dim 2 excluded from below. [D] no incidence-type planar
+        counterexample; consistent with our G_m-rigidity theorem (EXP-010).

@@ -4,3 +4,4 @@ EXP-075 run2: quadruple-support sweep, BLOCKERS-FIRST (t = 1)
 [PASS] 0: setup invariants  (1 s)
 [PASS] 1: regression gate (20 sampled pairs feasible)  bad [] (5 s)
 [PASS] 2: blockers-first ordering built  249900 quadruples, 27762 blocker-heavy (>=2 blockers) first; blocker ops indices [7, 25, 31, 32, 37, 47, 49, 50]
+  3: 1400/249900 quadruples OK (blocker-heavy) (1182 s)  [resume index 1400]
