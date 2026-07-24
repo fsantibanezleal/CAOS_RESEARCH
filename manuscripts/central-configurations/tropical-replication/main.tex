@@ -1,0 +1,242 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\title{Exact replication and screening of tropical finiteness certificates
+for central configurations\\
+{\large Machine record v0.01 (draft): the CAOS Research central-configurations
+program, experiments 001--004}}
+\author{Felipe Santiba\~nez-Leal\thanks{With machine-executed computations;
+all artifacts, exact values, and run records are versioned at
+\url{https://github.com/fsantibanezleal/CAOS_RESEARCH} under
+\texttt{problems/dynamical-systems/central-configurations/}.}}
+\date{July 24, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We report an exact, fully replayable machine record around Smale's 6th problem
+(finiteness of planar central configurations). Contributions of this record:
+(i) an exact calibration of the Albouy--Chenciner mutual-distance equations in
+open tooling, including a machine rediscovery of their dimension-blindness (the
+regular tetrahedron coexists with the square in the equal-mass rhombus stratum
+of the 4-body distance system until the Cayley--Menger equation is adjoined,
+after which the square, with side $a$ satisfying $32a^6-32a^3+7=0$, is the
+unique positive point of the stratum); (ii) a machine measurement of the
+\emph{enrichment law}: adjoining the asymmetric (Roberts) equations and the
+energy--inertia relation renders the $n=3$ distance ideal zero-dimensional
+directly, eliminating the coordinate-line components of the bare symmetric
+system; (iii) an independent, exact reproduction of the Jensen--Leykin tropical
+prevariety certificate of generic-mass finiteness for $n=5$
+(arXiv:2301.02305v2): both published $f$-vectors match digit for digit and the
+pointedness of the recession cone is verified by an independent exact parser;
+and (iv) a screening study over mass-valuation families and equation-system
+variants at $n=4,5$, whose sharpest finding is that removing the ten dependent
+symmetric Albouy--Chenciner equations catastrophically destroys pointedness at
+every tested valuation: the ``redundant'' equations carry essential tropical
+information. All computations are exact (rational or integer arithmetic, or
+certified polyhedral computation); every stated number is reproducible from
+committed code and hashes. This is a replication-and-instruments record: the
+theorems replicated are due to Hampton--Moeckel, Albouy--Kaloshin, and
+Jensen--Leykin; the measurements in (i), (ii) and (iv) are, to our knowledge,
+recorded here at this level of explicitness for the first time.
+\end{abstract}
+
+\section{Introduction}
+
+A \emph{central configuration} (CC) of the Newtonian $n$-body problem with
+masses $m_1,\dots,m_n>0$ is a configuration $x=(x_1,\dots,x_n)$,
+$x_i\in\mathbb{R}^d$, satisfying
+\begin{equation}
+\lambda\,(x_i-c)=\sum_{j\neq i}\frac{m_j (x_j-x_i)}{r_{ij}^3},\qquad
+i=1,\dots,n,
+\end{equation}
+for some $\lambda$, where $c$ is the center of mass and $r_{ij}=|x_i-x_j|$.
+Smale's 6th problem for the 21st century \cite{Smale98} asks, following Chazy
+\cite{Chazy18} and Wintner \cite{Wintner41}, whether for every $n$ and every
+choice of positive masses the number of \emph{planar} central configurations,
+up to symmetry, is finite. The modern ladder is: $n=4$ finite for all positive
+masses (Hampton--Moeckel \cite{HM06}: computer-assisted BKK certificate, count
+in $[32,8472]$); $n=5$ finite except possibly on an explicit codimension-two
+subvariety of mass space (Albouy--Kaloshin \cite{AK12}); the spatial 5-body
+Dziobek case handled generically by Moeckel \cite{Moeckel01} and explicitly by
+Hampton--Jensen \cite{HJ11}; $n=6$ open, reduced by Chang--Chen
+\cite{ChangChen23} to a finite list of residual diagram cases; and, for
+\emph{generic} masses, the recent purely polyhedral certificate of
+Jensen--Leykin \cite{JL25}, complete through $n=5$. Rigorous equal-mass
+censuses for $n\le 7$ are due to Moczurad--Zgliczy\'nski \cite{MZ19}; with one
+negative mass a continuum exists (Roberts \cite{Roberts99}), so positivity is
+essential.
+
+This paper is a \emph{machine record}: it documents, with exact artifacts, a
+replication-first program whose goal is to place every certificate of the
+ladder inside one open, replayable toolchain, and then to run the experiments
+the frontier papers themselves call for. We follow a strict discipline:
+hypotheses are declared and committed before every run; verdicts record
+refutations as prominently as confirmations; every quantitative claim below is
+reproducible from the versioned repository, and the git and Zenodo timestamps
+constitute the priority record of the work.
+
+\section{Exact calibration of the Albouy--Chenciner system (EXP-001)}
+
+Working in the mutual distances $r_{ij}$ with the scale normalization
+$S_{ij}=r_{ij}^{-3}-1$ ($S_{ii}=0$), the symmetric Albouy--Chenciner (AC)
+equations \cite{AC98,HM06} are, after clearing denominators,
+\begin{equation}
+f_{ij}=\sum_{k=1}^{n} m_k\left[S_{ik}\,(r_{jk}^2-r_{ik}^2-r_{ij}^2)
++S_{jk}\,(r_{ik}^2-r_{jk}^2-r_{ij}^2)\right]=0 .
+\end{equation}
+Our exact implementation (sympy over $\mathbb{Q}$) reproduces, for four exact
+mass vectors, the classical $n=3$ landscape: the Lagrange point
+$r_{12}=r_{13}=r_{23}=1$ identically in symbolic masses, and exactly one
+positive collinear solution per ordering (Euler--Moulton; for equal masses the
+2-middle chart value is $r_{12}=r_{23}=\sqrt[3]{90}/6$), with the degree-54
+symbolic Euler eliminant persisted. For $n=4$ each cleared AC polynomial has
+exactly 14 monomials, matching the count stated in \cite{HM06}.
+
+The instructive result of the calibration is a machine \emph{refutation} of a
+declared prediction. In the equal-mass rhombus stratum
+$r_{12}=r_{23}=r_{34}=r_{14}=a$, $r_{13}=r_{24}=b$ of $n=4$, the bare AC system
+has \emph{two} positive solutions: the planar square, with $b^2=2a^2$ and
+$a^3=(4+\sqrt2)/8$ (minimal polynomial $32a^6-32a^3+7$), and the regular
+tetrahedron $a=b=1$, whose bordered Cayley--Menger determinant equals $4\neq0$.
+The distance equations are dimension-blind, exactly as stated in \cite{HM06};
+planarity is restored only by adjoining the Cayley--Menger equation, after
+which the square is the unique positive point of the stratum. We record the
+scale-free invariant $J=UI^{1/2}/M^{5/2}$ at both anchors:
+$J_{\square}=\tfrac1{16}+\tfrac{\sqrt2}{8}$,
+$J_{\mathrm{tet}}=\tfrac{3\sqrt6}{32}$.
+
+Two toolchain findings of independent interest were caught and are now
+regression-gated in the repository: \texttt{sympy}'s
+\texttt{solve\_poly\_system} silently returns incomplete solution lists on
+these systems (it missed the square, whose eliminant factor $4b^6-4b^3-7$ is
+even radical-solvable), and \texttt{is\_positive} returns \texttt{None} on
+nested algebraic numbers, so naive filters silently drop genuine solutions.
+Verdict-grade counting in our pipeline therefore uses univariate eliminants
+that are provably elements of the ideal (lex Gr\"obner elimination, or
+Stickelberger multiplication-matrix characteristic polynomials), complete real
+root isolation, and exact residual acceptance.
+
+\section{The enrichment law (EXP-002)}
+
+The bare symmetric system is never zero-dimensional: the line
+$r_{13}=r_{23}=0$ lies in its variety for all masses (machine-verified
+symbolically), and saturation is expensive. Adjoining the $n(n-1)$ asymmetric
+equations $g_{ij}=\sum_k m_k S_{ik}(r_{jk}^2-r_{ik}^2-r_{ij}^2)$ (observed by
+G.~Roberts; see \cite{HJ11,JL25}) and the energy--inertia relation $U=MI$
+changes the picture completely: for all four sample mass vectors the enriched
+ideal is zero-dimensional \emph{directly} (Gr\"obner basis of size 24 in under
+a second each), and the full positive censuses, where decided, are exactly
+classical: four points (one equilateral, three collinear), with no spurious
+solutions. The planar rhombus census on the enriched system with Cayley--Menger
+adjoined yields the square alone. This is the affine-level instance of a
+pattern that recurs at every level of the subject: Hampton--Moeckel could not
+run their method on the six AC equations alone and required Dziobek's
+equations \cite{HM06}; Hampton--Jensen kept the asymmetric equations to refine
+their tropical cones \cite{HJ11}; and Jensen--Leykin explicitly call for
+``different versions of the Albouy--Chenciner equations'' at $n=6$ \cite{JL25}.
+Section~\ref{sec:screening} quantifies this pattern at the prevariety level.
+
+\section{Exact reproduction of the Jensen--Leykin $n=5$ certificate (EXP-003)}
+
+Jensen--Leykin \cite{JL25} prove generic-mass finiteness of planar CCs for
+$n\le5$ by a purely polyhedral computation: specialize the masses into the
+Puiseux field with chosen valuations, compute the tropical prevariety of the
+system (20 asymmetric AC + 10 symmetric AC + 5 planar Cayley--Menger
+polynomials for $n=5$) with \texttt{gfan}~0.7, and verify that every connected
+component has a pointed recession cone; Bieri--Groves and the density of
+tropicalization fibers then yield finiteness for almost all masses.
+
+We rebuilt \texttt{gfan}~0.7 from the author tarball (one two-line
+\texttt{\#include <cstdint>} patch for gcc~13; tarball and binary SHA-256
+recorded) and ran the paper's own command pipeline. Results: with valuations
+$(1,3,9,27,81)$ the prevariety $f$-vector is
+$(1506, 4744, 8586, 8787, 4652, 993)$, and among its 85 unbounded ray
+directions none has a positive coordinate (verified by our independent exact
+parser): the globally pointed certificate, exactly as published. With
+valuations $(1,4,9,16,25)$ the $f$-vector is
+$(3586, 12012, 18531, 15625, 7072, 1357)$, again matching \cite{JL25} digit
+for digit. Each run took under six minutes of wall time on 30 threads
+($\approx145$ cpu-minutes). To our knowledge this is the first published
+independent replication of the \cite{JL25} computation; at the measured
+throughput, a single $n=6$ attempt at the scale they report ($\approx100$
+cpu-days) costs about three wall-days on commodity hardware.
+
+\section{Valuation and equation-variant screening (EXP-004)}\label{sec:screening}
+
+[SECTION IN PROGRESS: the declared screening grid (two systems $\times$ six
+valuation families at $n=5$, plus four $n=4$ cells) is running at the time of
+this draft; its verdict will replace this placeholder in the next version.
+Interim, already-decided cells: the powers-of-3 valuation is the only globally
+pointed one among the six tested at $n=5$; the squares, powers-of-2 and primes
+valuations each leave exactly two positive unbounded directions (candidates
+for per-component pointedness, as in the squares case of \cite{JL25}); the
+arithmetic and repeated-value controls are far from pointed; and the
+asymmetric-only system S2, which drops the ten dependent symmetric equations,
+loses pointedness catastrophically at \emph{every} tested valuation (over 300
+positive unbounded directions), a quantitative demonstration that the
+dependent symmetric equations carry essential tropical information.]
+
+\section{Honesty ledger}
+
+This record is replication-first. The finiteness theorems replicated are due
+to Hampton--Moeckel, Albouy--Kaloshin, and Jensen--Leykin; the equal-mass
+censuses to Moczurad--Zgliczy\'nski. Our measurements (the dimension-blindness
+anchors with their exact minimal polynomials and $J$-invariants; the
+enrichment law at affine and prevariety level; the screening tables) are
+machine facts about known objects, stated with their complete provenance. Open
+items are tracked in the repository backlog; in particular, censuses for two
+integer-separated mass vectors are inconclusive under our current
+sympy engine caps and are being re-run under an independent engine
+(\texttt{msolve}) with the sympy layer retained as verification. No claim in
+this paper depends on an unverified literature statement; the repository
+flags every such statement as UNVERIFIED until read from its primary source.
+
+\begin{thebibliography}{99}
+\bibitem{Smale98} S.~Smale, \emph{Mathematical problems for the next century},
+Math. Intelligencer \textbf{20} (1998), no.~2, 7--15.
+\bibitem{Chazy18} J.~Chazy, \emph{Sur certaines trajectoires du probl\`eme des
+$n$ corps}, Bull. Astron. \textbf{35} (1918), 321--389.
+\bibitem{Wintner41} A.~Wintner, \emph{The Analytical Foundations of Celestial
+Mechanics}, Princeton University Press, 1941.
+\bibitem{HM06} M.~Hampton and R.~Moeckel, \emph{Finiteness of relative
+equilibria of the four-body problem}, Invent. Math. \textbf{163} (2006),
+289--312.
+\bibitem{AK12} A.~Albouy and V.~Kaloshin, \emph{Finiteness of central
+configurations of five bodies in the plane}, Ann. of Math. \textbf{176}
+(2012), 535--588.
+\bibitem{Moeckel01} R.~Moeckel, \emph{Generic finiteness for Dziobek
+configurations}, Trans. Amer. Math. Soc. \textbf{353} (2001), 4673--4686.
+\bibitem{HJ11} M.~Hampton and A.~N.~Jensen, \emph{Finiteness of spatial
+central configurations in the five-body problem}, Celest. Mech. Dyn. Astron.
+\textbf{109} (2011), 321--332.
+\bibitem{ChangChen23} K.-M.~Chang and K.-C.~Chen, \emph{Toward finiteness of
+central configurations for the planar six-body problem by symbolic
+computations. (I) Determine diagrams and orders}, J. Symbolic Comput.
+\textbf{123} (2024), 102277; \emph{(II) Determine mass relations}, SIAM J.
+Appl. Dyn. Syst. \textbf{24} (2025), no.~3, 2369--2404; arXiv:2303.02853.
+\bibitem{JL25} A.~Jensen and A.~Leykin, \emph{Smale's 6th problem for generic
+masses}, arXiv:2301.02305v2 (2025).
+\bibitem{MZ19} M.~Moczurad and P.~Zgliczy\'nski, \emph{Central configurations
+in planar $n$-body problem with equal masses for $n=5,6,7$}, Celest. Mech.
+Dyn. Astron. \textbf{131} (2019); arXiv:1812.07279.
+\bibitem{Roberts99} G.~E.~Roberts, \emph{A continuum of relative equilibria in
+the five-body problem}, Phys. D \textbf{127} (1999), 141--145.
+\bibitem{AC98} A.~Albouy and A.~Chenciner, \emph{Le probl\`eme des $n$ corps
+et les distances mutuelles}, Invent. Math. \textbf{131} (1998), 151--184.
+\bibitem{Moulton10} F.~R.~Moulton, \emph{The straight line solutions of the
+problem of $n$ bodies}, Ann. of Math. \textbf{12} (1910), 1--17.
+\end{thebibliography}
+
+\end{document}
