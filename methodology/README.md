@@ -30,3 +30,4 @@ given session. The six documents below are binding for every problem folder.
 6. **Primary sources only in claims.** Every transcribed claim cites DOI/arXiv/official URL, or is
    flagged UNVERIFIED until it does. Secondary sources may guide, never certify.
 - [08 - Parallel sessions and per-problem isolation](08-parallel-sessions.md): the binding rules that let multiple sessions drive different problems concurrently (release ownership, bake ownership, start ritual).
+- [09 - Manuscripts and publication](09-manuscripts-and-publication.md): the trigger rule (enough validated + novel material = manuscript created/expanded THAT round, transcribed from verdicts), the Zenodo upload rule (CC-BY, API flow, autonomous publish with post-review), and the update strategy (new versions, never edits; concept vs version DOIs).
