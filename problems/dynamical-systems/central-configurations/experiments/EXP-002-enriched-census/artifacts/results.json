@@ -1,0 +1,18 @@
+{
+  "P1-enrichment-zero-dim": {
+    "status": "pass",
+    "detail": "{\"line_killed_by_G\": true, \"(1, 1, 1)\": {\"zero_dim\": true, \"gb_size\": 24, \"s\": 0.7}, \"(1, 2, 3)\": {\"zero_dim\": true, \"gb_size\": 24, \"s\": 0.7}, \"(2, 3, 5)\": {\"zero_dim\": true, \"gb_size\": 24, \"s\": 0.8}, \"(1, 1, 2)\": {\"zero_dim\": true, \"gb_size\": 24, \"s\": 0.7}}"
+  },
+  "P2-classical-census": {
+    "status": "inconclusive-cap",
+    "detail": "{\"(1, 1, 1)\": {\"n\": 4, \"classes\": [\"equilateral\", \"collinear-3-middle\", \"collinear-2-middle\", \"collinear-1-middle\"]}, \"(1, 2, 3)\": \"inconclusive-cap\", \"(2, 3, 5)\": \"inconclusive-cap\", \"(1, 1, 2)\": {\"n\": 4, \"classes\": [\"equilateral\", \"collinear-1-middle\", \"collinear-2-middle\", \"collinear-3-middle\"]}}"
+  },
+  "P3-planar-rhombus-census": {
+    "status": "pass",
+    "detail": "{\"n_positive\": 1, \"entries\": [{\"a\": \"CRootOf(32*x**6 - 32*x**3 + 7, 1)\", \"b\": \"CRootOf(4*x**6 - 4*x**3 - 7, 1)\", \"square\": true, \"a_minpoly\": \"32*x**6 - 32*x**3 + 7\"}], \"eliminants\": {\"a\": \"_x*(32*_x**6 - 32*_x**3 + 7)/32\", \"b\": \"_x*(4*_x**6 - 4*_x**3 - 7)/4\"}, \"tetra_satisfies_noCM_stratum\": true, \"cm_at_tetrahedron\": \"4\"}"
+  },
+  "P4-invariant-identity": {
+    "status": "pass",
+    "detail": "{\"square\": {\"U=MI\": true, \"J\": \"1/16 + sqrt(2)/8\"}, \"tetrahedron\": {\"U=MI\": true, \"J\": \"3*sqrt(6)/32\"}}"
+  }
+}

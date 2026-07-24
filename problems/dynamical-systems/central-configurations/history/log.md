@@ -63,3 +63,47 @@
 - Round closes WITHOUT version bump (methodology/08). Next: EXP-002 on the enriched
   system (corrected P7/P5 questions) + CCB-002 (HM06 direct read) + saturation
   instrument upgrade (CCB-007).
+
+## 2026-07-24 (session 1 continued, round 2): EXP-002 decided; HM06 + JL25 read in full; multi-factorial rule
+
+- Felipe's directives landed and persisted: ALL content and chat in English, always;
+  and the MULTI-FACTORIAL standing rule (methodology/10 amendment): several lenses
+  active concurrently, constant online research every round, recorded
+  self-questioning of our own approaches.
+- EXP-002 recorded run (2324 s, exit 0): P1 CONFIRMED (the enriched system F + G +
+  e_IU is 0-dim DIRECTLY, 0.7 s per sample, no saturation; the G-equations kill the
+  EXP-001 line symbolically): the caps pathology of EXP-001 dissolves. P2: decided
+  samples (1,1,1), (1,1,2) perfectly classical (exactly 4 positive points; zero
+  spurious); (1,2,3), (2,3,5) inconclusive-cap (engine limit MEASURED: sympy census
+  2.4 h+ on integer-separated masses). P3 CONFIRMED (planar rhombus census = the
+  square alone; tetrahedron excluded exactly by e_CM = 4). P4 CONFIRMED (U = M I
+  exact; J baselines recorded). Census instrument v2 (Stickelberger charpoly
+  eliminants + sqf dedup + certified-numeric pre-filter + exact acceptance); two
+  more sympy traps caught and regression-gated (real_roots multiplicity duplicates;
+  Matrix.charpoly's own-Dummy PurePoly).
+- CCB-002 DONE: HM06 read IN FULL from the author PDF (archived on E: with SHA-256):
+  the whole certificate transcribed (9-equation system; Minkowski polytope 12828
+  vertices / 2980 facets; 53 nontrivial facets; 19 face classes; facet-22 eliminant
+  m1 m4 - m2 m3 and facet-33 Q polynomial; second-order Puiseux kills; Mixvol 25380
+  -> 8460 + 12 = 8472; lower bound 32 = 12 + 6 + 14). Cross-validation: HM06's "14
+  distinct monomials" per AC equation matches our EXP-001 P6 profile exactly; the
+  dimension-blindness our EXP-001 refutation found is stated in HM06 verbatim.
+- AK12 skim (pp. 535-540; PDF archived): Smale's question verbatim; Chazy's false
+  1918 postulate; Palmore's degenerate example (central mass (64 sqrt(3) + 81)/249);
+  Wintner quotes; their delta-variable complex-continuation formulation.
+- THE FRONTIER FIND (multi-lens online sweep + Felipe's pointer): Jensen-Leykin,
+  arXiv:2301.02305v2 (Aug 2025), READ IN FULL: purely polyhedral generic-finiteness
+  method (Puiseux-valued masses with chosen valuations; gfan tropical prevariety;
+  pointed recession cones of all "comets" force dimension 0; Zariski-dense
+  tropicalization fibers give generic masses); n = 5 done in 80 cpu-minutes with
+  published one-liners and f-vectors; n = 6 INCONCLUSIVE at ~100 cpu-days for one
+  valuation choice, with an explicit call for different valuations / equation
+  variants. New frontier rows: CCB-029 (gfan reproduction), CCB-030 (valuation
+  search), CCB-031 (equation-variant prevariety shrinking: our EXP-002 P1 phenomenon
+  at prevariety level, aimed directly at their call).
+- Engine decision recorded (self-questioning): sympy = specification + verification
+  layer; msolve (RUR + certified boxes) = computation layer (CCB-025); OSCAR/
+  polymake/gfan wrapped for tropical work (CCB-028), never hand-rolled first.
+- Round closes WITHOUT version bump. Next round: CCB-029 (gfan n = 5 reproduction)
+  and/or EXP-003 (msolve-engine P2 completion + n = 4 equal-mass planar census);
+  reads queued: Sun degeneracy (arXiv:2510.25649), AK12 full anatomy (CCB-023).

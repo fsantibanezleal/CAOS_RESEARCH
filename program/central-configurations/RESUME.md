@@ -1,4 +1,4 @@
-# RESUME - Central configurations program (updated 2026-07-24, session 1 closed)
+# RESUME - Central configurations program (updated 2026-07-24, rounds 1-2 closed; ALL ENGLISH always, incl. chat)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -57,25 +57,32 @@ The single first-read for a fresh session (contract: methodology/07-session-hand
   P5 inconclusive at caps. Load-bearing: dimension-blindness of the bare AC system
   (tetrahedron vs square); the eliminant census instrument; the equal-mass saturation
   certificate; the n = 4 profile baseline. Long form: wiki/05 + the verdict.
+- EXP-002 enriched-census: confirmed on every decided prediction; P2 inconclusive at
+  caps on (1,2,3), (2,3,5). Load-bearing: F + G + e_IU is 0-dim DIRECTLY (no
+  saturation; 0.7 s/sample); decided censuses perfectly classical; planar rhombus =
+  the square alone; U = M I exact; engine limit measured (sympy census saturates on
+  integer-separated masses).
 
 ## 4. In flight
 
-Nothing mid-run. Session 1 closed with EXP-001 decided.
+Nothing mid-run. Rounds 1-2 closed with EXP-001 and EXP-002 decided.
 
 ## 5. Next actions, ordered
 
-1. EXP-002 (declare hypothesis FIRST): the corrected censuses on the ENRICHED system
-   (F + G + e_CM + e_IU): (a) n = 3 full positive census (the P5 question, now on the
-   right object; expect 4 realizable classes); (b) the rhombus-stratum planar census
-   (expect the square alone); success also validates the enriched builder the whole
-   program will use.
-2. CCB-007: saturation/GB instrument upgrade (staged saturation orderings, modular
-   preprocessing, or a wrapped external engine) to clear the P1-unequal and P5 caps.
-3. CCB-002: obtain + read HM06 (Inventiones PDF); upgrade [HM-via-*] tags; then design
-   the n = 4 equal-mass census rung (4 classes / 50 rotation-classes ground truth).
-4. CCB-003/004: AK12 + Chang-Chen reads; transcribe the 24 frontier cases.
-5. Exploration moment (methodology/11): next unused lens on deck: invariant (CCB-014
-   Hessian instrument) or anatomy (CCB-013 Roberts continuum, needs CCB-006 PDF).
+1. CCB-029: install gfan 0.7 (WSL; record binary + hash); reproduce the Jensen-Leykin
+   n = 5 prevariety one-liner; validate both published f-vectors; this opens the
+   tropical lane (the LIVE generic-mass frontier: JL25 direct-read dossier).
+2. EXP-003 (hypothesis FIRST): msolve-engine census completion for P2's capped
+   samples + the n = 4 equal-mass PLANAR census against the 4-classes ground truth
+   (CC-P1 entry). Requires CCB-025 (msolve wrap; WSL/passagemath; sympy stays the
+   verification layer).
+3. CCB-030/031 (the frontier experiments JL25 explicitly calls for): valuation search
+   at n = 5; equation-variant prevariety shrinking at n = 4/5 (our EXP-002 P1
+   phenomenon at prevariety level). Hypothesis-first, after CCB-029 validates.
+4. Reads: Sun degeneracy (arXiv:2510.25649; gate for CCB-014); AK12 full anatomy
+   (CCB-023); Chang-Chen tables (CCB-004).
+5. Exploration moment every round (methodology/10 multi-factorial rule + 11):
+   next lenses on deck: invariant (Hessian, CCB-014) and anatomy (Roberts, CCB-013).
 
 ## 6. Where everything lives
 

@@ -1,0 +1,9 @@
+[03:32:45] EXP-002 staged run start
+[03:32:48] RESULT P1-enrichment-zero-dim: pass {"line_killed_by_G": true, "(1, 1, 1)": {"zero_dim": true, "gb_size": 24, "s": 0.7}, "(1, 2, 3)": {"zero_dim": true, "gb_size": 24, "s": 0.7}, "(2, 3, 5)": {"zero_dim": true, "gb_size": 24, "s": 0.8}, "(1, 1, 2)": {"zero_dim": true, "gb_size": 24, "s": 0.7}}
+[03:47:52] P2 (1, 2, 3): CAP struck after 900 s
+[04:02:52] P2 (2, 3, 5): CAP struck after 900 s
+[04:11:27] RESULT P2-classical-census: inconclusive-cap {"(1, 1, 1)": {"n": 4, "classes": ["equilateral", "collinear-3-middle", "collinear-2-middle", "collinear-1-middle"]}, "(1, 2, 3)": "inconclusive-cap", "(2, 3, 5)": "inconclusive-cap", "(1, 1, 2)": {"n": 4, "classes": ["equilateral", "collinear-1-middle", "collinear-2-middle", "collinear-3-middle"]}}
+[04:11:27] P3: enriched stratum cores (no CM): 3
+[04:11:29] RESULT P3-planar-rhombus-census: pass {"n_positive": 1, "entries": [{"a": "CRootOf(32*x**6 - 32*x**3 + 7, 1)", "b": "CRootOf(4*x**6 - 4*x**3 - 7, 1)", "square": true, "a_minpoly": "32*x**6 - 32*x**3 + 7"}], "eliminants": {"a": "_x*(32*_x**6 - 32*_x**3 + 7)/32", "b": "_x*(4*_x**6 - 4*_x**3 - 7)/4"}, "tetra_satisfies_noCM_stratum": true, "cm_at_tetrahedron": "4"}
+[04:11:29] RESULT P4-invariant-identity: pass {"square": {"U=MI": true, "J": "1/16 + sqrt(2)/8"}, "tetrahedron": {"U=MI": true, "J": "3*sqrt(6)/32"}}
+[04:11:29] done in 2324.18 s; FAIL: none; CAP: ['P2-classical-census']
