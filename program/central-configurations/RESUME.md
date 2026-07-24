@@ -68,6 +68,16 @@ EXP-001. Hypothesis declared (see the experiment folder); run pending at last up
 - Heavy data (when it appears): `E:\_Datos\caos-research\central-configurations\` with
   in-repo SHA-256 manifests.
 
+## 6b. Lenses ledger (methodology/10 + the exploration cadence of methodology/11)
+
+Plan-stage declaration (lenses-2026-07-23.md): spine (exclusion) + anatomy (Roberts
+continuum) + invariant (Hessian/critical-value) standing; recognition
+(incidence-dimension certificates) and at-infinity (cluster recursion) as exploratory
+bets; two-sided gated on the Chang-Chen transcription. New paths minted at open:
+CCB-013..020. Session 1 exploration moment: produced lenses-2026-07-23.md itself (11
+lenses swept; 8 new backlog rows). Cadence rule (methodology/11, Felipe 2026-07-23):
+every session = spine work + at least one persisted exploration moment.
+
 ## 7. Gotchas
 
 - Isolation (methodology/08): a parallel session runs jacobian-conjecture on the same

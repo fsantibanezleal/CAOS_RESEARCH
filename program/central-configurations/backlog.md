@@ -14,3 +14,11 @@
 | CCB-010 | Equal-mass n = 6 planar independent reproduction (9 classes) | CC-P3 | todo | 2026-07-23 | entry rung of the frontier |
 | CCB-011 | Smale 1998 Intelligencer paper: verbatim problem 6 text; upgrade [U] | CC-P0 | todo | 2026-07-23 | |
 | CCB-012 | Wiki 01-05 + SVGs + web page (published-state gates) | CC-P5 | todo | 2026-07-23 | vertical, per unit, from verdicts |
+| CCB-013 | Roberts-continuum anatomy: exact reproduction, AC-Jacobian rank drop along the family, positivity obstruction target | CC-P2 | todo | 2026-07-23 | lens 2+4 (lenses-2026-07-23.md); gated on CCB-006 |
+| CCB-014 | Hessian/degeneracy instrument: exact nullity of Hess(U at I=1) at exact CCs; Morse-Bott continuum detector; calibrate on EXP-001 exact points | CC-P1 | todo | 2026-07-23 | lens 4; feeds per-diagram exclusions |
+| CCB-015 | Incidence-variety local-dimension certificates (Jacobian rank over QQ at exact sample points), n = 5, 6 planar | CC-P2 | todo | 2026-07-23 | lens 3 (recognition); generic-finiteness evidence |
+| CCB-016 | Cluster-recursion reading of zw-diagrams (collapse hierarchy governed by sub-cluster CCs); literature check vs Moeckel notes cluster sections + Xia 1991 FIRST | CC-P3 | todo | 2026-07-23 | lens 9; novelty pass mandatory |
+| CCB-017 | Two-sided construction attempt: certified local continuation at exact masses ON one Chang-Chen residual mass relation | CC-P3 | todo | 2026-07-23 | lens 6; gated on CCB-004 |
+| CCB-018 | Symmetry-quotiented diagram exclusions (diagram automorphism groups shrink the Groebner certificates) | CC-P3 | todo | 2026-07-23 | lens 5; port of the jacobian GL2-orbit pattern |
+| CCB-019 | Vortex/homogeneous-potential transfer: exponent-parametric certificates; vortex prototypes of diagram kills | CC-P4 | todo | 2026-07-23 | lens 7; route R6 promotion |
+| CCB-020 | n = 7 zw-diagram-count scoping via Chang-Chen combinatorics (size the next frontier honestly) | CC-P3 | todo | 2026-07-23 | lens 8; scoping only |
