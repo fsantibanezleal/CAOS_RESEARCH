@@ -1,0 +1,17 @@
+======================================================================
+EXP-086: does the multiplication construction lower to 2D?
+======================================================================
+[2] naive constraints {ad-bc=1, ad+bc=1} => ad=1,bc=0 (degenerate, not A^2):
+    ad-bc=1 and ad+bc=1 give ad = 1.00000000000000  bc = 0.0 (bc=0: a coordinate hyperplane, singular; NOT A^2)
+    2-sheeted candidate (u, v**2): det DH = 2*v  (constant? False)
+    2-sheeted candidate (u, u + v**2): det DH = 2*v  (constant? False)
+    2-sheeted candidate (u, u*v**2): det DH = 2*u*v  (constant? False)
+    2-sheeted candidate (u, u**3 + v**2): det DH = 2*v  (constant? False)
+[3] structural reading: the 3D mechanism's constant Jacobian rides on a
+    x^{-3} Laurent pole cancelling the x^3 of the (x,y,z)->(x,u,r) change.
+    In 2D the analogous change (x,y)->(x,u) has Jacobian a POWER of x, and
+    the simple-Laurent map's Jacobian pole must match it AND the map must be
+    >1-sheeted; the naive lowering is degenerate and the direct 2-sheeted
+    covers have non-constant Jacobian. No 2D analog found at this level.
+RESULT: [MV] naive lowering degenerate; [MV] direct 2-sheeted covers non-constant-Jac;
+        [D] the mechanism appears intrinsically >=3D. EXP-086 continues (deeper search).

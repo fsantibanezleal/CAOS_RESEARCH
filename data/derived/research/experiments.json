@@ -1427,7 +1427,7 @@
      "name": "output-2026-07-24.txt"
     },
     {
-     "bytes": 1093,
+     "bytes": 1249,
      "name": "output-run2-2026-07-24.txt"
     },
     {
@@ -1435,7 +1435,7 @@
      "name": "output-run2b-2026-07-24.txt"
     },
     {
-     "bytes": 478,
+     "bytes": 556,
      "name": "output-run2c-2026-07-24.txt"
     }
    ],
@@ -1541,8 +1541,130 @@
    "verdict_md": "# EXP-083 - Verdict: the [125,150] frontier partitioned; only 2 configs are printed-open\n\n**Status: DECIDED (audit). The 24 configs partition into 1 excluded / 5 verify /\n2 open / 16 derivation-needed.**\n\n## The partition (artifacts/output-2026-07-24.txt)\n\n- **EXCLUDED, sourced (1):** C13 (GGV2 remark tex ~1053: B0=(8,28),B1=(8,40) ->\n  A0'=(8,4) impossible; EXP-082).\n- **VERIFY, source reconciliation (5):** C10, C11 (A0=(7,21): GGV2 remark says\n  the (7,21) families come from A0'=(2,1) IMPOSSIBLE, but our GGV5-sourced table\n  prints A0'=(1,0); the two A0' notions must be reconciled - if GGV2's holds,\n  C10/C11 are ALSO excluded); C19, C20 (A0=(6,15): GGV2 excludes B1=(6,18+6k)\n  with 18+6k not a multiple of 30 -> (6,3); check C19/C20's B1); C12 (A0=(8,28)\n  with A1=(7/4,3), a DIFFERENT chain from C13's; the (8,28) is named but the\n  B0/B1 pattern differs - derive).\n- **OPEN, printed A0' not excluded (2):** C01 (A0'=(1,0)), C04 (A0'=(2,0)):\n  (t,0) is always a possible last lower corner, so these are NOT excluded by\n  casos-imposibles and are genuine open family cases (F2 j=1, F24 j=0).\n- **DERIVATION-NEEDED (16):** the sporadic configs with UNPRINTED A0'\n  (C02,C03,C05-C09,C14-C18,C21-C24): force A0' via the EXP-077 method (GGV1\n  Thm 7.6 en-point/q1 + shared-bottom-vertex d0) then test excluded-family\n  membership. Several may collapse to excluded (like C13 did).\n\n## Reading\n\nThe frontier is MUCH smaller than the naive 24: at most 2 configs (C01, C04)\nare confirmed genuine open family cases; 5 need only a source reconciliation\nthat likely excludes 4-5 of them; 16 need the forcing derivation (cheap per\nconfig, the EXP-077 machine method). This RE-SCOPES the [125,150] program from\n'attack 24 unknowns' to 'reconcile 5 + derive 16 A0' forcings, then attack the\nfew genuine survivors'. The GGV2 remark alone likely clears 5-6 configs we had\ntreated as open.\n\n## Next (declared)\n- EXP-084: reconcile the GGV5-vs-GGV2 A0' notions for C10/C11/C19/C20 (source\n  read of GGV5 section 5 family tables vs GGV2's forced last-lower-corner).\n- EXP-085: batch the 16 A0' forcings via the EXP-077 method.\n"
   },
   {
+   "area": "algebraic-geometry",
+   "artifacts": [
+    {
+     "bytes": 1312,
+     "name": "output-2026-07-24.txt"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-086 - Does the counterexample's multiplication-construction lower to 2D?\n\n- **Question.** The 3D counterexample is the coefficient map of (linear)x(quadratic)\n  on X = {resultant=1, middle=1} isomorphic to A^3, minus the middle coord (VERIFIED).\n  Does any faithful 2D analog (a variety isomorphic to A^2 + a multiplication map,\n  drop a coord) produce a constant-Jacobian NON-invertible planar map, or does it\n  collapse (to invertible, or to a non-smooth / non-A^2 variety)?\n- **Motivation (strategy S7).** A non-collapsing 2D analog would be a counterexample\n  route (S0 two-sided); a forced collapse is a structural reason JC(2) resists and\n  supports our rigidity results (S7c).\n- **Predictions.** 1. [MV] Regression: reproduce the 3D construction (det DG=-1,\n  F_orig=BoGoA) - DONE in the session log, re-assert here. 2. [MV] The naive\n  linear x linear analog with the two natural constraints (resultant ad-bc=1,\n  middle ad+bc=1) is DEGENERATE (forces ad=1, bc=0: not A^2). 3. [MV/D] Search\n  alternative 2D analogs (different bidegree splits; different constraint pairs;\n  the SL2/unit-resultant variety with ONE constraint + a section) for a\n  constant-Jacobian map; for each, compute det and test invertibility (Groebner\n  inverse or fiber count).\n- **Method.** Exact sympy; Jacobian determinants; invertibility via lex Groebner\n  or generic fiber cardinality. Honest labels; a collapse is a valid recorded\n  outcome.\n- **Success.** Each candidate 2D analog decided (constant-Jac + invertible, or not\n  constant-Jac, or non-A^2/degenerate).\n- **Failure.** none (exploratory construction).\n\nDeclared 2026-07-24 before the run.\n",
+   "id": "086",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-086-2d-multiplication-analog",
+   "title": "Does the counterexample's multiplication-construction lower to 2D?",
+   "verdict": "",
+   "verdict_md": "# EXP-086 - Verdict (preliminary): the mechanism appears intrinsically >= 3D\n\n**Status: FIRST-LEVEL results; the deeper 2D-analog search continues.**\n\n1. **[MV]** The 3D construction reproduces exactly (det DG = -1; F_orig = B o G o A;\n   X constraints = 1; the map is the coeff map of (a+bt)(c+dt+et^2)). Confirmed.\n2. **[MV]** The FAITHFUL naive 2D lowering (linear x linear; the two natural\n   constraints resultant ad-bc=1 AND middle ad+bc=1) is DEGENERATE: it forces\n   ad=1, bc=0, a singular coordinate hyperplane, NOT a smooth A^2. The two\n   constraints that make the 3D variety a clean A^3 collapse in 2D.\n3. **[MV]** Direct 2-sheeted planar covers (u, v^2 + g(u)) have Jacobian 2v (never\n   constant): forcing a constant Jacobian on a >1-sheeted planar map fails at the\n   simplest level, exactly the tension the 3D construction resolves with its\n   third slot.\n4. **[D]** Structural reading: the 3D constant Jacobian rides on an x^{-3} Laurent\n   pole (from the simple map in (x,u,r)) cancelling the x^3 of the coordinate\n   change; the cubic 3-sheeted cover needs the third dimension. The mechanism\n   appears INTRINSICALLY >= 3D, independent evidence it does not transplant to 2D\n   (consistent with our published rigidity/uniqueness theorems).\n\n## Caveat and next\nThis is a FIRST-LEVEL search, not a proof that NO 2D analog exists. A rigorous\n'no birational-Laurent Keller counterexample in 2D' statement (strategy S7b) is\nthe real target; EXP-086 continues with (i) other bidegree splits, (ii) the\none-constraint SL2 variety plus a section, (iii) a general 2-sheeted-cover\nconstant-Jacobian obstruction proof. Until then: no claim beyond 'no analog found'.\n"
+  },
+  {
+   "area": "algebraic-geometry",
+   "artifacts": [
+    {
+     "bytes": 1312,
+     "name": "output-2026-07-24.txt"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-087 - The incidence construction in dim 2: why it degenerates\n\n- **Question.** The geometric derivation (Tao-ChatGPT) recasts the 3D\n  counterexample as pi|X: X -> Y where pi: P^1 x Sym^2(P^1) -> Sym^3(P^1) chooses\n  one root of a binary cubic, X = (P^1 x Sym^2) \\ (R u pi^-1 H) ~ A^3, Y = Sym^3 \\\n  H ~ A^3, with H tangent-but-NOT-osculating to the small diagonal (twisted\n  cubic). Does the d=2 analog produce a planar counterexample or degenerate?\n- **Motivation.** If it degenerates for a STRUCTURAL reason, that reason is new\n  evidence JC(2) resists; if not, it is a construction route. The conversation's\n  own reframe: JC = (elementary incidence geometry giving X -> A^n etale deg n)\n  + (recognition X ~ A^n). In dim 2 the recognition step is TRACTABLE (surface\n  classification: Miyanishi-Sugie characterization of A^2), unlike the open\n  dim-3 miracle.\n- **Predictions.**\n  1. [MV] For the degree-d rational normal curve, a hyperplane with contact\n     order exactly 2 that is NON-osculating requires 2 < d (osculating = contact\n     d, Borel stabilizer). For d=2 the small diagonal is a CONIC: every tangent\n     line has contact exactly 2 = d = osculating (Borel). So the 3D construction's\n     essential ingredient has NO faithful d=2 analog; the 2D case is forced into\n     the regime the 3D construction explicitly excluded.\n  2. [MV] Algebraic shadow: the two normalizing constraints (resultant=1,\n     middle=1) that cut a smooth A^3 in 3D COINCIDE in 2D (ad-bc=1 with ad+bc=1\n     => ad=1, bc=0, a singular hyperplane, not A^2). EXP-086's degeneracy is\n     exactly this.\n  3. [D] Residual symmetry: 3D H=2p+q (distinct) -> torus G_m (the (-2,-1,+1)\n     weights); 2D H=2p (forced double) -> Borel. Any G_m-equivariant planar\n     Keller map is LINEAR by our published 2D equivariant rigidity theorem\n     (foundational manuscript, EXP-010) => no counterexample from this\n     construction in 2D.\n- **Method.** Contact/stabilizer analysis; exact algebra of the slice; cite our\n  rigidity theorem. Honest labels.\n- **Success.** The d=2 degeneration explained structurally (predictions 1-2 [MV],\n  3 [D]).\n- **Failure.** none (structural analysis).\n\nDeclared 2026-07-24 before the run.\n",
+   "id": "087",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-087-incidence-2d-obstruction",
+   "title": "The incidence construction in dim 2: why it degenerates",
+   "verdict": "",
+   "verdict_md": "See session log + EXP-087 output. Predictions 1-2 [MV]: d=2 forces the excluded Borel/osculating regime (conic tangent has contact 2 = d); the two-constraint slice degenerates. [D] the G_m-shadow is killed by our EXP-010 rigidity. EXP-088 (surface recognition) is the declared deepening.\n"
+  },
+  {
+   "area": "algebraic-geometry",
+   "artifacts": [
+    {
+     "bytes": 1713,
+     "name": "output-2026-07-24.txt"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-088 - The incidence family across n: why n=3 is exceptional and dim 2 is excluded\n\n- **Question.** In the incidence family pi_n: P^1 x Sym^{n-1}(P^1) -> Sym^n(P^1)\n  (choose one root of a degree-n form), for which n is the normalized source\n  X_n isomorphic to A^n? Where does dim 2 sit?\n- **Motivation (S8/S9, Tao-ChatGPT geometric derivation).** The counterexample is\n  pi_3|X_3 with X_3 ~ A^3. X_3's G_m-grading (weights 1,-1,-2) has invariant ring\n  C[a,b] (a=xy,b=x^2z) and A = C[x,a/x,b/x^2], a semigroup algebra whose generators\n  form a UNIMODULAR basis (det 1) => A^3. The higher-n normalized slice is a\n  generalized Danielewski core D_n = {x^{n-2}W = B^{n-2}-1} times A^{n-2}, with\n  n-2 boundary components; Cl(X_n) rank ~ n-3. Only n=3 has a LINEAR core (n-2=1)\n  and trivial class group.\n- **Predictions.**\n  1. [MV] 3D toric semigroup (weights 1,-1,-2) is unimodular (det 1) => X_3 = A^3.\n  2. [MV] D_n core has n-2 components; n=3 linear (=A^2 => X_3=A^3), n>=4 not A^n\n     (Cl rank ~ n-3), n=2 degenerate (n-2=0: the construction is below its own\n     exceptional case).\n  3. [MV] Residual torus needs H cap Delta = 2p+q (2 support pts) => n=3 only;\n     n=2 conic tangent = 2p (Borel, excluded); n>=4 finite stabilizer.\n  4. [D] n=3 is the UNIQUE sweet spot; dim 2 excluded from BELOW. No\n     incidence-type planar counterexample; consistent with our G_m-rigidity\n     theorem (EXP-010).\n- **Method.** Exact toric/lattice determinants; Danielewski-core boundary count;\n  support-point stabilizer analysis. Honest labels.\n- **Success.** The exceptionality of n=3 and the exclusion of n=2 established [MV].\n- **Failure.** none (structural).\n\nDeclared 2026-07-24 before the run.\n",
+   "id": "088",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-088-d2-incidence-surface",
+   "title": "The incidence family across n: why n=3 is exceptional and dim 2 is excluded",
+   "verdict": "",
+   "verdict_md": "# EXP-088 - Verdict: n=3 is the unique incidence-affine dimension; dim 2 excluded from below\n\n**Status: DECIDED (structural, all predictions [MV] except the [D] conclusion).**\n\nResults (artifacts/output-2026-07-24.txt):\n1. [MV] The 3D G_m-semigroup (weights 1,-1,-2) has unimodular basis (det 1):\n   X_3 = A^3 has a clean TORIC explanation (not a coordinate accident).\n2. [MV] The Danielewski core D_n = {x^{n-2}W = B^{n-2}-1} has n-2 boundary\n   components: n=3 LINEAR (=> A^2 => X_3=A^3, unique), n>=4 has n-2 components\n   (Cl(X_n) rank ~ n-3, excludes A^n), n=2 DEGENERATE (n-2=0: below the\n   exceptional case).\n3. [MV] The residual torus needs exactly 2 support points of H cap Delta:\n   n=3 only. n=2: the small diagonal is a CONIC, tangent = 2p (Borel, the\n   3D-excluded regime); n>=4: >=3 points, torus lost.\n4. [D] CONCLUSION: the 2026 mechanism is exceptional to n=3, reaches all n>=3 by\n   the classical reduction, but NOT n=2. Dimension 2 sits BELOW the exception on\n   every axis (Borel regime; degenerate/toric-trivial core). No incidence-type\n   planar counterexample; independently, any G_m-graded planar Keller map is\n   linear by our published rigidity theorem (foundational ms, EXP-010).\n\n## Connection to our program (important)\n- NON-PROPERNESS: the conversation shows the counterexample's only obstruction is\n  non-properness, with Jelonek set J(F) = the discriminant hypersurface V(D),\n  D = -4 Disc(cubic); the map degenerates as x = 1/C'(zeta) -> infinity. This is\n  EXACTLY our properness reformulation (JC(2) holds iff every planar Keller map\n  has empty Jelonek set; EXP-014). The 3D counterexample has a nonempty Jelonek\n  set BY the discriminant; the 2D question is whether a planar Keller map can.\n- The A^2-fibration X_3 -> A^1 (topological C^3) is the recognition-of-affine-space\n  route; in dim 2 recognition of A^2 is a THEOREM (Miyanishi-Sugie), so the 2D\n  incidence surface is DECIDABLE.\n\n## Next (declared)\n- EXP-089: build the 2D incidence surface X_2 explicitly (conic in P^2, tangent\n  line, ramification) and settle X_2 ~ A^2 by surface classification + the\n  class-group discriminator; secure Miyanishi-Sugie primary source first.\n"
+  },
+  {
+   "area": "algebraic-geometry",
+   "artifacts": [
+    {
+     "bytes": 1692,
+     "name": "output-2026-07-24.txt"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-089 - The incidence mechanism CANNOT give a planar counterexample\n\n- **Question.** The full geometric derivation (Tao-ChatGPT) reduces the 2026\n  counterexample to: X_H = {(L,Q): Res(L,Q)=1, [LQ]_next=1}, with pi(L,Q)=LQ\n  etale (generically n:1); it yields a Keller counterexample IFF X_H ~ A^n\n  (observation (c), the only dimension-specific miracle). Does (c) hold in dim 2?\n- **Motivation.** If X_2 is provably NOT A^2, the entire incidence/root-selection\n  mechanism (the exact structure of the dim-3 counterexample) cannot produce a\n  planar counterexample - a clean, complete exclusion of this class for JC(2).\n- **Predictions.**\n  1. [MV] dim 2: L,Q both linear; {Res(L,Q)=1, [LQ]_{TS}=1} = {x*delta=1,\n     beta*gamma=0}, which is REDUCIBLE (two components), hence NOT A^2.\n  2. [MV] finite-root chart: X_2 = A^2 minus the discriminant hyperbola\n     {2 c2 zeta + 1 = 0}; (2 c2 zeta + 1) is a nonconstant UNIT, but O(A^2)^*=C^*,\n     so X_2 != A^2 (units invariant, no deep classification needed).\n  3. [D] contrast: dim 3 the same construction gives smooth irreducible X_3 ~ A^3\n     (toric/unimodular). The discriminant-complement is affine space in dim 3 but\n     provably not in dim 2.\n- **Method.** Exact symbolic (sympy); the constraint solve + the units argument.\n- **Success.** X_2 != A^2 established [MV] two independent ways.\n- **Failure.** none.\n\nDeclared 2026-07-24 before the run.\n",
+   "id": "089",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-089-incidence-units-obstruction",
+   "title": "The incidence mechanism CANNOT give a planar counterexample",
+   "verdict": "",
+   "verdict_md": "# EXP-089 - Verdict: the incidence mechanism CANNOT produce a planar counterexample\n\n**Status: DECIDED [MV]. The exact structure of the 2026 counterexample is\nexcluded in dimension 2.**\n\n## Results (artifacts/output-2026-07-24.txt)\n1. [MV] In dim 2 (L, Q both linear), the two normalizations {Res(L,Q)=1,\n   [LQ]_{TS}=1} force x*delta=1 and beta*gamma=0: the source is REDUCIBLE (two\n   components, beta=0 and gamma=0), hence not irreducible, hence NOT A^2.\n2. [MV] Independently, in the finite-root chart X_2 = A^2 minus the discriminant\n   hyperbola {2 c2 zeta + 1 = 0}; the discriminant (2 c2 zeta + 1) is a\n   nonconstant UNIT on X_2, but O(A^2)^* = C^* (only constants). So X_2 is not\n   isomorphic to A^2 - by the simplest possible invariant, units.\n3. [D] Contrast: in dim 3 the identical construction gives a smooth irreducible\n   X_3 ~ A^3 (weights (1,-1,-2), unimodular semigroup, EXP-088). The\n   discriminant-complement is again affine space in dim 3 but provably NOT in\n   dim 2.\n\n## Meaning\nThe 2026 counterexample IS the incidence/root-selection map pi|X_H, and it\nproduces a Keller counterexample precisely because X_3 ~ A^3 (Tao-ChatGPT\nderivation: observations (a) local injectivity from coprimality+resultant\nweights, (b) noninjectivity from multiple root choices, (c) X_H ~ A^n the only\ndimension-specific miracle). We prove (c) FAILS in dim 2: X_2 is reducible / has\nnonconstant units. Therefore this entire construction - the only known\nmechanism for a constant-Jacobian noninvertible polynomial map - CANNOT yield a\nplanar counterexample.\n\nThis is a clean, complete exclusion of the incidence-type counterexample class\nfor JC(2). It is independent of, and consistent with, our published 2D\nG_m-equivariant rigidity theorem (foundational manuscript, EXP-010: every\nG_m-equivariant planar Keller map is linear). Two different invariants (the\nequivariant rigidity; the units of the discriminant complement) both forbid the\nplanar analog.\n\n## Honest scope\nThis excludes the incidence/multiplication/root-selection class - the structure\nof every known counterexample. It does NOT prove JC(2): a planar counterexample\nof some entirely different (unknown) structure is not ruled out. But it removes\nthe single mechanism that actually produced the 2026 result, with a one-line\ninvariant proof, and explains structurally why dimension 2 differs.\n"
+  },
+  {
+   "area": "algebraic-geometry",
+   "artifacts": [
+    {
+     "bytes": 2546,
+     "name": "output-2026-07-24.txt"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-090 - The single invariant n-2: why the counterexample is exceptional to n=3\n\n- **Question.** The 2026 counterexample is the incidence map (choose a linear\n  factor L of a degree-n form; complementary factor Q of degree n-1). EXP-086-089\n  gave several reasons it fails in dim 2 (conic degeneration, Danielewski core,\n  units). Is there ONE controlling invariant?\n- **Hypothesis.** The resultant Res(L,Q) has weight (deg Q - deg L) = n-2 under\n  the relative scaling (L,Q)->(lam L, lam^-1 Q). Local injectivity of Phi=(LQ,Res)\n  needs this weight != 0 (so the resultant detects/rigidifies the scaling the\n  multiplication forgets); X_n = A^n needs it = 1 (linear Danielewski core). So\n  n-2 is the single controlling invariant.\n- **Predictions.**\n  1. [MV] weight = n-2: n=2 -> 0 (degenerate), n=3 -> 1 (unique), n>=4 -> >=2.\n  2. [MV] n-2 simultaneously = the Danielewski core degree, the boundary-component\n     count, and the residual-torus support-count minus one: one invariant, four\n     guises. n=3 unique (n-2=1).\n  3. [MV] 2D normalization sweep: Res is scaling-invariant (weight 0), so every\n     normalization gives G_m x A^1 or reducible, never A^2.\n- **Method.** Exact resultant-weight computation; symbolic 2D normalization sweep.\n- **Success.** The unification established.\n- **Failure.** none.\n\nDeclared 2026-07-24 before the run.\n",
+   "id": "090",
+   "problem": "jacobian-conjecture",
+   "slug": "EXP-090-resultant-weight-invariant",
+   "title": "The single invariant n-2: why the counterexample is exceptional to n=3",
+   "verdict": "",
+   "verdict_md": "# EXP-090 - Verdict: n-2 is THE invariant; n=3 unique; dim 2 fails at the root\n\n**Status: DECIDED [MV]. A single invariant unifies the whole \"why n=3\" story.**\n\nThe resultant Res(L,Q) has weight n-2 = (deg Q - deg L) under the relative scaling\n(L,Q) -> (lam L, lam^-1 Q). This one number controls everything:\n- n=2: weight 0. The resultant is INVARIANT under the relative scaling the\n  multiplication forgets, so it cannot rigidify the normalization; the incidence\n  mechanism degenerates (X_2 reducible / G_m x A^1, never A^2). Dim 2 fails at the\n  most basic level - before any Danielewski or units argument.\n- n=3: weight 1. The resultant rigidifies AND the Danielewski core {xW = B-1} is\n  LINEAR, so X_3 = A^3. The UNIQUE working dimension.\n- n>=4: weight >=2. Rigidifies, but the core {x^{n-2}W = B^{n-2}-1} is nonlinear\n  (n-2 boundary components, Cl rank ~ n-3), so X_n != A^n.\n\nn-2 is simultaneously: (i) the resultant weight (etale/rigidify test), (ii) the\nDanielewski core degree, (iii) the boundary-component count at x=0, (iv) the\nresidual-torus support count minus one. EXP-086/087/088/089 were all shadows of\nthis single invariant. n=3 is exceptional because n-2=1 is the unique value that\nis both nonzero (rigidifies) and linear (=A^n). Dimension 2 (n-2=0) is excluded at\nthe root: the resultant is blind to the relative scaling.\n\nThis is the cleanest statement of why the 2026 mechanism lives in dimension 3 and\ncannot reach the plane. It complements our G_m-equivariant rigidity theorem\n(EXP-010): both forbid the planar analog, now from a one-parameter invariant.\n"
+  },
+  {
    "area": "dynamical-systems",
-   "artifacts": [],
+   "artifacts": [
+    {
+     "bytes": 105578,
+     "name": "p1-gb-1_1_1.json"
+    },
+    {
+     "bytes": 1902,
+     "name": "p4-eliminant.json"
+    },
+    {
+     "bytes": 1841,
+     "name": "p4-euler-eliminant.txt"
+    },
+    {
+     "bytes": 3186,
+     "name": "p6-n4-system.txt"
+    },
+    {
+     "bytes": 2101,
+     "name": "results.json"
+    },
+    {
+     "bytes": 1895,
+     "name": "run-log.txt"
+    },
+    {
+     "bytes": 593,
+     "name": "stage-p3.json"
+    },
+    {
+     "bytes": 675,
+     "name": "stage-p6.json"
+    },
+    {
+     "bytes": 342,
+     "name": "stage-p7.json"
+    }
+   ],
    "date": "",
    "hypothesis_md": "# EXP-001: exact Albouy-Chenciner system builder, calibrated on n = 3, assembled for n = 4\n\nDeclared: 2026-07-23, BEFORE any run. Route: R1 (calibration ladder). Backlog: CCB-001.\n\n## Question\n\nDoes an exact (sympy over QQ) implementation of the symmetric Albouy-Chenciner equations\nreproduce the classical n = 3 central-configuration classification, and does it assemble\nthe Hampton-Moeckel planar n = 4 system with a machine-verifiable structural profile,\nincluding the square as an exact solution for equal masses?\n\n## Motivation\n\nMethod dossier (`context/2026-07-23-hampton-moeckel-method-dossier.md`), sections 1 and 4:\nevery finiteness certificate since 2005 runs over this polynomial system; before any\nfrontier work our builder must reproduce known answers exactly. n = 3 is fully classical\n(Euler 1767, Lagrange 1772, Moulton 1910: 3 collinear classes + 1 equilateral class in\nlabeled mutual-distance space); the n = 4 equal-mass square is exactly solvable by hand.\n\n## Setup\n\nVariables $r_{ij}$, $1 \\le i < j \\le n$; masses rational parameters; $S_{ij} = r_{ij}^{-3} - 1$\n(the $\\Lambda = -1$ scale normalization); the symmetric AC equations\n$f_{ij} = \\sum_k m_k [S_{ik}(r_{jk}^2 - r_{ik}^2 - r_{ij}^2) + S_{jk}(r_{ik}^2 - r_{jk}^2 - r_{ij}^2)]$,\ncleared of denominators to polynomials in QQ[m][r]. Planar 4-body realizability: the\nbordered 5x5 Cayley-Menger determinant $e_{CM} = 0$. Sample positive mass vectors for\ninstantiated checks: (1,1,1), (1,2,3), (2,3,5), (1,1,2); equal masses (1,1,1,1) for n = 4.\n\n## Falsifiable predictions\n\n- **P1 (zero-dimensionality, n = 3).** For each sample mass vector, the ideal\n  $\\langle f_{12}, f_{13}, f_{23} \\rangle \\subset \\mathbb{Q}[r_{12}, r_{13}, r_{23}]$\n  (cleared forms, saturated by $r_{12} r_{13} r_{23}$) is zero-dimensional.\n- **P2 (Lagrange, symbolic masses).** $r_{12} = r_{13} = r_{23} = 1$ satisfies all three\n  cleared equations IDENTICALLY in symbolic masses $m_1, m_2, m_3$.\n- **P3 (Euler-Moulton count).** For each sample mass vector and each of the 3 collinear\n  orderings (imposing the degenerate-triangle relation of that ordering, e.g.\n  $r_{13} = r_{12} + r_{23}$ for body 2 between 1 and 3), the restricted system has\n  EXACTLY ONE solution with all distances real and positive (counted exactly, Sturm /\n  real root isolation). For equal masses that solution has $r_{12} = r_{23}$.\n- **P4 (the Euler eliminant, descriptive).** On the collinear chart with symbolic\n  masses, eliminating to one variable yields a nonzero univariate eliminant; we record\n  its degree and coefficient structure and count its positive roots for the sample\n  masses. (No pre-committed coefficient values: the machine derives the polynomial; the\n  comparison against the literature's \"Euler quintic\" is made at verdict time citing\n  Moeckel's notes. This prediction fails only if elimination is degenerate, i.e. no\n  univariate eliminant exists.)\n- **P5 (labeled census, equal masses n = 3).** For masses (1,1,1) the full real positive\n  solution set of the AC system consists of exactly 4 GEOMETRICALLY REALIZABLE points\n  (triangle inequality, degenerate allowed): the equilateral point (1,1,1) and the 3\n  collinear points; any additional real positive but non-realizable algebraic solutions\n  are counted and recorded honestly (their existence does NOT refute P5; realizable\n  count != 4 does).\n- **P6 (n = 4 assembly).** The planar 4-body system (6 cleared AC equations + $e_{CM}$,\n  equal masses) assembles to 7 nonzero polynomials in 6 variables; for each we record\n  monomial count, total degree, and Newton support affine dimension; the profile is\n  persisted as the baseline artifact for CC-P1. (Fails only if assembly is inconsistent,\n  e.g. an identically-zero AC polynomial.)\n- **P7 (the square, exactly).** Under the equal-mass rhombus-type ansatz\n  $r_{12} = r_{23} = r_{34} = r_{14} = a$, $r_{13} = r_{24} = b$, the AC system reduces\n  to a system in $(a, b)$ whose unique positive real solution satisfies $b^2 = 2 a^2$\n  (the geometric square) and $e_{CM}(a, b) = 0$ exactly. Expected (hand derivation, to\n  be machine-checked, not assumed): $a^3 = (4 + \\sqrt{2})/2$, equivalently $a$ is a root\n  of $2 x^6 - 8 x^3 + 7$.\n\n## Success / failure criteria\n\n- SUCCESS: P1, P2, P3, P5, P6, P7 all pass as machine asserts (run.py exits 0). P4 is\n  descriptive (fails only on degenerate elimination).\n- FAILURE: any assert fails (run.py exits nonzero). A failed prediction is reported as\n  refuted in verdict.md; goalposts do not move; a corrected question becomes a new EXP.\n\n## Method / environment\n\nrun.py, repo .venv (Python 3.13, sympy 1.14), CPU only, deterministic (no randomness).\nExact arithmetic throughout (QQ; algebraic numbers via minimal polynomials where\nneeded). Artifacts tee'd to `artifacts/` (log + JSON profile + derived polynomials).\n",
    "id": "001",

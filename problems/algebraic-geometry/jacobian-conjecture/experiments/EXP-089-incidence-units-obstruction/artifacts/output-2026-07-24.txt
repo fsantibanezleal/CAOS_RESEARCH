@@ -1,0 +1,24 @@
+==========================================================================
+EXP-089: does the incidence mechanism give a planar (dim-2) counterexample?
+==========================================================================
+dim 2: X_H = {(L,Q) linear x linear : Res(L,Q)=1, [LQ]_{TS}=1}
+  [LQ]_TS = beta*gamma + delta*x,   Res(L,Q) = -beta*gamma + delta*x
+  the two constraints {mid=1, res=1} give: x*delta=1 and beta*gamma=0
+[PASS] 1: {Res=1,[LQ]=1} forces x*delta=1, beta*gamma=0 (REDUCIBLE, two components)  => X_2 is reducible (beta=0 branch u gamma=0 branch); NOT irreducible, so NOT A^2
+
+finite-root chart: X_2^fin = A^2_{c2,zeta} \ {2 c2 zeta + 1 = 0}
+  the deleted locus is the hyperbola {2*c2*zeta + 1 = 0} (~ G_m).
+  (2 c2 zeta + 1) is a nowhere-zero, NON-constant regular function on X_2^fin: a UNIT.
+[PASS] 2: X_2 has a nonconstant unit; O(A^2)^* = C^* (constants only) => X_2 != A^2  the units invariant excludes A^2 outright, no deep classification needed
+
+contrast dim 3: {Res=1, [LQ]_{T^2 S}=1} with L linear, Q QUADRATIC gives
+  a SMOOTH irreducible X_3 ~ A^3 (weights (1,-1,-2), unimodular semigroup).
+  The discriminant-complement is again affine space in dim 3 but PROVABLY
+  NOT in dim 2 (reducible / nonconstant units).
+
+RESULT: [MV] the incidence/root-selection mechanism - the EXACT structure of the
+  2026 dim-3 counterexample - CANNOT produce a planar counterexample: its dim-2
+  source X_2 is not isomorphic to A^2 (reducible; nonconstant units). Observation
+  (c) fails in dim 2. This is a clean, complete exclusion of this counterexample
+  class for JC(2), and it matches our G_m-equivariant rigidity theorem (EXP-010).
+ALL CHECKS PASS.

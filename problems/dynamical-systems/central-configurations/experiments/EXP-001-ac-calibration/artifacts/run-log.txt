@@ -1,0 +1,5 @@
+[23:03:01] EXP-001 staged run start
+[23:03:01] RESULT P2-lagrange-symbolic: pass 
+[23:03:01] RESULT sanity-nonvacuous: pass 
+[23:03:01] RESULT fact-line-r13r23-in-VF: pass the line {r13 = r23 = 0} lies in V(F) for ALL masses (why saturation is needed)
+[23:03:01] RESULT P3-equal-masses-symmetric: pass r12 = 90**(1/3)/6, r23 = 90**(1/3)/6

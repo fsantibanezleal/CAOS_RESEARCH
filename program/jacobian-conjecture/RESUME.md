@@ -115,6 +115,15 @@ the standing decision rule: every new experiment names its route).
    never from memory.
    THE LIVE ROUTE after session 45: degrees 1-2 CLOSED; degree 3 OPEN through the
    triple tier (EXP-073: all 20825 feasible, gate green); R3 vacuous (EXP-074).
+   LENSES LEDGER (methodology/10, per-problem tool ledger): EXCLUSION (spine:
+   theorem ladder + truncation sweeps, floor progress); INVARIANT (units killed the
+   dim-2 incidence variety, EXP-089); ANATOMY (the 2026 counterexample = incidence /
+   root-selection map, S7-S9); RECOGNITION (X_H ~ A^n; dim-2 decidable by surface
+   theory); SYMMETRY (our G_m-equivariant rigidity, EXP-010); TWO-SIDED (covector =
+   exclusion / no-covector = counterexample skeleton); REFORMULATION (properness =
+   Jelonek set = our EXP-014; annihilation lemma = flat connection, EXP-079);
+   DIMENSION-LADDER (n=3 unique unimodular, EXP-088); AT-INFINITY (Newton polygons /
+   Berkovich, S5); EXTERNAL-DIALOGUE (the Tao exchange, all re-derived in-repo).
    NOVEL-APPROACHES SPINE (2026-07-24, program/jacobian-conjecture/novel-approaches-2026-07-24.md):
    the campaign is TWO-SIDED (a covector = exclusion; provably no covector at any
    degree = consistency = counterexample skeleton). Declared next experiments,

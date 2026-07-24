@@ -65,3 +65,116 @@ quadruple sweep would take ~18 days. Session 47+ should RESTART it REORDERED
 (supports containing >= 2 of the 8 degree-1 blockers first, ~8k supports,
 ~14 h: the degree-2 hit lived in blocker territory) and pursue S5a (compiled
 GF(p) kernel) before any full-space quadruple commitment.
+
+## S7. The birational/multiplication structure of the 3D counterexample (from a Tao-ChatGPT exchange, verified 2026-07-24)
+
+A shared exchange (attributed to Tao) reverse-engineered the Alpoge counterexample.
+VERIFIED symbolically in-repo (all identities exact):
+- The map is the COEFFICIENT MAP of the polynomial product (a+bt)(c+dt+et^2)
+  (a linear form times a quadratic), restricted to X = {(a,b,c,d,e): Res(linear,
+  quadratic) = a^2 e - abd + cb^2 = 1, and the middle coeff ad+bc = 1}, with
+  X isomorphic to A^3 (explicit Phi, defined even at a=0), dropping the middle
+  coefficient. This gives G: C^3 -> C^3, det DG = -1, = the counterexample up to
+  linear normalization (F_orig = B o G o A).
+- The constant Jacobian is STRUCTURALLY FORCED by a birational-Laurent
+  cancellation: (x,y,z)->(x,u,r) with u=1+xy, r=2-3xy-x^2 z has Jacobian -x^3;
+  the map in (x,u,r) is a simple Laurent map with Jacobian 2 x^{-3}; the pole
+  cancels the zero. The map is a degree-3 (three-sheeted) cover; the fibers solve
+  a depressed cubic whose discriminant is a perfect square times -4D.
+
+WHAT THIS OPENS FOR JC(2) (routes, ranked):
+- S7a [COUNTEREXAMPLE SIDE, genuinely new to us]: the CONSTRUCTIVE TEMPLATE.
+  A counterexample = (affine variety X isomorphic to A^n, cut by resultant/norm
+  = 1 constraints) + (an algebra-MULTIPLICATION map) + (drop a normalized
+  coordinate). For JC(2) search the 2D analog: multiply a linear by a linear (or
+  the right bidegree) on a unit-resultant variety isomorphic to A^2, drop a
+  coordinate, test the composite. This is a SYNTHESIS search, complementary to
+  our exclusion sweeps; it feeds the two-sided reframe (S0) directly.
+- S7b [EXCLUSION SIDE]: the Laurent-cancellation OBSTRUCTION. A planar Keller map
+  arising from a birational-Laurent factorization needs a pole to cancel a zero;
+  with only two coordinates there is "less room". Attempt to prove no such
+  factorization closes in 2D (a structural exclusion of this family). Connects to
+  S5 (at infinity: the pole lives there).
+- S7c [SUPPORTING]: the mechanism is intrinsically >=3D (cubic cover, needs the
+  third slot for the Laurent cancellation and the degree-3 elimination). This is
+  independent evidence the mechanism does NOT transplant to 2D, consistent with
+  our published rigidity/uniqueness theorems. Our T-theorems constrain exactly
+  the u=1+xy "unit times monomial" shapes this construction rides on.
+- PRELIMINARY [D, to verify in EXP-086]: the FAITHFUL 2D lowering (linear x
+  linear = 3 coeffs; resultant=1 AND middle=1 as the two constraints) is
+  DEGENERATE (ad-bc=1 with ad+bc=1 forces ad=1, bc=0: no smooth A^2). If robust,
+  this is a concrete reason the mechanism resists dimension 2. EXP-086 tests
+  whether any non-degenerate 2D analog exists.
+
+## S8. The incidence/recognition-of-affine-space reframe (Tao-ChatGPT geometric derivation, 2026-07-24)
+
+The full geometric derivation recasts the counterexample invariantly:
+  pi: P^1 x Sym^2(P^1) -> Sym^3(P^1), (p,{q,r}) |-> {p,q,r}  (choose one root of a
+  binary cubic; generically 3:1). R = ramification = {p=q}u{p=r} = resultant
+  vanishing. H = hyperplane TANGENT-BUT-NOT-OSCULATING to the small diagonal (the
+  twisted cubic in Sym^3 ~ P^3). X = (P^1 x Sym^2) \ (R u pi^-1 H) ~ A^3;
+  Y = Sym^3 \ H ~ A^3; pi|X: X -> Y is the counterexample. The constant Jacobian
+  is the canonical-bundle/Schur-complement bookkeeping (det(coeff,resultant)=-rho^2,
+  constraint-block det=x^3, chart det=x^3/2) - NOT a per-term miracle. The whole
+  map is the SL_2-equivariant morphism P(V)xP(Sym^2 V) -> P(Sym^3 V) restricted to
+  boundary-divisor complements; choosing H breaks SL_2 to the torus G_m (the source
+  of the (-2,-1,+1) weights). THE ONLY REAL MIRACLE is X ~ A^3.
+
+DECISIVE REFRAME FOR OUR PROGRAM: JC = (elementary incidence geometry producing an
+etale degree-n cover X -> A^n) + (RECOGNITION that X ~ A^n). The map is easy; the
+recognition is everything. In dim 3, X ~ A^3 is the open miracle (routes: affine
+modifications, flexibility, cancellation, log-Fano/spherical, SL_2 big cell,
+deformation to the osculating case).
+
+WHY THIS MATTERS FOR JC(2) - three converging obstructions (EXP-087, verified):
+- S8a [MV]: the construction's essential ingredient (H with contact exactly 2,
+  NON-osculating) requires the rational normal curve degree d >= 3. For d=2 the
+  small diagonal is a CONIC; every tangent line has contact exactly 2 = d =
+  OSCULATING (Borel stabilizer). So the 2D case is FORCED into the regime the 3D
+  construction had to EXCLUDE. The mechanism does not lower to the plane.
+- S8b [MV]: algebraic shadow - the two constraints (resultant=1, middle=1) that cut
+  smooth A^3 in 3D COINCIDE in 2D (ad-bc=1 with ad+bc=1 => ad=1,bc=0, singular).
+- S8c [D, potential CLOSURE]: the residual symmetry is G_m (weights); OUR published
+  2D equivariant rigidity theorem (foundational ms, EXP-010: every G_m-equivariant
+  Keller map of C^2 is linear) KILLS any G_m-equivariant planar incidence map. The
+  counterexample's own symmetry mechanism is exactly what our theorem forbids in 2D.
+- S8d [the tractable target]: for SURFACES, recognition of A^2 IS a theorem
+  (Miyanishi-Sugie / Fujita characterization). So the 2D incidence X_2 can be
+  DECIDED: either X_2 is not A^2 (no counterexample from the construction) or the
+  degree-2 etale structure is obstructed. Unlike dim 3, dim 2 recognition is not a
+  miracle - it is classification. THIS is the sharpest new route: run the d=2
+  incidence construction and settle X_2 by surface theory. (EXP-088 declared.)
+
+This is the most conceptually valuable external input the program has had: it gives
+JC(2) a NAMED decomposition (incidence + surface-recognition) where the hard half is
+a solved area of geometry, and three independent structural reasons the 2026
+mechanism does not reach the plane - one of them our own theorem.
+
+## S9. Toric recognition, the Jelonek/properness bridge, and the consolidated dim-2 verdict (2026-07-24)
+
+The full geometric conversation adds three things, all VERIFIED or tied to our record:
+- TORIC RECOGNITION: X_3 ~ A^3 because the G_m-semigroup (weights 1,-1,-2) is
+  UNIMODULAR (det[[1,-1,-2],[0,1,0],[0,0,1]] = 1). The higher-n normalized slices
+  are generalized Danielewski cores {x^{n-2}W=B^{n-2}-1} x A^{n-2} with n-2 boundary
+  components and Cl ~ Z^{n-3}; n=3 is the unique linear/unimodular/trivial-Cl case.
+- NON-PROPERNESS = OUR EXP-014: the counterexample's sole obstruction is
+  non-properness; its Jelonek set is the cubic discriminant hypersurface V(D),
+  D=-4 Disc(C); a sheet escapes as x=1/C'(zeta)->infinity. This is precisely our
+  properness reformulation of JC(2) (empty Jelonek set <=> automorphism). The
+  external derivation independently centers the same object our EXP-014 uses.
+- CONSOLIDATED DIM-2 VERDICT (EXP-086/087/088): the mechanism is exceptional to
+  n=3 on THREE independent axes - (a) the conic has no tangent-non-osculating line
+  (dim 2 forced into the excluded Borel regime); (b) the Danielewski/toric core
+  degenerates at n=2 (n-2=0) and is non-unimodular for n>=4; (c) our own
+  G_m-equivariant rigidity theorem (EXP-010) forbids a torus-graded planar
+  counterexample. All three converge: no INCIDENCE-TYPE planar counterexample.
+  CAVEAT: this covers incidence/multiplication-type maps, not all planar Keller
+  maps; it is strong structural evidence, not a proof of JC(2).
+
+THE SHARPEST NEW ROUTE (S8d/S9 -> EXP-089): recognition of A^2 is a THEOREM
+(Miyanishi-Sugie: a smooth affine surface with trivial units and Picard and an
+A^1-fibration of the right type is A^2), unlike the open dim-3 miracle. So the 2D
+incidence surface X_2 is DECIDABLE by surface classification + the class-group
+discriminator. This converts "does the mechanism give a planar counterexample" from
+a mystery into a finite surface-theory computation. Secure Miyanishi-Sugie primary
+source before any classification claim.

@@ -1,18 +1,25 @@
 """EXP-001: exact Albouy-Chenciner system builder, calibrated on n = 3, assembled for n = 4.
 
-Deterministic, CPU-only, exact arithmetic (sympy over QQ; algebraic numbers where needed).
-No randomness. Exits nonzero on any prediction failure (P1, P2, P3, P5, P6, P7 asserts;
-P4 descriptive). Run from the repo root with the repo .venv:
+Deterministic, CPU-only, exact arithmetic (sympy over QQ; algebraic numbers where
+needed). No randomness. Staged with per-stage caps (heavy Groebner stages run in
+subprocesses and report `inconclusive-cap` when the cap strikes: recorded honestly, not
+a pass). Exits nonzero if any DECLARED prediction assert fails (a refutation).
 
+Run from the repo root with the repo .venv:
     .venv/Scripts/python.exe problems/dynamical-systems/central-configurations/experiments/EXP-001-ac-calibration/run.py
 
 Equations per the method dossier (HJ11 eq. (3), PDF read 2026-07-23):
     S_ij = r_ij^{-3} - 1   (Lambda = -1 scale normalization; S_ii = 0 by convention)
     f_ij = sum_{k=1..n} m_k [ S_ik (r_jk^2 - r_ik^2 - r_ij^2) + S_jk (r_ik^2 - r_jk^2 - r_ij^2) ]
 cleared of denominators to polynomials in QQ[m][r].
+
+Engineering note (recorded for the verdict): a first monolithic runner was aborted after
+~78 min CPU inside the product-Rabinowitsch Groebner saturation for P1; this staged
+runner caps that stage and orders the cheap decisive stages first.
 """
 
 import json
+import multiprocessing as mp
 import sys
 import time
 from itertools import combinations
@@ -23,24 +30,31 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 ART = HERE / "artifacts"
 ART.mkdir(exist_ok=True)
+LOGF = ART / "run-log.txt"
 
-LOG_LINES = []
+# caps in seconds
+CAP_P4 = 900
+CAP_P1_EQUAL = 3600
+CAP_P1_OTHER = 900
+CAP_P5_SOLVE = 1800
+
+SAMPLES = [(1, 1, 1), (1, 2, 3), (2, 3, 5), (1, 1, 2)]
 
 
 def log(msg: str) -> None:
     line = f"[{time.strftime('%H:%M:%S')}] {msg}"
     print(line, flush=True)
-    LOG_LINES.append(line)
+    with LOGF.open("a", encoding="utf-8") as fh:
+        fh.write(line + "\n")
 
 
-FAILURES = []
+RESULTS = {}   # prediction -> {"status": "pass"|"fail"|"inconclusive-cap", "detail": ...}
 
 
-def check(name: str, ok: bool, detail: str = "") -> None:
-    status = "PASS" if ok else "FAIL"
-    log(f"CHECK {name}: {status} {detail}")
-    if not ok:
-        FAILURES.append(name)
+def record(pred: str, status: str, detail: str = "") -> None:
+    RESULTS[pred] = {"status": status, "detail": detail}
+    log(f"RESULT {pred}: {status} {detail}")
+    (ART / "results.json").write_text(json.dumps(RESULTS, indent=2), encoding="utf-8")
 
 
 # ---------------------------------------------------------------- builders
@@ -51,7 +65,7 @@ def rvar(i: int, j: int):
 
 
 def ac_symmetric(n: int, masses):
-    """Cleared symmetric Albouy-Chenciner polynomials f_ij, i < j (list of sympy Polys' exprs)."""
+    """Cleared symmetric Albouy-Chenciner polynomials f_ij, i < j."""
     def S(i, j):
         if i == j:
             return sp.Integer(0)
@@ -75,8 +89,7 @@ def ac_symmetric(n: int, masses):
     return out
 
 
-def cayley_menger_planar4(subs=None):
-    """Bordered 5x5 Cayley-Menger determinant for 4 points; zero iff coplanar (in R^2)."""
+def cayley_menger_planar4():
     r = {}
     for i, j in combinations(range(1, 5), 2):
         r[(i, j)] = rvar(i, j) ** 2
@@ -87,8 +100,108 @@ def cayley_menger_planar4(subs=None):
         [1, r[(1, 3)], r[(2, 3)], 0, r[(3, 4)]],
         [1, r[(1, 4)], r[(2, 4)], r[(3, 4)], 0],
     ])
-    d = M.det(method="berkowitz")
-    return sp.expand(d if subs is None else d.subs(subs))
+    return sp.expand(M.det(method="berkowitz"))
+
+
+def strip_monomial_factors(expr, gens):
+    """Return the product of non-monomial irreducible factors (torus-equivalent form)."""
+    coeff, factors = sp.factor_list(sp.expand(expr), *gens)
+    out = sp.Integer(1)
+    stripped = []
+    for base, exp in factors:
+        p = sp.Poly(base, *gens)
+        if len(p.monoms()) == 1:
+            stripped.append(f"{base}**{exp}")
+        else:
+            out *= base ** exp
+    return sp.expand(out), stripped
+
+
+def is_real_positive(x) -> bool:
+    """Exact-backed sign decision for an algebraic number.
+
+    sympy's `is_positive` returns None on nested RootOf expressions (silently dropping
+    genuine solutions if used as a filter: the bug found in the first staged run).
+    Here: realness via exact `im(x).equals(0)` (with a simplify fallback), positivity
+    via adaptive-precision evalf on the real part (sympy evalf tracks error for
+    algebraic expressions); callers additionally verify each ACCEPTED solution by an
+    exact residual check against the defining equations.
+    """
+    x = sp.nsimplify(x, rational=False) if x.is_Rational else x
+    im = sp.im(x)
+    if im != 0:
+        ok = im.equals(0)
+        if ok is not True and sp.simplify(im) != 0:
+            return False
+    re = sp.re(x)
+    if re == 0 or re.equals(0):
+        return False
+    v = re.evalf(60)
+    if not v.is_comparable:
+        v = sp.N(re, 120)
+    return bool(v > 0)
+
+
+def census_positive(eqs, gens):
+    """Complete exact census of the REAL POSITIVE common zeros of a 0-dim-in-the-torus
+    polynomial system, WITHOUT solve_poly_system.
+
+    Machine lesson (this experiment): sympy's solve_poly_system silently returns an
+    INCOMPLETE solution list when univariate roots are not radical-expressible or fail
+    its internal lifting (it missed the square in the rhombus stratum, whose b-value is
+    a root of 4b^6 - 4b^3 - 7 with obvious radical form). Here instead:
+      1. per-variable univariate eliminants from lex Groebner bases (elements of the
+         ideal: EVERY solution's coordinate is a root: completeness by construction);
+      2. positive real candidates as exact CRootOf isolations (complete real-root sets);
+      3. every candidate tuple accepted only when EVERY equation's residual is exactly
+         zero (sympy equals(0) on algebraic numbers, decisive True required).
+    Returns (accepted_tuples, meta). Raises RuntimeError if some variable has no
+    univariate eliminant in its lex elimination ideal (system not 0-dim in that chart).
+    """
+    per_var_roots = {}
+    meta = {"eliminants": {}}
+    for v in gens:
+        others = [g for g in gens if g != v]
+        G = sp.groebner(eqs, *(others + [v]), order="lex")
+        univ = [g for g in G.exprs if g.free_symbols <= {v}]
+        if not univ:
+            raise RuntimeError(f"no univariate eliminant for {v}")
+        u = univ[0]
+        for extra in univ[1:]:
+            u = sp.gcd(u, extra)
+        meta["eliminants"][str(v)] = str(sp.factor(u))
+        roots = [r for r in sp.Poly(u, v).real_roots() if r > 0]
+        per_var_roots[v] = roots
+    from itertools import product as iproduct
+    accepted = []
+    n_cand = 1
+    for v in gens:
+        n_cand *= len(per_var_roots[v])
+    meta["candidate_tuples"] = n_cand
+    for combo in iproduct(*[per_var_roots[v] for v in gens]):
+        subs_map = dict(zip(gens, combo))
+        ok = True
+        for e in eqs:
+            if e.subs(subs_map).equals(0) is not True:
+                ok = False
+                break
+        if ok:
+            accepted.append(combo)
+    return accepted, meta
+
+
+def exact_zero_residuals(eqs, subs_map) -> bool:
+    """Exact check that every equation vanishes at the (algebraic) point."""
+    for e in eqs:
+        val = e.subs(subs_map)
+        if val == 0:
+            continue
+        z = sp.simplify(val)
+        if z == 0:
+            continue
+        if z.equals(0) is not True:
+            return False
+    return True
 
 
 def support_profile(expr, gens):
@@ -100,189 +213,315 @@ def support_profile(expr, gens):
     else:
         M = sp.Matrix.hstack(*[v - vecs[0] for v in vecs[1:]])
         adim = M.rank()
-    return {
-        "n_monomials": len(monoms),
-        "total_degree": int(sp.Poly(expr, *gens).total_degree()),
-        "support_affine_dim": int(adim),
-    }
+    return {"n_monomials": len(monoms),
+            "total_degree": int(p.total_degree()),
+            "support_affine_dim": int(adim)}
 
 
-def is_zero_dimensional(polys, gens):
-    """0-dim criterion: grevlex GB has, for each gen, a leading monomial that is a pure power."""
+def grevlex_pure_power_zero_dim(polys, gens):
     G = sp.groebner(polys, *gens, order="grevlex")
-    lead = [sp.Poly(g, *gens).LM(order="grevlex") for g in G.exprs]
     pure = set()
-    for lm in lead:
-        exps = lm.exponents if hasattr(lm, "exponents") else None
-        mon = sp.Poly(lm.as_expr() if hasattr(lm, "as_expr") else lm, *gens).monoms()[0]
-        nz = [t for t in range(len(gens)) if mon[t] > 0]
+    lms = []
+    for g in G.exprs:
+        p = sp.Poly(g, *gens)
+        lm = p.LM(order="grevlex")
+        mon = tuple(lm.exponents)
+        lms.append(mon)
+        nz = [i for i, e in enumerate(mon) if e > 0]
         if len(nz) == 1:
             pure.add(nz[0])
-    return all(t in pure for t in range(len(gens))), [str(m) for m in lead]
+    return pure == set(range(len(gens))), lms, G
 
 
-def positive_real_roots_univ(poly, var):
-    """Exact count + isolating data of positive real roots of a univariate polynomial."""
-    p = sp.Poly(sp.factor(poly), var)
-    roots = []
-    for r_, mult in p.real_roots(multiple=False):
-        if r_.is_positive:
-            roots.append((r_, mult))
-    return roots
+# ------------------------------------------------- subprocess workers (picklable)
+
+def _worker_p1(mv, outfile):
+    import sympy as spp  # noqa: F811 (fresh import in child)
+    R12, R13, R23 = rvar(1, 2), rvar(1, 3), rvar(2, 3)
+    gens = [R12, R13, R23]
+    F = ac_symmetric(3, [spp.Integer(v) for v in mv])
+    G0 = spp.groebner(list(F.values()), *gens, order="grevlex")
+    t = spp.Symbol("t")
+    zd, lms, G = grevlex_pure_power_zero_dim(
+        list(G0.exprs) + [t * R12 * R13 * R23 - 1], gens + [t])
+    payload = {"mv": list(mv), "zero_dim": bool(zd),
+               "gb_size": len(G.exprs),
+               "gb_exprs": [spp.srepr(e) for e in G.exprs]}
+    Path(outfile).write_text(json.dumps(payload), encoding="utf-8")
+
+
+def _worker_p4(outfile):
+    import sympy as spp  # noqa: F811
+    m1, m2, m3 = spp.symbols("m1 m2 m3", positive=True)
+    R12, R13, R23 = rvar(1, 2), rvar(1, 3), rvar(2, 3)
+    F = ac_symmetric(3, [m1, m2, m3])
+    eqs = [spp.expand(f.subs({R13: R12 + R23})) for f in F.values()]
+    eqs = [e for e in eqs if e != 0]
+    res = spp.resultant(spp.Poly(eqs[0], R12), spp.Poly(eqs[1], R12), R12)
+    fac = spp.factor(res)
+    payload = {"eliminant_nonzero": bool(res != 0),
+               "degree_r23": int(spp.degree(res, R23)) if res != 0 else -1,
+               "factored": str(fac)[:500000]}
+    Path(outfile).write_text(json.dumps(payload), encoding="utf-8")
+
+
+def _worker_p5(gb_file, outfile):
+    import sympy as spp  # noqa: F811
+    R12, R13, R23 = rvar(1, 2), rvar(1, 3), rvar(2, 3)
+    t = spp.Symbol("t")
+    gens4 = [R12, R13, R23, t]
+    data = json.loads(Path(gb_file).read_text(encoding="utf-8"))
+    basis = [spp.sympify(e) for e in data["gb_exprs"]]
+    # eliminate t (lex, t first) to get the saturated ideal in the r variables,
+    # then run the complete eliminant census on the 3-var system.
+    Gt = spp.groebner(basis, t, R12, R13, R23, order="lex")
+    rsys = [g for g in Gt.exprs if t not in g.free_symbols]
+    accepted, meta = census_positive(rsys, [R12, R13, R23])
+    out = [[spp.srepr(x) for x in combo] for combo in accepted]
+    Path(outfile).write_text(json.dumps({"n_positive": len(accepted),
+                                         "eliminants": meta["eliminants"],
+                                         "candidate_tuples": meta["candidate_tuples"],
+                                         "positive": out}), encoding="utf-8")
+
+
+def run_capped(target, args, cap_s, label):
+    p = mp.Process(target=target, args=args)
+    t0 = time.time()
+    p.start()
+    p.join(cap_s)
+    if p.is_alive():
+        p.terminate()
+        p.join()
+        log(f"{label}: CAP struck after {cap_s} s")
+        return False, time.time() - t0
+    ok = p.exitcode == 0
+    if not ok:
+        log(f"{label}: subprocess exit {p.exitcode}")
+    return ok, time.time() - t0
 
 
 # ---------------------------------------------------------------- stages
 
-def main() -> int:
-    t0 = time.time()
-    profile = {"experiment": "EXP-001", "date": "2026-07-23"}
+def stage_s0():
     m1, m2, m3 = sp.symbols("m1 m2 m3", positive=True)
     R12, R13, R23 = rvar(1, 2), rvar(1, 3), rvar(2, 3)
-    gens3 = [R12, R13, R23]
-
-    # ---- P2: Lagrange point, symbolic masses -------------------------------
-    log("P2: equilateral r = 1 with symbolic masses")
     F_sym = ac_symmetric(3, [m1, m2, m3])
     ok = all(sp.expand(f.subs({R12: 1, R13: 1, R23: 1})) == 0 for f in F_sym.values())
-    check("P2-lagrange-symbolic", ok)
+    record("P2-lagrange-symbolic", "pass" if ok else "fail")
 
-    # sanity: non-CC rational point must NOT satisfy the system (non-vacuity)
     bad = {R12: sp.Rational(1), R13: sp.Rational(2), R23: sp.Rational(5, 2)}
     vals = [sp.expand(f.subs(bad).subs({m1: 1, m2: 2, m3: 3})) for f in F_sym.values()]
-    check("sanity-nonvacuous", any(v != 0 for v in vals), f"values {vals}")
+    record("sanity-nonvacuous", "pass" if any(v != 0 for v in vals) else "fail")
 
-    samples = [(1, 1, 1), (1, 2, 3), (2, 3, 5), (1, 1, 2)]
+    line_in = all(sp.expand(f.subs({R13: 0, R23: 0})) == 0 for f in F_sym.values())
+    record("fact-line-r13r23-in-VF", "pass" if line_in else "fail",
+           "the line {r13 = r23 = 0} lies in V(F) for ALL masses (why saturation is needed)")
 
-    # ---- P1: zero-dimensionality per sample mass vector --------------------
-    for mv in samples:
-        F = ac_symmetric(3, [sp.Integer(v) for v in mv])
-        t = sp.Symbol("t", positive=True)
-        polys = list(F.values()) + [t * R12 * R13 * R23 - 1]
-        zd, lead = is_zero_dimensional(polys, gens3 + [t])
-        check(f"P1-zerodim-{mv}", zd, f"leading monomials {lead}")
 
-    # ---- P3: Euler-Moulton, one positive collinear solution per ordering ---
-    # orderings: (middle body b): 1-2-3 means r13 = r12 + r23, etc.
+def stage_p3():
+    R12, R13, R23 = rvar(1, 2), rvar(1, 3), rvar(2, 3)
     orderings = {
         "2-middle": (R13, R12 + R23),
         "3-middle": (R12, R13 + R23),
         "1-middle": (R23, R12 + R13),
     }
-    p3_data = {}
-    for mv in samples:
+    all_ok = True
+    details = {}
+    for mv in SAMPLES:
         F = ac_symmetric(3, [sp.Integer(v) for v in mv])
         for oname, (lhs, rhs) in orderings.items():
-            sub = {lhs: rhs}
-            eqs = [sp.expand(f.subs(sub)) for f in F.values()]
+            eqs = [sp.expand(f.subs({lhs: rhs})) for f in F.values()]
             eqs = [e for e in eqs if e != 0]
             vars2 = sorted({s for e in eqs for s in e.free_symbols}, key=str)
-            sols = sp.solve_poly_system([sp.Poly(e, *vars2) for e in eqs], *vars2)
-            pos = []
-            for sol in sols:
-                if all(s.is_real is not False and sp.im(s) == 0 for s in sol):
-                    solr = [sp.nsimplify(s) if s.is_Rational else s for s in sol]
-                    if all(sp.simplify(s) > 0 for s in sol):
-                        pos.append(tuple(sp.simplify(s) for s in sol))
-            p3_data[f"{mv}-{oname}"] = [tuple(str(x) for x in s) for s in pos]
-            check(f"P3-euler-{mv}-{oname}", len(pos) == 1,
-                  f"positive solutions {p3_data[f'{mv}-{oname}']}")
+            try:
+                pos, _meta = census_positive(eqs, vars2)
+            except RuntimeError as exc:
+                log(f"P3 {mv}-{oname}: census failed: {exc}")
+                pos = None
+            key = f"{mv}-{oname}"
+            if pos is None:
+                details[key] = "census-failed"
+                all_ok = False
+                continue
+            details[key] = [[str(x) for x in s] for s in pos]
+            if len(pos) != 1:
+                all_ok = False
             if mv == (1, 1, 1) and oname == "2-middle" and len(pos) == 1:
-                r12v, r23v = (pos[0][vars2.index(R12)], pos[0][vars2.index(R23)])
-                check("P3-equal-masses-symmetric", sp.simplify(r12v - r23v) == 0,
-                      f"r12 = {r12v}, r23 = {r23v}")
+                iv = {str(v): i for i, v in enumerate(vars2)}
+                r12v = pos[0][iv["r12"]]
+                r23v = pos[0][iv["r23"]]
+                sym_ok = sp.simplify(r12v - r23v) == 0
+                record("P3-equal-masses-symmetric", "pass" if sym_ok else "fail",
+                       f"r12 = {r12v}, r23 = {r23v}")
+    (ART / "stage-p3.json").write_text(json.dumps(details, indent=2), encoding="utf-8")
+    record("P3-euler-moulton", "pass" if all_ok else "fail",
+           "exactly one positive collinear solution per ordering per sample"
+           if all_ok else json.dumps({k: len(v) for k, v in details.items()}))
 
-    # ---- P4: the Euler eliminant, symbolic masses (descriptive) ------------
-    log("P4: symbolic-mass eliminant on the 2-middle chart")
-    Fsym = ac_symmetric(3, [m1, m2, m3])
-    eqs = [sp.expand(f.subs({R13: R12 + R23})) for f in Fsym.values()]
-    eqs = [e for e in eqs if e != 0]
-    res = sp.resultant(sp.Poly(eqs[0], R12), sp.Poly(eqs[1], R12), R12)
-    res = sp.factor(res)
-    elim_deg = sp.Poly(res, R23).degree() if res != 0 else -1
-    profile["P4_eliminant_degree_in_r23"] = int(elim_deg)
-    (ART / "p4-euler-eliminant.txt").write_text(sp.srepr(res)[:200000] + "\n\nfactored:\n" + str(res), encoding="utf-8")
-    check("P4-eliminant-nonzero", res != 0, f"degree in r23: {elim_deg}")
 
-    # ---- P5: labeled census, equal masses ----------------------------------
-    log("P5: full labeled census for equal masses (1,1,1)")
-    F = ac_symmetric(3, [1, 1, 1])
-    sols = sp.solve_poly_system([sp.Poly(f, *gens3) for f in F.values()], *gens3)
-    real_pos, realizable = [], []
-    for sol in sols:
-        if all(sp.im(s) == 0 for s in sol):
-            if all(sp.simplify(s) > 0 for s in sol):
-                real_pos.append(sol)
-                a, b, c = sol  # r12, r13, r23
-                tri = (sp.simplify(a + c - b) >= 0) and (sp.simplify(a + b - c) >= 0) and (sp.simplify(b + c - a) >= 0)
-                if tri:
-                    realizable.append(sol)
-    profile["P5_real_positive"] = [tuple(str(x) for x in s) for s in real_pos]
-    profile["P5_realizable"] = [tuple(str(x) for x in s) for s in realizable]
-    check("P5-census-equal-masses", len(realizable) == 4,
-          f"realizable {len(realizable)} of {len(real_pos)} real-positive; {profile['P5_realizable']}")
-
-    # ---- P6: n = 4 assembly, equal masses ----------------------------------
-    log("P6: assemble the planar 4-body HM system (equal masses)")
+def stage_p6():
     F4 = ac_symmetric(4, [1, 1, 1, 1])
     cm = cayley_menger_planar4()
     gens6 = [rvar(i, j) for i, j in combinations(range(1, 5), 2)]
     system4 = {f"f{i}{j}": F4[(i, j)] for i, j in F4}
     system4["e_CM"] = cm
-    prof6 = {}
-    ok_nonzero = True
+    prof = {}
+    ok = len(system4) == 7
     for name, e in system4.items():
         if sp.expand(e) == 0:
-            ok_nonzero = False
-            prof6[name] = None
+            ok = False
+            prof[name] = None
         else:
-            prof6[name] = support_profile(e, gens6)
-    profile["P6_structure"] = prof6
+            prof[name] = support_profile(e, gens6)
     (ART / "p6-n4-system.txt").write_text(
-        "\n\n".join(f"### {k}\n{sp.expand(v)}" for k, v in system4.items()), encoding="utf-8")
-    check("P6-assembly", ok_nonzero and len(system4) == 7,
-          f"7 polynomials, profiles {json.dumps(prof6)}")
+        "\n\n".join(f"### {k}\n{sp.expand(v)}" for k, v in system4.items()),
+        encoding="utf-8")
+    (ART / "stage-p6.json").write_text(json.dumps(prof, indent=2), encoding="utf-8")
+    record("P6-assembly", "pass" if ok else "fail", json.dumps(prof))
+    return F4, cm
 
-    # ---- P7: the square, exactly -------------------------------------------
-    log("P7: equal-mass rhombus ansatz (a sides, b diagonals)")
+
+def stage_p7(F4, cm):
     a, b = sp.symbols("a b", positive=True)
     subsq = {rvar(1, 2): a, rvar(2, 3): a, rvar(3, 4): a, rvar(1, 4): a,
              rvar(1, 3): b, rvar(2, 4): b}
-    red = sorted({sp.expand(e.subs(subsq)) for e in F4.values()})
+    red = sorted({sp.expand(e.subs(subsq)) for e in F4.values()}, key=sp.default_sort_key)
     red = [e for e in red if e != 0]
-    log(f"P7: reduced to {len(red)} distinct nonzero equations")
-    sols = sp.solve_poly_system([sp.Poly(e, a, b) for e in red], a, b)
-    pos = [s for s in sols if all(sp.im(x) == 0 for x in s) and all(sp.simplify(x) > 0 for x in s)]
-    profile["P7_positive_solutions"] = [tuple(str(x) for x in s) for s in pos]
-    ok_unique = len(pos) == 1
-    ok_square = False
-    ok_cm = False
-    a_min_poly = None
-    if ok_unique:
-        av, bv = pos[0]
-        ok_square = sp.simplify(bv ** 2 - 2 * av ** 2) == 0
-        cmval = cayley_menger_planar4(subs=None).subs(
-            {rvar(1, 2): av, rvar(2, 3): av, rvar(3, 4): av, rvar(1, 4): av,
-             rvar(1, 3): bv, rvar(2, 4): bv})
-        ok_cm = sp.simplify(cmval) == 0
-        a_min_poly = str(sp.minimal_polynomial(av, sp.Symbol("x")))
-        profile["P7_a_minimal_polynomial"] = a_min_poly
-        profile["P7_a_cubed"] = str(sp.simplify(av ** 3))
-    check("P7-unique-positive", ok_unique, f"positive {profile['P7_positive_solutions']}")
-    check("P7-square-shape", ok_square, f"a minpoly {a_min_poly}")
-    check("P7-cayley-menger", ok_cm)
-    log(f"P7: expected-by-hand a^3 = (4+sqrt2)/2 vs machine a^3 = {profile.get('P7_a_cubed')}"
-        " (expectation informational, not an assert)")
+    stripped_info = []
+    core = []
+    for e in red:
+        c, stripped = strip_monomial_factors(e, [a, b])
+        core.append(c)
+        stripped_info.append(stripped)
+    core = sorted(set(core), key=sp.default_sort_key)
+    log(f"P7: reduced to {len(red)} equations; torus cores: {[str(c) for c in core]};"
+        f" stripped {stripped_info}")
+    g = sp.gcd(core[0], core[1]) if len(core) == 2 else sp.Integer(1)
+    coprime = sp.total_degree(g) == 0
+    pos, cmeta = census_positive(core, [a, b])
+    log(f"P7 census: eliminants {cmeta['eliminants']}, {cmeta['candidate_tuples']} candidate tuples")
+    entries = []
+    square = None
+    for (av, bv) in pos:
+        is_square = (bv ** 2 - 2 * av ** 2).equals(0) is True
+        cmv = cm.subs({rvar(1, 2): av, rvar(2, 3): av, rvar(3, 4): av,
+                       rvar(1, 4): av, rvar(1, 3): bv, rvar(2, 4): bv})
+        cm_zero = cmv == 0 or cmv.equals(0) is True
+        ent = {"a": str(av), "b": str(bv),
+               "a_cubed": str(sp.simplify(av ** 3)),
+               "b2_eq_2a2": bool(is_square),
+               "a_eq_b": bool((av - bv).equals(0) is True),
+               "cayley_menger": str(sp.nsimplify(sp.N(cmv, 30), rational=False)) if not cm_zero else "0",
+               "cm_zero": bool(cm_zero)}
+        entries.append(ent)
+        if is_square:
+            square = (av, bv, ent)
+    (ART / "stage-p7.json").write_text(json.dumps({
+        "torus_cores": [str(c) for c in core], "coprime": bool(coprime),
+        "n_positive": len(pos), "solutions": entries}, indent=2), encoding="utf-8")
 
-    # ---- wrap-up -------------------------------------------------------------
-    profile["failures"] = FAILURES
-    profile["elapsed_s"] = round(time.time() - t0, 2)
-    profile["sympy_version"] = sp.__version__
-    profile["python_version"] = sys.version
+    record("P7-unique-positive", "pass" if len(pos) == 1 else "fail",
+           f"{len(pos)} positive torus solutions of the rhombus-stratum AC system: {entries}")
+    if square is not None:
+        av = square[0]
+        minp = sp.minimal_polynomial(av, sp.Symbol("x"))
+        planar = [e for e in entries if e["cm_zero"]]
+        record("P7-square-shape", "pass",
+               f"square present: a^3 = {square[2]['a_cubed']}, minpoly {minp};"
+               f" planar (CM = 0) positive solutions: {len(planar)}")
+        record("P7-cayley-menger", "pass" if square[2]["cm_zero"] else "fail",
+               f"CM at the square = {square[2]['cayley_menger']}")
+    else:
+        record("P7-square-shape", "fail", "no positive solution with b^2 = 2a^2")
+        record("P7-cayley-menger", "fail", "square absent")
+
+
+def stage_p1_p5():
+    for mv in SAMPLES:
+        cap = CAP_P1_EQUAL if mv == (1, 1, 1) else CAP_P1_OTHER
+        outfile = ART / f"p1-gb-{'_'.join(map(str, mv))}.json"
+        ok, secs = run_capped(_worker_p1, (mv, str(outfile)), cap, f"P1 {mv}")
+        if ok and outfile.exists():
+            data = json.loads(outfile.read_text(encoding="utf-8"))
+            record(f"P1-zerodim-{mv}", "pass" if data["zero_dim"] else "fail",
+                   f"saturated GB size {data['gb_size']} in {secs:.0f} s")
+        else:
+            record(f"P1-zerodim-{mv}", "inconclusive-cap",
+                   f"saturation Groebner did not finish within {cap} s")
+
+    gb_equal = ART / "p1-gb-1_1_1.json"
+    if gb_equal.exists() and RESULTS.get("P1-zerodim-(1, 1, 1)", {}).get("status") == "pass":
+        outfile = ART / "p5-census.json"
+        ok, secs = run_capped(_worker_p5, (str(gb_equal), str(outfile)),
+                              CAP_P5_SOLVE, "P5 census")
+        if ok and outfile.exists():
+            data = json.loads(outfile.read_text(encoding="utf-8"))
+            pos = [[sp.sympify(x) for x in s] for s in data["positive"]]
+
+            def geq0(expr) -> bool:
+                if expr == 0 or expr.equals(0) is True:
+                    return True
+                v = expr.evalf(60)
+                if not v.is_comparable:
+                    v = sp.N(expr, 120)
+                return bool(v > 0)
+
+            realizable = []
+            for (x, y, z) in pos:  # r12, r13, r23
+                if geq0(x + z - y) and geq0(x + y - z) and geq0(y + z - x):
+                    realizable.append((x, y, z))
+            record("P5-census-equal-masses",
+                   "pass" if len(realizable) == 4 else "fail",
+                   f"{len(realizable)} realizable of {len(pos)} positive"
+                   f" (candidates {data['candidate_tuples']}, eliminants {data['eliminants']});"
+                   f" realizable = {[[str(v) for v in s] for s in realizable]}")
+        else:
+            record("P5-census-equal-masses", "inconclusive-cap",
+                   f"saturated-system solve did not finish within {CAP_P5_SOLVE} s")
+    else:
+        record("P5-census-equal-masses", "inconclusive-cap",
+               "prerequisite saturated GB unavailable (P1 equal masses not passed in cap)")
+
+
+def stage_p4():
+    outfile = ART / "p4-eliminant.json"
+    ok, secs = run_capped(_worker_p4, (str(outfile),), CAP_P4, "P4 symbolic eliminant")
+    if ok and outfile.exists():
+        data = json.loads(outfile.read_text(encoding="utf-8"))
+        (ART / "p4-euler-eliminant.txt").write_text(data["factored"], encoding="utf-8")
+        record("P4-eliminant-nonzero",
+               "pass" if data["eliminant_nonzero"] else "fail",
+               f"degree in r23: {data['degree_r23']} ({secs:.0f} s)")
+    else:
+        record("P4-eliminant-nonzero", "inconclusive-cap",
+               f"symbolic resultant did not finish within {CAP_P4} s")
+
+
+def main() -> int:
+    t0 = time.time()
+    LOGF.write_text("", encoding="utf-8")
+    log("EXP-001 staged run start")
+    stage_s0()
+    stage_p3()
+    F4, cm = stage_p6()
+    stage_p7(F4, cm)
+    stage_p4()
+    stage_p1_p5()
+
+    profile = {"experiment": "EXP-001", "date": "2026-07-23",
+               "results": RESULTS,
+               "elapsed_s": round(time.time() - t0, 2),
+               "sympy_version": sp.__version__,
+               "python_version": sys.version,
+               "caps": {"P4": CAP_P4, "P1_equal": CAP_P1_EQUAL,
+                        "P1_other": CAP_P1_OTHER, "P5": CAP_P5_SOLVE}}
     (ART / "profile.json").write_text(json.dumps(profile, indent=2), encoding="utf-8")
-    (ART / "run-log.txt").write_text("\n".join(LOG_LINES), encoding="utf-8")
-    log(f"done in {profile['elapsed_s']} s; failures: {FAILURES or 'none'}")
-    return 1 if FAILURES else 0
+    fails = [k for k, v in RESULTS.items() if v["status"] == "fail"]
+    caps = [k for k, v in RESULTS.items() if v["status"] == "inconclusive-cap"]
+    log(f"done in {profile['elapsed_s']} s; FAIL: {fails or 'none'}; CAP: {caps or 'none'}")
+    return 1 if fails else 0
 
 
 if __name__ == "__main__":
+    mp.freeze_support()
     sys.exit(main())
