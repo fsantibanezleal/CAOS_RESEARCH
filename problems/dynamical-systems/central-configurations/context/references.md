@@ -18,8 +18,9 @@ Problem-level bibliography (methodology/05). Tags: [V] primary source fetched/re
 
 - [HM06] M. Hampton, R. Moeckel, Finiteness of relative equilibria of the four-body
   problem, Invent. Math. 163 (2006), no. 2, 289-312. DOI 10.1007/s00222-005-0461-0.
-  Count in [32, 8472], all positive masses, BKK + exact computation. [Vs: PDF not yet
-  read; method via HJ11 + Moeckel notes; bounds via abstract + notes]
+  Count in [32, 8472] including the 12 collinear; BKK + exact computation.
+  [V: author PDF read IN FULL 2026-07-24; certificate anatomy in
+  context/2026-07-24-hm06-direct-read-dossier.md; archived on E: with SHA-256]
 - [AK12] A. Albouy, V. Kaloshin, Finiteness of central configurations of five bodies in
   the plane, Ann. of Math. 176 (2012), no. 1, 535-588. DOI 10.4007/annals.2012.176.1.10.
   [V: Annals abstract fetched verbatim 2026-07-23; PDF not yet read]
@@ -59,8 +60,8 @@ Problem-level bibliography (methodology/05). Tags: [V] primary source fetched/re
 - [L1772] J.-L. Lagrange, Essai sur le probleme des trois corps (1772). Equilateral CC.
   [Vs: primary U]
 - [Mo10] F. R. Moulton, The straight line solutions of the problem of n bodies,
-  Ann. of Math. 12 (1910) 1-17. n!/2 collinear classes. [Vs: Moeckel notes Prop. 18;
-  exact bibliographic data U]
+  Ann. of Math. 12 (1910) 1-17. n!/2 collinear classes. [V: bibliographic data pinned
+  by the HM06 reference list, primary PDF read]
 - [D1900] O. Dziobek, Ueber einen merkwuerdigen Fall des Vielkoerperproblems (1900).
   [Vs: cited in HJ11 as (Dziobek, 1900); exact reference U]
 - [AC98] A. Albouy, A. Chenciner, Le probleme des n corps et les distances mutuelles,
@@ -74,8 +75,17 @@ Problem-level bibliography (methodology/05). Tags: [V] primary source fetched/re
 - [A96] A. Albouy, The symmetric central configurations of four equal masses, Contemp.
   Math. 198 (1996) 131-135. [Vs: MZ19 refs]
 - [MB32] W. D. MacMillan, W. Bartky, Permanent configurations in the problem of four
-  bodies, Trans. Amer. Math. Soc. (1932). Convex existence. [Vs: Moeckel notes [23];
-  exact data U]
+  bodies, Trans. Amer. Math. Soc. 34 (1932) 838-875. Convex existence. [V: pinned by
+  the HM06 reference list]
+- [Ku77] R. P. Kuz'mina, On an upper bound for the number of central configurations in
+  the planar n-body problem, Sov. Math. Dokl. 18 (1977) 818-821. [V: via HM06 refs]
+- [Ll91] J. Llibre, On the number of central configurations in the N-body problem,
+  Celest. Mech. Dynam. Astronom. 50 (1991) 89-96. [V: via HM06 refs]
+- [Moe85] R. Moeckel, Relative equilibria of the four-body problem, Ergod. Th. and
+  Dynam. Sys. 5 (1985) 417-435. Generic finiteness era. [V: via HM06 refs]
+- [H02] M. Hampton, Concave central configurations in the four body problem, thesis,
+  University of Washington (2002). The concave-existence engine behind HM06 Prop 4.
+  [V: via HM06 refs]
 - [P] J. Palmore, degenerate CCs and index bounds (series of papers, 1970s). [U: exact
   citations; via Moeckel notes Sections 10-11]
 - [X91] Z. Xia, Central configurations with many small masses, J. Differential

@@ -136,44 +136,121 @@ def grevlex_pure_power_zero_dim(polys, gens):
     return pure == set(range(len(gens))), lms, G
 
 
-def census_positive(eqs, gens):
-    """Complete exact census of the real POSITIVE common zeros of a system that is
-    0-dimensional in the positive orthant charts used.
+def quotient_staircase(G, gens, max_basis=4000):
+    """Monomial staircase basis of QQ[gens]/I from a grevlex Groebner basis G.
+    Returns the list of exponent tuples, or None when the ideal is not 0-dim
+    (staircase infinite / exceeds max_basis)."""
+    leads = [tuple(sp.Poly(g, *gens).LM(order="grevlex").exponents) for g in G.exprs]
 
-    Verdict-grade instrument (EXP-001): per-variable univariate eliminants from lex
-    Groebner bases (ideal members: completeness by construction), CRootOf real-root
-    isolation, and exact residual acceptance (`equals(0) is True` on EVERY equation).
-    sympy's solve_poly_system is BANNED for counts (returned incomplete lists,
-    EXP-001 adversarial record). Raises RuntimeError when a variable has no univariate
-    eliminant (not 0-dim in that elimination).
+    def divisible(m):
+        return any(all(m[i] >= l[i] for i in range(len(gens))) for l in leads)
+
+    basis = []
+    seen = set()
+    frontier = [tuple([0] * len(gens))]
+    seen.add(frontier[0])
+    while frontier:
+        m = frontier.pop()
+        if divisible(m):
+            continue
+        basis.append(m)
+        if len(basis) > max_basis:
+            return None
+        for i in range(len(gens)):
+            m2 = tuple(m[j] + (1 if j == i else 0) for j in range(len(gens)))
+            if m2 not in seen:
+                seen.add(m2)
+                frontier.append(m2)
+    return sorted(basis)
+
+
+def coordinate_eliminant(G, gens, v, staircase):
+    """Univariate eliminant for coordinate v via the multiplication-matrix
+    characteristic polynomial (Stickelberger: the eigenvalues of M_v are exactly the
+    values of v on V(I)); exact rational linear algebra, no lex Groebner needed."""
+    idx = {m: k for k, m in enumerate(staircase)}
+    N = len(staircase)
+    cols = []
+    for m in staircase:
+        mono = sp.prod([g ** e for g, e in zip(gens, m)])
+        _q, r = sp.reduced(v * mono, list(G.exprs), *gens, order="grevlex")
+        pr = sp.Poly(r, *gens)
+        col = [sp.Integer(0)] * N
+        for mon, coef in zip(pr.monoms(), pr.coeffs()):
+            col[idx[tuple(mon)]] = coef
+        cols.append(col)
+    M = sp.Matrix(N, N, lambda i, j: cols[j][i])
+    # Exact fast path: DomainMatrix.charpoly over QQ (Matrix.charpoly's Berkowitz on
+    # Expr entries is orders of magnitude slower at N ~ 100). Note the generator trap
+    # caught in EXP-002 debugging: Matrix.charpoly returns a PurePoly over its OWN
+    # Dummy; never wrap its expression with a fresh symbol (degree-0 Poly results).
+    from sympy.polys.matrices import DomainMatrix
+    dM = DomainMatrix.from_Matrix(M).convert_to(sp.QQ)
+    coeffs = dM.charpoly()  # highest-degree-first domain coefficients
+    x = sp.Dummy("x")
+    expr = sum(sp.QQ.to_sympy(c) * x ** (len(coeffs) - 1 - k)
+               for k, c in enumerate(coeffs))
+    return sp.Poly(expr, x), x
+
+
+def census_positive(eqs, gens, max_basis=4000):
+    """Complete exact census of the real POSITIVE common zeros of a 0-dimensional
+    system.
+
+    Verdict-grade instrument (EXP-001, upgraded after EXP-002's first recorded run):
+      1. ONE grevlex Groebner basis; finite staircase certifies 0-dim;
+      2. per-coordinate univariate eliminants as multiplication-matrix characteristic
+         polynomials (Stickelberger: eigenvalue set = coordinate value set:
+         candidate completeness is structural);
+      3. squarefree parts before root isolation (EXP-002 first-run lesson:
+         Poly.real_roots returns roots WITH multiplicity; without sqf_part the
+         census emits duplicate points);
+      4. exact CRootOf isolation, positivity, and exact residual acceptance
+         (`equals(0) is True` on EVERY equation).
+    sympy's solve_poly_system stays BANNED for counts (EXP-001 adversarial record).
+    Raises RuntimeError when the staircase is not finite (not 0-dimensional).
     """
+    import time as _time
+    t0 = _time.time()
+    G = sp.groebner(eqs, *gens, order="grevlex")
+    staircase = quotient_staircase(G, gens, max_basis=max_basis)
+    if staircase is None:
+        raise RuntimeError("ideal is not zero-dimensional (infinite staircase)")
+    meta = {"eliminants": {}, "quotient_dim": len(staircase),
+            "t_groebner_s": round(_time.time() - t0, 1)}
     per_var_roots = {}
-    meta = {"eliminants": {}}
+    t0 = _time.time()
     for v in gens:
-        others = [g for g in gens if g != v]
-        G = sp.groebner(eqs, *(others + [v]), order="lex")
-        univ = [g for g in G.exprs if g.free_symbols <= {v}]
-        if not univ:
-            raise RuntimeError(f"no univariate eliminant for {v}")
-        u = univ[0]
-        for extra in univ[1:]:
-            u = sp.gcd(u, extra)
-        meta["eliminants"][str(v)] = str(sp.factor(u))
-        per_var_roots[v] = [r for r in sp.Poly(u, v).real_roots() if r > 0]
+        P, _x = coordinate_eliminant(G, gens, v, staircase)
+        Ps = P.sqf_part()
+        meta["eliminants"][str(v)] = str(sp.factor(Ps.as_expr()))
+        roots = [r for r in Ps.real_roots() if r > 0]
+        per_var_roots[v] = sorted(set(roots), key=sp.default_sort_key)
+    meta["t_eliminants_s"] = round(_time.time() - t0, 1)
     accepted = []
     n_cand = 1
     for v in gens:
         n_cand *= len(per_var_roots[v])
     meta["candidate_tuples"] = n_cand
+    t0 = _time.time()
     for combo in iproduct(*[per_var_roots[v] for v in gens]):
         subs_map = dict(zip(gens, combo))
         ok = True
         for e in eqs:
-            if e.subs(subs_map).equals(0) is not True:
+            res = e.subs(subs_map)
+            # certified-numeric pre-filter: sympy evalf tracks precision for
+            # algebraic expressions; |value| demonstrably above the bound means
+            # a nonzero residual, so rejection here is rigorous and cheap.
+            v40 = res.evalf(40)
+            if v40.is_comparable and abs(v40) > sp.Float(10) ** -20:
+                ok = False
+                break
+            if res.equals(0) is not True:
                 ok = False
                 break
         if ok:
             accepted.append(combo)
+    meta["t_accept_s"] = round(_time.time() - t0, 1)
     return accepted, meta
 
 

@@ -3,7 +3,7 @@
 | id | title | phase | status | updated | notes |
 |---|---|---|---|---|---|
 | CCB-001 | EXP-001 calibration: exact AC-system builder; n = 3 classification recovered (Lagrange point + Euler quintics per ordering); n = 4 planar HM system assembled with structure recorded | CC-P0 | doing | 2026-07-23 | hypothesis before run; the toolchain shakedown |
-| CCB-002 | Direct read of HM06 (Invent. Math. 163): exact equation inventory, Prop. 2, enumeration structure, origins of 32 and 8472; upgrade all [HM-via-*] tags | CC-P1 | todo | 2026-07-23 | gate for any HM-certificate claim |
+| CCB-002 | Direct read of HM06 (Invent. Math. 163): DONE (author PDF read in full; certificate anatomy transcribed to context/2026-07-24-hm06-direct-read-dossier.md; PDF archived on E: with SHA-256; tags upgraded) | CC-P1 | done | 2026-07-24 | reproduction targets now numeric: 12828/2980/53/19 faces, facets 22+33, Mixvol 25380 |
 | CCB-003 | Direct read of AK12 (Annals 176): zw-diagrams, the explicit codim-2 exceptional variety for n = 5 | CC-P2 | todo | 2026-07-23 | also the basis of Chang-Chen |
 | CCB-004 | Chang-Chen (I) JSC 2024 + (II) SIADS 2025: transcribe the 24 residual diagrams + mass relations exactly | CC-P3 | todo | 2026-07-23 | the frontier target list |
 | CCB-005 | Fetch + archive HJ11 Sage worksheet (FiveBodySpatial.sws); diff against our prevariety reproduction | CC-P2 | todo | 2026-07-23 | |
@@ -22,3 +22,6 @@
 | CCB-018 | Symmetry-quotiented diagram exclusions (diagram automorphism groups shrink the Groebner certificates) | CC-P3 | todo | 2026-07-23 | lens 5; port of the jacobian GL2-orbit pattern |
 | CCB-019 | Vortex/homogeneous-potential transfer: exponent-parametric certificates; vortex prototypes of diagram kills | CC-P4 | todo | 2026-07-23 | lens 7; route R6 promotion |
 | CCB-020 | n = 7 zw-diagram-count scoping via Chang-Chen combinatorics (size the next frontier honestly) | CC-P3 | todo | 2026-07-23 | lens 8; scoping only |
+| CCB-021 | Fetch + archive the HM06 companion Mathematica notebook (www.math.umn.edu/~rick, their ref [18]) for diffing against our reproduction | CC-P1 | todo | 2026-07-24 | |
+| CCB-022 | Implement the HM06 z-variable square system (their eq. (13), 10 eqs / 10 unknowns) in cclib + the mixed-volume rung target 25380 | CC-P1 | todo | 2026-07-24 | BKK applies to the square system only |
+| CCB-023 | AK12 direct read (Annals PDF archived on E: with SHA-256): zw-diagram machinery + the explicit exceptional variety; supersedes the fetch part of CCB-003 | CC-P2 | todo | 2026-07-24 | PDF already in hand |
