@@ -171,4 +171,58 @@ export const CITATIONS: Citation[] = [
       'Santibañez-Leal F. (2026). Exact replication and screening of tropical finiteness certificates for central configurations. Machine record, versioned with this repository.',
     url: 'https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/manuscripts/central-configurations/tropical-replication',
   },
+  {
+    id: 'dgg1999',
+    label: 'Dinitz-Garg-Goemans 1999',
+    citation:
+      'Dinitz Y., Garg N., Goemans M. X. (1999). On the single-source unsplittable flow problem. Combinatorica 19(1), 17-41. FOCS 1998.',
+    doi: '10.1007/s004930050043',
+  },
+  {
+    id: 'sku2002',
+    label: 'Skutella 2002',
+    citation:
+      'Skutella M. (2002). Approximating the single source unsplittable min-cost flow problem. Mathematical Programming 91. Proves Goemans conjecture when the demands are multiples of one another.',
+  },
+  {
+    id: 'ms2022',
+    label: 'Morell-Skutella 2022',
+    citation:
+      'Morell A., Skutella M. (2022). Single source unsplittable flows with arc-wise lower and upper bounds. Mathematical Programming. States the two-sided conjectures, with and without costs.',
+  },
+  {
+    id: 'tvz2024',
+    label: 'Traub-Vargas Koch-Zenklusen 2024',
+    citation:
+      'Traub V., Vargas Koch L., Zenklusen R. (2026). Single-source unsplittable flows in planar and bounded-genus graphs. Mathematical Programming. Preprint arXiv:2308.02651 (2023). Proves the cost statement for planar graphs at twice the conjectured violation.',
+    doi: '10.1007/s10107-026-02365-x',
+  },
+  {
+    id: 'msw2025',
+    label: 'Majthoub Almoghrabi-Skutella-Warode 2025',
+    citation:
+      'Majthoub Almoghrabi M., Skutella M., Warode P. (2026). Integer and unsplittable multiflows in series-parallel digraphs. Mathematical Programming; IPCO 2025. Preprint arXiv:2412.05182. Proves Goemans conjecture, in the stronger convex-combination form with strict deviation, for series-parallel digraphs: the first non-trivial class.',
+    doi: '10.1007/s10107-026-02392-8',
+  },
+  {
+    id: 'stvz2025',
+    label: 'Swamy-Traub-Vargas Koch-Zenklusen 2025',
+    citation:
+      'Swamy C., Traub V., Vargas Koch L., Zenklusen R. (2025). Unsplittable cost flows from unweighted error-bounded variants. Preprint arXiv:2510.21287. Source of the conjecture numbering used here, and of the record that the O(d_max) question was wide open as of October 2025.',
+    doi: '10.48550/arXiv.2510.21287',
+  },
+  {
+    id: 'rybin2026',
+    label: 'Counterexample announcement 2026',
+    citation:
+      'Rybin D. (2026). Public announcement of a counterexample to the Dinitz-Garg-Goemans cost conjecture, found working with a large language model. X, 2026-07-22/23. Not peer reviewed; the instance is verified independently in this programme.',
+    url: 'https://x.com/DmitryRybin1/status/2079904005652893709',
+  },
+  {
+    id: 'ufcverification',
+    label: 'Verification record 2026',
+    citation:
+      'Santibañez-Leal F. (2026). An independent exact verification of the 2026 counterexample to Goemans unsplittable-flow cost conjecture, with the violation constant it forces. Preprint, CC BY 4.0, v0.01.',
+    doi: '10.5281/zenodo.21554258',
+  },
 ];
