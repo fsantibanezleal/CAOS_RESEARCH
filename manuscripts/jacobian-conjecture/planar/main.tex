@@ -23,7 +23,7 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-24 (working manuscript, v0.10; incidence structure + the plane-exclusion invariant)}
+\date{2026-07-24 (working manuscript, v0.11; withdraws the finite-ceiling claim (EXP-078))}
 
 \begin{document}
 \maketitle
@@ -420,19 +420,30 @@ exact decision, exposing the bug. Degree two was then re-decided soundly at a
 different support. We keep the retraction in the record; the declared-gate
 discipline is part of the method.
 
-\emph{Two structural reductions.} The rational-covector relaxation adds nothing
-(EXP-074): since $\Lambda_0 M_0 = 0$ the certificate condition is homogeneous, so
-any rational covector clears its denominator to a polynomial one. And the tower
-has a \emph{computable finite ceiling}: a finite covector, if it exists, exists at
-$\varepsilon$-degree at most the dimension of the Krylov closure of $\Lambda_0$
-under the corrector operators (EXP-064, EXP-078). Consequently the campaign is a
-\emph{finite decision procedure}: exhausting the tower to that ceiling either
-produces the certificate (the reduced system is inconsistent, and the floor rises
-to $125$) or proves no covector exists at any degree, in which case the reduced
-Keller system is, as far as this certificate sees, \emph{consistent}. The two
-readings are the two sides of the same computation: a covector is an exclusion
-proof; a proof that none exists is the first step of a counterexample. We state
-both openly.
+\emph{One structural reduction, and one claim withdrawn.} The rational-covector
+relaxation adds nothing (EXP-074): since $\Lambda_0 M_0 = 0$ the certificate
+condition is homogeneous, so any rational covector clears its denominator to a
+polynomial one. A previous revision of this manuscript (v0.09, v0.10) asserted in
+addition that the tower has a \emph{computable finite ceiling}, namely the
+dimension of the Krylov closure of $\Lambda_0$, and concluded that the campaign is
+a finite decision procedure. \textbf{That assertion is withdrawn here} (EXP-078):
+its derivation presupposes that the pinned corrector ladder terminates, and
+EXP-064 measured that it does \emph{not} (the descending chain stabilizes nonzero
+at dimension $39$). Since the pinning carries a large gauge freedom, neither the
+ceiling nor its negation follows; we currently have \emph{no} a priori degree
+bound, effective or otherwise, and the chain of solvable degrees is controlled
+only by Noetherianity, which is not effective.
+
+What survives is weaker but exact. The set of degrees at which a covector exists
+is \emph{upward closed} (a degree-$d$ covector is a degree-$(d+1)$ covector with
+vanishing top coefficients), so either none exists at any degree, or there is a
+minimal $d_0$; with degrees $1$ and $2$ closed, $d_0 \ge 3$. And the
+support-restricted sweeps are \emph{one-sided}: they test necessary conditions, so
+an infeasible support decides a degree negatively, while all supports passing does
+\emph{not} establish existence. Settling degree three positively therefore
+requires constructing a covector, not sweeping. Both readings of the outcome remain
+open and we state them plainly: a covector would be an exclusion proof, and a proof
+that none exists at any degree would be the first step of a counterexample.
 
 \emph{A lead toward a degree-uniform statement.} Written as a connection, the
 annihilation lemma makes the covector obstruction a first cohomology class, and
