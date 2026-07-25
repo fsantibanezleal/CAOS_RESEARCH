@@ -1,0 +1,92 @@
+EXP-002: adjudication of the 2026 claimed counterexample
+==================================================================
+
+### H1, H13 feasibility, nonnegativity, acyclicity
+  [PASS] H1 x is a feasible fractional flow (conservation at all 7 vertices)
+  [PASS] H13 all costs are nonnegative
+  [PASS] H13 the digraph is acyclic
+  d_max = 15
+
+### H2 path enumeration by our own search
+    t1: s -> t1   cost of routing d_t1 here = 30
+    t1: s -> u -> v -> t1   cost of routing d_t1 here = 0
+    t2: s -> t2   cost of routing d_t2 here = 30
+    t2: s -> u -> v -> w -> t2   cost of routing d_t2 here = 0
+    t3: s -> u -> t3   cost of routing d_t3 here = 30
+    t3: s -> u -> v -> w -> t3   cost of routing d_t3 here = 0
+  [PASS] H2 exactly two simple paths per terminal  ({'t1': 2, 't2': 2, 't3': 2})
+  [PASS] H2 exactly eight unsplittable routings  (8)
+
+### H3, H4 the decision
+  [PASS] H3 c^T x = 58  (58)
+  the complete routing table:
+    cost= 90 alpha=   1/3 [congestion-good] t1: s -> t1 | t2: s -> t2 | t3: s -> u -> t3
+    cost= 60 alpha=   2/3 [congestion-good] t1: s -> t1 | t2: s -> t2 | t3: s -> u -> v -> w -> t3
+    cost= 60 alpha=   2/5 [congestion-good] t1: s -> t1 | t2: s -> u -> v -> w -> t2 | t3: s -> u -> t3
+    cost= 30 alpha= 16/15 [cost-good] t1: s -> t1 | t2: s -> u -> v -> w -> t2 | t3: s -> u -> v -> w -> t3   violations: a6:v->w by 1
+    cost= 60 alpha=   2/3 [congestion-good] t1: s -> u -> v -> t1 | t2: s -> t2 | t3: s -> u -> t3
+    cost= 30 alpha= 16/15 [cost-good] t1: s -> u -> v -> t1 | t2: s -> t2 | t3: s -> u -> v -> w -> t3   violations: a4:u->v by 1
+    cost= 30 alpha= 16/15 [cost-good] t1: s -> u -> v -> t1 | t2: s -> u -> v -> w -> t2 | t3: s -> u -> t3   violations: a2:s->u by 1
+    cost=  0 alpha= 26/15 [cost-good] t1: s -> u -> v -> t1 | t2: s -> u -> v -> w -> t2 | t3: s -> u -> v -> w -> t3   violations: a2:s->u by 1, a4:u->v by 11, a6:v->w by 1
+  [PASS] H4 exactly four routings are congestion-good  (4)
+  [PASS] H4 the minimum cost among congestion-good routings is 60  (60)
+  [PASS] H4 60 > 58, so no routing is both congestion-good and cost-good
+  [PASS] H4 THE DECISION: the instance IS a counterexample to Conjecture 1.2
+
+### H5 the quantitative content: what violation the instance forces
+  [PASS] H5 alpha_instance = 16/15  (16/15)
+  every cost-good routing needs budget at least 16/15 d_max = 16 units; the conjecture allows 15
+
+### H6 the DGG floor (the theorem as an oracle on our data)
+  [PASS] H6 at least one congestion-good routing exists
+
+### H7 test C1: Skutella 2002 (demands multiples of one another)
+  [PASS] H7 the demands are NOT all multiples of one another  (demands [Fraction(10, 1), Fraction(15, 1)])
+
+### H8 test C2: MSW25 (series-parallel digraphs)
+  [PASS] H8 the underlying graph contains a K4 subdivision  (('s', 'u', 'v', 'w'))
+  [PASS] H8 its branch vertices are {s, u, v, w}  (('s', 'u', 'v', 'w'))
+
+### H9 planarity by Kuratowski degree counting
+  degrees: {'s': 3, 't1': 2, 't2': 2, 't3': 2, 'u': 3, 'v': 3, 'w': 3}
+  [PASS] H9 the graph is planar (too few high-degree vertices for K5 or K3,3)  (deg>=4: 0, deg>=3: 4)
+
+### H10 test C5: does the cost-free two-sided conjecture (Conj 1.3) survive?
+  [PASS] H10 some routing meets x - d_max <= y <= x + d_max  (4 witnesses)
+  witness: t1: s -> t1 | t2: s -> t2 | t3: s -> u -> t3
+
+### H11 test C4: does Conjecture 1.5 (cost-good at 2 d_max) survive?
+  [PASS] H11 some cost-good routing has violation at most 2 d_max  (4 witnesses)
+  cheapest-violation cost-good routing: alpha = 16/15, cost = 30, t1: s -> t1 | t2: s -> u -> v -> w -> t2 | t3: s -> u -> v -> w -> t3
+
+### H12 test C3: not a source-plus-two-layers network
+  [PASS] H12 some s-t path uses at least 3 arcs  (longest path has 4 arcs)
+
+### H14 independent second route: the conflict graph
+  per-terminal cheap costs: {'t1': '0', 't2': '0', 't3': '0'}
+  per-terminal expensive costs: {'t1': '30', 't2': '30', 't3': '30'}
+  conflict edges among the cheap choices: [('t1', 't2'), ('t1', 't3'), ('t2', 't3')]
+  [PASS] H14 the conflict graph is a triangle on the three cheap choices  (3)
+  [PASS] H14 the independence number of the conflict graph is 1  (1)
+  structural lower bound on the cost of any congestion-good routing: 60 (the 2 cheapest expensive paths)
+  [PASS] H14 the structural bound equals the enumerated minimum (60)  (structural 60 vs enumerated 60)
+  [PASS] H14 the structural route alone refutes the conjecture on this instance
+
+### H15 the invariant: fractional selection mass on the conflict triangle
+  rho[t1] = x(a5:v->t1) / d = 5/15 = 1/3
+  rho[t2] = x(a7:w->t2) / d = 4/10 = 2/5
+  rho[t3] = x(a8:w->t3) / d = 5/15 = 1/3
+  [PASS] H15 rho = (1/3, 2/5, 1/3)  ({'t1': '1/3', 't2': '2/5', 't3': '1/3'})
+  [PASS] H15 the triangle stable-set inequality is violated with value 16/15  (16/15)
+  the fractional flow buys 16/15 of cheap routing; any congestion-good integral routing buys at most 1
+
+### H16 comparison with the publicly reported numbers (after our decision)
+  [PASS] H16 our independently computed numbers agree with the reported ones  (ours {'routings': 8, 'congestion_good': 4, 'fractional_cost': Fraction(58, 1), 'min_good_cost': Fraction(60, 1)})
+
+==================================================================
+EXP-002: all predictions H1-H16 hold.
+VERDICT: the 2026 claimed counterexample is VALID under our own exact
+enumeration. Goemans' Conjecture 1.2 is FALSE. The instance is acyclic, so
+Morell-Skutella Conjecture 1.4 and the convex-combination form fall with it.
+Conjecture 1.3, Conjecture 1.5, the DGG theorem, the series-parallel theorem
+and the planar theorem all survive, and the O(d_max) question is untouched.

@@ -34,13 +34,13 @@ export default function CentralConfigurations() {
               'The modern ladder: n = 4 finite for all positive masses (computer-assisted BKK certificate, count in [32, 8472]) ',
               'La escalera moderna: n = 4 finito para todas las masas positivas (certificado BKK asistido por computador, conteo en [32, 8472]) ',
             )}
-            (<Cite id="hm2006" />),{' '}
+            <Cite id="hm2006" />,{' '}
             {t('n = 5 finite except possibly on an explicit codimension-2 mass subvariety ', 'n = 5 finito salvo quiza sobre una subvariedad explicita de codimension 2 en las masas ')}
-            (<Cite id="ak2012" />),{' '}
+            <Cite id="ak2012" />,{' '}
             {t('generic masses for n up to 5 by a purely polyhedral tropical certificate ', 'masas genericas para n hasta 5 por un certificado tropical puramente poliedral ')}
-            (<Cite id="jl2025" />),{' '}
+            <Cite id="jl2025" />,{' '}
             {t('and n = 6 open, reduced to a finite list of residual diagram cases ', 'y n = 6 abierto, reducido a una lista finita de casos residuales de diagramas ')}
-            (<Cite id="changchen2023" />).
+            <Cite id="changchen2023" />.
           </p>
           <Callout variant="note" title={t('State of this program', 'Estado de este programa')}>
             {t(
@@ -75,16 +75,16 @@ export default function CentralConfigurations() {
               'A central configuration released from rest collapses homothetically; rotated rigidly in the plane it is a relative equilibrium. Euler (1767) found the collinear three-body solutions, Lagrange (1772) the equilateral one; Moulton (1910) proved there are exactly n!/2 collinear classes for any masses ',
               'Una configuracion central soltada desde el reposo colapsa homoteticamente; rotada rigidamente en el plano es un equilibrio relativo. Euler (1767) encontro las soluciones colineales de tres cuerpos, Lagrange (1772) la equilatera; Moulton (1910) probo que hay exactamente n!/2 clases colineales para cualesquiera masas ',
             )}
-            (<Cite id="moulton1910" />).
+            <Cite id="moulton1910" />.
           </p>
           <p>
             {t(
               'The finiteness question goes back to Chazy (1918) and Wintner (1941); Smale made it problem 6 of his list for the 21st century. Chazy postulated that all central configurations are nondegenerate, which would give mass-independent counts; Palmore (1975) refuted the postulate with an explicit degenerate example, and the count does vary with the masses. With one negative mass a continuum of relative equilibria exists ',
               'La pregunta de finitud se remonta a Chazy (1918) y Wintner (1941); Smale la hizo el problema 6 de su lista para el siglo XXI. Chazy postulo que todas las configuraciones centrales son no degeneradas, lo que daria conteos independientes de las masas; Palmore (1975) refuto el postulado con un ejemplo degenerado explicito, y el conteo si varia con las masas. Con una masa negativa existe un continuo de equilibrios relativos ',
             )}
-            (<Cite id="roberts1999" />)
+            <Cite id="roberts1999" />
             {t(', so positivity is essential. Rigorous equal-mass censuses exist through n = 7 ', ', asi que la positividad es esencial. Existen censos rigurosos de masas iguales hasta n = 7 ')}
-            (<Cite id="mz2019" />).
+            <Cite id="mz2019" />.
           </p>
           <Refs label={t('Sources', 'Fuentes')} ids={['moulton1910', 'roberts1999', 'mz2019', 'ak2012']} />
         </section>
@@ -100,7 +100,7 @@ export default function CentralConfigurations() {
               'Every modern finiteness certificate is an exclusion argument over the Albouy-Chenciner equations in mutual distances ',
               'Todo certificado moderno de finitud es un argumento de exclusion sobre las ecuaciones de Albouy-Chenciner en distancias mutuas ',
             )}
-            (<Cite id="ac1998" />):
+            <Cite id="ac1998" />:
           </p>
           <Equation tex={String.raw`f_{ij}=\sum_{k=1}^{n} m_k\!\left[S_{ik}\,(r_{jk}^2-r_{ik}^2-r_{ij}^2)+S_{jk}\,(r_{ik}^2-r_{jk}^2-r_{ij}^2)\right],\qquad S_{ij}=r_{ij}^{-3}-1`} />
           <p>

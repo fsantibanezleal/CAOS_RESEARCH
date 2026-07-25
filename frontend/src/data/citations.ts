@@ -153,7 +153,7 @@ export const CITATIONS: Citation[] = [
   },
   {
     id: 'changchen2023',
-    label: 'Chang-Chen 2023-2025',
+    label: 'Chang-Chen 2024',
     citation:
       'Chang K.-M., Chen K.-C. (2024). Toward finiteness of central configurations for the planar six-body problem by symbolic computations. (I) Determine diagrams and orders. Journal of Symbolic Computation 123, 102277. Programme preprint: arXiv:2303.02853; a second part on mass relations is announced in the same programme.',
     url: 'https://arxiv.org/abs/2303.02853',
