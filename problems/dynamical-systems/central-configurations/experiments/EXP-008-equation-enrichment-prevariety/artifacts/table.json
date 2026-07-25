@@ -1,0 +1,58 @@
+{
+  "n4-A1-equal": {
+    "status": "ok",
+    "f_vector": "1 49 66 18",
+    "comets": 1,
+    "pointed": 0,
+    "unpointed": 1,
+    "seconds": 13.2
+  },
+  "n4-A2-equal": {
+    "status": "ok",
+    "f_vector": "1 49 66 18",
+    "comets": 1,
+    "pointed": 0,
+    "unpointed": 1,
+    "seconds": 17.9
+  },
+  "n4-A3-equal": {
+    "status": "ok",
+    "f_vector": "1 37 48 12",
+    "comets": 1,
+    "pointed": 0,
+    "unpointed": 1,
+    "seconds": 17.6
+  },
+  "n4-A4-equal": {
+    "status": "ok",
+    "f_vector": "1 37 48 12",
+    "comets": 1,
+    "pointed": 0,
+    "unpointed": 1,
+    "seconds": 17.1
+  },
+  "n4-A1-arith": {
+    "status": "ok",
+    "f_vector": "83 164 108 23",
+    "comets": 9,
+    "pointed": 9,
+    "unpointed": 0,
+    "seconds": 66.3
+  },
+  "n4-A2-arith": {
+    "status": "ok",
+    "f_vector": "82 162 107 23",
+    "comets": 9,
+    "pointed": 9,
+    "unpointed": 0,
+    "seconds": 92.2
+  },
+  "n4-A3-arith": {
+    "status": "ok",
+    "f_vector": "86 183 135 34",
+    "comets": 6,
+    "pointed": 6,
+    "unpointed": 0,
+    "seconds": 71.5
+  }
+}
