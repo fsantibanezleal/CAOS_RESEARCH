@@ -17,10 +17,15 @@ Parallel sessions: one problem per session, isolated per
 [methodology/08-parallel-sessions.md](methodology/08-parallel-sessions.md)
 (releases are serialized; rounds are not). Findings are consolidated into LaTeX manuscripts under `manuscripts/<problem>/` (one folder per problem; the jacobian record is three papers: foundational, planar, cascade).
 
+For a new working session, start at [`Entry_point.md`](Entry_point.md). It supports both resuming an
+existing problem from persisted state and incorporating a new reference-led problem without relying
+on prior chat history.
+
 ## Layout
 
 | Folder | What it holds |
 |---|---|
+| [`Entry_point.md`](Entry_point.md) | Session bootstrap, problem routing, new-problem intake, isolation rules, and the close-out contract. |
 | [`methodology/`](methodology/) | The research operating system: problem lifecycle, experiment standard (EXP-NNN), adversarial validation ladder, code and writing standards, web publication gates. |
 | [`program/`](program/) | The status section: portfolio board (`portfolio.yaml` + README), and per-problem plan / state / backlog. The plan of each problem lives here, inside the repo. |
 | [`problems/<area>/<slug>/`](problems/) | One self-contained folder per problem: `context/` (dossiers, references), `history/` (append-only log), `code/` (tested per-problem package), `scripts/`, `experiments/EXP-NNN-*/`, `wiki/`. |
@@ -32,11 +37,12 @@ Parallel sessions: one problem per session, isolated per
 | Area | Problem | State |
 |---|---|---|
 | Algebraic geometry | [Jacobian conjecture](problems/algebraic-geometry/jacobian-conjecture/) | exploring (opened 2026-07-20) |
+| Dynamical systems | [Central configurations](problems/dynamical-systems/central-configurations/) | exploring (opened 2026-07-23) |
+| Optimization and discrete geometry | [Unsplittable-flow cost](problems/optimization-geometry/unsplittable-flow-cost/) | exploring (opened 2026-07-24) |
 
-The Jacobian conjecture was refuted for N >= 3 on 2026-07-19 (Levent Alpöge, with Claude Fable 5).
-This program independently validated the counterexample in exact arithmetic, studies why it works
-and how it generalizes, and pursues what transfers to the still-open N = 2 case. See the problem
-wiki for the current picture and `program/jacobian-conjecture/state.md` for the heartbeat.
+The complete portfolio, including proposed and scoped problems, lives in
+[`program/portfolio.yaml`](program/portfolio.yaml). Each active problem's current heartbeat is its
+`program/<slug>/state.md`; its zero-loss session handoff is `program/<slug>/RESUME.md`.
 
 ## Running
 

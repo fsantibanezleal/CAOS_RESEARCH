@@ -2,7 +2,7 @@
 
 Every problem in this repository is worked under one fixed operating system. It exists so that the
 record stays honest, reproducible and adversarially validated, independent of who (or what) runs a
-given session. The six documents below are binding for every problem folder.
+given session. The twelve documents below are binding where applicable for every problem folder.
 
 | Doc | Governs |
 |---|---|
@@ -13,6 +13,11 @@ given session. The six documents below are binding for every problem folder.
 | [05-writing-standards.md](05-writing-standards.md) | Markdown/KaTeX/SVG/reference rules for context, history and wiki content. |
 | [06-web-publication.md](06-web-publication.md) | What may appear on the web app, and when (the `published` gate). |
 | [07-session-handoff.md](07-session-handoff.md) | The resume contract: `program/<problem>/RESUME.md`, updated every session, so a new session resumes with zero loss. |
+| [08-parallel-sessions.md](08-parallel-sessions.md) | Per-problem isolation, shared-surface ownership, and the serialized release step. |
+| [09-manuscripts-and-publication.md](09-manuscripts-and-publication.md) | Manuscript triggers, Zenodo publication, and immutable version updates. |
+| [10-research-lenses.md](10-research-lenses.md) | The systematic spine plus complementary lenses and the invariant-first rule. |
+| [11-exploration-cadence.md](11-exploration-cadence.md) | The required new-viewpoint or honest-null exploration moment in every round. |
+| [12-preflight-and-cost-discipline.md](12-preflight-and-cost-discipline.md) | Source, premise, tooling, one-sidedness, invariant, and compute-budget checks. |
 
 ## Principles (non-negotiable)
 
@@ -29,8 +34,3 @@ given session. The six documents below are binding for every problem folder.
    replays persisted, versioned artifacts.
 6. **Primary sources only in claims.** Every transcribed claim cites DOI/arXiv/official URL, or is
    flagged UNVERIFIED until it does. Secondary sources may guide, never certify.
-- [08 - Parallel sessions and per-problem isolation](08-parallel-sessions.md): the binding rules that let multiple sessions drive different problems concurrently (release ownership, bake ownership, start ritual).
-- [09 - Manuscripts and publication](09-manuscripts-and-publication.md): the trigger rule (enough validated + novel material = manuscript created/expanded THAT round, transcribed from verdicts), the Zenodo upload rule (CC-BY, API flow, autonomous publish with post-review), and the update strategy (new versions, never edits; concept vs version DOIs).
-- [10 - Research lenses](10-research-lenses.md): the reusable toolkit of complementary approaches (exclusion, anatomy, recognition, invariant, symmetry, two-sided, reformulation, dimension-ladder, at-infinity, adversarial, external-dialogue) for EVERY problem; the systematic exclusion path is the spine, always complemented by >=2 other lenses.
-- [11 - Exploration cadence](11-exploration-cadence.md): the binding session cadence: the systematic spine persists AND every session takes at least one deliberate, persisted exploration moment (lens rotation, analogy hunt, >= 1 new candidate path); null explorations are recorded; promotion stays hypothesis-gated.
-- [12 - Preflight and cost discipline](12-preflight-and-cost-discipline.md): the cheap checks that guard expensive work, derived from a measured waste audit - source-complete before compute, tooling smoke test before long runs, premise-dependency check against our own verdicts, the one-sidedness field (what a PASS proves), invariant-first, compute budget + kill criterion; plus retraction-sweeps-narrative and claim-traceability rules.
