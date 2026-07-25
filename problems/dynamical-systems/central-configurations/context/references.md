@@ -34,12 +34,15 @@ Problem-level bibliography (methodology/05). Tags: [V] primary source fetched/re
   [Vs: ADS/scispace abstract + citations in HJ11 and Moeckel notes; PDF U; exact
   negative mass value U]
 - [CC23] K.-M. Chang, K.-C. Chen, Toward finiteness of central configurations for the
-  planar six-body problem by symbolic computations, arXiv:2303.02853. Published split:
-  (I) Determine diagrams and orders, J. Symbolic Comput. (2024), DOI
-  10.1016/j.jsc.2023.102279 [U: DOI recalled from the ScienceDirect id, verify]; (II)
-  Determine mass relations, SIAM J. Appl. Dyn. Syst. 24 (2025), no. 3, 2369-2404.
-  117 zw-diagrams -> 24 residual cases. [V: arXiv abstract fetched; journal data via
-  search; per-diagram tables U until read]
+  planar six-body problem by symbolic computations, arXiv:2303.02853. Part (I)
+  Determine diagrams and orders, J. Symbolic Comput. 123 (2024) 102277
+  [V: bibliographic data pinned by the Jensen-Leykin reference list, primary PDF
+  read 2026-07-24]. A second part on mass relations is announced in the same
+  programme; its journal volume/pages appeared only in a search summary and remain
+  [U] until read. Abstract-level content [V: arXiv abstract fetched]: 117 zw-diagrams,
+  31 eliminated by the second algorithm, 62 by the last; the residual count of 24 is
+  OUR arithmetic from those three published numbers, not a quoted statement.
+  Per-diagram tables [U] until read.
 - [MZ19] M. Moczurad, P. Zgliczynski, Central configurations in planar n-body problem
   with equal masses for n = 5, 6, 7, Celest. Mech. Dyn. Astron. 131 (2019); arXiv:
   1812.07279. DOI 10.1007/s10569-019-9920-6. Counts 2, 4, 5, 9, 14 for n = 3..7.

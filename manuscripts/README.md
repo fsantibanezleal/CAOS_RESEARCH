@@ -10,6 +10,7 @@ preserved through the rename.
 | [jacobian-conjecture](jacobian-conjecture/) | [foundational/](jacobian-conjecture/foundational/) | [10.5281/zenodo.21503366](https://doi.org/10.5281/zenodo.21503366) | Paper A: the counterexample validation, structure, family, escape geometry, char-p certificates, the 3D aftermath. |
 | [jacobian-conjecture](jacobian-conjecture/) | [planar/](jacobian-conjecture/planar/) | [10.5281/zenodo.21503368](https://doi.org/10.5281/zenodo.21503368) | Paper B: the planar program: the theorem ladder, staircase transport, GGHV frontier and the (72,108) campaign. |
 | [jacobian-conjecture](jacobian-conjecture/) | [cascade/](jacobian-conjecture/cascade/) | [10.5281/zenodo.21503372](https://doi.org/10.5281/zenodo.21503372) | Paper C: the consequence cascade, including the dimension-48 Hessian witness. |
+| [central-configurations](central-configurations/) | [tropical-replication/](central-configurations/tropical-replication/) | [10.5281/zenodo.21542484](https://doi.org/10.5281/zenodo.21542484) (v0.02; concept [10.5281/zenodo.21542483](https://doi.org/10.5281/zenodo.21542483)) | The replication record: exact Albouy-Chenciner calibration and its dimension-blindness refutation, the enrichment law, the exact reproduction of the Jensen-Leykin n = 5 generic-finiteness certificate, and the valuation/equation screening (two new working families). |
 
 The web app links each problem's manuscripts directly from its problem page.
 

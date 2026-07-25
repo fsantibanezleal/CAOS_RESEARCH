@@ -56,10 +56,12 @@ export default function CentralConfigurations() {
                   'Exact replication and screening of tropical finiteness certificates for central configurations (machine record, versioned drafts)',
                   'Replicacion exacta y barrido de certificados tropicales de finitud para configuraciones centrales (registro de maquina, borradores versionados)',
                 )}
-              </a>
+              </a>{' '}
+              (<a href="https://doi.org/10.5281/zenodo.21542483" target="_blank" rel="noreferrer">DOI 10.5281/zenodo.21542483</a>
+              {t(', concept DOI, always the latest version', ', DOI de concepto, siempre la ultima version')})
             </li>
           </ul>
-          <Refs label={t('Key sources', 'Fuentes clave')} ids={['smale1998', 'hm2006', 'ak2012', 'jl2025', 'caosresearch']} />
+          <Refs label={t('Key sources', 'Fuentes clave')} ids={['smale1998', 'hm2006', 'ak2012', 'jl2025', 'ccmanuscript', 'caosresearch']} />
         </section>
       ),
     },
