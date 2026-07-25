@@ -3,6 +3,13 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.56.001], 2026-07-25
+
+### Fixed
+- The central-configurations page derives its experiment counts from the baked
+  records instead of a hardcoded sentence, so the state line cannot drift from the
+  repository (it read "five experiments" after three more had been decided).
+
 ## [0.56.000], 2026-07-24
 
 ### Added

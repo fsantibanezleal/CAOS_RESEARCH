@@ -16,6 +16,11 @@ export default function CentralConfigurations() {
       .catch(() => setExps([]));
   }, []);
 
+  // Counts are derived from the baked experiment records so the page cannot drift
+  // from the repository; a running experiment is one whose verdict is not yet set.
+  const declared = exps.length;
+  const decided = exps.filter((e) => (e.verdict || '').trim().length > 0).length;
+
   const tabs: TabDef[] = [
     {
       id: 'summary',
@@ -44,8 +49,8 @@ export default function CentralConfigurations() {
           </p>
           <Callout variant="note" title={t('State of this program', 'Estado de este programa')}>
             {t(
-              'Exploring (opened 2026-07-23). Five experiments declared, four decided, one running: the n = 6 tropical prevariety at powers-of-3 valuations, a multi-day computation whose positive outcome would give generic-mass finiteness for n = 6. Every hypothesis is committed before its run; refutations stay in the record.',
-              'Explorando (abierto el 2026-07-23). Cinco experimentos declarados, cuatro decididos, uno corriendo: la prevariedad tropical n = 6 con valuaciones potencias de 3, una computacion de varios dias cuyo resultado positivo daria finitud generica para n = 6. Toda hipotesis se compromete antes de su corrida; las refutaciones permanecen en el registro.',
+              `Exploring (opened 2026-07-23). ${declared} experiments declared, ${decided} decided, ${declared - decided} running: the n = 6 tropical prevariety, a multi-day computation whose positive outcome would give generic-mass finiteness for n = 6. Every hypothesis is committed before its run; refutations stay in the record, and two of them carried the round's sharpest findings.`,
+              `Explorando (abierto el 2026-07-23). ${declared} experimentos declarados, ${decided} decididos, ${declared - decided} corriendo: la prevariedad tropical n = 6, una computacion de varios dias cuyo resultado positivo daria finitud generica para n = 6. Toda hipotesis se compromete antes de su corrida; las refutaciones permanecen en el registro, y dos de ellas aportaron los hallazgos mas agudos de la ronda.`,
             )}
           </Callout>
           <h3>{t('Manuscript', 'Manuscrito')}</h3>
