@@ -3,6 +3,45 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.54.000], 2026-07-24
+
+### Added
+- **Central configurations (Smale's 6th problem) OPENED as the second problem**
+  (`problems/dynamical-systems/central-configurations/`, `program/central-configurations/`):
+  deep-research dossiers with per-claim verification tags, the method transcription
+  from a full read of Hampton-Moeckel 2006, a first-pass read of Albouy-Kaloshin
+  2012, and a full read of Jensen-Leykin (arXiv:2301.02305v2); wiki 01-05; the
+  attack ladder, backlog CCB-001..032, routes, research lines and the RESUME
+  handoff; portfolio state flipped to `exploring`.
+- **Five experiments, four decided.** EXP-001 (exact Albouy-Chenciner calibration;
+  its uniqueness prediction refuted with structural content: the distance system is
+  dimension-blind, the regular tetrahedron coexists with the square until
+  Cayley-Menger is adjoined). EXP-002 (the enrichment law: asymmetric equations plus
+  the energy-inertia relation make the ideal zero-dimensional directly). EXP-003
+  (independent EXACT reproduction of the Jensen-Leykin n = 5 generic-finiteness
+  prevariety certificate: both published f-vectors digit for digit, pointedness
+  verified by our own exact parser). EXP-004 (16-cell screening: two NEW working
+  valuation families at n = 5, the published 257-component count reproduced,
+  the dependent symmetric equations shown tropically essential, n = 4 replicated
+  purely polyhedrally in seconds). EXP-005 (the n = 6 attempt; first run aborted on
+  a detected integer overflow and was redirected by EXP-004's own finding into two
+  parallel variants, running).
+- `cclib` (exact Albouy-Chenciner builders, Stickelberger eliminant census,
+  invariants) with four regression tests pinned to EXP-001's exact anchors.
+- The central-configurations problem page on the shared shell (six sections,
+  EN/ES, verified citation spine) and its route.
+- Manuscript `manuscripts/central-configurations/tropical-replication` v0.02
+  (replication-first machine record).
+- methodology/10 amended with the MULTI-FACTORIAL standing rule (several lenses
+  active concurrently, constant online research, recorded self-questioning).
+
+### Changed
+- Jacobian program: EXP-078 refuted the finite-ceiling premise (no a priori degree
+  bound); Paper B v0.11 withdraws the published finite-ceiling claim and v0.12
+  corrects a second invalid statement inherited from the retracted EXP-070; Papers
+  A and C audited clean.
+- Portfolio: `unsplittable-flow-cost` added as `scoped` with its base dossier.
+
 ## [0.53.000], 2026-07-24
 
 ### Added

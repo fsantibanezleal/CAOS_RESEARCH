@@ -1,4 +1,4 @@
-# EXP-004 verdict (2026-07-24)
+# EXP-004 - Verdict: CONFIRMED, WITH TWO NEW WORKING VALUATION FAMILIES (2026-07-24; the symmetric equations are tropically essential)
 
 Hypothesis: `hypothesis.md` (declared and committed BEFORE any run, commit 1a5fb84).
 Pipeline: `run.sh` (16-cell grid), `comet_analysis.py` + `comet_sweep.sh` (exact

@@ -1,4 +1,4 @@
-# EXP-003 verdict (2026-07-24)
+# EXP-003 - Verdict: CONFIRMED (2026-07-24; the Jensen-Leykin n = 5 certificate reproduced exactly)
 
 Hypothesis: `hypothesis.md` (declared and committed BEFORE the run, commit db85647).
 Pipeline: `run.sh` (WSL2 Ubuntu 24.04; gfan 0.7 from the author tarball, two-line
