@@ -68,6 +68,16 @@ The single first-read for a fresh session (contract: methodology/07-session-hand
   (gfan 0.7 in WSL, hashes recorded; ~25 cpu-min per wall-min throughput; a JL25-
   scale n = 6 attempt is ~2.8 wall-days here).
 
+- EXP-006 msolve-census: P1/P2 CONFIRMED (both capped censuses closed cross-engine,
+  exact box-containment verification, classical answer on four mass vectors),
+  P3 REFUTED AS POSED (the n = 4 AFFINE enriched system has dimension 1: the census
+  belongs in the torus; class count recorded as untested).
+- EXP-007 exact-pointedness: CONFIRMED. All 16 EXP-004 cells decided in 33 s by an
+  exact phase-I simplex; zero flips; each failing control PROVABLY unpointed. This
+  is now the lane's default decision procedure, including for the n = 6 outputs.
+- EXP-008 equation-enrichment: P1/P2 REFUTED, P3 CONFIRMED. Dziobek is tropically
+  active (comets 10 -> 7, 9 -> 6) but does not rescue the hard equal-valuation case;
+  the comet count, not the f-vector, is the monotone invariant; e_IU is inert.
 - EXP-004 valuation-equation-screening: P2/P3 CONFIRMED, P1 operational + bonus.
   TWO NEW working valuation families at n = 5 (powers of 2, primes); JL25's
   257-component count reproduced exactly (comet-instrument validation); the
@@ -94,21 +104,21 @@ arbitrary-precision hardening rerun, before anything leaves the repo.
 
 ## 5. Next actions, ordered (multi-front; see research-lines-2026-07-24.md)
 
-1. Monitor EXP-005 (front A3) without blocking: check the heartbeat each round.
-   On completion: comet_analysis.py on the output, verdict, and if pointed, the
-   Felipe-first statement gate + arbitrary-precision hardening.
-2. Front B (msolve 0.10.1 is INSTALLED, hash recorded): EXP-006 declaration:
-   census completion for the two capped mass vectors + the n = 4 equal-mass PLANAR
-   census against the 4-classes / 50-rotation-classes ground truth; sympy stays the
-   independent verification layer.
-3. CCB-032: exact-LP line certificate, to convert "no certificate" into proved
-   unpointedness on the failing controls (upgrades EXP-004's negative half).
-4. CCB-031 continuation: ADD equations (Dziobek at n >= 4, e_IU) and measure
-   prevariety shrinkage; EXP-004 settled that removing is never the direction.
-5. Reads (front E): Sun-Xie-You (arXiv:2510.25649, Hessian lens gate); AK12 full
-   anatomy (CCB-023); Chang-Chen tables (CCB-004).
-6. Statement-level claims and any outreach: to Felipe first, always.
-7. Exploration moment every round (methodology/10 multi-factorial rule + 11).
+1. Monitor EXP-005 (front A3) without blocking: heartbeat
+   `wsl -d Ubuntu-24.04 -- bash -lc 'cat /root/exp005/status-pow3-b0.log'` (and
+   pow2-b0). On completion: decide every comet with the EXP-007 instrument, write
+   the verdict, and if POINTED go to Felipe FIRST, then the hardening rerun.
+2. EXP-009 (declare first): the n = 4 equal-mass census IN THE TORUS, the object
+   EXP-006 identified: saturate by the product of the six distances, or use the
+   HM06 z-variable square system (their equation (13), 10 x 10, BKK-ready). Ground
+   truth: 4 classes mod rotation/reflection/permutation, 50 mod rotation only.
+3. Reads (front E): Sun-Xie-You (arXiv:2510.25649, gate for the Hessian instrument
+   CCB-014); AK12 full anatomy (CCB-023); Chang-Chen tables (CCB-004).
+4. Statement-level claims and any outreach: to Felipe first, always.
+5. Exploration moment every round (methodology/10 multi-factorial rule + 11).
+
+Closed this round: CCB-025 (msolve engine wrapped and used), CCB-032 (exact LP),
+CCB-031 (the ADD direction measured; ADD is not a rescue mechanism).
 
 ## 6. Where everything lives
 

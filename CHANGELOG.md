@@ -3,6 +3,41 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.56.000], 2026-07-24
+
+### Added
+- **Central configurations: three more experiments decided (EXP-006, 007, 008),
+  all with hypotheses committed before their runs.**
+  - EXP-007: an exact phase-I simplex over the rationals decides pointedness of
+    every comet of every screened cell in 33 seconds, with each certificate
+    re-verified outside the decider. The screening's negative half is upgraded from
+    "no certificate found" to PROOF: each failing control has exactly one provably
+    unpointed comet, which independently confirms the failure of arithmetic
+    valuations reported by Jensen-Leykin at n = 5.
+  - EXP-008: adding Dziobek's equations at n = 4 cuts comet counts (10 to 7, 9 to 6)
+    but does NOT rescue the hard equal-valuation case, separating the algebraic and
+    tropical roles of the same enrichment; two declared predictions were refuted,
+    including the f-vector monotonicity one (adding equations refines the
+    subdivision, so the comet count is the right invariant). The energy-inertia
+    relation is tropically inert.
+  - EXP-006: msolve closes both censuses that saturated the sympy engine, verified
+    exactly by containment of our algebraic points in msolve's rational boxes; its
+    third prediction was refuted as posed, since the n = 4 affine enriched system
+    has dimension 1 and the census belongs in the torus.
+- `cclib.exact_lp` (exact pointedness decision) and `cclib.dziobek4`, both
+  smoke-tested before use.
+- **A binding manuscript front-matter standard** (methodology/05) after an audit
+  found manuscripts shipping with no document-type marking: running header naming
+  the type on every page, a boxed type statement on page 1, ORCID author line,
+  version in the date block, and the type matching the Zenodo publication_type.
+
+### Changed
+- The central-configurations manuscript is at the standard and published as Zenodo
+  v0.03 (new version DOI 10.5281/zenodo.21554571; concept DOI unchanged).
+- Problem page: citation rendering fixed (the shell's `Cite` supplies its own
+  parentheses), the concept DOI is linked, and the site-wide footer no longer
+  describes only the Jacobian problem or a stale experiment range.
+
 ## [0.55.000], 2026-07-24
 
 ### Changed (jacobian-conjecture): two published claims corrected

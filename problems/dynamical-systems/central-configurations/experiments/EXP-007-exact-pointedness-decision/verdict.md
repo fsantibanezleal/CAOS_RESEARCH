@@ -1,4 +1,4 @@
-# EXP-007 - Verdict: CONFIRMED on all three predictions (2026-07-24; every comet decided exactly, the failing controls are provably unpointed)
+# EXP-007 - Verdict: CONFIRMED ON ALL THREE PREDICTIONS (2026-07-24; every comet decided exactly, the failing controls are provably unpointed)
 
 Hypothesis: `hypothesis.md` (declared and committed BEFORE the run, commit c4ab69a).
 Instrument: `code/cclib/exact_lp.py` (phase-I simplex over `Fraction`, Bland's rule).

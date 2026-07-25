@@ -30,10 +30,16 @@
   reach t^243 at n = 6) and was REDIRECTED by EXP-004's own finding into two
   parallel variants. Manuscript v0.02 (6 pp). Frontend problem page built + routed.
   msolve 0.10.1 installed (hash recorded).
-- **Now:** EXP-005 running detached (front A3, monitored by heartbeat); front B
-  (EXP-006 msolve census declaration) is the next active reasoning front.
-- **Next experiments:** EXP-006 (msolve census completion + n = 4 planar census);
-  CCB-032 (exact-LP line certificates); CCB-031 continuation (ADD-equation
-  prevariety shrinking).
+- **Done (2026-07-24, round 5 close):** EXP-006 (cross-engine censuses closed; the
+  n = 4 affine system is dimension 1, so the census belongs in the torus), EXP-007
+  (every comet decided exactly in 33 s; failing controls provably unpointed),
+  EXP-008 (Dziobek tropically active but not decisive; the comet count is the right
+  invariant; e_IU inert). Manuscript front-matter standard persisted in
+  methodology/05 after Felipe's review; manuscript v0.03 published as Zenodo new
+  version 10.5281/zenodo.21554571.
+- **Now:** EXP-005 (n = 6) running detached on two arbitrary-precision variants;
+  EXP-009 (the n = 4 torus census) is the next declaration.
+- **Next experiments:** EXP-009 (torus census, saturated or HM06 z-system);
+  the Sun-Xie-You read gating the Hessian instrument (CCB-014).
 - **Isolation note:** rounds close with NO version bump (methodology/08); the release
   step is serialized and owned elsewhere; a parallel session runs jacobian-conjecture.
