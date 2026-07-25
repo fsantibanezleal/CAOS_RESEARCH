@@ -77,7 +77,7 @@ here) and 2 (TVZ24).
 | $\alpha_{\mathrm{inst}}$ | $\min$ over cost-good routings of $\max_a (y_a - x_a)^+ / d_{\max}$: the violation an instance forces. Value $16/15$ on the 2026 instance | EXP-002 |
 | $\alpha^\*$ | the infimum over ALL instances: the frontier constant. Known $\ge 16/15$ [MV], $\le 2$ for planar [VERIFIED], no finite bound in general | UF-P3 |
 | conflict graph $H$, selection point $\rho$ | the stable-set reading: nodes are cheap choices, edges are pairwise congestion incompatibility, $\rho_i = x(\text{choice } i)/d_i$ | EXP-002, to be promoted to the library (UFB-023) |
-| separation LP | max $\delta$ s.t. $c^T(y - x) \ge \delta$ for all congestion-good $y$, $\sum c_a = 1$, $c \ge 0$; optimum $> 0$ iff some nonnegative cost makes the instance a counterexample | UFB-010 [CLAIMED, to re-derive] |
+| separation LP (SEP) | max $\delta$ s.t. $c^T(y - x) \ge \delta$ for all congestion-good $y$, $\sum c_a = 1$, $c \ge 0$; optimum $> 0$ iff some nonnegative cost makes the instance a counterexample. Re-derived and proved by us (both directions) in the EXP-003 hypothesis; implemented exactly in `ufclib.separation` | EXP-003 [MV] |
 | C1-C9 battery | the consistency tests any valid counterexample must survive | literature dossier section 5; all nine passed in EXP-002 |
 
 ## 3. Experiment index
@@ -86,19 +86,27 @@ here) and 2 (TVZ24).
 |---|---|---|---|
 | EXP-001 | Does our own exact checker decide SSUF instances correctly on hand-built cases? | CONFIRMED | `ufclib` adopted as ground truth; P1-P8 hold on V1-V5; 14 pytest tests |
 | EXP-002 | Is the 2026 claimed counterexample valid, and what does it force? | CONFIRMED | Conj 1.2 FALSE; $\alpha_{\mathrm{inst}} = 16/15$; C1-C9 pass; structural route agrees with enumeration |
+| EXP-003 | Can we decide, without searching over cost vectors, whether an instance admits any counterexample cost vector? | CONFIRMED | The exact separation LP; optimum $2/7$ on the 2026 instance, attained by the published cost vector, so that vector is an OPTIMAL separator there; $k = 1$ theorem; the $k \le 2$ claim retracted and replaced |
 
 ## 4. In flight
 
-Nothing is running. Round 1 closed with both experiments decided and the wiki transcribed.
+Nothing is running. Rounds 1 and 2 closed: three experiments decided, the wiki transcribed,
+and one invalid derivation retracted in writing.
 
 Mid-derivation notes not yet in any verdict, to carry into the next hypothesis:
 
-- **The minimality base rung [D, unproved in code].** With at most two terminals the
-  conflict graph has at most two nodes, hence no odd cycle, hence an integral stable-set
-  polytope, hence no nonnegative-cost separation. So no counterexample has fewer than three
-  terminals. Needs a careful write-up (the step from "integral polytope" to "no separating
-  nonnegative cost vector" deserves an explicit argument, not a gesture) and a machine
-  check over small two-terminal instances (UFB-025).
+- **RETRACTED (EXP-003, G6).** The round-1 entry here claimed, as a derivation, that no
+  counterexample exists with at most two terminals, via "a conflict graph on at most two
+  nodes has no odd cycle". That argument is INVALID: a terminal may have many path choices,
+  so the conflict graph is not a two-node graph, and the step from an integral stable-set
+  polytope to the absence of a separating nonnegative cost vector was asserted rather than
+  proved. What stands in its place, from the EXP-003 verdict: $k = 1$ is a THEOREM (every
+  routing is congestion-good since $d \le x_a + d$, and the cheapest-path routing is
+  cost-good by flow decomposition); at $k = 2$ the all-cheapest routing is always cost-good
+  and is congestion-good exactly when every arc on BOTH cheapest paths carries
+  $x_a \ge \min(d_1, d_2)$, so any two-terminal counterexample must contain a shared arc
+  with $x_a < \min(d_1, d_2)$. A 184-instance sweep found none, which is evidence, not a
+  proof. Whether $k = 2$ admits a counterexample is OPEN.
 - **The open coincidence (UFB-032).** $\sum_i \rho_i = 16/15$ and
   $\alpha_{\mathrm{inst}} = 16/15$ on the 2026 instance. Structural or accidental? A general
   relation between the stable-set violation and the forced violation budget would be a
@@ -113,15 +121,15 @@ Mid-derivation notes not yet in any verdict, to carry into the next hypothesis:
 
 ## 5. Next actions, ordered
 
-1. Declare and build the exact rational separation LP (UFB-010): re-derive the reduction in
-   our own words first, then implement over `Fraction` (no float simplex), and validate on
-   the 2026 instance, where the answer is now known independently.
+1. DONE (EXP-003): the exact rational separation LP, in `ufclib.separation`, with the
+   reduction re-derived in our own words and validated on 192 instances.
 2. Declare the canonical form (UFB-011): digraph isomorphism plus demand-preserving terminal
    relabelling, with an explicit completeness argument. Without it, no exhaustion claim is
-   honest.
-3. EXP-004: the minimality exhaustion at small sizes, using 1 and 2. Target statements: the
-   smallest counterexample in terminals (predicted 3, see the base rung above), in vertices,
-   in arcs, and in $d_{\max}$.
+   honest. Pair it with constraint generation (UFB-034), because the LP currently enumerates
+   every congestion-good routing and will not scale.
+3. EXP-004: the minimality exhaustion at small sizes. Target statements: the smallest
+   counterexample in terminals (open at $k = 2$; a necessary condition is in hand), in
+   vertices, in arcs, and in $d_{\max}$.
 4. Promote the conflict-graph instrument out of EXP-002 into `ufclib` (UFB-023) and use it
    as the cheap pre-filter before any LP.
 5. UFB-020/021/030: odd-cycle and clique conflict families, and the parametric family's

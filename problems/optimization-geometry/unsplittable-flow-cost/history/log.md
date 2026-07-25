@@ -69,3 +69,40 @@ elsewhere).
 
 **Standing gate honoured:** no external communication of any kind about the claim. Any
 statement about whether the celebrated counterexample stands is Felipe's call.
+
+## 2026-07-24 - round 2: the separation LP, and a retraction
+
+**EXP-003 CONFIRMED.** The separation LP (SEP) is built, re-derived in our own words with
+both directions of the equivalence committed BEFORE the run, and implemented exactly over
+the rationals (sympy's rational simplex; no floats). It decides, without searching over cost
+vectors, whether an instance admits ANY nonnegative cost vector making it a counterexample.
+
+- On the 2026 instance the optimum is exactly $2/7$, and the witness is the published cost
+  vector divided by its coordinate sum. The prediction was only "at least $2/7$", so the
+  equality is new information: that cost vector is an OPTIMAL separator for this graph and
+  flow, and the 58-versus-60 gap is the best the instance can produce.
+- Round trip: under the witness costs, `ufclib` independently reports the counterexample and
+  the same exact gap $2/7$. Two independent code paths, polyhedral and combinatorial, agree.
+- On V1-V5 the optimum is exactly 0: no cost vector breaks them, and the ties at 0 show that
+  "obeys the conjecture" can hold with no slack at all.
+- **Minimality rung 1 is a theorem:** no single-terminal instance is a counterexample, for
+  any cost vector (every routing is congestion-good because $d \le x_a + d$; the
+  cheapest-path routing is cost-good by flow decomposition). Machine-checked on six
+  adversarially shaped instances.
+- **RETRACTION.** The round-1 RESUME recorded a derivation that no counterexample exists
+  with at most two terminals, via "a conflict graph on at most two nodes has no odd cycle".
+  That argument is invalid: a terminal may have many path choices, so the conflict graph is
+  not a two-node graph, and the step from an integral stable-set polytope to the absence of a
+  separating nonnegative cost vector was asserted, not proved. The claim was flagged as
+  suspect in the EXP-003 hypothesis before the run and is withdrawn in the verdict, in the
+  RESUME, and here. Replacing it: at $k = 2$ the all-cheapest routing is always cost-good and
+  is congestion-good exactly when every arc on both cheapest paths carries
+  $x_a \ge \min(d_1, d_2)$, so a two-terminal counterexample must contain a shared arc below
+  that threshold. A 184-instance sweep found none, recorded as evidence and explicitly not as
+  a proof. The $k = 2$ question is OPEN.
+
+New backlog rows: UFB-033 (an independent exact LP route or dual certificate, since sympy's
+simplex is currently a single point of failure), UFB-034 (constraint generation, because
+(SEP) enumerates every congestion-good routing and will not scale to the exhaustion),
+UFB-035 (the distribution of (SEP) optima as the natural frontier statistic, not just the
+sign). Commit 82e9b08. No version bump.

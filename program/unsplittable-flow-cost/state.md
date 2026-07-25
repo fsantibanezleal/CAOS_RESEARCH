@@ -22,10 +22,19 @@
   structure outside the series-parallel class where it is proved; planarity pins the planar
   constant strictly between 1 and 2; and an independent structural route (conflict triangle,
   independence number 1) reproduces the bound 60 without enumerating costs.
-- **Now:** round 2 declarations. The exact rational separation LP (UFB-010) and the
-  canonical form (UFB-011), which together open the minimality exhaustion (UFB-012).
-- **Next experiments:** EXP-003 (separation LP instrument, validated on the 2026 instance
-  where the answer is now known), EXP-004 (minimality exhaustion at small sizes), then the
+- **Done (2026-07-24, round 2 close): EXP-003 CONFIRMED.** The separation LP (SEP), derived
+  by us before the run and implemented exactly over the rationals, decides whether an
+  instance admits ANY nonnegative cost vector making it a counterexample. On the 2026
+  instance the optimum is exactly 2/7, attained by the published cost vector normalised, so
+  those prices are an OPTIMAL separator for that graph and flow (the prediction was only
+  ">= 2/7"). Round trip through ufclib agrees on the exact gap. Minimality rung 1 is a
+  THEOREM (no single-terminal counterexample, for any cost vector). The round-1 claim about
+  k <= 2 terminals was RETRACTED as invalid and replaced by a sharp necessary condition at
+  k = 2 plus a 184-instance sweep that found nothing, recorded as evidence and not proof;
+  k = 2 remains open.
+- **Now:** round 3 declarations. The canonical form (UFB-011) paired with constraint
+  generation (UFB-034), which together open the minimality exhaustion (UFB-012).
+- **Next experiments:** EXP-004 (minimality exhaustion at small sizes), then the
   conflict-family constructions for the frontier constant (UFB-020, UFB-021, UFB-030).
 - **Open question minted this round:** sum(rho_i) and alpha_inst are both 16/15 on the 2026
   instance; whether that equality is structural is undecided (UFB-032).
