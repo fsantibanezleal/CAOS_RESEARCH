@@ -1,0 +1,18 @@
+[06:49:21] EXP-007 start: exact pointedness decision over the EXP-004 outputs
+[06:49:21] out-n4-S1-arith.out: comets 9, pointed 9, unpointed 0, cert-failures 0, 0 s
+[06:49:22] out-n4-S1-equal.out: comets 1, pointed 0, unpointed 1, cert-failures 0, 0 s
+[06:49:22] out-n4-S1-pow2.out: comets 10, pointed 10, unpointed 0, cert-failures 0, 0 s
+[06:49:22] out-n4-S1-pow3.out: comets 10, pointed 10, unpointed 0, cert-failures 0, 0 s
+[06:49:22] out-n5-S1-V1pow3.out: comets 281, pointed 281, unpointed 0, cert-failures 0, 1 s
+[06:49:25] out-n5-S1-V2squares.out: comets 257, pointed 257, unpointed 0, cert-failures 0, 2 s
+[06:49:25] out-n5-S1-V3pow2.out: comets 266, pointed 266, unpointed 0, cert-failures 0, 1 s
+[06:49:26] out-n5-S1-V4primes.out: comets 250, pointed 250, unpointed 0, cert-failures 0, 1 s
+[06:49:28] out-n5-S1-V5arith.out: comets 181, pointed 180, unpointed 1, cert-failures 0, 1 s
+[06:49:29] out-n5-S1-V6repeat.out: comets 211, pointed 210, unpointed 1, cert-failures 0, 1 s
+[06:49:30] out-n5-S2-V1pow3.out: comets 233, pointed 232, unpointed 1, cert-failures 0, 2 s
+[06:49:33] out-n5-S2-V2squares.out: comets 206, pointed 205, unpointed 1, cert-failures 0, 2 s
+[06:49:34] out-n5-S2-V3pow2.out: comets 214, pointed 213, unpointed 1, cert-failures 0, 2 s
+[06:49:36] out-n5-S2-V4primes.out: comets 204, pointed 203, unpointed 1, cert-failures 0, 1 s
+[06:49:38] out-n5-S2-V5arith.out: comets 139, pointed 138, unpointed 1, cert-failures 0, 2 s
+[06:49:54] out-n5-S2-V6repeat.out: comets 142, pointed 141, unpointed 1, cert-failures 0, 16 s
+[06:49:54] done; all cells fully decided with verified certificates: True

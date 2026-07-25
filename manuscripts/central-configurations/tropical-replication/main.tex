@@ -2,27 +2,49 @@
 \usepackage[margin=1.1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{booktabs}
-\usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
+\definecolor{linknavy}{RGB}{25, 55, 125}
+\usepackage[colorlinks=true, linkcolor=linknavy, citecolor=linknavy, urlcolor=linknavy]{hyperref}
+\usepackage{orcidlink}
+\usepackage{fancyhdr}
 
-\newtheorem{theorem}{Theorem}
-\newtheorem{proposition}{Proposition}
-\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
 \theoremstyle{remark}
-\newtheorem{remark}{Remark}
+\newtheorem{remark}[theorem]{Remark}
 
 \title{Exact replication and screening of tropical finiteness certificates
-for central configurations\\
-{\large Machine record v0.02 (draft): the CAOS Research central-configurations
-program, experiments 001--005}}
-\author{Felipe Santiba\~nez-Leal\thanks{With machine-executed computations;
-all artifacts, exact values, and run records are versioned at
-\url{https://github.com/fsantibanezleal/CAOS_RESEARCH} under
-\texttt{problems/dynamical-systems/central-configurations/}.}}
-\date{July 24, 2026}
+for central configurations}
+\author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
+\date{2026-07-24\\[2pt]\normalsize Version 0.03}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small CAOS Research Preprint}
+\fancyhead[R]{\small Tropical Certificates for Central Configurations \textperiodcentered\ v0.03}
+\fancyfoot[C]{\small \thepage}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
 
 \begin{document}
 \maketitle
+\thispagestyle{plain}
+
+\begin{center}
+\small
+\fbox{\parbox{0.92\textwidth}{\centering
+\textbf{Preprint: a machine research record, not peer reviewed.}\\[2pt]
+Replication-first: the finiteness theorems reproduced here are due to
+Hampton--Moeckel, Albouy--Kaloshin and Jensen--Leykin, and the equal-mass censuses
+to Moczurad--Zgliczy\'nski. Our own contributions are the exact instruments, the
+measured facts and the independent reproductions, each labelled as such. Every
+number is reproducible from the versioned repository; hypotheses are committed
+before their runs and refutations are kept in the record.}}
+\end{center}
+\vspace{4pt}
 
 \begin{abstract}
 We report an exact, fully replayable machine record around Smale's 6th problem
@@ -45,7 +67,14 @@ variants at $n=4,5$ which finds two new working valuation families beyond the
 two published, replicates generic-mass finiteness for $n=4$ purely
 polyhedrally in seconds, and shows that removing the ten dependent symmetric
 Albouy--Chenciner equations destroys the certificate at every tested valuation:
-the ``redundant'' equations carry essential tropical information. All computations are exact (rational or integer arithmetic, or
+the ``redundant'' equations carry essential tropical information. Every comet of
+every screened cell is then decided exactly by a rational-arithmetic feasibility
+certificate, which upgrades the negative half of the screening from absence of a
+certificate to proof; adding further valid equations is measured separately, showing
+Dziobek's equations to be tropically active but not decisive at the hard case and
+the energy--inertia relation to be tropically inert; and two censuses that defeated
+our own engine are closed by an independent solver with exact cross-verification.
+All computations are exact (rational or integer arithmetic, or
 certified polyhedral computation); every stated number is reproducible from
 committed code and hashes. This is a replication-and-instruments record: the
 theorems replicated are due to Hampton--Moeckel, Albouy--Kaloshin, and
@@ -239,11 +268,78 @@ $(0,0,0,0)$ leaves a single undecided comet with 49 generators, matching the
 observation of \cite{JL25} that this specialization is equivalent in difficulty
 to the original computation of \cite{HM06}.
 
-We are careful about the negative half: our instrument certifies pointedness
-(exact separating vector) and unpointedness (exact nonnegative zero
-combination); on the failing controls it returns neither, so we report
-``no certificate'' rather than ``not pointed''. Closing that gap with exact
-linear programming is a queued item.
+\subsection{Every comet decided exactly (EXP-007)}
+
+The screening above was reported with an explicit weakness: on the failing controls
+the heuristic returned neither certificate, so those cells read ``no certificate''
+rather than ``not pointed''. We closed that gap. A cone is pointed exactly when the
+only nonnegative solution of $\sum_i \lambda_i g_i = 0$ is $\lambda = 0$, which is a
+single linear feasibility question; we decide it with a phase-I simplex in exact
+rational arithmetic (Bland's rule, so termination is guaranteed). Feasibility
+returns an explicit nonnegative zero combination, infeasibility returns a separating
+vector, and both are re-verified by exact substitution outside the decider.
+
+All sixteen cells are now decided in 33 seconds total, with zero
+certificate-verification failures. Every comet previously certified pointed is
+confirmed (no flips), and each failing control has exactly one comet that is
+provably UNPOINTED: at $n=5$ the arithmetic valuations $(0,1,2,3,4)$ (180 pointed,
+one unpointed) and the repeated valuations, and at $n=4$ the equal valuations. Our
+data therefore independently confirms, rather than merely being consistent with, the
+failure of arithmetic valuations reported in \cite{JL25}, and localises it to a
+single component out of 181.
+
+We keep the logical direction straight: pointedness of every comet is a
+\emph{sufficient} condition for dimension zero, so an unpointed comet proves only
+that this certificate route does not close, never that finiteness fails. The
+prevariety over-approximates the tropical variety.
+
+\subsection{Adding equations: what helps and what does not (EXP-008)}
+
+Since removing the redundant symmetric equations is catastrophic, the converse is
+worth measuring. At $n=4$, where the planar stratum \emph{is} the Dziobek stratum
+and Dziobek's equations are therefore available (they are what
+Hampton--Moeckel~\cite{HM06} needed when the Albouy--Chenciner equations alone
+defeated their method), we ran the baseline against three enrichments.
+
+Two declared predictions failed, informatively. First, we predicted that adding
+equations shrinks the $f$-vector; it does at equal valuations (a 25 percent
+reduction) but GROWS it at powers of two and at arithmetic valuations. The
+prediction confused the prevariety as a set with the subdivision that represents it:
+intersecting more tropical hypersurfaces can only shrink the set while refining the
+fan, so cone counts may rise. The invariant that behaves monotonically in our data
+is the comet count, which falls from 10 to 7 and from 9 to 6 when Dziobek is
+adjoined. Second, we predicted that Dziobek's equations would rescue the hard
+equal-valuation case. They do not: the prevariety shrinks by a quarter and its
+single comet stays provably unpointed. The enrichment that rescued the
+\emph{algebraic} proof therefore does not rescue the \emph{tropical} certificate at
+the same specialisation, which separates two roles that are easy to conflate.
+
+By contrast the energy--inertia relation is tropically inert: it reproduces the
+baseline $f$-vector exactly at two of the three valuations. Dependence in the ideal
+predicts tropical relevance in neither direction, which is the sharper form of the
+lesson above, and it lets us drop that equation from expensive runs at no cost.
+
+\section{Censuses across two independent engines (EXP-006)}
+
+Two of the $n=3$ censuses had been left inconclusive at our own engine's budget. We
+recomputed them with msolve (Gr\"obner bases, rational univariate representation and
+certified real-root isolation), keeping our exact machinery as the verification
+layer: msolve returns rational isolating boxes, and containment of an exact
+algebraic point in a rational box is decided exactly. Both open cells close in under
+a second each, and for all four mass vectors the positive census is exactly the
+classical answer, one equilateral point and one collinear point per ordering, with
+every one of our independently computed exact points inside a distinct box and no
+unexplained boxes. Two implementations that share no code agree on every decided
+instance.
+
+The same experiment refuted its own third prediction. We expected the enriched
+planar $n=4$ system to admit an isolated census matching the published equal-mass
+class count; msolve reports the affine system to have dimension one, so there is no
+isolated census to compare. Diagnostics exclude the vanishing-distance loci as the
+cause, which leaves the reading the literature already acts on: the census belongs in
+the torus, where all mutual distances are invertible, which is precisely the setting
+of~\cite{HM06}. We record the count as untested rather than quoting the published
+value as if we had reproduced it.
 
 \section{The $n=6$ attempt (EXP-005, in progress)}
 
@@ -297,8 +393,9 @@ central configurations in the five-body problem}, Celest. Mech. Dyn. Astron.
 \bibitem{ChangChen23} K.-M.~Chang and K.-C.~Chen, \emph{Toward finiteness of
 central configurations for the planar six-body problem by symbolic
 computations. (I) Determine diagrams and orders}, J. Symbolic Comput.
-\textbf{123} (2024), 102277; \emph{(II) Determine mass relations}, SIAM J.
-Appl. Dyn. Syst. \textbf{24} (2025), no.~3, 2369--2404; arXiv:2303.02853.
+\textbf{123} (2024), 102277; preprint of the programme: arXiv:2303.02853. (A
+second part, on mass relations, is announced in the same programme; we cite
+only the part whose bibliographic data we verified from a primary source.)
 \bibitem{JL25} A.~Jensen and A.~Leykin, \emph{Smale's 6th problem for generic
 masses}, arXiv:2301.02305v2 (2025).
 \bibitem{MZ19} M.~Moczurad and P.~Zgliczy\'nski, \emph{Central configurations

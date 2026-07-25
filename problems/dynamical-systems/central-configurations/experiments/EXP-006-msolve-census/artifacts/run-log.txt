@@ -1,0 +1,7 @@
+[06:45:02] EXP-006 start (msolve computes, sympy verifies exactly)
+[06:45:12] RESULT census-(1, 1, 1): pass msolve positive boxes: 4; exact points matched: 4/4; unmatched: 0; unexplained boxes: 0; 1 s
+[06:49:56] RESULT census-(1, 1, 2): pass msolve positive boxes: 4; exact points matched: 4/4; unmatched: 0; unexplained boxes: 0; 2 s
+[06:58:09] RESULT census-(1, 2, 3): pass msolve positive boxes: 4; exact points matched: 4/4; unmatched: 0; unexplained boxes: 0; 0 s
+[07:08:23] RESULT census-(2, 3, 5): pass msolve positive boxes: 4; exact points matched: 4/4; unmatched: 0; unexplained boxes: 0; 0 s
+[07:14:13] RESULT n4-equal-planar: recorded positive boxes: 0; distinct sorted-distance classes: 0; 349 s (class count compared against MZ19's 4 in the verdict)
+[07:14:13] done; FAIL: none

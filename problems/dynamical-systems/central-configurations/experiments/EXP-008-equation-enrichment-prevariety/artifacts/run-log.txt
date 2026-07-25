@@ -1,0 +1,15 @@
+[07:01:36] EXP-008 start
+[07:01:36] systems built: A1(+0 eqs), A2(+1 eqs), A3(+3 eqs), A4(+4 eqs)
+[07:01:50] n4-A1-equal: fvec [1 49 66 18] comets 1 pointed 0 unpointed 1 (13 s)
+[07:02:09] n4-A2-equal: fvec [1 49 66 18] comets 1 pointed 0 unpointed 1 (18 s)
+[07:02:27] n4-A3-equal: fvec [1 37 48 12] comets 1 pointed 0 unpointed 1 (18 s)
+[07:02:45] n4-A4-equal: fvec [1 37 48 12] comets 1 pointed 0 unpointed 1 (17 s)
+[07:02:46] n4-A2-arith: fvec [82 162 107 23] comets 9 pointed 9 unpointed 0 (70 s)
+[07:03:53] n4-A1-arith: fvec [83 164 108 23] comets 9 pointed 9 unpointed 0 (66 s)
+[07:03:54] n4-A3-arith: fvec [86 183 135 34] comets 6 pointed 6 unpointed 0 (67 s)
+[07:05:26] n4-A2-arith: fvec [82 162 107 23] comets 9 pointed 9 unpointed 0 (92 s)
+[07:05:32] n4-A4-arith: fvec [85 181 134 34] comets 6 pointed 6 unpointed 0 (97 s)
+[07:05:32] done
+[07:06:39] n4-A3-arith: fvec [86 183 135 34] comets 6 pointed 6 unpointed 0 (72 s)
+[07:08:00] n4-A4-arith: fvec [85 181 134 34] comets 6 pointed 6 unpointed 0 (81 s)
+[07:08:00] done

@@ -1,0 +1,27 @@
+{
+  "experiment": "EXP-006",
+  "results": {
+    "census-(1, 1, 1)": {
+      "status": "pass",
+      "detail": "msolve positive boxes: 4; exact points matched: 4/4; unmatched: 0; unexplained boxes: 0; 1 s"
+    },
+    "census-(1, 1, 2)": {
+      "status": "pass",
+      "detail": "msolve positive boxes: 4; exact points matched: 4/4; unmatched: 0; unexplained boxes: 0; 2 s"
+    },
+    "census-(1, 2, 3)": {
+      "status": "pass",
+      "detail": "msolve positive boxes: 4; exact points matched: 4/4; unmatched: 0; unexplained boxes: 0; 0 s"
+    },
+    "census-(2, 3, 5)": {
+      "status": "pass",
+      "detail": "msolve positive boxes: 4; exact points matched: 4/4; unmatched: 0; unexplained boxes: 0; 0 s"
+    },
+    "n4-equal-planar": {
+      "status": "recorded",
+      "detail": "positive boxes: 0; distinct sorted-distance classes: 0; 349 s (class count compared against MZ19's 4 in the verdict)"
+    }
+  },
+  "msolve": "0.10.1",
+  "sympy": "1.14.0"
+}

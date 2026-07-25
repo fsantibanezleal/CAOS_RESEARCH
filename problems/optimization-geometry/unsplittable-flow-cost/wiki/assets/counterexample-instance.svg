@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 680" width="780" height="680" role="img" aria-labelledby="title desc">
+  <title id="title">The 2026 counterexample to Goemans' unsplittable-flow cost conjecture</title>
+  <desc id="desc">Seven vertices s, u, v, w, t1, t2, t3 and nine arcs. Each terminal has one expensive direct path and one free detour through the shared spine s to u to v to w. Arc labels give the fractional load x and, where nonzero, the per-unit cost c.</desc>
+  <style>
+    .bg      { fill: none; }
+    .node    { fill: #ffffff; stroke: #1f2933; stroke-width: 2; }
+    .term    { fill: #ffffff; stroke: #1f2933; stroke-width: 3.5; }
+    .nlabel  { fill: #1f2933; font: 600 19px ui-sans-serif, system-ui, sans-serif; text-anchor: middle; }
+    .spine   { stroke: #64748b; stroke-width: 2.4; fill: none; }
+    .cheap   { stroke: #2563eb; stroke-width: 2.4; fill: none; }
+    .dear    { stroke: #b45309; stroke-width: 3; fill: none; }
+    .alabel  { fill: #334155; font: 13px ui-monospace, SFMono-Regular, monospace; text-anchor: middle; }
+    .dlabel  { fill: #b45309; font: 600 13px ui-monospace, SFMono-Regular, monospace; text-anchor: middle; }
+    .caption { fill: #475569; font: 14px ui-sans-serif, system-ui, sans-serif; }
+    .plate   { fill: #ffffff; fill-opacity: 0.92; }
+    @media (prefers-color-scheme: dark) {
+      .node, .term { fill: #0f172a; stroke: #e2e8f0; }
+      .nlabel  { fill: #e2e8f0; }
+      .spine   { stroke: #94a3b8; }
+      .cheap   { stroke: #60a5fa; }
+      .dear    { stroke: #f59e0b; }
+      .alabel  { fill: #cbd5e1; }
+      .dlabel  { fill: #f59e0b; }
+      .caption { fill: #94a3b8; }
+      .plate   { fill: #0f172a; fill-opacity: 0.9; }
+    }
+  </style>
+  <defs>
+    <marker id="ah-spine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+    </marker>
+    <marker id="ah-cheap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="ah-dear" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="780" height="680"/>
+
+  <!-- the shared spine: s -> u -> v -> w, all zero cost -->
+  <path class="spine" d="M 68 600 L 612 600" marker-end="url(#ah-spine)"/>
+  <path class="spine" d="M 622 578 L 442 432" marker-end="url(#ah-spine)"/>
+  <path class="spine" d="M 420 382 L 420 240" marker-end="url(#ah-spine)"/>
+
+  <!-- the free detours (cheap choices) -->
+  <path class="cheap" d="M 392 400 L 230 400" marker-end="url(#ah-cheap)"/>
+  <path class="cheap" d="M 398 196 L 132 76" marker-end="url(#ah-cheap)"/>
+  <path class="cheap" d="M 448 194 L 648 76" marker-end="url(#ah-cheap)"/>
+
+  <!-- the expensive direct choices -->
+  <path class="dear" d="M 54 572 L 186 424" marker-end="url(#ah-dear)"/>
+  <path class="dear" d="M 30 572 C 4 420 34 180 76 84" marker-end="url(#ah-dear)"/>
+  <path class="dear" d="M 662 574 C 706 430 700 180 684 86" marker-end="url(#ah-dear)"/>
+
+  <!-- vertices -->
+  <circle class="term" cx="40"  cy="600" r="26"/><text class="nlabel" x="40"  y="607">s</text>
+  <circle class="node" cx="640" cy="600" r="24"/><text class="nlabel" x="640" y="607">u</text>
+  <circle class="node" cx="420" cy="410" r="24"/><text class="nlabel" x="420" y="417">v</text>
+  <circle class="node" cx="420" cy="210" r="24"/><text class="nlabel" x="420" y="217">w</text>
+  <circle class="term" cx="200" cy="410" r="26"/><text class="nlabel" x="200" y="417">t1</text>
+  <circle class="term" cx="100" cy="58"  r="26"/><text class="nlabel" x="100" y="65">t2</text>
+  <circle class="term" cx="680" cy="58"  r="26"/><text class="nlabel" x="680" y="65">t3</text>
+
+  <!-- arc labels -->
+  <rect class="plate" x="292" y="608" width="96" height="20" rx="4"/>
+  <text class="alabel" x="340" y="623">x = 24</text>
+  <rect class="plate" x="500" y="490" width="96" height="20" rx="4"/>
+  <text class="alabel" x="548" y="505">x = 14</text>
+  <rect class="plate" x="378" y="300" width="84" height="20" rx="4"/>
+  <text class="alabel" x="420" y="315">x = 9</text>
+
+  <rect class="plate" x="266" y="368" width="84" height="20" rx="4"/>
+  <text class="alabel" x="308" y="383">x = 5</text>
+  <rect class="plate" x="222" y="118" width="84" height="20" rx="4"/>
+  <text class="alabel" x="264" y="133">x = 4</text>
+  <rect class="plate" x="512" y="118" width="84" height="20" rx="4"/>
+  <text class="alabel" x="554" y="133">x = 5</text>
+
+  <rect class="plate" x="60" y="482" width="150" height="20" rx="4"/>
+  <text class="dlabel" x="135" y="497">x = 10, c = 2</text>
+  <rect class="plate" x="4" y="300" width="150" height="20" rx="4"/>
+  <text class="dlabel" x="79" y="315">x = 6, c = 3</text>
+  <rect class="plate" x="620" y="300" width="150" height="20" rx="4"/>
+  <text class="dlabel" x="695" y="315">x = 10, c = 2</text>
+
+  <text class="caption" x="40" y="34">d = (15, 10, 15), d_max = 15, fractional cost 58</text>
+  <text class="caption" x="40" y="56">every congestion-good routing costs at least 60</text>
+  <text class="caption" x="40" y="660">Amber: the expensive direct choice per terminal (30 each). Blue and grey: the free detours through the shared spine. Unlabelled costs are zero.</text>
+</svg>

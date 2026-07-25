@@ -50,6 +50,36 @@ equation-variant and valuation follow-ups.
   only after that rerun.
 - P3 always deliverable.
 
+## Preflight addendum (methodology/12, added 2026-07-24 after the standard landed; the run was declared before it existed)
+
+- **P1 source-complete.** JL25 read in full, including section 4.3 (their own n = 6
+  attempt) and 4.2 (why special cases are harder); HM06 read in full; HJ11 read.
+  Their closing remarks are exactly what motivates this run, so no unread source is
+  known to settle it.
+- **P2 tooling smoke test.** Satisfied by EXP-003: the identical pipeline reproduced
+  both published n = 5 datasets on this machine before any n = 6 time was spent.
+  Note the gap this rule would have caught earlier: gfan writes no incremental
+  progress, so a failure is only visible at abort; the two overflow aborts were
+  detected within minutes precisely because they abort loudly.
+- **P3 premise dependencies.** (a) Pointedness of every comet implies dimension 0
+  and hence generic finiteness: JL25's argument via Bieri-Groves and density of
+  tropicalization fibers, read in full. (b) Our comet extraction and certificates
+  are sound: validated in EXP-004 by reproducing their published 257-component
+  count. (c) Powers of 2 are a viable family: established by EXP-004 at n = 5.
+- **P4 one-sidedness.** POINTED is a positive result (it would establish generic
+  finiteness for n = 6, subject to the hardening rerun and the Felipe-first gate).
+  NOT-POINTED proves nothing about finiteness: the prevariety only over-approximates
+  the tropical variety, so a non-pointed comet may still contain no tropical curve.
+  A negative outcome therefore yields DATA (which comets survive, with their rays),
+  not a refutation of finiteness, and directs the next equation-variant attempt.
+- **P5 invariant-first.** No single invariant is known to decide n = 6 cheaply; the
+  candidate cheap probes (f-vector growth, global recession-cone sign profile) are
+  computed as by-products and recorded, but none of them can settle the question.
+- **P6 budget and kill criterion.** 7-day timeout per variant, two variants in
+  parallel on 15 and 14 threads. If a variant hits the timeout, it is recorded as
+  inconclusive-at-budget and the decision to extend goes to Felipe with the measured
+  progress; no silent restarts.
+
 ## Method / environment
 
 gfan 0.7 (EXP-003 install, hashes recorded), WSL, `gfan _nbody -N6 --masses

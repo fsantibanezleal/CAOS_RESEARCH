@@ -6,6 +6,7 @@
 \definecolor{linknavy}{RGB}{25, 55, 125}
 \usepackage[colorlinks=true, linkcolor=linknavy, citecolor=linknavy, urlcolor=linknavy]{hyperref}
 \usepackage{orcidlink}
+\usepackage{fancyhdr}
 \newtheorem{corollary}{Corollary}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -13,10 +14,27 @@
 \title{The Collateral Impact of the Three-Dimensional Jacobian Counterexample:\\ a Source-Verified Cascade}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-23 (companion document, v0.03: the explicit dimension-48 witness)}
+\date{2026-07-24\\[2pt]\normalsize Version 0.04}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small CAOS Research Preprint}
+\fancyhead[R]{\small The Consequence Cascade \textperiodcentered\ v0.04}
+\fancyfoot[C]{\small \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
 
 \begin{document}
 \maketitle
+\begin{center}\small
+\fbox{\parbox{0.92\textwidth}{\centering
+\textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
+Paper C of a three-paper record \textperiodcentered\ version 0.04 \textperiodcentered\ 2026-07-24\\
+DOI \href{https://doi.org/10.5281/zenodo.21503371}{10.5281/zenodo.21503371} (concept DOI, resolves to the latest version)\\
+Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
+}}
+\end{center}
+
 
 \begin{abstract}
 On 2026-07-19, Levent Alp\"oge announced an explicit counterexample to the Jacobian conjecture

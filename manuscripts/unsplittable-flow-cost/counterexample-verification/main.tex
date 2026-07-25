@@ -1,0 +1,454 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+\usepackage{orcidlink}
+\usepackage{xcolor}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem*{namedconj}{Conjecture (Goemans)}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{doi:#1}}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\dmax}{d_{\max}}
+\newcommand{\flow}{f}
+
+% ---------------------------------------------------------------------------
+% Standard CAOS Research manuscript header block. Every manuscript states, on
+% page 1 and without the reader having to infer it: what KIND of document it is,
+% which programme it belongs to, its version, its licence, and its DOI.
+% ---------------------------------------------------------------------------
+\newcommand{\doctype}{Preprint}
+\newcommand{\docsubtype}{independent verification and replication record}
+\newcommand{\docversion}{v0.01}
+\newcommand{\docdate}{25 July 2026}
+\newcommand{\doclicense}{CC BY 4.0}
+\newcommand{\docdoi}{10.5281/zenodo.21554259}
+\newcommand{\docconceptdoi}{10.5281/zenodo.21554258}
+\newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
+
+\newcommand{\headerblock}{%
+\begin{center}
+\fbox{\parbox{0.94\textwidth}{\small\raggedright
+\textbf{\doctype} (\docsubtype) \quad$\cdot$\quad \docversion, \docdate \quad$\cdot$\quad
+Licence \doclicense\\[2pt]
+CAOS Research open-problems programme \quad$\cdot$\quad problem
+\texttt{unsplittable-flow-cost}, experiments 001--003\\[2pt]
+Version DOI \href{https://doi.org/\docdoi}{\texttt{\docdoi}} \quad$\cdot$\quad
+concept DOI (always latest) \href{https://doi.org/\docconceptdoi}{\texttt{\docconceptdoi}}\\[2pt]
+Not peer reviewed. Source, declared hypotheses, artifacts and verdicts:
+\texttt{\docrepo}
+}}
+\end{center}
+\vspace{4pt}}
+
+\title{An independent exact verification of the 2026 counterexample to
+Goemans' unsplittable-flow cost conjecture, with the violation constant it
+forces}
+\author{Felipe Santiba\~nez-Leal\orcidlink{0000-0002-0150-3246}%
+\thanks{CAOS open-research programme, Santiago, Chile. With machine-executed
+computations; all code, declared hypotheses, artifacts and verdicts are
+versioned at \url{https://github.com/fsantibanezleal/CAOS_RESEARCH} under
+\texttt{problems/optimization-geometry/unsplittable-flow-cost/}.}}
+\date{July 25, 2026}
+
+\begin{document}
+\maketitle
+\headerblock
+
+\begin{abstract}
+In July 2026 a counterexample to Goemans' cost version of the
+Dinitz--Garg--Goemans theorem was announced publicly, outside peer review, and
+circulated widely. We report an independent verification of that finite object
+by exact rational enumeration, performed without executing or importing the
+proposer's verifier, together with quantitative and structural content that the
+announcement did not state. Our results: (i) the instance is confirmed, so
+Goemans' conjecture is false, and, the instance being acyclic, the
+Morell--Skutella cost conjecture and the convex-combination form fall with it;
+(ii) the instance forces a violation of exactly $\tfrac{16}{15}\dmax$, that is,
+the conjecture fails by ONE unit at $\dmax = 15$, so the open question whether
+cost-preserving rounding is possible with $O(\dmax)$ violation is untouched by
+it; (iii) every proved result in the area survives its direct test on the
+instance, including the Dinitz--Garg--Goemans theorem, the Morell--Skutella
+cost-free conjecture, the series-parallel theorem of Majthoub Almoghrabi,
+Skutella and Warode, and the planar theorem of Traub, Vargas Koch and
+Zenklusen; (iv) the instance contains a $K_4$ subdivision, hence sits exactly
+one structure outside the series-parallel class where the conjecture is proved,
+and, being planar, pins the planar constant strictly between 1 and 2; (v) an
+exact separation linear program shows that the published cost vector is an
+optimal separator for that graph and fractional flow, so its cost gap cannot be
+improved by any reweighting; and (vi) a first minimality result, that no
+single-terminal instance is a counterexample for any nonnegative cost vector,
+together with a necessary condition at two terminals. The verification is a
+replication; items (ii) and (iv)--(vi) are, to our knowledge, recorded here for
+the first time. A prediction of ours about two terminals was refuted by our own
+machine and is retracted in Section~\ref{sec:minimality}.
+\end{abstract}
+
+\section{The statement}
+
+Let $G = (V, A)$ be a digraph with a source $s$ and terminals $T$ carrying
+demands $d \in \mathbb{Q}_{\geq 0}^T$, and let $x \in \mathbb{Q}_{\geq 0}^A$ be
+a \emph{fractional flow} routing $d_t$ to each $t \in T$. An \emph{unsplittable
+flow} $\mathcal{P} = \{P^t\}_{t \in T}$ assigns one $s$--$t$ path per terminal,
+with arc load
+\[
+\flow^{\mathcal{P}}(a) \;=\; \sum_{t \in T \colon a \in P^t} d_t ,
+\qquad \dmax \;=\; \max_{t \in T} d_t .
+\]
+Throughout this literature the capacity of an arc is taken to be $x(a)$ itself,
+so violation is measured against the flow being rounded \cite{TVZ24}.
+
+\begin{theorem}[Dinitz, Garg, Goemans \cite{DGG99}]
+Every such instance admits, in polynomial time, an unsplittable flow with
+$\flow^{\mathcal{P}}(a) \le x(a) + \dmax$ for every arc $a$.
+\end{theorem}
+
+Call such a routing \emph{congestion-good}, and call it \emph{cost-good} for a
+cost vector $c \in \mathbb{Q}^A_{\geq 0}$ if
+$c^{\mathsf T}\flow^{\mathcal{P}} \le c^{\mathsf T} x$.
+
+\begin{namedconj}
+For every instance and every $c \ge 0$ there is an unsplittable flow that is
+simultaneously congestion-good and cost-good.
+\end{namedconj}
+
+Each condition alone is easy or known: congestion-goodness alone is the theorem
+above, and cost-goodness alone is achieved by routing every terminal on a
+cheapest path. The content of the conjecture is the simultaneity. Its status
+before 2026: proved when all demands are multiples of one another
+\cite{Sku02}; proved for series-parallel digraphs, in the stronger
+convex-combination form and with strict deviation below $\dmax$ \cite{MSW25};
+and known for planar graphs only at the doubled violation $2\dmax$
+\cite{TVZ24}. As of October 2025 the primary literature recorded that whether
+the conjecture holds even with $O(\dmax)$ violation ``remains wide open'' and
+that proving such a weaker form ``would already be considered a breakthrough''
+\cite{STVZ25}.
+
+\section{The instance}
+
+Vertices $\{s, u, v, w, t_1, t_2, t_3\}$, demands $d = (15, 10, 15)$ so
+$\dmax = 15$, and nine arcs:
+
+\begin{center}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+arc $a$ & $x_a$ & $c_a$ & $x_a + \dmax$\\
+\midrule
+$s \to t_1$ & 10 & 2 & 25\\
+$s \to t_2$ & 6 & 3 & 21\\
+$s \to u$ & 24 & 0 & 39\\
+$u \to t_3$ & 10 & 2 & 25\\
+$u \to v$ & 14 & 0 & 29\\
+$v \to t_1$ & 5 & 0 & 20\\
+$v \to w$ & 9 & 0 & 24\\
+$w \to t_2$ & 4 & 0 & 19\\
+$w \to t_3$ & 5 & 0 & 20\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The flow is feasible (conservation verified at all seven vertices) with
+$c^{\mathsf T} x = 2\cdot 10 + 3 \cdot 6 + 2 \cdot 10 = 58$.
+
+\section{Verification}
+
+\paragraph{Method and independence.} We wrote an exact checker from the
+conjecture statement as printed in \cite{STVZ25}. It models arcs by index, so
+parallel arcs are representable; it enumerates simple $s$--$t$ paths by its own
+depth-first search, never from a supplied list; it decides both conditions with
+inclusive inequalities in \texttt{fractions.Fraction} arithmetic, with floats
+refused by the instance constructor. It was calibrated first on instances whose
+answers are fixed by inspection, including a parallel-arc instance, an instance
+with a directed cycle, and an instance engineered to load an arc to exactly
+$x_a + \dmax$. The proposer's verifier was archived and hashed but never
+imported or executed, and the instance was re-entered by hand rather than
+parsed from their file, so that agreement is evidence rather than a shared-code
+artifact. The historical failure mode of candidate counterexamples in this area
+is incomplete path enumeration, so the path count is asserted, and the
+Dinitz--Garg--Goemans theorem is used as a per-instance oracle: an enumeration
+reporting no congestion-good routing would indicate an error in our data or
+code, never in the theorem.
+
+\paragraph{Result.} Each terminal has exactly two simple paths, an expensive
+direct choice $E_i$ and a free detour $Z_i$:
+\[
+E_1 = s t_1,\quad Z_1 = s\,u\,v\,t_1; \qquad
+E_2 = s t_2,\quad Z_2 = s\,u\,v\,w\,t_2; \qquad
+E_3 = s\,u\,t_3,\quad Z_3 = s\,u\,v\,w\,t_3 ,
+\]
+each $E_i$ costing exactly 30 when carrying its demand and each $Z_i$ costing
+zero. All eight routings:
+
+\begin{center}
+\begin{tabular}{@{}ccccclll@{}}
+\toprule
+$t_1$ & $t_2$ & $t_3$ & cost & $\alpha$ & status & violated arcs\\
+\midrule
+$E_1$ & $E_2$ & $E_3$ & 90 & $1/3$ & congestion-good & --\\
+$E_1$ & $E_2$ & $Z_3$ & 60 & $2/3$ & congestion-good & --\\
+$E_1$ & $Z_2$ & $E_3$ & 60 & $2/5$ & congestion-good & --\\
+$E_1$ & $Z_2$ & $Z_3$ & 30 & $16/15$ & cost-good only & $v \to w$ by 1\\
+$Z_1$ & $E_2$ & $E_3$ & 60 & $2/3$ & congestion-good & --\\
+$Z_1$ & $E_2$ & $Z_3$ & 30 & $16/15$ & cost-good only & $u \to v$ by 1\\
+$Z_1$ & $Z_2$ & $E_3$ & 30 & $16/15$ & cost-good only & $s \to u$ by 1\\
+$Z_1$ & $Z_2$ & $Z_3$ & 0 & $26/15$ & cost-good only & $s\to u$ by 1, $u \to v$ by 11, $v \to w$ by 1\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Here $\alpha$ denotes the least budget, in units of $\dmax$, at which the
+routing becomes congestion-good. The congestion-good and cost-good sets are
+disjoint.
+
+\begin{theorem}[machine-verified]
+For the instance above, no unsplittable flow satisfies both
+$\flow^{\mathcal{P}}(a) \le x(a) + \dmax$ for all $a$ and
+$c^{\mathsf T}\flow^{\mathcal{P}} \le c^{\mathsf T} x$. Goemans' conjecture is
+false.
+\end{theorem}
+
+\paragraph{An independent second route.} The same conclusion follows without
+costing the eight routings. Call two free choices \emph{in conflict} when every
+completion of the remaining terminal violates some arc bound. Then $Z_1 Z_3$
+conflict ($u \to v$ carries $30 > 29$), $Z_2 Z_3$ conflict ($v \to w$ carries
+$25 > 24$), and $Z_1 Z_2$ conflict ($s \to u$ carries $40 > 39$, because $t_3$
+enters through $s \to u$ on either of its paths). The conflict graph is a
+triangle, its independence number is 1, so every congestion-good routing pays
+for at least two expensive choices and costs at least $30 + 30 = 60 > 58$. Our
+implementation computes the conflict graph and this bound in code independent of
+the enumeration, and the two agree.
+
+\paragraph{The mechanism is a stable-set gap.} Writing $\rho_i$ for the fraction
+of terminal $i$'s demand that the fractional flow sends on its free choice,
+\[
+\rho \;=\; \left(\tfrac{5}{15}, \tfrac{4}{10}, \tfrac{5}{15}\right)
+\;=\; \left(\tfrac13, \tfrac25, \tfrac13\right), \qquad
+\textstyle\sum_i \rho_i \;=\; \tfrac{16}{15} \;>\; 1 .
+\]
+A congestion-good routing selects an independent set of the conflict graph and
+so buys at most one unit of free routing, while the fractional flow buys
+$16/15$. The instance is the linear-programming integrality gap of the
+stable-set polytope on a triangle, transported into flow language, with the arc
+costs acting as a nonnegative separator of the violated triangle inequality.
+
+\section{How much is actually forced}
+
+Define, for an instance, $\alpha_{\mathrm{inst}}$ as the least
+$\alpha$ such that some cost-good routing satisfies
+$\flow^{\mathcal{P}}(a) \le x(a) + \alpha\dmax$ everywhere.
+
+\begin{proposition}[machine-verified]
+For the instance above, $\alpha_{\mathrm{inst}} = 16/15$.
+\end{proposition}
+
+In absolute terms, a cost-preserving rounding of this instance needs 16 units of
+slack on one arc where the conjecture allows 15: the conjecture is refuted by
+one unit. Consequently the instance says nothing about the question the
+literature identifies as the real target, namely whether a cost-good routing
+always exists within $x + O(\dmax)$; the only known upper bound remains 2, for
+planar graphs \cite{TVZ24}, and no finite bound is known in general. We stress
+this because the distinction is easily lost: refuting the constant 1 and
+refuting $O(\dmax)$ are very different statements, and only the former has
+happened.
+
+\section{Consistency with everything proved, and the class boundary}
+
+A counterexample must contradict no theorem. We tested each proved result
+directly on the instance; all pass.
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Result & Test & Outcome\\
+\midrule
+Dinitz--Garg--Goemans \cite{DGG99} & a congestion-good routing exists & 4 exist\\
+Morell--Skutella cost-free \cite{MS22} & some routing meets $x \pm \dmax$ & 4 witnesses\\
+Conjecture 1.5 and planar \cite{TVZ24} & cost-good within $2\dmax$ & witnesses exist\\
+Skutella \cite{Sku02} & demands not all multiples & $\{10, 15\}$\\
+Majthoub Almoghrabi et al.\ \cite{MSW25} & not series-parallel & $K_4$ subdivision\\
+Two-layer case \cite{TVZ24} & not a two-layer network & longest path 4 arcs\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Two consequences deserve statement. First, since the digraph is acyclic
+(verified), any routing satisfying the Morell--Skutella cost conjecture
+(Conjecture 1.4 of \cite{STVZ25}) would satisfy Goemans' conclusion, so that
+conjecture is false as well; and if $x$ were a convex combination of
+congestion-good unsplittable loads $y_i$, then $\min_i c^{\mathsf T} y_i \le
+c^{\mathsf T} x$ would give a congestion-good routing of cost at most 58, so the
+convex-combination form \cite{MSS07,MSW25} is false too. The cost-free
+conjecture (Conjecture 1.3) is untouched, and with it Theorem 1.6 of
+\cite{STVZ25}, which makes the cost-free statement the live route to a $2\dmax$
+cost result.
+
+Second, the branch vertices $\{s, u, v, w\}$ carry six internally disjoint
+connecting paths, so the underlying graph contains a $K_4$ subdivision.
+Series-parallel digraphs are $K_4$-minor-free, and the conjecture is proved for
+them \cite{MSW25}. The counterexample therefore sits exactly one structure past
+the class where the statement holds. Moreover the graph has no vertex of degree
+4 or more and only four vertices of degree 3, so by Kuratowski's theorem it is
+planar with no embedding computation; since \cite{TVZ24} proves the cost
+statement for planar graphs at $2\dmax$, the planar constant lies strictly
+between 1 and 2.
+
+\section{The separation LP, and the optimality of the published prices}
+
+Let $\mathcal{U}(x)$ be the set of loads of congestion-good routings: finite,
+nonempty by \cite{DGG99}, and independent of $c$. An instance admits some
+nonnegative cost vector making it a counterexample precisely when
+\[
+\text{(SEP)}\qquad
+\max\ \delta \quad \text{s.t.} \quad
+c^{\mathsf T}(y - x) \ge \delta \ \ \forall y \in \mathcal{U}(x), \qquad
+\textstyle\sum_a c_a = 1, \qquad c \ge 0
+\]
+has optimum $\delta^\star > 0$. (If $\delta^\star > 0$ with witness $c$, every
+congestion-good routing costs more than $x$; conversely a witnessing $c \neq 0$
+has $\min_y c^{\mathsf T}(y-x) > 0$ over a finite nonempty set, and rescaling by
+$1/\sum_a c_a$ gives a feasible point with positive objective.) We solve (SEP)
+in exact rational arithmetic.
+
+\begin{proposition}[machine-verified]
+For the instance above, $\delta^\star = 2/7$, attained by
+$c = \tfrac17(2, 3, 0, 2, 0, 0, 0, 0, 0)$, which is the published cost vector
+normalised.
+\end{proposition}
+
+Hence the published prices are an optimal separator for that graph and
+fractional flow: no reweighting of the arcs produces a larger normalised gap,
+and the 58-versus-60 separation is the best that instance can do. Practically,
+(SEP) removes the cost vector from any future search: an exhaustive hunt ranges
+over graphs, demands and fractional flows only, with one exact linear program
+per instance.
+
+\section{Minimality, and a retraction}
+\label{sec:minimality}
+
+\begin{theorem}
+No single-terminal instance is a counterexample, for any nonnegative cost
+vector.
+\end{theorem}
+
+\begin{proof}
+With $T = \{t\}$ and demand $d$ we have $\dmax = d$. Any routing loads its
+chosen path with $d$ and the rest with 0, and $d \le x_a + d$ holds on every arc
+because $x_a \ge 0$, so every routing is congestion-good. The flow $x$ has value
+$d$ from $s$ to $t$, hence decomposes into $s$--$t$ paths of total weight $d$
+plus circulations of nonnegative cost; each path costs at least the cheapest
+path cost $\gamma$, so $c^{\mathsf T} x \ge d\gamma$, which is the cost of
+routing on a cheapest path. That routing is therefore congestion-good and
+cost-good.
+\end{proof}
+
+\begin{remark}[retraction]
+In an earlier internal record we asserted, as a derivation, that no
+counterexample exists with at most two terminals, on the grounds that a conflict
+graph on at most two nodes has no odd cycle. That argument is invalid: a
+terminal may have many path choices, so the conflict graph need not have two
+nodes, and the step from an integral stable-set polytope to the absence of a
+separating nonnegative cost vector was asserted rather than proved. We flagged
+the claim as suspect in the declared hypothesis of the experiment that tested
+it, and we withdraw it here. The two-terminal case is open.
+\end{remark}
+
+What does hold at two terminals, and in fact for any number of terminals in its
+first half:
+
+\begin{proposition}
+Routing every terminal on a cheapest path is always cost-good. With two
+terminals, that routing is congestion-good if and only if every arc lying on
+both cheapest paths carries $x_a \ge \min(d_1, d_2)$. Consequently any
+two-terminal counterexample contains an arc on both cheapest paths with
+$x_a < \min(d_1, d_2)$.
+\end{proposition}
+
+\begin{proof}
+Cost-goodness follows by applying the decomposition argument of the theorem to
+each per-terminal flow in a decomposition $x = \sum_i x^i$. For the second part,
+an arc used by exactly one of the two paths carries at most $\dmax \le x_a +
+\dmax$; a shared arc carries $d_1 + d_2$, and $d_1 + d_2 \le x_a + \max(d_1,
+d_2)$ is exactly $x_a \ge \min(d_1, d_2)$.
+\end{proof}
+
+We swept 184 two-terminal instances with a shared spine and two choices per
+terminal, over four demand pairs, every integer split of each demand, and four
+cost pairs, solving (SEP) exactly on each: none admits any nonnegative cost
+vector making it a counterexample, and the characterisation above held on every
+one. This is evidence over a bounded box, not a proof, and we state it as such.
+
+\section{What remains open}
+
+The refutation settles the constant 1 and leaves the quantitative question
+essentially untouched. Writing $\alpha^\star$ for the least $\alpha$ such that
+every instance admits a cost-good routing within $x + \alpha\dmax$, the record
+after this work is $\alpha^\star \ge 16/15$ and, for planar instances,
+$\alpha^\star_{\mathrm{planar}} \le 2$; in general no finite upper bound is
+known. Three concrete questions follow. Can the conflict-triangle mechanism be
+extended to longer odd cycles or to conflict cliques, whose stable-set gaps are
+larger, and does flow structure permit the corresponding instances? What is the
+minimum size of a counterexample in terminals, vertices and arcs? And does the
+equality $\sum_i \rho_i = \alpha_{\mathrm{inst}} = 16/15$ observed here reflect
+a general relation between the stable-set violation and the forced violation
+budget, or is it a coincidence of this instance's calibration? We record it as
+undecided.
+
+\section*{Provenance and scope}
+
+The counterexample instance is not ours. It was announced publicly on 22--23
+July 2026, attributed to D.\ Rybin working with a large language model, and was
+supplied to this programme as a file bundle which we archived with SHA-256
+hashes. What is ours is the independent exact verification, the quantitative
+constant $16/15$, the consistency battery against the proved results, the $K_4$
+and planarity placements, the separation-LP optimality statement, the
+single-terminal theorem, the two-terminal characterisation, and the retraction
+recorded above. We make no claim about priority or attribution, which are not
+mathematical facts, and we take no position on how the community will receive
+the announcement. Every computation is exact and reproducible from the committed
+code; hypotheses were declared and committed before each run, and the verdicts,
+including the refuted prediction, are part of the public record.
+
+\begin{thebibliography}{9}
+
+\bibitem{DGG99} Y.\ Dinitz, N.\ Garg, M.\ X.\ Goemans,
+\emph{On the single-source unsplittable flow problem},
+Combinatorica \textbf{19}(1) (1999) 17--41.
+\doi{10.1007/s004930050043}
+
+\bibitem{Sku02} M.\ Skutella,
+\emph{Approximating the single source unsplittable min-cost flow problem},
+Mathematical Programming \textbf{91} (2002).
+
+\bibitem{MSS07} M.\ Martens, F.\ Salazar, M.\ Skutella,
+\emph{Convex combinations of single source unsplittable flows},
+ESA 2007. \href{https://doi.org/10.1007/978-3-540-75520-3\_36}{doi:10.1007/978-3-540-75520-3\_36}
+
+\bibitem{MS22} A.\ Morell, M.\ Skutella,
+\emph{Single source unsplittable flows with arc-wise lower and upper bounds},
+Mathematical Programming (2022).
+
+\bibitem{TVZ24} V.\ Traub, L.\ Vargas Koch, R.\ Zenklusen,
+\emph{Single-source unsplittable flows in planar and bounded-genus graphs},
+Mathematical Programming (2026); preprint arXiv:2308.02651.
+\doi{10.1007/s10107-026-02365-x}
+
+\bibitem{MSW25} M.\ Majthoub Almoghrabi, M.\ Skutella, P.\ Warode,
+\emph{Integer and unsplittable multiflows in series-parallel digraphs},
+IPCO 2025; Mathematical Programming (2026); preprint arXiv:2412.05182.
+\doi{10.1007/s10107-026-02392-8}
+
+\bibitem{STVZ25} C.\ Swamy, V.\ Traub, L.\ Vargas Koch, R.\ Zenklusen,
+\emph{Unsplittable cost flows from unweighted error-bounded variants},
+preprint arXiv:2510.21287 (2025).
+\doi{10.48550/arXiv.2510.21287}
+
+\end{thebibliography}
+
+\end{document}

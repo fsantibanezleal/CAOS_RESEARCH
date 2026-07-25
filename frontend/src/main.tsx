@@ -47,12 +47,12 @@ const config: ShellConfig = {
   architecture: ARCHITECTURE,
   footer: {
     provenance: {
-      en: 'Sources: primary literature (DOI/arXiv linked inline) and the repository experiment records EXP-001..012; every number on this site is baked from a persisted, hash-manifested artifact. Engines: sympy over exact rationals offline; the site itself computes nothing.',
-      es: 'Fuentes: literatura primaria (DOI/arXiv enlazados en linea) y los registros de experimentos EXP-001..012 del repositorio; cada numero de este sitio se hornea desde un artefacto persistido con manifiesto de hash. Motores: sympy sobre racionales exactos offline; el sitio no calcula nada.',
+      en: 'Sources: primary literature (DOI/arXiv linked inline) and the repository experiment records of both open problems; every number on this site is baked from a persisted, hash-manifested artifact. Engines, all offline: sympy over exact rationals, msolve for certified real solving, and gfan for the polyhedral and tropical computations; the site itself computes nothing.',
+      es: 'Fuentes: literatura primaria (DOI/arXiv enlazados en linea) y los registros de experimentos de ambos problemas abiertos; cada numero de este sitio se hornea desde un artefacto persistido con manifiesto de hash. Motores, todos offline: sympy sobre racionales exactos, msolve para resolucion real certificada y gfan para las computaciones poliedrales y tropicales; el sitio no calcula nada.',
     },
     disclaimer: {
-      en: 'A research record, not a peer-reviewed venue: verdicts are labeled machine-verified, derived or conjecture, refuted attempts stay in the record, and open questions are stated as open. The Jacobian conjecture remains open in dimension 2.',
-      es: 'Un registro de investigacion, no un medio con revision por pares: los veredictos se etiquetan como verificados a maquina, derivados o conjetura, los intentos refutados quedan en el registro y las preguntas abiertas se declaran abiertas. La conjetura jacobiana sigue abierta en dimension 2.',
+      en: 'A research record, not a peer-reviewed venue: verdicts are labeled machine-verified, derived or conjecture, refuted attempts stay in the record, and open questions are stated as open. The Jacobian conjecture remains open in dimension 2, and Smale’s 6th problem remains open from six bodies on; results replicated from the literature are labeled as replications.',
+      es: 'Un registro de investigacion, no un medio con revision por pares: los veredictos se etiquetan como verificados a maquina, derivados o conjetura, los intentos refutados quedan en el registro y las preguntas abiertas se declaran abiertas. La conjetura jacobiana sigue abierta en dimension 2, y el sexto problema de Smale sigue abierto desde seis cuerpos; los resultados replicados de la literatura se etiquetan como replicaciones.',
     },
   },
 };

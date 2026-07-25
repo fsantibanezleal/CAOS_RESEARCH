@@ -1,0 +1,88 @@
+EXP-001: exact SSUF instance checker (calibration)
+==============================================================
+
+### V1: V1 one terminal, direct expensive path versus free detour
+  d_max = 2   c^T x = 5
+  paths per terminal: {'t': 2}
+    cost=10 alpha=1/2 [congestion-good] t: s -> t
+    cost=0 alpha=1/2 [congestion-good, cost-good] t: s -> a -> t
+  congestion-good routings: 2; min cost among them: 0; alpha_instance: 1/2
+  [PASS] P1 V1 path counts  ({'t': 2})
+  [PASS] P2 V1 routing count  (2)
+  [PASS] P4 V1 a congestion-good routing exists (DGG floor)
+  [PASS] P5 V1 a congestion-good AND cost-good routing exists
+  [PASS] P5 V1 minimum congestion-good cost  (0)
+  [PASS] P8 V1 every reported quantity is an exact Fraction
+
+### V2: V2 parallel arcs (a checker keyed on vertex pairs sees only one path)
+  d_max = 2   c^T x = 7
+  paths per terminal: {'t': 2}
+    cost=0 alpha=1/2 [congestion-good, cost-good] t: s -> t
+    cost=14 alpha=1/2 [congestion-good] t: s -> t
+  congestion-good routings: 2; min cost among them: 0; alpha_instance: 1/2
+  [PASS] P1 V2 path counts  ({'t': 2})
+  [PASS] P2 V2 routing count  (2)
+  [PASS] P4 V2 a congestion-good routing exists (DGG floor)
+  [PASS] P5 V2 a congestion-good AND cost-good routing exists
+  [PASS] P5 V2 minimum congestion-good cost  (0)
+  [PASS] P8 V2 every reported quantity is an exact Fraction
+
+### V3: V3 congestion never binds; rational fractional loads
+  d_max = 1   c^T x = 2
+  paths per terminal: {'t': 2}
+    cost=1 alpha=1/2 [congestion-good, cost-good] t: s -> a -> t
+    cost=3 alpha=1/2 [congestion-good] t: s -> b -> t
+  congestion-good routings: 2; min cost among them: 1; alpha_instance: 1/2
+  [PASS] P1 V3 path counts  ({'t': 2})
+  [PASS] P2 V3 routing count  (2)
+  [PASS] P4 V3 a congestion-good routing exists (DGG floor)
+  [PASS] P5 V3 a congestion-good AND cost-good routing exists
+  [PASS] P5 V3 minimum congestion-good cost  (1)
+  [PASS] P8 V3 every reported quantity is an exact Fraction
+
+### V4: V4 a routing that loads an arc to exactly x_a + d_max
+  d_max = 1   c^T x = 0
+  paths per terminal: {'t1': 2, 't2': 1}
+    cost=0 alpha=0 [congestion-good, cost-good] t1: s -> u -> t1 | t2: s -> u -> t2
+    cost=0 alpha=1 [congestion-good, cost-good] t1: s -> u -> m -> t1 | t2: s -> u -> t2
+  congestion-good routings: 2; min cost among them: 0; alpha_instance: 0
+  [PASS] P1 V4 path counts  ({'t1': 2, 't2': 1})
+  [PASS] P2 V4 routing count  (2)
+  [PASS] P4 V4 a congestion-good routing exists (DGG floor)
+  [PASS] P5 V4 a congestion-good AND cost-good routing exists
+  [PASS] P5 V4 minimum congestion-good cost  (0)
+  [PASS] P8 V4 every reported quantity is an exact Fraction
+
+### V5: V5 V1 plus a directed cycle: enumeration must still terminate
+  d_max = 2   c^T x = 5
+  paths per terminal: {'t': 3}
+    cost=10 alpha=1/2 [congestion-good] t: s -> t
+    cost=0 alpha=1/2 [congestion-good, cost-good] t: s -> a -> t
+    cost=0 alpha=1 [congestion-good, cost-good] t: s -> a -> p -> q -> t
+  congestion-good routings: 3; min cost among them: 0; alpha_instance: 1/2
+  [PASS] P1 V5 path counts  ({'t': 3})
+  [PASS] P2 V5 routing count  (3)
+  [PASS] P4 V5 a congestion-good routing exists (DGG floor)
+  [PASS] P5 V5 a congestion-good AND cost-good routing exists
+  [PASS] P5 V5 minimum congestion-good cost  (0)
+  [PASS] P8 V5 every reported quantity is an exact Fraction
+
+### P3 feasibility is actually checked (negative control)
+  corrupted instance rejected: conservation fails at s: divergence 3, expected 2
+  [PASS] P3 an infeasible flow is rejected
+  [PASS] P3 the valid instances are accepted
+
+### P6 boundary inclusivity on V4
+  [PASS] P6 the through-m routing exists
+  [PASS] P6 it loads u->m to exactly x + d_max and is congestion-good  (load 1 vs bound 1)
+
+### P7 cycles: termination and acyclicity detection
+  [PASS] P7 V5 path count equals 3 and enumeration terminated
+  [PASS] P7 acyclicity: True on V1-V4, False on V5
+
+### P8 exactness: floats are refused at the door and absent from the code
+  [PASS] P8 a float demand is refused by the constructor
+  [PASS] P8 no float literals in ufclib or in this experiment
+
+==============================================================
+EXP-001: all predictions P1-P8 hold. Checker adopted as ground truth.

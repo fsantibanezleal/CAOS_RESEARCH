@@ -11,6 +11,7 @@ from itertools import combinations, permutations, product as iproduct
 import sympy as sp
 
 __all__ = [
+    "dziobek4",
     "rvar", "ac_symmetric", "ac_asymmetric", "e_iu", "cayley_menger_planar4",
     "strip_monomial_factors", "support_profile", "grevlex_pure_power_zero_dim",
     "census_positive", "u_i_j_invariants",
@@ -76,6 +77,29 @@ def e_iu(n: int, masses):
         U += masses[i - 1] * masses[j - 1] / rvar(i, j)
         Isum += masses[i - 1] * masses[j - 1] * rvar(i, j) ** 2
     return _cleared(U - Isum)
+
+
+def dziobek4():
+    """Cleared Dziobek equations for the PLANAR NONCOLLINEAR four-body problem.
+
+    Hampton-Moeckel (2006), Section 2.2, equation (12): for a planar noncollinear
+    relative equilibrium the four triangle areas are nonzero (perpendicular-bisector
+    theorem) and
+
+        S_12 S_34 = S_13 S_24 = S_14 S_23,     S_ij = r_ij^{-3} - 1.
+
+    Returned symmetrized as the three differences, cleared of denominators, as HM06
+    do to keep the S_4 action manifest. Valid only on the noncollinear stratum: a
+    certificate obtained with these equations covers the noncollinear part, while
+    the n!/2 collinear classes are classical (Moulton).
+    """
+    def S(i, j):
+        return rvar(i, j) ** -3 - 1
+
+    a = S(1, 2) * S(3, 4)
+    b = S(1, 3) * S(2, 4)
+    c = S(1, 4) * S(2, 3)
+    return {"h_ab": _cleared(a - b), "h_bc": _cleared(b - c), "h_ac": _cleared(a - c)}
 
 
 def cayley_menger_planar4():

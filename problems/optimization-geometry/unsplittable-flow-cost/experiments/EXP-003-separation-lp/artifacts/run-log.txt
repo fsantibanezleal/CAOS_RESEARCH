@@ -1,0 +1,57 @@
+EXP-003: the separation LP and the first minimality rungs
+==================================================================
+
+### G2 the 2026 instance: does ANY nonnegative cost vector break it?
+  congestion-good routings: 4
+  (SEP) optimum: 2/7
+  witness c (normalised, sum 1): ['2/7', '3/7', '0', '2/7', '0', '0', '0', '0', '0']
+  [PASS] G1 the LP returned an exact rational optimum
+  [PASS] G2 the optimum is strictly positive  (2/7)
+  [PASS] G2 the optimum is at least 2/7 (the published cost vector certifies that much)  (2/7)
+  [PASS] G2 the instance admits a counterexample cost vector
+
+### G4 round trip: feed the LP witness back into the checker
+  under the witness costs: c^T x = 58/7, min congestion-good cost = 60/7
+  [PASS] G4 the witness makes the instance a counterexample in ufclib too
+  [PASS] G4 the cost gap equals the LP optimum  (gap 2/7 vs optimum 2/7)
+
+### G3 the validation set: no cost vector can break V1-V5
+  V1: (SEP) optimum = 0
+  [PASS] G3 V1 optimum <= 0  (0)
+  V2: (SEP) optimum = 0
+  [PASS] G3 V2 optimum <= 0  (0)
+  V3: (SEP) optimum = 0
+  [PASS] G3 V3 optimum <= 0  (0)
+  V4: (SEP) optimum = 0
+  [PASS] G3 V4 optimum <= 0  (0)
+  V5: (SEP) optimum = 0
+  [PASS] G3 V5 optimum <= 0  (0)
+
+### G5 minimality rung 1: no single-terminal instance is a counterexample
+  [PASS] G5 every routing is congestion-good (single terminal d=1, cheap cost 0)
+  [PASS] G5 (SEP) optimum <= 0 (single terminal d=1, cheap cost 0)  (0)
+  [PASS] G5 every routing is congestion-good (single terminal d=1, cheap cost 1)
+  [PASS] G5 (SEP) optimum <= 0 (single terminal d=1, cheap cost 1)  (0)
+  [PASS] G5 every routing is congestion-good (single terminal d=3, cheap cost 0)
+  [PASS] G5 (SEP) optimum <= 0 (single terminal d=3, cheap cost 0)  (0)
+  [PASS] G5 every routing is congestion-good (single terminal d=3, cheap cost 1)
+  [PASS] G5 (SEP) optimum <= 0 (single terminal d=3, cheap cost 1)  (0)
+  [PASS] G5 every routing is congestion-good (single terminal d=7, cheap cost 0)
+  [PASS] G5 (SEP) optimum <= 0 (single terminal d=7, cheap cost 0)  (0)
+  [PASS] G5 every routing is congestion-good (single terminal d=7, cheap cost 1)
+  [PASS] G5 (SEP) optimum <= 0 (single terminal d=7, cheap cost 1)  (0)
+  6 single-terminal instances, all obey the conjecture
+
+### G6 the k=2 characterisation and the family sweep
+  [PASS] G6 the all-cheapest routing is always cost-good, and the shared-arc characterisation of its congestion-goodness holds on every instance
+  [PASS] G6 no two-terminal counterexample in the swept family
+  184 two-terminal instances swept, none admits any nonnegative cost vector making it a counterexample
+
+### G7 honest scope
+  The k=1 result is a THEOREM (proved in the verdict, machine-checked here).
+  The k=2 sweep is EVIDENCE over a bounded parameter box, not a proof; the
+  necessary condition it establishes (a shared arc on the two cheapest paths
+  carrying x_a < min(d1, d2)) is what a real k=2 exhaustion must target.
+
+==================================================================
+EXP-003: all predictions G1-G7 hold.
