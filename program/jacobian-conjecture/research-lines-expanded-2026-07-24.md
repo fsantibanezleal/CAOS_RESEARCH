@@ -61,3 +61,15 @@ fibres (Abhyankar-Moh-Suzuki). Known connections, now mapped. This makes the
 recognition lens (dim-2 classification is strong) the through-line uniting EXP-089/090
 (incidence recognition) and EXP-091 (LND recognition). Priority next: EXP-092 (fibre
 geometry of the reduced (72,108) pair) and securing the two classification sources.
+
+## REFRAME (2026-07-24, post-audit): what the corrections change
+The finite-ceiling withdrawal and the one-sidedness correction remove the
+possibility that the truncation ladder terminates the campaign by itself.
+Ranking after the reframe:
+1. EXP-093 (R2 constructive degree-3 solve) - the ONLY route to a positive
+   degree-3 answer; needs a real GF(p) sparse solver (S5a engineering first).
+2. EXP-079 (connection/regularity) - the only route to a DEGREE-UNIFORM statement,
+   in either direction; decides whether a finite bound can exist at all.
+3. EXP-080 (sl2) - could predict obstruction locations, replacing sweeps.
+4. EXP-084/085 (frontier forcings) - cheap, independent, concrete map progress.
+5. EXP-075 quadruple sweep - DEMOTED to a background lottery; cannot ever confirm.

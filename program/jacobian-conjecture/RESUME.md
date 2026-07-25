@@ -115,6 +115,36 @@ the standing decision rule: every new experiment names its route).
    never from memory.
    THE LIVE ROUTE after session 45: degrees 1-2 CLOSED; degree 3 OPEN through the
    triple tier (EXP-073: all 20825 feasible, gate green); R3 vacuous (EXP-074).
+   REFRAMED PLAN (2026-07-24, after the EXP-078 scrutiny + manuscript claims audit).
+   TWO corrections changed what the sweeps can deliver:
+   (i) NO a priori degree ceiling exists (the Krylov bound presupposed a
+       termination EXP-064 measured to fail). The truncation tower is NOT a finite
+       decision procedure.
+   (ii) The support-restricted sweeps are ONE-SIDED: an infeasible support refutes
+       a degree; all supports passing proves NOTHING. So no sweep can ever close
+       degree 3 positively.
+   CONSEQUENCES FOR THE QUEUE (this is the reframe):
+   - DEMOTED: the degree-3 quadruple sweep (EXP-075). It is now a refutation
+     lottery only, at ~3.4 s/support over 249900 supports. Keep it as a cheap
+     background lottery IF the compiled GF(p) kernel (S5a) lands; do NOT invest
+     more session time in it otherwise. It cannot produce a positive result.
+   - PROMOTED to primary: the CONSTRUCTIVE route R2 (EXP-093) - attempt to BUILD
+     a degree-3 covector by solving the full joint order-4 system mod p (227k+
+     gauge unknowns) with a sparse/blocked GF(p) solver. This is the ONLY path to
+     a positive answer at degree 3, and a success would be the floor-raise
+     certificate (statement TO FELIPE, exact confirmation staged).
+   - PROMOTED: the structural routes that could yield a DEGREE-UNIFORM statement,
+     since degree-by-degree can no longer terminate on its own: EXP-079 (the
+     annihilation lemma as a connection; regular-singular vs irregular decides
+     whether ANY finite bound exists) and EXP-080 (sl2/weight decomposition
+     predicting obstruction locations instead of sweeping for them).
+   - UNCHANGED and cheap: the frontier forcings EXP-084/085 (reconcile the
+     GGV5-vs-GGV2 A0' notions for C10/C11/C19/C20; batch the 16 unprinted A0'
+     derivations). These give concrete [125,150] map progress independent of the
+     truncation question.
+   - NOTE on the two-sided reading: with no ceiling, "no covector at any degree"
+     is no longer machine-decidable, so the counterexample-skeleton reading needs
+     a STRUCTURAL proof (EXP-079), not an exhausted search.
    LENSES LEDGER (methodology/10, per-problem tool ledger): EXCLUSION (spine:
    theorem ladder + truncation sweeps, floor progress); INVARIANT (units killed the
    dim-2 incidence variety, EXP-089); ANATOMY (the 2026 counterexample = incidence /
