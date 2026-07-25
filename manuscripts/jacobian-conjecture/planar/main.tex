@@ -23,7 +23,7 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-24 (working manuscript, v0.11; withdraws the finite-ceiling claim (EXP-078))}
+\date{2026-07-24 (working manuscript, v0.12; corrections pass: finite-ceiling claim withdrawn, obstruction-persistence corrected)}
 
 \begin{document}
 \maketitle
@@ -409,9 +409,14 @@ two independent primes, hence over $\mathbb{Q}$); and \textbf{no covector of
 degree $2$} (EXP-072; the support $\{(0,1),(1,0),(3,5)\}$ obstructs, again
 conclusive modulo two primes). At degree $3$ no obstruction is found through the
 pair and all triple supports (EXP-071, EXP-073); the quadruple tier and a
-constructive solve are in progress. The obstruction \emph{moves} with the degree
-(diagonal at degree one, a mixed support at degree two), which is itself
-structural data.
+constructive solve are in progress, subject to the one-sidedness noted below. The
+obstruction \emph{persists} rather than migrating: the degree-two obstructing
+support $\{(0,1),(1,0),(3,5)\}$ contains two of the eight operators that already
+obstruct at degree one, and what grows is the support size needed to expose it
+(single operators at degree one, a triple at degree two). An earlier revision of
+this manuscript reported instead that the obstruction \emph{moves} to an unrelated
+mixed pair; that reading rested on the retracted computation described next and is
+corrected here.
 
 \emph{An honesty note (EXP-070, retracted).} A first ``degree $2$ closed'' result
 was withdrawn: its modular assembly reduced rationals by integer truncation, and a
@@ -448,10 +453,10 @@ that none exists at any degree would be the first step of a counterexample.
 \emph{A lead toward a degree-uniform statement.} Written as a connection, the
 annihilation lemma makes the covector obstruction a first cohomology class, and
 termination of the corrector ladder becomes the regularity type of that connection
-(regular singular: the ladder terminates and the ceiling is structural; irregular:
-the obstruction's motion with degree is a Stokes phenomenon). Whether this decides
-$(72,108)$ in one stroke is the current deep question; it is stated as a program
-item, not a result.
+(regular singular: the ladder terminates and a structural degree bound follows;
+irregular: no such bound, matching the measured non-termination of the pinned
+ladder). Whether this decides $(72,108)$ in one stroke is the current deep
+question; it is stated as a program item, not a result.
 
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the
