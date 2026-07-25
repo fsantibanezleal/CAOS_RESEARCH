@@ -258,15 +258,22 @@ def main() -> None:
         refused = True
     check("P8 a float demand is refused by the constructor", refused)
 
+    # The scan allows exactly one kind of exception, marked in the source with
+    # "float-literal-ok" on the preceding line: the negative controls whose purpose is to
+    # feed a float and observe that it is refused. Any other float literal fails the run.
     float_literals: list[str] = []
     sources = sorted((PROBLEM_ROOT / "code" / "ufclib").glob("*.py")) + [Path(__file__)]
     for path in sources:
         text = path.read_text(encoding="utf-8")
+        lines = text.splitlines()
         for tok in tokenize.generate_tokens(io.StringIO(text).readline):
             if tok.type == tokenize.NUMBER and (
                 "." in tok.string or "e" in tok.string.lower()
             ):
-                float_literals.append(f"{path.name}:{tok.start[0]} {tok.string}")
+                row = tok.start[0]
+                allowed = row >= 2 and "float-literal-ok" in lines[row - 2]
+                if not allowed:
+                    float_literals.append(f"{path.name}:{row} {tok.string}")
     check(
         "P8 no float literals in ufclib or in this experiment",
         not float_literals,

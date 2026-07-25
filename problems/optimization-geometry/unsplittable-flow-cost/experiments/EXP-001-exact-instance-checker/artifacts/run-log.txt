@@ -82,4 +82,7 @@ EXP-001: exact SSUF instance checker (calibration)
 
 ### P8 exactness: floats are refused at the door and absent from the code
   [PASS] P8 a float demand is refused by the constructor
-  [FAIL] P8 no float literals in ufclib or in this experiment  (run.py:255 1.0)
+  [PASS] P8 no float literals in ufclib or in this experiment
+
+==============================================================
+EXP-001: all predictions P1-P8 hold. Checker adopted as ground truth.
