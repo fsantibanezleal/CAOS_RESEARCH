@@ -1,92 +1,81 @@
-# Base review: the Dinitz-Garg-Goemans / Goemans unsplittable-flow COST conjecture
+# Statement: the Goemans / Dinitz-Garg-Goemans unsplittable-flow COST conjecture
 
-Dated 2026-07-24. Source-anchored first pass (methodology/01: research before plan).
-Labels: [VERIFIED] = stated in a primary/peer-reviewed source read directly;
-[CLAIMED] = asserted in a non-peer-reviewed source, NOT yet independently checked;
-[UNVERIFIED] = our reading, needs a source.
+Dated 2026-07-24. Statement-only dossier (deliberately scoped: no resolution
+status, no literature verdicts beyond the two anchors below, so that the
+exploration is unbiased). Labels: [VERIFIED] = read directly in a primary source;
+[TO FETCH] = named source not yet read.
 
 ## 1. The setting
 
-Single-source unsplittable flow. A digraph with a single source s, terminals t_i
-with demands d_i, arc capacities, and nonnegative arc costs c_a. A fractional flow
-x meets all demands within capacity. An UNSPLITTABLE routing y sends each
-terminal's whole demand along ONE s-t_i path.
+Single-source unsplittable flow. Let G be a digraph with:
+- a single source s;
+- terminals t_1, ..., t_k with demands d_1, ..., d_k;
+- arc capacities u_a >= 0;
+- arc costs c_a >= 0.
 
-D := max_i d_i (the maximum demand).
+A FRACTIONAL flow x routes every demand d_i from s to t_i, respecting capacities
+(x_a <= u_a on every arc); flow may split across several paths.
 
-## 2. The theorem (settled) [VERIFIED]
+An UNSPLITTABLE routing y sends each terminal's ENTIRE demand d_i along a single
+s-t_i path. Write D := max_i d_i for the maximum demand.
 
-Dinitz, Garg, Goemans: whenever a fractional flow exists respecting the
+## 2. The background theorem [VERIFIED]
+
+Dinitz, Garg and Goemans: whenever a fractional flow exists respecting the
 capacities, there is an unsplittable one violating the capacities by at most the
-maximum demand. Source: restated verbatim in arXiv:2308.02651 (Single-Source
-Unsplittable Flows in Planar Graphs), which we read directly. Original:
-Dinitz-Garg-Goemans, "On the single-source unsplittable flow problem"
-(FOCS 1998 / Combinatorica 1999) - PRIMARY NOT YET FETCHED, queued.
+maximum demand.
 
-Call a routing CONGESTION-GOOD if y_a <= x_a + D on every arc.
+(Stated verbatim in arXiv:2308.02651, which we read directly. Original source:
+Dinitz-Garg-Goemans, "On the single-source unsplittable flow problem", FOCS 1998 /
+Combinatorica 19(1), 1999. [TO FETCH])
 
-## 3. The conjecture (the target) [VERIFIED as a statement and as open-in-2023]
+Definition. Given the fractional flow x, call an unsplittable routing y
+CONGESTION-GOOD if
+        y_a <= x_a + D    on every arc a.
+The theorem says a congestion-good routing always exists.
 
-Goemans' cost version: is there always an unsplittable routing that is
-simultaneously congestion-good AND cost-good, i.e. c^T y <= c^T x, for every
-nonnegative cost vector c?
+## 3. THE CONJECTURE (the target of this problem)
 
-arXiv:2308.02651 (2023) describes it as "a very natural cost version of the same
-result, where the unsplittable flow is required to be no more expensive than the
-fractional one", states it "remains open", and notes there are "arguably no
-non-trivial graph classes for which it is known to hold". That paper's own
-contribution is a WEAKENED planar version (violations at most twice as large),
-plus a resolution of a related Morell-Skutella conjecture. So as of 2023 the cost
-conjecture was open with essentially no positive instances.
+Call an unsplittable routing y COST-GOOD (with respect to x) if
+        c^T y <= c^T x    for every nonnegative cost vector c.
 
-## 4. Status 2026: a DISPROOF IS CLAIMED [CLAIMED - our EXP-001 must check it]
+    CONJECTURE (Goemans; the cost version of Dinitz-Garg-Goemans).
+    Given a single-source fractional flow x meeting all demands within
+    capacity, does there ALWAYS exist an unsplittable routing y that is
+    simultaneously CONGESTION-GOOD (y_a <= x_a + D on every arc) and
+    COST-GOOD (c^T y <= c^T x)?
 
-A counterexample was announced in 2026, found in an AI-assisted (ChatGPT/GPT-5.6
-Pro) reasoning session, reported publicly by Dmitry Rybin (X post) and echoed by
-secondary write-ups. The claimed instance:
-- a small (reported 7-vertex, planar) graph, single source, three terminals;
-- demands 15, 10, 15, so D = 15;
-- a spine s -> u -> v -> w; each terminal has a unit-cost direct path and a
-  zero-cost detour through the spine;
-- fractional flow cost 58; every congestion-good unsplittable routing costs
-  >= 60. Hence no routing is simultaneously congestion-good and cost-good.
+That is: can one always match the fractional cost while paying at most the
+Dinitz-Garg-Goemans congestion price?
 
-RELIABILITY NOTE: the sources we could read for the instance details are a social
-post and AI-generated aggregator pages, NOT a peer-reviewed paper or a preprint we
-have verified. Treat the counterexample as CLAIMED. It is, however, FINITE and
-INTEGER-CHECKABLE: the entire claim can be settled by exhaustive exact-arithmetic
-enumeration of unsplittable routings on the stated instance. That is exactly our
-spine's first move.
+## 4. Immediate remarks (elementary, for orientation)
 
-## 5. Why this problem fits the programme
+- Each of the two conditions is achievable ALONE. Congestion-goodness alone is
+  the theorem of section 2. Cost-goodness alone is easy: route every demand on a
+  cheapest s-t_i path (this ignores capacities entirely). The conjecture is
+  precisely about achieving BOTH AT ONCE. [UNVERIFIED, elementary; confirm]
+- The problem is finite and exactly checkable per instance: for a fixed finite
+  graph with integer data, there are finitely many unsplittable routings (a
+  choice of one s-t_i path per terminal), so any single instance can be decided
+  by exhaustive exact enumeration.
+- Quantitative relaxations that the conjecture does not address, and that are
+  natural targets in their own right: a cost factor (c^T y <= alpha c^T x), a
+  congestion budget (y_a <= x_a + beta D), and the trade-off curve between them;
+  restriction to graph classes (planar, series-parallel, DAGs).
 
-- It is the Jacobian pattern again: a decades-old conjecture, an AI-assisted
-  counterexample in 2026, and a residual landscape that nobody has mapped yet.
-  Our playbook applies verbatim: validate exactly, ANATOMIZE the mechanism
-  (methodology/10 lens 2), then decide what survives.
-- The verification is genuinely decidable: finite graph, integer demands and
-  costs, finitely many unsplittable routings. Exhaustive exact enumeration gives
-  a machine-checkable verdict, unlike most of our targets.
-- The interesting mathematics is what remains OPEN after the disproof, which the
-  announcement does not address:
-  (a) what is the true cost/congestion trade-off? Is there alpha with
-      cost <= alpha * c^T x among congestion-good routings? The claimed instance
-      gives 60/58, so alpha >= 30/29 [UNVERIFIED, to compute exactly];
-  (b) is a weaker congestion budget (y_a <= x_a + beta*D, beta > 1) enough to
-      restore cost-goodness? What is the minimal beta?
-  (c) which graph classes DO satisfy the cost conjecture (2308.02651 says
-      essentially none are known; series-parallel is a candidate, cf.
-      arXiv:2412.05182 on series-parallel digraphs);
-  (d) is the claimed instance MINIMAL (vertices, terminals, demand values)? A
-      minimality census is a clean, finite, publishable result.
-
-## 6. Sources
-- arXiv:2308.02651, Single-Source Unsplittable Flows in Planar Graphs (READ).
+## 5. Source anchors
+- arXiv:2308.02651, Single-Source Unsplittable Flows in Planar Graphs (READ, the
+  source of the theorem statement and of the conjecture's phrasing).
+- Dinitz-Garg-Goemans, Combinatorica 19(1) 1999 (the original theorem) [TO FETCH].
 - arXiv:2412.05182, Integer and Unsplittable Multiflows in Series-Parallel
-  Digraphs (found, NOT yet read).
+  Digraphs [TO FETCH].
 - arXiv:2510.21287, Unsplittable Cost Flows from Unweighted Error-Bounded
-  Variants (found, NOT yet read).
+  Variants [TO FETCH].
 - arXiv:1504.00627, Inapproximability of Maximum Single-Sink Unsplittable,
-  Priority and Confluent Flow (found, NOT yet read).
-- Dinitz-Garg-Goemans, Combinatorica 19(1) 1999 (PRIMARY, to fetch).
-- 2026 counterexample announcement: Dmitry Rybin, X post (CLAIMED, secondary).
+  Priority and Confluent Flow Problems [TO FETCH].
+
+## 6. Scope note for the exploring session
+This dossier gives the STATEMENT and its immediate context only. The literature
+status of the conjecture (who has attacked it, what is settled, what is claimed)
+is deliberately NOT summarised here: establish it yourself from primary sources as
+the first research step, and record what you find with its own evidence.
