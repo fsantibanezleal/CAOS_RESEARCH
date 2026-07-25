@@ -173,5 +173,29 @@
   on the shared shell (6 sections, EN/ES, verified citation spine) and routed.
 - Note: a parallel session's commit swept some of our files into its own commit
   (ebc70df); content is intact and pushed, only the commit attribution differs.
-- Round closes WITHOUT version bump; the release step is evaluated separately per
-  methodology/08 serialization.
+- RELEASE v0.54.000 executed (this session owned the release step; no other session
+  was mid-release: no open PRs, last merged v0.53.000). Version bumped in the three
+  sources, CHANGELOG entry naming both problems' landed rounds, data bake refreshed
+  (the five central-configurations experiments now bake, after their verdict headers
+  were brought to the repo's "EXP-NNN - Verdict: ..." convention), content-standards
+  guard OK, pytest green, frontend build green, tag v0.54.000 pushed, PR #66
+  develop -> main MERGED via the API, Pages deploy triggered.
+- MANUSCRIPT PUBLISHED on Zenodo (CC-BY): "Exact replication and screening of
+  tropical finiteness certificates for central configurations", v0.02, version DOI
+  10.5281/zenodo.21542484, concept DOI 10.5281/zenodo.21542483. Pre-publication
+  reference audit (Felipe's no-fake-references rule) corrected two items: the
+  Chang-Chen part-II volume/pages were search-only, so the bibliography now cites
+  the verified part I (JSC 123 (2024) 102277, pinned via the Jensen-Leykin
+  reference list) plus the programme preprint; and the "24 residual diagrams" count
+  is now stated as OUR arithmetic from the three numbers in their abstract, not as
+  a quoted claim. Both fixes propagated to the wiki, the references file and the
+  frontend citation spine.
+- EXP-005 UPDATE (second finding): the powers-of-2 variant ALSO aborted with
+  gfan::MVMachineIntegerOverflow. So at n = 6 the machine-integer fast path is
+  unusable REGARDLESS of valuation magnitude (max exponent 32 fails exactly like
+  243): the n = 6 barrier has an arithmetic component, not only a combinatorial
+  one. Both variants relaunched with arbitrary-precision integers (--bits 0), the
+  path JL25 describe as about 10x slower, now running in parallel (15 and 14
+  threads). This is data JL25 do not report for their own inconclusive attempt.
+- Round closes; the next round monitors the n = 6 runs while front B (msolve
+  census) advances.

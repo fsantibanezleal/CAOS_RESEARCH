@@ -77,11 +77,14 @@ The single first-read for a fresh session (contract: methodology/07-session-hand
 
 ## 4. In flight
 
-**EXP-005 (n = 6), two detached variants running in parallel (15 threads each,
-7-day cap):** `pow2-b64` (valuations 1,2,4,8,16,32; 64-bit fast path) and
-`pow3-b0` (valuations 1,3,9,27,81,243; arbitrary precision). Attempt 1 (pow3 with
---bits 64, 30 threads) aborted after 6.5 min with gfan::MVMachineIntegerOverflow;
-the redirect came from EXP-004's discovery that powers of 2 also certify at n = 5.
+**EXP-005 (n = 6), two ARBITRARY-PRECISION variants running in parallel (7-day
+cap):** `pow3-b0` (valuations 1,3,9,27,81,243; 15 threads; started 20:43) and
+`pow2-b0` (valuations 1,2,4,8,16,32; 14 threads; started 20:58).
+Two 64-bit attempts aborted first with gfan::MVMachineIntegerOverflow: pow3
+(t^243) and then pow2 (t^32). FINDING: at n = 6 the machine-integer fast path
+fails regardless of valuation magnitude, so the n = 6 barrier has an ARITHMETIC
+component and every attempt must use --bits 0 (about 10x slower, the path JL25
+describe). JL25 do not report this for their own inconclusive attempt.
 Heartbeat: `wsl -d Ubuntu-24.04 -- bash -lc 'cat ~/exp005/status-*.log'`;
 outputs land in `~/exp005/prevariety-<label>.out` and are copied to
 `E:\_Datos\caos-research\central-configurations\EXP-005\`.
