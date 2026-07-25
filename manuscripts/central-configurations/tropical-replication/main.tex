@@ -2,27 +2,49 @@
 \usepackage[margin=1.1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{booktabs}
-\usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
+\definecolor{linknavy}{RGB}{25, 55, 125}
+\usepackage[colorlinks=true, linkcolor=linknavy, citecolor=linknavy, urlcolor=linknavy]{hyperref}
+\usepackage{orcidlink}
+\usepackage{fancyhdr}
 
-\newtheorem{theorem}{Theorem}
-\newtheorem{proposition}{Proposition}
-\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
 \theoremstyle{remark}
-\newtheorem{remark}{Remark}
+\newtheorem{remark}[theorem]{Remark}
 
 \title{Exact replication and screening of tropical finiteness certificates
-for central configurations\\
-{\large Machine record v0.02 (draft): the CAOS Research central-configurations
-program, experiments 001--005}}
-\author{Felipe Santiba\~nez-Leal\thanks{With machine-executed computations;
-all artifacts, exact values, and run records are versioned at
-\url{https://github.com/fsantibanezleal/CAOS_RESEARCH} under
-\texttt{problems/dynamical-systems/central-configurations/}.}}
-\date{July 24, 2026}
+for central configurations}
+\author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
+\date{2026-07-24\\[2pt]\normalsize Version 0.03}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small CAOS Research Preprint}
+\fancyhead[R]{\small Tropical Certificates for Central Configurations \textperiodcentered\ v0.03}
+\fancyfoot[C]{\small \thepage}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
 
 \begin{document}
 \maketitle
+\thispagestyle{plain}
+
+\begin{center}
+\small
+\fbox{\parbox{0.92\textwidth}{\centering
+\textbf{Preprint: a machine research record, not peer reviewed.}\\[2pt]
+Replication-first: the finiteness theorems reproduced here are due to
+Hampton--Moeckel, Albouy--Kaloshin and Jensen--Leykin, and the equal-mass censuses
+to Moczurad--Zgliczy\'nski. Our own contributions are the exact instruments, the
+measured facts and the independent reproductions, each labelled as such. Every
+number is reproducible from the versioned repository; hypotheses are committed
+before their runs and refutations are kept in the record.}}
+\end{center}
+\vspace{4pt}
 
 \begin{abstract}
 We report an exact, fully replayable machine record around Smale's 6th problem
