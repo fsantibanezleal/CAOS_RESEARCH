@@ -67,6 +67,17 @@ series-parallel), and the two-layer case (longest path has 4 arcs).
 first structure past it), and the planar constant is pinched strictly between 1 (refuted
 here) and 2 (TVZ24).
 
+**And the instance is extremal, not typical [MV, EXP-004].** Maximised over ALL nonnegative
+cost vectors the violation it can force is still exactly $16/15$, so the published prices
+are optimal in that sense too; and over 3456 parameter points of the natural family
+containing it, it is the ONLY counterexample, at exactly its published parameters (1 in 2448
+at three terminals, 0 in 1008 at four). A larger forced violation needs a different conflict
+structure, not different parameters.
+
+**Published:** preprint on Zenodo 2026-07-25, v0.01, CC BY 4.0, version DOI
+10.5281/zenodo.21554259, concept DOI 10.5281/zenodo.21554258. EXP-004's results are a
+next-version trigger, not an edit.
+
 ## 2. The objects table
 
 | Object | Definition | Owner |
@@ -87,11 +98,34 @@ here) and 2 (TVZ24).
 | EXP-001 | Does our own exact checker decide SSUF instances correctly on hand-built cases? | CONFIRMED | `ufclib` adopted as ground truth; P1-P8 hold on V1-V5; 14 pytest tests |
 | EXP-002 | Is the 2026 claimed counterexample valid, and what does it force? | CONFIRMED | Conj 1.2 FALSE; $\alpha_{\mathrm{inst}} = 16/15$; C1-C9 pass; structural route agrees with enumeration |
 | EXP-003 | Can we decide, without searching over cost vectors, whether an instance admits any counterexample cost vector? | CONFIRMED | The exact separation LP; optimum $2/7$ on the 2026 instance, attained by the published cost vector, so that vector is an OPTIMAL separator there; $k = 1$ theorem; the $k \le 2$ claim retracted and replaced |
+| EXP-004 | How much violation can an instance force, maximised over ALL cost vectors, and can any relative of the 2026 instance force more? | CONFIRMED instruments, F4 REFUTED (null) | The frontier value $\alpha_{\max}$, equal to $16/15$ on the 2026 instance; and over 3456 family parameter points the ONLY counterexample is that instance at its published parameters |
+
+## 3b. Lenses ledger (methodology/10)
+
+| Lens | What it produced here |
+|---|---|
+| 1 exclusion (the spine) | Inverted into ADJUDICATION in round 1 (constrain a claimed object against every proved theorem, the C1-C9 battery), then into EXHAUSTION in round 3 (exclude counterexamples across a family box) |
+| 2 anatomy | The dissection of the one known object: three free choices, pairwise incompatible, prices calibrated so the missing free mass costs more than the fractional saving |
+| 3 recognition | The class boundary: series-parallel is $K_4$-minor-free, the instance is a $K_4$ subdivision, so it sits one structure past the proved class |
+| 4 invariant (run first) | The conflict graph and $\rho$: the whole counterexample in one line, $\sum \rho_i = 16/15 > 1$; also gave the $k \le 2$ intuition that later proved WRONG as an argument, which is recorded |
+| 6 two-sided | The exclusion failure read forwards: EXP-004's family sweep is the construction attempt, and its null result is evidence that the mechanism is extremal, not typical |
+| 7 reformulation | Stable-set polytope and convex-hull separation; the frontier value as an LP over prices |
+| 8 dimension ladder | The terminal ladder: $k = 1$ proved impossible, $k = 2$ open with a necessary condition, $k = 3$ realised |
+| 10 adversarial | Two specification errors and one invalid derivation caught and recorded; a predicted tooling failure (UFB-033) materialised and was fixed with an independent implementation |
+| 11 external dialogue | The claim itself, adjudicated rather than trusted; the separation LP re-derived in our own words before use |
 
 ## 4. In flight
 
-Nothing is running. Rounds 1 and 2 closed: three experiments decided, the wiki transcribed,
-and one invalid derivation retracted in writing.
+Nothing is running. Rounds 1 to 3 closed: four experiments decided, the wiki transcribed,
+the web page shipped, the preprint published, and one invalid derivation retracted in
+writing.
+
+**Round 3's exploration moment (methodology/11).** The new viewpoint minted this round is
+that the frontier constant is measurable PER INSTANCE as an LP over prices, not only
+estimable across a literature; and the null result converts the search for a larger forced
+violation from a parameter question into a STRUCTURAL one, since a linear spine cannot
+realise a genuine odd cycle of conflicts (UFB-037). That is a sharper next step than the
+round-1 plan had.
 
 Mid-derivation notes not yet in any verdict, to carry into the next hypothesis:
 
@@ -121,19 +155,20 @@ Mid-derivation notes not yet in any verdict, to carry into the next hypothesis:
 
 ## 5. Next actions, ordered
 
-1. DONE (EXP-003): the exact rational separation LP, in `ufclib.separation`, with the
-   reduction re-derived in our own words and validated on 192 instances.
-2. Declare the canonical form (UFB-011): digraph isomorphism plus demand-preserving terminal
-   relabelling, with an explicit completeness argument. Without it, no exhaustion claim is
-   honest. Pair it with constraint generation (UFB-034), because the LP currently enumerates
-   every congestion-good routing and will not scale.
-3. EXP-004: the minimality exhaustion at small sizes. Target statements: the smallest
-   counterexample in terminals (open at $k = 2$; a necessary condition is in hand), in
-   vertices, in arcs, and in $d_{\max}$.
-4. Promote the conflict-graph instrument out of EXP-002 into `ufclib` (UFB-023) and use it
-   as the cheap pre-filter before any LP.
-5. UFB-020/021/030: odd-cycle and clique conflict families, and the parametric family's
-   supremum, for lower bounds on $\alpha^\*$.
+1. DONE (EXP-003): the exact rational separation LP. DONE (EXP-004): the frontier value,
+   our own Bland-rule simplex, and the family sweep.
+2. **UFB-037, the evidenced next step**: conflict structures that a linear spine cannot
+   realise (a genuine odd cycle of length 5; conflicts mediated by two terminals). EXP-004
+   showed parameter tuning inside the spine family is exhausted, so this is the only route
+   left here to a larger forced violation. Design the digraph first, on paper, then declare.
+3. UFB-036: choose the split fractions by LP rather than sampling a grid, so a counterexample
+   needing an awkward $\rho$ cannot hide between grid points.
+4. Declare the canonical form (UFB-011) with constraint generation (UFB-034), which together
+   open the minimality exhaustion (UFB-012). Target: the smallest counterexample in
+   terminals (open at $k = 2$, necessary condition in hand), vertices, arcs and $d_{\max}$.
+5. Promote the conflict-graph instrument out of EXP-002 into `ufclib` (UFB-023) as the cheap
+   pre-filter before any LP.
+6. UFB-040: turn the same engine on the surviving cost-free two-sided conjecture.
 6. Standing each round: UFB-060 literature re-search. This area is active and the authors of
    the positive results may respond publicly to the 2026 claim at any time; read primary
    sources, never coverage.

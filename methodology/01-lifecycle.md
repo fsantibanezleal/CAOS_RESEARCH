@@ -16,7 +16,8 @@ Rules.
 
 - A problem cannot advance a state without the gate artifacts; the transition is logged in
   `program/<slug>/state.md` and in the problem's `history/`.
-- One problem is brought to `published` before the next is `opened` (the one-product-at-a-time
-  rule). `scoped` sheets for future problems are always allowed.
+- Multiple problems may be `opened` or later at the same time under the per-problem isolation rules
+  in `08-parallel-sessions.md`. Experiment rounds are independent; global releases remain serialized.
+  `scoped` sheets for future problems are always allowed.
 - Feasibility classes: A = real experimental surface (search/verification/statistics can move
   understanding); B = meaningful verification or visualization surface; C = mainly expository.

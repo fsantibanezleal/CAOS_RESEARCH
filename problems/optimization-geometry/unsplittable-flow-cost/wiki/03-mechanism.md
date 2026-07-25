@@ -106,6 +106,13 @@ slack on one arc where the conjecture allows 15. [MV]
 the constant 1 is unattainable; it leaves untouched the question of whether some constant
 works, where the only known upper bound is 2 for planar graphs.
 
+That $16/15$ is not an artifact of the published prices. Maximised over ALL nonnegative cost
+vectors, the violation this instance can force is still exactly $16/15$ (EXP-004), so the
+published cost vector is optimal in that sense too, and the larger budget $26/15$ consumed
+by the all-free routing is unattainable by any pricing. Nor is the instance one of many: over
+3456 parameter points of the natural family containing it, it is the ONLY counterexample, at
+exactly its published parameters. [MV]
+
 An open question minted by this run: $\sum_i \rho_i$ and $\alpha_{\mathrm{inst}}$ are both
 $16/15$ here. Whether that equality is structural or a coincidence of this instance's
 calibration is unresolved. [C, backlog UFB-032]

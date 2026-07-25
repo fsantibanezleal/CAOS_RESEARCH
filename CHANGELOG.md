@@ -3,6 +3,42 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.57.000], 2026-07-25
+
+### Added
+- A root `Entry_point.md` now starts every research session from persisted repository state. It
+  resolves existing problems, incorporates reference-led problems, routes methodology reads, and
+  defines the mandatory evidence, handoff, branch, pull-request, release, credential, and human-only
+  authorship boundaries.
+- A stdlib-only CI guard validates the durable record of every opened-or-later problem against
+  `program/portfolio.yaml`: the four `program/<slug>/` handoff files and the primary problem tree
+  must remain present.
+- The unsplittable-flow cost problem now has a six-section EN/ES web page with a verified citation
+  spine and exact replay of the counterexample mechanism.
+- EXP-004 for unsplittable-flow cost added the exact frontier-value instrument. The published
+  instance forces `16/15`, and it is the only counterexample in the 3,456-point tested spine family,
+  which redirects the next search from parameter tuning to new conflict structures.
+- Central-configurations round 6 added the exact EXP-009 torus-census declaration, two independent
+  solver routes, a detached budget-enforcing finisher, and a standalone exact analyzer. It also
+  persisted the gfan 0.8beta path after the measured gfan 0.7 limits and re-scoped the degeneracy
+  route from the primary literature.
+
+### Changed
+- `STRUCTURE.md` now documents the actual five-plane research persistence model instead of the
+  generic product-template blueprint.
+- The lifecycle, parallel-session methodology, public problem index, program board, and methodology
+  index now agree on three active isolated problems, short-lived problem branches, frequent pushes,
+  pull-request promotion to `develop`, and a serialized `develop` to `main` release.
+- The frontend lockfile version is synchronized with the package and repository release version.
+- The precompute launchers now discover either `.venv-pipeline` or the repository `.venv` and fail
+  with an actionable setup message instead of attempting to execute a missing environment path.
+
+### Fixed
+- The frontend test stack now uses Vitest 4.1.10, removing the critical Vitest UI-server advisory
+  and its vulnerable Vite/esbuild dependency chain. React Router is pinned to the current 7.18.1
+  release; the remaining audit advisory applies to server-action/RSC mode, which this static SPA
+  does not use.
+
 ## [0.56.001], 2026-07-25
 
 ### Fixed

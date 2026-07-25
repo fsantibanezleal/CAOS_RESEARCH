@@ -3,4 +3,10 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 VP=".venv-pipeline/bin/python"; [ -x "$VP" ] || VP=".venv-pipeline/Scripts/python.exe"
-"$VP" -m researchlab.pipeline "$@"
+if [ ! -x "$VP" ]; then VP=".venv/bin/python"; fi
+if [ ! -x "$VP" ]; then VP=".venv/Scripts/python.exe"; fi
+if [ ! -x "$VP" ]; then
+  echo "No repository Python environment found. Run scripts/setup.sh first." >&2
+  exit 1
+fi
+PYTHONPATH="$PWD/data-pipeline${PYTHONPATH:+:$PYTHONPATH}" "$VP" -m researchlab.pipeline "$@"

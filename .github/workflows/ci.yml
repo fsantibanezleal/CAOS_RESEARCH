@@ -54,3 +54,5 @@ jobs:
         run: python scripts/check_template_residue.py
       - name: No em-dash or emoji in product content (ADR-0067)
         run: python scripts/check_content_standards.py
+      - name: Per-problem research persistence contract
+        run: python scripts/check_research_structure.py

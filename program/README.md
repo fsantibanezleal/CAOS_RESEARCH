@@ -8,6 +8,7 @@ The in-repo status section: which problems exist, in which lifecycle state (see
 |---|---|---|---|---|---|
 | Jacobian conjecture | algebraic-geometry | exploring | A | yes | [jacobian-conjecture/plan.md](jacobian-conjecture/plan.md) |
 | Central configurations (n-body) | dynamical-systems | exploring | A | yes | [central-configurations/plan.md](central-configurations/plan.md) |
+| Unsplittable-flow cost | optimization-geometry | exploring | A | partial | [unsplittable-flow-cost/plan.md](unsplittable-flow-cost/plan.md) |
 | Log-energy points on S^2 (Smale 7) | optimization-geometry | scoped | A | yes | (wave 2) |
 | Shub-Smale tau conjecture | computation-complexity | scoped | A | yes | (wave 2) |
 | Riemann hypothesis | number-theory | scoped | A | yes | (wave 2) |
