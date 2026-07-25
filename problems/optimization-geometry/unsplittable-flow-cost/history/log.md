@@ -106,3 +106,41 @@ simplex is currently a single point of failure), UFB-034 (constraint generation,
 (SEP) enumerates every congestion-good routing and will not scale to the exhaustion),
 UFB-035 (the distribution of (SEP) optima as the natural frontier statistic, not just the
 sign). Commit 82e9b08. No version bump.
+
+## 2026-07-25 - manuscript published, and a documentation-standard gap closed
+
+**Preprint published on Zenodo** (Felipe authorised autonomous publication):
+"An independent exact verification of the 2026 counterexample to Goemans'
+unsplittable-flow cost conjecture, with the violation constant it forces",
+v0.01, CC-BY 4.0. Version DOI 10.5281/zenodo.21554259, concept DOI
+10.5281/zenodo.21554258, record verified live with the PDF attached and the
+resource type shown as Preprint. Seven pages, transcribed from the EXP-001,
+EXP-002 and EXP-003 verdicts, never from memory: the verification, the constant
+16/15, the consistency battery, the K4 class-boundary placement, the
+separation-LP optimality of the published cost vector, the single-terminal
+theorem, the two-terminal characterisation, and the retraction of our own
+refuted two-terminal prediction, which stays in the paper because it is part of
+the record.
+
+**A gap Felipe caught, closed.** Reviewing the built PDF he observed that our
+manuscripts never state on page 1 what KIND of document they are. The audit
+confirmed it across all four existing manuscripts: the type hides in the date
+line ("working manuscript, v0.09", "companion document, v0.03") or in a subtitle
+("Machine record v0.02 (draft)"), and none prints its licence or DOI. Fixed here
+by a standard page-1 header block (document type from a controlled vocabulary
+matching the Zenodo publication_type, version, date, licence, programme and
+problem identity, both DOIs, an explicit "not peer reviewed", and the source
+repository), persisted as a binding convention in the vault
+(conventions/manuscript-header-standard.md).
+
+Printing a paper's own DOI required a new publication flow, since the existing
+uploader creates the deposit and attaches the PDF in one step: reserve the DOI
+first (tools/zenodo/reserve_doi.py), print it, rebuild, then attach
+(attach_pdf.py) and publish. The other three problems' manuscripts were NOT
+edited: they belong to parallel sessions (methodology/08), and their retrofit is
+Felipe's call since each would ship as a Zenodo new version.
+
+**External communication: none.** Felipe's standing decision of 2026-07-25 is
+that nothing goes out beyond the Zenodo deposit itself: no post, no email to the
+authors of the positive results, no comment on the announcement.
+
