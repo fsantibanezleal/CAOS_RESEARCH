@@ -13,8 +13,8 @@
 
 \title{Exact replication and screening of tropical finiteness certificates
 for central configurations\\
-{\large Machine record v0.01 (draft): the CAOS Research central-configurations
-program, experiments 001--004}}
+{\large Machine record v0.02 (draft): the CAOS Research central-configurations
+program, experiments 001--005}}
 \author{Felipe Santiba\~nez-Leal\thanks{With machine-executed computations;
 all artifacts, exact values, and run records are versioned at
 \url{https://github.com/fsantibanezleal/CAOS_RESEARCH} under
@@ -41,10 +41,11 @@ prevariety certificate of generic-mass finiteness for $n=5$
 (arXiv:2301.02305v2): both published $f$-vectors match digit for digit and the
 pointedness of the recession cone is verified by an independent exact parser;
 and (iv) a screening study over mass-valuation families and equation-system
-variants at $n=4,5$, whose sharpest finding is that removing the ten dependent
-symmetric Albouy--Chenciner equations catastrophically destroys pointedness at
-every tested valuation: the ``redundant'' equations carry essential tropical
-information. All computations are exact (rational or integer arithmetic, or
+variants at $n=4,5$ which finds two new working valuation families beyond the
+two published, replicates generic-mass finiteness for $n=4$ purely
+polyhedrally in seconds, and shows that removing the ten dependent symmetric
+Albouy--Chenciner equations destroys the certificate at every tested valuation:
+the ``redundant'' equations carry essential tropical information. All computations are exact (rational or integer arithmetic, or
 certified polyhedral computation); every stated number is reproducible from
 committed code and hashes. This is a replication-and-instruments record: the
 theorems replicated are due to Hampton--Moeckel, Albouy--Kaloshin, and
@@ -175,18 +176,90 @@ cpu-days) costs about three wall-days on commodity hardware.
 
 \section{Valuation and equation-variant screening (EXP-004)}\label{sec:screening}
 
-[SECTION IN PROGRESS: the declared screening grid (two systems $\times$ six
-valuation families at $n=5$, plus four $n=4$ cells) is running at the time of
-this draft; its verdict will replace this placeholder in the next version.
-Interim, already-decided cells: the powers-of-3 valuation is the only globally
-pointed one among the six tested at $n=5$; the squares, powers-of-2 and primes
-valuations each leave exactly two positive unbounded directions (candidates
-for per-component pointedness, as in the squares case of \cite{JL25}); the
-arithmetic and repeated-value controls are far from pointed; and the
-asymmetric-only system S2, which drops the ten dependent symmetric equations,
-loses pointedness catastrophically at \emph{every} tested valuation (over 300
-positive unbounded directions), a quantitative demonstration that the
-dependent symmetric equations carry essential tropical information.]
+The certificate of \cite{JL25} has two designed inputs: the mass valuations and
+the equation system. The paper publishes two working valuation choices for
+$n=5$ and, for the inconclusive $n=6$ attempt, asks explicitly for
+``more experimentation with different valuations or different versions of the
+Albouy--Chenciner equations''. We screened both axes on a 16-cell grid: two
+systems (S1, the full set of asymmetric $+$ symmetric AC equations $+$ planar
+Cayley--Menger determinants; S2, the same with the $\binom{n}{2}$ dependent
+symmetric equations removed) crossed with six valuation families at $n=5$, plus
+four cells at $n=4$. Pointedness is decided per connected component (\emph{comet})
+by an exact certificate: a rational vector $c$ with $c\cdot r<0$ for every
+recession generator $r$, verified in rational arithmetic (a floating-point
+solver only proposes $c$).
+
+\begin{table}[h]\centering
+\begin{tabular}{lrrl}
+\toprule
+Valuations at $n=5$ (system S1) & comets & pointed & status \\
+\midrule
+$(1,3,9,27,81)$ powers of 3 & 281 & 281 & certificate (globally pointed) \\
+$(1,4,9,16,25)$ squares & 257 & 257 & certificate \\
+$(1,2,4,8,16)$ powers of 2 & 266 & 266 & certificate (new) \\
+$(2,3,5,7,11)$ primes & 250 & 250 & certificate (new) \\
+$(0,1,2,3,4)$ arithmetic & 181 & 180 & no certificate (1 comet undecided) \\
+$(1,1,9,27,81)$ repeated & 211 & 210 & no certificate (1 comet undecided) \\
+\bottomrule
+\end{tabular}
+\caption{Comet-level screening at $n=5$. The squares row reproduces the 257
+components reported in \cite{JL25}, a quantity independent of the $f$-vector,
+which validates the component extraction as well as the polyhedral computation.}
+\end{table}
+
+Three findings.
+
+\emph{(a) Two new working valuation families.} Powers of two and primes both
+certify at $n=5$; before this screening, two families were known to work. Since
+the certificate is a statement about one point of the valuation space, each
+working family is an independent verification of generic finiteness for $n=5$,
+and the enlarged pool is what makes an $n=6$ attempt a design choice rather than
+a lottery. This matters operationally: powers of three reach $t^{243}$ at $n=6$
+and exceed \texttt{gfan}'s machine-integer fast path (our first $n=6$ attempt
+aborted on a detected overflow after six minutes), whereas powers of two reach
+only $t^{32}$.
+
+\emph{(b) The dependent symmetric equations are essential.} Every S2 cell has a
+strictly larger $f$-vector in every entry than its S1 counterpart and yields no
+certificate at any valuation, including the one where S1 is globally pointed;
+the single undecided comet grows from $71$--$95$ recession generators in the S1
+controls to $241$--$2224$ in S2. The equations that are algebraically redundant
+(each symmetric equation is the sum of two asymmetric ones) are tropically
+load-bearing. This is the prevariety-level form of the affine phenomenon of
+Section~3, and it agrees with the historical record: \cite{HM06} could not run
+their method on the six AC equations alone, and \cite{HJ11} kept the redundant
+family deliberately.
+
+\emph{(c) $n=4$ falls in seconds, and the hard case is exactly the predicted
+one.} With valuations $(1,3,9,27)$ and $(1,2,4,8)$ the $n=4$ prevariety is
+globally pointed (10 comets each; 4 and 2 seconds), a purely polyhedral
+replication of generic-mass finiteness for the four-body problem; arithmetic
+valuations $(0,1,2,3)$ also certify (9 comets). The equal-valuation case
+$(0,0,0,0)$ leaves a single undecided comet with 49 generators, matching the
+observation of \cite{JL25} that this specialization is equivalent in difficulty
+to the original computation of \cite{HM06}.
+
+We are careful about the negative half: our instrument certifies pointedness
+(exact separating vector) and unpointedness (exact nonnegative zero
+combination); on the failing controls it returns neither, so we report
+``no certificate'' rather than ``not pointed''. Closing that gap with exact
+linear programming is a queued item.
+
+\section{The $n=6$ attempt (EXP-005, in progress)}
+
+The screening of Section~\ref{sec:screening} turns the $n=6$ question into a
+design problem with two dials. Our first attempt (powers of three, machine-integer
+fast path) aborted after six minutes on a \emph{detected} overflow, which is the
+benign failure mode: \texttt{gfan} raises rather than returning a wrong answer.
+Two variants now run in parallel on the same hardware: powers of two with the
+fast path (maximum exponent 32 instead of 243) and powers of three with
+arbitrary-precision integers, the slower path described in \cite{JL25}. At the
+throughput measured in Section~4, an attempt at the scale they report costs on
+the order of days rather than weeks. The outcome, positive or negative, will be
+reported with its exact certificates in the next version of this record; a
+positive outcome would extend generic-mass finiteness to $n=6$, and a negative
+one localizes the obstruction to specific comets, data that has not been
+published for any failed attempt.
 
 \section{Honesty ledger}
 
