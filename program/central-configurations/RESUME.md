@@ -87,14 +87,23 @@ The single first-read for a fresh session (contract: methodology/07-session-hand
 
 ## 4. In flight
 
-**EXP-005 (n = 6), two ARBITRARY-PRECISION variants running in parallel (7-day
-cap):** `pow3-b0` (valuations 1,3,9,27,81,243; 15 threads; started 20:43) and
-`pow2-b0` (valuations 1,2,4,8,16,32; 14 threads; started 20:58).
-Two 64-bit attempts aborted first with gfan::MVMachineIntegerOverflow: pow3
-(t^243) and then pow2 (t^32). FINDING: at n = 6 the machine-integer fast path
-fails regardless of valuation magnitude, so the n = 6 barrier has an ARITHMETIC
-component and every attempt must use --bits 0 (about 10x slower, the path JL25
-describe). JL25 do not report this for their own inconclusive attempt.
+**EXP-005 (n = 6): a TOOLING barrier, now characterized on four attempts.**
+
+| attempt | arithmetic | outcome |
+|---|---|---|
+| pow3 (1,3,9,27,81,243) | --bits 64 | ABORT at 6.5 min: `gfan::MVMachineIntegerOverflow` |
+| pow2 (1,2,4,8,16,32) | --bits 64 | ABORT: same overflow, despite max exponent 32 |
+| pow2 | --bits 0 | ABORT after 15 h wall (about 6 cpu-days): `gfanlib_hypersurfaceintersection.cpp:505 Assertion !cone.isEmpty(mr)` with CircuitTableInteger |
+| pow3 | --bits 0 | RUNNING (16 h wall, about 7 cpu-days, no output yet) |
+
+FINDING: gfan 0.7 fails at n = 6 in BOTH arithmetic modes, in two different ways,
+and the 64-bit failure is independent of valuation magnitude. The n = 6 barrier we
+are hitting is INFRASTRUCTURAL, not a compute-budget question; JL25 report their own
+n = 6 computation as completing (and inconclusive), so their run differed in version,
+flags or valuation. Next step in progress: gfan 0.8beta (May 2026) built from the
+author tarball (SHA-256 fa7884e5f317c50f8fb4f37bcf5d419f0fd5f7b90d6037349d1957ea73cebbee)
+to test whether the newer version clears either failure. Outreach to the author is
+NOT taken without Felipe.
 Heartbeat: `wsl -d Ubuntu-24.04 -- bash -lc 'cat ~/exp005/status-*.log'`;
 outputs land in `~/exp005/prevariety-<label>.out` and are copied to
 `E:\_Datos\caos-research\central-configurations\EXP-005\`.

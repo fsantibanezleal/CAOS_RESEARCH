@@ -241,3 +241,29 @@
 - EXP-005 (n = 6) heartbeat: both arbitrary-precision variants alive, about 2.8
   cpu-days consumed each in 9.5 wall hours, no output yet (gfan writes only at the
   end). Budget 7 days per variant.
+
+## 2026-07-25 (round 6): the n = 6 barrier is characterized as INFRASTRUCTURAL
+
+- EXP-005 fourth data point: the powers-of-2 arbitrary-precision variant ABORTED
+  after 15 wall-hours (about 6 cpu-days) with a DIFFERENT gfan failure:
+  `gfanlib_hypersurfaceintersection.cpp:505: Assertion !cone.isEmpty(mr)` in the
+  CircuitTableInteger path. Combined with the two earlier 64-bit overflow aborts
+  (which happen regardless of valuation magnitude, t^32 failing exactly like
+  t^243), gfan 0.7 fails at n = 6 in BOTH arithmetic modes, in two distinct ways.
+  The powers-of-3 arbitrary-precision variant is still running (about 7 cpu-days).
+- Reading: our n = 6 barrier is a TOOLING barrier, not a compute-budget one. JL25
+  report their n = 6 prevariety computation as completing (inconclusive because not
+  all recession cones were pointed), so their run differed from ours in version,
+  flags or valuation choice. This is data they do not publish.
+- Action taken (tooling, no outreach): gfan 0.8beta (released 2026-05-07) fetched
+  from the author page and built with the same two-line cstdint patch, to test
+  whether the newer version clears either failure mode. Outreach to the author is
+  NOT undertaken without Felipe's decision.
+- RELEASES: v0.56.000 shipped the round-5 experiments after a version COLLISION
+  with the parallel session (both bumped to 0.55.000; their tag was already
+  published, so this round was renumbered to 0.56.000 and their tag left intact).
+  The collision is a methodology/08 serialization miss on my side: no open PR was
+  visible at the moment I checked, and one opened immediately after. v0.56.001
+  followed, deriving the problem page's experiment counts from the baked records
+  after a screenshot pass caught the state line reading "five experiments" when
+  seven were decided.
