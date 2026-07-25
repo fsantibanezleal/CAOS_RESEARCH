@@ -3,6 +3,58 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.55.000], 2026-07-24
+
+### Changed (jacobian-conjecture): two published claims corrected
+- **The finite-ceiling claim is WITHDRAWN** (EXP-078). It asserted the truncation
+  tower has a computable degree ceiling, hence that the campaign is a finite
+  decision procedure. Its derivation presupposed termination of the pinned
+  corrector ladder, which EXP-064 had already MEASURED to fail. No a priori degree
+  bound exists. What survives is exact and weaker: the set of degrees admitting a
+  covector is UPWARD CLOSED (so the minimal degree is at least 3, degrees 1 and 2
+  being closed), and the support-restricted sweeps are ONE-SIDED (an infeasible
+  support refutes a degree; all supports passing establishes nothing).
+- **The "obstruction moves with the degree" narrative is CORRECTED.** It was
+  inherited from the RETRACTED EXP-070; the sound EXP-072 obstructs at a support
+  containing two of the eight degree-1 blockers, so the obstruction PERSISTS and
+  only the support size needed to expose it grows.
+- Consequent REFRAME of the queue: the quadruple sweep is demoted to a
+  refutation-only lottery (it can never confirm a degree); the constructive
+  degree-3 solve and the connection/regularity route are promoted, being the only
+  paths to a positive answer and to a degree-uniform statement respectively.
+- Papers A, B and C republished on Zenodo with the corrections and the new
+  title-page standard (v0.10 / v0.13 / v0.04).
+
+### Added (jacobian-conjecture)
+- The incidence/recognition analysis (EXP-086..090): the 2026 counterexample is the
+  coefficient map of (linear)x(quadratic) on a resultant-normalised slice, so the
+  construction reduces to recognition of affine space. The mechanism is EXCLUDED in
+  dimension 2 (its source is not affine 2-space: reducible, with a nonconstant
+  unit), unified by the single invariant n-2 (the resultant weight under relative
+  scaling, equal to the Danielewski core degree and the boundary-component count):
+  n=3 is the unique working dimension and dimension 2 fails at the root.
+- The symplectic/LND mapping (EXP-091): planar Keller pairs are canonical pairs
+  {P,Q}=1, routing the problem to Rentschler and Abhyankar-Moh-Suzuki recognition
+  theorems. Known connections, mapped for the programme with the residual named.
+- Frontier (EXP-082..085): C13 found ALREADY EXCLUDED in the published literature;
+  the 24 configurations re-audited; GGV Remark 7.9 sourced, reducing C10/C11/C19/C20
+  to two crisp finite questions requiring no machine time.
+
+### Added (programme-wide methodology)
+- methodology/10 (research lenses: the exclusion spine plus at least two more
+  lenses, invariant-first), /11 (exploration cadence: every round mints a new
+  viewpoint or records why none), /12 (preflight and cost discipline, derived from
+  a measured waste audit: source-complete before compute, tooling smoke test,
+  premise-dependency check against our own verdicts, the one-sidedness field,
+  invariant-first, budget and kill criterion; plus retraction-sweeps-narrative and
+  claim-traceability), and the manuscript title-page standard in /05.
+
+### Added (unsplittable-flow-cost, opened as the third problem)
+- Programme plan, exact SSUF checker (EXP-001), adjudication of the 2026 claimed
+  counterexample by our own exact enumeration (EXP-002), and the separation LP
+  removing the cost vector from every future search (EXP-003); verification
+  preprint published on Zenodo.
+
 ## [0.54.000], 2026-07-24
 
 ### Added
