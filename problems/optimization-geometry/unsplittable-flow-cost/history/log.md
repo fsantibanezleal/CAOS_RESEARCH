@@ -144,3 +144,50 @@ Felipe's call since each would ship as a Zenodo new version.
 that nothing goes out beyond the Zenodo deposit itself: no post, no email to the
 authors of the positive results, no comment on the announcement.
 
+## 2026-07-25 - round 3: the frontier value, a null result, and the web page
+
+**EXP-004 CONFIRMED in its instruments, with F4 REFUTED as a null result.**
+
+- **The frontier value.** Defined and implemented: $\alpha_{\max} = \max_{c \ge 0}
+  \min\{\alpha(y) : c^T y \le c^T x\}$, the largest violation any pricing can force,
+  computed exactly as the separation LP restricted to routings below a threshold.
+  An instance is a counterexample exactly when $\alpha_{\max} > 1$, so EXP-003's
+  separation LP is recovered as the special case at the threshold just above 1.
+- For the 2026 instance $\alpha_{\max} = 16/15$, witnessed by the same normalised
+  cost vector that maximised the cost gap. So the published prices are optimal in
+  BOTH senses, and the $26/15$ consumed by the all-free routing cannot be forced by
+  any pricing. Predicted at $16/15$ and confirmed.
+- **The null result, sharper than expected.** Over 3456 parameter points of the
+  spine family that contains the counterexample (verified to reproduce it arc for
+  arc), the ONLY counterexample is that instance at exactly its published
+  parameters: 1 point in 2448 at three terminals, 0 in 1008 at four. It is isolated
+  and extremal in its own family. A larger forced violation will not come from
+  tuning these parameters; it needs a different conflict structure (UFB-037).
+- **A predicted tooling failure materialised.** sympy's rational simplex cycled
+  ("Oscillating system led to invalid solution") on a degenerate family member,
+  which is exactly the single-point-of-failure risk EXP-003's verdict had recorded
+  as UFB-033. Response: an exact simplex with Bland's rule of our own
+  (code/ufclib/simplex.py), which cannot cycle. Added after the hypothesis and
+  labelled as such: a cross-check of the two independent LP implementations on the
+  six cases where sympy succeeds; they agree exactly. UFB-033 closed.
+- **A specification error, again caught and recorded rather than smoothed over.**
+  F1's first run failed because the comparison was vertex-name sensitive (family
+  spine v1, v2, v3 versus published u, v, w). The family reproduced the instance
+  exactly; only the check was wrong. Fixed by passing an EXPLICIT relabelling, not
+  by loosening the comparison.
+
+**Web page.** The problem page shipped (frontend/src/pages/UnsplittableFlowCost.tsx):
+six sections EN/ES per methodology/06, the citation spine, the manuscript concept
+DOI, and the results split into machine-verified items and the corrections kept in
+the record. Screenshot-verified in light and dark across all six tabs with zero
+console errors. The shared footer was updated: it claimed the site covered "both
+open problems" and named only two, and its disclaimer now also states that the
+unsplittable-flow cost conjecture is refuted while its quantitative frontier stays
+open. Experiment counts on the page come from the baked records, so they appear at
+the next release bake; the bake is NOT run here (methodology/08: it belongs to the
+serialized release step).
+
+New backlog rows: UFB-036 (choose the split fractions by LP instead of sampling
+them), UFB-037 (conflict structures not realisable on a linear spine). Commits
+9a8cf40, e869055. No version bump.
+

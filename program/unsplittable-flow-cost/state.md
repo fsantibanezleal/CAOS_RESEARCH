@@ -32,10 +32,24 @@
   k <= 2 terminals was RETRACTED as invalid and replaced by a sharp necessary condition at
   k = 2 plus a 184-instance sweep that found nothing, recorded as evidence and not proof;
   k = 2 remains open.
-- **Now:** round 3 declarations. The canonical form (UFB-011) paired with constraint
-  generation (UFB-034), which together open the minimality exhaustion (UFB-012).
-- **Next experiments:** EXP-004 (minimality exhaustion at small sizes), then the
-  conflict-family constructions for the frontier constant (UFB-020, UFB-021, UFB-030).
+- **Done (2026-07-25, round 3 close): EXP-004 CONFIRMED in its instruments, F4 REFUTED as a
+  null result.** The FRONTIER VALUE (the largest violation any pricing can force, computed
+  exactly as the separation LP restricted below a threshold) equals 16/15 for the 2026
+  instance, so its published cost vector is optimal both for the cost gap and for the
+  violation forced. Over 3456 parameter points of the spine family that contains it, the ONLY
+  counterexample is that instance at exactly its published parameters (1 in 2448 at k = 3, 0
+  in 1008 at k = 4): it is isolated and extremal in its own family. sympy's simplex cycled on
+  a degenerate member (the UFB-033 risk materialising), so we wrote an exact Bland-rule
+  simplex; the two implementations cross-validate on all six decidable cases.
+- **Also 2026-07-25:** the preprint published on Zenodo (v0.01, DOI 10.5281/zenodo.21554259,
+  concept 10.5281/zenodo.21554258), carrying the new page-1 header standard via a
+  DOI-prereserve flow; and the web problem page shipped (6 sections EN/ES,
+  screenshot-verified in light and dark, zero console errors).
+- **Now:** round 4. UFB-037 (conflict structures a linear spine cannot realise) is the
+  evidenced next step, since parameter tuning inside the spine family is exhausted.
+- **Next experiments:** EXP-005 (a non-spine conflict structure toward a larger forced
+  violation), then the canonical form plus constraint generation (UFB-011, UFB-034) opening
+  the minimality exhaustion (UFB-012).
 - **Open question minted this round:** sum(rho_i) and alpha_inst are both 16/15 on the 2026
   instance; whether that equality is structural is undecided (UFB-032).
 - **Isolation note:** rounds close with NO version bump (methodology/08); the release step is
