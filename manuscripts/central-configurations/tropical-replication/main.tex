@@ -67,7 +67,14 @@ variants at $n=4,5$ which finds two new working valuation families beyond the
 two published, replicates generic-mass finiteness for $n=4$ purely
 polyhedrally in seconds, and shows that removing the ten dependent symmetric
 Albouy--Chenciner equations destroys the certificate at every tested valuation:
-the ``redundant'' equations carry essential tropical information. All computations are exact (rational or integer arithmetic, or
+the ``redundant'' equations carry essential tropical information. Every comet of
+every screened cell is then decided exactly by a rational-arithmetic feasibility
+certificate, which upgrades the negative half of the screening from absence of a
+certificate to proof; adding further valid equations is measured separately, showing
+Dziobek's equations to be tropically active but not decisive at the hard case and
+the energy--inertia relation to be tropically inert; and two censuses that defeated
+our own engine are closed by an independent solver with exact cross-verification.
+All computations are exact (rational or integer arithmetic, or
 certified polyhedral computation); every stated number is reproducible from
 committed code and hashes. This is a replication-and-instruments record: the
 theorems replicated are due to Hampton--Moeckel, Albouy--Kaloshin, and
@@ -261,11 +268,78 @@ $(0,0,0,0)$ leaves a single undecided comet with 49 generators, matching the
 observation of \cite{JL25} that this specialization is equivalent in difficulty
 to the original computation of \cite{HM06}.
 
-We are careful about the negative half: our instrument certifies pointedness
-(exact separating vector) and unpointedness (exact nonnegative zero
-combination); on the failing controls it returns neither, so we report
-``no certificate'' rather than ``not pointed''. Closing that gap with exact
-linear programming is a queued item.
+\subsection{Every comet decided exactly (EXP-007)}
+
+The screening above was reported with an explicit weakness: on the failing controls
+the heuristic returned neither certificate, so those cells read ``no certificate''
+rather than ``not pointed''. We closed that gap. A cone is pointed exactly when the
+only nonnegative solution of $\sum_i \lambda_i g_i = 0$ is $\lambda = 0$, which is a
+single linear feasibility question; we decide it with a phase-I simplex in exact
+rational arithmetic (Bland's rule, so termination is guaranteed). Feasibility
+returns an explicit nonnegative zero combination, infeasibility returns a separating
+vector, and both are re-verified by exact substitution outside the decider.
+
+All sixteen cells are now decided in 33 seconds total, with zero
+certificate-verification failures. Every comet previously certified pointed is
+confirmed (no flips), and each failing control has exactly one comet that is
+provably UNPOINTED: at $n=5$ the arithmetic valuations $(0,1,2,3,4)$ (180 pointed,
+one unpointed) and the repeated valuations, and at $n=4$ the equal valuations. Our
+data therefore independently confirms, rather than merely being consistent with, the
+failure of arithmetic valuations reported in \cite{JL25}, and localises it to a
+single component out of 181.
+
+We keep the logical direction straight: pointedness of every comet is a
+\emph{sufficient} condition for dimension zero, so an unpointed comet proves only
+that this certificate route does not close, never that finiteness fails. The
+prevariety over-approximates the tropical variety.
+
+\subsection{Adding equations: what helps and what does not (EXP-008)}
+
+Since removing the redundant symmetric equations is catastrophic, the converse is
+worth measuring. At $n=4$, where the planar stratum \emph{is} the Dziobek stratum
+and Dziobek's equations are therefore available (they are what
+Hampton--Moeckel~\cite{HM06} needed when the Albouy--Chenciner equations alone
+defeated their method), we ran the baseline against three enrichments.
+
+Two declared predictions failed, informatively. First, we predicted that adding
+equations shrinks the $f$-vector; it does at equal valuations (a 25 percent
+reduction) but GROWS it at powers of two and at arithmetic valuations. The
+prediction confused the prevariety as a set with the subdivision that represents it:
+intersecting more tropical hypersurfaces can only shrink the set while refining the
+fan, so cone counts may rise. The invariant that behaves monotonically in our data
+is the comet count, which falls from 10 to 7 and from 9 to 6 when Dziobek is
+adjoined. Second, we predicted that Dziobek's equations would rescue the hard
+equal-valuation case. They do not: the prevariety shrinks by a quarter and its
+single comet stays provably unpointed. The enrichment that rescued the
+\emph{algebraic} proof therefore does not rescue the \emph{tropical} certificate at
+the same specialisation, which separates two roles that are easy to conflate.
+
+By contrast the energy--inertia relation is tropically inert: it reproduces the
+baseline $f$-vector exactly at two of the three valuations. Dependence in the ideal
+predicts tropical relevance in neither direction, which is the sharper form of the
+lesson above, and it lets us drop that equation from expensive runs at no cost.
+
+\section{Censuses across two independent engines (EXP-006)}
+
+Two of the $n=3$ censuses had been left inconclusive at our own engine's budget. We
+recomputed them with msolve (Gr\"obner bases, rational univariate representation and
+certified real-root isolation), keeping our exact machinery as the verification
+layer: msolve returns rational isolating boxes, and containment of an exact
+algebraic point in a rational box is decided exactly. Both open cells close in under
+a second each, and for all four mass vectors the positive census is exactly the
+classical answer, one equilateral point and one collinear point per ordering, with
+every one of our independently computed exact points inside a distinct box and no
+unexplained boxes. Two implementations that share no code agree on every decided
+instance.
+
+The same experiment refuted its own third prediction. We expected the enriched
+planar $n=4$ system to admit an isolated census matching the published equal-mass
+class count; msolve reports the affine system to have dimension one, so there is no
+isolated census to compare. Diagnostics exclude the vanishing-distance loci as the
+cause, which leaves the reading the literature already acts on: the census belongs in
+the torus, where all mutual distances are invertible, which is precisely the setting
+of~\cite{HM06}. We record the count as untested rather than quoting the published
+value as if we had reproduced it.
 
 \section{The $n=6$ attempt (EXP-005, in progress)}
 
