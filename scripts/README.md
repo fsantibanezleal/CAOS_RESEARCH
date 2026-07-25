@@ -22,3 +22,4 @@ Pin nothing here, versions live in `requirements-*.txt`.
 | `check_artifacts.py` | Artifact contract 2: every manifest has its artifact and vice versa (no drift). |
 | `check_template_residue.py` | An instantiated product must not ship template residue (the example lab, SIR model, `EX0*` cases, placeholder text). No-op in the template itself while the `.template-source` sentinel exists; instantiation deletes the sentinel to arm it. See ADR-0057 / ADR-0061. |
 | `check_content_standards.py` | No em-dash (`U+2014`/`U+2015`) and no pictographic emoji in tracked content. Always on. Use comma/colon/semicolon/period/parentheses/middot instead. See ADR-0067. |
+| `check_research_structure.py` | The portfolio and every opened-or-later problem retain the mandatory `program/<slug>/` handoff files and `problems/<area>/<slug>/` primary-record tree. Stdlib-only and CI-enforced. |
