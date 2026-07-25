@@ -25,3 +25,13 @@ EXP-NNN supersedes it and links back.
   a mathematical identity by itself.
 - Each experiment is referenced from the problem `history/` log entry of the day it ran, and from
   any wiki page that uses its result.
+
+## Required fields added 2026-07-24 (methodology/12)
+Every hypothesis.md must additionally state, before the run:
+- **What a PASS proves and what a FAIL proves** (the one-sidedness field). Many
+  tests are one-sided: they refute but cannot confirm. Say which.
+- **Premise dependencies**, each with the verdict that supports it. A premise with
+  no supporting verdict is a hypothesis and must be labelled so.
+- **Compute budget and kill criterion**, and what is concluded if the budget is hit.
+- **Invariant-first note**: which single invariants were considered as a cheap
+  decider, and why they do or do not apply.
