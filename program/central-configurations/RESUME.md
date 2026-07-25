@@ -68,25 +68,44 @@ The single first-read for a fresh session (contract: methodology/07-session-hand
   (gfan 0.7 in WSL, hashes recorded; ~25 cpu-min per wall-min throughput; a JL25-
   scale n = 6 attempt is ~2.8 wall-days here).
 
+- EXP-004 valuation-equation-screening: P2/P3 CONFIRMED, P1 operational + bonus.
+  TWO NEW working valuation families at n = 5 (powers of 2, primes); JL25's
+  257-component count reproduced exactly (comet-instrument validation); the
+  dependent symmetric equations are tropically ESSENTIAL (S2 fails everywhere);
+  n = 4 generic finiteness replicated in seconds; negatives honestly "no
+  certificate" (CCB-032 queued).
+
 ## 4. In flight
 
-Nothing mid-run. Rounds 1-3 closed with EXP-001, EXP-002, EXP-003 decided.
+**EXP-005 (n = 6), two detached variants running in parallel (15 threads each,
+7-day cap):** `pow2-b64` (valuations 1,2,4,8,16,32; 64-bit fast path) and
+`pow3-b0` (valuations 1,3,9,27,81,243; arbitrary precision). Attempt 1 (pow3 with
+--bits 64, 30 threads) aborted after 6.5 min with gfan::MVMachineIntegerOverflow;
+the redirect came from EXP-004's discovery that powers of 2 also certify at n = 5.
+Heartbeat: `wsl -d Ubuntu-24.04 -- bash -lc 'cat ~/exp005/status-*.log'`;
+outputs land in `~/exp005/prevariety-<label>.out` and are copied to
+`E:\_Datos\caos-research\central-configurations\EXP-005\`.
+A POINTED result (all comets certified) would give generic-mass finiteness for
+n = 6: statement-level, so it goes to Felipe FIRST, then to an
+arbitrary-precision hardening rerun, before anything leaves the repo.
 
-## 5. Next actions, ordered
+## 5. Next actions, ordered (multi-front; see research-lines-2026-07-24.md)
 
-1. CCB-030/031 (hypothesis FIRST; the frontier experiments JL25 explicitly calls
-   for): valuation SCREENING at n = 4/5 (minutes per try; success/failure map,
-   principled n = 6 shortlist) and equation-variant prevariety shrinking (add/remove
-   Dziobek / e_IU / G-subsets; f-vector + pointedness deltas). Goal: an evidenced
-   n = 6 shot (~2.8 wall-days) instead of a blind one.
-2. CCB-025: msolve wrap (WSL; record hashes) toward EXP-004 (P2 completion on the
-   capped samples + the n = 4 equal-mass PLANAR census vs the 4-classes ground
-   truth). sympy stays the verification layer.
-3. Reads: Sun-Xie-You full read (arXiv:2510.25649; gate for CCB-014 Hessian
-   instrument; treats our exact anchors); AK12 full anatomy (CCB-023); Chang-Chen
-   tables (CCB-004).
-4. Statement-level claims and any outreach: to Felipe first, always.
-5. Exploration moment every round (methodology/10 multi-factorial rule + 11).
+1. Monitor EXP-005 (front A3) without blocking: check the heartbeat each round.
+   On completion: comet_analysis.py on the output, verdict, and if pointed, the
+   Felipe-first statement gate + arbitrary-precision hardening.
+2. Front B (msolve 0.10.1 is INSTALLED, hash recorded): EXP-006 declaration:
+   census completion for the two capped mass vectors + the n = 4 equal-mass PLANAR
+   census against the 4-classes / 50-rotation-classes ground truth; sympy stays the
+   independent verification layer.
+3. CCB-032: exact-LP line certificate, to convert "no certificate" into proved
+   unpointedness on the failing controls (upgrades EXP-004's negative half).
+4. CCB-031 continuation: ADD equations (Dziobek at n >= 4, e_IU) and measure
+   prevariety shrinkage; EXP-004 settled that removing is never the direction.
+5. Reads (front E): Sun-Xie-You (arXiv:2510.25649, Hessian lens gate); AK12 full
+   anatomy (CCB-023); Chang-Chen tables (CCB-004).
+6. Statement-level claims and any outreach: to Felipe first, always.
+7. Exploration moment every round (methodology/10 multi-factorial rule + 11).
 
 ## 6. Where everything lives
 
