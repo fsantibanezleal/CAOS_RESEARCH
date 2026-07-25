@@ -54,5 +54,13 @@
     "pointed": 6,
     "unpointed": 0,
     "seconds": 71.5
+  },
+  "n4-A4-arith": {
+    "status": "ok",
+    "f_vector": "85 181 134 34",
+    "comets": 6,
+    "pointed": 6,
+    "unpointed": 0,
+    "seconds": 80.6
   }
 }

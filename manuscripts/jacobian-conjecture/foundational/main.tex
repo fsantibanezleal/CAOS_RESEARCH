@@ -6,6 +6,7 @@
 \definecolor{linknavy}{RGB}{25, 55, 125}
 \usepackage[colorlinks=true, linkcolor=linknavy, citecolor=linknavy, urlcolor=linknavy]{hyperref}
 \usepackage{orcidlink}
+\usepackage{fancyhdr}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -26,10 +27,27 @@ Exact Validation, a General Seed Family, the Geometry of Non-Properness,\\
 and Two-Dimensional Equivariant Rigidity}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-23 (working manuscript, v0.09; foundational paper of a three-manuscript record (control-char repair))}
+\date{2026-07-24\\[2pt]\normalsize Version 0.10}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small CAOS Research Preprint}
+\fancyhead[R]{\small Jacobian Counterexample: Foundations \textperiodcentered\ v0.10}
+\fancyfoot[C]{\small \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
 
 \begin{document}
 \maketitle
+\begin{center}\small
+\fbox{\parbox{0.92\textwidth}{\centering
+\textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
+Paper A of a three-paper record \textperiodcentered\ version 0.10 \textperiodcentered\ 2026-07-24\\
+DOI \href{https://doi.org/10.5281/zenodo.21503365}{10.5281/zenodo.21503365} (concept DOI, resolves to the latest version)\\
+Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
+}}
+\end{center}
+
 
 \begin{abstract}
 On 2026-07-19, Levent Alp\"oge announced (crediting the language model Claude Fable 5 and a
