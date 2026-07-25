@@ -199,3 +199,45 @@
   threads). This is data JL25 do not report for their own inconclusive attempt.
 - Round closes; the next round monitors the n = 6 runs while front B (msolve
   census) advances.
+
+## 2026-07-24 (round 5): three experiments decided in parallel with the n = 6 runs
+
+- EXP-006 (msolve census) DECIDED: P1 and P2 CONFIRMED, P3 REFUTED AS POSED. The two
+  censuses that saturated our sympy engine are CLOSED in under a second each by
+  msolve, and for all four mass vectors the positive census is exactly classical,
+  with every one of our exact algebraic points contained in a distinct rational box
+  and no unexplained boxes: two implementations sharing no code agree everywhere.
+  P3 refuted: the n = 4 affine enriched system has DIMENSION 1, so it has no
+  isolated census; diagnostics exclude the vanishing-distance loci, so the census
+  belongs in the torus (as HM06 do) and the published class count is recorded as
+  UNTESTED rather than quoted.
+- EXP-007 (exact pointedness) CONFIRMED on all three predictions: all 16 EXP-004
+  cells decided in 33 seconds by a phase-I simplex over the rationals, zero
+  certificate-verification failures, zero positive flips, and each failing control
+  shown PROVABLY UNPOINTED with an explicit nonnegative zero combination. EXP-004's
+  negative half is upgraded from "no certificate" to proof, and our data now
+  independently CONFIRMS the failure of arithmetic valuations that JL25 report,
+  localized to one comet out of 181.
+- EXP-008 (equation enrichment) DECIDED: P1 and P2 REFUTED, P3 CONFIRMED. Dziobek's
+  equations are tropically ACTIVE (comet counts fall 10 to 7 and 9 to 6) but do NOT
+  rescue the hard equal-valuation case, which stays provably unpointed: the
+  enrichment that saved HM06's ALGEBRAIC proof and the TROPICAL certificate come
+  apart. My declared monotonicity prediction was wrong for a structural reason worth
+  keeping: adding equations refines the polyhedral subdivision, so f-vector entries
+  can grow while the set shrinks; the comet count is the invariant that behaves.
+  The energy-inertia relation is tropically inert. Also recorded: a reproducible
+  gfan --bits 0 parser bug on inputs mixing t^0 with positive powers, with a
+  mathematically free valuation-shift workaround (mass-homogeneity means the shift
+  multiplies each polynomial by a unit).
+- MANUSCRIPT STANDARD (Felipe's review): an audit found two manuscripts shipping
+  with no document-type marking. methodology/05 now carries a binding front-matter
+  standard (running header naming the TYPE on every page, boxed type statement on
+  page 1, ORCID author line, version in the date block, navy links, type matching
+  the Zenodo publication_type). Our manuscript was brought to the standard and
+  visually verified (page 1 and an interior page rendered), then published as
+  Zenodo v0.03 (NEW VERSION 10.5281/zenodo.21554571, concept unchanged). The
+  unsplittable-flow-cost manuscript of the parallel session is also unmarked; that
+  is reported to Felipe rather than edited from here (isolation).
+- EXP-005 (n = 6) heartbeat: both arbitrary-precision variants alive, about 2.8
+  cpu-days consumed each in 9.5 wall hours, no output yet (gfan writes only at the
+  end). Budget 7 days per variant.
