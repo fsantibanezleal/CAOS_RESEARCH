@@ -183,6 +183,53 @@ def test_demand_multiplicity_predicate():
     assert not demands_are_multiples_of_one_another(not_multiples)
 
 
+def test_separation_lp_on_a_conjecture_obeying_instance():
+    from ufclib.separation import separation_lp
+
+    result = separation_lp(v1())
+    assert result.optimum <= 0
+    assert not result.admits_counterexample
+
+
+def test_separation_lp_finds_the_2026_counterexample():
+    from ufclib.separation import separation_lp, with_costs
+
+    claim = Instance.build(
+        source="s",
+        demands={"t1": 15, "t2": 10, "t3": 15},
+        arcs=[
+            ("s", "t1", 10, 2), ("s", "t2", 6, 3), ("s", "u", 24, 0),
+            ("u", "t3", 10, 2), ("u", "v", 14, 0), ("v", "t1", 5, 0),
+            ("v", "w", 9, 0), ("w", "t2", 4, 0), ("w", "t3", 5, 0),
+        ],
+    )
+    result = separation_lp(claim)
+    assert result.admits_counterexample
+    assert result.optimum == Fraction(2, 7)
+    # the witness must round-trip through the checker
+    rep = decide_instance(with_costs(claim, result.witness_cost))
+    assert rep.is_counterexample
+
+
+def test_the_2026_instance_is_a_counterexample_under_its_published_costs():
+    claim = Instance.build(
+        source="s",
+        demands={"t1": 15, "t2": 10, "t3": 15},
+        arcs=[
+            ("s", "t1", 10, 2), ("s", "t2", 6, 3), ("s", "u", 24, 0),
+            ("u", "t3", 10, 2), ("u", "v", 14, 0), ("v", "t1", 5, 0),
+            ("v", "w", 9, 0), ("w", "t2", 4, 0), ("w", "t3", 5, 0),
+        ],
+    )
+    rep = decide_instance(claim)
+    assert rep.fractional_cost == Fraction(58)
+    assert len(rep.routings) == 8
+    assert rep.congestion_good_count == 4
+    assert rep.min_cost_among_congestion_good == Fraction(60)
+    assert rep.is_counterexample
+    assert rep.alpha_instance == Fraction(16, 15)
+
+
 def test_routing_load_sums_demands():
     inst = v1()
     rep = decide_instance(inst)
