@@ -53,3 +53,23 @@ Run invariant-first (lens 4): L4/L5 may yield one-line obstructions like EXP-089
 L1/L2 are the deep reformulations (higher risk, higher payoff). L3 bridges our
 combinatorial machinery to the global-geometric one. Persist each as EXP-09x with a
 declared hypothesis; keep the RESUME lenses ledger current.
+
+## Update (EXP-091): L1 developed - the LND / Rentschler / Abhyankar-Moh route
+The symplectic lens (L1) routes JC(2) to LND theory: {P,.} locally nilpotent =>
+Rentschler => (P,Q) a coordinate system; the residual is whether {P,Q}=1 forces line
+fibres (Abhyankar-Moh-Suzuki). Known connections, now mapped. This makes the
+recognition lens (dim-2 classification is strong) the through-line uniting EXP-089/090
+(incidence recognition) and EXP-091 (LND recognition). Priority next: EXP-092 (fibre
+geometry of the reduced (72,108) pair) and securing the two classification sources.
+
+## REFRAME (2026-07-24, post-audit): what the corrections change
+The finite-ceiling withdrawal and the one-sidedness correction remove the
+possibility that the truncation ladder terminates the campaign by itself.
+Ranking after the reframe:
+1. EXP-093 (R2 constructive degree-3 solve) - the ONLY route to a positive
+   degree-3 answer; needs a real GF(p) sparse solver (S5a engineering first).
+2. EXP-079 (connection/regularity) - the only route to a DEGREE-UNIFORM statement,
+   in either direction; decides whether a finite bound can exist at all.
+3. EXP-080 (sl2) - could predict obstruction locations, replacing sweeps.
+4. EXP-084/085 (frontier forcings) - cheap, independent, concrete map progress.
+5. EXP-075 quadruple sweep - DEMOTED to a background lottery; cannot ever confirm.

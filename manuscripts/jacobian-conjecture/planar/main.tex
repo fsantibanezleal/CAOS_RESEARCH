@@ -23,7 +23,7 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-24 (working manuscript, v0.10; incidence structure + the plane-exclusion invariant)}
+\date{2026-07-24 (working manuscript, v0.12; corrections pass: finite-ceiling claim withdrawn, obstruction-persistence corrected)}
 
 \begin{document}
 \maketitle
@@ -409,9 +409,14 @@ two independent primes, hence over $\mathbb{Q}$); and \textbf{no covector of
 degree $2$} (EXP-072; the support $\{(0,1),(1,0),(3,5)\}$ obstructs, again
 conclusive modulo two primes). At degree $3$ no obstruction is found through the
 pair and all triple supports (EXP-071, EXP-073); the quadruple tier and a
-constructive solve are in progress. The obstruction \emph{moves} with the degree
-(diagonal at degree one, a mixed support at degree two), which is itself
-structural data.
+constructive solve are in progress, subject to the one-sidedness noted below. The
+obstruction \emph{persists} rather than migrating: the degree-two obstructing
+support $\{(0,1),(1,0),(3,5)\}$ contains two of the eight operators that already
+obstruct at degree one, and what grows is the support size needed to expose it
+(single operators at degree one, a triple at degree two). An earlier revision of
+this manuscript reported instead that the obstruction \emph{moves} to an unrelated
+mixed pair; that reading rested on the retracted computation described next and is
+corrected here.
 
 \emph{An honesty note (EXP-070, retracted).} A first ``degree $2$ closed'' result
 was withdrawn: its modular assembly reduced rationals by integer truncation, and a
@@ -420,27 +425,38 @@ exact decision, exposing the bug. Degree two was then re-decided soundly at a
 different support. We keep the retraction in the record; the declared-gate
 discipline is part of the method.
 
-\emph{Two structural reductions.} The rational-covector relaxation adds nothing
-(EXP-074): since $\Lambda_0 M_0 = 0$ the certificate condition is homogeneous, so
-any rational covector clears its denominator to a polynomial one. And the tower
-has a \emph{computable finite ceiling}: a finite covector, if it exists, exists at
-$\varepsilon$-degree at most the dimension of the Krylov closure of $\Lambda_0$
-under the corrector operators (EXP-064, EXP-078). Consequently the campaign is a
-\emph{finite decision procedure}: exhausting the tower to that ceiling either
-produces the certificate (the reduced system is inconsistent, and the floor rises
-to $125$) or proves no covector exists at any degree, in which case the reduced
-Keller system is, as far as this certificate sees, \emph{consistent}. The two
-readings are the two sides of the same computation: a covector is an exclusion
-proof; a proof that none exists is the first step of a counterexample. We state
-both openly.
+\emph{One structural reduction, and one claim withdrawn.} The rational-covector
+relaxation adds nothing (EXP-074): since $\Lambda_0 M_0 = 0$ the certificate
+condition is homogeneous, so any rational covector clears its denominator to a
+polynomial one. A previous revision of this manuscript (v0.09, v0.10) asserted in
+addition that the tower has a \emph{computable finite ceiling}, namely the
+dimension of the Krylov closure of $\Lambda_0$, and concluded that the campaign is
+a finite decision procedure. \textbf{That assertion is withdrawn here} (EXP-078):
+its derivation presupposes that the pinned corrector ladder terminates, and
+EXP-064 measured that it does \emph{not} (the descending chain stabilizes nonzero
+at dimension $39$). Since the pinning carries a large gauge freedom, neither the
+ceiling nor its negation follows; we currently have \emph{no} a priori degree
+bound, effective or otherwise, and the chain of solvable degrees is controlled
+only by Noetherianity, which is not effective.
+
+What survives is weaker but exact. The set of degrees at which a covector exists
+is \emph{upward closed} (a degree-$d$ covector is a degree-$(d+1)$ covector with
+vanishing top coefficients), so either none exists at any degree, or there is a
+minimal $d_0$; with degrees $1$ and $2$ closed, $d_0 \ge 3$. And the
+support-restricted sweeps are \emph{one-sided}: they test necessary conditions, so
+an infeasible support decides a degree negatively, while all supports passing does
+\emph{not} establish existence. Settling degree three positively therefore
+requires constructing a covector, not sweeping. Both readings of the outcome remain
+open and we state them plainly: a covector would be an exclusion proof, and a proof
+that none exists at any degree would be the first step of a counterexample.
 
 \emph{A lead toward a degree-uniform statement.} Written as a connection, the
 annihilation lemma makes the covector obstruction a first cohomology class, and
 termination of the corrector ladder becomes the regularity type of that connection
-(regular singular: the ladder terminates and the ceiling is structural; irregular:
-the obstruction's motion with degree is a Stokes phenomenon). Whether this decides
-$(72,108)$ in one stroke is the current deep question; it is stated as a program
-item, not a result.
+(regular singular: the ladder terminates and a structural degree bound follows;
+irregular: no such bound, matching the measured non-termination of the pinned
+ladder). Whether this decides $(72,108)$ in one stroke is the current deep
+question; it is stated as a program item, not a result.
 
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the

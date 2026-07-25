@@ -134,3 +134,44 @@
 - Round closes WITHOUT version bump. Next: CCB-030/031 experiment declarations
   (valuation screening; equation-variant prevariety shrinking) and CCB-025 (msolve)
   toward EXP-004.
+
+## 2026-07-24 (round 4): EXP-004 DECIDED; the n = 6 lane opened and redirected by our own data
+
+- MULTI-FRONT MODE (Felipe's directive): the program now advances several fronts
+  concurrently, with heavy computations detached in background while reasoning
+  continues elsewhere; persisted as program/central-configurations/
+  research-lines-2026-07-24.md (fronts A tropical lane, B census engine, C
+  manuscript + Zenodo, D web + release, E reads).
+- EXP-004 (hypothesis committed first, 1a5fb84) DECIDED on a 16-cell grid:
+  P2 and P3 CONFIRMED, P1 confirmed operationally with a bonus. TWO NEW WORKING
+  VALUATION FAMILIES at n = 5 (powers of 2: 266/266 comets pointed; primes:
+  250/250) beyond the two published by JL25; the squares control reproduced their
+  published 257-COMPONENT COUNT EXACTLY, which validates our comet extraction and
+  pointedness certificates independently of the f-vector; dropping the ten
+  dependent symmetric AC equations (system S2) destroys the certificate at EVERY
+  valuation and inflates the undecided comet from 71-95 to 241-2224 generators
+  (the symmetric equations are tropically load-bearing: the prevariety-level form
+  of EXP-002's enrichment law); n = 4 generic finiteness replicated purely
+  polyhedrally in 2-4 seconds, with the equal-valuation case (0,0,0,0) resisting
+  exactly as JL25 predict for the HM06-equivalent specialization.
+- Honesty: our analyzer certifies pointedness (exact separating vector) and
+  unpointedness (exact zero combination); on the failing controls it returns
+  NEITHER, so negatives are recorded as "no certificate", never as "not pointed".
+  CCB-032 (exact LP for a lineality vector) will close that gap.
+- Instrument correction recorded: the first comet parser merged cones through
+  shared UNBOUNDED rays and reported 245 fused components; the t = 1 slice only
+  connects through BOUNDED rays. The fix reproduced the published 257.
+- EXP-005 (n = 6) attempt 1 ABORTED after 6.5 min with
+  gfan::MVMachineIntegerOverflow (powers of 3 reach t^243 at n = 6; the fast path
+  raises rather than returning a wrong answer). REDIRECT WITHIN HOURS, driven by
+  EXP-004's own finding: two variants relaunched in parallel (15 threads each),
+  powers of 2 on the 64-bit path (max exponent 32) and powers of 3 with
+  arbitrary-precision integers. This is the multi-front principle working: a
+  screening result rescued a multi-day frontier run from a blind repeat.
+- Front C: manuscript v0.01 -> v0.02 (real screening section + the n = 6 section;
+  6 pages, compiles clean). Front D: the central-configurations problem page built
+  on the shared shell (6 sections, EN/ES, verified citation spine) and routed.
+- Note: a parallel session's commit swept some of our files into its own commit
+  (ebc70df); content is intact and pushed, only the commit attribution differs.
+- Round closes WITHOUT version bump; the release step is evaluated separately per
+  methodology/08 serialization.

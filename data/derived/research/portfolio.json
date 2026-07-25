@@ -68,6 +68,14 @@
    "state": "scoped"
   },
   {
+   "area": "optimization-geometry",
+   "feasibility": "A",
+   "gpu": "partial",
+   "opened": "2026-07-24",
+   "slug": "unsplittable-flow-cost",
+   "state": "exploring"
+  },
+  {
    "area": "computation-complexity",
    "feasibility": "B",
    "gpu": "partial",
@@ -131,5 +139,5 @@
    "state": "proposed"
   }
  ],
- "updated": "2026-07-23"
+ "updated": "2026-07-24"
 }

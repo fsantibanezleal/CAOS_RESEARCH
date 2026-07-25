@@ -1,0 +1,25 @@
+out-n4-S1-arith.out: components: 9, pointed: 9, unpointed: 0, undecided: 0
+out-n4-S1-equal.out: components: 1, pointed: 0, unpointed: 0, undecided: 1
+    ('UNDECIDED', 50, 49)
+out-n4-S1-pow2.out: components: 10, pointed: 10, unpointed: 0, undecided: 0
+out-n4-S1-pow3.out: components: 10, pointed: 10, unpointed: 0, undecided: 0
+out-n5-S1-V1pow3.out: components: 281, pointed: 281, unpointed: 0, undecided: 0
+out-n5-S1-V2squares.out: components: 257, pointed: 257, unpointed: 0, undecided: 0
+out-n5-S1-V3pow2.out: components: 266, pointed: 266, unpointed: 0, undecided: 0
+out-n5-S1-V4primes.out: components: 250, pointed: 250, unpointed: 0, undecided: 0
+out-n5-S1-V5arith.out: components: 181, pointed: 180, unpointed: 0, undecided: 1
+    ('UNDECIDED', 3495, 71)
+out-n5-S1-V6repeat.out: components: 211, pointed: 210, unpointed: 0, undecided: 1
+    ('UNDECIDED', 1573, 95)
+out-n5-S2-V1pow3.out: components: 233, pointed: 232, unpointed: 0, undecided: 1
+    ('UNDECIDED', 2398, 241)
+out-n5-S2-V2squares.out: components: 206, pointed: 205, unpointed: 0, undecided: 1
+    ('UNDECIDED', 4147, 289)
+out-n5-S2-V3pow2.out: components: 214, pointed: 213, unpointed: 0, undecided: 1
+    ('UNDECIDED', 2922, 289)
+out-n5-S2-V4primes.out: components: 204, pointed: 203, unpointed: 0, undecided: 1
+    ('UNDECIDED', 3422, 289)
+out-n5-S2-V5arith.out: components: 139, pointed: 138, unpointed: 0, undecided: 1
+    ('UNDECIDED', 4422, 401)
+out-n5-S2-V6repeat.out: components: 142, pointed: 141, unpointed: 0, undecided: 1
+    ('UNDECIDED', 9754, 2224)

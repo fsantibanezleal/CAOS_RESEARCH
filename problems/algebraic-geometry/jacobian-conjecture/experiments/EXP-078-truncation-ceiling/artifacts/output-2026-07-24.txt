@@ -1,0 +1,50 @@
+==========================================================================
+EXP-078: is there a FINITE CEILING making (72,108) a decision procedure?
+==========================================================================
+
+--- PREMISE SCRUTINY (declared discipline: check before claiming) ---
+
+[1] The Krylov bound I declared: 'a finite covector, if it exists, exists at
+    eps-degree <= dim V_inf (=122)'. Its derivation assumed the PINNED-sigma
+    ladder: Lambda_alpha = (words in A_i = sigma T_i) applied to Lambda_0, so
+    joint nilpotency of the A_i on V_inf would bound the degree.
+    BUT EXP-064 REFUTED joint nilpotency for that sigma (the descending chain
+    STABILIZES NONZERO at dim 39). So the pinned ladder does NOT terminate,
+    and this bound DOES NOT APPLY. My declared prediction 1 is REFUTED as a
+    route to a ceiling: it is conditional on a termination we know fails.
+    (It does not follow that no covector exists: sigma carries a 165-dim gauge
+    freedom per solve, so a different gauge could still terminate.)
+
+[2] Is there a sigma-FREE a priori bound? The direct systems (EXP-067/070/
+    072/073) at degree d have unknowns = covector coefficients Lambda_alpha,
+    |alpha| <= d (about C(51+d,d)*165) and conditions = order-(d+1) blocks
+    (multi-indices of size d+1, 125 rows each). Both grow; Noetherianity gives
+    that the chain of solvable degrees stabilizes but NOT an effective bound.
+    We have NO a priori ceiling. Prediction 3 (the decision-procedure
+    statement) is therefore NOT established. Recorded as an honest negative.
+
+--- WHAT THE SCRUTINY DOES YIELD (a clean structural correction) ---
+
+[3] MONOTONICITY: the set of degrees at which a covector exists is UPWARD
+    CLOSED. A degree-d covector is also a degree-(d+1) covector (take the
+    top-order coefficients to be zero). Hence exactly one of:
+      (a) no covector at ANY finite degree, or
+      (b) there is a MINIMAL degree d0, and every d >= d0 works.
+    Our decided facts: degree 1 INFEASIBLE (EXP-067), degree 2 INFEASIBLE
+    (EXP-072). Therefore d0 >= 3 if case (b) holds.
+
+[4] THE FRAMING CORRECTION (important for how our own sweeps are read):
+    the support-restricted sweeps (pairs/triples/quadruples at degree 3) test
+    NECESSARY conditions only. Every support subsystem being FEASIBLE does
+    NOT establish that a degree-3 covector EXISTS; it only fails to refute it.
+    Existence requires CONSTRUCTION (solving the full joint system), which is
+    route R2. So the degree-3 'open' status is genuinely open in both
+    directions, and no amount of passing sweeps can close it positively.
+    Only a hit (infeasible support) decides it, negatively.
+
+RESULT: prediction 1 REFUTED (the Krylov ceiling is conditional on a
+  termination that EXP-064 refuted); prediction 3 NOT ESTABLISHED (no a priori
+  sigma-free bound). Gained instead: upward-closedness of the feasible-degree
+  set (so d0 >= 3), and the correction that our support sweeps are one-sided
+  (they can only refute, never confirm). The constructive route R2 is the ONLY
+  way to settle degree 3 positively.

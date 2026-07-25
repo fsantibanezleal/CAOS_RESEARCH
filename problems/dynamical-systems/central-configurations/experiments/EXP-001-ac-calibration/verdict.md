@@ -1,4 +1,4 @@
-# EXP-001 verdict (2026-07-24)
+# EXP-001 - Verdict: CONFIRMED IN PART, P7-UNIQUENESS REFUTED (2026-07-24; the bare Albouy-Chenciner distance system is dimension-blind)
 
 Hypothesis: `hypothesis.md` (declared and committed 2026-07-23, before any run, commit
 13c1a81). Runner: `run.py` (staged, per-stage caps; final form committed before the

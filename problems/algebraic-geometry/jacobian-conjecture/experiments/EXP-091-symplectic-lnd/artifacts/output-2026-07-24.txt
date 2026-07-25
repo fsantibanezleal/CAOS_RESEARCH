@@ -1,0 +1,31 @@
+==========================================================================
+EXP-091: the symplectic/LND lens - JC(2) meets Rentschler's classification
+==========================================================================
+  J(P,Q) = P_x Q_y - P_y Q_x = {P,Q} (Poisson bracket of dx^dy): IDENTICAL.
+  => planar Keller pairs = polynomial pairs with {P,Q}=1 (canonical pairs).
+  => JC(2) <=> every {P,Q}=1 pair generates C[x,y] (is a coordinate system).
+
+  D = {P,.} is a derivation with D(Q)=1 (a 'slice'); its kernel contains C[P].
+  For (P,Q)=(x,y): {x,.} = d/dy, kernel C[x], slice y. This is the model.
+
+  Rentschler (1968): every locally nilpotent derivation (LND) of C[x,y] is,
+  up to a polynomial automorphism, of the form p(x) d/dy. A CLASSIFICATION.
+  If D={P,.} is an LND, then D(Q)=1 forces (Rentschler) p a nonzero constant,
+  so D ~ d/dy, hence P is a coordinate (a 'variable'), hence (P,Q) is a
+  coordinate system => that Keller pair is an automorphism. JC(2) would hold
+  for all pairs whose Hamiltonian {P,.} is locally nilpotent.
+
+  GAP [D, DERIVATION NEEDED]: {P,.} is an LND IFF its flow is a polynomial
+  G_a-action IFF the generic fibre {P=c} is a line A^1. So:
+  JC(2) <=> every {P,Q}=1 pair has {P=c} ~ A^1 (line fibres) => Rentschler
+  => coordinate. The whole planar conjecture becomes: does {P,Q}=1 FORCE the
+  P-fibres to be lines? This is the Abhyankar-Moh / embedding-line question in
+  disguise (a line embedded in A^2 is rectifiable, Abhyankar-Moh-Suzuki).
+
+RESULT: [MV] J = {,}; [D] the symplectic lens routes JC(2) to LND theory:
+  IF {P,.} is locally nilpotent, Rentschler's classification forces (P,Q) to
+  be a coordinate system (JC(2) holds for that pair). The residual question -
+  are the P-fibres lines - is the Abhyankar-Moh embedded-line problem. This
+  connects our program to two CLASSIFICATION theorems (Rentschler, Abhyankar-
+  Moh-Suzuki), the recognition lens applied to the plane. Declared: EXP-092
+  (test whether a hypothetical (72,108) reduced pair forces line fibres).

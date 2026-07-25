@@ -5,3 +5,12 @@ n5-S1-V4primes | fvec: 2745 8795 13472 11540 5365 1059 | pointed(global): NO | r
 n5-S1-V5arith | fvec: 3985 13796 20950 17331 7663 1438 | pointed(global): NO | rays: 4153, unbounded directions: 168, with a positive coordinate: 74 | 2400s-cap | 379s
 n5-S1-V6repeat | fvec: 1953 5151 5569 3039 898 109 | pointed(global): NO | rays: 2124, unbounded directions: 171, with a positive coordinate: 31 | 2400s-cap | 174s
 n5-S2-V1pow3 | fvec: 2839 9330 14440 12590 5984 1192 | pointed(global): NO | rays: 3255, unbounded directions: 416, with a positive coordinate: 316 | 2400s-cap | 87s
+n5-S2-V2squares | fvec: 4425 15316 23071 18756 8250 1544 | pointed(global): NO | rays: 4842, unbounded directions: 417, with a positive coordinate: 317 | 2400s-cap | 115s
+n5-S2-V3pow2 | fvec: 3188 10801 16475 13798 6292 1216 | pointed(global): NO | rays: 3605, unbounded directions: 417, with a positive coordinate: 317 | 2400s-cap | 98s
+n5-S2-V4primes | fvec: 3688 12406 18327 14780 6536 1240 | pointed(global): NO | rays: 4105, unbounded directions: 417, with a positive coordinate: 317 | 2400s-cap | 75s
+n5-S2-V5arith | fvec: 4439 16148 24682 20197 8838 1635 | pointed(global): NO | rays: 4958, unbounded directions: 519, with a positive coordinate: 412 | 2400s-cap | 107s
+n5-S2-V6repeat | fvec: 1 7760 45625 116429 161123 126789 53611 9555 24 | pointed(global): NO | rays: 10062, unbounded directions: 2302, with a positive coordinate: 1895 | 2400s-cap | 1253s
+n4-S1-pow3 | fvec: 44 80 57 14 | pointed(global): YES | rays: 47, unbounded directions: 3, with a positive coordinate: 0 | 600s-cap | 4s
+n4-S1-pow2 | fvec: 63 119 82 19 | pointed(global): YES | rays: 66, unbounded directions: 3, with a positive coordinate: 0 | 600s-cap | 2s
+n4-S1-arith | fvec: 83 164 108 23 | pointed(global): NO | rays: 88, unbounded directions: 5, with a positive coordinate: 1 | 600s-cap | 2s
+n4-S1-equal | fvec: 1 49 66 18 | pointed(global): NO | rays: 50, unbounded directions: 49, with a positive coordinate: 21 | 600s-cap | 1s

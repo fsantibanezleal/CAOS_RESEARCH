@@ -1,4 +1,4 @@
-# EXP-002 verdict (2026-07-24)
+# EXP-002 - Verdict: CONFIRMED ON EVERY DECIDED PREDICTION (2026-07-24; the enrichment law; P2 inconclusive at engine caps)
 
 Hypothesis: `hypothesis.md` (declared and committed 2026-07-24 BEFORE any run, commit
 1c6cb16). Runner: `run.py` (staged, capped; census instrument v2 in `code/cclib`).
