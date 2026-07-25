@@ -230,6 +230,85 @@ def test_the_2026_instance_is_a_counterexample_under_its_published_costs():
     assert rep.alpha_instance == Fraction(16, 15)
 
 
+def test_exact_simplex_matches_textbook_answers():
+    from ufclib.simplex import solve_lp
+
+    # max x + y s.t. x + 2y <= 4, 3x + y <= 6, written as a minimisation
+    optimum, z = solve_lp(
+        [Fraction(-1), Fraction(-1)],
+        [[Fraction(1), Fraction(2)], [Fraction(3), Fraction(1)]],
+        [Fraction(4), Fraction(6)],
+    )
+    assert optimum == Fraction(-14, 5)
+    assert z == [Fraction(8, 5), Fraction(6, 5)]
+
+
+def test_exact_simplex_agrees_with_sympy_on_the_2026_instance():
+    from ufclib.decide import alpha_for_routing
+    from ufclib.enumerate_routings import all_routings, routing_load
+    from ufclib.separation import separation_lp
+    from ufclib.simplex import max_min_margin
+
+    claim = Instance.build(
+        source="s",
+        demands={"t1": 15, "t2": 10, "t3": 15},
+        arcs=[
+            ("s", "t1", 10, 2), ("s", "t2", 6, 3), ("s", "u", 24, 0),
+            ("u", "t3", 10, 2), ("u", "v", 14, 0), ("v", "t1", 5, 0),
+            ("v", "w", 9, 0), ("w", "t2", 4, 0), ("w", "t3", 5, 0),
+        ],
+    )
+    loads = [
+        [routing_load(claim, r)[a.index] for a in claim.arcs]
+        for r in all_routings(claim)
+        if alpha_for_routing(claim, routing_load(claim, r)) <= 1
+    ]
+    ours, _ = max_min_margin(loads, [a.x for a in claim.arcs])
+    assert ours == separation_lp(claim).optimum == Fraction(2, 7)
+
+
+def test_frontier_value_of_the_2026_instance():
+    from ufclib.frontier import frontier_value
+
+    claim = Instance.build(
+        source="s",
+        demands={"t1": 15, "t2": 10, "t3": 15},
+        arcs=[
+            ("s", "t1", 10, 2), ("s", "t2", 6, 3), ("s", "u", 24, 0),
+            ("u", "t3", 10, 2), ("u", "v", 14, 0), ("v", "t1", 5, 0),
+            ("v", "w", 9, 0), ("w", "t2", 4, 0), ("w", "t3", 5, 0),
+        ],
+    )
+    res = frontier_value(claim)
+    assert res.is_counterexample
+    assert res.alpha_max == Fraction(16, 15)
+    assert res.ceiling == Fraction(26, 15)
+
+
+def test_spine_family_reproduces_the_2026_instance():
+    from ufclib.frontier import spine_family_instance
+
+    inst = spine_family_instance(
+        demands=(15, 10, 15),
+        exits=(2, 3, 3),
+        early_exits=(0, 0, 1),
+        rhos=(Fraction(1, 3), Fraction(2, 5), Fraction(1, 3)),
+        costs=(2, 3, 2),
+        spine_length=3,
+    )
+    assert inst is not None
+    rep = decide_instance(inst)
+    assert rep.is_counterexample
+    assert rep.fractional_cost == Fraction(58)
+    assert rep.alpha_instance == Fraction(16, 15)
+
+
+def test_frontier_value_stays_at_most_one_on_conforming_instances():
+    from ufclib.frontier import frontier_value
+
+    assert frontier_value(v1()).alpha_max <= 1
+
+
 def test_routing_load_sums_demands():
     inst = v1()
     rep = decide_instance(inst)

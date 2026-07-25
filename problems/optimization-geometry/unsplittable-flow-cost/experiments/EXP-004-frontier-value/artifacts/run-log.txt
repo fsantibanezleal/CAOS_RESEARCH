@@ -1,0 +1,61 @@
+EXP-004: the frontier value, and a search for a larger forced violation
+========================================================================
+
+### F1 the family contains the 2026 counterexample
+  [PASS] F1 the family point builds
+  [PASS] F1 it reproduces the instance arc for arc (spine v1,v2,v3 named u,v,w)
+  [PASS] F1 same verdict, cost and alpha  (cost 58, alpha 16/15)
+
+### F2 the instrument on instances that obey the conjecture
+  V1: alpha_max = 1/2 (routing alphas ['1/2', '1/2'])
+  [PASS] F2 V1 alpha_max <= 1  (1/2)
+  V2: alpha_max = 1/2 (routing alphas ['1/2', '1/2'])
+  [PASS] F2 V2 alpha_max <= 1  (1/2)
+  V3: alpha_max = 1/2 (routing alphas ['1/2', '1/2'])
+  [PASS] F2 V3 alpha_max <= 1  (1/2)
+  V4: alpha_max = 0 (routing alphas ['0', '1'])
+  [PASS] F2 V4 alpha_max <= 1  (0)
+  V5: alpha_max = 1/2 (routing alphas ['1/2', '1/2', '1'])
+  [PASS] F2 V5 alpha_max <= 1  (1/2)
+
+### F3 the frontier value of the 2026 instance
+  routing alphas: ['1/3', '2/5', '2/3', '2/3', '16/15', '16/15', '16/15', '26/15']
+  ceiling (alpha of the cheapest routing): 26/15
+  alpha_max = 16/15   (0.0 s)
+  witness c: ['2/7', '3/7', '0', '2/7', '0', '0', '0', '0', '0']
+  [PASS] F3 the instance is a counterexample under the frontier instrument
+  [PASS] F3 alpha_max = 16/15  (16/15)
+  [PASS] F5 alpha_max <= the all-cheapest ceiling  (16/15 vs 26/15)
+
+### X1 cross-check: our exact simplex against sympy's, where sympy succeeds
+  2026 instance: sympy 2/7, ours 2/7
+  [PASS] X1 2026 instance the two solvers agree  (2/7 vs 2/7)
+  V1: sympy 0, ours 0
+  [PASS] X1 V1 the two solvers agree  (0 vs 0)
+  V2: sympy 0, ours 0
+  [PASS] X1 V2 the two solvers agree  (0 vs 0)
+  V3: sympy 0, ours 0
+  [PASS] X1 V3 the two solvers agree  (0 vs 0)
+  V4: sympy 0, ours 0
+  [PASS] X1 V4 the two solvers agree  (0 vs 0)
+  V5: sympy 0, ours 0
+  [PASS] X1 V5 the two solvers agree  (0 vs 0)
+  6 instances cross-validated between independent LP implementations
+
+### F4 the sweep: can any family member force more?
+  counterexample: alpha_max = 16/15  spine k=3 m=3 d=(15, 10, 15) e=(2, 3, 3) f=(0, 0, 1) rho=['1/3', '2/5', '1/3']
+  k=3 sweep: 2448 parameter points built, 2448 feasible, 1 counterexamples, 42.8 s
+  k=4 sweep: 1008 parameter points built, 1008 feasible, 0 counterexamples, 117.4 s
+
+  BEST frontier value found: 16/15
+  achieved by: the 2026 counterexample (baseline)
+  F4 (a family member beats 16/15): REFUTED (null result)
+  [PASS] F5 nothing in the sweep reaches alpha_max >= 2  (16/15)
+
+### F6 honest scope
+  Any maximum above is a lower bound on alpha* obtained over a BOUNDED BOX of ONE
+  structural family. It is not an estimate of alpha*, and it says nothing about
+  whether Goemans' conjecture holds with O(d_max) violation.
+
+========================================================================
+EXP-004: predictions checked. F4 outcome: refuted (null).
