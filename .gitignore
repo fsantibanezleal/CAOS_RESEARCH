@@ -17,6 +17,7 @@ __pycache__/
 .mypy_cache/
 build/
 dist/
+tmp/
 
 # --- Node / web ---
 node_modules/
