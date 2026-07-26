@@ -1013,3 +1013,60 @@
   geometry to our own EXP-014/EXP-010. Manuscripts A/B republished v0.09 (Zenodo).
 - The floor-raise stays gated; the (72,108) truncation and [125,150] frontier
   continue. JC(2) remains open.
+
+## 2026-07-25 - source reconciliation: EXP-010 stands, all-signature scope corrected
+
+- The mandatory fresh primary-source sweep found T. Shaska, *Graded Keller maps and
+  the Jacobian Conjecture*, arXiv:2607.20210v1, submitted 2026-07-22. The TeX source
+  was read in full and hashed in the dated context dossier.
+- Shaska independently proves the full planar equivariant classification:
+  same-sign weights give triangular automorphisms, one zero weight gives affine
+  automorphisms, and opposite-sign weights give linear automorphisms.
+- EXP-010, declared 2026-07-21, remains valid exactly on its stated
+  opposite-sign/one-zero scope. Derived summaries had drifted to the false global
+  phrase "every equivariant Keller map is linear"; same-sign nonlinear triangular
+  automorphisms are controls. Those summaries and the obsolete "NOT FOUND" novelty
+  status were corrected. No priority claim is made.
+- Papers A v0.11 and B v0.14 were rebuilt warning-free, visually inspected page by
+  page, and published as immutable correction versions:
+  10.5281/zenodo.21579022 and 10.5281/zenodo.21579025. The Shaska source contains
+  no `sl2` or corrector-module construction, so it did not decide EXP-080.
+
+## 2026-07-25 - EXP-080: the natural `sl2` premise fails its invariant gate
+
+- The methodology/12 amendment was committed before machine time. It separated
+  raw monomial shifts from the gauge-dependent pinned operators and made the
+  commutator stage conditional on a canonical common grading.
+- The exact sub-second gate reconstructed all 51 active operators, then refuted
+  the premise: the full \(P_T=y^8(xy-1)^8+x\) has no nonzero monomial grading
+  (two difference equations, determinant \(-9\)); its nine edge monomials give
+  nine different \((v,1-u)\) candidates; all sign groupings mix shift degrees.
+- Stage B was not run. The outcome is an honest scoped null against the declared
+  natural triple, not against every selected grading, right-inverse gauge, larger
+  Lie algebra, or \(JC(2)\). The primary route advances to the constructive
+  full degree-3 covector solve (EXP-093).
+
+## 2026-07-25 - Full strategy audit; EXP-075 recovered and EXP-093 cancelled
+
+- The complete proposal audit withdrew the two-sided reading of the certificate
+  tower: absence of a finite covector and feasible support ansatzes do not support
+  consistency. EXP-079's connection language and EXP-081's 3D projection were
+  retired as undefined; EXP-092 was held because the reduced equation gives
+  \(D_P(Q)=x^2\), not a unit slice.
+- The proposed EXP-093 cubic system was sized correctly: 4,092,495 certificate
+  unknowns through parameter degree three and 39,531,375 scalar order-four
+  conditions before structural compression, not “227k+”.
+- Close-out inspection found that the persisted EXP-075 blocker-first artifact
+  already contained an unpropagated infeasible support at reordered index 2662:
+  \(\{(0,3),(1,0),(3,4),(4,7)\}\). A targeted rerun reproduced the hit in
+  12 seconds with the regression gate green and both primes agreeing.
+- Logical decision: any global degree-three polynomial covector would restrict to
+  this four-parameter slice. The slice is infeasible, so no global cubic
+  polynomial covector exists. EXP-093 is cancelled. This does not establish
+  consistency, exclude higher-degree/localized certificates, decide \((72,108)\),
+  or raise the floor.
+- The redirected queue is source-first: finish EXP-084/085; test
+  Makar-Limanov/Trakhtenberg, Lee-Li, and approximate-root restrictions through
+  an explicit GGHV bracket-one to bracket-\(x^2\) applicability bridge; then test
+  the exact left-syzygy pairing-ideal and finite-chart-cover formulation on small
+  controls.

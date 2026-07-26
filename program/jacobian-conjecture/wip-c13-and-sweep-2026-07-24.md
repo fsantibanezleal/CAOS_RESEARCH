@@ -1,5 +1,11 @@
 # WIP - C13 fork (EXP-077) + quadruple sweep reorder (2026-07-24, session 47)
 
+> **Closed 2026-07-25.** The blockers-first artifact already contained a hit at
+> reordered index 2662. A targeted rerun reproduced the same infeasible support
+> over both primes, so EXP-075 now excludes a global degree-three polynomial
+> covector. Do not resume the remaining sweep. See the experiment verdict and the
+> 2026-07-25 strategy audit.
+
 Validation-agent handoff. Two tasks, both done. Nothing here bumps versions,
 opens PRs, or touches other problems. All commits are on `develop` and pushed.
 
