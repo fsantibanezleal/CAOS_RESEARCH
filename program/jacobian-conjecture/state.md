@@ -125,3 +125,6 @@
   encoded by the 51 reduced coefficients alone. Do not build a direct
   degree-21 equation; proceed to the certificate-module/chart-cover analog
   unless a full boundary-divisor reconstruction is first supplied.
+  Paper B v0.16 records the audit; PR #85 merged at `d47937a`, and Zenodo
+  version DOI `10.5281/zenodo.21589334` is published under concept DOI
+  `10.5281/zenodo.21503367`.
