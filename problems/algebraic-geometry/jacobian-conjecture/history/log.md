@@ -1239,3 +1239,6 @@
   declared \((0,1)/(1,7)/(0,7)\) coefficient slice. EXP-109 promotes
   \((0,6)\) with invariant coordinate
   \(x=\varepsilon_{(0,6)}/u^2\).
+- Paper B v0.19 passed its two-pass 14-page PDF build and full visual QA.
+  PR #90 merged at `2481d3a`; the immutable Zenodo version DOI is
+  `10.5281/zenodo.21610744`.

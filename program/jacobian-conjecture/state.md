@@ -180,3 +180,7 @@
   persisted integer Bezout identity. This exactly excludes the declared
   \((0,1)/(1,7)/(0,7)\) slice, not the other coefficients or JC(2). EXP-109
   is declared for the next direction \((0,6)\).
+- **2026-07-26 publication:** Paper B v0.19 records the exact
+  three-coefficient slice cover. Its two-pass 14-page PDF and full visual QA
+  passed; PR #90 merged at `2481d3a`. Zenodo version DOI:
+  `10.5281/zenodo.21610744`, concept DOI: `10.5281/zenodo.21503367`.
