@@ -35,13 +35,15 @@ Consequence: a 2D counterexample, if one exists, must be genuinely NON-equivaria
 symmetry class that produced the entire 3D counterexample family is completely closed in
 dimension 2.
 
-Novelty status (FULL adversarial pass, 2026-07-22, context dossier): NOT FOUND in the
-literature, and the statement has genuine content: the C*-equivariant analog FAILS on
-Q-acyclic pseudo-planes (Dubouloz-Palka, Adv. Math. 339 (2018)), and the known equivariant
-positive result covers only small FINITE groups (Miyanishi, Transform. Groups 28 (2023)).
-The positive-weight case is folklore-trivial; the mixed-weight case is ours as far as the
-pass could determine. Folklore risk stays recorded; the manuscript phrasing awaits Felipe's
-validation.
+Current positioning (source reconciliation, 2026-07-25): EXP-010 is exactly scoped to
+opposite-sign or one-zero weights and remains valid. T. Shaska,
+[arXiv:2607.20210v1](https://arxiv.org/abs/2607.20210), submitted one day after EXP-010 was
+declared, independently proves the full all-signature classification. Same-sign actions can
+give nonlinear triangular automorphisms; opposite-sign actions give the linear case above.
+The correct global statement is therefore "equivariant implies automorphism", not
+"equivariant implies linear". No priority or novelty claim is made. The dated evidence and
+source hash are in
+[`2026-07-25-graded-keller-reconciliation.md`](../context/2026-07-25-graded-keller-reconciliation.md).
 
 ## The real picture of the 3D map (EXP-011)
 

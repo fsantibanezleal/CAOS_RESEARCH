@@ -16,8 +16,9 @@
 - **Now:** M3 web app (GitHub Pages per ADR-0016/0017/0056/0057/0058: shared shell,
   header/footer, references, page structure; baked census/wall artifacts ready from
   EXP-007/011; portfolio board from program/portfolio.yaml).
-- **Also done (2026-07-21, session 3):** EXP-010 confirmed (2D equivariant rigidity THEOREM,
-  all weights: every equivariant Keller map of C^2 is linear). EXP-011 confirmed (real census:
+- **Also done (2026-07-21, session 3):** EXP-010 confirmed (2D equivariant rigidity THEOREM
+  for opposite-sign/one-zero weights: every map in that scope is linear; the all-signature
+  wording was corrected 2026-07-25). EXP-011 confirmed (real census:
   1 or 3 real preimages split by the discriminant wall; real surjectivity; real Keller
   corollary). Manuscript v0.03.
 - **Next experiments:** JC-P3 continuation (global-minimality search, degrees 3..6, GPU); JC-P4
@@ -59,3 +60,12 @@
   web bake + screenshot pass (nine unbaked records); wiki 04 rewrite.
 - **Blocked on:** Felipe: novelty phrasing validation (blocks submission, not work);
   outreach call on the Thompson index correction (17 -> 18); diffusion go/no-go.
+
+- **2026-07-25 source reconciliation:** the fresh primary-source sweep found T. Shaska,
+  arXiv:2607.20210v1 (submitted 2026-07-22), independently proving the full planar
+  $\mathbb{G}_m$-equivariant Keller classification. EXP-010 remains valid on its declared
+  opposite-sign/one-zero scope. Derived phrases saying all signatures are linear were
+  corrected: same-sign actions may give nonlinear triangular automorphisms; all signatures
+  are automorphisms. The old "NOT FOUND" novelty status is superseded, with no priority
+  claim. Papers A v0.11 and B v0.14 are the correction versions. Next after publication:
+  EXP-080, then the constructive EXP-093 route.

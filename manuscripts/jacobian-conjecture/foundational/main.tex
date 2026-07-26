@@ -27,12 +27,12 @@ Exact Validation, a General Seed Family, the Geometry of Non-Properness,\\
 and Two-Dimensional Equivariant Rigidity}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-24\\[2pt]\normalsize Version 0.10}
+\date{2026-07-25\\[2pt]\normalsize Version 0.11}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Jacobian Counterexample: Foundations \textperiodcentered\ v0.10}
+\fancyhead[R]{\small Jacobian Counterexample: Foundations \textperiodcentered\ v0.11}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -42,7 +42,7 @@ and Two-Dimensional Equivariant Rigidity}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper A of a three-paper record \textperiodcentered\ version 0.10 \textperiodcentered\ 2026-07-24\\
+Paper A of a three-paper record \textperiodcentered\ version 0.11 \textperiodcentered\ 2026-07-25\\
 DOI \href{https://doi.org/10.5281/zenodo.21503365}{10.5281/zenodo.21503365} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -70,9 +70,12 @@ $27A^2C^2 - 18ABC + 16A + B^3C - B^2 = 0$; over $\mathbb{R}$ this wall separates
 from a one-sheet region, and $F$ restricts to a surjective, non-injective real Keller map. The
 counterexamples reduce at suitable primes to non-injective Keller maps over $\mathbb{F}_\ell$
 of degree below the characteristic. Fifth, we prove that the mechanism cannot reach the
-still-open two-variable case: for arbitrary weights, every $\Gm$-equivariant Keller map of
-$\C^2$ is linear (a classification with a positive-factor kill at the top degree), so a planar
-counterexample, if any, must be genuinely non-equivariant. All computations are exact (rational
+still-open two-variable case: for opposite-sign or one-zero weights, every
+$\Gm$-equivariant Keller map of $\C^2$ is linear (a classification with a positive-factor kill
+at the top degree), so a planar counterexample, if any, must be genuinely non-equivariant.
+Shaska's contemporaneous independent all-signature classification is reconciled explicitly:
+same-sign actions may give nonlinear triangular automorphisms, while equivariant planar Keller
+maps remain automorphisms in every signature \cite{Shaska2026}. All computations are exact (rational
 or symbolic) and reproducible from the repository; every claim below is labeled as
 machine-verified, derived, or conjectural.
 \end{abstract}
@@ -317,6 +320,16 @@ experimental companion of Theorem~\ref{thm:rigidity}. Consequence: a two-variabl
 counterexample, if one exists, must be genuinely non-equivariant: the symmetry class behind the
 entire three-dimensional family is completely closed in dimension 2.
 
+\paragraph{Scope and independent classification.}
+The word ``linear'' in Theorem~\ref{thm:rigidity} is restricted to the displayed
+opposite-sign/one-zero scope. Same-sign actions admit nonlinear triangular equivariant
+automorphisms. Shaska \cite{Shaska2026}, submitted on 2026-07-22 after EXP-010 was declared,
+independently proves the full classification: triangular for same-sign weights, affine when
+one weight is zero, and linear for opposite-sign weights. We make no priority or novelty claim
+for the classification. Our contribution here is the independently derived determinant
+factorization and exact experiment record on the hyperbolic scope relevant to the
+three-dimensional mechanism.
+
 \begin{theorem}[Real fiber census of $F$, {[MV]}]\label{thm:realcensus}
 Over $\mathbb{R}$, the announced $F$ restricts to a surjective, orientation-reversing
 ($\det = -2$), non-proper, non-injective real Keller map. For real targets off the
@@ -406,6 +419,8 @@ conjecture, \emph{Math. Ann.} \textbf{264} (1983), 303--313.
 \emph{C. R. Math.} \textbf{364} (2026), 363--370. arXiv:2512.23614.
 \bibitem{Smale1998} S. Smale, Mathematical problems for the next century, \emph{Math.
 Intelligencer} \textbf{20} (1998), 7--15.
+\bibitem{Shaska2026} T. Shaska, Graded Keller maps and the Jacobian Conjecture,
+arXiv:2607.20210v1, 2026.
 \bibitem{vdEssen2000} A. van den Essen, \emph{Polynomial Automorphisms and the Jacobian
 Conjecture}, Progress in Mathematics 190, Birkh\"auser, 2000.
 \end{thebibliography}

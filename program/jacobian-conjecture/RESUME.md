@@ -1,4 +1,4 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-24, session 47 closed [cont.]; continuous loop)
+# RESUME - Jacobian conjecture program (updated 2026-07-25, source-reconciliation round)
 
 The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
 
@@ -12,7 +12,11 @@ The single first-read for a fresh session (contract: methodology/07-session-hand
   2D equivariant rigidity (EXP-010); the uniform min-degree-2 theorem + shear closure
   (EXP-021/022); T1 weight-class (EXP-029); T2 lower-weight tails (EXP-030/031); T3
   x-anchored edges (EXP-032); T4 vertex dichotomy (EXP-033); annihilation closed form
-  (EXP-036). Novelty (adversarial pass, dossier 2026-07-22): T1, T2, rigidity NOT FOUND;
+  (EXP-036). Novelty (updated source reconciliation, 2026-07-25): T1 and T2 NOT FOUND;
+  rigidity now has an independent contemporaneous overlap in Shaska,
+  arXiv:2607.20210v1. EXP-010 remains exact on opposite-sign/one-zero weights; same-sign
+  actions may be nonlinear triangular automorphisms, so no priority or all-signature
+  linearity claim remains;
   T3 not-as-stated (method classical); T4 sharp-dichotomy form (GGV Prop 4.1 has the
   counterexample half).
 - **The open core and its instrument:** components must swallow x with a mixed staircase
@@ -80,14 +84,27 @@ P72 excluded at ALL partner degrees).
 
 ## 4. In flight
 
-Nothing mid-run. Session 23 closed with EXP-042/043, THE MANUSCRIPT SPLIT (A
-foundational v0.07 / B planar-program v0.01 NEW / C cascade v0.02 with the explicit
-witness; all three PDFs compile), and the routes addendum (current view + N/M/L map +
-the standing decision rule: every new experiment names its route).
+No machine run is active. The 2026-07-25 source-reconciliation round found
+Shaska, arXiv:2607.20210v1, and corrected derived scope drift around EXP-010:
+the experiment proves linearity for opposite-sign/one-zero weights, while the
+global all-signature statement is automorphism, with nonlinear triangular maps
+allowed for same-sign weights. The source dossier, wiki, Papers A/B, program
+records, and management mirror are being reconciled. EXP-080 remains declared
+but unrun; its artifact directory is empty.
 
 ## 5. Next actions, ordered
 
-1. DONE (EXP-051): the HALF-PLANE TOWER LEMMA covers the y-most-corner staircase
+1. Finish and publish the source correction: build Papers A v0.11 and B v0.14,
+   visually inspect the affected pages, publish immutable Zenodo new versions,
+   and record their version DOIs. Exact source:
+   `context/2026-07-25-graded-keller-reconciliation.md`.
+2. Run EXP-080 only after amending its preflight to separate the monomial torus
+   grading from an `sl2` action on the pinned corrector operators. A failure of the
+   pinned operators is a scoped null, not a gauge-independent no-go theorem.
+3. Build EXP-093's constructive full degree-3 GF(p) solver after the structural
+   probe; EXP-079 remains the degree-uniform connection route, with its regularity
+   premise re-derived after the EXP-078 and manuscript-audit corrections.
+4. DONE (EXP-051): the HALF-PLANE TOWER LEMMA covers the y-most-corner staircase
    stratum at all degrees, proper-power tops included. Remaining theory targets:
    (a) shapes where the top corner is NOT the y-most support point (y-heavy tails):
    currently Theorem 6 or full-window towers; map what escapes ALL current lemmas;

@@ -1013,3 +1013,20 @@
   geometry to our own EXP-014/EXP-010. Manuscripts A/B republished v0.09 (Zenodo).
 - The floor-raise stays gated; the (72,108) truncation and [125,150] frontier
   continue. JC(2) remains open.
+
+## 2026-07-25 - source reconciliation: EXP-010 stands, all-signature scope corrected
+
+- The mandatory fresh primary-source sweep found T. Shaska, *Graded Keller maps and
+  the Jacobian Conjecture*, arXiv:2607.20210v1, submitted 2026-07-22. The TeX source
+  was read in full and hashed in the dated context dossier.
+- Shaska independently proves the full planar equivariant classification:
+  same-sign weights give triangular automorphisms, one zero weight gives affine
+  automorphisms, and opposite-sign weights give linear automorphisms.
+- EXP-010, declared 2026-07-21, remains valid exactly on its stated
+  opposite-sign/one-zero scope. Derived summaries had drifted to the false global
+  phrase "every equivariant Keller map is linear"; same-sign nonlinear triangular
+  automorphisms are controls. Those summaries and the obsolete "NOT FOUND" novelty
+  status were corrected. No priority claim is made.
+- Papers A v0.11 and B v0.14 are the immutable correction versions. EXP-080 remains
+  declared and unrun; the Shaska source contains no `sl2` or corrector-module
+  construction, so it does not decide that experiment.
