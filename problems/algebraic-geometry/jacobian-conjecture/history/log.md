@@ -1213,3 +1213,15 @@
   three-parameter lift.
 - Paper B v0.18 passed its two-pass 13-page PDF build and visual QA and is
   published at version DOI `10.5281/zenodo.21598065`.
+
+## 2026-07-26 - EXP-107 isolates a finite three-parameter residual
+
+- Two 125-by-125 minors were reconstructed on 16-by-64 NTT grids over
+  \(\mathbb F_{998244353}\), with direct off-grid determinant controls and
+  exact recovery of the EXP-105 \(y=0\) boundary.
+- The endpoint-safe chart is independent of the promoted coordinate and
+  remains \(G(z)=(8z+1)^{14}\).
+- The first chart restricts at \(z=-1/8\) to a squarefree degree-12 polynomial
+  in \(y\). The two-chart ideal is zero-dimensional but not the unit ideal.
+- EXP-108 must select a third minor on this explicit finite fiber, then repeat
+  and lift before any characteristic-zero claim.

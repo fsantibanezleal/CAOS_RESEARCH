@@ -167,3 +167,9 @@
   cover and global lower-family grading. The two-pass 13-page PDF and visual
   QA passed. Zenodo version DOI: `10.5281/zenodo.21598065`, concept DOI:
   `10.5281/zenodo.21503367`.
+- **2026-07-26 EXP-107:** the first three-parameter graded lift was
+  reconstructed over \(\mathbb F_{998244353}[z,y]\). The endpoint-safe minor
+  remains exactly \(G(z)=(8z+1)^{14}\), independent of \(y\). The other minor
+  leaves a squarefree degree-12 fiber over \(z=-1/8\); the common ideal is
+  zero-dimensional, not the unit ideal. EXP-108 now targets those twelve
+  geometric points with a third maximal minor. No JC(2) conclusion follows.
