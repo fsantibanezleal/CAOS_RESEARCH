@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-25\\[2pt]\normalsize Version 0.15}
+\date{2026-07-26\\[2pt]\normalsize Version 0.16}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.15}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.16}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -39,7 +39,7 @@ the Staircase Transport, and the Recalibrated Frontier}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper B of a three-paper record \textperiodcentered\ version 0.15 \textperiodcentered\ 2026-07-25\\
+Paper B of a three-paper record \textperiodcentered\ version 0.16 \textperiodcentered\ 2026-07-26\\
 DOI \href{https://doi.org/10.5281/zenodo.21503367}{10.5281/zenodo.21503367} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -537,6 +537,25 @@ particular, the approximate-root paper proves only an inequality for the
 minor-root expression where equality would be needed for the proposed family
 exclusion; that route is not used here.
 
+\emph{The transport typing gate (EXP-097).} These original-pair invariants
+cannot be imposed directly on the $51$ final Laurent coefficients without
+additional boundary data. If $R(x)=\operatorname{Res}_y(F,G)$ and
+\(\phi_c(x,y)=(x^{-1},x^cy)\), then [D; exact symbolic controls]
+\[
+ \operatorname{Res}_y(\phi_cF,\phi_cG)=x^{cpq}R(x^{-1}),
+\]
+where $p=\deg_yF$ and $q=\deg_yG$. For the final polygons
+$(p,q,c)=(16,24,4)$, so $cpq=1536$: an input exponent interval
+$[\nu,21]$ becomes $[1515,1536-\nu]$, of width $21-\nu$.
+The reduction first swaps the selected coordinate eliminant and then
+localizes $x$, making $x^\nu$ a unit; Proposition~4.3 does not retain the
+missing $x=0$ divisor order $\nu$. Thus absolute degree $21$ remains a
+reconstruction gate for an original polynomial pair, not a direct equation
+on the reduced coefficients. Laurent exponent width is a conditional
+replacement only after proving $\nu=0$ and swap compatibility. A complete
+boundary-divisor ledger could supply that missing theorem; none is claimed
+here.
+
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the
 published literature: the closing remark of \cite{GGV2017} states that the corner
@@ -600,13 +619,12 @@ audit trail (including its open verification items) persisted in the repository.
 
 \section{Program}
 
-Priorities, from the standing routes evaluation: (1) attempt a low-cost,
-typed transport of the seven inner-vertex alternatives or the intersection
-number $21$ into the $51$ reduced coefficients, stopping if the normalization
-does not preserve the chosen invariant; (2) compute the small
+Priorities, from the standing routes evaluation: (1) compute the small
 certificate-module/chart cover---left syzygies of $M$, their pairing ideal
 with the right-hand side, and localized certificates---rather than extending
-one-sided support sweeps; (3) pursue Newton resolution only after deriving a
+one-sided support sweeps; (2) reopen the intersection-$21$ transport only
+after constructing a complete boundary-divisor ledger through the swap,
+Laurent cuts, and final inversion; (3) pursue Newton resolution only after deriving a
 condition beyond the already-retained first $D=72$ branch; and (4) retain the
 properness reformulation ($JC(2)$ holds iff every planar Keller map has empty
 Jelonek set; exact certificates shipped, EXP-014) as a cross-check instrument.
@@ -614,6 +632,7 @@ The reproducibility contract: every [MV] claim has a persisted script and
 output; hypotheses are declared before runs; refuted predictions remain in the
 record.
 
+\small
 \begin{thebibliography}{99}
 \bibitem{Alpoge2026} L. Alp\"oge, announcement of the counterexample, X (@\_\_alpoge\_\_),
 2026-07-19/20; map produced with Claude Fable 5 (Anthropic); question posed by Akhil.
@@ -657,5 +676,6 @@ pseudo-planes, \emph{Adv. Math.} \textbf{339} (2018), 248--284.
 \bibitem{Shaska2026} T. Shaska, Graded Keller maps and the Jacobian Conjecture,
 arXiv:2607.20210v1, 2026.
 \end{thebibliography}
+\normalsize
 
 \end{document}

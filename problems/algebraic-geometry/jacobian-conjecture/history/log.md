@@ -1124,3 +1124,19 @@
 - The minor-root source formula is only an inequality, so the hoped-for family
   exclusion is unavailable. The exact intersection and vertex restrictions
   remain as reconstruction gates.
+
+## 2026-07-26 - EXP-097 closes direct resultant transport
+
+- The exact resultant laws were tested before touching the 51-parameter
+  system. Common Laurent translations preserve the resultant, while
+  \(x\mapsto x^{-1},y\mapsto x^4y\) reflects its exponent interval by
+  \(s\mapsto1536-s\).
+- Localization makes \(x\) a unit and forgets an \(x=0\) resultant divisor
+  unless a boundary ledger is retained. The initial swap also changes the
+  selected coordinate eliminant.
+- Consequently the original absolute degree 21 is not a typed equation on the
+  reduced coefficients. Laurent exponent width is only a conditional
+  replacement: it equals 21 if the missing original \(x\)-order is zero.
+- The direct generic-resultant route is closed. A future full
+  boundary-divisor reconstruction remains valid but is higher cost; the small
+  certificate-module/chart-cover analog becomes immediate.

@@ -117,3 +117,11 @@
   visual QA gates passed; PR #83 merged at `ffc6a3d`; Zenodo version DOI
   `10.5281/zenodo.21584243` is published under concept DOI
   `10.5281/zenodo.21503367`.
+- **2026-07-26 EXP-097:** direct transport of intersection number \(21\)
+  fails its invariant-typing gate. The GGHV pipeline swaps the selected
+  eliminant, localizes \(x\), and inverts a boundary divisor. With final
+  \((p,q,c)=(16,24,4)\), an input resultant interval \([\nu,21]\) becomes
+  \([1515,1536-\nu]\), of width \(21-\nu\). The missing order \(\nu\) is not
+  encoded by the 51 reduced coefficients alone. Do not build a direct
+  degree-21 equation; proceed to the certificate-module/chart-cover analog
+  unless a full boundary-divisor reconstruction is first supplied.

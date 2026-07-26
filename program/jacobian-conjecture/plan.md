@@ -33,8 +33,8 @@ support-restricted failure, or absence of a finite certificate as a proof.
 |---|---|---|
 | JC-A | Preserve and publish the exact dimension at least three record | rolling; no current compute |
 | JC-B | Complete the $[125,150]$ primary-source frontier reconciliation | active; EXP-094 shows C10/C11/C19/C20 are not excluded by the cited remark; 16 unprinted \(A'_0\) values remain |
-| JC-C | Test modern Newton and approximate-root restrictions against the GGHV reduction | instantiated; EXP-096 gives seven inner vertices and exact intersection number 21; coefficient transport remains |
-| JC-D | Reformulate universal inconsistency as a certificate-module or chart-cover problem | next; begin on a small exact analog with specialization controls |
+| JC-C | Test modern Newton and approximate-root restrictions against the GGHV reduction | direct transport decided by EXP-097: absolute resultant degree is not typed after Laurent localization without a boundary-divisor ledger |
+| JC-D | Reformulate universal inconsistency as a certificate-module or chart-cover problem | active next; begin on a small exact analog with specialization controls |
 | JC-E | Degree-three certificate decision | done by EXP-075; one exact four-parameter slice is infeasible, so no global cubic covector exists |
 | JC-F | Global geometric routes: fibres, properness, and parameter spaces | hold; resume only after a rigorous bridge to the reduced system is stated |
 | JC-G | Manuscripts, wiki, data, and public record | rolling; update only from adjudicated results |
@@ -48,16 +48,20 @@ support-restricted failure, or absence of a finite certificate as a proof.
    enumeration or infer an exclusion from \(P_T\).
 2. EXP-096 completed the Lee--Li and approximate-root instantiation. Preserve
    the seven-point inner-vertex set, intersection number \(21\), and \(84+24\)
-   root partition as rejection gates. Attempt transport to the reduced
-   coefficients only if the transformation law is explicit at low cost.
-3. Define the universal certificate module over
+   root partition as original-pair reconstruction gates.
+3. EXP-097 closed direct resultant transport: Laurent localization loses the
+   absolute boundary order, and the final inversion preserves only a
+   conditional exponent width. Do not build a generic degree-21 resultant
+   equation in the 51 reduced coefficients. Reopen only with a complete
+   boundary-divisor ledger.
+4. Define the universal certificate module over
    $\mathbb{Q}[\varepsilon_1,\ldots,\varepsilon_{51}]$. Test polynomial syzygies, localized
    certificates, Fitting ideals, and finite chart covers on a small analog before scaling.
-4. Continue the independent [125,150] frontier task:
+5. Continue the independent [125,150] frontier task:
    - preserve C10/C11/C19/C20 as unresolved by GGV2 Remark 2.32;
    - derive the 16 unprinted $A'_0$ values through the declared chain algorithm;
    - preserve C01/C04 as open absent an exact exclusion.
-5. Keep EXP-093 cancelled. EXP-075's exact support at reordered index 2662 proves that no global
+6. Keep EXP-093 cancelled. EXP-075's exact support at reordered index 2662 proves that no global
    degree-three polynomial covector exists, so the proposed four-million-unknown solve has no
    target.
 
