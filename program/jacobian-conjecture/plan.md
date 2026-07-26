@@ -34,7 +34,7 @@ support-restricted failure, or absence of a finite certificate as a proof.
 | JC-A | Preserve and publish the exact dimension at least three record | rolling; no current compute |
 | JC-B | Complete the $[125,150]$ primary-source frontier reconciliation | active; EXP-094 shows C10/C11/C19/C20 are not excluded by the cited remark; 16 unprinted \(A'_0\) values remain |
 | JC-C | Test modern Newton and approximate-root restrictions against the GGHV reduction | direct transport decided by EXP-097: absolute resultant degree is not typed after Laurent localization without a boundary-divisor ledger |
-| JC-D | Reformulate universal inconsistency as a certificate-module or chart-cover problem | active next; begin on a small exact analog with specialization controls |
+| JC-D | Reformulate universal inconsistency as a constructible determinantal-strata problem | active; EXP-098 proves the specialization mechanism and EXP-101 constructs the first actual GGHV minor transition |
 | JC-E | Degree-three certificate decision | done by EXP-075; one exact four-parameter slice is infeasible, so no global cubic covector exists |
 | JC-F | Global geometric routes: fibres, properness, and parameter spaces | hold; resume only after a rigorous bridge to the reduced system is stated |
 | JC-G | Manuscripts, wiki, data, and public record | rolling; update only from adjudicated results |
@@ -54,9 +54,15 @@ support-restricted failure, or absence of a finite certificate as a proof.
    conditional exponent width. Do not build a generic degree-21 resultant
    equation in the 51 reduced coefficients. Reopen only with a complete
    boundary-divisor ledger.
-4. Define the universal certificate module over
-   $\mathbb{Q}[\varepsilon_1,\ldots,\varepsilon_{51}]$. Test polynomial syzygies, localized
-   certificates, Fitting ideals, and finite chart covers on a small analog before scaling.
+4. Continue the constructible determinantal-strata route:
+   - EXP-098 proves that principal-open localized lifts alone collapse to one
+     global polynomial covector;
+   - EXP-101 factors the first actual two-parameter GGHV minor and changes
+     charts exactly on its zero locus;
+   - EXP-102 supplies a third nonzero minor at \(u=1\) on the residual curve;
+   - next compute the 125-minor determinantal divisor over
+     \(\mathbb{Q}[u,u^{-1}]\), using modular Smith data and rational
+     reconstruction instead of a dense rank-121 determinant.
 5. Continue the independent [125,150] frontier task:
    - preserve C10/C11/C19/C20 as unresolved by GGV2 Remark 2.32;
    - derive the 16 unprinted $A'_0$ values through the declared chain algorithm;

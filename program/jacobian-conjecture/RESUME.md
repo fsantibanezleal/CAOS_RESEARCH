@@ -29,6 +29,18 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
 - EXP-097 proves that absolute resultant degree \(21\) is not a typed equation
   on the final Laurent coefficients without a missing boundary-divisor ledger.
   The direct transport route is closed; conditional exponent width survives.
+- EXP-098 proves that principal-open localized certificate covers collapse to
+  one global covector. The stronger object is a constructible rank
+  stratification with new syzygies after closed specialization.
+- EXP-101 gives the first exact chart transition on the actual GGHV matrix:
+  \[
+  \det A(s,t)/\det A_0=
+  (st-8)^6\left(2^{15}s^9-(st-8)^7\right)/2^{39}.
+  \]
+  An alternative minor covers \(st=8\); the residual is the rational curve
+  \(2^{15}s^9=(st-8)^7\).
+- EXP-102 proves a third minor is nonzero at \(u=1\) on that residual curve,
+  but complete curve coverage remains open.
 - Controlling strategy:
   [`strategy-audit-2026-07-25.md`](strategy-audit-2026-07-25.md).
 - Source audit:
@@ -47,6 +59,9 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
 | reduced linear system | $M(\varepsilon)q=b$ with 125 output rows and 165 gauge directions | EXP-052 onward |
 | global covector | $c^TM=0$ and $c^Tb\ne0$, sufficient for inconsistency | EXP-053 onward |
 | certificate module target | left syzygies of $M$, their pairing ideal with $b$, and localized chart certificates | strategy audit |
+| constructible certificate recursion | generic pairing opens followed by kernel recomputation on residual closed strata | EXP-098 |
+| first GGHV minor stratum | \((st-8)^6(2^{15}s^9-(st-8)^7)/2^{39}\) on directions \((0,1),(1,7)\) | EXP-101 |
+| residual curve | \(s=8u^7,\ t=(8u^9+1)/u^7,\ u\ne0\) | EXP-101 |
 | properness instrument | exact resultant-leading-coefficient test | EXP-014 |
 | equivariant classification | EXP-010 on opposite-sign/one-zero scope; Shaska covers all signatures with triangular same-sign controls | 2026-07-25 reconciliation |
 
@@ -116,13 +131,22 @@ scalar conditions before exploiting sparsity.
   the absolute \(x=0\) order and final inversion reflects exponent intervals
   by \(s\mapsto1536-s\). Degree \(21\) remains an original-pair
   reconstruction gate, not a direct condition on the 51 reduced coefficients.
+- EXP-098: a pure principal-open certificate cover is equivalent to a global
+  covector; specialization-only syzygies make constructible strata strictly
+  stronger.
+- EXP-099/100: common-strict-flag shortcuts are refuted; the first genuine
+  interior interaction is \((0,1),(1,7)\).
+- EXP-101: first two-parameter minor factored exactly, alternative chart
+  constructed, and residual rational curve derived.
+- EXP-102: third chart exists at \(u=1\); complete pullback is inconclusive
+  after the dense rank-121 determinant hit its five-minute budget.
 
 ## 4. In flight
 
 - No Jacobian experiment process is active.
-- EXP-097 is complete. Its hypothesis, exact symbolic artifact, verdict,
-  source amendment, wiki row, and derived-state updates are persisted on the
-  current branch.
+- EXP-098 through EXP-101 are complete and exact. EXP-102 is closed
+  inconclusive for global curve coverage, with an exact third-chart checkpoint
+  at \(u=1\).
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
 - Current research branch: `work/jacobian-conjecture/next-round`.
@@ -137,26 +161,30 @@ scalar conditions before exploiting sparsity.
 
 ## 5. Next actions, in order
 
-1. Declare and run the small certificate-module/chart-cover experiment:
-   - left syzygy module;
-   - pairing ideal;
-   - localized certificates;
-   - radical cover;
-   - specialization controls.
-2. Reopen intersection-\(21\) transport only with a complete
+1. Compute the residual-curve determinantal divisor:
+   - clear Laurent powers after
+     \(s=8u^7,\ t=(8u^9+1)/u^7\);
+   - compute modular Smith/determinantal-divisor data for the full augmented
+     polynomial matrix;
+   - reconstruct over \(\mathbb{Q}[u]\);
+   - a monomial divisor closes this exact two-parameter slice, while a
+     nonmonomial divisor names every residual value.
+2. Lift the constructible recursion to the next coefficient block only after
+   the two-parameter slice is closed and independently checked.
+3. Reopen intersection-\(21\) transport only with a complete
    boundary-divisor ledger through the swap, Laurent cuts, and final inversion;
    do not impose absolute degree directly on the 51 coefficients.
-3. Pursue further Newton resolution only if a new condition is derived beyond
+4. Pursue further Newton resolution only if a new condition is derived beyond
    the already-retained first \(D=72\) branch; do not repeat direct comparisons
    with \(P_T\).
-4. Continue the independent [125,150] frontier:
+5. Continue the independent [125,150] frontier:
    - keep C10/C11/C19/C20 unresolved by GGV2 Remark 2.32;
    - derive the 16 missing \(A'_0\) values through the declared chain algorithm;
    - preserve C01/C04 as open absent an exact exclusion.
-5. Re-rank after steps 1 through 4. The admissible next choices are a source-derived
+6. Re-rank after steps 1 through 5. The admissible next choices are a source-derived
    restriction, a module/chart-cover computation, or a newly justified higher-degree
    structural probe. Do not build EXP-093.
-6. Update wiki or manuscripts only when an adjudicated result changes a mathematical claim.
+7. Update wiki or manuscripts only when an adjudicated result changes a mathematical claim.
 
 Suggested source-round commands:
 
@@ -217,6 +245,10 @@ Gotchas:
 - Feasible support ansatzes do not prove full-system feasibility.
 - A theorem for $[f,g]=1$ does not automatically apply to $[P,Q]=x^2$.
 - Syzygy modules and kernels can jump after parameter specialization.
+- Principal-open localized global syzygies do not by themselves enlarge the
+  global-covector class; closed specialization strata are essential.
+- Dense determinant expansion is retired for EXP-102's rank-121 curve
+  pullback. Use the polynomial determinantal divisor instead.
 - Do not implement EXP-093. Its target is empty.
 - No floor raise until every GGHV branch and every free coefficient is covered.
 
