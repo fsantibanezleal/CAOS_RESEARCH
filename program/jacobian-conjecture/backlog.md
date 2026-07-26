@@ -53,3 +53,4 @@
 | JCB-049 | Instantiate Lee-Li inner-vertex and GGHV approximate-root/intersection constraints on the open chain | P5 | done | 2026-07-25 | EXP-096: seven nonzero inner-vertex candidates; exact intersection number 21; 84+24 root partition; direct coefficient transport remains separate |
 | JCB-050 | Certificate-module and finite-chart-cover analog | P5 | todo | 2026-07-25 | define left syzygies, pairing ideal, localization cover, and specialization controls on small consistent/inconsistent examples |
 | JCB-051 | Close stale routes: EXP-075 verdict; EXP-079/081 retired as stated; EXP-092 hold note | P5 | done | 2026-07-25 | EXP-075 decisive hit recovered and reproduced; no remaining sweep; other routes require new typed hypotheses |
+| JCB-052 | Reconcile EXP-095/096 into planar Paper B and publish the required Zenodo new version | P6 | done | 2026-07-25 | v0.15 built and visually verified; PR #83 merged; version DOI 10.5281/zenodo.21584243 |

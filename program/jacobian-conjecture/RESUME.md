@@ -118,8 +118,9 @@ scalar conditions before exploiting sparsity.
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
 - Current research branch: `work/jacobian-conjecture/next-round`.
-- The previous audit and release PRs are merged. EXP-096 was merged into
-  `develop` by PR `#81` at `7866b0f`.
+- EXP-096 was merged into `develop` by PR `#81` at `7866b0f`.
+- The planar manuscript reconciliation was merged by PR `#83` at `ffc6a3d`.
+  Paper B v0.15 is published at `10.5281/zenodo.21584243`.
 - No Jacobian PR or experiment process is active.
 - The management mirror is updated directly on its canonical `develop`
   checkout. Do not create a management worktree or task branch.
@@ -188,10 +189,10 @@ Use the exact commands exposed by current scripts if these guard names have chan
 Latest correction publications:
 
 - Paper A v0.11: `10.5281/zenodo.21579022`
-- Paper B v0.14: `10.5281/zenodo.21579025`
+- Paper B v0.15: `10.5281/zenodo.21584243`
 
-No publication action is triggered by this strategy audit because it changes the work plan, not
-an adjudicated manuscript theorem.
+EXP-096 changed an adjudicated mathematical claim, so the planar manuscript was expanded,
+built, visually verified, merged through PR `#83`, and published as Zenodo v0.15.
 
 ## 7. Gotchas, gates, and lenses
 

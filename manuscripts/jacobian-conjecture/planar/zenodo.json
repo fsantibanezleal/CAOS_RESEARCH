@@ -41,6 +41,11 @@
       },
       {
         "relation": "cites",
+        "identifier": "10.48550/arXiv.2607.20210",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
         "identifier": "10.48550/arXiv.2408.01279",
         "resource_type": "publication-preprint"
       },
