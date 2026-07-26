@@ -1,6 +1,6 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-07-26 after EXP-106's global lower-family grading classification. This is the first-read
+Updated 2026-07-26 after EXP-108's exact three-coefficient slice cover. This is the first-read
 navigation page. Primary artifacts and experiment verdicts remain the evidence.
 
 ## 1. State in one screen
@@ -49,7 +49,15 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
 - EXP-106 proves the same connected \(\mathbb Z/9\) grading accepts all 23
   nonconstant remaining directions in the persisted lower family, with
   \(w_{p,q}=q-p+1\bmod9\). The promoted \((0,7)\) direction has ranks 53/41
-  on the two charts; EXP-107 is the declared three-parameter lift.
+  on the two charts.
+- EXP-107 reconstructs the first three-parameter lift modulo \(998244353\).
+  The endpoint-safe chart stays \(G(z)=(8z+1)^{14}\), independent of \(y\);
+  the first chart leaves a squarefree degree-12 residual fiber at \(z=-1/8\).
+  This is a finite third-chart target.
+- EXP-108 closes that target exactly. A deterministic third chart restricts
+  to a degree-13 polynomial \(H(y)\) coprime to the exact irreducible
+  degree-12 \(Q(y)\), with a persisted integer Bezout identity. Three maximal
+  minors therefore exclude the declared \((0,1)/(1,7)/(0,7)\) slice.
 - Controlling strategy:
   [`strategy-audit-2026-07-25.md`](strategy-audit-2026-07-25.md).
 - Source audit:
@@ -158,6 +166,15 @@ scalar conditions before exploiting sparsity.
   constant \(17^{14}\).
 - EXP-106: all nonconstant remaining lower directions preserve the connected
   mod-9 grading; \((0,7)\) is promoted to EXP-107.
+- EXP-107: the first two bivariate charts have a zero-dimensional common
+  locus modulo \(998244353\). It consists of the squarefree degree-12 fiber
+  cut out by the first chart over \(z=-1/8\).
+- EXP-108: the first deterministic point chart closes the modular fiber, and
+  29 exact determinant evaluations plus independent controls lift the result.
+  The exact \(Q,H\) have gcd one and an integer Bezout identity, proving the
+  three-chart cover over characteristic zero.
+- EXP-109: declared lift through \((0,6)\), using
+  \(x=\varepsilon_{(0,6)}/u^2\) and the new term \(zxA_{(0,6)}\).
 - EXP-102: third chart exists at \(u=1\); complete pullback is inconclusive
   after the dense rank-121 determinant hit its five-minute budget.
 
@@ -184,16 +201,14 @@ scalar conditions before exploiting sparsity.
 
 ## 5. Next actions, in order
 
-1. Compute the residual-curve determinantal divisor:
-   - clear Laurent powers after
-     \(s=8u^7,\ t=(8u^9+1)/u^7\);
-   - compute modular Smith/determinantal-divisor data for the full augmented
-     polynomial matrix;
-   - reconstruct over \(\mathbb{Q}[u]\);
-   - a monomial divisor closes this exact two-parameter slice, while a
-     nonmonomial divisor names every residual value.
-2. Lift the constructible recursion to the next coefficient block only after
-   the two-parameter slice is closed and independently checked.
+1. Run EXP-109 through the next grading-compatible direction \((0,6)\):
+   - use \(x=\varepsilon_{(0,6)}/u^2\), so the new term is \(zxA_{(0,6)}\);
+   - reconstruct support and rank bounds for the three exact EXP-108 charts;
+   - recurse on residual closed strata instead of beginning with a dense
+     trivariate determinant grid.
+2. If a finite residual survives, select a point-local fourth chart; if a
+   positive-dimensional component survives, persist its eliminant before
+   widening the coefficient block.
 3. Reopen intersection-\(21\) transport only with a complete
    boundary-divisor ledger through the swap, Laurent cuts, and final inversion;
    do not impose absolute degree directly on the 51 coefficients.
