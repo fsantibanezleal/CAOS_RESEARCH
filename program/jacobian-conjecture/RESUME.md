@@ -129,6 +129,8 @@ scalar conditions before exploiting sparsity.
 - EXP-096 was merged into `develop` by PR `#81` at `7866b0f`.
 - The planar manuscript reconciliation was merged by PR `#83` at `ffc6a3d`.
   Paper B v0.15 is published at `10.5281/zenodo.21584243`.
+- EXP-097 and Paper B v0.16 were merged by PR `#85` at `d47937a`.
+  Paper B v0.16 is published at `10.5281/zenodo.21589334`.
 - No Jacobian PR or experiment process is active.
 - The management mirror is updated directly on its canonical `develop`
   checkout. Do not create a management worktree or task branch.
@@ -197,10 +199,11 @@ Use the exact commands exposed by current scripts if these guard names have chan
 Latest correction publications:
 
 - Paper A v0.11: `10.5281/zenodo.21579022`
-- Paper B v0.15: `10.5281/zenodo.21584243`
+- Paper B v0.16: `10.5281/zenodo.21589334`
 
-EXP-096 changed an adjudicated mathematical claim, so the planar manuscript was expanded,
-built, visually verified, merged through PR `#83`, and published as Zenodo v0.15.
+EXP-097 changed the admissible use of intersection number \(21\), so the planar
+manuscript was expanded, built, visually verified, merged through PR `#85`,
+and published as Zenodo v0.16.
 
 ## 7. Gotchas, gates, and lenses
 
