@@ -1089,3 +1089,22 @@
   \((72,108)\) campaign advances to the Newton-resolution applicability bridge.
 - Record-integrity correction: EXP-085 has no `hypothesis.md`; no retroactive
   hypothesis was created. EXP-094 owns the declared correction.
+
+## 2026-07-25 - EXP-095 identifies the open case in the Newton-resolution list
+
+- The experiment was declared and committed before its exact sub-second run.
+  It gated applicability by ambient ring and bracket identity before comparing
+  any Newton data.
+- The Makar-Limanov--Trakhtenberg hypotheses fail on the final GGHV objects in
+  \(K[x,x^{-1},y]\) with \([P,Q]=x^2\). They apply to the hypothetical
+  original polynomial Keller pair with bracket \(1\).
+- For its degree-72 component, the GGHV chain gives
+  \(v_0=2A_0=(16,56)\), \(v'_1=2A'_0=(2,0)\), and
+  \(v_1=2A_1=(11/2,14)\). All three equal the first printed \(D=72\)
+  candidate.
+- Endpoint and final-corner negative controls distinguished the first and
+  second printed branches. The result artifact uses exact rational arithmetic.
+- Result: the published Newton-resolution classification independently
+  reproduces and retains the open GGHV chain. It does not exclude
+  \((72,108)\) or raise the floor. Next is the Lee--Li plus GGHV
+  approximate-root/intersection applicability gate.

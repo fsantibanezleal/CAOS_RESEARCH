@@ -33,7 +33,7 @@ support-restricted failure, or absence of a finite certificate as a proof.
 |---|---|---|
 | JC-A | Preserve and publish the exact dimension at least three record | rolling; no current compute |
 | JC-B | Complete the $[125,150]$ primary-source frontier reconciliation | active; EXP-094 shows C10/C11/C19/C20 are not excluded by the cited remark; 16 unprinted \(A'_0\) values remain |
-| JC-C | Test modern Newton and approximate-root restrictions against the GGHV reduction | next; first prove or refute applicability across $[f,g]=1 \to [P,Q]=x^2$ |
+| JC-C | Test modern Newton and approximate-root restrictions against the GGHV reduction | active; EXP-095 retains the exact Newton \(D=72\) branch, so proceed to Lee--Li and approximate-root hypotheses |
 | JC-D | Reformulate universal inconsistency as a certificate-module or chart-cover problem | next; begin on a small exact analog with specialization controls |
 | JC-E | Degree-three certificate decision | done by EXP-075; one exact four-parameter slice is infeasible, so no global cubic covector exists |
 | JC-F | Global geometric routes: fibres, properness, and parameter spaces | hold; resume only after a rigorous bridge to the reduced system is stated |
@@ -41,12 +41,12 @@ support-restricted failure, or absence of a finite certificate as a proof.
 
 ## Ordered next work
 
-1. Open a source-first applicability experiment for Makar-Limanov and Trakhtenberg's
-   Newton-resolution conditions. The forced reduced polynomial
-   $P_T=y^8(xy-1)^8+x$ has a shape that would be highly restrictive for a genuine Keller
-   component, but it satisfies the reduced equation $[P,Q]=x^2$. The deliverable is the exact
-   transformation law, not a visual polygon comparison.
-2. Perform the same applicability pass for Lee-Li inner-polynomial/inner-vertex constraints
+1. EXP-095 completed the Makar-Limanov--Trakhtenberg applicability bridge.
+   Direct application to the Laurent bracket-\(x^2\) pair is invalid; the
+   original polynomial degree-72 component is applicable and exactly matches
+   the first retained \(D=72\) branch. Do not repeat the published candidate
+   enumeration or infer an exclusion from \(P_T\).
+2. Perform the applicability pass for Lee--Li inner-polynomial/inner-vertex constraints
    and the GGHV approximate-root/intersection-number machinery.
 3. Define the universal certificate module over
    $\mathbb{Q}[\varepsilon_1,\ldots,\varepsilon_{51}]$. Test polynomial syzygies, localized

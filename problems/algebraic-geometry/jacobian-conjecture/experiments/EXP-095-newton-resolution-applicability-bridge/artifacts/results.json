@@ -1,0 +1,75 @@
+{
+  "applicability": {
+    "direct_failure_reasons": [
+      "ambient ring is C[x,x^-1,y], not C[x,y]",
+      "bracket is x^2, not 1"
+    ],
+    "final_gghv_laurent_pair": false,
+    "original_polynomial_keller_pair": true
+  },
+  "arithmetic": "exact integer and Fraction identities",
+  "controls": {
+    "altered_endpoint_matches_first": false,
+    "altered_final_corner_matches_first": false,
+    "altered_final_corner_matches_second": true,
+    "laurent_bracket_x2_negative": false,
+    "polynomial_bracket_one_positive": true
+  },
+  "decision": "The Newton-resolution hypotheses apply to the original degree-72 Keller component, not directly to the final Laurent pair. Its exact corner signature is the first retained MLT D=72 branch, so the published list reproduces rather than excludes the GGHV open case.",
+  "experiment": "EXP-095",
+  "gghv_open_signature": {
+    "degree": 72,
+    "v0": [
+      16,
+      56
+    ],
+    "v1": [
+      "11/2",
+      14
+    ],
+    "v1_prime": [
+      2,
+      0
+    ]
+  },
+  "matches": {
+    "first_d72_branch": true,
+    "second_d72_branch": false
+  },
+  "mlt_d72_first_signature": {
+    "degree": 72,
+    "v0": [
+      16,
+      56
+    ],
+    "v1": [
+      "11/2",
+      14
+    ],
+    "v1_prime": [
+      2,
+      0
+    ]
+  },
+  "mlt_d72_second_signature": {
+    "degree": 72,
+    "v0": [
+      16,
+      56
+    ],
+    "v1": [
+      5,
+      12
+    ],
+    "v1_prime": [
+      2,
+      0
+    ]
+  },
+  "non_claims": [
+    "The retained branch is not proved realizable.",
+    "No planar counterexample is constructed.",
+    "The (72,108) case is not excluded.",
+    "The planar degree floor is not raised."
+  ]
+}

@@ -19,6 +19,10 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
 - EXP-078 withdrew the proposed finite ceiling. EXP-080 refuted the declared natural `sl2`
   grading at its invariant gate. Neither is a no-go theorem for all certificate constructions.
 - EXP-093 is cancelled. Its proposed cubic target is proved empty by EXP-075.
+- EXP-095 confirms that Newton resolution applies to the original degree-72
+  Keller component, not directly to the final Laurent pair. The component
+  exactly matches the first retained Makar-Limanov--Trakhtenberg \(D=72\)
+  branch, so no exclusion follows.
 - Controlling strategy:
   [`strategy-audit-2026-07-25.md`](strategy-audit-2026-07-25.md).
 - Source audit:
@@ -94,11 +98,15 @@ scalar conditions before exploiting sparsity.
   none of C10, C11, C19, or C20. C10/C11 have \(A'_0=(1,0)\), not \((2,1)\);
   C19/C20 have \(B_1=A_0=(6,15)\), not \((6,18+6k)\). The four cases remain
   unresolved, not validated.
+- EXP-095: applicability confirmed at the original polynomial-pair stage and
+  rejected at the final Laurent bracket-\(x^2\) stage. The exact open-component
+  signature \((72,(16,56),(2,0),(11/2,14))\) is the first retained Newton
+  \(D=72\) branch. This is source consistency, not an exclusion.
 
 ## 4. In flight
 
 - No Jacobian experiment process is active.
-- EXP-094 is complete. Its exact classifier, result artifact, verdict, source
+- EXP-095 is complete. Its exact crosswalk, result artifact, verdict, source
   amendments, and derived-state updates are persisted on the current branch.
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
@@ -111,10 +119,11 @@ scalar conditions before exploiting sparsity.
 
 ## 5. Next actions, in order
 
-1. Declare the Newton-resolution applicability experiment. Translate the original Keller
-   component through the GGHV reductions and decide which Makar-Limanov/Trakhtenberg hypotheses
-   survive. Do not compare polygons visually and infer a contradiction.
-2. Declare a Lee-Li plus approximate-root applicability experiment on the same transformation.
+1. Declare a Lee--Li plus GGHV approximate-root/intersection applicability
+   experiment on the original-to-reduced transformation.
+2. Pursue further Newton resolution only if a new condition is derived beyond
+   the already-retained first \(D=72\) branch; do not repeat direct comparisons
+   with \(P_T\).
 3. Declare a small certificate-module/chart-cover experiment:
    - left syzygy module;
    - pairing ideal;
