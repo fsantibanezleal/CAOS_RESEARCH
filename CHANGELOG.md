@@ -3,6 +3,43 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.58.000], 2026-07-25
+
+### Added
+- The Jacobian program now carries a source-complete strategic audit that adjudicates every
+  active proposal by proof value, applicability, and cost. It promotes exact Newton-resolution,
+  inner-vertex, approximate-root, and certificate-module routes while preserving the bracket-one
+  versus bracket-\(x^2\) boundary.
+- EXP-075 now has a formal verdict and a targeted reproduction artifact. The blockers-first
+  support at index 2662 is infeasible over both configured primes, which excludes every global
+  polynomial covector through parameter degree three in the declared class.
+- A dated source dossier records the Makar-Limanov and Trakhtenberg Newton-resolution papers,
+  Lee-Li inner-vertex work, GGHV reduction and approximate-root sources, and Jelonek's bounded-
+  degree parameter-space theorem with explicit applicability limits and archived source hashes.
+
+### Changed
+- The active Jacobian plan, session handoff, backlog, state, route maps, wiki, and management
+  mirror now agree that EXP-093 is cancelled because its cubic target is empty. The next work is
+  source applicability through the GGHV transformation and an exact left-syzygy pairing-ideal or
+  finite localized-chart formulation.
+- EXP-080 is closed at its invariant gate: the declared natural `sl2` construction has no
+  canonical common grading, so unsupported commutator computation was not run.
+- The planar equivariant-rigidity record is reconciled with Shaska's 2026 classification.
+  EXP-010 retains only its verified opposite-sign and one-zero scope; same-sign actions may yield
+  nonlinear triangular automorphisms, and no priority claim remains.
+- The deterministic experiment registry now includes the EXP-075 verdict and targeted
+  reproduction artifact.
+
+### Fixed
+- Removed stale two-sided inferences from the operational strategy. Failure to find a finite
+  covector and feasibility of restricted supports are not evidence of reduced-system consistency
+  or of a counterexample.
+- Corrected the EXP-093 size description: a full cubic solve would contain 4,092,495 certificate
+  unknowns and 39,531,375 order-four scalar conditions before compression, rather than the older
+  degree-two shorthand of roughly 227,000 unknowns.
+- Papers A v0.11 and B v0.14 preserve the corrected all-signature equivariant scope as immutable
+  Zenodo versions `10.5281/zenodo.21579022` and `10.5281/zenodo.21579025`.
+
 ## [0.57.000], 2026-07-25
 
 ### Added

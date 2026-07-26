@@ -1,4 +1,4 @@
-# EXP-075 verdict: degree-three polynomial covectors excluded
+# EXP-075 - Verdict: CONFIRMED (2026-07-25), degree-three polynomial covectors excluded
 
 Decided 2026-07-25 by targeted reproduction of the existing blocker-first hit.
 
