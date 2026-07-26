@@ -1027,6 +1027,8 @@
   phrase "every equivariant Keller map is linear"; same-sign nonlinear triangular
   automorphisms are controls. Those summaries and the obsolete "NOT FOUND" novelty
   status were corrected. No priority claim is made.
-- Papers A v0.11 and B v0.14 are the immutable correction versions. EXP-080 remains
-  declared and unrun; the Shaska source contains no `sl2` or corrector-module
-  construction, so it does not decide that experiment.
+- Papers A v0.11 and B v0.14 were rebuilt warning-free, visually inspected page by
+  page, and published as immutable correction versions:
+  10.5281/zenodo.21579022 and 10.5281/zenodo.21579025. EXP-080 remains declared and
+  unrun; the Shaska source contains no `sl2` or corrector-module construction, so
+  it does not decide that experiment.

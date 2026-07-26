@@ -67,5 +67,6 @@
   opposite-sign/one-zero scope. Derived phrases saying all signatures are linear were
   corrected: same-sign actions may give nonlinear triangular automorphisms; all signatures
   are automorphisms. The old "NOT FOUND" novelty status is superseded, with no priority
-  claim. Papers A v0.11 and B v0.14 are the correction versions. Next after publication:
-  EXP-080, then the constructive EXP-093 route.
+  claim. Papers A v0.11 and B v0.14 are published as immutable correction versions
+  (10.5281/zenodo.21579022 and 10.5281/zenodo.21579025). Next: EXP-080, then the
+  constructive EXP-093 route.

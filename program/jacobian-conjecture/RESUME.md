@@ -89,14 +89,15 @@ Shaska, arXiv:2607.20210v1, and corrected derived scope drift around EXP-010:
 the experiment proves linearity for opposite-sign/one-zero weights, while the
 global all-signature statement is automorphism, with nonlinear triangular maps
 allowed for same-sign weights. The source dossier, wiki, Papers A/B, program
-records, and management mirror are being reconciled. EXP-080 remains declared
-but unrun; its artifact directory is empty.
+records, and management mirror are reconciled. The corrected versions are
+published as Paper A v0.11 (10.5281/zenodo.21579022) and Paper B v0.14
+(10.5281/zenodo.21579025). EXP-080 remains declared but unrun; its artifact
+directory is empty.
 
 ## 5. Next actions, ordered
 
-1. Finish and publish the source correction: build Papers A v0.11 and B v0.14,
-   visually inspect the affected pages, publish immutable Zenodo new versions,
-   and record their version DOIs. Exact source:
+1. DONE: Papers A v0.11 and B v0.14 were rebuilt warning-free, visually inspected,
+   and published as immutable Zenodo versions. Exact source and reconciliation:
    `context/2026-07-25-graded-keller-reconciliation.md`.
 2. Run EXP-080 only after amending its preflight to separate the monomial torus
    grading from an `sl2` action on the pinned corrector operators. A failure of the
