@@ -92,6 +92,14 @@
   not the \((2,1)\) required by the discarded Heitmann families. C19/C20 have
   \(B_1=A_0=(6,15)\), not the \((6,18+6k)\) required by the separate GGV
   exclusion. GGV2 Remark 2.32 therefore excludes none of the four. This is not
-  evidence that they are realizable. The immediate \((72,108)\) route advances
-  to the Newton-resolution applicability bridge, followed by the
-  certificate-module control if the bridge yields no restriction.
+   evidence that they are realizable. The immediate \((72,108)\) route advances
+   to the Newton-resolution applicability bridge, followed by the
+   certificate-module control if the bridge yields no restriction.
+- **2026-07-25 EXP-095:** the Newton-resolution applicability bridge is
+  decided. The source hypotheses do not apply directly to the final Laurent
+  pair with bracket \(x^2\), but they do apply to the hypothetical original
+  polynomial Keller pair. Its degree-72 component has
+  \(v_0=(16,56)\), \(v'_1=(2,0)\), and \(v_1=(11/2,14)\), exactly the first
+  retained \(D=72\) branch in Makar-Limanov--Trakhtenberg. No exclusion or
+  floor raise follows. Next: Lee--Li plus GGHV approximate-root/intersection
+  applicability, then the small certificate-module/chart-cover control.

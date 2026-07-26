@@ -15,7 +15,7 @@ remark; it does not certify the configurations against other restrictions.
 
 ## Makar-Limanov and Trakhtenberg: Newton resolution
 
-- Authors: Leonid Makar-Limanov and Eugene Trakhtenberg.
+- Authors: Leonid Makar-Limanov and Leonid Trakhtenberg.
 - Title: *Properties of a Jacobian mate*.
 - MPIM preprint: 2024 (33).
 - Official PDF:
@@ -34,16 +34,23 @@ Verified statements:
    polynomiality conditions on the edge expansions of a hypothetical planar counterexample.
 2. For total degree $D\le100$, its computer search lists
    $D\in\{42,48,50,56,60,63,64,66,70,72,75,80,84,88,90,96,98,99,100\}$.
-3. The paper gives several explicit degree-72 resolution shapes and leading forms.
+3. The paper gives several explicit degree-72 resolution shapes and leading forms. Its first
+   \(D=72\) row has
+   \(v_0=(16,56)\), \(v'_1=(2,0)\), \(v_1=(11/2,14)\), and
+   \(\phi_0=cx(xy^4-r_1)^7\).
 4. The hypotheses concern an actual Jacobian pair with constant bracket and a reduced component.
 
 Applicability boundary:
 
 The CAOS forced polynomial $P_T=y^8(xy-1)^8+x$ is part of the GGHV reduced system
-$[P,Q]=x^2$. Its total degree and edge power data look incompatible with the source list if
-$P_T$ were itself the reduced component of a Keller counterexample. It is not. No exclusion
-follows until the GGHV reduction is shown to preserve the exact hypotheses and invariants used by
-the Newton-resolution algorithm.
+$[P,Q]=x^2$ in \(K[x,x^{-1},y]\), so the source hypotheses do not apply directly
+to that final pair. EXP-095 instead returns to the original polynomial Keller
+pair. Its degree-72 component has
+\(2A_0=(16,56)\), \(2A'_0=(2,0)\), and
+\(2A_1=(11/2,14)\), exactly matching the first printed \(D=72\) row. Thus the
+published Newton-resolution list independently retains, rather than excludes,
+the open GGHV branch. Any further use requires new conditions beyond that
+published candidate classification.
 
 ## Makar-Limanov: shape restrictions
 

@@ -13,6 +13,18 @@ The cheap lookup for these four rows is closed. For the immediate \((72,108)\)
 target, the Newton-resolution applicability bridge now ranks ahead of further
 frontier enumeration.
 
+## Amendment after EXP-095
+
+The Newton-resolution bridge is decided. Makar-Limanov--Trakhtenberg cannot be
+applied directly to the final Laurent pair with bracket \(x^2\), but it applies
+to the original degree-72 polynomial Keller component. That component's exact
+signature
+\((D,v_0,v'_1,v_1)=(72,(16,56),(2,0),(11/2,14))\)
+is the paper's first retained \(D=72\) branch. The published candidate
+classification therefore reproduces the GGHV open case and gives no
+exclusion. The next source gate is Lee--Li plus the GGHV
+approximate-root/intersection machinery.
+
 ## Executive decision
 
 Redirect the immediate campaign. EXP-075's dormant hit was recovered and reproduced during this
@@ -119,7 +131,7 @@ Consequences recorded before the decisive EXP-075 recovery:
 | Route | Decision | What it can prove | Next gate |
 |---|---|---|---|
 | EXP-084/085/094 frontier source reconciliation | PARTIAL, FOUR CANDIDATES RESOLVED NEGATIVELY | exact classification progress independent of the certificate tower | derive the 16 unprinted \(A'_0\) values only as a separate frontier task |
-| Makar-Limanov/Trakhtenberg Newton resolution | PURSUE NOW | potentially eliminates or sharply restricts the forced shape if the conditions transport | prove the $[f,g]=1$ to $[P,Q]=x^2$ applicability bridge |
+| Makar-Limanov/Trakhtenberg Newton resolution | DONE AT PUBLISHED-CANDIDATE SCOPE | applies to the original degree-72 component and independently reproduces the open chain | pursue only a new restriction beyond the retained first \(D=72\) branch |
 | Lee-Li inner-polynomial and inner-vertex restrictions | PURSUE NOW | cheap support restrictions or an incompatibility | instantiate every hypothesis on the GGHV transformation |
 | GGHV approximate roots and intersection numbers | PURSUE NOW | independent arithmetic constraints and audit of the current polygon assembly | source-complete derivation on the $(8,28),(3,2)$ case |
 | Certificate module and finite chart cover | PURSUE, SMALL ANALOG FIRST | a rigorous all-parameter inconsistency proof using one or several localized certificates | define the module, pairing ideal, specialization law, and toy control |
@@ -183,15 +195,13 @@ degree list at total degree at most 100 is
 $$
 \{42,48,50,56,60,63,64,66,70,72,75,80,84,88,90,96,98,99,100\}.
 $$
-They also give explicit degree-72 leading shapes. The forced reduced polynomial
-$P_T=y^8(xy-1)^8+x$ has total degree 24 and leading edge a high power of a primitive form,
-which makes the comparison unusually sharp. No contradiction is claimed: their assumptions
-concern a reduced component of an actual Keller counterexample, whereas $P_T$ belongs to a
-pair with bracket $x^2$.
-
-The first experiment is therefore an applicability audit of the GGHV changes of variables,
-including denominators, Newton polygon transformation, and what happens to leading-form
-power data.
+They also give explicit degree-72 leading shapes. EXP-095 confirmed that their
+hypotheses apply to the original polynomial component, not directly to the
+final \(P_T\)-based Laurent pair. The original component has
+\(v_0=(16,56)\), \(v'_1=(2,0)\), and \(v_1=(11/2,14)\), exactly their first
+retained \(D=72\) branch. The comparison is therefore a consistency check, not
+a contradiction. Further Newton work must derive an additional integrality or
+polynomiality restriction on that retained branch.
 
 ### Inner vertices and approximate roots
 
@@ -212,8 +222,9 @@ $[P,Q]=x^2$ family.
 ## Recommended experiment sequence
 
 1. Source audit round: finish EXP-084/085 and the missing table/family identifications.
-2. Declare a Newton-resolution applicability experiment with a pass/fail transformation table.
-3. Declare a combined Lee-Li/approximate-root applicability experiment.
+2. EXP-095 completed the Newton-resolution applicability experiment; the open
+   case is the first retained \(D=72\) branch.
+3. Declare a combined Lee--Li/approximate-root applicability experiment.
 4. Declare a small certificate-module/chart-cover analog, with known consistent and inconsistent
    controls.
 5. Re-rank. The live choices are a chart-cover/module computation, a source-derived restriction,
