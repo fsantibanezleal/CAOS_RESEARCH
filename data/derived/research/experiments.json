@@ -4,7 +4,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1692,
+     "bytes": 1656,
      "name": "output-2026-07-20.txt"
     }
    ],
@@ -21,7 +21,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 2607,
+     "bytes": 2559,
      "name": "output-2026-07-20.txt"
     }
    ],
@@ -38,7 +38,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1454,
+     "bytes": 1430,
      "name": "output-2026-07-20.txt"
     }
    ],
@@ -55,7 +55,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 5201,
+     "bytes": 5118,
      "name": "output-2026-07-20.txt"
     }
    ],
@@ -72,7 +72,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1658,
+     "bytes": 1633,
      "name": "output-2026-07-20.txt"
     }
    ],
@@ -253,7 +253,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 2037,
+     "bytes": 2007,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -709,15 +709,15 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 2272,
+     "bytes": 2244,
      "name": "output-AB-2026-07-22.txt"
     },
     {
-     "bytes": 2618,
+     "bytes": 2583,
      "name": "output-CD-2026-07-22.txt"
     },
     {
-     "bytes": 736,
+     "bytes": 721,
      "name": "output-E-2026-07-22.txt"
     }
    ],
@@ -734,7 +734,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 2495,
+     "bytes": 2461,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -751,7 +751,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 2776,
+     "bytes": 2729,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -768,7 +768,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 2699,
+     "bytes": 2664,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -785,31 +785,31 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 393,
+     "bytes": 385,
      "name": "output-A-2026-07-22.txt"
     },
     {
-     "bytes": 428,
+     "bytes": 421,
      "name": "output-B-2026-07-22.txt"
     },
     {
-     "bytes": 441,
+     "bytes": 434,
      "name": "output-C-2026-07-22.txt"
     },
     {
-     "bytes": 708,
+     "bytes": 695,
      "name": "output-D-2026-07-22.txt"
     },
     {
-     "bytes": 557,
+     "bytes": 549,
      "name": "output-E-2026-07-22.txt"
     },
     {
-     "bytes": 6878,
+     "bytes": 6876,
      "name": "witness-Pstar-2026-07-22.txt"
     },
     {
-     "bytes": 554,
+     "bytes": 551,
      "name": "witness-collision-2026-07-22.txt"
     }
    ],
@@ -826,11 +826,11 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1673,
+     "bytes": 1649,
      "name": "output-AB-2026-07-22.txt"
     },
     {
-     "bytes": 1326,
+     "bytes": 1304,
      "name": "output-CD-2026-07-22.txt"
     }
    ],
@@ -847,7 +847,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 2479,
+     "bytes": 2443,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -864,11 +864,11 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1244,
+     "bytes": 1222,
      "name": "output-A-2026-07-22.txt"
     },
     {
-     "bytes": 2579,
+     "bytes": 2547,
      "name": "output-BCD-2026-07-22.txt"
     }
    ],
@@ -885,7 +885,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1910,
+     "bytes": 1880,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -902,11 +902,11 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 2282,
+     "bytes": 2251,
      "name": "output-2026-07-22.txt"
     },
     {
-     "bytes": 596,
+     "bytes": 588,
      "name": "output-D-2026-07-22.txt"
     }
    ],
@@ -923,7 +923,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1039,
+     "bytes": 1030,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -940,7 +940,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1764,
+     "bytes": 1746,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -957,7 +957,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 2399,
+     "bytes": 2372,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -974,7 +974,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 714,
+     "bytes": 706,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -991,7 +991,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1561,
+     "bytes": 1537,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -1008,7 +1008,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1135,
+     "bytes": 1122,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -1025,7 +1025,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 917,
+     "bytes": 907,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -1042,7 +1042,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 2199,
+     "bytes": 2175,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -1059,7 +1059,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1291,
+     "bytes": 1278,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -1076,11 +1076,11 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 8002,
+     "bytes": 7977,
      "name": "lambda1-2026-07-22.txt"
     },
     {
-     "bytes": 884,
+     "bytes": 873,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -1114,11 +1114,11 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 46,
+     "bytes": 44,
      "name": "kernel-2026-07-22.txt"
     },
     {
-     "bytes": 740,
+     "bytes": 729,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -1135,7 +1135,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 34670,
+     "bytes": 34625,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -1169,7 +1169,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1100,
+     "bytes": 1087,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -1186,7 +1186,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1253,
+     "bytes": 1237,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -1203,7 +1203,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 3007,
+     "bytes": 2955,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -1224,7 +1224,7 @@
      "name": "output-2026-07-22.txt"
     },
     {
-     "bytes": 1425,
+     "bytes": 1396,
      "name": "output-run2-2026-07-23.txt"
     }
    ],
@@ -1241,7 +1241,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1404,
+     "bytes": 1377,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -1258,7 +1258,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 773,
+     "bytes": 762,
      "name": "output-2026-07-22.txt"
     }
    ],
@@ -1275,7 +1275,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 4374,
+     "bytes": 4310,
      "name": "output-2026-07-23.txt"
     }
    ],
@@ -1292,7 +1292,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1320,
+     "bytes": 1301,
      "name": "output-2026-07-23.txt"
     }
    ],
@@ -1309,7 +1309,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 744,
+     "bytes": 732,
      "name": "output-2026-07-23.txt"
     }
    ],
@@ -1326,7 +1326,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 893,
+     "bytes": 877,
      "name": "output-2026-07-23.txt"
     }
    ],
@@ -1343,19 +1343,19 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 397,
+     "bytes": 392,
      "name": "output-2026-07-23.txt"
     },
     {
-     "bytes": 397,
+     "bytes": 392,
      "name": "output-run2-2026-07-23.txt"
     },
     {
-     "bytes": 397,
+     "bytes": 392,
      "name": "output-run3-2026-07-23.txt"
     },
     {
-     "bytes": 1715,
+     "bytes": 1688,
      "name": "output-run4-2026-07-23.txt"
     }
    ],
@@ -1372,7 +1372,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 537,
+     "bytes": 530,
      "name": "output-2026-07-23.txt"
     }
    ],
@@ -1389,7 +1389,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 3268,
+     "bytes": 3220,
      "name": "output-2026-07-23.txt"
     }
    ],
@@ -1406,7 +1406,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 264,
+     "bytes": 260,
      "name": "output-2026-07-23.txt"
     }
    ],
@@ -1423,36 +1423,40 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 2574,
+     "bytes": 2537,
      "name": "output-2026-07-24.txt"
     },
     {
-     "bytes": 1772,
+     "bytes": 1751,
      "name": "output-run2-2026-07-24.txt"
     },
     {
-     "bytes": 937,
+     "bytes": 925,
      "name": "output-run2b-2026-07-24.txt"
     },
     {
-     "bytes": 556,
+     "bytes": 549,
      "name": "output-run2c-2026-07-24.txt"
+    },
+    {
+     "bytes": 759,
+     "name": "output-targeted-rerun-2026-07-25.txt"
     }
    ],
-   "date": "",
+   "date": "2026-07-25",
    "hypothesis_md": "# EXP-075 - Degree-3 quadruple-support necessaries (resumable, multi-day)\n\n- **Question.** Does any quadruple-support subsystem of the order-4 conditions\n  obstruct a degree-3 covector?\n- **Motivation.** Degree 3 survived pairs (EXP-071) and all 20825 triples\n  (EXP-073). The quadruple tier: support S, |S| = 4: 35 order-4 gamma-blocks x\n  125 rows; gauges u, v, w over S (34 blocks, 5610 unknowns). C(51,4) = 249900\n  supports: a multi-day resumable background sweep (resume index checkpointed\n  every 200 in the artifact; restart with run.py <index>). Any infeasible\n  support closes degree 3 conclusively; degree 2 fell at its triple tier, so\n  the quadruple tier is the calibration-free next test.\n- **Predictions.** 1. [MV] Regression gate: 20 sampled pairs reproduce EXP-071\n  run4 through deg3_subsystem_feasible. 2. [MV] The sweep is decided (or an\n  honest partial with resume index): a hit closes degree 3 (pattern-theorem\n  proposal TO FELIPE); completion all-pass stages the constructive path (R2).\n- **Method.** EXP-071 pipeline imported via EXP-072's loader; numpy mod-p;\n  two-prime confirmation; flushed; background tee; cap-disciplined.\n- **Success.** Gate green and progress persisted. **Failure.** Gate failing.\n\nDeclared 2026-07-24 before the run.\n",
    "id": "075",
    "problem": "jacobian-conjecture",
    "slug": "EXP-075-degree3-quadruple-supports",
    "title": "Degree-3 quadruple-support necessaries (resumable, multi-day)",
-   "verdict": "",
-   "verdict_md": ""
+   "verdict": "confirmed",
+   "verdict_md": "# EXP-075 - Verdict: CONFIRMED (2026-07-25), degree-three polynomial covectors excluded\n\nDecided 2026-07-25 by targeted reproduction of the existing blocker-first hit.\n\n## Result\n\nThe declared regression gate passed. The support at reordered index 2662,\n$$\n\\{(0,3),(1,0),(3,4),(4,7)\\},\n$$\nmakes the degree-three necessary subsystem infeasible independently over both configured\nprimes. The original artifact reports the same support, and the targeted rerun reproduced it\nin 12 seconds.\n\n## Logical force\n\nThis is the conclusive direction of a support test. A global polynomial covector of parameter\ndegree at most three would restrict to a solution on every four-parameter coordinate slice.\nThe displayed slice has no solution. Therefore no global degree-three polynomial covector\nexists in the declared certificate class.\n\nThis supersedes the stale \u201copen through triples\u201d summary. EXP-093's proposed full cubic solve\nhas an empty target and is cancelled.\n\n## What this does not prove\n\n- It does not prove the reduced Keller system is consistent.\n- It does not produce a counterexample skeleton.\n- It does not exclude covectors of degree at least four.\n- It does not prove that a finite polynomial covector is necessary for uniform inconsistency.\n- It does not decide $(72,108)$ or raise the planar degree floor.\n\n## Preserved evidence\n\n- `artifacts/output-run2-2026-07-24.txt`: original full blockers-first log and hit.\n- `artifacts/output-targeted-rerun-2026-07-25.txt`: exact targeted reproduction from index 2662.\n- `run2.py`: deterministic blocker-first ordering and two-prime decision path.\n\n## Route decision\n\nStop the quadruple sweep after the first conclusive hit. Do not test the remaining 247,237\nsupports. The certificate tower now has exact exclusions at degrees one, two, and three, but\nno valid finite ceiling. The next work is structural: source restrictions, applicability\nthrough the GGHV reduction, and an all-degree certificate-module or chart-cover formulation.\n"
   },
   {
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 849,
+     "bytes": 839,
      "name": "output-2026-07-24.txt"
     }
    ],
@@ -1469,7 +1473,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 3462,
+     "bytes": 3423,
      "name": "output-2026-07-24.txt"
     }
    ],
@@ -1486,7 +1490,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 3150,
+     "bytes": 3100,
      "name": "output-2026-07-24.txt"
     }
    ],
@@ -1501,21 +1505,26 @@
   },
   {
    "area": "algebraic-geometry",
-   "artifacts": [],
+   "artifacts": [
+    {
+     "bytes": 3680,
+     "name": "output-2026-07-25.txt"
+    }
+   ],
    "date": "",
-   "hypothesis_md": "# EXP-080 - Does the staircase carry an sl2 (or larger) weight structure?\n\n- **Question.** Do the graded window operators close into an sl2 triple\n  (e, f, h) with h the (v,1-u) weight? If so the corrector ladder is a weight\n  module and termination = finite-dimensionality.\n- **Motivation (dossier section 3).** The (v,1-u) grading is a torus weight;\n  the T_i shift weight by fixed amounts; Lambda0 is a weight-lowest vector. An\n  sl2 (or Virasoro/W) structure would make 'which degree closes' a\n  representation-theoretic DECOMPOSITION and PREDICT obstruction locations\n  (primitive vectors) instead of finding them by sweep.\n- **Predictions.** 1. [MV] Assemble the weight operator h (grading) and the\n  natural raising/lowering candidates from the T_i by weight sign. 2. [MV]\n  Test [e, f] = h (up to scalars) and [h, e] = 2e, [h, f] = -2f on the window\n  basis. 3. [D] If sl2 closes: the ladder module decomposes; if only a larger\n  algebra closes, identify it; if nothing closes, record the honest null and\n  the obstruction to a Lie structure.\n- **Method.** Import the EXP-071 window operators; exact bracket computations;\n  small and fast.\n- **Success.** The closure question decided either way.\n- **Failure.** none beyond an honest null.\n\nDeclared 2026-07-24 before the run.\n",
+   "hypothesis_md": "# EXP-080 - Does the staircase carry an sl2 (or larger) weight structure?\n\n- **Question.** Do the graded window operators close into an sl2 triple\n  (e, f, h) with h the (v,1-u) weight? If so the corrector ladder is a weight\n  module and termination = finite-dimensionality.\n- **Motivation (dossier section 3).** The (v,1-u) grading is a torus weight;\n  the T_i shift weight by fixed amounts; Lambda0 is a weight-lowest vector. An\n  sl2 (or Virasoro/W) structure would make 'which degree closes' a\n  representation-theoretic DECOMPOSITION and PREDICT obstruction locations\n  (primitive vectors) instead of finding them by sweep.\n- **Predictions.** 1. [MV] Assemble the weight operator h (grading) and the\n  natural raising/lowering candidates from the T_i by weight sign. 2. [MV]\n  Test [e, f] = h (up to scalars) and [h, e] = 2e, [h, f] = -2f on the window\n  basis. 3. [D] If sl2 closes: the ladder module decomposes; if only a larger\n  algebra closes, identify it; if nothing closes, record the honest null and\n  the obstruction to a Lie structure.\n- **Method.** Import the EXP-071 window operators; exact bracket computations;\n  small and fast.\n- **Success.** The closure question decided either way.\n- **Failure.** none beyond an honest null.\n\nDeclared 2026-07-24 before the run.\n\n## 2026-07-25 pre-run amendment (methodology/12)\n\nThe question is unchanged, but the original declaration did not distinguish the\nraw monomial grading from the gauge-dependent pinned operators. The invariant\ngate below must pass before any commutator assembly.\n\n- **P1, source-complete.** The 2026-07-25 primary-source pass read Shaska,\n  arXiv:2607.20210v1, in full. It classifies graded planar Keller maps but contains\n  no `sl2`, corrector-ladder, or weight-module construction. The source does not\n  decide this experiment.\n- **P2, tooling smoke.** Stage A is a deterministic exact-integer support\n  computation expected to finish in under one second and to print every result.\n  No checkpoint is needed below five minutes. Stage B is forbidden unless Stage A\n  identifies a canonical common grading.\n- **P3, premise dependencies.**\n  1. Raw brackets with a monomial perturbation have a fixed weight shift; this\n     follows directly from the exponent formula and is checked in Stage A.\n  2. The pinned maps \\(A_i=\\sigma T_i\\) exist (EXP-064), but their grading\n     homogeneity is a **hypothesis**, not a prior result: \\(\\sigma\\) has a\n     165-dimensional gauge freedom and EXP-064 only fixes one pivot gauge.\n  3. The pinned ladder does not terminate (EXP-064), so termination or a finite\n     degree bound may not be assumed (EXP-078).\n  4. Solvability is automatic by the dual annihilation identity (EXP-068); it does\n     not supply raising/lowering operators.\n- **P4, one-sidedness.** A Stage-A PASS proves only that the declared \\(h,e,f\\)\n  candidates are well-defined enough for the exact commutator test; a subsequent\n  bracket PASS would establish an `sl2` representation for this pinned gauge only.\n  A Stage-A FAIL proves that the declared \"natural\" triple is underdetermined or\n  nonhomogeneous and stops the run. A bracket FAIL refutes only this candidate\n  triple, not every Lie structure, every right-inverse gauge, or \\(JC(2)\\).\n- **P5, invariant-first.** Before matrices, test (i) whether one nonzero monomial\n  weight makes the full forced polynomial\n  \\(P_T=y^8(xy-1)^8+x\\) homogeneous, (ii) whether the phrase \"\\(h\\) the\n  \\((v,1-u)\\) weight\" selects a unique pair on its nine-monomial top edge, and\n  (iii) how many distinct raw operator shifts occur. Multiple \\(M_0\\) degrees or\n  multiple proposed raising degrees block the standard relations before any\n  matrix bracket is meaningful.\n- **P6, budget and kill.** Expected runtime under one second; hard budget one\n  minute. If Stage A has not completed by then, stop with no structural claim.\n  Stage B, if unlocked, gets a separate five-minute smoke budget before any\n  widening.\n",
    "id": "080",
    "problem": "jacobian-conjecture",
    "slug": "EXP-080-sl2-closure",
    "title": "Does the staircase carry an sl2 (or larger) weight structure?",
    "verdict": "",
-   "verdict_md": ""
+   "verdict_md": "# EXP-080 - Verdict: the declared natural `sl2` triple is not well-defined\n\n**Status: Stage-A premise REFUTED by exact invariant checks; Stage B NOT RUN.**\n\nThe experiment reached its declared either-way outcome without assembling matrix\ncommutators. The exact support gate in `run.py` completed in under one second;\nits persisted output is `artifacts/output-2026-07-25.txt`.\n\n## Exact results\n\n1. **[MV, PASS]** The EXP-071 geometry was reconstructed exactly: there are 51\n   active lower-monomial operators.\n2. **[MV, REFUTED]** No nonzero monomial weight makes the full forced polynomial\n   \\[\n   P_T=y^8(xy-1)^8+x\n   \\]\n   homogeneous. Comparing the support points \\((0,8),(1,9),(1,0)\\) gives\n   \\(a+b=0\\) and \\(a-8b=0\\); the coefficient determinant is \\(-9\\), so only\n   \\((a,b)=(0,0)\\) works.\n3. **[MV, REFUTED]** The phrase \"\\(h\\) the \\((v,1-u)\\) weight\" does not choose one\n   grading on the nine-monomial edge. Its monomials\n   \\((u,v)=(k,8+k)\\), \\(0\\leq k\\leq8\\), produce nine distinct candidates.\n4. **[MV, REFUTED]** Grouping the 51 raw \\(T_i\\) by the sign of their shift does\n   not produce single-degree raising and lowering operators. Every one of the\n   nine vertex-derived candidate gradings mixes multiple positive or negative\n   shift classes. Even the canonical edge-normal grading \\((1,-1)\\) gives raw\n   shifts \\(-7,-6,\\ldots,1\\), while \\(P_T\\) itself has degrees \\(-8\\) and \\(1\\).\n\n## Why the bracket stage was stopped\n\nFor a grading operator \\(h\\), the relation \\([h,e]=2e\\) requires \\(e\\) to have one\ndegree (after an overall normalization); similarly \\(f\\) must have one opposite\ndegree. A sum of every positive-shift \\(T_i\\) is not such an operator. More\nimportantly, the operators proposed in the original declaration are\n\\(A_i=\\sigma T_i\\), not the raw \\(T_i\\). EXP-064's pivot right inverse \\(\\sigma\\)\nhas a 165-dimensional gauge freedom and has never been shown to preserve any\ngrading. Raw shift labels therefore cannot simply be transferred to the pinned\n\\(A_i\\).\n\nChoosing a corner, a shift class, and a gauge after seeing this failure would\ncreate a different experiment. The preflight correctly blocks that move.\n\n## Scope of the null\n\nThis result refutes the **declared natural construction** and its premise that the\nwindow already carries a canonical common weight. It does not prove:\n\n- that no selected homogeneous subquotient admits an `sl2` action;\n- that no other right-inverse gauge preserves a chosen grading;\n- that no larger Lie algebra acts after additional choices; or\n- anything against the Jacobian conjecture in dimension two.\n\nA sound successor would first specify one grading, construct or prove a\ngrading-compatible right inverse, and select \\(e\\) and \\(f\\) from single shift\nclasses. Only then are exact commutators a meaningful test. This route is demoted;\nthe constructive full degree-3 covector solve (EXP-093) remains the primary next\naction.\n"
   },
   {
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 819,
+     "bytes": 809,
      "name": "output-2026-07-24.txt"
     }
    ],
@@ -1532,7 +1541,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 2368,
+     "bytes": 2334,
      "name": "output-2026-07-24.txt"
     }
    ],
@@ -1573,7 +1582,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1312,
+     "bytes": 1295,
      "name": "output-2026-07-24.txt"
     }
    ],
@@ -1590,7 +1599,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1312,
+     "bytes": 1295,
      "name": "output-2026-07-24.txt"
     }
    ],
@@ -1607,7 +1616,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1713,
+     "bytes": 1692,
      "name": "output-2026-07-24.txt"
     }
    ],
@@ -1624,7 +1633,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 1692,
+     "bytes": 1668,
      "name": "output-2026-07-24.txt"
     }
    ],
@@ -1641,7 +1650,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 2546,
+     "bytes": 2514,
      "name": "output-2026-07-24.txt"
     }
    ],
@@ -1658,7 +1667,7 @@
    "area": "algebraic-geometry",
    "artifacts": [
     {
-     "bytes": 2056,
+     "bytes": 2025,
      "name": "output-2026-07-24.txt"
     }
    ],
@@ -1687,31 +1696,31 @@
      "name": "p4-euler-eliminant.txt"
     },
     {
-     "bytes": 3186,
+     "bytes": 3167,
      "name": "p6-n4-system.txt"
     },
     {
-     "bytes": 3145,
+     "bytes": 3071,
      "name": "profile.json"
     },
     {
-     "bytes": 2695,
+     "bytes": 2634,
      "name": "results.json"
     },
     {
-     "bytes": 2929,
+     "bytes": 2906,
      "name": "run-log.txt"
     },
     {
-     "bytes": 2132,
+     "bytes": 2059,
      "name": "stage-p3.json"
     },
     {
-     "bytes": 675,
+     "bytes": 639,
      "name": "stage-p6.json"
     },
     {
-     "bytes": 613,
+     "bytes": 586,
      "name": "stage-p7.json"
     }
    ],
@@ -1752,19 +1761,19 @@
      "name": "p2-census-1_1_2.json"
     },
     {
-     "bytes": 1731,
+     "bytes": 1704,
      "name": "profile.json"
     },
     {
-     "bytes": 1431,
+     "bytes": 1414,
      "name": "results.json"
     },
     {
-     "bytes": 1449,
+     "bytes": 1440,
      "name": "run-log.txt"
     },
     {
-     "bytes": 2925,
+     "bytes": 2848,
      "name": "stage-p2.json"
     }
    ],
@@ -1842,75 +1851,75 @@
    "area": "dynamical-systems",
    "artifacts": [
     {
-     "bytes": 440,
+     "bytes": 408,
      "name": "n3-1_1_1-verification.json"
     },
     {
-     "bytes": 878,
+     "bytes": 866,
      "name": "n3-1_1_1.ms"
     },
     {
-     "bytes": 1886,
+     "bytes": 1883,
      "name": "n3-1_1_1.out"
     },
     {
-     "bytes": 949,
+     "bytes": 917,
      "name": "n3-1_1_2-verification.json"
     },
     {
-     "bytes": 918,
+     "bytes": 906,
      "name": "n3-1_1_2.ms"
     },
     {
-     "bytes": 1877,
+     "bytes": 1874,
      "name": "n3-1_1_2.out"
     },
     {
-     "bytes": 1252,
+     "bytes": 1220,
      "name": "n3-1_2_3-verification.json"
     },
     {
-     "bytes": 958,
+     "bytes": 946,
      "name": "n3-1_2_3.ms"
     },
     {
-     "bytes": 1872,
+     "bytes": 1869,
      "name": "n3-1_2_3.out"
     },
     {
-     "bytes": 1330,
+     "bytes": 1298,
      "name": "n3-2_3_5-verification.json"
     },
     {
-     "bytes": 1001,
+     "bytes": 989,
      "name": "n3-2_3_5.ms"
     },
     {
-     "bytes": 1874,
+     "bytes": 1871,
      "name": "n3-2_3_5.out"
     },
     {
-     "bytes": 68,
+     "bytes": 64,
      "name": "n4-classes.json"
     },
     {
-     "bytes": 5254,
+     "bytes": 5232,
      "name": "n4-equal-planar.ms"
     },
     {
-     "bytes": 17,
+     "bytes": 16,
      "name": "n4-equal-planar.out"
     },
     {
-     "bytes": 984,
+     "bytes": 958,
      "name": "profile.json"
     },
     {
-     "bytes": 850,
+     "bytes": 829,
      "name": "results.json"
     },
     {
-     "bytes": 799,
+     "bytes": 792,
      "name": "run-log.txt"
     }
    ],
@@ -1927,47 +1936,47 @@
    "area": "dynamical-systems",
    "artifacts": [
     {
-     "bytes": 686,
+     "bytes": 630,
      "name": "out-n4-S1-equal-unpointed-certificates.json"
     },
     {
-     "bytes": 999,
+     "bytes": 921,
      "name": "out-n5-S1-V5arith-unpointed-certificates.json"
     },
     {
-     "bytes": 1249,
+     "bytes": 1147,
      "name": "out-n5-S1-V6repeat-unpointed-certificates.json"
     },
     {
-     "bytes": 3026,
+     "bytes": 2778,
      "name": "out-n5-S2-V1pow3-unpointed-certificates.json"
     },
     {
-     "bytes": 3624,
+     "bytes": 3328,
      "name": "out-n5-S2-V2squares-unpointed-certificates.json"
     },
     {
-     "bytes": 3644,
+     "bytes": 3348,
      "name": "out-n5-S2-V3pow2-unpointed-certificates.json"
     },
     {
-     "bytes": 3607,
+     "bytes": 3311,
      "name": "out-n5-S2-V4primes-unpointed-certificates.json"
     },
     {
-     "bytes": 4908,
+     "bytes": 4500,
      "name": "out-n5-S2-V5arith-unpointed-certificates.json"
     },
     {
-     "bytes": 26785,
+     "bytes": 24554,
      "name": "out-n5-S2-V6repeat-unpointed-certificates.json"
     },
     {
-     "bytes": 1641,
+     "bytes": 1623,
      "name": "run-log.txt"
     },
     {
-     "bytes": 2626,
+     "bytes": 2497,
      "name": "summary.json"
     }
    ],
@@ -1984,107 +1993,107 @@
    "area": "dynamical-systems",
    "artifacts": [
     {
-     "bytes": 7255,
+     "bytes": 7235,
      "name": "in-n4-A1-arith.txt"
     },
     {
-     "bytes": 7255,
+     "bytes": 7235,
      "name": "in-n4-A1-equal.txt"
     },
     {
-     "bytes": 7255,
+     "bytes": 7235,
      "name": "in-n4-A1-pow2.txt"
     },
     {
-     "bytes": 7632,
+     "bytes": 7610,
      "name": "in-n4-A2-arith.txt"
     },
     {
-     "bytes": 7632,
+     "bytes": 7610,
      "name": "in-n4-A2-equal.txt"
     },
     {
-     "bytes": 7632,
+     "bytes": 7610,
      "name": "in-n4-A2-pow2.txt"
     },
     {
-     "bytes": 7554,
+     "bytes": 7530,
      "name": "in-n4-A3-arith.txt"
     },
     {
-     "bytes": 7554,
+     "bytes": 7530,
      "name": "in-n4-A3-equal.txt"
     },
     {
-     "bytes": 7554,
+     "bytes": 7530,
      "name": "in-n4-A3-pow2.txt"
     },
     {
-     "bytes": 7929,
+     "bytes": 7904,
      "name": "in-n4-A4-arith.txt"
     },
     {
-     "bytes": 7929,
+     "bytes": 7904,
      "name": "in-n4-A4-equal.txt"
     },
     {
-     "bytes": 7929,
+     "bytes": 7904,
      "name": "in-n4-A4-pow2.txt"
     },
     {
-     "bytes": 7173,
+     "bytes": 6609,
      "name": "out-n4-A1-arith.out"
     },
     {
-     "bytes": 3333,
+     "bytes": 3085,
      "name": "out-n4-A1-equal.out"
     },
     {
-     "bytes": 5487,
+     "bytes": 5056,
      "name": "out-n4-A1-pow2.out"
     },
     {
-     "bytes": 7101,
+     "bytes": 6543,
      "name": "out-n4-A2-arith.out"
     },
     {
-     "bytes": 3339,
+     "bytes": 3091,
      "name": "out-n4-A2-equal.out"
     },
     {
-     "bytes": 5487,
+     "bytes": 5056,
      "name": "out-n4-A2-pow2.out"
     },
     {
-     "bytes": 7835,
+     "bytes": 7203,
      "name": "out-n4-A3-arith.out"
     },
     {
-     "bytes": 2605,
+     "bytes": 2405,
      "name": "out-n4-A3-equal.out"
     },
     {
-     "bytes": 5786,
+     "bytes": 5312,
      "name": "out-n4-A3-pow2.out"
     },
     {
-     "bytes": 7763,
+     "bytes": 7137,
      "name": "out-n4-A4-arith.out"
     },
     {
-     "bytes": 2623,
+     "bytes": 2423,
      "name": "out-n4-A4-equal.out"
     },
     {
-     "bytes": 5781,
+     "bytes": 5307,
      "name": "out-n4-A4-pow2.out"
     },
     {
-     "bytes": 1046,
+     "bytes": 1031,
      "name": "run-log.txt"
     },
     {
-     "bytes": 1271,
+     "bytes": 1206,
      "name": "table.json"
     }
    ],
@@ -2105,7 +2114,7 @@
      "name": "finish-log.txt"
     },
     {
-     "bytes": 82,
+     "bytes": 77,
      "name": "results.json"
     },
     {
@@ -2117,7 +2126,7 @@
      "name": "routeB.ms"
     },
     {
-     "bytes": 118,
+     "bytes": 116,
      "name": "run-log.txt"
     }
    ],
@@ -2134,7 +2143,7 @@
    "area": "optimization-geometry",
    "artifacts": [
     {
-     "bytes": 4326,
+     "bytes": 4238,
      "name": "run-log.txt"
     }
    ],
@@ -2151,7 +2160,7 @@
    "area": "optimization-geometry",
    "artifacts": [
     {
-     "bytes": 5749,
+     "bytes": 5657,
      "name": "run-log.txt"
     }
    ],
@@ -2168,7 +2177,7 @@
    "area": "optimization-geometry",
    "artifacts": [
     {
-     "bytes": 3117,
+     "bytes": 3060,
      "name": "run-log.txt"
     }
    ],
@@ -2185,7 +2194,7 @@
    "area": "optimization-geometry",
    "artifacts": [
     {
-     "bytes": 2920,
+     "bytes": 2859,
      "name": "run-log.txt"
     }
    ],
