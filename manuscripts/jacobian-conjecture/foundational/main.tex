@@ -115,9 +115,9 @@ $F(0, 0, -\tfrac14) = F(1, -\tfrac32, \tfrac{13}{2}) = F(-1, \tfrac32, \tfrac{13
 (-\tfrac14, 0, 0)$ \cite{Alpoge2026}. Appending identity coordinates refutes $JC(N)$ for all
 $N \ge 3$; the case $N = 2$ remains open. At the time of writing no formal paper exists; the
 announcement is a machine-checkable certificate, which makes an exact experimental program both
-possible and necessary. This manuscript maps the findings of that program (repository:
-CAOS\_RESEARCH, problem \texttt{algebraic-geometry/jacobian-conjecture}; experiments cited as
-EXP-$nnn$). Each claim is labeled: \textbf{[MV]} machine-verified exact identity,
+possible and necessary. This manuscript maps the findings of the CAOS\_RESEARCH Jacobian
+Conjecture program; experiments are cited as EXP-$nnn$. Each claim is labeled:
+\textbf{[MV]} machine-verified exact identity,
 \textbf{[D]} derived analytically and certified on instances, \textbf{[C]} conjecture.
 
 \section{Exact validation and the full fiber (EXP-001)}
@@ -141,8 +141,8 @@ $(-2, -1, 1)$. Writing $v = xy$, $t = x^2 z$, $u = 1 + v$, the reduced data
 \[
 a_1 = x^2 P, \qquad b_1 = x Q, \qquad c_1 = R / x = 2 - 3v - t
 \]
-are polynomials in $(v, t)$; each component of $F$ is affine in $z$ with coefficient vector
-$(u^3, 3xu^2, -x^3)$; and the generating identity
+belong to $\Q[v,t]$. Each component of $F$ is affine in $z$, with coefficient vector
+$(u^3, 3xu^2, -x^3)$. Moreover, the generating identity
 $a_1 = \tfrac{u b_1}{2} - u^2 + \tfrac{u^3 c_1}{2}$ holds.
 \end{theorem}
 
@@ -398,9 +398,9 @@ the experiment record; wider weight systems and higher-degree seeds are queued.
 
 \subsection*{Reproducibility}
 Every theorem labeled [MV] is an exact sympy computation over $\Q$ with a persisted script and
-output in the repository (experiments EXP-001 through EXP-012 under
-\texttt{problems/algebraic-geometry/jacobian-conjecture/}); each experiment declares its
-hypothesis before the run and records an adversarial-validation route with its verdict.
+output in the repository. The supporting records are experiments EXP-001 through EXP-012 in the
+Jacobian Conjecture problem tree. Each experiment declares its hypothesis before the run and
+records an adversarial-validation route with its verdict.
 
 \begin{thebibliography}{9}
 \bibitem{Alpoge2026} L. Alp\"oge, announcement of the counterexample, X (@\_\_alpoge\_\_),

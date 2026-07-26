@@ -253,8 +253,8 @@ pairing preserved). The measured window law ($-c_N a^N$ pairings with the odd-pr
 $2N - 3$ ratios) is this tower seen through the clearing normalization.
 \end{lemma}
 
-\begin{theorem}[{[MV/D]}; the fifth exclusion, all degrees, primitive-top scope
-(EXP-042/044/046)]\label{thm:t5all}
+\begin{theorem}[{[MV/D]}; all-degree fifth exclusion (EXP-042/044/046)]
+\label{thm:t5all}
 For $u \ge 2$, $v \ge 1$ with $x^u y^v$ primitive ($\gcd(u, v) = 1$) or $d \ge u + v$,
 and any $a \ne 0$, $b$: $P = x + a\,x^u y^v + b\,x^d$ is not a Keller component at ANY
 partner degree. (Base: the cleared certificates of Theorem~\ref{thm:t5}; induction:
@@ -359,10 +359,14 @@ affordable at seconds-to-minutes per certificate.
 
 The lone surviving degree pair below $125$ reduces (Guccione--Guccione--Horruitiner--
 Valqui \cite{GGHV2022}, Prop.~4.3; transcription verified against the LaTeX sources)
-to the existence of a pair with $[P, Q] = x^2$ supported in SMALL polygons: $N(P)$ with
-corners $(0,0), (1,0), (8,14), (8,16), (0,8)$ (61 lattice points) and $N(Q)$ with
-corners $(0,0), (2,1), (12,21), (12,24), (0,12)$ (125 lattice points); the original
-paper's unsolved system was never printed. Machine results to date (EXP-050 through
+to the existence of a pair with $[P, Q] = x^2$ supported in SMALL polygons:
+\[
+\begin{aligned}
+N(P)&:\ (0,0),(1,0),(8,14),(8,16),(0,8) &&\text{(61 lattice points)},\\
+N(Q)&:\ (0,0),(2,1),(12,21),(12,24),(0,12) &&\text{(125 lattice points)}.
+\end{aligned}
+\]
+The original paper's unsolved system was never printed. Machine results to date (EXP-050 through
 EXP-055): sampled shapes at the original degrees and on the reduced polygons are all
 partner-free (seconds per certificate); on the stratum with the forced top edge
 $y^8 (xy - t)^8$ symbolic, every cleared certificate pairs to the CONSTANT $576$
