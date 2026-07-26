@@ -118,8 +118,8 @@ scalar conditions before exploiting sparsity.
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
 - Current research branch: `work/jacobian-conjecture/next-round`.
-- The previous audit and release PRs are merged. EXP-095 was merged into
-  `develop` by PR `#79` at `819ef6e`.
+- The previous audit and release PRs are merged. EXP-096 was merged into
+  `develop` by PR `#81` at `7866b0f`.
 - No Jacobian PR or experiment process is active.
 - The management mirror is updated directly on its canonical `develop`
   checkout. Do not create a management worktree or task branch.
