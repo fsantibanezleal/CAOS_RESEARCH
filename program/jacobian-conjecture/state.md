@@ -163,3 +163,7 @@
   Promote \((0,7)\), the smallest selected support, to EXP-107. In invariant
   variables \(z=u^9,\ y=v/u\), both existing minors have \(z\)-width 14 and
   new-direction ranks 53/41. No process is active.
+- **2026-07-26 publication:** Paper B v0.18 records the complete exact slice
+  cover and global lower-family grading. The two-pass 13-page PDF and visual
+  QA passed. Zenodo version DOI: `10.5281/zenodo.21598065`, concept DOI:
+  `10.5281/zenodo.21503367`.

@@ -1211,3 +1211,5 @@
   directions are compatible, with \(w_{p,q}=q-p+1\bmod9\); \((0,0)\) is
   bracket-zero. EXP-107 promotes \((0,7)\) to the first graded
   three-parameter lift.
+- Paper B v0.18 passed its two-pass 13-page PDF build and visual QA and is
+  published at version DOI `10.5281/zenodo.21598065`.
