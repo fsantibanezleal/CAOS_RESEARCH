@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-26\\[2pt]\normalsize Version 0.16}
+\date{2026-07-26\\[2pt]\normalsize Version 0.17}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.16}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.17}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -39,7 +39,7 @@ the Staircase Transport, and the Recalibrated Frontier}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper B of a three-paper record \textperiodcentered\ version 0.16 \textperiodcentered\ 2026-07-26\\
+Paper B of a three-paper record \textperiodcentered\ version 0.17 \textperiodcentered\ 2026-07-26\\
 DOI \href{https://doi.org/10.5281/zenodo.21503367}{10.5281/zenodo.21503367} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -556,6 +556,69 @@ replacement only after proving $\nu=0$ and swap compatibility. A complete
 boundary-divisor ledger could supply that missing theorem; none is claimed
 here.
 
+\subsection*{Constructible certificate strata and the first exact chart transition}
+
+The earlier phrase ``finite chart cover by localized certificates'' needs a
+commutative-algebra qualification (EXP-098). Suppose principal opens \(D(s_i)\)
+cover the parameter space and each carries a localized lift \(c_i\) with
+\[
+ c_i^TM=0,\qquad c_i^Tb=1.
+\]
+Clearing denominators gives global syzygies pairing to powers \(s_i^{N_i}\).
+Those powers generate the unit ideal, so a polynomial combination is one
+global covector pairing to \(1\). A pure principal-open cover of lifted
+syzygies is therefore not stronger than the global-covector target.
+
+The strict generalization is a \emph{constructible rank stratification}: after
+certifying a generic open, quotient by the residual closed-locus ideal and
+recompute the kernel. New syzygies can appear after this non-flat
+specialization and need not lift. EXP-098 verifies the distinction on an exact
+universally inconsistent control whose global pairing ideal is the proper
+ideal \((x)\), while a new certificate appears on \(V(x)\).
+
+This mechanism now reaches the actual GGHV matrix (EXP-099--101). Common-flag
+shortcuts fail, but they isolate the first genuine interior interaction:
+\[
+ s=\varepsilon_{(0,1)},\qquad t=\varepsilon_{(1,7)}.
+\]
+For the selected \(125\times125\) augmented minor, a Sylvester reduction gives
+the exact factorization [MV]
+\[
+ \frac{\det A(s,t)}{\det A_0}
+ =
+ \frac{(st-8)^6\bigl(2^{15}s^9-(st-8)^7\bigr)}{2^{39}}.
+\]
+The mixed coefficient also follows independently from
+\[
+ \operatorname{tr}B_s=\operatorname{tr}B_t=0,\qquad
+ \operatorname{tr}(B_sB_t)=\frac{13}{8}.
+\]
+At \((s,t)=(-8,-1)\), the first minor vanishes, but exact ranks remain
+\[
+ \operatorname{rank}M=124,\qquad
+ \operatorname{rank}[M\mid b]=125.
+\]
+Pivot extraction gives an alternative right-hand-side-containing minor
+nonzero there. The first two minors cover the component \(st=8\) and leave
+only
+\[
+ 2^{15}s^9=(st-8)^7,
+\]
+with normalization
+\[
+ s=8u^7,\qquad t=\frac{8u^9+1}{u^7},\qquad u\ne0.
+\]
+At \(u=1\), both old minors vanish but a third exact augmented minor is
+nonzero (EXP-102). Complete coverage of this curve remains open: the dense
+third-minor pullback has combined modular direction rank \(121\) and hit its
+declared five-minute budget. The next exact object is the determinantal
+divisor of the cleared polynomial matrix over \(\mathbb{Q}[u]\), not another
+dense bivariate expansion.
+
+These results establish the certificate mechanism and the first exact chart
+transition on a two-parameter slice. They do not cover the other parameters,
+exclude \((72,108)\), or raise the degree floor.
+
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the
 published literature: the closing remark of \cite{GGV2017} states that the corner
@@ -619,10 +682,10 @@ audit trail (including its open verification items) persisted in the repository.
 
 \section{Program}
 
-Priorities, from the standing routes evaluation: (1) compute the small
-certificate-module/chart cover---left syzygies of $M$, their pairing ideal
-with the right-hand side, and localized certificates---rather than extending
-one-sided support sweeps; (2) reopen the intersection-$21$ transport only
+Priorities, from the standing routes evaluation: (1) compute the
+determinantal divisor on the EXP-101 residual curve over
+\(\mathbb{Q}[u,u^{-1}]\), then enlarge the constructible stratification
+coefficient block by coefficient block; (2) reopen the intersection-$21$ transport only
 after constructing a complete boundary-divisor ledger through the swap,
 Laurent cuts, and final inversion; (3) pursue Newton resolution only after deriving a
 condition beyond the already-retained first $D=72$ branch; and (4) retain the
