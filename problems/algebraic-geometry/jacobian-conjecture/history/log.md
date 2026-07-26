@@ -1225,3 +1225,17 @@
   in \(y\). The two-chart ideal is zero-dimensional but not the unit ideal.
 - EXP-108 must select a third minor on this explicit finite fiber, then repeat
   and lift before any characteristic-zero claim.
+
+## 2026-07-26 - EXP-108 closes the first three-coefficient slice exactly
+
+- The first deterministic third chart has a fiber determinant \(H(y)\)
+  coprime to EXP-107's squarefree degree-12 \(Q(y)\) modulo the pilot prime.
+- Connected mod-9 weights remove the ninth-root extension at \(z=-1/8\).
+  Exact interpolation under structural degree bounds uses 15 values for \(Q\)
+  and 14 for \(H\), with an additional exact check for each.
+- Over \(\mathbb Q\), \(Q\) is irreducible and \(H\) factors in degrees
+  \(1,2,4,6\). A persisted integer Bezout identity proves gcd one.
+- Together with \(G(z)=(8z+1)^{14}\), three maximal minors exclude the exact
+  declared \((0,1)/(1,7)/(0,7)\) coefficient slice. EXP-109 promotes
+  \((0,6)\) with invariant coordinate
+  \(x=\varepsilon_{(0,6)}/u^2\).

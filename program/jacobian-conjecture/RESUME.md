@@ -1,6 +1,6 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-07-26 after EXP-107's finite-residual three-parameter pilot. This is the first-read
+Updated 2026-07-26 after EXP-108's exact three-coefficient slice cover. This is the first-read
 navigation page. Primary artifacts and experiment verdicts remain the evidence.
 
 ## 1. State in one screen
@@ -53,7 +53,11 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
 - EXP-107 reconstructs the first three-parameter lift modulo \(998244353\).
   The endpoint-safe chart stays \(G(z)=(8z+1)^{14}\), independent of \(y\);
   the first chart leaves a squarefree degree-12 residual fiber at \(z=-1/8\).
-  This is a finite third-chart target, not a characteristic-zero closure.
+  This is a finite third-chart target.
+- EXP-108 closes that target exactly. A deterministic third chart restricts
+  to a degree-13 polynomial \(H(y)\) coprime to the exact irreducible
+  degree-12 \(Q(y)\), with a persisted integer Bezout identity. Three maximal
+  minors therefore exclude the declared \((0,1)/(1,7)/(0,7)\) slice.
 - Controlling strategy:
   [`strategy-audit-2026-07-25.md`](strategy-audit-2026-07-25.md).
 - Source audit:
@@ -164,8 +168,13 @@ scalar conditions before exploiting sparsity.
   mod-9 grading; \((0,7)\) is promoted to EXP-107.
 - EXP-107: the first two bivariate charts have a zero-dimensional common
   locus modulo \(998244353\). It consists of the squarefree degree-12 fiber
-  cut out by the first chart over \(z=-1/8\); EXP-108 must select a third
-  chart and then repeat/lift the result.
+  cut out by the first chart over \(z=-1/8\).
+- EXP-108: the first deterministic point chart closes the modular fiber, and
+  29 exact determinant evaluations plus independent controls lift the result.
+  The exact \(Q,H\) have gcd one and an integer Bezout identity, proving the
+  three-chart cover over characteristic zero.
+- EXP-109: declared lift through \((0,6)\), using
+  \(x=\varepsilon_{(0,6)}/u^2\) and the new term \(zxA_{(0,6)}\).
 - EXP-102: third chart exists at \(u=1\); complete pullback is inconclusive
   after the dense rank-121 determinant hit its five-minute budget.
 
@@ -192,16 +201,14 @@ scalar conditions before exploiting sparsity.
 
 ## 5. Next actions, in order
 
-1. Run EXP-108 on the explicit EXP-107 residual fiber:
-   - set \(z=-1/8\) and reconstruct candidate third-chart determinants in
-     \(y\);
-   - select a 125-row chart whose restriction is coprime to the squarefree
-     degree-12 residual polynomial \(Q(y)\);
-   - repeat the unit-ideal decision at independent primes and lift a compact
-     exact certificate before claiming the three-parameter slice is covered.
-2. If EXP-108 closes the slice, promote the next grading-compatible lower
-   coefficient using the EXP-106 ordering; if it does not, persist the exact
-   surviving factor and select a point-local fourth chart.
+1. Run EXP-109 through the next grading-compatible direction \((0,6)\):
+   - use \(x=\varepsilon_{(0,6)}/u^2\), so the new term is \(zxA_{(0,6)}\);
+   - reconstruct support and rank bounds for the three exact EXP-108 charts;
+   - recurse on residual closed strata instead of beginning with a dense
+     trivariate determinant grid.
+2. If a finite residual survives, select a point-local fourth chart; if a
+   positive-dimensional component survives, persist its eliminant before
+   widening the coefficient block.
 3. Reopen intersection-\(21\) transport only with a complete
    boundary-divisor ledger through the swap, Laurent cuts, and final inversion;
    do not impose absolute degree directly on the 51 coefficients.

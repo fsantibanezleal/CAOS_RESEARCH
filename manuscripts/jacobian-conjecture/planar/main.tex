@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-26\\[2pt]\normalsize Version 0.18}
+\date{2026-07-26\\[2pt]\normalsize Version 0.19}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.18}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.19}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -39,7 +39,7 @@ the Staircase Transport, and the Recalibrated Frontier}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper B of a three-paper record \textperiodcentered\ version 0.18 \textperiodcentered\ 2026-07-26\\
+Paper B of a three-paper record \textperiodcentered\ version 0.19 \textperiodcentered\ 2026-07-26\\
 DOI \href{https://doi.org/10.5281/zenodo.21503367}{10.5281/zenodo.21503367} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -74,12 +74,15 @@ gates: seven possible northeastern vertices for a nonzero inner polynomial, and
 $\deg_x\operatorname{Res}_y(P,Q)=21$ with an $84+24$ major/minor root partition; neither
 gate alone excludes the pair.
 A constructible determinantal-strata calculation now closes the first actual
-two-coefficient GGHV slice exactly. On the residual curve, two normalized
+three-coefficient GGHV slice exactly. On the residual curve, two normalized
 maximal minors reduce, with \(z=u^9\), to
 \(21-96z-1024z^2\) and \((8z+1)^{14}\); a persisted integer Bezout identity
-has constant \(17^{14}\). A connected mod-9 row/column grading extends to
-every nonconstant direction in the persisted lower family. This is a strict
-slice result and does not exclude the full \((72,108)\) family.
+has constant \(17^{14}\). After adding \(\varepsilon_{(0,7)}\), the only
+two-chart residual is a degree-12 fiber over \(z=-1/8\). A third exact minor
+has coprime degree-13 fiber determinant, certified by a second integer
+Bezout identity. A connected mod-9 row/column grading extends to every
+nonconstant direction in the persisted lower family. This is a strict slice
+result and does not exclude the full \((72,108)\) family.
 A new multiplication formula for $x^m$-anchored edges shows the $B = 16$ leading form cannot
 produce the Keller constant on its top edge for $m \ge 2$: that case, too, is a staircase
 transport. All computations are exact and reproducible; every claim is labeled machine-verified
@@ -657,10 +660,39 @@ next coordinate system, not a full-family proof. The promoted direction
 \((0,7)\) has selected ranks 53 and 41; after setting
 \(z=u^9\) and \(y=v/u\), both determinant charts have \(z\)-width 14.
 
+EXP-107 reconstructs both bivariate minors on independent 16-by-64 NTT grids
+and verifies them by off-grid determinant evaluations [MV]. The endpoint-safe
+minor is independent of \(y\), so it remains \(G(z)=(8z+1)^{14}\). The other
+minor restricts at \(z=-1/8\) to a squarefree degree-12 polynomial \(Q(y)\).
+Thus the first two charts leave only twelve geometric points in that fiber,
+not a curve.
+
+EXP-108 selects a third 125-row chart at the residual fiber [MV]. Removing
+the connected mod-9 row/column weights turns both fiber matrices into exact
+rational matrices. Interpolation under structural degree bounds 14 and 13,
+using 29 exact determinants and two independent controls, gives primitive
+polynomials \(Q,H\in\mathbb Z[y]\). The polynomial \(Q\) is irreducible over
+\(\mathbb Q\), while, up to sign,
+\[
+\begin{split}
+H(y)={}&y(49y^2+168y+192)(2401y^4+1568y^2+1024)\\
+&\quad\cdot(117649y^6-403368y^5+921984y^4
+-1053696y^3+786432).
+\end{split}
+\]
+Their exact gcd is one. The persisted integer B\'ezout identity has nonzero
+constant
+\[
+3036277895244878564727703434378848855121939007419328699039744.
+\]
+Since every common zero with \(G\) must lie over \(z=-1/8\), the three minors
+prove rank 125 throughout the declared
+\(\{(0,1),(1,7),(0,7)\}\) coefficient slice.
+
 These results establish the first complete constructible chart cover on an
-actual GGHV coefficient slice and expose a global lower-family grading. They
-do not cover simultaneous variation of the other coefficients, exclude the
-full \((72,108)\) family, or raise the degree floor.
+actual three-coefficient GGHV slice and expose a global lower-family grading.
+They do not cover simultaneous variation of the other coefficients, exclude
+the full \((72,108)\) family, or raise the degree floor.
 
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the
@@ -725,10 +757,10 @@ audit trail (including its open verification items) persisted in the repository.
 
 \section{Program}
 
-Priorities, from the standing routes evaluation: (1) lift the exact EXP-105
-cover through the promoted \((0,7)\) coefficient using
-\(z=u^9,\ y=v/u\), reconstruct the bivariate minors on graded NTT grids, and
-compute their common-zero ideal before selecting new charts; (2) reopen the intersection-$21$ transport only
+Priorities, from the standing routes evaluation: (1) lift the exact EXP-108
+cover through the next direction \((0,6)\), using
+\(x=\varepsilon_{(0,6)}/u^2\) so its matrix term is \(zxA_{(0,6)}\), and
+recurse only on residual closed strata; (2) reopen the intersection-$21$ transport only
 after constructing a complete boundary-divisor ledger through the swap,
 Laurent cuts, and final inversion; (3) pursue Newton resolution only after deriving a
 condition beyond the already-retained first $D=72$ branch; and (4) retain the

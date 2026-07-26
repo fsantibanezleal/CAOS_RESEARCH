@@ -10,7 +10,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Paper B of a three-paper research record. The two-variable Jacobian conjecture remains open after the 2026 counterexample in dimension 3. This paper develops the planar program: an unconditional theorem ladder, the staircase transport with cleared polynomial certificates, and an exact-arithmetic campaign on the lone open degree pair (72,108) below 125, built directly on Guccione-Guccione-Horruitiner-Valqui (arXiv:2204.14178, Proposition 4.3). Version 0.18 retains the source-validated original-pair gates and transport audit, then advances the constructible certificate-strata method from a first chart transition to a complete exact cover of the declared two-coefficient GGHV slice. On the normalized residual curve, two primitive maximal minors are F(z)=21-96z-1024z^2 and G(z)=(8z+1)^14, with z=u^9. Persisted integer polynomials satisfy A(z)F(z)+B(z)G(z)=17^14, proving the two minors generate the unit ideal over Q[u,u^-1]. A connected mod-9 row/column grading extends to every nonconstant direction in the persisted lower family, with weight law w_(p,q)=q-p+1 mod 9. This closes one exact slice and supplies a scalable graded lift; it does not close the full (72,108) family or decide the planar conjecture.</p><p>All scripts, artifacts and verdicts: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
+    "description": "<p>Paper B of a three-paper research record. The two-variable Jacobian conjecture remains open after the 2026 counterexample in dimension 3. This paper develops the planar program: an unconditional theorem ladder, the staircase transport with cleared polynomial certificates, and an exact-arithmetic campaign on the lone open degree pair (72,108) below 125, built directly on Guccione-Guccione-Horruitiner-Valqui (arXiv:2204.14178, Proposition 4.3). Version 0.19 retains the source-validated original-pair gates and transport audit, then advances the constructible certificate-strata method to a complete exact cover of the declared three-coefficient GGHV slice (0,1)/(1,7)/(0,7). The two-coefficient residual curve is covered by F(z)=21-96z-1024z^2 and G(z)=(8z+1)^14, with an integer Bezout identity of constant 17^14. After adding the third coefficient, the only two-chart residual is a degree-12 fiber over z=-1/8. A deterministic third maximal minor has a coprime exact degree-13 fiber determinant; 29 exact determinant evaluations, independent checks, a nonzero resultant, and a persisted integer Bezout identity certify the cover over characteristic zero. A connected mod-9 row/column grading extends to every nonconstant direction in the persisted lower family. This closes one exact three-coefficient slice; it does not close the full (72,108) family or decide the planar conjecture.</p><p>All scripts, artifacts and verdicts: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
     "keywords": [
       "Jacobian conjecture",
       "planar Keller maps",
@@ -55,7 +55,7 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.18",
+    "version": "0.19",
     "language": "eng"
   }
 }
