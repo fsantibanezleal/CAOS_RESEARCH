@@ -1108,3 +1108,19 @@
   reproduces and retains the open GGHV chain. It does not exclude
   \((72,108)\) or raise the floor. Next is the Lee--Li plus GGHV
   approximate-root/intersection applicability gate.
+
+## 2026-07-25 - EXP-096 fixes the open chain's intersection number
+
+- Full primary-source reading replaced the previous abstract-only Lee--Li
+  record and corrected both source author lists.
+- Exact enumeration of the Lee--Li narrow region for
+  \((a,b,m,n)=(2,3,16,56)\) leaves seven possible nonzero inner vertices:
+  \((1,3),(2,7),(3,10),(4,14),(5,17),(6,21),(7,24)\).
+- The open chain's four major approximate-root classes each contain 21 roots
+  and contribute \(1/4\). Hence
+  \(\deg_x\operatorname{Res}_y(P,Q)=21\).
+- The degree-108 component partitions into 84 major and 24 minor roots. The
+  published F1 smallest-member value \(I=9\) passed as an independent control.
+- The minor-root source formula is only an inequality, so the hoped-for family
+  exclusion is unavailable. The exact intersection and vertex restrictions
+  remain as reconstruction gates.
