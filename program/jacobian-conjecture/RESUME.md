@@ -1,263 +1,203 @@
-# RESUME - Jacobian conjecture program (updated 2026-07-25, source-reconciliation round)
+# RESUME: Jacobian conjecture program
 
-The single first-read for a fresh session (contract: methodology/07-session-handoff.md).
+Updated 2026-07-25 after the complete strategy and source audit. This is the first-read
+navigation page. Primary artifacts and experiment verdicts remain the evidence.
 
 ## 1. State in one screen
 
-- **World state:** JC is FALSE for every N >= 3 (Alpoge/Fable map; EXP-001 validated
-  exactly). JC(2) is open and is the program's target. NEW (session 22): HC(48) is false
-  with OUR explicit witness (EXP-041): the symmetric/gradient JC and Zhao's Vanishing
-  Conjecture now fall EXPLICITLY, not just existentially.
-- **The theorem ladder (all machine-certified, Theorems 2-4 unconditional):**
-  2D equivariant rigidity (EXP-010); the uniform min-degree-2 theorem + shear closure
-  (EXP-021/022); T1 weight-class (EXP-029); T2 lower-weight tails (EXP-030/031); T3
-  x-anchored edges (EXP-032); T4 vertex dichotomy (EXP-033); annihilation closed form
-  (EXP-036). Novelty (updated source reconciliation, 2026-07-25): T1 and T2 NOT FOUND;
-  rigidity now has an independent contemporaneous overlap in Shaska,
-  arXiv:2607.20210v1. EXP-010 remains exact on opposite-sign/one-zero weights; same-sign
-  actions may be nonlinear triangular automorphisms, so no priority or all-signature
-  linearity claim remains;
-  T3 not-as-stated (method classical); T4 sharp-dichotomy form (GGV Prop 4.1 has the
-  counterexample half).
-- **The open core and its instrument:** components must swallow x with a mixed staircase
-  (EXP-033/034/035). THE STAIRCASE TRANSPORT (EXP-037): the Keller window is
-  block-triangular under the x-edge grading (diagonal = MINIMAL P-class); classwise
-  elimination is executable and exact; the obstruction sits at the CONSTANT'S class;
-  generic reduced equation -2a = 0 on x + a x^u y^v + b x^d. THEOREM 5 target: clear the
-  generic elimination into all-parameter certificates + re-instantiate EXP-036.
-- **The recalibrated frontier (EXP-040 + literature dossier):** verified coverage = the
-  FULL interval gcd <= 8, primes, 2p, B >= 16 (Heitmann), B = 16 or B > 20 (GGV): our
-  gcd 2/9/12/18 certificates are replications. LIVE targets (JCB-040): GGV's B = 16
-  normal form (explicit directions + reduced shape) and the lone surviving pair
-  (72, 108) below 125 (closing it raises the floor to 125).
-- **Instruments:** the JC(2) machine (eliminate/complete/invert, validated at
-  (2,3)..(2,5), (3,3), (3,4)); the transport chain (EXP-037); the matched-pair law
-  (EXP-038: halves window unknowns, adds no depth); the properness certificate (EXP-014:
-  one-call proper/escape adjudication; JC(2) <=> empty Jelonek set); jc2 checker + bridge
-  (EXP-015); rotate-descent (EXP-034).
-- **Routes:** program/jacobian-conjecture/routes-2026-07-22.md (R1 transport PURSUE; R4
-  B = 16 + (72,108) PURSUE; pair TOOL; properness HOLD; rotation KEEP; equivariant +
-  witness DONE/publish; char-p DORMANT; Lean HOLD).
+- The Jacobian conjecture is false in every dimension at least three. The program's exact
+  validation, generalization, geometry, and consequence record remains intact.
+- JC(2) remains open. The program has not excluded $(72,108)$ and has not raised the planar
+  degree floor.
+- The GGHV target is a reduced family with $[P,Q]=x^2$, three forced branches, and 51 free
+  interior coefficients. Forced-edge samples and axis-symbolic families have certificates;
+  simultaneous all-parameter coverage is missing.
+- EXP-067 excludes a degree-one certificate in its declared full system. EXP-072 finds an
+  infeasible degree-two restricted support. EXP-075's recovered and reproduced
+  four-parameter hit excludes a global degree-three polynomial covector. Feasible supports in
+  EXP-073 and before the EXP-075 hit remain one-sided nulls.
+- EXP-078 withdrew the proposed finite ceiling. EXP-080 refuted the declared natural `sl2`
+  grading at its invariant gate. Neither is a no-go theorem for all certificate constructions.
+- EXP-093 is cancelled. Its proposed cubic target is proved empty by EXP-075.
+- Controlling strategy:
+  [`strategy-audit-2026-07-25.md`](strategy-audit-2026-07-25.md).
+- Source audit:
+  [`2026-07-25-strategy-source-audit.md`](../../problems/algebraic-geometry/jacobian-conjecture/context/2026-07-25-strategy-source-audit.md).
 
 ## 2. The objects table
 
-| Object | Definition | Owner |
+| Object | Definition or role | Evidence |
 |---|---|---|
-| F | the announced counterexample (u = 1 + xy) | EXP-001/002 |
-| constructor v2 | the seed family (potential form) | EXP-004 (code/jclib) |
-| the wall | 27A^2C^2 - 18ABC + 16A + B^3C - B^2 = 0 | EXP-007 |
-| the machine | eliminate/parametrize/complete/invert | EXP-017/019/020/039 |
-| the transport chain | classwise elimination under the x-edge grading | EXP-037 (run.py transport()) |
-| matched-pair law | alpha p (ib-ja) q_ab = beta q (id-jc) p_cd on matched outputs | EXP-038 |
-| properness certificate | resultant leading coefficients constant | EXP-014 |
-| f_H / P_star | the dim-48 witness quartic (382 Q(i) monomials) + collision | EXP-041 (artifacts/) |
-| jc2 checker + bridge | exact certificate adjudication; m = 1 extractor | EXP-015 (code/jclib/jc2.py) |
-| keller2lib | shared planar utilities (library, graded pieces) | code/jclib/keller2lib.py |
+| $F$ | validated dimension-three counterexample | EXP-001/002 |
+| constructor v2 | exact seed-family constructor | EXP-004 and `code/jclib/` |
+| planar theorem ladder | weight classes, anchored edges, vertex dichotomy, staircase towers | EXP-029 through EXP-051 |
+| GGHV forced polynomial | $P_T=y^8(xy-1)^8+x$ | EXP-052/053 and the GGHV dossier |
+| reduced equation | $[P,Q]=x^2$ | GGHV Proposition 4.3 transcription |
+| parameter ring | $R=\mathbb{Q}[\varepsilon_1,\ldots,\varepsilon_{51}]$ | EXP-054 onward |
+| reduced linear system | $M(\varepsilon)q=b$ with 125 output rows and 165 gauge directions | EXP-052 onward |
+| global covector | $c^TM=0$ and $c^Tb\ne0$, sufficient for inconsistency | EXP-053 onward |
+| certificate module target | left syzygies of $M$, their pairing ideal with $b$, and localized chart certificates | strategy audit |
+| properness instrument | exact resultant-leading-coefficient test | EXP-014 |
+| equivariant classification | EXP-010 on opposite-sign/one-zero scope; Shaska covers all signatures with triangular same-sign controls | 2026-07-25 reconciliation |
 
-## 3. Experiment index (verdict; load-bearing output)
+Cancelled EXP-093 size facts:
 
-001-036: see wiki/05-experiments.md (unchanged from session 21's index). Session 22 adds:
-037 confirmed, prediction 3 refuted as declared (staircase transport: block-triangular;
-obstruction at the constant's class; generic -2a = 0) . 038 confirmed (pair corner: exact
-matched-pair law; no added depth; half the unknowns) . 039 confirmed ((3,n) closure: cube
-force by elimination + GL2 orbits; 4/4 inverses; column classically covered) . 040
-confirmed (JCB-028 closed by subsumption; frontier recalibrated to B = 16 + (72,108);
-gcd 9/12 demoted to replications) . 014 confirmed (properness instrument; reserved slot
-filled) . 041 confirmed (THE DIM-48 WITNESS: HC(48) false explicitly; Thompson input
-verified with index corrected 17 -> 18; P_star falsifies Zhao's VC explicitly) . 042
-confirmed, prediction 2 refuted-replaced (THEOREM 5 WINDOW FORM: cleared all-parameter
-certificates, monomial pairings, window law -c_N a^N; annihilation transfers) . 043
-confirmed (x^m-anchored edge operator NEW; B = 16 core = staircase transport; scoping
-blocks 13/22) . 044 confirmed (THE CERTIFICATE TOWER: normalized obstruction -2a
-window-independent; Theorem 5 all-degree [D]; gap = TOWER LEMMA) . 045 confirmed
-(degree-32 frontier certificates; similarity filter x18.8: (48,64) drops to 111 unknowns)
-. 046 confirmed (THE TOWER LEMMA PROVED, primitive-top + d >= u+v scope: THEOREM 5
-UNCONDITIONAL there; proper-power odd resonances measured zero, derivation queued) . 047
-confirmed (filtered (48, <= 64) certificates: three degree-48 samples empty, 2.4-3.6 s
-each: the N2 pipeline validated at target scale) . 048 confirmed, universal-kill refuted
-(THE HALF-PLANE CERTIFICATE mechanism for proper-power odd resonances) . 049 confirmed
-(THEOREM 6, the universal tower: one certified window = all-degree exclusion for
-non-proper-power tops; multi-edge harvest) . 050 confirmed (FIRST certificates at the
-(72,108) degrees, ~1 s each) . 051 confirmed (THE HALF-PLANE TOWER LEMMA: one
-H-certificate = all-degree exclusion on the y-most-corner staircase stratum; P32 and
-P72 excluded at ALL partner degrees).
+$$
+(\binom{51}{1}+\binom{52}{2})165=227{,}205
+$$
+
+unknowns through degree two, and
+
+$$
+(\binom{51}{1}+\binom{52}{2}+\binom{53}{3})165=4{,}092{,}495
+$$
+
+through degree three. The order-four target block alone contains
+
+$$
+\binom{54}{4}\cdot125=39{,}531{,}375
+$$
+
+scalar conditions before exploiting sparsity.
+
+## 3. Experiment index
+
+- EXP-001 through EXP-066: see
+  [`wiki/05-experiments.md`](../../problems/algebraic-geometry/jacobian-conjecture/wiki/05-experiments.md)
+  and the individual verdicts.
+- EXP-067: degree-one full certificate system infeasible under its exact modular gate.
+- EXP-068/069: obstruction calculus and degree-two vector decisions.
+- EXP-070: retracted because of fractional modular conversion and overflow defects.
+- EXP-071: repaired arithmetic; pair supports feasible.
+- EXP-072: an infeasible degree-two triple support, conclusive only for that declared
+  degree/support completeness claim.
+- EXP-073: all degree-three triple supports feasible, a one-sided null superseded at the next
+  tier by EXP-075's decisive obstruction.
+- EXP-074: rational-denominator enlargement vacuous after clearing.
+- EXP-075: decided. The original blocker-first artifact and a targeted 2026-07-25 rerun agree:
+  index 2662, support $\{(0,3),(1,0),(3,4),(4,7)\}$, is infeasible over both primes.
+  Therefore no global degree-three polynomial covector exists. Stop at the hit.
+- EXP-076/077/082: C13 forcing corrected and then located as already excluded in GGV.
+- EXP-078: no justified finite certificate ceiling.
+- EXP-079: unrun; flat-connection formulation retired as undefined.
+- EXP-080: natural `sl2` premise refuted at the invariant gate; no commutators run.
+- EXP-081: unrun; collision projection retired without a typed map.
+- EXP-083/084/085: source frontier reduced; C10/C11/C19/C20 and 16 unprinted forcings
+  remain exact source tasks.
+- EXP-086 through EXP-090: incidence/recognition mechanism excluded in dimension two for its
+  declared family.
+- EXP-091: LND and line-fibre route mapped for genuine Keller pairs.
+- EXP-092: unrun and on hold because $D_P(Q)=x^2$ in the reduced family.
+- EXP-093: cancelled because EXP-075 proves that its degree-three target is empty.
 
 ## 4. In flight
 
-No machine run is active. The 2026-07-25 source-reconciliation round found
-Shaska, arXiv:2607.20210v1, and corrected derived scope drift around EXP-010:
-the experiment proves linearity for opposite-sign/one-zero weights, while the
-global all-signature statement is automorphism, with nonlinear triangular maps
-allowed for same-sign weights. The source dossier, wiki, Papers A/B, program
-records, and management mirror are reconciled. The corrected versions are
-published as Paper A v0.11 (10.5281/zenodo.21579022) and Paper B v0.14
-(10.5281/zenodo.21579025). EXP-080 is now decided at its invariant gate: the
-declared natural `sl2` triple is not well-defined, so no commutator stage ran.
+- No Jacobian experiment process is active.
+- EXP-075 is stopped after a conclusive reproduced hit. Its verdict and both artifacts are
+  persisted.
+- Current research branch: `work/jacobian-conjecture/next-round`.
+- Research PR: `#74`, branch into `develop`.
+- Current management branch: `docs/jacobian-scope-reconciliation`.
+- Management PR: `#482`, branch into `develop`.
+- Do not merge either PR until this audit round passes the repository guards and both diffs are
+  reviewed.
+- The unrelated diffusion checkpoint is preserved separately on
+  `fix/diffusion-two-counterexamples`; do not mix it into the Jacobian PR.
 
-## 5. Next actions, ordered
+## 5. Next actions, in order
 
-1. DONE: Papers A v0.11 and B v0.14 were rebuilt warning-free, visually inspected,
-   and published as immutable Zenodo versions. Exact source and reconciliation:
-   `context/2026-07-25-graded-keller-reconciliation.md`.
-2. DONE (EXP-080): the invariant gate refuted the declared natural triple. The
-   full forced polynomial has no nonzero monomial grading, the edge selects nine
-   different \((v,1-u)\) candidates, and sign grouping mixes shift degrees. This
-   is a scoped null, not a gauge-independent no-go theorem.
-3. Build EXP-093's constructive full degree-3 GF(p) solver; EXP-079 remains the
-   degree-uniform connection route, with its regularity
-   premise re-derived after the EXP-078 and manuscript-audit corrections.
-4. DONE (EXP-051): the HALF-PLANE TOWER LEMMA covers the y-most-corner staircase
-   stratum at all degrees, proper-power tops included. Remaining theory targets:
-   (a) shapes where the top corner is NOT the y-most support point (y-heavy tails):
-   currently Theorem 6 or full-window towers; map what escapes ALL current lemmas;
-   (b) the y-anchored (quasi-triangular-type) completions classification (JCB-035,
-   the endgame frame): JC(2) = the triangular family is everything.
-2. N2 / JCB-040, GATE STATE after session 40: EXP-064 REFUTED the pinned ladder
-   (chain stabilizes at dim 39; not a refutation of the certificate: 165-dim gauge)
-   and EXP-067 CLOSED DEGREE 1 outright (8 diagonal blocks obstructed; all pairs
-   feasible; full system infeasible mod p, conclusive). MAX-DEPTH DIRECTIVE (Felipe, 2026-07-23, session 45): continue at maximum depth
-   with ALL remaining work, non-stop; when a route exhausts, PROPOSE AND EXPLORE
-   NEW ALTERNATIVES; persist every state and result; update all documents
-   (wiki, manuscripts, app, mirror) as results land. THE DEEP ROUTE MAP beyond
-   the truncation tiers: (R1) quadruple supports (next necessary tier; same
-   pipeline); (R2) constructive sparse GF(p) solve of the full joint system
-   (consider the galois/numpy route or block-Krylov over GF(p)); (R3, CLOSED AS VACUOUS by EXP-074: Lambda0 M0 = 0, the condition is homogeneous, rationals clear to polynomials)
-   RATIONAL-IN-EPS covectors: allow denominators d(eps) (clearing multiplies the
-   target; the certificate condition relaxes to c(eps)^T M(eps) = d(eps) * x^2
-   row; a strictly larger search space that the truncation obstructions do NOT
-   exclude); (R4) CHART COVERS: partition the eps-space into charts with a
-   per-chart polynomial covector (the EXP-063/065 axis certificates are the
-   axis charts; the question is a FINITE cover); (R5) the [125,150] frontier
-   (C13 first; runs in parallel rounds); (R6) manuscript B gains the truncation
-   chapter (degrees 1-2 closed theorems + the retraction story as a soundness
-   case study) at the next version. Manuscript updates transcribe from verdicts,
-   never from memory.
-   THE LIVE ROUTE after session 45: degrees 1-2 CLOSED; degree 3 OPEN through the
-   triple tier (EXP-073: all 20825 feasible, gate green); R3 vacuous (EXP-074).
-   REFRAMED PLAN (2026-07-24, after the EXP-078 scrutiny + manuscript claims audit).
-   TWO corrections changed what the sweeps can deliver:
-   (i) NO a priori degree ceiling exists (the Krylov bound presupposed a
-       termination EXP-064 measured to fail). The truncation tower is NOT a finite
-       decision procedure.
-   (ii) The support-restricted sweeps are ONE-SIDED: an infeasible support refutes
-       a degree; all supports passing proves NOTHING. So no sweep can ever close
-       degree 3 positively.
-   CONSEQUENCES FOR THE QUEUE (this is the reframe):
-   - DEMOTED: the degree-3 quadruple sweep (EXP-075). It is now a refutation
-     lottery only, at ~3.4 s/support over 249900 supports. Keep it as a cheap
-     background lottery IF the compiled GF(p) kernel (S5a) lands; do NOT invest
-     more session time in it otherwise. It cannot produce a positive result.
-   - PROMOTED to primary: the CONSTRUCTIVE route R2 (EXP-093) - attempt to BUILD
-     a degree-3 covector by solving the full joint order-4 system mod p (227k+
-     gauge unknowns) with a sparse/blocked GF(p) solver. This is the ONLY path to
-     a positive answer at degree 3, and a success would be the floor-raise
-     certificate (statement TO FELIPE, exact confirmation staged).
-   - STRUCTURAL route remaining: EXP-079 (the annihilation lemma as a connection;
-     regular-singular vs irregular may decide whether any effective bound exists).
-     EXP-080 is decided at its invariant gate: its declared natural `sl2` grading
-     is underdetermined/nonhomogeneous and the route is demoted.
-   - UNCHANGED and cheap: the frontier forcings EXP-084/085 (reconcile the
-     GGV5-vs-GGV2 A0' notions for C10/C11/C19/C20; batch the 16 unprinted A0'
-     derivations). These give concrete [125,150] map progress independent of the
-     truncation question.
-   - NOTE on the two-sided reading: with no ceiling, "no covector at any degree"
-     is no longer machine-decidable, so the counterexample-skeleton reading needs
-     a STRUCTURAL proof (EXP-079), not an exhausted search.
-   LENSES LEDGER (methodology/10, per-problem tool ledger): EXCLUSION (spine:
-   theorem ladder + truncation sweeps, floor progress); INVARIANT (units killed the
-   dim-2 incidence variety, EXP-089); ANATOMY (the 2026 counterexample = incidence /
-   root-selection map, S7-S9); RECOGNITION (X_H ~ A^n; dim-2 decidable by surface
-   theory); SYMMETRY (our G_m-equivariant rigidity, EXP-010); TWO-SIDED (covector =
-   exclusion / no-covector = counterexample skeleton); REFORMULATION (properness =
-   Jelonek set = our EXP-014; annihilation lemma = flat connection, EXP-079);
-   DIMENSION-LADDER (n=3 unique unimodular, EXP-088); AT-INFINITY (Newton polygons /
-   Berkovich, S5); EXTERNAL-DIALOGUE (the Tao exchange, all re-derived in-repo). L1/symplectic (EXP-091): JC(2) routes via LNDs to Rentschler + Abhyankar-Moh recognition theorems (known, mapped); recognition is the through-line uniting EXP-089/090/091.
-   NOVEL-APPROACHES SPINE (2026-07-24, program/jacobian-conjecture/novel-approaches-2026-07-24.md):
-   the campaign is TWO-SIDED (a covector = exclusion; provably no covector at any
-   degree = consistency = counterexample skeleton). Outcome audit: EXP-078
-   withdrew the finite-ceiling premise; EXP-080 refuted its declared natural
-   `sl2` construction at the invariant gate. EXP-079 (the annihilation lemma as a
-   flat connection) remains a structural lead, and EXP-081 is the 3D collision
-   covector projected to 2D vs Lambda0. Section 5 (Berkovich at infinity) is the
-   long-shot all-degrees dossier. A background agent (2026-07-24)
-   owns the C13 fork (EXP-077) and the reordered quadruple sweep; its report lands
-   in wip-c13-and-sweep-2026-07-24.md.
-   ISOLATION RULES (2026-07-24, methodology/08-parallel-sessions.md): rounds close
-   per problem WITHOUT version bumps; the release step (bump + CHANGELOG + bake +
-   build + tag + PR) is serialized, one session at a time; git pull both repos
-   before writing; the mirror is now plans/caos-research/jacobian-conjecture/.
-   FELIPE'S MANUSCRIPT DIRECTIVE (2026-07-24): update manuscripts as results land
-   and REPUBLISH on Zenodo autonomously when a substantive block closes (he
-   reviews after; changes go out as further new versions). Paper B's pending
-   chapter: the truncation ladder (degrees 1-2 closed, the retraction case
-   study, the dual annihilation identity) + the [125,150] frontier opening
-   (C13). Transcribe from verdicts and the dossiers, never memory; two-pass
-   pdflatex; API new-version flow (tools/zenodo in the vault repo).
-   FRONTIER RE-SCOPED (EXP-083): the 24 configs are 1 excluded (C13) / 5 verify
-   (C10,C11,C12,C19,C20) / 2 open (C01,C04) / 16 derivation-needed. Next:
-   EXP-084 reconcile GGV5-vs-GGV2 A0' for C10/C11/C19/C20 (likely excludes 4);
-   EXP-085 batch the 16 A0' forcings (EXP-077 method). Then attack the few
-   genuine survivors (C01, C04, and whatever remains). Manuscripts at v0.09
-   (Zenodo republished, corruption repaired). Quadruple sweep at index 1200
-   (all feasible; needs the compiled GF(p) kernel S5a to finish).
-   SESSION 48 PLAN (47 done: C13 RESOLVED - already excluded in GGV2 remark tex
-   1053, EXP-082; EXP-076 d0=8 error corrected; the frontier is RE-SCOPED):
-   (i) EXP-083 = re-audit all 24 [125,150] configs' forced A0' vs the GGV2
-   excluded family wp(n',n'-1) + Heitmann Thm 2.24/2.25 + GGV5 Remark 7.9; the
-    genuinely-open set is the real frontier (secure GGV5 = arXiv 1708.07936 and
-    Heitmann if needed via E:\_Temp e-print). (ii) EXP-075 is not currently
-    running; its partial one-sided sweep remains recorded. (iii)
-    NOVEL-APPROACHES outcomes: EXP-078 finite-ceiling premise withdrawn; EXP-080
-    natural `sl2` premise refuted; EXP-079 remains unrun and must receive the same
-    premise scrutiny.
-   (iv) Paper B truncation chapter + Zenodo republish when the block closes.
-   THEN the
-   [125,150] frontier: 24 transcribed configurations (C13 first).
-   PUBLICATION STATE: all three papers PUBLISHED on Zenodo 2026-07-23 (A
-   .21503366, B .21503368, C .21503372); metadata centralized in
-   _CAOS_MANAGE/manuscripts/; any claim upgrade = Zenodo "New version", never an
-   edit.
-3. JCB-041 remainder: the screenshot verification pass ONLY (bake is automatic and
-   verified; wiki 04 rewritten in session 24). FELIPE still validates the novelty
-   phrasing before submission.
-4. JCB-042 (Felipe's call): report the index correction (17 -> 18) upstream to the
-   Thompson repo.
-5. JCB-018 (optional): Lean hardening of T1/T2/rigidity after the manuscript pass.
-6. Diffusion: existing drafts still await Felipe; the witness merits its own post
-   (draft only after Felipe validates the framing).
+1. Complete the cheap source frontier:
+   - C10/C11 against Heitmann Theorem 2.25;
+   - C19/C20 against the published $B_1$ table;
+   - derive the 16 missing $A'_0$ values;
+   - preserve C01/C04 as open absent an exact exclusion.
+2. Declare the Newton-resolution applicability experiment. Translate the original Keller
+   component through the GGHV reductions and decide which Makar-Limanov/Trakhtenberg hypotheses
+   survive. Do not compare polygons visually and infer a contradiction.
+3. Declare a Lee-Li plus approximate-root applicability experiment on the same transformation.
+4. Declare a small certificate-module/chart-cover experiment:
+   - left syzygy module;
+   - pairing ideal;
+   - localized certificates;
+   - radical cover;
+   - specialization controls.
+5. Re-rank after steps 1 through 4. The admissible next choices are a source-derived
+   restriction, a module/chart-cover computation, or a newly justified higher-degree
+   structural probe. Do not build EXP-093.
+6. Update wiki or manuscripts only when an adjudicated result changes a mathematical claim.
+
+Suggested source-round commands:
+
+```powershell
+git status --short
+rg -n "C10|C11|C19|C20|A'_0|B_1" problems/algebraic-geometry/jacobian-conjecture program/jacobian-conjecture
+rg -n "Makar|Lee-Li|approximate root|intersection" problems/algebraic-geometry/jacobian-conjecture/context
+```
+
+Before any new run:
+
+```powershell
+python scripts/check_research_structure.py
+python -m pytest -q
+```
+
+Use the exact commands exposed by current scripts if these guard names have changed.
 
 ## 6. Where everything lives
 
-- Experiments: problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-*/
-  (hypothesis.md, run.py, artifacts/, verdict.md) · shared code: .../code/jclib/
-- Context dossiers: .../context/2026-07-22-literature-pass-dossier.md (novelty + floor)
-  and .../context/2026-07-22-symmetrization-dossier.md (witness construction; local
-  source PDFs in E:\_Temp\jc-dossier\)
-- Wiki: .../wiki/01..05 · history: .../history/log.md (append-only)
-- Program: program/jacobian-conjecture/{plan,state,backlog,RESUME,routes-2026-07-22}.md
-- Manuscripts (three-paper record, split 2026-07-22): manuscripts/jacobian-conjecture/ (relocated 2026-07-23): foundational/ (A,
-  v0.07) · planar/ (B planar program, v0.07) · cascade/ (C, v0.02)
-- Bake -> web: data-pipeline/researchlab -> data/derived -> frontend/ ->
-  https://research.fasl-work.com (Pages via Actions on main)
-- Management mirror: CAOS_MANAGE plans/caos-research/ (status, findings, history)
-- Repo flow: work on develop -> PR -> main (tags vX.XX.000); push via the vault PAT
-  (CAOS_MANAGE credentials/general/github/pat.txt; GCM hangs, use PAT-in-URL).
+- Program control:
+  `program/jacobian-conjecture/`
+- Primary problem record:
+  `problems/algebraic-geometry/jacobian-conjecture/`
+- Experiments:
+  `problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-*/`
+- Source dossiers:
+  `problems/algebraic-geometry/jacobian-conjecture/context/`
+- Wiki:
+  `problems/algebraic-geometry/jacobian-conjecture/wiki/`
+- Append-only history:
+  `problems/algebraic-geometry/jacobian-conjecture/history/log.md`
+- Shared code:
+  `problems/algebraic-geometry/jacobian-conjecture/code/jclib/`
+- Manuscripts:
+  `manuscripts/jacobian-conjecture/{foundational,planar,cascade}/`
+- Management mirror:
+  `plans/caos-research/jacobian-conjecture/` in `CAOS_MANAGE`
 
-## 7. Gotchas
+Latest correction publications:
 
-- sympy nonlinear solve() can return [] on solvable underdetermined systems: use the
-  linear/bilinear structure or Groebner emptiness; keep discard counters.
-- Fraction-field RREF/nullspace steps are GENERIC-only (EXP-024): sound all-parameter
-  statements need cleared certificates; numeric runs are sound pointwise.
-- Radical membership by raw powers can stall (EXP-039 A4: powers to 8 insufficient);
-  GL2-orbit classification closed it instead: prefer structural completeness arguments.
-- "Trace zero" for matrix polynomials means the SUM of the diagonal entries, not each
-  entry (EXP-041 D bug, fixed); guard experiment drivers with `if __name__ == "__main__"`
-  (an import executed a whole run once).
-- Monolithic lex Groebner at ~19 variables exceeds ~10 min: stage or avoid (top-force
-  arguments are cheaper).
-- Runs: cap Bash calls at 600000 ms; long runs in parts (run.py <PART>); artifacts via
-  tee. Frontend footer version reads frontend/package.json: bump with pyproject and
-  researchlab/__init__ together (three places, one version).
-- Screenshot verification: tools/visual-verify in CAOS_MANAGE with
-  PLAYWRIGHT_BROWSERS_PATH=E:/_Temp/ms-playwright; preview via npx vite preview.
+- Paper A v0.11: `10.5281/zenodo.21579022`
+- Paper B v0.14: `10.5281/zenodo.21579025`
+
+No publication action is triggered by this strategy audit because it changes the work plan, not
+an adjudicated manuscript theorem.
+
+## 7. Gotchas, gates, and lenses
+
+Gotchas:
+
+- Never convert a rational coefficient with `int(Fraction)` before modular reduction. EXP-070
+  was retracted for this defect.
+- Fraction-field row reduction is generic-only unless denominators and exceptional strata are
+  handled.
+- A finite polynomial covector is sufficient, not known necessary.
+- Feasible support ansatzes do not prove full-system feasibility.
+- A theorem for $[f,g]=1$ does not automatically apply to $[P,Q]=x^2$.
+- Syzygy modules and kernels can jump after parameter specialization.
+- Do not implement EXP-093. Its target is empty.
+- No floor raise until every GGHV branch and every free coefficient is covered.
+
+Lenses ledger for this round:
+
+- systematic exclusion: retained as the spine;
+- invariant-first: the EXP-093 size count first forced a feasibility gate, then recovery of the
+  existing EXP-075 hit cancelled the route entirely;
+- Newton/valuation: recent integrality and polynomiality restrictions promoted;
+- commutative algebra: certificate modules and finite chart covers replace the undefined
+  connection analogy;
+- global geometry: LND, fibres, and Jelonek held behind applicability bridges;
+- parameter spaces: Jelonek's 2026 component theorem added as medium-term framing;
+- adversarial validation: false two-sided, finite-ceiling, and support-completeness inferences
+  explicitly withdrawn;
+- external source sweep: Makar-Limanov, Trakhtenberg, Lee-Li, GGHV, and Jelonek recorded in the
+  dated source audit.

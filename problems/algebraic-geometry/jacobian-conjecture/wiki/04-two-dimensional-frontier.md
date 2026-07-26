@@ -384,3 +384,32 @@ simultaneous-symbolic interior certificate (the audit's hardening task 2). The n
 ranked hardening tasks are the queue; GGHV outreach is last. The audit also
 transcribed the complete [125, 150] frontier (24 configurations) as the next
 territory once the claim hardens.
+
+## Strategy correction and the cubic certificate decision (2026-07-25)
+
+The certificate tower is one-sided. A polynomial left covector with nonzero target
+pairing certifies inconsistency, but failure to find one does not establish consistency.
+Likewise, feasible support ansatzes are null results. An infeasible coordinate slice has
+real force in the opposite direction: a global certificate would restrict to every slice.
+
+EXP-075 supplies exactly such a decision. Its blocker-first artifact reported, and a
+targeted rerun reproduced under both primes, that
+$$
+\{(0,3),(1,0),(3,4),(4,7)\}
+$$
+makes the degree-three necessary subsystem infeasible. Therefore no global polynomial
+covector of parameter degree at most three exists in the declared class. The proposed
+EXP-093 full cubic solve is cancelled. This is not evidence that the reduced Keller system
+is consistent, and it does not exclude higher-degree or localized certificates.
+
+The immediate strategy is now source-first:
+
+1. complete the remaining [125,150] source mappings;
+2. test whether Makar-Limanov/Trakhtenberg Newton-resolution, Lee-Li inner-vertex, and
+   approximate-root restrictions survive the GGHV passage from bracket one to bracket
+   $x^2$;
+3. formulate uniform inconsistency through the left-syzygy pairing ideal and a finite
+   cover by localized certificates.
+
+The full adjudication is in
+`program/jacobian-conjecture/strategy-audit-2026-07-25.md`.

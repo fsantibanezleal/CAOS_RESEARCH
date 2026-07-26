@@ -1,5 +1,11 @@
 # Expanded research lines for JC(2) (lens-driven, 2026-07-24)
 
+> **Route inventory, reranked 2026-07-25.** The detailed audit at
+> [`strategy-audit-2026-07-25.md`](strategy-audit-2026-07-25.md) controls.
+> EXP-092 is on hold because the reduced equation gives $D_P(Q)=x^2$, not a
+> unit slice. EXP-075 now excludes degree-three polynomial covectors, so EXP-093
+> is cancelled.
+
 Beyond the exclusion spine and the incidence/recognition work (S7-S9, EXP-086-090),
 new points of view to develop. Each tagged by lens (methodology/10) and with a
 first concrete step. None is a claim; each is a declared direction.
@@ -66,11 +72,11 @@ geometry of the reduced (72,108) pair) and securing the two classification sourc
 The finite-ceiling withdrawal and the one-sidedness correction remove the
 possibility that the truncation ladder terminates the campaign by itself.
 Ranking after the reframe:
-1. EXP-093 (R2 constructive degree-3 solve) - the ONLY route to a positive
-   degree-3 answer; needs a real GF(p) sparse solver (S5a engineering first).
-2. EXP-079 (connection/regularity) - the only route to a DEGREE-UNIFORM statement,
-   in either direction; decides whether a finite bound can exist at all.
-3. EXP-080 (`sl2`) - declared natural construction refuted at the invariant gate;
-   revisit only with an explicit grading-compatible gauge and single shift classes.
-4. EXP-084/085 (frontier forcings) - cheap, independent, concrete map progress.
-5. EXP-075 quadruple sweep - DEMOTED to a background lottery; cannot ever confirm.
+1. EXP-084/085 source reconciliation and the missing frontier mappings.
+2. Newton-resolution, Lee-Li, and approximate-root applicability to the GGHV
+   transformation.
+3. A precise certificate-module and finite-chart-cover experiment on small
+   controls.
+4. EXP-075 is decided: one infeasible four-parameter slice excludes a global
+   cubic polynomial covector. EXP-093 is cancelled.
+5. EXP-080 is a completed scoped null. EXP-079 as stated is retired.

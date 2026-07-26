@@ -1045,3 +1045,28 @@
   natural triple, not against every selected grading, right-inverse gauge, larger
   Lie algebra, or \(JC(2)\). The primary route advances to the constructive
   full degree-3 covector solve (EXP-093).
+
+## 2026-07-25 - Full strategy audit; EXP-075 recovered and EXP-093 cancelled
+
+- The complete proposal audit withdrew the two-sided reading of the certificate
+  tower: absence of a finite covector and feasible support ansatzes do not support
+  consistency. EXP-079's connection language and EXP-081's 3D projection were
+  retired as undefined; EXP-092 was held because the reduced equation gives
+  \(D_P(Q)=x^2\), not a unit slice.
+- The proposed EXP-093 cubic system was sized correctly: 4,092,495 certificate
+  unknowns through parameter degree three and 39,531,375 scalar order-four
+  conditions before structural compression, not “227k+”.
+- Close-out inspection found that the persisted EXP-075 blocker-first artifact
+  already contained an unpropagated infeasible support at reordered index 2662:
+  \(\{(0,3),(1,0),(3,4),(4,7)\}\). A targeted rerun reproduced the hit in
+  12 seconds with the regression gate green and both primes agreeing.
+- Logical decision: any global degree-three polynomial covector would restrict to
+  this four-parameter slice. The slice is infeasible, so no global cubic
+  polynomial covector exists. EXP-093 is cancelled. This does not establish
+  consistency, exclude higher-degree/localized certificates, decide \((72,108)\),
+  or raise the floor.
+- The redirected queue is source-first: finish EXP-084/085; test
+  Makar-Limanov/Trakhtenberg, Lee-Li, and approximate-root restrictions through
+  an explicit GGHV bracket-one to bracket-\(x^2\) applicability bridge; then test
+  the exact left-syzygy pairing-ideal and finite-chart-cover formulation on small
+  controls.

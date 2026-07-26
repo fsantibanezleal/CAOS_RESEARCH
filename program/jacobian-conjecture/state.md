@@ -55,9 +55,9 @@
 - **Session 27 (2026-07-22):** THE HALF-PLANE TOWER LEMMA (EXP-051): one H-certificate
   = all-degree exclusion on the whole y-most-corner staircase stratum (proper-power tops
   included); FRONTIER PAYOFF: P32 and P72 excluded at ALL partner degrees. v0.30.000.
-- **Now:** N1: the transport chain's closed form (Theorem 5 all-degree); N2: the (48, 64)
-  validation sweep, then open B = 16, then (72, 108); M1: imported-constraint filters;
-  web bake + screenshot pass (nine unbaked records); wiki 04 rewrite.
+- **Historical queue, superseded 2026-07-25:** the N1/N2 sweep ordering was replaced by the
+  full strategy audit. Current work is source/applicability first, then a certificate-module
+  analog. EXP-093 is cancelled.
 - **Blocked on:** Felipe: novelty phrasing validation (blocks submission, not work);
   outreach call on the Thompson index correction (17 -> 18); diffusion go/no-go.
 
@@ -73,4 +73,17 @@
   `sl2` triple before commutator assembly: \(P_T\) has no nonzero monomial grading,
   the edge gives nine distinct \((v,1-u)\) candidates, and sign grouping mixes
   raw shift degrees. Scoped null only; other chosen gradings/gauges remain open.
-  Next: the constructive EXP-093 route.
+  The next action is not a full cubic solve.
+- **2026-07-25 strategy audit:** the campaign is redirected. Absence of a finite
+  covector and feasible support ansatzes are not evidence of consistency. EXP-075
+  is retired from full execution; EXP-079 and EXP-081 are retired as stated;
+  EXP-092 is held because the reduced Hamiltonian equation has \(D_P(Q)=x^2\),
+  not a unit slice. During close-out, EXP-075's dormant index-2662 hit was recovered
+  and reproduced in 12 seconds over both primes. The support
+  \(\{(0,3),(1,0),(3,4),(4,7)\}\) is infeasible, so no global degree-three
+  polynomial covector exists. EXP-093 is cancelled: its proposed 4,092,495-unknown
+  target is empty. Immediate priorities:
+  finish EXP-084/085 source mappings; test Makar-Limanov/Trakhtenberg, Lee-Li,
+  and approximate-root constraints through an explicit GGHV applicability bridge;
+  then test the exact certificate-module/chart-cover formulation on small controls.
+  No experiment process is active.
