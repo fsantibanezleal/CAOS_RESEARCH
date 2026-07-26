@@ -1189,3 +1189,6 @@
 - Next compute the 125-minor determinantal divisor of the cleared polynomial
   matrix over \(\mathbb{Q}[u]\), with modular Smith data and rational
   reconstruction.
+- Paper B v0.17 transcribes EXP-098 through EXP-102, passed two-pass PDF and
+  visual QA, and is published at version DOI
+  `10.5281/zenodo.21593235`.

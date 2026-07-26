@@ -143,3 +143,7 @@
   Next use the polynomial-matrix determinantal divisor over
   \(\mathbb{Q}[u,u^{-1}]\). The two-parameter slice and the full case remain
   open.
+- **2026-07-26 publication:** Paper B v0.17 transcribes the constructible
+  specialization correction and first exact GGHV chart transition. The
+  two-pass 12-page PDF and visual QA passed. Zenodo version DOI:
+  `10.5281/zenodo.21593235`, concept DOI: `10.5281/zenodo.21503367`.
