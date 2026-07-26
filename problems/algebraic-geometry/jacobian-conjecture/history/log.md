@@ -1070,3 +1070,22 @@
   an explicit GGHV bracket-one to bracket-\(x^2\) applicability bridge; then test
   the exact left-syzygy pairing-ideal and finite-chart-cover formulation on small
   controls.
+
+## 2026-07-25 - EXP-094 corrects the four frontier candidate labels
+
+- The experiment was declared and committed before its exact sub-second run.
+  It audits the source identities behind C10, C11, C19, and C20 rather than
+  grouping them by a shared \(A_0\).
+- C10/C11 have \(A'_0=(1,0)\), while the discarded Heitmann families at
+  \(A_0=(7,21)\) require \(A'_0=(2,1)\).
+- GGHV17 identifies \(B_1=A_0\). Therefore C19/C20 have
+  \(B_1=(6,15)\), while the separate GGV exclusion requires
+  \(B_1=(6,18+6k)\).
+- All four rows fail the cited predicates. Positive controls for the Heitmann
+  endpoint, the GGV \(B_1=(6,18)\) case, and the known C13 pair passed; the
+  \(B_1=(6,30)\) divisibility negative control also passed.
+- Result: GGV2 Remark 2.32 excludes none of C10, C11, C19, or C20. The
+  configurations remain unresolved, not validated. The immediate
+  \((72,108)\) campaign advances to the Newton-resolution applicability bridge.
+- Record-integrity correction: EXP-085 has no `hypothesis.md`; no retroactive
+  hypothesis was created. EXP-094 owns the declared correction.

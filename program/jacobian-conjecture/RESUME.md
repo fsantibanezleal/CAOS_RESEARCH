@@ -82,45 +82,48 @@ scalar conditions before exploiting sparsity.
 - EXP-079: unrun; flat-connection formulation retired as undefined.
 - EXP-080: natural `sl2` premise refuted at the invariant gate; no commutators run.
 - EXP-081: unrun; collision projection retired without a typed map.
-- EXP-083/084/085: source frontier reduced; C10/C11/C19/C20 and 16 unprinted forcings
-  remain exact source tasks.
+- EXP-083/084/085: source frontier transcribed; EXP-085 has no pre-run
+  `hypothesis.md`, so its candidate inference is not a complete experiment
+  record.
 - EXP-086 through EXP-090: incidence/recognition mechanism excluded in dimension two for its
   declared family.
 - EXP-091: LND and line-fibre route mapped for genuine Keller pairs.
 - EXP-092: unrun and on hold because $D_P(Q)=x^2$ in the reduced family.
 - EXP-093: cancelled because EXP-075 proves that its degree-three target is empty.
+- EXP-094: exact source-identity audit confirmed that GGV2 Remark 2.32 excludes
+  none of C10, C11, C19, or C20. C10/C11 have \(A'_0=(1,0)\), not \((2,1)\);
+  C19/C20 have \(B_1=A_0=(6,15)\), not \((6,18+6k)\). The four cases remain
+  unresolved, not validated.
 
 ## 4. In flight
 
 - No Jacobian experiment process is active.
-- EXP-075 is stopped after a conclusive reproduced hit. Its verdict and both artifacts are
-  persisted.
+- EXP-094 is complete. Its exact classifier, result artifact, verdict, source
+  amendments, and derived-state updates are persisted on the current branch.
+- EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
+  both artifacts are persisted.
 - Current research branch: `work/jacobian-conjecture/next-round`.
-- Research PR: `#74`, branch into `develop`.
-- Current management branch: `docs/jacobian-scope-reconciliation`.
-- Management PR: `#482`, branch into `develop`.
-- Do not merge either PR until this audit round passes the repository guards and both diffs are
-  reviewed.
-- The unrelated diffusion checkpoint is preserved separately on
-  `fix/diffusion-two-counterexamples`; do not mix it into the Jacobian PR.
+- The previous audit PR `#74` and release PRs `#75`/`#76` are merged. The
+  current EXP-094 round still needs its own PR into `develop`.
+- The management mirror is updated directly on its canonical `develop`
+  checkout. Do not create a management worktree or task branch.
 
 ## 5. Next actions, in order
 
-1. Complete the cheap source frontier:
-   - C10/C11 against Heitmann Theorem 2.25;
-   - C19/C20 against the published $B_1$ table;
-   - derive the 16 missing $A'_0$ values;
-   - preserve C01/C04 as open absent an exact exclusion.
-2. Declare the Newton-resolution applicability experiment. Translate the original Keller
+1. Declare the Newton-resolution applicability experiment. Translate the original Keller
    component through the GGHV reductions and decide which Makar-Limanov/Trakhtenberg hypotheses
    survive. Do not compare polygons visually and infer a contradiction.
-3. Declare a Lee-Li plus approximate-root applicability experiment on the same transformation.
-4. Declare a small certificate-module/chart-cover experiment:
+2. Declare a Lee-Li plus approximate-root applicability experiment on the same transformation.
+3. Declare a small certificate-module/chart-cover experiment:
    - left syzygy module;
    - pairing ideal;
    - localized certificates;
    - radical cover;
    - specialization controls.
+4. Continue the independent [125,150] frontier:
+   - keep C10/C11/C19/C20 unresolved by GGV2 Remark 2.32;
+   - derive the 16 missing \(A'_0\) values through the declared chain algorithm;
+   - preserve C01/C04 as open absent an exact exclusion.
 5. Re-rank after steps 1 through 4. The admissible next choices are a source-derived
    restriction, a module/chart-cover computation, or a newly justified higher-degree
    structural probe. Do not build EXP-093.
@@ -201,3 +204,10 @@ Lenses ledger for this round:
   explicitly withdrawn;
 - external source sweep: Makar-Limanov, Trakhtenberg, Lee-Li, GGHV, and Jelonek recorded in the
   dated source audit.
+- source-identity invariant: EXP-094 separated \(A_0\), \(A'_0\), \(B_0\), and
+  \(B_1\), correcting four false exclusion candidates without heavy compute;
+- self-questioning: the cheap frontier lookup did not shrink the four named
+  cases, so further Heitmann matching is retired for them and the immediate
+  \((72,108)\) campaign returns to the applicability bridge;
+- exploration moment: endpoint identity is treated as a reusable source-audit
+  invariant before any future corner-family comparison.

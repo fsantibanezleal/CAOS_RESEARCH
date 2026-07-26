@@ -3,6 +3,16 @@
 Scope: review every active proposal around the planar $(72,108)$ problem, determine what each
 route can prove, correct stale inferences, and rank the next work by information per cost.
 
+## Amendment after EXP-094
+
+The exact source-identity audit resolved the C10/C11/C19/C20 question negatively:
+GGV2 Remark 2.32 excludes none of them. C10/C11 have \(A'_0=(1,0)\), not
+\((2,1)\); C19/C20 have \(B_1=A_0=(6,15)\), not \((6,18+6k)\).
+The earlier strong-candidate classification conflated distinct source objects.
+The cheap lookup for these four rows is closed. For the immediate \((72,108)\)
+target, the Newton-resolution applicability bridge now ranks ahead of further
+frontier enumeration.
+
 ## Executive decision
 
 Redirect the immediate campaign. EXP-075's dormant hit was recovered and reproduced during this
@@ -108,7 +118,7 @@ Consequences recorded before the decisive EXP-075 recovery:
 
 | Route | Decision | What it can prove | Next gate |
 |---|---|---|---|
-| EXP-084/085 frontier source reconciliation | PURSUE NOW | exact classification progress independent of the certificate tower | obtain and map the remaining primary-source statements |
+| EXP-084/085/094 frontier source reconciliation | PARTIAL, FOUR CANDIDATES RESOLVED NEGATIVELY | exact classification progress independent of the certificate tower | derive the 16 unprinted \(A'_0\) values only as a separate frontier task |
 | Makar-Limanov/Trakhtenberg Newton resolution | PURSUE NOW | potentially eliminates or sharply restricts the forced shape if the conditions transport | prove the $[f,g]=1$ to $[P,Q]=x^2$ applicability bridge |
 | Lee-Li inner-polynomial and inner-vertex restrictions | PURSUE NOW | cheap support restrictions or an incompatibility | instantiate every hypothesis on the GGHV transformation |
 | GGHV approximate roots and intersection numbers | PURSUE NOW | independent arithmetic constraints and audit of the current polygon assembly | source-complete derivation on the $(8,28),(3,2)$ case |
@@ -149,15 +159,19 @@ inconsistency.
 
 ## Source-frontier route
 
-EXP-083/084/085 reduced the [125,150] work to precise source gaps:
+EXP-083/084/085 and the EXP-094 correction give:
 
 - C13 is excluded in the cited GGV text;
-- C10/C11 need the exact Heitmann Theorem 2.25 family match;
-- C19/C20 need the published $B_1$ table match;
+- C10/C11 do not match the discarded Heitmann families because their
+  \(A'_0=(1,0)\), not \((2,1)\);
+- C19/C20 do not match the GGV \(B_0,B_1\) cases because
+  \(B_1=A_0=(6,15)\), not \((6,18+6k)\);
 - 16 configurations need their unprinted $A'_0$ forcing derived;
 - C01/C04 remain open unless an exact source or derivation says otherwise.
 
-No large computation is justified before this table is source-complete.
+The 16-value derivation remains useful for the [125,150] frontier, but it is not
+a prerequisite for attacking the separate \((72,108)\) target. No large frontier
+computation is justified without those values.
 
 ## Modern source leads
 

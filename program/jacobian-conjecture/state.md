@@ -87,3 +87,11 @@
   and approximate-root constraints through an explicit GGHV applicability bridge;
   then test the exact certificate-module/chart-cover formulation on small controls.
   No experiment process is active.
+- **2026-07-25 EXP-094:** the exact source-identity audit corrected the
+  EXP-084/085 strong-candidate classification. C10/C11 have \(A'_0=(1,0)\),
+  not the \((2,1)\) required by the discarded Heitmann families. C19/C20 have
+  \(B_1=A_0=(6,15)\), not the \((6,18+6k)\) required by the separate GGV
+  exclusion. GGV2 Remark 2.32 therefore excludes none of the four. This is not
+  evidence that they are realizable. The immediate \((72,108)\) route advances
+  to the Newton-resolution applicability bridge, followed by the
+  certificate-module control if the bridge yields no restriction.
