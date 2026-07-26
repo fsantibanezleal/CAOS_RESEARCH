@@ -70,6 +70,7 @@ Ranking after the reframe:
    degree-3 answer; needs a real GF(p) sparse solver (S5a engineering first).
 2. EXP-079 (connection/regularity) - the only route to a DEGREE-UNIFORM statement,
    in either direction; decides whether a finite bound can exist at all.
-3. EXP-080 (sl2) - could predict obstruction locations, replacing sweeps.
+3. EXP-080 (`sl2`) - declared natural construction refuted at the invariant gate;
+   revisit only with an explicit grading-compatible gauge and single shift classes.
 4. EXP-084/085 (frontier forcings) - cheap, independent, concrete map progress.
 5. EXP-075 quadruple sweep - DEMOTED to a background lottery; cannot ever confirm.

@@ -72,7 +72,7 @@ therefore say:
    management mirror.
 3. Publish corrected manuscript versions because the current Zenodo PDFs contain
    the overbroad derived wording and an obsolete "not found" novelty statement.
-4. Keep EXP-080 queued. Its preflight must explicitly separate the torus grading
-   of polynomial monomials from a claimed `sl2` action on the pinned corrector
-   operators.
-
+4. EXP-080 follow-through (completed later the same day): its preflight separated
+   raw torus shifts from a claimed `sl2` action on the pinned corrector operators.
+   The invariant gate refuted the declared natural triple, so commutators were not
+   run; see the experiment verdict for the scoped null.

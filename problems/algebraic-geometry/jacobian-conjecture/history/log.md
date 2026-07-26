@@ -1029,6 +1029,19 @@
   status were corrected. No priority claim is made.
 - Papers A v0.11 and B v0.14 were rebuilt warning-free, visually inspected page by
   page, and published as immutable correction versions:
-  10.5281/zenodo.21579022 and 10.5281/zenodo.21579025. EXP-080 remains declared and
-  unrun; the Shaska source contains no `sl2` or corrector-module construction, so
-  it does not decide that experiment.
+  10.5281/zenodo.21579022 and 10.5281/zenodo.21579025. The Shaska source contains
+  no `sl2` or corrector-module construction, so it did not decide EXP-080.
+
+## 2026-07-25 - EXP-080: the natural `sl2` premise fails its invariant gate
+
+- The methodology/12 amendment was committed before machine time. It separated
+  raw monomial shifts from the gauge-dependent pinned operators and made the
+  commutator stage conditional on a canonical common grading.
+- The exact sub-second gate reconstructed all 51 active operators, then refuted
+  the premise: the full \(P_T=y^8(xy-1)^8+x\) has no nonzero monomial grading
+  (two difference equations, determinant \(-9\)); its nine edge monomials give
+  nine different \((v,1-u)\) candidates; all sign groupings mix shift degrees.
+- Stage B was not run. The outcome is an honest scoped null against the declared
+  natural triple, not against every selected grading, right-inverse gauge, larger
+  Lie algebra, or \(JC(2)\). The primary route advances to the constructive
+  full degree-3 covector solve (EXP-093).

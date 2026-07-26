@@ -68,5 +68,9 @@
   corrected: same-sign actions may give nonlinear triangular automorphisms; all signatures
   are automorphisms. The old "NOT FOUND" novelty status is superseded, with no priority
   claim. Papers A v0.11 and B v0.14 are published as immutable correction versions
-  (10.5281/zenodo.21579022 and 10.5281/zenodo.21579025). Next: EXP-080, then the
-  constructive EXP-093 route.
+  (10.5281/zenodo.21579022 and 10.5281/zenodo.21579025).
+- **2026-07-25 EXP-080:** the exact invariant gate refuted the declared natural
+  `sl2` triple before commutator assembly: \(P_T\) has no nonzero monomial grading,
+  the edge gives nine distinct \((v,1-u)\) candidates, and sign grouping mixes
+  raw shift degrees. Scoped null only; other chosen gradings/gauges remain open.
+  Next: the constructive EXP-093 route.

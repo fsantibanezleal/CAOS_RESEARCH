@@ -91,19 +91,20 @@ global all-signature statement is automorphism, with nonlinear triangular maps
 allowed for same-sign weights. The source dossier, wiki, Papers A/B, program
 records, and management mirror are reconciled. The corrected versions are
 published as Paper A v0.11 (10.5281/zenodo.21579022) and Paper B v0.14
-(10.5281/zenodo.21579025). EXP-080 remains declared but unrun; its artifact
-directory is empty.
+(10.5281/zenodo.21579025). EXP-080 is now decided at its invariant gate: the
+declared natural `sl2` triple is not well-defined, so no commutator stage ran.
 
 ## 5. Next actions, ordered
 
 1. DONE: Papers A v0.11 and B v0.14 were rebuilt warning-free, visually inspected,
    and published as immutable Zenodo versions. Exact source and reconciliation:
    `context/2026-07-25-graded-keller-reconciliation.md`.
-2. Run EXP-080 only after amending its preflight to separate the monomial torus
-   grading from an `sl2` action on the pinned corrector operators. A failure of the
-   pinned operators is a scoped null, not a gauge-independent no-go theorem.
-3. Build EXP-093's constructive full degree-3 GF(p) solver after the structural
-   probe; EXP-079 remains the degree-uniform connection route, with its regularity
+2. DONE (EXP-080): the invariant gate refuted the declared natural triple. The
+   full forced polynomial has no nonzero monomial grading, the edge selects nine
+   different \((v,1-u)\) candidates, and sign grouping mixes shift degrees. This
+   is a scoped null, not a gauge-independent no-go theorem.
+3. Build EXP-093's constructive full degree-3 GF(p) solver; EXP-079 remains the
+   degree-uniform connection route, with its regularity
    premise re-derived after the EXP-078 and manuscript-audit corrections.
 4. DONE (EXP-051): the HALF-PLANE TOWER LEMMA covers the y-most-corner staircase
    stratum at all degrees, proper-power tops included. Remaining theory targets:
@@ -151,11 +152,10 @@ directory is empty.
      gauge unknowns) with a sparse/blocked GF(p) solver. This is the ONLY path to
      a positive answer at degree 3, and a success would be the floor-raise
      certificate (statement TO FELIPE, exact confirmation staged).
-   - PROMOTED: the structural routes that could yield a DEGREE-UNIFORM statement,
-     since degree-by-degree can no longer terminate on its own: EXP-079 (the
-     annihilation lemma as a connection; regular-singular vs irregular decides
-     whether ANY finite bound exists) and EXP-080 (sl2/weight decomposition
-     predicting obstruction locations instead of sweeping for them).
+   - STRUCTURAL route remaining: EXP-079 (the annihilation lemma as a connection;
+     regular-singular vs irregular may decide whether any effective bound exists).
+     EXP-080 is decided at its invariant gate: its declared natural `sl2` grading
+     is underdetermined/nonhomogeneous and the route is demoted.
    - UNCHANGED and cheap: the frontier forcings EXP-084/085 (reconcile the
      GGV5-vs-GGV2 A0' notions for C10/C11/C19/C20; batch the 16 unprinted A0'
      derivations). These give concrete [125,150] map progress independent of the
@@ -174,13 +174,12 @@ directory is empty.
    Berkovich, S5); EXTERNAL-DIALOGUE (the Tao exchange, all re-derived in-repo). L1/symplectic (EXP-091): JC(2) routes via LNDs to Rentschler + Abhyankar-Moh recognition theorems (known, mapped); recognition is the through-line uniting EXP-089/090/091.
    NOVEL-APPROACHES SPINE (2026-07-24, program/jacobian-conjecture/novel-approaches-2026-07-24.md):
    the campaign is TWO-SIDED (a covector = exclusion; provably no covector at any
-   degree = consistency = counterexample skeleton). Declared next experiments,
-   ranked by info/cost: EXP-078 (the FINITE CEILING N: converts the open sweep
-   into a decision procedure - do this FIRST), EXP-080 (sl2/weight closure of the
-   staircase), EXP-079 (the annihilation lemma as a flat connection; regular vs
-   irregular singularity type DECIDES termination - the deep lead), EXP-081 (the
-   3D collision covector projected to 2D vs Lambda0). Section 5 (Berkovich at
-   infinity) is the long-shot all-degrees dossier. A background agent (2026-07-24)
+   degree = consistency = counterexample skeleton). Outcome audit: EXP-078
+   withdrew the finite-ceiling premise; EXP-080 refuted its declared natural
+   `sl2` construction at the invariant gate. EXP-079 (the annihilation lemma as a
+   flat connection) remains a structural lead, and EXP-081 is the 3D collision
+   covector projected to 2D vs Lambda0. Section 5 (Berkovich at infinity) is the
+   long-shot all-degrees dossier. A background agent (2026-07-24)
    owns the C13 fork (EXP-077) and the reordered quadruple sweep; its report lands
    in wip-c13-and-sweep-2026-07-24.md.
    ISOLATION RULES (2026-07-24, methodology/08-parallel-sessions.md): rounds close
@@ -205,11 +204,12 @@ directory is empty.
    1053, EXP-082; EXP-076 d0=8 error corrected; the frontier is RE-SCOPED):
    (i) EXP-083 = re-audit all 24 [125,150] configs' forced A0' vs the GGV2
    excluded family wp(n',n'-1) + Heitmann Thm 2.24/2.25 + GGV5 Remark 7.9; the
-   genuinely-open set is the real frontier (secure GGV5 = arXiv 1708.07936 and
-   Heitmann if needed via E:\_Temp e-print). (ii) poll the reordered quadruple
-   sweep (EXP-075 run2, detached, artifacts/output-run2-2026-07-24.txt; a hit
-   closes degree 3). (iii) run the NOVEL-APPROACHES experiments EXP-078 (finite
-   ceiling), EXP-080 (sl2), EXP-079 (flat connection) with premises scrutinized.
+    genuinely-open set is the real frontier (secure GGV5 = arXiv 1708.07936 and
+    Heitmann if needed via E:\_Temp e-print). (ii) EXP-075 is not currently
+    running; its partial one-sided sweep remains recorded. (iii)
+    NOVEL-APPROACHES outcomes: EXP-078 finite-ceiling premise withdrawn; EXP-080
+    natural `sl2` premise refuted; EXP-079 remains unrun and must receive the same
+    premise scrutiny.
    (iv) Paper B truncation chapter + Zenodo republish when the block closes.
    THEN the
    [125,150] frontier: 24 transcribed configurations (C13 first).

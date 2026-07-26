@@ -109,7 +109,7 @@ Virasoro/W) decomposition of the ladder module, a clean representation-theoretic
 invariant. It also predicts the LOCATIONS of obstructions (primitive vectors)
 rather than finding them by sweep -> could replace the quadruple+ sweeps.
 
-First experiment [EXP-080, cheap]: test whether the graded operators close into
+First experiment [EXP-080, decided 2026-07-25]: test whether the graded operators close into
 sl2: compute [e, f] on the window basis and check it equals h (the weight
 operator) up to scalars. A yes reorganizes the entire truncation story.
 
@@ -147,7 +147,9 @@ the semistable reduction of the boundary of a Keller pair).
 
 1. EXP-078 (the ceiling) FIRST: cheap, and it reframes the entire campaign as a
    finite decision - the single highest information-per-cost item.
-2. EXP-080 (sl2 closure test): cheap; a yes reorganizes everything.
+2. EXP-080 (sl2 closure test): **DECIDED at invariant gate; declared natural
+   triple underdetermined/nonhomogeneous, so commutators were not run.** A future
+   revisit requires an explicit grading-compatible gauge and single shift classes.
 3. EXP-079 (connection singularity type): the deep lead; medium cost.
 4. EXP-081 (3D->2D covector): connects to the published cascade.
 5. Section 5 as a parallel dossier.
