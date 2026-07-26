@@ -1,6 +1,6 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-07-26 after EXP-097's resultant-transport typing gate. This is the first-read
+Updated 2026-07-26 after EXP-106's global lower-family grading classification. This is the first-read
 navigation page. Primary artifacts and experiment verdicts remain the evidence.
 
 ## 1. State in one screen
@@ -39,8 +39,17 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
   \]
   An alternative minor covers \(st=8\); the residual is the rational curve
   \(2^{15}s^9=(st-8)^7\).
-- EXP-102 proves a third minor is nonzero at \(u=1\) on that residual curve,
-  but complete curve coverage remains open.
+- EXP-104/105 close the complete residual curve and hence the declared
+  two-coefficient slice. With \(z=u^9\), two normalized maximal minors are
+  \[
+  F(z)=21-96z-1024z^2,\qquad G(z)=(8z+1)^{14},
+  \]
+  and an exact integer Bezout identity gives
+  \(A(z)F(z)+B(z)G(z)=17^{14}\).
+- EXP-106 proves the same connected \(\mathbb Z/9\) grading accepts all 23
+  nonconstant remaining directions in the persisted lower family, with
+  \(w_{p,q}=q-p+1\bmod9\). The promoted \((0,7)\) direction has ranks 53/41
+  on the two charts; EXP-107 is the declared three-parameter lift.
 - Controlling strategy:
   [`strategy-audit-2026-07-25.md`](strategy-audit-2026-07-25.md).
 - Source audit:
@@ -62,6 +71,8 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
 | constructible certificate recursion | generic pairing opens followed by kernel recomputation on residual closed strata | EXP-098 |
 | first GGHV minor stratum | \((st-8)^6(2^{15}s^9-(st-8)^7)/2^{39}\) on directions \((0,1),(1,7)\) | EXP-101 |
 | residual curve | \(s=8u^7,\ t=(8u^9+1)/u^7,\ u\ne0\) | EXP-101 |
+| exact residual-curve cover | \(F(z)=21-96z-1024z^2,\ G(z)=(8z+1)^{14},\ AF+BG=17^{14}\) | EXP-104/105 |
+| lower-family grading | \(w_{p,q}=q-p+1\pmod9\) for all 23 nonconstant remaining directions | EXP-106 |
 | properness instrument | exact resultant-leading-coefficient test | EXP-014 |
 | equivariant classification | EXP-010 on opposite-sign/one-zero scope; Shaska covers all signatures with triangular same-sign controls | 2026-07-25 reconciliation |
 
@@ -138,6 +149,15 @@ scalar conditions before exploiting sparsity.
   interior interaction is \((0,1),(1,7)\).
 - EXP-101: first two-parameter minor factored exactly, alternative chart
   constructed, and residual rational curve derived.
+- EXP-102/103: third point-chart constructed; dense pullback retired; NTT
+  determinantal-divisor engine isolates the exact endpoint issue.
+- EXP-104: exact 100-point interpolation proves determinant support
+  \([1628,1646]\), and two endpoint-controlled minors have gcd one.
+- EXP-105: the compact exact cover is
+  \(F(z)=21-96z-1024z^2\), \(G(z)=(8z+1)^{14}\), with integer Bezout
+  constant \(17^{14}\).
+- EXP-106: all nonconstant remaining lower directions preserve the connected
+  mod-9 grading; \((0,7)\) is promoted to EXP-107.
 - EXP-102: third chart exists at \(u=1\); complete pullback is inconclusive
   after the dense rank-121 determinant hit its five-minute budget.
 

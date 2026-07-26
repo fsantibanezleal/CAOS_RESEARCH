@@ -10,9 +10,9 @@ the matched-pair law and the x^m-anchored edge operator, and the source-audited 
 targets), including the EXP-095/096 original-pair gates (seven possible nonzero inner
 vertices and exact resultant intersection number 21 with root partition 84+24) and the
 EXP-097 transport audit (absolute degree is not typed after Laurent localization without
-a boundary-divisor ledger), and the EXP-098--102 constructible-certificate
-route, including the first exact augmented-minor chart transition on the actual
-GGHV matrix. Grows
+a boundary-divisor ledger), and the EXP-098--106 constructible-certificate
+route, including the first complete exact augmented-minor chart cover on an
+actual GGHV coefficient slice and its global lower-family mod-9 grading. Grows
 per session; content moved here from `manuscript/` in the 2026-07-22 split
 (see `manuscript/README.md` for the three-paper structure).
 
@@ -30,5 +30,6 @@ pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode ma
 Rules (methodology/05): [MV] / [D] / [C] labels on every claim; findings enter only after
 adversarial validation.
 
-Current manuscript version: **v0.17** (2026-07-26). Substantive revisions are published
+Current manuscript version: **v0.18** (2026-07-26). Substantive revisions are published
 as new Zenodo versions under concept DOI `10.5281/zenodo.21503367`.
+Version 0.18 DOI: `10.5281/zenodo.21598065`.

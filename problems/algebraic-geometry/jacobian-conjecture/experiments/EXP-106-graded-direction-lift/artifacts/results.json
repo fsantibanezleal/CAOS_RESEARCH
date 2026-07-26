@@ -1,0 +1,627 @@
+{
+  "compatible_count": 23,
+  "compatible_directions": [
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 53,
+        "variable_residues": [
+          8
+        ]
+      },
+      "point": [
+        0,
+        7
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 41,
+        "variable_residues": [
+          8
+        ]
+      },
+      "shared_compatible_residue": 8,
+      "total_selected_support": 94
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 62,
+        "variable_residues": [
+          7
+        ]
+      },
+      "point": [
+        0,
+        6
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 41,
+        "variable_residues": [
+          7
+        ]
+      },
+      "shared_compatible_residue": 7,
+      "total_selected_support": 103
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 58,
+        "variable_residues": [
+          8
+        ]
+      },
+      "point": [
+        1,
+        8
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 50,
+        "variable_residues": [
+          8
+        ]
+      },
+      "shared_compatible_residue": 8,
+      "total_selected_support": 108
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 53,
+        "variable_residues": [
+          8
+        ]
+      },
+      "point": [
+        2,
+        9
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 57,
+        "variable_residues": [
+          8
+        ]
+      },
+      "shared_compatible_residue": 8,
+      "total_selected_support": 110
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 72,
+        "variable_residues": [
+          6
+        ]
+      },
+      "point": [
+        0,
+        5
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 41,
+        "variable_residues": [
+          6
+        ]
+      },
+      "shared_compatible_residue": 6,
+      "total_selected_support": 113
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 62,
+        "variable_residues": [
+          7
+        ]
+      },
+      "point": [
+        2,
+        8
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 58,
+        "variable_residues": [
+          7
+        ]
+      },
+      "shared_compatible_residue": 7,
+      "total_selected_support": 120
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 82,
+        "variable_residues": [
+          5
+        ]
+      },
+      "point": [
+        0,
+        4
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 41,
+        "variable_residues": [
+          5
+        ]
+      },
+      "shared_compatible_residue": 5,
+      "total_selected_support": 123
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 91,
+        "variable_residues": [
+          0
+        ]
+      },
+      "point": [
+        1,
+        0
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 32,
+        "variable_residues": [
+          0
+        ]
+      },
+      "shared_compatible_residue": 0,
+      "total_selected_support": 123
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 87,
+        "variable_residues": [
+          1
+        ]
+      },
+      "point": [
+        2,
+        2
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 39,
+        "variable_residues": [
+          1
+        ]
+      },
+      "shared_compatible_residue": 1,
+      "total_selected_support": 126
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 92,
+        "variable_residues": [
+          4
+        ]
+      },
+      "point": [
+        0,
+        3
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 37,
+        "variable_residues": [
+          4
+        ]
+      },
+      "shared_compatible_residue": 4,
+      "total_selected_support": 129
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 79,
+        "variable_residues": [
+          6
+        ]
+      },
+      "point": [
+        1,
+        6
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 50,
+        "variable_residues": [
+          6
+        ]
+      },
+      "shared_compatible_residue": 6,
+      "total_selected_support": 129
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 74,
+        "variable_residues": [
+          6
+        ]
+      },
+      "point": [
+        2,
+        7
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 56,
+        "variable_residues": [
+          6
+        ]
+      },
+      "shared_compatible_residue": 6,
+      "total_selected_support": 130
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 84,
+        "variable_residues": [
+          2
+        ]
+      },
+      "point": [
+        3,
+        4
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 47,
+        "variable_residues": [
+          2
+        ]
+      },
+      "shared_compatible_residue": 2,
+      "total_selected_support": 131
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 86,
+        "variable_residues": [
+          3
+        ]
+      },
+      "point": [
+        2,
+        4
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 46,
+        "variable_residues": [
+          3
+        ]
+      },
+      "shared_compatible_residue": 3,
+      "total_selected_support": 132
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 81,
+        "variable_residues": [
+          5
+        ]
+      },
+      "point": [
+        2,
+        6
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 53,
+        "variable_residues": [
+          5
+        ]
+      },
+      "shared_compatible_residue": 5,
+      "total_selected_support": 134
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 99,
+        "variable_residues": [
+          1
+        ]
+      },
+      "point": [
+        1,
+        1
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 36,
+        "variable_residues": [
+          1
+        ]
+      },
+      "shared_compatible_residue": 1,
+      "total_selected_support": 135
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 88,
+        "variable_residues": [
+          5
+        ]
+      },
+      "point": [
+        1,
+        5
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 47,
+        "variable_residues": [
+          5
+        ]
+      },
+      "shared_compatible_residue": 5,
+      "total_selected_support": 135
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 99,
+        "variable_residues": [
+          2
+        ]
+      },
+      "point": [
+        1,
+        2
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 37,
+        "variable_residues": [
+          2
+        ]
+      },
+      "shared_compatible_residue": 2,
+      "total_selected_support": 136
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 102,
+        "variable_residues": [
+          3
+        ]
+      },
+      "point": [
+        0,
+        2
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 35,
+        "variable_residues": [
+          3
+        ]
+      },
+      "shared_compatible_residue": 3,
+      "total_selected_support": 137
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 97,
+        "variable_residues": [
+          4
+        ]
+      },
+      "point": [
+        1,
+        4
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 43,
+        "variable_residues": [
+          4
+        ]
+      },
+      "shared_compatible_residue": 4,
+      "total_selected_support": 140
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 96,
+        "variable_residues": [
+          2
+        ]
+      },
+      "point": [
+        2,
+        3
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 44,
+        "variable_residues": [
+          2
+        ]
+      },
+      "shared_compatible_residue": 2,
+      "total_selected_support": 140
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 92,
+        "variable_residues": [
+          4
+        ]
+      },
+      "point": [
+        2,
+        5
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 51,
+        "variable_residues": [
+          4
+        ]
+      },
+      "shared_compatible_residue": 4,
+      "total_selected_support": 143
+    },
+    {
+      "compatible_on_both": true,
+      "first_chart": {
+        "compatible": true,
+        "selected_support": 105,
+        "variable_residues": [
+          3
+        ]
+      },
+      "point": [
+        1,
+        3
+      ],
+      "second_chart": {
+        "compatible": true,
+        "selected_support": 42,
+        "variable_residues": [
+          3
+        ]
+      },
+      "shared_compatible_residue": 3,
+      "total_selected_support": 147
+    }
+  ],
+  "controls": {
+    "s_on_curve_exponent_14": [
+      {
+        "compatible": true,
+        "selected_support": 112,
+        "variable_residues": [
+          0
+        ]
+      },
+      {
+        "compatible": true,
+        "selected_support": 34,
+        "variable_residues": [
+          0
+        ]
+      }
+    ],
+    "t_on_curve_exponent_0": [
+      {
+        "compatible": true,
+        "selected_support": 68,
+        "variable_residues": [
+          0
+        ]
+      },
+      {
+        "compatible": true,
+        "selected_support": 50,
+        "variable_residues": [
+          0
+        ]
+      }
+    ]
+  },
+  "decision": "graded_lift_candidates_found",
+  "directions_tested": 24,
+  "experiment": "EXP-106",
+  "grading_modulus": 9,
+  "incompatible_count": 1,
+  "incompatible_directions": [
+    {
+      "compatible_on_both": false,
+      "first_chart": {
+        "compatible": false,
+        "selected_support": 0,
+        "variable_residues": []
+      },
+      "point": [
+        0,
+        0
+      ],
+      "second_chart": {
+        "compatible": false,
+        "selected_support": 0,
+        "variable_residues": []
+      },
+      "shared_compatible_residue": null,
+      "total_selected_support": 0
+    }
+  ],
+  "negative_control": {
+    "genuine_residue": [
+      0
+    ],
+    "passed": true,
+    "perturbed_residue": [
+      1
+    ]
+  },
+  "nonclaim": "grading compatibility is only a compute filter and does not prove rank coverage after adding any coefficient",
+  "promoted_direction": {
+    "compatible_on_both": true,
+    "first_chart": {
+      "compatible": true,
+      "selected_support": 53,
+      "variable_residues": [
+        8
+      ]
+    },
+    "point": [
+      0,
+      7
+    ],
+    "second_chart": {
+      "compatible": true,
+      "selected_support": 41,
+      "variable_residues": [
+        8
+      ]
+    },
+    "shared_compatible_residue": 8,
+    "total_selected_support": 94
+  }
+}
