@@ -111,3 +111,9 @@
   The minor-root source formula is only an inequality and cannot perform the
   hoped-for family exclusions. Next: attempt low-cost transport of these gates
   to the reduced coefficients; otherwise begin the certificate-module control.
+- **2026-07-25 manuscript reconciliation:** Paper B v0.15 transcribes the
+  EXP-095 applicability boundary and EXP-096 quantitative gates, corrects the
+  forward program, and preserves the non-exclusion scope. The two-pass PDF and
+  visual QA gates passed; PR #83 merged at `ffc6a3d`; Zenodo version DOI
+  `10.5281/zenodo.21584243` is published under concept DOI
+  `10.5281/zenodo.21503367`.
