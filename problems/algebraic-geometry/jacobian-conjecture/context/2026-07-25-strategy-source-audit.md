@@ -4,6 +4,15 @@ Purpose: record the primary sources used to reassess the next $(72,108)$ experim
 dossier verifies source statements and their applicability boundary. It does not claim a new
 Jacobian-conjecture result.
 
+## EXP-094 source-identity correction
+
+The four configurations previously described as strong candidates under the
+GGV2 closing remark do not satisfy its exact source predicates. C10/C11 have
+\(A'_0=(1,0)\), not the required \((2,1)\). C19/C20 have
+\(B_1=A_0=(6,15)\), not the required \((6,18+6k)\). The remark therefore
+excludes none of C10, C11, C19, or C20. This correction is limited to that
+remark; it does not certify the configurations against other restrictions.
+
 ## Makar-Limanov and Trakhtenberg: Newton resolution
 
 - Authors: Leonid Makar-Limanov and Eugene Trakhtenberg.

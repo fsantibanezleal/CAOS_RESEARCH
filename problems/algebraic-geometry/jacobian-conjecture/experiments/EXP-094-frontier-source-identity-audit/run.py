@@ -26,13 +26,19 @@ def matches_heitmann_721(a0: Point, a0_prime: Point) -> bool:
     return a0 == (7, 21) and a0_prime == (2, 1)
 
 
-def matches_ggv_615(b0: Point | None, b1: Point) -> bool:
-    """Return the exact GGV2 predicate for the B0=(6,15) family."""
+def matches_ggv_615_b1_family(b1: Point) -> bool:
+    """Return whether B1 has the required (6, 18+6k) nonmultiple-of-30 form."""
 
-    if b0 != (6, 15) or b1[0] != 6 or b1[1] < 18:
+    if b1[0] != 6 or b1[1] < 18:
         return False
     offset = b1[1] - 18
     return offset % 6 == 0 and b1[1] % 30 != 0
+
+
+def matches_ggv_615(b0: Point | None, b1: Point) -> bool:
+    """Return the exact GGV2 predicate for the B0=(6,15) family."""
+
+    return b0 == (6, 15) and matches_ggv_615_b1_family(b1)
 
 
 def matches_known_828_840(b0: Point, b1: Point) -> bool:
@@ -52,8 +58,9 @@ def classify_case(case: dict[str, str | Point]) -> dict[str, object]:
     b1 = a0
     heitmann_match = matches_heitmann_721(a0, a0_prime)
 
-    # B0 is not needed to reject the GGV (6,15) predicate: B1 already fails.
-    ggv_615_match = matches_ggv_615(None, b1)
+    # B0 is not needed to reject the GGV (6,15) predicate: B1 already fails
+    # its necessary family condition.
+    ggv_615_b1_match = matches_ggv_615_b1_family(b1)
     return {
         "id": case["id"],
         "family": case["family"],
@@ -61,8 +68,8 @@ def classify_case(case: dict[str, str | Point]) -> dict[str, object]:
         "a0_prime": list(a0_prime),
         "b1_equals_a0": list(b1),
         "matches_heitmann_721_predicate": heitmann_match,
-        "matches_ggv_615_predicate": ggv_615_match,
-        "excluded_by_cited_remark": heitmann_match or ggv_615_match,
+        "matches_ggv_615_b1_family": ggv_615_b1_match,
+        "excluded_by_cited_remark": heitmann_match or ggv_615_b1_match,
     }
 
 
@@ -106,7 +113,7 @@ def main() -> None:
 
     artifact = Path(__file__).with_name("artifacts") / "results.json"
     artifact.parent.mkdir(parents=True, exist_ok=True)
-    artifact.write_text(output + "\n", encoding="utf-8")
+    artifact.write_text(output + "\n", encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":
