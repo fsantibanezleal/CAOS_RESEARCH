@@ -147,3 +147,19 @@
   specialization correction and first exact GGHV chart transition. The
   two-pass 12-page PDF and visual QA passed. Zenodo version DOI:
   `10.5281/zenodo.21593235`, concept DOI: `10.5281/zenodo.21503367`.
+- **2026-07-26 EXP-103 through EXP-105:** the complete residual curve is now
+  closed exactly. EXP-103's NTT engine found a modular gcd-one pair but caught
+  an 81-degree endpoint cancellation before overclaiming. EXP-104 evaluated
+  100 exact 125-by-125 determinants and proved support \([1628,1646]\).
+  EXP-105 exposed the connected \(\mu_9\) grading and compressed the cover to
+  \[
+  F(z)=21-96z-1024z^2,\qquad G(z)=(8z+1)^{14},
+  \]
+  with an exact integer identity \(AF+BG=17^{14}\). This excludes the complete
+  declared \(\{(0,1),(1,7)\}\) slice, not the full family.
+- **2026-07-26 EXP-106:** all 23 nonconstant remaining directions in the
+  persisted lower family preserve both chart gradings, following
+  \(w_{p,q}=q-p+1\bmod9\). The constant \((0,0)\) direction is bracket-zero.
+  Promote \((0,7)\), the smallest selected support, to EXP-107. In invariant
+  variables \(z=u^9,\ y=v/u\), both existing minors have \(z\)-width 14 and
+  new-direction ranks 53/41. No process is active.

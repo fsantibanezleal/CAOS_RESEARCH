@@ -1192,3 +1192,22 @@
 - Paper B v0.17 transcribes EXP-098 through EXP-102, passed two-pass PDF and
   visual QA, and is published at version DOI
   `10.5281/zenodo.21593235`.
+
+## 2026-07-26 - EXP-103--106 close the residual curve and expose a global grading
+
+- EXP-103 replaces the failed dense pullback with NTT reconstruction of full
+  maximal-minor polynomials. Its endpoint gate correctly rejects an
+  81-degree tropical cancellation instead of promoting a modular heuristic.
+- EXP-104 computes 100 exact 125-by-125 determinants and proves the first
+  residual minor has exact support \([1628,1646]\).
+- EXP-105 finds the connected \(\mathbb Z/9\) row/column grading and the
+  compact exact pair
+  \[
+  F(z)=21-96z-1024z^2,\qquad G(z)=(8z+1)^{14}.
+  \]
+  The persisted integer Bezout identity has constant \(17^{14}\). The complete
+  declared two-coefficient slice is excluded exactly.
+- EXP-106 classifies every remaining lower direction. All 23 nonconstant
+  directions are compatible, with \(w_{p,q}=q-p+1\bmod9\); \((0,0)\) is
+  bracket-zero. EXP-107 promotes \((0,7)\) to the first graded
+  three-parameter lift.

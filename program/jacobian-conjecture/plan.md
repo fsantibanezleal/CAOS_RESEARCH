@@ -60,12 +60,14 @@ support-restricted failure, or absence of a finite certificate as a proof.
    - EXP-101 factors the first actual two-parameter GGHV minor and changes
      charts exactly on its zero locus;
    - EXP-102 supplies a third nonzero minor at \(u=1\) on the residual curve;
-   - next compute the 125-minor determinantal divisor over
-     \(\mathbb{Q}[u,u^{-1}]\), using modular Smith data and rational
-     reconstruction instead of a dense rank-121 determinant.
-   - EXP-103 is the declared implementation: recover adaptive maximal minors
-     by NTT evaluation/interpolation, prove exact endpoint degrees by assignment
-     bounds, and use a gcd-one certificate over two primes.
+   - EXP-103--105 complete the residual-curve divisor. The exact normalized
+     minors are \(21-96z-1024z^2\) and \((8z+1)^{14}\), with Bezout constant
+     \(17^{14}\).
+   - EXP-106 proves the mod-9 grading extends to every nonconstant direction
+     in the persisted lower family.
+   - next run EXP-107 on the promoted \((0,7)\) coefficient using
+     \(z=u^9,\ y=v/u\), reconstruct bivariate minors on 16-by-64 NTT grids,
+     and compute their common-zero ideal before selecting further charts.
 5. Continue the independent [125,150] frontier task:
    - preserve C10/C11/C19/C20 as unresolved by GGV2 Remark 2.32;
    - derive the 16 unprinted $A'_0$ values through the declared chain algorithm;

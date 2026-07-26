@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-26\\[2pt]\normalsize Version 0.17}
+\date{2026-07-26\\[2pt]\normalsize Version 0.18}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.17}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.18}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -39,7 +39,7 @@ the Staircase Transport, and the Recalibrated Frontier}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper B of a three-paper record \textperiodcentered\ version 0.17 \textperiodcentered\ 2026-07-26\\
+Paper B of a three-paper record \textperiodcentered\ version 0.18 \textperiodcentered\ 2026-07-26\\
 DOI \href{https://doi.org/10.5281/zenodo.21503367}{10.5281/zenodo.21503367} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -73,6 +73,13 @@ For that open pair, an exact primary-source instantiation gives two original-pai
 gates: seven possible northeastern vertices for a nonzero inner polynomial, and
 $\deg_x\operatorname{Res}_y(P,Q)=21$ with an $84+24$ major/minor root partition; neither
 gate alone excludes the pair.
+A constructible determinantal-strata calculation now closes the first actual
+two-coefficient GGHV slice exactly. On the residual curve, two normalized
+maximal minors reduce, with \(z=u^9\), to
+\(21-96z-1024z^2\) and \((8z+1)^{14}\); a persisted integer Bezout identity
+has constant \(17^{14}\). A connected mod-9 row/column grading extends to
+every nonconstant direction in the persisted lower family. This is a strict
+slice result and does not exclude the full \((72,108)\) family.
 A new multiplication formula for $x^m$-anchored edges shows the $B = 16$ leading form cannot
 produce the Keller constant on its top edge for $m \ge 2$: that case, too, is a staircase
 transport. All computations are exact and reproducible; every claim is labeled machine-verified
@@ -609,15 +616,51 @@ with normalization
  s=8u^7,\qquad t=\frac{8u^9+1}{u^7},\qquad u\ne0.
 \]
 At \(u=1\), both old minors vanish but a third exact augmented minor is
-nonzero (EXP-102). Complete coverage of this curve remains open: the dense
-third-minor pullback has combined modular direction rank \(121\) and hit its
-declared five-minute budget. The next exact object is the determinantal
-divisor of the cleared polynomial matrix over \(\mathbb{Q}[u]\), not another
-dense bivariate expansion.
+nonzero (EXP-102). Its dense pullback has combined direction rank \(121\) and
+hit the declared five-minute budget. EXP-103 replaces that backend by
+root-of-unity evaluation and NTT interpolation of complete maximal-minor
+polynomials. An endpoint gate catches an 81-degree cancellation that a
+modular gcd alone would miss.
 
-These results establish the certificate mechanism and the first exact chart
-transition on a two-parameter slice. They do not cover the other parameters,
-exclude \((72,108)\), or raise the degree floor.
+EXP-104 resolves that gate over characteristic zero [MV]. The third determinant
+is evaluated exactly at 100 integer values. Its assignment bounds are
+\([1547,1646]\); after division by \(u^{1547}\), exact degree-99 interpolation
+shows that coefficients \(0,\ldots,80\) vanish and coefficient \(81\) does
+not. Thus its exact support is \([1628,1646]\). A second row chart has exact
+support \([777,903]\).
+
+The support graphs of both charts admit connected row/column weights modulo
+9 (EXP-105). With \(z=u^9\), removal of the proved Laurent monomials and
+integer contents gives the primitive determinants
+\[
+ F(z)=21-96z-1024z^2,\qquad G(z)=(8z+1)^{14}.
+\]
+The only zero of \(G\) is \(z=-1/8\), where \(F(-1/8)=17\). More strongly,
+the artifact contains integer polynomials \(A,B\) satisfying
+\[
+ A(z)F(z)+B(z)G(z)=17^{14}.
+\]
+Therefore the two normalized maximal minors generate the unit ideal over
+\(\mathbb{Q}[u,u^{-1}]\). Together with the first two charts, this proves
+rank \(125\) for the augmented matrix at every point of the declared
+\(\{(0,1),(1,7)\}\) coefficient slice [MV].
+
+The grading is not confined to that slice. For every nonconstant lower
+monomial \(x^py^q\) tested in the persisted 26-parameter family, EXP-106
+finds the exact variable-weight law
+\[
+ w_{p,q}\equiv q-p+1\pmod9.
+\]
+All 23 remaining nonconstant directions preserve both connected chart
+gradings; the constant direction is bracket-zero. This supplies a scalable
+next coordinate system, not a full-family proof. The promoted direction
+\((0,7)\) has selected ranks 53 and 41; after setting
+\(z=u^9\) and \(y=v/u\), both determinant charts have \(z\)-width 14.
+
+These results establish the first complete constructible chart cover on an
+actual GGHV coefficient slice and expose a global lower-family grading. They
+do not cover simultaneous variation of the other coefficients, exclude the
+full \((72,108)\) family, or raise the degree floor.
 
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the
@@ -682,10 +725,10 @@ audit trail (including its open verification items) persisted in the repository.
 
 \section{Program}
 
-Priorities, from the standing routes evaluation: (1) compute the
-determinantal divisor on the EXP-101 residual curve over
-\(\mathbb{Q}[u,u^{-1}]\), then enlarge the constructible stratification
-coefficient block by coefficient block; (2) reopen the intersection-$21$ transport only
+Priorities, from the standing routes evaluation: (1) lift the exact EXP-105
+cover through the promoted \((0,7)\) coefficient using
+\(z=u^9,\ y=v/u\), reconstruct the bivariate minors on graded NTT grids, and
+compute their common-zero ideal before selecting new charts; (2) reopen the intersection-$21$ transport only
 after constructing a complete boundary-divisor ledger through the swap,
 Laurent cuts, and final inversion; (3) pursue Newton resolution only after deriving a
 condition beyond the already-retained first $D=72$ branch; and (4) retain the
