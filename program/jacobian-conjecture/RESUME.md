@@ -1,6 +1,6 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-07-25 after the complete strategy and source audit. This is the first-read
+Updated 2026-07-26 after EXP-097's resultant-transport typing gate. This is the first-read
 navigation page. Primary artifacts and experiment verdicts remain the evidence.
 
 ## 1. State in one screen
@@ -26,6 +26,9 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
 - EXP-096 gives the first new quantitative source invariants for the open
   chain: seven possible nonzero inner vertices, exact intersection number
   \(21\), and an \(84+24\) major/minor root partition.
+- EXP-097 proves that absolute resultant degree \(21\) is not a typed equation
+  on the final Laurent coefficients without a missing boundary-divisor ledger.
+  The direct transport route is closed; conditional exponent width survives.
 - Controlling strategy:
   [`strategy-audit-2026-07-25.md`](strategy-audit-2026-07-25.md).
 - Source audit:
@@ -109,12 +112,17 @@ scalar conditions before exploiting sparsity.
   Lee--Li inner vertices. The original pair satisfies
   \(\deg_x\operatorname{Res}_y(P,Q)=21\), with 84 major and 24 minor roots.
   These are necessary rejection gates; the open chain remains unresolved.
+- EXP-097: exact resultant identities show that Laurent localization forgets
+  the absolute \(x=0\) order and final inversion reflects exponent intervals
+  by \(s\mapsto1536-s\). Degree \(21\) remains an original-pair
+  reconstruction gate, not a direct condition on the 51 reduced coefficients.
 
 ## 4. In flight
 
 - No Jacobian experiment process is active.
-- EXP-096 is complete. Its exact source instantiation, result artifact, verdict, source
-  amendments, and derived-state updates are persisted on the current branch.
+- EXP-097 is complete. Its hypothesis, exact symbolic artifact, verdict,
+  source amendment, wiki row, and derived-state updates are persisted on the
+  current branch.
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
 - Current research branch: `work/jacobian-conjecture/next-round`.
@@ -127,18 +135,18 @@ scalar conditions before exploiting sparsity.
 
 ## 5. Next actions, in order
 
-1. Attempt a low-cost exact transport of the seven inner vertices or
-   intersection number \(21\) into the 51 reduced coefficients. Stop if the
-   transformation does not preserve a typed invariant.
-2. Pursue further Newton resolution only if a new condition is derived beyond
-   the already-retained first \(D=72\) branch; do not repeat direct comparisons
-   with \(P_T\).
-3. Declare a small certificate-module/chart-cover experiment:
+1. Declare and run the small certificate-module/chart-cover experiment:
    - left syzygy module;
    - pairing ideal;
    - localized certificates;
    - radical cover;
    - specialization controls.
+2. Reopen intersection-\(21\) transport only with a complete
+   boundary-divisor ledger through the swap, Laurent cuts, and final inversion;
+   do not impose absolute degree directly on the 51 coefficients.
+3. Pursue further Newton resolution only if a new condition is derived beyond
+   the already-retained first \(D=72\) branch; do not repeat direct comparisons
+   with \(P_T\).
 4. Continue the independent [125,150] frontier:
    - keep C10/C11/C19/C20 unresolved by GGV2 Remark 2.32;
    - derive the 16 missing \(A'_0\) values through the declared chain algorithm;
