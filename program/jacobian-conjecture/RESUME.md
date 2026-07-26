@@ -194,7 +194,9 @@ scalar conditions before exploiting sparsity.
   Paper B v0.16 is published at `10.5281/zenodo.21589334`.
 - Paper B v0.17, including EXP-098 through EXP-102, is published at
   `10.5281/zenodo.21593235` under concept DOI
-  `10.5281/zenodo.21503367`. Its research PR is the current close-out action.
+  `10.5281/zenodo.21503367`.
+- EXP-107/108 and Paper B v0.19 were merged by PR `#90` at `2481d3a`.
+  Paper B v0.19 is published at `10.5281/zenodo.21610744`.
 - No Jacobian PR or experiment process is active.
 - The management mirror is updated directly on its canonical `develop`
   checkout. Do not create a management worktree or task branch.
@@ -267,6 +269,7 @@ Latest correction publications:
 - Paper A v0.11: `10.5281/zenodo.21579022`
 - Paper B v0.16: `10.5281/zenodo.21589334`
 - Paper B v0.17: `10.5281/zenodo.21593235`
+- Paper B v0.19: `10.5281/zenodo.21610744`
 
 EXP-097 changed the admissible use of intersection number \(21\), so the planar
 manuscript was expanded, built, visually verified, merged through PR `#85`,
