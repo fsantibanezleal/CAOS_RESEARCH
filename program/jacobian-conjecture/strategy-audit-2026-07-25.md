@@ -171,10 +171,19 @@ The more general target is:
 
 1. compute the left-syzygy module of $M$ or a presentation adapted to the grading;
 2. form the ideal of pairings $I=\{c^Tb:c^TM=0\}$;
-3. test whether localized pairing ideals cover parameter space;
-4. certify a finite principal-open cover $D(s_i)$ with
-   $1\in\sqrt{(s_1,\ldots,s_k)}$ and a valid localized certificate on each chart;
-5. treat specialization carefully, because kernels and syzygies can jump on closed strata.
+3. compute the generic pairing opens, then specialize to their residual closed
+   locus and recompute the kernel;
+4. iterate a finite constructible stratification until the residual locus is
+   empty or a zero-pairing stratum remains;
+5. treat specialization as essential, because kernels and syzygies can jump on
+   closed strata.
+
+EXP-098 correction, 2026-07-26: a principal-open cover by localized syzygies
+that all lift from the parameter ring collapses, after clearing denominators,
+to one global polynomial covector. It is not strictly more general. The
+strictly stronger mechanism is a constructible cover containing closed
+specialization strata with new, non-lifting syzygies. EXP-101 applies this
+corrected mechanism to the first actual GGHV two-parameter minor.
 
 This subsumes the useful part of the determinant/minor route and the axis-chart experiments.
 It also explains why one finite polynomial covector need not be necessary for uniform

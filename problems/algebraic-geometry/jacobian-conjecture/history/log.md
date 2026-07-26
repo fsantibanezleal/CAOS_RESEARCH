@@ -1140,3 +1140,55 @@
 - The direct generic-resultant route is closed. A future full
   boundary-divisor reconstruction remains valid but is higher cost; the small
   certificate-module/chart-cover analog becomes immediate.
+
+## 2026-07-26 - EXP-098 corrects the certificate-cover target
+
+- A finite principal-open cover of localized global syzygies collapses, after
+  clearing denominators, to one global polynomial covector.
+- An exact control over \(\mathbb{Q}[x,y]\) is inconsistent in every fiber
+  while its global pairing ideal is only \((x)\). The missing certificate
+  appears after specialization to \(V(x)\) and does not lift globally.
+- The live route is therefore recursive constructible rank stratification:
+  certify the generic open, specialize to the residual closed locus, recompute
+  syzygies, and continue.
+
+## 2026-07-26 - EXP-099/100 close common-flag shortcuts
+
+- The EXP-059 augmented minor reconstructs exactly, but its 26 normalized
+  perturbations do not preserve a common strict flag.
+- The first self-loop is the forced \((1,0)\) coefficient with trace \(16\).
+  Its matrix is not a projector; EXP-101 later proves its characteristic
+  polynomial.
+- After constant and forced-vertex normalization, the first genuine interior
+  cycle is \((0,1),(1,7)\), with product trace \(13/8\). Mixed determinant
+  constancy remains false.
+
+## 2026-07-26 - EXP-101 constructs the first actual GGHV chart transition
+
+- The forced-axis characteristic polynomial is
+  \(\lambda^{109}(\lambda-1)^{16}\), so its determinant factor is exactly
+  \((1+u)^{16}\).
+- The selected two-parameter minor factors as
+  \[
+  (st-8)^6\left(2^{15}s^9-(st-8)^7\right)/2^{39}.
+  \]
+- At \((-8,-1)\), the first minor vanishes but the exact ranks are
+  \(124\) and \(125\); an alternative RHS-containing minor is nonzero.
+- The first two minors remove \(st=8\) and leave the rational residual curve
+  \(2^{15}s^9=(st-8)^7\), parametrized by
+  \(s=8u^7,\ t=(8u^9+1)/u^7\).
+
+## 2026-07-26 - EXP-102 proves a third point-chart and redirects the backend
+
+- At \(u=1\), or \((s,t)=(8,9)\), both EXP-101 minors vanish, but modular lower
+  bounds plus structural upper bounds prove exact ranks \(124/125\).
+- A third RHS-containing augmented minor is explicitly nonzero there.
+- Its two direction matrices have combined modular rank \(121\). Dense
+  bivariate pullback hit the declared five-minute kill criterion and is
+  inconclusive globally.
+- Next compute the 125-minor determinantal divisor of the cleared polynomial
+  matrix over \(\mathbb{Q}[u]\), with modular Smith data and rational
+  reconstruction.
+- Paper B v0.17 transcribes EXP-098 through EXP-102, passed two-pass PDF and
+  visual QA, and is published at version DOI
+  `10.5281/zenodo.21593235`.

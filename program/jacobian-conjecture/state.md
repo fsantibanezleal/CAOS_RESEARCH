@@ -128,3 +128,22 @@
   Paper B v0.16 records the audit; PR #85 merged at `d47937a`, and Zenodo
   version DOI `10.5281/zenodo.21589334` is published under concept DOI
   `10.5281/zenodo.21503367`.
+- **2026-07-26 EXP-098 through EXP-102:** the certificate route is now typed
+  correctly and has reached the actual GGHV matrix. EXP-098 proves that a
+  principal-open cover of localized global syzygies collapses to one global
+  covector; the strict generalization requires closed specialization strata
+  where kernels jump. EXP-099/100 refute common-flag shortcuts. EXP-101 gives
+  the exact first two-parameter augmented-minor factorization
+  \[
+  (st-8)^6\left(2^{15}s^9-(st-8)^7\right)/2^{39},
+  \]
+  finds an explicit alternative minor on \(st=8\), and leaves the rational
+  residual curve \(2^{15}s^9=(st-8)^7\). EXP-102 proves a third chart exists at
+  \(u=1\), but its dense rank-121 curve pullback hit the five-minute budget.
+  Next use the polynomial-matrix determinantal divisor over
+  \(\mathbb{Q}[u,u^{-1}]\). The two-parameter slice and the full case remain
+  open.
+- **2026-07-26 publication:** Paper B v0.17 transcribes the constructible
+  specialization correction and first exact GGHV chart transition. The
+  two-pass 12-page PDF and visual QA passed. Zenodo version DOI:
+  `10.5281/zenodo.21593235`, concept DOI: `10.5281/zenodo.21503367`.
