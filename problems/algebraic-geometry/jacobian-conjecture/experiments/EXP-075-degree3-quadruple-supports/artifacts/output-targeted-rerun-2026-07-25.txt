@@ -1,0 +1,8 @@
+============================================================================
+EXP-075 run2: quadruple-support sweep, BLOCKERS-FIRST (t = 1)
+============================================================================
+[PASS] 0: setup invariants  (0 s)
+[PASS] 1: regression gate (20 sampled pairs feasible)  bad [] (3 s)
+[PASS] 2: blockers-first ordering built  249900 quadruples, 27762 blocker-heavy (>=2 blockers) first; blocker ops indices [7, 25, 31, 32, 37, 47, 49, 50]
+[PASS] 3: the blockers-first quadruple sweep  INFEASIBLE at idx 2662 ((0, 3), (1, 0), (3, 4), (4, 7)) (both primes): NO DEGREE-3 COVECTOR: DEGREE 3 CLOSED. Statement-level claim TO THE MAIN SESSION (do not publish here).
+RESULT: ALL CHECKS PASS. (degree 3 closed at a quadruple support)

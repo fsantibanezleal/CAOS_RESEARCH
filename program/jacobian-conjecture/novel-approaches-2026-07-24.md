@@ -1,5 +1,13 @@
 # Novel approaches to (72,108) and JC(2) - deep exploration (2026-07-24)
 
+> **Superseded as an active plan on 2026-07-25.** This file is retained as an
+> exploration record. Sections 0 and 1 contain withdrawn inferences: absence of a
+> finite covector is not evidence of consistency, support sweeps are one-sided, and
+> EXP-078 found no valid finite ceiling. Section 2 does not define a mathematical
+> connection or prove that regular singularity controls polynomial termination.
+> Section 4 has no explicit map between the two dual spaces. Current decisions:
+> [`strategy-audit-2026-07-25.md`](strategy-audit-2026-07-25.md).
+
 Written on the Opus tier at Felipe's request to rethink the ATTACK, not to sweep.
 Grounded on two established facts of this program:
 - The annihilation lemma (EXP-036): J(m, P^k) = -k L(P^{k-1} m), L the FULL
@@ -14,7 +22,7 @@ claim; each names its cheapest first experiment.
 
 ---
 
-## 0. [REFRAME] The campaign is TWO-SIDED: exclusion and counterexample are one computation
+## 0. [WITHDRAWN REFRAME] The campaign is TWO-SIDED: exclusion and counterexample are one computation
 
 The certificate we hunt is a covector that closes the reduced (72,108) Keller
 system. Read the tower honestly:
@@ -38,7 +46,7 @@ is evidence, not proof, of consistency. Direction 3 below removes this caveat.
 
 ---
 
-## 1. [DIRECTION, highest value] The truncation tower has a COMPUTABLE FINITE CEILING
+## 1. [WITHDRAWN] The truncation tower has a COMPUTABLE FINITE CEILING
 
 The open-ended "degree by degree" sweep hides that the covector, IF it exists,
 exists at BOUNDED degree. In EXP-064's framing the finite covector exists iff
@@ -68,7 +76,7 @@ Worth a parallel computation.
 
 ---
 
-## 2. [HYPOTHESIS] The annihilation lemma is a FLAT CONNECTION; termination is a REGULARITY question
+## 2. [RETIRED AS STATED] The annihilation lemma is a FLAT CONNECTION; termination is a REGULARITY question
 
 J(m, P^k) = -k L(P^{k-1} m) says the Jacobian-bracket-against-P-powers is an
 L-total-derivative: the P^k are horizontal for the operator L up to its image.
@@ -109,13 +117,13 @@ Virasoro/W) decomposition of the ladder module, a clean representation-theoretic
 invariant. It also predicts the LOCATIONS of obstructions (primitive vectors)
 rather than finding them by sweep -> could replace the quadruple+ sweeps.
 
-First experiment [EXP-080, cheap]: test whether the graded operators close into
+First experiment [EXP-080, decided 2026-07-25]: test whether the graded operators close into
 sl2: compute [e, f] on the window basis and check it equals h (the weight
 operator) up to scalars. A yes reorganizes the entire truncation story.
 
 ---
 
-## 4. [DIRECTION] The 3D->2D obstruction transfer, made POSITIVE
+## 4. [RETIRED WITHOUT A TYPED MAP] The 3D->2D obstruction transfer, made POSITIVE
 
 We proved the Alpoge mechanism does not transplant to 2D (rigidity + uniqueness).
 Turn the negative into the covector: the 3D collision uses a nilpotent absorbed
@@ -143,11 +151,13 @@ the semistable reduction of the boundary of a Keller pair).
 
 ---
 
-## Execution order (main session, interleaved with the delegated sweep/C13)
+## Historical execution order, superseded 2026-07-25
 
 1. EXP-078 (the ceiling) FIRST: cheap, and it reframes the entire campaign as a
    finite decision - the single highest information-per-cost item.
-2. EXP-080 (sl2 closure test): cheap; a yes reorganizes everything.
+2. EXP-080 (sl2 closure test): **DECIDED at invariant gate; declared natural
+   triple underdetermined/nonhomogeneous, so commutators were not run.** A future
+   revisit requires an explicit grading-compatible gauge and single shift classes.
 3. EXP-079 (connection singularity type): the deep lead; medium cost.
 4. EXP-081 (3D->2D covector): connects to the published cascade.
 5. Section 5 as a parallel dossier.

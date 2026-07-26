@@ -1,5 +1,11 @@
 # Strategy expansion (2026-07-24, session 47): all paths that could help
 
+> **Historical route inventory.** The 2026-07-25 audit supersedes the execution
+> order and route verdicts below. In particular, EXP-075 is decided by its
+> reproduced index-2662 hit, EXP-093 is cancelled, and the undefined connection language is replaced
+> by an exact certificate-module/chart-cover problem. See
+> [`strategy-audit-2026-07-25.md`](strategy-audit-2026-07-25.md).
+
 Felipe's directive: explore ALL paths and strategies. The map, ranked by
 expected information per unit cost; each candidate becomes a declared
 experiment or a dossier before any claim.
@@ -17,14 +23,16 @@ experiment or a dossier before any claim.
   well-quasi-order (Dickson/Higman style) on chain data under which the
   exclusion certificates are monotone: WQO + monotone exclusion = all-degrees
   theorem. Speculative; a dossier first (literature: tropical/valuation trees).
-- S1c. THE OBSTRUCTION-MOTION LAW: degrees 1/2/3 show obstructions MOVING
-  (diagonal 8-set, then a mixed triple, then nothing through triples).
-  Measure WHERE obstructions live as functions of degree on small analog
-  systems (toy polygons): an empirical law could reveal the generating
-  mechanism and predict whether some finite degree always closes.
+- S1c. THE OBSTRUCTION-SUPPORT RECORD: different restricted searches selected
+  different supports, and the triple sweep found no infeasible support. This does
+  not prove that an obstruction moves, persists, or disappears with degree.
+  Small analogs may still be used to discover candidate support laws, but any
+  general claim needs a completeness theorem for the support family.
 
 ## S2. The (72,108) endgame (current thread, continued)
-- S2a. Quadruple sweep (EXP-075, running). S2b. Constructive GF(p) solve (R2).
+- S2a. Quadruple sweep (EXP-075, now decided by the reproduced index-2662
+  infeasible slice). S2b. Constructive GF(p) solve (R2, now cancelled because
+  the cubic target is empty).
 - S2c. CHART COVERS (R4): formalize the axis-chart certificates (EXP-063/065)
   into a finite cover statement: the missing piece is the gluing condition;
   declare the two-chart toy first.
@@ -55,16 +63,19 @@ experiment or a dossier before any claim.
   chapter + Zenodo republish (authorized). S6c. A methods note on the
   declared-gate discipline (the retraction story) as its own short paper.
 
-Execution order (sessions 47+): S3a and S2a continue now; S1a is the next
-DECLARED experiment after EXP-077 (it is cheap: test the dual annihilation on
-3 other window systems); S5a lands when the quadruple sweep's cost justifies
-it; S4a opens as a dossier in parallel rounds.
+Historical execution order: superseded by the ordered sequence in the
+2026-07-25 strategy audit.
 
-SWEEP ECONOMICS NOTE (2026-07-24): EXP-075 measures ~6.4 s/support: the full
+SWEEP ECONOMICS NOTE (2026-07-24, retained as the retirement rationale):
+EXP-075 measures ~6.4 s/support: the full
 quadruple sweep would take ~18 days. Session 47+ should RESTART it REORDERED
 (supports containing >= 2 of the 8 degree-1 blockers first, ~8k supports,
 ~14 h: the degree-2 hit lived in blocker territory) and pursue S5a (compiled
 GF(p) kernel) before any full-space quadruple commitment.
+
+2026-07-25 decision: do not restart it. Feasible supports cannot establish
+absence of a full covector, and the partial artifact is sufficient to preserve
+the null result.
 
 ## S7. The birational/multiplication structure of the 3D counterexample (from a Tao-ChatGPT exchange, verified 2026-07-24)
 

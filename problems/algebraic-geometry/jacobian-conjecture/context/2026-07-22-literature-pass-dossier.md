@@ -339,6 +339,15 @@ Dubouloz-Palka); "C*-equivariant polynomial endomorphism plane"; "torus equivari
 "quasi-homogeneous Jacobian pair two variables linear"; "weighted homogeneous Keller map
 invertible". No statement covering Gm-equivariant Keller maps of C^2 with mixed weights was found.
 
+**Dated reconciliation, 2026-07-25.** This was an accurate search result when recorded, but it is
+no longer the current novelty verdict. T. Shaska's
+[arXiv:2607.20210v1](https://arxiv.org/abs/2607.20210), submitted 2026-07-22, independently proves
+the full all-signature classification: same-sign actions give triangular automorphisms, a zero
+weight gives affine automorphisms, and opposite-sign actions give linear automorphisms. EXP-010,
+declared 2026-07-21, remains valid on its explicit opposite-sign/zero-weight scope. No priority or
+novelty claim is made. Full reconciliation:
+`context/2026-07-25-graded-keller-reconciliation.md`.
+
 ---
 
 ## Task 5. Minimal-counterexample polygon constraints (the "lower-left staircase" landscape)
@@ -478,7 +487,7 @@ enough computing power" remains prospective).
 | T2: T1 plus lower-weight tail | NOT FOUND | same as T1; GGV Cor 7.2/7.4 (leading forms are powers) |
 | T3: no top edge x*phi(z) at the linear vertex | NOT FOUND as stated; PARTIALLY KNOWN for minimal counterexamples (corner restrictions); operator identity is standard bracket calculus | GGV 1401.1784 endnote [7] bracket computation; GGHV 2204.14178 Prop 4.1-4.2; Appelgate-Onishi JPAA 37 (1985); Nagata 1988/89; Oka Kodai 6 (1983); Cassou-Nogues 2011; Lang-Maslamani JPAA 72 (1991) |
 | T4: vertex x implies P = x + f(y) | PARTIALLY KNOWN (counterexample half essentially in GGV Prop 4.1 + vdE Cor 10.2.21; clean dichotomy not found) | GGV 1401.1784 Prop 4.1 (verbatim "P = mu x + f(y)" alternative); vdE 10.2.21; Makar-Limanov Izv. Math. 85:3 (2021) |
-| T5: Gm-equivariant Keller maps of C^2 linear | NOT FOUND for Gm on C^2; finite-G analog known (Miyanishi); C* analog FAILS on pseudo-planes (Dubouloz-Palka), so C^2 case has content | Miyanishi, Transf. Groups 28 (2023) 951-971; Dubouloz-Palka, Adv. Math. 339 (2018) 248-284; folklore positive-weight case |
+| T5: Gm-equivariant Keller maps of C^2 linear on opposite-sign/one-zero weights | SUPERSEDED 2026-07-25: Shaska arXiv:2607.20210v1 independently proves the full all-signature classification; same-sign maps may be nonlinear triangular automorphisms; no priority claim | Shaska arXiv:2607.20210v1; dated reconciliation dossier; Miyanishi, Transf. Groups 28 (2023) 951-971; Dubouloz-Palka, Adv. Math. 339 (2018) 248-284 |
 | Moh floor (context) | VERIFIED: max <= 100 discarded, full detail only for 64; four exceptional cases = six configurations | Moh Crelle 340 (1983) 140-212; GGHV 2204.14178; GGHV 1708.07936 sec. 6; Heitmann JPAA 64 (1990); Wang TJM 9 (2005) 421-431 |
 | 108 floor (context) | VERIFIED: max >= 125 or (72,108)/(108,72); preprint status | GGHV arXiv:2204.14178 Thm 2.1 |
 | Similarity theorem (context) | VERIFIED: vdE book Thm 10.2.1 form, N^0 polygons, deg > 1 both, origin-centered, ratio deg P : deg Q; primary origin Abhyankar Tata 1977 | vdE Progress in Math. 190 (2000); Lee-Li arXiv:2408.01279 Prop 2.1; Abhyankar TIFR LN 57 (1977) |

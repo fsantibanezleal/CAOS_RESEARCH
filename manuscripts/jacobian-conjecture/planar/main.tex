@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-24\\[2pt]\normalsize Version 0.13}
+\date{2026-07-25\\[2pt]\normalsize Version 0.14}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.13}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.14}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -39,7 +39,7 @@ the Staircase Transport, and the Recalibrated Frontier}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper B of a three-paper record \textperiodcentered\ version 0.13 \textperiodcentered\ 2026-07-24\\
+Paper B of a three-paper record \textperiodcentered\ version 0.14 \textperiodcentered\ 2026-07-25\\
 DOI \href{https://doi.org/10.5281/zenodo.21503367}{10.5281/zenodo.21503367} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -93,8 +93,9 @@ certified on instances; \textbf{[C]} conjecture. Machine-verification is exact s
 arithmetic over $\Q$ or $\Q(i)$; no floats anywhere.
 
 Two structural inputs from the companion are used freely. First, every $\Gm$-equivariant
-Keller map of $\C^2$ is linear (equivariant rigidity, EXP-010), so nothing planar is
-equivariant beyond the affine group. Second, at every weight ray the leading pair of a planar
+Keller map of $\C^2$ is an automorphism; on the opposite-sign/one-zero scope relevant to the
+three-dimensional mechanism it is linear (EXP-010; independently classified for all signatures
+by Shaska \cite{Shaska2026}). Second, at every weight ray the leading pair of a planar
 Keller map is Jacobian-dependent (the tropical bridge, EXP-013), which is the entry point of
 all edge analyses below.
 
@@ -252,8 +253,8 @@ pairing preserved). The measured window law ($-c_N a^N$ pairings with the odd-pr
 $2N - 3$ ratios) is this tower seen through the clearing normalization.
 \end{lemma}
 
-\begin{theorem}[{[MV/D]}; the fifth exclusion, all degrees, primitive-top scope
-(EXP-042/044/046)]\label{thm:t5all}
+\begin{theorem}[{[MV/D]}; all-degree fifth exclusion (EXP-042/044/046)]
+\label{thm:t5all}
 For $u \ge 2$, $v \ge 1$ with $x^u y^v$ primitive ($\gcd(u, v) = 1$) or $d \ge u + v$,
 and any $a \ne 0$, $b$: $P = x + a\,x^u y^v + b\,x^d$ is not a Keller component at ANY
 partner degree. (Base: the cleared certificates of Theorem~\ref{thm:t5}; induction:
@@ -358,10 +359,14 @@ affordable at seconds-to-minutes per certificate.
 
 The lone surviving degree pair below $125$ reduces (Guccione--Guccione--Horruitiner--
 Valqui \cite{GGHV2022}, Prop.~4.3; transcription verified against the LaTeX sources)
-to the existence of a pair with $[P, Q] = x^2$ supported in SMALL polygons: $N(P)$ with
-corners $(0,0), (1,0), (8,14), (8,16), (0,8)$ (61 lattice points) and $N(Q)$ with
-corners $(0,0), (2,1), (12,21), (12,24), (0,12)$ (125 lattice points); the original
-paper's unsolved system was never printed. Machine results to date (EXP-050 through
+to the existence of a pair with $[P, Q] = x^2$ supported in SMALL polygons:
+\[
+\begin{aligned}
+N(P)&:\ (0,0),(1,0),(8,14),(8,16),(0,8) &&\text{(61 lattice points)},\\
+N(Q)&:\ (0,0),(2,1),(12,21),(12,24),(0,12) &&\text{(125 lattice points)}.
+\end{aligned}
+\]
+The original paper's unsolved system was never printed. Machine results to date (EXP-050 through
 EXP-055): sampled shapes at the original degrees and on the reduced polygons are all
 partner-free (seconds per certificate); on the stratum with the forced top edge
 $y^8 (xy - t)^8$ symbolic, every cleared certificate pairs to the CONSTANT $576$
@@ -523,11 +528,13 @@ different structure is not addressed.
 
 \section{Positioning and novelty}\label{sec:positioning}
 
-Per the adversarial novelty pass (same dossier): no prior statement of
-Theorems~\ref{thm:t1}, \ref{thm:t2}, or of the companion's equivariant rigidity theorem was
-found (for the latter, the $C^*$-equivariant analog \emph{fails} on pseudo-planes
-\cite{DuboulozPalka2018}, and the finite-group analog is Miyanishi \cite{Miyanishi2023}, so
-the $\C^2$ statement has content). Theorem~\ref{thm:t3} was not found as stated, but its
+Per the adversarial novelty pass (same dossier), no prior statement of
+Theorems~\ref{thm:t1} or \ref{thm:t2} was found. The novelty record for the companion's
+equivariant rigidity theorem is updated: Shaska \cite{Shaska2026}, submitted on 2026-07-22
+after EXP-010 was declared, independently proves the full all-signature classification.
+Same-sign actions may give nonlinear triangular automorphisms; opposite-sign actions give
+the linear case of EXP-010. No priority or novelty claim is made for that classification.
+Theorem~\ref{thm:t3} was not found as stated, but its
 operator identity is within the standard bracket calculus \cite{Joseph1975, GGV2017}: the
 statement appears new, the method is classical. Theorem~\ref{thm:t4}'s counterexample half
 is essentially contained in \cite{GGV2017} (Prop.~4.1) with van den Essen's subrectangular
@@ -581,6 +588,8 @@ Conjecture}, Progress in Mathematics 190, Birkh\"auser, 2000.
 \emph{Transform. Groups} \textbf{28} (2023), 951--971.
 \bibitem{DuboulozPalka2018} A. Dubouloz, K. Palka, The Jacobian Conjecture fails for
 pseudo-planes, \emph{Adv. Math.} \textbf{339} (2018), 248--284.
+\bibitem{Shaska2026} T. Shaska, Graded Keller maps and the Jacobian Conjecture,
+arXiv:2607.20210v1, 2026.
 \end{thebibliography}
 
 \end{document}

@@ -1,33 +1,112 @@
-# Jacobian conjecture - problem plan
+# Jacobian conjecture: active problem plan
 
-Opened 2026-07-20. Area: algebraic-geometry. State: exploring.
-Context dossiers: `problems/algebraic-geometry/jacobian-conjecture/context/`.
+Opened 2026-07-20. Area: algebraic geometry. State: exploring. Last strategic audit:
+2026-07-25.
+
+This is the current plan. Earlier route proposals remain evidence of the program's development,
+but the controlling decisions are in
+[`strategy-audit-2026-07-25.md`](strategy-audit-2026-07-25.md).
 
 ## Goal
 
-Understand WHY the Jacobian conjecture is false for N >= 3 (Alpöge/Fable counterexample,
-2026-07-19), own the generalization (families of counterexamples, invariants, minimality), and
-push what transfers to the still-open N = 2 case. Honest deliverables: exactly verified results,
-reproducible experiments, sharpened conjectures, and null results where the mathematics says no.
+Maintain the exact record around the counterexamples in dimensions at least three, and pursue
+rigorous, source-complete progress on the still-open planar Jacobian conjecture. The immediate
+planar target is the GGHV reduced $(72,108)$ case, without treating sampled inconsistency,
+support-restricted failure, or absence of a finite certificate as a proof.
 
-## Phases
+## Evidence rules for the planar program
 
-| Phase | Content | State |
+1. A verified covector can prove that the specific linearized system it certifies is
+   inconsistent.
+2. Failure to find a covector is not evidence that a Keller completion exists unless a
+   necessity theorem has first been proved.
+3. Support sweeps are one-sided. One infeasible support can exclude a certificate degree, but
+   all tested supports being feasible proves nothing positive.
+4. Results for the reduced bracket $[P,Q]=x^2$ do not inherit theorems stated for Keller pairs
+   $[f,g]=1$ without an explicit bridge.
+5. Parameter samples, axis charts, and forced-edge families do not establish simultaneous
+   symbolic coverage of the 51 free interior coefficients.
+
+## Active phases
+
+| Phase | Work | State and gate |
 |---|---|---|
-| JC-P0 Foundation | EXP-001 exact validation of the counterexample; context transcription; reference library. | done 2026-07-20 (EXP-001 confirmed) |
-| JC-P1 Structure and generalization | Reverse-engineer the map's structure ourselves, exactly: scaling symmetry, z-linearity, invariant-space reduction, fiber identity; then build and verify a GENERAL seed-family constructor (Keller property, fiber degrees, new instances beyond the announced one). | active |
-| JC-P2 Geometry of the failure | Exact asymptotic variety (non-properness locus); sheet structure at infinity; real-slice topology; web viz artifacts (GPU sampling). | pending |
-| JC-P3 Minimality | Is fiber degree 3 / degree vector (7, 6, 4) minimal? Weighted-ansatz enumeration with symbolic pruning; GPU coefficient search on surviving boxes. | pending |
-| JC-P4 Cascade | Push through Bass-Connell-Wright / Druzkowski to explicit cubic forms; verify the consequence chain (Mathieu SU(3), Gaussian moments, Zhao vanishing, Image) from primary sources. | pending |
-| JC-P5 The 2D frontier | Formalize the N >= 3 obstruction (weight-vector argument); 2-variable transplant attempts; small-degree 2D Keller searches; properness/asymptotic-variety experiments; deep-research pass on JC(2) primary literature. | active (in parallel with P1, per Felipe's 2026-07-20 directive to focus on generalization + 2D) |
-| JC-P6 Consolidate + publish | Wiki, SVGs, web page, manuscript chapter, diffusion. | rolling (manuscript updated per phase) |
+| JC-A | Preserve and publish the exact dimension at least three record | rolling; no current compute |
+| JC-B | Complete the $[125,150]$ primary-source frontier reconciliation | active; source work only until the missing Heitmann/GGV table mappings are exact |
+| JC-C | Test modern Newton and approximate-root restrictions against the GGHV reduction | next; first prove or refute applicability across $[f,g]=1 \to [P,Q]=x^2$ |
+| JC-D | Reformulate universal inconsistency as a certificate-module or chart-cover problem | next; begin on a small exact analog with specialization controls |
+| JC-E | Degree-three certificate decision | done by EXP-075; one exact four-parameter slice is infeasible, so no global cubic covector exists |
+| JC-F | Global geometric routes: fibres, properness, and parameter spaces | hold; resume only after a rigorous bridge to the reduced system is stated |
+| JC-G | Manuscripts, wiki, data, and public record | rolling; update only from adjudicated results |
 
-## Strategy notes
+## Ordered next work
 
-- The structural claims in circulation (weighted-lift family, seed polynomials, non-properness
-  mechanism) come from a secondary web analysis; JC-P1 does NOT cite it as ground truth, it
-  re-derives everything independently and exactly. Where our derivation disagrees, ours (with its
-  persisted certificate) wins the record.
-- If the known hypotheses run dry, the mandate (Felipe, 2026-07-20) is to explore novel
-  approaches and keep experimenting: candidate novel directions are kept in
-  `program/jacobian-conjecture/backlog.md` and promoted to experiments as slots open.
+1. Finish the cheap source frontier:
+   - map C10/C11 to Heitmann Theorem 2.25;
+   - map C19/C20 to the published $B_1$ table;
+   - derive the 16 unprinted $A'_0$ forcings;
+   - preserve C01/C04 as open unless a cited result actually decides them.
+2. Open a source-first applicability experiment for Makar-Limanov and Trakhtenberg's
+   Newton-resolution conditions. The forced reduced polynomial
+   $P_T=y^8(xy-1)^8+x$ has a shape that would be highly restrictive for a genuine Keller
+   component, but it satisfies the reduced equation $[P,Q]=x^2$. The deliverable is the exact
+   transformation law, not a visual polygon comparison.
+3. Perform the same applicability pass for Lee-Li inner-polynomial/inner-vertex constraints
+   and the GGHV approximate-root/intersection-number machinery.
+4. Define the universal certificate module over
+   $\mathbb{Q}[\varepsilon_1,\ldots,\varepsilon_{51}]$. Test polynomial syzygies, localized
+   certificates, Fitting ideals, and finite chart covers on a small analog before scaling.
+5. Cancel EXP-093. EXP-075's exact support at reordered index 2662 proves that no global
+   degree-three polynomial covector exists, so the proposed four-million-unknown solve has no
+   target.
+
+## Routes not currently authorized for compute
+
+- EXP-075 continuation: stop after the reproduced decisive hit at index 2662. The remaining
+  247,237 supports cannot change the degree-three exclusion.
+- EXP-079 as a flat or regular-singular connection: retire the formulation. No connection,
+  singular point, or implication from regularity to polynomial termination was defined.
+- EXP-081 collision-covector projection: retire unless an explicit map between the two dual
+  spaces is constructed.
+- EXP-092 LND/line-fibre route: hold. For the reduced pair, $D_P(Q)=[P,Q]=x^2$, not a unit
+  slice, so the Keller-pair argument does not transfer directly.
+- EXP-093 full degree-three solve: cancel. EXP-075 proves its target is empty.
+
+## Cancelled EXP-093 scale facts
+
+There are 51 perturbation parameters and a 165-dimensional gauge space.
+
+- Through parameter degree two:
+  $(\binom{51}{1}+\binom{52}{2})165=227{,}205$ certificate unknowns.
+- Through parameter degree three:
+  $(\binom{51}{1}+\binom{52}{2}+\binom{53}{3})165=4{,}092{,}495$ certificate unknowns.
+- The homogeneous order-four target alone has
+  $\binom{54}{4}\cdot125=39{,}531{,}375$ scalar conditions before exploiting sparsity,
+  symmetry, or elimination.
+
+The earlier shorthand “227k+ unknowns” described the degree-two scale, not the proposed
+degree-three system. The size audit made a pilot necessary; the subsequently recovered and
+reproduced EXP-075 hit makes even that pilot unnecessary.
+
+## Stop and go rules
+
+- Prefer a source theorem or distinguishing invariant before coefficient computation.
+- Do not start a run expected to exceed five minutes without a declared experiment, smoke test,
+  checkpoint path, cost estimate, and stop condition.
+- Any proposed transfer from a true Keller pair to the reduced GGHV pair must display the map and
+  verify which hypotheses survive.
+- Do not launch EXP-093. Any future degree-four or higher construction needs a new declared
+  resource and proof-value gate.
+- A claimed $(72,108)$ exclusion still requires coverage of every forced branch and every free
+  interior coefficient, followed by independent verification of the GGHV assembly.
+
+## Exploration cadence
+
+The systematic exclusion spine remains active with three complementary lenses:
+
+- Newton/valuation structure at infinity;
+- commutative-algebra certificate modules and stratified covers;
+- global geometry and parameter-space components.
+
+Every round records which assumption was tested, what would falsify the route, and whether the
+result can prove exclusion, can only filter candidates, or is exploratory.
