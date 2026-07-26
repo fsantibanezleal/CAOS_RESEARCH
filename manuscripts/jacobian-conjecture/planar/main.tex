@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-25\\[2pt]\normalsize Version 0.14}
+\date{2026-07-25\\[2pt]\normalsize Version 0.15}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.14}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.15}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -39,7 +39,7 @@ the Staircase Transport, and the Recalibrated Frontier}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper B of a three-paper record \textperiodcentered\ version 0.14 \textperiodcentered\ 2026-07-25\\
+Paper B of a three-paper record \textperiodcentered\ version 0.15 \textperiodcentered\ 2026-07-25\\
 DOI \href{https://doi.org/10.5281/zenodo.21503367}{10.5281/zenodo.21503367} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -69,6 +69,10 @@ honestly: our composite-gcd certificates replicate literature-covered territory 
 floor is $\gcd \le 8$, primes, $2p$, then Heitmann's $B \ge 16$ and the
 Guccione--Guccione--Valqui dichotomy $B = 16$ or $B > 20$), and the live frontier is the
 $B = 16$ normal form together with the single surviving degree pair $(72, 108)$ below $125$.
+For that open pair, an exact primary-source instantiation gives two original-pair rejection
+gates: seven possible northeastern vertices for a nonzero inner polynomial, and
+$\deg_x\operatorname{Res}_y(P,Q)=21$ with an $84+24$ major/minor root partition; neither
+gate alone excludes the pair.
 A new multiplication formula for $x^m$-anchored edges shows the $B = 16$ leading form cannot
 produce the Keller constant on its top edge for $m \ge 2$: that case, too, is a staircase
 transport. All computations are exact and reproducible; every claim is labeled machine-verified
@@ -481,6 +485,58 @@ irregular: no such bound, matching the measured non-termination of the pinned
 ladder). Whether this decides $(72,108)$ in one stroke is the current deep
 question; it is stated as a program item, not a result.
 
+\subsection*{Original-pair source gates for the open chain (EXP-095/096; validated 2026-07-25)}
+
+The reduced Proposition~4.3 system is a Laurent pair with bracket $x^2$, so
+theorems requiring a polynomial Keller pair with bracket one cannot be applied
+to it directly. Returning instead to the hypothetical original pair gives an
+exact applicability bridge [MV]. Its degree-$72$ component has
+\[
+  2A_0=(16,56),\qquad 2A'_0=(2,0),\qquad
+  2A_1=(11/2,14),
+\]
+which is precisely the first retained $D=72$ branch in the Newton-resolution
+list of Makar-Limanov--Trakhtenberg \cite{MakarLimanovTrakhtenberg2024}.
+Thus that independent classification retains the GGHV branch; it does not
+exclude it.
+
+Two sharper necessary conditions do result. First, instantiating
+Lee--Li's inner-polynomial region \cite{LeeLi2024} with
+\[
+ (a,b,m,n)=(2,3,16,56),\qquad \mathfrak m=\frac{139}{39},
+\]
+gives [MV] exactly seven possible northeastern vertices whenever the inner or
+innermost polynomial is nonzero:
+\[
+ (1,3),(2,7),(3,10),(4,14),(5,17),(6,21),(7,24).
+\]
+The zero-inner-polynomial alternative remains. Nor does the stronger diagonal
+corollary apply, since
+\[
+ \frac ba=\frac32\not>\frac{n-m}{a}-1=19.
+\]
+
+Second, the approximate-root formulas of
+Guccione--Guccione--Horruitiner--Valqui \cite{GGHVApproxRoots} become an exact
+intersection invariant [MV]. For the complete chain
+\[
+ (m,n)=(3,2),\qquad A_1=(11/4,7),\qquad k=1,\qquad l=4,
+\]
+the forced fourth-power edge supplies four final major classes. Each has
+$|D_\tau^P|=3\cdot7=21$ and $\lambda_\tau^Q=1/4$, hence
+\[
+ I(P,Q)=\deg_x\operatorname{Res}_y(P,Q)
+       =4\cdot21\cdot\frac14=21.
+\]
+The degree-$108$ component therefore has $84$ major and $24$ minor roots.
+These are original-pair rejection gates independent of sampling the $51$
+interior coefficients of the reduced system. They do not prove that any of
+the seven vertices is realizable, transport either invariant through the
+Laurent normalization, close $(72,108)$, or raise the degree floor. In
+particular, the approximate-root paper proves only an inequality for the
+minor-root expression where equality would be needed for the proposed family
+exclusion; that route is not used here.
+
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the
 published literature: the closing remark of \cite{GGV2017} states that the corner
@@ -544,15 +600,18 @@ audit trail (including its open verification items) persisted in the repository.
 
 \section{Program}
 
-Priorities, from the standing routes evaluation: (1) close the proper-power case of
-Theorem~\ref{thm:t5all} (derive the odd-resonance kill measured in EXP-046), then extend
-the tower induction to general above-weight tails and longer staircases; (2) transcribe
-the $(72, 108)$ shape data and the beyond-150 $B = 16$ shapes and run the filtered
-sweeps ($2$ to $4$ seconds per certificate at the validated scale); (3) the properness
-reformulation ($JC(2)$ holds iff every planar Keller map has empty Jelonek set; exact
-certificates shipped, EXP-014) as a cross-check instrument. The reproducibility
-contract: every [MV] claim has a persisted script and output; hypotheses are declared
-before runs; refuted predictions (three among the experiments cited here) stay in the
+Priorities, from the standing routes evaluation: (1) attempt a low-cost,
+typed transport of the seven inner-vertex alternatives or the intersection
+number $21$ into the $51$ reduced coefficients, stopping if the normalization
+does not preserve the chosen invariant; (2) compute the small
+certificate-module/chart cover---left syzygies of $M$, their pairing ideal
+with the right-hand side, and localized certificates---rather than extending
+one-sided support sweeps; (3) pursue Newton resolution only after deriving a
+condition beyond the already-retained first $D=72$ branch; and (4) retain the
+properness reformulation ($JC(2)$ holds iff every planar Keller map has empty
+Jelonek set; exact certificates shipped, EXP-014) as a cross-check instrument.
+The reproducibility contract: every [MV] claim has a persisted script and
+output; hypotheses are declared before runs; refuted predictions remain in the
 record.
 
 \begin{thebibliography}{99}
@@ -580,6 +639,13 @@ algorithms related to the Jacobian Conjecture, arXiv:1708.07936.
 \bibitem{GGHV2022} J. A. Guccione, J. J. Guccione, R. Horruitiner, C. Valqui, Increasing
 the degree of a possible counterexample to the Jacobian Conjecture from 100 to 108,
 arXiv:2204.14178.
+\bibitem{GGHVApproxRoots} J. A. Guccione, J. J. Guccione, R. Horruitiner, C. Valqui,
+Approximate roots and intersection numbers, arXiv:1708.09367v2.
+\bibitem{LeeLi2024} K. Lee, L. Li, On the two-dimensional Jacobian conjecture:
+Magnus' formula revisited IV, arXiv:2408.01279.
+\bibitem{MakarLimanovTrakhtenberg2024} L. Makar-Limanov, L. Trakhtenberg,
+Properties of a Jacobian mate, MPIM Preprint 2024 (33);
+\href{https://doi.org/10.1007/s40863-025-00520-4}{doi:10.1007/s40863-025-00520-4}.
 \bibitem{Joseph1975} A. Joseph, The Weyl algebra: semisimple and nilpotent elements,
 \emph{Amer. J. Math.} \textbf{97} (1975), 597--615.
 \bibitem{vdEssen2000} A. van den Essen, \emph{Polynomial Automorphisms and the Jacobian
