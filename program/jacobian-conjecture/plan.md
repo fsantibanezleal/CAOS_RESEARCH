@@ -63,6 +63,9 @@ support-restricted failure, or absence of a finite certificate as a proof.
    - next compute the 125-minor determinantal divisor over
      \(\mathbb{Q}[u,u^{-1}]\), using modular Smith data and rational
      reconstruction instead of a dense rank-121 determinant.
+   - EXP-103 is the declared implementation: recover adaptive maximal minors
+     by NTT evaluation/interpolation, prove exact endpoint degrees by assignment
+     bounds, and use a gcd-one certificate over two primes.
 5. Continue the independent [125,150] frontier task:
    - preserve C10/C11/C19/C20 as unresolved by GGV2 Remark 2.32;
    - derive the 16 unprinted $A'_0$ values through the declared chain algorithm;
