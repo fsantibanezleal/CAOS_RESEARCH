@@ -25,6 +25,17 @@ classification therefore reproduces the GGHV open case and gives no
 exclusion. The next source gate is Lee--Li plus the GGHV
 approximate-root/intersection machinery.
 
+## Amendment after EXP-096
+
+The Lee--Li and approximate-root gate is now instantiated. The original
+degree-72 component has only seven possible nonzero inner vertices:
+\((1,3),(2,7),(3,10),(4,14),(5,17),(6,21),(7,24)\).
+The original pair also has exact intersection invariant
+\(\deg_x\operatorname{Res}_y(P,Q)=21\), with 84 major and 24 minor roots.
+These are independent reconstruction filters. The minor-root formula supplies
+only an inequality, so it cannot deliver the family exclusions for which the
+source route was originally proposed.
+
 ## Executive decision
 
 Redirect the immediate campaign. EXP-075's dormant hit was recovered and reproduced during this
@@ -132,8 +143,8 @@ Consequences recorded before the decisive EXP-075 recovery:
 |---|---|---|---|
 | EXP-084/085/094 frontier source reconciliation | PARTIAL, FOUR CANDIDATES RESOLVED NEGATIVELY | exact classification progress independent of the certificate tower | derive the 16 unprinted \(A'_0\) values only as a separate frontier task |
 | Makar-Limanov/Trakhtenberg Newton resolution | DONE AT PUBLISHED-CANDIDATE SCOPE | applies to the original degree-72 component and independently reproduces the open chain | pursue only a new restriction beyond the retained first \(D=72\) branch |
-| Lee-Li inner-polynomial and inner-vertex restrictions | PURSUE NOW | cheap support restrictions or an incompatibility | instantiate every hypothesis on the GGHV transformation |
-| GGHV approximate roots and intersection numbers | PURSUE NOW | independent arithmetic constraints and audit of the current polygon assembly | source-complete derivation on the $(8,28),(3,2)$ case |
+| Lee-Li inner-polynomial and inner-vertex restrictions | DONE AT ORIGINAL-PAIR SCOPE | seven possible nonzero inner vertices for the degree-72 component | transport to reduced coefficients only with an explicit transformation |
+| GGHV approximate roots and intersection numbers | DONE AT MAJOR-ROOT SCOPE | exact intersection number 21 and 84+24 root partition | minor-root exclusion retired unless its inequality is strengthened |
 | Certificate module and finite chart cover | PURSUE, SMALL ANALOG FIRST | a rigorous all-parameter inconsistency proof using one or several localized certificates | define the module, pairing ideal, specialization law, and toy control |
 | EXP-093 cubic solve | CANCEL | target ruled out by EXP-075 | preserve the size audit; no implementation |
 | Jelonek 2026 component theorem | HOLD AS FRAME | organizes bounded-degree Keller maps into automorphism or generic-counterexample components | identify a component-level object before claiming relevance to the reduced pair |
@@ -224,7 +235,8 @@ $[P,Q]=x^2$ family.
 1. Source audit round: finish EXP-084/085 and the missing table/family identifications.
 2. EXP-095 completed the Newton-resolution applicability experiment; the open
    case is the first retained \(D=72\) branch.
-3. Declare a combined Lee--Li/approximate-root applicability experiment.
+3. EXP-096 completed the combined Lee--Li/approximate-root experiment and
+   produced the seven-point and intersection-\(21\) gates.
 4. Declare a small certificate-module/chart-cover analog, with known consistent and inconsistent
    controls.
 5. Re-rank. The live choices are a chart-cover/module computation, a source-derived restriction,

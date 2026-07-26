@@ -1,0 +1,107 @@
+{
+  "approximate_roots": {
+    "f1_smallest_member_control": 9,
+    "intersection_number_I_P_Q": 21,
+    "lambda_q_per_class": "1/4",
+    "major_class_count": 4,
+    "major_root_count": 84,
+    "minor_root_count": 24,
+    "roots_per_major_class": 21,
+    "total_root_count": 108
+  },
+  "arithmetic": "exact integer and Fraction arithmetic",
+  "decision": "Every nonzero Lee-Li inner vertex for the original degree-72 component lies in a seven-point set, and the open GGHV chain has exact resultant intersection number I(P,Q)=21.",
+  "experiment": "EXP-096",
+  "lee_li": {
+    "candidate_count": 7,
+    "controls": {
+      "above_diagonal_negative": false,
+      "below_narrow_strip_negative": false,
+      "diagonal_positive": true,
+      "height_boundary_negative": false
+    },
+    "diagonal_candidates": [
+      [
+        2,
+        7
+      ],
+      [
+        4,
+        14
+      ],
+      [
+        6,
+        21
+      ]
+    ],
+    "diagonal_corollary_threshold": "19",
+    "nonzero_inner_vertex_candidates": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        10
+      ],
+      [
+        4,
+        14
+      ],
+      [
+        5,
+        17
+      ],
+      [
+        6,
+        21
+      ],
+      [
+        7,
+        24
+      ]
+    ],
+    "off_diagonal_candidates": [
+      [
+        1,
+        3
+      ],
+      [
+        3,
+        10
+      ],
+      [
+        5,
+        17
+      ],
+      [
+        7,
+        24
+      ]
+    ],
+    "parameters": {
+      "a": 2,
+      "b": 3,
+      "m": 16,
+      "n": 56
+    },
+    "ratio_b_over_a": "3/2",
+    "region_slope": "139/39",
+    "stronger_diagonal_corollary_applies": false
+  },
+  "non_claims": [
+    "The seven inner-vertex candidates are not proved realizable.",
+    "The open chain is not excluded.",
+    "No planar counterexample is constructed.",
+    "The planar degree floor is not raised."
+  ],
+  "uses": [
+    "Reject any reconstructed original pair whose inner vertex is outside the seven-point set.",
+    "Reject any reconstructed original pair whose resultant has x-degree other than 21.",
+    "Use the 84 major plus 24 minor root partition as a consistency gate."
+  ]
+}

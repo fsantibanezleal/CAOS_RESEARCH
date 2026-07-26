@@ -78,14 +78,24 @@ polygon through the complete GGHV normalization.
 
 ## Lee and Li: inner polynomials
 
-- Authors: Nguyen Van Chau Lee and Jie-Tai Yu Li.
+- Authors: Kyungyong Lee and Li Li.
 - arXiv: https://arxiv.org/abs/2408.01279
 - Accessed: 2026-07-25.
+- Reviewed PDF SHA-256:
+  `4A9E77064137C46F4F202206645D00DC0569A8985DECC28D66A93847CC9140D6`.
 
-Verified at abstract/source-discovery scope: the work supplies inner-polynomial and inner-vertex
-restrictions intended to constrain polynomial pairs with constant Jacobian. The current program
-has cited the route but has not instantiated all hypotheses on the $(72,108)$ normalization.
-Status: SOURCE-COMPLETE READING REQUIRED before use.
+EXP-096 completed the source reading and instantiated Theorem 5.8 and
+Corollary 5.10 on the original degree-72 component. With
+\((a,b,m,n)=(2,3,16,56)\), every nonzero inner or innermost vertex lies in
+
+\[
+\{(1,3),(2,7),(3,10),(4,14),(5,17),(6,21),(7,24)\}.
+\]
+
+The zero inner-polynomial alternative remains. Corollary 5.11 does not force
+the diagonal because \(3/2\not>19\). These facts apply after polynomial
+rectangularization of the original pair, not directly to the final Laurent
+pair.
 
 ## Guccione, Guccione, Horruitiner, and Valqui: the $(72,108)$ reduction
 
@@ -98,13 +108,24 @@ bracket one unless the source reduction itself transports the relevant invariant
 
 ## Approximate roots and intersection numbers
 
-- Primary source: Guccione, Guccione, and Valqui.
+- Primary source: Guccione, Guccione, Horruitiner, and Valqui.
 - arXiv: https://arxiv.org/abs/1708.09367
 - Accessed: 2026-07-25.
+- Reviewed v2 PDF SHA-256:
+  `331FE6361ED98EC31795CC5F42FFC0A7AF6AE70510FCDF78CCE9672CAD08C3F1`.
 
-Status: identified as a high-value source route. The formulas may constrain the same degree and
-polygon data independently of the certificate ladder. They have not yet been instantiated on the
-51-parameter reduced family, so no conclusion is recorded.
+EXP-096 instantiated Proposition 3.21 and Theorem 3.15 on the open chain.
+Four major classes each have \(3\cdot7=21\) roots and
+\(\lambda_\tau^Q=1/4\), so
+
+\[
+I(P,Q)=\deg_x\operatorname{Res}_y(P,Q)=4\cdot21/4=21.
+\]
+
+The degree-108 component partitions into 84 major and 24 minor roots. This is
+an exact original-pair rejection gate. The paper's hoped-for minor-root
+exclusion does not follow: it proves an inequality where the earlier argument
+required equality.
 
 ## Jelonek: bounded-degree parameter spaces
 

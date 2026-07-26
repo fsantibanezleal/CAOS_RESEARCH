@@ -103,3 +103,11 @@
   retained \(D=72\) branch in Makar-Limanov--Trakhtenberg. No exclusion or
   floor raise follows. Next: Lee--Li plus GGHV approximate-root/intersection
   applicability, then the small certificate-module/chart-cover control.
+- **2026-07-25 EXP-096:** the next source gate yields two exact necessary
+  invariants. A nonzero Lee--Li inner or innermost vertex of the original
+  degree-72 component is one of seven points from \((1,3)\) through
+  \((7,24)\). The original pair also satisfies
+  \(\deg_x\operatorname{Res}_y(P,Q)=21\), with 84 major and 24 minor roots.
+  The minor-root source formula is only an inequality and cannot perform the
+  hoped-for family exclusions. Next: attempt low-cost transport of these gates
+  to the reduced coefficients; otherwise begin the certificate-module control.

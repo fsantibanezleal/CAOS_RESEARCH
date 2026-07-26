@@ -23,6 +23,9 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
   Keller component, not directly to the final Laurent pair. The component
   exactly matches the first retained Makar-Limanov--Trakhtenberg \(D=72\)
   branch, so no exclusion follows.
+- EXP-096 gives the first new quantitative source invariants for the open
+  chain: seven possible nonzero inner vertices, exact intersection number
+  \(21\), and an \(84+24\) major/minor root partition.
 - Controlling strategy:
   [`strategy-audit-2026-07-25.md`](strategy-audit-2026-07-25.md).
 - Source audit:
@@ -102,11 +105,15 @@ scalar conditions before exploiting sparsity.
   rejected at the final Laurent bracket-\(x^2\) stage. The exact open-component
   signature \((72,(16,56),(2,0),(11/2,14))\) is the first retained Newton
   \(D=72\) branch. This is source consistency, not an exclusion.
+- EXP-096: the original degree-72 component has seven possible nonzero
+  Lee--Li inner vertices. The original pair satisfies
+  \(\deg_x\operatorname{Res}_y(P,Q)=21\), with 84 major and 24 minor roots.
+  These are necessary rejection gates; the open chain remains unresolved.
 
 ## 4. In flight
 
 - No Jacobian experiment process is active.
-- EXP-095 is complete. Its exact crosswalk, result artifact, verdict, source
+- EXP-096 is complete. Its exact source instantiation, result artifact, verdict, source
   amendments, and derived-state updates are persisted on the current branch.
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
@@ -119,8 +126,9 @@ scalar conditions before exploiting sparsity.
 
 ## 5. Next actions, in order
 
-1. Declare a Lee--Li plus GGHV approximate-root/intersection applicability
-   experiment on the original-to-reduced transformation.
+1. Attempt a low-cost exact transport of the seven inner vertices or
+   intersection number \(21\) into the 51 reduced coefficients. Stop if the
+   transformation does not preserve a typed invariant.
 2. Pursue further Newton resolution only if a new condition is derived beyond
    the already-retained first \(D=72\) branch; do not repeat direct comparisons
    with \(P_T\).
