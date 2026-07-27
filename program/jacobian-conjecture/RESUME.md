@@ -1,6 +1,6 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-07-26 after EXP-108's exact three-coefficient slice cover. This is the first-read
+Updated 2026-07-26 after EXP-110's full-family generic-rank measurement. This is the first-read
 navigation page. Primary artifacts and experiment verdicts remain the evidence.
 
 ## 1. State in one screen
@@ -58,6 +58,22 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
   to a degree-13 polynomial \(H(y)\) coprime to the exact irreducible
   degree-12 \(Q(y)\), with a persisted integer Bezout identity. Three maximal
   minors therefore exclude the declared \((0,1)/(1,7)/(0,7)\) slice.
+- EXP-110 measures the FULL 51-parameter family directly instead of a slice.
+  At the pinned point and at three independent random rational points the profile
+  is identical: rank(M) = 124, rank([M|b]) = 125, left kernel 165, exactly one
+  kernel direction pairing nonzero with the target. So the reduced system is
+  INCONSISTENT AT GENERIC PARAMETERS, not only at the pinned point, and the rank
+  deficiency is a property of the family. This does not exhibit a uniform
+  polynomial covector (EXP-075 excludes degree <= 3) and does not close (72,108).
+- PLAN REDIRECT (EXP-110): the slice-by-slice chart programme cannot terminate,
+  since C(51,3) = 20,825 and C(51,4) = 249,900 slices each cost hours of exact
+  elimination with fiber degrees growing per added coefficient. EXP-109 and its
+  successors are DEMOTED. The primary route is now the uniform statement: prove
+  that every maximal 125x125 minor of M(eps) vanishes identically while some
+  125x125 minor of [M|b] does not. That is one statement about identical
+  vanishing of explicit polynomials in all 51 parameters at once, testable by
+  randomized identity testing and then certified exactly on the surviving
+  support.
 - Controlling strategy:
   [`strategy-audit-2026-07-25.md`](strategy-audit-2026-07-25.md).
 - Source audit:
