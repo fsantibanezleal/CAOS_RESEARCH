@@ -1292,4 +1292,5 @@
 - Paper B v0.20 transcribes the corrected rank target and the exact
   36-core/weighted-factor reduction. Its two-pass 15-page PDF and visual QA
   passed; the immutable Zenodo version DOI is
-  `10.5281/zenodo.21694807`.
+  `10.5281/zenodo.21694807`. PR #92 merged the round into `develop` at
+  `9e039e1`.

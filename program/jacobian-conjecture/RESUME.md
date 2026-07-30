@@ -248,8 +248,9 @@ scalar conditions before exploiting sparsity.
 - Paper B v0.20, including EXP-111 through EXP-114, is published at
   `10.5281/zenodo.21694807` under concept DOI
   `10.5281/zenodo.21503367`.
-- No experiment process is active. The current research branch awaits its
-  integration PR to `develop`.
+- EXP-110 through EXP-114 and Paper B v0.20 were merged into `develop` by
+  PR `#92` at `9e039e1`.
+- No experiment process is active.
 - The management mirror is updated directly on its canonical `develop`
   checkout. Do not create a management worktree or task branch.
 
