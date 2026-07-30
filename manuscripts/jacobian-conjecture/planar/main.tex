@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-29\\[2pt]\normalsize Version 0.22}
+\date{2026-07-30\\[2pt]\normalsize Version 0.23}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.22}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.23}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -39,7 +39,7 @@ the Staircase Transport, and the Recalibrated Frontier}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper B of a three-paper record \textperiodcentered\ version 0.22 \textperiodcentered\ 2026-07-29\\
+Paper B of a three-paper record \textperiodcentered\ version 0.23 \textperiodcentered\ 2026-07-30\\
 DOI \href{https://doi.org/10.5281/zenodo.21503367}{10.5281/zenodo.21503367} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -96,9 +96,13 @@ weighted factor, and five binomials; a second is a nonzero scalar times
 complete quotient boundary. On \(d\ne0\), a first alternative chart reduces
 each selected component \(G,L,Q\) to a finite intersection. A third exact
 determinant factors as \(X^{30}LQR\), for \(X=A^3\), and exact component
-ideals close \(G\). The \(L\) and \(Q\) common residuals remain finite. These
-are strict chart results, not closure of the full \(T_B\) restriction or the
-full family.
+ideals close \(G\). A row basis selected independently on the finite \(L\)
+and \(Q\) residuals is in fact shared. Its 23-term determinant descends as
+\(A^{87}R(A^3,B)\); exact unit-ideal certificates close both residuals.
+Together with the quotient boundary this closes the complete
+three-parameter \(T_B\) restriction. This is still a strict slice result,
+not closure of the 24-parameter core, the full family, \((72,108)\), or
+\(JC(2)\).
 A new multiplication formula for $x^m$-anchored edges shows the $B = 16$ leading form cannot
 produce the Keller constant on its top edge for $m \ge 2$: that case, too, is a staircase
 transport. All computations are exact and reproducible; every claim is labeled machine-verified
@@ -899,7 +903,7 @@ Factorwise exact Groebner calculations give
 \]
 Therefore the three charts cover the complete \(G\) component [D].
 
-The corresponding ideals on \(L\) and \(Q\) are nonunit but
+The corresponding EXP-120 ideals on \(L\) and \(Q\) are nonunit but
 zero-dimensional. The \(L\) lexicographic eliminant has degree 108 in \(B\)
 and squarefree degree 73. For \(Q\), a six-element graded-lex basis proves
 zero-dimensionality; the optional FGLM conversion reached its declared
@@ -908,10 +912,47 @@ zero-dimensionality; the optional FGLM conversion reached its declared
 remaining component. The next exact charts must be selected directly on
 those finite residual schemes.
 
-Together, EXP-118--120 close the \(d=0\) quotient boundary and the \(G\)
-open component, but not the \(L/Q\) finite residuals. They do not close the
-full \(T_B\) restriction, the 24-parameter core, the full 51-parameter
-family, \((72,108)\), the planar degree floor, or \(JC(2)\).
+EXP-121 performs that selection [MV]. At \(p=1013\), thirteen affine points
+of the \(L\) residual have coefficient/augmented rank profile \(124/125\);
+at \(p=1033\), eighteen points of the \(Q\) residual have the same profile.
+Deterministic row extraction on the two components returns the same
+125-row basis, although it differs from the pinned basis by 68 rows. Its
+rational anchor is \((A,B,d)=(1,0,1)\), its largest cyclic block has size
+26, and five direct 125-by-125 controls agree with the block product. The
+exact determinant has total degree 108 and 23 monomials:
+\[
+ \Delta_{\mathrm{fin}}(A,B)=A^{87}R_{\mathrm{fin}}(A^3,B),
+ \qquad
+ \deg_XR_{\mathrm{fin}}=5,\quad
+ \deg_BR_{\mathrm{fin}}=18.
+\]
+
+For \(L\), the exact graded-reverse-lexicographic calculation returns
+\[
+ (L,\Delta_{LQ},\Delta_{\mathrm{fin}})=(1).
+\]
+For \(Q\), a raw three-generator calculation exceeded its declared gate, so
+the persisted certificate uses the exact factor
+\(\Delta_{LQ}=B^{36}\Delta^\circ\). On \(B=0\),
+\[
+ \gcd\!\left(256X^2-1024X+4096,\ X^{32}\right)=1.
+\]
+On \(\Delta^\circ=0\), reduction modulo the quadratic \(Q\) makes both
+\(\Delta^\circ\) and \(\Delta_{\mathrm{fin}}\) linear in \(X\). The
+exceptional coefficient gcd is one, and the resulting degree-144 and
+degree-176 compatibility polynomials in \(\Q[B]\) also have gcd one.
+Consequently
+\[
+ (Q,\Delta_{LQ},\Delta_{\mathrm{fin}})=(1).
+\]
+This is an exact zero-set split and univariate gcd certificate, not a
+modular extrapolation.
+
+Together, EXP-118--121 close the complete three-parameter \(T_B\)
+restriction: EXP-118 covers \(d=0\), EXP-120 covers \(G\) on \(d\ne0\), and
+EXP-121 covers the remaining finite \(L/Q\) strata. They do not close the
+24-parameter core, the full 51-parameter family, \((72,108)\), the planar
+degree floor, or \(JC(2)\).
 
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the
@@ -976,13 +1017,13 @@ audit trail (including its open verification items) persisted in the repository.
 
 \section{Program}
 
-Priorities, from the standing routes evaluation: (1) select new maximal
-minor row bases directly on the finite \(L\) and \(Q\) common residuals left
-by EXP-120, and test the resulting ideals exactly; (2) retain EXP-118's
-complete \(d=0\) cover and EXP-120's \(G\)-component cover as regression
-gates rather than recomputing them; (3) retain the exact EXP-108 lift through
-\((0,6)\) as a bounded chart control rather than a terminating programme;
-(4) reopen the intersection-$21$ transport only
+Priorities, from the standing routes evaluation: (1) promote the
+constructible-cover method beyond the now-closed three-parameter \(T_B\)
+restriction to a restriction that adds genuine coverage of the 24-parameter
+cyclic core; (2) retain the complete EXP-118--121 \(T_B\) cover as a
+regression gate rather than adding redundant slice charts; (3) retain the
+exact EXP-108 lift through \((0,6)\) as a bounded chart control rather than
+a terminating programme; (4) reopen the intersection-$21$ transport only
 after constructing a complete boundary-divisor ledger through the swap,
 Laurent cuts, and final inversion; (5) pursue Newton resolution only after deriving a
 condition beyond the already-retained first $D=72$ branch; and (6) retain the

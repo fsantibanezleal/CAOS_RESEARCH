@@ -1,0 +1,9 @@
+RESULT: FAILED: Q has a full-rank modular residual-selected basis
+Traceback (most recent call last):
+  File "problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-121-finite-lq-row-bases/run.py", line 613, in <module>
+    main()
+  File "problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-121-finite-lq-row-bases/run.py", line 511, in main
+    require(
+  File "problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-121-finite-lq-row-bases/run.py", line 49, in require
+    raise AssertionError(message)
+AssertionError: Q has a full-rank modular residual-selected basis

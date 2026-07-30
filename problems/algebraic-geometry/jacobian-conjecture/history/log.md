@@ -1376,3 +1376,34 @@
 - Paper B v0.22 passed its two-pass 16-page build and complete visual QA.
   PR #95 merged the round into `develop` at `68ec8d3`; the immutable Zenodo
   version DOI is `10.5281/zenodo.21696190`.
+
+## 2026-07-30 - EXP-121 closes the complete three-parameter \(T_B\) restriction
+
+- Modular residual selection finds coefficient/augmented rank profile
+  \(124/125\) on 13 \(L\)-points at \(p=1013\) and 18 \(Q\)-points at
+  \(p=1033\). Deterministic extraction returns the same 125-row basis on
+  both components.
+- The basis needs 68 row replacements, refuting the predicted bound ten.
+  Its exact rational normalization has largest cyclic block 26. The
+  determinant has total degree 108 and 23 monomials and descends as
+  \(A^{87}R(A^3,B)\), with five direct determinant controls.
+- The exact \(L\) ideal is the unit ideal. The raw \(Q\) Groebner route
+  exceeded its declared 240-second gate and was retained as a stopped
+  attempt.
+- The redirected \(Q\) certificate splits the first chart's \(B^{36}\)
+  factor. On \(B=0\), \(Q(X,0)\) and \(X^{32}\) have gcd one. On the quotient
+  branch, exact reduction modulo the quadratic \(Q\) gives degree-144 and
+  degree-176 compatibility polynomials with gcd one. Thus the \(Q\) ideal is
+  also the unit ideal.
+- EXP-118 covers \(d=0\), EXP-120 covers \(G\) on \(d\ne0\), and EXP-121
+  covers the remaining \(L/Q\) strata. This closes the complete
+  three-parameter \(T_B\) restriction, not the 24-parameter core, the full
+  51-parameter family, \((72,108)\), the degree floor, or \(JC(2)\).
+- The next scalable gate is a core-lift audit of the shared EXP-121 basis:
+  classify all restored core directions as inert, acyclic, or active in the
+  size-26 block before declaring any higher-dimensional constructible
+  stratum.
+- Paper B v0.23 transcribes the exact closure and the revised forward
+  programme. Its two-pass 17-page PDF build has no layout warnings, and all
+  17 rendered pages pass visual inspection. PR merge and Zenodo publication
+  remain pending at this checkpoint.

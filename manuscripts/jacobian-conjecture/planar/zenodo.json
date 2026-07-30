@@ -10,7 +10,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Paper B of a three-paper research record. The two-variable Jacobian conjecture remains open after the 2026 counterexample in dimension 3. This paper develops the planar program and an exact-arithmetic campaign on the lone open degree pair (72,108) below 125, built on Guccione-Guccione-Horruitiner-Valqui (arXiv:2204.14178, Proposition 4.3). Version 0.22 retains the exact three-coefficient chart cover and full-family rank/core audit, then advances the weighted residual through three exact experiments. On d=0, quotienting the structural kernel [P,P]=0 and combining determinants proportional to a^107 and b^95 with the exact origin rank gap closes the complete quotient boundary. On d not equal to zero, a first characteristic-zero alternative chart intersects each selected component G, L, and Q in a finite scheme. A third determinant factors as X^30 L Q R for X=A^3; exact component ideals close G, while the L and Q common residuals remain zero-dimensional. The work does not close the full T_B restriction, the 24-parameter core, full (72,108), the planar degree floor, or JC(2).</p><p>All scripts, artifacts and verdicts: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
+    "description": "<p>Paper B of a three-paper research record. The two-variable Jacobian conjecture remains open after the 2026 counterexample in dimension 3. This paper develops the planar program and an exact-arithmetic campaign on the lone open degree pair (72,108) below 125, built on Guccione-Guccione-Horruitiner-Valqui (arXiv:2204.14178, Proposition 4.3). Version 0.23 completes the weighted three-parameter T_B restriction. On d=0, quotienting the structural kernel [P,P]=0 and combining determinants proportional to a^107 and b^95 with the exact origin rank gap closes the complete quotient boundary. On d not equal to zero, exact component ideals close G. A row basis selected independently on the finite L and Q residual schemes is shared; its 23-term determinant descends as A^87 R(A^3,B). A direct unit ideal closes L, while an exact B^36 zero-set split, quadratic reduction, and unit univariate gcds close Q. This proves a complete cover of the three-parameter T_B restriction, not the 24-parameter core, the full 51-parameter family, the complete (72,108) case, the planar degree floor, or JC(2).</p><p>All scripts, artifacts and verdicts: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
     "keywords": [
       "Jacobian conjecture",
       "planar Keller maps",
@@ -55,7 +55,7 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.22",
+    "version": "0.23",
     "language": "eng"
   }
 }

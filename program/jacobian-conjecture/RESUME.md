@@ -1,6 +1,7 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-07-29 after EXP-120's exact open-component ideal gate. This is
+Updated 2026-07-30 after EXP-121 closed the complete three-parameter
+\(T_B\) restriction. This is
 the first-read navigation page. Primary artifacts and experiment verdicts
 remain the evidence.
 
@@ -119,7 +120,15 @@ remain the evidence.
   nonzero scalar, \(X^{30}LQR\). Factorwise exact Groebner certificates close
   the complete \(G\) component. The \(L\) and \(Q\) common residuals remain
   zero-dimensional; the \(L\) eliminant has degree 108 and squarefree degree
-  73. The next bases must be selected on those finite residuals.
+  73.
+- EXP-121 selects row bases on those finite residuals. The \(L\) and \(Q\)
+  selections return the same 125-row basis, with 68 replacements and largest
+  cyclic block 26. Its 23-term determinant is
+  \(A^{87}R(A^3,B)\). A direct exact Groebner basis closes \(L\); an exact
+  \(B^{36}\) zero-set split, quadratic reduction, and two unit univariate
+  gcds close \(Q\). Combined with EXP-118 and EXP-120, the complete
+  three-parameter \(T_B\) restriction is closed. The 24-parameter core,
+  51-parameter family, \((72,108)\), degree floor, and \(JC(2)\) remain open.
 - Controlling strategy:
   [`strategy-audit-2026-07-29.md`](strategy-audit-2026-07-29.md).
 - Source audit:
@@ -153,6 +162,8 @@ remain the evidence.
 | complete \(d=0\) quotient cover | \(C a^{107}\), \(b^{95}\), and the origin rank gap cover the boundary plane | EXP-118 |
 | first weighted-open alternative chart | exact \(X=A^3\) factorization; proper finite intersections with \(G,L,Q\) | EXP-119 |
 | third weighted-open chart | \(\Delta_G\doteq X^{30}LQR\); unit ideal on \(G\), finite nonunit ideals on \(L,Q\) | EXP-120 |
+| finite-residual shared chart | one 125-row basis on both \(L,Q\); \(\Delta_{\mathrm{fin}}=A^{87}R(A^3,B)\); exact unit certificates on both | EXP-121 |
+| complete \(T_B\) restriction cover | \(d=0\) quotient cover plus exact \(G,L,Q\) weighted-open covers | EXP-118/120/121 |
 | lower-family grading | \(w_{p,q}=q-p+1\pmod9\) for all 23 nonconstant remaining directions | EXP-106 |
 | properness instrument | exact resultant-leading-coefficient test | EXP-014 |
 | equivariant classification | EXP-010 on opposite-sign/one-zero scope; Shaska covers all signatures with triangular same-sign controls | 2026-07-25 reconciliation |
@@ -271,6 +282,10 @@ scalar conditions before exploiting sparsity.
   each of \(G,L,Q\) in a finite proper scheme.
 - EXP-120: a third exact chart closes the \(G\) component. The \(L\) and
   \(Q\) common residuals remain zero-dimensional.
+- EXP-121: one shared residual-selected basis closes both \(L\) and \(Q\)
+  exactly. The accepted run completes in 44.57 seconds; two quantitative
+  predictions (first-four-prime coverage and at most ten replacements) are
+  explicitly refuted.
 - EXP-102: third chart exists at \(u=1\); complete pullback is inconclusive
   after the dense rank-121 determinant hit its five-minute budget.
 
@@ -282,7 +297,7 @@ scalar conditions before exploiting sparsity.
   at \(u=1\).
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
-- EXP-111 through EXP-120 are complete. No Jacobian process is active.
+- EXP-111 through EXP-121 are complete. No Jacobian process is active.
 - Current research branch: `work/jacobian-conjecture/next-round`.
 - EXP-096 was merged into `develop` by PR `#81` at `7866b0f`.
 - The planar manuscript reconciliation was merged by PR `#83` at `ffc6a3d`.
@@ -303,9 +318,8 @@ scalar conditions before exploiting sparsity.
   PR `#92` at `9e039e1`.
 - EXP-115 through EXP-117 and Paper B v0.21 were merged into `develop` by
   PR `#93` at `b57a9b7`.
-- EXP-118 through EXP-120 are committed on the active research branch.
-- The next declared mathematical target is EXP-121: select distinct
-  maximal-minor row bases on the finite \(L\) and \(Q\) common residuals.
+- EXP-121 is committed and pushed on the active research branch at
+  `cada7fb`.
 - EXP-118 through EXP-120 and Paper B v0.22 were merged into `develop` by
   PR `#95` at `68ec8d3`. Paper B v0.22 is published at
   `10.5281/zenodo.21696190` under concept DOI
@@ -316,28 +330,32 @@ scalar conditions before exploiting sparsity.
 ## 5. Next actions, in order
 
 1. Declare EXP-121 on the finite \(L\) and \(Q\) common residuals:
-   - select new row bases at deterministic modular or algebraic controls on
-     each residual, rather than reuse the \(G\)-basis that contains \(LQ\);
-   - test each new determinant in the exact quotient coordinate rings;
-   - prove unit ideals or persist smaller eliminants with multiplicity and
-     lifting caveats.
-2. Keep the completed \(d=0\) cover and \(G\)-component cover as regression
-   gates; do not recompute them as generic plane resultants.
-3. Reopen intersection-\(21\) transport only with a complete
+   **done by EXP-121**. One shared basis closes both components exactly.
+2. Declare EXP-122 only after a core-lift audit of the EXP-121 shared basis:
+   - restore all 24 cyclic-core directions and determine which directions
+     are determinant-inert, acyclic, or confined to the size-26 block;
+   - compute exact first derivatives and mixed-support participation of the
+     shared minor, without expanding a generic 24-variable determinant;
+   - promote only a direction set that gives a symbolic neighborhood or a
+     higher-dimensional constructible stratum, not another isolated sample.
+3. Keep the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
+   add redundant charts to the closed three-parameter restriction.
+4. Reopen intersection-\(21\) transport only with a complete
    boundary-divisor ledger through the swap, Laurent cuts, and final inversion;
    do not impose absolute degree directly on the 51 coefficients.
-4. Pursue further Newton resolution only if a new condition is derived beyond
+5. Pursue further Newton resolution only if a new condition is derived beyond
    the already-retained first \(D=72\) branch; do not repeat direct comparisons
    with \(P_T\).
-5. Continue the independent [125,150] frontier:
+6. Continue the independent [125,150] frontier:
    - keep C10/C11/C19/C20 unresolved by GGV2 Remark 2.32;
    - derive the 16 missing \(A'_0\) values through the declared chain algorithm;
    - preserve C01/C04 as open absent an exact exclusion.
-6. Re-rank after steps 1 through 5. The admissible next choices are a source-derived
+7. Re-rank after the core-lift audit and source pass. The admissible next choices are a source-derived
    restriction, a module/chart-cover computation, or a newly justified higher-degree
    structural probe. Do not build EXP-093.
-7. Keep EXP-109 as a bounded regression control, not as the main route.
-8. Update wiki or manuscripts only when an adjudicated result changes a mathematical claim.
+8. Keep EXP-109 as a bounded regression control, not as the main route.
+9. Publish Paper B v0.23 because EXP-121 changes the mathematical claim from
+   finite residuals to a complete \(T_B\) restriction cover.
 
 Suggested source-round commands:
 
