@@ -1,11 +1,11 @@
 # Jacobian conjecture: active problem plan
 
 Opened 2026-07-20. Area: algebraic geometry. State: exploring. Last strategic audit:
-2026-07-25.
+2026-07-29.
 
 This is the current plan. Earlier route proposals remain evidence of the program's development,
 but the controlling decisions are in
-[`strategy-audit-2026-07-25.md`](strategy-audit-2026-07-25.md).
+[`strategy-audit-2026-07-29.md`](strategy-audit-2026-07-29.md).
 
 ## Goal
 
@@ -41,40 +41,28 @@ support-restricted failure, or absence of a finite certificate as a proof.
 
 ## Ordered next work
 
-1. EXP-095 completed the Makar-Limanov--Trakhtenberg applicability bridge.
-   Direct application to the Laurent bracket-\(x^2\) pair is invalid; the
-   original polynomial degree-72 component is applicable and exactly matches
-   the first retained \(D=72\) branch. Do not repeat the published candidate
-   enumeration or infer an exclusion from \(P_T\).
-2. EXP-096 completed the Lee--Li and approximate-root instantiation. Preserve
-   the seven-point inner-vertex set, intersection number \(21\), and \(84+24\)
-   root partition as original-pair reconstruction gates.
-3. EXP-097 closed direct resultant transport: Laurent localization loses the
-   absolute boundary order, and the final inversion preserves only a
-   conditional exponent width. Do not build a generic degree-21 resultant
-   equation in the 51 reduced coefficients. Reopen only with a complete
-   boundary-divisor ledger.
-4. Continue the constructible determinantal-strata route:
-   - EXP-098 proves that principal-open localized lifts alone collapse to one
-     global polynomial covector;
-   - EXP-101 factors the first actual two-parameter GGHV minor and changes
-     charts exactly on its zero locus;
-   - EXP-102 supplies a third nonzero minor at \(u=1\) on the residual curve;
-   - EXP-103--105 complete the residual-curve divisor. The exact normalized
-     minors are \(21-96z-1024z^2\) and \((8z+1)^{14}\), with Bezout constant
-     \(17^{14}\).
-   - EXP-106 proves the mod-9 grading extends to every nonconstant direction
-     in the persisted lower family.
-   - next run EXP-107 on the promoted \((0,7)\) coefficient using
-     \(z=u^9,\ y=v/u\), reconstruct bivariate minors on 16-by-64 NTT grids,
-     and compute their common-zero ideal before selecting further charts.
-5. Continue the independent [125,150] frontier task:
+1. Run EXP-112 on the complete 302-by-125 augmented system:
+   - remove the structural constant \(Q\)-column and retain the target column;
+   - search alternative pinned row bases, including the 13 rows omitted by
+     EXP-110;
+   - test whether the normalized perturbation operators have a common acyclic
+     dependency graph;
+   - if no acyclic basis exists, persist the smallest strongly connected core
+     and the exact block decomposition.
+2. Continue constructible determinantal strata only on the cyclic core exposed
+   by EXP-112. Use EXP-101 through EXP-108 as exact regression controls.
+3. Reopen intersection-\(21\) transport only if the cyclic core remains too
+   large, and only with the complete boundary-divisor ledger required by
+   EXP-097.
+4. Continue the independent [125,150] frontier task:
    - preserve C10/C11/C19/C20 as unresolved by GGV2 Remark 2.32;
    - derive the 16 unprinted $A'_0$ values through the declared chain algorithm;
    - preserve C01/C04 as open absent an exact exclusion.
-6. Keep EXP-093 cancelled. EXP-075's exact support at reordered index 2662 proves that no global
+5. Keep EXP-093 cancelled. EXP-075's exact support at reordered index 2662 proves that no global
    degree-three polynomial covector exists, so the proposed four-million-unknown solve has no
    target.
+6. Keep EXP-109 as a bounded chart-control only. Do not continue coefficient
+   slices as the main programme.
 
 ## Routes not currently authorized for compute
 
@@ -87,6 +75,11 @@ support-restricted failure, or absence of a finite certificate as a proof.
 - EXP-092 LND/line-fibre route: hold. For the reduced pair, $D_P(Q)=[P,Q]=x^2$, not a unit
   slice, so the Keller-pair argument does not transfer directly.
 - EXP-093 full degree-three solve: cancel. EXP-075 proves its target is empty.
+- EXP-110 all-\(125\)-minors of \(M\): retire. EXP-111 proves that the
+  constant \(Q\)-column makes every such minor vanish identically, so the
+  target is vacuous.
+- Further coefficient-slice enumeration: demote. It cannot close the
+  51-parameter family.
 
 ## Cancelled EXP-093 scale facts
 

@@ -184,3 +184,11 @@
   three-coefficient slice cover. Its two-pass 14-page PDF and full visual QA
   passed; PR #90 merged at `2481d3a`. Zenodo version DOI:
   `10.5281/zenodo.21610744`, concept DOI: `10.5281/zenodo.21503367`.
+- **2026-07-29 EXP-111:** the full-family rank plan is corrected. The constant
+  \(Q\)-column is identically zero, so rank \(M\leq124\) is structural and the
+  proposed all-\(125\)-minors target is vacuous. EXP-059's exact pinned
+  augmented minor proves generic-open inconsistency, not all-parameter
+  closure. The complete canonical row union has 302 rows, 13 more than
+  EXP-110's forced-only list. The next route is an acyclic or small-core
+  augmented basis search on the complete system. JC(2) and \((72,108)\)
+  remain open.

@@ -1,6 +1,6 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-07-26 after EXP-110's full-family generic-rank measurement. This is the first-read
+Updated 2026-07-29 after EXP-111's full-family rank audit. This is the first-read
 navigation page. Primary artifacts and experiment verdicts remain the evidence.
 
 ## 1. State in one screen
@@ -58,24 +58,23 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
   to a degree-13 polynomial \(H(y)\) coprime to the exact irreducible
   degree-12 \(Q(y)\), with a persisted integer Bezout identity. Three maximal
   minors therefore exclude the declared \((0,1)/(1,7)/(0,7)\) slice.
-- EXP-110 measures the FULL 51-parameter family directly instead of a slice.
-  At the pinned point and at three independent random rational points the profile
-  is identical: rank(M) = 124, rank([M|b]) = 125, left kernel 165, exactly one
-  kernel direction pairing nonzero with the target. So the reduced system is
-  INCONSISTENT AT GENERIC PARAMETERS, not only at the pinned point, and the rank
-  deficiency is a property of the family. This does not exhibit a uniform
-  polynomial covector (EXP-075 excludes degree <= 3) and does not close (72,108).
-- PLAN REDIRECT (EXP-110): the slice-by-slice chart programme cannot terminate,
-  since C(51,3) = 20,825 and C(51,4) = 249,900 slices each cost hours of exact
-  elimination with fiber degrees growing per added coefficient. EXP-109 and its
-  successors are DEMOTED. The primary route is now the uniform statement: prove
-  that every maximal 125x125 minor of M(eps) vanishes identically while some
-  125x125 minor of [M|b] does not. That is one statement about identical
-  vanishing of explicit polynomials in all 51 parameters at once, testable by
-  randomized identity testing and then certified exactly on the surviving
-  support.
+- EXP-111 supersedes EXP-110's interpretation. The constant \(Q\)-column is
+  identically zero because \([P,1]=0\), so
+  \(\operatorname{rank}M\leq124\) for every parameter value. EXP-059's exact
+  nonzero pinned augmented minor then proves generic rank \(124/125\) for
+  \(M/[M\mid b]\), hence generic-open inconsistency. This does not prove
+  all-parameter inconsistency.
+- EXP-110's forced-only row list has 289 rows. The complete union inside the
+  same canonical EXP-071 pool has 302 rows: 13 omitted equations contributed
+  by 14 lower directions. Four deterministic points over two primes retain
+  the \(124/125\) profile in both row systems.
+- PLAN REDIRECT (EXP-111): all \(125\)-minors of \(M\) vanish trivially because
+  of the zero constant column, so that target is retired. Remove the constant
+  column, append \(b\), and attack the common zero locus of augmented
+  \(125\)-minors. EXP-112 first searches the complete 302-row system for an
+  acyclic row basis or a small strongly connected parameter core.
 - Controlling strategy:
-  [`strategy-audit-2026-07-25.md`](strategy-audit-2026-07-25.md).
+  [`strategy-audit-2026-07-29.md`](strategy-audit-2026-07-29.md).
 - Source audit:
   [`2026-07-25-strategy-source-audit.md`](../../problems/algebraic-geometry/jacobian-conjecture/context/2026-07-25-strategy-source-audit.md).
 
@@ -89,7 +88,8 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
 | GGHV forced polynomial | $P_T=y^8(xy-1)^8+x$ | EXP-052/053 and the GGHV dossier |
 | reduced equation | $[P,Q]=x^2$ | GGHV Proposition 4.3 transcription |
 | parameter ring | $R=\mathbb{Q}[\varepsilon_1,\ldots,\varepsilon_{51}]$ | EXP-054 onward |
-| reduced linear system | $M(\varepsilon)q=b$ with 125 output rows and 165 gauge directions | EXP-052 onward |
+| reduced linear system | \(M(\varepsilon)q=b\), with 125 \(Q\)-columns, 302 complete pool rows, and one structural constant column | EXP-111 |
+| effective augmented system | \(A=[M_{\mathrm{nonconstant}}\mid b]\), a 302-by-125 affine-linear matrix | EXP-111 |
 | global covector | $c^TM=0$ and $c^Tb\ne0$, sufficient for inconsistency | EXP-053 onward |
 | certificate module target | left syzygies of $M$, their pairing ideal with $b$, and localized chart certificates | strategy audit |
 | constructible certificate recursion | generic pairing opens followed by kernel recomputation on residual closed strata | EXP-098 |
@@ -191,6 +191,12 @@ scalar conditions before exploiting sparsity.
   three-chart cover over characteristic zero.
 - EXP-109: declared lift through \((0,6)\), using
   \(x=\varepsilon_{(0,6)}/u^2\) and the new term \(zxA_{(0,6)}\).
+- EXP-110: generic \(124/125\) profile observed, but the persisted script and
+  interpretation are superseded by EXP-111.
+- EXP-111: the constant \(Q\)-column makes rank \(M\leq124\) structural; the
+  complete row union has 302 rather than 289 rows. Generic-open inconsistency
+  is exact from EXP-059's pinned augmented minor. The exceptional augmented
+  determinantal locus remains open.
 - EXP-102: third chart exists at \(u=1\); complete pullback is inconclusive
   after the dense rank-121 determinant hit its five-minute budget.
 
@@ -202,6 +208,8 @@ scalar conditions before exploiting sparsity.
   at \(u=1\).
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
+- EXP-111 is complete. EXP-112 is the next declared round, but its hypothesis
+  has not yet been written.
 - Current research branch: `work/jacobian-conjecture/next-round`.
 - EXP-096 was merged into `develop` by PR `#81` at `7866b0f`.
 - The planar manuscript reconciliation was merged by PR `#83` at `ffc6a3d`.
@@ -219,14 +227,15 @@ scalar conditions before exploiting sparsity.
 
 ## 5. Next actions, in order
 
-1. Run EXP-109 through the next grading-compatible direction \((0,6)\):
-   - use \(x=\varepsilon_{(0,6)}/u^2\), so the new term is \(zxA_{(0,6)}\);
-   - reconstruct support and rank bounds for the three exact EXP-108 charts;
-   - recurse on residual closed strata instead of beginning with a dense
-     trivariate determinant grid.
-2. If a finite residual survives, select a point-local fourth chart; if a
-   positive-dimensional component survives, persist its eliminant before
-   widening the coefficient block.
+1. Declare and run EXP-112 on the complete 302-by-125 effective augmented
+   matrix:
+   - reproduce the historical EXP-099 basis as a control;
+   - search alternative pinned row bases, prioritizing the 13 recovered rows;
+   - test the union dependency graph of the normalized parameter operators;
+   - exactly verify any acyclic basis, or persist the smallest strongly
+     connected cyclic core.
+2. Continue constructible determinant charts only on the cyclic core exposed
+   by EXP-112. Use EXP-101 through EXP-108 as regression controls.
 3. Reopen intersection-\(21\) transport only with a complete
    boundary-divisor ledger through the swap, Laurent cuts, and final inversion;
    do not impose absolute degree directly on the 51 coefficients.
@@ -240,7 +249,8 @@ scalar conditions before exploiting sparsity.
 6. Re-rank after steps 1 through 5. The admissible next choices are a source-derived
    restriction, a module/chart-cover computation, or a newly justified higher-degree
    structural probe. Do not build EXP-093.
-7. Update wiki or manuscripts only when an adjudicated result changes a mathematical claim.
+7. Keep EXP-109 as a bounded regression control, not as the main route.
+8. Update wiki or manuscripts only when an adjudicated result changes a mathematical claim.
 
 Suggested source-round commands:
 
@@ -307,6 +317,10 @@ Gotchas:
   global-covector class; closed specialization strata are essential.
 - Dense determinant expansion is retired for EXP-102's rank-121 curve
   pullback. Use the polynomial determinantal divisor instead.
+- Do not use the 289-row forced-only list as the complete family system.
+- Rank \(124\) is structurally forced by the constant \(Q\)-column; it is not
+  evidence of a new nontrivial covector.
+- Do not compute all \(125\)-minors of \(M\). They vanish trivially.
 - Do not implement EXP-093. Its target is empty.
 - No floor raise until every GGHV branch and every free coefficient is covered.
 
@@ -331,3 +345,8 @@ Lenses ledger for this round:
   \((72,108)\) campaign returns to the applicability bridge;
 - exploration moment: endpoint identity is treated as a reusable source-audit
   invariant before any future corner-family comparison.
+- 2026-07-29 invariant-first correction: the constant \(Q\)-column retires the
+  EXP-110 maximal-minor target before heavy compute.
+- 2026-07-29 graph-compression lens: use common acyclicity or strongly
+  connected components of normalized augmented operators to reduce the
+  51-parameter exceptional locus before exact elimination.

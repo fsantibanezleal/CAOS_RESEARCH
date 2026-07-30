@@ -1242,3 +1242,26 @@
 - Paper B v0.19 passed its two-pass 14-page PDF build and full visual QA.
   PR #90 merged at `2481d3a`; the immutable Zenodo version DOI is
   `10.5281/zenodo.21610744`.
+
+## 2026-07-29 - EXP-111 corrects the full-family rank target
+
+- The constant \(Q\)-column is identically zero because \([P,1]=0\).
+  Consequently rank \(M\leq124\) for every parameter value, and EXP-110's
+  proposed all-\(125\)-minors-of-\(M\) computation is vacuous.
+- EXP-059's exact nonzero pinned augmented determinant proves generic rank
+  \(124/125\) for \(M/[M\mid b]\), hence inconsistency on a nonempty
+  Zariski-open subset. It does not prove rank constancy or inconsistency on
+  the exceptional closed locus.
+- EXP-110's forced-only row list has 289 rows. The complete union inside the
+  same EXP-071 pool has 302 rows, with 13 omitted equations contributed by 14
+  lower directions.
+- Four deterministic points over two independent primes have the \(124/125\)
+  profile in both row systems. The exact generic claim uses the structural
+  upper bound and EXP-059, not the random samples.
+- The active plan now targets the common zero locus of augmented maximal
+  minors. EXP-112 will search the complete row system for a common acyclic
+  basis or isolate the smallest strongly connected parameter core before
+  exact elimination.
+- The fresh source sweep found no current primary result closing
+  \((72,108)\). No manuscript or Zenodo update is triggered by this correction
+  because EXP-110 was not in the published v0.19 paper.
