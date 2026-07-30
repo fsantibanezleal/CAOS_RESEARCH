@@ -217,3 +217,9 @@
   \(Q\)-space and supplies the exact kernel \([P,P]=0\). Exact representatives
   of all three boundary components retain rank gap \(123/124\). Next:
   quotient by \(P\) and prove a 124-minor cover. No floor claim follows.
+- **2026-07-29 EXP-116:** removing the fixed \(y^8\) kernel coordinate gives
+  a 302-by-124 quotient system. The origin is a deeper exact \(112/113\)
+  stratum; the anchor \((0,1)\) and all three nonzero boundary controls have
+  exact gap \(123/124\). The normalized quotient graph has largest SCC 51,
+  refuting the predicted bound 24. The corrected run enforces its 36-column
+  determinant gate; EXP-117 will factor the 51-block under a new budget.

@@ -1310,3 +1310,18 @@
   \(30720000a^3+48828125b^7=0\) have rank profile \(123/124\). EXP-116 must
   quotient the \(P\)-kernel and cover the boundary with 124-column minors.
   JC(2), \((72,108)\), and the floor remain open.
+
+## 2026-07-29 - EXP-116 validates the quotient and finds a deeper origin stratum
+
+- Removing the fixed \(y^8\) coordinate of the \(P\)-kernel gives the complete
+  302-by-124 quotient augmented system on \(d=0\).
+- The proposed origin anchor is refuted: \((a,b)=(0,0)\) has exact profile
+  \(112/113\). The anchor \((0,1)\) and all three nonzero boundary controls
+  have exact profile \(123/124\); the inconsistency gap survives.
+- Exact normalization at \((0,1)\) has SCC sizes
+  \(51,11,10,9,8,7,1,\ldots\). The largest block exceeds EXP-116's declared
+  determinant gate 36, so the corrected final run stops before determinant
+  computation and persists the graph.
+- The first implementation checked the gate too late and computed the
+  51-block before failing. That output was discarded. EXP-117 must declare
+  the 51-block determinant explicitly.

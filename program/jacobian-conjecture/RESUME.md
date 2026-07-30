@@ -95,6 +95,11 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
   kernel \([P,P]=0\). Exact representatives of all three boundary components
   have rank profile \(123/124\). The P0 route is now the quotient by this
   explicit \(P\)-kernel.
+- EXP-116 removes the fixed \(y^8\) kernel coordinate and obtains a
+  302-by-124 quotient system. The origin is a deeper \(112/113\) stratum;
+  \((0,1)\) and all three nonzero boundary controls have exact gap
+  \(123/124\). The quotient graph has a 51-column largest SCC, above the
+  declared determinant gate. EXP-117 is the next exact factorization gate.
 - Controlling strategy:
   [`strategy-audit-2026-07-29.md`](strategy-audit-2026-07-29.md).
 - Source audit:
@@ -123,6 +128,7 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
 | weighted residual factors | \(D_B=2^{-42}G_{54}H_{63}\), weights \((7,3,9)\) in \((a,b,d)\) | EXP-114 |
 | weighted-open components | irreducible \(G,L,Q\), each generically removed by an alternative complete-row minor | EXP-115 |
 | \(d=0\) kernel | \(P=a y+b y^5+y^8(1-xy)^8\) lies in the \(Q\)-space and \([P,P]=0\); sample rank gap \(123/124\) | EXP-115 |
+| \(d=0\) quotient graph | remove \(y^8\); origin rank \(112/113\), generic controls \(123/124\), largest SCC 51 | EXP-116 |
 | lower-family grading | \(w_{p,q}=q-p+1\pmod9\) for all 23 nonconstant remaining directions | EXP-106 |
 | properness instrument | exact resultant-leading-coefficient test | EXP-014 |
 | equivariant classification | EXP-010 on opposite-sign/one-zero scope; Shaska covers all signatures with triangular same-sign controls | 2026-07-25 reconciliation |
@@ -260,19 +266,18 @@ scalar conditions before exploiting sparsity.
   `10.5281/zenodo.21503367`.
 - EXP-110 through EXP-114 and Paper B v0.20 were merged into `develop` by
   PR `#92` at `9e039e1`.
-- EXP-115 is complete. EXP-116 is the next declared round but its hypothesis
-  has not yet been written.
+- EXP-115/116 are complete. EXP-117 is next but its hypothesis has not yet
+  been written.
 - The management mirror is updated directly on its canonical `develop`
   checkout. Do not create a management worktree or task branch.
 
 ## 5. Next actions, in order
 
-1. Declare and run EXP-116 on the \(d=0\) quotient:
-   - remove the fixed \(y^8\) coordinate from the explicit \(P\)-kernel;
-   - form the 302-by-124 quotient augmented matrix;
-   - find exact 124-row charts and compute their common residual ideal in
-     \(a,b\);
-   - distinguish a uniform rank-gap proof from a finite residual target.
+1. Declare and run EXP-117 on the 51-column quotient core:
+   - factor its exact determinant in \(a,s=b-1\);
+   - combine the smaller diagonal-block factors;
+   - validate against direct exact 124-column determinants;
+   - isolate residual factors for alternative quotient charts.
 2. Close the proper intersections left on the three \(d\ne0\) components
    \(G,L,Q\), using the persisted EXP-115 row bases.
 3. Reopen intersection-\(21\) transport only with a complete

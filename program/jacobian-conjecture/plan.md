@@ -41,13 +41,13 @@ support-restricted failure, or absence of a finite certificate as a proof.
 
 ## Ordered next work
 
-1. Run EXP-116 on EXP-115's structural \(d=0\) boundary:
-   - quotient the 124 nonconstant \(Q\)-columns by the exact kernel generated
-     by \(P=a y+b y^5+y^8(1-xy)^8\);
-   - use the fixed nonzero \(y^8\) coordinate to remove one kernel column;
-   - search the complete 302-row system for 124-by-124 augmented minors;
-   - prove a uniform \(123/124\) rank-gap cover in \(a,b\), or persist the
-     exact residual ideal where it can fail.
+1. Run EXP-117 on EXP-116's 51-column quotient core:
+   - use shifted coordinates \(a,s=b-1\) at the exact rank-\(124\) anchor;
+   - compute and factor the 51-block determinant within a declared
+     five-minute budget;
+   - multiply it by the exact 11/10/9/8/7 and singleton block factors;
+   - verify the quotient determinant at direct exact controls and isolate its
+     residual factors for alternative 124-column charts.
 2. Intersect the three \(d\ne0\) alternative minors from EXP-115 with their
    target factors \(G,L,Q\). Use EXP-101 through EXP-108 as regression
    controls.
@@ -83,6 +83,8 @@ support-restricted failure, or absence of a finite certificate as a proof.
 - Raw 125-column minors on the \(d=0\) \(T_B\) plane: retire. EXP-115 proves
   that \(P\) itself enters the admissible \(Q\)-space there, so \([P,P]=0\)
   forces a polynomial right kernel. Quotient by this kernel first.
+- Treating \((a,b)=(0,0)\) as a generic quotient anchor: retire. EXP-116
+  finds the deeper exact rank stratum \(112/113\); normalize at \((0,1)\).
 
 ## Cancelled EXP-093 scale facts
 
