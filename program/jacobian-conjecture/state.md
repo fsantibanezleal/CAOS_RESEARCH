@@ -270,7 +270,8 @@
   \(Q\) are both closed. Together with EXP-118 and EXP-120, the complete
   three-parameter \(T_B\) restriction is closed. The 24-parameter core, full
   51-parameter family, \((72,108)\), degree floor, and \(JC(2)\) remain open.
-- **2026-07-30 publication in progress:** Paper B v0.23 records EXP-121 and
+- **2026-07-30 publication:** Paper B v0.23 records EXP-121 and
   the complete \(T_B\) cover. Its two-pass 17-page PDF build and complete
-  visual QA pass. PR merge and the immutable Zenodo version DOI remain
-  required before publication is complete.
+  visual QA pass. PR #97 merged at `d55798f`; the immutable Zenodo version
+  DOI is `10.5281/zenodo.21697928`, under concept DOI
+  `10.5281/zenodo.21503367`.
