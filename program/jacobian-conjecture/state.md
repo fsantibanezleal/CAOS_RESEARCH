@@ -205,3 +205,7 @@
   determinant factors into weighted degrees 54 and 63 after
   \(d=1+\varepsilon_{(1,0)}\), with weights \((7,3,9)\). Next: weighted
   alternative-minor charts on the two factor loci. No floor claim follows.
+- **2026-07-29 publication:** Paper B v0.20 records the corrected full-family
+  rank target and the exact 36-core/weighted-factor reduction. Its two-pass
+  15-page PDF and visual QA passed. Zenodo version DOI:
+  `10.5281/zenodo.21694807`, concept DOI: `10.5281/zenodo.21503367`.
