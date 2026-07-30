@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-29\\[2pt]\normalsize Version 0.20}
+\date{2026-07-29\\[2pt]\normalsize Version 0.21}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.20}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.21}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -39,7 +39,7 @@ the Staircase Transport, and the Recalibrated Frontier}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper B of a three-paper record \textperiodcentered\ version 0.20 \textperiodcentered\ 2026-07-29\\
+Paper B of a three-paper record \textperiodcentered\ version 0.21 \textperiodcentered\ 2026-07-29\\
 DOI \href{https://doi.org/10.5281/zenodo.21503367}{10.5281/zenodo.21503367} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -89,7 +89,11 @@ minor to a 36-column block depending on 24 of the 51 parameters. Two
 connectivity-generating triples factor exactly; one graph-active direction
 cancels identically, while the other determinant becomes weighted homogeneous
 with weights \((7,3,9)\) after shifting the forced coefficient. These factors
-define the next residual charts, not a closure claim.
+define the next residual charts. On their \(d=0\) boundary, the tautological
+kernel \([P,P]=0\) can be quotiented exactly. One quotient determinant then
+factors into \(b^{32}\), one five-term weighted factor, and five binomials.
+For \(b\ne0\), \(z=a^3/b^7\) reduces its residual to nine distinct invariant
+points. These are finite alternative-chart targets, not a closure claim.
 A new multiplication formula for $x^m$-anchored edges shows the $B = 16$ leading form cannot
 produce the Keller constant on its top edge for $m \ge 2$: that case, too, is a staircase
 transport. All computations are exact and reproducible; every claim is labeled machine-verified
@@ -781,6 +785,70 @@ normalize \(d\ne0\), then treat \(d=0\) with alternative minors from the
 complete 302-row system. No result in this subsection excludes the residual
 factor loci, the full \((72,108)\) family, or \(JC(2)\).
 
+\subsection*{Weighted residual transitions and the \(d=0\) quotient}
+
+EXP-115 first normalizes the open chart \(d\ne0\) by
+\[
+a=A u^7,\qquad b=B u^3,\qquad d=u^9.
+\]
+Writing \(X=A^3\), \(G_{54}(A,B,1)\) remains irreducible, while
+\[
+H_{63}(A,B,1)=L(A,B)Q(A,B)
+\]
+splits into irreducible degree-three and degree-six factors over
+\(\mathbb Q[A,B]\) [MV]. Exact good-prime alternative minors prove that none
+of \(G_{54},L,Q\) is wholly contained in the rank-deficient locus. The
+\(L\)-transition also lifts to the rational point
+\((A,B,d)=(0,-4/5,1)\). Proper intersections on these components remain.
+
+The boundary \(d=0\) is structural. Cancelling the forced \(x\)-term puts
+\[
+P=a y+b y^5+y^8(1-xy)^8
+\]
+inside the retained \(Q\)-space, so \([P,P]=0\) is an exact polynomial right
+kernel [D]. Its \(y^8\)-coordinate is the unit \(1\); deleting that column
+gives a 302-by-124 quotient augmented matrix with 123 coefficient columns.
+The origin has exact rank profile \(112/113\), while the nonzero controls
+\((0,1)\), \((1,0)\), and \((-9,12/5)\) have profile \(123/124\) [MV].
+
+EXP-116 compresses the quotient graph into cyclic blocks of sizes
+\[
+51,11,10,9,8,7
+\]
+and sixteen cyclic singletons. EXP-117 computes the separately budgeted
+51-block and all smaller determinants. In original coordinates the selected
+quotient determinant is, up to a persisted nonzero rational scalar,
+\[
+\det A_{\mathrm{quot}}
+\doteq
+b^{32}F_{28}(a,b)
+\prod_{c\in\mathcal C}(ca^3+78125b^7),
+\qquad
+\mathcal C=\{49152,32768,16384,8192,4096\},
+\]
+where
+\[
+\begin{aligned}
+F_{28}={}&13750615562268966912a^{12}
+-389229646907965440000000a^9b^7\\
+&+6149594411200000000000000a^6b^{14}\\
+&+865348510742187500000000a^3b^{21}\\
+&-71190297603607177734375b^{28}.
+\end{aligned}
+\]
+All factors are homogeneous for
+\(\operatorname{wt}(a,b)=(7,3)\). On \(b\ne0\), set \(z=a^3/b^7\). The
+residual becomes one squarefree degree-nine equation: five rational roots
+\[
+-\frac{78125}{4096},\quad -\frac{78125}{8192},\quad
+-\frac{78125}{16384},\quad -\frac{78125}{32768},\quad
+-\frac{78125}{49152},
+\]
+and four roots of the quartic obtained from \(F_{28}/b^{28}\) [MV].
+Thus the selected quotient residual is reduced to \(b=0\) and nine invariant
+points. Alternative 124-column charts are still required there. This does
+not close the 24-parameter core, the full \((72,108)\) family, or \(JC(2)\).
+
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the
 published literature: the closing remark of \cite{GGV2017} states that the corner
@@ -844,14 +912,15 @@ audit trail (including its open verification items) persisted in the repository.
 
 \section{Program}
 
-Priorities, from the standing routes evaluation: (1) cover the two weighted
-EXP-114 residual factors by alternative complete-row minors, splitting
-\(d\ne0\) from \(d=0\); (2) retain the exact EXP-108 lift through
+Priorities, from the standing routes evaluation: (1) cover the finite
+EXP-117 quotient residual: the divisor \(b=0\), five rational
+\(z=a^3/b^7\) values, and the squarefree quartic fibre; (2) close the proper
+intersections left on the three EXP-115 \(d\ne0\) components; (3) retain the exact EXP-108 lift through
 \((0,6)\) as a bounded chart control rather than a terminating programme;
-(3) reopen the intersection-$21$ transport only
+(4) reopen the intersection-$21$ transport only
 after constructing a complete boundary-divisor ledger through the swap,
-Laurent cuts, and final inversion; (4) pursue Newton resolution only after deriving a
-condition beyond the already-retained first $D=72$ branch; and (5) retain the
+Laurent cuts, and final inversion; (5) pursue Newton resolution only after deriving a
+condition beyond the already-retained first $D=72$ branch; and (6) retain the
 properness reformulation ($JC(2)$ holds iff every planar Keller map has empty
 Jelonek set; exact certificates shipped, EXP-014) as a cross-check instrument.
 The reproducibility contract: every [MV] claim has a persisted script and

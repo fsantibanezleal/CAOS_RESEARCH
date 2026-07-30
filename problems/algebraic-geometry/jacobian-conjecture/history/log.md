@@ -1325,3 +1325,18 @@
 - The first implementation checked the gate too late and computed the
   51-block before failing. That output was discarded. EXP-117 must declare
   the 51-block determinant explicitly.
+
+## 2026-07-29 - EXP-117 reduces the quotient boundary to a finite invariant target
+
+- The declared 51-block determinant completes in 210.5 seconds inside its
+  300-second budget. The full run is 212.2 seconds.
+- The selected quotient determinant factors exactly as a nonzero scalar times
+  \(b^{32}\), a five-term weighted factor \(F_{28}\), and five binomials
+  \(c a^3+78125b^7\).
+- A deterministic compacting pass converts shifted factors to original
+  coordinates and verifies the scalar, factor product, \(D(0,b)=b^{95}\),
+  and all five direct exact determinant controls.
+- On \(b\ne0\), \(z=a^3/b^7\) reduces the residual to a squarefree degree-nine
+  polynomial: five rational roots and four roots of one quartic. EXP-118 must
+  cover those nine invariant points and \(b=0\) with alternative quotient
+  charts. JC(2), \((72,108)\), and the floor remain open.

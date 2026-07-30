@@ -223,3 +223,9 @@
   exact gap \(123/124\). The normalized quotient graph has largest SCC 51,
   refuting the predicted bound 24. The corrected run enforces its 36-column
   determinant gate; EXP-117 will factor the 51-block under a new budget.
+- **2026-07-29 EXP-117:** the exact quotient determinant factors as a nonzero
+  scalar times \(b^{32}\), one five-term weighted factor \(F_{28}\), and five
+  binomials \(c a^3+5^7b^7\). On \(b\ne0\), the invariant
+  \(z=a^3/b^7\) reduces the residual to nine distinct points: five rational
+  values and four roots of a squarefree quartic. EXP-118 will cover those
+  points and \(b=0\) with alternative quotient charts. No floor claim follows.

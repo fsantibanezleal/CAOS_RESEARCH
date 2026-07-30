@@ -100,6 +100,11 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
   \((0,1)\) and all three nonzero boundary controls have exact gap
   \(123/124\). The quotient graph has a 51-column largest SCC, above the
   declared determinant gate. EXP-117 is the next exact factorization gate.
+- EXP-117 factors that quotient determinant exactly. In original coordinates
+  it is a nonzero scalar times \(b^{32}F_{28}\) and five binomials
+  \(c a^3+5^7b^7\). On \(b\ne0\), \(z=a^3/b^7\) reduces the selected residual
+  to nine distinct geometric points: five rational and four on a squarefree
+  quartic. The remaining quotient targets are those nine points and \(b=0\).
 - Controlling strategy:
   [`strategy-audit-2026-07-29.md`](strategy-audit-2026-07-29.md).
 - Source audit:
@@ -129,6 +134,7 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
 | weighted-open components | irreducible \(G,L,Q\), each generically removed by an alternative complete-row minor | EXP-115 |
 | \(d=0\) kernel | \(P=a y+b y^5+y^8(1-xy)^8\) lies in the \(Q\)-space and \([P,P]=0\); sample rank gap \(123/124\) | EXP-115 |
 | \(d=0\) quotient graph | remove \(y^8\); origin rank \(112/113\), generic controls \(123/124\), largest SCC 51 | EXP-116 |
+| quotient residual invariant | \(b=0\) or nine squarefree values of \(z=a^3/b^7\) from one quartic and five linear factors | EXP-117 |
 | lower-family grading | \(w_{p,q}=q-p+1\pmod9\) for all 23 nonconstant remaining directions | EXP-106 |
 | properness instrument | exact resultant-leading-coefficient test | EXP-014 |
 | equivariant classification | EXP-010 on opposite-sign/one-zero scope; Shaska covers all signatures with triangular same-sign controls | 2026-07-25 reconciliation |
@@ -266,18 +272,19 @@ scalar conditions before exploiting sparsity.
   `10.5281/zenodo.21503367`.
 - EXP-110 through EXP-114 and Paper B v0.20 were merged into `develop` by
   PR `#92` at `9e039e1`.
-- EXP-115/116 are complete. EXP-117 is next but its hypothesis has not yet
-  been written.
+- EXP-115 through EXP-117 are complete. EXP-118 is next but its hypothesis
+  has not yet been written.
 - The management mirror is updated directly on its canonical `develop`
   checkout. Do not create a management worktree or task branch.
 
 ## 5. Next actions, in order
 
-1. Declare and run EXP-117 on the 51-column quotient core:
-   - factor its exact determinant in \(a,s=b-1\);
-   - combine the smaller diagonal-block factors;
-   - validate against direct exact 124-column determinants;
-   - isolate residual factors for alternative quotient charts.
+1. Declare and run EXP-118 on the finite quotient residual:
+   - find alternative 124-column charts on \(b=0\);
+   - test the five rational \(z\)-values exactly;
+   - test the quartic fibre over \(\mathbb Q[z]/(f_4)\) or by good-prime
+     non-divisibility plus exact lift;
+   - compute the common residual ideal if one chart does not cover.
 2. Close the proper intersections left on the three \(d\ne0\) components
    \(G,L,Q\), using the persisted EXP-115 row bases.
 3. Reopen intersection-\(21\) transport only with a complete

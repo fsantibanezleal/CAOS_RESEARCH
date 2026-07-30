@@ -14,7 +14,9 @@ a boundary-divisor ledger), and the EXP-098--108 constructible-certificate
 route, including the first complete exact augmented-minor chart cover on an
 actual three-coefficient GGHV slice and its global lower-family mod-9 grading,
 followed by the EXP-111 full-family rank correction, the EXP-112 exact
-36-column cyclic-core compression, and the EXP-114 weighted residual factors. Grows
+36-column cyclic-core compression, the EXP-114 weighted residual factors,
+and the EXP-115--117 boundary-kernel quotient reducing one selected residual
+to nine invariant points plus a divisor. Grows
 per session; content moved here from `manuscript/` in the 2026-07-22 split
 (see `manuscript/README.md` for the three-paper structure).
 
@@ -32,6 +34,6 @@ pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode ma
 Rules (methodology/05): [MV] / [D] / [C] labels on every claim; findings enter only after
 adversarial validation.
 
-Current manuscript version: **v0.20** (2026-07-29). Substantive revisions are published
+Current manuscript version: **v0.21** (2026-07-29). Substantive revisions are published
 as new Zenodo versions under concept DOI `10.5281/zenodo.21503367`.
-Version 0.20 DOI: `10.5281/zenodo.21694807`.
+Version 0.21 DOI: pending publication.

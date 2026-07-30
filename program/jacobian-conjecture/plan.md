@@ -41,13 +41,12 @@ support-restricted failure, or absence of a finite certificate as a proof.
 
 ## Ordered next work
 
-1. Run EXP-117 on EXP-116's 51-column quotient core:
-   - use shifted coordinates \(a,s=b-1\) at the exact rank-\(124\) anchor;
-   - compute and factor the 51-block determinant within a declared
-     five-minute budget;
-   - multiply it by the exact 11/10/9/8/7 and singleton block factors;
-   - verify the quotient determinant at direct exact controls and isolate its
-     residual factors for alternative 124-column charts.
+1. Run EXP-118 on EXP-117's finite quotient residual:
+   - cover the divisor \(b=0\), separating \(a\ne0\) from the deeper origin;
+   - on \(b\ne0\), use \(z=a^3/b^7\) and test alternative 124-column minors
+     at the five rational roots and in \(\mathbb Q[z]/(f_4)\);
+   - prove a complete quotient chart cover or persist the exact smaller
+     residual left by those alternatives.
 2. Intersect the three \(d\ne0\) alternative minors from EXP-115 with their
    target factors \(G,L,Q\). Use EXP-101 through EXP-108 as regression
    controls.
@@ -85,6 +84,9 @@ support-restricted failure, or absence of a finite certificate as a proof.
   forces a polynomial right kernel. Quotient by this kernel first.
 - Treating \((a,b)=(0,0)\) as a generic quotient anchor: retire. EXP-116
   finds the deeper exact rank stratum \(112/113\); normalize at \((0,1)\).
+- Treating the \(d=0\) quotient residual as a two-dimensional elimination
+  target: retire. EXP-117 reduces \(b\ne0\) to nine squarefree invariant
+  points in \(z=a^3/b^7\), plus the divisor \(b=0\).
 
 ## Cancelled EXP-093 scale facts
 
