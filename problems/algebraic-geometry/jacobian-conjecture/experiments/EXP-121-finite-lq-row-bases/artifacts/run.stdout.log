@@ -1,0 +1,332 @@
+[PASS] complete system is 302 by 125
+[PASS] H63(d=1) factors as linear times quadratic in X=A^3
+[PASS] G54(d=1) is irreducible over Q[X,B]
+[PASS] G54(A^3,B) is irreducible over Q[A,B]
+[PASS] H_linear(A^3,B) is irreducible over Q[A,B]
+[PASS] H_quadratic(A^3,B) is irreducible over Q[A,B]
+[PASS] EXP-119 row basis has size 125
+[PASS] L modular residual enumeration meets its gate
+[INFO] p=1009 L: 0 affine A-lifts on the first-chart residual
+[INFO] p=1009 L: 0 distinct full-rank row bases from 0 trials
+[PASS] Q modular residual enumeration meets its gate
+[INFO] p=1009 Q: 0 affine A-lifts on the first-chart residual
+[INFO] p=1009 Q: 0 distinct full-rank row bases from 0 trials
+[PASS] L modular residual enumeration meets its gate
+[INFO] p=1013 L: 13 affine A-lifts on the first-chart residual
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L residual-selected minor is nonzero mod 1013
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[INFO] p=1013 L: 1 distinct full-rank row bases from 13 trials
+[PASS] Q modular residual enumeration meets its gate
+[INFO] p=1013 Q: 0 affine A-lifts on the first-chart residual
+[INFO] p=1013 Q: 0 distinct full-rank row bases from 0 trials
+[PASS] L modular residual enumeration meets its gate
+[INFO] p=1019 L: 8 affine A-lifts on the first-chart residual
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[INFO] p=1019 L: 0 distinct full-rank row bases from 8 trials
+[PASS] Q modular residual enumeration meets its gate
+[INFO] p=1019 Q: 0 affine A-lifts on the first-chart residual
+[INFO] p=1019 Q: 0 distinct full-rank row bases from 0 trials
+[PASS] L modular residual enumeration meets its gate
+[INFO] p=1031 L: 8 affine A-lifts on the first-chart residual
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[INFO] p=1031 L: 0 distinct full-rank row bases from 8 trials
+[PASS] Q modular residual enumeration meets its gate
+[INFO] p=1031 Q: 0 affine A-lifts on the first-chart residual
+[INFO] p=1031 Q: 0 distinct full-rank row bases from 0 trials
+[PASS] L modular residual enumeration meets its gate
+[INFO] p=1033 L: 0 affine A-lifts on the first-chart residual
+[INFO] p=1033 L: 0 distinct full-rank row bases from 0 trials
+[PASS] Q modular residual enumeration meets its gate
+[INFO] p=1033 Q: 18 affine A-lifts on the first-chart residual
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q residual-selected minor is nonzero mod 1033
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[INFO] p=1033 Q: 1 distinct full-rank row bases from 18 trials
+[PASS] L modular residual enumeration meets its gate
+[INFO] p=1039 L: 0 affine A-lifts on the first-chart residual
+[INFO] p=1039 L: 0 distinct full-rank row bases from 0 trials
+[PASS] Q modular residual enumeration meets its gate
+[INFO] p=1039 Q: 15 affine A-lifts on the first-chart residual
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[PASS] Q selection point lies on EXP-119 chart
+[INFO] p=1039 Q: 0 distinct full-rank row bases from 15 trials
+[PASS] L modular residual enumeration meets its gate
+[INFO] p=1049 L: 9 affine A-lifts on the first-chart residual
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[INFO] p=1049 L: 0 distinct full-rank row bases from 9 trials
+[PASS] Q modular residual enumeration meets its gate
+[INFO] p=1049 Q: 0 affine A-lifts on the first-chart residual
+[INFO] p=1049 Q: 0 distinct full-rank row bases from 0 trials
+[PASS] L has a full-rank modular residual-selected basis
+[PASS] Q has a full-rank modular residual-selected basis
+[INFO] reconstructing exact L chart 1
+[PASS] L basis has rational anchor (1, 0, 1)
+[INFO] L candidate cyclic SCC sizes [26, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[PASS] L largest cyclic block is within gate 60
+[PASS] cyclic block 26 is normalized at the rational anchor
+[INFO] block 26: degree 23, 192 monomials, 24.06 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] L determinant is below the expansion gate
+[PASS] third-chart block product matches at (1, 0)
+[PASS] third-chart block product matches at (0, 0)
+[PASS] third-chart block product matches at (1, 0)
+[PASS] third-chart block product matches at (0, 1)
+[PASS] third-chart block product matches at (-1, 2)
+[PASS] third determinant has one A-exponent residue modulo three
+[PASS] third determinant minimum A-power matches its residue
+[PASS] third determinant reconstructs exactly under X=A^3
+[PASS] L invariant is below the expansion gate
+[PASS] L exact determinant meets its six-minute gate
+[PASS] component ideal meets its 240-second gate
+[INFO] L after chart 1: UNIT
+[INFO] reconstructing exact Q chart 1
+[INFO] reusing exact determinant already reconstructed for the same Q row basis
+[PASS] first chart exposes a positive B-coordinate factor
+[PASS] B-coordinate split reconstructs the first chart exactly
+[PASS] B=0 branch has an exact unit univariate gcd
+[PASS] split certificate component is quadratic in X
+[PASS] split certificate quadratic has constant leading coefficient
+[PASS] split certificate component is quadratic in X
+[PASS] split certificate quadratic has constant leading coefficient
+[PASS] both reductions use the same exact quadratic relation
+[PASS] quotient-chart linear remainder has no exceptional coefficient root
+[PASS] quotient-chart compatibility polynomials have exact unit gcd
+[PASS] component ideal meets its 240-second gate
+[INFO] Q after chart 1: UNIT
+[PASS] EXP-121 meets its total compute gate
+[PASS] wrote artifacts\results.json
+SHA256 72C5AC79DE29D59E89D0D5AC5527EEA760C078B2E2D4FCA13568E2A6DB5F79CE
+[INFO] elapsed 44.57 s
+RESULT: COMPLETE
