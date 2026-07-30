@@ -65,7 +65,7 @@ All failed attempts and the corrected audit are persisted under
 
 - The three EXP-124 factors and their gcd-one relations with \(R,S\) were
   reproduced.
-- Twenty-four accepted graph/factor samples—four per factor and prime—passed
+- Twenty-four accepted graph/factor samples, four per factor and prime, passed
   the exact modular membership checks.
 - Every accepted sample had rank profile \(124/125\).
 - All three factors supplied cross-prime alternative bases.
