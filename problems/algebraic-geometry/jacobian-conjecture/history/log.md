@@ -1432,3 +1432,23 @@
 - Paper B v0.24 transcribes EXP-122/123. Its two-pass 18-page build has no
   layout warnings, all rendered pages pass visual QA, and PR #99 merged at
   `646911b`. The immutable Zenodo DOI is `10.5281/zenodo.21698923`.
+
+## 2026-07-30 - EXP-124 covers a dense open of the rational graph
+
+- Forty deterministic graph points over 1009 and 1013 all have
+  coefficient/augmented rank profile \(124/125\). The same alternative
+  125-row basis appears over both primes and differs from the shared basis by
+  one row.
+- Its exact determinant is
+  \[
+  \Delta_{\rm alt}=A^{90}N(A^3,B),
+  \]
+  independent of \(C\). The 21-term, degree-16 polynomial \(N\) factors into
+  three exact plane factors of total degrees 3, 6, and 7, and is coprime to
+  both EXP-123 polynomials \(R,S\).
+- This covers the dense graph open \(N\ne0\). The three factor curves,
+  finite \(V(R,S)\), and \(A=0\) are the exact residual strata. It does not
+  close the four-parameter restriction, \((72,108)\), the degree floor, or
+  \(JC(2)\).
+- EXP-125 will recurse on the three factor curves, beginning with the
+  linear-in-\(X\) degree-3 factor.
