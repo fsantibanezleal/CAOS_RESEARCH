@@ -1452,3 +1452,22 @@
   \(JC(2)\).
 - EXP-125 will recurse on the three factor curves, beginning with the
   linear-in-\(X\) degree-3 factor.
+
+## 2026-07-30 - EXP-125 reduces the \(F_3\) curve to finitely many points
+
+- The original 1009/1013 prime prescription was refuted by factor
+  arithmetic. After two explicitly persisted insufficient redirects, a
+  cube-locus audit selected 739 and 811.
+- At both accepted primes, four samples on each of \(F_3,F_6,F_7\) have
+  rank profile \(124/125\), and every factor supplies a new cross-prime row
+  basis.
+- Exact reconstruction on \(F_3=(5B+4)^3+16X=0\) gives, up to scalar,
+  \[
+  U_3=(5B+4)Q_6^2Q_9Q_{15}.
+  \]
+  The linear factor forces \(A=0\), while \(Q_6\) divides both restricted
+  \(R\) and \(S\). On \(AS\ne0\), only \(Q_9Q_{15}=0\) remains: 24
+  normalized \(B\)-values, or 72 lifted algebraic points.
+- The positive-dimensional graph residual is now \(F_6\cup F_7\).
+  Neither the full four-parameter restriction nor \((72,108)\), the degree
+  floor, or \(JC(2)\) is closed.

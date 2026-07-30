@@ -375,6 +375,17 @@ def restrict_to_graph(invariant, r, s, x, b, y):
     return y_degree, Poly(numerator, x, b, domain=QQ)
 
 
+def univariate_factorization(expression, b):
+    coefficient, factors = factor_list(expression, b)
+    return {
+        "coefficient": str(coefficient),
+        "factors": [
+            {"factor": str(factor), "multiplicity": multiplicity}
+            for factor, multiplicity in factors
+        ],
+    }
+
+
 def main() -> None:
     started = time.time()
     require(
@@ -474,6 +485,32 @@ def main() -> None:
     s_f3 = Poly(expand(s.subs(x, f3_substitution)), b, domain=QQ)
     gcd_r = gcd(quotient_monic, r_f3).monic()
     gcd_s = gcd(quotient_monic, s_f3).monic()
+    factor_roles = []
+    effective_degree = 0
+    x_zero_polynomial = Poly((5 * b + 4) ** 3, b, domain=QQ)
+    for factor, multiplicity in quotient_factors[1]:
+        factor_poly = Poly(factor, b, domain=QQ)
+        divides_r = gcd(factor_poly, r_f3).degree() > 0
+        divides_s = gcd(factor_poly, s_f3).degree() > 0
+        implies_x_zero = gcd(factor_poly, x_zero_polynomial).degree() > 0
+        retained = not divides_s and not implies_x_zero
+        if retained:
+            effective_degree += int(factor_poly.degree()) * multiplicity
+        factor_roles.append(
+            {
+                "factor": str(factor),
+                "degree": int(factor_poly.degree()),
+                "multiplicity": multiplicity,
+                "divides_R_restriction": divides_r,
+                "divides_S_restriction": divides_s,
+                "implies_X_zero": implies_x_zero,
+                "retained_on_A_S_nonzero": retained,
+            }
+        )
+    require(
+        effective_degree == 24,
+        "effective F3 principal-open residual has degree 24",
+    )
 
     controls = []
     for av, bv, cv in ((1, 0, 0), (1, 0, 1), (2, 1, 1), (-1, 1, 1)):
@@ -505,13 +542,13 @@ def main() -> None:
         "F3_substitution_X": str(f3_substitution),
         "F3_quotient_monic": str(quotient_monic.as_expr()),
         "F3_quotient_degree": int(quotient_monic.degree()),
-        "F3_quotient_factorization": {
-            "coefficient": str(quotient_factors[0]),
-            "factors": [
-                {"factor": str(factor), "multiplicity": multiplicity}
-                for factor, multiplicity in quotient_factors[1]
-            ],
-        },
+        "F3_quotient_factorization": univariate_factorization(
+            quotient_monic.as_expr(), b
+        ),
+        "R_on_F3_factorization": univariate_factorization(r_f3.as_expr(), b),
+        "S_on_F3_factorization": univariate_factorization(s_f3.as_expr(), b),
+        "F3_quotient_factor_roles": factor_roles,
+        "effective_A_S_nonzero_residual_degree": effective_degree,
         "F3_quotient_rational_roots": {
             str(root): multiplicity
             for root, multiplicity in ground_roots(quotient_monic).items()
