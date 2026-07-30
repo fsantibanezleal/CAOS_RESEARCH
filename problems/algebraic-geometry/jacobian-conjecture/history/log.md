@@ -1407,3 +1407,25 @@
   programme. Its two-pass 17-page PDF build has no layout warnings, and all
   17 rendered pages pass visual inspection. PR #97 merged at `d55798f`;
   the immutable Zenodo version DOI is `10.5281/zenodo.21697928`.
+
+## 2026-07-30 - EXP-122/123 produce the first higher-dimensional core reduction
+
+- EXP-122 restores all 24 EXP-112 cyclic-core directions on the EXP-121
+  shared basis. No restored direction is free on its anchor line. Thirteen
+  directions act inside the size-26 block, 16 enlarge the fixed-\(d\) SCC,
+  and every restored direction has nonzero first or pairwise mixed
+  determinant participation.
+- The eight directions \((2,j)\), \(2\leq j\leq9\), enlarge the SCC while
+  retaining linear anchor-line determinants. Direction \((2,9)\) has the
+  smallest support, rank, and enlarged SCC.
+- EXP-123 computes the complete \((2,9)\) symbolic lift on \(d=1\):
+  \[
+  \Delta=A^{87}\bigl(R(A^3,B)+A^2CS(A^3,B)\bigr),
+  \quad \gcd(R,S)=1.
+  \]
+  Thus, on \(A\ne0\), the selected exceptional set is the rational graph
+  \(Y=-R/S\) plus zero-dimensional \(V(R,S)\).
+- This is the first genuine higher-dimensional constructible reduction from
+  the 24-parameter core. It does not cover the four-parameter restriction,
+  \((72,108)\), the degree floor, or \(JC(2)\). EXP-124 will select
+  alternative bases directly on the graph and treat \(A=0\) separately.

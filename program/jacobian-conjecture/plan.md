@@ -41,16 +41,16 @@ support-restricted failure, or absence of a finite certificate as a proof.
 
 ## Ordered next work
 
-1. Record EXP-121 as complete. Its shared residual-selected row basis closes
-   both \(L\) and \(Q\), so EXP-118--121 close the complete
-   three-parameter \(T_B\) restriction.
-2. Before declaring EXP-122, audit how the EXP-121 basis lifts back into the
-   24-parameter cyclic core:
-   - classify every restored direction as determinant-inert, acyclic, or
-     active in the size-26 cyclic block;
-   - compute exact first derivatives and sparse mixed-support participation;
-   - promote only a symbolic neighborhood or higher-dimensional
-     constructible stratum, not another isolated coefficient sample.
+1. Record EXP-122/123 as complete. No restored direction is free on the
+   EXP-121 anchor line. The sparsest direction \((2,9)\) gives the exact
+   higher-dimensional reduction
+   \[
+   \Delta=A^{87}\bigl(R(A^3,B)+A^2CS(A^3,B)\bigr),\qquad \gcd(R,S)=1.
+   \]
+2. Declare EXP-124 on the rational exceptional graph. Select alternative row
+   bases at finite-field points with \(Y=-R/S\), reconstruct an exact graph
+   restriction, and recurse only on its numerator factors and the finite base
+   locus \(V(R,S)\). Treat \(A=0\) as a separate boundary.
 3. Treat the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
    spend compute re-eliminating or adding charts to the closed restriction.
 4. Reopen intersection-\(21\) transport only if the cyclic core remains too

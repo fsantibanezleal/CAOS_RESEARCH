@@ -74,4 +74,7 @@
 | JCB-070 | Select row bases directly on the finite L and Q residual schemes | P5 | done | 2026-07-30 | EXP-121 finds one shared 125-row basis; its 23-term exact determinant gives unit certificates on both L and Q |
 | JCB-071 | Publish EXP-118 through EXP-120 in Paper B v0.22 and Zenodo | P6 | done | 2026-07-29 | PR #95 merged at 68ec8d3; immutable version DOI 10.5281/zenodo.21696190 |
 | JCB-072 | Publish the complete three-parameter TB cover in Paper B v0.23 and Zenodo | P6 | done | 2026-07-30 | PR #97 merged at d55798f; immutable version DOI 10.5281/zenodo.21697928 |
-| JCB-073 | Audit whether the EXP-121 shared basis lifts into a higher-dimensional constructible core stratum | P5 | todo | 2026-07-30 | restore all 24 core directions; classify inert/acyclic/size-26-block activity before declaring EXP-122 |
+| JCB-073 | Audit whether the EXP-121 shared basis lifts into a higher-dimensional constructible core stratum | P5 | done | 2026-07-30 | EXP-122: no free direction; 13 directions act inside the 26-block, 16 enlarge it, and all 21 restored directions participate at low order |
+| JCB-074 | Compute the first exact four-parameter symbolic lift in direction (2,9) | P5 | done | 2026-07-30 | EXP-123: \(\Delta=A^{87}(R(A^3,B)+A^2CS(A^3,B))\), with 23-term \(R\), 18-term \(S\), and \(\gcd(R,S)=1\) |
+| JCB-075 | Cover the EXP-123 rational exceptional graph and finite base locus | P5 | todo | 2026-07-30 | select alternative row bases on \(Y=-R/S\); recurse on graph numerator factors and \(V(R,S)\); treat \(A=0\) separately |
+| JCB-076 | Publish the higher-dimensional constructible reduction in Paper B v0.24 | P6 | doing | 2026-07-30 | manuscript and Zenodo new version required; no four-parameter closure claim |

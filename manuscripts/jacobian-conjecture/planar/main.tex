@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-30\\[2pt]\normalsize Version 0.23}
+\date{2026-07-30\\[2pt]\normalsize Version 0.24}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.23}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.24}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -39,7 +39,7 @@ the Staircase Transport, and the Recalibrated Frontier}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper B of a three-paper record \textperiodcentered\ version 0.23 \textperiodcentered\ 2026-07-30\\
+Paper B of a three-paper record \textperiodcentered\ version 0.24 \textperiodcentered\ 2026-07-30\\
 DOI \href{https://doi.org/10.5281/zenodo.21503367}{10.5281/zenodo.21503367} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -953,6 +953,49 @@ restriction: EXP-118 covers \(d=0\), EXP-120 covers \(G\) on \(d\ne0\), and
 EXP-121 covers the remaining finite \(L/Q\) strata. They do not close the
 24-parameter core, the full 51-parameter family, \((72,108)\), the planar
 degree floor, or \(JC(2)\).
+
+\subsection*{First higher-dimensional lift from the cyclic core}
+
+EXP-122 restores the other 21 directions in the 24-parameter cyclic core on
+the shared EXP-121 basis [MV]. No restored direction is
+determinant-inert on its complete anchor line. Thirteen directions act inside
+the existing size-26 cyclic block, 16 enlarge the fixed-\(d\) SCC, and every
+restored direction contributes at first order or pairwise mixed order. The
+free-lift prediction is therefore refuted for this basis.
+
+The eight directions \((2,j)\), \(2\leq j\leq9\), nevertheless form a sparse
+class: each enlarges the SCC but has a linear anchor-line determinant.
+Direction \((2,9)\) has the smallest selected rank, normalized support, and
+enlarged SCC. EXP-123 computes its complete symbolic lift on \(d=1\) [MV].
+Writing \(C=\varepsilon_{(2,9)}\),
+\[
+ X=A^3,\qquad Y=A^2C,
+\]
+the shared determinant is
+\[
+ \Delta_{(2,9)}(A,B,C)
+ =A^{87}\bigl(R(X,B)+Y S(X,B)\bigr).
+\]
+Here \(R\) is the 23-term EXP-121 polynomial, \(S\) has 18 terms, and
+\[
+ \gcd_{\Q[X,B]}(R,S)=1.
+\]
+Two modular probes precede the exact computation. The claim rests on the
+characteristic-zero determinant, its \(C=0\) regression, and four direct
+full-matrix rational controls.
+
+Consequently, on \(A\ne0\) and \(S\ne0\), the selected exceptional locus is
+the rational graph
+\[
+ Y=-\frac{R(X,B)}{S(X,B)}.
+\]
+The remaining base locus \(V(R,S)\subset\mathbb A^2_{X,B}\) is
+zero-dimensional because \(R\) and \(S\) are coprime. This is the first
+higher-dimensional constructible reduction from the 24-parameter core [D].
+It is not a four-parameter chart cover: an alternative minor must still cover
+the rational graph, the finite base locus, and the separate divisor \(A=0\).
+The complete \((72,108)\) case, the planar degree floor, and \(JC(2)\) remain
+open.
 
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the

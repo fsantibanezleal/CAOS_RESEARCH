@@ -1,7 +1,7 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-07-30 after EXP-121 closed the complete three-parameter
-\(T_B\) restriction. This is
+Updated 2026-07-30 after EXP-123 produced the first higher-dimensional
+constructible reduction from the 24-parameter core. This is
 the first-read navigation page. Primary artifacts and experiment verdicts
 remain the evidence.
 
@@ -129,6 +129,20 @@ remain the evidence.
   gcds close \(Q\). Combined with EXP-118 and EXP-120, the complete
   three-parameter \(T_B\) restriction is closed. The 24-parameter core,
   51-parameter family, \((72,108)\), degree floor, and \(JC(2)\) remain open.
+- EXP-122 restores all 24 cyclic-core directions on the EXP-121 shared basis.
+  None of the 21 directions outside \(T_B\) is free on its anchor line.
+  Thirteen act inside the size-26 block, 16 enlarge the fixed-\(d\) SCC, and
+  all 21 participate at first or pairwise mixed order. The eight directions
+  \((2,j)\), \(2\leq j\leq9\), have linear anchor-line factors.
+- EXP-123 lifts the sparsest direction \((2,9)\) exactly. With
+  \(X=A^3\), \(Y=A^2C\), and \(C=\varepsilon_{(2,9)}\),
+  \[
+  \Delta=A^{87}\bigl(R(X,B)+Y S(X,B)\bigr),
+  \qquad \gcd_{\mathbb Q[X,B]}(R,S)=1.
+  \]
+  The polynomials \(R,S\) have 23 and 18 monomials. On \(A\ne0\), the
+  selected exceptional locus is the rational graph \(Y=-R/S\) over
+  \(S\ne0\), plus finite \(V(R,S)\). No four-parameter cover is proved.
 - Controlling strategy:
   [`strategy-audit-2026-07-29.md`](strategy-audit-2026-07-29.md).
 - Source audit:
@@ -163,6 +177,9 @@ remain the evidence.
 | first weighted-open alternative chart | exact \(X=A^3\) factorization; proper finite intersections with \(G,L,Q\) | EXP-119 |
 | third weighted-open chart | \(\Delta_G\doteq X^{30}LQR\); unit ideal on \(G\), finite nonunit ideals on \(L,Q\) | EXP-120 |
 | finite-residual shared chart | one 125-row basis on both \(L,Q\); \(\Delta_{\mathrm{fin}}=A^{87}R(A^3,B)\); exact unit certificates on both | EXP-121 |
+| shared-basis core activity tensor | exact traces, pair traces, anchor-line factors, and SCC changes for all 24 core directions | EXP-122 |
+| first four-parameter lift | \(\Delta=A^{87}(R(A^3,B)+A^2CS(A^3,B))\), with primitive coefficient gcd one | EXP-123 |
+| rational exceptional graph | \(Y=-R(X,B)/S(X,B)\) on \(A S\ne0\), with finite base locus \(V(R,S)\) | EXP-123 |
 | complete \(T_B\) restriction cover | \(d=0\) quotient cover plus exact \(G,L,Q\) weighted-open covers | EXP-118/120/121 |
 | lower-family grading | \(w_{p,q}=q-p+1\pmod9\) for all 23 nonconstant remaining directions | EXP-106 |
 | properness instrument | exact resultant-leading-coefficient test | EXP-014 |
@@ -286,6 +303,12 @@ scalar conditions before exploiting sparsity.
   exactly. The accepted run completes in 44.57 seconds; two quantitative
   predictions (first-four-prime coverage and at most ten replacements) are
   explicitly refuted.
+- EXP-122: the free-lift prediction is refuted for all 21 restored
+  directions. The exact activity audit isolates the linear \((2,j)\) ladder
+  and promotes \((2,9)\).
+- EXP-123: \((2,9)\) is affine over the complete symbolic \(A,B\) chart.
+  The accepted exact run completes in 131.86 seconds and reduces the selected
+  exceptional set to a rational graph plus finite base locus.
 - EXP-102: third chart exists at \(u=1\); complete pullback is inconclusive
   after the dense rank-121 determinant hit its five-minute budget.
 
@@ -297,7 +320,7 @@ scalar conditions before exploiting sparsity.
   at \(u=1\).
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
-- EXP-111 through EXP-121 are complete. No Jacobian process is active.
+- EXP-111 through EXP-123 are complete. No Jacobian process is active.
 - Current research branch: `work/jacobian-conjecture/next-round`.
 - EXP-096 was merged into `develop` by PR `#81` at `7866b0f`.
 - The planar manuscript reconciliation was merged by PR `#83` at `ffc6a3d`.
@@ -327,20 +350,20 @@ scalar conditions before exploiting sparsity.
 - EXP-121 and Paper B v0.23 were merged into `develop` by PR `#97` at
   `d55798f`. Paper B v0.23 is published at
   `10.5281/zenodo.21697928` under the same concept DOI.
+- EXP-122 and EXP-123 are committed and pushed on the active branch through
+  `a749617`. Paper B v0.24 reconciliation and publication are in progress.
 - The management mirror is updated directly on its canonical `develop`
   checkout. Do not create a management worktree or task branch.
 
 ## 5. Next actions, in order
 
-1. Declare EXP-121 on the finite \(L\) and \(Q\) common residuals:
-   **done by EXP-121**. One shared basis closes both components exactly.
-2. Declare EXP-122 only after a core-lift audit of the EXP-121 shared basis:
-   - restore all 24 cyclic-core directions and determine which directions
-     are determinant-inert, acyclic, or confined to the size-26 block;
-   - compute exact first derivatives and mixed-support participation of the
-     shared minor, without expanding a generic 24-variable determinant;
-   - promote only a direction set that gives a symbolic neighborhood or a
-     higher-dimensional constructible stratum, not another isolated sample.
+1. EXP-122/123 are complete. Preserve the exact reduction
+   \(\Delta=A^{87}(R+YS)\) and its scope limits.
+2. Declare EXP-124 on the rational graph \(Y=-R/S\):
+   - select alternative complete-row bases at finite-field graph points;
+   - reconstruct an exact graph-restriction numerator;
+   - factor and recurse only on its residual curves and finite \(V(R,S)\);
+   - treat \(A=0\) as a separate boundary.
 3. Keep the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
    add redundant charts to the closed three-parameter restriction.
 4. Reopen intersection-\(21\) transport only with a complete
@@ -353,13 +376,13 @@ scalar conditions before exploiting sparsity.
    - keep C10/C11/C19/C20 unresolved by GGV2 Remark 2.32;
    - derive the 16 missing \(A'_0\) values through the declared chain algorithm;
    - preserve C01/C04 as open absent an exact exclusion.
-7. Re-rank after the core-lift audit and source pass. The admissible next choices are a source-derived
-   restriction, a module/chart-cover computation, or a newly justified higher-degree
-   structural probe. Do not build EXP-093.
+7. Keep the graph-cover computation as P0 while it continues to reduce
+   dimension exactly. Re-rank only if EXP-124 yields no nonzero alternative
+   graph restriction. Do not build EXP-093.
 8. Keep EXP-109 as a bounded regression control, not as the main route.
-9. Paper B v0.23 publication is complete. Preserve version DOI
-   `10.5281/zenodo.21697928`; future substantive changes require a new
-   version.
+9. Publish the adjudicated EXP-122/123 reduction as Paper B v0.24. Preserve
+   v0.23 DOI `10.5281/zenodo.21697928`; publish through a Zenodo new version,
+   never an edit.
 
 Suggested source-round commands:
 

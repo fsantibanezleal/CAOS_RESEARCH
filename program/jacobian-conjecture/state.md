@@ -275,3 +275,16 @@
   visual QA pass. PR #97 merged at `d55798f`; the immutable Zenodo version
   DOI is `10.5281/zenodo.21697928`, under concept DOI
   `10.5281/zenodo.21503367`.
+- **2026-07-30 EXP-122:** all 24 pinned cyclic-core directions are restored on
+  the EXP-121 shared basis. None of the 21 directions outside \(T_B\) is
+  determinant-inert on its anchor line; 13 act inside the size-26 block, 16
+  enlarge the cyclic SCC, and all 21 participate at first or pairwise mixed
+  order. The eight \((2,j)\) directions have linear anchor-line factors.
+- **2026-07-30 EXP-123:** the sparsest direction \((2,9)\) lifts symbolically:
+  \[
+  \Delta=A^{87}\bigl(R(A^3,B)+A^2CS(A^3,B)\bigr).
+  \]
+  The polynomials \(R(X,B)\) and \(S(X,B)\) have 23 and 18 monomials and
+  gcd one. On \(A\ne0\), the selected exceptional locus is the rational graph
+  \(Y=-R/S\), plus the finite base locus \(V(R,S)\). No four-parameter cover
+  is claimed.
