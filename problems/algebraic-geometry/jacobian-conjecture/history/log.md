@@ -1373,3 +1373,6 @@
 - Strategy redirects to row bases selected directly on the finite \(L/Q\)
   residuals. The full \(T_B\) restriction, \((72,108)\), the degree floor,
   and JC(2) remain open.
+- Paper B v0.22 passed its two-pass 16-page build and complete visual QA.
+  PR #95 merged the round into `develop` at `68ec8d3`; the immutable Zenodo
+  version DOI is `10.5281/zenodo.21696190`.

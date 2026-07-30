@@ -306,6 +306,10 @@ scalar conditions before exploiting sparsity.
 - EXP-118 through EXP-120 are committed on the active research branch.
 - The next declared mathematical target is EXP-121: select distinct
   maximal-minor row bases on the finite \(L\) and \(Q\) common residuals.
+- EXP-118 through EXP-120 and Paper B v0.22 were merged into `develop` by
+  PR `#95` at `68ec8d3`. Paper B v0.22 is published at
+  `10.5281/zenodo.21696190` under concept DOI
+  `10.5281/zenodo.21503367`.
 - The management mirror is updated directly on its canonical `develop`
   checkout. Do not create a management worktree or task branch.
 
