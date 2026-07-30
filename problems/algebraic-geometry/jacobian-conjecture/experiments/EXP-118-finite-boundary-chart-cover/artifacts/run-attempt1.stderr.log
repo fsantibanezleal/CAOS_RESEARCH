@@ -1,0 +1,19 @@
+RESULT: FAILED: b=0 chart restricts to one nonzero a monomial
+Traceback (most recent call last):
+  File "problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-118-finite-boundary-chart-cover/run.py", line 696, in <module>
+    main()
+    ~~~~^^
+  File "problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-118-finite-boundary-chart-cover/run.py", line 620, in main
+    axis_origin = axis_and_origin_checks(system, covariance)
+  File "problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-118-finite-boundary-chart-cover/run.py", line 469, in axis_and_origin_checks
+    require(
+    ~~~~~~~^
+        axis_exponents == [axis_weight // 7],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "b=0 chart restricts to one nonzero a monomial",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-118-finite-boundary-chart-cover/run.py", line 48, in require
+    raise AssertionError(message)
+AssertionError: b=0 chart restricts to one nonzero a monomial

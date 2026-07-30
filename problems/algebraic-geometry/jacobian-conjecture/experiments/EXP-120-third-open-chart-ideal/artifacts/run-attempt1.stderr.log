@@ -1,0 +1,20 @@
+RESULT: FAILED: third determinant coordinate monomial matches its residue
+Traceback (most recent call last):
+  File "problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-120-third-open-chart-ideal/run.py", line 437, in <module>
+    main()
+    ~~~~^^
+  File "problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-120-third-open-chart-ideal/run.py", line 326, in main
+    x, coordinate_power, invariant = invariant_form(original, a, b)
+                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-120-third-open-chart-ideal/run.py", line 176, in invariant_form
+    require(
+    ~~~~~~~^
+        minimum == residue,
+        ^^^^^^^^^^^^^^^^^^^
+        "third determinant coordinate monomial matches its residue",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "problems/algebraic-geometry/jacobian-conjecture/experiments/EXP-120-third-open-chart-ideal/run.py", line 45, in require
+    raise AssertionError(message)
+AssertionError: third determinant coordinate monomial matches its residue

@@ -235,3 +235,22 @@
   passed; PR #93 merged at `b57a9b7`. Zenodo version DOI:
   `10.5281/zenodo.21695367`, concept DOI:
   `10.5281/zenodo.21503367`.
+- **2026-07-29 EXP-118:** the complete \(d=0\) quotient plane is covered.
+  A deterministic alternative 124-row minor is exactly \(C a^{107}\) with
+  \(C\ne0\); EXP-117's selected chart is \(b^{95}\) on \(a=0\); and the
+  origin retains exact rank profile \(112/113\). The alternative chart is
+  nonzero at all nine invariant residual points, including the squarefree
+  quartic fibre. This closes only the quotient boundary stratum.
+- **2026-07-29 EXP-119:** the full 302-by-125 system has exact
+  \((7,3,9)\) covariance. A characteristic-zero alternative determinant on
+  \(d=1\), expressed through \(X=A^3\), has 114 monomials and unit gcd with
+  each selected component \(G,L,Q\). Nonconstant exact resultants prove that
+  all three pairwise intersections are finite, not empty.
+- **2026-07-29 EXP-120:** the independent \(G\)-basis determinant is, up to
+  a nonzero rational scalar, \(X^{30}LQR\). Factorwise exact Groebner bases
+  prove the full three-chart ideal is the unit ideal on \(G\). On \(L\) and
+  \(Q\) it is nonunit and zero-dimensional; the \(L\) eliminant has degree
+  108 and squarefree degree 73, while the \(Q\) FGLM conversion stopped at
+  its declared cost gate. Next select new bases directly on these finite
+  residuals. The full \(T_B\) restriction, \((72,108)\), the degree floor,
+  and JC(2) remain open.

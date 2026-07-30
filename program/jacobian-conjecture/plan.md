@@ -41,15 +41,16 @@ support-restricted failure, or absence of a finite certificate as a proof.
 
 ## Ordered next work
 
-1. Run EXP-118 on EXP-117's finite quotient residual:
-   - cover the divisor \(b=0\), separating \(a\ne0\) from the deeper origin;
-   - on \(b\ne0\), use \(z=a^3/b^7\) and test alternative 124-column minors
-     at the five rational roots and in \(\mathbb Q[z]/(f_4)\);
-   - prove a complete quotient chart cover or persist the exact smaller
-     residual left by those alternatives.
-2. Intersect the three \(d\ne0\) alternative minors from EXP-115 with their
-   target factors \(G,L,Q\). Use EXP-101 through EXP-108 as regression
-   controls.
+1. Declare EXP-121 on the finite \(L\) and \(Q\) common residuals left by
+   EXP-120:
+   - select new maximal-minor row bases at deterministic algebraic or
+     good-prime points on each residual;
+   - reject bases whose determinants contain the target component;
+   - test the new minors in the exact quotient rings and certify unit ideals
+     or persist strictly smaller eliminants.
+2. Treat EXP-118's complete \(d=0\) quotient cover and EXP-120's complete
+   \(G\)-component cover as regression gates. Do not spend compute
+   re-eliminating those closed strata.
 3. Reopen intersection-\(21\) transport only if the cyclic core remains too
    large, and only with the complete boundary-divisor ledger required by
    EXP-097.
@@ -87,6 +88,10 @@ support-restricted failure, or absence of a finite certificate as a proof.
 - Treating the \(d=0\) quotient residual as a two-dimensional elimination
   target: retire. EXP-117 reduces \(b\ne0\) to nine squarefree invariant
   points in \(z=a^3/b^7\), plus the divisor \(b=0\).
+- Reusing the EXP-115 \(G\)-basis to attack the \(L\) or \(Q\) residual:
+  retire. EXP-120 factors its determinant as \(X^{30}LQR\), so it vanishes
+  identically on both target components. Select bases on the surviving
+  finite schemes instead.
 
 ## Cancelled EXP-093 scale facts
 
