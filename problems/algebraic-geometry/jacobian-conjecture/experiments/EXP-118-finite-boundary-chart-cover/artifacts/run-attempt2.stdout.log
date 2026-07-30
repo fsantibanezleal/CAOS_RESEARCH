@@ -1,0 +1,32 @@
+[PASS] the fixed kernel coordinate is the y^8 Q-column
+[PASS] quotient augmented matrix has shape 302 by 124
+[PASS] quotient matrix has exact rank 124 at anchor (a,b)=(0,1)
+[PASS] EXP-115 polynomial P-kernel rechecks coefficientwise
+[PASS] complete quotient support carries exact (7,3) covariance
+[INFO] covariance digest 6478354BC5F67B79A072CD7098148A058A521CACB8B3C60C4DD90AF22E237449
+[PASS] EXP-117 invariant has degree nine
+[PASS] EXP-117 invariant is squarefree
+[PASS] residual factor 1 is squarefree
+[INFO] factor 1/6 selected at p=1151, z=292
+[PASS] alternative determinant has one a-exponent residue class modulo three
+[INFO] chart 1: weight 749, residue 2, invariant exponents 31..35
+[INFO] chart 1: exact determinant 1/5 in 0.75 s
+[INFO] chart 1: exact determinant 2/5 in 0.72 s
+[INFO] chart 1: exact determinant 3/5 in 0.76 s
+[INFO] chart 1: exact determinant 4/5 in 1.02 s
+[INFO] chart 1: exact determinant 5/5 in 0.73 s
+[PASS] interpolated invariant respects the predicted support
+[PASS] chart 1 interpolation matches unused a=6
+[PASS] chart 1 interpolation matches unused a=7
+[INFO] exact residual gcd degree 0
+[PASS] alternative invariant minors have unit gcd with EXP-117 residual
+[PASS] b=0 axis representative (1,0) has exact augmented rank 124
+[PASS] b=0 axis alternative minor is exactly nonzero at (1,0)
+[PASS] alternative determinant has one a-exponent residue class modulo three
+[PASS] b=0 chart admits the required pure a monomial
+[PASS] origin exact quotient rank profile reproduces 112/113
+[PASS] persisted modular row-basis determinant reproduces
+[PASS] wrote artifacts\results.json
+SHA256 1D53862E552171CEFCEC30385307A754CFC5CC223E9111129AEBF0E7C7CD4C1F
+[INFO] elapsed 7.51 s
+RESULT: COMPLETE
