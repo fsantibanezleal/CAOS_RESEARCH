@@ -232,5 +232,6 @@
 - **2026-07-29 publication:** Paper B v0.21 records EXP-115 through EXP-117,
   including the structural \(P\)-kernel, 124-column quotient, and finite
   nine-point invariant reduction. Its two-pass 16-page PDF and visual QA
-  passed. Zenodo version DOI: `10.5281/zenodo.21695367`, concept DOI:
+  passed; PR #93 merged at `b57a9b7`. Zenodo version DOI:
+  `10.5281/zenodo.21695367`, concept DOI:
   `10.5281/zenodo.21503367`.
