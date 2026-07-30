@@ -77,4 +77,4 @@
 | JCB-073 | Audit whether the EXP-121 shared basis lifts into a higher-dimensional constructible core stratum | P5 | done | 2026-07-30 | EXP-122: no free direction; 13 directions act inside the 26-block, 16 enlarge it, and all 21 restored directions participate at low order |
 | JCB-074 | Compute the first exact four-parameter symbolic lift in direction (2,9) | P5 | done | 2026-07-30 | EXP-123: \(\Delta=A^{87}(R(A^3,B)+A^2CS(A^3,B))\), with 23-term \(R\), 18-term \(S\), and \(\gcd(R,S)=1\) |
 | JCB-075 | Cover the EXP-123 rational exceptional graph and finite base locus | P5 | todo | 2026-07-30 | select alternative row bases on \(Y=-R/S\); recurse on graph numerator factors and \(V(R,S)\); treat \(A=0\) separately |
-| JCB-076 | Publish the higher-dimensional constructible reduction in Paper B v0.24 | P6 | doing | 2026-07-30 | manuscript and Zenodo new version required; no four-parameter closure claim |
+| JCB-076 | Publish the higher-dimensional constructible reduction in Paper B v0.24 | P6 | done | 2026-07-30 | PR #99 merged; immutable DOI 10.5281/zenodo.21698923; no four-parameter closure claim |

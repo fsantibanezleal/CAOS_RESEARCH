@@ -288,3 +288,7 @@
   gcd one. On \(A\ne0\), the selected exceptional locus is the rational graph
   \(Y=-R/S\), plus the finite base locus \(V(R,S)\). No four-parameter cover
   is claimed.
+- **2026-07-30 publication:** Paper B v0.24 records EXP-122/123 and the first
+  higher-dimensional constructible reduction. PR #99 merged at `646911b`.
+  Zenodo version DOI: `10.5281/zenodo.21698923`; concept DOI:
+  `10.5281/zenodo.21503367`.
