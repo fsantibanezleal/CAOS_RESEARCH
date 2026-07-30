@@ -1,0 +1,20 @@
+EXP-123 attempt 001
+Date: 2026-07-30
+Status: externally terminated during the exact symbolic worker
+
+Completed before termination:
+- exact EXP-121 anchor determinant regression;
+- exact EXP-122 size-34 union-SCC regression;
+- exact anchor-line factor regression;
+- modular probe p=1009 at (A,B)=(2,3): generic C-degree 1;
+- modular probe p=1013 at (A,B)=(3,5): generic C-degree 1.
+
+The shell wrapper did not expose the worker's flushed progress while the
+parent process remained active. The run was mistakenly interpreted as still
+being in the modular stage and was externally terminated before the declared
+five-minute symbolic budget.
+
+All descendant EXP-123 Python processes were then stopped explicitly. No
+symbolic-worker artifact or exact determinant claim was produced. The
+checkpoint containing both modular probes was preserved. The accepted retry
+uses the unchanged code and receives the full declared worker allowance.
