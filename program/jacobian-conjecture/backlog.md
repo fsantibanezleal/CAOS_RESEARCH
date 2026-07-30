@@ -72,4 +72,4 @@
 | JCB-066 | Close the proper intersections on the three weighted-open components | P5 | doing | 2026-07-29 | EXP-119 makes all intersections finite; EXP-120 closes G exactly; finite L and Q common residuals remain |
 | JCB-069 | Compute exact weighted-open alternative charts and common component ideals | P5 | done | 2026-07-29 | EXP-119/120: exact X=A^3 determinants, unit ideal on G, zero-dimensional nonunit ideals on L and Q |
 | JCB-070 | Select row bases directly on the finite L and Q residual schemes | P5 | todo | 2026-07-29 | EXP-121: avoid the G-basis determinant X^30 L Q R; target algebraic or good-prime controls on each surviving scheme |
-| JCB-071 | Publish EXP-118 through EXP-120 in Paper B v0.22 and Zenodo | P6 | doing | 2026-07-29 | Triggered by exact d=0 closure and G-component closure; retain explicit L/Q and full-family scope limits |
+| JCB-071 | Publish EXP-118 through EXP-120 in Paper B v0.22 and Zenodo | P6 | done | 2026-07-29 | PR #95 merged at 68ec8d3; immutable version DOI 10.5281/zenodo.21696190 |

@@ -254,3 +254,9 @@
   its declared cost gate. Next select new bases directly on these finite
   residuals. The full \(T_B\) restriction, \((72,108)\), the degree floor,
   and JC(2) remain open.
+- **2026-07-29 publication:** Paper B v0.22 records EXP-118 through EXP-120,
+  including the complete quotient-boundary cover, exact \(G\)-component
+  closure, and finite \(L/Q\) remainder. Its two-pass 16-page PDF and
+  page-by-page visual QA passed; PR #95 merged at `68ec8d3`. Zenodo version
+  DOI: `10.5281/zenodo.21696190`, concept DOI:
+  `10.5281/zenodo.21503367`.
