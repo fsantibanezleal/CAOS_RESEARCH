@@ -324,6 +324,9 @@ scalar conditions before exploiting sparsity.
   PR `#95` at `68ec8d3`. Paper B v0.22 is published at
   `10.5281/zenodo.21696190` under concept DOI
   `10.5281/zenodo.21503367`.
+- EXP-121 and Paper B v0.23 were merged into `develop` by PR `#97` at
+  `d55798f`. Paper B v0.23 is published at
+  `10.5281/zenodo.21697928` under the same concept DOI.
 - The management mirror is updated directly on its canonical `develop`
   checkout. Do not create a management worktree or task branch.
 
@@ -354,8 +357,9 @@ scalar conditions before exploiting sparsity.
    restriction, a module/chart-cover computation, or a newly justified higher-degree
    structural probe. Do not build EXP-093.
 8. Keep EXP-109 as a bounded regression control, not as the main route.
-9. Publish Paper B v0.23 because EXP-121 changes the mathematical claim from
-   finite residuals to a complete \(T_B\) restriction cover.
+9. Paper B v0.23 publication is complete. Preserve version DOI
+   `10.5281/zenodo.21697928`; future substantive changes require a new
+   version.
 
 Suggested source-round commands:
 

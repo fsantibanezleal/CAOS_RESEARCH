@@ -1405,5 +1405,5 @@
   stratum.
 - Paper B v0.23 transcribes the exact closure and the revised forward
   programme. Its two-pass 17-page PDF build has no layout warnings, and all
-  17 rendered pages pass visual inspection. PR merge and Zenodo publication
-  remain pending at this checkpoint.
+  17 rendered pages pass visual inspection. PR #97 merged at `d55798f`;
+  the immutable Zenodo version DOI is `10.5281/zenodo.21697928`.

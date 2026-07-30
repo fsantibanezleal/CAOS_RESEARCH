@@ -73,5 +73,5 @@
 | JCB-069 | Compute exact weighted-open alternative charts and common component ideals | P5 | done | 2026-07-29 | EXP-119/120: exact X=A^3 determinants, unit ideal on G, zero-dimensional nonunit ideals on L and Q |
 | JCB-070 | Select row bases directly on the finite L and Q residual schemes | P5 | done | 2026-07-30 | EXP-121 finds one shared 125-row basis; its 23-term exact determinant gives unit certificates on both L and Q |
 | JCB-071 | Publish EXP-118 through EXP-120 in Paper B v0.22 and Zenodo | P6 | done | 2026-07-29 | PR #95 merged at 68ec8d3; immutable version DOI 10.5281/zenodo.21696190 |
-| JCB-072 | Publish the complete three-parameter TB cover in Paper B v0.23 and Zenodo | P6 | doing | 2026-07-30 | two-pass 17-page build and visual QA pass; PR, merge, and immutable version DOI pending |
+| JCB-072 | Publish the complete three-parameter TB cover in Paper B v0.23 and Zenodo | P6 | done | 2026-07-30 | PR #97 merged at d55798f; immutable version DOI 10.5281/zenodo.21697928 |
 | JCB-073 | Audit whether the EXP-121 shared basis lifts into a higher-dimensional constructible core stratum | P5 | todo | 2026-07-30 | restore all 24 core directions; classify inert/acyclic/size-26-block activity before declaring EXP-122 |
