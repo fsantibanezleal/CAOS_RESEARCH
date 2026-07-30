@@ -1429,3 +1429,6 @@
   the 24-parameter core. It does not cover the four-parameter restriction,
   \((72,108)\), the degree floor, or \(JC(2)\). EXP-124 will select
   alternative bases directly on the graph and treat \(A=0\) separately.
+- Paper B v0.24 transcribes EXP-122/123. Its two-pass 18-page build has no
+  layout warnings, all rendered pages pass visual QA, and PR #99 merged at
+  `646911b`. The immutable Zenodo DOI is `10.5281/zenodo.21698923`.

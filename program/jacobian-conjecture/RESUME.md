@@ -350,8 +350,9 @@ scalar conditions before exploiting sparsity.
 - EXP-121 and Paper B v0.23 were merged into `develop` by PR `#97` at
   `d55798f`. Paper B v0.23 is published at
   `10.5281/zenodo.21697928` under the same concept DOI.
-- EXP-122 and EXP-123 are committed and pushed on the active branch through
-  `a749617`. Paper B v0.24 reconciliation and publication are in progress.
+- EXP-122/123 and Paper B v0.24 were merged by PR `#99` at `646911b`.
+  Paper B v0.24 is published at `10.5281/zenodo.21698923` under concept DOI
+  `10.5281/zenodo.21503367`.
 - The management mirror is updated directly on its canonical `develop`
   checkout. Do not create a management worktree or task branch.
 
@@ -380,9 +381,9 @@ scalar conditions before exploiting sparsity.
    dimension exactly. Re-rank only if EXP-124 yields no nonzero alternative
    graph restriction. Do not build EXP-093.
 8. Keep EXP-109 as a bounded regression control, not as the main route.
-9. Publish the adjudicated EXP-122/123 reduction as Paper B v0.24. Preserve
-   v0.23 DOI `10.5281/zenodo.21697928`; publish through a Zenodo new version,
-   never an edit.
+9. Paper B v0.24 publication is complete. Preserve immutable DOI
+   `10.5281/zenodo.21698923`; future claim changes require another Zenodo new
+   version, never an edit.
 
 Suggested source-round commands:
 
