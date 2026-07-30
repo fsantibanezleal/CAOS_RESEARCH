@@ -1,0 +1,302 @@
+[PASS] all full-system support weights recheck exactly
+[PASS] complete augmented system carries (7,3,9) covariance
+[PASS] persisted H-linear row basis has size 125
+[PASS] EXP-115 H-linear modular determinant reproduces at p=1009
+[PASS] persisted H-linear basis is exactly nonzero at (0,-4/5,1)
+[INFO] cyclic SCC sizes [26, 13, 12, 11, 10, 9, 8, 7, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[PASS] largest cyclic block is within the declared 60-column gate
+[PASS] cyclic block 26 is normalized at the rational anchor
+[INFO] block 26: degree 23, 95 monomials, 6.75 s
+[PASS] cyclic block 13 is normalized at the rational anchor
+[INFO] block 13: degree 13, 21 monomials, 0.18 s
+[PASS] cyclic block 12 is normalized at the rational anchor
+[INFO] block 12: degree 12, 19 monomials, 0.14 s
+[PASS] cyclic block 11 is normalized at the rational anchor
+[INFO] block 11: degree 11, 17 monomials, 0.10 s
+[PASS] cyclic block 10 is normalized at the rational anchor
+[INFO] block 10: degree 10, 15 monomials, 0.07 s
+[PASS] cyclic block 9 is normalized at the rational anchor
+[INFO] block 9: degree 9, 13 monomials, 0.05 s
+[PASS] cyclic block 8 is normalized at the rational anchor
+[INFO] block 8: degree 8, 11 monomials, 0.03 s
+[PASS] cyclic block 7 is normalized at the rational anchor
+[INFO] block 7: degree 7, 9 monomials, 0.02 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] alternative determinant stays below the 10000-monomial gate
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] alternative determinant monomial lifts to nonnegative d-degree
+[PASS] alternative determinant monomial respects determinant degree
+[PASS] block product matches direct exact determinant at (0, -4/5)
+[PASS] block product matches direct exact determinant at (1, 0)
+[PASS] block product matches direct exact determinant at (0, 0)
+[PASS] block product matches direct exact determinant at (2, -1)
+[PASS] block product matches direct exact determinant at (-1, 3/2)
+[PASS] H63(d=1) factors as linear times quadratic in X=A^3
+[PASS] G54(d=1) is irreducible over Q[X,B]
+[PASS] G54(A^3,B) is irreducible over Q[A,B]
+[PASS] H_linear(A^3,B) is irreducible over Q[A,B]
+[PASS] H_quadratic(A^3,B) is irreducible over Q[A,B]
+[PASS] G shares no component with the alternative chart
+[INFO] component G: resultant degree 852 in B, 38.58 s
+[PASS] L shares no component with the alternative chart
+[INFO] component L: resultant degree 324 in B, 1.30 s
+[PASS] Q shares no component with the alternative chart
+[INFO] component Q: resultant degree 648 in B, 25.36 s
+[PASS] wrote artifacts\results.json
+SHA256 EDCB36EF966A874A493ADCCCDEAEED4564AB564D82C140B4C5B7A778BE8FCD2B
+[INFO] elapsed 93.75 s
+RESULT: COMPLETE
