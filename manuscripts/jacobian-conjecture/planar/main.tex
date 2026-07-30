@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-30\\[2pt]\normalsize Version 0.24}
+\date{2026-07-30\\[2pt]\normalsize Version 0.25}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.24}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.25}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -39,7 +39,7 @@ the Staircase Transport, and the Recalibrated Frontier}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper B of a three-paper record \textperiodcentered\ version 0.24 \textperiodcentered\ 2026-07-30\\
+Paper B of a three-paper record \textperiodcentered\ version 0.25 \textperiodcentered\ 2026-07-30\\
 DOI \href{https://doi.org/10.5281/zenodo.21503367}{10.5281/zenodo.21503367} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -103,6 +103,15 @@ Together with the quotient boundary this closes the complete
 three-parameter \(T_B\) restriction. This is still a strict slice result,
 not closure of the 24-parameter core, the full family, \((72,108)\), or
 \(JC(2)\).
+Restoring direction \((2,9)\) gives the first higher-dimensional recursive
+atlas. The shared determinant is
+\(A^{87}(R(X,B)+YS(X,B))\), \(X=A^3\), \(Y=A^2C\), with
+\(\gcd(R,S)=1\). A second exact minor covers a dense open of this rational
+graph; its residual factors into three plane curves \(F_3F_6F_7=0\).
+On the linear-in-\(X\) component
+\(F_3=(5B+4)^3+16X\), a third exact minor reduces the principal-open residual
+to \(Q_9(B)Q_{15}(B)=0\): 24 normalized values, or 72 lifted algebraic
+points. The curves \(F_6,F_7\), the finite base locus, and \(A=0\) remain.
 A new multiplication formula for $x^m$-anchored edges shows the $B = 16$ leading form cannot
 produce the Keller constant on its top edge for $m \ge 2$: that case, too, is a staircase
 transport. All computations are exact and reproducible; every claim is labeled machine-verified
@@ -997,6 +1006,53 @@ the rational graph, the finite base locus, and the separate divisor \(A=0\).
 The complete \((72,108)\) case, the planar degree floor, and \(JC(2)\) remain
 open.
 
+\subsection*{Recursive atlas on the rational graph}
+
+EXP-124 selects an alternative complete-row basis directly on the graph
+[MV]. The same one-row replacement is full rank over two good primes, and
+its exact determinant is
+\[
+ \Delta_{\rm alt}(A,B,C)=A^{90}N(A^3,B).
+\]
+It is independent of \(C\). The 21-term polynomial \(N(X,B)\), of total
+degree 16, factors over \(\Q\) as a nonzero scalar times
+\[
+ N(X,B)=F_3(X,B)F_6(X,B)F_7(X,B),
+\]
+where the factors have total degrees \(3,6,7\) and are each coprime to
+\(R,S\). Thus this minor covers the dense graph open \(N\ne0\), reducing the
+positive-dimensional residual to three explicit plane curves.
+
+EXP-125 recurses first on
+\[
+ F_3(X,B)=(5B+4)^3+16X.
+\]
+Prime availability is not automatic: the originally named primes were
+refuted by cubic-residue and factor-point obstructions, and an intermediate
+audit that allowed arbitrary \(X\) was also rejected because \(X=A^3\) is
+required. The final cube-locus audit selected 739 and 811. On both primes,
+four points on each of \(F_3,F_6,F_7\) have coefficient/augmented rank
+\(124/125\), and each curve supplies a new cross-prime basis [MV].
+
+The exact \(F_3\)-selected determinant has one cyclic block of size 32. After
+restriction to \(Y=-R/S\) and substitution
+\(X=-(5B+4)^3/16\), its univariate numerator factors as
+\[
+ U_3(B)\doteq(5B+4)Q_6(B)^2Q_9(B)Q_{15}(B).
+\]
+Here \(\doteq\) denotes equality up to a nonzero rational scalar and the
+subscripts are exact irreducible degrees. The linear factor forces \(A=0\);
+\(Q_6\) divides both \(R|_{F_3}\) and \(S|_{F_3}\); and \(Q_9,Q_{15}\)
+divide neither. Consequently, on \(AS\ne0\), only
+\[
+ Q_9(B)Q_{15}(B)=0
+\]
+remains on \(F_3\): 24 normalized parameter values and 72 lifted points over
+an algebraic closure [MV/D]. This is a finite reduction of one component,
+not a complete four-parameter cover. The graph curves \(F_6,F_7\), the
+finite base locus, and the separate divisor \(A=0\) remain, as do the full
+\((72,108)\) case, the planar degree floor, and \(JC(2)\).
+
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the
 published literature: the closing remark of \cite{GGV2017} states that the corner
@@ -1061,9 +1117,9 @@ audit trail (including its open verification items) persisted in the repository.
 \section{Program}
 
 Priorities, from the standing routes evaluation: (1) promote the
-constructible-cover method beyond the now-closed three-parameter \(T_B\)
-restriction to a restriction that adds genuine coverage of the 24-parameter
-cyclic core; (2) retain the complete EXP-118--121 \(T_B\) cover as a
+recursive graph atlas from the \(F_3\) finite reduction to exact quotient-ring
+covers of \(F_6\) and \(F_7\), followed by the finite graph/base-locus points
+and the separate \(A=0\) boundary; (2) retain the complete EXP-118--121 \(T_B\) cover as a
 regression gate rather than adding redundant slice charts; (3) retain the
 exact EXP-108 lift through \((0,6)\) as a bounded chart control rather than
 a terminating programme; (4) reopen the intersection-$21$ transport only
