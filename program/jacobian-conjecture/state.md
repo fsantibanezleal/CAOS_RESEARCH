@@ -207,5 +207,30 @@
   alternative-minor charts on the two factor loci. No floor claim follows.
 - **2026-07-29 publication:** Paper B v0.20 records the corrected full-family
   rank target and the exact 36-core/weighted-factor reduction. Its two-pass
-  15-page PDF and visual QA passed. Zenodo version DOI:
+  15-page PDF and visual QA passed; PR #92 merged at `9e039e1`. Zenodo version DOI:
   `10.5281/zenodo.21694807`, concept DOI: `10.5281/zenodo.21503367`.
+- **2026-07-29 EXP-115:** weighted normalization splits the \(d\ne0\)
+  selected residual into three irreducible components \(G,L,Q\). Persisted
+  good-prime alternative minors prove that none is wholly rank-deficient;
+  \(L\) also has an exact rational transition. The \(d=0\) prediction is
+  refuted structurally: \(P=a y+b y^5+y^8(1-xy)^8\) lies in the retained
+  \(Q\)-space and supplies the exact kernel \([P,P]=0\). Exact representatives
+  of all three boundary components retain rank gap \(123/124\). Next:
+  quotient by \(P\) and prove a 124-minor cover. No floor claim follows.
+- **2026-07-29 EXP-116:** removing the fixed \(y^8\) kernel coordinate gives
+  a 302-by-124 quotient system. The origin is a deeper exact \(112/113\)
+  stratum; the anchor \((0,1)\) and all three nonzero boundary controls have
+  exact gap \(123/124\). The normalized quotient graph has largest SCC 51,
+  refuting the predicted bound 24. The corrected run enforces its 36-column
+  determinant gate; EXP-117 will factor the 51-block under a new budget.
+- **2026-07-29 EXP-117:** the exact quotient determinant factors as a nonzero
+  scalar times \(b^{32}\), one five-term weighted factor \(F_{28}\), and five
+  binomials \(c a^3+5^7b^7\). On \(b\ne0\), the invariant
+  \(z=a^3/b^7\) reduces the residual to nine distinct points: five rational
+  values and four roots of a squarefree quartic. EXP-118 will cover those
+  points and \(b=0\) with alternative quotient charts. No floor claim follows.
+- **2026-07-29 publication:** Paper B v0.21 records EXP-115 through EXP-117,
+  including the structural \(P\)-kernel, 124-column quotient, and finite
+  nine-point invariant reduction. Its two-pass 16-page PDF and visual QA
+  passed. Zenodo version DOI: `10.5281/zenodo.21695367`, concept DOI:
+  `10.5281/zenodo.21503367`.

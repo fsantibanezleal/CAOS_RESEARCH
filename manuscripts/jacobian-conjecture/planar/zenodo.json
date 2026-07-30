@@ -10,7 +10,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Paper B of a three-paper research record. The two-variable Jacobian conjecture remains open after the 2026 counterexample in dimension 3. This paper develops the planar program: an unconditional theorem ladder, staircase transport, and an exact-arithmetic campaign on the lone open degree pair (72,108) below 125, built on Guccione-Guccione-Horruitiner-Valqui (arXiv:2204.14178, Proposition 4.3). Version 0.20 retains the exact three-coefficient chart cover from v0.19 and adds a full-family rank audit. The constant Q-column forces rank at most 124, while an exact pinned augmented minor proves generic-open inconsistency; this does not close the exceptional locus. The complete reduced row union has 302 rows. Exact normalization of all 51 directions compresses one selected augmented determinant from 125 columns to a 36-column cyclic block depending on 24 parameters. Two minimal connectivity triples are factored exactly. One graph-active direction cancels identically; the second determinant factors into weighted-homogeneous polynomials of weighted degrees 54 and 63 for weights (7,3,9) after shifting the forced coefficient. These factors define the next residual charts. The work does not close the full (72,108) family or decide the planar conjecture.</p><p>All scripts, artifacts and verdicts: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
+    "description": "<p>Paper B of a three-paper research record. The two-variable Jacobian conjecture remains open after the 2026 counterexample in dimension 3. This paper develops the planar program and an exact-arithmetic campaign on the lone open degree pair (72,108) below 125, built on Guccione-Guccione-Horruitiner-Valqui (arXiv:2204.14178, Proposition 4.3). Version 0.21 retains the exact three-coefficient chart cover and full-family rank/core audit, then advances the weighted residual. On d not equal to zero, three irreducible selected-factor components each admit an alternative full-rank minor generically. On d=0, cancellation of the forced x term makes P itself an admissible Q and exposes the exact kernel [P,P]=0. Removing its fixed y^8 coordinate gives a 302-by-124 quotient augmented system. One exact quotient determinant factors as a nonzero scalar times b^32, one five-term weighted factor, and five binomials. On b not equal to zero, z=a^3/b^7 reduces the residual to nine distinct invariant points: five rational and four roots of a squarefree quartic. Alternative quotient charts are still required on those points and b=0. The work does not close the 24-parameter core, full (72,108), or JC(2).</p><p>All scripts, artifacts and verdicts: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
     "keywords": [
       "Jacobian conjecture",
       "planar Keller maps",
@@ -55,7 +55,7 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.20",
+    "version": "0.21",
     "language": "eng"
   }
 }

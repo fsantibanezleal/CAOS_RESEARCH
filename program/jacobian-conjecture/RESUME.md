@@ -87,6 +87,24 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
   with \(d=1+\varepsilon_{(1,0)}\), the determinant factors into weighted
   homogeneous polynomials of weights \((7,3,9)\) and weighted degrees 54 and
   63. Weighted residual charts are now the P0 route.
+- EXP-115 splits the weighted-open residual into three irreducible components
+  \(G,L,Q\). Exact good-prime alternative minors prove that none is contained
+  in the rank-deficient locus; \(L\) also has a rational characteristic-zero
+  witness. On \(d=0\), however, rank 125 is structurally impossible:
+  \(P=a y+b y^5+y^8(1-xy)^8\) enters the \(Q\)-space and gives the polynomial
+  kernel \([P,P]=0\). Exact representatives of all three boundary components
+  have rank profile \(123/124\). The P0 route is now the quotient by this
+  explicit \(P\)-kernel.
+- EXP-116 removes the fixed \(y^8\) kernel coordinate and obtains a
+  302-by-124 quotient system. The origin is a deeper \(112/113\) stratum;
+  \((0,1)\) and all three nonzero boundary controls have exact gap
+  \(123/124\). The quotient graph has a 51-column largest SCC, above the
+  declared determinant gate. EXP-117 is the next exact factorization gate.
+- EXP-117 factors that quotient determinant exactly. In original coordinates
+  it is a nonzero scalar times \(b^{32}F_{28}\) and five binomials
+  \(c a^3+5^7b^7\). On \(b\ne0\), \(z=a^3/b^7\) reduces the selected residual
+  to nine distinct geometric points: five rational and four on a squarefree
+  quartic. The remaining quotient targets are those nine points and \(b=0\).
 - Controlling strategy:
   [`strategy-audit-2026-07-29.md`](strategy-audit-2026-07-29.md).
 - Source audit:
@@ -113,6 +131,10 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
 | pinned augmented cyclic core | 36 columns and 24 active parameters; 27 directions acyclic on the chart | EXP-112 |
 | connectivity triples | \(T_A=\{(0,1),(0,7),(2,9)\}\), \(T_B=\{(0,1),(0,5),(1,0)\}\) | EXP-113 |
 | weighted residual factors | \(D_B=2^{-42}G_{54}H_{63}\), weights \((7,3,9)\) in \((a,b,d)\) | EXP-114 |
+| weighted-open components | irreducible \(G,L,Q\), each generically removed by an alternative complete-row minor | EXP-115 |
+| \(d=0\) kernel | \(P=a y+b y^5+y^8(1-xy)^8\) lies in the \(Q\)-space and \([P,P]=0\); sample rank gap \(123/124\) | EXP-115 |
+| \(d=0\) quotient graph | remove \(y^8\); origin rank \(112/113\), generic controls \(123/124\), largest SCC 51 | EXP-116 |
+| quotient residual invariant | \(b=0\) or nine squarefree values of \(z=a^3/b^7\) from one quartic and five linear factors | EXP-117 |
 | lower-family grading | \(w_{p,q}=q-p+1\pmod9\) for all 23 nonconstant remaining directions | EXP-106 |
 | properness instrument | exact resultant-leading-coefficient test | EXP-014 |
 | equivariant classification | EXP-010 on opposite-sign/one-zero scope; Shaska covers all signatures with triangular same-sign controls | 2026-07-25 reconciliation |
@@ -248,23 +270,25 @@ scalar conditions before exploiting sparsity.
 - Paper B v0.20, including EXP-111 through EXP-114, is published at
   `10.5281/zenodo.21694807` under concept DOI
   `10.5281/zenodo.21503367`.
-- No experiment process is active. The current research branch awaits its
-  integration PR to `develop`.
+- Paper B v0.21, including EXP-115 through EXP-117, is published at
+  `10.5281/zenodo.21695367` under the same concept DOI.
+- EXP-110 through EXP-114 and Paper B v0.20 were merged into `develop` by
+  PR `#92` at `9e039e1`.
+- EXP-115 through EXP-117 are complete. EXP-118 is next but its hypothesis
+  has not yet been written.
 - The management mirror is updated directly on its canonical `develop`
   checkout. Do not create a management worktree or task branch.
 
 ## 5. Next actions, in order
 
-1. Declare and run EXP-115 on the weighted \(T_B\) residual:
-   - set \(a=\varepsilon_{(0,1)}\),
-     \(b=\varepsilon_{(0,5)}\), and
-     \(d=1+\varepsilon_{(1,0)}\);
-   - split \(d\ne0\) from \(d=0\);
-   - use weights \((7,3,9)\) to normalize the open chart;
-   - select alternative minors using all 302 rows and compute exact gcd or
-     residual ideals against \(G_{54}\) and \(H_{63}\).
-2. Continue constructible determinant charts only from exact factor loci.
-   Use EXP-101 through EXP-108 as regression controls.
+1. Declare and run EXP-118 on the finite quotient residual:
+   - find alternative 124-column charts on \(b=0\);
+   - test the five rational \(z\)-values exactly;
+   - test the quartic fibre over \(\mathbb Q[z]/(f_4)\) or by good-prime
+     non-divisibility plus exact lift;
+   - compute the common residual ideal if one chart does not cover.
+2. Close the proper intersections left on the three \(d\ne0\) components
+   \(G,L,Q\), using the persisted EXP-115 row bases.
 3. Reopen intersection-\(21\) transport only with a complete
    boundary-divisor ledger through the swap, Laurent cuts, and final inversion;
    do not impose absolute degree directly on the 51 coefficients.
@@ -326,6 +350,7 @@ Latest correction publications:
 - Paper B v0.17: `10.5281/zenodo.21593235`
 - Paper B v0.19: `10.5281/zenodo.21610744`
 - Paper B v0.20: `10.5281/zenodo.21694807`
+- Paper B v0.21: `10.5281/zenodo.21695367`
 
 EXP-097 changed the admissible use of intersection number \(21\), so the planar
 manuscript was expanded, built, visually verified, merged through PR `#85`,

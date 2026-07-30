@@ -41,14 +41,15 @@ support-restricted failure, or absence of a finite certificate as a proof.
 
 ## Ordered next work
 
-1. Run EXP-115 on EXP-114's weighted \(T_B\) residual:
-   - use \(d=1+\varepsilon_{(1,0)}\) and weights \((7,3,9)\);
-   - split the residual into \(d\ne0\) and \(d=0\);
-   - select alternative augmented minors from the complete 302-row system on
-     each primitive factor;
-   - compute exact gcd or residual ideals after weighted normalization.
-2. Continue constructible determinantal strata from the exact 36-core and
-   EXP-114 factors. Use EXP-101 through EXP-108 as regression controls.
+1. Run EXP-118 on EXP-117's finite quotient residual:
+   - cover the divisor \(b=0\), separating \(a\ne0\) from the deeper origin;
+   - on \(b\ne0\), use \(z=a^3/b^7\) and test alternative 124-column minors
+     at the five rational roots and in \(\mathbb Q[z]/(f_4)\);
+   - prove a complete quotient chart cover or persist the exact smaller
+     residual left by those alternatives.
+2. Intersect the three \(d\ne0\) alternative minors from EXP-115 with their
+   target factors \(G,L,Q\). Use EXP-101 through EXP-108 as regression
+   controls.
 3. Reopen intersection-\(21\) transport only if the cyclic core remains too
    large, and only with the complete boundary-divisor ledger required by
    EXP-097.
@@ -78,6 +79,14 @@ support-restricted failure, or absence of a finite certificate as a proof.
   target is vacuous.
 - Further coefficient-slice enumeration: demote. It cannot close the
   51-parameter family.
+- Raw 125-column minors on the \(d=0\) \(T_B\) plane: retire. EXP-115 proves
+  that \(P\) itself enters the admissible \(Q\)-space there, so \([P,P]=0\)
+  forces a polynomial right kernel. Quotient by this kernel first.
+- Treating \((a,b)=(0,0)\) as a generic quotient anchor: retire. EXP-116
+  finds the deeper exact rank stratum \(112/113\); normalize at \((0,1)\).
+- Treating the \(d=0\) quotient residual as a two-dimensional elimination
+  target: retire. EXP-117 reduces \(b\ne0\) to nine squarefree invariant
+  points in \(z=a^3/b^7\), plus the divisor \(b=0\).
 
 ## Cancelled EXP-093 scale facts
 

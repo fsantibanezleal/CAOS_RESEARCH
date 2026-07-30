@@ -223,3 +223,27 @@ connected components isolate the only parameters capable of changing the
 determinant. This converts the previous all-or-nothing common-flag test into a
 compression instrument and directly reuses the small cyclic structures already
 solved by EXP-101 through EXP-108.
+
+## EXP-115 redirect: quotient the boundary kernel
+
+EXP-115 confirms that the weighted-open selected residual is not a
+rank-deficient component. After \(d\ne0\) normalization it splits into three
+irreducible factors \(G,L,Q\), and each has an alternative full-rank minor at
+an exact good-prime point. The obstruction is therefore confined to proper
+intersections on those curves.
+
+The \(d=0\) plane is categorically different. Cancelling the forced \(x\)-term
+puts
+\[
+P=a y+b y^5+y^8(1-xy)^8
+\]
+inside the retained \(Q\)-space. The universal right kernel is exactly
+\([P,P]=0\), so every raw 125-column augmented minor vanishes there.
+Nevertheless, representatives of all three boundary components have exact
+rank profile \(123/124\), preserving inconsistency after quotienting the
+kernel.
+
+The first priority is therefore a 124-column quotient chart cover on \(d=0\),
+not another 125-minor search. Proper intersections on \(G,L,Q\) are second
+priority. This is a structural reprioritization, not a claim that the
+\((72,108)\) case is closed.

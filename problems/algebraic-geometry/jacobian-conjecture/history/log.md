@@ -1292,4 +1292,54 @@
 - Paper B v0.20 transcribes the corrected rank target and the exact
   36-core/weighted-factor reduction. Its two-pass 15-page PDF and visual QA
   passed; the immutable Zenodo version DOI is
-  `10.5281/zenodo.21694807`.
+  `10.5281/zenodo.21694807`. PR #92 merged the round into `develop` at
+  `9e039e1`.
+
+## 2026-07-29 - EXP-115 isolates the structural boundary kernel
+
+- Weighted normalization splits the \(d\ne0\) selected residual into three
+  irreducible components \(G,L,Q\) over \(\mathbb Q[A,B]\).
+- At \(p=1009\), persisted alternative row bases give nonzero determinants on
+  isolated points of all three components while the selected determinant
+  vanishes. This proves generic component non-containment. The \(L\) transition
+  also lifts to the exact rational point \((A,B,d)=(0,-4/5,1)\).
+- The predicted boundary rank-125 charts are refuted. On \(d=0\),
+  \(P=a y+b y^5+y^8(1-xy)^8\) enters the retained \(Q\)-space and supplies
+  the exact polynomial kernel \([P,P]=0\).
+- Exact representatives of \(a=0\), \(b=0\), and
+  \(30720000a^3+48828125b^7=0\) have rank profile \(123/124\). EXP-116 must
+  quotient the \(P\)-kernel and cover the boundary with 124-column minors.
+  JC(2), \((72,108)\), and the floor remain open.
+
+## 2026-07-29 - EXP-116 validates the quotient and finds a deeper origin stratum
+
+- Removing the fixed \(y^8\) coordinate of the \(P\)-kernel gives the complete
+  302-by-124 quotient augmented system on \(d=0\).
+- The proposed origin anchor is refuted: \((a,b)=(0,0)\) has exact profile
+  \(112/113\). The anchor \((0,1)\) and all three nonzero boundary controls
+  have exact profile \(123/124\); the inconsistency gap survives.
+- Exact normalization at \((0,1)\) has SCC sizes
+  \(51,11,10,9,8,7,1,\ldots\). The largest block exceeds EXP-116's declared
+  determinant gate 36, so the corrected final run stops before determinant
+  computation and persists the graph.
+- The first implementation checked the gate too late and computed the
+  51-block before failing. That output was discarded. EXP-117 must declare
+  the 51-block determinant explicitly.
+
+## 2026-07-29 - EXP-117 reduces the quotient boundary to a finite invariant target
+
+- The declared 51-block determinant completes in 210.5 seconds inside its
+  300-second budget. The full run is 212.2 seconds.
+- The selected quotient determinant factors exactly as a nonzero scalar times
+  \(b^{32}\), a five-term weighted factor \(F_{28}\), and five binomials
+  \(c a^3+78125b^7\).
+- A deterministic compacting pass converts shifted factors to original
+  coordinates and verifies the scalar, factor product, \(D(0,b)=b^{95}\),
+  and all five direct exact determinant controls.
+- On \(b\ne0\), \(z=a^3/b^7\) reduces the residual to a squarefree degree-nine
+  polynomial: five rational roots and four roots of one quartic. EXP-118 must
+  cover those nine invariant points and \(b=0\) with alternative quotient
+  charts. JC(2), \((72,108)\), and the floor remain open.
+- Paper B v0.21 transcribes EXP-115 through EXP-117. Its two-pass 16-page PDF
+  and visual QA passed; the immutable Zenodo version DOI is
+  `10.5281/zenodo.21695367`.
