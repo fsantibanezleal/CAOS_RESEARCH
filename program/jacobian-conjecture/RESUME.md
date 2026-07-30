@@ -274,6 +274,8 @@ scalar conditions before exploiting sparsity.
   `10.5281/zenodo.21695367` under the same concept DOI.
 - EXP-110 through EXP-114 and Paper B v0.20 were merged into `develop` by
   PR `#92` at `9e039e1`.
+- EXP-115 through EXP-117 and Paper B v0.21 were merged into `develop` by
+  PR `#93` at `b57a9b7`.
 - EXP-115 through EXP-117 are complete. EXP-118 is next but its hypothesis
   has not yet been written.
 - The management mirror is updated directly on its canonical `develop`

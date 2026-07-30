@@ -1342,4 +1342,5 @@
   charts. JC(2), \((72,108)\), and the floor remain open.
 - Paper B v0.21 transcribes EXP-115 through EXP-117. Its two-pass 16-page PDF
   and visual QA passed; the immutable Zenodo version DOI is
-  `10.5281/zenodo.21695367`.
+  `10.5281/zenodo.21695367`. PR #93 merged the round into `develop` at
+  `b57a9b7`.
