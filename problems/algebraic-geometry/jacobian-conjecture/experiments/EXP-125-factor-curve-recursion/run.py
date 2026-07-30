@@ -120,6 +120,7 @@ def scan_factor(
     candidates = []
     profiles: dict[str, int] = {}
     scanned = 0
+    candidate_basis = None
     for b_value in range(prime):
         for a_value in range(1, prime):
             if time.time() > deadline:
@@ -146,18 +147,26 @@ def scan_factor(
                 prime,
             )
             require(
-                exp124.exp115.determinant_mod(evaluated, shared_rows, prime) == 0,
+                (rv + yv * sv) % prime == 0,
                 f"p={prime} sampled point lies on shared graph",
             )
             require(
-                exp124.exp115.determinant_mod(evaluated, prior_rows, prime) == 0,
+                fv == 0,
                 f"p={prime} sampled point lies on EXP-124 residual",
             )
-            basis = exp124.exp115.independent_row_basis(evaluated, prime)
-            coefficient_basis = exp124.exp115.independent_row_basis(
-                [row[:124] for row in evaluated], prime
-            )
-            profile = f"{len(coefficient_basis)}/{len(basis)}"
+            if candidate_basis is not None and exp124.exp115.determinant_mod(
+                evaluated, candidate_basis, prime
+            ):
+                basis = candidate_basis
+            else:
+                basis = exp124.exp115.independent_row_basis(evaluated, prime)
+                if (
+                    len(basis) == 125
+                    and basis != shared_rows
+                    and basis != prior_rows
+                ):
+                    candidate_basis = basis
+            profile = "124/125" if len(basis) == 125 else f"<=124/{len(basis)}"
             profiles[profile] = profiles.get(profile, 0) + 1
             point = {
                 "A": a_value,
