@@ -28,7 +28,20 @@ Retain 1013 and replace only the inadmissible prime 1009 by 1019. Both primes
 are \(2\bmod3\), so the cube map is bijective on their multiplicative groups.
 They therefore admit nonzero \(F_3\) lifts for every \(B\ne-4/5\).
 
+## Second admissibility correction
+
+The optimized exhaustive scan then established that 1013 and 1019 have no
+\(F_6\) point, although both have \(F_3\) and \(F_7\) points. The
+\(p\equiv2\pmod3\) condition solves \(F_3\) admissibility but is therefore
+insufficient for the complete three-factor reconnaissance.
+
+A prevalidation sweep filtered \(p\equiv1\pmod3\) primes by the exact
+\(-1/16\) cubic-residue condition and then required at least four
+nonzero-\(X\), \(S\ne0\) points on every factor. The first four admissible
+primes were 601, 643, 691, and 727. The accepted rerun selects the first two,
+601 and 643, deterministically.
+
 The sample count, rank predictions, basis requirements, exact method, and
-compute gates are unchanged. The accepted verdict must report the original
-prime prediction as refuted and the redirected admissible-prime result
-separately.
+compute gates remain unchanged. The accepted verdict must report the
+original named-prime prediction as refuted and the final admissible-prime
+result separately.

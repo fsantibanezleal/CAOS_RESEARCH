@@ -32,7 +32,7 @@ ARTIFACT = HERE / "artifacts" / "results.json"
 CHECKPOINT = HERE / "artifacts" / "checkpoint.json"
 WORKER_ARTIFACT = HERE / "artifacts" / "symbolic-worker.json"
 WORKER = HERE / "symbolic_worker.py"
-PRIMES = (1013, 1019)
+PRIMES = (601, 643)
 SAMPLES_PER_FACTOR = 4
 WORKER_TIMEOUT_SECONDS = 300
 MODULAR_GATE_SECONDS = 120
@@ -154,6 +154,31 @@ def determinant_mod_fast(rows, indices, prime):
     return determinant
 
 
+def polynomial_terms_mod(expression, x, b, prime):
+    return [
+        (
+            x_power,
+            b_power,
+            exp124.mod_entry(coefficient, prime),
+        )
+        for (x_power, b_power), coefficient in Poly(
+            expression, x, b, domain=QQ
+        ).terms()
+    ]
+
+
+def polynomial_terms_value(terms, xv, bv, prime):
+    return (
+        sum(
+            coefficient
+            * pow(xv, x_power, prime)
+            * pow(bv, b_power, prime)
+            for x_power, b_power, coefficient in terms
+        )
+        % prime
+    )
+
+
 def scan_factor(
     factor,
     r,
@@ -171,19 +196,24 @@ def scan_factor(
     profiles: dict[str, int] = {}
     scanned = 0
     candidate_basis = None
+    factor_terms = polynomial_terms_mod(factor, x, b, prime)
+    r_terms = polynomial_terms_mod(r, x, b, prime)
+    s_terms = polynomial_terms_mod(s, x, b, prime)
     for b_value in range(prime):
         for a_value in range(1, prime):
             if time.time() > deadline:
                 raise TimeoutError("modular reconnaissance exceeded declared gate")
             scanned += 1
             xv = pow(a_value, 3, prime)
-            fv = exp124.polynomial_value_mod(factor, x, b, xv, b_value, prime)
+            fv = polynomial_terms_value(
+                factor_terms, xv, b_value, prime
+            )
             if fv != 0:
                 continue
-            sv = exp124.polynomial_value_mod(s, x, b, xv, b_value, prime)
+            sv = polynomial_terms_value(s_terms, xv, b_value, prime)
             if sv == 0:
                 continue
-            rv = exp124.polynomial_value_mod(r, x, b, xv, b_value, prime)
+            rv = polynomial_terms_value(r_terms, xv, b_value, prime)
             yv = -rv * pow(sv, -1, prime) % prime
             c_value = yv * pow(a_value * a_value, -1, prime) % prime
             evaluated = exp124.combine_mod(
@@ -348,8 +378,12 @@ def restrict_to_graph(invariant, r, s, x, b, y):
 def main() -> None:
     started = time.time()
     require(
-        all(prime % 3 == 2 for prime in PRIMES),
-        "redirected primes have bijective cube maps",
+        all(
+            prime % 3 == 1
+            and pow(-pow(16, -1, prime) % prime, (prime - 1) // 3, prime) == 1
+            for prime in PRIMES
+        ),
+        "redirected primes pass the exact F3 cubic-residue gate",
     )
     x, b, y, r, s, factors, e123, e124 = load_polynomials()
     a, c = symbols("A C")
