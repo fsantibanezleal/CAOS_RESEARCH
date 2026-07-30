@@ -38,10 +38,21 @@ insufficient for the complete three-factor reconnaissance.
 A prevalidation sweep filtered \(p\equiv1\pmod3\) primes by the exact
 \(-1/16\) cubic-residue condition and then required at least four
 nonzero-\(X\), \(S\ne0\) points on every factor. The first four admissible
-primes were 601, 643, 691, and 727. The accepted rerun selects the first two,
-601 and 643, deterministically.
+primes under that insufficient test were 601, 643, 691, and 727. The second
+rerun selected the first two, 601 and 643, deterministically.
+
+## Cube-locus correction
+
+That second sweep was also insufficient: it admitted arbitrary nonzero
+\(X\), whereas the matrix family requires \(X=A^3\). Attempt 005 confirmed
+four valid \(F_3\) points at 601 but no \(F_6\) point in the cube image.
+
+The final audit enumerates \(A\ne0\) directly. Its first four primes with at
+least four \(S\ne0\) points on all three factors are 739, 811, 919, and
+1423. The final rerun selects 739 and 811, the first two in increasing
+order.
 
 The sample count, rank predictions, basis requirements, exact method, and
 compute gates remain unchanged. The accepted verdict must report the
-original named-prime prediction as refuted and the final admissible-prime
-result separately.
+original named-prime prediction and the two insufficient redirects as
+refuted, and the final cube-locus-admissible result separately.
