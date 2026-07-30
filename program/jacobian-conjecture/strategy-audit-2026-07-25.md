@@ -271,3 +271,26 @@ certificate shape. A finite constructible cover by localized certificates may pr
 inconsistency even when no single global polynomial covector terminates. This replaces the
 undefined flat-connection analogy with a precise commutative-algebra target and connects the
 existing determinant, axis, and ladder experiments in one framework.
+
+## Amendment after EXP-110 (2026-07-26)
+
+The slice-by-slice chart programme is demoted. Closing a k-coefficient slice
+fixes the other 51-k coefficients, so its rank statement does not extend to the
+family, and enumeration cannot terminate: C(51,3) = 20,825 and C(51,4) = 249,900
+slices, each currently costing hours of exact elimination with fiber degree
+growing per added coefficient.
+
+EXP-110 measured the full family instead. At the pinned point and three
+independent random rational points the profile is identical: rank(M) = 124,
+rank([M|b]) = 125, left kernel 165, one kernel direction pairing nonzero with the
+target. The reduced system is therefore inconsistent at GENERIC parameters, and
+the rank deficiency belongs to the family rather than to the pinned point.
+
+The primary route becomes the uniform minor statement: every maximal 125x125
+minor of M(eps) vanishes identically, while some maximal minor of [M|b] does not.
+This is a single statement in all 51 parameters, approachable by randomized
+polynomial identity testing followed by exact certification, and it is the
+correct form of the constructible stratification that EXP-098 identified.
+
+This is a redirection of method, not of target. The target remains simultaneous
+all-parameter closure of the reduced GGHV branches, and (72,108) remains open.

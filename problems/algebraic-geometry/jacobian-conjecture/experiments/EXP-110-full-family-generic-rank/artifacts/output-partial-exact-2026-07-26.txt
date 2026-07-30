@@ -1,0 +1,7 @@
+==============================================================================
+EXP-110: generic rank of the FULL 51-parameter reduced family
+==============================================================================
+  pool: 125 output columns (Q-polygon lattice points), 289 pool rows; 51 lower-family directions
+[PASS] 1: the reduced construction builds with the recorded shape  ncol=125 (expect 125), |LOWER|=51 (expect 51) (0 s)
+
+  probing a random rational parameter point (invariant-first)...

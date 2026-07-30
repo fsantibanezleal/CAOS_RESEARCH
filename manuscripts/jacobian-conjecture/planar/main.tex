@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-26\\[2pt]\normalsize Version 0.19}
+\date{2026-07-29\\[2pt]\normalsize Version 0.20}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.19}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.20}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -39,7 +39,7 @@ the Staircase Transport, and the Recalibrated Frontier}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper B of a three-paper record \textperiodcentered\ version 0.19 \textperiodcentered\ 2026-07-26\\
+Paper B of a three-paper record \textperiodcentered\ version 0.20 \textperiodcentered\ 2026-07-29\\
 DOI \href{https://doi.org/10.5281/zenodo.21503367}{10.5281/zenodo.21503367} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -83,6 +83,13 @@ has coprime degree-13 fiber determinant, certified by a second integer
 Bezout identity. A connected mod-9 row/column grading extends to every
 nonconstant direction in the persisted lower family. This is a strict slice
 result and does not exclude the full \((72,108)\) family.
+The full-family audit then removes the structural constant column, corrects the
+complete row count from 289 to 302, and compresses one selected augmented
+minor to a 36-column block depending on 24 of the 51 parameters. Two
+connectivity-generating triples factor exactly; one graph-active direction
+cancels identically, while the other determinant becomes weighted homogeneous
+with weights \((7,3,9)\) after shifting the forced coefficient. These factors
+define the next residual charts, not a closure claim.
 A new multiplication formula for $x^m$-anchored edges shows the $B = 16$ leading form cannot
 produce the Keller constant on its top edge for $m \ge 2$: that case, too, is a staircase
 transport. All computations are exact and reproducible; every claim is labeled machine-verified
@@ -694,6 +701,86 @@ actual three-coefficient GGHV slice and expose a global lower-family grading.
 They do not cover simultaneous variation of the other coefficients, exclude
 the full \((72,108)\) family, or raise the degree floor.
 
+\subsection*{Full-family rank audit and the exact 36-column core}
+
+The next full-family audit corrects a tempting but vacuous rank target. The
+\(Q\)-polygon contains the constant monomial, whose column is identically zero:
+\[
+[P,1]=0.
+\]
+Hence \(\operatorname{rank}M(\varepsilon)\le124\) for every parameter value.
+The exact nonzero pinned augmented minor from EXP-059 then proves that
+\(\operatorname{rank}M=124\) and
+\(\operatorname{rank}[M\mid b]=125\) generically [D]. This is inconsistency on
+a nonempty Zariski-open subset, not on every fiber. The unresolved object is the
+common zero locus of augmented maximal minors. EXP-111 also corrects the row
+pool: the forced-only construction has 289 rows, while the complete union
+inside the same reduced pool has 302 rows [MV].
+
+EXP-112 removes the structural constant column, retains the target column, and
+normalizes all 51 exact perturbation matrices on a pinned 125-row chart [MV].
+The union dependency graph has one 36-vertex cyclic component, three cyclic
+singletons, and 86 acyclic singletons. Consequently the selected determinant
+factors as
+\[
+\det A_{\mathrm{sel}}(\varepsilon)
+=\det(A_0)(1+\varepsilon_{(1,0)})^3
+\det C_{36}(\varepsilon),
+\]
+where \(C_{36}\) depends on only 24 parameters. The other 27 directions are
+determinant-inert on this chart. On the forced axis,
+\[
+\chi_{N_{(1,0)}|C_{36}}(\lambda)
+=\lambda^{23}(\lambda-1)^{13},
+\]
+recovering the total factor
+\((1+\varepsilon_{(1,0)})^{16}\).
+
+Graph support is not determinant support. EXP-113 finds two
+deletion-minimal triples that each make the 36-core strongly connected:
+\[
+T_A=\{(0,1),(0,7),(2,9)\},\qquad
+T_B=\{(0,1),(0,5),(1,0)\}.
+\]
+EXP-114 computes their exact determinants [MV]. On \(T_A\), the graph-active
+\((2,9)\) direction cancels identically, and the degree-21 determinant has only
+24 monomials and factors in degrees \(3,12,6\).
+
+On \(T_B\), write
+\[
+a=\varepsilon_{(0,1)},\qquad
+b=\varepsilon_{(0,5)},\qquad
+d=1+\varepsilon_{(1,0)}.
+\]
+Then
+\[
+\det C_{36}|_{T_B}=2^{-42}G_{54}(a,b,d)H_{63}(a,b,d),
+\]
+where
+\[
+\begin{aligned}
+G_{54}={}&30720000a^6b^4+48828125a^3b^{11}
++150000000a^3b^8d\\
+&+64000000a^3b^5d^2-39321600a^3b^2d^3
++16777216d^6,
+\end{aligned}
+\]
+and
+\[
+\begin{aligned}
+H_{63}={}&4096a^9+184320a^6bd^2-1800000a^3b^5d^3
++1843200a^3b^2d^4\\
+&+1953125b^9d^4+3000000b^6d^5+1536000b^3d^6
++262144d^7.
+\end{aligned}
+\]
+These factors are weighted homogeneous for
+\(\operatorname{wt}(a,b,d)=(7,3,9)\), of weighted degrees 54 and 63.
+They expose a weighted open/boundary split for the next chart calculation:
+normalize \(d\ne0\), then treat \(d=0\) with alternative minors from the
+complete 302-row system. No result in this subsection excludes the residual
+factor loci, the full \((72,108)\) family, or \(JC(2)\).
+
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the
 published literature: the closing remark of \cite{GGV2017} states that the corner
@@ -757,13 +844,14 @@ audit trail (including its open verification items) persisted in the repository.
 
 \section{Program}
 
-Priorities, from the standing routes evaluation: (1) lift the exact EXP-108
-cover through the next direction \((0,6)\), using
-\(x=\varepsilon_{(0,6)}/u^2\) so its matrix term is \(zxA_{(0,6)}\), and
-recurse only on residual closed strata; (2) reopen the intersection-$21$ transport only
+Priorities, from the standing routes evaluation: (1) cover the two weighted
+EXP-114 residual factors by alternative complete-row minors, splitting
+\(d\ne0\) from \(d=0\); (2) retain the exact EXP-108 lift through
+\((0,6)\) as a bounded chart control rather than a terminating programme;
+(3) reopen the intersection-$21$ transport only
 after constructing a complete boundary-divisor ledger through the swap,
-Laurent cuts, and final inversion; (3) pursue Newton resolution only after deriving a
-condition beyond the already-retained first $D=72$ branch; and (4) retain the
+Laurent cuts, and final inversion; (4) pursue Newton resolution only after deriving a
+condition beyond the already-retained first $D=72$ branch; and (5) retain the
 properness reformulation ($JC(2)$ holds iff every planar Keller map has empty
 Jelonek set; exact certificates shipped, EXP-014) as a cross-check instrument.
 The reproducibility contract: every [MV] claim has a persisted script and

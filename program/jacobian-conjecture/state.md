@@ -184,3 +184,28 @@
   three-coefficient slice cover. Its two-pass 14-page PDF and full visual QA
   passed; PR #90 merged at `2481d3a`. Zenodo version DOI:
   `10.5281/zenodo.21610744`, concept DOI: `10.5281/zenodo.21503367`.
+- **2026-07-29 EXP-111:** the full-family rank plan is corrected. The constant
+  \(Q\)-column is identically zero, so rank \(M\leq124\) is structural and the
+  proposed all-\(125\)-minors target is vacuous. EXP-059's exact pinned
+  augmented minor proves generic-open inconsistency, not all-parameter
+  closure. The complete canonical row union has 302 rows, 13 more than
+  EXP-110's forced-only list. The next route is an acyclic or small-core
+  augmented basis search on the complete system. JC(2) and \((72,108)\)
+  remain open.
+- **2026-07-29 EXP-112:** the selected complete-family augmented minor
+  compresses exactly from 125 columns and 51 parameters to one 36-column
+  block depending on 24 parameters, plus three forced singleton factors. The
+  other 27 directions are acyclic and determinant-inert on this chart.
+- **2026-07-29 EXP-113:** removing the forced direction does not split the
+  36-core. Two different three-parameter supports already generate its full
+  strong connectivity, so graph complexity is intrinsically small-support.
+- **2026-07-29 EXP-114:** exact triple determinants are compact. The
+  \(T_A\) determinant has 24 monomials, factors in degrees \(3,12,6\), and
+  cancels the graph-active \((2,9)\) direction identically. The \(T_B\)
+  determinant factors into weighted degrees 54 and 63 after
+  \(d=1+\varepsilon_{(1,0)}\), with weights \((7,3,9)\). Next: weighted
+  alternative-minor charts on the two factor loci. No floor claim follows.
+- **2026-07-29 publication:** Paper B v0.20 records the corrected full-family
+  rank target and the exact 36-core/weighted-factor reduction. Its two-pass
+  15-page PDF and visual QA passed. Zenodo version DOI:
+  `10.5281/zenodo.21694807`, concept DOI: `10.5281/zenodo.21503367`.
