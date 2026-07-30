@@ -1344,3 +1344,32 @@
   and visual QA passed; the immutable Zenodo version DOI is
   `10.5281/zenodo.21695367`. PR #93 merged the round into `develop` at
   `b57a9b7`.
+
+## 2026-07-29 - EXP-118 closes the complete quotient boundary
+
+- The complete 302-by-124 quotient matrix has exact \((7,3)\) covariance.
+- A deterministic alternative 124-row minor is exactly \(C a^{107}\), with
+  persisted nonzero integer \(C\). It is nonzero at all nine EXP-117
+  invariant residual points, including the quartic fibre.
+- EXP-117's selected chart gives \(b^{95}\) on \(a=0\), and the origin
+  retains the exact \(112/113\) quotient rank gap.
+- These charts cover the complete \(d=0\) quotient plane. This does not close
+  the \(d\ne0\) chart or any larger parameter family.
+
+## 2026-07-29 - EXP-119/120 close \(G\) and isolate finite \(L/Q\) residuals
+
+- EXP-119 verifies exact \((7,3,9)\) covariance for the 302-by-125 system.
+  Its first characteristic-zero alternative determinant has 114 monomials
+  on \(d=1\), factors through \(X=A^3\), and intersects every selected
+  component \(G,L,Q\) properly in a finite scheme.
+- EXP-120's independent third determinant has 21 monomials and factors,
+  up to a nonzero scalar, as \(X^{30}LQR\).
+- Exact factorwise Groebner certificates make the full three-chart ideal a
+  unit on \(G\), closing that curve component.
+- The \(L\) and \(Q\) ideals are nonunit but zero-dimensional. The \(L\)
+  eliminant has degree 108 and squarefree degree 73. The \(Q\) FGLM
+  conversion stopped at its declared 180-second gate; no uncomputed
+  eliminant or point count is claimed.
+- Strategy redirects to row bases selected directly on the finite \(L/Q\)
+  residuals. The full \(T_B\) restriction, \((72,108)\), the degree floor,
+  and JC(2) remain open.

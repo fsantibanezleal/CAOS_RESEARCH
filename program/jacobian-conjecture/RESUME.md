@@ -1,7 +1,8 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-07-29 after EXP-111's full-family rank audit. This is the first-read
-navigation page. Primary artifacts and experiment verdicts remain the evidence.
+Updated 2026-07-29 after EXP-120's exact open-component ideal gate. This is
+the first-read navigation page. Primary artifacts and experiment verdicts
+remain the evidence.
 
 ## 1. State in one screen
 
@@ -105,6 +106,20 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
   \(c a^3+5^7b^7\). On \(b\ne0\), \(z=a^3/b^7\) reduces the selected residual
   to nine distinct geometric points: five rational and four on a squarefree
   quartic. The remaining quotient targets are those nine points and \(b=0\).
+- EXP-118 closes the complete \(d=0\) quotient boundary. An alternative
+  124-row minor is exactly \(C a^{107}\), so it covers \(a\ne0\); the
+  EXP-117 chart restricts to \(b^{95}\) on \(a=0\); and the origin retains
+  the exact quotient rank gap \(112/113\). The nine invariant points,
+  including the quartic fibre, are covered by the alternative chart.
+- EXP-119 computes a first characteristic-zero alternative chart on
+  \(d\ne0\). With \(X=A^3\), its exact determinant has 114 monomials and
+  meets each irreducible selected component \(G,L,Q\) properly. Exact
+  resultants reduce all three intersections to finite schemes.
+- EXP-120 adds an independent third chart. Its determinant is, up to a
+  nonzero scalar, \(X^{30}LQR\). Factorwise exact Groebner certificates close
+  the complete \(G\) component. The \(L\) and \(Q\) common residuals remain
+  zero-dimensional; the \(L\) eliminant has degree 108 and squarefree degree
+  73. The next bases must be selected on those finite residuals.
 - Controlling strategy:
   [`strategy-audit-2026-07-29.md`](strategy-audit-2026-07-29.md).
 - Source audit:
@@ -135,6 +150,9 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
 | \(d=0\) kernel | \(P=a y+b y^5+y^8(1-xy)^8\) lies in the \(Q\)-space and \([P,P]=0\); sample rank gap \(123/124\) | EXP-115 |
 | \(d=0\) quotient graph | remove \(y^8\); origin rank \(112/113\), generic controls \(123/124\), largest SCC 51 | EXP-116 |
 | quotient residual invariant | \(b=0\) or nine squarefree values of \(z=a^3/b^7\) from one quartic and five linear factors | EXP-117 |
+| complete \(d=0\) quotient cover | \(C a^{107}\), \(b^{95}\), and the origin rank gap cover the boundary plane | EXP-118 |
+| first weighted-open alternative chart | exact \(X=A^3\) factorization; proper finite intersections with \(G,L,Q\) | EXP-119 |
+| third weighted-open chart | \(\Delta_G\doteq X^{30}LQR\); unit ideal on \(G\), finite nonunit ideals on \(L,Q\) | EXP-120 |
 | lower-family grading | \(w_{p,q}=q-p+1\pmod9\) for all 23 nonconstant remaining directions | EXP-106 |
 | properness instrument | exact resultant-leading-coefficient test | EXP-014 |
 | equivariant classification | EXP-010 on opposite-sign/one-zero scope; Shaska covers all signatures with triangular same-sign controls | 2026-07-25 reconciliation |
@@ -243,6 +261,16 @@ scalar conditions before exploiting sparsity.
 - EXP-114: exact triple determinants factor compactly. \(T_A\) cancels
   \((2,9)\) identically; \(T_B\) exposes the shifted weighted geometry
   \((7,3,9)\).
+- EXP-115 through EXP-117: the open residual components and boundary kernel
+  are isolated; the quotient boundary residual is reduced to nine invariant
+  points plus \(b=0\).
+- EXP-118: an exact \(C a^{107}\) alternative minor, the selected
+  \(b^{95}\) axis chart, and the origin rank gap close the complete \(d=0\)
+  quotient plane.
+- EXP-119: a first exact weighted-open alternative determinant intersects
+  each of \(G,L,Q\) in a finite proper scheme.
+- EXP-120: a third exact chart closes the \(G\) component. The \(L\) and
+  \(Q\) common residuals remain zero-dimensional.
 - EXP-102: third chart exists at \(u=1\); complete pullback is inconclusive
   after the dense rank-121 determinant hit its five-minute budget.
 
@@ -254,8 +282,7 @@ scalar conditions before exploiting sparsity.
   at \(u=1\).
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
-- EXP-111 through EXP-114 are complete. EXP-115 is the next round, but its
-  hypothesis has not yet been written.
+- EXP-111 through EXP-120 are complete. No Jacobian process is active.
 - Current research branch: `work/jacobian-conjecture/next-round`.
 - EXP-096 was merged into `develop` by PR `#81` at `7866b0f`.
 - The planar manuscript reconciliation was merged by PR `#83` at `ffc6a3d`.
@@ -276,21 +303,22 @@ scalar conditions before exploiting sparsity.
   PR `#92` at `9e039e1`.
 - EXP-115 through EXP-117 and Paper B v0.21 were merged into `develop` by
   PR `#93` at `b57a9b7`.
-- EXP-115 through EXP-117 are complete. EXP-118 is next but its hypothesis
-  has not yet been written.
+- EXP-118 through EXP-120 are committed on the active research branch.
+- The next declared mathematical target is EXP-121: select distinct
+  maximal-minor row bases on the finite \(L\) and \(Q\) common residuals.
 - The management mirror is updated directly on its canonical `develop`
   checkout. Do not create a management worktree or task branch.
 
 ## 5. Next actions, in order
 
-1. Declare and run EXP-118 on the finite quotient residual:
-   - find alternative 124-column charts on \(b=0\);
-   - test the five rational \(z\)-values exactly;
-   - test the quartic fibre over \(\mathbb Q[z]/(f_4)\) or by good-prime
-     non-divisibility plus exact lift;
-   - compute the common residual ideal if one chart does not cover.
-2. Close the proper intersections left on the three \(d\ne0\) components
-   \(G,L,Q\), using the persisted EXP-115 row bases.
+1. Declare EXP-121 on the finite \(L\) and \(Q\) common residuals:
+   - select new row bases at deterministic modular or algebraic controls on
+     each residual, rather than reuse the \(G\)-basis that contains \(LQ\);
+   - test each new determinant in the exact quotient coordinate rings;
+   - prove unit ideals or persist smaller eliminants with multiplicity and
+     lifting caveats.
+2. Keep the completed \(d=0\) cover and \(G\)-component cover as regression
+   gates; do not recompute them as generic plane resultants.
 3. Reopen intersection-\(21\) transport only with a complete
    boundary-divisor ledger through the swap, Laurent cuts, and final inversion;
    do not impose absolute degree directly on the 51 coefficients.
