@@ -260,3 +260,17 @@
   page-by-page visual QA passed; PR #95 merged at `68ec8d3`. Zenodo version
   DOI: `10.5281/zenodo.21696190`, concept DOI:
   `10.5281/zenodo.21503367`.
+- **2026-07-30 EXP-121:** modular selection on the finite \(L\) and \(Q\)
+  residual schemes returns one shared 125-row basis. It has 68 row
+  replacements, largest cyclic block 26, and an exact 23-term determinant
+  \(A^{87}R(A^3,B)\). The direct exact \(L\) ideal is the unit ideal. For
+  \(Q\), splitting the first chart's \(B^{36}\) factor leaves a unit gcd on
+  \(B=0\); quadratic reduction on the quotient branch produces degree-144
+  and degree-176 compatibility polynomials with unit gcd. Thus \(L\) and
+  \(Q\) are both closed. Together with EXP-118 and EXP-120, the complete
+  three-parameter \(T_B\) restriction is closed. The 24-parameter core, full
+  51-parameter family, \((72,108)\), degree floor, and \(JC(2)\) remain open.
+- **2026-07-30 publication in progress:** Paper B v0.23 records EXP-121 and
+  the complete \(T_B\) cover. Its two-pass 17-page PDF build and complete
+  visual QA pass. PR merge and the immutable Zenodo version DOI remain
+  required before publication is complete.

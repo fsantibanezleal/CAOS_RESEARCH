@@ -1,7 +1,7 @@
 # Jacobian conjecture: active problem plan
 
 Opened 2026-07-20. Area: algebraic geometry. State: exploring. Last strategic audit:
-2026-07-29.
+2026-07-30.
 
 This is the current plan. Earlier route proposals remain evidence of the program's development,
 but the controlling decisions are in
@@ -41,27 +41,29 @@ support-restricted failure, or absence of a finite certificate as a proof.
 
 ## Ordered next work
 
-1. Declare EXP-121 on the finite \(L\) and \(Q\) common residuals left by
-   EXP-120:
-   - select new maximal-minor row bases at deterministic algebraic or
-     good-prime points on each residual;
-   - reject bases whose determinants contain the target component;
-   - test the new minors in the exact quotient rings and certify unit ideals
-     or persist strictly smaller eliminants.
-2. Treat EXP-118's complete \(d=0\) quotient cover and EXP-120's complete
-   \(G\)-component cover as regression gates. Do not spend compute
-   re-eliminating those closed strata.
-3. Reopen intersection-\(21\) transport only if the cyclic core remains too
+1. Record EXP-121 as complete. Its shared residual-selected row basis closes
+   both \(L\) and \(Q\), so EXP-118--121 close the complete
+   three-parameter \(T_B\) restriction.
+2. Before declaring EXP-122, audit how the EXP-121 basis lifts back into the
+   24-parameter cyclic core:
+   - classify every restored direction as determinant-inert, acyclic, or
+     active in the size-26 cyclic block;
+   - compute exact first derivatives and sparse mixed-support participation;
+   - promote only a symbolic neighborhood or higher-dimensional
+     constructible stratum, not another isolated coefficient sample.
+3. Treat the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
+   spend compute re-eliminating or adding charts to the closed restriction.
+4. Reopen intersection-\(21\) transport only if the cyclic core remains too
    large, and only with the complete boundary-divisor ledger required by
    EXP-097.
-4. Continue the independent [125,150] frontier task:
+5. Continue the independent [125,150] frontier task:
    - preserve C10/C11/C19/C20 as unresolved by GGV2 Remark 2.32;
    - derive the 16 unprinted $A'_0$ values through the declared chain algorithm;
    - preserve C01/C04 as open absent an exact exclusion.
-5. Keep EXP-093 cancelled. EXP-075's exact support at reordered index 2662 proves that no global
+6. Keep EXP-093 cancelled. EXP-075's exact support at reordered index 2662 proves that no global
    degree-three polynomial covector exists, so the proposed four-million-unknown solve has no
    target.
-6. Keep EXP-109 as a bounded chart-control only. Do not continue coefficient
+7. Keep EXP-109 as a bounded chart-control only. Do not continue coefficient
    slices as the main programme.
 
 ## Routes not currently authorized for compute

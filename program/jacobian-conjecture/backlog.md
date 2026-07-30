@@ -69,7 +69,9 @@
 | JCB-065 | Quotient the d=0 TB boundary by the explicit P-kernel and prove the 123/124 rank-gap cover | P5 | done | 2026-07-29 | EXP-116/117 construct the quotient and finite residual; EXP-118 closes the complete boundary plane |
 | JCB-067 | Factor the 51-column d=0 quotient core | P5 | done | 2026-07-29 | EXP-117: exact factorization is b^32 times one five-term weighted factor and five binomials; b nonzero reduces to nine squarefree z=a^3/b^7 points |
 | JCB-068 | Cover the finite d=0 quotient residual | P5 | done | 2026-07-29 | EXP-118: alternative determinant C a^107 covers a nonzero; selected b^95 covers the other axis; origin has exact 112/113 gap |
-| JCB-066 | Close the proper intersections on the three weighted-open components | P5 | doing | 2026-07-29 | EXP-119 makes all intersections finite; EXP-120 closes G exactly; finite L and Q common residuals remain |
+| JCB-066 | Close the proper intersections on the three weighted-open components | P5 | done | 2026-07-30 | EXP-119 makes all intersections finite; EXP-120 closes G; EXP-121 closes L and Q exactly |
 | JCB-069 | Compute exact weighted-open alternative charts and common component ideals | P5 | done | 2026-07-29 | EXP-119/120: exact X=A^3 determinants, unit ideal on G, zero-dimensional nonunit ideals on L and Q |
-| JCB-070 | Select row bases directly on the finite L and Q residual schemes | P5 | todo | 2026-07-29 | EXP-121: avoid the G-basis determinant X^30 L Q R; target algebraic or good-prime controls on each surviving scheme |
+| JCB-070 | Select row bases directly on the finite L and Q residual schemes | P5 | done | 2026-07-30 | EXP-121 finds one shared 125-row basis; its 23-term exact determinant gives unit certificates on both L and Q |
 | JCB-071 | Publish EXP-118 through EXP-120 in Paper B v0.22 and Zenodo | P6 | done | 2026-07-29 | PR #95 merged at 68ec8d3; immutable version DOI 10.5281/zenodo.21696190 |
+| JCB-072 | Publish the complete three-parameter TB cover in Paper B v0.23 and Zenodo | P6 | doing | 2026-07-30 | two-pass 17-page build and visual QA pass; PR, merge, and immutable version DOI pending |
+| JCB-073 | Audit whether the EXP-121 shared basis lifts into a higher-dimensional constructible core stratum | P5 | todo | 2026-07-30 | restore all 24 core directions; classify inert/acyclic/size-26-block activity before declaring EXP-122 |

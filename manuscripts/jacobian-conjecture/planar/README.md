@@ -15,10 +15,12 @@ route, including the first complete exact augmented-minor chart cover on an
 actual three-coefficient GGHV slice and its global lower-family mod-9 grading,
 followed by the EXP-111 full-family rank correction, the EXP-112 exact
 36-column cyclic-core compression, the EXP-114 weighted residual factors,
-and the EXP-115--120 weighted-chart campaign: the complete quotient boundary
+and the EXP-115--121 weighted-chart campaign: the complete quotient boundary
 is closed, a first open chart makes all three selected component
-intersections finite, and a third chart closes the \(G\) component while
-finite \(L/Q\) residuals remain. Grows
+intersections finite, a third chart closes the \(G\) component, and one
+shared residual-selected basis closes both finite \(L/Q\) strata. The
+complete three-parameter \(T_B\) restriction is therefore closed, while the
+24-parameter core and full family remain open. Grows
 per session; content moved here from `manuscript/` in the 2026-07-22 split
 (see `manuscript/README.md` for the three-paper structure).
 
@@ -36,6 +38,6 @@ pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode ma
 Rules (methodology/05): [MV] / [D] / [C] labels on every claim; findings enter only after
 adversarial validation.
 
-Current manuscript version: **v0.22** (2026-07-29). Substantive revisions are published
+Current manuscript version: **v0.23** (2026-07-30). Substantive revisions are published
 as new Zenodo versions under concept DOI `10.5281/zenodo.21503367`.
-Version 0.22 DOI: `10.5281/zenodo.21696190`.
+Version 0.23 DOI: pending publication.
