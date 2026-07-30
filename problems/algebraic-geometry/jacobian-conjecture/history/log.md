@@ -1294,3 +1294,19 @@
   passed; the immutable Zenodo version DOI is
   `10.5281/zenodo.21694807`. PR #92 merged the round into `develop` at
   `9e039e1`.
+
+## 2026-07-29 - EXP-115 isolates the structural boundary kernel
+
+- Weighted normalization splits the \(d\ne0\) selected residual into three
+  irreducible components \(G,L,Q\) over \(\mathbb Q[A,B]\).
+- At \(p=1009\), persisted alternative row bases give nonzero determinants on
+  isolated points of all three components while the selected determinant
+  vanishes. This proves generic component non-containment. The \(L\) transition
+  also lifts to the exact rational point \((A,B,d)=(0,-4/5,1)\).
+- The predicted boundary rank-125 charts are refuted. On \(d=0\),
+  \(P=a y+b y^5+y^8(1-xy)^8\) enters the retained \(Q\)-space and supplies
+  the exact polynomial kernel \([P,P]=0\).
+- Exact representatives of \(a=0\), \(b=0\), and
+  \(30720000a^3+48828125b^7=0\) have rank profile \(123/124\). EXP-116 must
+  quotient the \(P\)-kernel and cover the boundary with 124-column minors.
+  JC(2), \((72,108)\), and the floor remain open.

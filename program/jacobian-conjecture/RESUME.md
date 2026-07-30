@@ -87,6 +87,14 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
   with \(d=1+\varepsilon_{(1,0)}\), the determinant factors into weighted
   homogeneous polynomials of weights \((7,3,9)\) and weighted degrees 54 and
   63. Weighted residual charts are now the P0 route.
+- EXP-115 splits the weighted-open residual into three irreducible components
+  \(G,L,Q\). Exact good-prime alternative minors prove that none is contained
+  in the rank-deficient locus; \(L\) also has a rational characteristic-zero
+  witness. On \(d=0\), however, rank 125 is structurally impossible:
+  \(P=a y+b y^5+y^8(1-xy)^8\) enters the \(Q\)-space and gives the polynomial
+  kernel \([P,P]=0\). Exact representatives of all three boundary components
+  have rank profile \(123/124\). The P0 route is now the quotient by this
+  explicit \(P\)-kernel.
 - Controlling strategy:
   [`strategy-audit-2026-07-29.md`](strategy-audit-2026-07-29.md).
 - Source audit:
@@ -113,6 +121,8 @@ navigation page. Primary artifacts and experiment verdicts remain the evidence.
 | pinned augmented cyclic core | 36 columns and 24 active parameters; 27 directions acyclic on the chart | EXP-112 |
 | connectivity triples | \(T_A=\{(0,1),(0,7),(2,9)\}\), \(T_B=\{(0,1),(0,5),(1,0)\}\) | EXP-113 |
 | weighted residual factors | \(D_B=2^{-42}G_{54}H_{63}\), weights \((7,3,9)\) in \((a,b,d)\) | EXP-114 |
+| weighted-open components | irreducible \(G,L,Q\), each generically removed by an alternative complete-row minor | EXP-115 |
+| \(d=0\) kernel | \(P=a y+b y^5+y^8(1-xy)^8\) lies in the \(Q\)-space and \([P,P]=0\); sample rank gap \(123/124\) | EXP-115 |
 | lower-family grading | \(w_{p,q}=q-p+1\pmod9\) for all 23 nonconstant remaining directions | EXP-106 |
 | properness instrument | exact resultant-leading-coefficient test | EXP-014 |
 | equivariant classification | EXP-010 on opposite-sign/one-zero scope; Shaska covers all signatures with triangular same-sign controls | 2026-07-25 reconciliation |
@@ -250,22 +260,21 @@ scalar conditions before exploiting sparsity.
   `10.5281/zenodo.21503367`.
 - EXP-110 through EXP-114 and Paper B v0.20 were merged into `develop` by
   PR `#92` at `9e039e1`.
-- No experiment process is active.
+- EXP-115 is complete. EXP-116 is the next declared round but its hypothesis
+  has not yet been written.
 - The management mirror is updated directly on its canonical `develop`
   checkout. Do not create a management worktree or task branch.
 
 ## 5. Next actions, in order
 
-1. Declare and run EXP-115 on the weighted \(T_B\) residual:
-   - set \(a=\varepsilon_{(0,1)}\),
-     \(b=\varepsilon_{(0,5)}\), and
-     \(d=1+\varepsilon_{(1,0)}\);
-   - split \(d\ne0\) from \(d=0\);
-   - use weights \((7,3,9)\) to normalize the open chart;
-   - select alternative minors using all 302 rows and compute exact gcd or
-     residual ideals against \(G_{54}\) and \(H_{63}\).
-2. Continue constructible determinant charts only from exact factor loci.
-   Use EXP-101 through EXP-108 as regression controls.
+1. Declare and run EXP-116 on the \(d=0\) quotient:
+   - remove the fixed \(y^8\) coordinate from the explicit \(P\)-kernel;
+   - form the 302-by-124 quotient augmented matrix;
+   - find exact 124-row charts and compute their common residual ideal in
+     \(a,b\);
+   - distinguish a uniform rank-gap proof from a finite residual target.
+2. Close the proper intersections left on the three \(d\ne0\) components
+   \(G,L,Q\), using the persisted EXP-115 row bases.
 3. Reopen intersection-\(21\) transport only with a complete
    boundary-divisor ledger through the swap, Laurent cuts, and final inversion;
    do not impose absolute degree directly on the 51 coefficients.

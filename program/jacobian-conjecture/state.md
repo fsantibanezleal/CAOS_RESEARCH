@@ -209,3 +209,11 @@
   rank target and the exact 36-core/weighted-factor reduction. Its two-pass
   15-page PDF and visual QA passed; PR #92 merged at `9e039e1`. Zenodo version DOI:
   `10.5281/zenodo.21694807`, concept DOI: `10.5281/zenodo.21503367`.
+- **2026-07-29 EXP-115:** weighted normalization splits the \(d\ne0\)
+  selected residual into three irreducible components \(G,L,Q\). Persisted
+  good-prime alternative minors prove that none is wholly rank-deficient;
+  \(L\) also has an exact rational transition. The \(d=0\) prediction is
+  refuted structurally: \(P=a y+b y^5+y^8(1-xy)^8\) lies in the retained
+  \(Q\)-space and supplies the exact kernel \([P,P]=0\). Exact representatives
+  of all three boundary components retain rank gap \(123/124\). Next:
+  quotient by \(P\) and prove a 124-minor cover. No floor claim follows.

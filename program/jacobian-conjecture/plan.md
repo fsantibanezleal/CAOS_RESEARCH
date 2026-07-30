@@ -41,14 +41,16 @@ support-restricted failure, or absence of a finite certificate as a proof.
 
 ## Ordered next work
 
-1. Run EXP-115 on EXP-114's weighted \(T_B\) residual:
-   - use \(d=1+\varepsilon_{(1,0)}\) and weights \((7,3,9)\);
-   - split the residual into \(d\ne0\) and \(d=0\);
-   - select alternative augmented minors from the complete 302-row system on
-     each primitive factor;
-   - compute exact gcd or residual ideals after weighted normalization.
-2. Continue constructible determinantal strata from the exact 36-core and
-   EXP-114 factors. Use EXP-101 through EXP-108 as regression controls.
+1. Run EXP-116 on EXP-115's structural \(d=0\) boundary:
+   - quotient the 124 nonconstant \(Q\)-columns by the exact kernel generated
+     by \(P=a y+b y^5+y^8(1-xy)^8\);
+   - use the fixed nonzero \(y^8\) coordinate to remove one kernel column;
+   - search the complete 302-row system for 124-by-124 augmented minors;
+   - prove a uniform \(123/124\) rank-gap cover in \(a,b\), or persist the
+     exact residual ideal where it can fail.
+2. Intersect the three \(d\ne0\) alternative minors from EXP-115 with their
+   target factors \(G,L,Q\). Use EXP-101 through EXP-108 as regression
+   controls.
 3. Reopen intersection-\(21\) transport only if the cyclic core remains too
    large, and only with the complete boundary-divisor ledger required by
    EXP-097.
@@ -78,6 +80,9 @@ support-restricted failure, or absence of a finite certificate as a proof.
   target is vacuous.
 - Further coefficient-slice enumeration: demote. It cannot close the
   51-parameter family.
+- Raw 125-column minors on the \(d=0\) \(T_B\) plane: retire. EXP-115 proves
+  that \(P\) itself enters the admissible \(Q\)-space there, so \([P,P]=0\)
+  forces a polynomial right kernel. Quotient by this kernel first.
 
 ## Cancelled EXP-093 scale facts
 
