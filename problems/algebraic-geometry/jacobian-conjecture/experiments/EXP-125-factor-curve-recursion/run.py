@@ -10,6 +10,7 @@ import sys
 import time
 from pathlib import Path
 
+import numpy as np
 from sympy import Poly, QQ, expand, factor_list, gcd, ground_roots, sympify, symbols
 
 
@@ -104,6 +105,55 @@ def modular_matrices(base, directions, prime):
     }
 
 
+def independent_row_basis_fast(rows, prime):
+    """Return the same ordered pivot-row basis using vectorized row arithmetic."""
+    matrix = np.asarray(rows, dtype=np.int64)
+    pivots: list[tuple[int, np.ndarray]] = []
+    basis = []
+    for row_index, source in enumerate(matrix):
+        vector = source.copy()
+        for column, pivot in pivots:
+            coefficient = int(vector[column])
+            if coefficient:
+                vector = (vector - coefficient * pivot) % prime
+        nonzero = np.flatnonzero(vector)
+        if nonzero.size == 0:
+            continue
+        pivot_column = int(nonzero[0])
+        inverse = pow(int(vector[pivot_column]), -1, prime)
+        vector = vector * inverse % prime
+        pivots.append((pivot_column, vector))
+        basis.append(row_index)
+        if len(basis) == matrix.shape[1]:
+            break
+    return basis
+
+
+def determinant_mod_fast(rows, indices, prime):
+    """Compute a selected modular determinant with vectorized elimination."""
+    matrix = np.asarray([rows[index] for index in indices], dtype=np.int64)
+    determinant = 1
+    size = matrix.shape[0]
+    for column in range(size):
+        nonzero = np.flatnonzero(matrix[column:, column] % prime)
+        if nonzero.size == 0:
+            return 0
+        pivot = column + int(nonzero[0])
+        if pivot != column:
+            matrix[[column, pivot]] = matrix[[pivot, column]]
+            determinant = -determinant % prime
+        pivot_value = int(matrix[column, column] % prime)
+        determinant = determinant * pivot_value % prime
+        inverse = pow(pivot_value, -1, prime)
+        if column + 1 < size:
+            coefficients = matrix[column + 1 :, column] * inverse % prime
+            matrix[column + 1 :] = (
+                matrix[column + 1 :]
+                - coefficients[:, None] * matrix[column]
+            ) % prime
+    return determinant
+
+
 def scan_factor(
     factor,
     r,
@@ -154,12 +204,12 @@ def scan_factor(
                 fv == 0,
                 f"p={prime} sampled point lies on EXP-124 residual",
             )
-            if candidate_basis is not None and exp124.exp115.determinant_mod(
+            if candidate_basis is not None and determinant_mod_fast(
                 evaluated, candidate_basis, prime
             ):
                 basis = candidate_basis
             else:
-                basis = exp124.exp115.independent_row_basis(evaluated, prime)
+                basis = independent_row_basis_fast(evaluated, prime)
                 if (
                     len(basis) == 125
                     and basis != shared_rows
