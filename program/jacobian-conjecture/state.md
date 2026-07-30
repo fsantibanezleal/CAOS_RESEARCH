@@ -192,3 +192,16 @@
   EXP-110's forced-only list. The next route is an acyclic or small-core
   augmented basis search on the complete system. JC(2) and \((72,108)\)
   remain open.
+- **2026-07-29 EXP-112:** the selected complete-family augmented minor
+  compresses exactly from 125 columns and 51 parameters to one 36-column
+  block depending on 24 parameters, plus three forced singleton factors. The
+  other 27 directions are acyclic and determinant-inert on this chart.
+- **2026-07-29 EXP-113:** removing the forced direction does not split the
+  36-core. Two different three-parameter supports already generate its full
+  strong connectivity, so graph complexity is intrinsically small-support.
+- **2026-07-29 EXP-114:** exact triple determinants are compact. The
+  \(T_A\) determinant has 24 monomials, factors in degrees \(3,12,6\), and
+  cancels the graph-active \((2,9)\) direction identically. The \(T_B\)
+  determinant factors into weighted degrees 54 and 63 after
+  \(d=1+\varepsilon_{(1,0)}\), with weights \((7,3,9)\). Next: weighted
+  alternative-minor charts on the two factor loci. No floor claim follows.

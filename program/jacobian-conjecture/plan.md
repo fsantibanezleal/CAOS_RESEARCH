@@ -41,16 +41,14 @@ support-restricted failure, or absence of a finite certificate as a proof.
 
 ## Ordered next work
 
-1. Run EXP-112 on the complete 302-by-125 augmented system:
-   - remove the structural constant \(Q\)-column and retain the target column;
-   - search alternative pinned row bases, including the 13 rows omitted by
-     EXP-110;
-   - test whether the normalized perturbation operators have a common acyclic
-     dependency graph;
-   - if no acyclic basis exists, persist the smallest strongly connected core
-     and the exact block decomposition.
-2. Continue constructible determinantal strata only on the cyclic core exposed
-   by EXP-112. Use EXP-101 through EXP-108 as exact regression controls.
+1. Run EXP-115 on EXP-114's weighted \(T_B\) residual:
+   - use \(d=1+\varepsilon_{(1,0)}\) and weights \((7,3,9)\);
+   - split the residual into \(d\ne0\) and \(d=0\);
+   - select alternative augmented minors from the complete 302-row system on
+     each primitive factor;
+   - compute exact gcd or residual ideals after weighted normalization.
+2. Continue constructible determinantal strata from the exact 36-core and
+   EXP-114 factors. Use EXP-101 through EXP-108 as regression controls.
 3. Reopen intersection-\(21\) transport only if the cyclic core remains too
    large, and only with the complete boundary-divisor ledger required by
    EXP-097.
