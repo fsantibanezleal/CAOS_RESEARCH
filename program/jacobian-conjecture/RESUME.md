@@ -270,6 +270,8 @@ scalar conditions before exploiting sparsity.
 - Paper B v0.20, including EXP-111 through EXP-114, is published at
   `10.5281/zenodo.21694807` under concept DOI
   `10.5281/zenodo.21503367`.
+- Paper B v0.21, including EXP-115 through EXP-117, is published at
+  `10.5281/zenodo.21695367` under the same concept DOI.
 - EXP-110 through EXP-114 and Paper B v0.20 were merged into `develop` by
   PR `#92` at `9e039e1`.
 - EXP-115 through EXP-117 are complete. EXP-118 is next but its hypothesis
@@ -348,6 +350,7 @@ Latest correction publications:
 - Paper B v0.17: `10.5281/zenodo.21593235`
 - Paper B v0.19: `10.5281/zenodo.21610744`
 - Paper B v0.20: `10.5281/zenodo.21694807`
+- Paper B v0.21: `10.5281/zenodo.21695367`
 
 EXP-097 changed the admissible use of intersection number \(21\), so the planar
 manuscript was expanded, built, visually verified, merged through PR `#85`,

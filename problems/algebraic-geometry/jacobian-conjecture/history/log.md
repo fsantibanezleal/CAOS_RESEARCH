@@ -1340,3 +1340,6 @@
   polynomial: five rational roots and four roots of one quartic. EXP-118 must
   cover those nine invariant points and \(b=0\) with alternative quotient
   charts. JC(2), \((72,108)\), and the floor remain open.
+- Paper B v0.21 transcribes EXP-115 through EXP-117. Its two-pass 16-page PDF
+  and visual QA passed; the immutable Zenodo version DOI is
+  `10.5281/zenodo.21695367`.

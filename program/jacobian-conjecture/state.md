@@ -229,3 +229,8 @@
   \(z=a^3/b^7\) reduces the residual to nine distinct points: five rational
   values and four roots of a squarefree quartic. EXP-118 will cover those
   points and \(b=0\) with alternative quotient charts. No floor claim follows.
+- **2026-07-29 publication:** Paper B v0.21 records EXP-115 through EXP-117,
+  including the structural \(P\)-kernel, 124-column quotient, and finite
+  nine-point invariant reduction. Its two-pass 16-page PDF and visual QA
+  passed. Zenodo version DOI: `10.5281/zenodo.21695367`, concept DOI:
+  `10.5281/zenodo.21503367`.

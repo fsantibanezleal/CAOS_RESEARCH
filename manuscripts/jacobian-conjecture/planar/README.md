@@ -36,4 +36,4 @@ adversarial validation.
 
 Current manuscript version: **v0.21** (2026-07-29). Substantive revisions are published
 as new Zenodo versions under concept DOI `10.5281/zenodo.21503367`.
-Version 0.21 DOI: pending publication.
+Version 0.21 DOI: `10.5281/zenodo.21695367`.
