@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-30\\[2pt]\normalsize Version 0.26}
+\date{2026-07-30\\[2pt]\normalsize Version 0.27}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.26}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.27}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -117,7 +117,11 @@ function-field norm has five irreducible factors of degrees \(2,3,6,18,30\).
 Exact same-point arithmetic places the first three on \(X=0\) or \(R=S=0\);
 only the degree-18 and degree-30 factors survive on \(AS\ne0\). Thus \(F_6\)
 also becomes finite: 48 normalized values, or 144 lifted algebraic points.
-The curve \(F_7\), the finite base locus, and \(A=0\) remain.
+A distinct exact section on \(F_7\) has a degree-58 norm. Its \(B^{16}\)
+factor lies on \(A=0\), and its degree-12 factor lies on \(R=S=0\);
+the surviving irreducible degrees \(3,9,18\) give 30 normalized values and
+90 lifts. Thus no positive-dimensional factor curve remains on this graph
+chart. The finite graph ledger, the finite base locus, and \(A=0\) remain.
 A new multiplication formula for $x^m$-anchored edges shows the $B = 16$ leading form cannot
 produce the Keller constant on its top edge for $m \ge 2$: that case, too, is a staircase
 transport. All computations are exact and reproducible; every claim is labeled machine-verified
@@ -1087,9 +1091,35 @@ This gives 48 normalized values and 144 lifted algebraic points [MV/D].
 It is the first explicit use of the maximal-minor / curve-section /
 zero-divisor / function-field-norm dictionary in this atlas.
 
-The graph curve \(F_7\), both finite \(F_3/F_6\) residuals, the
-finite base locus, and the separate divisor \(A=0\) remain, as do the full
-\((72,108)\) case, the planar degree floor, and \(JC(2)\).
+EXP-127 applies the same dictionary to the distinct persisted \(F_7\) basis
+[MV]. Its exact anchor has a 31-vertex largest cyclic block. The complete
+determinant has \(A\)-valuation 89 and, after invariant reduction, is
+independent of \(Y=A^2C\). Modulo the irreducible quadratic-in-\(X\) curve
+\(F_7\), its primitive class is again linear:
+\[
+ h_7(X,B)=U_7(B)X+V_7(B).
+\]
+The Sylvester resultant and quotient-multiplication determinant give the
+same degree-58 norm, whose irreducible factorization is
+\[
+ \operatorname{Norm}(h_7)
+ \doteq B^{16}E_3E_9E_{12}E_{18}.
+\]
+Direct quotient arithmetic identifies the \(B=0\) common root as \(X=0\),
+and the \(E_{12}\) root as a point of \(R=S=0\). The unique roots over
+\(E_3,E_9,E_{18}\) have \(X,S\ne0\). Hence the effective residual on
+\(AS\ne0\) is
+\[
+ E_3(B)E_9(B)E_{18}(B)=0,
+\]
+giving 30 normalized values and 90 lifted algebraic points [MV/D].
+Together with the \(F_3\) and \(F_6\) reductions, this finishes the
+positive-dimensional factor-curve phase of the graph atlas.
+
+The 102 normalized finite graph values (306 lifts before overlap analysis),
+the finite base locus, and the separate divisor \(A=0\) remain, as do the
+full four-parameter restriction, the \((72,108)\) case, the planar degree
+floor, and \(JC(2)\).
 
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the
