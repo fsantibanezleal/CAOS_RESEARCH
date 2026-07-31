@@ -1517,3 +1517,7 @@
   `75C8385C175B99FE51B2D3481C8820C5D01D51EFABC4FC75CC5A48ABAFCF9AAE`;
   worker SHA-256:
   `8711AD526482CD16316719A4F60783378748157460F56BCA41689726A891571A`.
+- Paper B v0.27 passed its two-pass 20-page build and complete rendered QA.
+  PR #109 merged at `d32b7f0`. Zenodo record `21712314` is published at
+  immutable DOI `10.5281/zenodo.21712314`; its public 393753-byte PDF MD5
+  `954061a333009dbbe737f353b288ff5f` matches the local artifact.

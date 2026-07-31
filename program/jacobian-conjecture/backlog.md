@@ -83,4 +83,4 @@
 | JCB-080 | Publish the \(F_6\) divisor reduction in Paper B v0.26 and Zenodo | P6 | done | 2026-07-30 | PR #106 merged at 37a1341; immutable DOI 10.5281/zenodo.21712096; public MD5 matches the 391364-byte local PDF |
 | JCB-078 | Publish the recursive graph atlas in Paper B v0.25 and promote validated develop to main | P6 | done | 2026-07-30 | PRs #101--103 merged; immutable DOI 10.5281/zenodo.21711580; validated tree promoted to main |
 | JCB-081 | Cover the combined finite \(F_3/F_6/F_7\) graph ledger by quotient-algebra point charts | P5 | todo | 2026-07-30 | EXP-128: compute factor overlaps first; then select simultaneous minors on the 102 normalized values; keep base locus and \(A=0\) separate |
-| JCB-082 | Publish the \(F_7\) divisor reduction in Paper B v0.27 and Zenodo | P6 | doing | 2026-07-30 | manuscript trigger fired by EXP-127; build, visual QA, PR promotion, and immutable new Zenodo version required |
+| JCB-082 | Publish the \(F_7\) divisor reduction in Paper B v0.27 and Zenodo | P6 | done | 2026-07-30 | PR #109 merged at d32b7f0; immutable DOI 10.5281/zenodo.21712314; public MD5 matches the 393753-byte local PDF |
