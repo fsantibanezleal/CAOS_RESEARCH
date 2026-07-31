@@ -340,3 +340,23 @@
   `md5:954061a333009dbbe737f353b288ff5f` matches the local file; local
   SHA-256 is
   `41b869b2ef65e155c54e0257be437fb19d22d303b76c5c8df399ceb755ffcb9c`.
+- **2026-07-31 EXP-128:** the seven retained graph-ledger factor
+  appearances collapse to five squarefree projected blocks of degrees
+  \(9,15,18,30,3\), total degree 75. Degree 9 is shared by \(F_3/F_7\) and
+  degree 18 by \(F_6/F_7\). The \(h_7\) section covers the unique degree-15
+  and degree-30 blocks; \(h_{36}\) vanishes on \(F_7\).
+- **2026-07-31 EXP-129:** exact quotient arithmetic proves the shared
+  projections have the same \(X\)-classes. Six modular controls retain full
+  augmented rank 125. The single-basis prediction is refuted, but two exact
+  SCC-reconstructed maximal minors have blockwise unit norms: atlas 2 covers
+  degree 3 and atlas 1 covers degrees 9 and 18. Combined with EXP-124--128,
+  the complete \(AS\ne0\) rational graph is closed. The finite base locus,
+  \(A=0\), full four-parameter restriction, \((72,108)\), degree floor, and
+  \(JC(2)\) remain open.
+- **2026-07-31 publication:** PR #112 merged EXP-128/129 and Paper B v0.28
+  into `develop` at `6adc5dc`. The immutable Zenodo version DOI is
+  `10.5281/zenodo.21727663` under concept DOI
+  `10.5281/zenodo.21503367`. The public 395770-byte PDF checksum
+  `md5:db52e8d453936a3e28222fbadeb809ce` matches the local artifact; local
+  SHA-256 is
+  `ee97e7519b94083e1b7977f68967e73f26db0ebe268ccd37d9a5b222a6160896`.
