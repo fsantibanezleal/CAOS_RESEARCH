@@ -1471,3 +1471,7 @@
 - The positive-dimensional graph residual is now \(F_6\cup F_7\).
   Neither the full four-parameter restriction nor \((72,108)\), the degree
   floor, or \(JC(2)\) is closed.
+- Paper B v0.25 transcribes EXP-124/125. Its two-pass 19-page build has no
+  layout warnings, all rendered pages pass visual QA, and PR #101 merged at
+  `f28c5a2`. The immutable Zenodo DOI is
+  `10.5281/zenodo.21711580`.
