@@ -1521,3 +1521,24 @@
   PR #109 merged at `d32b7f0`. Zenodo record `21712314` is published at
   immutable DOI `10.5281/zenodo.21712314`; its public 393753-byte PDF MD5
   `954061a333009dbbe737f353b288ff5f` matches the local artifact.
+
+## 2026-07-31 - EXP-128/129 close the rational graph by a finite norm atlas
+
+- EXP-128 reconstructs the \(F_3,F_6,F_7\) ledgers in one exact quotient
+  algebra. Two factor appearances coincide: degree 9 on \(F_3/F_7\) and
+  degree 18 on \(F_6/F_7\). The union therefore has five squarefree CRT
+  blocks of degrees \(9,15,18,30,3\), total degree 75 rather than 102.
+- Cross-section norms show \(h_7\) covers the unique degree-15 \(F_3\) block
+  and unique degree-30 \(F_6\) block. Its failures are exactly the shared
+  blocks. The reciprocal \(h_{36}\) section vanishes identically on \(F_7\).
+- EXP-129 verifies that the repeated projections are the same exact points
+  by comparing their \(X\)-classes. Two modular probes per \(F_7\) block all
+  have full augmented rank 125. No one selected row basis covers all probes,
+  refuting the single-section prediction.
+- The declared redirect produces a two-basis atlas. Both determinants are
+  reconstructed in characteristic zero. Exact norm gcds and Bezout
+  identities prove atlas 2 is a unit on \(E_3\), while atlas 1 is a unit on
+  \(E_9\) and \(E_{18}\). Together with EXP-124--128, the full \(AS\ne0\)
+  rational graph is covered by maximal-minor opens.
+- Remaining four-parameter boundaries: finite \(V(R,S)\) and \(A=0\).
+  The complete \((72,108)\) family, degree floor, and \(JC(2)\) remain open.
