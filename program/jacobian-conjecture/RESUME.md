@@ -1,7 +1,7 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-07-30 after EXP-123 produced the first higher-dimensional
-constructible reduction from the 24-parameter core. This is
+Updated 2026-07-30 after EXP-124/125 built the first recursive graph atlas
+and reduced its \(F_3\) curve to a finite residual. This is
 the first-read navigation page. Primary artifacts and experiment verdicts
 remain the evidence.
 
@@ -143,6 +143,14 @@ remain the evidence.
   The polynomials \(R,S\) have 23 and 18 monomials. On \(A\ne0\), the
   selected exceptional locus is the rational graph \(Y=-R/S\) over
   \(S\ne0\), plus finite \(V(R,S)\). No four-parameter cover is proved.
+- EXP-124 selects an alternative basis on that graph and reconstructs
+  \(\Delta_{\rm alt}=A^{90}N(A^3,B)\). The exact 21-term degree-16
+  polynomial \(N\) factors into three plane curves \(F_3F_6F_7=0\).
+- EXP-125 finds new cross-prime bases on all three curves. On
+  \(F_3=(5B+4)^3+16X\), exact restriction gives
+  \((5B+4)Q_6^2Q_9Q_{15}\). After removing \(A=0\) and the \(R=S=0\)
+  base locus, only \(Q_9Q_{15}=0\) remains: 24 normalized values and 72
+  lifted algebraic points. The curves \(F_6,F_7\) remain.
 - Controlling strategy:
   [`strategy-audit-2026-07-29.md`](strategy-audit-2026-07-29.md).
 - Source audit:
@@ -180,6 +188,8 @@ remain the evidence.
 | shared-basis core activity tensor | exact traces, pair traces, anchor-line factors, and SCC changes for all 24 core directions | EXP-122 |
 | first four-parameter lift | \(\Delta=A^{87}(R(A^3,B)+A^2CS(A^3,B))\), with primitive coefficient gcd one | EXP-123 |
 | rational exceptional graph | \(Y=-R(X,B)/S(X,B)\) on \(A S\ne0\), with finite base locus \(V(R,S)\) | EXP-123 |
+| dense-open graph chart | \(\Delta_{\rm alt}=A^{90}N(A^3,B)\), with \(N=F_3F_6F_7\) up to scalar | EXP-124 |
+| \(F_3\) finite reduction | principal-open residual \(Q_9(B)Q_{15}(B)=0\): 24 normalized values, 72 lifted algebraic points | EXP-125 |
 | complete \(T_B\) restriction cover | \(d=0\) quotient cover plus exact \(G,L,Q\) weighted-open covers | EXP-118/120/121 |
 | lower-family grading | \(w_{p,q}=q-p+1\pmod9\) for all 23 nonconstant remaining directions | EXP-106 |
 | properness instrument | exact resultant-leading-coefficient test | EXP-014 |
@@ -309,6 +319,11 @@ scalar conditions before exploiting sparsity.
 - EXP-123: \((2,9)\) is affine over the complete symbolic \(A,B\) chart.
   The accepted exact run completes in 131.86 seconds and reduces the selected
   exceptional set to a rational graph plus finite base locus.
+- EXP-124: an exact alternative chart covers a dense open of the graph and
+  leaves the three factors \(F_3,F_6,F_7\).
+- EXP-125: all three factor curves retain sampled rank \(124/125\) and expose
+  cross-prime new bases. Exact recursion reduces \(F_3\) to the finite
+  \(Q_9Q_{15}\) residual on \(AS\ne0\).
 - EXP-102: third chart exists at \(u=1\); complete pullback is inconclusive
   after the dense rank-121 determinant hit its five-minute budget.
 
@@ -320,7 +335,7 @@ scalar conditions before exploiting sparsity.
   at \(u=1\).
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
-- EXP-111 through EXP-123 are complete. No Jacobian process is active.
+- EXP-111 through EXP-125 are complete. No Jacobian process is active.
 - Current research branch: `work/jacobian-conjecture/next-round`.
 - EXP-096 was merged into `develop` by PR `#81` at `7866b0f`.
 - The planar manuscript reconciliation was merged by PR `#83` at `ffc6a3d`.
@@ -353,36 +368,44 @@ scalar conditions before exploiting sparsity.
 - EXP-122/123 and Paper B v0.24 were merged by PR `#99` at `646911b`.
   Paper B v0.24 is published at `10.5281/zenodo.21698923` under concept DOI
   `10.5281/zenodo.21503367`.
+- EXP-124/125 and Paper B v0.25 were merged by PR `#101` at `f28c5a2`;
+  DOI PR `#102` merged at `d51c1ae`. Paper B v0.25 is published at
+  `10.5281/zenodo.21711580`.
+- Promotion PR `#103` synchronized the validated tree to `main`. Exact
+  current pointers must be verified live rather than copied from this file.
 - The management mirror is updated directly on its canonical `develop`
   checkout. Do not create a management worktree or task branch.
 
 ## 5. Next actions, in order
 
-1. EXP-122/123 are complete. Preserve the exact reduction
-   \(\Delta=A^{87}(R+YS)\) and its scope limits.
-2. Declare EXP-124 on the rational graph \(Y=-R/S\):
-   - select alternative complete-row bases at finite-field graph points;
-   - reconstruct an exact graph-restriction numerator;
-   - factor and recurse only on its residual curves and finite \(V(R,S)\);
-   - treat \(A=0\) as a separate boundary.
-3. Keep the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
+1. Preserve EXP-124/125 as complete: the graph residual is
+   \(F_6\cup F_7\), the finite \(Q_9Q_{15}\) set on \(F_3\), the finite base
+   locus, and the separate divisor \(A=0\).
+2. Declare EXP-126 on \(F_6\). Reuse the persisted cross-prime basis,
+   reconstruct its exact determinant, reduce first on \(Y=-R/S\) and then
+   modulo the quadratic \(F_6(X,B)\), and compute the exact norm/resultant in
+   \(B\). Stop at a finite residual; do not launch a generic Groebner basis.
+3. Apply the same quotient-ring method to \(F_7\) only after the \(F_6\)
+   reduction is adjudicated.
+4. Cover the finite \(F_3\) and \(V(R,S)\) points by algebraic point charts;
+   keep \(A=0\) as a separate boundary experiment.
+5. Keep the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
    add redundant charts to the closed three-parameter restriction.
-4. Reopen intersection-\(21\) transport only with a complete
+6. Reopen intersection-\(21\) transport only with a complete
    boundary-divisor ledger through the swap, Laurent cuts, and final inversion;
    do not impose absolute degree directly on the 51 coefficients.
-5. Pursue further Newton resolution only if a new condition is derived beyond
+7. Pursue further Newton resolution only if a new condition is derived beyond
    the already-retained first \(D=72\) branch; do not repeat direct comparisons
    with \(P_T\).
-6. Continue the independent [125,150] frontier:
+8. Continue the independent [125,150] frontier:
    - keep C10/C11/C19/C20 unresolved by GGV2 Remark 2.32;
    - derive the 16 missing \(A'_0\) values through the declared chain algorithm;
    - preserve C01/C04 as open absent an exact exclusion.
-7. Keep the graph-cover computation as P0 while it continues to reduce
-   dimension exactly. Re-rank only if EXP-124 yields no nonzero alternative
-   graph restriction. Do not build EXP-093.
-8. Keep EXP-109 as a bounded regression control, not as the main route.
-9. Paper B v0.24 publication is complete. Preserve immutable DOI
-   `10.5281/zenodo.21698923`; future claim changes require another Zenodo new
+9. Keep the recursive graph-cover computation as P0 while it reduces
+   dimension exactly. Do not build EXP-093.
+10. Keep EXP-109 as a bounded regression control, not as the main route.
+11. Paper B v0.25 publication is complete. Preserve immutable DOI
+   `10.5281/zenodo.21711580`; future claim changes require another Zenodo new
    version, never an edit.
 
 Suggested source-round commands:

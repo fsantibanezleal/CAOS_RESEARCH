@@ -34,36 +34,34 @@ support-restricted failure, or absence of a finite certificate as a proof.
 | JC-A | Preserve and publish the exact dimension at least three record | rolling; no current compute |
 | JC-B | Complete the $[125,150]$ primary-source frontier reconciliation | active; EXP-094 shows C10/C11/C19/C20 are not excluded by the cited remark; 16 unprinted \(A'_0\) values remain |
 | JC-C | Test modern Newton and approximate-root restrictions against the GGHV reduction | direct transport decided by EXP-097: absolute resultant degree is not typed after Laurent localization without a boundary-divisor ledger |
-| JC-D | Reformulate universal inconsistency as a constructible determinantal-strata problem | active; EXP-098 proves the specialization mechanism and EXP-101 constructs the first actual GGHV minor transition |
+| JC-D | Reformulate universal inconsistency as a constructible determinantal-strata problem | active; EXP-124 covers a dense graph open and EXP-125 reduces \(F_3\) to a finite residual; \(F_6,F_7\), finite points, and \(A=0\) remain |
 | JC-E | Degree-three certificate decision | done by EXP-075; one exact four-parameter slice is infeasible, so no global cubic covector exists |
 | JC-F | Global geometric routes: fibres, properness, and parameter spaces | hold; resume only after a rigorous bridge to the reduced system is stated |
 | JC-G | Manuscripts, wiki, data, and public record | rolling; update only from adjudicated results |
 
 ## Ordered next work
 
-1. Record EXP-122/123 as complete. No restored direction is free on the
-   EXP-121 anchor line. The sparsest direction \((2,9)\) gives the exact
-   higher-dimensional reduction
-   \[
-   \Delta=A^{87}\bigl(R(A^3,B)+A^2CS(A^3,B)\bigr),\qquad \gcd(R,S)=1.
-   \]
-2. Declare EXP-124 on the rational exceptional graph. Select alternative row
-   bases at finite-field points with \(Y=-R/S\), reconstruct an exact graph
-   restriction, and recurse only on its numerator factors and the finite base
-   locus \(V(R,S)\). Treat \(A=0\) as a separate boundary.
-3. Treat the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
+1. Record EXP-124/125 as complete. The selected graph is covered away from
+   \(F_6\cup F_7\), the finite \(Q_9Q_{15}\) residual on \(F_3\), finite
+   \(V(R,S)\), and \(A=0\).
+2. Declare EXP-126 on \(F_6\). Reconstruct the persisted cross-prime basis
+   exactly, reduce the graph numerator modulo the quadratic \(F_6(X,B)\),
+   and compute its exact norm/resultant in \(B\).
+3. Continue to \(F_7\), then the finite point strata, only after the \(F_6\)
+   quotient is adjudicated. Treat \(A=0\) separately.
+4. Treat the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
    spend compute re-eliminating or adding charts to the closed restriction.
-4. Reopen intersection-\(21\) transport only if the cyclic core remains too
+5. Reopen intersection-\(21\) transport only if the graph recursion stalls,
    large, and only with the complete boundary-divisor ledger required by
    EXP-097.
-5. Continue the independent [125,150] frontier task:
+6. Continue the independent [125,150] frontier task:
    - preserve C10/C11/C19/C20 as unresolved by GGV2 Remark 2.32;
    - derive the 16 unprinted $A'_0$ values through the declared chain algorithm;
    - preserve C01/C04 as open absent an exact exclusion.
-6. Keep EXP-093 cancelled. EXP-075's exact support at reordered index 2662 proves that no global
+7. Keep EXP-093 cancelled. EXP-075's exact support at reordered index 2662 proves that no global
    degree-three polynomial covector exists, so the proposed four-million-unknown solve has no
    target.
-7. Keep EXP-109 as a bounded chart-control only. Do not continue coefficient
+8. Keep EXP-109 as a bounded chart-control only. Do not continue coefficient
    slices as the main programme.
 
 ## Routes not currently authorized for compute
