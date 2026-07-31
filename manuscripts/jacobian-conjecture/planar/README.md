@@ -15,7 +15,7 @@ route, including the first complete exact augmented-minor chart cover on an
 actual three-coefficient GGHV slice and its global lower-family mod-9 grading,
 followed by the EXP-111 full-family rank correction, the EXP-112 exact
 36-column cyclic-core compression, the EXP-114 weighted residual factors,
-and the EXP-115--127 weighted-chart campaign: the complete quotient boundary
+and the EXP-115--129 weighted-chart campaign: the complete quotient boundary
 is closed, a first open chart makes all three selected component
 intersections finite, a third chart closes the \(G\) component, and one
 shared residual-selected basis closes both finite \(L/Q\) strata. The
@@ -31,8 +31,13 @@ only irreducible factors of degrees 18 and 30 on \(AS\ne0\): 48 normalized
 values, or 144 lifted algebraic points. A distinct \(F_7\) section has a
 degree-58 norm; after exact boundary classification, irreducible degrees
 3, 9, and 18 survive: 30 normalized values and 90 lifts. No
-positive-dimensional factor curve remains on the graph chart. Its finite
-ledger, the base locus, \(A=0\), the full four-parameter restriction,
+positive-dimensional factor curve remains on the graph chart. Exact CRT
+analysis identifies two repeated geometric blocks, reducing the union from
+102 factor appearances to 75 normalized points. The existing (h_7) section
+covers the unique degree-15 and degree-30 blocks, and two newly reconstructed
+maximal minors generate the unit ideal on the remaining (F_7) blocks of
+degrees 3, 9, and 18. The complete (AS\ne0) rational graph is therefore
+closed. The base locus, (A=0), the full four-parameter restriction,
 24-parameter core, and full family remain open. Grows
 per session; content moved here from `manuscript/` in the 2026-07-22 split
 (see `manuscript/README.md` for the three-paper structure).
@@ -51,6 +56,6 @@ pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode ma
 Rules (methodology/05): [MV] / [D] / [C] labels on every claim; findings enter only after
 adversarial validation.
 
-Current manuscript version: **v0.27** (2026-07-30). Substantive revisions are published
+Current manuscript version: **v0.28** (2026-07-31). Substantive revisions are published
 as new Zenodo versions under concept DOI `10.5281/zenodo.21503367`.
-Version 0.27 DOI: `10.5281/zenodo.21712314`.
+Version 0.28 DOI: reserved during publication; concept DOI `10.5281/zenodo.21503367`.

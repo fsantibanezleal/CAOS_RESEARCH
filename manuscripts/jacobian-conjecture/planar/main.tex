@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-30\\[2pt]\normalsize Version 0.27}
+\date{2026-07-31\\[2pt]\normalsize Version 0.28}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.27}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.28}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -120,8 +120,14 @@ also becomes finite: 48 normalized values, or 144 lifted algebraic points.
 A distinct exact section on \(F_7\) has a degree-58 norm. Its \(B^{16}\)
 factor lies on \(A=0\), and its degree-12 factor lies on \(R=S=0\);
 the surviving irreducible degrees \(3,9,18\) give 30 normalized values and
-90 lifts. Thus no positive-dimensional factor curve remains on this graph
-chart. The finite graph ledger, the finite base locus, and \(A=0\) remain.
+90 lifts. Exact CRT comparison then identifies the degree-9 and degree-18
+blocks with the same geometric points already projected from \(F_3\) and
+\(F_6\), reducing the seven factor appearances to five squarefree blocks of
+total degree 75. The \(h_7\) section covers the unique degree-15 and degree-30
+blocks. Two further exact maximal-minor sections generate the unit ideal on
+the remaining \(F_7\) blocks of degrees \(3,9,18\). Hence the accumulated
+atlas closes the entire \(AS\ne0\) rational graph. The finite base locus and
+\(A=0\) remain.
 A new multiplication formula for $x^m$-anchored edges shows the $B = 16$ leading form cannot
 produce the Keller constant on its top edge for $m \ge 2$: that case, too, is a staircase
 transport. All computations are exact and reproducible; every claim is labeled machine-verified
@@ -1116,10 +1122,43 @@ giving 30 normalized values and 90 lifted algebraic points [MV/D].
 Together with the \(F_3\) and \(F_6\) reductions, this finishes the
 positive-dimensional factor-curve phase of the graph atlas.
 
-The 102 normalized finite graph values (306 lifts before overlap analysis),
-the finite base locus, and the separate divisor \(A=0\) remain, as do the
-full four-parameter restriction, the \((72,108)\) case, the planar degree
-floor, and \(JC(2)\).
+EXP-128 computes the finite union in its squarefree quotient algebra [MV].
+The seven retained factor appearances contain five distinct projected
+factors of degrees
+\[
+  9,15,18,30,3,
+\]
+and their product has degree 75, not 102. The degree-9 factor is shared by
+the \(F_3\) and \(F_7\) ledgers; the degree-18 factor is shared by the
+\(F_6\) and \(F_7\) ledgers. Exact CRT idempotents verify the five-factor
+direct product. Restricting \(h_7\) to the other curves shows that it is a
+unit on the unique degree-15 \(F_3\) block and the unique degree-30 \(F_6\)
+block. Its only failures there are the two shared blocks. The reciprocal
+\(h_{36}\) section vanishes identically on \(F_7\), so a new section is
+required on the complete degree-30 \(F_7\) divisor.
+
+EXP-129 first verifies that the shared factors also have identical exact
+\(X\)-classes in their two curve descriptions [MV]. Two finite-field probes
+on each \(F_7\) block have augmented row rank 125. No one sampled row basis
+covers all six probes, refuting the single-section prediction, but a
+two-basis atlas does. Both bases reconstruct in characteristic zero by the
+same SCC/block-determinant method. If their primitive quotient sections are
+\(k_1,k_2\), exact norm gcds and Bezout identities give
+\[
+ \operatorname{Norm}(k_2)\in
+   \bigl(\Q[B]/(E_3)\bigr)^\times,
+ \qquad
+ \operatorname{Norm}(k_1)\in
+   \bigl(\Q[B]/(E_9)\bigr)^\times
+   \cap\bigl(\Q[B]/(E_{18})\bigr)^\times.
+\]
+Thus their norm ideal is the unit ideal in every block of
+\(\Q[B]/(E_3E_9E_{18})\). Combined with EXP-124--128, this proves that the
+maximal-minor atlas covers the complete \(AS\ne0\) rational graph [MV/D].
+
+The finite base locus \(V(R,S)\) and the separate divisor \(A=0\) remain, as
+do the full four-parameter restriction, the \((72,108)\) case, the planar
+degree floor, and \(JC(2)\).
 
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the
@@ -1184,10 +1223,10 @@ audit trail (including its open verification items) persisted in the repository.
 
 \section{Program}
 
-Priorities, from the standing routes evaluation: (1) promote the
-recursive graph atlas from the \(F_3/F_6\) finite reductions to an exact
-divisor/norm cover of \(F_7\), followed by the finite graph/base-locus points
-and the separate \(A=0\) boundary; (2) retain the complete EXP-118--121 \(T_B\) cover as a
+Priorities, from the standing routes evaluation: (1) preserve the exact
+EXP-124--129 closure of the \(AS\ne0\) rational graph and treat the finite
+base locus \(V(R,S)\) and the separate \(A=0\) boundary in independent
+experiments; (2) retain the complete EXP-118--121 \(T_B\) cover as a
 regression gate rather than adding redundant slice charts; (3) retain the
 exact EXP-108 lift through \((0,6)\) as a bounded chart control rather than
 a terminating programme; (4) reopen the intersection-$21$ transport only

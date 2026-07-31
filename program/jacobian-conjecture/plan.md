@@ -34,34 +34,34 @@ support-restricted failure, or absence of a finite certificate as a proof.
 | JC-A | Preserve and publish the exact dimension at least three record | rolling; no current compute |
 | JC-B | Complete the $[125,150]$ primary-source frontier reconciliation | active; EXP-094 shows C10/C11/C19/C20 are not excluded by the cited remark; 16 unprinted \(A'_0\) values remain |
 | JC-C | Test modern Newton and approximate-root restrictions against the GGHV reduction | direct transport decided by EXP-097: absolute resultant degree is not typed after Laurent localization without a boundary-divisor ledger |
-| JC-D | Reformulate universal inconsistency as a constructible determinantal-strata problem | active; EXP-125--127 reduce all \(F_3,F_6,F_7\) graph curves to a finite ledger; finite points, base locus, and \(A=0\) remain |
+| JC-D | Reformulate universal inconsistency as a constructible determinantal-strata problem | active; EXP-124--129 close the complete \(AS\ne0\) rational graph; finite \(V(R,S)\) and \(A=0\) boundaries remain |
 | JC-E | Degree-three certificate decision | done by EXP-075; one exact four-parameter slice is infeasible, so no global cubic covector exists |
 | JC-F | Global geometric routes: fibres, properness, and parameter spaces | hold; resume only after a rigorous bridge to the reduced system is stated |
 | JC-G | Manuscripts, wiki, data, and public record | rolling; update only from adjudicated results |
 
 ## Ordered next work
 
-1. Preserve EXP-125--127 as complete. On \(AS\ne0\), the three graph
-   components leave \(Q_9Q_{15}=0\), \(Q_{18}Q_{30}=0\), and
-   \(E_3E_9E_{18}=0\), respectively.
-2. Declare EXP-128 on the combined finite graph ledger. Compute projected
-   factor gcds and overlaps first, then select exact minors simultaneously
-   in the corresponding quotient algebras.
-3. Treat the finite base locus \(V(R,S)\) and \(A=0\) as separate boundary
-   experiments; do not mix them into the principal-open point cover.
-4. Treat the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
+1. Preserve EXP-124--129 as the exact complete \(AS\ne0\) rational-graph
+   cover. The finite union has five squarefree blocks of total degree 75;
+   two new exact sections close the remaining \(F_7\) blocks.
+2. Declare the next experiment on the finite base locus \(V(R,S)\). Build
+   its exact quotient algebra and select maximal minors blockwise.
+3. Treat \(A=0\) as a separate boundary experiment; do not infer its rank
+   strata from the principal-open normalization \(X=A^3\).
+4. Assemble a complete four-parameter cover only after both boundaries pass.
+5. Treat the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
    spend compute re-eliminating or adding charts to the closed restriction.
-5. Reopen intersection-\(21\) transport only if the graph recursion stalls,
+6. Reopen intersection-\(21\) transport only if the boundary recursion stalls,
    large, and only with the complete boundary-divisor ledger required by
    EXP-097.
-6. Continue the independent [125,150] frontier task:
+7. Continue the independent [125,150] frontier task:
    - preserve C10/C11/C19/C20 as unresolved by GGV2 Remark 2.32;
    - derive the 16 unprinted $A'_0$ values through the declared chain algorithm;
    - preserve C01/C04 as open absent an exact exclusion.
-7. Keep EXP-093 cancelled. EXP-075's exact support at reordered index 2662 proves that no global
+8. Keep EXP-093 cancelled. EXP-075's exact support at reordered index 2662 proves that no global
    degree-three polynomial covector exists, so the proposed four-million-unknown solve has no
    target.
-8. Keep EXP-109 as a bounded chart-control only. Do not continue coefficient
+9. Keep EXP-109 as a bounded chart-control only. Do not continue coefficient
    slices as the main programme.
 
 ## Routes not currently authorized for compute

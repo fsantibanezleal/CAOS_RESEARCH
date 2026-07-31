@@ -1,7 +1,7 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-07-30 after EXP-127 reduced \(F_7\) to a finite divisor and
-finished the positive-dimensional graph phase. This is
+Updated 2026-07-31 after EXP-128/129 identified the exact five-block finite
+scheme and closed the complete \(AS\ne0\) rational graph. This is
 the first-read navigation page. Primary artifacts and experiment verdicts
 remain the evidence.
 
@@ -162,6 +162,16 @@ remain the evidence.
   checks remove \(B=0\) and \(E_{12}\), leaving \(E_3E_9E_{18}=0\):
   30 normalized values and 90 lifted algebraic points. No factor curve
   remains positive-dimensional on the graph.
+- EXP-128 proves that the seven retained factor appearances contain five
+  squarefree projected blocks of total degree 75, not 102. The degree-9 and
+  degree-18 blocks are shared with \(F_7\). The \(h_7\) section covers the
+  unique degree-15 and degree-30 blocks; \(h_{36}\) vanishes identically on
+  \(F_7\).
+- EXP-129 proves the two repeated projections have the same exact
+  \(X\)-classes. A single sampled basis does not cover all three \(F_7\)
+  blocks, but two exact reconstructed sections do: one is a unit on degrees
+  9 and 18, the other on degree 3. Together with EXP-124--128, this closes
+  the complete \(AS\ne0\) rational graph. \(V(R,S)\) and \(A=0\) remain.
 - Controlling strategy:
   [`strategy-audit-2026-07-30.md`](strategy-audit-2026-07-30.md).
 - Source audit:
@@ -203,6 +213,8 @@ remain the evidence.
 | \(F_3\) finite reduction | principal-open residual \(Q_9(B)Q_{15}(B)=0\): 24 normalized values, 72 lifted algebraic points | EXP-125 |
 | \(F_6\) divisor reduction | quotient section \(U(B)X+V(B)\); principal-open residual \(Q_{18}(B)Q_{30}(B)=0\): 48 normalized values, 144 lifted algebraic points | EXP-126 |
 | \(F_7\) divisor reduction | distinct \(Y\)-independent section; principal-open residual \(E_3(B)E_9(B)E_{18}(B)=0\): 30 normalized values, 90 lifted algebraic points | EXP-127 |
+| finite graph CRT algebra | five squarefree blocks of degrees \(9,15,18,30,3\), total degree 75; degree 9 and 18 are repeated exact points | EXP-128/129 |
+| complete rational-graph atlas | \(h_7\) covers degrees 15 and 30; two further exact sections cover \(E_3,E_9,E_{18}\) blockwise | EXP-128/129 |
 | complete \(T_B\) restriction cover | \(d=0\) quotient cover plus exact \(G,L,Q\) weighted-open covers | EXP-118/120/121 |
 | lower-family grading | \(w_{p,q}=q-p+1\pmod9\) for all 23 nonconstant remaining directions | EXP-106 |
 | properness instrument | exact resultant-leading-coefficient test | EXP-014 |
@@ -344,6 +356,12 @@ scalar conditions before exploiting sparsity.
   Its \(Y\)-independent section has degree-58 norm
   \(B^{16}E_3E_9E_{12}E_{18}\); after exact boundary removal,
   \(E_3E_9E_{18}\) leaves 30 normalized values / 90 lifts.
+- EXP-128: the finite union has five pairwise-coprime squarefree projected
+  blocks of total degree 75. The cross-section gcds isolate the shared
+  degree-9 and degree-18 blocks exactly.
+- EXP-129: exact (X)-class checks identify those projections as the same
+  points. A two-section characteristic-zero atlas has blockwise unit norms
+  on degrees \(3,9,18\), closing the full \(AS\ne0\) rational graph.
 - EXP-102: third chart exists at \(u=1\); complete pullback is inconclusive
   after the dense rank-121 determinant hit its five-minute budget.
 
@@ -355,7 +373,7 @@ scalar conditions before exploiting sparsity.
   at \(u=1\).
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
-- EXP-111 through EXP-127 are complete. No Jacobian process is active.
+- EXP-111 through EXP-129 are complete. No Jacobian process is active.
 - Current research branch: `work/jacobian-conjecture/next-round`.
 - EXP-096 was merged into `develop` by PR `#81` at `7866b0f`.
 - The planar manuscript reconciliation was merged by PR `#83` at `ffc6a3d`.
@@ -406,15 +424,14 @@ scalar conditions before exploiting sparsity.
 
 ## 5. Next actions, in order
 
-1. Preserve EXP-125--127 as complete. The graph residual is the finite
-   ledger \(Q_9Q_{15}\), \(Q_{18}Q_{30}\), and \(E_3E_9E_{18}\), plus the
-   finite base locus and the separate divisor \(A=0\).
-2. Declare EXP-128 on the combined 102-value graph ledger. Compute exact
-   projected-factor gcds and overlaps before selecting any new determinant.
-3. Select additional maximal minors simultaneously in the finite quotient
-   algebras; use norm gcds to shrink the ledger and stop at a unit cover or
-   an explicit residual scheme.
-4. Treat \(V(R,S)\) and \(A=0\) in separate boundary experiments.
+1. Preserve EXP-124--129 as the exact complete cover of the \(AS\ne0\)
+   rational graph. Do not expand the now-closed 75-point finite scheme.
+2. Declare the next experiment on the finite base locus \(V(R,S)\). Compute
+   its exact quotient algebra and select maximal minors blockwise.
+3. Treat \(A=0\) in a separate boundary experiment, including any deeper
+   rank strata introduced when (X=A^3=0).
+4. Only after both boundaries close, state whether the complete
+   four-parameter restriction is covered.
 5. Keep the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
    add redundant charts to the closed three-parameter restriction.
 6. Reopen intersection-\(21\) transport only with a complete
@@ -430,9 +447,9 @@ scalar conditions before exploiting sparsity.
 9. Keep the recursive graph-cover computation as P0 while it reduces
    dimension exactly. Do not build EXP-093.
 10. Keep EXP-109 as a bounded regression control, not as the main route.
-11. Preserve Paper B v0.27 at immutable DOI
-   `10.5281/zenodo.21712314`. Publish another version only after the finite
-   ledger or a boundary stratum changes a manuscript claim.
+11. Publish Paper B v0.28 after the exact graph-closure result is merged and
+   visually validated. Preserve v0.27 at immutable DOI
+   `10.5281/zenodo.21712314`.
 
 Suggested source-round commands:
 
