@@ -34,20 +34,21 @@ support-restricted failure, or absence of a finite certificate as a proof.
 | JC-A | Preserve and publish the exact dimension at least three record | rolling; no current compute |
 | JC-B | Complete the $[125,150]$ primary-source frontier reconciliation | active; EXP-094 shows C10/C11/C19/C20 are not excluded by the cited remark; 16 unprinted \(A'_0\) values remain |
 | JC-C | Test modern Newton and approximate-root restrictions against the GGHV reduction | direct transport decided by EXP-097: absolute resultant degree is not typed after Laurent localization without a boundary-divisor ledger |
-| JC-D | Reformulate universal inconsistency as a constructible determinantal-strata problem | active; EXP-125/126 reduce \(F_3,F_6\) to finite residuals; \(F_7\), finite points, and \(A=0\) remain |
+| JC-D | Reformulate universal inconsistency as a constructible determinantal-strata problem | active; EXP-125--127 reduce all \(F_3,F_6,F_7\) graph curves to a finite ledger; finite points, base locus, and \(A=0\) remain |
 | JC-E | Degree-three certificate decision | done by EXP-075; one exact four-parameter slice is infeasible, so no global cubic covector exists |
 | JC-F | Global geometric routes: fibres, properness, and parameter spaces | hold; resume only after a rigorous bridge to the reduced system is stated |
 | JC-G | Manuscripts, wiki, data, and public record | rolling; update only from adjudicated results |
 
 ## Ordered next work
 
-1. Preserve EXP-125/126 as complete. On \(AS\ne0\), \(F_3\) leaves
-   \(Q_9Q_{15}=0\) and \(F_6\) leaves \(Q_{18}Q_{30}=0\).
-2. Declare EXP-127 on \(F_7\). Reconstruct its distinct persisted
-   cross-prime basis, reduce the graph numerator modulo \(F_7(X,B)\), and
-   compute the exact function-field norm without expanding algebraic roots.
-3. Continue to the finite \(F_3/F_6\) and base-locus point strata only after
-   the \(F_7\) quotient is adjudicated. Treat \(A=0\) separately.
+1. Preserve EXP-125--127 as complete. On \(AS\ne0\), the three graph
+   components leave \(Q_9Q_{15}=0\), \(Q_{18}Q_{30}=0\), and
+   \(E_3E_9E_{18}=0\), respectively.
+2. Declare EXP-128 on the combined finite graph ledger. Compute projected
+   factor gcds and overlaps first, then select exact minors simultaneously
+   in the corresponding quotient algebras.
+3. Treat the finite base locus \(V(R,S)\) and \(A=0\) as separate boundary
+   experiments; do not mix them into the principal-open point cover.
 4. Treat the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
    spend compute re-eliminating or adding charts to the closed restriction.
 5. Reopen intersection-\(21\) transport only if the graph recursion stalls,

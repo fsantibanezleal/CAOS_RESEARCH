@@ -1499,3 +1499,25 @@
   `21712096` is published at immutable DOI `10.5281/zenodo.21712096`; its
   public 391364-byte PDF MD5
   `900c591a9fdf1c02542d889e0fb0b710` matches the local artifact.
+
+## 2026-07-30 - EXP-127 finishes the positive-dimensional graph phase
+
+- The distinct \(F_7\) basis has exact anchor \((1,1,0)\), largest SCC 31,
+  and a fully reconstructed determinant with \(A\)-valuation 89 and no
+  \(Y\)-dependence.
+- Its nonzero class \(U(B)X+V(B)\) modulo \(F_7\) has exact degree-58 norm
+  \(B^{16}E_3E_9E_{12}E_{18}\).
+- Same-point quotient arithmetic places \(B=0\) on \(X=A=0\) and
+  \(E_{12}\) on \(R=S=0\). The effective principal-open residual is
+  \(E_3E_9E_{18}=0\): 30 normalized values and 90 algebraic lifts.
+- Together EXP-125--127 leave a finite graph ledger of 102 normalized
+  values / 306 lifts before overlap analysis. The base locus, \(A=0\), full
+  four-parameter restriction, \((72,108)\), the floor, and \(JC(2)\) remain.
+- Result SHA-256:
+  `75C8385C175B99FE51B2D3481C8820C5D01D51EFABC4FC75CC5A48ABAFCF9AAE`;
+  worker SHA-256:
+  `8711AD526482CD16316719A4F60783378748157460F56BCA41689726A891571A`.
+- Paper B v0.27 passed its two-pass 20-page build and complete rendered QA.
+  PR #109 merged at `d32b7f0`. Zenodo record `21712314` is published at
+  immutable DOI `10.5281/zenodo.21712314`; its public 393753-byte PDF MD5
+  `954061a333009dbbe737f353b288ff5f` matches the local artifact.
