@@ -80,5 +80,5 @@
 | JCB-076 | Publish the higher-dimensional constructible reduction in Paper B v0.24 | P6 | done | 2026-07-30 | PR #99 merged; immutable DOI 10.5281/zenodo.21698923; no four-parameter closure claim |
 | JCB-077 | Reduce the \(F_6\) graph curve by its persisted alternative basis | P5 | done | 2026-07-30 | EXP-126: nonzero linear quotient class; exact degree-74 norm; only irreducible \(Q_{18}Q_{30}\) survives on \(AS\ne0\), giving 48 normalized values / 144 lifts |
 | JCB-079 | Reduce the \(F_7\) graph curve by a divisor section and norm | P5 | todo | 2026-07-30 | EXP-127: reconstruct the distinct persisted basis, reduce modulo \(F_7\), compute exact norm, and stop at a finite divisor |
-| JCB-080 | Publish the \(F_6\) divisor reduction in Paper B v0.26 and Zenodo | P6 | doing | 2026-07-30 | manuscript trigger fired by EXP-126; build, visual QA, PR promotion, and immutable new Zenodo version required |
+| JCB-080 | Publish the \(F_6\) divisor reduction in Paper B v0.26 and Zenodo | P6 | done | 2026-07-30 | PR #106 merged at 37a1341; immutable DOI 10.5281/zenodo.21712096; public MD5 matches the 391364-byte local PDF |
 | JCB-078 | Publish the recursive graph atlas in Paper B v0.25 and promote validated develop to main | P6 | done | 2026-07-30 | PRs #101--103 merged; immutable DOI 10.5281/zenodo.21711580; validated tree promoted to main |
