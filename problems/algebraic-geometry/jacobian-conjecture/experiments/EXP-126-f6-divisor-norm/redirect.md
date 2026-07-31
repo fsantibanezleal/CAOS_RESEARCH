@@ -28,4 +28,3 @@ This redirect changes no success criterion. It removes redundant compute and
 strengthens provenance by requiring exact artifact identity before reuse. If
 any hash, row-basis, anchor, SCC, graph-numerator, or direct-control check
 fails, the run stops rather than silently reusing the section.
-
