@@ -1,7 +1,7 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-07-30 after EXP-124/125 built the first recursive graph atlas
-and reduced its \(F_3\) curve to a finite residual. This is
+Updated 2026-07-30 after EXP-126 reinterpreted the recursive atlas as a
+divisor computation and reduced \(F_6\) to a finite residual. This is
 the first-read navigation page. Primary artifacts and experiment verdicts
 remain the evidence.
 
@@ -150,11 +150,18 @@ remain the evidence.
   \(F_3=(5B+4)^3+16X\), exact restriction gives
   \((5B+4)Q_6^2Q_9Q_{15}\). After removing \(A=0\) and the \(R=S=0\)
   base locus, only \(Q_9Q_{15}=0\) remains: 24 normalized values and 72
-  lifted algebraic points. The curves \(F_6,F_7\) remain.
+  lifted algebraic points.
+- EXP-126 finds that the persisted \(F_6\) basis is the same exact section
+  already reconstructed in EXP-125. Its nonzero quotient class
+  \(U(B)X+V(B)\) has degree-74 norm
+  \(D_2D_3^4D_6^2Q_{18}Q_{30}\). Exact same-point checks remove the first
+  three boundary factors, leaving \(Q_{18}Q_{30}=0\) on \(AS\ne0\):
+  48 normalized values and 144 lifted algebraic points. Only \(F_7\)
+  remains positive-dimensional on the graph.
 - Controlling strategy:
-  [`strategy-audit-2026-07-29.md`](strategy-audit-2026-07-29.md).
+  [`strategy-audit-2026-07-30.md`](strategy-audit-2026-07-30.md).
 - Source audit:
-  [`2026-07-25-strategy-source-audit.md`](../../problems/algebraic-geometry/jacobian-conjecture/context/2026-07-25-strategy-source-audit.md).
+  [`2026-07-30-strategy-refresh.md`](../../problems/algebraic-geometry/jacobian-conjecture/context/2026-07-30-strategy-refresh.md).
 
 ## 2. The objects table
 
@@ -190,6 +197,7 @@ remain the evidence.
 | rational exceptional graph | \(Y=-R(X,B)/S(X,B)\) on \(A S\ne0\), with finite base locus \(V(R,S)\) | EXP-123 |
 | dense-open graph chart | \(\Delta_{\rm alt}=A^{90}N(A^3,B)\), with \(N=F_3F_6F_7\) up to scalar | EXP-124 |
 | \(F_3\) finite reduction | principal-open residual \(Q_9(B)Q_{15}(B)=0\): 24 normalized values, 72 lifted algebraic points | EXP-125 |
+| \(F_6\) divisor reduction | quotient section \(U(B)X+V(B)\); principal-open residual \(Q_{18}(B)Q_{30}(B)=0\): 48 normalized values, 144 lifted algebraic points | EXP-126 |
 | complete \(T_B\) restriction cover | \(d=0\) quotient cover plus exact \(G,L,Q\) weighted-open covers | EXP-118/120/121 |
 | lower-family grading | \(w_{p,q}=q-p+1\pmod9\) for all 23 nonconstant remaining directions | EXP-106 |
 | properness instrument | exact resultant-leading-coefficient test | EXP-014 |
@@ -324,6 +332,9 @@ scalar conditions before exploiting sparsity.
 - EXP-125: all three factor curves retain sampled rank \(124/125\) and expose
   cross-prime new bases. Exact recursion reduces \(F_3\) to the finite
   \(Q_9Q_{15}\) residual on \(AS\ne0\).
+- EXP-126: the exact \(F_6\) quotient section is nonzero. Its independently
+  checked degree-74 norm leaves only the degree-18 and degree-30 factors on
+  \(AS\ne0\), a finite set of 48 normalized values / 144 lifts.
 - EXP-102: third chart exists at \(u=1\); complete pullback is inconclusive
   after the dense rank-121 determinant hit its five-minute budget.
 
@@ -335,7 +346,7 @@ scalar conditions before exploiting sparsity.
   at \(u=1\).
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
-- EXP-111 through EXP-125 are complete. No Jacobian process is active.
+- EXP-111 through EXP-126 are complete. No Jacobian process is active.
 - Current research branch: `work/jacobian-conjecture/next-round`.
 - EXP-096 was merged into `develop` by PR `#81` at `7866b0f`.
 - The planar manuscript reconciliation was merged by PR `#83` at `ffc6a3d`.
@@ -378,16 +389,16 @@ scalar conditions before exploiting sparsity.
 
 ## 5. Next actions, in order
 
-1. Preserve EXP-124/125 as complete: the graph residual is
-   \(F_6\cup F_7\), the finite \(Q_9Q_{15}\) set on \(F_3\), the finite base
-   locus, and the separate divisor \(A=0\).
-2. Declare EXP-126 on \(F_6\). Reuse the persisted cross-prime basis,
-   reconstruct its exact determinant, reduce first on \(Y=-R/S\) and then
-   modulo the quadratic \(F_6(X,B)\), and compute the exact norm/resultant in
-   \(B\). Stop at a finite residual; do not launch a generic Groebner basis.
-3. Apply the same quotient-ring method to \(F_7\) only after the \(F_6\)
-   reduction is adjudicated.
-4. Cover the finite \(F_3\) and \(V(R,S)\) points by algebraic point charts;
+1. Preserve EXP-125/126 as complete. The graph residual is the curve \(F_7\),
+   the finite \(Q_9Q_{15}\) set on \(F_3\), the finite \(Q_{18}Q_{30}\) set
+   on \(F_6\), the finite base locus, and the separate divisor \(A=0\).
+2. Declare EXP-127 on \(F_7\). Reuse its distinct persisted cross-prime
+   basis, reconstruct its exact determinant, reduce first on \(Y=-R/S\) and
+   then modulo \(F_7(X,B)\), and compute the exact norm in \(B\). Stop at a
+   finite residual; do not launch a generic Groebner basis.
+3. If the \(F_7\) basis exceeds the exact block budget, select another
+   persisted divisor section or combine modular norm gcds before redirecting.
+4. Cover the finite \(F_3/F_6\) and \(V(R,S)\) points by algebraic charts;
    keep \(A=0\) as a separate boundary experiment.
 5. Keep the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
    add redundant charts to the closed three-parameter restriction.
@@ -404,9 +415,8 @@ scalar conditions before exploiting sparsity.
 9. Keep the recursive graph-cover computation as P0 while it reduces
    dimension exactly. Do not build EXP-093.
 10. Keep EXP-109 as a bounded regression control, not as the main route.
-11. Paper B v0.25 publication is complete. Preserve immutable DOI
-   `10.5281/zenodo.21711580`; future claim changes require another Zenodo new
-   version, never an edit.
+11. Paper B v0.26 is triggered by EXP-126. Publish it as a Zenodo new version;
+   preserve immutable DOI `10.5281/zenodo.21711580` for v0.25.
 
 Suggested source-round commands:
 

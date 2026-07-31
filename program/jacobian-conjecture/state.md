@@ -306,3 +306,13 @@
   EXP-124/125. PR #101 merged at `f28c5a2`, DOI PR #102 at `d51c1ae`, and
   promotion PR #103 synchronized `main`. The immutable Zenodo DOI is
   `10.5281/zenodo.21711580`.
+- **2026-07-30 EXP-126:** the persisted \(F_6\) basis is exactly the
+  characteristic-zero basis already reconstructed in EXP-125. Its graph
+  numerator has a nonzero class \(U(B)X+V(B)\) modulo the irreducible
+  quadratic \(F_6\). The exact degree-74 norm factors as
+  \(D_2D_3^4D_6^2Q_{18}Q_{30}\). Direct quotient-field checks place
+  \(D_2\) on \(X=S=0\) and \(D_3,D_6\) on \(R=S=0\). On \(AS\ne0\), the
+  residual is \(Q_{18}Q_{30}=0\): 48 normalized values and 144 lifted
+  algebraic points. \(F_7\), all finite graph strata, \(A=0\), the full
+  four-parameter restriction, \((72,108)\), the floor, and \(JC(2)\)
+  remain open.

@@ -10,7 +10,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Paper B of a three-paper research record. The two-variable Jacobian conjecture remains open after the 2026 counterexample in dimension 3. This paper develops the planar program and an exact-arithmetic campaign on the lone open degree pair (72,108) below 125, built on Guccione-Guccione-Horruitiner-Valqui (arXiv:2204.14178, Proposition 4.3). Version 0.25 retains the complete weighted three-parameter T_B cover and advances the first higher-dimensional constructible reduction from the 24-parameter cyclic core. With X=A^3 and Y=A^2 C, direction (2,9) gives the exact shared determinant A^87(R(X,B)+Y S(X,B)), where R and S are coprime. A second exact minor covers a dense open of the rational exceptional graph and leaves three plane factor curves of degrees 3, 6, and 7. On the linear-in-X factor F3=(5B+4)^3+16X, a third exact minor reduces the principal-open residual to Q9(B)Q15(B)=0: 24 normalized parameter values, or 72 lifted algebraic points. The other two graph curves, finite base locus, A=0 boundary, full four-parameter restriction, 24-parameter core, full 51-parameter family, complete (72,108) case, planar degree floor, and JC(2) remain open.</p><p>All scripts, artifacts and verdicts: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
+    "description": "<p>Paper B of a three-paper research record. The two-variable Jacobian conjecture remains open after the 2026 counterexample in dimension 3. This paper develops the planar program and an exact-arithmetic campaign on the lone open degree pair (72,108) below 125, built on Guccione-Guccione-Horruitiner-Valqui (arXiv:2204.14178, Proposition 4.3). Version 0.26 retains the complete weighted three-parameter T_B cover and advances the first higher-dimensional constructible reduction from the 24-parameter cyclic core. With X=A^3 and Y=A^2 C, direction (2,9) gives the exact shared determinant A^87(R(X,B)+Y S(X,B)), where R and S are coprime. A second exact minor covers a dense open of the rational exceptional graph and leaves three plane factor curves of degrees 3, 6, and 7. On F3, exact recursion leaves Q9(B)Q15(B)=0: 24 normalized values, or 72 lifted algebraic points. On the quadratic-in-X factor F6, the exact quotient section U(B)X+V(B) has a degree-74 function-field norm. Exact boundary classification removes its degree-2, degree-3, and degree-6 factors on AS nonzero, leaving irreducible Q18(B)Q30(B)=0: 48 normalized values, or 144 lifted algebraic points. The F7 graph curve, all finite graph residuals, finite base locus, A=0 boundary, full four-parameter restriction, 24-parameter core, full 51-parameter family, complete (72,108) case, planar degree floor, and JC(2) remain open.</p><p>All scripts, artifacts and verdicts: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
     "keywords": [
       "Jacobian conjecture",
       "planar Keller maps",
@@ -55,7 +55,7 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.25",
+    "version": "0.26",
     "language": "eng"
   }
 }

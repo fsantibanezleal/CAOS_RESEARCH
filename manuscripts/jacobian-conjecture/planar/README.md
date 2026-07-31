@@ -15,7 +15,7 @@ route, including the first complete exact augmented-minor chart cover on an
 actual three-coefficient GGHV slice and its global lower-family mod-9 grading,
 followed by the EXP-111 full-family rank correction, the EXP-112 exact
 36-column cyclic-core compression, the EXP-114 weighted residual factors,
-and the EXP-115--125 weighted-chart campaign: the complete quotient boundary
+and the EXP-115--126 weighted-chart campaign: the complete quotient boundary
 is closed, a first open chart makes all three selected component
 intersections finite, a third chart closes the \(G\) component, and one
 shared residual-selected basis closes both finite \(L/Q\) strata. The
@@ -25,8 +25,11 @@ restored direction \((2,9)\) gives the exact higher-dimensional reduction
 An alternative minor covers a dense open of that graph and leaves three
 factor curves. Exact recursion on the linear-in-\(X\) factor reduces its
 principal-open residual to degree \(9+15=24\), or 72 lifted algebraic
-points. The other two graph curves, four-parameter cover, 24-parameter core,
-and full family remain open. Grows
+points. The same exact minor reduces the quadratic-in-\(X\) \(F_6\) curve
+through a degree-74 function-field norm. Exact boundary classification leaves
+only irreducible factors of degrees 18 and 30 on \(AS\ne0\): 48 normalized
+values, or 144 lifted algebraic points. The \(F_7\) graph curve,
+four-parameter cover, 24-parameter core, and full family remain open. Grows
 per session; content moved here from `manuscript/` in the 2026-07-22 split
 (see `manuscript/README.md` for the three-paper structure).
 
@@ -44,6 +47,6 @@ pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode ma
 Rules (methodology/05): [MV] / [D] / [C] labels on every claim; findings enter only after
 adversarial validation.
 
-Current manuscript version: **v0.25** (2026-07-30). Substantive revisions are published
+Current manuscript version: **v0.26** (2026-07-30). Substantive revisions are published
 as new Zenodo versions under concept DOI `10.5281/zenodo.21503367`.
-Version 0.25 DOI: `10.5281/zenodo.21711580`.
+Version 0.25 DOI: `10.5281/zenodo.21711580`; v0.26 publication is in progress.

@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-30\\[2pt]\normalsize Version 0.25}
+\date{2026-07-30\\[2pt]\normalsize Version 0.26}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.25}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.26}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -39,7 +39,7 @@ the Staircase Transport, and the Recalibrated Frontier}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper B of a three-paper record \textperiodcentered\ version 0.25 \textperiodcentered\ 2026-07-30\\
+Paper B of a three-paper record \textperiodcentered\ version 0.26 \textperiodcentered\ 2026-07-30\\
 DOI \href{https://doi.org/10.5281/zenodo.21503367}{10.5281/zenodo.21503367} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -111,7 +111,13 @@ graph; its residual factors into three plane curves \(F_3F_6F_7=0\).
 On the linear-in-\(X\) component
 \(F_3=(5B+4)^3+16X\), a third exact minor reduces the principal-open residual
 to \(Q_9(B)Q_{15}(B)=0\): 24 normalized values, or 72 lifted algebraic
-points. The curves \(F_6,F_7\), the finite base locus, and \(A=0\) remain.
+points. On the quadratic-in-\(X\) component \(F_6\), the same exact section
+has a nonzero linear quotient class \(U(B)X+V(B)\). Its degree-74
+function-field norm has five irreducible factors of degrees \(2,3,6,18,30\).
+Exact same-point arithmetic places the first three on \(X=0\) or \(R=S=0\);
+only the degree-18 and degree-30 factors survive on \(AS\ne0\). Thus \(F_6\)
+also becomes finite: 48 normalized values, or 144 lifted algebraic points.
+The curve \(F_7\), the finite base locus, and \(A=0\) remain.
 A new multiplication formula for $x^m$-anchored edges shows the $B = 16$ leading form cannot
 produce the Keller constant on its top edge for $m \ge 2$: that case, too, is a staircase
 transport. All computations are exact and reproducible; every claim is labeled machine-verified
@@ -1049,7 +1055,39 @@ divide neither. Consequently, on \(AS\ne0\), only
 \]
 remains on \(F_3\): 24 normalized parameter values and 72 lifted points over
 an algebraic closure [MV/D]. This is a finite reduction of one component,
-not a complete four-parameter cover. The graph curves \(F_6,F_7\), the
+not a complete four-parameter cover.
+
+EXP-126 treats a maximal minor as a section on the next residual curve
+[MV]. The persisted \(F_6\) basis is exactly the \(F_3\)-selected basis
+whose characteristic-zero determinant was already reconstructed. After
+hash, anchor, SCC, graph-numerator, modular-sample, and direct-determinant
+checks, the graph numerator has the nonzero class
+\[
+ h_6(X,B)=U(B)X+V(B)
+ \quad\text{in}\quad \Q[X,B]/(F_6).
+\]
+The function-field norm is computed independently by a Sylvester resultant
+and by the determinant of multiplication by \(h_6\) in the quadratic
+quotient. It has degree 74 and factors, up to scalar, as
+\[
+ \operatorname{Norm}(h_6)
+ \doteq D_2D_3^4D_6^2Q_{18}Q_{30}.
+\]
+The five factors are irreducible, with subscripts denoting degrees. Direct
+arithmetic in the corresponding quotient fields shows that \(D_2\) gives
+\(X=S=0\), while \(D_3,D_6\) give \(R=S=0\). The degree-3 case is a double
+\(F_6\) fibre on which \(U=V=0\), so it is classified at the double root
+rather than by a projection resultant alone. Neither \(Q_{18}\) nor
+\(Q_{30}\) meets \(X=0\) or \(S=0\). Consequently, on \(AS\ne0\), the
+effective residual is
+\[
+ Q_{18}(B)Q_{30}(B)=0.
+\]
+This gives 48 normalized values and 144 lifted algebraic points [MV/D].
+It is the first explicit use of the maximal-minor / curve-section /
+zero-divisor / function-field-norm dictionary in this atlas.
+
+The graph curve \(F_7\), both finite \(F_3/F_6\) residuals, the
 finite base locus, and the separate divisor \(A=0\) remain, as do the full
 \((72,108)\) case, the planar degree floor, and \(JC(2)\).
 
@@ -1117,8 +1155,8 @@ audit trail (including its open verification items) persisted in the repository.
 \section{Program}
 
 Priorities, from the standing routes evaluation: (1) promote the
-recursive graph atlas from the \(F_3\) finite reduction to exact quotient-ring
-covers of \(F_6\) and \(F_7\), followed by the finite graph/base-locus points
+recursive graph atlas from the \(F_3/F_6\) finite reductions to an exact
+divisor/norm cover of \(F_7\), followed by the finite graph/base-locus points
 and the separate \(A=0\) boundary; (2) retain the complete EXP-118--121 \(T_B\) cover as a
 regression gate rather than adding redundant slice charts; (3) retain the
 exact EXP-108 lift through \((0,6)\) as a bounded chart control rather than
