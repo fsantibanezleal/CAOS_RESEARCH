@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-25\\[2pt]\normalsize Version 0.14}
+\date{2026-07-30\\[2pt]\normalsize Version 0.25}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.14}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.25}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -39,7 +39,7 @@ the Staircase Transport, and the Recalibrated Frontier}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper B of a three-paper record \textperiodcentered\ version 0.14 \textperiodcentered\ 2026-07-25\\
+Paper B of a three-paper record \textperiodcentered\ version 0.25 \textperiodcentered\ 2026-07-30\\
 DOI \href{https://doi.org/10.5281/zenodo.21503367}{10.5281/zenodo.21503367} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -69,6 +69,49 @@ honestly: our composite-gcd certificates replicate literature-covered territory 
 floor is $\gcd \le 8$, primes, $2p$, then Heitmann's $B \ge 16$ and the
 Guccione--Guccione--Valqui dichotomy $B = 16$ or $B > 20$), and the live frontier is the
 $B = 16$ normal form together with the single surviving degree pair $(72, 108)$ below $125$.
+For that open pair, an exact primary-source instantiation gives two original-pair rejection
+gates: seven possible northeastern vertices for a nonzero inner polynomial, and
+$\deg_x\operatorname{Res}_y(P,Q)=21$ with an $84+24$ major/minor root partition; neither
+gate alone excludes the pair.
+A constructible determinantal-strata calculation now closes the first actual
+three-coefficient GGHV slice exactly. On the residual curve, two normalized
+maximal minors reduce, with \(z=u^9\), to
+\(21-96z-1024z^2\) and \((8z+1)^{14}\); a persisted integer Bezout identity
+has constant \(17^{14}\). After adding \(\varepsilon_{(0,7)}\), the only
+two-chart residual is a degree-12 fiber over \(z=-1/8\). A third exact minor
+has coprime degree-13 fiber determinant, certified by a second integer
+Bezout identity. A connected mod-9 row/column grading extends to every
+nonconstant direction in the persisted lower family. This is a strict slice
+result and does not exclude the full \((72,108)\) family.
+The full-family audit then removes the structural constant column, corrects the
+complete row count from 289 to 302, and compresses one selected augmented
+minor to a 36-column block depending on 24 of the 51 parameters. Two
+connectivity-generating triples factor exactly; one graph-active direction
+cancels identically, while the other determinant becomes weighted homogeneous
+with weights \((7,3,9)\) after shifting the forced coefficient. On the
+\(d=0\) boundary, the tautological kernel \([P,P]=0\) can be quotiented
+exactly. One quotient determinant factors into \(b^{32}\), one five-term
+weighted factor, and five binomials; a second is a nonzero scalar times
+\(a^{107}\). Together with the exact origin rank gap, these charts close the
+complete quotient boundary. On \(d\ne0\), a first alternative chart reduces
+each selected component \(G,L,Q\) to a finite intersection. A third exact
+determinant factors as \(X^{30}LQR\), for \(X=A^3\), and exact component
+ideals close \(G\). A row basis selected independently on the finite \(L\)
+and \(Q\) residuals is in fact shared. Its 23-term determinant descends as
+\(A^{87}R(A^3,B)\); exact unit-ideal certificates close both residuals.
+Together with the quotient boundary this closes the complete
+three-parameter \(T_B\) restriction. This is still a strict slice result,
+not closure of the 24-parameter core, the full family, \((72,108)\), or
+\(JC(2)\).
+Restoring direction \((2,9)\) gives the first higher-dimensional recursive
+atlas. The shared determinant is
+\(A^{87}(R(X,B)+YS(X,B))\), \(X=A^3\), \(Y=A^2C\), with
+\(\gcd(R,S)=1\). A second exact minor covers a dense open of this rational
+graph; its residual factors into three plane curves \(F_3F_6F_7=0\).
+On the linear-in-\(X\) component
+\(F_3=(5B+4)^3+16X\), a third exact minor reduces the principal-open residual
+to \(Q_9(B)Q_{15}(B)=0\): 24 normalized values, or 72 lifted algebraic
+points. The curves \(F_6,F_7\), the finite base locus, and \(A=0\) remain.
 A new multiplication formula for $x^m$-anchored edges shows the $B = 16$ leading form cannot
 produce the Keller constant on its top edge for $m \ge 2$: that case, too, is a staircase
 transport. All computations are exact and reproducible; every claim is labeled machine-verified
@@ -481,6 +524,535 @@ irregular: no such bound, matching the measured non-termination of the pinned
 ladder). Whether this decides $(72,108)$ in one stroke is the current deep
 question; it is stated as a program item, not a result.
 
+\subsection*{Original-pair source gates for the open chain (EXP-095/096; validated 2026-07-25)}
+
+The reduced Proposition~4.3 system is a Laurent pair with bracket $x^2$, so
+theorems requiring a polynomial Keller pair with bracket one cannot be applied
+to it directly. Returning instead to the hypothetical original pair gives an
+exact applicability bridge [MV]. Its degree-$72$ component has
+\[
+  2A_0=(16,56),\qquad 2A'_0=(2,0),\qquad
+  2A_1=(11/2,14),
+\]
+which is precisely the first retained $D=72$ branch in the Newton-resolution
+list of Makar-Limanov--Trakhtenberg \cite{MakarLimanovTrakhtenberg2024}.
+Thus that independent classification retains the GGHV branch; it does not
+exclude it.
+
+Two sharper necessary conditions do result. First, instantiating
+Lee--Li's inner-polynomial region \cite{LeeLi2024} with
+\[
+ (a,b,m,n)=(2,3,16,56),\qquad \mathfrak m=\frac{139}{39},
+\]
+gives [MV] exactly seven possible northeastern vertices whenever the inner or
+innermost polynomial is nonzero:
+\[
+ (1,3),(2,7),(3,10),(4,14),(5,17),(6,21),(7,24).
+\]
+The zero-inner-polynomial alternative remains. Nor does the stronger diagonal
+corollary apply, since
+\[
+ \frac ba=\frac32\not>\frac{n-m}{a}-1=19.
+\]
+
+Second, the approximate-root formulas of
+Guccione--Guccione--Horruitiner--Valqui \cite{GGHVApproxRoots} become an exact
+intersection invariant [MV]. For the complete chain
+\[
+ (m,n)=(3,2),\qquad A_1=(11/4,7),\qquad k=1,\qquad l=4,
+\]
+the forced fourth-power edge supplies four final major classes. Each has
+$|D_\tau^P|=3\cdot7=21$ and $\lambda_\tau^Q=1/4$, hence
+\[
+ I(P,Q)=\deg_x\operatorname{Res}_y(P,Q)
+       =4\cdot21\cdot\frac14=21.
+\]
+The degree-$108$ component therefore has $84$ major and $24$ minor roots.
+These are original-pair rejection gates independent of sampling the $51$
+interior coefficients of the reduced system. They do not prove that any of
+the seven vertices is realizable, transport either invariant through the
+Laurent normalization, close $(72,108)$, or raise the degree floor. In
+particular, the approximate-root paper proves only an inequality for the
+minor-root expression where equality would be needed for the proposed family
+exclusion; that route is not used here.
+
+\emph{The transport typing gate (EXP-097).} These original-pair invariants
+cannot be imposed directly on the $51$ final Laurent coefficients without
+additional boundary data. If $R(x)=\operatorname{Res}_y(F,G)$ and
+\(\phi_c(x,y)=(x^{-1},x^cy)\), then [D; exact symbolic controls]
+\[
+ \operatorname{Res}_y(\phi_cF,\phi_cG)=x^{cpq}R(x^{-1}),
+\]
+where $p=\deg_yF$ and $q=\deg_yG$. For the final polygons
+$(p,q,c)=(16,24,4)$, so $cpq=1536$: an input exponent interval
+$[\nu,21]$ becomes $[1515,1536-\nu]$, of width $21-\nu$.
+The reduction first swaps the selected coordinate eliminant and then
+localizes $x$, making $x^\nu$ a unit; Proposition~4.3 does not retain the
+missing $x=0$ divisor order $\nu$. Thus absolute degree $21$ remains a
+reconstruction gate for an original polynomial pair, not a direct equation
+on the reduced coefficients. Laurent exponent width is a conditional
+replacement only after proving $\nu=0$ and swap compatibility. A complete
+boundary-divisor ledger could supply that missing theorem; none is claimed
+here.
+
+\subsection*{Constructible certificate strata and the first exact chart transition}
+
+The earlier phrase ``finite chart cover by localized certificates'' needs a
+commutative-algebra qualification (EXP-098). Suppose principal opens \(D(s_i)\)
+cover the parameter space and each carries a localized lift \(c_i\) with
+\[
+ c_i^TM=0,\qquad c_i^Tb=1.
+\]
+Clearing denominators gives global syzygies pairing to powers \(s_i^{N_i}\).
+Those powers generate the unit ideal, so a polynomial combination is one
+global covector pairing to \(1\). A pure principal-open cover of lifted
+syzygies is therefore not stronger than the global-covector target.
+
+The strict generalization is a \emph{constructible rank stratification}: after
+certifying a generic open, quotient by the residual closed-locus ideal and
+recompute the kernel. New syzygies can appear after this non-flat
+specialization and need not lift. EXP-098 verifies the distinction on an exact
+universally inconsistent control whose global pairing ideal is the proper
+ideal \((x)\), while a new certificate appears on \(V(x)\).
+
+This mechanism now reaches the actual GGHV matrix (EXP-099--101). Common-flag
+shortcuts fail, but they isolate the first genuine interior interaction:
+\[
+ s=\varepsilon_{(0,1)},\qquad t=\varepsilon_{(1,7)}.
+\]
+For the selected \(125\times125\) augmented minor, a Sylvester reduction gives
+the exact factorization [MV]
+\[
+ \frac{\det A(s,t)}{\det A_0}
+ =
+ \frac{(st-8)^6\bigl(2^{15}s^9-(st-8)^7\bigr)}{2^{39}}.
+\]
+The mixed coefficient also follows independently from
+\[
+ \operatorname{tr}B_s=\operatorname{tr}B_t=0,\qquad
+ \operatorname{tr}(B_sB_t)=\frac{13}{8}.
+\]
+At \((s,t)=(-8,-1)\), the first minor vanishes, but exact ranks remain
+\[
+ \operatorname{rank}M=124,\qquad
+ \operatorname{rank}[M\mid b]=125.
+\]
+Pivot extraction gives an alternative right-hand-side-containing minor
+nonzero there. The first two minors cover the component \(st=8\) and leave
+only
+\[
+ 2^{15}s^9=(st-8)^7,
+\]
+with normalization
+\[
+ s=8u^7,\qquad t=\frac{8u^9+1}{u^7},\qquad u\ne0.
+\]
+At \(u=1\), both old minors vanish but a third exact augmented minor is
+nonzero (EXP-102). Its dense pullback has combined direction rank \(121\) and
+hit the declared five-minute budget. EXP-103 replaces that backend by
+root-of-unity evaluation and NTT interpolation of complete maximal-minor
+polynomials. An endpoint gate catches an 81-degree cancellation that a
+modular gcd alone would miss.
+
+EXP-104 resolves that gate over characteristic zero [MV]. The third determinant
+is evaluated exactly at 100 integer values. Its assignment bounds are
+\([1547,1646]\); after division by \(u^{1547}\), exact degree-99 interpolation
+shows that coefficients \(0,\ldots,80\) vanish and coefficient \(81\) does
+not. Thus its exact support is \([1628,1646]\). A second row chart has exact
+support \([777,903]\).
+
+The support graphs of both charts admit connected row/column weights modulo
+9 (EXP-105). With \(z=u^9\), removal of the proved Laurent monomials and
+integer contents gives the primitive determinants
+\[
+ F(z)=21-96z-1024z^2,\qquad G(z)=(8z+1)^{14}.
+\]
+The only zero of \(G\) is \(z=-1/8\), where \(F(-1/8)=17\). More strongly,
+the artifact contains integer polynomials \(A,B\) satisfying
+\[
+ A(z)F(z)+B(z)G(z)=17^{14}.
+\]
+Therefore the two normalized maximal minors generate the unit ideal over
+\(\mathbb{Q}[u,u^{-1}]\). Together with the first two charts, this proves
+rank \(125\) for the augmented matrix at every point of the declared
+\(\{(0,1),(1,7)\}\) coefficient slice [MV].
+
+The grading is not confined to that slice. For every nonconstant lower
+monomial \(x^py^q\) tested in the persisted 26-parameter family, EXP-106
+finds the exact variable-weight law
+\[
+ w_{p,q}\equiv q-p+1\pmod9.
+\]
+All 23 remaining nonconstant directions preserve both connected chart
+gradings; the constant direction is bracket-zero. This supplies a scalable
+next coordinate system, not a full-family proof. The promoted direction
+\((0,7)\) has selected ranks 53 and 41; after setting
+\(z=u^9\) and \(y=v/u\), both determinant charts have \(z\)-width 14.
+
+EXP-107 reconstructs both bivariate minors on independent 16-by-64 NTT grids
+and verifies them by off-grid determinant evaluations [MV]. The endpoint-safe
+minor is independent of \(y\), so it remains \(G(z)=(8z+1)^{14}\). The other
+minor restricts at \(z=-1/8\) to a squarefree degree-12 polynomial \(Q(y)\).
+Thus the first two charts leave only twelve geometric points in that fiber,
+not a curve.
+
+EXP-108 selects a third 125-row chart at the residual fiber [MV]. Removing
+the connected mod-9 row/column weights turns both fiber matrices into exact
+rational matrices. Interpolation under structural degree bounds 14 and 13,
+using 29 exact determinants and two independent controls, gives primitive
+polynomials \(Q,H\in\mathbb Z[y]\). The polynomial \(Q\) is irreducible over
+\(\mathbb Q\), while, up to sign,
+\[
+\begin{split}
+H(y)={}&y(49y^2+168y+192)(2401y^4+1568y^2+1024)\\
+&\quad\cdot(117649y^6-403368y^5+921984y^4
+-1053696y^3+786432).
+\end{split}
+\]
+Their exact gcd is one. The persisted integer B\'ezout identity has nonzero
+constant
+\[
+3036277895244878564727703434378848855121939007419328699039744.
+\]
+Since every common zero with \(G\) must lie over \(z=-1/8\), the three minors
+prove rank 125 throughout the declared
+\(\{(0,1),(1,7),(0,7)\}\) coefficient slice.
+
+These results establish the first complete constructible chart cover on an
+actual three-coefficient GGHV slice and expose a global lower-family grading.
+They do not cover simultaneous variation of the other coefficients, exclude
+the full \((72,108)\) family, or raise the degree floor.
+
+\subsection*{Full-family rank audit and the exact 36-column core}
+
+The next full-family audit corrects a tempting but vacuous rank target. The
+\(Q\)-polygon contains the constant monomial, whose column is identically zero:
+\[
+[P,1]=0.
+\]
+Hence \(\operatorname{rank}M(\varepsilon)\le124\) for every parameter value.
+The exact nonzero pinned augmented minor from EXP-059 then proves that
+\(\operatorname{rank}M=124\) and
+\(\operatorname{rank}[M\mid b]=125\) generically [D]. This is inconsistency on
+a nonempty Zariski-open subset, not on every fiber. The unresolved object is the
+common zero locus of augmented maximal minors. EXP-111 also corrects the row
+pool: the forced-only construction has 289 rows, while the complete union
+inside the same reduced pool has 302 rows [MV].
+
+EXP-112 removes the structural constant column, retains the target column, and
+normalizes all 51 exact perturbation matrices on a pinned 125-row chart [MV].
+The union dependency graph has one 36-vertex cyclic component, three cyclic
+singletons, and 86 acyclic singletons. Consequently the selected determinant
+factors as
+\[
+\det A_{\mathrm{sel}}(\varepsilon)
+=\det(A_0)(1+\varepsilon_{(1,0)})^3
+\det C_{36}(\varepsilon),
+\]
+where \(C_{36}\) depends on only 24 parameters. The other 27 directions are
+determinant-inert on this chart. On the forced axis,
+\[
+\chi_{N_{(1,0)}|C_{36}}(\lambda)
+=\lambda^{23}(\lambda-1)^{13},
+\]
+recovering the total factor
+\((1+\varepsilon_{(1,0)})^{16}\).
+
+Graph support is not determinant support. EXP-113 finds two
+deletion-minimal triples that each make the 36-core strongly connected:
+\[
+T_A=\{(0,1),(0,7),(2,9)\},\qquad
+T_B=\{(0,1),(0,5),(1,0)\}.
+\]
+EXP-114 computes their exact determinants [MV]. On \(T_A\), the graph-active
+\((2,9)\) direction cancels identically, and the degree-21 determinant has only
+24 monomials and factors in degrees \(3,12,6\).
+
+On \(T_B\), write
+\[
+a=\varepsilon_{(0,1)},\qquad
+b=\varepsilon_{(0,5)},\qquad
+d=1+\varepsilon_{(1,0)}.
+\]
+Then
+\[
+\det C_{36}|_{T_B}=2^{-42}G_{54}(a,b,d)H_{63}(a,b,d),
+\]
+where
+\[
+\begin{aligned}
+G_{54}={}&30720000a^6b^4+48828125a^3b^{11}
++150000000a^3b^8d\\
+&+64000000a^3b^5d^2-39321600a^3b^2d^3
++16777216d^6,
+\end{aligned}
+\]
+and
+\[
+\begin{aligned}
+H_{63}={}&4096a^9+184320a^6bd^2-1800000a^3b^5d^3
++1843200a^3b^2d^4\\
+&+1953125b^9d^4+3000000b^6d^5+1536000b^3d^6
++262144d^7.
+\end{aligned}
+\]
+These factors are weighted homogeneous for
+\(\operatorname{wt}(a,b,d)=(7,3,9)\), of weighted degrees 54 and 63.
+They expose a weighted open/boundary split for the next chart calculation:
+normalize \(d\ne0\), then treat \(d=0\) with alternative minors from the
+complete 302-row system. No result in this subsection excludes the residual
+factor loci, the full \((72,108)\) family, or \(JC(2)\).
+
+\subsection*{Weighted residual transitions and the \(d=0\) quotient}
+
+EXP-115 first normalizes the open chart \(d\ne0\) by
+\[
+a=A u^7,\qquad b=B u^3,\qquad d=u^9.
+\]
+Writing \(X=A^3\), \(G_{54}(A,B,1)\) remains irreducible, while
+\[
+H_{63}(A,B,1)=L(A,B)Q(A,B)
+\]
+splits into irreducible degree-three and degree-six factors over
+\(\mathbb Q[A,B]\) [MV]. Exact good-prime alternative minors prove that none
+of \(G_{54},L,Q\) is wholly contained in the rank-deficient locus. The
+\(L\)-transition also lifts to the rational point
+\((A,B,d)=(0,-4/5,1)\). Proper intersections on these components remain.
+
+The boundary \(d=0\) is structural. Cancelling the forced \(x\)-term puts
+\[
+P=a y+b y^5+y^8(1-xy)^8
+\]
+inside the retained \(Q\)-space, so \([P,P]=0\) is an exact polynomial right
+kernel [D]. Its \(y^8\)-coordinate is the unit \(1\); deleting that column
+gives a 302-by-124 quotient augmented matrix with 123 coefficient columns.
+The origin has exact rank profile \(112/113\), while the nonzero controls
+\((0,1)\), \((1,0)\), and \((-9,12/5)\) have profile \(123/124\) [MV].
+
+EXP-116 compresses the quotient graph into cyclic blocks of sizes
+\[
+51,11,10,9,8,7
+\]
+and sixteen cyclic singletons. EXP-117 computes the separately budgeted
+51-block and all smaller determinants. In original coordinates the selected
+quotient determinant is, up to a persisted nonzero rational scalar,
+\[
+\det A_{\mathrm{quot}}
+\doteq
+b^{32}F_{28}(a,b)
+\prod_{c\in\mathcal C}(ca^3+78125b^7),
+\qquad
+\mathcal C=\{49152,32768,16384,8192,4096\},
+\]
+where
+\[
+\begin{aligned}
+F_{28}={}&13750615562268966912a^{12}
+-389229646907965440000000a^9b^7\\
+&+6149594411200000000000000a^6b^{14}\\
+&+865348510742187500000000a^3b^{21}\\
+&-71190297603607177734375b^{28}.
+\end{aligned}
+\]
+All factors are homogeneous for
+\(\operatorname{wt}(a,b)=(7,3)\). On \(b\ne0\), set \(z=a^3/b^7\). The
+residual becomes one squarefree degree-nine equation: five rational roots
+\[
+-\frac{78125}{4096},\quad -\frac{78125}{8192},\quad
+-\frac{78125}{16384},\quad -\frac{78125}{32768},\quad
+-\frac{78125}{49152},
+\]
+and four roots of the quartic obtained from \(F_{28}/b^{28}\) [MV].
+Thus the selected quotient residual is reduced to \(b=0\) and nine invariant
+points.
+
+EXP-118 supplies the exact alternative chart [MV]. Its complete quotient
+determinant is
+\[
+\det A_{\mathrm{alt}}\doteq a^{107}.
+\]
+The persisted scalar is a nonzero integer. This chart covers \(a\ne0\),
+including all nine invariant points. On \(a=0\), the selected determinant is
+exactly \(b^{95}\), and at the origin the quotient rank profile is
+\(112/113\). These three cases close the complete \(d=0\) quotient plane.
+This is a boundary-stratum closure, not a result about \(d\ne0\).
+
+\subsection*{Exact weighted-open charts and component ideals}
+
+EXP-119 verifies the full 302-by-125 augmented matrix is covariant for
+\(\operatorname{wt}(a,b,d)=(7,3,9)\) [MV]. On \(d=1\), a first alternative
+row basis gives an exact determinant with 114 monomials. Writing \(X=A^3\),
+it factors as a nonzero rational scalar times
+\[
+B^{36}K(X,B)
+\prod_{c\in\{4096,8192,16384,32768,49152,65536,86016\}}
+(cX+78125B^7),
+\]
+where \(K\) has degree 6 in \(X\), degree 22 in \(B\), and 30 monomials.
+Its gcd with each irreducible selected component \(G,L,Q\) is one.
+Nevertheless, the three exact elimination resultants are nonconstant, of
+degrees 852, 324, and 648 in \(B\). Hence this chart removes every curve
+component but leaves three finite proper intersections.
+
+EXP-120 evaluates the independently selected \(G\)-basis [MV]. The first
+rational normalization \((A,B,d)=(1,0,1)\) works, the largest cyclic block
+has size 25, and the exact determinant has 21 monomials. Up to a nonzero
+rational scalar its invariant form is
+\[
+\Delta_G=X^{30}L(X,B)Q(X,B)R(X,B),
+\]
+where
+\[
+R=-156250B^7+15625B^6X+28000B^3X+3200B^2X^2+1024X.
+\]
+Factorwise exact Groebner calculations give
+\[
+(G,\Delta_{LQ},L)=(G,\Delta_{LQ},X)
+=(G,\Delta_{LQ},Q)=(G,\Delta_{LQ},R)=(1).
+\]
+Therefore the three charts cover the complete \(G\) component [D].
+
+The corresponding EXP-120 ideals on \(L\) and \(Q\) are nonunit but
+zero-dimensional. The \(L\) lexicographic eliminant has degree 108 in \(B\)
+and squarefree degree 73. For \(Q\), a six-element graded-lex basis proves
+zero-dimensionality; the optional FGLM conversion reached its declared
+180-second gate, so no lex eliminant or point count is claimed. The explicit
+\(LQ\) factor in \(\Delta_G\) shows that this basis cannot remove either
+remaining component. The next exact charts must be selected directly on
+those finite residual schemes.
+
+EXP-121 performs that selection [MV]. At \(p=1013\), thirteen affine points
+of the \(L\) residual have coefficient/augmented rank profile \(124/125\);
+at \(p=1033\), eighteen points of the \(Q\) residual have the same profile.
+Deterministic row extraction on the two components returns the same
+125-row basis, although it differs from the pinned basis by 68 rows. Its
+rational anchor is \((A,B,d)=(1,0,1)\), its largest cyclic block has size
+26, and five direct 125-by-125 controls agree with the block product. The
+exact determinant has total degree 108 and 23 monomials:
+\[
+ \Delta_{\mathrm{fin}}(A,B)=A^{87}R_{\mathrm{fin}}(A^3,B),
+ \qquad
+ \deg_XR_{\mathrm{fin}}=5,\quad
+ \deg_BR_{\mathrm{fin}}=18.
+\]
+
+For \(L\), the exact graded-reverse-lexicographic calculation returns
+\[
+ (L,\Delta_{LQ},\Delta_{\mathrm{fin}})=(1).
+\]
+For \(Q\), a raw three-generator calculation exceeded its declared gate, so
+the persisted certificate uses the exact factor
+\(\Delta_{LQ}=B^{36}\Delta^\circ\). On \(B=0\),
+\[
+ \gcd\!\left(256X^2-1024X+4096,\ X^{32}\right)=1.
+\]
+On \(\Delta^\circ=0\), reduction modulo the quadratic \(Q\) makes both
+\(\Delta^\circ\) and \(\Delta_{\mathrm{fin}}\) linear in \(X\). The
+exceptional coefficient gcd is one, and the resulting degree-144 and
+degree-176 compatibility polynomials in \(\Q[B]\) also have gcd one.
+Consequently
+\[
+ (Q,\Delta_{LQ},\Delta_{\mathrm{fin}})=(1).
+\]
+This is an exact zero-set split and univariate gcd certificate, not a
+modular extrapolation.
+
+Together, EXP-118--121 close the complete three-parameter \(T_B\)
+restriction: EXP-118 covers \(d=0\), EXP-120 covers \(G\) on \(d\ne0\), and
+EXP-121 covers the remaining finite \(L/Q\) strata. They do not close the
+24-parameter core, the full 51-parameter family, \((72,108)\), the planar
+degree floor, or \(JC(2)\).
+
+\subsection*{First higher-dimensional lift from the cyclic core}
+
+EXP-122 restores the other 21 directions in the 24-parameter cyclic core on
+the shared EXP-121 basis [MV]. No restored direction is
+determinant-inert on its complete anchor line. Thirteen directions act inside
+the existing size-26 cyclic block, 16 enlarge the fixed-\(d\) SCC, and every
+restored direction contributes at first order or pairwise mixed order. The
+free-lift prediction is therefore refuted for this basis.
+
+The eight directions \((2,j)\), \(2\leq j\leq9\), nevertheless form a sparse
+class: each enlarges the SCC but has a linear anchor-line determinant.
+Direction \((2,9)\) has the smallest selected rank, normalized support, and
+enlarged SCC. EXP-123 computes its complete symbolic lift on \(d=1\) [MV].
+Writing \(C=\varepsilon_{(2,9)}\),
+\[
+ X=A^3,\qquad Y=A^2C,
+\]
+the shared determinant is
+\[
+ \Delta_{(2,9)}(A,B,C)
+ =A^{87}\bigl(R(X,B)+Y S(X,B)\bigr).
+\]
+Here \(R\) is the 23-term EXP-121 polynomial, \(S\) has 18 terms, and
+\[
+ \gcd_{\Q[X,B]}(R,S)=1.
+\]
+Two modular probes precede the exact computation. The claim rests on the
+characteristic-zero determinant, its \(C=0\) regression, and four direct
+full-matrix rational controls.
+
+Consequently, on \(A\ne0\) and \(S\ne0\), the selected exceptional locus is
+the rational graph
+\[
+ Y=-\frac{R(X,B)}{S(X,B)}.
+\]
+The remaining base locus \(V(R,S)\subset\mathbb A^2_{X,B}\) is
+zero-dimensional because \(R\) and \(S\) are coprime. This is the first
+higher-dimensional constructible reduction from the 24-parameter core [D].
+It is not a four-parameter chart cover: an alternative minor must still cover
+the rational graph, the finite base locus, and the separate divisor \(A=0\).
+The complete \((72,108)\) case, the planar degree floor, and \(JC(2)\) remain
+open.
+
+\subsection*{Recursive atlas on the rational graph}
+
+EXP-124 selects an alternative complete-row basis directly on the graph
+[MV]. The same one-row replacement is full rank over two good primes, and
+its exact determinant is
+\[
+ \Delta_{\rm alt}(A,B,C)=A^{90}N(A^3,B).
+\]
+It is independent of \(C\). The 21-term polynomial \(N(X,B)\), of total
+degree 16, factors over \(\Q\) as a nonzero scalar times
+\[
+ N(X,B)=F_3(X,B)F_6(X,B)F_7(X,B),
+\]
+where the factors have total degrees \(3,6,7\) and are each coprime to
+\(R,S\). Thus this minor covers the dense graph open \(N\ne0\), reducing the
+positive-dimensional residual to three explicit plane curves.
+
+EXP-125 recurses first on
+\[
+ F_3(X,B)=(5B+4)^3+16X.
+\]
+Prime availability is not automatic: the originally named primes were
+refuted by cubic-residue and factor-point obstructions, and an intermediate
+audit that allowed arbitrary \(X\) was also rejected because \(X=A^3\) is
+required. The final cube-locus audit selected 739 and 811. On both primes,
+four points on each of \(F_3,F_6,F_7\) have coefficient/augmented rank
+\(124/125\), and each curve supplies a new cross-prime basis [MV].
+
+The exact \(F_3\)-selected determinant has one cyclic block of size 32. After
+restriction to \(Y=-R/S\) and substitution
+\(X=-(5B+4)^3/16\), its univariate numerator factors as
+\[
+ U_3(B)\doteq(5B+4)Q_6(B)^2Q_9(B)Q_{15}(B).
+\]
+Here \(\doteq\) denotes equality up to a nonzero rational scalar and the
+subscripts are exact irreducible degrees. The linear factor forces \(A=0\);
+\(Q_6\) divides both \(R|_{F_3}\) and \(S|_{F_3}\); and \(Q_9,Q_{15}\)
+divide neither. Consequently, on \(AS\ne0\), only
+\[
+ Q_9(B)Q_{15}(B)=0
+\]
+remains on \(F_3\): 24 normalized parameter values and 72 lifted points over
+an algebraic closure [MV/D]. This is a finite reduction of one component,
+not a complete four-parameter cover. The graph curves \(F_6,F_7\), the
+finite base locus, and the separate divisor \(A=0\) remain, as do the full
+\((72,108)\) case, the planar degree floor, and \(JC(2)\).
+
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the
 published literature: the closing remark of \cite{GGV2017} states that the corner
@@ -544,17 +1116,23 @@ audit trail (including its open verification items) persisted in the repository.
 
 \section{Program}
 
-Priorities, from the standing routes evaluation: (1) close the proper-power case of
-Theorem~\ref{thm:t5all} (derive the odd-resonance kill measured in EXP-046), then extend
-the tower induction to general above-weight tails and longer staircases; (2) transcribe
-the $(72, 108)$ shape data and the beyond-150 $B = 16$ shapes and run the filtered
-sweeps ($2$ to $4$ seconds per certificate at the validated scale); (3) the properness
-reformulation ($JC(2)$ holds iff every planar Keller map has empty Jelonek set; exact
-certificates shipped, EXP-014) as a cross-check instrument. The reproducibility
-contract: every [MV] claim has a persisted script and output; hypotheses are declared
-before runs; refuted predictions (three among the experiments cited here) stay in the
+Priorities, from the standing routes evaluation: (1) promote the
+recursive graph atlas from the \(F_3\) finite reduction to exact quotient-ring
+covers of \(F_6\) and \(F_7\), followed by the finite graph/base-locus points
+and the separate \(A=0\) boundary; (2) retain the complete EXP-118--121 \(T_B\) cover as a
+regression gate rather than adding redundant slice charts; (3) retain the
+exact EXP-108 lift through \((0,6)\) as a bounded chart control rather than
+a terminating programme; (4) reopen the intersection-$21$ transport only
+after constructing a complete boundary-divisor ledger through the swap,
+Laurent cuts, and final inversion; (5) pursue Newton resolution only after deriving a
+condition beyond the already-retained first $D=72$ branch; and (6) retain the
+properness reformulation ($JC(2)$ holds iff every planar Keller map has empty
+Jelonek set; exact certificates shipped, EXP-014) as a cross-check instrument.
+The reproducibility contract: every [MV] claim has a persisted script and
+output; hypotheses are declared before runs; refuted predictions remain in the
 record.
 
+\small
 \begin{thebibliography}{99}
 \bibitem{Alpoge2026} L. Alp\"oge, announcement of the counterexample, X (@\_\_alpoge\_\_),
 2026-07-19/20; map produced with Claude Fable 5 (Anthropic); question posed by Akhil.
@@ -580,6 +1158,13 @@ algorithms related to the Jacobian Conjecture, arXiv:1708.07936.
 \bibitem{GGHV2022} J. A. Guccione, J. J. Guccione, R. Horruitiner, C. Valqui, Increasing
 the degree of a possible counterexample to the Jacobian Conjecture from 100 to 108,
 arXiv:2204.14178.
+\bibitem{GGHVApproxRoots} J. A. Guccione, J. J. Guccione, R. Horruitiner, C. Valqui,
+Approximate roots and intersection numbers, arXiv:1708.09367v2.
+\bibitem{LeeLi2024} K. Lee, L. Li, On the two-dimensional Jacobian conjecture:
+Magnus' formula revisited IV, arXiv:2408.01279.
+\bibitem{MakarLimanovTrakhtenberg2024} L. Makar-Limanov, L. Trakhtenberg,
+Properties of a Jacobian mate, MPIM Preprint 2024 (33);
+\href{https://doi.org/10.1007/s40863-025-00520-4}{doi:10.1007/s40863-025-00520-4}.
 \bibitem{Joseph1975} A. Joseph, The Weyl algebra: semisimple and nilpotent elements,
 \emph{Amer. J. Math.} \textbf{97} (1975), 597--615.
 \bibitem{vdEssen2000} A. van den Essen, \emph{Polynomial Automorphisms and the Jacobian
@@ -591,5 +1176,6 @@ pseudo-planes, \emph{Adv. Math.} \textbf{339} (2018), 248--284.
 \bibitem{Shaska2026} T. Shaska, Graded Keller maps and the Jacobian Conjecture,
 arXiv:2607.20210v1, 2026.
 \end{thebibliography}
+\normalsize
 
 \end{document}

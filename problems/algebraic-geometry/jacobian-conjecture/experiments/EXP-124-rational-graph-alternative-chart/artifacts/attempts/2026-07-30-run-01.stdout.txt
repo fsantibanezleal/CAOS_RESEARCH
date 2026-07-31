@@ -1,0 +1,146 @@
+[PASS] reproduced EXP-123 primitive gcd one
+[PASS] p=1009 point (1,0) lies on graph
+[PASS] p=1009 point (1,1) lies on graph
+[PASS] p=1009 point (1,2) lies on graph
+[PASS] p=1009 point (1,3) lies on graph
+[PASS] p=1009 point (1,4) lies on graph
+[PASS] p=1009 point (1,5) lies on graph
+[PASS] p=1009 point (1,6) lies on graph
+[PASS] p=1009 point (1,7) lies on graph
+[PASS] p=1009 point (1,8) lies on graph
+[PASS] p=1009 point (1,9) lies on graph
+[PASS] p=1009 point (1,10) lies on graph
+[PASS] p=1009 point (1,11) lies on graph
+[PASS] p=1009 point (1,12) lies on graph
+[PASS] p=1009 point (1,13) lies on graph
+[PASS] p=1009 point (1,14) lies on graph
+[PASS] p=1009 point (1,15) lies on graph
+[PASS] p=1009 point (2,0) lies on graph
+[PASS] p=1009 point (2,1) lies on graph
+[PASS] p=1009 point (2,2) lies on graph
+[PASS] p=1009 point (2,3) lies on graph
+[INFO] p=1009: 20 graph points, 1 alternative bases
+[PASS] p=1013 point (1,0) lies on graph
+[PASS] p=1013 point (1,1) lies on graph
+[PASS] p=1013 point (1,2) lies on graph
+[PASS] p=1013 point (1,3) lies on graph
+[PASS] p=1013 point (1,4) lies on graph
+[PASS] p=1013 point (1,5) lies on graph
+[PASS] p=1013 point (1,6) lies on graph
+[PASS] p=1013 point (1,7) lies on graph
+[PASS] p=1013 point (1,8) lies on graph
+[PASS] p=1013 point (1,9) lies on graph
+[PASS] p=1013 point (1,10) lies on graph
+[PASS] p=1013 point (1,11) lies on graph
+[PASS] p=1013 point (1,12) lies on graph
+[PASS] p=1013 point (1,13) lies on graph
+[PASS] p=1013 point (1,14) lies on graph
+[PASS] p=1013 point (1,15) lies on graph
+[PASS] p=1013 point (2,0) lies on graph
+[PASS] p=1013 point (2,1) lies on graph
+[PASS] p=1013 point (2,2) lies on graph
+[PASS] p=1013 point (2,3) lies on graph
+[INFO] p=1013: 20 graph points, 1 alternative bases
+[PASS] selected basis differs from shared basis
+[PASS] selected exact largest cyclic block is at most 60
+[INFO] exact block 1/87 size=31
+[INFO] exact block 2/87 size=1
+[INFO] exact block 3/87 size=1
+[INFO] exact block 4/87 size=1
+[INFO] exact block 5/87 size=1
+[INFO] exact block 6/87 size=1
+[INFO] exact block 7/87 size=1
+[INFO] exact block 8/87 size=1
+[INFO] exact block 9/87 size=1
+[INFO] exact block 10/87 size=1
+[INFO] exact block 11/87 size=1
+[INFO] exact block 12/87 size=1
+[INFO] exact block 13/87 size=1
+[INFO] exact block 14/87 size=1
+[INFO] exact block 15/87 size=1
+[INFO] exact block 16/87 size=1
+[INFO] exact block 17/87 size=1
+[INFO] exact block 18/87 size=1
+[INFO] exact block 19/87 size=1
+[INFO] exact block 20/87 size=1
+[INFO] exact block 21/87 size=1
+[INFO] exact block 22/87 size=1
+[INFO] exact block 23/87 size=1
+[INFO] exact block 24/87 size=1
+[INFO] exact block 25/87 size=1
+[INFO] exact block 26/87 size=1
+[INFO] exact block 27/87 size=1
+[INFO] exact block 28/87 size=1
+[INFO] exact block 29/87 size=1
+[INFO] exact block 30/87 size=1
+[INFO] exact block 31/87 size=1
+[INFO] exact block 32/87 size=1
+[INFO] exact block 33/87 size=1
+[INFO] exact block 34/87 size=1
+[INFO] exact block 35/87 size=1
+[INFO] exact block 36/87 size=1
+[INFO] exact block 37/87 size=1
+[INFO] exact block 38/87 size=1
+[INFO] exact block 39/87 size=1
+[INFO] exact block 40/87 size=1
+[INFO] exact block 41/87 size=1
+[INFO] exact block 42/87 size=1
+[INFO] exact block 43/87 size=1
+[INFO] exact block 44/87 size=1
+[INFO] exact block 45/87 size=1
+[INFO] exact block 46/87 size=1
+[INFO] exact block 47/87 size=1
+[INFO] exact block 48/87 size=1
+[INFO] exact block 49/87 size=1
+[INFO] exact block 50/87 size=1
+[INFO] exact block 51/87 size=1
+[INFO] exact block 52/87 size=1
+[INFO] exact block 53/87 size=1
+[INFO] exact block 54/87 size=1
+[INFO] exact block 55/87 size=1
+[INFO] exact block 56/87 size=1
+[INFO] exact block 57/87 size=1
+[INFO] exact block 58/87 size=1
+[INFO] exact block 59/87 size=1
+[INFO] exact block 60/87 size=1
+[INFO] exact block 61/87 size=1
+[INFO] exact block 62/87 size=1
+[INFO] exact block 63/87 size=1
+[INFO] exact block 64/87 size=1
+[INFO] exact block 65/87 size=1
+[INFO] exact block 66/87 size=1
+[INFO] exact block 67/87 size=1
+[INFO] exact block 68/87 size=1
+[INFO] exact block 69/87 size=1
+[INFO] exact block 70/87 size=1
+[INFO] exact block 71/87 size=1
+[INFO] exact block 72/87 size=1
+[INFO] exact block 73/87 size=1
+[INFO] exact block 74/87 size=1
+[INFO] exact block 75/87 size=1
+[INFO] exact block 76/87 size=1
+[INFO] exact block 77/87 size=1
+[INFO] exact block 78/87 size=1
+[INFO] exact block 79/87 size=1
+[INFO] exact block 80/87 size=1
+[INFO] exact block 81/87 size=1
+[INFO] exact block 82/87 size=1
+[INFO] exact block 83/87 size=1
+[INFO] exact block 84/87 size=1
+[INFO] exact block 85/87 size=1
+[INFO] exact block 86/87 size=1
+[INFO] exact block 87/87 size=1
+[PASS] symbolic worker SHA256 CF77CAC3CAFEB757463CD5F2E4922BF64AD801A98F581C557809259A07ECCD20
+[PASS] exact symbolic worker completed
+[PASS] alternative determinant has one invariant A-residue class
+[PASS] reconstructed alternative determinant from invariant coordinates
+[PASS] alternative graph numerator is nonzero
+[PASS] direct determinant control (1,0,0)
+[PASS] direct determinant control (1,0,1)
+[PASS] direct determinant control (2,1,1)
+[PASS] direct determinant control (-1,1,1)
+[PASS] EXP-124 remains within total compute gate
+[PASS] wrote artifacts\results.json
+SHA256 6E8C57A6B66AF9D8B004E33148935756672AD9AFF21F727F1D9E93CDFF6836AE
+[INFO] graph numerator degree=16, terms=21, elapsed=32.57 s
+RESULT: COMPLETE

@@ -1,0 +1,74 @@
+{
+  "a_zero_total_b_exponent": 95,
+  "b_nonzero_invariant": {
+    "coordinate": "z=a^3/b^7",
+    "degree": 9,
+    "geometric_points": 9,
+    "polynomial": "(4096*z + 78125)*(8192*z + 78125)*(16384*z + 78125)*(32768*z + 78125)*(49152*z + 78125)*(13750615562268966912*z**4 - 389229646907965440000000*z**3 + 6149594411200000000000000*z**2 + 865348510742187500000000*z - 71190297603607177734375)",
+    "squarefree": true
+  },
+  "coordinates": [
+    "a",
+    "b"
+  ],
+  "experiment": "EXP-117",
+  "explicit_b_power": 32,
+  "factors": [
+    {
+      "expression": "13750615562268966912*a**12 - 389229646907965440000000*a**9*b**7 + 6149594411200000000000000*a**6*b**14 + 865348510742187500000000*a**3*b**21 - 71190297603607177734375*b**28",
+      "invariant_polynomial_z_a3_over_b7": "13750615562268966912*z**4 - 389229646907965440000000*z**3 + 6149594411200000000000000*z**2 + 865348510742187500000000*z - 71190297603607177734375",
+      "monomial_count": 5,
+      "multiplicity": 1,
+      "source_block_size": 51,
+      "total_degree": 28,
+      "weighted_degree_7_3": 84
+    },
+    {
+      "expression": "49152*a**3 + 78125*b**7",
+      "invariant_polynomial_z_a3_over_b7": "49152*z + 78125",
+      "monomial_count": 2,
+      "multiplicity": 1,
+      "source_block_size": 11,
+      "total_degree": 7,
+      "weighted_degree_7_3": 21
+    },
+    {
+      "expression": "32768*a**3 + 78125*b**7",
+      "invariant_polynomial_z_a3_over_b7": "32768*z + 78125",
+      "monomial_count": 2,
+      "multiplicity": 1,
+      "source_block_size": 10,
+      "total_degree": 7,
+      "weighted_degree_7_3": 21
+    },
+    {
+      "expression": "16384*a**3 + 78125*b**7",
+      "invariant_polynomial_z_a3_over_b7": "16384*z + 78125",
+      "monomial_count": 2,
+      "multiplicity": 1,
+      "source_block_size": 9,
+      "total_degree": 7,
+      "weighted_degree_7_3": 21
+    },
+    {
+      "expression": "8192*a**3 + 78125*b**7",
+      "invariant_polynomial_z_a3_over_b7": "8192*z + 78125",
+      "monomial_count": 2,
+      "multiplicity": 1,
+      "source_block_size": 8,
+      "total_degree": 7,
+      "weighted_degree_7_3": 21
+    },
+    {
+      "expression": "4096*a**3 + 78125*b**7",
+      "invariant_polynomial_z_a3_over_b7": "4096*z + 78125",
+      "monomial_count": 2,
+      "multiplicity": 1,
+      "source_block_size": 7,
+      "total_degree": 7,
+      "weighted_degree_7_3": 21
+    }
+  ],
+  "normalized_anchor_check": "scalar times all factors at (a,b)=(0,1) equals 1",
+  "scalar": "-1/207191035161979897338824230246245861053466796875"
+}

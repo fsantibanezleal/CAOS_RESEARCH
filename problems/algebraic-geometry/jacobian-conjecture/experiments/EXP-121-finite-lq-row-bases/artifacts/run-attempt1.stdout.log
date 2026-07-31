@@ -1,0 +1,62 @@
+[PASS] complete system is 302 by 125
+[PASS] H63(d=1) factors as linear times quadratic in X=A^3
+[PASS] G54(d=1) is irreducible over Q[X,B]
+[PASS] G54(A^3,B) is irreducible over Q[A,B]
+[PASS] H_linear(A^3,B) is irreducible over Q[A,B]
+[PASS] H_quadratic(A^3,B) is irreducible over Q[A,B]
+[PASS] EXP-119 row basis has size 125
+[PASS] L modular residual enumeration meets its gate
+[INFO] p=1009 L: 0 affine A-lifts on the first-chart residual
+[INFO] p=1009 L: 0 distinct full-rank row bases from 0 trials
+[PASS] Q modular residual enumeration meets its gate
+[INFO] p=1009 Q: 0 affine A-lifts on the first-chart residual
+[INFO] p=1009 Q: 0 distinct full-rank row bases from 0 trials
+[PASS] L modular residual enumeration meets its gate
+[INFO] p=1013 L: 13 affine A-lifts on the first-chart residual
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L residual-selected minor is nonzero mod 1013
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[INFO] p=1013 L: 1 distinct full-rank row bases from 13 trials
+[PASS] Q modular residual enumeration meets its gate
+[INFO] p=1013 Q: 0 affine A-lifts on the first-chart residual
+[INFO] p=1013 Q: 0 distinct full-rank row bases from 0 trials
+[PASS] L modular residual enumeration meets its gate
+[INFO] p=1019 L: 8 affine A-lifts on the first-chart residual
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[INFO] p=1019 L: 0 distinct full-rank row bases from 8 trials
+[PASS] Q modular residual enumeration meets its gate
+[INFO] p=1019 Q: 0 affine A-lifts on the first-chart residual
+[INFO] p=1019 Q: 0 distinct full-rank row bases from 0 trials
+[PASS] L modular residual enumeration meets its gate
+[INFO] p=1031 L: 8 affine A-lifts on the first-chart residual
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[PASS] L selection point lies on EXP-119 chart
+[INFO] p=1031 L: 0 distinct full-rank row bases from 8 trials
+[PASS] Q modular residual enumeration meets its gate
+[INFO] p=1031 Q: 0 affine A-lifts on the first-chart residual
+[INFO] p=1031 Q: 0 distinct full-rank row bases from 0 trials
+[PASS] L has a full-rank modular residual-selected basis

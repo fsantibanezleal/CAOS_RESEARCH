@@ -1,0 +1,22 @@
+EXP-122 attempt 001
+Date: 2026-07-30
+Exit: stopped by exact regression assertion before any direction classification
+
+[PASS] restored exactly 24 cyclic-core directions
+[PASS] restored directions reproduce the EXP-112 active prefix
+[PASS] rebuilt complete 302 by 125 system
+[PASS] EXP-121 selected exactly the same L/Q row basis
+[PASS] EXP-121 shared row basis has size 125
+[PASS] reproduced the EXP-121 rational anchor determinant
+[INFO] normalized all 24 directions exactly
+[PASS] T_B normalized graph is cyclic
+AssertionError: reproduced the EXP-121 size-26 T_B core
+
+Diagnosis:
+EXP-121 computed the size-26 graph from the normalized A and B direction
+matrices on the d=1 chart. Attempt 001 incorrectly included the d-tangent
+(1,0) in that graph. The corrected implementation uses {(0,1),(0,5)} for
+the fixed-d graph regression and union-SCC comparisons, while retaining all
+three T_B directions for exact pairwise mixed determinant coefficients.
+
+No mathematical result or final artifact was produced by this attempt.

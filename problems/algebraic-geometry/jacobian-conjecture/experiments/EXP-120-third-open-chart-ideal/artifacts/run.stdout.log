@@ -1,0 +1,211 @@
+[PASS] persisted G-component basis has size 125
+[PASS] EXP-115 G-basis determinant 978 reproduces at p=1009
+[PASS] first exact G-basis anchor is nonzero at (1, 0, 1)
+[INFO] third-chart cyclic SCC sizes [25, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[PASS] third-chart largest cyclic block is within gate 60
+[PASS] cyclic block 25 is normalized at the rational anchor
+[INFO] block 25: degree 22, 185 monomials, 15.69 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] cyclic block 1 is normalized at the rational anchor
+[INFO] block 1: degree 1, 2 monomials, 0.00 s
+[PASS] third determinant is below the 10000-monomial gate
+[PASS] third-chart block product matches at (1, 0)
+[PASS] third-chart block product matches at (0, 0)
+[PASS] third-chart block product matches at (1, 0)
+[PASS] third-chart block product matches at (0, 1)
+[PASS] third-chart block product matches at (-1, 2)
+[PASS] third determinant has one A-exponent residue modulo three
+[PASS] third determinant minimum A-power matches its residue
+[PASS] third determinant reconstructs exactly under X=A^3
+[PASS] third invariant determinant is below the expansion gate
+[PASS] third coordinate A-power descends to an X-power
+[PASS] H63(d=1) factors as linear times quadratic in X=A^3
+[PASS] G54(d=1) is irreducible over Q[X,B]
+[PASS] G54(A^3,B) is irreducible over Q[A,B]
+[PASS] H_linear(A^3,B) is irreducible over Q[A,B]
+[PASS] H_quadratic(A^3,B) is irreducible over Q[A,B]
+[INFO] computing factorwise common ideal on G
+[INFO] G factor 125*B**3 + 300*B**2 + 240*B + 16*X + 64: unit in 0.16 s
+[INFO] G factor X: unit in 0.02 s
+[INFO] G factor 15625*B**6 - 37500*B**5 + 60000*B**4 - 2000*B**3*X - 56000*B**3 - 4800*B**2*X + 38400*B**2 + 7680*B*X - 15360*B + 256*X**2 - 1024*X + 4096: unit in 0.38 s
+[INFO] G factor -156250*B**7 + 15625*B**6*X + 28000*B**3*X + 3200*B**2*X**2 + 1024*X: unit in 0.12 s
+[INFO] computing common ideal on L
+[PASS] nonunit common component ideal is zero-dimensional
+[PASS] nonunit lex basis has one B-elimination polynomial
+[INFO] L: nonunit finite in 0.11 s
+[INFO] computing common ideal on Q
+[PASS] nonunit common component ideal is zero-dimensional
+[INFO] Q: nonunit finite in 0.46 s
+[PASS] wrote artifacts\results.json
+SHA256 752DB3AF4F5C1064468D8D349197EFB1E1D84E96CA29E4683FA8CBF5861142AD
+[INFO] elapsed 28.85 s
+RESULT: COMPLETE

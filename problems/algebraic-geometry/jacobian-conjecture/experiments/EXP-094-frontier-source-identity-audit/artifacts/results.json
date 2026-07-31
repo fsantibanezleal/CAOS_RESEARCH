@@ -1,0 +1,95 @@
+{
+  "arithmetic": "exact integer and tuple predicates",
+  "controls": {
+    "c13_positive": true,
+    "ggv_615_divisibility_negative": false,
+    "ggv_615_positive": true,
+    "heitmann_positive": true
+  },
+  "decision": "GGV2 Remark 2.32 does not exclude C10, C11, C19, or C20. The previous candidate classification conflated distinct source identities.",
+  "experiment": "EXP-094",
+  "non_claims": [
+    "The four configurations are not proved realizable.",
+    "The four configurations are not proved to survive other restrictions.",
+    "No planar counterexample is constructed.",
+    "The (72,108) case is not decided."
+  ],
+  "rows": [
+    {
+      "a0": [
+        7,
+        21
+      ],
+      "a0_prime": [
+        1,
+        0
+      ],
+      "b1_equals_a0": [
+        7,
+        21
+      ],
+      "excluded_by_cited_remark": false,
+      "family": "F9",
+      "id": "C10",
+      "matches_ggv_615_b1_family": false,
+      "matches_heitmann_721_predicate": false
+    },
+    {
+      "a0": [
+        7,
+        21
+      ],
+      "a0_prime": [
+        1,
+        0
+      ],
+      "b1_equals_a0": [
+        7,
+        21
+      ],
+      "excluded_by_cited_remark": false,
+      "family": "F11",
+      "id": "C11",
+      "matches_ggv_615_b1_family": false,
+      "matches_heitmann_721_predicate": false
+    },
+    {
+      "a0": [
+        6,
+        15
+      ],
+      "a0_prime": [
+        1,
+        0
+      ],
+      "b1_equals_a0": [
+        6,
+        15
+      ],
+      "excluded_by_cited_remark": false,
+      "family": "F7",
+      "id": "C19",
+      "matches_ggv_615_b1_family": false,
+      "matches_heitmann_721_predicate": false
+    },
+    {
+      "a0": [
+        6,
+        15
+      ],
+      "a0_prime": [
+        1,
+        0
+      ],
+      "b1_equals_a0": [
+        6,
+        15
+      ],
+      "excluded_by_cited_remark": false,
+      "family": "F8",
+      "id": "C20",
+      "matches_ggv_615_b1_family": false,
+      "matches_heitmann_721_predicate": false
+    }
+  ]
+}

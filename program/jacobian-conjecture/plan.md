@@ -1,11 +1,11 @@
 # Jacobian conjecture: active problem plan
 
 Opened 2026-07-20. Area: algebraic geometry. State: exploring. Last strategic audit:
-2026-07-25.
+2026-07-30.
 
 This is the current plan. Earlier route proposals remain evidence of the program's development,
 but the controlling decisions are in
-[`strategy-audit-2026-07-25.md`](strategy-audit-2026-07-25.md).
+[`strategy-audit-2026-07-29.md`](strategy-audit-2026-07-29.md).
 
 ## Goal
 
@@ -32,33 +32,39 @@ support-restricted failure, or absence of a finite certificate as a proof.
 | Phase | Work | State and gate |
 |---|---|---|
 | JC-A | Preserve and publish the exact dimension at least three record | rolling; no current compute |
-| JC-B | Complete the $[125,150]$ primary-source frontier reconciliation | active; source work only until the missing Heitmann/GGV table mappings are exact |
-| JC-C | Test modern Newton and approximate-root restrictions against the GGHV reduction | next; first prove or refute applicability across $[f,g]=1 \to [P,Q]=x^2$ |
-| JC-D | Reformulate universal inconsistency as a certificate-module or chart-cover problem | next; begin on a small exact analog with specialization controls |
+| JC-B | Complete the $[125,150]$ primary-source frontier reconciliation | active; EXP-094 shows C10/C11/C19/C20 are not excluded by the cited remark; 16 unprinted \(A'_0\) values remain |
+| JC-C | Test modern Newton and approximate-root restrictions against the GGHV reduction | direct transport decided by EXP-097: absolute resultant degree is not typed after Laurent localization without a boundary-divisor ledger |
+| JC-D | Reformulate universal inconsistency as a constructible determinantal-strata problem | active; EXP-098 proves the specialization mechanism and EXP-101 constructs the first actual GGHV minor transition |
 | JC-E | Degree-three certificate decision | done by EXP-075; one exact four-parameter slice is infeasible, so no global cubic covector exists |
 | JC-F | Global geometric routes: fibres, properness, and parameter spaces | hold; resume only after a rigorous bridge to the reduced system is stated |
 | JC-G | Manuscripts, wiki, data, and public record | rolling; update only from adjudicated results |
 
 ## Ordered next work
 
-1. Finish the cheap source frontier:
-   - map C10/C11 to Heitmann Theorem 2.25;
-   - map C19/C20 to the published $B_1$ table;
-   - derive the 16 unprinted $A'_0$ forcings;
-   - preserve C01/C04 as open unless a cited result actually decides them.
-2. Open a source-first applicability experiment for Makar-Limanov and Trakhtenberg's
-   Newton-resolution conditions. The forced reduced polynomial
-   $P_T=y^8(xy-1)^8+x$ has a shape that would be highly restrictive for a genuine Keller
-   component, but it satisfies the reduced equation $[P,Q]=x^2$. The deliverable is the exact
-   transformation law, not a visual polygon comparison.
-3. Perform the same applicability pass for Lee-Li inner-polynomial/inner-vertex constraints
-   and the GGHV approximate-root/intersection-number machinery.
-4. Define the universal certificate module over
-   $\mathbb{Q}[\varepsilon_1,\ldots,\varepsilon_{51}]$. Test polynomial syzygies, localized
-   certificates, Fitting ideals, and finite chart covers on a small analog before scaling.
-5. Cancel EXP-093. EXP-075's exact support at reordered index 2662 proves that no global
+1. Record EXP-122/123 as complete. No restored direction is free on the
+   EXP-121 anchor line. The sparsest direction \((2,9)\) gives the exact
+   higher-dimensional reduction
+   \[
+   \Delta=A^{87}\bigl(R(A^3,B)+A^2CS(A^3,B)\bigr),\qquad \gcd(R,S)=1.
+   \]
+2. Declare EXP-124 on the rational exceptional graph. Select alternative row
+   bases at finite-field points with \(Y=-R/S\), reconstruct an exact graph
+   restriction, and recurse only on its numerator factors and the finite base
+   locus \(V(R,S)\). Treat \(A=0\) as a separate boundary.
+3. Treat the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
+   spend compute re-eliminating or adding charts to the closed restriction.
+4. Reopen intersection-\(21\) transport only if the cyclic core remains too
+   large, and only with the complete boundary-divisor ledger required by
+   EXP-097.
+5. Continue the independent [125,150] frontier task:
+   - preserve C10/C11/C19/C20 as unresolved by GGV2 Remark 2.32;
+   - derive the 16 unprinted $A'_0$ values through the declared chain algorithm;
+   - preserve C01/C04 as open absent an exact exclusion.
+6. Keep EXP-093 cancelled. EXP-075's exact support at reordered index 2662 proves that no global
    degree-three polynomial covector exists, so the proposed four-million-unknown solve has no
    target.
+7. Keep EXP-109 as a bounded chart-control only. Do not continue coefficient
+   slices as the main programme.
 
 ## Routes not currently authorized for compute
 
@@ -71,6 +77,23 @@ support-restricted failure, or absence of a finite certificate as a proof.
 - EXP-092 LND/line-fibre route: hold. For the reduced pair, $D_P(Q)=[P,Q]=x^2$, not a unit
   slice, so the Keller-pair argument does not transfer directly.
 - EXP-093 full degree-three solve: cancel. EXP-075 proves its target is empty.
+- EXP-110 all-\(125\)-minors of \(M\): retire. EXP-111 proves that the
+  constant \(Q\)-column makes every such minor vanish identically, so the
+  target is vacuous.
+- Further coefficient-slice enumeration: demote. It cannot close the
+  51-parameter family.
+- Raw 125-column minors on the \(d=0\) \(T_B\) plane: retire. EXP-115 proves
+  that \(P\) itself enters the admissible \(Q\)-space there, so \([P,P]=0\)
+  forces a polynomial right kernel. Quotient by this kernel first.
+- Treating \((a,b)=(0,0)\) as a generic quotient anchor: retire. EXP-116
+  finds the deeper exact rank stratum \(112/113\); normalize at \((0,1)\).
+- Treating the \(d=0\) quotient residual as a two-dimensional elimination
+  target: retire. EXP-117 reduces \(b\ne0\) to nine squarefree invariant
+  points in \(z=a^3/b^7\), plus the divisor \(b=0\).
+- Reusing the EXP-115 \(G\)-basis to attack the \(L\) or \(Q\) residual:
+  retire. EXP-120 factors its determinant as \(X^{30}LQR\), so it vanishes
+  identically on both target components. Select bases on the surviving
+  finite schemes instead.
 
 ## Cancelled EXP-093 scale facts
 

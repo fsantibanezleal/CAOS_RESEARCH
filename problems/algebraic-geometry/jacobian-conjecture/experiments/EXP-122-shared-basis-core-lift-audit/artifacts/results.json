@@ -1,0 +1,4818 @@
+{
+  "anchor": {
+    "A": 1,
+    "B": 0,
+    "d": 1,
+    "determinant": "-12026627929176817532598383260341254640320405985931723676698133135370737418240000000000000000000"
+  },
+  "checkpoint_completed_directions": 24,
+  "checkpoint_elapsed_seconds": 45.153735876083374,
+  "direction_records": {
+    "(0,1)": {
+      "anchor_directional_derivative_ratio": "96",
+      "classification": "tb_baseline",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "79228162514264337593543950336",
+          "predicted_ratio": "79228162514264337593543950336",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "1/79228162514264337593543950336",
+          "predicted_ratio": "1/79228162514264337593543950336",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        0,
+        1
+      ],
+      "flags": {
+        "active_in_existing_26_block": true,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": false,
+        "tb_baseline": true
+      },
+      "normalized_nonzero_count": 3239,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "(t + 1)**3",
+          "size": 8,
+          "vertices": [
+            14,
+            19,
+            21,
+            23,
+            26,
+            28,
+            33,
+            35
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            17
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            24
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            29
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            30
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            31
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            36
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            37
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            38
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            39
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            40
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            41
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            42
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            43
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            44
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            45
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            46
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            47
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            48
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            49
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            50
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            51
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            52
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            53
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            54
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            55
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            56
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            57
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            58
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            59
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            60
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            61
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            62
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            63
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            64
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            65
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            66
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            67
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            68
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            69
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            70
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            71
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            72
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            73
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            74
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            75
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            76
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            77
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            78
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            79
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            80
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            81
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            82
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            83
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            84
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            85
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            86
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            87
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            88
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            89
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            90
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            91
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            92
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            93
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            94
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            95
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            96
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            97
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            98
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            99
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            100
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            101
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            102
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            103
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            104
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            105
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            106
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            107
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            108
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            109
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            110
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            111
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            112
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            113
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            114
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            115
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            116
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            117
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            118
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            119
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            120
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            121
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            122
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            123
+          ]
+        }
+      ],
+      "one_parameter_factor": "(t + 1)**96",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "9120",
+        "(0,5)": "-77505/272",
+        "(1,0)": "1344"
+      },
+      "selected_direction_rank": 112,
+      "tb_core_internal_edges": 270,
+      "trace": "96",
+      "union_cyclic_component_sizes": [
+        26,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 26
+    },
+    "(0,2)": {
+      "anchor_directional_derivative_ratio": "3/68",
+      "classification": "active_in_existing_26_block",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "352781/68",
+          "predicted_ratio": "352781/68",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "-60455/8704",
+          "predicted_ratio": "-60455/8704",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        0,
+        2
+      ],
+      "flags": {
+        "active_in_existing_26_block": true,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": false,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 3079,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "(6144*t**18 + 136192*t**15 + 103808*t**13 + 60416*t**12 + 12096*t**11 + 16640*t**10 + 22832*t**9 + 19104*t**8 - 28160*t**7 + 2000*t**6 + 9744*t**5 - 6182*t**4 - 916*t**3 - 1008*t**2 + 3*t + 68)/68",
+          "size": 25,
+          "vertices": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38
+          ]
+        }
+      ],
+      "one_parameter_factor": "(6144*t**18 + 136192*t**15 + 103808*t**13 + 60416*t**12 + 12096*t**11 + 16640*t**10 + 22832*t**9 + 19104*t**8 - 28160*t**7 + 2000*t**6 + 9744*t**5 - 6182*t**4 - 916*t**3 - 1008*t**2 + 3*t + 68)/68",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "297/68",
+        "(0,5)": "2415/68",
+        "(1,0)": "33/68"
+      },
+      "selected_direction_rank": 102,
+      "tb_core_internal_edges": 285,
+      "trace": "3/68",
+      "union_cyclic_component_sizes": [
+        26,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 26
+    },
+    "(0,3)": {
+      "anchor_directional_derivative_ratio": "-126/17",
+      "classification": "active_in_existing_26_block",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "-29314112977/4456448",
+          "predicted_ratio": "-29314112977/4456448",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "3868196444957/137438953472",
+          "predicted_ratio": "3868196444957/137438953472",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        0,
+        3
+      ],
+      "flags": {
+        "active_in_existing_26_block": true,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": false,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 3005,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "-(3486784401*t**19 + 8523250758*t**18 - 258280326*t**17 - 48059272512*t**14 + 170503278912*t**13 - 147170893248*t**12 + 45258932736*t**11 - 10683617472*t**10 + 8566041600*t**9 - 2126393856*t**8 + 474771456*t**7 + 1430286336*t**6 - 999309312*t**5 + 257458176*t**4 + 196853760*t**3 - 114352128*t**2 + 33030144*t - 4456448)/4456448",
+          "size": 25,
+          "vertices": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38
+          ]
+        }
+      ],
+      "one_parameter_factor": "-(3486784401*t**19 + 8523250758*t**18 - 258280326*t**17 - 48059272512*t**14 + 170503278912*t**13 - 147170893248*t**12 + 45258932736*t**11 - 10683617472*t**10 + 8566041600*t**9 - 2126393856*t**8 + 474771456*t**7 + 1430286336*t**6 - 999309312*t**5 + 257458176*t**4 + 196853760*t**3 - 114352128*t**2 + 33030144*t - 4456448)/4456448",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "-11844/17",
+        "(0,5)": "255/64",
+        "(1,0)": "-1890/17"
+      },
+      "selected_direction_rank": 92,
+      "tb_core_internal_edges": 285,
+      "trace": "-126/17",
+      "union_cyclic_component_sizes": [
+        26,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 26
+    },
+    "(0,4)": {
+      "anchor_directional_derivative_ratio": "-14/17",
+      "classification": "active_in_existing_26_block",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "-159514/17",
+          "predicted_ratio": "-159514/17",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "-29/64",
+          "predicted_ratio": "-29/64",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        0,
+        4
+      ],
+      "flags": {
+        "active_in_existing_26_block": true,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": false,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 2835,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "-(61440*t**18 - 106496*t**17 + 3584*t**15 + 1081344*t**14 - 40960*t**13 - 14208*t**12 - 150144*t**11 - 423936*t**10 - 85768*t**9 - 69216*t**8 - 70112*t**7 - 15234*t**6 - 3834*t**5 - 3920*t**4 - 2608*t**3 - 415*t**2 + 14*t - 17)/17",
+          "size": 25,
+          "vertices": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38
+          ]
+        }
+      ],
+      "one_parameter_factor": "-(61440*t**18 - 106496*t**17 + 3584*t**15 + 1081344*t**14 - 40960*t**13 - 14208*t**12 - 150144*t**11 - 423936*t**10 - 85768*t**9 - 69216*t**8 - 70112*t**7 - 15234*t**6 - 3834*t**5 - 3920*t**4 - 2608*t**3 - 415*t**2 + 14*t - 17)/17",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "-1372/17",
+        "(0,5)": "-3025/34",
+        "(1,0)": "-168/17"
+      },
+      "selected_direction_rank": 82,
+      "tb_core_internal_edges": 293,
+      "trace": "-14/17",
+      "union_cyclic_component_sizes": [
+        26,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 26
+    },
+    "(0,5)": {
+      "anchor_directional_derivative_ratio": "-1675/544",
+      "classification": "tb_baseline",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "-503284376799217/18253611008",
+          "predicted_ratio": "-503284376799217/18253611008",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "4700461532920051/2392537302040576",
+          "predicted_ratio": "4700461532920051/2392537302040576",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        0,
+        5
+      ],
+      "flags": {
+        "active_in_existing_26_block": true,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": false,
+        "tb_baseline": true
+      },
+      "normalized_nonzero_count": 2754,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "-(442504882812500*t**18 - 102996826171875*t**17 + 218750000000000*t**15 - 26171875000000*t**14 + 55000000000000*t**13 + 42640625000000*t**12 + 82600000000000*t**11 - 98240000000000*t**10 - 12168000000000*t**9 - 32953600000000*t**8 - 45998080000000*t**7 - 12410880000000*t**6 - 5795020800000*t**5 - 1395261440000*t**4 - 65011712000*t**3 - 54525952000*t**2 + 56203673600*t - 18253611008)/18253611008",
+          "size": 25,
+          "vertices": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38
+          ]
+        }
+      ],
+      "one_parameter_factor": "-(442504882812500*t**18 - 102996826171875*t**17 + 218750000000000*t**15 - 26171875000000*t**14 + 55000000000000*t**13 + 42640625000000*t**12 + 82600000000000*t**11 - 98240000000000*t**10 - 12168000000000*t**9 - 32953600000000*t**8 - 45998080000000*t**7 - 12410880000000*t**6 - 5795020800000*t**5 - 1395261440000*t**4 - 65011712000*t**3 - 54525952000*t**2 + 56203673600*t - 18253611008)/18253611008",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "-77505/272",
+        "(0,5)": "1625/272",
+        "(1,0)": "-27395/544"
+      },
+      "selected_direction_rank": 72,
+      "tb_core_internal_edges": 305,
+      "trace": "-1675/544",
+      "union_cyclic_component_sizes": [
+        26,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 26
+    },
+    "(0,6)": {
+      "anchor_directional_derivative_ratio": "-171/68",
+      "classification": "active_in_existing_26_block",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "-8708153159/8912896",
+          "predicted_ratio": "-8708153159/8912896",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "-80743837134991/4672924418048",
+          "predicted_ratio": "-80743837134991/4672924418048",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        0,
+        6
+      ],
+      "flags": {
+        "active_in_existing_26_block": true,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": false,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 2549,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "-(3486784401*t**19 + 602654094*t**15 - 4706441496*t**14 + 9234318816*t**13 + 1700611200*t**12 - 1723286016*t**11 - 651900960*t**10 + 2776405248*t**9 - 6805804032*t**8 + 2472394752*t**7 + 5349017088*t**6 - 3702122496*t**5 + 621914112*t**4 + 58392576*t**3 - 18284544*t**2 + 22413312*t - 8912896)/8912896",
+          "size": 23,
+          "vertices": [
+            13,
+            14,
+            15,
+            16,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            34,
+            35,
+            36,
+            37
+          ]
+        }
+      ],
+      "one_parameter_factor": "-(3486784401*t**19 + 602654094*t**15 - 4706441496*t**14 + 9234318816*t**13 + 1700611200*t**12 - 1723286016*t**11 - 651900960*t**10 + 2776405248*t**9 - 6805804032*t**8 + 2472394752*t**7 + 5349017088*t**6 - 3702122496*t**5 + 621914112*t**4 + 58392576*t**3 - 18284544*t**2 + 22413312*t - 8912896)/8912896",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "-16587/68",
+        "(0,5)": "47295/1088",
+        "(1,0)": "-2223/68"
+      },
+      "selected_direction_rank": 62,
+      "tb_core_internal_edges": 304,
+      "trace": "-171/68",
+      "union_cyclic_component_sizes": [
+        26,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 26
+    },
+    "(0,7)": {
+      "anchor_directional_derivative_ratio": "1477/1088",
+      "classification": "active_in_existing_26_block",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "-490793143905/4563402752",
+          "predicted_ratio": "-490793143905/4563402752",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "-9649710697701/9345848836096",
+          "predicted_ratio": "-9649710697701/9345848836096",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        0,
+        7
+      ],
+      "flags": {
+        "active_in_existing_26_block": true,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": false,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 2420,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "-(55365148804*t**12 - 41523861603*t**11 - 9039207968*t**10 - 102013918496*t**9 - 15495785088*t**8 + 371898842112*t**7 + 70355984384*t**6 + 162672398336*t**5 - 8811708416*t**4 - 23782621184*t**3 + 41926262784*t**2 - 6194987008*t - 4563402752)/4563402752",
+          "size": 20,
+          "vertices": [
+            13,
+            14,
+            15,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            26,
+            27,
+            28,
+            29,
+            30,
+            33,
+            34,
+            35,
+            36
+          ]
+        }
+      ],
+      "one_parameter_factor": "-(55365148804*t**12 - 41523861603*t**11 - 9039207968*t**10 - 102013918496*t**9 - 15495785088*t**8 + 371898842112*t**7 + 70355984384*t**6 + 162672398336*t**5 - 8811708416*t**4 - 23782621184*t**3 + 41926262784*t**2 - 6194987008*t - 4563402752)/4563402752",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "137081/1088",
+        "(0,5)": "8715/1088",
+        "(1,0)": "12089/544"
+      },
+      "selected_direction_rank": 53,
+      "tb_core_internal_edges": 306,
+      "trace": "1477/1088",
+      "union_cyclic_component_sizes": [
+        26,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 26
+    },
+    "(1,0)": {
+      "anchor_directional_derivative_ratio": "14",
+      "classification": "tb_baseline",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "16384",
+          "predicted_ratio": "16384",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "1/16384",
+          "predicted_ratio": "1/16384",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        1,
+        0
+      ],
+      "flags": {
+        "active_in_existing_26_block": true,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": true,
+        "tb_baseline": true
+      },
+      "normalized_nonzero_count": 3111,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "(t + 1)**3",
+          "size": 7,
+          "vertices": [
+            3,
+            8,
+            10,
+            14,
+            16,
+            21,
+            23
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            0
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            1
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            2
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            4
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            5
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            7
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            9
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            11
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            12
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            13
+          ]
+        },
+        {
+          "factor": "t + 1",
+          "size": 1,
+          "vertices": [
+            15
+          ]
+        }
+      ],
+      "one_parameter_factor": "(t + 1)**14",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "1344",
+        "(0,5)": "-27395/544",
+        "(1,0)": "182"
+      },
+      "selected_direction_rank": 91,
+      "tb_core_internal_edges": 135,
+      "trace": "14",
+      "union_cyclic_component_sizes": [
+        35,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 35
+    },
+    "(1,1)": {
+      "anchor_directional_derivative_ratio": "-3/68",
+      "classification": "active_in_existing_26_block",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "-77/68",
+          "predicted_ratio": "-77/68",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "-95/4352",
+          "predicted_ratio": "-95/4352",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        1,
+        1
+      ],
+      "flags": {
+        "active_in_existing_26_block": true,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": true,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 3069,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "-(4*t**9 - 27*t**7 + 20*t**6 + 57*t**5 - 180*t**4 - 44*t**3 + 312*t**2 + 3*t - 68)/68",
+          "size": 16,
+          "vertices": [
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15,
+            19,
+            20,
+            21,
+            22
+          ]
+        }
+      ],
+      "one_parameter_factor": "-(4*t**9 - 27*t**7 + 20*t**6 + 57*t**5 - 180*t**4 - 44*t**3 + 312*t**2 + 3*t - 68)/68",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "-75/17",
+        "(0,5)": "-445/34",
+        "(1,0)": "-15/34"
+      },
+      "selected_direction_rank": 99,
+      "tb_core_internal_edges": 129,
+      "trace": "-3/68",
+      "union_cyclic_component_sizes": [
+        36,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 36
+    },
+    "(1,2)": {
+      "anchor_directional_derivative_ratio": "39/17",
+      "classification": "active_in_existing_26_block",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "88/17",
+          "predicted_ratio": "88/17",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "29/136",
+          "predicted_ratio": "29/136",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        1,
+        2
+      ],
+      "flags": {
+        "active_in_existing_26_block": true,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": true,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 2847,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "(t + 1)**2*(5*t + 17)/17",
+          "size": 6,
+          "vertices": [
+            6,
+            8,
+            10,
+            14,
+            19,
+            21
+          ]
+        }
+      ],
+      "one_parameter_factor": "(t + 1)**2*(5*t + 17)/17",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "3705/17",
+        "(0,5)": "-1645/1088",
+        "(1,0)": "546/17"
+      },
+      "selected_direction_rank": 99,
+      "tb_core_internal_edges": 100,
+      "trace": "39/17",
+      "union_cyclic_component_sizes": [
+        36,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 36
+    },
+    "(1,3)": {
+      "anchor_directional_derivative_ratio": "45/136",
+      "classification": "active_in_existing_26_block",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "15883/17408",
+          "predicted_ratio": "15883/17408",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "23930665/17825792",
+          "predicted_ratio": "23930665/17825792",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        1,
+        3
+      ],
+      "flags": {
+        "active_in_existing_26_block": true,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": true,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 2904,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "(17*t**10 - 56*t**9 + 2*t**8 - 836*t**7 + 2528*t**6 - 980*t**5 + 3616*t**4 - 30488*t**3 + 18912*t**2 + 5760*t + 17408)/17408",
+          "size": 16,
+          "vertices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            17,
+            18,
+            19,
+            20,
+            24
+          ]
+        }
+      ],
+      "one_parameter_factor": "(17*t**10 - 56*t**9 + 2*t**8 - 836*t**7 + 2528*t**6 - 980*t**5 + 3616*t**4 - 30488*t**3 + 18912*t**2 + 5760*t + 17408)/17408",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "4455/136",
+        "(0,5)": "1045/68",
+        "(1,0)": "495/136"
+      },
+      "selected_direction_rank": 105,
+      "tb_core_internal_edges": 107,
+      "trace": "45/136",
+      "union_cyclic_component_sizes": [
+        36,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 36
+    },
+    "(1,4)": {
+      "anchor_directional_derivative_ratio": "111/544",
+      "classification": "active_in_existing_26_block",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "1426203/1114112",
+          "predicted_ratio": "1426203/1114112",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "4293131727/4563402752",
+          "predicted_ratio": "4293131727/4563402752",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        1,
+        4
+      ],
+      "flags": {
+        "active_in_existing_26_block": true,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": true,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 2855,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "-(10*t**12 - 67*t**11 + 13*t**10 - 4352*t**8 + 35008*t**7 - 70080*t**6 + 66752*t**5 - 79616*t**4 + 294912*t**3 - 581632*t**2 - 909312*t - 4456448)/4456448",
+          "size": 16,
+          "vertices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            16,
+            17,
+            18,
+            19,
+            23,
+            24
+          ]
+        }
+      ],
+      "one_parameter_factor": "-(10*t**12 - 67*t**11 + 13*t**10 - 4352*t**8 + 35008*t**7 - 70080*t**6 + 66752*t**5 - 79616*t**4 + 294912*t**3 - 581632*t**2 - 909312*t - 4456448)/4456448",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "10281/544",
+        "(0,5)": "-355/272",
+        "(1,0)": "223/68"
+      },
+      "selected_direction_rank": 97,
+      "tb_core_internal_edges": 107,
+      "trace": "111/544",
+      "union_cyclic_component_sizes": [
+        36,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 36
+    },
+    "(1,5)": {
+      "anchor_directional_derivative_ratio": "15/68",
+      "classification": "active_in_existing_26_block",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "5614469/4456448",
+          "predicted_ratio": "5614469/4456448",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "32756749567/36507222016",
+          "predicted_ratio": "32756749567/36507222016",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        1,
+        5
+      ],
+      "flags": {
+        "active_in_existing_26_block": true,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": true,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 2643,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "-(t**12 - 4*t**11 + 17*t**9 - 424*t**8 - 7984*t**7 + 13056*t**6 + 79808*t**5 + 116480*t**4 - 174080*t**3 - 376832*t**2 - 1966080*t - 8912896)/8912896",
+          "size": 16,
+          "vertices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            15,
+            17,
+            18,
+            22,
+            23,
+            24
+          ]
+        }
+      ],
+      "one_parameter_factor": "-(t**12 - 4*t**11 + 17*t**9 - 424*t**8 - 7984*t**7 + 13056*t**6 + 79808*t**5 + 116480*t**4 - 174080*t**3 - 376832*t**2 - 1966080*t - 8912896)/8912896",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "735/34",
+        "(0,5)": "-16135/2176",
+        "(1,0)": "45/17"
+      },
+      "selected_direction_rank": 88,
+      "tb_core_internal_edges": 87,
+      "trace": "15/68",
+      "union_cyclic_component_sizes": [
+        36,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 36
+    },
+    "(1,6)": {
+      "anchor_directional_derivative_ratio": "-159/1088",
+      "classification": "active_in_existing_26_block",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "2832626905/4563402752",
+          "predicted_ratio": "2832626905/4563402752",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "19336309556089/18691697672192",
+          "predicted_ratio": "19336309556089/18691697672192",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        1,
+        6
+      ],
+      "flags": {
+        "active_in_existing_26_block": true,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": true,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 2620,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "-(7*t**12 - 224*t**10 + 4096*t**9 + 7168*t**8 - 4096*t**7 + 335872*t**6 + 937984*t**5 + 3407872*t**4 + 237109248*t**3 + 822083584*t**2 + 666894336*t - 4563402752)/4563402752",
+          "size": 17,
+          "vertices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            14,
+            15,
+            16,
+            21,
+            22,
+            23,
+            24
+          ]
+        }
+      ],
+      "one_parameter_factor": "-(7*t**12 - 224*t**10 + 4096*t**9 + 7168*t**8 - 4096*t**7 + 335872*t**6 + 937984*t**5 + 3407872*t**4 + 237109248*t**3 + 822083584*t**2 + 666894336*t - 4563402752)/4563402752",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "-7533/544",
+        "(0,5)": "-1225/1088",
+        "(1,0)": "-2327/1088"
+      },
+      "selected_direction_rank": 79,
+      "tb_core_internal_edges": 111,
+      "trace": "-159/1088",
+      "union_cyclic_component_sizes": [
+        36,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 36
+    },
+    "(1,7)": {
+      "anchor_directional_derivative_ratio": "-133/136",
+      "classification": "active_in_existing_26_block",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "3107227739/9126805504",
+          "predicted_ratio": "3107227739/9126805504",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "1750915117691/1099511627776",
+          "predicted_ratio": "1750915117691/1099511627776",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        1,
+        7
+      ],
+      "flags": {
+        "active_in_existing_26_block": true,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": true,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 2523,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "-(t - 8)**2*(t**2 - 10*t - 68)/4352",
+          "size": 8,
+          "vertices": [
+            3,
+            5,
+            8,
+            10,
+            14,
+            16,
+            21,
+            23
+          ]
+        },
+        {
+          "factor": "-(t - 8)**3/512",
+          "size": 4,
+          "vertices": [
+            2,
+            9,
+            13,
+            20
+          ]
+        },
+        {
+          "factor": "-(t - 8)**3/512",
+          "size": 4,
+          "vertices": [
+            4,
+            11,
+            15,
+            22
+          ]
+        },
+        {
+          "factor": "-(t - 8)/8",
+          "size": 1,
+          "vertices": [
+            7
+          ]
+        }
+      ],
+      "one_parameter_factor": "(t - 8)**9*(t**2 - 10*t - 68)/9126805504",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "-12901/136",
+        "(0,5)": "25235/4352",
+        "(1,0)": "-1729/136"
+      },
+      "selected_direction_rank": 68,
+      "tb_core_internal_edges": 134,
+      "trace": "-133/136",
+      "union_cyclic_component_sizes": [
+        36,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 36
+    },
+    "(1,8)": {
+      "anchor_directional_derivative_ratio": "15/272",
+      "classification": "active_in_existing_26_block",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "3500342665/4563402752",
+          "predicted_ratio": "3500342665/4563402752",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "2100093057479/2336462209024",
+          "predicted_ratio": "2100093057479/2336462209024",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        1,
+        8
+      ],
+      "flags": {
+        "active_in_existing_26_block": true,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": true,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 2310,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "-(7*t**9 - 2448*t**7 + 97280*t**6 + 233472*t**5 - 25362432*t**4 - 6619136*t**3 + 1346371584*t**2 - 251658240*t - 4563402752)/4563402752",
+          "size": 15,
+          "vertices": [
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15,
+            20,
+            21,
+            22
+          ]
+        }
+      ],
+      "one_parameter_factor": "-(7*t**9 - 2448*t**7 + 97280*t**6 + 233472*t**5 - 25362432*t**4 - 6619136*t**3 + 1346371584*t**2 - 251658240*t - 4563402752)/4563402752",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "1515/272",
+        "(0,5)": "215/136",
+        "(1,0)": "75/136"
+      },
+      "selected_direction_rank": 58,
+      "tb_core_internal_edges": 118,
+      "trace": "15/272",
+      "union_cyclic_component_sizes": [
+        36,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 36
+    },
+    "(2,2)": {
+      "anchor_directional_derivative_ratio": "-3/68",
+      "classification": "scc_increasing",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "65/68",
+          "predicted_ratio": "65/68",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "139/136",
+          "predicted_ratio": "139/136",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        2,
+        2
+      ],
+      "flags": {
+        "active_in_existing_26_block": false,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": true,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 2056,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "-(3*t - 68)/68",
+          "size": 4,
+          "vertices": [
+            2,
+            6,
+            7,
+            9
+          ]
+        }
+      ],
+      "one_parameter_factor": "-(3*t - 68)/68",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "-75/17",
+        "(0,5)": "5/34",
+        "(1,0)": "-15/34"
+      },
+      "selected_direction_rank": 87,
+      "tb_core_internal_edges": 0,
+      "trace": "-3/68",
+      "union_cyclic_component_sizes": [
+        36,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 36
+    },
+    "(2,3)": {
+      "anchor_directional_derivative_ratio": "6/17",
+      "classification": "scc_increasing",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "23/17",
+          "predicted_ratio": "23/17",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "14/17",
+          "predicted_ratio": "14/17",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        2,
+        3
+      ],
+      "flags": {
+        "active_in_existing_26_block": false,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": true,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 1967,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "(6*t + 17)/17",
+          "size": 2,
+          "vertices": [
+            6,
+            8
+          ]
+        }
+      ],
+      "one_parameter_factor": "(6*t + 17)/17",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "570/17",
+        "(0,5)": "5/32",
+        "(1,0)": "84/17"
+      },
+      "selected_direction_rank": 96,
+      "tb_core_internal_edges": 0,
+      "trace": "6/17",
+      "union_cyclic_component_sizes": [
+        36,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 36
+    },
+    "(2,4)": {
+      "anchor_directional_derivative_ratio": "3/68",
+      "classification": "scc_increasing",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "71/68",
+          "predicted_ratio": "71/68",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "133/136",
+          "predicted_ratio": "133/136",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        2,
+        4
+      ],
+      "flags": {
+        "active_in_existing_26_block": false,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": true,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 1842,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "1",
+          "size": 2,
+          "vertices": [
+            4,
+            11
+          ]
+        },
+        {
+          "factor": "(3*t + 68)/68",
+          "size": 2,
+          "vertices": [
+            5,
+            7
+          ]
+        }
+      ],
+      "one_parameter_factor": "(3*t + 68)/68",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "297/68",
+        "(0,5)": "125/544",
+        "(1,0)": "33/68"
+      },
+      "selected_direction_rank": 86,
+      "tb_core_internal_edges": 0,
+      "trace": "3/68",
+      "union_cyclic_component_sizes": [
+        36,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 36
+    },
+    "(2,5)": {
+      "anchor_directional_derivative_ratio": "-31/272",
+      "classification": "scc_increasing",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "241/272",
+          "predicted_ratio": "241/272",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "575/544",
+          "predicted_ratio": "575/544",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        2,
+        5
+      ],
+      "flags": {
+        "active_in_existing_26_block": false,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": true,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 1897,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "-(31*t - 272)/272",
+          "size": 6,
+          "vertices": [
+            3,
+            4,
+            5,
+            6,
+            10,
+            11
+          ]
+        }
+      ],
+      "one_parameter_factor": "-(31*t - 272)/272",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "-2905/272",
+        "(0,5)": "-5/272",
+        "(1,0)": "-59/34"
+      },
+      "selected_direction_rank": 92,
+      "tb_core_internal_edges": 0,
+      "trace": "-31/272",
+      "union_cyclic_component_sizes": [
+        36,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 36
+    },
+    "(2,6)": {
+      "anchor_directional_derivative_ratio": "-3/68",
+      "classification": "scc_increasing",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "65/68",
+          "predicted_ratio": "65/68",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "139/136",
+          "predicted_ratio": "139/136",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        2,
+        6
+      ],
+      "flags": {
+        "active_in_existing_26_block": false,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": true,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 1706,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "-(3*t - 68)/68",
+          "size": 3,
+          "vertices": [
+            3,
+            5,
+            10
+          ]
+        },
+        {
+          "factor": "1",
+          "size": 2,
+          "vertices": [
+            2,
+            9
+          ]
+        },
+        {
+          "factor": "1",
+          "size": 2,
+          "vertices": [
+            4,
+            11
+          ]
+        }
+      ],
+      "one_parameter_factor": "-(3*t - 68)/68",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "-147/34",
+        "(0,5)": "-335/1088",
+        "(1,0)": "-9/17"
+      },
+      "selected_direction_rank": 81,
+      "tb_core_internal_edges": 0,
+      "trace": "-3/68",
+      "union_cyclic_component_sizes": [
+        36,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 36
+    },
+    "(2,7)": {
+      "anchor_directional_derivative_ratio": "-3/544",
+      "classification": "scc_increasing",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "541/544",
+          "predicted_ratio": "541/544",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "1091/1088",
+          "predicted_ratio": "1091/1088",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        2,
+        7
+      ],
+      "flags": {
+        "active_in_existing_26_block": false,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": true,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 1711,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "-(3*t - 544)/544",
+          "size": 7,
+          "vertices": [
+            2,
+            3,
+            4,
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      ],
+      "one_parameter_factor": "-(3*t - 544)/544",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "-9/16",
+        "(0,5)": "-5/136",
+        "(1,0)": "-27/544"
+      },
+      "selected_direction_rank": 74,
+      "tb_core_internal_edges": 0,
+      "trace": "-3/544",
+      "union_cyclic_component_sizes": [
+        36,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 36
+    },
+    "(2,8)": {
+      "anchor_directional_derivative_ratio": "3/68",
+      "classification": "scc_increasing",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "71/68",
+          "predicted_ratio": "71/68",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "133/136",
+          "predicted_ratio": "133/136",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        2,
+        8
+      ],
+      "flags": {
+        "active_in_existing_26_block": false,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": true,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 1490,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "(3*t + 68)/68",
+          "size": 3,
+          "vertices": [
+            3,
+            8,
+            10
+          ]
+        }
+      ],
+      "one_parameter_factor": "(3*t + 68)/68",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "291/68",
+        "(0,5)": "95/1088",
+        "(1,0)": "39/68"
+      },
+      "selected_direction_rank": 62,
+      "tb_core_internal_edges": 0,
+      "trace": "3/68",
+      "union_cyclic_component_sizes": [
+        35,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 35
+    },
+    "(2,9)": {
+      "anchor_directional_derivative_ratio": "3/544",
+      "classification": "scc_increasing",
+      "direct_determinant_checks": [
+        {
+          "direct_ratio": "547/544",
+          "predicted_ratio": "547/544",
+          "t": "1"
+        },
+        {
+          "direct_ratio": "1085/1088",
+          "predicted_ratio": "1085/1088",
+          "t": "-1/2"
+        }
+      ],
+      "direction": [
+        2,
+        9
+      ],
+      "flags": {
+        "active_in_existing_26_block": false,
+        "anchor_line_determinant_inert": false,
+        "low_order_determinant_participation": true,
+        "scc_increasing": true,
+        "tb_baseline": false
+      },
+      "normalized_nonzero_count": 1319,
+      "one_parameter_cyclic_blocks": [
+        {
+          "factor": "(3*t + 544)/544",
+          "size": 4,
+          "vertices": [
+            2,
+            6,
+            7,
+            9
+          ]
+        }
+      ],
+      "one_parameter_factor": "(3*t + 544)/544",
+      "pairing_symmetry_checks": {
+        "(0,1)": true,
+        "(0,5)": true,
+        "(1,0)": true
+      },
+      "pairwise_mixed_coefficients_with_tb": {
+        "(0,1)": "303/544",
+        "(0,5)": "5/544",
+        "(1,0)": "15/272"
+      },
+      "selected_direction_rank": 53,
+      "tb_core_internal_edges": 0,
+      "trace": "3/544",
+      "union_cyclic_component_sizes": [
+        34,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "union_largest_cyclic_component": 34
+    }
+  },
+  "directions": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      2,
+      8
+    ],
+    [
+      2,
+      9
+    ]
+  ],
+  "elapsed_seconds": 45.15478181838989,
+  "experiment": "EXP-122",
+  "normalized_sha256": "29A34A9DD76EDC7394F2144F297BBF8C82F2EF9D0D722108D28341C30056E30B",
+  "scope": "Exact anchor-local activity audit on the EXP-121 shared row basis. This does not prove a higher-dimensional chart cover and does not close the 24-parameter core, the 51-parameter family, (72,108), the degree floor, or JC(2).",
+  "shared_rows": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    43,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    202,
+    203,
+    204,
+    205,
+    206,
+    217,
+    218,
+    219,
+    220
+  ],
+  "summary": {
+    "active_in_existing_26_block_count": 13,
+    "anchor_line_inert_count": 0,
+    "classification_counts": {
+      "active_in_existing_26_block": 13,
+      "scc_increasing": 8
+    },
+    "low_order_participation_count": 21,
+    "predictions": {
+      "p1_anchor_and_tb_regression": true,
+      "p2_at_least_one_anchor_line_inert": false,
+      "p3_internal_and_scc_increasing_both_exist": true,
+      "p4_at_least_one_low_order_participant": true
+    },
+    "restored_direction_count": 21,
+    "scc_increasing_count": 16
+  },
+  "tb": {
+    "cyclic_component_sizes": [
+      26,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "directions": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "fixed_d_graph_directions": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        5
+      ]
+    ],
+    "largest_component_vertices": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38
+    ]
+  }
+}

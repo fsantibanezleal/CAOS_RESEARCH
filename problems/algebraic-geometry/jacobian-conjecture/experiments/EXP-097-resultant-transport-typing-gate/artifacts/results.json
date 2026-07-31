@@ -1,0 +1,319 @@
+{
+  "arithmetic": "exact SymPy polynomial and rational-function algebra",
+  "controls": {
+    "base_resultant": "(x**2 + 1)*(x**4 - x + 1)",
+    "base_resultant_bounds": [
+      0,
+      6
+    ],
+    "boundary_resultant_before_localization": "x",
+    "boundary_resultant_modulo_laurent_unit": "1",
+    "degree_after_selected_eliminant_swap": 0,
+    "degree_before_swap": 1,
+    "inversion_residual": "0",
+    "translation_residual": "0",
+    "unit_shift_power": 5,
+    "unit_shifted_bounds": [
+      5,
+      11
+    ],
+    "width_preserved_under_unit_shift": true
+  },
+  "decision": {
+    "conditional_typed_candidate": "Laurent resultant exponent width, conditional on proving the missing original boundary order and swap compatibility.",
+    "direct_absolute_degree_transport": false,
+    "reason": "The GGHV reduction enters a Laurent category in which x is a unit, then swaps and inverts boundary divisors. Absolute resultant degree requires boundary valuation data that the 51 reduced coefficients do not carry by themselves."
+  },
+  "experiment": "EXP-097",
+  "gghv_final_inversion": {
+    "c": 4,
+    "original_resultant_degree": 21,
+    "possible_transported_intervals": [
+      {
+        "input_interval": [
+          0,
+          21
+        ],
+        "input_order": 0,
+        "output_interval": [
+          1515,
+          1536
+        ],
+        "width": 21
+      },
+      {
+        "input_interval": [
+          1,
+          21
+        ],
+        "input_order": 1,
+        "output_interval": [
+          1515,
+          1535
+        ],
+        "width": 20
+      },
+      {
+        "input_interval": [
+          2,
+          21
+        ],
+        "input_order": 2,
+        "output_interval": [
+          1515,
+          1534
+        ],
+        "width": 19
+      },
+      {
+        "input_interval": [
+          3,
+          21
+        ],
+        "input_order": 3,
+        "output_interval": [
+          1515,
+          1533
+        ],
+        "width": 18
+      },
+      {
+        "input_interval": [
+          4,
+          21
+        ],
+        "input_order": 4,
+        "output_interval": [
+          1515,
+          1532
+        ],
+        "width": 17
+      },
+      {
+        "input_interval": [
+          5,
+          21
+        ],
+        "input_order": 5,
+        "output_interval": [
+          1515,
+          1531
+        ],
+        "width": 16
+      },
+      {
+        "input_interval": [
+          6,
+          21
+        ],
+        "input_order": 6,
+        "output_interval": [
+          1515,
+          1530
+        ],
+        "width": 15
+      },
+      {
+        "input_interval": [
+          7,
+          21
+        ],
+        "input_order": 7,
+        "output_interval": [
+          1515,
+          1529
+        ],
+        "width": 14
+      },
+      {
+        "input_interval": [
+          8,
+          21
+        ],
+        "input_order": 8,
+        "output_interval": [
+          1515,
+          1528
+        ],
+        "width": 13
+      },
+      {
+        "input_interval": [
+          9,
+          21
+        ],
+        "input_order": 9,
+        "output_interval": [
+          1515,
+          1527
+        ],
+        "width": 12
+      },
+      {
+        "input_interval": [
+          10,
+          21
+        ],
+        "input_order": 10,
+        "output_interval": [
+          1515,
+          1526
+        ],
+        "width": 11
+      },
+      {
+        "input_interval": [
+          11,
+          21
+        ],
+        "input_order": 11,
+        "output_interval": [
+          1515,
+          1525
+        ],
+        "width": 10
+      },
+      {
+        "input_interval": [
+          12,
+          21
+        ],
+        "input_order": 12,
+        "output_interval": [
+          1515,
+          1524
+        ],
+        "width": 9
+      },
+      {
+        "input_interval": [
+          13,
+          21
+        ],
+        "input_order": 13,
+        "output_interval": [
+          1515,
+          1523
+        ],
+        "width": 8
+      },
+      {
+        "input_interval": [
+          14,
+          21
+        ],
+        "input_order": 14,
+        "output_interval": [
+          1515,
+          1522
+        ],
+        "width": 7
+      },
+      {
+        "input_interval": [
+          15,
+          21
+        ],
+        "input_order": 15,
+        "output_interval": [
+          1515,
+          1521
+        ],
+        "width": 6
+      },
+      {
+        "input_interval": [
+          16,
+          21
+        ],
+        "input_order": 16,
+        "output_interval": [
+          1515,
+          1520
+        ],
+        "width": 5
+      },
+      {
+        "input_interval": [
+          17,
+          21
+        ],
+        "input_order": 17,
+        "output_interval": [
+          1515,
+          1519
+        ],
+        "width": 4
+      },
+      {
+        "input_interval": [
+          18,
+          21
+        ],
+        "input_order": 18,
+        "output_interval": [
+          1515,
+          1518
+        ],
+        "width": 3
+      },
+      {
+        "input_interval": [
+          19,
+          21
+        ],
+        "input_order": 19,
+        "output_interval": [
+          1515,
+          1517
+        ],
+        "width": 2
+      },
+      {
+        "input_interval": [
+          20,
+          21
+        ],
+        "input_order": 20,
+        "output_interval": [
+          1515,
+          1516
+        ],
+        "width": 1
+      },
+      {
+        "input_interval": [
+          21,
+          21
+        ],
+        "input_order": 21,
+        "output_interval": [
+          1515,
+          1515
+        ],
+        "width": 0
+      }
+    ],
+    "reflection_constant_cpq": 1536,
+    "unconditional_width_range": [
+      0,
+      21
+    ],
+    "unknown_original_x_order": [
+      0,
+      21
+    ],
+    "width_equals_21_only_if_original_x_order_is_zero": true,
+    "y_degrees": [
+      16,
+      24
+    ]
+  },
+  "next_route": "Do not build a degree-21 resultant equation in the 51 reduced coefficients. Either reconstruct a boundary-divisor ledger for the full GGHV map, or proceed to the declared small certificate-module/chart-cover experiment.",
+  "non_claims": [
+    "The open (72,108) chain is not excluded.",
+    "No seven-point inner vertex is proved realizable.",
+    "No counterexample is constructed.",
+    "The planar degree floor is not raised."
+  ]
+}

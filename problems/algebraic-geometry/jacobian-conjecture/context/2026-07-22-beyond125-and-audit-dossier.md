@@ -24,6 +24,19 @@ Flags: [VERIFIED] = read directly in the named source at the given lines today.
 [UNVERIFIED] = not confirmable from the primary text. DERIVATION NEEDED = an input
 our sweep pipeline must produce because the papers do not print it.
 
+## 2026-07-25 correction from EXP-094
+
+The GGV2 closing remark does not exclude C10, C11, C19, or C20. The earlier
+candidate reading grouped distinct source objects by a shared \(A_0\):
+
+- C10/C11 have \(A'_0=(1,0)\), while the discarded Heitmann families at
+  \(A_0=(7,21)\) require \(A'_0=(2,1)\).
+- GGHV17 identifies \(B_1=A_0\), so C19/C20 have \(B_1=(6,15)\). The separate
+  GGV2 exclusion requires \(B_1=(6,18+6k)\).
+
+The four configurations remain unresolved by that remark. See EXP-094 for the
+exact classifier, controls, and scope.
+
 ====================================================================
 # PART 1. The complete configuration list, 125 <= max(deg P, deg Q) <= 150
 ====================================================================

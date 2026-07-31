@@ -1070,3 +1070,408 @@
   an explicit GGHV bracket-one to bracket-\(x^2\) applicability bridge; then test
   the exact left-syzygy pairing-ideal and finite-chart-cover formulation on small
   controls.
+
+## 2026-07-25 - EXP-094 corrects the four frontier candidate labels
+
+- The experiment was declared and committed before its exact sub-second run.
+  It audits the source identities behind C10, C11, C19, and C20 rather than
+  grouping them by a shared \(A_0\).
+- C10/C11 have \(A'_0=(1,0)\), while the discarded Heitmann families at
+  \(A_0=(7,21)\) require \(A'_0=(2,1)\).
+- GGHV17 identifies \(B_1=A_0\). Therefore C19/C20 have
+  \(B_1=(6,15)\), while the separate GGV exclusion requires
+  \(B_1=(6,18+6k)\).
+- All four rows fail the cited predicates. Positive controls for the Heitmann
+  endpoint, the GGV \(B_1=(6,18)\) case, and the known C13 pair passed; the
+  \(B_1=(6,30)\) divisibility negative control also passed.
+- Result: GGV2 Remark 2.32 excludes none of C10, C11, C19, or C20. The
+  configurations remain unresolved, not validated. The immediate
+  \((72,108)\) campaign advances to the Newton-resolution applicability bridge.
+- Record-integrity correction: EXP-085 has no `hypothesis.md`; no retroactive
+  hypothesis was created. EXP-094 owns the declared correction.
+
+## 2026-07-25 - EXP-095 identifies the open case in the Newton-resolution list
+
+- The experiment was declared and committed before its exact sub-second run.
+  It gated applicability by ambient ring and bracket identity before comparing
+  any Newton data.
+- The Makar-Limanov--Trakhtenberg hypotheses fail on the final GGHV objects in
+  \(K[x,x^{-1},y]\) with \([P,Q]=x^2\). They apply to the hypothetical
+  original polynomial Keller pair with bracket \(1\).
+- For its degree-72 component, the GGHV chain gives
+  \(v_0=2A_0=(16,56)\), \(v'_1=2A'_0=(2,0)\), and
+  \(v_1=2A_1=(11/2,14)\). All three equal the first printed \(D=72\)
+  candidate.
+- Endpoint and final-corner negative controls distinguished the first and
+  second printed branches. The result artifact uses exact rational arithmetic.
+- Result: the published Newton-resolution classification independently
+  reproduces and retains the open GGHV chain. It does not exclude
+  \((72,108)\) or raise the floor. Next is the Lee--Li plus GGHV
+  approximate-root/intersection applicability gate.
+
+## 2026-07-25 - EXP-096 fixes the open chain's intersection number
+
+- Full primary-source reading replaced the previous abstract-only Lee--Li
+  record and corrected both source author lists.
+- Exact enumeration of the Lee--Li narrow region for
+  \((a,b,m,n)=(2,3,16,56)\) leaves seven possible nonzero inner vertices:
+  \((1,3),(2,7),(3,10),(4,14),(5,17),(6,21),(7,24)\).
+- The open chain's four major approximate-root classes each contain 21 roots
+  and contribute \(1/4\). Hence
+  \(\deg_x\operatorname{Res}_y(P,Q)=21\).
+- The degree-108 component partitions into 84 major and 24 minor roots. The
+  published F1 smallest-member value \(I=9\) passed as an independent control.
+- The minor-root source formula is only an inequality, so the hoped-for family
+  exclusion is unavailable. The exact intersection and vertex restrictions
+  remain as reconstruction gates.
+
+## 2026-07-26 - EXP-097 closes direct resultant transport
+
+- The exact resultant laws were tested before touching the 51-parameter
+  system. Common Laurent translations preserve the resultant, while
+  \(x\mapsto x^{-1},y\mapsto x^4y\) reflects its exponent interval by
+  \(s\mapsto1536-s\).
+- Localization makes \(x\) a unit and forgets an \(x=0\) resultant divisor
+  unless a boundary ledger is retained. The initial swap also changes the
+  selected coordinate eliminant.
+- Consequently the original absolute degree 21 is not a typed equation on the
+  reduced coefficients. Laurent exponent width is only a conditional
+  replacement: it equals 21 if the missing original \(x\)-order is zero.
+- The direct generic-resultant route is closed. A future full
+  boundary-divisor reconstruction remains valid but is higher cost; the small
+  certificate-module/chart-cover analog becomes immediate.
+
+## 2026-07-26 - EXP-098 corrects the certificate-cover target
+
+- A finite principal-open cover of localized global syzygies collapses, after
+  clearing denominators, to one global polynomial covector.
+- An exact control over \(\mathbb{Q}[x,y]\) is inconsistent in every fiber
+  while its global pairing ideal is only \((x)\). The missing certificate
+  appears after specialization to \(V(x)\) and does not lift globally.
+- The live route is therefore recursive constructible rank stratification:
+  certify the generic open, specialize to the residual closed locus, recompute
+  syzygies, and continue.
+
+## 2026-07-26 - EXP-099/100 close common-flag shortcuts
+
+- The EXP-059 augmented minor reconstructs exactly, but its 26 normalized
+  perturbations do not preserve a common strict flag.
+- The first self-loop is the forced \((1,0)\) coefficient with trace \(16\).
+  Its matrix is not a projector; EXP-101 later proves its characteristic
+  polynomial.
+- After constant and forced-vertex normalization, the first genuine interior
+  cycle is \((0,1),(1,7)\), with product trace \(13/8\). Mixed determinant
+  constancy remains false.
+
+## 2026-07-26 - EXP-101 constructs the first actual GGHV chart transition
+
+- The forced-axis characteristic polynomial is
+  \(\lambda^{109}(\lambda-1)^{16}\), so its determinant factor is exactly
+  \((1+u)^{16}\).
+- The selected two-parameter minor factors as
+  \[
+  (st-8)^6\left(2^{15}s^9-(st-8)^7\right)/2^{39}.
+  \]
+- At \((-8,-1)\), the first minor vanishes but the exact ranks are
+  \(124\) and \(125\); an alternative RHS-containing minor is nonzero.
+- The first two minors remove \(st=8\) and leave the rational residual curve
+  \(2^{15}s^9=(st-8)^7\), parametrized by
+  \(s=8u^7,\ t=(8u^9+1)/u^7\).
+
+## 2026-07-26 - EXP-102 proves a third point-chart and redirects the backend
+
+- At \(u=1\), or \((s,t)=(8,9)\), both EXP-101 minors vanish, but modular lower
+  bounds plus structural upper bounds prove exact ranks \(124/125\).
+- A third RHS-containing augmented minor is explicitly nonzero there.
+- Its two direction matrices have combined modular rank \(121\). Dense
+  bivariate pullback hit the declared five-minute kill criterion and is
+  inconclusive globally.
+- Next compute the 125-minor determinantal divisor of the cleared polynomial
+  matrix over \(\mathbb{Q}[u]\), with modular Smith data and rational
+  reconstruction.
+- Paper B v0.17 transcribes EXP-098 through EXP-102, passed two-pass PDF and
+  visual QA, and is published at version DOI
+  `10.5281/zenodo.21593235`.
+
+## 2026-07-26 - EXP-103--106 close the residual curve and expose a global grading
+
+- EXP-103 replaces the failed dense pullback with NTT reconstruction of full
+  maximal-minor polynomials. Its endpoint gate correctly rejects an
+  81-degree tropical cancellation instead of promoting a modular heuristic.
+- EXP-104 computes 100 exact 125-by-125 determinants and proves the first
+  residual minor has exact support \([1628,1646]\).
+- EXP-105 finds the connected \(\mathbb Z/9\) row/column grading and the
+  compact exact pair
+  \[
+  F(z)=21-96z-1024z^2,\qquad G(z)=(8z+1)^{14}.
+  \]
+  The persisted integer Bezout identity has constant \(17^{14}\). The complete
+  declared two-coefficient slice is excluded exactly.
+- EXP-106 classifies every remaining lower direction. All 23 nonconstant
+  directions are compatible, with \(w_{p,q}=q-p+1\bmod9\); \((0,0)\) is
+  bracket-zero. EXP-107 promotes \((0,7)\) to the first graded
+  three-parameter lift.
+- Paper B v0.18 passed its two-pass 13-page PDF build and visual QA and is
+  published at version DOI `10.5281/zenodo.21598065`.
+
+## 2026-07-26 - EXP-107 isolates a finite three-parameter residual
+
+- Two 125-by-125 minors were reconstructed on 16-by-64 NTT grids over
+  \(\mathbb F_{998244353}\), with direct off-grid determinant controls and
+  exact recovery of the EXP-105 \(y=0\) boundary.
+- The endpoint-safe chart is independent of the promoted coordinate and
+  remains \(G(z)=(8z+1)^{14}\).
+- The first chart restricts at \(z=-1/8\) to a squarefree degree-12 polynomial
+  in \(y\). The two-chart ideal is zero-dimensional but not the unit ideal.
+- EXP-108 must select a third minor on this explicit finite fiber, then repeat
+  and lift before any characteristic-zero claim.
+
+## 2026-07-26 - EXP-108 closes the first three-coefficient slice exactly
+
+- The first deterministic third chart has a fiber determinant \(H(y)\)
+  coprime to EXP-107's squarefree degree-12 \(Q(y)\) modulo the pilot prime.
+- Connected mod-9 weights remove the ninth-root extension at \(z=-1/8\).
+  Exact interpolation under structural degree bounds uses 15 values for \(Q\)
+  and 14 for \(H\), with an additional exact check for each.
+- Over \(\mathbb Q\), \(Q\) is irreducible and \(H\) factors in degrees
+  \(1,2,4,6\). A persisted integer Bezout identity proves gcd one.
+- Together with \(G(z)=(8z+1)^{14}\), three maximal minors exclude the exact
+  declared \((0,1)/(1,7)/(0,7)\) coefficient slice. EXP-109 promotes
+  \((0,6)\) with invariant coordinate
+  \(x=\varepsilon_{(0,6)}/u^2\).
+- Paper B v0.19 passed its two-pass 14-page PDF build and full visual QA.
+  PR #90 merged at `2481d3a`; the immutable Zenodo version DOI is
+  `10.5281/zenodo.21610744`.
+
+## 2026-07-29 - EXP-111 corrects the full-family rank target
+
+- The constant \(Q\)-column is identically zero because \([P,1]=0\).
+  Consequently rank \(M\leq124\) for every parameter value, and EXP-110's
+  proposed all-\(125\)-minors-of-\(M\) computation is vacuous.
+- EXP-059's exact nonzero pinned augmented determinant proves generic rank
+  \(124/125\) for \(M/[M\mid b]\), hence inconsistency on a nonempty
+  Zariski-open subset. It does not prove rank constancy or inconsistency on
+  the exceptional closed locus.
+- EXP-110's forced-only row list has 289 rows. The complete union inside the
+  same EXP-071 pool has 302 rows, with 13 omitted equations contributed by 14
+  lower directions.
+- Four deterministic points over two independent primes have the \(124/125\)
+  profile in both row systems. The exact generic claim uses the structural
+  upper bound and EXP-059, not the random samples.
+- The active plan now targets the common zero locus of augmented maximal
+  minors. EXP-112 will search the complete row system for a common acyclic
+  basis or isolate the smallest strongly connected parameter core before
+  exact elimination.
+- The fresh source sweep found no current primary result closing
+  \((72,108)\). No manuscript or Zenodo update is triggered by this correction
+  because EXP-110 was not in the published v0.19 paper.
+
+## 2026-07-29 - EXP-112 through EXP-114 expose the exact 36-core and its weighted residual geometry
+
+- EXP-112 normalizes all 51 exact direction matrices on the complete
+  302-row system. The selected determinant has one 36-column cyclic block
+  depending on 24 parameters, three singleton
+  \(1+\varepsilon_{(1,0)}\) factors, and 86 acyclic singleton blocks. The
+  remaining 27 parameters do not affect this selected minor.
+- The 36-core forced-axis characteristic polynomial is
+  \(\lambda^{23}(\lambda-1)^{13}\), independently recovering the total
+  forced exponent 16 after the three singleton factors.
+- EXP-113 refutes a second SCC split: the core stays strongly connected after
+  removing \((1,0)\). Full connectivity is generated by either
+  \(T_A=\{(0,1),(0,7),(2,9)\}\) or
+  \(T_B=\{(0,1),(0,5),(1,0)\}\).
+- EXP-114 proves graph support overestimates determinant support. On \(T_A\),
+  direction \((2,9)\) cancels identically and the degree-21 determinant
+  factors in degrees \(3,12,6\), with 24 monomials total.
+- On \(T_B\), writing \(d=1+\varepsilon_{(1,0)}\), the determinant factors
+  into weighted homogeneous polynomials of degrees 54 and 63 for weights
+  \((7,3,9)\). The exact factors have 18 and 39 monomials.
+- The P0 route becomes a weighted residual-chart cover: normalize \(d\ne0\),
+  treat \(d=0\) as the boundary, and select alternative complete-row minors
+  on each primitive factor. JC(2), \((72,108)\), and the floor remain open.
+- Paper B v0.20 transcribes the corrected rank target and the exact
+  36-core/weighted-factor reduction. Its two-pass 15-page PDF and visual QA
+  passed; the immutable Zenodo version DOI is
+  `10.5281/zenodo.21694807`. PR #92 merged the round into `develop` at
+  `9e039e1`.
+
+## 2026-07-29 - EXP-115 isolates the structural boundary kernel
+
+- Weighted normalization splits the \(d\ne0\) selected residual into three
+  irreducible components \(G,L,Q\) over \(\mathbb Q[A,B]\).
+- At \(p=1009\), persisted alternative row bases give nonzero determinants on
+  isolated points of all three components while the selected determinant
+  vanishes. This proves generic component non-containment. The \(L\) transition
+  also lifts to the exact rational point \((A,B,d)=(0,-4/5,1)\).
+- The predicted boundary rank-125 charts are refuted. On \(d=0\),
+  \(P=a y+b y^5+y^8(1-xy)^8\) enters the retained \(Q\)-space and supplies
+  the exact polynomial kernel \([P,P]=0\).
+- Exact representatives of \(a=0\), \(b=0\), and
+  \(30720000a^3+48828125b^7=0\) have rank profile \(123/124\). EXP-116 must
+  quotient the \(P\)-kernel and cover the boundary with 124-column minors.
+  JC(2), \((72,108)\), and the floor remain open.
+
+## 2026-07-29 - EXP-116 validates the quotient and finds a deeper origin stratum
+
+- Removing the fixed \(y^8\) coordinate of the \(P\)-kernel gives the complete
+  302-by-124 quotient augmented system on \(d=0\).
+- The proposed origin anchor is refuted: \((a,b)=(0,0)\) has exact profile
+  \(112/113\). The anchor \((0,1)\) and all three nonzero boundary controls
+  have exact profile \(123/124\); the inconsistency gap survives.
+- Exact normalization at \((0,1)\) has SCC sizes
+  \(51,11,10,9,8,7,1,\ldots\). The largest block exceeds EXP-116's declared
+  determinant gate 36, so the corrected final run stops before determinant
+  computation and persists the graph.
+- The first implementation checked the gate too late and computed the
+  51-block before failing. That output was discarded. EXP-117 must declare
+  the 51-block determinant explicitly.
+
+## 2026-07-29 - EXP-117 reduces the quotient boundary to a finite invariant target
+
+- The declared 51-block determinant completes in 210.5 seconds inside its
+  300-second budget. The full run is 212.2 seconds.
+- The selected quotient determinant factors exactly as a nonzero scalar times
+  \(b^{32}\), a five-term weighted factor \(F_{28}\), and five binomials
+  \(c a^3+78125b^7\).
+- A deterministic compacting pass converts shifted factors to original
+  coordinates and verifies the scalar, factor product, \(D(0,b)=b^{95}\),
+  and all five direct exact determinant controls.
+- On \(b\ne0\), \(z=a^3/b^7\) reduces the residual to a squarefree degree-nine
+  polynomial: five rational roots and four roots of one quartic. EXP-118 must
+  cover those nine invariant points and \(b=0\) with alternative quotient
+  charts. JC(2), \((72,108)\), and the floor remain open.
+- Paper B v0.21 transcribes EXP-115 through EXP-117. Its two-pass 16-page PDF
+  and visual QA passed; the immutable Zenodo version DOI is
+  `10.5281/zenodo.21695367`. PR #93 merged the round into `develop` at
+  `b57a9b7`.
+
+## 2026-07-29 - EXP-118 closes the complete quotient boundary
+
+- The complete 302-by-124 quotient matrix has exact \((7,3)\) covariance.
+- A deterministic alternative 124-row minor is exactly \(C a^{107}\), with
+  persisted nonzero integer \(C\). It is nonzero at all nine EXP-117
+  invariant residual points, including the quartic fibre.
+- EXP-117's selected chart gives \(b^{95}\) on \(a=0\), and the origin
+  retains the exact \(112/113\) quotient rank gap.
+- These charts cover the complete \(d=0\) quotient plane. This does not close
+  the \(d\ne0\) chart or any larger parameter family.
+
+## 2026-07-29 - EXP-119/120 close \(G\) and isolate finite \(L/Q\) residuals
+
+- EXP-119 verifies exact \((7,3,9)\) covariance for the 302-by-125 system.
+  Its first characteristic-zero alternative determinant has 114 monomials
+  on \(d=1\), factors through \(X=A^3\), and intersects every selected
+  component \(G,L,Q\) properly in a finite scheme.
+- EXP-120's independent third determinant has 21 monomials and factors,
+  up to a nonzero scalar, as \(X^{30}LQR\).
+- Exact factorwise Groebner certificates make the full three-chart ideal a
+  unit on \(G\), closing that curve component.
+- The \(L\) and \(Q\) ideals are nonunit but zero-dimensional. The \(L\)
+  eliminant has degree 108 and squarefree degree 73. The \(Q\) FGLM
+  conversion stopped at its declared 180-second gate; no uncomputed
+  eliminant or point count is claimed.
+- Strategy redirects to row bases selected directly on the finite \(L/Q\)
+  residuals. The full \(T_B\) restriction, \((72,108)\), the degree floor,
+  and JC(2) remain open.
+- Paper B v0.22 passed its two-pass 16-page build and complete visual QA.
+  PR #95 merged the round into `develop` at `68ec8d3`; the immutable Zenodo
+  version DOI is `10.5281/zenodo.21696190`.
+
+## 2026-07-30 - EXP-121 closes the complete three-parameter \(T_B\) restriction
+
+- Modular residual selection finds coefficient/augmented rank profile
+  \(124/125\) on 13 \(L\)-points at \(p=1013\) and 18 \(Q\)-points at
+  \(p=1033\). Deterministic extraction returns the same 125-row basis on
+  both components.
+- The basis needs 68 row replacements, refuting the predicted bound ten.
+  Its exact rational normalization has largest cyclic block 26. The
+  determinant has total degree 108 and 23 monomials and descends as
+  \(A^{87}R(A^3,B)\), with five direct determinant controls.
+- The exact \(L\) ideal is the unit ideal. The raw \(Q\) Groebner route
+  exceeded its declared 240-second gate and was retained as a stopped
+  attempt.
+- The redirected \(Q\) certificate splits the first chart's \(B^{36}\)
+  factor. On \(B=0\), \(Q(X,0)\) and \(X^{32}\) have gcd one. On the quotient
+  branch, exact reduction modulo the quadratic \(Q\) gives degree-144 and
+  degree-176 compatibility polynomials with gcd one. Thus the \(Q\) ideal is
+  also the unit ideal.
+- EXP-118 covers \(d=0\), EXP-120 covers \(G\) on \(d\ne0\), and EXP-121
+  covers the remaining \(L/Q\) strata. This closes the complete
+  three-parameter \(T_B\) restriction, not the 24-parameter core, the full
+  51-parameter family, \((72,108)\), the degree floor, or \(JC(2)\).
+- The next scalable gate is a core-lift audit of the shared EXP-121 basis:
+  classify all restored core directions as inert, acyclic, or active in the
+  size-26 block before declaring any higher-dimensional constructible
+  stratum.
+- Paper B v0.23 transcribes the exact closure and the revised forward
+  programme. Its two-pass 17-page PDF build has no layout warnings, and all
+  17 rendered pages pass visual inspection. PR #97 merged at `d55798f`;
+  the immutable Zenodo version DOI is `10.5281/zenodo.21697928`.
+
+## 2026-07-30 - EXP-122/123 produce the first higher-dimensional core reduction
+
+- EXP-122 restores all 24 EXP-112 cyclic-core directions on the EXP-121
+  shared basis. No restored direction is free on its anchor line. Thirteen
+  directions act inside the size-26 block, 16 enlarge the fixed-\(d\) SCC,
+  and every restored direction has nonzero first or pairwise mixed
+  determinant participation.
+- The eight directions \((2,j)\), \(2\leq j\leq9\), enlarge the SCC while
+  retaining linear anchor-line determinants. Direction \((2,9)\) has the
+  smallest support, rank, and enlarged SCC.
+- EXP-123 computes the complete \((2,9)\) symbolic lift on \(d=1\):
+  \[
+  \Delta=A^{87}\bigl(R(A^3,B)+A^2CS(A^3,B)\bigr),
+  \quad \gcd(R,S)=1.
+  \]
+  Thus, on \(A\ne0\), the selected exceptional set is the rational graph
+  \(Y=-R/S\) plus zero-dimensional \(V(R,S)\).
+- This is the first genuine higher-dimensional constructible reduction from
+  the 24-parameter core. It does not cover the four-parameter restriction,
+  \((72,108)\), the degree floor, or \(JC(2)\). EXP-124 will select
+  alternative bases directly on the graph and treat \(A=0\) separately.
+- Paper B v0.24 transcribes EXP-122/123. Its two-pass 18-page build has no
+  layout warnings, all rendered pages pass visual QA, and PR #99 merged at
+  `646911b`. The immutable Zenodo DOI is `10.5281/zenodo.21698923`.
+
+## 2026-07-30 - EXP-124 covers a dense open of the rational graph
+
+- Forty deterministic graph points over 1009 and 1013 all have
+  coefficient/augmented rank profile \(124/125\). The same alternative
+  125-row basis appears over both primes and differs from the shared basis by
+  one row.
+- Its exact determinant is
+  \[
+  \Delta_{\rm alt}=A^{90}N(A^3,B),
+  \]
+  independent of \(C\). The 21-term, degree-16 polynomial \(N\) factors into
+  three exact plane factors of total degrees 3, 6, and 7, and is coprime to
+  both EXP-123 polynomials \(R,S\).
+- This covers the dense graph open \(N\ne0\). The three factor curves,
+  finite \(V(R,S)\), and \(A=0\) are the exact residual strata. It does not
+  close the four-parameter restriction, \((72,108)\), the degree floor, or
+  \(JC(2)\).
+- EXP-125 will recurse on the three factor curves, beginning with the
+  linear-in-\(X\) degree-3 factor.
+
+## 2026-07-30 - EXP-125 reduces the \(F_3\) curve to finitely many points
+
+- The original 1009/1013 prime prescription was refuted by factor
+  arithmetic. After two explicitly persisted insufficient redirects, a
+  cube-locus audit selected 739 and 811.
+- At both accepted primes, four samples on each of \(F_3,F_6,F_7\) have
+  rank profile \(124/125\), and every factor supplies a new cross-prime row
+  basis.
+- Exact reconstruction on \(F_3=(5B+4)^3+16X=0\) gives, up to scalar,
+  \[
+  U_3=(5B+4)Q_6^2Q_9Q_{15}.
+  \]
+  The linear factor forces \(A=0\), while \(Q_6\) divides both restricted
+  \(R\) and \(S\). On \(AS\ne0\), only \(Q_9Q_{15}=0\) remains: 24
+  normalized \(B\)-values, or 72 lifted algebraic points.
+- The positive-dimensional graph residual is now \(F_6\cup F_7\).
+  Neither the full four-parameter restriction nor \((72,108)\), the degree
+  floor, or \(JC(2)\) is closed.
+- Paper B v0.25 transcribes EXP-124/125. Its two-pass 19-page build has no
+  layout warnings, all rendered pages pass visual QA, and PR #101 merged at
+  `f28c5a2`. The immutable Zenodo DOI is
+  `10.5281/zenodo.21711580`.

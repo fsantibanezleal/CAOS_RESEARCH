@@ -3,6 +3,39 @@
 Scope: review every active proposal around the planar $(72,108)$ problem, determine what each
 route can prove, correct stale inferences, and rank the next work by information per cost.
 
+## Amendment after EXP-094
+
+The exact source-identity audit resolved the C10/C11/C19/C20 question negatively:
+GGV2 Remark 2.32 excludes none of them. C10/C11 have \(A'_0=(1,0)\), not
+\((2,1)\); C19/C20 have \(B_1=A_0=(6,15)\), not \((6,18+6k)\).
+The earlier strong-candidate classification conflated distinct source objects.
+The cheap lookup for these four rows is closed. For the immediate \((72,108)\)
+target, the Newton-resolution applicability bridge now ranks ahead of further
+frontier enumeration.
+
+## Amendment after EXP-095
+
+The Newton-resolution bridge is decided. Makar-Limanov--Trakhtenberg cannot be
+applied directly to the final Laurent pair with bracket \(x^2\), but it applies
+to the original degree-72 polynomial Keller component. That component's exact
+signature
+\((D,v_0,v'_1,v_1)=(72,(16,56),(2,0),(11/2,14))\)
+is the paper's first retained \(D=72\) branch. The published candidate
+classification therefore reproduces the GGHV open case and gives no
+exclusion. The next source gate is Lee--Li plus the GGHV
+approximate-root/intersection machinery.
+
+## Amendment after EXP-096
+
+The Lee--Li and approximate-root gate is now instantiated. The original
+degree-72 component has only seven possible nonzero inner vertices:
+\((1,3),(2,7),(3,10),(4,14),(5,17),(6,21),(7,24)\).
+The original pair also has exact intersection invariant
+\(\deg_x\operatorname{Res}_y(P,Q)=21\), with 84 major and 24 minor roots.
+These are independent reconstruction filters. The minor-root formula supplies
+only an inequality, so it cannot deliver the family exclusions for which the
+source route was originally proposed.
+
 ## Executive decision
 
 Redirect the immediate campaign. EXP-075's dormant hit was recovered and reproduced during this
@@ -108,10 +141,10 @@ Consequences recorded before the decisive EXP-075 recovery:
 
 | Route | Decision | What it can prove | Next gate |
 |---|---|---|---|
-| EXP-084/085 frontier source reconciliation | PURSUE NOW | exact classification progress independent of the certificate tower | obtain and map the remaining primary-source statements |
-| Makar-Limanov/Trakhtenberg Newton resolution | PURSUE NOW | potentially eliminates or sharply restricts the forced shape if the conditions transport | prove the $[f,g]=1$ to $[P,Q]=x^2$ applicability bridge |
-| Lee-Li inner-polynomial and inner-vertex restrictions | PURSUE NOW | cheap support restrictions or an incompatibility | instantiate every hypothesis on the GGHV transformation |
-| GGHV approximate roots and intersection numbers | PURSUE NOW | independent arithmetic constraints and audit of the current polygon assembly | source-complete derivation on the $(8,28),(3,2)$ case |
+| EXP-084/085/094 frontier source reconciliation | PARTIAL, FOUR CANDIDATES RESOLVED NEGATIVELY | exact classification progress independent of the certificate tower | derive the 16 unprinted \(A'_0\) values only as a separate frontier task |
+| Makar-Limanov/Trakhtenberg Newton resolution | DONE AT PUBLISHED-CANDIDATE SCOPE | applies to the original degree-72 component and independently reproduces the open chain | pursue only a new restriction beyond the retained first \(D=72\) branch |
+| Lee-Li inner-polynomial and inner-vertex restrictions | DONE AT ORIGINAL-PAIR SCOPE | seven possible nonzero inner vertices for the degree-72 component | transport to reduced coefficients only with an explicit transformation |
+| GGHV approximate roots and intersection numbers | DONE AT MAJOR-ROOT SCOPE | exact intersection number 21 and 84+24 root partition | minor-root exclusion retired unless its inequality is strengthened |
 | Certificate module and finite chart cover | PURSUE, SMALL ANALOG FIRST | a rigorous all-parameter inconsistency proof using one or several localized certificates | define the module, pairing ideal, specialization law, and toy control |
 | EXP-093 cubic solve | CANCEL | target ruled out by EXP-075 | preserve the size audit; no implementation |
 | Jelonek 2026 component theorem | HOLD AS FRAME | organizes bounded-degree Keller maps into automorphism or generic-counterexample components | identify a component-level object before claiming relevance to the reduced pair |
@@ -138,10 +171,19 @@ The more general target is:
 
 1. compute the left-syzygy module of $M$ or a presentation adapted to the grading;
 2. form the ideal of pairings $I=\{c^Tb:c^TM=0\}$;
-3. test whether localized pairing ideals cover parameter space;
-4. certify a finite principal-open cover $D(s_i)$ with
-   $1\in\sqrt{(s_1,\ldots,s_k)}$ and a valid localized certificate on each chart;
-5. treat specialization carefully, because kernels and syzygies can jump on closed strata.
+3. compute the generic pairing opens, then specialize to their residual closed
+   locus and recompute the kernel;
+4. iterate a finite constructible stratification until the residual locus is
+   empty or a zero-pairing stratum remains;
+5. treat specialization as essential, because kernels and syzygies can jump on
+   closed strata.
+
+EXP-098 correction, 2026-07-26: a principal-open cover by localized syzygies
+that all lift from the parameter ring collapses, after clearing denominators,
+to one global polynomial covector. It is not strictly more general. The
+strictly stronger mechanism is a constructible cover containing closed
+specialization strata with new, non-lifting syzygies. EXP-101 applies this
+corrected mechanism to the first actual GGHV two-parameter minor.
 
 This subsumes the useful part of the determinant/minor route and the axis-chart experiments.
 It also explains why one finite polynomial covector need not be necessary for uniform
@@ -149,15 +191,19 @@ inconsistency.
 
 ## Source-frontier route
 
-EXP-083/084/085 reduced the [125,150] work to precise source gaps:
+EXP-083/084/085 and the EXP-094 correction give:
 
 - C13 is excluded in the cited GGV text;
-- C10/C11 need the exact Heitmann Theorem 2.25 family match;
-- C19/C20 need the published $B_1$ table match;
+- C10/C11 do not match the discarded Heitmann families because their
+  \(A'_0=(1,0)\), not \((2,1)\);
+- C19/C20 do not match the GGV \(B_0,B_1\) cases because
+  \(B_1=A_0=(6,15)\), not \((6,18+6k)\);
 - 16 configurations need their unprinted $A'_0$ forcing derived;
 - C01/C04 remain open unless an exact source or derivation says otherwise.
 
-No large computation is justified before this table is source-complete.
+The 16-value derivation remains useful for the [125,150] frontier, but it is not
+a prerequisite for attacking the separate \((72,108)\) target. No large frontier
+computation is justified without those values.
 
 ## Modern source leads
 
@@ -169,15 +215,13 @@ degree list at total degree at most 100 is
 $$
 \{42,48,50,56,60,63,64,66,70,72,75,80,84,88,90,96,98,99,100\}.
 $$
-They also give explicit degree-72 leading shapes. The forced reduced polynomial
-$P_T=y^8(xy-1)^8+x$ has total degree 24 and leading edge a high power of a primitive form,
-which makes the comparison unusually sharp. No contradiction is claimed: their assumptions
-concern a reduced component of an actual Keller counterexample, whereas $P_T$ belongs to a
-pair with bracket $x^2$.
-
-The first experiment is therefore an applicability audit of the GGHV changes of variables,
-including denominators, Newton polygon transformation, and what happens to leading-form
-power data.
+They also give explicit degree-72 leading shapes. EXP-095 confirmed that their
+hypotheses apply to the original polynomial component, not directly to the
+final \(P_T\)-based Laurent pair. The original component has
+\(v_0=(16,56)\), \(v'_1=(2,0)\), and \(v_1=(11/2,14)\), exactly their first
+retained \(D=72\) branch. The comparison is therefore a consistency check, not
+a contradiction. Further Newton work must derive an additional integrality or
+polynomiality restriction on that retained branch.
 
 ### Inner vertices and approximate roots
 
@@ -198,8 +242,10 @@ $[P,Q]=x^2$ family.
 ## Recommended experiment sequence
 
 1. Source audit round: finish EXP-084/085 and the missing table/family identifications.
-2. Declare a Newton-resolution applicability experiment with a pass/fail transformation table.
-3. Declare a combined Lee-Li/approximate-root applicability experiment.
+2. EXP-095 completed the Newton-resolution applicability experiment; the open
+   case is the first retained \(D=72\) branch.
+3. EXP-096 completed the combined Lee--Li/approximate-root experiment and
+   produced the seven-point and intersection-\(21\) gates.
 4. Declare a small certificate-module/chart-cover analog, with known consistent and inconsistent
    controls.
 5. Re-rank. The live choices are a chart-cover/module computation, a source-derived restriction,
@@ -225,3 +271,26 @@ certificate shape. A finite constructible cover by localized certificates may pr
 inconsistency even when no single global polynomial covector terminates. This replaces the
 undefined flat-connection analogy with a precise commutative-algebra target and connects the
 existing determinant, axis, and ladder experiments in one framework.
+
+## Amendment after EXP-110 (2026-07-26)
+
+The slice-by-slice chart programme is demoted. Closing a k-coefficient slice
+fixes the other 51-k coefficients, so its rank statement does not extend to the
+family, and enumeration cannot terminate: C(51,3) = 20,825 and C(51,4) = 249,900
+slices, each currently costing hours of exact elimination with fiber degree
+growing per added coefficient.
+
+EXP-110 measured the full family instead. At the pinned point and three
+independent random rational points the profile is identical: rank(M) = 124,
+rank([M|b]) = 125, left kernel 165, one kernel direction pairing nonzero with the
+target. The reduced system is therefore inconsistent at GENERIC parameters, and
+the rank deficiency belongs to the family rather than to the pinned point.
+
+The primary route becomes the uniform minor statement: every maximal 125x125
+minor of M(eps) vanishes identically, while some maximal minor of [M|b] does not.
+This is a single statement in all 51 parameters, approachable by randomized
+polynomial identity testing followed by exact certification, and it is the
+correct form of the constructible stratification that EXP-098 identified.
+
+This is a redirection of method, not of target. The target remains simultaneous
+all-parameter closure of the reduced GGHV branches, and (72,108) remains open.
