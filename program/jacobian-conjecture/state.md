@@ -353,3 +353,10 @@
   the complete \(AS\ne0\) rational graph is closed. The finite base locus,
   \(A=0\), full four-parameter restriction, \((72,108)\), degree floor, and
   \(JC(2)\) remain open.
+- **2026-07-31 publication:** PR #112 merged EXP-128/129 and Paper B v0.28
+  into `develop` at `6adc5dc`. The immutable Zenodo version DOI is
+  `10.5281/zenodo.21727663` under concept DOI
+  `10.5281/zenodo.21503367`. The public 395770-byte PDF checksum
+  `md5:db52e8d453936a3e28222fbadeb809ce` matches the local artifact; local
+  SHA-256 is
+  `ee97e7519b94083e1b7977f68967e73f26db0ebe268ccd37d9a5b222a6160896`.

@@ -1542,3 +1542,9 @@
   rational graph is covered by maximal-minor opens.
 - Remaining four-parameter boundaries: finite \(V(R,S)\) and \(A=0\).
   The complete \((72,108)\) family, degree floor, and \(JC(2)\) remain open.
+- Paper B v0.28 passed a warning-free two-pass 20-page build and complete
+  rendered visual QA. PR #112 merged at `6adc5dc`. Zenodo record `21727663`
+  is published at immutable DOI `10.5281/zenodo.21727663`; its public
+  395770-byte PDF MD5 `db52e8d453936a3e28222fbadeb809ce` matches the local
+  artifact (SHA-256
+  `ee97e7519b94083e1b7977f68967e73f26db0ebe268ccd37d9a5b222a6160896`).
