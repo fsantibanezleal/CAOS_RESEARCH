@@ -323,3 +323,13 @@
   `md5:900c591a9fdf1c02542d889e0fb0b710` matches the local file; local
   SHA-256 is
   `97444d2801f053a43fd0f868880d03a5df9f9084c0ef4be08ea690ef2f26f43a`.
+- **2026-07-30 EXP-127:** the distinct persisted \(F_7\) basis reconstructs
+  at anchor \((1,1,0)\) with largest cyclic block 31. Its invariant section
+  is independent of \(Y\), has a nonzero linear class modulo \(F_7\), and
+  gives a degree-58 norm
+  \(B^{16}E_3E_9E_{12}E_{18}\). Same-point arithmetic places \(B=0\) on
+  \(A=0\) and \(E_{12}\) on \(R=S=0\). On \(AS\ne0\), only
+  \(E_3E_9E_{18}=0\) remains: 30 normalized values and 90 lifted points.
+  No positive-dimensional factor curve remains on the graph chart. The
+  finite 102-value ledger, base locus, \(A=0\), full four-parameter
+  restriction, \((72,108)\), the floor, and \(JC(2)\) remain open.
