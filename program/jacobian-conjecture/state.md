@@ -292,3 +292,17 @@
   higher-dimensional constructible reduction. PR #99 merged at `646911b`.
   Zenodo version DOI: `10.5281/zenodo.21698923`; concept DOI:
   `10.5281/zenodo.21503367`.
+- **2026-07-30 EXP-124:** a cross-prime one-row basis replacement gives the
+  exact alternative determinant \(A^{90}N(A^3,B)\), independent of \(C\).
+  The 21-term degree-16 \(N\) factors into three plane factors
+  \(F_3F_6F_7\), each coprime to \(R,S\). This covers a dense open of the
+  EXP-123 graph.
+- **2026-07-30 EXP-125:** corrected cube-locus primes 739 and 811 give
+  \(124/125\) samples and new cross-prime bases on all three factor curves.
+  Exact recursion on \(F_3=(5B+4)^3+16X\) leaves only
+  \(Q_9(B)Q_{15}(B)=0\) on \(AS\ne0\): 24 normalized values and 72 lifted
+  algebraic points. \(F_6,F_7\), the base locus, and \(A=0\) remain.
+- **2026-07-30 publication and promotion:** Paper B v0.25 records
+  EXP-124/125. PR #101 merged at `f28c5a2`, DOI PR #102 at `d51c1ae`, and
+  promotion PR #103 synchronized `main`. The immutable Zenodo DOI is
+  `10.5281/zenodo.21711580`.
