@@ -1475,3 +1475,22 @@
   layout warnings, all rendered pages pass visual QA, and PR #101 merged at
   `f28c5a2`. The immutable Zenodo DOI is
   `10.5281/zenodo.21711580`.
+
+## 2026-07-30 - EXP-126 reduces the \(F_6\) curve to finitely many points
+
+- The EXP-125 \(F_6\) basis is exactly the already reconstructed \(F_3\)
+  basis. EXP-126 verifies both source hashes, the exact anchor and SCC
+  profile, eight modular \(F_6\) samples, and four direct rational
+  determinants before reusing the section.
+- Its graph numerator has a nonzero linear class \(U(B)X+V(B)\) modulo the
+  irreducible quadratic \(F_6\). The Sylvester resultant and the determinant
+  of quotient multiplication give the same degree-74 norm.
+- Up to scalar the norm factors as
+  \(D_2D_3^4D_6^2Q_{18}Q_{30}\). Direct quotient-field checks place \(D_2\)
+  on \(X=S=0\) and \(D_3,D_6\) on \(R=S=0\).
+- On \(AS\ne0\), only \(Q_{18}Q_{30}=0\) remains: 48 normalized
+  \(B\)-values, or 144 lifted algebraic points. \(F_7\), all finite graph
+  strata, \(A=0\), and the full four-parameter restriction remain open.
+- The fresh source audit found no current theorem that bypasses the missing
+  GGHV applicability bridges. The promoted viewpoint is the
+  maximal-minor-section / curve-divisor / function-field-norm dictionary.
