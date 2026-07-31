@@ -382,6 +382,10 @@ scalar conditions before exploiting sparsity.
 - EXP-124/125 and Paper B v0.25 were merged by PR `#101` at `f28c5a2`;
   DOI PR `#102` merged at `d51c1ae`. Paper B v0.25 is published at
   `10.5281/zenodo.21711580`.
+- EXP-126 and Paper B v0.26 were merged into `develop` by PR `#106` at
+  `37a1341`. Paper B v0.26 is published at immutable version DOI
+  `10.5281/zenodo.21712096`; the public record's 391364-byte PDF has MD5
+  `900c591a9fdf1c02542d889e0fb0b710`, matching the local artifact.
 - Promotion PR `#103` synchronized the validated tree to `main`. Exact
   current pointers must be verified live rather than copied from this file.
 - The management mirror is updated directly on its canonical `develop`
@@ -415,8 +419,9 @@ scalar conditions before exploiting sparsity.
 9. Keep the recursive graph-cover computation as P0 while it reduces
    dimension exactly. Do not build EXP-093.
 10. Keep EXP-109 as a bounded regression control, not as the main route.
-11. Paper B v0.26 is triggered by EXP-126. Publish it as a Zenodo new version;
-   preserve immutable DOI `10.5281/zenodo.21711580` for v0.25.
+11. Preserve Paper B v0.26 at immutable DOI
+   `10.5281/zenodo.21712096`. The next manuscript/Zenodo version is triggered
+   only by a new exact result such as the declared \(F_7\) reduction.
 
 Suggested source-round commands:
 

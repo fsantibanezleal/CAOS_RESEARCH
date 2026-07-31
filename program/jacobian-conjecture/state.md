@@ -316,3 +316,10 @@
   algebraic points. \(F_7\), all finite graph strata, \(A=0\), the full
   four-parameter restriction, \((72,108)\), the floor, and \(JC(2)\)
   remain open.
+- **2026-07-30 publication:** PR #106 merged EXP-126 and Paper B v0.26 into
+  `develop` at `37a1341`. The immutable Zenodo version DOI is
+  `10.5281/zenodo.21712096` under concept DOI
+  `10.5281/zenodo.21503367`. The public 391364-byte PDF checksum
+  `md5:900c591a9fdf1c02542d889e0fb0b710` matches the local file; local
+  SHA-256 is
+  `97444d2801f053a43fd0f868880d03a5df9f9084c0ef4be08ea690ef2f26f43a`.

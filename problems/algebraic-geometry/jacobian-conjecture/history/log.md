@@ -1494,3 +1494,8 @@
 - The fresh source audit found no current theorem that bypasses the missing
   GGHV applicability bridges. The promoted viewpoint is the
   maximal-minor-section / curve-divisor / function-field-norm dictionary.
+- Paper B v0.26 passed its two-pass 19-page build and page-by-page visual QA.
+  PR #106 merged the exact result into `develop` at `37a1341`. Zenodo record
+  `21712096` is published at immutable DOI `10.5281/zenodo.21712096`; its
+  public 391364-byte PDF MD5
+  `900c591a9fdf1c02542d889e0fb0b710` matches the local artifact.
