@@ -1432,3 +1432,42 @@
 - Paper B v0.24 transcribes EXP-122/123. Its two-pass 18-page build has no
   layout warnings, all rendered pages pass visual QA, and PR #99 merged at
   `646911b`. The immutable Zenodo DOI is `10.5281/zenodo.21698923`.
+
+## 2026-07-30 - EXP-124 covers a dense open of the rational graph
+
+- Forty deterministic graph points over 1009 and 1013 all have
+  coefficient/augmented rank profile \(124/125\). The same alternative
+  125-row basis appears over both primes and differs from the shared basis by
+  one row.
+- Its exact determinant is
+  \[
+  \Delta_{\rm alt}=A^{90}N(A^3,B),
+  \]
+  independent of \(C\). The 21-term, degree-16 polynomial \(N\) factors into
+  three exact plane factors of total degrees 3, 6, and 7, and is coprime to
+  both EXP-123 polynomials \(R,S\).
+- This covers the dense graph open \(N\ne0\). The three factor curves,
+  finite \(V(R,S)\), and \(A=0\) are the exact residual strata. It does not
+  close the four-parameter restriction, \((72,108)\), the degree floor, or
+  \(JC(2)\).
+- EXP-125 will recurse on the three factor curves, beginning with the
+  linear-in-\(X\) degree-3 factor.
+
+## 2026-07-30 - EXP-125 reduces the \(F_3\) curve to finitely many points
+
+- The original 1009/1013 prime prescription was refuted by factor
+  arithmetic. After two explicitly persisted insufficient redirects, a
+  cube-locus audit selected 739 and 811.
+- At both accepted primes, four samples on each of \(F_3,F_6,F_7\) have
+  rank profile \(124/125\), and every factor supplies a new cross-prime row
+  basis.
+- Exact reconstruction on \(F_3=(5B+4)^3+16X=0\) gives, up to scalar,
+  \[
+  U_3=(5B+4)Q_6^2Q_9Q_{15}.
+  \]
+  The linear factor forces \(A=0\), while \(Q_6\) divides both restricted
+  \(R\) and \(S\). On \(AS\ne0\), only \(Q_9Q_{15}=0\) remains: 24
+  normalized \(B\)-values, or 72 lifted algebraic points.
+- The positive-dimensional graph residual is now \(F_6\cup F_7\).
+  Neither the full four-parameter restriction nor \((72,108)\), the degree
+  floor, or \(JC(2)\) is closed.
