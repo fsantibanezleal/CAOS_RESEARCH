@@ -417,6 +417,12 @@ scalar conditions before exploiting sparsity.
   `d32b7f0`. Paper B v0.27 is published at immutable version DOI
   `10.5281/zenodo.21712314`; its public 393753-byte PDF has MD5
   `954061a333009dbbe737f353b288ff5f`, matching the local artifact.
+- EXP-128/129 and Paper B v0.28 were merged into `develop` by PR `#112` at
+  `6adc5dc`. Paper B v0.28 is published at immutable version DOI
+  `10.5281/zenodo.21727663`; its public 395770-byte PDF has MD5
+  `db52e8d453936a3e28222fbadeb809ce`, matching the local artifact. Local
+  SHA-256 is
+  `ee97e7519b94083e1b7977f68967e73f26db0ebe268ccd37d9a5b222a6160896`.
 - Promotion PR `#103` synchronized the validated tree to `main`. Exact
   current pointers must be verified live rather than copied from this file.
 - The management mirror is updated directly on its canonical `develop`
@@ -447,9 +453,9 @@ scalar conditions before exploiting sparsity.
 9. Keep the recursive graph-cover computation as P0 while it reduces
    dimension exactly. Do not build EXP-093.
 10. Keep EXP-109 as a bounded regression control, not as the main route.
-11. Publish Paper B v0.28 after the exact graph-closure result is merged and
-   visually validated. Preserve v0.27 at immutable DOI
-   `10.5281/zenodo.21712314`.
+11. Preserve Paper B v0.28 at immutable DOI
+   `10.5281/zenodo.21727663`. Publish another version only after a boundary
+   stratum changes a manuscript claim.
 
 Suggested source-round commands:
 

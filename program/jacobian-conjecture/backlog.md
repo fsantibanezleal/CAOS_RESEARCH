@@ -86,4 +86,4 @@
 | JCB-082 | Publish the \(F_7\) divisor reduction in Paper B v0.27 and Zenodo | P6 | done | 2026-07-30 | PR #109 merged at d32b7f0; immutable DOI 10.5281/zenodo.21712314; public MD5 matches the 393753-byte local PDF |
 | JCB-083 | Cover the finite \(V(R,S)\) base locus by exact quotient-algebra maximal-minor charts | P5 | todo | 2026-07-31 | next boundary after complete rational-graph closure; keep \(A=0\) separate |
 | JCB-084 | Analyze and cover the \(A=0\) boundary of the four-parameter lift | P5 | todo | 2026-07-31 | principal-open invariant coordinates degenerate here; compute exact rank strata directly |
-| JCB-085 | Publish the complete rational-graph atlas in Paper B v0.28 and Zenodo | P6 | doing | 2026-07-31 | manuscript update, two-pass PDF QA, PR, DOI handoff, and promotion required |
+| JCB-085 | Publish the complete rational-graph atlas in Paper B v0.28 and Zenodo | P6 | done | 2026-07-31 | PR #112 merged at 6adc5dc; immutable DOI 10.5281/zenodo.21727663; public 395770-byte PDF MD5 matches local |
