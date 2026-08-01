@@ -1663,3 +1663,22 @@
   makes no claim about the 24-parameter core, full 51-parameter family,
   \((72,108)\), degree floor, or JC(2). Accepted artifact SHA-256:
   `35E18A6477312B81F0CDB18C8165539A72129C1D81B16F79AC89EFB948BEBA73`.
+
+## 2026-08-01 - EXP-134 proves a rank-seven reduction but reaches exact gates
+
+- The accepted EXP-124 section has one joint 33-vertex cyclic core after
+  adjoining `(2,8)`; the other 86 cyclic blocks are singletons.
+- The transverse operator on that core has exact rank seven, and every
+  singleton has zero transverse diagonal. Hence the determinant has the
+  characteristic-zero structural bound `deg_T<=7`.
+- Ambient four-variable expansion, graph-first denominator clearing, the
+  exact coefficient field `QQ(A,B)[T]`, and the first new fixed graph value
+  `T=1` each reached the 240-second block gate. No positive-`T` coefficient
+  was reconstructed, so EXP-133's modular inertness remains a hypothesis.
+- The route is redirected to an exact rank factorization and the 7-by-7
+  transfer determinant supplied by the matrix determinant lemma. Repeating
+  a 33-by-33 determinant is retired.
+- Terminal checkpoint SHA-256:
+  `28253FE22638C15BE8F7736F0629B0A9697D55386FB46E5351DE9E58C388A351`.
+- No new graph stratum, five-coefficient sector, `(72,108)` case, floor, or
+  JC(2) claim is closed.

@@ -407,6 +407,14 @@
   `9e9219d0947eccc12dc6efc25b849698` matches the local artifact. JCB-091 is
   complete. Record `21739032` contains identical bytes and is retained as a
   superseded immutable duplicate from the concurrent publication race.
+- **2026-08-01 EXP-134:** the exact EXP-124 transverse lift has one 33-vertex
+  joint cyclic core and 86 singleton blocks. The core transverse operator has
+  exact rank seven and all singleton transverse diagonals vanish, proving
+  `deg_T<=7`. Four 33-by-33 exact formulations reached the declared gate
+  before producing a new coefficient, so graph `T`-inertness remains
+  unproved. EXP-135 redirects to the 7-by-7 transfer determinant from the
+  matrix determinant lemma. Terminal checkpoint SHA-256:
+  `28253FE22638C15BE8F7736F0629B0A9697D55386FB46E5351DE9E58C388A351`.
 - **2026-08-01 EXP-133:** the singular EXP-123 graph cannot normalize its own
   determinant. A corrected two-direction local pencil normalizes at the
   off-graph fibre `C+1` and retains the singular graph at `C`. Across primes
