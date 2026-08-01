@@ -92,4 +92,4 @@
 | JCB-088 | Test a transverse fifth direction against the accepted multi-minor atlas | P5 | done | 2026-08-01 | EXP-132: exact three-minor unit ideal closes the complete `A=0,d=1` boundary after adjoining `(2,8)`; inherited EXP-123/124 bases vanish on this specialization |
 | JCB-089 | Lift `(2,8)` across the principal-open `A!=0,d=1` atlas | P5 | doing | 2026-08-01 | reuse EXP-123 graph and EXP-130 finite algebras; profile exact SCCs and joint Fitting generators before elimination |
 | JCB-090 | Rebuild and cover the transverse `d=0` quotient | P5 | todo | 2026-08-01 | verify whether `(2,8)` preserves or enlarges the explicit `P` kernel; EXP-118 does not lift automatically |
-| JCB-091 | Publish EXP-132 in Paper B v0.31 and Zenodo | P6 | done | 2026-08-01 | PR #123 merged the exact result; immutable DOI 10.5281/zenodo.21739032; public 407567-byte PDF MD5 matches local |
+| JCB-091 | Publish EXP-132 in Paper B v0.31 and Zenodo | P6 | done | 2026-08-01 | PR #123 merged the exact result; canonical/latest immutable DOI 10.5281/zenodo.21739069; public 407567-byte PDF matches local; 21739032 is an identical superseded duplicate from a concurrent publication race |
