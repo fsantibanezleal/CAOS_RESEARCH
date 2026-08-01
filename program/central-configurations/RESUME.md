@@ -79,7 +79,7 @@ The single first-read for a fresh session (contract: methodology/07-session-hand
   active (comets 10 -> 7, 9 -> 6) but does not rescue the hard equal-valuation case;
   the comet count, not the f-vector, is the monotone invariant; e_IU is inert.
 - EXP-009 torus-census-n4: INCONCLUSIVE-CAP on both exact msolve routes. The
-  route-A enriched planar saturation and route-B Hampton--Moeckel z-system each
+  route-A enriched planar saturation and route-B Hampton-Moeckel z-system each
   ran the declared 3600-second cap with zero output. The exact square smoke test
   passed. Published counts 50 and 4 remain untested by us; direct solving is
   closed at current budgets and the incidence-dimension/BKK routes are promoted.
