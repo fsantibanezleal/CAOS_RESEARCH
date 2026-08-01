@@ -1,0 +1,7 @@
+ring r=0,(x,y),dp;
+short=0;
+ideal I=x^2-y,
+y^2-x;
+ideal L=lead(std(I));
+L;
+quit;
