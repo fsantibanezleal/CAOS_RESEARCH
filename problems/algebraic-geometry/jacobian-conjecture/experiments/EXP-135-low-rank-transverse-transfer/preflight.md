@@ -1,7 +1,6 @@
 # EXP-135 preflight - exact square-zero transfer controls
 
-Status: **CONFIRMED EXACT RATIONAL-CONTROL PREFLIGHT**. The global function-
-field identity remains open.
+Status: **SUPERSEDED BY THE EXACT AMBIENT CERTIFICATE** in `verdict.md`.
 
 ## Exact result
 
@@ -32,8 +31,8 @@ remains part of the proof ledger.
 
 ## Strict scope
 
-Four rational controls do not prove the square-zero identity in the graph
-function field. Lucky controls or rank jumps remain possible. Thus EXP-135
-does not yet prove graph `T`-inertness, retain the old residual divisor as a
-transverse theorem, cover a new stratum, close the five-coefficient
-restriction, or affect `(72,108)`, the planar floor, or JC(2).
+Four rational controls alone did not prove the identity. The later complete
+degree-bounded multi-prime certificate does prove ambient `T`-inertness for
+this selected section. The other transverse sections and `d=0` quotient
+remain open, as do the complete five-coefficient restriction, `(72,108)`, the
+planar floor, and JC(2).

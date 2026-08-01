@@ -1696,3 +1696,19 @@
 - This remains a control preflight, not a function-field identity or graph
   cover. Accepted preflight SHA-256:
   `D322A3041F10289A60640CB658640180C0B506AD8F84F450BFB8AA8CD8A403EA`.
+
+## 2026-08-01 - EXP-135 proves ambient transverse section inertness
+
+- The exact transverse core has ranks `7,3,0` through its first three powers.
+- The complete determinant has separate degree bounds `(25,24,6,7)` in
+  `(A,B,C,T)`. A rank-six Woodbury update reduces the complete tensor grid to
+  one 33-by-33 solve per `(A,B)` value.
+- All 136,500 controls across 30 primes give a square-zero 7-by-7 transfer.
+  Their 897-bit product exceeds twice the explicit 885-bit cleared
+  coefficient bound, proving
+  `det(H+T K_(2,8))=det(H)` in `QQ[A,B,C,T]`.
+- The result retains the EXP-124 divisor on the full normalized ambient chart.
+  It does not lift the EXP-129/130 sections or transverse `d=0`, so the full
+  five-coefficient restriction and JC(2) remain open.
+- Accepted certificate SHA-256:
+  `B426FE41C7DC835DAF8E6079DE50644EA6D7CE661EF71A93E9D4951F0AA2ED9A`.
