@@ -1,0 +1,42 @@
+[10:53:37] EXP-012 runner start
+[10:53:39] RESULT p1a-toy-three-engines: FAIL singular [(0, 0), (0, 0)]; sympy [(1, 0), (2, 0)]; msolve mod 1073741827: True
+[10:53:40] RESULT p1b-job3-exact-reproduction: FAIL singular ok in 0s, 16 leads vs 16 archived; exact match: False
+[10:53:40] CONTROLS FAILED; stopping before any menu time
+[10:56:49] EXP-012 runner start
+[10:56:50] RESULT p1a-toy-three-engines: pass singular [(0, 2), (2, 0)]; sympy [(0, 2), (2, 0)]; msolve mod 1073741827: True
+[10:58:23] RESULT p1b-job3-exact-reproduction: pass singular ok in 0s, 16 leads; sympy grevlex-correct recomputation 16 leads; exact match: True
+[10:58:24]   A/B subideal 0: ok 1s, 20 leads
+[11:00:36]   A/B subideal 1: cap-or-error 131s
+[11:00:37]   A/B subideal 2: ok 1s, 41 leads
+[11:00:38]   A/B subideal 3: ok 0s, 16 leads
+[11:02:49]   A/B subideal 4: cap-or-error 131s
+[11:02:50]   A/B subideal 5: ok 1s, 39 leads
+[11:02:51]   A/B subideal 6: ok 0s, 24 leads
+[11:05:02]   A/B subideal 7: cap-or-error 131s
+[11:05:03]   A/B subideal 8: ok 1s, 19 leads
+[11:05:04]   A/B subideal 9: ok 0s, 26 leads
+[11:05:05]   A/B subideal 10: ok 0s, 20 leads
+[11:05:06]   A/B subideal 11: ok 0s, 18 leads
+[11:05:07]   A/B subideal 12: ok 0s, 29 leads
+[11:05:08]   A/B subideal 13: ok 0s, 17 leads
+[11:05:09]   A/B subideal 14: ok 0s, 28 leads
+[11:05:09] RESULT p2-ab-singular: decided completed 12/15 at 120s caps (sympy baseline 1/15); times {'ab-0': 0.6, 'ab-1': 130.7, 'ab-2': 0.5, 'ab-3': 0.4, 'ab-4': 130.7, 'ab-5': 0.5, 'ab-6': 0.4, 'ab-7': 130.8, 'ab-8': 0.5, 'ab-9': 0.5, 'ab-10': 0.4, 'ab-11': 0.4, 'ab-12': 0.5, 'ab-13': 0.4, 'ab-14': 0.5}
+[11:05:11]   v2 local-1234: ok 0s, 23 leads
+[11:05:12]   v2 local-1235: ok 0s, 23 leads
+[11:05:13]   v2 local-1245: ok 0s, 23 leads
+[11:05:14]   v2 local-1345: ok 0s, 23 leads
+[11:05:15]   v2 local-2345: ok 0s, 23 leads
+[11:05:16]   v2 pair-1234-1235: ok 0s, 30 leads
+[11:05:17]   v2 pair-1234-1245: ok 0s, 32 leads
+[11:05:18]   v2 pair-1234-1345: ok 0s, 30 leads
+[11:05:19]   v2 pair-1234-2345: ok 0s, 27 leads
+[11:05:20]   v2 pair-1235-1245: ok 1s, 30 leads
+[11:05:21]   v2 pair-1235-1345: ok 1s, 27 leads
+[11:05:22]   v2 pair-1235-2345: ok 0s, 21 leads
+[11:05:24]   v2 pair-1245-1345: ok 1s, 26 leads
+[11:05:25]   v2 pair-1245-2345: ok 1s, 18 leads
+[11:05:26]   v2 pair-1345-2345: ok 0s, 23 leads
+[11:05:27]   v2 cm-only: ok 0s, 4 leads
+[11:05:27] RESULT p3-menu-v2: decided completed 16/16 at 120s caps
+[11:05:27] RESULT p4-union-bound: decided union leads 466 from 28 subideals; d_pgb=7; independent set [0, 3, 6, 7, 8, 9, 10]
+[11:05:27] runner done

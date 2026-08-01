@@ -346,3 +346,28 @@
   (3) the Chang-Chen residual diagrams; census/dimension work is
   infrastructure, not advance, and today's caps SELECTED the surviving
   toolkit rather than killing the program.
+
+## 2026-08-01 - Round 8: EXP-012 decided, the engine hypothesis confirmed
+
+- EXP-012 VERDICT: ENGINE HYPOTHESIS CONFIRMED, UNION BOUND INFORMATIVE-WEAK
+  AT DIM <= 7. Singular 4.3.2 (installed and hashed today) completes 12 of the
+  IDENTICAL 15 subideal jobs sympy walled on, at 0.4-1 s each (sympy baseline
+  1/15 at about 100 s): the EXP-011 wall was an engine artifact. The lighter
+  16-subideal menu completed 16/16; the union of 466 grevlex-correct QQ
+  leading monomials from 28 subideals gives the lane's first sound
+  deterministic bound, dim <= 7 for the n = 5 spatial Dziobek cut (target 4
+  not reached; the declared menu-growth follow-up applies). Cost pattern
+  recorded: the three Singular-capping subideals are all _bc pairings sharing
+  the body pair {1,2}.
+- THE CONTROL DISCIPLINE FIRED ON ITS FIRST OUTING: EXP-012's
+  exact-reproduction control caught a lex-vs-grevlex harvester bug in
+  EXP-011's pgb worker (sympy gb.polys default to lex; monoms() must be told
+  the order). Impact audit: EXP-011's harvested monomials were
+  order-inconsistent but its bound was vacuous and nothing consumed them
+  (correction note beside the retained artifact; verdict amended in place
+  same day); EXP-010's P3 never completed, so nothing there depended on the
+  bug. All three harvesters fixed; msolve's -g mode identified as MOD-P and
+  pinned screen-only in the hypothesis BEFORE the run.
+- Consequences: CCB-037 v2 VALIDATED (Singular workhorse, sympy verification
+  layer); EXP-013 = menu growth (triples, mixed pairings, pairs with CM), 
+  hypothesis first; the n = 6 symmetric-strata campaign is engine-unblocked.
