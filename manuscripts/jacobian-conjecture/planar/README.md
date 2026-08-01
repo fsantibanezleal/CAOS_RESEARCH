@@ -61,4 +61,6 @@ adversarial validation.
 
 Current manuscript version: **v0.29** (2026-07-31). Substantive revisions are published
 as new Zenodo versions under concept DOI `10.5281/zenodo.21503367`.
-Version 0.29 DOI: pending publication; concept DOI `10.5281/zenodo.21503367`.
+Version 0.29 DOI: `10.5281/zenodo.21730506`; concept DOI
+`10.5281/zenodo.21503367`. The public 400234-byte PDF has MD5
+`80fe44419f7ed570456b91300adebeed`.

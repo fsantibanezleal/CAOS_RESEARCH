@@ -371,3 +371,9 @@
   complete (A\ne0) sector of the declared four-parameter restriction. The
   direct (A=0) boundary, 24-parameter core, 51-parameter family,
   ((72,108)), degree floor, and (JC(2)) remain open.
+- **2026-07-31 publication:** PR #115 merged EXP-130 and Paper B v0.29
+  into `develop` at `2388374`. Zenodo record `21730506` is public at
+  immutable DOI `10.5281/zenodo.21730506`; its 400234-byte PDF MD5
+  `80fe44419f7ed570456b91300adebeed` matches the local artifact. JCB-086
+  is complete. The direct `A=0` specialization remains the sole P0 boundary
+  inside the declared four-parameter restriction.
