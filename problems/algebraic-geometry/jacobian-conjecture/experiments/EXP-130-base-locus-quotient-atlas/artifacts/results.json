@@ -1,0 +1,12 @@
+{
+  "decision": "stopped_at_algebra_worker_timeout",
+  "elapsed_seconds": 300.01492977142334,
+  "experiment": "EXP-130",
+  "source_hashes": {
+    "EXP-123": "43C24C42F37F952AB09EAA834EC042DBA7B7E3E02C1AF1E52E13691C7E9D30EF",
+    "EXP-129": "AFA272D686DCA1E08D5969F2E1C825EE4D62B9CEC4627301FEFC2A64D258B0B2"
+  },
+  "worker_stderr": "",
+  "worker_stdout": "[INFO] loaded and cleared R,S\n[PASS] both projection resultants are nonzero\n[INFO] resultants degrees B=117 X=117\n",
+  "worker_timeout_seconds": 300
+}
