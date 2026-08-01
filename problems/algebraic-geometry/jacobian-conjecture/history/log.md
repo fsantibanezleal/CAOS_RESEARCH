@@ -1641,3 +1641,25 @@
   `60b0663896fad777020e00fe4332e7178a159f3c82789632efef7132b2525f3e`).
   Record `21739032` contains the same bytes and remains an immutable,
   superseded duplicate produced by a concurrent publication race.
+
+## 2026-08-01 - EXP-133 selects a bounded principal-open transverse lift
+
+- Direct normalization by the EXP-123 selected determinant fails on its own
+  exceptional graph because the normalized matrix is singular there. That
+  attempted formulation is retained and retired.
+- The corrected local presentation uses the two-direction pencil
+  \(\det(I-K_C+T K_{(2,8)})\), with the normalization moved from the graph
+  fibre `C` to the nearby off-graph fibre `C+1` while evaluation remains on
+  `R+YS=0`.
+- Across primes 1009 and 1153 and graph controls \((A,B)=(1,0),(1,1)\), the
+  EXP-123, EXP-124, two EXP-129, and EXP-130 sections have stable `T`-degree
+  ledgers \(1,0,1,0,2\). Their largest observed joint cyclic support is 10,
+  far below the declared gate of 45.
+- The result selects bounded characteristic-zero reconstruction, starting
+  with the observed-inert EXP-124 graph section and continuing through the
+  two EXP-129 sections and the quadratic EXP-130 finite-base section. Modular
+  inertness is not promoted to an exact identity.
+- This is a route-selection result only. It closes no new graph stratum and
+  makes no claim about the 24-parameter core, full 51-parameter family,
+  \((72,108)\), degree floor, or JC(2). Accepted artifact SHA-256:
+  `35E18A6477312B81F0CDB18C8165539A72129C1D81B16F79AC89EFB948BEBA73`.

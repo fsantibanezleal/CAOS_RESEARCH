@@ -1,7 +1,7 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-08-01 after EXP-132 closed the direct \(A=0,d=1\) boundary after
-adjoining transverse direction \((2,8)\). This is
+Updated 2026-08-01 after EXP-133 selected a bounded exact lift of the
+principal-open \((2,8)\) atlas. This is
 the first-read navigation page. Primary artifacts and experiment verdicts
 remain the evidence.
 
@@ -191,6 +191,14 @@ remain the evidence.
   three-minor Bezout identity closes the complete direct boundary of the
   five-coefficient lift. Its \(A\ne0\) and transverse \(d=0\) sectors remain
   open.
+- EXP-133 tests five accepted principal-open sections through the singular
+  EXP-123 graph using the two-direction pencil
+  \(\det(I-K_C+T K_{(2,8)})\), normalized at the off-graph fibre \(C+1\).
+  Across primes 1009 and 1153 and controls \((A,B)=(1,0),(1,1)\), the exact
+  \(T\)-degree ledger is respectively \(1,0,1,0,2\), with largest joint cyclic
+  support 10. This is a modular preflight, not graph coverage. It selects an
+  exact characteristic-zero reconstruction of the EXP-124 graph section,
+  followed by the two EXP-129 atlas sections and the EXP-130 base section.
 - Controlling strategy:
   [`strategy-audit-2026-08-01.md`](strategy-audit-2026-08-01.md).
 - Source audit:
@@ -396,6 +404,13 @@ scalar conditions before exploiting sparsity.
   reduce the residual and a new acyclic section is \(B^{105}C\). Their exact
   normalized ideal contains one through a persisted Bezout identity, closing
   the complete direct boundary of the five-coefficient lift.
+- EXP-133: direct normalization on the EXP-123 graph is singular. Normalizing
+  at the transverse fibre \(C+1\) instead gives stable degree/support ledgers
+  for five accepted sections over two primes and two graph controls. The
+  EXP-124 and EXP-129-atlas-2 sections are \(T\)-inert at every control;
+  EXP-123 and EXP-129-atlas-1 are affine; EXP-130 is quadratic. The largest
+  observed joint cyclic support is 10, so bounded exact reconstruction is the
+  selected next route.
 - EXP-102: third chart exists at \(u=1\); complete pullback is inconclusive
   after the dense rank-121 determinant hit its five-minute budget.
 
@@ -407,7 +422,11 @@ scalar conditions before exploiting sparsity.
   at \(u=1\).
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
-- EXP-111 through EXP-132 are complete. No Jacobian process is active.
+- EXP-111 through EXP-133 are complete. No Jacobian process is active.
+- EXP-133 is a modular route-selection result with accepted artifact SHA-256
+  `35E18A6477312B81F0CDB18C8165539A72129C1D81B16F79AC89EFB948BEBA73`.
+  It does not trigger a manuscript or Zenodo update because it proves no new
+  characteristic-zero coverage statement.
 - EXP-132 and Paper B v0.31 were merged into `develop` by PR `#123` at
   `7493003`. Paper B v0.31 is published at canonical/latest immutable version
   DOI `10.5281/zenodo.21739069`; its public 407567-byte PDF has MD5
@@ -486,29 +505,35 @@ scalar conditions before exploiting sparsity.
 
 1. Preserve EXP-132's exact three-minor identity as the \(A=0,d=1\)
    transverse regression gate.
-2. Lift EXP-123/124/129/130 through \((2,8)\) on \(A\ne0,d=1\), with exact SCC
-   profiling before determinant expansion.
-3. Rebuild the \(d=0\) quotient with \((2,8)\); verify the explicit \(P\)-kernel
+2. Reconstruct the EXP-124 graph section exactly in characteristic zero using
+   the \(C+1\) two-direction pencil. Prove or refute the observed \(T\)-inertness
+   in the quotient \(\mathbb Q[X,B,Y,T]/(R+YS)\); do not infer it from the
+   modular samples alone.
+3. If that section is exactly inert, retain the old \(F_3F_6F_7\) divisor
+   ledger and reconstruct the EXP-129 atlas-1 affine lift and atlas-2 inert
+   lift on the five squarefree graph blocks. Then lift the quadratic EXP-130
+   section on the finite base algebra.
+4. Rebuild the \(d=0\) quotient with \((2,8)\); verify the explicit \(P\)-kernel
    instead of assuming EXP-118 lifts unchanged.
-4. Recurse on the joint Fitting ideal and record inherited bases that vanish
+5. Recurse on the joint Fitting ideal and record inherited bases that vanish
    after specialization. A single minor cannot establish coverage.
-5. If a positive-dimensional residual survives, use polynomial-matrix
+6. If a positive-dimensional residual survives, use polynomial-matrix
    invariant factors with a complete denominator-fibre ledger.
-6. Keep the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
+7. Keep the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
    add redundant charts to the closed three-parameter restriction.
-7. Reopen intersection-\(21\) transport only with a complete
+8. Reopen intersection-\(21\) transport only with a complete
    boundary-divisor ledger through the swap, Laurent cuts, and final inversion;
    do not impose absolute degree directly on the 51 coefficients.
-8. Pursue further Newton resolution only if a new condition is derived beyond
+9. Pursue further Newton resolution only if a new condition is derived beyond
    the already-retained first \(D=72\) branch; do not repeat direct comparisons
    with \(P_T\).
-9. Continue the independent [125,150] frontier:
+10. Continue the independent [125,150] frontier:
    - keep C10/C11/C19/C20 unresolved by GGV2 Remark 2.32;
    - derive the 16 missing \(A'_0\) values through the declared chain algorithm;
    - preserve C01/C04 as open absent an exact exclusion.
-10. Keep EXP-093 cancelled; do not revive the global cubic solve.
-11. Keep EXP-109 as a bounded regression control, not as the main route.
-12. Preserve Paper B v0.31 at immutable DOI
+11. Keep EXP-093 cancelled; do not revive the global cubic solve.
+12. Keep EXP-109 as a bounded regression control, not as the main route.
+13. Preserve Paper B v0.31 at immutable DOI
    `10.5281/zenodo.21739069`; require another validated manuscript claim change
    before creating any later version.
 
