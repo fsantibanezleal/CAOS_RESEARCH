@@ -74,12 +74,10 @@ adversarial validation.
 
 Current manuscript version: **v0.32** (2026-08-01). Substantive revisions are published
 as new Zenodo versions under concept DOI `10.5281/zenodo.21503367`.
-Version 0.32 publication is pending. The previous canonical/latest version
-0.31 DOI is `10.5281/zenodo.21739069`. The public 407567-byte v0.31 PDF has MD5
-`9e9219d0947eccc12dc6efc25b849698` and SHA-256
-`60b0663896fad777020e00fe4332e7178a159f3c82789632efef7132b2525f3e`.
-Immutable record `10.5281/zenodo.21739032` contains the identical bytes and is
-retained as a superseded duplicate created by a concurrent publication race.
-The visually verified local v0.32 candidate is 419223 bytes, with MD5
+Canonical/latest version 0.32 DOI: `10.5281/zenodo.21740213`. Its public PDF
+matches the visually verified local artifact: 419223 bytes, MD5
 `3c4c4a0c4f96a634de4018410b5871c3` and SHA-256
 `2f96164a7d6efee5b43e6988cbb3578a586e995b9e439b9bbd777f5db515c229`.
+The prior canonical v0.31 DOI is `10.5281/zenodo.21739069`; immutable record
+`10.5281/zenodo.21739032` contains identical v0.31 bytes and remains a
+superseded duplicate created by a concurrent publication race.

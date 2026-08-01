@@ -1634,7 +1634,7 @@
   required because the exact atlas claim changed.
 - Paper B v0.31 passed a warning-free two-pass 23-page build and complete
   rendered visual QA. PR #123 merged at `7493003`. Canonical/latest Zenodo
-  record `21739069` is published at immutable DOI
+  then-canonical record `21739069` is published at immutable DOI
   `10.5281/zenodo.21739069`; its public
   407567-byte PDF MD5 `9e9219d0947eccc12dc6efc25b849698` matches the local
   artifact (SHA-256
@@ -1712,3 +1712,15 @@
   five-coefficient restriction and JC(2) remain open.
 - Accepted certificate SHA-256:
   `B426FE41C7DC835DAF8E6079DE50644EA6D7CE661EF71A93E9D4951F0AA2ED9A`.
+
+## 2026-08-01 - Paper B v0.32 published
+
+- PR #131 merged the EXP-135 theorem and visually verified 23-page manuscript
+  to `develop` at `2aed5f7`.
+- Zenodo canonical/latest record `21740213` is public at immutable DOI
+  `10.5281/zenodo.21740213` under concept DOI
+  `10.5281/zenodo.21503367`.
+- The public 419223-byte PDF MD5
+  `3c4c4a0c4f96a634de4018410b5871c3` matches the local artifact. Local
+  SHA-256 is
+  `2f96164a7d6efee5b43e6988cbb3578a586e995b9e439b9bbd777f5db515c229`.
