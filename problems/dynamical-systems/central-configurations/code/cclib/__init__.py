@@ -290,3 +290,42 @@ def u_i_j_invariants(n: int, masses, point: dict):
     I = I / M
     J = U * sp.sqrt(I) / M ** sp.Rational(5, 2)
     return U, I, M, J
+
+
+def dziobek_products5():
+    """Cleared Dziobek product differences for FIVE bodies, all quadruples.
+
+    HJ11 eq. (5): on the Dziobek stratum (configuration dimension n - 2, i.e.
+    SPATIAL for n = 5), S_ij S_kl = S_ik S_jl = S_il S_jk for every quadruple
+    {i, j, k, l}, with S_ij = r_ij^-3 - 1. Five quadruples times three pairing
+    differences = 15 cleared equations (five independent), kept in full for the
+    manifest S_5 action. CAUTION (recorded in the EXP-011 hypothesis): the
+    products characterize the rank-one factorization S_ij = z_i z_j only where
+    enough entries are nonzero; the cut they define is an OVERVARIETY of the
+    spatial Dziobek central configurations.
+    """
+    out = {}
+    for i, j, k, l in combinations(range(1, 6), 4):
+        a = _S(i, j) * _S(k, l)
+        b = _S(i, k) * _S(j, l)
+        c = _S(i, l) * _S(j, k)
+        tag = f"{i}{j}{k}{l}"
+        out[f"h{tag}_ab"] = _cleared(a - b)
+        out[f"h{tag}_bc"] = _cleared(b - c)
+        out[f"h{tag}_ac"] = _cleared(a - c)
+    return out
+
+
+def cayley_menger_spatial5():
+    """Bordered 6x6 Cayley-Menger determinant of 5 points: zero iff the points
+    embed in R^3 (HJ11 eq. (6))."""
+    r = {}
+    for i, j in combinations(range(1, 6), 2):
+        r[(i, j)] = rvar(i, j) ** 2
+    rows = [[0] + [1] * 5]
+    for i in range(1, 6):
+        row = [1]
+        for j in range(1, 6):
+            row.append(0 if i == j else r[(min(i, j), max(i, j))])
+        rows.append(row)
+    return sp.expand(sp.Matrix(rows).det(method="berkowitz"))
