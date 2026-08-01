@@ -26,12 +26,23 @@ E129_ARTIFACT = (
     / "artifacts"
     / "results.json"
 )
+E124_ARTIFACT = (
+    HERE.parent
+    / "EXP-124-rational-graph-alternative-chart"
+    / "artifacts"
+    / "results.json"
+)
 WORKER = HERE / "algebra_worker.py"
 WORKER_ARTIFACT = HERE / "artifacts" / "algebra-worker.json"
+CRT_WORKER = HERE / "crt_worker.py"
+CRT_WORKER_ARTIFACT = HERE / "artifacts" / "crt-worker.json"
+ALGEBRA_CHECKPOINT = HERE / "artifacts" / "algebra-checkpoint.json"
 ARTIFACT = HERE / "artifacts" / "results.json"
 CHECKPOINT = HERE / "artifacts" / "checkpoint.json"
 EXPECTED_E123_SHA256 = "43C24C42F37F952AB09EAA834EC042DBA7B7E3E02C1AF1E52E13691C7E9D30EF"
+EXPECTED_E124_SHA256 = "3AE5A2DA83FA99EDFDAF06486B0AB65150D506D1378B2372710915713066D113"
 EXPECTED_E129_SHA256 = "AFA272D686DCA1E08D5969F2E1C825EE4D62B9CEC4627301FEFC2A64D258B0B2"
+EXPECTED_ALGEBRA_CHECKPOINT_SHA256 = "9C3E1212CE6D7FC8296DD732E7488F74731BD333446A10817F9BFAF1C41A6179"
 WORKER_TIMEOUT_SECONDS = 300
 
 
@@ -57,19 +68,30 @@ def persist(payload: dict[str, object], path: Path) -> None:
 def main() -> None:
     started = time.time()
     e123_hash = digest(E123_ARTIFACT)
+    e124_hash = digest(E124_ARTIFACT)
     e129_hash = digest(E129_ARTIFACT)
     require(e123_hash == EXPECTED_E123_SHA256, "EXP-123 source hash matches")
+    require(e124_hash == EXPECTED_E124_SHA256, "EXP-124 source hash matches")
     require(e129_hash == EXPECTED_E129_SHA256, "EXP-129 source hash matches")
     payload: dict[str, object] = {
         "experiment": "EXP-130",
-        "source_hashes": {"EXP-123": e123_hash, "EXP-129": e129_hash},
+        "source_hashes": {
+            "EXP-123": e123_hash,
+            "EXP-124": e124_hash,
+            "EXP-129": e129_hash,
+        },
         "worker_timeout_seconds": WORKER_TIMEOUT_SECONDS,
     }
     persist(payload, CHECKPOINT)
-    print("[INFO] launching exact base-locus algebra worker", flush=True)
+    algebra_checkpoint_hash = digest(ALGEBRA_CHECKPOINT)
+    require(
+        algebra_checkpoint_hash == EXPECTED_ALGEBRA_CHECKPOINT_SHA256,
+        "timeout-retained exact resultant checkpoint matches",
+    )
+    print("[INFO] launching factorwise subresultant and CRT worker", flush=True)
     try:
         completed = subprocess.run(
-            [sys.executable, str(WORKER)],
+            [sys.executable, str(CRT_WORKER)],
             cwd=HERE,
             capture_output=True,
             text=True,
@@ -79,31 +101,28 @@ def main() -> None:
     except subprocess.TimeoutExpired as error:
         payload.update(
             {
-                "decision": "stopped_at_algebra_worker_timeout",
+                "decision": "stopped_at_crt_worker_timeout",
                 "worker_stdout": error.stdout or "",
                 "worker_stderr": error.stderr or "",
                 "elapsed_seconds": time.time() - started,
             }
         )
         persist(payload, ARTIFACT)
-        print("[STOP] exact algebra worker reached the five-minute gate", flush=True)
+        print("[STOP] exact CRT worker reached the five-minute gate", flush=True)
         print("RESULT: INCONCLUSIVE AT DECLARED GATE", flush=True)
         return
     print(completed.stdout, end="", flush=True)
     if completed.stderr:
         print(completed.stderr, file=sys.stderr, end="", flush=True)
-    require(completed.returncode == 0, "exact algebra worker completed")
-    record = json.loads(WORKER_ARTIFACT.read_text(encoding="utf-8"))
-    require(record["experiment"] == "EXP-130", "worker artifact identifies EXP-130")
-    require(
-        record["original_ideal"]["quotient_dimension"]
-        >= record["saturation_by_X"]["quotient_dimension"],
-        "saturation does not increase quotient length",
-    )
+    require(completed.returncode == 0, "exact CRT worker completed")
+    record = json.loads(CRT_WORKER_ARTIFACT.read_text(encoding="utf-8"))
+    require(record["experiment"] == "EXP-130", "CRT artifact identifies EXP-130")
+    require(record["principal_open_algebra"]["dimension"] == 90, "principal-open algebra has dimension 90")
     payload.update(
         {
-            "algebra_worker": record,
-            "algebra_worker_sha256": digest(WORKER_ARTIFACT),
+            "retained_resultant_checkpoint_sha256": algebra_checkpoint_hash,
+            "crt_worker": record,
+            "crt_worker_sha256": digest(CRT_WORKER_ARTIFACT),
             "decision": record["decision"],
             "elapsed_seconds": time.time() - started,
             "scope": (
@@ -114,12 +133,18 @@ def main() -> None:
     )
     persist(payload, ARTIFACT)
     print(f"[PASS] wrote results SHA256 {digest(ARTIFACT)}", flush=True)
-    if record["decision"] == "principal_open_base_locus_empty":
-        print("RESULT: PRINCIPAL-OPEN BASE LOCUS EMPTY", flush=True)
+    if record["principal_open_algebra"]["all_blocks_covered"]:
+        print("RESULT: EXISTING EXACT ATLAS CLOSES THE PRINCIPAL-OPEN BASE LOCUS", flush=True)
     else:
-        print("RESULT: FINITE ALGEBRA READY FOR ATLAS SELECTION", flush=True)
+        print(
+            "RESULT: NEW ROW SELECTION REQUIRED ON DEGREES "
+            + ",".join(
+                str(value)
+                for value in record["principal_open_algebra"]["uncovered_degrees"]
+            ),
+            flush=True,
+        )
 
 
 if __name__ == "__main__":
     main()
-
