@@ -1576,3 +1576,9 @@
   in the declared four-parameter restriction. Only the direct (A=0)
   boundary remains. The 24-parameter core, 51-parameter family,
   ((72,108)), degree floor, and (JC(2)) remain open.
+- Paper B v0.29 passed a warning-free two-pass 21-page build and complete
+  rendered visual QA. PR #115 merged at `2388374`. Zenodo record `21730506`
+  is published at immutable DOI `10.5281/zenodo.21730506`; its public
+  400234-byte PDF MD5 `80fe44419f7ed570456b91300adebeed` matches the local
+  artifact (SHA-256
+  `0bd662262ad9e1aaa07c389c6cfe96ced485508cc9e332a366c86ad0626455be`).
