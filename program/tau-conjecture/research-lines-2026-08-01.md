@@ -12,6 +12,9 @@ per `approaches-evaluation-2026-08-01.md` section C.
 | RL-4 | Composition obstruction: why the logistic/Chebyshev root factory dies over $\mathbb{Z}$; lemma candidates for coercive monic inner polynomials; p-adic analogue = Rojas' open question | anatomy/at-infinity (B3) | After EXP-002 mechanism data: formalize "composition cannot beat linear rate over Z" for monic inner $h$ with $|h(n)| > |n|$ outside a finite set | OPEN |
 | RL-5 | Integer frontier: extend Markstroem past length 11 ($\tau$, $\tau'$ of $n!$, $p\#$; his monotonicity Problem 2.1) | census (A4/A6) | Port addition-chain canonicalization (B4) into the integer DFS; checkpointed long run | OPEN |
 | RL-6 | Primary-read ladder: Shub-Smale 1995; Cheng 2003/2004; KPT15; Dutta 2021; AGHT TR19-142 | external dialogue | Fetch Duke paper first (TCB-002); each read upgrades dossier tags | OPEN |
+| RL-7 | SAT/exact-synthesis lane for T(S) <= k decisions (bounded-coefficient encoding; Fuhs-Schneider-Kamp pattern) | reformulation (V5, r4 addendum) | Encoding design note; then per-target EXPs at depths 8-12 | OPEN |
+| RL-8 | Moves calculus: certified T-hat(S) upper bounds by BFS over root sets with proved move costs | anatomy/dual (V7) | Implement over the census move inventory (wiki 04); calibrate vs exact T(S) | OPEN |
+| RL-9 | Parameterized towers h_c = x^2 - c: measure tower yield vs tau(c) (does the family loophole beat linear rate?) | arithmetic dynamics (V8, context note 2026-08-01) | Exact small-c census of G_k(c) root yields vs constant-building cost; read Doyle-Poonen and Morton-Silverman material before imports | OPEN (strongest post-depth-7 candidate) |
 
 Standing rule: every round re-ranks these lines against what the round
 produced; a line that stalls twice routes its budget to the next lens.
