@@ -1,6 +1,6 @@
 # tau-conjecture: RESUME (zero-loss handoff)
 
-Updated 2026-08-01, round 2 close. First read for any fresh session, per
+Updated 2026-08-01, round 3 close. First read for any fresh session, per
 methodology 07. Derived view: on conflict, experiment verdicts win.
 
 ## 1. State in one screen
@@ -24,11 +24,21 @@ fixed prime) $\Rightarrow$ the full conjecture (Rojas Thm 1); valuation
 spectrum $s \le N_p(s) \le s(s+1)/2$, growth open (Rojas Thm 2).
 
 OUR results (exact, machine-verified, decision-complete):
-$$z_{\max}(\tau) = 1, 2, 3, 3, 4 \quad (\tau = 1..5).$$
-Minimal $\tau$ for 4 distinct integer roots = 5 (EXP-002). Depth-5 records
-= difference-of-squares splittings on the Chebyshev-conjugate map
-$x^2 - 2$: $x^2 - (x^2-2)^2 = -(x-1)(x+1)(x-2)(x+2)$; all record 2-adic
-spectra are $\{0,1\}$. Enumerator anchored to Markstroem 14/14.
+$$z_{\max}(\tau) = 1, 2, 3, 3, 4, 5 \quad (\tau = 1..6).$$
+Minimal $\tau$: 4 roots at 5 (EXP-002), 5 roots at 6 (EXP-003:
+$\mp x(x^2-1)(x^2-4)$, the depth-5 DOS record times $x$; multiplying by
+the input adjoins the root 0 for one gate). Records track
+$z = \tau - 1$ from $\tau = 3$. Depth-5/6 records are difference-of-
+squares splittings on the Chebyshev-conjugate map $x^2 - 2$; all record
+2-adic spectra are $\{0,1\}$. Enumerator anchored to Markstroem 14/14 and
+cross-checked vs sympy 284/284.
+
+PROVED (tower lemma, context note 2026-08-01, machine-checked): integer
+periodic points of $C = x^2-2$ are exactly $\{2,-1\}$; $C^k(x)-x$ has 2
+integer roots vs $2^k$ real roots at $\tau \le 2k+2$; DOS towers $G_k$
+stall at $\{0,\pm1,\pm2\}$ for all $k \ge 2$ (stable integer preimage
+core). METHOD (last-gate lemma, EXP-003): $z_{\max}(d+1)$ is computable
+from the exhausted depth-$d$ frontier without storing depth $d+1$.
 
 ## 2. The objects table
 
@@ -48,28 +58,28 @@ spectra are $\{0,1\}$. Enumerator anchored to Markstroem 14/14.
 |---|---|---|---|
 | 001 | $z_{\max}(\tau \le 4)$ + integer regression gate | CONFIRMED | $z_{\max}(4) = 3$; gate 14/14 |
 | 002 | $z_{\max}(5)$; minimal $\tau$ for 4 roots; spectra | CONFIRMED | $z_{\max}(5) = 4$; min $\tau$ = 5; DOS mechanism; spectra $\{0,1\}$ |
+| 003 | $z_{\max}(6)$ via last-gate scan | census CONFIRMED; our "=4" prediction REFUTED | $z_{\max}(6) = 5$; min $\tau$ for 5 roots = 6; multiply-by-$x$ move |
 
 ## 4. In flight
 
-Nothing running. Minted, not yet declared: (a) TCB-016, the iterated
-$x^2-2$ question: $F_k := $ ($k$-fold DOS tower); how many doublings keep
-ALL roots integral and at what gate cost (the integer-vs-real divergence in
-its purest form); (b) depth-6 census blocked on TCB-005 canonicalization
-(naive ~25M state-ops).
+Nothing running. Standing question (TCB-019): does $z_{\max}(7) = 6$
+(the $z = \tau - 1$ law)? BLOCKED on TCB-005: the last-gate scan needs
+the depth-6 frontier (~20M states, not stored); construction target for
+the lower side: shifted DOS blocks + the multiply-by-$x$ move.
 
 ## 5. Next actions, ordered
 
-1. TCB-005: prove sign/reflection orbit reduction ($f(x) \sim \pm f(\pm x)$
-   preserve $\tau$ and $z$) and dominated-state pruning; add sympy
-   cross-check of a depth-5 state sample; THEN declare EXP-003 (depth-6
-   census) with the reduced branching.
-2. TCB-016 (RL-4): the $x^2-2$ tower lemma; pure algebra + small exact
-   computations; likely a wiki/manuscript unit.
-3. TCB-002: fetch + read Shub-Smale 1995 (Duke); upgrade dossier tags.
-4. Wiki 02 (implication ladder) and 03 (census) transcription; census page
-   carries the $z_{\max}$ table + record gallery + witness programs.
-5. RL-5: integer frontier run design (addition-chain canonicalization
-   import) once the polynomial frontier is unblocked.
+1. TCB-005: prove the sign/reflection orbit quotient
+   ($f(x) \sim \pm f(\pm x)$: need the cost bookkeeping, substitution
+   maps inputs to inputs only for $x \mapsto -x$ combined with the free
+   $-1$; write the lemma carefully) and dominated-state pruning; or build
+   a compiled/multiprocess backend; then EXP-004 = depth-7.
+2. TCB-020: generalize the stall lemma to $x^2 - c$ / monic inner maps
+   (finite stable core via escape bounds); wiki 04 unit.
+3. RL-3 (TCB-018): $T(S)$ structure lemmas + the $T$ table from census
+   data ($T(\{\pm1,\pm2\}) = 5$, $T(\{0,\pm1,\pm2\}) = 6$ now exact).
+4. TCB-017 (RL-2): valuation-spectrum record hunt design.
+5. TCB-004/008/009: the reading ladder (Cheng, KPT15, Lipton, Shamir).
 
 Commands: tests
 `.venv python -m pytest problems/computation-complexity/tau-conjecture/code/tclib -q`;
@@ -112,3 +122,4 @@ census runs from each experiment folder via the repository checkout venv
 |---|---|---|---|
 | 2026-08-01 open | Census decided $\tau \le 4$ | Anatomy (consecutive triples; shift = 1 gate), invariant (degree cap useless here), dictionary (Markstroem import), audit (regression gate) | $z_{\max}$ niche identified; minimal-$\tau$-for-4 question minted |
 | 2026-08-01 round 2 | Census decided $\tau = 5$ | External dialogue (Rojas full read), reformulation (dual $T(S)$ view B1; valuation-spectrum view B2), anatomy (DOS/Chebyshev-shadow mechanism, unpredicted), two-sided (records pile valuations: pressure on digit side) | Approaches ranking; RL-1..6 board; TCB-016 concrete lemma target |
+| 2026-08-01 round 3 | Census decided $\tau = 6$ (last-gate scan; prediction refuted honestly) | Anatomy/theorem (tower lemma PROVED: constant integer yield of the doubling factory), method lens (last-gate lemma: one depth free), audit (smoke gate caught the input-accounting artifact; sympy 284/284) | The multiply-by-$x$ move; the $z = \tau - 1$ law question (TCB-019); stall-lemma generalization target (TCB-020) |

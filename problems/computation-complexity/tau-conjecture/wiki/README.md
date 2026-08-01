@@ -21,9 +21,9 @@ on $\tau(n!)$ is known.
 | Page | Content | Status |
 |---|---|---|
 | [01 statement and history](01-statement-and-history.md) | Model, the conjecture, sharpness, the real-side failure, history ladder | transcribed 2026-08-01 |
-| 02 the implication ladder | SS95, Koiran 2004, Buergisser 2009, factoring, Rojas reduction, 2026 state | planned (source: 2026-08-01 dossier + approaches evaluation) |
-| 03 the census | Exact $z_{\max}(\tau)$ ladder, record gallery, witness programs | data ready: $z_{\max}(1..5) = 1,2,3,3,4$ (EXP-001/002) |
-| 04 mechanisms | DOS/Chebyshev-shadow factory, shifted products, family rate results | seeded by EXP-002 verdict |
+| [02 the implication ladder](02-implication-ladder.md) | SS95, Koiran 2004, Buergisser 2009, factoring, Rojas reduction, 2026 state | transcribed 2026-08-01 |
+| [03 the census](03-census.md) | Exact $z_{\max}(\tau)$ ladder, record gallery, the tower obstruction | transcribed 2026-08-01 (EXP-003 row pending its verdict) |
+| 04 mechanisms | Per-family rate theorems (tower lemma generalization) | seeded by the 2026-08-01 tower derivation note |
 | 05 experiments index | One line per EXP-NNN with verdicts | current |
 
 ## Experiments index
@@ -32,3 +32,4 @@ on $\tau(n!)$ is known.
 |---|---|---|
 | [EXP-001](../experiments/EXP-001-small-tau-census/) | Exact $z_{\max}(\tau)$ for $\tau \le 4$ + Markstroem regression gate | CONFIRMED: gate 14/14; $z_{\max}(4) = 3$ |
 | [EXP-002](../experiments/EXP-002-census-depth5/) | $z_{\max}(5)$; minimal $\tau$ for 4 roots; valuation spectra | CONFIRMED: $z_{\max}(5) = 4$; minimal $\tau$ = 5; DOS mechanism |
+| [EXP-003](../experiments/EXP-003-last-gate-depth6/) | $z_{\max}(6)$ via the last-gate scan | census CONFIRMED: $z_{\max}(6) = 5$ (min $\tau$ for 5 roots = 6); our "=4" prediction REFUTED |

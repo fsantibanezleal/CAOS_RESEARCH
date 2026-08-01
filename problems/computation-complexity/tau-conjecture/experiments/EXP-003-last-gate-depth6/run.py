@@ -15,6 +15,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent.parent / "code"))
 
 from tclib.enum import (  # noqa: E402
+    INPUTS,
     census_polynomials,
     find_witness_program,
     integer_roots,
@@ -64,7 +65,7 @@ def main():
 
     log("last-gate scan...")
     new_polys, scan_complete, scanned = last_gate_scan(
-        frontier, set(first_seen), deadline=deadline,
+        frontier, set(first_seen) | set(INPUTS), deadline=deadline,
         progress=lambda c, n: log(f"  scanned {c} states, {n} new polys"))
     log(f"scan: complete={scan_complete} states={scanned} "
         f"new_polys={len(new_polys)}")

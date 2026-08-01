@@ -1,22 +1,25 @@
 # Shub-Smale tau conjecture: state (heartbeat)
 
 - **State:** exploring (opened 2026-08-01; scoped 2026-07-20).
-- **Done (2026-08-01, opening round):** full deep-research pass persisted;
-  program record written. **EXP-001 CONFIRMED**: enumerator anchored to
-  Markstroem's published integer census (14/14 anchors, depths 1-7);
-  polynomial census decision-complete for tau <= 4: z_max = 1, 2, 3, 3.
-- **Done (2026-08-01, round 2):** Rojas math/0304100 read in full (p-adic
-  digit reduction; valuation-spectrum window [s, s(s+1)/2]; real logistic
-  factory pinned). Approaches evaluation + research-lines board RL-1..6
-  persisted; two new views adopted (dual cost-of-root-set T(S); valuation-
-  spectrum instrumentation). tclib package + 5-test suite (green).
-  **EXP-002 CONFIRMED** (64 s, depth 5 exhausted, 778,087 states):
-  z_max(5) = 4; minimal tau for 4 distinct integer roots = 5; records are
-  difference-of-squares splittings on the Chebyshev-conjugate map x^2 - 2
-  (the integer shadow of the real root factory); all record spectra {0,1}.
-  Wiki 01 transcribed.
+- **Done (2026-08-01, opening round):** deep-research pass; program record;
+  **EXP-001 CONFIRMED** (Markstroem anchor 14/14; z_max(1..4) = 1,2,3,3).
+- **Done (2026-08-01, round 2):** Rojas read in full; approaches
+  evaluation + research lines RL-1..6; tclib + tests; **EXP-002
+  CONFIRMED** (z_max(5) = 4; DOS/Chebyshev-shadow mechanism; spectra
+  {0,1}); wiki 01.
+- **Done (2026-08-01, round 3):** **Chebyshev-tower lemma PROVED** (RL-4:
+  C^k(x)-x keeps 2 integer roots vs 2^k real; DOS towers stall at
+  {0,+-1,+-2}; machine-checked). **Last-gate lemma** shipped in tclib
+  (z_max one depth past any exhausted frontier, memory-light; its smoke
+  gate caught and fixed an input-accounting artifact). **EXP-003: census
+  CONFIRMED, prediction REFUTED**: z_max(6) = 5 via
+  +-x(x^2-1)(x^2-4) (the depth-5 record times x: one gate adjoins root
+  0); minimal tau for 5 roots = 6; 134,494 depth-6 polynomials; growth
+  law so far z = tau - 1 from tau = 3. sympy cross-check 284/284. Wiki
+  02/03 transcribed; references updated (Duke original still paywalled).
 - **Now:** round closed; nothing running.
-- **Next:** TCB-005 canonicalization lemmas + sympy cross-check (the
-  declared prerequisite for the depth-6 census); RL-4 first lemma target
-  (iterated x^2 - 2 over Z); TCB-002 read the Shub-Smale Duke original;
-  wiki 02/03 transcription.
+- **Next:** TCB-005 canonicalization (sign/reflection orbit quotient +
+  dominated-state pruning, proofs first) or a compiled backend: the
+  depth-7 question (does z_max(7) = 6?) is BLOCKED on it; TCB-016
+  generalization (single-inner-map stall lemma for x^2 - c); RL-3 T(S)
+  structure lemmas; wiki 04.
