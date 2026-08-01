@@ -23,7 +23,7 @@ on $\tau(n!)$ is known.
 | [01 statement and history](01-statement-and-history.md) | Model, the conjecture, sharpness, the real-side failure, history ladder | transcribed 2026-08-01 |
 | [02 the implication ladder](02-implication-ladder.md) | SS95, Koiran 2004, Buergisser 2009, factoring, Rojas reduction, 2026 state | transcribed 2026-08-01 |
 | [03 the census](03-census.md) | Exact $z_{\max}(\tau)$ ladder, record gallery, the tower obstruction | transcribed 2026-08-01 (EXP-003 row pending its verdict) |
-| 04 mechanisms | Per-family rate theorems (tower lemma generalization) | seeded by the 2026-08-01 tower derivation note |
+| [04 mechanisms](04-mechanisms.md) | Move inventory, the two stall theorems, dual $T(S)$ table | transcribed 2026-08-01 (round 4) |
 | 05 experiments index | One line per EXP-NNN with verdicts | current |
 
 ## Experiments index
