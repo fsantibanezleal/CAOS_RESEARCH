@@ -360,3 +360,14 @@
   `md5:db52e8d453936a3e28222fbadeb809ce` matches the local artifact; local
   SHA-256 is
   `ee97e7519b94083e1b7977f68967e73f26db0ebe268ccd37d9a5b222a6160896`.
+- **2026-07-31 EXP-130:** exact projection resultants and factorwise
+  subresultants decompose (V(R,S)\cap D(X)) into four reduced field blocks
+  of degrees (3,6,12,69), total dimension 90. Existing sections cover the
+  degree-12 and degree-69 blocks. A structurally selected new section, with
+  largest SCC 33, breaks the common quadratic fibres on degrees 3 and 6.
+  Exact (K[Y]) Bezout identities, independent (Y)-resultants, direct
+  125-by-125 determinant control, and multiplication-matrix norms certify a
+  complete finite atlas uniform in (C). Together EXP-123/129/130 close the
+  complete (A\ne0) sector of the declared four-parameter restriction. The
+  direct (A=0) boundary, 24-parameter core, 51-parameter family,
+  ((72,108)), degree floor, and (JC(2)) remain open.
