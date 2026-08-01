@@ -48,8 +48,12 @@
   census probes and staircase refuted by cap (kill criterion honored). Zenodo
   v0.05 published (DOI 10.5281/zenodo.21739944). Dias-Pan arXiv:1811.08681 read
   in full; CCB-037 (partial-GB dimension bounds) minted.
-- **Next experiments:** EXP-011 = the n = 5 spatial Dziobek variety in the
-  Dias-Pan proof shape (cheap emptiness probes + partial-GB union bounds +
-  exact witness); separately reproduce HM06's mixed volume 25380.
+- **Next experiments:** EXP-011 DECIDED same day (instruments failed to scale
+  at declared budgets; engine lesson recorded). Next: the CCB-037 v2 engine
+  spike (msolve -g / Singular-class GB for leading-term harvests) and the
+  CCB-034 witness-set spike; then the n = 6 symmetric-strata campaign
+  (9-variable quotients) and the Chang-Chen n = 4 relation re-derivation as
+  the residual-diagram calibration gate. Separately reproduce HM06's mixed
+  volume 25380.
 - **Isolation note:** rounds close with NO version bump (methodology/08); the release
   step is serialized and owned elsewhere; a parallel session runs jacobian-conjecture.

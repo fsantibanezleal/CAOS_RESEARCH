@@ -18,5 +18,9 @@
   "p3-draw2": {
     "status": "inconclusive-cap",
     "detail": "313s; "
+  },
+  "p4-partial-gb": {
+    "status": "decided",
+    "detail": "subideals completed 1/15; union leads 16; d_pgb=10; independent set [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
   }
 }

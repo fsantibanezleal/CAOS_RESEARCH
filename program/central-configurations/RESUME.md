@@ -120,6 +120,19 @@ launches, and `--saveas` checkpoints in run08.sh. The 0.7 pow3-b0 investment was
 NOT restarted on 0.7 (its sibling died at the same assertion class); pow3
 continues on 0.8beta.
 
+UPDATE 2026-08-01 (evening): EXP-011 DECIDED: smoke and cap-signature
+confirmed, emptiness and partial-GB rungs FAILED TO SCALE at declared budgets
+(all probes capped at 300 s; pgb 1/15 completers, vacuous d_pgb = 10; no
+refutation of dim = 4; the 6-to-10-variable wall measured). ENGINE LESSON:
+Dias-Pan ran the same pattern in minutes on Singular; CCB-037 v2 = swap the GB
+engine to msolve -g (installed) + product-pair menu; CCB-034 witness sets
+promoted to the next instrument spike. SAME DAY: Chang-Chen programme first
+read (CCB-004 stage 1: the 24 now QUOTED verbatim; the full n = 4
+mass-relation ladder transcribed; cross-engine re-derivation of those
+relations declared as the calibration gate for the residual-diagram lane);
+the n = 6 reflection-strata map persisted (two types OPEN, both 9-variable
+quotients, CCB-036 stage 2).
+
 UPDATE 2026-08-01 (later): EXP-010 DECIDED: emptiness probes CONFIRMED in
 seconds (two independent codim-4 sections empty, `[-1]:`, probabilistic-exact
 support for dim D4 <= 3), census probes REFUTED BY CAP (both codim-3 draws and

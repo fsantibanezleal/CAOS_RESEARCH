@@ -310,3 +310,39 @@
   n = 6 is generically closed, their theorem statement misprints "open" for a
   closed exceptional set; journal search found no published version). CCB-037
   minted from their Lemma 7.5. Known-results ladder row added.
+
+## 2026-08-01 - EXP-011 decided; the frontier read opens; the engine lesson lands
+
+- EXP-011 VERDICT: SMOKE AND CAP-SIGNATURE CONFIRMED, EMPTINESS AND PARTIAL-GB
+  RUNGS FAILED TO SCALE AT DECLARED BUDGETS. Smoke in 4 s (bipyramid exactly ON
+  the products+CM cut; 4-simplex excluded by CM = -5; collinear control
+  excluded by all 15 products). All four msolve section probes capped at 300 s
+  (the declared kill criterion for the emptiness instrument at n = 5 fired);
+  the partial-GB menu completed 1/15 subideals, union bound vacuous
+  (d_pgb = 10). No algebraic refutation of the expected dimension 4; the
+  6-to-10-variable wall is measured. Engine reading: Dias-Pan ran the same
+  leading-term pattern in minutes under Singular; our worker used sympy
+  Buchberger with the 130-term Cayley-Menger in every subideal. CCB-037 v2 =
+  engine swap (msolve -g already installed) + product-pair menu; CCB-034
+  witness sets promoted to next instrument spike; the n = 6 strata campaign
+  (9-variable quotients) waits on those engines, exactly as Dias-Pan's own
+  computations demonstrate is sufficient.
+- CCB-004 stage 1 DONE: Chang-Chen programme preprint (117 pp) archived with
+  SHA-256; pages 1-6 and 41-46 read. The residual 24 upgraded to a QUOTED
+  statement (stated twice); one of the 62 mass-relation diagrams impossible
+  for positive masses; the complete n = 4 mass-relation ladder transcribed
+  (matches AK12 5.1-5.4); n = 5 sharpened (Algorithm I: 20 diagrams, II kills
+  9/11/13/17, leaving AK12's 16). Cross-engine re-derivation of the n = 4
+  relations with our exact stack is the declared calibration gate before any
+  n = 6 residual-diagram spend.
+- CCB-036 stage 2: the reflection-strata map of planar n = 6 persisted
+  (collinear closed classically; CROSS closed by Dias-Pan; the 2+2-pair and
+  3-pair types OPEN per two recorded searches; the flagged hit examined and
+  cleared, a (1+4)-vortex paper). Both open types collapse to 9-variable
+  quotients.
+- Strategy answer persisted for Felipe's direct question: the ranked
+  real-advance paths are (1) the symmetric-strata campaign, (2) the tropical
+  n = 6 pointedness hunt (both gfan08 runs healthy, 34 and 55 cpu-hours), and
+  (3) the Chang-Chen residual diagrams; census/dimension work is
+  infrastructure, not advance, and today's caps SELECTED the surviving
+  toolkit rather than killing the program.
