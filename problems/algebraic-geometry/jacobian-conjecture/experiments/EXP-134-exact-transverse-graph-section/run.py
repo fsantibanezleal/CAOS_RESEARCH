@@ -8,7 +8,7 @@ import json
 import time
 from pathlib import Path
 
-from sympy import Rational, expand, eye, factor_list, symbols, sympify
+from sympy import Rational, cancel, expand, eye, factor_list, symbols, sympify
 
 
 HERE = Path(__file__).resolve().parent
@@ -164,36 +164,6 @@ def main() -> None:
         + b * normalized[(0, 5)].extract(core, core)
         + c * normalized[(2, 9)].extract(core, core)
     )
-    baseline_core = None
-    for t_value in range(transverse_rank + 1):
-        require(
-            time.time() - started < TOTAL_GATE_SECONDS,
-            "rank/root worker remains inside total gate",
-        )
-        evaluation_started = time.time()
-        determinant = expand(
-            (constant_core + t_value * transverse_core).det(method="domain-ge")
-        )
-        if baseline_core is None:
-            baseline_core = determinant
-        equal_to_baseline = expand(determinant - baseline_core) == 0
-        record = {
-            "T": t_value,
-            "equals_T0": equal_to_baseline,
-            "core_determinant_sha256": expression_digest(determinant),
-            "elapsed_seconds": time.time() - evaluation_started,
-        }
-        payload["exact_T_evaluations"].append(record)
-        if t_value == 0:
-            payload["T0_core_determinant"] = str(determinant)
-        persist(payload, CHECKPOINT)
-        require(equal_to_baseline, f"exact core determinant at T={t_value} equals T=0")
-
-    require(
-        len(payload["exact_T_evaluations"]) == transverse_rank + 1,
-        "one more exact T value than the degree bound was evaluated",
-    )
-
     singleton_factor = Rational(1)
     for component in singletons:
         vertex = component[0]
@@ -206,11 +176,53 @@ def main() -> None:
                 + c * normalized[(2, 9)][vertex, vertex]
             )
         )
-    determinant_ratio = expand(singleton_factor * baseline_core)
     expected_t0 = sympify(
         e124_worker["determinant_ratio"],
         locals={"A": a, "B": b, "C": c},
     )
+    baseline_core = cancel(expected_t0 / singleton_factor)
+    require(
+        cancel(singleton_factor * baseline_core - expected_t0) == 0,
+        "loaded exact EXP-124 T=0 core baseline",
+    )
+    payload["exact_T_evaluations"].append(
+        {
+            "T": 0,
+            "equals_T0": True,
+            "core_determinant_sha256": expression_digest(baseline_core),
+            "elapsed_seconds": 0.0,
+            "source": "persisted exact EXP-124 determinant ratio",
+        }
+    )
+    payload["T0_core_determinant"] = str(baseline_core)
+    persist(payload, CHECKPOINT)
+
+    for t_value in range(1, transverse_rank + 1):
+        require(
+            time.time() - started < TOTAL_GATE_SECONDS,
+            "rank/root worker remains inside total gate",
+        )
+        evaluation_started = time.time()
+        determinant = expand(
+            (constant_core + t_value * transverse_core).det(method="domain-ge")
+        )
+        equal_to_baseline = cancel(determinant - baseline_core) == 0
+        record = {
+            "T": t_value,
+            "equals_T0": equal_to_baseline,
+            "core_determinant_sha256": expression_digest(determinant),
+            "elapsed_seconds": time.time() - evaluation_started,
+        }
+        payload["exact_T_evaluations"].append(record)
+        persist(payload, CHECKPOINT)
+        require(equal_to_baseline, f"exact core determinant at T={t_value} equals T=0")
+
+    require(
+        len(payload["exact_T_evaluations"]) == transverse_rank + 1,
+        "one more exact T value than the degree bound was evaluated",
+    )
+
+    determinant_ratio = expand(singleton_factor * baseline_core)
     require(
         expand(determinant_ratio - expected_t0) == 0,
         "rank/root T=0 determinant reproduces EXP-124 exactly",
