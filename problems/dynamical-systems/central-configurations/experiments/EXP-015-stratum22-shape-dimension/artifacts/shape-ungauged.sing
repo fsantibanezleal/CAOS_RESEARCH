@@ -1,0 +1,13 @@
+ring r=0,(r12,d1A,d1B,d2A,d2B,wA,wB,cs,cx,t),dp;
+short=0;
+ideal I=-4*cs^2+4*cx^2-4*wA*wB,
+16*d1A^4-32*d1A^2*d2A^2-32*d1A^2*r12^2+16*d2A^4-32*d2A^2*r12^2+16*r12^4+16*r12^2*wA^2,
+16*cs^4-32*cs^2*d1A^2-32*cs^2*d1B^2+16*cs^2*wA*wB+16*d1A^4-32*d1A^2*d1B^2-16*d1A^2*wA*wB+16*d1A^2*wB^2+16*d1B^4+16*d1B^2*wA^2-16*d1B^2*wA*wB,
+16*cs^4-32*cs^2*d2A^2-32*cs^2*d2B^2+16*cs^2*wA*wB+16*d2A^4-32*d2A^2*d2B^2-16*d2A^2*wA*wB+16*d2A^2*wB^2+16*d2B^4+16*d2B^2*wA^2-16*d2B^2*wA*wB,
+16*d1B^4-32*d1B^2*d2B^2-32*d1B^2*r12^2+16*d2B^4-32*d2B^2*r12^2+16*r12^4+16*r12^2*wB^2,
+cs*cx*d1A*d1B*d2A*d2B*r12*t*wA*wB-1;
+ideal S=std(I);
+string("SINGDIM=",dim(S));
+ideal L=lead(S);
+L;
+quit;

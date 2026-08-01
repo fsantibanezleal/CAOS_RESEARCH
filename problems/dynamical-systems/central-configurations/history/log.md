@@ -399,3 +399,25 @@
   the top components, evaluate CM on witness points), and the k = 2, p = 2
   stratum campaign proceeds regardless with the twice-measured cost law
   (realizability equations out of the Groebner core, adjoined last).
+
+## 2026-08-01 - Round 10: the stratum campaign opens and clears its first stage same day
+
+- Novelty pass: no published closure of the k = 2, p = 2 stratum surfaced
+  (recorded search; an unverifiable summary-level diagram count NOT imported).
+- EXACT DERIVATION persisted (dossier + script): nine quotient distances;
+  c_x^2 - c_s^2 = wA wB verified; THE PAIR-EQUALITY LEMMA in closed form
+  (L34 and L56 factor through (m5 - m6) and (m3 - m4) times (q - v) times
+  (c_x^3 - c_s^3)), forcing pair-equal masses on the open stratum with the
+  honest q = v gap flagged; the reduced Laura-Andoyer block proved SIX
+  independent mass-linear equations by a pure symmetry argument (reflection
+  invariance + L_ji = L_ij), with the background computational cross-check
+  still running.
+- EXP-015 VERDICT: CONFIRMED ON ALL PREDICTIONS in about one second per run:
+  shape variety dimension 5 ungauged, 4 gauged (two-way engine agreement),
+  exactly the Dias-Pan dim(E) = 4 analogue; ghosts do not dominate; the cost
+  law held. Stage (i) of the stratum pipeline is DONE. Next: EXP-016 (the
+  6 x 4 mass-Jacobian rank analysis with determinantal loci) and EXP-017
+  (the exact rank-4 witness); a completed chain is the stratum theorem, and
+  its wording goes to Felipe first. A smoke evaluator bug (odd-term
+  handling) was caught by the gate itself at zero solver cost and fixed in
+  one commit.
