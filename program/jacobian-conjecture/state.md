@@ -389,3 +389,21 @@
   `10.5281/zenodo.21730785`; its 403128-byte PDF MD5
   `e3884477cbec6392959580176c221210` matches the local artifact. JCB-087 is
   complete.
+- **2026-08-01 EXP-132:** direction \((2,8)\) was added to the original
+  direct \(A=0,d=1\) system. The EXP-131 primary section stays exactly
+  \(T\)-independent; the second becomes affine through one
+  \(B^{106}CT\) term. A residual-selected exact acyclic section is
+  \(B^{105}C\). Eliminating the mixed term leaves a univariate polynomial
+  coprime to the primary section, and an exact three-minor Bezout identity
+  proves the maximal-minor/Fitting ideal is the unit ideal. This closes the
+  complete direct boundary of the five-coefficient lift. Its \(A\ne0,d=1\)
+  and transverse \(d=0\) sectors, the 24-parameter core, full 51-parameter
+  family, \((72,108)\), degree floor, and JC(2) remain open. Accepted artifact
+  SHA-256:
+  `9465FD7E112733C0D21EB011A432898578D5ECB39FDDBE87E141C2ACE71AB0F4`.
+- **2026-08-01 publication:** PR #123 merged EXP-132 and Paper B v0.31 into
+  `develop` at `7493003`. Canonical/latest Zenodo record `21739069` is public
+  at immutable DOI `10.5281/zenodo.21739069`; its 407567-byte PDF MD5
+  `9e9219d0947eccc12dc6efc25b849698` matches the local artifact. JCB-091 is
+  complete. Record `21739032` contains identical bytes and is retained as a
+  superseded immutable duplicate from the concurrent publication race.

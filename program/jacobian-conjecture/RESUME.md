@@ -1,7 +1,7 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-07-31 after EXP-131 closed the direct \(A=0\) plane and completed
-the declared four-coefficient restriction. This is
+Updated 2026-08-01 after EXP-132 closed the direct \(A=0,d=1\) boundary after
+adjoining transverse direction \((2,8)\). This is
 the first-read navigation page. Primary artifacts and experiment verdicts
 remain the evidence.
 
@@ -183,10 +183,18 @@ remain the evidence.
   \(B\)-divisors have an explicit Bezout identity equal to one. Together
   with EXP-118 and EXP-123/129/130, this closes the complete declared
   four-coefficient restriction. The 24-parameter core remains open.
+- EXP-132 adds \((2,8)\) on the direct \(A=0,d=1\) boundary. Three normalized
+  exact minors are
+  \(P=(5B+4)^3(25B^2-20B+16)^3\),
+  \(Q=B^{95}(H(B)+9765625B^{11}CT)\), and \(R=B^{105}C\).
+  Since \(Q-9765625BTR\) is univariate and coprime to \(P\), an exact
+  three-minor Bezout identity closes the complete direct boundary of the
+  five-coefficient lift. Its \(A\ne0\) and transverse \(d=0\) sectors remain
+  open.
 - Controlling strategy:
-  [`strategy-audit-2026-07-31.md`](strategy-audit-2026-07-31.md).
+  [`strategy-audit-2026-08-01.md`](strategy-audit-2026-08-01.md).
 - Source audit:
-  [`2026-07-30-strategy-refresh.md`](../../problems/algebraic-geometry/jacobian-conjecture/context/2026-07-30-strategy-refresh.md).
+  [`2026-08-01-transverse-fitting-refresh.md`](../../problems/algebraic-geometry/jacobian-conjecture/context/2026-08-01-transverse-fitting-refresh.md).
 
 ## 2. The objects table
 
@@ -230,6 +238,7 @@ remain the evidence.
 | complete \(A\ne0\) four-parameter sector | selected chart, graph atlas, and base-locus atlas exhaust the principal-open cases | EXP-123/129/130 |
 | direct \(A=0\) atlas | two \(C\)-independent exact minors with unit divisor gcd cover the complete boundary plane | EXP-131 |
 | complete declared four-coefficient restriction | \(d=0\), \(A\ne0,d=1\), and \(A=0,d=1\) are all covered by exact atlases | EXP-118/123/129--131 |
+| transverse direct-boundary Fitting atlas | three exact minors generate the unit ideal after adjoining `(2,8)` at \(A=0,d=1\) | EXP-132 |
 | complete \(T_B\) restriction cover | \(d=0\) quotient cover plus exact \(G,L,Q\) weighted-open covers | EXP-118/120/121 |
 | lower-family grading | \(w_{p,q}=q-p+1\pmod9\) for all 23 nonconstant remaining directions | EXP-106 |
 | properness instrument | exact resultant-leading-coefficient test | EXP-014 |
@@ -383,6 +392,10 @@ scalar conditions before exploiting sparsity.
 - EXP-131: two exact \(C\)-independent boundary determinants have unit
   divisor gcd, closing \(A=0,d=1\) and therefore the complete declared
   four-coefficient restriction.
+- EXP-132: after adjoining \((2,8)\) on \(A=0,d=1\), two inherited sections
+  reduce the residual and a new acyclic section is \(B^{105}C\). Their exact
+  normalized ideal contains one through a persisted Bezout identity, closing
+  the complete direct boundary of the five-coefficient lift.
 - EXP-102: third chart exists at \(u=1\); complete pullback is inconclusive
   after the dense rank-121 determinant hit its five-minute budget.
 
@@ -394,7 +407,15 @@ scalar conditions before exploiting sparsity.
   at \(u=1\).
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
-- EXP-111 through EXP-131 are complete. No Jacobian process is active.
+- EXP-111 through EXP-132 are complete. No Jacobian process is active.
+- EXP-132 and Paper B v0.31 were merged into `develop` by PR `#123` at
+  `7493003`. Paper B v0.31 is published at canonical/latest immutable version
+  DOI `10.5281/zenodo.21739069`; its public 407567-byte PDF has MD5
+  `9e9219d0947eccc12dc6efc25b849698`, matching the local artifact. Local
+  SHA-256 is
+  `60b0663896fad777020e00fe4332e7178a159f3c82789632efef7132b2525f3e`.
+  Record `21739032` is an identical immutable duplicate from a concurrent
+  publication race and is superseded by the concept DOI's latest record.
 - Current research branch: `work/jacobian-conjecture/next-round`.
 - EXP-096 was merged into `develop` by PR `#81` at `7866b0f`.
 - The planar manuscript reconciliation was merged by PR `#83` at `ffc6a3d`.
@@ -463,17 +484,16 @@ scalar conditions before exploiting sparsity.
 
 ## 5. Next actions, in order
 
-1. Preserve EXP-118/123/129--131 as the exact complete declared
-   four-coefficient cover. Do not repeat its closed graph, base locus, or
-   direct boundary.
-2. Declare EXP-132 on the transverse direction \((2,8)\), whose EXP-122
-   anchor factor is linear and whose union SCC has size 35.
-3. Lift several accepted minor sections simultaneously and recurse on their
-   joint exceptional ideal. A single minor cannot establish coverage.
-4. Retain EXP-131's two-minor Bezout identity as a boundary regression gate.
-5. If the transverse lift becomes positive-dimensional, use a module/Fitting
-   presentation or polynomial-matrix invariant factors with a complete
-   denominator-fibre ledger.
+1. Preserve EXP-132's exact three-minor identity as the \(A=0,d=1\)
+   transverse regression gate.
+2. Lift EXP-123/124/129/130 through \((2,8)\) on \(A\ne0,d=1\), with exact SCC
+   profiling before determinant expansion.
+3. Rebuild the \(d=0\) quotient with \((2,8)\); verify the explicit \(P\)-kernel
+   instead of assuming EXP-118 lifts unchanged.
+4. Recurse on the joint Fitting ideal and record inherited bases that vanish
+   after specialization. A single minor cannot establish coverage.
+5. If a positive-dimensional residual survives, use polynomial-matrix
+   invariant factors with a complete denominator-fibre ledger.
 6. Keep the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
    add redundant charts to the closed three-parameter restriction.
 7. Reopen intersection-\(21\) transport only with a complete
@@ -488,9 +508,9 @@ scalar conditions before exploiting sparsity.
    - preserve C01/C04 as open absent an exact exclusion.
 10. Keep EXP-093 cancelled; do not revive the global cubic solve.
 11. Keep EXP-109 as a bounded regression control, not as the main route.
-12. Preserve Paper B v0.30 at immutable DOI
-   `10.5281/zenodo.21730785`; require another manuscript claim change for any
-   later version.
+12. Preserve Paper B v0.31 at immutable DOI
+   `10.5281/zenodo.21739069`; require another validated manuscript claim change
+   before creating any later version.
 
 Suggested source-round commands:
 
@@ -541,6 +561,8 @@ Latest correction publications:
 - Paper B v0.28: `10.5281/zenodo.21727663`
 - Paper B v0.29: `10.5281/zenodo.21730506`
 - Paper B v0.30: `10.5281/zenodo.21730785`
+- Paper B v0.31: `10.5281/zenodo.21739069` (canonical/latest;
+  `10.5281/zenodo.21739032` is the identical superseded duplicate)
 
 EXP-097 changed the admissible use of intersection number \(21\), so the planar
 manuscript was expanded, built, visually verified, merged through PR `#85`,

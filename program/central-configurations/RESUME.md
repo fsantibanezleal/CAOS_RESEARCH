@@ -78,6 +78,11 @@ The single first-read for a fresh session (contract: methodology/07-session-hand
 - EXP-008 equation-enrichment: P1/P2 REFUTED, P3 CONFIRMED. Dziobek is tropically
   active (comets 10 -> 7, 9 -> 6) but does not rescue the hard equal-valuation case;
   the comet count, not the f-vector, is the monotone invariant; e_IU is inert.
+- EXP-009 torus-census-n4: INCONCLUSIVE-CAP on both exact msolve routes. The
+  route-A enriched planar saturation and route-B Hampton-Moeckel z-system each
+  ran the declared 3600-second cap with zero output. The exact square smoke test
+  passed. Published counts 50 and 4 remain untested by us; direct solving is
+  closed at current budgets and the incidence-dimension/BKK routes are promoted.
 - EXP-004 valuation-equation-screening: P2/P3 CONFIRMED, P1 operational + bonus.
   TWO NEW working valuation families at n = 5 (powers of 2, primes); JL25's
   257-component count reproduced exactly (comet-instrument validation); the
@@ -100,13 +105,41 @@ FINDING: gfan 0.7 fails at n = 6 in BOTH arithmetic modes, in two different ways
 and the 64-bit failure is independent of valuation magnitude. The n = 6 barrier we
 are hitting is INFRASTRUCTURAL, not a compute-budget question; JL25 report their own
 n = 6 computation as completing (and inconclusive), so their run differed in version,
-flags or valuation. Next step in progress: gfan 0.8beta (May 2026) built from the
-author tarball (SHA-256 fa7884e5f317c50f8fb4f37bcf5d419f0fd5f7b90d6037349d1957ea73cebbee)
-to test whether the newer version clears either failure. Outreach to the author is
+flags or valuation. gfan 0.8beta (author tarball SHA-256
+fa7884e5f317c50f8fb4f37bcf5d419f0fd5f7b90d6037349d1957ea73cebbee, binary gfan08
+SHA-256 0f177e6a4f7829fc41910ed0395254b2d1e895322bd5705c2c803225bbb5f661) was
+VALIDATED on our n = 5 control (exact f-vector match) and CLEARED the first
+barrier: it ran hours past 0.7's 6.5-minute abort point. Outreach to the author is
 NOT taken without Felipe.
-Heartbeat: `wsl -d Ubuntu-24.04 -- bash -lc 'cat ~/exp005/status-*.log'`;
-outputs land in `~/exp005/prevariety-<label>.out` and are copied to
-`E:\_Datos\caos-research\central-configurations\EXP-005\`.
+
+UPDATE 2026-07-25, after a WSL idle-shutdown killed three detached runs (the
+0.8beta pow2 run at 1 h 41 m, the 0.7 pow3-b0 run at about 7.5 cpu-days, and
+EXP-009's route B): PERMANENT FIX in the WSL user `.wslconfig`
+(vmIdleTimeout=-1, memory 26GB, processors 30) plus a keepalive process, `setsid`
+launches, and `--saveas` checkpoints in run08.sh. The 0.7 pow3-b0 investment was
+NOT restarted on 0.7 (its sibling died at the same assertion class); pow3
+continues on 0.8beta.
+
+UPDATE 2026-08-01: the fix has held since the current relaunch. Both gfan 0.8beta
+n = 6 runs were verified alive at 07:54 local time after about 74 minutes:
+gfan08 pow2 --bits 64 (label pow2-08b64r, 10 threads) and gfan08
+pow3 --bits 0 (label pow3-08b0, 10 threads), both with --saveas checkpoints.
+Heartbeat: `wsl -d Ubuntu-24.04 -- bash -lc 'ps -o etime,args -C gfan08 -C msolve;
+cat /root/exp005b/status-*.log'`. EXP-009 is DECIDED: INCONCLUSIVE-CAP ON BOTH
+ROUTES (route A and the z-system route B each produced zero msolve output at their
+enforced 3600 s caps; input hashes recorded; the published 50/4 counts remain
+untested by us). Consequence adopted: counts go to the BKK bounding rung
+(CCB-007/022, target 25380), and finiteness goes to the incidence-dimension lane.
+EXP-010 (n = 4 Dziobek-variety dimension calibration) is declared; no run has
+started.
+
+STRATEGY DOSSIER (Felipe's request, 2026-07-25):
+`program/central-configurations/approaches-evaluation-2026-07-25.md`: the measured
+ranking of every approach we ran, and four alternative views with first
+experiments: the INCIDENCE-DIMENSION lane (CCB-033, the valuation-free second
+route to generic n = 6), witness sets (CCB-034), continuum-exclusion at named
+exceptional masses (CCB-035), and the symmetric-strata ladder (CCB-036, on top of
+arXiv:1811.08681 which already closes a symmetric class of n = 6).
 A POINTED result (all comets certified) would give generic-mass finiteness for
 n = 6: statement-level, so it goes to Felipe FIRST, then to an
 arbitrary-precision hardening rerun, before anything leaves the repo.
@@ -117,10 +150,11 @@ arbitrary-precision hardening rerun, before anything leaves the repo.
    `wsl -d Ubuntu-24.04 -- bash -lc 'cat /root/exp005/status-pow3-b0.log'` (and
    pow2-b0). On completion: decide every comet with the EXP-007 instrument, write
    the verdict, and if POINTED go to Felipe FIRST, then the hardening rerun.
-2. EXP-009 (declare first): the n = 4 equal-mass census IN THE TORUS, the object
-   EXP-006 identified: saturate by the product of the six distances, or use the
-   HM06 z-variable square system (their equation (13), 10 x 10, BKK-ready). Ground
-   truth: 4 classes mod rotation/reflection/permutation, 50 mod rotation only.
+2. Run EXP-010 (CCB-033, hypothesis already declared): the n = 4 Dziobek-variety
+   dimension calibration (sections keep msolve zero-dimensional; deterministic
+   grevlex rung under its own cap). n = 5 only after n = 4 passes; n = 6 only
+   after both. Keep the HM06 mixed-volume value 25380 as the separate BKK
+   reproduction target; do not silently extend EXP-009's direct-solve budget.
 3. Reads (front E): Sun-Xie-You (arXiv:2510.25649, gate for the Hessian instrument
    CCB-014); AK12 full anatomy (CCB-023); Chang-Chen tables (CCB-004).
 4. Statement-level claims and any outreach: to Felipe first, always.

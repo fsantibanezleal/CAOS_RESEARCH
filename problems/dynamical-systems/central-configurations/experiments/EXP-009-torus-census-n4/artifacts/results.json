@@ -1,6 +1,22 @@
 {
   "smoke-square-in-route-A": {
     "status": "pass",
-    "detail": ""
+    "detail": "exact square (32x^6-32x^3+7 side) satisfies every route-A equation exactly"
+  },
+  "route-A": {
+    "status": "inconclusive-cap",
+    "engine": "msolve 0.10.1 (WSL)",
+    "cap_seconds": 3600,
+    "output_bytes": 0,
+    "input_sha256": "526ec58a6d7357644efe921f97cb176b32f69718448e07249ce92a3dbbc6eb1b",
+    "detail": "no output within the declared budget; cap enforced by the detached finisher"
+  },
+  "route-B": {
+    "status": "inconclusive-cap",
+    "engine": "msolve 0.10.1 (WSL)",
+    "cap_seconds": 3600,
+    "output_bytes": 0,
+    "input_sha256": "77bfea6e9b81c8a36286b214559bcdf12a21e2448a19f8255c82f64ffdd23dc4",
+    "detail": "attempt 1 killed by WSL vm idle shutdown (infrastructure, excluded); attempt 2 ran the full 3600 s under timeout with no output; terminal state in cap-evidence-2026-08-01.txt"
   }
 }
