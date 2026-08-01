@@ -43,7 +43,8 @@
   untested by us. Direct solving is retired at current budgets.
 - **Now:** EXP-005's two detached gfan08 variants were verified alive at 07:54
   local time after about 74 minutes; no output or mathematical verdict yet.
-- **Next experiments:** EXP-010 calibrates the incidence-dimension lane at
-  n = 4 and n = 5; separately reproduce HM06's mixed volume 25380.
+- **Next experiments:** EXP-010 is declared and next calibrates the
+  incidence-dimension lane at n = 4; no run has started. Separately reproduce
+  HM06's mixed volume 25380.
 - **Isolation note:** rounds close with NO version bump (methodology/08); the release
   step is serialized and owned elsewhere; a parallel session runs jacobian-conjecture.

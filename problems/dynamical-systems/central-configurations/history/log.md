@@ -280,3 +280,8 @@
 - Direct solving is closed at current budgets. EXP-010 promotes the
   incidence-dimension lane; reproducing HM06's mixed volume 25380 is retained
   as the separate bounding rung.
+- EXP-010 was declared after the EXP-009 verdict and before any run. Its first
+  calibration targets the n=4 Dziobek variety with exact random linear sections
+  and a deterministic dimension rung. Preflight reconciliation corrected the
+  Rabinowitsch dimension bookkeeping: adding `t*prod(r_ij)-1` does not change
+  Krull dimension. No EXP-010 computation has started.

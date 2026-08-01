@@ -71,9 +71,10 @@ reachable.
   section degree) per draw.
 - P2 (dimension from above): for TWO independent 4-section draws, the sectioned
   system is EMPTY; msolve returns [] within 900 s per draw.
-- P3 (deterministic rung): the grevlex staircase dimension of the unsectioned
-  stripped ideal (with the Rabinowitsch variable) is 3 + 1 in QQ[r, t], i.e.
-  dim D4 = 3 on the torus, within an 1800 s sympy cap. Inconclusive-cap is an
+- P3 (deterministic rung): the Krull dimension of the unsectioned stripped ideal
+  is 3 in QQ[r, t]. The Rabinowitsch variable is fixed by
+  t * prod(r_ij) - 1 and therefore adds one variable and one equation, not one
+  dimension. The computation has an 1800 s sympy cap. Inconclusive-cap is an
   admissible outcome that leaves P1/P2 carrying the claim.
 - P4 (internal consistency = degree well-defined): the complex counts of the two
   P1 draws AGREE. Two generic sections of the same variety see the same degree;
@@ -87,9 +88,9 @@ reachable.
   EXP-008 tropical activity). Moeckel 2001 is interpretation only.
 - Smoke test (before any solver time): (a) the exact equal-mass square
   (side minpoly 32x^6 - 32x^3 + 7, EXP-001) satisfies h_ab, h_bc, h_ac and CM
-  exactly; (b) the unit tetrahedron satisfies the h's but NOT CM; (c) a random
-  planar non-CC configuration (four exact rational points in the plane, mutual
-  distances squared taken exactly) satisfies CM but NOT the h's. Three-way
+  exactly; (b) the unit tetrahedron satisfies the h's but NOT CM; (c) the
+  nonsquare 3-by-4 rectangle has rational mutual distances 3, 4, and 5,
+  satisfies CM exactly, and does NOT satisfy all h's. Three-way
   discrimination, sympy exact, expected under 60 s.
 - Premise dependencies: none of P1-P4 depends on an [U]-tagged claim; all are
   machine-decidable statements about our own systems.

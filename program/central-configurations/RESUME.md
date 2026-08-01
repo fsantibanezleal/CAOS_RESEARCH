@@ -130,7 +130,8 @@ ROUTES (route A and the z-system route B each produced zero msolve output at the
 enforced 3600 s caps; input hashes recorded; the published 50/4 counts remain
 untested by us). Consequence adopted: counts go to the BKK bounding rung
 (CCB-007/022, target 25380), and finiteness goes to the incidence-dimension lane.
-EXP-010 (n = 4 Dziobek-variety dimension calibration) is the next declaration.
+EXP-010 (n = 4 Dziobek-variety dimension calibration) is declared; no run has
+started.
 
 STRATEGY DOSSIER (Felipe's request, 2026-07-25):
 `program/central-configurations/approaches-evaluation-2026-07-25.md`: the measured
@@ -149,7 +150,7 @@ arbitrary-precision hardening rerun, before anything leaves the repo.
    `wsl -d Ubuntu-24.04 -- bash -lc 'cat /root/exp005/status-pow3-b0.log'` (and
    pow2-b0). On completion: decide every comet with the EXP-007 instrument, write
    the verdict, and if POINTED go to Felipe FIRST, then the hardening rerun.
-2. Declare, then run EXP-010 (CCB-033): the n = 4 Dziobek-variety
+2. Run EXP-010 (CCB-033, hypothesis already declared): the n = 4 Dziobek-variety
    dimension calibration (sections keep msolve zero-dimensional; deterministic
    grevlex rung under its own cap). n = 5 only after n = 4 passes; n = 6 only
    after both. Keep the HM06 mixed-volume value 25380 as the separate BKK
