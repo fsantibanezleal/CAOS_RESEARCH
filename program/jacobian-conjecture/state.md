@@ -384,3 +384,8 @@
   EXP-123/129/130, the complete declared four-coefficient restriction is
   closed. The 24-parameter core, full 51-parameter family, \((72,108)\),
   degree floor, and JC(2) remain open. EXP-132 next tests direction \((2,8)\).
+- **2026-07-31 publication:** PR #118 merged EXP-131 and Paper B v0.30 into
+  `develop` at `51aadae`. Zenodo record `21730785` is public at immutable DOI
+  `10.5281/zenodo.21730785`; its 403128-byte PDF MD5
+  `e3884477cbec6392959580176c221210` matches the local artifact. JCB-087 is
+  complete.

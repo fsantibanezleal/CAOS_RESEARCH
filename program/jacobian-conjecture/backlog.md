@@ -88,5 +88,5 @@
 | JCB-084 | Analyze and cover the \(A=0\) boundary of the four-parameter lift | P5 | done | 2026-07-31 | EXP-131: two exact C-independent minors have unit divisor gcd and cover the complete boundary plane |
 | JCB-085 | Publish the complete rational-graph atlas in Paper B v0.28 and Zenodo | P6 | done | 2026-07-31 | PR #112 merged at 6adc5dc; immutable DOI 10.5281/zenodo.21727663; public 395770-byte PDF MD5 matches local |
 | JCB-086 | Publish the complete principal-open four-parameter sector in Paper B v0.29 and Zenodo | P6 | done | 2026-07-31 | PR #115 merged the result; immutable DOI 10.5281/zenodo.21730506; public 400234-byte PDF MD5 matches local |
-| JCB-087 | Publish the complete declared four-coefficient restriction in Paper B v0.30 and Zenodo | P6 | doing | 2026-07-31 | triggered by EXP-131; preserve the 24-parameter core and JC(2) as open |
+| JCB-087 | Publish the complete declared four-coefficient restriction in Paper B v0.30 and Zenodo | P6 | done | 2026-07-31 | PR #118 merged the result; immutable DOI 10.5281/zenodo.21730785; public 403128-byte PDF MD5 matches local |
 | JCB-088 | Test a transverse fifth direction against the accepted multi-minor atlas | P5 | doing | 2026-07-31 | EXP-132 next: begin with direction (2,8), linear anchor factor and size-35 union SCC |

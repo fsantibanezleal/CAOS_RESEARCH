@@ -450,6 +450,12 @@ scalar conditions before exploiting sparsity.
   `80fe44419f7ed570456b91300adebeed`, matching the local artifact. Local
   SHA-256 is
   `0bd662262ad9e1aaa07c389c6cfe96ced485508cc9e332a366c86ad0626455be`.
+- EXP-131 and Paper B v0.30 were merged into `develop` by PR `#118` at
+  `51aadae`. Paper B v0.30 is published at immutable version DOI
+  `10.5281/zenodo.21730785`; its public 403128-byte PDF has MD5
+  `e3884477cbec6392959580176c221210`, matching the local artifact. Local
+  SHA-256 is
+  `50ea3b6679d295d7862241619280bce8bc18cec9cbd3db67942e82c3a5678de3`.
 - Promotion PR `#103` synchronized the validated tree to `main`. Exact
   current pointers must be verified live rather than copied from this file.
 - The management mirror is updated directly on its canonical `develop`
@@ -482,9 +488,9 @@ scalar conditions before exploiting sparsity.
    - preserve C01/C04 as open absent an exact exclusion.
 10. Keep EXP-093 cancelled; do not revive the global cubic solve.
 11. Keep EXP-109 as a bounded regression control, not as the main route.
-12. Preserve Paper B v0.29 at immutable DOI
-   `10.5281/zenodo.21730506`; publish v0.30 for the EXP-131 restriction
-   closure, then require another claim change for any later version.
+12. Preserve Paper B v0.30 at immutable DOI
+   `10.5281/zenodo.21730785`; require another manuscript claim change for any
+   later version.
 
 Suggested source-round commands:
 
@@ -534,6 +540,7 @@ Latest correction publications:
 - Paper B v0.21: `10.5281/zenodo.21695367`
 - Paper B v0.28: `10.5281/zenodo.21727663`
 - Paper B v0.29: `10.5281/zenodo.21730506`
+- Paper B v0.30: `10.5281/zenodo.21730785`
 
 EXP-097 changed the admissible use of intersection number \(21\), so the planar
 manuscript was expanded, built, visually verified, merged through PR `#85`,
