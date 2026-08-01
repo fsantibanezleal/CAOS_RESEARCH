@@ -73,8 +73,8 @@ its purest form); (b) depth-6 census blocked on TCB-005 canonicalization
 
 Commands: tests
 `.venv python -m pytest problems/computation-complexity/tau-conjecture/code/tclib -q`;
-census runs from each experiment folder via the MAIN checkout venv
-`D:\_Repos\Research_Caos\CAOS_RESEARCH\.venv\Scripts\python.exe run.py`.
+census runs from each experiment folder via the repository checkout venv
+`\.venv\Scripts\python.exe run.py`.
 
 ## 6. Where everything lives
 
