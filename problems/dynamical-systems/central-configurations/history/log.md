@@ -285,3 +285,28 @@
   and a deterministic dimension rung. Preflight reconciliation corrected the
   Rabinowitsch dimension bookkeeping: adding `t*prod(r_ij)-1` does not change
   Krull dimension. No EXP-010 computation has started.
+
+## 2026-08-01 - EXP-010 decided: the cheap half of the dimension instrument survives
+
+- EXP-010 VERDICT: EMPTINESS PROBES CONFIRMED IN SECONDS, CENSUS PROBES REFUTED
+  BY CAP. Smoke gate passed in 1 s (square ON the Dziobek variety by exact
+  polynomial reduction modulo 8A^3 = 4 + S2, S2^2 = 2; tetrahedron excluded by
+  CM = 4; the 3-4-5 rectangle excluded by the Dziobek differences). Both
+  codimension-4 random sections EMPTY in 1 s each (msolve `[-1]:`, raw outputs
+  archived): probabilistic-exact support for dim D4 <= 3, the direction generic
+  finiteness actually consumes. Both codimension-3 censuses and the sympy
+  staircase capped (900 s / 1800 s): the declared kill criterion fired for the
+  census half, so no degree data and no lower bound beyond the exact witness
+  (dim >= 0 from the square). Stripped degrees measured: Dziobek differences
+  drop to degree 9 with 6 terms each, Cayley-Menger degree 6 with 22 terms.
+- Instrument consequences adopted: recorded-section emptiness probes VALIDATED
+  as the cheap probabilistic upper-bound tool; CCB-037 (Dias-Pan partial-GB
+  leading-term unions, deterministic upper bounds) pulled forward to replace
+  full staircases; CCB-034 (witness sets) promoted for lower bounds and degrees.
+  EXP-011 (n = 5 spatial Dziobek) is now shaped as the Dias-Pan proof pattern
+  run on our exact instruments: emptiness probes + partial-GB + witness rank.
+- Same morning: Dias-Pan arXiv:1811.08681 read IN FULL (CCB-036 stage 1 done;
+  dossier persisted; PDF archived with SHA-256; the cross symmetric stratum of
+  n = 6 is generically closed, their theorem statement misprints "open" for a
+  closed exceptional set; journal search found no published version). CCB-037
+  minted from their Lemma 7.5. Known-results ladder row added.
