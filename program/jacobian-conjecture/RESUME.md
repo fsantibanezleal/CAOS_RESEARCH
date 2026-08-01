@@ -1,7 +1,8 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-08-01 after EXP-133 selected a bounded exact lift of the
-principal-open \((2,8)\) atlas. This is
+Updated 2026-08-01 after EXP-134 proved the transverse rank-seven reduction
+and reached its exact determinant gates. EXP-135 is the active low-rank
+transfer route. This is
 the first-read navigation page. Primary artifacts and experiment verdicts
 remain the evidence.
 
@@ -422,7 +423,10 @@ scalar conditions before exploiting sparsity.
   at \(u=1\).
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
-- EXP-111 through EXP-133 are complete. No Jacobian process is active.
+- EXP-111 through EXP-134 are complete. EXP-134 is inconclusive at its exact
+  determinant gates but proves one size-33 core, 86 singleton blocks, exact
+  transverse rank seven, and `deg_T<=7`. EXP-135 is declared for the 7-by-7
+  matrix-determinant-lemma transfer calculation; no Jacobian process is active.
 - EXP-133 is a modular route-selection result with accepted artifact SHA-256
   `35E18A6477312B81F0CDB18C8165539A72129C1D81B16F79AC89EFB948BEBA73`.
   It does not trigger a manuscript or Zenodo update because it proves no new
@@ -505,11 +509,12 @@ scalar conditions before exploiting sparsity.
 
 1. Preserve EXP-132's exact three-minor identity as the \(A=0,d=1\)
    transverse regression gate.
-2. Reconstruct the EXP-124 graph section exactly in characteristic zero using
-   the \(C+1\) two-direction pencil. Prove or refute the observed \(T\)-inertness
-   in the quotient \(\mathbb Q[X,B,Y,T]/(R+YS)\); do not infer it from the
-   modular samples alone.
-3. If that section is exactly inert, retain the old \(F_3F_6F_7\) divisor
+2. Execute EXP-135: factor the rank-seven transverse core as `U V^T`, solve
+   the seven graph-quotient right-hand sides, and compute the 7-by-7 transfer
+   determinant with a complete denominator ledger. Do not repeat EXP-134's
+   gated 33-by-33 determinant formulations.
+3. If the transfer determinant proves exact graph inertness, retain the old
+   \(F_3F_6F_7\) divisor
    ledger and reconstruct the EXP-129 atlas-1 affine lift and atlas-2 inert
    lift on the five squarefree graph blocks. Then lift the quadratic EXP-130
    section on the finite base algebra.

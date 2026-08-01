@@ -43,25 +43,27 @@ support-restricted failure, or absence of a finite certificate as a proof.
 
 1. Preserve EXP-132's three-minor unit identity as the direct-boundary
    regression gate. Do not repeat the closed \(A=0,d=1\) calculation.
-2. Execute the EXP-133-selected exact worker: reconstruct the EXP-124 graph
-   section in characteristic zero with the `C+1` two-direction pencil and
-   prove or refute its observed `T`-inertness. If inert, lift the two EXP-129
-   graph-atlas sections, then the quadratic EXP-130 finite-base section.
-3. Rebuild the \(d=0\) quotient after adjoining `(2,8)`; verify the explicit
+2. Execute EXP-135: factor the exact rank-seven transverse core and compute
+   the 7-by-7 transfer determinant from seven graph-quotient solves. Do not
+   repeat the 33-by-33 expansions retired by EXP-134.
+3. If the transfer determinant is one with a complete denominator ledger,
+   retain the old `F3*F6*F7` divisor and lift the two EXP-129 graph-atlas
+   sections, then the quadratic EXP-130 finite-base section.
+4. Rebuild the \(d=0\) quotient after adjoining `(2,8)`; verify the explicit
    \(P\)-kernel rather than assuming EXP-118 lifts unchanged.
-4. Recurse on the joint Fitting ideal. A single selected determinant is never
+5. Recurse on the joint Fitting ideal. A single selected determinant is never
    a cover, and an inherited basis that vanishes after specialization is not a
    chart.
-5. Reopen intersection-\(21\) transport only if both transverse routes stall,
+6. Reopen intersection-\(21\) transport only if both transverse routes stall,
    and only with the complete boundary-divisor ledger required by EXP-097.
-6. Continue the independent [125,150] frontier task:
+7. Continue the independent [125,150] frontier task:
    - preserve C10/C11/C19/C20 as unresolved by GGV2 Remark 2.32;
    - derive the 16 unprinted $A'_0$ values through the declared chain algorithm;
    - preserve C01/C04 as open absent an exact exclusion.
-7. Keep EXP-093 cancelled. EXP-075's exact support at reordered index 2662 proves that no global
+8. Keep the old certificate experiment EXP-093 cancelled. EXP-075's exact support at reordered index 2662 proves that no global
    degree-three polynomial covector exists, so the proposed four-million-unknown solve has no
    target.
-8. Keep EXP-109 as a bounded chart-control only. Do not continue coefficient
+9. Keep EXP-109 as a bounded chart-control only. Do not continue coefficient
    slices as the main programme.
 
 ## Routes not currently authorized for compute
