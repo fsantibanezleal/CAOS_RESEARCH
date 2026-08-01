@@ -33,3 +33,35 @@
   depth; candidate constructions at tau in {5,6}).
 - Dead ends: none this round.
 - State transition: scoped -> opened -> exploring (EXP-001 gate satisfied).
+
+## 2026-08-01 (round 2): approaches evaluated; EXP-002 confirmed
+
+- Rojas math/0304100 READ IN FULL: the p-adic Digit Conjecture (roots with
+  first p-adic digit 1) implies the FULL tau conjecture (Thm 1); valuation
+  spectrum s <= N_p(s) <= s(s+1)/2, p-independent, true growth open (Thm
+  2, Newton-polygon proof transcribed); best additive-complexity root
+  bound 1 + s^3(s+1)(7.5)^s s! (Thm 3); the real logistic root factory
+  (2^j roots at tau O(j)) pinned [V]; its p-adic analogue recorded open.
+- Approaches evaluation persisted (program/: approaches-evaluation file):
+  six routes ranked; ADOPTED: census + dual set-function view (B1),
+  p-adic valuation instrumentation (B2), composition-obstruction line
+  (B3), addition-chain technique import (B4). Research-lines board RL-1..6
+  written.
+- tclib package created (enum cores, exact roots, 2-adic spectra) with a
+  5-test suite anchored to Markstroem AND EXP-001 values; green.
+- **EXP-002 CONFIRMED** (declared before run; 64 s): depth 5 exhausted
+  (778,087 states); z_max(5) = 4; minimal tau for 4 distinct integer roots
+  is exactly 5. Mechanism DISCOVERY: the 10 records are difference-of-
+  squares splittings built on the Chebyshev-conjugate map x^2 - 2 (e.g.
+  x^2 - (x^2-2)^2 = -(x-1)(x+1)(x-2)(x+2)), the integer shadow of the
+  real-side root factory; the committed shifted-quadratic candidate ties
+  but does not dominate. Observational: all records have 2-adic spectra
+  {0,1} (roots pile into few valuation classes: the pressure sits on the
+  digit-conjecture side at the bottom of the ladder).
+- Wiki: 01-statement-and-history.md transcribed (dossier + Rojas read).
+- Exploration moment: the two new views (dual set-function; valuation
+  spectrum) plus the Chebyshev-shadow reading minted RL-4's concrete first
+  question: how many iterations of the x^2-2 factory keep all roots
+  integral, at what gate cost.
+- Dead ends: none; the naive census is now compute-bound at depth 6
+  (TCB-005 canonicalization is the declared prerequisite).
