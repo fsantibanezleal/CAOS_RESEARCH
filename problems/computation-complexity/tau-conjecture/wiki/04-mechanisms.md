@@ -16,6 +16,20 @@ machine-verified; theorems are [D] with proofs in the notes.
 | Tower iterate $A \mapsto A^2 + c$ | 2 | bounded by the stall theorem | never a record beyond one split |
 | Geometric-progression factor $(x - 2^{2^i})$, constants by squaring | ~3 per root | +1 root each | the literature's linear-rate record (Rojas) |
 
+## The family measurement (EXP-005) and the cycle ceiling
+
+Across the whole quadratic family $h_c = x^2 - c$, $c \le 200$, the
+maximum tower yield is 5, attained ONLY at $c = 2$: the parameterized
+loophole is empty there. Two arithmetic series produce yield 4:
+$c = m(m+1)$ (fixed/anti-fixed points $\{\pm m, \pm(m+1)\}$) and the
+DISCOVERED series $c = m^2 + m + 1$ (genuine integer 2-cycles
+$m \to -m-1 \to m$, harvested by $x^2 - h^{\circ 2}(x)^2$). The ceiling
+is explained by a classical fact with a 5-line divisibility proof:
+integer cycles of ANY integer polynomial have length at most 2, so
+period-1, signed-period-1 and period-2 points are the complete
+harvestable inventory. (EXP-005 verdict; classical attribution to the
+polynomial-cycles literature, to be pinned at read time.)
+
 ## The two theorems that bound mechanism classes
 
 1. **Chebyshev-tower stall** ($h = x^2 - 2$): $h^{\circ k}(x) - x$ has
