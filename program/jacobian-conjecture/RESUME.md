@@ -408,6 +408,12 @@ scalar conditions before exploiting sparsity.
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
 - EXP-111 through EXP-132 are complete. No Jacobian process is active.
+- EXP-132 and Paper B v0.31 were merged into `develop` by PR `#123` at
+  `7493003`. Paper B v0.31 is published at immutable version DOI
+  `10.5281/zenodo.21739032`; its public 407567-byte PDF has MD5
+  `9e9219d0947eccc12dc6efc25b849698`, matching the local artifact. Local
+  SHA-256 is
+  `60b0663896fad777020e00fe4332e7178a159f3c82789632efef7132b2525f3e`.
 - Current research branch: `work/jacobian-conjecture/next-round`.
 - EXP-096 was merged into `develop` by PR `#81` at `7866b0f`.
 - The planar manuscript reconciliation was merged by PR `#83` at `ffc6a3d`.
@@ -500,9 +506,9 @@ scalar conditions before exploiting sparsity.
    - preserve C01/C04 as open absent an exact exclusion.
 10. Keep EXP-093 cancelled; do not revive the global cubic solve.
 11. Keep EXP-109 as a bounded regression control, not as the main route.
-12. Preserve Paper B v0.30 at immutable DOI
-   `10.5281/zenodo.21730785`; EXP-132 is a new exact claim and triggers Paper B
-   v0.31 plus a new immutable Zenodo version after manuscript QA.
+12. Preserve Paper B v0.31 at immutable DOI
+   `10.5281/zenodo.21739032`; require another validated manuscript claim change
+   before creating any later version.
 
 Suggested source-round commands:
 
@@ -553,6 +559,7 @@ Latest correction publications:
 - Paper B v0.28: `10.5281/zenodo.21727663`
 - Paper B v0.29: `10.5281/zenodo.21730506`
 - Paper B v0.30: `10.5281/zenodo.21730785`
+- Paper B v0.31: `10.5281/zenodo.21739032`
 
 EXP-097 changed the admissible use of intersection number \(21\), so the planar
 manuscript was expanded, built, visually verified, merged through PR `#85`,

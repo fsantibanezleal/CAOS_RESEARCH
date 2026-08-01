@@ -401,3 +401,8 @@
   family, \((72,108)\), degree floor, and JC(2) remain open. Accepted artifact
   SHA-256:
   `9465FD7E112733C0D21EB011A432898578D5ECB39FDDBE87E141C2ACE71AB0F4`.
+- **2026-08-01 publication:** PR #123 merged EXP-132 and Paper B v0.31 into
+  `develop` at `7493003`. Zenodo record `21739032` is public at immutable DOI
+  `10.5281/zenodo.21739032`; its 407567-byte PDF MD5
+  `9e9219d0947eccc12dc6efc25b849698` matches the local artifact. JCB-091 is
+  complete.
