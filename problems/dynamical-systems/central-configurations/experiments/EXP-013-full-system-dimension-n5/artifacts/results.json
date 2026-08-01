@@ -1,0 +1,10 @@
+{
+  "p1-full-system": {
+    "status": "inconclusive-cap",
+    "detail": "659s at 600s cap"
+  },
+  "p2-menu-bound": {
+    "status": "decided",
+    "detail": "completed 11/26; union 4615 leads; d_pgb=5; set [0, 1, 2, 3, 9]"
+  }
+}

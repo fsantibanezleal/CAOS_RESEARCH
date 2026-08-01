@@ -371,3 +371,17 @@
 - Consequences: CCB-037 v2 VALIDATED (Singular workhorse, sympy verification
   layer); EXP-013 = menu growth (triples, mixed pairings, pairs with CM), 
   hypothesis first; the n = 6 symmetric-strata campaign is engine-unblocked.
+
+## 2026-08-01 - EXP-013 decided: the products ideal has exact dimension 5; the n = 5 question localizes to the CM cut
+
+- EXP-013 VERDICT: FULL SYSTEM CAPPED (600 s), MENU CONFIRMED AT DIM <= 5,
+  PRODUCTS DIMENSION EXACT AT 5. The all-fifteen-products system (with
+  saturation, without Cayley-Menger) completed a FULL reduced grevlex basis in
+  nine seconds (2436 leading monomials): its staircase dimension is the true
+  Krull dimension, 5, matching the rank-one parametrization count. The menu
+  union (4615 leads from 11 completing subideals) confirms dim <= 5 for the
+  cut. Cost law now sharp: everything without CM runs in seconds, everything
+  mixing products WITH CM caps at 120 s. The whole n = 5 dimension question
+  is now ONE algebraic event: does CM vanish identically on any top component
+  of the products variety? EXP-014 (incremental std from the completed basis)
+  is the declared next rung.

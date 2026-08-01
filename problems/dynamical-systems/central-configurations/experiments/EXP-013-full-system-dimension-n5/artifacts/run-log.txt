@@ -1,0 +1,31 @@
+[11:11:09] EXP-013 runner start
+[11:22:10] RESULT p1-full-system: inconclusive-cap 659s at 600s cap
+[11:22:10] P1 capped; running the declared P2 menu
+[11:22:19]   dl-1234-1235: ok 3s, 658 leads
+[11:22:25]   dl-1234-1245: ok 2s, 655 leads
+[11:22:31]   dl-1234-1345: ok 2s, 634 leads
+[11:22:36]   dl-1234-2345: ok 2s, 607 leads
+[11:22:44]   dl-1235-1245: ok 2s, 656 leads
+[11:22:49]   dl-1235-1345: ok 2s, 647 leads
+[11:22:53]   dl-1235-2345: ok 2s, 608 leads
+[11:22:59]   dl-1245-1345: ok 2s, 674 leads
+[11:23:04]   dl-1245-2345: ok 2s, 626 leads
+[11:23:08]   dl-1345-2345: ok 1s, 583 leads
+[11:25:22]   lcm-1234: cap-or-error 133s
+[11:27:35]   lcm-1235: cap-or-error 133s
+[11:29:48]   lcm-1245: cap-or-error 133s
+[11:32:03]   lcm-1345: cap-or-error 132s
+[11:34:15]   lcm-2345: cap-or-error 131s
+[11:36:27]   pcm-1234-1235: cap-or-error 132s
+[11:38:42]   pcm-1234-1245: cap-or-error 132s
+[11:40:54]   pcm-1234-1345: cap-or-error 130s
+[11:43:05]   pcm-1234-2345: cap-or-error 130s
+[11:45:19]   pcm-1235-1245: cap-or-error 131s
+[11:47:31]   pcm-1235-1345: cap-or-error 131s
+[11:49:43]   pcm-1235-2345: cap-or-error 131s
+[11:51:55]   pcm-1245-1345: cap-or-error 132s
+[11:54:06]   pcm-1245-2345: cap-or-error 131s
+[11:56:16]   pcm-1345-2345: cap-or-error 130s
+[11:56:36]   all15-nocm: ok 9s, 2436 leads
+[11:56:36] RESULT p2-menu-bound: decided completed 11/26; union 4615 leads; d_pgb=5; set [0, 1, 2, 3, 9]
+[11:56:36] runner done (P2 path)
