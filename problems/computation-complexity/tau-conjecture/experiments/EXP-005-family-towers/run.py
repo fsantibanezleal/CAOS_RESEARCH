@@ -13,7 +13,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent.parent / "code"))
 
-from tclib.enum import integer_roots, padd, pmul, psub  # noqa: E402
+from tclib.enum import integer_roots, padd, peval, pmul, psub  # noqa: E402
 
 T0 = time.time()
 ART = HERE / "artifacts"
@@ -53,6 +53,19 @@ def tau_integers(max_depth):
     return tau
 
 
+def roots_by_escape_bound(f, c):
+    """Exact integer roots of the tower shapes for h_c: by the escape
+    lemma (monic stall theorem, Lemma 1, proved independently), any
+    integer root r of a shape built from iterates of h_c = x^2 - c
+    satisfies |r| <= c + 1 (an orbit starting outside [-(c+1), c+1] has
+    strictly increasing absolute values, so no iterate coincidence can
+    occur). Divisor-based counting is infeasible here (constant terms up
+    to ~c^{2^k}); direct evaluation over the proved window is exact."""
+    if not f:
+        return []
+    return [r for r in range(-(c + 1), c + 2) if peval(f, r) == 0]
+
+
 def yields_for_c(c, kmax=4):
     """Exact integer-root yields of tower shapes for h_c = x^2 - c."""
     cc = (-c,)
@@ -63,11 +76,11 @@ def yields_for_c(c, kmax=4):
     for j in range(1, kmax + 1):
         # fixed-point shape h^j(x) - x
         f = psub(iters[j], X)
-        rows.append(("fix", 0, j, sorted(integer_roots(f)) if f else []))
+        rows.append(("fix", 0, j, roots_by_escape_bound(f, c)))
         # DOS shapes h^i squared minus h^j squared, i < j
         for i in range(0, j):
             g = psub(pmul(iters[i], iters[i]), pmul(iters[j], iters[j]))
-            rows.append(("dos", i, j, sorted(integer_roots(g)) if g else []))
+            rows.append(("dos", i, j, roots_by_escape_bound(g, c)))
     return rows
 
 
@@ -88,6 +101,21 @@ def main():
         (ART / "family.json").write_text(json.dumps({"smoke": True}),
                                          encoding="utf-8")
         return 0
+
+    # Adversarial cross-check of the escape-bound root finder against the
+    # divisor method where the latter is feasible (small c, shapes j <= 2).
+    for c in range(1, 11):
+        cc = (-c,)
+        iters = [X]
+        for _ in range(2):
+            iters.append(padd(pmul(iters[-1], iters[-1]), cc))
+        for j in (1, 2):
+            for i in range(0, j):
+                g = psub(pmul(iters[i], iters[i]), pmul(iters[j], iters[j]))
+                if g:
+                    assert set(roots_by_escape_bound(g, c)) == \
+                        integer_roots(g), (c, i, j)
+    log("escape-bound root finder cross-checked vs divisor method (c<=10)")
 
     tau = tau_integers(7)
     log(f"tau table: {len(tau)} integers (depth 7)")
