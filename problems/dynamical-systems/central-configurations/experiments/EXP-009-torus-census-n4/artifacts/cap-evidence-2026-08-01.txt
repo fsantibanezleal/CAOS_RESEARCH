@@ -1,0 +1,10 @@
+total 24
+drwxr-xr-x  2 root root 4096 Aug  1 06:38 .
+drwx------ 15 root root 4096 Jul 25 14:14 ..
+-rw-r--r--  1 root root   51 Jul 25 15:18 finish.log
+-rwxr-xr-x  1 root root 5263 Jul 25 14:14 routeA.ms
+-rw-r--r--  1 root root    0 Jul 25 14:14 routeA.out
+-rw-r--r--  1 root root    0 Aug  1 06:38 routeB.log
+-rwxr-xr-x  1 root root  347 Aug  1 06:36 routeB.ms
+-rw-r--r--  1 root root    0 Aug  1 06:38 routeB.out
+routeB.out bytes: 0

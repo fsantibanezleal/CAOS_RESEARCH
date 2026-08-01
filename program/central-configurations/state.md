@@ -37,9 +37,13 @@
   invariant; e_IU inert). Manuscript front-matter standard persisted in
   methodology/05 after Felipe's review; manuscript v0.03 published as Zenodo new
   version 10.5281/zenodo.21554571.
-- **Now:** EXP-005 (n = 6) running detached on two arbitrary-precision variants;
-  EXP-009 (the n = 4 torus census) is the next declaration.
-- **Next experiments:** EXP-009 (torus census, saturated or HM06 z-system);
-  the Sun-Xie-You read gating the Hessian instrument (CCB-014).
+- **Done (2026-08-01):** EXP-009 closed INCONCLUSIVE-CAP on both exact msolve
+  routes after 3600 seconds each with zero output; the exact-square smoke test
+  passed. The published 50 labeled solutions / 4 symmetry classes remain
+  untested by us. Direct solving is retired at current budgets.
+- **Now:** EXP-005's two detached gfan08 variants were verified alive at 07:54
+  local time after about 74 minutes; no output or mathematical verdict yet.
+- **Next experiments:** EXP-010 calibrates the incidence-dimension lane at
+  n = 4 and n = 5; separately reproduce HM06's mixed volume 25380.
 - **Isolation note:** rounds close with NO version bump (methodology/08); the release
   step is serialized and owned elsewhere; a parallel session runs jacobian-conjecture.
