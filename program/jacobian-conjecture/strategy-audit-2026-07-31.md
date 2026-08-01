@@ -110,3 +110,19 @@ four-parameter restriction or isolate the smallest exact residual rank
 stratum. The independent ([125,150]) source-frontier work remains valuable
 but secondary; broad Newton, properness, and component-geometry routes remain
 on hold pending an applicability bridge.
+
+## EXP-131 resolution and next redirect
+
+EXP-131 followed the decision tree and closed the direct \(A=0\) plane with
+two exact \(C\)-independent maximal minors. Their squarefree \(B\)-divisors
+have an explicit Bezout identity equal to one. Together with EXP-118 and
+EXP-123/129/130, the complete declared four-coefficient restriction is now
+closed.
+
+The P0 target therefore moves transversely into the 24-parameter cyclic core.
+EXP-132 should add \((2,8)\) first: EXP-122 records a linear anchor factor and
+a size-35 union SCC, the smallest unused linear candidate. The correct object
+is the joint exceptional ideal of several lifted sections, with EXP-131's
+two-minor Bezout atlas retained as a boundary regression gate. Lee--Li,
+Jelonek, and intersection-21 transport remain conditional until an explicit
+applicability bridge is proved.

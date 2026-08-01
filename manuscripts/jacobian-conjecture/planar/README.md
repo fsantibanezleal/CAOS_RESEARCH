@@ -40,8 +40,11 @@ degrees 3, 9, and 18. The complete (AS\ne0) rational graph is therefore
 closed. EXP-130 decomposes the principal-open base locus into reduced field
 blocks of degrees 3, 6, 12, and 69, total dimension 90, and certifies a
 finite maximal-minor atlas uniformly in (Y=A^2C). The complete (A\ne0)
-sector of the declared four-parameter restriction is closed. The direct
-(A=0) boundary, 24-parameter core, and full family remain open. Grows
+sector of the declared four-parameter restriction is closed. EXP-131 returns
+to the original augmented matrix at (A=0) and gives two exact
+(C)-independent minors whose (B)-divisors have unit gcd. Together with the
+separate (d=0) cover, the declared four-coefficient restriction is closed.
+The 24-parameter core and full family remain open. Grows
 per session; content moved here from `manuscript/` in the 2026-07-22 split
 (see `manuscript/README.md` for the three-paper structure).
 
@@ -59,8 +62,8 @@ pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode ma
 Rules (methodology/05): [MV] / [D] / [C] labels on every claim; findings enter only after
 adversarial validation.
 
-Current manuscript version: **v0.29** (2026-07-31). Substantive revisions are published
+Current manuscript version: **v0.30** (2026-07-31). Substantive revisions are published
 as new Zenodo versions under concept DOI `10.5281/zenodo.21503367`.
-Version 0.29 DOI: `10.5281/zenodo.21730506`; concept DOI
-`10.5281/zenodo.21503367`. The public 400234-byte PDF has MD5
-`80fe44419f7ed570456b91300adebeed`.
+Version 0.30 DOI: pending publication; concept DOI
+`10.5281/zenodo.21503367`. Version 0.29 remains immutable at
+`10.5281/zenodo.21730506`.
