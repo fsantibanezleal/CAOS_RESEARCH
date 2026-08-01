@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-31\\[2pt]\normalsize Version 0.30}
+\date{2026-08-01\\[2pt]\normalsize Version 0.31}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.30}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.31}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -39,7 +39,7 @@ the Staircase Transport, and the Recalibrated Frontier}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper B of a three-paper record \textperiodcentered\ version 0.30 \textperiodcentered\ 2026-07-31\\
+Paper B of a three-paper record \textperiodcentered\ version 0.31 \textperiodcentered\ 2026-08-01\\
 DOI \href{https://doi.org/10.5281/zenodo.21503367}{10.5281/zenodo.21503367} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -141,6 +141,16 @@ boundary admits two exact minors independent of \(C\). Their divisors are
 scalars. An explicit Bezout identity makes their gcd one. Combined with the
 previous \(d=0\) quotient cover, this closes the complete declared
 four-coefficient restriction.
+Adjoining the transverse coefficient at \((2,8)\), EXP-132 closes the entire
+direct \(A=0,d=1\) boundary of that five-coefficient restriction. Three
+normalized maximal minors generate the unit ideal in \(\Q[B,C,T]\): after
+one exact row combination, two depend only on \(B\) and are coprime, with a
+persisted characteristic-zero Bezout certificate [MV/D]. The inherited
+EXP-123 and EXP-124 bases vanish identically on this specialization, so the
+successful certificate required a new SCC-guided basis rather than a
+parameter substitution into the old atlas. This result does not close the
+\(A\ne0,d=1\) lift, the transverse \(d=0\) quotient, the complete
+five-coefficient restriction, or any larger target.
 A new multiplication formula for $x^m$-anchored edges shows the $B = 16$ leading form cannot
 produce the Keller constant on its top edge for $m \ge 2$: that case, too, is a staircase
 transport. All computations are exact and reproducible; every claim is labeled machine-verified
@@ -1253,6 +1263,49 @@ four-coefficient restriction
 complete 51-parameter family, \((72,108)\) case, planar degree floor, and
 \(JC(2)\) remain open.
 
+EXP-132 next adjoins \(T=\varepsilon_{(2,8)}\) and works on the same original
+302-by-125 augmented matrix at \(A=0,d=1\) [MV]. Three normalized maximal
+minors are
+\[
+\begin{aligned}
+P(B)&=(5B+4)^3(25B^2-20B+16)^3,\\
+Q(B,C,T)&=B^{95}\bigl(4785156250B^{12}+9765625B^{11}CT
+ -1050000000B^9\\
+&\hspace{38mm}{}-10214400000B^6+1061683200B^3+5435817984\bigr),\\
+R(B,C)&=B^{105}C.
+\end{aligned}
+\]
+Consequently
+\[
+ Q-9765625\,BTR=Q_0(B),\qquad \gcd(P,Q_0)=1,
+\]
+and the persisted extended-Euclid output gives explicit
+\(u,v\in\Q[B]\) satisfying
+\[
+ uP+v\bigl(Q-9765625\,BTR\bigr)=1.
+\]
+Thus \((P,Q,R)=\Q[B,C,T]\), and the complete direct \(A=0,d=1\)
+boundary of the declared five-coefficient restriction
+\(\{(0,1),(0,5),(1,0),(2,9),(2,8)\}\) is closed [MV/D]. The primary
+section is exactly \(T\)-inert; the alternative is affine in \(T\). The
+successful final basis has 106 singleton cyclic components and a monomial
+determinant. In contrast, the inherited EXP-123 shared basis and EXP-124
+alternative basis both vanish identically on this direct specialization,
+refuting the declared prediction that an inherited section would suffice.
+
+There is a useful module-theoretic reading: the augmented maximal minors are
+the zeroth Fitting ideal of the cokernel, and the certificate above proves
+that this specialized presentation is everywhere surjective. Recent work on
+multivariate polynomial matrices gives Smith-form equivalence criteria for a
+structured class with triangular highest determinant and extensions to
+rectangular or rank-deficient matrices \cite{LuRuanWangXiao2026}. We have
+not established those structural hypotheses for the GGHV augmented matrix,
+so that theory is a comparison lens and a possible source of local reduction
+lemmas, not a shortcut or an additional closure claim. The \(A\ne0,d=1\)
+fifth-direction lift and the transverse \(d=0\) kernel quotient remain open;
+hence the complete five-coefficient restriction, 24-parameter core, full
+family, \((72,108)\), the planar degree floor, and \(JC(2)\) remain open.
+
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the
 published literature: the closing remark of \cite{GGV2017} states that the corner
@@ -1317,17 +1370,19 @@ audit trail (including its open verification items) persisted in the repository.
 \section{Program}
 
 Priorities, from the standing routes evaluation: (1) preserve the exact
-EXP-118/123/129--131 closure of the complete declared four-coefficient
-restriction; (2) test a transverse fifth direction, beginning with \((2,8)\),
-whose EXP-122 anchor factor is linear and whose union SCC has size 35, and
-recurse on the joint exceptional ideal of several exact sections; (3) retain
+EXP-118/123/129--132 certificates, including the direct \(A=0,d=1\)
+five-coefficient unit-ideal identity; (2) lift the fifth direction \((2,8)\)
+through the EXP-123/124/129/130 \(A\ne0,d=1\) atlas, selecting sections by
+SCC structure and reducing their joint exceptional ideal before attempting
+generic multivariate determinants; (3) rebuild the transverse \(d=0\)
+kernel quotient and test its Fitting ideal independently; (4) retain
 the complete EXP-118--121 \(T_B\)
-cover as a regression gate rather than adding redundant slice charts; (4) retain the
+cover as a regression gate rather than adding redundant slice charts; (5) retain the
 exact EXP-108 lift through \((0,6)\) as a bounded chart control rather than
-a terminating programme; (5) reopen the intersection-$21$ transport only
+a terminating programme; (6) reopen the intersection-$21$ transport only
 after constructing a complete boundary-divisor ledger through the swap,
-Laurent cuts, and final inversion; (6) pursue Newton resolution only after deriving a
-condition beyond the already-retained first $D=72$ branch; and (7) retain the
+Laurent cuts, and final inversion; (7) pursue Newton resolution only after deriving a
+condition beyond the already-retained first $D=72$ branch; and (8) retain the
 properness reformulation ($JC(2)$ holds iff every planar Keller map has empty
 Jelonek set; exact certificates shipped, EXP-014) as a cross-check instrument.
 The reproducibility contract: every [MV] claim has a persisted script and
@@ -1364,6 +1419,9 @@ arXiv:2204.14178.
 Approximate roots and intersection numbers, arXiv:1708.09367v2.
 \bibitem{LeeLi2024} K. Lee, L. Li, On the two-dimensional Jacobian conjecture:
 Magnus' formula revisited IV, arXiv:2408.01279.
+\bibitem{LuRuanWangXiao2026} D. Lu, Y. Ruan, D. Wang, F. Xiao,
+Matrix equivalence to Smith normal form: new theoretical results for
+multivariate polynomial matrices, arXiv:2605.09286v1, 2026.
 \bibitem{MakarLimanovTrakhtenberg2024} L. Makar-Limanov, L. Trakhtenberg,
 Properties of a Jacobian mate, MPIM Preprint 2024 (33);
 \href{https://doi.org/10.1007/s40863-025-00520-4}{doi:10.1007/s40863-025-00520-4}.

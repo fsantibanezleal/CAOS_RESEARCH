@@ -44,7 +44,13 @@ sector of the declared four-parameter restriction is closed. EXP-131 returns
 to the original augmented matrix at (A=0) and gives two exact
 (C)-independent minors whose (B)-divisors have unit gcd. Together with the
 separate (d=0) cover, the declared four-coefficient restriction is closed.
-The 24-parameter core and full family remain open. Grows
+EXP-132 then adds the transverse direction (2,8) and closes the complete
+direct (A=0,d=1) boundary of the declared five-coefficient restriction with
+three exact maximal minors generating the unit ideal in QQ[B,C,T]. The new
+SCC-guided basis is essential because the inherited EXP-123/124 bases vanish
+identically on this direct specialization. The
+(A nonzero,d=1) lift and transverse (d=0) quotient remain open, so the
+five-coefficient restriction, 24-parameter core, and full family remain open. Grows
 per session; content moved here from `manuscript/` in the 2026-07-22 split
 (see `manuscript/README.md` for the three-paper structure).
 
@@ -62,8 +68,10 @@ pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode ma
 Rules (methodology/05): [MV] / [D] / [C] labels on every claim; findings enter only after
 adversarial validation.
 
-Current manuscript version: **v0.30** (2026-07-31). Substantive revisions are published
+Current manuscript version: **v0.31** (2026-08-01). Substantive revisions are published
 as new Zenodo versions under concept DOI `10.5281/zenodo.21503367`.
-Version 0.30 DOI: `10.5281/zenodo.21730785`; concept DOI
-`10.5281/zenodo.21503367`. The public 403128-byte PDF has MD5
-`e3884477cbec6392959580176c221210`.
+Version 0.31 DOI: pending publication; current immutable version DOI
+`10.5281/zenodo.21730785` is v0.30; concept DOI
+`10.5281/zenodo.21503367`. The built 407567-byte v0.31 candidate PDF has MD5
+`9e9219d0947eccc12dc6efc25b849698` and SHA-256
+`60b0663896fad777020e00fe4332e7178a159f3c82789632efef7132b2525f3e`.

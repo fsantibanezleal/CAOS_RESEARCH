@@ -30,7 +30,7 @@ Minimal $\tau$ for 4 distinct integer roots = 5 (EXP-002). Depth-5 records
 $x^2 - 2$: $x^2 - (x^2-2)^2 = -(x-1)(x+1)(x-2)(x+2)$; all record 2-adic
 spectra are $\{0,1\}$. Enumerator anchored to Markstroem 14/14.
 
-## 2. Objects table
+## 2. The objects table
 
 | Object | Definition | Owner |
 |---|---|---|
@@ -73,8 +73,8 @@ its purest form); (b) depth-6 census blocked on TCB-005 canonicalization
 
 Commands: tests
 `.venv python -m pytest problems/computation-complexity/tau-conjecture/code/tclib -q`;
-census runs from each experiment folder via the MAIN checkout venv
-`D:\_Repos\Research_Caos\CAOS_RESEARCH\.venv\Scripts\python.exe run.py`.
+census runs from each experiment folder via the repository checkout venv
+`\.venv\Scripts\python.exe run.py`.
 
 ## 6. Where everything lives
 

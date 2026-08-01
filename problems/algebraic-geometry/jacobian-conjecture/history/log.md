@@ -1606,3 +1606,29 @@
   403128-byte PDF MD5 `e3884477cbec6392959580176c221210` matches the local
   artifact (SHA-256
   `50ea3b6679d295d7862241619280bce8bc18cec9cbd3db67942e82c3a5678de3`).
+
+## 2026-08-01 - EXP-132 closes the transverse direct boundary
+
+- EXP-132 adjoins direction \((2,8)\) to the original 302-by-125 augmented
+  family at \(A=0,d=1\). The EXP-131 primary section is exactly unchanged;
+  the second section is affine through one \(B^{106}CT\) term.
+- The inherited EXP-123 and EXP-124 bases vanish identically after direct
+  specialization, refuting the prediction that three inherited sections
+  survive. Residual selection at two pairs of primes produces stable exact
+  bases instead.
+- Exact SCC reconstruction gives a final monomial section \(B^{105}C\). It
+  eliminates the mixed term from the affine section, leaving a univariate
+  polynomial coprime to the primary determinant. A persisted Bezout identity
+  expands to one, so three maximal minors generate the unit ideal in
+  \(\mathbb Q[B,C,T]\).
+- The complete \(A=0,d=1\) boundary of the five-coefficient restriction is
+  closed. Its \(A\ne0,d=1\) and transverse \(d=0\) sectors remain open; no
+  claim is made about the full 24-parameter core, 51-parameter family,
+  \((72,108)\), degree floor, or JC(2).
+- Accepted result SHA-256:
+  `9465FD7E112733C0D21EB011A432898578D5ECB39FDDBE87E141C2ACE71AB0F4`;
+  exact worker SHA-256:
+  `8215466DBE36C5CE36C3F929864BE8A8D940A436DA3AA709D289E82C68DC7891`.
+- The route is reprioritized to the principal-open \(A\ne0,d=1\) lift and a
+  separate rebuild of the transverse \(d=0\) quotient. Paper B v0.31 is
+  required because the exact atlas claim changed.

@@ -1,11 +1,11 @@
 # Jacobian conjecture: active problem plan
 
 Opened 2026-07-20. Area: algebraic geometry. State: exploring. Last strategic audit:
-2026-07-31.
+2026-08-01.
 
 This is the current plan. Earlier route proposals remain evidence of the program's development,
 but the controlling decisions are in
-[`strategy-audit-2026-07-31.md`](strategy-audit-2026-07-31.md).
+[`strategy-audit-2026-08-01.md`](strategy-audit-2026-08-01.md).
 
 ## Goal
 
@@ -34,27 +34,24 @@ support-restricted failure, or absence of a finite certificate as a proof.
 | JC-A | Preserve and publish the exact dimension at least three record | rolling; no current compute |
 | JC-B | Complete the $[125,150]$ primary-source frontier reconciliation | active; EXP-094 shows C10/C11/C19/C20 are not excluded by the cited remark; 16 unprinted \(A'_0\) values remain |
 | JC-C | Test modern Newton and approximate-root restrictions against the GGHV reduction | direct transport decided by EXP-097: absolute resultant degree is not typed after Laurent localization without a boundary-divisor ledger |
-| JC-D | Reformulate universal inconsistency as a constructible determinantal-strata problem | active; EXP-118/123/129--131 close the complete declared four-coefficient restriction; transverse core lifts remain |
+| JC-D | Reformulate universal inconsistency as a constructible determinantal-strata problem | active; EXP-132 closes the direct `A=0,d=1` boundary after adjoining `(2,8)`; the transverse `A!=0` and `d=0` sectors remain |
 | JC-E | Degree-three certificate decision | done by EXP-075; one exact four-parameter slice is infeasible, so no global cubic covector exists |
 | JC-F | Global geometric routes: fibres, properness, and parameter spaces | hold; resume only after a rigorous bridge to the reduced system is stated |
 | JC-G | Manuscripts, wiki, data, and public record | rolling; update only from adjudicated results |
 
 ## Ordered next work
 
-1. Preserve EXP-118/123/129--131 as the exact complete cover of the declared
-   four-coefficient restriction. Do not repeat its graph, base-locus, or
-   direct-boundary calculations.
-2. Declare EXP-132 on a transverse fifth direction, beginning with \((2,8)\):
-   EXP-122 gives it a linear anchor factor and the smallest union SCC among
-   unused linear candidates (size 35).
-3. Lift several accepted minor sections simultaneously. Recurse on their
-   joint exceptional ideal; a single selected determinant is never a cover.
-4. Treat the complete EXP-118--121 \(T_B\) cover and EXP-131's exact Bezout
-   identity as regression gates. Do not
-   spend compute re-eliminating or adding charts to the closed restriction.
-5. Reopen intersection-\(21\) transport only if transverse core lifting stalls,
-   large, and only with the complete boundary-divisor ledger required by
-   EXP-097.
+1. Preserve EXP-132's three-minor unit identity as the direct-boundary
+   regression gate. Do not repeat the closed \(A=0,d=1\) calculation.
+2. Lift the accepted EXP-123/124/129/130 section suite through `(2,8)` on
+   \(A\ne0,d=1\), profiling exact SCCs before expanding determinants.
+3. Rebuild the \(d=0\) quotient after adjoining `(2,8)`; verify the explicit
+   \(P\)-kernel rather than assuming EXP-118 lifts unchanged.
+4. Recurse on the joint Fitting ideal. A single selected determinant is never
+   a cover, and an inherited basis that vanishes after specialization is not a
+   chart.
+5. Reopen intersection-\(21\) transport only if both transverse routes stall,
+   and only with the complete boundary-divisor ledger required by EXP-097.
 6. Continue the independent [125,150] frontier task:
    - preserve C10/C11/C19/C20 as unresolved by GGV2 Remark 2.32;
    - derive the 16 unprinted $A'_0$ values through the declared chain algorithm;

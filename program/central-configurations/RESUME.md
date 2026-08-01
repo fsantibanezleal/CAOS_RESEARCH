@@ -100,13 +100,31 @@ FINDING: gfan 0.7 fails at n = 6 in BOTH arithmetic modes, in two different ways
 and the 64-bit failure is independent of valuation magnitude. The n = 6 barrier we
 are hitting is INFRASTRUCTURAL, not a compute-budget question; JL25 report their own
 n = 6 computation as completing (and inconclusive), so their run differed in version,
-flags or valuation. Next step in progress: gfan 0.8beta (May 2026) built from the
-author tarball (SHA-256 fa7884e5f317c50f8fb4f37bcf5d419f0fd5f7b90d6037349d1957ea73cebbee)
-to test whether the newer version clears either failure. Outreach to the author is
+flags or valuation. gfan 0.8beta (author tarball SHA-256
+fa7884e5f317c50f8fb4f37bcf5d419f0fd5f7b90d6037349d1957ea73cebbee, binary gfan08
+SHA-256 0f177e6a4f7829fc41910ed0395254b2d1e895322bd5705c2c803225bbb5f661) was
+VALIDATED on our n = 5 control (exact f-vector match) and CLEARED the first
+barrier: it ran hours past 0.7's 6.5-minute abort point. Outreach to the author is
 NOT taken without Felipe.
-Heartbeat: `wsl -d Ubuntu-24.04 -- bash -lc 'cat ~/exp005/status-*.log'`;
-outputs land in `~/exp005/prevariety-<label>.out` and are copied to
-`E:\_Datos\caos-research\central-configurations\EXP-005\`.
+
+UPDATE 2026-07-25, after a WSL idle-shutdown killed three detached runs (the
+0.8beta pow2 run at 1 h 41 m, the 0.7 pow3-b0 run at about 7.5 cpu-days, and
+EXP-009's route B): PERMANENT FIX in `C:\Users\fsant\.wslconfig`
+(vmIdleTimeout=-1, memory 26GB, processors 30) plus a keepalive process, `setsid`
+launches, and `--saveas` checkpoints in run08.sh. CURRENTLY RUNNING (relaunched):
+gfan08 pow2 --bits 64 (label pow2-08b64r, 10 threads), gfan08 pow3 --bits 0
+(label pow3-08b0, 10 threads), EXP-009 route B in msolve (3600 s cap).
+Heartbeat: `wsl -d Ubuntu-24.04 -- bash -lc 'ps -o etime,args -C gfan08 -C msolve;
+cat /root/exp005b/status-*.log'`. The 0.7 pow3-b0 investment was NOT restarted on
+0.7 (its sibling died at the same assertion class); pow3 continues on 0.8beta.
+
+STRATEGY DOSSIER (Felipe's request, 2026-07-25):
+`program/central-configurations/approaches-evaluation-2026-07-25.md`: the measured
+ranking of every approach we ran, and four alternative views with first
+experiments: the INCIDENCE-DIMENSION lane (CCB-033, the valuation-free second
+route to generic n = 6), witness sets (CCB-034), continuum-exclusion at named
+exceptional masses (CCB-035), and the symmetric-strata ladder (CCB-036, on top of
+arXiv:1811.08681 which already closes a symmetric class of n = 6).
 A POINTED result (all comets certified) would give generic-mass finiteness for
 n = 6: statement-level, so it goes to Felipe FIRST, then to an
 arbitrary-precision hardening rerun, before anything leaves the repo.
