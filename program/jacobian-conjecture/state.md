@@ -418,10 +418,18 @@
 - **2026-08-01 EXP-135 preflight:** the transverse core admits an exact
   rank factorization `K_T=UV^T`. At four rational graph controls the 7-by-7
   transfer `V^T H_0^-1 U` has rank three, square zero, and unit determinant
-  pencil. The global proof target is now the 49-entry square-zero identity,
-  not a determinant expansion. This is control evidence only. Artifact
+  pencil. This control-only stage selected the 49-entry square-zero identity
+  and is superseded by the ambient theorem immediately below. Artifact
   SHA-256:
   `D322A3041F10289A60640CB658640180C0B506AD8F84F450BFB8AA8CD8A403EA`.
+- **2026-08-01 EXP-135 theorem:** the selected EXP-124 section is exactly
+  transverse-inert on the full normalized `(A,B,C)` chart:
+  `det(H+T K_(2,8))=det(H)` in `QQ[A,B,C,T]`. Exact ranks are `7,3,0` for
+  `K_T,K_T^2,K_T^3`; separate degree bounds are `(25,24,6,7)`. A complete
+  136,500-control tensor grid over 30 primes has an 897-bit CRT modulus,
+  above the explicit 885-bit coefficient bound. This retains the old
+  `F3*F6*F7` divisor for this section only. Artifact SHA-256:
+  `B426FE41C7DC835DAF8E6079DE50644EA6D7CE661EF71A93E9D4951F0AA2ED9A`.
 - **2026-08-01 EXP-133:** the singular EXP-123 graph cannot normalize its own
   determinant. A corrected two-direction local pencil normalizes at the
   off-graph fibre `C+1` and retains the singular graph at `C`. Across primes

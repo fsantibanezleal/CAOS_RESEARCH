@@ -1,8 +1,8 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-08-01 after EXP-135 verified the rank-seven factorization and
-exposed an exact square-zero transfer target at four rational controls.
-The global function-field identity is the active low-rank route. This is
+Updated 2026-08-01 after EXP-135 proved the ambient transverse determinant
+identity for the EXP-124 section. The remaining EXP-129/130 section lifts
+and transverse `d=0` quotient are the active routes. This is
 the first-read navigation page. Primary artifacts and experiment verdicts
 remain the evidence.
 
@@ -200,8 +200,14 @@ remain the evidence.
   support 10. This is a modular preflight, not graph coverage. It selects an
   exact characteristic-zero reconstruction of the EXP-124 graph section,
   followed by the two EXP-129 atlas sections and the EXP-130 base section.
+- EXP-135 proves the stronger ambient identity
+  `det(H(A,B,C)+T K_(2,8))=det(H(A,B,C))` for the selected EXP-124 section.
+  Exact degree bounds `(25,24,6,7)`, 136,500 complete grid controls across
+  30 primes, and a CRT modulus above the explicit coefficient bound provide
+  a characteristic-zero certificate. The old `F3*F6*F7` divisor is retained
+  for this section only.
 - Controlling strategy:
-  [`strategy-audit-2026-08-01.md`](strategy-audit-2026-08-01.md).
+  [`strategy-audit-2026-08-01-exp135.md`](strategy-audit-2026-08-01-exp135.md).
 - Source audit:
   [`2026-08-01-transverse-fitting-refresh.md`](../../problems/algebraic-geometry/jacobian-conjecture/context/2026-08-01-transverse-fitting-refresh.md).
 
@@ -248,6 +254,7 @@ remain the evidence.
 | direct \(A=0\) atlas | two \(C\)-independent exact minors with unit divisor gcd cover the complete boundary plane | EXP-131 |
 | complete declared four-coefficient restriction | \(d=0\), \(A\ne0,d=1\), and \(A=0,d=1\) are all covered by exact atlases | EXP-118/123/129--131 |
 | transverse direct-boundary Fitting atlas | three exact minors generate the unit ideal after adjoining `(2,8)` at \(A=0,d=1\) | EXP-132 |
+| ambient transverse-inert section | the accepted EXP-124 determinant is unchanged by `(2,8)` on the full normalized `(A,B,C)` chart | EXP-135 |
 | complete \(T_B\) restriction cover | \(d=0\) quotient cover plus exact \(G,L,Q\) weighted-open covers | EXP-118/120/121 |
 | lower-family grading | \(w_{p,q}=q-p+1\pmod9\) for all 23 nonconstant remaining directions | EXP-106 |
 | properness instrument | exact resultant-leading-coefficient test | EXP-014 |
@@ -423,12 +430,11 @@ scalar conditions before exploiting sparsity.
   at \(u=1\).
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
-- EXP-111 through EXP-134 are complete. EXP-134 is inconclusive at its exact
+- EXP-111 through EXP-135 are complete. EXP-134 is inconclusive at its exact
   determinant gates but proves one size-33 core, 86 singleton blocks, exact
-  transverse rank seven, and `deg_T<=7`. EXP-135 exactly verifies
-  `K_T=UV^T`; at four rational graph controls the 7-by-7 transfer has rank
-  three and square zero. This is control evidence, not a graph identity.
-  No Jacobian process is active.
+  transverse rank seven, and `deg_T<=7`. EXP-135 then proves the stronger
+  ambient determinant identity by a complete degree-bounded 30-prime grid
+  and CRT height certificate. No Jacobian process is active.
 - EXP-133 is a modular route-selection result with accepted artifact SHA-256
   `35E18A6477312B81F0CDB18C8165539A72129C1D81B16F79AC89EFB948BEBA73`.
   It does not trigger a manuscript or Zenodo update because it proves no new
@@ -511,16 +517,11 @@ scalar conditions before exploiting sparsity.
 
 1. Preserve EXP-132's exact three-minor identity as the \(A=0,d=1\)
    transverse regression gate.
-2. Execute EXP-135's global worker: solve the seven graph-quotient right-hand
-   sides and prove or refute the 49 entries of
-   `(V^T H_0^-1 U)^2=0`, with a complete denominator ledger. Use the 7-by-7
-   determinant only as a regression check. Do not repeat EXP-134's gated
-   33-by-33 determinant formulations.
-3. If the transfer determinant proves exact graph inertness, retain the old
-   \(F_3F_6F_7\) divisor
-   ledger and reconstruct the EXP-129 atlas-1 affine lift and atlas-2 inert
-   lift on the five squarefree graph blocks. Then lift the quadratic EXP-130
-   section on the finite base algebra.
+2. Preserve EXP-135's exact ambient determinant identity and deterministic
+   degree/CRT artifact as the EXP-124 transverse regression gate.
+3. Retain the old \(F_3F_6F_7\) divisor ledger and reconstruct the EXP-129
+   atlas-1 affine lift and atlas-2 inert lift on the five squarefree graph
+   blocks. Then lift the quadratic EXP-130 section on the finite base algebra.
 4. Rebuild the \(d=0\) quotient with \((2,8)\); verify the explicit \(P\)-kernel
    instead of assuming EXP-118 lifts unchanged.
 5. Recurse on the joint Fitting ideal and record inherited bases that vanish
@@ -541,9 +542,9 @@ scalar conditions before exploiting sparsity.
    - preserve C01/C04 as open absent an exact exclusion.
 11. Keep EXP-093 cancelled; do not revive the global cubic solve.
 12. Keep EXP-109 as a bounded regression control, not as the main route.
-13. Preserve Paper B v0.31 at immutable DOI
-   `10.5281/zenodo.21739069`; require another validated manuscript claim change
-   before creating any later version.
+13. Publish EXP-135's characteristic-zero ambient section theorem as Paper B
+   v0.32 after build and visual QA, then create a new immutable Zenodo version
+   under concept DOI `10.5281/zenodo.21503367`.
 
 Suggested source-round commands:
 

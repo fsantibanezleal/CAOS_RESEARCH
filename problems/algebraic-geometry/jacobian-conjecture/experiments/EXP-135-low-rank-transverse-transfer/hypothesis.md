@@ -75,3 +75,16 @@ index two at every point. Hence `det(I_7+T L)=1` at all four controls. The
 global worker is reprioritized to proving the stronger entrywise identity
 `L^2=0` after the seven solves; determinant expansion is now only a
 regression check.
+
+## Accepted theorem update
+
+The global worker bypassed graph-function-field inversion entirely. Exact
+rank bounds give determinant multidegrees `(25,24,6,7)` in `(A,B,C,T)`, and
+an explicit row-l1 coefficient bound needs 885 bits after clearing the common
+denominator. Across 30 primes with 897-bit product, a complete
+`26*25*7` tensor grid gives a square-zero rank-seven transfer at every point.
+Tensor interpolation plus the CRT height bound proves
+`det(H+T K_T)=det(H)` in `QQ[A,B,C,T]`. Thus prediction 3 is confirmed in the
+stronger ambient form; the denominator-fibre prediction becomes unnecessary
+for this section because the certified identity is polynomial before graph
+restriction.
