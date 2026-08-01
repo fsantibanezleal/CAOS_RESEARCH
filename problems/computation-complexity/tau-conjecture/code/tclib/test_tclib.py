@@ -48,6 +48,26 @@ def test_integer_census_matches_markstrom_small():
         assert rows[k]["interval"] == interval
 
 
+def test_chebyshev_tower():
+    # Machine check of context/2026-08-01-chebyshev-tower-derivation.md.
+    x = (0, 1)
+    c = (-2,)
+    # Iterates A_k = C^k(x), C(x) = x^2 - 2.
+    iters = [x]
+    for _ in range(4):
+        iters.append(padd(pmul(iters[-1], iters[-1]), c))
+    # C^k(x) - x has integer roots exactly {-1, 2} for all k >= 1.
+    for k in range(1, 5):
+        assert integer_roots(psub(iters[k], x)) == {-1, 2}
+    # G_k = C^{k-1}(x)^2 - C^k(x)^2: 4 roots at k=1, exactly 5 for k >= 2.
+    for k in range(1, 5):
+        gk = psub(pmul(iters[k - 1], iters[k - 1]), pmul(iters[k], iters[k]))
+        if k == 1:
+            assert integer_roots(gk) == {-2, -1, 1, 2}
+        else:
+            assert integer_roots(gk) == {-2, -1, 0, 1, 2}
+
+
 def test_polynomial_census_small_depths():
     # Anchors established by EXP-001 (decision-complete tau <= 4).
     per_depth, first_seen, complete = census_polynomials(3)

@@ -65,3 +65,37 @@
   integral, at what gate cost.
 - Dead ends: none; the naive census is now compute-bound at depth 6
   (TCB-005 canonicalization is the declared prerequisite).
+
+## 2026-08-01 (round 3): tower lemma proved; last-gate scan; z_max(6) = 5
+
+- **Chebyshev-tower obstruction PROVED** (context derivation note,
+  machine-checked in tclib tests): integer periodic points of C = x^2-2
+  are exactly {2,-1}; C^k(x) - x keeps 2 integer roots against 2^k real
+  roots at tau <= 2k+2; the DOS tower G_k stalls at root set {0,+-1,+-2}
+  for all k >= 2 (the integer preimage tree of C stabilizes: the escape
+  bound |C(x)| >= |x|+1 for |x| >= 3 forces a finite stable core). The
+  first RL-4 deliverable: the real-side factory formally contributes only
+  a constant over Z.
+- **Method: the last-gate lemma** (EXP-003 hypothesis): every tau = d+1
+  polynomial is one gate over a normalized depth-d state; so z_max(d+1)
+  is computable without storing the depth-(d+1) frontier. Its smoke gate
+  caught a real accounting artifact (op-results equal to the free inputs
+  counted as new; fixed, z-values unaffected).
+- **EXP-003: census CONFIRMED, our prediction REFUTED.** Depth-5 frontier
+  (778,087 states) scanned completely in 295 s: 134,494 new depth-6
+  polynomials; z_max(6) = 5 (four records), NOT the predicted 4. The
+  records are +-x^{1,2}(x^2-1)(x^2-4): the depth-5 DOS record times the
+  input x: multiplying by x costs one gate and adjoins the root 0,
+  reaching the stable core {0,+-1,+-2} at 6 gates (the tower needed 7).
+  Minimal tau for 5 distinct integer roots = 6. Growth now z = tau - 1
+  from tau = 3 on; whether depth 7 continues the law is the standing
+  question, and it is BLOCKED on TCB-005 canonicalization (the depth-6
+  frontier, ~20M states, is not stored).
+- Audit: tclib vs sympy cross-check on 284 polynomials (all tau <= 3 +
+  every stored record): zero mismatches.
+- Wiki 02 (implication ladder) and 03 (census) transcribed; references
+  updated (Rojas READ in full; Duke access attempt failed: paywall,
+  logged; Malajovich UP added).
+- Dead ends: the Shub-Smale Duke PDF remains inaccessible without a
+  library credential (statement triply confirmed through Rojas, the
+  survey, and Koiran).

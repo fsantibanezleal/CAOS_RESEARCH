@@ -20,7 +20,7 @@ TO FETCH = named, not yet read. Unread sources cannot support conclusions.
 
 | Ref | Status | Notes |
 |---|---|---|
-| J. M. Rojas. A direct ultrametric approach to additive complexity and the Shub-Smale tau conjecture. arXiv:math/0304100 (2003) | ABS | e^{O(s log s)} 2-adic (hence rational) roots for additive complexity s; two weak versions of the conjecture. Read in full before use as premise. |
+| J. M. Rojas. A direct ultrametric approach to additive complexity and the Shub-Smale tau conjecture. arXiv:math/0304100 (2003) | READ (full, 10 pages, 2026-08-01) | p-adic Digit Conjecture => full tau conjecture (Thm 1); valuation spectrum s <= N_p(s) <= s(s+1)/2, p-independent (Thm 2, Newton-polygon proof); <= 1 + s^3(s+1)(7.5)^s s! rational roots at additive complexity s (Thm 3); roots-near-1 bound (Thm 4); logistic real factory Example 1; open: p-adic factory analogue; Borodin-Cook 1976 / Grigoriev 1982 / Risler 1985 real-root ladder quoted. |
 | P. Koiran. Shallow circuits with high-powered inputs. ICS 2011, arXiv:1004.4960 | ABS | The real tau conjecture; PIT connection. |
 | S. Tavenas. Bornes inferieures et superieures dans les circuits arithmetiques (and the 2014 paper cited as [Tav14] in the survey) | TO FETCH | Real tau => VP != VNP; m,t,2^k version suffices. |
 | P. Koiran, N. Portier, S. Tavenas. On the number of real roots of sums of products of sparse polynomials (cited [KPT15]) | TO FETCH | Best known real-root bounds for sum-of-products-of-sparse. |
@@ -48,3 +48,5 @@ TO FETCH = named, not yet read. Unread sources cannot support conclusions.
 | On the hardness of PosSLP. arXiv:2307.08008 | TO FETCH | Recent PosSLP hardness. |
 | PosSLP and sum of squares. arXiv:2403.00115 | TO FETCH | Recent PosSLP work. |
 | OEIS A005245 (integer complexity, +,x from 1s) | TO FETCH | The classical adjacent census; different model (no subtraction, counts 1s not ops). |
+| G. Malajovich. Ultimate polynomial time. arXiv:math/9904130 (1999); Proc. LMS | ABS | The class UP over C; tau conjecture implies UP does not contain constant-free NP_C. Adjacent formulation. |
+| M. Shub, S. Smale 1995 Duke original: access attempt 2026-08-01 FAILED (Project Euclid paywall; author page TLS misconfigured). Statement remains triply confirmed (Rojas Def 1 + survey 4.5 + Koiran); direct read still queued. | TO FETCH | |
