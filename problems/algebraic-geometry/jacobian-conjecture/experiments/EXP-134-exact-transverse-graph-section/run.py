@@ -141,13 +141,13 @@ def main() -> None:
 
     payload: dict[str, object] = {
         "experiment": "EXP-134",
-        "attempt": "003-exact-rank-root-certificate",
-        "decision": "exact_root_certificate_running",
+        "attempt": "005-exact-graph-rank-root-certificate",
+        "decision": "exact_graph_root_certificate_running",
         "selected_rows": rows,
         "component_sizes": sizes,
         "largest_component": max(sizes),
         "transverse_core_rank": transverse_rank,
-        "ambient_T_degree_bound": transverse_rank,
+        "graph_T_degree_bound": transverse_rank,
         "exact_T_values_required": transverse_rank + 1,
         "source_sha256": {
             str(path.relative_to(EXPERIMENTS)): digest(path)
@@ -157,12 +157,24 @@ def main() -> None:
     }
     persist(payload, CHECKPOINT)
 
-    a, b, c = symbols("A B C")
+    a, b, c, x = symbols("A B C X")
+    r_x_b = sympify(
+        read_json(EXP123_RESULTS)["invariant_reduction"]["R_X_B"],
+        locals={"X": x, "B": b},
+    )
+    s_x_b = sympify(
+        read_json(EXP123_RESULTS)["invariant_reduction"]["S_X_B"],
+        locals={"X": x, "B": b},
+    )
+    r_a_b = expand(r_x_b.subs(x, a**3))
+    s_a_b = expand(s_x_b.subs(x, a**3))
+    graph_denominator = expand(a**2 * s_a_b)
+    c_on_graph = cancel(-r_a_b / graph_denominator)
     constant_core = (
         eye(len(core))
         + (a - 1) * normalized[(0, 1)].extract(core, core)
         + b * normalized[(0, 5)].extract(core, core)
-        + c * normalized[(2, 9)].extract(core, core)
+        + c_on_graph * normalized[(2, 9)].extract(core, core)
     )
     singleton_factor = Rational(1)
     for component in singletons:
@@ -180,10 +192,12 @@ def main() -> None:
         e124_worker["determinant_ratio"],
         locals={"A": a, "B": b, "C": c},
     )
-    baseline_core = cancel(expected_t0 / singleton_factor)
+    singleton_factor_graph = cancel(singleton_factor.subs(c, c_on_graph))
+    expected_t0_graph = cancel(expected_t0.subs(c, c_on_graph))
+    baseline_core = cancel(expected_t0_graph / singleton_factor_graph)
     require(
-        cancel(singleton_factor * baseline_core - expected_t0) == 0,
-        "loaded exact EXP-124 T=0 core baseline",
+        cancel(singleton_factor_graph * baseline_core - expected_t0_graph) == 0,
+        "loaded exact EXP-124 T=0 graph-core baseline",
     )
     payload["exact_T_evaluations"].append(
         {
@@ -195,6 +209,8 @@ def main() -> None:
         }
     )
     payload["T0_core_determinant"] = str(baseline_core)
+    payload["graph_denominator"] = str(graph_denominator)
+    payload["excluded_fibres"] = "A*S(A^3,B)=0; outside the declared rational graph chart"
     persist(payload, CHECKPOINT)
 
     for t_value in range(1, transverse_rank + 1):
@@ -203,7 +219,7 @@ def main() -> None:
             "rank/root worker remains inside total gate",
         )
         evaluation_started = time.time()
-        determinant = expand(
+        determinant = cancel(
             (constant_core + t_value * transverse_core).det(method="domain-ge")
         )
         equal_to_baseline = cancel(determinant - baseline_core) == 0
@@ -215,21 +231,24 @@ def main() -> None:
         }
         payload["exact_T_evaluations"].append(record)
         persist(payload, CHECKPOINT)
-        require(equal_to_baseline, f"exact core determinant at T={t_value} equals T=0")
+        require(equal_to_baseline, f"exact graph-core determinant at T={t_value} equals T=0")
 
     require(
         len(payload["exact_T_evaluations"]) == transverse_rank + 1,
         "one more exact T value than the degree bound was evaluated",
     )
 
-    determinant_ratio = expand(singleton_factor * baseline_core)
+    determinant_ratio = cancel(singleton_factor_graph * baseline_core)
     require(
-        expand(determinant_ratio - expected_t0) == 0,
-        "rank/root T=0 determinant reproduces EXP-124 exactly",
+        cancel(determinant_ratio - expected_t0_graph) == 0,
+        "graph rank/root T=0 determinant reproduces EXP-124 exactly",
     )
 
     direct_controls = []
-    for av, bv, cv, tv in ((1, 0, 0, 1), (1, 1, 1, 2), (2, 1, 1, -1), (-1, 1, 2, 3)):
+    for av, bv, tv in ((1, 0, 1), (1, 1, 2), (2, 0, -1), (2, 1, 3)):
+        denominator_value = graph_denominator.subs({a: av, b: bv})
+        require(denominator_value != 0, "direct graph control avoids A*S=0")
+        cv = cancel(c_on_graph.subs({a: av, b: bv}))
         direct_t = (
             selected_base
             + av * directions[(0, 1)]
@@ -243,12 +262,11 @@ def main() -> None:
             + bv * directions[(0, 5)]
             + cv * directions[(2, 9)]
         ).det(method="domain-ge")
-        require(direct_t == direct_zero, f"direct ambient T-inert control ({av},{bv},{cv},{tv})")
+        require(direct_t == direct_zero, f"direct graph T-inert control ({av},{bv},{cv},{tv})")
         direct_controls.append(
             {"point": [av, bv, cv, tv], "determinant": str(direct_t)}
         )
 
-    x = symbols("X")
     graph_numerator = sympify(
         e124["graph_numerator"], locals={"X": x, "B": b}
     )
@@ -257,10 +275,10 @@ def main() -> None:
 
     payload.update(
         {
-            "decision": "confirmed_exact_ambient_T_inert",
-            "ambient_T_degree_exact": 0,
-            "determinant_ratio": str(determinant_ratio),
-            "determinant_ratio_sha256": expression_digest(determinant_ratio),
+            "decision": "confirmed_exact_graph_T_inert",
+            "graph_T_degree_exact": 0,
+            "determinant_ratio_on_graph": str(determinant_ratio),
+            "determinant_ratio_on_graph_sha256": expression_digest(determinant_ratio),
             "direct_exact_controls": direct_controls,
             "retained_graph_numerator": str(graph_numerator),
             "retained_factorization": [
@@ -272,12 +290,12 @@ def main() -> None:
                 "p2_exact_T_degree_at_most_one": True,
                 "p3_positive_T_coefficients_vanish_mod_graph": True,
                 "p4_T0_reproduces_EXP124": True,
-                "stronger_ambient_T_inertness": True,
+                "stronger_ambient_T_inertness": False,
             },
             "elapsed_seconds": time.time() - started,
             "scope": (
-                "Exact ambient T-inertness of the accepted EXP-124 section. The "
-                "F3 F6 F7 graph residual is unchanged, but its transverse cover, "
+                "Exact T-inertness of the accepted EXP-124 section on the AS!=0 "
+                "rational graph. The F3 F6 F7 residual is unchanged, but its transverse cover, "
                 "the finite base locus, d=0 quotient, complete five-coefficient "
                 "restriction, 24-parameter core, (72,108), floor, and JC(2) remain open."
             ),
