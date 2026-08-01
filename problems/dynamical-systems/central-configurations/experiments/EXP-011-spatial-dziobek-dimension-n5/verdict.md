@@ -70,11 +70,15 @@ except witness sets.
 - The caps were enforced by `timeout` inside WSL (probes) and by
   subprocess timeouts (pgb workers); the wall overshoots (313-330 s against
   300) are WSL startup and file-transfer overhead, not budget creep.
-- The single completing subideal's 16 leading monomials were produced by a
-  reduced grevlex Groebner basis; the union-bound argument (their Lemma 6.4:
-  a SUBSET of LT(I) can only weaken the bound, never falsify it) makes
-  d_pgb = 10 a valid, merely uninformative, bound. Nothing in the failure
-  mode can have produced a spuriously LOW bound.
+- The single completing subideal's 16 harvested monomials came from a reduced
+  grevlex Groebner basis, BUT (correction, same day, caught by EXP-012's
+  exact-reproduction control; see artifacts/pgb-union-CORRECTION.md) the
+  harvester extracted LEX leads of those grevlex elements: sympy's gb.polys
+  default to lex and monoms() must be told the order. The reported d_pgb = 10
+  was VACUOUS, so no conclusion of this verdict rested on the harvested
+  monomials, and the correction changes nothing here; the harvester is fixed
+  in place and EXP-012 revalidates the instrument against a grevlex-correct
+  reference before any bound is trusted.
 - The smoke gate's acceptances are exact rational or polynomial-reduction
   arithmetic; no numeric heuristics anywhere in the run.
 

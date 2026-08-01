@@ -53,7 +53,7 @@ def singular_leads(name, gen_names, eq_strs, cap=CAP):
     """Run lead(std(I)) over QQ in Singular under `timeout`; return
     (status, leads as exponent tuples, seconds)."""
     polys = ",\n".join(e.replace("**", "^").replace(" ", "") for e in eq_strs)
-    script = (f"ring r=0,({','.join(gen_names)}),dp;\n"
+    script = (f"ring r=0,({','.join(gen_names)}),dp;\nshort=0;\n"
               f"ideal I={polys};\nideal L=lead(std(I));\nL;\nquit;\n")
     sf = ART / f"{name}.sing"
     sf.write_text(script, encoding="utf-8", newline="\n")
@@ -90,12 +90,22 @@ def staircase_dim(leads, ngens):
     return -1, []
 
 
+def sympy_grevlex_leads(eq_strs, gen_names, syms=None):
+    """Correct grevlex lead extraction. CAUTION (the bug EXP-012's control
+    caught in the EXP-011 harvester): sp.groebner(...).polys default to LEX
+    ordering regardless of the basis order, so monoms()[0] returns the LEX
+    lead; monoms(order='grevlex') must be requested explicitly."""
+    syms = syms or {g: sp.Symbol(g) for g in gen_names}
+    gens = [syms[g] for g in gen_names]
+    eqs = [sp.sympify(e, locals=syms) for e in eq_strs]
+    gb = sp.groebner(eqs, *gens, order="grevlex")
+    return sorted(tuple(p.monoms(order="grevlex")[0]) for p in gb.polys)
+
+
 def controls():
     st, leads, secs = singular_leads("ctl-toy", ["x", "y"], ["x**2-y", "y**2-x"], 60)
     toy_ok = st == "ok" and sorted(map(tuple, leads)) == [(0, 2), (2, 0)]
-    gb = sp.groebner([sp.sympify("x**2-y"), sp.sympify("y**2-x")],
-                     sp.Symbol("x"), sp.Symbol("y"), order="grevlex")
-    sympy_leads = sorted(tuple(p.monoms()[0]) for p in gb.polys)
+    sympy_leads = sympy_grevlex_leads(["x**2-y", "y**2-x"], ["x", "y"])
     toy_ok = toy_ok and sympy_leads == [(0, 2), (2, 0)]
     prime = 1073741827
     ms_in = f"x,y\n{prime}\nx^2-y,\ny^2-x\n"
@@ -108,11 +118,20 @@ def controls():
            f"singular {sorted(map(tuple, leads))}; sympy {sympy_leads}; msolve mod {prime}: {ms_ok}")
 
     job = json.loads((E11 / "artifacts" / "pgb-job-3.json").read_text(encoding="utf-8"))
-    ref = sorted(map(tuple, json.loads((E11 / "artifacts" / "pgb-union.json").read_text(encoding="utf-8"))))
     st, leads, secs = singular_leads("ctl-job3", job["gens"], job["eqs"], CAP)
-    same = st == "ok" and sorted(map(tuple, leads)) == ref
-    record("p1b-job3-exact-reproduction", "pass" if same else "FAIL",
-           f"singular {st} in {secs:.0f}s, {len(leads)} leads vs 16 archived; exact match: {same}")
+    # The EXP-011 archive (pgb-union.json) is NOT the reference: EXP-012's
+    # first control run exposed that the EXP-011 harvester extracted LEX leads
+    # of a grevlex basis (sympy gb.polys default to lex). The reference is a
+    # fresh sympy grevlex-correct recomputation of the same job.
+    try:
+        ref = sympy_grevlex_leads(job["eqs"], job["gens"])
+        same = st == "ok" and sorted(map(tuple, leads)) == ref
+        detail = (f"singular {st} in {secs:.0f}s, {len(leads)} leads; "
+                  f"sympy grevlex-correct recomputation {len(ref)} leads; exact match: {same}")
+    except Exception as exc:  # noqa: BLE001
+        same = False
+        detail = f"sympy recomputation failed: {exc}"
+    record("p1b-job3-exact-reproduction", "pass" if same else "FAIL", detail)
     return toy_ok and ms_ok and same
 
 

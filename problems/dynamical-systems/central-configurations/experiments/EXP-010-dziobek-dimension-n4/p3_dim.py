@@ -27,15 +27,17 @@ T = sp.Symbol("t")
 def main():
     gens = GENS6 + [T]
     h = dziobek4()
-    eqs = [strip_monomial_factors(v, GENS6) for v in h.values()]
+    eqs = [strip_monomial_factors(v, GENS6)[0] for v in h.values()]
     eqs.append(sp.expand(cayley_menger_planar4()))
     eqs.append(T * sp.prod(GENS6) - 1)
     gb = sp.groebner(eqs, *gens, order="grevlex")
-    # gb.polys carry the grevlex order; monoms() lists exponent tuples with the
-    # leading monomial first, so its positive positions are the LM support.
+    # CORRECTED 2026-08-01 (caught by EXP-012's exact-reproduction control):
+    # gb.polys do NOT carry the grevlex order (they default to lex), so the
+    # order must be passed to monoms() explicitly. This rung never completed
+    # inside its cap in EXP-010, so no recorded result depended on the bug.
     lead_supports = []
     for p in gb.polys:
-        lead = p.monoms()[0]
+        lead = p.monoms(order="grevlex")[0]
         lead_supports.append({gens[i] for i, e in enumerate(lead) if e > 0})
     dim = 0
     witness = []

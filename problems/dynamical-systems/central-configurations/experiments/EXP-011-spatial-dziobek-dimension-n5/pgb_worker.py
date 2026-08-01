@@ -18,8 +18,12 @@ def main():
     gens = [sp.Symbol(g) for g in job["gens"]]
     local = {g: s for g, s in zip(job["gens"], gens)}
     eqs = [sp.sympify(e, locals=local) for e in job["eqs"]]
-    gb = sp.groebner(eqs, *gens, order=job.get("order", "grevlex"))
-    leads = [list(p.monoms()[0]) for p in gb.polys]
+    order = job.get("order", "grevlex")
+    gb = sp.groebner(eqs, *gens, order=order)
+    # CORRECTED 2026-08-01 (caught by EXP-012's exact-reproduction control):
+    # gb.polys default to LEX ordering regardless of the basis order, so
+    # monoms()[0] silently returned LEX leads; the order must be passed.
+    leads = [list(p.monoms(order=order)[0]) for p in gb.polys]
     print(json.dumps({"gb_size": len(gb.polys), "leads": leads}))
     return 0
 
