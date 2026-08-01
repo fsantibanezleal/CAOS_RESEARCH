@@ -267,3 +267,21 @@
   followed, deriving the problem page's experiment counts from the baked records
   after a screenshot pass caught the state line reading "five experiments" when
   seven were decided.
+
+## 2026-08-01 - EXP-009 direct torus census reaches both declared caps
+
+- The exact-square smoke test passes on the enriched route-A system.
+- Route A and the independent Hampton--Moeckel z-system route B each ran for
+  the declared 3600-second cap under msolve 0.10.1 and produced zero output.
+  The first route-B attempt ended in a documented WSL idle shutdown and is
+  excluded from the evidence; its mechanically capped rerun supplies the verdict.
+- Verdict: INCONCLUSIVE-CAP on both routes. No dimension or census is claimed;
+  the published counts 50 and 4 remain untested by us.
+- Direct solving is closed at current budgets. EXP-010 promotes the
+  incidence-dimension lane; reproducing HM06's mixed volume 25380 is retained
+  as the separate bounding rung.
+- EXP-010 was declared after the EXP-009 verdict and before any run. Its first
+  calibration targets the n=4 Dziobek variety with exact random linear sections
+  and a deterministic dimension rung. Preflight reconciliation corrected the
+  Rabinowitsch dimension bookkeeping: adding `t*prod(r_ij)-1` does not change
+  Krull dimension. No EXP-010 computation has started.

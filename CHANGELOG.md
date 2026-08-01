@@ -3,6 +3,40 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.61.000], 2026-08-01
+
+### Added
+- Jacobian EXP-132 adjoins direction `(2,8)` and supplies three exact
+  normalized maximal minors whose characteristic-zero Bezout certificate
+  generates the unit ideal on the complete direct `A=0,d=1` boundary.
+- The tau-conjecture program is now a durable research record. EXP-001 and
+  EXP-002 decide `z_max(tau)=1,2,3,3,4` for `tau=1..5`, with exact census
+  artifacts, a tested enumeration library, primary-source context, and an
+  approaches evaluation.
+- The central-configurations program adds a measured approaches dossier and
+  four alternative research views, including the incidence-dimension lane,
+  witness sets, exceptional-mass continuum exclusion, and a symmetric-strata
+  ladder.
+- Central-configurations EXP-009 records exact cap evidence for two independent
+  n=4 torus formulations: both produce zero output within their declared
+  3600-second msolve budgets, while the exact-square smoke test passes.
+
+### Changed
+- Paper B v0.31 records the EXP-132 transverse direct-boundary theorem and is
+  archived at immutable DOI `10.5281/zenodo.21739032`; its public PDF checksum
+  matches the local, visually verified 23-page artifact.
+- The Jacobian program now prioritizes the `A!=0,d=1` fifth-direction lift and
+  a separate transverse `d=0` quotient reconstruction. The complete
+  five-coefficient restriction, 24-parameter core, `(72,108)`, planar degree
+  floor, and `JC(2)` remain open.
+- Integration reconciliation restores the tau handoff schema and removes a
+  machine-specific interpreter path before the cross-problem bake.
+- The n=4 direct torus census is retired at current budgets without adopting the
+  published counts; the BKK-bound and incidence-dimension routes are promoted.
+- The next bounded rounds are declared without result claims: Jacobian EXP-133
+  profiles the principal-open `(2,8)` deformation by normalized SCCs, and
+  central-configurations EXP-010 calibrates exact dimension sections at n=4.
+
 ## [0.60.000], 2026-07-31
 
 ### Added
