@@ -1,6 +1,6 @@
 # tau-conjecture: RESUME (zero-loss handoff)
 
-Updated 2026-08-01, round 3 close. First read for any fresh session, per
+Updated 2026-08-01, rounds 4-5 close. First read for any fresh session, per
 methodology 07. Derived view: on conflict, experiment verdicts win.
 
 ## 1. State in one screen
@@ -24,14 +24,19 @@ fixed prime) $\Rightarrow$ the full conjecture (Rojas Thm 1); valuation
 spectrum $s \le N_p(s) \le s(s+1)/2$, growth open (Rojas Thm 2).
 
 OUR results (exact, machine-verified, decision-complete):
-$$z_{\max}(\tau) = 1, 2, 3, 3, 4, 5 \quad (\tau = 1..6).$$
-Minimal $\tau$: 4 roots at 5 (EXP-002), 5 roots at 6 (EXP-003:
-$\mp x(x^2-1)(x^2-4)$, the depth-5 DOS record times $x$; multiplying by
-the input adjoins the root 0 for one gate). Records track
-$z = \tau - 1$ from $\tau = 3$. Depth-5/6 records are difference-of-
-squares splittings on the Chebyshev-conjugate map $x^2 - 2$; all record
-2-adic spectra are $\{0,1\}$. Enumerator anchored to Markstroem 14/14 and
-cross-checked vs sympy 284/284.
+$$z_{\max}(\tau) = 1, 2, 3, 3, 4, 5, 5 \quad (\tau = 1..7).$$
+PLATEAUS at $\tau = 4$ and $\tau = 7$: the bottom law $z = \tau - 1$
+holds only for $3 \le \tau \le 6$ and BREAKS at 7 (EXP-004). Minimal
+$\tau$: 4 roots at 5 (EXP-002), 5 roots at 6 (EXP-003, multiply-by-$x$
+move), 6 roots in $[8, 9]$ (EXP-004 + the 9-gate witness $q(q-2)(q-6)$,
+$q = x^2 - x$). Records are DOS splittings on $x^2 - 2$; record 2-adic
+spectra $\{0,1\}$. Enumerator anchored to Markstroem 14/14, sympy
+284/284, and every prior census value re-derived by the interned engine
+(EXP-004 internal gates). Family measurement (EXP-005): across
+$x^2 - c$, $c \le 200$, max tower yield is 5, ONLY at $c = 2$; two
+yield-4 series ($c = m(m+1)$: fixed/anti-fixed; $c = m^2{+}m{+}1$:
+genuine integer 2-cycles); the classical cycle-length $\le 2$ ceiling
+closes the iteration flank entirely.
 
 PROVED (tower lemma, context note 2026-08-01, machine-checked): integer
 periodic points of $C = x^2-2$ are exactly $\{2,-1\}$; $C^k(x)-x$ has 2
@@ -45,8 +50,8 @@ from the exhausted depth-$d$ frontier without storing depth $d+1$.
 | Object | Definition | Owner |
 |---|---|---|
 | $\tau(f)$ | min gates, constant-free SLP, inputs $\{-1,1,x\}$ (free-0 lemma) | EXP-001 hypothesis |
-| $z_{\max}(\tau)$ | max distinct integer roots at $\tau(f) \le \tau$ | EXP-001/002 |
-| tclib | enum cores + exact roots + 2-adic spectra + tests | code/tclib (5 tests green) |
+| $z_{\max}(\tau)$ | max distinct integer roots at $\tau(f) \le \tau$ | EXP-001..004 |
+| tclib | enum cores + last-gate scan + exact roots + 2-adic spectra + tests | code/tclib (7 tests green) |
 | DOS/Chebyshev factory | $B^2 - A^2$ splittings, inner map $x^2-2$ (doubling under $z + 1/z$) | EXP-002 verdict |
 | $T(S)$ | dual set-function: min $\tau$ vanishing on $S$; conjecture = $T(S) \ge |S|^{1/\kappa} - 1$ | approaches-evaluation B1 |
 | $N_p(s)$ | # distinct p-adic norms of roots at additive complexity $s$; window $[s, s(s+1)/2]$ | Rojas Thm 2 [V]; RL-2 |
@@ -59,27 +64,29 @@ from the exhausted depth-$d$ frontier without storing depth $d+1$.
 | 001 | $z_{\max}(\tau \le 4)$ + integer regression gate | CONFIRMED | $z_{\max}(4) = 3$; gate 14/14 |
 | 002 | $z_{\max}(5)$; minimal $\tau$ for 4 roots; spectra | CONFIRMED | $z_{\max}(5) = 4$; min $\tau$ = 5; DOS mechanism; spectra $\{0,1\}$ |
 | 003 | $z_{\max}(6)$ via last-gate scan | census CONFIRMED; our "=4" prediction REFUTED | $z_{\max}(6) = 5$; min $\tau$ for 5 roots = 6; multiply-by-$x$ move |
+| 004 | $z_{\max}(7)$: bottom law? | CONFIRMED (prediction right) | $z_{\max}(7) = 5$: second plateau; min $\tau$(6 roots) in $[8,9]$; 25.8M-state frontier exact |
+| 005 | Family towers $x^2 - c$: loophole? | CONFIRMED (load-bearing); flagged clause refuted | Family max 5 only at $c = 2$; 2-cycle series $c = m^2{+}m{+}1$ discovered; cycle ceiling |
 
 ## 4. In flight
 
-Nothing running. Standing question (TCB-019): does $z_{\max}(7) = 6$
-(the $z = \tau - 1$ law)? BLOCKED on TCB-005: the last-gate scan needs
-the depth-6 frontier (~20M states, not stored); construction target for
-the lower side: shifted DOS blocks + the multiply-by-$x$ move.
+Nothing running. Standing decision-bearing question: the $[8, 9]$ window
+for the minimal $\tau$ with 6 distinct integer roots. Depth-8 full
+census is out of naive single-machine reach (frontier ~$10^9$ states);
+declared routes: RL-8 moves-calculus construction hunt (cheap first),
+RL-7 SAT-lane 8-gate decision, or TCB-005 canonicalization / compiled
+backend.
 
 ## 5. Next actions, ordered
 
-1. TCB-005: prove the sign/reflection orbit quotient
-   ($f(x) \sim \pm f(\pm x)$: need the cost bookkeeping, substitution
-   maps inputs to inputs only for $x \mapsto -x$ combined with the free
-   $-1$; write the lemma carefully) and dominated-state pruning; or build
-   a compiled/multiprocess backend; then EXP-004 = depth-7.
-2. TCB-020: generalize the stall lemma to $x^2 - c$ / monic inner maps
-   (finite stable core via escape bounds); wiki 04 unit.
-3. RL-3 (TCB-018): $T(S)$ structure lemmas + the $T$ table from census
-   data ($T(\{\pm1,\pm2\}) = 5$, $T(\{0,\pm1,\pm2\}) = 6$ now exact).
-4. TCB-017 (RL-2): valuation-spectrum record hunt design.
-5. TCB-004/008/009: the reading ladder (Cheng, KPT15, Lipton, Shamir).
+1. TCB-021: close the $[8,9]$ window (RL-8 construction hunt, then the
+   RL-7 SAT encoding for the 8-gate decision if the hunt fails).
+2. TCB-022: manuscript gate assessment (methodology 09): census 1-7 +
+   three proved lemmas + two mechanism discoveries is likely past the
+   replication-first threshold; plan before writing.
+3. TCB-005: canonicalization or compiled backend (depth-8 census).
+4. Reads before imports: Doyle-Poonen (TCB-024), Narkiewicz attribution
+   (TCB-023), Cheng 2004 full, KPT15.
+5. RL-2/RL-3: valuation-spectrum record hunt; $T(S)$ structure lemmas.
 
 Commands: tests
 `.venv python -m pytest problems/computation-complexity/tau-conjecture/code/tclib -q`;
@@ -111,8 +118,12 @@ census runs from each experiment folder via the repository checkout venv
   $\tau'$ (ultimate complexity, min over multiples), not $\tau$.
 - The free-0 elimination lemma is reasoning-verified only; revisit inside
   TCB-005.
-- Depth-6 naive census exceeds comfortable Python budget; do NOT launch it
-  without TCB-005 or a compiled/parallel backend (declared in EXP-002).
+- Depths 6-7 are DONE (interned engine + last-gate scan; EXP-004). The
+  depth-8 census needs canonicalization, a compiled/parallel backend, or
+  the SAT lane: do not launch it naively (frontier ~$10^9$ states).
+- Tower-shape root counting: NEVER use divisor enumeration on iterated
+  maps (constants reach $c^{2^k}$); use the proved escape-bound window
+  (EXP-005 incident and fix).
 - Push via vault PAT with `credential.helper=` disabled (GCM hangs
   headless); gh via `GH_TOKEN`.
 
@@ -123,3 +134,4 @@ census runs from each experiment folder via the repository checkout venv
 | 2026-08-01 open | Census decided $\tau \le 4$ | Anatomy (consecutive triples; shift = 1 gate), invariant (degree cap useless here), dictionary (Markstroem import), audit (regression gate) | $z_{\max}$ niche identified; minimal-$\tau$-for-4 question minted |
 | 2026-08-01 round 2 | Census decided $\tau = 5$ | External dialogue (Rojas full read), reformulation (dual $T(S)$ view B1; valuation-spectrum view B2), anatomy (DOS/Chebyshev-shadow mechanism, unpredicted), two-sided (records pile valuations: pressure on digit side) | Approaches ranking; RL-1..6 board; TCB-016 concrete lemma target |
 | 2026-08-01 round 3 | Census decided $\tau = 6$ (last-gate scan; prediction refuted honestly) | Anatomy/theorem (tower lemma PROVED: constant integer yield of the doubling factory), method lens (last-gate lemma: one depth free), audit (smoke gate caught the input-accounting artifact; sympy 284/284) | The multiply-by-$x$ move; the $z = \tau - 1$ law question (TCB-019); stall-lemma generalization target (TCB-020) |
+| 2026-08-01 rounds 4-5 | Census decided $\tau = 7$ (z_max = 5: plateau; prediction right) | Theorem (monic stall: single-map towers bounded for ALL monic maps), arithmetic dynamics (V8: cycle-length ceiling explained the EXP-005 discovery), external dialogue (Cheng, adelic tau, SAT synthesis pinned), audit (EXP-005 tooling incident: divisor counting vs c^{2^k} constants; escape-bound finder cross-checked) | Views V5-V8; RL-7..9; the plateaus phenomenon; the $[8,9]$ window as first SAT target; family loophole resolved empty for quadratics |

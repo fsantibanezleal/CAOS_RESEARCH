@@ -99,3 +99,44 @@
 - Dead ends: the Shub-Smale Duke PDF remains inaccessible without a
   library credential (statement triply confirmed through Rojas, the
   survey, and Koiran).
+
+## 2026-08-01 (rounds 4-5): monic stall theorem; family towers; z_max(7) = 5
+
+- Sweeps: Cheng 2004 pinned (conditional subexponential tau'(n!) with a
+  randomized construction); SAT-based exact synthesis identified as a
+  new lane (Fuhs-Schneider-Kamp, linear/GF(2); integer model untried);
+  adelic tau conjecture (Phillipson-Rojas arXiv:1011.4128) pinned; the
+  ARITHMETIC-DYNAMICS view minted (V8: stall cores are preperiodic-type
+  sets; Morton-Silverman / Doyle-Poonen uniform boundedness is the
+  mature frame; no prior application to tau mechanisms found). New
+  views V5-V8; research lines RL-7 (SAT), RL-8 (moves calculus), RL-9
+  (parameterized towers).
+- **Monic stall theorem PROVED** (TCB-020 note + machine spot-check):
+  for ANY monic h of degree >= 2, single-map towers have depth-
+  independent integer root counts (escape radius + stabilizing preimage
+  core): no such family can ever witness superpolynomial z vs tau.
+- **EXP-005 CONFIRMED** (load-bearing claim; 3.4 s after a root-finder
+  fix: divisor counting is infeasible on c^{2^k}-scale constants; the
+  independently proved escape bound |r| <= c+1 gives exact direct
+  evaluation, cross-checked vs the divisor method at small c): across
+  h_c = x^2 - c, c <= 200, max tower yield = 5, ONLY at c = 2: the
+  family loophole is EMPTY. DISCOVERY where the hypothesis flagged
+  uncertainty: a second series c = m^2+m+1 yields 4 via genuine integer
+  2-CYCLES (m -> -m-1 -> m); explained and closed by the classical
+  cycle-length <= 2 divisibility argument: fixed, anti-fixed and
+  2-cycles are the COMPLETE harvestable inventory over Z.
+- **EXP-004 CONFIRMED** (86.5 min: 17 min to build the depth-6 frontier
+  EXACTLY: 25,844,905 states, all gates green; 69 min to scan it):
+  z_max(7) = 5. The bottom law z = tau - 1 BREAKS at 7 (second plateau;
+  sequence 1,2,3,3,4,5,5). 2,013,706 depth-7 polynomials; 63 have five
+  roots, none more. Minimal tau for 6 roots is in [8, 9]. This was our
+  committed prediction (made after the EXP-003 humiliation), now
+  machine-decided.
+- Wiki: 04 mechanisms transcribed (+ family/cycle-ceiling section);
+  03 census updated with the full table and plateaus reading.
+- Exploration yield of the rounds: the plateaus phenomenon (constant-
+  building friction is now VISIBLE in the growth function); the [8,9]
+  window as the first SAT-lane target; RL-9 resolved for quadratics.
+- Dead ends: naive census at depth 8 is out of single-machine reach
+  (frontier ~10^9 states); declared routes: proved canonicalization,
+  compiled/parallel backend, or SAT-lane targeted decisions.

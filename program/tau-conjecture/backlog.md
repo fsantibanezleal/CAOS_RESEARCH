@@ -20,5 +20,9 @@
 | TCB-012 | Manuscript (replication-first: census + Markstroem extension) per methodology 09 | todo | P3 | Gate: enough validated + novel material |
 | TCB-013 | Web problem page + baked census artifacts | todo | P3 | Publication gate (methodology 06) at release |
 | TCB-014 | ECCC TR19-142 (IPS / tau) read; proof-complexity bridge note | todo | P3 | |
-| TCB-019 | EXP-004 target: z_max(7) (does the z = tau - 1 law continue?) | todo | P0 | BLOCKED on TCB-005; construction target: shifted DOS blocks + multiply-by-x |
-| TCB-020 | Generalize the stall lemma to x^2 - c and arbitrary monic inner maps (finite stable core via escape bounds) | todo | P2 | Wiki 04 / manuscript unit |
+| TCB-019 | EXP-004: z_max(7) | done | P0 | 2026-08-01 CONFIRMED: z_max(7) = 5, bottom law breaks; frontier 25,844,905 states exact; done WITHOUT canonicalization (interned engine + last-gate scan) |
+| TCB-020 | Generalize the stall lemma to monic inner maps | done | P2 | 2026-08-01 PROVED (monic stall theorem note + spot-check); EXP-005 measured the x^2-c family: loophole empty |
+| TCB-021 | Close the [8,9] window for 6 roots (8-gate 6-rooter: exists?) | todo | P0 | RL-8 construction hunt first, then RL-7 SAT decision |
+| TCB-022 | Manuscript gate assessment + plan (methodology 09) | todo | P1 | Base: census 1-7, three lemmas, two discoveries, Markstroem anchor |
+| TCB-023 | Narkiewicz read: pin the classical cycle-length <= 2 attribution | todo | P2 | Cited [MV] in EXP-005 verdict with our own [D] proof |
+| TCB-024 | Doyle-Poonen read (V8 import gate) | todo | P2 | Before any uniform-boundedness import |

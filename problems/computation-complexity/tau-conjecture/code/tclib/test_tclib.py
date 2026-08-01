@@ -68,6 +68,19 @@ def test_chebyshev_tower():
             assert integer_roots(gk) == {-2, -1, 0, 1, 2}
 
 
+def test_monic_stall_spotcheck():
+    # Machine check of context/2026-08-01-monic-stall-theorem.md (h = x^2-6):
+    # every DOS tower level has integer-root set exactly {-3,-2,2,3}.
+    x = (0, 1)
+    c = (-6,)
+    iters = [x]
+    for _ in range(4):
+        iters.append(padd(pmul(iters[-1], iters[-1]), c))
+    for k in range(1, 5):
+        gk = psub(pmul(iters[k - 1], iters[k - 1]), pmul(iters[k], iters[k]))
+        assert integer_roots(gk) == {-3, -2, 2, 3}
+
+
 def test_polynomial_census_small_depths():
     # Anchors established by EXP-001 (decision-complete tau <= 4).
     per_depth, first_seen, complete = census_polynomials(3)
