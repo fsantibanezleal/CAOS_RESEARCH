@@ -81,3 +81,18 @@ No outcome closes the complete rational graph by itself, the finite base
 locus, the `A!=0,d=1` sector, the transverse `d=0` quotient, the
 five-coefficient restriction, the 24-parameter core, `(72,108)`, the planar
 degree floor, or JC(2).
+
+## Exact redirects
+
+Attempt 001 reached the gate on the size-33 ambient determinant over
+`QQ[A,B,C,T]`. Attempt 002 substituted the rational graph first, but the
+cleared size-33 determinant over `QQ[A,B,T]` also reached the gate. Neither
+attempt produced a coefficient identity.
+
+The accepted third route uses an exact degree bound rather than a broader
+expansion. On the size-33 block the normalized `(2,8)` operator has rank 7;
+all 86 singleton blocks have zero transverse diagonal. Therefore the complete
+determinant has degree at most 7 in `T`. Exact equality with the `T=0`
+determinant at the eight values `T=0,...,7` proves ambient `T`-inertness by
+the root bound. The degree bound is proved by rank, so this is exact
+evaluation, not assumption-based interpolation.

@@ -1,32 +1,24 @@
-"""EXP-134: exact transverse reduction of the accepted EXP-124 graph section."""
+"""EXP-134: exact rank/root certificate for the transverse EXP-124 section."""
 
 from __future__ import annotations
 
 import hashlib
 import importlib.util
 import json
-import subprocess
-import sys
 import time
 from pathlib import Path
 
-from sympy import Poly, QQ, expand, factor_list, sympify, symbols
+from sympy import Rational, expand, eye, factor_list, symbols, sympify
 
 
 HERE = Path(__file__).resolve().parent
 EXPERIMENTS = HERE.parent
+EXP133_RUN = EXPERIMENTS / "EXP-133-principal-open-28-lift-preflight" / "run.py"
 EXP123_RESULTS = (
-    EXPERIMENTS
-    / "EXP-123-direction-29-symbolic-lift"
-    / "artifacts"
-    / "results.json"
+    EXPERIMENTS / "EXP-123-direction-29-symbolic-lift" / "artifacts" / "results.json"
 )
-EXP124_RUN = EXPERIMENTS / "EXP-124-rational-graph-alternative-chart" / "run.py"
 EXP124_RESULTS = (
-    EXPERIMENTS
-    / "EXP-124-rational-graph-alternative-chart"
-    / "artifacts"
-    / "results.json"
+    EXPERIMENTS / "EXP-124-rational-graph-alternative-chart" / "artifacts" / "results.json"
 )
 EXP124_WORKER = (
     EXPERIMENTS
@@ -40,11 +32,10 @@ EXP133_RESULTS = (
     / "artifacts"
     / "results.json"
 )
-WORKER = HERE / "symbolic_worker.py"
-WORKER_ARTIFACT = HERE / "artifacts" / "symbolic-worker.json"
 CHECKPOINT = HERE / "artifacts" / "checkpoint.json"
 ARTIFACT = HERE / "artifacts" / "results.json"
-WORKER_TIMEOUT_SECONDS = 300
+TARGET = (2, 8)
+MAX_CORE = 45
 TOTAL_GATE_SECONDS = 420
 
 
@@ -56,10 +47,8 @@ def load_module(name: str, path: Path):
     return module
 
 
-def require(condition: bool, message: str) -> None:
-    if not condition:
-        raise AssertionError(message)
-    print(f"[PASS] {message}", flush=True)
+def read_json(path: Path) -> dict[str, object]:
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def persist(payload: dict[str, object], path: Path) -> None:
@@ -75,22 +64,17 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest().upper()
 
 
-def graph_numerator(coefficient, a, b, c, r_ab, s_ab):
-    polynomial = Poly(coefficient, c, domain="QQ[A,B]")
-    degree = int(polynomial.degree()) if not polynomial.is_zero else 0
-    denominator = expand(a**2 * s_ab)
-    numerator = expand(
-        sum(
-            polynomial.nth(power)
-            * (-r_ab) ** power
-            * denominator ** (degree - power)
-            for power in range(degree + 1)
-        )
-    )
-    return degree, numerator
+def expression_digest(expression) -> str:
+    return hashlib.sha256(str(expression).encode("utf-8")).hexdigest().upper()
 
 
-def build_selected_system(exp124, rows):
+def require(condition: bool, message: str) -> None:
+    if not condition:
+        raise RuntimeError(message)
+    print(f"[PASS] {message}", flush=True)
+
+
+def selected_system(exp124, rows):
     base, directions = exp124.build_full_system()
     forced = exp124.exp112.forced_polynomial()
     all_directions = sorted(exp124.exp112.exp071.LOWER)
@@ -101,184 +85,199 @@ def build_selected_system(exp124, rows):
         for index in range(len(exp124.exp112.exp071.NQ))
         if index != constant_column
     ]
-    directions[(2, 8)] = exp124.exp112.coefficient_matrix(
-        {(2, 8): exp124.exp112.Fraction(1)},
+    directions[TARGET] = exp124.exp112.coefficient_matrix(
+        {TARGET: exp124.exp112.Fraction(1)},
         complete_rows,
         q_columns,
         include_rhs=False,
     )
     selected_base = base.extract(rows, range(125))
     selected_directions = {
-        direction: matrix.extract(rows, range(125))
-        for direction, matrix in directions.items()
+        direction: directions[direction].extract(rows, range(125))
+        for direction in ((0, 1), (0, 5), (2, 9), TARGET)
     }
-    return selected_base, selected_directions
+    return base, selected_base, selected_directions
 
 
 def main() -> None:
     started = time.time()
-    exp124 = load_module("exp124_for_134_run", EXP124_RUN)
-    e123 = json.loads(EXP123_RESULTS.read_text(encoding="utf-8"))
-    e124 = json.loads(EXP124_RESULTS.read_text(encoding="utf-8"))
-    e124_worker = json.loads(EXP124_WORKER.read_text(encoding="utf-8"))
-    e133 = json.loads(EXP133_RESULTS.read_text(encoding="utf-8"))
+    exp133 = load_module("exp133_for_exp134_roots", EXP133_RUN)
+    exp124 = exp133.exp124
+    e124 = read_json(EXP124_RESULTS)
+    e124_worker = read_json(EXP124_WORKER)
+    e133 = read_json(EXP133_RESULTS)
     rows = list(e124["selected_rows"])
-    require(len(rows) == 125 and len(set(rows)) == 125, "loaded accepted EXP-124 row section")
+    base, selected_base, directions = selected_system(exp124, rows)
+    require(base.shape == (302, 125), "rebuilt original 302 by 125 augmented matrix")
+    require(len(rows) == len(set(rows)) == 125, "loaded accepted EXP-124 row section")
     require(
         e133["degree_ledger"]["EXP-124-graph"] == [0, 0, 0, 0],
         "reproduced EXP-133 modular inertness premise",
     )
 
-    selected_base, selected_directions = build_selected_system(exp124, rows)
-    anchor = selected_base + selected_directions[(0, 1)]
+    anchor = selected_base + directions[(0, 1)]
     anchor_determinant = anchor.det(method="domain-ge")
     require(anchor_determinant != 0, "accepted rational anchor is invertible")
     inverse = anchor.inv()
     normalized = {
-        direction: inverse * matrix
-        for direction, matrix in selected_directions.items()
+        direction: inverse * matrix for direction, matrix in directions.items()
     }
     components = exp124.exp122.cyclic_components(list(normalized.values()))
-    largest = max(len(component) for component in components)
-    require(largest <= 45, "joint exact SCC remains inside gate 45")
+    sizes = [len(component) for component in components]
+    require(max(sizes) <= MAX_CORE, "joint exact cyclic core remains inside gate")
+    cores = [component for component in components if len(component) == max(sizes)]
+    require(len(cores) == 1, "joint dependency graph has one largest block")
+    core = cores[0]
+    singletons = [component for component in components if len(component) == 1]
+    require(len(singletons) == len(components) - 1, "all other joint blocks are singletons")
+
+    transverse_core = normalized[TARGET].extract(core, core)
+    transverse_rank = int(transverse_core.rank())
+    require(transverse_rank == 7, "exact transverse core rank is seven")
+    require(
+        all(normalized[TARGET][component[0], component[0]] == 0 for component in singletons),
+        "all singleton determinants are exactly T-independent",
+    )
 
     payload: dict[str, object] = {
         "experiment": "EXP-134",
+        "attempt": "003-exact-rank-root-certificate",
+        "decision": "exact_root_certificate_running",
         "selected_rows": rows,
+        "component_sizes": sizes,
+        "largest_component": max(sizes),
+        "transverse_core_rank": transverse_rank,
+        "ambient_T_degree_bound": transverse_rank,
+        "exact_T_values_required": transverse_rank + 1,
         "source_sha256": {
-            str(EXP123_RESULTS.relative_to(EXPERIMENTS)): digest(EXP123_RESULTS),
-            str(EXP124_RESULTS.relative_to(EXPERIMENTS)): digest(EXP124_RESULTS),
-            str(EXP124_WORKER.relative_to(EXPERIMENTS)): digest(EXP124_WORKER),
-            str(EXP133_RESULTS.relative_to(EXPERIMENTS)): digest(EXP133_RESULTS),
+            str(path.relative_to(EXPERIMENTS)): digest(path)
+            for path in (EXP123_RESULTS, EXP124_RESULTS, EXP124_WORKER, EXP133_RESULTS)
         },
-        "anchor_determinant": str(anchor_determinant),
-        "joint_component_sizes": [len(component) for component in components],
-        "largest_joint_component": largest,
+        "exact_T_evaluations": [],
     }
     persist(payload, CHECKPOINT)
 
-    try:
-        worker = subprocess.run(
-            [sys.executable, str(WORKER)],
-            cwd=HERE,
-            capture_output=True,
-            text=True,
-            timeout=WORKER_TIMEOUT_SECONDS,
-            check=False,
-        )
-    except subprocess.TimeoutExpired as error:
-        payload["decision"] = "stopped_at_exact_worker_gate"
-        payload["worker_stdout"] = error.stdout or ""
-        payload["worker_stderr"] = error.stderr or ""
-        payload["elapsed_seconds"] = time.time() - started
-        persist(payload, ARTIFACT)
-        print("[STOP] exact worker reached five-minute gate", flush=True)
-        print("RESULT: INCONCLUSIVE AT DECLARED GATE", flush=True)
-        return
-    print(worker.stdout, end="", flush=True)
-    if worker.stderr:
-        print(worker.stderr, file=sys.stderr, end="", flush=True)
-    require(worker.returncode == 0, "exact symbolic worker completed")
-
-    worker_record = json.loads(WORKER_ARTIFACT.read_text(encoding="utf-8"))
-    a, b, c, t, x, y = symbols("A B C T X Y")
-    expression = sympify(
-        worker_record["determinant_ratio"],
-        locals={"A": a, "B": b, "C": c, "T": t},
+    a, b, c = symbols("A B C")
+    constant_core = (
+        eye(len(core))
+        + (a - 1) * normalized[(0, 1)].extract(core, core)
+        + b * normalized[(0, 5)].extract(core, core)
+        + c * normalized[(2, 9)].extract(core, core)
     )
-    old_expression = sympify(
+    baseline_core = None
+    for t_value in range(transverse_rank + 1):
+        require(
+            time.time() - started < TOTAL_GATE_SECONDS,
+            "rank/root worker remains inside total gate",
+        )
+        evaluation_started = time.time()
+        determinant = expand(
+            (constant_core + t_value * transverse_core).det(method="domain-ge")
+        )
+        if baseline_core is None:
+            baseline_core = determinant
+        equal_to_baseline = expand(determinant - baseline_core) == 0
+        record = {
+            "T": t_value,
+            "equals_T0": equal_to_baseline,
+            "core_determinant_sha256": expression_digest(determinant),
+            "elapsed_seconds": time.time() - evaluation_started,
+        }
+        payload["exact_T_evaluations"].append(record)
+        if t_value == 0:
+            payload["T0_core_determinant"] = str(determinant)
+        persist(payload, CHECKPOINT)
+        require(equal_to_baseline, f"exact core determinant at T={t_value} equals T=0")
+
+    require(
+        len(payload["exact_T_evaluations"]) == transverse_rank + 1,
+        "one more exact T value than the degree bound was evaluated",
+    )
+
+    singleton_factor = Rational(1)
+    for component in singletons:
+        vertex = component[0]
+        singleton_factor = expand(
+            singleton_factor
+            * (
+                1
+                + (a - 1) * normalized[(0, 1)][vertex, vertex]
+                + b * normalized[(0, 5)][vertex, vertex]
+                + c * normalized[(2, 9)][vertex, vertex]
+            )
+        )
+    determinant_ratio = expand(singleton_factor * baseline_core)
+    expected_t0 = sympify(
         e124_worker["determinant_ratio"],
         locals={"A": a, "B": b, "C": c},
     )
     require(
-        expand(expression.subs(t, 0) - old_expression) == 0,
-        "T=0 determinant reproduces the accepted EXP-124 section",
+        expand(determinant_ratio - expected_t0) == 0,
+        "rank/root T=0 determinant reproduces EXP-124 exactly",
     )
 
-    polynomial_t = Poly(expression, t, domain="QQ[A,B,C]")
-    degree_t = int(polynomial_t.degree())
-    require(degree_t <= 1, "exact determinant is at most affine in T")
-    r = sympify(e123["invariant_reduction"]["R_X_B"], locals={"X": x, "B": b})
-    s = sympify(e123["invariant_reduction"]["S_X_B"], locals={"X": x, "B": b})
-    r_ab = expand(r.subs(x, a**3))
-    s_ab = expand(s.subs(x, a**3))
-
-    transverse_records = []
-    all_positive_coefficients_vanish = True
-    for power in range(1, degree_t + 1):
-        coefficient = expand(polynomial_t.nth(power))
-        c_degree, numerator = graph_numerator(coefficient, a, b, c, r_ab, s_ab)
-        vanishes = numerator == 0
-        all_positive_coefficients_vanish &= vanishes
-        transverse_records.append(
-            {
-                "T_power": power,
-                "C_degree": c_degree,
-                "coefficient": str(coefficient),
-                "cleared_graph_numerator": str(numerator),
-                "vanishes_on_graph": vanishes,
-            }
+    direct_controls = []
+    for av, bv, cv, tv in ((1, 0, 0, 1), (1, 1, 1, 2), (2, 1, 1, -1), (-1, 1, 2, 3)):
+        direct_t = (
+            selected_base
+            + av * directions[(0, 1)]
+            + bv * directions[(0, 5)]
+            + cv * directions[(2, 9)]
+            + tv * directions[TARGET]
+        ).det(method="domain-ge")
+        direct_zero = (
+            selected_base
+            + av * directions[(0, 1)]
+            + bv * directions[(0, 5)]
+            + cv * directions[(2, 9)]
+        ).det(method="domain-ge")
+        require(direct_t == direct_zero, f"direct ambient T-inert control ({av},{bv},{cv},{tv})")
+        direct_controls.append(
+            {"point": [av, bv, cv, tv], "determinant": str(direct_t)}
         )
-    require(
-        all_positive_coefficients_vanish,
-        "every positive T coefficient vanishes on the EXP-123 graph",
-    )
 
-    invariant_n = sympify(
+    x = symbols("X")
+    graph_numerator = sympify(
         e124["graph_numerator"], locals={"X": x, "B": b}
     )
-    accepted_factors = factor_list(invariant_n, x, b)
-    require(len(accepted_factors[1]) == 3, "retained accepted F3 F6 F7 factor ledger")
-
-    controls = []
-    for av, bv, cv, tv in ((1, 0, 0, 1), (1, 1, 1, 2), (2, 1, 1, -1), (-1, 1, 2, 3)):
-        direct = (
-            selected_base
-            + av * selected_directions[(0, 1)]
-            + bv * selected_directions[(0, 5)]
-            + cv * selected_directions[(2, 9)]
-            + tv * selected_directions[(2, 8)]
-        ).det(method="domain-ge") / anchor_determinant
-        predicted = expression.subs({a: av, b: bv, c: cv, t: tv})
-        require(direct == predicted, f"direct determinant control ({av},{bv},{cv},{tv})")
-        controls.append({"point": [av, bv, cv, tv], "ratio": str(direct)})
+    factors = factor_list(graph_numerator, x, b)
+    require(len(factors[1]) == 3, "retained exact F3 F6 F7 graph ledger")
 
     payload.update(
         {
-            "symbolic_worker": worker_record,
-            "exact_degree_in_T": degree_t,
-            "transverse_coefficient_records": transverse_records,
-            "graph_restriction_T_inert": all_positive_coefficients_vanish,
-            "retained_graph_numerator": str(invariant_n),
+            "decision": "confirmed_exact_ambient_T_inert",
+            "ambient_T_degree_exact": 0,
+            "determinant_ratio": str(determinant_ratio),
+            "determinant_ratio_sha256": expression_digest(determinant_ratio),
+            "direct_exact_controls": direct_controls,
+            "retained_graph_numerator": str(graph_numerator),
             "retained_factorization": [
                 {"factor": str(factor), "multiplicity": multiplicity}
-                for factor, multiplicity in accepted_factors[1]
+                for factor, multiplicity in factors[1]
             ],
-            "direct_exact_controls": controls,
-            "decision": "exp124_graph_section_exactly_T_inert",
             "predictions": {
-                "p1_joint_scc_at_most_45": largest <= 45,
-                "p2_exact_T_degree_at_most_one": degree_t <= 1,
-                "p3_positive_T_coefficients_vanish_mod_graph": all_positive_coefficients_vanish,
+                "p1_joint_scc_at_most_45": max(sizes) <= MAX_CORE,
+                "p2_exact_T_degree_at_most_one": True,
+                "p3_positive_T_coefficients_vanish_mod_graph": True,
                 "p4_T0_reproduces_EXP124": True,
+                "stronger_ambient_T_inertness": True,
             },
             "elapsed_seconds": time.time() - started,
             "scope": (
-                "Exact characteristic-zero divisibility for the accepted EXP-124 section. "
-                "The F3 F6 F7 residual ledger is retained, but its transverse residual "
-                "is not covered until the EXP-129 sections are lifted. No claim about the "
-                "finite base locus, complete five-coefficient restriction, 24-parameter "
-                "core, (72,108), degree floor, or JC(2)."
+                "Exact ambient T-inertness of the accepted EXP-124 section. The "
+                "F3 F6 F7 graph residual is unchanged, but its transverse cover, "
+                "the finite base locus, d=0 quotient, complete five-coefficient "
+                "restriction, 24-parameter core, (72,108), floor, and JC(2) remain open."
             ),
         }
     )
     require(payload["elapsed_seconds"] <= TOTAL_GATE_SECONDS, "EXP-134 remains inside total gate")
     persist(payload, ARTIFACT)
-    print(f"[PASS] wrote {ARTIFACT.relative_to(HERE)}", flush=True)
-    print(f"SHA256 {digest(ARTIFACT)}", flush=True)
+    require(read_json(ARTIFACT)["decision"] == payload["decision"], "reloaded result artifact")
+    print(f"[PASS] results SHA256 {digest(ARTIFACT)}", flush=True)
     print(
-        f"[DONE] {payload['decision']} degree_T={degree_t} "
-        f"largest_scc={largest} elapsed={payload['elapsed_seconds']:.2f}s",
+        f"[DONE] {payload['decision']} degree_T=0 bound={transverse_rank} "
+        f"elapsed={payload['elapsed_seconds']:.2f}s",
         flush=True,
     )
 
