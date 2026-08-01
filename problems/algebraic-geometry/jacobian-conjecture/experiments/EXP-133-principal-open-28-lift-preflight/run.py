@@ -372,6 +372,23 @@ def main() -> None:
     require(all(len(set(rows)) == 125 for rows in sections.values()), "all persisted row sections have distinct rows")
 
     base, directions = exp124.build_full_system()
+    forced = exp124.exp112.forced_polynomial()
+    all_directions = sorted(exp124.exp112.exp071.LOWER)
+    _, complete_rows = exp124.exp112.complete_row_labels(
+        forced, all_directions
+    )
+    constant_column = exp124.exp112.exp071.NQ.index((0, 0))
+    q_columns = [
+        index
+        for index in range(len(exp124.exp112.exp071.NQ))
+        if index != constant_column
+    ]
+    directions[TARGET] = exp124.exp112.coefficient_matrix(
+        {TARGET: exp124.exp112.Fraction(1)},
+        complete_rows,
+        q_columns,
+        include_rhs=False,
+    )
     require(base.shape == (302, 125), "rebuilt original 302 by 125 augmented matrix")
     for direction in ((0, 1), (0, 5), (2, 9), TARGET):
         require(direction in directions, f"rebuilt direction {direction}")
