@@ -24,6 +24,7 @@ for v in "$@"; do sedargs+=(-e "s/\bm$i\b/t^$v/g"); i=$((i+1)); done
 sed "${sedargs[@]}" system-n6.txt > input-$LABEL.txt
 
 timeout 604800 gfan08 _tropicalprevariety --usevaluation -j$THREADS --mint --minx --bits $BITS \
+    --saveas checkpoint-$LABEL.state \
     < input-$LABEL.txt > prevariety-$LABEL.out 2> prevariety-$LABEL.err
 rc=$?
 echo "$(date -Is) EXP-005/08beta/$LABEL finished rc=$rc" | tee -a $S
