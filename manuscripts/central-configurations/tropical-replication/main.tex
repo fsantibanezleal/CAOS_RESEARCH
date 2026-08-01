@@ -20,12 +20,12 @@
 for central configurations}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-01\\[2pt]\normalsize Version 0.04}
+\date{2026-08-01\\[2pt]\normalsize Version 0.05}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Tropical Certificates for Central Configurations \textperiodcentered\ v0.04}
+\fancyhead[R]{\small Tropical Certificates for Central Configurations \textperiodcentered\ v0.05}
 \fancyfoot[C]{\small \thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
 
@@ -372,9 +372,29 @@ three exact anchors in one second: the exact square of Section~2 lies on the
 variety (certified by polynomial reduction modulo $8a^3=4+\sqrt{2}$ written as
 two polynomial relations, no radical heuristics), the unit tetrahedron satisfies
 the Dziobek equations but is excluded by Cayley--Menger, and the $3$-$4$-$5$
-rectangle satisfies Cayley--Menger but violates the Dziobek equations. Results
-will be reported with the drawn sections verbatim in the next version of this
-record.
+rectangle satisfies Cayley--Menger but violates the Dziobek equations.
+
+The probes decided the experiment the same day, with an asymmetry that is
+itself the finding. Two independent codimension-four random sections
+(coefficients drawn uniformly from $[-10^6,10^6]$ by a seeded generator, the
+draws archived verbatim) came back EMPTY in one second each (msolve's
+dimension $-1$ output), which is probabilistic-exact support for the Dziobek
+variety having dimension at most three, exactly the value the generic
+finiteness picture predicts and exactly the direction such arguments consume
+(what must be excluded is excess dimension). By contrast, both
+codimension-three census probes and a deterministic Gr\"obner staircase
+computation walled at their declared caps (900 and 1800 seconds), so no degree
+data and no dimension lower bound beyond the exact witness were produced, and
+the declared kill criterion closed the census half of the instrument at this
+size. Since only an a-priori degree ceiling is available (B\'ezout with the
+stripped degrees $9\cdot 9\cdot 6 = 486$), the emptiness result carries a
+failure estimate of order $10^{-3}$ per draw; it is evidence, not proof. The
+lane continues with cheap emptiness probes and the partial-Gr\"obner
+upper-bound device of Dias--Pan~\cite{DP18} (dimension bounds from the union
+of leading monomials of tractable subideal bases), with certified witness
+sets planned for the lower-bound direction; the next rung is the spatial
+five-body Dziobek variety, executing the proof shape of~\cite{DP18} with
+exact instruments.
 
 \section{The $n=6$ attempt (EXP-005, in progress)}
 
@@ -412,8 +432,10 @@ enrichment law at affine and prevariety level; the screening tables) are
 machine facts about known objects, stated with their complete provenance. Open
 items are tracked in the repository backlog; in particular, censuses for two
 integer-separated mass vectors are inconclusive under our current
-sympy engine caps and are being re-run under an independent engine
-(\texttt{msolve}) with the sympy layer retained as verification. No claim in
+sympy engine caps were closed by an independent engine
+(\texttt{msolve}) with the sympy layer retained as exact verification, while
+the $n=4$ torus censuses and the Dziobek census probes remain honestly capped
+as reported above. No claim in
 this paper depends on an unverified literature statement; the repository
 flags every such statement as UNVERIFIED until read from its primary source.
 
@@ -446,6 +468,9 @@ masses}, arXiv:2301.02305v2 (2025).
 \bibitem{MZ19} M.~Moczurad and P.~Zgliczy\'nski, \emph{Central configurations
 in planar $n$-body problem with equal masses for $n=5,6,7$}, Celest. Mech.
 Dyn. Astron. \textbf{131} (2019); arXiv:1812.07279.
+\bibitem{DP18} T.~Dias and B.-Y.~Pan, \emph{Generic finiteness for a class of
+symmetric planar central configurations of the six-body problem and the
+six-vortex problem}, arXiv:1811.08681 (2018).
 \bibitem{Roberts99} G.~E.~Roberts, \emph{A continuum of relative equilibria in
 the five-body problem}, Phys. D \textbf{127} (1999), 141--145.
 \bibitem{AC98} A.~Albouy and A.~Chenciner, \emph{Le probl\`eme des $n$ corps
