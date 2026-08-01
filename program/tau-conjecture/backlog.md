@@ -2,7 +2,8 @@
 
 | id | title | status | priority | notes |
 |---|---|---|---|---|
-| TCB-001 | EXP-001: polynomial census z_max(tau) for small tau + integer regression gate vs Markstroem | doing | P0 | Opened 2026-08-01; hypothesis declared this round |
+| TCB-001 | EXP-001: polynomial census z_max(tau) for small tau + integer regression gate vs Markstroem | done | P0 | 2026-08-01 CONFIRMED: gate 14/14; z_max(1..4) = 1,2,3,3 |
+| TCB-015 | EXP-002: census at tau = 5; decide minimal tau with z_max = 4 | todo | P0 | Question minted by EXP-001; ~1M states naive, budget ~1 h or wait for TCB-005 |
 | TCB-002 | Read Shub-Smale 1995 (Duke) in full; transcribe the exact theorem statements and proof route | todo | P0 | The origin paper; currently cited via Buergisser 2024 survey |
 | TCB-003 | Read Rojas math/0304100 in full; pin the two weak versions + the 2-adic bound constants | todo | P1 | Feeds the additive-complexity co-census (TC-P3) |
 | TCB-004 | Read Cheng 2004 + Cheng 2003 + Strassen 1976/77; pin the upper-bound ladder for tau'(n!) | todo | P1 | Upper bounds quoted via Markstroem |
