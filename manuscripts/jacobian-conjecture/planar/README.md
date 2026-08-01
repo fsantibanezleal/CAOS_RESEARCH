@@ -48,8 +48,12 @@ EXP-132 then adds the transverse direction (2,8) and closes the complete
 direct (A=0,d=1) boundary of the declared five-coefficient restriction with
 three exact maximal minors generating the unit ideal in QQ[B,C,T]. The new
 SCC-guided basis is essential because the inherited EXP-123/124 bases vanish
-identically on this direct specialization. The
-(A nonzero,d=1) lift and transverse (d=0) quotient remain open, so the
+identically on this direct specialization. EXP-135 then proves the stronger
+ambient identity `det(H+T K_(2,8))=det(H)` for the accepted EXP-124 section.
+The exact certificate uses rank degrees (25,24,6,7), 136,500 complete grid
+controls across 30 primes, and a CRT product above an explicit coefficient
+bound. The old `F3*F6*F7` divisor is therefore retained for this section. The
+other (A nonzero,d=1) sections and transverse (d=0) quotient remain open, so the
 five-coefficient restriction, 24-parameter core, and full family remain open. Grows
 per session; content moved here from `manuscript/` in the 2026-07-22 split
 (see `manuscript/README.md` for the three-paper structure).
@@ -68,11 +72,14 @@ pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode ma
 Rules (methodology/05): [MV] / [D] / [C] labels on every claim; findings enter only after
 adversarial validation.
 
-Current manuscript version: **v0.31** (2026-08-01). Substantive revisions are published
+Current manuscript version: **v0.32** (2026-08-01). Substantive revisions are published
 as new Zenodo versions under concept DOI `10.5281/zenodo.21503367`.
-Canonical/latest version 0.31 DOI: `10.5281/zenodo.21739069`; concept DOI
-`10.5281/zenodo.21503367`. The public 407567-byte v0.31 PDF has MD5
+Version 0.32 publication is pending. The previous canonical/latest version
+0.31 DOI is `10.5281/zenodo.21739069`. The public 407567-byte v0.31 PDF has MD5
 `9e9219d0947eccc12dc6efc25b849698` and SHA-256
 `60b0663896fad777020e00fe4332e7178a159f3c82789632efef7132b2525f3e`.
 Immutable record `10.5281/zenodo.21739032` contains the identical bytes and is
 retained as a superseded duplicate created by a concurrent publication race.
+The visually verified local v0.32 candidate is 419223 bytes, with MD5
+`3c4c4a0c4f96a634de4018410b5871c3` and SHA-256
+`2f96164a7d6efee5b43e6988cbb3578a586e995b9e439b9bbd777f5db515c229`.

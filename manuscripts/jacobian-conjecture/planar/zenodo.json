@@ -10,7 +10,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Paper B of a three-paper research record. The two-variable Jacobian conjecture remains open after the 2026 counterexample in dimension 3. This paper develops an exact-arithmetic campaign on the lone open degree pair (72,108) below 125, built on Guccione-Guccione-Horruitiner-Valqui (arXiv:2204.14178, Proposition 4.3). Version 0.31 retains the complete declared four-coefficient restriction and adds a first transverse boundary theorem. After adjoining direction (2,8), three exact maximal minors of the original 302-by-125 augmented matrix generate the unit ideal on A=0,d=1. Their normalized determinants are P=(5B+4)^3(25B^2-20B+16)^3, Q=B^95(4785156250B^12+9765625B^11CT-1050000000B^9-10214400000B^6+1061683200B^3+5435817984), and R=B^105C; exact elimination and a persisted characteristic-zero Bezout identity certify the unit ideal in QQ[B,C,T]. This closes the complete direct A=0,d=1 boundary of the declared five-coefficient restriction. The A nonzero lift and transverse d=0 quotient remain open, so the complete five-coefficient restriction, 24-parameter core, full 51-parameter family, complete (72,108) case, planar degree floor, and JC(2) remain open.</p><p>All scripts, artifacts and verdicts: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
+    "description": "<p>Paper B of a three-paper research record. The two-variable Jacobian conjecture remains open after the 2026 counterexample in dimension 3. This paper develops an exact-arithmetic campaign on the lone open degree pair (72,108) below 125, built on Guccione-Guccione-Horruitiner-Valqui (arXiv:2204.14178, Proposition 4.3). Version 0.32 retains the complete declared four-coefficient restriction and the direct transverse boundary theorem from v0.31, then proves an ambient transverse determinant identity for the accepted EXP-124 section. For its normalized 33-by-33 core H(A,B,C) and direction K_(2,8), exact ranks, separate degree bounds (25,24,6,7), 136,500 complete tensor-grid controls over 30 primes, and a CRT modulus exceeding an explicit characteristic-zero coefficient bound prove det(H+T K_(2,8))=det(H) in QQ[A,B,C,T]. Thus the old F3 F6 F7 divisor is retained for this section after adjoining (2,8). The other residual sections and transverse d=0 quotient remain open, so the complete five-coefficient restriction, 24-parameter core, full 51-parameter family, complete (72,108) case, planar degree floor, and JC(2) remain open.</p><p>All scripts, artifacts and verdicts: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
     "keywords": [
       "Jacobian conjecture",
       "planar Keller maps",
@@ -60,7 +60,7 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.31",
+    "version": "0.32",
     "language": "eng"
   }
 }
