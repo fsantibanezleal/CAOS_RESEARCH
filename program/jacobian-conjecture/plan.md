@@ -1,11 +1,11 @@
 # Jacobian conjecture: active problem plan
 
 Opened 2026-07-20. Area: algebraic geometry. State: exploring. Last strategic audit:
-2026-07-30.
+2026-07-31.
 
 This is the current plan. Earlier route proposals remain evidence of the program's development,
 but the controlling decisions are in
-[`strategy-audit-2026-07-30.md`](strategy-audit-2026-07-30.md).
+[`strategy-audit-2026-07-31.md`](strategy-audit-2026-07-31.md).
 
 ## Goal
 
@@ -34,21 +34,22 @@ support-restricted failure, or absence of a finite certificate as a proof.
 | JC-A | Preserve and publish the exact dimension at least three record | rolling; no current compute |
 | JC-B | Complete the $[125,150]$ primary-source frontier reconciliation | active; EXP-094 shows C10/C11/C19/C20 are not excluded by the cited remark; 16 unprinted \(A'_0\) values remain |
 | JC-C | Test modern Newton and approximate-root restrictions against the GGHV reduction | direct transport decided by EXP-097: absolute resultant degree is not typed after Laurent localization without a boundary-divisor ledger |
-| JC-D | Reformulate universal inconsistency as a constructible determinantal-strata problem | active; EXP-124--129 close the complete \(AS\ne0\) rational graph; finite \(V(R,S)\) and \(A=0\) boundaries remain |
+| JC-D | Reformulate universal inconsistency as a constructible determinantal-strata problem | active; EXP-124--130 close the complete \(A\ne0\) sector of the four-parameter restriction; only its direct \(A=0\) boundary remains |
 | JC-E | Degree-three certificate decision | done by EXP-075; one exact four-parameter slice is infeasible, so no global cubic covector exists |
 | JC-F | Global geometric routes: fibres, properness, and parameter spaces | hold; resume only after a rigorous bridge to the reduced system is stated |
 | JC-G | Manuscripts, wiki, data, and public record | rolling; update only from adjudicated results |
 
 ## Ordered next work
 
-1. Preserve EXP-124--129 as the exact complete \(AS\ne0\) rational-graph
-   cover. The finite union has five squarefree blocks of total degree 75;
-   two new exact sections close the remaining \(F_7\) blocks.
-2. Declare the next experiment on the finite base locus \(V(R,S)\). Build
-   its exact quotient algebra and select maximal minors blockwise.
-3. Treat \(A=0\) as a separate boundary experiment; do not infer its rank
-   strata from the principal-open normalization \(X=A^3\).
-4. Assemble a complete four-parameter cover only after both boundaries pass.
+1. Preserve EXP-124--130 as the exact complete cover of the \(A\ne0\) sector.
+   Do not repeat graph or base-locus searches.
+2. Declare EXP-131 on the direct \(A=0\) specialization of the original
+   augmented matrix. Compute its generic rank before selecting any minor.
+3. If the generic boundary rank is 125, recurse on a finite atlas of exact
+   pivot divisors; use module/Fitting or polynomial-matrix invariant factors
+   as the independent control.
+4. Assemble a complete four-parameter cover only after every \(A=0\) rank
+   stratum passes.
 5. Treat the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
    spend compute re-eliminating or adding charts to the closed restriction.
 6. Reopen intersection-\(21\) transport only if the boundary recursion stalls,

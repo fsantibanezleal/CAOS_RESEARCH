@@ -15,7 +15,7 @@ route, including the first complete exact augmented-minor chart cover on an
 actual three-coefficient GGHV slice and its global lower-family mod-9 grading,
 followed by the EXP-111 full-family rank correction, the EXP-112 exact
 36-column cyclic-core compression, the EXP-114 weighted residual factors,
-and the EXP-115--129 weighted-chart campaign: the complete quotient boundary
+and the EXP-115--130 weighted-chart campaign: the complete quotient boundary
 is closed, a first open chart makes all three selected component
 intersections finite, a third chart closes the \(G\) component, and one
 shared residual-selected basis closes both finite \(L/Q\) strata. The
@@ -37,8 +37,11 @@ analysis identifies two repeated geometric blocks, reducing the union from
 covers the unique degree-15 and degree-30 blocks, and two newly reconstructed
 maximal minors generate the unit ideal on the remaining (F_7) blocks of
 degrees 3, 9, and 18. The complete (AS\ne0) rational graph is therefore
-closed. The base locus, (A=0), the full four-parameter restriction,
-24-parameter core, and full family remain open. Grows
+closed. EXP-130 decomposes the principal-open base locus into reduced field
+blocks of degrees 3, 6, 12, and 69, total dimension 90, and certifies a
+finite maximal-minor atlas uniformly in (Y=A^2C). The complete (A\ne0)
+sector of the declared four-parameter restriction is closed. The direct
+(A=0) boundary, 24-parameter core, and full family remain open. Grows
 per session; content moved here from `manuscript/` in the 2026-07-22 split
 (see `manuscript/README.md` for the three-paper structure).
 
@@ -56,6 +59,8 @@ pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode ma
 Rules (methodology/05): [MV] / [D] / [C] labels on every claim; findings enter only after
 adversarial validation.
 
-Current manuscript version: **v0.28** (2026-07-31). Substantive revisions are published
+Current manuscript version: **v0.29** (2026-07-31). Substantive revisions are published
 as new Zenodo versions under concept DOI `10.5281/zenodo.21503367`.
-Version 0.28 DOI: `10.5281/zenodo.21727663`; concept DOI `10.5281/zenodo.21503367`.
+Version 0.29 DOI: `10.5281/zenodo.21730506`; concept DOI
+`10.5281/zenodo.21503367`. The public 400234-byte PDF has MD5
+`80fe44419f7ed570456b91300adebeed`.

@@ -1,7 +1,8 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-07-31 after EXP-128/129 identified the exact five-block finite
-scheme and closed the complete \(AS\ne0\) rational graph. This is
+Updated 2026-07-31 after EXP-130 certified the reduced 90-dimensional base
+algebra and closed the complete \(A\ne0\) sector of the declared
+four-parameter restriction. This is
 the first-read navigation page. Primary artifacts and experiment verdicts
 remain the evidence.
 
@@ -171,9 +172,15 @@ remain the evidence.
   \(X\)-classes. A single sampled basis does not cover all three \(F_7\)
   blocks, but two exact reconstructed sections do: one is a unit on degrees
   9 and 18, the other on degree 3. Together with EXP-124--128, this closes
-  the complete \(AS\ne0\) rational graph. \(V(R,S)\) and \(A=0\) remain.
+  the complete \(AS\ne0\) rational graph.
+- EXP-130 decomposes \(V(R,S)\cap D(X)\) into four reduced field blocks of
+  degrees \(3,6,12,69\), total dimension 90. Existing sections cover degrees
+  12 and 69; an exact SCC-33 section completes degrees 3 and 6. Bezout,
+  resultant, multiplication-norm, and direct-determinant controls certify a
+  finite atlas uniform in \(Y=A^2C\). Thus all \(A\ne0\) cases are covered;
+  only the direct \(A=0\) boundary remains for the restriction.
 - Controlling strategy:
-  [`strategy-audit-2026-07-30.md`](strategy-audit-2026-07-30.md).
+  [`strategy-audit-2026-07-31.md`](strategy-audit-2026-07-31.md).
 - Source audit:
   [`2026-07-30-strategy-refresh.md`](../../problems/algebraic-geometry/jacobian-conjecture/context/2026-07-30-strategy-refresh.md).
 
@@ -215,6 +222,8 @@ remain the evidence.
 | \(F_7\) divisor reduction | distinct \(Y\)-independent section; principal-open residual \(E_3(B)E_9(B)E_{18}(B)=0\): 30 normalized values, 90 lifted algebraic points | EXP-127 |
 | finite graph CRT algebra | five squarefree blocks of degrees \(9,15,18,30,3\), total degree 75; degree 9 and 18 are repeated exact points | EXP-128/129 |
 | complete rational-graph atlas | \(h_7\) covers degrees 15 and 30; two further exact sections cover \(E_3,E_9,E_{18}\) blockwise | EXP-128/129 |
+| principal-open base-locus algebra | reduced blocks of degrees \(3,6,12,69\), total dimension 90; finite maximal-minor atlas uniform in \(Y\) | EXP-130 |
+| complete \(A\ne0\) four-parameter sector | selected chart, graph atlas, and base-locus atlas exhaust the principal-open cases | EXP-123/129/130 |
 | complete \(T_B\) restriction cover | \(d=0\) quotient cover plus exact \(G,L,Q\) weighted-open covers | EXP-118/120/121 |
 | lower-family grading | \(w_{p,q}=q-p+1\pmod9\) for all 23 nonconstant remaining directions | EXP-106 |
 | properness instrument | exact resultant-leading-coefficient test | EXP-014 |
@@ -362,6 +371,9 @@ scalar conditions before exploiting sparsity.
 - EXP-129: exact (X)-class checks identify those projections as the same
   points. A two-section characteristic-zero atlas has blockwise unit norms
   on degrees \(3,9,18\), closing the full \(AS\ne0\) rational graph.
+- EXP-130: the principal-open base locus is a reduced 90-dimensional product
+  with block degrees \(3,6,12,69\). Exact unit-ideal certificates cover its
+  full \(Y\)-cylinder and close the complete \(A\ne0\) sector.
 - EXP-102: third chart exists at \(u=1\); complete pullback is inconclusive
   after the dense rank-121 determinant hit its five-minute budget.
 
@@ -373,7 +385,7 @@ scalar conditions before exploiting sparsity.
   at \(u=1\).
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
-- EXP-111 through EXP-129 are complete. No Jacobian process is active.
+- EXP-111 through EXP-130 are complete. No Jacobian process is active.
 - Current research branch: `work/jacobian-conjecture/next-round`.
 - EXP-096 was merged into `develop` by PR `#81` at `7866b0f`.
 - The planar manuscript reconciliation was merged by PR `#83` at `ffc6a3d`.
@@ -423,6 +435,12 @@ scalar conditions before exploiting sparsity.
   `db52e8d453936a3e28222fbadeb809ce`, matching the local artifact. Local
   SHA-256 is
   `ee97e7519b94083e1b7977f68967e73f26db0ebe268ccd37d9a5b222a6160896`.
+- EXP-130 and Paper B v0.29 were merged into `develop` by PR `#115` at
+  `2388374`. Paper B v0.29 is published at immutable version DOI
+  `10.5281/zenodo.21730506`; its public 400234-byte PDF has MD5
+  `80fe44419f7ed570456b91300adebeed`, matching the local artifact. Local
+  SHA-256 is
+  `0bd662262ad9e1aaa07c389c6cfe96ced485508cc9e332a366c86ad0626455be`.
 - Promotion PR `#103` synchronized the validated tree to `main`. Exact
   current pointers must be verified live rather than copied from this file.
 - The management mirror is updated directly on its canonical `develop`
@@ -430,32 +448,34 @@ scalar conditions before exploiting sparsity.
 
 ## 5. Next actions, in order
 
-1. Preserve EXP-124--129 as the exact complete cover of the \(AS\ne0\)
-   rational graph. Do not expand the now-closed 75-point finite scheme.
-2. Declare the next experiment on the finite base locus \(V(R,S)\). Compute
-   its exact quotient algebra and select maximal minors blockwise.
-3. Treat \(A=0\) in a separate boundary experiment, including any deeper
-   rank strata introduced when (X=A^3=0).
-4. Only after both boundaries close, state whether the complete
+1. Preserve EXP-124--130 as the exact complete \(A\ne0\) cover. Do not repeat
+   the closed graph or 90-dimensional base-algebra calculations.
+2. Declare EXP-131 on the original augmented matrix specialized directly at
+   \(A=0\), before any invariant normalization or division.
+3. Compute the generic rank over \(\mathbb Q(B,C)\). If it is 125, build a
+   finite exact pivot atlas and recurse on its residual divisors.
+4. Independently control the boundary through a module/Fitting presentation
+   or polynomial-matrix invariant factors, with every denominator fibre
+   checked directly.
+5. Only after all \(A=0\) strata close, state that the complete
    four-parameter restriction is covered.
-5. Keep the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
+6. Keep the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
    add redundant charts to the closed three-parameter restriction.
-6. Reopen intersection-\(21\) transport only with a complete
+7. Reopen intersection-\(21\) transport only with a complete
    boundary-divisor ledger through the swap, Laurent cuts, and final inversion;
    do not impose absolute degree directly on the 51 coefficients.
-7. Pursue further Newton resolution only if a new condition is derived beyond
+8. Pursue further Newton resolution only if a new condition is derived beyond
    the already-retained first \(D=72\) branch; do not repeat direct comparisons
    with \(P_T\).
-8. Continue the independent [125,150] frontier:
+9. Continue the independent [125,150] frontier:
    - keep C10/C11/C19/C20 unresolved by GGV2 Remark 2.32;
    - derive the 16 missing \(A'_0\) values through the declared chain algorithm;
    - preserve C01/C04 as open absent an exact exclusion.
-9. Keep the recursive graph-cover computation as P0 while it reduces
-   dimension exactly. Do not build EXP-093.
-10. Keep EXP-109 as a bounded regression control, not as the main route.
-11. Preserve Paper B v0.28 at immutable DOI
-   `10.5281/zenodo.21727663`. Publish another version only after a boundary
-   stratum changes a manuscript claim.
+10. Keep EXP-093 cancelled; do not revive the global cubic solve.
+11. Keep EXP-109 as a bounded regression control, not as the main route.
+12. Preserve Paper B v0.29 at immutable DOI
+   `10.5281/zenodo.21730506`; publish a new version only when the `A=0`
+   boundary or another manuscript claim changes.
 
 Suggested source-round commands:
 
@@ -503,6 +523,8 @@ Latest correction publications:
 - Paper B v0.19: `10.5281/zenodo.21610744`
 - Paper B v0.20: `10.5281/zenodo.21694807`
 - Paper B v0.21: `10.5281/zenodo.21695367`
+- Paper B v0.28: `10.5281/zenodo.21727663`
+- Paper B v0.29: `10.5281/zenodo.21730506`
 
 EXP-097 changed the admissible use of intersection number \(21\), so the planar
 manuscript was expanded, built, visually verified, merged through PR `#85`,

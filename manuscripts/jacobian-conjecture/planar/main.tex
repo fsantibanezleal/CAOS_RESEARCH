@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-31\\[2pt]\normalsize Version 0.28}
+\date{2026-07-31\\[2pt]\normalsize Version 0.29}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.28}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.29}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -39,7 +39,7 @@ the Staircase Transport, and the Recalibrated Frontier}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper B of a three-paper record \textperiodcentered\ version 0.26 \textperiodcentered\ 2026-07-30\\
+Paper B of a three-paper record \textperiodcentered\ version 0.29 \textperiodcentered\ 2026-07-31\\
 DOI \href{https://doi.org/10.5281/zenodo.21503367}{10.5281/zenodo.21503367} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -126,8 +126,15 @@ blocks with the same geometric points already projected from \(F_3\) and
 total degree 75. The \(h_7\) section covers the unique degree-15 and degree-30
 blocks. Two further exact maximal-minor sections generate the unit ideal on
 the remaining \(F_7\) blocks of degrees \(3,9,18\). Hence the accumulated
-atlas closes the entire \(AS\ne0\) rational graph. The finite base locus and
-\(A=0\) remain.
+atlas closes the entire \(AS\ne0\) rational graph. Exact factorwise
+subresultants then identify the principal-open base locus as a reduced
+90-dimensional algebra with field-block degrees \(3,6,12,69\). Existing
+sections cover the degree-12 and degree-69 blocks; one new exact section
+completes degrees 3 and 6. Bezout identities, independent resultants,
+multiplication-matrix norms, and a direct determinant control certify the
+finite atlas uniformly in \(Y\). Thus the complete \(A\ne0\) sector of the
+declared four-parameter restriction is covered. The direct boundary \(A=0\)
+remains.
 A new multiplication formula for $x^m$-anchored edges shows the $B = 16$ leading form cannot
 produce the Keller constant on its top edge for $m \ge 2$: that case, too, is a staircase
 transport. All computations are exact and reproducible; every claim is labeled machine-verified
@@ -1014,11 +1021,12 @@ the rational graph
 \[
  Y=-\frac{R(X,B)}{S(X,B)}.
 \]
-The remaining base locus \(V(R,S)\subset\mathbb A^2_{X,B}\) is
+The base locus \(V(R,S)\subset\mathbb A^2_{X,B}\) is
 zero-dimensional because \(R\) and \(S\) are coprime. This is the first
 higher-dimensional constructible reduction from the 24-parameter core [D].
-It is not a four-parameter chart cover: an alternative minor must still cover
-the rational graph, the finite base locus, and the separate divisor \(A=0\).
+At this stage it is not a four-parameter chart cover: alternative minors must
+cover the rational graph, the finite base locus, and the separate divisor
+\(A=0\). Sections below record the subsequent graph and base-locus closure.
 The complete \((72,108)\) case, the planar degree floor, and \(JC(2)\) remain
 open.
 
@@ -1156,9 +1164,55 @@ Thus their norm ideal is the unit ideal in every block of
 \(\Q[B]/(E_3E_9E_{18})\). Combined with EXP-124--128, this proves that the
 maximal-minor atlas covers the complete \(AS\ne0\) rational graph [MV/D].
 
-The finite base locus \(V(R,S)\) and the separate divisor \(A=0\) remain, as
-do the full four-parameter restriction, the \((72,108)\) case, the planar
-degree floor, and \(JC(2)\).
+EXP-130 treats the finite base locus as a coordinate algebra rather than as a
+list of algebraic points [MV]. Both projection resultants have degree 117.
+After separating their coordinate factor of multiplicity 27, their
+squarefree principal-open factors have degrees
+\[
+  3,6,12,69.
+\]
+Factorwise subresultants reconstruct the same-point \(X\)-class on every
+factor, proving that
+\[
+ K=\bigl(\Q[X,B]/(R,S)\bigr)[X^{-1}]
+\]
+is a reduced product of four fields of total dimension 90. Direct
+specialization gives
+\[
+ \gcd(R(0,B),S(0,B))=B^{12},\qquad
+ \gcd(R(X,0),S(X,0))=X^3.
+\]
+This places the discarded coordinate support at
+\(X=B=0\), on the separate \(A=0\) boundary. The projection multiplicity is
+not used as a local-length claim.
+
+The EXP-124 section is a unit on the degree-69 block, while the
+EXP-125-\(h_{36}\) and EXP-129-atlas-1 sections generate the unit ideal on
+degree 12. The first newly selected exact basis leaves one common quadratic
+in \(K[Y]\) on each of the degree-3 and degree-6 blocks. Modular probes at
+the roots of those quadratics have full augmented rank, but reconstruction
+of the default targeted basis reaches the declared time gate. A structural
+redirect starts from the EXP-125-\(F_3\) basis, replaces one row, and reduces
+the largest determinant SCC to 33. Its characteristic-zero determinant has
+the form
+\[
+ A^{86}H(X,B,Y),\qquad \deg_Y H=2,
+\]
+and agrees with a direct 125-by-125 determinant at an independent control
+point [MV].
+
+On both remaining fields, the structural section breaks the persisted common
+quadratic. Exact extended Bezout identities in \(K[Y]\) and independent
+\(Y\)-resultants certify the final pairs. Multiplication matrix norms provide
+an additional exact control and show that the
+final pairs generate the unit ideal [MV]. Hence the finite maximal-minor atlas
+covers \(V(R,S)\cap D(X)\) uniformly in \(Y=A^2C\). Combining the selected
+EXP-123 chart, the EXP-129 graph atlas, and the EXP-130 base-locus atlas
+exhausts every case with \(A\ne0\) [D].
+
+Only the direct divisor \(A=0\) remains for the declared four-parameter
+restriction. The 24-parameter core, complete 51-parameter family,
+\((72,108)\) case, planar degree floor, and \(JC(2)\) remain open.
 
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the
@@ -1224,15 +1278,17 @@ audit trail (including its open verification items) persisted in the repository.
 \section{Program}
 
 Priorities, from the standing routes evaluation: (1) preserve the exact
-EXP-124--129 closure of the \(AS\ne0\) rational graph and treat the finite
-base locus \(V(R,S)\) and the separate \(A=0\) boundary in independent
-experiments; (2) retain the complete EXP-118--121 \(T_B\) cover as a
-regression gate rather than adding redundant slice charts; (3) retain the
+EXP-124--130 closure of the complete \(A\ne0\) sector and specialize the
+original augmented matrix directly at \(A=0\), before invariant division;
+(2) profile its generic rank over \(\Q(B,C)\), then combine a finite pivot
+atlas with an independent module/Fitting or polynomial-matrix
+invariant-factor calculation; (3) retain the complete EXP-118--121 \(T_B\)
+cover as a regression gate rather than adding redundant slice charts; (4) retain the
 exact EXP-108 lift through \((0,6)\) as a bounded chart control rather than
-a terminating programme; (4) reopen the intersection-$21$ transport only
+a terminating programme; (5) reopen the intersection-$21$ transport only
 after constructing a complete boundary-divisor ledger through the swap,
-Laurent cuts, and final inversion; (5) pursue Newton resolution only after deriving a
-condition beyond the already-retained first $D=72$ branch; and (6) retain the
+Laurent cuts, and final inversion; (6) pursue Newton resolution only after deriving a
+condition beyond the already-retained first $D=72$ branch; and (7) retain the
 properness reformulation ($JC(2)$ holds iff every planar Keller map has empty
 Jelonek set; exact certificates shipped, EXP-014) as a cross-check instrument.
 The reproducibility contract: every [MV] claim has a persisted script and

@@ -3,6 +3,33 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.59.000], 2026-07-31
+
+### Added
+- EXP-130 gives an exact factorwise-subresultant and CRT description of the
+  principal-open Jacobian base locus. Its reduced coordinate algebra has
+  field-block degrees 3, 6, 12, and 69, total dimension 90.
+- A structurally selected maximal minor completes the previously uncovered
+  degree-3 and degree-6 blocks. Exact extended Bezout identities, independent
+  resultants, multiplication-matrix norms, and a direct 125-by-125 determinant
+  control certify the final atlas uniformly in the free cylinder coordinate.
+- The post-EXP-130 strategy audit introduces a direct boundary-module/Fitting
+  approach and polynomial-matrix invariant-factor control for the remaining
+  `A=0` stratum.
+
+### Changed
+- The Jacobian plan, state, backlog, resume, history, wiki, and baked experiment
+  registry now agree that EXP-123/129/130 close the complete `A != 0` sector of
+  the declared four-parameter restriction. The direct `A=0` specialization is
+  the sole P0 research path.
+- Paper B v0.29 records the principal-open base-locus closure while preserving
+  the open scope: the 24-parameter core, 51-parameter family, `(72,108)`, the
+  planar degree floor, and `JC(2)` are not settled.
+
+### Fixed
+- The manuscript title-page preprint box now carries the same version and date
+  as the title, running header, README, and Zenodo metadata.
+
 ## [0.58.000], 2026-07-25
 
 ### Added

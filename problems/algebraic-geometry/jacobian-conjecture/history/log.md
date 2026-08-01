@@ -1548,3 +1548,37 @@
   395770-byte PDF MD5 `db52e8d453936a3e28222fbadeb809ce` matches the local
   artifact (SHA-256
   `ee97e7519b94083e1b7977f68967e73f26db0ebe268ccd37d9a5b222a6160896`).
+
+## 2026-07-31 - EXP-130 closes the complete principal-open base locus
+
+- Both degree-117 projection resultants factor into a coordinate component
+  of multiplicity 27 and squarefree irreducible principal-open blocks of
+  degrees (3,6,12,69). Factorwise subresultants reconstruct the same-point
+  (X)-class on every block. The resulting algebra is reduced and has total
+  dimension 90.
+- Direct specializations place the coordinate support at (X=B=0), on the
+  separate (A=0) boundary. No local-length claim is inferred from the
+  projection multiplicity.
+- Existing exact sections cover degrees 69 and 12. The first new generic
+  section leaves common quadratic (Y)-fibres on degrees 3 and 6. Targeted
+  modular probes have full rank, but their default exact determinant reaches
+  the declared gate.
+- A structurally equivalent basis obtained from EXP-125-F3 plus one row has
+  largest SCC 33 and reconstructs exactly. It breaks both common quadratics.
+  Direct 125-by-125 determinant control, exact extended Bezout identities,
+  independent (Y)-resultants, and multiplication-matrix norms certify the
+  final atlas in characteristic zero.
+- Final certificate SHA-256:
+  `6742648B5CAB7E795B7D680776BA50ACE5F5E4810D6D050CBD50CCDB06BF1DE0`;
+  release result SHA-256:
+  `DE68F61E5E9B650B7C0C00679DD0F69360A4871205C0DBB059E78AF4307066FD`.
+- Together EXP-123, EXP-129, and EXP-130 exhaust all cases with (A\ne0)
+  in the declared four-parameter restriction. Only the direct (A=0)
+  boundary remains. The 24-parameter core, 51-parameter family,
+  ((72,108)), degree floor, and (JC(2)) remain open.
+- Paper B v0.29 passed a warning-free two-pass 21-page build and complete
+  rendered visual QA. PR #115 merged at `2388374`. Zenodo record `21730506`
+  is published at immutable DOI `10.5281/zenodo.21730506`; its public
+  400234-byte PDF MD5 `80fe44419f7ed570456b91300adebeed` matches the local
+  artifact (SHA-256
+  `0bd662262ad9e1aaa07c389c6cfe96ced485508cc9e332a366c86ad0626455be`).
