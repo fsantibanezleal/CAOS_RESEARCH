@@ -114,13 +114,15 @@ def two_adic_valuations(roots):
 
 
 def census_polynomials(max_depth, deadline=None, state_cap=5_000_000,
-                       progress=None):
+                       progress=None, return_frontier=False):
     """BFS census of the polynomial model.
 
     Returns (per_depth, first_seen, complete) where per_depth[d] carries
     state/new-poly counts, first_seen maps poly -> first depth (= tau of the
     poly among enumerated depths), complete[d] says depth d was exhausted.
     deadline: absolute time.time() kill; state_cap: memory guard.
+    With return_frontier=True, returns a 4th element: the final frontier
+    (dict of reached-set states at max_depth), for last-gate scans.
     """
     frontier = {(): None}
     first_seen = {}
@@ -169,7 +171,58 @@ def census_polynomials(max_depth, deadline=None, state_cap=5_000_000,
         if progress:
             progress(depth, per_depth[depth])
         frontier = new_frontier
+    if return_frontier:
+        return per_depth, first_seen, complete, frontier
     return per_depth, first_seen, complete
+
+
+def last_gate_scan(frontier, known_polys, deadline=None, progress=None,
+                   progress_every=50_000):
+    """Exact z_max at depth d+1 given the EXHAUSTED depth-d frontier.
+
+    Soundness (the last-gate lemma, EXP-003 hypothesis): any f with
+    tau(f) = d+1 is the final gate of a length-(d+1) program whose first d
+    gates form a normalized reached-set state, i.e. an element of
+    `frontier`; so scanning one op over every state's operands enumerates
+    every polynomial of tau exactly d+1 (results already in `known_polys`,
+    the polys of tau <= d, are skipped). Memory stays O(frontier + distinct
+    new polys); no depth-(d+1) states are stored.
+
+    Returns (new_polys_set, complete_flag, states_scanned).
+    """
+    seen = set(known_polys)
+    new_polys = set()
+    complete = True
+    count = 0
+    for state in frontier:
+        operands = INPUTS + state
+        n = len(operands)
+        for i in range(n):
+            a = operands[i]
+            for j in range(i, n):
+                b = operands[j]
+                v = padd(a, b)
+                if v and v not in seen:
+                    seen.add(v)
+                    new_polys.add(v)
+                v = pmul(a, b)
+                if v and v not in seen:
+                    seen.add(v)
+                    new_polys.add(v)
+        for a in operands:
+            for b in operands:
+                if a is not b:
+                    v = psub(a, b)
+                    if v and v not in seen:
+                        seen.add(v)
+                        new_polys.add(v)
+        count += 1
+        if progress and count % progress_every == 0:
+            progress(count, len(new_polys))
+        if deadline and time.time() > deadline:
+            complete = False
+            break
+    return new_polys, complete, count
 
 
 def census_integers(max_depth, deadline=None, state_cap=5_000_000,
