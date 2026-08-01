@@ -48,12 +48,13 @@
   census probes and staircase refuted by cap (kill criterion honored). Zenodo
   v0.05 published (DOI 10.5281/zenodo.21739944). Dias-Pan arXiv:1811.08681 read
   in full; CCB-037 (partial-GB dimension bounds) minted.
-- **Next experiments:** EXP-011 DECIDED same day (instruments failed to scale
-  at declared budgets; engine lesson recorded). Next: the CCB-037 v2 engine
-  spike (msolve -g / Singular-class GB for leading-term harvests) and the
-  CCB-034 witness-set spike; then the n = 6 symmetric-strata campaign
-  (9-variable quotients) and the Chang-Chen n = 4 relation re-derivation as
-  the residual-diagram calibration gate. Separately reproduce HM06's mixed
-  volume 25380.
+- **Next experiments:** EXP-012 DECIDED (engine hypothesis confirmed; first
+  sound bound dim <= 7 for the n = 5 cut; CCB-037 v2 validated with Singular
+  workhorse + sympy verification + msolve mod-p screen-only). Next: EXP-013
+  (menu growth toward the <= 4 target: triples, mixed pairings, pairs with
+  CM, all sub-second per subideal now), the k = 2, p = 2 symmetric-stratum
+  campaign declaration (engine-unblocked), the Chang-Chen n = 4 relation
+  re-derivation (calibration gate), and the CCB-034 witness-set spike for
+  lower bounds. Separately reproduce HM06's mixed volume 25380.
 - **Isolation note:** rounds close with NO version bump (methodology/08); the release
   step is serialized and owned elsewhere; a parallel session runs jacobian-conjecture.

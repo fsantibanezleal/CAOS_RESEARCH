@@ -120,6 +120,19 @@ launches, and `--saveas` checkpoints in run08.sh. The 0.7 pow3-b0 investment was
 NOT restarted on 0.7 (its sibling died at the same assertion class); pow3
 continues on 0.8beta.
 
+UPDATE 2026-08-01 (round 8): EXP-012 DECIDED: ENGINE HYPOTHESIS CONFIRMED
+(Singular 4.3.2, installed and hashed, runs 12/15 of the identical EXP-011
+jobs at sub-second cost; 16/16 on the lighter menu) and the lane has its
+first SOUND deterministic bound: dim <= 7 for the n = 5 spatial Dziobek cut
+(466 grevlex-correct leading monomials from 28 subideals; target 4 not
+reached; menu grows in EXP-013). The exact-reproduction control caught a
+lex-vs-grevlex harvester bug in EXP-011 on its first outing (gb.polys default
+to lex; all harvesters fixed; impact audited: nothing consumed the tainted,
+vacuous harvest). msolve -g pinned MOD-P SCREEN-ONLY before the run. The
+n = 6 strata campaign is engine-unblocked. Chang-Chen stage 1 read done (the
+24 QUOTED; n = 4 relation ladder transcribed; re-derivation is the
+calibration gate). Manuscript v0.06 on Zenodo: DOI 10.5281/zenodo.21740627.
+
 UPDATE 2026-08-01 (evening): EXP-011 DECIDED: smoke and cap-signature
 confirmed, emptiness and partial-GB rungs FAILED TO SCALE at declared budgets
 (all probes capped at 300 s; pgb 1/15 completers, vacuous d_pgb = 10; no
