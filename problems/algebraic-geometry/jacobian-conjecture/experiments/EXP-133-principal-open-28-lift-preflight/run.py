@@ -109,16 +109,20 @@ def determinant_mod(matrix: list[list[int]], prime: int) -> int:
     return determinant % prime
 
 
-def normalized_operator(
-    matrix: list[list[int]], direction: list[list[int]], prime: int
-) -> list[list[int]]:
+def normalized_operators(
+    matrix: list[list[int]], directions: list[list[list[int]]], prime: int
+) -> list[list[list[int]]]:
     size = len(matrix)
     work = [
         [entry % prime for entry in matrix[row]]
-        + [entry % prime for entry in direction[row]]
+        + [
+            entry % prime
+            for direction in directions
+            for entry in direction[row]
+        ]
         for row in range(size)
     ]
-    width = 2 * size
+    width = (1 + len(directions)) * size
     for column in range(size):
         pivot = next(
             (row for row in range(column, size) if work[row][column]), None
@@ -138,7 +142,13 @@ def normalized_operator(
                 work[row][target] = (
                     work[row][target] - multiplier * work[column][target]
                 ) % prime
-    return [row[size:] for row in work]
+    return [
+        [
+            row[(index + 1) * size : (index + 2) * size]
+            for row in work
+        ]
+        for index in range(len(directions))
+    ]
 
 
 def strongly_connected_components(adjacency: list[set[int]]) -> list[list[int]]:
@@ -177,17 +187,25 @@ def strongly_connected_components(adjacency: list[set[int]]) -> list[list[int]]:
     return components
 
 
-def cyclic_components(matrix: list[list[int]]) -> list[list[int]]:
+def cyclic_components(matrices: list[list[list[int]]]) -> list[list[int]]:
     adjacency = [
-        {column for column, value in enumerate(row) if value}
-        for row in matrix
+        {
+            column
+            for matrix in matrices
+            for column, value in enumerate(matrix[row])
+            if value
+        }
+        for row in range(len(matrices[0]))
     ]
     components = strongly_connected_components(adjacency)
     cyclic = [
         component
         for component in components
         if len(component) > 1
-        or matrix[component[0]][component[0]] != 0
+        or any(
+            matrix[component[0]][component[0]] != 0
+            for matrix in matrices
+        )
     ]
     return sorted(cyclic, key=lambda component: (-len(component), component))
 
@@ -271,16 +289,22 @@ def poly_gcd(left: list[int], right: list[int], prime: int) -> list[int]:
     return poly_scale(left, inverse, prime)
 
 
-def component_polynomial(
-    operator: list[list[int]], component: list[int], prime: int
+def graph_component_polynomial(
+    c_operator: list[list[int]],
+    t_operator: list[list[int]],
+    component: list[int],
+    prime: int,
 ) -> list[int]:
     size = len(component)
     values = []
     for parameter in range(size + 1):
         block = [
             [
-                ((1 if row == column else 0) + parameter * operator[source][target])
-                % prime
+                (
+                    (1 if row == column else 0)
+                    - c_operator[source][target]
+                    + parameter * t_operator[source][target]
+                ) % prime
                 for column, target in enumerate(component)
             ]
             for row, source in enumerate(component)
@@ -299,15 +323,22 @@ def component_polynomial(
     return polynomial
 
 
-def section_polynomial(
-    matrix: list[list[int]], direction: list[list[int]], prime: int
+def graph_section_polynomial(
+    off_graph_matrix: list[list[int]],
+    c_direction: list[list[int]],
+    t_direction: list[list[int]],
+    prime: int,
 ) -> dict[str, object]:
-    operator = normalized_operator(matrix, direction, prime)
-    components = cyclic_components(operator)
+    c_operator, t_operator = normalized_operators(
+        off_graph_matrix, [c_direction, t_direction], prime
+    )
+    components = cyclic_components([c_operator, t_operator])
     polynomial = [1]
     component_records = []
     for component in components:
-        factor = component_polynomial(operator, component, prime)
+        factor = graph_component_polynomial(
+            c_operator, t_operator, component, prime
+        )
         polynomial = poly_mul(polynomial, factor, prime)
         component_records.append(
             {
@@ -350,9 +381,9 @@ def selected_matrix(
 
 
 def selected_direction(
-    arrays: dict[str, list[list[int]]], rows: list[int]
+    arrays: dict[str, list[list[int]]], rows: list[int], name: str
 ) -> list[list[int]]:
-    return [arrays["T"][row][:] for row in rows]
+    return [arrays[name][row][:] for row in rows]
 
 
 def main() -> None:
@@ -431,18 +462,33 @@ def main() -> None:
                 if not s_value:
                     continue
                 c_value = -r_value * pow(a_value * a_value * s_value, -1, prime) % prime
-                matrices = {
+                graph_matrices = {
                     name: selected_matrix(
                         arrays, rows, a_value, b_value, c_value, prime
                     )
                     for name, rows in sections.items()
                 }
-                determinants = {
-                    name: determinant_mod(matrix, prime)
-                    for name, matrix in matrices.items()
+                off_graph_matrices = {
+                    name: selected_matrix(
+                        arrays,
+                        rows,
+                        a_value,
+                        b_value,
+                        (c_value + 1) % prime,
+                        prime,
+                    )
+                    for name, rows in sections.items()
                 }
-                if not all(determinants.values()):
+                off_graph_determinants = {
+                    name: determinant_mod(matrix, prime)
+                    for name, matrix in off_graph_matrices.items()
+                }
+                if not all(off_graph_determinants.values()):
                     continue
+                graph_determinants = {
+                    name: determinant_mod(matrix, prime)
+                    for name, matrix in graph_matrices.items()
+                }
                 controls.append(
                     {
                         "A": a_value,
@@ -451,24 +497,29 @@ def main() -> None:
                         "X": x_value,
                         "R": r_value,
                         "S": s_value,
-                        "determinants_T0": determinants,
-                        "matrices": matrices,
+                        "determinants_graph_T0": graph_determinants,
+                        "determinants_off_graph": off_graph_determinants,
+                        "off_graph_matrices": off_graph_matrices,
                     }
                 )
                 if len(controls) == 2:
                     break
             if len(controls) == 2:
                 break
-        require(len(controls) == 2, f"found two common full-rank graph controls modulo {prime}")
+        require(
+            len(controls) == 2,
+            f"found two graph controls with a common invertible C+1 normalization modulo {prime}",
+        )
 
         public_controls = []
         for control in controls:
             section_records = {}
             for name, rows in sections.items():
                 require(time.time() - started < MAX_SECONDS, "preflight remains inside hard time gate")
-                record = section_polynomial(
-                    control["matrices"][name],
-                    selected_direction(arrays, rows),
+                record = graph_section_polynomial(
+                    control["off_graph_matrices"][name],
+                    selected_direction(arrays, rows, "C"),
+                    selected_direction(arrays, rows, "T"),
                     prime,
                 )
                 section_records[name] = record
@@ -494,7 +545,16 @@ def main() -> None:
             public_controls.append(
                 {
                     key: control[key]
-                    for key in ("A", "B", "C", "X", "R", "S", "determinants_T0")
+                    for key in (
+                        "A",
+                        "B",
+                        "C",
+                        "X",
+                        "R",
+                        "S",
+                        "determinants_graph_T0",
+                        "determinants_off_graph",
+                    )
                 }
                 | {
                     "sections": section_records,
