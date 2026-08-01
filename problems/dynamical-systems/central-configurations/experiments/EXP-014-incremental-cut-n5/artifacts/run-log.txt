@@ -1,0 +1,5 @@
+[12:21:54] EXP-014 runner start
+[12:55:41] RESULT smoke-products-basis: pass size(S)=2436 (EXP-013 archived 2436)
+[12:55:41] RESULT p1-nf-nonzero: pass reduce(cm,S)==0 evaluates to 0 (0 means NONzero normal form)
+[12:55:41] RESULT p2-incremental-std: inconclusive-cap 2025s at 1800s cap; NF stage done
+[12:55:41] runner done (capped)

@@ -385,3 +385,17 @@
   is now ONE algebraic event: does CM vanish identically on any top component
   of the products variety? EXP-014 (incremental std from the completed basis)
   is the declared next rung.
+
+## 2026-08-01 - EXP-014 decided: the 5-to-4 question resists both Groebner routes; the lane hands it to witness sets
+
+- EXP-014 VERDICT: SANITY AND NONZERO NORMAL FORM CONFIRMED, INCREMENTAL
+  EXTENSION INCONCLUSIVE-CAP. The products basis reproduced in-session
+  (2436), Cayley-Menger has a NONZERO normal form against it (so the cut is a
+  proper subvariety, re-confirming the 4-simplex separation), and std(S, cm)
+  ran its full new 1800 s budget without terminating, joining the
+  from-scratch route as measured-out-of-reach. Deterministic state at n = 5:
+  dim(products) = 5 exact, dim(cut) <= 5 proven, expected 4 undecided. Per
+  the declared ladder the 5-vs-4 test moves to CCB-034 witness sets (list
+  the top components, evaluate CM on witness points), and the k = 2, p = 2
+  stratum campaign proceeds regardless with the twice-measured cost law
+  (realizability equations out of the Groebner core, adjoined last).

@@ -1,0 +1,14 @@
+{
+  "smoke-products-basis": {
+    "status": "pass",
+    "detail": "size(S)=2436 (EXP-013 archived 2436)"
+  },
+  "p1-nf-nonzero": {
+    "status": "pass",
+    "detail": "reduce(cm,S)==0 evaluates to 0 (0 means NONzero normal form)"
+  },
+  "p2-incremental-std": {
+    "status": "inconclusive-cap",
+    "detail": "2025s at 1800s cap; NF stage done"
+  }
+}
