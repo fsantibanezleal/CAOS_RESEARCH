@@ -1600,3 +1600,9 @@
   degree floor, and JC(2) remain open.
 - Accepted artifact SHA-256:
   `9DBB699F56B43C518CEC08BBD9C667D2D92C22FD7C662C33CCCFF44AFD2A1CC1`.
+- Paper B v0.30 passed a warning-free two-pass 22-page build and rendered
+  visual QA. PR #118 merged at `51aadae`. Zenodo record `21730785` is
+  published at immutable DOI `10.5281/zenodo.21730785`; its public
+  403128-byte PDF MD5 `e3884477cbec6392959580176c221210` matches the local
+  artifact (SHA-256
+  `50ea3b6679d295d7862241619280bce8bc18cec9cbd3db67942e82c3a5678de3`).
