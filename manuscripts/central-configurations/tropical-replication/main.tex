@@ -20,12 +20,12 @@
 for central configurations}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-01\\[2pt]\normalsize Version 0.06}
+\date{2026-08-01\\[2pt]\normalsize Version 0.07}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Tropical Certificates for Central Configurations \textperiodcentered\ v0.06}
+\fancyhead[R]{\small Tropical Certificates for Central Configurations \textperiodcentered\ v0.07}
 \fancyfoot[C]{\small \thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
 
@@ -420,6 +420,35 @@ Singular, so the instrument's next version swaps the Gr\"obner engine
 subideal menu to product pairs, with certified witness sets promoted for
 everything sections cannot see. All budgets were declared in advance and are
 reported as spent; no caps were extended.
+
+\medskip
+\noindent\textbf{The engine round (EXP-012, EXP-013, EXP-014).} Three further
+experiments, all decided the same day, settled the engine question and
+sharpened the $n=5$ state to a single open decision. First, the engine
+hypothesis was confirmed: Singular over $\mathbb{Q}$ (version and binary hash
+recorded) completes twelve of the identical fifteen subideal jobs at 0.4--1
+seconds each against sympy's one completer near 100 seconds, and an
+exact-reproduction control caught a genuine harvester bug on its first outing
+(sympy's Gr\"obner output defaults to lexicographic ordering whatever order
+was requested, so the previous run had harvested lex leads of grevlex
+elements; the tainted harvest was vacuous, nothing consumed it, and the
+correction is recorded beside the retained artifact). msolve's basis mode was
+identified as modular and pinned screen-only before any run, since an unlucky
+prime can enlarge a leading ideal and fake a LOWER dimension bound. Second,
+the union bound improved to dimension at most 5, and the fifteen-product
+system without Cayley--Menger terminated completely in nine seconds, so its
+staircase dimension is the true Krull dimension: EXACTLY 5, matching the
+rank-one parametrization count. The cost law is sharp: every computation
+without Cayley--Menger runs in seconds, every mix of the products with
+Cayley--Menger caps. Third, the incremental extension of the completed
+products basis by Cayley--Menger (whose normal form against that basis is
+nonzero, so the cut is a proper subvariety) also ran a fresh 1800-second
+budget without terminating. The deterministic record for the spatial
+five-body Dziobek cut therefore stands at: products variety of dimension
+exactly 5, cut of dimension at most 5, expected value 4 undecided; the
+remaining decision (does Cayley--Menger vanish identically on a top
+component?) passes to certified witness sets, and the symmetric-strata
+programme proceeds with the twice-measured cost law.
 
 \section{The $n=6$ attempt (EXP-005, in progress)}
 
