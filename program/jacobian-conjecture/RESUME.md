@@ -440,13 +440,18 @@ scalar conditions before exploiting sparsity.
   It does not trigger a manuscript or Zenodo update because it proves no new
   characteristic-zero coverage statement.
 - EXP-132 and Paper B v0.31 were merged into `develop` by PR `#123` at
-  `7493003`. Paper B v0.31 is published at canonical/latest immutable version
+  `7493003`. Paper B v0.31 is published at its immutable version
   DOI `10.5281/zenodo.21739069`; its public 407567-byte PDF has MD5
   `9e9219d0947eccc12dc6efc25b849698`, matching the local artifact. Local
   SHA-256 is
   `60b0663896fad777020e00fe4332e7178a159f3c82789632efef7132b2525f3e`.
   Record `21739032` is an identical immutable duplicate from a concurrent
   publication race and is superseded by the concept DOI's latest record.
+- EXP-135 and Paper B v0.32 were merged into `develop` by PR `#131` at
+  `2aed5f7`. Canonical/latest immutable version DOI is
+  `10.5281/zenodo.21740213`; its public 419223-byte PDF has MD5
+  `3c4c4a0c4f96a634de4018410b5871c3`, matching local. Local SHA-256 is
+  `2f96164a7d6efee5b43e6988cbb3578a586e995b9e439b9bbd777f5db515c229`.
 - Current research branch: `work/jacobian-conjecture/next-round`.
 - EXP-096 was merged into `develop` by PR `#81` at `7866b0f`.
 - The planar manuscript reconciliation was merged by PR `#83` at `ffc6a3d`.
@@ -542,9 +547,9 @@ scalar conditions before exploiting sparsity.
    - preserve C01/C04 as open absent an exact exclusion.
 11. Keep EXP-093 cancelled; do not revive the global cubic solve.
 12. Keep EXP-109 as a bounded regression control, not as the main route.
-13. Publish EXP-135's characteristic-zero ambient section theorem as Paper B
-   v0.32 after build and visual QA, then create a new immutable Zenodo version
-   under concept DOI `10.5281/zenodo.21503367`.
+13. Preserve Paper B v0.32 at immutable DOI
+   `10.5281/zenodo.21740213`; require another validated manuscript claim
+   change before creating a later version.
 
 Suggested source-round commands:
 
@@ -595,8 +600,9 @@ Latest correction publications:
 - Paper B v0.28: `10.5281/zenodo.21727663`
 - Paper B v0.29: `10.5281/zenodo.21730506`
 - Paper B v0.30: `10.5281/zenodo.21730785`
-- Paper B v0.31: `10.5281/zenodo.21739069` (canonical/latest;
+- Paper B v0.31: `10.5281/zenodo.21739069` (prior version;
   `10.5281/zenodo.21739032` is the identical superseded duplicate)
+- Paper B v0.32: `10.5281/zenodo.21740213` (canonical/latest)
 
 EXP-097 changed the admissible use of intersection number \(21\), so the planar
 manuscript was expanded, built, visually verified, merged through PR `#85`,

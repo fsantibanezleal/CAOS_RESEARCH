@@ -95,4 +95,4 @@
 | JCB-091 | Publish EXP-132 in Paper B v0.31 and Zenodo | P6 | done | 2026-08-01 | PR #123 merged the exact result; canonical/latest immutable DOI 10.5281/zenodo.21739069; public 407567-byte PDF matches local; 21739032 is an identical superseded duplicate from a concurrent publication race |
 | JCB-092 | Reconstruct the transverse graph atlas exactly | P5 | doing | 2026-08-01 | EXP-135 retains the EXP-124 divisor exactly; remaining EXP-129 and EXP-130 sections still require characteristic-zero lifts |
 | JCB-093 | Prove transverse inertness of the EXP-124 section | P5 | done | 2026-08-01 | EXP-135 proves the stronger ambient identity `det(H+T K_T)=det(H)` by degree bounds, 30-prime complete grids, and CRT height certification |
-| JCB-094 | Publish EXP-135 in Paper B v0.32 and Zenodo | P6 | doing | 2026-08-01 | update theorem scope, build and visually verify PDF, merge, then publish a new immutable version |
+| JCB-094 | Publish EXP-135 in Paper B v0.32 and Zenodo | P6 | done | 2026-08-01 | PR #131 merged the theorem/manuscript; canonical/latest immutable DOI 10.5281/zenodo.21740213; public 419223-byte PDF matches local MD5 |

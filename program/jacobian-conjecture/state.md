@@ -402,7 +402,7 @@
   SHA-256:
   `9465FD7E112733C0D21EB011A432898578D5ECB39FDDBE87E141C2ACE71AB0F4`.
 - **2026-08-01 publication:** PR #123 merged EXP-132 and Paper B v0.31 into
-  `develop` at `7493003`. Canonical/latest Zenodo record `21739069` is public
+  `develop` at `7493003`. Zenodo record `21739069` is public
   at immutable DOI `10.5281/zenodo.21739069`; its 407567-byte PDF MD5
   `9e9219d0947eccc12dc6efc25b849698` matches the local artifact. JCB-091 is
   complete. Record `21739032` contains identical bytes and is retained as a
@@ -430,6 +430,13 @@
   above the explicit 885-bit coefficient bound. This retains the old
   `F3*F6*F7` divisor for this section only. Artifact SHA-256:
   `B426FE41C7DC835DAF8E6079DE50644EA6D7CE661EF71A93E9D4951F0AA2ED9A`.
+- **2026-08-01 publication:** PR #131 merged EXP-135 and Paper B v0.32 into
+  `develop` at `2aed5f7`. Canonical/latest Zenodo record `21740213` is public
+  at immutable DOI `10.5281/zenodo.21740213` under concept DOI
+  `10.5281/zenodo.21503367`. Its 419223-byte PDF has MD5
+  `3c4c4a0c4f96a634de4018410b5871c3`, matching the visually verified local
+  artifact; local SHA-256 is
+  `2f96164a7d6efee5b43e6988cbb3578a586e995b9e439b9bbd777f5db515c229`.
 - **2026-08-01 EXP-133:** the singular EXP-123 graph cannot normalize its own
   determinant. A corrected two-direction local pencil normalizes at the
   off-graph fibre `C+1` and retains the singular graph at `C`. Across primes
