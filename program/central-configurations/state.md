@@ -41,10 +41,15 @@
   routes after 3600 seconds each with zero output; the exact-square smoke test
   passed. The published 50 labeled solutions / 4 symmetry classes remain
   untested by us. Direct solving is retired at current budgets.
-- **Now:** EXP-005's two detached gfan08 variants were verified alive at 07:54
-  local time after about 74 minutes; no output or mathematical verdict yet.
-- **Next experiments:** EXP-010 is declared and next calibrates the
-  incidence-dimension lane at n = 4; no run has started. Separately reproduce
-  HM06's mixed volume 25380.
+- **Now:** EXP-005's two detached gfan08 variants verified alive at 10:00 local
+  (24 and 45 cpu-hours since relaunch, checkpointed); no output yet. EXP-010
+  DECIDED 2026-08-01, same day as declared: emptiness probes confirmed in one
+  second each (probabilistic-exact dim <= 3 for the n = 4 Dziobek variety),
+  census probes and staircase refuted by cap (kill criterion honored). Zenodo
+  v0.05 published (DOI 10.5281/zenodo.21739944). Dias-Pan arXiv:1811.08681 read
+  in full; CCB-037 (partial-GB dimension bounds) minted.
+- **Next experiments:** EXP-011 = the n = 5 spatial Dziobek variety in the
+  Dias-Pan proof shape (cheap emptiness probes + partial-GB union bounds +
+  exact witness); separately reproduce HM06's mixed volume 25380.
 - **Isolation note:** rounds close with NO version bump (methodology/08); the release
   step is serialized and owned elsewhere; a parallel session runs jacobian-conjecture.

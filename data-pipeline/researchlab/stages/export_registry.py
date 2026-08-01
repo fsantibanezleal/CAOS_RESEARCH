@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import subprocess
 from pathlib import Path
 
 import yaml
@@ -30,8 +31,24 @@ VERDICT_RE = re.compile(r"Verdict:\s*([A-Z][A-Z 0-9,\-]+?)\s*[(.]")
 DATE_RE = re.compile(r"(\d{4}-\d{2}-\d{2})")
 
 
+def _tracked_problem_paths() -> set[str]:
+    """Return committed problem paths so a bake cannot absorb live outputs."""
+    result = subprocess.run(
+        ["git", "ls-files", "-z", "--", "problems"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+    )
+    return {
+        path.decode("utf-8").replace("\\", "/")
+        for path in result.stdout.split(b"\0")
+        if path
+    }
+
+
 def _read_experiments() -> list[dict]:
     out: list[dict] = []
+    tracked = _tracked_problem_paths()
     for probdir in sorted((ROOT / "problems").glob("*/*")):
         exps = probdir / "experiments"
         if not exps.is_dir():
@@ -44,12 +61,16 @@ def _read_experiments() -> list[dict]:
                    "title": "", "verdict": "", "date": "",
                    "hypothesis_md": "", "verdict_md": "", "artifacts": []}
             hyp = expdir / "hypothesis.md"
+            ver = expdir / "verdict.md"
+            hyp_rel = hyp.relative_to(ROOT).as_posix()
+            ver_rel = ver.relative_to(ROOT).as_posix()
+            if hyp_rel not in tracked and ver_rel not in tracked:
+                continue
             if hyp.exists():
                 text = hyp.read_text(encoding="utf-8")
                 first = text.splitlines()[0]
                 rec["title"] = first.lstrip("# ").split(" - ", 1)[-1].strip()
                 rec["hypothesis_md"] = text
-            ver = expdir / "verdict.md"
             if ver.exists():
                 text = ver.read_text(encoding="utf-8")
                 first = text.splitlines()[0]
@@ -64,7 +85,8 @@ def _read_experiments() -> list[dict]:
             if arts.is_dir():
                 rec["artifacts"] = sorted(
                     [{"name": f.name, "bytes": f.stat().st_size}
-                     for f in arts.iterdir() if f.is_file()],
+                     for f in arts.iterdir()
+                     if f.is_file() and f.relative_to(ROOT).as_posix() in tracked],
                     key=lambda r: r["name"])
             out.append(rec)
     return out

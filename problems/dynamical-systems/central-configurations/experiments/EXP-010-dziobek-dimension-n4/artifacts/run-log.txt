@@ -1,0 +1,14 @@
+[08:05:28] EXP-010 runner start; seed 20260801
+[08:06:24] EXP-010 runner start; seed 20260801
+[08:06:25] RESULT smoke-three-way: pass square h=0:True cm=0:True; tetra h=0:True cm=4; rect cm=0 some-h!=0:True
+[08:06:26] p1-draw1: 3 sections drawn, msolve launching (cap 900s)
+[08:22:18] RESULT p1-draw1: inconclusive-cap 952s; 
+[08:22:19] p1-draw2: 3 sections drawn, msolve launching (cap 900s)
+[08:38:17] RESULT p1-draw2: inconclusive-cap 958s; 
+[08:38:18] p2-draw1: 4 sections drawn, msolve launching (cap 900s)
+[08:38:19] RESULT p2-draw1: decided dim=None complex-count=None in 1s
+[08:38:20] p2-draw2: 4 sections drawn, msolve launching (cap 900s)
+[08:38:22] RESULT p2-draw2: decided dim=None complex-count=None in 1s
+[08:38:22] P3: grevlex staircase dimension in subprocess (cap 1800s)
+[09:08:40] RESULT p3-staircase-dim: inconclusive-cap 1800s sympy cap
+[09:08:40] runner done

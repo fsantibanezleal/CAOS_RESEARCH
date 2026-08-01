@@ -34,7 +34,7 @@ support-restricted failure, or absence of a finite certificate as a proof.
 | JC-A | Preserve and publish the exact dimension at least three record | rolling; no current compute |
 | JC-B | Complete the $[125,150]$ primary-source frontier reconciliation | active; EXP-094 shows C10/C11/C19/C20 are not excluded by the cited remark; 16 unprinted \(A'_0\) values remain |
 | JC-C | Test modern Newton and approximate-root restrictions against the GGHV reduction | direct transport decided by EXP-097: absolute resultant degree is not typed after Laurent localization without a boundary-divisor ledger |
-| JC-D | Reformulate universal inconsistency as a constructible determinantal-strata problem | active; EXP-132 closes the direct `A=0,d=1` boundary after adjoining `(2,8)`; the transverse `A!=0` and `d=0` sectors remain |
+| JC-D | Reformulate universal inconsistency as a constructible determinantal-strata problem | active; EXP-132 closes the direct `A=0,d=1` boundary and EXP-135 retains the EXP-124 principal-open divisor exactly; the other transverse `A!=0` sections and `d=0` sector remain |
 | JC-E | Degree-three certificate decision | done by EXP-075; one exact four-parameter slice is infeasible, so no global cubic covector exists |
 | JC-F | Global geometric routes: fibres, properness, and parameter spaces | hold; resume only after a rigorous bridge to the reduced system is stated |
 | JC-G | Manuscripts, wiki, data, and public record | rolling; update only from adjudicated results |
@@ -43,23 +43,29 @@ support-restricted failure, or absence of a finite certificate as a proof.
 
 1. Preserve EXP-132's three-minor unit identity as the direct-boundary
    regression gate. Do not repeat the closed \(A=0,d=1\) calculation.
-2. Lift the accepted EXP-123/124/129/130 section suite through `(2,8)` on
-   \(A\ne0,d=1\), profiling exact SCCs before expanding determinants.
-3. Rebuild the \(d=0\) quotient after adjoining `(2,8)`; verify the explicit
+2. Preserve EXP-135's exact ambient identity
+   `det(H+T K_(2,8))=det(H)` as the EXP-124 section regression gate. Its
+   degree/CRT certificate replaces both 33-by-33 expansion and graph-field
+   inversion.
+3. Retain the old `F3*F6*F7` divisor and lift the two EXP-129 graph-atlas
+   sections, then the quadratic EXP-130 finite-base section. Reuse the
+   low-rank complete-grid certificate whenever its coefficient bound is
+   cheaper than symbolic reconstruction.
+4. Rebuild the \(d=0\) quotient after adjoining `(2,8)`; verify the explicit
    \(P\)-kernel rather than assuming EXP-118 lifts unchanged.
-4. Recurse on the joint Fitting ideal. A single selected determinant is never
+5. Recurse on the joint Fitting ideal. A single selected determinant is never
    a cover, and an inherited basis that vanishes after specialization is not a
    chart.
-5. Reopen intersection-\(21\) transport only if both transverse routes stall,
+6. Reopen intersection-\(21\) transport only if both transverse routes stall,
    and only with the complete boundary-divisor ledger required by EXP-097.
-6. Continue the independent [125,150] frontier task:
+7. Continue the independent [125,150] frontier task:
    - preserve C10/C11/C19/C20 as unresolved by GGV2 Remark 2.32;
    - derive the 16 unprinted $A'_0$ values through the declared chain algorithm;
    - preserve C01/C04 as open absent an exact exclusion.
-7. Keep EXP-093 cancelled. EXP-075's exact support at reordered index 2662 proves that no global
+8. Keep the old certificate experiment EXP-093 cancelled. EXP-075's exact support at reordered index 2662 proves that no global
    degree-three polynomial covector exists, so the proposed four-million-unknown solve has no
    target.
-8. Keep EXP-109 as a bounded chart-control only. Do not continue coefficient
+9. Keep EXP-109 as a bounded chart-control only. Do not continue coefficient
    slices as the main programme.
 
 ## Routes not currently authorized for compute

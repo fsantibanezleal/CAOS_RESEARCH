@@ -1634,10 +1634,93 @@
   required because the exact atlas claim changed.
 - Paper B v0.31 passed a warning-free two-pass 23-page build and complete
   rendered visual QA. PR #123 merged at `7493003`. Canonical/latest Zenodo
-  record `21739069` is published at immutable DOI
+  then-canonical record `21739069` is published at immutable DOI
   `10.5281/zenodo.21739069`; its public
   407567-byte PDF MD5 `9e9219d0947eccc12dc6efc25b849698` matches the local
   artifact (SHA-256
   `60b0663896fad777020e00fe4332e7178a159f3c82789632efef7132b2525f3e`).
   Record `21739032` contains the same bytes and remains an immutable,
   superseded duplicate produced by a concurrent publication race.
+
+## 2026-08-01 - EXP-133 selects a bounded principal-open transverse lift
+
+- Direct normalization by the EXP-123 selected determinant fails on its own
+  exceptional graph because the normalized matrix is singular there. That
+  attempted formulation is retained and retired.
+- The corrected local presentation uses the two-direction pencil
+  \(\det(I-K_C+T K_{(2,8)})\), with the normalization moved from the graph
+  fibre `C` to the nearby off-graph fibre `C+1` while evaluation remains on
+  `R+YS=0`.
+- Across primes 1009 and 1153 and graph controls \((A,B)=(1,0),(1,1)\), the
+  EXP-123, EXP-124, two EXP-129, and EXP-130 sections have stable `T`-degree
+  ledgers \(1,0,1,0,2\). Their largest observed joint cyclic support is 10,
+  far below the declared gate of 45.
+- The result selects bounded characteristic-zero reconstruction, starting
+  with the observed-inert EXP-124 graph section and continuing through the
+  two EXP-129 sections and the quadratic EXP-130 finite-base section. Modular
+  inertness is not promoted to an exact identity.
+- This is a route-selection result only. It closes no new graph stratum and
+  makes no claim about the 24-parameter core, full 51-parameter family,
+  \((72,108)\), degree floor, or JC(2). Accepted artifact SHA-256:
+  `35E18A6477312B81F0CDB18C8165539A72129C1D81B16F79AC89EFB948BEBA73`.
+
+## 2026-08-01 - EXP-134 proves a rank-seven reduction but reaches exact gates
+
+- The accepted EXP-124 section has one joint 33-vertex cyclic core after
+  adjoining `(2,8)`; the other 86 cyclic blocks are singletons.
+- The transverse operator on that core has exact rank seven, and every
+  singleton has zero transverse diagonal. Hence the determinant has the
+  characteristic-zero structural bound `deg_T<=7`.
+- Ambient four-variable expansion, graph-first denominator clearing, the
+  exact coefficient field `QQ(A,B)[T]`, and the first new fixed graph value
+  `T=1` each reached the 240-second block gate. No positive-`T` coefficient
+  was reconstructed, so EXP-133's modular inertness remains a hypothesis.
+- The route is redirected to an exact rank factorization and the 7-by-7
+  transfer determinant supplied by the matrix determinant lemma. Repeating
+  a 33-by-33 determinant is retired.
+- Terminal checkpoint SHA-256:
+  `28253FE22638C15BE8F7736F0629B0A9697D55386FB46E5351DE9E58C388A351`.
+- No new graph stratum, five-coefficient sector, `(72,108)` case, floor, or
+  JC(2) claim is closed.
+
+## 2026-08-01 - EXP-135 exposes a square-zero transfer target
+
+- The exact 33-by-33 transverse core factors as `K_T=UV^T` with seven
+  columns, verified entry by entry.
+- At four exact rational points on the EXP-123 graph, the 7-by-7 transfer
+  `L=V^T H_0^-1 U` has rank three and satisfies `L^2=0`. Therefore
+  `det(I_7+TL)=1` at each control.
+- The global exact target is reprioritized from a determinant to the 49
+  entries of `L^2`, after seven graph-quotient solves and with a complete
+  denominator ledger.
+- This remains a control preflight, not a function-field identity or graph
+  cover. Accepted preflight SHA-256:
+  `D322A3041F10289A60640CB658640180C0B506AD8F84F450BFB8AA8CD8A403EA`.
+
+## 2026-08-01 - EXP-135 proves ambient transverse section inertness
+
+- The exact transverse core has ranks `7,3,0` through its first three powers.
+- The complete determinant has separate degree bounds `(25,24,6,7)` in
+  `(A,B,C,T)`. A rank-six Woodbury update reduces the complete tensor grid to
+  one 33-by-33 solve per `(A,B)` value.
+- All 136,500 controls across 30 primes give a square-zero 7-by-7 transfer.
+  Their 897-bit product exceeds twice the explicit 885-bit cleared
+  coefficient bound, proving
+  `det(H+T K_(2,8))=det(H)` in `QQ[A,B,C,T]`.
+- The result retains the EXP-124 divisor on the full normalized ambient chart.
+  It does not lift the EXP-129/130 sections or transverse `d=0`, so the full
+  five-coefficient restriction and JC(2) remain open.
+- Accepted certificate SHA-256:
+  `B426FE41C7DC835DAF8E6079DE50644EA6D7CE661EF71A93E9D4951F0AA2ED9A`.
+
+## 2026-08-01 - Paper B v0.32 published
+
+- PR #131 merged the EXP-135 theorem and visually verified 23-page manuscript
+  to `develop` at `2aed5f7`.
+- Zenodo canonical/latest record `21740213` is public at immutable DOI
+  `10.5281/zenodo.21740213` under concept DOI
+  `10.5281/zenodo.21503367`.
+- The public 419223-byte PDF MD5
+  `3c4c4a0c4f96a634de4018410b5871c3` matches the local artifact. Local
+  SHA-256 is
+  `2f96164a7d6efee5b43e6988cbb3578a586e995b9e439b9bbd777f5db515c229`.

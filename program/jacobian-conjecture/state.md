@@ -402,8 +402,49 @@
   SHA-256:
   `9465FD7E112733C0D21EB011A432898578D5ECB39FDDBE87E141C2ACE71AB0F4`.
 - **2026-08-01 publication:** PR #123 merged EXP-132 and Paper B v0.31 into
-  `develop` at `7493003`. Canonical/latest Zenodo record `21739069` is public
+  `develop` at `7493003`. Zenodo record `21739069` is public
   at immutable DOI `10.5281/zenodo.21739069`; its 407567-byte PDF MD5
   `9e9219d0947eccc12dc6efc25b849698` matches the local artifact. JCB-091 is
   complete. Record `21739032` contains identical bytes and is retained as a
   superseded immutable duplicate from the concurrent publication race.
+- **2026-08-01 EXP-134:** the exact EXP-124 transverse lift has one 33-vertex
+  joint cyclic core and 86 singleton blocks. The core transverse operator has
+  exact rank seven and all singleton transverse diagonals vanish, proving
+  `deg_T<=7`. Four 33-by-33 exact formulations reached the declared gate
+  before producing a new coefficient, so graph `T`-inertness remains
+  unproved. EXP-135 redirects to the 7-by-7 transfer determinant from the
+  matrix determinant lemma. Terminal checkpoint SHA-256:
+  `28253FE22638C15BE8F7736F0629B0A9697D55386FB46E5351DE9E58C388A351`.
+- **2026-08-01 EXP-135 preflight:** the transverse core admits an exact
+  rank factorization `K_T=UV^T`. At four rational graph controls the 7-by-7
+  transfer `V^T H_0^-1 U` has rank three, square zero, and unit determinant
+  pencil. This control-only stage selected the 49-entry square-zero identity
+  and is superseded by the ambient theorem immediately below. Artifact
+  SHA-256:
+  `D322A3041F10289A60640CB658640180C0B506AD8F84F450BFB8AA8CD8A403EA`.
+- **2026-08-01 EXP-135 theorem:** the selected EXP-124 section is exactly
+  transverse-inert on the full normalized `(A,B,C)` chart:
+  `det(H+T K_(2,8))=det(H)` in `QQ[A,B,C,T]`. Exact ranks are `7,3,0` for
+  `K_T,K_T^2,K_T^3`; separate degree bounds are `(25,24,6,7)`. A complete
+  136,500-control tensor grid over 30 primes has an 897-bit CRT modulus,
+  above the explicit 885-bit coefficient bound. This retains the old
+  `F3*F6*F7` divisor for this section only. Artifact SHA-256:
+  `B426FE41C7DC835DAF8E6079DE50644EA6D7CE661EF71A93E9D4951F0AA2ED9A`.
+- **2026-08-01 publication:** PR #131 merged EXP-135 and Paper B v0.32 into
+  `develop` at `2aed5f7`. Canonical/latest Zenodo record `21740213` is public
+  at immutable DOI `10.5281/zenodo.21740213` under concept DOI
+  `10.5281/zenodo.21503367`. Its 419223-byte PDF has MD5
+  `3c4c4a0c4f96a634de4018410b5871c3`, matching the visually verified local
+  artifact; local SHA-256 is
+  `2f96164a7d6efee5b43e6988cbb3578a586e995b9e439b9bbd777f5db515c229`.
+- **2026-08-01 EXP-133:** the singular EXP-123 graph cannot normalize its own
+  determinant. A corrected two-direction local pencil normalizes at the
+  off-graph fibre `C+1` and retains the singular graph at `C`. Across primes
+  1009 and 1153 and graph controls `(A,B)=(1,0),(1,1)`, five accepted sections
+  have stable `T` degrees `1,0,1,0,2` and joint cyclic support at most 10.
+  EXP-124 and EXP-129-atlas-2 are inert at every control, EXP-123 and
+  EXP-129-atlas-1 are affine, and EXP-130 is quadratic. This selects a bounded
+  exact reconstruction route; it does not prove graph coverage or change the
+  status of the 24-parameter core, `(72,108)`, the degree floor, or JC(2).
+  Accepted artifact SHA-256:
+  `35E18A6477312B81F0CDB18C8165539A72129C1D81B16F79AC89EFB948BEBA73`.

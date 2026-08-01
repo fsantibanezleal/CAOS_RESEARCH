@@ -3,6 +3,38 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.62.000], 2026-08-01
+
+### Added
+- Jacobian EXP-133 selects a bounded transverse principal-open route;
+  EXP-134 proves a unique 33-vertex core, 86 singleton blocks, transverse
+  rank seven, and the exact degree bound `deg_T<=7`.
+- Jacobian EXP-135 proves
+  `det(H(A,B,C)+T K_(2,8))=det(H(A,B,C))` in `QQ[A,B,C,T]` for the accepted
+  EXP-124 section. The deterministic certificate combines ranks `7,3,0`,
+  separate degree bounds `(25,24,6,7)`, 136,500 complete controls over 30
+  primes, and a CRT modulus above the explicit coefficient-height bound.
+- Central-configurations EXP-010 preserves exact recorded-section outputs:
+  two codimension-four sections are empty within their declared runs, while
+  codimension-three census and staircase probes reach their caps. EXP-011
+  declares the spatial five-body Dziobek dimension experiment.
+- The central-configurations program adds the full Dias--Pan dossier,
+  partial-Groebner instrument, n=6 symmetric-strata scoping, and a documented
+  `(1+4)`-vortex novelty-pass comparison without changing the strata map.
+
+### Changed
+- Paper B v0.32 records the ambient transverse section theorem and is
+  archived at canonical/latest immutable DOI `10.5281/zenodo.21740213`; its
+  public 419223-byte PDF checksum matches the visually verified local file.
+- The Jacobian principal-open route now retains the old `F3*F6*F7` divisor
+  for the EXP-124 section and moves to the two EXP-129 residual sections,
+  EXP-130 finite-base section, and the independent transverse `d=0` quotient.
+- The central-configurations manuscript v0.05 records EXP-010 and the
+  recorded-section asymmetry at immutable DOI `10.5281/zenodo.21739944`,
+  while preserving the probabilistic/exact-evaluation scope.
+- The release bake folds every landed problem record through PR #132 into
+  the cross-problem registry. Unlanded active experiment outputs are excluded.
+
 ## [0.61.000], 2026-08-01
 
 ### Added

@@ -1,7 +1,8 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-08-01 after EXP-132 closed the direct \(A=0,d=1\) boundary after
-adjoining transverse direction \((2,8)\). This is
+Updated 2026-08-01 after EXP-135 proved the ambient transverse determinant
+identity for the EXP-124 section. The remaining EXP-129/130 section lifts
+and transverse `d=0` quotient are the active routes. This is
 the first-read navigation page. Primary artifacts and experiment verdicts
 remain the evidence.
 
@@ -191,8 +192,22 @@ remain the evidence.
   three-minor Bezout identity closes the complete direct boundary of the
   five-coefficient lift. Its \(A\ne0\) and transverse \(d=0\) sectors remain
   open.
+- EXP-133 tests five accepted principal-open sections through the singular
+  EXP-123 graph using the two-direction pencil
+  \(\det(I-K_C+T K_{(2,8)})\), normalized at the off-graph fibre \(C+1\).
+  Across primes 1009 and 1153 and controls \((A,B)=(1,0),(1,1)\), the exact
+  \(T\)-degree ledger is respectively \(1,0,1,0,2\), with largest joint cyclic
+  support 10. This is a modular preflight, not graph coverage. It selects an
+  exact characteristic-zero reconstruction of the EXP-124 graph section,
+  followed by the two EXP-129 atlas sections and the EXP-130 base section.
+- EXP-135 proves the stronger ambient identity
+  `det(H(A,B,C)+T K_(2,8))=det(H(A,B,C))` for the selected EXP-124 section.
+  Exact degree bounds `(25,24,6,7)`, 136,500 complete grid controls across
+  30 primes, and a CRT modulus above the explicit coefficient bound provide
+  a characteristic-zero certificate. The old `F3*F6*F7` divisor is retained
+  for this section only.
 - Controlling strategy:
-  [`strategy-audit-2026-08-01.md`](strategy-audit-2026-08-01.md).
+  [`strategy-audit-2026-08-01-exp135.md`](strategy-audit-2026-08-01-exp135.md).
 - Source audit:
   [`2026-08-01-transverse-fitting-refresh.md`](../../problems/algebraic-geometry/jacobian-conjecture/context/2026-08-01-transverse-fitting-refresh.md).
 
@@ -239,6 +254,7 @@ remain the evidence.
 | direct \(A=0\) atlas | two \(C\)-independent exact minors with unit divisor gcd cover the complete boundary plane | EXP-131 |
 | complete declared four-coefficient restriction | \(d=0\), \(A\ne0,d=1\), and \(A=0,d=1\) are all covered by exact atlases | EXP-118/123/129--131 |
 | transverse direct-boundary Fitting atlas | three exact minors generate the unit ideal after adjoining `(2,8)` at \(A=0,d=1\) | EXP-132 |
+| ambient transverse-inert section | the accepted EXP-124 determinant is unchanged by `(2,8)` on the full normalized `(A,B,C)` chart | EXP-135 |
 | complete \(T_B\) restriction cover | \(d=0\) quotient cover plus exact \(G,L,Q\) weighted-open covers | EXP-118/120/121 |
 | lower-family grading | \(w_{p,q}=q-p+1\pmod9\) for all 23 nonconstant remaining directions | EXP-106 |
 | properness instrument | exact resultant-leading-coefficient test | EXP-014 |
@@ -396,6 +412,13 @@ scalar conditions before exploiting sparsity.
   reduce the residual and a new acyclic section is \(B^{105}C\). Their exact
   normalized ideal contains one through a persisted Bezout identity, closing
   the complete direct boundary of the five-coefficient lift.
+- EXP-133: direct normalization on the EXP-123 graph is singular. Normalizing
+  at the transverse fibre \(C+1\) instead gives stable degree/support ledgers
+  for five accepted sections over two primes and two graph controls. The
+  EXP-124 and EXP-129-atlas-2 sections are \(T\)-inert at every control;
+  EXP-123 and EXP-129-atlas-1 are affine; EXP-130 is quadratic. The largest
+  observed joint cyclic support is 10, so bounded exact reconstruction is the
+  selected next route.
 - EXP-102: third chart exists at \(u=1\); complete pullback is inconclusive
   after the dense rank-121 determinant hit its five-minute budget.
 
@@ -407,15 +430,28 @@ scalar conditions before exploiting sparsity.
   at \(u=1\).
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
-- EXP-111 through EXP-132 are complete. No Jacobian process is active.
+- EXP-111 through EXP-135 are complete. EXP-134 is inconclusive at its exact
+  determinant gates but proves one size-33 core, 86 singleton blocks, exact
+  transverse rank seven, and `deg_T<=7`. EXP-135 then proves the stronger
+  ambient determinant identity by a complete degree-bounded 30-prime grid
+  and CRT height certificate. No Jacobian process is active.
+- EXP-133 is a modular route-selection result with accepted artifact SHA-256
+  `35E18A6477312B81F0CDB18C8165539A72129C1D81B16F79AC89EFB948BEBA73`.
+  It does not trigger a manuscript or Zenodo update because it proves no new
+  characteristic-zero coverage statement.
 - EXP-132 and Paper B v0.31 were merged into `develop` by PR `#123` at
-  `7493003`. Paper B v0.31 is published at canonical/latest immutable version
+  `7493003`. Paper B v0.31 is published at its immutable version
   DOI `10.5281/zenodo.21739069`; its public 407567-byte PDF has MD5
   `9e9219d0947eccc12dc6efc25b849698`, matching the local artifact. Local
   SHA-256 is
   `60b0663896fad777020e00fe4332e7178a159f3c82789632efef7132b2525f3e`.
   Record `21739032` is an identical immutable duplicate from a concurrent
   publication race and is superseded by the concept DOI's latest record.
+- EXP-135 and Paper B v0.32 were merged into `develop` by PR `#131` at
+  `2aed5f7`. Canonical/latest immutable version DOI is
+  `10.5281/zenodo.21740213`; its public 419223-byte PDF has MD5
+  `3c4c4a0c4f96a634de4018410b5871c3`, matching local. Local SHA-256 is
+  `2f96164a7d6efee5b43e6988cbb3578a586e995b9e439b9bbd777f5db515c229`.
 - Current research branch: `work/jacobian-conjecture/next-round`.
 - EXP-096 was merged into `develop` by PR `#81` at `7866b0f`.
 - The planar manuscript reconciliation was merged by PR `#83` at `ffc6a3d`.
@@ -486,31 +522,34 @@ scalar conditions before exploiting sparsity.
 
 1. Preserve EXP-132's exact three-minor identity as the \(A=0,d=1\)
    transverse regression gate.
-2. Lift EXP-123/124/129/130 through \((2,8)\) on \(A\ne0,d=1\), with exact SCC
-   profiling before determinant expansion.
-3. Rebuild the \(d=0\) quotient with \((2,8)\); verify the explicit \(P\)-kernel
+2. Preserve EXP-135's exact ambient determinant identity and deterministic
+   degree/CRT artifact as the EXP-124 transverse regression gate.
+3. Retain the old \(F_3F_6F_7\) divisor ledger and reconstruct the EXP-129
+   atlas-1 affine lift and atlas-2 inert lift on the five squarefree graph
+   blocks. Then lift the quadratic EXP-130 section on the finite base algebra.
+4. Rebuild the \(d=0\) quotient with \((2,8)\); verify the explicit \(P\)-kernel
    instead of assuming EXP-118 lifts unchanged.
-4. Recurse on the joint Fitting ideal and record inherited bases that vanish
+5. Recurse on the joint Fitting ideal and record inherited bases that vanish
    after specialization. A single minor cannot establish coverage.
-5. If a positive-dimensional residual survives, use polynomial-matrix
+6. If a positive-dimensional residual survives, use polynomial-matrix
    invariant factors with a complete denominator-fibre ledger.
-6. Keep the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
+7. Keep the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
    add redundant charts to the closed three-parameter restriction.
-7. Reopen intersection-\(21\) transport only with a complete
+8. Reopen intersection-\(21\) transport only with a complete
    boundary-divisor ledger through the swap, Laurent cuts, and final inversion;
    do not impose absolute degree directly on the 51 coefficients.
-8. Pursue further Newton resolution only if a new condition is derived beyond
+9. Pursue further Newton resolution only if a new condition is derived beyond
    the already-retained first \(D=72\) branch; do not repeat direct comparisons
    with \(P_T\).
-9. Continue the independent [125,150] frontier:
+10. Continue the independent [125,150] frontier:
    - keep C10/C11/C19/C20 unresolved by GGV2 Remark 2.32;
    - derive the 16 missing \(A'_0\) values through the declared chain algorithm;
    - preserve C01/C04 as open absent an exact exclusion.
-10. Keep EXP-093 cancelled; do not revive the global cubic solve.
-11. Keep EXP-109 as a bounded regression control, not as the main route.
-12. Preserve Paper B v0.31 at immutable DOI
-   `10.5281/zenodo.21739069`; require another validated manuscript claim change
-   before creating any later version.
+11. Keep EXP-093 cancelled; do not revive the global cubic solve.
+12. Keep EXP-109 as a bounded regression control, not as the main route.
+13. Preserve Paper B v0.32 at immutable DOI
+   `10.5281/zenodo.21740213`; require another validated manuscript claim
+   change before creating a later version.
 
 Suggested source-round commands:
 
@@ -561,8 +600,9 @@ Latest correction publications:
 - Paper B v0.28: `10.5281/zenodo.21727663`
 - Paper B v0.29: `10.5281/zenodo.21730506`
 - Paper B v0.30: `10.5281/zenodo.21730785`
-- Paper B v0.31: `10.5281/zenodo.21739069` (canonical/latest;
+- Paper B v0.31: `10.5281/zenodo.21739069` (prior version;
   `10.5281/zenodo.21739032` is the identical superseded duplicate)
+- Paper B v0.32: `10.5281/zenodo.21740213` (canonical/latest)
 
 EXP-097 changed the admissible use of intersection number \(21\), so the planar
 manuscript was expanded, built, visually verified, merged through PR `#85`,

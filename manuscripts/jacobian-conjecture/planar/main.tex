@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-01\\[2pt]\normalsize Version 0.31}
+\date{2026-08-01\\[2pt]\normalsize Version 0.32}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.31}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.32}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -39,7 +39,7 @@ the Staircase Transport, and the Recalibrated Frontier}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper B of a three-paper record \textperiodcentered\ version 0.31 \textperiodcentered\ 2026-08-01\\
+Paper B of a three-paper record \textperiodcentered\ version 0.32 \textperiodcentered\ 2026-08-01\\
 DOI \href{https://doi.org/10.5281/zenodo.21503367}{10.5281/zenodo.21503367} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -148,9 +148,16 @@ one exact row combination, two depend only on \(B\) and are coprime, with a
 persisted characteristic-zero Bezout certificate [MV/D]. The inherited
 EXP-123 and EXP-124 bases vanish identically on this specialization, so the
 successful certificate required a new SCC-guided basis rather than a
-parameter substitution into the old atlas. This result does not close the
-\(A\ne0,d=1\) lift, the transverse \(d=0\) quotient, the complete
-five-coefficient restriction, or any larger target.
+parameter substitution into the old atlas. EXP-135 then proves that the
+accepted EXP-124 section is unchanged by \((2,8)\) on its complete normalized
+\((A,B,C)\) ambient chart. The transverse core has ranks \(7,3,0\) through
+its first three powers. Separate determinant degree bounds
+\((25,24,6,7)\), a complete 136,500-control tensor grid over 30 primes, and
+a CRT modulus exceeding the explicit characteristic-zero coefficient bound
+certify \(\det(H+T K_{(2,8)})=\det(H)\) [MV/D]. Hence the old
+\(F_3F_6F_7\) divisor is retained for this section. The other residual
+sections and the transverse \(d=0\) quotient remain open, so the complete
+five-coefficient restriction and every larger target remain open.
 A new multiplication formula for $x^m$-anchored edges shows the $B = 16$ leading form cannot
 produce the Keller constant on its top edge for $m \ge 2$: that case, too, is a staircase
 transport. All computations are exact and reproducible; every claim is labeled machine-verified
@@ -1302,9 +1309,66 @@ rectangular or rank-deficient matrices \cite{LuRuanWangXiao2026}. We have
 not established those structural hypotheses for the GGHV augmented matrix,
 so that theory is a comparison lens and a possible source of local reduction
 lemmas, not a shortcut or an additional closure claim. The \(A\ne0,d=1\)
-fifth-direction lift and the transverse \(d=0\) kernel quotient remain open;
+fifth-direction atlas is partly lifted: EXP-135 retains the EXP-124 section
+exactly, while the two EXP-129 residual sections and EXP-130 finite-base
+section remain. The transverse \(d=0\) kernel quotient also remains open;
 hence the complete five-coefficient restriction, 24-parameter core, full
 family, \((72,108)\), the planar degree floor, and \(JC(2)\) remain open.
+
+\begin{proposition}[Ambient transverse inertness of the EXP-124 section]
+\label{prop:exp135-inert}
+Let
+\[
+ H(A,B,C)=I+(A-1)K_{(0,1)}+B K_{(0,5)}+C K_{(2,9)}
+\]
+be the normalized 33-by-33 cyclic core of the accepted EXP-124 section, and
+write \(K_T=K_{(2,8)}\). Then
+\[
+ \det\!\bigl(H(A,B,C)+T K_T\bigr)=\det H(A,B,C)
+ \quad\text{in }\Q[A,B,C,T].
+\]
+The remaining 86 singleton blocks are also \(T\)-independent, so the complete
+selected normalized maximal minor is unchanged by \((2,8)\).
+\end{proposition}
+
+\begin{proof}
+Exact row reduction gives
+\(\operatorname{rank}K_T=7\),
+\(\operatorname{rank}K_T^2=3\), and \(K_T^3=0\). Fix a rank factorization
+\(K_T=UV^{\mathsf T}\). The ranks of the four coefficient matrices in
+\((A,B,C,T)\) are respectively \((25,24,6,7)\), so these are separate degree
+bounds for the determinant difference. At each point of the tensor grid
+\[
+ A\in\{1,\ldots,26\},\qquad B\in\{0,\ldots,24\},\qquad
+ C\in\{0,\ldots,6\},
+\]
+and at each of 30 persisted primes, exact modular elimination finds \(H\)
+invertible and verifies
+\[
+ \bigl(V^{\mathsf T}H^{-1}U\bigr)^2=0.
+\]
+The matrix determinant lemma therefore makes
+\(\det(I_7+T V^{\mathsf T}H^{-1}U)=1\) as a polynomial in \(T\) at every
+grid point. Tensor interpolation proves that every coefficient of the
+cleared determinant difference is zero modulo every listed prime.
+
+For the characteristic-zero lift, the common entry denominator is
+\(D=5{,}241{,}600\). The product of the rowwise coefficient \(\ell^1\)-norms
+of \(D(H+T K_T)\) bounds the determinant coefficient \(\ell^1\)-norm.
+Including the subtraction at \(T=0\) gives an explicit 885-bit absolute
+coefficient bound. The 30-prime product has 897 bits and exceeds twice that
+bound. A nonzero integer coefficient cannot therefore vanish modulo their
+product. Every coefficient is zero, proving the identity over \(\Q\) [MV/D].
+The exact singleton calculation is EXP-134.
+\end{proof}
+
+The proof changes the computational viewpoint. It avoids both a dense
+33-by-33 symbolic determinant and graph-function-field inversion: rank gives
+the interpolation degrees, low-rank determinant and Woodbury lemmas control
+each finite evaluation, and a height bound turns modular vanishing into an
+exact rational identity. This route will be reused on the observed-inert
+EXP-129 section; affine or quadratic sections must reconstruct their actual
+\(T\)-coefficients rather than inherit inertness.
 
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the
@@ -1371,10 +1435,10 @@ audit trail (including its open verification items) persisted in the repository.
 
 Priorities, from the standing routes evaluation: (1) preserve the exact
 EXP-118/123/129--132 certificates, including the direct \(A=0,d=1\)
-five-coefficient unit-ideal identity; (2) lift the fifth direction \((2,8)\)
-through the EXP-123/124/129/130 \(A\ne0,d=1\) atlas, selecting sections by
-SCC structure and reducing their joint exceptional ideal before attempting
-generic multivariate determinants; (3) rebuild the transverse \(d=0\)
+five-coefficient unit-ideal identity, and EXP-135's retained EXP-124 divisor;
+(2) lift the fifth direction \((2,8)\) through the two EXP-129 residual
+sections and EXP-130 finite-base section, reusing complete-grid CRT
+certificates only with explicit degree and height bounds; (3) rebuild the transverse \(d=0\)
 kernel quotient and test its Fitting ideal independently; (4) retain
 the complete EXP-118--121 \(T_B\)
 cover as a regression gate rather than adding redundant slice charts; (5) retain the

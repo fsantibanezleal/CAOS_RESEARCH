@@ -76,3 +76,31 @@ def test_euler_collinear_equal_masses_chart_value():
     val = sp.root(90, 3) / 6
     for x in accepted[0]:
         assert (x - val).equals(0) is True
+
+
+def test_dziobek5_spatial_anchors():
+    """EXP-011 smoke anchors: the unit bipyramid (r45^2 = 8/3) lies on the
+    products+CM cut; the all-ones 4-simplex is excluded by CM (value -5); the
+    collinear 0,3,7,12,20 configuration passes CM and violates the products."""
+    from cclib import (cayley_menger_spatial5, dziobek_products5, rvar,
+                       strip_monomial_factors)
+    G10 = [rvar(i, j) for i in range(1, 6) for j in range(i + 1, 6)]
+    H = dziobek_products5()
+    assert len(H) == 15
+    cm = sp.expand(cayley_menger_spatial5())
+    w = sp.Symbol("w")
+    bip = {g: sp.Integer(1) for g in G10}
+    bip[rvar(4, 5)] = w
+    rel = [w**2 - sp.Rational(8, 3)]
+    h_one = strip_monomial_factors(H["h1245_ab"], G10)[0]
+    _, rem_h = sp.reduced(sp.expand(h_one.subs(bip, simultaneous=True)), rel, w)
+    assert sp.expand(rem_h) == 0
+    _, rem_cm = sp.reduced(sp.expand(cm.subs(bip, simultaneous=True)), rel, w)
+    assert sp.expand(rem_cm) == 0
+    ones = {g: sp.Integer(1) for g in G10}
+    assert cm.subs(ones, simultaneous=True) == -5
+    pos = [0, 3, 7, 12, 20]
+    coll = {rvar(i + 1, j + 1): sp.Integer(abs(pos[j] - pos[i]))
+            for i in range(5) for j in range(i + 1, 5)}
+    assert cm.subs(coll, simultaneous=True) == 0
+    assert h_one.subs(coll, simultaneous=True) != 0

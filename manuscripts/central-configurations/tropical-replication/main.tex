@@ -20,12 +20,12 @@
 for central configurations}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-24\\[2pt]\normalsize Version 0.03}
+\date{2026-08-01\\[2pt]\normalsize Version 0.05}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Tropical Certificates for Central Configurations \textperiodcentered\ v0.03}
+\fancyhead[R]{\small Tropical Certificates for Central Configurations \textperiodcentered\ v0.05}
 \fancyfoot[C]{\small \thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
 
@@ -341,21 +341,86 @@ the torus, where all mutual distances are invertible, which is precisely the set
 of~\cite{HM06}. We record the count as untested rather than quoting the published
 value as if we had reproduced it.
 
+Following that lesson, we attempted the $n=4$ equal-mass census where it belongs,
+in the torus, by two independent exact formulations: the enriched planar system
+under a Rabinowitsch saturation of the distance product (seven unknowns) and the
+z-system of~\cite{HM06} (twelve unknowns, the mutual distances joined by the
+Dziobek variables). The exact square of Section~2 passes the smoke test of the
+first system by exact residual substitution. Neither formulation produced any
+msolve output within a declared and mechanically enforced budget of 3600 seconds
+per route (EXP-009), so the published equal-mass counts remain untested by us.
+We note that the literature contains, to our knowledge, no direct algebraic
+solve of this census either: \cite{HM06} bound the count by a mixed volume
+rather than solving, and the rigorous equal-mass counts of~\cite{MZ19} come from
+interval methods. The measured cliff between $n=3$ (both censuses close in under
+a second) and $n=4$ (no output in an hour, twice) redirects our counting work to
+the bounding rung and our finiteness work to dimension computations, as follows.
+
+\medskip
+\noindent\textbf{The incidence-dimension lane (EXP-010, declared and launched).}
+The object is the Dziobek variety of $n=4$: the vanishing of the cleared Dziobek
+differences $S_{12}S_{34}=S_{13}S_{24}=S_{14}S_{23}$ together with the planar
+Cayley--Menger determinant, in the torus of the six mutual distances. Masses do
+not appear in this formulation, and generic finiteness corresponds to this
+variety having the dimension of the projectivized mass space, three. The
+instrument keeps every algebraic call zero-dimensional by construction: recorded
+random integer linear sections of codimension three (which should meet the
+variety in finitely many points, whose number is degree data) and codimension
+four (which should miss it), decided by msolve under caps, with a deterministic
+Gr\"obner staircase rung run separately. The declared smoke gate discriminates
+three exact anchors in one second: the exact square of Section~2 lies on the
+variety (certified by polynomial reduction modulo $8a^3=4+\sqrt{2}$ written as
+two polynomial relations, no radical heuristics), the unit tetrahedron satisfies
+the Dziobek equations but is excluded by Cayley--Menger, and the $3$-$4$-$5$
+rectangle satisfies Cayley--Menger but violates the Dziobek equations.
+
+The probes decided the experiment the same day, with an asymmetry that is
+itself the finding. Two independent codimension-four random sections
+(coefficients drawn uniformly from $[-10^6,10^6]$ by a seeded generator, the
+draws archived verbatim) came back EMPTY in one second each (msolve's
+dimension $-1$ output), which is probabilistic-exact support for the Dziobek
+variety having dimension at most three, exactly the value the generic
+finiteness picture predicts and exactly the direction such arguments consume
+(what must be excluded is excess dimension). By contrast, both
+codimension-three census probes and a deterministic Gr\"obner staircase
+computation walled at their declared caps (900 and 1800 seconds), so no degree
+data and no dimension lower bound beyond the exact witness were produced, and
+the declared kill criterion closed the census half of the instrument at this
+size. Since only an a-priori degree ceiling is available (B\'ezout with the
+stripped degrees $9\cdot 9\cdot 6 = 486$), the emptiness result carries a
+failure estimate of order $10^{-3}$ per draw; it is evidence, not proof. The
+lane continues with cheap emptiness probes and the partial-Gr\"obner
+upper-bound device of Dias--Pan~\cite{DP18} (dimension bounds from the union
+of leading monomials of tractable subideal bases), with certified witness
+sets planned for the lower-bound direction; the next rung is the spatial
+five-body Dziobek variety, executing the proof shape of~\cite{DP18} with
+exact instruments.
+
 \section{The $n=6$ attempt (EXP-005, in progress)}
 
 The screening of Section~\ref{sec:screening} turns the $n=6$ question into a
-design problem with two dials. Our first attempt (powers of three, machine-integer
-fast path) aborted after six minutes on a \emph{detected} overflow, which is the
-benign failure mode: \texttt{gfan} raises rather than returning a wrong answer.
-Two variants now run in parallel on the same hardware: powers of two with the
-fast path (maximum exponent 32 instead of 243) and powers of three with
-arbitrary-precision integers, the slower path described in \cite{JL25}. At the
-throughput measured in Section~4, an attempt at the scale they report costs on
-the order of days rather than weeks. The outcome, positive or negative, will be
-reported with its exact certificates in the next version of this record; a
-positive outcome would extend generic-mass finiteness to $n=6$, and a negative
-one localizes the obstruction to specific comets, data that has not been
-published for any failed attempt.
+design problem with two dials. What we have measured since is a \emph{tooling}
+barrier, characterized on four attempts with \texttt{gfan}~0.7. On the
+machine-integer fast path the computation aborts within minutes on a
+\emph{detected} overflow (the benign failure mode: \texttt{gfan} raises rather
+than returning a wrong answer), and it does so for powers of three and for
+powers of two alike, although the latter caps the valuation exponents at 32
+instead of 243, so the failure is not a matter of valuation magnitude. On the
+arbitrary-precision path, the powers-of-two run died after fifteen wall-hours
+(about six cpu-days) on an internal assertion in the hypersurface-intersection
+code. Version 0.7 therefore fails at $n=6$ in both arithmetic modes, in two
+distinct ways, while the same binary reproduces the published $n=5$ certificates
+exactly; \cite{JL25} report their own $n=6$ computation as completing (and
+inconclusive on pointedness), so their run differed in version, flags, or
+valuation. We rebuilt the pipeline on the 0.8beta release, validated it against
+our $n=5$ control (exact f-vector agreement), and confirmed that it clears
+0.7's first failure point. Two 0.8beta runs are in progress with checkpointing
+(powers of two on the fast path; powers of three with arbitrary-precision
+integers). The outcome, positive or negative, will be reported with its exact
+certificates in the next version of this record; a positive outcome would
+extend generic-mass finiteness to $n=6$, and a negative one localizes the
+obstruction to specific comets, data that has not been published for any failed
+attempt.
 
 \section{Honesty ledger}
 
@@ -367,8 +432,10 @@ enrichment law at affine and prevariety level; the screening tables) are
 machine facts about known objects, stated with their complete provenance. Open
 items are tracked in the repository backlog; in particular, censuses for two
 integer-separated mass vectors are inconclusive under our current
-sympy engine caps and are being re-run under an independent engine
-(\texttt{msolve}) with the sympy layer retained as verification. No claim in
+sympy engine caps were closed by an independent engine
+(\texttt{msolve}) with the sympy layer retained as exact verification, while
+the $n=4$ torus censuses and the Dziobek census probes remain honestly capped
+as reported above. No claim in
 this paper depends on an unverified literature statement; the repository
 flags every such statement as UNVERIFIED until read from its primary source.
 
@@ -401,6 +468,9 @@ masses}, arXiv:2301.02305v2 (2025).
 \bibitem{MZ19} M.~Moczurad and P.~Zgliczy\'nski, \emph{Central configurations
 in planar $n$-body problem with equal masses for $n=5,6,7$}, Celest. Mech.
 Dyn. Astron. \textbf{131} (2019); arXiv:1812.07279.
+\bibitem{DP18} T.~Dias and B.-Y.~Pan, \emph{Generic finiteness for a class of
+symmetric planar central configurations of the six-body problem and the
+six-vortex problem}, arXiv:1811.08681 (2018).
 \bibitem{Roberts99} G.~E.~Roberts, \emph{A continuum of relative equilibria in
 the five-body problem}, Phys. D \textbf{127} (1999), 141--145.
 \bibitem{AC98} A.~Albouy and A.~Chenciner, \emph{Le probl\`eme des $n$ corps

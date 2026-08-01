@@ -120,6 +120,17 @@ launches, and `--saveas` checkpoints in run08.sh. The 0.7 pow3-b0 investment was
 NOT restarted on 0.7 (its sibling died at the same assertion class); pow3
 continues on 0.8beta.
 
+UPDATE 2026-08-01 (later): EXP-010 DECIDED: emptiness probes CONFIRMED in
+seconds (two independent codim-4 sections empty, `[-1]:`, probabilistic-exact
+support for dim D4 <= 3), census probes REFUTED BY CAP (both codim-3 draws and
+the sympy staircase walled; kill criterion fired; no degree data). Lane
+reshaped: cheap recorded-section emptiness probes + the Dias-Pan partial-GB
+device (CCB-037, deterministic upper bounds) carry the upper-bound direction;
+witness sets (CCB-034) promoted for lower bounds. Dias-Pan arXiv:1811.08681
+read IN FULL the same morning (cross stratum of n = 6 generically closed;
+dossier + ladder row + references landed). EXP-011 (n = 5 spatial Dziobek) is
+shaped as the Dias-Pan proof pattern on our exact instruments.
+
 UPDATE 2026-08-01: the fix has held since the current relaunch. Both gfan 0.8beta
 n = 6 runs were verified alive at 07:54 local time after about 74 minutes:
 gfan08 pow2 --bits 64 (label pow2-08b64r, 10 threads) and gfan08
