@@ -1,0 +1,31 @@
+{
+  "coordinate_boundary": {
+    "classification": "A=0 boundary",
+    "gcd_R0B_S0B": "B**12",
+    "gcd_RX0_SX0": "X**3",
+    "projection_multiplicity_B": 27,
+    "projection_multiplicity_X": 27,
+    "support": "X=B=0"
+  },
+  "decision": "complete_principal_open_base_locus_closed",
+  "experiment": "EXP-130",
+  "final_certificate_sha256": "6742648B5CAB7E795B7D680776BA50ACE5F5E4810D6D050CBD50CCDB06BF1DE0",
+  "principal_open_base_locus": {
+    "block_degrees": [
+      3,
+      6,
+      12,
+      69
+    ],
+    "covered": true,
+    "dimension": 90,
+    "reduced": true,
+    "uniform_in_C": true
+  },
+  "scope": "Closes V(R,S) intersect D(X) in the declared four-parameter restriction. The coordinate component X=B=0 belongs to A=0, which remains separate. The 24-parameter core, 51-parameter family, (72,108), degree floor, and JC(2) remain open.",
+  "source_hashes": {
+    "EXP-123": "43C24C42F37F952AB09EAA834EC042DBA7B7E3E02C1AF1E52E13691C7E9D30EF",
+    "EXP-124": "3AE5A2DA83FA99EDFDAF06486B0AB65150D506D1378B2372710915713066D113",
+    "EXP-129": "AFA272D686DCA1E08D5969F2E1C825EE4D62B9CEC4627301FEFC2A64D258B0B2"
+  }
+}
