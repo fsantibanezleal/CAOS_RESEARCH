@@ -74,45 +74,20 @@ def witness_squares():
 
 
 def smoke(eqs):
+    """Exact evaluation by sqrt substitution: r = sqrt(exact square). The
+    odd-degree terms (wA*wB in E1) involve only perfect squares at this
+    witness (wA = 2u, wB = 2p with integer u, p), so every value is an exact
+    rational after expansion."""
     sq = witness_squares()
-    sub = {s: v for s, v in sq.items()}
-    even_eval = []
-    for e in eqs:
-        pe = sp.Poly(e, *[SYMS[n] for n in NAMES])
-        val = sp.Integer(0)
-        for mono, coeff in zip(pe.monoms(), pe.coeffs()):
-            term = coeff
-            ok = True
-            for n, ex in zip(NAMES, mono):
-                if ex % 2 != 0:
-                    ok = False
-                    break
-                term *= sub[SYMS[n]] ** (ex // 2)
-            if not ok:
-                even_eval.append(None)
-                break
-            val += term
-        else:
-            even_eval.append(val)
-    all_even = all(v is not None for v in even_eval)
-    ok_wit = all_even and all(v == 0 for v in even_eval)
+    sub = {s: sp.sqrt(v) for s, v in sq.items()}
+    vals = [sp.expand(e.subs(sub, simultaneous=True)) for e in eqs]
+    ok_wit = all(v == 0 for v in vals)
     bad = dict(sub)
-    bad[SYMS["cx"]] = bad[SYMS["cx"]] + 1
-    viol = False
-    for e in eqs:
-        pe = sp.Poly(e, *[SYMS[n] for n in NAMES])
-        val = sp.Integer(0)
-        for mono, coeff in zip(pe.monoms(), pe.coeffs()):
-            term = coeff
-            for n, ex in zip(NAMES, mono):
-                term *= bad[SYMS[n]] ** (sp.Rational(ex, 2))
-            val += term
-        if val != 0:
-            viol = True
-            break
+    bad[SYMS["cx"]] = sp.sqrt(sq[SYMS["cx"]] + 1)
+    viol = any(sp.expand(e.subs(bad, simultaneous=True)) != 0 for e in eqs)
     ok = ok_wit and viol
     record("smoke-witness", "pass" if ok else "FAIL",
-           f"all-even-monomials:{all_even} witness-zero:{ok_wit} perturbed-violates:{viol}")
+           f"witness-values:{vals} perturbed-violates:{viol}")
     return ok
 
 
