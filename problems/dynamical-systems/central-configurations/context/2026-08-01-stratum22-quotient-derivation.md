@@ -79,6 +79,21 @@ machinery; candidate witness geometry: equal axis masses with the two pairs
 forming a rectangle-plus-axis configuration, to be fixed after the reduced
 block lands).
 
+## 4b. The reduced Laura-Andoyer block, by symmetry (proof sketch, added same day)
+
+Two elementary facts decide the block without heavy computation: (i) the
+Laura-Andoyer equations are symmetric, L_ji = L_ij (both s and Delta flip
+sign under swapping i and j); (ii) the reflection sigma = (34)(56) preserves
+the configuration and all distances while reversing orientation, so at
+PAIR-EQUAL masses L_ij = -L_{sigma(i) sigma(j)}. Consequences: L12, L34, L56
+vanish identically (sigma fixes those index pairs up to swap), and the
+remaining twelve equations pair up with signs: L13 = -L14, L15 = -L16,
+L23 = -L24, L25 = -L26, L35 = -L46, L36 = -L45. The reduced block is
+therefore SIX independent equations, taken as {L13, L15, L23, L25, L35,
+L36}, each linear in the four mass unknowns (m1, m2, mA, mB). The background
+derivation script provides the computational cross-check of this pairing
+when it completes; the symmetry argument above stands on its own.
+
 ## 5. Honesty
 
 - Everything marked VERIFIED printed as an exact zero in sympy today; the
