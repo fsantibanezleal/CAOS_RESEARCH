@@ -11,8 +11,8 @@ rank them as candidate Dias-Pan-style closures for our instruments.
 |---|---|---|---|
 | k = 6, p = 0 | collinear | CLOSED for ALL masses (n!/2 = 360 labeled classes; finiteness classical) | Moulton 1910 [V: primary read] |
 | k = 4, p = 1 | CROSS: four on the axis, one mirror pair (m5 = m6 forced) | CLOSED generically (proper closed exceptional mass set; statement misprints "open") | Dias-Pan arXiv:1811.08681 [V: read in full 2026-08-01] |
-| k = 2, p = 2 | two on the axis, two mirror pairs | OPEN as far as we can verify: two targeted searches on 2026-08-01 surfaced no closure | [U: absence of evidence only; one unexamined hit arXiv:2004.08437 remains to be checked] |
-| k = 0, p = 3 | three mirror pairs, nobody on the axis | OPEN as far as we can verify (same searches) | [U: same caveat] |
+| k = 2, p = 2 | two on the axis, two mirror pairs | OPEN as far as we can verify: two targeted searches on 2026-08-01 surfaced no closure | [U: absence of evidence only; the flagged hit arXiv:2004.08437 was examined same day and is a (1+4)-VORTEX relative-equilibria paper (Hoyer-Leitzel, Le), not a six-body closure] |
+| k = 0, p = 3 | three mirror pairs, nobody on the axis | OPEN as far as we can verify (same searches) | [U: absence of evidence only] |
 
 Beyond reflections: rotational types (central symmetry, C3, twisted regular
 polygons per Yu-Zhang 2012) and the fully asymmetric bulk are NOT in this
