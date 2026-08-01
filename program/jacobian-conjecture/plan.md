@@ -34,7 +34,7 @@ support-restricted failure, or absence of a finite certificate as a proof.
 | JC-A | Preserve and publish the exact dimension at least three record | rolling; no current compute |
 | JC-B | Complete the $[125,150]$ primary-source frontier reconciliation | active; EXP-094 shows C10/C11/C19/C20 are not excluded by the cited remark; 16 unprinted \(A'_0\) values remain |
 | JC-C | Test modern Newton and approximate-root restrictions against the GGHV reduction | direct transport decided by EXP-097: absolute resultant degree is not typed after Laurent localization without a boundary-divisor ledger |
-| JC-D | Reformulate universal inconsistency as a constructible determinantal-strata problem | active; EXP-132 closes the direct `A=0,d=1` boundary after adjoining `(2,8)`; the transverse `A!=0` and `d=0` sectors remain |
+| JC-D | Reformulate universal inconsistency as a constructible determinantal-strata problem | active; EXP-132 closes the direct `A=0,d=1` boundary and EXP-133 selects a bounded exact principal-open lift; the transverse `A!=0` and `d=0` sectors remain |
 | JC-E | Degree-three certificate decision | done by EXP-075; one exact four-parameter slice is infeasible, so no global cubic covector exists |
 | JC-F | Global geometric routes: fibres, properness, and parameter spaces | hold; resume only after a rigorous bridge to the reduced system is stated |
 | JC-G | Manuscripts, wiki, data, and public record | rolling; update only from adjudicated results |
@@ -43,8 +43,10 @@ support-restricted failure, or absence of a finite certificate as a proof.
 
 1. Preserve EXP-132's three-minor unit identity as the direct-boundary
    regression gate. Do not repeat the closed \(A=0,d=1\) calculation.
-2. Lift the accepted EXP-123/124/129/130 section suite through `(2,8)` on
-   \(A\ne0,d=1\), profiling exact SCCs before expanding determinants.
+2. Execute the EXP-133-selected exact worker: reconstruct the EXP-124 graph
+   section in characteristic zero with the `C+1` two-direction pencil and
+   prove or refute its observed `T`-inertness. If inert, lift the two EXP-129
+   graph-atlas sections, then the quadratic EXP-130 finite-base section.
 3. Rebuild the \(d=0\) quotient after adjoining `(2,8)`; verify the explicit
    \(P\)-kernel rather than assuming EXP-118 lifts unchanged.
 4. Recurse on the joint Fitting ideal. A single selected determinant is never

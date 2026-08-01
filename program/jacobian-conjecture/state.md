@@ -407,3 +407,14 @@
   `9e9219d0947eccc12dc6efc25b849698` matches the local artifact. JCB-091 is
   complete. Record `21739032` contains identical bytes and is retained as a
   superseded immutable duplicate from the concurrent publication race.
+- **2026-08-01 EXP-133:** the singular EXP-123 graph cannot normalize its own
+  determinant. A corrected two-direction local pencil normalizes at the
+  off-graph fibre `C+1` and retains the singular graph at `C`. Across primes
+  1009 and 1153 and graph controls `(A,B)=(1,0),(1,1)`, five accepted sections
+  have stable `T` degrees `1,0,1,0,2` and joint cyclic support at most 10.
+  EXP-124 and EXP-129-atlas-2 are inert at every control, EXP-123 and
+  EXP-129-atlas-1 are affine, and EXP-130 is quadratic. This selects a bounded
+  exact reconstruction route; it does not prove graph coverage or change the
+  status of the 24-parameter core, `(72,108)`, the degree floor, or JC(2).
+  Accepted artifact SHA-256:
+  `35E18A6477312B81F0CDB18C8165539A72129C1D81B16F79AC89EFB948BEBA73`.
