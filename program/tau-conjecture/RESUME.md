@@ -30,7 +30,7 @@ Minimal $\tau$ for 4 distinct integer roots = 5 (EXP-002). Depth-5 records
 $x^2 - 2$: $x^2 - (x^2-2)^2 = -(x-1)(x+1)(x-2)(x+2)$; all record 2-adic
 spectra are $\{0,1\}$. Enumerator anchored to Markstroem 14/14.
 
-## 2. Objects table
+## 2. The objects table
 
 | Object | Definition | Owner |
 |---|---|---|
