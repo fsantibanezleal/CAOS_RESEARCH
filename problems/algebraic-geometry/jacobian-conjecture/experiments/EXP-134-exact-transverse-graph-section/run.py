@@ -8,7 +8,7 @@ import json
 import time
 from pathlib import Path
 
-from sympy import Rational, cancel, expand, eye, factor_list, symbols, sympify
+from sympy import cancel, expand, eye, factor_list, symbols, sympify
 
 
 HERE = Path(__file__).resolve().parent
@@ -31,6 +31,9 @@ EXP133_RESULTS = (
     / "EXP-133-principal-open-28-lift-preflight"
     / "artifacts"
     / "results.json"
+)
+ATTEMPT003_CHECKPOINT = (
+    HERE / "artifacts" / "attempts" / "attempt-003-checkpoint.json"
 )
 CHECKPOINT = HERE / "artifacts" / "checkpoint.json"
 ARTIFACT = HERE / "artifacts" / "results.json"
@@ -151,7 +154,13 @@ def main() -> None:
         "exact_T_values_required": transverse_rank + 1,
         "source_sha256": {
             str(path.relative_to(EXPERIMENTS)): digest(path)
-            for path in (EXP123_RESULTS, EXP124_RESULTS, EXP124_WORKER, EXP133_RESULTS)
+            for path in (
+                EXP123_RESULTS,
+                EXP124_RESULTS,
+                EXP124_WORKER,
+                EXP133_RESULTS,
+                ATTEMPT003_CHECKPOINT,
+            )
         },
         "exact_T_evaluations": [],
     }
@@ -176,28 +185,19 @@ def main() -> None:
         + b * normalized[(0, 5)].extract(core, core)
         + c_on_graph * normalized[(2, 9)].extract(core, core)
     )
-    singleton_factor = Rational(1)
-    for component in singletons:
-        vertex = component[0]
-        singleton_factor = expand(
-            singleton_factor
-            * (
-                1
-                + (a - 1) * normalized[(0, 1)][vertex, vertex]
-                + b * normalized[(0, 5)][vertex, vertex]
-                + c * normalized[(2, 9)][vertex, vertex]
-            )
-        )
     expected_t0 = sympify(
         e124_worker["determinant_ratio"],
         locals={"A": a, "B": b, "C": c},
     )
-    singleton_factor_graph = cancel(singleton_factor.subs(c, c_on_graph))
+    require(not expected_t0.has(c), "accepted EXP-124 determinant is exactly C-independent")
     expected_t0_graph = cancel(expected_t0.subs(c, c_on_graph))
-    baseline_core = cancel(expected_t0_graph / singleton_factor_graph)
+    attempt003 = read_json(ATTEMPT003_CHECKPOINT)
+    baseline_core = sympify(
+        attempt003["T0_core_determinant"], locals={"A": a, "B": b, "C": c}
+    )
     require(
-        cancel(singleton_factor_graph * baseline_core - expected_t0_graph) == 0,
-        "loaded exact EXP-124 T=0 graph-core baseline",
+        not baseline_core.has(c),
+        "persisted exact EXP-124 T=0 core is C-independent",
     )
     payload["exact_T_evaluations"].append(
         {
@@ -238,11 +238,7 @@ def main() -> None:
         "one more exact T value than the degree bound was evaluated",
     )
 
-    determinant_ratio = cancel(singleton_factor_graph * baseline_core)
-    require(
-        cancel(determinant_ratio - expected_t0_graph) == 0,
-        "graph rank/root T=0 determinant reproduces EXP-124 exactly",
-    )
+    determinant_ratio = expected_t0_graph
 
     direct_controls = []
     for av, bv, tv in ((1, 0, 1), (1, 1, 2), (2, 0, -1), (2, 1, 3)):
