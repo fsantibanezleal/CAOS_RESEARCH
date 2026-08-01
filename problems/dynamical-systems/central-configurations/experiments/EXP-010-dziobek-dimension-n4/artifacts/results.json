@@ -1,0 +1,30 @@
+{
+  "smoke-three-way": {
+    "status": "pass",
+    "detail": "square h=0:True cm=0:True; tetra h=0:True cm=4; rect cm=0 some-h!=0:True"
+  },
+  "p1-draw1": {
+    "status": "inconclusive-cap",
+    "detail": "952s wall; inner timeout 900s; no msolve output"
+  },
+  "p1-draw2": {
+    "status": "inconclusive-cap",
+    "detail": "958s wall; inner timeout 900s; no msolve output"
+  },
+  "p2-draw1": {
+    "status": "decided-empty",
+    "detail": "msolve output [-1]: (empty variety, dim -1) in 1s; raw output archived as p2-draw1.out; runner parser missed the comma-free form, corrected here from the raw file"
+  },
+  "p2-draw2": {
+    "status": "decided-empty",
+    "detail": "msolve output [-1]: (empty variety, dim -1) in 1s; raw output archived as p2-draw2.out"
+  },
+  "p3-staircase-dim": {
+    "status": "inconclusive-cap",
+    "detail": "1800s sympy cap on the grevlex Groebner basis"
+  },
+  "stripped-degrees": {
+    "status": "measured",
+    "detail": "h_ab/h_bc/h_ac total degree 9 (6 terms each after monomial stripping); Cayley-Menger total degree 6 (22 terms); crude Bezout ceiling for two independent h's plus CM: 9*9*6 = 486"
+  }
+}
