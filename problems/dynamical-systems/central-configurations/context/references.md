@@ -25,7 +25,8 @@ Problem-level bibliography (methodology/05). Tags: [V] primary source fetched/re
   the plane, Ann. of Math. 176 (2012), no. 1, 535-588. DOI 10.4007/annals.2012.176.1.10.
   [V: Annals abstract fetched verbatim 2026-07-23; PDF not yet read]
 - [Moe01] R. Moeckel, Generic finiteness for Dziobek configurations, Trans. Amer. Math.
-  Soc. 353 (2001) 4673-4686. [Vs: cited in MZ19 + HJ11 + Moeckel notes]
+  Soc. 353 (2001), no. 11, 4673-4686. [Vs: cited in MZ19 + HJ11 + Moeckel notes; issue
+  number pinned by the DP18 reference list 2026-08-01]
 - [HJ11] M. Hampton, A. N. Jensen, Finiteness of spatial central configurations in the
   five-body problem, Celest. Mech. Dyn. Astron. 109 (2011), no. 4, 321-332.
   [V: author PDF read 2026-07-23 (users-math.au.dk/jensen/papers/)]
@@ -55,6 +56,19 @@ Problem-level bibliography (methodology/05). Tags: [V] primary source fetched/re
 - [D26] T. Dias, The Veronese geometry of Dziobek configurations and generic finiteness
   for homogeneous potentials, arXiv:2601.07962 (Jan 2026). Uniform bound; 8192 for n = 4
   Dziobek. [V: arXiv abstract fetched 2026-07-23]
+- [DP18] T. Dias, B.-Y. Pan, Generic finiteness for a class of symmetric planar central
+  configurations of the six-body problem and the six-vortex problem, arXiv:1811.08681
+  (2018). CROSS configurations (four bodies on the symmetry axis, mirror pair off-axis,
+  m5 = m6 forced): generic finiteness off a proper CLOSED mass subset, same for six
+  vortices; Laura-Andoyer formulation, block-triangular Jacobian, fiber-dimension
+  theorem, and the Lemma 7.5 partial-Groebner upper-bound device (union of leading
+  terms of tractable subideals). NOTE: Theorems 1.1/7.11 misprint "open" where the
+  proof constructs a closed exceptional set. Journal status UNCHECKED; cite arXiv.
+  [V: author PDF read IN FULL 2026-08-01; SHA-256 in the dossier; SageMath/Singular
+  notebooks at github.com/thiagodiasoliveira/CC6BP NOT fetched or rerun]
+- [D17] T. Dias, New equations for central configurations and generic finiteness,
+  Proc. Amer. Math. Soc. 145 (2017) 3069-3084. Extends Moeckel's generic Dziobek
+  finiteness to semi-integer exponents. [Vs: cited as [9] in DP18; PDF U]
 
 ## Classical structure
 
