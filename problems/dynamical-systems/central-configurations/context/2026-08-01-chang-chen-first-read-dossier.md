@@ -86,8 +86,35 @@ CCB-017's two-sided attempt at one residual relation).
 
 ## 5. Honesty
 
-- Only pages 1-6 are read; everything cited above sits on those pages. The
-  algorithms, the diagram tables, the 24-case list and the mass relations are
-  NOT yet transcribed; no conclusion may rest on them until the deep read.
+- Pages 1-6 and 41-46 are read (see the addendum below for the second range);
+  everything cited sits on those pages. The algorithm internals (Sections 3-8),
+  the full n = 5 diagram data, the n = 6 elimination record and the 24-case
+  list are NOT yet transcribed; no conclusion may rest on them until the deep
+  read.
 - Part (II) (mass relations, announced in the same programme) remains
   search-only ([U]); nothing here upgrades it.
+
+## 6. ADDENDUM same day: Section 9 (n = 4) and the head of Section 10 (n = 5) read
+
+Pages 41-46 read directly. The n = 4 case is now fully transcribable and gives
+us the exact shape of what "solving a diagram" means in their machinery:
+
+| Diagram (their Fig. 1) | Geometry | Outcome |
+|---|---|---|
+| 1 | fully-edged | NO mass relation reachable by their algorithms (25 type-3 order matrices, too many leading orders); finiteness comes from AK12 section 5.6's dominant-polynomial argument: excluding the other four diagrams suffices |
+| 2 | fully-edged isolated triangle | mass relation f_{4,2} = 0 in sqrt(m_i), SIX factors (their (9.1)): three give 1/sqrt(m_i) = 1/sqrt(m_j) + 1/sqrt(m_k) over {i,j,k} = {2,3,4} (their (9.2)); three are m_i(sqrt(m_j) - sqrt(m_k))^2 + m_j m_k, never zero for positive masses |
+| 3 | "kite diagram" (w-edge + fully-edged triangle) | f_{4,3} with ELEVEN factors: six equal to (9.1); two short ones, one equivalent to (m2 m3)^3 = m4^2 (m2 + m3)^4 (their (9.3)), the other m2^3 - (m2 + m3) m4^2; three long factors mu_15, mu_21, mu_33 deferred to Appendix IV |
+| 4 | disconnected z-edge + w-edge | wedge equations with four sign choices; four give (m1^2 - m1 m2 + m2^2)(m3^2 - m3 m4 + m4^2) = 0, impossible for positive masses; four give a sum of two squares equal to zero, equivalent to m1 m3 = m2 m4 AND m1 m4 = m2 m3, i.e. m1 = m2 and m3 = m4 (their (9.4)) |
+| 5 | square diagram | m1 m3 = m2 m4 (their (9.5)) |
+
+All five coincide with AK12 sections 5.1-5.4 (their statement). These
+relations are exact, machine-checkable statements: re-deriving (9.2), (9.4),
+(9.5) independently with our exact stack is a natural cross-engine replication
+experiment (the EXP-003/EXP-006 tradition applied to Algorithm III), and the
+right calibration BEFORE touching any of the 24 unsolved n = 6 diagrams.
+
+n = 5 head (Section 10, p. 45): Algorithm I produces TWENTY diagrams
+(their Figure 2); Algorithm II excludes diagrams 9, 11, 13, 17; the remaining
+SIXTEEN are precisely AK12 Figure 11. This sharpens our record, which carried
+only the 16. Diagram-level order-matrix data continues past p. 46 (not yet
+read).
