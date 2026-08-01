@@ -51,7 +51,7 @@ from the exhausted depth-$d$ frontier without storing depth $d+1$.
 |---|---|---|
 | $\tau(f)$ | min gates, constant-free SLP, inputs $\{-1,1,x\}$ (free-0 lemma) | EXP-001 hypothesis |
 | $z_{\max}(\tau)$ | max distinct integer roots at $\tau(f) \le \tau$ | EXP-001..004 |
-| tclib | enum cores + last-gate scan + exact roots + 2-adic spectra + tests | code/tclib (8 tests green) |
+| tclib | enum cores + last-gate scan + exact roots + 2-adic spectra + tests | code/tclib (7 tests green) |
 | DOS/Chebyshev factory | $B^2 - A^2$ splittings, inner map $x^2-2$ (doubling under $z + 1/z$) | EXP-002 verdict |
 | $T(S)$ | dual set-function: min $\tau$ vanishing on $S$; conjecture = $T(S) \ge |S|^{1/\kappa} - 1$ | approaches-evaluation B1 |
 | $N_p(s)$ | # distinct p-adic norms of roots at additive complexity $s$; window $[s, s(s+1)/2]$ | Rojas Thm 2 [V]; RL-2 |
