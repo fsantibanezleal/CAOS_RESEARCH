@@ -24,12 +24,12 @@ Machine-Certified Newton-Polygon Exclusions,\\
 the Staircase Transport, and the Recalibrated Frontier}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-31\\[2pt]\normalsize Version 0.29}
+\date{2026-07-31\\[2pt]\normalsize Version 0.30}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.29}
+\fancyhead[R]{\small Planar Keller Maps \textperiodcentered\ v0.30}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -39,7 +39,7 @@ the Staircase Transport, and the Recalibrated Frontier}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper B of a three-paper record \textperiodcentered\ version 0.29 \textperiodcentered\ 2026-07-31\\
+Paper B of a three-paper record \textperiodcentered\ version 0.30 \textperiodcentered\ 2026-07-31\\
 DOI \href{https://doi.org/10.5281/zenodo.21503367}{10.5281/zenodo.21503367} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -133,8 +133,14 @@ sections cover the degree-12 and degree-69 blocks; one new exact section
 completes degrees 3 and 6. Bezout identities, independent resultants,
 multiplication-matrix norms, and a direct determinant control certify the
 finite atlas uniformly in \(Y\). Thus the complete \(A\ne0\) sector of the
-declared four-parameter restriction is covered. The direct boundary \(A=0\)
-remains.
+declared four-parameter restriction is covered. Returning to the original
+302-by-125 augmented matrix before invariant division, the direct \(A=0\)
+boundary admits two exact minors independent of \(C\). Their divisors are
+\((5B+4)^3(25B^2-20B+16)^3\) and
+\(B^{95}(109375B^6-110592)(21875B^6-4800B^3-24576)\), up to nonzero
+scalars. An explicit Bezout identity makes their gcd one. Combined with the
+previous \(d=0\) quotient cover, this closes the complete declared
+four-coefficient restriction.
 A new multiplication formula for $x^m$-anchored edges shows the $B = 16$ leading form cannot
 produce the Keller constant on its top edge for $m \ge 2$: that case, too, is a staircase
 transport. All computations are exact and reproducible; every claim is labeled machine-verified
@@ -1210,9 +1216,42 @@ covers \(V(R,S)\cap D(X)\) uniformly in \(Y=A^2C\). Combining the selected
 EXP-123 chart, the EXP-129 graph atlas, and the EXP-130 base-locus atlas
 exhausts every case with \(A\ne0\) [D].
 
-Only the direct divisor \(A=0\) remains for the declared four-parameter
-restriction. The 24-parameter core, complete 51-parameter family,
-\((72,108)\) case, planar degree floor, and \(JC(2)\) remain open.
+EXP-131 returns to the original 302-by-125 augmented matrix before any
+division by \(A\) and specializes directly at \(A=0,d=1\) [MV]. Two exact
+row bases give
+\[
+ \Delta_1=\kappa_1(5B+4)^3(25B^2-20B+16)^3
+\]
+and
+\[
+ \Delta_2=\kappa_2 B^{95}(109375B^6-110592)
+ (21875B^6-4800B^3-24576),
+\]
+with \(\kappa_1,\kappa_2\in\Q^\times\); both are independent of \(C\).
+For the squarefree divisors
+\[
+ f=(5B+4)(25B^2-20B+16),\qquad
+ h=B(109375B^6-110592)(21875B^6-4800B^3-24576),
+\]
+exact extended Euclid gives
+\[
+\begin{aligned}
+1={}&\left(
+\frac{478515625}{17179869184}B^{12}
+-\frac{2734375}{134217728}B^9
+-\frac{205625}{4194304}B^6
++\frac{1025}{32768}B^3+\frac1{64}
+\right)f\\
+&-\frac{25B^2}{17179869184}h.
+\end{aligned}
+\]
+Thus the two augmented minors generate the unit ideal in \(\Q[B,C]\), so
+the complete \(A=0,d=1\) plane is covered [MV/D]. EXP-118 covers \(d=0\),
+and EXP-123/129/130 cover \(A\ne0,d=1\). Therefore the complete declared
+four-coefficient restriction
+\(\{(0,1),(0,5),(1,0),(2,9)\}\) is closed [D]. The 24-parameter core,
+complete 51-parameter family, \((72,108)\) case, planar degree floor, and
+\(JC(2)\) remain open.
 
 \emph{The frontier, corrected.} Beyond $125$, our first probe case (the chain
 $(8,40)/(8,28)/(11/4,7)$, max degree $144$) turns out already excluded in the
@@ -1278,11 +1317,11 @@ audit trail (including its open verification items) persisted in the repository.
 \section{Program}
 
 Priorities, from the standing routes evaluation: (1) preserve the exact
-EXP-124--130 closure of the complete \(A\ne0\) sector and specialize the
-original augmented matrix directly at \(A=0\), before invariant division;
-(2) profile its generic rank over \(\Q(B,C)\), then combine a finite pivot
-atlas with an independent module/Fitting or polynomial-matrix
-invariant-factor calculation; (3) retain the complete EXP-118--121 \(T_B\)
+EXP-118/123/129--131 closure of the complete declared four-coefficient
+restriction; (2) test a transverse fifth direction, beginning with \((2,8)\),
+whose EXP-122 anchor factor is linear and whose union SCC has size 35, and
+recurse on the joint exceptional ideal of several exact sections; (3) retain
+the complete EXP-118--121 \(T_B\)
 cover as a regression gate rather than adding redundant slice charts; (4) retain the
 exact EXP-108 lift through \((0,6)\) as a bounded chart control rather than
 a terminating programme; (5) reopen the intersection-$21$ transport only

@@ -1582,3 +1582,21 @@
   400234-byte PDF MD5 `80fe44419f7ed570456b91300adebeed` matches the local
   artifact (SHA-256
   `0bd662262ad9e1aaa07c389c6cfe96ced485508cc9e332a366c86ad0626455be`).
+
+## 2026-07-31 - EXP-131 closes the direct A=0 boundary
+
+- The original reduced augmented matrix was rebuilt as a 302-by-125 system
+  and specialized directly at \(A=0,d=1\), before invariant division.
+- A primary exact minor is independent of \(C\) and has divisor
+  \((5B+4)^3(25B^2-20B+16)^3\).
+- A second exact minor is also independent of \(C\) and has divisor
+  \(B^{95}(109375B^6-110592)(21875B^6-4800B^3-24576)\).
+- Exact extended Euclid gives a Bezout identity equal to one between the
+  squarefree divisors. Hence the two augmented minors cover the complete
+  \((B,C)\)-plane.
+- EXP-118 covers \(d=0\), EXP-123/129/130 cover \(A\ne0,d=1\), and EXP-131
+  covers \(A=0,d=1\). The declared four-coefficient restriction is therefore
+  closed. The 24-parameter core, full 51-parameter family, \((72,108)\),
+  degree floor, and JC(2) remain open.
+- Accepted artifact SHA-256:
+  `9DBB699F56B43C518CEC08BBD9C667D2D92C22FD7C662C33CCCFF44AFD2A1CC1`.

@@ -1,8 +1,7 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-07-31 after EXP-130 certified the reduced 90-dimensional base
-algebra and closed the complete \(A\ne0\) sector of the declared
-four-parameter restriction. This is
+Updated 2026-07-31 after EXP-131 closed the direct \(A=0\) plane and completed
+the declared four-coefficient restriction. This is
 the first-read navigation page. Primary artifacts and experiment verdicts
 remain the evidence.
 
@@ -179,6 +178,11 @@ remain the evidence.
   resultant, multiplication-norm, and direct-determinant controls certify a
   finite atlas uniform in \(Y=A^2C\). Thus all \(A\ne0\) cases are covered;
   only the direct \(A=0\) boundary remains for the restriction.
+- EXP-131 specializes the original 302-by-125 augmented matrix directly at
+  \(A=0,d=1\). Two exact minors are independent of \(C\); their squarefree
+  \(B\)-divisors have an explicit Bezout identity equal to one. Together
+  with EXP-118 and EXP-123/129/130, this closes the complete declared
+  four-coefficient restriction. The 24-parameter core remains open.
 - Controlling strategy:
   [`strategy-audit-2026-07-31.md`](strategy-audit-2026-07-31.md).
 - Source audit:
@@ -224,6 +228,8 @@ remain the evidence.
 | complete rational-graph atlas | \(h_7\) covers degrees 15 and 30; two further exact sections cover \(E_3,E_9,E_{18}\) blockwise | EXP-128/129 |
 | principal-open base-locus algebra | reduced blocks of degrees \(3,6,12,69\), total dimension 90; finite maximal-minor atlas uniform in \(Y\) | EXP-130 |
 | complete \(A\ne0\) four-parameter sector | selected chart, graph atlas, and base-locus atlas exhaust the principal-open cases | EXP-123/129/130 |
+| direct \(A=0\) atlas | two \(C\)-independent exact minors with unit divisor gcd cover the complete boundary plane | EXP-131 |
+| complete declared four-coefficient restriction | \(d=0\), \(A\ne0,d=1\), and \(A=0,d=1\) are all covered by exact atlases | EXP-118/123/129--131 |
 | complete \(T_B\) restriction cover | \(d=0\) quotient cover plus exact \(G,L,Q\) weighted-open covers | EXP-118/120/121 |
 | lower-family grading | \(w_{p,q}=q-p+1\pmod9\) for all 23 nonconstant remaining directions | EXP-106 |
 | properness instrument | exact resultant-leading-coefficient test | EXP-014 |
@@ -374,6 +380,9 @@ scalar conditions before exploiting sparsity.
 - EXP-130: the principal-open base locus is a reduced 90-dimensional product
   with block degrees \(3,6,12,69\). Exact unit-ideal certificates cover its
   full \(Y\)-cylinder and close the complete \(A\ne0\) sector.
+- EXP-131: two exact \(C\)-independent boundary determinants have unit
+  divisor gcd, closing \(A=0,d=1\) and therefore the complete declared
+  four-coefficient restriction.
 - EXP-102: third chart exists at \(u=1\); complete pullback is inconclusive
   after the dense rank-121 determinant hit its five-minute budget.
 
@@ -385,7 +394,7 @@ scalar conditions before exploiting sparsity.
   at \(u=1\).
 - EXP-075 remains stopped after a conclusive reproduced hit. Its verdict and
   both artifacts are persisted.
-- EXP-111 through EXP-130 are complete. No Jacobian process is active.
+- EXP-111 through EXP-131 are complete. No Jacobian process is active.
 - Current research branch: `work/jacobian-conjecture/next-round`.
 - EXP-096 was merged into `develop` by PR `#81` at `7866b0f`.
 - The planar manuscript reconciliation was merged by PR `#83` at `ffc6a3d`.
@@ -448,17 +457,17 @@ scalar conditions before exploiting sparsity.
 
 ## 5. Next actions, in order
 
-1. Preserve EXP-124--130 as the exact complete \(A\ne0\) cover. Do not repeat
-   the closed graph or 90-dimensional base-algebra calculations.
-2. Declare EXP-131 on the original augmented matrix specialized directly at
-   \(A=0\), before any invariant normalization or division.
-3. Compute the generic rank over \(\mathbb Q(B,C)\). If it is 125, build a
-   finite exact pivot atlas and recurse on its residual divisors.
-4. Independently control the boundary through a module/Fitting presentation
-   or polynomial-matrix invariant factors, with every denominator fibre
-   checked directly.
-5. Only after all \(A=0\) strata close, state that the complete
-   four-parameter restriction is covered.
+1. Preserve EXP-118/123/129--131 as the exact complete declared
+   four-coefficient cover. Do not repeat its closed graph, base locus, or
+   direct boundary.
+2. Declare EXP-132 on the transverse direction \((2,8)\), whose EXP-122
+   anchor factor is linear and whose union SCC has size 35.
+3. Lift several accepted minor sections simultaneously and recurse on their
+   joint exceptional ideal. A single minor cannot establish coverage.
+4. Retain EXP-131's two-minor Bezout identity as a boundary regression gate.
+5. If the transverse lift becomes positive-dimensional, use a module/Fitting
+   presentation or polynomial-matrix invariant factors with a complete
+   denominator-fibre ledger.
 6. Keep the complete EXP-118--121 \(T_B\) cover as a regression gate. Do not
    add redundant charts to the closed three-parameter restriction.
 7. Reopen intersection-\(21\) transport only with a complete
@@ -474,8 +483,8 @@ scalar conditions before exploiting sparsity.
 10. Keep EXP-093 cancelled; do not revive the global cubic solve.
 11. Keep EXP-109 as a bounded regression control, not as the main route.
 12. Preserve Paper B v0.29 at immutable DOI
-   `10.5281/zenodo.21730506`; publish a new version only when the `A=0`
-   boundary or another manuscript claim changes.
+   `10.5281/zenodo.21730506`; publish v0.30 for the EXP-131 restriction
+   closure, then require another claim change for any later version.
 
 Suggested source-round commands:
 

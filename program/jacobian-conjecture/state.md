@@ -377,3 +377,10 @@
   `80fe44419f7ed570456b91300adebeed` matches the local artifact. JCB-086
   is complete. The direct `A=0` specialization remains the sole P0 boundary
   inside the declared four-parameter restriction.
+- **2026-07-31 EXP-131:** the direct \(A=0,d=1\) 302-by-125 augmented matrix
+  has two exact determinants independent of \(C\). Their squarefree
+  \(B\)-divisors have an explicit Bezout identity equal to one, so the
+  complete boundary plane is covered. Combined with EXP-118 and
+  EXP-123/129/130, the complete declared four-coefficient restriction is
+  closed. The 24-parameter core, full 51-parameter family, \((72,108)\),
+  degree floor, and JC(2) remain open. EXP-132 next tests direction \((2,8)\).
