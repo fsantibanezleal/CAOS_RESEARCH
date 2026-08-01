@@ -43,9 +43,10 @@ support-restricted failure, or absence of a finite certificate as a proof.
 
 1. Preserve EXP-132's three-minor unit identity as the direct-boundary
    regression gate. Do not repeat the closed \(A=0,d=1\) calculation.
-2. Execute EXP-135: factor the exact rank-seven transverse core and compute
-   the 7-by-7 transfer determinant from seven graph-quotient solves. Do not
-   repeat the 33-by-33 expansions retired by EXP-134.
+2. Execute EXP-135's global worker: after seven graph-quotient solves, prove
+   or refute the 49-entry identity `(V^T H_0^-1 U)^2=0`. The exact rational
+   controls have rank three and square zero. Use the 7-by-7 determinant only
+   as a regression check; do not repeat EXP-134's 33-by-33 expansions.
 3. If the transfer determinant is one with a complete denominator ledger,
    retain the old `F3*F6*F7` divisor and lift the two EXP-129 graph-atlas
    sections, then the quadratic EXP-130 finite-base section.

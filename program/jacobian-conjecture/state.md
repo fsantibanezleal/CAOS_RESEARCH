@@ -415,6 +415,13 @@
   unproved. EXP-135 redirects to the 7-by-7 transfer determinant from the
   matrix determinant lemma. Terminal checkpoint SHA-256:
   `28253FE22638C15BE8F7736F0629B0A9697D55386FB46E5351DE9E58C388A351`.
+- **2026-08-01 EXP-135 preflight:** the transverse core admits an exact
+  rank factorization `K_T=UV^T`. At four rational graph controls the 7-by-7
+  transfer `V^T H_0^-1 U` has rank three, square zero, and unit determinant
+  pencil. The global proof target is now the 49-entry square-zero identity,
+  not a determinant expansion. This is control evidence only. Artifact
+  SHA-256:
+  `D322A3041F10289A60640CB658640180C0B506AD8F84F450BFB8AA8CD8A403EA`.
 - **2026-08-01 EXP-133:** the singular EXP-123 graph cannot normalize its own
   determinant. A corrected two-direction local pencil normalizes at the
   off-graph fibre `C+1` and retains the singular graph at `C`. Across primes

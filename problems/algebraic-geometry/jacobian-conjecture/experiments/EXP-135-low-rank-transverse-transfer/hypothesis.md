@@ -66,3 +66,12 @@ on the rational graph. The EXP-129 transverse residual sections and EXP-130
 finite-base lift remain necessary, as does the separate transverse `d=0`
 quotient. No outcome here settles the complete five-coefficient restriction,
 the 24-parameter core, `(72,108)`, the degree floor, or JC(2).
+
+## Accepted preflight update
+
+Exact rational controls at `(A,B)=(1,0),(1,1),(2,0),(2,1)` confirm the rank-
+seven factorization and give a transfer matrix of rank three and nilpotency
+index two at every point. Hence `det(I_7+T L)=1` at all four controls. The
+global worker is reprioritized to proving the stronger entrywise identity
+`L^2=0` after the seven solves; determinant expansion is now only a
+regression check.

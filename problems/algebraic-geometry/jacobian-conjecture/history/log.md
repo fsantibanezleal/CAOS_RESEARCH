@@ -1682,3 +1682,17 @@
   `28253FE22638C15BE8F7736F0629B0A9697D55386FB46E5351DE9E58C388A351`.
 - No new graph stratum, five-coefficient sector, `(72,108)` case, floor, or
   JC(2) claim is closed.
+
+## 2026-08-01 - EXP-135 exposes a square-zero transfer target
+
+- The exact 33-by-33 transverse core factors as `K_T=UV^T` with seven
+  columns, verified entry by entry.
+- At four exact rational points on the EXP-123 graph, the 7-by-7 transfer
+  `L=V^T H_0^-1 U` has rank three and satisfies `L^2=0`. Therefore
+  `det(I_7+TL)=1` at each control.
+- The global exact target is reprioritized from a determinant to the 49
+  entries of `L^2`, after seven graph-quotient solves and with a complete
+  denominator ledger.
+- This remains a control preflight, not a function-field identity or graph
+  cover. Accepted preflight SHA-256:
+  `D322A3041F10289A60640CB658640180C0B506AD8F84F450BFB8AA8CD8A403EA`.

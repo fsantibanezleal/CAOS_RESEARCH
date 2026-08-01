@@ -1,8 +1,8 @@
 # RESUME: Jacobian conjecture program
 
-Updated 2026-08-01 after EXP-134 proved the transverse rank-seven reduction
-and reached its exact determinant gates. EXP-135 is the active low-rank
-transfer route. This is
+Updated 2026-08-01 after EXP-135 verified the rank-seven factorization and
+exposed an exact square-zero transfer target at four rational controls.
+The global function-field identity is the active low-rank route. This is
 the first-read navigation page. Primary artifacts and experiment verdicts
 remain the evidence.
 
@@ -425,8 +425,10 @@ scalar conditions before exploiting sparsity.
   both artifacts are persisted.
 - EXP-111 through EXP-134 are complete. EXP-134 is inconclusive at its exact
   determinant gates but proves one size-33 core, 86 singleton blocks, exact
-  transverse rank seven, and `deg_T<=7`. EXP-135 is declared for the 7-by-7
-  matrix-determinant-lemma transfer calculation; no Jacobian process is active.
+  transverse rank seven, and `deg_T<=7`. EXP-135 exactly verifies
+  `K_T=UV^T`; at four rational graph controls the 7-by-7 transfer has rank
+  three and square zero. This is control evidence, not a graph identity.
+  No Jacobian process is active.
 - EXP-133 is a modular route-selection result with accepted artifact SHA-256
   `35E18A6477312B81F0CDB18C8165539A72129C1D81B16F79AC89EFB948BEBA73`.
   It does not trigger a manuscript or Zenodo update because it proves no new
@@ -509,10 +511,11 @@ scalar conditions before exploiting sparsity.
 
 1. Preserve EXP-132's exact three-minor identity as the \(A=0,d=1\)
    transverse regression gate.
-2. Execute EXP-135: factor the rank-seven transverse core as `U V^T`, solve
-   the seven graph-quotient right-hand sides, and compute the 7-by-7 transfer
-   determinant with a complete denominator ledger. Do not repeat EXP-134's
-   gated 33-by-33 determinant formulations.
+2. Execute EXP-135's global worker: solve the seven graph-quotient right-hand
+   sides and prove or refute the 49 entries of
+   `(V^T H_0^-1 U)^2=0`, with a complete denominator ledger. Use the 7-by-7
+   determinant only as a regression check. Do not repeat EXP-134's gated
+   33-by-33 determinant formulations.
 3. If the transfer determinant proves exact graph inertness, retain the old
    \(F_3F_6F_7\) divisor
    ledger and reconstruct the EXP-129 atlas-1 affine lift and atlas-2 inert
