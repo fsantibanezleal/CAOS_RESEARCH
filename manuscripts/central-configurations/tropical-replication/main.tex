@@ -20,12 +20,12 @@
 for central configurations}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-01\\[2pt]\normalsize Version 0.05}
+\date{2026-08-01\\[2pt]\normalsize Version 0.06}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Tropical Certificates for Central Configurations \textperiodcentered\ v0.05}
+\fancyhead[R]{\small Tropical Certificates for Central Configurations \textperiodcentered\ v0.06}
 \fancyfoot[C]{\small \thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
 
@@ -101,7 +101,8 @@ in $[32,8472]$); $n=5$ finite except possibly on an explicit codimension-two
 subvariety of mass space (Albouy--Kaloshin \cite{AK12}); the spatial 5-body
 Dziobek case handled generically by Moeckel \cite{Moeckel01} and explicitly by
 Hampton--Jensen \cite{HJ11}; $n=6$ open, reduced by Chang--Chen
-\cite{ChangChen23} to a finite list of residual diagram cases; and, for
+\cite{ChangChen23} to twenty-four unsolved zw-diagram cases (their programme
+preprint states the count verbatim; we read it from the primary source); and, for
 \emph{generic} masses, the recent purely polyhedral certificate of
 Jensen--Leykin \cite{JL25}, complete through $n=5$. Rigorous equal-mass
 censuses for $n\le 7$ are due to Moczurad--Zgliczy\'nski \cite{MZ19}; with one
@@ -395,6 +396,30 @@ of leading monomials of tractable subideal bases), with certified witness
 sets planned for the lower-bound direction; the next rung is the spatial
 five-body Dziobek variety, executing the proof shape of~\cite{DP18} with
 exact instruments.
+
+\medskip
+\noindent\textbf{The scaling test at $n=5$ (EXP-011).} That rung ran the same
+day and measured the wall. The object is the fifteen cleared Dziobek product
+differences over all quadruples of five bodies together with the spatial
+Cayley--Menger equation, in the torus of the ten mutual distances; the cut is
+declared honestly as an overvariety of the spatial Dziobek central
+configurations (degenerate strata satisfy the products trivially, a phenomenon
+the smoke gate documents with an exact point: the unit-side, unit-slant
+bipyramid with $r_{45}^2 = 8/3$, whose membership reduces to rational
+arithmetic). The three-anchor smoke gate passed in four seconds; every msolve
+section probe, including the codimension-five emptiness probes that cost one
+second at $n=4$, capped at 300 seconds; and a first live run of the
+partial-Gr\"obner instrument (fifteen subideals, each one product plus
+Cayley--Menger plus the saturation, 120 seconds apiece under sympy) completed
+a single subideal, leaving a vacuous union bound. Nothing refuted the expected
+dimension four; nothing supported it either. We read the wall as an engine
+fact rather than a mathematical one: \cite{DP18} report completing the
+identical leading-term pattern on an eleven-variable system in minutes under
+Singular, so the instrument's next version swaps the Gr\"obner engine
+(msolve's basis mode, already installed and hash-recorded) and lightens the
+subideal menu to product pairs, with certified witness sets promoted for
+everything sections cannot see. All budgets were declared in advance and are
+reported as spent; no caps were extended.
 
 \section{The $n=6$ attempt (EXP-005, in progress)}
 
