@@ -8,7 +8,7 @@ import json
 import time
 from pathlib import Path
 
-from sympy import Matrix, Poly, QQ, Rational, cancel, expand, eye, symbols, sympify
+from sympy import Poly, QQ, Rational, cancel, expand, eye, symbols, sympify
 
 
 HERE = Path(__file__).resolve().parent
