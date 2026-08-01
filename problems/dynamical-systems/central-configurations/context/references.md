@@ -63,7 +63,8 @@ Problem-level bibliography (methodology/05). Tags: [V] primary source fetched/re
   vortices; Laura-Andoyer formulation, block-triangular Jacobian, fiber-dimension
   theorem, and the Lemma 7.5 partial-Groebner upper-bound device (union of leading
   terms of tractable subideals). NOTE: Theorems 1.1/7.11 misprint "open" where the
-  proof constructs a closed exceptional set. Journal status UNCHECKED; cite arXiv.
+  proof constructs a closed exceptional set. Journal status: searched 2026-08-01,
+  no journal version surfaced (not proof of non-publication); cite arXiv.
   [V: author PDF read IN FULL 2026-08-01; SHA-256 in the dossier; SageMath/Singular
   notebooks at github.com/thiagodiasoliveira/CC6BP NOT fetched or rerun]
 - [D17] T. Dias, New equations for central configurations and generic finiteness,
