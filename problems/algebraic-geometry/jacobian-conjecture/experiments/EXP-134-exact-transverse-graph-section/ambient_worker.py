@@ -1,4 +1,4 @@
-"""EXP-134: exact graph-quotient lift of the EXP-124 section."""
+"""EXP-134 attempt 001: ambient exact determinant before graph reduction."""
 
 from __future__ import annotations
 
