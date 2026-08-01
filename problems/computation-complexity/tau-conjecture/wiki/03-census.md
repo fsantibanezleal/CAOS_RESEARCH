@@ -15,19 +15,22 @@ the measured growth stays near-linear.
 
 ## The table (all values decision-complete, exact arithmetic)
 
-| $\tau$ | 1 | 2 | 3 | 4 | 5 | 6 |
-|---|---|---|---|---|---|---|
-| $z_{\max}$ | 1 | 2 | 3 | 3 | 4 | 5 |
-| reached-set states | 9 | 98 | 1,462 | 29,506 | 778,087 | not stored (last-gate scan) |
-| new polynomials | 9 | 34 | 177 | 1,249 | 11,377 | 134,494 |
+| $\tau$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|---|---|---|---|---|---|---|---|
+| $z_{\max}$ | 1 | 2 | 3 | 3 | 4 | 5 | 5 |
+| reached-set states | 9 | 98 | 1,462 | 29,506 | 778,087 | 25,844,905 | not stored (last-gate scan) |
+| new polynomials | 9 | 34 | 177 | 1,249 | 11,377 | 134,494 | 2,013,706 |
 
 Milestones: minimal $\tau$ for 3 distinct integer roots = 3 ($x^3 - x$);
 for 4 roots = 5 (EXP-002); for 5 roots = 6 (EXP-003:
-$\mp x(x^2-1)(x^2-4)$, the depth-5 DOS record times the input $x$, which
-adjoins the root 0 for one gate). Records track $z = \tau - 1$ from
-$\tau = 3$ on; whether that law continues at depth 7 is the standing
-question (blocked on canonicalization: the depth-6 frontier is not
-stored).
+$\mp x(x^2-1)(x^2-4)$: the depth-5 DOS record times the input $x$, which
+adjoins the root 0 for one gate); for 6 roots: in $[8, 9]$ (EXP-004 lower
+side; upper witness $q(q-2)(q-6)$, $q = x^2 - x$, 9 gates). The growth
+shows PLATEAUS at $\tau = 4$ and $\tau = 7$ ($1,2,3,3,4,5,5$): one gate
+does not always buy one root; conversion fails exactly when the next
+root requires a BUILT constant beyond the free $\{0, \pm1, \pm2\}$
+world. Depth 8 needs canonicalization, a compiled backend, or the SAT
+lane (the $[8,9]$ window is a crisp SAT-shaped target).
 
 ## Method and its anchor
 
