@@ -10,7 +10,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Paper B of a three-paper research record. The two-variable Jacobian conjecture remains open after the 2026 counterexample in dimension 3. This paper develops an exact-arithmetic campaign on the lone open degree pair (72,108) below 125, built on Guccione-Guccione-Horruitiner-Valqui (arXiv:2204.14178, Proposition 4.3). Version 0.29 retains the complete weighted three-parameter T_B cover and advances the first higher-dimensional constructible reduction from the 24-parameter cyclic core. With X=A^3 and Y=A^2 C, direction (2,9) gives A^87(R(X,B)+Y S(X,B)), with coprime R and S. Exact divisor norms and a finite maximal-minor atlas close the complete AS nonzero rational graph. Factorwise subresultants then decompose the principal-open base locus into reduced field blocks of degrees 3, 6, 12, and 69, total dimension 90. Exact Bezout identities, independent resultants, multiplication-matrix norms, and direct determinant controls certify a finite atlas uniformly in Y. Thus the complete A nonzero sector of the declared four-parameter restriction is covered. The direct A=0 boundary, 24-parameter core, full 51-parameter family, complete (72,108) case, planar degree floor, and JC(2) remain open.</p><p>All scripts, artifacts and verdicts: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
+    "description": "<p>Paper B of a three-paper research record. The two-variable Jacobian conjecture remains open after the 2026 counterexample in dimension 3. This paper develops an exact-arithmetic campaign on the lone open degree pair (72,108) below 125, built on Guccione-Guccione-Horruitiner-Valqui (arXiv:2204.14178, Proposition 4.3). Version 0.30 closes one declared four-coefficient restriction inside the 24-parameter cyclic core. The complete weighted three-parameter T_B cover is retained. Restoring direction (2,9), exact divisor norms and finite maximal-minor atlases close the complete A nonzero rational graph and its reduced 90-dimensional principal-open base algebra. Returning to the original 302-by-125 augmented matrix before invariant division, the direct A=0 boundary has two exact maximal minors independent of C. Their B-divisors are (5B+4)^3(25B^2-20B+16)^3 and B^95(109375B^6-110592)(21875B^6-4800B^3-24576), up to nonzero rational scalars, and an explicit Bezout identity proves unit gcd. Together with the separate d=0 quotient cover, this closes the complete declared four-coefficient restriction. The 24-parameter core, full 51-parameter family, complete (72,108) case, planar degree floor, and JC(2) remain open.</p><p>All scripts, artifacts and verdicts: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
     "keywords": [
       "Jacobian conjecture",
       "planar Keller maps",
@@ -55,7 +55,7 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.29",
+    "version": "0.30",
     "language": "eng"
   }
 }

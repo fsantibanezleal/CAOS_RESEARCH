@@ -3,6 +3,24 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.60.000], 2026-07-31
+
+### Added
+- EXP-131 rebuilds the original 302-by-125 augmented matrix directly at
+  `A=0,d=1` and reconstructs two exact maximal minors over `QQ[B,C]`.
+- The two determinants are independent of `C`. Their squarefree `B`-divisors
+  have a persisted exact Bezout identity equal to one.
+
+### Changed
+- The declared four-coefficient restriction is now completely covered:
+  EXP-118 closes `d=0`, EXP-123/129/130 close `A!=0,d=1`, and EXP-131 closes
+  `A=0,d=1`.
+- The P0 route moves to EXP-132, a transverse `(2,8)` lift into the
+  24-parameter core using several accepted minor sections simultaneously.
+- Paper B v0.30 records the exact direct-boundary atlas while preserving the
+  open scope of the 24-parameter core, full `(72,108)` case, degree floor,
+  and JC(2).
+
 ## [0.59.000], 2026-07-31
 
 ### Added
