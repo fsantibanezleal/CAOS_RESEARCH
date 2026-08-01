@@ -1,0 +1,22 @@
+{
+  "p1-smoke-three-way": {
+    "status": "pass",
+    "detail": "bipyramid h=0:True cm=0:True; all-ones cm=-5; collinear cm=0 products-violated:15/15"
+  },
+  "p2-draw1": {
+    "status": "inconclusive-cap",
+    "detail": "328s; "
+  },
+  "p2-draw2": {
+    "status": "inconclusive-cap",
+    "detail": "330s; "
+  },
+  "p3-draw1": {
+    "status": "inconclusive-cap",
+    "detail": "329s; "
+  },
+  "p3-draw2": {
+    "status": "inconclusive-cap",
+    "detail": "313s; "
+  }
+}

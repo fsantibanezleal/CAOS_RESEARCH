@@ -1,0 +1,24 @@
+[09:29:52] EXP-011 runner start; seed 20260811
+[09:29:56] RESULT p1-smoke-three-way: pass bipyramid h=0:True cm=0:True; all-ones cm=-5; collinear cm=0 products-violated:15/15
+[09:29:56] p2-draw1: 5 sections, msolve launching (cap 300s)
+[09:35:24] RESULT p2-draw1: inconclusive-cap 328s; 
+[09:35:25] p2-draw2: 5 sections, msolve launching (cap 300s)
+[09:40:55] RESULT p2-draw2: inconclusive-cap 330s; 
+[09:40:56] p3-draw1: 4 sections, msolve launching (cap 300s)
+[09:46:25] RESULT p3-draw1: inconclusive-cap 329s; 
+[09:46:26] p3-draw2: 4 sections, msolve launching (cap 300s)
+[09:51:38] RESULT p3-draw2: inconclusive-cap 313s; 
+[09:51:39] P4: partial-GB union bound (15 subideals, 120 s each)
+[09:53:39]   subideal 0: cap 120s
+[09:55:39]   subideal 1: cap 120s
+[09:57:39]   subideal 2: cap 120s
+[09:59:20]   subideal 3: gb 16, leads 16
+[10:01:21]   subideal 4: cap 120s
+[10:03:21]   subideal 5: cap 120s
+[10:05:21]   subideal 6: cap 120s
+[10:07:21]   subideal 7: cap 120s
+[10:09:21]   subideal 8: cap 120s
+[10:11:21]   subideal 9: cap 120s
+[10:13:22]   subideal 10: cap 120s
+[10:15:22]   subideal 11: cap 120s
+[10:17:22]   subideal 12: cap 120s
