@@ -1633,8 +1633,11 @@
   separate rebuild of the transverse \(d=0\) quotient. Paper B v0.31 is
   required because the exact atlas claim changed.
 - Paper B v0.31 passed a warning-free two-pass 23-page build and complete
-  rendered visual QA. PR #123 merged at `7493003`. Zenodo record `21739032`
-  is published at immutable DOI `10.5281/zenodo.21739032`; its public
+  rendered visual QA. PR #123 merged at `7493003`. Canonical/latest Zenodo
+  record `21739069` is published at immutable DOI
+  `10.5281/zenodo.21739069`; its public
   407567-byte PDF MD5 `9e9219d0947eccc12dc6efc25b849698` matches the local
   artifact (SHA-256
   `60b0663896fad777020e00fe4332e7178a159f3c82789632efef7132b2525f3e`).
+  Record `21739032` contains the same bytes and remains an immutable,
+  superseded duplicate produced by a concurrent publication race.

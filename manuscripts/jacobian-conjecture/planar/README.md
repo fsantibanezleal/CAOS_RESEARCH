@@ -70,7 +70,9 @@ adversarial validation.
 
 Current manuscript version: **v0.31** (2026-08-01). Substantive revisions are published
 as new Zenodo versions under concept DOI `10.5281/zenodo.21503367`.
-Version 0.31 DOI: `10.5281/zenodo.21739032`; concept DOI
+Canonical/latest version 0.31 DOI: `10.5281/zenodo.21739069`; concept DOI
 `10.5281/zenodo.21503367`. The public 407567-byte v0.31 PDF has MD5
 `9e9219d0947eccc12dc6efc25b849698` and SHA-256
 `60b0663896fad777020e00fe4332e7178a159f3c82789632efef7132b2525f3e`.
+Immutable record `10.5281/zenodo.21739032` contains the identical bytes and is
+retained as a superseded duplicate created by a concurrent publication race.
