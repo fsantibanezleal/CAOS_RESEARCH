@@ -1,0 +1,26 @@
+{
+  "p0a-shape-dim": {
+    "status": "pass",
+    "detail": "dim=4 two-way in 1s"
+  },
+  "p0b-cross-validation": {
+    "status": "pass",
+    "detail": "entrywise agreement with EXP-016 at W1"
+  },
+  "p1-delta4": {
+    "status": "inconclusive-cap",
+    "detail": "full and all 13 subideals capped"
+  },
+  "p2-delta3": {
+    "status": "inconclusive-cap",
+    "detail": "full and all 80 subideals capped"
+  },
+  "p3-delta2": {
+    "status": "inconclusive-cap",
+    "detail": "full and all 84 subideals capped"
+  },
+  "p4-delta1": {
+    "status": "inconclusive-cap",
+    "detail": "full and all 20 subideals capped"
+  }
+}

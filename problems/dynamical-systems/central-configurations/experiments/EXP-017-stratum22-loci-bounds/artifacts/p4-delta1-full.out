@@ -1,0 +1,16 @@
+   ? `poly` ^ `number` failed
+   ? expected `poly` ^ `int`
+   ? error occurred in or before p4-delta1-full.sing line 31: `-cs^3*d1A^3*d1B^3*d2A^3*d2B^3*f*wA^3*wB+d1A^3*d1B^3*d2A^3*d2B^3*f*wA^3*wB^4;`
+   ? expected ideal-expression. type 'help ideal;'
+   ? `I` is not defined
+   ? error occurred in or before p4-delta1-full.sing line 32: `ideal S=std(I);`
+   ? expected ideal-expression. type 'help ideal;'
+   ? `S` is not defined
+   ? error occurred in or before p4-delta1-full.sing line 33: `string("SINGDIM=",dim(S));`
+   ? wrong type declaration. type 'help string;'
+   ? `S` is not defined
+   ? error occurred in or before p4-delta1-full.sing line 34: `ideal L=lead(S);`
+   ? expected ideal-expression. type 'help ideal;'
+   ? `L` is undefined
+   ? error occurred in or before p4-delta1-full.sing line 35: `L;`
+SING_OK

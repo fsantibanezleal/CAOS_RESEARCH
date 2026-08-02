@@ -456,3 +456,19 @@
   same lineage branch, touching nothing of the parallel session's tree. A
   curation commit by the other session (52668e4, preserving the EXP-010
   tuple API correction) is acknowledged.
+
+## 2026-08-02 - Round 13: EXP-017 decided (all caps, smokes green); the formulation lesson
+
+- EXP-017 VERDICT: SMOKES CONFIRMED (the enlarged ghost-free ring gives shape
+  dim 4 in a second; the mass matrix cross-validates entrywise against
+  EXP-016 at W1), ALL FOUR LOCI BOUNDS INCONCLUSIVE-CAP (full std at 300 s
+  and every per-minor subideal at 60 s walled: 13 + 80 + 84 + 20 subideals).
+  One pipeline fix before any outcome: fractions serialized as fake rational
+  exponents and Singular's exit-0-after-parse-error faked the OK sentinel;
+  fixed, error markers now fatal. THE DIAGNOSIS: premature elimination.
+  Row-LCM clearing inflates minors to degree near 100; Dias-Pan kept their
+  S-quantities as ring variables exactly to avoid this (their minors stay
+  degree <= 6 and completed in minutes). EXP-017b = the s-variable model
+  (about 20 extra variables with sparse defining relations s a^3 b^3 =
+  b^3 - a^3), declared next. The chain stands: stages (i) + (ii-rank)
+  proven, case arithmetic unchanged, no theorem claimed.
