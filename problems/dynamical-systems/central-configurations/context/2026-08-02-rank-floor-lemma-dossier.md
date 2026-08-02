@@ -413,3 +413,31 @@ fiber point feeds the Lemma 7.3 bound: the same care Dias-Pan's own
 Prop 7.2 / 7.4 chain used (a presentational subtlety our Dias-Pan
 dossier already recorded). Route A (norm elimination) continues in
 parallel as the all-components insurance.
+
+## The chamber program, fully specified (round 27 foundation)
+
+The sign-atom table (sign-atom-table-2026-08-02.txt) establishes:
+
+- The pair-row Deltas are MONOMIALS in the atoms: Delta_354 = -2fu,
+  Delta_356 = -2fp, Delta_364 = -2fu, Delta_365 = 2fp (machine-computed
+  closed forms). Hence in conditions C5-C8 the only non-monomial factors
+  are the two difference-brackets p h1 - u g1 and p gam - u g2 (from the
+  L35 m1/m2 entries), while the L36 variants carry the SUM-brackets
+  u g1 + p h1 and u g2 + p gam, which are sign-definite in every chamber
+  where h1, g1 (respectively gam, g2) share a sign.
+- Atom inventory: u, p > 0; six orientation atoms (h1, e12, f, gam, g1,
+  g2) with additive couplings (gam = h1 - e12, g1 = h1 + f,
+  g2 = gam + f) that make only a linear-feasibility-checkable subset of
+  sign vectors realizable; about twelve s-ordering atoms; two
+  difference-bracket atoms.
+- THE PROGRAM: enumerate the feasible orientation sign vectors (linear
+  feasibility over the atoms, trivial), extend by the s-ordering and
+  bracket atoms where a condition's definiteness needs them, and per
+  chamber test the EIGHT conditions for term-sign uniformity. Chambers
+  where any condition is sign-definite carry no rank-<=2 point; the
+  residual chambers (if any) are then explicit semialgebraic sets to be
+  bounded individually. Deliverable: either the empty residual (the
+  strong outcome: no physical rank-<=2 point on the good region at all)
+  or a small explicit residual list, each entry attackable by the
+  witness technique. This closes the physical k = 3 case either way,
+  completing the chain for the theorem's real count.

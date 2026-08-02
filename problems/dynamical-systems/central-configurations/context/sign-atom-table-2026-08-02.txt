@@ -1,0 +1,35 @@
+# Pair-row Delta closed forms (heights/widths):
+  Delta_354 = -2*f*u
+  Delta_356 = -2*f*p
+  Delta_364 = -2*f*u
+  Delta_365 = 2*f*p
+
+# Sign atoms inventory:
+  positive by stratum: u, p
+  orientation atoms (either sign): h1, e12, f, gam=h1-e12, g1=h1+f, g2=h1-e12+f
+  s-ordering atoms: sign(b-a) for each s(a,b) appearing:
+    s(r12,d1A)
+    s(r12,d1B)
+    s(r12,d2A)
+    s(r12,d2B)
+    s(d1A,wA)
+    s(d2A,wA)
+    s(d1B,wB)
+    s(d2B,wB)
+    s(d1A,cs)
+    s(d1A,cx)
+    s(d2A,cs)
+    s(d2A,cx)
+    s(d1B,cs)?
+    s(d1A,d1B)
+    s(d2A,d2B)
+    s(wA,cx)
+    s(wB,cs)?
+  bracket atoms (sign of mixed brackets): p*h1 - u*g1 = -Delta_135-type;
+    p*gam - u*g2; and the pair-row brackets above (factored forms show their atoms).
+
+# NOTE: Delta_354 etc. factor over the atoms (see above), so EVERY term of
+# all eight conditions is a product of: a rational constant, powers of u/p,
+# s-ordering atoms, orientation atoms, and at most one mixed bracket atom.
+# The chamber lattice = sign vectors over ~20 atoms with geometric couplings;
+# the residual set (no condition sign-definite) is the next object to bound.
