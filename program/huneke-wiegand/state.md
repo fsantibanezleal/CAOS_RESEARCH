@@ -12,6 +12,7 @@
 | 2026-08-02 | consolidating | consolidating | PR #139 passed guards and tests and promoted the complete theorem, certificate and manuscript record to `develop` |
 | 2026-08-02 | consolidating | consolidating | EXP-007 certified the public pair as the unique normalized rigid pair at the minimum `F=181` |
 | 2026-08-02 | consolidating | consolidating | eight-page preprint v0.02 published on Zenodo with the minimum-layer theorem and exact public-file hash verification |
+| 2026-08-02 | consolidating | consolidating | PR #142 passed guards/tests and promoted EXP-007 plus preprint v0.02 to `develop` at `136781d0` |
 
 Current state: **consolidating**.
 
