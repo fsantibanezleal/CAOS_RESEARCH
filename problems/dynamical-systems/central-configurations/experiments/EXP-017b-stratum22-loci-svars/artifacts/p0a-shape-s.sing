@@ -1,0 +1,38 @@
+ring r=0,(r12,d1A,d1B,d2A,d2B,wA,wB,cs,cx,h1,e12,f,s_cs_d1A,s_cs_d1B,s_cs_d2A,s_cs_d2B,s_cs_wA,s_cs_wB,s_cx_d1A,s_cx_d1B,s_cx_d2A,s_cx_d2B,s_cx_wA,s_cx_wB,s_d1A_d1B,s_d1A_r12,s_d1A_wA,s_d1B_r12,s_d1B_wB,s_d2A_d2B,s_d2A_r12,s_d2A_wA,s_d2B_r12,s_d2B_wB,t),dp;
+short=0;
+ideal I=-4*d1A^2+4*h1^2+wA^2,
+e12^2-r12^2,
+-4*cs^2+4*f^2+wA^2-2*wA*wB+wB^2,
+-4*d2A^2+4*e12^2-8*e12*h1+4*h1^2+wA^2,
+-4*d1B^2+4*f^2+8*f*h1+4*h1^2+wB^2,
+-4*d2B^2+4*e12^2-8*e12*f-8*e12*h1+4*f^2+8*f*h1+4*h1^2+wB^2,
+-cs^2+cx^2-wA*wB,
+r12-1,
+cs^3*d1A^3*s_cs_d1A+cs^3-d1A^3,
+cs^3*d1B^3*s_cs_d1B+cs^3-d1B^3,
+cs^3*d2A^3*s_cs_d2A+cs^3-d2A^3,
+cs^3*d2B^3*s_cs_d2B+cs^3-d2B^3,
+cs^3*s_cs_wA*wA^3+cs^3-wA^3,
+cs^3*s_cs_wB*wB^3+cs^3-wB^3,
+cx^3*d1A^3*s_cx_d1A+cx^3-d1A^3,
+cx^3*d1B^3*s_cx_d1B+cx^3-d1B^3,
+cx^3*d2A^3*s_cx_d2A+cx^3-d2A^3,
+cx^3*d2B^3*s_cx_d2B+cx^3-d2B^3,
+cx^3*s_cx_wA*wA^3+cx^3-wA^3,
+cx^3*s_cx_wB*wB^3+cx^3-wB^3,
+d1A^3*d1B^3*s_d1A_d1B+d1A^3-d1B^3,
+d1A^3*r12^3*s_d1A_r12+d1A^3-r12^3,
+d1A^3*s_d1A_wA*wA^3+d1A^3-wA^3,
+d1B^3*r12^3*s_d1B_r12+d1B^3-r12^3,
+d1B^3*s_d1B_wB*wB^3+d1B^3-wB^3,
+d2A^3*d2B^3*s_d2A_d2B+d2A^3-d2B^3,
+d2A^3*r12^3*s_d2A_r12+d2A^3-r12^3,
+d2A^3*s_d2A_wA*wA^3+d2A^3-wA^3,
+d2B^3*r12^3*s_d2B_r12+d2B^3-r12^3,
+d2B^3*s_d2B_wB*wB^3+d2B^3-wB^3,
+cs*cx*d1A*d1B*d2A*d2B*f*r12*t*wA*wB-1;
+ideal S=std(I);
+string("SINGDIM=",dim(S));
+ideal L=lead(S);
+L;
+quit;

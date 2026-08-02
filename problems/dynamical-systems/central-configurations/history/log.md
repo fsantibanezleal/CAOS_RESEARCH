@@ -472,3 +472,17 @@
   (about 20 extra variables with sparse defining relations s a^3 b^3 =
   b^3 - a^3), declared next. The chain stands: stages (i) + (ii-rank)
   proven, case arithmetic unchanged, no theorem claimed.
+
+## 2026-08-02 - Round 14: EXP-017b decided at the gate; the see-saw is measured
+
+- EXP-017b VERDICT: THE BASE IDEAL ITSELF CAPS IN THE S-MODEL. The smoke gate
+  (dim of shape + 22 degree-7 defining relations in 34 variables) walled at
+  600 s and stopped everything before any minor time. Combined with EXP-017
+  this measures the cost see-saw from both sides: eliminate the s-factors and
+  the minors reach degree near 100; retain them and the base ideal explodes.
+  Structural root: Dias-Pan's matrix entries were single-term, ours sum over
+  mirror-pair members. EXP-017c declared: a mod-p feasibility SCREEN
+  (screen-only, never verdict-carrying) over both formulations and all four
+  rungs, then ONE long declared-budget QQ run on the most promising cell,
+  with the Prop 7.2-style sign-analysis lemma prepared in parallel as the
+  Groebner-free fallback for the low-rank cases.

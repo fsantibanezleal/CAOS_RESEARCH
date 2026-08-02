@@ -1,0 +1,2 @@
+[04:45:17] EXP-017b runner start; 22 s-variables: ['s_cs_d1A', 's_cs_d1B', 's_cs_d2A', 's_cs_d2B', 's_cs_wA', 's_cs_wB', 's_cx_d1A', 's_cx_d1B', 's_cx_d2A', 's_cx_d2B', 's_cx_wA', 's_cx_wB', 's_d1A_d1B', 's_d1A_r12', 's_d1A_wA', 's_d1B_r12', 's_d1B_wB', 's_d2A_d2B', 's_d2A_r12', 's_d2A_wA', 's_d2B_r12', 's_d2B_wB']
+[04:56:25] RESULT p0a-shape-dim: FAIL-or-cap st=cap-or-error ours=None sing=None 667s
