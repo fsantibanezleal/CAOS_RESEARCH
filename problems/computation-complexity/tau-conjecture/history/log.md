@@ -156,3 +156,35 @@
 - Ledger: vault manuscripts/tau-conjecture/ (zenodo.json, sources.json,
   deposits.json) + both manuscripts READMEs updated.
 - Next: the [8,9] window (TCB-021).
+
+## 2026-08-02 (round 7): THE WINDOW IS CLOSED: min tau(6 roots) = 8
+
+- **EXP-006 CONFIRMED; our emptiness prediction REFUTED (third time).**
+  The case-split reduction (an 8-gate 6-rooter's final gate must involve
+  the 7th value; if it is a multiplication, its root count is the union
+  of two known root sets) turned the times-case into a co-occurrence
+  query, decided EXACTLY by scanning all 25,844,905 depth-6 states
+  (2h23m): 408 witnesses. Three reconstructed as explicit 8-gate
+  programs by restricted DFS and verified independently: e.g.
+  x-1; 2; q = x(x-1); 4; q-2; q-6; q(q-2); f = q(q-2)(q-6), roots
+  {-2,-1,0,1,2,3}. Combined with z_max(7) = 5: **the minimal tau with 6
+  distinct integer roots is exactly 8**; z_max(8) >= 6.
+- The schema hunt (part 2) found the family but proved only 9 gates:
+  its cost model built constants independently; the scan's witness
+  reuses the subtraction chain q -> q-2 -> q-6 (constants {2,4}): the
+  chained-sharing lesson is now in the RL-8 cost model.
+- Prediction 3 also refuted: the 67 five-rooters of tau <= 7 realize
+  SEVEN root-set patterns (39x {-2..2}, shifted blocks, and the
+  non-consecutive {-1,0,1,2,4} and {-4,-2,-1,0,1}): punctured sets are
+  what leave room for a co-occurring factor to complete 6 roots.
+- **Paper v0.02 PUBLISHED** as a Zenodo new version (native InvenioRDM
+  flow): version DOI 10.5281/zenodo.21763182, concept unchanged;
+  metadata description synced (a stale two-vs-three prediction count
+  fixed via the edit flow, DOI unchanged).
+- SAT design note (2026-08-02) persisted before the scan finished; the
+  lane is rescoped to z_max(8) exact / deeper thresholds (the window
+  closed on the times side without SAT).
+- Wiki 03 updated; wiki 05 (open questions board) written. New backlog:
+  TCB-025 (full-retention re-scan: 8-gate 7-rooter?), TCB-026
+  (punctured five-rooter anatomy).
+- Dead ends: none; one metadata slip caught and fixed post-publish.

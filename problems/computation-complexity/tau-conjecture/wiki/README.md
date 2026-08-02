@@ -31,7 +31,8 @@ concept DOI [10.5281/zenodo.21753438](https://doi.org/10.5281/zenodo.21753438)
 | [02 the implication ladder](02-implication-ladder.md) | SS95, Koiran 2004, Buergisser 2009, factoring, Rojas reduction, 2026 state | transcribed 2026-08-01 |
 | [03 the census](03-census.md) | Exact $z_{\max}(\tau)$ ladder, record gallery, the tower obstruction | transcribed 2026-08-01 (EXP-003 row pending its verdict) |
 | [04 mechanisms](04-mechanisms.md) | Move inventory, the two stall theorems, dual $T(S)$ table | transcribed 2026-08-01 (round 4) |
-| 05 experiments index | One line per EXP-NNN with verdicts | current |
+| [05 open questions](05-open-questions.md) | The standing board with routes | transcribed 2026-08-02 |
+| 06 experiments index | One line per EXP-NNN with verdicts | current (below) |
 
 ## Experiments index
 
@@ -42,3 +43,4 @@ concept DOI [10.5281/zenodo.21753438](https://doi.org/10.5281/zenodo.21753438)
 | [EXP-003](../experiments/EXP-003-last-gate-depth6/) | $z_{\max}(6)$ via the last-gate scan | census CONFIRMED: $z_{\max}(6) = 5$ (min $\tau$ for 5 roots = 6); our "=4" prediction REFUTED |
 | [EXP-004](../experiments/EXP-004-depth7/) | $z_{\max}(7)$: does the bottom law continue? | CONFIRMED: $z_{\max}(7) = 5$; the law BREAKS (second plateau); min $\tau$ for 6 roots in $[8,9]$ |
 | [EXP-005](../experiments/EXP-005-family-towers/) | Family towers $x^2 - c$: is the parameterized loophole real? | CONFIRMED (empty; max 5 only at $c=2$); DISCOVERED the 2-cycle series $c = m^2{+}m{+}1$; cycle-length ceiling |
+| [EXP-006](../experiments/EXP-006-window-89/) | The $[8,9]$ window | WINDOW CLOSED: min $	au$(6 roots) = 8 (408 witnesses; our emptiness prediction refuted); five-rooter taxonomy corrected (7 patterns) |

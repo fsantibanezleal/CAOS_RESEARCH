@@ -22,7 +22,9 @@
 | TCB-014 | ECCC TR19-142 (IPS / tau) read; proof-complexity bridge note | todo | P3 | |
 | TCB-019 | EXP-004: z_max(7) | done | P0 | 2026-08-01 CONFIRMED: z_max(7) = 5, bottom law breaks; frontier 25,844,905 states exact; done WITHOUT canonicalization (interned engine + last-gate scan) |
 | TCB-020 | Generalize the stall lemma to monic inner maps | done | P2 | 2026-08-01 PROVED (monic stall theorem note + spot-check); EXP-005 measured the x^2-c family: loophole empty |
-| TCB-021 | Close the [8,9] window for 6 roots (8-gate 6-rooter: exists?) | todo | P0 | RL-8 construction hunt first, then RL-7 SAT decision |
+| TCB-021 | Close the [8,9] window for 6 roots | done | P0 | 2026-08-02 EXP-006: min tau(6 roots) = 8 EXACTLY (408 witnesses, 3 replay-verified); our emptiness prediction refuted; shipped as paper v0.02 (DOI 10.5281/zenodo.21763182) |
+| TCB-025 | Re-scan with full hit retention: max union size among the 408 (8-gate 7-rooter?) | todo | P1 | ~2.4 h; feeds z_max(8) |
+| TCB-026 | Anatomy pass: non-consecutive five-rooter root sets (7 patterns found) | todo | P2 | EXP-006 discovery |
 | TCB-022 | Manuscript gate assessment + paper | done | P1 | 2026-08-01 PUBLISHED: census paper v0.01, DOI 10.5281/zenodo.21753439 (concept .21753438) |
 | TCB-023 | Narkiewicz read: pin the classical cycle-length <= 2 attribution | todo | P2 | Cited [MV] in EXP-005 verdict with our own [D] proof |
 | TCB-024 | Doyle-Poonen read (V8 import gate) | todo | P2 | Before any uniform-boundedness import |

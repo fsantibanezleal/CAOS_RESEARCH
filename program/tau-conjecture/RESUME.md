@@ -1,6 +1,6 @@
 # tau-conjecture: RESUME (zero-loss handoff)
 
-Updated 2026-08-01, round 6 close (manuscript published). First read for any fresh session, per
+Updated 2026-08-02, round 7 close (window closed; paper v0.02). First read for any fresh session, per
 methodology 07. Derived view: on conflict, experiment verdicts win.
 
 ## 1. State in one screen
@@ -28,8 +28,9 @@ $$z_{\max}(\tau) = 1, 2, 3, 3, 4, 5, 5 \quad (\tau = 1..7).$$
 PLATEAUS at $\tau = 4$ and $\tau = 7$: the bottom law $z = \tau - 1$
 holds only for $3 \le \tau \le 6$ and BREAKS at 7 (EXP-004). Minimal
 $\tau$: 4 roots at 5 (EXP-002), 5 roots at 6 (EXP-003, multiply-by-$x$
-move), 6 roots in $[8, 9]$ (EXP-004 + the 9-gate witness $q(q-2)(q-6)$,
-$q = x^2 - x$). Records are DOS splittings on $x^2 - 2$; record 2-adic
+move), 6 roots at EXACTLY 8 (EXP-006: 408 witnesses; e.g. the 8-gate
+$q(q-2)(q-6)$, $q = x(x-1)$, via chained subtraction sharing), so
+$z_{\max}(8) \ge 6$. Records are DOS splittings on $x^2 - 2$; record 2-adic
 spectra $\{0,1\}$. Enumerator anchored to Markstroem 14/14, sympy
 284/284, and every prior census value re-derived by the interned engine
 (EXP-004 internal gates). Family measurement (EXP-005): across
@@ -66,25 +67,25 @@ from the exhausted depth-$d$ frontier without storing depth $d+1$.
 | 003 | $z_{\max}(6)$ via last-gate scan | census CONFIRMED; our "=4" prediction REFUTED | $z_{\max}(6) = 5$; min $\tau$ for 5 roots = 6; multiply-by-$x$ move |
 | 004 | $z_{\max}(7)$: bottom law? | CONFIRMED (prediction right) | $z_{\max}(7) = 5$: second plateau; min $\tau$(6 roots) in $[8,9]$; 25.8M-state frontier exact |
 | 005 | Family towers $x^2 - c$: loophole? | CONFIRMED (load-bearing); flagged clause refuted | Family max 5 only at $c = 2$; 2-cycle series $c = m^2{+}m{+}1$ discovered; cycle ceiling |
+| 006 | The $[8,9]$ window | census CONFIRMED; our emptiness prediction REFUTED | **min $\tau$(6 roots) = 8** (408 witnesses; 3 replay-verified); five-rooter taxonomy: 7 patterns incl. non-consecutive; shipped as paper v0.02 |
 
 ## 4. In flight
 
-Nothing running. Standing decision-bearing question: the $[8, 9]$ window
-for the minimal $\tau$ with 6 distinct integer roots. Depth-8 full
-census is out of naive single-machine reach (frontier ~$10^9$ states);
-declared routes: RL-8 moves-calculus construction hunt (cheap first),
-RL-7 SAT-lane 8-gate decision, or TCB-005 canonicalization / compiled
-backend.
+Nothing running. The window is CLOSED (threshold = 8). Standing
+questions: exact $z_{\max}(8)$ (known $\ge 6$; whether any of the 408
+hits reaches union 7 was truncated: TCB-025 re-scan); the 7-root
+threshold; the punctured five-rooter mechanism (TCB-026).
 
 ## 5. Next actions, ordered
 
-1. TCB-021: close the $[8,9]$ window (RL-8 construction hunt, then the
-   RL-7 SAT encoding for the 8-gate decision if the hunt fails). A
-   result here ships as a Zenodo NEW VERSION of the census paper.
-2. TCB-005: canonicalization or compiled backend (depth-8 census).
-3. Reads before imports: Doyle-Poonen (TCB-024), Narkiewicz attribution
+1. TCB-025: re-scan with full hit retention (max union size; 8-gate
+   7-rooter?): ~2.4 h, same machinery as EXP-006.
+2. TCB-005: canonicalization or compiled backend (full depth-8 census,
+   exact $z_{\max}(8)$).
+3. TCB-026: anatomy pass on the non-consecutive five-rooter patterns.
+4. Reads before imports: Doyle-Poonen (TCB-024), Narkiewicz attribution
    (TCB-023), Cheng 2004 full, KPT15.
-4. RL-2/RL-3: valuation-spectrum record hunt; $T(S)$ structure lemmas.
+5. RL-2/RL-3: valuation-spectrum record hunt; $T(S)$ structure lemmas.
 
 Commands: tests
 `.venv python -m pytest problems/computation-complexity/tau-conjecture/code/tclib -q`;
@@ -103,9 +104,10 @@ census runs from each experiment folder via the repository checkout venv
 - Code: `.../code/tclib/` (enum.py + test_tclib.py)
 - Wiki: `.../wiki/` (README + 01-statement-and-history.md)
 - History: `.../history/log.md` · Program: `program/tau-conjecture/`
-- Manuscript: `manuscripts/tau-conjecture/census/` (v0.01 PUBLISHED:
-  version DOI 10.5281/zenodo.21753439, concept 10.5281/zenodo.21753438;
-  vault ledger `<CAOS_MANAGE>/manuscripts/tau-conjecture/deposits.json`;
+- Manuscript: `manuscripts/tau-conjecture/census/` (v0.02 PUBLISHED
+  2026-08-02: version DOI 10.5281/zenodo.21763182; v0.01:
+  10.5281/zenodo.21753439; concept 10.5281/zenodo.21753438 always
+  latest; vault ledger `<CAOS_MANAGE>/manuscripts/tau-conjecture/deposits.json`;
   updates ship as Zenodo NEW VERSIONS, never edits)
 - Mirror: `<CAOS_MANAGE>/plans/caos-research/tau-conjecture/`
 - Worktree gotcha: this problem's sessions use the git worktree
@@ -137,3 +139,4 @@ census runs from each experiment folder via the repository checkout venv
 | 2026-08-01 round 2 | Census decided $\tau = 5$ | External dialogue (Rojas full read), reformulation (dual $T(S)$ view B1; valuation-spectrum view B2), anatomy (DOS/Chebyshev-shadow mechanism, unpredicted), two-sided (records pile valuations: pressure on digit side) | Approaches ranking; RL-1..6 board; TCB-016 concrete lemma target |
 | 2026-08-01 round 3 | Census decided $\tau = 6$ (last-gate scan; prediction refuted honestly) | Anatomy/theorem (tower lemma PROVED: constant integer yield of the doubling factory), method lens (last-gate lemma: one depth free), audit (smoke gate caught the input-accounting artifact; sympy 284/284) | The multiply-by-$x$ move; the $z = \tau - 1$ law question (TCB-019); stall-lemma generalization target (TCB-020) |
 | 2026-08-01 rounds 4-5 | Census decided $\tau = 7$ (z_max = 5: plateau; prediction right) | Theorem (monic stall: single-map towers bounded for ALL monic maps), arithmetic dynamics (V8: cycle-length ceiling explained the EXP-005 discovery), external dialogue (Cheng, adelic tau, SAT synthesis pinned), audit (EXP-005 tooling incident: divisor counting vs c^{2^k} constants; escape-bound finder cross-checked) | Views V5-V8; RL-7..9; the plateaus phenomenon; the $[8,9]$ window as first SAT target; family loophole resolved empty for quadratics |
+| 2026-08-02 round 7 | Window CLOSED: min tau(6 roots) = 8 (times-case co-occurrence scan; emptiness prediction refuted, third time) | Method (case-split invariant: product roots = union), audit (smoke known-answer; witnesses replay-verified independently), anatomy (7 five-rooter patterns incl. punctured) | Paper v0.02 (DOI 10.5281/zenodo.21763182); TCB-025/026 minted; SAT lane rescoped to z_max(8) |
