@@ -39,3 +39,15 @@
   independent DRAT-trim validation.
 - Fresh source/tool sweep found no published extension beyond 69 and no candidate minimality result.
 - Declared EXP-004 before installing proof tools, implementation, or computation.
+
+## 2026-08-02 - EXP-004 Route A complete and EXP-005 declared
+
+- Directly implemented the Blanco--Rosales complete tree and independently checked every node.
+- Exhausted all odd Frobenius values through 67: 48,954 symmetric semigroups and 1,503,391 gaps,
+  with zero rigid ideals. The full run took 529.60 seconds.
+- Started the independent 1,156-query CaDiCaL/DRAT-trim sweep; EXP-004 remains open until every
+  proof passes.
+- A fresh source search found no public frontier beyond 69 and no proof that the public `F=181`
+  value is minimal.
+- Declared EXP-005 before implementation or selector-formula computation. Its one-hot selector
+  asks one existential SAT question per Frobenius value and retains proof-carrying lower bounds.
