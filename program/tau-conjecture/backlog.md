@@ -17,12 +17,12 @@
 | TCB-009 | Read Lipton 1994 + Shamir 1979; factoring bridge page for the wiki | todo | P2 | Also the division-model contrast |
 | TCB-010 | PosSLP adjacency survey (Allender et al. 2009; arXiv:2307.08008, 2403.00115) | todo | P3 | Dictionary lens; decision-side twin |
 | TCB-011 | Wiki pages 01-05 (statement/history; implication ladder; census; mechanisms; open questions) | todo | P2 | Vertical: each page lands with the round that produces its content |
-| TCB-012 | Manuscript (replication-first: census + Markstroem extension) per methodology 09 | todo | P3 | Gate: enough validated + novel material |
+| TCB-012 | Manuscript (replication-first) | done | P3 | Superseded by TCB-022: census paper published 2026-08-01 |
 | TCB-013 | Web problem page + baked census artifacts | todo | P3 | Publication gate (methodology 06) at release |
 | TCB-014 | ECCC TR19-142 (IPS / tau) read; proof-complexity bridge note | todo | P3 | |
 | TCB-019 | EXP-004: z_max(7) | done | P0 | 2026-08-01 CONFIRMED: z_max(7) = 5, bottom law breaks; frontier 25,844,905 states exact; done WITHOUT canonicalization (interned engine + last-gate scan) |
 | TCB-020 | Generalize the stall lemma to monic inner maps | done | P2 | 2026-08-01 PROVED (monic stall theorem note + spot-check); EXP-005 measured the x^2-c family: loophole empty |
 | TCB-021 | Close the [8,9] window for 6 roots (8-gate 6-rooter: exists?) | todo | P0 | RL-8 construction hunt first, then RL-7 SAT decision |
-| TCB-022 | Manuscript gate assessment + plan (methodology 09) | todo | P1 | Base: census 1-7, three lemmas, two discoveries, Markstroem anchor |
+| TCB-022 | Manuscript gate assessment + paper | done | P1 | 2026-08-01 PUBLISHED: census paper v0.01, DOI 10.5281/zenodo.21753439 (concept .21753438) |
 | TCB-023 | Narkiewicz read: pin the classical cycle-length <= 2 attribution | todo | P2 | Cited [MV] in EXP-005 verdict with our own [D] proof |
 | TCB-024 | Doyle-Poonen read (V8 import gate) | todo | P2 | Before any uniform-boundedness import |

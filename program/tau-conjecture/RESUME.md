@@ -1,6 +1,6 @@
 # tau-conjecture: RESUME (zero-loss handoff)
 
-Updated 2026-08-01, rounds 4-5 close. First read for any fresh session, per
+Updated 2026-08-01, round 6 close (manuscript published). First read for any fresh session, per
 methodology 07. Derived view: on conflict, experiment verdicts win.
 
 ## 1. State in one screen
@@ -79,14 +79,12 @@ backend.
 ## 5. Next actions, ordered
 
 1. TCB-021: close the $[8,9]$ window (RL-8 construction hunt, then the
-   RL-7 SAT encoding for the 8-gate decision if the hunt fails).
-2. TCB-022: manuscript gate assessment (methodology 09): census 1-7 +
-   three proved lemmas + two mechanism discoveries is likely past the
-   replication-first threshold; plan before writing.
-3. TCB-005: canonicalization or compiled backend (depth-8 census).
-4. Reads before imports: Doyle-Poonen (TCB-024), Narkiewicz attribution
+   RL-7 SAT encoding for the 8-gate decision if the hunt fails). A
+   result here ships as a Zenodo NEW VERSION of the census paper.
+2. TCB-005: canonicalization or compiled backend (depth-8 census).
+3. Reads before imports: Doyle-Poonen (TCB-024), Narkiewicz attribution
    (TCB-023), Cheng 2004 full, KPT15.
-5. RL-2/RL-3: valuation-spectrum record hunt; $T(S)$ structure lemmas.
+4. RL-2/RL-3: valuation-spectrum record hunt; $T(S)$ structure lemmas.
 
 Commands: tests
 `.venv python -m pytest problems/computation-complexity/tau-conjecture/code/tclib -q`;
@@ -105,6 +103,10 @@ census runs from each experiment folder via the repository checkout venv
 - Code: `.../code/tclib/` (enum.py + test_tclib.py)
 - Wiki: `.../wiki/` (README + 01-statement-and-history.md)
 - History: `.../history/log.md` · Program: `program/tau-conjecture/`
+- Manuscript: `manuscripts/tau-conjecture/census/` (v0.01 PUBLISHED:
+  version DOI 10.5281/zenodo.21753439, concept 10.5281/zenodo.21753438;
+  vault ledger `<CAOS_MANAGE>/manuscripts/tau-conjecture/deposits.json`;
+  updates ship as Zenodo NEW VERSIONS, never edits)
 - Mirror: `<CAOS_MANAGE>/plans/caos-research/tau-conjecture/`
 - Worktree gotcha: this problem's sessions use the git worktree
   `E:\_Temp\caos-research-tau` (branch `work/tau-conjecture/open`); the
