@@ -236,3 +236,33 @@ dim <= 0; mirror on B1. Hence
     dim( shape  meet  {rank = 0} ) <= 0 :   the k = 1 case is CLOSED.
 
 ## Scoreboard: k = 0, 1, 2 PROVEN. Remaining: k = 3 (bordered minors), k = 4 (rank-4 CC witness or image argument).
+
+## The shape-plus reframing and the border screen (2026-08-02, round 22)
+
+REFRAMING that dissolves the component obstacle for witness-anchored cuts:
+every identity in this dossier is proven THROUGH the coordinate
+parametrization, i.e. as an identity on shape+, the closure of the image
+of the irreducible parameter space (a1, a2, u, v, p, q). All physical
+stratum central configurations live on shape+, so the Lemma 7.3 chain only
+ever needs bounds on shape+, which is IRREDUCIBLE of gauged dimension 4
+(the parametrization count, EXP-015-consistent). On an irreducible
+variety, Krull's theorem plus a SINGLE witness where a polynomial is
+nonzero yields dim(shape+ meet {g = 0}) = 3: no component identification,
+no minAss, no Groebner dimension needed for the FIRST cut.
+
+BORDER SCREEN (numeric-separation at 60 digits, honest label; exact
+confirmation of one border queued): all EIGHT 3x3 borders of the proven
+anti-diagonal corner {L13, L23} x {m1, m2} are nonzero at BOTH rank-4
+witness geometries W1 and W2, with magnitudes between 1e-1 and 1e-5
+against a 1e-30 separation threshold. Consequence pattern for k = 3 on
+shape+ off the branches: rank <= 2 forces all eight borders to vanish
+(the bordered-minor criterion over the nonzero corner); ONE exactly-
+confirmed nonzero border at W1 gives the first Krull cut
+(dim <= 3); the SECOND cut (to dim <= 2, what k = 3 needs) requires an
+argument on the border hypersurface's 3-folds: candidates are a second
+border shown non-vanishing on each such 3-fold via the sign-chamber
+structure, or a resultant-style independence identity between two
+borders. Declared next: (i) the exact multiquadratic-reduction
+confirmation of the largest border at W1 (represent each sqrt as a
+symbol with its square relation, reduce, and read the coefficient
+vector); (ii) the two-border independence analysis.
