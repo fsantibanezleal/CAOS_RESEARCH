@@ -176,11 +176,12 @@ def main() -> int:
 
     require(candidate_check["accepted"], "P5 solver model passes independent exact checks")
     require(candidate["membership_sha256"] == membership_hash(candidate_membership), "P6 model hash recorded")
+    candidate_summary = {key: value for key, value in candidate.items() if key != "membership"}
     output = {
         "verdict": "CONFIRMED",
         "predictions": {f"P{number}": "PASS" for number in range(1, 7)},
         "solver": {"name": "Z3", "version": z3.get_version_string(), "timeout_ms": TIMEOUT_MS},
-        "candidate": candidate,
+        "candidate": candidate_summary,
         "candidate_checker": candidate_check,
         "controls": controls,
     }

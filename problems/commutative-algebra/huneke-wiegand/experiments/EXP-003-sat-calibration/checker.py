@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 
@@ -72,7 +73,8 @@ def analyze_model(membership: list[bool], frobenius: int, shift: int) -> dict[st
     minimum_inverse = next(value for value in range(frobenius + 2) if inverse_member(value))
     window_end = 2 * frobenius + 1
     missing_from_sum: list[int] = []
-    representations: dict[str, list[int]] = {}
+    representation_rows: list[str] = []
+    first_representations: dict[str, list[int]] = {}
     reverse_failures: list[tuple[int, int]] = []
     for value in range(window_end + 1):
         pairs = [
@@ -84,7 +86,10 @@ def analyze_model(membership: list[bool], frobenius: int, shift: int) -> dict[st
             if not pairs:
                 missing_from_sum.append(value)
             else:
-                representations[str(value)] = list(pairs[0])
+                first_pair = pairs[0]
+                representation_rows.append(f"{value}:{first_pair[0]}:{first_pair[1]}")
+                if len(first_representations) < 12:
+                    first_representations[str(value)] = list(first_pair)
         reverse_failures.extend(
             pair for pair in pairs if not square_inverse_member(value)
         )
@@ -99,6 +104,7 @@ def analyze_model(membership: list[bool], frobenius: int, shift: int) -> dict[st
         violations.append("tail bound exceeds encoded window")
 
     bitstring = "".join("1" if value else "0" for value in membership)
+    representation_bytes = "\n".join(representation_rows).encode("ascii")
     return {
         "accepted": not violations,
         "violations": violations,
@@ -109,7 +115,9 @@ def analyze_model(membership: list[bool], frobenius: int, shift: int) -> dict[st
         "tail_start": tail_start,
         "missing_from_sum": missing_from_sum,
         "reverse_failures": reverse_failures,
-        "representations": representations,
+        "representation_count": len(representation_rows),
+        "representation_sha256": hashlib.sha256(representation_bytes).hexdigest(),
+        "first_representations": first_representations,
         "membership_bitstring": bitstring,
     }
 
