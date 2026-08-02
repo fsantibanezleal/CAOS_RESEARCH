@@ -23,3 +23,5 @@
 - EXP-002 verdict CONFIRMED on P1-P6 by DP and Apéry routes. Computed overring Frobenius 125,
   genus 88, type 24 and new minimal generators 101 and 107. Audited Dey--Lyle Proposition
   4.1(2) and Theorems 4.2--4.4 to obtain the exact rigidity/reflexivity/Ext/Tor escape map.
+- Declared EXP-003 before SAT dependency installation, implementation or execution. Kept
+  calibration separate from any uniqueness, minimality or certified-UNSAT claim.

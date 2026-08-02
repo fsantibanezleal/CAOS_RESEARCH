@@ -49,7 +49,7 @@ there, while `Ext^1_E(I,E)`, `Ext^2_E(I,I)` and `Tor^R_1(I,E)` are nonzero.
 |---|---|---|---|
 | EXP-001 | Can Singular/4ti2 independently reproduce the colon equality and reject a known-positive control? | CONFIRMED | 322-generator dimension-one toric basis; zero differences; control residues |
 | EXP-002 | What is the exact endomorphism overring and why do modern positive criteria miss I? | CONFIRMED | exact semigroup, type 24, and forced Ext/Tor escape map |
-| EXP-003 | Can SAT recover `(F,s)=(181,14)` and certify a lower frontier? | planned | minimality machinery |
+| EXP-003 | Can SAT recover `(F,s)=(181,14)` and calibrate exact controls? | declared | independently checked SAT machinery |
 
 ## Strongest routes
 
@@ -74,9 +74,9 @@ there, while `Ext^1_E(I,E)`, `Ext^2_E(I,I)` and `Tor^R_1(I,E)` are nonzero.
 
 ## 4. In flight
 
-No computation is currently in flight. EXP-003 is the next declared-before-run target. EXP-001
-and EXP-002 are closed; EXP-001's instrumentation failures are archived and do not count as
-mathematical runs.
+EXP-003 is declared before dependency installation, implementation or run. It calibrates a finite
+SAT encoding at the known candidate and a known-positive control. EXP-001 and EXP-002 are closed;
+EXP-001's instrumentation failures are archived and do not count as mathematical runs.
 
 ## 5. Next actions
 
