@@ -168,3 +168,17 @@ is CLOSED.
            13-variable formulation from EXP-017 may make minAssGTZ
            tractable where the chain-squared 10-variable version capped;
            one 300 s attempt is queued.
+
+## The 3 x 3 catalog (same day): raw material, no clean products
+
+All 80 nonzero 3 x 3 minors are computed and factored
+(minor3-catalog-2026-08-02.txt): NONE factors into single-s-symbol pieces
+(the two-term mA/mB entries of the pair rows mix into every three-row
+determinant). The k = 3 case therefore needs a different argument than
+k = 2's Boolean products. The declared route: BORDERED MINORS. On the
+complement of the rank-<2 branches, a specific 2 x 2 with known closed form
+is nonzero (piece 1 or piece 2); rank <= 2 there forces every 3 x 3 border
+of that minor to vanish, and those borders inherit the four known clean
+entries, so their expansions are single-bracket expressions whose vanishing
+loci can be analyzed against the shape inequalities case by case. This is
+the next session's mathematics; the catalog is its raw material.
