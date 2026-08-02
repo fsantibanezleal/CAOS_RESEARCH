@@ -1,0 +1,11 @@
+p1-delta4-full p=32003 rc=124 secs=332 NODIM
+p2-delta3-full p=32003 rc=124 secs=335 NODIM
+p3-delta2-full p=32003 rc=124 secs=333 NODIM
+p4-delta1-full p=32003 rc=124 secs=332 NODIM
+p0a-shape-s p=32003 rc=124 secs=336 NODIM
+p1-delta4-full p=1073741789 rc=124 secs=332 NODIM
+p2-delta3-full p=1073741789 rc=124 secs=332 NODIM
+p3-delta2-full p=1073741789 rc=124 secs=333 NODIM
+p4-delta1-full p=1073741789 rc=124 secs=334 NODIM
+p0a-shape-s p=1073741789 rc=124 secs=336 NODIM
+SCREEN_DONE

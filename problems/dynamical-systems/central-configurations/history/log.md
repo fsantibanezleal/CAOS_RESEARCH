@@ -486,3 +486,17 @@
   rungs, then ONE long declared-budget QQ run on the most promising cell,
   with the Prop 7.2-style sign-analysis lemma prepared in parallel as the
   Groebner-free fallback for the low-rank cases.
+
+## 2026-08-02 - Round 14 close: the screen is decisive; the theorem moves from compute to proof-writing
+
+- EXP-017c VERDICT: all ten mod-p cells capped at both primes (P1 confirmed,
+  P2 refuted): per the declared decision rule the Groebner route to the loci
+  bounds is CLOSED at human budgets in both formulations. The obstruction is
+  structural (the reduced block sums over mirror-pair members). The stratum
+  theorem's remaining gap is now a PROOF task in the Dias-Pan Prop 7.2
+  style: a rank-floor lemma on physical fibers by sign analysis over the
+  shape inequalities (machine-verified, Groebner-free), plus for the top
+  case either a rank-4 CC witness (EXP-018b, census machinery) or the
+  image-dimension argument. Three exact anchor points exist (ranks 4, 4, 3
+  at the two geometries and the hexagon). This is the normal shape of such
+  results: Dias-Pan's own 7.2 was manual. Nothing is claimed.
