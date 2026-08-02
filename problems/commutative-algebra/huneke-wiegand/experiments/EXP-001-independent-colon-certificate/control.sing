@@ -1,0 +1,23 @@
+// EXP-001 adversarial control: Gamma=<4,5>, I=(t^4,t^5).
+// The ring is a hypersurface and the nonprincipal ideal must not be rigid.
+ring p=0,(x4,x5),dp;
+ideal T=std(ideal(x4^5-x5^4));
+print("TORIC_DIMENSION="+string(dim(T)));
+qring q=T;
+ideal C1=std(quotient(ideal(x4),ideal(x5)));
+ideal C2=std(quotient(ideal(x5),ideal(x4)));
+ideal JI=std(intersect(C1,C2));
+ideal PR=std(C1*C2);
+ideal D1=reduce(JI,PR);
+ideal D2=reduce(PR,JI);
+if ((D1==0) && (D2==0))
+{
+  print("COLON_EQUALITY=1");
+}
+else
+{
+  print("COLON_EQUALITY=0");
+  print("CONTROL_WITNESS_INTERSECTION_MOD_PRODUCT");
+  D1;
+}
+quit;

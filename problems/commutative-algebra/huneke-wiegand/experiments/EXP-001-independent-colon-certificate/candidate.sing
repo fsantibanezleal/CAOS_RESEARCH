@@ -1,0 +1,43 @@
+// EXP-001 primary route: independent toric quotient and colon computation.
+// Inputs are only the displayed Gamma and I generators.
+LIB "toric.lib";
+option(redSB);
+
+ring p=0,(x56,x57,x58,x63,x64,x70,x71,x72,x73,x74,x75,x76,x77,
+          x78,x79,x80,x81,x82,x83,x87,x89,x90,x93,x95,x96,x97),dp;
+intmat M[1][26]=56,57,58,63,64,70,71,72,73,74,75,76,77,
+                 78,79,80,81,82,83,87,89,90,93,95,96,97;
+
+print("STAGE=toric-start");
+ideal T=toric_ideal(M,"du");
+T=std(T);
+print("TORIC_GENERATORS="+string(size(T)));
+print("TORIC_DIMENSION="+string(dim(T)));
+print("STAGE=quotient-colons");
+
+qring q=T;
+ideal C1=std(quotient(ideal(x56),ideal(x70)));
+ideal C2=std(quotient(ideal(x70),ideal(x56)));
+ideal JI=std(intersect(C1,C2));
+ideal PR=std(C1*C2);
+ideal D1=reduce(JI,PR);
+ideal D2=reduce(PR,JI);
+
+print("COLON_1_GENERATORS="+string(size(C1)));
+print("COLON_2_GENERATORS="+string(size(C2)));
+print("INTERSECTION_GENERATORS="+string(size(JI)));
+print("PRODUCT_GENERATORS="+string(size(PR)));
+if ((D1==0) && (D2==0))
+{
+  print("COLON_EQUALITY=1");
+}
+else
+{
+  print("COLON_EQUALITY=0");
+  print("INTERSECTION_MOD_PRODUCT");
+  D1;
+  print("PRODUCT_MOD_INTERSECTION");
+  D2;
+}
+print("STAGE=done");
+quit;
