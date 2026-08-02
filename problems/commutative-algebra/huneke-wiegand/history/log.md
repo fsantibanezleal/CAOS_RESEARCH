@@ -57,3 +57,15 @@
 - Declared EXP-006 before code or sweeps. It isolates the exact seed identities `m=4s`,
   `F=13s-1` and the level-4/5/6 generator blocks, attacks the naive lift first, and forbids an
   infinite-family claim without three non-seed instances plus a symbolic proof.
+
+## 2026-08-02 - EXP-004 confirmed
+
+- Route A exhausted 48,954 symmetric semigroups and 1,503,391 gaps for every odd `F<=67`, with
+  zero rigid cases and aggregate `5771bd998c4a80a79f8ba7e0621494231145a291bc7cbeee939dd3caa4a93d4a`.
+- Route B completed all 1,156 fixed formulas in 3,349.61 seconds. Every formula was UNSAT, every
+  DRAT proof was accepted by the pinned DRAT-trim, and no query timed out.
+- The committed auditor rehashed 4,624 external files totaling 211,671,241 bytes: zero missing,
+  zero mismatches, zero bad log markers, and aggregate
+  `47e1d9489581fd8be7fad5553af0c535acf7ffc31acc8a137f32c7e95dd2f57e` reproduced.
+- EXP-004 verdict CONFIRMED on P1-P6. This reproduces but does not extend the published frontier;
+  no manuscript or Zenodo trigger. EXP-005 is unblocked.

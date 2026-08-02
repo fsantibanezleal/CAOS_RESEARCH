@@ -33,3 +33,10 @@ minimality frontier, a family, or a theorem-level mechanism/variant statement.
 - Do not describe expert verification as journal peer review.
 - Do not publish a replication-only manuscript as a new counterexample.
 - Prefer exact CPU methods; no GPU dependency is justified.
+
+## 2026-08-02 frontier gate
+
+HW-P3's published-frontier prerequisite is closed by EXP-004: exhaustive theorem-tree enumeration
+and independently checked DRAT certificates agree for all odd `F<69`. The phase now advances to
+EXP-005's selector-CNF scan in strict Frobenius order; no minimality claim is allowed across an
+UNKNOWN or uncertified value.

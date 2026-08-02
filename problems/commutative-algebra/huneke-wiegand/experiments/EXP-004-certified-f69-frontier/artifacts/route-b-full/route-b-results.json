@@ -1,4 +1,15 @@
 {
+  "verdict": "NO_COUNTEREXAMPLE",
+  "mode": "frontier",
+  "max_f": 67,
+  "query_count": 1156,
+  "status_counts": {
+    "SAT": 0,
+    "UNSAT_VERIFIED": 1156,
+    "UNKNOWN": 0
+  },
+  "aggregate_sha256": "47e1d9489581fd8be7fad5553af0c535acf7ffc31acc8a137f32c7e95dd2f57e",
+  "seconds": 3349.6096961000003,
   "toolchain": {
     "cadical_version": "1.7.3",
     "cadical_package": "cadical\t1.7.4-1",

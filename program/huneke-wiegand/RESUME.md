@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-02. Lifecycle: analyzing; EXP-004 declared before tooling or computation.
+Updated: 2026-08-02. Lifecycle: analyzing; EXP-004 CONFIRMED and EXP-005 unblocked.
 
 ## 1. State in one screen
 
@@ -60,8 +60,8 @@ paper's diagonal gcd obstruction is vacuous for shift 14.
 | EXP-001 | Can Singular/4ti2 independently reproduce the colon equality and reject a known-positive control? | CONFIRMED | 322-generator dimension-one toric basis; zero differences; control residues |
 | EXP-002 | What is the exact endomorphism overring and why do modern positive criteria miss I? | CONFIRMED | exact semigroup, type 24, and forced Ext/Tor escape map |
 | EXP-003 | Can SAT recover `(F,s)=(181,14)` and calibrate exact controls? | CONFIRMED | independently checked finite SAT machinery |
-| EXP-004 | Can two independent certified routes reproduce the published `F<69` frontier? | running | Route A passed all 48,954 semigroups and 1,503,391 gaps; Route B proof sweep active |
-| EXP-005 | What is the least counterexample Frobenius value at or above 69? | declared, gated | one selector CNF per F, checked proofs, exact model and tree cross-check |
+| EXP-004 | Can two independent certified routes reproduce the published `F<69` frontier? | CONFIRMED | 48,954 semigroups, 1,503,391 gaps and 1,156 accepted DRAT proofs |
+| EXP-005 | What is the least counterexample Frobenius value at or above 69? | declared, ready | one selector CNF per F, checked proofs, exact model and tree cross-check |
 | EXP-006 | Does the `m=4s`, `F=13s-1` block pattern extend to a family? | declared, gated | fixed-template falsification, constrained block SAT, symbolic proof gate |
 
 ## Strongest routes
@@ -89,18 +89,18 @@ paper's diagonal gcd obstruction is vacuous for shift 14.
 
 ## 4. In flight
 
-EXP-004 Route A has independently exhausted all odd `F<=67`: 48,954 symmetric semigroups and
-1,503,391 gap cases, with zero counterexamples. Route B is running the complete 1,156-query
-proof-carrying sweep. EXP-005 is declared but may not execute until EXP-004 closes conclusively.
-EXP-006 is declared from the exact seed block pattern but remains gated on EXP-005 calibration.
+EXP-004 is CONFIRMED. Route A independently exhausted 48,954 symmetric semigroups and 1,503,391
+gap cases through `F=67`, with zero counterexamples. Route B independently returned 1,156 checked
+UNSAT proofs, and the 4,624-file audit passed with no mismatch. EXP-005 is unblocked. EXP-006
+remains gated on EXP-005's selector calibration.
 
 ## 5. Next actions
 
-1. Complete and independently audit the EXP-004 Route B proof manifest.
-2. Close EXP-004 only if P1-P6 pass and commit the exact evidence boundary.
-3. Implement EXP-005's one-hot selector encoding and adversarial tests.
-4. Calibrate at `F<=11` and `F=181`, then search upward from 69 with proofs.
-5. Compare any new frontier with the additive-family and surviving-variant routes.
+1. Run EXP-005 selector regression at `F<=11` and semantic calibration at `F=181`.
+2. Certify the selector encoding through `F=67` with one proof per odd Frobenius value.
+3. Search odd `F=69,71,...` in strict order and stop at the first validated SAT model.
+4. Cross-check the initial novel interval with the complete tree while its budget permits.
+5. After selector calibration, execute EXP-006's falsification-first block-family route.
 
 ## 6. Where everything lives
 
