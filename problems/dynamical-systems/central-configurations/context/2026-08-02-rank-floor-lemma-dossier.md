@@ -216,3 +216,23 @@ d2B = r12 for the remaining coordinates in the reals; the point may live
 in a quadratic extension, which our exact instruments handle. When that
 witness lands, dim(shape meet Delta_1 meet B2) <= 0, and with the B1
 mirror the k = 1 case CLOSES.
+
+## Lemma piece 5: THE k = 1 CASE IS CLOSED (same day)
+
+The remaining witnesses exist in Q(sqrt(3)) and verify on every condition:
+
+    W5_B2 = (a1,a2,u,v,p,q) = (sqrt3, sqrt3/3, 1, 0, 1, 2 sqrt3/3):
+            on B2 (d2A = d2B = r12 = 2 sqrt3/3), on the sub-branch
+            d1A = wA = 2, and d1B = 2/sqrt3 != wB = 2.
+    W5_B1 = the mirror (sqrt3/3, sqrt3, 1, 0, 1, 2 sqrt3/3), same checks
+            with the body roles swapped.
+
+Assembled: rank < 1 forces a branch (piece 4); the height sub-branches are
+EMPTY (the one-line substitutions above); so rank < 1 on B2 needs
+d1A = wA AND d1B = wB; the four cuts are successively proper (B2 codim 2;
+the 3-4-5 witness kills the third; W5_B2 kills the fourth), giving
+dim <= 0; mirror on B1. Hence
+
+    dim( shape  meet  {rank = 0} ) <= 0 :   the k = 1 case is CLOSED.
+
+## Scoreboard: k = 0, 1, 2 PROVEN. Remaining: k = 3 (bordered minors), k = 4 (rank-4 CC witness or image argument).
