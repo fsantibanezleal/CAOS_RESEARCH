@@ -341,3 +341,39 @@ back to coordinates. This is one bounded piece of case mathematics, with
 all objects in closed form and machine-checkable.
 
 ## Scoreboard: k = 0, 1, 2, 4 PROVEN; k = 3 reduced to four bilinear conditions + boundary bookkeeping.
+
+## Lemma piece 7c: all four conditions exactly nonzero at three anchors (round 25)
+
+The four bilinear conditions of piece 7b were evaluated EXACTLY (radsimp
+plus simplify acceptance) at W1, W2 and the regular hexagon (the last in
+pure Q(sqrt(3)) arithmetic): ALL FOUR are nonzero at ALL THREE shape+
+points. Via irreducibility and Krull, each condition's zero locus meets
+shape+ in dimension exactly 3, so the first k = 3 cut holds through any of
+the four:
+
+    dim( shape+  meet  R_2  meet  good region ) <= 3,   quadruply anchored.
+
+THE LAST HALF-STEP, stated precisely: improve to <= 2 by showing some
+second condition is not identically zero on any 3-dimensional component
+of a first condition's zero locus. Two concrete routes, each bounded:
+
+  ROUTE A (norm elimination): pull one condition to coordinates and
+  eliminate its five radicals by iterated squaring (five steps, sizes
+  roughly doubling from a five-term base), factor the resulting
+  six-variable polynomial, and pseudo-remainder the second condition's
+  norm against each factor. The elimination is mechanical; the open cost
+  is the final factorization (a one-shot capped attempt).
+
+  ROUTE B (sign chambers): per ordering-chamber of the nine distances and
+  height signs, every term of every condition has a determined sign
+  (s-monotonicity plus the Delta closed forms); a chamber where some
+  condition has all terms of one sign contains no R_2 point at all; the
+  program enumerates chambers and finds the sign-definite condition per
+  chamber, with any recalcitrant chambers analyzed individually. This
+  route can even yield the stronger statement (empty R_2 on the physical
+  good region), though only the 3-fold exclusion is needed.
+
+Plus the finite boundary bookkeeping on the r12-equidistance sets (the
+catalog's mixed-column corners and THEIR borders, same architecture).
+
+## Scoreboard: k = 0, 1, 2, 4 PROVEN; k = 3 at its last half-step with two bounded routes and every object in verified closed form.
