@@ -514,3 +514,17 @@
   reach in hours fell to one structured minor in closed form. The remaining
   case tree (equidistant exceptional sets, then the rank >= 3 floor) is
   enumerated in the dossier.
+
+## 2026-08-02 - Round 21-22: the endgame's computational door closes; the proof door stays open
+
+- EXP-019 decided (both single-minor cuts capped at 1800 s despite a
+  32-term increment over a one-second base) and its mod-p screen addendum
+  (all four cells capped): the Groebner route to the k = 3 and k = 4 loci
+  bounds is now measured CLOSED at every granularity, formulation and
+  characteristic tried. The CM/Krull reduction remains the frame: the shape
+  ideal is a complete intersection, hence unmixed, so single-polynomial
+  properness statements suffice, and properness can be established by
+  EXACT WITNESSES instead of dimension computations, exactly as lemma
+  pieces 4 and 5 did. The bordered-minor closed-form program for k = 3 is
+  the sole active route, with the EXP-016 rank-4 geometries as the ready
+  properness witnesses.

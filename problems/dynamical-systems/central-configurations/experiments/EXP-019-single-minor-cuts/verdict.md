@@ -44,3 +44,17 @@ hard step, consistent with every prior wall.
   overhead; no partial output was parsed.
 - The chain scoreboard is unchanged: k = 0, 1, 2 PROVEN; k = 3, 4 open
   with two live routes each.
+
+## Addendum (same day): the mod-p screen on the single-minor systems
+
+All four cells (SH + g4 and SH + g3, primes 32003 and 1073741789) capped at
+300 s. Per the declared rule, no overnight characteristic-zero run is
+justified. The Groebner route to the loci bounds is now measured CLOSED at
+every granularity attempted: all minors at once, per-minor subideals,
+single smallest-minor increments, in two formulations and mod p at each
+level. The k = 3 and k = 4 cases proceed exclusively by the closed-form
+technique (structured minors and borders with machine-verified identities
+plus exact witnesses), which produced every proven piece of the chain so
+far. The screen script and outputs are archived; the earlier mangled
+inline-variable attempt is superseded by the script-file version, per the
+standing WSL rule.
