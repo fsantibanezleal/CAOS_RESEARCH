@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-01. Lifecycle: opened; EXP-001 declared but not yet run.
+Updated: 2026-08-01. Lifecycle: exploring; EXP-001 confirmed, EXP-002 declared.
 
 ## 1. State in one screen
 
@@ -21,9 +21,10 @@ R = Q[t^Gamma] localized at the positive-degree maximal ideal
 I = (t^56,t^70)R
 ```
 
-Known external facts: Frobenius 181, conductor 182, genus 91, Gamma symmetric; I is
-nonprincipal; the principal-colon equality makes I rigid and therefore `I tensor I*`
-torsion-free. Treat these as external claims until EXP-001 closes.
+CAOS EXP-001 independently confirms Frobenius 181, conductor 182, genus 91, symmetry, both
+principal colon generator sets and the decisive intersection-product equality. Singular/4ti2
+uses a 322-generator toric standard basis of dimension one; the finite route agrees. The
+`<4,5>` hypersurface control rejects equality with residues `x5^3` and `x4^4`.
 
 ## 2. The objects table
 
@@ -40,8 +41,8 @@ torsion-free. Treat these as external claims until EXP-001 closes.
 
 | EXP | question | status | load-bearing output |
 |---|---|---|---|
-| EXP-001 | Can Singular/4ti2 independently reproduce the colon equality and reject a known-positive control? | declared, not run | calibration for every later claim |
-| EXP-002 | What is the exact endomorphism overring and why do modern positive criteria miss I? | planned | mechanism invariant |
+| EXP-001 | Can Singular/4ti2 independently reproduce the colon equality and reject a known-positive control? | CONFIRMED | 322-generator dimension-one toric basis; zero differences; control residues |
+| EXP-002 | What is the exact endomorphism overring and why do modern positive criteria miss I? | declared | mechanism invariant |
 | EXP-003 | Can SAT recover `(F,s)=(181,14)` and certify a lower frontier? | planned | minimality machinery |
 
 ## Strongest routes
@@ -67,16 +68,16 @@ torsion-free. Treat these as external claims until EXP-001 closes.
 
 ## 4. In flight
 
-EXP-001 is the only in-flight round. Its hypothesis is committed at `8dae63c`; no experiment
-code or solver result existed before that commit. The independent runner is the next write.
+EXP-002 is the only in-flight round. Its hypothesis predicts the exact three added overring
+values and the resulting nonsymmetric semigroup. EXP-001 is closed; its two instrumentation
+failures are archived and do not count as mathematical runs.
 
 ## 5. Next actions
 
-1. Implement and run EXP-001 inside its cap; write artifacts and verdict.
-2. If confirmed, transition opened to exploring and immediately declare EXP-002.
-3. Validate the endomorphism-semigroup prediction by two routes.
-4. Declare the SAT calibration before installing or invoking any SAT dependency.
-5. Extend the published F<69 frontier only after calibration and proof-output design.
+1. Validate the EXP-002 endomorphism-semigroup prediction by two routes.
+2. Transcribe its theorem consequences only after checking every Dey-Lyle hypothesis.
+3. Declare the SAT calibration before installing or invoking any SAT dependency.
+4. Extend the published F<69 frontier only after calibration and proof-output design.
 
 ## 6. Where everything lives
 

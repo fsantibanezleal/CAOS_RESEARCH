@@ -9,3 +9,14 @@
   minimality and additive-family search.
 - Created branch `work/huneke-wiegand/open` from current remote develop.
 - Declared EXP-001 before writing or running experiment code.
+
+## 2026-08-01 - EXP-001 confirmed
+
+- Standard-library finite route reproduced F=181, conductor 182, genus 91, symmetry, both colon
+  minima and the 49-generator intersection/product equality.
+- Singular/4ti2 independently constructed a 322-generator toric standard basis of dimension one;
+  both reduced ideal differences vanished.
+- The hypersurface control `Gamma=<4,5>, I=(t^4,t^5)` rejected equality with explicit residues.
+- Preserved two invalid instrumentation attempts: a missing helper PATH and DU's dimension-zero
+  output; a third invocation had valid zero remainders but exposed Singular's zero-slot encoding.
+- EXP-001 verdict CONFIRMED on P1-P6. Declared EXP-002 before its implementation or run.

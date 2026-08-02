@@ -27,4 +27,4 @@ problems:
   - { slug: p-vs-np,               area: computation-complexity, state: proposed,  feasibility: C,  gpu: partial }
   - { slug: centralizers,          area: dynamical-systems,      state: proposed,  feasibility: C,  gpu: false }
   - { slug: hodge,                 area: algebraic-geometry,     state: proposed,  feasibility: C,  gpu: false }
-  - { slug: huneke-wiegand,        area: commutative-algebra,    state: opened,    feasibility: A,  gpu: false,   opened: "2026-08-01" }
+  - { slug: huneke-wiegand,        area: commutative-algebra,    state: exploring, feasibility: A,  gpu: false,   opened: "2026-08-01" }

@@ -4,8 +4,9 @@
 |---|---|---|---|
 | 2026-08-01 | proposed externally | scoped | public candidate and independent expert note audited; extension programme has an exact computational surface |
 | 2026-08-01 | scoped | opened | source-complete dossier, strategy, durable records, backlog and EXP-001 hypothesis written |
+| 2026-08-01 | opened | exploring | EXP-001 independently confirmed P1-P6 with Singular/4ti2, finite cross-check and adversarial control |
 
-Current state: **opened**.
+Current state: **exploring**.
 
-Transition to exploring only after EXP-001 has committed code, artifacts and a verdict. External
-verification does not substitute for the programme's first independent experiment.
+EXP-001 provides the programme's independent calibration. External verification remains separate
+evidence and never substitutes for committed CAOS experiments.
