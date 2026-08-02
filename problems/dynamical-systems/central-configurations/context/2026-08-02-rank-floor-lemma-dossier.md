@@ -82,3 +82,49 @@ structural zero each and give products with ONE bracket term; the mA/mB
 anchor entries above are the single-term ingredients). Pieces 1-3 already
 suffice for: rank >= 2 on the complement of an explicit codimension >= 2
 union, and every future piece only shrinks it.
+
+## The complete 2 x 2 catalog and the branch table (same day) - the k = 2 bound is one check away
+
+The full factored catalog of all 84 nonzero 2 x 2 minors (abstract
+s-symbols, polynomial coordinates) is persisted as
+minor-catalog-2026-08-02.txt. Beyond pieces 1-3, two more m1/m2-column
+minors factor completely:
+
+    {L13, L25} x {m1, m2} = p u (a1-a2)^2 s(d1B, r12) s(d2A, r12)
+    {L15, L23} x {m1, m2} = p u (a1-a2)^2 s(d1A, r12) s(d2B, r12)
+
+BOOLEAN ANALYSIS of the four clean products (with x_i = s(d_iA, r12),
+y_i = s(d_iB, r12)): rank < 2 forces x1 x2 = y1 y2 = y1 x2 = x1 y2 = 0,
+whose only solutions are {x1 = y1 = 0} or {x2 = y2 = 0}. Hence
+
+    rank < 2 implies (d1A = r12 AND d1B = r12)  [branch B1]
+                 or  (d2A = r12 AND d2B = r12)  [branch B2],
+
+two conditions each. (Consistency: on either branch piece 1's factor
+s(d_iA, d_iB) also vanishes, as it must.)
+
+ON EACH BRANCH, the mixed-column minors add a third condition: on B2 the
+minor {L13, L23} x {m1, mA} = 2 s(d1A, r12) s(d1A, wA) u^2 (v - a1)(a1 - a2)
+is nonvanishing unless d1A = wA or a1 = v (its first factor is nonzero off
+B1), and the B-pair analogue forces d1B = wB or a1 = q. So rank < 2 on B2
+additionally requires one of four explicit degenerations of body 1's
+geometry; symmetrically on B1.
+
+CONSEQUENCE (modulo one remaining verification): each branch of the
+rank-<2 locus is cut by at least THREE conditions on the four-dimensional
+gauged shape variety, giving dim(shape meet Delta_2) <= 1, exactly the
+k = 2 requirement of the chain. THE REMAINING CHECK, stated honestly: the
+independence of the three conditions per branch on the shape variety
+(that each successive condition is nontrivial on the previous
+intersection). Plan: exhibit, for each branch, an exact point of the shape
+variety satisfying the first two conditions but not the third (a
+two-condition witness), which proves properness of each cut; four small
+exact computations in the EXP-015 parametrization.
+
+## Catalog note
+
+Minors involving the mB/mA columns of the pair rows (L35, L36) carry
+bracket sums that do NOT factor over the s-symbols (the two-term entries);
+they were not needed for the k = 2 analysis above but are the raw material
+for the rank >= 3 floor, where three-row minors with two structural zeros
+({L13, L23, L35} x {m1, m2, mA} etc.) again factor partially.
