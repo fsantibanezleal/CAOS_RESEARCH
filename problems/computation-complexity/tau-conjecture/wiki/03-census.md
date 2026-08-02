@@ -24,13 +24,14 @@ the measured growth stays near-linear.
 Milestones: minimal $\tau$ for 3 distinct integer roots = 3 ($x^3 - x$);
 for 4 roots = 5 (EXP-002); for 5 roots = 6 (EXP-003:
 $\mp x(x^2-1)(x^2-4)$: the depth-5 DOS record times the input $x$, which
-adjoins the root 0 for one gate); for 6 roots: in $[8, 9]$ (EXP-004 lower
-side; upper witness $q(q-2)(q-6)$, $q = x^2 - x$, 9 gates). The growth
+adjoins the root 0 for one gate); for 6 roots = EXACTLY 8 (EXP-006: the
+case-split scan found 408 witnesses; e.g. $q(q-2)(q-6)$, $q = x(x-1)$,
+at 8 gates via chained subtraction sharing; $z_{\max}(8) \ge 6$). The growth
 shows PLATEAUS at $\tau = 4$ and $\tau = 7$ ($1,2,3,3,4,5,5$): one gate
 does not always buy one root; conversion fails exactly when the next
 root requires a BUILT constant beyond the free $\{0, \pm1, \pm2\}$
-world. Depth 8 needs canonicalization, a compiled backend, or the SAT
-lane (the $[8,9]$ window is a crisp SAT-shaped target).
+world. The full depth-8 census (exact $z_{\max}(8)$, known $\ge 6$)
+needs canonicalization, a compiled backend, or the SAT lane.
 
 ## Method and its anchor
 

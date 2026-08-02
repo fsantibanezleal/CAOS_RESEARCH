@@ -28,3 +28,20 @@
   backend for depth 8; reads (Doyle-Poonen, Narkiewicz, Cheng full);
   wiki 05 (open questions); manuscript updates ship as Zenodo NEW
   VERSIONS on the same concept DOI.
+
+## Round 7 (2026-08-02)
+
+- **EXP-006 CONFIRMED: THE WINDOW IS CLOSED: minimal tau for 6 distinct
+  integer roots = 8.** The times-case reduction (final gate x reduces to
+  root-set co-occurrence) scanned all 25,844,905 depth-6 states in 2h23m:
+  408 witnesses; three reconstructed as explicit 8-gate programs and
+  verified independently. Our emptiness prediction REFUTED (third time);
+  the five-rooter taxonomy corrected (7 root-set patterns, incl.
+  non-consecutive). The hunt confirmed its own blind spot (chained
+  subtraction sharing beats independent constant builds).
+- Paper v0.02 PUBLISHED as a Zenodo new version: DOI
+  10.5281/zenodo.21763182 (concept unchanged 10.5281/zenodo.21753438);
+  metadata synced. SAT design note persisted (EXP-007 groundwork,
+  rescoped to z_max(8)).
+- Wiki 03/05 updated/written. Next: TCB-025 (max union re-scan), TCB-005
+  (depth-8 backend), TCB-026 (punctured root sets anatomy), reads.
