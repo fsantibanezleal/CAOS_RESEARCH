@@ -377,3 +377,39 @@ Plus the finite boundary bookkeeping on the r12-equidistance sets (the
 catalog's mixed-column corners and THEIR borders, same architecture).
 
 ## Scoreboard: k = 0, 1, 2, 4 PROVEN; k = 3 at its last half-step with two bounded routes and every object in verified closed form.
+
+## Lemma piece 7d: the column view yields four more clean conditions, all anchored (round 26)
+
+The column view (rank <= 2 means the mA/mB columns lie in the m1/m2
+plane) shows the pair-row borders, though not globally factorable, are
+THREE-TERM sums of fully clean products: by Laplace expansion over the
+anti-diagonal corner,
+
+    C5 = a23 b13 J[L35][mA] - b13 J[L23][mA] J[L35][m1]
+                            - a23 J[L13][mA] J[L35][m2],
+
+and its mB / L36 variants C6, C7, C8, where every factor is a single
+s-monomial times a polynomial Delta (J[L35][mA] = s(wA, cx) Delta_354 is
+itself single-term). All four are EXACTLY NONZERO at W1, W2 and the
+hexagon (verified substitute-first). EIGHT conditions now enclose
+R_2 on the good region, and C5-C8 carry s-support (the pair-difference
+and width-cross factors) disjoint in key factors from C1-C4's
+r12-support.
+
+## The declared closer: the sign-chamber program over eight conditions
+
+Per ordering-chamber of the relevant distance comparisons and height
+signs, every term of every condition has a determined sign
+(s-monotonicity: s(a, b) > 0 iff a < b; the Delta closed forms carry
+explicit height/width signs). A chamber where ANY of the eight
+conditions is sign-definite contains no rank-<=2 point. The program:
+enumerate the finitely many chambers, decide the eight term-sign
+patterns per chamber (pure combinatorics), and cover; recalcitrant
+chambers get individual treatment. SCOPE PRECISION: this closes the
+k = 3 case for the PHYSICAL count: the theorem counts real stratum
+central configurations, so only incidence components containing
+physical points matter, and for those the rank floor at a physical
+fiber point feeds the Lemma 7.3 bound: the same care Dias-Pan's own
+Prop 7.2 / 7.4 chain used (a presentational subtlety our Dias-Pan
+dossier already recorded). Route A (norm elimination) continues in
+parallel as the all-components insurance.
