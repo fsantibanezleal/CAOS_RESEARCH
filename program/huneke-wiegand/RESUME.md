@@ -37,6 +37,11 @@ and a separate standard-library checker validates the model through `2F+1` plus 
 Every gap of the `<4,5>` control has an explicit failed rigidity witness. This validates the
 instrument but is not a minimality result.
 
+A 2026-08-02 deduction places the candidate strictly outside the generalized-arithmetic-sequence
+positive family of Landeros et al. Multiplicity 56 and membership of 57 force step one, while
+membership of 63 would force the actual gaps 59--62. All generator-deletion gcds are one, so the
+paper's diagonal gcd obstruction is vacuous for shift 14.
+
 ## 2. The objects table
 
 | object | definition | evidence owner |
@@ -78,6 +83,8 @@ instrument but is not a minimality result.
 - reformulation: colon equality, inverse-ideal equality and SAT membership constraints;
 - two-sided validation: Singular quotient ring versus finite semigroup checker;
 - recognition: search for affine families in Kunz coordinates.
+- positive-family exclusion: the candidate is provably not generalized arithmetic, and the
+  associated deletion-gcd certificate is vacuous.
 
 ## 4. In flight
 
