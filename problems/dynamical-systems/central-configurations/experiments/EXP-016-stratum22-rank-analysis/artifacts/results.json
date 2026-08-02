@@ -1,0 +1,18 @@
+{
+  "smoke-pairing-identities": {
+    "status": "pass",
+    "detail": "partner rows equal negatives at W1: [True, True, True, True, True, True] (0s)"
+  },
+  "p1-rank-witness1": {
+    "status": "decided",
+    "detail": "rank=4 at (3, -1, 2, 1, 1, -2) in 1s"
+  },
+  "p2-rank-witness2": {
+    "status": "decided",
+    "detail": "rank=4 at (2, -2, 1, 2, 3, -1) in 1s"
+  },
+  "p3-minass": {
+    "status": "inconclusive-cap",
+    "detail": "326s at 300s"
+  }
+}

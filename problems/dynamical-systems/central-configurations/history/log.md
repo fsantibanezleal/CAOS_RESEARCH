@@ -421,3 +421,19 @@
   its wording goes to Felipe first. A smoke evaluator bug (odd-term
   handling) was caught by the gate itself at zero solver cost and fixed in
   one commit.
+
+## 2026-08-01 - Round 11: EXP-016 decided, the rank stage lands
+
+- EXP-016 VERDICT: GENERIC RANK 4 CONFIRMED AT TWO EXACT WITNESSES (one
+  second each, pure radical arithmetic, no truncation budgets), COMPONENT
+  DECOMPOSITION CAPPED (minAssGTZ at 300 s; primary decomposition is far
+  heavier than the one-second std of the same ideal). The smoke gate's
+  pairing check doubled as the computational confirmation of the dossier's
+  symmetry proof (all six partner identities exact at the witness), closing
+  what the teardown-killed derivation script left open. The capped rung does
+  not block the chain: EXP-017 is declared as dimension bounds on
+  shape-intersect-Delta_k with the minors pushed to distance form,
+  sidestepping irreducibility entirely; EXP-018 anchors the top case with a
+  genuine CC witness. n = 6 note: the pow3 arbitrary-precision gfan08 run
+  passed 7 cpu-days, outliving gfan 0.7's second failure mode; both runs
+  healthy and checkpointed.
