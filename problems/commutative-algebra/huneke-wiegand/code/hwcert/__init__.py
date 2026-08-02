@@ -7,7 +7,12 @@ from .semigroup import (
     minimal_generators,
     validate_symmetric_mask,
 )
-from .cnf import build_rigidity_cnf, mask_from_model
+from .cnf import (
+    build_rigidity_cnf,
+    build_selector_rigidity_cnf,
+    mask_from_model,
+    shift_from_model,
+)
 
 __all__ = [
     "analyze_rigidity",
@@ -16,5 +21,7 @@ __all__ = [
     "minimal_generators",
     "validate_symmetric_mask",
     "build_rigidity_cnf",
+    "build_selector_rigidity_cnf",
     "mask_from_model",
+    "shift_from_model",
 ]
