@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-01. Lifecycle: analyzing; EXP-001 and EXP-002 confirmed.
+Updated: 2026-08-02. Lifecycle: analyzing; EXP-004 declared before tooling or computation.
 
 ## 1. State in one screen
 
@@ -55,6 +55,7 @@ instrument but is not a minimality result.
 | EXP-001 | Can Singular/4ti2 independently reproduce the colon equality and reject a known-positive control? | CONFIRMED | 322-generator dimension-one toric basis; zero differences; control residues |
 | EXP-002 | What is the exact endomorphism overring and why do modern positive criteria miss I? | CONFIRMED | exact semigroup, type 24, and forced Ext/Tor escape map |
 | EXP-003 | Can SAT recover `(F,s)=(181,14)` and calibrate exact controls? | CONFIRMED | independently checked finite SAT machinery |
+| EXP-004 | Can two independent certified routes reproduce the published `F<69` frontier? | declared | Blanco--Rosales tree plus CaDiCaL/DRAT proof suite |
 
 ## Strongest routes
 
@@ -79,16 +80,18 @@ instrument but is not a minimality result.
 
 ## 4. In flight
 
-No experiment is in flight. EXP-004 is ready but must declare a certified/exhaustive lower-frontier
-method before any search. EXP-001 through EXP-003 are closed; EXP-001's instrumentation failures
-are archived and do not count as mathematical runs.
+EXP-004 is declared before tool installation, implementation or computation. Route A will enumerate
+all symmetric semigroups using Blanco--Rosales Theorem 9 and attach a failed-rigidity witness to
+every gap. Route B will generate independent CNFs and require CaDiCaL DRAT proofs accepted by
+DRAT-trim. EXP-001 through EXP-003 remain closed.
 
 ## 5. Next actions
 
-1. Declare EXP-004 with a proof-producing or independently exhaustive UNSAT design.
-2. Reproduce the published `F<69` frontier under that stronger evidence standard.
-3. Extend the frontier with checkpointed, bounded searches.
-4. Compare any new frontier with the additive-family and surviving-variant routes.
+1. Install the pinned proof tools only after the EXP-004 declaration commit.
+2. Implement and smoke-test the theorem-complete tree at `F<=11`.
+3. Implement DIMACS generation, CaDiCaL proof output and DRAT-trim checking; calibrate at 181.
+4. Reproduce `F<69`; only then declare a separately budgeted frontier extension.
+5. Compare any new frontier with the additive-family and surviving-variant routes.
 
 ## 6. Where everything lives
 
@@ -109,6 +112,9 @@ are archived and do not count as mathematical runs.
 - Equality in a truncated window needs a proved conductor/tail argument.
 - Solver SAT models need independent extraction checks; UNSAT needs certificates or an
   independent exhaustive route.
+- EXP-004 external proof root is
+  `E:/_Datos/caos-research/huneke-wiegand/EXP-004-certified-f69-frontier/`; Git carries only its
+  deterministic manifest and compact summaries.
 - A validated finite counterexample does not automatically classify or minimize all examples.
 - No manuscript, Zenodo version, bake, tag or release without the corresponding methodology gate.
 

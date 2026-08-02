@@ -28,3 +28,14 @@
 - EXP-003 verdict CONFIRMED on P1-P6. Z3 4.16.0 recovered the pinned `(181,14)` model; the
   standard-library checker verified the exact window and tail, rejected a corrupted vector, and
   produced explicit rigidity failures for every nonzero gap of the `<4,5>` control.
+
+## 2026-08-02 - EXP-004 source-complete declaration
+
+- Read García-Sánchez--Leamer through Example 23 and the complete future-work section. The
+  published `F<69` statement cites a NumericalSgps computation but supplies no certificate suite.
+- Added Blanco--Rosales Theorem 9 as an independent complete enumeration route for fixed odd
+  Frobenius number, with the six-node `F=11` tree as a regression target.
+- Selected proof-carrying SAT as the adversarial route: custom DIMACS, CaDiCaL DRAT output, and
+  independent DRAT-trim validation.
+- Fresh source/tool sweep found no published extension beyond 69 and no candidate minimality result.
+- Declared EXP-004 before installing proof tools, implementation, or computation.
