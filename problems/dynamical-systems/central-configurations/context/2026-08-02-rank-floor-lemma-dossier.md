@@ -195,3 +195,24 @@ argument that some single 4 x 4 minor is nonvanishing on every
 (which those points already certify) plus a covering argument for any
 other components; the honest gap is components not containing either
 point, unchanged since EXP-016's verdict.
+
+## Lemma piece 5 progress: the k = 1 case reduces to one witness (2026-08-02)
+
+Two EXACT emptiness facts collapse the k = 1 sub-branch tree on branch B2
+(and symmetrically on B1): intersecting B2 with {a1 = v} forces u^2 = 0,
+and with {a1 = q} forces p^2 = 0, both excluded on the open stratum, so
+BOTH height-degeneration sub-branches are EMPTY (verified as one-line
+polynomial substitutions). Consequently rank < 1 on B2 requires the OTHER
+disjuncts of the two single-term entry conditions:
+
+    d1A = wA   AND   d1B = wB   (on top of B2's d2A = d2B = r12).
+
+Chain of cuts: B2 has codimension 2 (piece 4); {d1A = wA} is proper on B2
+(the 3-4-5 witness violates it, already verified); {d1B = wB} proper on
+the residual curve needs ONE remaining witness: an exact point of
+B2 with d1A = wA and d1B != wB. Construction sketch (algebraic, not yet
+verified): u = 1, h1^2 = 3 (d1A = wA = 2), then solve d2A = r12 and
+d2B = r12 for the remaining coordinates in the reals; the point may live
+in a quadratic extension, which our exact instruments handle. When that
+witness lands, dim(shape meet Delta_1 meet B2) <= 0, and with the B1
+mirror the k = 1 case CLOSES.
