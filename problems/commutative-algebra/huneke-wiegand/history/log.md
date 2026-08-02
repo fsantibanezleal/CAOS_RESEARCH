@@ -69,3 +69,19 @@
   `47e1d9489581fd8be7fad5553af0c535acf7ffc31acc8a137f32c7e95dd2f57e` reproduced.
 - EXP-004 verdict CONFIRMED on P1-P6. This reproduces but does not extend the published frontier;
   no manuscript or Zenodo trigger. EXP-005 is unblocked.
+
+## 2026-08-02 - EXP-005 proves Frobenius minimality
+
+- Selector-CNF calibration passed at every odd `F<=67` and recovered the exact public model at
+  `(181,14)`, with independent fixed-pair agreement.
+- Strict ascending search certified UNSAT at all 56 odd values from 69 through 179, then returned
+  the validated public model at 181. The slowest solve, `F=175`, took 218.83 seconds under the
+  declared 600-second cap.
+- The search audit rehashed 228 files totaling 760,081,739 bytes, found zero missing/mismatched
+  artifacts or semantic failures, and reproduced aggregate
+  `0f580de2707a00fdd52e1b3c04e7767b97ce7b0a826593b119e9a49ae04da743`.
+- Independent theorem trees at `F=69,71,73,75` checked 79,790 new semigroups and 2,933,163 gaps,
+  with zero rigid cases, agreeing with the selector proofs.
+- EXP-005 verdict CONFIRMED on P1-P6: the least Frobenius value in the stated class is 181.
+  Discovery priority for the counterexample remains Son Pham's. The manuscript/Zenodo gate is
+  triggered by CAOS's minimality extension.

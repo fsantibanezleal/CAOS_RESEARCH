@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-02. Lifecycle: analyzing; EXP-004 CONFIRMED and EXP-005 unblocked.
+Updated: 2026-08-02. Lifecycle: consolidating; EXP-005 proves Frobenius minimality at 181.
 
 ## 1. State in one screen
 
@@ -61,7 +61,7 @@ paper's diagonal gcd obstruction is vacuous for shift 14.
 | EXP-002 | What is the exact endomorphism overring and why do modern positive criteria miss I? | CONFIRMED | exact semigroup, type 24, and forced Ext/Tor escape map |
 | EXP-003 | Can SAT recover `(F,s)=(181,14)` and calibrate exact controls? | CONFIRMED | independently checked finite SAT machinery |
 | EXP-004 | Can two independent certified routes reproduce the published `F<69` frontier? | CONFIRMED | 48,954 semigroups, 1,503,391 gaps and 1,156 accepted DRAT proofs |
-| EXP-005 | What is the least counterexample Frobenius value at or above 69? | declared, ready | one selector CNF per F, checked proofs, exact model and tree cross-check |
+| EXP-005 | What is the least counterexample Frobenius value at or above 69? | CONFIRMED | exact minimum `F=181`; checked proofs below, exact model and tree cross-check |
 | EXP-006 | Does the `m=4s`, `F=13s-1` block pattern extend to a family? | declared, gated | fixed-template falsification, constrained block SAT, symbolic proof gate |
 
 ## Strongest routes
@@ -89,18 +89,19 @@ paper's diagonal gcd obstruction is vacuous for shift 14.
 
 ## 4. In flight
 
-EXP-004 is CONFIRMED. Route A independently exhausted 48,954 symmetric semigroups and 1,503,391
-gap cases through `F=67`, with zero counterexamples. Route B independently returned 1,156 checked
-UNSAT proofs, and the 4,624-file audit passed with no mismatch. EXP-005 is unblocked. EXP-006
-remains gated on EXP-005's selector calibration.
+EXP-005 is CONFIRMED: every odd `F=69,...,179` has an accepted selector-CNF DRAT proof, while
+`F=181` is SAT at `s=14` and decodes exactly to the public candidate. Together with EXP-004 and
+oddness of the symmetric Frobenius number, this proves `F_min=181` in the two-generated monomial
+ideal class. The full 228-file search audit passes. Independent theorem trees agree at
+`F=69,71,73,75`. EXP-006 and the manuscript/Zenodo gate are now unblocked.
 
 ## 5. Next actions
 
-1. Run EXP-005 selector regression at `F<=11` and semantic calibration at `F=181`.
-2. Certify the selector encoding through `F=67` with one proof per odd Frobenius value.
-3. Search odd `F=69,71,...` in strict order and stop at the first validated SAT model.
-4. Cross-check the initial novel interval with the complete tree while its budget permits.
-5. After selector calibration, execute EXP-006's falsification-first block-family route.
+1. Persist and promote the EXP-005 theorem/certificates through PR review.
+2. Write the minimality manuscript with exact attribution and certificate instructions.
+3. Build and visually audit the PDF, then execute the Zenodo publication gate.
+4. Execute EXP-006's fixed-template falsification route and assess any family extension.
+5. Extend the surviving-variants matrix without weakening the proved scope.
 
 ## 6. Where everything lives
 

@@ -40,3 +40,7 @@ HW-P3's published-frontier prerequisite is closed by EXP-004: exhaustive theorem
 and independently checked DRAT certificates agree for all odd `F<69`. The phase now advances to
 EXP-005's selector-CNF scan in strict Frobenius order; no minimality claim is allowed across an
 UNKNOWN or uncertified value.
+
+EXP-005 completed that scan without an UNKNOWN: all odd values 69 through 179 have accepted DRAT
+proofs and 181 has the independently validated public model. HW-P3 therefore closes with exact
+Frobenius minimum 181. HW-P4 family work and HW-P6 publication consolidation are now active.
