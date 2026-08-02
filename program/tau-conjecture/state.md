@@ -18,12 +18,13 @@
   BREAKS; sequence 1,2,3,3,4,5,5 with plateaus at 4 and 7; depth-6
   frontier 25,844,905 states exact; 2,013,706 depth-7 polynomials;
   min tau for 6 roots in [8,9]). Wiki 04 transcribed; 03 updated.
+- **Done (2026-08-01, round 6):** the census MANUSCRIPT written from the
+  verdicts, built, and PUBLISHED on Zenodo: v0.01, CC-BY-4.0, version
+  DOI 10.5281/zenodo.21753439, concept DOI 10.5281/zenodo.21753438
+  (record live, 200). TCB-022 done.
 - **Now:** rounds closed; nothing running.
-- **Next:** close the [8,9] window for 6 roots (first RL-7 SAT-lane
-  target, or an 8-gate construction hunt via the RL-8 moves calculus);
-  TCB-005 canonicalization or compiled backend for depth 8; read
-  Doyle-Poonen before any V8 import; Narkiewicz attribution for the
-  cycle ceiling; wiki 05 (open questions) + manuscript gate assessment
-  (methodology 09): the validated + novel base (census 1-7, three
-  proved lemmas, two mechanism discoveries) is approaching manuscript
-  threshold.
+- **Next:** close the [8,9] window for 6 roots (TCB-021: RL-8 moves
+  hunt, then RL-7 SAT decision); TCB-005 canonicalization or compiled
+  backend for depth 8; reads (Doyle-Poonen, Narkiewicz, Cheng full);
+  wiki 05 (open questions); manuscript updates ship as Zenodo NEW
+  VERSIONS on the same concept DOI.

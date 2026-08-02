@@ -16,6 +16,13 @@ Blum-Shub-Smale model and $VP^0 \ne VNP^0$ in constant-free Valiant theory;
 it is open, the real-zeros analogue is false, and no nontrivial lower bound
 on $\tau(n!)$ is known.
 
+## Manuscript
+
+The census paper (v0.01, 2026-08-01, CC-BY-4.0) is published on Zenodo:
+version DOI [10.5281/zenodo.21753439](https://doi.org/10.5281/zenodo.21753439),
+concept DOI [10.5281/zenodo.21753438](https://doi.org/10.5281/zenodo.21753438)
+(always the latest version). Source: `../../../../manuscripts/tau-conjecture/census/`.
+
 ## Pages
 
 | Page | Content | Status |

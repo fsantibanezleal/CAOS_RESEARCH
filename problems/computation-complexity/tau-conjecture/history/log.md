@@ -140,3 +140,19 @@
 - Dead ends: naive census at depth 8 is out of single-machine reach
   (frontier ~10^9 states); declared routes: proved canonicalization,
   compiled/parallel backend, or SAT-lane targeted decisions.
+
+## 2026-08-01 (round 6): the census manuscript, published
+
+- Manuscript gate (TCB-022) judged PASSED and executed per the standing
+  rule: the census paper was written (manuscripts/tau-conjecture/census/,
+  8 pages, transcribed from the EXP-001..005 verdicts and the two
+  derivation notes, front-matter per methodology 05), built (two-pass
+  pdflatex, page-1 + interior visually checked), and PUBLISHED on Zenodo
+  via the DOI-prereserve flow: version DOI 10.5281/zenodo.21753439,
+  concept DOI 10.5281/zenodo.21753438, CC-BY-4.0, v0.01, record live
+  (HTTP 200 verified). Both refuted predictions and the EXP-005 tooling
+  incident are disclosed in the paper; every claim is labeled MV/D/C
+  with a verdict trace.
+- Ledger: vault manuscripts/tau-conjecture/ (zenodo.json, sources.json,
+  deposits.json) + both manuscripts READMEs updated.
+- Next: the [8,9] window (TCB-021).
