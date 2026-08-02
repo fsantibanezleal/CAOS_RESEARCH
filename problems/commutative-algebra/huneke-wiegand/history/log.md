@@ -101,3 +101,13 @@
   `b063414231a92de4e3b19f1c3cce3f698a5eb166a1cfe5fb178eebee29e5a4c9` exactly.
 - PR `#139` passed `guards` and `test`, was marked ready, and merged the full research round into
   `develop` at `09fc3c26b04f6bffcc9fca055dffb3df3c8ecdce`.
+
+## 2026-08-02 - EXP-007 declared
+
+- Reconciled the published minimum, the open classification item and the public candidate
+  repository; no complete `F=181` classification was found.
+- Rejected a full theorem-tree census at `F=181` after the measured lower-frontier growth.
+- Selected staged projected AllSAT: certify shift support first, enumerate full membership vectors
+  per feasible shift second, and require an accepted DRAT proof to close every layer.
+- Declared the falsifiable prediction that the public `(Gamma,14)` normalized pair is unique at
+  `F=181`. No classification computation was run before this declaration.

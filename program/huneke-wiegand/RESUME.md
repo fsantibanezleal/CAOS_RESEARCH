@@ -64,6 +64,7 @@ paper's diagonal gcd obstruction is vacuous for shift 14.
 | EXP-004 | Can two independent certified routes reproduce the published `F<69` frontier? | CONFIRMED | 48,954 semigroups, 1,503,391 gaps and 1,156 accepted DRAT proofs |
 | EXP-005 | What is the least counterexample Frobenius value at or above 69? | CONFIRMED | exact minimum `F=181`; checked proofs below, exact model and tree cross-check |
 | EXP-006 | Does the `m=4s`, `F=13s-1` block pattern extend to a family? | Route G REFUTED; Route K open | only the seed passes the fixed-offset sweep; constrained block SAT remains |
+| EXP-007 | What are all normalized rigid pairs at the minimal value `F=181`? | DECLARED | staged projected AllSAT; exact model checks and terminal DRAT certificates required |
 
 ## Strongest routes
 
@@ -97,12 +98,14 @@ ideal class. The full 228-file search audit passes. Independent theorem trees ag
 `F=69,71,73,75`. EXP-006 Route G refutes the naïve fixed-offset family: only `s=14` passes through
 100; Route K remains open. The seven-page v0.01 preprint passed a warning-free two-pass build,
 complete rendered-page inspection and exact remote-file hash verification. Zenodo version DOI
-`10.5281/zenodo.21763583` and concept DOI `10.5281/zenodo.21763582` are live.
+`10.5281/zenodo.21763583` and concept DOI `10.5281/zenodo.21763582` are live. EXP-007 is declared
+before implementation: it will first certify all feasible shifts at `F=181`, then enumerate the
+membership vectors at each shift and close every class with an accepted projected-blocking proof.
 
 ## 5. Next actions
 
-1. Classify all rigid pairs at `F=181`: count models modulo semigroup/shift equivalence before
-   claiming uniqueness or a stronger minimum.
+1. Execute EXP-007: certify the complete shift support and every fixed-shift membership class at
+   `F=181`; claim uniqueness only if all terminal proofs pass.
 2. Execute EXP-006 Route K as a constrained block/Kunz search; require non-seed models before any
    renewed family claim.
 3. Extend the surviving-variants matrix without weakening the proved scope.
