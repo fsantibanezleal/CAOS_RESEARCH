@@ -55,7 +55,8 @@ instrument but is not a minimality result.
 | EXP-001 | Can Singular/4ti2 independently reproduce the colon equality and reject a known-positive control? | CONFIRMED | 322-generator dimension-one toric basis; zero differences; control residues |
 | EXP-002 | What is the exact endomorphism overring and why do modern positive criteria miss I? | CONFIRMED | exact semigroup, type 24, and forced Ext/Tor escape map |
 | EXP-003 | Can SAT recover `(F,s)=(181,14)` and calibrate exact controls? | CONFIRMED | independently checked finite SAT machinery |
-| EXP-004 | Can two independent certified routes reproduce the published `F<69` frontier? | declared | Blanco--Rosales tree plus CaDiCaL/DRAT proof suite |
+| EXP-004 | Can two independent certified routes reproduce the published `F<69` frontier? | running | Route A passed all 48,954 semigroups and 1,503,391 gaps; Route B proof sweep active |
+| EXP-005 | What is the least counterexample Frobenius value at or above 69? | declared, gated | one selector CNF per F, checked proofs, exact model and tree cross-check |
 
 ## Strongest routes
 
@@ -80,17 +81,16 @@ instrument but is not a minimality result.
 
 ## 4. In flight
 
-EXP-004 is declared before tool installation, implementation or computation. Route A will enumerate
-all symmetric semigroups using Blanco--Rosales Theorem 9 and attach a failed-rigidity witness to
-every gap. Route B will generate independent CNFs and require CaDiCaL DRAT proofs accepted by
-DRAT-trim. EXP-001 through EXP-003 remain closed.
+EXP-004 Route A has independently exhausted all odd `F<=67`: 48,954 symmetric semigroups and
+1,503,391 gap cases, with zero counterexamples. Route B is running the complete 1,156-query
+proof-carrying sweep. EXP-005 is declared but may not execute until EXP-004 closes conclusively.
 
 ## 5. Next actions
 
-1. Install the pinned proof tools only after the EXP-004 declaration commit.
-2. Implement and smoke-test the theorem-complete tree at `F<=11`.
-3. Implement DIMACS generation, CaDiCaL proof output and DRAT-trim checking; calibrate at 181.
-4. Reproduce `F<69`; only then declare a separately budgeted frontier extension.
+1. Complete and independently audit the EXP-004 Route B proof manifest.
+2. Close EXP-004 only if P1-P6 pass and commit the exact evidence boundary.
+3. Implement EXP-005's one-hot selector encoding and adversarial tests.
+4. Calibrate at `F<=11` and `F=181`, then search upward from 69 with proofs.
 5. Compare any new frontier with the additive-family and surviving-variant routes.
 
 ## 6. Where everything lives
