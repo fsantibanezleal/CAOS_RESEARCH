@@ -7,6 +7,7 @@ from .semigroup import (
     minimal_generators,
     validate_symmetric_mask,
 )
+from .cnf import build_rigidity_cnf, mask_from_model
 
 __all__ = [
     "analyze_rigidity",
@@ -14,4 +15,6 @@ __all__ = [
     "gap_values",
     "minimal_generators",
     "validate_symmetric_mask",
+    "build_rigidity_cnf",
+    "mask_from_model",
 ]
