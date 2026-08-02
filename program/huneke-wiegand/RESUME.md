@@ -1,8 +1,8 @@
 # Huneke-Wiegand extensions - session handoff
 
 Updated: 2026-08-02. Lifecycle: consolidating; EXP-005 proves Frobenius minimality at 181,
-EXP-007 proves uniqueness of the normalized pair at that minimum, and preprint v0.01 is published
-at DOI `10.5281/zenodo.21763583` pending its required new-version expansion.
+EXP-007 proves uniqueness of the normalized pair at that minimum, and expanded preprint v0.02 is
+published at DOI `10.5281/zenodo.21764868`.
 
 ## 1. State in one screen
 
@@ -99,15 +99,17 @@ ideal class. The full 228-file search audit passes. Independent theorem trees ag
 `F=69,71,73,75`. EXP-006 Route G refutes the naïve fixed-offset family: only `s=14` passes through
 100; Route K remains open. The seven-page v0.01 preprint passed a warning-free two-pass build,
 complete rendered-page inspection and exact remote-file hash verification. Zenodo version DOI
-`10.5281/zenodo.21763583` and concept DOI `10.5281/zenodo.21763582` are live. EXP-007 is CONFIRMED:
+Preprint v0.02 is published at version DOI `10.5281/zenodo.21764868`; concept DOI
+`10.5281/zenodo.21763582` resolves to it and v0.01 remains frozen at `10.5281/zenodo.21763583`.
+The public v0.02 file matches the committed 350,524-byte PDF at SHA-256
+`93a07d124c7b3f2cf144a5343d31ca40e312a80d99308b3ef567c7065f126bb9`. EXP-007 is CONFIRMED:
 the support proof leaves only shift 14, and the fixed-shift proof leaves only the public membership
 vector. The independent audit reconstructs all formulas and freshly accepts both proofs. This is
 the complete minimum-layer classification, not a classification at higher Frobenius values.
 
 ## 5. Next actions
 
-1. Expand the manuscript with EXP-007 and publish a formal Zenodo new version; v0.01 stays frozen.
-2. Execute EXP-006 Route K as a constrained block/Kunz search; require non-seed models before any
+1. Execute EXP-006 Route K as a constrained block/Kunz search; require non-seed models before any
    renewed family claim.
 3. Extend the surviving-variants matrix without weakening the proved scope.
 4. Reduce the certificate trusted base or import accepted proofs into a smaller verified checker.

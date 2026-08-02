@@ -11,6 +11,7 @@
 | 2026-08-02 | consolidating | consolidating | warning-free seven-page preprint v0.01 published on Zenodo; public PDF hash matches the committed artifact exactly |
 | 2026-08-02 | consolidating | consolidating | PR #139 passed guards and tests and promoted the complete theorem, certificate and manuscript record to `develop` |
 | 2026-08-02 | consolidating | consolidating | EXP-007 certified the public pair as the unique normalized rigid pair at the minimum `F=181` |
+| 2026-08-02 | consolidating | consolidating | eight-page preprint v0.02 published on Zenodo with the minimum-layer theorem and exact public-file hash verification |
 
 Current state: **consolidating**.
 
@@ -23,6 +24,7 @@ reflexivity fails and three adjacent Ext/Tor groups must be nonzero. EXP-004 clo
 lower frontier through `F=67`. EXP-005 extends the certified range through 179 and validates the
 first model at 181, proving Frobenius minimality in the stated class. Preprint v0.01 is published
 at DOI `10.5281/zenodo.21763583`; Son Pham's counterexample discovery priority is explicit in the
-front matter and metadata. EXP-007 now classifies the minimum layer completely: shift 14 is the
+front matter and metadata. Preprint v0.02 is published at DOI `10.5281/zenodo.21764868` and EXP-007
+classifies the minimum layer completely: shift 14 is the
 only feasible shift and the public membership vector is the only semigroup there. Family and
 surviving-variant questions remain open.

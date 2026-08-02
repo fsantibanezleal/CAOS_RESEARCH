@@ -13,7 +13,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | generalized-arithmetic exclusion | proved | multiplicity/low-generator argument excludes the 2024 positive family; deletion gcds are all one |
 | EXP-006 Route G | REFUTED | only `s=14` passes the fixed-offset sweep through even `s=100`; constrained Route K remains open |
 | EXP-007 | CONFIRMED | the public semigroup at shift 14 is the unique normalized rigid pair at the minimum `F=181`; both terminal proofs pass a fresh audit |
-| preprint v0.01 | published | certified Frobenius-minimality theorem, DOI [`10.5281/zenodo.21763583`](https://doi.org/10.5281/zenodo.21763583) |
+| preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 
 CAOS independently reproduces the public counterexample's decisive finite certificate. Discovery
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery. CAOS's novel

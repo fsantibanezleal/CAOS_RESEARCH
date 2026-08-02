@@ -123,3 +123,17 @@
   rechecked both proofs.
 - EXP-007 is CONFIRMED on P1-P6. The public pair is the unique normalized rigid pair attaining the
   least Frobenius value in the stated class. The manuscript/Zenodo new-version gate is triggered.
+
+## 2026-08-02 - uniqueness preprint v0.02 published
+
+- Expanded the manuscript from seven to eight pages with the projected-blocker lemma,
+  minimum-layer uniqueness theorem, certificate table, reconstruction audit and narrowed open
+  questions. The author remains Felipe Santibanez-Leal alone.
+- Built twice without warnings, undefined references, overfull boxes or underfull boxes. Inspected
+  all eight rendered pages and corrected missing running headers on continuation pages.
+- Published Zenodo version DOI `10.5281/zenodo.21764868`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to it. Immutable v0.01 remains available at
+  `10.5281/zenodo.21763583`.
+- The public file is 350,524 bytes and matches local MD5
+  `5c5b20c2a69ad2ddf7de6724b235f5d6` and SHA-256
+  `93a07d124c7b3f2cf144a5343d31ca40e312a80d99308b3ef567c7065f126bb9` exactly.

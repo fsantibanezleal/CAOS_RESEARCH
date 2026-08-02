@@ -32,3 +32,10 @@ Zenodo identifiers:
 Evidence sources are EXP-001 through EXP-007 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005 and EXP-007 manifests.
+
+Version 0.02 public-file verification:
+
+- bytes: `350524`
+- MD5: `5c5b20c2a69ad2ddf7de6724b235f5d6`
+- SHA-256: `93a07d124c7b3f2cf144a5343d31ca40e312a80d99308b3ef567c7065f126bb9`
+- the concept latest, public metadata, sole author/ORCID and downloaded PDF all match the committed record
