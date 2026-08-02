@@ -101,13 +101,12 @@ complete rendered-page inspection and exact remote-file hash verification. Zenod
 
 ## 5. Next actions
 
-1. Complete PR review and promote the theorem, certificates and published manuscript to `develop`.
-2. Classify all rigid pairs at `F=181`: count models modulo semigroup/shift equivalence before
+1. Classify all rigid pairs at `F=181`: count models modulo semigroup/shift equivalence before
    claiming uniqueness or a stronger minimum.
-3. Execute EXP-006 Route K as a constrained block/Kunz search; require non-seed models before any
+2. Execute EXP-006 Route K as a constrained block/Kunz search; require non-seed models before any
    renewed family claim.
-4. Extend the surviving-variants matrix without weakening the proved scope.
-5. Reduce the certificate trusted base or import accepted proofs into a smaller verified checker.
+3. Extend the surviving-variants matrix without weakening the proved scope.
+4. Reduce the certificate trusted base or import accepted proofs into a smaller verified checker.
 
 ## 6. Where everything lives
 
@@ -134,6 +133,8 @@ complete rendered-page inspection and exact remote-file hash verification. Zenod
 - A validated finite counterexample does not automatically classify or minimize all examples.
 - Zenodo v0.01 is immutable. Any correction or extension requires the formal new-version flow;
   no silent replacement of the published PDF.
+- PR `#139` merged the theorem, certificates and published manuscript into `develop` at
+  `09fc3c26b04f6bffcc9fca055dffb3df3c8ecdce`; this work checkout remains on its product branch.
 
 ## Resume command
 
