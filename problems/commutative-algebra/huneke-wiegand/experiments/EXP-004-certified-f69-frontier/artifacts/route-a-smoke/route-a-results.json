@@ -1,0 +1,150 @@
+{
+  "verdict": "NO_COUNTEREXAMPLE",
+  "max_f": 11,
+  "odd_f_count": 6,
+  "semigroup_count": 16,
+  "gap_case_count": 72,
+  "aggregate_sha256": "4fd90e20e7818c3d158dc632a98c883cfef1cc44fc820b6b7879e05ca28bfde3",
+  "seconds": 0.0301014999859035,
+  "results": {
+    "1": {
+      "frobenius": 1,
+      "semigroup_count": 1,
+      "gap_case_count": 1,
+      "rigid_count": 0,
+      "rigid_cases": [],
+      "semigroup_sha256": "8da99ecf971d0b79cbe958650dc54e9ab704aa7040bb1426673d67ec49a9a18f",
+      "witness_sha256": "05d9130372aa91fc8badfb4506f54ed592143ef4a67e7babb42ae0bbe3344a79",
+      "first_semigroups": [
+        "10:2,3"
+      ],
+      "first_witnesses": [
+        "10:1:2"
+      ]
+    },
+    "3": {
+      "frobenius": 3,
+      "semigroup_count": 1,
+      "gap_case_count": 2,
+      "rigid_count": 0,
+      "rigid_cases": [],
+      "semigroup_sha256": "4a60125ec336a7534668e3a048e8928fd9f5f6623580d1f1c9885d86c497ce88",
+      "witness_sha256": "7f9c64570751b8178be8c1c0472f70b1a95754a0f908d7082941069d34536c7c",
+      "first_semigroups": [
+        "1010:2,5"
+      ],
+      "first_witnesses": [
+        "1010:1:4",
+        "1010:3:2"
+      ]
+    },
+    "5": {
+      "frobenius": 5,
+      "semigroup_count": 2,
+      "gap_case_count": 6,
+      "rigid_count": 0,
+      "rigid_cases": [],
+      "semigroup_sha256": "fee46c4efe30985e20a8bcbc6f0edec9e8cc8441a5f000eaeb972d8f17ac08f8",
+      "witness_sha256": "fd43c238b3d4aa4c93f80ba313b97ffcb53d8d2ee9f0fb173b2c338d7a853e8a",
+      "first_semigroups": [
+        "100110:3,4",
+        "101010:2,7"
+      ],
+      "first_witnesses": [
+        "100110:1:7",
+        "100110:2:4",
+        "100110:5:3",
+        "101010:1:6",
+        "101010:3:4",
+        "101010:5:2"
+      ]
+    },
+    "7": {
+      "frobenius": 7,
+      "semigroup_count": 3,
+      "gap_case_count": 12,
+      "rigid_count": 0,
+      "rigid_cases": [],
+      "semigroup_sha256": "60740ed8c209b5e7a05c5e3055250ea31c351fb9f3e1e5d187feed051631b038",
+      "witness_sha256": "a9ab7bb74c0d08378536991656769893f91fb071cc3fae7b9aeec43bd7333ca8",
+      "first_semigroups": [
+        "10001110:4,5,6",
+        "10010110:3,5",
+        "10101010:2,9"
+      ],
+      "first_witnesses": [
+        "10001110:1:4",
+        "10001110:2:4",
+        "10001110:3:5",
+        "10001110:7:4",
+        "10010110:1:8",
+        "10010110:2:8",
+        "10010110:4:5",
+        "10010110:7:3",
+        "10101010:1:8",
+        "10101010:3:6",
+        "10101010:5:4",
+        "10101010:7:2"
+      ]
+    },
+    "9": {
+      "frobenius": 9,
+      "semigroup_count": 3,
+      "gap_case_count": 15,
+      "rigid_count": 0,
+      "rigid_cases": [],
+      "semigroup_sha256": "e89fe262a3ec920a8a292a5bc676d520e53f9269e5f7d854e0a53caca9a488ba",
+      "witness_sha256": "f1985766a520d4cf57a962e376dc1d49bfb34bc51be64e3df61c3f799ed9284a",
+      "first_semigroups": [
+        "1000011110:5,6,7,8",
+        "1000101110:4,6,7",
+        "1010101010:2,11"
+      ],
+      "first_witnesses": [
+        "1000011110:1:5",
+        "1000011110:2:6",
+        "1000011110:3:5",
+        "1000011110:4:6",
+        "1000011110:9:5",
+        "1000101110:1:6",
+        "1000101110:2:4",
+        "1000101110:3:4",
+        "1000101110:5:6",
+        "1000101110:9:4",
+        "1010101010:1:10",
+        "1010101010:3:8"
+      ]
+    },
+    "11": {
+      "frobenius": 11,
+      "semigroup_count": 6,
+      "gap_case_count": 36,
+      "rigid_count": 0,
+      "rigid_cases": [],
+      "semigroup_sha256": "18f246149209f4f1706feb6fe8fc0ef58001b85391153906bf80bca66be384cc",
+      "witness_sha256": "3a55caeb3c28976120c6a8226a824fa7bf981d21e73b5fe091c786bd97003694",
+      "first_semigroups": [
+        "100000111110:6,7,8,9,10",
+        "100001011110:5,7,8,9",
+        "100010101110:4,6,9",
+        "100100110110:3,7",
+        "100011001110:4,5",
+        "101010101010:2,13"
+      ],
+      "first_witnesses": [
+        "100000111110:1:6",
+        "100000111110:2:6",
+        "100000111110:3:6",
+        "100000111110:4:6",
+        "100000111110:5:7",
+        "100000111110:11:6",
+        "100001011110:1:7",
+        "100001011110:2:5",
+        "100001011110:3:7",
+        "100001011110:4:5",
+        "100001011110:6:7",
+        "100001011110:11:5"
+      ]
+    }
+  }
+}
