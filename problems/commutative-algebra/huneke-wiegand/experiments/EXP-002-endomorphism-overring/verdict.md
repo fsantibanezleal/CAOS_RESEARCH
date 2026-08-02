@@ -53,4 +53,3 @@ principality without contradicting them.
 This is a structural analysis of Son Pham's public candidate. Discovery priority remains Son
 Pham's. It is not a minimality theorem, an infinite family, or a peer-reviewed result. Publication
 novelty remains gated on comparison with the candidate's authors and the literature.
-

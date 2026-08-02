@@ -32,6 +32,11 @@ type 24 and new minimal generators 101 and 107. Dey--Lyle Proposition 4.1(2) and
 4.2--4.4 show the precise escape mechanism: `I` stays rigid over `End_R(I)` but is not reflexive
 there, while `Ext^1_E(I,E)`, `Ext^2_E(I,I)` and `Tor^R_1(I,E)` are nonzero.
 
+CAOS EXP-003 calibrates a finite SAT encoding at `(181,14)`. Z3 recovers the pinned candidate,
+and a separate standard-library checker validates the model through `2F+1` plus a proved tail.
+Every gap of the `<4,5>` control has an explicit failed rigidity witness. This validates the
+instrument but is not a minimality result.
+
 ## 2. The objects table
 
 | object | definition | evidence owner |
@@ -49,7 +54,7 @@ there, while `Ext^1_E(I,E)`, `Ext^2_E(I,I)` and `Tor^R_1(I,E)` are nonzero.
 |---|---|---|---|
 | EXP-001 | Can Singular/4ti2 independently reproduce the colon equality and reject a known-positive control? | CONFIRMED | 322-generator dimension-one toric basis; zero differences; control residues |
 | EXP-002 | What is the exact endomorphism overring and why do modern positive criteria miss I? | CONFIRMED | exact semigroup, type 24, and forced Ext/Tor escape map |
-| EXP-003 | Can SAT recover `(F,s)=(181,14)` and calibrate exact controls? | declared | independently checked SAT machinery |
+| EXP-003 | Can SAT recover `(F,s)=(181,14)` and calibrate exact controls? | CONFIRMED | independently checked finite SAT machinery |
 
 ## Strongest routes
 
@@ -74,16 +79,16 @@ there, while `Ext^1_E(I,E)`, `Ext^2_E(I,I)` and `Tor^R_1(I,E)` are nonzero.
 
 ## 4. In flight
 
-EXP-003 is declared before dependency installation, implementation or run. It calibrates a finite
-SAT encoding at the known candidate and a known-positive control. EXP-001 and EXP-002 are closed;
-EXP-001's instrumentation failures are archived and do not count as mathematical runs.
+No experiment is in flight. EXP-004 is ready but must declare a certified/exhaustive lower-frontier
+method before any search. EXP-001 through EXP-003 are closed; EXP-001's instrumentation failures
+are archived and do not count as mathematical runs.
 
 ## 5. Next actions
 
-1. Declare the SAT calibration before installing or invoking any SAT dependency.
-2. Recover `(F,s)=(181,14)` and independently recheck every extracted model.
-3. Reproduce the published `F<69` frontier only with exhaustive or proof-producing evidence.
-4. Extend that frontier only after calibration and proof-output design.
+1. Declare EXP-004 with a proof-producing or independently exhaustive UNSAT design.
+2. Reproduce the published `F<69` frontier under that stronger evidence standard.
+3. Extend the frontier with checkpointed, bounded searches.
+4. Compare any new frontier with the additive-family and surviving-variant routes.
 
 ## 6. Where everything lives
 

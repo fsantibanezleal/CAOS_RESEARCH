@@ -25,3 +25,6 @@
   4.1(2) and Theorems 4.2--4.4 to obtain the exact rigidity/reflexivity/Ext/Tor escape map.
 - Declared EXP-003 before SAT dependency installation, implementation or execution. Kept
   calibration separate from any uniqueness, minimality or certified-UNSAT claim.
+- EXP-003 verdict CONFIRMED on P1-P6. Z3 4.16.0 recovered the pinned `(181,14)` model; the
+  standard-library checker verified the exact window and tail, rejected a corrupted vector, and
+  produced explicit rigidity failures for every nonzero gap of the `<4,5>` control.

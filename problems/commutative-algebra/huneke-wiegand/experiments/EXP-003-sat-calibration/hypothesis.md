@@ -44,4 +44,3 @@ certificate or a separate exhaustive implementation. Dependency installation is 
 after this declaration is committed.
 
 Wall cap: five minutes per calibration query. Exact integers and deterministic seeds only.
-
