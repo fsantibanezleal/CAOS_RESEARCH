@@ -182,3 +182,16 @@ of that minor to vanish, and those borders inherit the four known clean
 entries, so their expansions are single-bracket expressions whose vanishing
 loci can be analyzed against the shape inequalities case by case. This is
 the next session's mathematics; the catalog is its raw material.
+
+## k = 4 note (same day): the ghost-free minAss attempt aborts internally
+
+minAssGTZ on the 13-variable ghost-free shape ideal exited with Singular's
+"halt 1" before its 600 s budget, printing no components and no parse
+errors (raw output archived in WSL /root/exp018c/minass.out and mirrored
+here in substance). Treated as failed-fast; the k = 4 case proceeds via
+the rank-4 CC witness route (EXP-018b) or, alternatively, via a direct
+argument that some single 4 x 4 minor is nonvanishing on every
+4-dimensional component through the two EXP-016 rank-4 points' components
+(which those points already certify) plus a covering argument for any
+other components; the honest gap is components not containing either
+point, unchanged since EXP-016's verdict.
