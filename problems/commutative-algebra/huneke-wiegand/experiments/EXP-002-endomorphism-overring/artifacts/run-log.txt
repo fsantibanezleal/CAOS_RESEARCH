@@ -1,0 +1,15 @@
+[23:04:33] EXP-002 start
+[23:04:33] PASS input generators have gcd one
+[23:04:33] PASS P5 DP and Apery routes agree exactly
+[23:04:33] PASS P1 exact three added values
+[23:04:33] PASS P2 Frobenius is 125
+[23:04:33] PASS P2 conductor is 126
+[23:04:33] PASS P2 genus is 88
+[23:04:33] PASS P3 Lambda is not symmetric
+[23:04:33] PASS P4 Lambda is additively closed
+[23:04:33] PASS P4 value 101 stabilizes V
+[23:04:33] PASS P6 false gap 103 is rejected
+[23:04:33] PASS P6 Gamma alone omits stabilizer 101
+[23:04:33] PASS P4 every other Gamma gap below the old conductor fails stabilization
+[23:04:33] DISCOVERY Lambda has type 24 with PF=(84, 85, 86, 88, 91, 92, 94, 98, 99, 100, 102, 103, 104, 105, 106, 108, 109, 110, 111, 117, 118, 123, 124, 125)
+[23:04:33] EXP-002 CONFIRMED: P1-P6 pass

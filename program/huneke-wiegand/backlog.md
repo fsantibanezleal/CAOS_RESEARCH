@@ -3,7 +3,7 @@
 | id | priority | status | item | gate |
 |---|---:|---|---|---|
 | HWB-001 | 0 | done | EXP-001 independent Singular/4ti2 reproduction | P1-P6 confirmed; failed toolchain attempts preserved |
-| HWB-002 | 0 | in progress | exact `End_R(I)` value semigroup and Gorenstein test | two independent membership routes |
+| HWB-002 | 0 | done | exact `End_R(I)` value semigroup and Gorenstein test | P1-P6 plus exact Dey--Lyle dependency map confirmed |
 | HWB-003 | 1 | pending | SAT model calibration at `(181,14)` | extracted model rechecked without solver |
 | HWB-004 | 1 | pending | reproduce published `F<69` frontier | certified or independently exhaustive UNSAT evidence |
 | HWB-005 | 1 | pending | extend minimal Frobenius frontier | checkpoints, proof artifacts, honest cap |

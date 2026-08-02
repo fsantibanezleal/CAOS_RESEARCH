@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-01. Lifecycle: exploring; EXP-001 confirmed, EXP-002 declared.
+Updated: 2026-08-01. Lifecycle: analyzing; EXP-001 and EXP-002 confirmed.
 
 ## 1. State in one screen
 
@@ -26,6 +26,12 @@ principal colon generator sets and the decisive intersection-product equality. S
 uses a 322-generator toric standard basis of dimension one; the finite route agrees. The
 `<4,5>` hypersurface control rejects equality with residues `x5^3` and `x4^4`.
 
+CAOS EXP-002 independently computes
+`v(End_R(I))=Gamma union {101,107,181}`. The overring semigroup has Frobenius 125, genus 88,
+type 24 and new minimal generators 101 and 107. Dey--Lyle Proposition 4.1(2) and Theorems
+4.2--4.4 show the precise escape mechanism: `I` stays rigid over `End_R(I)` but is not reflexive
+there, while `Ext^1_E(I,E)`, `Ext^2_E(I,I)` and `Tor^R_1(I,E)` are nonzero.
+
 ## 2. The objects table
 
 | object | definition | evidence owner |
@@ -42,7 +48,7 @@ uses a 322-generator toric standard basis of dimension one; the finite route agr
 | EXP | question | status | load-bearing output |
 |---|---|---|---|
 | EXP-001 | Can Singular/4ti2 independently reproduce the colon equality and reject a known-positive control? | CONFIRMED | 322-generator dimension-one toric basis; zero differences; control residues |
-| EXP-002 | What is the exact endomorphism overring and why do modern positive criteria miss I? | declared | mechanism invariant |
+| EXP-002 | What is the exact endomorphism overring and why do modern positive criteria miss I? | CONFIRMED | exact semigroup, type 24, and forced Ext/Tor escape map |
 | EXP-003 | Can SAT recover `(F,s)=(181,14)` and certify a lower frontier? | planned | minimality machinery |
 
 ## Strongest routes
@@ -68,16 +74,16 @@ uses a 322-generator toric standard basis of dimension one; the finite route agr
 
 ## 4. In flight
 
-EXP-002 is the only in-flight round. Its hypothesis predicts the exact three added overring
-values and the resulting nonsymmetric semigroup. EXP-001 is closed; its two instrumentation
-failures are archived and do not count as mathematical runs.
+No computation is currently in flight. EXP-003 is the next declared-before-run target. EXP-001
+and EXP-002 are closed; EXP-001's instrumentation failures are archived and do not count as
+mathematical runs.
 
 ## 5. Next actions
 
-1. Validate the EXP-002 endomorphism-semigroup prediction by two routes.
-2. Transcribe its theorem consequences only after checking every Dey-Lyle hypothesis.
-3. Declare the SAT calibration before installing or invoking any SAT dependency.
-4. Extend the published F<69 frontier only after calibration and proof-output design.
+1. Declare the SAT calibration before installing or invoking any SAT dependency.
+2. Recover `(F,s)=(181,14)` and independently recheck every extracted model.
+3. Reproduce the published `F<69` frontier only with exhaustive or proof-producing evidence.
+4. Extend that frontier only after calibration and proof-output design.
 
 ## 6. Where everything lives
 

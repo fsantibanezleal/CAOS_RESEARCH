@@ -20,3 +20,6 @@
 - Preserved two invalid instrumentation attempts: a missing helper PATH and DU's dimension-zero
   output; a third invocation had valid zero remainders but exposed Singular's zero-slot encoding.
 - EXP-001 verdict CONFIRMED on P1-P6. Declared EXP-002 before its implementation or run.
+- EXP-002 verdict CONFIRMED on P1-P6 by DP and Apéry routes. Computed overring Frobenius 125,
+  genus 88, type 24 and new minimal generators 101 and 107. Audited Dey--Lyle Proposition
+  4.1(2) and Theorems 4.2--4.4 to obtain the exact rigidity/reflexivity/Ext/Tor escape map.
