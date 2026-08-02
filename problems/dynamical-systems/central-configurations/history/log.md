@@ -437,3 +437,22 @@
   genuine CC witness. n = 6 note: the pow3 arbitrary-precision gfan08 run
   passed 7 cpu-days, outliving gfan 0.7's second failure mode; both runs
   healthy and checkpointed.
+
+## 2026-08-01 - Round 12: EXP-018 decided; the chain re-weights onto the loci bounds
+
+- EXP-018 VERDICT: HEXAGON VERIFIED AS STRATUM CC (all six reduced equations
+  exactly zero at equal masses, in Q(sqrt(3)), one second), RANK DEGENERATES
+  TO 3 at its symmetry (every 4x4 minor vanishes; a nonzero 3x3 minor is
+  displayed in closed form). The declared second branch fired. Structural
+  consequence: the theorem chain needs NO CC witness if EXP-017's dimension
+  bounds land for all k (components with k-dim shape projection cannot sit
+  inside Delta_k when dim(shape meet Delta_k) < k); the Dias-Pan witness
+  route was their workaround for not computing the Delta_4 bound, and our
+  route already chose the bounds. EXP-018b (a less symmetric witness) is
+  demoted to redundancy.
+- Session infrastructure: the shared checkout moved to a third problem's
+  branch (work/huneke-wiegand/open, after tau-conjecture PRs 136-137);
+  central-configurations work continues from an isolated git worktree on the
+  same lineage branch, touching nothing of the parallel session's tree. A
+  curation commit by the other session (52668e4, preserving the EXP-010
+  tuple API correction) is acknowledged.

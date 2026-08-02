@@ -1,0 +1,10 @@
+{
+  "p1-hexagon-is-stratum-cc": {
+    "status": "pass",
+    "detail": "L-block at equal masses: [0, 0, 0, 0, 0, 0] (1s)"
+  },
+  "p2-rank-at-hexagon": {
+    "status": "decided",
+    "detail": "rank=3; nonzero minor rows(0, 1, 2) cols(0, 1, 2) = 147/128 - 735*sqrt(3)/512 (2s)"
+  }
+}
