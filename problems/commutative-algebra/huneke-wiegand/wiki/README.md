@@ -11,6 +11,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-004 | running | tree route exhausted 48,954 semigroups and 1,503,391 gaps below 69; DRAT route active |
 | EXP-005 | declared, gated | one-selector-CNF-per-F minimality search after EXP-004 closure |
 | generalized-arithmetic exclusion | proved | multiplicity/low-generator argument excludes the 2024 positive family; deletion gcds are all one |
+| EXP-006 | declared, gated | exact `m=4s`, `F=13s-1` block ansatz with falsification-first family gate |
 
 CAOS independently reproduces the public counterexample's decisive finite certificate. Discovery
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery.

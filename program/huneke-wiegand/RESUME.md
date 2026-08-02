@@ -62,6 +62,7 @@ paper's diagonal gcd obstruction is vacuous for shift 14.
 | EXP-003 | Can SAT recover `(F,s)=(181,14)` and calibrate exact controls? | CONFIRMED | independently checked finite SAT machinery |
 | EXP-004 | Can two independent certified routes reproduce the published `F<69` frontier? | running | Route A passed all 48,954 semigroups and 1,503,391 gaps; Route B proof sweep active |
 | EXP-005 | What is the least counterexample Frobenius value at or above 69? | declared, gated | one selector CNF per F, checked proofs, exact model and tree cross-check |
+| EXP-006 | Does the `m=4s`, `F=13s-1` block pattern extend to a family? | declared, gated | fixed-template falsification, constrained block SAT, symbolic proof gate |
 
 ## Strongest routes
 
@@ -91,6 +92,7 @@ paper's diagonal gcd obstruction is vacuous for shift 14.
 EXP-004 Route A has independently exhausted all odd `F<=67`: 48,954 symmetric semigroups and
 1,503,391 gap cases, with zero counterexamples. Route B is running the complete 1,156-query
 proof-carrying sweep. EXP-005 is declared but may not execute until EXP-004 closes conclusively.
+EXP-006 is declared from the exact seed block pattern but remains gated on EXP-005 calibration.
 
 ## 5. Next actions
 
