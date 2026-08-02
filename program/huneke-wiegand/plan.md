@@ -45,6 +45,7 @@ EXP-005 completed that scan without an UNKNOWN: all odd values 69 through 179 ha
 proofs and 181 has the independently validated public model. HW-P3 therefore closes with exact
 Frobenius minimum 181. HW-P6 is also closed: the validated theorem is published as preprint v0.01,
 DOI `10.5281/zenodo.21763583`. HW-P4 remains active after Route G refuted the fixed-offset family;
-Route K must search constrained blocks before any new family hypothesis. Classification at
-`F=181` is now a separate priority and may strengthen, but cannot retroactively broaden, the
-published Frobenius-minimality claim.
+Route K must search constrained blocks before any new family hypothesis. EXP-007 closes the
+separate minimum-layer classification: the public `(Gamma,14)` pair is the unique normalized pair
+at `F=181`, supported by projected enumeration and accepted terminal proofs. This strengthens the
+published theorem within its original class but does not broaden it to arbitrary modules or rings.

@@ -101,3 +101,39 @@
   `b063414231a92de4e3b19f1c3cce3f698a5eb166a1cfe5fb178eebee29e5a4c9` exactly.
 - PR `#139` passed `guards` and `test`, was marked ready, and merged the full research round into
   `develop` at `09fc3c26b04f6bffcc9fca055dffb3df3c8ecdce`.
+
+## 2026-08-02 - EXP-007 declared
+
+- Reconciled the published minimum, the open classification item and the public candidate
+  repository; no complete `F=181` classification was found.
+- Rejected a full theorem-tree census at `F=181` after the measured lower-frontier growth.
+- Selected staged projected AllSAT: certify shift support first, enumerate full membership vectors
+  per feasible shift second, and require an accepted DRAT proof to close every layer.
+- Declared the falsifiable prediction that the public `(Gamma,14)` normalized pair is unique at
+  `F=181`. No classification computation was run before this declaration.
+
+## 2026-08-02 - EXP-007 confirms minimum-layer uniqueness
+
+- The selector support layer found the exact public pair at shift 14, then blocked that shift.
+  The terminal selector formula was UNSAT and its 45,867,741-byte DRAT proof was accepted.
+- The fixed `(181,14)` layer found the public membership vector, then blocked all 182 membership
+  coordinates. Its terminal formula was UNSAT and its 1,608,691-byte proof was accepted.
+- An independent auditor rebuilt every formula byte-for-byte, decoded both SAT logs, reran exact
+  semantic checks, accounted for 12 external files totaling 63,609,504 bytes, and freshly
+  rechecked both proofs.
+- EXP-007 is CONFIRMED on P1-P6. The public pair is the unique normalized rigid pair attaining the
+  least Frobenius value in the stated class. The manuscript/Zenodo new-version gate is triggered.
+
+## 2026-08-02 - uniqueness preprint v0.02 published
+
+- Expanded the manuscript from seven to eight pages with the projected-blocker lemma,
+  minimum-layer uniqueness theorem, certificate table, reconstruction audit and narrowed open
+  questions. The author remains Felipe Santibanez-Leal alone.
+- Built twice without warnings, undefined references, overfull boxes or underfull boxes. Inspected
+  all eight rendered pages and corrected missing running headers on continuation pages.
+- Published Zenodo version DOI `10.5281/zenodo.21764868`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to it. Immutable v0.01 remains available at
+  `10.5281/zenodo.21763583`.
+- The public file is 350,524 bytes and matches local MD5
+  `5c5b20c2a69ad2ddf7de6724b235f5d6` and SHA-256
+  `93a07d124c7b3f2cf144a5343d31ca40e312a80d99308b3ef567c7065f126bb9` exactly.

@@ -196,3 +196,14 @@ def shift_from_model(q_variables: tuple[int, ...], true_variables: set[int]) -> 
     if len(selected) != 1:
         raise ValueError(f"expected one selected shift, found {selected}")
     return selected[0]
+
+
+def projected_blocking_clause(
+    variables: tuple[int, ...], true_variables: set[int]
+) -> tuple[int, ...]:
+    """Return the unique clause falsified by this complete projected assignment."""
+    if not variables:
+        raise ValueError("a projected assignment must contain at least one variable")
+    if len(set(variables)) != len(variables) or any(variable <= 0 for variable in variables):
+        raise ValueError("projected variables must be distinct positive integers")
+    return tuple(-variable if variable in true_variables else variable for variable in variables)

@@ -11,6 +11,7 @@ from .cnf import (
     build_rigidity_cnf,
     build_selector_rigidity_cnf,
     mask_from_model,
+    projected_blocking_clause,
     shift_from_model,
 )
 
@@ -23,5 +24,6 @@ __all__ = [
     "build_rigidity_cnf",
     "build_selector_rigidity_cnf",
     "mask_from_model",
+    "projected_blocking_clause",
     "shift_from_model",
 ]

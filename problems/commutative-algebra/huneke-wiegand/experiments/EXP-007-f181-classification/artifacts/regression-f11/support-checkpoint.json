@@ -1,0 +1,29 @@
+{
+  "frobenius": 11,
+  "toolchain": {
+    "cadical_version": "1.7.3",
+    "cadical_package": "cadical\t1.7.4-1",
+    "cadical_sha256": "7b73df0a6d9cf3c751a1948300e5baff8e82c4d39bcd88f0c063b5f5cfb8b33e",
+    "drat_trim_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "drat_trim_sha256": "92f0aa9575ed519d66a99b8b1b3dde6ece4618ae4c202a3a4b200265dda0aa7a"
+  },
+  "models": [],
+  "terminal": {
+    "stem": "support-000",
+    "seconds": 1.3220092999981716,
+    "variables": 227,
+    "clauses": 1557,
+    "solver_returncode": 20,
+    "cnf_bytes": 20074,
+    "cnf_sha256": "88e0c6574057d19c43d93b8444e0f96b88de126bef008434f1270a55dcf75968",
+    "solver_log_sha256": "f90e5b841356d5a6fab9abe887c2961e74244138e61557c6b9e43f0285e1a540",
+    "proof_bytes": 1921,
+    "proof_sha256": "9bfb4c9d7985e879722ec2e0546f757003a349b0ec93e53ceab295b188e5f9fd",
+    "checker_seconds": 1.6569014000124298,
+    "checker_returncode": 0,
+    "checker_log_sha256": "42de610d17afe0c564343514be8779a2a71c8d5bceb6e63fd9638e3f52061e64"
+  },
+  "status": "COMPLETE",
+  "feasible_shifts": [],
+  "aggregate_sha256": "51c267fdaf5664af97483c102dbdbc677c6ab567d7c06cff2d840397ab66e15f"
+}

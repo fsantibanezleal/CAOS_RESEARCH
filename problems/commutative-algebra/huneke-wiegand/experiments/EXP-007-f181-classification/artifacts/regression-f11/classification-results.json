@@ -1,0 +1,18 @@
+{
+  "frobenius": 11,
+  "status": "COMPLETE",
+  "toolchain": {
+    "cadical_version": "1.7.3",
+    "cadical_package": "cadical\t1.7.4-1",
+    "cadical_sha256": "7b73df0a6d9cf3c751a1948300e5baff8e82c4d39bcd88f0c063b5f5cfb8b33e",
+    "drat_trim_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "drat_trim_sha256": "92f0aa9575ed519d66a99b8b1b3dde6ece4618ae4c202a3a4b200265dda0aa7a"
+  },
+  "support_aggregate_sha256": "51c267fdaf5664af97483c102dbdbc677c6ab567d7c06cff2d840397ab66e15f",
+  "feasible_shifts": [],
+  "classes": {},
+  "normalized_pair_count": 0,
+  "distinct_semigroup_count": 0,
+  "unique_public_pair_prediction": false,
+  "aggregate_sha256": "1be93809726cd0d64d0bf9a372cc129c7af56a2060c57c6ad85753964359feac"
+}

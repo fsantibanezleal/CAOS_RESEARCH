@@ -1,0 +1,105 @@
+{
+  "frobenius": 181,
+  "status": "COMPLETE",
+  "toolchain": {
+    "cadical_version": "1.7.3",
+    "cadical_package": "cadical\t1.7.4-1",
+    "cadical_sha256": "7b73df0a6d9cf3c751a1948300e5baff8e82c4d39bcd88f0c063b5f5cfb8b33e",
+    "drat_trim_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "drat_trim_sha256": "92f0aa9575ed519d66a99b8b1b3dde6ece4618ae4c202a3a4b200265dda0aa7a"
+  },
+  "support_aggregate_sha256": "e124950345720c3681d6f8f9f7e07c8743da51afc2c18d5b9dac432a56ac088f",
+  "feasible_shifts": [
+    14
+  ],
+  "classes": {
+    "14": {
+      "frobenius": 181,
+      "shift": 14,
+      "toolchain": {
+        "cadical_version": "1.7.3",
+        "cadical_package": "cadical\t1.7.4-1",
+        "cadical_sha256": "7b73df0a6d9cf3c751a1948300e5baff8e82c4d39bcd88f0c063b5f5cfb8b33e",
+        "drat_trim_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+        "drat_trim_sha256": "92f0aa9575ed519d66a99b8b1b3dde6ece4618ae4c202a3a4b200265dda0aa7a"
+      },
+      "models": [
+        {
+          "shift": 14,
+          "membership": "10000000000000000000000000000000000000000000000000000000111000011000001111111111111100010110010111000000000000001111100111100011111111111111111111111111111111111111111111111111111110",
+          "membership_sha256": "8bf4cd6f17f12068a5755533a6852f2c36fbe9cb704c17a778a94789745fd80b",
+          "multiplicity": 56,
+          "embedding_dimension": 26,
+          "minimal_generators": [
+            56,
+            57,
+            58,
+            63,
+            64,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            87,
+            89,
+            90,
+            93,
+            95,
+            96,
+            97
+          ],
+          "rigidity": {
+            "rigid": true,
+            "first_missing_D": null,
+            "first_reverse_failure": null,
+            "minimum_inverse": 56,
+            "window_end": 363,
+            "tail_start": 238
+          },
+          "discovery": {
+            "stem": "s014-00000",
+            "seconds": 2.858696000010241,
+            "variables": 34216,
+            "clauses": 110239,
+            "solver_returncode": 10,
+            "cnf_bytes": 1873386,
+            "cnf_sha256": "6f0d5db94bdd6e54c110061dfbd946da038fa6b45c191fc8e7986f55a3bc8b37",
+            "solver_log_sha256": "c9b0e8d54dc21fbeea96e65489cda44c55232527c79ebbf7cbf91ee67aad1aa7"
+          }
+        }
+      ],
+      "terminal": {
+        "stem": "s014-00001",
+        "seconds": 9.172934000031091,
+        "variables": 34216,
+        "clauses": 110240,
+        "solver_returncode": 20,
+        "cnf_bytes": 1874100,
+        "cnf_sha256": "147ba79bc5cf5a9fd6d7142c66cb61251dc38daef4b8dc82f2118a456ec44d54",
+        "solver_log_sha256": "33ce272b9a7007c9776b1da197e37acc3f5467e16f6be504946f3da8b5b2621e",
+        "proof_bytes": 1608691,
+        "proof_sha256": "e4a888da879e36ba738367dede42686d0be1c8f07c66c850c94a52d7bdf8a47e",
+        "checker_seconds": 10.744742600014433,
+        "checker_returncode": 0,
+        "checker_log_sha256": "244758bd69e106b914479b4a325306bf77547283e4518f3923a55f4d52b96d54"
+      },
+      "status": "COMPLETE",
+      "model_count": 1,
+      "aggregate_sha256": "0ebb666b6b394e1cc1541bbabeebc0f60511238ec2be07b14d23387bc322d3ce"
+    }
+  },
+  "normalized_pair_count": 1,
+  "distinct_semigroup_count": 1,
+  "unique_public_pair_prediction": true,
+  "aggregate_sha256": "b37d9410fa07c00f22ccc0f83796644db3b44f0dd654c06933aa5d22cb1ed788"
+}

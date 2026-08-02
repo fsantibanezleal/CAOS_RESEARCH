@@ -12,9 +12,9 @@
 \definecolor{linknavy}{RGB}{25,55,125}
 \usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
 \hypersetup{
-  pdftitle={Frobenius Minimality of the Huneke--Wiegand Counterexample in Symmetric Numerical Semigroup Rings},
+  pdftitle={Frobenius Minimality and Minimum-Layer Uniqueness of the Huneke--Wiegand Counterexample},
   pdfauthor={Felipe Santibanez-Leal},
-  pdfsubject={Certified Frobenius-minimality theorem for a two-generated monomial-ideal counterexample},
+  pdfsubject={Certified Frobenius-minimality and minimum-layer classification for a two-generated monomial-ideal counterexample},
   pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, SAT, DRAT, computer-assisted proof}
 }
 \usepackage{orcidlink}
@@ -32,30 +32,42 @@
 \newcommand{\kfield}{\Bbbk}
 \newcommand{\one}{\mathbf{1}}
 
-\title{Frobenius Minimality of the Huneke--Wiegand Counterexample\\
-in Symmetric Numerical Semigroup Rings}
+\title{Frobenius Minimality and Minimum-Layer Uniqueness\\
+of the Huneke--Wiegand Counterexample}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-02\\[2pt]\normalsize Version 0.01}
+\date{2026-08-02\\[2pt]\normalsize Version 0.02}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Huneke--Wiegand Frobenius Minimality \textperiodcentered\ v0.01}
+\fancyhead[R]{\small Frobenius Minimality and Uniqueness \textperiodcentered\ v0.02}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
-\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyhead[L]{\small CAOS Research Preprint}%
+  \fancyhead[R]{\small Frobenius Minimality and Uniqueness \textperiodcentered\ v0.02}%
+  \fancyfoot[C]{\small \thepage}%
+  \renewcommand{\headrulewidth}{0.4pt}%
+}
+\fancypagestyle{titlepage}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\small \thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
 
 \begin{document}
 \maketitle
+\thispagestyle{titlepage}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.01 \textperiodcentered\ 2026-08-02\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21763583}{10.5281/zenodo.21763583}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.02 \textperiodcentered\ 2026-08-02\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21764868}{10.5281/zenodo.21764868}\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
-verified it. This paper contributes a separate certified Frobenius-minimality result.
+verified it. This paper contributes certified Frobenius-minimality and minimum-layer uniqueness.
 }}
 \end{center}
 
@@ -74,10 +86,12 @@ satisfiable and decodes exactly to the public semigroup and shift. A separately 
 formula returns the same model. An independent audit rehashes all $228$ files in the minimality
 search, totaling $760{,}081{,}739$ bytes, rechecks both SAT models, and reproduces the strict-order
 manifest with no mismatch. Complete theorem-tree enumeration at $F=69,71,73,75$ provides an
-object-level cross-check on another $79{,}790$ semigroups and $2{,}933{,}163$ gap cases. The theorem
-is scoped to symmetric numerical semigroup rings and nonprincipal two-generated monomial ideals. It
-does not assert uniqueness, minimum multiplicity or embedding dimension, or minimality for arbitrary
-Gorenstein domains and modules.
+object-level cross-check on another $79{,}790$ semigroups and $2{,}933{,}163$ gap cases. A second
+projected enumeration proves that shift $14$ is the only feasible shift at $F=181$ and that the
+public membership vector is the only semigroup there. Both terminal DRAT proofs are freshly
+rechecked in an independent 12-file audit. Thus Pham's pair is the unique normalized pair attaining
+the Frobenius minimum in this class. The result does not classify higher Frobenius values or
+arbitrary Gorenstein domains and modules.
 \end{abstract}
 
 \section{Introduction}
@@ -111,6 +125,8 @@ they are verified by exact machine computation and independently checked artifac
   $(F,s)=(181,14)$.
   \item We independently rehash and inspect the complete search artifact set, and cross-check the
   first four new odd Frobenius values by explicit theorem-tree enumeration.
+  \item We classify the complete minimum layer by projected enumeration: the only feasible shift
+  at $F=181$ is $14$, and the public semigroup is the only membership vector at that shift.
   \item We identify two structural boundaries: the public semigroup lies outside the generalized
   arithmetic-sequence positive family, and the visible fixed-offset generator blocks do not extend
   to a naive parametric family.
@@ -305,6 +321,79 @@ closure, symmetry, and rigidity, checks strict odd ordering, and recomputes aggr
 \]
 No file is missing, no hash differs, and no status marker or semantic check fails \textbf{[MV]}.
 
+\section{Complete classification at the minimum}
+
+The selector search proves existence at $F=181$ but, by itself, does not classify every model at
+that value. We close this gap in two projected layers. First, after discovering a valid selector
+model at shift $s$, we add the unit clause $\neg q_s$. Second, for each feasible shift we enumerate
+the fixed-shift formula and block each complete membership projection.
+
+\begin{lemma}[Projected blocker, {[D]}]\label{lem:blocker}
+Let $x_1,\ldots,x_k$ be distinct Boolean variables with complete assignment $a$. The clause
+\[
+ B(a)=\bigvee_{a_i=1}\neg x_i\;\lor\!\bigvee_{a_i=0}x_i
+\]
+is false exactly on assignment $a$. Its truth is independent of every variable outside the
+projection.
+\end{lemma}
+\clearpage
+\begin{proof}
+\thispagestyle{fancy}
+Every displayed literal is false under $a$. Any other complete assignment differs at some
+coordinate $j$, where the corresponding displayed literal is true. Variables absent from the
+clause cannot affect either statement.
+\end{proof}
+
+For semigroup enumeration, $B(a)$ contains one signed literal for every
+$h_0,\ldots,h_{181}$. Consequently, it excludes one mathematical membership vector and every
+auxiliary extension of that vector, while preserving every different semigroup. Blocking only the
+positive coordinates would not have this property.
+
+\begin{theorem}[Minimum-layer uniqueness, {[MV+D]}]\label{thm:unique}
+Up to translation and interchange of the two monomial generators, Pham's pair is the unique
+nonprincipal two-generated monomial-ideal counterexample over a symmetric numerical semigroup ring
+with Frobenius number $181$.
+\end{theorem}
+\begin{proof}
+The unblocked selector formula returns the exact public pair at shift $14$. After adding
+$\neg q_{14}$, the formula is UNSAT and its DRAT proof is accepted, so no other shift is feasible.
+The fixed $(181,14)$ formula returns the exact public membership vector. After adding its complete
+$182$-literal blocker from Lemma~\ref{lem:blocker}, that formula is UNSAT and its DRAT proof is
+accepted. Thus no second semigroup exists at the only feasible shift. Translation and interchange
+reduce any two monomial generators to one positive normalized shift, which proves the statement.
+\end{proof}
+
+\begin{table}[ht]
+\centering
+\caption{Certificate summary for the complete $F=181$ layer.}
+\label{tab:classification}
+\begin{tabular}{lr}
+\toprule
+Quantity & Value\\
+\midrule
+Feasible shifts & $1$, namely $\{14\}$\\
+Normalized rigid pairs & $1$\\
+Distinct membership vectors & $1$\\
+Support terminal proof bytes & $45{,}867{,}741$\\
+Fixed-class terminal proof bytes & $1{,}608{,}691$\\
+Audited external files & $12$\\
+Audited external bytes & $63{,}609{,}504$\\
+Fresh proof-recheck time & $232.88$ seconds\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The independent auditor reconstructs all four CNFs byte-for-byte, decodes both SAT logs, reruns
+closure, symmetry, minimal-generator and full-window/tail rigidity checks, and freshly checks both
+terminal proofs \textbf{[MV]}. It accounts for every external file and reproduces manifest SHA-256
+\[
+\texttt{02d1265b75e886bc6ec693e60b367b661476170c755e38a220342396564ef5d3}.
+\]
+The compact classification aggregate is
+\[
+\texttt{b37d9410fa07c00f22ccc0f83796644db3b44f0dd654c06933aa5d22cb1ed788}.
+\]
+
 \section{Independent object-level checks beyond the old frontier}
 
 The theorem-tree route was continued beyond $67$ without consulting SAT models. Table~\ref{tab:tree}
@@ -355,7 +444,8 @@ All compact code, hypotheses, manifests, audits, and verdicts are in the public 
 \begin{center}
 \url{problems/commutative-algebra/huneke-wiegand/}.
 \end{center}
-Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The proof
+Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
+minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The proof
 toolchain is pinned as follows:
 \begin{center}
 \begin{tabular}{@{}lp{0.65\textwidth}@{}}
@@ -375,18 +465,21 @@ standard-library model checker, and DRAT-trim's verification of each proof again
 The SAT solver need not be trusted for UNSAT. For SAT, the independently extracted model is checked
 without consulting solver internals.
 
+\clearpage
+\thispagestyle{fancy}
 \section{Scope, attribution, and open questions}
 
 Son Pham retains discovery priority for the counterexample. Professor Craig Huneke's verification
-is independent external evidence. The contribution proved here is Frobenius minimality in the
-specified semigroup/ideal class and its reproducible certificate suite.
+is independent external evidence. The contributions proved here are Frobenius minimality and
+uniqueness of the normalized pair at that minimum in the specified semigroup/ideal class, together
+with their reproducible certificate suites.
 
-Theorem~\ref{thm:minimal} does not prove uniqueness at $F=181$, minimum multiplicity, minimum
-embedding dimension, minimum shift, or minimality among arbitrary Gorenstein domains and modules.
-The following questions remain open:
+Theorems~\ref{thm:minimal} and~\ref{thm:unique} do not classify higher Frobenius values, prove a
+minimum multiplicity or embedding dimension across all counterexamples, or establish minimality
+among arbitrary Gorenstein domains and modules. The following questions remain open:
 \begin{enumerate}
-  \item How many nonisomorphic rigid pairs occur at $F=181$?
-  \item Is there a stronger minimum under multiplicity, embedding dimension, or number of minimal
+  \item How does the number of normalized rigid pairs grow above $F=181$?
+  \item Is there a global minimum under multiplicity, embedding dimension, or number of minimal
   generators?
   \item Does a nontrivial infinite family exist after the fixed-offset ansatz fails?
   \item Which additional hypotheses on the endomorphism ring recover a positive theorem while

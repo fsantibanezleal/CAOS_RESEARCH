@@ -16,6 +16,7 @@ sys.path.insert(0, str(CODE_ROOT))
 from hwcert import (  # noqa: E402
     build_rigidity_cnf,
     build_selector_rigidity_cnf,
+    projected_blocking_clause,
     shift_from_model,
 )
 
@@ -76,3 +77,32 @@ def test_shift_model_decoder_rejects_non_one_hot_models() -> None:
             pass
         else:
             raise AssertionError("invalid selector assignment was accepted")
+
+
+def test_projected_blocker_excludes_exactly_one_assignment() -> None:
+    variables = (2, 5, 9)
+    model = {2, 9, 1000}
+    blocker = projected_blocking_clause(variables, model)
+    assert blocker == (-2, 5, -9)
+
+    def satisfied(true_variables: set[int]) -> bool:
+        return any(
+            literal > 0 and literal in true_variables
+            or literal < 0 and -literal not in true_variables
+            for literal in blocker
+        )
+
+    assert not satisfied({2, 9})
+    assert not satisfied({2, 9, 1001})  # auxiliary assignments are irrelevant
+    for changed in ({9}, {2, 5, 9}, {2}):
+        assert satisfied(changed)
+
+
+def test_projected_blocker_rejects_invalid_projection() -> None:
+    for variables in ((), (1, 1), (0, 1), (-1, 2)):
+        try:
+            projected_blocking_clause(variables, set())
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("invalid projected variable list was accepted")
