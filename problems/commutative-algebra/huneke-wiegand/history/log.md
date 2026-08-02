@@ -111,3 +111,15 @@
   per feasible shift second, and require an accepted DRAT proof to close every layer.
 - Declared the falsifiable prediction that the public `(Gamma,14)` normalized pair is unique at
   `F=181`. No classification computation was run before this declaration.
+
+## 2026-08-02 - EXP-007 confirms minimum-layer uniqueness
+
+- The selector support layer found the exact public pair at shift 14, then blocked that shift.
+  The terminal selector formula was UNSAT and its 45,867,741-byte DRAT proof was accepted.
+- The fixed `(181,14)` layer found the public membership vector, then blocked all 182 membership
+  coordinates. Its terminal formula was UNSAT and its 1,608,691-byte proof was accepted.
+- An independent auditor rebuilt every formula byte-for-byte, decoded both SAT logs, reran exact
+  semantic checks, accounted for 12 external files totaling 63,609,504 bytes, and freshly
+  rechecked both proofs.
+- EXP-007 is CONFIRMED on P1-P6. The public pair is the unique normalized rigid pair attaining the
+  least Frobenius value in the stated class. The manuscript/Zenodo new-version gate is triggered.

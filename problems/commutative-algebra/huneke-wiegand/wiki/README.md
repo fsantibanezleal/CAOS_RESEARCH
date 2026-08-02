@@ -12,8 +12,10 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-005 | CONFIRMED | least Frobenius value is 181; checked proofs for every odd 69--179 and exact public model at `(181,14)` |
 | generalized-arithmetic exclusion | proved | multiplicity/low-generator argument excludes the 2024 positive family; deletion gcds are all one |
 | EXP-006 Route G | REFUTED | only `s=14` passes the fixed-offset sweep through even `s=100`; constrained Route K remains open |
+| EXP-007 | CONFIRMED | the public semigroup at shift 14 is the unique normalized rigid pair at the minimum `F=181`; both terminal proofs pass a fresh audit |
 | preprint v0.01 | published | certified Frobenius-minimality theorem, DOI [`10.5281/zenodo.21763583`](https://doi.org/10.5281/zenodo.21763583) |
 
 CAOS independently reproduces the public counterexample's decisive finite certificate. Discovery
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery. CAOS's novel
-extension is the certified Frobenius-minimality theorem in EXP-005.
+extensions are the certified Frobenius-minimality theorem in EXP-005 and the complete
+minimum-layer classification in EXP-007.

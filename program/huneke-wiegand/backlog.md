@@ -11,4 +11,4 @@
 | HWB-007 | 2 | pending | surviving-variants matrix | primary theorem hypotheses and candidate escape clause |
 | HWB-008 | 2 | pending | formal certificate/proof packaging | small trusted checker; assess Lean only after theorem stabilizes |
 | HWB-009 | 0 | done | manuscript and Zenodo | v0.01 published as `10.5281/zenodo.21763583`; clean build, full visual QA and remote hash match |
-| HWB-010 | 1 | in progress | classify rigid pairs at `F=181` | EXP-007 declared; projected shift/pair enumeration plus terminal DRAT proofs |
+| HWB-010 | 1 | done | classify rigid pairs at `F=181` | EXP-007: unique normalized pair, support/fixed terminal proofs and fresh audit pass |
