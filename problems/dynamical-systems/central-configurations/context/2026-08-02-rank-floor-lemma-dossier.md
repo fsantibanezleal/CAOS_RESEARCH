@@ -266,3 +266,46 @@ borders. Declared next: (i) the exact multiquadratic-reduction
 confirmation of the largest border at W1 (represent each sqrt as a
 symbol with its square relation, reduce, and read the coefficient
 vector); (ii) the two-border independence analysis.
+
+## Lemma piece 6: THE k = 4 CASE IS CLOSED (2026-08-02, round 23; an assembly, no new computation)
+
+Ingredients already on the record: (i) EXP-016 established rank 4 at
+W1 = (3, -1, 2, 1, 1, -2) by exact minor-by-minor radical arithmetic, which
+means SOME 4 x 4 minor g4 of the mass matrix satisfies g4(W1) != 0 EXACTLY;
+(ii) W1 is a parametrized geometry, hence a point of shape+, the closure of
+the image of the irreducible parameter space, which is irreducible of
+gauged dimension 4; (iii) Krull's principal ideal theorem on an irreducible
+variety: {g4 = 0} meets shape+ in dimension exactly 3 (it cannot contain
+shape+ because of the witness).
+
+Assembly: the rank-at-most-3 locus R_3 satisfies R_3 subset {g4 = 0}
+(trivially: at rank <= 3 every 4 x 4 minor vanishes), so
+
+    dim( shape+  meet  R_3 ) <= 3,
+
+which is precisely the k = 4 requirement of the chain (components of the
+incidence variety over shape+ with 4-dimensional shape projection cannot
+project inside R_3, so they carry rank-4 fiber points and the fiber
+inequality closes them at dimension 4). THE k = 4 CASE IS CLOSED.
+
+## Lemma piece 7a: the first k = 3 cut is closed the same way
+
+EXP-018's hexagon computation exhibited a specific 3 x 3 minor nonzero IN
+CLOSED FORM (value 147/128 - 735 sqrt(3)/512) at the hexagon, a shape+
+point. By the same irreducibility-plus-Krull argument, that minor's zero
+locus meets shape+ in dimension exactly 3, so
+
+    dim( shape+  meet  R_2 ) <= 3    (first cut).
+
+REMAINING GAP, the chain's last open item: improving this to <= 2 (the
+k = 3 requirement) needs a second cut, i.e. a second 3 x 3 minor not
+identically zero on any 3-dimensional component of the first minor's zero
+locus on shape+. Since those components are unknown, the declared route is
+to PULL BACK to coordinate space, where the first minor's vanishing locus
+is an explicit hypersurface whose factorization is computable, and test
+the second minor by exact pseudo-remainder against each factor; the
+radical structure (the minors involve inverse cubes of distances) is
+handled by the multiquadratic symbol-reduction technique. This is one
+structured exact computation, declared for the next round.
+
+## Scoreboard: k = 0, 1, 2, 4 PROVEN. Remaining: the second k = 3 cut ONLY.
