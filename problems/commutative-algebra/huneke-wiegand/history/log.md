@@ -137,3 +137,5 @@
 - The public file is 350,524 bytes and matches local MD5
   `5c5b20c2a69ad2ddf7de6724b235f5d6` and SHA-256
   `93a07d124c7b3f2cf144a5343d31ca40e312a80d99308b3ef567c7065f126bb9` exactly.
+- PR `#142` passed `guards` and `test`, was marked ready, and merged the complete EXP-007 and
+  v0.02 publication round into `develop` at `136781d023752234697aaa1c86ce1f10dffff9c3`.

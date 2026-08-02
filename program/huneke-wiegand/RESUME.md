@@ -139,8 +139,9 @@ the complete minimum-layer classification, not a classification at higher Froben
 - A validated finite counterexample does not automatically classify or minimize all examples.
 - Zenodo v0.01 is immutable. Any correction or extension requires the formal new-version flow;
   no silent replacement of the published PDF.
-- PR `#139` merged the theorem, certificates and published manuscript into `develop` at
-  `09fc3c26b04f6bffcc9fca055dffb3df3c8ecdce`; this work checkout remains on its product branch.
+- PR `#142` passed `guards` and `test` and merged EXP-007, both terminal certificates, the
+  reconstruction audit and published preprint v0.02 into `develop` at
+  `136781d023752234697aaa1c86ce1f10dffff9c3`; this checkout remains on its product branch.
 
 ## Resume command
 
