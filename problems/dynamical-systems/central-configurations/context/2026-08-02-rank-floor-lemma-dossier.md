@@ -53,3 +53,32 @@ Piece 1 is proven and machine-verified; the case tree is enumerated but
 open; no chain statement exists yet. Sign conventions: for positive reals,
 s(a, b) > 0 iff a < b (x -> x^{-3} is decreasing); the case analysis will
 use exactly this monotonicity plus the stratum orderings.
+
+## Lemma pieces 2 and 3 (same day) - PROVEN
+
+The structural zeros of the block (row L13 has no m1 entry, row L23 no m2
+entry, and the same for the B-pair rows) make two more minors pure
+anti-diagonal products, with all Delta brackets verified identically:
+
+    {L13, L23} x {m1, m2}:  M2 = u^2 (a1-a2)^2 s(r12, d1A) s(r12, d2A)
+    {L15, L25} x {m1, m2}:  M3 = p^2 (a1-a2)^2 s(r12, d1B) s(r12, d2B)
+
+(Delta_132 = -u(a1-a2), Delta_231 = u(a1-a2), Delta_152 = -p(a1-a2),
+Delta_251 = p(a1-a2), all verified as zero residuals; anchor entries
+Delta_134 = -2u(a1-v) and Delta_156 = -2p(a1-q) verified for the coming
+pieces.)
+
+COMBINED CONSEQUENCE (pieces 1-3): rank J < 2 on the open stratum requires
+SIMULTANEOUSLY (d1A = d1B or d2A = d2B) AND (d1A = r12 or d2A = r12) AND
+(d1B = r12 or d2B = r12).
+
+HONEST GAP ARITHMETIC: some branches of this conjunction are dependent
+(d1A = d1B with d1A = r12 implies d1B = r12), so the worst branch imposes
+only TWO independent conditions and the possible rank-<2 locus could still
+have dimension 2 inside the 4-dimensional shape variety, while the k = 2
+chain case needs dimension at most 1. The family enumeration therefore
+continues (mixed-column minors such as {L13, L35} x {m2, mA} have one
+structural zero each and give products with ONE bracket term; the mA/mB
+anchor entries above are the single-term ingredients). Pieces 1-3 already
+suffice for: rank >= 2 on the complement of an explicit codimension >= 2
+union, and every future piece only shrinks it.
