@@ -151,8 +151,17 @@ def smoke_p0b(Jc, row_lcms):
     return ok
 
 
+def _int_cleared(e):
+    """Integer-coefficient form of e (times its positive denominator LCM):
+    Singular parses `x^15/4` as a rational exponent, so fractions must never
+    reach the serializer. The ideal is unchanged by positive scalar multiples."""
+    p = sp.Poly(sp.expand(e), *[SYM[g] for g in GEN_NAMES])
+    _, pc = p.clear_denoms()
+    return pc.as_expr()
+
+
 def singular_dim(name, eqs, cap):
-    polys = ",\n".join(str(sp.expand(e)).replace("**", "^").replace(" ", "")
+    polys = ",\n".join(str(sp.expand(_int_cleared(e))).replace("**", "^").replace(" ", "")
                        for e in eqs)
     script = (f"ring r=0,({','.join(GEN_NAMES)}),dp;\nshort=0;\n"
               f"ideal I={polys};\nideal S=std(I);\n"
@@ -165,7 +174,7 @@ def singular_dim(name, eqs, cap):
     r = wsl(f"cd {W} && timeout {cap} Singular -q {name}.sing && echo SING_OK",
             timeout=cap + 120)
     secs = time.time() - t0
-    if "SING_OK" not in r.stdout:
+    if "SING_OK" not in r.stdout or "error occurred" in r.stdout or "? " in r.stdout[:2000]:
         return "cap-or-error", None, None, secs, []
     (ART / f"{name}.out").write_text(r.stdout[:2000000], encoding="utf-8")
     leads = []
