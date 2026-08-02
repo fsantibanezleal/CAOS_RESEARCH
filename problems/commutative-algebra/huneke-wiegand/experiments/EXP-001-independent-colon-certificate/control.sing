@@ -10,7 +10,9 @@ ideal JI=std(intersect(C1,C2));
 ideal PR=std(C1*C2);
 ideal D1=reduce(JI,PR);
 ideal D2=reduce(PR,JI);
-if ((D1==0) && (D2==0))
+D1=simplify(D1,2);
+D2=simplify(D2,2);
+if ((size(D1)==0) && (size(D2)==0))
 {
   print("COLON_EQUALITY=1");
 }
