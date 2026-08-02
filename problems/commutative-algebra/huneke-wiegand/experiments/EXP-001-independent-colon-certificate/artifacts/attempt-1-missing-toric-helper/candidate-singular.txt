@@ -1,0 +1,14 @@
+STAGE=toric-start
+sh: 1: toric_ideal: not found
+   ? toric_ideal failed with error code 32512
+   ? leaving toric.lib::toric_ideal_1 (0)
+   ? leaving toric.lib::toric_ideal (704)
+TORIC_GENERATORS=0
+TORIC_DIMENSION=26
+STAGE=quotient-colons
+COLON_1_GENERATORS=1
+COLON_2_GENERATORS=1
+INTERSECTION_GENERATORS=1
+PRODUCT_GENERATORS=1
+COLON_EQUALITY=1
+STAGE=done

@@ -132,14 +132,19 @@ def wsl_path(path: Path) -> str:
 
 def run_singular(script: str, output: str, timeout: int = 600) -> str:
     log(f"Singular start: {script}")
+    wsl_path_value = (
+        "/usr/libexec/x86_64-linux-gnu/singular/MOD:"
+        "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    )
     command = [
         "wsl.exe", "-d", "Ubuntu-24.04", "--",
-        "Singular", "-q", wsl_path(ROOT / script),
+        "env", f"PATH={wsl_path_value}", "Singular", "-q", wsl_path(ROOT / script),
     ]
     completed = subprocess.run(command, capture_output=True, text=True, timeout=timeout, check=False)
     text = completed.stdout + completed.stderr
     (ARTIFACTS / output).write_text(text, encoding="utf-8")
-    if completed.returncode != 0 or "? error occurred" in text:
+    singular_errors = any(line.lstrip().startswith("?") for line in text.splitlines())
+    if completed.returncode != 0 or singular_errors:
         raise RuntimeError(f"Singular failed for {script}; see {output}")
     log(f"Singular done: {script}, return={completed.returncode}, bytes={len(text)}")
     return text
