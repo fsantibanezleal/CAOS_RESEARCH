@@ -28,3 +28,4 @@
 | TCB-022 | Manuscript gate assessment + paper | done | P1 | 2026-08-01 PUBLISHED: census paper v0.01, DOI 10.5281/zenodo.21753439 (concept .21753438) |
 | TCB-023 | Narkiewicz read: pin the classical cycle-length <= 2 attribution | todo | P2 | Cited [MV] in EXP-005 verdict with our own [D] proof |
 | TCB-024 | Doyle-Poonen read (V8 import gate) | todo | P2 | Before any uniform-boundedness import |
+| TCB-027 | Mod-p instrumentation: root counts of census records over F_p vs the Frobenius ceiling (V10) | todo | P2 | Cheap add-on to the census catalog; pairs with the V9 digit ladders |

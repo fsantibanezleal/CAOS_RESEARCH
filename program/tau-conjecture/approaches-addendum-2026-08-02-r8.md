@@ -56,3 +56,18 @@ concentrates the difficulty.
    current literature (e.g. Best-Dynes-Miller-Powell-Weiss 2015 state
    it without attribution), standard treatment Narkiewicz LNM 1600:
    our citation practice (classical + self-contained proof) is correct.
+
+## Postscript (round 8, second sweep): view V10, the three worlds
+
+Context note `2026-08-02-three-worlds-view.md`: the same SLP read over
+F_p / R / Z gives maximal-violation / violation / conjectured-polynomial
+root growth; both failures come from a cheap coincidence-rich
+endomorphism (Frobenius; the doubling semiconjugacy), and Z has none:
+the stall theorems are the quantitative form of that absence, so the
+conjecture reduces (as a mechanism statement) to pricing
+constant-building: exactly what the census and the digit ladders
+measure. Adjacent literature (finite-field SPARSE root bounds:
+Bi-Cheng-Rojas Descartes; arXiv:1411.6346) attacks term count, not SLP
+length; the trichotomy framing appears unclaimed. New cheap
+instrumentation queued: mod-p root counts of census records vs the
+Frobenius ceiling (backlog row TCB-027).
