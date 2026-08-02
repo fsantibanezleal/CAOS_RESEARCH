@@ -309,3 +309,35 @@ handled by the multiquadratic symbol-reduction technique. This is one
 structured exact computation, declared for the next round.
 
 ## Scoreboard: k = 0, 1, 2, 4 PROVEN. Remaining: the second k = 3 cut ONLY.
+
+## Lemma piece 7b: the second k = 3 cut reduces to four explicit bilinear conditions (round 24) - VERIFIED IDENTITIES
+
+On the good region (off {d1A = r12} union {d2A = r12}, where the corner
+{L13, L23} x {m1, m2} is nonzero), the eight borders FACTOR (all four
+identities machine-verified exactly, sign convention as printed):
+
+    border(L15, c) = -a23 ( b13 J[L15][c] - b15 J[L13][c] ),
+    border(L25, c) = -b13 ( a23 J[L25][c] - a25 J[L23][c] ),   c in {mA, mB},
+
+with a23 = s(r12,d1A) u e12, b13 = -s(r12,d2A) u e12, b15 = -s(r12,d2B) p e12,
+a25 = s(r12,d1B) p e12 the proven clean entries. Hence on the good region
+
+    R_2  subset  { b13 J[L15][mA] = b15 J[L13][mA] }  meet
+                 { b13 J[L15][mB] = b15 J[L13][mB] }  meet
+                 { a23 J[L25][mA] = a25 J[L23][mA] }  meet
+                 { a23 J[L25][mB] = a25 J[L23][mB] },
+
+four explicit s-polynomial equations of at most five terms each (the mA/mB
+entries have one or two terms; every coefficient is a clean s-monomial).
+The chain's LAST open item is now: show these four conditions cut the
+4-dimensional shape+ down to dimension at most 2 (two honest cuts), plus
+the finite case bookkeeping on the excluded r12-equidistance sets (where
+the mixed-column minors of the catalog take over as nonzero corners with
+their own borders). The declared closing routes: the sign-chamber
+analysis on the physical region (s-monotonicity gives every term's sign
+per chamber; exhibit per chamber one condition with all terms of one
+sign), or per-factor pseudo-remainder tests after pulling ONE condition
+back to coordinates. This is one bounded piece of case mathematics, with
+all objects in closed form and machine-checkable.
+
+## Scoreboard: k = 0, 1, 2, 4 PROVEN; k = 3 reduced to four bilinear conditions + boundary bookkeeping.
