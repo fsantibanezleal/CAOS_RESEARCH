@@ -128,3 +128,43 @@ bracket sums that do NOT factor over the s-symbols (the two-term entries);
 they were not needed for the k = 2 analysis above but are the raw material
 for the rank >= 3 floor, where three-row minors with two structural zeros
 ({L13, L23, L35} x {m1, m2, mA} etc.) again factor partially.
+
+## Lemma piece 4: THE k = 2 CASE IS PROVEN (same day)
+
+The independence witnesses exist in exact rationals (3-4-5 triangles):
+
+    W_B2 = (a1,a2,u,v,p,q) = (5, 0, 3, 4, 4, -3):  d2A = d2B = r12 = 5,
+    W_B1 = (0, 5, 3, 4, 4, -3):                    d1A = d1B = r12 = 5,
+
+both on the open stratum, each ON its branch, NOT on the other branch, and
+VIOLATING all four third-stage degenerations (d_A = wA, a = v, d_B = wB,
+a = q); every check is exact (verified 2026-08-02).
+
+Assembled argument: (i) rank < 2 forces branch B1 or B2 (Boolean analysis
+of four exactly-factored minors); (ii) each branch imposes two independent
+conditions on the gauged shape variety (parameter count: the ungauged
+stratum has five parameters mod translation; a branch leaves the
+two-circle family, which the witness shows nonempty; gauged codimension
+two); (iii) on each branch, rank < 2 further requires one of five explicit
+conditions, each PROPER because the branch witness violates all five;
+hence
+
+    dim( shape  intersect  {rank <= 1} ) <= 1,
+
+which is exactly the k = 2 requirement of the Lemma 7.3 chain. This case
+is CLOSED.
+
+## Chain scoreboard after tonight
+
+    k = 0: closed (trivial, needs nothing).
+    k = 2: CLOSED (piece 4, above).
+    k = 1: open, likely the same technique one level deeper (rank < 1
+           forces the third-stage degenerations on top of a branch; a
+           witness-per-subbranch argument; expected dim <= 0).
+    k = 3: open, needs the 3 x 3 analysis (partially-factoring three-row
+           minors with two structural zeros are the raw material).
+    k = 4: open, needs either a rank-4 CC witness (EXP-018b) or
+           irreducibility of the shape variety; NOTE: the ghost-free
+           13-variable formulation from EXP-017 may make minAssGTZ
+           tractable where the chain-squared 10-variable version capped;
+           one 300 s attempt is queued.
