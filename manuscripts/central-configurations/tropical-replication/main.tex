@@ -20,12 +20,12 @@
 for central configurations}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-01\\[2pt]\normalsize Version 0.07}
+\date{2026-08-01\\[2pt]\normalsize Version 0.08}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Tropical Certificates for Central Configurations \textperiodcentered\ v0.07}
+\fancyhead[R]{\small Tropical Certificates for Central Configurations \textperiodcentered\ v0.08}
 \fancyfoot[C]{\small \thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
 
@@ -449,6 +449,49 @@ exactly 5, cut of dimension at most 5, expected value 4 undecided; the
 remaining decision (does Cayley--Menger vanish identically on a top
 component?) passes to certified witness sets, and the symmetric-strata
 programme proceeds with the twice-measured cost law.
+
+\section{The two-pair symmetric stratum of the six-body problem (EXP-015--018, in progress)}
+
+Dias--Pan~\cite{DP18} proved generic finiteness for the CROSS symmetric class
+of the planar six-body problem (four bodies on the reflection axis, one
+mirror pair). We opened the neighbouring class with two bodies on the axis
+and TWO mirror pairs, for which our recorded searches found no published
+finiteness result. The exact quotient derivation gives nine distance
+variables; the relation $c_x^2-c_s^2=w_A w_B$ between the cross-side and
+same-side pair distances and the pair widths; a pair-equality lemma in
+closed form (the pair equations factor as the mass difference times
+$(q-v)$ times $(c_x^3-c_s^3)$, forcing pair-equal masses whenever the two
+pairs sit at different heights, with the equal-heights sub-stratum
+explicitly excluded from scope); and, by a pure symmetry argument, a
+reduced system of SIX mass-linear equations.
+
+Machine stages, all exact: the gauged shape variety has dimension 4 (one
+second per engine run, two independent dimension readings agreeing, the
+analogue of the cross case's $\dim E=4$); the $6\times4$ mass-coefficient
+matrix has full rank 4 at two exact rational geometries (pure radical
+arithmetic, no truncation budgets); the equal-mass regular hexagon is
+verified to lie in the stratum through the reduced system and its dihedral
+symmetry degenerates the rank to exactly 3 (nonzero $3\times3$ minor in
+closed form, all $4\times4$ minors vanishing). Three Gr\"obner
+formulations of the rank-deficiency loci walled at declared budgets, with
+the cost see-saw measured from both sides and a decisive modular
+feasibility screen, so the remaining work moved to proof-writing with
+machine-verified identities.
+
+That transition paid immediately. The complete catalogue of the 84 nonzero
+$2\times2$ minors, computed with the inverse-cube differences as abstract
+symbols, contains four minors that factor into monomials times products of
+two such symbols; their Boolean analysis shows that rank below 2 forces
+one of two explicit branches (body 1, or body 2, at distance $r_{12}$ from
+BOTH pairs), and on each branch five further explicit degenerations are
+all violated by an exact 3-4-5 witness geometry. Hence the rank-at-most-1
+locus meets the shape variety in dimension at most one: the $k=2$ case of
+the fiber-dimension case chain is PROVEN. The remaining cases are
+enumerated with declared routes ($k=1$ by the same technique one level
+deeper; $k=3$ by bordered minors inheriting the proven clean entries;
+$k=4$ by a rank-4 central-configuration witness, the hexagon being
+excluded by its own symmetry). No statement is claimed until the chain
+closes; every identity above is committed with its machine verification.
 
 \section{The $n=6$ attempt (EXP-005, in progress)}
 
