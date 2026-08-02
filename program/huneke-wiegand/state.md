@@ -9,6 +9,7 @@
 | 2026-08-02 | analyzing | analyzing | EXP-004 independently certified the full published `F<69` frontier by exhaustive trees and 1,156 checked DRAT proofs |
 | 2026-08-02 | analyzing | consolidating | EXP-005 proved the least Frobenius value is 181 with checked proofs through 179 and the exact public model at 181 |
 | 2026-08-02 | consolidating | consolidating | warning-free seven-page preprint v0.01 published on Zenodo; public PDF hash matches the committed artifact exactly |
+| 2026-08-02 | consolidating | consolidating | PR #139 passed guards and tests and promoted the complete theorem, certificate and manuscript record to `develop` |
 
 Current state: **consolidating**.
 

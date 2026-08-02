@@ -99,3 +99,5 @@
   `10.5281/zenodo.21763582`. The public 338,848-byte download matches local MD5
   `7dab0ef0b0ce8edb15288274e5f983df` and SHA-256
   `b063414231a92de4e3b19f1c3cce3f698a5eb166a1cfe5fb178eebee29e5a4c9` exactly.
+- PR `#139` passed `guards` and `test`, was marked ready, and merged the full research round into
+  `develop` at `09fc3c26b04f6bffcc9fca055dffb3df3c8ecdce`.
