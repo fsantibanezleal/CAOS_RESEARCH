@@ -88,3 +88,14 @@
 - EXP-006 Route G tested every even `s=14,...,100`. Only the seed passed. The first failure is
   `s=16`, where `F=205` instead of 207; `s=28` restores the predicted Frobenius but loses symmetry.
   The fixed-offset family is refuted, and constrained-block Route K remains open.
+
+## 2026-08-02 - minimality preprint published
+
+- Built the seven-page English v0.01 preprint twice with `pdflatex`; the final log has no warning,
+  undefined reference, overfull box or underfull box.
+- Rendered and inspected all seven pages at 150 DPI. The PDF carries the PREPRINT and not-peer-
+  reviewed labels, Felipe's ORCID, CC BY 4.0, both reserved DOIs, and explicit Son Pham priority.
+- Published Zenodo version DOI `10.5281/zenodo.21763583`, concept DOI
+  `10.5281/zenodo.21763582`. The public 338,848-byte download matches local MD5
+  `7dab0ef0b0ce8edb15288274e5f983df` and SHA-256
+  `b063414231a92de4e3b19f1c3cce3f698a5eb166a1cfe5fb178eebee29e5a4c9` exactly.

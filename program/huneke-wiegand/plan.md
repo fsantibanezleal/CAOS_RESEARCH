@@ -43,4 +43,8 @@ UNKNOWN or uncertified value.
 
 EXP-005 completed that scan without an UNKNOWN: all odd values 69 through 179 have accepted DRAT
 proofs and 181 has the independently validated public model. HW-P3 therefore closes with exact
-Frobenius minimum 181. HW-P4 family work and HW-P6 publication consolidation are now active.
+Frobenius minimum 181. HW-P6 is also closed: the validated theorem is published as preprint v0.01,
+DOI `10.5281/zenodo.21763583`. HW-P4 remains active after Route G refuted the fixed-offset family;
+Route K must search constrained blocks before any new family hypothesis. Classification at
+`F=181` is now a separate priority and may strengthen, but cannot retroactively broaden, the
+published Frobenius-minimality claim.

@@ -11,7 +11,8 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-004 | CONFIRMED | 48,954 semigroups, 1,503,391 gaps, 1,156 checked UNSAT proofs; published `F<69` frontier reproduced |
 | EXP-005 | CONFIRMED | least Frobenius value is 181; checked proofs for every odd 69--179 and exact public model at `(181,14)` |
 | generalized-arithmetic exclusion | proved | multiplicity/low-generator argument excludes the 2024 positive family; deletion gcds are all one |
-| EXP-006 | declared, gated | exact `m=4s`, `F=13s-1` block ansatz with falsification-first family gate |
+| EXP-006 Route G | REFUTED | only `s=14` passes the fixed-offset sweep through even `s=100`; constrained Route K remains open |
+| preprint v0.01 | published | certified Frobenius-minimality theorem, DOI [`10.5281/zenodo.21763583`](https://doi.org/10.5281/zenodo.21763583) |
 
 CAOS independently reproduces the public counterexample's decisive finite certificate. Discovery
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery. CAOS's novel

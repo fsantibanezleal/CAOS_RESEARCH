@@ -10,4 +10,5 @@
 | HWB-006 | 1 | in progress | additive-basis/Kunz block family search | Route G refuted fixed offsets; Route K constrained blocks next |
 | HWB-007 | 2 | pending | surviving-variants matrix | primary theorem hypotheses and candidate escape clause |
 | HWB-008 | 2 | pending | formal certificate/proof packaging | small trusted checker; assess Lean only after theorem stabilizes |
-| HWB-009 | 0 | triggered | manuscript and Zenodo | EXP-005 minimality theorem; attribution, certificate and publication QA gates |
+| HWB-009 | 0 | done | manuscript and Zenodo | v0.01 published as `10.5281/zenodo.21763583`; clean build, full visual QA and remote hash match |
+| HWB-010 | 1 | pending | classify rigid pairs at `F=181` | enumerate/count semigroups and shifts; quotient duplicates; no uniqueness claim before completion |
