@@ -500,3 +500,17 @@
   image-dimension argument. Three exact anchor points exist (ranks 4, 4, 3
   at the two geometries and the hexagon). This is the normal shape of such
   results: Dias-Pan's own 7.2 was manual. Nothing is claimed.
+
+## 2026-08-02 - Round 15 opens: the rank-floor lemma's first piece is PROVEN
+
+- Lemma piece 1 (dossier 2026-08-02): on the open stratum, the {L35, L36} x
+  {m1, m2} minor of the mass matrix factors EXACTLY as
+  s(d1A,d1B) s(d2A,d2B) (-2 u p (v-q)(a1-a2)); the polynomial part never
+  vanishes there, so rank J >= 2 everywhere off the explicit exceptional set
+  {d1A = d1B} union {d2A = d2B}. Proof by radical factor-out plus one
+  polynomial identity, machine-verified in milliseconds. This is the
+  Dias-Pan Prop 7.2 pattern working for our stratum, and it vindicates the
+  compute-to-proof transition: what three Groebner formulations could not
+  reach in hours fell to one structured minor in closed form. The remaining
+  case tree (equidistant exceptional sets, then the rank >= 3 floor) is
+  enumerated in the dossier.
