@@ -93,7 +93,8 @@ EXP-005 is CONFIRMED: every odd `F=69,...,179` has an accepted selector-CNF DRAT
 `F=181` is SAT at `s=14` and decodes exactly to the public candidate. Together with EXP-004 and
 oddness of the symmetric Frobenius number, this proves `F_min=181` in the two-generated monomial
 ideal class. The full 228-file search audit passes. Independent theorem trees agree at
-`F=69,71,73,75`. EXP-006 and the manuscript/Zenodo gate are now unblocked.
+`F=69,71,73,75`. EXP-006 Route G refutes the naïve fixed-offset family: only `s=14` passes through
+100; Route K remains open. The manuscript/Zenodo gate is active.
 
 ## 5. Next actions
 

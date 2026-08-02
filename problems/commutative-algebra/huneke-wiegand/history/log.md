@@ -85,3 +85,6 @@
 - EXP-005 verdict CONFIRMED on P1-P6: the least Frobenius value in the stated class is 181.
   Discovery priority for the counterexample remains Son Pham's. The manuscript/Zenodo gate is
   triggered by CAOS's minimality extension.
+- EXP-006 Route G tested every even `s=14,...,100`. Only the seed passed. The first failure is
+  `s=16`, where `F=205` instead of 207; `s=28` restores the predicted Frobenius but loses symmetry.
+  The fixed-offset family is refuted, and constrained-block Route K remains open.
