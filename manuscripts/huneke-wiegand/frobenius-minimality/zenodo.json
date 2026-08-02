@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "title": "Frobenius minimality of the Huneke-Wiegand counterexample in symmetric numerical semigroup rings",
+    "creators": [
+      {
+        "name": "Santibañez-Leal, Felipe",
+        "orcid": "0000-0002-0150-3246",
+        "affiliation": "CAOS open-research programme, Santiago, Chile"
+      }
+    ],
+    "description": "<p>Son Pham publicly identified a counterexample to the Huneke-Wiegand conjecture in the class of two-generated monomial ideals over symmetric numerical semigroup rings, subsequently verified independently by Professor Craig Huneke. This preprint preserves that discovery priority and addresses a separate question: how small can such an example be by Frobenius number?</p><p>We prove by proof-carrying exact computation that the least Frobenius number is 181, attained by Pham's example at shift 14. A complete theorem-tree implementation and 1,156 independently checked fixed-pair DRAT proofs reproduce the published positive range F&lt;69. A one-hot selector CNF then gives accepted DRAT proofs for every odd F from 69 through 179 and recovers the exact public semigroup at F=181; a separately generated fixed-pair formula returns the same model. Independent theorem-tree enumeration at F=69,71,73,75 checks another 79,790 symmetric semigroups and 2,933,163 gap cases with zero counterexamples.</p><p>The search audit rehashes 228 external files totaling 760,081,739 bytes, independently validates the SAT models, and recomputes the strict-order manifest with no mismatch. The result is minimality only within the symmetric numerical-semigroup, nonprincipal two-generated monomial-ideal class; it does not assert uniqueness, minimum multiplicity or embedding dimension, or minimality among arbitrary Gorenstein domains and modules. Code, compact manifests, verdicts and verification instructions: https://github.com/fsantibanezleal/CAOS_RESEARCH.</p>",
+    "keywords": [
+      "Huneke-Wiegand conjecture",
+      "numerical semigroups",
+      "symmetric numerical semigroups",
+      "monomial ideals",
+      "Frobenius number",
+      "counterexample minimality",
+      "commutative algebra",
+      "proof-carrying computation",
+      "SAT",
+      "DRAT",
+      "experimental mathematics"
+    ],
+    "subjects": [
+      {
+        "term": "Commutative semigroups",
+        "identifier": "https://mathscinet.ams.org/msc/msc2020.html?t=20M14",
+        "scheme": "url"
+      }
+    ],
+    "license": "cc-by-4.0",
+    "related_identifiers": [
+      {
+        "relation": "isSupplementedBy",
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "resource_type": "software"
+      },
+      {
+        "relation": "references",
+        "identifier": "https://github.com/sonpham-org/huneke-wiegand-candidate-verification",
+        "resource_type": "software"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1016/j.jalgebra.2013.06.007",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1515/form.2011.151",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1080/00927872.2024.2362934",
+        "resource_type": "publication-article"
+      }
+    ],
+    "version": "0.01",
+    "language": "eng"
+  }
+}

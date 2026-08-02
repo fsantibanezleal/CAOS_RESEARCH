@@ -1,0 +1,450 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{microtype}
+% MiKTeX's ORCID icon font is not scalable; protrusion remains enabled while
+% font expansion is disabled to keep pdfTeX builds portable and deterministic.
+\microtypesetup{expansion=false}
+\usepackage{xcolor}
+\definecolor{linknavy}{RGB}{25,55,125}
+\usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
+\hypersetup{
+  pdftitle={Frobenius Minimality of the Huneke--Wiegand Counterexample in Symmetric Numerical Semigroup Rings},
+  pdfauthor={Felipe Santibanez-Leal},
+  pdfsubject={Certified Frobenius-minimality theorem for a two-generated monomial-ideal counterexample},
+  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, SAT, DRAT, computer-assisted proof}
+}
+\usepackage{orcidlink}
+\usepackage{fancyhdr}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\kfield}{\Bbbk}
+\newcommand{\one}{\mathbf{1}}
+
+\title{Frobenius Minimality of the Huneke--Wiegand Counterexample\\
+in Symmetric Numerical Semigroup Rings}
+\author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
+\date{2026-08-02\\[2pt]\normalsize Version 0.01}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small CAOS Research Preprint}
+\fancyhead[R]{\small Huneke--Wiegand Frobenius Minimality \textperiodcentered\ v0.01}
+\fancyfoot[C]{\small \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\begin{document}
+\maketitle
+\begin{center}\small
+\fbox{\parbox{0.92\textwidth}{\centering
+\textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.01 \textperiodcentered\ 2026-08-02\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21763583}{10.5281/zenodo.21763583}\\
+Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
+\textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
+verified it. This paper contributes a separate certified Frobenius-minimality result.
+}}
+\end{center}
+
+\begin{abstract}
+Son Pham publicly identified a counterexample to the Huneke--Wiegand conjecture in the class of
+two-generated monomial ideals over symmetric numerical semigroup rings, subsequently verified by
+Professor Craig Huneke. We preserve that discovery priority and answer a different question: what
+is the least Frobenius number at which such a counterexample can occur? We prove by proof-carrying
+exact computation that the answer is $181$, attained by Pham's semigroup at ideal shift $14$.
+First, an implementation of the complete Blanco--Rosales tree exhausts all $48{,}954$ symmetric
+semigroups with Frobenius number below $69$ and all $1{,}503{,}391$ associated gap cases. An
+independent Boolean route checks $1{,}156$ fixed-pair UNSAT certificates for the same range. We then
+introduce a one-hot shift-selector CNF that asks one existence question per Frobenius number. Its
+DRAT certificates exclude every odd value from $69$ through $179$, while the formula at $181$ is
+satisfiable and decodes exactly to the public semigroup and shift. A separately generated fixed-pair
+formula returns the same model. An independent audit rehashes all $228$ files in the minimality
+search, totaling $760{,}081{,}739$ bytes, rechecks both SAT models, and reproduces the strict-order
+manifest with no mismatch. Complete theorem-tree enumeration at $F=69,71,73,75$ provides an
+object-level cross-check on another $79{,}790$ semigroups and $2{,}933{,}163$ gap cases. The theorem
+is scoped to symmetric numerical semigroup rings and nonprincipal two-generated monomial ideals. It
+does not assert uniqueness, minimum multiplicity or embedding dimension, or minimality for arbitrary
+Gorenstein domains and modules.
+\end{abstract}
+
+\section{Introduction}
+
+Let $R$ be a one-dimensional Gorenstein local domain and let $M$ be a nonzero finitely generated
+nonfree module. The Huneke--Wiegand conjecture predicted nontrivial torsion in
+$M\otimes_R\operatorname{Hom}_R(M,R)$ \cite{HunekeWiegand1994}. For a numerical semigroup
+$\Gamma\subseteq\N$, the semigroup ring $\kfield[t^\Gamma]$ is Gorenstein exactly when $\Gamma$ is
+symmetric. This specialization converts part of the module problem into finite additive
+combinatorics. Garc\'ia-S\'anchez and Leamer proved broad positive classes and reported a
+NumericalSgps check for every symmetric semigroup with Frobenius number below $69$
+\cite{GarciaSanchezLeamer2013}.
+
+In 2026, Son Pham published a symmetric numerical semigroup and a two-generated monomial ideal for
+which the predicted torsion is absent \cite{Pham2026}. Professor Craig Huneke supplied an
+independent verification archived with the public candidate record. That example has Frobenius
+number $181$. The discovery settles the original conjecture negatively, but does not by itself say
+whether $181$ is small, minimal, or typical.
+
+This paper reports a computer-assisted minimality theorem. Claims are labeled \textbf{[MV]} when
+they are verified by exact machine computation and independently checked artifacts, and
+\textbf{[D]} when derived in the text. No conjectural claim is needed for the main theorem.
+
+\paragraph{Contributions.}
+\begin{enumerate}
+  \item We give a self-contained finite-window reduction and a direct proof that the selector CNF is
+  equisatisfiable with existence of a rigid two-generated monomial ideal.
+  \item We reproduce the published $F<69$ boundary by two independent complete routes: the
+  Blanco--Rosales tree and checked DRAT proofs.
+  \item We certify UNSAT for every odd $F=69,71,\ldots,179$, then recover the exact public model at
+  $(F,s)=(181,14)$.
+  \item We independently rehash and inspect the complete search artifact set, and cross-check the
+  first four new odd Frobenius values by explicit theorem-tree enumeration.
+  \item We identify two structural boundaries: the public semigroup lies outside the generalized
+  arithmetic-sequence positive family, and the visible fixed-offset generator blocks do not extend
+  to a naive parametric family.
+\end{enumerate}
+
+\section{The finite semigroup problem}
+
+\begin{definition}
+A \emph{numerical semigroup} is a cofinite additive submonoid $\Gamma\subseteq\N$. Its Frobenius
+number is $F(\Gamma)=\max(\N\setminus\Gamma)$. It is \emph{symmetric} when
+\[
+  n\in\Gamma \quad\Longleftrightarrow\quad F(\Gamma)-n\notin\Gamma
+  \qquad (0\le n\le F(\Gamma)).
+\]
+\end{definition}
+
+Fix a symmetric semigroup $\Gamma$ with Frobenius number $F$ and a positive gap
+$s\notin\Gamma$. Normalize the corresponding two-generated relative ideal to $(0,s)$. Define
+\begin{align*}
+E_s &= \{n\in\N:n,n+s\in\Gamma\},\\
+D_s &= \{n\in\N:n,n+s,n+2s\in\Gamma\}.
+\end{align*}
+The Garc\'ia-S\'anchez--Leamer reduction identifies the counterexample condition with
+\begin{equation}\label{eq:rigidity}
+  D_s=E_s+E_s.
+\end{equation}
+Equivalently, every length-two arithmetic sequence of step $s$ in $\Gamma$ decomposes as a sum of
+two length-one sequences \cite{GarciaSanchezLeamer2013,Landeros2024}.
+
+\begin{lemma}[Automatic inclusion, {[D]}]\label{lem:auto}
+For every numerical semigroup $\Gamma$ and every positive integer $s$,
+$E_s+E_s\subseteq D_s$.
+\end{lemma}
+\begin{proof}
+If $a,b\in E_s$, then $a,a+s,b,b+s\in\Gamma$. Closure gives
+$a+b\in\Gamma$, $a+b+s=a+(b+s)\in\Gamma$, and
+$a+b+2s=(a+s)+(b+s)\in\Gamma$. Hence $a+b\in D_s$.
+\end{proof}
+
+\begin{lemma}[Finite window, {[D]}]\label{lem:window}
+Equation~\eqref{eq:rigidity} holds if and only if
+$D_s\cap[0,2F+1]\subseteq E_s+E_s$.
+\end{lemma}
+\begin{proof}
+Only the reverse inclusion needs checking by Lemma~\ref{lem:auto}. Every integer at least $F+1$
+belongs to $\Gamma$, hence to $E_s$ and $D_s$. Let $m=\min E_s$; then $m\le F+1$. For every
+$n\ge m+F+1$, both $m$ and $n-m$ lie in $E_s$, so $n\in E_s+E_s$. Since
+$m+F+1\le2F+2$, every $n\ge2F+2$ is automatic. The displayed finite window is therefore complete.
+\end{proof}
+
+\begin{lemma}[Parity, {[D]}]\label{lem:parity}
+The Frobenius number of a symmetric numerical semigroup is odd.
+\end{lemma}
+\begin{proof}
+If $F$ were even, symmetry at $n=F/2$ would require $F/2$ to belong to $\Gamma$ exactly when it
+does not belong to $\Gamma$.
+\end{proof}
+
+\section{The public model and independent calibration}
+
+Pham's public semigroup is
+\begin{align*}
+\Gamma=\langle&56,57,58,63,64,70,71,72,73,74,75,76,77,78,79,80,81,82,83,\\
+&87,89,90,93,95,96,97\rangle,
+\end{align*}
+with the ideal generated by $t^{56}$ and $t^{70}$, hence normalized shift $s=14$
+\cite{Pham2026}. An independent Singular/4ti2 calculation and a separate standard-library finite
+route verify $F=181$, conductor $182$, genus $91$, symmetry, and equality~\eqref{eq:rigidity}
+\textbf{[MV]}. The Singular route uses a $322$-generator toric standard basis; both reduced ideal
+differences vanish. The hypersurface control $\langle4,5\rangle$ rejects equality with explicit
+residues \textbf{[MV]}.
+
+The endomorphism overring of the ideal has value semigroup
+\[
+  v(\operatorname{End}_R(I))=\Gamma\cup\{101,107,181\},
+\]
+with Frobenius number $125$, genus $88$, and type $24$ \textbf{[MV]}. This explains why positive
+criteria that require a Gorenstein endomorphism ring do not apply, but it does not imply minimality.
+
+\section{Complete reproduction below 69}
+
+For fixed odd $F$, irreducible numerical semigroups are exactly the symmetric ones. Blanco and
+Rosales construct all of them as a rooted tree \cite{BlancoRosales2013}. Starting from
+\[
+ C(F)=\{0,(F+1)/2,(F+1)/2+1,\ldots\}\setminus\{F\},
+\]
+a child replaces a suitable minimal generator $x>F/2$ by $F-x$. Their theorem supplies exact
+child conditions, completeness, and a unique parent.
+
+Our direct implementation validates every node for closure, symmetry, genus, minimal generators,
+and its theorem parent. It then checks every gap by Lemma~\ref{lem:window} and retains a first
+element of $D_s\setminus(E_s+E_s)$ whenever equality fails. The full range $F=1,3,\ldots,67$
+contains $48{,}954$ semigroups and $1{,}503{,}391$ gap cases; none is rigid \textbf{[MV]}. At
+$F=11$ the implementation returns the six nodes listed by Blanco--Rosales, while an invalid
+mutation is rejected by closure at $(1,1)$.
+
+An independent route generates one fixed-pair DIMACS formula for each $(F,s)$, including shifts
+that are forced not to be gaps. CaDiCaL emits a DRAT proof for every UNSAT result, and DRAT-trim
+checks each proof against the exact CNF \cite{Cadical2023,DRAT2014}. All $1{,}156$ formulas are
+UNSAT and independently verified \textbf{[MV]}. A committed auditor rehashes $4{,}624$ external
+files totaling $211{,}671{,}241$ bytes with zero mismatch.
+
+\section{One selector formula per Frobenius value}
+
+The fixed-pair route duplicates the same semigroup constraints once per shift. We instead introduce
+Boolean membership variables $h_n$ for $0\le n\le F$ and one-hot variables $q_s$ for
+$1\le s\le F$.
+
+\subsection{Semigroup and selector clauses}
+
+The CNF contains units $h_0$ and $\neg h_F$, the symmetry clauses
+\[
+ (h_n\lor h_{F-n})\land(\neg h_n\lor\neg h_{F-n}),
+\]
+and closure clauses $\neg h_a\lor\neg h_b\lor h_{a+b}$ for $a+b\le F$. The selectors satisfy one
+at-least-one clause, all pairwise at-most-one clauses, and
+$q_s\Rightarrow\neg h_s$. Thus every model chooses exactly one gap.
+
+For $0\le n\le2F+1$, guarded Tseitin clauses impose, under the selected $q_s$,
+\begin{align*}
+ e_n &\longleftrightarrow h_n\land h_{n+s},\\
+ d_n &\longleftrightarrow h_n\land h_{n+s}\land h_{n+2s},
+\end{align*}
+where $h_j$ is the constant true for $j>F$. For each unordered decomposition $n=a+b$, a variable
+$p_{n,a,b}$ is equivalent to $e_a\land e_b$. Finally,
+\[
+ d_n\Rightarrow\bigvee_{a+b=n}p_{n,a,b}.
+\]
+The automatic inclusion from Lemma~\ref{lem:auto} need not be duplicated in the formula.
+
+\begin{proposition}[Selector equisatisfiability, {[D]}]\label{prop:cnf}
+For positive odd $F$, the selector CNF is satisfiable if and only if there exist a symmetric
+numerical semigroup $\Gamma$ with Frobenius number $F$ and a gap $s$ satisfying
+$D_s=E_s+E_s$.
+\end{proposition}
+\begin{proof}
+The semigroup clauses decode exactly a symmetric semigroup of Frobenius number $F$, and the one-hot
+clauses decode a unique gap. Because exactly one guard is true, all $e_n$ and $d_n$ equal the
+definitions for that gap. The $p$ equivalences and final disjunctions impose
+$D_s\subseteq E_s+E_s$ through $2F+1$. Lemmas~\ref{lem:auto} and~\ref{lem:window} give global
+equality. Conversely, from a rigid pair assign $h$ and $q$ from the pair, assign $e,d$ by their
+definitions, and assign each $p$ by its conjunction. Every clause is then true.
+\end{proof}
+
+The selector encoding passes two adversarial calibrations \textbf{[MV]}. Every odd $F\le67$ is
+UNSAT with an accepted proof, while $F=181$ is SAT. The latter formula has $34{,}397$ variables and
+$363{,}912$ clauses, selects $s=14$, and decodes exactly to the public membership vector. A newly
+generated fixed-pair formula at $(181,14)$ returns the same vector.
+
+\section{The certified search and minimality theorem}
+
+We scan odd $F$ in strict increasing order. Table~\ref{tab:search} summarizes the closed run.
+
+\begin{table}[ht]
+\centering
+\caption{Selector-CNF minimality search.}
+\label{tab:search}
+\begin{tabular}{lr}
+\toprule
+Quantity & Value\\
+\midrule
+Odd Frobenius values requested & 57 ($69$ through $181$)\\
+UNSAT with accepted DRAT proof & 56 ($69$ through $179$)\\
+Validated SAT models & 1 ($181$, shift $14$)\\
+UNKNOWN or timeout & 0\\
+Wall time & $4{,}303.86$ seconds\\
+CNF bytes & $169{,}745{,}433$\\
+DRAT proof bytes & $586{,}785{,}257$\\
+Slowest solve & $F=175$, $218.83$ seconds\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{theorem}[Frobenius minimality, {[MV+D]}]\label{thm:minimal}
+Among symmetric numerical semigroups admitting a nonprincipal two-generated monomial ideal that is
+a counterexample to the Huneke--Wiegand prediction, the least Frobenius number is $181$. It is
+attained by Pham's public example at shift $14$.
+\end{theorem}
+\begin{proof}
+By Lemma~\ref{lem:parity}, only odd Frobenius values occur. Complete tree enumeration and the
+independent fixed-pair proof suite exclude every odd $F\le67$. Proposition~\ref{prop:cnf} and the
+accepted selector DRAT proofs exclude every odd $F$ from $69$ through $179$. The validated
+selector and fixed-pair models at $(181,14)$ provide existence. These cases exhaust all smaller
+positive Frobenius values.
+\end{proof}
+
+The search audit independently rehashes all $228$ expected CNF, proof, solver-log, and checker-log
+files, totaling $760{,}081{,}739$ bytes. It also reconstructs both SAT membership masks, validates
+closure, symmetry, and rigidity, checks strict odd ordering, and recomputes aggregate SHA-256
+\[
+\texttt{0f580de2707a00fdd52e1b3c04e7767b97ce7b0a826593b119e9a49ae04da743}.
+\]
+No file is missing, no hash differs, and no status marker or semantic check fails \textbf{[MV]}.
+
+\section{Independent object-level checks beyond the old frontier}
+
+The theorem-tree route was continued beyond $67$ without consulting SAT models. Table~\ref{tab:tree}
+lists the first four new odd values.
+
+\begin{table}[ht]
+\centering
+\caption{Complete Blanco--Rosales tree cross-checks beyond the published boundary.}
+\label{tab:tree}
+\begin{tabular}{rrrrr}
+\toprule
+$F$ & Symmetric semigroups & Gap cases & Rigid cases & Seconds\\
+\midrule
+69 & 11,276 & 394,660 & 0 & 137.00\\
+71 & 19,812 & 713,232 & 0 & 235.37\\
+73 & 25,405 & 939,985 & 0 & 333.21\\
+75 & 23,297 & 885,286 & 0 & 330.10\\
+\midrule
+Total & 79,790 & 2,933,163 & 0 & 1,035.68\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This is not needed to trust a DRAT derivation, but it attacks the custom encoding at the object
+level and supplies explicit failed-rigidity witnesses for every tested gap. The routes agree.
+
+\section{Structural boundaries and a failed family ansatz}
+
+Landeros et al. prove the positive result for semigroups generated by a generalized arithmetic
+sequence $\langle a,ah+d,\ldots,ah+kd\rangle$ \cite{Landeros2024}. The public semigroup cannot lie
+in this class \textbf{[D]}. Its multiplicity forces $a=56$. Since $57\in\Gamma$ and no sum of two
+positive semigroup elements is below $112$, the presentation forces $h=d=1$. Since
+$63\in\Gamma$, it would then include $59,60,61,62$, but all four are gaps.
+
+The seed also displays $56=4s$ and $181=13s-1$ at $s=14$, with generator blocks
+\[
+4s+\{0,1,2,7,8\},\qquad 5s+[0,s-1],\qquad
+6s+\{3,5,6,9,11,12,13\}.
+\]
+A predeclared exact sweep refutes the naive fixed-offset lift \textbf{[MV]}. Only $s=14$ passes
+among even $s\le100$. At $s=16$, the generated semigroup has $F=205$ rather than $207$; at
+$s=28$ the predicted Frobenius value returns but symmetry fails. This negative result prevents the
+minimality theorem from being overinterpreted as evidence of an immediate family.
+
+\section{Reproducibility and trust boundary}
+
+All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
+\begin{center}
+\url{problems/commutative-algebra/huneke-wiegand/}.
+\end{center}
+Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The proof
+toolchain is pinned as follows:
+\begin{center}
+\begin{tabular}{@{}lp{0.65\textwidth}@{}}
+\toprule
+Component & Identity\\
+\midrule
+CaDiCaL & reported 1.7.3; Ubuntu package 1.7.4-1\\
+CaDiCaL binary SHA-256 & {\fontsize{7}{8}\selectfont\ttfamily 7b73df0a6d9cf3c751a1948300e5baff8e82c4d39bcd88f0c063b5f5cfb8b33e}\\
+DRAT-trim commit & {\fontsize{7}{8}\selectfont\ttfamily 2e3b2dc0ecf938addbd779d42877b6ed69d9a985}\\
+DRAT-trim binary SHA-256 & {\fontsize{7}{8}\selectfont\ttfamily 92f0aa9575ed519d66a99b8b1b3dde6ece4618ae4c202a3a4b200265dda0aa7a}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The trusted base comprises the cited tree theorem, the finite reduction proved here, the small
+standard-library model checker, and DRAT-trim's verification of each proof against its exact CNF.
+The SAT solver need not be trusted for UNSAT. For SAT, the independently extracted model is checked
+without consulting solver internals.
+
+\section{Scope, attribution, and open questions}
+
+Son Pham retains discovery priority for the counterexample. Professor Craig Huneke's verification
+is independent external evidence. The contribution proved here is Frobenius minimality in the
+specified semigroup/ideal class and its reproducible certificate suite.
+
+Theorem~\ref{thm:minimal} does not prove uniqueness at $F=181$, minimum multiplicity, minimum
+embedding dimension, minimum shift, or minimality among arbitrary Gorenstein domains and modules.
+The following questions remain open:
+\begin{enumerate}
+  \item How many nonisomorphic rigid pairs occur at $F=181$?
+  \item Is there a stronger minimum under multiplicity, embedding dimension, or number of minimal
+  generators?
+  \item Does a nontrivial infinite family exist after the fixed-offset ansatz fails?
+  \item Which additional hypotheses on the endomorphism ring recover a positive theorem while
+  excluding the public example?
+  \item Can the finite certificates be imported into a smaller formally verified checker?
+\end{enumerate}
+
+\section*{Acknowledgments}
+
+The author thanks Son Pham for making the candidate and verification materials public, and Craig
+Huneke for the independent verification recorded with that release. Neither is an author of this
+paper, and this acknowledgment does not imply endorsement of the minimality result.
+
+{\small
+\begin{thebibliography}{99}
+
+\bibitem{HunekeWiegand1994}
+C. Huneke and R. Wiegand,
+\emph{Tensor products of modules and the rigidity of Tor},
+Math. Ann. 299 (1994), 449--476.
+\href{https://doi.org/10.1007/BF01459793}{doi:10.1007/BF01459793}.
+
+\bibitem{GarciaSanchezLeamer2013}
+P. A. Garc\'ia-S\'anchez and M. J. Leamer,
+\emph{Huneke--Wiegand conjecture for complete intersection numerical semigroup rings},
+J. Algebra 391 (2013), 114--124.
+\href{https://doi.org/10.1016/j.jalgebra.2013.06.007}{doi:10.1016/j.jalgebra.2013.06.007}.
+
+\bibitem{BlancoRosales2013}
+V. Blanco and J. C. Rosales,
+\emph{The tree of irreducible numerical semigroups with fixed Frobenius number},
+Forum Math. 25 (2013), 1249--1261.
+\href{https://doi.org/10.1515/form.2011.151}{doi:10.1515/form.2011.151}.
+
+\bibitem{Landeros2024}
+M. Landeros, C. O'Neill, R. Pelayo, K. Pe\~na, J. Ren, and B. Wissman,
+\emph{Families of numerical semigroups and a special case of the Huneke--Wiegand conjecture},
+Commun. Algebra 52 (2024), 5196--5206.
+\href{https://doi.org/10.1080/00927872.2024.2362934}{doi:10.1080/00927872.2024.2362934}.
+
+\bibitem{Pham2026}
+S. Pham,
+\emph{Huneke--Wiegand candidate verification}, public software and certificate repository (2026).
+\url{https://github.com/sonpham-org/huneke-wiegand-candidate-verification}.
+
+\bibitem{Cadical2023}
+A. Biere, K. Fazekas, M. Fleury, and M. Heisinger,
+\emph{CaDiCaL, Kissat, Paracooba, Plingeling and Treengeling entering the SAT Competition 2020},
+with current CaDiCaL documentation and sources.
+\url{https://github.com/arminbiere/cadical}.
+
+\bibitem{DRAT2014}
+N. Wetzler, M. J. H. Heule, and W. A. Hunt Jr.,
+\emph{DRAT-trim: efficient checking and trimming using expressive clausal proofs},
+SAT 2014, LNCS 8561, 422--429.
+\href{https://doi.org/10.1007/978-3-319-09284-3_31}{doi:10.1007/978-3-319-09284-3\_31}.
+
+\end{thebibliography}
+}
+
+\end{document}

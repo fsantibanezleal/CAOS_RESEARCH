@@ -1,0 +1,51 @@
+{
+  "toolchain": {
+    "cadical_version": "1.7.3",
+    "cadical_package": "cadical\t1.7.4-1",
+    "cadical_sha256": "7b73df0a6d9cf3c751a1948300e5baff8e82c4d39bcd88f0c063b5f5cfb8b33e",
+    "drat_trim_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "drat_trim_sha256": "92f0aa9575ed519d66a99b8b1b3dde6ece4618ae4c202a3a4b200265dda0aa7a"
+  },
+  "queries": {
+    "181": {
+      "frobenius": 181,
+      "seconds": 100.79201849998208,
+      "variables": 34397,
+      "clauses": 363912,
+      "solver_returncode": 10,
+      "cnf_bytes": 5922805,
+      "cnf_sha256": "bb8b49f4083eb4f4cddeeb3a6050ba9558299a2898d0d88747471dc37e2ab286",
+      "solver_log_sha256": "f079091c8071dac13ba14f47e34f7fdc092f8816e44d673463ebba739802fa12",
+      "status": "SAT_VALIDATED",
+      "shift": 14,
+      "membership": "10000000000000000000000000000000000000000000000000000000111000011000001111111111111100010110010111000000000000001111100111100011111111111111111111111111111111111111111111111111111110",
+      "semantic_failures": [],
+      "rigidity": {
+        "rigid": true,
+        "first_missing_D": null,
+        "first_reverse_failure": null,
+        "minimum_inverse": 56,
+        "window_end": 363,
+        "tail_start": 238
+      },
+      "fixed_pair_adversary": {
+        "status": "SAT_VALIDATED",
+        "seconds": 2.0581833999603987,
+        "variables": 34216,
+        "clauses": 110239,
+        "cnf_bytes": 1873326,
+        "cnf_sha256": "3442457ed8f21e943a2fa8fff25e06755cea560cfcc56fba232ec7f2f7ca62b9",
+        "solver_log_sha256": "59ca06e04b0b9dafb376e5a4f984779458aff74a99c5dba88971b80ed022c950",
+        "membership": "10000000000000000000000000000000000000000000000000000000111000011000001111111111111100010110010111000000000000001111100111100011111111111111111111111111111111111111111111111111111110",
+        "rigidity": {
+          "rigid": true,
+          "first_missing_D": null,
+          "first_reverse_failure": null,
+          "minimum_inverse": 56,
+          "window_end": 363,
+          "tail_start": 238
+        }
+      }
+    }
+  }
+}

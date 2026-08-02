@@ -1,0 +1,22 @@
+{
+  "verdict": "PASS",
+  "results_sha256": "74b43dc194d10dcdcbc25a6125e9f37e495d28692ca7545bdfb0a4912f364571",
+  "manifest_entries": 1156,
+  "files_expected": 4624,
+  "files_hashed": 4624,
+  "external_bytes": 211671241,
+  "missing": [],
+  "hash_mismatches": [],
+  "bad_solver_or_checker_logs": [],
+  "all_unsat_verified": true,
+  "stored_aggregate_sha256": "47e1d9489581fd8be7fad5553af0c535acf7ffc31acc8a137f32c7e95dd2f57e",
+  "computed_aggregate_sha256": "47e1d9489581fd8be7fad5553af0c535acf7ffc31acc8a137f32c7e95dd2f57e",
+  "aggregate_matches": true,
+  "toolchain": {
+    "cadical_version": "1.7.3",
+    "cadical_package": "cadical\t1.7.4-1",
+    "cadical_sha256": "7b73df0a6d9cf3c751a1948300e5baff8e82c4d39bcd88f0c063b5f5cfb8b33e",
+    "drat_trim_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "drat_trim_sha256": "92f0aa9575ed519d66a99b8b1b3dde6ece4618ae4c202a3a4b200265dda0aa7a"
+  }
+}

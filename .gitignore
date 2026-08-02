@@ -53,3 +53,13 @@ models/*.pth
 .DS_Store
 Thumbs.db
 *.log
+
+# --- LaTeX manuscript intermediates (release PDFs remain tracked) ---
+manuscripts/**/*.aux
+manuscripts/**/*.out
+manuscripts/**/*.toc
+manuscripts/**/*.fls
+manuscripts/**/*.fdb_latexmk
+manuscripts/**/*.synctex.gz
+manuscripts/**/build-pass*.txt
+manuscripts/**/main.txt
