@@ -1,0 +1,44 @@
+{
+  "verdict": "CALIBRATED",
+  "mode": "candidate",
+  "max_f": null,
+  "query_count": 1,
+  "status_counts": {
+    "SAT": 1,
+    "UNSAT_VERIFIED": 0,
+    "UNKNOWN": 0
+  },
+  "aggregate_sha256": "e11101cfe4839179e0c55c6b6793717732306c5075e5405337b33086deb6d0f7",
+  "seconds": 3.7543115000007674,
+  "toolchain": {
+    "cadical_version": "1.7.3",
+    "cadical_package": "cadical\t1.7.4-1",
+    "cadical_sha256": "7b73df0a6d9cf3c751a1948300e5baff8e82c4d39bcd88f0c063b5f5cfb8b33e",
+    "drat_trim_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "drat_trim_sha256": "92f0aa9575ed519d66a99b8b1b3dde6ece4618ae4c202a3a4b200265dda0aa7a"
+  },
+  "queries": {
+    "181:14": {
+      "frobenius": 181,
+      "shift": 14,
+      "seconds": 2.417296500003431,
+      "variables": 34216,
+      "clauses": 110239,
+      "solver_returncode": 10,
+      "cnf_bytes": 1874602,
+      "cnf_sha256": "096d86cb856a5b9efdd3f4468d0b7f8d13b831f013a4d5953242a5d64df92250",
+      "solver_log_sha256": "24a6bf65139945fe237aa9657eb7bc2990ac65e61ac166afc8adb4239f229e61",
+      "status": "SAT",
+      "membership": "10000000000000000000000000000000000000000000000000000000111000011000001111111111111100010110010111000000000000001111100111100011111111111111111111111111111111111111111111111111111110",
+      "semantic_failures": [],
+      "rigidity": {
+        "rigid": true,
+        "first_missing_D": null,
+        "first_reverse_failure": null,
+        "minimum_inverse": 56,
+        "window_end": 363,
+        "tail_start": 238
+      }
+    }
+  }
+}
