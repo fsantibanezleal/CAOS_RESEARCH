@@ -31,3 +31,4 @@
 | TCB-027 | Mod-p instrumentation: root counts of census records over F_p vs the Frobenius ceiling (V10) | todo | P2 | Cheap add-on to the census catalog; pairs with the V9 digit ladders |
 | TCB-028 | Paper v0.03 (deliberate): seven-rooter exclusion + digit ladders + punctured anatomy + V10 narrative; ship WITH the z_max(8) resolution | todo | P1 | R3 discipline: no reflexive publish |
 | TCB-029 | SAT lane EXP: the final-pm 8-gate case (z_max(8) = 6? 7-rooter at 8?) per the 2026-08-02 design note | todo | P0 | The single remaining unknown at depth 8 |
+| TCB-030 | Evaluation-matrix instrumentation (V11): entry-growth measurements on record matrices; Mahler/height trade-off lemma target | todo | P2 | Context note 2026-08-03 |
