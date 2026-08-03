@@ -45,3 +45,22 @@
   rescoped to z_max(8)).
 - Wiki 03/05 updated/written. Next: TCB-025 (max union re-scan), TCB-005
   (depth-8 backend), TCB-026 (punctured root sets anatomy), reads.
+
+## Round 8 (2026-08-02)
+
+- **EXP-007 CONFIRMED** (3h07m, complete; 408 anchor reproduced): max
+  union = 6: NO 8-gate seven-rooter via final multiplication (our first
+  surviving emptiness prediction); z_max(8) = 6 unless a final-pm 8-gate
+  7-rooter exists (SAT residual, TCB-029). Seven-root threshold in
+  [8, 10] (10-gate witness explicit).
+- **Digit census (V9) measured through tau = 7**: odd-root ladder
+  1,2,2,2,2,3,4 (prediction "max 3" REFUTED, fourth refutation: the
+  digit world has its OWN record family, (x^2-1)(x^2-9) at 7 gates,
+  roots {+-1,+-3} all odd); p=3 ladder 1,1,1,2,2,3,3.
+- **Punctured anatomy (TCB-026) closed**: two-center DOS products
+  x^2(x^2-1)(x-2)(x-4); the hole is the second DOS center.
+- V10 (three-worlds trichotomy) persisted; KPT15 pinned precisely;
+  TCB-027/028/029 minted. Paper v0.03 queued DELIBERATELY (with the
+  z_max(8) resolution).
+- **Next:** TCB-029 (SAT final-pm decision at 8), then v0.03; TCB-027
+  mod-p instrumentation; TCB-005 depth-8 backend as the larger goal.
