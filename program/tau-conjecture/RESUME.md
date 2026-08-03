@@ -72,9 +72,9 @@ from the exhausted depth-$d$ frontier without storing depth $d+1$.
 ## 4. In flight
 
 Nothing running. $z_{\max}(8) = 6$ UNLESS a final-$\pm$ 8-gate 7-rooter
-exists (EXP-007 excluded the $	imes$ case: max union 6 over all 408
+exists (EXP-007 excluded the $\times$ case: max union 6 over all 408
 hits): the single depth-8 unknown, SAT-shaped (TCB-029). Seven-root
-threshold in $[8, 10]$. Digit ladders (V9) exact through $	au = 7$:
+threshold in $[8, 10]$. Digit ladders (V9) exact through $\tau = 7$:
 odd 1,2,2,2,2,3,4 (own record family: $(x^2-1)(x^2-9)$, 7 gates, roots
 $\{\pm1,\pm3\}$); $p{=}3$: 1,1,1,2,2,3,3. Punctured five-rooters =
 two-center DOS products (TCB-026 closed).
