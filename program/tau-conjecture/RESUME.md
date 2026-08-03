@@ -1,6 +1,6 @@
 # tau-conjecture: RESUME (zero-loss handoff)
 
-Updated 2026-08-02, round 7 close (window closed; paper v0.02). First read for any fresh session, per
+Updated 2026-08-02, round 8 close (seven-rooter times-case excluded; digit census). First read for any fresh session, per
 methodology 07. Derived view: on conflict, experiment verdicts win.
 
 ## 1. State in one screen
@@ -71,21 +71,22 @@ from the exhausted depth-$d$ frontier without storing depth $d+1$.
 
 ## 4. In flight
 
-Nothing running. The window is CLOSED (threshold = 8). Standing
-questions: exact $z_{\max}(8)$ (known $\ge 6$; whether any of the 408
-hits reaches union 7 was truncated: TCB-025 re-scan); the 7-root
-threshold; the punctured five-rooter mechanism (TCB-026).
+Nothing running. $z_{\max}(8) = 6$ UNLESS a final-$\pm$ 8-gate 7-rooter
+exists (EXP-007 excluded the $\times$ case: max union 6 over all 408
+hits): the single depth-8 unknown, SAT-shaped (TCB-029). Seven-root
+threshold in $[8, 10]$. Digit ladders (V9) exact through $\tau = 7$:
+odd 1,2,2,2,2,3,4 (own record family: $(x^2-1)(x^2-9)$, 7 gates, roots
+$\{\pm1,\pm3\}$); $p{=}3$: 1,1,1,2,2,3,3. Punctured five-rooters =
+two-center DOS products (TCB-026 closed).
 
 ## 5. Next actions, ordered
 
-1. TCB-025: re-scan with full hit retention (max union size; 8-gate
-   7-rooter?): ~2.4 h, same machinery as EXP-006.
-2. TCB-005: canonicalization or compiled backend (full depth-8 census,
-   exact $z_{\max}(8)$).
-3. TCB-026: anatomy pass on the non-consecutive five-rooter patterns.
-4. Reads before imports: Doyle-Poonen (TCB-024), Narkiewicz attribution
-   (TCB-023), Cheng 2004 full, KPT15.
-5. RL-2/RL-3: valuation-spectrum record hunt; $T(S)$ structure lemmas.
+1. TCB-029: the SAT final-$\pm$ decision at depth 8 (design note
+   2026-08-02): resolves $z_{\max}(8)$ and the 8-gate 7-rooter question.
+2. TCB-028: paper v0.03 ships WITH that resolution (deliberate).
+3. TCB-027: mod-p Frobenius-ceiling instrumentation (V10/V9 pairing).
+4. TCB-005: depth-8 backend (the larger census goal).
+5. Reads: Doyle-Poonen (TCB-024), Cheng 2004 full, KPT15 PDF.
 
 Commands: tests
 `.venv python -m pytest problems/computation-complexity/tau-conjecture/code/tclib -q`;
@@ -140,3 +141,4 @@ census runs from each experiment folder via the repository checkout venv
 | 2026-08-01 round 3 | Census decided $\tau = 6$ (last-gate scan; prediction refuted honestly) | Anatomy/theorem (tower lemma PROVED: constant integer yield of the doubling factory), method lens (last-gate lemma: one depth free), audit (smoke gate caught the input-accounting artifact; sympy 284/284) | The multiply-by-$x$ move; the $z = \tau - 1$ law question (TCB-019); stall-lemma generalization target (TCB-020) |
 | 2026-08-01 rounds 4-5 | Census decided $\tau = 7$ (z_max = 5: plateau; prediction right) | Theorem (monic stall: single-map towers bounded for ALL monic maps), arithmetic dynamics (V8: cycle-length ceiling explained the EXP-005 discovery), external dialogue (Cheng, adelic tau, SAT synthesis pinned), audit (EXP-005 tooling incident: divisor counting vs c^{2^k} constants; escape-bound finder cross-checked) | Views V5-V8; RL-7..9; the plateaus phenomenon; the $[8,9]$ window as first SAT target; family loophole resolved empty for quadratics |
 | 2026-08-02 round 7 | Window CLOSED: min tau(6 roots) = 8 (times-case co-occurrence scan; emptiness prediction refuted, third time) | Method (case-split invariant: product roots = union), audit (smoke known-answer; witnesses replay-verified independently), anatomy (7 five-rooter patterns incl. punctured) | Paper v0.02 (DOI 10.5281/zenodo.21763182); TCB-025/026 minted; SAT lane rescoped to z_max(8) |
+| 2026-08-02 round 8 | Seven-rooter times-case EXCLUDED (max union 6; first surviving emptiness prediction); digit ladders measured (odd prediction refuted: 4th refutation; own record family) | V9 digit census (the sufficient-form ladder), V10 three-worlds trichotomy, anatomy (two-center DOS punctures), audit (408 anchor reproduced) | z_max(8) pinned to the SAT residual (TCB-029); TCB-027/028 minted; KPT15 pinned |

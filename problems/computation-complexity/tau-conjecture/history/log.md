@@ -188,3 +188,34 @@
   TCB-025 (full-retention re-scan: 8-gate 7-rooter?), TCB-026
   (punctured five-rooter anatomy).
 - Dead ends: none; one metadata slip caught and fixed post-publish.
+
+## 2026-08-02 (round 8): seven-rooter times-case excluded; the digit census; V10
+
+- Sweeps: KPT15 identified precisely (Wronskian approach, JSC 2015,
+  arXiv:1205.1015) and pinned; Narkiewicz attribution settled (common
+  knowledge; LNM 1600 standard treatment); finite-field SPARSE root
+  literature surfaced (Bi-Cheng-Rojas Descartes; arXiv:1411.6346).
+- **V10 minted (three-worlds trichotomy)**: the same SLP over F_p / R /
+  Z gives maximal-violation / violation / conjectured-polynomial growth;
+  both failures ride a cheap coincidence-rich endomorphism (Frobenius;
+  doubling semiconjugacy); Z has none, and the stall theorems are the
+  quantitative form of that absence: the conjecture as the price of
+  constant-building. Context note persisted; TCB-027 minted (mod-p
+  Frobenius-ceiling instrumentation).
+- **EXP-007 CONFIRMED** (3h07m, all 25,844,905 states, 408 anchor
+  reproduced): max union = 6: NO 8-gate seven-rooter with final
+  multiplication (prediction 1 right: our first surviving emptiness
+  call). z_max(8) = 6 unless a final-pm 8-gate 7-rooter exists (the SAT
+  residual, TCB-029); seven-root threshold in [8, 10].
+- **Digit census (V9) exact through tau = 7**: odd ladder
+  1,2,2,2,2,3,4; p=3 ladder 1,1,1,2,2,3,3. Prediction 2 REFUTED (fourth
+  refutation): the digit world has its own record family: the 7-gate
+  (x^2-1)(x^2-9) with roots {+-1,+-3} ALL odd: digit records are NOT
+  shadows of the full records (which are digit-poor).
+- **Punctured five-rooter anatomy closed (TCB-026)**: all 67 five-rooter
+  polys saved and factored; the punctured patterns are two-center DOS
+  products +-x^2(x^2-1)(x-2)(x-4): the missing root is the second DOS
+  center.
+- Publication discipline: v0.03 material queued DELIBERATELY (TCB-028)
+  to ship together with the z_max(8) resolution.
+- Dead ends: none this round.
