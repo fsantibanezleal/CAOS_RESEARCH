@@ -20,7 +20,6 @@ from tclib.enum import integer_roots, padd, pmul, psub  # noqa: E402
 
 T0 = time.time()
 ART = HERE / "artifacts"
-NGATES = 8
 INPUT_POLYS = [(-1,), (1,), (0, 1)]
 
 
@@ -38,22 +37,22 @@ def checkpoint(name, payload):
     tmp.replace(p)
 
 
-def build_solver(nroots, final_pm, root_bound, timeout_ms):
+def build_solver(ngates, nroots, final_pm, root_bound, timeout_ms):
     s = z3.Solver()
     s.set("timeout", timeout_ms)
-    ops = [z3.Int(f"op{j}") for j in range(NGATES)]
-    Ls = [z3.Int(f"L{j}") for j in range(NGATES)]
-    Rs = [z3.Int(f"R{j}") for j in range(NGATES)]
-    for j in range(NGATES):
+    ops = [z3.Int(f"op{j}") for j in range(ngates)]
+    Ls = [z3.Int(f"L{j}") for j in range(ngates)]
+    Rs = [z3.Int(f"R{j}") for j in range(ngates)]
+    for j in range(ngates):
         s.add(ops[j] >= 0, ops[j] <= 2)
         s.add(Ls[j] >= 0, Ls[j] <= j + 2)
         s.add(Rs[j] >= 0, Rs[j] <= j + 2)
         # commutative symmetry-break
         s.add(z3.Implies(ops[j] != 1, Ls[j] <= Rs[j]))  # op 1 = '-'
     if final_pm:
-        s.add(ops[NGATES - 1] != 2)                       # +- only
-        s.add(z3.Or(Ls[NGATES - 1] == NGATES + 1,
-                    Rs[NGATES - 1] == NGATES + 1))        # involves gate 7
+        s.add(ops[ngates - 1] != 2)                       # +- only
+        s.add(z3.Or(Ls[ngates - 1] == ngates + 1,
+                    Rs[ngates - 1] == ngates + 1))        # involves prior gate
     r = [z3.Int(f"r{i}") for i in range(nroots)]
     for i in range(nroots - 1):
         s.add(r[i] < r[i + 1])
@@ -62,7 +61,7 @@ def build_solver(nroots, final_pm, root_bound, timeout_ms):
             s.add(r[i] >= -root_bound, r[i] <= root_bound)
     for i in range(nroots):
         E = [z3.IntVal(-1), z3.IntVal(1), r[i]]
-        for j in range(NGATES):
+        for j in range(ngates):
             e = z3.Int(f"E{i}_{j}")
             for a in range(j + 3):
                 for b in range(j + 3):
@@ -80,10 +79,10 @@ def build_solver(nroots, final_pm, root_bound, timeout_ms):
     return s, ops, Ls, Rs, r
 
 
-def replay(model, ops, Ls, Rs):
+def replay(ngates, model, ops, Ls, Rs):
     vals = list(INPUT_POLYS)
     prog = []
-    for j in range(NGATES):
+    for j in range(ngates):
         o = model[ops[j]].as_long()
         a = model[Ls[j]].as_long()
         b = model[Rs[j]].as_long()
@@ -95,10 +94,10 @@ def replay(model, ops, Ls, Rs):
     return f, prog
 
 
-def solve_cegar(name, nroots, final_pm, root_bound, timeout_ms):
-    log(f"{name}: building (roots={nroots}, final_pm={final_pm}, "
-        f"bound={root_bound})")
-    s, ops, Ls, Rs, r = build_solver(nroots, final_pm, root_bound,
+def solve_cegar(name, ngates, nroots, final_pm, root_bound, timeout_ms):
+    log(f"{name}: building (gates={ngates}, roots={nroots}, "
+        f"final_pm={final_pm}, bound={root_bound})")
+    s, ops, Ls, Rs, r = build_solver(ngates, nroots, final_pm, root_bound,
                                      timeout_ms)
     blocked = 0
     while True:
@@ -116,7 +115,7 @@ def solve_cegar(name, nroots, final_pm, root_bound, timeout_ms):
                               "elapsed_s": round(time.time() - T0, 1)})
             return "unknown", None
         m = s.model()
-        f, prog = replay(m, ops, Ls, Rs)
+        f, prog = replay(ngates, m, ops, Ls, Rs)
         roots = sorted(integer_roots(f)) if f else []
         if f and len(roots) >= nroots:
             witness = {"program": prog, "poly": list(f), "roots": roots,
@@ -132,7 +131,7 @@ def solve_cegar(name, nroots, final_pm, root_bound, timeout_ms):
         s.add(z3.Or([z3.Or(ops[j] != m[ops[j]].as_long(),
                            Ls[j] != m[Ls[j]].as_long(),
                            Rs[j] != m[Rs[j]].as_long())
-                     for j in range(NGATES)]))
+                     for j in range(ngates)]))
 
 
 def main():
@@ -141,15 +140,16 @@ def main():
     args = ap.parse_args()
 
     if args.phase in ("all", "known"):
-        res, wit = solve_cegar("known_answer_6roots", 6, False, 32,
-                               30 * 60 * 1000)
+        res, wit = solve_cegar("known_answer_5roots_6gates", 6, 5, False,
+                               8, 30 * 60 * 1000)
         if res != "sat":
             log("KNOWN-ANSWER FAIL: encoding not trusted")
             return 1
     if args.phase in ("all", "bounded"):
-        solve_cegar("bounded_7roots_pm", 7, True, 32, 120 * 60 * 1000)
+        solve_cegar("bounded_7roots_pm", 8, 7, True, 32, 120 * 60 * 1000)
     if args.phase in ("all", "unbounded"):
-        solve_cegar("unbounded_7roots_pm", 7, True, None, 180 * 60 * 1000)
+        solve_cegar("unbounded_7roots_pm", 8, 7, True, None,
+                    180 * 60 * 1000)
     log("done")
     return 0
 
