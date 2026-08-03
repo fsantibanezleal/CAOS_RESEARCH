@@ -1,0 +1,158 @@
+"""EXP-008: SMT decision of the final-pm residual at depth 8 (z_max(8)).
+
+Evaluation encoding over Z (no coefficients), CEGAR against the zero
+polynomial, every SAT witness replayed exactly through tclib.
+Usage: python run.py [--phase known|bounded|unbounded] (default: all)
+"""
+
+import argparse
+import json
+import sys
+import time
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE.parent.parent / "code"))
+
+import z3  # noqa: E402
+
+from tclib.enum import integer_roots, padd, pmul, psub  # noqa: E402
+
+T0 = time.time()
+ART = HERE / "artifacts"
+NGATES = 8
+INPUT_POLYS = [(-1,), (1,), (0, 1)]
+
+
+def log(msg):
+    print(f"[{time.time() - T0:8.1f}s] {msg}", flush=True)
+
+
+def checkpoint(name, payload):
+    ART.mkdir(exist_ok=True)
+    p = ART / "sat8.json"
+    data = json.loads(p.read_text("utf-8")) if p.exists() else {}
+    data[name] = payload
+    tmp = ART / "sat8.json.tmp"
+    tmp.write_text(json.dumps(data, indent=1, sort_keys=True), "utf-8")
+    tmp.replace(p)
+
+
+def build_solver(nroots, final_pm, root_bound, timeout_ms):
+    s = z3.Solver()
+    s.set("timeout", timeout_ms)
+    ops = [z3.Int(f"op{j}") for j in range(NGATES)]
+    Ls = [z3.Int(f"L{j}") for j in range(NGATES)]
+    Rs = [z3.Int(f"R{j}") for j in range(NGATES)]
+    for j in range(NGATES):
+        s.add(ops[j] >= 0, ops[j] <= 2)
+        s.add(Ls[j] >= 0, Ls[j] <= j + 2)
+        s.add(Rs[j] >= 0, Rs[j] <= j + 2)
+        # commutative symmetry-break
+        s.add(z3.Implies(ops[j] != 1, Ls[j] <= Rs[j]))  # op 1 = '-'
+    if final_pm:
+        s.add(ops[NGATES - 1] != 2)                       # +- only
+        s.add(z3.Or(Ls[NGATES - 1] == NGATES + 1,
+                    Rs[NGATES - 1] == NGATES + 1))        # involves gate 7
+    r = [z3.Int(f"r{i}") for i in range(nroots)]
+    for i in range(nroots - 1):
+        s.add(r[i] < r[i + 1])
+    if root_bound:
+        for i in range(nroots):
+            s.add(r[i] >= -root_bound, r[i] <= root_bound)
+    for i in range(nroots):
+        E = [z3.IntVal(-1), z3.IntVal(1), r[i]]
+        for j in range(NGATES):
+            e = z3.Int(f"E{i}_{j}")
+            for a in range(j + 3):
+                for b in range(j + 3):
+                    s.add(z3.Implies(
+                        z3.And(Ls[j] == a, Rs[j] == b, ops[j] == 0),
+                        e == E[a] + E[b]))
+                    s.add(z3.Implies(
+                        z3.And(Ls[j] == a, Rs[j] == b, ops[j] == 1),
+                        e == E[a] - E[b]))
+                    s.add(z3.Implies(
+                        z3.And(Ls[j] == a, Rs[j] == b, ops[j] == 2),
+                        e == E[a] * E[b]))
+            E.append(e)
+        s.add(E[-1] == 0)
+    return s, ops, Ls, Rs, r
+
+
+def replay(model, ops, Ls, Rs):
+    vals = list(INPUT_POLYS)
+    prog = []
+    for j in range(NGATES):
+        o = model[ops[j]].as_long()
+        a = model[Ls[j]].as_long()
+        b = model[Rs[j]].as_long()
+        fa, fb = vals[a], vals[b]
+        v = (padd if o == 0 else psub if o == 1 else pmul)(fa, fb)
+        vals.append(v)
+        prog.append((list(fa), "+-*"[o], list(fb), list(v)))
+    f = vals[-1]
+    return f, prog
+
+
+def solve_cegar(name, nroots, final_pm, root_bound, timeout_ms):
+    log(f"{name}: building (roots={nroots}, final_pm={final_pm}, "
+        f"bound={root_bound})")
+    s, ops, Ls, Rs, r = build_solver(nroots, final_pm, root_bound,
+                                     timeout_ms)
+    blocked = 0
+    while True:
+        res = s.check()
+        if res == z3.unsat:
+            log(f"{name}: UNSAT (blocked {blocked} spurious)")
+            checkpoint(name, {"result": "unsat", "blocked": blocked,
+                              "elapsed_s": round(time.time() - T0, 1)})
+            return "unsat", None
+        if res == z3.unknown:
+            log(f"{name}: UNKNOWN ({s.reason_unknown()})")
+            checkpoint(name, {"result": "unknown",
+                              "reason": str(s.reason_unknown()),
+                              "blocked": blocked,
+                              "elapsed_s": round(time.time() - T0, 1)})
+            return "unknown", None
+        m = s.model()
+        f, prog = replay(m, ops, Ls, Rs)
+        roots = sorted(integer_roots(f)) if f else []
+        if f and len(roots) >= nroots:
+            witness = {"program": prog, "poly": list(f), "roots": roots,
+                       "model_roots": [m[x].as_long() for x in r]}
+            log(f"{name}: SAT, VALID witness, roots {roots}")
+            checkpoint(name, {"result": "sat", "witness": witness,
+                              "blocked": blocked,
+                              "elapsed_s": round(time.time() - T0, 1)})
+            return "sat", witness
+        blocked += 1
+        log(f"{name}: spurious model (f zero or short); blocking "
+            f"({blocked})")
+        s.add(z3.Or([z3.Or(ops[j] != m[ops[j]].as_long(),
+                           Ls[j] != m[Ls[j]].as_long(),
+                           Rs[j] != m[Rs[j]].as_long())
+                     for j in range(NGATES)]))
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--phase", default="all")
+    args = ap.parse_args()
+
+    if args.phase in ("all", "known"):
+        res, wit = solve_cegar("known_answer_6roots", 6, False, 32,
+                               30 * 60 * 1000)
+        if res != "sat":
+            log("KNOWN-ANSWER FAIL: encoding not trusted")
+            return 1
+    if args.phase in ("all", "bounded"):
+        solve_cegar("bounded_7roots_pm", 7, True, 32, 120 * 60 * 1000)
+    if args.phase in ("all", "unbounded"):
+        solve_cegar("unbounded_7roots_pm", 7, True, None, 180 * 60 * 1000)
+    log("done")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
