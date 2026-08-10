@@ -223,3 +223,15 @@
 - The initial smoke check caught and isolated a one-shift finite-window truncation before campaign
   artifacts existed. The corrected deterministic artifacts reproduce byte-for-byte.
 - EXP-011 is CONFIRMED and triggers manuscript v0.04 plus a Zenodo new-version claim audit.
+
+## 2026-08-10 - uniform endomorphism preprint v0.04 published
+
+- Expanded the manuscript to 12 pages with the exact endomorphism-semigroup formula, numerical
+  invariants, nonsymmetry proof, and audited Dey-Lyle implications for every family member.
+- The claim audit passed, the two-pass build has no warnings or box defects, and all rendered
+  pages passed visual inspection. Felipe Santibanez-Leal remains the sole author.
+- Published Zenodo version DOI `10.5281/zenodo.21876338`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21876338`.
+- A fresh public download is 491,757 bytes with MD5 `248297d0a833ba21dce27d738a50e92f`
+  and SHA-256 `025cea4c59c4301ff6925cfe43353c7ac1c6cd8b4fc56a8c6d648347f418e825`, exactly matching the
+  committed PDF. Public title, version, sole author/ORCID, CC-BY-4.0 licence, and filename match.

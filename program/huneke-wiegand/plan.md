@@ -80,6 +80,7 @@ unless this structural route leaves a specific Kunz-face question that cannot be
 
 EXP-011 is CONFIRMED. It proves the predicted overring formula, numerical invariants,
 nonsymmetry, and uniform Dey-Lyle escape mechanism for every `p>=4`. This closes the
-endomorphism/reflexivity row of the surviving-variants matrix. The next gate is manuscript v0.04
-and immutable publication, followed by a separately declared classification question rather than
-an automatic return to EXP-010.
+endomorphism/reflexivity row of the surviving-variants matrix. Manuscript v0.04 passed the
+claim/build/render gates and is immutably published at DOI `10.5281/zenodo.21876338`. Any next
+classification question must be declared separately rather than automatically returning to
+EXP-010.

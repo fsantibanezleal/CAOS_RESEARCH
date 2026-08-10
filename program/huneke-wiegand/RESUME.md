@@ -1,8 +1,8 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-10. Lifecycle: published. EXP-009 proves an infinite family, manuscript v0.03
-is published, PR #145 promoted the research round to `develop`, and release v0.63.000 promoted
-the tested state through PRs #146 and #147 to tag `v0.63.000` on `main`.
+Updated: 2026-08-10. Lifecycle: published. EXP-011 proves the uniform endomorphism-overring
+theorem for the EXP-009 family, and manuscript v0.04 is published at DOI
+`10.5281/zenodo.21876338`. Release v0.63.000 remains the current repository release baseline.
 
 ## 1. State in one screen
 
@@ -118,8 +118,11 @@ campaign and audit aggregates are
 `e21926a689178a6c70b3b6e8319053edd0fd13f164ced9565d3b976e6159c0b0` and
 `2ed711045ad83a3b47fb3e71d4c75ae9bfa9be1a5dd9a8c4072d5f170510343b`.
 
-The in-flight gate is manuscript v0.04: claim audit, clean two-pass build, rendered inspection,
-then Zenodo new-version publication if all checks pass.
+Manuscript v0.04 passed its claim audit, clean two-pass build, and complete 12-page rendered
+inspection before publication.
+
+No experiment is currently in flight. The next research round requires a separately declared,
+falsifiable classification or surviving-variant target.
 
 Published baseline:
 
@@ -129,17 +132,20 @@ Published baseline:
 - v0.03 DOI `10.5281/zenodo.21873911`: explicit infinite family. The public 399,272-byte PDF has
   MD5 `bd9767de4a530150073f654c76ba84a0` and SHA-256
   `f2edff24e924a8d38bc7becd380a69f30fa6b2466c3f584802b829f14d1393cf`.
+- v0.04 DOI `10.5281/zenodo.21876338`: uniform endomorphism-overring theorem. The public
+  491,757-byte PDF has MD5 `248297d0a833ba21dce27d738a50e92f` and SHA-256
+  `025cea4c59c4301ff6925cfe43353c7ac1c6cd8b4fc56a8c6d648347f418e825`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `21873911`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `21876338`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Expand the existing manuscript to v0.04 from the EXP-011 verdict and proof, preserving all
-   priority and scope boundaries.
-2. Build twice, run a narrative claim audit, and inspect every rendered page.
-3. Publish a Zenodo new version only after the revised PDF and metadata pass exact verification.
-4. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
+1. Define a specific classification target beyond the explicit family before declaring another
+   experiment; do not treat the broad module/domain classification as solved.
+2. Test positive-theorem hypotheses against the exact family invariants and prioritize a sharp
+   boundary statement over another unconstrained SAT sweep.
+3. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
    that architecture.
 
 ### Lenses ledger

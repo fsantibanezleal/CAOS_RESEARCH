@@ -1,6 +1,6 @@
 # Claim audit - manuscript v0.04
 
-Audited: 2026-08-10. Pre-publication result: PASS.
+Audited: 2026-08-10. Final result: PASS.
 
 This audit treats symbolic proofs and exact experiment artifacts as the evidence sources. Finite
 campaigns validate implementations and boundary behavior; they are not used as proofs of the
@@ -24,7 +24,7 @@ infinite statements.
 | independent EXP-011 reconstruction and negative controls | `audit.py` and `audit.json` | PASS; aggregate `2ed711045ad83a3b47fb3e71d4c75ae9bfa9be1a5dd9a8c4072d5f170510343b` |
 | current primary-source check | archived Dey-Lyle arXiv v2 PDF | PASS; SHA-256 `2f1521f79510ef50fb81d5f029935d5a2c9b7e4c030bc698b7e4f5caacf56fad`; cited results reread directly |
 | authorship | title page and `zenodo.json` | PASS; Felipe Santibanez-Leal is the sole author; no automated system is named |
-| publication identity | reserved Zenodo v0.04 record | PENDING; DOI `10.5281/zenodo.21876338` is reserved but not yet public |
+| publication identity | public Zenodo v0.04 record and fresh download | PASS; concept `10.5281/zenodo.21763582`, version `10.5281/zenodo.21876338`; public SHA-256 matches Git |
 
 ## Narrative boundaries
 
@@ -45,5 +45,5 @@ infinite statements.
   headers, page numbers, equations, tables, references, and scope language: PASS;
 - frozen PDF: 491757 bytes, MD5 `248297d0a833ba21dce27d738a50e92f`, SHA-256
   `025cea4c59c4301ff6925cfe43353c7ac1c6cd8b4fc56a8c6d648347f418e825`;
-- public record status, concept latest, metadata, and independent downloaded-file comparison:
-  PENDING publication.
+- public record status, concept latest, sole author/ORCID, licence, filename, bytes, MD5, SHA-256,
+  and independent downloaded-file comparison: PASS.

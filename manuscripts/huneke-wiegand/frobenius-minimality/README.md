@@ -30,7 +30,7 @@ Zenodo identifiers:
 - version 0.01 DOI: `10.5281/zenodo.21763583` (frozen)
 - version 0.02 DOI: `10.5281/zenodo.21764868`
 - version 0.03 DOI: `10.5281/zenodo.21873911`
-- version 0.04 DOI: `10.5281/zenodo.21876338` (reserved; publication verification pending)
+- version 0.04 DOI: `10.5281/zenodo.21876338`
 - licence: CC BY 4.0
 
 Evidence sources are EXP-001 through EXP-011 under
@@ -56,12 +56,13 @@ Version 0.03 public-file verification:
 - the concept latest resolves to record `21873911`; public title, version, sole author/ORCID,
   CC-BY-4.0 licence, filename, bytes, MD5, and SHA-256 match the committed record
 
-Version 0.04 frozen pre-publication artifact:
+Version 0.04 public-file verification:
 
 - bytes: `491757`
 - MD5: `248297d0a833ba21dce27d738a50e92f`
 - SHA-256: `025cea4c59c4301ff6925cfe43353c7ac1c6cd8b4fc56a8c6d648347f418e825`
 - all 12 pages passed rendered inspection; the two-pass build has no LaTeX warnings, undefined
   references, overfull boxes, or underfull boxes
-- public-record and downloaded-file verification remain pending until reserved record `21876338`
-  is published
+- the concept latest resolves to record `21876338`; public title, version, sole author/ORCID,
+  CC-BY-4.0 licence, filename, bytes, MD5, and SHA-256 match the committed record
+- a fresh public download matches the committed PDF exactly
