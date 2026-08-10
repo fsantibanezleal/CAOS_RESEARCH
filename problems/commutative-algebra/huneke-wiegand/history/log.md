@@ -160,3 +160,19 @@
   parametric extension, within numerical semigroup rings and two-generated monomial ideals.
 - Closed EXP-010 as SUPERSEDED WITHOUT RUN because its declared gate required EXP-009 not to close
   the family question. Triggered manuscript v0.03 and Zenodo new-version consolidation.
+
+## 2026-08-10 - infinite-family preprint v0.03 published
+
+- Expanded the manuscript to 11 pages with the Route K/EXP-008 extraction path, exact parametric
+  blocks, seven residue identities, and the deductive infinite-family theorem. Felipe
+  Santibanez-Leal remains the sole author; Son Pham's discovery priority is explicit.
+- Tightened the high-layer rigidity coverage and local-ring nonprincipality argument during the
+  claim audit. Built twice with no LaTeX warnings, undefined references, overfull boxes, or
+  underfull boxes, and inspected all 11 rendered pages.
+- Published Zenodo version DOI `10.5281/zenodo.21873911`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21873911`. Versions v0.01 and v0.02 remain
+  frozen.
+- A fresh public download is 399,272 bytes with MD5 `bd9767de4a530150073f654c76ba84a0`
+  and SHA-256 `f2edff24e924a8d38bc7becd380a69f30fa6b2466c3f584802b829f14d1393cf`, exactly matching the
+  committed PDF. Public title, version, sole author/ORCID, CC-BY-4.0 licence, and filename also
+  match.

@@ -16,6 +16,7 @@
 | 2026-08-10 | consolidating | exploring | EXP-006 Route K certified two UNSAT and eleven non-seed SAT parameters, opening the family-extraction gate |
 | 2026-08-10 | exploring | analyzing | EXP-008 refuted the first fixed-width interval ray and proved its layer-9 obstruction for every `q>=9` |
 | 2026-08-10 | analyzing | consolidating | EXP-009 proved an explicit infinite family for every integer `p>=4`; independent formula and semantic audit passes |
+| 2026-08-10 | consolidating | consolidating | 11-page preprint v0.03 published on Zenodo with the infinite-family theorem and exact public-file verification |
 
 Current state: **consolidating**.
 
@@ -37,5 +38,8 @@ apart from certified UNSAT values 16 and 18. EXP-008 converted the first guessed
 a uniform obstruction. EXP-009 reads that obstruction backwards and proves an explicit infinite
 family at `s=6p` for every `p>=4`, with multiplicity `24p`, Frobenius `78p-1`, conductor `78p`,
 and embedding dimension `11p`. This closes the family-existence question inside the stated
-two-generated monomial-ideal class. Manuscript v0.03 and its Zenodo version are the active
-consolidation gate; broader classification and surviving-variant questions remain open.
+two-generated monomial-ideal class. Manuscript v0.03 is published at DOI
+`10.5281/zenodo.21873911`; its 399,272-byte public PDF matches SHA-256
+`f2edff24e924a8d38bc7becd380a69f30fa6b2466c3f584802b829f14d1393cf` exactly. Promotion of the
+complete round is the remaining consolidation gate; broader classification and surviving-variant
+questions remain open.

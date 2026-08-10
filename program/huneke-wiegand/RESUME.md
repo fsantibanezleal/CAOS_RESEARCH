@@ -1,7 +1,7 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-10. Lifecycle: consolidating. EXP-009 proves an infinite family; manuscript
-v0.03 and a Zenodo new version are the active gates.
+Updated: 2026-08-10. Lifecycle: consolidating. EXP-009 proves an infinite family and manuscript
+v0.03 is published; repository promotion is the active gate.
 
 ## 1. State in one screen
 
@@ -92,16 +92,18 @@ campaign is supporting evidence, not the proof.
 - v0.01 DOI `10.5281/zenodo.21763583`: Frobenius minimality.
 - v0.02 DOI `10.5281/zenodo.21764868`: minimum-layer uniqueness. Public PDF SHA-256
   `93a07d124c7b3f2cf144a5343d31ca40e312a80d99308b3ef567c7065f126bb9`.
+- v0.03 DOI `10.5281/zenodo.21873911`: explicit infinite family. The public 399,272-byte PDF has
+  MD5 `bd9767de4a530150073f654c76ba84a0` and SHA-256
+  `f2edff24e924a8d38bc7becd380a69f30fa6b2466c3f584802b829f14d1393cf`.
 - concept DOI `10.5281/zenodo.21763582`.
-- v0.03 is required for the infinite-family theorem and is not published until its two-pass build,
-  complete rendered-page review, claim audit, deposit publication, and public-file hash check pass.
+- The concept latest resolves to record `21873911`; title, version, sole author/ORCID, licence,
+  filename, bytes and both hashes were checked from a fresh public download.
 
 ## 6. Strongest next actions
 
-1. Complete, build, render, and claim-audit manuscript v0.03.
-2. Publish the Zenodo new version and verify the downloaded file byte-for-byte.
-3. Promote the full research round through PR to `develop`, then reconcile the management mirror.
-4. Only afterward resume the surviving-variants matrix and optional classification of the
+1. Promote the full research round through PR to `develop`, then reconcile the management mirror.
+2. Promote the serialized release from `develop` to `main` if the release gate remains clear.
+3. Only afterward resume the surviving-variants matrix and optional classification of the
    EXP-009 family/nearby Kunz faces. Do not execute EXP-010 as if it were still gated.
 
 ## 7. Scope and gotchas

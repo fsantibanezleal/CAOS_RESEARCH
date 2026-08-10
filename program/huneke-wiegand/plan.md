@@ -57,12 +57,13 @@ eleven non-seed models at every even `s=20,...,40`. EXP-008 refuted the first fi
 ray and proved that its layer-9 coverage hole persists for every `q>=9`. EXP-009 repaired exactly
 that endpoint mismatch and proves an infinite family for `s=6p`, every integer `p>=4`.
 
-The strongest path is now consolidation, not additional SAT scouting:
+The family theorem is published in manuscript v0.03 at DOI `10.5281/zenodo.21873911`, with the
+finite computations clearly separated from the symbolic proof and the public PDF verified
+byte-for-byte. The strongest remaining path is repository consolidation, not additional SAT
+scouting:
 
-1. publish the family theorem as manuscript v0.03 with the finite computations clearly separated
-   from the symbolic proof;
-2. promote the complete experiment and publication record through the repository PR path;
-3. resume HW-P5 with surviving variants and classification of the new family only after the
+1. promote the complete experiment and publication record through the repository PR path;
+2. resume HW-P5 with surviving variants and classification of the new family only after the
    publication state is immutable and verified.
 
 EXP-010 is superseded without a run because its explicit execution gate required EXP-009 to fail.
