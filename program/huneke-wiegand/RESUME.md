@@ -24,7 +24,18 @@ R = Q[t^Gamma] localized at the positive-degree maximal ideal,
 I = (t^56,t^70)R.
 ```
 
-## 2. Infinite family theorem
+## 2. The objects table
+
+| object | definition | evidence owner |
+|---|---|---|
+| public `Gamma` | Pham's symmetric numerical semigroup with Frobenius 181 | EXP-001 target |
+| public `I` | `(t^56,t^70)`, normalized shift 14 | EXP-001 and source dossier |
+| `E_s,D_s` | exponent sets whose equality `D_s=E_s+E_s` is the rigidity criterion | EXP-001/003 |
+| `Gamma_p` | growing-interval semigroup for every integer `p>=4` | EXP-009 theorem |
+| `I_p` | `(t^(24p),t^(30p))` over the localized ring of `Gamma_p` | EXP-009 theorem |
+| minimum layer | all normalized rigid pairs at the least Frobenius value 181 | EXP-005/007 |
+
+## 2a. Infinite family theorem
 
 For every integer `p>=4`, put `s=6p` and define residue sets in `[0,s-1]`
 
@@ -71,7 +82,7 @@ campaign is supporting evidence, not the proof.
 | EXP-009 | CONFIRMED | explicit infinite family for every integer `p>=4`; independent formula/semantic audit passes |
 | EXP-010 | SUPERSEDED | no run; declared conditional gate became false when EXP-009 succeeded |
 
-## 4. Exact evidence anchors
+## 3a. Exact evidence anchors
 
 - EXP-005 search aggregate:
   `0f580de2707a00fdd52e1b3c04e7767b97ce7b0a826593b119e9a49ae04da743`.
@@ -87,7 +98,7 @@ campaign is supporting evidence, not the proof.
 - EXP-009 independent audit samples `p=4,5,17,73,151,300`, plus all 297 positive-row hashes;
   audit aggregate `eb2aaf17650ed99f4e220a43c53bdd8835c82688a37567bb154c30a1ae520ce9`.
 
-## 5. Publication state
+## 4. In flight
 
 - v0.01 DOI `10.5281/zenodo.21763583`: Frobenius minimality.
 - v0.02 DOI `10.5281/zenodo.21764868`: minimum-layer uniqueness. Public PDF SHA-256
@@ -99,14 +110,14 @@ campaign is supporting evidence, not the proof.
 - The concept latest resolves to record `21873911`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
-## 6. Strongest next actions
+## 5. Next actions
 
 1. Promote the full research round through PR to `develop`, then reconcile the management mirror.
 2. Promote the serialized release from `develop` to `main` if the release gate remains clear.
 3. Only afterward resume the surviving-variants matrix and optional classification of the
    EXP-009 family/nearby Kunz faces. Do not execute EXP-010 as if it were still gated.
 
-## 7. Scope and gotchas
+## 7. Gotchas
 
 - The broad Huneke-Wiegand conjecture is already false by the public seed. CAOS's new theorem is
   an infinite family in numerical semigroup rings with two-generated monomial ideals; it is not a
@@ -121,7 +132,7 @@ campaign is supporting evidence, not the proof.
   exhaust all surviving variants.
 - Published Zenodo versions are immutable; corrections or extensions require a new version.
 
-## 8. Paths
+## 6. Where everything lives
 
 | what | path |
 |---|---|
