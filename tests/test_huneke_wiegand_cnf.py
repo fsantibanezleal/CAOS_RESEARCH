@@ -5,11 +5,7 @@ from pathlib import Path
 
 
 CODE_ROOT = (
-    Path(__file__).resolve().parents[1]
-    / "problems"
-    / "commutative-algebra"
-    / "huneke-wiegand"
-    / "code"
+    Path(__file__).resolve().parents[1] / "problems" / "commutative-algebra" / "huneke-wiegand" / "code"
 )
 sys.path.insert(0, str(CODE_ROOT))
 
@@ -23,9 +19,7 @@ from hwcert import (  # noqa: E402
 from hwcert.cnf import CNF  # noqa: E402
 
 
-def satisfiable_with_units(
-    clauses: tuple[tuple[int, ...], ...], units: tuple[int, ...]
-) -> bool:
+def satisfiable_with_units(clauses: tuple[tuple[int, ...], ...], units: tuple[int, ...]) -> bool:
     pending = clauses + tuple((literal,) for literal in units)
 
     def search(current: tuple[tuple[int, ...], ...]) -> bool:
@@ -84,9 +78,7 @@ def test_exact_cardinality_accepts_exactly_the_requested_assignments() -> None:
                     variable if assignment & (1 << index) else -variable
                     for index, variable in enumerate(variables)
                 )
-                assert satisfiable_with_units(clauses, units) is (
-                    assignment.bit_count() == count
-                )
+                assert satisfiable_with_units(clauses, units) is (assignment.bit_count() == count)
 
 
 def test_exact_cardinality_rejects_invalid_requests() -> None:
@@ -144,8 +136,7 @@ def test_projected_blocker_excludes_exactly_one_assignment() -> None:
 
     def satisfied(true_variables: set[int]) -> bool:
         return any(
-            literal > 0 and literal in true_variables
-            or literal < 0 and -literal not in true_variables
+            literal > 0 and literal in true_variables or literal < 0 and -literal not in true_variables
             for literal in blocker
         )
 

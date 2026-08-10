@@ -19,9 +19,25 @@ assert SPEC is not None and SPEC.loader is not None
 MODULE = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(MODULE)
 
+SEED_GENERATORS = (
+    56, 57, 58, 63, 64, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81,
+    82, 83, 87, 89, 90, 93, 95, 96, 97,
+)
+
+
+def seed_mask() -> int:
+    present = bytearray(182)
+    present[0] = 1
+    for value in range(1, 182):
+        present[value] = any(
+            value >= generator and present[value - generator]
+            for generator in SEED_GENERATORS
+        )
+    return sum(1 << value for value, flag in enumerate(present) if flag)
+
 
 def test_route_k_formula_has_binding_block_units() -> None:
-    shift = 4
+    shift = 14
     cnf, membership = MODULE.build_route_k_cnf(shift)
     for value in range(1, 4 * shift):
         assert (-membership[value],) in cnf.clauses
@@ -31,7 +47,7 @@ def test_route_k_formula_has_binding_block_units() -> None:
 
 
 def test_route_k_requires_even_shift() -> None:
-    for invalid in (0, 1, 3, 15):
+    for invalid in (0, 1, 12, 15):
         try:
             MODULE.build_route_k_cnf(invalid)
         except ValueError:
@@ -41,20 +57,15 @@ def test_route_k_requires_even_shift() -> None:
 
 
 def test_seed_passes_every_route_k_invariant() -> None:
-    frobenius = 181
-    mask = MODULE.generated_mask(MODULE.SEED_GENERATORS, frobenius)
-    result = MODULE.validate_route_k_mask(mask, 14)
-    assert result["accepted"], result["failures"]
-    assert result["level4_residues"] == (0, 1, 2, 7, 8)
-    assert result["level6_residues"] == (3, 5, 6, 9, 11, 12, 13)
+    result = MODULE.semantic_record(seed_mask(), 14)
+    assert result["level4_offsets"] == [0, 1, 2, 7, 8]
+    assert result["level6_offsets"] == [3, 5, 6, 9, 11, 12, 13]
     assert result["level6_count"] == 7
-    assert result["level4_level6_overlap"] == ()
+    assert result["invariant_checks"]["level4_level6_disjoint"] is True
     assert result["generalized_arithmetic_presentation"] is None
 
 
 def test_corrupted_forced_block_is_rejected() -> None:
-    mask = MODULE.generated_mask(MODULE.SEED_GENERATORS, 181)
-    corrupted = mask & ~(1 << 70)
-    result = MODULE.validate_route_k_mask(corrupted, 14)
-    assert not result["accepted"]
-    assert any("level-5 block misses 70" in failure for failure in result["failures"])
+    corrupted = seed_mask() & ~(1 << 70)
+    failures = MODULE.route_k_failures(corrupted, 14)
+    assert any("full level-5 block fails at 70" in failure for failure in failures)

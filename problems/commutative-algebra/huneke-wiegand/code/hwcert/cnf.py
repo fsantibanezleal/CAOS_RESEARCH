@@ -52,9 +52,7 @@ class CNF:
             self.add(-value, output)
         self.add(-output, *active)
 
-    def guarded_equivalent_and(
-        self, guard: int, output: int, inputs: list[Literal]
-    ) -> None:
+    def guarded_equivalent_and(self, guard: int, output: int, inputs: list[Literal]) -> None:
         """Add ``guard -> (output iff AND(inputs))`` without branch variables."""
         if any(value is False for value in inputs):
             self.add(-guard, -output)
@@ -76,9 +74,7 @@ class CNF:
         temporary.replace(path)
 
 
-def add_exact_cardinality(
-    cnf: CNF, literals: tuple[int, ...], count: int, prefix: str
-) -> None:
+def add_exact_cardinality(cnf: CNF, literals: tuple[int, ...], count: int, prefix: str) -> None:
     """Require exactly ``count`` literals using an exact sequential threshold circuit."""
     if not literals:
         if count != 0:
@@ -234,19 +230,13 @@ def mask_from_model(h_variables: tuple[int, ...], true_variables: set[int]) -> i
 
 def shift_from_model(q_variables: tuple[int, ...], true_variables: set[int]) -> int:
     """Decode the unique one-hot shift, rejecting absent or multiple selectors."""
-    selected = [
-        shift
-        for shift, variable in enumerate(q_variables, start=1)
-        if variable in true_variables
-    ]
+    selected = [shift for shift, variable in enumerate(q_variables, start=1) if variable in true_variables]
     if len(selected) != 1:
         raise ValueError(f"expected one selected shift, found {selected}")
     return selected[0]
 
 
-def projected_blocking_clause(
-    variables: tuple[int, ...], true_variables: set[int]
-) -> tuple[int, ...]:
+def projected_blocking_clause(variables: tuple[int, ...], true_variables: set[int]) -> tuple[int, ...]:
     """Return the unique clause falsified by this complete projected assignment."""
     if not variables:
         raise ValueError("a projected assignment must contain at least one variable")

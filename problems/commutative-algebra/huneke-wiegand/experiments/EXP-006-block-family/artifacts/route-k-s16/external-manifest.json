@@ -1,0 +1,38 @@
+{
+  "root_label": "EXP-006-block-family/route-k-v1",
+  "file_count": 6,
+  "total_bytes": 5585344,
+  "aggregate_sha256": "b9d56241713ca2ac13da649e0ad98bb09f9651567e1e383db4b018439a38bbc4",
+  "files": [
+    {
+      "path": "s014/s014-calibration.cadical.log",
+      "bytes": 244211,
+      "sha256": "ef80019f616db1e5929cd238cd978da0e902f5d2e5b55df25250dd42f64cdf2c"
+    },
+    {
+      "path": "s014/s014-calibration.cnf",
+      "bytes": 1873809,
+      "sha256": "7c50d1704373ac9f92bfe91722c049b2494e6391df59e6891915ed8fa5373607"
+    },
+    {
+      "path": "s016/s016-existence.cadical.log",
+      "bytes": 13983,
+      "sha256": "da0cf6bba53202ccc2c922ac489963e3509c1d26eaf1cdc234bfbd6c10ffa8e3"
+    },
+    {
+      "path": "s016/s016-existence.cnf",
+      "bytes": 2457108,
+      "sha256": "a574fce4acd281c5bf17accdd10fd3c3ca14d3cfc1590a457847de6af4e11c45"
+    },
+    {
+      "path": "s016/s016-existence.drat",
+      "bytes": 995216,
+      "sha256": "d90610cb7acf8882893fcb6bea1855b080573fff9cac443ed08564222150266e"
+    },
+    {
+      "path": "s016/s016-existence.drat-trim.log",
+      "bytes": 1017,
+      "sha256": "b279225f4a6dd088e568c934968fb6950393e3b7fb2226112835585151045789"
+    }
+  ]
+}
