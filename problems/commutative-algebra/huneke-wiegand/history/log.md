@@ -235,3 +235,6 @@
 - A fresh public download is 491,757 bytes with MD5 `248297d0a833ba21dce27d738a50e92f`
   and SHA-256 `025cea4c59c4301ff6925cfe43353c7ac1c6cd8b4fc56a8c6d648347f418e825`, exactly matching the
   committed PDF. Public title, version, sole author/ORCID, CC-BY-4.0 licence, and filename match.
+- PR `#150` passed `guards` and `test` and merged the complete EXP-011 and v0.04 publication round
+  into `develop` at `273ce4d2ca73f75762824168b41e8e3494612c05`. The serialized repository
+  release path was not claimed by this problem round.

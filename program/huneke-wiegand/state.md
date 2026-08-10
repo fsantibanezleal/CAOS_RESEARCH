@@ -22,6 +22,7 @@
 | 2026-08-10 | published | published | EXP-011 declared a post-publication classification round for the uniform endomorphism overring of the EXP-009 family |
 | 2026-08-10 | published | published | EXP-011 confirmed the exact endomorphism family, nonsymmetric invariants, and uniform nonreflexive Ext/Tor escape |
 | 2026-08-10 | published | published | 12-page preprint v0.04 passed claim/build/render QA, was published at DOI `10.5281/zenodo.21876338`, and matched a fresh public download exactly |
+| 2026-08-10 | published | published | PR #150 passed `guards` and `test` and promoted EXP-011 plus the verified v0.04 publication to `develop` at `273ce4d2` |
 
 Current state: **published**.
 
@@ -53,4 +54,6 @@ the complete round to `develop` at `8614bb9c`. Release v0.63.000 then passed bot
 dimension `12p`; the same nonreflexive Ext/Tor escape holds uniformly. Broader classification and
 other surviving-variant questions remain open. Manuscript v0.04 publishes that theorem at DOI
 `10.5281/zenodo.21876338`; the 491,757-byte public PDF matches SHA-256
-`025cea4c59c4301ff6925cfe43353c7ac1c6cd8b4fc56a8c6d648347f418e825` exactly.
+`025cea4c59c4301ff6925cfe43353c7ac1c6cd8b4fc56a8c6d648347f418e825` exactly. PR #150 passed
+both required CI jobs and promoted the complete theorem, experiment, manuscript, and publication
+record to `develop` at merge commit `273ce4d2ca73f75762824168b41e8e3494612c05`.
