@@ -2,7 +2,8 @@
 
 Updated: 2026-08-10. Lifecycle: published. EXP-011 proves the uniform endomorphism-overring
 theorem for the EXP-009 family, and manuscript v0.04 is published at DOI
-`10.5281/zenodo.21876338`. Release v0.63.000 remains the current repository release baseline.
+`10.5281/zenodo.21876338`. PR #150 passed both required CI jobs and promoted the complete round to
+`develop` at `273ce4d2`. Release v0.63.000 remains the current repository release baseline.
 
 ## 1. State in one screen
 
