@@ -77,3 +77,9 @@ SAT classification. The predicted exact formula adds a level-7 block
 `[p+1,2p-2] union {2p,4p}` and the old Frobenius singleton. A successful symbolic proof would
 upgrade the seed-only EXP-002 escape mechanism to the full infinite family. EXP-010 remains frozen
 unless this structural route leaves a specific Kunz-face question that cannot be decided directly.
+
+EXP-011 is CONFIRMED. It proves the predicted overring formula, numerical invariants,
+nonsymmetry, and uniform Dey-Lyle escape mechanism for every `p>=4`. This closes the
+endomorphism/reflexivity row of the surviving-variants matrix. The next gate is manuscript v0.04
+and immutable publication, followed by a separately declared classification question rather than
+an automatic return to EXP-010.

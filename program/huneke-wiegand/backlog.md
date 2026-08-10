@@ -12,4 +12,5 @@
 | HWB-008 | 2 | pending | formal certificate/proof packaging | small trusted checker; assess Lean only after theorem stabilizes |
 | HWB-009 | 0 | done | manuscript and Zenodo | v0.03 published at `10.5281/zenodo.21873911`; v0.02 remains frozen at `10.5281/zenodo.21764868` |
 | HWB-010 | 1 | done | classify rigid pairs at `F=181` | EXP-007: unique normalized pair, support/fixed terminal proofs and fresh audit pass |
-| HWB-011 | 2 | in progress | classify the EXP-009 family and nearby Kunz faces | EXP-011 declares the uniform endomorphism-overring anatomy; EXP-010 stays frozen |
+| HWB-011 | 2 | in progress | classify the EXP-009 family and nearby Kunz faces | EXP-011 closes uniform endomorphism anatomy; broader Kunz-face classification remains open |
+| HWB-012 | 1 | done | uniform endomorphism overring of the EXP-009 family | EXP-011 proves the exact formula, invariants, nonsymmetry, and Ext/Tor escape |

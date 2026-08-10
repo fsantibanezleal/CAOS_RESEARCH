@@ -8,7 +8,10 @@ Date: 2026-08-10. This preflight was completed before EXP-011 implementation or 
   arXiv:1211.2896, supplies the two-generated ideal dictionary already calibrated by EXP-001.
 - Dey and Lyle, *Centers of Endomorphism Rings and Reflexivity*, arXiv:2510.02210v2, supplies the
   endomorphism-center consequences used in EXP-002. The arXiv record still identifies v2 as the
-  current version, updated 2025-10-03.
+  current version, updated 2025-10-03. The current PDF was archived before the verdict at
+  `E:/_Datos/caos-research/huneke-wiegand/sources/dey-lyle-2510.02210v2.pdf`, SHA-256
+  `2f1521f79510ef50fb81d5f029935d5a2c9b7e4c030bc698b7e4f5caacf56fad`. Proposition 4.1(2) and
+  Theorems 4.2, 4.3, and 4.4 were reread directly against the EXP-011 family hypotheses.
 - Landeros et al., *Families of numerical semigroups and a special case of the Huneke-Wiegand
   conjecture*, arXiv:2404.12519v1, remains a positive result for generalized arithmetic-sequence
   semigroups. EXP-009 already proves that its family lies outside that class.

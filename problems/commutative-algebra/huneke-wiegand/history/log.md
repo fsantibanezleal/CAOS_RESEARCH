@@ -205,3 +205,21 @@
   `V_p=Gamma_p union (s+Gamma_p)`.
 - Declared EXP-011 before implementation or execution. The finite campaign will support, not
   replace, a symbolic uniform proof.
+
+## 2026-08-10 - EXP-011 confirms uniform endomorphism anatomy
+
+- The exact two-route campaign checked every `p=4,...,300`; block intersection and generated
+  semigroups agreed on all 297 rows in under five seconds.
+- A separate implementation rehashed the complete campaign, reconstructed six full semantic
+  windows, and rejected missing-level and terminal-singleton corruptions. Campaign aggregate:
+  `e21926a689178a6c70b3b6e8319053edd0fd13f164ced9565d3b976e6159c0b0`; audit aggregate:
+  `2ed711045ad83a3b47fb3e71d4c75ae9bfa9be1a5dd9a8c4072d5f170510343b`.
+- The symbolic proof identifies
+  `Lambda_p=Gamma_p union (7s+Q_p) union {13s-1}` and derives multiplicity `24p`, Frobenius
+  `54p-1`, conductor `54p`, genus `38p-1`, and embedding dimension `12p`.
+- Since the symmetric genus would be `27p`, every endomorphism semigroup is nonsymmetric. Direct
+  rereading of Dey-Lyle Proposition 4.1(2) and Theorems 4.2 through 4.4 gives the uniform
+  nonreflexive Ext/Tor escape.
+- The initial smoke check caught and isolated a one-shift finite-window truncation before campaign
+  artifacts existed. The corrected deterministic artifacts reproduce byte-for-byte.
+- EXP-011 is CONFIRMED and triggers manuscript v0.04 plus a Zenodo new-version claim audit.
