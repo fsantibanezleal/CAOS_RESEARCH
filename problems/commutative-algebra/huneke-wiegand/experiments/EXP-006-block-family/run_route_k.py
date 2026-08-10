@@ -54,14 +54,24 @@ def digest_rows(rows: list[str]) -> str:
 
 
 def wsl_path(path: Path) -> str:
-    completed = subprocess.run(
-        ["wsl.exe", "-e", "wslpath", "-a", str(path.resolve())],
-        capture_output=True,
-        text=True,
-        timeout=30,
-        check=True,
-    )
-    return completed.stdout.strip()
+    command = ["wsl.exe", "-e", "wslpath", "-a", str(path.resolve())]
+    last_error: subprocess.CalledProcessError | None = None
+    for attempt in range(3):
+        try:
+            completed = subprocess.run(
+                command,
+                capture_output=True,
+                text=True,
+                timeout=30,
+                check=True,
+            )
+            return completed.stdout.strip()
+        except subprocess.CalledProcessError as error:
+            last_error = error
+            if attempt < 2:
+                time.sleep(0.25 * (attempt + 1))
+    assert last_error is not None
+    raise last_error
 
 
 def wsl_output(*command: str, timeout: int = 30) -> str:
