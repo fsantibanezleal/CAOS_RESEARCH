@@ -1,8 +1,8 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-10. Lifecycle: published. EXP-009 proves an infinite family, manuscript v0.03
-is published, PR #145 promoted the research round to `develop`, and release v0.63.000 promoted
-the tested state through PRs #146 and #147 to tag `v0.63.000` on `main`.
+Updated: 2026-08-10. Lifecycle: published. EXP-011 proves the uniform endomorphism-overring
+theorem for the EXP-009 family, and manuscript v0.04 is published at DOI
+`10.5281/zenodo.21876338`. Release v0.63.000 remains the current repository release baseline.
 
 ## 1. State in one screen
 
@@ -14,7 +14,9 @@ Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
 3. certified Frobenius minimality `F_min=181` in the symmetric numerical-semigroup,
    two-generated monomial-ideal class (EXP-004/005);
 4. uniqueness of the normalized pair at that minimum (EXP-007); and
-5. an explicit infinite family of counterexamples in the same class (EXP-009).
+5. an explicit infinite family of counterexamples in the same class (EXP-009); and
+6. the exact endomorphism overring and nonreflexive Ext/Tor escape for every family member
+   (EXP-011).
 
 The public seed is
 
@@ -34,6 +36,7 @@ I = (t^56,t^70)R.
 | `E_s,D_s` | exponent sets whose equality `D_s=E_s+E_s` is the rigidity criterion | EXP-001/003 |
 | `Gamma_p` | growing-interval semigroup for every integer `p>=4` | EXP-009 theorem |
 | `I_p` | `(t^(24p),t^(30p))` over the localized ring of `Gamma_p` | EXP-009 theorem |
+| `Lambda_p` | `Gamma_p union (7s+Q_p) union {13s-1}`, the value semigroup of `End_(R_p)(I_p)` | EXP-011 theorem |
 | minimum layer | all normalized rigid pairs at the least Frobenius value 181 | EXP-005/007 |
 
 ## 2a. Infinite family theorem
@@ -82,6 +85,7 @@ campaign is supporting evidence, not the proof.
 | EXP-008 | REFUTED | proposed fixed-width family fails for every `q>=9` at the layer-9 residue-7 obstruction |
 | EXP-009 | CONFIRMED | explicit infinite family for every integer `p>=4`; independent formula/semantic audit passes |
 | EXP-010 | SUPERSEDED | no run; declared conditional gate became false when EXP-009 succeeded |
+| EXP-011 | CONFIRMED | uniform endomorphism-overring formula, nonsymmetric invariants, and family-wide Ext/Tor escape |
 
 ## 3a. Exact evidence anchors
 
@@ -101,22 +105,57 @@ campaign is supporting evidence, not the proof.
 
 ## 4. In flight
 
+EXP-011 is CONFIRMED. With `s=6p`, it proves
+
+```text
+Q_p = [p+1,2p-2] union {2p,4p},
+Lambda_p = Gamma_p union (7s+Q_p) union {13s-1}.
+```
+
+The invariants are multiplicity `24p`, Frobenius `54p-1`, conductor `54p`, genus `38p-1`, and
+embedding dimension `12p`. The symbolic proof uses adjacent value-set blocks; the deterministic
+campaign and audit aggregates are
+`e21926a689178a6c70b3b6e8319053edd0fd13f164ced9565d3b976e6159c0b0` and
+`2ed711045ad83a3b47fb3e71d4c75ae9bfa9be1a5dd9a8c4072d5f170510343b`.
+
+Manuscript v0.04 passed its claim audit, clean two-pass build, and complete 12-page rendered
+inspection before publication.
+
+No experiment is currently in flight. The next research round requires a separately declared,
+falsifiable classification or surviving-variant target.
+
+Published baseline:
+
 - v0.01 DOI `10.5281/zenodo.21763583`: Frobenius minimality.
 - v0.02 DOI `10.5281/zenodo.21764868`: minimum-layer uniqueness. Public PDF SHA-256
   `93a07d124c7b3f2cf144a5343d31ca40e312a80d99308b3ef567c7065f126bb9`.
 - v0.03 DOI `10.5281/zenodo.21873911`: explicit infinite family. The public 399,272-byte PDF has
   MD5 `bd9767de4a530150073f654c76ba84a0` and SHA-256
   `f2edff24e924a8d38bc7becd380a69f30fa6b2466c3f584802b829f14d1393cf`.
+- v0.04 DOI `10.5281/zenodo.21876338`: uniform endomorphism-overring theorem. The public
+  491,757-byte PDF has MD5 `248297d0a833ba21dce27d738a50e92f` and SHA-256
+  `025cea4c59c4301ff6925cfe43353c7ac1c6cd8b4fc56a8c6d648347f418e825`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `21873911`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `21876338`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Resume the surviving-variants matrix and optional classification of the EXP-009 family or
-   nearby Kunz faces as a separately declared research round.
-2. Keep EXP-010 inactive: its old conditional gate was superseded when EXP-009 succeeded.
-3. Treat release `v0.63.000` as the frozen public repository baseline for subsequent work.
+1. Define a specific classification target beyond the explicit family before declaring another
+   experiment; do not treat the broad module/domain classification as solved.
+2. Test positive-theorem hypotheses against the exact family invariants and prioritize a sharp
+   boundary statement over another unconstrained SAT sweep.
+3. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
+   that architecture.
+
+### Lenses ledger
+
+- Exclusion: positive theorem hypotheses are tested against exact family invariants, not guessed.
+- Anatomy: EXP-011 upgrades the seed-only endomorphism calculation to a proved parametric theorem.
+- Invariant: adjacent blocks `V_k intersect V_(k+1)` decide the exact overring without SAT.
+- External dialogue: current primary records and the public candidate repository were rechecked;
+  no parametric endomorphism theorem was identified.
+- Adversarial: generated-semigroup/Apéry reconstruction and corrupted block formulas are required.
 
 ## 7. Gotchas
 

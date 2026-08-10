@@ -192,3 +192,46 @@
   `4768310d283bfdc23d6df65479a2f785bf2361e1`.
 - Annotated tag `v0.63.000` points to the verified `main` merge. The tag and all commits retain
   Felipe Santibanez-Leal's configured human authorship without LLM author or co-author trailers.
+
+## 2026-08-10 - EXP-011 declared
+
+- Reopened HW-P5 after the v0.63.000 baseline, without reopening the closed family-existence claim.
+- Rechecked the primary endomorphism/reflexivity source, the generalized-arithmetic positive
+  source, and the public candidate repository before computation. No existing parametric
+  endomorphism-family result was identified; the negative novelty search is not treated as proof.
+- Derived the invariant-first prediction
+  `Lambda_p=Gamma_p union (7s+Q_p) union {13s-1}`, where
+  `Q_p=[p+1,2p-2] union {2p,4p}`, from adjacent blocks of
+  `V_p=Gamma_p union (s+Gamma_p)`.
+- Declared EXP-011 before implementation or execution. The finite campaign will support, not
+  replace, a symbolic uniform proof.
+
+## 2026-08-10 - EXP-011 confirms uniform endomorphism anatomy
+
+- The exact two-route campaign checked every `p=4,...,300`; block intersection and generated
+  semigroups agreed on all 297 rows in under five seconds.
+- A separate implementation rehashed the complete campaign, reconstructed six full semantic
+  windows, and rejected missing-level and terminal-singleton corruptions. Campaign aggregate:
+  `e21926a689178a6c70b3b6e8319053edd0fd13f164ced9565d3b976e6159c0b0`; audit aggregate:
+  `2ed711045ad83a3b47fb3e71d4c75ae9bfa9be1a5dd9a8c4072d5f170510343b`.
+- The symbolic proof identifies
+  `Lambda_p=Gamma_p union (7s+Q_p) union {13s-1}` and derives multiplicity `24p`, Frobenius
+  `54p-1`, conductor `54p`, genus `38p-1`, and embedding dimension `12p`.
+- Since the symmetric genus would be `27p`, every endomorphism semigroup is nonsymmetric. Direct
+  rereading of Dey-Lyle Proposition 4.1(2) and Theorems 4.2 through 4.4 gives the uniform
+  nonreflexive Ext/Tor escape.
+- The initial smoke check caught and isolated a one-shift finite-window truncation before campaign
+  artifacts existed. The corrected deterministic artifacts reproduce byte-for-byte.
+- EXP-011 is CONFIRMED and triggers manuscript v0.04 plus a Zenodo new-version claim audit.
+
+## 2026-08-10 - uniform endomorphism preprint v0.04 published
+
+- Expanded the manuscript to 12 pages with the exact endomorphism-semigroup formula, numerical
+  invariants, nonsymmetry proof, and audited Dey-Lyle implications for every family member.
+- The claim audit passed, the two-pass build has no warnings or box defects, and all rendered
+  pages passed visual inspection. Felipe Santibanez-Leal remains the sole author.
+- Published Zenodo version DOI `10.5281/zenodo.21876338`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21876338`.
+- A fresh public download is 491,757 bytes with MD5 `248297d0a833ba21dce27d738a50e92f`
+  and SHA-256 `025cea4c59c4301ff6925cfe43353c7ac1c6cd8b4fc56a8c6d648347f418e825`, exactly matching the
+  committed PDF. Public title, version, sole author/ORCID, CC-BY-4.0 licence, and filename match.

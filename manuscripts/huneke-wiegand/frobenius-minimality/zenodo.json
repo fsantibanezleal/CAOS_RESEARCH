@@ -10,7 +10,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Son Pham publicly identified the first counterexample to the Huneke-Wiegand conjecture in the class of two-generated monomial ideals over symmetric numerical semigroup rings, subsequently verified independently by Professor Craig Huneke. This preprint preserves that discovery priority and develops three separate extensions: Frobenius minimality, classification of the minimum layer, and an explicit infinite family.</p><p>Proof-carrying exact computation shows that the least Frobenius number is 181, attained by Pham's example at shift 14. Complete theorem-tree enumeration and 1,156 independently checked fixed-pair DRAT proofs reproduce the published range F&lt;69. A selector CNF gives accepted DRAT proofs for every odd F from 69 through 179 and recovers the exact public semigroup at F=181. Projected enumeration then proves that shift 14 and the public membership vector are unique at the minimum.</p><p>For every integer p&gt;=4, we give a deductive construction of a symmetric numerical semigroup with multiplicity 24p, Frobenius number 78p-1, conductor 78p, and embedding dimension 11p, carrying the nonprincipal rigid ideal (t^(24p),t^(30p)). Seven exact interval-sum identities prove closure, symmetry, generation, and the rigidity equality D=E+E. A finite exact campaign through p=300 and an independently implemented formula and semantic audit provide adversarial support but are not the proof of the infinite statement.</p><p>The results remain confined to numerical semigroup rings and two-generated monomial ideals. They do not classify arbitrary modules or arbitrary one-dimensional Gorenstein domains. Code, compact manifests, verdicts, symbolic proof, and verification instructions: https://github.com/fsantibanezleal/CAOS_RESEARCH.</p>",
+    "description": "<p>Son Pham publicly identified the first counterexample to the Huneke-Wiegand conjecture in the class of two-generated monomial ideals over symmetric numerical semigroup rings, subsequently verified independently by Professor Craig Huneke. This preprint preserves that discovery priority and develops four separate extensions: Frobenius minimality, classification of the minimum layer, an explicit infinite family, and the family's uniform endomorphism-overring anatomy.</p><p>Proof-carrying exact computation shows that the least Frobenius number is 181, attained by Pham's example at shift 14. Complete theorem-tree enumeration and 1,156 independently checked fixed-pair DRAT proofs reproduce the published range F&lt;69. A selector CNF gives accepted DRAT proofs for every odd F from 69 through 179 and recovers the exact public semigroup at F=181. Projected enumeration then proves that shift 14 and the public membership vector are unique at the minimum.</p><p>For every integer p&gt;=4, we give a deductive construction of a symmetric numerical semigroup with multiplicity 24p, Frobenius number 78p-1, conductor 78p, and embedding dimension 11p, carrying the nonprincipal rigid ideal (t^(24p),t^(30p)). Seven exact interval-sum identities prove closure, symmetry, generation, and the rigidity equality D=E+E.</p><p>For every family member, the endomorphism value semigroup is determined exactly: it has multiplicity 24p, Frobenius number 54p-1, conductor 54p, genus 38p-1, and embedding dimension 12p. It is nonsymmetric, and the rigid ideal is not reflexive over its endomorphism ring; the adjacent Ext and Tor obstruction groups are nonzero. A finite exact campaign through p=300 and independently implemented audits provide adversarial support but are not the proof of either infinite statement.</p><p>The results remain confined to numerical semigroup rings and two-generated monomial ideals. They do not classify arbitrary modules or arbitrary one-dimensional Gorenstein domains. Code, compact manifests, verdicts, symbolic proofs, and verification instructions: https://github.com/fsantibanezleal/CAOS_RESEARCH.</p>",
     "keywords": [
       "Huneke-Wiegand conjecture",
       "numerical semigroups",
@@ -20,6 +20,9 @@
       "counterexample minimality",
       "minimum-layer classification",
       "infinite counterexample family",
+      "endomorphism rings",
+      "reflexivity",
+      "Ext and Tor",
       "additive combinatorics",
       "commutative algebra",
       "proof-carrying computation",
@@ -60,9 +63,14 @@
         "relation": "cites",
         "identifier": "10.1080/00927872.2024.2362934",
         "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2510.02210v2",
+        "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.03",
+    "version": "0.04",
     "language": "eng"
   }
 }

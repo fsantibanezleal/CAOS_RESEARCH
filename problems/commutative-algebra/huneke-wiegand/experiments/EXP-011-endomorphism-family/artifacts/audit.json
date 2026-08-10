@@ -1,0 +1,55 @@
+{
+  "experiment": "EXP-011-endomorphism-family",
+  "status": "AUDIT_PASS",
+  "campaign_rows_rehashed": 297,
+  "samples": [
+    {
+      "p": 4,
+      "frobenius": 215,
+      "genus": 151,
+      "extra_count": 5,
+      "semantic_hash": "c78a03bef91749d8d59dbb948d696f8a5ee1ccfa9df7f62e2cb3b7cd63b8e4f0"
+    },
+    {
+      "p": 5,
+      "frobenius": 269,
+      "genus": 189,
+      "extra_count": 6,
+      "semantic_hash": "3ad3a9555706c70fdb482b6e21e82e98866ce5e7937164549098b2349569998b"
+    },
+    {
+      "p": 17,
+      "frobenius": 917,
+      "genus": 645,
+      "extra_count": 18,
+      "semantic_hash": "7c3ffb87dcc4017b9a803faefcef3123ee0701d6c64688893bdb555424d29b9a"
+    },
+    {
+      "p": 73,
+      "frobenius": 3941,
+      "genus": 2773,
+      "extra_count": 74,
+      "semantic_hash": "6f3b6f5fbee1d237802cf1dfae0cfaa2b28884e29fd3dfd4869b52ff4f7ee855"
+    },
+    {
+      "p": 151,
+      "frobenius": 8153,
+      "genus": 5737,
+      "extra_count": 152,
+      "semantic_hash": "67cfcfca4996daf91cd514c7d32935005f246a5da2442233fc41cbf2bfe1468e"
+    },
+    {
+      "p": 300,
+      "frobenius": 16199,
+      "genus": 11399,
+      "extra_count": 301,
+      "semantic_hash": "f1e1c34dd4ee98bbe1aff7699ae9b79aaae926374c1ebcecdff339d329d7e4c4"
+    }
+  ],
+  "controls": {
+    "missing_q_rejected": true,
+    "terminal_shift_rejected": true
+  },
+  "campaign_aggregate": "e21926a689178a6c70b3b6e8319053edd0fd13f164ced9565d3b976e6159c0b0",
+  "audit_aggregate": "2ed711045ad83a3b47fb3e71d4c75ae9bfa9be1a5dd9a8c4072d5f170510343b"
+}
