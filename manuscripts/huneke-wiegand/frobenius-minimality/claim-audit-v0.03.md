@@ -22,7 +22,7 @@ finite campaign supports, but does not prove, the infinite statement.
 | independently reconstructed positive hashes and semantic samples | EXP-009 `audit.py` and `audit.json` | PASS; aggregate `eb2aaf17650ed99f4e220a43c53bdd8835c82688a37567bb154c30a1ae520ce9` |
 | generalized-arithmetic positive family does not contain the seed or EXP-009 family | manuscript derivations; EXP-009 proof | PASS; stated as exclusion from one positive class, not all variants |
 | authorship | title page and `zenodo.json` | PASS; Felipe Santibanez-Leal is the sole author; no automated system is named |
-| publication identity | reserved Zenodo v0.03 draft | PASS; concept `10.5281/zenodo.21763582`, version `10.5281/zenodo.21873911` |
+| publication identity | public Zenodo v0.03 record and downloaded file | PASS; concept `10.5281/zenodo.21763582`, version `10.5281/zenodo.21873911`; public SHA-256 matches Git |
 
 ## Narrative boundaries
 
@@ -39,5 +39,7 @@ finite campaign supports, but does not prove, the infinite statement.
 - two-pass MiKTeX `pdflatex`: PASS;
 - LaTeX/package warnings, undefined references, overfull/underfull boxes: zero;
 - complete 11-page PNG inspection at 150 DPI: PASS;
-- title, author/ORCID, preprint label, CC BY 4.0, concept DOI, reserved version DOI, headers,
+- title, author/ORCID, preprint label, CC BY 4.0, concept DOI, version DOI, headers,
   page numbers, equations, tables, references, and scope language: PASS.
+- public record status, concept latest, author/ORCID, licence, filename, bytes, MD5, SHA-256, and
+  downloaded-file comparison: PASS.
