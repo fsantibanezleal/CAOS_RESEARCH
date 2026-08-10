@@ -1,0 +1,610 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\definecolor{linknavy}{RGB}{25, 55, 125}
+\usepackage[colorlinks=true, linkcolor=linknavy, citecolor=linknavy, urlcolor=linknavy]{hyperref}
+\usepackage{orcidlink}
+\usepackage{fancyhdr}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Qp}{\mathbb{Q}_p}
+\newcommand{\zmax}{z_{\max}}
+
+\title{The Bottom of the Shub--Smale Tau Conjecture:\\
+an Exact Census of Integer Roots for Constant-Free\\
+Straight-Line Programs of Length at Most Seven}
+\author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
+\date{2026-08-02\\[2pt]\normalsize Version 0.02}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small CAOS Research Preprint}
+\fancyhead[R]{\small Tau-Conjecture Census \textperiodcentered\ v0.02}
+\fancyfoot[C]{\small \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\begin{document}
+\maketitle
+\begin{center}\small
+\fbox{\parbox{0.92\textwidth}{\centering
+\textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
+First paper of the tau-conjecture record \textperiodcentered\ version 0.02 \textperiodcentered\ 2026-08-02\\
+DOI \href{https://doi.org/10.5281/zenodo.21753438}{10.5281/zenodo.21753438} (concept DOI, resolves to the latest version)\\
+Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
+}}
+\end{center}
+
+\begin{abstract}
+For a univariate integer polynomial $f$, let $\tau(f)$ be the minimum number of
+$+,-,\times$ gates needed to compute $f$ from $x$ and the constants $-1,0,1$, and let
+$z(f)$ be its number of distinct integer roots. The Shub--Smale tau conjecture
+(Smale's fourth problem) asserts $z(f) \le (1+\tau(f))^{\kappa}$ for a universal
+$\kappa$; it implies $\mathrm{P}_{\C} \ne \mathrm{NP}_{\C}$ in the Blum--Shub--Smale
+model and $\mathrm{VP}^0 \ne \mathrm{VNP}^0$, and it is open even for $\kappa = 1$.
+We report the first exact census of the conjecture's growth function at the bottom of
+its ladder: writing $\zmax(\tau)$ for the maximum of $z(f)$ over all nonzero $f$ with
+$\tau(f) \le \tau$, we prove by exhaustive, exactly verified computation that
+\[
+\zmax(1),\dots,\zmax(7) \;=\; 1,\, 2,\, 3,\, 3,\, 4,\, 5,\, 5 .
+\]
+In particular the minimum cost of $4$ distinct integer roots is $5$ gates, of $5$
+roots is $6$ gates, and (new in this version) of $6$ roots is exactly $8$ gates, by an
+explicit verified witness: $q(q-2)(q-6)$ for $q = x^2 - x$, computable in $8$ gates by
+chained subtraction sharing; the growth function has plateaus at $\tau = 4$ and
+$\tau = 7$, so an extra gate does not always buy an extra root, and
+$z_{\max}(8) \ge 6$. The censuses are decision-complete: depth $6$ required the exact construction of
+all $25{,}844{,}905$ reachable computation states, and depth $7$ a complete scan of
+$2{,}013{,}706$ new polynomials, using a ``last-gate'' lemma that decides one depth
+beyond any exhausted frontier without storing the next frontier. The enumerator is
+anchored on Markstr\"om's published exhaustive census of integer targets (all
+fourteen anchor values reproduced exactly) and cross-checked against an independent
+computer-algebra root counter on $284$ polynomials. The six-root threshold was
+closed by a case split: the last gate of an $8$-gate $6$-rooter must involve the
+seventh value, and if it is a multiplication its root count is a union of two known
+root sets, so that case reduces to a co-occurrence query over the depth-$6$ frontier;
+the scan found $408$ witnesses. We further prove two elementary
+stall theorems explaining the observed record mechanisms: for any monic
+$h \in \Z[x]$ of degree at least $2$, towers built by iterating $h$ alone have
+depth-independent integer root counts (for $h = x^2 - 2$, the iterates $h^{\circ k}(x) - x$
+keep exactly $2$ integer roots against $2^k$ real roots), and across the quadratic
+family $h_c = x^2 - c$ with $c \le 200$ the maximum tower yield is $5$, attained only
+at $c = 2$; a second yield series at $c = m^2 + m + 1$, produced by genuine integer
+$2$-cycles, is identified and closed by the classical fact that integer polynomial
+cycles have length at most $2$. All computations are exact integer arithmetic,
+reproducible from committed code with hypotheses declared before each run; three of our
+own pre-registered predictions were refuted by the machine and are reported as such.
+This is an experimental-mathematics record in the tradition of Markstr\"om's census:
+it decides nothing about the conjecture asymptotically, and says so.
+\end{abstract}
+
+\section{Introduction}
+
+\subsection{The conjecture}
+
+A \emph{constant-free straight-line program} (SLP) over $\Z[x]$ is a sequence
+$(1, x, f_2, \dots, f_N)$ in which every $f_i$ ($i \ge 2$) is a sum, difference, or
+product of two earlier entries; following \cite{ShubSmale1995, Rojas2003} we write
+$\tau(f)$ for the least $N - 1$ over all such programs with $f_N = f$. Equivalently
+\cite{Burgisser2024}, $\tau(f)$ is the minimal number of operation gates of an
+arithmetic circuit over the inputs $x$ and the free constants $-1, 0, 1$. Let $z(f)$
+denote the number of distinct roots of $f$ in $\Z$.
+
+\begin{conjecture}[Shub--Smale \cite{ShubSmale1995}; Smale's fourth problem \cite{Smale1998}]
+There is a universal constant $\kappa \ge 1$ such that every nonzero
+$f \in \Z[x]$ satisfies $z(f) \le (1 + \tau(f))^{\kappa}$.
+\end{conjecture}
+
+The conjecture fails for $\kappa < 1$: the geometric-progression products
+$(x - 2)(x - 4)\cdots(x - 2^{2^j})$ acquire one root per $O(1)$ gates
+\cite{Rojas2003}. It is open even for $\kappa = 1$. Its significance is structural:
+Shub and Smale proved that it implies
+$\mathrm{P}_{\C} \ne \mathrm{NP}_{\C}$ in the Blum--Shub--Smale model
+\cite{ShubSmale1995, BCSS1998}, the proof reducing to the hardness of computing all
+sequences $(m_n \cdot n!)$; B\"urgisser \cite{Burgisser2009}, building on Koiran
+\cite{Koiran2004}, proved that it implies $\mathrm{VP}^0 \ne \mathrm{VNP}^0$, and
+that the single sequence $(n!)$ being hard to compute already yields that separation.
+Easy factorials would give nonuniform polynomial-time integer factoring
+\cite{BCSS1998, Cheng2003}; with integer division allowed, $n!$ \emph{is} easy
+\cite{Shamir1979}, so the restriction to $+,-,\times$ carries the entire content. The
+real-zeros analogue of the conjecture is false: iterating the logistic map produces
+$2^j$ real roots at cost $O(j)$ \cite{Rojas2003}, which motivated Koiran's real tau
+conjecture for structured expressions \cite{Koiran2011, KPTT2015, Hrubes2013,
+BriquelBurgisser2020, Dutta2021}. On the lower-bound side, no nontrivial lower bound
+on $\tau(n!)$ is known \cite{Koiran2004}; on the reduction side, Rojas proved that a
+$p$-adic digit version of the conjecture, for any fixed prime, already implies the
+full statement, via a $p$-independent subquadratic bound on the valuation spectrum of
+roots \cite{Rojas2003}. Recent work applies the conjecture to explicit exponential
+lower bounds \cite{BBDM2026} and tightens the bridge from BSS separations to
+constant-free Valiant separations \cite{Burgisser2026}; the current survey reference
+is \cite[\S4.6]{Burgisser2024}.
+
+\subsection{What this paper does}
+
+The literature contains, to our knowledge, exactly one exhaustive computation in this
+model: Markstr\"om's census of \emph{integer targets} (the straight-line complexity
+of small factorials and primorials), complete to program length $11$ on 2013-era
+hardware \cite{Markstrom2014}. No published computation addresses the
+\emph{polynomial} side, i.e.\ the actual growth function of the conjecture. We define
+\[
+\zmax(\tau) \;=\; \max\{\, z(f) \;:\; f \in \Z[x] \setminus \{0\},\ \tau(f) \le \tau \,\}
+\]
+and determine it exactly for $\tau \le 7$, together with the full record galleries,
+explicit optimal witnesses, and the exact cost thresholds for $3, 4, 5$ and (within
+one gate) $6$ distinct integer roots. We also prove two elementary theorems that
+explain the observed record mechanisms and close entire construction classes
+(Section~\ref{sec:stall}), and we measure the quadratic tower family exhaustively
+(Section~\ref{sec:family}).
+
+Our contributions:
+\begin{enumerate}
+\item \textbf{The census} (Section~\ref{sec:census}): $\zmax(1..7) = 1,2,3,3,4,5,5$,
+decision-complete, with per-depth state and polynomial counts, record galleries and
+replayed witness programs. Plateaus occur at $\tau = 4$ and $\tau = 7$.
+\item \textbf{Exact thresholds}: the minimum $\tau$ admitting $3$ distinct integer
+roots is $3$ ($x^3 - x$); for $4$ roots it is $5$; for $5$ roots it is $6$; for $6$
+roots it is exactly $8$ (Section~\ref{sec:window}: the census excludes $7$, and the
+scan of this version produced explicit verified $8$-gate witnesses).
+\item \textbf{A method lemma} (Lemma~\ref{lem:lastgate}): every polynomial of cost
+$d + 1$ is one gate over a normalized depth-$d$ state, so $\zmax(d+1)$ is computable
+from an exhausted depth-$d$ frontier without storing the depth-$(d+1)$ frontier. This
+bought depth $7$ (a $\sim$$10^9$-state frontier avoided).
+\item \textbf{Stall theorems} (Section~\ref{sec:stall}): iterating any fixed monic
+map of degree $\ge 2$ yields depth-independent integer root counts; for the
+Chebyshev-conjugate map $x^2 - 2$, whose difference-of-squares splittings generate
+all census records at depths $5$--$7$, the exact stable core is $\{0, \pm 1, \pm 2\}$.
+\item \textbf{The family measurement} (Section~\ref{sec:family}): across
+$h_c = x^2 - c$, $c \le 200$, and all tower shapes to four iterations, the maximum
+integer-root yield is $5$, attained only at $c = 2$; two yield-$4$ series exist,
+$c = m(m+1)$ (fixed and anti-fixed points) and $c = m^2 + m + 1$ (genuine
+$2$-cycles), and the classical bound on integer polynomial cycle lengths shows this
+inventory is complete.
+\item \textbf{Anchoring and audit} (Section~\ref{sec:anchor}): the enumerator
+reproduces all fourteen of Markstr\"om's published anchor values; an independent
+computer-algebra cross-check agrees on $284$ polynomials; every experiment's
+hypothesis, budget and kill criterion were committed before its run, and two of our
+pre-registered predictions were refuted by the machine (both disclosed below).
+\end{enumerate}
+
+Every claim in this paper is labeled: \textbf{[MV]} machine-verified in exact
+arithmetic from committed code, \textbf{[D]} proved here (elementary, self-contained),
+or \textbf{[C]} conjectural/observational. Nothing here decides the conjecture in
+either direction, and no asymptotic consequence is claimed: the census maps where the
+conjecture lives at the bottom of its ladder, in the same genre as
+\cite{Markstrom2014}.
+
+\section{Model, normalization, and the census method}\label{sec:model}
+
+\begin{definition}\label{def:model}
+Programs operate on values in $\Z[x]$. The inputs are $-1$, $1$ and $x$; each gate
+applies $+$, $-$ or $\times$ to two (not necessarily distinct) earlier values; the
+length of a program is its number of gates; $\tau(f)$ is the minimal length of a
+program computing $f$ at some gate.
+\end{definition}
+
+\begin{lemma}[free $0$ is redundant]\label{lem:zero}
+Adding $0$ as a fourth free input does not change $\tau$. \emph{[D]}
+\end{lemma}
+\begin{proof}
+In any program using the input $0$: $a + 0$ and $a - 0$ duplicate $a$; $a \times 0$
+computes $0$; $0 - a$ equals $(-1) \times a$, one gate either way. Replacing each use
+and deleting duplicated gates never lengthens the program.
+\end{proof}
+
+\begin{lemma}[normalization]\label{lem:norm}
+Every $f$ has an optimal program in which no gate recomputes an input or an earlier
+value, and no gate computes $0$. \emph{[D]}
+\end{lemma}
+\begin{proof}
+A gate duplicating an available value can be deleted, rewiring its uses to the
+original; a computed $0$ is usable only in the redundant patterns of
+Lemma~\ref{lem:zero}. Each deletion shortens the program, so an optimal one contains
+neither.
+\end{proof}
+
+\begin{lemma}[reached-set sufficiency]\label{lem:state}
+The extensions available to a program depend only on the \emph{set} of values it has
+computed. Consequently a breadth-first search over reached sets (``states''), with
+set-level deduplication, visits every normalized reachable state of each depth
+exactly once. \emph{[D]}
+\end{lemma}
+
+This is the polynomial analogue of the range-isomorphism reduction of
+\cite{Markstrom2014}. The census algorithm is exactly this BFS, in exact integer
+arithmetic on dense coefficient tuples, with each new polynomial's first appearance
+depth recorded (that depth is $\tau(f)$, by Lemmas~\ref{lem:norm} and
+\ref{lem:state}). Integer roots are counted exactly: strip the power of $x$, then
+test the divisors of the trailing coefficient (both signs).
+
+\begin{lemma}[last gate]\label{lem:lastgate}
+Let $\mathcal{F}_d$ be the set of normalized reached states of depth $d$. Every $f$
+with $\tau(f) = d + 1$ is $a \circ b$ for a single gate $\circ$ and operands $a, b$
+available in some state of $\mathcal{F}_d$. Hence
+$\zmax(d+1) = \max\bigl(\zmax(d),\ \max z(a \circ b)\bigr)$ over one op over every
+state of $\mathcal{F}_d$, and this maximum is computable without constructing
+$\mathcal{F}_{d+1}$. \emph{[D]}
+\end{lemma}
+\begin{proof}
+Take an optimal program of length $d + 1$ for $f$ and normalize it
+(Lemma~\ref{lem:norm}; deletions would shorten it, contradicting optimality, so it is
+already normalized). Its first $d$ gates form a normalized reached state of depth
+$d$, and its last gate is one op over that state's available values.
+\end{proof}
+
+\section{Anchoring and audit discipline}\label{sec:anchor}
+
+\textbf{Markstr\"om anchor [MV].} Restricted to the integer model (start value $1$,
+positive normalized values), our enumerator reproduces Figure~1 of
+\cite{Markstrom2014} exactly at every compared depth: reached-set sizes
+$2, 4, 9, 26, 102, 562, 4363$ and complete initial intervals
+$2, 4, 6, 12, 40, 112, 310$ for lengths $1$ through $7$: fourteen of fourteen anchor
+values.
+
+\textbf{Independent cross-check [MV].} An independent root counter (SymPy's exact
+factorization) agrees with ours on all $284$ polynomials checked: every polynomial of
+$\tau \le 3$ and every record polynomial of the censuses.
+
+\textbf{Engine re-derivation [MV].} The depth-$7$ computation uses a reimplemented,
+memoized engine; before its new output was trusted, it was required to re-derive every
+prior census value (state counts $9 / 98 / 1462 / 29506 / 778087$, new-polynomial
+counts through depth $6$, and the record sets), and did.
+
+\textbf{Pre-registration.} Every computation ran under a hypothesis file committed to
+the repository \emph{before} the run, with falsifiable predictions, an explicit
+statement of what a pass and a fail would prove, a compute budget and a kill
+criterion. Three committed predictions were refuted by the machine: we predicted
+$\zmax(6) = 4$ (the census returned $5$; Section~\ref{sec:census}); we predicted zero
+tower yield off the fixed-point series (a second series exists;
+Section~\ref{sec:family}); and we predicted the six-root multiplication case empty at
+$8$ gates (the scan found $408$ witnesses; Section~\ref{sec:window}). Each refutation
+is reported alongside what it taught.
+One tooling incident is likewise on record: divisor-based root counting is infeasible
+against tower constant terms of size $c^{2^k}$, and was replaced, for the family
+measurement only, by direct evaluation over a window proved correct in advance
+(Section~\ref{sec:family}), cross-checked against the divisor method where both run.
+
+\section{The census}\label{sec:census}
+
+\begin{theorem}[the census; MV]\label{thm:census}
+In the model of Definition~\ref{def:model},
+\[
+\begin{array}{c|ccccccc}
+\tau & 1 & 2 & 3 & 4 & 5 & 6 & 7\\\hline
+\zmax(\tau) & 1 & 2 & 3 & 3 & 4 & 5 & 5
+\end{array}
+\]
+and the censuses behind each value are decision-complete.
+\end{theorem}
+
+The supporting exhaustive counts are:
+
+\begin{center}
+\begin{tabular}{lrrrrrrr}
+\toprule
+$\tau$ & 1 & 2 & 3 & 4 & 5 & 6 & 7\\
+\midrule
+reached states & 9 & 98 & 1{,}462 & 29{,}506 & 778{,}087 & 25{,}844{,}905 & (not stored)\\
+new polynomials & 9 & 34 & 177 & 1{,}249 & 11{,}377 & 134{,}494 & 2{,}013{,}706\\
+$\zmax$ & 1 & 2 & 3 & 3 & 4 & 5 & 5\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Depth $7$ was decided by Lemma~\ref{lem:lastgate} over the exhausted depth-$6$
+frontier; among its $2{,}013{,}706$ new polynomials the distinct-integer-root
+histogram is $742{,}635$ rootless, $904{,}421$ with one, $299{,}488$ with two,
+$63{,}903$ with three, $3{,}196$ with four, $63$ with five, and none with six or
+more.
+
+\begin{theorem}[cost thresholds; MV]\label{thm:thresholds}
+The minimum $\tau$ admitting $k$ distinct integer roots is: $k=1{:}\,1$;
+$k=2{:}\,2$; $k=3{:}\,3$; $k=4{:}\,5$; $k=5{:}\,6$; $k=6{:}\,8$.
+\end{theorem}
+
+The $k = 6$ lower bound is Theorem~\ref{thm:census} ($\zmax(7) = 5$); the upper
+bound is the explicit $8$-gate witness of Section~\ref{sec:window}. Representative optimal witnesses, replayed gate by gate in
+exact arithmetic from the committed artifacts:
+
+\begin{center}
+\small
+\begin{tabular}{lll}
+\toprule
+$\tau$ & record & witness program\\
+\midrule
+3 & $x^3 - x$, roots $\{0,\pm1\}$ & $x{\cdot}x;\ x^2{-}1;\ x{\cdot}(x^2{-}1)$\\
+4 & $-x(x{+}1)(x{+}2)$, roots $\{0,-1,-2\}$ & $-1{-}x;\ 1{-}({-}1{-}x);\ x({-}1{-}x);\ (x^2{+}x)\dots$\\
+5 & $x^2 - (x^2{-}2)^2 = -(x^2{-}1)(x^2{-}4)$ & $-2;\ x^2;\ x^2{-}2;\ (x^2{-}2)^2;\ x^2 - (x^2{-}2)^2$\\
+6 & $\mp x(x^2{-}1)(x^2{-}4)$, roots $\{0,\pm1,\pm2\}$ & the $\tau{=}5$ record, then $\times\, x$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Plateaus.} $\zmax$ pauses at $\tau = 4$ and $\tau = 7$. The record galleries
+explain the asymmetry: the step $5 \to 6$ succeeds because multiplying by the input
+$x$ costs one gate and adjoins the root $0$ to a record avoiding it; the steps
+$3 \to 4$ and $6 \to 7$ fail because every candidate next root beyond the ``free''
+set $\{0, \pm 1, \pm 2\}$ requires a built constant, and constants cost gates. The
+$\tau = 5$ records (ten polynomials) and $\tau = 6$ records (four) are all
+difference-of-squares splittings over the map $x^2 - 2$ (Section~\ref{sec:stall});
+at $\tau = 7$ the sixty-three five-rooters appear, but no six-rooter.
+
+\subsection{Closing the six-root window}\label{sec:window}
+
+Version 0.01 of this paper left the six-root threshold in $[8, 9]$. It is $8$:
+
+\begin{theorem}[MV, both directions]\label{thm:window}
+There is an $8$-gate constant-free SLP whose output has $6$ distinct integer roots,
+and none with $7$ gates. An explicit witness (replayed gate by gate in exact
+arithmetic) is, with $q = x(x-1)$:
+\[
+x{-}1;\quad 2;\quad q = x\cdot(x{-}1);\quad 4;\quad q{-}2;\quad (q{-}2){-}4 = q{-}6;\quad
+q(q{-}2);\quad f = q(q{-}2)\cdot(q{-}6),
+\]
+whose root set is $\{-2, -1, 0, 1, 2, 3\}$. Hence $\zmax(8) \ge 6$.
+\end{theorem}
+
+The method is a case split. By Lemma~\ref{lem:lastgate} at depth $8$, an $8$-gate
+$6$-rooter is one gate over a depth-$7$ state $S \cup \{v\}$; since
+$\zmax(7) = 5$, the final gate must involve the seventh value $v$. If that gate is a
+multiplication, $f = v \cdot b$ and $z(f) = |R_v \cup R_b|$: a pure co-occurrence
+condition on known root sets, decided exactly by one scan of the $25{,}844{,}905$
+depth-$6$ states ($2$h$23$m single-core): $408$ hits, three reconstructed as explicit
+programs and verified independently of the scan machinery. Two committed expectations
+fell in the process: we had predicted this case empty (our schema hunt costed the
+witness family at $9$ gates because it built the constants $\{2, 6\}$ independently;
+the scan's witness builds $\{2, 4\}$ and reuses the subtraction chain
+$q \mapsto q-2 \mapsto q-6$: a one-gate saving our cost model missed), and we had
+predicted that all $\tau \le 7$ five-rooters have root set $\{0, \pm1, \pm2\}$:
+in fact the $67$ five-rooters realize seven root-set patterns, including the
+non-consecutive $\{-1,0,1,2,4\}$ and $\{-4,-2,-1,0,1\}$, and it is precisely such
+shifted and punctured sets that leave room for a co-occurring factor to complete six
+roots.
+
+\section{Record mechanisms}\label{sec:mech}
+
+The census records decompose into a small move inventory [MV for the instances;
+observational as a classification]: linear factors $x - a$ for available constants
+$a$; block translation at one gate per unit shift; multiplication by the input $x$
+(one gate, adjoins $0$); and difference-of-squares splittings $B^2 - A^2 = (B-A)(B+A)$
+at two gates given $A$ and $B$. The depth-$5$ record
+$x^2 - (x^2 - 2)^2 = -(x{-}1)(x{+}1)(x{-}2)(x{+}2)$ is the fundamental instance: its
+inner map $C(x) = x^2 - 2$ is the Chebyshev-conjugate doubling map
+($h(z) = z + 1/z$ satisfies $h(z)^2 - 2 = h(z^2)$), i.e.\ the record is the integer
+shadow of exactly the iteration that makes the \emph{real} analogue of the conjecture
+false. Over $\Z$, that factory is sterile beyond one splitting, which the next
+section proves.
+
+\section{Stall theorems}\label{sec:stall}
+
+\begin{lemma}[escape]\label{lem:escape}
+Let $h = x^d + \sum_{i<d} a_i x^i \in \Z[x]$, $d \ge 2$, and
+$R = 1 + \sum_{i<d} |a_i|$. If $|x| \ge R + 1$ then $|h(x)| \ge |x| + 1$. \emph{[D]}
+\end{lemma}
+\begin{proof}
+$\sum_{i<d} |a_i|\,|x|^i \le (R-1)|x|^{d-1}$ for $|x| \ge 1$, so
+$|h(x)| \ge |x|^{d-1}(|x| - (R-1)) \ge 2|x|^{d-1} \ge 2|x| \ge |x| + 1$ for
+$|x| \ge R + 1$.
+\end{proof}
+
+\begin{theorem}[monic stall; D]\label{thm:stall}
+Fix a monic $h \in \Z[x]$ of degree $\ge 2$. There is a constant $Z(h)$ such that
+for every $k \ge 1$, both $h^{\circ k}(x) - x$ and the difference-of-squares towers
+$G_k = h^{\circ (k-1)}(x)^2 - h^{\circ k}(x)^2$ have at most $Z(h)$ distinct integer
+roots. One may take $Z(h) = \#([-M, M] \cap \Z)$ where
+$M = \max(R+1, \max |a|)$ over the integer solutions $a$ of $h(y) = \pm y$.
+\end{theorem}
+\begin{proof}
+Integer roots of $h^{\circ k}(x) - x$ are periodic points of $h$; by
+Lemma~\ref{lem:escape} all integer periodic points lie in $[-R-1, R+1]$. For $G_k$,
+factor $G_k = (h^{\circ(k-1)} - h^{\circ k})(h^{\circ(k-1)} + h^{\circ k})$: an
+integer root $x$ has $y = h^{\circ(k-1)}(x)$ solving $h(y) = \pm y$, so $x$ lies in
+the increasing union $\bigcup_j (h^{\circ j})^{-1}(A) \cap \Z$ for the finite set $A$
+of such $y$. If $|x| > M$ then $|h^{\circ j}(x)| \ge |x| + j > \max_{a \in A} |a|$
+for all $j$ by Lemma~\ref{lem:escape} and induction, so no element of the union
+exceeds $M$ in absolute value; the union is contained in a fixed finite set and
+stabilizes.
+\end{proof}
+
+\begin{proposition}[the Chebyshev core; D, MV spot-checks]\label{prop:cheb}
+For $C(x) = x^2 - 2$: the integer periodic points are exactly $\{2, -1\}$; for every
+$k \ge 1$ the polynomial $C^{\circ k}(x) - x$ has exactly $2$ distinct integer roots
+while having $2^k$ distinct real roots and $\tau \le 2k + 2$; and the towers $G_k$
+have root set $\{\pm 1, \pm 2\}$ for $k = 1$ and exactly $\{0, \pm 1, \pm 2\}$ for
+every $k \ge 2$.
+\end{proposition}
+\begin{proof}
+Orbits: $0 \mapsto -2 \mapsto 2 \mapsto 2$ and $1 \mapsto -1 \mapsto -1$; by
+Lemma~\ref{lem:escape} (with $R = 3$; direct check for $|x| \ge 3$) all other integer
+orbits escape, so the only cycles are the fixed points $2$ and $-1$, giving the first
+two claims (the real-root count is the classical Chebyshev conjugacy). For $G_k$:
+$h(y) = y$ has integer solutions $\{2, -1\}$ and $h(y) = -y$ has $\{-2, 1\}$;
+integer preimages are $C^{-1}(2) = \{\pm 2\}$, $C^{-1}(-1) = \{\pm 1\}$,
+$C^{-1}(-2) = \{0\}$, $C^{-1}(1) = C^{-1}(0) = \emptyset$, so the preimage closure
+of $\{\pm 1, \pm 2\}$ is $\{0, \pm 1, \pm 2\}$ and is stable.
+\end{proof}
+
+Theorem~\ref{thm:stall} closes a construction class: no family built by iterating one
+fixed monic map can witness superpolynomial $z$ versus $\tau$; a refutation of the
+conjecture, if one exists, must build fresh constants or mix maps, paying gates for
+them. That is precisely the regime the census measures.
+
+\section{The quadratic family}\label{sec:family}
+
+We measured all tower shapes ($h^{\circ k}(x) - x$ and
+$h^{\circ i}(x)^2 - h^{\circ j}(x)^2$, $0 \le i < j \le 4$) across
+$h_c = x^2 - c$ for $1 \le c \le 200$, in exact arithmetic. Root finding here cannot
+use trailing-coefficient divisors (those constants reach $c^{2^k} \sim 10^{18}$);
+instead, by Lemma~\ref{lem:escape}, every integer root of such a shape lies in
+$[-(c+1), c+1]$, and direct evaluation over that window is exact. The two finders
+agree on every shape where both are feasible ($c \le 10$, $j \le 2$) [MV].
+
+\begin{theorem}[family census; MV]\label{thm:family}
+For $1 \le c \le 200$ and the shapes above: the maximum number of distinct integer
+roots is $5$, attained only at $c = 2$ (the set $\{0, \pm1, \pm2\}$ of
+Proposition~\ref{prop:cheb}). Nonzero yields occur exactly on two series:
+$c = m(m+1)$, yield $4$ for $m \ge 2$ with root set $\{\pm m, \pm(m+1)\}$ (from the
+fixed points $\{m{+}1, -m\}$ and anti-fixed points $\{m, -m{-}1\}$), and
+$c = m^2 + m + 1$, yield $4$ with the same root sets, produced by the genuine
+$2$-cycles $m \mapsto -m-1 \mapsto m$ (for $c = 1$: yield $3$, root set
+$\{0, \pm 1\}$, from the cycle $0 \leftrightarrow -1$).
+\end{theorem}
+
+The second series refuted our committed prediction that only the fixed-point series
+yields roots. It is, however, the \emph{last} such surprise available to this
+construction class:
+
+\begin{proposition}[cycle ceiling; D, classical]\label{prop:cycles}
+For any $f \in \Z[x]$, every cycle of $f$ in $\Z$ has length at most $2$.
+Consequently fixed points, anti-fixed points and $2$-cycles are the complete
+periodic inventory harvestable by tower shapes over any integer polynomial map.
+\end{proposition}
+\begin{proof}
+For integers $a \ne b$, $(a - b) \mid (f(a) - f(b))$. Around a cycle
+$a_0 \mapsto a_1 \mapsto \dots \mapsto a_r = a_0$ of distinct points, the
+differences $d_i = a_{i+1} - a_i$ satisfy $d_i \mid d_{i+1}$ cyclically, so all
+$|d_i|$ equal one value $d > 0$, and the cycle is a closed walk on the arithmetic
+line $a_0 + d\,\Z$ with steps $\pm d$. If two consecutive steps have opposite signs
+then $a_{i+2} = a_i$, which forces $r = 2$; if all steps have the same sign the walk
+never closes. Hence $r \le 2$. The fact is classical in the polynomial-cycles
+literature (see Narkiewicz \cite{Narkiewicz1995}); the proof is included to keep the
+paper self-contained.
+\end{proof}
+
+Yield per gate across the family is maximized at $c = 2$ and decreases in $c$ (the
+yield is bounded by $5$ while building $c$ costs $\tau(c) \sim \log c$ gates,
+measured exactly against our anchored integer census): within this family, the
+``parameterized loophole'' left open by Theorem~\ref{thm:stall} is empty [MV for
+$c \le 200$; C beyond].
+
+\section{Limits, and what would count as progress}\label{sec:limits}
+
+Nothing above bears on the conjecture asymptotically: censuses to depth $7$ cannot
+distinguish polynomial from superpolynomial growth, and our theorems close
+construction classes rather than open the bounding problem. The honest state of the
+measured landscape is: every mechanism observed or excluded so far pays $\Theta(1)$
+gates per root, the growth function's first structure (plateaus at $4$ and $7$) is
+the visible cost of constant-building, and the geometric-progression family remains
+the best known factory, linear-rate, exactly as when Rojas noted that the conjecture
+fails for $\kappa < 1$ \cite{Rojas2003}.
+
+Concrete open items this record makes precise:
+(i) the exact value of $\zmax(8)$ (now known only to be $\ge 6$), including whether
+an $8$-gate seven-rooter exists, and the seven-root threshold: finite, SAT-shaped
+questions in the style of exact SLP synthesis over GF(2)
+\cite{FuhsSchneiderKamp2010};
+(ii) extend the integer frontier past Markstr\"om's length $11$ \cite{Markstrom2014},
+including his monotonicity question for $\tau(n!)$;
+(iii) measure the growth of the valuation-spectrum bound
+$s \le N_p(s) \le s(s+1)/2$ of \cite{Rojas2003}, where the true rate is stated as
+open;
+(iv) the census's $2$-adic instrumentation records that all depth-$5$--$7$ record
+polynomials concentrate their roots on the valuations $\{0, 1\}$ [MV], consistent
+with the pressure sitting on the digit-conjecture side of Rojas' reduction [C].
+
+\section*{Data and code availability}
+
+All code, hypotheses, run artifacts, verdicts and the wiki are committed at
+\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH} under
+\texttt{problems/computation-complexity/tau-conjecture/} (experiments
+\texttt{EXP-001}--\texttt{EXP-005}; package \texttt{tclib} with its test suite). All
+computations are exact integer arithmetic in Python 3.13 standard library; total
+compute for every result in this paper is under five hours on one desktop CPU
+(24 cores available, single-threaded runs; peak memory $\sim$6\,GB).
+
+\begin{thebibliography}{99}\small
+
+\bibitem{ShubSmale1995} M.~Shub, S.~Smale,
+\emph{On the intractability of Hilbert's Nullstellensatz and an algebraic version of
+``NP $\ne$ P?''}, Duke Math.\ J.\ 81(1):47--54, 1995.
+\href{https://doi.org/10.1215/S0012-7094-95-08105-8}{doi:10.1215/S0012-7094-95-08105-8}.
+
+\bibitem{Smale1998} S.~Smale, \emph{Mathematical problems for the next century},
+Math.\ Intelligencer 20(2):7--15, 1998.
+\href{https://doi.org/10.1007/BF03025291}{doi:10.1007/BF03025291}.
+
+\bibitem{BCSS1998} L.~Blum, F.~Cucker, M.~Shub, S.~Smale, \emph{Complexity and Real
+Computation}, Springer, 1998.
+
+\bibitem{Koiran2004} P.~Koiran, \emph{Valiant's model and the cost of computing
+integers}, Comput.\ Complexity 13(3--4):131--146, 2004.
+\href{https://doi.org/10.1007/s00037-004-0186-2}{doi:10.1007/s00037-004-0186-2}.
+
+\bibitem{Burgisser2009} P.~B\"urgisser, \emph{On defining integers and proving
+arithmetic circuit lower bounds}, Comput.\ Complexity 18(1):81--103, 2009.
+\href{https://doi.org/10.1007/s00037-009-0260-x}{doi:10.1007/s00037-009-0260-x}.
+
+\bibitem{Burgisser2024} P.~B\"urgisser, \emph{Completeness classes in algebraic
+complexity theory}, arXiv:2406.06217, 2024.
+
+\bibitem{Markstrom2014} K.~Markstr\"om, \emph{The straight line complexity of small
+factorials and primorials}, INTEGERS 14, \#A67, 2014. arXiv:1306.3091.
+
+\bibitem{Rojas2003} J.~M.~Rojas, \emph{A direct ultrametric approach to additive
+complexity and the Shub--Smale tau conjecture}, arXiv:math/0304100, 2003.
+
+\bibitem{Cheng2003} Q.~Cheng, \emph{Straight-line programs and torsion points on
+elliptic curves}, Comput.\ Complexity 12(3--4):150--161, 2003.
+\href{https://doi.org/10.1007/s00037-003-0180-0}{doi:10.1007/s00037-003-0180-0}.
+
+\bibitem{Cheng2004} Q.~Cheng, \emph{On the ultimate complexity of factorials},
+Theoret.\ Comput.\ Sci.\ 326(1--3):419--429, 2004.
+\href{https://doi.org/10.1016/j.tcs.2004.07.032}{doi:10.1016/j.tcs.2004.07.032}.
+
+\bibitem{Shamir1979} A.~Shamir, \emph{Factoring numbers in $O(\log n)$ arithmetic
+steps}, Inform.\ Process.\ Lett.\ 8(1):28--31, 1979.
+\href{https://doi.org/10.1016/0020-0190(79)90087-5}{doi:10.1016/0020-0190(79)90087-5}.
+
+\bibitem{Lipton1994} R.~J.~Lipton, \emph{Straight-line complexity and integer
+factorization}, ANTS-I, LNCS 877, 1994.
+\href{https://doi.org/10.1007/3-540-58691-1_50}{doi:10.1007/3-540-58691-1\_50}.
+
+\bibitem{Koiran2011} P.~Koiran, \emph{Shallow circuits with high-powered inputs},
+Innovations in Computer Science, 2011. arXiv:1004.4960.
+
+\bibitem{KPTT2015} P.~Koiran, N.~Portier, S.~Tavenas, S.~Thomass\'e, \emph{A
+tau-conjecture for Newton polygons}, Found.\ Comput.\ Math.\ 15:185--197, 2015.
+arXiv:1308.2286.
+
+\bibitem{Hrubes2013} P.~Hrube\v{s}, \emph{On the real $\tau$-conjecture and the
+distribution of complex roots}, Theory of Computing 9(10):403--411, 2013.
+\href{https://doi.org/10.4086/toc.2013.v009a010}{doi:10.4086/toc.2013.v009a010}.
+
+\bibitem{BriquelBurgisser2020} I.~Briquel, P.~B\"urgisser, \emph{The real
+tau-conjecture is true on average}, Random Struct.\ Algorithms 57(2):279--303, 2020.
+\href{https://doi.org/10.1002/rsa.20926}{doi:10.1002/rsa.20926}.
+
+\bibitem{Dutta2021} P.~Dutta, \emph{Real $\tau$-conjecture for sum-of-squares: a
+unified approach to lower bound and derandomization}, CSR 2021.
+\href{https://doi.org/10.1007/978-3-030-79416-3_5}{doi:10.1007/978-3-030-79416-3\_5}.
+
+\bibitem{BBDM2026} S.~Bhattacharjee, M.~Bl\"aser, P.~Dutta, S.~Mukherjee,
+\emph{Exponential lower bounds via exponential sums}, ICALP 2024; extended version
+arXiv:2601.00387, 2026.
+
+\bibitem{Burgisser2026} P.~B\"urgisser, \emph{Intractability of Hilbert's
+Nullstellensatz implies algebraic hardness of the permanent}, arXiv:2606.25121, 2026.
+
+\bibitem{FuhsSchneiderKamp2010} C.~Fuhs, P.~Schneider-Kamp, \emph{Synthesizing
+shortest linear straight-line programs over GF(2) using SAT}, SAT 2010, LNCS 6175.
+\href{https://doi.org/10.1007/978-3-642-14186-7_8}{doi:10.1007/978-3-642-14186-7\_8}.
+
+\bibitem{Narkiewicz1995} W.~Narkiewicz, \emph{Polynomial Mappings}, Lecture Notes in
+Mathematics 1600, Springer, 1995.
+
+\end{thebibliography}
+
+\end{document}

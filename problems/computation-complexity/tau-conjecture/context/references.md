@@ -20,10 +20,10 @@ TO FETCH = named, not yet read. Unread sources cannot support conclusions.
 
 | Ref | Status | Notes |
 |---|---|---|
-| J. M. Rojas. A direct ultrametric approach to additive complexity and the Shub-Smale tau conjecture. arXiv:math/0304100 (2003) | ABS | e^{O(s log s)} 2-adic (hence rational) roots for additive complexity s; two weak versions of the conjecture. Read in full before use as premise. |
+| J. M. Rojas. A direct ultrametric approach to additive complexity and the Shub-Smale tau conjecture. arXiv:math/0304100 (2003) | READ (full, 10 pages, 2026-08-01) | p-adic Digit Conjecture => full tau conjecture (Thm 1); valuation spectrum s <= N_p(s) <= s(s+1)/2, p-independent (Thm 2, Newton-polygon proof); <= 1 + s^3(s+1)(7.5)^s s! rational roots at additive complexity s (Thm 3); roots-near-1 bound (Thm 4); logistic real factory Example 1; open: p-adic factory analogue; Borodin-Cook 1976 / Grigoriev 1982 / Risler 1985 real-root ladder quoted. |
 | P. Koiran. Shallow circuits with high-powered inputs. ICS 2011, arXiv:1004.4960 | ABS | The real tau conjecture; PIT connection. |
 | S. Tavenas. Bornes inferieures et superieures dans les circuits arithmetiques (and the 2014 paper cited as [Tav14] in the survey) | TO FETCH | Real tau => VP != VNP; m,t,2^k version suffices. |
-| P. Koiran, N. Portier, S. Tavenas. On the number of real roots of sums of products of sparse polynomials (cited [KPT15]) | TO FETCH | Best known real-root bounds for sum-of-products-of-sparse. |
+| P. Koiran, N. Portier, S. Tavenas. A Wronskian approach to the real tau-conjecture. J. Symbolic Comput. 68:195-214, 2015 (arXiv:1205.1015). DOI: 10.1016/j.jsc.2014.09.036 | ABS (identified precisely 2026-08-02; this is the survey's [KPT15]) | Wronskian-determinant upper bounds on real roots of sums of products of sparse polynomials; polynomial bounds in special cases (few distinct sparse factors, repeated); implies-permanent framing. Full bound formulas: read PDF at use time. |
 | P. Koiran, N. Portier, S. Tavenas, S. Thomasse. A tau-conjecture for Newton polygons. Found. Comput. Math. / arXiv:1308.2286 | ABS | Newton-polygon variant; weak version already implies permanent lower bounds. |
 | P. Hrubes. On the real tau-conjecture and the distribution of complex roots. Theory of Computing 9(10):403-411, 2013. DOI: 10.4086/toc.2013.v009a010 | ABS | Complex-root-clustering equivalences. |
 | I. Briquel, P. Buergisser. The real tau-conjecture is true on average. Random Struct. Algorithms 57(2):279-303, 2020, arXiv:1806.00417. DOI: 10.1002/rsa.20926 | ABS | Average-case truth for Gaussian coefficients. |
@@ -48,3 +48,9 @@ TO FETCH = named, not yet read. Unread sources cannot support conclusions.
 | On the hardness of PosSLP. arXiv:2307.08008 | TO FETCH | Recent PosSLP hardness. |
 | PosSLP and sum of squares. arXiv:2403.00115 | TO FETCH | Recent PosSLP work. |
 | OEIS A005245 (integer complexity, +,x from 1s) | TO FETCH | The classical adjacent census; different model (no subtraction, counts 1s not ops). |
+| G. Malajovich. Ultimate polynomial time. arXiv:math/9904130 (1999); Proc. LMS | ABS | The class UP over C; tau conjecture implies UP does not contain constant-free NP_C. Adjacent formulation. |
+| K. Phillipson, J. M. Rojas. Fewnomial systems with many roots, and an adelic tau conjecture. arXiv:1011.4128 (2010, rev. 2012) | ABS | Adelic/local-field tau variant; explicit fewnomial systems near upper bounds via tropical intersections. Natural home for a p-adic census extension (RL-2). |
+| C. Fuhs, P. Schneider-Kamp. Synthesizing shortest linear straight-line programs over GF(2) using SAT. SAT 2010, LNCS 6175. DOI: 10.1007/978-3-642-14186-7_8 | ABS | SAT reduction for optimal-length SLP decisions (linear case; MaxSNP-complete optimization). Template for the RL-7 integer encoding. |
+| J. R. Doyle, B. Poonen. Gonality of dynatomic curves and strong uniform boundedness of preperiodic points. arXiv:1711.04233 | ABS | Uniform boundedness for z^d + c preperiodic points (function fields; partial number-field results). Feeds the V8 arithmetic-dynamics view; read before any import. |
+| P. Morton, J. Silverman. Rational periodic points of rational functions. IMRN 1994 (uniform boundedness conjecture) | TO FETCH | The uniform-boundedness frame for RL-9. |
+| M. Shub, S. Smale 1995 Duke original: access attempt 2026-08-01 FAILED (Project Euclid paywall; author page TLS misconfigured). Statement remains triply confirmed (Rojas Def 1 + survey 4.5 + Koiran); direct read still queued. | TO FETCH | |

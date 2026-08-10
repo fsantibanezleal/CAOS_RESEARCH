@@ -1,0 +1,46 @@
+# Huneke-Wiegand extensions - state
+
+| date | from | to | reason |
+|---|---|---|---|
+| 2026-08-01 | proposed externally | scoped | public candidate and independent expert note audited; extension programme has an exact computational surface |
+| 2026-08-01 | scoped | opened | source-complete dossier, strategy, durable records, backlog and EXP-001 hypothesis written |
+| 2026-08-01 | opened | exploring | EXP-001 independently confirmed P1-P6 with Singular/4ti2, finite cross-check and adversarial control |
+| 2026-08-01 | exploring | analyzing | EXP-002 confirmed the exact non-Gorenstein endomorphism overring and its forced Ext/Tor escape map |
+| 2026-08-02 | analyzing | analyzing | EXP-004 independently certified the full published `F<69` frontier by exhaustive trees and 1,156 checked DRAT proofs |
+| 2026-08-02 | analyzing | consolidating | EXP-005 proved the least Frobenius value is 181 with checked proofs through 179 and the exact public model at 181 |
+| 2026-08-02 | consolidating | consolidating | warning-free seven-page preprint v0.01 published on Zenodo; public PDF hash matches the committed artifact exactly |
+| 2026-08-02 | consolidating | consolidating | PR #139 passed guards and tests and promoted the complete theorem, certificate and manuscript record to `develop` |
+| 2026-08-02 | consolidating | consolidating | EXP-007 certified the public pair as the unique normalized rigid pair at the minimum `F=181` |
+| 2026-08-02 | consolidating | consolidating | eight-page preprint v0.02 published on Zenodo with the minimum-layer theorem and exact public-file hash verification |
+| 2026-08-02 | consolidating | consolidating | PR #142 passed guards/tests and promoted EXP-007 plus preprint v0.02 to `develop` at `136781d0` |
+| 2026-08-10 | consolidating | exploring | EXP-006 Route K certified two UNSAT and eleven non-seed SAT parameters, opening the family-extraction gate |
+| 2026-08-10 | exploring | analyzing | EXP-008 refuted the first fixed-width interval ray and proved its layer-9 obstruction for every `q>=9` |
+| 2026-08-10 | analyzing | consolidating | EXP-009 proved an explicit infinite family for every integer `p>=4`; independent formula and semantic audit passes |
+| 2026-08-10 | consolidating | consolidating | 11-page preprint v0.03 published on Zenodo with the infinite-family theorem and exact public-file verification |
+| 2026-08-10 | consolidating | published | PR #145 passed guards/tests and promoted the complete research and publication round to `develop` at `8614bb9c` |
+
+Current state: **published**.
+
+EXP-001 provides the programme's independent calibration. External verification remains separate
+evidence and never substitutes for committed CAOS experiments.
+
+EXP-002 computes `v(End_R(I))=Gamma union {101,107,181}`, with Frobenius 125 and type 24.
+Dey--Lyle's exact hypotheses imply that rigidity descends to the commutative overring while
+reflexivity fails and three adjacent Ext/Tor groups must be nonzero. EXP-004 closes the published
+lower frontier through `F=67`. EXP-005 extends the certified range through 179 and validates the
+first model at 181, proving Frobenius minimality in the stated class. Preprint v0.01 is published
+at DOI `10.5281/zenodo.21763583`; Son Pham's counterexample discovery priority is explicit in the
+front matter and metadata. Preprint v0.02 is published at DOI `10.5281/zenodo.21764868` and EXP-007
+classifies the minimum layer completely: shift 14 is the only feasible shift and the public
+membership vector is the only semigroup there.
+
+EXP-006 Route K then found eleven independently validated non-seed models at even shifts 20--40,
+apart from certified UNSAT values 16 and 18. EXP-008 converted the first guessed interval ray into
+a uniform obstruction. EXP-009 reads that obstruction backwards and proves an explicit infinite
+family at `s=6p` for every `p>=4`, with multiplicity `24p`, Frobenius `78p-1`, conductor `78p`,
+and embedding dimension `11p`. This closes the family-existence question inside the stated
+two-generated monomial-ideal class. Manuscript v0.03 is published at DOI
+`10.5281/zenodo.21873911`; its 399,272-byte public PDF matches SHA-256
+`f2edff24e924a8d38bc7becd380a69f30fa6b2466c3f584802b829f14d1393cf` exactly. PR #145 promoted
+the complete round to `develop` at `8614bb9c`. The shared `main` release is owned by the active
+serialized-release session; broader classification and surviving-variant questions remain open.

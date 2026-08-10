@@ -1,0 +1,19 @@
+[22:57:15] EXP-001 start
+[22:57:15] PASS P1 Frobenius is 181
+[22:57:15] PASS P1 conductor is 182
+[22:57:15] PASS P1 genus is 91
+[22:57:15] PASS P1 Gamma is symmetric
+[22:57:15] PASS P2 first colon minima
+[22:57:15] PASS P2 second colon minima is the shift by 14
+[22:57:15] PASS P5 finite candidate equality
+[22:57:15] PASS P5 finite control rejects equality
+[22:57:15] PASS P6 mutated expectation is rejected
+[22:57:15] Singular start: control.sing
+[22:57:16] Singular done: control.sing, return=0, bytes=106
+[22:57:16] PASS P4 control quotient dimension is one
+[22:57:16] PASS P4 Singular control rejects equality
+[22:57:16] PASS P4 control emits residue witness
+[22:57:16] Singular start: candidate.sing
+[22:57:27] Singular done: candidate.sing, return=0, bytes=1384
+[22:57:27] PASS P1 candidate quotient dimension is one
+[22:57:27] FAIL AssertionError: P3 Singular candidate colon equality

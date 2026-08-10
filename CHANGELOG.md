@@ -3,6 +3,33 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.63.000], 2026-08-10
+
+### Added
+- The Huneke--Wiegand programme independently reproduces the public counterexample, proves
+  Frobenius minimum `181`, classifies the unique normalized pair at that minimum, and proves a
+  separate explicit infinite family. For every integer `p>=4`, the family has multiplicity `24p`,
+  Frobenius number `78p-1`, conductor `78p`, embedding dimension `11p`, and nonprincipal rigid
+  ideal `(t^(24p),t^(30p))`.
+- Huneke--Wiegand Route K carries accepted certificates at `s=16,18`, independently checked models
+  at every even `s=20,...,40`, a deductive obstruction for the first interval ray, and a separate
+  formula/semantic audit of the growing-interval family through `p=300`.
+- The tau-conjecture programme establishes the exact bottom census
+  `z_max(tau)=1,2,3,3,4,5,5` for `tau=1,...,7`, proves that the minimum gate count for six distinct
+  integer roots is `8`, and excludes the final-product route to an eight-gate seven-rooter while
+  preserving the final-sum/difference case as open.
+
+### Changed
+- The Huneke--Wiegand preprint v0.03 publishes the minimality, minimum-layer uniqueness, and
+  infinite-family theorems at immutable DOI `10.5281/zenodo.21873911`; its public 399,272-byte PDF
+  matches the committed SHA-256 exactly. Son Pham retains priority for the first public
+  counterexample.
+- The tau-conjecture census preprint v0.02 records the closed six-root threshold at immutable DOI
+  `10.5281/zenodo.21763182`, while the full conjecture and the residual eight-gate decision remain
+  open.
+- The serialized release bake folds every landed record through tau-conjecture PR #144 and
+  Huneke--Wiegand PR #145 into the cross-problem portfolio and experiment registries.
+
 ## [0.62.000], 2026-08-01
 
 ### Added

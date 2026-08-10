@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "title": "Frobenius minimality, minimum-layer uniqueness, and an infinite family of Huneke-Wiegand counterexamples",
+    "creators": [
+      {
+        "name": "Santibañez-Leal, Felipe",
+        "orcid": "0000-0002-0150-3246",
+        "affiliation": "CAOS open-research programme, Santiago, Chile"
+      }
+    ],
+    "description": "<p>Son Pham publicly identified the first counterexample to the Huneke-Wiegand conjecture in the class of two-generated monomial ideals over symmetric numerical semigroup rings, subsequently verified independently by Professor Craig Huneke. This preprint preserves that discovery priority and develops three separate extensions: Frobenius minimality, classification of the minimum layer, and an explicit infinite family.</p><p>Proof-carrying exact computation shows that the least Frobenius number is 181, attained by Pham's example at shift 14. Complete theorem-tree enumeration and 1,156 independently checked fixed-pair DRAT proofs reproduce the published range F&lt;69. A selector CNF gives accepted DRAT proofs for every odd F from 69 through 179 and recovers the exact public semigroup at F=181. Projected enumeration then proves that shift 14 and the public membership vector are unique at the minimum.</p><p>For every integer p&gt;=4, we give a deductive construction of a symmetric numerical semigroup with multiplicity 24p, Frobenius number 78p-1, conductor 78p, and embedding dimension 11p, carrying the nonprincipal rigid ideal (t^(24p),t^(30p)). Seven exact interval-sum identities prove closure, symmetry, generation, and the rigidity equality D=E+E. A finite exact campaign through p=300 and an independently implemented formula and semantic audit provide adversarial support but are not the proof of the infinite statement.</p><p>The results remain confined to numerical semigroup rings and two-generated monomial ideals. They do not classify arbitrary modules or arbitrary one-dimensional Gorenstein domains. Code, compact manifests, verdicts, symbolic proof, and verification instructions: https://github.com/fsantibanezleal/CAOS_RESEARCH.</p>",
+    "keywords": [
+      "Huneke-Wiegand conjecture",
+      "numerical semigroups",
+      "symmetric numerical semigroups",
+      "monomial ideals",
+      "Frobenius number",
+      "counterexample minimality",
+      "minimum-layer classification",
+      "infinite counterexample family",
+      "additive combinatorics",
+      "commutative algebra",
+      "proof-carrying computation",
+      "SAT",
+      "DRAT",
+      "experimental mathematics"
+    ],
+    "subjects": [
+      {
+        "term": "Commutative semigroups",
+        "identifier": "https://mathscinet.ams.org/msc/msc2020.html?t=20M14",
+        "scheme": "url"
+      }
+    ],
+    "license": "cc-by-4.0",
+    "related_identifiers": [
+      {
+        "relation": "isSupplementedBy",
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "resource_type": "software"
+      },
+      {
+        "relation": "references",
+        "identifier": "https://github.com/sonpham-org/huneke-wiegand-candidate-verification",
+        "resource_type": "software"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1016/j.jalgebra.2013.06.007",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1515/form.2011.151",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1080/00927872.2024.2362934",
+        "resource_type": "publication-article"
+      }
+    ],
+    "version": "0.03",
+    "language": "eng"
+  }
+}

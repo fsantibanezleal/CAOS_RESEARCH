@@ -1,0 +1,512 @@
+{
+ "cmax": 200,
+ "family_argmax": 2,
+ "family_zmax": 5,
+ "kmax": 4,
+ "per_c_nonzero": {
+  "1": {
+   "best_shape": {
+    "i": 0,
+    "j": 2,
+    "roots": [
+     -1,
+     0,
+     1
+    ],
+    "shape": "dos"
+   },
+   "m_form": null,
+   "tau_c": 0,
+   "z_max_shapes": 3
+  },
+  "110": {
+   "best_shape": {
+    "i": 0,
+    "j": 1,
+    "roots": [
+     -11,
+     -10,
+     10,
+     11
+    ],
+    "shape": "dos"
+   },
+   "m_form": 10,
+   "tau_c": 6,
+   "z_max_shapes": 4
+  },
+  "111": {
+   "best_shape": {
+    "i": 0,
+    "j": 2,
+    "roots": [
+     -11,
+     -10,
+     10,
+     11
+    ],
+    "shape": "dos"
+   },
+   "m_form": null,
+   "tau_c": 6,
+   "z_max_shapes": 4
+  },
+  "12": {
+   "best_shape": {
+    "i": 0,
+    "j": 1,
+    "roots": [
+     -4,
+     -3,
+     3,
+     4
+    ],
+    "shape": "dos"
+   },
+   "m_form": 3,
+   "tau_c": 4,
+   "z_max_shapes": 4
+  },
+  "13": {
+   "best_shape": {
+    "i": 0,
+    "j": 2,
+    "roots": [
+     -4,
+     -3,
+     3,
+     4
+    ],
+    "shape": "dos"
+   },
+   "m_form": null,
+   "tau_c": 5,
+   "z_max_shapes": 4
+  },
+  "132": {
+   "best_shape": {
+    "i": 0,
+    "j": 1,
+    "roots": [
+     -12,
+     -11,
+     11,
+     12
+    ],
+    "shape": "dos"
+   },
+   "m_form": 11,
+   "tau_c": 6,
+   "z_max_shapes": 4
+  },
+  "133": {
+   "best_shape": {
+    "i": 0,
+    "j": 2,
+    "roots": [
+     -12,
+     -11,
+     11,
+     12
+    ],
+    "shape": "dos"
+   },
+   "m_form": null,
+   "tau_c": 7,
+   "z_max_shapes": 4
+  },
+  "156": {
+   "best_shape": {
+    "i": 0,
+    "j": 1,
+    "roots": [
+     -13,
+     -12,
+     12,
+     13
+    ],
+    "shape": "dos"
+   },
+   "m_form": 12,
+   "tau_c": 6,
+   "z_max_shapes": 4
+  },
+  "157": {
+   "best_shape": {
+    "i": 0,
+    "j": 2,
+    "roots": [
+     -13,
+     -12,
+     12,
+     13
+    ],
+    "shape": "dos"
+   },
+   "m_form": null,
+   "tau_c": 7,
+   "z_max_shapes": 4
+  },
+  "182": {
+   "best_shape": {
+    "i": 0,
+    "j": 1,
+    "roots": [
+     -14,
+     -13,
+     13,
+     14
+    ],
+    "shape": "dos"
+   },
+   "m_form": 13,
+   "tau_c": 6,
+   "z_max_shapes": 4
+  },
+  "183": {
+   "best_shape": {
+    "i": 0,
+    "j": 2,
+    "roots": [
+     -14,
+     -13,
+     13,
+     14
+    ],
+    "shape": "dos"
+   },
+   "m_form": null,
+   "tau_c": 7,
+   "z_max_shapes": 4
+  },
+  "2": {
+   "best_shape": {
+    "i": 1,
+    "j": 2,
+    "roots": [
+     -2,
+     -1,
+     0,
+     1,
+     2
+    ],
+    "shape": "dos"
+   },
+   "m_form": 1,
+   "tau_c": 1,
+   "z_max_shapes": 5
+  },
+  "20": {
+   "best_shape": {
+    "i": 0,
+    "j": 1,
+    "roots": [
+     -5,
+     -4,
+     4,
+     5
+    ],
+    "shape": "dos"
+   },
+   "m_form": 4,
+   "tau_c": 4,
+   "z_max_shapes": 4
+  },
+  "21": {
+   "best_shape": {
+    "i": 0,
+    "j": 2,
+    "roots": [
+     -5,
+     -4,
+     4,
+     5
+    ],
+    "shape": "dos"
+   },
+   "m_form": null,
+   "tau_c": 5,
+   "z_max_shapes": 4
+  },
+  "3": {
+   "best_shape": {
+    "i": 0,
+    "j": 2,
+    "roots": [
+     -2,
+     -1,
+     1,
+     2
+    ],
+    "shape": "dos"
+   },
+   "m_form": null,
+   "tau_c": 2,
+   "z_max_shapes": 4
+  },
+  "30": {
+   "best_shape": {
+    "i": 0,
+    "j": 1,
+    "roots": [
+     -6,
+     -5,
+     5,
+     6
+    ],
+    "shape": "dos"
+   },
+   "m_form": 5,
+   "tau_c": 5,
+   "z_max_shapes": 4
+  },
+  "31": {
+   "best_shape": {
+    "i": 0,
+    "j": 2,
+    "roots": [
+     -6,
+     -5,
+     5,
+     6
+    ],
+    "shape": "dos"
+   },
+   "m_form": null,
+   "tau_c": 5,
+   "z_max_shapes": 4
+  },
+  "42": {
+   "best_shape": {
+    "i": 0,
+    "j": 1,
+    "roots": [
+     -7,
+     -6,
+     6,
+     7
+    ],
+    "shape": "dos"
+   },
+   "m_form": 6,
+   "tau_c": 5,
+   "z_max_shapes": 4
+  },
+  "43": {
+   "best_shape": {
+    "i": 0,
+    "j": 2,
+    "roots": [
+     -7,
+     -6,
+     6,
+     7
+    ],
+    "shape": "dos"
+   },
+   "m_form": null,
+   "tau_c": 6,
+   "z_max_shapes": 4
+  },
+  "56": {
+   "best_shape": {
+    "i": 0,
+    "j": 1,
+    "roots": [
+     -8,
+     -7,
+     7,
+     8
+    ],
+    "shape": "dos"
+   },
+   "m_form": 7,
+   "tau_c": 5,
+   "z_max_shapes": 4
+  },
+  "57": {
+   "best_shape": {
+    "i": 0,
+    "j": 2,
+    "roots": [
+     -8,
+     -7,
+     7,
+     8
+    ],
+    "shape": "dos"
+   },
+   "m_form": null,
+   "tau_c": 6,
+   "z_max_shapes": 4
+  },
+  "6": {
+   "best_shape": {
+    "i": 0,
+    "j": 1,
+    "roots": [
+     -3,
+     -2,
+     2,
+     3
+    ],
+    "shape": "dos"
+   },
+   "m_form": 2,
+   "tau_c": 3,
+   "z_max_shapes": 4
+  },
+  "7": {
+   "best_shape": {
+    "i": 0,
+    "j": 2,
+    "roots": [
+     -3,
+     -2,
+     2,
+     3
+    ],
+    "shape": "dos"
+   },
+   "m_form": null,
+   "tau_c": 4,
+   "z_max_shapes": 4
+  },
+  "72": {
+   "best_shape": {
+    "i": 0,
+    "j": 1,
+    "roots": [
+     -9,
+     -8,
+     8,
+     9
+    ],
+    "shape": "dos"
+   },
+   "m_form": 8,
+   "tau_c": 5,
+   "z_max_shapes": 4
+  },
+  "73": {
+   "best_shape": {
+    "i": 0,
+    "j": 2,
+    "roots": [
+     -9,
+     -8,
+     8,
+     9
+    ],
+    "shape": "dos"
+   },
+   "m_form": null,
+   "tau_c": 6,
+   "z_max_shapes": 4
+  },
+  "90": {
+   "best_shape": {
+    "i": 0,
+    "j": 1,
+    "roots": [
+     -10,
+     -9,
+     9,
+     10
+    ],
+    "shape": "dos"
+   },
+   "m_form": 9,
+   "tau_c": 5,
+   "z_max_shapes": 4
+  },
+  "91": {
+   "best_shape": {
+    "i": 0,
+    "j": 2,
+    "roots": [
+     -10,
+     -9,
+     9,
+     10
+    ],
+    "shape": "dos"
+   },
+   "m_form": null,
+   "tau_c": 6,
+   "z_max_shapes": 4
+  }
+ },
+ "violations": [
+  [
+   1,
+   "nonzero yield off m(m+1)",
+   3
+  ],
+  [
+   3,
+   "nonzero yield off m(m+1)",
+   4
+  ],
+  [
+   7,
+   "nonzero yield off m(m+1)",
+   4
+  ],
+  [
+   13,
+   "nonzero yield off m(m+1)",
+   4
+  ],
+  [
+   21,
+   "nonzero yield off m(m+1)",
+   4
+  ],
+  [
+   31,
+   "nonzero yield off m(m+1)",
+   4
+  ],
+  [
+   43,
+   "nonzero yield off m(m+1)",
+   4
+  ],
+  [
+   57,
+   "nonzero yield off m(m+1)",
+   4
+  ],
+  [
+   73,
+   "nonzero yield off m(m+1)",
+   4
+  ],
+  [
+   91,
+   "nonzero yield off m(m+1)",
+   4
+  ],
+  [
+   111,
+   "nonzero yield off m(m+1)",
+   4
+  ],
+  [
+   133,
+   "nonzero yield off m(m+1)",
+   4
+  ],
+  [
+   157,
+   "nonzero yield off m(m+1)",
+   4
+  ],
+  [
+   183,
+   "nonzero yield off m(m+1)",
+   4
+  ]
+ ]
+}

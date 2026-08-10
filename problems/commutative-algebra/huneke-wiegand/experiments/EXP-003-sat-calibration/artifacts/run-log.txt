@@ -1,0 +1,29 @@
+[23:16:39] EXP-003 start; Z3 4.16.0
+[23:17:14] PASS P1 pinned candidate is SAT
+[23:17:14] PASS P1 extracted model matches candidate
+[23:17:14] PASS independent checker expected_accept=True
+[23:17:14] PASS P2 exact finite window reaches 2F+1
+[23:17:14] PASS P2 proved tail starts after encoded window
+[23:17:14] PASS independent checker expected_accept=False
+[23:17:15] PASS P3 corrupted model is rejected
+[23:17:15] PASS P4 control gap s=1 fails direct rigidity
+[23:17:15] PASS P4 control gap s=1 has explicit witness
+[23:17:15] PASS P4 pinned control gap s=1 is UNSAT
+[23:17:15] PASS P4 control gap s=2 fails direct rigidity
+[23:17:15] PASS P4 control gap s=2 has explicit witness
+[23:17:15] PASS P4 pinned control gap s=2 is UNSAT
+[23:17:15] PASS P4 control gap s=3 fails direct rigidity
+[23:17:15] PASS P4 control gap s=3 has explicit witness
+[23:17:15] PASS P4 pinned control gap s=3 is UNSAT
+[23:17:15] PASS P4 control gap s=6 fails direct rigidity
+[23:17:15] PASS P4 control gap s=6 has explicit witness
+[23:17:15] PASS P4 pinned control gap s=6 is UNSAT
+[23:17:15] PASS P4 control gap s=7 fails direct rigidity
+[23:17:15] PASS P4 control gap s=7 has explicit witness
+[23:17:15] PASS P4 pinned control gap s=7 is UNSAT
+[23:17:16] PASS P4 control gap s=11 fails direct rigidity
+[23:17:16] PASS P4 control gap s=11 has explicit witness
+[23:17:16] PASS P4 pinned control gap s=11 is UNSAT
+[23:17:16] PASS P5 solver model passes independent exact checks
+[23:17:16] PASS P6 model hash recorded
+[23:17:16] EXP-003 CONFIRMED: P1-P6 pass

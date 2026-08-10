@@ -10,6 +10,7 @@ areas:
   - { slug: computation-complexity,  name: "Computation and complexity" }
   - { slug: optimization-geometry,   name: "Optimization and discrete geometry" }
   - { slug: mathematical-physics,    name: "Mathematical physics" }
+  - { slug: commutative-algebra,     name: "Commutative algebra and module theory" }
 problems:
   - { slug: jacobian-conjecture,   area: algebraic-geometry,     state: exploring, feasibility: A,  gpu: true,    opened: "2026-07-20" }
   - { slug: central-configurations, area: dynamical-systems,     state: exploring, feasibility: A,  gpu: true,    opened: "2026-07-23" }
@@ -26,3 +27,4 @@ problems:
   - { slug: p-vs-np,               area: computation-complexity, state: proposed,  feasibility: C,  gpu: partial }
   - { slug: centralizers,          area: dynamical-systems,      state: proposed,  feasibility: C,  gpu: false }
   - { slug: hodge,                 area: algebraic-geometry,     state: proposed,  feasibility: C,  gpu: false }
+  - { slug: huneke-wiegand,        area: commutative-algebra,    state: consolidating, feasibility: A,  gpu: false,   opened: "2026-08-01" }

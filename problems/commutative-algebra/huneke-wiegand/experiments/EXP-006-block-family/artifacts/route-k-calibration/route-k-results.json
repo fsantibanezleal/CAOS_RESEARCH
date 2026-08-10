@@ -1,0 +1,102 @@
+{
+  "mode": "calibrate",
+  "requested_shifts": [
+    14
+  ],
+  "completed_shifts": [
+    14
+  ],
+  "sat_shifts": [
+    14
+  ],
+  "unsat_shifts": [],
+  "unknown_shifts": [],
+  "aggregate_sha256": "f73abafcb73d34ad66540f6dcbc4c005ff2a167ffb52d5078a0fb85431017fef",
+  "seconds": 0.6488128999480978,
+  "toolchain": {
+    "cadical_version": "1.7.3",
+    "cadical_package": "cadical\t1.7.4-1",
+    "cadical_sha256": "7b73df0a6d9cf3c751a1948300e5baff8e82c4d39bcd88f0c063b5f5cfb8b33e",
+    "drat_trim_commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "drat_trim_sha256": "92f0aa9575ed519d66a99b8b1b3dde6ece4618ae4c202a3a4b200265dda0aa7a"
+  },
+  "queries": {
+    "14": {
+      "shift": 14,
+      "frobenius": 181,
+      "seconds": 0.39791759999934584,
+      "variables": 34216,
+      "clauses": 110309,
+      "solver_returncode": 10,
+      "cnf_bytes": 1873841,
+      "cnf_sha256": "7f4142604b799299fc4f5784f1c0e5d46a1ded839274e0134625a3c073951ea2",
+      "solver_log_sha256": "6dc1bb410fc93f240f8debe2bcf966785a08060a01bf98dd007e29c49a098e33",
+      "status": "SAT_VALIDATED",
+      "membership": "10000000000000000000000000000000000000000000000000000000111000011000001111111111111100010110010111000000000000001111100111100011111111111111111111111111111111111111111111111111111110",
+      "membership_sha256": "8bf4cd6f17f12068a5755533a6852f2c36fbe9cb704c17a778a94789745fd80b",
+      "validation": {
+        "accepted": true,
+        "failures": [],
+        "multiplicity": 56,
+        "level4_residues": [
+          0,
+          1,
+          2,
+          7,
+          8
+        ],
+        "level4_count": 5,
+        "level6_residues": [
+          3,
+          5,
+          6,
+          9,
+          11,
+          12,
+          13
+        ],
+        "level6_count": 7,
+        "level4_level6_overlap": [],
+        "rigidity": {
+          "rigid": true,
+          "first_missing_D": null,
+          "first_reverse_failure": null,
+          "minimum_inverse": 56,
+          "window_end": 363,
+          "tail_start": 238
+        },
+        "minimal_generators": [
+          56,
+          57,
+          58,
+          63,
+          64,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          87,
+          89,
+          90,
+          93,
+          95,
+          96,
+          97
+        ],
+        "generalized_arithmetic_presentation": null
+      },
+      "corruption_rejected": true,
+      "corruption_first_failure": "symmetry fails at 70"
+    }
+  }
+}

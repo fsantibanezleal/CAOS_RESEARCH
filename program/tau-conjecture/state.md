@@ -1,22 +1,66 @@
 # Shub-Smale tau conjecture: state (heartbeat)
 
 - **State:** exploring (opened 2026-08-01; scoped 2026-07-20).
-- **Done (2026-08-01, opening round):** full deep-research pass persisted;
-  program record written. **EXP-001 CONFIRMED**: enumerator anchored to
-  Markstroem's published integer census (14/14 anchors, depths 1-7);
-  polynomial census decision-complete for tau <= 4: z_max = 1, 2, 3, 3.
-- **Done (2026-08-01, round 2):** Rojas math/0304100 read in full (p-adic
-  digit reduction; valuation-spectrum window [s, s(s+1)/2]; real logistic
-  factory pinned). Approaches evaluation + research-lines board RL-1..6
-  persisted; two new views adopted (dual cost-of-root-set T(S); valuation-
-  spectrum instrumentation). tclib package + 5-test suite (green).
-  **EXP-002 CONFIRMED** (64 s, depth 5 exhausted, 778,087 states):
-  z_max(5) = 4; minimal tau for 4 distinct integer roots = 5; records are
-  difference-of-squares splittings on the Chebyshev-conjugate map x^2 - 2
-  (the integer shadow of the real root factory); all record spectra {0,1}.
-  Wiki 01 transcribed.
-- **Now:** round closed; nothing running.
-- **Next:** TCB-005 canonicalization lemmas + sympy cross-check (the
-  declared prerequisite for the depth-6 census); RL-4 first lemma target
-  (iterated x^2 - 2 over Z); TCB-002 read the Shub-Smale Duke original;
-  wiki 02/03 transcription.
+- **Done (2026-08-01, rounds 1-3):** problem opened with full primary-
+  source pass; EXP-001 (census anchored to Markstroem 14/14;
+  z_max(1..4) = 1,2,3,3); EXP-002 (z_max(5) = 4; DOS/Chebyshev
+  mechanism); Chebyshev-tower lemma proved; last-gate lemma; EXP-003
+  (z_max(6) = 5 via the multiply-by-x move; our prediction refuted);
+  sympy cross-check 284/284; wiki 01-03; approaches evaluation +
+  research lines RL-1..6.
+- **Done (2026-08-01, rounds 4-5):** monic stall theorem PROVED (single-
+  map towers depth-independently bounded for any monic degree >= 2);
+  views V5-V8 minted (SAT lane, bottom law, moves calculus, arithmetic
+  dynamics) + RL-7..9; **EXP-005 CONFIRMED** (family loophole EMPTY for
+  x^2 - c, c <= 200: max yield 5 only at c = 2; DISCOVERED the 2-cycle
+  series c = m^2+m+1; classical cycle-length <= 2 ceiling closes the
+  iteration flank); **EXP-004 CONFIRMED** (z_max(7) = 5: the bottom law
+  BREAKS; sequence 1,2,3,3,4,5,5 with plateaus at 4 and 7; depth-6
+  frontier 25,844,905 states exact; 2,013,706 depth-7 polynomials;
+  min tau for 6 roots in [8,9]). Wiki 04 transcribed; 03 updated.
+- **Done (2026-08-01, round 6):** the census MANUSCRIPT written from the
+  verdicts, built, and PUBLISHED on Zenodo: v0.01, CC-BY-4.0, version
+  DOI 10.5281/zenodo.21753439, concept DOI 10.5281/zenodo.21753438
+  (record live, 200). TCB-022 done.
+- **Now:** rounds closed; nothing running.
+- **Next:** close the [8,9] window for 6 roots (TCB-021: RL-8 moves
+  hunt, then RL-7 SAT decision); TCB-005 canonicalization or compiled
+  backend for depth 8; reads (Doyle-Poonen, Narkiewicz, Cheng full);
+  wiki 05 (open questions); manuscript updates ship as Zenodo NEW
+  VERSIONS on the same concept DOI.
+
+## Round 7 (2026-08-02)
+
+- **EXP-006 CONFIRMED: THE WINDOW IS CLOSED: minimal tau for 6 distinct
+  integer roots = 8.** The times-case reduction (final gate x reduces to
+  root-set co-occurrence) scanned all 25,844,905 depth-6 states in 2h23m:
+  408 witnesses; three reconstructed as explicit 8-gate programs and
+  verified independently. Our emptiness prediction REFUTED (third time);
+  the five-rooter taxonomy corrected (7 root-set patterns, incl.
+  non-consecutive). The hunt confirmed its own blind spot (chained
+  subtraction sharing beats independent constant builds).
+- Paper v0.02 PUBLISHED as a Zenodo new version: DOI
+  10.5281/zenodo.21763182 (concept unchanged 10.5281/zenodo.21753438);
+  metadata synced. SAT design note persisted (EXP-007 groundwork,
+  rescoped to z_max(8)).
+- Wiki 03/05 updated/written. Next: TCB-025 (max union re-scan), TCB-005
+  (depth-8 backend), TCB-026 (punctured root sets anatomy), reads.
+
+## Round 8 (2026-08-02)
+
+- **EXP-007 CONFIRMED** (3h07m, complete; 408 anchor reproduced): max
+  union = 6: NO 8-gate seven-rooter via final multiplication (our first
+  surviving emptiness prediction); z_max(8) = 6 unless a final-pm 8-gate
+  7-rooter exists (SAT residual, TCB-029). Seven-root threshold in
+  [8, 10] (10-gate witness explicit).
+- **Digit census (V9) measured through tau = 7**: odd-root ladder
+  1,2,2,2,2,3,4 (prediction "max 3" REFUTED, fourth refutation: the
+  digit world has its OWN record family, (x^2-1)(x^2-9) at 7 gates,
+  roots {+-1,+-3} all odd); p=3 ladder 1,1,1,2,2,3,3.
+- **Punctured anatomy (TCB-026) closed**: two-center DOS products
+  x^2(x^2-1)(x-2)(x-4); the hole is the second DOS center.
+- V10 (three-worlds trichotomy) persisted; KPT15 pinned precisely;
+  TCB-027/028/029 minted. Paper v0.03 queued DELIBERATELY (with the
+  z_max(8) resolution).
+- **Next:** TCB-029 (SAT final-pm decision at 8), then v0.03; TCB-027
+  mod-p instrumentation; TCB-005 depth-8 backend as the larger goal.

@@ -1,0 +1,139 @@
+{
+  "verdict": "CONFIRMED",
+  "predictions": {
+    "P1": "PASS",
+    "P2": "PASS",
+    "P3": "PASS",
+    "P4": "PASS",
+    "P5": "PASS",
+    "P6": "PASS"
+  },
+  "solver": {
+    "name": "Z3",
+    "version": "4.16.0",
+    "timeout_ms": 300000
+  },
+  "candidate": {
+    "status": "sat",
+    "seconds": 34.510367100010626,
+    "constraint_count": 9103,
+    "membership_sha256": "8bf4cd6f17f12068a5755533a6852f2c36fbe9cb704c17a778a94789745fd80b"
+  },
+  "candidate_checker": {
+    "accepted": true,
+    "violations": [],
+    "frobenius": 181,
+    "shift": 14,
+    "minimum_inverse": 56,
+    "checked_window": [
+      0,
+      363
+    ],
+    "tail_start": 238,
+    "missing_from_sum": [],
+    "reverse_failures": [],
+    "representation_count": 244,
+    "representation_sha256": "1744011a892151b54028493fa6253ae2a71608f66ce30eac0679a7d3d722c96a",
+    "first_representations": {
+      "112": [
+        56,
+        56
+      ],
+      "113": [
+        56,
+        57
+      ],
+      "114": [
+        56,
+        58
+      ],
+      "115": [
+        57,
+        58
+      ],
+      "116": [
+        58,
+        58
+      ],
+      "119": [
+        56,
+        63
+      ],
+      "120": [
+        56,
+        64
+      ],
+      "121": [
+        57,
+        64
+      ],
+      "122": [
+        58,
+        64
+      ],
+      "126": [
+        63,
+        63
+      ],
+      "127": [
+        63,
+        64
+      ],
+      "128": [
+        64,
+        64
+      ]
+    },
+    "membership_bitstring": "10000000000000000000000000000000000000000000000000000000111000011000001111111111111100010110010111000000000000001111100111100011111111111111111111111111111111111111111111111111111110"
+  },
+  "controls": {
+    "1": {
+      "solver": {
+        "status": "unsat",
+        "seconds": 0.19487519998801872,
+        "constraint_count": 93
+      },
+      "first_missing_D_value": 14
+    },
+    "2": {
+      "solver": {
+        "status": "unsat",
+        "seconds": 0.16262640000786632,
+        "constraint_count": 93
+      },
+      "first_missing_D_value": 8
+    },
+    "3": {
+      "solver": {
+        "status": "unsat",
+        "seconds": 0.19255550001980737,
+        "constraint_count": 93
+      },
+      "first_missing_D_value": 9
+    },
+    "6": {
+      "solver": {
+        "status": "unsat",
+        "seconds": 0.17899470002157614,
+        "constraint_count": 93
+      },
+      "first_missing_D_value": 4
+    },
+    "7": {
+      "solver": {
+        "status": "unsat",
+        "seconds": 0.1855220000143163,
+        "constraint_count": 93
+      },
+      "first_missing_D_value": 5
+    },
+    "11": {
+      "solver": {
+        "status": "unsat",
+        "seconds": 0.17964639997808263,
+        "constraint_count": 93
+      },
+      "first_missing_D_value": 4
+    }
+  }
+}
