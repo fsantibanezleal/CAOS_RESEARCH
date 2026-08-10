@@ -19,7 +19,7 @@ from hwcert import (  # noqa: E402
     minimal_generators,
     validate_symmetric_mask,
 )
-from hwcert.semigroup import member, multiplicity  # noqa: E402
+from hwcert.semigroup import multiplicity  # noqa: E402
 
 
 def closed_interval(left: int, right: int) -> set[int]:
