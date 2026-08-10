@@ -1,7 +1,10 @@
-# EXP-009 - two-interval Kunz-face search
+# EXP-010 - two-interval Kunz-face search
 
-Declared 2026-08-10 before implementation or solver queries. Phase HW-P4, Route A redirection.
-Trigger: EXP-008 proves that fixed-width carried coverage fails uniformly from `q=9` onward.
+Declared 2026-08-10 before implementation or solver queries. Renumbered before computation when
+the earlier EXP-009 growing-interval construction landed concurrently. Phase HW-P4, Route A
+redirection. Trigger: EXP-008 proves that fixed-width carried coverage fails uniformly from `q=9`
+onward. EXP-010 is secondary to EXP-009 and runs only if the stronger explicit construction does
+not close the family question.
 
 ## Question
 
@@ -89,6 +92,6 @@ pin level-4 membership exactly to `A(q,a)`, and leave level 6 and all higher mem
 ## Exploration moment
 
 EXP-008 showed that the correct invariant is not visual block similarity but endpoint coverage in
-four additive layers. EXP-009 moves from one guessed ray to a classified low-dimensional Kunz
+four additive layers. EXP-010 moves from one guessed ray to a classified low-dimensional Kunz
 face: `A` is derived from the layer-8 identity, while SAT is used only to decide whether a
 compatible `B` exists. The next recognition target is the feasible region in `(q,a)`.
