@@ -1,10 +1,11 @@
 # Frobenius-minimality preprint
 
-`main.tex` and `main.pdf` are version 0.03 of the CAOS Research preprint. It proves that the public
+`main.tex` and `main.pdf` are version 0.04 of the CAOS Research preprint. It proves that the public
 Huneke-Wiegand numerical-semigroup counterexample has the least possible Frobenius number, 181,
 and is the unique normalized pair attaining that minimum within the nonprincipal two-generated
 monomial-ideal class. It also proves an explicit infinite family in the same class for every
-integer parameter `p>=4`.
+integer parameter `p>=4`, and determines the endomorphism overring and its invariants uniformly
+across that family.
 
 Attribution is binding: Son Pham discovered the first public counterexample; CAOS contributes the
 certified minimality, minimum-layer uniqueness, and parametric-family extensions. Professor Craig
@@ -29,12 +30,14 @@ Zenodo identifiers:
 - version 0.01 DOI: `10.5281/zenodo.21763583` (frozen)
 - version 0.02 DOI: `10.5281/zenodo.21764868`
 - version 0.03 DOI: `10.5281/zenodo.21873911`
+- version 0.04 DOI: `10.5281/zenodo.21876338` (reserved; publication verification pending)
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-010 under
+Evidence sources are EXP-001 through EXP-011 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
-finite exact campaign, formula-independent auditor, and adversarial controls.
+finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
+uniform endomorphism-overring proof, two-route campaign, independent auditor, and negative controls.
 
 Version 0.02 remains frozen with this public-file verification:
 
@@ -52,3 +55,13 @@ Version 0.03 public-file verification:
   references, overfull boxes, or underfull boxes
 - the concept latest resolves to record `21873911`; public title, version, sole author/ORCID,
   CC-BY-4.0 licence, filename, bytes, MD5, and SHA-256 match the committed record
+
+Version 0.04 frozen pre-publication artifact:
+
+- bytes: `491757`
+- MD5: `248297d0a833ba21dce27d738a50e92f`
+- SHA-256: `025cea4c59c4301ff6925cfe43353c7ac1c6cd8b4fc56a8c6d648347f418e825`
+- all 12 pages passed rendered inspection; the two-pass build has no LaTeX warnings, undefined
+  references, overfull boxes, or underfull boxes
+- public-record and downloaded-file verification remain pending until reserved record `21876338`
+  is published
