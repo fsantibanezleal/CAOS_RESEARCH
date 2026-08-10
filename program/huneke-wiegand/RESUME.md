@@ -1,7 +1,8 @@
 # Huneke-Wiegand extensions - session handoff
 
 Updated: 2026-08-10. Lifecycle: published. EXP-009 proves an infinite family, manuscript v0.03
-is published, and PR #145 promoted the complete round to `develop` at `8614bb9c`.
+is published, PR #145 promoted the research round to `develop`, and release v0.63.000 promoted
+the tested state through PRs #146 and #147 to tag `v0.63.000` on `main`.
 
 ## 1. State in one screen
 
@@ -112,11 +113,10 @@ campaign is supporting evidence, not the proof.
 
 ## 5. Next actions
 
-1. Let the active serialized-release owner fold `develop` into `main`; do not compete for the
-   shared release files or release gate.
-2. Resume the surviving-variants matrix and optional classification of the EXP-009 family or
+1. Resume the surviving-variants matrix and optional classification of the EXP-009 family or
    nearby Kunz faces as a separately declared research round.
-3. Keep EXP-010 inactive: its old conditional gate was superseded when EXP-009 succeeded.
+2. Keep EXP-010 inactive: its old conditional gate was superseded when EXP-009 succeeded.
+3. Treat release `v0.63.000` as the frozen public repository baseline for subsequent work.
 
 ## 7. Gotchas
 

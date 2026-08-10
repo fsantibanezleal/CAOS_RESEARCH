@@ -181,3 +181,14 @@
   `8614bb9ccadd34b0c4ffd0d0c2c213979f998631`. A separate active session already owns the
   serialized `develop`-to-`main` release, so this handoff did not touch its shared derived
   manifests or version files.
+
+## 2026-08-10 - repository release v0.63.000
+
+- Folded the landed Huneke--Wiegand and tau-conjecture research records into the shared experiment
+  and portfolio registries and advanced the coordinated repository version to `0.63.000`.
+- PR `#146` passed `guards` and `test` and merged the release candidate into `develop` at
+  `0fb2e388fca35dac8953278b12104d404d2f095b`.
+- PR `#147` passed both CI jobs and promoted that exact tested `develop` state to `main` at
+  `4768310d283bfdc23d6df65479a2f785bf2361e1`.
+- Annotated tag `v0.63.000` points to the verified `main` merge. The tag and all commits retain
+  Felipe Santibanez-Leal's configured human authorship without LLM author or co-author trailers.

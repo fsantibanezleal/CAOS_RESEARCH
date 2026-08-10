@@ -18,6 +18,7 @@
 | 2026-08-10 | analyzing | consolidating | EXP-009 proved an explicit infinite family for every integer `p>=4`; independent formula and semantic audit passes |
 | 2026-08-10 | consolidating | consolidating | 11-page preprint v0.03 published on Zenodo with the infinite-family theorem and exact public-file verification |
 | 2026-08-10 | consolidating | published | PR #145 passed guards/tests and promoted the complete research and publication round to `develop` at `8614bb9c` |
+| 2026-08-10 | published | published | release v0.63.000 passed CI in PRs #146/#147, reached `main` at `4768310d`, and was tagged `v0.63.000` |
 
 Current state: **published**.
 
@@ -42,5 +43,6 @@ and embedding dimension `11p`. This closes the family-existence question inside 
 two-generated monomial-ideal class. Manuscript v0.03 is published at DOI
 `10.5281/zenodo.21873911`; its 399,272-byte public PDF matches SHA-256
 `f2edff24e924a8d38bc7becd380a69f30fa6b2466c3f584802b829f14d1393cf` exactly. PR #145 promoted
-the complete round to `develop` at `8614bb9c`. The shared `main` release is owned by the active
-serialized-release session; broader classification and surviving-variant questions remain open.
+the complete round to `develop` at `8614bb9c`. Release v0.63.000 then passed both CI jobs in PR
+#146, merged from `develop` to `main` through PR #147 at `4768310d`, and was tagged
+`v0.63.000`. Broader classification and surviving-variant questions remain open.
