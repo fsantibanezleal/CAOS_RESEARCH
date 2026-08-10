@@ -1,7 +1,7 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-10. Lifecycle: consolidating. EXP-009 proves an infinite family and manuscript
-v0.03 is published; repository promotion is the active gate.
+Updated: 2026-08-10. Lifecycle: published. EXP-009 proves an infinite family, manuscript v0.03
+is published, and PR #145 promoted the complete round to `develop` at `8614bb9c`.
 
 ## 1. State in one screen
 
@@ -112,10 +112,11 @@ campaign is supporting evidence, not the proof.
 
 ## 5. Next actions
 
-1. Promote the full research round through PR to `develop`, then reconcile the management mirror.
-2. Promote the serialized release from `develop` to `main` if the release gate remains clear.
-3. Only afterward resume the surviving-variants matrix and optional classification of the
-   EXP-009 family/nearby Kunz faces. Do not execute EXP-010 as if it were still gated.
+1. Let the active serialized-release owner fold `develop` into `main`; do not compete for the
+   shared release files or release gate.
+2. Resume the surviving-variants matrix and optional classification of the EXP-009 family or
+   nearby Kunz faces as a separately declared research round.
+3. Keep EXP-010 inactive: its old conditional gate was superseded when EXP-009 succeeded.
 
 ## 7. Gotchas
 

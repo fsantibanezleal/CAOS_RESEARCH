@@ -176,3 +176,8 @@
   and SHA-256 `f2edff24e924a8d38bc7becd380a69f30fa6b2466c3f584802b829f14d1393cf`, exactly matching the
   committed PDF. Public title, version, sole author/ORCID, CC-BY-4.0 licence, and filename also
   match.
+- PR `#145` passed `guards` and `test`, was marked ready, and merged the complete Route K,
+  EXP-008/009, and v0.03 publication round into `develop` at
+  `8614bb9ccadd34b0c4ffd0d0c2c213979f998631`. A separate active session already owns the
+  serialized `develop`-to-`main` release, so this handoff did not touch its shared derived
+  manifests or version files.
