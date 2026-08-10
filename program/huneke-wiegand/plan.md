@@ -49,3 +49,21 @@ Route K must search constrained blocks before any new family hypothesis. EXP-007
 separate minimum-layer classification: the public `(Gamma,14)` pair is the unique normalized pair
 at `F=181`, supported by projected enumeration and accepted terminal proofs. This strengthens the
 published theorem within its original class but does not broaden it to arbitrary modules or rings.
+
+## 2026-08-10 family gate
+
+HW-P4 is closed. EXP-006 Route K certified nonexistence at `s=16,18` inside its scaffold and found
+eleven non-seed models at every even `s=20,...,40`. EXP-008 refuted the first fixed-width affine
+ray and proved that its layer-9 coverage hole persists for every `q>=9`. EXP-009 repaired exactly
+that endpoint mismatch and proves an infinite family for `s=6p`, every integer `p>=4`.
+
+The strongest path is now consolidation, not additional SAT scouting:
+
+1. publish the family theorem as manuscript v0.03 with the finite computations clearly separated
+   from the symbolic proof;
+2. promote the complete experiment and publication record through the repository PR path;
+3. resume HW-P5 with surviving variants and classification of the new family only after the
+   publication state is immutable and verified.
+
+EXP-010 is superseded without a run because its explicit execution gate required EXP-009 to fail.
+It remains a frozen possible classification question, not a current experiment result.
