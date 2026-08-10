@@ -16,6 +16,9 @@ Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
 4. uniqueness of the normalized pair at that minimum (EXP-007); and
 5. an explicit infinite family of counterexamples in the same class (EXP-009).
 
+EXP-011 is declared but not yet run. It tests whether the EXP-002 endomorphism-overring anatomy
+extends uniformly to the entire EXP-009 family.
+
 The public seed is
 
 ```text
@@ -34,6 +37,7 @@ I = (t^56,t^70)R.
 | `E_s,D_s` | exponent sets whose equality `D_s=E_s+E_s` is the rigidity criterion | EXP-001/003 |
 | `Gamma_p` | growing-interval semigroup for every integer `p>=4` | EXP-009 theorem |
 | `I_p` | `(t^(24p),t^(30p))` over the localized ring of `Gamma_p` | EXP-009 theorem |
+| `Lambda_p` | predicted value semigroup of `End_(R_p)(I_p)`, with a new level-7 block | EXP-011 hypothesis, unrun |
 | minimum layer | all normalized rigid pairs at the least Frobenius value 181 | EXP-005/007 |
 
 ## 2a. Infinite family theorem
@@ -82,6 +86,7 @@ campaign is supporting evidence, not the proof.
 | EXP-008 | REFUTED | proposed fixed-width family fails for every `q>=9` at the layer-9 residue-7 obstruction |
 | EXP-009 | CONFIRMED | explicit infinite family for every integer `p>=4`; independent formula/semantic audit passes |
 | EXP-010 | SUPERSEDED | no run; declared conditional gate became false when EXP-009 succeeded |
+| EXP-011 | DECLARED | uniform endomorphism-overring formula and family-wide escape mechanism; no run yet |
 
 ## 3a. Exact evidence anchors
 
@@ -101,6 +106,19 @@ campaign is supporting evidence, not the proof.
 
 ## 4. In flight
 
+EXP-011 is declared before implementation or execution. With `s=6p`, it predicts
+
+```text
+Q_p = [p+1,2p-2] union {2p,4p},
+Lambda_p = Gamma_p union (7s+Q_p) union {13s-1}.
+```
+
+The expected invariants are multiplicity `24p`, Frobenius `54p-1`, conductor `54p`, genus
+`38p-1`, and embedding dimension `12p`. The finite two-route campaign must be followed by a
+symbolic block proof before any infinite or Dey-Lyle family claim is accepted.
+
+Published baseline:
+
 - v0.01 DOI `10.5281/zenodo.21763583`: Frobenius minimality.
 - v0.02 DOI `10.5281/zenodo.21764868`: minimum-layer uniqueness. Public PDF SHA-256
   `93a07d124c7b3f2cf144a5343d31ca40e312a80d99308b3ef567c7065f126bb9`.
@@ -113,10 +131,21 @@ campaign is supporting evidence, not the proof.
 
 ## 5. Next actions
 
-1. Resume the surviving-variants matrix and optional classification of the EXP-009 family or
-   nearby Kunz faces as a separately declared research round.
-2. Keep EXP-010 inactive: its old conditional gate was superseded when EXP-009 succeeded.
-3. Treat release `v0.63.000` as the frozen public repository baseline for subsequent work.
+1. Implement the two independent EXP-011 routes and corruption controls without importing the
+   EXP-009 campaign implementation.
+2. Run `python problems/commutative-algebra/huneke-wiegand/experiments/EXP-011-endomorphism-family/run.py`
+   inside the repository `.venv`; stop on the first exact mismatch.
+3. Run the separate audit, then write a symbolic proof and verdict only if both routes agree.
+4. Keep EXP-010 inactive unless EXP-011 exposes a specific unresolved nearby-face question.
+
+### Lenses ledger
+
+- Exclusion: positive theorem hypotheses are tested against exact family invariants, not guessed.
+- Anatomy: EXP-011 upgrades the seed-only endomorphism calculation to a parametric question.
+- Invariant: adjacent blocks `V_k intersect V_(k+1)` decide the proposed overring without SAT.
+- External dialogue: current primary records and the public candidate repository were rechecked;
+  no parametric endomorphism theorem was identified.
+- Adversarial: generated-semigroup/Apéry reconstruction and corrupted block formulas are required.
 
 ## 7. Gotchas
 

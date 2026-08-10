@@ -68,3 +68,12 @@ scouting:
 
 EXP-010 is superseded without a run because its explicit execution gate required EXP-009 to fail.
 It remains a frozen possible classification question, not a current experiment result.
+
+## 2026-08-10 post-publication classification gate
+
+HW-P5 is now active through EXP-011. The invariant-first route computes the endomorphism overring
+of every EXP-009 family member from adjacent value-set blocks, before considering any nearby-face
+SAT classification. The predicted exact formula adds a level-7 block
+`[p+1,2p-2] union {2p,4p}` and the old Frobenius singleton. A successful symbolic proof would
+upgrade the seed-only EXP-002 escape mechanism to the full infinite family. EXP-010 remains frozen
+unless this structural route leaves a specific Kunz-face question that cannot be decided directly.

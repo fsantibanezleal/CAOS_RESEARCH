@@ -192,3 +192,16 @@
   `4768310d283bfdc23d6df65479a2f785bf2361e1`.
 - Annotated tag `v0.63.000` points to the verified `main` merge. The tag and all commits retain
   Felipe Santibanez-Leal's configured human authorship without LLM author or co-author trailers.
+
+## 2026-08-10 - EXP-011 declared
+
+- Reopened HW-P5 after the v0.63.000 baseline, without reopening the closed family-existence claim.
+- Rechecked the primary endomorphism/reflexivity source, the generalized-arithmetic positive
+  source, and the public candidate repository before computation. No existing parametric
+  endomorphism-family result was identified; the negative novelty search is not treated as proof.
+- Derived the invariant-first prediction
+  `Lambda_p=Gamma_p union (7s+Q_p) union {13s-1}`, where
+  `Q_p=[p+1,2p-2] union {2p,4p}`, from adjacent blocks of
+  `V_p=Gamma_p union (s+Gamma_p)`.
+- Declared EXP-011 before implementation or execution. The finite campaign will support, not
+  replace, a symbolic uniform proof.

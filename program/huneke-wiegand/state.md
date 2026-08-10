@@ -19,6 +19,7 @@
 | 2026-08-10 | consolidating | consolidating | 11-page preprint v0.03 published on Zenodo with the infinite-family theorem and exact public-file verification |
 | 2026-08-10 | consolidating | published | PR #145 passed guards/tests and promoted the complete research and publication round to `develop` at `8614bb9c` |
 | 2026-08-10 | published | published | release v0.63.000 passed CI in PRs #146/#147, reached `main` at `4768310d`, and was tagged `v0.63.000` |
+| 2026-08-10 | published | published | EXP-011 declared a post-publication classification round for the uniform endomorphism overring of the EXP-009 family |
 
 Current state: **published**.
 
