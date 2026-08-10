@@ -4,6 +4,11 @@ Declared 2026-08-10 before implementation, the formal parameter sweep, or the sy
 Phase HW-P4, Route A. EXP-008 is refuted because its carried level-4 sum interval has fixed width;
 this experiment makes that width grow.
 
+Pre-run erratum, 2026-08-10: P3 originally said embedding dimension `11p-1`. Before implementation
+or any EXP-009 run, direct cardinality bookkeeping gave `|A|=2p`, `|B|=3p`, and a level-5 block
+of size `6p`, hence the correct predicted embedding dimension is `11p`. The construction and every
+other prediction are unchanged.
+
 ## Question and construction
 
 For every integer `p>=4`, set
@@ -68,7 +73,7 @@ which holds exactly when `p>=4`. This is the invariant-first reason for the decl
 - P2: the seven displayed residue-sum identities hold exactly throughout the sweep and reduce to
   affine endpoint inequalities valid for every integer `p>=4`.
 - P3: the displayed lower membership blocks generate exactly `Gamma_p`, with multiplicity `4s`,
-  Frobenius `13s-1`, conductor `13s`, and embedding dimension `11p-1`.
+  Frobenius `13s-1`, conductor `13s`, and embedding dimension `11p`.
 - P4: `I_p` is nonprincipal because `s` is a gap and rigid because `D=E+E`; hence the construction
   gives infinitely many counterexamples in the two-generated monomial-ideal class.
 - P5: every `Gamma_p` is outside the generalized-arithmetic-sequence positive family: membership
