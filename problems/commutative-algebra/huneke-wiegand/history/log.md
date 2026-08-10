@@ -139,3 +139,40 @@
   `93a07d124c7b3f2cf144a5343d31ca40e312a80d99308b3ef567c7065f126bb9` exactly.
 - PR `#142` passed `guards` and `test`, was marked ready, and merged the complete EXP-007 and
   v0.02 publication round into `develop` at `136781d023752234697aaa1c86ce1f10dffff9c3`.
+
+## 2026-08-10 - Route K and infinite-family theorem
+
+- Froze the broad Route K decision problem before queries: `m=4s`, `F=13s-1`, a full level-5
+  block, and exact rigidity, with no arbitrary cardinality restriction on the variable blocks.
+- Reproduced the public seed at `s=14`. Certified `s=16,18` UNSAT and independently validated
+  SAT models for every even `s=20,...,40`, opening Route A with eleven non-seed examples.
+- Independently audited 27 Route K queries, freshly checked 12 UNSAT proofs and rehashed 80
+  external files totaling 354,465,653 bytes.
+- EXP-008's first interval formula passed at `q=6,7,8` but failed at `q=9`; the exact witness
+  `9s+7` proves the same formula non-rigid for every `q>=9`.
+- Declared EXP-009 before implementation. Its growing-width block formula passed every `p=4,...,300`,
+  reproduced Route K hashes at `p=4,5`, rejected both boundary parameters and corrupted controls,
+  and passed an independent formula/semantic audit.
+- Proved symbolically that for every integer `p>=4` the construction gives a symmetric numerical
+  semigroup of multiplicity `24p`, Frobenius `78p-1`, conductor `78p`, and embedding dimension
+  `11p`, with a nonprincipal rigid ideal `(t^(24p),t^(30p))`.
+- Preserved Son Pham's priority for the first public counterexample. The CAOS claim is the separate
+  parametric extension, within numerical semigroup rings and two-generated monomial ideals.
+- Closed EXP-010 as SUPERSEDED WITHOUT RUN because its declared gate required EXP-009 not to close
+  the family question. Triggered manuscript v0.03 and Zenodo new-version consolidation.
+
+## 2026-08-10 - infinite-family preprint v0.03 published
+
+- Expanded the manuscript to 11 pages with the Route K/EXP-008 extraction path, exact parametric
+  blocks, seven residue identities, and the deductive infinite-family theorem. Felipe
+  Santibanez-Leal remains the sole author; Son Pham's discovery priority is explicit.
+- Tightened the high-layer rigidity coverage and local-ring nonprincipality argument during the
+  claim audit. Built twice with no LaTeX warnings, undefined references, overfull boxes, or
+  underfull boxes, and inspected all 11 rendered pages.
+- Published Zenodo version DOI `10.5281/zenodo.21873911`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21873911`. Versions v0.01 and v0.02 remain
+  frozen.
+- A fresh public download is 399,272 bytes with MD5 `bd9767de4a530150073f654c76ba84a0`
+  and SHA-256 `f2edff24e924a8d38bc7becd380a69f30fa6b2466c3f584802b829f14d1393cf`, exactly matching the
+  committed PDF. Public title, version, sole author/ORCID, CC-BY-4.0 licence, and filename also
+  match.

@@ -13,6 +13,10 @@
 | 2026-08-02 | consolidating | consolidating | EXP-007 certified the public pair as the unique normalized rigid pair at the minimum `F=181` |
 | 2026-08-02 | consolidating | consolidating | eight-page preprint v0.02 published on Zenodo with the minimum-layer theorem and exact public-file hash verification |
 | 2026-08-02 | consolidating | consolidating | PR #142 passed guards/tests and promoted EXP-007 plus preprint v0.02 to `develop` at `136781d0` |
+| 2026-08-10 | consolidating | exploring | EXP-006 Route K certified two UNSAT and eleven non-seed SAT parameters, opening the family-extraction gate |
+| 2026-08-10 | exploring | analyzing | EXP-008 refuted the first fixed-width interval ray and proved its layer-9 obstruction for every `q>=9` |
+| 2026-08-10 | analyzing | consolidating | EXP-009 proved an explicit infinite family for every integer `p>=4`; independent formula and semantic audit passes |
+| 2026-08-10 | consolidating | consolidating | 11-page preprint v0.03 published on Zenodo with the infinite-family theorem and exact public-file verification |
 
 Current state: **consolidating**.
 
@@ -26,6 +30,16 @@ lower frontier through `F=67`. EXP-005 extends the certified range through 179 a
 first model at 181, proving Frobenius minimality in the stated class. Preprint v0.01 is published
 at DOI `10.5281/zenodo.21763583`; Son Pham's counterexample discovery priority is explicit in the
 front matter and metadata. Preprint v0.02 is published at DOI `10.5281/zenodo.21764868` and EXP-007
-classifies the minimum layer completely: shift 14 is the
-only feasible shift and the public membership vector is the only semigroup there. Family and
-surviving-variant questions remain open.
+classifies the minimum layer completely: shift 14 is the only feasible shift and the public
+membership vector is the only semigroup there.
+
+EXP-006 Route K then found eleven independently validated non-seed models at even shifts 20--40,
+apart from certified UNSAT values 16 and 18. EXP-008 converted the first guessed interval ray into
+a uniform obstruction. EXP-009 reads that obstruction backwards and proves an explicit infinite
+family at `s=6p` for every `p>=4`, with multiplicity `24p`, Frobenius `78p-1`, conductor `78p`,
+and embedding dimension `11p`. This closes the family-existence question inside the stated
+two-generated monomial-ideal class. Manuscript v0.03 is published at DOI
+`10.5281/zenodo.21873911`; its 399,272-byte public PDF matches SHA-256
+`f2edff24e924a8d38bc7becd380a69f30fa6b2466c3f584802b829f14d1393cf` exactly. Promotion of the
+complete round is the remaining consolidation gate; broader classification and surviving-variant
+questions remain open.

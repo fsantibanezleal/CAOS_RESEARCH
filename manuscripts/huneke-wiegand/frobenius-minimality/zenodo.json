@@ -2,7 +2,7 @@
   "metadata": {
     "upload_type": "publication",
     "publication_type": "preprint",
-    "title": "Frobenius minimality and minimum-layer uniqueness of the Huneke-Wiegand counterexample",
+    "title": "Frobenius minimality, minimum-layer uniqueness, and an infinite family of Huneke-Wiegand counterexamples",
     "creators": [
       {
         "name": "Santibañez-Leal, Felipe",
@@ -10,7 +10,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Son Pham publicly identified a counterexample to the Huneke-Wiegand conjecture in the class of two-generated monomial ideals over symmetric numerical semigroup rings, subsequently verified independently by Professor Craig Huneke. This preprint preserves that discovery priority and addresses two separate questions: how small can such an example be by Frobenius number, and what pairs attain the minimum?</p><p>We prove by proof-carrying exact computation that the least Frobenius number is 181, attained by Pham's example at shift 14. A complete theorem-tree implementation and 1,156 independently checked fixed-pair DRAT proofs reproduce the published positive range F&lt;69. A one-hot selector CNF then gives accepted DRAT proofs for every odd F from 69 through 179 and recovers the exact public semigroup at F=181.</p><p>A projected enumeration classifies the complete minimum layer. After shift 14 is blocked, the selector formula is UNSAT with an accepted 45,867,741-byte proof. After the public membership vector is blocked in the fixed-shift formula, the result is UNSAT with an accepted 1,608,691-byte proof. An independent auditor reconstructs all formulas, validates both SAT models, accounts for 12 external files totaling 63,609,504 bytes, and freshly rechecks both terminal proofs. Thus Pham's pair is the unique normalized pair attaining the Frobenius minimum in this class.</p><p>The result does not classify higher Frobenius values, minimize multiplicity or embedding dimension across all counterexamples, or apply to arbitrary Gorenstein domains and modules. Code, compact manifests, verdicts and verification instructions: https://github.com/fsantibanezleal/CAOS_RESEARCH.</p>",
+    "description": "<p>Son Pham publicly identified the first counterexample to the Huneke-Wiegand conjecture in the class of two-generated monomial ideals over symmetric numerical semigroup rings, subsequently verified independently by Professor Craig Huneke. This preprint preserves that discovery priority and develops three separate extensions: Frobenius minimality, classification of the minimum layer, and an explicit infinite family.</p><p>Proof-carrying exact computation shows that the least Frobenius number is 181, attained by Pham's example at shift 14. Complete theorem-tree enumeration and 1,156 independently checked fixed-pair DRAT proofs reproduce the published range F&lt;69. A selector CNF gives accepted DRAT proofs for every odd F from 69 through 179 and recovers the exact public semigroup at F=181. Projected enumeration then proves that shift 14 and the public membership vector are unique at the minimum.</p><p>For every integer p&gt;=4, we give a deductive construction of a symmetric numerical semigroup with multiplicity 24p, Frobenius number 78p-1, conductor 78p, and embedding dimension 11p, carrying the nonprincipal rigid ideal (t^(24p),t^(30p)). Seven exact interval-sum identities prove closure, symmetry, generation, and the rigidity equality D=E+E. A finite exact campaign through p=300 and an independently implemented formula and semantic audit provide adversarial support but are not the proof of the infinite statement.</p><p>The results remain confined to numerical semigroup rings and two-generated monomial ideals. They do not classify arbitrary modules or arbitrary one-dimensional Gorenstein domains. Code, compact manifests, verdicts, symbolic proof, and verification instructions: https://github.com/fsantibanezleal/CAOS_RESEARCH.</p>",
     "keywords": [
       "Huneke-Wiegand conjecture",
       "numerical semigroups",
@@ -19,6 +19,8 @@
       "Frobenius number",
       "counterexample minimality",
       "minimum-layer classification",
+      "infinite counterexample family",
+      "additive combinatorics",
       "commutative algebra",
       "proof-carrying computation",
       "SAT",
@@ -60,7 +62,7 @@
         "resource_type": "publication-article"
       }
     ],
-    "version": "0.02",
+    "version": "0.03",
     "language": "eng"
   }
 }

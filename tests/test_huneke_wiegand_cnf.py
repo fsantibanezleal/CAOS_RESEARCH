@@ -5,20 +5,42 @@ from pathlib import Path
 
 
 CODE_ROOT = (
-    Path(__file__).resolve().parents[1]
-    / "problems"
-    / "commutative-algebra"
-    / "huneke-wiegand"
-    / "code"
+    Path(__file__).resolve().parents[1] / "problems" / "commutative-algebra" / "huneke-wiegand" / "code"
 )
 sys.path.insert(0, str(CODE_ROOT))
 
 from hwcert import (  # noqa: E402
+    add_exact_cardinality,
     build_rigidity_cnf,
     build_selector_rigidity_cnf,
     projected_blocking_clause,
     shift_from_model,
 )
+from hwcert.cnf import CNF  # noqa: E402
+
+
+def satisfiable_with_units(clauses: tuple[tuple[int, ...], ...], units: tuple[int, ...]) -> bool:
+    pending = clauses + tuple((literal,) for literal in units)
+
+    def search(current: tuple[tuple[int, ...], ...]) -> bool:
+        while True:
+            if any(not clause for clause in current):
+                return False
+            unit = next((clause[0] for clause in current if len(clause) == 1), None)
+            if unit is None:
+                break
+            reduced: list[tuple[int, ...]] = []
+            for clause in current:
+                if unit in clause:
+                    continue
+                reduced.append(tuple(value for value in clause if value != -unit))
+            current = tuple(reduced)
+        if not current:
+            return True
+        branch = current[0][0]
+        return search(current + ((branch,),)) or search(current + ((-branch,),))
+
+    return search(pending)
 
 
 def test_cnf_has_no_tautologies_or_duplicate_literals() -> None:
@@ -42,6 +64,33 @@ def test_cnf_expected_scale() -> None:
     cnf, _ = build_rigidity_cnf(11, 1)
     assert len(cnf.names) > 100
     assert len(cnf.clauses) > len(cnf.names)
+
+
+def test_exact_cardinality_accepts_exactly_the_requested_assignments() -> None:
+    for size in range(1, 5):
+        for count in range(size + 1):
+            cnf = CNF()
+            variables = tuple(cnf.variable(f"x:{index}") for index in range(size))
+            add_exact_cardinality(cnf, variables, count, "test")
+            clauses = tuple(cnf.clauses)
+            for assignment in range(1 << size):
+                units = tuple(
+                    variable if assignment & (1 << index) else -variable
+                    for index, variable in enumerate(variables)
+                )
+                assert satisfiable_with_units(clauses, units) is (assignment.bit_count() == count)
+
+
+def test_exact_cardinality_rejects_invalid_requests() -> None:
+    cnf = CNF()
+    variable = cnf.variable("x")
+    for literals in ((variable, variable), (0, variable)):
+        try:
+            add_exact_cardinality(cnf, literals, 1, "invalid")
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("invalid cardinality literals were accepted")
 
 
 def test_selector_cnf_is_deterministic_and_well_formed() -> None:
@@ -87,8 +136,7 @@ def test_projected_blocker_excludes_exactly_one_assignment() -> None:
 
     def satisfied(true_variables: set[int]) -> bool:
         return any(
-            literal > 0 and literal in true_variables
-            or literal < 0 and -literal not in true_variables
+            literal > 0 and literal in true_variables or literal < 0 and -literal not in true_variables
             for literal in blocker
         )
 

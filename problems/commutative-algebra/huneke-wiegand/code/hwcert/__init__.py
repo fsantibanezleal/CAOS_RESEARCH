@@ -8,6 +8,7 @@ from .semigroup import (
     validate_symmetric_mask,
 )
 from .cnf import (
+    add_exact_cardinality,
     build_rigidity_cnf,
     build_selector_rigidity_cnf,
     mask_from_model,
@@ -21,6 +22,7 @@ __all__ = [
     "gap_values",
     "minimal_generators",
     "validate_symmetric_mask",
+    "add_exact_cardinality",
     "build_rigidity_cnf",
     "build_selector_rigidity_cnf",
     "mask_from_model",
