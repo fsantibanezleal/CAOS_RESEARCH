@@ -1,8 +1,8 @@
-# EXP-009 symbolic proof
+# EXP-009 parametric proof
 
-## The theorem
+## Theorem
 
-For every integer `p>=4`, put `s=6p` and define
+For every integer `p>=4`, set `s=6p` and define
 
 ```text
 A = [0,p] union [3p,4p-2],
@@ -10,114 +10,166 @@ B = ([p+1,3p-1] minus {2p-1}) union {4p} union [5p-1,6p-1],
 C = [0,2p] union [3p,5p-2].
 ```
 
-Let `Gamma_p` contain zero, the blocks `4s+A`, `[5s,6s-1]`, `6s+B`, `8s+C`,
-`[9s,13s-2]`, and every integer at least `13s`, with no other nonnegative members.
-Then `Gamma_p` is a symmetric numerical semigroup with multiplicity `4s`, Frobenius number
-`13s-1`, conductor `13s`, and embedding dimension `11p`. The ideal
+Let `Gamma_p` have the membership blocks
 
 ```text
-I_p = (t^(4s),t^(5s))
+{0}, 4s+A, [5s,6s-1], 6s+B, 8s+C, [9s,13s-2], [13s,infinity),
 ```
 
-over the localization of `k[t^Gamma_p]` at its positive-degree maximal ideal is nonprincipal and
-rigid. Consequently these pairs form an infinite family of counterexamples in the two-generated
-monomial-ideal class.
+with all unlisted nonnegative integers below `13s` gaps. Then:
 
-## Residue identities
+1. `Gamma_p` is a symmetric numerical semigroup with multiplicity `4s`, Frobenius number
+   `13s-1`, conductor `13s` and embedding dimension `11p`.
+2. For the local Gorenstein numerical semigroup ring
+   `R_p=k[t^Gamma_p]_(t^Gamma_p-positive)` and the ideal
+   `I_p=(t^(4s),t^(5s))R_p`, the normalized ideal `(1,t^s)` is nonprincipal and rigid.
+3. Consequently `(R_p,I_p)` is an infinite family of counterexamples to the Huneke-Wiegand
+   conjecture in the two-generated monomial-ideal class.
+
+The family does not contain the first public `s=14` counterexample. Son Pham retains priority for
+that discovery. This theorem is a separate CAOS extension motivated by the Route K models at
+`s=24` and `s=30`.
+
+## 1. Symmetry blocks
+
+Reflection is taken about `F=13s-1`. The complement of `A` under residue reflection is
+
+```text
+[0,s-1] minus (s-1-A) = [0,2p] union [3p,5p-2] = C.
+```
+
+Thus block 4 is complementary to block 8. The full block 5 is complementary to the empty block 7.
+For block 6, writing the punctured first component as
+
+```text
+[p+1,2p-2] union [2p,3p-1],
+```
+
+residue reflection pairs its four components with the four omitted components:
+
+```text
+[p+1,2p-2]  <-> [4p+1,5p-2],
+[2p,3p-1]   <-> [3p,4p-1],
+{4p}         <-> {2p-1},
+[5p-1,6p-1] <-> [0,p].
+```
+
+Hence exactly one residue from each reflected pair belongs to `B`. Gaps below `4s` reflect to the
+full blocks from `9s` through `13s-2`; zero reflects to the gap `F`. Therefore `Gamma_p` is
+symmetric once closure is established.
+
+## 2. Exact residue sums
 
 For subsets of `[0,s-1]`, write `low(X+Y)` for sums below `s` and `carry(X+Y)` for sums at least
-`s`, reduced by `s`. Direct addition of the displayed intervals gives
+`s`, reduced by `s`. Direct interval addition gives
 
-| sum | low residues | carried residues |
-|---|---|---|
-| `A+A` | `C` | `[0,2p-4]` |
-| `A+B` | `[p+1,6p-1]` | `[0,4p-3]` |
-| `B+B` | `[2p+2,6p-2]` | `[0,6p-2]` |
-| `A+C` | `[0,6p-2]` | not needed |
+```text
+low(A+A)   = [0,2p] union [3p,5p-2] = C,
+carry(A+A) = [0,2p-4],
 
-The point removed from the middle interval of `B` is paired with the singleton `4p`; the adjacent
-interval sums overlap because `p>=4`. In particular,
+low(A+B)   = [p+1,6p-1],
+carry(A+B) = [0,4p-3],
+
+low(B+B)   = [2p+2,6p-2],
+carry(B+B) = [0,6p-2],
+
+low(A+C)   = [0,6p-2].
+```
+
+The joins in `low(B+B)` require `3p+1 <= 4p-3`, which is equivalent to `p>=4`. The layer-9 join
+requires
 
 ```text
 [0,2p-4] union [p+1,6p-1] = [0,6p-1],
-[0,4p-3] union [2p+2,6p-2] = [0,6p-2].
 ```
 
-The first equality is the threshold-bearing one: it is false at `p=2,3` and true for every
-`p>=4`. The experiment checks the seven equalities as literal finite set identities through
-`p=300`; the proof here uses only their affine endpoints.
+and this again holds exactly when `p>=4`. All other interval joins follow from weaker inequalities.
+These are the only threshold-sensitive obligations.
 
-## Semigroup, Frobenius number and symmetry
+## 3. Closure, generation and invariants
 
-The only sums of positive members that can remain below the conductor have level pairs among
-`4,5,6,8`. The table handles `4+4`, `4+6`, `6+6`, and `4+8`; every other such sum lands in one of
-the full blocks. The exact exclusions of residue `s-1` in `low(B+B)` and `low(A+C)` prevent the
-Frobenius gap from being produced. Thus the displayed set is closed.
+All sums below the conductor reduce to the preceding residue identities or land in a declared full
+high block. In particular:
 
-The lower blocks generate the entire displayed set. The `A+A` identity produces `8s+C`; sums of
-the level-4 and full level-5 generators produce level 9; two level-5 generators produce level 10
-and residues `0,...,s-2` of level 11; level-5 plus level-6 generators fill the remaining residue
-of level 11 and level 12 through `13s-2`. Adding the generator `4s` to `[9s,13s-2]` produces
-`[13s,17s-2]`, and `5s+(12s-1)` produces `17s-1`. This gives `4s` consecutive generated values
-from `13s`, so the conductor tail follows.
+- two block-4 elements generate `8s+C` and the initial part of block 9;
+- block 4 plus block 5 completes block 9 and contributes to block 10;
+- two block-5 elements generate all of block 10 and residues `0,...,s-2` of block 11;
+- residue `s-1` of block 11 is generated by `(5s)+(6s+s-1)` because `s-1` belongs to `B`;
+- three elements from `4s+A` generate residues `0,...,3p` in block 12, while `low(B+B)` begins at
+  `2p+2` and reaches `s-2`; hence block 12 is generated exactly up to `F-1`.
 
-Every displayed lower generator is below twice the multiplicity, hence cannot be a sum of two
-positive members. Their number is
+Thus every declared member through `F` is generated by the displayed lower blocks. Conversely the
+residue identities show that no sum enters a declared gap. The generated interval
+`[9s,13s-2]`, after adding the multiplicity `4s`, gives `[13s,17s-2]`; adding `4s+1` to
+`13s-2` gives `17s-1`. Hence there are `4s` consecutive generated values beginning at the claimed
+conductor `13s`, and the whole tail follows by repeatedly adding `4s`.
+
+The multiplicity is therefore `4s` and the Frobenius number is `13s-1`. Every displayed lower
+generator lies below `7s`, whereas a sum of two positive semigroup elements is at least `8s`.
+Therefore all displayed lower members are minimal. Their count is
 
 ```text
 |A| + s + |B| = 2p + 6p + 3p = 11p.
 ```
 
-Symmetry is blockwise. The gaps below `4s` reflect to `[9s,13s-2]`; the full level-5 block reflects
-to the empty level-7 block; `C` is the complement of the reflected `A`; and `B` contains exactly
-one residue from each pair `{r,s-1-r}`. Finally zero reflects to `13s-1`. Therefore `Gamma_p` is
-symmetric and its semigroup ring is Gorenstein.
+## 4. Rigidity
 
-## Rigidity
-
-Normalize `I_p` to `(1,t^s)` and write
+For the normalized ideal `J=(1,t^s)`, use the established exponent-set dictionary
 
 ```text
-E = {z : z,z+s are in Gamma_p},
-D = {z : z,z+s,z+2s are in Gamma_p}.
+E = {n: n and n+s belong to Gamma_p},
+D = {n: n, n+s and n+2s belong to Gamma_p}.
 ```
 
-The block descriptions above give
+Rigidity is equivalent to `D=E+E`. In residue blocks, the nontrivial lower parts are
 
 ```text
-E: 4s+A, 5s+B, 8s+C,
-   full levels 9 and 10,
-   residues [0,s-2] in levels 11 and 12,
-   and the full tail from level 13;
+E_4=A, E_5=B, E_8=C, E_9=E_10=[0,s-1],
+E_11=E_12=[0,s-2],
 
-D: 8s+C, full level 9,
-   residues [0,s-2] in levels 10, 11 and 12,
-   and the full tail from level 13.
+D_8=C, D_9=[0,s-1],
+D_10=D_11=D_12=[0,s-2].
 ```
 
-There is no lower block of `D` because `A` and `B` are disjoint. The residue table now computes
-`E+E` layer by layer:
+Blocks 4 through 7 of `D` are empty: most are forced by the empty block 7, and `D_4` is empty
+because `A` and `B` are disjoint. The seven sumset identities now give every load-bearing layer:
 
 ```text
-level 8:  low(A+A)                         = C,
-level 9:  carry(A+A) union low(A+B)        = [0,s-1],
-level 10: carry(A+B) union low(B+B)        = [0,s-2],
-level 11: carry(B+B)                       = [0,s-2],
-level 12: low(A+C)                         = [0,s-2].
+D_8  = low(A+A),
+D_9  = carry(A+A) union low(A+B),
+D_10 = carry(A+B) union low(B+B),
+D_11 = carry(B+B),
+D_12 = low(A+C).
 ```
 
-At and above level 13, `E` contains `4s`, `4s+1`, and the high intervals with only the two
-boundary holes forced by the Frobenius gap. Translating by `4s` and `4s+1` fills both holes and
-all subsequent values. Hence `D=E+E` everywhere, including the conductor tail. This is the exact
-rigidity criterion for the normalized two-generated monomial ideal.
+For blocks 13 and 14, `E_4=A` contains zero and the corresponding high `E` block is full, so their
+sum covers every residue. For blocks 15 and 16, the high `E` block lacks only `s-1`, but `A`
+contains both zero and one: zero covers residues through `s-2`, and `1+(s-2)` covers `s-1`.
+From block 17 onward, the conductor tail of `E` makes coverage automatic.
 
-The shift `s` is a gap, so the ideal is not principal. Over the local domain it is therefore not
-free. The equality `D=E+E` says its tensor product with its dual is torsion-free, producing the
-claimed counterexample.
+The reverse inclusion `E+E subset D` follows directly from semigroup closure: if `x,x+s` and
+`y,y+s` are members, then `x+y`, `x+y+s` and `x+y+2s` are sums of members. Hence `D=E+E`.
 
-## Positive-family exclusion
+## 5. Nonprincipality and the positive-family exclusion
 
-Membership of `4s+1` in `Gamma_p` forces `h=1,d=1` in any generalized-arithmetic presentation
-`<4s,4sh+d,...>`. The later member `4s+3p` would then force every intervening value, including
-`4s+p+1`, but that value is a gap. Thus no `Gamma_p` belongs to the generalized-arithmetic-sequence
-positive family.
+The shift `s` is a gap because `s<4s`. Therefore `(1,t^s)` cannot be principal: a principal ideal
+containing 1 would be generated by a unit, which would force `t^s` into the ring.
+
+The family is not generated by a generalized arithmetic sequence. Since `4s` and `4s+1` are
+members below twice the multiplicity, such a presentation would force `h=1` and step `d=1`.
+Membership of `4s+3p` would then force every intermediate value, including `4s+p+1`; the latter is
+a declared gap. Thus the current generalized-arithmetic positive theorem does not apply.
+
+## 6. Exact computational support
+
+The proof does not depend on the finite sweep. The implementation nevertheless checked every
+`p=4,...,300` by:
+
+- reconstructing all seven finite sumsets;
+- comparing the explicit mask with generation from the displayed lower blocks;
+- checking symmetry and closure directly;
+- checking `D=E+E` through `2F+1` plus the proved tail;
+- reproducing the independent Route K hashes at `p=4,5`;
+- rejecting `p=2,3` and two corrupted positive controls.
+
+The finite campaign aggregate is recorded in `artifacts/results.json`.
