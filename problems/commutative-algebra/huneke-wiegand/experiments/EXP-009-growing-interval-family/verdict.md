@@ -23,12 +23,15 @@ construction is the CAOS extension.
 
 ## Computational and adversarial record
 
-- The exact campaign evaluated `p=2,...,300` in 2.45 seconds.
+- The exact campaign evaluated `p=2,...,300` in 21.18 seconds.
 - `p=2,3` fail, while all 297 parameters `p=4,...,300` satisfy the affine residue identities.
-- The original standard-library symmetry, closure, generation, minimal-generator and rigidity
-  checks pass at `p=4,5,10,25,50`; boundary values `p=2,3` fail as predicted.
-- A separate auditor reconstructed all 299 membership hashes and freshly ran standard checks at
-  `p=2,3,4,5,10,25,50,75`.
+- The original standard-library symmetry, closure, generation and full-window rigidity checks pass
+  for every `p=4,...,300`; boundary values `p=2,3` fail as predicted.
+- A separate auditor reconstructed all 297 positive-family membership hashes and freshly ran the
+  direct semantic checks at `p=4,5,17,73,151,300`.
+- The campaign aggregate is
+  `81d5a8eb6cf2e848807323e3b0bdba58c464779d25cdc788cef027585540dce2`; the independent-audit
+  aggregate is `eb2aaf17650ed99f4e220a43c53bdd8835c82688a37567bb154c30a1ae520ce9`.
 - The `p=4` and `p=5` masks reproduce the independently audited Route K models at `s=24` and
   `s=30` byte-for-byte.
 - Clearing the multiplicity endpoint and filling the omitted reflected selector are both rejected.
