@@ -36,6 +36,7 @@
 | 2026-08-12 | published | published | PR #156 passed `guards` and `test` and merged EXP-014--017 plus v0.06/v0.07 to `develop` at `5953850e`; PR #157 passed both jobs and promoted the tested state to `main` at `2f6b9b9c` |
 | 2026-08-12 | published | published | EXP-018 proved that every conductor tangent cone has depth zero, with its sole Valabrega--Valla defect of length `p` and an exact coefficientwise-positive Hilbert numerator |
 | 2026-08-12 | published | published | 20-page preprint v0.08 passed claim/build/render QA, was published at DOI `10.5281/zenodo.21908490`, and matched a fresh public download exactly |
+| 2026-08-12 | published | published | PR #160 passed `guards` and `test` and merged EXP-018 plus v0.08 to `develop` at `c91ff890`; PR #161 passed all checks and promoted the identical tested tree to `main` at `4b62f778` |
 
 Current state: **published**.
 

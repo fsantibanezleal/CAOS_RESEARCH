@@ -5,8 +5,9 @@ prove the exact stability, reduction, and tangent-cone anatomy of the explicit c
 manuscript v0.06 is published and independently verified at DOI `10.5281/zenodo.21907943`.
 EXP-017 and manuscript v0.07 are published and independently verified at DOI
 `10.5281/zenodo.21908188`. EXP-018 and manuscript v0.08 are published and independently verified
-at DOI `10.5281/zenodo.21908490`. PR #156 passed both required jobs and merged the earlier round to `develop`
-at `5953850e`; PR #157 passed both jobs and promoted it to `main` at `2f6b9b9c`. Release v0.63.000
+at DOI `10.5281/zenodo.21908490`. PR #160 passed both required jobs and merged this round to
+`develop` at `c91ff890`; PR #161 passed both jobs and promoted it to `main` at `4b62f778`.
+Release v0.63.000
 remains the current repository release baseline; no new tag is
 claimed by this research round.
 
