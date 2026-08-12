@@ -24,12 +24,14 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-015 | REFUTED | first exact-square tail incorrectly filled the inherited gap `13s-1`; stopped at `p=4` smoke gate |
 | EXP-016 | CONFIRMED | corrected exact conductor square and stability defect `length(T^2/t^(4s)T)=14p` |
 | EXP-017 | CONFIRMED | conductor reduction number four; quotient profile `23p-1,14p,2p,1,0`; Hilbert coefficients `(24p,39p)` |
+| EXP-018 | CONFIRMED | conductor tangent cone has depth zero; unique Valabrega--Valla defect has length `p`; exact positive Hilbert numerator |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
 | preprint v0.05 | published | pseudo-Frobenius/type and exact trace/conductor theorems, DOI [`10.5281/zenodo.21907297`](https://doi.org/10.5281/zenodo.21907297); exact public-file hash verified |
 | preprint v0.06 | published | duality correction plus exact conductor-stability theorem, DOI [`10.5281/zenodo.21907943`](https://doi.org/10.5281/zenodo.21907943); exact public-file hash verified |
 | preprint v0.07 | published | conductor reduction-number and Hilbert-data theorem, DOI [`10.5281/zenodo.21908188`](https://doi.org/10.5281/zenodo.21908188); exact public-file hash verified |
+| preprint v0.08 | published | depth-zero conductor tangent-cone theorem, DOI [`10.5281/zenodo.21908490`](https://doi.org/10.5281/zenodo.21908490); exact public-file hash verified |
 
 CAOS independently reproduces the public counterexample's decisive finite certificate. Discovery
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery. CAOS's novel
@@ -144,3 +146,25 @@ length(T_p^(n+1)/t^(4s)T_p^n) = 23p-1, 14p, 2p, 1, 0, ...
 
 starting at `n=0`. The exact eventual Hilbert function is
 `length(R_p/T_p^n)=24pn-39p` for `n>=4`, so `e0(T_p)=24p` and `e1(T_p)=39p`.
+
+## Conductor tangent cone
+
+For `Q_p=t^(4s)R_p`, EXP-018 proves that the complete Valabrega--Valla module is concentrated in
+one degree:
+
+```text
+v((Q_p intersect T_p^2)/(Q_pT_p))
+  = 9s+({2p-1,4p-1} union [4p+1,5p-2]),
+length((Q_p intersect T_p^2)/(Q_pT_p))=p,
+Q_p intersect T_p^(n+1)=Q_pT_p^n for n=0 and every n>=2.
+```
+
+Thus the one-dimensional tangent cone `gr_(T_p)(R_p)` has depth zero and is not
+Cohen--Macaulay. Its exact Hilbert series is
+
+```text
+((p+1)+(9p-1)z+12p z^2+(2p-1)z^3+z^4)/(1-z).
+```
+
+Every numerator coefficient is positive, so positivity does not detect the isolated graded-depth
+obstruction.

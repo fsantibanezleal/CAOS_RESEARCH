@@ -10,7 +10,7 @@
 | HWB-006 | 1 | done | additive-basis/Kunz block family search | EXP-006 Route K opens extraction; EXP-009 proves an infinite family for every `p>=4` |
 | HWB-007 | 2 | in progress | surviving-variants matrix | EXP-011 closes the endomorphism/reflexivity row; other positive hypotheses remain to test |
 | HWB-008 | 2 | pending | formal certificate/proof packaging | small trusted checker; assess Lean only after theorem stabilizes |
-| HWB-009 | 0 | done | manuscript and Zenodo | v0.07 published and verified at `10.5281/zenodo.21908188`; all earlier versions remain frozen |
+| HWB-009 | 0 | done | manuscript and Zenodo | v0.08 published and verified at `10.5281/zenodo.21908490`; all earlier versions remain frozen |
 | HWB-010 | 1 | done | classify rigid pairs at `F=181` | EXP-007: unique normalized pair, support/fixed terminal proofs and fresh audit pass |
 | HWB-011 | 2 | in progress | classify the EXP-009 family and nearby Kunz faces | EXP-011 closes uniform endomorphism anatomy; broader Kunz-face classification remains open |
 | HWB-012 | 1 | done | uniform endomorphism overring of the EXP-009 family | EXP-011 proves the exact formula, invariants, nonsymmetry, and Ext/Tor escape |
@@ -18,3 +18,5 @@
 | HWB-014 | 1 | done | exact trace/conductor ideal across the explicit family | EXP-013 proves the common conductor formula and balanced defects `length(R/T)=length(E/R)=p+1` after preserving one smoke correction |
 | HWB-015 | 1 | done | conductor stability and exact first defect | EXP-014 proves nonstability; EXP-015 preserves a refuted tail; EXP-016 proves `length(T^2/t^(4s)T)=14p` |
 | HWB-016 | 1 | done | conductor reduction sequence and Hilbert data | EXP-017 proves reduction number four, quotient lengths `23p-1,14p,2p,1,0`, and `(e0,e1)=(24p,39p)` |
+| HWB-017 | 1 | done | conductor tangent cone | EXP-018 proves depth zero, a unique Valabrega--Valla defect of length `p`, and the exact positive Hilbert numerator |
+| HWB-018 | 2 | pending | torsion/Buchsbaum anatomy of the tangent cone | first determine the full graded torsion module and whether the irrelevant ideal annihilates it; declare separately before computation |

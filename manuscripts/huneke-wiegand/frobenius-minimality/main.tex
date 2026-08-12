@@ -14,8 +14,8 @@
 \hypersetup{
   pdftitle={Frobenius Minimality, Minimum-Layer Uniqueness, and an Infinite Family of Huneke--Wiegand Counterexamples},
   pdfauthor={Felipe Santibanez-Leal},
-  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, type, trace, conductor, stability, and reduction anatomy},
-  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, pseudo-Frobenius numbers, trace ideals, conductors, stable ideals, SAT, DRAT}
+  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, conductor, reduction, and tangent-cone anatomy},
+  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, trace ideals, conductors, associated graded rings, tangent cones, Valabrega-Valla modules, SAT, DRAT}
 }
 \usepackage{orcidlink}
 \usepackage{fancyhdr}
@@ -36,18 +36,18 @@
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-12\\[2pt]\normalsize Version 0.07}
+\date{2026-08-12\\[2pt]\normalsize Version 0.08}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.07}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.08}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.07}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.08}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,13 +63,13 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.07 \textperiodcentered\ 2026-08-12\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21908188}{10.5281/zenodo.21908188}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.08 \textperiodcentered\ 2026-08-12\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21908490}{10.5281/zenodo.21908490}\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
 verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
 separate explicit infinite family, and its uniform endomorphism, type, trace, conductor, stability,
-and reduction anatomy.
+reduction, and tangent-cone anatomy.
 }}
 \end{center}
 
@@ -79,7 +79,7 @@ and reduction anatomy.
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.07}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.08}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -132,6 +132,10 @@ prove that this conductor is nonstable and compute its complete one-step stabili
 The full reduction sequence is also exact: $t^{4s}R_p$ is a minimal reduction of $T_p$ with
 reduction number four, successive Sally-quotient lengths
 $23p-1,14p,2p,1,0$, and Hilbert--Samuel coefficients $e_0(T_p)=24p$ and $e_1(T_p)=39p$.
+The associated graded ring of $T_p$ nevertheless has depth zero: its complete
+Valabrega--Valla module is concentrated in one degree, where it has length $p$. We compute
+the exact Hilbert series and show that its numerator has only positive coefficients despite this
+failure of Cohen--Macaulayness.
 The results remain confined
 to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
@@ -186,6 +190,9 @@ they are verified by exact machine computation and independently checked artifac
   the common conductor is nonstable, and compute its exact stability defect $14p$.
   \item We determine every later power of the conductor, proving reduction number four, the full
   Sally-quotient profile, and Hilbert--Samuel coefficients $(e_0,e_1)=(24p,39p)$.
+  \item We prove that the conductor tangent cone has depth zero, determine its unique
+  Valabrega--Valla defect of length $p$, and compute its coefficientwise-positive Hilbert
+  numerator exactly.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -1010,6 +1017,106 @@ and
 \texttt{0f6ed70676ffb8972b8b167ad52c4f9d2851f69c3b1d96f4023e5e3d5825c781}.
 \]
 
+\newpage
+\section{The depth-zero conductor tangent cone}
+
+Let
+\[
+G_p=\operatorname{gr}_{T_p}(R_p)=\bigoplus_{n\ge0}T_p^n/T_p^{n+1}
+\]
+and retain the minimal reduction $Q_p=(x)$, where $x=t^{4s}$. The
+Valabrega--Valla criterion detects regularity of the initial form $x^*$ through the intersections
+$Q_p\cap T_p^{n+1}$ \cite{ValabregaValla1978}.
+
+\begin{theorem}[Exact tangent-cone defect, {\bf[D]}]\label{thm:tangent}
+For every integer $p\ge4$, put
+\[
+K_p=\{2p-1,4p-1\}\cup[4p+1,5p-2].
+\]
+Then the complete Valabrega--Valla module is concentrated in degree one:
+\[
+v\!\left(\frac{Q_p\cap T_p^2}{Q_pT_p}\right)=9s+K_p,
+\qquad
+\ell_{R_p}\!\left(\frac{Q_p\cap T_p^2}{Q_pT_p}\right)=p,
+\]
+while
+\[
+Q_p\cap T_p^{n+1}=Q_pT_p^n
+\qquad(n=0\ \text{and every }n\ge2).
+\]
+Consequently
+\[
+\dim G_p=1,\qquad \operatorname{depth}G_p=0,
+\]
+so $G_p$ is not Cohen--Macaulay. Its Hilbert series is
+\[
+H_{G_p}(z)=
+\frac{(p+1)+(9p-1)z+12pz^2+(2p-1)z^3+z^4}{1-z}.
+\]
+In particular every coefficient of the numerator is positive.
+\end{theorem}
+
+\begin{proof}
+Write $D=[0,s-1]$ and $U=A_p\cup B_p$. Directly from the residue definitions,
+\[
+D\setminus U=K_p,\qquad |K_p|=p.
+\]
+The exact profiles from Theorems~\ref{thm:trace} and~\ref{thm:stability} give
+\begin{align*}
+v(Q_p)={}&\{4s\}\cup(8s+A_p)\cup(9s+D)\cup(10s+B_p)\cup(12s+C_p)
+             \cup[13s,\infty),\\
+v(Q_pT_p)={}&(8s+A_p)\cup(9s+U)\cup(10s+B_p)\cup(12s+C_p)
+             \cup[13s,\infty),\\
+v(T_p^2)={}&(8s+C_p)\cup\bigl([9s,\infty)\setminus\{13s-1\}\bigr).
+\end{align*}
+Since $A_p\subset C_p$ and $C_p\subset[0,s-2]$, intersection leaves exactly the additional
+block $9s+(D\setminus U)=9s+K_p$ beyond $v(Q_pT_p)$. This proves the first formula and its
+cardinality.
+
+Theorem~\ref{thm:reduction} gives
+\[
+v(T_p^3)=[12s,\infty)\setminus\{13s-1\},\quad
+v(T_p^4)=[16s,\infty),\quad v(T_p^5)=[20s,\infty).
+\]
+Intersecting each with $v(Q_p)$ gives respectively $v(Q_pT_p^2)$, $v(Q_pT_p^3)$, and
+$v(Q_pT_p^4)$. For every $n\ge4$, stabilization
+$T_p^{n+1}=Q_pT_p^n\subset Q_p$ proves the intersection equality immediately. The case $n=0$
+is $Q_p\cap T_p=Q_p$.
+
+The ring $R_p$ is a one-dimensional Cohen--Macaulay local domain with infinite residue field,
+$x$ is regular, and $Q_p$ is a minimal reduction. Hence $x^*$ is a homogeneous parameter of
+$G_p$. The nonzero intersection defect makes $x^*$ a zero divisor by the Valabrega--Valla
+criterion, so the one-dimensional ring $G_p$ has depth zero.
+
+Finally write
+\[
+a_n=\ell(T_p^{n+1}/Q_pT_p^n).
+\]
+Theorem~\ref{thm:reduction} gives
+\[
+(a_0,a_1,a_2,a_3,a_4,\ldots)=(23p-1,14p,2p,1,0,\ldots).
+\]
+Since $\ell(T_p^n/xT_p^n)=\ell(R_p/xR_p)=24p$, the natural exact sequence gives
+\[
+h_n:=\ell(T_p^n/T_p^{n+1})=24p-a_n.
+\]
+Thus $(h_0,h_1,h_2,h_3,h_4,\ldots)=(p+1,10p,22p,24p-1,24p,\ldots)$, and multiplication of
+$\sum h_nz^n$ by $1-z$ gives the displayed numerator.
+\end{proof}
+
+Two exact implementations verify every intersection, length, and Hilbert coefficient for all
+$p=4,\ldots,300$ \textbf{[MV]}. A separately written bounded-bitset audit reconstructs six
+parameters and rehashes all $297$ campaign rows. Deleted-witness, false-later-defect,
+false-Cohen--Macaulay, and perturbed-numerator controls are rejected. The campaign and audit
+aggregates are
+\[
+\texttt{9631c644732f0921be3b3027e18a01110f23dad897fbf2cb14dd3a493eda5971}
+\]
+and
+\[
+\texttt{7c2abcd290bc3461fc5251bc3372e20a7fa25c888e3b2ed635368b4dda0781ff}.
+\]
+
 \section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
@@ -1018,7 +1125,7 @@ All compact code, hypotheses, manifests, audits, and verdicts are in the public 
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
 minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
-also includes the compact EXP-011--017 campaigns, independent reconstruction audits, symbolic
+also includes the compact EXP-011--018 campaigns, independent reconstruction audits, symbolic
 proofs, the preserved EXP-013 correction, and the EXP-015 refutation. The proof toolchain is
 pinned as follows:
 \begin{center}
@@ -1048,10 +1155,12 @@ Theorem~\ref{thm:family}, and its uniform endomorphism anatomy in
 Theorem~\ref{thm:endomorphism}, pseudo-Frobenius anatomy in Theorem~\ref{thm:type}, exact
 trace/conductor formula in Theorem~\ref{thm:trace}, stability defect in
 Theorem~\ref{thm:stability}, and conductor reduction/Hilbert data in
-Theorem~\ref{thm:reduction}, together with their reproducible records.
+Theorem~\ref{thm:reduction}, and tangent-cone depth in Theorem~\ref{thm:tangent}, together with
+their reproducible records.
 
 Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
-\ref{thm:type}, \ref{thm:trace}, \ref{thm:stability}, and~\ref{thm:reduction} do not classify all higher
+\ref{thm:type}, \ref{thm:trace}, \ref{thm:stability}, \ref{thm:reduction}, and~\ref{thm:tangent}
+do not classify all higher
 Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
 or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
 questions remain open:
@@ -1141,6 +1250,12 @@ D. G. Northcott and D. Rees,
 \emph{Reductions of ideals in local rings},
 Proc. Cambridge Philos. Soc. 50 (1954), 145--158.
 \href{https://doi.org/10.1017/S0305004100029194}{doi:10.1017/S0305004100029194}.
+
+\bibitem{ValabregaValla1978}
+P. Valabrega and G. Valla,
+\emph{Form rings and regular sequences},
+Nagoya Math. J. 72 (1978), 93--101.
+\href{https://doi.org/10.1017/S0027763000018225}{doi:10.1017/S0027763000018225}.
 
 \bibitem{Cadical2023}
 A. Biere, K. Fazekas, M. Fleury, and M. Heisinger,

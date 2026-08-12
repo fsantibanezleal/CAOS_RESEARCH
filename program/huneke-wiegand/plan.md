@@ -141,3 +141,28 @@ the successive Sally-quotient lengths are `23p-1,14p,2p,1,0`, and the Hilbert co
 independent audit support them. The 18-page v0.07 passed claim/build/render, metadata, sole-author,
 publication, and fresh-download gates and is immutable at DOI `10.5281/zenodo.21908188`; its public
 SHA-256 is `2dca97dc100424afbeffd525fe66aa4aa43ce65c82c11b9ac43250cd33771e19`.
+
+## 2026-08-12 tangent-cone depth gate
+
+EXP-018 asks the structural question left undecided by the reduction number: whether the conductor
+tangent cone is Cohen--Macaulay. The original Valabrega--Valla criterion reduces this to exact
+intersections with `Q_p=t^(4s)R_p`. The experiment is CONFIRMED. The only nonzero intersection
+quotient is `(Q_p intersect T_p^2)/(Q_pT_p)`, whose exact level-nine residue block has length `p`;
+all components at `n=0` and `n>=2` vanish. Consequently `gr_(T_p)(R_p)` has depth zero for every
+`p>=4`. Its Hilbert numerator
+
+```text
+(p+1)+(9p-1)z+12p z^2+(2p-1)z^3+z^4
+```
+
+has only positive coefficients, so Hilbert positivity does not see the obstruction. The next
+publication gate is a v0.08 candidate with claim/build/render review. The next research gate after
+that is not a larger parameter sweep: it is the full graded torsion/Buchsbaum anatomy, declared as
+a separate experiment only after source and finite-target preflight.
+
+The publication gate is complete. The 20-page v0.08 passed claim audit, stable two-pass build,
+complete rendered inspection, metadata, sole-authorship, publication, and fresh-download checks.
+It is immutable at DOI `10.5281/zenodo.21908490`; the public SHA-256 is
+`c8a038adf042a71126e0b0dac170803340e12300521aad1ca05f88bbc3c32f69`. The next active gate is
+therefore the separately declared torsion/Buchsbaum anatomy, not further manuscript work or a
+larger EXP-018 sweep.

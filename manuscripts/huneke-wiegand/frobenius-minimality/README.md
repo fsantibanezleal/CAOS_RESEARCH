@@ -1,6 +1,7 @@
 # Frobenius-minimality preprint
 
-`main.tex` and `main.pdf` are published version 0.07 of the CAOS Research preprint.
+`main.tex` and `main.pdf` are published version 0.08 of the CAOS Research preprint. Version 0.07
+and all earlier versions remain frozen.
 It proves that the public
 Huneke-Wiegand numerical-semigroup counterexample has the least possible Frobenius number, 181,
 and is the unique normalized pair attaining that minimum within the nonprincipal two-generated
@@ -11,7 +12,9 @@ one-dimensional Gorenstein duality identity behind the two equal colengths from 
 family-specific common ideal and value `p+1`, proves that the conductor is nonstable, and computes
 the exact one-step stability defect `length(T_p^2/t^(4s)T_p)=14p`. Version 0.07 continues the
 conductor powers, proving reduction number four, quotient lengths `23p-1,14p,2p,1,0`, and
-Hilbert-Samuel coefficients `(e0,e1)=(24p,39p)`.
+Hilbert-Samuel coefficients `(e0,e1)=(24p,39p)`. Version 0.08 proves that every conductor tangent
+cone has depth zero, identifies its unique Valabrega--Valla defect of length `p`, and computes its
+coefficientwise-positive Hilbert numerator.
 
 Attribution is binding: Son Pham discovered the first public counterexample; CAOS contributes the
 certified minimality, minimum-layer uniqueness, and parametric-family extensions. Professor Craig
@@ -40,9 +43,10 @@ Zenodo identifiers:
 - version 0.05 DOI: `10.5281/zenodo.21907297`
 - version 0.06 DOI: `10.5281/zenodo.21907943`
 - version 0.07 DOI: `10.5281/zenodo.21908188`
+- version 0.08 DOI: `10.5281/zenodo.21908490`
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-017 under
+Evidence sources are EXP-001 through EXP-018 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
 finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
@@ -55,6 +59,8 @@ square and defect formulas by symbolic residue identities, two complete routes t
 and an independent reconstruction audit.
 EXP-017 contains the exact conductor-power and Hilbert proof, complete campaign, independent
 tail-set reconstruction, and corrupted-profile controls.
+EXP-018 contains the exact Valabrega--Valla intersection proof, two-route campaign, independently
+written bounded-bitset audit, and Hilbert-series controls.
 
 Version 0.02 remains frozen with this public-file verification:
 
@@ -118,4 +124,17 @@ Version 0.07 public-file verification:
   undefined references, overfull boxes, or underfull boxes
 - the concept latest resolves to record `21908188`; public version, sole author/ORCID, filename,
   bytes, MD5, and SHA-256 match the committed record
+- a fresh public download matches the committed PDF exactly
+
+Version 0.08 public-file verification:
+
+- reserved DOI: `10.5281/zenodo.21908490`; no upload or publication occurred before
+  claim/build/render QA
+- bytes: `552905`
+- MD5: `29a4c70d45517a61d6eb01f028487b39`
+- SHA-256: `c8a038adf042a71126e0b0dac170803340e12300521aad1ca05f88bbc3c32f69`
+- all 20 pages passed rendered inspection at 150 DPI; the final stable two-pass build has no
+  warnings, undefined references, overfull boxes, or underfull boxes
+- the concept latest resolves to record `21908490`; public version, sole author/ORCID, CC-BY-4.0
+  licence, filename, bytes, MD5, and SHA-256 match the committed record
 - a fresh public download matches the committed PDF exactly

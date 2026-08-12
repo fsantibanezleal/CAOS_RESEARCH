@@ -1,10 +1,11 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-12. Lifecycle: published. EXP-014--017
-prove the exact stability and reduction anatomy of the explicit conductor family. Corrective
+Updated: 2026-08-12. Lifecycle: published. EXP-014--018
+prove the exact stability, reduction, and tangent-cone anatomy of the explicit conductor family. Corrective
 manuscript v0.06 is published and independently verified at DOI `10.5281/zenodo.21907943`.
 EXP-017 and manuscript v0.07 are published and independently verified at DOI
-`10.5281/zenodo.21908188`. PR #156 passed both required jobs and merged the full round to `develop`
+`10.5281/zenodo.21908188`. EXP-018 and manuscript v0.08 are published and independently verified
+at DOI `10.5281/zenodo.21908490`. PR #156 passed both required jobs and merged the earlier round to `develop`
 at `5953850e`; PR #157 passed both jobs and promoted it to `main` at `2f6b9b9c`. Release v0.63.000
 remains the current repository release baseline; no new tag is
 claimed by this research round.
@@ -22,9 +23,11 @@ Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
 5. an explicit infinite family of counterexamples in the same class (EXP-009); and
 6. the exact endomorphism overring and nonreflexive Ext/Tor escape for every family member
    (EXP-011);
-7. exact pseudo-Frobenius, trace, conductor, and nonstability anatomy (EXP-012--016); and
+7. exact pseudo-Frobenius, trace, conductor, and nonstability anatomy (EXP-012--016);
 8. conductor reduction number four, quotient profile `23p-1,14p,2p,1,0`, and Hilbert coefficients
-   `(e0,e1)=(24p,39p)` (EXP-017).
+   `(e0,e1)=(24p,39p)` (EXP-017); and
+9. depth-zero conductor tangent cones with a unique Valabrega--Valla defect of length `p` and an
+   exact coefficientwise-positive Hilbert numerator (EXP-018).
 
 The public seed is
 
@@ -45,7 +48,7 @@ I = (t^56,t^70)R.
 | `Gamma_p` | growing-interval semigroup for every integer `p>=4` | EXP-009 theorem |
 | `I_p` | `(t^(24p),t^(30p))` over the localized ring of `Gamma_p` | EXP-009 theorem |
 | `Lambda_p` | `Gamma_p union (7s+Q_p) union {13s-1}`, the value semigroup of `End_(R_p)(I_p)` | EXP-011 theorem |
-| `T_p` | common trace/conductor `tr_R(J_p)=R_p:E_p=tr_R(E_p)` | EXP-013--017 theorems |
+| `T_p` | common trace/conductor `tr_R(J_p)=R_p:E_p=tr_R(E_p)` | EXP-013--018 theorems |
 | minimum layer | all normalized rigid pairs at the least Frobenius value 181 | EXP-005/007 |
 
 ## 2a. Infinite family theorem
@@ -101,6 +104,7 @@ campaign is supporting evidence, not the proof.
 | EXP-015 | REFUTED | first square-tail formula failed at `13s-1` in the `p=4` smoke gate |
 | EXP-016 | CONFIRMED | corrected exact square and stability defect `14p` |
 | EXP-017 | CONFIRMED | exact reduction number four, quotient profile, and Hilbert coefficients `(24p,39p)` |
+| EXP-018 | CONFIRMED | conductor tangent cone has depth zero; unique Valabrega--Valla defect length `p`; exact positive Hilbert numerator |
 
 ## 3a. Exact evidence anchors
 
@@ -169,6 +173,13 @@ and independent-audit aggregates are
 `e9c3c887648f08cf67c614b381f00c8c6520dcd1bb89f8cdece62293bfd06030` and
 `0f6ed70676ffb8972b8b167ad52c4f9d2851f69c3b1d96f4023e5e3d5825c781`.
 
+EXP-018 is CONFIRMED. For `Q_p=t^(4s)R_p`, the only nonzero Valabrega--Valla component is
+`(Q_p intersect T_p^2)/(Q_pT_p)`, with exact length `p`; every component at `n=0` and `n>=2`
+vanishes. Hence `gr_(T_p)(R_p)` has depth zero. Its Hilbert numerator is
+`(p+1)+(9p-1)z+12pz^2+(2p-1)z^3+z^4`, despite all coefficients being positive. Campaign and
+independent-audit aggregates are `9631c644732f0921be3b3027e18a01110f23dad897fbf2cb14dd3a493eda5971`
+and `7c2abcd290bc3461fc5251bc3372e20a7fa25c888e3b2ed635368b4dda0781ff`.
+
 Published baseline:
 
 - v0.01 DOI `10.5281/zenodo.21763583`: Frobenius minimality.
@@ -189,13 +200,18 @@ Published baseline:
 - v0.07 DOI `10.5281/zenodo.21908188`: conductor reduction number and Hilbert data. The public
   539,211-byte PDF has MD5 `5ed0616521a3363fb9cb6507babf9745` and SHA-256
   `2dca97dc100424afbeffd525fe66aa4aa43ce65c82c11b9ac43250cd33771e19`.
+- v0.08 DOI `10.5281/zenodo.21908490`: depth-zero conductor tangent cone and exact Hilbert series.
+  The public 552,905-byte PDF has MD5 `29a4c70d45517a61d6eb01f028487b39` and SHA-256
+  `c8a038adf042a71126e0b0dac170803340e12300521aad1ca05f88bbc3c32f69`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `21907297`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `21908490`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
+1. Source-check and predeclare the full graded torsion/Buchsbaum question; do
+   not replace it with a larger parameter sweep.
+2. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
    that architecture.
 
 ### Lenses ledger
