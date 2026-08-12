@@ -15,7 +15,7 @@
   pdftitle={Frobenius Minimality, Minimum-Layer Uniqueness, and an Infinite Family of Huneke--Wiegand Counterexamples},
   pdfauthor={Felipe Santibanez-Leal},
   pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, conductor, reduction, and tangent-cone anatomy},
-  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, trace ideals, conductors, associated graded rings, tangent cones, Valabrega-Valla modules, SAT, DRAT}
+  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, trace ideals, conductors, associated graded rings, tangent cones, Buchsbaum rings, Valabrega-Valla modules, SAT, DRAT}
 }
 \usepackage{orcidlink}
 \usepackage{fancyhdr}
@@ -36,18 +36,18 @@
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-12\\[2pt]\normalsize Version 0.08}
+\date{2026-08-12\\[2pt]\normalsize Version 0.09}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.08}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.09}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.08}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.09}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,8 +63,8 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.08 \textperiodcentered\ 2026-08-12\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21908490}{10.5281/zenodo.21908490}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.09 \textperiodcentered\ 2026-08-12\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21908785}{10.5281/zenodo.21908785}\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
 verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
@@ -79,7 +79,7 @@ reduction, and tangent-cone anatomy.
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.08}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.09}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -135,7 +135,10 @@ $23p-1,14p,2p,1,0$, and Hilbert--Samuel coefficients $e_0(T_p)=24p$ and $e_1(T_p
 The associated graded ring of $T_p$ nevertheless has depth zero: its complete
 Valabrega--Valla module is concentrated in one degree, where it has length $p$. We compute
 the exact Hilbert series and show that its numerator has only positive coefficients despite this
-failure of Cohen--Macaulayness.
+failure of Cohen--Macaulayness. We then determine the complete zeroth local cohomology: it is
+$k^p$, concentrated in degree zero and annihilated by the full homogeneous maximal ideal. Hence
+the tangent cone is Buchsbaum but not Cohen--Macaulay, with unbounded Buchsbaum invariant $p$;
+its quotient by the finite-length torsion is Cohen--Macaulay with an exact Hilbert series.
 The results remain confined
 to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
@@ -193,6 +196,9 @@ they are verified by exact machine computation and independently checked artifac
   \item We prove that the conductor tangent cone has depth zero, determine its unique
   Valabrega--Valla defect of length $p$, and compute its coefficientwise-positive Hilbert
   numerator exactly.
+  \item We identify that defect with the complete zeroth local cohomology, prove that the full
+  homogeneous maximal ideal annihilates it, and obtain a Buchsbaum non-Cohen--Macaulay family with
+  unbounded Buchsbaum invariant $p$ and an exact Cohen--Macaulay quotient series.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -1117,6 +1123,97 @@ and
 \texttt{7c2abcd290bc3461fc5251bc3372e20a7fa25c888e3b2ed635368b4dda0781ff}.
 \]
 
+\subsection{Complete graded torsion and Buchsbaumness}
+
+Let $\mathcal M_p=(\mathfrak m_p/T_p)\oplus G_{p,+}$ be the homogeneous maximal ideal of
+$G_p$. The dimension-one local-cohomology criterion says that $G_p$ is Buchsbaum precisely when
+$\mathcal M_pH^0_{\mathcal M_p}(G_p)=0$ \cite{DAnnaMezzasalmaMicale2009,DAnnaMicaleSammartano2011}.
+The cited semigroup formulas concern maximal-ideal filtrations; here we compute the local
+cohomology directly for the conductor filtration.
+
+\begin{theorem}[Buchsbaum tangent cones with unbounded invariant, {\bf[D]}]
+\label{thm:buchsbaum}
+For every integer $p\ge4$, the complete zeroth local cohomology is concentrated in degree zero:
+\[
+H^0_{\mathcal M_p}(G_p)
+=\operatorname{span}_{\kfield}
+ \{t^{5s+h}+T_p:h\in K_p\}\cong \kfield^p.
+\]
+Moreover
+\[
+\mathcal M_pH^0_{\mathcal M_p}(G_p)=0.
+\]
+Consequently $G_p$ is Buchsbaum but not Cohen--Macaulay, and its Buchsbaum invariant is
+\[
+I(G_p)=\ell(H^0_{\mathcal M_p}(G_p))=p.
+\]
+The quotient $G_p/H^0_{\mathcal M_p}(G_p)$ is Cohen--Macaulay and has Hilbert series
+\[
+\frac{1+(10p-1)z+12pz^2+(2p-1)z^3+z^4}{1-z}.
+\]
+\end{theorem}
+
+\begin{proof}
+A homogeneous class represented by $a\in T_p^n$ lies in zeroth local cohomology exactly when
+$aT_p^k\subseteq T_p^{n+k+1}$ for some $k$. Thus
+\[
+H^0_{\mathcal M_p}(G_p)_n=
+\bigcup_{k\ge1}
+\frac{(T_p^{n+k+1}:T_p^k)\cap T_p^n}{T_p^{n+1}}.
+\]
+Here saturation by $G_{p,+}$ and by $\mathcal M_p$ agree because the maximal ideal of the
+Artinian degree-zero ring $R_p/T_p$ is nilpotent.
+
+Theorem~\ref{thm:reduction} gives $v(T_p^k)=[4ks,\infty)$ for every $k\ge4$. Therefore, for a
+monomial $t^v$ and any $k\ge4$,
+\[
+t^vT_p^k\subseteq T_p^{n+k+1}
+\quad\Longleftrightarrow\quad
+v\ge4(n+1)s.
+\]
+Any containment at a smaller power persists after multiplication to a power at least four, so
+this stable threshold is the complete colon saturation.
+
+The exact profiles give
+\[
+v(R_p)\setminus v(T_p)=\{0\}\cup(5s+K_p).
+\]
+The degree-zero threshold $4s$ deletes the unit and retains $5s+K_p$. In degrees one, two, and
+three, the consecutive power profiles agree from the respective thresholds $8s$, $12s$, and
+$16s$ onward. For every $n\ge4$, stabilization makes them agree from $4(n+1)s$ onward. Hence the
+displayed $p$ degree-zero classes are the complete local cohomology.
+
+It remains to test the full homogeneous maximal ideal. If $r=5s+h$ with $h\in K_p$, every product
+of $t^r$ with $\mathfrak m_p$ or $T_p$ has value at least $9s$. Both $T_p$ and $T_p^2$ contain
+all such values except $13s-1$. Equality $r+a=13s-1$ would force $a=8s-1-h$, strictly between
+levels $7s$ and $8s$, but the exact ring profile has no value there. Thus
+\[
+t^r\mathfrak m_p\subseteq T_p,
+\qquad
+t^rT_p\subseteq T_p^2.
+\]
+The degree-zero and positive parts of $\mathcal M_p$ both annihilate every torsion class. The
+dimension-one criterion proves Buchsbaumness; Theorem~\ref{thm:tangent} proves depth zero. The
+Buchsbaum invariant is therefore the displayed length $p$.
+
+Quotienting by the full zeroth local cohomology leaves a one-dimensional ring of positive depth,
+hence a Cohen--Macaulay ring. Since the torsion Hilbert series is the constant $p$, subtracting it
+from Theorem~\ref{thm:tangent}'s Hilbert series gives the asserted numerator.
+\end{proof}
+
+Two exact implementations verify the full colon saturation and both maximal-ideal actions for all
+$p=4,\ldots,300$ \textbf{[MV]}. An independently written bounded-bitset audit reconstructs six
+parameters and rehashes all $297$ rows. Unit, deleted-torsion, false-positive-degree,
+degree-zero-action, false-invariant, and perturbed-series controls are rejected. The campaign and
+audit aggregates are
+\[
+\texttt{854d7889d9d7b911b462e4d483e021210ae2873ae0ec0091ec30e8fb29d6dbf7}
+\]
+and
+\[
+\texttt{0b01853febc9e9754e28abcd099a7ae3a97f4cc0ab92f3a345ab2ae03cd3c68a}.
+\]
+
 \section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
@@ -1125,7 +1222,7 @@ All compact code, hypotheses, manifests, audits, and verdicts are in the public 
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
 minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
-also includes the compact EXP-011--018 campaigns, independent reconstruction audits, symbolic
+also includes the compact EXP-011--019 campaigns, independent reconstruction audits, symbolic
 proofs, the preserved EXP-013 correction, and the EXP-015 refutation. The proof toolchain is
 pinned as follows:
 \begin{center}
@@ -1155,11 +1252,13 @@ Theorem~\ref{thm:family}, and its uniform endomorphism anatomy in
 Theorem~\ref{thm:endomorphism}, pseudo-Frobenius anatomy in Theorem~\ref{thm:type}, exact
 trace/conductor formula in Theorem~\ref{thm:trace}, stability defect in
 Theorem~\ref{thm:stability}, and conductor reduction/Hilbert data in
-Theorem~\ref{thm:reduction}, and tangent-cone depth in Theorem~\ref{thm:tangent}, together with
+Theorem~\ref{thm:reduction}, tangent-cone depth in Theorem~\ref{thm:tangent}, and complete
+graded-torsion/Buchsbaum anatomy in Theorem~\ref{thm:buchsbaum}, together with
 their reproducible records.
 
 Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
-\ref{thm:type}, \ref{thm:trace}, \ref{thm:stability}, \ref{thm:reduction}, and~\ref{thm:tangent}
+\ref{thm:type}, \ref{thm:trace}, \ref{thm:stability}, \ref{thm:reduction},
+\ref{thm:tangent}, and~\ref{thm:buchsbaum}
 do not classify all higher
 Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
 or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
@@ -1256,6 +1355,18 @@ P. Valabrega and G. Valla,
 \emph{Form rings and regular sequences},
 Nagoya Math. J. 72 (1978), 93--101.
 \href{https://doi.org/10.1017/S0027763000018225}{doi:10.1017/S0027763000018225}.
+
+\bibitem{DAnnaMezzasalmaMicale2009}
+M. D'Anna, M. Mezzasalma, and V. Micale,
+\emph{On the Buchsbaumness of the associated graded ring of a one-dimensional local ring},
+Commun. Algebra 37 (2009), 1594--1603.
+\href{https://doi.org/10.1080/00927870802116521}{doi:10.1080/00927870802116521}.
+
+\bibitem{DAnnaMicaleSammartano2011}
+M. D'Anna, V. Micale, and A. Sammartano,
+\emph{On the associated graded ring of a semigroup ring},
+J. Commut. Algebra 3 (2011), 147--168.
+\href{https://doi.org/10.1216/JCA-2011-3-2-147}{doi:10.1216/JCA-2011-3-2-147}.
 
 \bibitem{Cadical2023}
 A. Biere, K. Fazekas, M. Fleury, and M. Heisinger,

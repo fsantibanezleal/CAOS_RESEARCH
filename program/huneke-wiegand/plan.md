@@ -166,3 +166,24 @@ It is immutable at DOI `10.5281/zenodo.21908490`; the public SHA-256 is
 `c8a038adf042a71126e0b0dac170803340e12300521aad1ca05f88bbc3c32f69`. The next active gate is
 therefore the separately declared torsion/Buchsbaum anatomy, not further manuscript work or a
 larger EXP-018 sweep.
+
+## 2026-08-12 Buchsbaum gate
+
+EXP-019 is CONFIRMED. The complete zeroth local cohomology of the conductor tangent cone is `k^p`,
+concentrated in degree zero, and both the degree-zero maximal part `m_p/T_p` and the positive graded
+part annihilate it. Consequently every tangent cone in the family is Buchsbaum but not
+Cohen--Macaulay, with unbounded Buchsbaum invariant `p`. Quotienting by `H^0` gives a
+Cohen--Macaulay ring with Hilbert numerator
+
+```text
+1+(10p-1)z+12p z^2+(2p-1)z^3+z^4.
+```
+
+The two-route 297-parameter campaign and independent audit pass, but the stable-tail colon proof is
+load-bearing. This is a material theorem beyond v0.08, so the active delivery gate is manuscript
+v0.09 with full claim/build/render, sole-authorship, Zenodo, and fresh-download verification.
+
+The publication gate is complete. The 21-page v0.09 passed the claim audit, stable two-pass build,
+complete rendered inspection, sole-authorship, metadata, publication, and fresh-download checks.
+It is immutable at DOI `10.5281/zenodo.21908785`; its public SHA-256 is
+`ecf4d1ebe504ad3af74d123c949a953a7f397dabd72ec11c94a631962e1501db`.

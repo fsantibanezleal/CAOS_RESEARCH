@@ -1,12 +1,14 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-12. Lifecycle: published. EXP-014--018
-prove the exact stability, reduction, and tangent-cone anatomy of the explicit conductor family. Corrective
+Updated: 2026-08-12. Lifecycle: published. EXP-014--019
+prove the exact stability, reduction, tangent-cone, and Buchsbaum anatomy of the explicit conductor family. Corrective
 manuscript v0.06 is published and independently verified at DOI `10.5281/zenodo.21907943`.
 EXP-017 and manuscript v0.07 are published and independently verified at DOI
 `10.5281/zenodo.21908188`. EXP-018 and manuscript v0.08 are published and independently verified
 at DOI `10.5281/zenodo.21908490`. PR #160 passed both required jobs and merged this round to
 `develop` at `c91ff890`; PR #161 passed both jobs and promoted it to `main` at `4b62f778`.
+EXP-019 and manuscript v0.09 are published and independently verified at DOI
+`10.5281/zenodo.21908785`; repository PR promotion for this new round is pending.
 Release v0.63.000
 remains the current repository release baseline; no new tag is
 claimed by this research round.
@@ -28,7 +30,9 @@ Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
 8. conductor reduction number four, quotient profile `23p-1,14p,2p,1,0`, and Hilbert coefficients
    `(e0,e1)=(24p,39p)` (EXP-017); and
 9. depth-zero conductor tangent cones with a unique Valabrega--Valla defect of length `p` and an
-   exact coefficientwise-positive Hilbert numerator (EXP-018).
+   exact coefficientwise-positive Hilbert numerator (EXP-018); and
+10. complete tangent-cone torsion `k^p` in degree zero, Buchsbaumness, and unbounded Buchsbaum
+    invariant `p` (EXP-019).
 
 The public seed is
 
@@ -106,6 +110,7 @@ campaign is supporting evidence, not the proof.
 | EXP-016 | CONFIRMED | corrected exact square and stability defect `14p` |
 | EXP-017 | CONFIRMED | exact reduction number four, quotient profile, and Hilbert coefficients `(24p,39p)` |
 | EXP-018 | CONFIRMED | conductor tangent cone has depth zero; unique Valabrega--Valla defect length `p`; exact positive Hilbert numerator |
+| EXP-019 | CONFIRMED | full `H^0=k^p` in degree zero; complete maximal annihilator; Buchsbaum non-Cohen--Macaulay; invariant `p` |
 
 ## 3a. Exact evidence anchors
 
@@ -181,6 +186,13 @@ vanishes. Hence `gr_(T_p)(R_p)` has depth zero. Its Hilbert numerator is
 independent-audit aggregates are `9631c644732f0921be3b3027e18a01110f23dad897fbf2cb14dd3a493eda5971`
 and `7c2abcd290bc3461fc5251bc3372e20a7fa25c888e3b2ed635368b4dda0781ff`.
 
+EXP-019 is CONFIRMED. The complete zeroth local cohomology is the same `p`-class obstruction,
+concentrated in degree zero, and the full homogeneous maximal ideal annihilates it. Thus every
+conductor tangent cone is Buchsbaum but not Cohen--Macaulay, with unbounded Buchsbaum invariant
+`p`; the quotient by `H^0` is Cohen--Macaulay. Campaign and independent-audit aggregates are
+`854d7889d9d7b911b462e4d483e021210ae2873ae0ec0091ec30e8fb29d6dbf7` and
+`0b01853febc9e9754e28abcd099a7ae3a97f4cc0ab92f3a345ab2ae03cd3c68a`.
+
 Published baseline:
 
 - v0.01 DOI `10.5281/zenodo.21763583`: Frobenius minimality.
@@ -204,14 +216,18 @@ Published baseline:
 - v0.08 DOI `10.5281/zenodo.21908490`: depth-zero conductor tangent cone and exact Hilbert series.
   The public 552,905-byte PDF has MD5 `29a4c70d45517a61d6eb01f028487b39` and SHA-256
   `c8a038adf042a71126e0b0dac170803340e12300521aad1ca05f88bbc3c32f69`.
+- v0.09 DOI `10.5281/zenodo.21908785`: complete tangent-cone torsion, Buchsbaumness, invariant,
+  and Cohen--Macaulay quotient. The public 567,854-byte PDF has MD5
+  `c0605ace2b60d6830fd6e68d68d883b0` and SHA-256
+  `ecf4d1ebe504ad3af74d123c949a953a7f397dabd72ec11c94a631962e1501db`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `21908490`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `21908785`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Source-check and predeclare the full graded torsion/Buchsbaum question; do
-   not replace it with a larger parameter sweep.
+1. Compare the family with known bounds on Buchsbaum invariants and select a
+   separately declared next theorem target; do not substitute a larger parameter sweep.
 2. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
    that architecture.
 

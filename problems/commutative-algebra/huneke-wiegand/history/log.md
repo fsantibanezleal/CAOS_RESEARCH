@@ -372,3 +372,42 @@
   passed next: PR #160 passed `guards` and `test` and merged the round to `develop` at
   `c91ff890`; PR #161 passed all checks and promoted the identical tested tree to `main` at
   `4b62f778`. No release tag is claimed.
+
+## 2026-08-12 - EXP-019 declared
+
+- Redirected the next round from a larger tangent-cone parameter sweep to the complete zeroth
+  local cohomology and Buchsbaum condition.
+- Source-checked the general one-dimensional local-cohomology criterion and explicitly separated
+  it from maximal-ideal-specific semigroup formulas that do not apply verbatim to the conductor
+  filtration.
+- Predeclared the prediction that the torsion is `k^p` in degree zero, the full homogeneous maximal
+  ideal annihilates it, and the tangent cone is Buchsbaum but not Cohen--Macaulay with invariant
+  `p`. No formal implementation or campaign preceded the declaration.
+
+## 2026-08-12 - EXP-019 confirmed
+
+- Proved that stable conductor-power tails turn the full graded colon saturation into the exact
+  threshold `v>=4(n+1)s`.
+- The threshold leaves exactly the `p` classes `t^(5s+h)+T_p`, `h in H_p`, in degree zero and no
+  torsion in positive degree.
+- Proved separately that `m_p/T_p` and `G_(p,+)` both annihilate these classes. Hence every tangent
+  cone is Buchsbaum but not Cohen--Macaulay, with unbounded Buchsbaum invariant `p`; its quotient
+  by `H^0` is Cohen--Macaulay with an exact Hilbert series.
+- Both exact routes passed for all 297 parameters. Campaign and independent-audit aggregates are
+  `854d7889d9d7b911b462e4d483e021210ae2873ae0ec0091ec30e8fb29d6dbf7` and
+  `0b01853febc9e9754e28abcd099a7ae3a97f4cc0ab92f3a345ab2ae03cd3c68a`.
+- The new theorem triggers a v0.09 manuscript candidate; Zenodo publication remains gated on the
+  complete claim/build/render, sole-authorship, metadata, and public-file verification workflow.
+
+## 2026-08-12 - Buchsbaum preprint v0.09 published
+
+- Expanded the manuscript to 21 pages with the complete graded-torsion, Buchsbaum-invariant, and
+  Cohen--Macaulay quotient theorem.
+- The claim audit, stable two-pass build, complete rendered inspection, metadata, and sole-human-
+  authorship gates passed before upload.
+- Published Zenodo version DOI `10.5281/zenodo.21908785`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21908785`.
+- A fresh public download is 567,854 bytes with MD5 `c0605ace2b60d6830fd6e68d68d883b0`
+  and SHA-256 `ecf4d1ebe504ad3af74d123c949a953a7f397dabd72ec11c94a631962e1501db`, exactly matching Git.
+- Public version, sole author/ORCID, CC-BY-4.0 licence, and filename match. Repository PR promotion
+  remains the next delivery gate; no release tag is claimed.
