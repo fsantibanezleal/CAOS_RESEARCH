@@ -138,7 +138,7 @@ campaign is supporting evidence, not the proof.
   `02cf6f62a71de1a897cd46149e8c89d1c55bf810d28dddc02fc6c5330b9c1aed` and
   `c439f7e4fbd3cee983f32e5c6a27b347017c165cdf6d9fee54eb8d53ab634eac`.
 
-## 4. Closed current round
+## 4. In flight
 
 EXP-020 is CONFIRMED. Put `F_p=k[x_p]`, where
 `x_p=(t^(4s))^*` comes from the EXP-017 minimal reduction. The source-led Noether-normalization
