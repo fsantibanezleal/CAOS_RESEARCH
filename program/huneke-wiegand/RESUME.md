@@ -319,7 +319,10 @@ branch or importing the candidate repository's verifier as CAOS evidence.
 
 ## 2026-08-12 in flight - EXP-021
 
-EXP-021 is declared but not yet executed. The active target is the conductor fiber cone
-`C_p=F(T_p)`. Start with the mandatory `p=4` smoke gate for `T_p^2=m_pT_p`; if it passes, complete
-the two-route exact campaign, independent audit, and symbolic proof of the natural quotient and
-socle formulas. Do not begin HWB-023 or a new manuscript version until this gate is adjudicated.
+EXP-021 is CONFIRMED. It proves `T_p^2=m_pT_p` and the canonical graded-algebra identification
+`G_p/H^0 isomorphic to F(T_p)`. The fiber cone is Cohen--Macaulay of type `10p+1`, but its
+Artinian socle occurs in degrees two and four, so it is neither level nor Gorenstein. The exact
+campaign passed all 297 parameters after one preserved budget-only attempt; the independent audit
+rebuilt six parameters and rehashed every row. The active gate is HWB-024: manuscript v0.11 with
+claim audit, clean build, full rendered inspection, sole-authorship/metadata checks, Zenodo new
+version, and fresh public-download verification. HWB-023 defining ideals remains a later path.

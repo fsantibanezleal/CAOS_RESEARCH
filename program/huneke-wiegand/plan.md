@@ -231,3 +231,11 @@ The same exact value data predict Cohen--Macaulay type `10p+1` and a nonlevel Ar
 with socle in degrees two and four. The mandatory order is hypothesis, smoke gate, exact campaign,
 independent audit, symbolic proof, and only then manuscript/publication deliberation. A defining
 ideal is a separate later gate and is not assumed here.
+
+EXP-021 is CONFIRMED. The first complete attempt correctly stopped as inconclusive at the campaign
+budget; an exact bitset optimization then completed all 297 parameters inside the unchanged
+budget, and the independent audit passed. The symbolic proof establishes
+`T_p^2=m_pT_p` and the natural algebra isomorphism `G_p/H^0 isomorphic to F(T_p)` for every
+`p>=4`. The Artinian reduction has socle dimensions `10p` in degree two and one in degree four,
+so the type is `10p+1` and the fiber cone is nonlevel. The active delivery gate is manuscript
+v0.11; HWB-023 remains separate and must not delay accurate publication of this theorem.

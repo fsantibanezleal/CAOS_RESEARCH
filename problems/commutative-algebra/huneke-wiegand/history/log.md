@@ -452,6 +452,18 @@
   Artinian socle giving Cohen--Macaulay type `10p+1` with nonlevel behavior.
 - The mandatory next action is the `p=4` smoke gate; no confirmation or publication is claimed.
 
+## 2026-08-12 - EXP-021 confirms the canonical conductor fiber cone
+
+- The mandatory `p=4` smoke gate passed. A first full campaign passed through `p=225` but hit the
+  declared 120-second budget, so it was preserved as inconclusive rather than misreported.
+- An exact bitset optimization completed the unchanged `p=4,...,300` campaign in 44.048252
+  seconds; the independently encoded six-parameter reconstruction and all-row hash audit passed.
+- The symbolic block proof establishes `T_p^2=m_pT_p`; the natural tangent-cone map therefore
+  identifies `F(T_p)` with `G_p/H^0` as graded algebras for every `p>=4`.
+- The Artinian socle has dimension `10p` in degree two and one in degree four. Thus the special
+  fiber is Cohen--Macaulay of type `10p+1`, neither level nor Gorenstein.
+- This material theorem triggers the manuscript v0.11 gate; no publication is yet claimed.
+
 ## 2026-08-12 - Noether-normalization preprint v0.10 published
 
 - Expanded the manuscript to 22 pages with the complete graded module, minimal resolution, Betti
