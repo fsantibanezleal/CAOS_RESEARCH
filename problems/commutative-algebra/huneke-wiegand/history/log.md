@@ -263,3 +263,14 @@
 - EXP-012 is CONFIRMED. The next new viewpoint is the trace/endomorphism equality from the 2026
   Lindo-Maitra-Zhang criterion; manuscript publication is deliberately deferred until that route is
   adjudicated.
+
+## 2026-08-12 - EXP-013 declared after trace-route correction
+
+- The source-complete check found that equality of the two trace ideals is already forced here:
+  `R_p` is one-dimensional Gorenstein and the relevant ideals are reflexive.
+- Redirected HWB-014 from retesting that consequence to computing the exact common trace/conductor
+  ideal and its colength.
+- Hand block arithmetic predicts four finite blocks plus the tail from `9s`, with the only missing
+  `R_p` values being zero and a reflected level-five block of size `p`.
+- Declared EXP-013 before implementation or execution, with two independent exact routes, three
+  adversarial mutations, and a two-minute budget.

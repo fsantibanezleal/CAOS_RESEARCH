@@ -153,8 +153,8 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Perform a source-complete preflight for HWB-014: compute the trace ideal of `J_p` and compare it
-   with the trace of `End_(R_p)(J_p)` using the exact valuation blocks.
+1. Execute declared EXP-013: prove and independently reconstruct the predicted common trace and
+   conductor ideal, including the exact colength `p+1`.
 2. Decide whether EXP-012 plus that trace theorem justify a deliberate manuscript v0.05, rather
    than publishing EXP-012 reflexively as a standalone revision.
 3. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
@@ -167,6 +167,8 @@ Published baseline:
 - Invariant: adjacent blocks `V_k intersect V_(k+1)` decide the exact overring without SAT.
 - External dialogue: Maitra-Mukundan redirects the next round to maximal reduced type, while
   Lindo-Maitra-Zhang opens a separate trace/endomorphism route.
+- Trace redirection: because `R_p` is Gorenstein, equality of the two traces is not discriminatory;
+  EXP-013 targets their exact common value ideal and colength instead.
 - Adversarial: minimal-generator and Apéry PF reconstructions plus corrupted PF formulas are
   required.
 

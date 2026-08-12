@@ -99,3 +99,12 @@ giving type and reduced type `10p`. Hence the endomorphism family has maximal re
 `2g-(F+type)=12p-1` proves it is uniformly not almost symmetric. The next invariant-first gate is
 the trace/endomorphism equality from Lindo-Maitra-Zhang Corollary 5.6, not an automatic manuscript
 version or nearby-face SAT sweep.
+
+## 2026-08-12 exact trace gate
+
+The source-complete preflight shows that trace equality itself cannot separate this family:
+`R_p` is one-dimensional Gorenstein, so the reflexive-trace criterion already forces it. EXP-013
+is therefore declared around the stronger unsolved datum: an exact common formula for
+`tr_R(J_p)=R_p:E_p=tr_R(E_p)`. The prediction differs from `Gamma_p` only at zero and a reflected
+level-five block of size `p`, so its colength should be `p+1`. Symbolic block proof remains
+load-bearing; two exact reconstructions and corrupted controls test the implementation.
