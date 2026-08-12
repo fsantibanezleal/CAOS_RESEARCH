@@ -413,3 +413,15 @@
   passed next: PR #164 passed `guards` and `test` and merged the round to `develop` at
   `efdca94`; PR #165 passed all checks and promoted the identical tested tree to `main` at
   `cbe62a5`. No release tag is claimed.
+
+## 2026-08-12 - EXP-020 declared
+
+- A fresh primary-source sweep redirected the next round from a generic Buchsbaum-invariant bound
+  to the full module over the minimal-reduction Noether normalization.
+- Cortadellas Benitez and Zarzuela's tangent-cone module viewpoint supplies the analogy, but their
+  maximal-ideal-specific Apery formulas are not imported into the conductor filtration.
+- EXP-017--019 predict a complete decomposition into `p` copies of `F/(x)` plus free summands in
+  degrees zero through four, hence an exact minimal resolution, regularity four, and parameter-
+  section excess `p`.
+- EXP-020 was declared before implementation or execution, with a symbolic graded-PID proof, an
+  independent conductor-power Apery-column reconstruction, five corruptions, and fixed budgets.

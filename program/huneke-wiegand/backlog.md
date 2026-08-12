@@ -21,3 +21,4 @@
 | HWB-017 | 1 | done | conductor tangent cone | EXP-018 proves depth zero, a unique Valabrega--Valla defect of length `p`, and the exact positive Hilbert numerator |
 | HWB-018 | 1 | done | torsion/Buchsbaum anatomy of the tangent cone | EXP-019 proves `H^0=k^p` in degree zero, full maximal-ideal annihilation, Buchsbaumness, and invariant `p` |
 | HWB-019 | 1 | done | manuscript and Zenodo update for Buchsbaum theorem | v0.09 published and fresh-download verified at `10.5281/zenodo.21908785` |
+| HWB-020 | 1 | in progress | exact Noether-normalization module and graded Betti data | EXP-020 declared; symbolic PID proof and independent conductor-power Apery reconstruction required |

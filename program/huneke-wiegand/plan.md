@@ -187,3 +187,18 @@ The publication gate is complete. The 21-page v0.09 passed the claim audit, stab
 complete rendered inspection, sole-authorship, metadata, publication, and fresh-download checks.
 It is immutable at DOI `10.5281/zenodo.21908785`; its public SHA-256 is
 `ecf4d1ebe504ad3af74d123c949a953a7f397dabd72ec11c94a631962e1501db`.
+
+## 2026-08-12 Noether-normalization module gate
+
+A fresh source sweep redirects the next round from a generic inequality for the Buchsbaum
+invariant to the complete module over the minimal-reduction polynomial ring. EXP-020 is declared
+before implementation. With `F_p=k[x_p]` and `x_p=(t^(4s))^*`, the EXP-017--019 data predict
+
+```text
+G_p isomorphic to (F_p/(x_p))^p direct-sum F_p direct-sum F_p(-1)^(10p-1)
+    direct-sum F_p(-2)^(12p) direct-sum F_p(-3)^(2p-1) direct-sum F_p(-4).
+```
+
+The invariant-first proof uses the graded structure theorem over `k[x_p]`; an exact
+conductor-power Apery-column decomposition is the independent route. A nearby Kunz-face sweep and
+Rees-algebra local cohomology remain deferred until this finite structural target is adjudicated.

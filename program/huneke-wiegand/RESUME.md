@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-12. Lifecycle: published. EXP-014--019
+Updated: 2026-08-12. Lifecycle: published. EXP-014--020
 prove the exact stability, reduction, tangent-cone, and Buchsbaum anatomy of the explicit conductor family. Corrective
 manuscript v0.06 is published and independently verified at DOI `10.5281/zenodo.21907943`.
 EXP-017 and manuscript v0.07 are published and independently verified at DOI
@@ -112,6 +112,7 @@ campaign is supporting evidence, not the proof.
 | EXP-017 | CONFIRMED | exact reduction number four, quotient profile, and Hilbert coefficients `(24p,39p)` |
 | EXP-018 | CONFIRMED | conductor tangent cone has depth zero; unique Valabrega--Valla defect length `p`; exact positive Hilbert numerator |
 | EXP-019 | CONFIRMED | full `H^0=k^p` in degree zero; complete maximal annihilator; Buchsbaum non-Cohen--Macaulay; invariant `p` |
+| EXP-020 | DECLARED | predicted complete `k[x_p]`-module, minimal graded resolution, regularity four, and parameter-section defect `p` |
 
 ## 3a. Exact evidence anchors
 
@@ -130,6 +131,23 @@ campaign is supporting evidence, not the proof.
   audit aggregate `eb2aaf17650ed99f4e220a43c53bdd8835c82688a37567bb154c30a1ae520ce9`.
 
 ## 4. In flight
+
+EXP-020 is DECLARED before implementation. Put `F_p=k[x_p]`, where
+`x_p=(t^(4s))^*` comes from the EXP-017 minimal reduction. The source-led Noether-normalization
+view predicts
+
+```text
+G_p isomorphic to (F_p/(x_p))^p direct-sum F_p direct-sum F_p(-1)^(10p-1)
+    direct-sum F_p(-2)^(12p) direct-sum F_p(-3)^(2p-1) direct-sum F_p(-4).
+```
+
+If confirmed, the only first syzygies are `p` copies in degree one, `pd_(F_p)(G_p)=1`,
+`reg_(F_p)(G_p)=4`, `a(G_p)=3`, and
+`length(G_p/x_pG_p)=25p=e0(T_p)+I(G_p)`. The load-bearing proof is the graded PID argument from
+EXP-017--019; the independent route reconstructs every cyclic string from the conductor-power
+Apery table modulo `24p`.
+
+Previously closed state:
 
 EXP-011 is CONFIRMED. With `s=6p`, it proves
 
@@ -227,9 +245,12 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Compare the family with known bounds on Buchsbaum invariants and select a
-   separately declared next theorem target; do not substitute a larger parameter sweep.
-2. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
+1. Implement and smoke-test EXP-020's two exact module reconstructions at `p=4`.
+2. Run the declared `p=4,...,300` campaign and independent audit, then write the symbolic proof
+   and verdict exactly as the evidence supports.
+3. If confirmed, transcribe the theorem vertically into the wiki, manuscript, history, state,
+   backlog, resume, and management mirror; publish a new Zenodo version only after full QA.
+4. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
    that architecture.
 
 ### Lenses ledger
@@ -243,6 +264,8 @@ Published baseline:
   EXP-013 targets their exact common value ideal and colength instead.
 - Adversarial: minimal-generator and Apéry PF reconstructions plus corrupted PF formulas are
   required.
+- Noether-normalization: EXP-020 tests whether the entire tangent-cone defect is isolated in `p`
+  exponent-one cyclic summands over the minimal-reduction polynomial ring.
 
 ## 7. Gotchas
 
