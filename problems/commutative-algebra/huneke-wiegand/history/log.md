@@ -306,3 +306,7 @@
   `10.5281/zenodo.21763582` now resolves to record `21907297`.
 - A fresh public download is 515,650 bytes with MD5 `75a1102cc9dab8785ee00ba7f93012e7`
   and SHA-256 `4bd2cfd7351cb6cec1b3fa006c7eb3018732c283b5bb5a1e5c86015435275276`, exactly matching Git.
+- PR `#152` passed `guards` and `test` and merged the complete EXP-012/013 and v0.05 round into
+  `develop` at `bdb969db83d46ac822acc8f8501857b9214c6ed9`. PR `#153` passed both jobs and promoted
+  the accumulated post-release Huneke-Wiegand state to `main` at
+  `9be3069a549bfabb16f39013cf9c3ac552e93c51`. No release tag is claimed.

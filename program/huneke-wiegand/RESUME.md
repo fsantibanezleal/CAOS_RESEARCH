@@ -3,8 +3,9 @@
 Updated: 2026-08-12. Lifecycle: published. EXP-012 and EXP-013 prove the exact pseudo-Frobenius,
 reduced-type, trace, and conductor anatomy of the explicit family. Manuscript v0.05 is published
 and independently verified at DOI `10.5281/zenodo.21907297`. Promotion of the current work branch
-through `develop` and `main` remains the repository handoff. Release v0.63.000 remains the current
-repository release baseline.
+through `develop` and `main` is complete: PR #152 merged at `bdb969db`, and PR #153 promoted the
+accumulated post-release state to `main` at `9be3069a`. Release v0.63.000 remains the current
+repository release baseline; no new tag is claimed by this research round.
 
 ## 1. State in one screen
 
@@ -171,9 +172,8 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Promote the complete EXP-012/013 and verified v0.05 round through the required PR path.
-2. Reassess the surviving-variants matrix and formal-certificate value before declaring EXP-014.
-3. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
+1. Reassess the surviving-variants matrix and formal-certificate value before declaring EXP-014.
+2. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
    that architecture.
 
 ### Lenses ledger
