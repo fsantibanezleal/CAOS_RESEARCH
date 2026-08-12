@@ -1,7 +1,6 @@
 # Claim audit - manuscript v0.11
 
-Audited: 2026-08-12. Candidate result: PASS for claims, build, render, and authorship; public-record
-verification remains pending until the reserved Zenodo draft is published.
+Audited: 2026-08-12. Final result: PASS.
 
 Version 0.11 retains all v0.10 claims and adds only the theorem-level consequences of the
 committed EXP-021 symbolic proof. Exact campaigns support the proof and do not replace it.
@@ -19,7 +18,7 @@ committed EXP-021 symbolic proof. Exact campaigns support the proof and do not r
 | selected artifact reconstruction | independent EXP-021 audit at `p=4,5,17,73,151,300` | PASS; all selected invariants rebuilt and all 297 campaign rows rehashed |
 | literature boundary | Cortadellas--Zarzuela, J. Algebra DOI `10.1016/j.jalgebra.2007.02.044` | PASS; general analytic-spread-one fiber-cone framework cited; family-specific square, quotient, and socle are proved directly |
 | authorship | title page and `zenodo.json` | PASS; Felipe Santibanez-Leal is sole author; no automated system named |
-| publication identity | reserved Zenodo draft and page-one block | PASS for reserved DOI `10.5281/zenodo.21909961` and concept DOI `10.5281/zenodo.21763582`; public latest/file equality pending publication |
+| publication identity | public Zenodo record, page-one block, and fresh download | PASS; version DOI `10.5281/zenodo.21909961`, concept DOI `10.5281/zenodo.21763582`, sole author/ORCID, and public SHA-256 match Git |
 
 ## Scope boundaries
 
@@ -45,4 +44,4 @@ committed EXP-021 symbolic proof. Exact campaigns support the proof and do not r
 - frozen candidate PDF: 589,535 bytes, MD5 `1ad22a6a87c0c6a5a80f8a913d06ca95`, SHA-256
   `0b3a9131e3c419c0a89cb064ea6beb7c696006171fe18bec578e7ba963a520ce`;
 - public record status, concept latest, sole author/ORCID, CC-BY-4.0 licence, filename, hashes, and
-  fresh downloaded-file equality: PENDING publication.
+  fresh downloaded-file equality: PASS.

@@ -239,3 +239,10 @@ budget, and the independent audit passed. The symbolic proof establishes
 `p>=4`. The Artinian reduction has socle dimensions `10p` in degree two and one in degree four,
 so the type is `10p+1` and the fiber cone is nonlevel. The active delivery gate is manuscript
 v0.11; HWB-023 remains separate and must not delay accurate publication of this theorem.
+
+The v0.11 delivery gate is complete. The 25-page preprint passed claim audit, stable two-pass
+build, complete rendered inspection, sole-authorship and metadata checks, publication, and fresh
+public-download verification. It is immutable at DOI `10.5281/zenodo.21909961`; the public
+589,535-byte PDF has SHA-256
+`0b3a9131e3c419c0a89cb064ea6beb7c696006171fe18bec578e7ba963a520ce`. Repository PR promotion
+remains required before HWB-023 can be considered for a separate declaration.

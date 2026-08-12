@@ -464,6 +464,17 @@
   fiber is Cohen--Macaulay of type `10p+1`, neither level nor Gorenstein.
 - This material theorem triggers the manuscript v0.11 gate; no publication is yet claimed.
 
+## 2026-08-12 - conductor fiber-cone preprint v0.11 published
+
+- Expanded the manuscript to 25 pages with the canonical special-fiber quotient theorem, exact
+  free module, Artinian h-vector, type `10p+1`, and nonlevel/non-Gorenstein consequences.
+- Claim audit, stable two-pass LaTeX build, complete 25-page rendered inspection, sole-authorship,
+  ORCID, metadata, and scope checks passed.
+- Published CC BY 4.0 at DOI `10.5281/zenodo.21909961`; the concept latest resolves to this record.
+- A fresh unauthenticated public download matches the committed 589,535-byte PDF at MD5
+  `1ad22a6a87c0c6a5a80f8a913d06ca95` and SHA-256
+  `0b3a9131e3c419c0a89cb064ea6beb7c696006171fe18bec578e7ba963a520ce`.
+
 ## 2026-08-12 - Noether-normalization preprint v0.10 published
 
 - Expanded the manuscript to 22 pages with the complete graded module, minimal resolution, Betti

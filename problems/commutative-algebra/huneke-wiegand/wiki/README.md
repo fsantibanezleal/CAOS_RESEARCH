@@ -37,6 +37,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | preprint v0.08 | published | depth-zero conductor tangent-cone theorem, DOI [`10.5281/zenodo.21908490`](https://doi.org/10.5281/zenodo.21908490); exact public-file hash verified |
 | preprint v0.09 | published | complete graded torsion and Buchsbaum tangent-cone theorem, DOI [`10.5281/zenodo.21908785`](https://doi.org/10.5281/zenodo.21908785); exact public-file hash verified |
 | preprint v0.10 | published | complete Noether-normalization module and graded-resolution theorem, DOI [`10.5281/zenodo.21909127`](https://doi.org/10.5281/zenodo.21909127); exact public-file hash verified |
+| preprint v0.11 | published | canonical conductor special fiber, exact type, and nonlevel theorem, DOI [`10.5281/zenodo.21909961`](https://doi.org/10.5281/zenodo.21909961); exact public-file hash verified |
 
 CAOS independently reproduces the public counterexample's decisive finite certificate. Discovery
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery. CAOS's novel

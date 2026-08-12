@@ -25,4 +25,4 @@
 | HWB-021 | 1 | done | manuscript and Zenodo update for module theorem | v0.10 published and fresh-download verified at `10.5281/zenodo.21909127` |
 | HWB-022 | 1 | done | conductor fiber cone and canonical Cohen--Macaulayization | EXP-021 proves the exact square, natural quotient, type `10p+1`, and nonlevel behavior |
 | HWB-023 | 2 | pending | defining ideal of the conductor fiber cone | consider Abdolmaleki--Kumashiro only after EXP-021 establishes the fiber-cone theorem |
-| HWB-024 | 1 | in progress | manuscript and Zenodo update for the fiber-cone theorem | EXP-021 is material beyond v0.10; full claim/build/render/publication gate required |
+| HWB-024 | 1 | done | manuscript and Zenodo update for the fiber-cone theorem | v0.11 published and fresh-download verified at `10.5281/zenodo.21909961` |

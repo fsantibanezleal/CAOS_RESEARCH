@@ -1,8 +1,8 @@
 # Frobenius-minimality preprint
 
 `main.tex` is version 0.11 of the CAOS Research preprint; version 0.10 and all earlier versions
-remain frozen. Version 0.11 has reserved DOI `10.5281/zenodo.21909961`; it remains unpublished
-until the complete claim/build/render workflow passes.
+remain frozen. Version 0.11 is published at DOI `10.5281/zenodo.21909961` after the complete
+claim/build/render and public-file verification workflow passed.
 It proves that the public
 Huneke-Wiegand numerical-semigroup counterexample has the least possible Frobenius number, 181,
 and is the unique normalized pair attaining that minimum within the nonprincipal two-generated
@@ -58,7 +58,7 @@ Zenodo identifiers:
 - version 0.08 DOI: `10.5281/zenodo.21908490`
 - version 0.09 DOI: `10.5281/zenodo.21908785`
 - version 0.10 DOI: `10.5281/zenodo.21909127`
-- version 0.11 DOI: `10.5281/zenodo.21909961` (reserved, unpublished until QA passes)
+- version 0.11 DOI: `10.5281/zenodo.21909961`
 - licence: CC BY 4.0
 
 Evidence sources are EXP-001 through EXP-021 under
@@ -187,7 +187,7 @@ Version 0.10 public-file verification:
   licence, filename, bytes, MD5, and SHA-256 match the committed record
 - a fresh public download matches the committed PDF exactly
 
-Version 0.11 candidate verification:
+Version 0.11 public-file verification:
 
 - reserved DOI: `10.5281/zenodo.21909961`; no upload or publication occurred before
   claim/build/render QA
@@ -197,4 +197,6 @@ Version 0.11 candidate verification:
 - all 25 pages passed rendered inspection at 150 DPI; the final stable two-pass build has no
   warnings, undefined references, overfull boxes, or underfull boxes
 - sole authorship, ORCID, version, reserved DOI, concept DOI, and CC-BY-4.0 metadata gates pass
-- public latest, filename, and fresh-download equality remain pending publication
+- the concept latest resolves to record `21909961`; public version, sole author/ORCID, CC-BY-4.0
+  licence, filename, bytes, MD5, and SHA-256 match the committed record
+- a fresh unauthenticated public download matches the committed PDF exactly

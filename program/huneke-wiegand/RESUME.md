@@ -323,6 +323,7 @@ EXP-021 is CONFIRMED. It proves `T_p^2=m_pT_p` and the canonical graded-algebra 
 `G_p/H^0 isomorphic to F(T_p)`. The fiber cone is Cohen--Macaulay of type `10p+1`, but its
 Artinian socle occurs in degrees two and four, so it is neither level nor Gorenstein. The exact
 campaign passed all 297 parameters after one preserved budget-only attempt; the independent audit
-rebuilt six parameters and rehashed every row. The active gate is HWB-024: manuscript v0.11 with
-claim audit, clean build, full rendered inspection, sole-authorship/metadata checks, Zenodo new
-version, and fresh public-download verification. HWB-023 defining ideals remains a later path.
+rebuilt six parameters and rehashed every row. Manuscript v0.11 is published and fresh-download
+verified at DOI `10.5281/zenodo.21909961`. The active gate is repository PR promotion. After that,
+HWB-023 defining ideals is the strongest identified next path, but it requires a separate
+hypothesis and source preflight before implementation.
