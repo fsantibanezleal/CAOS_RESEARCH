@@ -238,3 +238,14 @@
 - PR `#150` passed `guards` and `test` and merged the complete EXP-011 and v0.04 publication round
   into `develop` at `273ce4d2ca73f75762824168b41e8e3494612c05`. The serialized repository
   release path was not claimed by this problem round.
+
+## 2026-08-12 - EXP-012 declared
+
+- Refreshed the current primary literature on pseudo-Frobenius numbers, reduced type, endomorphism
+  centers, and trace/reflexivity, including the 2026 version of record by Lindo-Maitra-Zhang.
+- Redirected the next round from an unconstrained nearby-face search to the invariant-first
+  pseudo-Frobenius anatomy of the known endomorphism family.
+- Hand block analysis predicts exactly `10p` pseudo-Frobenius numbers, all in the last multiplicity
+  window, hence maximal reduced type and a uniform non-almost-Gorenstein boundary.
+- Declared EXP-012 with two exact routes, symbolic proof requirements, corruptions, and a two-minute
+  budget before implementation or execution.

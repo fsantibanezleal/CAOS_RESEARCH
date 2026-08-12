@@ -87,6 +87,7 @@ campaign is supporting evidence, not the proof.
 | EXP-009 | CONFIRMED | explicit infinite family for every integer `p>=4`; independent formula/semantic audit passes |
 | EXP-010 | SUPERSEDED | no run; declared conditional gate became false when EXP-009 succeeded |
 | EXP-011 | CONFIRMED | uniform endomorphism-overring formula, nonsymmetric invariants, and family-wide Ext/Tor escape |
+| EXP-012 | DECLARED | predicted `10p` pseudo-Frobenius set, maximal reduced type, and non-almost-Gorenstein boundary |
 
 ## 3a. Exact evidence anchors
 
@@ -122,8 +123,16 @@ campaign and audit aggregates are
 Manuscript v0.04 passed its claim audit, clean two-pass build, and complete 12-page rendered
 inspection before publication.
 
-No experiment is currently in flight. The next research round requires a separately declared,
-falsifiable classification or surviving-variant target.
+EXP-012 is declared before implementation or execution. It predicts
+
+```text
+PF(Lambda_p) = (6s+B^c) union (7s+Q^c) union (8s+C^c),
+type(Lambda_p) = reduced_type(Lambda_p) = 10p.
+```
+
+The predicted consequence is maximal reduced type and failure of almost symmetry for every
+`p>=4`. The invariant-first proof surface is the last multiplicity window plus explicit witnesses
+excluding all lower gaps. No EXP-012 run has started.
 
 Published baseline:
 
@@ -142,11 +151,11 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Define a specific classification target beyond the explicit family before declaring another
-   experiment; do not treat the broad module/domain classification as solved.
-2. Test positive-theorem hypotheses against the exact family invariants and prioritize a sharp
-   boundary statement over another unconstrained SAT sweep.
-3. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
+1. Implement and smoke-test EXP-012 Route A and Route B at `p=4,5`:
+   `python problems/commutative-algebra/huneke-wiegand/experiments/EXP-012-endomorphism-type/run.py --first 4 --last 5`.
+2. Run the exact `p=4,...,300` campaign and independent audit within their declared budgets.
+3. Complete the symbolic lower-gap exclusion, verdict, wiki, and all durable mirrors.
+4. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
    that architecture.
 
 ### Lenses ledger
@@ -154,9 +163,10 @@ Published baseline:
 - Exclusion: positive theorem hypotheses are tested against exact family invariants, not guessed.
 - Anatomy: EXP-011 upgrades the seed-only endomorphism calculation to a proved parametric theorem.
 - Invariant: adjacent blocks `V_k intersect V_(k+1)` decide the exact overring without SAT.
-- External dialogue: current primary records and the public candidate repository were rechecked;
-  no parametric endomorphism theorem was identified.
-- Adversarial: generated-semigroup/Apéry reconstruction and corrupted block formulas are required.
+- External dialogue: Maitra-Mukundan redirects the next round to maximal reduced type, while
+  Lindo-Maitra-Zhang opens a separate trace/endomorphism route.
+- Adversarial: minimal-generator and Apéry PF reconstructions plus corrupted PF formulas are
+  required.
 
 ## 7. Gotchas
 

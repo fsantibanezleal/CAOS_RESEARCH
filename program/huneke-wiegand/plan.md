@@ -84,3 +84,12 @@ endomorphism/reflexivity row of the surviving-variants matrix. Manuscript v0.04 
 claim/build/render gates and is immutably published at DOI `10.5281/zenodo.21876338`. Any next
 classification question must be declared separately rather than automatically returning to
 EXP-010.
+
+## 2026-08-12 invariant-first type gate
+
+EXP-012 is declared before computation. Instead of opening a broad Kunz-face classification, it
+tests the exact pseudo-Frobenius anatomy of `Lambda_p`. The predicted PF set is the union of the
+level-6, level-7, and level-8 gap blocks, with no lower pseudo-Frobenius numbers. If proved, the
+endomorphism family has type and reduced type `10p`, maximal reduced type, and is uniformly not
+almost Gorenstein. The separate trace-ideal criterion from Lindo-Maitra-Zhang is retained as a
+future reformulation route after the invariant is settled.
