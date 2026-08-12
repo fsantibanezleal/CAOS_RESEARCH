@@ -25,6 +25,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-016 | CONFIRMED | corrected exact conductor square and stability defect `length(T^2/t^(4s)T)=14p` |
 | EXP-017 | CONFIRMED | conductor reduction number four; quotient profile `23p-1,14p,2p,1,0`; Hilbert coefficients `(24p,39p)` |
 | EXP-018 | CONFIRMED | conductor tangent cone has depth zero; unique Valabrega--Valla defect has length `p`; exact positive Hilbert numerator |
+| EXP-019 | CONFIRMED | complete tangent-cone torsion is `k^p` in degree zero; Buchsbaum but not Cohen--Macaulay; invariant `p` |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
@@ -32,6 +33,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | preprint v0.06 | published | duality correction plus exact conductor-stability theorem, DOI [`10.5281/zenodo.21907943`](https://doi.org/10.5281/zenodo.21907943); exact public-file hash verified |
 | preprint v0.07 | published | conductor reduction-number and Hilbert-data theorem, DOI [`10.5281/zenodo.21908188`](https://doi.org/10.5281/zenodo.21908188); exact public-file hash verified |
 | preprint v0.08 | published | depth-zero conductor tangent-cone theorem, DOI [`10.5281/zenodo.21908490`](https://doi.org/10.5281/zenodo.21908490); exact public-file hash verified |
+| preprint v0.09 | published | complete graded torsion and Buchsbaum tangent-cone theorem, DOI [`10.5281/zenodo.21908785`](https://doi.org/10.5281/zenodo.21908785); exact public-file hash verified |
 
 CAOS independently reproduces the public counterexample's decisive finite certificate. Discovery
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery. CAOS's novel
@@ -168,3 +170,15 @@ Cohen--Macaulay. Its exact Hilbert series is
 
 Every numerator coefficient is positive, so positivity does not detect the isolated graded-depth
 obstruction.
+
+EXP-019 identifies that obstruction with the complete zeroth local cohomology:
+
+```text
+H^0_(M_p)(gr_(T_p)(R_p))
+  = span_k{t^(5s+h)+T_p : h in H_p} isomorphic to k^p.
+```
+
+It is concentrated in degree zero and the full homogeneous maximal ideal annihilates it. Thus the
+tangent cone is Buchsbaum but not Cohen--Macaulay, with unbounded Buchsbaum invariant `p`. Its
+Cohen--Macaulay quotient by `H^0` has Hilbert numerator
+`1+(10p-1)z+12pz^2+(2p-1)z^3+z^4`.
