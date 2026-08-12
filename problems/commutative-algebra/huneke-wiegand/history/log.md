@@ -357,3 +357,16 @@
   parameters and rehashes all rows. Campaign and audit aggregates are
   `9631c644732f0921be3b3027e18a01110f23dad897fbf2cb14dd3a493eda5971` and
   `7c2abcd290bc3461fc5251bc3372e20a7fa25c888e3b2ed635368b4dda0781ff`.
+
+## 2026-08-12 - tangent-cone preprint v0.08 published
+
+- Expanded the manuscript to 20 pages with the exact Valabrega--Valla module, depth-zero theorem,
+  Hilbert function, and coefficientwise-positive Hilbert numerator.
+- The claim audit, stable two-pass build, complete rendered inspection, and sole-human-authorship
+  gates passed before upload.
+- Published Zenodo version DOI `10.5281/zenodo.21908490`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21908490`.
+- A fresh public download is 552,905 bytes with MD5 `29a4c70d45517a61d6eb01f028487b39`
+  and SHA-256 `c8a038adf042a71126e0b0dac170803340e12300521aad1ca05f88bbc3c32f69`, exactly matching Git.
+- Public version, sole author/ORCID, CC-BY-4.0 licence, and filename match. Repository PR promotion
+  remains the next delivery gate; no release tag is claimed.

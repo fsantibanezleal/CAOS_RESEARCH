@@ -1,6 +1,6 @@
 # Claim audit - manuscript v0.08
 
-Audited: 2026-08-12. Prepublication result: PASS.
+Audited: 2026-08-12. Final result: PASS.
 
 Version 0.08 retains the v0.06 duality correction and all v0.07 reduction results. It adds only
 the theorem-level consequences of the committed EXP-018 symbolic proof. Exact campaigns support
@@ -18,7 +18,7 @@ the proof and do not replace it.
 | computational support through `p=300` | EXP-018 `results.json`, `audit.json`, and independent bounded-bitset implementation | PASS; campaign `9631c644...5971`, audit `7c2abcd2...81ff` |
 | tangent-cone criterion source | Valabrega--Valla, DOI `10.1017/S0027763000018225` | PASS; primary source cited |
 | authorship | title page and `zenodo.json` | PASS; Felipe Santibanez-Leal is sole author; no automated system named |
-| publication identity | reserved Zenodo draft and page-one block | PASS prepublication; version DOI `10.5281/zenodo.21908490`, concept DOI `10.5281/zenodo.21763582` |
+| publication identity | public Zenodo record, page-one block, and fresh download | PASS; version DOI `10.5281/zenodo.21908490`, concept DOI `10.5281/zenodo.21763582`, sole author/ORCID, and public SHA-256 match Git |
 
 ## Scope boundaries
 
@@ -40,4 +40,5 @@ the proof and do not replace it.
   clipping or overlap;
 - frozen candidate PDF: 552905 bytes, MD5 `29a4c70d45517a61d6eb01f028487b39`, SHA-256
   `c8a038adf042a71126e0b0dac170803340e12300521aad1ca05f88bbc3c32f69`;
-- public record, concept-latest, and fresh-download equality gates: pending publication.
+- public record status, concept latest, sole author/ORCID, CC-BY-4.0 licence, filename, hashes, and
+  fresh downloaded-file equality: PASS.

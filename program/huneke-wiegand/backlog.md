@@ -10,7 +10,7 @@
 | HWB-006 | 1 | done | additive-basis/Kunz block family search | EXP-006 Route K opens extraction; EXP-009 proves an infinite family for every `p>=4` |
 | HWB-007 | 2 | in progress | surviving-variants matrix | EXP-011 closes the endomorphism/reflexivity row; other positive hypotheses remain to test |
 | HWB-008 | 2 | pending | formal certificate/proof packaging | small trusted checker; assess Lean only after theorem stabilizes |
-| HWB-009 | 0 | in progress | manuscript and Zenodo | v0.07 published and verified at `10.5281/zenodo.21908188`; EXP-018 passes the novelty gate for a v0.08 candidate |
+| HWB-009 | 0 | done | manuscript and Zenodo | v0.08 published and verified at `10.5281/zenodo.21908490`; all earlier versions remain frozen |
 | HWB-010 | 1 | done | classify rigid pairs at `F=181` | EXP-007: unique normalized pair, support/fixed terminal proofs and fresh audit pass |
 | HWB-011 | 2 | in progress | classify the EXP-009 family and nearby Kunz faces | EXP-011 closes uniform endomorphism anatomy; broader Kunz-face classification remains open |
 | HWB-012 | 1 | done | uniform endomorphism overring of the EXP-009 family | EXP-011 proves the exact formula, invariants, nonsymmetry, and Ext/Tor escape |

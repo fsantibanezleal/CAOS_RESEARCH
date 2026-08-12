@@ -159,3 +159,10 @@ has only positive coefficients, so Hilbert positivity does not see the obstructi
 publication gate is a v0.08 candidate with claim/build/render review. The next research gate after
 that is not a larger parameter sweep: it is the full graded torsion/Buchsbaum anatomy, declared as
 a separate experiment only after source and finite-target preflight.
+
+The publication gate is complete. The 20-page v0.08 passed claim audit, stable two-pass build,
+complete rendered inspection, metadata, sole-authorship, publication, and fresh-download checks.
+It is immutable at DOI `10.5281/zenodo.21908490`; the public SHA-256 is
+`c8a038adf042a71126e0b0dac170803340e12300521aad1ca05f88bbc3c32f69`. The next active gate is
+therefore the separately declared torsion/Buchsbaum anatomy, not further manuscript work or a
+larger EXP-018 sweep.

@@ -4,7 +4,8 @@ Updated: 2026-08-12. Lifecycle: published. EXP-014--018
 prove the exact stability, reduction, and tangent-cone anatomy of the explicit conductor family. Corrective
 manuscript v0.06 is published and independently verified at DOI `10.5281/zenodo.21907943`.
 EXP-017 and manuscript v0.07 are published and independently verified at DOI
-`10.5281/zenodo.21908188`. PR #156 passed both required jobs and merged the full round to `develop`
+`10.5281/zenodo.21908188`. EXP-018 and manuscript v0.08 are published and independently verified
+at DOI `10.5281/zenodo.21908490`. PR #156 passed both required jobs and merged the earlier round to `develop`
 at `5953850e`; PR #157 passed both jobs and promoted it to `main` at `2f6b9b9c`. Release v0.63.000
 remains the current repository release baseline; no new tag is
 claimed by this research round.
@@ -199,17 +200,18 @@ Published baseline:
 - v0.07 DOI `10.5281/zenodo.21908188`: conductor reduction number and Hilbert data. The public
   539,211-byte PDF has MD5 `5ed0616521a3363fb9cb6507babf9745` and SHA-256
   `2dca97dc100424afbeffd525fe66aa4aa43ce65c82c11b9ac43250cd33771e19`.
+- v0.08 DOI `10.5281/zenodo.21908490`: depth-zero conductor tangent cone and exact Hilbert series.
+  The public 552,905-byte PDF has MD5 `29a4c70d45517a61d6eb01f028487b39` and SHA-256
+  `c8a038adf042a71126e0b0dac170803340e12300521aad1ca05f88bbc3c32f69`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `21908188`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `21908490`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Integrate EXP-018 into a v0.08 manuscript candidate and run the full claim/build/render,
-   sole-authorship, metadata, Zenodo, and fresh-download gates.
-2. After publication, source-check and predeclare the full graded torsion/Buchsbaum question; do
+1. Source-check and predeclare the full graded torsion/Buchsbaum question; do
    not replace it with a larger parameter sweep.
-3. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
+2. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
    that architecture.
 
 ### Lenses ledger
