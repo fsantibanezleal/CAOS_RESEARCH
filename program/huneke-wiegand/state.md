@@ -28,6 +28,7 @@
 | 2026-08-12 | published | published | EXP-013 declared the exact common trace/conductor formula after showing trace equality alone is automatic over the Gorenstein base |
 | 2026-08-12 | published | published | EXP-013 proved the corrected exact common trace/conductor ideal and balanced colength `p+1`; original tail shorthand refuted at the smoke gate |
 | 2026-08-12 | published | published | 15-page preprint v0.05 passed claim/build/render QA, was published at DOI `10.5281/zenodo.21907297`, and matched a fresh public download exactly |
+| 2026-08-12 | published | published | PR #152 passed `guards` and `test` and merged the EXP-012/013 plus v0.05 round to `develop` at `bdb969db`; PR #153 passed both jobs and promoted the accumulated post-release state to `main` at `9be3069a` |
 
 Current state: **published**.
 
