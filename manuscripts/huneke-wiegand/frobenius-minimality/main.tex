@@ -14,8 +14,8 @@
 \hypersetup{
   pdftitle={Frobenius Minimality, Minimum-Layer Uniqueness, and an Infinite Family of Huneke--Wiegand Counterexamples},
   pdfauthor={Felipe Santibanez-Leal},
-  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, conductor, reduction, and tangent-cone anatomy},
-  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, trace ideals, conductors, associated graded rings, tangent cones, Buchsbaum rings, Valabrega-Valla modules, SAT, DRAT}
+  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, conductor, tangent-cone, and fiber-cone anatomy},
+  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, trace ideals, conductors, associated graded rings, tangent cones, fiber cones, Buchsbaum rings, Cohen-Macaulay rings, SAT, DRAT}
 }
 \usepackage{orcidlink}
 \usepackage{fancyhdr}
@@ -36,18 +36,18 @@
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-12\\[2pt]\normalsize Version 0.10}
+\date{2026-08-12\\[2pt]\normalsize Version 0.11}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.10}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.11}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.10}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.11}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,8 +63,8 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.10 \textperiodcentered\ 2026-08-12\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21909127}{10.5281/zenodo.21909127}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.11 \textperiodcentered\ 2026-08-12\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21909961}{10.5281/zenodo.21909961}\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
 verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
@@ -79,7 +79,7 @@ reduction, and tangent-cone anatomy.
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.10}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.11}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -143,7 +143,10 @@ polynomial Noether normalization induced by the minimal reduction, we determine 
 module: the torsion consists of $p$ exponent-one cyclic summands, while the free quotient has rank
 $24p$ and explicit shifts. This yields the complete minimal resolution, projective dimension one,
 regularity four, top-local-cohomology $a$-invariant three, and the exact parameter-section identity
-$\ell(G_p/x_pG_p)=25p=e_0(T_p)+I(G_p)$.
+$\ell(G_p/x_pG_p)=25p=e_0(T_p)+I(G_p)$. Finally, the exact identity
+$T_p^2=\mathfrak m_pT_p$ identifies the special fiber canonically with
+$G_p/H^0(G_p)$. It is Cohen--Macaulay of type $10p+1$, but its Artinian socle lies in degrees two
+and four, so it is neither level nor Gorenstein.
 The results remain confined
 to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
@@ -207,6 +210,8 @@ they are verified by exact machine computation and independently checked artifac
   \item We determine the complete graded module over the minimal-reduction Noether normalization,
   its minimal resolution and Betti numbers, regularity four, $a$-invariant three, and the exact
   parameter-section identity $\ell(G_p/x_pG_p)=25p=e_0(T_p)+I(G_p)$.
+  \item We prove $T_p^2=\mathfrak m_pT_p$, identify the conductor special fiber naturally with
+  $G_p/H^0(G_p)$, and compute its type $10p+1$ and nonlevel Artinian socle.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -1303,6 +1308,90 @@ and
 \texttt{c439f7e4fbd3cee983f32e5c6a27b347017c165cdf6d9fee54eb8d53ab634eac}.
 \]
 
+\subsection{The conductor special fiber}
+
+Let
+\[
+\mathcal F_p=\mathcal F(T_p)=\bigoplus_{n\ge0}T_p^n/\mathfrak m_pT_p^n
+\]
+be the special fiber. There is a natural graded-algebra surjection $G_p\to\mathcal F_p$ because
+$T_p^{n+1}\subseteq\mathfrak m_pT_p^n$.
+
+\begin{theorem}[Canonical fiber cone and exact type, {\bf[D]}]
+\label{thm:fiber}
+For every integer $p\ge4$,
+\[
+T_p^2=\mathfrak m_pT_p,
+\qquad
+T_p^{n+1}=\mathfrak m_pT_p^n\quad(n\ge1),
+\]
+and the natural map induces a graded-algebra isomorphism
+\[
+G_p/H^0_{\mathcal M_p}(G_p)\cong\mathcal F_p.
+\]
+The ring $\mathcal F_p$ is one-dimensional Cohen--Macaulay, with
+\begin{align*}
+\mathcal F_p\cong{}&F_p\oplus F_p(-1)^{10p-1}\oplus F_p(-2)^{12p}\\
+&\oplus F_p(-3)^{2p-1}\oplus F_p(-4)
+\end{align*}
+as a graded $F_p$-module. Its multiplicity is $24p$, its reduction number and regularity are four,
+and $a(\mathcal F_p)=3$. The Artinian reduction $B_p=\mathcal F_p/x_p\mathcal F_p$ has
+\[
+h(B_p)=(1,10p-1,12p,2p-1,1)
+\]
+and graded socle dimensions
+\[
+(0,0,10p,0,1).
+\]
+Thus $\operatorname{type}(\mathcal F_p)=10p+1$, and $\mathcal F_p$ is neither level nor
+Gorenstein.
+\end{theorem}
+
+\begin{proof}
+Minkowski addition of the exact value blocks in Theorems~\ref{thm:trace}
+and~\ref{thm:stability} gives
+\[
+v(\mathfrak m_pT_p)=(8s+C_p)\cup[9s,13s-2]\cup[13s,\infty)=v(T_p^2).
+\]
+Indeed, the lowest block follows from
+$A_p+A_p=C_p\cup[6p,8p-4]$; the latter interval and all remaining block sums lie at level at least
+$9s$ and fill every ring value there. The Frobenius value $13s-1$ remains absent. Equality of the
+monomial value sets proves $T_p^2=\mathfrak m_pT_p$, and multiplication by $T_p^{n-1}$ proves the
+higher identities.
+
+The degree-zero kernel of $G_p\to\mathcal F_p$ is $\mathfrak m_p/T_p$, which is exactly
+Theorem~\ref{thm:buchsbaum}'s $H^0$. In degree $n\ge1$, the kernel is
+$\mathfrak m_pT_p^n/T_p^{n+1}=0$. This proves the natural algebra isomorphism. Cohen--Macaulayness
+and the displayed free module now follow from Theorems~\ref{thm:buchsbaum}
+and~\ref{thm:module}; the Hilbert, multiplicity, reduction, regularity, and $a$-invariant claims
+follow immediately.
+
+For the type, reduce modulo the regular element $x_p$. Direct subtraction of
+$\mathfrak m_pT_p^n+t^{4s}T_p^{n-1}$ from the exact power blocks gives the displayed $h$-vector.
+The degree-two nonsocle offsets are precisely
+\[
+[p+1,2p]\cup[4p-1,5p-2].
+\]
+They multiply into the two degree-three blocks by degree-one offsets in $[1,p]$. Every other
+degree-two basis offset kills degree one. No degree-three basis element is socle: if its offset is
+$d$, the complementary offset $6p-1-d$ belongs to the degree-one basis and their product is the
+unique degree-four class. That class is socle because degree five vanishes. Hence the only socle
+dimensions are $10p$ in degree two and one in degree four, proving the final claims.
+\end{proof}
+
+EXP-021 reconstructs the square, natural kernel, Artinian basis, and socle for all
+$p=4,\ldots,300$ \textbf{[MV]}. The first full attempt passed through $p=225$ but exceeded its
+declared budget and is preserved as inconclusive. An exact bitset implementation then completed
+all $297$ parameters, and an independently encoded audit rebuilt six parameters and rehashed every
+row. The campaign and audit aggregates are
+\[
+\texttt{3857877586143a3be5f14852feb12bd9efbfdf7c1cde458f30e8cd689155a95b}
+\]
+and
+\[
+\texttt{1779407050b199039d3f6d808a720ea051a81ef11734fd1bccd1a76ec78c0a9c}.
+\]
+
 \section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
@@ -1311,7 +1400,7 @@ All compact code, hypotheses, manifests, audits, and verdicts are in the public 
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
 minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
-also includes the compact EXP-011--020 campaigns, independent reconstruction audits, symbolic
+also includes the compact EXP-011--021 campaigns, independent reconstruction audits, symbolic
 proofs, the preserved EXP-013 correction, and the EXP-015 refutation. The proof toolchain is
 pinned as follows:
 \begin{center}
@@ -1343,12 +1432,13 @@ trace/conductor formula in Theorem~\ref{thm:trace}, stability defect in
 Theorem~\ref{thm:stability}, and conductor reduction/Hilbert data in
 Theorem~\ref{thm:reduction}, tangent-cone depth in Theorem~\ref{thm:tangent}, and complete
 graded-torsion/Buchsbaum anatomy in Theorem~\ref{thm:buchsbaum}, and the complete
-Noether-normalization module in Theorem~\ref{thm:module}, together with
+Noether-normalization module in Theorem~\ref{thm:module}, and the canonical fiber cone and type in
+Theorem~\ref{thm:fiber}, together with
 their reproducible records.
 
 Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
 \ref{thm:type}, \ref{thm:trace}, \ref{thm:stability}, \ref{thm:reduction},
-\ref{thm:tangent}, \ref{thm:buchsbaum}, and~\ref{thm:module}
+\ref{thm:tangent}, \ref{thm:buchsbaum}, \ref{thm:module}, and~\ref{thm:fiber}
 do not classify all higher
 Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
 or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
@@ -1362,6 +1452,8 @@ questions remain open:
   \item Which additional hypotheses on the endomorphism ring recover a positive theorem while
   excluding both the public example and the full family proved here?
   \item Can the finite certificates be imported into a smaller formally verified checker?
+  \item What is a uniform minimal defining ideal of the conductor special fiber, and which of its
+  graded Betti features are forced by the block family?
 \end{enumerate}
 
 \section*{Acknowledgments}
