@@ -443,6 +443,38 @@
   `c439f7e4fbd3cee983f32e5c6a27b347017c165cdf6d9fee54eb8d53ab634eac`.
 - EXP-020 is CONFIRMED and triggers the manuscript v0.10 gate.
 
+## 2026-08-12 - EXP-021 declared
+
+- A primary-source and novelty preflight selects the conductor special fiber over a broader Kunz
+  sweep, Rees-algebra campaign, or premature defining-ideal calculation.
+- EXP-021 was declared before formal implementation or execution. It predicts
+  `T_p^2=m_pT_p`, the canonical algebra isomorphism `G_p/H^0(G_p) isomorphic to F(T_p)`, and an
+  Artinian socle giving Cohen--Macaulay type `10p+1` with nonlevel behavior.
+- The mandatory next action is the `p=4` smoke gate; no confirmation or publication is claimed.
+
+## 2026-08-12 - EXP-021 confirms the canonical conductor fiber cone
+
+- The mandatory `p=4` smoke gate passed. A first full campaign passed through `p=225` but hit the
+  declared 120-second budget, so it was preserved as inconclusive rather than misreported.
+- An exact bitset optimization completed the unchanged `p=4,...,300` campaign in 44.048252
+  seconds; the independently encoded six-parameter reconstruction and all-row hash audit passed.
+- The symbolic block proof establishes `T_p^2=m_pT_p`; the natural tangent-cone map therefore
+  identifies `F(T_p)` with `G_p/H^0` as graded algebras for every `p>=4`.
+- The Artinian socle has dimension `10p` in degree two and one in degree four. Thus the special
+  fiber is Cohen--Macaulay of type `10p+1`, neither level nor Gorenstein.
+- This material theorem triggers the manuscript v0.11 gate; no publication is yet claimed.
+
+## 2026-08-12 - conductor fiber-cone preprint v0.11 published
+
+- Expanded the manuscript to 25 pages with the canonical special-fiber quotient theorem, exact
+  free module, Artinian h-vector, type `10p+1`, and nonlevel/non-Gorenstein consequences.
+- Claim audit, stable two-pass LaTeX build, complete 25-page rendered inspection, sole-authorship,
+  ORCID, metadata, and scope checks passed.
+- Published CC BY 4.0 at DOI `10.5281/zenodo.21909961`; the concept latest resolves to this record.
+- A fresh unauthenticated public download matches the committed 589,535-byte PDF at MD5
+  `1ad22a6a87c0c6a5a80f8a913d06ca95` and SHA-256
+  `0b3a9131e3c419c0a89cb064ea6beb7c696006171fe18bec578e7ba963a520ce`.
+
 ## 2026-08-12 - Noether-normalization preprint v0.10 published
 
 - Expanded the manuscript to 22 pages with the complete graded module, minimal resolution, Betti

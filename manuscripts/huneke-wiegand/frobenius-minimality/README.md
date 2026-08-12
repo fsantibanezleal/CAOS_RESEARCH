@@ -1,7 +1,7 @@
 # Frobenius-minimality preprint
 
-`main.tex` is version 0.10 of the CAOS Research preprint; version 0.09 and all earlier versions
-remain frozen. Version 0.10 is published at DOI `10.5281/zenodo.21909127` after the complete
+`main.tex` is version 0.11 of the CAOS Research preprint; version 0.10 and all earlier versions
+remain frozen. Version 0.11 is published at DOI `10.5281/zenodo.21909961` after the complete
 claim/build/render and public-file verification workflow passed.
 It proves that the public
 Huneke-Wiegand numerical-semigroup counterexample has the least possible Frobenius number, 181,
@@ -24,6 +24,9 @@ Version 0.10 determines the complete graded module over the minimal-reduction po
 rank-`24p` free part with explicit shifts plus `p` exponent-one cyclic torsion summands. It derives
 the minimal resolution, projective dimension one, regularity four, top-local-cohomology
 `a`-invariant three, and `length(G_p/x_pG_p)=25p=e0(T_p)+I(G_p)`.
+Version 0.11 proves `T_p^2=m_pT_p`, identifies the conductor special fiber canonically with
+`G_p/H^0(G_p)`, and computes Cohen--Macaulay type `10p+1`. Its Artinian socle lies in degrees two
+and four, so the fiber cone is neither level nor Gorenstein.
 
 Attribution is binding: Son Pham discovered the first public counterexample; CAOS contributes the
 certified minimality, minimum-layer uniqueness, and parametric-family extensions. Professor Craig
@@ -55,9 +58,10 @@ Zenodo identifiers:
 - version 0.08 DOI: `10.5281/zenodo.21908490`
 - version 0.09 DOI: `10.5281/zenodo.21908785`
 - version 0.10 DOI: `10.5281/zenodo.21909127`
+- version 0.11 DOI: `10.5281/zenodo.21909961`
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-020 under
+Evidence sources are EXP-001 through EXP-021 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
 finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
@@ -76,6 +80,9 @@ EXP-019 contains the complete colon-saturation proof, full homogeneous-maximal-a
 two-route campaign, independent bounded-bitset audit, and Buchsbaum/quotient-series controls.
 EXP-020 contains the graded-PID proof, recursive-power Apery-column reconstruction, Hilbert/torsion
 route, independently written closed-form audit, exact Betti data, and corrupted-module controls.
+EXP-021 contains the exact square and natural-kernel proof, a 297-parameter reconstruction of the
+fiber cone and Artinian socle, the preserved first budget-only attempt, an independently encoded
+six-parameter/all-row-hash audit, and corrupted-square, kernel, socle, and type controls.
 
 Version 0.02 remains frozen with this public-file verification:
 
@@ -179,3 +186,17 @@ Version 0.10 public-file verification:
 - the concept latest resolves to record `21909127`; public version, sole author/ORCID, CC-BY-4.0
   licence, filename, bytes, MD5, and SHA-256 match the committed record
 - a fresh public download matches the committed PDF exactly
+
+Version 0.11 public-file verification:
+
+- reserved DOI: `10.5281/zenodo.21909961`; no upload or publication occurred before
+  claim/build/render QA
+- bytes: `589535`
+- MD5: `1ad22a6a87c0c6a5a80f8a913d06ca95`
+- SHA-256: `0b3a9131e3c419c0a89cb064ea6beb7c696006171fe18bec578e7ba963a520ce`
+- all 25 pages passed rendered inspection at 150 DPI; the final stable two-pass build has no
+  warnings, undefined references, overfull boxes, or underfull boxes
+- sole authorship, ORCID, version, reserved DOI, concept DOI, and CC-BY-4.0 metadata gates pass
+- the concept latest resolves to record `21909961`; public version, sole author/ORCID, CC-BY-4.0
+  licence, filename, bytes, MD5, and SHA-256 match the committed record
+- a fresh unauthenticated public download matches the committed PDF exactly

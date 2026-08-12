@@ -45,6 +45,10 @@
 | 2026-08-12 | confirmed | active | EXP-020 proves the complete cyclic decomposition over `k[x_p]`, exact graded Betti numbers, regularity four, `a=3`, and `length(G_p/x_pG_p)=25p=e0+I` |
 | 2026-08-12 | published | published | 22-page preprint v0.10 passed claim/build/render QA, was published at DOI `10.5281/zenodo.21909127`, and matched a fresh public download exactly |
 | 2026-08-12 | published | published | PR #168 passed `guards` and `test` and merged EXP-020 plus v0.10 to `develop` at `5b9ca074`; PR #169 passed all checks and promoted the identical tested tree to `main` at `06a6af92` |
+| 2026-08-12 | active | active | EXP-021 declared before implementation: test whether the conductor fiber cone is the natural Cohen--Macaulay quotient of the tangent cone and determine its exact Artinian socle |
+| 2026-08-12 | active | active | EXP-021's first full attempt exceeded its declared budget after passing through `p=225`; the inconclusive attempt was preserved and the exact socle implementation optimized |
+| 2026-08-12 | confirmed | active | EXP-021 proves `T_p^2=m_pT_p`, the canonical algebra quotient `G_p/H^0 isomorphic to F(T_p)`, and Cohen--Macaulay type `10p+1` with nonlevel behavior |
+| 2026-08-12 | published | published | 25-page preprint v0.11 passed claim/build/render QA, was published at DOI `10.5281/zenodo.21909961`, and matched a fresh public download exactly |
 
 Current state: **published**.
 

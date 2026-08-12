@@ -282,6 +282,8 @@ Published baseline:
   required.
 - Noether-normalization: EXP-020 tests whether the entire tangent-cone defect is isolated in `p`
   exponent-one cyclic summands over the minimal-reduction polynomial ring.
+- Fiber-cone restoration: EXP-021 tests whether killing that torsion is canonically the special
+  fiber algebra, and uses its Artinian reduction to decide type, levelness, and Gorensteinness.
 
 ## 7. Gotchas
 
@@ -314,3 +316,14 @@ Published baseline:
 Read root `Entry_point.md`, this file, `plan.md`, `state.md`, `backlog.md`, and the latest relevant
 experiment verdict. Continue the highest-priority unblocked item without changing the product
 branch or importing the candidate repository's verifier as CAOS evidence.
+
+## 2026-08-12 in flight - EXP-021
+
+EXP-021 is CONFIRMED. It proves `T_p^2=m_pT_p` and the canonical graded-algebra identification
+`G_p/H^0 isomorphic to F(T_p)`. The fiber cone is Cohen--Macaulay of type `10p+1`, but its
+Artinian socle occurs in degrees two and four, so it is neither level nor Gorenstein. The exact
+campaign passed all 297 parameters after one preserved budget-only attempt; the independent audit
+rebuilt six parameters and rehashed every row. Manuscript v0.11 is published and fresh-download
+verified at DOI `10.5281/zenodo.21909961`. The active gate is repository PR promotion. After that,
+HWB-023 defining ideals is the strongest identified next path, but it requires a separate
+hypothesis and source preflight before implementation.
