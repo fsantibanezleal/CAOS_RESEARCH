@@ -225,7 +225,8 @@ def main() -> int:
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     temporary = args.output.with_suffix(args.output.suffix + ".tmp")
-    temporary.write_text(json.dumps(output, indent=2) + "\n", encoding="utf-8")
+    with temporary.open("w", encoding="utf-8", newline="\n") as handle:
+        handle.write(json.dumps(output, indent=2) + "\n")
     temporary.replace(args.output)
     elapsed = time.perf_counter() - started
     print(

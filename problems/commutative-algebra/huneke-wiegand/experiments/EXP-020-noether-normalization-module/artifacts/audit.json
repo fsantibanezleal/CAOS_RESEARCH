@@ -1,7 +1,7 @@
 {
   "experiment": "EXP-020-noether-normalization-module",
   "status": "INDEPENDENT_AUDIT_PASS",
-  "campaign_file_sha256": "1314637dd60ee90c84ae0934e86c64b3a4a9218fdf67b9b6b169471a87855ee5",
+  "campaign_file_sha256": "a27d6883ddbbf4374ea0c7962c31d7a9b359a8347d981efff33234abb3a444e7",
   "campaign_rows_rehashed": 297,
   "selected_parameters": [
     4,

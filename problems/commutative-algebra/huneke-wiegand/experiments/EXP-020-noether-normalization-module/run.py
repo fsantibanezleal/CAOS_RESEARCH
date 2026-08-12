@@ -267,7 +267,8 @@ def analyze_parameter(p: int) -> dict[str, object]:
 def write_json_atomic(path: Path, value: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".tmp")
-    temporary.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
+    with temporary.open("w", encoding="utf-8", newline="\n") as handle:
+        handle.write(json.dumps(value, indent=2) + "\n")
     temporary.replace(path)
 
 
