@@ -383,3 +383,18 @@
 - Predeclared the prediction that the torsion is `k^p` in degree zero, the full homogeneous maximal
   ideal annihilates it, and the tangent cone is Buchsbaum but not Cohen--Macaulay with invariant
   `p`. No formal implementation or campaign preceded the declaration.
+
+## 2026-08-12 - EXP-019 confirmed
+
+- Proved that stable conductor-power tails turn the full graded colon saturation into the exact
+  threshold `v>=4(n+1)s`.
+- The threshold leaves exactly the `p` classes `t^(5s+h)+T_p`, `h in H_p`, in degree zero and no
+  torsion in positive degree.
+- Proved separately that `m_p/T_p` and `G_(p,+)` both annihilate these classes. Hence every tangent
+  cone is Buchsbaum but not Cohen--Macaulay, with unbounded Buchsbaum invariant `p`; its quotient
+  by `H^0` is Cohen--Macaulay with an exact Hilbert series.
+- Both exact routes passed for all 297 parameters. Campaign and independent-audit aggregates are
+  `854d7889d9d7b911b462e4d483e021210ae2873ae0ec0091ec30e8fb29d6dbf7` and
+  `0b01853febc9e9754e28abcd099a7ae3a97f4cc0ab92f3a345ab2ae03cd3c68a`.
+- The new theorem triggers a v0.09 manuscript candidate; Zenodo publication remains gated on the
+  complete claim/build/render, sole-authorship, metadata, and public-file verification workflow.
