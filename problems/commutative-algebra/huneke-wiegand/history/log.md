@@ -442,3 +442,16 @@
   `02cf6f62a71de1a897cd46149e8c89d1c55bf810d28dddc02fc6c5330b9c1aed` and
   `c439f7e4fbd3cee983f32e5c6a27b347017c165cdf6d9fee54eb8d53ab634eac`.
 - EXP-020 is CONFIRMED and triggers the manuscript v0.10 gate.
+
+## 2026-08-12 - Noether-normalization preprint v0.10 published
+
+- Expanded the manuscript to 22 pages with the complete graded module, minimal resolution, Betti
+  numbers, regularity, top-local-cohomology `a`-invariant, and parameter-section theorem.
+- The claim audit, stable two-pass build, complete 22-page rendered inspection, metadata, and
+  sole-human-authorship gates passed before upload.
+- Published Zenodo version DOI `10.5281/zenodo.21909127`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21909127`.
+- A fresh public download is 578,949 bytes with MD5 `830ae1fd2e2fbf923a86cbf575e9a841`
+  and SHA-256 `00a78fd8101f106724877b3fdbc933c51024a872a2b9a4f05692358b4d1a9d03`, exactly matching Git.
+- Public version, sole author/ORCID, CC-BY-4.0 licence, and filename match. Repository PR promotion
+  is the remaining delivery gate; no release tag is claimed.

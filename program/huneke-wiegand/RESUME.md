@@ -10,6 +10,8 @@ at DOI `10.5281/zenodo.21908490`. PR #160 passed both required jobs and merged t
 EXP-019 and manuscript v0.09 are published and independently verified at DOI
 `10.5281/zenodo.21908785`. PR #164 passed both required jobs and merged this round to `develop` at
 `efdca94`; PR #165 passed all checks and promoted the identical tested tree to `main` at `cbe62a5`.
+EXP-020 and the 22-page manuscript v0.10 are complete and independently verified at DOI
+`10.5281/zenodo.21909127`; repository PR promotion is the remaining delivery gate.
 Release v0.63.000
 remains the current repository release baseline; no new tag is
 claimed by this research round.
@@ -33,7 +35,10 @@ Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
 9. depth-zero conductor tangent cones with a unique Valabrega--Valla defect of length `p` and an
    exact coefficientwise-positive Hilbert numerator (EXP-018); and
 10. complete tangent-cone torsion `k^p` in degree zero, Buchsbaumness, and unbounded Buchsbaum
-    invariant `p` (EXP-019).
+    invariant `p` (EXP-019); and
+11. the complete graded module over the minimal-reduction polynomial ring, including all Betti
+    numbers, projective dimension one, regularity four, and the section identity `25p=e0+I`
+    (EXP-020).
 
 The public seed is
 
@@ -133,7 +138,7 @@ campaign is supporting evidence, not the proof.
   `02cf6f62a71de1a897cd46149e8c89d1c55bf810d28dddc02fc6c5330b9c1aed` and
   `c439f7e4fbd3cee983f32e5c6a27b347017c165cdf6d9fee54eb8d53ab634eac`.
 
-## 4. In flight
+## 4. Closed current round
 
 EXP-020 is CONFIRMED. Put `F_p=k[x_p]`, where
 `x_p=(t^(4s))^*` comes from the EXP-017 minimal reduction. The source-led Noether-normalization
@@ -149,8 +154,9 @@ The only first syzygies are `p` copies in degree one, `pd_(F_p)(G_p)=1`,
 `length(G_p/x_pG_p)=25p=e0(T_p)+I(G_p)`. The load-bearing proof is the graded PID argument from
 EXP-017--019; the independent route reconstructs every cyclic string from the conductor-power
 Apery table modulo `24p`. Both exact routes passed for `p=4,...,300`; the independent audit rebuilt
-six parameters and rehashed every campaign row. This is a material theorem beyond v0.09, so the
-active delivery gate is manuscript v0.10 with full claim/build/render and Zenodo verification.
+six parameters and rehashed every campaign row. The material theorem is published in manuscript
+v0.10 after full claim/build/render, sole-authorship, metadata, and fresh-download verification.
+The remaining delivery gate is checked PR promotion to `develop` and `main`.
 
 Previously closed state:
 
@@ -244,18 +250,21 @@ Published baseline:
   and Cohen--Macaulay quotient. The public 567,854-byte PDF has MD5
   `c0605ace2b60d6830fd6e68d68d883b0` and SHA-256
   `ecf4d1ebe504ad3af74d123c949a953a7f397dabd72ec11c94a631962e1501db`.
+- v0.10 DOI `10.5281/zenodo.21909127`: complete Noether-normalization module, minimal graded
+  resolution, regularity, `a`-invariant, and parameter-section identity. The public 578,949-byte
+  PDF has MD5 `830ae1fd2e2fbf923a86cbf575e9a841` and SHA-256
+  `00a78fd8101f106724877b3fdbc933c51024a872a2b9a4f05692358b4d1a9d03`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `21908785`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `21909127`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Expand the manuscript to v0.10 from the EXP-020 proof and verdict; run the full claim, clean
-   two-pass build, complete rendered-page, metadata, and sole-authorship audit.
-2. Publish and fresh-download verify Zenodo v0.10 only if every manuscript gate passes.
-3. Promote the closed round through checked PRs to `develop` and `main`, then reconcile the durable
+1. Promote the closed EXP-020/v0.10 round through checked PRs to `develop` and `main`, then reconcile the durable
    handoff without claiming a global release tag.
-4. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
+2. Select the next theorem target only after a source and novelty preflight; prioritize a structural
+   classification or restoration-of-positivity hypothesis over a larger parameter sweep.
+3. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
    that architecture.
 
 ### Lenses ledger

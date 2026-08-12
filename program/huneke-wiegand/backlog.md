@@ -22,4 +22,4 @@
 | HWB-018 | 1 | done | torsion/Buchsbaum anatomy of the tangent cone | EXP-019 proves `H^0=k^p` in degree zero, full maximal-ideal annihilation, Buchsbaumness, and invariant `p` |
 | HWB-019 | 1 | done | manuscript and Zenodo update for Buchsbaum theorem | v0.09 published and fresh-download verified at `10.5281/zenodo.21908785` |
 | HWB-020 | 1 | done | exact Noether-normalization module and graded Betti data | EXP-020 proves the complete cyclic decomposition, minimal resolution, regularity four, and section identity `25p=e0+I` |
-| HWB-021 | 1 | in progress | manuscript and Zenodo update for module theorem | v0.10 required by the material-theorem trigger; full claim/build/render and public-file verification gates apply |
+| HWB-021 | 1 | done | manuscript and Zenodo update for module theorem | v0.10 published and fresh-download verified at `10.5281/zenodo.21909127` |

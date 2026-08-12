@@ -209,3 +209,9 @@ Noether normalization is one, the regularity is four, the top-local-cohomology `
 three, and `length(G_p/x_pG_p)=25p=e0(T_p)+I(G_p)`. The exact Apery-column campaign passed all 297
 parameters and the independent audit rebuilt six parameters and rehashed every row. This material
 theorem triggers manuscript v0.10; no publication is claimed before its full immutable workflow.
+
+The publication gate is complete. The 22-page v0.10 passed claim audit, stable two-pass build,
+complete rendered inspection, sole-authorship and metadata checks, publication, and fresh-download
+verification. It is immutable at DOI `10.5281/zenodo.21909127`; the public PDF is 578,949 bytes
+with SHA-256 `00a78fd8101f106724877b3fdbc933c51024a872a2b9a4f05692358b4d1a9d03`.
+The remaining gate is repository PR promotion, not further EXP-020 computation.

@@ -1,7 +1,6 @@
 # Claim audit - manuscript v0.10
 
-Audited: 2026-08-12. Candidate result: PASS. Public-record verification remains pending until the
-reserved Zenodo draft is published.
+Audited: 2026-08-12. Final result: PASS.
 
 Version 0.10 retains all v0.09 claims and adds only the theorem-level consequences of the
 committed EXP-020 symbolic proof. Exact campaigns support the proof and do not replace it.
@@ -18,7 +17,7 @@ committed EXP-020 symbolic proof. Exact campaigns support the proof and do not r
 | selected artifact reconstruction | EXP-020 audit at `p=4,5,17,73,151,300` | PASS; every selected row is independently reconstructed and rehashed |
 | literature viewpoint | Cortadellas--Zarzuela, arXiv `0906.0911`, and J. Algebra DOI `10.1016/j.jalgebra.2007.02.044` | PASS; only the Noether-normalization module viewpoint is used; maximal-ideal-specific formulas are not imported |
 | authorship | title page and `zenodo.json` | PASS; Felipe Santibanez-Leal is sole author; no automated system named |
-| reserved publication identity | Zenodo draft, page-one block, and metadata candidate | PASS before upload; version DOI `10.5281/zenodo.21909127`, concept DOI `10.5281/zenodo.21763582`, sole author/ORCID, and CC-BY-4.0 metadata agree |
+| publication identity | public Zenodo record, page-one block, and fresh download | PASS; version DOI `10.5281/zenodo.21909127`, concept DOI `10.5281/zenodo.21763582`, sole author/ORCID, and public SHA-256 match Git |
 
 ## Scope boundaries
 
@@ -41,4 +40,5 @@ committed EXP-020 symbolic proof. Exact campaigns support the proof and do not r
   headers, and page numbers are legible without clipping or overlap;
 - frozen candidate PDF: 578949 bytes, MD5 `830ae1fd2e2fbf923a86cbf575e9a841`, SHA-256
   `00a78fd8101f106724877b3fdbc933c51024a872a2b9a4f05692358b4d1a9d03`;
-- upload, publication, concept-latest resolution, and fresh public-download equality: PENDING.
+- public record status, concept latest, sole author/ORCID, CC-BY-4.0 licence, filename, hashes, and
+  fresh downloaded-file equality: PASS.

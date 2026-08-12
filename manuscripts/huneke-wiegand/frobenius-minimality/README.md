@@ -1,8 +1,8 @@
 # Frobenius-minimality preprint
 
-`main.tex` is the version 0.10 candidate of the CAOS Research preprint; version 0.09 and all earlier
-versions remain frozen. The reserved v0.10 DOI is `10.5281/zenodo.21909127`; no upload or
-publication is claimed before the full claim/build/render gate passes.
+`main.tex` is version 0.10 of the CAOS Research preprint; version 0.09 and all earlier versions
+remain frozen. Version 0.10 is published at DOI `10.5281/zenodo.21909127` after the complete
+claim/build/render and public-file verification workflow passed.
 It proves that the public
 Huneke-Wiegand numerical-semigroup counterexample has the least possible Frobenius number, 181,
 and is the unique normalized pair attaining that minimum within the nonprincipal two-generated
@@ -54,7 +54,7 @@ Zenodo identifiers:
 - version 0.07 DOI: `10.5281/zenodo.21908188`
 - version 0.08 DOI: `10.5281/zenodo.21908490`
 - version 0.09 DOI: `10.5281/zenodo.21908785`
-- reserved version 0.10 DOI: `10.5281/zenodo.21909127`
+- version 0.10 DOI: `10.5281/zenodo.21909127`
 - licence: CC BY 4.0
 
 Evidence sources are EXP-001 through EXP-020 under
@@ -167,7 +167,7 @@ Version 0.09 public-file verification:
   licence, filename, bytes, MD5, and SHA-256 match the committed record
 - a fresh public download matches the committed PDF exactly
 
-Version 0.10 candidate verification:
+Version 0.10 public-file verification:
 
 - reserved DOI: `10.5281/zenodo.21909127`; no upload or publication occurred before
   claim/build/render QA
@@ -176,5 +176,6 @@ Version 0.10 candidate verification:
 - SHA-256: `00a78fd8101f106724877b3fdbc933c51024a872a2b9a4f05692358b4d1a9d03`
 - all 22 pages passed rendered inspection at 150 DPI; the final stable two-pass build has no
   warnings, undefined references, overfull boxes, or underfull boxes
-- Zenodo upload, publication, concept-latest resolution, and fresh public-download equality are
-  pending
+- the concept latest resolves to record `21909127`; public version, sole author/ORCID, CC-BY-4.0
+  licence, filename, bytes, MD5, and SHA-256 match the committed record
+- a fresh public download matches the committed PDF exactly
