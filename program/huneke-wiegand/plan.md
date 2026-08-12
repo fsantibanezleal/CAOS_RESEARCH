@@ -246,3 +246,10 @@ public-download verification. It is immutable at DOI `10.5281/zenodo.21909961`; 
 589,535-byte PDF has SHA-256
 `0b3a9131e3c419c0a89cb064ea6beb7c696006171fe18bec578e7ba963a520ce`. Repository PR promotion
 remains required before HWB-023 can be considered for a separate declaration.
+
+Repository promotion is complete. PR #172 passed `guards` and `test` and merged the complete
+EXP-021/v0.11 round to `develop` at `178a7361043198e8785a739fde77074b126370dd`; PR #173 passed
+all required checks and promoted it to `main` at
+`7abd10403a5798af4757223bfa0cfa2135aed048`. The remote branch trees are identical at
+`21791e6a6c182fa12f00a5f255a6faab23dd7058`. The remaining action is the documentation handoff;
+no release tag is claimed.

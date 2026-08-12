@@ -475,6 +475,15 @@
   `1ad22a6a87c0c6a5a80f8a913d06ca95` and SHA-256
   `0b3a9131e3c419c0a89cb064ea6beb7c696006171fe18bec578e7ba963a520ce`.
 
+## 2026-08-12 - EXP-021 and v0.11 promoted
+
+- CAOS_RESEARCH PR #172 passed `guards` and `test` and merged the complete theorem/publication
+  round to `develop` at `178a7361043198e8785a739fde77074b126370dd`.
+- PR #173 passed all required checks and promoted the tested state to `main` at
+  `7abd10403a5798af4757223bfa0cfa2135aed048`.
+- Remote `develop` and `main` are tree-identical at
+  `21791e6a6c182fa12f00a5f255a6faab23dd7058`. No release tag is claimed.
+
 ## 2026-08-12 - Noether-normalization preprint v0.10 published
 
 - Expanded the manuscript to 22 pages with the complete graded module, minimal resolution, Betti
