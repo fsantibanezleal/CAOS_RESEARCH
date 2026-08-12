@@ -34,6 +34,8 @@
 | 2026-08-12 | published | published | 17-page corrective preprint v0.06 passed claim/build/render QA, was published at DOI `10.5281/zenodo.21907943`, and matched a fresh public download exactly |
 | 2026-08-12 | published | published | EXP-017 proved conductor reduction number four, quotient profile `23p-1,14p,2p,1,0`, and Hilbert coefficients `(24p,39p)`; 18-page v0.07 published and fresh-download verified at DOI `10.5281/zenodo.21908188` |
 | 2026-08-12 | published | published | PR #156 passed `guards` and `test` and merged EXP-014--017 plus v0.06/v0.07 to `develop` at `5953850e`; PR #157 passed both jobs and promoted the tested state to `main` at `2f6b9b9c` |
+| 2026-08-12 | published | published | EXP-018 proved that every conductor tangent cone has depth zero, with its sole Valabrega--Valla defect of length `p` and an exact coefficientwise-positive Hilbert numerator |
+| 2026-08-12 | published | published | 20-page preprint v0.08 passed claim/build/render QA, was published at DOI `10.5281/zenodo.21908490`, and matched a fresh public download exactly |
 
 Current state: **published**.
 
