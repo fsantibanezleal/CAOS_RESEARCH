@@ -1,0 +1,94 @@
+{
+  "experiment": "EXP-014-conductor-stability",
+  "status": "AUDIT_PASS",
+  "all_rows_rehashed": true,
+  "sample_parameters": [
+    4,
+    5,
+    17,
+    73,
+    151,
+    300
+  ],
+  "checks": [
+    {
+      "p": 4,
+      "defect_length": 56,
+      "level_counts": {
+        "8": 8,
+        "9": 4,
+        "10": 12,
+        "11": 24,
+        "12": 7,
+        "16": 1
+      },
+      "defect_hash": "58a63370cf9627221b33d2176df3fff530edbd8236948e6dcfad5be25b64d8db"
+    },
+    {
+      "p": 5,
+      "defect_length": 70,
+      "level_counts": {
+        "8": 10,
+        "9": 5,
+        "10": 15,
+        "11": 30,
+        "12": 9,
+        "16": 1
+      },
+      "defect_hash": "0275d034d954330856adde503e69cb5455a27517ccc41f9262b292faed9e3452"
+    },
+    {
+      "p": 17,
+      "defect_length": 238,
+      "level_counts": {
+        "8": 34,
+        "9": 17,
+        "10": 51,
+        "11": 102,
+        "12": 33,
+        "16": 1
+      },
+      "defect_hash": "571ba5bf24c89cdcd98215f25e550e0ee92848d0a9f4c3889161b5233a4677f7"
+    },
+    {
+      "p": 73,
+      "defect_length": 1022,
+      "level_counts": {
+        "8": 146,
+        "9": 73,
+        "10": 219,
+        "11": 438,
+        "12": 145,
+        "16": 1
+      },
+      "defect_hash": "febe05628671017996047e93b4ee397d24ae501dc54a438f26e671419e3c00bd"
+    },
+    {
+      "p": 151,
+      "defect_length": 2114,
+      "level_counts": {
+        "8": 302,
+        "9": 151,
+        "10": 453,
+        "11": 906,
+        "12": 301,
+        "16": 1
+      },
+      "defect_hash": "e9141b07c1e1c04c6e8314b412725608f032db11bb7eae39060e5efcc982012e"
+    },
+    {
+      "p": 300,
+      "defect_length": 4200,
+      "level_counts": {
+        "8": 600,
+        "9": 300,
+        "10": 900,
+        "11": 1800,
+        "12": 599,
+        "16": 1
+      },
+      "defect_hash": "4eab0a036644ff2ea4b35232b3df8f08551f612b0fa058c6ca8fea93761f260d"
+    }
+  ],
+  "audit_aggregate": "22f7ddca76fbabc62d5cb90dd6e2a71ffc342bf7ecd102eef81c146a3365d768"
+}

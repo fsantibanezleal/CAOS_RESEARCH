@@ -10,7 +10,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Son Pham publicly identified the first counterexample to the Huneke-Wiegand conjecture in the class of two-generated monomial ideals over symmetric numerical semigroup rings, subsequently verified independently by Professor Craig Huneke. This preprint preserves that discovery priority and develops separate extensions: Frobenius minimality, classification of the minimum layer, an explicit infinite family, and the family's uniform endomorphism, type, trace, and conductor anatomy.</p><p>Proof-carrying exact computation shows that the least Frobenius number is 181, attained by Pham's example at shift 14. Complete theorem-tree enumeration and 1,156 independently checked fixed-pair DRAT proofs reproduce the published range F&lt;69. A selector CNF gives accepted DRAT proofs for every odd F from 69 through 179 and recovers the exact public semigroup at F=181. Projected enumeration then proves that shift 14 and the public membership vector are unique at the minimum.</p><p>For every integer p&gt;=4, we give a deductive construction of a symmetric numerical semigroup with multiplicity 24p, Frobenius number 78p-1, conductor 78p, and embedding dimension 11p, carrying the nonprincipal rigid ideal (t^(24p),t^(30p)). Seven exact interval-sum identities prove closure, symmetry, generation, and rigidity.</p><p>For every family member, the endomorphism value semigroup is determined exactly: it has multiplicity 24p, Frobenius number 54p-1, conductor 54p, genus 38p-1, embedding dimension 12p, and Cohen-Macaulay type and reduced type 10p. It has maximal reduced type, is not almost symmetric, and its completed semigroup ring is not almost Gorenstein. The rigid ideal is not reflexive over its endomorphism ring; adjacent Ext and Tor obstruction groups are nonzero.</p><p>The trace of the ideal, the trace of its endomorphism ring, and the conductor of the finite birational extension are equal. Their common value ideal is computed exactly and has balanced defect: length(R/(R:E))=length(E/R)=p+1. The first overbroad tail prediction was refuted at the smoke gate and its correction is preserved. Exact campaigns through p=300 and independently implemented audits support, but do not replace, the symbolic proofs.</p><p>The results remain confined to numerical semigroup rings and two-generated monomial ideals. They do not classify arbitrary modules or arbitrary one-dimensional Gorenstein domains. Code, compact artifacts, verdicts, symbolic proofs, and verification instructions: https://github.com/fsantibanezleal/CAOS_RESEARCH.</p>",
+    "description": "<p>Son Pham publicly identified the first counterexample to the Huneke-Wiegand conjecture in the class of two-generated monomial ideals over symmetric numerical semigroup rings, subsequently verified independently by Professor Craig Huneke. This preprint preserves that discovery priority and develops separate extensions: Frobenius minimality, classification of the minimum layer, an explicit infinite family, and the family's uniform endomorphism, type, trace, conductor, stability, and reduction anatomy.</p><p>Proof-carrying exact computation shows that the least Frobenius number is 181, attained by Pham's example at shift 14. Complete theorem-tree enumeration and 1,156 independently checked fixed-pair DRAT proofs reproduce the published range F&lt;69. A selector CNF gives accepted DRAT proofs for every odd F from 69 through 179 and recovers the exact public semigroup at F=181. Projected enumeration then proves that shift 14 and the public membership vector are unique at the minimum.</p><p>For every integer p&gt;=4, we give a deductive construction of a symmetric numerical semigroup with multiplicity 24p, Frobenius number 78p-1, conductor 78p, and embedding dimension 11p, carrying the nonprincipal rigid ideal (t^(24p),t^(30p)). Seven exact interval-sum identities prove closure, symmetry, generation, and rigidity.</p><p>For every family member, the endomorphism value semigroup is determined exactly: it has multiplicity 24p, Frobenius number 54p-1, conductor 54p, genus 38p-1, embedding dimension 12p, and Cohen-Macaulay type and reduced type 10p. It has maximal reduced type, is not almost symmetric, and its completed semigroup ring is not almost Gorenstein. The rigid ideal is not reflexive over its endomorphism ring; adjacent Ext and Tor obstruction groups are nonzero.</p><p>The trace of the ideal, the trace of its endomorphism ring, and the conductor of the finite birational extension are equal. Their common value ideal is computed exactly, with length(R/(R:E))=length(E/R)=p+1. Version 0.06 identifies the equality of these two lengths as general one-dimensional Gorenstein local duality and restricts the family-specific claim to the exact common ideal and the value p+1. It further proves that the conductor is nonstable and computes length(T^2/t^(4s)T)=14p. Version 0.07 determines the entire conductor reduction sequence: t^(4s)R is a minimal reduction of exact reduction number four, the successive quotient lengths are 23p-1, 14p, 2p, 1, 0, and the Hilbert-Samuel coefficients are e0=24p and e1=39p. Failed overbroad tail predictions remain preserved. Exact campaigns through p=300 and independently implemented audits support, but do not replace, the symbolic proofs.</p><p>The results remain confined to numerical semigroup rings and two-generated monomial ideals. They do not classify arbitrary modules or arbitrary one-dimensional Gorenstein domains. Code, compact artifacts, verdicts, symbolic proofs, and verification instructions: https://github.com/fsantibanezleal/CAOS_RESEARCH.</p>",
     "keywords": [
       "Huneke-Wiegand conjecture",
       "numerical semigroups",
@@ -82,9 +82,24 @@
         "relation": "cites",
         "identifier": "10.1007/s13348-026-00515-0",
         "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/s00013-022-01764-8",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2212.09087v1",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1017/S0305004100029194",
+        "resource_type": "publication-article"
       }
     ],
-    "version": "0.05",
+    "version": "0.07",
     "language": "eng"
   }
 }
