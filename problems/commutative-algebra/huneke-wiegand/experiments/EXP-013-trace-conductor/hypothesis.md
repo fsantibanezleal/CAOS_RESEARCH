@@ -24,7 +24,8 @@ v(T_p) = (4s+A_p)
          union (5s+(A_p union B_p))
          union (6s+B_p)
          union (8s+C_p)
-         union [9s,infinity).
+         union [9s,13s-2]
+         union [13s,infinity).
 ```
 
 Consequently `length_(R_p)(R_p/T_p)=p+1`. The equality is compatible with the
@@ -60,3 +61,11 @@ a budget hit is `INCONCLUSIVE`, never supporting evidence.
 EXP-013 computes trace and conductor ideals only for the explicit family. It neither proves a new
 counterexample nor classifies arbitrary one-dimensional Gorenstein rings, rigid modules, or nearby
 Kunz faces.
+
+## Pre-campaign smoke correction
+
+The first `p=4` smoke run refuted the originally declared tail `[9s,infinity)` at `13s-1`, the
+Frobenius gap of `Gamma_p`. No campaign artifact had been written. The corrected secondary
+prediction displayed above excludes that single non-`R_p` value. The original tail prediction is
+recorded as REFUTED; the common-ideal and colength predictions remain live under the corrected
+formula.

@@ -274,3 +274,6 @@
   `R_p` values being zero and a reflected level-five block of size `p`.
 - Declared EXP-013 before implementation or execution, with two independent exact routes, three
   adversarial mutations, and a two-minute budget.
+- The first `p=4` smoke run refuted the shorthand tail `[9s,infinity)` at the old Frobenius gap
+  `13s-1`. Before any campaign artifact existed, the corrected prediction preserved that gap; the
+  common-ideal and colength claims remained unchanged.

@@ -108,3 +108,8 @@ is therefore declared around the stronger unsolved datum: an exact common formul
 `tr_R(J_p)=R_p:E_p=tr_R(E_p)`. The prediction differs from `Gamma_p` only at zero and a reflected
 level-five block of size `p`, so its colength should be `p+1`. Symbolic block proof remains
 load-bearing; two exact reconstructions and corrupted controls test the implementation.
+
+The first `p=4` smoke check corrected one overbroad tail shorthand before campaign execution:
+`13s-1` is not in `Gamma_p`, so the common ideal contains `[9s,13s-2]` and the tail from `13s`, not
+all integers from `9s`. This initial prediction is preserved as refuted; the equality and colength
+claims are unaffected.

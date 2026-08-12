@@ -48,11 +48,20 @@ T_p = (4s+A_p)
       union (5s+([0,s-1] without H_p))
       union (6s+B_p)
       union (8s+C_p)
-      union [9s,infinity).
+      union [9s,13s-2]
+      union [13s,infinity).
 ```
 
 Because `[0,s-1] without H_p=A_p union B_p`, its only difference from `Gamma_p` is the zero value
 and the `p` values `5s+H_p`. Hence `length(R_p/T_p)=p+1`.
+
+### Preserved smoke correction
+
+The first `p=4` smoke run rejected the originally declared shorthand `[9s,infinity)` at
+`13s-1`. That number is the old Frobenius gap of `Gamma_p`, so no `R_p`-ideal can contain it.
+Before any campaign artifact was written, the displayed tail was corrected to
+`[9s,13s-2] union [13s,infinity)`. The equality and colength predictions are unchanged. This note
+preserves the failed prediction rather than silently treating it as an implementation issue.
 
 For `W_p=R_p:J_p`, valuation arithmetic gives `tr_R(J_p)=J_p W_p=W_p union (s+W_p)`.
 For `R_p:E_p`, every positive `Gamma_p` value automatically handles the isolated top overring
