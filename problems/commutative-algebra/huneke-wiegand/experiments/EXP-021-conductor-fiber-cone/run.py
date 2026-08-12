@@ -139,6 +139,16 @@ def quotient_basis(numerator: Profile, denominators: list[Profile]) -> list[int]
     ]
 
 
+def union_bits(denominators: list[Profile], stop: int) -> int:
+    """Encode a finite window of a union of monomial ideals as one exact bitset."""
+    floor = min(item.minimum for item in denominators)
+    return sum(
+        1 << target
+        for target in range(floor, stop + 1)
+        if any(item.contains(target) for item in denominators)
+    )
+
+
 def direct_route(p: int) -> dict[str, object]:
     q = 24 * p
     ideal_powers = powers(p)
@@ -171,6 +181,7 @@ def direct_route(p: int) -> dict[str, object]:
         )
 
     degree_one = artinian_basis[1]
+    degree_one_bits = sum(1 << generator for generator in degree_one)
     socle: list[list[int]] = []
     for n, basis in enumerate(artinian_basis):
         if n + 1 >= len(artinian_basis):
@@ -180,14 +191,15 @@ def direct_route(p: int) -> dict[str, object]:
             maximal_products[n + 1],
             shift(ideal_powers[n], q),
         ]
+        denominator_bits = union_bits(
+            target_denominators,
+            max(basis) + max(degree_one) if basis else 0,
+        )
         socle.append(
             [
                 value
                 for value in basis
-                if all(
-                    any(item.contains(value + generator) for item in target_denominators)
-                    for generator in degree_one
-                )
+                if ((degree_one_bits << value) & ~denominator_bits) == 0
             ]
         )
 
