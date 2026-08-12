@@ -295,3 +295,14 @@
   `d55ed876d7918cb4c46d8e5f3894a508d172693bde4b4c76cb67c42fcfbf0ac1`.
 - EXP-012 and EXP-013 jointly pass the deliberation gate for a manuscript v0.05 candidate; no
   publication is claimed until all build, render, metadata, and immutable-download gates pass.
+
+## 2026-08-12 - type and trace preprint v0.05 published
+
+- Expanded the manuscript to 15 pages with the pseudo-Frobenius/type theorem, exact common
+  trace/conductor theorem, balanced defect, and the preserved `13s-1` smoke correction.
+- The claim audit, clean two-pass build, and complete 15-page rendered inspection passed; Felipe
+  Santibanez-Leal remains the sole author.
+- Published Zenodo version DOI `10.5281/zenodo.21907297`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21907297`.
+- A fresh public download is 515,650 bytes with MD5 `75a1102cc9dab8785ee00ba7f93012e7`
+  and SHA-256 `4bd2cfd7351cb6cec1b3fa006c7eb3018732c283b5bb5a1e5c86015435275276`, exactly matching Git.

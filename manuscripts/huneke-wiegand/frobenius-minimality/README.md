@@ -32,7 +32,7 @@ Zenodo identifiers:
 - version 0.02 DOI: `10.5281/zenodo.21764868`
 - version 0.03 DOI: `10.5281/zenodo.21873911`
 - version 0.04 DOI: `10.5281/zenodo.21876338`
-- version 0.05 DOI: `10.5281/zenodo.21907297` (reserved draft until final QA and publication)
+- version 0.05 DOI: `10.5281/zenodo.21907297`
 - licence: CC BY 4.0
 
 Evidence sources are EXP-001 through EXP-013 under
@@ -71,12 +71,14 @@ Version 0.04 public-file verification:
   CC-BY-4.0 licence, filename, bytes, MD5, and SHA-256 match the committed record
 - a fresh public download matches the committed PDF exactly
 
-Version 0.05 pre-publication verification:
+Version 0.05 public-file verification:
 
-- reserved DOI: `10.5281/zenodo.21907297`; no upload or publication occurred before QA
-- candidate bytes: `515650`
-- candidate MD5: `75a1102cc9dab8785ee00ba7f93012e7`
-- candidate SHA-256: `4bd2cfd7351cb6cec1b3fa006c7eb3018732c283b5bb5a1e5c86015435275276`
+- DOI: `10.5281/zenodo.21907297`; the draft was reserved before build and no upload occurred before QA
+- bytes: `515650`
+- MD5: `75a1102cc9dab8785ee00ba7f93012e7`
+- SHA-256: `4bd2cfd7351cb6cec1b3fa006c7eb3018732c283b5bb5a1e5c86015435275276`
 - all 15 pages passed rendered inspection; the final two-pass build has no warnings, undefined
   references, overfull boxes, or underfull boxes
-- public metadata and fresh-download verification remain pending until publication
+- the concept latest resolves to record `21907297`; public title, version, sole author/ORCID,
+  CC-BY-4.0 licence, filename, bytes, MD5, and SHA-256 match the committed record
+- a fresh public download matches the committed PDF exactly

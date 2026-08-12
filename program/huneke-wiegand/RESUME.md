@@ -1,9 +1,10 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-10. Lifecycle: published. EXP-011 proves the uniform endomorphism-overring
-theorem for the EXP-009 family, and manuscript v0.04 is published at DOI
-`10.5281/zenodo.21876338`. PR #150 passed both required CI jobs and promoted the complete round to
-`develop` at `273ce4d2`. Release v0.63.000 remains the current repository release baseline.
+Updated: 2026-08-12. Lifecycle: published. EXP-012 and EXP-013 prove the exact pseudo-Frobenius,
+reduced-type, trace, and conductor anatomy of the explicit family. Manuscript v0.05 is published
+and independently verified at DOI `10.5281/zenodo.21907297`. Promotion of the current work branch
+through `develop` and `main` remains the repository handoff. Release v0.63.000 remains the current
+repository release baseline.
 
 ## 1. State in one screen
 
@@ -161,14 +162,17 @@ Published baseline:
 - v0.04 DOI `10.5281/zenodo.21876338`: uniform endomorphism-overring theorem. The public
   491,757-byte PDF has MD5 `248297d0a833ba21dce27d738a50e92f` and SHA-256
   `025cea4c59c4301ff6925cfe43353c7ac1c6cd8b4fc56a8c6d648347f418e825`.
+- v0.05 DOI `10.5281/zenodo.21907297`: pseudo-Frobenius/type and exact trace/conductor theorems.
+  The public 515,650-byte PDF has MD5 `75a1102cc9dab8785ee00ba7f93012e7` and SHA-256
+  `4bd2cfd7351cb6cec1b3fa006c7eb3018732c283b5bb5a1e5c86015435275276`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `21876338`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `21907297`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Build and claim-audit a deliberate manuscript v0.05 candidate combining EXP-012 and EXP-013.
-2. Publish only after clean build, rendered-page, metadata, and immutable-download verification.
+1. Promote the complete EXP-012/013 and verified v0.05 round through the required PR path.
+2. Reassess the surviving-variants matrix and formal-certificate value before declaring EXP-014.
 3. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
    that architecture.
 

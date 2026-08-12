@@ -119,3 +119,8 @@ that `length(R_p/(R_p:E_p))=length(E_p/R_p)=p+1`. The symbolic block proof is su
 two-route exact checks, an independent six-parameter reconstruction, stable hashes, and three
 rejected corruptions. EXP-012 and EXP-013 together pass the deliberation gate for a v0.05
 candidate; publication remains conditional on the full manuscript and public-artifact workflow.
+
+That workflow is complete. The 15-page v0.05 passed claim audit, clean two-pass build, complete
+rendered inspection, sole-authorship and metadata gates, and is immutably published at DOI
+`10.5281/zenodo.21907297`. A fresh public download matches the committed 515,650-byte PDF at
+SHA-256 `4bd2cfd7351cb6cec1b3fa006c7eb3018732c283b5bb5a1e5c86015435275276`.

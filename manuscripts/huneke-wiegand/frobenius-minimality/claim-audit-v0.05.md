@@ -1,6 +1,6 @@
 # Claim audit - manuscript v0.05
 
-Audited: 2026-08-12. Current result: MANUSCRIPT QA PASS; PUBLICATION PENDING.
+Audited: 2026-08-12. Final result: PASS.
 
 The symbolic proofs carry the infinite statements. Exact campaigns validate implementations and
 boundaries; they do not substitute for the proofs.
@@ -21,7 +21,7 @@ boundaries; they do not substitute for the proofs.
 | EXP-012/013 campaigns through `p=300` | committed `results.json` and audits | PASS; symbolic proofs remain load-bearing |
 | current trace source | Lindo-Maitra-Zhang version of record, DOI `10.1007/s13348-026-00515-0` | PASS; Corollary 5.6 and Gorenstein scope checked directly |
 | authorship | title page and `zenodo.json` | PASS; Felipe Santibanez-Leal is sole author; no automated system named |
-| reserved publication identity | Zenodo draft and page-one block | PASS; version DOI `10.5281/zenodo.21907297`, concept DOI `10.5281/zenodo.21763582`; draft remains unpublished |
+| publication identity | public Zenodo record, page-one block, and fresh download | PASS; version DOI `10.5281/zenodo.21907297`, concept DOI `10.5281/zenodo.21763582`; public SHA-256 matches Git |
 
 ## Scope boundaries
 
@@ -29,8 +29,8 @@ boundaries; they do not substitute for the proofs.
 - Minimality and uniqueness concern the normalized two-generated monomial-ideal class.
 - The family results concern the explicit `Gamma_p,J_p,E_p` construction only.
 - No classification of arbitrary modules, rings, counterexamples, or nearby Kunz faces is claimed.
-- The v0.05 DOI is reserved but not public until build, render, upload, publication, and fresh-public-
-  download verification all pass.
+- The v0.05 record is public only after build, render, upload, publication, and fresh-public-download
+  verification all passed.
 
 ## Build and rendered-document gate
 
@@ -41,4 +41,5 @@ boundaries; they do not substitute for the proofs.
   references, running headers, and page numbers are legible with no clipping or overlap;
 - frozen candidate PDF: 515650 bytes, MD5 `75a1102cc9dab8785ee00ba7f93012e7`, SHA-256
   `4bd2cfd7351cb6cec1b3fa006c7eb3018732c283b5bb5a1e5c86015435275276`;
-- public metadata and fresh-download equality: PENDING.
+- public record status, concept latest, sole author/ORCID, CC-BY-4.0 licence, filename, bytes, MD5,
+  SHA-256, and fresh downloaded-file equality: PASS.
