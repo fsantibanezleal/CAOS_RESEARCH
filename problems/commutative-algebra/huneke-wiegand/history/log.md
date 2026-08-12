@@ -369,4 +369,6 @@
 - A fresh public download is 552,905 bytes with MD5 `29a4c70d45517a61d6eb01f028487b39`
   and SHA-256 `c8a038adf042a71126e0b0dac170803340e12300521aad1ca05f88bbc3c32f69`, exactly matching Git.
 - Public version, sole author/ORCID, CC-BY-4.0 licence, and filename match. Repository PR promotion
-  remains the next delivery gate; no release tag is claimed.
+  passed next: PR #160 passed `guards` and `test` and merged the round to `develop` at
+  `c91ff890`; PR #161 passed all checks and promoted the identical tested tree to `main` at
+  `4b62f778`. No release tag is claimed.
