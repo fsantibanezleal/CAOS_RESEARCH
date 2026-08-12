@@ -1,7 +1,8 @@
 # Frobenius-minimality preprint
 
-`main.tex` and `main.pdf` are published version 0.09 of the CAOS Research preprint. Version 0.08
-and all earlier versions remain frozen.
+`main.tex` is the version 0.10 candidate of the CAOS Research preprint; version 0.09 and all earlier
+versions remain frozen. The reserved v0.10 DOI is `10.5281/zenodo.21909127`; no upload or
+publication is claimed before the full claim/build/render gate passes.
 It proves that the public
 Huneke-Wiegand numerical-semigroup counterexample has the least possible Frobenius number, 181,
 and is the unique normalized pair attaining that minimum within the nonprincipal two-generated
@@ -19,6 +20,10 @@ Version 0.09 proves that the complete zeroth local cohomology is `k^p`, concentr
 zero and annihilated by the full homogeneous maximal ideal. Thus the tangent cones are Buchsbaum
 but not Cohen--Macaulay with unbounded Buchsbaum invariant `p`; their quotients by `H^0` are
 Cohen--Macaulay with an exact Hilbert series.
+Version 0.10 determines the complete graded module over the minimal-reduction polynomial ring: a
+rank-`24p` free part with explicit shifts plus `p` exponent-one cyclic torsion summands. It derives
+the minimal resolution, projective dimension one, regularity four, top-local-cohomology
+`a`-invariant three, and `length(G_p/x_pG_p)=25p=e0(T_p)+I(G_p)`.
 
 Attribution is binding: Son Pham discovered the first public counterexample; CAOS contributes the
 certified minimality, minimum-layer uniqueness, and parametric-family extensions. Professor Craig
@@ -49,9 +54,10 @@ Zenodo identifiers:
 - version 0.07 DOI: `10.5281/zenodo.21908188`
 - version 0.08 DOI: `10.5281/zenodo.21908490`
 - version 0.09 DOI: `10.5281/zenodo.21908785`
+- reserved version 0.10 DOI: `10.5281/zenodo.21909127`
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-019 under
+Evidence sources are EXP-001 through EXP-020 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
 finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
@@ -68,6 +74,8 @@ EXP-018 contains the exact Valabrega--Valla intersection proof, two-route campai
 written bounded-bitset audit, and Hilbert-series controls.
 EXP-019 contains the complete colon-saturation proof, full homogeneous-maximal-annihilator test,
 two-route campaign, independent bounded-bitset audit, and Buchsbaum/quotient-series controls.
+EXP-020 contains the graded-PID proof, recursive-power Apery-column reconstruction, Hilbert/torsion
+route, independently written closed-form audit, exact Betti data, and corrupted-module controls.
 
 Version 0.02 remains frozen with this public-file verification:
 
@@ -158,3 +166,15 @@ Version 0.09 public-file verification:
 - the concept latest resolves to record `21908785`; public version, sole author/ORCID, CC-BY-4.0
   licence, filename, bytes, MD5, and SHA-256 match the committed record
 - a fresh public download matches the committed PDF exactly
+
+Version 0.10 candidate verification:
+
+- reserved DOI: `10.5281/zenodo.21909127`; no upload or publication occurred before
+  claim/build/render QA
+- bytes: `578949`
+- MD5: `830ae1fd2e2fbf923a86cbf575e9a841`
+- SHA-256: `00a78fd8101f106724877b3fdbc933c51024a872a2b9a4f05692358b4d1a9d03`
+- all 22 pages passed rendered inspection at 150 DPI; the final stable two-pass build has no
+  warnings, undefined references, overfull boxes, or underfull boxes
+- Zenodo upload, publication, concept-latest resolution, and fresh public-download equality are
+  pending
