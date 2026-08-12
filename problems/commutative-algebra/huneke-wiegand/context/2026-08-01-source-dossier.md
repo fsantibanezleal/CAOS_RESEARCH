@@ -24,6 +24,12 @@ expert verification, not a substitute for later peer review.
 - Landeros et al., `https://arxiv.org/abs/2404.12519`: generalized arithmetic-sequence
   numerical semigroups.
 - Dey--Lyle, `https://arxiv.org/abs/2510.02210`: endomorphism-center/reflexivity criteria.
+- Herzog--Kumashiro, DOI `10.1007/s00013-022-01764-8`: Proposition 3.1, Claim 1 identifies
+  `length(R/(R:S))=length(S/R)` as one-dimensional Gorenstein local duality for finite birational
+  extensions; this prevents treating EXP-013's balanced colength as a family-specific mechanism.
+- Dey, `https://arxiv.org/abs/2212.09087`: Corollary 3.7 proves that the conductor of a finite
+  birational extension of a one-dimensional Gorenstein local ring is stable exactly when the
+  extension ring is Gorenstein; EXP-012 therefore forces nonstability in the explicit family.
 
 Exact source archives and hashes live outside Git at
 `E:/_Datos/caos-research/huneke-wiegand/sources/`.
