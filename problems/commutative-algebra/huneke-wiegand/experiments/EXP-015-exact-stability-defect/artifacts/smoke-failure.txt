@@ -1,0 +1,5 @@
+EXP-015 exact campaign p=4,...,5
+AssertionError: p=4: square formula mismatch at 311
+
+For p=4, s=24 and 311=13s-1. The declared square tail [9s,infinity) incorrectly
+included the inherited Frobenius gap. No campaign artifact was written.

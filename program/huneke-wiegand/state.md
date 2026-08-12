@@ -29,6 +29,10 @@
 | 2026-08-12 | published | published | EXP-013 proved the corrected exact common trace/conductor ideal and balanced colength `p+1`; original tail shorthand refuted at the smoke gate |
 | 2026-08-12 | published | published | 15-page preprint v0.05 passed claim/build/render QA, was published at DOI `10.5281/zenodo.21907297`, and matched a fresh public download exactly |
 | 2026-08-12 | published | published | PR #152 passed `guards` and `test` and merged the EXP-012/013 plus v0.05 round to `develop` at `bdb969db`; PR #153 passed both jobs and promoted the accumulated post-release state to `main` at `9be3069a` |
+| 2026-08-12 | published | published | primary-source correction separated general Gorenstein colength duality from the family-specific EXP-013 trace/conductor calculation |
+| 2026-08-12 | published | published | EXP-014 proved conductor nonstability; EXP-015 preserved a smoke-gate refutation; EXP-016 proved exact stability defect `14p` |
+| 2026-08-12 | published | published | 17-page corrective preprint v0.06 passed claim/build/render QA, was published at DOI `10.5281/zenodo.21907943`, and matched a fresh public download exactly |
+| 2026-08-12 | published | published | EXP-017 proved conductor reduction number four, quotient profile `23p-1,14p,2p,1,0`, and Hilbert coefficients `(24p,39p)`; 18-page v0.07 published and fresh-download verified at DOI `10.5281/zenodo.21908188` |
 
 Current state: **published**.
 
