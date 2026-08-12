@@ -1,9 +1,10 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-10. Lifecycle: published. EXP-011 proves the uniform endomorphism-overring
-theorem for the EXP-009 family, and manuscript v0.04 is published at DOI
-`10.5281/zenodo.21876338`. PR #150 passed both required CI jobs and promoted the complete round to
-`develop` at `273ce4d2`. Release v0.63.000 remains the current repository release baseline.
+Updated: 2026-08-12. Lifecycle: published. EXP-012 and EXP-013 prove the exact pseudo-Frobenius,
+reduced-type, trace, and conductor anatomy of the explicit family. Manuscript v0.05 is published
+and independently verified at DOI `10.5281/zenodo.21907297`. Promotion of the current work branch
+through `develop` and `main` remains the repository handoff. Release v0.63.000 remains the current
+repository release baseline.
 
 ## 1. State in one screen
 
@@ -87,6 +88,8 @@ campaign is supporting evidence, not the proof.
 | EXP-009 | CONFIRMED | explicit infinite family for every integer `p>=4`; independent formula/semantic audit passes |
 | EXP-010 | SUPERSEDED | no run; declared conditional gate became false when EXP-009 succeeded |
 | EXP-011 | CONFIRMED | uniform endomorphism-overring formula, nonsymmetric invariants, and family-wide Ext/Tor escape |
+| EXP-012 | CONFIRMED | exact `10p` pseudo-Frobenius set, maximal reduced type, and non-almost-Gorenstein boundary |
+| EXP-013 | CONFIRMED after correction | exact common trace/conductor ideal and balanced colength `p+1`; original tail shorthand refuted |
 
 ## 3a. Exact evidence anchors
 
@@ -122,8 +125,31 @@ campaign and audit aggregates are
 Manuscript v0.04 passed its claim audit, clean two-pass build, and complete 12-page rendered
 inspection before publication.
 
-No experiment is currently in flight. The next research round requires a separately declared,
-falsifiable classification or surviving-variant target.
+EXP-012 is CONFIRMED. It proves
+
+```text
+PF(Lambda_p) = (6s+B^c) union (7s+Q^c) union (8s+C^c),
+type(Lambda_p) = reduced_type(Lambda_p) = 10p.
+```
+
+The consequence is maximal reduced type and failure of almost symmetry for every `p>=4`.
+The invariant-first proof uses the last multiplicity window plus explicit witnesses excluding all
+lower gaps. The exact campaign and independent audit aggregates are
+`9bed38fb1c786c3740e000dde7ea7d79a7e7c83fa584ff12fc2c4623b5d503ec` and
+`0315c4c22c41e0d2b8a5abb27f717a4d4a6f7356ef30ca388206d739e0de2c37`.
+
+EXP-013 is CONFIRMED after one preserved correction. With `H_p=(s-1)-Q_p`, it proves
+
+```text
+tr_(R_p)(J_p)=R_p:E_p=tr_(R_p)(E_p)=T_p,
+length(R_p/T_p)=length(E_p/R_p)=p+1.
+```
+
+The exact value set has blocks `4s+A_p`, `5s+(A_p union B_p)`, `6s+B_p`, `8s+C_p`, the full
+interval `[9s,13s-2]`, and the tail from `13s`. The initial shorthand `[9s,infinity)` was refuted
+at `13s-1` by the first smoke run before any campaign artifact. Corrected campaign and audit
+aggregates are `77448398a26b958c66818b7ac4aaa4b542bad11cdba5ec7c8f7fe76db37526e2` and
+`d55ed876d7918cb4c46d8e5f3894a508d172693bde4b4c76cb67c42fcfbf0ac1`.
 
 Published baseline:
 
@@ -136,16 +162,17 @@ Published baseline:
 - v0.04 DOI `10.5281/zenodo.21876338`: uniform endomorphism-overring theorem. The public
   491,757-byte PDF has MD5 `248297d0a833ba21dce27d738a50e92f` and SHA-256
   `025cea4c59c4301ff6925cfe43353c7ac1c6cd8b4fc56a8c6d648347f418e825`.
+- v0.05 DOI `10.5281/zenodo.21907297`: pseudo-Frobenius/type and exact trace/conductor theorems.
+  The public 515,650-byte PDF has MD5 `75a1102cc9dab8785ee00ba7f93012e7` and SHA-256
+  `4bd2cfd7351cb6cec1b3fa006c7eb3018732c283b5bb5a1e5c86015435275276`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `21876338`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `21907297`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Define a specific classification target beyond the explicit family before declaring another
-   experiment; do not treat the broad module/domain classification as solved.
-2. Test positive-theorem hypotheses against the exact family invariants and prioritize a sharp
-   boundary statement over another unconstrained SAT sweep.
+1. Promote the complete EXP-012/013 and verified v0.05 round through the required PR path.
+2. Reassess the surviving-variants matrix and formal-certificate value before declaring EXP-014.
 3. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
    that architecture.
 
@@ -154,9 +181,12 @@ Published baseline:
 - Exclusion: positive theorem hypotheses are tested against exact family invariants, not guessed.
 - Anatomy: EXP-011 upgrades the seed-only endomorphism calculation to a proved parametric theorem.
 - Invariant: adjacent blocks `V_k intersect V_(k+1)` decide the exact overring without SAT.
-- External dialogue: current primary records and the public candidate repository were rechecked;
-  no parametric endomorphism theorem was identified.
-- Adversarial: generated-semigroup/Apéry reconstruction and corrupted block formulas are required.
+- External dialogue: Maitra-Mukundan redirects the next round to maximal reduced type, while
+  Lindo-Maitra-Zhang opens a separate trace/endomorphism route.
+- Trace redirection: because `R_p` is Gorenstein, equality of the two traces is not discriminatory;
+  EXP-013 targets their exact common value ideal and colength instead.
+- Adversarial: minimal-generator and Apéry PF reconstructions plus corrupted PF formulas are
+  required.
 
 ## 7. Gotchas
 

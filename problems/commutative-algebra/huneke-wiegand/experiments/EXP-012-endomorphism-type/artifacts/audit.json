@@ -1,0 +1,20 @@
+{
+  "experiment": "EXP-012-endomorphism-type",
+  "status": "AUDIT_PASS",
+  "campaign_aggregate": "9bed38fb1c786c3740e000dde7ea7d79a7e7c83fa584ff12fc2c4623b5d503ec",
+  "rehash_count": 297,
+  "sample_parameters": [
+    4,
+    5,
+    17,
+    73,
+    151,
+    300
+  ],
+  "sample_hash": "ff5b8de3b027713776e68840f3483fed4f3703a8ce76ecf3d7ae22206ac291f5",
+  "controls": {
+    "injected_lower_gap_rejected": true,
+    "deleted_pf_rejected": true
+  },
+  "audit_aggregate": "0315c4c22c41e0d2b8a5abb27f717a4d4a6f7356ef30ca388206d739e0de2c37"
+}

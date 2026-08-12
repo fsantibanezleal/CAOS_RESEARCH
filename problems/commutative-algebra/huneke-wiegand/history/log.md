@@ -238,3 +238,71 @@
 - PR `#150` passed `guards` and `test` and merged the complete EXP-011 and v0.04 publication round
   into `develop` at `273ce4d2ca73f75762824168b41e8e3494612c05`. The serialized repository
   release path was not claimed by this problem round.
+
+## 2026-08-12 - EXP-012 declared
+
+- Refreshed the current primary literature on pseudo-Frobenius numbers, reduced type, endomorphism
+  centers, and trace/reflexivity, including the 2026 version of record by Lindo-Maitra-Zhang.
+- Redirected the next round from an unconstrained nearby-face search to the invariant-first
+  pseudo-Frobenius anatomy of the known endomorphism family.
+- Hand block analysis predicts exactly `10p` pseudo-Frobenius numbers, all in the last multiplicity
+  window, hence maximal reduced type and a uniform non-almost-Gorenstein boundary.
+- Declared EXP-012 with two exact routes, symbolic proof requirements, corruptions, and a two-minute
+  budget before implementation or execution.
+
+## 2026-08-12 - EXP-012 confirms unbounded maximal reduced type
+
+- Proved that every final multiplicity-window gap of `Lambda_p` is pseudo-Frobenius and supplied an
+  explicit minimal-generator witness excluding every lower gap.
+- The complete pseudo-Frobenius set has three blocks of sizes `3p`, `5p`, and `2p`; type and reduced
+  type are exactly `10p`, so every associated semigroup ring has maximal reduced type.
+- Since `2g-(F+type)=12p-1`, every `Lambda_p` is not almost symmetric and its completed semigroup
+  ring is not almost Gorenstein.
+- The exact bitset and Apéry routes agree for all `p=4,...,300`; a separate implementation rehashed
+  all 297 rows, reconstructed six parameters, and rejected two corrupted PF formulas.
+- EXP-012 is CONFIRMED. The next new viewpoint is the trace/endomorphism equality from the 2026
+  Lindo-Maitra-Zhang criterion; manuscript publication is deliberately deferred until that route is
+  adjudicated.
+
+## 2026-08-12 - EXP-013 declared after trace-route correction
+
+- The source-complete check found that equality of the two trace ideals is already forced here:
+  `R_p` is one-dimensional Gorenstein and the relevant ideals are reflexive.
+- Redirected HWB-014 from retesting that consequence to computing the exact common trace/conductor
+  ideal and its colength.
+- Hand block arithmetic predicts four finite blocks plus the tail from `9s`, with the only missing
+  `R_p` values being zero and a reflected level-five block of size `p`.
+- Declared EXP-013 before implementation or execution, with two independent exact routes, three
+  adversarial mutations, and a two-minute budget.
+- The first `p=4` smoke run refuted the shorthand tail `[9s,infinity)` at the old Frobenius gap
+  `13s-1`. Before any campaign artifact existed, the corrected prediction preserved that gap; the
+  common-ideal and colength claims remained unchanged.
+- The first full campaign attempt exceeded its execution envelope without writing an artifact. The
+  repeated checks of ordinary `Gamma_p` values were removed: only the `p+1` values in
+  `Lambda_p minus Gamma_p` can add conductor constraints. The rerun remains subject to the original
+  two-minute scientific budget.
+
+## 2026-08-12 - EXP-013 confirms the corrected trace/conductor theorem
+
+- Proved `tr_R(J_p)=R_p:E_p=tr_R(E_p)` with an explicit block formula for every `p>=4`.
+- The common ideal omits exactly zero and the reflection of `Q_p` at level five, so its colength is
+  `p+1`, equal to the extension length `length(E_p/R_p)` from EXP-011.
+- Both exact routes pass for all 297 parameters in 9.7 seconds; a separate implementation rehashes
+  every row, reconstructs six parameters, and rejects deleted, injected, and altered-overring
+  controls.
+- Campaign and audit aggregates are
+  `77448398a26b958c66818b7ac4aaa4b542bad11cdba5ec7c8f7fe76db37526e2` and
+  `d55ed876d7918cb4c46d8e5f3894a508d172693bde4b4c76cb67c42fcfbf0ac1`.
+- EXP-012 and EXP-013 jointly pass the deliberation gate for a manuscript v0.05 candidate; no
+  publication is claimed until all build, render, metadata, and immutable-download gates pass.
+
+## 2026-08-12 - type and trace preprint v0.05 published
+
+- Expanded the manuscript to 15 pages with the pseudo-Frobenius/type theorem, exact common
+  trace/conductor theorem, balanced defect, and the preserved `13s-1` smoke correction.
+- The claim audit, clean two-pass build, and complete 15-page rendered inspection passed; Felipe
+  Santibanez-Leal remains the sole author.
+- Published Zenodo version DOI `10.5281/zenodo.21907297`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21907297`.
+- A fresh public download is 515,650 bytes with MD5 `75a1102cc9dab8785ee00ba7f93012e7`
+  and SHA-256 `4bd2cfd7351cb6cec1b3fa006c7eb3018732c283b5bb5a1e5c86015435275276`, exactly matching Git.

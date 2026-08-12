@@ -84,3 +84,43 @@ endomorphism/reflexivity row of the surviving-variants matrix. Manuscript v0.04 
 claim/build/render gates and is immutably published at DOI `10.5281/zenodo.21876338`. Any next
 classification question must be declared separately rather than automatically returning to
 EXP-010.
+
+## 2026-08-12 invariant-first type gate
+
+EXP-012 is declared before computation. Instead of opening a broad Kunz-face classification, it
+tests the exact pseudo-Frobenius anatomy of `Lambda_p`. The predicted PF set is the union of the
+level-6, level-7, and level-8 gap blocks, with no lower pseudo-Frobenius numbers. If proved, the
+endomorphism family has type and reduced type `10p`, maximal reduced type, and is uniformly not
+almost Gorenstein. The separate trace-ideal criterion from Lindo-Maitra-Zhang is retained as a
+future reformulation route after the invariant is settled.
+
+EXP-012 is CONFIRMED. The complete pseudo-Frobenius set is exactly the three final gap blocks,
+giving type and reduced type `10p`. Hence the endomorphism family has maximal reduced type, while
+`2g-(F+type)=12p-1` proves it is uniformly not almost symmetric. The next invariant-first gate is
+the trace/endomorphism equality from Lindo-Maitra-Zhang Corollary 5.6, not an automatic manuscript
+version or nearby-face SAT sweep.
+
+## 2026-08-12 exact trace gate
+
+The source-complete preflight shows that trace equality itself cannot separate this family:
+`R_p` is one-dimensional Gorenstein, so the reflexive-trace criterion already forces it. EXP-013
+is therefore declared around the stronger unsolved datum: an exact common formula for
+`tr_R(J_p)=R_p:E_p=tr_R(E_p)`. The prediction differs from `Gamma_p` only at zero and a reflected
+level-five block of size `p`, so its colength should be `p+1`. Symbolic block proof remains
+load-bearing; two exact reconstructions and corrupted controls test the implementation.
+
+The first `p=4` smoke check corrected one overbroad tail shorthand before campaign execution:
+`13s-1` is not in `Gamma_p`, so the common ideal contains `[9s,13s-2]` and the tail from `13s`, not
+all integers from `9s`. This initial prediction is preserved as refuted; the equality and colength
+claims are unaffected.
+
+EXP-013 is CONFIRMED under that correction. It proves the common trace is exactly `R_p:E_p` and
+that `length(R_p/(R_p:E_p))=length(E_p/R_p)=p+1`. The symbolic block proof is supported by 297
+two-route exact checks, an independent six-parameter reconstruction, stable hashes, and three
+rejected corruptions. EXP-012 and EXP-013 together pass the deliberation gate for a v0.05
+candidate; publication remains conditional on the full manuscript and public-artifact workflow.
+
+That workflow is complete. The 15-page v0.05 passed claim audit, clean two-pass build, complete
+rendered inspection, sole-authorship and metadata gates, and is immutably published at DOI
+`10.5281/zenodo.21907297`. A fresh public download matches the committed 515,650-byte PDF at
+SHA-256 `4bd2cfd7351cb6cec1b3fa006c7eb3018732c283b5bb5a1e5c86015435275276`.

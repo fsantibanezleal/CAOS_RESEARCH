@@ -23,6 +23,11 @@
 | 2026-08-10 | published | published | EXP-011 confirmed the exact endomorphism family, nonsymmetric invariants, and uniform nonreflexive Ext/Tor escape |
 | 2026-08-10 | published | published | 12-page preprint v0.04 passed claim/build/render QA, was published at DOI `10.5281/zenodo.21876338`, and matched a fresh public download exactly |
 | 2026-08-10 | published | published | PR #150 passed `guards` and `test` and promoted EXP-011 plus the verified v0.04 publication to `develop` at `273ce4d2` |
+| 2026-08-12 | published | published | EXP-012 declared an invariant-first round for the full pseudo-Frobenius set, reduced type, and almost-Gorenstein boundary of the endomorphism family |
+| 2026-08-12 | published | published | EXP-012 proved type and reduced type `10p`, maximal reduced type, and a non-almost-Gorenstein completion for every endomorphism-family member |
+| 2026-08-12 | published | published | EXP-013 declared the exact common trace/conductor formula after showing trace equality alone is automatic over the Gorenstein base |
+| 2026-08-12 | published | published | EXP-013 proved the corrected exact common trace/conductor ideal and balanced colength `p+1`; original tail shorthand refuted at the smoke gate |
+| 2026-08-12 | published | published | 15-page preprint v0.05 passed claim/build/render QA, was published at DOI `10.5281/zenodo.21907297`, and matched a fresh public download exactly |
 
 Current state: **published**.
 
