@@ -11,7 +11,9 @@ EXP-019 and manuscript v0.09 are published and independently verified at DOI
 `10.5281/zenodo.21908785`. PR #164 passed both required jobs and merged this round to `develop` at
 `efdca94`; PR #165 passed all checks and promoted the identical tested tree to `main` at `cbe62a5`.
 EXP-020 and the 22-page manuscript v0.10 are complete and independently verified at DOI
-`10.5281/zenodo.21909127`; repository PR promotion is the remaining delivery gate.
+`10.5281/zenodo.21909127`. PR #168 passed `guards` and `test` and merged the complete round to
+`develop` at `5b9ca074`; PR #169 passed all checks and promoted the identical tested tree to
+`main` at `06a6af92`.
 Release v0.63.000
 remains the current repository release baseline; no new tag is
 claimed by this research round.
@@ -156,7 +158,8 @@ EXP-017--019; the independent route reconstructs every cyclic string from the co
 Apery table modulo `24p`. Both exact routes passed for `p=4,...,300`; the independent audit rebuilt
 six parameters and rehashed every campaign row. The material theorem is published in manuscript
 v0.10 after full claim/build/render, sole-authorship, metadata, and fresh-download verification.
-The remaining delivery gate is checked PR promotion to `develop` and `main`.
+PRs #168 and #169 completed checked promotion to `develop` and `main`; only this durable handoff
+reconciliation remains in flight.
 
 Previously closed state:
 
@@ -260,8 +263,7 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Promote the closed EXP-020/v0.10 round through checked PRs to `develop` and `main`, then reconcile the durable
-   handoff without claiming a global release tag.
+1. Reconcile this durable promotion handoff without claiming a global release tag.
 2. Select the next theorem target only after a source and novelty preflight; prioritize a structural
    classification or restoration-of-positivity hypothesis over a larger parameter sweep.
 3. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
