@@ -112,7 +112,7 @@ campaign is supporting evidence, not the proof.
 | EXP-017 | CONFIRMED | exact reduction number four, quotient profile, and Hilbert coefficients `(24p,39p)` |
 | EXP-018 | CONFIRMED | conductor tangent cone has depth zero; unique Valabrega--Valla defect length `p`; exact positive Hilbert numerator |
 | EXP-019 | CONFIRMED | full `H^0=k^p` in degree zero; complete maximal annihilator; Buchsbaum non-Cohen--Macaulay; invariant `p` |
-| EXP-020 | DECLARED | predicted complete `k[x_p]`-module, minimal graded resolution, regularity four, and parameter-section defect `p` |
+| EXP-020 | CONFIRMED | complete `k[x_p]`-module, minimal graded resolution, regularity four, `a=3`, and section identity `25p=e0+I` |
 
 ## 3a. Exact evidence anchors
 
@@ -129,10 +129,13 @@ campaign is supporting evidence, not the proof.
   `p=5`: `5ec44ddea51b09125614e0b9518463483ff1fb218d0ad6d704a3c916d1a3887e`.
 - EXP-009 independent audit samples `p=4,5,17,73,151,300`, plus all 297 positive-row hashes;
   audit aggregate `eb2aaf17650ed99f4e220a43c53bdd8835c82688a37567bb154c30a1ae520ce9`.
+- EXP-020 campaign and audit aggregates:
+  `02cf6f62a71de1a897cd46149e8c89d1c55bf810d28dddc02fc6c5330b9c1aed` and
+  `c439f7e4fbd3cee983f32e5c6a27b347017c165cdf6d9fee54eb8d53ab634eac`.
 
 ## 4. In flight
 
-EXP-020 is DECLARED before implementation. Put `F_p=k[x_p]`, where
+EXP-020 is CONFIRMED. Put `F_p=k[x_p]`, where
 `x_p=(t^(4s))^*` comes from the EXP-017 minimal reduction. The source-led Noether-normalization
 view predicts
 
@@ -141,11 +144,13 @@ G_p isomorphic to (F_p/(x_p))^p direct-sum F_p direct-sum F_p(-1)^(10p-1)
     direct-sum F_p(-2)^(12p) direct-sum F_p(-3)^(2p-1) direct-sum F_p(-4).
 ```
 
-If confirmed, the only first syzygies are `p` copies in degree one, `pd_(F_p)(G_p)=1`,
+The only first syzygies are `p` copies in degree one, `pd_(F_p)(G_p)=1`,
 `reg_(F_p)(G_p)=4`, `a(G_p)=3`, and
 `length(G_p/x_pG_p)=25p=e0(T_p)+I(G_p)`. The load-bearing proof is the graded PID argument from
 EXP-017--019; the independent route reconstructs every cyclic string from the conductor-power
-Apery table modulo `24p`.
+Apery table modulo `24p`. Both exact routes passed for `p=4,...,300`; the independent audit rebuilt
+six parameters and rehashed every campaign row. This is a material theorem beyond v0.09, so the
+active delivery gate is manuscript v0.10 with full claim/build/render and Zenodo verification.
 
 Previously closed state:
 
@@ -245,11 +250,11 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Implement and smoke-test EXP-020's two exact module reconstructions at `p=4`.
-2. Run the declared `p=4,...,300` campaign and independent audit, then write the symbolic proof
-   and verdict exactly as the evidence supports.
-3. If confirmed, transcribe the theorem vertically into the wiki, manuscript, history, state,
-   backlog, resume, and management mirror; publish a new Zenodo version only after full QA.
+1. Expand the manuscript to v0.10 from the EXP-020 proof and verdict; run the full claim, clean
+   two-pass build, complete rendered-page, metadata, and sole-authorship audit.
+2. Publish and fresh-download verify Zenodo v0.10 only if every manuscript gate passes.
+3. Promote the closed round through checked PRs to `develop` and `main`, then reconcile the durable
+   handoff without claiming a global release tag.
 4. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
    that architecture.
 

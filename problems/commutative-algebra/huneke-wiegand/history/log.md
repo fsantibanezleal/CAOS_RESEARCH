@@ -425,3 +425,20 @@
   section excess `p`.
 - EXP-020 was declared before implementation or execution, with a symbolic graded-PID proof, an
   independent conductor-power Apery-column reconstruction, five corruptions, and fixed budgets.
+
+## 2026-08-12 - EXP-020 confirms the complete Noether-normalization module
+
+- Proved that the conductor tangent cone is a rank-`24p` graded free module over `k[x_p]` plus
+  exactly `p` copies of `k[x_p]/(x_p)` generated in degree zero.
+- Derived the complete minimal graded resolution: the sole first Betti number is
+  `beta_(1,1)=p`; the free generator counts are `p+1,10p-1,12p,2p-1,1` in degrees zero through
+  four.
+- Consequently `pd=1`, `reg=4`, `a=3`, and the minimal-reduction section has exact length
+  `25p=e0(T_p)+I(G_p)`.
+- The recursive-power Apery campaign passed for every `p=4,...,300` in 12.234088 seconds. A
+  separate closed-form implementation rebuilt six parameters, rehashed all 297 rows, and rejected
+  five corruptions.
+- Campaign and audit aggregates are
+  `02cf6f62a71de1a897cd46149e8c89d1c55bf810d28dddc02fc6c5330b9c1aed` and
+  `c439f7e4fbd3cee983f32e5c6a27b347017c165cdf6d9fee54eb8d53ab634eac`.
+- EXP-020 is CONFIRMED and triggers the manuscript v0.10 gate.

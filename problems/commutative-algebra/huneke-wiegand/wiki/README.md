@@ -26,6 +26,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-017 | CONFIRMED | conductor reduction number four; quotient profile `23p-1,14p,2p,1,0`; Hilbert coefficients `(24p,39p)` |
 | EXP-018 | CONFIRMED | conductor tangent cone has depth zero; unique Valabrega--Valla defect has length `p`; exact positive Hilbert numerator |
 | EXP-019 | CONFIRMED | complete tangent-cone torsion is `k^p` in degree zero; Buchsbaum but not Cohen--Macaulay; invariant `p` |
+| EXP-020 | CONFIRMED | complete module over the minimal-reduction polynomial ring; exact Betti data, regularity four, and section identity `25p=e0+I` |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
@@ -182,3 +183,33 @@ It is concentrated in degree zero and the full homogeneous maximal ideal annihil
 tangent cone is Buchsbaum but not Cohen--Macaulay, with unbounded Buchsbaum invariant `p`. Its
 Cohen--Macaulay quotient by `H^0` has Hilbert numerator
 `1+(10p-1)z+12pz^2+(2p-1)z^3+z^4`.
+
+## Noether-normalization module and exact resolution
+
+Let `F_p=k[x_p]`, where `x_p=(t^(4s))^*` is induced by the minimal reduction. EXP-020 proves the
+complete graded decomposition
+
+```text
+gr_(T_p)(R_p) isomorphic to
+  (F_p/(x_p))^p direct-sum F_p direct-sum F_p(-1)^(10p-1)
+  direct-sum F_p(-2)^(12p) direct-sum F_p(-3)^(2p-1) direct-sum F_p(-4).
+```
+
+Thus the entire depth defect is isolated in `p` exponent-one cyclic summands. The quotient by
+torsion is free of rank `24p`. The only nonzero graded Betti numbers are
+
+```text
+beta_(0,0)=p+1, beta_(0,1)=10p-1, beta_(0,2)=12p,
+beta_(0,3)=2p-1, beta_(0,4)=1, beta_(1,1)=p.
+```
+
+In particular,
+
+```text
+pd_(F_p)(G_p)=1, reg_(F_p)(G_p)=4, a(G_p)=3,
+length(G_p/x_pG_p)=25p=e0(T_p)+I(G_p).
+```
+
+The proof uses the graded principal-ideal-domain structure theorem together with EXP-017--019.
+An independent exact route decomposes all `24p` conductor-power Apery columns. It passed for every
+`p=4,...,300`; a separate audit rebuilt six parameters and rehashed all 297 rows.

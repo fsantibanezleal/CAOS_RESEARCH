@@ -202,3 +202,10 @@ G_p isomorphic to (F_p/(x_p))^p direct-sum F_p direct-sum F_p(-1)^(10p-1)
 The invariant-first proof uses the graded structure theorem over `k[x_p]`; an exact
 conductor-power Apery-column decomposition is the independent route. A nearby Kunz-face sweep and
 Rees-algebra local cohomology remain deferred until this finite structural target is adjudicated.
+
+EXP-020 is CONFIRMED. The entire conductor tangent cone decomposes into a rank-`24p` free module
+plus `p` copies of `F_p/(x_p)` in degree zero. It follows that the projective dimension over the
+Noether normalization is one, the regularity is four, the top-local-cohomology `a`-invariant is
+three, and `length(G_p/x_pG_p)=25p=e0(T_p)+I(G_p)`. The exact Apery-column campaign passed all 297
+parameters and the independent audit rebuilt six parameters and rehashed every row. This material
+theorem triggers manuscript v0.10; no publication is claimed before its full immutable workflow.
