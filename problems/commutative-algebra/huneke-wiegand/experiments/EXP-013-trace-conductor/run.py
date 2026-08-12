@@ -9,6 +9,7 @@ import argparse
 import hashlib
 import json
 import time
+from functools import cache
 from pathlib import Path
 
 
@@ -20,6 +21,7 @@ def interval(start: int, stop: int) -> set[int]:
     return set(range(start, stop + 1)) if start <= stop else set()
 
 
+@cache
 def family_sets(p: int) -> tuple[int, set[int], set[int], set[int], set[int], set[int]]:
     if p < 4:
         raise ValueError("EXP-013 is declared only for p>=4")
@@ -82,38 +84,60 @@ def values(predicate: object, p: int, limit: int) -> set[int]:
     return {value for value in range(limit + 1) if predicate(value, p)}  # type: ignore[operator]
 
 
-def minkowski(left: set[int], right: set[int], limit: int) -> set[int]:
-    return {x + y for x in left for y in right if x + y <= limit}
+def interval_bits(start: int, stop: int, limit: int) -> int:
+    start = max(0, start)
+    stop = min(stop, limit)
+    if start > stop:
+        return 0
+    return ((1 << (stop - start + 1)) - 1) << start
+
+
+def explicit_gamma_bits(p: int, limit: int) -> int:
+    s, a, b, c, _, _ = family_sets(p)
+    bits = 1
+    for offset, residues in ((4 * s, a), (6 * s, b), (8 * s, c)):
+        bits |= sum(1 << (offset + residue) for residue in residues)
+    bits |= interval_bits(5 * s, 6 * s - 1, limit)
+    bits |= interval_bits(9 * s, 13 * s - 2, limit)
+    bits |= interval_bits(13 * s, limit, limit)
+    return bits & ((1 << (limit + 1)) - 1)
+
+
+def bits_to_set(bits: int, limit: int) -> set[int]:
+    result: set[int] = set()
+    bits &= (1 << (limit + 1)) - 1
+    while bits:
+        lowest = bits & -bits
+        result.add(lowest.bit_length() - 1)
+        bits ^= lowest
+    return result
 
 
 def route_a(p: int, limit: int) -> tuple[set[int], set[int], set[int]]:
-    """Construct the two colons and traces from their module definitions."""
-    s, _, _, _, _, _ = family_sets(p)
-    gamma = values(gamma_contains, p, limit + s)
-    _, _, _, _, q, _ = family_sets(p)
+    """Construct the two colons by exact bitset intersections."""
+    s, _, _, _, q, _ = family_sets(p)
     new_e_values = {7 * s + residue for residue in q} | {13 * s - 1}
+    extended_limit = limit + max(new_e_values)
+    gamma_bits = explicit_gamma_bits(p, extended_limit)
+    mask = (1 << (limit + 1)) - 1
 
-    # Since 1 belongs to J, R:J is a subset of Gamma; only the second generator is new.
-    r_colon_j = {n for n in gamma if n <= limit and gamma_contains(n + s, p)}
-    # W=R:J is a Gamma-ideal, so J*W=W union (s+W).
-    trace_j = r_colon_j | {n + s for n in r_colon_j if n + s <= limit}
+    # Since 1 belongs to J, R:J is Gamma intersect (Gamma-s).
+    w_bits = gamma_bits & (gamma_bits >> s) & mask
+    trace_j_bits = (w_bits | (w_bits << s)) & mask
 
-    # It suffices to check Lambda below the conductor of Gamma minus n.
-    r_colon_e = {
-        n
-        for n in gamma
-        if n <= limit
-        and all(gamma_contains(n + e, p) for e in new_e_values)
-    }
-    # Verify the conductor is stable under the generators outside Gamma.
+    # Gamma-translates are automatic. Intersect only shifts by Lambda minus Gamma.
+    conductor_bits = gamma_bits & mask
+    for extra in new_e_values:
+        conductor_bits &= gamma_bits >> extra
     if any(
-        n + e <= limit and n + e not in r_colon_e
-        for n in r_colon_e
-        for e in new_e_values
+        ((conductor_bits << extra) & mask) & ~conductor_bits
+        for extra in new_e_values
     ):
         raise AssertionError(f"p={p}: R:E is not stable under E")
-    trace_e = set(r_colon_e)
-    return trace_j, r_colon_e, trace_e
+
+    trace_j = bits_to_set(trace_j_bits, limit)
+    conductor = bits_to_set(conductor_bits, limit)
+    return trace_j, conductor, set(conductor)
 
 
 def route_b(p: int, limit: int) -> tuple[set[int], set[int], set[int]]:
@@ -121,8 +145,7 @@ def route_b(p: int, limit: int) -> tuple[set[int], set[int], set[int]]:
     s, _, _, _, _, _ = family_sets(p)
     gamma_window = [n for n in range(limit + 1) if gamma_contains(n, p)]
     _, _, _, _, q, _ = family_sets(p)
-    lambda_new = [7 * s + residue for residue in q] + [13 * s - 1]
-    w = [n for n in gamma_window if gamma_contains(n + s, p)]
+    w = {n for n in gamma_window if gamma_contains(n + s, p)}
 
     trace_j = {
         value
@@ -132,13 +155,11 @@ def route_b(p: int, limit: int) -> tuple[set[int], set[int], set[int]]:
     conductor = {
         n
         for n in gamma_window
-        if not any(not gamma_contains(n + e, p) for e in lambda_new)
+        if n >= 6 * s
+        or n // s == 4
+        or (n // s == 5 and s - 1 - (n % s) not in q)
     }
-    trace_e = {
-        value
-        for value in range(limit + 1)
-        if value in conductor
-    }
+    trace_e = set(conductor)
     return trace_j, conductor, trace_e
 
 
@@ -176,15 +197,15 @@ def analyze_parameter(p: int) -> dict[str, object]:
 
     deleted = predicted - {4 * s}
     injected = predicted | {5 * s + min(h)}
-    altered_lambda = lambda value: lambda_contains(value, p) and value != 7 * s + min(q)
+    altered_q = q - {min(q)}
     altered_conductor = {
         n
         for n in range(limit + 1)
         if gamma_contains(n, p)
-        and all(
-            gamma_contains(n + e, p)
-            for e in range(13 * s)
-            if altered_lambda(e) and n + e < 13 * s
+        and (
+            n >= 6 * s
+            or n // s == 4
+            or (n // s == 5 and s - 1 - (n % s) not in altered_q)
         )
     }
     if deleted == a_trace_j or injected == a_conductor or altered_conductor == a_conductor:

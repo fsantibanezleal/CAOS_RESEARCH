@@ -88,6 +88,7 @@ campaign is supporting evidence, not the proof.
 | EXP-010 | SUPERSEDED | no run; declared conditional gate became false when EXP-009 succeeded |
 | EXP-011 | CONFIRMED | uniform endomorphism-overring formula, nonsymmetric invariants, and family-wide Ext/Tor escape |
 | EXP-012 | CONFIRMED | exact `10p` pseudo-Frobenius set, maximal reduced type, and non-almost-Gorenstein boundary |
+| EXP-013 | CONFIRMED after correction | exact common trace/conductor ideal and balanced colength `p+1`; original tail shorthand refuted |
 
 ## 3a. Exact evidence anchors
 
@@ -136,6 +137,19 @@ lower gaps. The exact campaign and independent audit aggregates are
 `9bed38fb1c786c3740e000dde7ea7d79a7e7c83fa584ff12fc2c4623b5d503ec` and
 `0315c4c22c41e0d2b8a5abb27f717a4d4a6f7356ef30ca388206d739e0de2c37`.
 
+EXP-013 is CONFIRMED after one preserved correction. With `H_p=(s-1)-Q_p`, it proves
+
+```text
+tr_(R_p)(J_p)=R_p:E_p=tr_(R_p)(E_p)=T_p,
+length(R_p/T_p)=length(E_p/R_p)=p+1.
+```
+
+The exact value set has blocks `4s+A_p`, `5s+(A_p union B_p)`, `6s+B_p`, `8s+C_p`, the full
+interval `[9s,13s-2]`, and the tail from `13s`. The initial shorthand `[9s,infinity)` was refuted
+at `13s-1` by the first smoke run before any campaign artifact. Corrected campaign and audit
+aggregates are `77448398a26b958c66818b7ac4aaa4b542bad11cdba5ec7c8f7fe76db37526e2` and
+`d55ed876d7918cb4c46d8e5f3894a508d172693bde4b4c76cb67c42fcfbf0ac1`.
+
 Published baseline:
 
 - v0.01 DOI `10.5281/zenodo.21763583`: Frobenius minimality.
@@ -153,10 +167,8 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Execute declared EXP-013: prove and independently reconstruct the predicted common trace and
-   conductor ideal, including the exact colength `p+1`.
-2. Decide whether EXP-012 plus that trace theorem justify a deliberate manuscript v0.05, rather
-   than publishing EXP-012 reflexively as a standalone revision.
+1. Build and claim-audit a deliberate manuscript v0.05 candidate combining EXP-012 and EXP-013.
+2. Publish only after clean build, rendered-page, metadata, and immutable-download verification.
 3. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
    that architecture.
 

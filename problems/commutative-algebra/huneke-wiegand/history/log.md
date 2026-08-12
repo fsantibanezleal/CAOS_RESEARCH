@@ -277,3 +277,21 @@
 - The first `p=4` smoke run refuted the shorthand tail `[9s,infinity)` at the old Frobenius gap
   `13s-1`. Before any campaign artifact existed, the corrected prediction preserved that gap; the
   common-ideal and colength claims remained unchanged.
+- The first full campaign attempt exceeded its execution envelope without writing an artifact. The
+  repeated checks of ordinary `Gamma_p` values were removed: only the `p+1` values in
+  `Lambda_p minus Gamma_p` can add conductor constraints. The rerun remains subject to the original
+  two-minute scientific budget.
+
+## 2026-08-12 - EXP-013 confirms the corrected trace/conductor theorem
+
+- Proved `tr_R(J_p)=R_p:E_p=tr_R(E_p)` with an explicit block formula for every `p>=4`.
+- The common ideal omits exactly zero and the reflection of `Q_p` at level five, so its colength is
+  `p+1`, equal to the extension length `length(E_p/R_p)` from EXP-011.
+- Both exact routes pass for all 297 parameters in 9.7 seconds; a separate implementation rehashes
+  every row, reconstructs six parameters, and rejects deleted, injected, and altered-overring
+  controls.
+- Campaign and audit aggregates are
+  `77448398a26b958c66818b7ac4aaa4b542bad11cdba5ec7c8f7fe76db37526e2` and
+  `d55ed876d7918cb4c46d8e5f3894a508d172693bde4b4c76cb67c42fcfbf0ac1`.
+- EXP-012 and EXP-013 jointly pass the deliberation gate for a manuscript v0.05 candidate; no
+  publication is claimed until all build, render, metadata, and immutable-download gates pass.

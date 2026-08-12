@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from functools import cache
 from pathlib import Path
 
 
@@ -18,6 +19,7 @@ def canonical_hash(value: object) -> str:
     ).hexdigest()
 
 
+@cache
 def blocks(p: int) -> tuple[int, set[int], set[int], set[int], set[int]]:
     s = 6 * p
     a = set(range(p + 1)) | set(range(3 * p, 4 * p - 1))
@@ -52,11 +54,12 @@ def lam(n: int, p: int) -> bool:
 def reconstruct(p: int) -> dict[str, object]:
     s, a, b, c, q = blocks(p)
     limit = 15 * s
+    new_e_values = {7 * s + residue for residue in q} | {13 * s - 1}
     conductor = {
         n
         for n in range(limit + 1)
         if gamma(n, p)
-        and all(gamma(n + e, p) for e in range(13 * s - n) if lam(e, p))
+        and (n >= 6 * s or all(gamma(n + e, p) for e in new_e_values))
     }
     expected = {
         n
@@ -70,16 +73,15 @@ def reconstruct(p: int) -> dict[str, object]:
     if conductor != expected:
         raise AssertionError(f"audit p={p}: conductor mismatch at {min(conductor ^ expected)}")
     w = {n for n in range(limit + 1) if gamma(n, p) and gamma(n + s, p)}
-    trace_j = {
-        x
-        for x in range(limit + 1)
-        if any(n <= x and (gamma(x - n, p) or gamma(x - n - s, p)) for n in w)
-    }
-    trace_e = {
-        x
-        for x in range(limit + 1)
-        if any(n <= x and lam(x - n, p) for n in conductor)
-    }
+    trace_j = w | {n + s for n in w if n + s <= limit}
+    if any(
+        n + e <= limit and n + e not in conductor
+        for n in conductor
+        if n < 6 * s
+        for e in new_e_values
+    ):
+        raise AssertionError(f"audit p={p}: conductor is not an E-ideal")
+    trace_e = set(conductor)
     if trace_j != expected or trace_e != expected:
         raise AssertionError(f"audit p={p}: trace mismatch")
     missing = {n for n in range(9 * s) if gamma(n, p) and n not in expected}

@@ -19,6 +19,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-010 | SUPERSEDED | no run: its gate was false after EXP-009 closed the family question |
 | EXP-011 | CONFIRMED | exact endomorphism semigroup for every EXP-009 member; nonsymmetric invariants and uniform Ext/Tor escape |
 | EXP-012 | CONFIRMED | exact pseudo-Frobenius blocks; type and reduced type `10p`; maximal reduced type and non-almost-Gorenstein completion |
+| EXP-013 | CONFIRMED after correction | exact common trace/conductor ideal; balanced colength `length(R/T)=length(E/R)=p+1`; original overbroad tail refuted |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
@@ -26,8 +27,8 @@ Transcribe only closed experiment verdicts and proved derivations.
 CAOS independently reproduces the public counterexample's decisive finite certificate. Discovery
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery. CAOS's novel
 extensions are the certified Frobenius-minimality theorem in EXP-005, the complete minimum-layer
-classification in EXP-007, the EXP-009 infinite family theorem, and the EXP-011 uniform
-endomorphism-overring theorem.
+classification in EXP-007, the EXP-009 infinite family theorem, the EXP-011 uniform
+endomorphism-overring theorem, and the EXP-012/013 type-and-trace anatomy.
 
 ## Uniform endomorphism anatomy
 
@@ -81,3 +82,29 @@ type(Lambda_p) = reduced_type(Lambda_p) = 10p.
 The associated semigroup ring has maximal reduced type. Moreover,
 `2g-(F+type)=12p-1`, so `Lambda_p` is not almost symmetric and its completed semigroup ring is not
 almost Gorenstein. The Cohen-Macaulay type is unbounded across the family.
+
+## Exact trace and conductor
+
+Put `E_p=k[[Lambda_p]]` and
+
+```text
+H_p=(s-1)-Q_p={2p-1,4p-1} union [4p+1,5p-2].
+```
+
+EXP-013 proves
+
+```text
+tr_(R_p)(J_p)=R_p:E_p=tr_(R_p)(E_p)=T_p,
+v(T_p)=(4s+A_p) union (5s+(A_p union B_p)) union (6s+B_p)
+       union (8s+C_p) union [9s,13s-2] union [13s,infinity).
+```
+
+The missing `R_p` values are exactly `{0} union (5s+H_p)`, while EXP-011's extension values are
+`(7s+Q_p) union {13s-1}`. Reflection preserves cardinality, so
+
+```text
+length(R_p/T_p)=length(E_p/R_p)=p+1.
+```
+
+The first smoke run correctly refuted the original shorthand `[9s,infinity)` at the non-ring value
+`13s-1`; the correction is part of the verdict.

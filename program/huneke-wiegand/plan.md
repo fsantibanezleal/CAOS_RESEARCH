@@ -113,3 +113,9 @@ The first `p=4` smoke check corrected one overbroad tail shorthand before campai
 `13s-1` is not in `Gamma_p`, so the common ideal contains `[9s,13s-2]` and the tail from `13s`, not
 all integers from `9s`. This initial prediction is preserved as refuted; the equality and colength
 claims are unaffected.
+
+EXP-013 is CONFIRMED under that correction. It proves the common trace is exactly `R_p:E_p` and
+that `length(R_p/(R_p:E_p))=length(E_p/R_p)=p+1`. The symbolic block proof is supported by 297
+two-route exact checks, an independent six-parameter reconstruction, stable hashes, and three
+rejected corruptions. EXP-012 and EXP-013 together pass the deliberation gate for a v0.05
+candidate; publication remains conditional on the full manuscript and public-artifact workflow.
