@@ -316,11 +316,14 @@ def main() -> int:
             "corruptions": "PASS",
         },
         "campaign_aggregate": aggregate,
-        "elapsed_seconds": round(time.perf_counter() - started, 6),
         "rows": rows,
     }
     write_json_atomic(args.output, output)
-    print(f"EXP-020 computational PASS aggregate={aggregate}", flush=True)
+    elapsed = time.perf_counter() - started
+    print(
+        f"EXP-020 computational PASS aggregate={aggregate} elapsed={elapsed:.6f}s",
+        flush=True,
+    )
     return 0
 
 

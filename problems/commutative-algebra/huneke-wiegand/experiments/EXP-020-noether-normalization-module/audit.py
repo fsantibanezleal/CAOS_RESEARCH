@@ -222,13 +222,17 @@ def main() -> int:
         "audit_aggregate": canonical_hash(
             [row["audit_row_hash"] for row in selected] + campaign_hashes
         ),
-        "elapsed_seconds": round(time.perf_counter() - started, 6),
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     temporary = args.output.with_suffix(args.output.suffix + ".tmp")
     temporary.write_text(json.dumps(output, indent=2) + "\n", encoding="utf-8")
     temporary.replace(args.output)
-    print(f"EXP-020 independent audit PASS aggregate={output['audit_aggregate']}", flush=True)
+    elapsed = time.perf_counter() - started
+    print(
+        f"EXP-020 independent audit PASS aggregate={output['audit_aggregate']} "
+        f"elapsed={elapsed:.6f}s",
+        flush=True,
+    )
     return 0
 
 

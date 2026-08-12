@@ -47,9 +47,11 @@ while the quotient is a rank-`24p` graded free module over the Noether normaliza
 - Independent audit aggregate:
   `c439f7e4fbd3cee983f32e5c6a27b347017c165cdf6d9fee54eb8d53ab634eac`.
 - `results.json` SHA-256:
-  `4c9dfbfe8f2cee53432e199476e69f89dd90a86d3160e81a76088723f53a3cd6`.
+  `1314637dd60ee90c84ae0934e86c64b3a4a9218fdf67b9b6b169471a87855ee5`.
 - `audit.json` SHA-256:
-  `56b7bc8c690ddb40b83821798b43c7441b068982e968b7ff08e1b1ff4b7f74e9`.
+  `d7c5a0672f220782aeb723bcbec47953bb360b34882d3296a3451c53b317e7c2`.
+- Two complete reruns produced those same byte hashes exactly; observed wall time is printed but
+  excluded from the canonical JSON.
 - `ruff` and Python byte-compilation checks: PASS.
 
 ## Adversarial controls
