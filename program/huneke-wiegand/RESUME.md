@@ -8,7 +8,8 @@ EXP-017 and manuscript v0.07 are published and independently verified at DOI
 at DOI `10.5281/zenodo.21908490`. PR #160 passed both required jobs and merged this round to
 `develop` at `c91ff890`; PR #161 passed both jobs and promoted it to `main` at `4b62f778`.
 EXP-019 and manuscript v0.09 are published and independently verified at DOI
-`10.5281/zenodo.21908785`; repository PR promotion for this new round is pending.
+`10.5281/zenodo.21908785`. PR #164 passed both required jobs and merged this round to `develop` at
+`efdca94`; PR #165 passed all checks and promoted the identical tested tree to `main` at `cbe62a5`.
 Release v0.63.000
 remains the current repository release baseline; no new tag is
 claimed by this research round.

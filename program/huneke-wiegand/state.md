@@ -40,6 +40,7 @@
 | 2026-08-12 | active | active | EXP-019 declared before implementation: compute the full graded torsion of the conductor tangent cone and decide Buchsbaumness, including both degree-zero and positive-degree maximal-ideal actions |
 | 2026-08-12 | confirmed | active | EXP-019 proved that the complete tangent-cone torsion is `k^p` in degree zero, annihilated by the full homogeneous maximal ideal; the cones are Buchsbaum non-Cohen--Macaulay with unbounded invariant `p` |
 | 2026-08-12 | published | published | 21-page preprint v0.09 passed claim/build/render QA, was published at DOI `10.5281/zenodo.21908785`, and matched a fresh public download exactly |
+| 2026-08-12 | published | published | PR #164 passed `guards` and `test` and merged EXP-019 plus v0.09 to `develop` at `efdca94`; PR #165 passed all checks and promoted the identical tested tree to `main` at `cbe62a5` |
 
 Current state: **published**.
 
