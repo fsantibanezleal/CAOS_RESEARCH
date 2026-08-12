@@ -44,6 +44,7 @@
 | 2026-08-12 | active | active | EXP-020 declared before implementation: determine the complete graded module over the minimal-reduction Noether normalization, its Betti data, regularity, and parameter-section defect |
 | 2026-08-12 | confirmed | active | EXP-020 proves the complete cyclic decomposition over `k[x_p]`, exact graded Betti numbers, regularity four, `a=3`, and `length(G_p/x_pG_p)=25p=e0+I` |
 | 2026-08-12 | published | published | 22-page preprint v0.10 passed claim/build/render QA, was published at DOI `10.5281/zenodo.21909127`, and matched a fresh public download exactly |
+| 2026-08-12 | published | published | PR #168 passed `guards` and `test` and merged EXP-020 plus v0.10 to `develop` at `5b9ca074`; PR #169 passed all checks and promoted the identical tested tree to `main` at `06a6af92` |
 
 Current state: **published**.
 
