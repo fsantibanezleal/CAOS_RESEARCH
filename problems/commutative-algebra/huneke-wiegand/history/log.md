@@ -339,3 +339,6 @@
   `10.5281/zenodo.21908188`, and a fresh public download matched 539,211 bytes, MD5
   `5ed0616521a3363fb9cb6507babf9745`, and SHA-256
   `2dca97dc100424afbeffd525fe66aa4aa43ce65c82c11b9ac43250cd33771e19` exactly.
+- PR `#156` passed `guards` and `test` and merged the full EXP-014--017 and v0.06/v0.07 round to
+  `develop` at `5953850ed7d86e37df79837ac5ba3287493ab3c8`. PR `#157` passed both jobs and promoted that
+  exact tested state to `main` at `2f6b9b9ccd924d0f0d06dc6da5e0f0f2c7fc8ca7`. No release tag is claimed.
