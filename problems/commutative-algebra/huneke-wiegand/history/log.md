@@ -342,3 +342,18 @@
 - PR `#156` passed `guards` and `test` and merged the full EXP-014--017 and v0.06/v0.07 round to
   `develop` at `5953850ed7d86e37df79837ac5ba3287493ab3c8`. PR `#157` passed both jobs and promoted that
   exact tested state to `main` at `2f6b9b9ccd924d0f0d06dc6da5e0f0f2c7fc8ca7`. No release tag is claimed.
+
+## 2026-08-12 - EXP-018 confirms depth-zero conductor tangent cones
+
+- Redirected the next round from another parameter sweep to the Valabrega--Valla intersections of
+  the conductor with its minimal reduction.
+- The unique nonzero intersection quotient is `(Q_p intersect T_p^2)/(Q_pT_p)`, with exact
+  level-nine residue block `{2p-1,4p-1} union [4p+1,5p-2]` and length `p`.
+- Every component at `n=0` and `n>=2` vanishes, so `gr_(T_p)(R_p)` has depth zero and is not
+  Cohen--Macaulay for every `p>=4`.
+- The exact Hilbert numerator is
+  `(p+1)+(9p-1)z+12pz^2+(2p-1)z^3+z^4`; all coefficients are positive despite depth zero.
+- Two exact routes pass through `p=300`; an independently written audit reconstructs six
+  parameters and rehashes all rows. Campaign and audit aggregates are
+  `9631c644732f0921be3b3027e18a01110f23dad897fbf2cb14dd3a493eda5971` and
+  `7c2abcd290bc3461fc5251bc3372e20a7fa25c888e3b2ed635368b4dda0781ff`.
