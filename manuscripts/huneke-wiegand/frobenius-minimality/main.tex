@@ -14,7 +14,7 @@
 \hypersetup{
   pdftitle={Frobenius Minimality, Minimum-Layer Uniqueness, and an Infinite Family of Huneke--Wiegand Counterexamples},
   pdfauthor={Felipe Santibanez-Leal},
-  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, type, trace, conductor, and stability anatomy},
+  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, type, trace, conductor, stability, and reduction anatomy},
   pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, pseudo-Frobenius numbers, trace ideals, conductors, stable ideals, SAT, DRAT}
 }
 \usepackage{orcidlink}
@@ -36,18 +36,18 @@
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-12\\[2pt]\normalsize Version 0.06}
+\date{2026-08-12\\[2pt]\normalsize Version 0.07}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.06}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.07}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.06}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.07}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,12 +63,13 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.06 \textperiodcentered\ 2026-08-12\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21907943}{10.5281/zenodo.21907943}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.07 \textperiodcentered\ 2026-08-12\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21908188}{10.5281/zenodo.21908188}\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
 verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
-separate explicit infinite family, and its uniform endomorphism, type, trace, conductor, and stability anatomy.
+separate explicit infinite family, and its uniform endomorphism, type, trace, conductor, stability,
+and reduction anatomy.
 }}
 \end{center}
 
@@ -78,7 +79,7 @@ separate explicit infinite family, and its uniform endomorphism, type, trace, co
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.06}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.07}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -128,6 +129,9 @@ prove that this conductor is nonstable and compute its complete one-step stabili
 \[
 \ell_{R_p}(T_p^2/t^{4s}T_p)=14p.
 \]
+The full reduction sequence is also exact: $t^{4s}R_p$ is a minimal reduction of $T_p$ with
+reduction number four, successive Sally-quotient lengths
+$23p-1,14p,2p,1,0$, and Hilbert--Samuel coefficients $e_0(T_p)=24p$ and $e_1(T_p)=39p$.
 The results remain confined
 to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
@@ -180,6 +184,8 @@ they are verified by exact machine computation and independently checked artifac
   colength equals the birational extension length, namely $p+1$.
   \item We separate that general duality balance from the family-specific calculation, prove that
   the common conductor is nonstable, and compute its exact stability defect $14p$.
+  \item We determine every later power of the conductor, proving reduction number four, the full
+  Sally-quotient profile, and Hilbert--Samuel coefficients $(e_0,e_1)=(24p,39p)$.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -934,6 +940,76 @@ and
 \texttt{ce4ded03761eb44cba766eafb46926c8ca83d0f7f49a26697afed5ed49905653}.
 \]
 
+\section{\texorpdfstring{\enspace}{}Conductor reduction number and Hilbert data}
+
+For an ideal $I$, a subideal $Q$ is a \emph{reduction} when $I^{r+1}=QI^r$ for some $r$;
+the least such $r$ is the reduction number with respect to $Q$ \cite{NorthcottRees1954}.
+
+\begin{theorem}[Exact conductor reduction sequence, {\bf[D]}]\label{thm:reduction}
+For every integer $p\ge4$, put $Q_p=t^{4s}R_p\subset T_p$. Then $Q_p$ is a minimal reduction of
+$T_p$ with reduction number four. More precisely,
+\[
+\begin{array}{c|ccccc}
+n&0&1&2&3&n\ge4\\ \hline
+\ell_{R_p}(T_p^{n+1}/Q_pT_p^n)&23p-1&14p&2p&1&0.
+\end{array}
+\]
+The Hilbert--Samuel function satisfies
+\[
+\ell_{R_p}(R_p/T_p^n)=24pn-39p\qquad(n\ge4),
+\]
+and consequently $e_0(T_p)=24p$ and $e_1(T_p)=39p$.
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{thm:stability} supplies the square. The residue identity
+$\operatorname{low}(A_p+C_p)=[0,s-2]$ then gives
+\[
+v(T_p^3)=[12s,13s-2]\cup[13s,\infty).
+\]
+Adding $4s+A_p$ fills $[16s,17s-2]$ and the tail from $17s$; because $1\in A_p$,
+$(4s+1)+(13s-2)=17s-1$ fills the intervening endpoint. Hence
+\[
+v(T_p^4)=[16s,\infty),\qquad v(T_p^5)=[20s,\infty)=v(Q_pT_p^4).
+\]
+Multiplication proves the same equality for every later power. Subtracting the shifted square and
+cubic profiles gives
+\begin{align*}
+v(T_p^3)\setminus v(Q_pT_p^2)
+ &=12s+\bigl([2p+1,3p-1]\cup[5p-1,6p-2]\bigr)\cup\{17s-1\},\\
+v(T_p^4)\setminus v(Q_pT_p^3)&=\{17s-1\}.
+\end{align*}
+Their cardinalities are $2p$ and $1$. Theorem~\ref{thm:stability} gives $14p$ at the preceding
+stage. Finally, subtracting $v(Q_p)=4s+\Gamma_p$ from Theorem~\ref{thm:trace} leaves eight
+disjoint blocks of sizes
+\[
+2p-1,\quad5p,\quad3p,\quad2p,\quad3p,\quad6p,\quad2p-1,\quad1,
+\]
+whose sum is $23p-1$. The strict nonzero quotients and terminal equality prove reduction number
+four. Since $T_p$ is maximal-ideal primary in dimension one, the one-generated reduction is
+minimal.
+
+The parameter ideal $Q_p$ has colength $4s=24p$. Multiplication by its nonzerodivisor generator
+gives
+\[
+\ell(T_p^i/T_p^{i+1})=24p-\ell(T_p^{i+1}/Q_pT_p^i).
+\]
+Summing through $i=n-1$ and using
+$(23p-1)+14p+2p+1=39p$ proves the Hilbert formula and coefficients.
+\end{proof}
+
+Two exact representations confirm every displayed set and length for all $p=4,\ldots,300$
+\textbf{[MV]}. A separate tail-set implementation rehashes all $297$ rows, reconstructs six
+parameters, and rejects deleted-terminal, false-stabilization, altered-interval, and
+perturbed-length controls. The campaign and audit aggregates are
+\[
+\texttt{e9c3c887648f08cf67c614b381f00c8c6520dcd1bb89f8cdece62293bfd06030}
+\]
+and
+\[
+\texttt{0f6ed70676ffb8972b8b167ad52c4f9d2851f69c3b1d96f4023e5e3d5825c781}.
+\]
+
 \section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
@@ -942,7 +1018,7 @@ All compact code, hypotheses, manifests, audits, and verdicts are in the public 
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
 minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
-also includes the compact EXP-011--016 campaigns, independent reconstruction audits, symbolic
+also includes the compact EXP-011--017 campaigns, independent reconstruction audits, symbolic
 proofs, the preserved EXP-013 correction, and the EXP-015 refutation. The proof toolchain is
 pinned as follows:
 \begin{center}
@@ -970,11 +1046,12 @@ is independent external evidence. The contributions proved here are Frobenius mi
 uniqueness of the normalized pair at that minimum, the separate infinite family in
 Theorem~\ref{thm:family}, and its uniform endomorphism anatomy in
 Theorem~\ref{thm:endomorphism}, pseudo-Frobenius anatomy in Theorem~\ref{thm:type}, exact
-trace/conductor formula in Theorem~\ref{thm:trace}, and stability defect in
-Theorem~\ref{thm:stability}, together with their reproducible records.
+trace/conductor formula in Theorem~\ref{thm:trace}, stability defect in
+Theorem~\ref{thm:stability}, and conductor reduction/Hilbert data in
+Theorem~\ref{thm:reduction}, together with their reproducible records.
 
 Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
-\ref{thm:type}, \ref{thm:trace}, and~\ref{thm:stability} do not classify all higher
+\ref{thm:type}, \ref{thm:trace}, \ref{thm:stability}, and~\ref{thm:reduction} do not classify all higher
 Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
 or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
 questions remain open:
@@ -1058,6 +1135,12 @@ S. Dey,
 \emph{Finite birational extension with stable conductor},
 arXiv:2212.09087v1 (2022).
 \url{https://arxiv.org/abs/2212.09087v1}.
+
+\bibitem{NorthcottRees1954}
+D. G. Northcott and D. Rees,
+\emph{Reductions of ideals in local rings},
+Proc. Cambridge Philos. Soc. 50 (1954), 145--158.
+\href{https://doi.org/10.1017/S0305004100029194}{doi:10.1017/S0305004100029194}.
 
 \bibitem{Cadical2023}
 A. Biere, K. Fazekas, M. Fleury, and M. Heisinger,

@@ -20,10 +20,15 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-011 | CONFIRMED | exact endomorphism semigroup for every EXP-009 member; nonsymmetric invariants and uniform Ext/Tor escape |
 | EXP-012 | CONFIRMED | exact pseudo-Frobenius blocks; type and reduced type `10p`; maximal reduced type and non-almost-Gorenstein completion |
 | EXP-013 | CONFIRMED after correction | exact common trace/conductor ideal; balanced colength `length(R/T)=length(E/R)=p+1`; original overbroad tail refuted |
+| EXP-014 | CONFIRMED | conductor nonstability from Dey's criterion and a direct value witness |
+| EXP-015 | REFUTED | first exact-square tail incorrectly filled the inherited gap `13s-1`; stopped at `p=4` smoke gate |
+| EXP-016 | CONFIRMED | corrected exact conductor square and stability defect `length(T^2/t^(4s)T)=14p` |
+| EXP-017 | CONFIRMED | conductor reduction number four; quotient profile `23p-1,14p,2p,1,0`; Hilbert coefficients `(24p,39p)` |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
 | preprint v0.05 | published | pseudo-Frobenius/type and exact trace/conductor theorems, DOI [`10.5281/zenodo.21907297`](https://doi.org/10.5281/zenodo.21907297); exact public-file hash verified |
+| preprint v0.06 | published | duality correction plus exact conductor-stability theorem, DOI [`10.5281/zenodo.21907943`](https://doi.org/10.5281/zenodo.21907943); exact public-file hash verified |
 
 CAOS independently reproduces the public counterexample's decisive finite certificate. Discovery
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery. CAOS's novel
@@ -109,3 +114,32 @@ length(R_p/T_p)=length(E_p/R_p)=p+1.
 
 The first smoke run correctly refuted the original shorthand `[9s,infinity)` at the non-ring value
 `13s-1`; the correction is part of the verdict.
+
+The equality of the two displayed lengths is general one-dimensional Gorenstein local duality;
+the exact common ideal and its evaluated length `p+1` are the family-specific results.
+
+## Exact conductor stability and reduction anatomy
+
+EXP-016 proves
+
+```text
+v(T_p^2)=(8s+C_p) union [9s,13s-2] union [13s,infinity),
+length(T_p^2/t^(4s)T_p)=14p.
+```
+
+EXP-017 continues the exact powers:
+
+```text
+v(T_p^3)=[12s,13s-2] union [13s,infinity),
+v(T_p^4)=[16s,infinity),
+v(T_p^5)=[20s,infinity)=v(t^(4s)T_p^4).
+```
+
+Thus `t^(4s)R_p` is a minimal reduction of exact reduction number four, and
+
+```text
+length(T_p^(n+1)/t^(4s)T_p^n) = 23p-1, 14p, 2p, 1, 0, ...
+```
+
+starting at `n=0`. The exact eventual Hilbert function is
+`length(R_p/T_p^n)=24pn-39p` for `n>=4`, so `e0(T_p)=24p` and `e1(T_p)=39p`.

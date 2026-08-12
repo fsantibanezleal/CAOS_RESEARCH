@@ -1,11 +1,11 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-12. Lifecycle: published. EXP-012 and EXP-013 prove the exact pseudo-Frobenius,
-reduced-type, trace, and conductor anatomy of the explicit family. Manuscript v0.05 is published
-and independently verified at DOI `10.5281/zenodo.21907297`. Promotion of the current work branch
-through `develop` and `main` is complete: PR #152 merged at `bdb969db`, and PR #153 promoted the
-accumulated post-release state to `main` at `9be3069a`. Release v0.63.000 remains the current
-repository release baseline; no new tag is claimed by this research round.
+Updated: 2026-08-12. Lifecycle: published, with a new manuscript candidate in QA. EXP-014--017
+prove the exact stability and reduction anatomy of the explicit conductor family. Corrective
+manuscript v0.06 is published and independently verified at DOI `10.5281/zenodo.21907943`.
+EXP-017 is confirmed; v0.07 DOI `10.5281/zenodo.21908188` is reserved and final publication QA is
+in progress. Release v0.63.000 remains the current repository release baseline; no new tag is
+claimed by this research round.
 
 ## 1. State in one screen
 
@@ -19,7 +19,10 @@ Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
 4. uniqueness of the normalized pair at that minimum (EXP-007); and
 5. an explicit infinite family of counterexamples in the same class (EXP-009); and
 6. the exact endomorphism overring and nonreflexive Ext/Tor escape for every family member
-   (EXP-011).
+   (EXP-011);
+7. exact pseudo-Frobenius, trace, conductor, and nonstability anatomy (EXP-012--016); and
+8. conductor reduction number four, quotient profile `23p-1,14p,2p,1,0`, and Hilbert coefficients
+   `(e0,e1)=(24p,39p)` (EXP-017).
 
 The public seed is
 
@@ -40,6 +43,7 @@ I = (t^56,t^70)R.
 | `Gamma_p` | growing-interval semigroup for every integer `p>=4` | EXP-009 theorem |
 | `I_p` | `(t^(24p),t^(30p))` over the localized ring of `Gamma_p` | EXP-009 theorem |
 | `Lambda_p` | `Gamma_p union (7s+Q_p) union {13s-1}`, the value semigroup of `End_(R_p)(I_p)` | EXP-011 theorem |
+| `T_p` | common trace/conductor `tr_R(J_p)=R_p:E_p=tr_R(E_p)` | EXP-013--017 theorems |
 | minimum layer | all normalized rigid pairs at the least Frobenius value 181 | EXP-005/007 |
 
 ## 2a. Infinite family theorem
@@ -91,6 +95,10 @@ campaign is supporting evidence, not the proof.
 | EXP-011 | CONFIRMED | uniform endomorphism-overring formula, nonsymmetric invariants, and family-wide Ext/Tor escape |
 | EXP-012 | CONFIRMED | exact `10p` pseudo-Frobenius set, maximal reduced type, and non-almost-Gorenstein boundary |
 | EXP-013 | CONFIRMED after correction | exact common trace/conductor ideal and balanced colength `p+1`; original tail shorthand refuted |
+| EXP-014 | CONFIRMED | conductor nonstability by criterion and direct witness |
+| EXP-015 | REFUTED | first square-tail formula failed at `13s-1` in the `p=4` smoke gate |
+| EXP-016 | CONFIRMED | corrected exact square and stability defect `14p` |
+| EXP-017 | CONFIRMED | exact reduction number four, quotient profile, and Hilbert coefficients `(24p,39p)` |
 
 ## 3a. Exact evidence anchors
 
@@ -152,6 +160,13 @@ at `13s-1` by the first smoke run before any campaign artifact. Corrected campai
 aggregates are `77448398a26b958c66818b7ac4aaa4b542bad11cdba5ec7c8f7fe76db37526e2` and
 `d55ed876d7918cb4c46d8e5f3894a508d172693bde4b4c76cb67c42fcfbf0ac1`.
 
+EXP-016 is CONFIRMED after EXP-015 preserved the failed first square tail. It proves
+`length(T_p^2/t^(4s)T_p)=14p`. EXP-017 continues the exact powers and proves reduction number four,
+successive quotient lengths `23p-1,14p,2p,1,0`, and `e0(T_p)=24p`, `e1(T_p)=39p`. Its campaign
+and independent-audit aggregates are
+`e9c3c887648f08cf67c614b381f00c8c6520dcd1bb89f8cdece62293bfd06030` and
+`0f6ed70676ffb8972b8b167ad52c4f9d2851f69c3b1d96f4023e5e3d5825c781`.
+
 Published baseline:
 
 - v0.01 DOI `10.5281/zenodo.21763583`: Frobenius minimality.
@@ -166,14 +181,21 @@ Published baseline:
 - v0.05 DOI `10.5281/zenodo.21907297`: pseudo-Frobenius/type and exact trace/conductor theorems.
   The public 515,650-byte PDF has MD5 `75a1102cc9dab8785ee00ba7f93012e7` and SHA-256
   `4bd2cfd7351cb6cec1b3fa006c7eb3018732c283b5bb5a1e5c86015435275276`.
+- v0.06 DOI `10.5281/zenodo.21907943`: duality correction and exact conductor-stability theorem.
+  The public 526,699-byte PDF has MD5 `4ff26288ef70a875ebf3f17cb726ff16` and SHA-256
+  `10cc2bd31026cfe6a921c4cf54832a7df018b0f0b0f38ee196bc597954255dd4`.
+- v0.07 DOI `10.5281/zenodo.21908188`: reserved for EXP-017; not yet published.
 - concept DOI `10.5281/zenodo.21763582`.
 - The concept latest resolves to record `21907297`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Reassess the surviving-variants matrix and formal-certificate value before declaring EXP-014.
-2. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
+1. Finish v0.07 claim/build/render/metadata/public-download verification and persist the immutable
+   publication state.
+2. Promote the complete EXP-014--017 and manuscript round through PRs to `develop`, then `main`
+   only after required checks pass.
+3. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
    that architecture.
 
 ### Lenses ledger

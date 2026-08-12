@@ -124,3 +124,19 @@ That workflow is complete. The 15-page v0.05 passed claim audit, clean two-pass 
 rendered inspection, sole-authorship and metadata gates, and is immutably published at DOI
 `10.5281/zenodo.21907297`. A fresh public download matches the committed 515,650-byte PDF at
 SHA-256 `4bd2cfd7351cb6cec1b3fa006c7eb3018732c283b5bb5a1e5c86015435275276`.
+
+## 2026-08-12 duality, stability, and reduction gate
+
+A primary-source audit found that EXP-013's equality of colengths is general one-dimensional
+Gorenstein local duality, not a family-specific mechanism. Manuscript v0.06 corrects that novelty
+boundary and publishes the genuinely new exact common ideal, its value `p+1`, conductor
+nonstability, and the EXP-016 defect `length(T_p^2/t^(4s)T_p)=14p`. The immutable record is DOI
+`10.5281/zenodo.21907943`; a fresh public download matches SHA-256
+`10cc2bd31026cfe6a921c4cf54832a7df018b0f0b0f38ee196bc597954255dd4`.
+
+EXP-017 then follows the conductor's full reduction sequence rather than returning to broad SAT
+scouting. It is CONFIRMED: `Q_p=t^(4s)R_p` is a minimal reduction with exact reduction number four,
+the successive Sally-quotient lengths are `23p-1,14p,2p,1,0`, and the Hilbert coefficients are
+`e0=24p`, `e1=39p`. Symbolic block proofs are load-bearing; two exact 297-parameter routes and an
+independent audit support them. A v0.07 DOI is reserved, but publication remains conditional on
+the final claim/build/render/public-download workflow.

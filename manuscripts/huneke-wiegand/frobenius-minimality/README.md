@@ -1,6 +1,6 @@
 # Frobenius-minimality preprint
 
-`main.tex` and `main.pdf` are the release candidate for version 0.06 of the CAOS Research preprint.
+`main.tex` and `main.pdf` are the release candidate for version 0.07 of the CAOS Research preprint.
 It proves that the public
 Huneke-Wiegand numerical-semigroup counterexample has the least possible Frobenius number, 181,
 and is the unique normalized pair attaining that minimum within the nonprincipal two-generated
@@ -9,7 +9,9 @@ integer parameter `p>=4`, and determines the endomorphism overring, pseudo-Frobe
 type, trace ideals, and conductor uniformly across that family. It also separates the general
 one-dimensional Gorenstein duality identity behind the two equal colengths from the
 family-specific common ideal and value `p+1`, proves that the conductor is nonstable, and computes
-the exact one-step stability defect `length(T_p^2/t^(4s)T_p)=14p`.
+the exact one-step stability defect `length(T_p^2/t^(4s)T_p)=14p`. Version 0.07 continues the
+conductor powers, proving reduction number four, quotient lengths `23p-1,14p,2p,1,0`, and
+Hilbert-Samuel coefficients `(e0,e1)=(24p,39p)`.
 
 Attribution is binding: Son Pham discovered the first public counterexample; CAOS contributes the
 certified minimality, minimum-layer uniqueness, and parametric-family extensions. Professor Craig
@@ -36,10 +38,11 @@ Zenodo identifiers:
 - version 0.03 DOI: `10.5281/zenodo.21873911`
 - version 0.04 DOI: `10.5281/zenodo.21876338`
 - version 0.05 DOI: `10.5281/zenodo.21907297`
-- version 0.06 DOI: `10.5281/zenodo.21907943` (reserved; publication pending)
+- version 0.06 DOI: `10.5281/zenodo.21907943`
+- version 0.07 DOI: `10.5281/zenodo.21908188` (reserved; publication pending)
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-016 under
+Evidence sources are EXP-001 through EXP-017 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
 finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
@@ -50,6 +53,8 @@ EXP-014 proves conductor nonstability by theorem and direct witness. EXP-015 pre
 first square formula, refuted at its mandatory `p=4` smoke gate. EXP-016 proves the corrected exact
 square and defect formulas by symbolic residue identities, two complete routes through `p=300`,
 and an independent reconstruction audit.
+EXP-017 contains the exact conductor-power and Hilbert proof, complete campaign, independent
+tail-set reconstruction, and corrupted-profile controls.
 
 Version 0.02 remains frozen with this public-file verification:
 
@@ -91,7 +96,7 @@ Version 0.05 public-file verification:
   CC-BY-4.0 licence, filename, bytes, MD5, and SHA-256 match the committed record
 - a fresh public download matches the committed PDF exactly
 
-Version 0.06 release-candidate verification:
+Version 0.06 public-file verification:
 
 - reserved DOI: `10.5281/zenodo.21907943`; no upload or publication occurred before claim/build/render QA
 - bytes: `526699`
@@ -99,4 +104,16 @@ Version 0.06 release-candidate verification:
 - SHA-256: `10cc2bd31026cfe6a921c4cf54832a7df018b0f0b0f38ee196bc597954255dd4`
 - all 17 pages passed rendered inspection at 150 DPI after correcting the section-13 heading;
   the final two-pass build has no warnings, undefined references, overfull boxes, or underfull boxes
+- the concept latest resolved to record `21907943`; public title, version, sole author/ORCID,
+  CC-BY-4.0 licence, filename, bytes, MD5, and SHA-256 matched the committed record
+- a fresh public download matched the committed PDF exactly
+
+Version 0.07 release-candidate verification:
+
+- reserved DOI: `10.5281/zenodo.21908188`; no upload or publication occurred before claim/build/render QA
+- bytes: `539211`
+- MD5: `5ed0616521a3363fb9cb6507babf9745`
+- SHA-256: `2dca97dc100424afbeffd525fe66aa4aa43ce65c82c11b9ac43250cd33771e19`
+- all 18 pages passed rendered inspection at 150 DPI; the final two-pass build has no warnings,
+  undefined references, overfull boxes, or underfull boxes
 - publication, fresh public download, and concept-latest verification remain pending

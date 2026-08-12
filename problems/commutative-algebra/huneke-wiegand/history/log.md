@@ -310,3 +310,30 @@
   `develop` at `bdb969db83d46ac822acc8f8501857b9214c6ed9`. PR `#153` passed both jobs and promoted
   the accumulated post-release Huneke-Wiegand state to `main` at
   `9be3069a549bfabb16f39013cf9c3ac552e93c51`. No release tag is claimed.
+
+## 2026-08-12 - duality correction and exact stability anatomy
+
+- A direct Herzog--Kumashiro source audit showed that the EXP-013 colength balance is general
+  one-dimensional Gorenstein local duality; the exact common ideal and its value `p+1` remain the
+  family-specific computation.
+- Dey's criterion and EXP-012 imply conductor nonstability; EXP-014 added a direct witness.
+- EXP-015's first square-tail formula failed at `13s-1` in its mandatory `p=4` smoke gate.
+- EXP-016 proved the corrected exact square and defect `14p` by symbolic residue identities, two
+  complete exact routes through `p=300`, and an independent audit.
+- The corrective 17-page v0.06 preprint passed claim/build/render and sole-authorship gates, was
+  published at DOI `10.5281/zenodo.21907943`, and matched a fresh public download exactly.
+
+## 2026-08-12 - EXP-017 confirms exact conductor reduction number
+
+- Redirected the next path from broad nearby-face SAT to the full reduction sequence of the known
+  nonstable conductor.
+- The symbolic block proof gives `v(T^3)=[12s,13s-2] union [13s,infinity)`,
+  `v(T^4)=[16s,infinity)`, and `v(T^5)=[20s,infinity)`.
+- Therefore `t^(4s)R_p` is a minimal reduction of exact reduction number four; the full successive
+  quotient profile is `23p-1,14p,2p,1,0` and the Hilbert coefficients are `e0=24p`, `e1=39p`.
+- Both exact routes passed all 297 parameters, and an independently written audit reconstructed
+  six parameters and rehashed every row. Campaign aggregate:
+  `e9c3c887648f08cf67c614b381f00c8c6520dcd1bb89f8cdece62293bfd06030`; audit aggregate:
+  `0f6ed70676ffb8972b8b167ad52c4f9d2851f69c3b1d96f4023e5e3d5825c781`.
+- Zenodo v0.07 DOI `10.5281/zenodo.21908188` is reserved; no upload or publication is claimed
+  before the final manuscript workflow closes.
