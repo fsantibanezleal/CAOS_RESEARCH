@@ -14,8 +14,8 @@
 \hypersetup{
   pdftitle={Frobenius Minimality, Minimum-Layer Uniqueness, and an Infinite Family of Huneke--Wiegand Counterexamples},
   pdfauthor={Felipe Santibanez-Leal},
-  pdfsubject={Certified minimality, minimum-layer classification, and an explicit infinite family of two-generated monomial-ideal counterexamples},
-  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, SAT, DRAT, computer-assisted proof}
+  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, type, trace, and conductor anatomy},
+  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, pseudo-Frobenius numbers, trace ideals, conductors, SAT, DRAT}
 }
 \usepackage{orcidlink}
 \usepackage{fancyhdr}
@@ -36,18 +36,18 @@
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-10\\[2pt]\normalsize Version 0.03}
+\date{2026-08-12\\[2pt]\normalsize Version 0.05}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.03}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.05}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.03}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.05}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,14 +63,25 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.03 \textperiodcentered\ 2026-08-10\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21873911}{10.5281/zenodo.21873911}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.05 \textperiodcentered\ 2026-08-12\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21907297}{10.5281/zenodo.21907297}\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
-verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, and
-a separate explicit infinite family.
+verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
+separate explicit infinite family, and its uniform endomorphism, type, trace, and conductor anatomy.
 }}
 \end{center}
+
+% Reassert the manuscript page styles after \maketitle, which can reset the
+% class plain style on later output pages.
+\pagestyle{fancy}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyhead[L]{\small CAOS Research Preprint}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.05}%
+  \fancyfoot[C]{\small \thepage}%
+  \renewcommand{\headrulewidth}{0.4pt}%
+}
 
 \begin{abstract}
 Son Pham publicly identified a counterexample to the Huneke--Wiegand conjecture in the class of
@@ -97,7 +108,21 @@ numerical semigroup $\Gamma_p$ of multiplicity $24p$, Frobenius number $78p-1$, 
 and embedding dimension $11p$, for which
 $I_p=(t^{24p},t^{30p})$ is nonprincipal and rigid. This family theorem is deductive: seven exact
 interval-sum identities prove closure, symmetry, and $D_s=E_s+E_s$; a finite sweep through
-$p=300$ and an independently implemented audit are supporting checks. The results remain confined
+$p=300$ and an independently implemented audit are supporting checks. For every family member we
+also determine the value semigroup of the endomorphism ring exactly. It has multiplicity $24p$,
+Frobenius number $54p-1$, conductor $54p$, genus $38p-1$, and embedding dimension $12p$.
+It is nonsymmetric, and the endomorphism ring is strictly larger than the original ring. Recent
+endomorphism-center criteria then show uniformly that the ideal remains rigid over its
+endomorphism ring but is not reflexive there, with the adjacent Ext and Tor obstruction groups
+nonzero. We further prove that this endomorphism semigroup has Cohen--Macaulay type and reduced
+type $10p$, hence maximal reduced type, and that its completed semigroup ring is not almost
+Gorenstein. Finally, the traces of the ideal and its endomorphism ring both equal the conductor of
+the finite birational extension. We determine that common value ideal exactly and prove the
+balanced identity
+\[
+\ell_{R_p}(R_p/(R_p:E_p))=\ell_{R_p}(E_p/R_p)=p+1.
+\]
+The results remain confined
 to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
 \end{abstract}
@@ -141,6 +166,12 @@ they are verified by exact machine computation and independently checked artifac
   to a naive parametric family.
   \item We use the failed fixed-width ansatz to derive and prove an explicit infinite family for
   every integer $p\ge4$, with a separate exact implementation and independent audit.
+  \item We compute the endomorphism overring of every family member and prove that the
+  nonreflexive Ext/Tor escape identified in the public seed persists uniformly.
+  \item We compute the complete pseudo-Frobenius set of every endomorphism semigroup, proving
+  unbounded maximal reduced type and a uniform non-almost-Gorenstein boundary.
+  \item We compute both trace ideals and the conductor exactly, obtaining a common ideal whose
+  colength equals the birational extension length, namely $p+1$.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -601,15 +632,237 @@ Membership of $4s+1$ forces unit step, while membership of $4s+3p$ would then fo
 $4s+p+1$. Theorem~\ref{thm:family} does not say that every model in the Boolean scaffold belongs
 to this family, or that $p=4$ is a global threshold outside the displayed formula.
 
-\section{Reproducibility and trust boundary}
+\section{Uniform endomorphism overrings}
+
+Normalize $I_p$ to $J_p=(1,t^s)$ and write
+\[
+V_p=v(J_p)=\Gamma_p\cup(s+\Gamma_p),\qquad
+\Lambda_p=v(\operatorname{End}_{R_p}(J_p)).
+\]
+Define
+\[
+Q_p=[p+1,2p-2]\cup\{2p,4p\}.
+\]
+
+\begin{theorem}[Uniform endomorphism anatomy, {[D]}]\label{thm:endomorphism}
+For every integer $p\ge4$,
+\[
+\Lambda_p=\Gamma_p\cup(7s+Q_p)\cup\{13s-1\}.
+\]
+This numerical semigroup has multiplicity $24p$, Frobenius number $54p-1$, conductor $54p$,
+genus $38p-1$, and embedding dimension $12p$. It is nonsymmetric, so the localized semigroup ring
+$E_p=\operatorname{End}_{R_p}(J_p)$ is not Gorenstein. Moreover,
+\begin{align*}
+\operatorname{Ext}^1_{E_p}(J_p,J_p)&=0,
+&J_p&\text{ is not reflexive over }E_p,\\
+\operatorname{Ext}^1_{E_p}(J_p,E_p)&\ne0,
+&\operatorname{Ext}^2_{E_p}(J_p,J_p)&\ne0,\\
+\operatorname{Tor}^{R_p}_1(J_p,E_p)&\ne0.&&
+\end{align*}
+\end{theorem}
+\begin{proof}
+Let $G_k$ and $V_k$ denote the residue sets at levels $ks$ in $\Gamma_p$ and $V_p$,
+respectively. From~\eqref{eq:familyblocks},
+\[
+V_0=V_1=\{0\},\quad V_2=V_3=\varnothing,\quad
+V_4=A_p,\quad V_5=V_6=[0,s-1],\quad V_7=B_p,\quad V_8=C_p,
+\]
+and $V_k=[0,s-1]$ for every $k\ge9$. An exponent $n=ks+r$ stabilizes $J_p$ exactly when both
+$n$ and $n+s$ belong to $V_p$. Thus the level-$k$ residue set of $\Lambda_p$ is
+$V_k\cap V_{k+1}$.
+
+All adjacent intersections reproduce the corresponding $\Gamma_p$ block except at level $7$ and
+the old Frobenius point. Directly,
+\[
+B_p\cap C_p
+=\bigl([p+1,2p]\setminus\{2p-1\}\bigr)\cup\{4p\}
+=Q_p.
+\]
+Every level from $9$ onward is full, so the only other added value is $13s-1$. This proves the
+formula for $\Lambda_p$.
+
+The first positive value remains $4s=24p$. Level $8$ still omits residue $s-1$, while level $9$
+and all later levels are full. Hence the Frobenius number is $9s-1=54p-1$ and the conductor is
+$9s=54p$. Counting gaps by levels gives
+\[
+(4s-1)+(s-|A_p|)+(s-|B_p|)+(s-|Q_p|)+(s-|C_p|)=38p-1.
+\]
+A symmetric semigroup with this Frobenius number would have genus $27p$, so $\Lambda_p$ is
+nonsymmetric.
+
+The $11p$ generators of $\Gamma_p$ and the $p$ new values $7s+Q_p$ all lie below twice the
+multiplicity, hence are minimal. For any $q\in Q_p$, the level-$5$ block contains
+$5s+(s-1-q)$ and
+\[
+(7s+q)+(5s+(s-1-q))=13s-1.
+\]
+Thus the old Frobenius point is generated and there are exactly $12p$ minimal generators.
+
+Finally, $R_p$ is a one-dimensional Gorenstein local domain and $J_p$ is faithful, torsion-free,
+two-generated, nonprincipal, and rigid by Theorem~\ref{thm:family}. The ring $E_p$ is commutative
+and is strictly larger than $R_p$ because $Q_p$ is nonempty. Proposition 4.1(2) of Dey and Lyle
+makes rigidity descend to $E_p$; the contrapositives of their Theorems 4.2--4.4 give the displayed
+nonreflexivity, Ext, and Tor conclusions \cite{DeyLyle2025}.
+\end{proof}
+
+The symbolic argument is independent of a parameter sweep. As adversarial support, two exact
+implementations agree for every $p=4,\ldots,300$ \textbf{[MV]}. A separate auditor rehashes all
+$297$ rows, reconstructs complete semantic windows at $p=4,5,17,73,151,300$, and rejects a missing
+$Q_p$ value and a missing terminal singleton. The deterministic campaign and audit aggregates are
+\[
+\texttt{e21926a689178a6c70b3b6e8319053edd0fd13f164ced9565d3b976e6159c0b0}
+\]
+and
+\[
+\texttt{2ed711045ad83a3b47fb3e71d4c75ae9bfa9be1a5dd9a8c4072d5f170510343b}.
+\]
+
+\section{Pseudo-Frobenius anatomy and reduced type}
+
+For a numerical semigroup $H$, write
+\[
+\operatorname{PF}(H)=\{f\notin H:f+h\in H\text{ for every }h\in H\setminus\{0\}\}.
+\]
+Its Cohen--Macaulay type is $|\operatorname{PF}(H)|$. For complements inside $[0,s-1]$, define
+\begin{align*}
+B_p^c&=[0,p]\cup\{2p-1\}\cup[3p,4p-1]\cup[4p+1,5p-2],\\
+Q_p^c&=[0,p]\cup\{2p-1\}\cup[2p+1,4p-1]\cup[4p+1,6p-1],\\
+C_p^c&=[2p+1,3p-1]\cup[5p-1,6p-1].
+\end{align*}
+
+\begin{theorem}[Type anatomy, {[D]}]\label{thm:type}
+For every integer $p\ge4$,
+\[
+\operatorname{PF}(\Lambda_p)
+=(6s+B_p^c)\cup(7s+Q_p^c)\cup(8s+C_p^c).
+\]
+Consequently the type and reduced type of $\kfield[[\Lambda_p]]$ are both $10p$. Thus the ring has
+maximal reduced type. The semigroup is not almost symmetric, and $\kfield[[\Lambda_p]]$ is not
+almost Gorenstein.
+\end{theorem}
+\begin{proof}
+The multiplicity of $\Lambda_p$ is $4s$ and its conductor is $9s$. Every gap in the final
+multiplicity window $[5s,9s-1]$ is therefore pseudo-Frobenius. Since level 5 is full, these gaps
+are precisely the complements of $B_p,Q_p,C_p$ at levels 6, 7, and 8. Their cardinalities are
+$3p,5p,2p$.
+
+It remains to exclude a pseudo-Frobenius number below $5s$. The full level-5 generator block gives
+explicit witnesses. For a gap $r$ at level 0 with $r>0$, add $5s+(s-r)$ to reach the level-6 gap
+of residue zero. At level 1, use $5s$ when $r=0$ and $5s+(s-r)$ otherwise. At levels 2 and 3,
+add $5s+(s-1-r)$ to reach residue $s-1$ in a missing later block.
+
+For a level-4 gap $4s+r$, if $r\notin C_p$ add the generator $4s$. The remaining residues lie in
+\[
+C_p\setminus A_p=[p+1,2p]\cup[4p-1,5p-2].
+\]
+In the first interval add $4s+(2p+1-r)$; in the second add $4s+(5p-1-r)$. Both added residues lie
+in $[1,p]\subset A_p$, while the resulting level-8 residue is a gap of $C_p$. Thus no lower gap
+is pseudo-Frobenius, proving the formula.
+
+Reduced type counts the gaps in the last multiplicity window, so it is also $10p$
+\cite{MaitraMukundan2023}. Finally, using $g(\Lambda_p)=38p-1$ and $F(\Lambda_p)=54p-1$,
+\[
+2g-(F+\operatorname{type})=12p-1>0.
+\]
+The almost-symmetric genus identity therefore fails, giving the final claims.
+\end{proof}
+
+Two exact implementations confirm the displayed set for all $p=4,\ldots,300$ \textbf{[MV]}.
+One checks every gap against the full minimal-generator set; the other extracts maximal elements
+of the Ap\'ery poset modulo $4s$. The campaign and independent-audit aggregates are
+\[
+\texttt{9bed38fb1c786c3740e000dde7ea7d79a7e7c83fa584ff12fc2c4623b5d503ec}
+\]
+and
+\[
+\texttt{0315c4c22c41e0d2b8a5abb27f717a4d4a6f7356ef30ca388206d739e0de2c37}.
+\]
+
+\section{Exact trace and conductor ideals}
+
+Let $E_p=\operatorname{End}_{R_p}(J_p)=\kfield[[\Lambda_p]]$ and define the reflected block
+\[
+H_p=(s-1)-Q_p=\{2p-1,4p-1\}\cup[4p+1,5p-2].
+\]
+
+\begin{theorem}[Balanced trace and conductor, {[D]}]\label{thm:trace}
+For every integer $p\ge4$,
+\[
+\operatorname{tr}_{R_p}(J_p)=R_p:E_p=\operatorname{tr}_{R_p}(E_p)=T_p,
+\]
+where
+\begin{align*}
+v(T_p)={}&(4s+A_p)\cup(5s+(A_p\cup B_p))\cup(6s+B_p)\cup(8s+C_p)\\
+&\cup[9s,13s-2]\cup[13s,\infty).
+\end{align*}
+Moreover,
+\[
+\ell_{R_p}(R_p/T_p)=\ell_{R_p}(E_p/R_p)=p+1.
+\]
+\end{theorem}
+\begin{proof}
+Because $1\in J_p$,
+\[
+v(R_p:J_p)=W_p=\{n\in\Gamma_p:n+s\in\Gamma_p\}.
+\]
+Intersecting adjacent blocks of~\eqref{eq:familyblocks} gives
+\[
+(W_4,W_5,W_6,W_7,W_8)=(A_p,B_p,\varnothing,\varnothing,C_p),
+\]
+with full blocks at levels 9 and 10, blocks $[0,s-2]$ at levels 11 and 12, and full blocks from
+level 13 onward. Since $W_p$ is a $\Gamma_p$-ideal,
+\[
+v(\operatorname{tr}_{R_p}(J_p))=W_p\cup(s+W_p),
+\]
+which is exactly the displayed set $v(T_p)$.
+
+For the conductor $R_p:E_p$, only the values in
+\[
+\Lambda_p\setminus\Gamma_p=(7s+Q_p)\cup\{13s-1\}
+\]
+add constraints. The terminal singleton excludes $n=0$ and imposes no condition on positive
+$n\in\Gamma_p$. Every value at level 4 passes the $7s+Q_p$ translates: a failure in the sole
+level-12 gap would require $a+q=2s-1$, but $a+q\le8p-2<12p-1$. At level 5, residue $r$ fails
+exactly when $r+q=s-1$ for some $q\in Q_p$, hence exactly when $r\in H_p$. All values from level 6
+onward translate into the conductor tail. Since
+\[
+[0,s-1]\setminus H_p=A_p\cup B_p,
+\]
+this proves $v(R_p:E_p)=v(T_p)$. The conductor is an $E_p$-ideal, so
+$\operatorname{tr}_{R_p}(E_p)=E_p(R_p:E_p)=R_p:E_p$.
+
+Relative to $\Gamma_p$, the common ideal omits exactly $\{0\}\cup(5s+H_p)$, giving colength
+$p+1$. The endomorphism formula gives exactly $p+1$ values in
+$\Lambda_p\setminus\Gamma_p$, proving the balanced identity.
+\end{proof}
+
+The equality of the two traces is consistent with the reflexive-trace criterion of
+Lindo--Maitra--Zhang \cite{LindoMaitraZhang2026}; over the present Gorenstein base it is not by
+itself discriminatory. The exact common ideal and balanced defect are the new data.
+
+The first declared shorthand used the tail $[9s,\infty)$ and was refuted at $13s-1$ by the
+$p=4$ smoke check \textbf{[MV]}. That point is the Frobenius gap of $\Gamma_p$, so no $R_p$-ideal
+can contain it. The corrected formula above was then checked by two exact routes for all
+$p=4,\ldots,300$, with independent reconstruction at six parameters and three rejected
+corruptions. The campaign and audit aggregates are
+\[
+\texttt{77448398a26b958c66818b7ac4aaa4b542bad11cdba5ec7c8f7fe76db37526e2}
+\]
+and
+\[
+\texttt{d55ed876d7918cb4c46d8e5f3894a508d172693bde4b4c76cb67c42fcfbf0ac1}.
+\]
+
+\section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
 \begin{center}
 \url{problems/commutative-algebra/huneke-wiegand/}.
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
-minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The proof
-toolchain is pinned as follows:
+minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
+also includes the compact EXP-011--013 campaigns, independent reconstruction audits, symbolic
+proofs, and preserved EXP-013 smoke correction. The proof toolchain is pinned as follows:
 \begin{center}
 \begin{tabular}{@{}lp{0.65\textwidth}@{}}
 \toprule
@@ -632,10 +885,13 @@ without consulting solver internals.
 
 Son Pham retains discovery priority for the counterexample. Professor Craig Huneke's verification
 is independent external evidence. The contributions proved here are Frobenius minimality,
-uniqueness of the normalized pair at that minimum, and the separate infinite family in
-Theorem~\ref{thm:family}, together with their reproducible proof and certificate records.
+uniqueness of the normalized pair at that minimum, the separate infinite family in
+Theorem~\ref{thm:family}, and its uniform endomorphism anatomy in
+Theorem~\ref{thm:endomorphism}, pseudo-Frobenius anatomy in Theorem~\ref{thm:type}, and exact
+trace/conductor formula in Theorem~\ref{thm:trace}, together with their reproducible records.
 
-Theorems~\ref{thm:minimal}, \ref{thm:unique}, and~\ref{thm:family} do not classify all higher
+Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
+\ref{thm:type}, and~\ref{thm:trace} do not classify all higher
 Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
 or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
 questions remain open:
@@ -646,7 +902,7 @@ questions remain open:
   \item Which other Boolean-scaffold models lie on affine or residue-class families, and is the
   family in Theorem~\ref{thm:family} maximal inside a natural Kunz face?
   \item Which additional hypotheses on the endomorphism ring recover a positive theorem while
-  excluding the public example?
+  excluding both the public example and the full family proved here?
   \item Can the finite certificates be imported into a smaller formally verified checker?
 \end{enumerate}
 
@@ -656,8 +912,10 @@ The author thanks Son Pham for making the candidate and verification materials p
 Huneke for the independent verification recorded with that release. Neither is an author of this
 paper, and this acknowledgment does not imply endorsement of the minimality result.
 
-{\small
+{\footnotesize
 \begin{thebibliography}{99}
+\setlength{\itemsep}{0.25em}
+\setlength{\parsep}{0pt}
 
 \bibitem{HunekeWiegand1994}
 C. Huneke and R. Wiegand,
@@ -687,6 +945,24 @@ Commun. Algebra 52 (2024), 5196--5206.
 S. Pham,
 \emph{Huneke--Wiegand candidate verification}, public software and certificate repository (2026).
 \url{https://github.com/sonpham-org/huneke-wiegand-candidate-verification}.
+
+\bibitem{DeyLyle2025}
+S. Dey and J. Lyle,
+\emph{Centers of endomorphism rings and reflexivity},
+arXiv:2510.02210v2 (2025).
+\url{https://arxiv.org/abs/2510.02210v2}.
+
+\bibitem{MaitraMukundan2023}
+S. Maitra and V. Mukundan,
+\emph{Extremal behavior of reduced type of one dimensional rings},
+arXiv:2306.17069v1 (2023).
+\url{https://arxiv.org/abs/2306.17069v1}.
+
+\bibitem{LindoMaitraZhang2026}
+H. Lindo, S. Maitra, and W. Zhang,
+\emph{Trace does not preserve reflexivity},
+Collect. Math. (2026).
+\url{https://doi.org/10.1007/s13348-026-00515-0}.
 
 \bibitem{Cadical2023}
 A. Biere, K. Fazekas, M. Fleury, and M. Heisinger,

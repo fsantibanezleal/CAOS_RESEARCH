@@ -1,0 +1,46 @@
+{
+  "experiment": "EXP-013-trace-conductor",
+  "status": "AUDIT_PASS",
+  "all_rows_rehashed": true,
+  "sample_parameters": [
+    4,
+    5,
+    17,
+    73,
+    151,
+    300
+  ],
+  "checks": [
+    {
+      "p": 4,
+      "colength": 5,
+      "trace_hash_through_15s": "73fbc70815189714212d0a527d2988c2d0dad4f01f1f3d529e60ccec29e265d1"
+    },
+    {
+      "p": 5,
+      "colength": 6,
+      "trace_hash_through_15s": "848bd206b93c9a3b9e59073d00f36ac78d3ff2560860da1ea58a29e6842b361a"
+    },
+    {
+      "p": 17,
+      "colength": 18,
+      "trace_hash_through_15s": "74876acfa0b7537441739865418ee68be481fc1c83a420324f06d07a51f87221"
+    },
+    {
+      "p": 73,
+      "colength": 74,
+      "trace_hash_through_15s": "6ceb52fe20fdadee2b09041ea05b75da3cda01fdae17ce328d8cdeb683ca102d"
+    },
+    {
+      "p": 151,
+      "colength": 152,
+      "trace_hash_through_15s": "51aa1dd2219d8a8062f524330b10a1960397a2a849bbea50abec6ed6a1dc83e7"
+    },
+    {
+      "p": 300,
+      "colength": 301,
+      "trace_hash_through_15s": "e53eb62070fd9b7d9bc6ebda9444cf5fce4227261c0c4112844b6112204ac4f5"
+    }
+  ],
+  "audit_aggregate": "d55ed876d7918cb4c46d8e5f3894a508d172693bde4b4c76cb67c42fcfbf0ac1"
+}

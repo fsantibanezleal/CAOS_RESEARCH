@@ -19,6 +19,15 @@
 | 2026-08-10 | consolidating | consolidating | 11-page preprint v0.03 published on Zenodo with the infinite-family theorem and exact public-file verification |
 | 2026-08-10 | consolidating | published | PR #145 passed guards/tests and promoted the complete research and publication round to `develop` at `8614bb9c` |
 | 2026-08-10 | published | published | release v0.63.000 passed CI in PRs #146/#147, reached `main` at `4768310d`, and was tagged `v0.63.000` |
+| 2026-08-10 | published | published | EXP-011 declared a post-publication classification round for the uniform endomorphism overring of the EXP-009 family |
+| 2026-08-10 | published | published | EXP-011 confirmed the exact endomorphism family, nonsymmetric invariants, and uniform nonreflexive Ext/Tor escape |
+| 2026-08-10 | published | published | 12-page preprint v0.04 passed claim/build/render QA, was published at DOI `10.5281/zenodo.21876338`, and matched a fresh public download exactly |
+| 2026-08-10 | published | published | PR #150 passed `guards` and `test` and promoted EXP-011 plus the verified v0.04 publication to `develop` at `273ce4d2` |
+| 2026-08-12 | published | published | EXP-012 declared an invariant-first round for the full pseudo-Frobenius set, reduced type, and almost-Gorenstein boundary of the endomorphism family |
+| 2026-08-12 | published | published | EXP-012 proved type and reduced type `10p`, maximal reduced type, and a non-almost-Gorenstein completion for every endomorphism-family member |
+| 2026-08-12 | published | published | EXP-013 declared the exact common trace/conductor formula after showing trace equality alone is automatic over the Gorenstein base |
+| 2026-08-12 | published | published | EXP-013 proved the corrected exact common trace/conductor ideal and balanced colength `p+1`; original tail shorthand refuted at the smoke gate |
+| 2026-08-12 | published | published | 15-page preprint v0.05 passed claim/build/render QA, was published at DOI `10.5281/zenodo.21907297`, and matched a fresh public download exactly |
 
 Current state: **published**.
 
@@ -45,4 +54,11 @@ two-generated monomial-ideal class. Manuscript v0.03 is published at DOI
 `f2edff24e924a8d38bc7becd380a69f30fa6b2466c3f584802b829f14d1393cf` exactly. PR #145 promoted
 the complete round to `develop` at `8614bb9c`. Release v0.63.000 then passed both CI jobs in PR
 #146, merged from `develop` to `main` through PR #147 at `4768310d`, and was tagged
-`v0.63.000`. Broader classification and surviving-variant questions remain open.
+`v0.63.000`. EXP-011 subsequently proves that every family member has endomorphism semigroup
+`Gamma_p union (7s+Q_p) union {13s-1}`, with Frobenius `54p-1`, genus `38p-1`, and embedding
+dimension `12p`; the same nonreflexive Ext/Tor escape holds uniformly. Broader classification and
+other surviving-variant questions remain open. Manuscript v0.04 publishes that theorem at DOI
+`10.5281/zenodo.21876338`; the 491,757-byte public PDF matches SHA-256
+`025cea4c59c4301ff6925cfe43353c7ac1c6cd8b4fc56a8c6d648347f418e825` exactly. PR #150 passed
+both required CI jobs and promoted the complete theorem, experiment, manuscript, and publication
+record to `develop` at merge commit `273ce4d2ca73f75762824168b41e8e3494612c05`.
