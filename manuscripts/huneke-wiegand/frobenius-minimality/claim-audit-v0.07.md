@@ -1,6 +1,6 @@
 # Claim audit - manuscript v0.07
 
-Audited: 2026-08-12. Prepublication result: PASS. Public-artifact verification: PENDING.
+Audited: 2026-08-12. Final result: PASS.
 
 Version 0.07 retains the v0.06 duality correction and adds only theorem-level consequences of the
 committed EXP-017 block proof. Exact campaigns support the symbolic proof and do not replace it.
@@ -17,7 +17,7 @@ committed EXP-017 block proof. Exact campaigns support the symbolic proof and do
 | computational support through `p=300` | EXP-017 `results.json`, `audit.json`, and independent tail-set implementation | PASS; campaign `e9c3c887...6030`, audit `0f6ed706...c781` |
 | reduction terminology | Northcott--Rees, DOI `10.1017/S0305004100029194` | PASS; definition and attribution only |
 | authorship | title page and `zenodo.json` | PASS; Felipe Santibanez-Leal is sole author; no automated system named |
-| publication identity | reserved Zenodo record and page-one block | PENDING; DOI `10.5281/zenodo.21908188` is reserved, but no public record is claimed before upload, publication, and fresh-download verification |
+| publication identity | public Zenodo record, page-one block, and fresh download | PASS; version DOI `10.5281/zenodo.21908188`, concept DOI `10.5281/zenodo.21763582`, sole author/ORCID, and public SHA-256 match Git |
 
 ## Scope boundaries
 
@@ -37,4 +37,4 @@ committed EXP-017 block proof. Exact campaigns support the symbolic proof and do
 - frozen candidate PDF: 539211 bytes, MD5 `5ed0616521a3363fb9cb6507babf9745`, SHA-256
   `2dca97dc100424afbeffd525fe66aa4aa43ce65c82c11b9ac43250cd33771e19`;
 - public record status, concept latest, sole author/ORCID, CC-BY-4.0 licence, filename, hashes, and
-  fresh downloaded-file equality: PENDING.
+  fresh downloaded-file equality: PASS.

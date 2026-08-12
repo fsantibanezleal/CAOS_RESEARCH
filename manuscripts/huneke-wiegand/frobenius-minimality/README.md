@@ -1,6 +1,6 @@
 # Frobenius-minimality preprint
 
-`main.tex` and `main.pdf` are the release candidate for version 0.07 of the CAOS Research preprint.
+`main.tex` and `main.pdf` are published version 0.07 of the CAOS Research preprint.
 It proves that the public
 Huneke-Wiegand numerical-semigroup counterexample has the least possible Frobenius number, 181,
 and is the unique normalized pair attaining that minimum within the nonprincipal two-generated
@@ -39,7 +39,7 @@ Zenodo identifiers:
 - version 0.04 DOI: `10.5281/zenodo.21876338`
 - version 0.05 DOI: `10.5281/zenodo.21907297`
 - version 0.06 DOI: `10.5281/zenodo.21907943`
-- version 0.07 DOI: `10.5281/zenodo.21908188` (reserved; publication pending)
+- version 0.07 DOI: `10.5281/zenodo.21908188`
 - licence: CC BY 4.0
 
 Evidence sources are EXP-001 through EXP-017 under
@@ -108,12 +108,14 @@ Version 0.06 public-file verification:
   CC-BY-4.0 licence, filename, bytes, MD5, and SHA-256 matched the committed record
 - a fresh public download matched the committed PDF exactly
 
-Version 0.07 release-candidate verification:
+Version 0.07 public-file verification:
 
-- reserved DOI: `10.5281/zenodo.21908188`; no upload or publication occurred before claim/build/render QA
+- DOI: `10.5281/zenodo.21908188`; no upload or publication occurred before claim/build/render QA
 - bytes: `539211`
 - MD5: `5ed0616521a3363fb9cb6507babf9745`
 - SHA-256: `2dca97dc100424afbeffd525fe66aa4aa43ce65c82c11b9ac43250cd33771e19`
 - all 18 pages passed rendered inspection at 150 DPI; the final two-pass build has no warnings,
   undefined references, overfull boxes, or underfull boxes
-- publication, fresh public download, and concept-latest verification remain pending
+- the concept latest resolves to record `21908188`; public version, sole author/ORCID, filename,
+  bytes, MD5, and SHA-256 match the committed record
+- a fresh public download matches the committed PDF exactly

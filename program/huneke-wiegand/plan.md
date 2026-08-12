@@ -138,5 +138,6 @@ EXP-017 then follows the conductor's full reduction sequence rather than returni
 scouting. It is CONFIRMED: `Q_p=t^(4s)R_p` is a minimal reduction with exact reduction number four,
 the successive Sally-quotient lengths are `23p-1,14p,2p,1,0`, and the Hilbert coefficients are
 `e0=24p`, `e1=39p`. Symbolic block proofs are load-bearing; two exact 297-parameter routes and an
-independent audit support them. A v0.07 DOI is reserved, but publication remains conditional on
-the final claim/build/render/public-download workflow.
+independent audit support them. The 18-page v0.07 passed claim/build/render, metadata, sole-author,
+publication, and fresh-download gates and is immutable at DOI `10.5281/zenodo.21908188`; its public
+SHA-256 is `2dca97dc100424afbeffd525fe66aa4aa43ce65c82c11b9ac43250cd33771e19`.

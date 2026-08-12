@@ -1,10 +1,10 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-12. Lifecycle: published, with a new manuscript candidate in QA. EXP-014--017
+Updated: 2026-08-12. Lifecycle: published. EXP-014--017
 prove the exact stability and reduction anatomy of the explicit conductor family. Corrective
 manuscript v0.06 is published and independently verified at DOI `10.5281/zenodo.21907943`.
-EXP-017 is confirmed; v0.07 DOI `10.5281/zenodo.21908188` is reserved and final publication QA is
-in progress. Release v0.63.000 remains the current repository release baseline; no new tag is
+EXP-017 and manuscript v0.07 are published and independently verified at DOI
+`10.5281/zenodo.21908188`. Release v0.63.000 remains the current repository release baseline; no new tag is
 claimed by this research round.
 
 ## 1. State in one screen
@@ -184,18 +184,18 @@ Published baseline:
 - v0.06 DOI `10.5281/zenodo.21907943`: duality correction and exact conductor-stability theorem.
   The public 526,699-byte PDF has MD5 `4ff26288ef70a875ebf3f17cb726ff16` and SHA-256
   `10cc2bd31026cfe6a921c4cf54832a7df018b0f0b0f38ee196bc597954255dd4`.
-- v0.07 DOI `10.5281/zenodo.21908188`: reserved for EXP-017; not yet published.
+- v0.07 DOI `10.5281/zenodo.21908188`: conductor reduction number and Hilbert data. The public
+  539,211-byte PDF has MD5 `5ed0616521a3363fb9cb6507babf9745` and SHA-256
+  `2dca97dc100424afbeffd525fe66aa4aa43ce65c82c11b9ac43250cd33771e19`.
 - concept DOI `10.5281/zenodo.21763582`.
 - The concept latest resolves to record `21907297`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Finish v0.07 claim/build/render/metadata/public-download verification and persist the immutable
-   publication state.
-2. Promote the complete EXP-014--017 and manuscript round through PRs to `develop`, then `main`
+1. Promote the complete EXP-014--017 and manuscript round through PRs to `develop`, then `main`
    only after required checks pass.
-3. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
+2. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
    that architecture.
 
 ### Lenses ledger

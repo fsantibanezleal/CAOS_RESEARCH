@@ -335,5 +335,7 @@
   six parameters and rehashed every row. Campaign aggregate:
   `e9c3c887648f08cf67c614b381f00c8c6520dcd1bb89f8cdece62293bfd06030`; audit aggregate:
   `0f6ed70676ffb8972b8b167ad52c4f9d2851f69c3b1d96f4023e5e3d5825c781`.
-- Zenodo v0.07 DOI `10.5281/zenodo.21908188` is reserved; no upload or publication is claimed
-  before the final manuscript workflow closes.
+- The 18-page v0.07 passed claim/build/render and sole-authorship gates, was published at DOI
+  `10.5281/zenodo.21908188`, and a fresh public download matched 539,211 bytes, MD5
+  `5ed0616521a3363fb9cb6507babf9745`, and SHA-256
+  `2dca97dc100424afbeffd525fe66aa4aa43ce65c82c11b9ac43250cd33771e19` exactly.
