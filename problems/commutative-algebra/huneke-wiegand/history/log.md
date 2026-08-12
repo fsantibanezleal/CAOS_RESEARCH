@@ -398,3 +398,16 @@
   `0b01853febc9e9754e28abcd099a7ae3a97f4cc0ab92f3a345ab2ae03cd3c68a`.
 - The new theorem triggers a v0.09 manuscript candidate; Zenodo publication remains gated on the
   complete claim/build/render, sole-authorship, metadata, and public-file verification workflow.
+
+## 2026-08-12 - Buchsbaum preprint v0.09 published
+
+- Expanded the manuscript to 21 pages with the complete graded-torsion, Buchsbaum-invariant, and
+  Cohen--Macaulay quotient theorem.
+- The claim audit, stable two-pass build, complete rendered inspection, metadata, and sole-human-
+  authorship gates passed before upload.
+- Published Zenodo version DOI `10.5281/zenodo.21908785`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21908785`.
+- A fresh public download is 567,854 bytes with MD5 `c0605ace2b60d6830fd6e68d68d883b0`
+  and SHA-256 `ecf4d1ebe504ad3af74d123c949a953a7f397dabd72ec11c94a631962e1501db`, exactly matching Git.
+- Public version, sole author/ORCID, CC-BY-4.0 licence, and filename match. Repository PR promotion
+  remains the next delivery gate; no release tag is claimed.

@@ -33,6 +33,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | preprint v0.06 | published | duality correction plus exact conductor-stability theorem, DOI [`10.5281/zenodo.21907943`](https://doi.org/10.5281/zenodo.21907943); exact public-file hash verified |
 | preprint v0.07 | published | conductor reduction-number and Hilbert-data theorem, DOI [`10.5281/zenodo.21908188`](https://doi.org/10.5281/zenodo.21908188); exact public-file hash verified |
 | preprint v0.08 | published | depth-zero conductor tangent-cone theorem, DOI [`10.5281/zenodo.21908490`](https://doi.org/10.5281/zenodo.21908490); exact public-file hash verified |
+| preprint v0.09 | published | complete graded torsion and Buchsbaum tangent-cone theorem, DOI [`10.5281/zenodo.21908785`](https://doi.org/10.5281/zenodo.21908785); exact public-file hash verified |
 
 CAOS independently reproduces the public counterexample's decisive finite certificate. Discovery
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery. CAOS's novel

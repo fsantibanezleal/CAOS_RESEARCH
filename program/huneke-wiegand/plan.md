@@ -182,3 +182,8 @@ Cohen--Macaulay ring with Hilbert numerator
 The two-route 297-parameter campaign and independent audit pass, but the stable-tail colon proof is
 load-bearing. This is a material theorem beyond v0.08, so the active delivery gate is manuscript
 v0.09 with full claim/build/render, sole-authorship, Zenodo, and fresh-download verification.
+
+The publication gate is complete. The 21-page v0.09 passed the claim audit, stable two-pass build,
+complete rendered inspection, sole-authorship, metadata, publication, and fresh-download checks.
+It is immutable at DOI `10.5281/zenodo.21908785`; its public SHA-256 is
+`ecf4d1ebe504ad3af74d123c949a953a7f397dabd72ec11c94a631962e1501db`.

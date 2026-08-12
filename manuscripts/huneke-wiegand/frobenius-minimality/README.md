@@ -1,7 +1,7 @@
 # Frobenius-minimality preprint
 
-`main.tex` and `main.pdf` are the publication candidate for version 0.09 of the CAOS Research
-preprint. Version 0.08 and all earlier versions remain frozen.
+`main.tex` and `main.pdf` are published version 0.09 of the CAOS Research preprint. Version 0.08
+and all earlier versions remain frozen.
 It proves that the public
 Huneke-Wiegand numerical-semigroup counterexample has the least possible Frobenius number, 181,
 and is the unique normalized pair attaining that minimum within the nonprincipal two-generated
@@ -48,7 +48,7 @@ Zenodo identifiers:
 - version 0.06 DOI: `10.5281/zenodo.21907943`
 - version 0.07 DOI: `10.5281/zenodo.21908188`
 - version 0.08 DOI: `10.5281/zenodo.21908490`
-- reserved version 0.09 DOI: `10.5281/zenodo.21908785` (not yet published)
+- version 0.09 DOI: `10.5281/zenodo.21908785`
 - licence: CC BY 4.0
 
 Evidence sources are EXP-001 through EXP-019 under
@@ -146,13 +146,15 @@ Version 0.08 public-file verification:
   licence, filename, bytes, MD5, and SHA-256 match the committed record
 - a fresh public download matches the committed PDF exactly
 
-Version 0.09 prepublication verification:
+Version 0.09 public-file verification:
 
 - reserved DOI: `10.5281/zenodo.21908785`; no upload or publication occurred before
   claim/build/render QA
-- candidate bytes: `567854`
-- candidate MD5: `c0605ace2b60d6830fd6e68d68d883b0`
-- candidate SHA-256: `ecf4d1ebe504ad3af74d123c949a953a7f397dabd72ec11c94a631962e1501db`
+- bytes: `567854`
+- MD5: `c0605ace2b60d6830fd6e68d68d883b0`
+- SHA-256: `ecf4d1ebe504ad3af74d123c949a953a7f397dabd72ec11c94a631962e1501db`
 - all 21 pages passed rendered inspection at 150 DPI; the final stable two-pass build has no
   warnings, undefined references, overfull boxes, or underfull boxes
-- public-record and fresh-download verification remain pending publication
+- the concept latest resolves to record `21908785`; public version, sole author/ORCID, CC-BY-4.0
+  licence, filename, bytes, MD5, and SHA-256 match the committed record
+- a fresh public download matches the committed PDF exactly

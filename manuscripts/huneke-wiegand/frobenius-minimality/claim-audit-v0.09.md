@@ -1,6 +1,6 @@
 # Claim audit - manuscript v0.09
 
-Audited: 2026-08-12. Prepublication result: PASS.
+Audited: 2026-08-12. Final result: PASS.
 
 Version 0.09 retains all v0.08 claims and adds only the theorem-level consequences of the
 committed EXP-019 symbolic proof. Exact campaigns support the proof and do not replace it.
@@ -18,7 +18,7 @@ committed EXP-019 symbolic proof. Exact campaigns support the proof and do not r
 | computational support through `p=300` | EXP-019 `results.json`, `audit.json`, two exact routes, independent bounded-bitset implementation | PASS; campaign `854d7889...dbf7`, audit `0b01853f...c68a` |
 | Buchsbaum criterion sources | D'Anna--Mezzasalma--Micale DOI `10.1080/00927870802116521`; D'Anna--Micale--Sammartano DOI `10.1216/JCA-2011-3-2-147` | PASS; primary sources cited and filtration-specific boundary stated |
 | authorship | title page and `zenodo.json` | PASS; Felipe Santibanez-Leal is sole author; no automated system named |
-| publication identity | reserved Zenodo draft and page-one block | PASS prepublication; version DOI `10.5281/zenodo.21908785`, concept DOI `10.5281/zenodo.21763582` |
+| publication identity | public Zenodo record, page-one block, and fresh download | PASS; version DOI `10.5281/zenodo.21908785`, concept DOI `10.5281/zenodo.21763582`, sole author/ORCID, and public SHA-256 match Git |
 
 ## Scope boundaries
 
@@ -38,4 +38,5 @@ committed EXP-019 symbolic proof. Exact campaigns support the proof and do not r
   clipping or overlap;
 - frozen candidate PDF: 567854 bytes, MD5 `c0605ace2b60d6830fd6e68d68d883b0`, SHA-256
   `ecf4d1ebe504ad3af74d123c949a953a7f397dabd72ec11c94a631962e1501db`;
-- public record, concept latest, and fresh-download equality gates: pending publication.
+- public record status, concept latest, sole author/ORCID, CC-BY-4.0 licence, filename, hashes, and
+  fresh downloaded-file equality: PASS.

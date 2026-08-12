@@ -20,4 +20,4 @@
 | HWB-016 | 1 | done | conductor reduction sequence and Hilbert data | EXP-017 proves reduction number four, quotient lengths `23p-1,14p,2p,1,0`, and `(e0,e1)=(24p,39p)` |
 | HWB-017 | 1 | done | conductor tangent cone | EXP-018 proves depth zero, a unique Valabrega--Valla defect of length `p`, and the exact positive Hilbert numerator |
 | HWB-018 | 1 | done | torsion/Buchsbaum anatomy of the tangent cone | EXP-019 proves `H^0=k^p` in degree zero, full maximal-ideal annihilation, Buchsbaumness, and invariant `p` |
-| HWB-019 | 1 | in progress | manuscript and Zenodo update for Buchsbaum theorem | v0.09 requires claim/build/render, authorship, metadata, publication, and fresh-download gates |
+| HWB-019 | 1 | done | manuscript and Zenodo update for Buchsbaum theorem | v0.09 published and fresh-download verified at `10.5281/zenodo.21908785` |
