@@ -93,3 +93,9 @@ level-6, level-7, and level-8 gap blocks, with no lower pseudo-Frobenius numbers
 endomorphism family has type and reduced type `10p`, maximal reduced type, and is uniformly not
 almost Gorenstein. The separate trace-ideal criterion from Lindo-Maitra-Zhang is retained as a
 future reformulation route after the invariant is settled.
+
+EXP-012 is CONFIRMED. The complete pseudo-Frobenius set is exactly the three final gap blocks,
+giving type and reduced type `10p`. Hence the endomorphism family has maximal reduced type, while
+`2g-(F+type)=12p-1` proves it is uniformly not almost symmetric. The next invariant-first gate is
+the trace/endomorphism equality from Lindo-Maitra-Zhang Corollary 5.6, not an automatic manuscript
+version or nearby-face SAT sweep.

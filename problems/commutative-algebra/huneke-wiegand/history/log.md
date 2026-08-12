@@ -249,3 +249,17 @@
   window, hence maximal reduced type and a uniform non-almost-Gorenstein boundary.
 - Declared EXP-012 with two exact routes, symbolic proof requirements, corruptions, and a two-minute
   budget before implementation or execution.
+
+## 2026-08-12 - EXP-012 confirms unbounded maximal reduced type
+
+- Proved that every final multiplicity-window gap of `Lambda_p` is pseudo-Frobenius and supplied an
+  explicit minimal-generator witness excluding every lower gap.
+- The complete pseudo-Frobenius set has three blocks of sizes `3p`, `5p`, and `2p`; type and reduced
+  type are exactly `10p`, so every associated semigroup ring has maximal reduced type.
+- Since `2g-(F+type)=12p-1`, every `Lambda_p` is not almost symmetric and its completed semigroup
+  ring is not almost Gorenstein.
+- The exact bitset and Apéry routes agree for all `p=4,...,300`; a separate implementation rehashed
+  all 297 rows, reconstructed six parameters, and rejected two corrupted PF formulas.
+- EXP-012 is CONFIRMED. The next new viewpoint is the trace/endomorphism equality from the 2026
+  Lindo-Maitra-Zhang criterion; manuscript publication is deliberately deferred until that route is
+  adjudicated.

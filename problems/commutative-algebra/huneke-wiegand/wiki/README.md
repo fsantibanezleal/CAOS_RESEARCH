@@ -18,6 +18,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-009 | CONFIRMED | explicit infinite counterexample family for every integer `p>=4`; symbolic proof plus independent formula/semantic audit |
 | EXP-010 | SUPERSEDED | no run: its gate was false after EXP-009 closed the family question |
 | EXP-011 | CONFIRMED | exact endomorphism semigroup for every EXP-009 member; nonsymmetric invariants and uniform Ext/Tor escape |
+| EXP-012 | CONFIRMED | exact pseudo-Frobenius blocks; type and reduced type `10p`; maximal reduced type and non-almost-Gorenstein completion |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
@@ -58,3 +59,25 @@ V_p = Gamma_p union (s+Gamma_p),
 
 so the new level is exactly `B intersect C=Q_p`. A 297-parameter two-route campaign and an
 independent reconstruction audit support, but do not replace, the symbolic argument.
+
+## Pseudo-Frobenius anatomy and reduced type
+
+For complements in `[0,s-1]`, EXP-012 proves
+
+```text
+B^c = [0,p] union {2p-1} union [3p,4p-1] union [4p+1,5p-2],
+Q^c = [0,p] union {2p-1} union [2p+1,4p-1] union [4p+1,6p-1],
+C^c = [2p+1,3p-1] union [5p-1,6p-1],
+PF(Lambda_p) = (6s+B^c) union (7s+Q^c) union (8s+C^c).
+```
+
+Every final-window gap is pseudo-Frobenius because the multiplicity is `4s` and the conductor is
+`9s`. Explicit minimal-generator witnesses exclude every gap below `5s`. Therefore
+
+```text
+type(Lambda_p) = reduced_type(Lambda_p) = 10p.
+```
+
+The associated semigroup ring has maximal reduced type. Moreover,
+`2g-(F+type)=12p-1`, so `Lambda_p` is not almost symmetric and its completed semigroup ring is not
+almost Gorenstein. The Cohen-Macaulay type is unbounded across the family.

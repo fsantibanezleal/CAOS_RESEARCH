@@ -14,4 +14,5 @@
 | HWB-010 | 1 | done | classify rigid pairs at `F=181` | EXP-007: unique normalized pair, support/fixed terminal proofs and fresh audit pass |
 | HWB-011 | 2 | in progress | classify the EXP-009 family and nearby Kunz faces | EXP-011 closes uniform endomorphism anatomy; broader Kunz-face classification remains open |
 | HWB-012 | 1 | done | uniform endomorphism overring of the EXP-009 family | EXP-011 proves the exact formula, invariants, nonsymmetry, and Ext/Tor escape |
-| HWB-013 | 1 | in progress | pseudo-Frobenius set and reduced type of the endomorphism family | EXP-012 tests the predicted `10p` type, maximal reduced type, and non-almost-Gorenstein boundary |
+| HWB-013 | 1 | done | pseudo-Frobenius set and reduced type of the endomorphism family | EXP-012 proves the exact `10p` type, maximal reduced type, and non-almost-Gorenstein boundary |
+| HWB-014 | 1 | pending | trace/endomorphism equality across the explicit family | use Lindo-Maitra-Zhang Corollary 5.6 to compute `tr_R(J_p)` versus `tr_R(End_R(J_p))` before any nearby-face search |

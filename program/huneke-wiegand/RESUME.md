@@ -87,7 +87,7 @@ campaign is supporting evidence, not the proof.
 | EXP-009 | CONFIRMED | explicit infinite family for every integer `p>=4`; independent formula/semantic audit passes |
 | EXP-010 | SUPERSEDED | no run; declared conditional gate became false when EXP-009 succeeded |
 | EXP-011 | CONFIRMED | uniform endomorphism-overring formula, nonsymmetric invariants, and family-wide Ext/Tor escape |
-| EXP-012 | DECLARED | predicted `10p` pseudo-Frobenius set, maximal reduced type, and non-almost-Gorenstein boundary |
+| EXP-012 | CONFIRMED | exact `10p` pseudo-Frobenius set, maximal reduced type, and non-almost-Gorenstein boundary |
 
 ## 3a. Exact evidence anchors
 
@@ -123,16 +123,18 @@ campaign and audit aggregates are
 Manuscript v0.04 passed its claim audit, clean two-pass build, and complete 12-page rendered
 inspection before publication.
 
-EXP-012 is declared before implementation or execution. It predicts
+EXP-012 is CONFIRMED. It proves
 
 ```text
 PF(Lambda_p) = (6s+B^c) union (7s+Q^c) union (8s+C^c),
 type(Lambda_p) = reduced_type(Lambda_p) = 10p.
 ```
 
-The predicted consequence is maximal reduced type and failure of almost symmetry for every
-`p>=4`. The invariant-first proof surface is the last multiplicity window plus explicit witnesses
-excluding all lower gaps. No EXP-012 run has started.
+The consequence is maximal reduced type and failure of almost symmetry for every `p>=4`.
+The invariant-first proof uses the last multiplicity window plus explicit witnesses excluding all
+lower gaps. The exact campaign and independent audit aggregates are
+`9bed38fb1c786c3740e000dde7ea7d79a7e7c83fa584ff12fc2c4623b5d503ec` and
+`0315c4c22c41e0d2b8a5abb27f717a4d4a6f7356ef30ca388206d739e0de2c37`.
 
 Published baseline:
 
@@ -151,11 +153,11 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Implement and smoke-test EXP-012 Route A and Route B at `p=4,5`:
-   `python problems/commutative-algebra/huneke-wiegand/experiments/EXP-012-endomorphism-type/run.py --first 4 --last 5`.
-2. Run the exact `p=4,...,300` campaign and independent audit within their declared budgets.
-3. Complete the symbolic lower-gap exclusion, verdict, wiki, and all durable mirrors.
-4. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
+1. Perform a source-complete preflight for HWB-014: compute the trace ideal of `J_p` and compare it
+   with the trace of `End_(R_p)(J_p)` using the exact valuation blocks.
+2. Decide whether EXP-012 plus that trace theorem justify a deliberate manuscript v0.05, rather
+   than publishing EXP-012 reflexively as a standalone revision.
+3. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
    that architecture.
 
 ### Lenses ledger
