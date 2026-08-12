@@ -372,3 +372,14 @@
   passed next: PR #160 passed `guards` and `test` and merged the round to `develop` at
   `c91ff890`; PR #161 passed all checks and promoted the identical tested tree to `main` at
   `4b62f778`. No release tag is claimed.
+
+## 2026-08-12 - EXP-019 declared
+
+- Redirected the next round from a larger tangent-cone parameter sweep to the complete zeroth
+  local cohomology and Buchsbaum condition.
+- Source-checked the general one-dimensional local-cohomology criterion and explicitly separated
+  it from maximal-ideal-specific semigroup formulas that do not apply verbatim to the conductor
+  filtration.
+- Predeclared the prediction that the torsion is `k^p` in degree zero, the full homogeneous maximal
+  ideal annihilates it, and the tangent cone is Buchsbaum but not Cohen--Macaulay with invariant
+  `p`. No formal implementation or campaign preceded the declaration.
