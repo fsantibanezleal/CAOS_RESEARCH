@@ -33,6 +33,7 @@
 | 2026-08-12 | published | published | EXP-014 proved conductor nonstability; EXP-015 preserved a smoke-gate refutation; EXP-016 proved exact stability defect `14p` |
 | 2026-08-12 | published | published | 17-page corrective preprint v0.06 passed claim/build/render QA, was published at DOI `10.5281/zenodo.21907943`, and matched a fresh public download exactly |
 | 2026-08-12 | published | published | EXP-017 proved conductor reduction number four, quotient profile `23p-1,14p,2p,1,0`, and Hilbert coefficients `(24p,39p)`; 18-page v0.07 published and fresh-download verified at DOI `10.5281/zenodo.21908188` |
+| 2026-08-12 | published | published | PR #156 passed `guards` and `test` and merged EXP-014--017 plus v0.06/v0.07 to `develop` at `5953850e`; PR #157 passed both jobs and promoted the tested state to `main` at `2f6b9b9c` |
 
 Current state: **published**.
 
