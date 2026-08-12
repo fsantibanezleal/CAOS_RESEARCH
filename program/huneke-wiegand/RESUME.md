@@ -327,3 +327,8 @@ rebuilt six parameters and rehashed every row. Manuscript v0.11 is published and
 verified at DOI `10.5281/zenodo.21909961`. The active gate is repository PR promotion. After that,
 HWB-023 defining ideals is the strongest identified next path, but it requires a separate
 hypothesis and source preflight before implementation.
+
+PR promotion is complete: #172 merged the tested theorem/publication round to `develop` at
+`178a7361`, and #173 promoted the identical tree to `main` at `7abd1040`. Remote `develop` and
+`main` share tree `21791e6a`. Persist this handoff through the same PR path before declaring
+HWB-023. No global release tag is part of this research round.
