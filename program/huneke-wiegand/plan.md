@@ -187,3 +187,31 @@ The publication gate is complete. The 21-page v0.09 passed the claim audit, stab
 complete rendered inspection, sole-authorship, metadata, publication, and fresh-download checks.
 It is immutable at DOI `10.5281/zenodo.21908785`; its public SHA-256 is
 `ecf4d1ebe504ad3af74d123c949a953a7f397dabd72ec11c94a631962e1501db`.
+
+## 2026-08-12 Noether-normalization module gate
+
+A fresh source sweep redirects the next round from a generic inequality for the Buchsbaum
+invariant to the complete module over the minimal-reduction polynomial ring. EXP-020 is declared
+before implementation. With `F_p=k[x_p]` and `x_p=(t^(4s))^*`, the EXP-017--019 data predict
+
+```text
+G_p isomorphic to (F_p/(x_p))^p direct-sum F_p direct-sum F_p(-1)^(10p-1)
+    direct-sum F_p(-2)^(12p) direct-sum F_p(-3)^(2p-1) direct-sum F_p(-4).
+```
+
+The invariant-first proof uses the graded structure theorem over `k[x_p]`; an exact
+conductor-power Apery-column decomposition is the independent route. A nearby Kunz-face sweep and
+Rees-algebra local cohomology remain deferred until this finite structural target is adjudicated.
+
+EXP-020 is CONFIRMED. The entire conductor tangent cone decomposes into a rank-`24p` free module
+plus `p` copies of `F_p/(x_p)` in degree zero. It follows that the projective dimension over the
+Noether normalization is one, the regularity is four, the top-local-cohomology `a`-invariant is
+three, and `length(G_p/x_pG_p)=25p=e0(T_p)+I(G_p)`. The exact Apery-column campaign passed all 297
+parameters and the independent audit rebuilt six parameters and rehashed every row. This material
+theorem triggers manuscript v0.10; no publication is claimed before its full immutable workflow.
+
+The publication gate is complete. The 22-page v0.10 passed claim audit, stable two-pass build,
+complete rendered inspection, sole-authorship and metadata checks, publication, and fresh-download
+verification. It is immutable at DOI `10.5281/zenodo.21909127`; the public PDF is 578,949 bytes
+with SHA-256 `00a78fd8101f106724877b3fdbc933c51024a872a2b9a4f05692358b4d1a9d03`.
+The remaining gate is repository PR promotion, not further EXP-020 computation.

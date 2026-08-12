@@ -36,18 +36,18 @@
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-12\\[2pt]\normalsize Version 0.09}
+\date{2026-08-12\\[2pt]\normalsize Version 0.10}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.09}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.10}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.09}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.10}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,8 +63,8 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.09 \textperiodcentered\ 2026-08-12\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21908785}{10.5281/zenodo.21908785}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.10 \textperiodcentered\ 2026-08-12\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21909127}{10.5281/zenodo.21909127}\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
 verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
@@ -79,7 +79,7 @@ reduction, and tangent-cone anatomy.
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.09}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.10}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -138,7 +138,12 @@ the exact Hilbert series and show that its numerator has only positive coefficie
 failure of Cohen--Macaulayness. We then determine the complete zeroth local cohomology: it is
 $k^p$, concentrated in degree zero and annihilated by the full homogeneous maximal ideal. Hence
 the tangent cone is Buchsbaum but not Cohen--Macaulay, with unbounded Buchsbaum invariant $p$;
-its quotient by the finite-length torsion is Cohen--Macaulay with an exact Hilbert series.
+its quotient by the finite-length torsion is Cohen--Macaulay with an exact Hilbert series. Over the
+polynomial Noether normalization induced by the minimal reduction, we determine the entire graded
+module: the torsion consists of $p$ exponent-one cyclic summands, while the free quotient has rank
+$24p$ and explicit shifts. This yields the complete minimal resolution, projective dimension one,
+regularity four, top-local-cohomology $a$-invariant three, and the exact parameter-section identity
+$\ell(G_p/x_pG_p)=25p=e_0(T_p)+I(G_p)$.
 The results remain confined
 to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
@@ -199,6 +204,9 @@ they are verified by exact machine computation and independently checked artifac
   \item We identify that defect with the complete zeroth local cohomology, prove that the full
   homogeneous maximal ideal annihilates it, and obtain a Buchsbaum non-Cohen--Macaulay family with
   unbounded Buchsbaum invariant $p$ and an exact Cohen--Macaulay quotient series.
+  \item We determine the complete graded module over the minimal-reduction Noether normalization,
+  its minimal resolution and Betti numbers, regularity four, $a$-invariant three, and the exact
+  parameter-section identity $\ell(G_p/x_pG_p)=25p=e_0(T_p)+I(G_p)$.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -1214,6 +1222,87 @@ and
 \texttt{0b01853febc9e9754e28abcd099a7ae3a97f4cc0ab92f3a345ab2ae03cd3c68a}.
 \]
 
+\subsection{The complete module over the Noether normalization}
+
+Put $F_p=\kfield[x_p]$, where $x_p=(t^{4s})^*$ has degree one. The reduction theorem makes
+$F_p\to G_p$ a Noether normalization. This viewpoint follows the graded-module framework of
+Cortadellas Benitez and Zarzuela \cite{CortadellasZarzuela2007,CortadellasZarzuela2009}, while the
+conductor-filtration calculation below is derived directly from Theorems~\ref{thm:reduction},
+\ref{thm:tangent}, and~\ref{thm:buchsbaum}.
+
+\begin{theorem}[Exact Noether-normalization module, {\bf[D]}]
+\label{thm:module}
+For every integer $p\ge4$, there is a graded $F_p$-module isomorphism
+\begin{align*}
+G_p\cong{}& (F_p/(x_p))^p\oplus F_p\oplus F_p(-1)^{10p-1}\oplus F_p(-2)^{12p}\\
+&\oplus F_p(-3)^{2p-1}\oplus F_p(-4).
+\end{align*}
+Its minimal graded $F_p$-resolution is
+\[
+0\longrightarrow F_p(-1)^p\longrightarrow
+F_p^{p+1}\oplus F_p(-1)^{10p-1}\oplus F_p(-2)^{12p}
+\oplus F_p(-3)^{2p-1}\oplus F_p(-4)
+\longrightarrow G_p\longrightarrow0.
+\]
+Consequently
+\[
+\operatorname{pd}_{F_p}(G_p)=1,
+\qquad \operatorname{reg}_{F_p}(G_p)=4,
+\qquad a(G_p)=3,
+\]
+and
+\[
+\ell(G_p/x_pG_p)=25p=e_0(T_p)+I(G_p).
+\]
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{thm:reduction} gives $T_p^{n+1}=t^{4s}T_p^n$ for $n\ge4$, so $G_p$ is finite over
+$F_p$. Since $G_p/x_pG_p$ has finite length, $F_p$-torsion equals zeroth local cohomology.
+Theorem~\ref{thm:buchsbaum} therefore gives
+\[
+\operatorname{tors}_{F_p}(G_p)=H^0_{\mathcal M_p}(G_p)\cong(F_p/(x_p))^p,
+\]
+with all generators in degree zero. In particular, every torsion elementary divisor has exponent
+one.
+
+The quotient $C_p=G_p/H^0_{\mathcal M_p}(G_p)$ is finite and torsion-free over the principal
+ideal domain $F_p$, hence graded free. Its Hilbert series from Theorem~\ref{thm:buchsbaum} is
+\[
+H_{C_p}(z)=\frac{1+(10p-1)z+12pz^2+(2p-1)z^3+z^4}{1-z}.
+\]
+Since $H_{F_p(-d)}(z)=z^d/(1-z)$, the numerator uniquely gives the five displayed free shifts.
+The quotient is projective, so the exact sequence with the torsion submodule splits after choosing
+homogeneous lifts of a free basis. This proves the decomposition.
+
+Resolving each $F_p/(x_p)$ by multiplication by $x_p$ gives the displayed minimal resolution. Its
+only first Betti number is $\beta_{1,1}=p$; its degree-zero through degree-four generator counts
+are $p+1,10p-1,12p,2p-1,1$. Therefore the projective dimension is one and the resolution formula
+for regularity gives four. Finite-length torsion has no first local cohomology, while the largest
+free shift is four and $\operatorname{end}H^1(F_p(-d))=d-1$; hence $a(G_p)=3$.
+
+Finally, modulo $x_p$ every cyclic summand contributes one $\kfield$-dimension. The free rank is
+\[
+1+(10p-1)+12p+(2p-1)+1=24p=e_0(T_p),
+\]
+and the torsion contributes $p=I(G_p)$. This proves the parameter-section identity.
+\end{proof}
+
+For an independent exact reconstruction, EXP-020 forms the Apery table of
+$R_p,T_p,\ldots,T_p^5$ modulo $24p$. Each column splits into finite and infinite strings under
+multiplication by $x_p$, recovering every cyclic summand. The recursive-power and Hilbert/torsion
+routes agree for all $p=4,\ldots,300$ \textbf{[MV]}; a separate closed-form implementation rebuilds
+six parameters and rehashes all $297$ rows. Exponent-two-torsion, deleted-free-summand,
+perturbed-Betti, false-regularity, and false-section-length controls are rejected. The campaign and
+audit aggregates are
+\[
+\texttt{02cf6f62a71de1a897cd46149e8c89d1c55bf810d28dddc02fc6c5330b9c1aed}
+\]
+and
+\[
+\texttt{c439f7e4fbd3cee983f32e5c6a27b347017c165cdf6d9fee54eb8d53ab634eac}.
+\]
+
 \section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
@@ -1222,7 +1311,7 @@ All compact code, hypotheses, manifests, audits, and verdicts are in the public 
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
 minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
-also includes the compact EXP-011--019 campaigns, independent reconstruction audits, symbolic
+also includes the compact EXP-011--020 campaigns, independent reconstruction audits, symbolic
 proofs, the preserved EXP-013 correction, and the EXP-015 refutation. The proof toolchain is
 pinned as follows:
 \begin{center}
@@ -1253,12 +1342,13 @@ Theorem~\ref{thm:endomorphism}, pseudo-Frobenius anatomy in Theorem~\ref{thm:typ
 trace/conductor formula in Theorem~\ref{thm:trace}, stability defect in
 Theorem~\ref{thm:stability}, and conductor reduction/Hilbert data in
 Theorem~\ref{thm:reduction}, tangent-cone depth in Theorem~\ref{thm:tangent}, and complete
-graded-torsion/Buchsbaum anatomy in Theorem~\ref{thm:buchsbaum}, together with
+graded-torsion/Buchsbaum anatomy in Theorem~\ref{thm:buchsbaum}, and the complete
+Noether-normalization module in Theorem~\ref{thm:module}, together with
 their reproducible records.
 
 Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
 \ref{thm:type}, \ref{thm:trace}, \ref{thm:stability}, \ref{thm:reduction},
-\ref{thm:tangent}, and~\ref{thm:buchsbaum}
+\ref{thm:tangent}, \ref{thm:buchsbaum}, and~\ref{thm:module}
 do not classify all higher
 Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
 or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
@@ -1355,6 +1445,17 @@ P. Valabrega and G. Valla,
 \emph{Form rings and regular sequences},
 Nagoya Math. J. 72 (1978), 93--101.
 \href{https://doi.org/10.1017/S0027763000018225}{doi:10.1017/S0027763000018225}.
+
+\bibitem{CortadellasZarzuela2007}
+T. Cortadellas and S. Zarzuela,
+\emph{On the structure of the fiber cone of ideals with analytic spread one},
+J. Algebra 317 (2007), 759--785.
+\href{https://doi.org/10.1016/j.jalgebra.2007.02.044}{doi:10.1016/j.jalgebra.2007.02.044}.
+
+\bibitem{CortadellasZarzuela2009}
+T. Cortadellas and S. Zarzuela,
+\emph{Tangent cones of numerical semigroup rings},
+\href{https://arxiv.org/abs/0906.0911}{arXiv:0906.0911} (2009).
 
 \bibitem{DAnnaMezzasalmaMicale2009}
 M. D'Anna, M. Mezzasalma, and V. Micale,
