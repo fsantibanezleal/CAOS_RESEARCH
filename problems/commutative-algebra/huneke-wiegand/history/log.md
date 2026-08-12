@@ -413,3 +413,45 @@
   passed next: PR #164 passed `guards` and `test` and merged the round to `develop` at
   `efdca94`; PR #165 passed all checks and promoted the identical tested tree to `main` at
   `cbe62a5`. No release tag is claimed.
+
+## 2026-08-12 - EXP-020 declared
+
+- A fresh primary-source sweep redirected the next round from a generic Buchsbaum-invariant bound
+  to the full module over the minimal-reduction Noether normalization.
+- Cortadellas Benitez and Zarzuela's tangent-cone module viewpoint supplies the analogy, but their
+  maximal-ideal-specific Apery formulas are not imported into the conductor filtration.
+- EXP-017--019 predict a complete decomposition into `p` copies of `F/(x)` plus free summands in
+  degrees zero through four, hence an exact minimal resolution, regularity four, and parameter-
+  section excess `p`.
+- EXP-020 was declared before implementation or execution, with a symbolic graded-PID proof, an
+  independent conductor-power Apery-column reconstruction, five corruptions, and fixed budgets.
+
+## 2026-08-12 - EXP-020 confirms the complete Noether-normalization module
+
+- Proved that the conductor tangent cone is a rank-`24p` graded free module over `k[x_p]` plus
+  exactly `p` copies of `k[x_p]/(x_p)` generated in degree zero.
+- Derived the complete minimal graded resolution: the sole first Betti number is
+  `beta_(1,1)=p`; the free generator counts are `p+1,10p-1,12p,2p-1,1` in degrees zero through
+  four.
+- Consequently `pd=1`, `reg=4`, `a=3`, and the minimal-reduction section has exact length
+  `25p=e0(T_p)+I(G_p)`.
+- The recursive-power Apery campaign passed for every `p=4,...,300` in 12.234088 seconds. A
+  separate closed-form implementation rebuilt six parameters, rehashed all 297 rows, and rejected
+  five corruptions.
+- Campaign and audit aggregates are
+  `02cf6f62a71de1a897cd46149e8c89d1c55bf810d28dddc02fc6c5330b9c1aed` and
+  `c439f7e4fbd3cee983f32e5c6a27b347017c165cdf6d9fee54eb8d53ab634eac`.
+- EXP-020 is CONFIRMED and triggers the manuscript v0.10 gate.
+
+## 2026-08-12 - Noether-normalization preprint v0.10 published
+
+- Expanded the manuscript to 22 pages with the complete graded module, minimal resolution, Betti
+  numbers, regularity, top-local-cohomology `a`-invariant, and parameter-section theorem.
+- The claim audit, stable two-pass build, complete 22-page rendered inspection, metadata, and
+  sole-human-authorship gates passed before upload.
+- Published Zenodo version DOI `10.5281/zenodo.21909127`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21909127`.
+- A fresh public download is 578,949 bytes with MD5 `830ae1fd2e2fbf923a86cbf575e9a841`
+  and SHA-256 `00a78fd8101f106724877b3fdbc933c51024a872a2b9a4f05692358b4d1a9d03`, exactly matching Git.
+- Public version, sole author/ORCID, CC-BY-4.0 licence, and filename match. Repository PR promotion
+  is the remaining delivery gate; no release tag is claimed.
