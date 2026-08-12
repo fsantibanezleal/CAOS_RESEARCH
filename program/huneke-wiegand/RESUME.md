@@ -4,7 +4,9 @@ Updated: 2026-08-12. Lifecycle: published. EXP-014--017
 prove the exact stability and reduction anatomy of the explicit conductor family. Corrective
 manuscript v0.06 is published and independently verified at DOI `10.5281/zenodo.21907943`.
 EXP-017 and manuscript v0.07 are published and independently verified at DOI
-`10.5281/zenodo.21908188`. Release v0.63.000 remains the current repository release baseline; no new tag is
+`10.5281/zenodo.21908188`. PR #156 passed both required jobs and merged the full round to `develop`
+at `5953850e`; PR #157 passed both jobs and promoted it to `main` at `2f6b9b9c`. Release v0.63.000
+remains the current repository release baseline; no new tag is
 claimed by this research round.
 
 ## 1. State in one screen
@@ -193,9 +195,7 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Promote the complete EXP-014--017 and manuscript round through PRs to `develop`, then `main`
-   only after required checks pass.
-2. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
+1. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
    that architecture.
 
 ### Lenses ledger
