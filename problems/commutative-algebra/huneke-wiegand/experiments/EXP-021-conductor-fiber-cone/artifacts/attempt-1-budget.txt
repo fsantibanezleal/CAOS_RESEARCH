@@ -1,0 +1,27 @@
+EXP-021 attempt 1 - preserved budget outcome
+Date: 2026-08-12
+
+Mandatory p=4 smoke gate: PASS
+  h-vector: [1, 39, 48, 7, 1, 0]
+  socle vector: [0, 0, 40, 0, 1, 0]
+
+The formal p=4,...,300 campaign passed every completed row through p=225, then exceeded the
+declared 120-second campaign budget before an artifact could be written. Per hypothesis.md, this
+attempt is INCONCLUSIVE and is not a mathematical negative result. The independent audit did not
+run because the campaign artifact did not exist.
+
+Observed checkpoints:
+  p=4   type=41   kernel=[4,0,0,0,0,0]
+  p=25  type=251  kernel=[25,0,0,0,0,0]
+  p=50  type=501  kernel=[50,0,0,0,0,0]
+  p=75  type=751  kernel=[75,0,0,0,0,0]
+  p=100 type=1001 kernel=[100,0,0,0,0,0]
+  p=125 type=1251 kernel=[125,0,0,0,0,0]
+  p=150 type=1501 kernel=[150,0,0,0,0,0]
+  p=175 type=1751 kernel=[175,0,0,0,0,0]
+  p=200 type=2001 kernel=[200,0,0,0,0,0]
+  p=225 type=2251 kernel=[225,0,0,0,0,0]
+
+Engineering correction: replace the quadratic per-basis/per-generator socle membership loop by
+an exact bitset inclusion test. The mathematical prediction, controls, range, and budgets remain
+unchanged.

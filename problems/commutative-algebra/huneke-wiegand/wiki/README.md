@@ -27,6 +27,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-018 | CONFIRMED | conductor tangent cone has depth zero; unique Valabrega--Valla defect has length `p`; exact positive Hilbert numerator |
 | EXP-019 | CONFIRMED | complete tangent-cone torsion is `k^p` in degree zero; Buchsbaum but not Cohen--Macaulay; invariant `p` |
 | EXP-020 | CONFIRMED | complete module over the minimal-reduction polynomial ring; exact Betti data, regularity four, and section identity `25p=e0+I` |
+| EXP-021 | CONFIRMED | conductor fiber cone is canonically `G_p/H^0`; Cohen--Macaulay of type `10p+1`, nonlevel and non-Gorenstein |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
@@ -36,6 +37,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | preprint v0.08 | published | depth-zero conductor tangent-cone theorem, DOI [`10.5281/zenodo.21908490`](https://doi.org/10.5281/zenodo.21908490); exact public-file hash verified |
 | preprint v0.09 | published | complete graded torsion and Buchsbaum tangent-cone theorem, DOI [`10.5281/zenodo.21908785`](https://doi.org/10.5281/zenodo.21908785); exact public-file hash verified |
 | preprint v0.10 | published | complete Noether-normalization module and graded-resolution theorem, DOI [`10.5281/zenodo.21909127`](https://doi.org/10.5281/zenodo.21909127); exact public-file hash verified |
+| preprint v0.11 | published | canonical conductor special fiber, exact type, and nonlevel theorem, DOI [`10.5281/zenodo.21909961`](https://doi.org/10.5281/zenodo.21909961); exact public-file hash verified |
 
 CAOS independently reproduces the public counterexample's decisive finite certificate. Discovery
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery. CAOS's novel
@@ -214,3 +216,18 @@ length(G_p/x_pG_p)=25p=e0(T_p)+I(G_p).
 The proof uses the graded principal-ideal-domain structure theorem together with EXP-017--019.
 An independent exact route decomposes all `24p` conductor-power Apery columns. It passed for every
 `p=4,...,300`; a separate audit rebuilt six parameters and rehashed all 297 rows.
+
+## Conductor special fiber
+
+EXP-021 proves the exact identity `T_p^2=m_pT_p`. Therefore every positive-degree kernel of the
+natural map from the tangent cone to the special fiber vanishes, while the degree-zero kernel is
+exactly EXP-019's `H^0=m_p/T_p`. Hence
+
+```text
+gr_(T_p)(R_p)/H^0 isomorphic to F(T_p)
+```
+
+as graded algebras. The special fiber is the canonical Cohen--Macaulayization of the Buchsbaum
+tangent cone. Its Artinian reduction has h-vector `(1,10p-1,12p,2p-1,1)` and socle dimensions
+`(0,0,10p,0,1)`. Thus its type is `10p+1`; it is neither level nor Gorenstein. The symbolic block
+proof is supported by a 297-parameter exact campaign and an independent six-parameter audit.

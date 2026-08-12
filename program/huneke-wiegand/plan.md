@@ -215,3 +215,34 @@ complete rendered inspection, sole-authorship and metadata checks, publication, 
 verification. It is immutable at DOI `10.5281/zenodo.21909127`; the public PDF is 578,949 bytes
 with SHA-256 `00a78fd8101f106724877b3fdbc933c51024a872a2b9a4f05692358b4d1a9d03`.
 The remaining gate is repository PR promotion, not further EXP-020 computation.
+
+## 2026-08-12 conductor fiber-cone gate
+
+The next round is redirected from a broad neighboring-family sweep to the special fiber
+`C_p=F(T_p)`. EXP-021 is declared before implementation. Its load-bearing prediction is
+`T_p^2=m_pT_p`; this would identify the natural tangent-cone map's kernel with the already proved
+`H^0(G_p)` and yield a graded-algebra isomorphism
+
+```text
+G_p/H^0(G_p) isomorphic to C_p.
+```
+
+The same exact value data predict Cohen--Macaulay type `10p+1` and a nonlevel Artinian reduction
+with socle in degrees two and four. The mandatory order is hypothesis, smoke gate, exact campaign,
+independent audit, symbolic proof, and only then manuscript/publication deliberation. A defining
+ideal is a separate later gate and is not assumed here.
+
+EXP-021 is CONFIRMED. The first complete attempt correctly stopped as inconclusive at the campaign
+budget; an exact bitset optimization then completed all 297 parameters inside the unchanged
+budget, and the independent audit passed. The symbolic proof establishes
+`T_p^2=m_pT_p` and the natural algebra isomorphism `G_p/H^0 isomorphic to F(T_p)` for every
+`p>=4`. The Artinian reduction has socle dimensions `10p` in degree two and one in degree four,
+so the type is `10p+1` and the fiber cone is nonlevel. The active delivery gate is manuscript
+v0.11; HWB-023 remains separate and must not delay accurate publication of this theorem.
+
+The v0.11 delivery gate is complete. The 25-page preprint passed claim audit, stable two-pass
+build, complete rendered inspection, sole-authorship and metadata checks, publication, and fresh
+public-download verification. It is immutable at DOI `10.5281/zenodo.21909961`; the public
+589,535-byte PDF has SHA-256
+`0b3a9131e3c419c0a89cb064ea6beb7c696006171fe18bec578e7ba963a520ce`. Repository PR promotion
+remains required before HWB-023 can be considered for a separate declaration.
