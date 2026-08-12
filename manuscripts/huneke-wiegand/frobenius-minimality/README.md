@@ -1,7 +1,7 @@
 # Frobenius-minimality preprint
 
-`main.tex` and `main.pdf` are published version 0.08 of the CAOS Research preprint. Version 0.07
-and all earlier versions remain frozen.
+`main.tex` and `main.pdf` are the publication candidate for version 0.09 of the CAOS Research
+preprint. Version 0.08 and all earlier versions remain frozen.
 It proves that the public
 Huneke-Wiegand numerical-semigroup counterexample has the least possible Frobenius number, 181,
 and is the unique normalized pair attaining that minimum within the nonprincipal two-generated
@@ -15,6 +15,10 @@ conductor powers, proving reduction number four, quotient lengths `23p-1,14p,2p,
 Hilbert-Samuel coefficients `(e0,e1)=(24p,39p)`. Version 0.08 proves that every conductor tangent
 cone has depth zero, identifies its unique Valabrega--Valla defect of length `p`, and computes its
 coefficientwise-positive Hilbert numerator.
+Version 0.09 proves that the complete zeroth local cohomology is `k^p`, concentrated in degree
+zero and annihilated by the full homogeneous maximal ideal. Thus the tangent cones are Buchsbaum
+but not Cohen--Macaulay with unbounded Buchsbaum invariant `p`; their quotients by `H^0` are
+Cohen--Macaulay with an exact Hilbert series.
 
 Attribution is binding: Son Pham discovered the first public counterexample; CAOS contributes the
 certified minimality, minimum-layer uniqueness, and parametric-family extensions. Professor Craig
@@ -44,9 +48,10 @@ Zenodo identifiers:
 - version 0.06 DOI: `10.5281/zenodo.21907943`
 - version 0.07 DOI: `10.5281/zenodo.21908188`
 - version 0.08 DOI: `10.5281/zenodo.21908490`
+- reserved version 0.09 DOI: `10.5281/zenodo.21908785` (not yet published)
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-018 under
+Evidence sources are EXP-001 through EXP-019 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
 finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
@@ -61,6 +66,8 @@ EXP-017 contains the exact conductor-power and Hilbert proof, complete campaign,
 tail-set reconstruction, and corrupted-profile controls.
 EXP-018 contains the exact Valabrega--Valla intersection proof, two-route campaign, independently
 written bounded-bitset audit, and Hilbert-series controls.
+EXP-019 contains the complete colon-saturation proof, full homogeneous-maximal-annihilator test,
+two-route campaign, independent bounded-bitset audit, and Buchsbaum/quotient-series controls.
 
 Version 0.02 remains frozen with this public-file verification:
 
@@ -138,3 +145,14 @@ Version 0.08 public-file verification:
 - the concept latest resolves to record `21908490`; public version, sole author/ORCID, CC-BY-4.0
   licence, filename, bytes, MD5, and SHA-256 match the committed record
 - a fresh public download matches the committed PDF exactly
+
+Version 0.09 prepublication verification:
+
+- reserved DOI: `10.5281/zenodo.21908785`; no upload or publication occurred before
+  claim/build/render QA
+- candidate bytes: `567854`
+- candidate MD5: `c0605ace2b60d6830fd6e68d68d883b0`
+- candidate SHA-256: `ecf4d1ebe504ad3af74d123c949a953a7f397dabd72ec11c94a631962e1501db`
+- all 21 pages passed rendered inspection at 150 DPI; the final stable two-pass build has no
+  warnings, undefined references, overfull boxes, or underfull boxes
+- public-record and fresh-download verification remain pending publication
