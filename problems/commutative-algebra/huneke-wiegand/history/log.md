@@ -453,5 +453,7 @@
   `10.5281/zenodo.21763582` now resolves to record `21909127`.
 - A fresh public download is 578,949 bytes with MD5 `830ae1fd2e2fbf923a86cbf575e9a841`
   and SHA-256 `00a78fd8101f106724877b3fdbc933c51024a872a2b9a4f05692358b4d1a9d03`, exactly matching Git.
-- Public version, sole author/ORCID, CC-BY-4.0 licence, and filename match. Repository PR promotion
-  is the remaining delivery gate; no release tag is claimed.
+- Public version, sole author/ORCID, CC-BY-4.0 licence, and filename match. PR #168 passed `guards`
+  and `test` and merged the complete theorem/publication round to `develop` at `5b9ca074`; PR #169
+  passed all checks and promoted the identical tested tree to `main` at `06a6af92`. No release tag
+  is claimed.
