@@ -282,6 +282,8 @@ Published baseline:
   required.
 - Noether-normalization: EXP-020 tests whether the entire tangent-cone defect is isolated in `p`
   exponent-one cyclic summands over the minimal-reduction polynomial ring.
+- Fiber-cone restoration: EXP-021 tests whether killing that torsion is canonically the special
+  fiber algebra, and uses its Artinian reduction to decide type, levelness, and Gorensteinness.
 
 ## 7. Gotchas
 
@@ -314,3 +316,10 @@ Published baseline:
 Read root `Entry_point.md`, this file, `plan.md`, `state.md`, `backlog.md`, and the latest relevant
 experiment verdict. Continue the highest-priority unblocked item without changing the product
 branch or importing the candidate repository's verifier as CAOS evidence.
+
+## 2026-08-12 in flight - EXP-021
+
+EXP-021 is declared but not yet executed. The active target is the conductor fiber cone
+`C_p=F(T_p)`. Start with the mandatory `p=4` smoke gate for `T_p^2=m_pT_p`; if it passes, complete
+the two-route exact campaign, independent audit, and symbolic proof of the natural quotient and
+socle formulas. Do not begin HWB-023 or a new manuscript version until this gate is adjudicated.

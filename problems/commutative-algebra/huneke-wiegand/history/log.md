@@ -443,6 +443,15 @@
   `c439f7e4fbd3cee983f32e5c6a27b347017c165cdf6d9fee54eb8d53ab634eac`.
 - EXP-020 is CONFIRMED and triggers the manuscript v0.10 gate.
 
+## 2026-08-12 - EXP-021 declared
+
+- A primary-source and novelty preflight selects the conductor special fiber over a broader Kunz
+  sweep, Rees-algebra campaign, or premature defining-ideal calculation.
+- EXP-021 was declared before formal implementation or execution. It predicts
+  `T_p^2=m_pT_p`, the canonical algebra isomorphism `G_p/H^0(G_p) isomorphic to F(T_p)`, and an
+  Artinian socle giving Cohen--Macaulay type `10p+1` with nonlevel behavior.
+- The mandatory next action is the `p=4` smoke gate; no confirmation or publication is claimed.
+
 ## 2026-08-12 - Noether-normalization preprint v0.10 published
 
 - Expanded the manuscript to 22 pages with the complete graded module, minimal resolution, Betti

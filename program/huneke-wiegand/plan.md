@@ -215,3 +215,19 @@ complete rendered inspection, sole-authorship and metadata checks, publication, 
 verification. It is immutable at DOI `10.5281/zenodo.21909127`; the public PDF is 578,949 bytes
 with SHA-256 `00a78fd8101f106724877b3fdbc933c51024a872a2b9a4f05692358b4d1a9d03`.
 The remaining gate is repository PR promotion, not further EXP-020 computation.
+
+## 2026-08-12 conductor fiber-cone gate
+
+The next round is redirected from a broad neighboring-family sweep to the special fiber
+`C_p=F(T_p)`. EXP-021 is declared before implementation. Its load-bearing prediction is
+`T_p^2=m_pT_p`; this would identify the natural tangent-cone map's kernel with the already proved
+`H^0(G_p)` and yield a graded-algebra isomorphism
+
+```text
+G_p/H^0(G_p) isomorphic to C_p.
+```
+
+The same exact value data predict Cohen--Macaulay type `10p+1` and a nonlevel Artinian reduction
+with socle in degrees two and four. The mandatory order is hypothesis, smoke gate, exact campaign,
+independent audit, symbolic proof, and only then manuscript/publication deliberation. A defining
+ideal is a separate later gate and is not assumed here.
