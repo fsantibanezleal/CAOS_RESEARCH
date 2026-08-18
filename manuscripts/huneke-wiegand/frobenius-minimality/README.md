@@ -1,8 +1,9 @@
 # Frobenius-minimality preprint
 
-`main.tex` is version 0.11 of the CAOS Research preprint; version 0.10 and all earlier versions
-remain frozen. Version 0.11 is published at DOI `10.5281/zenodo.21909961` after the complete
-claim/build/render and public-file verification workflow passed.
+`main.tex` is version 0.12 of the CAOS Research preprint; version 0.11 and all earlier
+versions remain frozen. Version 0.12 passed the complete claim/build/render workflow, is published
+at DOI `10.5281/zenodo.21988601`, and matches a fresh public download exactly. Version 0.11 remains
+published and fresh-download verified at DOI `10.5281/zenodo.21909961`.
 It proves that the public
 Huneke-Wiegand numerical-semigroup counterexample has the least possible Frobenius number, 181,
 and is the unique normalized pair attaining that minimum within the nonprincipal two-generated
@@ -27,6 +28,11 @@ the minimal resolution, projective dimension one, regularity four, top-local-coh
 Version 0.11 proves `T_p^2=m_pT_p`, identifies the conductor special fiber canonically with
 `G_p/H^0(G_p)`, and computes Cohen--Macaulay type `10p+1`. Its Artinian socle lies in degrees two
 and four, so the fiber cone is neither level nor Gorenstein.
+Version 0.12 determines the complete defining ideal of that special fiber. It has
+`50p^2-17p` minimal quadrics and the single additional cubic
+`X_0^2X_(3p)-X_p^3`, hence relation type three and non-Koszulness. The all-parameter state-graph
+connectivity calculation is exact Presburger verification; the separately encoded audit and the
+absence of a checked solver proof object are both recorded.
 
 Attribution is binding: Son Pham discovered the first public counterexample; CAOS contributes the
 certified minimality, minimum-layer uniqueness, and parametric-family extensions. Professor Craig
@@ -59,9 +65,10 @@ Zenodo identifiers:
 - version 0.09 DOI: `10.5281/zenodo.21908785`
 - version 0.10 DOI: `10.5281/zenodo.21909127`
 - version 0.11 DOI: `10.5281/zenodo.21909961`
+- version 0.12 DOI: `10.5281/zenodo.21988601` (published and fresh-download verified)
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-021 under
+Evidence sources are EXP-001 through EXP-023 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
 finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
@@ -83,6 +90,10 @@ route, independently written closed-form audit, exact Betti data, and corrupted-
 EXP-021 contains the exact square and natural-kernel proof, a 297-parameter reconstruction of the
 fiber cone and Artinian socle, the preserved first budget-only attempt, an independently encoded
 six-parameter/all-row-hash audit, and corrupted-square, kernel, socle, and type controls.
+EXP-022 preserves the refuted quadratic-presentation conjecture and proves the universal necessary
+cubic. EXP-023 proves the corrected one-cubic presentation with an exact all-parameter Presburger
+component cover, a bounded campaign through `p=23`, an independently encoded total-graph audit,
+and the preserved first over-budget attempt.
 
 Version 0.02 remains frozen with this public-file verification:
 
@@ -198,5 +209,19 @@ Version 0.11 public-file verification:
   warnings, undefined references, overfull boxes, or underfull boxes
 - sole authorship, ORCID, version, reserved DOI, concept DOI, and CC-BY-4.0 metadata gates pass
 - the concept latest resolves to record `21909961`; public version, sole author/ORCID, CC-BY-4.0
+  licence, filename, bytes, MD5, and SHA-256 match the committed record
+- a fresh unauthenticated public download matches the committed PDF exactly
+
+Version 0.12 public-file verification:
+
+- DOI: `10.5281/zenodo.21988601`; no upload or publication occurred before claim/build/render QA
+- bytes: `615252`
+- MD5: `c8b810a763b9bb55d076a454df49b413`
+- SHA-256: `98d730fb8afaf40149d028bdde0b1c3ba9851f1dbcd15475567e56bb7eb17d3f`
+- all 27 pages passed rendered inspection at 150 DPI; the final build has no warnings, undefined
+  references, overfull boxes, or underfull boxes
+- sole authorship, ORCID, version, reserved DOI, concept DOI, CC-BY-4.0 metadata, and new source
+  citation gates pass
+- the concept latest resolves to record `21988601`; public version, sole author/ORCID, CC-BY-4.0
   licence, filename, bytes, MD5, and SHA-256 match the committed record
 - a fresh unauthenticated public download matches the committed PDF exactly

@@ -1,0 +1,1775 @@
+{
+  "experiment": "EXP-023-one-cubic-defining-ideal",
+  "status": "COMPUTATIONAL_PASS",
+  "range": {
+    "first": 4,
+    "last": 23,
+    "count": 20
+  },
+  "prediction": "J_p=((J_p)_2, X_0^2 X_(3p)-X_p^3)",
+  "all_rows_pass": true,
+  "campaign_aggregate": "d23792c47a2e07785a27ebc71e99619705f7aa53a38ebe7f66ffa03b0518ce83",
+  "elapsed_seconds": 249.61147840000922,
+  "rows": [
+    {
+      "p": 4,
+      "variable_count": 40,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        40,
+        88,
+        95,
+        96,
+        96
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 732,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 733,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 3520,
+          "edge_attempts": 47440,
+          "zero_edges": 8540,
+          "lower_relation_quotient_dimension": 96,
+          "actual_fiber_dimension": 95,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 12,
+            "left_root": 9,
+            "left_state": [
+              0,
+              12
+            ],
+            "right_root": 360,
+            "right_state": [
+              4,
+              8
+            ]
+          },
+          "component_signature": "a76c8b0ec83e167a04ff02979c994317ffa0b08b33ee2c95b4107c3a15fbe90c",
+          "elapsed_seconds": 0.020956599997589365
+        },
+        {
+          "degree": 4,
+          "state_count": 3800,
+          "edge_attempts": 81040,
+          "zero_edges": 18888,
+          "lower_relation_quotient_dimension": 96,
+          "actual_fiber_dimension": 96,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "9e8e51f7e508218682ac853f1d529dafc5d6135f289bfcba036b62e4a2b51d32",
+          "elapsed_seconds": 0.03275059998850338
+        },
+        {
+          "degree": 5,
+          "state_count": 3840,
+          "edge_attempts": 92240,
+          "zero_edges": 18888,
+          "lower_relation_quotient_dimension": 96,
+          "actual_fiber_dimension": 96,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "9e8e51f7e508218682ac853f1d529dafc5d6135f289bfcba036b62e4a2b51d32",
+          "elapsed_seconds": 0.03609479998704046
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 0.09005400000023656,
+      "row_hash": "bb6af3721e7333ae95d95dda3fdff5f3697a4fb90e649bef99db3d5b090d8126"
+    },
+    {
+      "p": 5,
+      "variable_count": 50,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        50,
+        110,
+        119,
+        120,
+        120
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 1165,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 1166,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 5500,
+          "edge_attempts": 93350,
+          "zero_edges": 16461,
+          "lower_relation_quotient_dimension": 120,
+          "actual_fiber_dimension": 119,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 15,
+            "left_root": 11,
+            "left_state": [
+              0,
+              15
+            ],
+            "right_root": 560,
+            "right_state": [
+              5,
+              10
+            ]
+          },
+          "component_signature": "91f8aa52573196723de71bce794ea44c5e6bf62e73937e6c9139399582b7441f",
+          "elapsed_seconds": 0.044130199996288866
+        },
+        {
+          "degree": 4,
+          "state_count": 5950,
+          "edge_attempts": 158400,
+          "zero_edges": 36536,
+          "lower_relation_quotient_dimension": 120,
+          "actual_fiber_dimension": 120,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "ce877abf773cab5ce58e172be8cfc3740c4f79f57834cadec466ab8c77387efe",
+          "elapsed_seconds": 0.08775669999886304
+        },
+        {
+          "degree": 5,
+          "state_count": 6000,
+          "edge_attempts": 180900,
+          "zero_edges": 36536,
+          "lower_relation_quotient_dimension": 120,
+          "actual_fiber_dimension": 120,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "ce877abf773cab5ce58e172be8cfc3740c4f79f57834cadec466ab8c77387efe",
+          "elapsed_seconds": 0.11536930000875145
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 0.2477188000048045,
+      "row_hash": "85217123e96fa1a76c876005384a667856917aab41188d131f8fbbee1b03a5e4"
+    },
+    {
+      "p": 6,
+      "variable_count": 60,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        60,
+        132,
+        143,
+        144,
+        144
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 1698,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 1699,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 7920,
+          "edge_attempts": 162120,
+          "zero_edges": 28180,
+          "lower_relation_quotient_dimension": 144,
+          "actual_fiber_dimension": 143,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 18,
+            "left_root": 13,
+            "left_state": [
+              0,
+              18
+            ],
+            "right_root": 804,
+            "right_state": [
+              6,
+              12
+            ]
+          },
+          "component_signature": "3a8d58cb1022db06e75a5c490f23b2cb485e509c0d0e241e3677932faaa44d9e",
+          "elapsed_seconds": 0.07909419998759404
+        },
+        {
+          "degree": 4,
+          "state_count": 8580,
+          "edge_attempts": 273840,
+          "zero_edges": 62710,
+          "lower_relation_quotient_dimension": 144,
+          "actual_fiber_dimension": 144,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "09d49edf2976b17dd5c2881d8368e9dc8f156c3fa27ef7e4ceeda8b1fe70e52c",
+          "elapsed_seconds": 0.11490509999566711
+        },
+        {
+          "degree": 5,
+          "state_count": 8640,
+          "edge_attempts": 313440,
+          "zero_edges": 62710,
+          "lower_relation_quotient_dimension": 144,
+          "actual_fiber_dimension": 144,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "09d49edf2976b17dd5c2881d8368e9dc8f156c3fa27ef7e4ceeda8b1fe70e52c",
+          "elapsed_seconds": 0.12960330001078546
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 0.32410189998336136,
+      "row_hash": "ffa71021250dec93a01a139f46223d2da219ba3c494871add4a03cce7c882658"
+    },
+    {
+      "p": 7,
+      "variable_count": 70,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        70,
+        154,
+        167,
+        168,
+        168
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 2331,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 2332,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 10780,
+          "edge_attempts": 258370,
+          "zero_edges": 44439,
+          "lower_relation_quotient_dimension": 168,
+          "actual_fiber_dimension": 167,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 21,
+            "left_root": 15,
+            "left_state": [
+              0,
+              21
+            ],
+            "right_root": 1092,
+            "right_state": [
+              7,
+              14
+            ]
+          },
+          "component_signature": "96421e1d1e6293d115ac772f42beb794523b1dda6e900876ae4a733be90f47b0",
+          "elapsed_seconds": 0.12292300001718104
+        },
+        {
+          "degree": 4,
+          "state_count": 11690,
+          "edge_attempts": 434980,
+          "zero_edges": 99088,
+          "lower_relation_quotient_dimension": 168,
+          "actual_fiber_dimension": 168,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "8d47ec4985a4353313fdbe9837b31910e59259610810d4b7e58702ba7031e4c0",
+          "elapsed_seconds": 0.1919460000062827
+        },
+        {
+          "degree": 5,
+          "state_count": 11760,
+          "edge_attempts": 498680,
+          "zero_edges": 99088,
+          "lower_relation_quotient_dimension": 168,
+          "actual_fiber_dimension": 168,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "8d47ec4985a4353313fdbe9837b31910e59259610810d4b7e58702ba7031e4c0",
+          "elapsed_seconds": 0.21097879999433644
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 0.5265967999876011,
+      "row_hash": "644661d537f25b7f3edf1b641a23c4f78e5898af2a9f9fd037a7d06b719404c9"
+    },
+    {
+      "p": 8,
+      "variable_count": 80,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        80,
+        176,
+        191,
+        192,
+        192
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 3064,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 3065,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 14080,
+          "edge_attempts": 386720,
+          "zero_edges": 65980,
+          "lower_relation_quotient_dimension": 192,
+          "actual_fiber_dimension": 191,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 24,
+            "left_root": 17,
+            "left_state": [
+              0,
+              24
+            ],
+            "right_root": 1424,
+            "right_state": [
+              8,
+              16
+            ]
+          },
+          "component_signature": "4ec30cc5383188d13223949077a20540030247168183598d4ae26a79d368082a",
+          "elapsed_seconds": 0.17101350001757964
+        },
+        {
+          "degree": 4,
+          "state_count": 15280,
+          "edge_attempts": 649440,
+          "zero_edges": 147348,
+          "lower_relation_quotient_dimension": 192,
+          "actual_fiber_dimension": 192,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "f64870ade4f8f2f554f73dff9dcb8f1770c8c84530c7339cafca892c2b4f0edf",
+          "elapsed_seconds": 0.27192810000269674
+        },
+        {
+          "degree": 5,
+          "state_count": 15360,
+          "edge_attempts": 745440,
+          "zero_edges": 147348,
+          "lower_relation_quotient_dimension": 192,
+          "actual_fiber_dimension": 192,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "f64870ade4f8f2f554f73dff9dcb8f1770c8c84530c7339cafca892c2b4f0edf",
+          "elapsed_seconds": 0.3123020999773871
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 0.7560603000165429,
+      "row_hash": "92e965c43918a30527ad34cd6f60a0947142dfc2f38e4e3206baf72bf08a8b2e"
+    },
+    {
+      "p": 9,
+      "variable_count": 90,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        90,
+        198,
+        215,
+        216,
+        216
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 3897,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 3898,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 17820,
+          "edge_attempts": 551790,
+          "zero_edges": 93545,
+          "lower_relation_quotient_dimension": 216,
+          "actual_fiber_dimension": 215,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 27,
+            "left_root": 19,
+            "left_state": [
+              0,
+              27
+            ],
+            "right_root": 1800,
+            "right_state": [
+              9,
+              18
+            ]
+          },
+          "component_signature": "6af91d92c2be228b28dd0fca6151a010aafd7168b28c2e51bbc2dd857081a1e4",
+          "elapsed_seconds": 0.24247810000088066
+        },
+        {
+          "degree": 4,
+          "state_count": 19350,
+          "edge_attempts": 924840,
+          "zero_edges": 209168,
+          "lower_relation_quotient_dimension": 216,
+          "actual_fiber_dimension": 216,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "73941eb4065e037d993ea856dc624b9dde52fdbd926bbadda2075d0b9444840c",
+          "elapsed_seconds": 0.40418829998816364
+        },
+        {
+          "degree": 5,
+          "state_count": 19440,
+          "edge_attempts": 1062540,
+          "zero_edges": 209168,
+          "lower_relation_quotient_dimension": 216,
+          "actual_fiber_dimension": 216,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "73941eb4065e037d993ea856dc624b9dde52fdbd926bbadda2075d0b9444840c",
+          "elapsed_seconds": 0.6730084999871906
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 1.3207099999999627,
+      "row_hash": "eb48ad6934698ef0df21b8672566b1dff1a5bb2fc8925667361dfabb6c11cf1c"
+    },
+    {
+      "p": 10,
+      "variable_count": 100,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        100,
+        220,
+        239,
+        240,
+        240
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 4830,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 4831,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 22000,
+          "edge_attempts": 758200,
+          "zero_edges": 127876,
+          "lower_relation_quotient_dimension": 240,
+          "actual_fiber_dimension": 239,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 30,
+            "left_root": 21,
+            "left_state": [
+              0,
+              30
+            ],
+            "right_root": 2220,
+            "right_state": [
+              10,
+              20
+            ]
+          },
+          "component_signature": "593413e968154f05b6c43f834fcf97bf0168dc2481032ee4ac45a24aeca71e84",
+          "elapsed_seconds": 0.5859726000053342
+        },
+        {
+          "degree": 4,
+          "state_count": 23900,
+          "edge_attempts": 1268800,
+          "zero_edges": 286226,
+          "lower_relation_quotient_dimension": 240,
+          "actual_fiber_dimension": 240,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "677734b9ca1e4bef91f0f3d5d8068cae58596a0e1faa0daceaf354390aca5c9d",
+          "elapsed_seconds": 1.116056300001219
+        },
+        {
+          "degree": 5,
+          "state_count": 24000,
+          "edge_attempts": 1458800,
+          "zero_edges": 286226,
+          "lower_relation_quotient_dimension": 240,
+          "actual_fiber_dimension": 240,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "677734b9ca1e4bef91f0f3d5d8068cae58596a0e1faa0daceaf354390aca5c9d",
+          "elapsed_seconds": 1.0669083000102546
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 2.771867600007681,
+      "row_hash": "7d65d7c2514a86b9443bb357ab0cd1eeeb88049b554b96d8d2e4e37e8bd570cd"
+    },
+    {
+      "p": 11,
+      "variable_count": 110,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        110,
+        242,
+        263,
+        264,
+        264
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 5863,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 5864,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 26620,
+          "edge_attempts": 1010570,
+          "zero_edges": 169715,
+          "lower_relation_quotient_dimension": 264,
+          "actual_fiber_dimension": 263,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 33,
+            "left_root": 23,
+            "left_state": [
+              0,
+              33
+            ],
+            "right_root": 2684,
+            "right_state": [
+              11,
+              22
+            ]
+          },
+          "component_signature": "7030b59cab7818215c0752e9ee7278fe0ce2d721e31a784d1151b026d533e60b",
+          "elapsed_seconds": 0.923761599988211
+        },
+        {
+          "degree": 4,
+          "state_count": 28930,
+          "edge_attempts": 1688940,
+          "zero_edges": 380200,
+          "lower_relation_quotient_dimension": 264,
+          "actual_fiber_dimension": 264,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "39998e15e47245e6cd273123d5f24a987a887568946e90fbe621388403f28573",
+          "elapsed_seconds": 1.4893346999888308
+        },
+        {
+          "degree": 5,
+          "state_count": 29040,
+          "edge_attempts": 1943040,
+          "zero_edges": 380200,
+          "lower_relation_quotient_dimension": 264,
+          "actual_fiber_dimension": 264,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "39998e15e47245e6cd273123d5f24a987a887568946e90fbe621388403f28573",
+          "elapsed_seconds": 1.668192800018005
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 4.084430499991868,
+      "row_hash": "392e61f5904e876554a68415ee404b1d1cb9ee9947d8823373c958dc06d7b9b7"
+    },
+    {
+      "p": 12,
+      "variable_count": 120,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        120,
+        264,
+        287,
+        288,
+        288
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 6996,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 6997,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 31680,
+          "edge_attempts": 1313520,
+          "zero_edges": 219804,
+          "lower_relation_quotient_dimension": 288,
+          "actual_fiber_dimension": 287,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 36,
+            "left_root": 25,
+            "left_state": [
+              0,
+              36
+            ],
+            "right_root": 3192,
+            "right_state": [
+              12,
+              24
+            ]
+          },
+          "component_signature": "1973401d8b5678a5329e6fb15168e86f373bd8860a3c071770dec86b5b48cae7",
+          "elapsed_seconds": 1.150732699985383
+        },
+        {
+          "degree": 4,
+          "state_count": 34440,
+          "edge_attempts": 2192880,
+          "zero_edges": 492768,
+          "lower_relation_quotient_dimension": 288,
+          "actual_fiber_dimension": 288,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "81e9dd682b860d5efaba412074c4a7c5ea7b40774bebed70fb8345500cdbbaf7",
+          "elapsed_seconds": 1.8767858000064734
+        },
+        {
+          "degree": 5,
+          "state_count": 34560,
+          "edge_attempts": 2524080,
+          "zero_edges": 492768,
+          "lower_relation_quotient_dimension": 288,
+          "actual_fiber_dimension": 288,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "81e9dd682b860d5efaba412074c4a7c5ea7b40774bebed70fb8345500cdbbaf7",
+          "elapsed_seconds": 2.14306570001645
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 5.174070599983679,
+      "row_hash": "46894145d76456b0979e0996c5ef791ec4e1e7fa3bfcdbd1942def19d46f0f29"
+    },
+    {
+      "p": 13,
+      "variable_count": 130,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        130,
+        286,
+        311,
+        312,
+        312
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 8229,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 8230,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 37180,
+          "edge_attempts": 1671670,
+          "zero_edges": 278885,
+          "lower_relation_quotient_dimension": 312,
+          "actual_fiber_dimension": 311,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 39,
+            "left_root": 27,
+            "left_state": [
+              0,
+              39
+            ],
+            "right_root": 3744,
+            "right_state": [
+              13,
+              26
+            ]
+          },
+          "component_signature": "fa0848b9790c2d2ebdcd882c1fd8459d49b9f32b286cbc21b7276a14c259e42c",
+          "elapsed_seconds": 1.4926683999947272
+        },
+        {
+          "degree": 4,
+          "state_count": 40430,
+          "edge_attempts": 2788240,
+          "zero_edges": 625608,
+          "lower_relation_quotient_dimension": 312,
+          "actual_fiber_dimension": 312,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "7ba07ffe50a715953a655d504dfdcc21360b751b39f1f69dab0845dd2c962d70",
+          "elapsed_seconds": 2.533455299999332
+        },
+        {
+          "degree": 5,
+          "state_count": 40560,
+          "edge_attempts": 3210740,
+          "zero_edges": 625608,
+          "lower_relation_quotient_dimension": 312,
+          "actual_fiber_dimension": 312,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "7ba07ffe50a715953a655d504dfdcc21360b751b39f1f69dab0845dd2c962d70",
+          "elapsed_seconds": 2.8192075999977533
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 6.849487400002545,
+      "row_hash": "a0907a237e7d4c56eee2fe2e44be4e836e7dd79a89da96d789ba20f25f65ec39"
+    },
+    {
+      "p": 14,
+      "variable_count": 140,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        140,
+        308,
+        335,
+        336,
+        336
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 9562,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 9563,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 43120,
+          "edge_attempts": 2089640,
+          "zero_edges": 347700,
+          "lower_relation_quotient_dimension": 336,
+          "actual_fiber_dimension": 335,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 42,
+            "left_root": 29,
+            "left_state": [
+              0,
+              42
+            ],
+            "right_root": 4340,
+            "right_state": [
+              14,
+              28
+            ]
+          },
+          "component_signature": "9dbcb6e3e63e0ef8ae705562bf5b44fc949b2066905b866812852d0337f6c347",
+          "elapsed_seconds": 2.0084342999907676
+        },
+        {
+          "degree": 4,
+          "state_count": 46900,
+          "edge_attempts": 3482640,
+          "zero_edges": 780398,
+          "lower_relation_quotient_dimension": 336,
+          "actual_fiber_dimension": 336,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "aec392220571857125e3cf383a07fec3a63e624559e8d6220090dad4af9c41f4",
+          "elapsed_seconds": 3.134695599990664
+        },
+        {
+          "degree": 5,
+          "state_count": 47040,
+          "edge_attempts": 4011840,
+          "zero_edges": 780398,
+          "lower_relation_quotient_dimension": 336,
+          "actual_fiber_dimension": 336,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "aec392220571857125e3cf383a07fec3a63e624559e8d6220090dad4af9c41f4",
+          "elapsed_seconds": 3.489855499996338
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 8.638263100001495,
+      "row_hash": "2c3b541ec11dbc862c11f3f4da805473288e8aeda8145f7999be2f0790e152cd"
+    },
+    {
+      "p": 15,
+      "variable_count": 150,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        150,
+        330,
+        359,
+        360,
+        360
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 10995,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 10996,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 49500,
+          "edge_attempts": 2572050,
+          "zero_edges": 426991,
+          "lower_relation_quotient_dimension": 360,
+          "actual_fiber_dimension": 359,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 45,
+            "left_root": 31,
+            "left_state": [
+              0,
+              45
+            ],
+            "right_root": 4980,
+            "right_state": [
+              15,
+              30
+            ]
+          },
+          "component_signature": "5d5e3060a52ef6eef19d3c9e7c404e05fea8b28af2e1d7b23d2d088401ed39cd",
+          "elapsed_seconds": 2.4052505000145175
+        },
+        {
+          "degree": 4,
+          "state_count": 53850,
+          "edge_attempts": 4283700,
+          "zero_edges": 958816,
+          "lower_relation_quotient_dimension": 360,
+          "actual_fiber_dimension": 360,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "980a03911bcf62965d8a2a439b7a1a4807c7d3f59e33c7b1c6978f74762d0996",
+          "elapsed_seconds": 3.9261809999879915
+        },
+        {
+          "degree": 5,
+          "state_count": 54000,
+          "edge_attempts": 4936200,
+          "zero_edges": 958816,
+          "lower_relation_quotient_dimension": 360,
+          "actual_fiber_dimension": 360,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "980a03911bcf62965d8a2a439b7a1a4807c7d3f59e33c7b1c6978f74762d0996",
+          "elapsed_seconds": 4.429707100003725
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 10.766591299994616,
+      "row_hash": "832e4a9f92e155f1796a44ae3e513e451bfa2c830d870019ad53ff8b73ba222d"
+    },
+    {
+      "p": 16,
+      "variable_count": 160,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        160,
+        352,
+        383,
+        384,
+        384
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 12528,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 12529,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 56320,
+          "edge_attempts": 3123520,
+          "zero_edges": 517500,
+          "lower_relation_quotient_dimension": 384,
+          "actual_fiber_dimension": 383,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 48,
+            "left_root": 33,
+            "left_state": [
+              0,
+              48
+            ],
+            "right_root": 5664,
+            "right_state": [
+              16,
+              32
+            ]
+          },
+          "component_signature": "1e1f9dca55442d2c08129b3abeee315e67073706754c9dbad18c85e39509f58b",
+          "elapsed_seconds": 3.023898699990241
+        },
+        {
+          "degree": 4,
+          "state_count": 61280,
+          "edge_attempts": 5199040,
+          "zero_edges": 1162540,
+          "lower_relation_quotient_dimension": 384,
+          "actual_fiber_dimension": 384,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "c187d7fe4f4515c748bf23ae57e6e6578870c181ff04c5484038302777c3f88f",
+          "elapsed_seconds": 4.8525553999934345
+        },
+        {
+          "degree": 5,
+          "state_count": 61440,
+          "edge_attempts": 5992640,
+          "zero_edges": 1162540,
+          "lower_relation_quotient_dimension": 384,
+          "actual_fiber_dimension": 384,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "c187d7fe4f4515c748bf23ae57e6e6578870c181ff04c5484038302777c3f88f",
+          "elapsed_seconds": 5.407457599998452
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 13.290087100001983,
+      "row_hash": "ca308b9e0934ba38db259af981cb281c2a5ea5f69b2145a30a0c2a4dc5828a10"
+    },
+    {
+      "p": 17,
+      "variable_count": 170,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        170,
+        374,
+        407,
+        408,
+        408
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 14161,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 14162,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 63580,
+          "edge_attempts": 3748670,
+          "zero_edges": 619969,
+          "lower_relation_quotient_dimension": 408,
+          "actual_fiber_dimension": 407,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 51,
+            "left_root": 35,
+            "left_state": [
+              0,
+              51
+            ],
+            "right_root": 6392,
+            "right_state": [
+              17,
+              34
+            ]
+          },
+          "component_signature": "a92f95e3cc37656f2f39cb114fccb99ef175e28865f1b47bfadc5accc90280bd",
+          "elapsed_seconds": 3.5402051999990363
+        },
+        {
+          "degree": 4,
+          "state_count": 69190,
+          "edge_attempts": 6236280,
+          "zero_edges": 1393248,
+          "lower_relation_quotient_dimension": 408,
+          "actual_fiber_dimension": 408,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "23fa3dad0351de36d555a8fcc94d12558e50f8dfa0cb48c127d7769b9f7f09a1",
+          "elapsed_seconds": 5.840379200002644
+        },
+        {
+          "degree": 5,
+          "state_count": 69360,
+          "edge_attempts": 7189980,
+          "zero_edges": 1393248,
+          "lower_relation_quotient_dimension": 408,
+          "actual_fiber_dimension": 408,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "23fa3dad0351de36d555a8fcc94d12558e50f8dfa0cb48c127d7769b9f7f09a1",
+          "elapsed_seconds": 6.641471700015245
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 16.02845429998706,
+      "row_hash": "10d978c9b8a7e38e891b1fc5358f018f1730787f8fa319a9acfb2577ef00d3a9"
+    },
+    {
+      "p": 18,
+      "variable_count": 180,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        180,
+        396,
+        431,
+        432,
+        432
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 15894,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 15895,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 71280,
+          "edge_attempts": 4452120,
+          "zero_edges": 735140,
+          "lower_relation_quotient_dimension": 432,
+          "actual_fiber_dimension": 431,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 54,
+            "left_root": 37,
+            "left_state": [
+              0,
+              54
+            ],
+            "right_root": 7164,
+            "right_state": [
+              18,
+              36
+            ]
+          },
+          "component_signature": "0e7e141b3c4698843fae9c328a69ffe94090d7a104d9a04749ff0c16f42a4b74",
+          "elapsed_seconds": 4.348117299989099
+        },
+        {
+          "degree": 4,
+          "state_count": 77580,
+          "edge_attempts": 7403040,
+          "zero_edges": 1652618,
+          "lower_relation_quotient_dimension": 432,
+          "actual_fiber_dimension": 432,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "64fc4f25771bfd4e5076bb10799debed252d9819dd65990ee12d27d4c724ba1e",
+          "elapsed_seconds": 7.0733801999886055
+        },
+        {
+          "degree": 5,
+          "state_count": 77760,
+          "edge_attempts": 8537040,
+          "zero_edges": 1652618,
+          "lower_relation_quotient_dimension": 432,
+          "actual_fiber_dimension": 432,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "64fc4f25771bfd4e5076bb10799debed252d9819dd65990ee12d27d4c724ba1e",
+          "elapsed_seconds": 7.926214500010246
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 19.356472699990263,
+      "row_hash": "d04304a7752a77168dd0f8d51092ef0d936de798393b8cfe8ce3de22094dd721"
+    },
+    {
+      "p": 19,
+      "variable_count": 190,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        190,
+        418,
+        455,
+        456,
+        456
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 17727,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 17728,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 79420,
+          "edge_attempts": 5238490,
+          "zero_edges": 863755,
+          "lower_relation_quotient_dimension": 456,
+          "actual_fiber_dimension": 455,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 57,
+            "left_root": 39,
+            "left_state": [
+              0,
+              57
+            ],
+            "right_root": 7980,
+            "right_state": [
+              19,
+              38
+            ]
+          },
+          "component_signature": "cd531e7716ec395e6a909c1c590b70de6d6f4106ca82c7ddf016ba0352cf0180",
+          "elapsed_seconds": 5.07354410001426
+        },
+        {
+          "degree": 4,
+          "state_count": 86450,
+          "edge_attempts": 8706940,
+          "zero_edges": 1942328,
+          "lower_relation_quotient_dimension": 456,
+          "actual_fiber_dimension": 456,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "f1dc56013b4d1d93ef74dde5ed5118574929467fbf48270e79630a1b666f1d0c",
+          "elapsed_seconds": 8.264352600002894
+        },
+        {
+          "degree": 5,
+          "state_count": 86640,
+          "edge_attempts": 10042640,
+          "zero_edges": 1942328,
+          "lower_relation_quotient_dimension": 456,
+          "actual_fiber_dimension": 456,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "f1dc56013b4d1d93ef74dde5ed5118574929467fbf48270e79630a1b666f1d0c",
+          "elapsed_seconds": 9.56738559997757
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 22.914554999995744,
+      "row_hash": "70499751e77cc4fbe92b9d961459e4fe421654447f40e16463cc4e48875690a0"
+    },
+    {
+      "p": 20,
+      "variable_count": 200,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        200,
+        440,
+        479,
+        480,
+        480
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 19660,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 19661,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 88000,
+          "edge_attempts": 6112400,
+          "zero_edges": 1006556,
+          "lower_relation_quotient_dimension": 480,
+          "actual_fiber_dimension": 479,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 60,
+            "left_root": 41,
+            "left_state": [
+              0,
+              60
+            ],
+            "right_root": 8840,
+            "right_state": [
+              20,
+              40
+            ]
+          },
+          "component_signature": "bd5f1d2da0155524fe52fa2241f180cd4dfac440f0702f81984558a445afa101",
+          "elapsed_seconds": 5.794818899972597
+        },
+        {
+          "degree": 4,
+          "state_count": 95800,
+          "edge_attempts": 10155600,
+          "zero_edges": 2264056,
+          "lower_relation_quotient_dimension": 480,
+          "actual_fiber_dimension": 480,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "487f7f845d101ffed5cfa43d8c1e6c9fd1ee72e59d4f43fda3bb8d80fb04f0ff",
+          "elapsed_seconds": 10.067756399977952
+        },
+        {
+          "degree": 5,
+          "state_count": 96000,
+          "edge_attempts": 11715600,
+          "zero_edges": 2264056,
+          "lower_relation_quotient_dimension": 480,
+          "actual_fiber_dimension": 480,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "487f7f845d101ffed5cfa43d8c1e6c9fd1ee72e59d4f43fda3bb8d80fb04f0ff",
+          "elapsed_seconds": 11.30411450000247
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 27.17766000001575,
+      "row_hash": "3cc2dc62b7a1d5677facb63103a3267527e0c0761088fd9b4bb0a26ed6bf672d"
+    },
+    {
+      "p": 21,
+      "variable_count": 210,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        210,
+        462,
+        503,
+        504,
+        504
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 21693,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 21694,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 97020,
+          "edge_attempts": 7078470,
+          "zero_edges": 1164285,
+          "lower_relation_quotient_dimension": 504,
+          "actual_fiber_dimension": 503,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 63,
+            "left_root": 43,
+            "left_state": [
+              0,
+              63
+            ],
+            "right_root": 9744,
+            "right_state": [
+              21,
+              42
+            ]
+          },
+          "component_signature": "ce4476d4d763abd3367dbf9a52a3c9c82eda01ba0b920deb5c91bddfbb98e836",
+          "elapsed_seconds": 6.64821449998999
+        },
+        {
+          "degree": 4,
+          "state_count": 105630,
+          "edge_attempts": 11756640,
+          "zero_edges": 2619480,
+          "lower_relation_quotient_dimension": 504,
+          "actual_fiber_dimension": 504,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "e08be041913dc5d75c85bdc0b40f0bb03eccbda27f4e3f3f8092f58147612ab6",
+          "elapsed_seconds": 11.109744799992768
+        },
+        {
+          "degree": 5,
+          "state_count": 105840,
+          "edge_attempts": 13564740,
+          "zero_edges": 2619480,
+          "lower_relation_quotient_dimension": 504,
+          "actual_fiber_dimension": 504,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "e08be041913dc5d75c85bdc0b40f0bb03eccbda27f4e3f3f8092f58147612ab6",
+          "elapsed_seconds": 12.99853469998925
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 30.7678828999924,
+      "row_hash": "47bf98a756cf3487e5b43d1bafab472c018d42bbeedf9ee0b830560a5dd3179b"
+    },
+    {
+      "p": 22,
+      "variable_count": 220,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        220,
+        484,
+        527,
+        528,
+        528
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 23826,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 23827,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 106480,
+          "edge_attempts": 8141320,
+          "zero_edges": 1337684,
+          "lower_relation_quotient_dimension": 528,
+          "actual_fiber_dimension": 527,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 66,
+            "left_root": 45,
+            "left_state": [
+              0,
+              66
+            ],
+            "right_root": 10692,
+            "right_state": [
+              22,
+              44
+            ]
+          },
+          "component_signature": "00d799c32cb378e037e2485a331985fcbaf58caf4b4251f8dbd7c8b5f5642102",
+          "elapsed_seconds": 7.677949800010538
+        },
+        {
+          "degree": 4,
+          "state_count": 115940,
+          "edge_attempts": 13517680,
+          "zero_edges": 3010278,
+          "lower_relation_quotient_dimension": 528,
+          "actual_fiber_dimension": 528,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "fe9c409bd21c7d50b730b002eeff5629b65a740dd15f61551c9afba8aa5b7c78",
+          "elapsed_seconds": 13.182558500004234
+        },
+        {
+          "degree": 5,
+          "state_count": 116160,
+          "edge_attempts": 15598880,
+          "zero_edges": 3010278,
+          "lower_relation_quotient_dimension": 528,
+          "actual_fiber_dimension": 528,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "fe9c409bd21c7d50b730b002eeff5629b65a740dd15f61551c9afba8aa5b7c78",
+          "elapsed_seconds": 15.268977800005814
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 36.14253640000243,
+      "row_hash": "1cf846ba30052b8a8384a7284601843bff3ce2fe117c1bb83d15743f89487ad0"
+    },
+    {
+      "p": 23,
+      "variable_count": 230,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        230,
+        506,
+        551,
+        552,
+        552
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 26059,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 26060,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 116380,
+          "edge_attempts": 9305570,
+          "zero_edges": 1527495,
+          "lower_relation_quotient_dimension": 552,
+          "actual_fiber_dimension": 551,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 69,
+            "left_root": 47,
+            "left_state": [
+              0,
+              69
+            ],
+            "right_root": 11684,
+            "right_state": [
+              23,
+              46
+            ]
+          },
+          "component_signature": "61f8e1f17224ebbe0278e5c94feb71b4e6a679a038b7a13ab79071f67e8e8764",
+          "elapsed_seconds": 9.269247799995355
+        },
+        {
+          "degree": 4,
+          "state_count": 126730,
+          "edge_attempts": 15446340,
+          "zero_edges": 3438128,
+          "lower_relation_quotient_dimension": 552,
+          "actual_fiber_dimension": 552,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "5ce04c27658d2343ff42f8c680f6eeb030e7a42a65386134ee67ef50d4f7868b",
+          "elapsed_seconds": 15.556465399975423
+        },
+        {
+          "degree": 5,
+          "state_count": 126960,
+          "edge_attempts": 17826840,
+          "zero_edges": 3438128,
+          "lower_relation_quotient_dimension": 552,
+          "actual_fiber_dimension": 552,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "5ce04c27658d2343ff42f8c680f6eeb030e7a42a65386134ee67ef50d4f7868b",
+          "elapsed_seconds": 17.521308900002623
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 42.36079880001489,
+      "row_hash": "f2a4f47b20eff47b2da5fbdbe0a09c526fd56364212aa484f0cf1157f5a91d75"
+    }
+  ]
+}
