@@ -739,3 +739,14 @@
   management `develop` and `main` tree-identical at `f7db0c50a75491738dbfad998d235458f4bb69ee`.
 - HWB-033 is closed. No experiment or delivery gate remains active, and no global release tag is
   claimed.
+
+## 2026-08-18 - EXP-026 declared
+
+- Reopened the post-publication Groebner route without changing the prior immutable records.
+- Archived and hashed two primary method sources under the external `exp026` source directory.
+- A read-only invariant probe at every `p=4,...,15` found minimal initial-generator counts
+  `50p^2-17p`, `5p-1`, and `p-2` in degrees two, three, and four, no degree-five generator, and no
+  leading monomial divisible by `X_0`.
+- The cubic and quartic boundary matched six closed cubic families and one quartic family exactly.
+- Declared EXP-026 before implementation. Confirmation still requires the mandatory smoke, exact
+  campaign, independent audit, adversarial controls, and symbolic Hilbert-function proof.

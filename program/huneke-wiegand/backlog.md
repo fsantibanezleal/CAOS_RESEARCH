@@ -30,8 +30,9 @@
 | HWB-026 | 1 | done | repository promotion and immutable handoff for EXP-022/023 plus v0.12 | PRs #176/#177 passed required checks; remote `develop`/`main` share tree `5469624bab95a087aaef37630ea9c2a27c656054` |
 | HWB-027 | 1 | done | extremal presentation-ring Betti data | EXP-024 proves exact projective dimension, regularity, first linear syzygies, last row, penultimate edge, and canonical degrees |
 | HWB-028 | 1 | done | manuscript and Zenodo update for homological edge theorem | v0.13 published and fresh-download verified at `10.5281/zenodo.21995498` |
-| HWB-029 | 2 | pending | explicit quadratic or Groebner basis and interior syzygies | reconsider after EXP-024; split manuscript only for a standalone theorem |
+| HWB-029 | 2 | in progress | explicit quadratic or Groebner basis and interior syzygies | EXP-026 declared for the canonical grevlex staircase; interior syzygies remain separate |
 | HWB-030 | 1 | done | repository promotion and immutable handoff for EXP-024 plus v0.13 | PRs #182--#185 passed required checks; final remote handoff tree is `b70a3990583057a92e591c34d5f9e9c101185e8c` |
 | HWB-031 | 1 | done | curvilinear parametrization and primary decomposition of the conductor fiber cone | EXP-025 proves the truncated model, exact radical, primaryness, sharp nilpotence, curvilinear geometry, and differential fingerprint |
 | HWB-032 | 1 | done | companion manuscript and Zenodo record for the curvilinear theorem | v0.01 published and fresh-download verified at `10.5281/zenodo.21997378` |
 | HWB-033 | 1 | done | repository promotion and durable handoff for EXP-025 publication round | PRs #186/#187 passed required checks; tested payload tree `53e5e61ffeeb5816497e3e477921bc94c4a5f91d`; CAOS_MANAGE PR #557 promoted the ledger |
+| HWB-034 | 1 | pending | manuscript and Zenodo update for a confirmed explicit Groebner theorem | if EXP-026 confirms, expand the focused curvilinear companion to v0.02 rather than split |

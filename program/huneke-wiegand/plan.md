@@ -438,3 +438,23 @@ same tested state to `main` at `18e7d9728c3a8c210ea6a36d81bba6b6325cc536`. The r
 PR #557 merged the publication ledger to `main` at `ec11d010246341347fd4d11b49b29998ec9a6cf1`;
 its `develop` and `main` refs share tree `f7db0c50a75491738dbfad998d235458f4bb69ee`. HWB-033 is
 closed. No release tag is part of this research-only round.
+
+## 2026-08-18 in flight - EXP-026 explicit grevlex staircase
+
+EXP-025 makes the deferred Groebner problem finite: for grevlex ordered by decreasing offset with
+`X_0` last, every surviving `(degree,total offset)` has one canonical smallest factorization.
+EXP-026 is declared before implementation to prove that the minimal initial boundary has profile
+
+```text
+degree 2: 50p^2-17p,
+degree 3: 5p-1,
+degree 4: p-2,
+degree >=5: 0.
+```
+
+The pre-declaration probe matches six explicit cubic families and one quartic family for every
+`p=4,...,15`, and finds no leading generator divisible by `X_0`. The immediate action is a
+reproducible `p=4` smoke, followed by the exact campaign, independent factorization audit, and a
+Hilbert-function proof that the proposed boundary is the entire initial ideal. If confirmed, the
+result expands the focused curvilinear companion to v0.02; a manuscript split is deferred to a
+future complete interior Betti table or a genuinely broader method.
