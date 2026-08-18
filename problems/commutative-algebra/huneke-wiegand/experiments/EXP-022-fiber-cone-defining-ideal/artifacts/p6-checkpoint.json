@@ -1,0 +1,72 @@
+{
+  "experiment": "EXP-022-fiber-cone-defining-ideal",
+  "status": "COMPUTATIONAL_PASS",
+  "p": 6,
+  "completed_through_degree": 5,
+  "degrees": [
+    {
+      "degree": 2,
+      "monomial_count": 1830,
+      "lower_relation_quotient_dimension": 1830,
+      "actual_fiber_dimension": 132,
+      "minimal_defining_equations": 1698,
+      "first_obstruction": {
+        "kind": "zero_monomial_not_generated_below",
+        "value_sum": 144,
+        "component_root": 748,
+        "monomial": [
+          13,
+          59
+        ]
+      },
+      "canonical_representative_hash": "d627aaa334f955218402354031336cfc57396c75353272c03812e756055eb11a",
+      "elapsed_seconds": 0.0030852000054437667
+    },
+    {
+      "degree": 3,
+      "monomial_count": 37820,
+      "lower_relation_quotient_dimension": 144,
+      "actual_fiber_dimension": 143,
+      "minimal_defining_equations": 1,
+      "first_obstruction": {
+        "kind": "equal_sum_components_not_connected_below",
+        "value_sum": 18,
+        "left_root": 7,
+        "left_monomial": [
+          0,
+          0,
+          7
+        ],
+        "right_root": 10100,
+        "right_monomial": [
+          6,
+          6,
+          6
+        ]
+      },
+      "canonical_representative_hash": "41be1f82e5d01160d03c8d7ef6d827d0bfce51fb10e04abe689e71fcf6976b29",
+      "elapsed_seconds": 0.09538240000256337
+    },
+    {
+      "degree": 4,
+      "monomial_count": 595665,
+      "lower_relation_quotient_dimension": 144,
+      "actual_fiber_dimension": 144,
+      "minimal_defining_equations": 0,
+      "first_obstruction": null,
+      "canonical_representative_hash": "df6265472948fff844394f6e9592878e90ba3600c53fd5262c2cc770faf9948c",
+      "elapsed_seconds": 1.731928399996832
+    },
+    {
+      "degree": 5,
+      "monomial_count": 7624512,
+      "lower_relation_quotient_dimension": 144,
+      "actual_fiber_dimension": 144,
+      "minimal_defining_equations": 0,
+      "first_obstruction": null,
+      "canonical_representative_hash": "15d9a54d914250cb241f0cb49fa5ab648a32367ce73fb644519d919110e73686",
+      "elapsed_seconds": 44.92541239998536
+    }
+  ],
+  "elapsed_seconds": 47.07723999998416
+}

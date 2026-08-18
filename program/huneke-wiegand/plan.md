@@ -266,3 +266,10 @@ degree two. The exact predicted number is `50p^2-17p`. The mandatory order is `p
 smoke, first-obstruction preservation or bounded campaign, independent audit, symbolic
 connectivity proof, and only then wiki/manuscript deliberation. No defining-ideal theorem or
 publication is claimed at declaration.
+
+EXP-022 is REFUTED. The `p=4` gate found one necessary cubic and no degree-four/five equations;
+complete `p=5,6` diagnostics reproduced the profile. Symbolically,
+`X_0^2X_(3p)-X_p^3` is a nonzero defining relation whose two monomials are isolated under every
+quadratic move, proving nonquadraticity for all `p>=4`. The exact universal quadratic count remains
+`50p^2-17p`. The corrected one-cubic upper bound is not inherited automatically and requires a
+separately declared experiment and uniform connectivity proof.

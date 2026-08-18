@@ -347,3 +347,15 @@ beta_(1,2)=50p^2-17p,  beta_(1,j)=0 for j>=3.
 No such theorem is yet claimed. The exact next command is the mandatory `p=4` degreewise smoke
 gate after implementing Route A and its independent closed-basis checks. Preserve and report the
 first disconnected congruence component if quadratic generation fails.
+
+EXP-022 is now closed REFUTED. The first disconnected component is the universal relation
+
+```text
+X_0^2X_(3p)-X_p^3.
+```
+
+Its two monomials admit no quadratic move, proving `beta_(1,3)>=1` and nonquadraticity for every
+`p>=4`; meanwhile `beta_(1,2)=50p^2-17p`. Exact complete runs at `p=4,5,6` find first Betti
+profiles `(732,1,0,0)`, `(1165,1,0,0)`, and `(1698,1,0,0)` through degree five. The next action is
+to declare, before any broader run, the corrected one-cubic presentation hypothesis and attack its
+uniform connectivity upper bound. No manuscript or publication update is yet triggered.
