@@ -1,0 +1,62 @@
+{
+  "experiment": "EXP-026-grevlex-staircase",
+  "generated_at": "2026-08-18T19:38:37.647905+00:00",
+  "status": "PASS",
+  "range": {
+    "first": 4,
+    "requested_last": 4
+  },
+  "completed_rows": 1,
+  "premise_hashes": {
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-023-one-cubic-defining-ideal/proof.md": "4f24c8bacf3ea4a7691142b6fbb2a79b40a1c200ec5051df3c79c3dc45bed084",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-024-extremal-betti-data/proof.md": "b7b654609cfca99e979b26741f7d2b6bbbfc0029d882c38e3c2932bfc9146088",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-025-curvilinear-primary-structure/proof.md": "70c7838ce843252aba335d80ade105d1d1942c490530ea7770483be0dff9a61f",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-025-curvilinear-primary-structure/run.py": "42411e5f8a166bd4a4663b49dfa3c19808b283735d2d633517c632e876f0377d"
+  },
+  "campaign_aggregate": "15ca955cc4dbb50ff1f75b31dd0a807d2af1b1e7dbd663af17210624f8a7c103",
+  "elapsed_seconds": 0.002020499960053712,
+  "rows": [
+    {
+      "p": 4,
+      "q": 96,
+      "variable_count": 40,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        40,
+        88,
+        95,
+        96,
+        96,
+        96
+      ],
+      "quadratic_profile": {
+        "total": 732,
+        "binomial": 519,
+        "monomial_zero": 213
+      },
+      "reduced_basis_degree_profile": {
+        "2": 732,
+        "3": 19,
+        "4": 2,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 753,
+      "cubic_relation_hash": "396ceef5f99452bab9ca4853db8b0deb84f405d1e9a18dc5e0c1adb204b8405c",
+      "quartic_relation_hash": "d680c38faed089811e98260a76c1334c971af6b2224a58846abe98f5dec0c0b8",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "528fb02b38965057b205a459d98fd33f8ac33c6668ec3ccb3597baa4f4229579"
+    }
+  ]
+}

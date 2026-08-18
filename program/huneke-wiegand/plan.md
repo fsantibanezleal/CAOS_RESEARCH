@@ -438,3 +438,43 @@ same tested state to `main` at `18e7d9728c3a8c210ea6a36d81bba6b6325cc536`. The r
 PR #557 merged the publication ledger to `main` at `ec11d010246341347fd4d11b49b29998ec9a6cf1`;
 its `develop` and `main` refs share tree `f7db0c50a75491738dbfad998d235458f4bb69ee`. HWB-033 is
 closed. No release tag is part of this research-only round.
+
+## 2026-08-18 in flight - EXP-026 explicit grevlex staircase
+
+EXP-025 makes the deferred Groebner problem finite: for grevlex ordered by decreasing offset with
+`X_0` last, every surviving `(degree,total offset)` has one canonical smallest factorization.
+EXP-026 is declared before implementation to prove that the minimal initial boundary has profile
+
+```text
+degree 2: 50p^2-17p,
+degree 3: 5p-1,
+degree 4: p-2,
+degree >=5: 0.
+```
+
+The pre-declaration probe matches six explicit cubic families and one quartic family for every
+`p=4,...,15`, and finds no leading generator divisible by `X_0`. The immediate action is a
+reproducible `p=4` smoke, followed by the exact campaign, independent factorization audit, and a
+Hilbert-function proof that the proposed boundary is the entire initial ideal. If confirmed, the
+result expands the focused curvilinear companion to v0.02; a manuscript split is deferred to a
+future complete interior Betti table or a genuinely broader method.
+
+EXP-026 is CONFIRMED. The reduced basis has exact degree profile
+`(50p^2-17p,5p-1,p-2)`, total size `50p^2-11p-3`, six cubic families, one quartic family, and no
+later boundary. The optimized exact campaign passes all 297 parameters in 8.474 seconds; the
+independent clique audit reconstructs selected small and large cases through `p=300`; and 16
+fresh-process Presburger obligations prove all-parameter cubic/quartic completeness, soundness,
+and reduced tails. The infinite degree tail closes deductively from
+`N_(n,s)=X_0^(n-4)N_(4,s)` for `n>=4`.
+
+The manuscript trigger is crossed. HWB-029 is closed for the Groebner problem, HWB-035 now owns
+the distinct interior-Betti question, and HWB-034 is active for v0.02 of the focused curvilinear
+companion plus a Zenodo new version.
+
+The focused companion v0.02 passed claim/build/render, extraction, metadata, identity, and
+sole-authorship QA and was published as Zenodo record `22002907`, version DOI
+`10.5281/zenodo.22002907`. The concept DOI resolves to the new version, and the fresh public PDF
+matches the committed 453,621-byte artifact at SHA-256
+`12cc380bcc72613694b24cc9f74284f8f3d35e4958ec3569b6ebacce3225e398`. HWB-034 is done. The active
+delivery gate is PR-based promotion and final tree/handoff reconciliation under HWB-036. A new
+interior-Betti experiment is not declared in this publication round.
