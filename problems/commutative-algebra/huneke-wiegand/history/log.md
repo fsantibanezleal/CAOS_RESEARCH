@@ -578,3 +578,12 @@
   `80de49e5e42ca52d143333f029eaaac637464194`.
 - Remote `develop` and `main` are tree-identical at
   `5469624bab95a087aaef37630ea9c2a27c656054`. This research-only round claims no release tag.
+
+## 2026-08-18 - v0.12 handoff closed
+
+- Documentation-only PR #178 passed `guards` and `test` and merged the truthful publication and
+  promotion record to `develop` at `1bbf7a8e480c3e5f49dfd7bf5441ab232ef563bc`.
+- PR #179 passed all required checks and promoted that handoff to `main` at
+  `02f8143a85ae27c2d95dbfcca2feb2a58550e10d`.
+- EXP-022/023, manuscript v0.12, Zenodo publication, and repository delivery are complete. No new
+  experiment or release tag is declared.

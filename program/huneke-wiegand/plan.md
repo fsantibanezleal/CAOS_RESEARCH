@@ -312,5 +312,6 @@ Repository promotion is complete. PR #176 passed `guards` and `test` and merged 
 EXP-022/023 plus v0.12 record to `develop` at `aecb5b5c6daa83efd30f7c11a38436896fe59d12`.
 PR #177 passed all required checks and promoted that tested state to `main` at
 `80de49e5e42ca52d143333f029eaaac637464194`. Remote `develop` and `main` are tree-identical at
-`5469624bab95a087aaef37630ea9c2a27c656054`. The remaining operation is this documentation-only
-handoff; any next theorem requires a new source and novelty preflight.
+`5469624bab95a087aaef37630ea9c2a27c656054`. Documentation-only PR #178 then passed `guards` and
+`test`, and PR #179 passed all required checks and completed the durable handoff. No delivery gate
+or experiment remains active; any next theorem requires a new source and novelty preflight.
