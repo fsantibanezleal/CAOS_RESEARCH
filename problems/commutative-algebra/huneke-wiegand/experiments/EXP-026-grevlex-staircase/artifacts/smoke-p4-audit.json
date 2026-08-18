@@ -1,0 +1,40 @@
+{
+  "experiment": "EXP-026-grevlex-staircase-audit",
+  "generated_at": "2026-08-18T19:38:45.970403+00:00",
+  "status": "PASS",
+  "samples": [
+    4
+  ],
+  "completed_samples": 1,
+  "campaign_all_row_rehash": "15ca955cc4dbb50ff1f75b31dd0a807d2af1b1e7dbd663af17210624f8a7c103",
+  "audit_aggregate": "69db93efefe103eddf58ede2d721bb35ef6cdefd949235026d5d3e17ced43bfa",
+  "elapsed_seconds": 0.002239900000859052,
+  "rows": [
+    {
+      "p": 4,
+      "pair_factorizations_enumerated": 820,
+      "standard_counts_2_to_6": [
+        88,
+        95,
+        96,
+        96,
+        96
+      ],
+      "quadratic_profile": {
+        "total": 732,
+        "binomial": 519,
+        "monomial_zero": 213
+      },
+      "boundary_counts_3_to_6": [
+        19,
+        2,
+        0,
+        0
+      ],
+      "cubic_relation_hash": "396ceef5f99452bab9ca4853db8b0deb84f405d1e9a18dc5e0c1adb204b8405c",
+      "quartic_relation_hash": "d680c38faed089811e98260a76c1334c971af6b2224a58846abe98f5dec0c0b8",
+      "x0_divides_minimal_lead": false,
+      "audit_row_hash": "86b127b5e28d484956733bdfd16639001995c2c76ddc58bd7d6d302405879ff9"
+    }
+  ]
+}
