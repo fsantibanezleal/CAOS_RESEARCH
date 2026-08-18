@@ -273,3 +273,9 @@ complete `p=5,6` diagnostics reproduced the profile. Symbolically,
 quadratic move, proving nonquadraticity for all `p>=4`. The exact universal quadratic count remains
 `50p^2-17p`. The corrected one-cubic upper bound is not inherited automatically and requires a
 separately declared experiment and uniform connectivity proof.
+
+EXP-023 is declared for that corrected upper bound. It replaces full monomial enumeration with an
+independent degreewise state graph on `(generator offset, preceding fiber offset)` and targets the
+complete presentation `J_p=((J_p)_2,X_0^2X_(3p)-X_p^3)`. Confirmation requires campaign and audit
+agreement, uniform interval-graph connectivity in degrees three through five, and the published
+degree-five completeness theorem. Relation type three and non-Koszulness remain predictions.

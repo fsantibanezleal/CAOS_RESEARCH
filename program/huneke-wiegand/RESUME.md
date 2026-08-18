@@ -359,3 +359,15 @@ Its two monomials admit no quadratic move, proving `beta_(1,3)>=1` and nonquadra
 profiles `(732,1,0,0)`, `(1165,1,0,0)`, and `(1698,1,0,0)` through degree five. The next action is
 to declare, before any broader run, the corrected one-cubic presentation hypothesis and attack its
 uniform connectivity upper bound. No manuscript or publication update is yet triggered.
+
+EXP-023 is now declared for the corrected claim
+
+```text
+J_p=((J_p)_2,X_0^2X_(3p)-X_p^3),
+beta_(1,3)=1, beta_(1,j)=0 for j>=4.
+```
+
+Its independent route uses `O(p^2)` congruence states rather than degree-five monomial
+enumeration. The immediate action is to reproduce `p=4,5,6`, then run the bounded campaign and
+derive the uniform interval-graph connectivity proof. Relation type three, the exact total equation
+count, non-Koszulness, and any manuscript trigger remain unconfirmed predictions.

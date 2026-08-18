@@ -507,6 +507,16 @@
 - The corrected claim that this is the only cubic and that degrees four and five contribute
   nothing remains unproved and requires a separately declared successor experiment.
 
+## 2026-08-17 - EXP-023 declared
+
+- EXP-023 was declared before its state-graph implementation or any broader campaign.
+- It predicts the complete presentation by the quadratic kernel plus the single primitive cubic
+  `X_0^2X_(3p)-X_p^3`, with first Betti row `(50p^2-17p,1,0,0,...)`.
+- A scalable independent route reduces minimal equations in degree `d` to connected components of
+  states `(a,b)` with `a in E_1`, `b in E_(d-1)`, grouped by total `a+b`.
+- The mandatory next action is independent reproduction at `p=4,5,6`; no corrected theorem,
+  manuscript update, or publication is claimed.
+
 ## 2026-08-12 - Noether-normalization preprint v0.10 published
 
 - Expanded the manuscript to 22 pages with the complete graded module, minimal resolution, Betti
