@@ -568,3 +568,13 @@
   `98d730fb8afaf40149d028bdde0b1c3ba9851f1dbcd15475567e56bb7eb17d3f`, exactly matching Git.
 - Public version, sole author/ORCID, CC-BY-4.0 licence, filename, and hashes match. Repository PR
   promotion remains the only active delivery gate; no release tag is claimed.
+
+## 2026-08-18 - EXP-022/023 and v0.12 promoted
+
+- PR #176 passed `guards` and `test` and merged the complete defining-ideal theorem, evidence,
+  manuscript, and verified publication record to `develop` at
+  `aecb5b5c6daa83efd30f7c11a38436896fe59d12`.
+- PR #177 passed all required checks and promoted the tested state to `main` at
+  `80de49e5e42ca52d143333f029eaaac637464194`.
+- Remote `develop` and `main` are tree-identical at
+  `5469624bab95a087aaef37630ea9c2a27c656054`. This research-only round claims no release tag.

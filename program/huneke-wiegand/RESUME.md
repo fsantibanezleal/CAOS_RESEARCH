@@ -1,13 +1,15 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-18. Lifecycle: active repository-promotion round. EXP-023 is CONFIRMED: for every `p>=4`,
+Updated: 2026-08-18. Lifecycle: promotion handoff. EXP-023 is CONFIRMED: for every `p>=4`,
 the conductor special-fiber defining ideal consists of its `50p^2-17p` minimal quadrics and the
 single cubic `X_0^2X_(3p)-X_p^3`. The relation type is three and the Cohen--Macaulay fiber cone is
 not Koszul. The exact `p=4,...,23` campaign, independent total-graph audit, and all-parameter
 Presburger connectivity proof pass. Manuscript v0.12 passed claim/build/render QA and is published
 at DOI `10.5281/zenodo.21988601`; a fresh unauthenticated download matches the committed PDF
-byte-for-byte. Repository PR promotion is the only active delivery gate. Release v0.63.000 remains
-the repository release baseline; this research round does not claim a new tag.
+byte-for-byte. PR #176 merged the tested round to `develop`; PR #177 promoted it to `main`, and
+the two remote branches share tree `5469624bab95a087aaef37630ea9c2a27c656054`. Only the durable
+promotion handoff remains. Release v0.63.000 remains the repository release baseline; this
+research round does not claim a new tag.
 
 ## 1. State in one screen
 
@@ -160,8 +162,8 @@ The all-parameter Presburger cover closes degree-three through degree-five conne
 published Cohen--Macaulay fiber-cone construction closes every degree above five. The bounded
 campaign and independent audit agree, while the first over-budget attempt remains preserved as
 `INCONCLUSIVE_BUDGET`. The residual trust boundary is explicit: the Z3 UNSAT leaves do not carry
-a separately checked proof object. Manuscript v0.12 is published and exact-download verified;
-the active work is checked PR promotion to `develop` and then `main`.
+a separately checked proof object. Manuscript v0.12 is published and exact-download verified.
+Checked PR promotion is complete; this documentation-only handoff is the remaining action.
 
 Previously closed state:
 
@@ -273,10 +275,10 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Promote the tested EXP-022/023 and immutable v0.12 publication record through PRs to `develop`
-   and `main`; record the checked merge commits and remote tree equality.
+1. Promote this exact PR/merge/tree record through the documentation-only PR path.
 2. Do not claim a global release tag for this research-only round.
-3. Only after delivery, select a new theorem target through a fresh source and novelty preflight.
+3. Only after the handoff closes, select a new theorem target through a fresh source and novelty
+   preflight.
 
 ### Lenses ledger
 
@@ -403,5 +405,7 @@ boundary is recorded in the verdict because no separately checked UNSAT proof ob
 HWB-023 and HWB-025 are done. Manuscript v0.12 passed claim/build/render and sole-authorship QA,
 was published as Zenodo record `21988601`, and its fresh public download matches the committed
 615,252-byte PDF at SHA-256
-`98d730fb8afaf40149d028bdde0b1c3ba9851f1dbcd15475567e56bb7eb17d3f`. The only active gate is
-checked PR promotion to `develop` and `main` followed by durable merge/tree reconciliation.
+`98d730fb8afaf40149d028bdde0b1c3ba9851f1dbcd15475567e56bb7eb17d3f`. Delivery is complete:
+PR #176 passed `guards` and `test` and merged to `develop` at
+`aecb5b5c`; PR #177 passed all required checks and promoted it to `main` at `80de49e5`. Remote
+`develop` and `main` share tree `5469624bab95a087aaef37630ea9c2a27c656054`.
