@@ -1,13 +1,13 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-18. Lifecycle: publication gate. EXP-024 is CONFIRMED: for every `p>=4`, the
+Updated: 2026-08-18. Lifecycle: repository-promotion gate. EXP-024 is CONFIRMED: for every `p>=4`, the
 conductor special fiber has presentation-ring projective dimension `10p-1`, regularity four,
 `beta_(2,3)=2p(500p^2-330p+31)/3`, a complete last Betti row fixed by its Artinian socle,
 penultimate extremal entry `8p`, and canonical-module generators in degrees `-1` and `-3`.
-The exact `p=4,...,300` campaign and independent all-row audit pass. The 29-page v0.13 candidate
-passed claim/build/render and sole-authorship QA. Zenodo draft `21995498`, DOI
-`10.5281/zenodo.21995498`, is reserved but still empty and unpublished. EXP-023 and v0.12 remain
-immutable at DOI `10.5281/zenodo.21988601`.
+The exact `p=4,...,300` campaign and independent all-row audit pass. The 29-page v0.13 preprint
+passed claim/build/render and sole-authorship QA before publication and is immutable at DOI
+`10.5281/zenodo.21995498`. Public metadata and a fresh unauthenticated download match the committed
+PDF exactly. EXP-023 and v0.12 remain immutable at DOI `10.5281/zenodo.21988601`.
 
 ## 1. State in one screen
 
@@ -165,9 +165,9 @@ beta_(10p-2,10p+2)=8p.
 
 The canonical module has `10p` generators in degree `-1` and one in degree `-3`. The campaign and
 independent audit agree for all 297 parameters. The theorem determines exact resolution edges,
-not the interior Betti table. Manuscript v0.13 is a validated 29-page candidate at reserved DOI
-`10.5281/zenodo.21995498`; the Zenodo draft is still empty. The active action is checked upload,
-irreversible publication, fresh-download verification, then PR promotion.
+not the interior Betti table. Manuscript v0.13 is a published and fresh-download-verified 29-page
+preprint at DOI `10.5281/zenodo.21995498`. The active action is checked PR promotion followed by
+exact remote merge/tree reconciliation.
 
 Previously closed state:
 
@@ -273,16 +273,21 @@ Published baseline:
   three, and non-Koszulness. The public 615,252-byte PDF has MD5
   `c8b810a763b9bb55d076a454df49b413` and SHA-256
   `98d730fb8afaf40149d028bdde0b1c3ba9851f1dbcd15475567e56bb7eb17d3f`.
+- v0.13 DOI `10.5281/zenodo.21995498`: homological edge theorem. The public 635,617-byte PDF has
+  MD5 `d6ce72589100d1f57986da000501fdc7` and SHA-256
+  `cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `21988601`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `21995498`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Select any new theorem target only through a fresh source and novelty preflight; no experiment
+1. Promote the exact EXP-024/v0.13 state through checked PRs to `develop` and `main`, then reconcile
+   merge commits and remote trees.
+2. Select any new theorem target only through a fresh source and novelty preflight; no experiment
    is presently declared.
-2. Preserve the solver trust boundary unless a separately checked proof object is added.
-3. Do not retroactively claim a global release tag for this research-only round.
+3. Preserve the solver trust boundary unless a separately checked proof object is added.
+4. Do not retroactively claim a global release tag for this research-only round.
 
 ### Lenses ledger
 
@@ -436,6 +441,7 @@ The canonical module has `10p` minimal generators in degree `-1` and one in degr
 EXP-024 is CONFIRMED by the symbolic proof, two independent degree-three derivations, exact
 297-parameter campaign, all-row independent audit, selected source reconstructions, frozen
 premise hashes, and seven adversarial controls. Manuscript v0.13 adds this theorem without a
-split, passed its 29-page claim/build/render and sole-authorship gates, and prints the reserved DOI
-`10.5281/zenodo.21995498`. No file has yet been uploaded or published. A separate manuscript is
-deferred to a future standalone Groebner/full-resolution/primary-decomposition theorem.
+split, passed its 29-page claim/build/render and sole-authorship gates before upload, and is
+published at DOI `10.5281/zenodo.21995498`. A fresh public download matches the committed PDF.
+A separate manuscript is deferred to a future standalone Groebner/full-resolution/primary-
+decomposition theorem.

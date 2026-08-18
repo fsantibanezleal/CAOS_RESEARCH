@@ -1,6 +1,6 @@
 # Claim audit - manuscript v0.13
 
-Audited: 2026-08-18. Pre-publication result: PASS.
+Audited: 2026-08-18. Final publication result: PASS.
 
 Version 0.13 retains all v0.12 claims and adds only the homological edge results closed by
 EXP-024. It corrects the stale v0.12 suggestion that presentation-ring regularity was open, while
@@ -21,7 +21,7 @@ leaving the interior Betti table, explicit Groebner bases, and primary decomposi
 | adversarial scope | EXP-024 controls | PASS; false regularity/projective dimension/Betti entries and full-table overclaim rejected |
 | manuscript split decision | EXP-024 preflight and verdict | PASS; same manuscript is coherent; split deferred to a standalone Groebner/full-resolution/primary-decomposition theorem |
 | authorship | title page and `zenodo.json` | PASS; Felipe Santibanez-Leal is sole author; no automated system named |
-| publication identity before upload | reserved Zenodo draft `21995498` and page-one block | PASS; version `0.13`, DOI `10.5281/zenodo.21995498`, concept DOI, date, licence, and sole author/ORCID agree |
+| publication identity | public Zenodo record `21995498`, page-one block, and fresh download | PASS; version `0.13`, DOI `10.5281/zenodo.21995498`, concept DOI, date, CC-BY-4.0 licence, sole author/ORCID, filename, size, MD5, and SHA-256 agree |
 
 ## Scope boundaries
 
@@ -45,4 +45,7 @@ leaving the interior Betti table, explicit Groebner bases, and primary decomposi
 - sole-authorship, ORCID, version, DOI, concept DOI, and licence: PASS before build;
 - frozen candidate PDF: 635,617 bytes, MD5 `d6ce72589100d1f57986da000501fdc7`, SHA-256
   `cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed`;
-- Zenodo file upload/publication: NOT STARTED; the reversible draft remains empty.
+- Zenodo publication: PASS; record `21995498` is public and concept latest, with the sole human
+  author and ORCID, CC-BY-4.0 licence, exact filename, and 635,617-byte file.
+- Fresh unauthenticated download: PASS; MD5 `d6ce72589100d1f57986da000501fdc7` and SHA-256
+  `cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed` exactly match Git.

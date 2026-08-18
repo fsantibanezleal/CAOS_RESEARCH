@@ -1,9 +1,10 @@
 # Frobenius-minimality preprint
 
 `main.tex` is version 0.13 of the CAOS Research preprint; version 0.12 and all earlier
-versions remain frozen. Version 0.13 adds the EXP-024 homological edge theorem and has a reversible
-Zenodo draft reserved at DOI `10.5281/zenodo.21995498`; no file has yet been uploaded or published.
-Version 0.12 passed the complete claim/build/render workflow, is published at DOI
+versions remain frozen. Version 0.13 adds the EXP-024 homological edge theorem, passed the complete
+claim/build/render and publication workflow, and is published at DOI
+`10.5281/zenodo.21995498`. A fresh unauthenticated download matches the committed PDF exactly.
+Version 0.12 remains published at DOI
 `10.5281/zenodo.21988601`, and matches a fresh public download exactly. Version 0.11 remains
 published and fresh-download verified at DOI `10.5281/zenodo.21909961`.
 It proves that the public
@@ -72,7 +73,7 @@ Zenodo identifiers:
 - version 0.10 DOI: `10.5281/zenodo.21909127`
 - version 0.11 DOI: `10.5281/zenodo.21909961`
 - version 0.12 DOI: `10.5281/zenodo.21988601` (published and fresh-download verified)
-- version 0.13 DOI: `10.5281/zenodo.21995498` (reserved reversible draft; no upload yet)
+- version 0.13 DOI: `10.5281/zenodo.21995498` (published and fresh-download verified)
 - licence: CC BY 4.0
 
 Evidence sources are EXP-001 through EXP-024 under
@@ -233,5 +234,18 @@ Version 0.12 public-file verification:
 - sole authorship, ORCID, version, reserved DOI, concept DOI, CC-BY-4.0 metadata, and new source
   citation gates pass
 - the concept latest resolves to record `21988601`; public version, sole author/ORCID, CC-BY-4.0
+  licence, filename, bytes, MD5, and SHA-256 match the committed record
+- a fresh unauthenticated public download matches the committed PDF exactly
+
+Version 0.13 public-file verification:
+
+- DOI: `10.5281/zenodo.21995498`; no upload or publication occurred before claim/build/render QA
+- bytes: `635617`
+- MD5: `d6ce72589100d1f57986da000501fdc7`
+- SHA-256: `cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed`
+- all 29 pages passed rendered inspection at 150 DPI; the final build has no warnings, undefined
+  references, overfull boxes, or underfull boxes
+- sole authorship, ORCID, version, DOI, concept DOI, CC-BY-4.0 metadata, source, and scope gates pass
+- the concept latest resolves to record `21995498`; public title, version, sole author/ORCID,
   licence, filename, bytes, MD5, and SHA-256 match the committed record
 - a fresh unauthenticated public download matches the committed PDF exactly

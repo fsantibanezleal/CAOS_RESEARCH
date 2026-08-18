@@ -42,7 +42,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | preprint v0.10 | published | complete Noether-normalization module and graded-resolution theorem, DOI [`10.5281/zenodo.21909127`](https://doi.org/10.5281/zenodo.21909127); exact public-file hash verified |
 | preprint v0.11 | published | canonical conductor special fiber, exact type, and nonlevel theorem, DOI [`10.5281/zenodo.21909961`](https://doi.org/10.5281/zenodo.21909961); exact public-file hash verified |
 | preprint v0.12 | published | complete defining ideal, exact first Betti row, relation type three, and non-Koszulness, DOI [`10.5281/zenodo.21988601`](https://doi.org/10.5281/zenodo.21988601); exact public-file hash verified |
-| preprint v0.13 | validated candidate | homological edge theorem; reserved DOI `10.5281/zenodo.21995498`; no file uploaded or published yet |
+| preprint v0.13 | published | homological edge theorem, DOI [`10.5281/zenodo.21995498`](https://doi.org/10.5281/zenodo.21995498); exact public-file hash verified |
 
 CAOS independently reproduces the public counterexample's decisive finite certificate. Discovery
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery. CAOS's novel

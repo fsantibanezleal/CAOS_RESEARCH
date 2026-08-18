@@ -624,3 +624,13 @@
 - Frozen local candidate: 635,617 bytes, MD5 `d6ce72589100d1f57986da000501fdc7`, SHA-256
   `cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed`. Zenodo upload and
   publication remain pending.
+
+## 2026-08-18 - homological-edge preprint v0.13 published
+
+- Published Zenodo version DOI `10.5281/zenodo.21995498`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21995498`.
+- Public version, title, sole author/ORCID, CC-BY-4.0 licence, filename, and 635,617-byte size match
+  the validated candidate.
+- A fresh unauthenticated download has MD5 `d6ce72589100d1f57986da000501fdc7` and SHA-256
+  `cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed`, exactly matching Git.
+- Repository PR promotion remains the only active delivery gate; no release tag is claimed.

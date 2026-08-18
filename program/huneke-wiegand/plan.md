@@ -347,5 +347,8 @@ audit pass for `p=4,...,300`, with aggregates `baf6200a...637eb` and `b6035f61..
 The same-manuscript decision is closed: v0.13 is a coherent extension of the special-fiber
 presentation, while a split remains deferred to a standalone Groebner/full-resolution theorem.
 The 29-page v0.13 candidate passed claim, warning-free build, complete render, identity, and
-sole-authorship gates. Zenodo draft `21995498`, DOI `10.5281/zenodo.21995498`, is reserved and
-still empty; upload and irreversible publication are the active gate.
+sole-authorship gates before upload. It is now immutably published CC BY 4.0 at DOI
+`10.5281/zenodo.21995498`; concept latest is record `21995498`. A fresh unauthenticated download
+matches the committed 635,617-byte PDF at MD5 `d6ce72589100d1f57986da000501fdc7` and SHA-256
+`cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed`. The active gate is checked
+repository promotion to `develop` and `main`, followed by exact merge/tree reconciliation.
