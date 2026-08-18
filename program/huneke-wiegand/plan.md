@@ -279,3 +279,23 @@ independent degreewise state graph on `(generator offset, preceding fiber offset
 complete presentation `J_p=((J_p)_2,X_0^2X_(3p)-X_p^3)`. Confirmation requires campaign and audit
 agreement, uniform interval-graph connectivity in degrees three through five, and the published
 degree-five completeness theorem. Relation type three and non-Koszulness remain predictions.
+
+EXP-023 is now CONFIRMED. The state graph identifies minimal equations with component defects.
+An exact Presburger cover proves that degree three has exactly one exceptional two-component total,
+`3p`, while degrees four and five have no defect. The unique joining equation is
+`X_0^2X_(3p)-X_p^3`. The campaign passes `p=4,...,23`, the independent total-graph audit rebuilds
+`p=4,13,23` and rehashes every row, and the first over-budget attempt remains preserved as
+`INCONCLUSIVE_BUDGET`. Abdolmaleki--Kumashiro's degree-five bound then closes the higher tail.
+
+The defining ideal therefore has first Betti row
+
+```text
+(beta_(1,2),beta_(1,3),beta_(1,4),beta_(1,5),...)
+=(50p^2-17p,1,0,0,...),
+```
+
+relation type three, and `50p^2-17p+1` minimal equations. The necessary cubic proves the
+Cohen--Macaulay special fiber is not Koszul. This material theorem opens HWB-025: manuscript v0.12,
+claim/build/render QA, Zenodo new-version publication, and checked PR promotion. The symbolic
+trust boundary must remain explicit because the Z3 UNSAT leaves do not have a separately checked
+proof object.

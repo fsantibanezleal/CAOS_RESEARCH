@@ -39,6 +39,10 @@ An extra cubic component, or any degree-four/five component, refutes P1/P2 and m
 A finite pass is not a theorem. `CONFIRMED` requires the symbolic component proof plus an
 independent exact audit. Budget exhaustion is `INCONCLUSIVE`.
 
+The bounded Presburger certificate has a separate 180-second CPU budget, five-second initial
+per-cell timeout, and at most five affine bisections. `sat` refutes the affected claim; an
+unresolved `unknown` is `INCONCLUSIVE` and cannot support confirmation.
+
 ## Adversarial controls
 
 - omit the edge joining the two `t=3p` components after adjoining `F_p`;

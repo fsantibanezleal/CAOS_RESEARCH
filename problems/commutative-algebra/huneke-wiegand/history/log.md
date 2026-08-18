@@ -517,6 +517,29 @@
 - The mandatory next action is independent reproduction at `p=4,5,6`; no corrected theorem,
   manuscript update, or publication is claimed.
 
+## 2026-08-18 - EXP-023 confirms the one-cubic presentation
+
+- The independent state graph reproduces EXP-022 at `p=4,5,6`. Its first requested campaign
+  completed the `p=24` row but crossed the declared five-minute budget, so the preserved attempt
+  remains `INCONCLUSIVE_BUDGET`.
+- The formally bounded campaign passes every `p=4,...,23` with Betti profile
+  `(50p^2-17p,1,0,0)` and aggregate
+  `d23792c47a2e07785a27ebc71e99619705f7aa53a38ebe7f66ffa03b0518ce83`.
+- A separately encoded total-by-total graph rehashes all 20 rows and reconstructs `p=4,13,23`;
+  its audit aggregate is
+  `a27b3b13fde197b1f011bf07dc2c321d84ab7c895c9aa02d7c2a073e48f18038`.
+- The exact Presburger cover closes 133 terminal negated connectivity queries as UNSAT for all
+  integers `p>=4`, with no SAT or unresolved leaf. It proves that total `3p` has exactly two cubic
+  components and that every other degree-three, degree-four, and degree-five fiber has no defect.
+- Abdolmaleki--Kumashiro Theorem 2.8 closes the tail above degree five. Hence
+  `J_p=((J_p)_2,X_0^2X_(3p)-X_p^3)`, its relation type is three, and the Cohen--Macaulay fiber cone
+  is not Koszul.
+- The solver and symbolic encoding remain an explicit trust boundary because the UNSAT leaves do
+  not carry a separately checked proof object. The exact independent campaign and hand-reduced
+  state graph lower, but do not erase, that risk.
+- The theorem is material and opens the manuscript v0.12 plus Zenodo new-version gate. No v0.12
+  publication is claimed yet.
+
 ## 2026-08-12 - Noether-normalization preprint v0.10 published
 
 - Expanded the manuscript to 22 pages with the complete graded module, minimal resolution, Betti

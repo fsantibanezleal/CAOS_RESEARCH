@@ -28,6 +28,8 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-019 | CONFIRMED | complete tangent-cone torsion is `k^p` in degree zero; Buchsbaum but not Cohen--Macaulay; invariant `p` |
 | EXP-020 | CONFIRMED | complete module over the minimal-reduction polynomial ring; exact Betti data, regularity four, and section identity `25p=e0+I` |
 | EXP-021 | CONFIRMED | conductor fiber cone is canonically `G_p/H^0`; Cohen--Macaulay of type `10p+1`, nonlevel and non-Gorenstein |
+| EXP-022 | REFUTED | the defining ideal is not quadratic; `X_0^2X_(3p)-X_p^3` is a necessary cubic for every `p>=4` |
+| EXP-023 | CONFIRMED | complete defining ideal by `50p^2-17p` quadrics and the unique cubic; relation type three and non-Koszulness |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
@@ -43,7 +45,8 @@ CAOS independently reproduces the public counterexample's decisive finite certif
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery. CAOS's novel
 extensions are the certified Frobenius-minimality theorem in EXP-005, the complete minimum-layer
 classification in EXP-007, the EXP-009 infinite family theorem, the EXP-011 uniform
-endomorphism-overring theorem, and the EXP-012/013 type-and-trace anatomy.
+endomorphism-overring theorem, the EXP-012/013 type-and-trace anatomy, and the EXP-023 uniform
+minimal presentation of the conductor special fiber.
 
 ## Uniform endomorphism anatomy
 
@@ -231,3 +234,39 @@ as graded algebras. The special fiber is the canonical Cohen--Macaulayization of
 tangent cone. Its Artinian reduction has h-vector `(1,10p-1,12p,2p-1,1)` and socle dimensions
 `(0,0,10p,0,1)`. Thus its type is `10p+1`; it is neither level nor Gorenstein. The symbolic block
 proof is supported by a 297-parameter exact campaign and an independent six-parameter audit.
+
+## Defining ideal of the conductor special fiber
+
+Index the `10p` degree-one generators by their Artinian offsets `a in E_1`, and let `X_a` be the
+corresponding polynomial variable. EXP-022 proves that the quadratic kernel has dimension
+
+```text
+beta_(1,2)=binom(10p+1,2)-22p=50p^2-17p,
+```
+
+but refutes quadratic generation: the two monomials in
+
+```text
+F_p=X_0^2X_(3p)-X_p^3
+```
+
+have equal nonzero value and are isolated under every quadratic move.
+
+EXP-023 proves the corrected complete presentation
+
+```text
+J_p=((J_p)_2,F_p),
+beta_(1,3)=1,
+beta_(1,j)=0 for every j>=4.
+```
+
+The proof replaces full monomial enumeration by exact factorization-state graphs. Its
+all-parameter Presburger cover finds exactly two degree-three components at total `3p`, joined by
+`F_p`, one component at every other valid total, and no degree-four or degree-five defect.
+Abdolmaleki--Kumashiro's construction is the completeness backstop above degree five because the
+fiber cone is Cohen--Macaulay and the conductor reduction number is four. Thus the relation type is
+three, `mu(J_p)=50p^2-17p+1`, and the fiber cone is not Koszul.
+
+The exact campaign passes `p=4,...,23`; a separate total-by-total implementation rehashes all rows
+and rebuilds `p=4,13,23`. The symbolic UNSAT results have no separately checked proof object, so
+the solver and encoding remain an explicit residual trust boundary.
