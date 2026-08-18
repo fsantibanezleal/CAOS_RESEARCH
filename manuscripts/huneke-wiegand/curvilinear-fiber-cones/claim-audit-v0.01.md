@@ -1,10 +1,10 @@
 # Claim audit - curvilinear conductor fiber cones v0.01
 
-Audit date: 2026-08-18. Decision: **PASS - validated DOI-bearing upload candidate**.
+Audit date: 2026-08-18. Decision: **PASS - published artifact independently verified**.
 
-Publication is not yet claimed. Zenodo draft `21997378` reserved version DOI
-`10.5281/zenodo.21997378` and concept DOI `10.5281/zenodo.21997377`; the draft remains unpublished
-and no file upload is yet claimed.
+Zenodo record `21997378` is published at version DOI `10.5281/zenodo.21997378`; concept DOI
+`10.5281/zenodo.21997377` resolves to this record. Public metadata and a fresh unauthenticated
+download have been checked against the frozen candidate.
 
 ## Claim map
 
@@ -68,7 +68,8 @@ SHA-256 = e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a
 
 ## Publication gate
 
-The reversible concept draft is reserved and both assigned DOIs are printed in the PDF. The
-warning-free rebuild, complete six-page render inspection, identity checks, and new hash freeze
-pass. This exact candidate may now be attached to draft `21997378`; publication remains gated on
-the attached-file verification and must be followed by public metadata and fresh-download checks.
+The exact DOI-bearing candidate was attached and published. The public API confirms the title,
+version 0.01, Felipe as the sole creator, ORCID `0000-0002-0150-3246`, CC BY 4.0 licence, filename,
+424,886-byte size, and MD5. The concept DOI resolves to record `21997378`. A fresh unauthenticated
+download has SHA-256 `e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`,
+exactly matching the committed PDF. The publication gate is complete.

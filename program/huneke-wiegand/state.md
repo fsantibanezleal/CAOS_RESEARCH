@@ -69,10 +69,11 @@
 | 2026-08-18 | confirmed | active | the prior manuscript-split gate is satisfied; a focused companion preprint and separate Zenodo concept record are now in preparation |
 | 2026-08-18 | active | active | six-page companion v0.01 passed claim, clean-build, complete-render, metadata, and sole-authorship QA; separate Zenodo concept-draft creation is the active reversible gate |
 | 2026-08-18 | active | active | separate draft `21997378` reserved version DOI `10.5281/zenodo.21997378` and concept DOI `10.5281/zenodo.21997377`; the DOI-bearing 424,886-byte candidate passed the repeated complete QA and is ready for attachment |
+| 2026-08-18 | active | published | companion v0.01 published at DOI `10.5281/zenodo.21997378`; public metadata and fresh unauthenticated download match SHA-256 `e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a` |
 
-Current state: **active Zenodo publication gate** (EXP-025 is CONFIRMED and the focused six-page
-v0.01 DOI-bearing candidate is fully validated; draft `21997378` is reserved but no upload or
-publication is yet claimed). The preceding v0.13 handoff was tree-identical at
+Current state: **active repository-promotion gate** (EXP-025 is CONFIRMED and the focused six-page
+v0.01 is published and fresh-download verified at DOI `10.5281/zenodo.21997378`). The preceding
+v0.13 handoff was tree-identical at
 `b70a3990583057a92e591c34d5f9e9c101185e8c` after PRs #184/#185.
 
 EXP-001 provides the programme's independent calibration. External verification remains separate

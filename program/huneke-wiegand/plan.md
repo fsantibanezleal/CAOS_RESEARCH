@@ -422,3 +422,10 @@ identifiers, the 424,886-byte PDF repeated the warning-free two-pass build, comp
 `e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`. The active gate is now
 attachment of exactly this candidate, followed by publication and fresh public-record
 verification.
+
+The attachment, publication, and independent public checks are complete. Version DOI
+`10.5281/zenodo.21997378` and concept DOI `10.5281/zenodo.21997377` resolve to record `21997378`.
+The public title, version, sole creator/ORCID, licence, filename, byte count, and MD5 agree, and a
+fresh unauthenticated download exactly matches the committed SHA-256
+`e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`. The remaining gate is the
+checked work-to-`develop` and `develop`-to-`main` promotion plus durable handoff reconciliation.

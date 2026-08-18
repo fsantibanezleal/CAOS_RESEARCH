@@ -1,15 +1,16 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-18. Lifecycle: active companion-manuscript gate. EXP-025 is CONFIRMED. It proves
+Updated: 2026-08-18. Lifecycle: active repository-promotion gate. EXP-025 is CONFIRMED. It proves
 that the conductor special fiber is an explicit truncated-monomial algebra, its defining ideal
 has one primary component, and its projective scheme is a length-`24p` curvilinear fat point with
 sharp nilpotence index `24p`. The `p=4,...,300` campaign and independent all-row audit pass with
 aggregates `f3373f4f...b39b6` and `84c00be8...f143e`. The standalone theorem meets the prior split
 gate. A focused six-page v0.01 companion candidate passed claim/build/render, metadata, and
 sole-authorship QA. Separate Zenodo draft `21997378` reserved version DOI
-`10.5281/zenodo.21997378` and concept DOI `10.5281/zenodo.21997377`; the DOI-bearing rebuild is
-frozen at SHA-256 `e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`.
-It is not yet uploaded or published.
+`10.5281/zenodo.21997378` and concept DOI `10.5281/zenodo.21997377`. The DOI-bearing PDF is now
+published and a fresh public download matches SHA-256
+`e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`. Repository promotion is
+the remaining delivery gate.
 EXP-024 and the 29-page v0.13 preprint remain confirmed, published, and immutable
 at DOI `10.5281/zenodo.21995498`. PRs #182--#185 completed the preceding theorem, publication,
 and durable documentation handoff; all three remote branches shared tree
@@ -177,9 +178,9 @@ differential module is also predicted exactly, with the required characteristic 
 `char(k)` divides `q`. The campaign passes all 297 parameters and the audit independently rebuilds
 all rows, with aggregates `f3373f4f58287fd3f553b95efa226e7938170d32f24eea6a014ca47f9d6b39b6`
 and `84c00be8ff64002e8738a5d4307d71df73dfa7595e810c7e764f6f5b6c8f143e`. The proof and verdict
-live under `experiments/EXP-025-curvilinear-primary-structure/`. The companion manuscript is a
-validated six-page DOI-bearing candidate; attachment, publication, and public-download
-verification remain active gates rather than completed claims.
+live under `experiments/EXP-025-curvilinear-primary-structure/`. The companion manuscript is
+published at DOI `10.5281/zenodo.21997378`; its public metadata and fresh download match the
+validated six-page artifact. Checked repository promotion remains active.
 
 Previously closed state:
 
@@ -311,13 +312,11 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Attach the exact revalidated DOI-bearing candidate to reserved draft `21997378`, and verify the
-   attached filename, size, and checksum before publication.
-2. Publish only that attached candidate, then verify metadata and a fresh
-   public download before claiming delivery.
-3. Promote the exact validated publication state through checked PRs to `develop` and `main`, then
+1. Promote the exact validated publication state through checked PRs to `develop` and `main`, then
    reconcile remote trees and the management handoff.
-4. Preserve the EXP-023 solver trust boundary and do not claim a global release tag for this
+2. Promote the CAOS_MANAGE publication ledger from `develop` to `main` by PR without disturbing
+   unrelated local work.
+3. Preserve the EXP-023 solver trust boundary and do not claim a global release tag for this
    research-only round.
 
 ### Lenses ledger

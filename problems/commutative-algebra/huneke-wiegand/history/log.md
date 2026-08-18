@@ -711,3 +711,16 @@
   `e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`.
 - The exact attachment, publication, and fresh public-download verification remain pending; no
   upload or publication is claimed at this checkpoint.
+
+## 2026-08-18 - curvilinear companion v0.01 published and verified
+
+- Attached the frozen DOI-bearing candidate as
+  `huneke-wiegand-curvilinear-fiber-cones-v0.01.pdf`; authenticated draft inspection matched its
+  424,886-byte size, MD5, title, version, reserved DOI, and sole creator before publication.
+- Published Zenodo version DOI `10.5281/zenodo.21997378`; separate concept DOI
+  `10.5281/zenodo.21997377` resolves to record `21997378`.
+- The public API confirms title, version 0.01, sole author/ORCID, CC BY 4.0 licence, filename, size,
+  and checksum. A fresh unauthenticated download has SHA-256
+  `e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`, exactly matching Git.
+- The Zenodo gate is complete. Checked repository PR promotion is now the only active delivery
+  gate; no global release tag is claimed.

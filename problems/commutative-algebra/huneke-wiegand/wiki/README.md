@@ -31,6 +31,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-022 | REFUTED | the defining ideal is not quadratic; `X_0^2X_(3p)-X_p^3` is a necessary cubic for every `p>=4` |
 | EXP-023 | CONFIRMED | complete defining ideal by `50p^2-17p` quadrics and the unique cubic; relation type three and non-Koszulness |
 | EXP-024 | CONFIRMED | exact presentation-ring projective dimension, regularity, first linear syzygies, complete last row, penultimate edge, and canonical degrees |
+| EXP-025 | CONFIRMED | truncated parametrization, one primary component, nilindex `24p`, length-`24p` curvilinear fat point, local/arithmetic Gorenstein separation, and differential fingerprint |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
@@ -43,13 +44,15 @@ Transcribe only closed experiment verdicts and proved derivations.
 | preprint v0.11 | published | canonical conductor special fiber, exact type, and nonlevel theorem, DOI [`10.5281/zenodo.21909961`](https://doi.org/10.5281/zenodo.21909961); exact public-file hash verified |
 | preprint v0.12 | published | complete defining ideal, exact first Betti row, relation type three, and non-Koszulness, DOI [`10.5281/zenodo.21988601`](https://doi.org/10.5281/zenodo.21988601); exact public-file hash verified |
 | preprint v0.13 | published | homological edge theorem, DOI [`10.5281/zenodo.21995498`](https://doi.org/10.5281/zenodo.21995498); exact public-file hash verified |
+| curvilinear companion v0.01 | published | primary-structure and curvilinear-geometry theorem, DOI [`10.5281/zenodo.21997378`](https://doi.org/10.5281/zenodo.21997378); exact public-file hash verified |
 
 CAOS independently reproduces the public counterexample's decisive finite certificate. Discovery
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery. CAOS's novel
 extensions are the certified Frobenius-minimality theorem in EXP-005, the complete minimum-layer
 classification in EXP-007, the EXP-009 infinite family theorem, the EXP-011 uniform
-endomorphism-overring theorem, the EXP-012/013 type-and-trace anatomy, and the EXP-023 uniform
-minimal presentation of the conductor special fiber, and the EXP-024 homological edge theorem.
+endomorphism-overring theorem, the EXP-012/013 type-and-trace anatomy, the EXP-023 uniform minimal
+presentation of the conductor special fiber, the EXP-024 homological edge theorem, and the
+EXP-025 curvilinear primary-structure theorem.
 
 ## Uniform endomorphism anatomy
 

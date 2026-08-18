@@ -1,7 +1,7 @@
 # Curvilinear conductor fiber cones
 
-Focused companion preprint for EXP-025. Version 0.01 is a validated six-page DOI-bearing upload
-candidate and is not yet published. The manuscript proves the explicit truncated-monomial parametrization, complete
+Focused companion preprint for EXP-025. Version 0.01 is a published, fresh-download-verified
+six-page preprint. The manuscript proves the explicit truncated-monomial parametrization, complete
 one-component primary decomposition, sharp nilpotence index, curvilinear projective geometry,
 local-versus-arithmetic Gorenstein contrast, and characteristic-sensitive differential signature
 for the conductor fiber cones of the CAOS Huneke-Wiegand family.
@@ -23,7 +23,7 @@ Publication state:
 - SHA-256: `e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`
 - version DOI: `10.5281/zenodo.21997378`
 - concept DOI: `10.5281/zenodo.21997377`
-- Zenodo: reversible draft `21997378` is reserved and unpublished; no upload or publication is
-  yet claimed
+- Zenodo: published record [`21997378`](https://zenodo.org/records/21997378); the concept DOI
+  resolves to this version
 - QA: after DOI insertion, the clean two-pass build, complete final 150-DPI six-page inspection,
-  claim audit, identity, and sole-authorship gates all pass
+  claim audit, identity, sole-authorship, public metadata, and fresh-download gates all pass
