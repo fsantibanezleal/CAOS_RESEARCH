@@ -666,3 +666,6 @@
   arithmetically Gorenstein.
 - The full result, if confirmed, meets the previously recorded threshold for a separate companion
   manuscript. No theorem, manuscript, Zenodo record, or delivery is yet claimed.
+- Before implementation, the declaration was sharpened by the differential corollary
+  `Omega^1=(k[y]/(y^(24p),24p*y^(24p-1)))dy`; this records the characteristic split rather than
+  hiding it behind the characteristic-zero manuscript setting.

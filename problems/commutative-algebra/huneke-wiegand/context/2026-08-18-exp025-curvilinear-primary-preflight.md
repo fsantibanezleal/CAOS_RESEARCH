@@ -98,9 +98,9 @@ EXP-025 package would cross that gate because it simultaneously gives:
 2. a complete one-component primary decomposition;
 3. the exact radical and nilpotency index;
 4. a length-`24p` curvilinear projective scheme; and
-5. a local-Gorenstein versus arithmetically non-Gorenstein contrast.
+5. a local-Gorenstein versus arithmetically non-Gorenstein contrast; and
+6. an explicit characteristic-sensitive Kahler-differential signature.
 
 If any load-bearing assertion fails, the result remains in the existing manuscript line or is
 recorded as refuted. If the full package is confirmed, create a focused companion manuscript and
 a separate Zenodo concept record rather than inflating immutable v0.13.
-

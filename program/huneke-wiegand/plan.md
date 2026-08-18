@@ -389,7 +389,9 @@ nilindex(nil(C_p))=q.
 
 The geometric form is a saturated length-`q` curvilinear fat point with tangent dimension one.
 It is locally Gorenstein although its homogeneous coordinate ring has type `10p+1` and is not
-level. The immediate gate is a post-implementation `p=4` smoke, then the exact `p=4,...,300`
+level. Its affine differential module is predicted to be
+`Omega^1=(k[y]/(y^q,qy^(q-1)))dy`, explicitly separating the characteristics dividing `q` from
+all others. The immediate gate is a post-implementation `p=4` smoke, then the exact `p=4,...,300`
 campaign, independent audit, and symbolic proof. If the complete package is confirmed, it meets
 the prior split criterion and opens a focused companion manuscript rather than v0.14 of the
 already broad Frobenius-minimality manuscript.

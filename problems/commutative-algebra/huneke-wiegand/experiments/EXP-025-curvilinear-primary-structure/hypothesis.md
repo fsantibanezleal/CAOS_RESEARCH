@@ -54,6 +54,17 @@ exactly when that offset is absent from `E_n`.
 - P6: that projective scheme is locally Gorenstein, while its homogeneous coordinate ring is
   neither level nor Gorenstein and has Cohen--Macaulay type `10p+1`.
 
+- P7: for the affine chart `A_p=C_p/(X_0-1)` and every ground field `k`,
+
+  ```text
+  Omega^1_(A_p/k) isomorphic to (A_p/(q y^(q-1))) dy,
+  exterior^m Omega^1_(A_p/k)=0 for m>=2.
+  ```
+
+  Hence `dim_k Omega^1=q-1` when `char(k)` does not divide `q`, and it is `q` when
+  `char(k)` divides `q`. In either case the cotangent and tangent spaces at the closed point have
+  dimension one.
+
 ## Deductive route
 
 1. Compare every graded piece with the offset basis `E_n` to prove P1.
@@ -65,6 +76,7 @@ exactly when that offset is absent from `E_n`.
    minimal prime therefore makes zero primary in `C_p`, proving P3.
 5. Use positive depth to prove saturation; then dehomogenize on the unique support chart to prove
    P5 and P6.
+6. Differentiate the single equation `y^q=0` and preserve the characteristic split to prove P7.
 
 ## Exact campaign and audit
 
@@ -86,6 +98,8 @@ The implementation must reject all of the following:
 - a proposed radical omitting one positive-offset coordinate;
 - nilpotency exponents `q-1` and `q+1`;
 - the false assertion that `C_p` itself is Gorenstein; and
+- a characteristic-free differential-length claim that ignores whether `char(k)` divides `q`;
+  and
 - the invalid inference "unique minimal prime implies primary" when the Cohen--Macaulay/no-
   embedded-primes premise is removed.
 
@@ -102,4 +116,3 @@ The implementation must reject all of the following:
 
 CPU only, no randomness. Campaign budget: 60 seconds. Independent audit budget: 60 seconds.
 Rows are checkpointed atomically. A hard wrapper may stop either process at 120 seconds.
-

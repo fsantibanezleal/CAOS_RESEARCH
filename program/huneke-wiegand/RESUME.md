@@ -167,7 +167,9 @@ nilindex(nil(C_p))=q.
 
 The geometric prediction is a saturated length-`q` curvilinear fat point supported at the
 `X_0` coordinate point, with tangent dimension one. It is locally Gorenstein but its homogeneous
-coordinate ring remains nonlevel and non-Gorenstein of type `10p+1`. The declaration lives at
+coordinate ring remains nonlevel and non-Gorenstein of type `10p+1`. The affine Kahler
+differential module is also predicted exactly, with the required characteristic split when
+`char(k)` divides `q`. The declaration lives at
 `experiments/EXP-025-curvilinear-primary-structure/hypothesis.md`; no theorem, companion
 manuscript, Zenodo record, or promotion is yet claimed.
 
