@@ -76,14 +76,17 @@
 | 2026-08-18 | active | confirmed | EXP-026 proves the reduced grevlex basis profile `(50p^2-17p,5p-1,p-2)`, six cubic families, one quartic family, and no later boundary |
 | 2026-08-18 | confirmed | active | eight-page companion v0.02 passed claim, two-pass build, complete render, extraction, metadata, identity, and sole-authorship QA with reserved DOI `10.5281/zenodo.22002907` |
 | 2026-08-18 | active | published | companion v0.02 published at DOI `10.5281/zenodo.22002907`; the concept DOI resolves to it and a fresh unauthenticated download matches SHA-256 `12cc380bcc72613694b24cc9f74284f8f3d35e4958ec3569b6ebacce3225e398` |
+| 2026-08-18 | published | published | PR #190 passed `guards` and `test` and merged EXP-026 plus verified v0.02 to `develop` at `6b9d4670`; PR #191 passed all required checks and promoted it to `main` at `5dfb1af5` |
+| 2026-08-18 | published | published | research work, `develop`, and `main` share payload tree `1fb094d102e1f91a6c9754cca26d7f57666450fb`; CAOS_MANAGE PR #559 promoted the publication ledger with `develop`/`main` tree `372cd71d3acca38b92f872cd0995b5b9a264d543` |
 
-Current state: **published; repository promotion active**. EXP-026 proves `50p^2-17p`, `5p-1`, and
+Current state: **published; durable handoff complete**. EXP-026 proves `50p^2-17p`, `5p-1`, and
 `p-2` reduced-basis elements in degrees two, three, and four, with none later and no leading
 generator divisible by `X_0`. The 297-row campaign, independent clique audit, 16-query
 all-parameter certificate, and deductive stabilization proof pass. Focused companion v0.02 is
-published and fresh-download verified at DOI `10.5281/zenodo.22002907`. The active gate is checked
-work-to-`develop` and `develop`-to-`main` promotion plus final handoff reconciliation. EXP-025 and
-v0.01 remain immutable at DOI `10.5281/zenodo.21997378`.
+published and fresh-download verified at DOI `10.5281/zenodo.22002907`. Repository and management
+promotion are complete. No theorem experiment is active. HWB-035, the unresolved interior Betti
+table, is the strongest distinct next path and requires a fresh preflight before declaration.
+EXP-025 and v0.01 remain immutable at DOI `10.5281/zenodo.21997378`.
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.
