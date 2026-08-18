@@ -634,3 +634,13 @@
 - A fresh unauthenticated download has MD5 `d6ce72589100d1f57986da000501fdc7` and SHA-256
   `cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed`, exactly matching Git.
 - Repository PR promotion remains the only active delivery gate; no release tag is claimed.
+
+## 2026-08-18 - EXP-024 and v0.13 promoted
+
+- PR #182 passed `guards` and `test` and merged the complete EXP-024 theorem, evidence, manuscript,
+  and verified publication record to `develop` at
+  `26c5210302ede4681111a4503776190954c33f59`.
+- PR #183 passed all required checks and promoted the identical tested state to `main` at
+  `f24b078b98376224b38753f7294d26627147c4ea`.
+- Remote work, `develop`, and `main` are tree-identical at
+  `5c828789a5d993a35a1e42743860600d156c9f99`. No release tag is claimed.
