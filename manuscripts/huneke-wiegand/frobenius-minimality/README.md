@@ -1,8 +1,8 @@
 # Frobenius-minimality preprint
 
-`main.tex` is the version 0.12 candidate of the CAOS Research preprint; version 0.11 and all earlier
-versions remain frozen. Version 0.12 has reserved DOI `10.5281/zenodo.21988601`; no upload or
-publication is claimed until the complete claim/build/render workflow passes. Version 0.11 remains
+`main.tex` is version 0.12 of the CAOS Research preprint; version 0.11 and all earlier
+versions remain frozen. Version 0.12 passed the complete claim/build/render workflow, is published
+at DOI `10.5281/zenodo.21988601`, and matches a fresh public download exactly. Version 0.11 remains
 published and fresh-download verified at DOI `10.5281/zenodo.21909961`.
 It proves that the public
 Huneke-Wiegand numerical-semigroup counterexample has the least possible Frobenius number, 181,
@@ -65,7 +65,7 @@ Zenodo identifiers:
 - version 0.09 DOI: `10.5281/zenodo.21908785`
 - version 0.10 DOI: `10.5281/zenodo.21909127`
 - version 0.11 DOI: `10.5281/zenodo.21909961`
-- version 0.12 DOI: `10.5281/zenodo.21988601` (reserved draft; not yet published)
+- version 0.12 DOI: `10.5281/zenodo.21988601` (published and fresh-download verified)
 - licence: CC BY 4.0
 
 Evidence sources are EXP-001 through EXP-023 under
@@ -212,10 +212,9 @@ Version 0.11 public-file verification:
   licence, filename, bytes, MD5, and SHA-256 match the committed record
 - a fresh unauthenticated public download matches the committed PDF exactly
 
-Version 0.12 pre-publication verification:
+Version 0.12 public-file verification:
 
-- reserved DOI: `10.5281/zenodo.21988601`; no upload or publication occurred before
-  claim/build/render QA
+- DOI: `10.5281/zenodo.21988601`; no upload or publication occurred before claim/build/render QA
 - bytes: `615252`
 - MD5: `c8b810a763b9bb55d076a454df49b413`
 - SHA-256: `98d730fb8afaf40149d028bdde0b1c3ba9851f1dbcd15475567e56bb7eb17d3f`
@@ -223,4 +222,6 @@ Version 0.12 pre-publication verification:
   references, overfull boxes, or underfull boxes
 - sole authorship, ORCID, version, reserved DOI, concept DOI, CC-BY-4.0 metadata, and new source
   citation gates pass
-- public upload, publication, concept-latest resolution, and fresh-download equality remain pending
+- the concept latest resolves to record `21988601`; public version, sole author/ORCID, CC-BY-4.0
+  licence, filename, bytes, MD5, and SHA-256 match the committed record
+- a fresh unauthenticated public download matches the committed PDF exactly

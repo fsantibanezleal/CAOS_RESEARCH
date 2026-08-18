@@ -26,4 +26,5 @@
 | HWB-022 | 1 | done | conductor fiber cone and canonical Cohen--Macaulayization | EXP-021 proves the exact square, natural quotient, type `10p+1`, and nonlevel behavior |
 | HWB-023 | 2 | done | defining ideal of the conductor fiber cone | EXP-023 proves the full presentation by `50p^2-17p` quadrics plus the single cubic `X_0^2X_(3p)-X_p^3`; relation type three and non-Koszulness follow |
 | HWB-024 | 1 | done | manuscript and Zenodo update for the fiber-cone theorem | v0.11 published and fresh-download verified at `10.5281/zenodo.21909961` |
-| HWB-025 | 1 | in progress | manuscript and Zenodo update for the defining-ideal theorem | expand to v0.12, complete claim/build/render QA, publish a frozen new version, and verify the public file |
+| HWB-025 | 1 | done | manuscript and Zenodo update for the defining-ideal theorem | v0.12 published and fresh-download verified at `10.5281/zenodo.21988601` |
+| HWB-026 | 1 | in progress | repository promotion and immutable handoff for EXP-022/023 plus v0.12 | required checks pass on PRs to `develop` and `main`; merge commits and equal remote trees are recorded |

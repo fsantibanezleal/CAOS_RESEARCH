@@ -55,9 +55,10 @@
 | 2026-08-17 | active | active | EXP-023 declared before implementation: test whether the EXP-022 cubic is the unique higher equation, giving relation type three and a non-Koszul fiber cone |
 | 2026-08-18 | active | confirmed | EXP-023 proves the uniform minimal presentation by `50p^2-17p` quadrics and one cubic; exact all-parameter connectivity, bounded campaign, and independent audit pass |
 | 2026-08-18 | confirmed | active | manuscript v0.12 and Zenodo new-version gate opened for the defining-ideal theorem; publication is not yet claimed |
+| 2026-08-18 | active | published | 27-page preprint v0.12 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.21988601`, and matched a fresh public download exactly |
 
-Current state: **active** (EXP-023 is CONFIRMED; manuscript v0.12 and Zenodo publication are in
-progress).
+Current state: **published** (EXP-023 is CONFIRMED and manuscript v0.12 is publicly verified;
+repository PR promotion remains active).
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.

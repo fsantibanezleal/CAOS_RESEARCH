@@ -554,3 +554,17 @@
   and `test` and merged the complete theorem/publication round to `develop` at `5b9ca074`; PR #169
   passed all checks and promoted the identical tested tree to `main` at `06a6af92`. No release tag
   is claimed.
+
+## 2026-08-18 - Defining-ideal preprint v0.12 published
+
+- Expanded the manuscript to 27 pages with the EXP-022 refutation, EXP-023 complete presentation,
+  exact first Betti row, relation type three, and non-Koszulness theorem.
+- The claim audit, warning-free final build, complete 27-page rendered inspection, metadata, new
+  primary-source citation, and sole-human-authorship gates passed before upload.
+- Published Zenodo version DOI `10.5281/zenodo.21988601`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21988601`.
+- A fresh unauthenticated public download is 615,252 bytes with MD5
+  `c8b810a763b9bb55d076a454df49b413` and SHA-256
+  `98d730fb8afaf40149d028bdde0b1c3ba9851f1dbcd15475567e56bb7eb17d3f`, exactly matching Git.
+- Public version, sole author/ORCID, CC-BY-4.0 licence, filename, and hashes match. Repository PR
+  promotion remains the only active delivery gate; no release tag is claimed.

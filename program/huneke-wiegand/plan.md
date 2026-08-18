@@ -299,3 +299,11 @@ Cohen--Macaulay special fiber is not Koszul. This material theorem opens HWB-025
 claim/build/render QA, Zenodo new-version publication, and checked PR promotion. The symbolic
 trust boundary must remain explicit because the Z3 UNSAT leaves do not have a separately checked
 proof object.
+
+The v0.12 publication gate is complete. The 27-page preprint passed the claim audit, warning-free
+stable build, complete rendered inspection, sole-human-authorship and metadata checks before
+upload. Zenodo record `21988601`, DOI `10.5281/zenodo.21988601`, resolves as concept latest; a
+fresh unauthenticated download matches the committed 615,252-byte PDF at SHA-256
+`98d730fb8afaf40149d028bdde0b1c3ba9851f1dbcd15475567e56bb7eb17d3f`. HWB-026 is now the only
+delivery gate: checked PR promotion to `develop` and `main`, followed by merge/tree reconciliation.
+No release tag is part of this round.

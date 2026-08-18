@@ -1,6 +1,6 @@
 # Claim audit - manuscript v0.12
 
-Audited: 2026-08-18. Pre-publication result: PASS.
+Audited: 2026-08-18. Final publication result: PASS.
 
 Version 0.12 retains all v0.11 claims and adds only the defining-ideal results closed by EXP-022
 and EXP-023. The quadratic conjecture remains visibly refuted. The all-parameter presentation
@@ -23,7 +23,8 @@ separately checked proof object.
 | source identity | Abdolmaleki--Kumashiro, IJAC 34(7) (2024), 1099--1109, DOI `10.1142/S0218196724500437` | PASS; journal metadata and Theorem 2.8 checked against the primary source |
 | solver trust boundary | EXP-023 verdict, proof, symbolic artifact, and manuscript trust section | PASS; no claim of proof-carrying or proof-assistant verification |
 | authorship | title page and `zenodo.json` | PASS; Felipe Santibanez-Leal is sole author; no automated system named |
-| publication identity before upload | reserved Zenodo draft and page-one block | PASS; version `0.12`, reserved DOI `10.5281/zenodo.21988601`, concept DOI, date, licence, and sole author/ORCID agree; no publication yet claimed |
+| publication identity before upload | reserved Zenodo draft and page-one block | PASS; version `0.12`, reserved DOI `10.5281/zenodo.21988601`, concept DOI, date, licence, and sole author/ORCID agreed before upload |
+| public record and immutable file | Zenodo record `21988601` plus fresh unauthenticated download | PASS; concept-latest, version, DOI, sole author/ORCID, CC-BY-4.0, filename, 615,252 bytes, MD5, and SHA-256 agree with Git exactly |
 
 ## Scope boundaries
 
@@ -50,4 +51,6 @@ separately checked proof object.
   are legible with no clipping or overlap;
 - frozen candidate PDF: 615,252 bytes, MD5 `c8b810a763b9bb55d076a454df49b413`, SHA-256
   `98d730fb8afaf40149d028bdde0b1c3ba9851f1dbcd15475567e56bb7eb17d3f`;
-- public-record gate: PENDING; upload and publication are forbidden until this audit is committed.
+- public-record gate: PASS; the fresh public file is byte-identical to the committed PDF, MD5
+  `c8b810a763b9bb55d076a454df49b413`, SHA-256
+  `98d730fb8afaf40149d028bdde0b1c3ba9851f1dbcd15475567e56bb7eb17d3f`.
