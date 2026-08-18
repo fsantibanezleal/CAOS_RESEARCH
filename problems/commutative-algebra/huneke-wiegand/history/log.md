@@ -783,3 +783,18 @@
   `12cc380bcc72613694b24cc9f74284f8f3d35e4958ec3569b6ebacce3225e398` exactly.
 - HWB-034 is complete. HWB-036 now owns checked repository promotion and final handoff; no new
   theorem experiment has been declared.
+
+## 2026-08-18 - EXP-026 publication round promoted
+
+- PR #190 passed `guards` and `test` and merged the complete EXP-026 theorem, artifacts, companion
+  v0.02, and verified Zenodo record to `develop` at
+  `6b9d4670e9e6c0316e135f4e1148bfbb007508ba`.
+- PR #191 passed all required checks and promoted the same tested state to `main` at
+  `5dfb1af5dcf404425ac88116476f317e6697f48a`.
+- Remote research work, `develop`, and `main` share payload tree
+  `1fb094d102e1f91a6c9754cca26d7f57666450fb`.
+- CAOS_MANAGE remained on `develop`; PR #559 promoted only the scoped publication workflow and
+  ledger to `main` at `5bfd7fdbecfddb7da7966bc55bf73c452501f43e`. Its `develop` and `main`
+  trees match at `372cd71d3acca38b92f872cd0995b5b9a264d543`.
+- HWB-036 is complete. No theorem experiment or delivery gate remains active, and no release tag is
+  claimed for this research-only round.
