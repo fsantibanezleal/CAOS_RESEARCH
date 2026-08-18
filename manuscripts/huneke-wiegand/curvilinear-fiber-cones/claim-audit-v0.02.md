@@ -1,12 +1,13 @@
 # Claim audit - curvilinear conductor fiber cones v0.02
 
-Audit date: 2026-08-18. Prepublication decision: **PASS - exact candidate frozen for DOI
-reservation**.
+Audit date: 2026-08-18. Prepublication decision: **PASS - exact DOI-bearing candidate frozen for
+upload**.
 
 Version 0.02 retains every v0.01 primary-structure result and adds only the explicit canonical
-grevlex degeneration established by EXP-026. The version DOI is intentionally absent from this
-candidate: it will be inserted only after Zenodo reserves the new-version record, followed by a
-fresh complete build, render, metadata, upload, and public-download audit.
+grevlex degeneration established by EXP-026. Zenodo draft `22002907` reserved version DOI
+`10.5281/zenodo.22002907`. That DOI was inserted before a fresh complete build, extraction,
+metadata, and eight-page render audit. Upload, publication, and public-download verification remain
+separate gates.
 
 ## Claim map
 
@@ -59,13 +60,14 @@ degree-stabilization arguments remain separate deductive steps.
 - no LaTeX/package warnings, undefined references, overfull boxes, or underfull boxes;
 - PDF metadata has the intended title, subject, keywords, and Felipe as sole author;
 - PDF has eight letter-size pages, no encryption, form fields, or JavaScript;
-- text extraction confirms version 0.02, the theorem profile, absence of later basis elements, the
-  remaining Betti-table question, and absence of placeholder or automated-authorship text;
+- text extraction confirms version 0.02, both DOI strings, the theorem profile, absence of later
+  basis elements, the remaining Betti-table question, and absence of placeholder or
+  automated-authorship text;
 - all eight pages rendered at 150 DPI and individually inspected after the final source change;
 - no clipping, overlap, broken equation, stray TeX command, unreadable glyph, table overflow,
   bibliography defect, or stranded heading.
 
-Frozen pre-DOI candidate:
+Committed pre-DOI checkpoint:
 
 ```text
 file    = main.pdf
@@ -73,6 +75,16 @@ pages   = 8
 bytes   = 453450
 MD5     = 2c293dd26bd8c34498539f0c7e9b609e
 SHA-256 = 036490d25dbb886d3e3351a2c33f94a31a0bef068ef87e4ca016e32d3175af88
+```
+
+Frozen DOI-bearing upload candidate:
+
+```text
+file    = main.pdf
+pages   = 8
+bytes   = 453621
+MD5     = 53123ab5bed9a6c84c37ebde1610c3f7
+SHA-256 = 12cc380bcc72613694b24cc9f74284f8f3d35e4958ec3569b6ebacce3225e398
 ```
 
 ## Identity, attribution, and metadata QA
@@ -84,12 +96,12 @@ SHA-256 = 036490d25dbb886d3e3351a2c33f94a31a0bef068ef87e4ca016e32d3175af88
 - no LLM, AI system, tool, or model is named as author or co-author;
 - version `0.02`, English language, CC BY 4.0, subject, keywords, and related identifiers agree
   across `main.tex`, `README.md`, and valid `zenodo.json`;
-- concept DOI `10.5281/zenodo.21997377` is retained; the new version DOI remains pending by design.
+- concept DOI `10.5281/zenodo.21997377` is retained and version DOI
+  `10.5281/zenodo.22002907` is reserved and embedded.
 
 ## Publication gate
 
-Prepublication QA is complete. Publication remains pending until the new-version DOI is reserved,
-inserted into the manuscript, and the DOI-bearing artifact passes the same full build and visual
-inspection. Only that final file may be uploaded. After publication, public metadata and a fresh
-unauthenticated download must match the committed byte count, MD5, and SHA-256 before this audit is
-closed as a published PASS.
+DOI reservation and complete DOI-bearing prepublication QA are complete. Only the 453,621-byte
+candidate identified above may be uploaded. After publication, public metadata and a fresh
+unauthenticated download must match its byte count, MD5, and SHA-256 before this audit is closed as
+a published PASS.

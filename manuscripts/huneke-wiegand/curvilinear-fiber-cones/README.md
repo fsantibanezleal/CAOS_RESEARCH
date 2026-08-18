@@ -1,8 +1,8 @@
 # Curvilinear conductor fiber cones
 
 Focused companion preprint for EXP-025 and EXP-026. Version 0.01 is the frozen, published,
-fresh-download-verified six-page primary-structure paper. Version 0.02 is an active pre-upload
-candidate that adds the complete reduced grevlex basis, its exact degree profile, and the flat
+fresh-download-verified six-page primary-structure paper. Version 0.02 is a DOI-bearing
+prepublication candidate that adds the complete reduced grevlex basis, its exact degree profile, and the flat
 Cohen--Macaulay monomial degeneration. The manuscript retains the truncated-monomial
 parametrization, complete one-component primary decomposition, sharp nilpotence index,
 curvilinear projective geometry, local-versus-arithmetic Gorenstein contrast, and
@@ -21,7 +21,9 @@ Active version state:
 
 - version: `0.02`
 - licence: CC BY 4.0
-- status: pre-upload candidate; version DOI is not yet reserved
+- status: DOI-bearing candidate; Zenodo draft reserved, upload and publication pending
+- version DOI: `10.5281/zenodo.22002907`
+- draft record id: `22002907`
 - concept DOI: `10.5281/zenodo.21997377`
 - trigger: EXP-026 confirmed theorem
 
