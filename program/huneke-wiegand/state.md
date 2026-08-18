@@ -62,10 +62,11 @@
 | 2026-08-18 | active | confirmed | EXP-024 proves projective dimension `10p-1`, regularity four, exact first linear syzygies, the complete last row, penultimate extremal entry `8p`, and canonical-module generator degrees |
 | 2026-08-18 | confirmed | active | 29-page manuscript v0.13 passed claim/build/render and sole-authorship QA; reversible Zenodo draft `21995498` is reserved but empty and unpublished |
 | 2026-08-18 | active | published | v0.13 was published at DOI `10.5281/zenodo.21995498`; public metadata and a fresh unauthenticated 635,617-byte download match MD5 `d6ce72589100d1f57986da000501fdc7` and SHA-256 `cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed` |
+| 2026-08-18 | published | published | PR #182 passed `guards` and `test` and merged EXP-024 plus v0.13 to `develop` at `26c52103`; PR #183 passed all required checks and promoted the identical tested tree to `main` at `f24b078b` |
 
-Current state: **active repository-promotion gate** (EXP-024 is CONFIRMED and manuscript v0.13 is
-published and fresh-download verified; only checked PR promotion and durable merge reconciliation
-remain).
+Current state: **published handoff** (EXP-024, manuscript v0.13, Zenodo publication, and repository
+promotion are complete; work, `develop`, and `main` are tree-identical at
+`5c828789a5d993a35a1e42743860600d156c9f99`).
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.
