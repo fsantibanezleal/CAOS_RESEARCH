@@ -458,3 +458,15 @@ reproducible `p=4` smoke, followed by the exact campaign, independent factorizat
 Hilbert-function proof that the proposed boundary is the entire initial ideal. If confirmed, the
 result expands the focused curvilinear companion to v0.02; a manuscript split is deferred to a
 future complete interior Betti table or a genuinely broader method.
+
+EXP-026 is CONFIRMED. The reduced basis has exact degree profile
+`(50p^2-17p,5p-1,p-2)`, total size `50p^2-11p-3`, six cubic families, one quartic family, and no
+later boundary. The optimized exact campaign passes all 297 parameters in 8.474 seconds; the
+independent clique audit reconstructs selected small and large cases through `p=300`; and 16
+fresh-process Presburger obligations prove all-parameter cubic/quartic completeness, soundness,
+and reduced tails. The infinite degree tail closes deductively from
+`N_(n,s)=X_0^(n-4)N_(4,s)` for `n>=4`.
+
+The manuscript trigger is crossed. HWB-029 is closed for the Groebner problem, HWB-035 now owns
+the distinct interior-Betti question, and HWB-034 is active for v0.02 of the focused curvilinear
+companion plus a Zenodo new version.

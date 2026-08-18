@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import bisect
 import hashlib
+import itertools
 import json
 import time
 from datetime import datetime, timezone
@@ -112,7 +113,7 @@ def divisors(value: Monomial) -> set[Monomial]:
 
 
 class Staircase:
-    """Compact exact oracle for grevlex-smallest nondecreasing factorizations."""
+    """Exact oracle for canonical quadratic factors and the declared variable order."""
 
     def __init__(self, p: int) -> None:
         self.p = p
@@ -121,32 +122,15 @@ class Staircase:
         self.offset_set = frozenset(self.offsets)
 
     @lru_cache(maxsize=None)
-    def _canonical(self, degree: int, total: int, start: int) -> Monomial | None:
-        if degree == 0:
-            return () if total == 0 else None
-        if total < 0 or start >= len(self.offsets):
-            return None
-        smallest = self.offsets[start]
-        largest = self.offsets[-1]
-        if degree * smallest > total or degree * largest < total:
-            return None
-        stop = bisect.bisect_right(self.offsets, total // degree)
-        for index in range(start, stop):
-            value = self.offsets[index]
-            if value + (degree - 1) * largest < total:
-                continue
-            tail = self._canonical(degree - 1, total - value, index)
-            if tail is not None:
-                return (value,) + tail
-        return None
-
-    def canonical(self, degree: int, total: int) -> Monomial | None:
+    def canonical_pair(self, total: int) -> Monomial | None:
         if total >= self.q:
             return None
-        return self._canonical(degree, total, 0)
-
-    def is_standard(self, value: Monomial) -> bool:
-        return self.canonical(len(value), sum(value)) == value
+        stop = bisect.bisect_right(self.offsets, total // 2)
+        for left in self.offsets[:stop]:
+            right = total - left
+            if right in self.offset_set:
+                return (left, right)
+        return None
 
     def reverse_canonical_pair(self, total: int) -> Monomial | None:
         answer = None
@@ -216,7 +200,38 @@ def relation_hash(relations: list[Relation]) -> str:
     return canonical_hash([[list(lead), list(tail)] for lead, tail in sorted(relations)])
 
 
-def validate_relation(staircase: Staircase, relation: Relation) -> None:
+def submonomials(value: Monomial, degree: int) -> set[Monomial]:
+    return {
+        tuple(value[index] for index in indices)
+        for indices in itertools.combinations(range(len(value)), degree)
+    }
+
+
+def is_standard_from_boundary(
+    staircase: Staircase,
+    value: Monomial,
+    cubic_leads: set[Monomial],
+    quartic_leads: set[Monomial],
+) -> bool:
+    if sum(value) >= staircase.q:
+        return False
+    if len(value) >= 2 and any(
+        staircase.canonical_pair(sum(pair)) != pair for pair in submonomials(value, 2)
+    ):
+        return False
+    if len(value) >= 3 and submonomials(value, 3) & cubic_leads:
+        return False
+    if len(value) >= 4 and submonomials(value, 4) & quartic_leads:
+        return False
+    return True
+
+
+def validate_relation(
+    staircase: Staircase,
+    relation: Relation,
+    cubic_leads: set[Monomial],
+    quartic_leads: set[Monomial],
+) -> None:
     lead, tail = relation
     if not set(lead + tail) <= staircase.offset_set:
         raise AssertionError(f"p={staircase.p}: relation uses a missing variable: {relation}")
@@ -224,11 +239,14 @@ def validate_relation(staircase: Staircase, relation: Relation) -> None:
         raise AssertionError(f"p={staircase.p}: relation is not bihomogeneous: {relation}")
     if not lead > tail:
         raise AssertionError(f"p={staircase.p}: wrong grevlex orientation: {relation}")
-    if staircase.canonical(len(tail), sum(tail)) != tail:
+    if not is_standard_from_boundary(staircase, tail, cubic_leads, quartic_leads):
         raise AssertionError(f"p={staircase.p}: noncanonical reduced tail: {relation}")
-    if staircase.is_standard(lead):
+    if is_standard_from_boundary(staircase, lead, cubic_leads, quartic_leads):
         raise AssertionError(f"p={staircase.p}: proposed lead is standard: {lead}")
-    if not all(staircase.is_standard(item) for item in divisors(lead)):
+    if not all(
+        is_standard_from_boundary(staircase, item, cubic_leads, quartic_leads)
+        for item in divisors(lead)
+    ):
         raise AssertionError(f"p={staircase.p}: lead is not a minimal boundary: {lead}")
 
 
@@ -271,12 +289,14 @@ def analyze_parameter(p: int) -> dict[str, object]:
 
     cubics = cubic_relations(p)
     quartics = quartic_relations(p)
-    if len({lead for lead, _tail in cubics}) != 5 * p - 1:
+    cubic_leads = {lead for lead, _tail in cubics}
+    quartic_leads = {lead for lead, _tail in quartics}
+    if len(cubic_leads) != 5 * p - 1:
         raise AssertionError(f"p={p}: cubic family collision")
-    if len({lead for lead, _tail in quartics}) != p - 2:
+    if len(quartic_leads) != p - 2:
         raise AssertionError(f"p={p}: quartic family collision")
     for relation in cubics + quartics:
-        validate_relation(staircase, relation)
+        validate_relation(staircase, relation, cubic_leads, quartic_leads)
     if any(0 in lead for lead, _tail in cubics + quartics):
         raise AssertionError(f"p={p}: X_0 divides a nonquadratic leading monomial")
 
@@ -292,7 +312,7 @@ def analyze_parameter(p: int) -> dict[str, object]:
     if profile != expected_profile:
         raise AssertionError(f"p={p}: degree profile {profile} != {expected_profile}")
 
-    declared_pair = staircase.canonical(2, 4 * p)
+    declared_pair = staircase.canonical_pair(4 * p)
     reverse_pair = staircase.reverse_canonical_pair(4 * p)
     controls = {
         "reversed_order_rejected": declared_pair != reverse_pair,
@@ -301,7 +321,9 @@ def analyze_parameter(p: int) -> dict[str, object]:
         "corrupted_tail_rejected": sum(monomial(0, 1, 3 * p)) != 3 * p,
         "wrong_total_offset_rejected": sum(monomial(p, p, p)) != sum(monomial(0, 1, 3 * p)),
         "x0_leading_generator_rejected": not any(0 in lead for lead, _tail in cubics + quartics),
-        "degree_five_false_standard_rejected": not staircase.is_standard(monomial(p, p, p, p, p)),
+        "degree_five_false_standard_rejected": not is_standard_from_boundary(
+            staircase, monomial(p, p, p, p, p), cubic_leads, quartic_leads
+        ),
         "eventual_hilbert_only_rejected": dimensions[:4] != [q, q, q, q],
     }
     if not all(controls.values()):
@@ -395,4 +417,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

@@ -1,12 +1,12 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-18. Lifecycle: active post-publication research. EXP-026 is declared before
-implementation for the explicit reduced grevlex basis of the conductor fiber cone. A read-only
-invariant probe at `p=4,...,15` predicts degree profile
+Updated: 2026-08-18. Lifecycle: confirmed; manuscript update active. EXP-026 proves the explicit
+reduced grevlex basis of the conductor fiber cone, with degree profile
 `(50p^2-17p,5p-1,p-2)` in degrees two through four, no later basis elements, and no leading
-generator divisible by `X_0`; six closed cubic families and one quartic family are frozen in the
-preflight. The next gate is the mandatory implementation smoke, campaign, independent audit, and
-symbolic staircase proof. EXP-025 remains CONFIRMED. It proves
+generator divisible by `X_0`. The full `p=4,...,300` campaign, independent clique audit,
+16-query all-parameter certificate, and deductive staircase stabilization pass. The active gate
+is companion manuscript v0.02 and a Zenodo new version; the unresolved interior Betti table is a
+separate task. EXP-025 remains CONFIRMED. It proves
 that the conductor special fiber is an explicit truncated-monomial algebra, its defining ideal
 has one primary component, and its projective scheme is a length-`24p` curvilinear fat point with
 sharp nilpotence index `24p`. The `p=4,...,300` campaign and independent all-row audit pass with

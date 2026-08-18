@@ -750,3 +750,17 @@
 - The cubic and quartic boundary matched six closed cubic families and one quartic family exactly.
 - Declared EXP-026 before implementation. Confirmation still requires the mandatory smoke, exact
   campaign, independent audit, adversarial controls, and symbolic Hilbert-function proof.
+
+## 2026-08-18 - EXP-026 confirmed
+
+- The mandatory smoke passed and was committed before the full campaign.
+- Preserved the first full run as `INCONCLUSIVE_BUDGET` after 141 rows; profiling identified the
+  recursive canonical oracle as the cost center.
+- A cached quadratic oracle plus boundary-divisibility validation preserved earlier row hashes and
+  passed every `p=4,...,300` in 8.474 seconds.
+- The independent clique audit reconstructed canonical factorization complexes through degree six
+  at seven samples including `p=300`; it found no degree-five or degree-six boundary.
+- Sixteen all-parameter Presburger obligations closed UNSAT in fresh solver processes, proving
+  exact cubic/quartic boundary families and every reduced tail. The infinite tail is closed by the
+  deterministic `X_0`-stabilization lemma rather than a runtime-unstable quantified query.
+- EXP-026 is CONFIRMED. The focused companion v0.02 and Zenodo new-version gate are active.
