@@ -1,0 +1,162 @@
+{
+  "experiment": "EXP-025-curvilinear-primary-structure",
+  "generated_at": "2026-08-18T14:18:00.763113+00:00",
+  "status": "PASS",
+  "campaign_aggregate": "f3373f4f58287fd3f553b95efa226e7938170d32f24eea6a014ca47f9d6b39b6",
+  "row_count": 297,
+  "range": {
+    "first": 4,
+    "requested_last": 300
+  },
+  "selected_reconstructions": [
+    {
+      "p": 4,
+      "q": 96,
+      "basis_dimensions": [
+        1,
+        40,
+        88,
+        95,
+        96,
+        96
+      ],
+      "layer_dimensions": [
+        1,
+        39,
+        48,
+        7,
+        1
+      ],
+      "partition_exact": true,
+      "dehom_relations_complete": true,
+      "sharp_nilpotence": true,
+      "source_row_hash": "aca267b0136737f896376c998a7ba111e099f8065ba5153d7ab9b1faa2ffa44e"
+    },
+    {
+      "p": 5,
+      "q": 120,
+      "basis_dimensions": [
+        1,
+        50,
+        110,
+        119,
+        120,
+        120
+      ],
+      "layer_dimensions": [
+        1,
+        49,
+        60,
+        9,
+        1
+      ],
+      "partition_exact": true,
+      "dehom_relations_complete": true,
+      "sharp_nilpotence": true,
+      "source_row_hash": "117413c97cbabd18b3753b516b453115c4252187604a272d0cc04497e2ef35c0"
+    },
+    {
+      "p": 17,
+      "q": 408,
+      "basis_dimensions": [
+        1,
+        170,
+        374,
+        407,
+        408,
+        408
+      ],
+      "layer_dimensions": [
+        1,
+        169,
+        204,
+        33,
+        1
+      ],
+      "partition_exact": true,
+      "dehom_relations_complete": true,
+      "sharp_nilpotence": true,
+      "source_row_hash": "f71bdbd2681e59d70a3de3d6f38cf0107585e792bde4029bc7c12e3ffb5f444d"
+    },
+    {
+      "p": 73,
+      "q": 1752,
+      "basis_dimensions": [
+        1,
+        730,
+        1606,
+        1751,
+        1752,
+        1752
+      ],
+      "layer_dimensions": [
+        1,
+        729,
+        876,
+        145,
+        1
+      ],
+      "partition_exact": true,
+      "dehom_relations_complete": true,
+      "sharp_nilpotence": true,
+      "source_row_hash": "c8d962cd4e43ea36ed1f3bdbf2d4e54375c6c80ddeb66607174d507e17653e70"
+    },
+    {
+      "p": 151,
+      "q": 3624,
+      "basis_dimensions": [
+        1,
+        1510,
+        3322,
+        3623,
+        3624,
+        3624
+      ],
+      "layer_dimensions": [
+        1,
+        1509,
+        1812,
+        301,
+        1
+      ],
+      "partition_exact": true,
+      "dehom_relations_complete": true,
+      "sharp_nilpotence": true,
+      "source_row_hash": "33da9867ae5f6d0b9d935cae65e83c1e2db01984f52b978df2fc0a2cbf5ae9e9"
+    },
+    {
+      "p": 300,
+      "q": 7200,
+      "basis_dimensions": [
+        1,
+        3000,
+        6600,
+        7199,
+        7200,
+        7200
+      ],
+      "layer_dimensions": [
+        1,
+        2999,
+        3600,
+        599,
+        1
+      ],
+      "partition_exact": true,
+      "dehom_relations_complete": true,
+      "sharp_nilpotence": true,
+      "source_row_hash": "55f4c48cc4d9175dae1276a7bdca18c352904617165a19bb9cba0ec2e0a8ccd7"
+    }
+  ],
+  "all_rows_rehashed": true,
+  "all_rows_independently_reconstructed": true,
+  "controls": {
+    "embedded_prime_counterexample_blocks_primary_inference": true,
+    "deleted_offset_one_breaks_curvilinear_reduction": true,
+    "wrong_truncation_changes_length": true,
+    "wrong_nilindex_rejected_by_sharp_witness": true,
+    "local_and_arithmetic_gorenstein_not_conflated": true,
+    "characteristic_split_retained": true
+  },
+  "audit_aggregate": "84c00be8ff64002e8738a5d4307d71df73dfa7595e810c7e764f6f5b6c8f143e"
+}

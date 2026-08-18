@@ -644,3 +644,83 @@
   `f24b078b98376224b38753f7294d26627147c4ea`.
 - Remote work, `develop`, and `main` are tree-identical at
   `5c828789a5d993a35a1e42743860600d156c9f99`. No release tag is claimed.
+
+## 2026-08-18 - v0.13 durable handoff reconciled
+
+- Documentation-only PR #184 merged the final v0.13 handoff to `develop`; PR #185 promoted it to
+  `main`.
+- Before EXP-025 opened, remote work, `develop`, and `main` shared tree
+  `b70a3990583057a92e591c34d5f9e9c101185e8c`. The earlier `5c828...` tree is retained as the
+  theorem/publication payload tree, not mislabeled as the final handoff.
+
+## 2026-08-18 - EXP-025 declared
+
+- Archived and read primary context on nonradical monomial fiber cones and curvilinear
+  zero-dimensional schemes; no exact result for this conductor family was identified.
+- Redirected the round from an expensive unconstrained Groebner search to an invariant-first
+  truncated-monomial parametrization forced by EXP-021 freeness and EXP-023 value congruences.
+- A read-only sanity check at `p=4,5,17,73,151,300` found the exact `[0,24p-1]` layer partition,
+  offset-one generator, and sharp candidate truncation boundary.
+- Declared EXP-025 before implementation. It predicts a one-component primary decomposition,
+  nilpotency index `24p`, and a length-`24p` curvilinear fat point which is locally but not
+  arithmetically Gorenstein.
+- The full result, if confirmed, meets the previously recorded threshold for a separate companion
+  manuscript. No theorem, manuscript, Zenodo record, or delivery is yet claimed.
+- Before implementation, the declaration was sharpened by the differential corollary
+  `Omega^1=(k[y]/(y^(24p),24p*y^(24p-1)))dy`; this records the characteristic split rather than
+  hiding it behind the characteristic-zero manuscript setting.
+
+## 2026-08-18 - EXP-025 confirms the curvilinear primary theorem
+
+- The mandatory `p=4` smoke passed both the truncated-sumset campaign route and the independently
+  encoded disjoint-layer audit route.
+- The full campaign passed all 297 parameters `p=4,...,300` in 1.84 seconds; campaign aggregate
+  `f3373f4f58287fd3f553b95efa226e7938170d32f24eea6a014ca47f9d6b39b6`.
+- The audit rehashed and independently reconstructed every row, with detailed checks at
+  `p=4,5,17,73,151,300`; audit aggregate
+  `84c00be8ff64002e8738a5d4307d71df73dfa7595e810c7e764f6f5b6c8f143e`.
+- The symbolic proof establishes the truncated parametrization, exact radical and primaryness,
+  nilpotency index `24p`, saturation, length-`24p` curvilinear geometry, local-versus-arithmetic
+  Gorenstein contrast, and differential signature for every `p>=4`.
+- This is the standalone primary-decomposition result reserved by EXP-024. A focused companion
+  manuscript and separate Zenodo concept record are opened; neither is yet claimed as complete.
+
+## 2026-08-18 - companion manuscript v0.01 candidate validated
+
+- Created a focused six-page companion note rather than extending the already broad v0.13
+  manuscript.
+- The claim audit maps every theorem to EXP-025 and preserves the frozen-premise, finite-evidence,
+  scope, source, and characteristic boundaries.
+- A clean two-pass build has no warnings, undefined references, overfull boxes, or underfull
+  boxes. Every page was rendered at 150 DPI and inspected after replacing inconsistent draft
+  running headers with a uniform footer-only style.
+- Sole author Felipe Santibañez-Leal, ORCID, Son Pham priority, Craig Huneke external-verification
+  provenance, CC BY 4.0, and Zenodo metadata gates pass.
+- Frozen no-DOI candidate: 424,453 bytes, MD5 `168262c356b89d1e5b0d4eb3f552a120`, SHA-256
+  `cb78f46f2e3e2250594523a0dffe16806eefc499c44fa1b6b8a67ab3d074f07d`.
+- No Zenodo draft, DOI, upload, or publication is claimed. Separate concept-draft creation is the
+  next reversible gate.
+
+## 2026-08-18 - companion manuscript DOI-bearing candidate validated
+
+- Reserved reversible Zenodo draft `21997378`, version DOI `10.5281/zenodo.21997378`, and separate
+  concept DOI `10.5281/zenodo.21997377`; no publication was performed at reservation.
+- Inserted both identifiers in the manuscript and repeated the two-pass build, complete 150-DPI
+  inspection of all six pages, PDF metadata, claim, identity, and sole-authorship gates.
+- The DOI-bearing candidate is 424,886 bytes, MD5 `43ce7ec181d26c38b17678b453a8e27e`, SHA-256
+  `e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`.
+- The exact attachment, publication, and fresh public-download verification remain pending; no
+  upload or publication is claimed at this checkpoint.
+
+## 2026-08-18 - curvilinear companion v0.01 published and verified
+
+- Attached the frozen DOI-bearing candidate as
+  `huneke-wiegand-curvilinear-fiber-cones-v0.01.pdf`; authenticated draft inspection matched its
+  424,886-byte size, MD5, title, version, reserved DOI, and sole creator before publication.
+- Published Zenodo version DOI `10.5281/zenodo.21997378`; separate concept DOI
+  `10.5281/zenodo.21997377` resolves to record `21997378`.
+- The public API confirms title, version 0.01, sole author/ORCID, CC BY 4.0 licence, filename, size,
+  and checksum. A fresh unauthenticated download has SHA-256
+  `e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`, exactly matching Git.
+- The Zenodo gate is complete. Checked repository PR promotion is now the only active delivery
+  gate; no global release tag is claimed.

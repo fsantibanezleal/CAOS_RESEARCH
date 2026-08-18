@@ -63,10 +63,18 @@
 | 2026-08-18 | confirmed | active | 29-page manuscript v0.13 passed claim/build/render and sole-authorship QA; reversible Zenodo draft `21995498` is reserved but empty and unpublished |
 | 2026-08-18 | active | published | v0.13 was published at DOI `10.5281/zenodo.21995498`; public metadata and a fresh unauthenticated 635,617-byte download match MD5 `d6ce72589100d1f57986da000501fdc7` and SHA-256 `cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed` |
 | 2026-08-18 | published | published | PR #182 passed `guards` and `test` and merged EXP-024 plus v0.13 to `develop` at `26c52103`; PR #183 passed all required checks and promoted the identical tested tree to `main` at `f24b078b` |
+| 2026-08-18 | published | published | documentation handoff PRs #184/#185 completed; all three remote branches shared final tree `b70a3990583057a92e591c34d5f9e9c101185e8c` before EXP-025 opened |
+| 2026-08-18 | published | active | EXP-025 declared before implementation: test an explicit truncated-monomial parametrization, one-component primary decomposition, sharp nilpotence, and curvilinear projective geometry |
+| 2026-08-18 | active | confirmed | EXP-025 proves the truncated parametrization, one-component primary decomposition, nilpotency index `24p`, length-`24p` curvilinear geometry, local/arithmetic Gorenstein separation, and differential signature |
+| 2026-08-18 | confirmed | active | the prior manuscript-split gate is satisfied; a focused companion preprint and separate Zenodo concept record are now in preparation |
+| 2026-08-18 | active | active | six-page companion v0.01 passed claim, clean-build, complete-render, metadata, and sole-authorship QA; separate Zenodo concept-draft creation is the active reversible gate |
+| 2026-08-18 | active | active | separate draft `21997378` reserved version DOI `10.5281/zenodo.21997378` and concept DOI `10.5281/zenodo.21997377`; the DOI-bearing 424,886-byte candidate passed the repeated complete QA and is ready for attachment |
+| 2026-08-18 | active | published | companion v0.01 published at DOI `10.5281/zenodo.21997378`; public metadata and fresh unauthenticated download match SHA-256 `e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a` |
 
-Current state: **published handoff** (EXP-024, manuscript v0.13, Zenodo publication, and repository
-promotion are complete; work, `develop`, and `main` are tree-identical at
-`5c828789a5d993a35a1e42743860600d156c9f99`).
+Current state: **active repository-promotion gate** (EXP-025 is CONFIRMED and the focused six-page
+v0.01 is published and fresh-download verified at DOI `10.5281/zenodo.21997378`). The preceding
+v0.13 handoff was tree-identical at
+`b70a3990583057a92e591c34d5f9e9c101185e8c` after PRs #184/#185.
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.
