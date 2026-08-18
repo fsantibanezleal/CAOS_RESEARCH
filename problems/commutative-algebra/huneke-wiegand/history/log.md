@@ -724,3 +724,18 @@
   `e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`, exactly matching Git.
 - The Zenodo gate is complete. Checked repository PR promotion is now the only active delivery
   gate; no global release tag is claimed.
+
+## 2026-08-18 - EXP-025 publication round promoted
+
+- PR #186 passed `guards` and `test` and merged the complete EXP-025 theorem, focused companion,
+  and verified Zenodo record to `develop` at
+  `1c94632f5bb631fd4d85916488dc7a943a899109`.
+- PR #187 passed all required checks and promoted the same tested state to `main` at
+  `18e7d9728c3a8c210ea6a36d81bba6b6325cc536`.
+- Remote research work, `develop`, and `main` share tested payload tree
+  `53e5e61ffeeb5816497e3e477921bc94c4a5f91d`.
+- CAOS_MANAGE stayed on `develop`; only the curvilinear manuscript governance files were committed.
+  PR #557 promoted that ledger to `main` at `ec11d010246341347fd4d11b49b29998ec9a6cf1`, with
+  management `develop` and `main` tree-identical at `f7db0c50a75491738dbfad998d235458f4bb69ee`.
+- HWB-033 is closed. No experiment or delivery gate remains active, and no global release tag is
+  claimed.

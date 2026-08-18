@@ -70,11 +70,12 @@
 | 2026-08-18 | active | active | six-page companion v0.01 passed claim, clean-build, complete-render, metadata, and sole-authorship QA; separate Zenodo concept-draft creation is the active reversible gate |
 | 2026-08-18 | active | active | separate draft `21997378` reserved version DOI `10.5281/zenodo.21997378` and concept DOI `10.5281/zenodo.21997377`; the DOI-bearing 424,886-byte candidate passed the repeated complete QA and is ready for attachment |
 | 2026-08-18 | active | published | companion v0.01 published at DOI `10.5281/zenodo.21997378`; public metadata and fresh unauthenticated download match SHA-256 `e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a` |
+| 2026-08-18 | published | published | PR #186 passed `guards` and `test` and merged EXP-025 plus the verified v0.01 record to `develop` at `1c94632f`; PR #187 passed all required checks and promoted it to `main` at `18e7d972` |
+| 2026-08-18 | published | published | research work, `develop`, and `main` share tested payload tree `53e5e61ffeeb5816497e3e477921bc94c4a5f91d`; CAOS_MANAGE PR #557 promoted the publication ledger with `develop`/`main` tree `f7db0c50a75491738dbfad998d235458f4bb69ee` |
 
-Current state: **active repository-promotion gate** (EXP-025 is CONFIRMED and the focused six-page
-v0.01 is published and fresh-download verified at DOI `10.5281/zenodo.21997378`). The preceding
-v0.13 handoff was tree-identical at
-`b70a3990583057a92e591c34d5f9e9c101185e8c` after PRs #184/#185.
+Current state: **published and promoted; no active delivery gate**. EXP-025 is CONFIRMED and the
+focused six-page v0.01 is published and fresh-download verified at DOI
+`10.5281/zenodo.21997378`. Any next theorem requires a fresh preflight and declaration.
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.
