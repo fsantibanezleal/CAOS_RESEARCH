@@ -1,14 +1,15 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-18. Lifecycle: published; repository promotion active. EXP-026 proves the explicit
+Updated: 2026-08-18. Lifecycle: published; durable handoff complete. EXP-026 proves the explicit
 reduced grevlex basis of the conductor fiber cone, with degree profile
 `(50p^2-17p,5p-1,p-2)` in degrees two through four, no later basis elements, and no leading
 generator divisible by `X_0`. The full `p=4,...,300` campaign, independent clique audit,
 16-query all-parameter certificate, and deductive staircase stabilization pass. Companion v0.02
 is published at DOI `10.5281/zenodo.22002907`; public metadata and a fresh unauthenticated
 453,621-byte download match MD5 `53123ab5bed9a6c84c37ebde1610c3f7` and SHA-256
-`12cc380bcc72613694b24cc9f74284f8f3d35e4958ec3569b6ebacce3225e398`. The active gate is checked
-repository promotion and final handoff; the unresolved interior Betti table is a separate task.
+`12cc380bcc72613694b24cc9f74284f8f3d35e4958ec3569b6ebacce3225e398`. PRs #190/#191 promoted the
+round through `develop` and `main`; CAOS_MANAGE PR #559 promoted the publication ledger. No
+delivery or theorem experiment is active; the unresolved interior Betti table is a separate task.
 EXP-025 remains CONFIRMED. It proves
 that the conductor special fiber is an explicit truncated-monomial algebra, its defining ideal
 has one primary component, and its projective scheme is a length-`24p` curvilinear fat point with
@@ -511,3 +512,17 @@ unauthenticated download matches SHA-256
 HWB-036 owns the remaining checked promotion and durable-handoff gate. No new theorem experiment
 is active; HWB-035 remains the strongest distinct research candidate and requires a fresh
 source/novelty preflight before declaration.
+
+## 2026-08-18 complete - EXP-026 promotion handoff
+
+PR #190 passed `guards` and `test` and merged the complete EXP-026 theorem, artifacts, focused
+companion v0.02, and verified publication record to `develop` at merge commit
+`6b9d4670e9e6c0316e135f4e1148bfbb007508ba`. PR #191 passed all required checks and promoted the
+same tested state to `main` at `5dfb1af5dcf404425ac88116476f317e6697f48a`.
+
+Remote research work, `develop`, and `main` share payload tree
+`1fb094d102e1f91a6c9754cca26d7f57666450fb`. CAOS_MANAGE stayed on `develop`; PR #559 promoted
+only the scoped Zenodo workflow and ledger to `main` at
+`5bfd7fdbecfddb7da7966bc55bf73c452501f43e`, with management `develop` and `main` tree-identical
+at `372cd71d3acca38b92f872cd0995b5b9a264d543`. HWB-036 is complete. No release tag belongs to this
+research-only round.

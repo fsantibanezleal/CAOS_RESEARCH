@@ -475,6 +475,13 @@ The focused companion v0.02 passed claim/build/render, extraction, metadata, ide
 sole-authorship QA and was published as Zenodo record `22002907`, version DOI
 `10.5281/zenodo.22002907`. The concept DOI resolves to the new version, and the fresh public PDF
 matches the committed 453,621-byte artifact at SHA-256
-`12cc380bcc72613694b24cc9f74284f8f3d35e4958ec3569b6ebacce3225e398`. HWB-034 is done. The active
-delivery gate is PR-based promotion and final tree/handoff reconciliation under HWB-036. A new
-interior-Betti experiment is not declared in this publication round.
+`12cc380bcc72613694b24cc9f74284f8f3d35e4958ec3569b6ebacce3225e398`. HWB-034 is done. At that
+publication checkpoint, PR-based promotion and final tree/handoff reconciliation remained under
+HWB-036. A new interior-Betti experiment was not declared in this publication round.
+
+Promotion is complete. PR #190 merged the checked round to `develop` at `6b9d4670`; PR #191
+promoted it to `main` at `5dfb1af5`. Research work, `develop`, and `main` share payload tree
+`1fb094d102e1f91a6c9754cca26d7f57666450fb`. CAOS_MANAGE PR #559 promoted the matching Zenodo
+ledger, and management `develop`/`main` share tree
+`372cd71d3acca38b92f872cd0995b5b9a264d543`. HWB-036 is done. No experiment is active; HWB-035
+requires a fresh source and novelty preflight before any new declaration.
