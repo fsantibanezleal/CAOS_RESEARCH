@@ -1,0 +1,12 @@
+{
+  "experiment": "EXP-024-extremal-betti-data",
+  "status": "COMPLETE",
+  "range": {
+    "first": 4,
+    "last": 4
+  },
+  "completed_through": 4,
+  "row_hashes": [
+    "815240e8bc29c36d3fc45fc8f50efab6e01c4247ca0da5e77ea8077534913e2c"
+  ]
+}
