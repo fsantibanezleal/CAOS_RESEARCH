@@ -315,3 +315,19 @@ PR #177 passed all required checks and promoted that tested state to `main` at
 `5469624bab95a087aaef37630ea9c2a27c656054`. Documentation-only PR #178 then passed `guards` and
 `test`, and PR #179 passed all required checks and completed the durable handoff. No delivery gate
 or experiment remains active; any next theorem requires a new source and novelty preflight.
+
+## 2026-08-18 extremal Betti gate
+
+The fresh source and novelty preflight ranks exact presentation-ring edge homology above a full
+resolution or Groebner-basis attack. EXP-024 is declared before implementation. With
+`N=10p`, `c=N-1`, and h-polynomial
+
+```text
+1+(10p-1)z+12pz^2+(2p-1)z^3+z^4,
+```
+
+it predicts projective dimension `c`, regularity four, the complete last Betti row from the
+Artinian socle, `beta_(2,3)=2p(500p^2-330p+31)/3`, and
+`beta_(c-1,c+3)=8p`. The immediate gate is the `p=4` two-route smoke after implementation,
+followed by the bounded campaign, independent audit, and symbolic proof. No EXP-024 theorem,
+manuscript v0.13, or Zenodo version is yet claimed.

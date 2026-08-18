@@ -587,3 +587,15 @@
   `02f8143a85ae27c2d95dbfcca2feb2a58550e10d`.
 - EXP-022/023, manuscript v0.12, Zenodo publication, and repository delivery are complete. No new
   experiment or release tag is declared.
+
+## 2026-08-18 - EXP-024 declared
+
+- Reconciled the v0.12 open questions: presentation-ring regularity is already exactly four; only
+  the interior higher-syzygy and Groebner questions remain open.
+- Ranked the extremal Betti route above explicit Groebner bases, a full-resolution campaign,
+  primary decomposition, and formalization of EXP-023.
+- Declared EXP-024 before implementation or execution. It predicts exact projective dimension,
+  regularity, first linear syzygies, last and penultimate extremal Betti entries, and canonical-
+  module generator degrees for every `p>=4`.
+- The immediate gate is a two-derivation `p=4` smoke, then an exact bounded campaign and an
+  independent audit. No theorem or publication is claimed yet.

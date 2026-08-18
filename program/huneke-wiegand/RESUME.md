@@ -1,15 +1,11 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-18. Lifecycle: promotion handoff. EXP-023 is CONFIRMED: for every `p>=4`,
-the conductor special-fiber defining ideal consists of its `50p^2-17p` minimal quadrics and the
-single cubic `X_0^2X_(3p)-X_p^3`. The relation type is three and the Cohen--Macaulay fiber cone is
-not Koszul. The exact `p=4,...,23` campaign, independent total-graph audit, and all-parameter
-Presburger connectivity proof pass. Manuscript v0.12 passed claim/build/render QA and is published
-at DOI `10.5281/zenodo.21988601`; a fresh unauthenticated download matches the committed PDF
-byte-for-byte. PR #176 merged the tested round to `develop`; PR #177 promoted it to `main`.
-Documentation handoff PRs #178/#179 also passed all required checks, so the research and delivery
-round is complete. Release v0.63.000 remains the repository release baseline; this research round
-does not claim a new tag.
+Updated: 2026-08-18. Lifecycle: active experiment. EXP-024 is declared before implementation to
+determine exact edge data in the minimal presentation-ring resolution of the conductor special
+fiber. Its predictions include projective dimension `10p-1`, regularity four, a closed linear-
+syzygy count, the complete last Betti row from the Artinian socle, and one penultimate extremal
+entry. These are not yet results. EXP-023 and manuscript v0.12 remain confirmed, published, and
+immutable at DOI `10.5281/zenodo.21988601`; their PR promotion and durable handoff are complete.
 
 ## 1. State in one screen
 
@@ -410,4 +406,26 @@ PR #176 passed `guards` and `test` and merged to `develop` at
 `aecb5b5c`; PR #177 passed all required checks and promoted it to `main` at `80de49e5`. Remote
 `develop` and `main` shared tree `5469624bab95a087aaef37630ea9c2a27c656054`. Documentation-only
 PR #178 passed `guards` and `test`; PR #179 passed all required checks and completed the handoff.
-No further experiment is declared.
+At that handoff, no further experiment was declared.
+
+## 2026-08-18 in flight - EXP-024
+
+A fresh primary-source and novelty preflight corrected one stale v0.12 open question: regularity
+over the full presentation polynomial ring is already forced to equal four. EXP-024 now asks how
+much more of the resolution follows from the exact h-vector, Artinian socle, and EXP-023 first
+Betti row. The declared targets are
+
+```text
+pd=10p-1,
+reg=4,
+beta_(2,3)=2p(500p^2-330p+31)/3,
+beta_(10p-1,10p+1)=10p,
+beta_(10p-1,10p+3)=1,
+beta_(10p-2,10p+2)=8p.
+```
+
+The canonical-module prediction is `10p` minimal generators in degree `-1` and one in degree
+`-3`. The mandatory next action is implementation followed by the `p=4` two-route smoke gate.
+No theorem, v0.13 manuscript, or Zenodo update is claimed at declaration. If confirmed, this
+material belongs in the existing manuscript; a split is deferred to a future standalone
+Groebner/full-resolution/primary-decomposition theorem.
