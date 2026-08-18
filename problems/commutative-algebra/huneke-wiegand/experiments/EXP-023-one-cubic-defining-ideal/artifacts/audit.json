@@ -1,0 +1,144 @@
+{
+  "experiment": "EXP-023-one-cubic-defining-ideal",
+  "status": "INDEPENDENT_AUDIT_PASS",
+  "campaign_file_sha256": "e91a4e6acd9bbc243642c028eaba755b3cebf1a647f162634e579e6598944f44",
+  "campaign_rows_rehashed": 20,
+  "selected_parameters": [
+    4,
+    13,
+    23
+  ],
+  "selected": [
+    {
+      "p": 4,
+      "first_betti_row_degrees_2_to_5": {
+        "2": 732,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "exceptional_cubic_total": 12,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "quotient_dimension": 96,
+          "actual_dimension": 95,
+          "minimal_equations": 1,
+          "exceptional_nonzero_totals": {
+            "12": 2
+          },
+          "first_invalid_component": null,
+          "component_hash": "31220293270890fc37a87955d92b975fc0149b1ae72c5a50e04deabd9c4f6d5f"
+        },
+        {
+          "degree": 4,
+          "quotient_dimension": 96,
+          "actual_dimension": 96,
+          "minimal_equations": 0,
+          "exceptional_nonzero_totals": {},
+          "first_invalid_component": null,
+          "component_hash": "ca63bffffec1d7697039371ad46b7784a9c98c5b49ef23c9bcac304f26708f77"
+        },
+        {
+          "degree": 5,
+          "quotient_dimension": 96,
+          "actual_dimension": 96,
+          "minimal_equations": 0,
+          "exceptional_nonzero_totals": {},
+          "first_invalid_component": null,
+          "component_hash": "ca63bffffec1d7697039371ad46b7784a9c98c5b49ef23c9bcac304f26708f77"
+        }
+      ],
+      "elapsed_seconds": 0.05265960001270287,
+      "audit_row_hash": "70c605d4855e8d9e32aff222df355d81a5ba9070cf6789d6f75949d072c2e494"
+    },
+    {
+      "p": 13,
+      "first_betti_row_degrees_2_to_5": {
+        "2": 8229,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "exceptional_cubic_total": 39,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "quotient_dimension": 312,
+          "actual_dimension": 311,
+          "minimal_equations": 1,
+          "exceptional_nonzero_totals": {
+            "39": 2
+          },
+          "first_invalid_component": null,
+          "component_hash": "40fcc032e6a4732d39d7d30b0b1e4aa8b5ecfec1ec2e1927aa6b5a34dcd97f3e"
+        },
+        {
+          "degree": 4,
+          "quotient_dimension": 312,
+          "actual_dimension": 312,
+          "minimal_equations": 0,
+          "exceptional_nonzero_totals": {},
+          "first_invalid_component": null,
+          "component_hash": "b948ecb001e2bea8d72e4764840b3b8dcdff9b487018503749d18d2059e661a5"
+        },
+        {
+          "degree": 5,
+          "quotient_dimension": 312,
+          "actual_dimension": 312,
+          "minimal_equations": 0,
+          "exceptional_nonzero_totals": {},
+          "first_invalid_component": null,
+          "component_hash": "b948ecb001e2bea8d72e4764840b3b8dcdff9b487018503749d18d2059e661a5"
+        }
+      ],
+      "elapsed_seconds": 1.77593460000935,
+      "audit_row_hash": "01a42231b95b31f9ec61210f5a4ed6dea2b32f83e29563cd243c7a663e35bae4"
+    },
+    {
+      "p": 23,
+      "first_betti_row_degrees_2_to_5": {
+        "2": 26059,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "exceptional_cubic_total": 69,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "quotient_dimension": 552,
+          "actual_dimension": 551,
+          "minimal_equations": 1,
+          "exceptional_nonzero_totals": {
+            "69": 2
+          },
+          "first_invalid_component": null,
+          "component_hash": "fe04845e92ff51158ccba77516d9255d44647b504f01b77a3e61e3154cc98d7c"
+        },
+        {
+          "degree": 4,
+          "quotient_dimension": 552,
+          "actual_dimension": 552,
+          "minimal_equations": 0,
+          "exceptional_nonzero_totals": {},
+          "first_invalid_component": null,
+          "component_hash": "0490b79f1d3be3ae488ad07aa20a9f57062b20821d79a0ebbdb6540d8fada947"
+        },
+        {
+          "degree": 5,
+          "quotient_dimension": 552,
+          "actual_dimension": 552,
+          "minimal_equations": 0,
+          "exceptional_nonzero_totals": {},
+          "first_invalid_component": null,
+          "component_hash": "0490b79f1d3be3ae488ad07aa20a9f57062b20821d79a0ebbdb6540d8fada947"
+        }
+      ],
+      "elapsed_seconds": 18.030917699972633,
+      "audit_row_hash": "c681e5a45f1c15790e20bf111aa2332ca6871b765e6ff719c5894d47dc6c19b6"
+    }
+  ],
+  "audit_aggregate": "a27b3b13fde197b1f011bf07dc2c321d84ab7c895c9aa02d7c2a073e48f18038",
+  "elapsed_seconds": 19.86713649999001
+}

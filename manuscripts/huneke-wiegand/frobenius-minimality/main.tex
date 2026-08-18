@@ -14,8 +14,8 @@
 \hypersetup{
   pdftitle={Frobenius Minimality, Minimum-Layer Uniqueness, and an Infinite Family of Huneke--Wiegand Counterexamples},
   pdfauthor={Felipe Santibanez-Leal},
-  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, conductor, tangent-cone, and fiber-cone anatomy},
-  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, trace ideals, conductors, associated graded rings, tangent cones, fiber cones, Buchsbaum rings, Cohen-Macaulay rings, SAT, DRAT}
+  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, conductor, tangent-cone, fiber-cone, and defining-ideal anatomy},
+  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, trace ideals, conductors, associated graded rings, tangent cones, fiber cones, defining ideals, Koszul algebras, Buchsbaum rings, Cohen-Macaulay rings, SAT, DRAT}
 }
 \usepackage{orcidlink}
 \usepackage{fancyhdr}
@@ -36,18 +36,18 @@
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-12\\[2pt]\normalsize Version 0.11}
+\date{2026-08-18\\[2pt]\normalsize Version 0.12}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.11}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.12}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.11}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.12}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,13 +63,13 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.11 \textperiodcentered\ 2026-08-12\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21909961}{10.5281/zenodo.21909961}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.12 \textperiodcentered\ 2026-08-18\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21988601}{10.5281/zenodo.21988601}\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
 verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
 separate explicit infinite family, and its uniform endomorphism, type, trace, conductor, stability,
-reduction, and tangent-cone anatomy.
+reduction, tangent-cone, fiber-cone, and defining-ideal anatomy.
 }}
 \end{center}
 
@@ -79,7 +79,7 @@ reduction, and tangent-cone anatomy.
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.11}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.12}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -146,7 +146,12 @@ regularity four, top-local-cohomology $a$-invariant three, and the exact paramet
 $\ell(G_p/x_pG_p)=25p=e_0(T_p)+I(G_p)$. Finally, the exact identity
 $T_p^2=\mathfrak m_pT_p$ identifies the special fiber canonically with
 $G_p/H^0(G_p)$. It is Cohen--Macaulay of type $10p+1$, but its Artinian socle lies in degrees two
-and four, so it is neither level nor Gorenstein.
+and four, so it is neither level nor Gorenstein. We then determine its defining ideal: in the
+polynomial ring on its $10p$ minimal degree-one generators, it has exactly $50p^2-17p$ minimal
+quadrics and the single additional cubic $X_0^2X_{3p}-X_p^3$, with no other minimal equation.
+Thus its relation type is three and it is not Koszul. The all-parameter component calculation is
+an exact Presburger verification, supported by a separately encoded graph audit; its solver trust
+boundary is stated explicitly.
 The results remain confined
 to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
@@ -212,6 +217,8 @@ they are verified by exact machine computation and independently checked artifac
   parameter-section identity $\ell(G_p/x_pG_p)=25p=e_0(T_p)+I(G_p)$.
   \item We prove $T_p^2=\mathfrak m_pT_p$, identify the conductor special fiber naturally with
   $G_p/H^0(G_p)$, and compute its type $10p+1$ and nonlevel Artinian socle.
+  \item We determine the complete defining ideal of that special fiber: $50p^2-17p$ minimal
+  quadrics and one primitive cubic, giving relation type three and a non-Koszul family.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -1392,6 +1399,152 @@ and
 \texttt{1779407050b199039d3f6d808a720ea051a81ef11734fd1bccd1a76ec78c0a9c}.
 \]
 
+\subsection{The defining ideal of the special fiber}
+
+We now refine Theorem~\ref{thm:fiber} from a module decomposition to a minimal algebra
+presentation. All intervals in this subsection are integer intervals. Let
+\(\mathcal E_{p,d}\) be the offset basis of \((\mathcal F_p)_d\), after subtracting the base
+value \(4sd\). The exact power calculation gives
+\begin{align}
+\mathcal E_{p,1}={}&[0,p]\cup[3p,4p-2]\cup[6p,8p-2]\cup[8p,10p-2]
+ \cup\{10p\}\notag\\
+&\cup[11p-1,12p-1]\cup[13p+1,14p-2]\cup[14p,15p-1]
+ \cup\{16p\}\cup[17p-1,18p-1],\label{eq:fiber-e1}\\
+\mathcal E_{p,2}={}&[0,2p]\cup[3p,5p-2]\cup[6p,24p-1],\notag\\
+\mathcal E_{p,3}={}&[0,24p-1]\setminus\{6p-1\},\qquad
+\mathcal E_{p,4}=\mathcal E_{p,5}=[0,24p-1].\label{eq:fiber-cumulative}
+\end{align}
+In particular, \(|\mathcal E_{p,1}|=10p\). Set
+\[
+P_p=\kfield[X_a:a\in\mathcal E_{p,1}]
+\]
+and let \(\varphi_p:P_p\twoheadrightarrow\mathcal F_p\) send \(X_a\) to the class of
+\(t^{4s+a}\). Write \(\mathfrak a_p=\ker\varphi_p\).
+
+\begin{theorem}[One-cubic defining ideal, {\bf[MV]}]
+\label{thm:presentation}
+For every integer \(p\ge4\),
+\[
+\mathfrak a_p=\bigl((\mathfrak a_p)_2,
+f_p\bigr),\qquad
+f_p=X_0^2X_{3p}-X_p^3.
+\]
+Equivalently, the first graded Betti row over \(P_p\) is
+\[
+\beta^{P_p}_{1,2}(\mathcal F_p)=50p^2-17p,\qquad
+\beta^{P_p}_{1,3}(\mathcal F_p)=1,\qquad
+\beta^{P_p}_{1,j}(\mathcal F_p)=0\quad(j\ge4).
+\]
+Hence \(\mu(\mathfrak a_p)=50p^2-17p+1\), the relation type is three, and
+\(\mathcal F_p\) is not Koszul.
+\end{theorem}
+
+\begin{proof}
+The semigroup monomials are linearly independent. Consequently, a monomial in the variables
+\(X_a\) is zero in \(\mathcal F_p\) exactly when its total offset is absent from the corresponding
+\(\mathcal E_{p,d}\), and two nonzero monomials have the same image exactly when their total
+offsets agree. There is no linear equation. Theorem~\ref{thm:fiber} gives
+\(\dim_{\kfield}(\mathcal F_p)_2=22p\), so
+\begin{equation}
+\beta^{P_p}_{1,2}(\mathcal F_p)
+=\binom{10p+1}{2}-22p=50p^2-17p.\label{eq:quadratic-count}
+\end{equation}
+
+The offsets \(0,p,3p\) belong to \(\mathcal E_{p,1}\), and
+\(0+0+3p=p+p+p\), so \(f_p\in\mathfrak a_p\). It is not generated by quadrics. Indeed, the
+only unordered pair in \(\mathcal E_{p,1}\) with sum \(3p\) is \(\{0,3p\}\), the only pair with
+sum \(2p\) is \(\{p,p\}\), and the only pair with sum zero is \(\{0,0\}\). Thus neither
+monomial in \(f_p\) admits a nontrivial quadratic replacement, and the two cannot be joined by a
+chain of quadratic moves.
+
+It remains to prove that this is the only higher equation. Suppose the complete kernel is known
+through degree \(d-1\), where \(d\in\{3,4,5\}\). For a fixed total \(t\), form the graph
+\[
+V_{d,t}=\{a\in\mathcal E_{p,1}:t-a\in\mathcal E_{p,d-1}\}.
+\]
+Two vertices \(a,c\) are adjacent when
+\[
+t-a-c\in\mathcal E_{p,d-2}.
+\]
+This is exactly the commutative factorization move between \(X_a\) times the preceding class of
+offset \(t-a\) and \(X_c\) times the class of offset \(t-c\). Add a zero vertex when the same
+factorization makes the alternate degree-\((d-1)\) remainder invalid. Therefore the degree-\(d\)
+quotient by all lower equations has one basis element for each nonzero graph component. It follows
+that
+\begin{equation}
+\beta^{P_p}_{1,d}(\mathcal F_p)
+=\#\{\text{nonzero state components in degree }d\}-|\mathcal E_{p,d}|.
+\label{eq:component-defect}
+\end{equation}
+
+For degree three, the exact component reduction is
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Total range & common hub & path length at most\\
+\midrule
+\([0,2p]\) & \(0\) & 3\\
+\([2p+1,3p-1]\) & \(t-2p\) & 3\\
+\([3p+1,5p-2]\) & \(0\) & 3\\
+\([5p-1,6p-2]\) & \(t-(5p-2)\) & 3\\
+\([6p,24p-1]\) & \(0\) & 3\\
+\bottomrule
+\end{tabular}
+\end{center}
+Every invalid total reaches the zero vertex in at most one move. At the omitted total \(t=3p\),
+the vertices are exactly \(0,p,3p\); the vertices \(0\) and \(3p\) are joined, while \(p\) is
+isolated. Hence there are exactly two components, represented by the two monomials in \(f_p\).
+Adjoining \(f_p\) joins them.
+
+For degree four, zero is a hub except at \(t=6p-1\), where \(p\) is a hub. To see the only
+nontrivial reduction, put
+\[
+H=[2p+1,3p-1]\cup[5p-1,6p-2]
+=[0,6p-2]\setminus\mathcal E_{p,2}.
+\]
+If \(t-a\in\mathcal E_{p,2}\), the state is adjacent to zero. If \(t-a\in H\), it moves first to
+\(p\), then either to zero or through \(t-3p\), which belongs to \([1,p-1]\) or
+\([3p,4p-2]\). The apparent boundary \(t=7p-1\), where \(t-p\) would be the hole in
+\(\mathcal E_{p,3}\), cannot occur with both \(t-a\in H\) and
+\(a\in\mathcal E_{p,1}\). At \(t=6p-1\), the vertex set is
+\([1,p]\cup[3p,4p-2]\), connected through \(p\). Invalid high totals die directly. Thus the
+degree-four defect is zero.
+
+For degree five, \(\mathcal E_{p,4}\) is full and \(\mathcal E_{p,3}\) misses only
+\(h=6p-1\). A state has a direct edge to zero unless \(t-a=h\). In the exceptional case, moving
+through the generator \(1\), or through \(2\) when \(a=1\), gives a state with a direct zero edge.
+Hence the degree-five defect is also zero.
+
+The degree-three table and every boundary assertion in the degree-four and degree-five reductions
+were encoded as negated Presburger formulas over all integers \(p\ge4\) \textbf{[MV]}. The exact
+solver closed all $133$ terminal formulas as UNSAT, after four affine-cell bisections, with no SAT
+or unresolved result. A separately encoded total-by-total graph rehashed the complete campaign and
+rebuilt three spaced parameters. Thus \eqref{eq:component-defect} gives one cubic and no new
+equation in degrees four or five.
+
+Finally, \(T_p\) has reduction number four by Theorem~\ref{thm:reduction}, and
+\(\mathcal F_p\) is Cohen--Macaulay by Theorem~\ref{thm:fiber}. The defining-ideal construction of
+Abdolmaleki--Kumashiro \cite[Theorem~2.8]{AbdolmalekiKumashiro2024} therefore supplies a complete
+set of equations through degree five. No higher minimal equation can occur. This proves the Betti
+row and relation type. A standard graded Koszul algebra has a quadratic defining ideal, while
+\(f_p\) is a necessary minimal cubic, so \(\mathcal F_p\) is not Koszul.
+\end{proof}
+
+The bounded state-graph campaign passes every \(p=4,\ldots,23\) \textbf{[MV]}. Its first requested
+extension through \(p=24\) completed that row but crossed the declared five-minute budget, and is
+preserved as inconclusive. The successful campaign, independent audit, and Presburger-query
+aggregates are respectively
+\[
+\texttt{d23792c47a2e07785a27ebc71e99619705f7aa53a38ebe7f66ffa03b0518ce83},
+\]
+\[
+\texttt{a27b3b13fde197b1f011bf07dc2c321d84ab7c895c9aa02d7c2a073e48f18038},
+\]
+and
+\[
+\texttt{832c8421fe66359b8c246e3465e27de6ea7829215f892ab815e72b1f44787194}.
+\]
+
 \section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
@@ -1400,8 +1553,9 @@ All compact code, hypotheses, manifests, audits, and verdicts are in the public 
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
 minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
-also includes the compact EXP-011--021 campaigns, independent reconstruction audits, symbolic
-proofs, the preserved EXP-013 correction, and the EXP-015 refutation. The proof toolchain is
+also includes the compact EXP-011--023 campaigns, independent reconstruction audits, symbolic
+proofs, the preserved EXP-013 correction, the EXP-015 refutation, and the EXP-022 quadratic
+refutation. The proof toolchain is
 pinned as follows:
 \begin{center}
 \begin{tabular}{@{}lp{0.65\textwidth}@{}}
@@ -1412,6 +1566,8 @@ CaDiCaL & reported 1.7.3; Ubuntu package 1.7.4-1\\
 CaDiCaL binary SHA-256 & {\fontsize{7}{8}\selectfont\ttfamily 7b73df0a6d9cf3c751a1948300e5baff8e82c4d39bcd88f0c063b5f5cfb8b33e}\\
 DRAT-trim commit & {\fontsize{7}{8}\selectfont\ttfamily 2e3b2dc0ecf938addbd779d42877b6ed69d9a985}\\
 DRAT-trim binary SHA-256 & {\fontsize{7}{8}\selectfont\ttfamily 92f0aa9575ed519d66a99b8b1b3dde6ece4618ae4c202a3a4b200265dda0aa7a}\\
+Z3 & 4.16.0; exact integer Presburger queries for EXP-023\\
+EXP-023 query aggregate & {\fontsize{7}{8}\selectfont\ttfamily 832c8421fe66359b8c246e3465e27de6ea7829215f892ab815e72b1f44787194}\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -1420,6 +1576,12 @@ The trusted base comprises the cited tree theorem, the finite reduction proved h
 standard-library model checker, and DRAT-trim's verification of each proof against its exact CNF.
 The SAT solver need not be trusted for UNSAT. For SAT, the independently extracted model is checked
 without consulting solver internals.
+
+The EXP-023 trust boundary is different. Z3's UNSAT leaves do not carry a separately checked proof
+object. The exact Presburger encoding, the explicit interval reductions in the proof, the separate
+total-graph implementation, and the finite stress campaign reduce implementation risk, but do not
+remove reliance on solver soundness. The one-cubic theorem is therefore labeled \textbf{[MV]}, not
+presented as a proof-assistant theorem or a proof-carrying UNSAT result.
 
 \section{Scope, attribution, and open questions}
 
@@ -1433,12 +1595,14 @@ Theorem~\ref{thm:stability}, and conductor reduction/Hilbert data in
 Theorem~\ref{thm:reduction}, tangent-cone depth in Theorem~\ref{thm:tangent}, and complete
 graded-torsion/Buchsbaum anatomy in Theorem~\ref{thm:buchsbaum}, and the complete
 Noether-normalization module in Theorem~\ref{thm:module}, and the canonical fiber cone and type in
-Theorem~\ref{thm:fiber}, together with
+Theorem~\ref{thm:fiber}, and its complete defining ideal in
+Theorem~\ref{thm:presentation}, together with
 their reproducible records.
 
 Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
 \ref{thm:type}, \ref{thm:trace}, \ref{thm:stability}, \ref{thm:reduction},
-\ref{thm:tangent}, \ref{thm:buchsbaum}, \ref{thm:module}, and~\ref{thm:fiber}
+\ref{thm:tangent}, \ref{thm:buchsbaum}, \ref{thm:module}, \ref{thm:fiber},
+and~\ref{thm:presentation}
 do not classify all higher
 Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
 or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
@@ -1452,8 +1616,8 @@ questions remain open:
   \item Which additional hypotheses on the endomorphism ring recover a positive theorem while
   excluding both the public example and the full family proved here?
   \item Can the finite certificates be imported into a smaller formally verified checker?
-  \item What is a uniform minimal defining ideal of the conductor special fiber, and which of its
-  graded Betti features are forced by the block family?
+  \item What are the higher syzygies, regularity over the full presentation ring, and Gr\"obner
+  features of the conductor special fiber beyond its now-determined minimal equations?
 \end{enumerate}
 
 \section*{Acknowledgments}
@@ -1543,6 +1707,12 @@ T. Cortadellas and S. Zarzuela,
 \emph{On the structure of the fiber cone of ideals with analytic spread one},
 J. Algebra 317 (2007), 759--785.
 \href{https://doi.org/10.1016/j.jalgebra.2007.02.044}{doi:10.1016/j.jalgebra.2007.02.044}.
+
+\bibitem{AbdolmalekiKumashiro2024}
+R. Abdolmaleki and S. Kumashiro,
+\emph{Defining ideals of Cohen--Macaulay fiber cones},
+Int. J. Algebra Comput. 34 (2024), no.~7, 1099--1109.
+\href{https://doi.org/10.1142/S0218196724500437}{doi:10.1142/S0218196724500437}.
 
 \bibitem{CortadellasZarzuela2009}
 T. Cortadellas and S. Zarzuela,

@@ -1,22 +1,13 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-12. Lifecycle: published. EXP-014--020
-prove the exact stability, reduction, tangent-cone, and Buchsbaum anatomy of the explicit conductor family. Corrective
-manuscript v0.06 is published and independently verified at DOI `10.5281/zenodo.21907943`.
-EXP-017 and manuscript v0.07 are published and independently verified at DOI
-`10.5281/zenodo.21908188`. EXP-018 and manuscript v0.08 are published and independently verified
-at DOI `10.5281/zenodo.21908490`. PR #160 passed both required jobs and merged this round to
-`develop` at `c91ff890`; PR #161 passed both jobs and promoted it to `main` at `4b62f778`.
-EXP-019 and manuscript v0.09 are published and independently verified at DOI
-`10.5281/zenodo.21908785`. PR #164 passed both required jobs and merged this round to `develop` at
-`efdca94`; PR #165 passed all checks and promoted the identical tested tree to `main` at `cbe62a5`.
-EXP-020 and the 22-page manuscript v0.10 are complete and independently verified at DOI
-`10.5281/zenodo.21909127`. PR #168 passed `guards` and `test` and merged the complete round to
-`develop` at `5b9ca074`; PR #169 passed all checks and promoted the identical tested tree to
-`main` at `06a6af92`.
-Release v0.63.000
-remains the current repository release baseline; no new tag is
-claimed by this research round.
+Updated: 2026-08-18. Lifecycle: active repository-promotion round. EXP-023 is CONFIRMED: for every `p>=4`,
+the conductor special-fiber defining ideal consists of its `50p^2-17p` minimal quadrics and the
+single cubic `X_0^2X_(3p)-X_p^3`. The relation type is three and the Cohen--Macaulay fiber cone is
+not Koszul. The exact `p=4,...,23` campaign, independent total-graph audit, and all-parameter
+Presburger connectivity proof pass. Manuscript v0.12 passed claim/build/render QA and is published
+at DOI `10.5281/zenodo.21988601`; a fresh unauthenticated download matches the committed PDF
+byte-for-byte. Repository PR promotion is the only active delivery gate. Release v0.63.000 remains
+the repository release baseline; this research round does not claim a new tag.
 
 ## 1. State in one screen
 
@@ -40,7 +31,11 @@ Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
     invariant `p` (EXP-019); and
 11. the complete graded module over the minimal-reduction polynomial ring, including all Betti
     numbers, projective dimension one, regularity four, and the section identity `25p=e0+I`
-    (EXP-020).
+    (EXP-020);
+12. the canonical conductor special fiber, Cohen--Macaulay type `10p+1`, and nonlevel behavior
+    (EXP-021); and
+13. the complete defining ideal by `50p^2-17p` quadrics and one cubic, with relation type three
+    and non-Koszulness (EXP-022/023).
 
 The public seed is
 
@@ -62,6 +57,8 @@ I = (t^56,t^70)R.
 | `I_p` | `(t^(24p),t^(30p))` over the localized ring of `Gamma_p` | EXP-009 theorem |
 | `Lambda_p` | `Gamma_p union (7s+Q_p) union {13s-1}`, the value semigroup of `End_(R_p)(I_p)` | EXP-011 theorem |
 | `T_p` | common trace/conductor `tr_R(J_p)=R_p:E_p=tr_R(E_p)` | EXP-013--018 theorems |
+| `C_p` | conductor special fiber `F(T_p)`, canonically `gr_(T_p)(R_p)/H^0` | EXP-021 theorem |
+| `J_p` | defining ideal of `C_p` in its `10p` degree-one variables | EXP-022/023 theorems |
 | minimum layer | all normalized rigid pairs at the least Frobenius value 181 | EXP-005/007 |
 
 ## 2a. Infinite family theorem
@@ -120,6 +117,9 @@ campaign is supporting evidence, not the proof.
 | EXP-018 | CONFIRMED | conductor tangent cone has depth zero; unique Valabrega--Valla defect length `p`; exact positive Hilbert numerator |
 | EXP-019 | CONFIRMED | full `H^0=k^p` in degree zero; complete maximal annihilator; Buchsbaum non-Cohen--Macaulay; invariant `p` |
 | EXP-020 | CONFIRMED | complete `k[x_p]`-module, minimal graded resolution, regularity four, `a=3`, and section identity `25p=e0+I` |
+| EXP-021 | CONFIRMED | canonical conductor special fiber; Cohen--Macaulay type `10p+1`; neither level nor Gorenstein |
+| EXP-022 | REFUTED | quadratic presentation false; universal necessary cubic `X_0^2X_(3p)-X_p^3` |
+| EXP-023 | CONFIRMED | unique higher equation; relation type three; exact count `50p^2-17p+1`; non-Koszul fiber cone |
 
 ## 3a. Exact evidence anchors
 
@@ -139,27 +139,29 @@ campaign is supporting evidence, not the proof.
 - EXP-020 campaign and audit aggregates:
   `02cf6f62a71de1a897cd46149e8c89d1c55bf810d28dddc02fc6c5330b9c1aed` and
   `c439f7e4fbd3cee983f32e5c6a27b347017c165cdf6d9fee54eb8d53ab634eac`.
+- EXP-021 campaign and audit aggregates:
+  `3857877586143a3be5f14852feb12bd9efbfdf7c1cde458f30e8cd689155a95b` and
+  `1779407050b199039d3f6d808a720ea051a81ef11734fd1bccd1a76ec78c0a9c`.
+- EXP-023 campaign, independent audit, and Presburger-query aggregates:
+  `d23792c47a2e07785a27ebc71e99619705f7aa53a38ebe7f66ffa03b0518ce83`,
+  `a27b3b13fde197b1f011bf07dc2c321d84ab7c895c9aa02d7c2a073e48f18038`, and
+  `832c8421fe66359b8c246e3465e27de6ea7829215f892ab815e72b1f44787194`.
 
 ## 4. In flight
 
-EXP-020 is CONFIRMED. Put `F_p=k[x_p]`, where
-`x_p=(t^(4s))^*` comes from the EXP-017 minimal reduction. The source-led Noether-normalization
-view predicts
+EXP-023 is CONFIRMED. Its exact state-graph quotient proves
 
 ```text
-G_p isomorphic to (F_p/(x_p))^p direct-sum F_p direct-sum F_p(-1)^(10p-1)
-    direct-sum F_p(-2)^(12p) direct-sum F_p(-3)^(2p-1) direct-sum F_p(-4).
+J_p=((J_p)_2,X_0^2X_(3p)-X_p^3),
+(beta_(1,2),beta_(1,3),beta_(1,4),beta_(1,5),...)=(50p^2-17p,1,0,0,...).
 ```
 
-The only first syzygies are `p` copies in degree one, `pd_(F_p)(G_p)=1`,
-`reg_(F_p)(G_p)=4`, `a(G_p)=3`, and
-`length(G_p/x_pG_p)=25p=e0(T_p)+I(G_p)`. The load-bearing proof is the graded PID argument from
-EXP-017--019; the independent route reconstructs every cyclic string from the conductor-power
-Apery table modulo `24p`. Both exact routes passed for `p=4,...,300`; the independent audit rebuilt
-six parameters and rehashed every campaign row. The material theorem is published in manuscript
-v0.10 after full claim/build/render, sole-authorship, metadata, and fresh-download verification.
-PRs #168 and #169 completed checked promotion to `develop` and `main`; only this durable handoff
-reconciliation remains in flight.
+The all-parameter Presburger cover closes degree-three through degree-five connectivity, and the
+published Cohen--Macaulay fiber-cone construction closes every degree above five. The bounded
+campaign and independent audit agree, while the first over-budget attempt remains preserved as
+`INCONCLUSIVE_BUDGET`. The residual trust boundary is explicit: the Z3 UNSAT leaves do not carry
+a separately checked proof object. Manuscript v0.12 is published and exact-download verified;
+the active work is checked PR promotion to `develop` and then `main`.
 
 Previously closed state:
 
@@ -257,17 +259,24 @@ Published baseline:
   resolution, regularity, `a`-invariant, and parameter-section identity. The public 578,949-byte
   PDF has MD5 `830ae1fd2e2fbf923a86cbf575e9a841` and SHA-256
   `00a78fd8101f106724877b3fdbc933c51024a872a2b9a4f05692358b4d1a9d03`.
+- v0.11 DOI `10.5281/zenodo.21909961`: canonical conductor special fiber, exact type, and
+  nonlevel theorem. The public 589,535-byte PDF has MD5
+  `1ad22a6a87c0c6a5a80f8a913d06ca95` and SHA-256
+  `0b3a9131e3c419c0a89cb064ea6beb7c696006171fe18bec578e7ba963a520ce`.
+- v0.12 DOI `10.5281/zenodo.21988601`: full defining ideal, exact first Betti row, relation type
+  three, and non-Koszulness. The public 615,252-byte PDF has MD5
+  `c8b810a763b9bb55d076a454df49b413` and SHA-256
+  `98d730fb8afaf40149d028bdde0b1c3ba9851f1dbcd15475567e56bb7eb17d3f`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `21909127`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `21988601`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Reconcile this durable promotion handoff without claiming a global release tag.
-2. Select the next theorem target only after a source and novelty preflight; prioritize a structural
-   classification or restoration-of-positivity hypothesis over a larger parameter sweep.
-3. Keep EXP-010 inactive unless a separately declared classification round justifies reopening
-   that architecture.
+1. Promote the tested EXP-022/023 and immutable v0.12 publication record through PRs to `develop`
+   and `main`; record the checked merge commits and remote tree equality.
+2. Do not claim a global release tag for this research-only round.
+3. Only after delivery, select a new theorem target through a fresh source and novelty preflight.
 
 ### Lenses ledger
 
@@ -284,6 +293,10 @@ Published baseline:
   exponent-one cyclic summands over the minimal-reduction polynomial ring.
 - Fiber-cone restoration: EXP-021 tests whether killing that torsion is canonically the special
   fiber algebra, and uses its Artinian reduction to decide type, levelness, and Gorensteinness.
+- Factorization graph: EXP-022/023 translate minimal defining equations into connected components
+  of equal-total offset factorizations and isolate one primitive cubic circuit.
+- Exact symbolic exclusion: affine Presburger cells close every degree-three through degree-five
+  component uniformly, with finite campaign and independent graph routes as adversarial support.
 
 ## 7. Gotchas
 
@@ -294,8 +307,9 @@ Published baseline:
 - Expert verification is not journal peer review.
 - Never import or execute upstream verifier code as independent CAOS evidence.
 - A finite sweep is not the infinite-family proof; the affine interval argument is load-bearing.
-- Solver SAT needs independent semantics; UNSAT needs accepted certificates or another complete
-  route. Equality in a finite window needs a proved tail.
+- Solver SAT needs independent semantics. Solver-only UNSAT cannot carry a theorem; use an accepted
+  certificate or a complete exact symbolic reduction with an independent route and disclose any
+  remaining solver trust boundary. Equality in a finite window needs a proved tail.
 - The family is outside the generalized-arithmetic-sequence positive class, but this does not
   exhaust all surviving variants.
 - Published Zenodo versions are immutable; corrections or extensions require a new version.
@@ -332,3 +346,62 @@ PR promotion is complete: #172 merged the tested theorem/publication round to `d
 `178a7361`, and #173 promoted the identical tree to `main` at `7abd1040`. Remote `develop` and
 `main` share tree `21791e6a`. Persist this handoff through the same PR path before declaring
 HWB-023. No global release tag is part of this research round.
+
+## 2026-08-17 in flight - EXP-022
+
+The EXP-021 promotion handoff is complete. HWB-023 is now active as EXP-022 after a separate
+source and novelty preflight. The published Abdolmaleki--Kumashiro theorem bounds the defining
+degrees by five. EXP-022 tests the stronger family-specific conjecture that the defining ideal of
+`F(T_p)` is generated by its quadratic value-congruence kernel, which would give
+
+```text
+beta_(1,2)=50p^2-17p,  beta_(1,j)=0 for j>=3.
+```
+
+No such theorem is yet claimed. The exact next command is the mandatory `p=4` degreewise smoke
+gate after implementing Route A and its independent closed-basis checks. Preserve and report the
+first disconnected congruence component if quadratic generation fails.
+
+EXP-022 is now closed REFUTED. The first disconnected component is the universal relation
+
+```text
+X_0^2X_(3p)-X_p^3.
+```
+
+Its two monomials admit no quadratic move, proving `beta_(1,3)>=1` and nonquadraticity for every
+`p>=4`; meanwhile `beta_(1,2)=50p^2-17p`. Exact complete runs at `p=4,5,6` find first Betti
+profiles `(732,1,0,0)`, `(1165,1,0,0)`, and `(1698,1,0,0)` through degree five. The next action is
+to declare, before any broader run, the corrected one-cubic presentation hypothesis and attack its
+uniform connectivity upper bound. No manuscript or publication update is yet triggered.
+
+EXP-023 is now declared for the corrected claim
+
+```text
+J_p=((J_p)_2,X_0^2X_(3p)-X_p^3),
+beta_(1,3)=1, beta_(1,j)=0 for j>=4.
+```
+
+Its independent route uses `O(p^2)` congruence states rather than degree-five monomial
+enumeration. The immediate action is to reproduce `p=4,5,6`, then run the bounded campaign and
+derive the uniform interval-graph connectivity proof. Relation type three, the exact total equation
+count, non-Koszulness, and any manuscript trigger remain unconfirmed predictions.
+
+## 2026-08-18 in flight - EXP-023 and manuscript v0.12
+
+EXP-023 is CONFIRMED. The state graph proves that, modulo lower equations, every valid total has
+one component except degree-three total `3p`, where the two components are represented by
+`X_0^2X_(3p)` and `X_p^3`. Degrees four and five have no defect. The published relation-degree
+bound therefore gives the full defining ideal and exact first Betti row
+`(50p^2-17p,1,0,0,...)` for every `p>=4`.
+
+The `p=4,...,23` exact campaign passes in 249.611 seconds, and the separately encoded audit
+reconstructs `p=4,13,23` while rehashing all 20 rows. The exact Presburger cover closes 133
+terminal negated queries as UNSAT with no counterexample or unresolved leaf. The first attempt that
+crossed its five-minute budget remains preserved as inconclusive. The solver/encoding trust
+boundary is recorded in the verdict because no separately checked UNSAT proof object exists.
+
+HWB-023 and HWB-025 are done. Manuscript v0.12 passed claim/build/render and sole-authorship QA,
+was published as Zenodo record `21988601`, and its fresh public download matches the committed
+615,252-byte PDF at SHA-256
+`98d730fb8afaf40149d028bdde0b1c3ba9851f1dbcd15475567e56bb7eb17d3f`. The only active gate is
+checked PR promotion to `develop` and `main` followed by durable merge/tree reconciliation.

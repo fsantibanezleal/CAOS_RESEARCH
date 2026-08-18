@@ -253,3 +253,57 @@ all required checks and promoted it to `main` at
 `7abd10403a5798af4757223bfa0cfa2135aed048`. The remote branch trees are identical at
 `21791e6a6c182fa12f00a5f255a6faab23dd7058`. The remaining action is the documentation handoff;
 no release tag is claimed.
+
+## 2026-08-17 defining-ideal gate
+
+HWB-023 is active as EXP-022 after a fresh source and novelty preflight. Abdolmaleki--Kumashiro,
+International Journal of Algebra and Computation 34(7) (2024), Theorem 2.8, guarantees a defining
+set through degree five because EXP-021 proves the fiber cone Cohen--Macaulay and EXP-017 gives
+reduction number four. It does not determine this family's minimal equations.
+
+EXP-022 tests the sharper value-congruence conjecture that the full defining ideal is generated in
+degree two. The exact predicted number is `50p^2-17p`. The mandatory order is `p=4` degreewise
+smoke, first-obstruction preservation or bounded campaign, independent audit, symbolic
+connectivity proof, and only then wiki/manuscript deliberation. No defining-ideal theorem or
+publication is claimed at declaration.
+
+EXP-022 is REFUTED. The `p=4` gate found one necessary cubic and no degree-four/five equations;
+complete `p=5,6` diagnostics reproduced the profile. Symbolically,
+`X_0^2X_(3p)-X_p^3` is a nonzero defining relation whose two monomials are isolated under every
+quadratic move, proving nonquadraticity for all `p>=4`. The exact universal quadratic count remains
+`50p^2-17p`. The corrected one-cubic upper bound is not inherited automatically and requires a
+separately declared experiment and uniform connectivity proof.
+
+EXP-023 is declared for that corrected upper bound. It replaces full monomial enumeration with an
+independent degreewise state graph on `(generator offset, preceding fiber offset)` and targets the
+complete presentation `J_p=((J_p)_2,X_0^2X_(3p)-X_p^3)`. Confirmation requires campaign and audit
+agreement, uniform interval-graph connectivity in degrees three through five, and the published
+degree-five completeness theorem. Relation type three and non-Koszulness remain predictions.
+
+EXP-023 is now CONFIRMED. The state graph identifies minimal equations with component defects.
+An exact Presburger cover proves that degree three has exactly one exceptional two-component total,
+`3p`, while degrees four and five have no defect. The unique joining equation is
+`X_0^2X_(3p)-X_p^3`. The campaign passes `p=4,...,23`, the independent total-graph audit rebuilds
+`p=4,13,23` and rehashes every row, and the first over-budget attempt remains preserved as
+`INCONCLUSIVE_BUDGET`. Abdolmaleki--Kumashiro's degree-five bound then closes the higher tail.
+
+The defining ideal therefore has first Betti row
+
+```text
+(beta_(1,2),beta_(1,3),beta_(1,4),beta_(1,5),...)
+=(50p^2-17p,1,0,0,...),
+```
+
+relation type three, and `50p^2-17p+1` minimal equations. The necessary cubic proves the
+Cohen--Macaulay special fiber is not Koszul. This material theorem opens HWB-025: manuscript v0.12,
+claim/build/render QA, Zenodo new-version publication, and checked PR promotion. The symbolic
+trust boundary must remain explicit because the Z3 UNSAT leaves do not have a separately checked
+proof object.
+
+The v0.12 publication gate is complete. The 27-page preprint passed the claim audit, warning-free
+stable build, complete rendered inspection, sole-human-authorship and metadata checks before
+upload. Zenodo record `21988601`, DOI `10.5281/zenodo.21988601`, resolves as concept latest; a
+fresh unauthenticated download matches the committed 615,252-byte PDF at SHA-256
+`98d730fb8afaf40149d028bdde0b1c3ba9851f1dbcd15475567e56bb7eb17d3f`. HWB-026 is now the only
+delivery gate: checked PR promotion to `develop` and `main`, followed by merge/tree reconciliation.
+No release tag is part of this round.

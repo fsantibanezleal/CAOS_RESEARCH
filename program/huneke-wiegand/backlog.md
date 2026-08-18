@@ -24,5 +24,7 @@
 | HWB-020 | 1 | done | exact Noether-normalization module and graded Betti data | EXP-020 proves the complete cyclic decomposition, minimal resolution, regularity four, and section identity `25p=e0+I` |
 | HWB-021 | 1 | done | manuscript and Zenodo update for module theorem | v0.10 published and fresh-download verified at `10.5281/zenodo.21909127` |
 | HWB-022 | 1 | done | conductor fiber cone and canonical Cohen--Macaulayization | EXP-021 proves the exact square, natural quotient, type `10p+1`, and nonlevel behavior |
-| HWB-023 | 2 | pending | defining ideal of the conductor fiber cone | consider Abdolmaleki--Kumashiro only after EXP-021 establishes the fiber-cone theorem |
+| HWB-023 | 2 | done | defining ideal of the conductor fiber cone | EXP-023 proves the full presentation by `50p^2-17p` quadrics plus the single cubic `X_0^2X_(3p)-X_p^3`; relation type three and non-Koszulness follow |
 | HWB-024 | 1 | done | manuscript and Zenodo update for the fiber-cone theorem | v0.11 published and fresh-download verified at `10.5281/zenodo.21909961` |
+| HWB-025 | 1 | done | manuscript and Zenodo update for the defining-ideal theorem | v0.12 published and fresh-download verified at `10.5281/zenodo.21988601` |
+| HWB-026 | 1 | in progress | repository promotion and immutable handoff for EXP-022/023 plus v0.12 | required checks pass on PRs to `develop` and `main`; merge commits and equal remote trees are recorded |
