@@ -1,0 +1,120 @@
+{
+  "experiment": "EXP-026-grevlex-staircase",
+  "status": "SYMBOLIC_CERTIFICATE_PASS",
+  "solver": {
+    "name": "Z3",
+    "version": "4.16.0"
+  },
+  "domain": "all integers p>=4",
+  "claims": {
+    "minimal_cubic_boundary": "exactly the six declared families",
+    "minimal_quartic_boundary": "exactly the declared p-2 family",
+    "reduced_tails": "all declared tails are canonical, weight-equal, and grevlex-smaller"
+  },
+  "deductive_closure_outside_solver": {
+    "degree_at_least_five": "E_4=[0,24p-1] and X_0 last imply N_(n,s)=X_0^(n-4)N_(4,s) for every n>=4; the staircase has no later boundary"
+  },
+  "execution_model": "one fresh solver subprocess per proof obligation",
+  "leaf_query_count": 16,
+  "all_leaf_results": "unsat",
+  "query_aggregate": "10c66bbcaa56108f6bdb423bda7c37d35818c4066ef57970a4e29e046f9dd5fa",
+  "elapsed_seconds": 62.50492670002859,
+  "leaves": [
+    {
+      "elapsed_seconds": 0.8545583999948576,
+      "label": "cubic-completeness",
+      "query_sha256": "2891a66d42eb2046d30867e2a906bec72e1b14f21e2b1130f4c4b4ea98141f30",
+      "result": "unsat"
+    },
+    {
+      "elapsed_seconds": 4.24862959998427,
+      "label": "cubic-soundness",
+      "query_sha256": "5fdb1ede8560d14810aedfdf71f0aafd28000ab637644b9b31fac95ffea720e9",
+      "result": "unsat"
+    },
+    {
+      "elapsed_seconds": 51.001461300009396,
+      "label": "quartic-completeness",
+      "query_sha256": "e577c89e3cc5551bb536c5c2303464be3cb1425187e633c82d18693e5c994b8c",
+      "result": "unsat"
+    },
+    {
+      "elapsed_seconds": 2.9353081000153907,
+      "label": "quartic-soundness",
+      "query_sha256": "7cedcd52fe37c665851bdcf2a5ea9286317f476c2159286e984c94135c8ffa83",
+      "result": "unsat"
+    },
+    {
+      "elapsed_seconds": 0.00483890000032261,
+      "label": "tail-c1-first",
+      "query_sha256": "b352c8f5ba1c7da81bda928a3cafdc1fd95af71f9812d76ae6685b5e306fd8e0",
+      "result": "unsat"
+    },
+    {
+      "elapsed_seconds": 0.005732000048737973,
+      "label": "tail-c1-interior",
+      "query_sha256": "ff0197175211dd09b63a5ddb675ccb23993655d0861813dd58775606fc799006",
+      "result": "unsat"
+    },
+    {
+      "elapsed_seconds": 0.008592899946961552,
+      "label": "tail-c1-last",
+      "query_sha256": "7f7fd8fddeba7c50f9aeee12d8971bf558df2d03345a4d3866806d35c6ec411f",
+      "result": "unsat"
+    },
+    {
+      "elapsed_seconds": 0.006889199954457581,
+      "label": "tail-c2-main",
+      "query_sha256": "a9b35d8c578240039f2761bb69d7cd9dce46027fb028d69552e62fd0f71d4fe2",
+      "result": "unsat"
+    },
+    {
+      "elapsed_seconds": 0.0055478999856859446,
+      "label": "tail-c2-last",
+      "query_sha256": "ea3aaf7162988a4052bfaab96e78209f0358f262884d2947bbbeafed8cd67080",
+      "result": "unsat"
+    },
+    {
+      "elapsed_seconds": 0.006542199989780784,
+      "label": "tail-c3-main",
+      "query_sha256": "1a42ed0fd05fa6f3a8965d10358eea6a9a9877b716099e633902972ff85026c0",
+      "result": "unsat"
+    },
+    {
+      "elapsed_seconds": 0.004985300009138882,
+      "label": "tail-c3-last",
+      "query_sha256": "70ed18933b0ac2173fcb084e7d6fe5292a12e200d139cc73c8885da13f68170d",
+      "result": "unsat"
+    },
+    {
+      "elapsed_seconds": 0.005871000001206994,
+      "label": "tail-c4",
+      "query_sha256": "60f6804724f8a0e0a7c3f6df78ad74b9e4187713da85df85f01f98e5eea3f16d",
+      "result": "unsat"
+    },
+    {
+      "elapsed_seconds": 0.008190200023818761,
+      "label": "tail-c5-first-two",
+      "query_sha256": "be73b59aa2a4ad6d2a82f934d3cc22529b216180935ee393a1ca3277f33b4991",
+      "result": "unsat"
+    },
+    {
+      "elapsed_seconds": 0.006623999972362071,
+      "label": "tail-c5-rest",
+      "query_sha256": "7ce9a0f7d028081b88345b7d815725e7e4faf979c3532b9544ec815c502d9f47",
+      "result": "unsat"
+    },
+    {
+      "elapsed_seconds": 0.005831699992995709,
+      "label": "tail-c6-isolated",
+      "query_sha256": "24099fe1b74bea7f82a7294e0fcd9e0e3e82c74fc59f1d690721409aad6bdeb7",
+      "result": "unsat"
+    },
+    {
+      "elapsed_seconds": 0.0066285000066272914,
+      "label": "tail-quartic",
+      "query_sha256": "71a353ea5377a415cb075e8a0f8b1875445a48cec15df7da3b7efdbea58bcf3c",
+      "result": "unsat"
+    }
+  ]
+}

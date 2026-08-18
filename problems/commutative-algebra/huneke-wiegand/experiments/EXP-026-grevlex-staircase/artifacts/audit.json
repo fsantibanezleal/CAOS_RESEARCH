@@ -1,0 +1,202 @@
+{
+  "experiment": "EXP-026-grevlex-staircase-audit",
+  "generated_at": "2026-08-18T20:06:07.467969+00:00",
+  "status": "PASS",
+  "samples": [
+    4,
+    5,
+    6,
+    17,
+    73,
+    151,
+    300
+  ],
+  "completed_samples": 7,
+  "campaign_all_row_rehash": "63af8f734afc8c057751d7633f63eec6d1df83472d494dbad6ada19e4365a218",
+  "audit_aggregate": "401c4807cc0a29a67a42c0d84ca8f235c86a271fe93bf1a2d2df586766e41373",
+  "elapsed_seconds": 0.8190650999895297,
+  "rows": [
+    {
+      "p": 4,
+      "pair_factorizations_enumerated": 820,
+      "standard_counts_2_to_6": [
+        88,
+        95,
+        96,
+        96,
+        96
+      ],
+      "quadratic_profile": {
+        "total": 732,
+        "binomial": 519,
+        "monomial_zero": 213
+      },
+      "boundary_counts_3_to_6": [
+        19,
+        2,
+        0,
+        0
+      ],
+      "cubic_relation_hash": "396ceef5f99452bab9ca4853db8b0deb84f405d1e9a18dc5e0c1adb204b8405c",
+      "quartic_relation_hash": "d680c38faed089811e98260a76c1334c971af6b2224a58846abe98f5dec0c0b8",
+      "x0_divides_minimal_lead": false,
+      "audit_row_hash": "86b127b5e28d484956733bdfd16639001995c2c76ddc58bd7d6d302405879ff9"
+    },
+    {
+      "p": 5,
+      "pair_factorizations_enumerated": 1275,
+      "standard_counts_2_to_6": [
+        110,
+        119,
+        120,
+        120,
+        120
+      ],
+      "quadratic_profile": {
+        "total": 1165,
+        "binomial": 841,
+        "monomial_zero": 324
+      },
+      "boundary_counts_3_to_6": [
+        24,
+        3,
+        0,
+        0
+      ],
+      "cubic_relation_hash": "937672c66760c050a8d910b6608987bf32914d14a44f9114009baff39d08d76f",
+      "quartic_relation_hash": "32d715f9f6b8b5a086156e07a2003d2ed8f2347d7acbc447888f848b16a8a2a5",
+      "x0_divides_minimal_lead": false,
+      "audit_row_hash": "568b1f4bcad049a53941106d5f92a7670cc733498068d6ae8ec49b8fd3d31093"
+    },
+    {
+      "p": 6,
+      "pair_factorizations_enumerated": 1830,
+      "standard_counts_2_to_6": [
+        132,
+        143,
+        144,
+        144,
+        144
+      ],
+      "quadratic_profile": {
+        "total": 1698,
+        "binomial": 1240,
+        "monomial_zero": 458
+      },
+      "boundary_counts_3_to_6": [
+        29,
+        4,
+        0,
+        0
+      ],
+      "cubic_relation_hash": "eb3c5569675a49d18c45c9bf0ba27cede246a162bf8fe32d149fc14380d00f7c",
+      "quartic_relation_hash": "489adb2778eef6f87f34ab5983ff0384d8ec34cba89e3df390fa25fee158f6f8",
+      "x0_divides_minimal_lead": false,
+      "audit_row_hash": "4f10bf8e80f25c2f79dcd802dc1ea8f9b1e3fc9a7a3172bc40775183f88e5737"
+    },
+    {
+      "p": 17,
+      "pair_factorizations_enumerated": 14535,
+      "standard_counts_2_to_6": [
+        374,
+        407,
+        408,
+        408,
+        408
+      ],
+      "quadratic_profile": {
+        "total": 14161,
+        "binomial": 10711,
+        "monomial_zero": 3450
+      },
+      "boundary_counts_3_to_6": [
+        84,
+        15,
+        0,
+        0
+      ],
+      "cubic_relation_hash": "b31f8df6f94ef50e9e8564488c9a86a6c7b77a2b37fe08d430271c8cc0cd5e70",
+      "quartic_relation_hash": "14792e4b2020078ccfd5baf0d4ba05bcf74bea1d6d2e2a03f56185874e60a4d9",
+      "x0_divides_minimal_lead": false,
+      "audit_row_hash": "9745c3dde4d31f35812e1b31e140252f40324e8452faa761588de2eabcf3c489"
+    },
+    {
+      "p": 73,
+      "pair_factorizations_enumerated": 266815,
+      "standard_counts_2_to_6": [
+        1606,
+        1751,
+        1752,
+        1752,
+        1752
+      ],
+      "quadratic_profile": {
+        "total": 265209,
+        "binomial": 203379,
+        "monomial_zero": 61830
+      },
+      "boundary_counts_3_to_6": [
+        364,
+        71,
+        0,
+        0
+      ],
+      "cubic_relation_hash": "6a22149a5be9ec9618a04b4b3b231b941c9f3647b78e0c453087dc7dd0361550",
+      "quartic_relation_hash": "62cfefd533024de4116b7f8be89702f961b3e787c74b86352d1dd2f7b4fe4e31",
+      "x0_divides_minimal_lead": false,
+      "audit_row_hash": "99bfa9d389df910af510551064ed913ad029f1fe73365cae20babe317df432ce"
+    },
+    {
+      "p": 151,
+      "pair_factorizations_enumerated": 1140805,
+      "standard_counts_2_to_6": [
+        3322,
+        3623,
+        3624,
+        3624,
+        3624
+      ],
+      "quadratic_profile": {
+        "total": 1137483,
+        "binomial": 874140,
+        "monomial_zero": 263343
+      },
+      "boundary_counts_3_to_6": [
+        754,
+        149,
+        0,
+        0
+      ],
+      "cubic_relation_hash": "abaa17a95d504214e081881d58417d09f07166255dddc160363da143a1a56b75",
+      "quartic_relation_hash": "74eb39f745040859f08be3ad8168ca2f7b7a2f9287d7e3a5666dc8ff0fd6a38f",
+      "x0_divides_minimal_lead": false,
+      "audit_row_hash": "c27371f1ba1080702ab14d3b95024bf23565ac17ed75c1fd7fa5167fbd1fbe84"
+    },
+    {
+      "p": 300,
+      "pair_factorizations_enumerated": 4501500,
+      "standard_counts_2_to_6": [
+        6600,
+        7199,
+        7200,
+        7200,
+        7200
+      ],
+      "quadratic_profile": {
+        "total": 4494900,
+        "binomial": 3457651,
+        "monomial_zero": 1037249
+      },
+      "boundary_counts_3_to_6": [
+        1499,
+        298,
+        0,
+        0
+      ],
+      "cubic_relation_hash": "27b157f02d6d19b17b5f3a5804eb71edc62d9c1e2f7cbd11950203dd510bd45e",
+      "quartic_relation_hash": "06ec93844cce32c16fdaf71af33d55a6b3d6d5bceb6925cf55750ecd1faf972f",
+      "x0_divides_minimal_lead": false,
+      "audit_row_hash": "d535b1b25c24a10c2d06366ea4cf8bd3cbdf25b37257ba1160a36ea07e857a80"
+    }
+  ]
+}
