@@ -1,12 +1,15 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-18. Lifecycle: confirmed; manuscript update active. EXP-026 proves the explicit
+Updated: 2026-08-18. Lifecycle: published; repository promotion active. EXP-026 proves the explicit
 reduced grevlex basis of the conductor fiber cone, with degree profile
 `(50p^2-17p,5p-1,p-2)` in degrees two through four, no later basis elements, and no leading
 generator divisible by `X_0`. The full `p=4,...,300` campaign, independent clique audit,
-16-query all-parameter certificate, and deductive staircase stabilization pass. The active gate
-is companion manuscript v0.02 and a Zenodo new version; the unresolved interior Betti table is a
-separate task. EXP-025 remains CONFIRMED. It proves
+16-query all-parameter certificate, and deductive staircase stabilization pass. Companion v0.02
+is published at DOI `10.5281/zenodo.22002907`; public metadata and a fresh unauthenticated
+453,621-byte download match MD5 `53123ab5bed9a6c84c37ebde1610c3f7` and SHA-256
+`12cc380bcc72613694b24cc9f74284f8f3d35e4958ec3569b6ebacce3225e398`. The active gate is checked
+repository promotion and final handoff; the unresolved interior Betti table is a separate task.
+EXP-025 remains CONFIRMED. It proves
 that the conductor special fiber is an explicit truncated-monomial algebra, its defining ideal
 has one primary component, and its projective scheme is a length-`24p` curvilinear fat point with
 sharp nilpotence index `24p`. The `p=4,...,300` campaign and independent all-row audit pass with
@@ -483,3 +486,28 @@ split, passed its 29-page claim/build/render and sole-authorship gates before up
 published at DOI `10.5281/zenodo.21995498`. A fresh public download matches the committed PDF.
 A separate manuscript is deferred to a future standalone Groebner/full-resolution/primary-
 decomposition theorem.
+
+## 2026-08-18 published - EXP-026 companion v0.02
+
+EXP-025 made the deferred Gröbner problem finite through its truncated-monomial parametrization.
+EXP-026 then proved the complete reduced grevlex basis, exact quadratic/cubic/quartic profile,
+explicit reduced tails, absence of later elements, and flat Cohen--Macaulay monomial degeneration.
+The optimized campaign passes all 297 parameters through `p=300`; an independent clique audit
+reconstructs seven small and large cases; 16 fresh-process Presburger obligations close the
+cubic/quartic boundary; and the infinite tail closes deductively by `X_0` stabilization.
+
+The focused companion was expanded in place rather than split: the new theorem studies the same
+conductor fiber cone as EXP-025, while a future complete interior Betti table may still justify a
+separate manuscript. The eight-page v0.02 artifact passed a warning-free two-pass build, complete
+150-DPI page inspection, extraction, PDF metadata, exact claim map, source-boundary, and sole-human-
+authorship gates. Zenodo reserved and embedded version DOI `10.5281/zenodo.22002907` under concept
+DOI `10.5281/zenodo.21997377` before the final rebuild.
+
+Authenticated draft inspection matched title, version, sole creator/ORCID, filename, 453,621-byte
+size, and MD5 before publication. The public API confirms the same identity, CC BY 4.0, and a
+two-record version chain containing v0.01 and v0.02; the concept DOI resolves to v0.02. A fresh
+unauthenticated download matches SHA-256
+`12cc380bcc72613694b24cc9f74284f8f3d35e4958ec3569b6ebacce3225e398`. HWB-034 is complete.
+HWB-036 owns the remaining checked promotion and durable-handoff gate. No new theorem experiment
+is active; HWB-035 remains the strongest distinct research candidate and requires a fresh
+source/novelty preflight before declaration.

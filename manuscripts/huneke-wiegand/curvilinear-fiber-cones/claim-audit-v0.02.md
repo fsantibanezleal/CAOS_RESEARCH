@@ -1,13 +1,13 @@
 # Claim audit - curvilinear conductor fiber cones v0.02
 
-Audit date: 2026-08-18. Prepublication decision: **PASS - exact DOI-bearing candidate frozen for
-upload**.
+Audit date: 2026-08-18. Final publication decision: **PASS - published artifact independently
+verified**.
 
 Version 0.02 retains every v0.01 primary-structure result and adds only the explicit canonical
 grevlex degeneration established by EXP-026. Zenodo draft `22002907` reserved version DOI
 `10.5281/zenodo.22002907`. That DOI was inserted before a fresh complete build, extraction,
-metadata, and eight-page render audit. Upload, publication, and public-download verification remain
-separate gates.
+metadata, and eight-page render audit. The exact candidate is now published, and its public
+metadata, version chain, concept resolution, and fresh unauthenticated download have been checked.
 
 ## Claim map
 
@@ -101,7 +101,13 @@ SHA-256 = 12cc380bcc72613694b24cc9f74284f8f3d35e4958ec3569b6ebacce3225e398
 
 ## Publication gate
 
-DOI reservation and complete DOI-bearing prepublication QA are complete. Only the 453,621-byte
-candidate identified above may be uploaded. After publication, public metadata and a fresh
-unauthenticated download must match its byte count, MD5, and SHA-256 before this audit is closed as
-a published PASS.
+The exact 453,621-byte DOI-bearing candidate was attached and published as
+`huneke-wiegand-curvilinear-fiber-cones-v0.02.pdf`. Authenticated draft inspection matched its
+title, version, sole creator, filename, byte count, and MD5 before publication. The public API
+confirms version 0.02, Felipe as sole creator with ORCID `0000-0002-0150-3246`, CC BY 4.0, version
+DOI `10.5281/zenodo.22002907`, and concept DOI `10.5281/zenodo.21997377`. The public version chain
+contains v0.01 record `21997378` and v0.02 record `22002907`, and the concept DOI resolves to the
+latter. A fresh unauthenticated download matches 453,621 bytes, MD5
+`53123ab5bed9a6c84c37ebde1610c3f7`, and SHA-256
+`12cc380bcc72613694b24cc9f74284f8f3d35e4958ec3569b6ebacce3225e398` exactly. The publication gate
+is complete.

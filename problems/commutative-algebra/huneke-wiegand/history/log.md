@@ -764,3 +764,22 @@
   exact cubic/quartic boundary families and every reduced tail. The infinite tail is closed by the
   deterministic `X_0`-stabilization lemma rather than a runtime-unstable quantified query.
 - EXP-026 is CONFIRMED. The focused companion v0.02 and Zenodo new-version gate are active.
+
+## 2026-08-18 - curvilinear companion v0.02 published and verified
+
+- Expanded the focused companion in place: the canonical grevlex theorem concerns the same fiber
+  cone as EXP-025, so a third manuscript would fragment one coherent result. A possible complete
+  interior Betti table remains a distinct future split trigger.
+- The eight-page v0.02 manuscript passed its claim map, warning-free two-pass build, complete final
+  150-DPI inspection, text extraction, PDF metadata, source-boundary, identity, and sole-human-
+  authorship gates.
+- Reserved reversible new-version draft `22002907`, inserted version DOI
+  `10.5281/zenodo.22002907`, rebuilt, and repeated the complete QA before upload.
+- Authenticated draft inspection matched the title, version, sole creator/ORCID, filename,
+  453,621-byte size, and MD5 `53123ab5bed9a6c84c37ebde1610c3f7` before publication.
+- Published v0.02 under concept DOI `10.5281/zenodo.21997377`. The public API confirms CC BY 4.0,
+  the two-record version chain, and concept resolution to `22002907`. A fresh unauthenticated
+  download matches SHA-256
+  `12cc380bcc72613694b24cc9f74284f8f3d35e4958ec3569b6ebacce3225e398` exactly.
+- HWB-034 is complete. HWB-036 now owns checked repository promotion and final handoff; no new
+  theorem experiment has been declared.

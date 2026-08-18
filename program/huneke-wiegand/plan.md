@@ -470,3 +470,11 @@ and reduced tails. The infinite degree tail closes deductively from
 The manuscript trigger is crossed. HWB-029 is closed for the Groebner problem, HWB-035 now owns
 the distinct interior-Betti question, and HWB-034 is active for v0.02 of the focused curvilinear
 companion plus a Zenodo new version.
+
+The focused companion v0.02 passed claim/build/render, extraction, metadata, identity, and
+sole-authorship QA and was published as Zenodo record `22002907`, version DOI
+`10.5281/zenodo.22002907`. The concept DOI resolves to the new version, and the fresh public PDF
+matches the committed 453,621-byte artifact at SHA-256
+`12cc380bcc72613694b24cc9f74284f8f3d35e4958ec3569b6ebacce3225e398`. HWB-034 is done. The active
+delivery gate is PR-based promotion and final tree/handoff reconciliation under HWB-036. A new
+interior-Betti experiment is not declared in this publication round.
