@@ -644,3 +644,25 @@
   `f24b078b98376224b38753f7294d26627147c4ea`.
 - Remote work, `develop`, and `main` are tree-identical at
   `5c828789a5d993a35a1e42743860600d156c9f99`. No release tag is claimed.
+
+## 2026-08-18 - v0.13 durable handoff reconciled
+
+- Documentation-only PR #184 merged the final v0.13 handoff to `develop`; PR #185 promoted it to
+  `main`.
+- Before EXP-025 opened, remote work, `develop`, and `main` shared tree
+  `b70a3990583057a92e591c34d5f9e9c101185e8c`. The earlier `5c828...` tree is retained as the
+  theorem/publication payload tree, not mislabeled as the final handoff.
+
+## 2026-08-18 - EXP-025 declared
+
+- Archived and read primary context on nonradical monomial fiber cones and curvilinear
+  zero-dimensional schemes; no exact result for this conductor family was identified.
+- Redirected the round from an expensive unconstrained Groebner search to an invariant-first
+  truncated-monomial parametrization forced by EXP-021 freeness and EXP-023 value congruences.
+- A read-only sanity check at `p=4,5,17,73,151,300` found the exact `[0,24p-1]` layer partition,
+  offset-one generator, and sharp candidate truncation boundary.
+- Declared EXP-025 before implementation. It predicts a one-component primary decomposition,
+  nilpotency index `24p`, and a length-`24p` curvilinear fat point which is locally but not
+  arithmetically Gorenstein.
+- The full result, if confirmed, meets the previously recorded threshold for a separate companion
+  manuscript. No theorem, manuscript, Zenodo record, or delivery is yet claimed.

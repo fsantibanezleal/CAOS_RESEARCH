@@ -359,3 +359,37 @@ EXP-024/v0.13 publication state to `develop` at
 identical tested state to `main` at `f24b078b98376224b38753f7294d26627147c4ea`. The remote work,
 `develop`, and `main` refs share tree `5c828789a5d993a35a1e42743860600d156c9f99`. No release tag is
 claimed. A new theorem round requires a fresh source and novelty preflight.
+
+The documentation-only handoff was subsequently promoted by PRs #184/#185. Before the next
+round opened, remote work, `develop`, and `main` shared final tree
+`b70a3990583057a92e591c34d5f9e9c101185e8c`; the earlier `5c828...` tree is the theorem and
+publication payload, not the final documentation handoff.
+
+## 2026-08-18 curvilinear primary-structure gate
+
+A new source and novelty preflight redirects the next round from an unbounded explicit Groebner
+basis search to the nonreduced projective geometry already latent in EXP-021/023. Existing
+literature supplies the nonradical fiber-cone and curvilinear-scheme context but no identified
+formula for this conductor family. EXP-025 is declared before implementation.
+
+With `q=24p` and degree-one offset set `G_p`, the target parametrization is
+
+```text
+C_p isomorphic to k[x y^a : a in G_p] inside k[x,y]/(y^q).
+```
+
+Because `0,1 in G_p`, this predicts
+
+```text
+C_p/(X_0-1) isomorphic to k[y]/(y^q),
+radical(J_p)=(X_a:a>0),
+J_p is (X_a:a>0)-primary,
+nilindex(nil(C_p))=q.
+```
+
+The geometric form is a saturated length-`q` curvilinear fat point with tangent dimension one.
+It is locally Gorenstein although its homogeneous coordinate ring has type `10p+1` and is not
+level. The immediate gate is a post-implementation `p=4` smoke, then the exact `p=4,...,300`
+campaign, independent audit, and symbolic proof. If the complete package is confirmed, it meets
+the prior split criterion and opens a focused companion manuscript rather than v0.14 of the
+already broad Frobenius-minimality manuscript.

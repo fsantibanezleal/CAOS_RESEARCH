@@ -1,14 +1,14 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-18. Lifecycle: published handoff. EXP-024 is CONFIRMED: for every `p>=4`, the
-conductor special fiber has presentation-ring projective dimension `10p-1`, regularity four,
-`beta_(2,3)=2p(500p^2-330p+31)/3`, a complete last Betti row fixed by its Artinian socle,
-penultimate extremal entry `8p`, and canonical-module generators in degrees `-1` and `-3`.
-The exact `p=4,...,300` campaign and independent all-row audit pass. The 29-page v0.13 preprint
-passed claim/build/render and sole-authorship QA before publication and is immutable at DOI
-`10.5281/zenodo.21995498`. Public metadata and a fresh unauthenticated download match the committed
-PDF exactly. PRs #182/#183 passed the required checks and promoted the identical tested tree to
-`develop` and `main`. EXP-023 and v0.12 remain immutable at DOI `10.5281/zenodo.21988601`.
+Updated: 2026-08-18. Lifecycle: active theorem gate. EXP-025 is declared, not confirmed. It tests
+whether the conductor special fiber has an explicit truncated-monomial parametrization, whether
+its defining ideal has a single primary component, and whether its projective scheme is a
+length-`24p` curvilinear fat point with sharp nilpotence index `24p`. The source/novelty preflight,
+premise hashes, one-sided verdict, budget, and adversarial controls are frozen before
+implementation. EXP-024 and the 29-page v0.13 preprint remain confirmed, published, and immutable
+at DOI `10.5281/zenodo.21995498`. PRs #182--#185 completed the preceding theorem, publication,
+and durable documentation handoff; all three remote branches shared tree
+`b70a3990583057a92e591c34d5f9e9c101185e8c` before EXP-025 opened.
 
 ## 1. State in one screen
 
@@ -122,6 +122,7 @@ campaign is supporting evidence, not the proof.
 | EXP-022 | REFUTED | quadratic presentation false; universal necessary cubic `X_0^2X_(3p)-X_p^3` |
 | EXP-023 | CONFIRMED | unique higher equation; relation type three; exact count `50p^2-17p+1`; non-Koszul fiber cone |
 | EXP-024 | CONFIRMED | `pd=10p-1`, `reg=4`, exact `beta_(2,3)`, complete last row, penultimate `8p`, and canonical generator degrees |
+| EXP-025 | DECLARED | candidate truncated parametrization, primary decomposition, sharp nilpotence, and curvilinear projective structure; implementation pending |
 
 ## 3a. Exact evidence anchors
 
@@ -154,6 +155,24 @@ campaign is supporting evidence, not the proof.
 
 ## 4. In flight
 
+EXP-025 is declared but not yet confirmed. With `q=24p` and `G_p=E_1`, it predicts
+
+```text
+C_p isomorphic to k[x y^a : a in G_p] inside k[x,y]/(y^q),
+C_p/(X_0-1) isomorphic to k[y]/(y^q),
+radical(J_p)=(X_a:a>0),
+J_p is (X_a:a>0)-primary,
+nilindex(nil(C_p))=q.
+```
+
+The geometric prediction is a saturated length-`q` curvilinear fat point supported at the
+`X_0` coordinate point, with tangent dimension one. It is locally Gorenstein but its homogeneous
+coordinate ring remains nonlevel and non-Gorenstein of type `10p+1`. The declaration lives at
+`experiments/EXP-025-curvilinear-primary-structure/hypothesis.md`; no theorem, companion
+manuscript, Zenodo record, or promotion is yet claimed.
+
+Previously closed state:
+
 EXP-024 is CONFIRMED. Its deductive homological argument proves
 
 ```text
@@ -168,10 +187,8 @@ The canonical module has `10p` generators in degree `-1` and one in degree `-3`.
 independent audit agree for all 297 parameters. The theorem determines exact resolution edges,
 not the interior Betti table. Manuscript v0.13 is a published and fresh-download-verified 29-page
 preprint at DOI `10.5281/zenodo.21995498`. Repository promotion is complete: PR #182 merged to
-`develop` at `26c52103`, PR #183 merged to `main` at `f24b078b`, and all three remote branch trees
-match at `5c828789a5d993a35a1e42743860600d156c9f99`.
-
-Previously closed state:
+`develop` at `26c52103`, PR #183 merged to `main` at `f24b078b`, and documentation PRs #184/#185
+closed the durable handoff at tree `b70a3990583057a92e591c34d5f9e9c101185e8c`.
 
 EXP-011 is CONFIRMED. With `s=6p`, it proves
 
@@ -284,10 +301,15 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Select any new theorem target only through a fresh source and novelty preflight; no experiment
-   is presently declared.
-2. Preserve the solver trust boundary unless a separately checked proof object is added.
-3. Do not retroactively claim a global release tag for this research-only round.
+1. Implement EXP-025, run the mandatory `p=4` smoke, then the bounded `p=4,...,300` campaign and
+   independent audit.
+2. Write the symbolic proof and adjudicate every prediction without promoting finite evidence to
+   an infinite theorem.
+3. If the complete primary/curvilinear package is confirmed, create a focused companion
+   manuscript and separate Zenodo concept record; otherwise preserve the failure or narrower
+   result in the existing line.
+4. Preserve the EXP-023 solver trust boundary and do not claim a global release tag for this
+   research-only round.
 
 ### Lenses ledger
 
