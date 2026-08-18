@@ -1,0 +1,10 @@
+{
+  "experiment": "EXP-025",
+  "status": "PASS",
+  "first": 4,
+  "requested_last": 4,
+  "last_completed": 4,
+  "row_hashes": [
+    "aca267b0136737f896376c998a7ba111e099f8065ba5153d7ab9b1faa2ffa44e"
+  ]
+}

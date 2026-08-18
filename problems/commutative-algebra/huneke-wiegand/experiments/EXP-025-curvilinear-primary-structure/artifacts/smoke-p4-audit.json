@@ -1,0 +1,47 @@
+{
+  "experiment": "EXP-025-curvilinear-primary-structure",
+  "generated_at": "2026-08-18T14:17:22.430750+00:00",
+  "status": "PASS",
+  "campaign_aggregate": "716b43c5f30a3ef078602f2a73487d233770a74a9a0f6e2e667fef0e28c71747",
+  "row_count": 1,
+  "range": {
+    "first": 4,
+    "requested_last": 4
+  },
+  "selected_reconstructions": [
+    {
+      "p": 4,
+      "q": 96,
+      "basis_dimensions": [
+        1,
+        40,
+        88,
+        95,
+        96,
+        96
+      ],
+      "layer_dimensions": [
+        1,
+        39,
+        48,
+        7,
+        1
+      ],
+      "partition_exact": true,
+      "dehom_relations_complete": true,
+      "sharp_nilpotence": true,
+      "source_row_hash": "aca267b0136737f896376c998a7ba111e099f8065ba5153d7ab9b1faa2ffa44e"
+    }
+  ],
+  "all_rows_rehashed": true,
+  "all_rows_independently_reconstructed": true,
+  "controls": {
+    "embedded_prime_counterexample_blocks_primary_inference": true,
+    "deleted_offset_one_breaks_curvilinear_reduction": true,
+    "wrong_truncation_changes_length": true,
+    "wrong_nilindex_rejected_by_sharp_witness": true,
+    "local_and_arithmetic_gorenstein_not_conflated": true,
+    "characteristic_split_retained": true
+  },
+  "audit_aggregate": "30fba99a61a3e93430f774c4b9818a547850a54b2b20987b669ee942219c98b7"
+}
