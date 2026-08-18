@@ -1,13 +1,14 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-18. Lifecycle: repository-promotion gate. EXP-024 is CONFIRMED: for every `p>=4`, the
+Updated: 2026-08-18. Lifecycle: published handoff. EXP-024 is CONFIRMED: for every `p>=4`, the
 conductor special fiber has presentation-ring projective dimension `10p-1`, regularity four,
 `beta_(2,3)=2p(500p^2-330p+31)/3`, a complete last Betti row fixed by its Artinian socle,
 penultimate extremal entry `8p`, and canonical-module generators in degrees `-1` and `-3`.
 The exact `p=4,...,300` campaign and independent all-row audit pass. The 29-page v0.13 preprint
 passed claim/build/render and sole-authorship QA before publication and is immutable at DOI
 `10.5281/zenodo.21995498`. Public metadata and a fresh unauthenticated download match the committed
-PDF exactly. EXP-023 and v0.12 remain immutable at DOI `10.5281/zenodo.21988601`.
+PDF exactly. PRs #182/#183 passed the required checks and promoted the identical tested tree to
+`develop` and `main`. EXP-023 and v0.12 remain immutable at DOI `10.5281/zenodo.21988601`.
 
 ## 1. State in one screen
 
@@ -166,8 +167,9 @@ beta_(10p-2,10p+2)=8p.
 The canonical module has `10p` generators in degree `-1` and one in degree `-3`. The campaign and
 independent audit agree for all 297 parameters. The theorem determines exact resolution edges,
 not the interior Betti table. Manuscript v0.13 is a published and fresh-download-verified 29-page
-preprint at DOI `10.5281/zenodo.21995498`. The active action is checked PR promotion followed by
-exact remote merge/tree reconciliation.
+preprint at DOI `10.5281/zenodo.21995498`. Repository promotion is complete: PR #182 merged to
+`develop` at `26c52103`, PR #183 merged to `main` at `f24b078b`, and all three remote branch trees
+match at `5c828789a5d993a35a1e42743860600d156c9f99`.
 
 Previously closed state:
 
@@ -282,12 +284,10 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Promote the exact EXP-024/v0.13 state through checked PRs to `develop` and `main`, then reconcile
-   merge commits and remote trees.
-2. Select any new theorem target only through a fresh source and novelty preflight; no experiment
+1. Select any new theorem target only through a fresh source and novelty preflight; no experiment
    is presently declared.
-3. Preserve the solver trust boundary unless a separately checked proof object is added.
-4. Do not retroactively claim a global release tag for this research-only round.
+2. Preserve the solver trust boundary unless a separately checked proof object is added.
+3. Do not retroactively claim a global release tag for this research-only round.
 
 ### Lenses ledger
 

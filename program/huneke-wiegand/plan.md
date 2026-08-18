@@ -352,3 +352,10 @@ sole-authorship gates before upload. It is now immutably published CC BY 4.0 at 
 matches the committed 635,617-byte PDF at MD5 `d6ce72589100d1f57986da000501fdc7` and SHA-256
 `cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed`. The active gate is checked
 repository promotion to `develop` and `main`, followed by exact merge/tree reconciliation.
+
+Repository promotion is complete. PR #182 passed `guards` and `test` and merged the full
+EXP-024/v0.13 publication state to `develop` at
+`26c5210302ede4681111a4503776190954c33f59`. PR #183 passed all required checks and promoted the
+identical tested state to `main` at `f24b078b98376224b38753f7294d26627147c4ea`. The remote work,
+`develop`, and `main` refs share tree `5c828789a5d993a35a1e42743860600d156c9f99`. No release tag is
+claimed. A new theorem round requires a fresh source and novelty preflight.

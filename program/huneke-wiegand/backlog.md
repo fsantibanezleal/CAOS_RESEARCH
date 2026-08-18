@@ -31,4 +31,4 @@
 | HWB-027 | 1 | done | extremal presentation-ring Betti data | EXP-024 proves exact projective dimension, regularity, first linear syzygies, last row, penultimate edge, and canonical degrees |
 | HWB-028 | 1 | done | manuscript and Zenodo update for homological edge theorem | v0.13 published and fresh-download verified at `10.5281/zenodo.21995498` |
 | HWB-029 | 2 | pending | explicit quadratic or Groebner basis and interior syzygies | reconsider after EXP-024; split manuscript only for a standalone theorem |
-| HWB-030 | 1 | in progress | repository promotion and immutable handoff for EXP-024 plus v0.13 | promote the exact tested publication state through PRs to `develop` and `main`, then reconcile remote trees |
+| HWB-030 | 1 | done | repository promotion and immutable handoff for EXP-024 plus v0.13 | PRs #182/#183 passed required checks; work, `develop`, and `main` share tree `5c828789a5d993a35a1e42743860600d156c9f99` |
