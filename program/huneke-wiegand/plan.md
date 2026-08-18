@@ -315,3 +315,40 @@ PR #177 passed all required checks and promoted that tested state to `main` at
 `5469624bab95a087aaef37630ea9c2a27c656054`. Documentation-only PR #178 then passed `guards` and
 `test`, and PR #179 passed all required checks and completed the durable handoff. No delivery gate
 or experiment remains active; any next theorem requires a new source and novelty preflight.
+
+## 2026-08-18 extremal Betti gate
+
+The fresh source and novelty preflight ranks exact presentation-ring edge homology above a full
+resolution or Groebner-basis attack. EXP-024 is declared before implementation. With
+`N=10p`, `c=N-1`, and h-polynomial
+
+```text
+1+(10p-1)z+12pz^2+(2p-1)z^3+z^4,
+```
+
+it predicts projective dimension `c`, regularity four, the complete last Betti row from the
+Artinian socle, `beta_(2,3)=2p(500p^2-330p+31)/3`, and
+`beta_(c-1,c+3)=8p`. The immediate gate is the `p=4` two-route smoke after implementation,
+followed by the bounded campaign, independent audit, and symbolic proof. No EXP-024 theorem,
+manuscript v0.13, or Zenodo version is yet claimed.
+
+EXP-024 is CONFIRMED. Auslander--Buchsbaum and the degree-four h-polynomial give projective
+dimension `10p-1` and regularity four. Two independent degree-three derivations give
+
+```text
+beta_(2,3)=2p(500p^2-330p+31)/3.
+```
+
+Regular linear reduction and the exact Artinian socle give the complete last row; the
+`z^(c+3)` coefficient isolates `beta_(c-1,c+3)=8p`, and graded duality gives `10p` canonical
+generators in degree `-1` plus one in degree `-3`. The exact campaign and all-row independent
+audit pass for `p=4,...,300`, with aggregates `baf6200a...637eb` and `b6035f61...f17e2`.
+
+The same-manuscript decision is closed: v0.13 is a coherent extension of the special-fiber
+presentation, while a split remains deferred to a standalone Groebner/full-resolution theorem.
+The 29-page v0.13 candidate passed claim, warning-free build, complete render, identity, and
+sole-authorship gates before upload. It is now immutably published CC BY 4.0 at DOI
+`10.5281/zenodo.21995498`; concept latest is record `21995498`. A fresh unauthenticated download
+matches the committed 635,617-byte PDF at MD5 `d6ce72589100d1f57986da000501fdc7` and SHA-256
+`cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed`. The active gate is checked
+repository promotion to `develop` and `main`, followed by exact merge/tree reconciliation.

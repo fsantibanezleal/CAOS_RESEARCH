@@ -587,3 +587,50 @@
   `02f8143a85ae27c2d95dbfcca2feb2a58550e10d`.
 - EXP-022/023, manuscript v0.12, Zenodo publication, and repository delivery are complete. No new
   experiment or release tag is declared.
+
+## 2026-08-18 - EXP-024 declared
+
+- Reconciled the v0.12 open questions: presentation-ring regularity is already exactly four; only
+  the interior higher-syzygy and Groebner questions remain open.
+- Ranked the extremal Betti route above explicit Groebner bases, a full-resolution campaign,
+  primary decomposition, and formalization of EXP-023.
+- Declared EXP-024 before implementation or execution. It predicts exact projective dimension,
+  regularity, first linear syzygies, last and penultimate extremal Betti entries, and canonical-
+  module generator degrees for every `p>=4`.
+- The immediate gate is a two-derivation `p=4` smoke, then an exact bounded campaign and an
+  independent audit. No theorem or publication is claimed yet.
+
+## 2026-08-18 - EXP-024 confirms exact homological edges
+
+- Proved `pd=10p-1` and presentation-ring regularity four from Cohen--Macaulayness and the exact
+  h-polynomial, correcting one stale v0.12 open-question phrase.
+- Derived `beta_(2,3)=2p(500p^2-330p+31)/3` independently from the Hilbert numerator and the
+  degree-three defining-ideal dimension.
+- Used regular linear reduction and top Koszul homology to determine the complete last Betti row;
+  isolated `beta_(c-1,c+3)=8p` and the canonical-module generator degrees.
+- The separate smoke, exact `p=4,...,300` campaign, all-row independent audit, premise hashes, and
+  adversarial controls pass. Campaign/audit aggregates are `baf6200a...637eb` and
+  `b6035f61...f17e2`.
+- The result is an edge theorem, not a full resolution. It belongs in the existing manuscript;
+  splitting is deferred to a standalone Groebner/full-resolution/primary-decomposition result.
+
+## 2026-08-18 - manuscript v0.13 candidate validated
+
+- Reserved reversible Zenodo new-version draft `21995498`, DOI `10.5281/zenodo.21995498`, from
+  immutable v0.12. No file was uploaded or published at reservation.
+- Expanded the manuscript to 29 pages with EXP-024, corrected the open questions, and passed the
+  claim audit, warning-free two-pass build, complete 150-DPI page inspection, metadata, DOI,
+  scope, and sole-authorship gates.
+- Frozen local candidate: 635,617 bytes, MD5 `d6ce72589100d1f57986da000501fdc7`, SHA-256
+  `cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed`. Zenodo upload and
+  publication remain pending.
+
+## 2026-08-18 - homological-edge preprint v0.13 published
+
+- Published Zenodo version DOI `10.5281/zenodo.21995498`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21995498`.
+- Public version, title, sole author/ORCID, CC-BY-4.0 licence, filename, and 635,617-byte size match
+  the validated candidate.
+- A fresh unauthenticated download has MD5 `d6ce72589100d1f57986da000501fdc7` and SHA-256
+  `cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed`, exactly matching Git.
+- Repository PR promotion remains the only active delivery gate; no release tag is claimed.

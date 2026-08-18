@@ -1,0 +1,316 @@
+{
+  "experiment": "EXP-024-extremal-betti-data",
+  "status": "INDEPENDENT_AUDIT_PASS",
+  "campaign_file_sha256": "30cefcb20edaeca931f471a781db9f7fb2da5796ed77dce61f6a8dfb609807e9",
+  "checkpoint_file_sha256": "fb7e7dab64f47832f8d065469e9dba815c4439d18b2b05ec68b1be45549ffd3f",
+  "campaign_rows_rehashed_and_rebuilt": 297,
+  "selected_parameters": [
+    4,
+    5,
+    17,
+    73,
+    151,
+    300
+  ],
+  "selected": [
+    {
+      "p": 4,
+      "variable_count": 40,
+      "codimension": 39,
+      "projective_dimension": 39,
+      "regularity": 4,
+      "h_vector": [
+        1,
+        39,
+        48,
+        7,
+        1
+      ],
+      "socle_vector": [
+        0,
+        0,
+        40,
+        0,
+        1
+      ],
+      "beta_1_2": 732,
+      "beta_1_3": 1,
+      "beta_2_3": 17896,
+      "last_row": [
+        [
+          39,
+          41,
+          40
+        ],
+        [
+          39,
+          43,
+          1
+        ]
+      ],
+      "penultimate": [
+        38,
+        42,
+        32
+      ],
+      "canonical_generator_degrees": {
+        "-3": 1,
+        "-1": 40
+      },
+      "audit_row_hash": "9a334f177e7641193b264b73264c85612f4da14df4d01f207667ed0e1b5a20de"
+    },
+    {
+      "p": 5,
+      "variable_count": 50,
+      "codimension": 49,
+      "projective_dimension": 49,
+      "regularity": 4,
+      "h_vector": [
+        1,
+        49,
+        60,
+        9,
+        1
+      ],
+      "socle_vector": [
+        0,
+        0,
+        50,
+        0,
+        1
+      ],
+      "beta_1_2": 1165,
+      "beta_1_3": 1,
+      "beta_2_3": 36270,
+      "last_row": [
+        [
+          49,
+          51,
+          50
+        ],
+        [
+          49,
+          53,
+          1
+        ]
+      ],
+      "penultimate": [
+        48,
+        52,
+        40
+      ],
+      "canonical_generator_degrees": {
+        "-3": 1,
+        "-1": 50
+      },
+      "audit_row_hash": "8e5650f348a5650c6e5cee31f9f70394fbd5d99fcaadeff7b9e3e6f2dbdc66d6"
+    },
+    {
+      "p": 17,
+      "variable_count": 170,
+      "codimension": 169,
+      "projective_dimension": 169,
+      "regularity": 4,
+      "h_vector": [
+        1,
+        169,
+        204,
+        33,
+        1
+      ],
+      "socle_vector": [
+        0,
+        0,
+        170,
+        0,
+        1
+      ],
+      "beta_1_2": 14161,
+      "beta_1_3": 1,
+      "beta_2_3": 1574438,
+      "last_row": [
+        [
+          169,
+          171,
+          170
+        ],
+        [
+          169,
+          173,
+          1
+        ]
+      ],
+      "penultimate": [
+        168,
+        172,
+        136
+      ],
+      "canonical_generator_degrees": {
+        "-3": 1,
+        "-1": 170
+      },
+      "audit_row_hash": "8654879ac3d0e25d9c0a0a59c049b84631750b78d5a8c375a5f8994e771358b1"
+    },
+    {
+      "p": 73,
+      "variable_count": 730,
+      "codimension": 729,
+      "projective_dimension": 729,
+      "regularity": 4,
+      "h_vector": [
+        1,
+        729,
+        876,
+        145,
+        1
+      ],
+      "socle_vector": [
+        0,
+        0,
+        730,
+        0,
+        1
+      ],
+      "beta_1_2": 265209,
+      "beta_1_3": 1,
+      "beta_2_3": 128501462,
+      "last_row": [
+        [
+          729,
+          731,
+          730
+        ],
+        [
+          729,
+          733,
+          1
+        ]
+      ],
+      "penultimate": [
+        728,
+        732,
+        584
+      ],
+      "canonical_generator_degrees": {
+        "-3": 1,
+        "-1": 730
+      },
+      "audit_row_hash": "ff29356bef5ba255d3284a831588ba5500e67df03aadf5a08c5f51cd78cff798"
+    },
+    {
+      "p": 151,
+      "variable_count": 1510,
+      "codimension": 1509,
+      "projective_dimension": 1509,
+      "regularity": 4,
+      "h_vector": [
+        1,
+        1509,
+        1812,
+        301,
+        1
+      ],
+      "socle_vector": [
+        0,
+        0,
+        1510,
+        0,
+        1
+      ],
+      "beta_1_2": 1137483,
+      "beta_1_3": 1,
+      "beta_2_3": 1142637234,
+      "last_row": [
+        [
+          1509,
+          1511,
+          1510
+        ],
+        [
+          1509,
+          1513,
+          1
+        ]
+      ],
+      "penultimate": [
+        1508,
+        1512,
+        1208
+      ],
+      "canonical_generator_degrees": {
+        "-3": 1,
+        "-1": 1510
+      },
+      "audit_row_hash": "4a618b572c7bc146e70ab532b34cd5b608fb7a31699cf7ffb46f0804f96d7067"
+    },
+    {
+      "p": 300,
+      "variable_count": 3000,
+      "codimension": 2999,
+      "projective_dimension": 2999,
+      "regularity": 4,
+      "h_vector": [
+        1,
+        2999,
+        3600,
+        599,
+        1
+      ],
+      "socle_vector": [
+        0,
+        0,
+        3000,
+        0,
+        1
+      ],
+      "beta_1_2": 4494900,
+      "beta_1_3": 1,
+      "beta_2_3": 8980206200,
+      "last_row": [
+        [
+          2999,
+          3001,
+          3000
+        ],
+        [
+          2999,
+          3003,
+          1
+        ]
+      ],
+      "penultimate": [
+        2998,
+        3002,
+        2400
+      ],
+      "canonical_generator_degrees": {
+        "-3": 1,
+        "-1": 3000
+      },
+      "audit_row_hash": "8ae6a34d291d53cf189a2b139b4e312a3c52222e68feb13856459d112d9e8b00"
+    }
+  ],
+  "imported_premise_cross_checks": {
+    "exp021_selected_rows": 6,
+    "exp023_campaign_rows": 20
+  },
+  "premise_sha256": {
+    "exp021_results": "1fa45248cd8160af6539a26069e21d74023c39ebd18bff796660532766429e7c",
+    "exp021_audit": "d479ffa6be2db2a1e2b465603b65e53fe6e4135fe025e37f45d97abbfe5a2571",
+    "exp021_proof": "463e609b256fc2e39a7f0056a5aa92d17e20d16c1f6861692a1ce7a18f88fe38",
+    "exp023_results": "e91a4e6acd9bbc243642c028eaba755b3cebf1a647f162634e579e6598944f44",
+    "exp023_audit": "30deabe2aceb1791f2fe8458c7c78ffa2db6da3c87586cf1932545d7cae62180",
+    "exp023_symbolic": "c2dd364126eb059f22c9356d4b99d0b4ae8a2c54db5e1dbff1d0ebfc43a48a6d",
+    "exp023_proof": "4f24c8bacf3ea4a7691142b6fbb2a79b40a1c200ec5051df3c79c3dc45bed084"
+  },
+  "controls": {
+    "false_regularity_rejected": true,
+    "false_projective_dimension_rejected": true,
+    "perturbed_beta_2_3_rejected": true,
+    "deleted_last_socle_entry_rejected": true,
+    "perturbed_penultimate_rejected": true,
+    "full_table_overclaim_rejected": true,
+    "corrupted_premise_hash_rejected": true
+  },
+  "audit_aggregate": "b6035f615f2b2092351b5a42e5a734c72ba4783adf82943ed41b38fe07ef17e2"
+}

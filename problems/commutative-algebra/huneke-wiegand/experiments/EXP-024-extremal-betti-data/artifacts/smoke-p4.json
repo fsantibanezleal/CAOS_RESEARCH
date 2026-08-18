@@ -1,0 +1,111 @@
+{
+  "experiment": "EXP-024-extremal-betti-data",
+  "status": "COMPUTATIONAL_PASS",
+  "range": {
+    "first": 4,
+    "last": 4,
+    "count": 1
+  },
+  "predictions": {
+    "projective_dimension_and_regularity": "PASS",
+    "alternating_betti_polynomial": "PASS",
+    "linear_first_syzygies": "PASS",
+    "complete_last_betti_row": "PASS",
+    "penultimate_extremal_entry": "PASS",
+    "canonical_module_generator_degrees": "PASS",
+    "adversarial_controls": "PASS"
+  },
+  "premise_sha256": {
+    "exp021_results": "1fa45248cd8160af6539a26069e21d74023c39ebd18bff796660532766429e7c",
+    "exp021_audit": "d479ffa6be2db2a1e2b465603b65e53fe6e4135fe025e37f45d97abbfe5a2571",
+    "exp021_proof": "463e609b256fc2e39a7f0056a5aa92d17e20d16c1f6861692a1ce7a18f88fe38",
+    "exp023_results": "e91a4e6acd9bbc243642c028eaba755b3cebf1a647f162634e579e6598944f44",
+    "exp023_audit": "30deabe2aceb1791f2fe8458c7c78ffa2db6da3c87586cf1932545d7cae62180",
+    "exp023_symbolic": "c2dd364126eb059f22c9356d4b99d0b4ae8a2c54db5e1dbff1d0ebfc43a48a6d",
+    "exp023_proof": "4f24c8bacf3ea4a7691142b6fbb2a79b40a1c200ec5051df3c79c3dc45bed084"
+  },
+  "campaign_aggregate": "4927991eb5eb94d988a72ff14bea06b1626514e5694a2a3282e6fe96e04d7d4f",
+  "rows": [
+    {
+      "p": 4,
+      "variable_count": 40,
+      "codimension": 39,
+      "projective_dimension": 39,
+      "regularity": 4,
+      "h_vector": [
+        1,
+        39,
+        48,
+        7,
+        1
+      ],
+      "socle_vector": [
+        0,
+        0,
+        40,
+        0,
+        1
+      ],
+      "first_betti": {
+        "beta_1_2": 732,
+        "beta_1_3": 1
+      },
+      "linear_first_syzygies": {
+        "hilbert_numerator_route": 17896,
+        "degree_three_dimension_route": 17896,
+        "closed_formula": 17896
+      },
+      "last_betti_row_nonzero_entries": [
+        {
+          "homological_degree": 39,
+          "internal_degree": 41,
+          "rank": 40,
+          "socle_degree": 2
+        },
+        {
+          "homological_degree": 39,
+          "internal_degree": 43,
+          "rank": 1,
+          "socle_degree": 4
+        }
+      ],
+      "last_betti_row_complete": true,
+      "penultimate_extremal": {
+        "homological_degree": 38,
+        "internal_degree": 42,
+        "rank": 32
+      },
+      "canonical_module_minimal_generator_degrees": {
+        "-3": 1,
+        "-1": 40
+      },
+      "hilbert_numerator_selected_coefficients": {
+        "0": 1,
+        "1": 0,
+        "2": -732,
+        "3": 17895,
+        "42": 32,
+        "43": -1
+      },
+      "hilbert_numerator_aggregate": "494383f3b3e8587be2f9544ac2c57b7e878a3d04bb8135da44f759b8cbd65a29",
+      "comparisons": {
+        "beta_1_2_from_hilbert_degree_2": true,
+        "beta_2_3_two_routes": true,
+        "beta_2_3_closed_form": true,
+        "last_row_from_socle": true,
+        "penultimate_from_top_coefficient": true,
+        "top_coefficient_from_last_row": true
+      },
+      "controls": {
+        "false_regularity_three_rejected": true,
+        "false_projective_dimension_rejected": true,
+        "perturbed_beta_2_3_rejected": true,
+        "deleted_degree_two_socle_rejected": true,
+        "deleted_degree_four_socle_rejected": true,
+        "perturbed_penultimate_rejected": true
+      },
+      "interior_betti_table_determined": false,
+      "row_hash": "815240e8bc29c36d3fc45fc8f50efab6e01c4247ca0da5e77ea8077534913e2c"
+    }
+  ]
+}

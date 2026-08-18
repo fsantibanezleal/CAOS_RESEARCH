@@ -30,6 +30,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-021 | CONFIRMED | conductor fiber cone is canonically `G_p/H^0`; Cohen--Macaulay of type `10p+1`, nonlevel and non-Gorenstein |
 | EXP-022 | REFUTED | the defining ideal is not quadratic; `X_0^2X_(3p)-X_p^3` is a necessary cubic for every `p>=4` |
 | EXP-023 | CONFIRMED | complete defining ideal by `50p^2-17p` quadrics and the unique cubic; relation type three and non-Koszulness |
+| EXP-024 | CONFIRMED | exact presentation-ring projective dimension, regularity, first linear syzygies, complete last row, penultimate edge, and canonical degrees |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
@@ -41,13 +42,14 @@ Transcribe only closed experiment verdicts and proved derivations.
 | preprint v0.10 | published | complete Noether-normalization module and graded-resolution theorem, DOI [`10.5281/zenodo.21909127`](https://doi.org/10.5281/zenodo.21909127); exact public-file hash verified |
 | preprint v0.11 | published | canonical conductor special fiber, exact type, and nonlevel theorem, DOI [`10.5281/zenodo.21909961`](https://doi.org/10.5281/zenodo.21909961); exact public-file hash verified |
 | preprint v0.12 | published | complete defining ideal, exact first Betti row, relation type three, and non-Koszulness, DOI [`10.5281/zenodo.21988601`](https://doi.org/10.5281/zenodo.21988601); exact public-file hash verified |
+| preprint v0.13 | published | homological edge theorem, DOI [`10.5281/zenodo.21995498`](https://doi.org/10.5281/zenodo.21995498); exact public-file hash verified |
 
 CAOS independently reproduces the public counterexample's decisive finite certificate. Discovery
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery. CAOS's novel
 extensions are the certified Frobenius-minimality theorem in EXP-005, the complete minimum-layer
 classification in EXP-007, the EXP-009 infinite family theorem, the EXP-011 uniform
 endomorphism-overring theorem, the EXP-012/013 type-and-trace anatomy, and the EXP-023 uniform
-minimal presentation of the conductor special fiber.
+minimal presentation of the conductor special fiber, and the EXP-024 homological edge theorem.
 
 ## Uniform endomorphism anatomy
 
@@ -271,3 +273,27 @@ three, `mu(J_p)=50p^2-17p+1`, and the fiber cone is not Koszul.
 The exact campaign passes `p=4,...,23`; a separate total-by-total implementation rehashes all rows
 and rebuilds `p=4,13,23`. The symbolic UNSAT results have no separately checked proof object, so
 the solver and encoding remain an explicit residual trust boundary.
+
+## Homological edges of the conductor special fiber
+
+Put `c=10p-1`. EXP-024 combines the exact h-vector, Artinian socle, and first Betti row to prove
+
+```text
+pd_(P_p)(F_p)=c,
+reg_(P_p)(F_p)=4,
+beta_(2,3)=2p(500p^2-330p+31)/3,
+beta_(c,c+2)=10p,
+beta_(c,c+4)=1,
+beta_(c-1,c+3)=8p.
+```
+
+Every other entry in the last homological row is zero. The canonical module has `10p` minimal
+generators in degree `-1` and one in degree `-3`. The alternating Betti polynomial is
+
+```text
+(1-z)^c(1+(10p-1)z+12pz^2+(2p-1)z^3+z^4).
+```
+
+The coefficient formula determines the displayed edges but not the interior Betti table. An exact
+campaign and independent audit rebuild all `p=4,...,300`; the theorem itself is the symbolic
+Auslander--Buchsbaum, Hilbert-series, regular-reduction, Koszul-socle, and duality argument.

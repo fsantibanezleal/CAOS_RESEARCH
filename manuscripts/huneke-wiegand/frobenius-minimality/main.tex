@@ -14,8 +14,8 @@
 \hypersetup{
   pdftitle={Frobenius Minimality, Minimum-Layer Uniqueness, and an Infinite Family of Huneke--Wiegand Counterexamples},
   pdfauthor={Felipe Santibanez-Leal},
-  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, conductor, tangent-cone, fiber-cone, and defining-ideal anatomy},
-  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, trace ideals, conductors, associated graded rings, tangent cones, fiber cones, defining ideals, Koszul algebras, Buchsbaum rings, Cohen-Macaulay rings, SAT, DRAT}
+  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, conductor, tangent-cone, fiber-cone, defining-ideal, and syzygy anatomy},
+  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, trace ideals, conductors, associated graded rings, tangent cones, fiber cones, defining ideals, graded Betti numbers, canonical modules, Koszul algebras, Buchsbaum rings, Cohen-Macaulay rings, SAT, DRAT}
 }
 \usepackage{orcidlink}
 \usepackage{fancyhdr}
@@ -36,18 +36,18 @@
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-18\\[2pt]\normalsize Version 0.12}
+\date{2026-08-18\\[2pt]\normalsize Version 0.13}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.12}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.13}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.12}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.13}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,13 +63,13 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.12 \textperiodcentered\ 2026-08-18\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21988601}{10.5281/zenodo.21988601}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.13 \textperiodcentered\ 2026-08-18\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21995498}{10.5281/zenodo.21995498}\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
 verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
 separate explicit infinite family, and its uniform endomorphism, type, trace, conductor, stability,
-reduction, tangent-cone, fiber-cone, and defining-ideal anatomy.
+reduction, tangent-cone, fiber-cone, defining-ideal, and syzygy anatomy.
 }}
 \end{center}
 
@@ -79,7 +79,7 @@ reduction, tangent-cone, fiber-cone, and defining-ideal anatomy.
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.12}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.13}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -151,7 +151,16 @@ polynomial ring on its $10p$ minimal degree-one generators, it has exactly $50p^
 quadrics and the single additional cubic $X_0^2X_{3p}-X_p^3$, with no other minimal equation.
 Thus its relation type is three and it is not Koszul. The all-parameter component calculation is
 an exact Presburger verification, supported by a separately encoded graph audit; its solver trust
-boundary is stated explicitly.
+boundary is stated explicitly. From the same exact h-vector, Artinian socle, and first Betti row,
+we then determine the homological edges over the full presentation ring. Its projective dimension
+is $10p-1$, its regularity is four,
+\[
+\beta_{2,3}=\frac{2p(500p^2-330p+31)}{3},
+\]
+the complete last row has ranks $10p$ in shift $c+2$ and one in shift $c+4$ for
+$c=10p-1$, and $\beta_{c-1,c+3}=8p$. The canonical module has $10p$ minimal generators in
+degree $-1$ and one in degree $-3$. These formulas determine exact edges, not the unresolved
+interior of the Betti table.
 The results remain confined
 to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
@@ -219,6 +228,9 @@ they are verified by exact machine computation and independently checked artifac
   $G_p/H^0(G_p)$, and compute its type $10p+1$ and nonlevel Artinian socle.
   \item We determine the complete defining ideal of that special fiber: $50p^2-17p$ minimal
   quadrics and one primitive cubic, giving relation type three and a non-Koszul family.
+  \item We determine exact homological edges over its full presentation ring: projective
+  dimension and regularity, the linear first-syzygy count, the complete last row, one penultimate
+  extremal entry, and the canonical-module generator degrees.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -1545,6 +1557,133 @@ and
 \texttt{832c8421fe66359b8c246e3465e27de6ea7829215f892ab815e72b1f44787194}.
 \]
 
+\subsection{Homological edges over the presentation ring}
+
+The h-vector and socle in Theorem~\ref{thm:fiber}, together with the complete first Betti row in
+Theorem~\ref{thm:presentation}, force more of the minimal resolution than the defining equations
+alone suggest. Put
+\[
+N=10p,\qquad c=N-1=10p-1,
+\]
+and write $\beta_{i,j}=\beta^{P_p}_{i,j}(\mathcal F_p)$.
+
+\begin{theorem}[Homological edge data, {\bf[D]}]
+\label{thm:homological-edge}
+For every integer $p\ge4$,
+\[
+\operatorname{pd}_{P_p}(\mathcal F_p)=c,
+\qquad
+\operatorname{reg}_{P_p}(\mathcal F_p)=4,
+\]
+and
+\begin{equation}
+\sum_{i,j}(-1)^i\beta_{i,j}z^j
+=(1-z)^c\bigl(1+(10p-1)z+12pz^2+(2p-1)z^3+z^4\bigr).
+\label{eq:betti-polynomial}
+\end{equation}
+The first linear-syzygy count is
+\begin{equation}
+\beta_{2,3}=\frac{2p(500p^2-330p+31)}{3}.
+\label{eq:linear-first-syzygies}
+\end{equation}
+The complete last homological row and a penultimate extremal entry are
+\begin{equation}
+\beta_{c,c+2}=10p,\qquad
+\beta_{c,c+4}=1,\qquad
+\beta_{c,j}=0\ (j\notin\{c+2,c+4\}),\qquad
+\beta_{c-1,c+3}=8p.
+\label{eq:betti-edge}
+\end{equation}
+Finally, the canonical module $\omega_{\mathcal F_p}$ has $10p$ minimal generators in degree
+$-1$ and one in degree $-3$.
+\end{theorem}
+
+\begin{proof}
+The polynomial ring $P_p$ has depth $N$, whereas Theorem~\ref{thm:fiber} gives
+$\operatorname{depth}_{P_p}(\mathcal F_p)=\dim\mathcal F_p=1$. Auslander--Buchsbaum therefore
+gives projective dimension $N-1=c$. The same theorem gives the h-polynomial
+\[
+h_p(z)=1+(10p-1)z+12pz^2+(2p-1)z^3+z^4.
+\]
+Since $\mathcal F_p$ is Cohen--Macaulay, its regularity is $\deg h_p=4$. In particular,
+regularity over the full presentation ring is already determined, rather than a separate open
+question. Taking Hilbert series in a minimal $P_p$-resolution gives
+\[
+\frac{h_p(z)}{1-z}
+=\frac{\sum_{i,j}(-1)^i\beta_{i,j}z^j}{(1-z)^N},
+\]
+which proves \eqref{eq:betti-polynomial}.
+
+There is no linear equation, so minimality gives no shift below $i+1$ in homological degree $i$.
+Consequently the coefficient of $z^3$ in \eqref{eq:betti-polynomial} is
+$\beta_{2,3}-\beta_{1,3}$. Theorem~\ref{thm:presentation} gives $\beta_{1,3}=1$, and expansion
+yields
+\[
+\beta_{2,3}
+=1-\binom{c}{3}+c\binom{c}{2}-12pc+(2p-1)
+=\frac{2p(500p^2-330p+31)}{3}.
+\]
+Independently, the degree-three part of the first free module has dimension
+$N\beta_{1,2}+\beta_{1,3}$ and maps onto $(\mathfrak a_p)_3$. Since
+\[
+\dim(P_p)_3=\binom{N+2}{3},\qquad
+\dim(\mathcal F_p)_3=24p-1,
+\]
+its kernel has dimension
+\[
+N(50p^2-17p)+1-\left(\binom{N+2}{3}-(24p-1)\right),
+\]
+which simplifies to the same value.
+
+Now reduce modulo $X_0$, whose image $x_p$ is the regular parameter from
+Theorem~\ref{thm:fiber}. Because $X_0$ is regular on both $P_p$ and $\mathcal F_p$, tensoring the
+minimal resolution with $Q_p=P_p/(X_0)$ remains exact and minimal. Hence its Betti numbers equal
+those of the Artinian reduction $B_p=\mathcal F_p/x_p\mathcal F_p$ over the polynomial ring
+$Q_p$ in $c$ variables. Top Koszul homology identifies
+\[
+\operatorname{Tor}^{Q_p}_c(B_p,\kfield)_j
+\cong \operatorname{Soc}(B_p)_{j-c}.
+\]
+Theorem~\ref{thm:fiber} gives socle dimensions $10p$ in degree two, one in degree four, and zero
+otherwise. This proves the complete last row in \eqref{eq:betti-edge}.
+
+In internal degree $c+3$, regularity four kills every contribution in homological degree at most
+$c-2$, while the last-row calculation kills $\beta_{c,c+3}$. Thus the coefficient of
+$z^{c+3}$ in \eqref{eq:betti-polynomial} is
+$(-1)^{c-1}\beta_{c-1,c+3}$. Only the last two terms of $h_p$ contribute, giving
+\[
+(-1)^c(2p-1)+(-1)^{c-1}c=(-1)^{c-1}8p.
+\]
+Therefore $\beta_{c-1,c+3}=8p$.
+
+Finally,
+\[
+\omega_{\mathcal F_p}
+=\operatorname{Ext}^{c}_{P_p}(\mathcal F_p,P_p(-N)).
+\]
+Minimality lets us read its minimal generators from the dual of the last free module. A summand
+$P_p(-j)$ contributes in degree $N-j$. The $10p$ last summands with $j=c+2=N+1$ therefore give
+degree $-1$, and the single summand with $j=c+4=N+3$ gives degree $-3$.
+\end{proof}
+
+EXP-024 checks both derivations of \eqref{eq:linear-first-syzygies}, every selected coefficient in
+\eqref{eq:betti-polynomial}, and the socle-to-last-row transfer for all
+$p=4,\ldots,300$ {\bf[MV]}. Its independent implementation rebuilds all 297 rows, reconstructs
+six spaced EXP-021 socle cases, cross-checks all twenty persisted EXP-023 first rows, and rejects
+seven adversarial corruptions. The campaign and audit aggregates are
+\begin{center}
+{\fontsize{7}{8}\selectfont\ttfamily
+baf6200a442be9476cd083fde753bbdd9e623c06aa2528f3a7f138ee825637eb}
+\end{center}
+and
+\begin{center}
+{\fontsize{7}{8}\selectfont\ttfamily
+b6035f615f2b2092351b5a42e5a734c72ba4783adf82943ed41b38fe07ef17e2}.
+\end{center}
+The symbolic argument above, not the finite campaign, proves the theorem. Equation
+\eqref{eq:betti-polynomial} is alternating data and does not determine the unresolved interior of
+the Betti table.
+
 \section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
@@ -1553,7 +1692,7 @@ All compact code, hypotheses, manifests, audits, and verdicts are in the public 
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
 minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
-also includes the compact EXP-011--023 campaigns, independent reconstruction audits, symbolic
+also includes the compact EXP-011--024 campaigns, independent reconstruction audits, symbolic
 proofs, the preserved EXP-013 correction, the EXP-015 refutation, and the EXP-022 quadratic
 refutation. The proof toolchain is
 pinned as follows:
@@ -1568,6 +1707,7 @@ DRAT-trim commit & {\fontsize{7}{8}\selectfont\ttfamily 2e3b2dc0ecf938addbd779d4
 DRAT-trim binary SHA-256 & {\fontsize{7}{8}\selectfont\ttfamily 92f0aa9575ed519d66a99b8b1b3dde6ece4618ae4c202a3a4b200265dda0aa7a}\\
 Z3 & 4.16.0; exact integer Presburger queries for EXP-023\\
 EXP-023 query aggregate & {\fontsize{7}{8}\selectfont\ttfamily 832c8421fe66359b8c246e3465e27de6ea7829215f892ab815e72b1f44787194}\\
+EXP-024 campaign/audit & exact integer coefficient and dimension routes; 297 rows plus independent rebuild\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -1583,6 +1723,11 @@ total-graph implementation, and the finite stress campaign reduce implementation
 remove reliance on solver soundness. The one-cubic theorem is therefore labeled \textbf{[MV]}, not
 presented as a proof-assistant theorem or a proof-carrying UNSAT result.
 
+EXP-024 introduces no additional solver dependency. Its scripts verify arithmetic identities and
+the frozen hashes of the EXP-021/023 premises; Theorem~\ref{thm:homological-edge} is a deductive
+consequence of those premises and standard homological arguments. Any defect in an imported
+premise would still propagate, and the theorem does not erase EXP-023's disclosed boundary.
+
 \section{Scope, attribution, and open questions}
 
 Son Pham retains discovery priority for the counterexample. Professor Craig Huneke's verification
@@ -1596,13 +1741,14 @@ Theorem~\ref{thm:reduction}, tangent-cone depth in Theorem~\ref{thm:tangent}, an
 graded-torsion/Buchsbaum anatomy in Theorem~\ref{thm:buchsbaum}, and the complete
 Noether-normalization module in Theorem~\ref{thm:module}, and the canonical fiber cone and type in
 Theorem~\ref{thm:fiber}, and its complete defining ideal in
-Theorem~\ref{thm:presentation}, together with
+Theorem~\ref{thm:presentation}, and its exact homological edges in
+Theorem~\ref{thm:homological-edge}, together with
 their reproducible records.
 
 Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
 \ref{thm:type}, \ref{thm:trace}, \ref{thm:stability}, \ref{thm:reduction},
 \ref{thm:tangent}, \ref{thm:buchsbaum}, \ref{thm:module}, \ref{thm:fiber},
-and~\ref{thm:presentation}
+\ref{thm:presentation}, and~\ref{thm:homological-edge}
 do not classify all higher
 Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
 or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
@@ -1616,8 +1762,8 @@ questions remain open:
   \item Which additional hypotheses on the endomorphism ring recover a positive theorem while
   excluding both the public example and the full family proved here?
   \item Can the finite certificates be imported into a smaller formally verified checker?
-  \item What are the higher syzygies, regularity over the full presentation ring, and Gr\"obner
-  features of the conductor special fiber beyond its now-determined minimal equations?
+  \item What is the unresolved interior of the presentation-ring Betti table, and is there a
+  uniform explicit Gr\"obner basis or primary decomposition for the conductor special fiber?
 \end{enumerate}
 
 \section*{Acknowledgments}

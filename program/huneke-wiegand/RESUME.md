@@ -1,15 +1,13 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-18. Lifecycle: promotion handoff. EXP-023 is CONFIRMED: for every `p>=4`,
-the conductor special-fiber defining ideal consists of its `50p^2-17p` minimal quadrics and the
-single cubic `X_0^2X_(3p)-X_p^3`. The relation type is three and the Cohen--Macaulay fiber cone is
-not Koszul. The exact `p=4,...,23` campaign, independent total-graph audit, and all-parameter
-Presburger connectivity proof pass. Manuscript v0.12 passed claim/build/render QA and is published
-at DOI `10.5281/zenodo.21988601`; a fresh unauthenticated download matches the committed PDF
-byte-for-byte. PR #176 merged the tested round to `develop`; PR #177 promoted it to `main`.
-Documentation handoff PRs #178/#179 also passed all required checks, so the research and delivery
-round is complete. Release v0.63.000 remains the repository release baseline; this research round
-does not claim a new tag.
+Updated: 2026-08-18. Lifecycle: repository-promotion gate. EXP-024 is CONFIRMED: for every `p>=4`, the
+conductor special fiber has presentation-ring projective dimension `10p-1`, regularity four,
+`beta_(2,3)=2p(500p^2-330p+31)/3`, a complete last Betti row fixed by its Artinian socle,
+penultimate extremal entry `8p`, and canonical-module generators in degrees `-1` and `-3`.
+The exact `p=4,...,300` campaign and independent all-row audit pass. The 29-page v0.13 preprint
+passed claim/build/render and sole-authorship QA before publication and is immutable at DOI
+`10.5281/zenodo.21995498`. Public metadata and a fresh unauthenticated download match the committed
+PDF exactly. EXP-023 and v0.12 remain immutable at DOI `10.5281/zenodo.21988601`.
 
 ## 1. State in one screen
 
@@ -122,6 +120,7 @@ campaign is supporting evidence, not the proof.
 | EXP-021 | CONFIRMED | canonical conductor special fiber; Cohen--Macaulay type `10p+1`; neither level nor Gorenstein |
 | EXP-022 | REFUTED | quadratic presentation false; universal necessary cubic `X_0^2X_(3p)-X_p^3` |
 | EXP-023 | CONFIRMED | unique higher equation; relation type three; exact count `50p^2-17p+1`; non-Koszul fiber cone |
+| EXP-024 | CONFIRMED | `pd=10p-1`, `reg=4`, exact `beta_(2,3)`, complete last row, penultimate `8p`, and canonical generator degrees |
 
 ## 3a. Exact evidence anchors
 
@@ -148,22 +147,27 @@ campaign is supporting evidence, not the proof.
   `d23792c47a2e07785a27ebc71e99619705f7aa53a38ebe7f66ffa03b0518ce83`,
   `a27b3b13fde197b1f011bf07dc2c321d84ab7c895c9aa02d7c2a073e48f18038`, and
   `832c8421fe66359b8c246e3465e27de6ea7829215f892ab815e72b1f44787194`.
+- EXP-024 campaign and independent all-row audit aggregates:
+  `baf6200a442be9476cd083fde753bbdd9e623c06aa2528f3a7f138ee825637eb` and
+  `b6035f615f2b2092351b5a42e5a734c72ba4783adf82943ed41b38fe07ef17e2`.
 
 ## 4. In flight
 
-EXP-023 is CONFIRMED. Its exact state-graph quotient proves
+EXP-024 is CONFIRMED. Its deductive homological argument proves
 
 ```text
-J_p=((J_p)_2,X_0^2X_(3p)-X_p^3),
-(beta_(1,2),beta_(1,3),beta_(1,4),beta_(1,5),...)=(50p^2-17p,1,0,0,...).
+pd=10p-1, reg=4,
+beta_(2,3)=2p(500p^2-330p+31)/3,
+beta_(10p-1,10p+1)=10p,
+beta_(10p-1,10p+3)=1,
+beta_(10p-2,10p+2)=8p.
 ```
 
-The all-parameter Presburger cover closes degree-three through degree-five connectivity, and the
-published Cohen--Macaulay fiber-cone construction closes every degree above five. The bounded
-campaign and independent audit agree, while the first over-budget attempt remains preserved as
-`INCONCLUSIVE_BUDGET`. The residual trust boundary is explicit: the Z3 UNSAT leaves do not carry
-a separately checked proof object. Manuscript v0.12 is published and exact-download verified.
-Checked theorem and documentation promotion are complete; no delivery gate remains.
+The canonical module has `10p` generators in degree `-1` and one in degree `-3`. The campaign and
+independent audit agree for all 297 parameters. The theorem determines exact resolution edges,
+not the interior Betti table. Manuscript v0.13 is a published and fresh-download-verified 29-page
+preprint at DOI `10.5281/zenodo.21995498`. The active action is checked PR promotion followed by
+exact remote merge/tree reconciliation.
 
 Previously closed state:
 
@@ -269,16 +273,21 @@ Published baseline:
   three, and non-Koszulness. The public 615,252-byte PDF has MD5
   `c8b810a763b9bb55d076a454df49b413` and SHA-256
   `98d730fb8afaf40149d028bdde0b1c3ba9851f1dbcd15475567e56bb7eb17d3f`.
+- v0.13 DOI `10.5281/zenodo.21995498`: homological edge theorem. The public 635,617-byte PDF has
+  MD5 `d6ce72589100d1f57986da000501fdc7` and SHA-256
+  `cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `21988601`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `21995498`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Select any new theorem target only through a fresh source and novelty preflight; no experiment
+1. Promote the exact EXP-024/v0.13 state through checked PRs to `develop` and `main`, then reconcile
+   merge commits and remote trees.
+2. Select any new theorem target only through a fresh source and novelty preflight; no experiment
    is presently declared.
-2. Preserve the solver trust boundary unless a separately checked proof object is added.
-3. Do not retroactively claim a global release tag for this research-only round.
+3. Preserve the solver trust boundary unless a separately checked proof object is added.
+4. Do not retroactively claim a global release tag for this research-only round.
 
 ### Lenses ledger
 
@@ -410,4 +419,29 @@ PR #176 passed `guards` and `test` and merged to `develop` at
 `aecb5b5c`; PR #177 passed all required checks and promoted it to `main` at `80de49e5`. Remote
 `develop` and `main` shared tree `5469624bab95a087aaef37630ea9c2a27c656054`. Documentation-only
 PR #178 passed `guards` and `test`; PR #179 passed all required checks and completed the handoff.
-No further experiment is declared.
+At that handoff, no further experiment was declared.
+
+## 2026-08-18 in flight - EXP-024
+
+A fresh primary-source and novelty preflight corrected one stale v0.12 open question: regularity
+over the full presentation polynomial ring is already forced to equal four. EXP-024 now asks how
+much more of the resolution follows from the exact h-vector, Artinian socle, and EXP-023 first
+Betti row. The declared targets are
+
+```text
+pd=10p-1,
+reg=4,
+beta_(2,3)=2p(500p^2-330p+31)/3,
+beta_(10p-1,10p+1)=10p,
+beta_(10p-1,10p+3)=1,
+beta_(10p-2,10p+2)=8p.
+```
+
+The canonical module has `10p` minimal generators in degree `-1` and one in degree `-3`.
+EXP-024 is CONFIRMED by the symbolic proof, two independent degree-three derivations, exact
+297-parameter campaign, all-row independent audit, selected source reconstructions, frozen
+premise hashes, and seven adversarial controls. Manuscript v0.13 adds this theorem without a
+split, passed its 29-page claim/build/render and sole-authorship gates before upload, and is
+published at DOI `10.5281/zenodo.21995498`. A fresh public download matches the committed PDF.
+A separate manuscript is deferred to a future standalone Groebner/full-resolution/primary-
+decomposition theorem.
