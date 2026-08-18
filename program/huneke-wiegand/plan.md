@@ -253,3 +253,16 @@ all required checks and promoted it to `main` at
 `7abd10403a5798af4757223bfa0cfa2135aed048`. The remote branch trees are identical at
 `21791e6a6c182fa12f00a5f255a6faab23dd7058`. The remaining action is the documentation handoff;
 no release tag is claimed.
+
+## 2026-08-17 defining-ideal gate
+
+HWB-023 is active as EXP-022 after a fresh source and novelty preflight. Abdolmaleki--Kumashiro,
+International Journal of Algebra and Computation 34(7) (2024), Theorem 2.8, guarantees a defining
+set through degree five because EXP-021 proves the fiber cone Cohen--Macaulay and EXP-017 gives
+reduction number four. It does not determine this family's minimal equations.
+
+EXP-022 tests the sharper value-congruence conjecture that the full defining ideal is generated in
+degree two. The exact predicted number is `50p^2-17p`. The mandatory order is `p=4` degreewise
+smoke, first-obstruction preservation or bounded campaign, independent audit, symbolic
+connectivity proof, and only then wiki/manuscript deliberation. No defining-ideal theorem or
+publication is claimed at declaration.

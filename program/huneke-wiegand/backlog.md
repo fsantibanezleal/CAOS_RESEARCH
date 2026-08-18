@@ -24,5 +24,5 @@
 | HWB-020 | 1 | done | exact Noether-normalization module and graded Betti data | EXP-020 proves the complete cyclic decomposition, minimal resolution, regularity four, and section identity `25p=e0+I` |
 | HWB-021 | 1 | done | manuscript and Zenodo update for module theorem | v0.10 published and fresh-download verified at `10.5281/zenodo.21909127` |
 | HWB-022 | 1 | done | conductor fiber cone and canonical Cohen--Macaulayization | EXP-021 proves the exact square, natural quotient, type `10p+1`, and nonlevel behavior |
-| HWB-023 | 2 | pending | defining ideal of the conductor fiber cone | consider Abdolmaleki--Kumashiro only after EXP-021 establishes the fiber-cone theorem |
+| HWB-023 | 2 | in progress | defining ideal of the conductor fiber cone | EXP-022 declared after source preflight; mandatory `p=4` gate tests quadratic generation and the predicted `50p^2-17p` equations |
 | HWB-024 | 1 | done | manuscript and Zenodo update for the fiber-cone theorem | v0.11 published and fresh-download verified at `10.5281/zenodo.21909961` |
