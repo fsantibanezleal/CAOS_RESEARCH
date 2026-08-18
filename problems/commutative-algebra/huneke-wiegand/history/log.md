@@ -684,3 +684,19 @@
   Gorenstein contrast, and differential signature for every `p>=4`.
 - This is the standalone primary-decomposition result reserved by EXP-024. A focused companion
   manuscript and separate Zenodo concept record are opened; neither is yet claimed as complete.
+
+## 2026-08-18 - companion manuscript v0.01 candidate validated
+
+- Created a focused six-page companion note rather than extending the already broad v0.13
+  manuscript.
+- The claim audit maps every theorem to EXP-025 and preserves the frozen-premise, finite-evidence,
+  scope, source, and characteristic boundaries.
+- A clean two-pass build has no warnings, undefined references, overfull boxes, or underfull
+  boxes. Every page was rendered at 150 DPI and inspected after replacing inconsistent draft
+  running headers with a uniform footer-only style.
+- Sole author Felipe Santibañez-Leal, ORCID, Son Pham priority, Craig Huneke external-verification
+  provenance, CC BY 4.0, and Zenodo metadata gates pass.
+- Frozen no-DOI candidate: 424,453 bytes, MD5 `168262c356b89d1e5b0d4eb3f552a120`, SHA-256
+  `cb78f46f2e3e2250594523a0dffe16806eefc499c44fa1b6b8a67ab3d074f07d`.
+- No Zenodo draft, DOI, upload, or publication is claimed. Separate concept-draft creation is the
+  next reversible gate.

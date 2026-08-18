@@ -407,3 +407,10 @@ local/arithmetic Gorenstein separation, and characteristic-sensitive differentia
 The split decision is therefore closed in favor of a focused companion preprint and separate
 Zenodo concept record. The next gate is manuscript claim/build/render and sole-authorship QA; no
 manuscript DOI or publication is yet claimed.
+
+The focused companion v0.01 is now a validated six-page candidate. Its claim map, warning-free
+two-pass build, complete final 150-DPI render inspection, PDF metadata, source boundary, and
+sole-human-authorship gates pass. The frozen no-DOI candidate is 424,453 bytes at SHA-256
+`cb78f46f2e3e2250594523a0dffe16806eefc499c44fa1b6b8a67ab3d074f07d`. The active reversible gate
+is creation of a separate Zenodo concept draft, followed by DOI insertion and a complete repeat of
+the validation before any upload or publication.
