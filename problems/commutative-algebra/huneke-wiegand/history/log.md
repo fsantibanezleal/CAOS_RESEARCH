@@ -669,3 +669,18 @@
 - Before implementation, the declaration was sharpened by the differential corollary
   `Omega^1=(k[y]/(y^(24p),24p*y^(24p-1)))dy`; this records the characteristic split rather than
   hiding it behind the characteristic-zero manuscript setting.
+
+## 2026-08-18 - EXP-025 confirms the curvilinear primary theorem
+
+- The mandatory `p=4` smoke passed both the truncated-sumset campaign route and the independently
+  encoded disjoint-layer audit route.
+- The full campaign passed all 297 parameters `p=4,...,300` in 1.84 seconds; campaign aggregate
+  `f3373f4f58287fd3f553b95efa226e7938170d32f24eea6a014ca47f9d6b39b6`.
+- The audit rehashed and independently reconstructed every row, with detailed checks at
+  `p=4,5,17,73,151,300`; audit aggregate
+  `84c00be8ff64002e8738a5d4307d71df73dfa7595e810c7e764f6f5b6c8f143e`.
+- The symbolic proof establishes the truncated parametrization, exact radical and primaryness,
+  nilpotency index `24p`, saturation, length-`24p` curvilinear geometry, local-versus-arithmetic
+  Gorenstein contrast, and differential signature for every `p>=4`.
+- This is the standalone primary-decomposition result reserved by EXP-024. A focused companion
+  manuscript and separate Zenodo concept record are opened; neither is yet claimed as complete.

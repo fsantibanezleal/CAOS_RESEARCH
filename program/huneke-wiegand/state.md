@@ -65,10 +65,12 @@
 | 2026-08-18 | published | published | PR #182 passed `guards` and `test` and merged EXP-024 plus v0.13 to `develop` at `26c52103`; PR #183 passed all required checks and promoted the identical tested tree to `main` at `f24b078b` |
 | 2026-08-18 | published | published | documentation handoff PRs #184/#185 completed; all three remote branches shared final tree `b70a3990583057a92e591c34d5f9e9c101185e8c` before EXP-025 opened |
 | 2026-08-18 | published | active | EXP-025 declared before implementation: test an explicit truncated-monomial parametrization, one-component primary decomposition, sharp nilpotence, and curvilinear projective geometry |
+| 2026-08-18 | active | confirmed | EXP-025 proves the truncated parametrization, one-component primary decomposition, nilpotency index `24p`, length-`24p` curvilinear geometry, local/arithmetic Gorenstein separation, and differential signature |
+| 2026-08-18 | confirmed | active | the prior manuscript-split gate is satisfied; a focused companion preprint and separate Zenodo concept record are now in preparation |
 
-Current state: **active theorem gate** (EXP-025 is declared but not yet confirmed; no companion
-manuscript or new Zenodo record is claimed). The preceding v0.13 handoff was tree-identical at
-`b70a3990583057a92e591c34d5f9e9c101185e8c` after PRs #184/#185.
+Current state: **active companion-manuscript gate** (EXP-025 is CONFIRMED; the focused manuscript
+is not yet validated or published, and no new Zenodo DOI is claimed). The preceding v0.13 handoff
+was tree-identical at `b70a3990583057a92e591c34d5f9e9c101185e8c` after PRs #184/#185.
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.

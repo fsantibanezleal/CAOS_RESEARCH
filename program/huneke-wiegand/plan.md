@@ -395,3 +395,15 @@ all others. The immediate gate is a post-implementation `p=4` smoke, then the ex
 campaign, independent audit, and symbolic proof. If the complete package is confirmed, it meets
 the prior split criterion and opens a focused companion manuscript rather than v0.14 of the
 already broad Frobenius-minimality manuscript.
+
+EXP-025 is CONFIRMED. The exact campaign passes every `p=4,...,300` with aggregate
+`f3373f4f58287fd3f553b95efa226e7938170d32f24eea6a014ca47f9d6b39b6`; the disjoint-layer audit
+rehashes and independently reconstructs all 297 rows with aggregate
+`84c00be8ff64002e8738a5d4307d71df73dfa7595e810c7e764f6f5b6c8f143e`. The symbolic proof gives
+the truncated model, exact primary component, sharp exponent, saturation, curvilinear fat point,
+local/arithmetic Gorenstein separation, and characteristic-sensitive differential module for all
+`p>=4`.
+
+The split decision is therefore closed in favor of a focused companion preprint and separate
+Zenodo concept record. The next gate is manuscript claim/build/render and sole-authorship QA; no
+manuscript DOI or publication is yet claimed.

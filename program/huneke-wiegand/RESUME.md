@@ -1,11 +1,12 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-18. Lifecycle: active theorem gate. EXP-025 is declared, not confirmed. It tests
-whether the conductor special fiber has an explicit truncated-monomial parametrization, whether
-its defining ideal has a single primary component, and whether its projective scheme is a
-length-`24p` curvilinear fat point with sharp nilpotence index `24p`. The source/novelty preflight,
-premise hashes, one-sided verdict, budget, and adversarial controls are frozen before
-implementation. EXP-024 and the 29-page v0.13 preprint remain confirmed, published, and immutable
+Updated: 2026-08-18. Lifecycle: active companion-manuscript gate. EXP-025 is CONFIRMED. It proves
+that the conductor special fiber is an explicit truncated-monomial algebra, its defining ideal
+has one primary component, and its projective scheme is a length-`24p` curvilinear fat point with
+sharp nilpotence index `24p`. The `p=4,...,300` campaign and independent all-row audit pass with
+aggregates `f3373f4f...b39b6` and `84c00be8...f143e`. The standalone theorem meets the prior split
+gate; a focused companion manuscript is now in preparation but is not yet validated or published.
+EXP-024 and the 29-page v0.13 preprint remain confirmed, published, and immutable
 at DOI `10.5281/zenodo.21995498`. PRs #182--#185 completed the preceding theorem, publication,
 and durable documentation handoff; all three remote branches shared tree
 `b70a3990583057a92e591c34d5f9e9c101185e8c` before EXP-025 opened.
@@ -122,7 +123,7 @@ campaign is supporting evidence, not the proof.
 | EXP-022 | REFUTED | quadratic presentation false; universal necessary cubic `X_0^2X_(3p)-X_p^3` |
 | EXP-023 | CONFIRMED | unique higher equation; relation type three; exact count `50p^2-17p+1`; non-Koszul fiber cone |
 | EXP-024 | CONFIRMED | `pd=10p-1`, `reg=4`, exact `beta_(2,3)`, complete last row, penultimate `8p`, and canonical generator degrees |
-| EXP-025 | DECLARED | candidate truncated parametrization, primary decomposition, sharp nilpotence, and curvilinear projective structure; implementation pending |
+| EXP-025 | CONFIRMED | truncated parametrization, one primary component, nilindex `24p`, curvilinear fat point, local/arithmetic Gorenstein contrast, and differential fingerprint |
 
 ## 3a. Exact evidence anchors
 
@@ -155,7 +156,7 @@ campaign is supporting evidence, not the proof.
 
 ## 4. In flight
 
-EXP-025 is declared but not yet confirmed. With `q=24p` and `G_p=E_1`, it predicts
+EXP-025 is CONFIRMED. With `q=24p` and `G_p=E_1`, it proves
 
 ```text
 C_p isomorphic to k[x y^a : a in G_p] inside k[x,y]/(y^q),
@@ -165,13 +166,15 @@ J_p is (X_a:a>0)-primary,
 nilindex(nil(C_p))=q.
 ```
 
-The geometric prediction is a saturated length-`q` curvilinear fat point supported at the
+The geometric result is a saturated length-`q` curvilinear fat point supported at the
 `X_0` coordinate point, with tangent dimension one. It is locally Gorenstein but its homogeneous
 coordinate ring remains nonlevel and non-Gorenstein of type `10p+1`. The affine Kahler
 differential module is also predicted exactly, with the required characteristic split when
-`char(k)` divides `q`. The declaration lives at
-`experiments/EXP-025-curvilinear-primary-structure/hypothesis.md`; no theorem, companion
-manuscript, Zenodo record, or promotion is yet claimed.
+`char(k)` divides `q`. The campaign passes all 297 parameters and the audit independently rebuilds
+all rows, with aggregates `f3373f4f58287fd3f553b95efa226e7938170d32f24eea6a014ca47f9d6b39b6`
+and `84c00be8ff64002e8738a5d4307d71df73dfa7595e810c7e764f6f5b6c8f143e`. The proof and verdict
+live under `experiments/EXP-025-curvilinear-primary-structure/`. The companion manuscript and
+separate Zenodo record are active gates, not completed claims.
 
 Previously closed state:
 
@@ -303,13 +306,12 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Implement EXP-025, run the mandatory `p=4` smoke, then the bounded `p=4,...,300` campaign and
-   independent audit.
-2. Write the symbolic proof and adjudicate every prediction without promoting finite evidence to
-   an infinite theorem.
-3. If the complete primary/curvilinear package is confirmed, create a focused companion
-   manuscript and separate Zenodo concept record; otherwise preserve the failure or narrower
-   result in the existing line.
+1. Create and fully audit the focused EXP-025 companion manuscript, retaining Felipe as sole
+   author and the exact local-versus-arithmetic and characteristic boundaries.
+2. Create a separate Zenodo concept record only after claim/build/render QA passes; upload,
+   publish, and verify a fresh public download before claiming delivery.
+3. Promote the exact validated publication state through checked PRs to `develop` and `main`, then
+   reconcile remote trees and the management handoff.
 4. Preserve the EXP-023 solver trust boundary and do not claim a global release tag for this
    research-only round.
 
