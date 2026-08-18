@@ -1,8 +1,10 @@
 # Claim audit - curvilinear conductor fiber cones v0.01
 
-Audit date: 2026-08-18. Decision: **PASS - validated publication candidate**.
+Audit date: 2026-08-18. Decision: **PASS - validated DOI-bearing upload candidate**.
 
-Publication is not yet claimed. No DOI or Zenodo draft existed when this candidate was frozen.
+Publication is not yet claimed. Zenodo draft `21997378` reserved version DOI
+`10.5281/zenodo.21997378` and concept DOI `10.5281/zenodo.21997377`; the draft remains unpublished
+and no file upload is yet claimed.
 
 ## Claim map
 
@@ -47,9 +49,9 @@ Frozen candidate:
 ```text
 file    = main.pdf
 pages   = 6
-bytes   = 424453
-MD5     = 168262c356b89d1e5b0d4eb3f552a120
-SHA-256 = cb78f46f2e3e2250594523a0dffe16806eefc499c44fa1b6b8a67ab3d074f07d
+bytes   = 424886
+MD5     = 43ce7ec181d26c38b17678b453a8e27e
+SHA-256 = e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a
 ```
 
 ## Identity, attribution, and metadata QA
@@ -66,8 +68,7 @@ SHA-256 = cb78f46f2e3e2250594523a0dffe16806eefc499c44fa1b6b8a67ab3d074f07d
 
 ## Publication gate
 
-The manuscript may now receive a separate Zenodo concept draft. The reversible draft must be
-created first and its assigned DOI inserted into the PDF and metadata; the resulting candidate
-must then repeat the warning-free build, complete six-page render inspection, identity checks, and
-hash freeze before upload or publication.
-
+The reversible concept draft is reserved and both assigned DOIs are printed in the PDF. The
+warning-free rebuild, complete six-page render inspection, identity checks, and new hash freeze
+pass. This exact candidate may now be attached to draft `21997378`; publication remains gated on
+the attached-file verification and must be followed by public metadata and fresh-download checks.

@@ -700,3 +700,14 @@
   `cb78f46f2e3e2250594523a0dffe16806eefc499c44fa1b6b8a67ab3d074f07d`.
 - No Zenodo draft, DOI, upload, or publication is claimed. Separate concept-draft creation is the
   next reversible gate.
+
+## 2026-08-18 - companion manuscript DOI-bearing candidate validated
+
+- Reserved reversible Zenodo draft `21997378`, version DOI `10.5281/zenodo.21997378`, and separate
+  concept DOI `10.5281/zenodo.21997377`; no publication was performed at reservation.
+- Inserted both identifiers in the manuscript and repeated the two-pass build, complete 150-DPI
+  inspection of all six pages, PDF metadata, claim, identity, and sole-authorship gates.
+- The DOI-bearing candidate is 424,886 bytes, MD5 `43ce7ec181d26c38b17678b453a8e27e`, SHA-256
+  `e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`.
+- The exact attachment, publication, and fresh public-download verification remain pending; no
+  upload or publication is claimed at this checkpoint.

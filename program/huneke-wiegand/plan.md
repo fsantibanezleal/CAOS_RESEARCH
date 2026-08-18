@@ -414,3 +414,11 @@ sole-human-authorship gates pass. The frozen no-DOI candidate is 424,453 bytes a
 `cb78f46f2e3e2250594523a0dffe16806eefc499c44fa1b6b8a67ab3d074f07d`. The active reversible gate
 is creation of a separate Zenodo concept draft, followed by DOI insertion and a complete repeat of
 the validation before any upload or publication.
+
+Separate Zenodo draft `21997378` is now reserved with version DOI
+`10.5281/zenodo.21997378` and concept DOI `10.5281/zenodo.21997377`. After inserting both
+identifiers, the 424,886-byte PDF repeated the warning-free two-pass build, complete six-page
+150-DPI inspection, metadata, identity, and sole-authorship gates. Its SHA-256 is
+`e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`. The active gate is now
+attachment of exactly this candidate, followed by publication and fresh public-record
+verification.

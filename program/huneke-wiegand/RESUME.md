@@ -6,9 +6,10 @@ has one primary component, and its projective scheme is a length-`24p` curviline
 sharp nilpotence index `24p`. The `p=4,...,300` campaign and independent all-row audit pass with
 aggregates `f3373f4f...b39b6` and `84c00be8...f143e`. The standalone theorem meets the prior split
 gate. A focused six-page v0.01 companion candidate passed claim/build/render, metadata, and
-sole-authorship QA and is frozen at SHA-256
-`cb78f46f2e3e2250594523a0dffe16806eefc499c44fa1b6b8a67ab3d074f07d`. It is not yet published,
-and no separate Zenodo draft or DOI is claimed.
+sole-authorship QA. Separate Zenodo draft `21997378` reserved version DOI
+`10.5281/zenodo.21997378` and concept DOI `10.5281/zenodo.21997377`; the DOI-bearing rebuild is
+frozen at SHA-256 `e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`.
+It is not yet uploaded or published.
 EXP-024 and the 29-page v0.13 preprint remain confirmed, published, and immutable
 at DOI `10.5281/zenodo.21995498`. PRs #182--#185 completed the preceding theorem, publication,
 and durable documentation handoff; all three remote branches shared tree
@@ -177,8 +178,8 @@ differential module is also predicted exactly, with the required characteristic 
 all rows, with aggregates `f3373f4f58287fd3f553b95efa226e7938170d32f24eea6a014ca47f9d6b39b6`
 and `84c00be8ff64002e8738a5d4307d71df73dfa7595e810c7e764f6f5b6c8f143e`. The proof and verdict
 live under `experiments/EXP-025-curvilinear-primary-structure/`. The companion manuscript is a
-validated six-page candidate; separate Zenodo draft creation, DOI insertion/revalidation, upload,
-publication, and public-download verification remain active gates rather than completed claims.
+validated six-page DOI-bearing candidate; attachment, publication, and public-download
+verification remain active gates rather than completed claims.
 
 Previously closed state:
 
@@ -310,9 +311,9 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Create the reversible separate Zenodo concept draft, insert its DOI into the manuscript and
-   metadata, then repeat complete build/render/identity QA before upload.
-2. Upload and publish only the revalidated DOI-bearing candidate, then verify metadata and a fresh
+1. Attach the exact revalidated DOI-bearing candidate to reserved draft `21997378`, and verify the
+   attached filename, size, and checksum before publication.
+2. Publish only that attached candidate, then verify metadata and a fresh
    public download before claiming delivery.
 3. Promote the exact validated publication state through checked PRs to `develop` and `main`, then
    reconcile remote trees and the management handoff.
