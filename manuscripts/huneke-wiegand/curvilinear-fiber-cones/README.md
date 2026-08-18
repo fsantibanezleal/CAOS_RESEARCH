@@ -1,19 +1,31 @@
 # Curvilinear conductor fiber cones
 
-Focused companion preprint for EXP-025. Version 0.01 is a published, fresh-download-verified
-six-page preprint. The manuscript proves the explicit truncated-monomial parametrization, complete
-one-component primary decomposition, sharp nilpotence index, curvilinear projective geometry,
-local-versus-arithmetic Gorenstein contrast, and characteristic-sensitive differential signature
-for the conductor fiber cones of the CAOS Huneke-Wiegand family.
+Focused companion preprint for EXP-025 and EXP-026. Version 0.01 is the frozen, published,
+fresh-download-verified six-page primary-structure paper. Version 0.02 is an active pre-upload
+candidate that adds the complete reduced grevlex basis, its exact degree profile, and the flat
+Cohen--Macaulay monomial degeneration. The manuscript retains the truncated-monomial
+parametrization, complete one-component primary decomposition, sharp nilpotence index,
+curvilinear projective geometry, local-versus-arithmetic Gorenstein contrast, and
+characteristic-sensitive differential signature.
 
 Authorship: Felipe Santibañez-Leal is the sole author. Son Pham's discovery priority for the first
 public counterexample and Professor Craig Huneke's independent verification are preserved as
 external provenance, not authorship.
 
-Evidence owner:
-`problems/commutative-algebra/huneke-wiegand/experiments/EXP-025-curvilinear-primary-structure/`.
+Evidence owners:
 
-Publication state:
+- `problems/commutative-algebra/huneke-wiegand/experiments/EXP-025-curvilinear-primary-structure/`
+- `problems/commutative-algebra/huneke-wiegand/experiments/EXP-026-grevlex-staircase/`
+
+Active version state:
+
+- version: `0.02`
+- licence: CC BY 4.0
+- status: pre-upload candidate; version DOI is not yet reserved
+- concept DOI: `10.5281/zenodo.21997377`
+- trigger: EXP-026 confirmed theorem
+
+Frozen version 0.01:
 
 - version: `0.01`
 - licence: CC BY 4.0

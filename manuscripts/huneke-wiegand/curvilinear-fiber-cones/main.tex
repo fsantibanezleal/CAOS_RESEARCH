@@ -10,10 +10,10 @@
 \definecolor{linknavy}{RGB}{25,55,125}
 \usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
 \hypersetup{
-  pdftitle={Curvilinear Geometry and Primary Structure of Conductor Fiber Cones in a Huneke--Wiegand Family},
   pdfauthor={Felipe Santibanez-Leal},
-  pdfsubject={Truncated monomial parametrizations, primary decomposition, sharp nilpotence, and curvilinear geometry},
-  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, conductor ideals, fiber cones, primary ideals, curvilinear schemes, fat points, nilpotent rings, Kahler differentials, Gorenstein schemes}
+  pdftitle={Curvilinear Geometry, Primary Structure, and Groebner Degenerations of Conductor Fiber Cones in a Huneke--Wiegand Family},
+  pdfsubject={Truncated monomial parametrizations, primary decomposition, curvilinear geometry, and explicit Groebner bases},
+  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, conductor ideals, fiber cones, primary ideals, curvilinear schemes, fat points, Groebner bases, monomial degenerations, Kahler differentials}
 }
 \usepackage{orcidlink}
 
@@ -31,20 +31,19 @@
 \newcommand{\Cfiber}{\mathcal{C}}
 \newcommand{\Fcone}{\mathcal{F}}
 
-\title{Curvilinear Geometry and Primary Structure\
+\title{Curvilinear Geometry, Primary Structure, and Gr\"obner Degenerations\
 of Conductor Fiber Cones in a Huneke--Wiegand Family}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research programme, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-18\\[2pt]\normalsize Version 0.01}
+\date{2026-08-18\\[2pt]\normalsize Version 0.02}
 
 \begin{document}
 \maketitle
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Companion paper in the Huneke--Wiegand extension record \textperiodcentered\ version 0.01 \textperiodcentered\ 2026-08-18\\
-Version DOI: \href{https://doi.org/10.5281/zenodo.21997378}{10.5281/zenodo.21997378}
-\textperiodcentered\ licensed CC BY 4.0\\
+Companion paper in the Huneke--Wiegand extension record \textperiodcentered\ version 0.02 \textperiodcentered\ 2026-08-18\\
+Version DOI reserved only after complete pre-upload validation \textperiodcentered\ licensed CC BY 4.0\\
 Concept DOI: \href{https://doi.org/10.5281/zenodo.21997377}{10.5281/zenodo.21997377}\\
 Sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the first public counterexample addressed by the wider
@@ -79,9 +78,16 @@ Consequently $\operatorname{Proj}(\Cfiber_p)$ is a saturated length-$24p$ curvil
 with one-dimensional Zariski tangent space. It is locally Gorenstein, although its homogeneous
 coordinate ring has Cohen--Macaulay type $10p+1$ and is neither level nor Gorenstein. We also
 compute its affine K\"ahler differential module, including the exact characteristic split. The
-proof is deductive from frozen offset-basis and Cohen--Macaulay input theorems. An exact campaign
-for every $p=4,\ldots,300$ and an independently encoded all-row audit validate the implementation
-and adversarial controls but are not used to extrapolate the infinite statement.
+proof is deductive from frozen offset-basis and Cohen--Macaulay input theorems. We further give the
+complete reduced Gr\"obner basis for graded reverse lexicographic order with $X_0$ last. Its degree
+profile is
+\[
+ (50p^2-17p,\;5p-1,\;p-2)
+\]
+in degrees two, three, and four, with no later elements. No minimal leading monomial contains
+$X_0$, yielding a flat Cohen--Macaulay monomial degeneration. Exact campaigns, an independently
+encoded clique audit, and an all-parameter Presburger boundary certificate validate the formulas
+and adversarial controls but do not replace the deductive arguments.
 \end{abstract}
 
 \section{Introduction}
@@ -108,6 +114,10 @@ model, a complete one-component primary decomposition, the exact nilpotency expo
 scheme-theoretic affine chart. It also separates two notions that are easy to conflate: the
 projective scheme is locally Gorenstein, while its given homogeneous embedding is not
 arithmetically Gorenstein.
+
+Throughout, derived theorem statements are marked [D] by this declaration, while finite exact
+campaigns and solver outcomes are machine-verified [MV]. No [MV] record is used as an
+extrapolation principle.
 
 \section{The conductor family and frozen input}
 
@@ -316,22 +326,136 @@ This agrees with the general differential characterization of weakly curvilinear
 \cite{KreuzerLinhLong2023}, while the exact truncation and characteristic formula here come from
 the conductor-family parametrization.
 
+\section{The canonical grevlex degeneration}
+
+Order the variables by decreasing offset and use graded reverse lexicographic order $\prec$; thus
+$X_a\succ X_b$ exactly when $a>b$, and $X_0$ is last. If a monomial is written as a
+nondecreasing tuple of offsets, then the $\prec$-smallest monomial in a fixed degree and offset
+fiber is the lexicographically smallest tuple. Write it as $N_{n,b}$.
+This last-parameter order and the use of finite standard-monomial counts are consistent with
+Gr\"obner methods for projective monomial curves and associated graded semigroup algebras
+\cite{BhardwajChauJavadekar2025,SahaSenguptaSrivastava2022}; the staircase and formulas below are
+specific to the present truncated conductor family.
+
+\begin{lemma}[Canonical staircase]\label{lem:staircase}
+In each surviving bidegree $(n,b)$, the unique standard monomial of
+$P_p/\operatorname{in}_{\prec}(J_p)$ is $N_{n,b}$. A monomial is a minimal generator of the
+initial ideal exactly when it is noncanonical and every one-variable divisor is canonical.
+\end{lemma}
+
+\begin{proof}
+Theorem~\ref{thm:parametrization} shows that two nonzero degree-$n$ monomials agree precisely when
+their total offsets agree, and that all monomials of offset at least $q$ vanish. Every surviving
+fiber therefore contributes its unique $\prec$-smallest monomial to the standard basis. The last
+assertion is the minimal-boundary criterion for a monomial ideal.
+\end{proof}
+
+\begin{theorem}[Explicit reduced Gr\"obner basis]\label{thm:groebner}
+For every $p\geq4$, the reduced Gr\"obner basis of $J_p$ has degree profile
+\[
+ \bigl(50p^2-17p,\;5p-1,\;p-2\bigr)
+\]
+in degrees two, three, and four. There are no basis elements in degree at least five.
+
+The quadratic part contains one relation for every noncanonical quadratic monomial $M$ of total
+offset $b$:
+\[
+ M-N_{2,b}\quad(b<q),\qquad M\quad(b\geq q).
+\]
+Among these, $(77p^2-49p+2)/2$ are binomials and $(23p^2+15p-2)/2$ are monomial
+zero-relations.
+
+The cubic leading monomials are
+\begin{align*}
+A_i&=X_iX_pX_{12p-1} &&(1\leq i\leq p),\\
+B_i&=X_iX_pX_{15p-1} &&(1\leq i\leq p),\\
+C_i&=X_iX_pX_{18p-1} &&(1\leq i\leq p),\\
+D_i&=X_iX_{4p-2}X_{16p} &&(1\leq i\leq p-2),\\
+E_i&=X_iX_{4p-2}X_{18p-1} &&(1\leq i\leq p),
+\end{align*}
+together with $X_p^3$. Their reduced tails are
+\begin{align*}
+A_1&\longmapsto X_0X_{3p}X_{10p},&
+A_i&\longmapsto X_0^2X_{13p+i-1} &&(2\leq i\leq p-1),\\
+A_p&\longmapsto X_0X_1X_{14p-2},&
+B_i&\longmapsto X_0X_{i-1}X_{16p} &&(1\leq i\leq p-1),\\
+B_p&\longmapsto X_0^2X_{17p-1},&
+C_i&\longmapsto X_0X_{3p+i-1}X_{16p} &&(1\leq i\leq p-1),\\
+C_p&\longmapsto X_0X_{3p}X_{17p-1},&
+D_i&\longmapsto X_0X_{3p}X_{17p+i-2},\\
+E_i&\longmapsto X_0X_{7p+i-2}X_{15p-1} &&(i=1,2),\\
+E_i&\longmapsto X_0X_{6p+i-3}X_{16p} &&(3\leq i\leq p),\\
+X_p^3&\longmapsto X_0^2X_{3p}.&&
+\end{align*}
+Finally, the quartics are
+\[
+ X_iX_p^2X_{4p-2}-X_0^3X_{6p+i-2},\qquad 2\leq i\leq p-1.
+\]
+No minimal leading monomial is divisible by $X_0$.
+\end{theorem}
+
+\begin{proof}
+There are $\binom{10p+1}{2}=50p^2+5p$ quadratic monomials and $|E_2|=22p$ canonical
+ones, giving $50p^2-17p$ quadratic boundary elements. Summing the unordered pairs from the eleven
+blocks of $G_p$ whose offset is at least $q$ gives $(23p^2+15p-2)/2$ zero-relations; subtraction
+gives the stated binomial count.
+
+For the nonquadratic boundary, Lemma~\ref{lem:staircase} turns completeness into Presburger
+arithmetic over the eleven interval blocks of $G_p$. The exact certificate proves, for all
+integers $p\geq4$, that the five indexed cubic groups plus $X_p^3$ are both sound and complete,
+that the displayed quartic family is sound and complete, and that all twelve endpoint/interior
+tail cases are canonical and have the correct offset. Its 16 negated obligations are UNSAT. The
+family sizes give $p+p+p+(p-2)+p+1=5p-1$ cubics and $p-2$ quartics.
+
+It remains to close the infinite degree tail without solver extrapolation. Since $E_4=[0,q-1]$
+and $E_n=[0,q-1]$ for $n\geq4$, the last-variable order forces
+\[
+ N_{n,b}=X_0^{n-4}N_{4,b}\qquad(n\geq4,\ 0\leq b<q).
+\]
+The staircase therefore stabilizes in degree four, so no later minimal boundary can occur. The
+listed polynomials are monic with distinct minimal leading monomials and canonical tails; hence
+they form the reduced Gr\"obner basis.
+\end{proof}
+
+\begin{corollary}[Flat Cohen--Macaulay degeneration]\label{cor:degeneration}
+The initial algebra is Cohen--Macaulay, $X_0$ is regular on it, and its Artinian reduction has
+Hilbert function
+\[
+ (1,\;10p-1,\;12p,\;2p-1,\;1).
+\]
+The defining ideal has relation type three, while this reduced Gr\"obner basis reaches degree
+four.
+\end{corollary}
+
+\begin{proof}
+No minimal initial generator contains $X_0$, so multiplication by $X_0$ is injective on standard
+monomials. The successive offset layers from Proposition~\ref{prop:input} have the displayed
+sizes. Their sum is $24p$, and adjoining powers of $X_0$ recovers the stabilized staircase.
+Relation type three was established by the earlier minimal-presentation theorem, whereas
+Theorem~\ref{thm:groebner} has $p-2>0$ quartics.
+\end{proof}
+
 \section{Exact verification record}
 
 The symbolic proofs above use the frozen results in Proposition~\ref{prop:input}. Computation is
 used to validate their translation into the new parametrization and to exercise negative controls.
-The campaign computes truncated sumsets directly from $G_p$ for every $p=4,\ldots,300$. The audit
-is separately encoded: it starts from the five disjoint Artinian layers, rebuilds cumulative
-bases, rehashes all 297 rows, and performs detailed reconstructions at
-$p=4,5,17,73,151,300$.
+The primary-structure campaign computes truncated sumsets directly from $G_p$ for every
+$p=4,\ldots,300$. Its audit starts from the five disjoint Artinian layers. The Gr\"obner campaign
+independently checks all declared families, canonical tails, divisor minimality, Hilbert values,
+and controls at the same 297 parameters. A separately encoded clique audit enumerates canonical
+pairs and reconstructs factorization complexes through degree six at
+$p=4,5,6,17,73,151,300$.
 
 \begin{center}
 \begin{tabular}{@{}lll@{}}
 \toprule
 record & coverage & SHA-256 aggregate\\
 \midrule
-campaign & all $p=4,\ldots,300$ & \texttt{f3373f4f58287fd3...f9d6b39b6}\\
-independent audit & all rows; six detailed rebuilds & \texttt{84c00be8ff64002...f5b6c8f143e}\\
+primary campaign & all $p=4,\ldots,300$ & \texttt{f3373f4f58287fd3...f9d6b39b6}\\
+primary audit & all rows; six detailed rebuilds & \texttt{84c00be8ff64002...f5b6c8f143e}\\
+Gr\"obner campaign & all $p=4,\ldots,300$ & \texttt{63af8f734afc8c05...9e4365a218}\\
+clique audit & seven detailed rebuilds & \texttt{401c4807cc0a29a6...586766e41373}\\
+Presburger boundary & all integers $p\geq4$ & \texttt{10c66bbcaa56108f...e046f9dd5fa}\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -339,13 +463,16 @@ independent audit & all rows; six detailed rebuilds & \texttt{84c00be8ff64002...
 The controls delete offset $1$, perturb the truncation and nilpotency exponents, corrupt the
 degree-three hole, omit a radical coordinate, conflate local and arithmetic Gorensteinness, erase
 the differential characteristic split, and remove the no-embedded-primes premise. Every mutation
-is rejected. Exact scripts, artifacts, premise hashes, proof, and verdict are archived as
-\texttt{EXP-025-curvilinear-primary-structure} in the public repository.
+is rejected. Exact scripts, artifacts, premise hashes, proofs, and verdicts are archived as
+\texttt{EXP-025-curvilinear-primary-structure} and \texttt{EXP-026-grevlex-staircase} in the
+public repository.
 
 The finite sweep does not prove the theorem for all $p$. The infinite conclusion is supplied by
 Theorems~\ref{thm:parametrization}--\ref{thm:geometry} and
 Proposition~\ref{prop:differentials}. A defect in a frozen input theorem would propagate even if
-both implementations agreed.
+both implementations agreed. The Presburger boundary certificate uses Z3 4.16.0 and does not
+emit independently checked UNSAT proof objects; the canonical-staircase and stabilization
+arguments remain separate deductive steps.
 
 \section{Scope and further questions}
 
@@ -354,16 +481,14 @@ does not assert that arbitrary monomial fiber cones are primary, curvilinear, Co
 locally Gorenstein. It does not strengthen the underlying Huneke--Wiegand counterexample theorem
 for arbitrary modules or arbitrary one-dimensional Gorenstein domains.
 
-The primary decomposition is now complete, but two algebraic questions remain open for this
-family:
+The primary decomposition and the reduced Gr\"obner basis are now complete. One major algebraic
+question remains open for this family:
 \begin{enumerate}
-  \item Is there a uniform explicit Gr\"obner basis refining the known minimal set of
-  $50p^2-17p$ quadrics and one cubic?
   \item Can the unresolved interior of the graded Betti table be expressed by closed formulas,
   or does it exhibit parameter-dependent combinatorial phases?
 \end{enumerate}
-The truncated parametrization may help with both questions by replacing value-semigroup products
-with the combinatorics of monomials below one nilpotent boundary.
+The monomial degeneration may help by replacing value-semigroup products with the combinatorics
+of one explicit finite staircase.
 
 \section*{Acknowledgments}
 
@@ -408,6 +533,17 @@ J. Herzog and G. Zhu,
 M. Kreuzer, T. N. K. Linh, and L. N. Long,
 \emph{Differential theory of zero-dimensional schemes}, arXiv:2302.11903 (2023).
 \url{https://arxiv.org/abs/2302.11903}.
+
+\bibitem{BhardwajChauJavadekar2025}
+O. P. Bhardwaj, T. Chau, and O. Javadekar,
+\emph{Projective monomial curves associated to numerical semigroups with multiplicity $e$,
+width $e-1$, and embedding dimension $e-2$}, arXiv:2511.06482 (2025).
+\url{https://arxiv.org/abs/2511.06482}.
+
+\bibitem{SahaSenguptaSrivastava2022}
+J. Saha, I. Sengupta, and P. Srivastava,
+\emph{On the associated graded ring of semigroup algebras}, arXiv:2210.07520 (2022).
+\url{https://arxiv.org/abs/2210.07520}.
 
 \end{thebibliography}
 }
