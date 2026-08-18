@@ -359,3 +359,73 @@ EXP-024/v0.13 publication state to `develop` at
 identical tested state to `main` at `f24b078b98376224b38753f7294d26627147c4ea`. The remote work,
 `develop`, and `main` refs share tree `5c828789a5d993a35a1e42743860600d156c9f99`. No release tag is
 claimed. A new theorem round requires a fresh source and novelty preflight.
+
+The documentation-only handoff was subsequently promoted by PRs #184/#185. Before the next
+round opened, remote work, `develop`, and `main` shared final tree
+`b70a3990583057a92e591c34d5f9e9c101185e8c`; the earlier `5c828...` tree is the theorem and
+publication payload, not the final documentation handoff.
+
+## 2026-08-18 curvilinear primary-structure gate
+
+A new source and novelty preflight redirects the next round from an unbounded explicit Groebner
+basis search to the nonreduced projective geometry already latent in EXP-021/023. Existing
+literature supplies the nonradical fiber-cone and curvilinear-scheme context but no identified
+formula for this conductor family. EXP-025 is declared before implementation.
+
+With `q=24p` and degree-one offset set `G_p`, the target parametrization is
+
+```text
+C_p isomorphic to k[x y^a : a in G_p] inside k[x,y]/(y^q).
+```
+
+Because `0,1 in G_p`, this predicts
+
+```text
+C_p/(X_0-1) isomorphic to k[y]/(y^q),
+radical(J_p)=(X_a:a>0),
+J_p is (X_a:a>0)-primary,
+nilindex(nil(C_p))=q.
+```
+
+The geometric form is a saturated length-`q` curvilinear fat point with tangent dimension one.
+It is locally Gorenstein although its homogeneous coordinate ring has type `10p+1` and is not
+level. Its affine differential module is predicted to be
+`Omega^1=(k[y]/(y^q,qy^(q-1)))dy`, explicitly separating the characteristics dividing `q` from
+all others. The immediate gate is a post-implementation `p=4` smoke, then the exact `p=4,...,300`
+campaign, independent audit, and symbolic proof. If the complete package is confirmed, it meets
+the prior split criterion and opens a focused companion manuscript rather than v0.14 of the
+already broad Frobenius-minimality manuscript.
+
+EXP-025 is CONFIRMED. The exact campaign passes every `p=4,...,300` with aggregate
+`f3373f4f58287fd3f553b95efa226e7938170d32f24eea6a014ca47f9d6b39b6`; the disjoint-layer audit
+rehashes and independently reconstructs all 297 rows with aggregate
+`84c00be8ff64002e8738a5d4307d71df73dfa7595e810c7e764f6f5b6c8f143e`. The symbolic proof gives
+the truncated model, exact primary component, sharp exponent, saturation, curvilinear fat point,
+local/arithmetic Gorenstein separation, and characteristic-sensitive differential module for all
+`p>=4`.
+
+The split decision is therefore closed in favor of a focused companion preprint and separate
+Zenodo concept record. The next gate is manuscript claim/build/render and sole-authorship QA; no
+manuscript DOI or publication is yet claimed.
+
+The focused companion v0.01 is now a validated six-page candidate. Its claim map, warning-free
+two-pass build, complete final 150-DPI render inspection, PDF metadata, source boundary, and
+sole-human-authorship gates pass. The frozen no-DOI candidate is 424,453 bytes at SHA-256
+`cb78f46f2e3e2250594523a0dffe16806eefc499c44fa1b6b8a67ab3d074f07d`. The active reversible gate
+is creation of a separate Zenodo concept draft, followed by DOI insertion and a complete repeat of
+the validation before any upload or publication.
+
+Separate Zenodo draft `21997378` is now reserved with version DOI
+`10.5281/zenodo.21997378` and concept DOI `10.5281/zenodo.21997377`. After inserting both
+identifiers, the 424,886-byte PDF repeated the warning-free two-pass build, complete six-page
+150-DPI inspection, metadata, identity, and sole-authorship gates. Its SHA-256 is
+`e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`. The active gate is now
+attachment of exactly this candidate, followed by publication and fresh public-record
+verification.
+
+The attachment, publication, and independent public checks are complete. Version DOI
+`10.5281/zenodo.21997378` and concept DOI `10.5281/zenodo.21997377` resolve to record `21997378`.
+The public title, version, sole creator/ORCID, licence, filename, byte count, and MD5 agree, and a
+fresh unauthenticated download exactly matches the committed SHA-256
+`e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`. The remaining gate is the
+checked work-to-`develop` and `develop`-to-`main` promotion plus durable handoff reconciliation.
