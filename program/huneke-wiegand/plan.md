@@ -429,3 +429,12 @@ The public title, version, sole creator/ORCID, licence, filename, byte count, an
 fresh unauthenticated download exactly matches the committed SHA-256
 `e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`. The remaining gate is the
 checked work-to-`develop` and `develop`-to-`main` promotion plus durable handoff reconciliation.
+
+Repository promotion is complete. PR #186 passed `guards` and `test` and merged the EXP-025
+theorem, companion preprint, and verified publication record to `develop` at
+`1c94632f5bb631fd4d85916488dc7a943a899109`. PR #187 passed all required checks and promoted the
+same tested state to `main` at `18e7d9728c3a8c210ea6a36d81bba6b6325cc536`. The research work,
+`develop`, and `main` refs share payload tree `53e5e61ffeeb5816497e3e477921bc94c4a5f91d`. CAOS_MANAGE
+PR #557 merged the publication ledger to `main` at `ec11d010246341347fd4d11b49b29998ec9a6cf1`;
+its `develop` and `main` refs share tree `f7db0c50a75491738dbfad998d235458f4bb69ee`. HWB-033 is
+closed. No release tag is part of this research-only round.
