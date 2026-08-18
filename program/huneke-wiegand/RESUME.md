@@ -6,10 +6,10 @@ single cubic `X_0^2X_(3p)-X_p^3`. The relation type is three and the Cohen--Maca
 not Koszul. The exact `p=4,...,23` campaign, independent total-graph audit, and all-parameter
 Presburger connectivity proof pass. Manuscript v0.12 passed claim/build/render QA and is published
 at DOI `10.5281/zenodo.21988601`; a fresh unauthenticated download matches the committed PDF
-byte-for-byte. PR #176 merged the tested round to `develop`; PR #177 promoted it to `main`, and
-the two remote branches share tree `5469624bab95a087aaef37630ea9c2a27c656054`. Only the durable
-promotion handoff remains. Release v0.63.000 remains the repository release baseline; this
-research round does not claim a new tag.
+byte-for-byte. PR #176 merged the tested round to `develop`; PR #177 promoted it to `main`.
+Documentation handoff PRs #178/#179 also passed all required checks, so the research and delivery
+round is complete. Release v0.63.000 remains the repository release baseline; this research round
+does not claim a new tag.
 
 ## 1. State in one screen
 
@@ -163,7 +163,7 @@ published Cohen--Macaulay fiber-cone construction closes every degree above five
 campaign and independent audit agree, while the first over-budget attempt remains preserved as
 `INCONCLUSIVE_BUDGET`. The residual trust boundary is explicit: the Z3 UNSAT leaves do not carry
 a separately checked proof object. Manuscript v0.12 is published and exact-download verified.
-Checked PR promotion is complete; this documentation-only handoff is the remaining action.
+Checked theorem and documentation promotion are complete; no delivery gate remains.
 
 Previously closed state:
 
@@ -275,10 +275,10 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Promote this exact PR/merge/tree record through the documentation-only PR path.
-2. Do not claim a global release tag for this research-only round.
-3. Only after the handoff closes, select a new theorem target through a fresh source and novelty
-   preflight.
+1. Select any new theorem target only through a fresh source and novelty preflight; no experiment
+   is presently declared.
+2. Preserve the solver trust boundary unless a separately checked proof object is added.
+3. Do not retroactively claim a global release tag for this research-only round.
 
 ### Lenses ledger
 
@@ -408,4 +408,6 @@ was published as Zenodo record `21988601`, and its fresh public download matches
 `98d730fb8afaf40149d028bdde0b1c3ba9851f1dbcd15475567e56bb7eb17d3f`. Delivery is complete:
 PR #176 passed `guards` and `test` and merged to `develop` at
 `aecb5b5c`; PR #177 passed all required checks and promoted it to `main` at `80de49e5`. Remote
-`develop` and `main` share tree `5469624bab95a087aaef37630ea9c2a27c656054`.
+`develop` and `main` shared tree `5469624bab95a087aaef37630ea9c2a27c656054`. Documentation-only
+PR #178 passed `guards` and `test`; PR #179 passed all required checks and completed the handoff.
+No further experiment is declared.
