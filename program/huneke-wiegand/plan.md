@@ -307,3 +307,10 @@ fresh unauthenticated download matches the committed 615,252-byte PDF at SHA-256
 `98d730fb8afaf40149d028bdde0b1c3ba9851f1dbcd15475567e56bb7eb17d3f`. HWB-026 is now the only
 delivery gate: checked PR promotion to `develop` and `main`, followed by merge/tree reconciliation.
 No release tag is part of this round.
+
+Repository promotion is complete. PR #176 passed `guards` and `test` and merged the full
+EXP-022/023 plus v0.12 record to `develop` at `aecb5b5c6daa83efd30f7c11a38436896fe59d12`.
+PR #177 passed all required checks and promoted that tested state to `main` at
+`80de49e5e42ca52d143333f029eaaac637464194`. Remote `develop` and `main` are tree-identical at
+`5469624bab95a087aaef37630ea9c2a27c656054`. The remaining operation is this documentation-only
+handoff; any next theorem requires a new source and novelty preflight.
