@@ -57,9 +57,10 @@
 | 2026-08-18 | confirmed | active | manuscript v0.12 and Zenodo new-version gate opened for the defining-ideal theorem; publication is not yet claimed |
 | 2026-08-18 | active | published | 27-page preprint v0.12 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.21988601`, and matched a fresh public download exactly |
 | 2026-08-18 | published | published | PR #176 passed `guards` and `test` and merged EXP-022/023 plus v0.12 to `develop` at `aecb5b5c`; PR #177 passed all checks and promoted the identical tree to `main` at `80de49e5` |
+| 2026-08-18 | published | published | documentation-only PRs #178/#179 passed all required checks and completed the durable promotion handoff |
 
 Current state: **published** (EXP-023 is CONFIRMED and manuscript v0.12 is publicly verified;
-repository PR promotion is complete and its durable handoff is in progress).
+repository PR promotion and its durable handoff are complete; no new experiment is declared).
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.
