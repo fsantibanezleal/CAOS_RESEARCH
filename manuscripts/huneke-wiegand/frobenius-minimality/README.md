@@ -1,8 +1,10 @@
 # Frobenius-minimality preprint
 
-`main.tex` is version 0.12 of the CAOS Research preprint; version 0.11 and all earlier
-versions remain frozen. Version 0.12 passed the complete claim/build/render workflow, is published
-at DOI `10.5281/zenodo.21988601`, and matches a fresh public download exactly. Version 0.11 remains
+`main.tex` is version 0.13 of the CAOS Research preprint; version 0.12 and all earlier
+versions remain frozen. Version 0.13 adds the EXP-024 homological edge theorem and has a reversible
+Zenodo draft reserved at DOI `10.5281/zenodo.21995498`; no file has yet been uploaded or published.
+Version 0.12 passed the complete claim/build/render workflow, is published at DOI
+`10.5281/zenodo.21988601`, and matches a fresh public download exactly. Version 0.11 remains
 published and fresh-download verified at DOI `10.5281/zenodo.21909961`.
 It proves that the public
 Huneke-Wiegand numerical-semigroup counterexample has the least possible Frobenius number, 181,
@@ -33,6 +35,10 @@ Version 0.12 determines the complete defining ideal of that special fiber. It ha
 `X_0^2X_(3p)-X_p^3`, hence relation type three and non-Koszulness. The all-parameter state-graph
 connectivity calculation is exact Presburger verification; the separately encoded audit and the
 absence of a checked solver proof object are both recorded.
+Version 0.13 determines exact edges of the minimal resolution over the full `10p`-variable
+presentation ring: projective dimension `10p-1`, regularity four,
+`beta_(2,3)=2p(500p^2-330p+31)/3`, the complete last row, the penultimate extremal entry `8p`,
+and the canonical-module generator degrees. It explicitly leaves the interior Betti table open.
 
 Attribution is binding: Son Pham discovered the first public counterexample; CAOS contributes the
 certified minimality, minimum-layer uniqueness, and parametric-family extensions. Professor Craig
@@ -66,9 +72,10 @@ Zenodo identifiers:
 - version 0.10 DOI: `10.5281/zenodo.21909127`
 - version 0.11 DOI: `10.5281/zenodo.21909961`
 - version 0.12 DOI: `10.5281/zenodo.21988601` (published and fresh-download verified)
+- version 0.13 DOI: `10.5281/zenodo.21995498` (reserved reversible draft; no upload yet)
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-023 under
+Evidence sources are EXP-001 through EXP-024 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
 finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
@@ -94,6 +101,9 @@ EXP-022 preserves the refuted quadratic-presentation conjecture and proves the u
 cubic. EXP-023 proves the corrected one-cubic presentation with an exact all-parameter Presburger
 component cover, a bounded campaign through `p=23`, an independently encoded total-graph audit,
 and the preserved first over-budget attempt.
+EXP-024 contains the symbolic homological proof, two independent linear-syzygy derivations, exact
+297-row campaign, all-row independent rebuild, frozen premise hashes, and adversarial controls
+against false edge data and full-table overclaim.
 
 Version 0.02 remains frozen with this public-file verification:
 

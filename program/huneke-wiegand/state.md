@@ -59,9 +59,11 @@
 | 2026-08-18 | published | published | PR #176 passed `guards` and `test` and merged EXP-022/023 plus v0.12 to `develop` at `aecb5b5c`; PR #177 passed all checks and promoted the identical tree to `main` at `80de49e5` |
 | 2026-08-18 | published | published | documentation-only PRs #178/#179 passed all required checks and completed the durable promotion handoff |
 | 2026-08-18 | published | active | EXP-024 declared before implementation: determine exact presentation-ring projective dimension, regularity, extremal Betti data, and canonical-module generator degrees |
+| 2026-08-18 | active | confirmed | EXP-024 proves projective dimension `10p-1`, regularity four, exact first linear syzygies, the complete last row, penultimate extremal entry `8p`, and canonical-module generator degrees |
+| 2026-08-18 | confirmed | active | 29-page manuscript v0.13 passed claim/build/render and sole-authorship QA; reversible Zenodo draft `21995498` is reserved but empty and unpublished |
 
-Current state: **active** (EXP-024 is declared but not yet executed; EXP-023 and manuscript v0.12
-remain published and immutable).
+Current state: **active publication gate** (EXP-024 is CONFIRMED and manuscript v0.13 is a
+validated local candidate; Zenodo draft `21995498` remains empty and unpublished).
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.

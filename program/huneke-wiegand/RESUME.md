@@ -1,11 +1,13 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-18. Lifecycle: active experiment. EXP-024 is declared before implementation to
-determine exact edge data in the minimal presentation-ring resolution of the conductor special
-fiber. Its predictions include projective dimension `10p-1`, regularity four, a closed linear-
-syzygy count, the complete last Betti row from the Artinian socle, and one penultimate extremal
-entry. These are not yet results. EXP-023 and manuscript v0.12 remain confirmed, published, and
-immutable at DOI `10.5281/zenodo.21988601`; their PR promotion and durable handoff are complete.
+Updated: 2026-08-18. Lifecycle: publication gate. EXP-024 is CONFIRMED: for every `p>=4`, the
+conductor special fiber has presentation-ring projective dimension `10p-1`, regularity four,
+`beta_(2,3)=2p(500p^2-330p+31)/3`, a complete last Betti row fixed by its Artinian socle,
+penultimate extremal entry `8p`, and canonical-module generators in degrees `-1` and `-3`.
+The exact `p=4,...,300` campaign and independent all-row audit pass. The 29-page v0.13 candidate
+passed claim/build/render and sole-authorship QA. Zenodo draft `21995498`, DOI
+`10.5281/zenodo.21995498`, is reserved but still empty and unpublished. EXP-023 and v0.12 remain
+immutable at DOI `10.5281/zenodo.21988601`.
 
 ## 1. State in one screen
 
@@ -118,6 +120,7 @@ campaign is supporting evidence, not the proof.
 | EXP-021 | CONFIRMED | canonical conductor special fiber; Cohen--Macaulay type `10p+1`; neither level nor Gorenstein |
 | EXP-022 | REFUTED | quadratic presentation false; universal necessary cubic `X_0^2X_(3p)-X_p^3` |
 | EXP-023 | CONFIRMED | unique higher equation; relation type three; exact count `50p^2-17p+1`; non-Koszul fiber cone |
+| EXP-024 | CONFIRMED | `pd=10p-1`, `reg=4`, exact `beta_(2,3)`, complete last row, penultimate `8p`, and canonical generator degrees |
 
 ## 3a. Exact evidence anchors
 
@@ -144,22 +147,27 @@ campaign is supporting evidence, not the proof.
   `d23792c47a2e07785a27ebc71e99619705f7aa53a38ebe7f66ffa03b0518ce83`,
   `a27b3b13fde197b1f011bf07dc2c321d84ab7c895c9aa02d7c2a073e48f18038`, and
   `832c8421fe66359b8c246e3465e27de6ea7829215f892ab815e72b1f44787194`.
+- EXP-024 campaign and independent all-row audit aggregates:
+  `baf6200a442be9476cd083fde753bbdd9e623c06aa2528f3a7f138ee825637eb` and
+  `b6035f615f2b2092351b5a42e5a734c72ba4783adf82943ed41b38fe07ef17e2`.
 
 ## 4. In flight
 
-EXP-023 is CONFIRMED. Its exact state-graph quotient proves
+EXP-024 is CONFIRMED. Its deductive homological argument proves
 
 ```text
-J_p=((J_p)_2,X_0^2X_(3p)-X_p^3),
-(beta_(1,2),beta_(1,3),beta_(1,4),beta_(1,5),...)=(50p^2-17p,1,0,0,...).
+pd=10p-1, reg=4,
+beta_(2,3)=2p(500p^2-330p+31)/3,
+beta_(10p-1,10p+1)=10p,
+beta_(10p-1,10p+3)=1,
+beta_(10p-2,10p+2)=8p.
 ```
 
-The all-parameter Presburger cover closes degree-three through degree-five connectivity, and the
-published Cohen--Macaulay fiber-cone construction closes every degree above five. The bounded
-campaign and independent audit agree, while the first over-budget attempt remains preserved as
-`INCONCLUSIVE_BUDGET`. The residual trust boundary is explicit: the Z3 UNSAT leaves do not carry
-a separately checked proof object. Manuscript v0.12 is published and exact-download verified.
-Checked theorem and documentation promotion are complete; no delivery gate remains.
+The canonical module has `10p` generators in degree `-1` and one in degree `-3`. The campaign and
+independent audit agree for all 297 parameters. The theorem determines exact resolution edges,
+not the interior Betti table. Manuscript v0.13 is a validated 29-page candidate at reserved DOI
+`10.5281/zenodo.21995498`; the Zenodo draft is still empty. The active action is checked upload,
+irreversible publication, fresh-download verification, then PR promotion.
 
 Previously closed state:
 
@@ -424,8 +432,10 @@ beta_(10p-1,10p+3)=1,
 beta_(10p-2,10p+2)=8p.
 ```
 
-The canonical-module prediction is `10p` minimal generators in degree `-1` and one in degree
-`-3`. The mandatory next action is implementation followed by the `p=4` two-route smoke gate.
-No theorem, v0.13 manuscript, or Zenodo update is claimed at declaration. If confirmed, this
-material belongs in the existing manuscript; a split is deferred to a future standalone
-Groebner/full-resolution/primary-decomposition theorem.
+The canonical module has `10p` minimal generators in degree `-1` and one in degree `-3`.
+EXP-024 is CONFIRMED by the symbolic proof, two independent degree-three derivations, exact
+297-parameter campaign, all-row independent audit, selected source reconstructions, frozen
+premise hashes, and seven adversarial controls. Manuscript v0.13 adds this theorem without a
+split, passed its 29-page claim/build/render and sole-authorship gates, and prints the reserved DOI
+`10.5281/zenodo.21995498`. No file has yet been uploaded or published. A separate manuscript is
+deferred to a future standalone Groebner/full-resolution/primary-decomposition theorem.

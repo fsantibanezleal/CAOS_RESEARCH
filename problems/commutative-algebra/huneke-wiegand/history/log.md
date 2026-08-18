@@ -599,3 +599,28 @@
   module generator degrees for every `p>=4`.
 - The immediate gate is a two-derivation `p=4` smoke, then an exact bounded campaign and an
   independent audit. No theorem or publication is claimed yet.
+
+## 2026-08-18 - EXP-024 confirms exact homological edges
+
+- Proved `pd=10p-1` and presentation-ring regularity four from Cohen--Macaulayness and the exact
+  h-polynomial, correcting one stale v0.12 open-question phrase.
+- Derived `beta_(2,3)=2p(500p^2-330p+31)/3` independently from the Hilbert numerator and the
+  degree-three defining-ideal dimension.
+- Used regular linear reduction and top Koszul homology to determine the complete last Betti row;
+  isolated `beta_(c-1,c+3)=8p` and the canonical-module generator degrees.
+- The separate smoke, exact `p=4,...,300` campaign, all-row independent audit, premise hashes, and
+  adversarial controls pass. Campaign/audit aggregates are `baf6200a...637eb` and
+  `b6035f61...f17e2`.
+- The result is an edge theorem, not a full resolution. It belongs in the existing manuscript;
+  splitting is deferred to a standalone Groebner/full-resolution/primary-decomposition result.
+
+## 2026-08-18 - manuscript v0.13 candidate validated
+
+- Reserved reversible Zenodo new-version draft `21995498`, DOI `10.5281/zenodo.21995498`, from
+  immutable v0.12. No file was uploaded or published at reservation.
+- Expanded the manuscript to 29 pages with EXP-024, corrected the open questions, and passed the
+  claim audit, warning-free two-pass build, complete 150-DPI page inspection, metadata, DOI,
+  scope, and sole-authorship gates.
+- Frozen local candidate: 635,617 bytes, MD5 `d6ce72589100d1f57986da000501fdc7`, SHA-256
+  `cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed`. Zenodo upload and
+  publication remain pending.

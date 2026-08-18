@@ -28,6 +28,6 @@
 | HWB-024 | 1 | done | manuscript and Zenodo update for the fiber-cone theorem | v0.11 published and fresh-download verified at `10.5281/zenodo.21909961` |
 | HWB-025 | 1 | done | manuscript and Zenodo update for the defining-ideal theorem | v0.12 published and fresh-download verified at `10.5281/zenodo.21988601` |
 | HWB-026 | 1 | done | repository promotion and immutable handoff for EXP-022/023 plus v0.12 | PRs #176/#177 passed required checks; remote `develop`/`main` share tree `5469624bab95a087aaef37630ea9c2a27c656054` |
-| HWB-027 | 1 | in progress | extremal presentation-ring Betti data | EXP-024 declared; exact proof, campaign, and independent audit required |
-| HWB-028 | 1 | pending | manuscript and Zenodo update for homological edge theorem | open only if EXP-024 is confirmed and claim/build/render QA passes |
+| HWB-027 | 1 | done | extremal presentation-ring Betti data | EXP-024 proves exact projective dimension, regularity, first linear syzygies, last row, penultimate edge, and canonical degrees |
+| HWB-028 | 1 | in progress | manuscript and Zenodo update for homological edge theorem | v0.13 claim/build/render QA passed; reserved empty Zenodo draft `21995498` awaits checked publication |
 | HWB-029 | 2 | pending | explicit quadratic or Groebner basis and interior syzygies | reconsider after EXP-024; split manuscript only for a standalone theorem |

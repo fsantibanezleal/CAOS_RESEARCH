@@ -331,3 +331,21 @@ Artinian socle, `beta_(2,3)=2p(500p^2-330p+31)/3`, and
 `beta_(c-1,c+3)=8p`. The immediate gate is the `p=4` two-route smoke after implementation,
 followed by the bounded campaign, independent audit, and symbolic proof. No EXP-024 theorem,
 manuscript v0.13, or Zenodo version is yet claimed.
+
+EXP-024 is CONFIRMED. Auslander--Buchsbaum and the degree-four h-polynomial give projective
+dimension `10p-1` and regularity four. Two independent degree-three derivations give
+
+```text
+beta_(2,3)=2p(500p^2-330p+31)/3.
+```
+
+Regular linear reduction and the exact Artinian socle give the complete last row; the
+`z^(c+3)` coefficient isolates `beta_(c-1,c+3)=8p`, and graded duality gives `10p` canonical
+generators in degree `-1` plus one in degree `-3`. The exact campaign and all-row independent
+audit pass for `p=4,...,300`, with aggregates `baf6200a...637eb` and `b6035f61...f17e2`.
+
+The same-manuscript decision is closed: v0.13 is a coherent extension of the special-fiber
+presentation, while a split remains deferred to a standalone Groebner/full-resolution theorem.
+The 29-page v0.13 candidate passed claim, warning-free build, complete render, identity, and
+sole-authorship gates. Zenodo draft `21995498`, DOI `10.5281/zenodo.21995498`, is reserved and
+still empty; upload and irreversible publication are the active gate.
