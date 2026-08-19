@@ -575,3 +575,11 @@ inspection and sole-human-authorship gates, then was published at DOI
 `e7d3fb747f01b6c44c84ca9c2cf25a746cd2d05eb0996163f4a18e9e3cea1be9`; record `22016550` is
 concept-latest. HWB-039 is done. HWB-040 owns checked repository and management-ledger promotion;
 higher homological rows remain the strongest next research direction after that delivery closes.
+
+Promotion is complete. PR #198 passed `guards` and `test` and merged the complete EXP-028 theorem,
+artifacts, v0.15 manuscript, and verified Zenodo record to `develop` at `b83b9aa0`. PR #199 passed
+both required jobs and promoted the identical payload to `main` at `5ce1efa3`; all research
+delivery branches share tree `e35f420f59a5343ea09da15985786ab0b65897d6`. CAOS_MANAGE remained
+on `develop`; PR #566 promoted only the scoped v0.15 controls and ledger to `main` at `ddafe393`,
+with management branches sharing tree `f234e662fa13834787c994b789d6607b486c19ec`. HWB-040 is done.
+No release tag is claimed for this research-only round.
