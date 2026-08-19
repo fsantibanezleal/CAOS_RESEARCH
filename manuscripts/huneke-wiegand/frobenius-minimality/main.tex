@@ -15,7 +15,7 @@
   pdftitle={Frobenius Minimality, Minimum-Layer Uniqueness, and an Infinite Family of Huneke--Wiegand Counterexamples},
   pdfauthor={Felipe Santibanez-Leal},
   pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, conductor, tangent-cone, fiber-cone, defining-ideal, and syzygy anatomy},
-  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, trace ideals, conductors, associated graded rings, tangent cones, fiber cones, defining ideals, graded Betti numbers, canonical modules, Koszul algebras, Buchsbaum rings, Cohen-Macaulay rings, SAT, DRAT}
+  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, trace ideals, conductors, associated graded rings, tangent cones, fiber cones, defining ideals, graded Betti numbers, relative simplicial homology, squarefree divisor complexes, canonical modules, Koszul algebras, Buchsbaum rings, Cohen-Macaulay rings, SAT, DRAT}
 }
 \usepackage{orcidlink}
 \usepackage{fancyhdr}
@@ -36,18 +36,18 @@
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-18\\[2pt]\normalsize Version 0.13}
+\date{2026-08-19\\[2pt]\normalsize Version 0.14}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.13}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.14}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.13}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.14}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,8 +63,8 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.13 \textperiodcentered\ 2026-08-18\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21995498}{10.5281/zenodo.21995498}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.14 \textperiodcentered\ 2026-08-19\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: DOI pending\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
 verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
@@ -79,7 +79,7 @@ reduction, tangent-cone, fiber-cone, defining-ideal, and syzygy anatomy.
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.13}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.14}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -159,8 +159,18 @@ is $10p-1$, its regularity is four,
 \]
 the complete last row has ranks $10p$ in shift $c+2$ and one in shift $c+4$ for
 $c=10p-1$, and $\beta_{c-1,c+3}=8p$. The canonical module has $10p$ minimal generators in
-degree $-1$ and one in degree $-3$. These formulas determine exact edges, not the unresolved
-interior of the Betti table.
+degree $-1$ and one in degree $-3$. We then determine the first previously unknown interior
+strand. With the offset grading $\deg X_a=(1,a)$,
+\[
+\beta_{2,4}=8p,
+\qquad
+\beta_{3,4}=\frac{p(5p-1)(500p^2-440p+47)}{2},
+\]
+and the $8p$ second syzygies occur with multiplicity one exactly at offsets
+$\{3p+a:a\in\mathcal E_{p,1},\ a\ge6p\}$. Relative squarefree-divisor chains and an integral
+unit matching give the upper bound; an exact quadratic colon and minimal mapping cone give the
+matching lower bound. Thus the formulas hold over every field. This determines one interior
+strand, not the remaining Betti table.
 The results remain confined
 to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
@@ -231,6 +241,8 @@ they are verified by exact machine computation and independently checked artifac
   \item We determine exact homological edges over its full presentation ring: projective
   dimension and regularity, the linear first-syzygy count, the complete last row, one penultimate
   extremal entry, and the canonical-module generator degrees.
+  \item We determine the first interior Betti strand over every field: $\beta_{2,4}=8p$ with
+  complete multiplicity-free offset support, and the resulting exact formula for $\beta_{3,4}$.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -1684,6 +1696,180 @@ The symbolic argument above, not the finite campaign, proves the theorem. Equati
 \eqref{eq:betti-polynomial} is alternating data and does not determine the unresolved interior of
 the Betti table.
 
+\subsection{The first interior Betti strand}
+
+We retain the offset in~\eqref{eq:fiber-e1} by declaring
+\(\deg X_a=(1,a)\). Write \(\beta_{i,(j,b)}\) for the resulting bigraded Betti number and
+\(\beta_{i,j}=\sum_b\beta_{i,(j,b)}\). Let
+\[
+\mathfrak q_p=((\mathfrak a_p)_2),
+\qquad
+\mathfrak a_p=(\mathfrak q_p,f_p)
+\]
+as in Theorem~\ref{thm:presentation}.
+
+\begin{theorem}[First interior Betti strand, {\bf[D]}]
+\label{thm:interior-strand}
+For every integer \(p\ge4\) and every field \(\kfield\),
+\begin{equation}
+\beta_{2,4}=8p,
+\qquad
+\beta_{3,4}=\frac{p(5p-1)(500p^2-440p+47)}{2}.
+\label{eq:first-interior}
+\end{equation}
+Moreover, \(\beta_{2,(4,b)}=1\) exactly for
+\begin{align}
+\mathcal S_p={}&[9p,11p-2]\cup[11p,13p-2]\cup\{13p\}
+\cup[14p-1,15p-1]\notag\\
+&\cup[16p+1,17p-2]\cup[17p,18p-1]\cup\{19p\}
+\cup[20p-1,21p-1],
+\label{eq:interior-support}
+\end{align}
+and it is zero at every other offset. Equivalently,
+\[
+\mathcal S_p=\{3p+a:a\in\mathcal E_{p,1},\ a\ge6p\}.
+\]
+The corresponding integral relative homology is free of rank one at every supported offset; in
+particular, the result has no characteristic exception.
+\end{theorem}
+
+\begin{proof}
+We first identify the exact finite chain complexes. Put
+\[
+H_p=\langle(1,a):a\in\mathcal E_{p,1}\rangle\subseteq\N^2,
+\qquad
+M_p=(t^{(n,u)}:u\ge24p)\subseteq\mathbb Z[H_p].
+\]
+The offset calculation~\eqref{eq:fiber-cumulative} identifies the special fiber with the base
+change of \(\mathbb Z[H_p]/M_p\). For a bidegree \(w=(j,b)\), define the squarefree divisor pair
+\begin{align*}
+\Delta_w&=\{F\subseteq\mathcal E_{p,1}:w-(|F|,\sum F)\in H_p\},\\
+\Gamma_w&=\{F\in\Delta_w:t^{w-(|F|,\sum F)}\in M_p\}.
+\end{align*}
+The relative squarefree-divisor construction is standard for affine semigroup quotients by
+monomial ideals \cite{BrunsHerzog1997}; see also \cite{Stamate2018} for the semigroup-ring Betti
+framework and its characteristic warning. Here the identification is immediate: the
+bidegree-\(w\) Koszul chain group in homological degree \(r\) has one basis vector for every
+\(r\)-subset \(F\) satisfying
+\[
+b-\sum F\in\mathcal E_{p,j-r},
+\]
+and signed deletion is exactly the relative simplicial boundary. Hence
+\begin{equation}
+\beta_{i,w}=\dim_{\kfield}\widetilde H_{i-1}(\Delta_w,\Gamma_w;\kfield).
+\label{eq:relative-betti}
+\end{equation}
+
+We next give an integral upper bound in total degree four. Order
+\(\mathcal E_{p,1}\) increasingly. In every offset block, scan the vertices in this order and
+pair a still-unmatched cell \(F\) with \(F\cup\{v\}\) whenever both survive; within a scan use
+increasing dimension and lexicographic order. Every pair is a unit boundary entry, and the pivot
+order strictly increases along a reversed matched arrow, so this is an acyclic integral matching.
+Substitution of~\eqref{eq:fiber-e1}--\eqref{eq:fiber-cumulative} leaves the following complete
+critical-cell list in relative dimensions zero and one. In the middle row write \(b=6p+r\).
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Offset & critical $0$-cells & critical $1$-cells\\
+\midrule
+$b\in\mathcal S_p$ & $\{0\}$ & $\{p,b-3p\}$\\
+$6p\le b\le7p-3$ & $\{0\},\{r+2\}$ & $\{p,3p+r\}$\\
+all other $b$ & immaterial & none\\
+\bottomrule
+\end{tabular}
+\end{center}
+In the middle row, the unique alternating path sends the critical edge to a unit multiple of
+\(\{r+2\}-\{0\}\), so it contributes no homology. The table follows by scanning the eleven
+blocks in~\eqref{eq:fiber-e1}: the only toggle obstructions are the gaps of
+\(\mathcal E_{p,2}\), the hole \(6p-1\) of \(\mathcal E_{p,3}\), and a gap of
+\(\mathcal E_{p,1}\). All candidate edges outside the two displayed rows toggle at their first
+available vertex. Therefore, over every field,
+\begin{equation}
+\beta_{2,(4,b)}\le1\quad(b\in\mathcal S_p),
+\qquad
+\beta_{2,(4,b)}=0\quad(b\notin\mathcal S_p).
+\label{eq:relative-upper}
+\end{equation}
+
+For the matching lower bound, we compute the linear part of the quadratic colon. Define
+\[
+V_p=\{v\in\mathcal E_{p,1}:v-p,v+p\in\mathcal E_{p,1}\}
+=[7p,8p-2]\cup[8p,9p-2]\cup\{9p,10p\}.
+\]
+For every \(a\in\mathcal E_{p,1}\) with \(a\ge6p\), the factorizations
+\((0,0,3p,a)\) and \((p,p,p,a)\) are connected by quadratic moves. If
+\(a+p,a+2p\in\mathcal E_{p,1}\), use
+\[
+(0,0,3p,a)\sim(0,0,p,a+2p)\sim(0,p,p,a+p)\sim(p,p,p,a).
+\]
+For \(a=7p-1\), use
+\[
+(0,0,3p,7p-1)\sim(0,1,3p,7p-2)\sim(0,1,p,9p-2)
+\sim(1,p,p,8p-2)\sim(p,p,p,7p-1).
+\]
+In every remaining case write \(a=u+v\), with
+\(u\in\mathcal E_{p,1}\) and \(v\in V_p\), and use
+\[
+(0,0,3p,a)\sim(0,3p,u,v)\sim(p,3p,u,v-p)
+\sim(p,p,u,v+p)\sim(p,p,p,a).
+\]
+The block formula~\eqref{eq:fiber-e1} verifies that these cases cover all high offsets.
+
+They cover no low offset. For a factorization of total at most \(7p-2\), color a generator odd
+exactly when it lies in \([3p,4p-2]\). Every equality of two pair sums preserves the parity of
+the number of odd generators: the sole cross-block possibility replaces two middle-block
+generators by one low and one high generator. If \(a\le p\), the two factorizations of
+\(X_af_p\) have parities one and zero; if \(3p\le a\le4p-2\), they have parities zero and one.
+Thus
+\begin{equation}
+(\mathfrak q_p:f_p)_1
+=\operatorname{span}_{\kfield}\{X_a:a\in\mathcal E_{p,1},\ a\ge6p\},
+\label{eq:quadratic-colon}
+\end{equation}
+which has dimension \(8p\).
+
+Apply the mapping cone to
+\[
+0\longrightarrow P_p/(\mathfrak q_p:f_p)(-3)
+\xrightarrow{\ f_p\ }P_p/\mathfrak q_p
+\longrightarrow\mathcal F_p\longrightarrow0.
+\]
+Every linear generator in~\eqref{eq:quadratic-colon} supplies a homological-degree-two summand
+shifted by four. No cancellation is possible: its maps to the shift-three free summand by a
+linear entry and to the quadratic-generator module by degree-two entries. Thus there is one
+nonzero class at each offset \(3p+a\) in~\eqref{eq:interior-support}. Combined with
+\eqref{eq:relative-upper}, this proves \(\beta_{2,4}=8p\), the exact support, and freeness over
+\(\mathbb Z\): the matching is integral and each mapping-cone class is primitive.
+
+Finally, no minimal degree-four equation exists by Theorem~\ref{thm:presentation}, and minimal
+shifts exclude homological degree at least four from internal degree four. The coefficient of
+\(z^4\) in~\eqref{eq:betti-polynomial} is therefore
+\[
+\beta_{2,4}-\beta_{3,4}
+=-\frac{p(2500p^3-2700p^2+675p-63)}{2}.
+\]
+Substitution of \(\beta_{2,4}=8p\) gives the second formula in~\eqref{eq:first-interior}.
+\end{proof}
+
+EXP-027 checks the complete offset chain profile for \(p=4,5,6\), with totals
+\(32,40,48\), and the smallest case agrees over \(\operatorname{GF}(2)\) and
+\(\operatorname{GF}(1000003)\) \textbf{[MV]}. The closed formulas and explicit quadratic paths
+pass every \(p=4,\ldots,300\); six all-parameter counterexample queries are UNSAT. An independently
+written audit reconstructs the full \(p=4\) chain profile and six spaced formula rows. The
+campaign, symbolic, and audit aggregates are
+\[
+\texttt{9bc93c41d899df4a39b85a452257d114000df84730d44f0661c19b7dd8322b63},
+\]
+\[
+\texttt{b7e760290880e821fbc2ef86b03279edab1543307fd5c58cbb635d9c4b765db8},
+\]
+and
+\[
+\texttt{f30b94ce86638732a407a3bb5abb4dfde8a1258441df71a36138dd0ae129d454}.
+\]
+The finite campaigns validate the implementation. The relative-chain and matching arguments,
+together with the colon and mapping cone, prove the theorem.
+
 \section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
@@ -1692,7 +1878,7 @@ All compact code, hypotheses, manifests, audits, and verdicts are in the public 
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
 minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
-also includes the compact EXP-011--024 campaigns, independent reconstruction audits, symbolic
+also includes the compact EXP-011--027 campaigns, independent reconstruction audits, symbolic
 proofs, the preserved EXP-013 correction, the EXP-015 refutation, and the EXP-022 quadratic
 refutation. The proof toolchain is
 pinned as follows:
@@ -1708,6 +1894,7 @@ DRAT-trim binary SHA-256 & {\fontsize{7}{8}\selectfont\ttfamily 92f0aa9575ed519d
 Z3 & 4.16.0; exact integer Presburger queries for EXP-023\\
 EXP-023 query aggregate & {\fontsize{7}{8}\selectfont\ttfamily 832c8421fe66359b8c246e3465e27de6ea7829215f892ab815e72b1f44787194}\\
 EXP-024 campaign/audit & exact integer coefficient and dimension routes; 297 rows plus independent rebuild\\
+EXP-027 & relative-chain profiles, six exact Presburger queries, 297 formula rows, and independent reconstruction\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -1728,6 +1915,13 @@ the frozen hashes of the EXP-021/023 premises; Theorem~\ref{thm:homological-edge
 consequence of those premises and standard homological arguments. Any defect in an imported
 premise would still propagate, and the theorem does not erase EXP-023's disclosed boundary.
 
+EXP-027 uses Z3 only to adversarially negate six interval statements. The proof of
+Theorem~\ref{thm:interior-strand} does not infer the theorem from those finite or solver results:
+the relative-chain identification, integral matching, explicit quadratic paths, parity
+obstruction, and minimal mapping cone are given above. The independent audit does not import the
+canonical rank implementation. The remaining trust boundary is the correctness of the frozen
+EXP-021/023/025 premises and the ordinary algebraic arguments displayed in the proof.
+
 \section{Scope, attribution, and open questions}
 
 Son Pham retains discovery priority for the counterexample. Professor Craig Huneke's verification
@@ -1742,13 +1936,14 @@ graded-torsion/Buchsbaum anatomy in Theorem~\ref{thm:buchsbaum}, and the complet
 Noether-normalization module in Theorem~\ref{thm:module}, and the canonical fiber cone and type in
 Theorem~\ref{thm:fiber}, and its complete defining ideal in
 Theorem~\ref{thm:presentation}, and its exact homological edges in
-Theorem~\ref{thm:homological-edge}, together with
+Theorem~\ref{thm:homological-edge}, and its first interior Betti strand in
+Theorem~\ref{thm:interior-strand}, together with
 their reproducible records.
 
 Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
 \ref{thm:type}, \ref{thm:trace}, \ref{thm:stability}, \ref{thm:reduction},
 \ref{thm:tangent}, \ref{thm:buchsbaum}, \ref{thm:module}, \ref{thm:fiber},
-\ref{thm:presentation}, and~\ref{thm:homological-edge}
+\ref{thm:presentation}, \ref{thm:homological-edge}, and~\ref{thm:interior-strand}
 do not classify all higher
 Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
 or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
@@ -1762,8 +1957,9 @@ questions remain open:
   \item Which additional hypotheses on the endomorphism ring recover a positive theorem while
   excluding both the public example and the full family proved here?
   \item Can the finite certificates be imported into a smaller formally verified checker?
-  \item What is the unresolved interior of the presentation-ring Betti table, and is there a
-  uniform explicit Gr\"obner basis or primary decomposition for the conductor special fiber?
+  \item Can the relative-complex method determine the remaining interior of the
+  presentation-ring Betti table, beyond the degree-four strand in
+  Theorem~\ref{thm:interior-strand}?
 \end{enumerate}
 
 \section*{Acknowledgments}
@@ -1876,6 +2072,18 @@ M. D'Anna, V. Micale, and A. Sammartano,
 \emph{On the associated graded ring of a semigroup ring},
 J. Commut. Algebra 3 (2011), 147--168.
 \href{https://doi.org/10.1216/JCA-2011-3-2-147}{doi:10.1216/JCA-2011-3-2-147}.
+
+\bibitem{BrunsHerzog1997}
+W. Bruns and J. Herzog,
+\emph{Semigroup rings and simplicial complexes},
+J. Pure Appl. Algebra 122 (1997), no.~3, 185--208.
+\href{https://doi.org/10.1016/S0022-4049(97)00051-0}{doi:10.1016/S0022-4049(97)00051-0}.
+
+\bibitem{Stamate2018}
+D. I. Stamate,
+\emph{Betti numbers for numerical semigroup rings},
+in \emph{Multigraded Algebra and Applications}, Springer Proc. Math. Stat. 238 (2018), 133--157.
+\href{https://arxiv.org/abs/1801.00153}{arXiv:1801.00153v2}.
 
 \bibitem{Cadical2023}
 A. Biere, K. Fazekas, M. Fleury, and M. Heisinger,
