@@ -29,6 +29,14 @@ producing ONE complete certificate artifact. Two methodological additions:
    descending gradient magnitude at the ball center; the successful pair
    and its certified subdeterminant enclosure are recorded per ball.
 
+## Ladder amendment (declared 2026-08-19, before the run)
+
+The mass-fiber dimension count needs the full ladder dim(R_j meet
+shape+) <= j for j = 0, 1, 2, not only j = 2. Each ball therefore ALSO
+carries a rank >= 2 certificate: one 2x2 minor of J interval-nonzero over
+the whole ball, making R_1 meet ball EMPTY (and R_0 with it). Off the
+balls the rank >= 3 certificates handle all three ladder levels at once.
+
 ## Success criteria (declared)
 
 - Every box of the core partition is either certified rank >= 3 (plain

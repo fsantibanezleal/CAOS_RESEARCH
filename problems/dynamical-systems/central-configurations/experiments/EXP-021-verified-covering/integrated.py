@@ -26,8 +26,8 @@ def load(name):
     spec.loader.exec_module(mod)
     return mod
 
-r21 = load("run")
 p3 = load("phase3")
+r21 = p3.r21          # phase3 already loaded run.py; reuse the SAME classes
 IV, MENU, det3 = r21.IV, r21.MENU, r21.det3
 DV, det3d = p3.DV, p3.det3d
 
@@ -75,7 +75,23 @@ def grad_pack(boxes):
             out.append(((rows, cols), None))
     return out
 
+def rank2_ball(bl):
+    """A 2x2 minor of J interval-nonzero over the whole ball: rank >= 2
+    everywhere on the ball, hence R_1 meet ball is EMPTY (ladder level j=1)."""
+    from itertools import combinations
+    J = r21.entry_matrix(*[tuple(b) for b in bl])
+    for r in combinations(range(6), 2):
+        for c in combinations(range(4), 2):
+            m = J[r[0]][c[0]] * J[r[1]][c[1]] - J[r[0]][c[1]] * J[r[1]][c[0]]
+            if m.excludes_zero():
+                return {"rows": list(r), "cols": list(c),
+                        "enclosure": [str(m.lo), str(m.hi)]}
+    return None
+
 def certify_ball(bl):
+    r2 = rank2_ball(bl)
+    if r2 is None:
+        return None
     packs = [pk for pk in grad_pack(list(bl)) if pk[1] is not None]
     def norm(g):
         return max(max(abs(x.lo), abs(x.hi)) for x in g)
@@ -90,7 +106,8 @@ def certify_ball(bl):
                     if sub.excludes_zero():
                         return {"minor1": str(top[i][0]), "minor2": str(top[j][0]),
                                 "subdet_cols": [a, b],
-                                "enclosure": [str(sub.lo), str(sub.hi)]}
+                                "enclosure": [str(sub.lo), str(sub.hi)],
+                                "rank2": r2}
     return None
 
 # ---------- mean-value certification returning the minor ----------
