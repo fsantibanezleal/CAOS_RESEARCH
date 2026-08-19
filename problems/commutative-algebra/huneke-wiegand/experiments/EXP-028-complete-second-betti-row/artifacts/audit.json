@@ -1,0 +1,457 @@
+{
+  "experiment": "EXP-028-independent-audit",
+  "generated_at": "2026-08-19T17:18:18.263487+00:00",
+  "status": "PASS",
+  "source_sha256": "6a9002fd39b3fe5286869f76a2cdce8bbaf8b148b08da142796898a7839d53c9",
+  "formula_rows": [
+    {
+      "p": 4,
+      "checks": {
+        "outer_sum": true,
+        "middle_sum": true,
+        "beta_2_5": true,
+        "beta_2_6": true,
+        "support_count": true
+      }
+    },
+    {
+      "p": 5,
+      "checks": {
+        "outer_sum": true,
+        "middle_sum": true,
+        "beta_2_5": true,
+        "beta_2_6": true,
+        "support_count": true
+      }
+    },
+    {
+      "p": 17,
+      "checks": {
+        "outer_sum": true,
+        "middle_sum": true,
+        "beta_2_5": true,
+        "beta_2_6": true,
+        "support_count": true
+      }
+    },
+    {
+      "p": 73,
+      "checks": {
+        "outer_sum": true,
+        "middle_sum": true,
+        "beta_2_5": true,
+        "beta_2_6": true,
+        "support_count": true
+      }
+    },
+    {
+      "p": 151,
+      "checks": {
+        "outer_sum": true,
+        "middle_sum": true,
+        "beta_2_5": true,
+        "beta_2_6": true,
+        "support_count": true
+      }
+    },
+    {
+      "p": 300,
+      "checks": {
+        "outer_sum": true,
+        "middle_sum": true,
+        "beta_2_5": true,
+        "beta_2_6": true,
+        "support_count": true
+      }
+    }
+  ],
+  "smith_rows": [
+    {
+      "p": 4,
+      "offset": 14,
+      "presentation_shape": [
+        9,
+        9
+      ],
+      "nonzero_smith_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "all_nonzero_factors_are_units": true,
+      "free_rank": 1
+    },
+    {
+      "p": 4,
+      "offset": 27,
+      "presentation_shape": [
+        25,
+        29
+      ],
+      "nonzero_smith_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "all_nonzero_factors_are_units": true,
+      "free_rank": 2
+    },
+    {
+      "p": 4,
+      "offset": 37,
+      "presentation_shape": [
+        63,
+        108
+      ],
+      "nonzero_smith_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "all_nonzero_factors_are_units": true,
+      "free_rank": 1
+    },
+    {
+      "p": 4,
+      "offset": 38,
+      "presentation_shape": [
+        70,
+        114
+      ],
+      "nonzero_smith_factors": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "all_nonzero_factors_are_units": true,
+      "free_rank": 2
+    }
+  ],
+  "rational_rows": [
+    {
+      "p": 4,
+      "total_degree": 5,
+      "offset": 14,
+      "chain_sizes": [
+        8,
+        16,
+        9
+      ],
+      "rational_ranks": [
+        7,
+        8
+      ],
+      "h1": 1
+    },
+    {
+      "p": 4,
+      "total_degree": 5,
+      "offset": 16,
+      "chain_sizes": [
+        8,
+        22,
+        16
+      ],
+      "rational_ranks": [
+        7,
+        13
+      ],
+      "h1": 2
+    },
+    {
+      "p": 4,
+      "total_degree": 5,
+      "offset": 25,
+      "chain_sizes": [
+        10,
+        28,
+        25
+      ],
+      "rational_ranks": [
+        9,
+        18
+      ],
+      "h1": 1
+    },
+    {
+      "p": 4,
+      "total_degree": 5,
+      "offset": 27,
+      "chain_sizes": [
+        12,
+        36,
+        29
+      ],
+      "rational_ranks": [
+        11,
+        23
+      ],
+      "h1": 2
+    },
+    {
+      "p": 4,
+      "total_degree": 5,
+      "offset": 36,
+      "chain_sizes": [
+        20,
+        77,
+        107
+      ],
+      "rational_ranks": [
+        19,
+        57
+      ],
+      "h1": 1
+    },
+    {
+      "p": 4,
+      "total_degree": 5,
+      "offset": 37,
+      "chain_sizes": [
+        21,
+        83,
+        108
+      ],
+      "rational_ranks": [
+        20,
+        62
+      ],
+      "h1": 1
+    },
+    {
+      "p": 4,
+      "total_degree": 5,
+      "offset": 38,
+      "chain_sizes": [
+        22,
+        91,
+        114
+      ],
+      "rational_ranks": [
+        21,
+        68
+      ],
+      "h1": 2
+    },
+    {
+      "p": 4,
+      "total_degree": 5,
+      "offset": 40,
+      "chain_sizes": [
+        23,
+        106,
+        155
+      ],
+      "rational_ranks": [
+        22,
+        83
+      ],
+      "h1": 1
+    },
+    {
+      "p": 4,
+      "total_degree": 6,
+      "offset": 23,
+      "chain_sizes": [
+        8,
+        25,
+        40
+      ],
+      "rational_ranks": [
+        7,
+        18
+      ],
+      "h1": 0
+    },
+    {
+      "p": 4,
+      "total_degree": 6,
+      "offset": 30,
+      "chain_sizes": [
+        15,
+        53,
+        82
+      ],
+      "rational_ranks": [
+        14,
+        39
+      ],
+      "h1": 0
+    },
+    {
+      "p": 4,
+      "total_degree": 6,
+      "offset": 200,
+      "chain_sizes": [
+        0,
+        119,
+        5759
+      ],
+      "rational_ranks": [
+        0,
+        119
+      ],
+      "h1": 0
+    }
+  ],
+  "checks": {
+    "degree_five_rational_ranks": true,
+    "degree_six_rational_vanishing": true,
+    "smith_quotients_torsion_free": true,
+    "smith_free_ranks": true
+  },
+  "controls": {
+    "beta_minus_one_rejected": true,
+    "degree_six_one_rejected": true,
+    "nonunit_smith_factor_rejected": true
+  }
+}

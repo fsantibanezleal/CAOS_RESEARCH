@@ -1,0 +1,134 @@
+{
+  "experiment": "EXP-028-complete-second-betti-row",
+  "generated_at": "2026-08-19T17:17:52.224873+00:00",
+  "status": "PASS",
+  "range": {
+    "first": 4,
+    "requested_last": 4
+  },
+  "completed_rows": 1,
+  "premise_hashes": {
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-024-extremal-betti-data/proof.md": "b7b654609cfca99e979b26741f7d2b6bbbfc0029d882c38e3c2932bfc9146088",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-025-curvilinear-primary-structure/proof.md": "70c7838ce843252aba335d80ade105d1d1942c490530ea7770483be0dff9a61f",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-026-grevlex-staircase/proof.md": "765fa23534be9e534fd507dff0e447e967345e4d2a485f7da6fdf0383b04fb56",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-027-relative-betti-strand/proof.md": "355ff5c7e4bbc74fc8a1e346aac041d77b3fbc758051dbc729836db6a259e0bc",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-027-relative-betti-strand/verdict.md": "fa0553e067fceb3ad538136e769ec19c2498dcf123af0df22f281dd3643e9f80",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-027-relative-betti-strand/artifacts/results.json": "06c630fc74d3e630f4dfbf47736313e6e40ff4e65a30acabe1e1a505b40a123f"
+  },
+  "campaign_aggregate": "5241e91de6108e073dfccc1da0b47964121feffb25c690bfaf459c9e74efb88e",
+  "explicit_profiles": [
+    {
+      "p": 4,
+      "total_degree": 5,
+      "primes": [
+        2,
+        1000003
+      ],
+      "maximum_offset_checked": 305,
+      "combination_counts_1_to_3": [
+        40,
+        780,
+        9880
+      ],
+      "h1_profiles": {
+        "2": {
+          "14": 1,
+          "15": 1,
+          "16": 2,
+          "17": 1,
+          "18": 1,
+          "25": 1,
+          "26": 2,
+          "27": 2,
+          "28": 2,
+          "29": 1,
+          "36": 1,
+          "37": 1,
+          "38": 2,
+          "39": 1,
+          "40": 1
+        },
+        "1000003": {
+          "14": 1,
+          "15": 1,
+          "16": 2,
+          "17": 1,
+          "18": 1,
+          "25": 1,
+          "26": 2,
+          "27": 2,
+          "28": 2,
+          "29": 1,
+          "36": 1,
+          "37": 1,
+          "38": 2,
+          "39": 1,
+          "40": 1
+        }
+      },
+      "h1_total": 20,
+      "critical_aggregate": "8a35d1d1652c987884dd5113e3e4c9d598af2afea510e4a5d68ee2a23b7753bd",
+      "degree_six_no_critical_edges": null,
+      "elapsed_seconds": 1.4890487999655306
+    },
+    {
+      "p": 4,
+      "total_degree": 6,
+      "primes": [
+        2,
+        1000003
+      ],
+      "maximum_offset_checked": 305,
+      "combination_counts_1_to_3": [
+        40,
+        780,
+        9880
+      ],
+      "h1_profiles": {
+        "2": {},
+        "1000003": {}
+      },
+      "h1_total": 0,
+      "critical_aggregate": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "degree_six_no_critical_edges": true,
+      "elapsed_seconds": 8.155710700026248
+    }
+  ],
+  "elapsed_seconds": 9.646800999995321,
+  "rows": [
+    {
+      "p": 4,
+      "beta_2_3": 17896,
+      "beta_2_4": 32,
+      "beta_2_5": 20,
+      "beta_2_6": 0,
+      "support_count": 15,
+      "support_hash": "d12ff8f35a2fe329a886eb61b89409607b4ec44bbe49dc212eee40d97f79cb95",
+      "outer_block_total": 6,
+      "middle_block_total": 8,
+      "critical_count_hash": "4763c44fcb7843f5e52ae8d67c402edf6cdc49622090b16ff46ffed48750bc63",
+      "predictions": {
+        "generator_count": true,
+        "blocks_pairwise_disjoint": true,
+        "support_is_three_blocks": true,
+        "support_count": true,
+        "outer_sum": true,
+        "middle_sum": true,
+        "beta_2_5": true,
+        "outer_reflection": true,
+        "critical_A_count": true,
+        "critical_B_count": true,
+        "critical_C_count": true,
+        "enumerated_critical_counts": true
+      },
+      "controls": {
+        "deleted_support_endpoint_rejected": true,
+        "merged_blocks_rejected": true,
+        "outer_endpoint_mutation_rejected": true,
+        "middle_plateau_mutation_rejected": true,
+        "third_critical_not_homology": true
+      },
+      "row_hash": "488f4ae3b22650f3739321eafcd68f34741ee62e237cddd1a946709196ad2915"
+    }
+  ]
+}

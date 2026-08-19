@@ -1,0 +1,38 @@
+{
+  "experiment": "EXP-028-symbolic-certificate",
+  "generated_at": "2026-08-19T17:18:56.417971+00:00",
+  "status": "PASS",
+  "z3_queries": [
+    {
+      "name": "support_blocks_pairwise_disjoint",
+      "result": "unsat",
+      "passed": true
+    },
+    {
+      "name": "each_support_block_has_length_2p_minus_3",
+      "result": "unsat",
+      "passed": true
+    },
+    {
+      "name": "A_critical_edges_stay_in_low_block",
+      "result": "unsat",
+      "passed": true
+    },
+    {
+      "name": "C_regular_critical_edges_stay_in_declared_blocks",
+      "result": "unsat",
+      "passed": true
+    },
+    {
+      "name": "degree_six_hole_is_only_6p_minus_1",
+      "result": "unsat",
+      "passed": true
+    }
+  ],
+  "arithmetic_range": [
+    4,
+    10000
+  ],
+  "arithmetic_aggregate": "818667008ad6b982855e67f03b87d05e4b08345d7d0a6efe2aabb448116d4251",
+  "arithmetic_failures": []
+}
