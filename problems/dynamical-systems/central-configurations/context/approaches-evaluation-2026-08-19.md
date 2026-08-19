@@ -112,3 +112,20 @@ simplification, adopted now:
    checkpoint (record, keep pow2).
 7. After the chain: V12 census, then V9 discriminant, then V11 as the
    all-masses upgrade campaign.
+
+## Amendment (same day, deeper scoping of (e1))
+
+Working the dominance lemma's constants revealed it still needs a case
+menu over the B-side vanishing loci ({d1B = 2}, {d1B = wB}, ...) plus
+separate treatment of the far-tube and far-corner compositions: the
+"one lemma" was really a covering done by hand. Part (e) therefore
+returns to chart coverings, but only THREE, not 6-8, thanks to two
+observations: (i) capping the bounded pair at R_B <= 3/2 inside the far-A
+chart makes the A-B separation explicitly bounded below (Cs >= 1 -
+sqrt2/2 > 0.29), so no far-tube appears inside that chart; (ii) applying
+BOTH column rescales (4u^2 on mA, 4p^2 on mB) uniformly makes every
+collapse face analytic, so pair-collapse-at-infinity needs no extra
+chart. The charts: F_A1 (A far, direction tau, B in the 3/2 ball;
+row scalings (eps, eps, 1, 1, eps, eps)), F_A2 (both far, two inversions),
+and the far-tube blow-up inside F_A2; swaps free by piece 9d. F_A1
+derived and implemented this round.
