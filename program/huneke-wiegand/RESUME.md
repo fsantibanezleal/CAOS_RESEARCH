@@ -1,33 +1,27 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-18. Lifecycle: published; durable handoff complete. EXP-026 proves the explicit
-reduced grevlex basis of the conductor fiber cone, with degree profile
-`(50p^2-17p,5p-1,p-2)` in degrees two through four, no later basis elements, and no leading
-generator divisible by `X_0`. The full `p=4,...,300` campaign, independent clique audit,
-16-query all-parameter certificate, and deductive staircase stabilization pass. Companion v0.02
-is published at DOI `10.5281/zenodo.22002907`; public metadata and a fresh unauthenticated
-453,621-byte download match MD5 `53123ab5bed9a6c84c37ebde1610c3f7` and SHA-256
-`12cc380bcc72613694b24cc9f74284f8f3d35e4958ec3569b6ebacce3225e398`. PRs #190/#191 promoted the
-round through `develop` and `main`; CAOS_MANAGE PR #559 promoted the publication ledger. No
-delivery or theorem experiment is active; the unresolved interior Betti table is a separate task.
-EXP-025 remains CONFIRMED. It proves
-that the conductor special fiber is an explicit truncated-monomial algebra, its defining ideal
-has one primary component, and its projective scheme is a length-`24p` curvilinear fat point with
-sharp nilpotence index `24p`. The `p=4,...,300` campaign and independent all-row audit pass with
-aggregates `f3373f4f...b39b6` and `84c00be8...f143e`. The standalone theorem meets the prior split
-gate. A focused six-page v0.01 companion candidate passed claim/build/render, metadata, and
-sole-authorship QA. Separate Zenodo draft `21997378` reserved version DOI
-`10.5281/zenodo.21997378` and concept DOI `10.5281/zenodo.21997377`. The DOI-bearing PDF is now
-published and a fresh public download matches SHA-256
-`e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`. PR #186 passed `guards`
-and `test` and merged to `develop`; PR #187 passed all required checks and merged to `main`.
-Their tested publication payload is tree-identical at
-`53e5e61ffeeb5816497e3e477921bc94c4a5f91d`. CAOS_MANAGE PR #557 promoted the matching Zenodo
-ledger, with `develop` and `main` tree-identical at `f7db0c50a75491738dbfad998d235458f4bb69ee`.
-EXP-024 and the 29-page v0.13 preprint remain confirmed, published, and immutable
-at DOI `10.5281/zenodo.21995498`. PRs #182--#185 completed the preceding theorem, publication,
-and durable documentation handoff; all three remote branches shared tree
-`b70a3990583057a92e591c34d5f9e9c101185e8c` before EXP-025 opened.
+Updated: 2026-08-19. Lifecycle: EXP-027 confirmed; manuscript v0.14 gate active. The first unknown
+interior Betti strand of the conductor special fiber is now exact over every field:
+
+```text
+beta_(2,4)=8p,
+beta_(3,4)=p(5p-1)(500p^2-440p+47)/2.
+```
+
+The `8p` second syzygies occur with multiplicity one at offsets
+`{3p+a:a in G_p,a>=6p}`. The proof identifies offset Koszul strands with relative
+squarefree-divisor chains, uses an integral lexicographic matching for the upper bound, and obtains
+the matching lower bound from `(Q_p:f_p)_1` and a minimal mapping cone. The 297-row campaign,
+explicit all-offset profiles at `p=4,5,6`, two-characteristic `p=4` smoke, six-query symbolic
+certificate, and independent reconstruction audit all pass. The main conductor-fiber manuscript
+should expand to v0.14; no new DOI, upload, publication, PR promotion, or management-ledger update
+is yet claimed. The full remaining interior table stays open.
+
+The published baseline remains intact: EXP-026 and focused companion v0.02 are published and
+fresh-download verified at DOI `10.5281/zenodo.22002907`, and PRs #190/#191 plus CAOS_MANAGE PR
+#559 completed that prior handoff. EXP-025 v0.01 remains immutable at DOI
+`10.5281/zenodo.21997378`; EXP-024 v0.13 remains immutable at DOI
+`10.5281/zenodo.21995498`.
 
 ## 1. State in one screen
 
@@ -56,6 +50,11 @@ Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
     (EXP-021); and
 13. the complete defining ideal by `50p^2-17p` quadrics and one cubic, with relation type three
     and non-Koszulness (EXP-022/023).
+14. exact presentation-ring edges, including projective dimension, regularity, and extremal Betti
+    data (EXP-024);
+15. the truncated-monomial primary model and complete reduced grevlex staircase (EXP-025/026); and
+16. the first interior Betti strand, with characteristic-free multiplicity-free offset support
+    (EXP-027).
 
 The public seed is
 
@@ -79,6 +78,7 @@ I = (t^56,t^70)R.
 | `T_p` | common trace/conductor `tr_R(J_p)=R_p:E_p=tr_R(E_p)` | EXP-013--018 theorems |
 | `C_p` | conductor special fiber `F(T_p)`, canonically `gr_(T_p)(R_p)/H^0` | EXP-021 theorem |
 | `J_p` | defining ideal of `C_p` in its `10p` degree-one variables | EXP-022/023 theorems |
+| `Q_p` | quadratic part of `J_p`, with `J_p=(Q_p,f_p)` and `f_p=X_0^2X_(3p)-X_p^3` | EXP-023/027 theorems |
 | minimum layer | all normalized rigid pairs at the least Frobenius value 181 | EXP-005/007 |
 
 ## 2a. Infinite family theorem
@@ -142,6 +142,8 @@ campaign is supporting evidence, not the proof.
 | EXP-023 | CONFIRMED | unique higher equation; relation type three; exact count `50p^2-17p+1`; non-Koszul fiber cone |
 | EXP-024 | CONFIRMED | `pd=10p-1`, `reg=4`, exact `beta_(2,3)`, complete last row, penultimate `8p`, and canonical generator degrees |
 | EXP-025 | CONFIRMED | truncated parametrization, one primary component, nilindex `24p`, curvilinear fat point, local/arithmetic Gorenstein contrast, and differential fingerprint |
+| EXP-026 | CONFIRMED | reduced grevlex profile `(50p^2-17p,5p-1,p-2)`, no later boundary, and flat Cohen--Macaulay monomial degeneration |
+| EXP-027 | CONFIRMED | `beta_(2,4)=8p` with complete multiplicity-free offset support and exact adjacent `beta_(3,4)` over every field |
 
 ## 3a. Exact evidence anchors
 
@@ -171,30 +173,33 @@ campaign is supporting evidence, not the proof.
 - EXP-024 campaign and independent all-row audit aggregates:
   `baf6200a442be9476cd083fde753bbdd9e623c06aa2528f3a7f138ee825637eb` and
   `b6035f615f2b2092351b5a42e5a734c72ba4783adf82943ed41b38fe07ef17e2`.
+- EXP-027 campaign, symbolic, and independent-audit aggregates:
+  `9bc93c41d899df4a39b85a452257d114000df84730d44f0661c19b7dd8322b63`,
+  `b7e760290880e821fbc2ef86b03279edab1543307fd5c58cbb635d9c4b765db8`, and
+  `f30b94ce86638732a407a3bb5abb4dfde8a1258441df71a36138dd0ae129d454`.
 
 ## 4. In flight
 
-EXP-025 is CONFIRMED. With `q=24p` and `G_p=E_1`, it proves
+EXP-027 is CONFIRMED. For every `p>=4` and every field,
 
 ```text
-C_p isomorphic to k[x y^a : a in G_p] inside k[x,y]/(y^q),
-C_p/(X_0-1) isomorphic to k[y]/(y^q),
-radical(J_p)=(X_a:a>0),
-J_p is (X_a:a>0)-primary,
-nilindex(nil(C_p))=q.
+beta_(2,4)=8p,
+beta_(3,4)=p(5p-1)(500p^2-440p+47)/2.
 ```
 
-The geometric result is a saturated length-`q` curvilinear fat point supported at the
-`X_0` coordinate point, with tangent dimension one. It is locally Gorenstein but its homogeneous
-coordinate ring remains nonlevel and non-Gorenstein of type `10p+1`. The affine Kahler
-differential module is also predicted exactly, with the required characteristic split when
-`char(k)` divides `q`. The campaign passes all 297 parameters and the audit independently rebuilds
-all rows, with aggregates `f3373f4f58287fd3f553b95efa226e7938170d32f24eea6a014ca47f9d6b39b6`
-and `84c00be8ff64002e8738a5d4307d71df73dfa7595e810c7e764f6f5b6c8f143e`. The proof and verdict
-live under `experiments/EXP-025-curvilinear-primary-structure/`. The companion manuscript is
-published at DOI `10.5281/zenodo.21997378`; its public metadata and fresh download match the
-validated six-page artifact. Checked repository promotion is complete: PRs #186/#187 merged the
-tested payload to `develop` and `main`.
+The `beta_(2,4)` offset support is `{3p+a:a in G_p,a>=6p}`, with one class at each offset. The
+integral relative-homology matching and primitive mapping-cone classes exclude torsion and every
+characteristic exception. The exact campaign covers `p=4,...,300`; explicit relative-chain
+profiles cover every offset at `p=4,5,6`; the smallest case agrees over two unrelated finite
+fields; six symbolic counterexample queries are UNSAT; and the independent audit reconstructs the
+`p=4` chain profile plus six small and large formula samples. Proof and verdict live under
+`experiments/EXP-027-relative-betti-strand/`.
+
+The active delivery gate is a v0.14 expansion of the main conductor-fiber manuscript, followed by
+complete claim/build/render, sole-authorship, metadata, Zenodo new-version, fresh-download, and
+PR-promotion checks. No part of that delivery is yet claimed complete. A separate manuscript is
+deferred until the relative method determines a substantial additional portion of the table or a
+transferable theorem beyond this family.
 
 Previously closed state:
 

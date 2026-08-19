@@ -1,0 +1,140 @@
+{
+  "experiment": "EXP-027-relative-betti-strand-audit",
+  "generated_at": "2026-08-19T13:06:24.072855+00:00",
+  "status": "PASS",
+  "samples": [
+    4,
+    5,
+    17,
+    73,
+    151,
+    300
+  ],
+  "campaign_aggregate": "9bc93c41d899df4a39b85a452257d114000df84730d44f0661c19b7dd8322b63",
+  "symbolic_aggregate": "b7e760290880e821fbc2ef86b03279edab1543307fd5c58cbb635d9c4b765db8",
+  "independent_p4_profile": {
+    "p": 4,
+    "maximum_offset": 284,
+    "support_count": 32,
+    "support_hash": "dddead5781edb26155cea9fd894fbd56d4b7bc7a4922ef4491da0ef681fcd579",
+    "block_aggregate": "17bd0b396ceaee5ca8800a174fcc572d526fbf93dd4bf9fd65b67d4beb1fcbab"
+  },
+  "rows": [
+    {
+      "p": 4,
+      "checks": {
+        "generator_count": true,
+        "support_count": true,
+        "support_hash": true,
+        "beta_2_4": true,
+        "beta_3_4": true,
+        "hilbert_difference": true,
+        "all_recorded_predictions": true,
+        "all_recorded_controls": true
+      },
+      "controls": {
+        "deleted_first_support_rejected": true,
+        "beta_24_minus_one_rejected": true,
+        "beta_34_sign_rejected": true
+      },
+      "audit_hash": "ef672c6f3f738b9e98f741bd8e53c11c0826e89b709fc50adf0c4da099fb6b6b"
+    },
+    {
+      "p": 5,
+      "checks": {
+        "generator_count": true,
+        "support_count": true,
+        "support_hash": true,
+        "beta_2_4": true,
+        "beta_3_4": true,
+        "hilbert_difference": true,
+        "all_recorded_predictions": true,
+        "all_recorded_controls": true
+      },
+      "controls": {
+        "deleted_first_support_rejected": true,
+        "beta_24_minus_one_rejected": true,
+        "beta_34_sign_rejected": true
+      },
+      "audit_hash": "09f02bce7b71cdfbdb6e0896216da56ac98c4cc8c7ac63431eaf397b65be64f5"
+    },
+    {
+      "p": 17,
+      "checks": {
+        "generator_count": true,
+        "support_count": true,
+        "support_hash": true,
+        "beta_2_4": true,
+        "beta_3_4": true,
+        "hilbert_difference": true,
+        "all_recorded_predictions": true,
+        "all_recorded_controls": true
+      },
+      "controls": {
+        "deleted_first_support_rejected": true,
+        "beta_24_minus_one_rejected": true,
+        "beta_34_sign_rejected": true
+      },
+      "audit_hash": "724e92ec3db8c7227474967bce72bff9d9ca5393160a79aaaf8893b2f5e73da1"
+    },
+    {
+      "p": 73,
+      "checks": {
+        "generator_count": true,
+        "support_count": true,
+        "support_hash": true,
+        "beta_2_4": true,
+        "beta_3_4": true,
+        "hilbert_difference": true,
+        "all_recorded_predictions": true,
+        "all_recorded_controls": true
+      },
+      "controls": {
+        "deleted_first_support_rejected": true,
+        "beta_24_minus_one_rejected": true,
+        "beta_34_sign_rejected": true
+      },
+      "audit_hash": "91607a1140fdf40264f7b63cd3ae868798af109c57201bac9823667b8cdc62b5"
+    },
+    {
+      "p": 151,
+      "checks": {
+        "generator_count": true,
+        "support_count": true,
+        "support_hash": true,
+        "beta_2_4": true,
+        "beta_3_4": true,
+        "hilbert_difference": true,
+        "all_recorded_predictions": true,
+        "all_recorded_controls": true
+      },
+      "controls": {
+        "deleted_first_support_rejected": true,
+        "beta_24_minus_one_rejected": true,
+        "beta_34_sign_rejected": true
+      },
+      "audit_hash": "7415a532fe69e218529e901ec46069520c05e71daad2c01230163965380224de"
+    },
+    {
+      "p": 300,
+      "checks": {
+        "generator_count": true,
+        "support_count": true,
+        "support_hash": true,
+        "beta_2_4": true,
+        "beta_3_4": true,
+        "hilbert_difference": true,
+        "all_recorded_predictions": true,
+        "all_recorded_controls": true
+      },
+      "controls": {
+        "deleted_first_support_rejected": true,
+        "beta_24_minus_one_rejected": true,
+        "beta_34_sign_rejected": true
+      },
+      "audit_hash": "b4790c6a2bed81774d5b1847fef372967c9d2c8795ca97d90fa24f15743b3e0a"
+    }
+  ],
+  "audit_aggregate": "f30b94ce86638732a407a3bb5abb4dfde8a1258441df71a36138dd0ae129d454",
+  "elapsed_seconds": 0.5351836999761872
+}

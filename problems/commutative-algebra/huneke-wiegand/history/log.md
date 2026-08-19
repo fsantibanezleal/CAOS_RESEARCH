@@ -798,3 +798,34 @@
   trees match at `372cd71d3acca38b92f872cd0995b5b9a264d543`.
 - HWB-036 is complete. No theorem experiment or delivery gate remains active, and no release tag is
   claimed for this research-only round.
+
+## 2026-08-19 - EXP-027 declared
+
+- Reopened HWB-035 after a fresh primary-source and novelty preflight; no branch change was made.
+- Selected relative offset-Koszul complexes as the strongest tractable route to the unresolved
+  interior Betti table. Mapping-cone colons were retained as an independent route; raw full
+  resolutions and cancellation-only bounds were deprioritized.
+- Declared the exact `beta_(2,4)`, multigraded support, `beta_(3,4)`, colon, and integral-torsion
+  predictions before canonical implementation or artifact generation.
+
+## 2026-08-19 - EXP-027 confirmed
+
+- The mandatory `p=4` smoke reconstructed every offset block over `GF(2)` and `GF(1000003)` and
+  found exactly 32 multiplicity-one relative first-homology components.
+- The canonical campaign passed all 297 parameters `p=4,...,300`; explicit every-offset profiles
+  at `p=4,5,6` found totals `32,40,48` and no unexpected support.
+- Six all-parameter Z3 counterexample queries returned UNSAT, including exact support, centered
+  offset classification, high-variable quadratic paths, and low-variable parity obstruction.
+- The independent audit rebuilt the `p=4` chain profile without importing the canonical code and
+  checked `p=4,5,17,73,151,300` formula rows.
+- The deductive proof identifies Koszul strands with relative squarefree-divisor chains, obtains
+  an integral Morse upper bound, and matches it through the exact quadratic colon and a minimal
+  mapping cone. Hence, over every field,
+
+  ```text
+  beta_(2,4)=8p,
+  beta_(3,4)=p(5p-1)(500p^2-440p+47)/2.
+  ```
+
+- EXP-027 is CONFIRMED. HWB-037 opens the main-manuscript v0.14 and Zenodo new-version gate; no
+  upload, DOI version, publication, or PR promotion is claimed at this checkpoint.

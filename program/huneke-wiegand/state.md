@@ -79,14 +79,23 @@
 | 2026-08-18 | published | published | PR #190 passed `guards` and `test` and merged EXP-026 plus verified v0.02 to `develop` at `6b9d4670`; PR #191 passed all required checks and promoted it to `main` at `5dfb1af5` |
 | 2026-08-18 | published | published | research work, `develop`, and `main` share payload tree `1fb094d102e1f91a6c9754cca26d7f57666450fb`; CAOS_MANAGE PR #559 promoted the publication ledger with `develop`/`main` tree `372cd71d3acca38b92f872cd0995b5b9a264d543` |
 | 2026-08-19 | published | active | EXP-027 declared before implementation: derive relative offset-Koszul complexes and determine the first unknown interior Betti entries `beta_(2,4)` and `beta_(3,4)` with characteristic-independent support |
+| 2026-08-19 | active | confirmed | EXP-027 proves `beta_(2,4)=8p`, its complete multiplicity-free offset support, and `beta_(3,4)=p(5p-1)(500p^2-440p+47)/2` over every field; all campaign, symbolic, and independent-audit gates pass |
+| 2026-08-19 | confirmed | active | manuscript v0.14 and Zenodo new-version gate opened for the first interior Betti-strand theorem; publication is not yet claimed |
 
-Current state: **published baseline; EXP-027 active**. EXP-026 proves `50p^2-17p`, `5p-1`, and
-`p-2` reduced-basis elements in degrees two, three, and four, with none later and no leading
-generator divisible by `X_0`; focused companion v0.02 is published and fresh-download verified at
-DOI `10.5281/zenodo.22002907`. EXP-027 now targets the first unknown interior Betti strand through
-relative offset-Koszul homology and an independent quadratic-colon route. Its declared predictions
-are not yet theorem claims. EXP-025 and v0.01 remain immutable at DOI
-`10.5281/zenodo.21997378`.
+Current state: **EXP-027 confirmed; publication gate active**. Relative offset-Koszul homology and
+the independent quadratic-colon mapping cone prove the first unknown interior Betti strand over
+every field:
+
+```text
+beta_(2,4)=8p,
+beta_(3,4)=p(5p-1)(500p^2-440p+47)/2.
+```
+
+The `8p` second syzygies are multiplicity-free at offsets `{3p+a:a in G_p,a>=6p}`. The exact
+297-parameter campaign, full offset profiles at `p=4,5,6`, two-characteristic smoke, six-query
+all-parameter certificate, and independent audit pass. The main conductor-fiber manuscript v0.14
+is the active delivery gate; no DOI, upload, publication, or repository promotion is yet claimed.
+The full remaining interior Betti table stays open under HWB-035.
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.

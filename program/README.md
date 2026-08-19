@@ -21,7 +21,7 @@ The in-repo status section: which problems exist, in which lifecycle state (see
 | P vs NP | computation-complexity | proposed | C+ | partial | |
 | Centralizer density (Smale 12) | dynamical-systems | proposed | C+ | no | |
 | Hodge conjecture | algebraic-geometry | proposed | C+ | no | |
-| Huneke-Wiegand counterexample extensions | commutative-algebra | exploring | A | no | [huneke-wiegand/plan.md](huneke-wiegand/plan.md) |
+| Huneke-Wiegand counterexample extensions | commutative-algebra | published | A | no | [huneke-wiegand/plan.md](huneke-wiegand/plan.md) |
 
 Portfolio selection is also informed by the finite-certificate and validation-loop criteria in
 [`counterexample-radar.md`](counterexample-radar.md). Prestige is not a substitute for a tractable

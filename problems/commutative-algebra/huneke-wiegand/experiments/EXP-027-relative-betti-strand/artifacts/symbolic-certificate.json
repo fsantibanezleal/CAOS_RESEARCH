@@ -1,0 +1,38 @@
+{
+  "experiment": "EXP-027-relative-betti-strand",
+  "generated_at": "2026-08-19T13:02:31.967183+00:00",
+  "status": "PASS",
+  "queries": [
+    {
+      "name": "support_equals_shifted_high",
+      "result": "unsat",
+      "passed": true
+    },
+    {
+      "name": "center_set_formula",
+      "result": "unsat",
+      "passed": true
+    },
+    {
+      "name": "every_high_offset_has_quadratic_path",
+      "result": "unsat",
+      "passed": true
+    },
+    {
+      "name": "low_total_below_seven_p",
+      "result": "unsat",
+      "passed": true
+    },
+    {
+      "name": "low_fiber_moves_preserve_middle_parity",
+      "result": "unsat",
+      "passed": true
+    },
+    {
+      "name": "transient_morse_range_disjoint_from_support",
+      "result": "unsat",
+      "passed": true
+    }
+  ],
+  "aggregate": "b7e760290880e821fbc2ef86b03279edab1543307fd5c58cbb635d9c4b765db8"
+}
