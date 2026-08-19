@@ -174,6 +174,7 @@ def main():
     certified = discarded = failed = processed = 0
     DEPTH = 26
     certs = []
+    failed_boxes = []
     while stack:
         (ub, vb, pb, qb), d = stack.pop()
         processed += 1
@@ -192,6 +193,8 @@ def main():
             continue
         if d >= DEPTH:
             failed += 1
+            if len(failed_boxes) < 100000:
+                failed_boxes.append((ub, vb, pb, qb))
             continue
         widths = [ub[1]-ub[0], vb[1]-vb[0], pb[1]-pb[0], qb[1]-qb[0]]
         w = widths.index(max(widths))
@@ -206,8 +209,43 @@ def main():
                   f"discarded {discarded} failed {failed} stack {len(stack)}", flush=True)
         if processed > 3_000_000:
             print("P1 BUDGET EXCEEDED"); break
-    print(f"DONE {time.time()-t0:.0f}s: processed {processed} certified {certified} "
-          f"discarded {discarded} FAILED {failed}")
+    print(f"PHASE1 {time.time()-t0:.0f}s: processed {processed} certified {certified} "
+          f"discarded {discarded} failed {failed}")
+    # PHASE 2: refine the failed boxes to depth 34
+    stack = [(b, 26) for b in failed_boxes]
+    failed2 = 0
+    remaining = []
+    p2 = 0
+    while stack:
+        (ub, vb, pb, qb), d = stack.pop()
+        p2 += 1
+        dmin_lo = qb[0] - vb[1]; dmax_hi = qb[1] - vb[0]
+        if dmax_hi < F(1,4) and dmin_lo > F(-1,4):
+            continue
+        if any_minor_certifies(ub, vb, pb, qb) is not None:
+            certified += 1
+            continue
+        if d >= 34:
+            failed2 += 1
+            if len(remaining) < 3000:
+                remaining.append([[str(x) for x in b] for b in (ub, vb, pb, qb)])
+            continue
+        widths = [ub[1]-ub[0], vb[1]-vb[0], pb[1]-pb[0], qb[1]-qb[0]]
+        w = widths.index(max(widths))
+        boxes = [list(x) for x in (ub, vb, pb, qb)]
+        lo, hi = boxes[w]; mid = (lo + hi) / 2
+        for half in ((lo, mid), (mid, hi)):
+            nb = [tuple(b) for b in boxes]
+            nb[w] = half
+            stack.append((tuple(nb), d + 1))
+        if p2 % 100000 == 0:
+            print(f"  [phase2 {time.time()-t0:.0f}s] {p2} processed, {failed2} failed-deep", flush=True)
+        if p2 > 4_000_000:
+            print("PHASE2 BUDGET EXCEEDED"); break
+    if remaining:
+        us = [F(b[0][0]) for b in [[ [F(y) for y in x] for x in r] for r in remaining][:0]] # placeholder
+    print(f"DONE {time.time()-t0:.0f}s: PHASE2 processed {p2}, REMAINING FAILED {failed2}")
+    (ART / "remaining-failed.json").write_text(json.dumps(remaining), encoding="utf-8")
     (ART / "covering-summary.json").write_text(json.dumps(
         {"processed": processed, "certified": certified, "discarded": discarded,
          "failed": failed, "depth_cap": DEPTH, "seconds": round(time.time()-t0)}),
