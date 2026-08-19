@@ -36,5 +36,5 @@
 | HWB-032 | 1 | done | companion manuscript and Zenodo record for the curvilinear theorem | v0.01 published and fresh-download verified at `10.5281/zenodo.21997378` |
 | HWB-033 | 1 | done | repository promotion and durable handoff for EXP-025 publication round | PRs #186/#187 passed required checks; tested payload tree `53e5e61ffeeb5816497e3e477921bc94c4a5f91d`; CAOS_MANAGE PR #557 promoted the ledger |
 | HWB-034 | 1 | done | manuscript and Zenodo update for the explicit Groebner theorem | v0.02 published and fresh-download verified at `10.5281/zenodo.22002907` |
-| HWB-035 | 2 | pending | interior graded Betti table of the conductor fiber cone | keep separate from the now-closed explicit Groebner basis problem |
+| HWB-035 | 2 | in progress | interior graded Betti table of the conductor fiber cone | EXP-027 declares the relative offset-Koszul route and first unknown degree-four strand; do not extrapolate to the full table before proof |
 | HWB-036 | 1 | done | repository promotion and durable handoff for EXP-026 plus companion v0.02 | PRs #190/#191 passed required checks; payload tree `1fb094d102e1f91a6c9754cca26d7f57666450fb`; CAOS_MANAGE PR #559 promoted the ledger |
