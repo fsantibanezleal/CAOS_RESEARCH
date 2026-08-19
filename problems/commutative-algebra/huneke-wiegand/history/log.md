@@ -908,3 +908,18 @@
   `e7d3fb747f01b6c44c84ca9c2cf25a746cd2d05eb0996163f4a18e9e3cea1be9` exactly.
 - HWB-039 is complete. HWB-040 owns checked research and management promotion; no release tag is
   claimed for this research-only round.
+
+## 2026-08-19 - EXP-028 publication round promoted
+
+- PR #198 passed `guards` and `test` and merged the complete EXP-028 theorem, exact artifacts,
+  manuscript v0.15, and verified Zenodo record to `develop` at
+  `b83b9aa011540b3d224a739bbee0eb3507dfa7fb`.
+- PR #199 passed both required jobs and promoted the identical tested payload to `main` at
+  `5ce1efa385734bde2939efbadb27d96557b5398e`.
+- Remote research work, `develop`, and `main` share payload tree
+  `e35f420f59a5343ea09da15985786ab0b65897d6`.
+- CAOS_MANAGE remained on `develop`; PR #566 promoted the scoped v0.15 publication controls and
+  ledger to `main` at `ddafe393f884ca1101b703fdf0f9ef70a9d29225`. Its remote `develop` and
+  `main` trees match at `f234e662fa13834787c994b789d6607b486c19ec`.
+- HWB-040 is complete. Higher homological rows and the full Betti table remain open under HWB-035;
+  no release tag is claimed for this research-only round.

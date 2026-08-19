@@ -41,4 +41,4 @@
 | HWB-037 | 1 | done | manuscript and Zenodo update for the first interior Betti strand | v0.14 published and fresh-download verified at `10.5281/zenodo.22013515` |
 | HWB-038 | 1 | done | repository promotion and durable handoff for EXP-027 plus v0.14 | PRs #194/#195 passed required checks; tested payload tree `84910601b3a5b406c3725f64a0903d8116ad922f`; CAOS_MANAGE PR #562 promoted the verified publication ledger |
 | HWB-039 | 1 | done | manuscript and Zenodo update for the complete second Betti row | v0.15 published and fresh-download verified at `10.5281/zenodo.22016550` |
-| HWB-040 | 1 | in progress | repository promotion and durable handoff for EXP-028 plus v0.15 | promote the frozen research payload through work-to-`develop` and `develop`-to-`main` PRs, then promote the scoped management ledger without switching branches |
+| HWB-040 | 1 | done | repository promotion and durable handoff for EXP-028 plus v0.15 | PRs #198/#199 passed required checks; payload tree `e35f420f59a5343ea09da15985786ab0b65897d6`; CAOS_MANAGE PR #566 promoted the verified publication ledger |
