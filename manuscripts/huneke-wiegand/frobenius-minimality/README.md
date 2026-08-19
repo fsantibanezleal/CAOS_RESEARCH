@@ -1,9 +1,11 @@
 # Frobenius-minimality preprint
 
-`main.tex` is version 0.13 of the CAOS Research preprint; version 0.12 and all earlier
-versions remain frozen. Version 0.13 adds the EXP-024 homological edge theorem, passed the complete
-claim/build/render and publication workflow, and is published at DOI
-`10.5281/zenodo.21995498`. A fresh unauthenticated download matches the committed PDF exactly.
+`main.tex` is version 0.14 of the CAOS Research preprint; version 0.13 and all earlier versions
+remain frozen. Version 0.14 adds the EXP-027 theorem determining the first interior Betti strand,
+passed the complete claim/build/render and publication workflow, and is published at DOI
+`10.5281/zenodo.22013515`. A fresh unauthenticated download matches the committed PDF exactly.
+Version 0.13 remains published at DOI
+`10.5281/zenodo.21995498`, and a fresh unauthenticated download matches the committed PDF exactly.
 Version 0.12 remains published at DOI
 `10.5281/zenodo.21988601`, and matches a fresh public download exactly. Version 0.11 remains
 published and fresh-download verified at DOI `10.5281/zenodo.21909961`.
@@ -39,7 +41,13 @@ absence of a checked solver proof object are both recorded.
 Version 0.13 determines exact edges of the minimal resolution over the full `10p`-variable
 presentation ring: projective dimension `10p-1`, regularity four,
 `beta_(2,3)=2p(500p^2-330p+31)/3`, the complete last row, the penultimate extremal entry `8p`,
-and the canonical-module generator degrees. It explicitly leaves the interior Betti table open.
+and the canonical-module generator degrees.
+Version 0.14 determines the first previously open interior strand. It proves
+`beta_(2,4)=8p`, gives its complete multiplicity-free multigraded support, and derives
+`beta_(3,4)=p(5p-1)(500p^2-440p+47)/2`. The relative homology is integrally free on the stated
+support, so the result is characteristic-free. It also proves that the quadratic part of the
+defining ideal is linearly presented through this first nonlinear position. The remaining
+interior Betti table is still open.
 
 Attribution is binding: Son Pham discovered the first public counterexample; CAOS contributes the
 certified minimality, minimum-layer uniqueness, and parametric-family extensions. Professor Craig
@@ -74,9 +82,10 @@ Zenodo identifiers:
 - version 0.11 DOI: `10.5281/zenodo.21909961`
 - version 0.12 DOI: `10.5281/zenodo.21988601` (published and fresh-download verified)
 - version 0.13 DOI: `10.5281/zenodo.21995498` (published and fresh-download verified)
+- version 0.14 DOI: `10.5281/zenodo.22013515` (published and fresh-download verified)
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-024 under
+Evidence sources are EXP-001 through EXP-027 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
 finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
@@ -105,6 +114,11 @@ and the preserved first over-budget attempt.
 EXP-024 contains the symbolic homological proof, two independent linear-syzygy derivations, exact
 297-row campaign, all-row independent rebuild, frozen premise hashes, and adversarial controls
 against false edge data and full-table overclaim.
+EXP-027 proves the first interior strand using relative squarefree-divisor complexes, an integral
+unit matching, an exact linear-colon computation, explicit semigroup paths, a parity obstruction,
+and a minimal mapping cone. Its exact campaign covers `p=4,...,300`; independently encoded audits,
+all-offset small cases, two-characteristic checks, and six symbolic UNSAT obligations support the
+deductive proof without replacing it.
 
 Version 0.02 remains frozen with this public-file verification:
 
@@ -248,4 +262,17 @@ Version 0.13 public-file verification:
 - sole authorship, ORCID, version, DOI, concept DOI, CC-BY-4.0 metadata, source, and scope gates pass
 - the concept latest resolves to record `21995498`; public title, version, sole author/ORCID,
   licence, filename, bytes, MD5, and SHA-256 match the committed record
+- a fresh unauthenticated public download matches the committed PDF exactly
+
+Version 0.14 public-file verification:
+
+- DOI: `10.5281/zenodo.22013515`; no publication occurred before claim/build/render QA and exact
+  post-upload draft validation
+- bytes: `656437`
+- MD5: `f5c44834c94832c3c2c8d7d29389ff9a`
+- SHA-256: `df5e12d2256f4967881df0f35df44b415777c4826f38447a33cfdeb1b7399e10`
+- all 31 pages passed rendered inspection; the final build has no warnings, undefined references,
+  overfull boxes, or underfull boxes
+- the concept latest resolves to record `22013515`; public title, version, sole author/ORCID,
+  CC-BY-4.0 licence, filename, bytes, MD5, and SHA-256 match the committed record
 - a fresh unauthenticated public download matches the committed PDF exactly

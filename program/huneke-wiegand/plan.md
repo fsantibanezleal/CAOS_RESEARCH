@@ -485,3 +485,45 @@ promoted it to `main` at `5dfb1af5`. Research work, `develop`, and `main` share 
 ledger, and management `develop`/`main` share tree
 `372cd71d3acca38b92f872cd0995b5b9a264d543`. HWB-036 is done. No experiment is active; HWB-035
 requires a fresh source and novelty preflight before any new declaration.
+
+## 2026-08-19 - EXP-027 first interior Betti strand
+
+A fresh source and novelty preflight ranked relative offset-Koszul complexes above raw full
+resolutions, consecutive-cancellation bounds, and an immediate Apéry/Kunz-face attack. The
+truncated-monomial model identifies every offset strand with a relative squarefree-divisor chain
+complex. EXP-027 was committed before implementation with the predictions
+
+```text
+beta_(2,4)=8p,
+beta_(3,4)=p(5p-1)(500p^2-440p+47)/2.
+```
+
+EXP-027 is CONFIRMED. An integral lexicographic matching bounds the degree-four relative first
+homology by one on `{3p+a:a in G_p,a>=6p}` and zero elsewhere. Independently,
+
+```text
+(Q_p:f_p)_1=span{X_a:a in G_p,a>=6p}
+```
+
+gives one primitive minimal mapping-cone class at every one of those `8p` offsets. The coefficient
+of `z^4` in the frozen Hilbert numerator then determines the adjacent `beta_(3,4)`. This proves the
+formulas over every field and excludes integral torsion.
+
+The exact campaign passes all 297 parameters; explicit relative-chain profiles pass every offset
+for `p=4,5,6`; the `p=4` profile agrees over `GF(2)` and `GF(1000003)`; six all-parameter symbolic
+counterexample queries are UNSAT; and the independent audit reconstructs the `p=4` complex plus
+six formula samples. The method is a relevant new result but does not close the full interior
+table.
+
+HWB-037 now owns a v0.14 expansion of the main conductor-fiber manuscript and Zenodo new-version
+workflow. A separate manuscript is deferred until the method yields a substantial additional
+strand or a theorem beyond this family. HWB-038 owns later PR promotion and durable reconciliation;
+neither publication nor promotion is yet claimed.
+
+The v0.14 manuscript then passed its complete claim audit, warning-free 31-page build, complete
+rendered inspection, metadata, identity, and sole-authorship gates. Zenodo record `22013515`, DOI
+`10.5281/zenodo.22013515`, is public under the existing concept DOI. The fresh unauthenticated
+656,437-byte PDF matches SHA-256
+`df5e12d2256f4967881df0f35df44b415777c4826f38447a33cfdeb1b7399e10` exactly. HWB-037 is done;
+HWB-038 is active for checked work-to-`develop` and `develop`-to-`main` promotion plus management
+ledger reconciliation.
