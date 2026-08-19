@@ -94,3 +94,24 @@ Soundness classes are unchanged from the original declaration; only
 tractability engineering moved. If even (b) returns unknown, the
 residual routes to the depth-8 census backend (TCB-005) and this
 experiment reports INCONCLUSIVE with the solver record.
+
+## Amendment 2 (2026-08-19, before the second re-run)
+
+The re-run's known-answer phase entered a DEGENERATE CEGAR loop: 179,649
+consecutive zero-polynomial models in 6.7 h (the blocking clause removes
+one structure per iteration from a sea of trivial zero-producers), and
+the loop had no iteration budget (the phase cap was implemented only as
+the per-check solver timeout). Two fixes, recorded before the re-run:
+
+1. STRUCTURAL nonzero constraint: one additional evaluation column at a
+   fresh integer variable $y$ with $E_y[\mathrm{out}] 
+e 0$. This
+   excludes exactly the zero polynomial (any nonzero $f$ has an integer
+   non-root) and nothing else, so soundness classes are unchanged; CEGAR
+   remains only as a verification backstop.
+2. Loop budgets: at most 50 blocked models per phase AND a wall-clock
+   cap per phase enforced in the loop; hitting either records the phase
+   as INCONCLUSIVE(budget) rather than looping.
+Lesson recorded for the audit trail: a per-check solver timeout is not a
+phase budget; CEGAR needs its own kill criterion (methodology 12 P6
+applies to LOOPS, not just runs).

@@ -60,8 +60,13 @@ def build_solver(ngates, nroots, final_pm, root_bound, timeout_ms,
     if root_bound:
         for i in range(nroots):
             s.add(r[i] >= -root_bound, r[i] <= root_bound)
-    for i in range(nroots):
-        E = [z3.IntVal(-1), z3.IntVal(1), r[i]]
+    # nroots root columns + ONE nonzero column (index nroots): f(y) != 0,
+    # which excludes exactly the zero polynomial.
+    y = z3.Int("y_nonroot")
+    points = r + [y]
+    for i, pt in enumerate(points):
+        is_root = i < nroots
+        E = [z3.IntVal(-1), z3.IntVal(1), pt]
         for j in range(ngates):
             e = z3.Int(f"E{i}_{j}")
             for a in range(j + 3):
@@ -75,10 +80,13 @@ def build_solver(ngates, nroots, final_pm, root_bound, timeout_ms,
                     s.add(z3.Implies(
                         z3.And(Ls[j] == a, Rs[j] == b, ops[j] == 2),
                         e == E[a] * E[b]))
-            if value_bound:
+            if value_bound and is_root:
                 s.add(e >= -value_bound, e <= value_bound)
             E.append(e)
-        s.add(E[-1] == 0)
+        if is_root:
+            s.add(E[-1] == 0)
+        else:
+            s.add(E[-1] != 0)
     return s, ops, Ls, Rs, r
 
 
@@ -104,7 +112,14 @@ def solve_cegar(name, ngates, nroots, final_pm, root_bound, timeout_ms,
     s, ops, Ls, Rs, r = build_solver(ngates, nroots, final_pm, root_bound,
                                      timeout_ms, value_bound)
     blocked = 0
+    phase_deadline = time.time() + timeout_ms / 1000.0
     while True:
+        if blocked >= 50 or time.time() > phase_deadline:
+            log(f"{name}: INCONCLUSIVE(budget) after {blocked} blocks")
+            checkpoint(name, {"result": "inconclusive_budget",
+                              "blocked": blocked,
+                              "elapsed_s": round(time.time() - T0, 1)})
+            return "inconclusive", None
         res = s.check()
         if res == z3.unsat:
             log(f"{name}: UNSAT (blocked {blocked} spurious)")
