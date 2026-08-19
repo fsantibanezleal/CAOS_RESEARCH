@@ -482,3 +482,34 @@ This replaces the coupled-chamber v2 and the norm elimination as the
 primary route; both remain fallbacks. Estimated shape: one collar lemma
 per boundary type (about five), plus one covering run whose box count the
 first attempt will measure.
+
+## THE CENTERED PENTAGON: the stratum's interior mass-degenerate point, found blind and verified exactly (2026-08-03)
+
+EXP-021's covering left two mirror clusters of stubborn boxes whose failure
+count stayed CONSTANT under bisection (the dim-0 signature). High-precision
+descent inside them drove sigma_3 AND sigma_4 to machine zero at golden-
+ratio coordinates, and the exact identification follows: with the gauge
+a1 = 1, a2 = -1, the point
+
+    u = 2 sin 72 = sqrt(5/2 + sqrt5/2),   v = -3/2 + sqrt5/2,
+    p = 2 sin 36 = sqrt(5/2 - sqrt5/2),   q = -3/2 - sqrt5/2
+
+places bodies {1, 3, 4, 5, 6} on an EXACT regular pentagon of circumradius
+2 centered at body 2 (all five center-distances squared equal 4, verified
+in Q(sqrt5, sqrt(10 +- 2 sqrt5))), and the mass matrix there has EXACT
+rank 2 with kernel basis (0, 1, 0, 0) and (1, 0, 1, 1): the classical
+centered-regular-polygon family (equal ring masses, arbitrary central
+mass), rediscovered from interval-arithmetic failures without any prior
+knowledge of its location. Up to the mirror swap (u, v) <-> (p, q) this is
+the unique interior rank-degenerate point the covering detected on the
+core.
+
+CHAIN CONSEQUENCE: an isolated rank-2 point is harmless for k = 3 (which
+tolerates dimension up to 2). The local closure at the point: exhibit TWO
+3 x 3 minors whose gradients at the exact pentagon are linearly
+independent; then the rank-at-most-2 locus is locally contained in a
+codimension-2 set (dimension 2), and combined with the covering's rank->=3
+certificates on the rest of the core, dim(R_2 meet core) <= 2 follows: the
+k = 3 requirement ON THE CORE. Gradients are computed by the cofactor rule
+(d det = sum of cofactors times entry differentials) with entry
+derivatives evaluated exactly at the pentagon point in the same field.
