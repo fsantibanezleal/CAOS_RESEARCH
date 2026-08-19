@@ -1,0 +1,15 @@
+{
+  "experiment": "EXP-023-one-cubic-defining-ideal",
+  "status": "COMPUTATIONAL_PASS",
+  "requested_range": {
+    "first": 4,
+    "last": 6
+  },
+  "completed_through": 6,
+  "row_hashes": [
+    "573f2dacbdd7cde4789f18c3564222e9ac03a926a4bc6d6f357123460694557c",
+    "6f591b5a8b4fbca99dcd0c6b5c03d7ef53c24d3da97dcfefb52d6c65661039b6",
+    "cdb423c13dc284eaac90ba4dfb7ac8e233e0cc2ee901bf20214e514adb255a6a"
+  ],
+  "elapsed_seconds": 0.6830754999828059
+}

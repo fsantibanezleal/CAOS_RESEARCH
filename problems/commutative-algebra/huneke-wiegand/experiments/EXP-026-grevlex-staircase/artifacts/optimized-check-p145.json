@@ -1,0 +1,62 @@
+{
+  "experiment": "EXP-026-grevlex-staircase",
+  "generated_at": "2026-08-18T19:43:00.420636+00:00",
+  "status": "PASS",
+  "range": {
+    "first": 145,
+    "requested_last": 145
+  },
+  "completed_rows": 1,
+  "premise_hashes": {
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-023-one-cubic-defining-ideal/proof.md": "4f24c8bacf3ea4a7691142b6fbb2a79b40a1c200ec5051df3c79c3dc45bed084",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-024-extremal-betti-data/proof.md": "b7b654609cfca99e979b26741f7d2b6bbbfc0029d882c38e3c2932bfc9146088",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-025-curvilinear-primary-structure/proof.md": "70c7838ce843252aba335d80ade105d1d1942c490530ea7770483be0dff9a61f",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-025-curvilinear-primary-structure/run.py": "42411e5f8a166bd4a4663b49dfa3c19808b283735d2d633517c632e876f0377d"
+  },
+  "campaign_aggregate": "ce37306c8081e3e344475aac460c7ccde8db37ca0ca9ae66f34b55d0b8a768fd",
+  "elapsed_seconds": 0.022390800004359335,
+  "rows": [
+    {
+      "p": 145,
+      "q": 3480,
+      "variable_count": 1450,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        1450,
+        3190,
+        3479,
+        3480,
+        3480,
+        3480
+      ],
+      "quadratic_profile": {
+        "total": 1048785,
+        "binomial": 805911,
+        "monomial_zero": 242874
+      },
+      "reduced_basis_degree_profile": {
+        "2": 1048785,
+        "3": 724,
+        "4": 143,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 1049652,
+      "cubic_relation_hash": "d755f74db13f7e2a7cecab68c6e6d32b24c8c00f9a0dc5dd7f723bcbe7684f97",
+      "quartic_relation_hash": "21dbd8872732ea8510f3e1c23d13163228806c572164690fe5c68e5f0c084439",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "04bac514c424c2ac5244f2f02260eb49612b8ae820199623ab663eba8e188f89"
+    }
+  ]
+}

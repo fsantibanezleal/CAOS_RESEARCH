@@ -1,0 +1,251 @@
+{
+  "experiment": "EXP-021-conductor-fiber-cone",
+  "status": "INDEPENDENT_AUDIT_PASS",
+  "campaign_file_sha256": "1fa45248cd8160af6539a26069e21d74023c39ebd18bff796660532766429e7c",
+  "campaign_rows_rehashed": 297,
+  "selected_parameters": [
+    4,
+    5,
+    17,
+    73,
+    151,
+    300
+  ],
+  "selected": [
+    {
+      "p": 4,
+      "kernel_dimensions_degrees_0_to_5": [
+        4,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "hilbert_function_through_degree_5": [
+        1,
+        40,
+        88,
+        95,
+        96,
+        96
+      ],
+      "artinian_h_vector_through_degree_5": [
+        1,
+        39,
+        48,
+        7,
+        1,
+        0
+      ],
+      "socle_vector_through_degree_5": [
+        0,
+        0,
+        40,
+        0,
+        1,
+        0
+      ],
+      "type": 41,
+      "basis_aggregate": "928725f1511a5ac5e16852365aaacfcdf2a70d8999fa2a686ad77c33d9663600",
+      "socle_aggregate": "0d5bab29cf321356754c4bce03b3c30e89c163634fae57a71fa2f2783c633354",
+      "audit_row_hash": "9d4595b709d48b660e359b62c591f51e807fa32bf42001696ba66e16dbc3fcb5"
+    },
+    {
+      "p": 5,
+      "kernel_dimensions_degrees_0_to_5": [
+        5,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "hilbert_function_through_degree_5": [
+        1,
+        50,
+        110,
+        119,
+        120,
+        120
+      ],
+      "artinian_h_vector_through_degree_5": [
+        1,
+        49,
+        60,
+        9,
+        1,
+        0
+      ],
+      "socle_vector_through_degree_5": [
+        0,
+        0,
+        50,
+        0,
+        1,
+        0
+      ],
+      "type": 51,
+      "basis_aggregate": "8a67f02fbaaa1a95932fc4ecfd7361c943e6ea97cb9ebc7bb03bd3d5a16d0104",
+      "socle_aggregate": "00eee7b90742894b9f141db25ec036580f1bca6e1964cec58ef0eff7a7db5698",
+      "audit_row_hash": "1a3986a0e678c7145cb93e95f822fd2da718a3d506119c28104c7035d80dcc30"
+    },
+    {
+      "p": 17,
+      "kernel_dimensions_degrees_0_to_5": [
+        17,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "hilbert_function_through_degree_5": [
+        1,
+        170,
+        374,
+        407,
+        408,
+        408
+      ],
+      "artinian_h_vector_through_degree_5": [
+        1,
+        169,
+        204,
+        33,
+        1,
+        0
+      ],
+      "socle_vector_through_degree_5": [
+        0,
+        0,
+        170,
+        0,
+        1,
+        0
+      ],
+      "type": 171,
+      "basis_aggregate": "bdcb7c6e99886c25cab4ce03f8a7649f9f286dc2f078d6e49ab3925dcc063528",
+      "socle_aggregate": "3dd4cc61fc48a2bb4f14137e8ef0811e940c8297b17a70fec5f50fa22389adfb",
+      "audit_row_hash": "dca8afe9c6646342641ee968b8646581f6041c3e11c1ae0ea7577450da2d7471"
+    },
+    {
+      "p": 73,
+      "kernel_dimensions_degrees_0_to_5": [
+        73,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "hilbert_function_through_degree_5": [
+        1,
+        730,
+        1606,
+        1751,
+        1752,
+        1752
+      ],
+      "artinian_h_vector_through_degree_5": [
+        1,
+        729,
+        876,
+        145,
+        1,
+        0
+      ],
+      "socle_vector_through_degree_5": [
+        0,
+        0,
+        730,
+        0,
+        1,
+        0
+      ],
+      "type": 731,
+      "basis_aggregate": "83be3afa5377458c3241d58b55e058f9dd0327bc4ed44a83a3f0dc5293fa570c",
+      "socle_aggregate": "a3c77e734f0396294ced8d38f0842f7065c35f5ee1f02661d4e71a9b88954e12",
+      "audit_row_hash": "02897e79f4a739539400d0c8345dbe30c9e72c69214109a90c59c7d347051460"
+    },
+    {
+      "p": 151,
+      "kernel_dimensions_degrees_0_to_5": [
+        151,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "hilbert_function_through_degree_5": [
+        1,
+        1510,
+        3322,
+        3623,
+        3624,
+        3624
+      ],
+      "artinian_h_vector_through_degree_5": [
+        1,
+        1509,
+        1812,
+        301,
+        1,
+        0
+      ],
+      "socle_vector_through_degree_5": [
+        0,
+        0,
+        1510,
+        0,
+        1,
+        0
+      ],
+      "type": 1511,
+      "basis_aggregate": "65b7fbc0c7d1ec1c624d7940b7515a38e096e8182e110cb86d265cf4ee4362f5",
+      "socle_aggregate": "40c28f8d10e00833c1da673a4b520ecc676ee9e64e71f5553cfd661bd43f7f85",
+      "audit_row_hash": "6e4b9363f17fcea5577f54c6b099a49ac85c627d5e9f1ac2fe93e7e2ff910d6f"
+    },
+    {
+      "p": 300,
+      "kernel_dimensions_degrees_0_to_5": [
+        300,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "hilbert_function_through_degree_5": [
+        1,
+        3000,
+        6600,
+        7199,
+        7200,
+        7200
+      ],
+      "artinian_h_vector_through_degree_5": [
+        1,
+        2999,
+        3600,
+        599,
+        1,
+        0
+      ],
+      "socle_vector_through_degree_5": [
+        0,
+        0,
+        3000,
+        0,
+        1,
+        0
+      ],
+      "type": 3001,
+      "basis_aggregate": "53ac52b28d8ed20091ed937dc93a81bbaa18cd1f4f38cbf6f86367fda057b20a",
+      "socle_aggregate": "8cf4e9179c6f85d5a11ab2a0528a211c4856ac8b149b2ef43279584ae5798c61",
+      "audit_row_hash": "41757c27e001eb1a57a6c697127218c96a0c175c11351035759e8816c8e70f55"
+    }
+  ],
+  "audit_aggregate": "1779407050b199039d3f6d808a720ea051a81ef11734fd1bccd1a76ec78c0a9c"
+}

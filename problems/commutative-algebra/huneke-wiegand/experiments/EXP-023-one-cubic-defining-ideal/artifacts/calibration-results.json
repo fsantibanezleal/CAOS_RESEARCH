@@ -1,0 +1,279 @@
+{
+  "experiment": "EXP-023-one-cubic-defining-ideal",
+  "status": "COMPUTATIONAL_PASS",
+  "range": {
+    "first": 4,
+    "last": 6,
+    "count": 3
+  },
+  "prediction": "J_p=((J_p)_2, X_0^2 X_(3p)-X_p^3)",
+  "all_rows_pass": true,
+  "campaign_aggregate": "0b89d506bcaee06121fc45e9337daa452134ca5b34f8c1134850e70251107500",
+  "elapsed_seconds": 0.6838002000004053,
+  "rows": [
+    {
+      "p": 4,
+      "variable_count": 40,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        40,
+        88,
+        95,
+        96,
+        96
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 732,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 733,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 3520,
+          "edge_attempts": 47440,
+          "zero_edges": 8540,
+          "lower_relation_quotient_dimension": 96,
+          "actual_fiber_dimension": 95,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 12,
+            "left_root": 9,
+            "left_state": [
+              0,
+              12
+            ],
+            "right_root": 360,
+            "right_state": [
+              4,
+              8
+            ]
+          },
+          "component_signature": "a76c8b0ec83e167a04ff02979c994317ffa0b08b33ee2c95b4107c3a15fbe90c",
+          "elapsed_seconds": 0.02692649999517016
+        },
+        {
+          "degree": 4,
+          "state_count": 3800,
+          "edge_attempts": 81040,
+          "zero_edges": 18888,
+          "lower_relation_quotient_dimension": 96,
+          "actual_fiber_dimension": 96,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "9e8e51f7e508218682ac853f1d529dafc5d6135f289bfcba036b62e4a2b51d32",
+          "elapsed_seconds": 0.042679700010921806
+        },
+        {
+          "degree": 5,
+          "state_count": 3840,
+          "edge_attempts": 92240,
+          "zero_edges": 18888,
+          "lower_relation_quotient_dimension": 96,
+          "actual_fiber_dimension": 96,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "9e8e51f7e508218682ac853f1d529dafc5d6135f289bfcba036b62e4a2b51d32",
+          "elapsed_seconds": 0.04393960000015795
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 0.11387319999630563,
+      "row_hash": "573f2dacbdd7cde4789f18c3564222e9ac03a926a4bc6d6f357123460694557c"
+    },
+    {
+      "p": 5,
+      "variable_count": 50,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        50,
+        110,
+        119,
+        120,
+        120
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 1165,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 1166,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 5500,
+          "edge_attempts": 93350,
+          "zero_edges": 16461,
+          "lower_relation_quotient_dimension": 120,
+          "actual_fiber_dimension": 119,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 15,
+            "left_root": 11,
+            "left_state": [
+              0,
+              15
+            ],
+            "right_root": 560,
+            "right_state": [
+              5,
+              10
+            ]
+          },
+          "component_signature": "91f8aa52573196723de71bce794ea44c5e6bf62e73937e6c9139399582b7441f",
+          "elapsed_seconds": 0.04787969999597408
+        },
+        {
+          "degree": 4,
+          "state_count": 5950,
+          "edge_attempts": 158400,
+          "zero_edges": 36536,
+          "lower_relation_quotient_dimension": 120,
+          "actual_fiber_dimension": 120,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "ce877abf773cab5ce58e172be8cfc3740c4f79f57834cadec466ab8c77387efe",
+          "elapsed_seconds": 0.07110969998757355
+        },
+        {
+          "degree": 5,
+          "state_count": 6000,
+          "edge_attempts": 180900,
+          "zero_edges": 36536,
+          "lower_relation_quotient_dimension": 120,
+          "actual_fiber_dimension": 120,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "ce877abf773cab5ce58e172be8cfc3740c4f79f57834cadec466ab8c77387efe",
+          "elapsed_seconds": 0.08282379998126999
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 0.2021940000122413,
+      "row_hash": "6f591b5a8b4fbca99dcd0c6b5c03d7ef53c24d3da97dcfefb52d6c65661039b6"
+    },
+    {
+      "p": 6,
+      "variable_count": 60,
+      "fiber_dimensions_degrees_0_to_5": [
+        1,
+        60,
+        132,
+        143,
+        144,
+        144
+      ],
+      "first_betti_row_degrees_2_to_5": {
+        "2": 1698,
+        "3": 1,
+        "4": 0,
+        "5": 0
+      },
+      "minimal_equation_count": 1699,
+      "relation_type": 3,
+      "non_koszul": true,
+      "degree_rows": [
+        {
+          "degree": 3,
+          "state_count": 7920,
+          "edge_attempts": 162120,
+          "zero_edges": 28180,
+          "lower_relation_quotient_dimension": 144,
+          "actual_fiber_dimension": 143,
+          "minimal_defining_equations": 1,
+          "first_obstruction": {
+            "kind": "equal_total_components_not_connected_below",
+            "total": 18,
+            "left_root": 13,
+            "left_state": [
+              0,
+              18
+            ],
+            "right_root": 804,
+            "right_state": [
+              6,
+              12
+            ]
+          },
+          "component_signature": "3a8d58cb1022db06e75a5c490f23b2cb485e509c0d0e241e3677932faaa44d9e",
+          "elapsed_seconds": 0.08019330000388436
+        },
+        {
+          "degree": 4,
+          "state_count": 8580,
+          "edge_attempts": 273840,
+          "zero_edges": 62710,
+          "lower_relation_quotient_dimension": 144,
+          "actual_fiber_dimension": 144,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "09d49edf2976b17dd5c2881d8368e9dc8f156c3fa27ef7e4ceeda8b1fe70e52c",
+          "elapsed_seconds": 0.1341575999977067
+        },
+        {
+          "degree": 5,
+          "state_count": 8640,
+          "edge_attempts": 313440,
+          "zero_edges": 62710,
+          "lower_relation_quotient_dimension": 144,
+          "actual_fiber_dimension": 144,
+          "minimal_defining_equations": 0,
+          "first_obstruction": null,
+          "component_signature": "09d49edf2976b17dd5c2881d8368e9dc8f156c3fa27ef7e4ceeda8b1fe70e52c",
+          "elapsed_seconds": 0.15048250000108965
+        }
+      ],
+      "predictions": {
+        "quadratic_count": true,
+        "unique_cubic": true,
+        "cubic_total": true,
+        "no_quartic": true,
+        "no_quintic": true,
+        "relation_type_three": true
+      },
+      "controls": {
+        "omitted_cubic_rejected": true,
+        "false_second_cubic_rejected": true,
+        "perturbed_quadratic_count_rejected": true,
+        "false_koszul_claim_rejected": true
+      },
+      "elapsed_seconds": 0.3653601999976672,
+      "row_hash": "cdb423c13dc284eaac90ba4dfb7ac8e233e0cc2ee901bf20214e514adb255a6a"
+    }
+  ]
+}

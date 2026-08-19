@@ -1,0 +1,116 @@
+{
+  "status": "PASS",
+  "all_row_membership_hashes": 297,
+  "boundary_controls": [
+    2,
+    3
+  ],
+  "independent_semantic_samples": [
+    4,
+    5,
+    17,
+    73,
+    151,
+    300
+  ],
+  "samples": [
+    {
+      "p": 4,
+      "membership_sha256": "5692f234e4398fd967e3dc94a9c203067a3c0634dfbedb9c19143003100bd017",
+      "embedding_dimension": 44,
+      "sumset_identities": {
+        "low_AA": true,
+        "carry_AA": true,
+        "low_AB": true,
+        "carry_AB": true,
+        "low_BB": true,
+        "carry_BB": true,
+        "low_AC": true
+      },
+      "rigidity_window_end": 623,
+      "rigidity_tail_start": 408
+    },
+    {
+      "p": 5,
+      "membership_sha256": "5ec44ddea51b09125614e0b9518463483ff1fb218d0ad6d704a3c916d1a3887e",
+      "embedding_dimension": 55,
+      "sumset_identities": {
+        "low_AA": true,
+        "carry_AA": true,
+        "low_AB": true,
+        "carry_AB": true,
+        "low_BB": true,
+        "carry_BB": true,
+        "low_AC": true
+      },
+      "rigidity_window_end": 779,
+      "rigidity_tail_start": 510
+    },
+    {
+      "p": 17,
+      "membership_sha256": "52903074a00c83fe69f2f1f6183a4c9551bbabd15b2a87097b87dcaf819c5bb6",
+      "embedding_dimension": 187,
+      "sumset_identities": {
+        "low_AA": true,
+        "carry_AA": true,
+        "low_AB": true,
+        "carry_AB": true,
+        "low_BB": true,
+        "carry_BB": true,
+        "low_AC": true
+      },
+      "rigidity_window_end": 2651,
+      "rigidity_tail_start": 1734
+    },
+    {
+      "p": 73,
+      "membership_sha256": "b7a73676710656f3a51e822cc17eb761ae7a1ff2a874645e221803a0c3866ca3",
+      "embedding_dimension": 803,
+      "sumset_identities": {
+        "low_AA": true,
+        "carry_AA": true,
+        "low_AB": true,
+        "carry_AB": true,
+        "low_BB": true,
+        "carry_BB": true,
+        "low_AC": true
+      },
+      "rigidity_window_end": 11387,
+      "rigidity_tail_start": 7446
+    },
+    {
+      "p": 151,
+      "membership_sha256": "fd5ae8f504954ec03b50fd3549316afc29b314a5f0cf89e276e569956b49cde5",
+      "embedding_dimension": 1661,
+      "sumset_identities": {
+        "low_AA": true,
+        "carry_AA": true,
+        "low_AB": true,
+        "carry_AB": true,
+        "low_BB": true,
+        "carry_BB": true,
+        "low_AC": true
+      },
+      "rigidity_window_end": 23555,
+      "rigidity_tail_start": 15402
+    },
+    {
+      "p": 300,
+      "membership_sha256": "298649d33231ef0125fab6d5fc7f6b7e4504a2c23fe4f4bb417d0e3fdbfbbd14",
+      "embedding_dimension": 3300,
+      "sumset_identities": {
+        "low_AA": true,
+        "carry_AA": true,
+        "low_AB": true,
+        "carry_AB": true,
+        "low_BB": true,
+        "carry_BB": true,
+        "low_AC": true
+      },
+      "rigidity_window_end": 46799,
+      "rigidity_tail_start": 30600
+    }
+  ],
+  "campaign_aggregate_sha256": "81d5a8eb6cf2e848807323e3b0bdba58c464779d25cdc788cef027585540dce2",
+  "aggregate_sha256": "eb2aaf17650ed99f4e220a43c53bdd8835c82688a37567bb154c30a1ae520ce9"
+}

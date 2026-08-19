@@ -40,9 +40,19 @@ class CNF:
             self.add(-output, value)
         self.add(output, *(-value for value in active))
 
-    def guarded_equivalent_and(
-        self, guard: int, output: int, inputs: list[Literal]
-    ) -> None:
+    def equivalent_or(self, output: int, inputs: list[Literal]) -> None:
+        if any(value is True for value in inputs):
+            self.add(output)
+            return
+        active = [int(value) for value in inputs if value is not False]
+        if not active:
+            self.add(-output)
+            return
+        for value in active:
+            self.add(-value, output)
+        self.add(-output, *active)
+
+    def guarded_equivalent_and(self, guard: int, output: int, inputs: list[Literal]) -> None:
         """Add ``guard -> (output iff AND(inputs))`` without branch variables."""
         if any(value is False for value in inputs):
             self.add(-guard, -output)
@@ -62,6 +72,38 @@ class CNF:
         temporary = path.with_suffix(path.suffix + ".tmp")
         temporary.write_text("\n".join(lines) + "\n", encoding="ascii")
         temporary.replace(path)
+
+
+def add_exact_cardinality(cnf: CNF, literals: tuple[int, ...], count: int, prefix: str) -> None:
+    """Require exactly ``count`` literals using an exact sequential threshold circuit."""
+    if not literals:
+        if count != 0:
+            cnf.add()
+        return
+    if len(set(literals)) != len(literals) or any(literal == 0 for literal in literals):
+        raise ValueError("cardinality literals must be distinct and nonzero")
+    if not 0 <= count <= len(literals):
+        cnf.add()
+        return
+
+    # threshold[(i,j)] means at least j of the first i literals are true.
+    threshold: dict[tuple[int, int], int] = {}
+    for index, literal in enumerate(literals, start=1):
+        for level in range(1, index + 1):
+            output = cnf.variable(f"{prefix}:at-least:{index}:{level}")
+            threshold[index, level] = output
+            prior_same: Literal = threshold.get((index - 1, level), False)
+            prior_lower: Literal = True if level == 1 else threshold[index - 1, level - 1]
+            enters = cnf.variable(f"{prefix}:enters:{index}:{level}")
+            cnf.equivalent_and(enters, [literal, prior_lower])
+            cnf.equivalent_or(output, [prior_same, enters])
+
+    if count == 0:
+        cnf.add(-threshold[len(literals), 1])
+    else:
+        cnf.add(threshold[len(literals), count])
+        if count < len(literals):
+            cnf.add(-threshold[len(literals), count + 1])
 
 
 def build_rigidity_cnf(frobenius: int, shift: int) -> tuple[CNF, tuple[int, ...]]:
@@ -188,19 +230,13 @@ def mask_from_model(h_variables: tuple[int, ...], true_variables: set[int]) -> i
 
 def shift_from_model(q_variables: tuple[int, ...], true_variables: set[int]) -> int:
     """Decode the unique one-hot shift, rejecting absent or multiple selectors."""
-    selected = [
-        shift
-        for shift, variable in enumerate(q_variables, start=1)
-        if variable in true_variables
-    ]
+    selected = [shift for shift, variable in enumerate(q_variables, start=1) if variable in true_variables]
     if len(selected) != 1:
         raise ValueError(f"expected one selected shift, found {selected}")
     return selected[0]
 
 
-def projected_blocking_clause(
-    variables: tuple[int, ...], true_variables: set[int]
-) -> tuple[int, ...]:
+def projected_blocking_clause(variables: tuple[int, ...], true_variables: set[int]) -> tuple[int, ...]:
     """Return the unique clause falsified by this complete projected assignment."""
     if not variables:
         raise ValueError("a projected assignment must contain at least one variable")

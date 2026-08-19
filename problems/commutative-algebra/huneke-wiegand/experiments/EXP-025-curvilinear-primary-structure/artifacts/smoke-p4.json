@@ -1,0 +1,102 @@
+{
+  "experiment": "EXP-025-curvilinear-primary-structure",
+  "generated_at": "2026-08-18T14:17:10.326346+00:00",
+  "status": "PASS",
+  "range": {
+    "first": 4,
+    "requested_last": 4
+  },
+  "completed_rows": 1,
+  "premise_hashes": {
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-021-conductor-fiber-cone/proof.md": "463e609b256fc2e39a7f0056a5aa92d17e20d16c1f6861692a1ce7a18f88fe38",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-021-conductor-fiber-cone/run.py": "57baed251ede2221498b60c8bbc3d6eb023576a5d950e809d273a17958ea0213",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-023-one-cubic-defining-ideal/proof.md": "4f24c8bacf3ea4a7691142b6fbb2a79b40a1c200ec5051df3c79c3dc45bed084",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-023-one-cubic-defining-ideal/run.py": "fbdcb2ebe3d906a78c9a8d0a698f90aca276f6179ad7872776716281a39d3439",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-024-extremal-betti-data/proof.md": "b7b654609cfca99e979b26741f7d2b6bbbfc0029d882c38e3c2932bfc9146088"
+  },
+  "campaign_aggregate": "716b43c5f30a3ef078602f2a73487d233770a74a9a0f6e2e667fef0e28c71747",
+  "elapsed_seconds": 0.001870799984317273,
+  "rows": [
+    {
+      "p": 4,
+      "q": 96,
+      "generator_count": 40,
+      "positive_coordinate_count": 39,
+      "basis_dimensions_0_to_5": [
+        1,
+        40,
+        88,
+        95,
+        96,
+        96
+      ],
+      "basis_hashes_0_to_5": [
+        "d0bca111f8628137adc4c16f123496dcdd1d590d06cb5d9acd68b39fe656fb97",
+        "ccf9cb79d462822c08d432102b77f0737548ffeb380209b84bce2588c4ee8b6e",
+        "a597cc1134e13ee78ab0d2d901d07fb65ca2c780b0da2837984b284aad18c720",
+        "4ea9b0539e83412cb091233c1f9bfa9a6356d6631b3c6a8e9bd2dc4077a36efc",
+        "5c3f5bbebfbab569e9ff9411b5f8db00a9e4b08a381029e0c476e7beef44d03e",
+        "5c3f5bbebfbab569e9ff9411b5f8db00a9e4b08a381029e0c476e7beef44d03e"
+      ],
+      "artinian_layer_dimensions_0_to_4": [
+        1,
+        39,
+        48,
+        7,
+        1
+      ],
+      "artinian_layer_hashes_0_to_4": [
+        "d0bca111f8628137adc4c16f123496dcdd1d590d06cb5d9acd68b39fe656fb97",
+        "c77ba50790068ace2aebaee21b97e4890ab2fdbfb8a90f0a131d796c1423c3eb",
+        "f69752b4d3eab97aaae593b2a77fd36a187349434c77ff12fe7efbebf953ff77",
+        "4d0e816ef3415319e40637874f70dcd6fdf948f7b855f0cff0e03bb819688255",
+        "2dbe74fef49e2e8390183a9bc0e94501bb4a3486e9dfec32a7b685e86acefbab"
+      ],
+      "dehomogenization_relation_count": 39,
+      "dehomogenized_algebra": "k[y]/(y^96)",
+      "dehomogenized_length": 96,
+      "radical_coordinate_count": 39,
+      "primary_component_count": 1,
+      "nilradical_nilpotency_index": 96,
+      "sharp_nilpotence_witness": {
+        "monomial": "X_1^95",
+        "offset": 95
+      },
+      "projective_support_point_count": 1,
+      "projective_length": 96,
+      "projective_tangent_dimension": 1,
+      "local_socle_dimension": 1,
+      "arithmetic_cohen_macaulay_type": 41,
+      "differential_dimensions": {
+        "characteristic_not_dividing_q": 95,
+        "characteristic_dividing_q": 96,
+        "cotangent_space": 1
+      },
+      "predictions": {
+        "truncated_parametrization": true,
+        "offset_layers_partition_truncation_window": true,
+        "dehomogenization_generated_by_offset_one": true,
+        "dehomogenized_length_equals_rank": true,
+        "unique_coordinate_radical": true,
+        "sharp_nilpotency": true,
+        "curvilinear_tangent_dimension_one": true,
+        "local_gorenstein_socle_dimension_one": true,
+        "arithmetic_ring_nonlevel_non_gorenstein": true,
+        "differential_characteristic_split": true
+      },
+      "controls": {
+        "deleted_offset_one_rejected": true,
+        "truncation_q_minus_one_rejected": true,
+        "truncation_q_plus_one_rejected": true,
+        "corrupted_degree_three_hole_rejected": true,
+        "missing_radical_coordinate_rejected": true,
+        "nilpotency_q_minus_one_rejected": true,
+        "nilpotency_q_plus_one_rejected": true,
+        "false_arithmetic_gorenstein_rejected": true,
+        "characteristic_free_differential_length_rejected": true,
+        "unique_minimal_prime_without_cm_rejected": true
+      },
+      "row_hash": "aca267b0136737f896376c998a7ba111e099f8065ba5153d7ab9b1faa2ffa44e"
+    }
+  ]
+}

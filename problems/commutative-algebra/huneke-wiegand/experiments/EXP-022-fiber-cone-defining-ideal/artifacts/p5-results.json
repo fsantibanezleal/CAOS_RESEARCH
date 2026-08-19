@@ -1,0 +1,91 @@
+{
+  "experiment": "EXP-022-fiber-cone-defining-ideal",
+  "status": "COMPUTATIONAL_PASS",
+  "p": 5,
+  "variable_count": 50,
+  "parameter_offset": 0,
+  "fiber_dimensions_degrees_0_to_5": [
+    1,
+    50,
+    110,
+    119,
+    120,
+    120
+  ],
+  "first_betti_row_degrees_2_to_5": {
+    "2": 1165,
+    "3": 1,
+    "4": 0,
+    "5": 0
+  },
+  "predicted_quadrics": 1165,
+  "quadratic_generation_through_degree_5": false,
+  "source_degree_bound": 5,
+  "degrees": [
+    {
+      "degree": 2,
+      "monomial_count": 1275,
+      "lower_relation_quotient_dimension": 1275,
+      "actual_fiber_dimension": 110,
+      "minimal_defining_equations": 1165,
+      "first_obstruction": {
+        "kind": "zero_monomial_not_generated_below",
+        "value_sum": 120,
+        "component_root": 533,
+        "monomial": [
+          11,
+          49
+        ]
+      },
+      "canonical_representative_hash": "0a0e98550d20ed036275a8568346962bea8204a5da52aae22d7f3004cf10d135",
+      "elapsed_seconds": 0.0022099000052548945
+    },
+    {
+      "degree": 3,
+      "monomial_count": 22100,
+      "lower_relation_quotient_dimension": 120,
+      "actual_fiber_dimension": 119,
+      "minimal_defining_equations": 1,
+      "first_obstruction": {
+        "kind": "equal_sum_components_not_connected_below",
+        "value_sum": 15,
+        "left_root": 6,
+        "left_monomial": [
+          0,
+          0,
+          6
+        ],
+        "right_root": 5885,
+        "right_monomial": [
+          5,
+          5,
+          5
+        ]
+      },
+      "canonical_representative_hash": "924d1afe6dcf56702d14e8ee9337a0c354ea4ecb913fb92aed5b6b21dbbfeef5",
+      "elapsed_seconds": 0.05590269999811426
+    },
+    {
+      "degree": 4,
+      "monomial_count": 292825,
+      "lower_relation_quotient_dimension": 120,
+      "actual_fiber_dimension": 120,
+      "minimal_defining_equations": 0,
+      "first_obstruction": null,
+      "canonical_representative_hash": "785711daf5cfe948bed6ee0dfca35de36d26517bdbc63bc91f8c1ee43111db92",
+      "elapsed_seconds": 0.7941940999880899
+    },
+    {
+      "degree": 5,
+      "monomial_count": 3162510,
+      "lower_relation_quotient_dimension": 120,
+      "actual_fiber_dimension": 120,
+      "minimal_defining_equations": 0,
+      "first_obstruction": null,
+      "canonical_representative_hash": "193de4e3764bc8a43c6c534be715357d0915b2babab73c65303df161db38b6c1",
+      "elapsed_seconds": 17.349244100012584
+    }
+  ],
+  "elapsed_seconds": 18.369975400011754,
+  "result_hash": "051246c12ce4b08b7fc25dd7f55b14f20ad7f8024722dc1dde7a98ac409a0dd3"
+}

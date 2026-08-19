@@ -1,0 +1,408 @@
+{
+  "root_label": "EXP-006-block-family/route-k-v1",
+  "file_count": 80,
+  "total_bytes": 354465653,
+  "aggregate_sha256": "f28523c19a62cefbbedc05e9c12ca0e871627821a0827879634b0b72e44c008f",
+  "files": [
+    {
+      "path": "s014/s014-calibration.cadical.log",
+      "bytes": 244217,
+      "sha256": "aeb7d8dab78f5a9501e99594acda9243f2404ed0bbc92e88c107888b736459aa"
+    },
+    {
+      "path": "s014/s014-calibration.cnf",
+      "bytes": 1873809,
+      "sha256": "7c50d1704373ac9f92bfe91722c049b2494e6391df59e6891915ed8fa5373607"
+    },
+    {
+      "path": "s016/s016-existence.cadical.log",
+      "bytes": 13989,
+      "sha256": "a8b05dcbcd64ee91123831c3fe042d4da92c2a9983e9511e774cdf1d2eb14a23"
+    },
+    {
+      "path": "s016/s016-existence.cnf",
+      "bytes": 2457108,
+      "sha256": "a574fce4acd281c5bf17accdd10fd3c3ca14d3cfc1590a457847de6af4e11c45"
+    },
+    {
+      "path": "s016/s016-existence.drat",
+      "bytes": 995216,
+      "sha256": "d90610cb7acf8882893fcb6bea1855b080573fff9cac443ed08564222150266e"
+    },
+    {
+      "path": "s016/s016-existence.drat-trim.log",
+      "bytes": 1017,
+      "sha256": "d177d91bfbde5e1b680bbba4c89f97bbad68390319411801035f3581d8f036fd"
+    },
+    {
+      "path": "s018/s018-existence.cadical.log",
+      "bytes": 14044,
+      "sha256": "206c5c94776d126beceae31e5ee9824db3f652df2282f80431b9ed7bdb5ae2bc"
+    },
+    {
+      "path": "s018/s018-existence.cnf",
+      "bytes": 3117634,
+      "sha256": "f67f0bd88532f3aeb72a4ce95192577f094c6367e2c608c0e2feb6692aa91ed3"
+    },
+    {
+      "path": "s018/s018-existence.drat",
+      "bytes": 1216591,
+      "sha256": "2f6afd8560a89fc3edbea73b6f90151f6070e60e8394a1e5ba2828aa4f2b686c"
+    },
+    {
+      "path": "s018/s018-existence.drat-trim.log",
+      "bytes": 787,
+      "sha256": "44cf49451933422b74a9d3347105c795d5874080bb816a0ce6034fc19f17e806"
+    },
+    {
+      "path": "s020/s020-existence.cadical.log",
+      "bytes": 491318,
+      "sha256": "d8b32b2e36ebb484f9d6c2f11873588f4ee47546975aa5a6b4b31e6b48eb0e0d"
+    },
+    {
+      "path": "s020/s020-existence.cnf",
+      "bytes": 3855627,
+      "sha256": "7a773bd6d3cbb6cf213ca2e75d9970df9046858cb2a7bc9ede0a41ab835df4b5"
+    },
+    {
+      "path": "s022/s022-existence.cadical.log",
+      "bytes": 593121,
+      "sha256": "93aeb8aa27a7a48c9d6437b64bad9c9953ccfb1d4aac34f21cac0827057cd483"
+    },
+    {
+      "path": "s022/s022-existence.cnf",
+      "bytes": 4671256,
+      "sha256": "ffcb84c34f96063ee03c4a4f4f8154fcd0bafdc75baaba59e3dd2cdc4b6ef8c3"
+    },
+    {
+      "path": "s022/s022-level4-008.cadical.log",
+      "bytes": 14169,
+      "sha256": "5f8b42a7cbae365d4f36d71371055850ededf1f8e1d18f131997fa8bb6e53726"
+    },
+    {
+      "path": "s022/s022-level4-008.cnf",
+      "bytes": 4696716,
+      "sha256": "5bab6779752f3127a1f67dd4784a6ef1185884a45ebd819a1653baa1773107b4"
+    },
+    {
+      "path": "s022/s022-level4-008.drat",
+      "bytes": 1823595,
+      "sha256": "0f5815895add770402924ff0cf6098c34d25832bdc23290b07c195e80349727d"
+    },
+    {
+      "path": "s022/s022-level4-008.drat-trim.log",
+      "bytes": 791,
+      "sha256": "6154e74cbff05e645ad1769bcf35cc01f89041ce4702da27b39f879bf858174c"
+    },
+    {
+      "path": "s024/s024-existence.cadical.log",
+      "bytes": 703914,
+      "sha256": "7cb039c09a61405659978c795e650867487eb1fd8a586211d6e18a06a3babc4d"
+    },
+    {
+      "path": "s024/s024-existence.cnf",
+      "bytes": 5564287,
+      "sha256": "c75ea09aa13d4a5f12dc8e7fa5ab6d497e0642a3aabdedce4a7b7de4de9eb930"
+    },
+    {
+      "path": "s024/s024-level4-009.cadical.log",
+      "bytes": 14280,
+      "sha256": "1194af84ab6853b84d64dbe07b68705bfbdce8a8655b93c174283cf69847c706"
+    },
+    {
+      "path": "s024/s024-level4-009.cnf",
+      "bytes": 5594712,
+      "sha256": "c2cb5363606232c5f0ffaeccbb1401001f1703090a2c792a75ef2f3da2ddee9e"
+    },
+    {
+      "path": "s024/s024-level4-009.drat",
+      "bytes": 2224199,
+      "sha256": "f1814570e1928e116f87fa8217fdbaedf934f677e48b052c8134aa4ab6b366c7"
+    },
+    {
+      "path": "s024/s024-level4-009.drat-trim.log",
+      "bytes": 947,
+      "sha256": "e40348102a8d498940a78aa9431df56aa6c470741126b22183ffb85e945b2eac"
+    },
+    {
+      "path": "s026/s026-existence.cadical.log",
+      "bytes": 841657,
+      "sha256": "69e49acaa05cdb625e2ca76bdf82fe00401f3dcacfe27eb0e9655656ce63a555"
+    },
+    {
+      "path": "s026/s026-existence.cnf",
+      "bytes": 6600000,
+      "sha256": "8da56bc398a4d6ad56e4da20d8b10e562ee85f7d87acb82a2ca0af9bbe8baeff"
+    },
+    {
+      "path": "s028/s028-existence.cadical.log",
+      "bytes": 991322,
+      "sha256": "e3d8b14aa8f2a32fa9e81beaa05f470dc6bab036d5a33ccd74cfe64654f3a800"
+    },
+    {
+      "path": "s028/s028-existence.cnf",
+      "bytes": 7729665,
+      "sha256": "d56b6d4bef4e4e710d9497b4a6cc7ac6479b6782ff48c41c0fa75c3df835d5ef"
+    },
+    {
+      "path": "s028/s028-level4-009.cadical.log",
+      "bytes": 997908,
+      "sha256": "67b45dbe5e42f92aa3a5a7df84b8b3858069a0e67c1d3a2556be4b68971c8634"
+    },
+    {
+      "path": "s028/s028-level4-009.cnf",
+      "bytes": 7775757,
+      "sha256": "708cb16fe8b0a82a528b97d2b47eae955a4aa4df7429a406ae73e5ea41dd4509"
+    },
+    {
+      "path": "s028/s028-level4-010.cadical.log",
+      "bytes": 14339,
+      "sha256": "237656e7ede53df838974333a18b3f4588f5a234f9d54b2671032678fb66fb47"
+    },
+    {
+      "path": "s028/s028-level4-010.cnf",
+      "bytes": 7775758,
+      "sha256": "18826d7099b1a223d32b27d8c6c3a88ea192c2edf3ac08bf90e15564d35c52b0"
+    },
+    {
+      "path": "s028/s028-level4-010.drat",
+      "bytes": 2983821,
+      "sha256": "38b2bd77e1b0e11c503c1b70bbae0de1ec5d96ef662f2504e7efa21716f2c6d1"
+    },
+    {
+      "path": "s028/s028-level4-010.drat-trim.log",
+      "bytes": 870,
+      "sha256": "0c4bf1eca2bce4c938c0b6620c085e1d31bc4a4a36f7ca62fa6704293efed52a"
+    },
+    {
+      "path": "s030/s030-existence.cadical.log",
+      "bytes": 1151514,
+      "sha256": "c2689d291c360e672f962fc9a4f7b17110897b6d120a9182ea0ea9160529ea43"
+    },
+    {
+      "path": "s030/s030-existence.cnf",
+      "bytes": 8954308,
+      "sha256": "6ac2198426e23f40844f0dd3d80a85f849d69f474f4b7cebf4057566a4f212ae"
+    },
+    {
+      "path": "s030/s030-level4-011.cadical.log",
+      "bytes": 14341,
+      "sha256": "ea2a831212231199e365eeab813c644e187e6a4218c56e345dd56fb933e6df9d"
+    },
+    {
+      "path": "s030/s030-level4-011.cnf",
+      "bytes": 9007202,
+      "sha256": "3350fe54908b49ca2dd4311ba974f9c365c979eca0e01870ed6ffdb5474b12c8"
+    },
+    {
+      "path": "s030/s030-level4-011.drat",
+      "bytes": 3402037,
+      "sha256": "ab0ed20a4ba603c816dbefcdc27be38608e8c05328a6dd134756ad7d60e77836"
+    },
+    {
+      "path": "s030/s030-level4-011.drat-trim.log",
+      "bytes": 794,
+      "sha256": "92e617bc8e9765cd4121cce83b3726b54d478793b2731829e4544fd71cc8729e"
+    },
+    {
+      "path": "s032/s032-existence.cadical.log",
+      "bytes": 1323440,
+      "sha256": "ddca7ff3e78b17e0a18c45e351cc133c6bb2846fe29c7d57a0a64ca1fe30930a"
+    },
+    {
+      "path": "s032/s032-existence.cnf",
+      "bytes": 10273929,
+      "sha256": "ccabb6ed2a0b1d884243e4ccfe7801180fcbcdd8ac94d12f41c563735cbb1d34"
+    },
+    {
+      "path": "s032/s032-level4-011.cadical.log",
+      "bytes": 1331737,
+      "sha256": "ff8a069b64f4c1a1a7b68641127a9a10f7f05a4d7ba1801404803d076e29b5a6"
+    },
+    {
+      "path": "s032/s032-level4-011.cnf",
+      "bytes": 10334092,
+      "sha256": "403b52068071ed9ac92bb5e0b8885dea548b32315b94fe80abe659549a37968a"
+    },
+    {
+      "path": "s034/s034-existence.cadical.log",
+      "bytes": 1505488,
+      "sha256": "9b74f28315c309d71899a49ecce9c103ca83cfd8c20b435622f5c6f6f2c04a59"
+    },
+    {
+      "path": "s034/s034-existence.cnf",
+      "bytes": 11688528,
+      "sha256": "e8268f062c62b9e41776aa810cd6d42dbe1b1f71d5de210fe2a322ce0387debc"
+    },
+    {
+      "path": "s034/s034-level4-012.cadical.log",
+      "bytes": 14395,
+      "sha256": "7b762a50744c8010dd399d8203abcb92675117468f32a3e9de569b61df5d3ca0"
+    },
+    {
+      "path": "s034/s034-level4-012.cnf",
+      "bytes": 11756428,
+      "sha256": "781d260c25148653d955d687c5b2161aa64faeb8ee18cd087274e9806825f716"
+    },
+    {
+      "path": "s034/s034-level4-012.drat",
+      "bytes": 4419725,
+      "sha256": "463664f5385de1e72fd050bb38432442e3e10e44c77eb493fd198e1445c99efa"
+    },
+    {
+      "path": "s034/s034-level4-012.drat-trim.log",
+      "bytes": 794,
+      "sha256": "54121c5814596e2cb49d40017b174496df86568719b857701c302dc6a3a577e8"
+    },
+    {
+      "path": "s034/s034-level4-013.cadical.log",
+      "bytes": 14341,
+      "sha256": "7933b060e5d13fff61c3ca8dde15b7384428c5daac9a388115002397e92439cd"
+    },
+    {
+      "path": "s034/s034-level4-013.cnf",
+      "bytes": 11756428,
+      "sha256": "d966ad513756a6f9794d0b82f5e8938b7693ef470905f79522ac324fe1abaa9c"
+    },
+    {
+      "path": "s034/s034-level4-013.drat",
+      "bytes": 4386273,
+      "sha256": "bb23b6f0443fc2d00ff64dc7729d893cfb22a8fe2942bbdff73da2519d9665c8"
+    },
+    {
+      "path": "s034/s034-level4-013.drat-trim.log",
+      "bytes": 794,
+      "sha256": "0ce614bed76dc9927f336d78c3e976a517c27feb70b4c77a8c778bf0b6066ff2"
+    },
+    {
+      "path": "s036/s036-existence.cadical.log",
+      "bytes": 1699417,
+      "sha256": "9c59405d6f259f2a935a60ef4e3456f25de59e1f2ca5f80effb8d303983eae20"
+    },
+    {
+      "path": "s036/s036-existence.cnf",
+      "bytes": 13198105,
+      "sha256": "5f71705e65967add9c2e7c76bd37c61e51061f4c0fb1482a73a8e68790af8fca"
+    },
+    {
+      "path": "s036/s036-level4-012.cadical.log",
+      "bytes": 1709901,
+      "sha256": "e51d58e00e05319a22a32776ecfa58b654f1bc92da82877e456f840cf4046a1d"
+    },
+    {
+      "path": "s036/s036-level4-012.cnf",
+      "bytes": 13274210,
+      "sha256": "9024b3e1e8868e3480aa06df92f18a793c9d9e78d1f7fd00cc49de6c13311eb7"
+    },
+    {
+      "path": "s036/s036-level4-013.cadical.log",
+      "bytes": 14517,
+      "sha256": "752e4b8f1ffc761a9890e8b45028da45ee2a54ccb288a00d3a30b7ef35a6e66f"
+    },
+    {
+      "path": "s036/s036-level4-013.cnf",
+      "bytes": 13274210,
+      "sha256": "f400ef12ccc2fb6b225cbb853f512a6a0431afde116e5c302f53e948a3ce1f06"
+    },
+    {
+      "path": "s036/s036-level4-013.drat",
+      "bytes": 9619219,
+      "sha256": "065ff0c7970d3a812dd2ef537c28353f75bf257d4727054198f3e0f0f77ef051"
+    },
+    {
+      "path": "s036/s036-level4-013.drat-trim.log",
+      "bytes": 874,
+      "sha256": "38c4ec1c02de62849af614347d9620d63bfe1b31bfbd50e07f1555db819f0ba4"
+    },
+    {
+      "path": "s038/s038-existence.cadical.log",
+      "bytes": 1903914,
+      "sha256": "33824f669790b8249c5dfaaebc36a716483d938d560e7e42a9110d5925269358"
+    },
+    {
+      "path": "s038/s038-existence.cnf",
+      "bytes": 14802660,
+      "sha256": "a334fe5760f5a80b3d72c27687440ebcf2191944e5ccc303ca7011a40f871ebb"
+    },
+    {
+      "path": "s038/s038-level4-013.cadical.log",
+      "bytes": 1915440,
+      "sha256": "08b0561d34e572cac4bcd024ec2c610810f83b968cad95db26c8372dd6d371cc"
+    },
+    {
+      "path": "s038/s038-level4-013.cnf",
+      "bytes": 14887438,
+      "sha256": "5e746972ba6423cd893bd6f2799f3705d3355b217c23e6f7b076f77cabe89870"
+    },
+    {
+      "path": "s038/s038-level4-014.cadical.log",
+      "bytes": 14517,
+      "sha256": "251aecfea382901f272fe704cb1a1b9e97050a31df1384fb8de104d8b4c6ecc7"
+    },
+    {
+      "path": "s038/s038-level4-014.cnf",
+      "bytes": 14887438,
+      "sha256": "00179f4bbbe593c6a0b6c37e383f776937724188f3c48398c6d259be3f24f77d"
+    },
+    {
+      "path": "s038/s038-level4-014.drat",
+      "bytes": 10634508,
+      "sha256": "d8967bc3bdb0d2c8881d9c35ff9b2186449631d2f90d515fa2bf395c799fe056"
+    },
+    {
+      "path": "s038/s038-level4-014.drat-trim.log",
+      "bytes": 796,
+      "sha256": "b5303fb1a733f8ca55d0f50bba6706d0fecd41b91060957f77ac6b6dd1b6d1b3"
+    },
+    {
+      "path": "s040/s040-existence.cadical.log",
+      "bytes": 2118993,
+      "sha256": "a8d6ba67ac17e3101a85063a699cca5f91c4cc6ff0f011dfe758c501eb263236"
+    },
+    {
+      "path": "s040/s040-existence.cnf",
+      "bytes": 16502276,
+      "sha256": "867f584e7cb0ad99896509e7d9ea0b7f2a50e1a7d50a13dd43104a3238e54f3e"
+    },
+    {
+      "path": "s040/s040-level4-014.cadical.log",
+      "bytes": 14526,
+      "sha256": "4425517ae5a7ad5586b51668e6fe5746f0c54f90303ad0eed4080762a5976914"
+    },
+    {
+      "path": "s040/s040-level4-014.cnf",
+      "bytes": 16596195,
+      "sha256": "d44dfa039cc187d0a1e6b9db1fe867e93c3f352a0ed401085e9e55c5f2180ac8"
+    },
+    {
+      "path": "s040/s040-level4-014.drat",
+      "bytes": 11766607,
+      "sha256": "1a655511d94f2ecf90365d769734aa36913e22599e016aca90a50514d7bb3940"
+    },
+    {
+      "path": "s040/s040-level4-014.drat-trim.log",
+      "bytes": 953,
+      "sha256": "a1541e541bb10e3e4179dd4efaf6aa51e6f458b941f6758f9bac16172494078d"
+    },
+    {
+      "path": "s040/s040-level4-015.cadical.log",
+      "bytes": 14697,
+      "sha256": "acdcfd37e811e869e5c19947aeeb030f740d8e3bcc186035f47fe606e7df644e"
+    },
+    {
+      "path": "s040/s040-level4-015.cnf",
+      "bytes": 16596195,
+      "sha256": "97f1be553bca442cbc8d4fd9570cd5bc1d5a9973a8b9f2dd8f1177420d27228b"
+    },
+    {
+      "path": "s040/s040-level4-015.drat",
+      "bytes": 11786065,
+      "sha256": "d5d9454aa7cd20fed41cc5865c046aee285c6eccf28abc3929e4c34ea31cdf97"
+    },
+    {
+      "path": "s040/s040-level4-015.drat-trim.log",
+      "bytes": 953,
+      "sha256": "b339cb062aa4212273a5e8ac396dcb847b7eaf7c125aab977fc6a64165dcc51d"
+    }
+  ]
+}

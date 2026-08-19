@@ -139,3 +139,723 @@
   `93a07d124c7b3f2cf144a5343d31ca40e312a80d99308b3ef567c7065f126bb9` exactly.
 - PR `#142` passed `guards` and `test`, was marked ready, and merged the complete EXP-007 and
   v0.02 publication round into `develop` at `136781d023752234697aaa1c86ce1f10dffff9c3`.
+
+## 2026-08-10 - Route K and infinite-family theorem
+
+- Froze the broad Route K decision problem before queries: `m=4s`, `F=13s-1`, a full level-5
+  block, and exact rigidity, with no arbitrary cardinality restriction on the variable blocks.
+- Reproduced the public seed at `s=14`. Certified `s=16,18` UNSAT and independently validated
+  SAT models for every even `s=20,...,40`, opening Route A with eleven non-seed examples.
+- Independently audited 27 Route K queries, freshly checked 12 UNSAT proofs and rehashed 80
+  external files totaling 354,465,653 bytes.
+- EXP-008's first interval formula passed at `q=6,7,8` but failed at `q=9`; the exact witness
+  `9s+7` proves the same formula non-rigid for every `q>=9`.
+- Declared EXP-009 before implementation. Its growing-width block formula passed every `p=4,...,300`,
+  reproduced Route K hashes at `p=4,5`, rejected both boundary parameters and corrupted controls,
+  and passed an independent formula/semantic audit.
+- Proved symbolically that for every integer `p>=4` the construction gives a symmetric numerical
+  semigroup of multiplicity `24p`, Frobenius `78p-1`, conductor `78p`, and embedding dimension
+  `11p`, with a nonprincipal rigid ideal `(t^(24p),t^(30p))`.
+- Preserved Son Pham's priority for the first public counterexample. The CAOS claim is the separate
+  parametric extension, within numerical semigroup rings and two-generated monomial ideals.
+- Closed EXP-010 as SUPERSEDED WITHOUT RUN because its declared gate required EXP-009 not to close
+  the family question. Triggered manuscript v0.03 and Zenodo new-version consolidation.
+
+## 2026-08-10 - infinite-family preprint v0.03 published
+
+- Expanded the manuscript to 11 pages with the Route K/EXP-008 extraction path, exact parametric
+  blocks, seven residue identities, and the deductive infinite-family theorem. Felipe
+  Santibanez-Leal remains the sole author; Son Pham's discovery priority is explicit.
+- Tightened the high-layer rigidity coverage and local-ring nonprincipality argument during the
+  claim audit. Built twice with no LaTeX warnings, undefined references, overfull boxes, or
+  underfull boxes, and inspected all 11 rendered pages.
+- Published Zenodo version DOI `10.5281/zenodo.21873911`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21873911`. Versions v0.01 and v0.02 remain
+  frozen.
+- A fresh public download is 399,272 bytes with MD5 `bd9767de4a530150073f654c76ba84a0`
+  and SHA-256 `f2edff24e924a8d38bc7becd380a69f30fa6b2466c3f584802b829f14d1393cf`, exactly matching the
+  committed PDF. Public title, version, sole author/ORCID, CC-BY-4.0 licence, and filename also
+  match.
+- PR `#145` passed `guards` and `test`, was marked ready, and merged the complete Route K,
+  EXP-008/009, and v0.03 publication round into `develop` at
+  `8614bb9ccadd34b0c4ffd0d0c2c213979f998631`. A separate active session already owns the
+  serialized `develop`-to-`main` release, so this handoff did not touch its shared derived
+  manifests or version files.
+
+## 2026-08-10 - repository release v0.63.000
+
+- Folded the landed Huneke--Wiegand and tau-conjecture research records into the shared experiment
+  and portfolio registries and advanced the coordinated repository version to `0.63.000`.
+- PR `#146` passed `guards` and `test` and merged the release candidate into `develop` at
+  `0fb2e388fca35dac8953278b12104d404d2f095b`.
+- PR `#147` passed both CI jobs and promoted that exact tested `develop` state to `main` at
+  `4768310d283bfdc23d6df65479a2f785bf2361e1`.
+- Annotated tag `v0.63.000` points to the verified `main` merge. The tag and all commits retain
+  Felipe Santibanez-Leal's configured human authorship without LLM author or co-author trailers.
+
+## 2026-08-10 - EXP-011 declared
+
+- Reopened HW-P5 after the v0.63.000 baseline, without reopening the closed family-existence claim.
+- Rechecked the primary endomorphism/reflexivity source, the generalized-arithmetic positive
+  source, and the public candidate repository before computation. No existing parametric
+  endomorphism-family result was identified; the negative novelty search is not treated as proof.
+- Derived the invariant-first prediction
+  `Lambda_p=Gamma_p union (7s+Q_p) union {13s-1}`, where
+  `Q_p=[p+1,2p-2] union {2p,4p}`, from adjacent blocks of
+  `V_p=Gamma_p union (s+Gamma_p)`.
+- Declared EXP-011 before implementation or execution. The finite campaign will support, not
+  replace, a symbolic uniform proof.
+
+## 2026-08-10 - EXP-011 confirms uniform endomorphism anatomy
+
+- The exact two-route campaign checked every `p=4,...,300`; block intersection and generated
+  semigroups agreed on all 297 rows in under five seconds.
+- A separate implementation rehashed the complete campaign, reconstructed six full semantic
+  windows, and rejected missing-level and terminal-singleton corruptions. Campaign aggregate:
+  `e21926a689178a6c70b3b6e8319053edd0fd13f164ced9565d3b976e6159c0b0`; audit aggregate:
+  `2ed711045ad83a3b47fb3e71d4c75ae9bfa9be1a5dd9a8c4072d5f170510343b`.
+- The symbolic proof identifies
+  `Lambda_p=Gamma_p union (7s+Q_p) union {13s-1}` and derives multiplicity `24p`, Frobenius
+  `54p-1`, conductor `54p`, genus `38p-1`, and embedding dimension `12p`.
+- Since the symmetric genus would be `27p`, every endomorphism semigroup is nonsymmetric. Direct
+  rereading of Dey-Lyle Proposition 4.1(2) and Theorems 4.2 through 4.4 gives the uniform
+  nonreflexive Ext/Tor escape.
+- The initial smoke check caught and isolated a one-shift finite-window truncation before campaign
+  artifacts existed. The corrected deterministic artifacts reproduce byte-for-byte.
+- EXP-011 is CONFIRMED and triggers manuscript v0.04 plus a Zenodo new-version claim audit.
+
+## 2026-08-10 - uniform endomorphism preprint v0.04 published
+
+- Expanded the manuscript to 12 pages with the exact endomorphism-semigroup formula, numerical
+  invariants, nonsymmetry proof, and audited Dey-Lyle implications for every family member.
+- The claim audit passed, the two-pass build has no warnings or box defects, and all rendered
+  pages passed visual inspection. Felipe Santibanez-Leal remains the sole author.
+- Published Zenodo version DOI `10.5281/zenodo.21876338`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21876338`.
+- A fresh public download is 491,757 bytes with MD5 `248297d0a833ba21dce27d738a50e92f`
+  and SHA-256 `025cea4c59c4301ff6925cfe43353c7ac1c6cd8b4fc56a8c6d648347f418e825`, exactly matching the
+  committed PDF. Public title, version, sole author/ORCID, CC-BY-4.0 licence, and filename match.
+- PR `#150` passed `guards` and `test` and merged the complete EXP-011 and v0.04 publication round
+  into `develop` at `273ce4d2ca73f75762824168b41e8e3494612c05`. The serialized repository
+  release path was not claimed by this problem round.
+
+## 2026-08-12 - EXP-012 declared
+
+- Refreshed the current primary literature on pseudo-Frobenius numbers, reduced type, endomorphism
+  centers, and trace/reflexivity, including the 2026 version of record by Lindo-Maitra-Zhang.
+- Redirected the next round from an unconstrained nearby-face search to the invariant-first
+  pseudo-Frobenius anatomy of the known endomorphism family.
+- Hand block analysis predicts exactly `10p` pseudo-Frobenius numbers, all in the last multiplicity
+  window, hence maximal reduced type and a uniform non-almost-Gorenstein boundary.
+- Declared EXP-012 with two exact routes, symbolic proof requirements, corruptions, and a two-minute
+  budget before implementation or execution.
+
+## 2026-08-12 - EXP-012 confirms unbounded maximal reduced type
+
+- Proved that every final multiplicity-window gap of `Lambda_p` is pseudo-Frobenius and supplied an
+  explicit minimal-generator witness excluding every lower gap.
+- The complete pseudo-Frobenius set has three blocks of sizes `3p`, `5p`, and `2p`; type and reduced
+  type are exactly `10p`, so every associated semigroup ring has maximal reduced type.
+- Since `2g-(F+type)=12p-1`, every `Lambda_p` is not almost symmetric and its completed semigroup
+  ring is not almost Gorenstein.
+- The exact bitset and Apéry routes agree for all `p=4,...,300`; a separate implementation rehashed
+  all 297 rows, reconstructed six parameters, and rejected two corrupted PF formulas.
+- EXP-012 is CONFIRMED. The next new viewpoint is the trace/endomorphism equality from the 2026
+  Lindo-Maitra-Zhang criterion; manuscript publication is deliberately deferred until that route is
+  adjudicated.
+
+## 2026-08-12 - EXP-013 declared after trace-route correction
+
+- The source-complete check found that equality of the two trace ideals is already forced here:
+  `R_p` is one-dimensional Gorenstein and the relevant ideals are reflexive.
+- Redirected HWB-014 from retesting that consequence to computing the exact common trace/conductor
+  ideal and its colength.
+- Hand block arithmetic predicts four finite blocks plus the tail from `9s`, with the only missing
+  `R_p` values being zero and a reflected level-five block of size `p`.
+- Declared EXP-013 before implementation or execution, with two independent exact routes, three
+  adversarial mutations, and a two-minute budget.
+- The first `p=4` smoke run refuted the shorthand tail `[9s,infinity)` at the old Frobenius gap
+  `13s-1`. Before any campaign artifact existed, the corrected prediction preserved that gap; the
+  common-ideal and colength claims remained unchanged.
+- The first full campaign attempt exceeded its execution envelope without writing an artifact. The
+  repeated checks of ordinary `Gamma_p` values were removed: only the `p+1` values in
+  `Lambda_p minus Gamma_p` can add conductor constraints. The rerun remains subject to the original
+  two-minute scientific budget.
+
+## 2026-08-12 - EXP-013 confirms the corrected trace/conductor theorem
+
+- Proved `tr_R(J_p)=R_p:E_p=tr_R(E_p)` with an explicit block formula for every `p>=4`.
+- The common ideal omits exactly zero and the reflection of `Q_p` at level five, so its colength is
+  `p+1`, equal to the extension length `length(E_p/R_p)` from EXP-011.
+- Both exact routes pass for all 297 parameters in 9.7 seconds; a separate implementation rehashes
+  every row, reconstructs six parameters, and rejects deleted, injected, and altered-overring
+  controls.
+- Campaign and audit aggregates are
+  `77448398a26b958c66818b7ac4aaa4b542bad11cdba5ec7c8f7fe76db37526e2` and
+  `d55ed876d7918cb4c46d8e5f3894a508d172693bde4b4c76cb67c42fcfbf0ac1`.
+- EXP-012 and EXP-013 jointly pass the deliberation gate for a manuscript v0.05 candidate; no
+  publication is claimed until all build, render, metadata, and immutable-download gates pass.
+
+## 2026-08-12 - type and trace preprint v0.05 published
+
+- Expanded the manuscript to 15 pages with the pseudo-Frobenius/type theorem, exact common
+  trace/conductor theorem, balanced defect, and the preserved `13s-1` smoke correction.
+- The claim audit, clean two-pass build, and complete 15-page rendered inspection passed; Felipe
+  Santibanez-Leal remains the sole author.
+- Published Zenodo version DOI `10.5281/zenodo.21907297`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21907297`.
+- A fresh public download is 515,650 bytes with MD5 `75a1102cc9dab8785ee00ba7f93012e7`
+  and SHA-256 `4bd2cfd7351cb6cec1b3fa006c7eb3018732c283b5bb5a1e5c86015435275276`, exactly matching Git.
+- PR `#152` passed `guards` and `test` and merged the complete EXP-012/013 and v0.05 round into
+  `develop` at `bdb969db83d46ac822acc8f8501857b9214c6ed9`. PR `#153` passed both jobs and promoted
+  the accumulated post-release Huneke-Wiegand state to `main` at
+  `9be3069a549bfabb16f39013cf9c3ac552e93c51`. No release tag is claimed.
+
+## 2026-08-12 - duality correction and exact stability anatomy
+
+- A direct Herzog--Kumashiro source audit showed that the EXP-013 colength balance is general
+  one-dimensional Gorenstein local duality; the exact common ideal and its value `p+1` remain the
+  family-specific computation.
+- Dey's criterion and EXP-012 imply conductor nonstability; EXP-014 added a direct witness.
+- EXP-015's first square-tail formula failed at `13s-1` in its mandatory `p=4` smoke gate.
+- EXP-016 proved the corrected exact square and defect `14p` by symbolic residue identities, two
+  complete exact routes through `p=300`, and an independent audit.
+- The corrective 17-page v0.06 preprint passed claim/build/render and sole-authorship gates, was
+  published at DOI `10.5281/zenodo.21907943`, and matched a fresh public download exactly.
+
+## 2026-08-12 - EXP-017 confirms exact conductor reduction number
+
+- Redirected the next path from broad nearby-face SAT to the full reduction sequence of the known
+  nonstable conductor.
+- The symbolic block proof gives `v(T^3)=[12s,13s-2] union [13s,infinity)`,
+  `v(T^4)=[16s,infinity)`, and `v(T^5)=[20s,infinity)`.
+- Therefore `t^(4s)R_p` is a minimal reduction of exact reduction number four; the full successive
+  quotient profile is `23p-1,14p,2p,1,0` and the Hilbert coefficients are `e0=24p`, `e1=39p`.
+- Both exact routes passed all 297 parameters, and an independently written audit reconstructed
+  six parameters and rehashed every row. Campaign aggregate:
+  `e9c3c887648f08cf67c614b381f00c8c6520dcd1bb89f8cdece62293bfd06030`; audit aggregate:
+  `0f6ed70676ffb8972b8b167ad52c4f9d2851f69c3b1d96f4023e5e3d5825c781`.
+- The 18-page v0.07 passed claim/build/render and sole-authorship gates, was published at DOI
+  `10.5281/zenodo.21908188`, and a fresh public download matched 539,211 bytes, MD5
+  `5ed0616521a3363fb9cb6507babf9745`, and SHA-256
+  `2dca97dc100424afbeffd525fe66aa4aa43ce65c82c11b9ac43250cd33771e19` exactly.
+- PR `#156` passed `guards` and `test` and merged the full EXP-014--017 and v0.06/v0.07 round to
+  `develop` at `5953850ed7d86e37df79837ac5ba3287493ab3c8`. PR `#157` passed both jobs and promoted that
+  exact tested state to `main` at `2f6b9b9ccd924d0f0d06dc6da5e0f0f2c7fc8ca7`. No release tag is claimed.
+
+## 2026-08-12 - EXP-018 confirms depth-zero conductor tangent cones
+
+- Redirected the next round from another parameter sweep to the Valabrega--Valla intersections of
+  the conductor with its minimal reduction.
+- The unique nonzero intersection quotient is `(Q_p intersect T_p^2)/(Q_pT_p)`, with exact
+  level-nine residue block `{2p-1,4p-1} union [4p+1,5p-2]` and length `p`.
+- Every component at `n=0` and `n>=2` vanishes, so `gr_(T_p)(R_p)` has depth zero and is not
+  Cohen--Macaulay for every `p>=4`.
+- The exact Hilbert numerator is
+  `(p+1)+(9p-1)z+12pz^2+(2p-1)z^3+z^4`; all coefficients are positive despite depth zero.
+- Two exact routes pass through `p=300`; an independently written audit reconstructs six
+  parameters and rehashes all rows. Campaign and audit aggregates are
+  `9631c644732f0921be3b3027e18a01110f23dad897fbf2cb14dd3a493eda5971` and
+  `7c2abcd290bc3461fc5251bc3372e20a7fa25c888e3b2ed635368b4dda0781ff`.
+
+## 2026-08-12 - tangent-cone preprint v0.08 published
+
+- Expanded the manuscript to 20 pages with the exact Valabrega--Valla module, depth-zero theorem,
+  Hilbert function, and coefficientwise-positive Hilbert numerator.
+- The claim audit, stable two-pass build, complete rendered inspection, and sole-human-authorship
+  gates passed before upload.
+- Published Zenodo version DOI `10.5281/zenodo.21908490`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21908490`.
+- A fresh public download is 552,905 bytes with MD5 `29a4c70d45517a61d6eb01f028487b39`
+  and SHA-256 `c8a038adf042a71126e0b0dac170803340e12300521aad1ca05f88bbc3c32f69`, exactly matching Git.
+- Public version, sole author/ORCID, CC-BY-4.0 licence, and filename match. Repository PR promotion
+  passed next: PR #160 passed `guards` and `test` and merged the round to `develop` at
+  `c91ff890`; PR #161 passed all checks and promoted the identical tested tree to `main` at
+  `4b62f778`. No release tag is claimed.
+
+## 2026-08-12 - EXP-019 declared
+
+- Redirected the next round from a larger tangent-cone parameter sweep to the complete zeroth
+  local cohomology and Buchsbaum condition.
+- Source-checked the general one-dimensional local-cohomology criterion and explicitly separated
+  it from maximal-ideal-specific semigroup formulas that do not apply verbatim to the conductor
+  filtration.
+- Predeclared the prediction that the torsion is `k^p` in degree zero, the full homogeneous maximal
+  ideal annihilates it, and the tangent cone is Buchsbaum but not Cohen--Macaulay with invariant
+  `p`. No formal implementation or campaign preceded the declaration.
+
+## 2026-08-12 - EXP-019 confirmed
+
+- Proved that stable conductor-power tails turn the full graded colon saturation into the exact
+  threshold `v>=4(n+1)s`.
+- The threshold leaves exactly the `p` classes `t^(5s+h)+T_p`, `h in H_p`, in degree zero and no
+  torsion in positive degree.
+- Proved separately that `m_p/T_p` and `G_(p,+)` both annihilate these classes. Hence every tangent
+  cone is Buchsbaum but not Cohen--Macaulay, with unbounded Buchsbaum invariant `p`; its quotient
+  by `H^0` is Cohen--Macaulay with an exact Hilbert series.
+- Both exact routes passed for all 297 parameters. Campaign and independent-audit aggregates are
+  `854d7889d9d7b911b462e4d483e021210ae2873ae0ec0091ec30e8fb29d6dbf7` and
+  `0b01853febc9e9754e28abcd099a7ae3a97f4cc0ab92f3a345ab2ae03cd3c68a`.
+- The new theorem triggers a v0.09 manuscript candidate; Zenodo publication remains gated on the
+  complete claim/build/render, sole-authorship, metadata, and public-file verification workflow.
+
+## 2026-08-12 - Buchsbaum preprint v0.09 published
+
+- Expanded the manuscript to 21 pages with the complete graded-torsion, Buchsbaum-invariant, and
+  Cohen--Macaulay quotient theorem.
+- The claim audit, stable two-pass build, complete rendered inspection, metadata, and sole-human-
+  authorship gates passed before upload.
+- Published Zenodo version DOI `10.5281/zenodo.21908785`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21908785`.
+- A fresh public download is 567,854 bytes with MD5 `c0605ace2b60d6830fd6e68d68d883b0`
+  and SHA-256 `ecf4d1ebe504ad3af74d123c949a953a7f397dabd72ec11c94a631962e1501db`, exactly matching Git.
+- Public version, sole author/ORCID, CC-BY-4.0 licence, and filename match. Repository PR promotion
+  passed next: PR #164 passed `guards` and `test` and merged the round to `develop` at
+  `efdca94`; PR #165 passed all checks and promoted the identical tested tree to `main` at
+  `cbe62a5`. No release tag is claimed.
+
+## 2026-08-12 - EXP-020 declared
+
+- A fresh primary-source sweep redirected the next round from a generic Buchsbaum-invariant bound
+  to the full module over the minimal-reduction Noether normalization.
+- Cortadellas Benitez and Zarzuela's tangent-cone module viewpoint supplies the analogy, but their
+  maximal-ideal-specific Apery formulas are not imported into the conductor filtration.
+- EXP-017--019 predict a complete decomposition into `p` copies of `F/(x)` plus free summands in
+  degrees zero through four, hence an exact minimal resolution, regularity four, and parameter-
+  section excess `p`.
+- EXP-020 was declared before implementation or execution, with a symbolic graded-PID proof, an
+  independent conductor-power Apery-column reconstruction, five corruptions, and fixed budgets.
+
+## 2026-08-12 - EXP-020 confirms the complete Noether-normalization module
+
+- Proved that the conductor tangent cone is a rank-`24p` graded free module over `k[x_p]` plus
+  exactly `p` copies of `k[x_p]/(x_p)` generated in degree zero.
+- Derived the complete minimal graded resolution: the sole first Betti number is
+  `beta_(1,1)=p`; the free generator counts are `p+1,10p-1,12p,2p-1,1` in degrees zero through
+  four.
+- Consequently `pd=1`, `reg=4`, `a=3`, and the minimal-reduction section has exact length
+  `25p=e0(T_p)+I(G_p)`.
+- The recursive-power Apery campaign passed for every `p=4,...,300` in 12.234088 seconds. A
+  separate closed-form implementation rebuilt six parameters, rehashed all 297 rows, and rejected
+  five corruptions.
+- Campaign and audit aggregates are
+  `02cf6f62a71de1a897cd46149e8c89d1c55bf810d28dddc02fc6c5330b9c1aed` and
+  `c439f7e4fbd3cee983f32e5c6a27b347017c165cdf6d9fee54eb8d53ab634eac`.
+- EXP-020 is CONFIRMED and triggers the manuscript v0.10 gate.
+
+## 2026-08-12 - EXP-021 declared
+
+- A primary-source and novelty preflight selects the conductor special fiber over a broader Kunz
+  sweep, Rees-algebra campaign, or premature defining-ideal calculation.
+- EXP-021 was declared before formal implementation or execution. It predicts
+  `T_p^2=m_pT_p`, the canonical algebra isomorphism `G_p/H^0(G_p) isomorphic to F(T_p)`, and an
+  Artinian socle giving Cohen--Macaulay type `10p+1` with nonlevel behavior.
+- The mandatory next action is the `p=4` smoke gate; no confirmation or publication is claimed.
+
+## 2026-08-12 - EXP-021 confirms the canonical conductor fiber cone
+
+- The mandatory `p=4` smoke gate passed. A first full campaign passed through `p=225` but hit the
+  declared 120-second budget, so it was preserved as inconclusive rather than misreported.
+- An exact bitset optimization completed the unchanged `p=4,...,300` campaign in 44.048252
+  seconds; the independently encoded six-parameter reconstruction and all-row hash audit passed.
+- The symbolic block proof establishes `T_p^2=m_pT_p`; the natural tangent-cone map therefore
+  identifies `F(T_p)` with `G_p/H^0` as graded algebras for every `p>=4`.
+- The Artinian socle has dimension `10p` in degree two and one in degree four. Thus the special
+  fiber is Cohen--Macaulay of type `10p+1`, neither level nor Gorenstein.
+- This material theorem triggers the manuscript v0.11 gate; no publication is yet claimed.
+
+## 2026-08-12 - conductor fiber-cone preprint v0.11 published
+
+- Expanded the manuscript to 25 pages with the canonical special-fiber quotient theorem, exact
+  free module, Artinian h-vector, type `10p+1`, and nonlevel/non-Gorenstein consequences.
+- Claim audit, stable two-pass LaTeX build, complete 25-page rendered inspection, sole-authorship,
+  ORCID, metadata, and scope checks passed.
+- Published CC BY 4.0 at DOI `10.5281/zenodo.21909961`; the concept latest resolves to this record.
+- A fresh unauthenticated public download matches the committed 589,535-byte PDF at MD5
+  `1ad22a6a87c0c6a5a80f8a913d06ca95` and SHA-256
+  `0b3a9131e3c419c0a89cb064ea6beb7c696006171fe18bec578e7ba963a520ce`.
+
+## 2026-08-12 - EXP-021 and v0.11 promoted
+
+- CAOS_RESEARCH PR #172 passed `guards` and `test` and merged the complete theorem/publication
+  round to `develop` at `178a7361043198e8785a739fde77074b126370dd`.
+- PR #173 passed all required checks and promoted the tested state to `main` at
+  `7abd10403a5798af4757223bfa0cfa2135aed048`.
+- Remote `develop` and `main` are tree-identical at
+  `21791e6a6c182fa12f00a5f255a6faab23dd7058`. No release tag is claimed.
+
+## 2026-08-17 - EXP-022 declared
+
+- A fresh source pass verifies that Abdolmaleki--Kumashiro's defining-ideal construction is a
+  published 2024 IJAC result, DOI `10.1142/S0218196724500437`, not only an arXiv preprint.
+- Its theorem applies to `T_p` and bounds defining-equation degrees by five, but does not supply a
+  uniform minimal presentation for the EXP-009 family.
+- EXP-022 was declared before implementation or execution. It predicts that the full defining
+  ideal is generated by the degree-two value-congruence kernel, with exactly
+  `50p^2-17p` minimal quadrics and no higher-degree minimal equations.
+- The mandatory next action is the `p=4`, degreewise congruence-connectivity smoke gate. No
+  defining-ideal result is claimed.
+
+## 2026-08-17 - EXP-022 refuted quadratic generation
+
+- The mandatory `p=4` gate gives first Betti counts `(732,1,0,0)` in degrees two through five.
+  Complete `p=5,6` diagnostics give `(1165,1,0,0)` and `(1698,1,0,0)`.
+- The unique observed cubic is `X_0^2X_(3p)-X_p^3`. A symbolic isolation argument proves it is
+  not generated by quadrics for any `p>=4`, so EXP-022 is REFUTED rather than weakened into a pass.
+- The same proof gives the exact universal quadratic count `50p^2-17p` and the lower bound
+  `beta_(1,3)>=1`.
+- The corrected claim that this is the only cubic and that degrees four and five contribute
+  nothing remains unproved and requires a separately declared successor experiment.
+
+## 2026-08-17 - EXP-023 declared
+
+- EXP-023 was declared before its state-graph implementation or any broader campaign.
+- It predicts the complete presentation by the quadratic kernel plus the single primitive cubic
+  `X_0^2X_(3p)-X_p^3`, with first Betti row `(50p^2-17p,1,0,0,...)`.
+- A scalable independent route reduces minimal equations in degree `d` to connected components of
+  states `(a,b)` with `a in E_1`, `b in E_(d-1)`, grouped by total `a+b`.
+- The mandatory next action is independent reproduction at `p=4,5,6`; no corrected theorem,
+  manuscript update, or publication is claimed.
+
+## 2026-08-18 - EXP-023 confirms the one-cubic presentation
+
+- The independent state graph reproduces EXP-022 at `p=4,5,6`. Its first requested campaign
+  completed the `p=24` row but crossed the declared five-minute budget, so the preserved attempt
+  remains `INCONCLUSIVE_BUDGET`.
+- The formally bounded campaign passes every `p=4,...,23` with Betti profile
+  `(50p^2-17p,1,0,0)` and aggregate
+  `d23792c47a2e07785a27ebc71e99619705f7aa53a38ebe7f66ffa03b0518ce83`.
+- A separately encoded total-by-total graph rehashes all 20 rows and reconstructs `p=4,13,23`;
+  its audit aggregate is
+  `a27b3b13fde197b1f011bf07dc2c321d84ab7c895c9aa02d7c2a073e48f18038`.
+- The exact Presburger cover closes 133 terminal negated connectivity queries as UNSAT for all
+  integers `p>=4`, with no SAT or unresolved leaf. It proves that total `3p` has exactly two cubic
+  components and that every other degree-three, degree-four, and degree-five fiber has no defect.
+- Abdolmaleki--Kumashiro Theorem 2.8 closes the tail above degree five. Hence
+  `J_p=((J_p)_2,X_0^2X_(3p)-X_p^3)`, its relation type is three, and the Cohen--Macaulay fiber cone
+  is not Koszul.
+- The solver and symbolic encoding remain an explicit trust boundary because the UNSAT leaves do
+  not carry a separately checked proof object. The exact independent campaign and hand-reduced
+  state graph lower, but do not erase, that risk.
+- The theorem is material and opens the manuscript v0.12 plus Zenodo new-version gate. No v0.12
+  publication is claimed yet.
+
+## 2026-08-12 - Noether-normalization preprint v0.10 published
+
+- Expanded the manuscript to 22 pages with the complete graded module, minimal resolution, Betti
+  numbers, regularity, top-local-cohomology `a`-invariant, and parameter-section theorem.
+- The claim audit, stable two-pass build, complete 22-page rendered inspection, metadata, and
+  sole-human-authorship gates passed before upload.
+- Published Zenodo version DOI `10.5281/zenodo.21909127`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21909127`.
+- A fresh public download is 578,949 bytes with MD5 `830ae1fd2e2fbf923a86cbf575e9a841`
+  and SHA-256 `00a78fd8101f106724877b3fdbc933c51024a872a2b9a4f05692358b4d1a9d03`, exactly matching Git.
+- Public version, sole author/ORCID, CC-BY-4.0 licence, and filename match. PR #168 passed `guards`
+  and `test` and merged the complete theorem/publication round to `develop` at `5b9ca074`; PR #169
+  passed all checks and promoted the identical tested tree to `main` at `06a6af92`. No release tag
+  is claimed.
+
+## 2026-08-18 - Defining-ideal preprint v0.12 published
+
+- Expanded the manuscript to 27 pages with the EXP-022 refutation, EXP-023 complete presentation,
+  exact first Betti row, relation type three, and non-Koszulness theorem.
+- The claim audit, warning-free final build, complete 27-page rendered inspection, metadata, new
+  primary-source citation, and sole-human-authorship gates passed before upload.
+- Published Zenodo version DOI `10.5281/zenodo.21988601`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21988601`.
+- A fresh unauthenticated public download is 615,252 bytes with MD5
+  `c8b810a763b9bb55d076a454df49b413` and SHA-256
+  `98d730fb8afaf40149d028bdde0b1c3ba9851f1dbcd15475567e56bb7eb17d3f`, exactly matching Git.
+- Public version, sole author/ORCID, CC-BY-4.0 licence, filename, and hashes match. Repository PR
+  promotion remains the only active delivery gate; no release tag is claimed.
+
+## 2026-08-18 - EXP-022/023 and v0.12 promoted
+
+- PR #176 passed `guards` and `test` and merged the complete defining-ideal theorem, evidence,
+  manuscript, and verified publication record to `develop` at
+  `aecb5b5c6daa83efd30f7c11a38436896fe59d12`.
+- PR #177 passed all required checks and promoted the tested state to `main` at
+  `80de49e5e42ca52d143333f029eaaac637464194`.
+- Remote `develop` and `main` are tree-identical at
+  `5469624bab95a087aaef37630ea9c2a27c656054`. This research-only round claims no release tag.
+
+## 2026-08-18 - v0.12 handoff closed
+
+- Documentation-only PR #178 passed `guards` and `test` and merged the truthful publication and
+  promotion record to `develop` at `1bbf7a8e480c3e5f49dfd7bf5441ab232ef563bc`.
+- PR #179 passed all required checks and promoted that handoff to `main` at
+  `02f8143a85ae27c2d95dbfcca2feb2a58550e10d`.
+- EXP-022/023, manuscript v0.12, Zenodo publication, and repository delivery are complete. No new
+  experiment or release tag is declared.
+
+## 2026-08-18 - EXP-024 declared
+
+- Reconciled the v0.12 open questions: presentation-ring regularity is already exactly four; only
+  the interior higher-syzygy and Groebner questions remain open.
+- Ranked the extremal Betti route above explicit Groebner bases, a full-resolution campaign,
+  primary decomposition, and formalization of EXP-023.
+- Declared EXP-024 before implementation or execution. It predicts exact projective dimension,
+  regularity, first linear syzygies, last and penultimate extremal Betti entries, and canonical-
+  module generator degrees for every `p>=4`.
+- The immediate gate is a two-derivation `p=4` smoke, then an exact bounded campaign and an
+  independent audit. No theorem or publication is claimed yet.
+
+## 2026-08-18 - EXP-024 confirms exact homological edges
+
+- Proved `pd=10p-1` and presentation-ring regularity four from Cohen--Macaulayness and the exact
+  h-polynomial, correcting one stale v0.12 open-question phrase.
+- Derived `beta_(2,3)=2p(500p^2-330p+31)/3` independently from the Hilbert numerator and the
+  degree-three defining-ideal dimension.
+- Used regular linear reduction and top Koszul homology to determine the complete last Betti row;
+  isolated `beta_(c-1,c+3)=8p` and the canonical-module generator degrees.
+- The separate smoke, exact `p=4,...,300` campaign, all-row independent audit, premise hashes, and
+  adversarial controls pass. Campaign/audit aggregates are `baf6200a...637eb` and
+  `b6035f61...f17e2`.
+- The result is an edge theorem, not a full resolution. It belongs in the existing manuscript;
+  splitting is deferred to a standalone Groebner/full-resolution/primary-decomposition result.
+
+## 2026-08-18 - manuscript v0.13 candidate validated
+
+- Reserved reversible Zenodo new-version draft `21995498`, DOI `10.5281/zenodo.21995498`, from
+  immutable v0.12. No file was uploaded or published at reservation.
+- Expanded the manuscript to 29 pages with EXP-024, corrected the open questions, and passed the
+  claim audit, warning-free two-pass build, complete 150-DPI page inspection, metadata, DOI,
+  scope, and sole-authorship gates.
+- Frozen local candidate: 635,617 bytes, MD5 `d6ce72589100d1f57986da000501fdc7`, SHA-256
+  `cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed`. Zenodo upload and
+  publication remain pending.
+
+## 2026-08-18 - homological-edge preprint v0.13 published
+
+- Published Zenodo version DOI `10.5281/zenodo.21995498`; concept DOI
+  `10.5281/zenodo.21763582` now resolves to record `21995498`.
+- Public version, title, sole author/ORCID, CC-BY-4.0 licence, filename, and 635,617-byte size match
+  the validated candidate.
+- A fresh unauthenticated download has MD5 `d6ce72589100d1f57986da000501fdc7` and SHA-256
+  `cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed`, exactly matching Git.
+- Repository PR promotion remains the only active delivery gate; no release tag is claimed.
+
+## 2026-08-18 - EXP-024 and v0.13 promoted
+
+- PR #182 passed `guards` and `test` and merged the complete EXP-024 theorem, evidence, manuscript,
+  and verified publication record to `develop` at
+  `26c5210302ede4681111a4503776190954c33f59`.
+- PR #183 passed all required checks and promoted the identical tested state to `main` at
+  `f24b078b98376224b38753f7294d26627147c4ea`.
+- Remote work, `develop`, and `main` are tree-identical at
+  `5c828789a5d993a35a1e42743860600d156c9f99`. No release tag is claimed.
+
+## 2026-08-18 - v0.13 durable handoff reconciled
+
+- Documentation-only PR #184 merged the final v0.13 handoff to `develop`; PR #185 promoted it to
+  `main`.
+- Before EXP-025 opened, remote work, `develop`, and `main` shared tree
+  `b70a3990583057a92e591c34d5f9e9c101185e8c`. The earlier `5c828...` tree is retained as the
+  theorem/publication payload tree, not mislabeled as the final handoff.
+
+## 2026-08-18 - EXP-025 declared
+
+- Archived and read primary context on nonradical monomial fiber cones and curvilinear
+  zero-dimensional schemes; no exact result for this conductor family was identified.
+- Redirected the round from an expensive unconstrained Groebner search to an invariant-first
+  truncated-monomial parametrization forced by EXP-021 freeness and EXP-023 value congruences.
+- A read-only sanity check at `p=4,5,17,73,151,300` found the exact `[0,24p-1]` layer partition,
+  offset-one generator, and sharp candidate truncation boundary.
+- Declared EXP-025 before implementation. It predicts a one-component primary decomposition,
+  nilpotency index `24p`, and a length-`24p` curvilinear fat point which is locally but not
+  arithmetically Gorenstein.
+- The full result, if confirmed, meets the previously recorded threshold for a separate companion
+  manuscript. No theorem, manuscript, Zenodo record, or delivery is yet claimed.
+- Before implementation, the declaration was sharpened by the differential corollary
+  `Omega^1=(k[y]/(y^(24p),24p*y^(24p-1)))dy`; this records the characteristic split rather than
+  hiding it behind the characteristic-zero manuscript setting.
+
+## 2026-08-18 - EXP-025 confirms the curvilinear primary theorem
+
+- The mandatory `p=4` smoke passed both the truncated-sumset campaign route and the independently
+  encoded disjoint-layer audit route.
+- The full campaign passed all 297 parameters `p=4,...,300` in 1.84 seconds; campaign aggregate
+  `f3373f4f58287fd3f553b95efa226e7938170d32f24eea6a014ca47f9d6b39b6`.
+- The audit rehashed and independently reconstructed every row, with detailed checks at
+  `p=4,5,17,73,151,300`; audit aggregate
+  `84c00be8ff64002e8738a5d4307d71df73dfa7595e810c7e764f6f5b6c8f143e`.
+- The symbolic proof establishes the truncated parametrization, exact radical and primaryness,
+  nilpotency index `24p`, saturation, length-`24p` curvilinear geometry, local-versus-arithmetic
+  Gorenstein contrast, and differential signature for every `p>=4`.
+- This is the standalone primary-decomposition result reserved by EXP-024. A focused companion
+  manuscript and separate Zenodo concept record are opened; neither is yet claimed as complete.
+
+## 2026-08-18 - companion manuscript v0.01 candidate validated
+
+- Created a focused six-page companion note rather than extending the already broad v0.13
+  manuscript.
+- The claim audit maps every theorem to EXP-025 and preserves the frozen-premise, finite-evidence,
+  scope, source, and characteristic boundaries.
+- A clean two-pass build has no warnings, undefined references, overfull boxes, or underfull
+  boxes. Every page was rendered at 150 DPI and inspected after replacing inconsistent draft
+  running headers with a uniform footer-only style.
+- Sole author Felipe Santibañez-Leal, ORCID, Son Pham priority, Craig Huneke external-verification
+  provenance, CC BY 4.0, and Zenodo metadata gates pass.
+- Frozen no-DOI candidate: 424,453 bytes, MD5 `168262c356b89d1e5b0d4eb3f552a120`, SHA-256
+  `cb78f46f2e3e2250594523a0dffe16806eefc499c44fa1b6b8a67ab3d074f07d`.
+- No Zenodo draft, DOI, upload, or publication is claimed. Separate concept-draft creation is the
+  next reversible gate.
+
+## 2026-08-18 - companion manuscript DOI-bearing candidate validated
+
+- Reserved reversible Zenodo draft `21997378`, version DOI `10.5281/zenodo.21997378`, and separate
+  concept DOI `10.5281/zenodo.21997377`; no publication was performed at reservation.
+- Inserted both identifiers in the manuscript and repeated the two-pass build, complete 150-DPI
+  inspection of all six pages, PDF metadata, claim, identity, and sole-authorship gates.
+- The DOI-bearing candidate is 424,886 bytes, MD5 `43ce7ec181d26c38b17678b453a8e27e`, SHA-256
+  `e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`.
+- The exact attachment, publication, and fresh public-download verification remain pending; no
+  upload or publication is claimed at this checkpoint.
+
+## 2026-08-18 - curvilinear companion v0.01 published and verified
+
+- Attached the frozen DOI-bearing candidate as
+  `huneke-wiegand-curvilinear-fiber-cones-v0.01.pdf`; authenticated draft inspection matched its
+  424,886-byte size, MD5, title, version, reserved DOI, and sole creator before publication.
+- Published Zenodo version DOI `10.5281/zenodo.21997378`; separate concept DOI
+  `10.5281/zenodo.21997377` resolves to record `21997378`.
+- The public API confirms title, version 0.01, sole author/ORCID, CC BY 4.0 licence, filename, size,
+  and checksum. A fresh unauthenticated download has SHA-256
+  `e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`, exactly matching Git.
+- The Zenodo gate is complete. Checked repository PR promotion is now the only active delivery
+  gate; no global release tag is claimed.
+
+## 2026-08-18 - EXP-025 publication round promoted
+
+- PR #186 passed `guards` and `test` and merged the complete EXP-025 theorem, focused companion,
+  and verified Zenodo record to `develop` at
+  `1c94632f5bb631fd4d85916488dc7a943a899109`.
+- PR #187 passed all required checks and promoted the same tested state to `main` at
+  `18e7d9728c3a8c210ea6a36d81bba6b6325cc536`.
+- Remote research work, `develop`, and `main` share tested payload tree
+  `53e5e61ffeeb5816497e3e477921bc94c4a5f91d`.
+- CAOS_MANAGE stayed on `develop`; only the curvilinear manuscript governance files were committed.
+  PR #557 promoted that ledger to `main` at `ec11d010246341347fd4d11b49b29998ec9a6cf1`, with
+  management `develop` and `main` tree-identical at `f7db0c50a75491738dbfad998d235458f4bb69ee`.
+- HWB-033 is closed. No experiment or delivery gate remains active, and no global release tag is
+  claimed.
+
+## 2026-08-18 - EXP-026 declared
+
+- Reopened the post-publication Groebner route without changing the prior immutable records.
+- Archived and hashed two primary method sources under the external `exp026` source directory.
+- A read-only invariant probe at every `p=4,...,15` found minimal initial-generator counts
+  `50p^2-17p`, `5p-1`, and `p-2` in degrees two, three, and four, no degree-five generator, and no
+  leading monomial divisible by `X_0`.
+- The cubic and quartic boundary matched six closed cubic families and one quartic family exactly.
+- Declared EXP-026 before implementation. Confirmation still requires the mandatory smoke, exact
+  campaign, independent audit, adversarial controls, and symbolic Hilbert-function proof.
+
+## 2026-08-18 - EXP-026 confirmed
+
+- The mandatory smoke passed and was committed before the full campaign.
+- Preserved the first full run as `INCONCLUSIVE_BUDGET` after 141 rows; profiling identified the
+  recursive canonical oracle as the cost center.
+- A cached quadratic oracle plus boundary-divisibility validation preserved earlier row hashes and
+  passed every `p=4,...,300` in 8.474 seconds.
+- The independent clique audit reconstructed canonical factorization complexes through degree six
+  at seven samples including `p=300`; it found no degree-five or degree-six boundary.
+- Sixteen all-parameter Presburger obligations closed UNSAT in fresh solver processes, proving
+  exact cubic/quartic boundary families and every reduced tail. The infinite tail is closed by the
+  deterministic `X_0`-stabilization lemma rather than a runtime-unstable quantified query.
+- EXP-026 is CONFIRMED. The focused companion v0.02 and Zenodo new-version gate are active.
+
+## 2026-08-18 - curvilinear companion v0.02 published and verified
+
+- Expanded the focused companion in place: the canonical grevlex theorem concerns the same fiber
+  cone as EXP-025, so a third manuscript would fragment one coherent result. A possible complete
+  interior Betti table remains a distinct future split trigger.
+- The eight-page v0.02 manuscript passed its claim map, warning-free two-pass build, complete final
+  150-DPI inspection, text extraction, PDF metadata, source-boundary, identity, and sole-human-
+  authorship gates.
+- Reserved reversible new-version draft `22002907`, inserted version DOI
+  `10.5281/zenodo.22002907`, rebuilt, and repeated the complete QA before upload.
+- Authenticated draft inspection matched the title, version, sole creator/ORCID, filename,
+  453,621-byte size, and MD5 `53123ab5bed9a6c84c37ebde1610c3f7` before publication.
+- Published v0.02 under concept DOI `10.5281/zenodo.21997377`. The public API confirms CC BY 4.0,
+  the two-record version chain, and concept resolution to `22002907`. A fresh unauthenticated
+  download matches SHA-256
+  `12cc380bcc72613694b24cc9f74284f8f3d35e4958ec3569b6ebacce3225e398` exactly.
+- HWB-034 is complete. HWB-036 now owns checked repository promotion and final handoff; no new
+  theorem experiment has been declared.
+
+## 2026-08-18 - EXP-026 publication round promoted
+
+- PR #190 passed `guards` and `test` and merged the complete EXP-026 theorem, artifacts, companion
+  v0.02, and verified Zenodo record to `develop` at
+  `6b9d4670e9e6c0316e135f4e1148bfbb007508ba`.
+- PR #191 passed all required checks and promoted the same tested state to `main` at
+  `5dfb1af5dcf404425ac88116476f317e6697f48a`.
+- Remote research work, `develop`, and `main` share payload tree
+  `1fb094d102e1f91a6c9754cca26d7f57666450fb`.
+- CAOS_MANAGE remained on `develop`; PR #559 promoted only the scoped publication workflow and
+  ledger to `main` at `5bfd7fdbecfddb7da7966bc55bf73c452501f43e`. Its `develop` and `main`
+  trees match at `372cd71d3acca38b92f872cd0995b5b9a264d543`.
+- HWB-036 is complete. No theorem experiment or delivery gate remains active, and no release tag is
+  claimed for this research-only round.
+
+## 2026-08-19 - EXP-027 declared
+
+- Reopened HWB-035 after a fresh primary-source and novelty preflight; no branch change was made.
+- Selected relative offset-Koszul complexes as the strongest tractable route to the unresolved
+  interior Betti table. Mapping-cone colons were retained as an independent route; raw full
+  resolutions and cancellation-only bounds were deprioritized.
+- Declared the exact `beta_(2,4)`, multigraded support, `beta_(3,4)`, colon, and integral-torsion
+  predictions before canonical implementation or artifact generation.
+
+## 2026-08-19 - EXP-027 confirmed
+
+- The mandatory `p=4` smoke reconstructed every offset block over `GF(2)` and `GF(1000003)` and
+  found exactly 32 multiplicity-one relative first-homology components.
+- The canonical campaign passed all 297 parameters `p=4,...,300`; explicit every-offset profiles
+  at `p=4,5,6` found totals `32,40,48` and no unexpected support.
+- Six all-parameter Z3 counterexample queries returned UNSAT, including exact support, centered
+  offset classification, high-variable quadratic paths, and low-variable parity obstruction.
+- The independent audit rebuilt the `p=4` chain profile without importing the canonical code and
+  checked `p=4,5,17,73,151,300` formula rows.
+- The deductive proof identifies Koszul strands with relative squarefree-divisor chains, obtains
+  an integral Morse upper bound, and matches it through the exact quadratic colon and a minimal
+  mapping cone. Hence, over every field,
+
+  ```text
+  beta_(2,4)=8p,
+  beta_(3,4)=p(5p-1)(500p^2-440p+47)/2.
+  ```
+
+- EXP-027 is CONFIRMED. HWB-037 opens the main-manuscript v0.14 and Zenodo new-version gate; no
+  upload, DOI version, publication, or PR promotion is claimed at this checkpoint.
+
+## 2026-08-19 - EXP-027 manuscript v0.14 published
+
+- Expanded the main Frobenius-minimality manuscript to v0.14 with the characteristic-free first
+  interior Betti-strand theorem, complete offset support, proof boundary, and EXP-027 evidence.
+- The final 31-page DOI-bearing candidate passed two clean LaTeX builds, complete rendered
+  inspection, metadata, source, scope, attribution, and sole-human-authorship gates.
+- Published Zenodo version DOI `10.5281/zenodo.22013515` under concept DOI
+  `10.5281/zenodo.21763582`. Public record `22013515` is concept-latest and CC BY 4.0 with Felipe
+  Santibanez-Leal as the sole creator and ORCID `0000-0002-0150-3246`.
+- A fresh unauthenticated 656,437-byte download matches MD5
+  `f5c44834c94832c3c2c8d7d29389ff9a` and SHA-256
+  `df5e12d2256f4967881df0f35df44b415777c4826f38447a33cfdeb1b7399e10` exactly.
+- HWB-037 is complete. HWB-038 now owns checked repository promotion and management-ledger
+  reconciliation; the remaining interior Betti table stays open under HWB-035.
+
+## 2026-08-19 - EXP-027 publication round promoted
+
+- PR #194 passed `guards` and `test` and merged the complete EXP-027 theorem, exact artifacts,
+  manuscript v0.14, and verified Zenodo record to `develop` at
+  `68ebac5bf09fa63babbef73540f381ecac02d881`.
+- PR #195 passed its own required checks and promoted the same tested state to `main` at
+  `6319887eb4eb7f9312f74f5a9f31d207f888d7cb`.
+- Remote research work, `develop`, and `main` share payload tree
+  `84910601b3a5b406c3725f64a0903d8116ad922f`.
+- CAOS_MANAGE remained on `develop`; PR #562 promoted the scoped v0.14 Zenodo controls and ledger
+  to `main` at `8c3fcca1d98e386c95e30d450ccfcd4a8e27b8a3`. Its remote `develop` and `main`
+  trees match at `f46e52f048dcdcadfae5d7bbd68cecdaadac78c5`.
+- HWB-038 is complete. The remaining interior Betti table stays open under HWB-035, and no
+  release tag is claimed for this research-only round.

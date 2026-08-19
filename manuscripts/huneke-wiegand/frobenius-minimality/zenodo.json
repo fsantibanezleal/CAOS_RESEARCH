@@ -2,7 +2,7 @@
   "metadata": {
     "upload_type": "publication",
     "publication_type": "preprint",
-    "title": "Frobenius minimality and minimum-layer uniqueness of the Huneke-Wiegand counterexample",
+    "title": "Frobenius minimality, minimum-layer uniqueness, and an infinite family of Huneke-Wiegand counterexamples",
     "creators": [
       {
         "name": "Santibañez-Leal, Felipe",
@@ -10,7 +10,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Son Pham publicly identified a counterexample to the Huneke-Wiegand conjecture in the class of two-generated monomial ideals over symmetric numerical semigroup rings, subsequently verified independently by Professor Craig Huneke. This preprint preserves that discovery priority and addresses two separate questions: how small can such an example be by Frobenius number, and what pairs attain the minimum?</p><p>We prove by proof-carrying exact computation that the least Frobenius number is 181, attained by Pham's example at shift 14. A complete theorem-tree implementation and 1,156 independently checked fixed-pair DRAT proofs reproduce the published positive range F&lt;69. A one-hot selector CNF then gives accepted DRAT proofs for every odd F from 69 through 179 and recovers the exact public semigroup at F=181.</p><p>A projected enumeration classifies the complete minimum layer. After shift 14 is blocked, the selector formula is UNSAT with an accepted 45,867,741-byte proof. After the public membership vector is blocked in the fixed-shift formula, the result is UNSAT with an accepted 1,608,691-byte proof. An independent auditor reconstructs all formulas, validates both SAT models, accounts for 12 external files totaling 63,609,504 bytes, and freshly rechecks both terminal proofs. Thus Pham's pair is the unique normalized pair attaining the Frobenius minimum in this class.</p><p>The result does not classify higher Frobenius values, minimize multiplicity or embedding dimension across all counterexamples, or apply to arbitrary Gorenstein domains and modules. Code, compact manifests, verdicts and verification instructions: https://github.com/fsantibanezleal/CAOS_RESEARCH.</p>",
+    "description": "<p>Son Pham publicly identified the first counterexample to the Huneke-Wiegand conjecture in the class of two-generated monomial ideals over symmetric numerical semigroup rings, subsequently verified independently by Professor Craig Huneke. This preprint preserves that discovery priority and develops separate extensions: Frobenius minimality, classification of the minimum layer, an explicit infinite family, and the family's uniform endomorphism, type, trace, conductor, stability, reduction, tangent-cone, fiber-cone, and homological anatomy.</p><p>Proof-carrying exact computation shows that the least Frobenius number is 181, attained by Pham's example at shift 14. Complete theorem-tree enumeration and 1,156 independently checked fixed-pair DRAT proofs reproduce the published range F&lt;69. A selector CNF gives accepted DRAT proofs for every odd F from 69 through 179 and recovers the exact public semigroup at F=181. Projected enumeration then proves that shift 14 and the public membership vector are unique at the minimum.</p><p>For every integer p&gt;=4, we give a deductive construction of a symmetric numerical semigroup with multiplicity 24p, Frobenius number 78p-1, conductor 78p, and embedding dimension 11p, carrying the nonprincipal rigid ideal (t^(24p),t^(30p)). Seven exact interval-sum identities prove closure, symmetry, generation, and rigidity.</p><p>For every family member, the endomorphism value semigroup is determined exactly: it has multiplicity 24p, Frobenius number 54p-1, conductor 54p, genus 38p-1, embedding dimension 12p, and Cohen-Macaulay type and reduced type 10p. It has maximal reduced type, is not almost symmetric, and its completed semigroup ring is not almost Gorenstein. The rigid ideal is not reflexive over its endomorphism ring; adjacent Ext and Tor obstruction groups are nonzero.</p><p>The trace of the ideal, the trace of its endomorphism ring, and the conductor of the finite birational extension are equal. Their common value ideal is computed exactly, with length(R/(R:E))=length(E/R)=p+1. Version 0.06 identifies the equality of these two lengths as general one-dimensional Gorenstein local duality and restricts the family-specific claim to the exact common ideal and the value p+1. It further proves that the conductor is nonstable and computes length(T^2/t^(4s)T)=14p. Version 0.07 determines the entire conductor reduction sequence: t^(4s)R is a minimal reduction of exact reduction number four, the successive quotient lengths are 23p-1, 14p, 2p, 1, 0, and the Hilbert-Samuel coefficients are e0=24p and e1=39p. Version 0.08 proves that the conductor tangent cone has depth zero: the complete Valabrega-Valla module is concentrated in one degree with length p. Its Hilbert series is computed exactly, and its numerator has only positive coefficients despite failure of Cohen-Macaulayness. Version 0.09 proves that the complete zeroth local cohomology is k^p in degree zero and is annihilated by the full homogeneous maximal ideal. Thus the tangent cones are Buchsbaum but not Cohen-Macaulay with unbounded Buchsbaum invariant p; their quotients by finite-length torsion are Cohen-Macaulay with an exact Hilbert series. Version 0.10 determines the complete graded module over the polynomial Noether normalization induced by the minimal reduction: a rank-24p free part with explicit shifts plus p exponent-one torsion summands. It gives the complete minimal resolution, projective dimension one, regularity four, top-local-cohomology a-invariant three, and length(G/xG)=25p=e0+I. Version 0.11 proves T^2=mT and identifies the conductor special fiber canonically with the tangent cone modulo its complete zeroth local cohomology. The fiber cone is Cohen-Macaulay of type 10p+1, but its Artinian socle occurs in degrees two and four, so it is neither level nor Gorenstein. Version 0.12 determines the complete defining ideal of this special fiber: 50p^2-17p minimal quadrics and the single additional cubic X_0^2 X_(3p)-X_p^3. Thus its relation type is three and it is not Koszul. The all-parameter component calculation is exact Presburger verification with a separately encoded graph audit and an explicitly disclosed solver trust boundary. Version 0.13 determines exact edges of the minimal resolution over the full 10p-variable presentation ring: projective dimension 10p-1, regularity four, beta_(2,3)=2p(500p^2-330p+31)/3, the complete last row, beta_(10p-2,10p+2)=8p, and canonical-module generators in degrees -1 and -3. Version 0.14 determines the first interior strand: beta_(2,4)=8p with complete multiplicity-free multigraded support, and beta_(3,4)=p(5p-1)(500p^2-440p+47)/2. Relative squarefree-divisor complexes, an integral unit matching, an exact colon computation, and a minimal mapping cone prove the result in every characteristic. The remaining interior Betti table remains open. Failed overbroad predictions and budget-only attempts remain preserved. Exact campaigns and independent audits support, but do not replace, the symbolic reductions.</p><p>The results remain confined to numerical semigroup rings and two-generated monomial ideals. They do not classify arbitrary modules or arbitrary one-dimensional Gorenstein domains. Code, compact artifacts, verdicts, symbolic proofs, and verification instructions: https://github.com/fsantibanezleal/CAOS_RESEARCH.</p>",
     "keywords": [
       "Huneke-Wiegand conjecture",
       "numerical semigroups",
@@ -19,6 +19,32 @@
       "Frobenius number",
       "counterexample minimality",
       "minimum-layer classification",
+      "infinite counterexample family",
+      "endomorphism rings",
+      "pseudo-Frobenius numbers",
+      "reduced type",
+      "trace ideals",
+      "conductor ideals",
+      "associated graded rings",
+      "tangent cones",
+      "Buchsbaum rings",
+      "local cohomology",
+      "Noether normalization",
+      "fiber cones",
+      "special fiber rings",
+      "defining ideals",
+      "Koszul algebras",
+      "Cohen-Macaulay type",
+      "level algebras",
+      "graded Betti numbers",
+      "relative simplicial homology",
+      "squarefree divisor complexes",
+      "canonical modules",
+      "Castelnuovo-Mumford regularity",
+      "Valabrega-Valla modules",
+      "reflexivity",
+      "Ext and Tor",
+      "additive combinatorics",
       "commutative algebra",
       "proof-carrying computation",
       "SAT",
@@ -58,9 +84,79 @@
         "relation": "cites",
         "identifier": "10.1080/00927872.2024.2362934",
         "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2510.02210v2",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2306.17069v1",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/s13348-026-00515-0",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1007/s00013-022-01764-8",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/2212.09087v1",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1017/S0305004100029194",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1017/S0027763000018225",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1080/00927870802116521",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1216/JCA-2011-3-2-147",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1016/j.jalgebra.2007.02.044",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1142/S0218196724500437",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/0906.0911",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.1016/S0022-4049(97)00051-0",
+        "resource_type": "publication-article"
+      },
+      {
+        "relation": "cites",
+        "identifier": "https://arxiv.org/abs/1801.00153",
+        "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.02",
+    "version": "0.14",
     "language": "eng"
   }
 }

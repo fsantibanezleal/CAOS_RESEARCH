@@ -12,10 +12,10 @@
 \definecolor{linknavy}{RGB}{25,55,125}
 \usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
 \hypersetup{
-  pdftitle={Frobenius Minimality and Minimum-Layer Uniqueness of the Huneke--Wiegand Counterexample},
+  pdftitle={Frobenius Minimality, Minimum-Layer Uniqueness, and an Infinite Family of Huneke--Wiegand Counterexamples},
   pdfauthor={Felipe Santibanez-Leal},
-  pdfsubject={Certified Frobenius-minimality and minimum-layer classification for a two-generated monomial-ideal counterexample},
-  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, SAT, DRAT, computer-assisted proof}
+  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, conductor, tangent-cone, fiber-cone, defining-ideal, and syzygy anatomy},
+  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, trace ideals, conductors, associated graded rings, tangent cones, fiber cones, defining ideals, graded Betti numbers, relative simplicial homology, squarefree divisor complexes, canonical modules, Koszul algebras, Buchsbaum rings, Cohen-Macaulay rings, SAT, DRAT}
 }
 \usepackage{orcidlink}
 \usepackage{fancyhdr}
@@ -32,22 +32,22 @@
 \newcommand{\kfield}{\Bbbk}
 \newcommand{\one}{\mathbf{1}}
 
-\title{Frobenius Minimality and Minimum-Layer Uniqueness\\
-of the Huneke--Wiegand Counterexample}
+\title{Frobenius Minimality, Minimum-Layer Uniqueness,\\
+and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-02\\[2pt]\normalsize Version 0.02}
+\date{2026-08-19\\[2pt]\normalsize Version 0.14}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Frobenius Minimality and Uniqueness \textperiodcentered\ v0.02}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.14}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Frobenius Minimality and Uniqueness \textperiodcentered\ v0.02}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.14}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,20 +63,34 @@ of the Huneke--Wiegand Counterexample}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.02 \textperiodcentered\ 2026-08-02\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ this version: \href{https://doi.org/10.5281/zenodo.21764868}{10.5281/zenodo.21764868}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.14 \textperiodcentered\ 2026-08-19\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22013515}{10.5281/zenodo.22013515}\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
-verified it. This paper contributes certified Frobenius-minimality and minimum-layer uniqueness.
+verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
+separate explicit infinite family, and its uniform endomorphism, type, trace, conductor, stability,
+reduction, tangent-cone, fiber-cone, defining-ideal, and syzygy anatomy.
 }}
 \end{center}
+
+% Reassert the manuscript page styles after \maketitle, which can reset the
+% class plain style on later output pages.
+\pagestyle{fancy}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyhead[L]{\small CAOS Research Preprint}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.14}%
+  \fancyfoot[C]{\small \thepage}%
+  \renewcommand{\headrulewidth}{0.4pt}%
+}
 
 \begin{abstract}
 Son Pham publicly identified a counterexample to the Huneke--Wiegand conjecture in the class of
 two-generated monomial ideals over symmetric numerical semigroup rings, subsequently verified by
-Professor Craig Huneke. We preserve that discovery priority and answer a different question: what
-is the least Frobenius number at which such a counterexample can occur? We prove by proof-carrying
-exact computation that the answer is $181$, attained by Pham's semigroup at ideal shift $14$.
+Professor Craig Huneke. We preserve that discovery priority and answer two different questions:
+how small can such an example be, and does the same semigroup/ideal class contain an explicit
+infinite family? We prove by proof-carrying exact computation that the least Frobenius number is
+$181$, attained by Pham's semigroup at ideal shift $14$.
 First, an implementation of the complete Blanco--Rosales tree exhausts all $48{,}954$ symmetric
 semigroups with Frobenius number below $69$ and all $1{,}503{,}391$ associated gap cases. An
 independent Boolean route checks $1{,}156$ fixed-pair UNSAT certificates for the same range. We then
@@ -90,7 +104,75 @@ object-level cross-check on another $79{,}790$ semigroups and $2{,}933{,}163$ ga
 projected enumeration proves that shift $14$ is the only feasible shift at $F=181$ and that the
 public membership vector is the only semigroup there. Both terminal DRAT proofs are freshly
 rechecked in an independent 12-file audit. Thus Pham's pair is the unique normalized pair attaining
-the Frobenius minimum in this class. The result does not classify higher Frobenius values or
+the Frobenius minimum in this class. Finally, for every integer $p\ge4$ we construct a symmetric
+numerical semigroup $\Gamma_p$ of multiplicity $24p$, Frobenius number $78p-1$, conductor $78p$,
+and embedding dimension $11p$, for which
+$I_p=(t^{24p},t^{30p})$ is nonprincipal and rigid. This family theorem is deductive: seven exact
+interval-sum identities prove closure, symmetry, and $D_s=E_s+E_s$; a finite sweep through
+$p=300$ and an independently implemented audit are supporting checks. For every family member we
+also determine the value semigroup of the endomorphism ring exactly. It has multiplicity $24p$,
+Frobenius number $54p-1$, conductor $54p$, genus $38p-1$, and embedding dimension $12p$.
+It is nonsymmetric, and the endomorphism ring is strictly larger than the original ring. Recent
+endomorphism-center criteria then show uniformly that the ideal remains rigid over its
+endomorphism ring but is not reflexive there, with the adjacent Ext and Tor obstruction groups
+nonzero. We further prove that this endomorphism semigroup has Cohen--Macaulay type and reduced
+type $10p$, hence maximal reduced type, and that its completed semigroup ring is not almost
+Gorenstein. Finally, the traces of the ideal and its endomorphism ring both equal the conductor of
+the finite birational extension. We determine that common value ideal exactly and prove the
+identity
+\[
+\ell_{R_p}(R_p/(R_p:E_p))=\ell_{R_p}(E_p/R_p)=p+1.
+\]
+The equality of the two lengths is a general consequence of one-dimensional Gorenstein local
+duality, while the exact common ideal and its value $p+1$ are the family-specific data. We further
+prove that this conductor is nonstable and compute its complete one-step stability defect:
+\[
+\ell_{R_p}(T_p^2/t^{4s}T_p)=14p.
+\]
+The full reduction sequence is also exact: $t^{4s}R_p$ is a minimal reduction of $T_p$ with
+reduction number four, successive Sally-quotient lengths
+$23p-1,14p,2p,1,0$, and Hilbert--Samuel coefficients $e_0(T_p)=24p$ and $e_1(T_p)=39p$.
+The associated graded ring of $T_p$ nevertheless has depth zero: its complete
+Valabrega--Valla module is concentrated in one degree, where it has length $p$. We compute
+the exact Hilbert series and show that its numerator has only positive coefficients despite this
+failure of Cohen--Macaulayness. We then determine the complete zeroth local cohomology: it is
+$k^p$, concentrated in degree zero and annihilated by the full homogeneous maximal ideal. Hence
+the tangent cone is Buchsbaum but not Cohen--Macaulay, with unbounded Buchsbaum invariant $p$;
+its quotient by the finite-length torsion is Cohen--Macaulay with an exact Hilbert series. Over the
+polynomial Noether normalization induced by the minimal reduction, we determine the entire graded
+module: the torsion consists of $p$ exponent-one cyclic summands, while the free quotient has rank
+$24p$ and explicit shifts. This yields the complete minimal resolution, projective dimension one,
+regularity four, top-local-cohomology $a$-invariant three, and the exact parameter-section identity
+$\ell(G_p/x_pG_p)=25p=e_0(T_p)+I(G_p)$. Finally, the exact identity
+$T_p^2=\mathfrak m_pT_p$ identifies the special fiber canonically with
+$G_p/H^0(G_p)$. It is Cohen--Macaulay of type $10p+1$, but its Artinian socle lies in degrees two
+and four, so it is neither level nor Gorenstein. We then determine its defining ideal: in the
+polynomial ring on its $10p$ minimal degree-one generators, it has exactly $50p^2-17p$ minimal
+quadrics and the single additional cubic $X_0^2X_{3p}-X_p^3$, with no other minimal equation.
+Thus its relation type is three and it is not Koszul. The all-parameter component calculation is
+an exact Presburger verification, supported by a separately encoded graph audit; its solver trust
+boundary is stated explicitly. From the same exact h-vector, Artinian socle, and first Betti row,
+we then determine the homological edges over the full presentation ring. Its projective dimension
+is $10p-1$, its regularity is four,
+\[
+\beta_{2,3}=\frac{2p(500p^2-330p+31)}{3},
+\]
+the complete last row has ranks $10p$ in shift $c+2$ and one in shift $c+4$ for
+$c=10p-1$, and $\beta_{c-1,c+3}=8p$. The canonical module has $10p$ minimal generators in
+degree $-1$ and one in degree $-3$. We then determine the first previously unknown interior
+strand. With the offset grading $\deg X_a=(1,a)$,
+\[
+\beta_{2,4}=8p,
+\qquad
+\beta_{3,4}=\frac{p(5p-1)(500p^2-440p+47)}{2},
+\]
+and the $8p$ second syzygies occur with multiplicity one exactly at offsets
+$\{3p+a:a\in\mathcal E_{p,1},\ a\ge6p\}$. Relative squarefree-divisor chains and an integral
+unit matching give the upper bound; an exact quadratic colon and minimal mapping cone give the
+matching lower bound. Thus the formulas hold over every field. This determines one interior
+strand, not the remaining Betti table.
+The results remain confined
+to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
 \end{abstract}
 
@@ -111,7 +193,8 @@ independent verification archived with the public candidate record. That example
 number $181$. The discovery settles the original conjecture negatively, but does not by itself say
 whether $181$ is small, minimal, or typical.
 
-This paper reports a computer-assisted minimality theorem. Claims are labeled \textbf{[MV]} when
+This paper reports computer-assisted classification theorems and a deductive family theorem.
+Claims are labeled \textbf{[MV]} when
 they are verified by exact machine computation and independently checked artifacts, and
 \textbf{[D]} when derived in the text. No conjectural claim is needed for the main theorem.
 
@@ -130,6 +213,36 @@ they are verified by exact machine computation and independently checked artifac
   \item We identify two structural boundaries: the public semigroup lies outside the generalized
   arithmetic-sequence positive family, and the visible fixed-offset generator blocks do not extend
   to a naive parametric family.
+  \item We use the failed fixed-width ansatz to derive and prove an explicit infinite family for
+  every integer $p\ge4$, with a separate exact implementation and independent audit.
+  \item We compute the endomorphism overring of every family member and prove that the
+  nonreflexive Ext/Tor escape identified in the public seed persists uniformly.
+  \item We compute the complete pseudo-Frobenius set of every endomorphism semigroup, proving
+  unbounded maximal reduced type and a uniform non-almost-Gorenstein boundary.
+  \item We compute both trace ideals and the conductor exactly, obtaining a common ideal whose
+  colength equals the birational extension length, namely $p+1$.
+  \item We separate that general duality balance from the family-specific calculation, prove that
+  the common conductor is nonstable, and compute its exact stability defect $14p$.
+  \item We determine every later power of the conductor, proving reduction number four, the full
+  Sally-quotient profile, and Hilbert--Samuel coefficients $(e_0,e_1)=(24p,39p)$.
+  \item We prove that the conductor tangent cone has depth zero, determine its unique
+  Valabrega--Valla defect of length $p$, and compute its coefficientwise-positive Hilbert
+  numerator exactly.
+  \item We identify that defect with the complete zeroth local cohomology, prove that the full
+  homogeneous maximal ideal annihilates it, and obtain a Buchsbaum non-Cohen--Macaulay family with
+  unbounded Buchsbaum invariant $p$ and an exact Cohen--Macaulay quotient series.
+  \item We determine the complete graded module over the minimal-reduction Noether normalization,
+  its minimal resolution and Betti numbers, regularity four, $a$-invariant three, and the exact
+  parameter-section identity $\ell(G_p/x_pG_p)=25p=e_0(T_p)+I(G_p)$.
+  \item We prove $T_p^2=\mathfrak m_pT_p$, identify the conductor special fiber naturally with
+  $G_p/H^0(G_p)$, and compute its type $10p+1$ and nonlevel Artinian socle.
+  \item We determine the complete defining ideal of that special fiber: $50p^2-17p$ minimal
+  quadrics and one primitive cubic, giving relation type three and a non-Koszul family.
+  \item We determine exact homological edges over its full presentation ring: projective
+  dimension and regularity, the linear first-syzygy count, the complete last row, one penultimate
+  extremal entry, and the canonical-module generator degrees.
+  \item We determine the first interior Betti strand over every field: $\beta_{2,4}=8p$ with
+  complete multiplicity-free offset support, and the resulting exact formula for $\beta_{3,4}$.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -336,9 +449,7 @@ Let $x_1,\ldots,x_k$ be distinct Boolean variables with complete assignment $a$.
 is false exactly on assignment $a$. Its truth is independent of every variable outside the
 projection.
 \end{lemma}
-\clearpage
 \begin{proof}
-\thispagestyle{fancy}
 Every displayed literal is false under $a$. Any other complete assignment differs at some
 coordinate $j$, where the corresponding displayed literal is true. Variables absent from the
 clause cannot affect either statement.
@@ -420,7 +531,7 @@ Total & 79,790 & 2,933,163 & 0 & 1,035.68\\
 This is not needed to trust a DRAT derivation, but it attacks the custom encoding at the object
 level and supplies explicit failed-rigidity witnesses for every tested gap. The routes agree.
 
-\section{Structural boundaries and a failed family ansatz}
+\section{From a failed ansatz to an infinite family}
 
 Landeros et al. prove the positive result for semigroups generated by a generalized arithmetic
 sequence $\langle a,ah+d,\ldots,ah+kd\rangle$ \cite{Landeros2024}. The public semigroup cannot lie
@@ -438,15 +549,1339 @@ among even $s\le100$. At $s=16$, the generated semigroup has $F=205$ rather than
 $s=28$ the predicted Frobenius value returns but symmetry fails. This negative result prevents the
 minimality theorem from being overinterpreted as evidence of an immediate family.
 
-\section{Reproducibility and trust boundary}
+We next retained only the structural scaffold $m=4s$, $F=13s-1$, the full interval
+$[5s,6s-1]\subseteq\Gamma$, and rigidity at shift $s$. A proof-carrying Boolean search certifies
+that the scaffold is infeasible at $s=16,18$ and returns independently validated models for every
+even $s=20,22,\ldots,40$ \textbf{[MV]}. The eleven non-seed models justified a separate extraction
+stage, but did not themselves prove recurrence. The first fixed-width interval formula passed
+three parameters and then failed: at $s=38$, $9s+7$ lies in $D_s$ but not in $E_s+E_s$. For every
+later parameter in that formula, carried sums from the first block end at residue $6$, while the
+next summand block begins at residue at least $8$. This uniform obstruction suggests widening the
+first interval with the parameter.
+
+\subsection{The parametric blocks}
+
+Fix an integer $p\ge4$ and put $s=6p$. All intervals below are integer intervals. Define subsets
+of $[0,s-1]$ by
+\begin{align*}
+A_p&=[0,p]\cup[3p,4p-2],\\
+B_p&=\bigl([p+1,3p-1]\setminus\{2p-1\}\bigr)
+      \cup\{4p\}\cup[5p-1,6p-1],\\
+C_p&=[0,2p]\cup[3p,5p-2].
+\end{align*}
+Define $\Gamma_p\subseteq\N$ by the membership blocks
+\begin{equation}\label{eq:familyblocks}
+\{0\},\quad 4s+A_p,\quad [5s,6s-1],\quad 6s+B_p,\quad
+8s+C_p,\quad[9s,13s-2],\quad[13s,\infty),
+\end{equation}
+with every unlisted nonnegative integer below $13s$ a gap.
+
+For subsets of $[0,s-1]$, let $\operatorname{low}(X+Y)$ denote the sums below $s$, and let
+$\operatorname{carry}(X+Y)$ denote the sums at least $s$ after subtraction of $s$.
+
+\begin{lemma}[Residue identities, {[D]}]\label{lem:residues}
+For every $p\ge4$,
+\begin{align*}
+\operatorname{low}(A_p+A_p)&=C_p,&
+\operatorname{carry}(A_p+A_p)&=[0,2p-4],\\
+\operatorname{low}(A_p+B_p)&=[p+1,6p-1],&
+\operatorname{carry}(A_p+B_p)&=[0,4p-3],\\
+\operatorname{low}(B_p+B_p)&=[2p+2,6p-2],&
+\operatorname{carry}(B_p+B_p)&=[0,6p-2],\\
+\operatorname{low}(A_p+C_p)&=[0,6p-2].&&
+\end{align*}
+Moreover,
+\begin{align}
+[0,2p-4]\cup[p+1,6p-1]&=[0,6p-1],\label{eq:join1}\\
+[0,4p-3]\cup[2p+2,6p-2]&=[0,6p-2].\label{eq:join2}
+\end{align}
+\end{lemma}
+\begin{proof}
+Split $A_p$ into its two displayed intervals and split the punctured component of $B_p$ at
+$2p-1$. Pairwise interval addition, followed by separating sums below and above $s=6p$, gives the
+seven displayed identities. The singleton $4p$ fills the endpoint removed from the middle of
+$B_p$. All interval joins are immediate except~\eqref{eq:join1}: its two pieces meet exactly when
+$2p-3\ge p+1$, equivalently $p\ge4$. For~\eqref{eq:join2}, the overlap condition is
+$4p-2\ge2p+2$, which also holds for $p\ge4$.
+\end{proof}
+
+\begin{theorem}[Infinite family, {[D]}]\label{thm:family}
+For every integer $p\ge4$, the set $\Gamma_p$ in~\eqref{eq:familyblocks} is a symmetric numerical
+semigroup with multiplicity $24p$, Frobenius number $78p-1$, conductor $78p$, and embedding
+dimension $11p$. Let
+\[
+R_p=\kfield[t^{\Gamma_p}]_{(t^n:n\in\Gamma_p\setminus\{0\})},\qquad
+I_p=(t^{24p},t^{30p})R_p.
+\]
+Then $R_p$ is Gorenstein and $I_p$ is nonprincipal and rigid. Hence the pairs $(R_p,I_p)$ form an
+infinite family of counterexamples in the two-generated monomial-ideal class.
+\end{theorem}
+\begin{proof}
+We first prove the semigroup assertions. The only sums of positive displayed members that can stay
+below the conductor have starting levels among $4,5,6,8$. Lemma~\ref{lem:residues} handles the
+non-full target blocks: $A_p+A_p$ produces $8s+C_p$ and part of level $9$;
+$A_p+B_p$, $B_p+B_p$, and $A_p+C_p$ land exactly inside the declared high blocks and never produce
+the Frobenius residue $s-1$ in level $12$. Sums involving the full level $5$ block either fill a
+declared level or enter the conductor tail. Thus $\Gamma_p$ is closed.
+
+Conversely, the lower three blocks generate every displayed member. The identity
+$\operatorname{low}(A_p+A_p)=C_p$ generates level $8$. The presence of $0\in A_p$ makes
+$(4s+A_p)+[5s,6s-1]$ fill level $9$, and two level-$5$ elements fill level $10$ and residues
+$0,\ldots,s-2$ of level $11$; the residue $s-1\in B_p$ fills the remaining point. Three elements
+from $4s+A_p$ generate residues $0,\ldots,3p$ of level $12$, while
+$\operatorname{low}(B_p+B_p)=[2p+2,s-2]$ completes that level through $13s-2$.
+Adding $4s$ to $[9s,13s-2]$ gives $[13s,17s-2]$, and
+$(4s+1)+(13s-2)=17s-1$. These are $4s$ consecutive generated integers, so repeated addition of
+the multiplicity gives the entire tail.
+
+Therefore the multiplicity is $4s=24p$, the conductor is $13s=78p$, and the Frobenius number is
+$13s-1=78p-1$. Every member of the three lower blocks lies below $7s$, whereas a sum of two
+positive members is at least $8s$; all are minimal generators. Since
+$|A_p|=2p$, $|B_p|=3p$, and the full block has size $6p$, the embedding dimension is $11p$.
+
+Symmetry is blockwise about $F=13s-1$. The residue-reflection complement of $A_p$ is exactly
+$C_p$. The full level-$5$ block reflects to the empty level-$7$ block. In $B_p$, exactly one
+residue from each pair $\{r,s-1-r\}$ occurs: the puncture $2p-1$ pairs with the singleton $4p$,
+and the remaining displayed intervals pair with their omitted intervals. The gaps below $4s$
+reflect to the full range $[9s,13s-2]$, and $0$ reflects to the gap $F$. Hence $\Gamma_p$ is
+symmetric, so $R_p$ is Gorenstein.
+
+It remains to prove rigidity. Normalize $I_p$ to $J_p=(1,t^s)$ and use $E_s,D_s$ from
+Section~2. Direct inspection of~\eqref{eq:familyblocks} gives the nontrivial residue layers
+\begin{align*}
+E_4&=A_p, & E_5&=B_p, & E_8&=C_p,\\
+E_9=E_{10}&=[0,s-1], & E_{11}=E_{12}&=[0,s-2],\\
+D_8&=C_p, & D_9&=[0,s-1],\\
+D_{10}=D_{11}=D_{12}&=[0,s-2].
+\end{align*}
+All lower $D$ layers are empty; in particular $D_4$ is empty because $A_p\cap B_p=\varnothing$.
+Lemma~\ref{lem:residues} and~\eqref{eq:join1}--\eqref{eq:join2} compute the five load-bearing
+layers of $E_s+E_s$:
+\[
+D_8=\operatorname{low}(A_p+A_p),\quad
+D_9=\operatorname{carry}(A_p+A_p)\cup\operatorname{low}(A_p+B_p),
+\]
+\[
+D_{10}=\operatorname{carry}(A_p+B_p)\cup\operatorname{low}(B_p+B_p),\quad
+D_{11}=\operatorname{carry}(B_p+B_p),\quad
+D_{12}=\operatorname{low}(A_p+C_p).
+\]
+At levels $13$ and $14$, the zero residue in $A_p$ translates full high $E$ blocks. At levels
+$15$ and $16$, those high blocks omit only $s-1$, and the residues $0,1\in A_p$ fill both the
+interval and its final endpoint. Level $17$ is filled by $E_4+E_{13}$; levels $18$, $19$, and
+$20$ by $E_9+E_9$, $E_9+E_{10}$, and $E_{10}+E_{10}$; and level $21$ by
+$E_8+E_{13}$ because $0\in C_p$. Every level from $22$ onward is filled by
+$E_9+E_{q}$ with $q\ge13$, where the conductor makes $E_q$ full. Thus
+$D_s\subseteq E_s+E_s$; Lemma~\ref{lem:auto} gives equality.
+
+Finally, $s$ is a gap. If $J_p$ were principal, write $J_p=xR_p$. Since $1\in J_p$, there is
+$r\in R_p$ with $xr=1$, so $rJ_p=R_p$ and $(r,rt^s)=R_p$. In the local ring, one of these two
+generators must be a unit. Positive valuation excludes $rt^s$, so $r$ is a unit and
+$t^s\in R_p$, a contradiction. The ideal is therefore nonprincipal and rigid.
+The multiplicities $24p$ are distinct, so the family contains infinitely many distinct rings.
+\end{proof}
+
+\subsection{Exact support and boundaries}
+
+The proof of Theorem~\ref{thm:family} is independent of a finite sweep. As adversarial support, the
+implementation evaluated every $p=2,3,\ldots,300$ \textbf{[MV]}. Exactly the predicted boundary
+values $p=2,3$ fail, while all $297$ values $p\ge4$ pass the seven identities, closure, generation,
+symmetry, invariants, and full-window/tail rigidity. The instances $p=4,5$ reproduce independently
+generated Boolean models byte-for-byte. Two corrupted positive controls are rejected. A separate
+auditor reconstructs all $297$ positive membership hashes from the formula and performs fresh
+semantic checks at $p=4,5,17,73,151,300$. The campaign aggregate is
+\[
+\texttt{81d5a8eb6cf2e848807323e3b0bdba58c464779d25cdc788cef027585540dce2}.
+\]
+The independent-audit aggregate is
+\[
+\texttt{eb2aaf17650ed99f4e220a43c53bdd8835c82688a37567bb154c30a1ae520ce9}.
+\]
+
+The family remains outside the generalized-arithmetic-sequence positive class \textbf{[D]}.
+Membership of $4s+1$ forces unit step, while membership of $4s+3p$ would then force the actual gap
+$4s+p+1$. Theorem~\ref{thm:family} does not say that every model in the Boolean scaffold belongs
+to this family, or that $p=4$ is a global threshold outside the displayed formula.
+
+\section{Uniform endomorphism overrings}
+
+Normalize $I_p$ to $J_p=(1,t^s)$ and write
+\[
+V_p=v(J_p)=\Gamma_p\cup(s+\Gamma_p),\qquad
+\Lambda_p=v(\operatorname{End}_{R_p}(J_p)).
+\]
+Define
+\[
+Q_p=[p+1,2p-2]\cup\{2p,4p\}.
+\]
+
+\begin{theorem}[Uniform endomorphism anatomy, {[D]}]\label{thm:endomorphism}
+For every integer $p\ge4$,
+\[
+\Lambda_p=\Gamma_p\cup(7s+Q_p)\cup\{13s-1\}.
+\]
+This numerical semigroup has multiplicity $24p$, Frobenius number $54p-1$, conductor $54p$,
+genus $38p-1$, and embedding dimension $12p$. It is nonsymmetric, so the localized semigroup ring
+$E_p=\operatorname{End}_{R_p}(J_p)$ is not Gorenstein. Moreover,
+\begin{align*}
+\operatorname{Ext}^1_{E_p}(J_p,J_p)&=0,
+&J_p&\text{ is not reflexive over }E_p,\\
+\operatorname{Ext}^1_{E_p}(J_p,E_p)&\ne0,
+&\operatorname{Ext}^2_{E_p}(J_p,J_p)&\ne0,\\
+\operatorname{Tor}^{R_p}_1(J_p,E_p)&\ne0.&&
+\end{align*}
+\end{theorem}
+\begin{proof}
+Let $G_k$ and $V_k$ denote the residue sets at levels $ks$ in $\Gamma_p$ and $V_p$,
+respectively. From~\eqref{eq:familyblocks},
+\[
+V_0=V_1=\{0\},\quad V_2=V_3=\varnothing,\quad
+V_4=A_p,\quad V_5=V_6=[0,s-1],\quad V_7=B_p,\quad V_8=C_p,
+\]
+and $V_k=[0,s-1]$ for every $k\ge9$. An exponent $n=ks+r$ stabilizes $J_p$ exactly when both
+$n$ and $n+s$ belong to $V_p$. Thus the level-$k$ residue set of $\Lambda_p$ is
+$V_k\cap V_{k+1}$.
+
+All adjacent intersections reproduce the corresponding $\Gamma_p$ block except at level $7$ and
+the old Frobenius point. Directly,
+\[
+B_p\cap C_p
+=\bigl([p+1,2p]\setminus\{2p-1\}\bigr)\cup\{4p\}
+=Q_p.
+\]
+Every level from $9$ onward is full, so the only other added value is $13s-1$. This proves the
+formula for $\Lambda_p$.
+
+The first positive value remains $4s=24p$. Level $8$ still omits residue $s-1$, while level $9$
+and all later levels are full. Hence the Frobenius number is $9s-1=54p-1$ and the conductor is
+$9s=54p$. Counting gaps by levels gives
+\[
+(4s-1)+(s-|A_p|)+(s-|B_p|)+(s-|Q_p|)+(s-|C_p|)=38p-1.
+\]
+A symmetric semigroup with this Frobenius number would have genus $27p$, so $\Lambda_p$ is
+nonsymmetric.
+
+The $11p$ generators of $\Gamma_p$ and the $p$ new values $7s+Q_p$ all lie below twice the
+multiplicity, hence are minimal. For any $q\in Q_p$, the level-$5$ block contains
+$5s+(s-1-q)$ and
+\[
+(7s+q)+(5s+(s-1-q))=13s-1.
+\]
+Thus the old Frobenius point is generated and there are exactly $12p$ minimal generators.
+
+Finally, $R_p$ is a one-dimensional Gorenstein local domain and $J_p$ is faithful, torsion-free,
+two-generated, nonprincipal, and rigid by Theorem~\ref{thm:family}. The ring $E_p$ is commutative
+and is strictly larger than $R_p$ because $Q_p$ is nonempty. Proposition 4.1(2) of Dey and Lyle
+makes rigidity descend to $E_p$; the contrapositives of their Theorems 4.2--4.4 give the displayed
+nonreflexivity, Ext, and Tor conclusions \cite{DeyLyle2025}.
+\end{proof}
+
+The symbolic argument is independent of a parameter sweep. As adversarial support, two exact
+implementations agree for every $p=4,\ldots,300$ \textbf{[MV]}. A separate auditor rehashes all
+$297$ rows, reconstructs complete semantic windows at $p=4,5,17,73,151,300$, and rejects a missing
+$Q_p$ value and a missing terminal singleton. The deterministic campaign and audit aggregates are
+\[
+\texttt{e21926a689178a6c70b3b6e8319053edd0fd13f164ced9565d3b976e6159c0b0}
+\]
+and
+\[
+\texttt{2ed711045ad83a3b47fb3e71d4c75ae9bfa9be1a5dd9a8c4072d5f170510343b}.
+\]
+
+\section{Pseudo-Frobenius anatomy and reduced type}
+
+For a numerical semigroup $H$, write
+\[
+\operatorname{PF}(H)=\{f\notin H:f+h\in H\text{ for every }h\in H\setminus\{0\}\}.
+\]
+Its Cohen--Macaulay type is $|\operatorname{PF}(H)|$. For complements inside $[0,s-1]$, define
+\begin{align*}
+B_p^c&=[0,p]\cup\{2p-1\}\cup[3p,4p-1]\cup[4p+1,5p-2],\\
+Q_p^c&=[0,p]\cup\{2p-1\}\cup[2p+1,4p-1]\cup[4p+1,6p-1],\\
+C_p^c&=[2p+1,3p-1]\cup[5p-1,6p-1].
+\end{align*}
+
+\begin{theorem}[Type anatomy, {[D]}]\label{thm:type}
+For every integer $p\ge4$,
+\[
+\operatorname{PF}(\Lambda_p)
+=(6s+B_p^c)\cup(7s+Q_p^c)\cup(8s+C_p^c).
+\]
+Consequently the type and reduced type of $\kfield[[\Lambda_p]]$ are both $10p$. Thus the ring has
+maximal reduced type. The semigroup is not almost symmetric, and $\kfield[[\Lambda_p]]$ is not
+almost Gorenstein.
+\end{theorem}
+\begin{proof}
+The multiplicity of $\Lambda_p$ is $4s$ and its conductor is $9s$. Every gap in the final
+multiplicity window $[5s,9s-1]$ is therefore pseudo-Frobenius. Since level 5 is full, these gaps
+are precisely the complements of $B_p,Q_p,C_p$ at levels 6, 7, and 8. Their cardinalities are
+$3p,5p,2p$.
+
+It remains to exclude a pseudo-Frobenius number below $5s$. The full level-5 generator block gives
+explicit witnesses. For a gap $r$ at level 0 with $r>0$, add $5s+(s-r)$ to reach the level-6 gap
+of residue zero. At level 1, use $5s$ when $r=0$ and $5s+(s-r)$ otherwise. At levels 2 and 3,
+add $5s+(s-1-r)$ to reach residue $s-1$ in a missing later block.
+
+For a level-4 gap $4s+r$, if $r\notin C_p$ add the generator $4s$. The remaining residues lie in
+\[
+C_p\setminus A_p=[p+1,2p]\cup[4p-1,5p-2].
+\]
+In the first interval add $4s+(2p+1-r)$; in the second add $4s+(5p-1-r)$. Both added residues lie
+in $[1,p]\subset A_p$, while the resulting level-8 residue is a gap of $C_p$. Thus no lower gap
+is pseudo-Frobenius, proving the formula.
+
+Reduced type counts the gaps in the last multiplicity window, so it is also $10p$
+\cite{MaitraMukundan2023}. Finally, using $g(\Lambda_p)=38p-1$ and $F(\Lambda_p)=54p-1$,
+\[
+2g-(F+\operatorname{type})=12p-1>0.
+\]
+The almost-symmetric genus identity therefore fails, giving the final claims.
+\end{proof}
+
+Two exact implementations confirm the displayed set for all $p=4,\ldots,300$ \textbf{[MV]}.
+One checks every gap against the full minimal-generator set; the other extracts maximal elements
+of the Ap\'ery poset modulo $4s$. The campaign and independent-audit aggregates are
+\[
+\texttt{9bed38fb1c786c3740e000dde7ea7d79a7e7c83fa584ff12fc2c4623b5d503ec}
+\]
+and
+\[
+\texttt{0315c4c22c41e0d2b8a5abb27f717a4d4a6f7356ef30ca388206d739e0de2c37}.
+\]
+
+\section{Exact trace and conductor ideals}
+
+Let $E_p=\operatorname{End}_{R_p}(J_p)=\kfield[[\Lambda_p]]$ and define the reflected block
+\[
+H_p=(s-1)-Q_p=\{2p-1,4p-1\}\cup[4p+1,5p-2].
+\]
+
+\begin{theorem}[Exact trace and conductor, {[D]}]\label{thm:trace}
+For every integer $p\ge4$,
+\[
+\operatorname{tr}_{R_p}(J_p)=R_p:E_p=\operatorname{tr}_{R_p}(E_p)=T_p,
+\]
+where
+\begin{align*}
+v(T_p)={}&(4s+A_p)\cup(5s+(A_p\cup B_p))\cup(6s+B_p)\cup(8s+C_p)\\
+&\cup[9s,13s-2]\cup[13s,\infty).
+\end{align*}
+Moreover,
+\[
+\ell_{R_p}(R_p/T_p)=\ell_{R_p}(E_p/R_p)=p+1.
+\]
+\end{theorem}
+\begin{proof}
+Because $1\in J_p$,
+\[
+v(R_p:J_p)=W_p=\{n\in\Gamma_p:n+s\in\Gamma_p\}.
+\]
+Intersecting adjacent blocks of~\eqref{eq:familyblocks} gives
+\[
+(W_4,W_5,W_6,W_7,W_8)=(A_p,B_p,\varnothing,\varnothing,C_p),
+\]
+with full blocks at levels 9 and 10, blocks $[0,s-2]$ at levels 11 and 12, and full blocks from
+level 13 onward. Since $W_p$ is a $\Gamma_p$-ideal,
+\[
+v(\operatorname{tr}_{R_p}(J_p))=W_p\cup(s+W_p),
+\]
+which is exactly the displayed set $v(T_p)$.
+
+For the conductor $R_p:E_p$, only the values in
+\[
+\Lambda_p\setminus\Gamma_p=(7s+Q_p)\cup\{13s-1\}
+\]
+add constraints. The terminal singleton excludes $n=0$ and imposes no condition on positive
+$n\in\Gamma_p$. Every value at level 4 passes the $7s+Q_p$ translates: a failure in the sole
+level-12 gap would require $a+q=2s-1$, but $a+q\le8p-2<12p-1$. At level 5, residue $r$ fails
+exactly when $r+q=s-1$ for some $q\in Q_p$, hence exactly when $r\in H_p$. All values from level 6
+onward translate into the conductor tail. Since
+\[
+[0,s-1]\setminus H_p=A_p\cup B_p,
+\]
+this proves $v(R_p:E_p)=v(T_p)$. The conductor is an $E_p$-ideal, so
+$\operatorname{tr}_{R_p}(E_p)=E_p(R_p:E_p)=R_p:E_p$.
+
+Relative to $\Gamma_p$, the common ideal omits exactly $\{0\}\cup(5s+H_p)$, giving colength
+$p+1$. The endomorphism formula gives exactly $p+1$ values in
+$\Lambda_p\setminus\Gamma_p$, proving the balanced identity.
+\end{proof}
+
+The equality of the two traces is consistent with the reflexive-trace criterion of
+Lindo--Maitra--Zhang \cite{LindoMaitraZhang2026}; over the present Gorenstein base it is not by
+itself discriminatory. The equality of the two lengths is also general structure, not a new
+family-specific mechanism. Indeed, applying $\operatorname{Hom}_{R_p}(-,R_p)$ to
+$0\to R_p\to E_p\to E_p/R_p\to0$ and using local duality gives
+\[
+\ell_{R_p}(R_p/(R_p:E_p))=\ell_{R_p}(E_p/R_p),
+\]
+as in Herzog--Kumashiro, Proposition~3.1, Claim~1 \cite{HerzogKumashiro2022}. The new
+family-specific data in Theorem~\ref{thm:trace} are the exact common ideal and the evaluation of
+both lengths as $p+1$.
+
+The first declared shorthand used the tail $[9s,\infty)$ and was refuted at $13s-1$ by the
+$p=4$ smoke check \textbf{[MV]}. That point is the Frobenius gap of $\Gamma_p$, so no $R_p$-ideal
+can contain it. The corrected formula above was then checked by two exact routes for all
+$p=4,\ldots,300$, with independent reconstruction at six parameters and three rejected
+corruptions. The campaign and audit aggregates are
+\[
+\texttt{77448398a26b958c66818b7ac4aaa4b542bad11cdba5ec7c8f7fe76db37526e2}
+\]
+and
+\[
+\texttt{d55ed876d7918cb4c46d8e5f3894a508d172693bde4b4c76cb67c42fcfbf0ac1}.
+\]
+
+\section{\texorpdfstring{\enspace}{}Exact conductor-stability defect}
+
+Dey proves that for a finite birational extension $R\subseteq S$ of a one-dimensional
+Gorenstein local ring, the conductor $R:S$ is stable if and only if $S$ is Gorenstein
+\cite[Corollary~3.7]{Dey2022}. Theorem~\ref{thm:type} gives
+$\operatorname{type}(E_p)=10p>1$, so this criterion already shows that $T_p=R_p:E_p$ is
+nonstable. The following computation quantifies that failure.
+
+\begin{theorem}[Exact stability defect, {[D]}]\label{thm:stability}
+For every integer $p\ge4$,
+\[
+v(T_p^2)=(8s+C_p)\cup[9s,13s-2]\cup[13s,\infty).
+\]
+Moreover,
+\begin{align*}
+v(T_p^2)\setminus v(t^{4s}T_p)={}&
+8s+\bigl([p+1,2p]\cup[4p-1,5p-2]\bigr)\\
+&\cup9s+\bigl(\{2p-1,4p-1\}\cup[4p+1,5p-2]\bigr)\\
+&\cup10s+\bigl([0,p]\cup\{2p-1\}\cup[3p,4p-1]
+                 \cup[4p+1,5p-2]\bigr)\\
+&\cup11s+[0,s-1]\\
+&\cup12s+\bigl([2p+1,3p-1]\cup[5p-1,s-2]\bigr)\\
+&\cup\{17s-1\}.
+\end{align*}
+Consequently,
+\[
+\ell_{R_p}(T_p^2/t^{4s}T_p)=14p.
+\]
+\end{theorem}
+\begin{proof}
+Put $D=[0,s-1]$, $D^-=[0,s-2]$, and $U_p=A_p\cup B_p$. For residue sets $X,Y\subseteq D$,
+write $L(X,Y)$ for sums below $s$ and $H(X,Y)$ for sums at least $s$, translated by $-s$.
+Expanding the defining sets into integer intervals and using
+$[a,b]+[c,d]=[a+c,b+d]$ gives
+\begin{align*}
+L(A_p,A_p)&=C_p,\\
+H(A_p,A_p)\cup L(A_p,U_p)&=D,\\
+H(A_p,U_p)\cup L(A_p,B_p)\cup L(U_p,U_p)&=D,\\
+H(A_p,B_p)\cup H(U_p,U_p)\cup L(U_p,B_p)&=D,\\
+H(U_p,B_p)\cup L(B_p,B_p)\cup L(A_p,C_p)&=D^-.
+\end{align*}
+These five identities list all contributions, with carries, to levels $8$ through $12$ of
+$T_p^2$. They give $(8s+C_p)\cup[9s,13s-2]$ and exclude the inherited gap $13s-1$.
+Multiplication by the least value $4s$ covers $[13s,17s-2]\cup[17s,\infty)$, while
+\[
+17s-1=(4s+1)+(13s-2)
+\]
+fills the intervening endpoint. This proves the square formula.
+
+Shifting Theorem~\ref{thm:trace} by $4s$ and subtracting its blocks from the square gives the
+displayed defect. The six block cardinalities are $2p,p,3p,6p,2p-1,1$, whose sum is $14p$.
+\end{proof}
+
+The first EXP-015 prediction incorrectly replaced the two tail intervals by $[9s,\infty)$.
+The $p=4$ smoke gate refuted it at $13s-1$ before a campaign artifact was written
+\textbf{[MV]}. EXP-016 retained that gap, proved the corrected formula above, and checked two exact
+routes for all $p=4,\ldots,300$. Its campaign and independent-audit aggregates are
+\[
+\texttt{8c280bf1db017f678896d473461ae245b4fce57d680be94094b0884556d91853}
+\]
+and
+\[
+\texttt{ce4ded03761eb44cba766eafb46926c8ca83d0f7f49a26697afed5ed49905653}.
+\]
+
+\section{\texorpdfstring{\enspace}{}Conductor reduction number and Hilbert data}
+
+For an ideal $I$, a subideal $Q$ is a \emph{reduction} when $I^{r+1}=QI^r$ for some $r$;
+the least such $r$ is the reduction number with respect to $Q$ \cite{NorthcottRees1954}.
+
+\begin{theorem}[Exact conductor reduction sequence, {\bf[D]}]\label{thm:reduction}
+For every integer $p\ge4$, put $Q_p=t^{4s}R_p\subset T_p$. Then $Q_p$ is a minimal reduction of
+$T_p$ with reduction number four. More precisely,
+\[
+\begin{array}{c|ccccc}
+n&0&1&2&3&n\ge4\\ \hline
+\ell_{R_p}(T_p^{n+1}/Q_pT_p^n)&23p-1&14p&2p&1&0.
+\end{array}
+\]
+The Hilbert--Samuel function satisfies
+\[
+\ell_{R_p}(R_p/T_p^n)=24pn-39p\qquad(n\ge4),
+\]
+and consequently $e_0(T_p)=24p$ and $e_1(T_p)=39p$.
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{thm:stability} supplies the square. The residue identity
+$\operatorname{low}(A_p+C_p)=[0,s-2]$ then gives
+\[
+v(T_p^3)=[12s,13s-2]\cup[13s,\infty).
+\]
+Adding $4s+A_p$ fills $[16s,17s-2]$ and the tail from $17s$; because $1\in A_p$,
+$(4s+1)+(13s-2)=17s-1$ fills the intervening endpoint. Hence
+\[
+v(T_p^4)=[16s,\infty),\qquad v(T_p^5)=[20s,\infty)=v(Q_pT_p^4).
+\]
+Multiplication proves the same equality for every later power. Subtracting the shifted square and
+cubic profiles gives
+\begin{align*}
+v(T_p^3)\setminus v(Q_pT_p^2)
+ &=12s+\bigl([2p+1,3p-1]\cup[5p-1,6p-2]\bigr)\cup\{17s-1\},\\
+v(T_p^4)\setminus v(Q_pT_p^3)&=\{17s-1\}.
+\end{align*}
+Their cardinalities are $2p$ and $1$. Theorem~\ref{thm:stability} gives $14p$ at the preceding
+stage. Finally, subtracting $v(Q_p)=4s+\Gamma_p$ from Theorem~\ref{thm:trace} leaves eight
+disjoint blocks of sizes
+\[
+2p-1,\quad5p,\quad3p,\quad2p,\quad3p,\quad6p,\quad2p-1,\quad1,
+\]
+whose sum is $23p-1$. The strict nonzero quotients and terminal equality prove reduction number
+four. Since $T_p$ is maximal-ideal primary in dimension one, the one-generated reduction is
+minimal.
+
+The parameter ideal $Q_p$ has colength $4s=24p$. Multiplication by its nonzerodivisor generator
+gives
+\[
+\ell(T_p^i/T_p^{i+1})=24p-\ell(T_p^{i+1}/Q_pT_p^i).
+\]
+Summing through $i=n-1$ and using
+$(23p-1)+14p+2p+1=39p$ proves the Hilbert formula and coefficients.
+\end{proof}
+
+Two exact representations confirm every displayed set and length for all $p=4,\ldots,300$
+\textbf{[MV]}. A separate tail-set implementation rehashes all $297$ rows, reconstructs six
+parameters, and rejects deleted-terminal, false-stabilization, altered-interval, and
+perturbed-length controls. The campaign and audit aggregates are
+\[
+\texttt{e9c3c887648f08cf67c614b381f00c8c6520dcd1bb89f8cdece62293bfd06030}
+\]
+and
+\[
+\texttt{0f6ed70676ffb8972b8b167ad52c4f9d2851f69c3b1d96f4023e5e3d5825c781}.
+\]
+
+\newpage
+\section{The depth-zero conductor tangent cone}
+
+Let
+\[
+G_p=\operatorname{gr}_{T_p}(R_p)=\bigoplus_{n\ge0}T_p^n/T_p^{n+1}
+\]
+and retain the minimal reduction $Q_p=(x)$, where $x=t^{4s}$. The
+Valabrega--Valla criterion detects regularity of the initial form $x^*$ through the intersections
+$Q_p\cap T_p^{n+1}$ \cite{ValabregaValla1978}.
+
+\begin{theorem}[Exact tangent-cone defect, {\bf[D]}]\label{thm:tangent}
+For every integer $p\ge4$, put
+\[
+K_p=\{2p-1,4p-1\}\cup[4p+1,5p-2].
+\]
+Then the complete Valabrega--Valla module is concentrated in degree one:
+\[
+v\!\left(\frac{Q_p\cap T_p^2}{Q_pT_p}\right)=9s+K_p,
+\qquad
+\ell_{R_p}\!\left(\frac{Q_p\cap T_p^2}{Q_pT_p}\right)=p,
+\]
+while
+\[
+Q_p\cap T_p^{n+1}=Q_pT_p^n
+\qquad(n=0\ \text{and every }n\ge2).
+\]
+Consequently
+\[
+\dim G_p=1,\qquad \operatorname{depth}G_p=0,
+\]
+so $G_p$ is not Cohen--Macaulay. Its Hilbert series is
+\[
+H_{G_p}(z)=
+\frac{(p+1)+(9p-1)z+12pz^2+(2p-1)z^3+z^4}{1-z}.
+\]
+In particular every coefficient of the numerator is positive.
+\end{theorem}
+
+\begin{proof}
+Write $D=[0,s-1]$ and $U=A_p\cup B_p$. Directly from the residue definitions,
+\[
+D\setminus U=K_p,\qquad |K_p|=p.
+\]
+The exact profiles from Theorems~\ref{thm:trace} and~\ref{thm:stability} give
+\begin{align*}
+v(Q_p)={}&\{4s\}\cup(8s+A_p)\cup(9s+D)\cup(10s+B_p)\cup(12s+C_p)
+             \cup[13s,\infty),\\
+v(Q_pT_p)={}&(8s+A_p)\cup(9s+U)\cup(10s+B_p)\cup(12s+C_p)
+             \cup[13s,\infty),\\
+v(T_p^2)={}&(8s+C_p)\cup\bigl([9s,\infty)\setminus\{13s-1\}\bigr).
+\end{align*}
+Since $A_p\subset C_p$ and $C_p\subset[0,s-2]$, intersection leaves exactly the additional
+block $9s+(D\setminus U)=9s+K_p$ beyond $v(Q_pT_p)$. This proves the first formula and its
+cardinality.
+
+Theorem~\ref{thm:reduction} gives
+\[
+v(T_p^3)=[12s,\infty)\setminus\{13s-1\},\quad
+v(T_p^4)=[16s,\infty),\quad v(T_p^5)=[20s,\infty).
+\]
+Intersecting each with $v(Q_p)$ gives respectively $v(Q_pT_p^2)$, $v(Q_pT_p^3)$, and
+$v(Q_pT_p^4)$. For every $n\ge4$, stabilization
+$T_p^{n+1}=Q_pT_p^n\subset Q_p$ proves the intersection equality immediately. The case $n=0$
+is $Q_p\cap T_p=Q_p$.
+
+The ring $R_p$ is a one-dimensional Cohen--Macaulay local domain with infinite residue field,
+$x$ is regular, and $Q_p$ is a minimal reduction. Hence $x^*$ is a homogeneous parameter of
+$G_p$. The nonzero intersection defect makes $x^*$ a zero divisor by the Valabrega--Valla
+criterion, so the one-dimensional ring $G_p$ has depth zero.
+
+Finally write
+\[
+a_n=\ell(T_p^{n+1}/Q_pT_p^n).
+\]
+Theorem~\ref{thm:reduction} gives
+\[
+(a_0,a_1,a_2,a_3,a_4,\ldots)=(23p-1,14p,2p,1,0,\ldots).
+\]
+Since $\ell(T_p^n/xT_p^n)=\ell(R_p/xR_p)=24p$, the natural exact sequence gives
+\[
+h_n:=\ell(T_p^n/T_p^{n+1})=24p-a_n.
+\]
+Thus $(h_0,h_1,h_2,h_3,h_4,\ldots)=(p+1,10p,22p,24p-1,24p,\ldots)$, and multiplication of
+$\sum h_nz^n$ by $1-z$ gives the displayed numerator.
+\end{proof}
+
+Two exact implementations verify every intersection, length, and Hilbert coefficient for all
+$p=4,\ldots,300$ \textbf{[MV]}. A separately written bounded-bitset audit reconstructs six
+parameters and rehashes all $297$ campaign rows. Deleted-witness, false-later-defect,
+false-Cohen--Macaulay, and perturbed-numerator controls are rejected. The campaign and audit
+aggregates are
+\[
+\texttt{9631c644732f0921be3b3027e18a01110f23dad897fbf2cb14dd3a493eda5971}
+\]
+and
+\[
+\texttt{7c2abcd290bc3461fc5251bc3372e20a7fa25c888e3b2ed635368b4dda0781ff}.
+\]
+
+\subsection{Complete graded torsion and Buchsbaumness}
+
+Let $\mathcal M_p=(\mathfrak m_p/T_p)\oplus G_{p,+}$ be the homogeneous maximal ideal of
+$G_p$. The dimension-one local-cohomology criterion says that $G_p$ is Buchsbaum precisely when
+$\mathcal M_pH^0_{\mathcal M_p}(G_p)=0$ \cite{DAnnaMezzasalmaMicale2009,DAnnaMicaleSammartano2011}.
+The cited semigroup formulas concern maximal-ideal filtrations; here we compute the local
+cohomology directly for the conductor filtration.
+
+\begin{theorem}[Buchsbaum tangent cones with unbounded invariant, {\bf[D]}]
+\label{thm:buchsbaum}
+For every integer $p\ge4$, the complete zeroth local cohomology is concentrated in degree zero:
+\[
+H^0_{\mathcal M_p}(G_p)
+=\operatorname{span}_{\kfield}
+ \{t^{5s+h}+T_p:h\in K_p\}\cong \kfield^p.
+\]
+Moreover
+\[
+\mathcal M_pH^0_{\mathcal M_p}(G_p)=0.
+\]
+Consequently $G_p$ is Buchsbaum but not Cohen--Macaulay, and its Buchsbaum invariant is
+\[
+I(G_p)=\ell(H^0_{\mathcal M_p}(G_p))=p.
+\]
+The quotient $G_p/H^0_{\mathcal M_p}(G_p)$ is Cohen--Macaulay and has Hilbert series
+\[
+\frac{1+(10p-1)z+12pz^2+(2p-1)z^3+z^4}{1-z}.
+\]
+\end{theorem}
+
+\begin{proof}
+A homogeneous class represented by $a\in T_p^n$ lies in zeroth local cohomology exactly when
+$aT_p^k\subseteq T_p^{n+k+1}$ for some $k$. Thus
+\[
+H^0_{\mathcal M_p}(G_p)_n=
+\bigcup_{k\ge1}
+\frac{(T_p^{n+k+1}:T_p^k)\cap T_p^n}{T_p^{n+1}}.
+\]
+Here saturation by $G_{p,+}$ and by $\mathcal M_p$ agree because the maximal ideal of the
+Artinian degree-zero ring $R_p/T_p$ is nilpotent.
+
+Theorem~\ref{thm:reduction} gives $v(T_p^k)=[4ks,\infty)$ for every $k\ge4$. Therefore, for a
+monomial $t^v$ and any $k\ge4$,
+\[
+t^vT_p^k\subseteq T_p^{n+k+1}
+\quad\Longleftrightarrow\quad
+v\ge4(n+1)s.
+\]
+Any containment at a smaller power persists after multiplication to a power at least four, so
+this stable threshold is the complete colon saturation.
+
+The exact profiles give
+\[
+v(R_p)\setminus v(T_p)=\{0\}\cup(5s+K_p).
+\]
+The degree-zero threshold $4s$ deletes the unit and retains $5s+K_p$. In degrees one, two, and
+three, the consecutive power profiles agree from the respective thresholds $8s$, $12s$, and
+$16s$ onward. For every $n\ge4$, stabilization makes them agree from $4(n+1)s$ onward. Hence the
+displayed $p$ degree-zero classes are the complete local cohomology.
+
+It remains to test the full homogeneous maximal ideal. If $r=5s+h$ with $h\in K_p$, every product
+of $t^r$ with $\mathfrak m_p$ or $T_p$ has value at least $9s$. Both $T_p$ and $T_p^2$ contain
+all such values except $13s-1$. Equality $r+a=13s-1$ would force $a=8s-1-h$, strictly between
+levels $7s$ and $8s$, but the exact ring profile has no value there. Thus
+\[
+t^r\mathfrak m_p\subseteq T_p,
+\qquad
+t^rT_p\subseteq T_p^2.
+\]
+The degree-zero and positive parts of $\mathcal M_p$ both annihilate every torsion class. The
+dimension-one criterion proves Buchsbaumness; Theorem~\ref{thm:tangent} proves depth zero. The
+Buchsbaum invariant is therefore the displayed length $p$.
+
+Quotienting by the full zeroth local cohomology leaves a one-dimensional ring of positive depth,
+hence a Cohen--Macaulay ring. Since the torsion Hilbert series is the constant $p$, subtracting it
+from Theorem~\ref{thm:tangent}'s Hilbert series gives the asserted numerator.
+\end{proof}
+
+Two exact implementations verify the full colon saturation and both maximal-ideal actions for all
+$p=4,\ldots,300$ \textbf{[MV]}. An independently written bounded-bitset audit reconstructs six
+parameters and rehashes all $297$ rows. Unit, deleted-torsion, false-positive-degree,
+degree-zero-action, false-invariant, and perturbed-series controls are rejected. The campaign and
+audit aggregates are
+\[
+\texttt{854d7889d9d7b911b462e4d483e021210ae2873ae0ec0091ec30e8fb29d6dbf7}
+\]
+and
+\[
+\texttt{0b01853febc9e9754e28abcd099a7ae3a97f4cc0ab92f3a345ab2ae03cd3c68a}.
+\]
+
+\subsection{The complete module over the Noether normalization}
+
+Put $F_p=\kfield[x_p]$, where $x_p=(t^{4s})^*$ has degree one. The reduction theorem makes
+$F_p\to G_p$ a Noether normalization. This viewpoint follows the graded-module framework of
+Cortadellas Benitez and Zarzuela \cite{CortadellasZarzuela2007,CortadellasZarzuela2009}, while the
+conductor-filtration calculation below is derived directly from Theorems~\ref{thm:reduction},
+\ref{thm:tangent}, and~\ref{thm:buchsbaum}.
+
+\begin{theorem}[Exact Noether-normalization module, {\bf[D]}]
+\label{thm:module}
+For every integer $p\ge4$, there is a graded $F_p$-module isomorphism
+\begin{align*}
+G_p\cong{}& (F_p/(x_p))^p\oplus F_p\oplus F_p(-1)^{10p-1}\oplus F_p(-2)^{12p}\\
+&\oplus F_p(-3)^{2p-1}\oplus F_p(-4).
+\end{align*}
+Its minimal graded $F_p$-resolution is
+\[
+0\longrightarrow F_p(-1)^p\longrightarrow
+F_p^{p+1}\oplus F_p(-1)^{10p-1}\oplus F_p(-2)^{12p}
+\oplus F_p(-3)^{2p-1}\oplus F_p(-4)
+\longrightarrow G_p\longrightarrow0.
+\]
+Consequently
+\[
+\operatorname{pd}_{F_p}(G_p)=1,
+\qquad \operatorname{reg}_{F_p}(G_p)=4,
+\qquad a(G_p)=3,
+\]
+and
+\[
+\ell(G_p/x_pG_p)=25p=e_0(T_p)+I(G_p).
+\]
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{thm:reduction} gives $T_p^{n+1}=t^{4s}T_p^n$ for $n\ge4$, so $G_p$ is finite over
+$F_p$. Since $G_p/x_pG_p$ has finite length, $F_p$-torsion equals zeroth local cohomology.
+Theorem~\ref{thm:buchsbaum} therefore gives
+\[
+\operatorname{tors}_{F_p}(G_p)=H^0_{\mathcal M_p}(G_p)\cong(F_p/(x_p))^p,
+\]
+with all generators in degree zero. In particular, every torsion elementary divisor has exponent
+one.
+
+The quotient $C_p=G_p/H^0_{\mathcal M_p}(G_p)$ is finite and torsion-free over the principal
+ideal domain $F_p$, hence graded free. Its Hilbert series from Theorem~\ref{thm:buchsbaum} is
+\[
+H_{C_p}(z)=\frac{1+(10p-1)z+12pz^2+(2p-1)z^3+z^4}{1-z}.
+\]
+Since $H_{F_p(-d)}(z)=z^d/(1-z)$, the numerator uniquely gives the five displayed free shifts.
+The quotient is projective, so the exact sequence with the torsion submodule splits after choosing
+homogeneous lifts of a free basis. This proves the decomposition.
+
+Resolving each $F_p/(x_p)$ by multiplication by $x_p$ gives the displayed minimal resolution. Its
+only first Betti number is $\beta_{1,1}=p$; its degree-zero through degree-four generator counts
+are $p+1,10p-1,12p,2p-1,1$. Therefore the projective dimension is one and the resolution formula
+for regularity gives four. Finite-length torsion has no first local cohomology, while the largest
+free shift is four and $\operatorname{end}H^1(F_p(-d))=d-1$; hence $a(G_p)=3$.
+
+Finally, modulo $x_p$ every cyclic summand contributes one $\kfield$-dimension. The free rank is
+\[
+1+(10p-1)+12p+(2p-1)+1=24p=e_0(T_p),
+\]
+and the torsion contributes $p=I(G_p)$. This proves the parameter-section identity.
+\end{proof}
+
+For an independent exact reconstruction, EXP-020 forms the Apery table of
+$R_p,T_p,\ldots,T_p^5$ modulo $24p$. Each column splits into finite and infinite strings under
+multiplication by $x_p$, recovering every cyclic summand. The recursive-power and Hilbert/torsion
+routes agree for all $p=4,\ldots,300$ \textbf{[MV]}; a separate closed-form implementation rebuilds
+six parameters and rehashes all $297$ rows. Exponent-two-torsion, deleted-free-summand,
+perturbed-Betti, false-regularity, and false-section-length controls are rejected. The campaign and
+audit aggregates are
+\[
+\texttt{02cf6f62a71de1a897cd46149e8c89d1c55bf810d28dddc02fc6c5330b9c1aed}
+\]
+and
+\[
+\texttt{c439f7e4fbd3cee983f32e5c6a27b347017c165cdf6d9fee54eb8d53ab634eac}.
+\]
+
+\subsection{The conductor special fiber}
+
+Let
+\[
+\mathcal F_p=\mathcal F(T_p)=\bigoplus_{n\ge0}T_p^n/\mathfrak m_pT_p^n
+\]
+be the special fiber. There is a natural graded-algebra surjection $G_p\to\mathcal F_p$ because
+$T_p^{n+1}\subseteq\mathfrak m_pT_p^n$.
+
+\begin{theorem}[Canonical fiber cone and exact type, {\bf[D]}]
+\label{thm:fiber}
+For every integer $p\ge4$,
+\[
+T_p^2=\mathfrak m_pT_p,
+\qquad
+T_p^{n+1}=\mathfrak m_pT_p^n\quad(n\ge1),
+\]
+and the natural map induces a graded-algebra isomorphism
+\[
+G_p/H^0_{\mathcal M_p}(G_p)\cong\mathcal F_p.
+\]
+The ring $\mathcal F_p$ is one-dimensional Cohen--Macaulay, with
+\begin{align*}
+\mathcal F_p\cong{}&F_p\oplus F_p(-1)^{10p-1}\oplus F_p(-2)^{12p}\\
+&\oplus F_p(-3)^{2p-1}\oplus F_p(-4)
+\end{align*}
+as a graded $F_p$-module. Its multiplicity is $24p$, its reduction number and regularity are four,
+and $a(\mathcal F_p)=3$. The Artinian reduction $B_p=\mathcal F_p/x_p\mathcal F_p$ has
+\[
+h(B_p)=(1,10p-1,12p,2p-1,1)
+\]
+and graded socle dimensions
+\[
+(0,0,10p,0,1).
+\]
+Thus $\operatorname{type}(\mathcal F_p)=10p+1$, and $\mathcal F_p$ is neither level nor
+Gorenstein.
+\end{theorem}
+
+\begin{proof}
+Minkowski addition of the exact value blocks in Theorems~\ref{thm:trace}
+and~\ref{thm:stability} gives
+\[
+v(\mathfrak m_pT_p)=(8s+C_p)\cup[9s,13s-2]\cup[13s,\infty)=v(T_p^2).
+\]
+Indeed, the lowest block follows from
+$A_p+A_p=C_p\cup[6p,8p-4]$; the latter interval and all remaining block sums lie at level at least
+$9s$ and fill every ring value there. The Frobenius value $13s-1$ remains absent. Equality of the
+monomial value sets proves $T_p^2=\mathfrak m_pT_p$, and multiplication by $T_p^{n-1}$ proves the
+higher identities.
+
+The degree-zero kernel of $G_p\to\mathcal F_p$ is $\mathfrak m_p/T_p$, which is exactly
+Theorem~\ref{thm:buchsbaum}'s $H^0$. In degree $n\ge1$, the kernel is
+$\mathfrak m_pT_p^n/T_p^{n+1}=0$. This proves the natural algebra isomorphism. Cohen--Macaulayness
+and the displayed free module now follow from Theorems~\ref{thm:buchsbaum}
+and~\ref{thm:module}; the Hilbert, multiplicity, reduction, regularity, and $a$-invariant claims
+follow immediately.
+
+For the type, reduce modulo the regular element $x_p$. Direct subtraction of
+$\mathfrak m_pT_p^n+t^{4s}T_p^{n-1}$ from the exact power blocks gives the displayed $h$-vector.
+The degree-two nonsocle offsets are precisely
+\[
+[p+1,2p]\cup[4p-1,5p-2].
+\]
+They multiply into the two degree-three blocks by degree-one offsets in $[1,p]$. Every other
+degree-two basis offset kills degree one. No degree-three basis element is socle: if its offset is
+$d$, the complementary offset $6p-1-d$ belongs to the degree-one basis and their product is the
+unique degree-four class. That class is socle because degree five vanishes. Hence the only socle
+dimensions are $10p$ in degree two and one in degree four, proving the final claims.
+\end{proof}
+
+EXP-021 reconstructs the square, natural kernel, Artinian basis, and socle for all
+$p=4,\ldots,300$ \textbf{[MV]}. The first full attempt passed through $p=225$ but exceeded its
+declared budget and is preserved as inconclusive. An exact bitset implementation then completed
+all $297$ parameters, and an independently encoded audit rebuilt six parameters and rehashed every
+row. The campaign and audit aggregates are
+\[
+\texttt{3857877586143a3be5f14852feb12bd9efbfdf7c1cde458f30e8cd689155a95b}
+\]
+and
+\[
+\texttt{1779407050b199039d3f6d808a720ea051a81ef11734fd1bccd1a76ec78c0a9c}.
+\]
+
+\subsection{The defining ideal of the special fiber}
+
+We now refine Theorem~\ref{thm:fiber} from a module decomposition to a minimal algebra
+presentation. All intervals in this subsection are integer intervals. Let
+\(\mathcal E_{p,d}\) be the offset basis of \((\mathcal F_p)_d\), after subtracting the base
+value \(4sd\). The exact power calculation gives
+\begin{align}
+\mathcal E_{p,1}={}&[0,p]\cup[3p,4p-2]\cup[6p,8p-2]\cup[8p,10p-2]
+ \cup\{10p\}\notag\\
+&\cup[11p-1,12p-1]\cup[13p+1,14p-2]\cup[14p,15p-1]
+ \cup\{16p\}\cup[17p-1,18p-1],\label{eq:fiber-e1}\\
+\mathcal E_{p,2}={}&[0,2p]\cup[3p,5p-2]\cup[6p,24p-1],\notag\\
+\mathcal E_{p,3}={}&[0,24p-1]\setminus\{6p-1\},\qquad
+\mathcal E_{p,4}=\mathcal E_{p,5}=[0,24p-1].\label{eq:fiber-cumulative}
+\end{align}
+In particular, \(|\mathcal E_{p,1}|=10p\). Set
+\[
+P_p=\kfield[X_a:a\in\mathcal E_{p,1}]
+\]
+and let \(\varphi_p:P_p\twoheadrightarrow\mathcal F_p\) send \(X_a\) to the class of
+\(t^{4s+a}\). Write \(\mathfrak a_p=\ker\varphi_p\).
+
+\begin{theorem}[One-cubic defining ideal, {\bf[MV]}]
+\label{thm:presentation}
+For every integer \(p\ge4\),
+\[
+\mathfrak a_p=\bigl((\mathfrak a_p)_2,
+f_p\bigr),\qquad
+f_p=X_0^2X_{3p}-X_p^3.
+\]
+Equivalently, the first graded Betti row over \(P_p\) is
+\[
+\beta^{P_p}_{1,2}(\mathcal F_p)=50p^2-17p,\qquad
+\beta^{P_p}_{1,3}(\mathcal F_p)=1,\qquad
+\beta^{P_p}_{1,j}(\mathcal F_p)=0\quad(j\ge4).
+\]
+Hence \(\mu(\mathfrak a_p)=50p^2-17p+1\), the relation type is three, and
+\(\mathcal F_p\) is not Koszul.
+\end{theorem}
+
+\begin{proof}
+The semigroup monomials are linearly independent. Consequently, a monomial in the variables
+\(X_a\) is zero in \(\mathcal F_p\) exactly when its total offset is absent from the corresponding
+\(\mathcal E_{p,d}\), and two nonzero monomials have the same image exactly when their total
+offsets agree. There is no linear equation. Theorem~\ref{thm:fiber} gives
+\(\dim_{\kfield}(\mathcal F_p)_2=22p\), so
+\begin{equation}
+\beta^{P_p}_{1,2}(\mathcal F_p)
+=\binom{10p+1}{2}-22p=50p^2-17p.\label{eq:quadratic-count}
+\end{equation}
+
+The offsets \(0,p,3p\) belong to \(\mathcal E_{p,1}\), and
+\(0+0+3p=p+p+p\), so \(f_p\in\mathfrak a_p\). It is not generated by quadrics. Indeed, the
+only unordered pair in \(\mathcal E_{p,1}\) with sum \(3p\) is \(\{0,3p\}\), the only pair with
+sum \(2p\) is \(\{p,p\}\), and the only pair with sum zero is \(\{0,0\}\). Thus neither
+monomial in \(f_p\) admits a nontrivial quadratic replacement, and the two cannot be joined by a
+chain of quadratic moves.
+
+It remains to prove that this is the only higher equation. Suppose the complete kernel is known
+through degree \(d-1\), where \(d\in\{3,4,5\}\). For a fixed total \(t\), form the graph
+\[
+V_{d,t}=\{a\in\mathcal E_{p,1}:t-a\in\mathcal E_{p,d-1}\}.
+\]
+Two vertices \(a,c\) are adjacent when
+\[
+t-a-c\in\mathcal E_{p,d-2}.
+\]
+This is exactly the commutative factorization move between \(X_a\) times the preceding class of
+offset \(t-a\) and \(X_c\) times the class of offset \(t-c\). Add a zero vertex when the same
+factorization makes the alternate degree-\((d-1)\) remainder invalid. Therefore the degree-\(d\)
+quotient by all lower equations has one basis element for each nonzero graph component. It follows
+that
+\begin{equation}
+\beta^{P_p}_{1,d}(\mathcal F_p)
+=\#\{\text{nonzero state components in degree }d\}-|\mathcal E_{p,d}|.
+\label{eq:component-defect}
+\end{equation}
+
+For degree three, the exact component reduction is
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Total range & common hub & path length at most\\
+\midrule
+\([0,2p]\) & \(0\) & 3\\
+\([2p+1,3p-1]\) & \(t-2p\) & 3\\
+\([3p+1,5p-2]\) & \(0\) & 3\\
+\([5p-1,6p-2]\) & \(t-(5p-2)\) & 3\\
+\([6p,24p-1]\) & \(0\) & 3\\
+\bottomrule
+\end{tabular}
+\end{center}
+Every invalid total reaches the zero vertex in at most one move. At the omitted total \(t=3p\),
+the vertices are exactly \(0,p,3p\); the vertices \(0\) and \(3p\) are joined, while \(p\) is
+isolated. Hence there are exactly two components, represented by the two monomials in \(f_p\).
+Adjoining \(f_p\) joins them.
+
+For degree four, zero is a hub except at \(t=6p-1\), where \(p\) is a hub. To see the only
+nontrivial reduction, put
+\[
+H=[2p+1,3p-1]\cup[5p-1,6p-2]
+=[0,6p-2]\setminus\mathcal E_{p,2}.
+\]
+If \(t-a\in\mathcal E_{p,2}\), the state is adjacent to zero. If \(t-a\in H\), it moves first to
+\(p\), then either to zero or through \(t-3p\), which belongs to \([1,p-1]\) or
+\([3p,4p-2]\). The apparent boundary \(t=7p-1\), where \(t-p\) would be the hole in
+\(\mathcal E_{p,3}\), cannot occur with both \(t-a\in H\) and
+\(a\in\mathcal E_{p,1}\). At \(t=6p-1\), the vertex set is
+\([1,p]\cup[3p,4p-2]\), connected through \(p\). Invalid high totals die directly. Thus the
+degree-four defect is zero.
+
+For degree five, \(\mathcal E_{p,4}\) is full and \(\mathcal E_{p,3}\) misses only
+\(h=6p-1\). A state has a direct edge to zero unless \(t-a=h\). In the exceptional case, moving
+through the generator \(1\), or through \(2\) when \(a=1\), gives a state with a direct zero edge.
+Hence the degree-five defect is also zero.
+
+The degree-three table and every boundary assertion in the degree-four and degree-five reductions
+were encoded as negated Presburger formulas over all integers \(p\ge4\) \textbf{[MV]}. The exact
+solver closed all $133$ terminal formulas as UNSAT, after four affine-cell bisections, with no SAT
+or unresolved result. A separately encoded total-by-total graph rehashed the complete campaign and
+rebuilt three spaced parameters. Thus \eqref{eq:component-defect} gives one cubic and no new
+equation in degrees four or five.
+
+Finally, \(T_p\) has reduction number four by Theorem~\ref{thm:reduction}, and
+\(\mathcal F_p\) is Cohen--Macaulay by Theorem~\ref{thm:fiber}. The defining-ideal construction of
+Abdolmaleki--Kumashiro \cite[Theorem~2.8]{AbdolmalekiKumashiro2024} therefore supplies a complete
+set of equations through degree five. No higher minimal equation can occur. This proves the Betti
+row and relation type. A standard graded Koszul algebra has a quadratic defining ideal, while
+\(f_p\) is a necessary minimal cubic, so \(\mathcal F_p\) is not Koszul.
+\end{proof}
+
+The bounded state-graph campaign passes every \(p=4,\ldots,23\) \textbf{[MV]}. Its first requested
+extension through \(p=24\) completed that row but crossed the declared five-minute budget, and is
+preserved as inconclusive. The successful campaign, independent audit, and Presburger-query
+aggregates are respectively
+\[
+\texttt{d23792c47a2e07785a27ebc71e99619705f7aa53a38ebe7f66ffa03b0518ce83},
+\]
+\[
+\texttt{a27b3b13fde197b1f011bf07dc2c321d84ab7c895c9aa02d7c2a073e48f18038},
+\]
+and
+\[
+\texttt{832c8421fe66359b8c246e3465e27de6ea7829215f892ab815e72b1f44787194}.
+\]
+
+\subsection{Homological edges over the presentation ring}
+
+The h-vector and socle in Theorem~\ref{thm:fiber}, together with the complete first Betti row in
+Theorem~\ref{thm:presentation}, force more of the minimal resolution than the defining equations
+alone suggest. Put
+\[
+N=10p,\qquad c=N-1=10p-1,
+\]
+and write $\beta_{i,j}=\beta^{P_p}_{i,j}(\mathcal F_p)$.
+
+\begin{theorem}[Homological edge data, {\bf[D]}]
+\label{thm:homological-edge}
+For every integer $p\ge4$,
+\[
+\operatorname{pd}_{P_p}(\mathcal F_p)=c,
+\qquad
+\operatorname{reg}_{P_p}(\mathcal F_p)=4,
+\]
+and
+\begin{equation}
+\sum_{i,j}(-1)^i\beta_{i,j}z^j
+=(1-z)^c\bigl(1+(10p-1)z+12pz^2+(2p-1)z^3+z^4\bigr).
+\label{eq:betti-polynomial}
+\end{equation}
+The first linear-syzygy count is
+\begin{equation}
+\beta_{2,3}=\frac{2p(500p^2-330p+31)}{3}.
+\label{eq:linear-first-syzygies}
+\end{equation}
+The complete last homological row and a penultimate extremal entry are
+\begin{equation}
+\beta_{c,c+2}=10p,\qquad
+\beta_{c,c+4}=1,\qquad
+\beta_{c,j}=0\ (j\notin\{c+2,c+4\}),\qquad
+\beta_{c-1,c+3}=8p.
+\label{eq:betti-edge}
+\end{equation}
+Finally, the canonical module $\omega_{\mathcal F_p}$ has $10p$ minimal generators in degree
+$-1$ and one in degree $-3$.
+\end{theorem}
+
+\begin{proof}
+The polynomial ring $P_p$ has depth $N$, whereas Theorem~\ref{thm:fiber} gives
+$\operatorname{depth}_{P_p}(\mathcal F_p)=\dim\mathcal F_p=1$. Auslander--Buchsbaum therefore
+gives projective dimension $N-1=c$. The same theorem gives the h-polynomial
+\[
+h_p(z)=1+(10p-1)z+12pz^2+(2p-1)z^3+z^4.
+\]
+Since $\mathcal F_p$ is Cohen--Macaulay, its regularity is $\deg h_p=4$. In particular,
+regularity over the full presentation ring is already determined, rather than a separate open
+question. Taking Hilbert series in a minimal $P_p$-resolution gives
+\[
+\frac{h_p(z)}{1-z}
+=\frac{\sum_{i,j}(-1)^i\beta_{i,j}z^j}{(1-z)^N},
+\]
+which proves \eqref{eq:betti-polynomial}.
+
+There is no linear equation, so minimality gives no shift below $i+1$ in homological degree $i$.
+Consequently the coefficient of $z^3$ in \eqref{eq:betti-polynomial} is
+$\beta_{2,3}-\beta_{1,3}$. Theorem~\ref{thm:presentation} gives $\beta_{1,3}=1$, and expansion
+yields
+\[
+\beta_{2,3}
+=1-\binom{c}{3}+c\binom{c}{2}-12pc+(2p-1)
+=\frac{2p(500p^2-330p+31)}{3}.
+\]
+Independently, the degree-three part of the first free module has dimension
+$N\beta_{1,2}+\beta_{1,3}$ and maps onto $(\mathfrak a_p)_3$. Since
+\[
+\dim(P_p)_3=\binom{N+2}{3},\qquad
+\dim(\mathcal F_p)_3=24p-1,
+\]
+its kernel has dimension
+\[
+N(50p^2-17p)+1-\left(\binom{N+2}{3}-(24p-1)\right),
+\]
+which simplifies to the same value.
+
+Now reduce modulo $X_0$, whose image $x_p$ is the regular parameter from
+Theorem~\ref{thm:fiber}. Because $X_0$ is regular on both $P_p$ and $\mathcal F_p$, tensoring the
+minimal resolution with $Q_p=P_p/(X_0)$ remains exact and minimal. Hence its Betti numbers equal
+those of the Artinian reduction $B_p=\mathcal F_p/x_p\mathcal F_p$ over the polynomial ring
+$Q_p$ in $c$ variables. Top Koszul homology identifies
+\[
+\operatorname{Tor}^{Q_p}_c(B_p,\kfield)_j
+\cong \operatorname{Soc}(B_p)_{j-c}.
+\]
+Theorem~\ref{thm:fiber} gives socle dimensions $10p$ in degree two, one in degree four, and zero
+otherwise. This proves the complete last row in \eqref{eq:betti-edge}.
+
+In internal degree $c+3$, regularity four kills every contribution in homological degree at most
+$c-2$, while the last-row calculation kills $\beta_{c,c+3}$. Thus the coefficient of
+$z^{c+3}$ in \eqref{eq:betti-polynomial} is
+$(-1)^{c-1}\beta_{c-1,c+3}$. Only the last two terms of $h_p$ contribute, giving
+\[
+(-1)^c(2p-1)+(-1)^{c-1}c=(-1)^{c-1}8p.
+\]
+Therefore $\beta_{c-1,c+3}=8p$.
+
+Finally,
+\[
+\omega_{\mathcal F_p}
+=\operatorname{Ext}^{c}_{P_p}(\mathcal F_p,P_p(-N)).
+\]
+Minimality lets us read its minimal generators from the dual of the last free module. A summand
+$P_p(-j)$ contributes in degree $N-j$. The $10p$ last summands with $j=c+2=N+1$ therefore give
+degree $-1$, and the single summand with $j=c+4=N+3$ gives degree $-3$.
+\end{proof}
+
+EXP-024 checks both derivations of \eqref{eq:linear-first-syzygies}, every selected coefficient in
+\eqref{eq:betti-polynomial}, and the socle-to-last-row transfer for all
+$p=4,\ldots,300$ {\bf[MV]}. Its independent implementation rebuilds all 297 rows, reconstructs
+six spaced EXP-021 socle cases, cross-checks all twenty persisted EXP-023 first rows, and rejects
+seven adversarial corruptions. The campaign and audit aggregates are
+\begin{center}
+{\fontsize{7}{8}\selectfont\ttfamily
+baf6200a442be9476cd083fde753bbdd9e623c06aa2528f3a7f138ee825637eb}
+\end{center}
+and
+\begin{center}
+{\fontsize{7}{8}\selectfont\ttfamily
+b6035f615f2b2092351b5a42e5a734c72ba4783adf82943ed41b38fe07ef17e2}.
+\end{center}
+The symbolic argument above, not the finite campaign, proves the theorem. Equation
+\eqref{eq:betti-polynomial} is alternating data and does not determine the unresolved interior of
+the Betti table.
+
+\subsection{The first interior Betti strand}
+
+We retain the offset in~\eqref{eq:fiber-e1} by declaring
+\(\deg X_a=(1,a)\). Write \(\beta_{i,(j,b)}\) for the resulting bigraded Betti number and
+\(\beta_{i,j}=\sum_b\beta_{i,(j,b)}\). Let
+\[
+\mathfrak q_p=((\mathfrak a_p)_2),
+\qquad
+\mathfrak a_p=(\mathfrak q_p,f_p)
+\]
+as in Theorem~\ref{thm:presentation}.
+
+\begin{theorem}[First interior Betti strand, {\bf[D]}]
+\label{thm:interior-strand}
+For every integer \(p\ge4\) and every field \(\kfield\),
+\begin{equation}
+\beta_{2,4}=8p,
+\qquad
+\beta_{3,4}=\frac{p(5p-1)(500p^2-440p+47)}{2}.
+\label{eq:first-interior}
+\end{equation}
+Moreover, \(\beta_{2,(4,b)}=1\) exactly for
+\begin{align}
+\mathcal S_p={}&[9p,11p-2]\cup[11p,13p-2]\cup\{13p\}
+\cup[14p-1,15p-1]\notag\\
+&\cup[16p+1,17p-2]\cup[17p,18p-1]\cup\{19p\}
+\cup[20p-1,21p-1],
+\label{eq:interior-support}
+\end{align}
+and it is zero at every other offset. Equivalently,
+\[
+\mathcal S_p=\{3p+a:a\in\mathcal E_{p,1},\ a\ge6p\}.
+\]
+The corresponding integral relative homology is free of rank one at every supported offset; in
+particular, the result has no characteristic exception.
+\end{theorem}
+
+\begin{proof}
+We first identify the exact finite chain complexes. Put
+\[
+H_p=\langle(1,a):a\in\mathcal E_{p,1}\rangle\subseteq\N^2,
+\qquad
+M_p=(t^{(n,u)}:u\ge24p)\subseteq\mathbb Z[H_p].
+\]
+The offset calculation~\eqref{eq:fiber-cumulative} identifies the special fiber with the base
+change of \(\mathbb Z[H_p]/M_p\). For a bidegree \(w=(j,b)\), define the squarefree divisor pair
+\begin{align*}
+\Delta_w&=\{F\subseteq\mathcal E_{p,1}:w-(|F|,\sum F)\in H_p\},\\
+\Gamma_w&=\{F\in\Delta_w:t^{w-(|F|,\sum F)}\in M_p\}.
+\end{align*}
+The relative squarefree-divisor construction is standard for affine semigroup quotients by
+monomial ideals \cite{BrunsHerzog1997}; see also \cite{Stamate2018} for the semigroup-ring Betti
+framework and its characteristic warning. Here the identification is immediate: the
+bidegree-\(w\) Koszul chain group in homological degree \(r\) has one basis vector for every
+\(r\)-subset \(F\) satisfying
+\[
+b-\sum F\in\mathcal E_{p,j-r},
+\]
+and signed deletion is exactly the relative simplicial boundary. Hence
+\begin{equation}
+\beta_{i,w}=\dim_{\kfield}\widetilde H_{i-1}(\Delta_w,\Gamma_w;\kfield).
+\label{eq:relative-betti}
+\end{equation}
+
+We next give an integral upper bound in total degree four. Order
+\(\mathcal E_{p,1}\) increasingly. In every offset block, scan the vertices in this order and
+pair a still-unmatched cell \(F\) with \(F\cup\{v\}\) whenever both survive; within a scan use
+increasing dimension and lexicographic order. Every pair is a unit boundary entry, and the pivot
+order strictly increases along a reversed matched arrow, so this is an acyclic integral matching.
+Substitution of~\eqref{eq:fiber-e1}--\eqref{eq:fiber-cumulative} leaves the following complete
+critical-cell list in relative dimensions zero and one. In the middle row write \(b=6p+r\).
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Offset & critical $0$-cells & critical $1$-cells\\
+\midrule
+$b\in\mathcal S_p$ & $\{0\}$ & $\{p,b-3p\}$\\
+$6p\le b\le7p-3$ & $\{0\},\{r+2\}$ & $\{p,3p+r\}$\\
+all other $b$ & immaterial & none\\
+\bottomrule
+\end{tabular}
+\end{center}
+In the middle row, the unique alternating path sends the critical edge to a unit multiple of
+\(\{r+2\}-\{0\}\), so it contributes no homology. The table follows by scanning the eleven
+blocks in~\eqref{eq:fiber-e1}: the only toggle obstructions are the gaps of
+\(\mathcal E_{p,2}\), the hole \(6p-1\) of \(\mathcal E_{p,3}\), and a gap of
+\(\mathcal E_{p,1}\). All candidate edges outside the two displayed rows toggle at their first
+available vertex. Therefore, over every field,
+\begin{equation}
+\beta_{2,(4,b)}\le1\quad(b\in\mathcal S_p),
+\qquad
+\beta_{2,(4,b)}=0\quad(b\notin\mathcal S_p).
+\label{eq:relative-upper}
+\end{equation}
+
+For the matching lower bound, we compute the linear part of the quadratic colon. Define
+\[
+V_p=\{v\in\mathcal E_{p,1}:v-p,v+p\in\mathcal E_{p,1}\}
+=[7p,8p-2]\cup[8p,9p-2]\cup\{9p,10p\}.
+\]
+For every \(a\in\mathcal E_{p,1}\) with \(a\ge6p\), the factorizations
+\((0,0,3p,a)\) and \((p,p,p,a)\) are connected by quadratic moves. If
+\(a+p,a+2p\in\mathcal E_{p,1}\), use
+\[
+(0,0,3p,a)\sim(0,0,p,a+2p)\sim(0,p,p,a+p)\sim(p,p,p,a).
+\]
+For \(a=7p-1\), use
+\[
+(0,0,3p,7p-1)\sim(0,1,3p,7p-2)\sim(0,1,p,9p-2)
+\sim(1,p,p,8p-2)\sim(p,p,p,7p-1).
+\]
+In every remaining case write \(a=u+v\), with
+\(u\in\mathcal E_{p,1}\) and \(v\in V_p\), and use
+\[
+(0,0,3p,a)\sim(0,3p,u,v)\sim(p,3p,u,v-p)
+\sim(p,p,u,v+p)\sim(p,p,p,a).
+\]
+The block formula~\eqref{eq:fiber-e1} verifies that these cases cover all high offsets.
+
+They cover no low offset. For a factorization of total at most \(7p-2\), color a generator odd
+exactly when it lies in \([3p,4p-2]\). Every equality of two pair sums preserves the parity of
+the number of odd generators: the sole cross-block possibility replaces two middle-block
+generators by one low and one high generator. If \(a\le p\), the two factorizations of
+\(X_af_p\) have parities one and zero; if \(3p\le a\le4p-2\), they have parities zero and one.
+Thus
+\begin{equation}
+(\mathfrak q_p:f_p)_1
+=\operatorname{span}_{\kfield}\{X_a:a\in\mathcal E_{p,1},\ a\ge6p\},
+\label{eq:quadratic-colon}
+\end{equation}
+which has dimension \(8p\).
+
+Apply the mapping cone to
+\[
+0\longrightarrow P_p/(\mathfrak q_p:f_p)(-3)
+\xrightarrow{\ f_p\ }P_p/\mathfrak q_p
+\longrightarrow\mathcal F_p\longrightarrow0.
+\]
+Every linear generator in~\eqref{eq:quadratic-colon} supplies a homological-degree-two summand
+shifted by four. No cancellation is possible: its maps to the shift-three free summand by a
+linear entry and to the quadratic-generator module by degree-two entries. Thus there is one
+nonzero class at each offset \(3p+a\) in~\eqref{eq:interior-support}. Combined with
+\eqref{eq:relative-upper}, this proves \(\beta_{2,4}=8p\), the exact support, and freeness over
+\(\mathbb Z\): the matching is integral and each mapping-cone class is primitive.
+
+Finally, no minimal degree-four equation exists by Theorem~\ref{thm:presentation}, and minimal
+shifts exclude homological degree at least four from internal degree four. The coefficient of
+\(z^4\) in~\eqref{eq:betti-polynomial} is therefore
+\[
+\beta_{2,4}-\beta_{3,4}
+=-\frac{p(2500p^3-2700p^2+675p-63)}{2}.
+\]
+Substitution of \(\beta_{2,4}=8p\) gives the second formula in~\eqref{eq:first-interior}.
+\end{proof}
+
+EXP-027 checks the complete offset chain profile for \(p=4,5,6\), with totals
+\(32,40,48\), and the smallest case agrees over \(\operatorname{GF}(2)\) and
+\(\operatorname{GF}(1000003)\) \textbf{[MV]}. The closed formulas and explicit quadratic paths
+pass every \(p=4,\ldots,300\); six all-parameter counterexample queries are UNSAT. An independently
+written audit reconstructs the full \(p=4\) chain profile and six spaced formula rows. The
+campaign, symbolic, and audit aggregates are
+\[
+\texttt{9bc93c41d899df4a39b85a452257d114000df84730d44f0661c19b7dd8322b63},
+\]
+\[
+\texttt{b7e760290880e821fbc2ef86b03279edab1543307fd5c58cbb635d9c4b765db8},
+\]
+and
+\[
+\texttt{f30b94ce86638732a407a3bb5abb4dfde8a1258441df71a36138dd0ae129d454}.
+\]
+The finite campaigns validate the implementation. The relative-chain and matching arguments,
+together with the colon and mapping cone, prove the theorem.
+
+\section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
 \begin{center}
 \url{problems/commutative-algebra/huneke-wiegand/}.
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
-minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The proof
-toolchain is pinned as follows:
+minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
+also includes the compact EXP-011--027 campaigns, independent reconstruction audits, symbolic
+proofs, the preserved EXP-013 correction, the EXP-015 refutation, and the EXP-022 quadratic
+refutation. The proof toolchain is
+pinned as follows:
 \begin{center}
 \begin{tabular}{@{}lp{0.65\textwidth}@{}}
 \toprule
@@ -456,6 +1891,10 @@ CaDiCaL & reported 1.7.3; Ubuntu package 1.7.4-1\\
 CaDiCaL binary SHA-256 & {\fontsize{7}{8}\selectfont\ttfamily 7b73df0a6d9cf3c751a1948300e5baff8e82c4d39bcd88f0c063b5f5cfb8b33e}\\
 DRAT-trim commit & {\fontsize{7}{8}\selectfont\ttfamily 2e3b2dc0ecf938addbd779d42877b6ed69d9a985}\\
 DRAT-trim binary SHA-256 & {\fontsize{7}{8}\selectfont\ttfamily 92f0aa9575ed519d66a99b8b1b3dde6ece4618ae4c202a3a4b200265dda0aa7a}\\
+Z3 & 4.16.0; exact integer Presburger queries for EXP-023\\
+EXP-023 query aggregate & {\fontsize{7}{8}\selectfont\ttfamily 832c8421fe66359b8c246e3465e27de6ea7829215f892ab815e72b1f44787194}\\
+EXP-024 campaign/audit & exact integer coefficient and dimension routes; 297 rows plus independent rebuild\\
+EXP-027 & relative-chain profiles, six exact Presburger queries, 297 formula rows, and independent reconstruction\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -465,26 +1904,62 @@ standard-library model checker, and DRAT-trim's verification of each proof again
 The SAT solver need not be trusted for UNSAT. For SAT, the independently extracted model is checked
 without consulting solver internals.
 
-\clearpage
-\thispagestyle{fancy}
+The EXP-023 trust boundary is different. Z3's UNSAT leaves do not carry a separately checked proof
+object. The exact Presburger encoding, the explicit interval reductions in the proof, the separate
+total-graph implementation, and the finite stress campaign reduce implementation risk, but do not
+remove reliance on solver soundness. The one-cubic theorem is therefore labeled \textbf{[MV]}, not
+presented as a proof-assistant theorem or a proof-carrying UNSAT result.
+
+EXP-024 introduces no additional solver dependency. Its scripts verify arithmetic identities and
+the frozen hashes of the EXP-021/023 premises; Theorem~\ref{thm:homological-edge} is a deductive
+consequence of those premises and standard homological arguments. Any defect in an imported
+premise would still propagate, and the theorem does not erase EXP-023's disclosed boundary.
+
+EXP-027 uses Z3 only to adversarially negate six interval statements. The proof of
+Theorem~\ref{thm:interior-strand} does not infer the theorem from those finite or solver results:
+the relative-chain identification, integral matching, explicit quadratic paths, parity
+obstruction, and minimal mapping cone are given above. The independent audit does not import the
+canonical rank implementation. The remaining trust boundary is the correctness of the frozen
+EXP-021/023/025 premises and the ordinary algebraic arguments displayed in the proof.
+
 \section{Scope, attribution, and open questions}
 
 Son Pham retains discovery priority for the counterexample. Professor Craig Huneke's verification
-is independent external evidence. The contributions proved here are Frobenius minimality and
-uniqueness of the normalized pair at that minimum in the specified semigroup/ideal class, together
-with their reproducible certificate suites.
+is independent external evidence. The contributions proved here are Frobenius minimality,
+uniqueness of the normalized pair at that minimum, the separate infinite family in
+Theorem~\ref{thm:family}, and its uniform endomorphism anatomy in
+Theorem~\ref{thm:endomorphism}, pseudo-Frobenius anatomy in Theorem~\ref{thm:type}, exact
+trace/conductor formula in Theorem~\ref{thm:trace}, stability defect in
+Theorem~\ref{thm:stability}, and conductor reduction/Hilbert data in
+Theorem~\ref{thm:reduction}, tangent-cone depth in Theorem~\ref{thm:tangent}, and complete
+graded-torsion/Buchsbaum anatomy in Theorem~\ref{thm:buchsbaum}, and the complete
+Noether-normalization module in Theorem~\ref{thm:module}, and the canonical fiber cone and type in
+Theorem~\ref{thm:fiber}, and its complete defining ideal in
+Theorem~\ref{thm:presentation}, and its exact homological edges in
+Theorem~\ref{thm:homological-edge}, and its first interior Betti strand in
+Theorem~\ref{thm:interior-strand}, together with
+their reproducible records.
 
-Theorems~\ref{thm:minimal} and~\ref{thm:unique} do not classify higher Frobenius values, prove a
-minimum multiplicity or embedding dimension across all counterexamples, or establish minimality
-among arbitrary Gorenstein domains and modules. The following questions remain open:
+Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
+\ref{thm:type}, \ref{thm:trace}, \ref{thm:stability}, \ref{thm:reduction},
+\ref{thm:tangent}, \ref{thm:buchsbaum}, \ref{thm:module}, \ref{thm:fiber},
+\ref{thm:presentation}, \ref{thm:homological-edge}, and~\ref{thm:interior-strand}
+do not classify all higher
+Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
+or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
+questions remain open:
 \begin{enumerate}
   \item How does the number of normalized rigid pairs grow above $F=181$?
   \item Is there a global minimum under multiplicity, embedding dimension, or number of minimal
   generators?
-  \item Does a nontrivial infinite family exist after the fixed-offset ansatz fails?
+  \item Which other Boolean-scaffold models lie on affine or residue-class families, and is the
+  family in Theorem~\ref{thm:family} maximal inside a natural Kunz face?
   \item Which additional hypotheses on the endomorphism ring recover a positive theorem while
-  excluding the public example?
+  excluding both the public example and the full family proved here?
   \item Can the finite certificates be imported into a smaller formally verified checker?
+  \item Can the relative-complex method determine the remaining interior of the
+  presentation-ring Betti table, beyond the degree-four strand in
+  Theorem~\ref{thm:interior-strand}?
 \end{enumerate}
 
 \section*{Acknowledgments}
@@ -493,8 +1968,10 @@ The author thanks Son Pham for making the candidate and verification materials p
 Huneke for the independent verification recorded with that release. Neither is an author of this
 paper, and this acknowledgment does not imply endorsement of the minimality result.
 
-{\small
+{\footnotesize
 \begin{thebibliography}{99}
+\setlength{\itemsep}{0.25em}
+\setlength{\parsep}{0pt}
 
 \bibitem{HunekeWiegand1994}
 C. Huneke and R. Wiegand,
@@ -524,6 +2001,89 @@ Commun. Algebra 52 (2024), 5196--5206.
 S. Pham,
 \emph{Huneke--Wiegand candidate verification}, public software and certificate repository (2026).
 \url{https://github.com/sonpham-org/huneke-wiegand-candidate-verification}.
+
+\bibitem{DeyLyle2025}
+S. Dey and J. Lyle,
+\emph{Centers of endomorphism rings and reflexivity},
+arXiv:2510.02210v2 (2025).
+\url{https://arxiv.org/abs/2510.02210v2}.
+
+\bibitem{MaitraMukundan2023}
+S. Maitra and V. Mukundan,
+\emph{Extremal behavior of reduced type of one dimensional rings},
+arXiv:2306.17069v1 (2023).
+\url{https://arxiv.org/abs/2306.17069v1}.
+
+\bibitem{LindoMaitraZhang2026}
+H. Lindo, S. Maitra, and W. Zhang,
+\emph{Trace does not preserve reflexivity},
+Collect. Math. (2026).
+\url{https://doi.org/10.1007/s13348-026-00515-0}.
+
+\bibitem{HerzogKumashiro2022}
+J. Herzog and S. Kumashiro,
+\emph{Upper bound on the colength of the trace of the canonical module in dimension one},
+Arch. Math. 119 (2022), 237--246.
+\href{https://doi.org/10.1007/s00013-022-01764-8}{doi:10.1007/s00013-022-01764-8}.
+
+\bibitem{Dey2022}
+S. Dey,
+\emph{Finite birational extension with stable conductor},
+arXiv:2212.09087v1 (2022).
+\url{https://arxiv.org/abs/2212.09087v1}.
+
+\bibitem{NorthcottRees1954}
+D. G. Northcott and D. Rees,
+\emph{Reductions of ideals in local rings},
+Proc. Cambridge Philos. Soc. 50 (1954), 145--158.
+\href{https://doi.org/10.1017/S0305004100029194}{doi:10.1017/S0305004100029194}.
+
+\bibitem{ValabregaValla1978}
+P. Valabrega and G. Valla,
+\emph{Form rings and regular sequences},
+Nagoya Math. J. 72 (1978), 93--101.
+\href{https://doi.org/10.1017/S0027763000018225}{doi:10.1017/S0027763000018225}.
+
+\bibitem{CortadellasZarzuela2007}
+T. Cortadellas and S. Zarzuela,
+\emph{On the structure of the fiber cone of ideals with analytic spread one},
+J. Algebra 317 (2007), 759--785.
+\href{https://doi.org/10.1016/j.jalgebra.2007.02.044}{doi:10.1016/j.jalgebra.2007.02.044}.
+
+\bibitem{AbdolmalekiKumashiro2024}
+R. Abdolmaleki and S. Kumashiro,
+\emph{Defining ideals of Cohen--Macaulay fiber cones},
+Int. J. Algebra Comput. 34 (2024), no.~7, 1099--1109.
+\href{https://doi.org/10.1142/S0218196724500437}{doi:10.1142/S0218196724500437}.
+
+\bibitem{CortadellasZarzuela2009}
+T. Cortadellas and S. Zarzuela,
+\emph{Tangent cones of numerical semigroup rings},
+\href{https://arxiv.org/abs/0906.0911}{arXiv:0906.0911} (2009).
+
+\bibitem{DAnnaMezzasalmaMicale2009}
+M. D'Anna, M. Mezzasalma, and V. Micale,
+\emph{On the Buchsbaumness of the associated graded ring of a one-dimensional local ring},
+Commun. Algebra 37 (2009), 1594--1603.
+\href{https://doi.org/10.1080/00927870802116521}{doi:10.1080/00927870802116521}.
+
+\bibitem{DAnnaMicaleSammartano2011}
+M. D'Anna, V. Micale, and A. Sammartano,
+\emph{On the associated graded ring of a semigroup ring},
+J. Commut. Algebra 3 (2011), 147--168.
+\href{https://doi.org/10.1216/JCA-2011-3-2-147}{doi:10.1216/JCA-2011-3-2-147}.
+
+\bibitem{BrunsHerzog1997}
+W. Bruns and J. Herzog,
+\emph{Semigroup rings and simplicial complexes},
+J. Pure Appl. Algebra 122 (1997), no.~3, 185--208.
+\href{https://doi.org/10.1016/S0022-4049(97)00051-0}{doi:10.1016/S0022-4049(97)00051-0}.
+
+\bibitem{Stamate2018}
+D. I. Stamate,
+\emph{Betti numbers for numerical semigroup rings},
+in \emph{Multigraded Algebra and Applications}, Springer Proc. Math. Stat. 238 (2018), 133--157.
+\href{https://arxiv.org/abs/1801.00153}{arXiv:1801.00153v2}.
 
 \bibitem{Cadical2023}
 A. Biere, K. Fazekas, M. Fleury, and M. Heisinger,

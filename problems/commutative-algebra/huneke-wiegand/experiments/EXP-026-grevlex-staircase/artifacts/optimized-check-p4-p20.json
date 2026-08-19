@@ -1,0 +1,734 @@
+{
+  "experiment": "EXP-026-grevlex-staircase",
+  "generated_at": "2026-08-18T19:43:00.186560+00:00",
+  "status": "PASS",
+  "range": {
+    "first": 4,
+    "requested_last": 20
+  },
+  "completed_rows": 17,
+  "premise_hashes": {
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-023-one-cubic-defining-ideal/proof.md": "4f24c8bacf3ea4a7691142b6fbb2a79b40a1c200ec5051df3c79c3dc45bed084",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-024-extremal-betti-data/proof.md": "b7b654609cfca99e979b26741f7d2b6bbbfc0029d882c38e3c2932bfc9146088",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-025-curvilinear-primary-structure/proof.md": "70c7838ce843252aba335d80ade105d1d1942c490530ea7770483be0dff9a61f",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-025-curvilinear-primary-structure/run.py": "42411e5f8a166bd4a4663b49dfa3c19808b283735d2d633517c632e876f0377d"
+  },
+  "campaign_aggregate": "6a6b2531954fabe307ed0497751994f922ba918c1d2cf42a5496914d6c0f2197",
+  "elapsed_seconds": 0.02859960001660511,
+  "rows": [
+    {
+      "p": 4,
+      "q": 96,
+      "variable_count": 40,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        40,
+        88,
+        95,
+        96,
+        96,
+        96
+      ],
+      "quadratic_profile": {
+        "total": 732,
+        "binomial": 519,
+        "monomial_zero": 213
+      },
+      "reduced_basis_degree_profile": {
+        "2": 732,
+        "3": 19,
+        "4": 2,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 753,
+      "cubic_relation_hash": "396ceef5f99452bab9ca4853db8b0deb84f405d1e9a18dc5e0c1adb204b8405c",
+      "quartic_relation_hash": "d680c38faed089811e98260a76c1334c971af6b2224a58846abe98f5dec0c0b8",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "528fb02b38965057b205a459d98fd33f8ac33c6668ec3ccb3597baa4f4229579"
+    },
+    {
+      "p": 5,
+      "q": 120,
+      "variable_count": 50,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        50,
+        110,
+        119,
+        120,
+        120,
+        120
+      ],
+      "quadratic_profile": {
+        "total": 1165,
+        "binomial": 841,
+        "monomial_zero": 324
+      },
+      "reduced_basis_degree_profile": {
+        "2": 1165,
+        "3": 24,
+        "4": 3,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 1192,
+      "cubic_relation_hash": "937672c66760c050a8d910b6608987bf32914d14a44f9114009baff39d08d76f",
+      "quartic_relation_hash": "32d715f9f6b8b5a086156e07a2003d2ed8f2347d7acbc447888f848b16a8a2a5",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "2fa213e3b30e45a19182d1e068dd8120853df16a56952abeda5a5d478daa5973"
+    },
+    {
+      "p": 6,
+      "q": 144,
+      "variable_count": 60,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        60,
+        132,
+        143,
+        144,
+        144,
+        144
+      ],
+      "quadratic_profile": {
+        "total": 1698,
+        "binomial": 1240,
+        "monomial_zero": 458
+      },
+      "reduced_basis_degree_profile": {
+        "2": 1698,
+        "3": 29,
+        "4": 4,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 1731,
+      "cubic_relation_hash": "eb3c5569675a49d18c45c9bf0ba27cede246a162bf8fe32d149fc14380d00f7c",
+      "quartic_relation_hash": "489adb2778eef6f87f34ab5983ff0384d8ec34cba89e3df390fa25fee158f6f8",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "4ccd8242ba380dc6c50f96e8b5206d9a262a6dfa9fb40450a6a8ccf8a132f627"
+    },
+    {
+      "p": 7,
+      "q": 168,
+      "variable_count": 70,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        70,
+        154,
+        167,
+        168,
+        168,
+        168
+      ],
+      "quadratic_profile": {
+        "total": 2331,
+        "binomial": 1716,
+        "monomial_zero": 615
+      },
+      "reduced_basis_degree_profile": {
+        "2": 2331,
+        "3": 34,
+        "4": 5,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 2370,
+      "cubic_relation_hash": "e72d0f656d635124d059fc200438bd61bf90e05715af026066f5d7eb686d9774",
+      "quartic_relation_hash": "8263983220378ea0fad45bb91e5988c57623329afe1f4ab1f1204a00c389a957",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "249422f1b3221fa2aea83fb649eba9da070b4d51290deee7f0e78e9e8e08f667"
+    },
+    {
+      "p": 8,
+      "q": 192,
+      "variable_count": 80,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        80,
+        176,
+        191,
+        192,
+        192,
+        192
+      ],
+      "quadratic_profile": {
+        "total": 3064,
+        "binomial": 2269,
+        "monomial_zero": 795
+      },
+      "reduced_basis_degree_profile": {
+        "2": 3064,
+        "3": 39,
+        "4": 6,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 3109,
+      "cubic_relation_hash": "54d3bfbc6f20e91416f72022d922624756f532a1fadab4867a72909b6082bde4",
+      "quartic_relation_hash": "b661484c1398193de22adb5d017cb6a5a400feec662a1d4320f8be2bb7b51259",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "bbf99b4e2fbb123229109e5a1de7bfd43a98be0878c7878f787cd6924117171d"
+    },
+    {
+      "p": 9,
+      "q": 216,
+      "variable_count": 90,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        90,
+        198,
+        215,
+        216,
+        216,
+        216
+      ],
+      "quadratic_profile": {
+        "total": 3897,
+        "binomial": 2899,
+        "monomial_zero": 998
+      },
+      "reduced_basis_degree_profile": {
+        "2": 3897,
+        "3": 44,
+        "4": 7,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 3948,
+      "cubic_relation_hash": "bf6dcd76ec46e6e9881a2db868c4bbba9451932a2d79f4c9f8274b399d84da83",
+      "quartic_relation_hash": "8de50a3e87b7997052de808a3681c536fc220ee10109cb34d6d57fe05abeabb6",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "f39529870bbc0d4f0c73efab9b762d0c92c21f5f5a5cfc4527e6b6ad6fa26c4f"
+    },
+    {
+      "p": 10,
+      "q": 240,
+      "variable_count": 100,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        100,
+        220,
+        239,
+        240,
+        240,
+        240
+      ],
+      "quadratic_profile": {
+        "total": 4830,
+        "binomial": 3606,
+        "monomial_zero": 1224
+      },
+      "reduced_basis_degree_profile": {
+        "2": 4830,
+        "3": 49,
+        "4": 8,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 4887,
+      "cubic_relation_hash": "d694659562758c3d8d0323070edc0d7ece23ae1b4fb8b2df68b9908bc3bd9adf",
+      "quartic_relation_hash": "dc8d9dfe8c2fa2eaca9d92fc5921ec461b1289e4d00ee28ddac1bb725ddd733f",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "41be825f72dbc29e0579990fc00cbd9765cfb62243127e6433dcf9a88e3a62e7"
+    },
+    {
+      "p": 11,
+      "q": 264,
+      "variable_count": 110,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        110,
+        242,
+        263,
+        264,
+        264,
+        264
+      ],
+      "quadratic_profile": {
+        "total": 5863,
+        "binomial": 4390,
+        "monomial_zero": 1473
+      },
+      "reduced_basis_degree_profile": {
+        "2": 5863,
+        "3": 54,
+        "4": 9,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 5926,
+      "cubic_relation_hash": "4abc5bdeb5987c776430c51ed1efc2af584e32653d2d4eee78521b48d9e0eae0",
+      "quartic_relation_hash": "570712d9c7930709527e12363d55f02492f6e2eb13d7861079a5c1adfb17e34c",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "bc34fd45f915408d50a06ca005700f31e831edf6d2048477f40df7d5624e7dbb"
+    },
+    {
+      "p": 12,
+      "q": 288,
+      "variable_count": 120,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        120,
+        264,
+        287,
+        288,
+        288,
+        288
+      ],
+      "quadratic_profile": {
+        "total": 6996,
+        "binomial": 5251,
+        "monomial_zero": 1745
+      },
+      "reduced_basis_degree_profile": {
+        "2": 6996,
+        "3": 59,
+        "4": 10,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 7065,
+      "cubic_relation_hash": "162d29528913bb7358b97ef1f71003f383f4796bcc859d86730fb8bc2ab0d65f",
+      "quartic_relation_hash": "d867d3193e6e89f78af13c9aae2b1c6d16ebca4c56c497ab9d149cacc5e3f3cd",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "252814d2a0743d58b0b3106f677468f9fb584f97d0551bb0d749f1931101097c"
+    },
+    {
+      "p": 13,
+      "q": 312,
+      "variable_count": 130,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        130,
+        286,
+        311,
+        312,
+        312,
+        312
+      ],
+      "quadratic_profile": {
+        "total": 8229,
+        "binomial": 6189,
+        "monomial_zero": 2040
+      },
+      "reduced_basis_degree_profile": {
+        "2": 8229,
+        "3": 64,
+        "4": 11,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 8304,
+      "cubic_relation_hash": "f344b5fccfe3f69cdafe928f1e372d785d7e883b9c003b5b899cc6d0e937df92",
+      "quartic_relation_hash": "f841b85ea8d391e65f8b664c5ff119ac809a5ddd5d258c9bb0385d529f9a5661",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "0c37df94924bfc559ab920a0600f621eb65d0e106dffcad1b4fdc11ed57c05c6"
+    },
+    {
+      "p": 14,
+      "q": 336,
+      "variable_count": 140,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        140,
+        308,
+        335,
+        336,
+        336,
+        336
+      ],
+      "quadratic_profile": {
+        "total": 9562,
+        "binomial": 7204,
+        "monomial_zero": 2358
+      },
+      "reduced_basis_degree_profile": {
+        "2": 9562,
+        "3": 69,
+        "4": 12,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 9643,
+      "cubic_relation_hash": "8561f9fcad358721d22def18d226c0f53719ca3cc87a173109146f9376c53a54",
+      "quartic_relation_hash": "f29aefcb8f8ce1a79dc85cfefacf41230fcf3331628c4301a0b3d766ee4ad8e0",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "d0126aa5155f5c513aced0b928f41660b9b935d0f633bb0806cf172d8d74a6ab"
+    },
+    {
+      "p": 15,
+      "q": 360,
+      "variable_count": 150,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        150,
+        330,
+        359,
+        360,
+        360,
+        360
+      ],
+      "quadratic_profile": {
+        "total": 10995,
+        "binomial": 8296,
+        "monomial_zero": 2699
+      },
+      "reduced_basis_degree_profile": {
+        "2": 10995,
+        "3": 74,
+        "4": 13,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 11082,
+      "cubic_relation_hash": "95f4681ce81f12838d433068ce4b7b25c3e73ddffe0aedc48632c12c4b4ccb79",
+      "quartic_relation_hash": "19ae8512df286e985223d6784132a5172e00324fd84fbf836cddb98cb8c32425",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "0d88913cd6505b8f6ee84da0b8f1da7378b629dca26620ebd6c4ad622cb3af38"
+    },
+    {
+      "p": 16,
+      "q": 384,
+      "variable_count": 160,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        160,
+        352,
+        383,
+        384,
+        384,
+        384
+      ],
+      "quadratic_profile": {
+        "total": 12528,
+        "binomial": 9465,
+        "monomial_zero": 3063
+      },
+      "reduced_basis_degree_profile": {
+        "2": 12528,
+        "3": 79,
+        "4": 14,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 12621,
+      "cubic_relation_hash": "6529d2be2e2729c8a1715eaea98035f60d3e50790cef21d1d7e38c6b2508c728",
+      "quartic_relation_hash": "15fc3de88d5498b6584e132c83cd95a3fd9dbd21f2c65965f1b28e443921cec0",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "21deea4b82b0db7ab9edf906998f96e92312dad686920e15eb9be2e4cdc3dbb4"
+    },
+    {
+      "p": 17,
+      "q": 408,
+      "variable_count": 170,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        170,
+        374,
+        407,
+        408,
+        408,
+        408
+      ],
+      "quadratic_profile": {
+        "total": 14161,
+        "binomial": 10711,
+        "monomial_zero": 3450
+      },
+      "reduced_basis_degree_profile": {
+        "2": 14161,
+        "3": 84,
+        "4": 15,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 14260,
+      "cubic_relation_hash": "b31f8df6f94ef50e9e8564488c9a86a6c7b77a2b37fe08d430271c8cc0cd5e70",
+      "quartic_relation_hash": "14792e4b2020078ccfd5baf0d4ba05bcf74bea1d6d2e2a03f56185874e60a4d9",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "8986037d4cf8d827b47b40e946f32d5ac6e77244e276f5e2eb6d663ec58d30d2"
+    },
+    {
+      "p": 18,
+      "q": 432,
+      "variable_count": 180,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        180,
+        396,
+        431,
+        432,
+        432,
+        432
+      ],
+      "quadratic_profile": {
+        "total": 15894,
+        "binomial": 12034,
+        "monomial_zero": 3860
+      },
+      "reduced_basis_degree_profile": {
+        "2": 15894,
+        "3": 89,
+        "4": 16,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 15999,
+      "cubic_relation_hash": "b01b31eeef33f4629010f05463b6485af147c0dd6a14b700e29c36370ee268d8",
+      "quartic_relation_hash": "03446af3783130cd0540673942f0309477e43bf680c41ba81112c2545f1f1f84",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "71d57b2620ccdc0c22ac7efcb39ab3b3fc7ae374425b191b355a44f2575aa927"
+    },
+    {
+      "p": 19,
+      "q": 456,
+      "variable_count": 190,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        190,
+        418,
+        455,
+        456,
+        456,
+        456
+      ],
+      "quadratic_profile": {
+        "total": 17727,
+        "binomial": 13434,
+        "monomial_zero": 4293
+      },
+      "reduced_basis_degree_profile": {
+        "2": 17727,
+        "3": 94,
+        "4": 17,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 17838,
+      "cubic_relation_hash": "578f871a8102ce1bbc8bfd14cc7cb1389de3da46b600b9613108741f8216a69b",
+      "quartic_relation_hash": "c3ad9e6353e1a54f008aad9b16bdd9a8102733e327f764d8506bc742694a1aef",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "e19813e88f9d0883d43f3a7e58dbfb7fc1128523fb05426614c21acd68408caf"
+    },
+    {
+      "p": 20,
+      "q": 480,
+      "variable_count": 200,
+      "term_order": "grevlex; X_a>X_b iff a>b; X_0 last",
+      "hilbert_dimensions_0_to_6": [
+        1,
+        200,
+        440,
+        479,
+        480,
+        480,
+        480
+      ],
+      "quadratic_profile": {
+        "total": 19660,
+        "binomial": 14911,
+        "monomial_zero": 4749
+      },
+      "reduced_basis_degree_profile": {
+        "2": 19660,
+        "3": 99,
+        "4": 18,
+        "5": 0,
+        "6": 0
+      },
+      "reduced_basis_total": 19777,
+      "cubic_relation_hash": "ee1f188bcc947f70e4ec9648f3d0be65cd6fa84c4f737dde909b9bcff6ff6aa7",
+      "quartic_relation_hash": "d9e69e55c2ddc47d61c959214190c688a3b1112f96eae70b0ab30b24c794c8ac",
+      "x0_divides_minimal_lead": false,
+      "controls": {
+        "reversed_order_rejected": true,
+        "deleted_cubic_member_rejected": true,
+        "shifted_quartic_endpoint_rejected": true,
+        "corrupted_tail_rejected": true,
+        "wrong_total_offset_rejected": true,
+        "x0_leading_generator_rejected": true,
+        "degree_five_false_standard_rejected": true,
+        "eventual_hilbert_only_rejected": true
+      },
+      "row_hash": "119cc494428a838e4473fd575f870c5147644809486303fbef62f6f66504ec5d"
+    }
+  ]
+}
