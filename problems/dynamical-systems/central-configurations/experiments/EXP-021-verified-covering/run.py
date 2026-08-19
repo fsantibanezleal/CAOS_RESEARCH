@@ -61,6 +61,72 @@ class IV:
 
 A1, A2 = F(1), F(-1)
 
+def entry_matrix(ub, vb, pb, qb):
+    u = IV.raw(*ub); v = IV.raw(*vb); p = IV.raw(*pb); q = IV.raw(*qb)
+    one = IV(1); mone = IV(-1)
+    h1 = one - v; gam = mone - v; g1 = one - q; g2 = mone - q
+    f = v - q; e12 = IV(2)
+    d1A = (u.sq() + h1.sq()).sqrt(); d2A = (u.sq() + gam.sq()).sqrt()
+    d1B = (p.sq() + g1.sq()).sqrt(); d2B = (p.sq() + g2.sq()).sqrt()
+    cs = ((u - p).sq() + f.sq()).sqrt(); cx = ((u + p).sq() + f.sq()).sqrt()
+    wA = IV(2) * u; wB = IV(2) * p; r12 = IV(2)
+    ic = {}
+    for nm, dv in (("r12", r12), ("d1A", d1A), ("d1B", d1B), ("d2A", d2A),
+                   ("d2B", d2B), ("wA", wA), ("wB", wB), ("cs", cs), ("cx", cx)):
+        ic[nm] = dv.invcube()
+    def s_(a, b):
+        return ic[a] - ic[b]
+    two = IV(2)
+    J = [[IV(0)] * 4 for _ in range(6)]
+    # L13
+    J[0][1] = s_("r12", "d2A") * (IV(-1) * u * e12)
+    J[0][2] = s_("d1A", "wA") * (IV(-1) * two * u * h1)
+    J[0][3] = s_("d1B", "cs") * (p * h1 - u * g1) + s_("d1B", "cx") * (IV(-1) * (u * g1 + p * h1))
+    # L15
+    J[1][1] = s_("r12", "d2B") * (IV(-1) * p * e12)
+    J[1][2] = s_("d1A", "cs") * (u * g1 - p * h1) + s_("d1A", "cx") * (IV(-1) * (p * h1 + u * g1))
+    J[1][3] = s_("d1B", "wB") * (IV(-1) * two * p * g1)
+    # L23
+    J[2][0] = s_("r12", "d1A") * (u * e12)
+    J[2][2] = s_("d2A", "wA") * (IV(-1) * two * u * gam)
+    J[2][3] = s_("d2B", "cs") * (p * gam - u * g2) + s_("d2B", "cx") * (IV(-1) * (u * g2 + p * gam))
+    # L25
+    J[3][0] = s_("r12", "d1B") * (p * e12)
+    J[3][2] = s_("d2A", "cs") * (u * g2 - p * gam) + s_("d2A", "cx") * (IV(-1) * (p * gam + u * g2))
+    J[3][3] = s_("d2B", "wB") * (IV(-1) * two * p * g2)
+    # L35
+    J[4][0] = s_("d1A", "d1B") * (p * h1 - u * g1)
+    J[4][1] = s_("d2A", "d2B") * (p * gam - u * g2)
+    J[4][2] = s_("wA", "cx") * (IV(-1) * two * f * u)
+    J[4][3] = s_("cx", "wB") * (IV(-1) * two * f * p)
+    # L36
+    J[5][0] = s_("d1A", "d1B") * (IV(-1) * (u * g1 + p * h1))
+    J[5][1] = s_("d2A", "d2B") * (IV(-1) * (u * g2 + p * gam))
+    J[5][2] = s_("wA", "cs") * (IV(-1) * two * f * u)
+    J[5][3] = s_("cs", "wB") * (two * f * p)
+    return J
+
+MENU = [((0,1,2),(0,1,2)), ((0,1,3),(0,1,2)), ((0,2,3),(0,1,2)), ((1,2,3),(0,1,2)),
+        ((0,1,2),(0,1,3)), ((0,2,4),(0,1,2)), ((0,2,5),(0,1,2)), ((1,3,4),(0,1,3)),
+        ((2,4,5),(0,1,2)), ((0,4,5),(0,1,3)), ((0,1,4),(0,2,3)), ((2,3,5),(0,1,3))]
+
+def det3(J, rows, cols):
+    a,b,c = rows; x,y,z = cols
+    return (J[a][x]*(J[b][y]*J[c][z] - J[b][z]*J[c][y])
+            - J[a][y]*(J[b][x]*J[c][z] - J[b][z]*J[c][x])
+            + J[a][z]*(J[b][x]*J[c][y] - J[b][y]*J[c][x]))
+
+def any_minor_certifies(ub, vb, pb, qb):
+    J = entry_matrix(ub, vb, pb, qb)
+    for rows, cols in MENU:
+        try:
+            if det3(J, rows, cols).excludes_zero():
+                return (rows, cols)
+        except AssertionError:
+            continue
+    return None
+
+
 def minor_interval(ub, vb, pb, qb):
     """[boxes as (lo,hi) Fraction pairs] -> IV of the chosen minor."""
     u = IV.raw(*ub); v = IV.raw(*vb); p = IV.raw(*pb); q = IV.raw(*qb)
@@ -110,17 +176,14 @@ def main():
         if dmax_hi < F(1,4) and dmin_lo > F(-1,4):
             discarded += 1
             continue
-        try:
-            M = minor_interval(ub, vb, pb, qb)
-            if M.excludes_zero():
-                certified += 1
-                if len(certs) < 200000:
-                    certs.append([[str(x) for x in ub], [str(x) for x in vb],
-                                  [str(x) for x in pb], [str(x) for x in qb],
-                                  str(M.lo), str(M.hi)])
-                continue
-        except AssertionError:
-            pass  # interval hit a non-sign-definite denominator: bisect
+        got = any_minor_certifies(ub, vb, pb, qb)
+        if got is not None:
+            certified += 1
+            if len(certs) < 200000:
+                certs.append([[str(x) for x in ub], [str(x) for x in vb],
+                              [str(x) for x in pb], [str(x) for x in qb],
+                              str(got)])
+            continue
         if d >= DEPTH:
             failed += 1
             continue
