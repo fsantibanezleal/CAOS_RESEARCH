@@ -1,8 +1,8 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-19. Lifecycle: EXP-028 confirmed and manuscript v0.15 published; repository
-promotion is active. The entire second Betti row of the conductor special fiber is now exact over
-every field:
+Updated: 2026-08-19. Lifecycle: EXP-028 confirmed, manuscript v0.15 published, and the checked
+round promoted. The entire second Betti row of the conductor special fiber is now exact over every
+field:
 
 ```text
 beta_(2,3)=2p(500p^2-330p+31)/3,
@@ -19,7 +19,9 @@ For `0<=r<=2p-4`, the degree-five support is the three intervals
 characteristic independence. The canonical campaign passes 297 rows, complete small profiles,
 two-field controls, an independent rational/Smith audit, and arithmetic/Z3 checks. The 34-page
 main manuscript v0.15 is published and fresh-download verified at DOI
-`10.5281/zenodo.22016550`. Higher homological rows and the full Betti table remain open.
+`10.5281/zenodo.22016550`. PRs #198/#199 promoted the checked research payload through `develop`
+to `main`; CAOS_MANAGE PR #566 promoted the publication controls and ledger. Higher homological
+rows and the full Betti table remain open.
 
 The published baseline remains intact: EXP-026 and focused companion v0.02 are published and
 fresh-download verified at DOI `10.5281/zenodo.22002907`, and PRs #190/#191 plus CAOS_MANAGE PR
@@ -220,8 +222,12 @@ The v0.15 expansion of the main conductor-fiber manuscript passed complete claim
 sole-authorship, metadata, authenticated draft, publication, and fresh-download gates. It is
 public as record `22016550`, DOI `10.5281/zenodo.22016550`; its 674,169-byte PDF matches committed
 SHA-256 `e7d3fb747f01b6c44c84ca9c2cf25a746cd2d05eb0996163f4a18e9e3cea1be9`. HWB-039 is done.
-HWB-040 owns checked work-to-`develop`, `develop`-to-`main`, and management-ledger promotion. A
-separate manuscript remains deferred until higher-row results create a distinct narrative.
+PR #198 passed `guards` and `test` and merged to `develop` at `b83b9aa0`; PR #199 passed both jobs
+and promoted the identical payload to `main` at `5ce1efa3`. Work, `develop`, and `main` share tree
+`e35f420f59a5343ea09da15985786ab0b65897d6`. CAOS_MANAGE PR #566 promoted the scoped controls and
+ledger to `main` at `ddafe393`; management `develop` and `main` share tree
+`f234e662fa13834787c994b789d6607b486c19ec`. HWB-040 is done. A separate manuscript remains
+deferred until higher-row results create a distinct narrative.
 
 Previously closed state:
 
@@ -353,14 +359,11 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Complete HWB-040: promote the exact EXP-028 plus v0.15 payload through checked PRs from the
-   current work branch to `develop`, then `develop` to `main`; never switch this checkout.
-2. Promote the scoped CAOS_MANAGE v0.15 controls and ledger from its existing `develop` branch to
-   `main`, preserving unrelated TruckVitals work.
-3. Reconcile remote trees and write the final promotion handoff. Any later theorem round needs a
-   fresh preflight and new experiment; prioritize higher relative-complex homology over raw full
-   resolutions.
-4. Preserve the EXP-023 solver trust boundary and do not claim a global release tag for this
+1. Any later theorem round needs a fresh source/novelty preflight and newly declared experiment;
+   no experiment or delivery gate is active at this handoff.
+2. Prioritize a higher homological row through integral relative-complex matching and sparse Smith
+   structure over raw full resolutions; do not extrapolate EXP-028 to the full table.
+3. Preserve the EXP-023 solver trust boundary and do not claim a global release tag for this
    research-only round.
 
 ### Lenses ledger

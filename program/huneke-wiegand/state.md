@@ -86,8 +86,9 @@
 | 2026-08-19 | published | active | EXP-028 declared before implementation: determine the remaining degree-five and degree-six entries and decide whether they complete the second Betti row over every field |
 | 2026-08-19 | active | confirmed | EXP-028 proves the complete second row: `beta_(2,5)=p(2p-3)`, `beta_(2,6)=0`, exact three-block offset multiplicities, and characteristic independence by integral unit Smith form |
 | 2026-08-19 | confirmed | published | 34-page preprint v0.15 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.22016550`, and matched a fresh unauthenticated public download exactly |
+| 2026-08-19 | published | published | PRs #198/#199 passed required checks and promoted EXP-028 plus v0.15 through `develop` to `main`; CAOS_MANAGE PR #566 promoted the matching publication controls and ledger |
 
-Current state: **EXP-028 confirmed and v0.15 published; checked promotion is active**. Integral
+Current state: **EXP-028 confirmed, v0.15 published, and checked promotion complete**. Integral
 relative offset-Koszul matching and unit Smith forms prove the complete second Betti row over every
 field:
 
@@ -105,8 +106,10 @@ two-characteristic controls, independent rational/Smith audit, and arithmetic/Z3
 pass. The main manuscript v0.15 is published and fresh-download verified at DOI
 `10.5281/zenodo.22016550`; its public 674,169-byte PDF has SHA-256
 `e7d3fb747f01b6c44c84ca9c2cf25a746cd2d05eb0996163f4a18e9e3cea1be9`. HWB-039 is done and
-HWB-040 owns repository and management promotion. Higher homological rows and the full Betti table
-remain open under HWB-035.
+HWB-040 is done. Research work, `develop`, and `main` share payload tree
+`e35f420f59a5343ea09da15985786ab0b65897d6`; management `develop` and `main` share tree
+`f234e662fa13834787c994b789d6607b486c19ec`. Higher homological rows and the full Betti table remain
+open under HWB-035.
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.
