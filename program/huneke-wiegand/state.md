@@ -83,23 +83,30 @@
 | 2026-08-19 | confirmed | active | manuscript v0.14 and Zenodo new-version gate opened for the first interior Betti-strand theorem; publication is not yet claimed |
 | 2026-08-19 | active | published | 31-page preprint v0.14 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.22013515`, and matched a fresh unauthenticated public download exactly |
 | 2026-08-19 | published | published | PRs #194/#195 passed required checks and promoted EXP-027 plus v0.14 through `develop` to `main`; CAOS_MANAGE PR #562 promoted the matching publication controls and ledger |
+| 2026-08-19 | published | active | EXP-028 declared before implementation: determine the remaining degree-five and degree-six entries and decide whether they complete the second Betti row over every field |
+| 2026-08-19 | active | confirmed | EXP-028 proves the complete second row: `beta_(2,5)=p(2p-3)`, `beta_(2,6)=0`, exact three-block offset multiplicities, and characteristic independence by integral unit Smith form |
+| 2026-08-19 | confirmed | published | 34-page preprint v0.15 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.22016550`, and matched a fresh unauthenticated public download exactly |
 
-Current state: **EXP-027 confirmed, published, and promoted**. Relative offset-Koszul homology and
-the independent quadratic-colon mapping cone prove the first unknown interior Betti strand over
-every field:
+Current state: **EXP-028 confirmed and v0.15 published; checked promotion is active**. Integral
+relative offset-Koszul matching and unit Smith forms prove the complete second Betti row over every
+field:
 
 ```text
+beta_(2,3)=2p(500p^2-330p+31)/3,
 beta_(2,4)=8p,
-beta_(3,4)=p(5p-1)(500p^2-440p+47)/2.
+beta_(2,5)=p(2p-3),
+beta_(2,6)=0,
+beta_(2,j)=0 otherwise.
 ```
 
-The `8p` second syzygies are multiplicity-free at offsets `{3p+a:a in G_p,a>=6p}`. The exact
-297-parameter campaign, full offset profiles at `p=4,5,6`, two-characteristic smoke, six-query
-all-parameter certificate, and independent audit pass. The main conductor-fiber manuscript v0.14
-is published and fresh-download verified at DOI `10.5281/zenodo.22013515`. PRs #194/#195 promoted
-the tested research tree `84910601b3a5b406c3725f64a0903d8116ad922f`; CAOS_MANAGE PR #562
-promoted the matching ledger with tree `f46e52f048dcdcadfae5d7bbd68cecdaadac78c5`. HWB-038 is
-done. The full remaining interior Betti table stays open under HWB-035.
+The degree-five homology has exact three-block multiplicities `m_out`, `m_mid`, and reflected
+`m_out`; degree six vanishes integrally. The 297-row campaign, complete `p=4,5,6` profiles,
+two-characteristic controls, independent rational/Smith audit, and arithmetic/Z3 certificate all
+pass. The main manuscript v0.15 is published and fresh-download verified at DOI
+`10.5281/zenodo.22016550`; its public 674,169-byte PDF has SHA-256
+`e7d3fb747f01b6c44c84ca9c2cf25a746cd2d05eb0996163f4a18e9e3cea1be9`. HWB-039 is done and
+HWB-040 owns repository and management promotion. Higher homological rows and the full Betti table
+remain open under HWB-035.
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.

@@ -1,23 +1,25 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-19. Lifecycle: EXP-027 confirmed, published, and promoted. The first unknown
-interior Betti strand of the conductor special fiber is now exact over every field:
+Updated: 2026-08-19. Lifecycle: EXP-028 confirmed and manuscript v0.15 published; repository
+promotion is active. The entire second Betti row of the conductor special fiber is now exact over
+every field:
 
 ```text
+beta_(2,3)=2p(500p^2-330p+31)/3,
 beta_(2,4)=8p,
-beta_(3,4)=p(5p-1)(500p^2-440p+47)/2.
+beta_(2,5)=p(2p-3),
+beta_(2,6)=0,
+beta_(2,j)=0 otherwise.
 ```
 
-The `8p` second syzygies occur with multiplicity one at offsets
-`{3p+a:a in G_p,a>=6p}`. The proof identifies offset Koszul strands with relative
-squarefree-divisor chains, uses an integral lexicographic matching for the upper bound, and obtains
-the matching lower bound from `(Q_p:f_p)_1` and a minimal mapping cone. The 297-row campaign,
-explicit all-offset profiles at `p=4,5,6`, two-characteristic `p=4` smoke, six-query symbolic
-certificate, and independent reconstruction audit all pass. The 31-page main conductor-fiber
-manuscript v0.14 is published and fresh-download verified at DOI `10.5281/zenodo.22013515`.
-PRs #194/#195 promoted the checked result through `develop` to `main`; CAOS_MANAGE PR #562
-promoted the matching publication controls and ledger. The full remaining interior table stays
-open.
+For `0<=r<=2p-4`, the degree-five support is the three intervals
+`[3p+2,5p-2]`, `[6p+1,8p-3]`, and `[9p,11p-4]`. The outer multiplicity is
+`min(floor(r/2)+1,floor((2p-4-r)/2)+1)` and the middle multiplicity is
+`min(r+1,2p-3-r,p-2)`. Integral lexicographic matching and unit Smith forms prove freeness and
+characteristic independence. The canonical campaign passes 297 rows, complete small profiles,
+two-field controls, an independent rational/Smith audit, and arithmetic/Z3 checks. The 34-page
+main manuscript v0.15 is published and fresh-download verified at DOI
+`10.5281/zenodo.22016550`. Higher homological rows and the full Betti table remain open.
 
 The published baseline remains intact: EXP-026 and focused companion v0.02 are published and
 fresh-download verified at DOI `10.5281/zenodo.22002907`, and PRs #190/#191 plus CAOS_MANAGE PR
@@ -56,7 +58,9 @@ Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
     data (EXP-024);
 15. the truncated-monomial primary model and complete reduced grevlex staircase (EXP-025/026); and
 16. the first interior Betti strand, with characteristic-free multiplicity-free offset support
-    (EXP-027).
+    (EXP-027); and
+17. the complete second Betti row, with degree-five multiplicities, degree-six vanishing, and
+    characteristic independence (EXP-028).
 
 The public seed is
 
@@ -146,6 +150,7 @@ campaign is supporting evidence, not the proof.
 | EXP-025 | CONFIRMED | truncated parametrization, one primary component, nilindex `24p`, curvilinear fat point, local/arithmetic Gorenstein contrast, and differential fingerprint |
 | EXP-026 | CONFIRMED | reduced grevlex profile `(50p^2-17p,5p-1,p-2)`, no later boundary, and flat Cohen--Macaulay monomial degeneration |
 | EXP-027 | CONFIRMED | `beta_(2,4)=8p` with complete multiplicity-free offset support and exact adjacent `beta_(3,4)` over every field |
+| EXP-028 | CONFIRMED | complete second row: exact degree-five three-block multiplicities, `beta_(2,5)=p(2p-3)`, and integral `beta_(2,6)=0` over every field |
 
 ## 3a. Exact evidence anchors
 
@@ -179,35 +184,44 @@ campaign is supporting evidence, not the proof.
   `9bc93c41d899df4a39b85a452257d114000df84730d44f0661c19b7dd8322b63`,
   `b7e760290880e821fbc2ef86b03279edab1543307fd5c58cbb635d9c4b765db8`, and
   `f30b94ce86638732a407a3bb5abb4dfde8a1258441df71a36138dd0ae129d454`.
+- EXP-028 canonical campaign aggregate:
+  `45f08e6a15e321512629fa4b6ab07161ddcc766ddf56e1d9579175f3444ec32f`; the independent
+  rational/Smith audit and symbolic/arithmetic certificate both pass.
 
 ## 4. In flight
 
-EXP-027 is CONFIRMED. For every `p>=4` and every field,
+EXP-028 is CONFIRMED. For every `p>=4` and every field, the complete second row is
 
 ```text
+beta_(2,3)=2p(500p^2-330p+31)/3,
 beta_(2,4)=8p,
-beta_(3,4)=p(5p-1)(500p^2-440p+47)/2.
+beta_(2,5)=p(2p-3),
+beta_(2,6)=0,
+beta_(2,j)=0 otherwise.
 ```
 
-The `beta_(2,4)` offset support is `{3p+a:a in G_p,a>=6p}`, with one class at each offset. The
-integral relative-homology matching and primitive mapping-cone classes exclude torsion and every
-characteristic exception. The exact campaign covers `p=4,...,300`; explicit relative-chain
-profiles cover every offset at `p=4,5,6`; the smallest case agrees over two unrelated finite
-fields; six symbolic counterexample queries are UNSAT; and the independent audit reconstructs the
-`p=4` chain profile plus six small and large formula samples. Proof and verdict live under
-`experiments/EXP-027-relative-betti-strand/`.
+The degree-five support and profiles are
 
-The v0.14 expansion of the main conductor-fiber manuscript passed complete claim/build/render,
-sole-authorship, metadata, Zenodo new-version, and fresh-download checks. It is public as record
-`22013515`, DOI `10.5281/zenodo.22013515`; its 656,437-byte PDF matches committed SHA-256
-`df5e12d2256f4967881df0f35df44b415777c4826f38447a33cfdeb1b7399e10`. PR #194 passed `guards`
-and `test` and merged the round to `develop` at `68ebac5b`; PR #195 passed its own required checks
-and promoted it to `main` at `6319887e`. Work, `develop`, and `main` share tested payload tree
-`84910601b3a5b406c3725f64a0903d8116ad922f`. CAOS_MANAGE PR #562 promoted the corresponding
-Zenodo controls and ledger to `main` at `8c3fcca1`; management `develop` and `main` share tree
-`f46e52f048dcdcadfae5d7bbd68cecdaadac78c5`. HWB-038 is done. A separate manuscript is deferred
-until the relative method determines a substantial additional portion of the table or a
-transferable theorem beyond this family.
+```text
+[3p+2,5p-2]: m_out(r),
+[6p+1,8p-3]: m_mid(r),
+[9p,11p-4]: m_out(2p-4-r),
+m_out(r)=min(floor(r/2)+1,floor((2p-4-r)/2)+1),
+m_mid(r)=min(r+1,2p-3-r,p-2).
+```
+
+The integral relative-chain matching yields a unit Smith form in degree five and no critical edge
+in degree six. The exact campaign covers `p=4,...,300`; complete profiles at `p=4,5,6` total
+`20,35,54`; the smallest case agrees over `GF(2)` and `GF(1000003)`; the independent audit rebuilds
+rational ranks and Smith factors; and the arithmetic/Z3 certificate checks count and endpoint
+identities. Proof and verdict live under `experiments/EXP-028-complete-second-betti-row/`.
+
+The v0.15 expansion of the main conductor-fiber manuscript passed complete claim/build/render,
+sole-authorship, metadata, authenticated draft, publication, and fresh-download gates. It is
+public as record `22016550`, DOI `10.5281/zenodo.22016550`; its 674,169-byte PDF matches committed
+SHA-256 `e7d3fb747f01b6c44c84ca9c2cf25a746cd2d05eb0996163f4a18e9e3cea1be9`. HWB-039 is done.
+HWB-040 owns checked work-to-`develop`, `develop`-to-`main`, and management-ledger promotion. A
+separate manuscript remains deferred until higher-row results create a distinct narrative.
 
 Previously closed state:
 
@@ -339,9 +353,14 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Any next theorem round requires a fresh source/novelty preflight and a newly declared
-   experiment; no experiment is active at this handoff.
-2. Preserve the EXP-023 solver trust boundary and do not claim a global release tag for this
+1. Complete HWB-040: promote the exact EXP-028 plus v0.15 payload through checked PRs from the
+   current work branch to `develop`, then `develop` to `main`; never switch this checkout.
+2. Promote the scoped CAOS_MANAGE v0.15 controls and ledger from its existing `develop` branch to
+   `main`, preserving unrelated TruckVitals work.
+3. Reconcile remote trees and write the final promotion handoff. Any later theorem round needs a
+   fresh preflight and new experiment; prioritize higher relative-complex homology over raw full
+   resolutions.
+4. Preserve the EXP-023 solver trust boundary and do not claim a global release tag for this
    research-only round.
 
 ### Lenses ledger
@@ -363,6 +382,8 @@ Published baseline:
   of equal-total offset factorizations and isolate one primitive cubic circuit.
 - Exact symbolic exclusion: affine Presburger cells close every degree-three through degree-five
   component uniformly, with finite campaign and independent graph routes as adversarial support.
+- Relative-chain matching: EXP-027/028 turn offset-graded Betti entries into integral homology and
+  use unit pivots/Smith forms to isolate actual classes without characteristic extrapolation.
 
 ## 7. Gotchas
 
