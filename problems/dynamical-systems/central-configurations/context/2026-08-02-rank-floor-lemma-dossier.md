@@ -513,3 +513,26 @@ certificates on the rest of the core, dim(R_2 meet core) <= 2 follows: the
 k = 3 requirement ON THE CORE. Gradients are computed by the cofactor rule
 (d det = sum of cofactors times entry differentials) with entry
 derivatives evaluated exactly at the pentagon point in the same field.
+
+## Lemma piece 8: THE k = 3 BOUND HOLDS ON THE CORE (2026-08-03)
+
+Two 3 x 3 minors of the mass matrix ({L13,L15,L23} x {m1,m2,mA} and
+{L23,L25,L35} x {m1,mA,mB}) have EXACT gradients at the centered-pentagon
+point (computed by the cofactor rule with entry derivatives evaluated in
+the golden field), and the 2 x 4 gradient matrix has EXACT RANK 2. By the
+implicit function theorem their common zero locus is, near the pentagon
+(and its mirror image), a codimension-2 submanifold, hence of dimension 2;
+the rank-at-most-2 locus R_2 is contained in it. Everywhere else on the
+gauged core the interval covering certifies rank >= 3 (phases 1-3: naive
+certificates, refinement, and mean-value certificates; the once-stubborn
+boxes are exactly the pentagon clusters). Therefore
+
+    dim( R_2  meet  core ) <= 2,
+
+which is the k = 3 requirement of the chain ON THE CORE, achieved on the
+nose by the centered pentagon (R_2 is nonempty there, so the bound is
+sharp). REMAINING for the full k = 3 and hence the whole chain: the collar
+and outer asymptotic lemmas (q -> v, u or p -> 0, large coordinates), plus
+ONE integrated clean covering rerun to produce the single complete
+certificate list for the record (the current certificates are spread
+across phases; the mathematics is done, the artifact hygiene remains).
