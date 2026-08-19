@@ -536,3 +536,84 @@ and outer asymptotic lemmas (q -> v, u or p -> 0, large coordinates), plus
 ONE integrated clean covering rerun to produce the single complete
 certificate list for the record (the current certificates are spread
 across phases; the mathematics is done, the artifact hygiene remains).
+
+## THE COVERING PROGRAMME RESTRUCTURE (2026-08-19)
+
+Two corrections and one simplification, found while planning the collar
+lemmas, all now declared in EXP-022/hypothesis.md.
+
+**Correction 1 (the ladder).** The mass-fiber dimension count behind the
+chain needs dim(R_j meet shape+) <= j for ALL of j = 0, 1, 2, not only
+j = 2: over the rank-r locus the mass fiber has dimension 4 - r, so
+dim Omega <= max_r [ dim(rank = r locus) + (4 - r) ], and every level must
+be bounded. Status: j = 0 is CLOSED GLOBALLY by lemma piece 9-prep below;
+j = 1 and j = 2 follow together from the rank >= 3 coverings off the
+exceptional balls, and ON each ball from the two ball certificates (rank-2
+witness: a 2x2 minor interval-nonzero over the whole ball, so R_1 meet
+ball is empty; gradient pair: two 3x3 minors with interval-independent
+gradients over the whole ball, so R_2 meet ball sits inside a smooth
+2-manifold). The ball certificates replace piece 8's implicit function
+theorem step with an EXPLICIT radius (2^-8), removing the non-effective
+neighborhood; all four pentagon copies (mirror and pair-swap images)
+certified in 0.1 s each (EXP-021 integrated preflight).
+
+**Lemma piece 9-prep: R_0 meets the stratum nowhere (2026-08-19).**
+J = 0 forces, from the four single-s-term entries with monomial brackets
+(L23/L13 x m1/m2 and L25/L15 x m1/m2), d1A = d2A = 2 and d1B = d2B = 2;
+d1A = d2A gives v = 0 and d1B = d2B gives q = 0, hence f = v - q = 0,
+which is OFF the open stratum. Exact, machine-verified
+(EXP-022/r0-lemma.py). So R_0 meet {f != 0} = EMPTY, globally.
+
+**Correction 2 (the slice-limit closure hole).** The planned collar route
+(prove a rank floor on the boundary slice at f = 0 or u = 0, then transfer
+inward by semicontinuity) is UNSOUND as a dimension argument: rank >= 3 at
+the slice off a small set Z only confines R_2 near the slice to a shrinking
+tube around Z, and a 2-dimensional low-rank set can hide inside such a tube
+at every nearby slice value. Nothing in the slice bound controls the slices
+at small nonzero parameter. The route is abandoned before use.
+
+**The simplification: collars BECOME coverings.** Every collar direction
+admits a rescaling making the entry matrix analytic up to and including
+the boundary face, after which the interval-covering machinery applies to
+a region CONTAINING the face, with no limit argument at all:
+
+- The f -> 0 direction needs no rescaling: the entries are analytic across
+  f = 0 wherever cs > 0, i.e. off the collision set {u = p, f = 0}. The
+  band {|f| <= 1/4} is covered directly (EXP-022 part (a), running), with
+  the collision tube {|u-p| <= 1/16, |f| <= 1/16} excised for part (b).
+- The collision tube gets a polar blow-up: t = u - p = rho alpha,
+  f = rho beta, alpha^2 + beta^2 = 1, cs = rho. Every 1/rho^3 cancels
+  ALGEBRAICALLY against explicit rho factors of the brackets before any
+  evaluation: Delta135 = p h1 - u g1 = -rho (alpha h1 + beta w +
+  rho alpha beta / 2) exactly (w = (u+p)/2), and s(d1A, d1B) carries the
+  exact factor rho via d1B^2 - d1A^2 = rho (2 beta h1 - 2 alpha w +
+  rho beta^2) divided by (d1A + d1B)(d1A^2 + d1A d1B + d1B^2)-type
+  nonvanishing radicals. Rows L13, L15, L23, L25, L36 are multiplied by
+  rho^2 and row L35 divided by rho^2 (the whole row vanishes to second
+  order: its s-factors and brackets EACH carry one rho). Row scalings by
+  nonzero factors preserve rank at rho > 0, and the rescaled matrix is
+  analytic at rho = 0, so covering the blown-up region including the
+  rho = 0 face certifies rank >= 3 on the punctured tube. The angle is
+  parametrized rationally (alpha, beta) = ((1-tau^2)/(1+tau^2),
+  2 tau/(1+tau^2)), tau in [-1,1], right half-circle; the left half-circle
+  is the image of the right under the pair swap (t, f) -> (-t, -f).
+- The u -> 0 direction (pair A collapses onto the axis): multiply the mA
+  column by 4u^2. The rescaled column is analytic at u = 0
+  (J~[L13][mA] = h1 - 8u^3 h1 d1A^-3, J~[L35][mA] = -f + 8 f u^3 cx^-3,
+  etc.), every other entry is already analytic there (d1A -> |h1| smoothly
+  since d1A = sqrt(u^2 + h1^2)), and the face matrix at u = 0 has generic
+  rank 4 (L13 -> (0,0,h1,0) covers mA; L15, L25, L35-L36 generically span
+  the rest). Column scaling by 4u^2 != 0 preserves rank at u > 0. Covering
+  region u in [0, 1/4] x p in [1/4, 3] x box, minus the corner tubes
+  {u <= 1/16, |v -+ 1| <= 1/16} (A collides with an axis body) and the
+  A_tube sliver. The p -> 0 direction is the pair-swap image.
+- Remaining after these: the double corner (u, p both small), the four
+  axis-collision corner tubes, and the outer charts (inverted coordinates
+  with per-chart rescalings). Each is the SAME pattern one level deeper;
+  declared pending in EXP-022, not assumed.
+
+The stratum theorem chain, restated: k = 0, 1, 2, 4 proven; k = 3 =
+[ core: EXP-021 integrated rerun with ball certificates, running ] +
+[ band: EXP-022a, running ] + [ tube, ulow/plow, corners, outer: EXP-022
+b-e pending ]. The ladder levels j = 0 (closed) and j = 1 (balls + the
+same coverings) ride along. No other gaps are known.
