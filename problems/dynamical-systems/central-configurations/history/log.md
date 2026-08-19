@@ -528,3 +528,33 @@
   pieces 4 and 5 did. The bordered-minor closed-form program for k = 3 is
   the sole active route, with the EXP-016 rank-4 geometries as the ready
   properness witnesses.
+
+## 2026-08-19 (round 31): the covering-programme restructure
+
+- EXP-005 n=6: both gfan runs found dead again (WSL restart); pow2 resumed
+  from the fresh 1.2 GB checkpoint, pow3 relaunched fresh (still no
+  checkpoint file ever written by its --saveas; loss recorded); resume
+  tooling persisted (run08-resume.sh, relaunch-both.sh).
+- Ladder correction: the chain needs dim(R_j) <= j for j = 0, 1, 2. R_0
+  closed globally (exact two-line lemma: J = 0 forces v = q = 0, off the
+  stratum; EXP-022/r0-lemma.py). Ball certificates extended with rank-2
+  witnesses so R_1 meets no ball.
+- Closure-hole correction: the slice-limit collar route abandoned BEFORE
+  use (a 2-dim low-rank set can hide in a shrinking tube at every nearby
+  slice value; the boundary-slice bound controls nothing off the slice).
+- The simplification: collars BECOME coverings (band needs no rescaling;
+  collision tube gets the polar blow-up with all 1/rho^3 cancelled
+  algebraically; pair-collapse rescales the mA column by 4u^2). Dossier
+  section: THE COVERING PROGRAMME RESTRUCTURE.
+- EXP-021 integrated rerun launched (four pentagon balls, both
+  certificates at radius 2^-8, all four certified in 0.1 s each; zero
+  residual failures required; 12 h budget).
+- EXP-022 opened: hypothesis (region atlas + trap certificates), band
+  covering launched, tube blow-up algebra machine-verified (six exact
+  polynomial identities; four face limits with linear convergence; NEW
+  face finding: rank-2 degeneracy curve w^2 + v^2 = 1 on the rho = 0
+  face, the coincident double-pair on the circle through the axis
+  bodies), shared pipeline with the generalized trap certificate, tube
+  covering launched on both angle charts after 5-point crosschecks.
+- Mirrored CC-F32 (pentagon + piece 8) and CC-F33 (the restructure) to
+  CAOS_MANAGE; wiki 05 rows added for EXP-019/020/021.
