@@ -51,7 +51,7 @@ class IV:
         m = max(self.lo * self.lo, self.hi * self.hi)
         return IV.raw(F(0), m)
     def sqrt(self):
-        assert self.lo > 0, "sqrt needs positive interval"
+        assert self.lo >= 0, "sqrt needs nonnegative interval"
         nlo = math.isqrt((self.lo.numerator * G2) // self.lo.denominator)
         nhi = math.isqrt(-(-(self.hi.numerator * G2) // self.hi.denominator)) + 1
         return IV.raw(F(nlo, GRID), F(nhi, GRID))
@@ -122,7 +122,10 @@ def det3(J, rows, cols):
             + J[a][z]*(J[b][x]*J[c][y] - J[b][y]*J[c][x]))
 
 def any_minor_certifies(ub, vb, pb, qb):
-    J = entry_matrix(ub, vb, pb, qb)
+    try:
+        J = entry_matrix(ub, vb, pb, qb)
+    except AssertionError:
+        return None  # a denominator straddles zero on this box: bisect
     for rows, cols in MENU:
         try:
             if det3(J, rows, cols).excludes_zero():
