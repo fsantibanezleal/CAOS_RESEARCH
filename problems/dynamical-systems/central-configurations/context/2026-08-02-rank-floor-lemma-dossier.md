@@ -441,3 +441,44 @@ The sign-atom table (sign-atom-table-2026-08-02.txt) establishes:
   or a small explicit residual list, each entry attackable by the
   witness technique. This closes the physical k = 3 case either way,
   completing the chain for the theorem's real count.
+
+## Round 28 reconnaissance (2026-08-03): the rank-2 locus flees to the excluded boundaries
+
+A 300,000-sample global search plus coordinate-descent refinement over the
+gauged physical stratum (a1 = 1, a2 = -1; u, p, v, q free) minimizing the
+relative third singular value of J found NO interior degeneration: every
+refined minimizer sits ON the imposed numerical floors, i.e. escapes
+toward u -> 0 or p -> 0 (pair collapse) and q -> v (the equal-heights
+sub-stratum), all EXCLUDED from the open stratum by hypothesis; away from
+those walls the third singular value stays uniformly bounded below (10th
+percentile of s3/s1 about 8.7e-3 over the sample). Numeric-separation
+label; not a proof; exactly the degeneracy-locus prediction.
+
+## The definitive declared route for k = 3: verified covering + boundary asymptotics
+
+The physical-count theorem needs: no 3-dimensional family of PHYSICAL
+open-stratum geometries with rank <= 2. The reconnaissance says the locus
+is empty outright, and the proof architecture that matches both our
+instruments and the field's accepted standards (interval methods in the
+Moczurad-Zgliczynski tradition) is:
+
+1. COMPACT CORE: partition a compact exhaustion of the gauged stratum
+   (boundary-distance >= delta) into boxes; on each box certify by
+   RATIONAL INTERVAL ARITHMETIC (fully rigorous, our exact stack) that
+   some fixed 3 x 3 minor of J is bounded away from zero. Adaptive
+   bisection where a box fails.
+2. BOUNDARY COLLARS: for each excluded boundary (u -> 0, p -> 0,
+   q -> v, e12 -> 0, collisions), an ASYMPTOTIC LEMMA: expand J to
+   leading order in the collar parameter (closed forms; the blow-up
+   rates of the s-factors are explicit) and show the leading matrix has
+   rank >= 3, so rank >= 3 holds in a whole collar 0 < param < delta0.
+   These are finitely many hand-plus-machine lemmas in the style of
+   pieces 1-5.
+3. The two pieces overlap for delta < delta0, covering the whole open
+   stratum: rank >= 3 EVERYWHERE physical, which closes k = 3 with room
+   to spare (even k's fiber inequality improves).
+
+This replaces the coupled-chamber v2 and the norm elimination as the
+primary route; both remain fallbacks. Estimated shape: one collar lemma
+per boundary type (about five), plus one covering run whose box count the
+first attempt will measure.
