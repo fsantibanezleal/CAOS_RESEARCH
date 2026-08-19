@@ -44,7 +44,12 @@ class IV:
     def __neg__(self):
         return IV.raw(-self.hi, -self.lo)
     def sq(self):
-        return self * self
+        if self.lo >= 0:
+            return IV.raw(self.lo * self.lo, self.hi * self.hi)
+        if self.hi <= 0:
+            return IV.raw(self.hi * self.hi, self.lo * self.lo)
+        m = max(self.lo * self.lo, self.hi * self.hi)
+        return IV.raw(F(0), m)
     def sqrt(self):
         assert self.lo > 0, "sqrt needs positive interval"
         nlo = math.isqrt((self.lo.numerator * G2) // self.lo.denominator)
