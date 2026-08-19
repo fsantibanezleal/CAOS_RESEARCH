@@ -844,3 +844,18 @@
   `df5e12d2256f4967881df0f35df44b415777c4826f38447a33cfdeb1b7399e10` exactly.
 - HWB-037 is complete. HWB-038 now owns checked repository promotion and management-ledger
   reconciliation; the remaining interior Betti table stays open under HWB-035.
+
+## 2026-08-19 - EXP-027 publication round promoted
+
+- PR #194 passed `guards` and `test` and merged the complete EXP-027 theorem, exact artifacts,
+  manuscript v0.14, and verified Zenodo record to `develop` at
+  `68ebac5bf09fa63babbef73540f381ecac02d881`.
+- PR #195 passed its own required checks and promoted the same tested state to `main` at
+  `6319887eb4eb7f9312f74f5a9f31d207f888d7cb`.
+- Remote research work, `develop`, and `main` share payload tree
+  `84910601b3a5b406c3725f64a0903d8116ad922f`.
+- CAOS_MANAGE remained on `develop`; PR #562 promoted the scoped v0.14 Zenodo controls and ledger
+  to `main` at `8c3fcca1d98e386c95e30d450ccfcd4a8e27b8a3`. Its remote `develop` and `main`
+  trees match at `f46e52f048dcdcadfae5d7bbd68cecdaadac78c5`.
+- HWB-038 is complete. The remaining interior Betti table stays open under HWB-035, and no
+  release tag is claimed for this research-only round.

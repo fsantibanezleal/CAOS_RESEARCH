@@ -82,8 +82,9 @@
 | 2026-08-19 | active | confirmed | EXP-027 proves `beta_(2,4)=8p`, its complete multiplicity-free offset support, and `beta_(3,4)=p(5p-1)(500p^2-440p+47)/2` over every field; all campaign, symbolic, and independent-audit gates pass |
 | 2026-08-19 | confirmed | active | manuscript v0.14 and Zenodo new-version gate opened for the first interior Betti-strand theorem; publication is not yet claimed |
 | 2026-08-19 | active | published | 31-page preprint v0.14 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.22013515`, and matched a fresh unauthenticated public download exactly |
+| 2026-08-19 | published | published | PRs #194/#195 passed required checks and promoted EXP-027 plus v0.14 through `develop` to `main`; CAOS_MANAGE PR #562 promoted the matching publication controls and ledger |
 
-Current state: **EXP-027 confirmed and published; promotion gate active**. Relative offset-Koszul homology and
+Current state: **EXP-027 confirmed, published, and promoted**. Relative offset-Koszul homology and
 the independent quadratic-colon mapping cone prove the first unknown interior Betti strand over
 every field:
 
@@ -95,9 +96,10 @@ beta_(3,4)=p(5p-1)(500p^2-440p+47)/2.
 The `8p` second syzygies are multiplicity-free at offsets `{3p+a:a in G_p,a>=6p}`. The exact
 297-parameter campaign, full offset profiles at `p=4,5,6`, two-characteristic smoke, six-query
 all-parameter certificate, and independent audit pass. The main conductor-fiber manuscript v0.14
-is published and fresh-download verified at DOI `10.5281/zenodo.22013515`. Repository promotion
-and final ledger reconciliation remain active under HWB-038. The full remaining interior Betti
-table stays open under HWB-035.
+is published and fresh-download verified at DOI `10.5281/zenodo.22013515`. PRs #194/#195 promoted
+the tested research tree `84910601b3a5b406c3725f64a0903d8116ad922f`; CAOS_MANAGE PR #562
+promoted the matching ledger with tree `f46e52f048dcdcadfae5d7bbd68cecdaadac78c5`. HWB-038 is
+done. The full remaining interior Betti table stays open under HWB-035.
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.
