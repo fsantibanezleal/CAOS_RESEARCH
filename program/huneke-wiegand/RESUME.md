@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-19. Lifecycle: EXP-027 confirmed and published; promotion gate active. The first unknown
+Updated: 2026-08-19. Lifecycle: EXP-027 confirmed, published, and promoted. The first unknown
 interior Betti strand of the conductor special fiber is now exact over every field:
 
 ```text
@@ -15,8 +15,9 @@ the matching lower bound from `(Q_p:f_p)_1` and a minimal mapping cone. The 297-
 explicit all-offset profiles at `p=4,5,6`, two-characteristic `p=4` smoke, six-query symbolic
 certificate, and independent reconstruction audit all pass. The 31-page main conductor-fiber
 manuscript v0.14 is published and fresh-download verified at DOI `10.5281/zenodo.22013515`.
-PR promotion and management-ledger reconciliation remain active. The full remaining interior
-table stays open.
+PRs #194/#195 promoted the checked result through `develop` to `main`; CAOS_MANAGE PR #562
+promoted the matching publication controls and ledger. The full remaining interior table stays
+open.
 
 The published baseline remains intact: EXP-026 and focused companion v0.02 are published and
 fresh-download verified at DOI `10.5281/zenodo.22002907`, and PRs #190/#191 plus CAOS_MANAGE PR
@@ -199,10 +200,14 @@ fields; six symbolic counterexample queries are UNSAT; and the independent audit
 The v0.14 expansion of the main conductor-fiber manuscript passed complete claim/build/render,
 sole-authorship, metadata, Zenodo new-version, and fresh-download checks. It is public as record
 `22013515`, DOI `10.5281/zenodo.22013515`; its 656,437-byte PDF matches committed SHA-256
-`df5e12d2256f4967881df0f35df44b415777c4826f38447a33cfdeb1b7399e10`. HWB-038 now owns checked
-PR promotion and final management-ledger reconciliation. A separate manuscript is deferred until
-the relative method determines a substantial additional portion of the table or a transferable
-theorem beyond this family.
+`df5e12d2256f4967881df0f35df44b415777c4826f38447a33cfdeb1b7399e10`. PR #194 passed `guards`
+and `test` and merged the round to `develop` at `68ebac5b`; PR #195 passed its own required checks
+and promoted it to `main` at `6319887e`. Work, `develop`, and `main` share tested payload tree
+`84910601b3a5b406c3725f64a0903d8116ad922f`. CAOS_MANAGE PR #562 promoted the corresponding
+Zenodo controls and ledger to `main` at `8c3fcca1`; management `develop` and `main` share tree
+`f46e52f048dcdcadfae5d7bbd68cecdaadac78c5`. HWB-038 is done. A separate manuscript is deferred
+until the relative method determines a substantial additional portion of the table or a
+transferable theorem beyond this family.
 
 Previously closed state:
 

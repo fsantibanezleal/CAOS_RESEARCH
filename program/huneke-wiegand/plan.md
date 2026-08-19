@@ -527,3 +527,11 @@ rendered inspection, metadata, identity, and sole-authorship gates. Zenodo recor
 `df5e12d2256f4967881df0f35df44b415777c4826f38447a33cfdeb1b7399e10` exactly. HWB-037 is done;
 HWB-038 is active for checked work-to-`develop` and `develop`-to-`main` promotion plus management
 ledger reconciliation.
+
+Promotion is complete. PR #194 passed `guards` and `test` and merged the full EXP-027 theorem,
+artifacts, v0.14 manuscript, and verified Zenodo record to `develop` at `68ebac5b`. PR #195 passed
+its own required checks and promoted the result to `main` at `6319887e`; all research delivery
+branches share payload tree `84910601b3a5b406c3725f64a0903d8116ad922f`. CAOS_MANAGE PR #562
+promoted the exact Zenodo controls and publication ledger at `8c3fcca1`; management `develop` and
+`main` share tree `f46e52f048dcdcadfae5d7bbd68cecdaadac78c5`. HWB-038 is done. No release
+tag is claimed for this research-only round.
