@@ -32,6 +32,9 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-023 | CONFIRMED | complete defining ideal by `50p^2-17p` quadrics and the unique cubic; relation type three and non-Koszulness |
 | EXP-024 | CONFIRMED | exact presentation-ring projective dimension, regularity, first linear syzygies, complete last row, penultimate edge, and canonical degrees |
 | EXP-025 | CONFIRMED | truncated parametrization, one primary component, nilindex `24p`, length-`24p` curvilinear fat point, local/arithmetic Gorenstein separation, and differential fingerprint |
+| EXP-026 | CONFIRMED | complete reduced grevlex staircase with profile `(50p^2-17p,5p-1,p-2)`, six cubic families, one quartic family, and no later boundary |
+| EXP-027 | CONFIRMED | first interior strand: `beta_(2,4)=8p` with complete multiplicity-free offsets and exact adjacent `beta_(3,4)` over every field |
+| EXP-028 | CONFIRMED | complete second Betti row: exact degree-five three-block multiplicities, `beta_(2,5)=p(2p-3)`, and integral `beta_(2,6)=0` over every field |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
@@ -45,6 +48,9 @@ Transcribe only closed experiment verdicts and proved derivations.
 | preprint v0.12 | published | complete defining ideal, exact first Betti row, relation type three, and non-Koszulness, DOI [`10.5281/zenodo.21988601`](https://doi.org/10.5281/zenodo.21988601); exact public-file hash verified |
 | preprint v0.13 | published | homological edge theorem, DOI [`10.5281/zenodo.21995498`](https://doi.org/10.5281/zenodo.21995498); exact public-file hash verified |
 | curvilinear companion v0.01 | published | primary-structure and curvilinear-geometry theorem, DOI [`10.5281/zenodo.21997378`](https://doi.org/10.5281/zenodo.21997378); exact public-file hash verified |
+| curvilinear companion v0.02 | published | complete reduced grevlex staircase theorem, DOI [`10.5281/zenodo.22002907`](https://doi.org/10.5281/zenodo.22002907); exact public-file hash verified |
+| preprint v0.14 | published | first interior Betti-strand theorem, DOI [`10.5281/zenodo.22013515`](https://doi.org/10.5281/zenodo.22013515); exact public-file hash verified |
+| preprint v0.15 | published | complete second Betti-row theorem, DOI [`10.5281/zenodo.22016550`](https://doi.org/10.5281/zenodo.22016550); exact public-file hash verified |
 
 CAOS independently reproduces the public counterexample's decisive finite certificate. Discovery
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery. CAOS's novel
@@ -52,7 +58,8 @@ extensions are the certified Frobenius-minimality theorem in EXP-005, the comple
 classification in EXP-007, the EXP-009 infinite family theorem, the EXP-011 uniform
 endomorphism-overring theorem, the EXP-012/013 type-and-trace anatomy, the EXP-023 uniform minimal
 presentation of the conductor special fiber, the EXP-024 homological edge theorem, and the
-EXP-025 curvilinear primary-structure theorem.
+EXP-025/026 curvilinear and Groebner theorems, and the EXP-027/028 characteristic-free interior
+Betti theorems.
 
 ## Uniform endomorphism anatomy
 
@@ -300,3 +307,49 @@ generators in degree `-1` and one in degree `-3`. The alternating Betti polynomi
 The coefficient formula determines the displayed edges but not the interior Betti table. An exact
 campaign and independent audit rebuild all `p=4,...,300`; the theorem itself is the symbolic
 Auslander--Buchsbaum, Hilbert-series, regular-reduction, Koszul-socle, and duality argument.
+
+## Interior Betti strands and the complete second row
+
+EXP-027 identifies each offset-graded Koszul strand with a relative squarefree-divisor chain
+complex over the integers. Integral lexicographic matching, an exact quadratic colon, and a
+minimal mapping cone prove
+
+```text
+beta_(2,4)=8p,
+beta_(3,4)=p(5p-1)(500p^2-440p+47)/2,
+```
+
+with one degree-four second syzygy at each offset `{3p+a:a in E_(p,1),a>=6p}` and none elsewhere.
+The integral construction excludes characteristic-dependent torsion.
+
+EXP-028 applies the same integral complex to total degrees five and six. For `0<=r<=2p-4`, set
+
+```text
+m_out(r)=min(floor(r/2)+1,floor((2p-4-r)/2)+1),
+m_mid(r)=min(r+1,2p-3-r,p-2).
+```
+
+The degree-five support and multiplicities are
+
+```text
+beta_(2,(5,3p+2+r)) = m_out(r),
+beta_(2,(5,6p+1+r)) = m_mid(r),
+beta_(2,(5,9p+r))   = m_out(2p-4-r),
+```
+
+and every other degree-five offset is zero. Summing the three blocks gives
+`beta_(2,5)=p(2p-3)`. In total degree six, every edge receives a distinct unit-pivot triangle, so
+the integral first homology vanishes and `beta_(2,6)=0`. Consequently, for every field,
+
+```text
+beta_(2,3)=2p(500p^2-330p+31)/3,
+beta_(2,4)=8p,
+beta_(2,5)=p(2p-3),
+beta_(2,6)=0,
+beta_(2,j)=0 otherwise.
+```
+
+This completes one homological row, not the full Betti table or minimal resolution. The canonical
+297-row campaign, complete small profiles, two-field controls, independent rational/Smith audit,
+and arithmetic/Z3 certificate validate the implementation; the integral matching and unit Smith
+forms prove the theorem.

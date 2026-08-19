@@ -1,6 +1,6 @@
 {
   "experiment": "EXP-028-symbolic-certificate",
-  "generated_at": "2026-08-19T17:18:56.417971+00:00",
+  "generated_at": "2026-08-19T18:04:32.723867+00:00",
   "status": "PASS",
   "z3_queries": [
     {

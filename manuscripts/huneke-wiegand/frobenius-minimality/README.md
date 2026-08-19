@@ -1,9 +1,12 @@
 # Frobenius-minimality preprint
 
-`main.tex` is version 0.14 of the CAOS Research preprint; version 0.13 and all earlier versions
-remain frozen. Version 0.14 adds the EXP-027 theorem determining the first interior Betti strand,
-passed the complete claim/build/render and publication workflow, and is published at DOI
-`10.5281/zenodo.22013515`. A fresh unauthenticated download matches the committed PDF exactly.
+`main.tex` is version 0.15 of the CAOS Research preprint; version 0.14 and all earlier versions
+remain frozen. Version 0.15 adds the EXP-028 theorem completing the second Betti row, passed the
+complete claim/build/render and publication workflow, and is published at DOI
+`10.5281/zenodo.22016550`. A fresh unauthenticated download matches the committed PDF exactly.
+Version 0.14 remains
+published at DOI `10.5281/zenodo.22013515`, and a fresh unauthenticated download matches the
+committed v0.14 PDF exactly.
 Version 0.13 remains published at DOI
 `10.5281/zenodo.21995498`, and a fresh unauthenticated download matches the committed PDF exactly.
 Version 0.12 remains published at DOI
@@ -48,6 +51,10 @@ Version 0.14 determines the first previously open interior strand. It proves
 support, so the result is characteristic-free. It also proves that the quadratic part of the
 defining ideal is linearly presented through this first nonlinear position. The remaining
 interior Betti table is still open.
+Version 0.15 completes the second Betti row. It proves
+`beta_(2,5)=p(2p-3)` with complete three-block offset multiplicities and
+`beta_(2,6)=0`. Integral lexicographic matching and a unit Smith form prove characteristic
+independence. The higher interior rows remain open.
 
 Attribution is binding: Son Pham discovered the first public counterexample; CAOS contributes the
 certified minimality, minimum-layer uniqueness, and parametric-family extensions. Professor Craig
@@ -83,9 +90,10 @@ Zenodo identifiers:
 - version 0.12 DOI: `10.5281/zenodo.21988601` (published and fresh-download verified)
 - version 0.13 DOI: `10.5281/zenodo.21995498` (published and fresh-download verified)
 - version 0.14 DOI: `10.5281/zenodo.22013515` (published and fresh-download verified)
+- version 0.15 DOI: `10.5281/zenodo.22016550` (published and fresh-download verified)
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-027 under
+Evidence sources are EXP-001 through EXP-028 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
 finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
@@ -119,6 +127,9 @@ unit matching, an exact linear-colon computation, explicit semigroup paths, a pa
 and a minimal mapping cone. Its exact campaign covers `p=4,...,300`; independently encoded audits,
 all-offset small cases, two-characteristic checks, and six symbolic UNSAT obligations support the
 deductive proof without replacing it.
+EXP-028 completes the second Betti row using total-degree-five and degree-six relative complexes,
+an integral interval matching, a unit Smith normal form, 297 formula rows, complete small-parameter
+profiles, two-characteristic checks, and an independently encoded rational/Smith audit.
 
 Version 0.02 remains frozen with this public-file verification:
 
@@ -275,4 +286,17 @@ Version 0.14 public-file verification:
   overfull boxes, or underfull boxes
 - the concept latest resolves to record `22013515`; public title, version, sole author/ORCID,
   CC-BY-4.0 licence, filename, bytes, MD5, and SHA-256 match the committed record
+- a fresh unauthenticated public download matches the committed PDF exactly
+
+Version 0.15 public-file verification:
+
+- DOI: `10.5281/zenodo.22016550`; no publication occurred before claim/build/render QA and exact
+  post-upload draft validation
+- bytes: `674169`
+- MD5: `204eb3575d1bebcd95eb25f48bae58cb`
+- SHA-256: `e7d3fb747f01b6c44c84ca9c2cf25a746cd2d05eb0996163f4a18e9e3cea1be9`
+- all 34 pages passed rendered inspection; the final build has no warnings, undefined references,
+  overfull boxes, or underfull boxes
+- the concept latest resolves to record `22016550`; public title, version, sole author/ORCID,
+  CC-BY-4.0 licence, filename, bytes, MD5, SHA-256, and v0.15 description addendum match
 - a fresh unauthenticated public download matches the committed PDF exactly

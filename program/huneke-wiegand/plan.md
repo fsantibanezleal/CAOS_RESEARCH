@@ -535,3 +535,43 @@ branches share payload tree `84910601b3a5b406c3725f64a0903d8116ad922f`. CAOS_MAN
 promoted the exact Zenodo controls and publication ledger at `8c3fcca1`; management `develop` and
 `main` share tree `f46e52f048dcdcadfae5d7bbd68cecdaadac78c5`. HWB-038 is done. No release
 tag is claimed for this research-only round.
+
+## 2026-08-19 - EXP-028 complete second Betti row
+
+The EXP-027 relative-complex method was extended before opening a broader search. EXP-028 declared
+the two remaining possible entries in homological degree two, the full degree-five multigraded
+profile, integral torsion-freeness, and degree-six vanishing before canonical artifact generation.
+Raw full resolutions, Hilbert-numerator cancellation alone, and higher-row enumeration were ranked
+below the invariant-first degree-five/six chain calculation.
+
+EXP-028 is CONFIRMED. For every `p>=4` and every field,
+
+```text
+beta_(2,3)=2p(500p^2-330p+31)/3,
+beta_(2,4)=8p,
+beta_(2,5)=p(2p-3),
+beta_(2,6)=0,
+beta_(2,j)=0 otherwise.
+```
+
+For `0<=r<=2p-4`, degree-five support is
+`[3p+2,5p-2] union [6p+1,8p-3] union [9p,11p-4]`. The outer blocks have multiplicity
+`min(floor(r/2)+1,floor((2p-4-r)/2)+1)` and the middle block has multiplicity
+`min(r+1,2p-3-r,p-2)`. Integral lexicographic matching gives only unit pivots and zero Smith
+factors with precisely those ranks; degree six has no critical edge. This proves characteristic
+independence rather than inferring it from finite fields.
+
+The optimized canonical campaign passes 297 formula rows through `p=300`, complete profiles at
+`p=4,5,6`, degree-six all-offset checks, and two unrelated fields at `p=4`. An independent SymPy
+route rebuilds rational ranks and Smith factors, while a separate arithmetic/Z3 certificate checks
+the count and endpoint identities. The first canonical attempt exceeded the declared budget after
+280 rows because a redundant cubic-cost witness enumeration ran in every formula row; it remains
+non-evidence, and the corrected campaign limits explicit witnesses to six parameters.
+
+HWB-039 expanded the existing manuscript because the theorem completes one homological row but
+does not yet justify a separate narrative. The warning-free 34-page v0.15 passed complete rendered
+inspection and sole-human-authorship gates, then was published at DOI
+`10.5281/zenodo.22016550`. A fresh unauthenticated 674,169-byte download matches SHA-256
+`e7d3fb747f01b6c44c84ca9c2cf25a746cd2d05eb0996163f4a18e9e3cea1be9`; record `22016550` is
+concept-latest. HWB-039 is done. HWB-040 owns checked repository and management-ledger promotion;
+higher homological rows remain the strongest next research direction after that delivery closes.
