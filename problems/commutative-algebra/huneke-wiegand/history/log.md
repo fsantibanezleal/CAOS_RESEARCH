@@ -859,3 +859,52 @@
   trees match at `f46e52f048dcdcadfae5d7bbd68cecdaadac78c5`.
 - HWB-038 is complete. The remaining interior Betti table stays open under HWB-035, and no
   release tag is claimed for this research-only round.
+
+## 2026-08-19 - EXP-028 declared
+
+- Continued HWB-035 without changing the research branch and selected the remaining degree-five
+  and degree-six relative-chain complexes as the strongest bounded route.
+- Declared exact three-block degree-five support and multiplicities, `beta_(2,5)=p(2p-3)`,
+  integral torsion-freeness, `beta_(2,6)=0`, and completion of the second row before canonical
+  implementation or artifact generation.
+- Ranked integral lexicographic matching plus Smith form above raw full resolutions, coefficient
+  cancellation without multigraded control, and premature higher-row enumeration.
+
+## 2026-08-19 - EXP-028 confirmed
+
+- The first canonical attempt reached the declared budget after 280 correct formula rows because a
+  redundant cubic-cost witness enumeration ran at every parameter. It was preserved as
+  `INCONCLUSIVE_BUDGET` and was not used as evidence.
+- The optimized canonical campaign passed all 297 rows `p=4,...,300`, complete degree-five
+  profiles at `p=4,5,6` with totals `20,35,54`, degree-six all-offset checks at `p=4`, and
+  GF(2)/GF(1000003) agreement.
+- An independent SymPy rational-rank/Smith route and a separately encoded arithmetic/Z3
+  certificate passed. The canonical aggregate is
+  `45f08e6a15e321512629fa4b6ab07161ddcc766ddf56e1d9579175f3444ec32f`.
+- The deductive integral matching proves, for every `p>=4` and field,
+
+  ```text
+  beta_(2,5)=p(2p-3),
+  beta_(2,6)=0,
+  ```
+
+  with the complete three-block offset multiplicity profile. Together with EXP-024/027, this
+  exhausts the second Betti row. Higher rows and the full table remain open.
+- EXP-028 is CONFIRMED. HWB-039 opened the existing-manuscript v0.15 and Zenodo new-version gate;
+  a separate manuscript remains deferred.
+
+## 2026-08-19 - EXP-028 manuscript v0.15 published
+
+- Expanded the main Frobenius-minimality manuscript to v0.15 with the complete second-row theorem,
+  integral matching/Smith proof, exact degree-five profiles, degree-six vanishing, scope boundary,
+  and EXP-028 evidence.
+- The final 34-page DOI-bearing PDF passed two clean LaTeX builds, all-page rendered inspection,
+  metadata, source, scope, attribution, and sole-human-authorship gates.
+- Published Zenodo version DOI `10.5281/zenodo.22016550` under concept DOI
+  `10.5281/zenodo.21763582`. Public record `22016550` is concept-latest and CC BY 4.0 with Felipe
+  Santibanez-Leal as sole creator and ORCID `0000-0002-0150-3246`.
+- A fresh unauthenticated 674,169-byte download matches MD5
+  `204eb3575d1bebcd95eb25f48bae58cb` and SHA-256
+  `e7d3fb747f01b6c44c84ca9c2cf25a746cd2d05eb0996163f4a18e9e3cea1be9` exactly.
+- HWB-039 is complete. HWB-040 owns checked research and management promotion; no release tag is
+  claimed for this research-only round.

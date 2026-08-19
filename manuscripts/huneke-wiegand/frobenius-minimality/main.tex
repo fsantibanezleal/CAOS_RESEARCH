@@ -36,18 +36,18 @@
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-19\\[2pt]\normalsize Version 0.14}
+\date{2026-08-19\\[2pt]\normalsize Version 0.15}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.14}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.15}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.14}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.15}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,8 +63,8 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.14 \textperiodcentered\ 2026-08-19\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22013515}{10.5281/zenodo.22013515}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.15 \textperiodcentered\ 2026-08-19\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22016550}{10.5281/zenodo.22016550}\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
 verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
@@ -79,7 +79,7 @@ reduction, tangent-cone, fiber-cone, defining-ideal, and syzygy anatomy.
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.14}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.15}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -169,8 +169,15 @@ strand. With the offset grading $\deg X_a=(1,a)$,
 and the $8p$ second syzygies occur with multiplicity one exactly at offsets
 $\{3p+a:a\in\mathcal E_{p,1},\ a\ge6p\}$. Relative squarefree-divisor chains and an integral
 unit matching give the upper bound; an exact quadratic colon and minimal mapping cone give the
-matching lower bound. Thus the formulas hold over every field. This determines one interior
-strand, not the remaining Betti table.
+matching lower bound. We then complete the second Betti row. The only remaining possible entries
+are
+\[
+\beta_{2,5}=p(2p-3),\qquad \beta_{2,6}=0.
+\]
+The degree-five support is the union of three explicit intervals, with pair-sum multiplicities on
+the outer blocks and a plateau profile on the middle block. An integral offset matching gives a
+unit Smith form, so the result again holds over every field. This completes one homological row,
+not the remaining Betti table.
 The results remain confined
 to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
@@ -243,6 +250,8 @@ they are verified by exact machine computation and independently checked artifac
   extremal entry, and the canonical-module generator degrees.
   \item We determine the first interior Betti strand over every field: $\beta_{2,4}=8p$ with
   complete multiplicity-free offset support, and the resulting exact formula for $\beta_{3,4}$.
+  \item We complete the second Betti row over every field: $\beta_{2,5}=p(2p-3)$ with complete
+  three-block offset multiplicities and $\beta_{2,6}=0$.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -1870,6 +1879,139 @@ and
 The finite campaigns validate the implementation. The relative-chain and matching arguments,
 together with the colon and mapping cone, prove the theorem.
 
+\subsection{The complete second Betti row}
+
+The preceding theorem leaves only internal degrees five and six unresolved in homological degree
+two. We retain the same offset grading and relative complex~\eqref{eq:relative-betti}.
+
+\begin{theorem}[Complete second Betti row, {\bf[D]}]
+\label{thm:second-betti-row}
+For every integer \(p\ge4\) and every field \(\kfield\),
+\begin{equation}
+\beta_{2,5}=p(2p-3),
+\qquad
+\beta_{2,6}=0.
+\label{eq:second-betti-tail}
+\end{equation}
+The degree-five offset support is
+\begin{equation}
+[3p+2,5p-2]\cup[6p+1,8p-3]\cup[9p,11p-4].
+\label{eq:degree-five-support}
+\end{equation}
+For \(0\le r\le2p-4\), put
+\begin{align*}
+m_{\rm out}(r)&=\min\left\{\left\lfloor\frac r2\right\rfloor+1,
+ \left\lfloor\frac{2p-4-r}{2}\right\rfloor+1\right\},\\
+m_{\rm mid}(r)&=\min\{r+1,2p-3-r,p-2\}.
+\end{align*}
+Then
+\begin{align}
+\beta_{2,(5,3p+2+r)}&=m_{\rm out}(r),\notag\\
+\beta_{2,(5,6p+1+r)}&=m_{\rm mid}(r),\label{eq:degree-five-profile}\\
+\beta_{2,(5,9p+r)}&=m_{\rm out}(2p-4-r).\notag
+\end{align}
+The integral first homology in total degree five is free abelian, and it vanishes in total degree
+six. Consequently the complete second row is
+\[
+\beta_{2,3}=\frac{2p(500p^2-330p+31)}{3},\quad
+\beta_{2,4}=8p,\quad
+\beta_{2,5}=p(2p-3),\quad
+\beta_{2,6}=0,
+\]
+with no other nonzero internal degree.
+\end{theorem}
+
+\begin{proof}
+The cumulative offset sets needed in total degrees five and six are
+\begin{align*}
+\mathcal E_{p,2}&=[0,2p]\cup[3p,5p-2]\cup[6p,24p-1],\\
+\mathcal E_{p,3}&=[0,24p-1]\setminus\{6p-1\},\\
+\mathcal E_{p,n}&=[0,24p-1]\qquad(n\ge4).
+\end{align*}
+Thus a degree-five vertex, edge, or triangle at offset \(b\) occurs precisely when its residual
+belongs respectively to \(\mathcal E_{p,4},\mathcal E_{p,3},\mathcal E_{p,2}\). In degree six,
+the first two residual sets are full intervals and only the triangle condition retains the hole
+\(6p-1\).
+
+Apply the integral lexicographic matching used in the proof of
+Theorem~\ref{thm:interior-strand}. Substitution of the eleven blocks of
+\(\mathcal E_{p,1}\) gives the following complete degree-five normal form. In each row
+\(0\le r\le2p-4\).
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Offset & critical edge labels & surviving free rank\\
+\midrule
+\(3p+2+r\) &
+\(\{(i,j):1\le i<j\le p,\ i+j=r+3\}\) & \(m_{\rm out}(r)\)\\
+\(6p+1+r\) &
+\(\begin{array}{l}\{(i,j):1\le i<j\le p,\ i+j=r+4\}\\
+{}\cup\{(i,j):2\le i<j\le p,\ i+j=r+3\}\end{array}\) &
+\(m_{\rm mid}(r)\)\\
+\(9p+r\) &
+\(\begin{array}{l}\{(i,3p+j):2\le i\le p-1,\ 0\le j\le p-2,\ i+j=r+2\}\\
+{}\cup\{(p,4p-2):r=2p-4\}\end{array}\) &
+\(m_{\rm out}(2p-4-r)\)\\
+all other \(b\) & transient labels only & \(0\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For the first row, the absent star triangles are exactly the low-block pairs of sum \(r+3\);
+every other chord toggles at its least available vertex. For the second row, the hole in
+\(\mathcal E_{p,3}\) and the two gaps in \(\mathcal E_{p,2}\) leave the two adjacent pair-sum
+diagonals displayed in the table. Their reduced Morse boundary is zero. For the third row,
+ordering the low--middle critical chords by the low endpoint makes the remaining triangle
+boundary a unit staircase. Its Smith form has
+\[
+c_C(r)-m_{\rm out}(2p-4-r)\quad\hbox{unit factors}
+\]
+and \(m_{\rm out}(2p-4-r)\) zero factors, where
+\[
+c_C(r)=
+\begin{cases}
+1,&r=2p-4,\\
+\min\{r+1,2p-4-r,p-2\},&r<2p-4.
+\end{cases}
+\]
+Outside the three rows, each transient edge has a distinct least admissible triangle and hence a
+unit pivot. All cancellations are over \(\mathbb Z\).
+
+In total degree six, the edge residual set is full. A chord whose star triangle is deleted at
+residual \(6p-1\) pairs with the next admissible vertex in its interval block; at a block endpoint
+the first vertex of the next block supplies the pair. Endpoint substitution leaves no critical
+edge. Hence the integral first homology is zero in every degree-six offset.
+
+It remains to count the zero factors. The first diagonal consists of unordered pairs in
+\([1,p]\), and therefore
+\[
+\sum_{r=0}^{2p-4}m_{\rm out}(r)=\binom p2.
+\]
+Across all \(r\), the two middle diagonals contain every pair in \([1,p]\) except \((1,2)\), and
+every pair in \([2,p]\). Thus
+\[
+\sum_{r=0}^{2p-4}m_{\rm mid}(r)
+=\left(\binom p2-1\right)+\binom{p-1}{2}=p(p-2).
+\]
+The reflected third block contributes another \(\binom p2\), proving
+\(\beta_{2,5}=p(2p-3)\). Unit Smith factors prove integral freeness and therefore
+characteristic independence. Finally, no linear equations force the minimum second-syzygy shift
+to be three, while \(\operatorname{reg}\mathcal F_p=4\) forces it to be at most six. The known
+degree-three and degree-four entries and~\eqref{eq:second-betti-tail} therefore exhaust the row.
+\end{proof}
+
+EXP-028 checks all formula identities for \(p=4,\ldots,300\) and complete degree-five offset
+profiles for \(p=4,5,6\), whose totals are \(20,35,54\) \textbf{[MV]}. At \(p=4\), complete
+degree-five and degree-six profiles agree over \(\operatorname{GF}(2)\) and
+\(\operatorname{GF}(1000003)\). An independent SymPy route obtains the same rational ranks and
+unit Smith factors without importing the canonical rank code. The canonical campaign aggregate
+is
+\[
+\texttt{45f08e6a15e321512629fa4b6ab07161ddcc766ddf56e1d9579175f3444ec32f}.
+\]
+These calculations test the implementation and endpoints; the integral matching and unit Smith
+form prove the theorem.
+
 \section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
@@ -1878,7 +2020,7 @@ All compact code, hypotheses, manifests, audits, and verdicts are in the public 
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
 minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
-also includes the compact EXP-011--027 campaigns, independent reconstruction audits, symbolic
+also includes the compact EXP-011--028 campaigns, independent reconstruction audits, symbolic
 proofs, the preserved EXP-013 correction, the EXP-015 refutation, and the EXP-022 quadratic
 refutation. The proof toolchain is
 pinned as follows:
@@ -1895,6 +2037,7 @@ Z3 & 4.16.0; exact integer Presburger queries for EXP-023\\
 EXP-023 query aggregate & {\fontsize{7}{8}\selectfont\ttfamily 832c8421fe66359b8c246e3465e27de6ea7829215f892ab815e72b1f44787194}\\
 EXP-024 campaign/audit & exact integer coefficient and dimension routes; 297 rows plus independent rebuild\\
 EXP-027 & relative-chain profiles, six exact Presburger queries, 297 formula rows, and independent reconstruction\\
+EXP-028 & integral degree-five/six matching, 297 formula rows, two-field profiles, and independent Smith forms\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -1922,6 +2065,11 @@ obstruction, and minimal mapping cone are given above. The independent audit doe
 canonical rank implementation. The remaining trust boundary is the correctness of the frozen
 EXP-021/023/025 premises and the ordinary algebraic arguments displayed in the proof.
 
+EXP-028 reuses the integral relative-chain identification but independently freezes its imported
+premises. Its finite-field ranks are audits, not the source of characteristic independence. That
+claim rests on the displayed unit matching and Smith normal form. The arithmetic/Z3 certificate
+checks endpoints and count identities without replacing the all-parameter interval argument.
+
 \section{Scope, attribution, and open questions}
 
 Son Pham retains discovery priority for the counterexample. Professor Craig Huneke's verification
@@ -1936,14 +2084,16 @@ graded-torsion/Buchsbaum anatomy in Theorem~\ref{thm:buchsbaum}, and the complet
 Noether-normalization module in Theorem~\ref{thm:module}, and the canonical fiber cone and type in
 Theorem~\ref{thm:fiber}, and its complete defining ideal in
 Theorem~\ref{thm:presentation}, and its exact homological edges in
-Theorem~\ref{thm:homological-edge}, and its first interior Betti strand in
-Theorem~\ref{thm:interior-strand}, together with
+Theorem~\ref{thm:homological-edge}, its first interior Betti strand in
+Theorem~\ref{thm:interior-strand}, and its complete second Betti row in
+Theorem~\ref{thm:second-betti-row}, together with
 their reproducible records.
 
 Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
 \ref{thm:type}, \ref{thm:trace}, \ref{thm:stability}, \ref{thm:reduction},
 \ref{thm:tangent}, \ref{thm:buchsbaum}, \ref{thm:module}, \ref{thm:fiber},
-\ref{thm:presentation}, \ref{thm:homological-edge}, and~\ref{thm:interior-strand}
+\ref{thm:presentation}, \ref{thm:homological-edge}, \ref{thm:interior-strand},
+and~\ref{thm:second-betti-row}
 do not classify all higher
 Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
 or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
@@ -1957,9 +2107,9 @@ questions remain open:
   \item Which additional hypotheses on the endomorphism ring recover a positive theorem while
   excluding both the public example and the full family proved here?
   \item Can the finite certificates be imported into a smaller formally verified checker?
-  \item Can the relative-complex method determine the remaining interior of the
-  presentation-ring Betti table, beyond the degree-four strand in
-  Theorem~\ref{thm:interior-strand}?
+  \item Can the relative-complex method determine the remaining interior rows of the
+  presentation-ring Betti table beyond the complete second row in
+  Theorem~\ref{thm:second-betti-row}?
 \end{enumerate}
 
 \section*{Acknowledgments}

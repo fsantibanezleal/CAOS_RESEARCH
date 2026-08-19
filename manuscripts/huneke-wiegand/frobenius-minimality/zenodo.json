@@ -156,7 +156,8 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.14",
+    "description_addendum": "<p>Version 0.15 completes the second graded Betti row of the conductor special fiber for every p&gt;=4 and over every field: beta_(2,5)=p(2p-3), beta_(2,6)=0, with the complete three-block multigraded support and multiplicity profile. Integral lexicographic matching and unit Smith normal forms prove characteristic independence. Higher interior rows remain open.</p>",
+    "version": "0.15",
     "language": "eng"
   }
 }
