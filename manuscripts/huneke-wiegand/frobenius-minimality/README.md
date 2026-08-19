@@ -1,10 +1,10 @@
 # Frobenius-minimality preprint
 
-`main.tex` is the version 0.14 publication candidate of the CAOS Research preprint; version 0.13
-and all earlier versions remain frozen. Version 0.14 adds the EXP-027 theorem determining the
-first interior Betti strand. Its version DOI is reserved as `10.5281/zenodo.22013515`; its claim,
-build, and rendered-document gates pass, while upload and Zenodo publication are pending. Version
-0.13 remains published at DOI
+`main.tex` is version 0.14 of the CAOS Research preprint; version 0.13 and all earlier versions
+remain frozen. Version 0.14 adds the EXP-027 theorem determining the first interior Betti strand,
+passed the complete claim/build/render and publication workflow, and is published at DOI
+`10.5281/zenodo.22013515`. A fresh unauthenticated download matches the committed PDF exactly.
+Version 0.13 remains published at DOI
 `10.5281/zenodo.21995498`, and a fresh unauthenticated download matches the committed PDF exactly.
 Version 0.12 remains published at DOI
 `10.5281/zenodo.21988601`, and matches a fresh public download exactly. Version 0.11 remains
@@ -82,7 +82,7 @@ Zenodo identifiers:
 - version 0.11 DOI: `10.5281/zenodo.21909961`
 - version 0.12 DOI: `10.5281/zenodo.21988601` (published and fresh-download verified)
 - version 0.13 DOI: `10.5281/zenodo.21995498` (published and fresh-download verified)
-- version 0.14 DOI: `10.5281/zenodo.22013515` (reserved; claim/build/render gates passed; not yet published)
+- version 0.14 DOI: `10.5281/zenodo.22013515` (published and fresh-download verified)
 - licence: CC BY 4.0
 
 Evidence sources are EXP-001 through EXP-027 under
@@ -262,4 +262,17 @@ Version 0.13 public-file verification:
 - sole authorship, ORCID, version, DOI, concept DOI, CC-BY-4.0 metadata, source, and scope gates pass
 - the concept latest resolves to record `21995498`; public title, version, sole author/ORCID,
   licence, filename, bytes, MD5, and SHA-256 match the committed record
+- a fresh unauthenticated public download matches the committed PDF exactly
+
+Version 0.14 public-file verification:
+
+- DOI: `10.5281/zenodo.22013515`; no publication occurred before claim/build/render QA and exact
+  post-upload draft validation
+- bytes: `656437`
+- MD5: `f5c44834c94832c3c2c8d7d29389ff9a`
+- SHA-256: `df5e12d2256f4967881df0f35df44b415777c4826f38447a33cfdeb1b7399e10`
+- all 31 pages passed rendered inspection; the final build has no warnings, undefined references,
+  overfull boxes, or underfull boxes
+- the concept latest resolves to record `22013515`; public title, version, sole author/ORCID,
+  CC-BY-4.0 licence, filename, bytes, MD5, and SHA-256 match the committed record
 - a fresh unauthenticated public download matches the committed PDF exactly

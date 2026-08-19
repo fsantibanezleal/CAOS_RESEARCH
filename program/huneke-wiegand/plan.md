@@ -519,3 +519,11 @@ HWB-037 now owns a v0.14 expansion of the main conductor-fiber manuscript and Ze
 workflow. A separate manuscript is deferred until the method yields a substantial additional
 strand or a theorem beyond this family. HWB-038 owns later PR promotion and durable reconciliation;
 neither publication nor promotion is yet claimed.
+
+The v0.14 manuscript then passed its complete claim audit, warning-free 31-page build, complete
+rendered inspection, metadata, identity, and sole-authorship gates. Zenodo record `22013515`, DOI
+`10.5281/zenodo.22013515`, is public under the existing concept DOI. The fresh unauthenticated
+656,437-byte PDF matches SHA-256
+`df5e12d2256f4967881df0f35df44b415777c4826f38447a33cfdeb1b7399e10` exactly. HWB-037 is done;
+HWB-038 is active for checked work-to-`develop` and `develop`-to-`main` promotion plus management
+ledger reconciliation.

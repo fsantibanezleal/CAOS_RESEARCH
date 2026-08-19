@@ -38,5 +38,5 @@
 | HWB-034 | 1 | done | manuscript and Zenodo update for the explicit Groebner theorem | v0.02 published and fresh-download verified at `10.5281/zenodo.22002907` |
 | HWB-035 | 2 | in progress | interior graded Betti table of the conductor fiber cone | EXP-027 proves the first unknown degree-four strand; extend the relative-complex classification without extrapolating to the full table |
 | HWB-036 | 1 | done | repository promotion and durable handoff for EXP-026 plus companion v0.02 | PRs #190/#191 passed required checks; payload tree `1fb094d102e1f91a6c9754cca26d7f57666450fb`; CAOS_MANAGE PR #559 promoted the ledger |
-| HWB-037 | 1 | in progress | manuscript and Zenodo update for the first interior Betti strand | expand the main conductor-fiber manuscript to v0.14; complete claim/build/render, sole-authorship, metadata, upload, publication, and fresh-download gates |
-| HWB-038 | 1 | pending | repository promotion and durable handoff for EXP-027 plus v0.14 | after verified publication, promote work to `develop`, then `develop` to `main`, through checked PRs and reconcile the management ledger |
+| HWB-037 | 1 | done | manuscript and Zenodo update for the first interior Betti strand | v0.14 published and fresh-download verified at `10.5281/zenodo.22013515` |
+| HWB-038 | 1 | in progress | repository promotion and durable handoff for EXP-027 plus v0.14 | promote work to `develop`, then `develop` to `main`, through checked PRs and reconcile the management ledger |

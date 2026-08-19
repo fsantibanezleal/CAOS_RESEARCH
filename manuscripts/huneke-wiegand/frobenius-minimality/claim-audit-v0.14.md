@@ -1,6 +1,6 @@
 # Claim audit - manuscript v0.14
 
-Audited: 2026-08-19. Pre-publication result: PASS; Zenodo publication pending.
+Audited: 2026-08-19. Final publication result: PASS.
 
 Version 0.14 retains all v0.13 claims and adds only the first interior Betti strand closed by
 EXP-027. It corrects the stale v0.13 statement that the entire interior table was open while
@@ -20,7 +20,7 @@ explicitly leaving every other unresolved interior entry open.
 | exact computational support | EXP-027 `results.json`, `symbolic_certificate.json`, and independently encoded `audit.json` | PASS; 297 parameters, all offsets for `p=4,5,6`, two fields at `p=4`, and six symbolic UNSAT obligations |
 | manuscript split decision | EXP-027 hypothesis and verdict | PASS; this strand directly extends v0.13, while a standalone manuscript remains deferred until a substantial part of the remaining table is determined |
 | authorship | title page and `zenodo.json` | PASS; Felipe Santibanez-Leal is sole author; no automated system is named |
-| publication identity | version 0.14 title block and Zenodo draft `22013515` | PASS for reservation; version DOI `10.5281/zenodo.22013515`, concept DOI, date, sole author, and ORCID agree; publication pending |
+| publication identity | public Zenodo record `22013515`, page-one block, and fresh download | PASS; version `0.14`, DOI `10.5281/zenodo.22013515`, concept DOI, date, CC-BY-4.0 licence, sole author/ORCID, filename, size, MD5, and SHA-256 agree |
 
 ## Scope boundaries
 
@@ -50,4 +50,9 @@ explicitly leaving every other unresolved interior entry open.
   `df5e12d2256f4967881df0f35df44b415777c4826f38447a33cfdeb1b7399e10`.
 - DOI-bearing rendered inspection: PASS; all 31 pages re-inspected in six contact sheets, with a
   full-resolution page-one check after inserting the reserved DOI.
-- upload, publication, and fresh public-download verification: PENDING.
+- authenticated post-upload draft gate: PASS; exactly one committed PDF, exact filename, 656,437
+  bytes, MD5, version, title, sole creator, and ORCID matched before publication;
+- Zenodo publication: PASS; record `22013515` is public and concept latest, with v0.14, sole human
+  author and ORCID, CC-BY-4.0 licence, exact filename, size, and MD5;
+- fresh unauthenticated download: PASS; MD5 `f5c44834c94832c3c2c8d7d29389ff9a` and SHA-256
+  `df5e12d2256f4967881df0f35df44b415777c4826f38447a33cfdeb1b7399e10` exactly match Git.

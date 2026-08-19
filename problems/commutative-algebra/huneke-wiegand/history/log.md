@@ -829,3 +829,18 @@
 
 - EXP-027 is CONFIRMED. HWB-037 opens the main-manuscript v0.14 and Zenodo new-version gate; no
   upload, DOI version, publication, or PR promotion is claimed at this checkpoint.
+
+## 2026-08-19 - EXP-027 manuscript v0.14 published
+
+- Expanded the main Frobenius-minimality manuscript to v0.14 with the characteristic-free first
+  interior Betti-strand theorem, complete offset support, proof boundary, and EXP-027 evidence.
+- The final 31-page DOI-bearing candidate passed two clean LaTeX builds, complete rendered
+  inspection, metadata, source, scope, attribution, and sole-human-authorship gates.
+- Published Zenodo version DOI `10.5281/zenodo.22013515` under concept DOI
+  `10.5281/zenodo.21763582`. Public record `22013515` is concept-latest and CC BY 4.0 with Felipe
+  Santibanez-Leal as the sole creator and ORCID `0000-0002-0150-3246`.
+- A fresh unauthenticated 656,437-byte download matches MD5
+  `f5c44834c94832c3c2c8d7d29389ff9a` and SHA-256
+  `df5e12d2256f4967881df0f35df44b415777c4826f38447a33cfdeb1b7399e10` exactly.
+- HWB-037 is complete. HWB-038 now owns checked repository promotion and management-ledger
+  reconciliation; the remaining interior Betti table stays open under HWB-035.

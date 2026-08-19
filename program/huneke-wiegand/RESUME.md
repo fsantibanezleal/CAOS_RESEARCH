@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-19. Lifecycle: EXP-027 confirmed; manuscript v0.14 gate active. The first unknown
+Updated: 2026-08-19. Lifecycle: EXP-027 confirmed and published; promotion gate active. The first unknown
 interior Betti strand of the conductor special fiber is now exact over every field:
 
 ```text
@@ -13,9 +13,10 @@ The `8p` second syzygies occur with multiplicity one at offsets
 squarefree-divisor chains, uses an integral lexicographic matching for the upper bound, and obtains
 the matching lower bound from `(Q_p:f_p)_1` and a minimal mapping cone. The 297-row campaign,
 explicit all-offset profiles at `p=4,5,6`, two-characteristic `p=4` smoke, six-query symbolic
-certificate, and independent reconstruction audit all pass. The main conductor-fiber manuscript
-should expand to v0.14; no new DOI, upload, publication, PR promotion, or management-ledger update
-is yet claimed. The full remaining interior table stays open.
+certificate, and independent reconstruction audit all pass. The 31-page main conductor-fiber
+manuscript v0.14 is published and fresh-download verified at DOI `10.5281/zenodo.22013515`.
+PR promotion and management-ledger reconciliation remain active. The full remaining interior
+table stays open.
 
 The published baseline remains intact: EXP-026 and focused companion v0.02 are published and
 fresh-download verified at DOI `10.5281/zenodo.22002907`, and PRs #190/#191 plus CAOS_MANAGE PR
@@ -195,11 +196,13 @@ fields; six symbolic counterexample queries are UNSAT; and the independent audit
 `p=4` chain profile plus six small and large formula samples. Proof and verdict live under
 `experiments/EXP-027-relative-betti-strand/`.
 
-The active delivery gate is a v0.14 expansion of the main conductor-fiber manuscript, followed by
-complete claim/build/render, sole-authorship, metadata, Zenodo new-version, fresh-download, and
-PR-promotion checks. No part of that delivery is yet claimed complete. A separate manuscript is
-deferred until the relative method determines a substantial additional portion of the table or a
-transferable theorem beyond this family.
+The v0.14 expansion of the main conductor-fiber manuscript passed complete claim/build/render,
+sole-authorship, metadata, Zenodo new-version, and fresh-download checks. It is public as record
+`22013515`, DOI `10.5281/zenodo.22013515`; its 656,437-byte PDF matches committed SHA-256
+`df5e12d2256f4967881df0f35df44b415777c4826f38447a33cfdeb1b7399e10`. HWB-038 now owns checked
+PR promotion and final management-ledger reconciliation. A separate manuscript is deferred until
+the relative method determines a substantial additional portion of the table or a transferable
+theorem beyond this family.
 
 Previously closed state:
 
