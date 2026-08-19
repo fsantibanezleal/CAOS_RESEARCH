@@ -798,3 +798,49 @@
   trees match at `372cd71d3acca38b92f872cd0995b5b9a264d543`.
 - HWB-036 is complete. No theorem experiment or delivery gate remains active, and no release tag is
   claimed for this research-only round.
+
+## 2026-08-19 - EXP-027 declared
+
+- Reopened HWB-035 after a fresh primary-source and novelty preflight; no branch change was made.
+- Selected relative offset-Koszul complexes as the strongest tractable route to the unresolved
+  interior Betti table. Mapping-cone colons were retained as an independent route; raw full
+  resolutions and cancellation-only bounds were deprioritized.
+- Declared the exact `beta_(2,4)`, multigraded support, `beta_(3,4)`, colon, and integral-torsion
+  predictions before canonical implementation or artifact generation.
+
+## 2026-08-19 - EXP-027 confirmed
+
+- The mandatory `p=4` smoke reconstructed every offset block over `GF(2)` and `GF(1000003)` and
+  found exactly 32 multiplicity-one relative first-homology components.
+- The canonical campaign passed all 297 parameters `p=4,...,300`; explicit every-offset profiles
+  at `p=4,5,6` found totals `32,40,48` and no unexpected support.
+- Six all-parameter Z3 counterexample queries returned UNSAT, including exact support, centered
+  offset classification, high-variable quadratic paths, and low-variable parity obstruction.
+- The independent audit rebuilt the `p=4` chain profile without importing the canonical code and
+  checked `p=4,5,17,73,151,300` formula rows.
+- The deductive proof identifies Koszul strands with relative squarefree-divisor chains, obtains
+  an integral Morse upper bound, and matches it through the exact quadratic colon and a minimal
+  mapping cone. Hence, over every field,
+
+  ```text
+  beta_(2,4)=8p,
+  beta_(3,4)=p(5p-1)(500p^2-440p+47)/2.
+  ```
+
+- EXP-027 is CONFIRMED. HWB-037 opens the main-manuscript v0.14 and Zenodo new-version gate; no
+  upload, DOI version, publication, or PR promotion is claimed at this checkpoint.
+
+## 2026-08-19 - EXP-027 manuscript v0.14 published
+
+- Expanded the main Frobenius-minimality manuscript to v0.14 with the characteristic-free first
+  interior Betti-strand theorem, complete offset support, proof boundary, and EXP-027 evidence.
+- The final 31-page DOI-bearing candidate passed two clean LaTeX builds, complete rendered
+  inspection, metadata, source, scope, attribution, and sole-human-authorship gates.
+- Published Zenodo version DOI `10.5281/zenodo.22013515` under concept DOI
+  `10.5281/zenodo.21763582`. Public record `22013515` is concept-latest and CC BY 4.0 with Felipe
+  Santibanez-Leal as the sole creator and ORCID `0000-0002-0150-3246`.
+- A fresh unauthenticated 656,437-byte download matches MD5
+  `f5c44834c94832c3c2c8d7d29389ff9a` and SHA-256
+  `df5e12d2256f4967881df0f35df44b415777c4826f38447a33cfdeb1b7399e10` exactly.
+- HWB-037 is complete. HWB-038 now owns checked repository promotion and management-ledger
+  reconciliation; the remaining interior Betti table stays open under HWB-035.
