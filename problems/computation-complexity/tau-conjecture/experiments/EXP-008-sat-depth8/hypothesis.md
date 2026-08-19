@@ -73,3 +73,24 @@ budget 6 h; each phase checkpoints its result immediately.
 CONFIRMED if the known-answer passes and at least the bounded variant
 resolves; the verdict reports each variant's exact status. REFUTED
 (tooling) if the known-answer fails.
+
+## Amendment (2026-08-19, before the re-run; the first launch died with the session)
+
+The first launch's known-answer phase did not complete within its cap
+(plain NIA struggles even at 6 gates / 5 roots / bound 8), and the
+process died with the session teardown before any checkpoint. Redesign,
+recorded before the re-run:
+
+1. Known-answer gains an intermediate-VALUE bound ($|E| \le 10^9$):
+   harmless for a SAT-side validation (it only shrinks the witness
+   space, and known witnesses have tiny values).
+2. Phase ladder for the 7-root final-$\pm$ question:
+   (a) root-bounded ($|r| \le 32$), values unbounded, QF_NIA, 2 h cap;
+   (b) if (a) is unknown: doubly-bounded ($|r| \le 32$, $|E| \le
+   10^{12}$), 1 h cap: its UNSAT is a windowed partial, stated as such;
+   (c) unbounded attempt, 2 h cap, `unknown` acceptable and recorded.
+3. Solvers created via SolverFor("QF_NIA").
+Soundness classes are unchanged from the original declaration; only
+tractability engineering moved. If even (b) returns unknown, the
+residual routes to the depth-8 census backend (TCB-005) and this
+experiment reports INCONCLUSIVE with the solver record.

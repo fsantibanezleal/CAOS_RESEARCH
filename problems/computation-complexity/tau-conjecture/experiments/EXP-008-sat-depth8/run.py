@@ -37,8 +37,9 @@ def checkpoint(name, payload):
     tmp.replace(p)
 
 
-def build_solver(ngates, nroots, final_pm, root_bound, timeout_ms):
-    s = z3.Solver()
+def build_solver(ngates, nroots, final_pm, root_bound, timeout_ms,
+                 value_bound=None):
+    s = z3.SolverFor("QF_NIA")
     s.set("timeout", timeout_ms)
     ops = [z3.Int(f"op{j}") for j in range(ngates)]
     Ls = [z3.Int(f"L{j}") for j in range(ngates)]
@@ -74,6 +75,8 @@ def build_solver(ngates, nroots, final_pm, root_bound, timeout_ms):
                     s.add(z3.Implies(
                         z3.And(Ls[j] == a, Rs[j] == b, ops[j] == 2),
                         e == E[a] * E[b]))
+            if value_bound:
+                s.add(e >= -value_bound, e <= value_bound)
             E.append(e)
         s.add(E[-1] == 0)
     return s, ops, Ls, Rs, r
@@ -94,11 +97,12 @@ def replay(ngates, model, ops, Ls, Rs):
     return f, prog
 
 
-def solve_cegar(name, ngates, nroots, final_pm, root_bound, timeout_ms):
+def solve_cegar(name, ngates, nroots, final_pm, root_bound, timeout_ms,
+                value_bound=None):
     log(f"{name}: building (gates={ngates}, roots={nroots}, "
         f"final_pm={final_pm}, bound={root_bound})")
     s, ops, Ls, Rs, r = build_solver(ngates, nroots, final_pm, root_bound,
-                                     timeout_ms)
+                                     timeout_ms, value_bound)
     blocked = 0
     while True:
         res = s.check()
@@ -141,15 +145,19 @@ def main():
 
     if args.phase in ("all", "known"):
         res, wit = solve_cegar("known_answer_5roots_6gates", 6, 5, False,
-                               8, 30 * 60 * 1000)
+                               8, 30 * 60 * 1000, value_bound=10**9)
         if res != "sat":
             log("KNOWN-ANSWER FAIL: encoding not trusted")
             return 1
     if args.phase in ("all", "bounded"):
-        solve_cegar("bounded_7roots_pm", 8, 7, True, 32, 120 * 60 * 1000)
+        res, _ = solve_cegar("bounded_7roots_pm", 8, 7, True, 32,
+                             120 * 60 * 1000)
+        if res == "unknown":
+            solve_cegar("doubly_bounded_7roots_pm", 8, 7, True, 32,
+                        60 * 60 * 1000, value_bound=10**12)
     if args.phase in ("all", "unbounded"):
         solve_cegar("unbounded_7roots_pm", 8, 7, True, None,
-                    180 * 60 * 1000)
+                    120 * 60 * 1000)
     log("done")
     return 0
 
