@@ -64,3 +64,20 @@
   z_max(8) resolution).
 - **Next:** TCB-029 (SAT final-pm decision at 8), then v0.03; TCB-027
   mod-p instrumentation; TCB-005 depth-8 backend as the larger goal.
+
+## Round 9 (2026-08-19 continuation; EXP-008 in flight)
+
+- EXP-008 (SMT final-pm residual at depth 8) declared 2026-08-03; the
+  first launch died with a session teardown before any checkpoint (the
+  plain-NIA known-answer was intractable). AMENDED 2026-08-19 (recorded
+  in hypothesis.md before the re-run): QF_NIA solvers; value-bounded
+  known-answer (SAT-side validation only); ladder root-bounded ->
+  doubly-bounded fallback -> unbounded attempt; per-phase immediate
+  checkpoints to artifacts/sat8.json.
+- The re-run is DETACHED from the session (survives teardown):
+  PID 58300, log experiments/EXP-008-sat-depth8/run_detached.log.
+  A fresh session should READ artifacts/sat8.json first: phases present
+  there are decided; absent phases may still be running (check the PID/
+  log mtime) or dead (relaunch run.py with --phase for what is missing).
+- V11 (evaluation-matrix view) persisted 2026-08-03; TCB-030 minted;
+  subspace-theorem channel swept: no prior art, flagged [C].
