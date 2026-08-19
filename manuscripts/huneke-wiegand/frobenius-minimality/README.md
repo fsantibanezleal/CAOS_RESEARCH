@@ -2,8 +2,9 @@
 
 `main.tex` is the version 0.14 publication candidate of the CAOS Research preprint; version 0.13
 and all earlier versions remain frozen. Version 0.14 adds the EXP-027 theorem determining the
-first interior Betti strand. Its claim, build, and rendered-document gates pass; its version DOI
-and Zenodo publication are pending. Version 0.13 remains published at DOI
+first interior Betti strand. Its version DOI is reserved as `10.5281/zenodo.22013515`; its claim,
+build, and rendered-document gates pass, while upload and Zenodo publication are pending. Version
+0.13 remains published at DOI
 `10.5281/zenodo.21995498`, and a fresh unauthenticated download matches the committed PDF exactly.
 Version 0.12 remains published at DOI
 `10.5281/zenodo.21988601`, and matches a fresh public download exactly. Version 0.11 remains
@@ -81,7 +82,7 @@ Zenodo identifiers:
 - version 0.11 DOI: `10.5281/zenodo.21909961`
 - version 0.12 DOI: `10.5281/zenodo.21988601` (published and fresh-download verified)
 - version 0.13 DOI: `10.5281/zenodo.21995498` (published and fresh-download verified)
-- version 0.14 DOI: pending reservation (claim/build/render gates passed; not yet published)
+- version 0.14 DOI: `10.5281/zenodo.22013515` (reserved; claim/build/render gates passed; not yet published)
 - licence: CC BY 4.0
 
 Evidence sources are EXP-001 through EXP-027 under

@@ -1,6 +1,6 @@
 # Claim audit - manuscript v0.14
 
-Audited: 2026-08-19. Pre-publication result: PASS; Zenodo identity pending.
+Audited: 2026-08-19. Pre-publication result: PASS; Zenodo publication pending.
 
 Version 0.14 retains all v0.13 claims and adds only the first interior Betti strand closed by
 EXP-027. It corrects the stale v0.13 statement that the entire interior table was open while
@@ -20,7 +20,7 @@ explicitly leaving every other unresolved interior entry open.
 | exact computational support | EXP-027 `results.json`, `symbolic_certificate.json`, and independently encoded `audit.json` | PASS; 297 parameters, all offsets for `p=4,5,6`, two fields at `p=4`, and six symbolic UNSAT obligations |
 | manuscript split decision | EXP-027 hypothesis and verdict | PASS; this strand directly extends v0.13, while a standalone manuscript remains deferred until a substantial part of the remaining table is determined |
 | authorship | title page and `zenodo.json` | PASS; Felipe Santibanez-Leal is sole author; no automated system is named |
-| publication identity | version 0.14 title block and Zenodo draft | PENDING; version DOI will be inserted before upload and publication |
+| publication identity | version 0.14 title block and Zenodo draft `22013515` | PASS for reservation; version DOI `10.5281/zenodo.22013515`, concept DOI, date, sole author, and ORCID agree; publication pending |
 
 ## Scope boundaries
 
@@ -43,5 +43,11 @@ explicitly leaving every other unresolved interior entry open.
 - sole-authorship, ORCID, candidate version, concept DOI, and licence: PASS;
 - pre-reservation candidate PDF: 31 pages, SHA-256
   `fe35b5360faf23d345d1771838c8ef81f584a46b64abd736d090d1139b51296e`;
-- Zenodo reservation, DOI-bearing final build, upload, publication, and fresh public-download
-  verification: PENDING.
+- Zenodo reservation: PASS; empty draft `22013515` reserves DOI `10.5281/zenodo.22013515` under
+  concept DOI `10.5281/zenodo.21763582`.
+- DOI-bearing final build: PASS; 31 pages, 656,437 bytes, MD5
+  `f5c44834c94832c3c2c8d7d29389ff9a`, and SHA-256
+  `df5e12d2256f4967881df0f35df44b415777c4826f38447a33cfdeb1b7399e10`.
+- DOI-bearing rendered inspection: PASS; all 31 pages re-inspected in six contact sheets, with a
+  full-resolution page-one check after inserting the reserved DOI.
+- upload, publication, and fresh public-download verification: PENDING.
