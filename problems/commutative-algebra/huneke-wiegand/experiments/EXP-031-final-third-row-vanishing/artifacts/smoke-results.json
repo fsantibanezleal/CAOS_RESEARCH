@@ -1,0 +1,100 @@
+{
+  "experiment": "EXP-031-final-third-row-vanishing",
+  "generated_at": "2026-08-20T14:02:17.996002+00:00",
+  "status": "PASS",
+  "mode": "smoke",
+  "range": [
+    4,
+    4
+  ],
+  "premise_hashes": {
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-024-extremal-betti-data/proof.md": "b7b654609cfca99e979b26741f7d2b6bbbfc0029d882c38e3c2932bfc9146088",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-027-relative-betti-strand/proof.md": "355ff5c7e4bbc74fc8a1e346aac041d77b3fbc758051dbc729836db6a259e0bc",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-030-colon-idealization-degree-six/proof.md": "1822095a7d16207b7d04261b7a6645f7ca51b01f490ba9d212a84ab7ca5bc729",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-030-colon-idealization-degree-six/verdict.md": "7f8d2fe3c61a0fc1f864452ca98d05d04e154496a2d45d2c8d8a7b32644de4d9"
+  },
+  "formula_rows": [
+    {
+      "p": 4,
+      "hole": 23,
+      "generator_count": 40,
+      "positive_low_count": 7,
+      "universal_filler_pool": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "predicted_beta_3_7": 0,
+      "checks": {
+        "generator_count": true,
+        "degree_five_full": true,
+        "degree_four_full": true,
+        "degree_three_one_hole": true,
+        "positive_low_count": true,
+        "four_universal_fillers": true,
+        "three_vertices_cannot_exhaust_fillers": true,
+        "filler_residual_interval": true,
+        "filler_residual_avoids_hole": true
+      },
+      "controls": {
+        "zero_filler_rejected": true,
+        "wrong_zero_hole_rejected": true,
+        "three_fillers_rejected": true,
+        "wrong_full_degree_three_rejected": true
+      },
+      "row_hash": "303f8ecb20e6b304db2a732004d12889f7b2843b2122a78ff36153aa8a472d59"
+    }
+  ],
+  "filler_rows": [
+    {
+      "p": 4,
+      "critical_triangle_count": 9139,
+      "distinct_filler_count": 9139,
+      "supported_offset_count": 196,
+      "minimum_offset": 29,
+      "maximum_offset": 233,
+      "unit_sign_counts": {
+        "1": 8472,
+        "-1": 667
+      },
+      "all_critical_rows_have_distinct_unit_fillers": true,
+      "row_hash": "6debc09f26afc36c55ec8228c4c11b9311d4b6de82666342d85b61d985905c72"
+    }
+  ],
+  "explicit_rows": [
+    {
+      "p": 4,
+      "total_degree": 7,
+      "primes": [
+        2,
+        1000003
+      ],
+      "maximum_offset_checked": 373,
+      "combination_counts_2_to_4": [
+        780,
+        9880,
+        91390
+      ],
+      "maximum_cell_counts_2_to_4": [
+        707,
+        8146,
+        69202
+      ],
+      "h2_profiles": {
+        "2": {},
+        "1000003": {}
+      },
+      "h2_totals": {
+        "2": 0,
+        "1000003": 0
+      },
+      "profiles_agree": true,
+      "prediction_matches": true,
+      "elapsed_seconds": 35.222576799977105,
+      "row_hash": "91f95656e8984d8b3534d55792c989afede7b4fcfadae4c06117099b27ee568d"
+    }
+  ],
+  "elapsed_seconds": 35.3549425000092,
+  "campaign_aggregate": "3a3e99676e2f51006b62956e458bc01c15e737d6c037799888f3a560661e1c0c"
+}

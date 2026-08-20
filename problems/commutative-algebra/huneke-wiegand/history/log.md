@@ -1069,3 +1069,63 @@
   remains active only for later scoped ledger reconciliation after management safely returns to
   clean `develop`.
 - No release tag is claimed for this research-only round. HWB-035 resumes at `beta_(3,7)`.
+
+## 2026-08-20 - EXP-031 declared
+
+- The final third-row target is redirected from a broad resolution computation to the
+  total-degree-seven relative complex.
+- The exact residual sets leave only the hole `6p-1` between triangle and tetrahedron levels.
+  Zero-vertex Morse matching therefore predicts critical triangles exactly at that residual.
+- Each candidate critical triangle has at least four positive low vertices outside it. Adjoining
+  the least one predicts a distinct tetrahedral filler with a single critical face and unit
+  boundary coefficient.
+- EXP-031 is declared before implementation with the falsifiable all-parameter prediction
+  `beta_(3,7)=0` over every field. Complete small profiles, an independent filler audit,
+  adversarial controls, and a written integral proof remain mandatory.
+- No third-row completion or manuscript v0.18 update is claimed at declaration.
+
+## 2026-08-20 - EXP-031 first smoke implementation corrected
+
+- The first unit-filler smoke stopped before rank computation after treating the tetrahedron
+  `(1,2,3,4)` as a collision for triangles `(1,2,3)` and `(1,2,4)`.
+- The triangles belong to offsets 29 and 30, hence to different multigraded chain complexes. The
+  global tuple-only key was invalid; it says nothing about the mathematical prediction.
+- The failed attempt is preserved as `INVALID_IMPLEMENTATION`. The corrected route keys fillers by
+  `(offset,tetrahedron)` and retains the same-offset uniqueness, one-critical-face, and unit-sign
+  obligations before rerunning the smoke.
+
+## 2026-08-20 - EXP-031 confirmed
+
+- The corrected `p=4` smoke passed in 35.355 seconds. Every one of 374 offsets has exact `H_2=0`
+  over both `GF(2)` and `GF(1000003)`.
+- The canonical campaign passed 297 residual-formula rows through `p=300`, explicit unit-filler
+  checks for every critical triangle at `p=4,...,12`, and complete exact profiles at `p=4,5`.
+  Every profile entry is zero; runtime was 126.893 seconds inside the 900-second budget.
+- A separately encoded audit using the opposite filler order matches critical counts, offset
+  ranges, and unit-filler counts for `p=4,...,12`. The arithmetic certificate passes through
+  `p=300`.
+- Integral zero-vertex matching leaves only triangles with residual `6p-1`. Adjoining a missing
+  vertex from `{1,2,3,4}` gives each a same-offset tetrahedron with that triangle as its unique
+  critical face and coefficient `+1` or `-1`. The resulting signed identity block proves
+  `beta_(3,7)=0` over every field.
+- EXP-027/029/030/031 now give the complete third homological row. The total row rank is
+  `p(7500p^3-7988p^2+2025p-133)/6`.
+- Canonical, independent-audit, and symbolic aggregates are
+  `d68afbb5c54ebb86abbf420c389e1cacf666071cb35f83e5d2b67eccbc354858`,
+  `0be4b659126064328b5ef14a40e488a836f874d2eed9b048d4d3f19da971346e`, and
+  `e4bf2e0ae303e905efc9f985b239d059a5255b02d2ddc1d37abab5cc5cb2fc1f`.
+- HWB-045 is done. HWB-047 opens the existing-manuscript v0.18 and Zenodo new-version gate; higher
+  rows, the full Betti table, and the full resolution remain open.
+
+## 2026-08-20 - manuscript v0.18 published
+
+- The adjacent EXP-031 theorem was incorporated in place; a separate manuscript remains deferred.
+- The 42-page PDF passed claim, warning-free two-pass build, all-page 150-DPI render, sole-author,
+  ORCID, metadata, and exact one-file draft gates before publication.
+- Zenodo record `22030743`, DOI `10.5281/zenodo.22030743`, is public and concept-latest under
+  concept DOI `10.5281/zenodo.21763582`.
+- A fresh unauthenticated 725,554-byte download matches Git exactly: MD5
+  `558532167c4f2a39e03d1bcced9de18d`, SHA-256
+  `0e40aa5ed4feb02209137c2982184a93cfd402ac03cc9d4aa6f9ba86ae4327b7`.
+- HWB-047 is done. HWB-048 opens the separate-PR research promotion gate; CAOS_MANAGE stays
+  untouched while occupied by unrelated staged diffusion work.

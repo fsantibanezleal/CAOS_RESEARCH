@@ -14,7 +14,7 @@
 \hypersetup{
   pdftitle={Frobenius Minimality, Minimum-Layer Uniqueness, and an Infinite Family of Huneke--Wiegand Counterexamples},
   pdfauthor={Felipe Santibanez-Leal},
-  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, conductor, tangent-cone, fiber-cone, defining-ideal, and syzygy anatomy},
+  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, conductor, tangent-cone, fiber-cone, defining-ideal, and complete third-row syzygy anatomy},
   pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, trace ideals, conductors, associated graded rings, tangent cones, fiber cones, defining ideals, graded Betti numbers, relative simplicial homology, squarefree divisor complexes, canonical modules, Koszul algebras, Buchsbaum rings, Cohen-Macaulay rings, SAT, DRAT}
 }
 \usepackage{orcidlink}
@@ -36,18 +36,18 @@
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-20\\[2pt]\normalsize Version 0.17}
+\date{2026-08-20\\[2pt]\normalsize Version 0.18}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.17}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.18}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.17}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.18}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,8 +63,8 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.17 \textperiodcentered\ 2026-08-20\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22030167}{10.5281/zenodo.22030167}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.18 \textperiodcentered\ 2026-08-20\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22030743}{10.5281/zenodo.22030743}\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
 verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
@@ -79,7 +79,7 @@ reduction, tangent-cone, fiber-cone, defining-ideal, and syzygy anatomy.
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.17}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.18}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -196,8 +196,21 @@ unit Smith form, so the result again holds over every field. This completes one 
   \beta_{3,6}=\frac{8p(7p^2-12p+2)}{3}
   \]
   over every field, with support
-  \([3p+4,29p-5]\setminus([6p-3,6p+1]\cup[9p-3,9p])\). This still does not complete the
-  third row or the full resolution.
+  \([3p+4,29p-5]\setminus([6p-3,6p+1]\cup[9p-3,9p])\). In total degree seven,
+  a zero-vertex Boolean matching leaves only triangles at the single residual hole $6p-1$.
+  Adjoining a missing vertex from \(\{1,2,3,4\}\) gives each one a same-offset tetrahedron whose
+  reduced boundary has that triangle as its unique critical face with coefficient \(\pm1\).
+  Hence \(\beta_{3,7}=0\) integrally, and the complete third row over every field is
+  \[
+  \begin{aligned}
+  \beta_{3,4}&=\frac{p(5p-1)(500p^2-440p+47)}2,&
+  \beta_{3,5}&=4p(8p-1),\\
+  \beta_{3,6}&=\frac{8p(7p^2-12p+2)}3,&
+  \beta_{3,7}&=0.
+  \end{aligned}
+  \]
+  with no other shifts. Its total rank is
+  \(\beta_3=p(7500p^3-7988p^2+2025p-133)/6\).
 The results remain confined
 to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
@@ -277,6 +290,8 @@ they are verified by exact machine computation and independently checked artifac
   \item We identify the complete cubic-colon quotient as a canonical idealization and determine
   the complete degree-six third-syzygy profile, including
   $\beta_{3,6}=8p(7p^2-12p+2)/3$ over every field.
+  \item We prove the integral vanishing $\beta_{3,7}=0$ by a zero-vertex matching and a signed
+  unit filler block, thereby determining the complete third homological row over every field.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -2332,6 +2347,94 @@ corrected route passes. The canonical, audit, and symbolic aggregates are
 The calculations validate the implementation; the colon, Hilbert-numerator, and integral normal-
 form arguments prove the theorem.
 
+\subsection{Integral degree-seven contraction and the complete third row}
+
+The regularity bound permits one further shift in homological degree three. Its relative complex
+has a simpler defect than the degree-six strand and admits a uniform integral contraction.
+
+\begin{theorem}[Complete third homological row, {\bf[D]}]
+\label{thm:complete-third-row}
+For every integer $p\ge4$, every field $\kfield$, and every multigraded offset $b$,
+\begin{equation}
+\beta_{3,(7,b)}(C_p)=0.\label{eq:degree-seven-vanishing}
+\end{equation}
+Consequently $\beta_{3,7}=0$, and the complete third homological row is
+\begin{align}
+\beta_{3,4}&=\frac{p(5p-1)(500p^2-440p+47)}2,\notag\\
+\beta_{3,5}&=4p(8p-1),\notag\\
+\beta_{3,6}&=\frac{8p(7p^2-12p+2)}3,\notag\\
+\beta_{3,7}&=0,\qquad \beta_{3,j}=0\quad\hbox{otherwise}.\label{eq:complete-third-row}
+\end{align}
+Its total rank is
+\begin{equation}
+\beta_3=\frac{p(7500p^3-7988p^2+2025p-133)}6.\label{eq:beta-three-total}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Fix a total offset $b$ and put $h=6p-1$. The relative-complex dictionary used above says that a
+squarefree cell $F$ occurs in total degree seven exactly when
+\[
+b-\sum_{a\in F}a\in\mathcal E_{p,7-|F|}.
+\]
+The three cumulative offset sets governing edges, triangles, and tetrahedra are
+\begin{equation}
+\mathcal E_{p,5}=\mathcal E_{p,4}=[0,24p-1],\qquad
+\mathcal E_{p,3}=[0,24p-1]\setminus\{h\}.\label{eq:degree-seven-residuals}
+\end{equation}
+All cellular incidence coefficients are units over $\mathbb Z$.
+
+Use vertex $0$ for a partial Boolean matching. Match every edge not containing $0$ with the
+triangle obtained by adjoining $0$. Match every triangle $F$ not containing $0$ with
+$F\cup\{0\}$ whenever $b-\sum F\ne h$. Equation~\eqref{eq:degree-seven-residuals} makes every
+pair valid. The matching is acyclic: a reversed matched arrow adds $0$, while deletion of any
+other vertex leaves $0$ present and cannot lead to another lower cell of the same matching.
+The unmatched triangles are therefore precisely
+\begin{equation}
+0\notin F,\qquad |F|=3,\qquad b-\sum F=h.\label{eq:critical-triangles}
+\end{equation}
+
+For such a triangle choose the least $x\in\{1,2,3,4\}\setminus F$ and put
+$T=F\cup\{x\}$. These four vertices belong to the degree-one offset set for every $p\ge4$, and
+\[
+b-\sum T=h-x\in[0,24p-1]\setminus\{h\},
+\]
+so $T$ is an unmatched tetrahedron in the same offset complex. If $y\in T$, then the residual of
+its face $T\setminus\{y\}$ is $h-x+y$, which equals $h$ exactly when $y=x$. Thus $F$ is the
+unique critical triangle face of $T$, and its direct boundary coefficient is $+1$ or $-1$.
+
+There is no additional gradient contribution to another critical triangle. Any other face $G$ of
+$T$ not containing $0$ is paired upward with $G\cup\{0\}$; all its other triangle faces contain
+$0$ and are paired downward with edges. At fixed $b$, two critical triangles cannot receive the
+same tetrahedron, since that tetrahedron would then have two faces satisfying
+\eqref{eq:critical-triangles}. Hence the reduced integral boundary from unmatched tetrahedra onto
+unmatched triangles contains a signed identity block. It is surjective, so the integral second
+homology vanishes at every offset. Base change to any field proves
+\eqref{eq:degree-seven-vanishing}.
+
+The preceding interior-strand, colon--Koszul, and cubic-colon theorems give the entries in degrees
+four, five, and six. The minimum-shift bound excludes smaller degrees, and regularity four excludes
+degrees greater than seven. This proves~\eqref{eq:complete-third-row}. Adding its three nonzero
+entries and simplifying gives~\eqref{eq:beta-three-total}.
+\end{proof}
+
+EXP-031 checks the residual identities for $p=4,\ldots,300$, verifies every unit filler for
+$p=4,\ldots,12$, and computes complete exact degree-seven profiles at $p=4,5$ \textbf{[MV]}.
+All 374 offsets for $p=4$ vanish over both $\operatorname{GF}(2)$ and
+$\operatorname{GF}(1000003)$, and all 470 offsets for $p=5$ vanish over
+$\operatorname{GF}(2)$. An independent implementation reverses the filler order and matches all
+critical counts and offset ranges for $p=4,\ldots,12$. The first smoke implementation keyed a
+tetrahedron globally instead of by offset, falsely treating reuse in different multigraded
+complexes as a collision; it is preserved as invalid non-evidence. The canonical, audit, and
+symbolic aggregates are
+\begin{center}
+{\fontsize{7}{8}\selectfont\ttfamily d68afbb5c54ebb86abbf420c389e1cacf666071cb35f83e5d2b67eccbc354858},\\
+{\fontsize{7}{8}\selectfont\ttfamily 0be4b659126064328b5ef14a40e488a836f874d2eed9b048d4d3f19da971346e},\\
+{\fontsize{7}{8}\selectfont\ttfamily e4bf2e0ae303e905efc9f985b239d059a5255b02d2ddc1d37abab5cc5cb2fc1f}.
+\end{center}
+The computations validate the implementation; the integral matching and signed identity block
+prove the theorem.
+
 \section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
@@ -2340,7 +2443,7 @@ All compact code, hypotheses, manifests, audits, and verdicts are in the public 
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
 minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
-also includes the compact EXP-011--030 campaigns, independent reconstruction audits, symbolic
+also includes the compact EXP-011--031 campaigns, independent reconstruction audits, symbolic
 proofs, the preserved EXP-013 correction, the EXP-015 refutation, and the EXP-022 quadratic
 refutation. The proof toolchain is
 pinned as follows:
@@ -2360,6 +2463,7 @@ EXP-027 & relative-chain profiles, six exact Presburger queries, 297 formula row
 EXP-028 & integral degree-five/six matching, 297 formula rows, two-field profiles, and independent Smith forms\\
 EXP-029 & integral pair-basis normal form, 297 formula rows, exact small profiles, and independent boundary audit\\
 EXP-030 & canonical-idealization profile, exact degree-six homology, corrected independent audit, and symbolic support certificate\\
+EXP-031 & integral degree-seven contraction, exact small profiles, independent filler audit, and arithmetic certificate\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -2404,7 +2508,13 @@ non-evidence. The corrected audit matches every coefficient and selected rationa
 theorem rests on the nonzerodivisor proof of the canonical idealization, the multigraded Hilbert
 numerator, and the displayed integral unit normal form, not on the finite profiles.
 
-\section{Scope, attribution, and open questions}
+EXP-031 also introduces no solver dependency. Its characteristic-independent vanishing is not
+extrapolated from the small finite-field profiles: it rests on the all-parameter acyclic matching
+and the signed identity block in Theorem~\ref{thm:complete-third-row}. The corrected implementation
+keys cells by both multigraded offset and tetrahedron; the earlier tuple-only collision is retained
+as invalid non-evidence.
+
+\section{\texorpdfstring{\enspace}{}Scope, attribution, and open questions}
 
 Son Pham retains discovery priority for the counterexample. Professor Craig Huneke's verification
 is independent external evidence. The contributions proved here are Frobenius minimality,
@@ -2422,14 +2532,16 @@ Theorem~\ref{thm:homological-edge}, its first interior Betti strand in
 Theorem~\ref{thm:interior-strand}, and its complete second Betti row in
 Theorem~\ref{thm:second-betti-row}, and the colon--Koszul degree-five diagonal in
 Theorem~\ref{thm:colon-koszul-diagonal}, and the cubic-colon idealization and degree-six strand in
-Theorem~\ref{thm:colon-idealization-six}, together with
+Theorem~\ref{thm:colon-idealization-six}, and the complete third homological row in
+Theorem~\ref{thm:complete-third-row}, together with
 their reproducible records.
 
 Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
 \ref{thm:type}, \ref{thm:trace}, \ref{thm:stability}, \ref{thm:reduction},
 \ref{thm:tangent}, \ref{thm:buchsbaum}, \ref{thm:module}, \ref{thm:fiber},
 \ref{thm:presentation}, \ref{thm:homological-edge}, \ref{thm:interior-strand},
-\ref{thm:second-betti-row}, \ref{thm:colon-koszul-diagonal}, and~\ref{thm:colon-idealization-six}
+\ref{thm:second-betti-row}, \ref{thm:colon-koszul-diagonal},
+\ref{thm:colon-idealization-six}, and~\ref{thm:complete-third-row}
 do not classify all higher
 Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
 or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
@@ -2443,10 +2555,9 @@ questions remain open:
   \item Which additional hypotheses on the endomorphism ring recover a positive theorem while
   excluding both the public example and the full family proved here?
   \item Can the finite certificates be imported into a smaller formally verified checker?
-  \item Can the canonical-idealization and relative-complex methods determine \(\beta_{3,7}\),
-  complete the third homological row, and ultimately determine the remaining presentation-ring
-  Betti table beyond Theorems~\ref{thm:second-betti-row}, \ref{thm:colon-koszul-diagonal},
-  and~\ref{thm:colon-idealization-six}?
+  \item Can the complete second and third rows, Gorenstein duality, and the canonical-idealization
+  comparison map be combined into whole diagonal recurrences that determine the remaining
+  presentation-ring Betti table and full minimal resolution?
 \end{enumerate}
 
 \section*{Acknowledgments}

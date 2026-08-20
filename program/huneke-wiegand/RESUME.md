@@ -1,7 +1,9 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-20. Lifecycle: EXP-030 is CONFIRMED; manuscript v0.17 is published,
-fresh-download verified, and promoted through research PRs #205/#206. HWB-044 is done; HWB-046
+Updated: 2026-08-20. Lifecycle: EXP-031 is CONFIRMED; manuscript v0.18 is published and
+fresh-download verified at DOI `10.5281/zenodo.22030743`. HWB-047 is done and HWB-048 owns
+research promotion. EXP-030 and manuscript v0.17 were promoted through research PRs #205/#206;
+HWB-046
 owns only deferred CAOS_MANAGE ledger reconciliation because that checkout is occupied by
 unrelated staged diffusion work. The integral
 colon-Koszul theorem gives
@@ -43,8 +45,32 @@ and concept-latest at DOI `10.5281/zenodo.22030167`. Its 714,021-byte fresh publ
 MD5 `4c7daffba7539f37ea4ecb6d52fad9d9` and SHA-256
 `480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640`, exactly matching Git.
 PRs #205/#206 passed all required checks; research work, `develop`, and `main` share payload tree
-`33b044658401e9216705481ad627dea55dbdf754`. `beta_(3,7)`, the complete third row, and the full
-resolution remain open.
+`33b044658401e9216705481ad627dea55dbdf754`. That v0.17 snapshot remains frozen; EXP-031 below
+closes `beta_(3,7)` and the third row. Higher rows and the full resolution remain open.
+
+EXP-031 proves `beta_(3,7)=0` by an integral zero-vertex matching. In total degree seven, the only
+unmatched triangles have residual `6p-1`; adjoining one of the four low vertices `1,2,3,4`
+outside the triangle gives a same-offset tetrahedron with a single unit critical face. Therefore
+the complete third row over every field is
+
+```text
+beta_(3,4)=p(5p-1)(500p^2-440p+47)/2,
+beta_(3,5)=4p(8p-1),
+beta_(3,6)=8p(7p^2-12p+2)/3,
+beta_(3,7)=0,
+beta_(3,j)=0 otherwise.
+```
+
+The canonical exact profiles vanish at every offset for `p=4,5`; the smallest case agrees over
+two characteristics. Canonical and independent unit-filler counts agree for `p=4,...,12`, and the
+arithmetic obligations pass through `p=300`. HWB-045 is done. Higher rows and the full resolution
+remain open.
+
+The 42-page manuscript v0.18 passed claim, two-pass warning-free build, all-page render,
+authorship, metadata, upload, and publication gates. Zenodo record `22030743` is concept-latest;
+its fresh unauthenticated 725,554-byte PDF has MD5 `558532167c4f2a39e03d1bcced9de18d`
+and SHA-256 `0e40aa5ed4feb02209137c2982184a93cfd402ac03cc9d4aa6f9ba86ae4327b7`,
+exactly matching Git. HWB-047 is done.
 
 The published baseline remains intact: EXP-026 and focused companion v0.02 are published and
 fresh-download verified at DOI `10.5281/zenodo.22002907`, and PRs #190/#191 plus CAOS_MANAGE PR
@@ -89,7 +115,9 @@ Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
 18. the free colon-Koszul pair basis, exact third-row degree-five profile, and complete
     internal-degree-five diagonal over every field (EXP-029); and
 19. the complete cubic-colon idealization and characteristic-free degree-six third-syzygy profile
-    (EXP-030).
+    (EXP-030); and
+20. the integral zero-vertex contraction, degree-seven vanishing, and complete third homological
+    row over every field (EXP-031).
 
 The public seed is
 
@@ -183,6 +211,7 @@ campaign is supporting evidence, not the proof.
 | EXP-028 | CONFIRMED | complete second row: exact degree-five three-block multiplicities, `beta_(2,5)=p(2p-3)`, and integral `beta_(2,6)=0` over every field |
 | EXP-029 | CONFIRMED | free pair basis on the `8p` high colon variables gives `beta_(3,5)=4p(8p-1)`, exact support, and the complete internal-degree-five diagonal |
 | EXP-030 | CONFIRMED | canonical-idealization colon, exact support, and `beta_(3,6)=8p(7p^2-12p+2)/3` over every field |
+| EXP-031 | CONFIRMED | integral zero-vertex matching and signed unit filler block give `beta_(3,7)=0` and complete the third row over every field |
 
 ## 3a. Exact evidence anchors
 
@@ -223,6 +252,14 @@ campaign is supporting evidence, not the proof.
   `7564f15534e8a29f875a367d3a324b95041e8eef836d15deac3e35130e1ad37d`,
   `337854eef5d773c84cdd79c7734e63b295fa0337c5a1852e652559c334949b04`, and
   `605733497d6fb0ead97bfd25e26daaa66d546c297751960e1c427f29ff69f279`.
+- EXP-030 canonical campaign, independent audit, and symbolic aggregates:
+  `de439ff5cf0784b332fcf811b17217579221afca42510f755963c81ff8beaa4d`,
+  `bf5034efc37ec23edbd60d87c1eca36d437a9f9fc1e9d38f59816d8a7d3a7a16`, and
+  `c519356b98ea0c76ec3d49d5f04e3512f711e601fa6491a8bf28dd337454968c`.
+- EXP-031 canonical campaign, independent audit, and symbolic aggregates:
+  `d68afbb5c54ebb86abbf420c389e1cacf666071cb35f83e5d2b67eccbc354858`,
+  `0be4b659126064328b5ef14a40e488a836f874d2eed9b048d4d3f19da971346e`, and
+  `e4bf2e0ae303e905efc9f985b239d059a5255b02d2ddc1d37abab5cc5cb2fc1f`.
 
 ## 4. In flight
 
@@ -426,18 +463,21 @@ Published baseline:
 - v0.17 DOI `10.5281/zenodo.22030167`: complete cubic-colon idealization and degree-six third
   strand. The public 714,021-byte PDF has MD5 `4c7daffba7539f37ea4ecb6d52fad9d9` and SHA-256
   `480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640`.
+- v0.18 DOI `10.5281/zenodo.22030743`: integral degree-seven vanishing and complete third row. The
+  public 725,554-byte PDF has MD5 `558532167c4f2a39e03d1bcced9de18d` and SHA-256
+  `0e40aa5ed4feb02209137c2982184a93cfd402ac03cc9d4aa6f9ba86ae4327b7`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `22030167`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `22030743`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Complete the remaining HWB-046 management mirror only when CAOS_MANAGE is safely back on clean
-   `develop`; research promotion is already complete through PRs #205/#206.
+1. Complete HWB-048 by promoting the exact EXP-031 plus v0.18 state through separate research PRs
+   from work to `develop` and from `develop` to `main`, with required checks passing.
 2. When CAOS_MANAGE is safely back on clean `develop`, reconcile and promote only the scoped
-   publication ledger without touching unrelated work.
-3. Begin HWB-045 at `beta_(3,7)`: derive the next strand of the canonical-idealization resolution
-   and its comparison map before any raw resolution sweep.
+   publication ledger for the deferred v0.16--v0.18 rounds without touching unrelated work.
+3. After promotion, open a declaration-first experiment on whether the complete second and third
+   rows, canonical-module duality, and the known extremal rows force whole diagonal recurrences.
 
 ### Lenses ledger
 
