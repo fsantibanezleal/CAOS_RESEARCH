@@ -1,10 +1,10 @@
 # Frobenius-minimality preprint
 
-`main.tex` is the version 0.16 candidate of the CAOS Research preprint; version 0.15 and all earlier
-versions remain frozen. Version 0.16 adds the EXP-029 colon--Koszul theorem and completes the
-internal-degree-five diagonal. Zenodo draft `22029468` reserves DOI
-`10.5281/zenodo.22029468`; no upload or publication is claimed before the complete
-claim/build/render and post-upload gates pass. Version 0.15 is published at DOI
+`main.tex` is version 0.16 of the CAOS Research preprint; version 0.15 and all earlier versions
+remain frozen. Version 0.16 adds the EXP-029 colon--Koszul theorem and completes the
+internal-degree-five diagonal. It passed the complete claim/build/render, authenticated upload,
+publication, concept-latest, and fresh-download workflow and is published at DOI
+`10.5281/zenodo.22029468`. Version 0.15 is published at DOI
 `10.5281/zenodo.22016550`, and a fresh unauthenticated download matches the committed PDF exactly.
 Version 0.14 remains
 published at DOI `10.5281/zenodo.22013515`, and a fresh unauthenticated download matches the
@@ -100,7 +100,7 @@ Zenodo identifiers:
 - version 0.13 DOI: `10.5281/zenodo.21995498` (published and fresh-download verified)
 - version 0.14 DOI: `10.5281/zenodo.22013515` (published and fresh-download verified)
 - version 0.15 DOI: `10.5281/zenodo.22016550` (published and fresh-download verified)
-- version 0.16 DOI: `10.5281/zenodo.22029468` (reserved draft; not yet published)
+- version 0.16 DOI: `10.5281/zenodo.22029468` (published and fresh-download verified)
 - licence: CC BY 4.0
 
 Evidence sources are EXP-001 through EXP-029 under
@@ -316,13 +316,15 @@ Version 0.15 public-file verification:
   CC-BY-4.0 licence, filename, bytes, MD5, SHA-256, and v0.15 description addendum match
 - a fresh unauthenticated public download matches the committed PDF exactly
 
-Version 0.16 release-candidate verification:
+Version 0.16 public-file verification:
 
-- reserved DOI: `10.5281/zenodo.22029468`; no upload or publication occurred before claim/build
-  and render QA
+- DOI: `10.5281/zenodo.22029468`; no upload or publication occurred before claim/build/render QA
+  and exact post-upload draft validation
 - bytes: `691569`
 - MD5: `ad69991f41c4f35da3c03f2c1ce343e9`
 - SHA-256: `4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`
 - all 36 pages passed rendered inspection; the final build has no warnings, undefined references,
   overfull boxes, or underfull boxes
-- authenticated post-upload, publication, concept-latest, and fresh-download gates remain pending
+- the concept latest resolves to record `22029468`; public title, version, sole author/ORCID,
+  CC-BY-4.0 licence, filename, bytes, MD5, SHA-256, and v0.15/v0.16 description addendum match
+- a fresh unauthenticated public download matches the committed PDF exactly

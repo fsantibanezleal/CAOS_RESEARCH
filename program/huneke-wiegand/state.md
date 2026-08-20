@@ -89,9 +89,11 @@
 | 2026-08-19 | published | published | PRs #198/#199 passed required checks and promoted EXP-028 plus v0.15 through `develop` to `main`; CAOS_MANAGE PR #566 promoted the matching publication controls and ledger |
 | 2026-08-20 | published | active | EXP-029 declared before implementation: use the exact `8p`-variable linear cubic colon and integral relative `H_2` matching to determine `beta_(3,5)` and the complete internal-degree-five diagonal |
 | 2026-08-20 | active | confirmed | EXP-029 proves the free colon-Koszul pair basis, `beta_(3,5)=4p(8p-1)`, exact offset support, and the complete internal-degree-five diagonal over every field; manuscript v0.16 gate opened |
+| 2026-08-20 | confirmed | published | 36-page preprint v0.16 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.22029468`, and matched a fresh unauthenticated public download exactly |
 
-Current state: **EXP-029 confirmed; manuscript v0.16 and Zenodo new-version delivery active under
-HWB-041**. For `H_p={a in G_p:a>=6p}`, integral relative homology has the free pair basis
+Current state: **EXP-029 and manuscript v0.16 are confirmed and published; checked repository
+promotion is active under HWB-042**. For `H_p={a in G_p:a>=6p}`, integral relative homology has the
+free pair basis
 
 ```text
 beta_(3,(5,b))=#{ {a,c} subset H_p:a<c and a+c=b-3p },
@@ -112,11 +114,11 @@ The 297-row campaign passes through `p=300`; complete exact `H_2` profiles at `p
 `496,780,1128`; two-characteristic controls, an independent rational boundary audit, and the
 constant-memory arithmetic/Z3 certificate pass. The first all-support symbolic implementation is
 preserved as `INCONCLUSIVE_BUDGET`; it is non-evidence, and the corrected endpoint implementation
-passes the unchanged obligations. The main manuscript v0.15 remains published at DOI
-`10.5281/zenodo.22016550`; its public 674,169-byte PDF has SHA-256
-`e7d3fb747f01b6c44c84ca9c2cf25a746cd2d05eb0996163f4a18e9e3cea1be9`. EXP-029 now triggers
-an expansion of that existing manuscript rather than a separate paper. `beta_(3,6)`, the rest of
-the third row, and the full Betti table remain open under HWB-035.
+passes the unchanged obligations. The 36-page main manuscript v0.16 is public as record
+`22029468`, DOI `10.5281/zenodo.22029468`; its 691,569-byte fresh download has SHA-256
+`4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`. HWB-041 is done. A
+separate manuscript remains deferred; `beta_(3,6)`, the rest of the third row, and the full Betti
+table remain open under HWB-035 after HWB-042 promotion closes.
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.

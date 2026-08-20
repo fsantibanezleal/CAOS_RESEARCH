@@ -1,7 +1,8 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-20. Lifecycle: EXP-029 is CONFIRMED; manuscript v0.16 and Zenodo new-version
-delivery are active under HWB-041. The integral colon-Koszul theorem gives
+Updated: 2026-08-20. Lifecycle: EXP-029 is CONFIRMED and manuscript v0.16 is published and
+fresh-download verified; checked repository promotion is active under HWB-042. The integral
+colon-Koszul theorem gives
 
 ```text
 beta_(3,(5,b))=#{ {a,c} subset H_p:a<c and a+c=b-3p },
@@ -23,12 +24,13 @@ For `0<=r<=2p-4`, the degree-five support is the three intervals
 `[3p+2,5p-2]`, `[6p+1,8p-3]`, and `[9p,11p-4]`. The outer multiplicity is
 `min(floor(r/2)+1,floor((2p-4-r)/2)+1)` and the middle multiplicity is
 `min(r+1,2p-3-r,p-2)`. Integral lexicographic matching and unit Smith forms prove freeness and
-characteristic independence. The canonical campaign passes 297 rows, complete small profiles,
-two-field controls, an independent rational/Smith audit, and arithmetic/Z3 checks. The 34-page
-main manuscript v0.15 is published and fresh-download verified at DOI
-`10.5281/zenodo.22016550`. PRs #198/#199 promoted the checked research payload through `develop`
-to `main`; CAOS_MANAGE PR #566 promoted the publication controls and ledger. Higher homological
-rows and the full Betti table remain open.
+characteristic independence. The canonical EXP-029 campaign passes 297 rows, complete small
+profiles, two-field controls, an independent rational boundary audit, and arithmetic/Z3 checks.
+The 36-page main manuscript v0.16 is published and fresh-download verified at DOI
+`10.5281/zenodo.22029468`; its 691,569-byte PDF has SHA-256
+`4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`. HWB-041 is done and
+HWB-042 owns checked repository and management-ledger promotion. Higher homological rows and the
+full Betti table remain open.
 
 The published baseline remains intact: EXP-026 and focused companion v0.02 are published and
 fresh-download verified at DOI `10.5281/zenodo.22002907`, and PRs #190/#191 plus CAOS_MANAGE PR
@@ -387,20 +389,22 @@ Published baseline:
 - v0.13 DOI `10.5281/zenodo.21995498`: homological edge theorem. The public 635,617-byte PDF has
   MD5 `d6ce72589100d1f57986da000501fdc7` and SHA-256
   `cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed`.
+- v0.14 DOI `10.5281/zenodo.22013515`: first interior Betti strand.
+- v0.15 DOI `10.5281/zenodo.22016550`: complete second Betti row.
+- v0.16 DOI `10.5281/zenodo.22029468`: colon-Koszul degree-five diagonal. The public 691,569-byte
+  PDF has MD5 `ad69991f41c4f35da3c03f2c1ce343e9` and SHA-256
+  `4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `22016550`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `22029468`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Expand the existing Frobenius-minimality manuscript to v0.16 with the EXP-029 theorem, exact
-   support, integral normal form, evidence, and explicit full-table scope boundary.
-2. Run complete claim, two-pass build, all-page render, attribution, and metadata QA; publish a new
-   Zenodo version only after those gates pass, then verify a fresh unauthenticated download.
-3. Commit and push each verified milestone, promote the tested research payload through separate
+1. Commit and push the verified v0.16 publication state, then promote the tested research payload
+   through separate
    work-to-`develop` and `develop`-to-`main` PRs, and promote the scoped CAOS_MANAGE ledger without
    staging unrelated concurrent changes.
-4. Reopen HWB-035 at `beta_(3,6)`: derive its colon contribution and relative `H_2` obstruction
+2. Reopen HWB-035 at `beta_(3,6)`: derive its colon contribution and relative `H_2` obstruction
    before attempting any broad full-resolution computation.
 
 ### Lenses ledger

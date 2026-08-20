@@ -52,6 +52,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | curvilinear companion v0.02 | published | complete reduced grevlex staircase theorem, DOI [`10.5281/zenodo.22002907`](https://doi.org/10.5281/zenodo.22002907); exact public-file hash verified |
 | preprint v0.14 | published | first interior Betti-strand theorem, DOI [`10.5281/zenodo.22013515`](https://doi.org/10.5281/zenodo.22013515); exact public-file hash verified |
 | preprint v0.15 | published | complete second Betti-row theorem, DOI [`10.5281/zenodo.22016550`](https://doi.org/10.5281/zenodo.22016550); exact public-file hash verified |
+| preprint v0.16 | published | colon-Koszul degree-five diagonal theorem, DOI [`10.5281/zenodo.22029468`](https://doi.org/10.5281/zenodo.22029468); exact public-file hash verified |
 
 CAOS independently reproduces the public counterexample's decisive finite certificate. Discovery
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery. CAOS's novel

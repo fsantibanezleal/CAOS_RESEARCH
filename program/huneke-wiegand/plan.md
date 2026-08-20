@@ -639,3 +639,13 @@ integers and is preserved as non-evidence; the constant-memory endpoint implemen
 same obligations through `p=10000`. EXP-029 is CONFIRMED and HWB-041 now owns the v0.16 manuscript
 and Zenodo new-version gate. The next mathematical target remains `beta_(3,6)`, not an unbounded
 full-resolution sweep.
+
+HWB-041 is complete. The existing manuscript was expanded to v0.16 with the exact multigraded
+pair profile, integral normal form, complete degree-five diagonal, evidence ledger, and explicit
+third-row/full-table boundary. The DOI-bearing 36-page PDF passed two clean LaTeX builds and
+complete rendered inspection, then was published under the existing concept DOI as record
+`22029468`, DOI `10.5281/zenodo.22029468`. A fresh unauthenticated 691,569-byte download matches
+MD5 `ad69991f41c4f35da3c03f2c1ce343e9` and SHA-256
+`4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`. HWB-042 now owns the
+checked repository and management-ledger promotion; no release tag is claimed for this
+research-only round.

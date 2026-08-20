@@ -964,3 +964,19 @@
   `605733497d6fb0ead97bfd25e26daaa66d546c297751960e1c427f29ff69f279`.
 - EXP-029 is CONFIRMED. HWB-041 opens the existing-manuscript v0.16 and Zenodo new-version gate;
   `beta_(3,6)`, the remaining third row, and the full Betti table remain open under HWB-035.
+
+## 2026-08-20 - EXP-029 manuscript v0.16 published
+
+- Expanded the main Frobenius-minimality manuscript to v0.16 with the colon-Koszul pair-basis
+  theorem, exact multigraded support, complete internal-degree-five diagonal, integral normal-form
+  proof, explicit trust boundary, and EXP-029 evidence.
+- The DOI-bearing 36-page PDF passed two clean LaTeX builds, all-page rendered inspection, exact
+  metadata, scope, attribution, and sole-human-authorship gates.
+- Published Zenodo version DOI `10.5281/zenodo.22029468` under concept DOI
+  `10.5281/zenodo.21763582`. Public record `22029468` is concept-latest and CC BY 4.0 with Felipe
+  Santibanez-Leal as sole creator and ORCID `0000-0002-0150-3246`.
+- A fresh unauthenticated 691,569-byte download matches MD5
+  `ad69991f41c4f35da3c03f2c1ce343e9` and SHA-256
+  `4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554` exactly.
+- HWB-041 is complete. HWB-042 owns checked research and management promotion; no release tag is
+  claimed for this research-only round.

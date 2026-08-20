@@ -1,7 +1,6 @@
 # Claim audit - manuscript v0.16
 
-Audited: 2026-08-20. Candidate result: claim/build/render gates PASS; upload, publication, and
-fresh-download gates pending.
+Audited: 2026-08-20. Final publication result: PASS.
 
 Version 0.16 retains all claims through v0.15 and adds only the colon-Koszul degree-five diagonal
 closed by EXP-029. The result is an all-parameter theorem for the conductor special fibers in the
@@ -64,6 +63,11 @@ not replace the integral normal form.
 - exact PDF identity: PASS; 691,569 bytes, MD5
   `ad69991f41c4f35da3c03f2c1ce343e9`, and SHA-256
   `4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`;
-- authenticated post-upload metadata, sole-authorship, and one-file gate: PENDING;
-- Zenodo publication and concept-latest gate: PENDING;
-- fresh unauthenticated download/hash verification: PENDING.
+- authenticated post-upload metadata, sole-authorship, and one-file gate: PASS; exactly one PDF,
+  exact filename, 691,569 bytes, MD5, version, title, sole creator, ORCID, CC-BY-4.0 licence, and
+  the v0.15/v0.16 description addendum matched before publication;
+- Zenodo publication and concept-latest gate: PASS; record `22029468` is public and concept-latest
+  with version `0.16` and DOI `10.5281/zenodo.22029468`;
+- fresh unauthenticated download/hash verification: PASS; MD5
+  `ad69991f41c4f35da3c03f2c1ce343e9` and SHA-256
+  `4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554` exactly match Git.
