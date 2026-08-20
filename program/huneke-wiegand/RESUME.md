@@ -1,8 +1,10 @@
 # Huneke-Wiegand extensions - session handoff
 
 Updated: 2026-08-20. Lifecycle: EXP-032 is CONFIRMED for the complete graded Betti polynomial and
-free-module shape of the cubic-colon quotient; HWB-050 owns the active in-place manuscript v0.19
-gate. EXP-031 is CONFIRMED; manuscript v0.18 is published and
+free-module shape of the cubic-colon quotient. The 43-page v0.19 candidate passes claim,
+two-pass build, all-page render, metadata, sole-authorship, tests, pipeline, and artifact gates;
+HWB-050 now owns exact upload and publication of the still-empty Zenodo draft `22031481`.
+EXP-031 is CONFIRMED; manuscript v0.18 is published and
 fresh-download verified at DOI `10.5281/zenodo.22030743`. HWB-047 is done and HWB-048 owns
 only deferred CAOS_MANAGE ledger reconciliation; research PRs #209/#210 passed all checks and
 promoted the exact v0.18 state through `develop` and `main`. EXP-030 and manuscript v0.17 were
@@ -504,9 +506,9 @@ Published baseline:
 
 1. When CAOS_MANAGE is safely back on clean `develop`, reconcile and promote only the scoped
    publication ledger for the deferred v0.16--v0.18 rounds without touching unrelated work.
-2. Complete HWB-050: expand the existing main manuscript in place to v0.19 with EXP-032, then run
-   the full claim, two-pass build, all-page render, sole-authorship, Zenodo draft, publication, and
-   fresh-download gates.
+2. Complete HWB-050: commit and push the exact locally validated v0.19 PDF, upload it as the sole
+   file in Zenodo draft `22031481`, validate metadata and MD5 before publication, then publish and
+   verify a fresh unauthenticated download by MD5 and SHA-256.
 3. After publication, declare a mapping-cone comparison experiment: use the complete colon Betti
    table to isolate the unknown ranks against `P_p/Q_p`; do not claim a full `C_p` resolution from
    colon data alone.

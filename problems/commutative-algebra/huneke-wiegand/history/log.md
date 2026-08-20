@@ -1175,3 +1175,16 @@
   `f696390447a3ce20397d937aa73baebf23a3c5ae249d4ad1215ff48cb710a2ae`.
 - The claim determines every free-module rank and shift, not explicit differential matrices or the
   full resolution of `C_p`. HWB-049 is done; HWB-050 opens the in-place manuscript v0.19 gate.
+
+## 2026-08-20 - manuscript v0.19 prepublication candidate validated
+
+- The EXP-032 theorem was incorporated in the existing main manuscript; a third manuscript remains
+  deferred because this is the completion of the same cubic-colon object.
+- The 43-page PDF passed the claim map, two consecutive warning-free builds, text/metadata checks,
+  complete 150-DPI page inspection, full-size new-page inspection, and sole-author/ORCID audit.
+- The exact candidate is 741,461 bytes with MD5 `0ddc07fc56b07490e66a9b1967c6a0d0` and SHA-256
+  `ebd4d3294cf1dd6fdeccf8902e93399a6617d661dd7421d9dd260278670f3a15`.
+- Repository guards, Ruff, all 60 tests, the full registry pipeline, and artifact consistency pass.
+  Pipeline regeneration reconciled 13 previously absent experiment-registry entries.
+- Zenodo draft `22031481`, DOI `10.5281/zenodo.22031481`, is reserved but still empty and
+  unpublished. Exact upload/draft validation is the next reversible gate under HWB-050.

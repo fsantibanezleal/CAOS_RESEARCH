@@ -818,3 +818,18 @@ scope is precise: every free-module rank and shift is proved, but explicit diffe
 and the full resolution of `C_p` remain open. After publication, the strongest mathematical route
 is the cubic mapping-cone comparison map against `P_p/Q_p`, using the now-complete colon table to
 turn unknown higher Betti entries into comparison-map ranks.
+
+## 2026-08-20 - manuscript v0.19 prepublication candidate validated
+
+The EXP-032 theorem is incorporated in place rather than split into a third manuscript. The
+43-page candidate passed its claim map, two consecutive warning-free LaTeX builds, text and PDF
+metadata extraction, complete 150-DPI page inspection, full-size inspection of the new theorem
+and boundary pages, sole-author/ORCID audit, content and structure guards, Ruff, all 60 tests, the
+full registry pipeline, and manifest/artifact consistency.
+
+The exact candidate is 741,461 bytes with MD5
+`0ddc07fc56b07490e66a9b1967c6a0d0` and SHA-256
+`ebd4d3294cf1dd6fdeccf8902e93399a6617d661dd7421d9dd260278670f3a15`. The pipeline also
+reconciled 13 previously stale experiment-registry entries, including EXP-021--032. Reversible
+Zenodo draft `22031481`, DOI `10.5281/zenodo.22031481`, remains empty and unpublished. The next
+gate is to commit and push this exact payload before authenticated upload and draft validation.
