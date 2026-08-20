@@ -1129,3 +1129,14 @@
   `0e40aa5ed4feb02209137c2982184a93cfd402ac03cc9d4aa6f9ba86ae4327b7`.
 - HWB-047 is done. HWB-048 opens the separate-PR research promotion gate; CAOS_MANAGE stays
   untouched while occupied by unrelated staged diffusion work.
+
+## 2026-08-20 - EXP-031 and manuscript v0.18 promoted
+
+- PR #209 passed `guards` and `test` and merged the exact tested work state to `develop` at
+  `ce2b79b0b2d1c98f4613946fb3482190de8fc722`.
+- PR #210 passed all required checks and promoted `develop` to `main` at
+  `842371a02758eea2123391bacfde1265197f4e3b`.
+- Work, `develop`, and `main` shared payload tree
+  `8d37059beea83e662151fcdeb2ff1bef63d35c2c` before this handoff update.
+- CAOS_MANAGE remains untouched on its unrelated occupied branch. HWB-048 owns only the deferred
+  scoped publication-ledger reconciliation.

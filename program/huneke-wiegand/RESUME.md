@@ -2,7 +2,9 @@
 
 Updated: 2026-08-20. Lifecycle: EXP-031 is CONFIRMED; manuscript v0.18 is published and
 fresh-download verified at DOI `10.5281/zenodo.22030743`. HWB-047 is done and HWB-048 owns
-research promotion. EXP-030 and manuscript v0.17 were promoted through research PRs #205/#206;
+only deferred CAOS_MANAGE ledger reconciliation; research PRs #209/#210 passed all checks and
+promoted the exact v0.18 state through `develop` and `main`. EXP-030 and manuscript v0.17 were
+promoted through research PRs #205/#206;
 HWB-046
 owns only deferred CAOS_MANAGE ledger reconciliation because that checkout is occupied by
 unrelated staged diffusion work. The integral
@@ -472,11 +474,9 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Complete HWB-048 by promoting the exact EXP-031 plus v0.18 state through separate research PRs
-   from work to `develop` and from `develop` to `main`, with required checks passing.
-2. When CAOS_MANAGE is safely back on clean `develop`, reconcile and promote only the scoped
+1. When CAOS_MANAGE is safely back on clean `develop`, reconcile and promote only the scoped
    publication ledger for the deferred v0.16--v0.18 rounds without touching unrelated work.
-3. After promotion, open a declaration-first experiment on whether the complete second and third
+2. Open a declaration-first experiment on whether the complete second and third
    rows, canonical-module duality, and the known extremal rows force whole diagonal recurrences.
 
 ### Lenses ledger
