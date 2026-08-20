@@ -1,8 +1,10 @@
 # Frobenius-minimality preprint
 
-`main.tex` is version 0.16 of the CAOS Research preprint; version 0.15 and all earlier versions
-remain frozen. Version 0.16 adds the EXP-029 colon--Koszul theorem and completes the
-internal-degree-five diagonal. It passed the complete claim/build/render, authenticated upload,
+`main.tex` is the version 0.17 release candidate of the CAOS Research preprint; version 0.16 and
+all earlier versions remain frozen. Version 0.17 adds the EXP-030 cubic-colon idealization theorem
+and determines the complete degree-six third-syzygy profile. DOI
+`10.5281/zenodo.22030167` is reserved; upload and publication remain gated on complete
+claim/build/render QA. Version 0.16 passed the complete claim/build/render, authenticated upload,
 publication, concept-latest, and fresh-download workflow and is published at DOI
 `10.5281/zenodo.22029468`. Version 0.15 is published at DOI
 `10.5281/zenodo.22016550`, and a fresh unauthenticated download matches the committed PDF exactly.
@@ -64,6 +66,12 @@ Version 0.16 determines the complete degree-five third-syzygy profile. If
 EXP-028 and the exact Hilbert numerator, it gives
 `beta_(4,5)=2p(5p-1)(10p-3)(100p^2-110p+13)/3` and completes internal degree five over every
 field. The third row, full Betti table, and full resolution remain open.
+Version 0.17 identifies the complete cubic-colon quotient as the canonical idealization
+`V_p semidirect omega_(V_p)` of the `p`-th Veronese rational normal curve ring. Its multigraded
+Hilbert numerator and an integral relative normal form prove
+`beta_(3,6)=8p(7p^2-12p+2)/3` over every field, with exact support
+`[3p+4,29p-5] minus ([6p-3,6p+1] union [9p-3,9p])`. The next open strand is
+`beta_(3,7)`; the complete third row, full Betti table, and full resolution remain open.
 
 Attribution is binding: Son Pham discovered the first public counterexample; CAOS contributes the
 certified minimality, minimum-layer uniqueness, and parametric-family extensions. Professor Craig
@@ -101,9 +109,10 @@ Zenodo identifiers:
 - version 0.14 DOI: `10.5281/zenodo.22013515` (published and fresh-download verified)
 - version 0.15 DOI: `10.5281/zenodo.22016550` (published and fresh-download verified)
 - version 0.16 DOI: `10.5281/zenodo.22029468` (published and fresh-download verified)
+- version 0.17 DOI: `10.5281/zenodo.22030167` (reserved; release QA in progress)
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-029 under
+Evidence sources are EXP-001 through EXP-030 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
 finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
@@ -145,6 +154,12 @@ Its exact campaign checks 297 parameters through `p=300`, complete relative `H_2
 `p=4,5,6`, two characteristics at `p=4`, an independent rational support-boundary audit, and a
 constant-memory arithmetic/Z3 support certificate through `p=10000`. The first symbolic
 implementation is preserved as non-evidence after exceeding its declared budget.
+EXP-030 identifies the complete cubic-colon quotient with a canonical idealization and proves the
+complete total-degree-six third-syzygy profile. Its canonical campaign checks 297 formula rows and
+complete relative profiles for `p=4,5,6`; a separately encoded audit matches every coefficient
+and selected rational ranks, and a symbolic certificate checks the scalar and support formulas.
+The audit's first implementation incorrectly inserted the forbidden offset `8p-1`; it is retained
+as invalid non-evidence, while the corrected implementation passes.
 
 Version 0.02 remains frozen with this public-file verification:
 

@@ -36,18 +36,18 @@
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-20\\[2pt]\normalsize Version 0.16}
+\date{2026-08-20\\[2pt]\normalsize Version 0.17}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.16}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.17}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.16}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.17}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,8 +63,8 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.16 \textperiodcentered\ 2026-08-20\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22029468}{10.5281/zenodo.22029468}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.17 \textperiodcentered\ 2026-08-20\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22030167}{10.5281/zenodo.22030167}\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
 verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
@@ -79,7 +79,7 @@ reduction, tangent-cone, fiber-cone, defining-ideal, and syzygy anatomy.
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.16}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.17}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -189,7 +189,15 @@ unit Smith form, so the result again holds over every field. This completes one 
   \[
   \beta_{4,5}=\frac{2p(5p-1)(10p-3)(100p^2-110p+13)}{3},
   \]
-  completing internal degree five over every field, but not the third row or the full resolution.
+  completing internal degree five over every field. Finally, we identify the complete cubic-colon
+  quotient with the canonical idealization of the $p$-th Veronese rational normal curve ring.
+  Its multigraded Hilbert numerator and an integral relative normal form give
+  \[
+  \beta_{3,6}=\frac{8p(7p^2-12p+2)}{3}
+  \]
+  over every field, with support
+  \([3p+4,29p-5]\setminus([6p-3,6p+1]\cup[9p-3,9p])\). This still does not complete the
+  third row or the full resolution.
 The results remain confined
 to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
@@ -266,6 +274,9 @@ they are verified by exact machine computation and independently checked artifac
   three-block offset multiplicities and $\beta_{2,6}=0$.
   \item We determine the complete degree-five third-syzygy profile from the high cubic colon,
   prove $\beta_{3,5}=4p(8p-1)$ over every field, and complete the internal-degree-five diagonal.
+  \item We identify the complete cubic-colon quotient as a canonical idealization and determine
+  the complete degree-six third-syzygy profile, including
+  $\beta_{3,6}=8p(7p^2-12p+2)/3$ over every field.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -2170,6 +2181,157 @@ integer; it is preserved as non-evidence. The optimized endpoint implementation 
 obligations. These calculations validate the implementation; the integral normal form proves the
 theorem.
 
+\subsection{The cubic-colon idealization and degree-six third strand}
+
+The preceding theorem uses only the linear part of the cubic colon. We now identify the complete
+colon and read its first nonlinear strand inside total degree six. Retain $H_p$ from
+\eqref{eq:high-colon-set}, and put
+\[
+L_p=[0,p]\cup[3p,4p-2],\qquad
+A_i=X_i\ (0\le i\le p),\qquad B_j=X_{3p+j}\ (0\le j\le p-2).
+\]
+Let $V_p=\kfield[s,t]^{(p)}$ be the $p$-th Veronese ring and let
+$\omega_{V_p}$ carry its natural grading, so
+$(\omega_{V_p})_d=\kfield[s,t]_{dp-2}$.
+
+For the multigraded formula, set
+\begin{align*}
+\ell_p(T)&=\sum_{a\in L_p}T^a,
+&\eta_p(T)&=\sum_{a\in H_p}T^a,\\
+e_{p,r}(T)&=\sum_{\substack{F\subset L_p\\|F|=r}}T^{\sum F},
+&u_{p,0}(T)&=1,\\
+u_{p,d}(T)&=\sum_{v=0}^{dp}T^v+\sum_{v=3p}^{(d+3)p-2}T^v &&(d\ge1),
+\end{align*}
+and
+\begin{align}
+r_p(T)&=\ell_p(T)u_{p,1}(T)-u_{p,2}(T)-e_{p,2}(T),\label{eq:colon-quadratic-profile}\\
+s_p(T)&=u_{p,3}(T)-\ell_p(T)u_{p,2}(T)
+ +e_{p,2}(T)u_{p,1}(T)-e_{p,3}(T).\label{eq:colon-linear-syzygy-profile}
+\end{align}
+
+\begin{theorem}[Cubic-colon idealization and degree-six third strand, {\bf[D]}]
+\label{thm:colon-idealization-six}
+For every integer $p\ge4$ and every field $\kfield$,
+\begin{equation}
+\mathfrak q_p:f_p=\mathfrak q_p+(X_h:h\in H_p),\qquad |H_p|=8p.\label{eq:complete-cubic-colon}
+\end{equation}
+Moreover,
+\begin{equation}
+P_p/(\mathfrak q_p:f_p)\cong V_p\ltimes\omega_{V_p},\label{eq:colon-idealization}
+\end{equation}
+where the right side is the square-zero canonical idealization under
+\[
+A_i\longmapsto s^{p-i}t^i,\qquad
+B_j\longmapsto \epsilon s^{p-2-j}t^j,\qquad \epsilon^2=0.
+\]
+It is a two-dimensional graded Gorenstein algebra with Hilbert series
+\[
+\frac{1+(2p-2)z+z^2}{(1-z)^2}.
+\]
+The complete total-degree-six third-syzygy profile is
+\begin{equation}
+\beta_{3,(6,b)}=[T^{b-3p}]\bigl(s_p(T)+\eta_p(T)r_p(T)\bigr).\label{eq:degree-six-profile}
+\end{equation}
+The corresponding integral relative homology is free abelian, its support is
+\begin{equation}
+[3p+4,29p-5]\setminus\bigl([6p-3,6p+1]\cup[9p-3,9p]\bigr),\label{eq:degree-six-support}
+\end{equation}
+and consequently
+\begin{equation}
+\beta_{3,6}=\frac{8p(7p^2-12p+2)}{3}.\label{eq:beta-three-six}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Kill the variables indexed by $H_p$, and write
+$S_p=\kfield[A_0,\ldots,A_p,B_0,\ldots,B_{p-2}]$. The image of $\mathfrak q_p$ is generated by
+\begin{equation}
+\begin{split}
+A_iA_j-A_kA_l&\quad(i+j=k+l),\\
+A_iB_j-A_kB_l&\quad(i+j=k+l),\\
+B_iB_j&\quad\hbox{for all }i,j.
+\end{split}\label{eq:low-colon-relations}
+\end{equation}
+The first two rows are the equal-offset quadratic fibers. For the third, the offset of
+$B_iB_j$ lies in $[6p,8p-4]\subset H_p$, and
+$B_iB_j-X_0X_{6p+i+j}\in\mathfrak q_p$. Conversely, no $AA$ or $AB$ total has a
+high-variable factorization or vanishes in degree two, so this list is exact.
+
+Relations~\eqref{eq:low-colon-relations} give a surjection to $V_p\ltimes\omega_{V_p}$.
+Every nonzero degree-$d$ monomial has a unique normal form of one of two types: an $A$-only
+class indexed by $[0,dp]$, or a class with one $B$, indexed by
+$[3p,(d+3)p-2]$. Their images are the monomial bases of
+$\kfield[s,t]_{dp}$ and $\epsilon\kfield[s,t]_{dp-2}$, respectively, and remain independent
+where the intervals overlap. This proves the idealization presentation after the high variables
+are killed and gives dimension $2pd$ in every positive degree, hence the displayed Hilbert
+series.
+
+Equation~\eqref{eq:quadratic-colon} already places all $X_h$, $h\in H_p$, in
+$\mathfrak q_p:f_p$. In the idealization, the two monomials of $f_p$ have nonzero components
+in the ring and canonical-module summands. An annihilator first kills a nonzero element of the
+Veronese domain and is therefore zero in the ring summand; it then kills a nonzero element on the
+torsion-free canonical module and is zero there as well. Thus $f_p$ is a nonzerodivisor modulo
+$\mathfrak q_p+(X_h:h\in H_p)$, proving \eqref{eq:complete-cubic-colon} and
+\eqref{eq:colon-idealization}.
+
+The two normal-form intervals give the offset Hilbert profiles $u_{p,d}(T)$. Multiplication by
+$\prod_{a\in L_p}(1-zT^a)$ shows that the degree-two numerator coefficient is $-r_p(T)$ and
+the degree-three coefficient is $s_p(T)$. The ideal in~\eqref{eq:low-colon-relations} is
+generated by quadrics and there are no linear equations. Minimum shifts therefore identify these
+two coefficients with the complete low-variable $\beta_{1,2}$ and $\beta_{2,3}$ profiles.
+Tensoring with the Koszul complex on the $8p$ killed high variables gives
+$s_p(T)+\eta_p(T)r_p(T)$ in homological degree two and total degree three.
+
+It remains to prove that the cubic shift survives without cancellation. In the total-degree-six
+relative complex, a cell $F$ occurs exactly when
+\[
+b-\sum_{a\in F}a\in\mathcal E_{p,6-|F|}.
+\]
+The edge residual set is full, the triangle residual set has the single hole $6p-1$, and the
+tetrahedron residual gaps are $[2p+1,3p-1]$ and $[5p-1,6p-1]$. Apply increasing-vertex
+integral matching through tetrahedra, rooting each equal-sum low quadratic fiber and choosing a
+lexicographic spanning forest in every low degree-three reduction graph. The only primitive
+unmatched triangles are the low cycle labels counted by $s_p(T)$, and one high vertex times a
+rooted low quadratic label counted by $\eta_p(T)r_p(T)$. Every triangle with at least two high
+vertices receives a least tetrahedral filler in the same high block or at the first vertex of the
+next block. The apparent endpoint $8p-1$ is not a generator.
+
+Ordering all other triangles first by failed residual gap, then by number of high vertices, then
+lexicographically makes their tetrahedron boundary block upper triangular with unit diagonal and
+no entry in a primitive label row. Thus the reduced integral block is
+\[
+0\longrightarrow\mathbb Z^{T_b}
+\xrightarrow{(I,0)}\mathbb Z^{T_b}\oplus\mathbb Z^{U_b}
+\longrightarrow0,
+\]
+where $U_b$ has generating polynomial
+$[T^{b-3p}](s_p+\eta_pr_p)$. This proves \eqref{eq:degree-six-profile}, primitivity, and
+characteristic independence.
+
+Direct expansion of the interval polynomials gives the support in
+\eqref{eq:degree-six-support}. At $T=1$, with $c=2p-2$,
+\[
+r_p(1)=\frac{c(c+1)}2-1=p(2p-3),\qquad
+s_p(1)=\frac{c(c-2)(c+2)}3=\frac{8p(p-1)(p-2)}3.
+\]
+Adding $8p\,r_p(1)$ gives \eqref{eq:beta-three-six}.
+\end{proof}
+
+EXP-030 checks all colon and scalar formulas for $p=4,\ldots,300$ and complete exact degree-six
+profiles at $p=4,5,6$, with totals $(704,1560,2912)$ \textbf{[MV]}. The complete $p=4$
+profile agrees over $\operatorname{GF}(2)$ and $\operatorname{GF}(1000003)$. An independent
+idealization-Hilbert implementation matches every coefficient of all three profiles and separately
+reconstructs selected offsets over $\mathbb Q$. Its first attempt incorrectly inserted the
+forbidden generator $8p-1$; that invalid implementation is preserved as non-evidence, and the
+corrected route passes. The canonical, audit, and symbolic aggregates are
+\begin{center}
+{\fontsize{7}{8}\selectfont\ttfamily de439ff5cf0784b332fcf811b17217579221afca42510f755963c81ff8beaa4d},\\
+{\fontsize{7}{8}\selectfont\ttfamily bf5034efc37ec23edbd60d87c1eca36d437a9f9fc1e9d38f59816d8a7d3a7a16},\\
+{\fontsize{7}{8}\selectfont\ttfamily c519356b98ea0c76ec3d49d5f04e3512f711e601fa6491a8bf28dd337454968c}.
+\end{center}
+The calculations validate the implementation; the colon, Hilbert-numerator, and integral normal-
+form arguments prove the theorem.
+
 \section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
@@ -2178,7 +2340,7 @@ All compact code, hypotheses, manifests, audits, and verdicts are in the public 
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
 minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
-also includes the compact EXP-011--029 campaigns, independent reconstruction audits, symbolic
+also includes the compact EXP-011--030 campaigns, independent reconstruction audits, symbolic
 proofs, the preserved EXP-013 correction, the EXP-015 refutation, and the EXP-022 quadratic
 refutation. The proof toolchain is
 pinned as follows:
@@ -2197,6 +2359,7 @@ EXP-024 campaign/audit & exact integer coefficient and dimension routes; 297 row
 EXP-027 & relative-chain profiles, six exact Presburger queries, 297 formula rows, and independent reconstruction\\
 EXP-028 & integral degree-five/six matching, 297 formula rows, two-field profiles, and independent Smith forms\\
 EXP-029 & integral pair-basis normal form, 297 formula rows, exact small profiles, and independent boundary audit\\
+EXP-030 & canonical-idealization profile, exact degree-six homology, corrected independent audit, and symbolic support certificate\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -2235,6 +2398,12 @@ completeness and freeness. The arithmetic/Z3 certificate checks the pair-sum sup
 Hilbert-coefficient identity, but does not certify the relative matching itself. The first
 over-budget symbolic implementation is retained explicitly as non-evidence.
 
+EXP-030 introduces no solver dependency. Its first independent audit accidentally filled the
+missing generator offset (8p-1), failed against the canonical profile, and is retained as invalid
+non-evidence. The corrected audit matches every coefficient and selected rational ranks. The
+theorem rests on the nonzerodivisor proof of the canonical idealization, the multigraded Hilbert
+numerator, and the displayed integral unit normal form, not on the finite profiles.
+
 \section{Scope, attribution, and open questions}
 
 Son Pham retains discovery priority for the counterexample. Professor Craig Huneke's verification
@@ -2252,14 +2421,15 @@ Theorem~\ref{thm:presentation}, and its exact homological edges in
 Theorem~\ref{thm:homological-edge}, its first interior Betti strand in
 Theorem~\ref{thm:interior-strand}, and its complete second Betti row in
 Theorem~\ref{thm:second-betti-row}, and the colon--Koszul degree-five diagonal in
-Theorem~\ref{thm:colon-koszul-diagonal}, together with
+Theorem~\ref{thm:colon-koszul-diagonal}, and the cubic-colon idealization and degree-six strand in
+Theorem~\ref{thm:colon-idealization-six}, together with
 their reproducible records.
 
 Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
 \ref{thm:type}, \ref{thm:trace}, \ref{thm:stability}, \ref{thm:reduction},
 \ref{thm:tangent}, \ref{thm:buchsbaum}, \ref{thm:module}, \ref{thm:fiber},
 \ref{thm:presentation}, \ref{thm:homological-edge}, \ref{thm:interior-strand},
-\ref{thm:second-betti-row}, and~\ref{thm:colon-koszul-diagonal}
+\ref{thm:second-betti-row}, \ref{thm:colon-koszul-diagonal}, and~\ref{thm:colon-idealization-six}
 do not classify all higher
 Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
 or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
@@ -2273,9 +2443,10 @@ questions remain open:
   \item Which additional hypotheses on the endomorphism ring recover a positive theorem while
   excluding both the public example and the full family proved here?
   \item Can the finite certificates be imported into a smaller formally verified checker?
-  \item Can the colon--Koszul and relative-complex methods determine \(\beta_{3,6}\), the rest of
-  the third homological row, and ultimately the remaining presentation-ring Betti table beyond
-  Theorems~\ref{thm:second-betti-row} and~\ref{thm:colon-koszul-diagonal}?
+  \item Can the canonical-idealization and relative-complex methods determine \(\beta_{3,7}\),
+  complete the third homological row, and ultimately determine the remaining presentation-ring
+  Betti table beyond Theorems~\ref{thm:second-betti-row}, \ref{thm:colon-koszul-diagonal},
+  and~\ref{thm:colon-idealization-six}?
 \end{enumerate}
 
 \section*{Acknowledgments}
