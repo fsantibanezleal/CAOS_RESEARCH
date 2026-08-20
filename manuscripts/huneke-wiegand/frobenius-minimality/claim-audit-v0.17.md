@@ -1,6 +1,6 @@
 # Claim audit - manuscript v0.17
 
-Audited: 2026-08-20. Release status: PRE-PUBLICATION QA.
+Audited: 2026-08-20. Final publication result: PASS.
 
 Version 0.17 retains all claims through v0.16 and adds only the complete cubic-colon and
 degree-six third-syzygy theorem closed by EXP-030. The result is an all-parameter theorem for the
@@ -67,5 +67,11 @@ implementations but do not replace the canonical-idealization and integral norma
   SHA-256 `480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640`;
 - sole-human-authorship gate: PASS; the PDF title page and metadata name only Felipe
   Santibanez-Leal, and the ORCID is `0000-0002-0150-3246`;
-- authenticated upload and exact draft validation: PENDING;
-- Zenodo publication, concept-latest, and fresh unauthenticated download verification: PENDING.
+- authenticated post-upload metadata, sole-authorship, and one-file gate: PASS; exactly one PDF,
+  exact filename, 714,021 bytes, MD5, version, title, sole creator, ORCID, CC-BY-4.0 licence, and
+  the v0.15/v0.16/v0.17 description addendum matched before publication;
+- Zenodo publication and concept-latest gate: PASS; record `22030167` is public and concept-latest
+  with version `0.17` and DOI `10.5281/zenodo.22030167`;
+- fresh unauthenticated download/hash verification: PASS; MD5
+  `4c7daffba7539f37ea4ecb6d52fad9d9` and SHA-256
+  `480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640` exactly match Git.

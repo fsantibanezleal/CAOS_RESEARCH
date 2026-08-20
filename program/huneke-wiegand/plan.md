@@ -709,3 +709,15 @@ ranks; the symbolic certificate passes. The first audit implementation inserted 
 `8p-1`, is preserved as invalid non-evidence, and motivated an explicit endpoint clause in the
 proof. HWB-043 is done. HWB-044 opens an in-place v0.17 manuscript and Zenodo gate. The next
 research target is `beta_(3,7)` through the next canonical-idealization strand and comparison map.
+
+HWB-044 is complete. The existing manuscript was expanded in place to v0.17 with the complete
+colon theorem, canonical-idealization presentation, multigraded degree-six profile, integral
+normal-form proof, evidence ledger, and explicit `beta_(3,7)` boundary. The DOI-bearing 40-page
+PDF passed two clean LaTeX builds and complete rendered inspection. A visual defect in the first
+theorem render was corrected before the final build and upload. Zenodo record `22030167`, DOI
+`10.5281/zenodo.22030167`, is public and concept-latest under concept DOI
+`10.5281/zenodo.21763582`; its fresh unauthenticated 714,021-byte download matches MD5
+`4c7daffba7539f37ea4ecb6d52fad9d9` and SHA-256
+`480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640`. HWB-046 owns the checked
+research promotion and later scoped management-ledger reconciliation. No release tag is claimed
+for this research-only round.

@@ -93,9 +93,11 @@
 | 2026-08-20 | published | published | PR #203 passed `guards` and `test` and merged EXP-029 plus v0.16 to `develop` at `0c9638d`; PR #204 passed all required checks and promoted the complete tested `develop` state to `main` at `633e547` |
 | 2026-08-20 | published | active | EXP-030 declared before implementation: recognize the cubic-colon quotient as a canonical idealization and test the predicted characteristic-independent formula `beta_(3,6)=8p(7p^2-12p+2)/3` |
 | 2026-08-20 | active | confirmed | EXP-030 proves the canonical idealization, exact `26p-17`-offset degree-six profile, integral freeness, and `beta_(3,6)=8p(7p^2-12p+2)/3` over every field; manuscript v0.17 gate opened |
+| 2026-08-20 | confirmed | published | 40-page preprint v0.17 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.22030167`, and matched a fresh unauthenticated public download exactly |
 
-Current state: **EXP-030 is confirmed and the manuscript v0.17 gate is active under HWB-044;
-scoped management-ledger reconciliation for v0.16 remains active under HWB-042**. For
+Current state: **EXP-030 and manuscript v0.17 are published; checked repository promotion is active
+under HWB-046, while scoped management-ledger reconciliation remains deferred under HWB-042 and
+HWB-046 because CAOS_MANAGE is occupied by unrelated staged work**. For
 `H_p={a in G_p:a>=6p}`, integral relative homology has the
 free pair basis
 
@@ -120,10 +122,10 @@ constant-memory arithmetic/Z3 certificate pass. The first all-support symbolic i
 preserved as `INCONCLUSIVE_BUDGET`; it is non-evidence, and the corrected endpoint implementation
 passes the unchanged obligations. The 36-page main manuscript v0.16 is public as record
 `22029468`, DOI `10.5281/zenodo.22029468`; its 691,569-byte fresh download has SHA-256
-`4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`. HWB-041 is done. A
-separate manuscript remains deferred; `beta_(3,6)`, the rest of the third row, and the full Betti
-table remain open under HWB-035. Research work, `develop`, and `main` share payload tree
-`f956e8109c986a841394f19ded669feb62164fa1`. CAOS_MANAGE was not edited because its checkout is
+`4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`. HWB-041 is done. That
+previously promoted snapshot remains frozen; EXP-030 closes `beta_(3,6)` below, while
+`beta_(3,7)`, the rest of the third row, and the full Betti table remain open under HWB-035.
+CAOS_MANAGE was not edited because its checkout is
 occupied on `task/difusion-rename-all-explorations-20260820` with extensive staged diffusion
 renames; the v0.16 management mirror must be reconciled only after that checkout is safely back on
 clean `develop`.
@@ -141,6 +143,12 @@ the integral homology is free. Complete profiles at `p=4,5,6` total `704,1560,29
 coefficient profiles, selected rational ranks, and the symbolic certificate pass. The first audit
 encoding that inserted forbidden offset `8p-1` is preserved as invalid non-evidence.
 `beta_(3,7)` and the remainder of the table stay open.
+
+The 40-page main manuscript v0.17 is public as record `22030167`, DOI
+`10.5281/zenodo.22030167`. Its 714,021-byte fresh unauthenticated download has MD5
+`4c7daffba7539f37ea4ecb6d52fad9d9` and SHA-256
+`480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640`, exactly matching Git.
+HWB-044 is done; HWB-046 owns checked research promotion and the later scoped management mirror.
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.

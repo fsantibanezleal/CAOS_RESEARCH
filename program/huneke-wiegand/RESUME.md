@@ -1,9 +1,9 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-20. Lifecycle: EXP-030 is CONFIRMED and the manuscript v0.17 gate is active.
-EXP-029 and manuscript v0.16 are confirmed, published, fresh-download verified, and promoted through the research
-repository. The scoped CAOS_MANAGE ledger remains pending under HWB-042 because that checkout is
-occupied by unrelated staged diffusion work. The integral
+Updated: 2026-08-20. Lifecycle: EXP-030 is CONFIRMED and manuscript v0.17 is published and
+fresh-download verified. HWB-044 is done; HWB-046 owns checked research promotion. EXP-029 and
+manuscript v0.16 remain promoted through the research repository. The scoped CAOS_MANAGE ledger
+remains pending because that checkout is occupied by unrelated staged diffusion work. The integral
 colon-Koszul theorem gives
 
 ```text
@@ -34,6 +34,15 @@ The 36-page main manuscript v0.16 is published and fresh-download verified at DO
 #203/#204 passed all checks; research work, `develop`, and `main` share payload tree
 `f956e8109c986a841394f19ded669feb62164fa1`. HWB-042 now owns only the deferred management-ledger
 reconciliation. Higher homological rows and the full Betti table remain open.
+
+EXP-030 identifies the complete cubic-colon quotient with the canonical idealization of the
+`p`-th Veronese rational normal curve ring and proves
+`beta_(3,6)=8p(7p^2-12p+2)/3` over every field, with exact support
+`[3p+4,29p-5] minus ([6p-3,6p+1] union [9p-3,9p])`. The 40-page manuscript v0.17 is published
+and concept-latest at DOI `10.5281/zenodo.22030167`. Its 714,021-byte fresh public download has
+MD5 `4c7daffba7539f37ea4ecb6d52fad9d9` and SHA-256
+`480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640`, exactly matching Git.
+`beta_(3,7)`, the complete third row, and the full resolution remain open.
 
 The published baseline remains intact: EXP-026 and focused companion v0.02 are published and
 fresh-download verified at DOI `10.5281/zenodo.22002907`, and PRs #190/#191 plus CAOS_MANAGE PR
@@ -76,7 +85,9 @@ Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
 17. the complete second Betti row, with degree-five multiplicities, degree-six vanishing, and
     characteristic independence (EXP-028); and
 18. the free colon-Koszul pair basis, exact third-row degree-five profile, and complete
-    internal-degree-five diagonal over every field (EXP-029).
+    internal-degree-five diagonal over every field (EXP-029); and
+19. the complete cubic-colon idealization and characteristic-free degree-six third-syzygy profile
+    (EXP-030).
 
 The public seed is
 
@@ -410,18 +421,21 @@ Published baseline:
 - v0.16 DOI `10.5281/zenodo.22029468`: colon-Koszul degree-five diagonal. The public 691,569-byte
   PDF has MD5 `ad69991f41c4f35da3c03f2c1ce343e9` and SHA-256
   `4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`.
+- v0.17 DOI `10.5281/zenodo.22030167`: complete cubic-colon idealization and degree-six third
+  strand. The public 714,021-byte PDF has MD5 `4c7daffba7539f37ea4ecb6d52fad9d9` and SHA-256
+  `480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `22029468`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `22030167`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Complete HWB-044: expand the existing manuscript to v0.17, run full claim/build/render and
-   sole-authorship gates, then publish and fresh-download verify only if every gate passes.
+1. Complete HWB-046: promote the checked EXP-030/v0.17 research record through separate PRs to
+   `develop` and `main`, then verify matching payload trees.
 2. When CAOS_MANAGE is safely back on clean `develop`, reconcile and promote only the scoped
    publication ledger without touching unrelated work.
-3. Open HWB-045 at `beta_(3,7)` only after the publication gate: derive the next strand of the
-   canonical-idealization resolution and its comparison map before any raw resolution sweep.
+3. Begin HWB-045 at `beta_(3,7)`: derive the next strand of the canonical-idealization resolution
+   and its comparison map before any raw resolution sweep.
 
 ### Lenses ledger
 

@@ -1,10 +1,10 @@
 # Frobenius-minimality preprint
 
-`main.tex` is the version 0.17 release candidate of the CAOS Research preprint; version 0.16 and
-all earlier versions remain frozen. Version 0.17 adds the EXP-030 cubic-colon idealization theorem
-and determines the complete degree-six third-syzygy profile. DOI
-`10.5281/zenodo.22030167` is reserved; upload and publication remain gated on complete
-claim/build/render QA. Version 0.16 passed the complete claim/build/render, authenticated upload,
+`main.tex` is version 0.17 of the CAOS Research preprint; version 0.16 and all earlier versions
+remain frozen. Version 0.17 adds the EXP-030 cubic-colon idealization theorem and determines the
+complete degree-six third-syzygy profile. It passed the complete claim/build/render, authenticated
+upload, publication, concept-latest, and fresh-download workflow and is published at DOI
+`10.5281/zenodo.22030167`. Version 0.16 passed the complete claim/build/render, authenticated upload,
 publication, concept-latest, and fresh-download workflow and is published at DOI
 `10.5281/zenodo.22029468`. Version 0.15 is published at DOI
 `10.5281/zenodo.22016550`, and a fresh unauthenticated download matches the committed PDF exactly.
@@ -109,7 +109,7 @@ Zenodo identifiers:
 - version 0.14 DOI: `10.5281/zenodo.22013515` (published and fresh-download verified)
 - version 0.15 DOI: `10.5281/zenodo.22016550` (published and fresh-download verified)
 - version 0.16 DOI: `10.5281/zenodo.22029468` (published and fresh-download verified)
-- version 0.17 DOI: `10.5281/zenodo.22030167` (reserved; release QA in progress)
+- version 0.17 DOI: `10.5281/zenodo.22030167` (published and fresh-download verified)
 - licence: CC BY 4.0
 
 Evidence sources are EXP-001 through EXP-030 under
@@ -342,4 +342,17 @@ Version 0.16 public-file verification:
   overfull boxes, or underfull boxes
 - the concept latest resolves to record `22029468`; public title, version, sole author/ORCID,
   CC-BY-4.0 licence, filename, bytes, MD5, SHA-256, and v0.15/v0.16 description addendum match
+- a fresh unauthenticated public download matches the committed PDF exactly
+
+Version 0.17 public-file verification:
+
+- DOI: `10.5281/zenodo.22030167`; no upload or publication occurred before claim/build/render QA
+  and explicit DOI reservation
+- bytes: `714021`
+- MD5: `4c7daffba7539f37ea4ecb6d52fad9d9`
+- SHA-256: `480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640`
+- all 40 pages passed rendered inspection; the final build has no warnings, undefined references,
+  overfull boxes, or underfull boxes
+- the concept latest resolves to record `22030167`; public title, version, sole author/ORCID,
+  CC-BY-4.0 licence, filename, bytes, MD5, SHA-256, and v0.15/v0.16/v0.17 description addendum match
 - a fresh unauthenticated public download matches the committed PDF exactly

@@ -1037,3 +1037,20 @@
   `c519356b98ea0c76ec3d49d5f04e3512f711e601fa6491a8bf28dd337454968c`.
 - EXP-030 is CONFIRMED and HWB-043 is done. HWB-044 opens the existing-manuscript v0.17 and Zenodo
   gate. A separate manuscript remains deferred; `beta_(3,7)` is the strongest next research path.
+
+## 2026-08-20 - EXP-030 manuscript v0.17 published
+
+- Expanded the main Frobenius-minimality manuscript to v0.17 with the complete cubic-colon
+  theorem, canonical-idealization presentation, exact multigraded degree-six third strand,
+  integral normal-form proof, trust boundary, and EXP-030 evidence.
+- The DOI-bearing 40-page PDF passed two clean LaTeX builds and all-page rendered inspection. The
+  first full-resolution theorem review found an absorbed spacing command; it was corrected before
+  the final build, hash freeze, upload, and publication.
+- Explicitly reserved and published Zenodo version DOI `10.5281/zenodo.22030167` under concept DOI
+  `10.5281/zenodo.21763582`. Public record `22030167` is concept-latest and CC BY 4.0 with Felipe
+  Santibanez-Leal as sole creator and ORCID `0000-0002-0150-3246`.
+- A fresh unauthenticated 714,021-byte download matches MD5
+  `4c7daffba7539f37ea4ecb6d52fad9d9` and SHA-256
+  `480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640` exactly.
+- HWB-044 is complete. HWB-046 owns checked research promotion and a later scoped management
+  ledger reconciliation; no release tag is claimed for this research-only round.
