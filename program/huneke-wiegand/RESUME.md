@@ -1,6 +1,7 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-20. Lifecycle: EXP-031 is CONFIRMED; manuscript v0.18 is published and
+Updated: 2026-08-20. Lifecycle: EXP-032 is ACTIVE with no result claimed. EXP-031 is CONFIRMED;
+manuscript v0.18 is published and
 fresh-download verified at DOI `10.5281/zenodo.22030743`. HWB-047 is done and HWB-048 owns
 only deferred CAOS_MANAGE ledger reconciliation; research PRs #209/#210 passed all checks and
 promoted the exact v0.18 state through `develop` and `main`. EXP-030 and manuscript v0.17 were
@@ -214,6 +215,7 @@ campaign is supporting evidence, not the proof.
 | EXP-029 | CONFIRMED | free pair basis on the `8p` high colon variables gives `beta_(3,5)=4p(8p-1)`, exact support, and the complete internal-degree-five diagonal |
 | EXP-030 | CONFIRMED | canonical-idealization colon, exact support, and `beta_(3,6)=8p(7p^2-12p+2)/3` over every field |
 | EXP-031 | CONFIRMED | integral zero-vertex matching and signed unit filler block give `beta_(3,7)=0` and complete the third row over every field |
+| EXP-032 | ACTIVE | test the complete graded resolution of the cubic-colon quotient from Gorenstein self-duality, its h-vector, and the `8p`-variable Koszul factor |
 
 ## 3a. Exact evidence anchors
 
@@ -476,8 +478,9 @@ Published baseline:
 
 1. When CAOS_MANAGE is safely back on clean `develop`, reconcile and promote only the scoped
    publication ledger for the deferred v0.16--v0.18 rounds without touching unrelated work.
-2. Open a declaration-first experiment on whether the complete second and third
-   rows, canonical-module duality, and the known extremal rows force whole diagonal recurrences.
+2. Run declared EXP-032: independently reconstruct the proposed complete colon-quotient Betti
+   polynomial through `p=300`, reject corrupted controls, and write the all-parameter proof before
+   claiming a result.
 
 ### Lenses ledger
 

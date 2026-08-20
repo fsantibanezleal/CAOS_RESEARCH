@@ -50,3 +50,4 @@
 | HWB-046 | 1 | in progress | repository promotion and durable handoff for EXP-030 plus v0.17 | research PRs #205/#206 passed and all delivery trees match; scoped CAOS_MANAGE ledger remains deferred while that checkout is occupied by unrelated staged work |
 | HWB-047 | 1 | done | manuscript and Zenodo update for the complete third row | 42-page v0.18 passed all claim/build/render/authorship gates, published at DOI `10.5281/zenodo.22030743`, and matched a fresh public download exactly |
 | HWB-048 | 1 | in progress | repository promotion and durable handoff for EXP-031 plus v0.18 | research PRs #209/#210 passed and all delivery trees match; scoped CAOS_MANAGE ledger remains deferred while that checkout is occupied |
+| HWB-049 | 1 | in progress | complete cubic-colon quotient resolution | EXP-032 tests whether the Gorenstein h-vector `(1,2p-2,1)` and the `8p`-variable Koszul factor determine the entire graded Betti polynomial over every field |

@@ -99,10 +99,11 @@
 | 2026-08-20 | active | confirmed | EXP-031 proves `beta_(3,7)=0` over every field by an integral zero-vertex matching and signed unit filler block; the complete third row is now known and manuscript v0.18 gate opened |
 | 2026-08-20 | confirmed | published | 42-page preprint v0.18 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.22030743`, became concept-latest, and matched a fresh unauthenticated public download exactly |
 | 2026-08-20 | published | published | PR #209 passed `guards` and `test` and merged EXP-031 plus v0.18 to `develop` at `ce2b79b`; PR #210 passed all required checks and promoted the exact tested state to `main` at `842371a` |
+| 2026-08-20 | published | active | EXP-032 declared before implementation: test the complete cubic-colon quotient resolution forced by its Gorenstein h-vector and the `8p`-variable Koszul factor |
 
-Current state: **EXP-031 and manuscript v0.18 are published and promoted through the research
-repository; HWB-048 remains active only for scoped management-ledger reconciliation because CAOS_MANAGE is
-occupied by unrelated staged work**. For
+Current state: **EXP-032 is active with no result claimed; EXP-031 and manuscript v0.18 are
+published and promoted; HWB-048 remains active only for scoped management-ledger reconciliation
+because CAOS_MANAGE is occupied by unrelated staged work**. For
 `H_p={a in G_p:a>=6p}`, integral relative homology has the
 free pair basis
 

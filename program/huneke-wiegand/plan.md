@@ -776,3 +776,26 @@ all required checks and promoted it to `main` at
 `842371a02758eea2123391bacfde1265197f4e3b`. All three delivery branches shared payload tree
 `8d37059beea83e662151fcdeb2ff1bef63d35c2c` before this handoff update. HWB-048 remains open only
 for the later scoped CAOS_MANAGE ledger reconciliation.
+
+## 2026-08-20 - EXP-032 complete cubic-colon resolution
+
+HWB-049 opens a declaration-first test of a stronger consequence of EXP-030. Put `c=2p-2` and
+`m=8p`. The low canonical idealization is two-dimensional Gorenstein with h-vector `(1,c,1)`, no
+linear equations, and regularity two. Minimality and Gorenstein self-duality predict that its
+resolution has only the linear strand
+
+```text
+lambda_(c,a)=c*binom(c,a)-binom(c,a+1)-binom(c,a-1),  1<=a<=c-1,
+```
+
+and the final entry `beta_(c,c+2)=1`. Tensoring with the `m` killed high variables predicts the
+complete colon-quotient Betti polynomial
+
+```text
+(1+xz)^m(1+sum_a lambda_(c,a)x^a z^(a+1)+x^c z^(c+2)).
+```
+
+EXP-032 must independently reconstruct every coefficient, verify Hilbert and self-duality
+identities through `p=300`, reject corrupted controls, and supply the all-parameter proof before
+any result or manuscript v0.19 gate is claimed. This route determines the colon quotient, not the
+still-open full resolution of `C_p`.

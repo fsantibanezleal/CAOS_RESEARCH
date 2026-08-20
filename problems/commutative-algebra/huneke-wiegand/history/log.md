@@ -1140,3 +1140,13 @@
   `8d37059beea83e662151fcdeb2ff1bef63d35c2c` before this handoff update.
 - CAOS_MANAGE remains untouched on its unrelated occupied branch. HWB-048 owns only the deferred
   scoped publication-ledger reconciliation.
+
+## 2026-08-20 - EXP-032 declared
+
+- The next route strengthens EXP-030 from one nonlinear coefficient to the complete resolution of
+  `D_p=P_p/(Q_p:f_p)`.
+- The falsifiable prediction combines the low Gorenstein h-vector `(1,2p-2,1)` with the Koszul
+  factor on the `8p` killed variables to give a closed complete Betti polynomial.
+- The declaration freezes the EXP-030 proof and verdict hashes and requires two exact routes,
+  corrupted controls, and a written all-parameter self-duality proof.
+- No EXP-032 result or manuscript v0.19 update is claimed at declaration.
