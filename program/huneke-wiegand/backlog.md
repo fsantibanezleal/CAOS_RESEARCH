@@ -47,4 +47,4 @@
 | HWB-043 | 1 | done | cubic-colon idealization and degree-six third strand | EXP-030 proves the canonical idealization, exact multigraded support, and `beta_(3,6)=8p(7p^2-12p+2)/3` over every field |
 | HWB-044 | 1 | done | manuscript and Zenodo update for the cubic-colon idealization theorem | 40-page v0.17 passed all claim/build/render/authorship gates, published at DOI `10.5281/zenodo.22030167`, and matched a fresh public download exactly |
 | HWB-045 | 2 | pending | final third-row entry and canonical-idealization resolution | determine the next colon strand and comparison map for `beta_(3,7)` before any full-resolution sweep |
-| HWB-046 | 1 | in progress | repository promotion and durable handoff for EXP-030 plus v0.17 | promote the verified research record through separate PRs to `develop` and `main`; reconcile the scoped management ledger only after its checkout returns safely to clean `develop` |
+| HWB-046 | 1 | in progress | repository promotion and durable handoff for EXP-030 plus v0.17 | research PRs #205/#206 passed and all delivery trees match; scoped CAOS_MANAGE ledger remains deferred while that checkout is occupied by unrelated staged work |

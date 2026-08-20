@@ -1,9 +1,9 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-20. Lifecycle: EXP-030 is CONFIRMED and manuscript v0.17 is published and
-fresh-download verified. HWB-044 is done; HWB-046 owns checked research promotion. EXP-029 and
-manuscript v0.16 remain promoted through the research repository. The scoped CAOS_MANAGE ledger
-remains pending because that checkout is occupied by unrelated staged diffusion work. The integral
+Updated: 2026-08-20. Lifecycle: EXP-030 is CONFIRMED; manuscript v0.17 is published,
+fresh-download verified, and promoted through research PRs #205/#206. HWB-044 is done; HWB-046
+owns only deferred CAOS_MANAGE ledger reconciliation because that checkout is occupied by
+unrelated staged diffusion work. The integral
 colon-Koszul theorem gives
 
 ```text
@@ -42,7 +42,9 @@ EXP-030 identifies the complete cubic-colon quotient with the canonical idealiza
 and concept-latest at DOI `10.5281/zenodo.22030167`. Its 714,021-byte fresh public download has
 MD5 `4c7daffba7539f37ea4ecb6d52fad9d9` and SHA-256
 `480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640`, exactly matching Git.
-`beta_(3,7)`, the complete third row, and the full resolution remain open.
+PRs #205/#206 passed all required checks; research work, `develop`, and `main` share payload tree
+`33b044658401e9216705481ad627dea55dbdf754`. `beta_(3,7)`, the complete third row, and the full
+resolution remain open.
 
 The published baseline remains intact: EXP-026 and focused companion v0.02 are published and
 fresh-download verified at DOI `10.5281/zenodo.22002907`, and PRs #190/#191 plus CAOS_MANAGE PR
@@ -430,8 +432,8 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Complete HWB-046: promote the checked EXP-030/v0.17 research record through separate PRs to
-   `develop` and `main`, then verify matching payload trees.
+1. Complete the remaining HWB-046 management mirror only when CAOS_MANAGE is safely back on clean
+   `develop`; research promotion is already complete through PRs #205/#206.
 2. When CAOS_MANAGE is safely back on clean `develop`, reconcile and promote only the scoped
    publication ledger without touching unrelated work.
 3. Begin HWB-045 at `beta_(3,7)`: derive the next strand of the canonical-idealization resolution

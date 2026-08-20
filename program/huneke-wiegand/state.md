@@ -94,10 +94,11 @@
 | 2026-08-20 | published | active | EXP-030 declared before implementation: recognize the cubic-colon quotient as a canonical idealization and test the predicted characteristic-independent formula `beta_(3,6)=8p(7p^2-12p+2)/3` |
 | 2026-08-20 | active | confirmed | EXP-030 proves the canonical idealization, exact `26p-17`-offset degree-six profile, integral freeness, and `beta_(3,6)=8p(7p^2-12p+2)/3` over every field; manuscript v0.17 gate opened |
 | 2026-08-20 | confirmed | published | 40-page preprint v0.17 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.22030167`, and matched a fresh unauthenticated public download exactly |
+| 2026-08-20 | published | published | PR #205 passed `guards` and `test` and merged EXP-030 plus v0.17 to `develop` at `5a1a645`; PR #206 passed all required checks and promoted the exact tested state to `main` at `4ec881a` |
 
-Current state: **EXP-030 and manuscript v0.17 are published; checked repository promotion is active
-under HWB-046, while scoped management-ledger reconciliation remains deferred under HWB-042 and
-HWB-046 because CAOS_MANAGE is occupied by unrelated staged work**. For
+Current state: **EXP-030 and manuscript v0.17 are published and promoted through the research
+repository; HWB-046 remains active only for scoped management-ledger reconciliation, deferred
+because CAOS_MANAGE is occupied by unrelated staged work**. For
 `H_p={a in G_p:a>=6p}`, integral relative homology has the
 free pair basis
 
@@ -148,7 +149,9 @@ The 40-page main manuscript v0.17 is public as record `22030167`, DOI
 `10.5281/zenodo.22030167`. Its 714,021-byte fresh unauthenticated download has MD5
 `4c7daffba7539f37ea4ecb6d52fad9d9` and SHA-256
 `480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640`, exactly matching Git.
-HWB-044 is done; HWB-046 owns checked research promotion and the later scoped management mirror.
+HWB-044 is done; HWB-046 owns only the later scoped management mirror.
+PRs #205/#206 passed all required checks; research work, `develop`, and `main` share payload tree
+`33b044658401e9216705481ad627dea55dbdf754`.
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.
