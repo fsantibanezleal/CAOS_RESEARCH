@@ -80,25 +80,45 @@ def entry_factory(hemi, mode):
             return K_inv(x * x * x)
         id2A = icube(d2A); id2B = icube(d2B)
         A = (rys, t1, t2, Frac)
-        # Per-entry guards: on boxes touching a cone ({CSc = 0} or
-        # {CXc = 0}) the corresponding icube is UNDEFINED; entries using it
-        # become None and the None-tolerant pipeline skips minors touching
-        # them. No cone discard, no deeper chart.
+        # HYBRID hat evaluation (2026-08-20 fix): the expanded generated
+        # polynomials (147-192 terms) suffer catastrophic interval
+        # dependency at moderate widths (m1vert-N certified NOTHING).
+        # Away from the rhoy = 0 face the STRUCTURAL forms are tight:
+        # hat^2 = CSc^2_structural / rhoy^2, with CSc^2 = (ca - rr cb)^2 +
+        # (sa - rr sb)^2 computed directly. Only face-touching boxes fall
+        # back to the generated polynomials (analytic there).
+        off_face = (ry.lo if mode == "iv" else ry.v.lo) > 0
+        def hat2(structural, genn, gend):
+            if off_face:
+                return structural * K_inv(ry.sq())
+            return genn(*A) * K_inv(gend(*A))
+        CSc2_s = (ca - rr * cb).sq() + (sa - rr * sb).sq()
+        CXc2_s = (ca + rr * cb).sq() + (sa - rr * sb).sq()
+        # Per-entry guards: on boxes touching a cone the icube is
+        # UNDEFINED; entries using it become None and the None-tolerant
+        # pipeline skips minors touching them.
         try:
-            iSQS = icube((gv.CSc2n(*A) * K_inv(gv.CSc2d(*A))).sqrt())
+            iSQS = icube(hat2(CSc2_s, gv.CSc2n, gv.CSc2d).sqrt())
         except AssertionError:
             iSQS = None
         try:
-            iSQX = icube((gv.CXc2n(*A) * K_inv(gv.CXc2d(*A))).sqrt())
+            iSQX = icube(hat2(CXc2_s, gv.CXc2n, gv.CXc2d).sqrt())
         except AssertionError:
             iSQX = None
-        W1h = gv.W1n(*A) * K_inv(gv.W1d(*A)) * hemi
-        W2h = gv.W2n(*A) * K_inv(gv.W2d(*A)) * hemi
-        G5h = gv.G5n(*A) * K_inv(gv.G5d(*A)) * hemi
-        Kbh = gv.Kbn(*A) * K_inv(gv.Kbd(*A)) * hemi
-        Fch = gv.Fcn(*A) * K_inv(gv.Fcd(*A)) * hemi
-        Cah = gv.Can(*A) * K_inv(gv.Cad(*A)) * hemi
-        Cbh = gv.Cbn(*A) * K_inv(gv.Cbd(*A)) * hemi
+        # First-order hats, hybrid: off the face, hat = structural / rhoy
+        # (tight); on face-touching boxes, generated polynomial x hemi.
+        iry = K_inv(ry) if off_face else None
+        def hat1(structural, genn, gend):
+            if off_face:
+                return structural * iry
+            return genn(*A) * K_inv(gend(*A)) * hemi
+        W1h = hat1(ca * sb - cb * sa, gv.W1n, gv.W1d)
+        W2h = hat1(ca * sb + cb * sa, gv.W2n, gv.W2d)
+        G5h = hat1(ca - rr * cb, gv.G5n, gv.G5d)
+        Kbh = hat1(ca + rr * cb, gv.Kbn, gv.Kbd)
+        Fch = hat1(sa - rr * sb, gv.Fcn, gv.Fcd)
+        Cah = hat1(ca, gv.Can, gv.Cad)
+        Cbh = hat1(cb, gv.Cbn, gv.Cbd)
         K5h = two * G5h + rr * ra * W1h
         K6h = two * Kbh + rr * ra * W2h
         R3h = (IV(3) if mode == "iv" else DV(3)) * n1 \
