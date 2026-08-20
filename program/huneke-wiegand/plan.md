@@ -583,3 +583,69 @@ delivery branches share tree `e35f420f59a5343ea09da15985786ab0b65897d6`. CAOS_MA
 on `develop`; PR #566 promoted only the scoped v0.15 controls and ledger to `main` at `ddafe393`,
 with management branches sharing tree `f234e662fa13834787c994b789d6607b486c19ec`. HWB-040 is done.
 No release tag is claimed for this research-only round.
+
+## 2026-08-20 - EXP-029 colon-Koszul degree-five diagonal
+
+A fresh source, novelty, and path preflight redirects HWB-035 from an immediate whole-third-row
+enumeration to a sharper mapping-cone invariant. EXP-027 already proves
+
+```text
+(Q_p:f_p)_1=span{X_a:a in G_p,a>=6p},
+```
+
+and this space has dimension `8p`. Read-only exact probes at `p=4,5` show that every observed
+`beta_(3,(5,b))` is indexed by an unordered pair of those high variables, shifted by the cubic
+offset `3p`. EXP-029 is declared before implementation with the predictions
+
+```text
+beta_(3,5)=binom(8p,2)=4p(8p-1),
+support=[15p+1,39p-3] minus {33p-1}.
+```
+
+The selected proof route combines primitive mapping-cone lower-bound classes with an integral
+relative `H_2` matching that must cancel every transient critical triangle by unit tetrahedron
+boundaries. If this succeeds, the frozen Hilbert numerator and EXP-028 give
+
+```text
+beta_(4,5)=2p(5p-1)(10p-3)(100p^2-110p+13)/3,
+```
+
+completing the internal-degree-five diagonal. The explicit grevlex initial ideal was checked and
+is neither stable nor strongly stable in either natural order, so degeneration remains a bound,
+not the selected formula engine. No EXP-029 result, manuscript version, or publication is claimed
+before the declared integral, computational, audit, and symbolic gates pass.
+
+All declared EXP-029 gates now pass. The integral relative normal form leaves precisely the free
+basis indexed by unordered pairs `{a,c}` of the `8p` high-colon variables, in offset `3p+a+c`.
+Hence
+
+```text
+beta_(3,5)=4p(8p-1),
+support=[15p+1,39p-3] minus {33p-1}.
+```
+
+Together with EXP-028 and the exact Hilbert numerator, this gives
+
+```text
+beta_(4,5)=2p(5p-1)(10p-3)(100p^2-110p+13)/3
+```
+
+and completes internal degree five over every field. The canonical campaign aggregate is
+`7564f15534e8a29f875a367d3a324b95041e8eef836d15deac3e35130e1ad37d`; the independent audit
+aggregate is `337854eef5d773c84cdd79c7734e63b295fa0337c5a1852e652559c334949b04`; and the optimized
+symbolic aggregate is `605733497d6fb0ead97bfd25e26daaa66d546c297751960e1c427f29ff69f279`.
+The first symbolic implementation exceeded its declared budget by materializing all support
+integers and is preserved as non-evidence; the constant-memory endpoint implementation passed the
+same obligations through `p=10000`. EXP-029 is CONFIRMED and HWB-041 now owns the v0.16 manuscript
+and Zenodo new-version gate. The next mathematical target remains `beta_(3,6)`, not an unbounded
+full-resolution sweep.
+
+HWB-041 is complete. The existing manuscript was expanded to v0.16 with the exact multigraded
+pair profile, integral normal form, complete degree-five diagonal, evidence ledger, and explicit
+third-row/full-table boundary. The DOI-bearing 36-page PDF passed two clean LaTeX builds and
+complete rendered inspection, then was published under the existing concept DOI as record
+`22029468`, DOI `10.5281/zenodo.22029468`. A fresh unauthenticated 691,569-byte download matches
+MD5 `ad69991f41c4f35da3c03f2c1ce343e9` and SHA-256
+`4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`. HWB-042 now owns the
+checked repository and management-ledger promotion; no release tag is claimed for this
+research-only round.

@@ -35,6 +35,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-026 | CONFIRMED | complete reduced grevlex staircase with profile `(50p^2-17p,5p-1,p-2)`, six cubic families, one quartic family, and no later boundary |
 | EXP-027 | CONFIRMED | first interior strand: `beta_(2,4)=8p` with complete multiplicity-free offsets and exact adjacent `beta_(3,4)` over every field |
 | EXP-028 | CONFIRMED | complete second Betti row: exact degree-five three-block multiplicities, `beta_(2,5)=p(2p-3)`, and integral `beta_(2,6)=0` over every field |
+| EXP-029 | CONFIRMED | colon-Koszul pair basis gives `beta_(3,5)=4p(8p-1)` and completes the internal-degree-five diagonal over every field |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
@@ -51,6 +52,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | curvilinear companion v0.02 | published | complete reduced grevlex staircase theorem, DOI [`10.5281/zenodo.22002907`](https://doi.org/10.5281/zenodo.22002907); exact public-file hash verified |
 | preprint v0.14 | published | first interior Betti-strand theorem, DOI [`10.5281/zenodo.22013515`](https://doi.org/10.5281/zenodo.22013515); exact public-file hash verified |
 | preprint v0.15 | published | complete second Betti-row theorem, DOI [`10.5281/zenodo.22016550`](https://doi.org/10.5281/zenodo.22016550); exact public-file hash verified |
+| preprint v0.16 | published | colon-Koszul degree-five diagonal theorem, DOI [`10.5281/zenodo.22029468`](https://doi.org/10.5281/zenodo.22029468); exact public-file hash verified |
 
 CAOS independently reproduces the public counterexample's decisive finite certificate. Discovery
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery. CAOS's novel
@@ -58,7 +60,7 @@ extensions are the certified Frobenius-minimality theorem in EXP-005, the comple
 classification in EXP-007, the EXP-009 infinite family theorem, the EXP-011 uniform
 endomorphism-overring theorem, the EXP-012/013 type-and-trace anatomy, the EXP-023 uniform minimal
 presentation of the conductor special fiber, the EXP-024 homological edge theorem, and the
-EXP-025/026 curvilinear and Groebner theorems, and the EXP-027/028 characteristic-free interior
+EXP-025/026 curvilinear and Groebner theorems, and the EXP-027--029 characteristic-free interior
 Betti theorems.
 
 ## Uniform endomorphism anatomy
@@ -353,3 +355,32 @@ This completes one homological row, not the full Betti table or minimal resoluti
 297-row campaign, complete small profiles, two-field controls, independent rational/Smith audit,
 and arithmetic/Z3 certificate validate the implementation; the integral matching and unit Smith
 forms prove the theorem.
+
+EXP-029 reads the exact cubic colon from the opposite direction. Put
+
+```text
+H_p={a in G_p:a>=6p};        |H_p|=8p.
+```
+
+Integral relative matching in total degree five leaves a free basis indexed by unordered pairs
+of distinct high-colon variables. Thus, over every field,
+
+```text
+beta_(3,(5,b))=#{ {a,c} subset H_p:a<c and a+c=b-3p },
+beta_(3,5)=binom(8p,2)=4p(8p-1).
+```
+
+The offset support is `[15p+1,39p-3] minus {33p-1}`. Combining this primitive pair basis with
+EXP-028 and the exact Hilbert numerator completes internal degree five:
+
+```text
+beta_(2,5)=p(2p-3),
+beta_(3,5)=4p(8p-1),
+beta_(4,5)=2p(5p-1)(10p-3)(100p^2-110p+13)/3,
+beta_(i,5)=0 otherwise.
+```
+
+The canonical campaign checks all 297 parameters through `p=300`; complete relative `H_2`
+profiles at `p=4,5,6` total `496,780,1128`; an independent rational boundary audit and a
+constant-memory arithmetic/Z3 support certificate pass. The result completes a second diagonal,
+not the third homological row, the full Betti table, or the full minimal resolution.

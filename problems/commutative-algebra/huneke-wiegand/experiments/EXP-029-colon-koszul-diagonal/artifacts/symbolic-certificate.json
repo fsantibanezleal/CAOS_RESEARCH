@@ -1,0 +1,126 @@
+{
+  "experiment": "EXP-029-colon-koszul-diagonal",
+  "status": "PASS",
+  "arithmetic_limit": 10000,
+  "arithmetic_samples": [
+    {
+      "p": 4,
+      "support_count": 92,
+      "unshifted_hole": 119,
+      "beta_3_5": 496,
+      "beta_4_5": 2198984
+    },
+    {
+      "p": 5,
+      "support_count": 116,
+      "unshifted_hole": 149,
+      "beta_3_5": 780,
+      "beta_4_5": 7380880
+    },
+    {
+      "p": 17,
+      "support_count": 404,
+      "unshifted_hole": 509,
+      "beta_3_5": 9180,
+      "beta_4_5": 4299404312
+    },
+    {
+      "p": 73,
+      "support_count": 1748,
+      "unshifted_hole": 2189,
+      "beta_3_5": 170236,
+      "beta_4_5": 6759738608168
+    },
+    {
+      "p": 151,
+      "support_count": 3620,
+      "unshifted_hole": 4529,
+      "beta_3_5": 729028,
+      "beta_4_5": 258911511957956
+    },
+    {
+      "p": 300,
+      "support_count": 7196,
+      "unshifted_hole": 8999,
+      "beta_3_5": 2878800,
+      "beta_4_5": 8056866560707800
+    },
+    {
+      "p": 10000,
+      "support_count": 239996,
+      "unshifted_hole": 299999,
+      "beta_3_5": 3199960000,
+      "beta_4_5": 333280002466623000260000
+    }
+  ],
+  "z3_obligations": [
+    {
+      "left": "AA",
+      "right": "AB",
+      "allowed_gap": 0,
+      "negated_gap": "UNSAT"
+    },
+    {
+      "left": "AB",
+      "right": "AD",
+      "allowed_gap": 0,
+      "negated_gap": "UNSAT"
+    },
+    {
+      "left": "AD",
+      "right": "BD",
+      "allowed_gap": 0,
+      "negated_gap": "UNSAT"
+    },
+    {
+      "left": "BD",
+      "right": "BE",
+      "allowed_gap": 0,
+      "negated_gap": "UNSAT"
+    },
+    {
+      "left": "BE",
+      "right": "AK",
+      "allowed_gap": 0,
+      "negated_gap": "UNSAT"
+    },
+    {
+      "left": "AK",
+      "right": "BK",
+      "allowed_gap": 0,
+      "negated_gap": "UNSAT"
+    },
+    {
+      "left": "BK",
+      "right": "DK",
+      "allowed_gap": 0,
+      "negated_gap": "UNSAT"
+    },
+    {
+      "left": "DK",
+      "right": "EK",
+      "allowed_gap": 1,
+      "negated_gap": "UNSAT"
+    },
+    {
+      "left": "EK",
+      "right": "FK",
+      "allowed_gap": 0,
+      "negated_gap": "UNSAT"
+    },
+    {
+      "left": "FK",
+      "right": "GK",
+      "allowed_gap": 0,
+      "negated_gap": "UNSAT"
+    },
+    {
+      "left": "GK",
+      "right": "KK",
+      "allowed_gap": 0,
+      "negated_gap": "UNSAT"
+    }
+  ],
+  "coefficient_residual": "0",
+  "symbolic_aggregate": "605733497d6fb0ead97bfd25e26daaa66d546c297751960e1c427f29ff69f279"
+}

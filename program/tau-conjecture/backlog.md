@@ -6,7 +6,7 @@
 | TCB-015 | EXP-002: census at tau = 5; decide minimal tau with z_max = 4 | done | P0 | 2026-08-01 CONFIRMED: z_max(5) = 4; minimal tau = 5; DOS/Chebyshev-shadow mechanism found |
 | TCB-016 | RL-4 first lemma: iterated x^2 - 2 factory over Z | done | P1 | 2026-08-01 PROVED: periodic points {2,-1}; towers stall at {0,+-1,+-2}; context derivation note + tclib tests |
 | TCB-017 | N_2 valuation-spectrum record hunt (RL-2) | todo | P2 | Digit ladders (V9) now measured through tau=7 (EXP-007); spectrum-record hunt still open |
-| TCB-018 | Dual set-function T(S) structure lemmas (RL-3): union/translation/scaling/reflection costs; T table from census data | todo | P2 | |
+| TCB-018 | Dual set-function T(S) structure lemmas (RL-3) | done | P2 | 2026-08-19 note: anti-monotonicity, union+1, translation+1, reflection+1 PROVED; scaling recorded OPEN (TCB-031); exact T table through size 6 |
 | TCB-002 | Read Shub-Smale 1995 (Duke) in full; transcribe the exact theorem statements and proof route | blocked | P1 | 2026-08-01 access attempt failed (Project Euclid paywall; author page TLS broken); statement triply confirmed (Rojas Def 1 + survey + Koiran); needs a library credential |
 | TCB-003 | Read Rojas math/0304100 in full; pin the two weak versions + the 2-adic bound constants | done | P1 | 2026-08-01 read in full (round 2); constants pinned in references.md; feeds TC-P3 co-census |
 | TCB-004 | Read Cheng 2004 + Cheng 2003 + Strassen 1976/77; pin the upper-bound ladder for tau'(n!) | todo | P1 | Upper bounds quoted via Markstroem |
@@ -30,4 +30,6 @@
 | TCB-024 | Doyle-Poonen read (V8 import gate) | todo | P2 | Before any uniform-boundedness import |
 | TCB-027 | Mod-p instrumentation: root counts of census records over F_p vs the Frobenius ceiling (V10) | todo | P2 | Cheap add-on to the census catalog; pairs with the V9 digit ladders |
 | TCB-028 | Paper v0.03 (deliberate): seven-rooter exclusion + digit ladders + punctured anatomy + V10 narrative; ship WITH the z_max(8) resolution | todo | P1 | R3 discipline: no reflexive publish |
-| TCB-029 | SAT lane EXP: the final-pm 8-gate case (z_max(8) = 6? 7-rooter at 8?) per the 2026-08-02 design note | todo | P0 | The single remaining unknown at depth 8 |
+| TCB-029 | The final-pm 8-gate residual | reopened | P0 | 2026-08-19 EXP-008 INCONCLUSIVE: encoding semantics VALIDATED (pinned witness sat in 0.5s) but Z3 NIA cannot search the structure space (3 launches + 2 diagnostics recorded); re-scoped to bit-blasted propositional SAT or the TCB-005 census backend |
+| TCB-030 | Evaluation-matrix instrumentation (V11): entry-growth measurements on record matrices; Mahler/height trade-off lemma target | todo | P2 | Context note 2026-08-03 |
+| TCB-031 | The scaling gap: bounds for T(2S) vs T(S) (no elementary substitution exists) | todo | P2 | Minted by the RL-3 note; concrete first case: T({0,+-2,+-4}) |

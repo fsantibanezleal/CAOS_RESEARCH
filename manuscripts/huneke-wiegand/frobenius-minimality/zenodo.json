@@ -156,8 +156,8 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "description_addendum": "<p>Version 0.15 completes the second graded Betti row of the conductor special fiber for every p&gt;=4 and over every field: beta_(2,5)=p(2p-3), beta_(2,6)=0, with the complete three-block multigraded support and multiplicity profile. Integral lexicographic matching and unit Smith normal forms prove characteristic independence. Higher interior rows remain open.</p>",
-    "version": "0.15",
+    "description_addendum": "<p>Version 0.15 completes the second graded Betti row of the conductor special fiber for every p&gt;=4 and over every field: beta_(2,5)=p(2p-3), beta_(2,6)=0, with the complete three-block multigraded support and multiplicity profile. Integral lexicographic matching and unit Smith normal forms prove characteristic independence.</p><p>Version 0.16 determines the complete degree-five third-syzygy profile from the exact high cubic colon: beta_(3,(5,b)) counts unordered pairs of distinct high-colon variables with shifted sum b-3p, beta_(3,5)=4p(8p-1), and the support is [15p+1,39p-3] minus {33p-1}. The primitive integral pair basis proves characteristic independence. Together with the complete second row and Hilbert numerator, beta_(4,5)=2p(5p-1)(10p-3)(100p^2-110p+13)/3, completing internal degree five. The third row and full Betti table remain open.</p>",
+    "version": "0.16",
     "language": "eng"
   }
 }

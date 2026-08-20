@@ -64,3 +64,42 @@
   z_max(8) resolution).
 - **Next:** TCB-029 (SAT final-pm decision at 8), then v0.03; TCB-027
   mod-p instrumentation; TCB-005 depth-8 backend as the larger goal.
+
+## Round 9 (2026-08-19 continuation; EXP-008 in flight)
+
+- EXP-008 (SMT final-pm residual at depth 8) declared 2026-08-03; the
+  first launch died with a session teardown before any checkpoint (the
+  plain-NIA known-answer was intractable). AMENDED 2026-08-19 (recorded
+  in hypothesis.md before the re-run): QF_NIA solvers; value-bounded
+  known-answer (SAT-side validation only); ladder root-bounded ->
+  doubly-bounded fallback -> unbounded attempt; per-phase immediate
+  checkpoints to artifacts/sat8.json.
+- The re-run is DETACHED from the session (survives teardown):
+  PID 58300, log experiments/EXP-008-sat-depth8/run_detached.log.
+  A fresh session should READ artifacts/sat8.json first: phases present
+  there are decided; absent phases may still be running (check the PID/
+  log mtime) or dead (relaunch run.py with --phase for what is missing).
+- V11 (evaluation-matrix view) persisted 2026-08-03; TCB-030 minted;
+  subspace-theorem channel swept: no prior art, flagged [C].
+
+## Round 9 close (2026-08-19)
+
+- **EXP-008 INCONCLUSIVE (solver-intractable), honestly recorded.** Three
+  launches + two diagnostics: the degenerate-CEGAR incident (179,649
+  zero-model blocks) fixed by a structural f != 0 column and loop
+  budgets; the known-answer then hit its cap as `unknown`; with concrete
+  roots still `unknown`; with the FULL witness pinned: sat in 0.5 s and
+  exact replay. Encoding semantics CORRECT; Z3 NIA search is the wall.
+  z_max(8) remains: = 6 unless a final-pm 8-gate 7-rooter exists.
+  TCB-029 re-scoped (bit-blasted SAT or census backend); TCB-005 is now
+  the leading route; v0.03 stays queued.
+- RL-3 T(S) structure lemmas PROVED (anti-monotonicity, union+1,
+  translation+1, reflection+1; scaling recorded OPEN as TCB-031); exact
+  T-table through size 6. V11 evaluation-matrix view persisted
+  (TCB-030); subspace channel swept: no prior art.
+- Methodology upgrades standing: detached long runs + per-phase
+  checkpoints; loop-level kill criteria (a per-check timeout is not a
+  phase budget).
+- **Next:** TCB-005 (depth-8 census backend: canonicalization proofs or
+  compiled/parallel engine) as the route to z_max(8) AND the residual;
+  TCB-027 mod-p instrumentation; reads.
