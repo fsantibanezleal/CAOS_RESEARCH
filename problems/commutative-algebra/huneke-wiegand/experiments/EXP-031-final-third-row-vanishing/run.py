@@ -138,7 +138,7 @@ def filler_certificate(p: int) -> dict[str, object]:
     generators = sorted(degree_one_offsets(p) - {0})
     hole = 6 * p - 1
     filler_pool = (1, 2, 3, 4)
-    used: dict[tuple[int, ...], tuple[int, ...]] = {}
+    used: dict[tuple[int, tuple[int, ...]], tuple[int, ...]] = {}
     signs = {"1": 0, "-1": 0}
     offset_counts: dict[int, int] = {}
     for triangle in itertools.combinations(generators, 3):
@@ -159,9 +159,12 @@ def filler_certificate(p: int) -> dict[str, object]:
             raise AssertionError(
                 f"p={p}: filler does not have one unit critical face: {triangle}, {critical_faces}"
             )
-        previous = used.setdefault(tetrahedron, triangle)
+        filler_key = (total_offset, tetrahedron)
+        previous = used.setdefault(filler_key, triangle)
         if previous != triangle:
-            raise AssertionError(f"p={p}: filler collision: {previous}, {triangle}")
+            raise AssertionError(
+                f"p={p}: same-offset filler collision: {previous}, {triangle}"
+            )
         signs[str(coefficient)] += 1
         offset_counts[total_offset] = offset_counts.get(total_offset, 0) + 1
 

@@ -1,0 +1,17 @@
+{
+  "experiment": "EXP-031-final-third-row-vanishing",
+  "attempt": 1,
+  "stage": "smoke-unit-filler",
+  "status": "INVALID_IMPLEMENTATION",
+  "parameter": 4,
+  "observed_collision": {
+    "tetrahedron": [1, 2, 3, 4],
+    "first_triangle": [1, 2, 3],
+    "first_offset": 29,
+    "second_triangle": [1, 2, 4],
+    "second_offset": 30
+  },
+  "cause": "The implementation keyed fillers only by the tetrahedron tuple and incorrectly compared cells belonging to different multigraded offset complexes.",
+  "correction": "Key filler uniqueness by (offset, tetrahedron). Preserve the unique-critical-face and unit-coefficient checks separately inside each fixed offset complex.",
+  "evidence_status": "This attempt is an implementation failure and carries no evidence for or against the EXP-031 mathematical prediction."
+}

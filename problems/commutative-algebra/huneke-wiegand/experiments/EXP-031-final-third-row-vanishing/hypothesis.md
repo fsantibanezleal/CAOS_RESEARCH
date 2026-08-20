@@ -40,9 +40,10 @@ For each unmatched triangle, let `x(F)` be the least member of
 ```
 
 The prediction is that `F union {x(F)}` is an unmatched tetrahedron whose reduced boundary has
-coefficient `+1` or `-1` on `F` and zero on every other unmatched triangle. Distinct unmatched
-triangles receive distinct fillers. Hence the reduced boundary onto unmatched triangles is a
-signed identity block and integral `H_2` vanishes.
+coefficient `+1` or `-1` on `F` and zero on every other unmatched triangle. Within each fixed
+offset, distinct unmatched triangles receive distinct fillers. The same tetrahedron tuple may
+occur in a different offset complex and is then a different chain cell. Hence the reduced boundary
+onto unmatched triangles is a signed identity block and integral `H_2` vanishes.
 
 Any missing filler, duplicate filler, second unmatched face, nonunit coefficient, nonzero exact
 rank, or characteristic discrepancy refutes the relevant prediction.

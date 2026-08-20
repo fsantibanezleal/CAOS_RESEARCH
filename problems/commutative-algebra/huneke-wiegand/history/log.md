@@ -1083,3 +1083,13 @@
   `beta_(3,7)=0` over every field. Complete small profiles, an independent filler audit,
   adversarial controls, and a written integral proof remain mandatory.
 - No third-row completion or manuscript v0.18 update is claimed at declaration.
+
+## 2026-08-20 - EXP-031 first smoke implementation corrected
+
+- The first unit-filler smoke stopped before rank computation after treating the tetrahedron
+  `(1,2,3,4)` as a collision for triangles `(1,2,3)` and `(1,2,4)`.
+- The triangles belong to offsets 29 and 30, hence to different multigraded chain complexes. The
+  global tuple-only key was invalid; it says nothing about the mathematical prediction.
+- The failed attempt is preserved as `INVALID_IMPLEMENTATION`. The corrected route keys fillers by
+  `(offset,tetrahedron)` and retains the same-offset uniqueness, one-critical-face, and unit-sign
+  obligations before rerunning the smoke.

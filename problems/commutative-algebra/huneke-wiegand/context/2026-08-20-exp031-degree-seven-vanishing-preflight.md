@@ -41,8 +41,9 @@ x in ([1,p] union [3p,4p-2]) minus F.
 
 There are `2p-1>=7` positive low generators, so this set is nonempty. The tetrahedron `F union
 {x}` has residual `6p-1-x` in `E_(p,3)`. It has `F` as its only unmatched triangle face because a
-different deleted vertex cannot reproduce the residual hole. This predicts a unit diagonal from
-unmatched tetrahedra onto all unmatched triangles.
+different deleted vertex cannot reproduce the residual hole. At a fixed offset, the filler is
+unique to `F`; reusing the same tetrahedron tuple in another offset complex is harmless. This
+predicts a unit diagonal from unmatched tetrahedra onto all unmatched triangles.
 
 This is a candidate integral contraction, not a result until its signs, cell predicates,
 acyclicity, uniqueness, and exact finite profiles pass the declared gates.

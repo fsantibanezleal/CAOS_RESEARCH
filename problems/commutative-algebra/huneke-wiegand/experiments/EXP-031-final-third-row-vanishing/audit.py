@@ -47,7 +47,7 @@ def audit_parameter(parameter: int) -> dict[str, object]:
     vertices = [value for value in generators(parameter) if value]
     hole = 6 * parameter - 1
     alternative_pool = (4, 3, 2, 1)
-    claimed_fillers: set[tuple[int, ...]] = set()
+    claimed_fillers: set[tuple[int, tuple[int, ...]]] = set()
     signs = {"1": 0, "-1": 0}
     offsets: dict[int, int] = {}
     for face in itertools.combinations(vertices, 3):
@@ -66,9 +66,10 @@ def audit_parameter(parameter: int) -> dict[str, object]:
                 sign = 1 if deleted % 2 == 0 else -1
         if critical != [face] or sign not in (-1, 1):
             raise AssertionError((parameter, face, critical, sign))
-        if cell in claimed_fillers:
-            raise AssertionError((parameter, "filler collision", cell))
-        claimed_fillers.add(cell)
+        filler_key = (total, cell)
+        if filler_key in claimed_fillers:
+            raise AssertionError((parameter, "same-offset filler collision", filler_key))
+        claimed_fillers.add(filler_key)
         signs[str(sign)] += 1
         offsets[total] = offsets.get(total, 0) + 1
     expected = comb(10 * parameter - 1, 3)
