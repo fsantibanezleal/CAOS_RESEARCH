@@ -1,6 +1,6 @@
 # tau-conjecture: RESUME (zero-loss handoff)
 
-Updated 2026-08-02, round 8 close (seven-rooter times-case excluded; digit census). First read for any fresh session, per
+Updated 2026-08-20, round 10 close (THE DEPTH-8 CASE RESOLVED; paper v0.03). First read for any fresh session, per
 methodology 07. Derived view: on conflict, experiment verdicts win.
 
 ## 1. State in one screen
@@ -24,7 +24,12 @@ fixed prime) $\Rightarrow$ the full conjecture (Rojas Thm 1); valuation
 spectrum $s \le N_p(s) \le s(s+1)/2$, growth open (Rojas Thm 2).
 
 OUR results (exact, machine-verified, decision-complete):
-$$z_{\max}(\tau) = 1, 2, 3, 3, 4, 5, 5 \quad (\tau = 1..7).$$
+$$z_{\max}(\tau) = 1, 2, 3, 3, 4, 5, 5, 6 \quad (\tau = 1..8).$$
+DEPTH 8 RESOLVED (EXP-011, 2026-08-20): the depth-7 frontier built IN
+FULL (1,048,460,912 states; cross-anchor 2,013,706 exact) and scanned
+exhaustively: no 8-gate 7-rooter of ANY shape; 7-root threshold in
+{9,10}; paper v0.03 DOI 10.5281/zenodo.22035884. Solver lane closed
+(EXP-008/010); symmetry quotient closed (EXP-009).
 PLATEAUS at $\tau = 4$ and $\tau = 7$: the bottom law $z = \tau - 1$
 holds only for $3 \le \tau \le 6$ and BREAKS at 7 (EXP-004). Minimal
 $\tau$: 4 roots at 5 (EXP-002), 5 roots at 6 (EXP-003, multiply-by-$x$
@@ -68,25 +73,26 @@ from the exhausted depth-$d$ frontier without storing depth $d+1$.
 | 004 | $z_{\max}(7)$: bottom law? | CONFIRMED (prediction right) | $z_{\max}(7) = 5$: second plateau; min $\tau$(6 roots) in $[8,9]$; 25.8M-state frontier exact |
 | 005 | Family towers $x^2 - c$: loophole? | CONFIRMED (load-bearing); flagged clause refuted | Family max 5 only at $c = 2$; 2-cycle series $c = m^2{+}m{+}1$ discovered; cycle ceiling |
 | 006 | The $[8,9]$ window | census CONFIRMED; our emptiness prediction REFUTED | **min $\tau$(6 roots) = 8** (408 witnesses; 3 replay-verified); five-rooter taxonomy: 7 patterns incl. non-consecutive; shipped as paper v0.02 |
+| 007 | 8-gate 7-rooter via $\times$; digit census | CONFIRMED; odd-ladder prediction REFUTED | max union 6; odd ladder 1,2,2,2,2,3,4; punctured anatomy closed |
+| 008 | Final-$\pm$ residual (SMT NIA) | INCONCLUSIVE | encoding validated (pinned 0.5s); NIA search-bound; incidents recorded |
+| 009 | Symmetry audit | CONFIRMED | quotient route closed (98.3%/95.2%; $\pm1$ lemma corroborated) |
+| 010 | Residual (QF_BV) | INCONCLUSIVE | engine-bound too; the solver lane CLOSED |
+| 011 | The full depth-8 census | CONFIRMED (all 4 predictions) | **$z_{\max}(8) = 6$**; frontier7 = 1,048,460,912; 7-root threshold $\{9,10\}$; paper v0.03 |
 
 ## 4. In flight
 
-Nothing running. $z_{\max}(8) = 6$ UNLESS a final-$\pm$ 8-gate 7-rooter
-exists (EXP-007 excluded the $\times$ case: max union 6 over all 408
-hits): the single depth-8 unknown, SAT-shaped (TCB-029). Seven-root
-threshold in $[8, 10]$. Digit ladders (V9) exact through $\tau = 7$:
-odd 1,2,2,2,2,3,4 (own record family: $(x^2-1)(x^2-9)$, 7 gates, roots
-$\{\pm1,\pm3\}$); $p{=}3$: 1,1,1,2,2,3,3. Punctured five-rooters =
-two-center DOS products (TCB-026 closed).
+Nothing running. THE DEPTH-8 CASE IS RESOLVED. Standing: the $\{9,10\}$
+window for 7 roots (TCB-032) and the depth-8 digit/mod-p ladders
+(TCB-033, replayable from the stored frontier asset).
 
 ## 5. Next actions, ordered
 
-1. TCB-029: the SAT final-$\pm$ decision at depth 8 (design note
-   2026-08-02): resolves $z_{\max}(8)$ and the 8-gate 7-rooter question.
-2. TCB-028: paper v0.03 ships WITH that resolution (deliberate).
-3. TCB-027: mod-p Frobenius-ceiling instrumentation (V10/V9 pairing).
-4. TCB-005: depth-8 backend (the larger census goal).
-5. Reads: Doyle-Poonen (TCB-024), Cheng 2004 full, KPT15 PDF.
+1. TCB-032: the $\{9,10\}$ window (RL-8 hunt with chained-constant
+   sharing; a result ships as a Zenodo new version).
+2. TCB-033: digit + mod-p ladders at depth 8 from the stored frontier.
+3. Reads: Doyle-Poonen (TCB-024), Narkiewicz (TCB-023), Cheng full,
+   KPT15 PDF.
+4. RL-2/RL-3 continuations; TCB-030 evaluation-matrix instrumentation.
 
 Commands: tests
 `.venv python -m pytest problems/computation-complexity/tau-conjecture/code/tclib -q`;
@@ -105,7 +111,7 @@ census runs from each experiment folder via the repository checkout venv
 - Code: `.../code/tclib/` (enum.py + test_tclib.py)
 - Wiki: `.../wiki/` (README + 01-statement-and-history.md)
 - History: `.../history/log.md` · Program: `program/tau-conjecture/`
-- Manuscript: `manuscripts/tau-conjecture/census/` (v0.02 PUBLISHED
+- Manuscript: `manuscripts/tau-conjecture/census/` (v0.03 PUBLISHED 2026-08-20: DOI 10.5281/zenodo.22035884; v0.02
   2026-08-02: version DOI 10.5281/zenodo.21763182; v0.01:
   10.5281/zenodo.21753439; concept 10.5281/zenodo.21753438 always
   latest; vault ledger `<CAOS_MANAGE>/manuscripts/tau-conjecture/deposits.json`;
@@ -142,3 +148,4 @@ census runs from each experiment folder via the repository checkout venv
 | 2026-08-01 rounds 4-5 | Census decided $\tau = 7$ (z_max = 5: plateau; prediction right) | Theorem (monic stall: single-map towers bounded for ALL monic maps), arithmetic dynamics (V8: cycle-length ceiling explained the EXP-005 discovery), external dialogue (Cheng, adelic tau, SAT synthesis pinned), audit (EXP-005 tooling incident: divisor counting vs c^{2^k} constants; escape-bound finder cross-checked) | Views V5-V8; RL-7..9; the plateaus phenomenon; the $[8,9]$ window as first SAT target; family loophole resolved empty for quadratics |
 | 2026-08-02 round 7 | Window CLOSED: min tau(6 roots) = 8 (times-case co-occurrence scan; emptiness prediction refuted, third time) | Method (case-split invariant: product roots = union), audit (smoke known-answer; witnesses replay-verified independently), anatomy (7 five-rooter patterns incl. punctured) | Paper v0.02 (DOI 10.5281/zenodo.21763182); TCB-025/026 minted; SAT lane rescoped to z_max(8) |
 | 2026-08-02 round 8 | Seven-rooter times-case EXCLUDED (max union 6; first surviving emptiness prediction); digit ladders measured (odd prediction refuted: 4th refutation; own record family) | V9 digit census (the sufficient-form ladder), V10 three-worlds trichotomy, anatomy (two-center DOS punctures), audit (408 anchor reproduced) | z_max(8) pinned to the SAT residual (TCB-029); TCB-027/028 minted; KPT15 pinned |
+| 2026-08-20 round 10 | DEPTH 8 RESOLVED: z_max(8) = 6 (frontier7 built in full; exhaustive scan; all 4 predictions right) | Engineering (out-of-core beat both solver engines), audit (every stage known-answer-gated; cross-anchor exact), symmetry (EXP-009 closed the quotient) | Paper v0.03; TCB-032/033 minted; solver lane closed with reusable encodings |
