@@ -46,7 +46,8 @@ def generators(p: int) -> list[int]:
     return sorted(
         interval(0, p)
         | interval(3 * p, 4 * p - 2)
-        | interval(6 * p, 10 * p - 2)
+        | interval(6 * p, 8 * p - 2)
+        | interval(8 * p, 10 * p - 2)
         | {10 * p}
         | interval(11 * p - 1, 12 * p - 1)
         | interval(13 * p + 1, 14 * p - 2)
