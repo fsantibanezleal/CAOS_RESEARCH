@@ -1,0 +1,15 @@
+{
+  "experiment": "EXP-030-colon-idealization-degree-six",
+  "route": "independent idealization-profile audit",
+  "status": "INVALID_IMPLEMENTATION",
+  "evidence_use": "none",
+  "observed_failure": "The first p=4 profile reconstruction had total 724 rather than canonical total 704.",
+  "cause": "The independent generator encoding replaced the two high blocks [6p,8p-2] and [8p,10p-2] by their convex hull, incorrectly inserting the forbidden offset 8p-1.",
+  "diagnostic": {
+    "incorrect_high_count": "8p+1",
+    "required_high_count": "8p",
+    "inserted_offset": "8p-1"
+  },
+  "canonical_results_sha256": "98ab7f2baaf5315bcdeb51b10555db302a26e90802d53581e3df00379d297ec0",
+  "conclusion": "This attempt is an auditor-encoding failure and carries no evidence for or against the EXP-030 mathematical prediction. The corrected route must preserve the gap and rerun from the canonical artifact."
+}

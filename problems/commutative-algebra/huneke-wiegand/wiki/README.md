@@ -384,3 +384,34 @@ The canonical campaign checks all 297 parameters through `p=300`; complete relat
 profiles at `p=4,5,6` total `496,780,1128`; an independent rational boundary audit and a
 constant-memory arithmetic/Z3 support certificate pass. The result completes a second diagonal,
 not the third homological row, the full Betti table, or the full minimal resolution.
+
+EXP-030 determines the next third-row entry by recognizing the complete cubic-colon quotient.
+After the `8p` high variables are killed, it is the canonical idealization
+
+```text
+k[s,t]^(p) semidirect omega_(k[s,t]^(p)),
+```
+
+with Hilbert series `(1+(2p-2)z+z^2)/(1-z)^2`. The low-variable Hilbert numerator and the Koszul
+extension on the high variables give the candidate colon profile. Integral relative matching
+proves that it survives primitively and is complete in total degree six. Therefore, over every
+field,
+
+```text
+beta_(3,6)=8p(7p^2-12p+2)/3.
+```
+
+Its offset support is
+
+```text
+[3p+4,29p-5] minus ([6p-3,6p+1] union [9p-3,9p]),
+```
+
+with `26p-17` offsets and free integral homology. Complete profiles at `p=4,5,6` total
+`704,1560,2912`; the smallest profile agrees in two characteristics; a corrected independent
+idealization audit matches every coefficient and selected rational ranks. The first audit that
+inserted forbidden offset `8p-1` is preserved as invalid non-evidence.
+
+This theorem determines `beta_(3,6)`, not `beta_(3,7)`, the complete third row, or the full
+resolution. The next efficient route is the next strand of the canonical-idealization resolution
+and its comparison map.

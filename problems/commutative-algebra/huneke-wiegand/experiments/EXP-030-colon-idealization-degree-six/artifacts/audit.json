@@ -1,0 +1,85 @@
+{
+  "experiment": "EXP-030-colon-idealization-degree-six",
+  "generated_at": "2026-08-20T13:13:00.102836+00:00",
+  "status": "PASS",
+  "route": "independent idealization Hilbert numerator plus selected QQ ranks",
+  "canonical_sha256": "98ab7f2baaf5315bcdeb51b10555db302a26e90802d53581e3df00379d297ec0",
+  "canonical_aggregate": "de439ff5cf0784b332fcf811b17217579221afca42510f755963c81ff8beaa4d",
+  "sympy_version": "1.14.0",
+  "profile_rows": [
+    {
+      "p": 4,
+      "support_count": 87,
+      "support_min": 16,
+      "support_max": 111,
+      "maximum_multiplicity": 19,
+      "total": 704,
+      "profile_hash": "f48ebf5076d992b439ae52c431bb11a5089eb28aef420301fb784045f67b626d",
+      "matches_canonical": true
+    },
+    {
+      "p": 5,
+      "support_count": 113,
+      "support_min": 19,
+      "support_max": 140,
+      "maximum_multiplicity": 33,
+      "total": 1560,
+      "profile_hash": "7674e789094d1358a34e6c75110f3636c00de046ad32dd9e50acf0efb081e72c",
+      "matches_canonical": true
+    },
+    {
+      "p": 6,
+      "support_count": 139,
+      "support_min": 22,
+      "support_max": 169,
+      "maximum_multiplicity": 49,
+      "total": 2912,
+      "profile_hash": "2a98d682e2cc9351f54a211fc1e73f6a3101b857bbba5e2b435734e560209b9d",
+      "matches_canonical": true
+    }
+  ],
+  "rational_rows": [
+    {
+      "p": 4,
+      "offset": 16,
+      "cell_counts_2_to_4": [
+        22,
+        22,
+        6
+      ],
+      "rank_d3": 15,
+      "rank_d4": 6,
+      "h2": 1
+    },
+    {
+      "p": 4,
+      "offset": 21,
+      "cell_counts_2_to_4": [
+        25,
+        40,
+        31
+      ],
+      "rank_d3": 18,
+      "rank_d4": 22,
+      "h2": 0
+    },
+    {
+      "p": 4,
+      "offset": 37,
+      "cell_counts_2_to_4": [
+        86,
+        148,
+        118
+      ],
+      "rank_d3": 66,
+      "rank_d4": 81,
+      "h2": 1
+    }
+  ],
+  "controls": {
+    "missing_bb_changes_profile": true,
+    "perturbed_formula_rejected": true,
+    "gap_offset_is_zero": true
+  },
+  "audit_aggregate": "bf5034efc37ec23edbd60d87c1eca36d437a9f9fc1e9d38f59816d8a7d3a7a16"
+}
