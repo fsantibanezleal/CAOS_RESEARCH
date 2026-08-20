@@ -558,3 +558,23 @@
   covering launched on both angle charts after 5-point crosschecks.
 - Mirrored CC-F32 (pentagon + piece 8) and CC-F33 (the restructure) to
   CAOS_MANAGE; wiki 05 rows added for EXP-019/020/021.
+
+## 2026-08-20 (round 33): ulow certified; fa2 design error caught and fixed
+
+- ulow (pair-collapse) DONE ok=true, zero failures: 880,947 boxes, 26,090
+  traps. The trapped set is the near-collision CONDITIONING collar
+  (v ~ +-1, u in [0.03, 0.25], d1A^-3 entry blow-up): sigma_3 is ORDER ONE
+  at trapped midpoints (0.60), no rank-2 structure (probe + descent);
+  contrast pentagon (exact rank 2) and cross (sigma_3 ~ 1.7e-3). A_plow
+  free by the swap identity.
+- fa2 FAILED BY DESIGN (272k structural failures, killed): the absolute
+  far-tube criterion was wrong; CS vanishes identically on the whole
+  double-infinity face, making boxes touching it uncertifiable. Root
+  cause: the tube geometry is scale-RELATIVE (cs small vs R_A). Fix:
+  fa2b ratio parametrization (r = epsA/epsB in [0,1]): CS^ = |dirA - r
+  dirB| analytic, vanishing only on the true far-tube; discards {CS^ <
+  1/16} (far-tube) and {CX^ < 1/16} (vertical far-corner) deferred to the
+  blow-up chart. Crosschecked 5/5, launched.
+- The sq() dependency bug resurfaced in fa2's discard (tau*tau on
+  straddling intervals): fixed with .sq(); pipeline discard hardened
+  (AssertionError -> not discarded).
