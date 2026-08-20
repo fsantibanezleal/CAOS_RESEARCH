@@ -104,9 +104,10 @@
 | 2026-08-20 | confirmed | active | 43-page manuscript v0.19 candidate passed claim, two-pass build, all-page render, metadata, sole-authorship, tests, pipeline, and artifact gates; Zenodo draft `22031481` remains empty and unpublished pending exact upload validation |
 | 2026-08-20 | active | active | Zenodo draft `22031481` now passes exact metadata and one-file validation; the committed 741,461-byte PDF and server MD5 match, while publication remains pending |
 | 2026-08-20 | active | published | manuscript v0.19 is public and concept-latest at DOI `10.5281/zenodo.22031481`; a fresh unauthenticated download matches the committed PDF by MD5 and SHA-256 |
+| 2026-08-20 | published | published | PR #213 passed `guards` and `test` and merged EXP-032 plus v0.19 to `develop` at `0ded528`; PR #214 passed all required checks and promoted the exact tested state to `main` at `e04660e` |
 
-Current state: **EXP-032 is confirmed and manuscript v0.19 is published and fresh-download
-verified under HWB-050; HWB-051 owns checked research promotion; EXP-031 and manuscript v0.18 are
+Current state: **EXP-032 is confirmed, manuscript v0.19 is published and fresh-download verified,
+and checked research promotion is complete under HWB-051; EXP-031 and manuscript v0.18 are
 published and promoted; HWB-048 remains active only for
 scoped management-ledger reconciliation because CAOS_MANAGE is occupied by unrelated staged
 work**. Put `c=2p-2` and `m=8p`. The complete cubic-colon quotient Betti polynomial is

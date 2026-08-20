@@ -1212,3 +1212,14 @@
   `ebd4d3294cf1dd6fdeccf8902e93399a6617d661dd7421d9dd260278670f3a15`.
 - HWB-050 is done. HWB-051 opens separate-PR promotion through `develop` and `main`; the occupied
   CAOS_MANAGE checkout remains untouched.
+
+## 2026-08-20 - EXP-032 and manuscript v0.19 promoted
+
+- PR #213 passed `guards` and `test` and merged the exact tested and published work state to
+  `develop` at `0ded528712f18064a7483119bf57324edd8a3a2d`.
+- PR #214 passed all required checks and promoted `develop` to `main` at
+  `e04660ead2afa68f7490f32a4bf837cd0eaa3533`.
+- Work, `develop`, and `main` shared payload tree
+  `c2f9f58488c7a1fa7ccee181a75944f7209b795c` before this handoff update.
+- HWB-051 is done. CAOS_MANAGE remains untouched on its unrelated occupied branch; no research
+  release tag is claimed.
