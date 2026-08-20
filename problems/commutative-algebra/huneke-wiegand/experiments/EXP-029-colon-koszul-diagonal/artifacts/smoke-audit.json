@@ -1,0 +1,82 @@
+{
+  "experiment": "EXP-029-colon-koszul-diagonal",
+  "status": "PASS",
+  "source_aggregate": "f2aca2c2d1cf908dfddd27d7b19c3343a606a1de2fd3def99a26e01922ab2010",
+  "samples": [
+    {
+      "p": 4,
+      "high_count": 32,
+      "beta_3_5": 496,
+      "beta_4_5": 2198984,
+      "support_count": 92,
+      "profile_hash": "756f7882805ba91e650445ef74318e92c0d6963332719608c68e0e316cd7fe2d"
+    },
+    {
+      "p": 5,
+      "high_count": 40,
+      "beta_3_5": 780,
+      "beta_4_5": 7380880,
+      "support_count": 116,
+      "profile_hash": "bcfe61f6d1e024a98ca8ae0cef3d21581e667f7ec38a04ebee169853d44d7a2a"
+    },
+    {
+      "p": 17,
+      "high_count": 136,
+      "beta_3_5": 9180,
+      "beta_4_5": 4299404312,
+      "support_count": 404,
+      "profile_hash": "3e435aa8212062bd1eb0d97e710b95933ed074e82b8db812679f640864070c04"
+    },
+    {
+      "p": 73,
+      "high_count": 584,
+      "beta_3_5": 170236,
+      "beta_4_5": 6759738608168,
+      "support_count": 1748,
+      "profile_hash": "559e859b33902553b09b37ef7c90b7f61e03f784ededb89940a9e1e1e8f8fd38"
+    },
+    {
+      "p": 151,
+      "high_count": 1208,
+      "beta_3_5": 729028,
+      "beta_4_5": 258911511957956,
+      "support_count": 3620,
+      "profile_hash": "e04d6b698c2a2660ea410929d8fc2f64b1571cbc2b617aadf6dd05e14e23db5a"
+    },
+    {
+      "p": 300,
+      "high_count": 2400,
+      "beta_3_5": 2878800,
+      "beta_4_5": 8056866560707800,
+      "support_count": 7196,
+      "profile_hash": "6d6b7f00b591ddcf64a2db9047355edf5b911faaab5ff231fc240fbdc13cbbb8"
+    }
+  ],
+  "rational_rows": [
+    {
+      "p": 4,
+      "offset": 60,
+      "cell_counts_2_to_4": [
+        240,
+        551,
+        503
+      ],
+      "rank_d3": 207,
+      "rank_d4": 344,
+      "h2": 0
+    },
+    {
+      "p": 4,
+      "offset": 61,
+      "cell_counts_2_to_4": [
+        249,
+        587,
+        539
+      ],
+      "rank_d3": 216,
+      "rank_d4": 370,
+      "h2": 1
+    }
+  ],
+  "audit_aggregate": "fdf053ffe68dc01926617d60df5c69385d829185408590addca90c7c1b06caf2"
+}
