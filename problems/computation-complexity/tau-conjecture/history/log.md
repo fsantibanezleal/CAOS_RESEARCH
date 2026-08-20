@@ -219,3 +219,24 @@
 - Publication discipline: v0.03 material queued DELIBERATELY (TCB-028)
   to ship together with the z_max(8) resolution.
 - Dead ends: none this round.
+
+## 2026-08-19 (round 9 close): EXP-008 inconclusive with a validated encoding; RL-3 lemmas
+
+- EXP-008 (SMT final-pm residual): INCONCLUSIVE, solver-intractable.
+  Record: session-teardown loss (launch 1); degenerate CEGAR loop
+  (launch 2: 179,649 zero-model blocks in 6.7 h; fixed by a structural
+  f != 0 evaluation column + loop budgets); known-answer `unknown` at
+  cap (launch 3); concrete-roots diagnostic `unknown`; PINNED-witness
+  diagnostic sat in 0.5 s with exact replay: semantics correct, search
+  is the wall. TCB-029 re-scoped to bit-blasted propositional SAT or
+  the census backend; TCB-005 now leads for z_max(8).
+- RL-3 (TCB-018) DONE: T(S) structure lemmas proved (anti-monotonicity,
+  union+1, translation+1, reflection+1); scaling has NO elementary
+  substitution: minted TCB-031; exact T-table through size 6 compiled
+  from the census.
+- V11 (evaluation-matrix view) + TCB-030 persisted earlier in the round;
+  the subspace-theorem channel swept (no prior art; [C]).
+- Methodology upgrades: detached runs + per-phase checkpoints; loops
+  need their own kill criteria.
+- Dead ends: the SMT-NIA lane for structure search (closed by record,
+  encoding reusable).
