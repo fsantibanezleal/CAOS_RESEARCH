@@ -1,27 +1,36 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-19. Lifecycle: EXP-028 confirmed, manuscript v0.15 published, and the checked
-round promoted. The entire second Betti row of the conductor special fiber is now exact over every
-field:
+Updated: 2026-08-20. Lifecycle: EXP-029 is CONFIRMED and manuscript v0.16 is published and
+fresh-download verified; checked repository promotion is active under HWB-042. The integral
+colon-Koszul theorem gives
 
 ```text
-beta_(2,3)=2p(500p^2-330p+31)/3,
-beta_(2,4)=8p,
+beta_(3,(5,b))=#{ {a,c} subset H_p:a<c and a+c=b-3p },
+beta_(3,5)=binom(8p,2)=4p(8p-1),
+```
+
+where `H_p={a in G_p:a>=6p}` has size `8p`; the support is
+`[15p+1,39p-3] minus {33p-1}`. Together with EXP-028 and the exact Hilbert numerator, the complete
+internal-degree-five diagonal over every field is
+
+```text
 beta_(2,5)=p(2p-3),
-beta_(2,6)=0,
-beta_(2,j)=0 otherwise.
+beta_(3,5)=4p(8p-1),
+beta_(4,5)=2p(5p-1)(10p-3)(100p^2-110p+13)/3,
+beta_(i,5)=0 otherwise.
 ```
 
 For `0<=r<=2p-4`, the degree-five support is the three intervals
 `[3p+2,5p-2]`, `[6p+1,8p-3]`, and `[9p,11p-4]`. The outer multiplicity is
 `min(floor(r/2)+1,floor((2p-4-r)/2)+1)` and the middle multiplicity is
 `min(r+1,2p-3-r,p-2)`. Integral lexicographic matching and unit Smith forms prove freeness and
-characteristic independence. The canonical campaign passes 297 rows, complete small profiles,
-two-field controls, an independent rational/Smith audit, and arithmetic/Z3 checks. The 34-page
-main manuscript v0.15 is published and fresh-download verified at DOI
-`10.5281/zenodo.22016550`. PRs #198/#199 promoted the checked research payload through `develop`
-to `main`; CAOS_MANAGE PR #566 promoted the publication controls and ledger. Higher homological
-rows and the full Betti table remain open.
+characteristic independence. The canonical EXP-029 campaign passes 297 rows, complete small
+profiles, two-field controls, an independent rational boundary audit, and arithmetic/Z3 checks.
+The 36-page main manuscript v0.16 is published and fresh-download verified at DOI
+`10.5281/zenodo.22029468`; its 691,569-byte PDF has SHA-256
+`4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`. HWB-041 is done and
+HWB-042 owns checked repository and management-ledger promotion. Higher homological rows and the
+full Betti table remain open.
 
 The published baseline remains intact: EXP-026 and focused companion v0.02 are published and
 fresh-download verified at DOI `10.5281/zenodo.22002907`, and PRs #190/#191 plus CAOS_MANAGE PR
@@ -62,7 +71,9 @@ Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
 16. the first interior Betti strand, with characteristic-free multiplicity-free offset support
     (EXP-027); and
 17. the complete second Betti row, with degree-five multiplicities, degree-six vanishing, and
-    characteristic independence (EXP-028).
+    characteristic independence (EXP-028); and
+18. the free colon-Koszul pair basis, exact third-row degree-five profile, and complete
+    internal-degree-five diagonal over every field (EXP-029).
 
 The public seed is
 
@@ -153,6 +164,7 @@ campaign is supporting evidence, not the proof.
 | EXP-026 | CONFIRMED | reduced grevlex profile `(50p^2-17p,5p-1,p-2)`, no later boundary, and flat Cohen--Macaulay monomial degeneration |
 | EXP-027 | CONFIRMED | `beta_(2,4)=8p` with complete multiplicity-free offset support and exact adjacent `beta_(3,4)` over every field |
 | EXP-028 | CONFIRMED | complete second row: exact degree-five three-block multiplicities, `beta_(2,5)=p(2p-3)`, and integral `beta_(2,6)=0` over every field |
+| EXP-029 | CONFIRMED | free pair basis on the `8p` high colon variables gives `beta_(3,5)=4p(8p-1)`, exact support, and the complete internal-degree-five diagonal |
 
 ## 3a. Exact evidence anchors
 
@@ -189,8 +201,32 @@ campaign is supporting evidence, not the proof.
 - EXP-028 canonical campaign aggregate:
   `45f08e6a15e321512629fa4b6ab07161ddcc766ddf56e1d9579175f3444ec32f`; the independent
   rational/Smith audit and symbolic/arithmetic certificate both pass.
+- EXP-029 canonical campaign, independent audit, and symbolic aggregates:
+  `7564f15534e8a29f875a367d3a324b95041e8eef836d15deac3e35130e1ad37d`,
+  `337854eef5d773c84cdd79c7734e63b295fa0337c5a1852e652559c334949b04`, and
+  `605733497d6fb0ead97bfd25e26daaa66d546c297751960e1c427f29ff69f279`.
 
 ## 4. In flight
+
+EXP-029 is CONFIRMED. Put
+
+```text
+H_p={a in G_p:a>=6p},        |H_p|=8p.
+```
+
+The integral offset formula is
+
+```text
+beta_(3,(5,b))=#{ {a,c} subset H_p:a<c and a+c=b-3p }.
+```
+
+The integral relative normal form cancels every transient critical triangle by unit boundaries and
+leaves the free unordered-pair basis. Complete exact profiles at `p=4,5,6` total
+`496,780,1128`; the full `p=4` profile agrees over `GF(2)` and `GF(1000003)`; the 297-row campaign,
+independent rational boundary audit, and constant-memory arithmetic/Z3 certificate all pass. The
+first symbolic implementation exceeded its route budget because it materialized every support
+integer and is preserved as non-evidence. EXP-028 and the Hilbert numerator then give the complete
+internal-degree-five diagonal displayed at the top of this handoff.
 
 EXP-028 is CONFIRMED. For every `p>=4` and every field, the complete second row is
 
@@ -353,18 +389,23 @@ Published baseline:
 - v0.13 DOI `10.5281/zenodo.21995498`: homological edge theorem. The public 635,617-byte PDF has
   MD5 `d6ce72589100d1f57986da000501fdc7` and SHA-256
   `cc9e721c3f0155181b963095a0b0efcc37e023546b32c6dd61b772a3d30ec7ed`.
+- v0.14 DOI `10.5281/zenodo.22013515`: first interior Betti strand.
+- v0.15 DOI `10.5281/zenodo.22016550`: complete second Betti row.
+- v0.16 DOI `10.5281/zenodo.22029468`: colon-Koszul degree-five diagonal. The public 691,569-byte
+  PDF has MD5 `ad69991f41c4f35da3c03f2c1ce343e9` and SHA-256
+  `4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `21995498`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `22029468`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Any later theorem round needs a fresh source/novelty preflight and newly declared experiment;
-   no experiment or delivery gate is active at this handoff.
-2. Prioritize a higher homological row through integral relative-complex matching and sparse Smith
-   structure over raw full resolutions; do not extrapolate EXP-028 to the full table.
-3. Preserve the EXP-023 solver trust boundary and do not claim a global release tag for this
-   research-only round.
+1. Commit and push the verified v0.16 publication state, then promote the tested research payload
+   through separate
+   work-to-`develop` and `develop`-to-`main` PRs, and promote the scoped CAOS_MANAGE ledger without
+   staging unrelated concurrent changes.
+2. Reopen HWB-035 at `beta_(3,6)`: derive its colon contribution and relative `H_2` obstruction
+   before attempting any broad full-resolution computation.
 
 ### Lenses ledger
 
@@ -387,6 +428,9 @@ Published baseline:
   component uniformly, with finite campaign and independent graph routes as adversarial support.
 - Relative-chain matching: EXP-027/028 turn offset-graded Betti entries into integral homology and
   use unit pivots/Smith forms to isolate actual classes without characteristic extrapolation.
+- Colon-Koszul redirection: EXP-029 reads the exact linear cubic colon two-sidedly. Its second
+  Koszul wedges supply all degree-five third syzygies; integral relative `H_2` matching proves
+  completeness and a primitive, characteristic-free pair basis without a raw resolution sweep.
 
 ## 7. Gotchas
 

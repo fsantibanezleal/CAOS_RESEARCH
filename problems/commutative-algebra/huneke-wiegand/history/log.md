@@ -923,3 +923,60 @@
   `main` trees match at `f234e662fa13834787c994b789d6607b486c19ec`.
 - HWB-040 is complete. Higher homological rows and the full Betti table remain open under HWB-035;
   no release tag is claimed for this research-only round.
+
+## 2026-08-20 - EXP-029 declared
+
+- Reconciled the post-EXP-028 state and performed a fresh primary-source and novelty sweep before
+  assigning machine time to another canonical experiment.
+- Exact read-only `H_2` probes at `p=4,5` found that the degree-five third Betti profile is exactly
+  the shifted unordered pair-sum distribution of the `8p` high variables in the already proved
+  linear cubic colon. The observed totals are `496` and `780`, equal to `binom(8p,2)`.
+- Redirected the next round from a broad whole-third-row enumeration to the colon-Koszul
+  degree-five diagonal. The grevlex initial ideal was independently ruled out as a stable or
+  strongly stable shortcut in both natural variable orders.
+- Declared EXP-029 before implementation or canonical artifacts. Its target is
+  `beta_(3,5)=4p(8p-1)` with exact pair-sum support and integral freeness; together with EXP-028
+  and the Hilbert numerator, confirmation would complete internal degree five.
+
+## 2026-08-20 - EXP-029 confirmed
+
+- The mandatory `p=4` smoke passed over `GF(2)` and `GF(1000003)`. The canonical campaign then
+  passed 297 formula rows through `p=300` and complete exact relative `H_2` profiles at `p=4,5,6`,
+  with totals `496,780,1128`.
+- An independent rational boundary reconstruction passed at offsets `60` and `61` for `p=4`.
+  The first symbolic implementation exceeded its route budget because it materialized every
+  support integer; it is preserved as `INCONCLUSIVE_BUDGET` and is not evidence. A constant-memory
+  affine-endpoint implementation passed the unchanged support and coefficient obligations through
+  `p=10000`.
+- The integral normal form leaves a free basis indexed by unordered pairs of distinct variables in
+  `H_p={a in G_p:a>=6p}`. Therefore, over every field,
+
+  ```text
+  beta_(3,5)=4p(8p-1),
+  support=[15p+1,39p-3] minus {33p-1}.
+  ```
+
+- EXP-028 and the exact Hilbert numerator then give
+  `beta_(4,5)=2p(5p-1)(10p-3)(100p^2-110p+13)/3`, completing internal degree five. The campaign,
+  audit, and symbolic aggregates are respectively
+  `7564f15534e8a29f875a367d3a324b95041e8eef836d15deac3e35130e1ad37d`,
+  `337854eef5d773c84cdd79c7734e63b295fa0337c5a1852e652559c334949b04`, and
+  `605733497d6fb0ead97bfd25e26daaa66d546c297751960e1c427f29ff69f279`.
+- EXP-029 is CONFIRMED. HWB-041 opens the existing-manuscript v0.16 and Zenodo new-version gate;
+  `beta_(3,6)`, the remaining third row, and the full Betti table remain open under HWB-035.
+
+## 2026-08-20 - EXP-029 manuscript v0.16 published
+
+- Expanded the main Frobenius-minimality manuscript to v0.16 with the colon-Koszul pair-basis
+  theorem, exact multigraded support, complete internal-degree-five diagonal, integral normal-form
+  proof, explicit trust boundary, and EXP-029 evidence.
+- The DOI-bearing 36-page PDF passed two clean LaTeX builds, all-page rendered inspection, exact
+  metadata, scope, attribution, and sole-human-authorship gates.
+- Published Zenodo version DOI `10.5281/zenodo.22029468` under concept DOI
+  `10.5281/zenodo.21763582`. Public record `22029468` is concept-latest and CC BY 4.0 with Felipe
+  Santibanez-Leal as sole creator and ORCID `0000-0002-0150-3246`.
+- A fresh unauthenticated 691,569-byte download matches MD5
+  `ad69991f41c4f35da3c03f2c1ce343e9` and SHA-256
+  `4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554` exactly.
+- HWB-041 is complete. HWB-042 owns checked research and management promotion; no release tag is
+  claimed for this research-only round.

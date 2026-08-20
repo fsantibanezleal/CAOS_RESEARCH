@@ -1,0 +1,10 @@
+{
+  "experiment": "EXP-029-colon-koszul-diagonal",
+  "route": "symbolic-certificate",
+  "status": "INCONCLUSIVE_BUDGET",
+  "requested_limit": 10000,
+  "elapsed_seconds_lower_bound": 120,
+  "reason": "The first implementation materialized every integer in each affine support interval for every p, causing avoidable superlinear allocation. The process was stopped after the declared route budget.",
+  "correction": "Replace support materialization by constant-memory affine endpoint merging without changing the mathematical obligations.",
+  "canonical_evidence": false
+}
