@@ -660,3 +660,30 @@ that checkout is on `task/difusion-rename-all-explorations-20260820` with extens
 diffusion renames, so touching or switching it would violate the parallel-session boundary.
 HWB-042 remains open only for that scoped management reconciliation. No release tag belongs to
 this research-only round.
+
+## 2026-08-20 - EXP-030 cubic-colon idealization
+
+The next HWB-035 target is redirected from a broad degree-six chain enumeration to recognition of
+the cubic colon. Write the `2p` low variables as `A_i=X_i` for `0<=i<=p` and
+`B_j=X_(3p+j)` for `0<=j<=p-2`. EXP-030 predicts that, after the known `8p` high colon variables
+are killed, the residual quotient is
+
+```text
+k[s,t]^(p) semidirect omega_(k[s,t]^(p)),
+```
+
+the square-zero canonical idealization of the rational normal curve ring. Its predicted Hilbert
+series is `(1+(2p-2)z+z^2)/(1-z)^2`. The forced low-variable coefficient and its Koszul extension
+are
+
+```text
+beta_(2,3)^low=8p(p-1)(p-2)/3,
+beta_(2,3)(P_p/(Q_p:f_p))=8p(7p^2-12p+2)/3.
+```
+
+The experiment makes the falsifiable stronger prediction that these shifted classes primitively
+exhaust total-degree-six relative `H_2`, giving the same formula for `beta_(3,6)(C_p)` over every
+field. The canonical route proves the colon presentation and computes exact offset homology; an
+independent square-zero parametrization and two-characteristic/Smith route are mandatory. A finite
+campaign cannot replace the all-parameter integral matching proof. No result, manuscript update,
+or publication is claimed at declaration.

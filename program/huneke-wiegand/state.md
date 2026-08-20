@@ -91,9 +91,11 @@
 | 2026-08-20 | active | confirmed | EXP-029 proves the free colon-Koszul pair basis, `beta_(3,5)=4p(8p-1)`, exact offset support, and the complete internal-degree-five diagonal over every field; manuscript v0.16 gate opened |
 | 2026-08-20 | confirmed | published | 36-page preprint v0.16 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.22029468`, and matched a fresh unauthenticated public download exactly |
 | 2026-08-20 | published | published | PR #203 passed `guards` and `test` and merged EXP-029 plus v0.16 to `develop` at `0c9638d`; PR #204 passed all required checks and promoted the complete tested `develop` state to `main` at `633e547` |
+| 2026-08-20 | published | active | EXP-030 declared before implementation: recognize the cubic-colon quotient as a canonical idealization and test the predicted characteristic-independent formula `beta_(3,6)=8p(7p^2-12p+2)/3` |
 
-Current state: **EXP-029 and manuscript v0.16 are confirmed, published, and promoted through the
-research repository; scoped management-ledger reconciliation remains active under HWB-042**. For
+Current state: **EXP-030 is active after EXP-029 and manuscript v0.16 were confirmed, published,
+and promoted through the research repository; scoped management-ledger reconciliation remains
+active under HWB-042**. For
 `H_p={a in G_p:a>=6p}`, integral relative homology has the
 free pair basis
 
@@ -125,6 +127,12 @@ table remain open under HWB-035. Research work, `develop`, and `main` share payl
 occupied on `task/difusion-rename-all-explorations-20260820` with extensive staged diffusion
 renames; the v0.16 management mirror must be reconciled only after that checkout is safely back on
 clean `develop`.
+
+EXP-030 is a declared, unconfirmed recognition hypothesis. After killing the `8p` high variables
+in `Q_p:f_p`, the low quotient is predicted to be the canonical idealization of the `p`th Veronese
+of `k[s,t]`, with Hilbert series `(1+(2p-2)z+z^2)/(1-z)^2`. This predicts the colon coefficient
+`8p(7p^2-12p+2)/3` and, subject to a separate integral relative-`H_2` completeness gate, the same
+formula for `beta_(3,6)(C_p)`. No EXP-030 result is yet claimed.
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.

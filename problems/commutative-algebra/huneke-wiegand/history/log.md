@@ -995,3 +995,18 @@
   remains active only for a later scoped ledger reconciliation after management safely returns to
   clean `develop`.
 - No release tag is claimed for this research-only round. HWB-035 resumes at `beta_(3,6)`.
+
+## 2026-08-20 - EXP-030 declared
+
+- A fresh primary-source sweep found no published computation of this family's cubic colon or
+  degree-six third strand. Recent KW-semigroup work confirms the value of recognizing a
+  family-wide classical model but does not apply to this nonreduced conductor fiber cone.
+- The invariant-first calculation predicts that, after killing the `8p` high colon variables, the
+  residual colon quotient is the canonical idealization of the rational normal curve ring.
+- Its Hilbert series would be `(1+(2p-2)z+z^2)/(1-z)^2`, forcing
+  `beta_(2,3)(P_p/(Q_p:f_p))=8p(7p^2-12p+2)/3`.
+- EXP-030 is declared before implementation with the falsifiable stronger prediction
+  `beta_(3,6)(C_p)=8p(7p^2-12p+2)/3` over every field. Colon agreement alone is explicitly
+  insufficient: independent integral relative `H_2` completeness remains mandatory.
+- Whole-resolution enumeration and initial-ideal equality are demoted. No EXP-030 result,
+  manuscript update, or publication is claimed.

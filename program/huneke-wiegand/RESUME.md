@@ -1,9 +1,9 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-20. Lifecycle: EXP-029 is CONFIRMED and manuscript v0.16 is published,
-fresh-download verified, and promoted through the research repository. The scoped CAOS_MANAGE
-ledger remains pending under HWB-042 because that checkout is occupied by unrelated staged
-diffusion work. The integral
+Updated: 2026-08-20. Lifecycle: EXP-030 is ACTIVE with no result claimed. EXP-029 and manuscript
+v0.16 are confirmed, published, fresh-download verified, and promoted through the research
+repository. The scoped CAOS_MANAGE ledger remains pending under HWB-042 because that checkout is
+occupied by unrelated staged diffusion work. The integral
 colon-Koszul theorem gives
 
 ```text
@@ -101,6 +101,7 @@ I = (t^56,t^70)R.
 | `C_p` | conductor special fiber `F(T_p)`, canonically `gr_(T_p)(R_p)/H^0` | EXP-021 theorem |
 | `J_p` | defining ideal of `C_p` in its `10p` degree-one variables | EXP-022/023 theorems |
 | `Q_p` | quadratic part of `J_p`, with `J_p=(Q_p,f_p)` and `f_p=X_0^2X_(3p)-X_p^3` | EXP-023/027 theorems |
+| `D_p` | predicted cubic-colon quotient `P_p/(Q_p:f_p)`, conjecturally a polynomial extension of a canonical idealization | EXP-030 active |
 | minimum layer | all normalized rigid pairs at the least Frobenius value 181 | EXP-005/007 |
 
 ## 2a. Infinite family theorem
@@ -168,6 +169,7 @@ campaign is supporting evidence, not the proof.
 | EXP-027 | CONFIRMED | `beta_(2,4)=8p` with complete multiplicity-free offset support and exact adjacent `beta_(3,4)` over every field |
 | EXP-028 | CONFIRMED | complete second row: exact degree-five three-block multiplicities, `beta_(2,5)=p(2p-3)`, and integral `beta_(2,6)=0` over every field |
 | EXP-029 | CONFIRMED | free pair basis on the `8p` high colon variables gives `beta_(3,5)=4p(8p-1)`, exact support, and the complete internal-degree-five diagonal |
+| EXP-030 | ACTIVE | test the canonical-idealization colon and the predicted `beta_(3,6)=8p(7p^2-12p+2)/3`; no result yet |
 
 ## 3a. Exact evidence anchors
 
@@ -211,24 +213,35 @@ campaign is supporting evidence, not the proof.
 
 ## 4. In flight
 
-EXP-029 is CONFIRMED. Put
+EXP-030 is declared and unconfirmed. Put
 
 ```text
-H_p={a in G_p:a>=6p},        |H_p|=8p.
+L_p=[0,p] union [3p,4p-2],
+A_i=X_i,                     0<=i<=p,
+B_j=X_(3p+j),                0<=j<=p-2.
 ```
 
-The integral offset formula is
+After killing the `8p` high variables in the cubic colon, the predicted low quotient is
 
 ```text
-beta_(3,(5,b))=#{ {a,c} subset H_p:a<c and a+c=b-3p }.
+k[s,t]^(p) semidirect omega_(k[s,t]^(p)),
+H(z)=(1+(2p-2)z+z^2)/(1-z)^2.
 ```
 
-The integral relative normal form cancels every transient critical triangle by unit boundaries and
-leaves the free unordered-pair basis. Complete exact profiles at `p=4,5,6` total
-`496,780,1128`; the full `p=4` profile agrees over `GF(2)` and `GF(1000003)`; the 297-row campaign,
-independent rational boundary audit, and constant-memory arithmetic/Z3 certificate all pass. The
-first symbolic implementation exceeded its route budget because it materialized every support
-integer and is preserved as non-evidence. EXP-028 and the Hilbert numerator then give the complete
+This would force
+
+```text
+beta_(2,3)(P_p/(Q_p:f_p))=8p(7p^2-12p+2)/3.
+```
+
+The falsifiable EXP-030 prediction is that these shifted colon classes primitively exhaust the
+total-degree-six relative `H_2`, so the same formula equals `beta_(3,6)(C_p)` over every field.
+The immediate gate is implementation followed by the mandatory `p=4` smoke. Colon agreement alone
+does not prove the Betti formula; complete relative profiles, two-characteristic agreement, and an
+integral unit-pivot or Smith proof are required.
+
+EXP-029 remains CONFIRMED. Its free pair basis gives
+`beta_(3,(5,b))=#{ {a,c} subset H_p:a<c and a+c=b-3p }`, where `|H_p|=8p`, and the complete
 internal-degree-five diagonal displayed at the top of this handoff.
 
 EXP-028 is CONFIRMED. For every `p>=4` and every field, the complete second row is
@@ -403,9 +416,11 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Reopen HWB-035 at `beta_(3,6)`: derive its colon contribution and relative `H_2` obstruction
-   before attempting any broad full-resolution computation.
-2. When CAOS_MANAGE is safely back on clean `develop`, reconcile and promote only the scoped v0.16
+1. Implement EXP-030 Route A and Route B, then run the mandatory `p=4` smoke command recorded in
+   `experiments/EXP-030-colon-idealization-degree-six/hypothesis.md`.
+2. If smoke passes, run the bounded `p=4,5,6` campaign, independent idealization audit, and
+   integral relative-homology gate. Preserve the first mismatch or budget stop without amendment.
+3. When CAOS_MANAGE is safely back on clean `develop`, reconcile and promote only the scoped v0.16
    publication ledger; do not touch its current staged diffusion rename work.
 
 ### Lenses ledger
@@ -432,6 +447,9 @@ Published baseline:
 - Colon-Koszul redirection: EXP-029 reads the exact linear cubic colon two-sidedly. Its second
   Koszul wedges supply all degree-five third syzygies; integral relative `H_2` matching proves
   completeness and a primitive, characteristic-free pair basis without a raw resolution sweep.
+- Recognition/idealization: EXP-030 asks whether the entire cubic-colon quotient is a polynomial
+  extension of the canonical idealization of a rational normal curve. This converts the first
+  degree-six colon term into a forced Hilbert coefficient before the relative-chain audit.
 
 ## 7. Gotchas
 
