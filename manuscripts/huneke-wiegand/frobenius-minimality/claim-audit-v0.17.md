@@ -53,8 +53,9 @@ implementations but do not replace the canonical-idealization and integral norma
 
 ## Build, render, and publication gate
 
-- Zenodo reservation: PASS; draft `22030167` reserves DOI `10.5281/zenodo.22030167` under concept
-  DOI `10.5281/zenodo.21763582`;
+- Zenodo reservation: PASS; the explicit PID-reservation response for draft `22030167` returned DOI
+  `10.5281/zenodo.22030167` under concept DOI `10.5281/zenodo.21763582` at
+  `2026-08-20T13:41:08Z`;
 - stable two-pass DOI-bearing build: PASS; 40 pages and stable cross-references;
 - warnings, undefined references, overfull boxes, and underfull boxes: PASS; none in the final log;
 - complete rendered inspection: PASS; all 40 pages inspected at 120 DPI in five contact sheets,
