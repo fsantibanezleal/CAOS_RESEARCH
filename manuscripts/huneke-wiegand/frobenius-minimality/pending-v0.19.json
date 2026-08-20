@@ -6,6 +6,11 @@
   "source_doi": "10.5281/zenodo.22030743",
   "source_version": "0.18",
   "version": "0.19",
-  "state": "draft",
-  "reserved_utc": "2026-08-20T15:14:25Z"
+  "state": "uploaded",
+  "reserved_utc": "2026-08-20T15:14:25Z",
+  "uploaded_utc": "2026-08-20T15:32:29Z",
+  "filename": "huneke-wiegand-frobenius-minimality-v0.19.pdf",
+  "bytes": 741461,
+  "md5": "0ddc07fc56b07490e66a9b1967c6a0d0",
+  "sha256": "ebd4d3294cf1dd6fdeccf8902e93399a6617d661dd7421d9dd260278670f3a15"
 }

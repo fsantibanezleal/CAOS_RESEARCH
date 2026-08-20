@@ -1,8 +1,7 @@
 # Claim audit - manuscript v0.19
 
-Date: 2026-08-20. Publication status: prepublication candidate at reserved Zenodo draft
-`22031481`, DOI `10.5281/zenodo.22031481`. No file has been uploaded and no publication action has
-been taken at this gate.
+Date: 2026-08-20. Publication status: exact one-file candidate uploaded to Zenodo draft
+`22031481`, DOI `10.5281/zenodo.22031481`. The draft remains unpublished at this gate.
 
 ## Claim-to-evidence matrix
 
@@ -20,7 +19,7 @@ been taken at this gate.
 | rejected attempts | two budget artifacts plus recorded Hilbert, serialization, and CAS defects | PASS; each is retained or disclosed as non-evidence and excluded from the final aggregates |
 | scope | EXP-032 verdict and manuscript scope section | PASS; free-module ranks and shifts are complete, but differential matrices and the full resolution of `C_p` remain open |
 | manuscript split decision | EXP-032 preflight and verdict | PASS; this theorem completes the existing cubic-colon narrative and belongs in the main manuscript rather than a third paper |
-| reserved publication identity | Zenodo draft `22031481`, metadata JSON, and page-one block | PASS before upload; version, DOI, concept DOI, date, CC BY 4.0, sole author, and sole ORCID agree |
+| reserved publication identity | Zenodo draft `22031481`, metadata JSON, and page-one block | PASS; version, DOI, concept DOI, date, CC BY 4.0, sole author, and sole ORCID agree |
 
 ## Evidence identities
 
@@ -64,10 +63,19 @@ differential matrices and not the full minimal resolution of the conductor speci
   scope, and references;
 - sole-author and ORCID audit: PASS; Felipe Santibanez-Leal is the sole author and
   `0000-0002-0150-3246` is the sole ORCID; no machine authorship or coauthorship appears;
-- source standards, repository structure, Ruff, tests, full pipeline, and artifact audit: PENDING;
-- exact Zenodo draft metadata and one-file upload validation: PENDING;
+- source standards, repository structure, Ruff, tests, full pipeline, and artifact audit: PASS;
+  all guards, Ruff, 60 tests, pipeline regeneration, and manifest/artifact consistency pass;
+- exact Zenodo draft metadata and one-file upload validation: PASS; draft `22031481` is still a
+  draft with version `0.19`, the expected title, one creator and ORCID, CC BY 4.0, open access,
+  and exactly one completed file named `huneke-wiegand-frobenius-minimality-v0.19.pdf`, with
+  741,461 bytes and MD5 `0ddc07fc56b07490e66a9b1967c6a0d0`;
 - publication, concept-latest check, and fresh unauthenticated download: PENDING.
 
 The first attempted insertion of the v0.19 theorem lost LaTeX command backslashes during patch
 transport and failed before producing a candidate PDF. The source block was replaced, and only
 the subsequently stable two-pass build and rendered PDF are admitted as publication evidence.
+The first file-registration request was rejected because PowerShell collapsed a one-element JSON
+array; the corrected registration then exposed a local PowerShell web-client null reference before
+body transfer. The registered slot remained empty until the same committed PDF was transferred
+and committed through a separate HTTP client. Only the final server-reported file and checksum
+gate is admitted as upload evidence.

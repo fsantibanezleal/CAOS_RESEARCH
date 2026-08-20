@@ -3,7 +3,8 @@
 `main.tex` is the version 0.19 candidate of the CAOS Research preprint; version 0.18 and all
 earlier versions remain frozen. Version 0.19 adds the EXP-032 complete graded Betti polynomial of
 the cubic-colon quotient. The reversible Zenodo draft is reserved at DOI
-`10.5281/zenodo.22031481`; no file has been uploaded or published. Version 0.18 adds the EXP-031
+`10.5281/zenodo.22031481`; the exact one-file draft gate passes, but it is not yet published.
+Version 0.18 adds the EXP-031
 integral degree-seven contraction, proves
 `beta_(3,7)=0`, and completes the third homological row over every field. It passed the complete
 claim/build/render, authenticated upload, publication, concept-latest, and fresh-download workflow
@@ -145,7 +146,7 @@ Zenodo identifiers:
 - version 0.16 DOI: `10.5281/zenodo.22029468` (published and fresh-download verified)
 - version 0.17 DOI: `10.5281/zenodo.22030167` (published and fresh-download verified)
 - version 0.18 DOI: `10.5281/zenodo.22030743` (published and fresh-download verified)
-- version 0.19 DOI: `10.5281/zenodo.22031481` (reserved draft; no upload or publication)
+- version 0.19 DOI: `10.5281/zenodo.22031481` (exact one-file draft passes; unpublished)
 - licence: CC BY 4.0
 
 Evidence sources are EXP-001 through EXP-032 under
@@ -423,7 +424,7 @@ Version 0.18 public-file verification:
 Version 0.19 candidate gate:
 
 - reserved draft: record `22031481`, DOI `10.5281/zenodo.22031481`, concept DOI
-  `10.5281/zenodo.21763582`; no file uploaded and no publication action taken
+  `10.5281/zenodo.21763582`; exact one-file upload passes and no publication action has been taken
 - source record: immutable published v0.18 record `22030743`, verified concept-latest before the
   new-version draft was created
 - claim, two-pass warning-free build, PDF metadata/extraction, and all-page 150-DPI rendered
@@ -432,6 +433,8 @@ Version 0.19 candidate gate:
 - bytes: `741461`
 - MD5: `0ddc07fc56b07490e66a9b1967c6a0d0`
 - SHA-256: `ebd4d3294cf1dd6fdeccf8902e93399a6617d661dd7421d9dd260278670f3a15`
-- sole authorship, sole ORCID, version, DOI, concept DOI, CC BY 4.0, attribution, and scope gates
-  pass; repository gates, exact upload, publication, concept-latest, and fresh-download gates
-  remain pending
+- sole authorship, sole ORCID, version, DOI, concept DOI, CC BY 4.0, attribution, scope, repository,
+  and exact draft-upload gates pass; publication, concept-latest, and fresh-download gates remain
+  pending
+- the draft contains exactly one completed file named
+  `huneke-wiegand-frobenius-minimality-v0.19.pdf`, whose bytes and MD5 match the committed PDF

@@ -833,3 +833,9 @@ The exact candidate is 741,461 bytes with MD5
 reconciled 13 previously stale experiment-registry entries, including EXP-021--032. Reversible
 Zenodo draft `22031481`, DOI `10.5281/zenodo.22031481`, remains empty and unpublished. The next
 gate is to commit and push this exact payload before authenticated upload and draft validation.
+
+The committed candidate was uploaded to draft `22031481` and the server reports exactly one
+completed file with the expected filename, 741,461 bytes, and MD5
+`0ddc07fc56b07490e66a9b1967c6a0d0`. Version, title, sole creator/ORCID, CC BY 4.0, open access,
+and the v0.19 description also match. Publication remains deliberately pending until this
+reversible checkpoint is committed and pushed.

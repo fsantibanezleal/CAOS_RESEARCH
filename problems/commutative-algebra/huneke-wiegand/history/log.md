@@ -1188,3 +1188,15 @@
   Pipeline regeneration reconciled 13 previously absent experiment-registry entries.
 - Zenodo draft `22031481`, DOI `10.5281/zenodo.22031481`, is reserved but still empty and
   unpublished. Exact upload/draft validation is the next reversible gate under HWB-050.
+
+## 2026-08-20 - manuscript v0.19 exact draft upload validated
+
+- Draft `22031481` reports version `0.19`, the expected title, one creator with the sole ORCID,
+  CC BY 4.0, open access, and the complete v0.19 description.
+- It contains exactly one completed file named
+  `huneke-wiegand-frobenius-minimality-v0.19.pdf`: 741,461 bytes with MD5
+  `0ddc07fc56b07490e66a9b1967c6a0d0`, matching commit `1318854` exactly.
+- A rejected one-element JSON registration and a local web-client null reference are recorded as
+  client failures before the final server-side file gate; neither changed the committed PDF.
+- The draft remains unpublished. This reversible upload checkpoint must be committed and pushed
+  before publication.
