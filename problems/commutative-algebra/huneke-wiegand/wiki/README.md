@@ -435,3 +435,6 @@ beta_(3,j)=0 otherwise.
 This completes the third row, not the remaining higher rows, full Betti table, or full resolution.
 The next efficient path is to combine the complete rows with duality and the known extremal data
 to search for whole diagonal recurrences.
+
+The theorem is included in the 42-page main manuscript v0.18, published and fresh-download
+verified at DOI `10.5281/zenodo.22030743`. The public artifact matches the committed PDF exactly.

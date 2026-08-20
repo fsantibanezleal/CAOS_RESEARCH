@@ -1,7 +1,7 @@
 # Claim audit - manuscript v0.18
 
-Date: 2026-08-20. Publication status: DOI reserved; upload and publication are blocked until every
-prepublication gate below passes.
+Date: 2026-08-20. Publication status: published and fresh-download verified at DOI
+`10.5281/zenodo.22030743`.
 
 ## Claim-to-evidence matrix
 
@@ -60,7 +60,9 @@ resolution, or classify arbitrary Huneke--Wiegand counterexamples.
 - exact Zenodo draft metadata/file validation: PASS; draft `22030743` reports version `0.18`, the
   reserved DOI, one creator with the sole ORCID, the v0.18 description, and exactly one committed
   file with the expected filename, 725,554 bytes, and MD5;
-- publication, concept-latest check, and fresh unauthenticated download: PENDING.
+- publication, concept-latest check, and fresh unauthenticated download: PASS; record `22030743`
+  is public and concept-latest, and a new download independently matches the committed 725,554-byte
+  PDF by MD5 and SHA-256.
 
-Publication is now authorized by the completed prepublication and exact-draft gates. The public
-concept-latest and fresh-download gates remain mandatory after publication.
+All publication gates pass. The immutable v0.18 artifact retains the stated scope: complete third
+row, not a full presentation-ring resolution or a general classification theorem.

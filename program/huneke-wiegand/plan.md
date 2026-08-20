@@ -762,3 +762,10 @@ preserved as invalid non-evidence because it compared cells in different offset 
 HWB-045 is done and HWB-047 opens an in-place manuscript v0.18 and Zenodo gate. A separate
 manuscript remains deferred; after publication, the next research route should use complete-row
 data plus duality to derive whole diagonal recurrences before any raw full-resolution sweep.
+
+Manuscript v0.18 is PUBLISHED and fresh-download verified at DOI
+`10.5281/zenodo.22030743`. Its 42 pages passed the warning-free two-pass build and complete rendered
+inspection; public metadata has one creator and the sole ORCID, record `22030743` is concept-latest,
+and the public 725,554-byte PDF matches Git by MD5 and SHA-256. HWB-047 is done and HWB-048 opens
+the separate-PR research promotion gate. The scoped CAOS_MANAGE ledger remains deferred while that
+checkout contains unrelated staged work.

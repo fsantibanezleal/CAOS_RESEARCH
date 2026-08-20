@@ -2,9 +2,10 @@
 
 `main.tex` is version 0.18 of the CAOS Research preprint; version 0.17 and all earlier versions
 remain frozen. Version 0.18 adds the EXP-031 integral degree-seven contraction, proves
-`beta_(3,7)=0`, and completes the third homological row over every field. DOI
-`10.5281/zenodo.22030743` is reserved; upload and publication remain gated on complete
-claim/build/render validation. Version 0.17 passed the complete claim/build/render, authenticated
+`beta_(3,7)=0`, and completes the third homological row over every field. It passed the complete
+claim/build/render, authenticated upload, publication, concept-latest, and fresh-download workflow
+and is published at DOI `10.5281/zenodo.22030743`. Version 0.17 passed the complete
+claim/build/render, authenticated
 upload, publication, concept-latest, and fresh-download workflow and is published at DOI
 `10.5281/zenodo.22030167`. Version 0.16 passed the complete claim/build/render, authenticated upload,
 publication, concept-latest, and fresh-download workflow and is published at DOI
@@ -125,7 +126,7 @@ Zenodo identifiers:
 - version 0.15 DOI: `10.5281/zenodo.22016550` (published and fresh-download verified)
 - version 0.16 DOI: `10.5281/zenodo.22029468` (published and fresh-download verified)
 - version 0.17 DOI: `10.5281/zenodo.22030167` (published and fresh-download verified)
-- version 0.18 DOI: `10.5281/zenodo.22030743` (reserved; publication gated on QA)
+- version 0.18 DOI: `10.5281/zenodo.22030743` (published and fresh-download verified)
 - licence: CC BY 4.0
 
 Evidence sources are EXP-001 through EXP-031 under
@@ -379,7 +380,7 @@ Version 0.17 public-file verification:
   CC-BY-4.0 licence, filename, bytes, MD5, SHA-256, and v0.15/v0.16/v0.17 description addendum match
 - a fresh unauthenticated public download matches the committed PDF exactly
 
-Version 0.18 prepublication verification:
+Version 0.18 public-file verification:
 
 - reserved DOI: `10.5281/zenodo.22030743`; no upload or publication occurred before claim,
   two-pass build, metadata, authorship, and rendered-page QA
@@ -389,5 +390,7 @@ Version 0.18 prepublication verification:
 - all 42 pages passed final rendered inspection at 150 DPI; the final build has no warnings,
   unresolved references, overfull boxes, or underfull boxes
 - sole authorship, ORCID, version, DOI, concept DOI, CC BY 4.0, source, attribution, and scope gates
-  pass; the exact draft metadata and one-file upload also pass; publication, concept-latest, and
-  fresh-download gates remain pending
+  pass; the exact draft metadata and one-file upload also pass
+- the concept latest resolves to record `22030743`; the public title, version, sole author/ORCID,
+  CC BY 4.0 licence, filename, bytes, MD5, SHA-256, and v0.18 description addendum match
+- a fresh unauthenticated public download matches the committed PDF exactly

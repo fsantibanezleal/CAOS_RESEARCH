@@ -97,10 +97,11 @@
 | 2026-08-20 | published | published | PR #205 passed `guards` and `test` and merged EXP-030 plus v0.17 to `develop` at `5a1a645`; PR #206 passed all required checks and promoted the exact tested state to `main` at `4ec881a` |
 | 2026-08-20 | published | active | EXP-031 declared before implementation: test whether zero-vertex Morse matching and unit tetrahedral fillers prove `beta_(3,7)=0` integrally and complete the third homological row |
 | 2026-08-20 | active | confirmed | EXP-031 proves `beta_(3,7)=0` over every field by an integral zero-vertex matching and signed unit filler block; the complete third row is now known and manuscript v0.18 gate opened |
+| 2026-08-20 | confirmed | published | 42-page preprint v0.18 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.22030743`, became concept-latest, and matched a fresh unauthenticated public download exactly |
 
-Current state: **EXP-031 is confirmed and the manuscript v0.18 gate is active under HWB-047;
-EXP-030 and manuscript v0.17 are published and promoted; scoped management-ledger reconciliation
-remains deferred because CAOS_MANAGE is occupied by unrelated staged work**. For
+Current state: **EXP-031 and manuscript v0.18 are published; HWB-048 is active for research PR
+promotion; scoped management-ledger reconciliation remains deferred because CAOS_MANAGE is
+occupied by unrelated staged work**. For
 `H_p={a in G_p:a>=6p}`, integral relative homology has the
 free pair basis
 
@@ -165,6 +166,12 @@ The 40-page main manuscript v0.17 is public as record `22030167`, DOI
 HWB-044 is done; HWB-046 owns only the later scoped management mirror.
 PRs #205/#206 passed all required checks; research work, `develop`, and `main` share payload tree
 `33b044658401e9216705481ad627dea55dbdf754`.
+
+The 42-page main manuscript v0.18 is public as record `22030743`, DOI
+`10.5281/zenodo.22030743`, and is concept-latest. Its 725,554-byte fresh unauthenticated download
+has MD5 `558532167c4f2a39e03d1bcced9de18d` and SHA-256
+`0e40aa5ed4feb02209137c2982184a93cfd402ac03cc9d4aa6f9ba86ae4327b7`, exactly matching Git.
+HWB-047 is done; HWB-048 owns research promotion and the later scoped management mirror.
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.

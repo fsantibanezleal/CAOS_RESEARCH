@@ -1116,3 +1116,16 @@
   `e4bf2e0ae303e905efc9f985b239d059a5255b02d2ddc1d37abab5cc5cb2fc1f`.
 - HWB-045 is done. HWB-047 opens the existing-manuscript v0.18 and Zenodo new-version gate; higher
   rows, the full Betti table, and the full resolution remain open.
+
+## 2026-08-20 - manuscript v0.18 published
+
+- The adjacent EXP-031 theorem was incorporated in place; a separate manuscript remains deferred.
+- The 42-page PDF passed claim, warning-free two-pass build, all-page 150-DPI render, sole-author,
+  ORCID, metadata, and exact one-file draft gates before publication.
+- Zenodo record `22030743`, DOI `10.5281/zenodo.22030743`, is public and concept-latest under
+  concept DOI `10.5281/zenodo.21763582`.
+- A fresh unauthenticated 725,554-byte download matches Git exactly: MD5
+  `558532167c4f2a39e03d1bcced9de18d`, SHA-256
+  `0e40aa5ed4feb02209137c2982184a93cfd402ac03cc9d4aa6f9ba86ae4327b7`.
+- HWB-047 is done. HWB-048 opens the separate-PR research promotion gate; CAOS_MANAGE stays
+  untouched while occupied by unrelated staged diffusion work.

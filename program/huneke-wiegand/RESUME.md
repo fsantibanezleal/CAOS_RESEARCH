@@ -1,8 +1,9 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-20. Lifecycle: EXP-031 is CONFIRMED and the manuscript v0.18 gate is active under
-HWB-047. EXP-030 is CONFIRMED; manuscript v0.17 is published,
-fresh-download verified, and promoted through research PRs #205/#206. HWB-044 is done; HWB-046
+Updated: 2026-08-20. Lifecycle: EXP-031 is CONFIRMED; manuscript v0.18 is published and
+fresh-download verified at DOI `10.5281/zenodo.22030743`. HWB-047 is done and HWB-048 owns
+research promotion. EXP-030 and manuscript v0.17 were promoted through research PRs #205/#206;
+HWB-046
 owns only deferred CAOS_MANAGE ledger reconciliation because that checkout is occupied by
 unrelated staged diffusion work. The integral
 colon-Koszul theorem gives
@@ -64,6 +65,12 @@ The canonical exact profiles vanish at every offset for `p=4,5`; the smallest ca
 two characteristics. Canonical and independent unit-filler counts agree for `p=4,...,12`, and the
 arithmetic obligations pass through `p=300`. HWB-045 is done. Higher rows and the full resolution
 remain open.
+
+The 42-page manuscript v0.18 passed claim, two-pass warning-free build, all-page render,
+authorship, metadata, upload, and publication gates. Zenodo record `22030743` is concept-latest;
+its fresh unauthenticated 725,554-byte PDF has MD5 `558532167c4f2a39e03d1bcced9de18d`
+and SHA-256 `0e40aa5ed4feb02209137c2982184a93cfd402ac03cc9d4aa6f9ba86ae4327b7`,
+exactly matching Git. HWB-047 is done.
 
 The published baseline remains intact: EXP-026 and focused companion v0.02 are published and
 fresh-download verified at DOI `10.5281/zenodo.22002907`, and PRs #190/#191 plus CAOS_MANAGE PR
@@ -456,18 +463,21 @@ Published baseline:
 - v0.17 DOI `10.5281/zenodo.22030167`: complete cubic-colon idealization and degree-six third
   strand. The public 714,021-byte PDF has MD5 `4c7daffba7539f37ea4ecb6d52fad9d9` and SHA-256
   `480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640`.
+- v0.18 DOI `10.5281/zenodo.22030743`: integral degree-seven vanishing and complete third row. The
+  public 725,554-byte PDF has MD5 `558532167c4f2a39e03d1bcced9de18d` and SHA-256
+  `0e40aa5ed4feb02209137c2982184a93cfd402ac03cc9d4aa6f9ba86ae4327b7`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `22030167`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `22030743`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Complete the remaining HWB-046 management mirror only when CAOS_MANAGE is safely back on clean
-   `develop`; research promotion is already complete through PRs #205/#206.
+1. Complete HWB-048 by promoting the exact EXP-031 plus v0.18 state through separate research PRs
+   from work to `develop` and from `develop` to `main`, with required checks passing.
 2. When CAOS_MANAGE is safely back on clean `develop`, reconcile and promote only the scoped
-   publication ledger without touching unrelated work.
-3. Complete HWB-047: expand the existing manuscript in place to v0.18 with the EXP-031 integral
-   contraction and complete third row, then run all claim/build/render/authorship and Zenodo gates.
+   publication ledger for the deferred v0.16--v0.18 rounds without touching unrelated work.
+3. After promotion, open a declaration-first experiment on whether the complete second and third
+   rows, canonical-module duality, and the known extremal rows force whole diagonal recurrences.
 
 ### Lenses ledger
 
