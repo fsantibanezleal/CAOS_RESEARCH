@@ -1,0 +1,171 @@
+{
+ "reflection": {
+  "equal": 11975,
+  "unequal": 204,
+  "partner_beyond_catalog": 667,
+  "abs_diff_gt1_violations": 0,
+  "equal_fraction_within_catalog": 0.9832,
+  "examples_unequal": [
+   [
+    [
+     0,
+     2
+    ],
+    1,
+    2
+   ],
+   [
+    [
+     0,
+     -1
+    ],
+    1,
+    "partner tau>5"
+   ],
+   [
+    [
+     0,
+     0,
+     0,
+     1
+    ],
+    2,
+    3
+   ],
+   [
+    [
+     0,
+     -2
+    ],
+    2,
+    1
+   ],
+   [
+    [
+     0,
+     4
+    ],
+    2,
+    3
+   ],
+   [
+    [
+     0,
+     3
+    ],
+    2,
+    3
+   ],
+   [
+    [
+     0,
+     -3
+    ],
+    3,
+    2
+   ],
+   [
+    [
+     0,
+     0,
+     0,
+     2
+    ],
+    3,
+    4
+   ]
+  ]
+ },
+ "negation": {
+  "equal": 10640,
+  "unequal": 542,
+  "partner_beyond_catalog": 1664,
+  "abs_diff_gt1_violations": 0,
+  "equal_fraction_within_catalog": 0.9515,
+  "examples_unequal": [
+   [
+    [
+     0,
+     0,
+     1
+    ],
+    1,
+    2
+   ],
+   [
+    [
+     0,
+     2
+    ],
+    1,
+    2
+   ],
+   [
+    [
+     0,
+     -1
+    ],
+    1,
+    "partner tau>5"
+   ],
+   [
+    [
+     0,
+     0,
+     -1
+    ],
+    2,
+    1
+   ],
+   [
+    [
+     0,
+     0,
+     0,
+     1
+    ],
+    2,
+    3
+   ],
+   [
+    [
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    2,
+    3
+   ],
+   [
+    [
+     0,
+     0,
+     2
+    ],
+    2,
+    3
+   ],
+   [
+    [
+     1,
+     2,
+     1
+    ],
+    2,
+    3
+   ]
+  ]
+ },
+ "committed_counterexamples": {
+  "2x": [
+   1,
+   2
+  ],
+  "x^2": [
+   1,
+   2
+  ]
+ }
+}
