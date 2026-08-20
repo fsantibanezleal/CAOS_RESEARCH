@@ -96,11 +96,11 @@
 | 2026-08-20 | confirmed | published | 40-page preprint v0.17 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.22030167`, and matched a fresh unauthenticated public download exactly |
 | 2026-08-20 | published | published | PR #205 passed `guards` and `test` and merged EXP-030 plus v0.17 to `develop` at `5a1a645`; PR #206 passed all required checks and promoted the exact tested state to `main` at `4ec881a` |
 | 2026-08-20 | published | active | EXP-031 declared before implementation: test whether zero-vertex Morse matching and unit tetrahedral fillers prove `beta_(3,7)=0` integrally and complete the third homological row |
+| 2026-08-20 | active | confirmed | EXP-031 proves `beta_(3,7)=0` over every field by an integral zero-vertex matching and signed unit filler block; the complete third row is now known and manuscript v0.18 gate opened |
 
-Current state: **EXP-031 is active with no result claimed; EXP-030 and manuscript v0.17 are
-published and promoted through the research repository; HWB-046 remains active only for scoped
-management-ledger reconciliation, deferred because CAOS_MANAGE is occupied by unrelated staged
-work**. For
+Current state: **EXP-031 is confirmed and the manuscript v0.18 gate is active under HWB-047;
+EXP-030 and manuscript v0.17 are published and promoted; scoped management-ledger reconciliation
+remains deferred because CAOS_MANAGE is occupied by unrelated staged work**. For
 `H_p={a in G_p:a>=6p}`, integral relative homology has the
 free pair basis
 
@@ -126,8 +126,9 @@ preserved as `INCONCLUSIVE_BUDGET`; it is non-evidence, and the corrected endpoi
 passes the unchanged obligations. The 36-page main manuscript v0.16 is public as record
 `22029468`, DOI `10.5281/zenodo.22029468`; its 691,569-byte fresh download has SHA-256
 `4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`. HWB-041 is done. That
-previously promoted snapshot remains frozen; EXP-030 closes `beta_(3,6)` below, while
-`beta_(3,7)`, the rest of the third row, and the full Betti table remain open under HWB-035.
+previously promoted snapshot remains frozen; EXP-030 closes `beta_(3,6)` below, and EXP-031 then
+closes `beta_(3,7)` and the third row. Higher rows and the full Betti table remain open under
+HWB-035.
 CAOS_MANAGE was not edited because its checkout is
 occupied on `task/difusion-rename-all-explorations-20260820` with extensive staged diffusion
 renames; the v0.16 management mirror must be reconciled only after that checkout is safely back on
@@ -145,7 +146,17 @@ Its offset support is `[3p+4,29p-5] minus ([6p-3,6p+1] union [9p-3,9p])`, of siz
 the integral homology is free. Complete profiles at `p=4,5,6` total `704,1560,2912`; independent
 coefficient profiles, selected rational ranks, and the symbolic certificate pass. The first audit
 encoding that inserted forbidden offset `8p-1` is preserved as invalid non-evidence.
-`beta_(3,7)` and the remainder of the table stay open.
+EXP-031 then proves `beta_(3,7)=0` integrally and completes the third row:
+
+```text
+beta_(3,4)=p(5p-1)(500p^2-440p+47)/2,
+beta_(3,5)=4p(8p-1),
+beta_(3,6)=8p(7p^2-12p+2)/3,
+beta_(3,7)=0,
+beta_(3,j)=0 otherwise.
+```
+
+The remaining higher rows and the full resolution stay open.
 
 The 40-page main manuscript v0.17 is public as record `22030167`, DOI
 `10.5281/zenodo.22030167`. Its 714,021-byte fresh unauthenticated download has MD5

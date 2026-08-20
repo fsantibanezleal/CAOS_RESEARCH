@@ -412,6 +412,26 @@ with `26p-17` offsets and free integral homology. Complete profiles at `p=4,5,6`
 idealization audit matches every coefficient and selected rational ranks. The first audit that
 inserted forbidden offset `8p-1` is preserved as invalid non-evidence.
 
-This theorem determines `beta_(3,6)`, not `beta_(3,7)`, the complete third row, or the full
-resolution. The next efficient route is the next strand of the canonical-idealization resolution
-and its comparison map.
+EXP-031 closes the last regularity-allowed entry in the third row. In total degree seven,
+`E_(p,4)` and `E_(p,5)` are full, while `E_(p,3)` has the single hole `6p-1`. Boolean matching on
+vertex zero leaves only triangles at that residual hole. Each such triangle receives a
+same-offset tetrahedral filler by adjoining one of `1,2,3,4` outside the triangle; its reduced
+boundary has that triangle as its unique critical face with coefficient `+1` or `-1`. Hence
+
+```text
+beta_(3,7)=0
+```
+
+integrally for every `p>=4`. The complete third row over every field is
+
+```text
+beta_(3,4)=p(5p-1)(500p^2-440p+47)/2,
+beta_(3,5)=4p(8p-1),
+beta_(3,6)=8p(7p^2-12p+2)/3,
+beta_(3,7)=0,
+beta_(3,j)=0 otherwise.
+```
+
+This completes the third row, not the remaining higher rows, full Betti table, or full resolution.
+The next efficient path is to combine the complete rows with duality and the known extremal data
+to search for whole diagonal recurrences.

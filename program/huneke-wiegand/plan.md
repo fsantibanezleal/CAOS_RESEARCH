@@ -748,3 +748,17 @@ tetrahedron with that triangle as its unique unmatched face. EXP-031 tests wheth
 give a signed identity block, proving `beta_(3,7)=0` integrally for every `p>=4`. Complete small
 profiles, a separately encoded filler audit, adversarial controls, and a written all-parameter
 proof are mandatory. No result or manuscript v0.18 gate is claimed at declaration.
+
+EXP-031 is CONFIRMED. The total-degree-seven relative complex admits an integral zero-vertex
+matching. Its only critical triangles have residual `6p-1`; every one receives a same-offset
+tetrahedral filler by adjoining a missing vertex from `{1,2,3,4}`. The filler has exactly one
+critical face and unit boundary coefficient, so the reduced boundary onto critical triangles is
+surjective over `Z`. Thus `beta_(3,7)=0` over every field and the third homological row is complete.
+
+The exact profile campaign gives zero at every offset for `p=4` over `GF(2)` and `GF(1000003)` and
+for `p=5` over `GF(2)`. Canonical and independently encoded filler audits agree for
+`p=4,...,12`; arithmetic obligations pass through `p=300`. The first tuple-only filler key is
+preserved as invalid non-evidence because it compared cells in different offset complexes.
+HWB-045 is done and HWB-047 opens an in-place manuscript v0.18 and Zenodo gate. A separate
+manuscript remains deferred; after publication, the next research route should use complete-row
+data plus duality to derive whole diagonal recurrences before any raw full-resolution sweep.
