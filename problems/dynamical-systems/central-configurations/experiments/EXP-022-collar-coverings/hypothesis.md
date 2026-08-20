@@ -107,3 +107,16 @@ remain valid for their boxes but the definitive artifact is the rerun.
 
 m1 exhausted its declared 6 h budget with 22 boxes on the stack (zero
 depth-cap failures). NEW declaration: ONE resume, fresh 3 h budget.
+
+## Addendum (2026-08-20f): blanket resume policy + pow3 parked
+
+The budget exhaustions of fa1, bicorner-same, fa2b, m1, and cb1 all left
+ordinary DFS subtree stacks (depths 1-28, no depth-cap failures): they are
+contention economics (up to ten concurrent coverings plus two 10-thread
+gfan runs), not mathematics. BLANKET DECLARATION: each remaining covering
+continues under resumes up to a per-chart TOTAL of 24 h wall clock,
+stopping early on an empty stack or on any depth-cap failure (which gets
+the postprocess + investigation flow). To free threads, EXP-005 pow3 is
+PARKED (killed; it has never reached its first checkpoint across four
+launches; pow2 keeps running from its checkpoint and remains the n = 6
+instrument).
