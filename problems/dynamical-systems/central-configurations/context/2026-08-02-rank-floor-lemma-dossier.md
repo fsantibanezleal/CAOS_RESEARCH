@@ -678,3 +678,45 @@ the same blow-up. Implementation order: F_A2 with the far-tube DISCARDED
 (boxes inside {CS < 1/16 and CX < 1/16} deferred), then the far-tube
 blow-up chart. After these and the corner tubes (part d), the atlas is
 COMPLETE: every point of the open stratum lies in a certified region.
+
+## THE ATLAS AUDIT (2026-08-20, round 33)
+
+The open gauged stratum (u, p > 0, f = v - q != 0, no collisions) is
+covered by the following certified-or-running chart coverings plus their
+Klein-group images (swap = piece 9d, mirror = piece 9e), with exactly
+THREE remaining mini-charts, each a declared discard of a running chart:
+
+Bounded regions (all coordinates within [1/4, 3] / [-3, 3]):
+  core (CERTIFIED), band (CERTIFIED, traps), tube w in [7/32, 3] both
+  angle charts (CERTIFIED), tube extension w in [1/8, 7/32] (chart R
+  CERTIFIED, L running), ulow u in [0, 1/4] (CERTIFIED; plow = swap),
+  uplow u, p in [0, 1/4] (running), deep tube w in [0, 1/8] (verified,
+  queued), cb1 B-at-body-1 with A bounded (running; the other three
+  single corners = Klein images), bicorner-opp A-at-2 B-at-1 (running;
+  self-paired), bicorner-same both-at-1 (running; body-2 version =
+  mirror).
+Outer regions:
+  fa1 A-far B-bounded (resumed; B-far A-bounded = swap), fa2b both-far
+  ratio chart (running; r > 1 = swap), fartube pairs-merge-at-infinity
+  blow-up (verified, queued; seam proven with exact constants), cb1f
+  corner-times-far (verified, queued; Klein images free).
+
+The three remaining mini-charts (all discards of the above, declared):
+  M1. The quadruple cluster at an axis body: bicorner-same's discard
+      {CSc < 1/16} u {CXc < 1/16} (A+ meets B+ near body 1). Structure:
+      the fa2b-to-fartube ratio blow-up pattern INSIDE bicorner-same
+      coordinates; the generated-polynomial machinery applies verbatim.
+  M2. The collinear quadruple corner: deep's discard {w < 1/64,
+      rho < 1/32} (both pairs collapse onto the axis while merged: the
+      collinear limit). Structure: polar blow-up over (2w, rho).
+  M3. The vertical far-corner: fartube's discard {CX^ < 1/16} (A+ meets
+      B- at vertical infinity: the 2+2+2 three-cluster hierarchy).
+      Structure: cluster chart at eta = 1/v -> 0.
+
+When M1-M3 are certified, every point of the open stratum lies in a chart
+whose covering certifies the ladder there (rank >= 3, or a trap: R_1
+empty and R_2 inside a smooth 2-manifold). With lemma pieces 1-9e and the
+ball certificates, the k = 3 chain step then holds on the WHOLE stratum,
+and the chain k = 0, 1, 2, 3, 4 is COMPLETE: the stratum theorem follows.
+Per the standing rule, the exact statement wording goes to Felipe FIRST
+at that moment, before any manuscript or Zenodo step.
