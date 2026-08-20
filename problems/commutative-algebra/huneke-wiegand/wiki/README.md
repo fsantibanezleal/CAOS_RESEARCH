@@ -469,7 +469,6 @@ quotient `P_p/Q_p` and the cubic mapping-cone comparison maps still prevent this
 from determining the full resolution of `C_p`. Those comparison-map ranks are now the strongest
 target: the colon side of the mapping cone is no longer an unknown.
 
-The theorem is incorporated in the 43-page main-manuscript v0.19 candidate. Its local claim,
-build, rendered-page, metadata, sole-author, repository-test, pipeline, and artifact gates pass.
-Zenodo DOI `10.5281/zenodo.22031481` is reserved, but the draft remains empty and unpublished
-until the exact committed PDF passes the authenticated one-file upload check.
+The theorem is incorporated in the 43-page main manuscript v0.19, published and fresh-download
+verified at DOI `10.5281/zenodo.22031481`. The public record is concept-latest, and its exact PDF
+matches the committed artifact by MD5 and SHA-256.

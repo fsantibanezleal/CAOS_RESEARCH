@@ -1,10 +1,10 @@
 # Huneke-Wiegand extensions - session handoff
 
 Updated: 2026-08-20. Lifecycle: EXP-032 is CONFIRMED for the complete graded Betti polynomial and
-free-module shape of the cubic-colon quotient. The 43-page v0.19 candidate passes claim,
-two-pass build, all-page render, metadata, sole-authorship, tests, pipeline, artifact, and exact
-one-file Zenodo draft gates; HWB-050 now owns publication and fresh-download verification of
-draft `22031481`.
+free-module shape of the cubic-colon quotient. The 43-page v0.19 passed claim, two-pass build,
+all-page render, metadata, sole-authorship, tests, pipeline, artifact, upload, publication, and
+fresh-download gates. It is public and concept-latest at DOI `10.5281/zenodo.22031481`; HWB-050
+is done and HWB-051 owns checked research promotion.
 EXP-031 is CONFIRMED; manuscript v0.18 is published and
 fresh-download verified at DOI `10.5281/zenodo.22030743`. HWB-047 is done and HWB-048 owns
 only deferred CAOS_MANAGE ledger reconciliation; research PRs #209/#210 passed all checks and
@@ -507,9 +507,9 @@ Published baseline:
 
 1. When CAOS_MANAGE is safely back on clean `develop`, reconcile and promote only the scoped
    publication ledger for the deferred v0.16--v0.18 rounds without touching unrelated work.
-2. Complete HWB-050: publish the already validated one-file Zenodo draft `22031481`, confirm it is
-   concept-latest, and verify a fresh unauthenticated download by MD5 and SHA-256.
-3. After publication, declare a mapping-cone comparison experiment: use the complete colon Betti
+2. Complete HWB-051: promote the exact tested and published EXP-032 plus v0.19 payload through a
+   work-to-`develop` PR and then a `develop`-to-`main` PR, with required checks passing.
+3. Declare a mapping-cone comparison experiment: use the complete colon Betti
    table to isolate the unknown ranks against `P_p/Q_p`; do not claim a full `C_p` resolution from
    colon data alone.
 

@@ -1,7 +1,7 @@
 # Claim audit - manuscript v0.19
 
-Date: 2026-08-20. Publication status: exact one-file candidate uploaded to Zenodo draft
-`22031481`, DOI `10.5281/zenodo.22031481`. The draft remains unpublished at this gate.
+Date: 2026-08-20. Publication status: published and fresh-download verified at DOI
+`10.5281/zenodo.22031481`.
 
 ## Claim-to-evidence matrix
 
@@ -69,7 +69,9 @@ differential matrices and not the full minimal resolution of the conductor speci
   draft with version `0.19`, the expected title, one creator and ORCID, CC BY 4.0, open access,
   and exactly one completed file named `huneke-wiegand-frobenius-minimality-v0.19.pdf`, with
   741,461 bytes and MD5 `0ddc07fc56b07490e66a9b1967c6a0d0`;
-- publication, concept-latest check, and fresh unauthenticated download: PENDING.
+- publication, concept-latest check, and fresh unauthenticated download: PASS; record `22031481`
+  is public and concept-latest at version `0.19`, and a new unauthenticated download matches the
+  committed 741,461-byte PDF by MD5 and SHA-256.
 
 The first attempted insertion of the v0.19 theorem lost LaTeX command backslashes during patch
 transport and failed before producing a candidate PDF. The source block was replaced, and only
@@ -79,3 +81,7 @@ array; the corrected registration then exposed a local PowerShell web-client nul
 body transfer. The registered slot remained empty until the same committed PDF was transferred
 and committed through a separate HTTP client. Only the final server-reported file and checksum
 gate is admitted as upload evidence.
+
+All publication gates pass. The immutable v0.19 artifact determines the complete ordinary graded
+Betti polynomial and free-module rank/shift shape of the cubic-colon quotient. It does not claim
+explicit differential matrices or the full conductor-special-fiber resolution.

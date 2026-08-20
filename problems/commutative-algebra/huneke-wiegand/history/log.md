@@ -1200,3 +1200,15 @@
   client failures before the final server-side file gate; neither changed the committed PDF.
 - The draft remains unpublished. This reversible upload checkpoint must be committed and pushed
   before publication.
+
+## 2026-08-20 - manuscript v0.19 published
+
+- Zenodo record `22031481`, DOI `10.5281/zenodo.22031481`, is public and concept-latest under
+  concept DOI `10.5281/zenodo.21763582`.
+- Public metadata confirms version `0.19`, one creator with the sole ORCID, CC BY 4.0, open access,
+  and exactly one 741,461-byte file.
+- A fresh unauthenticated download matches Git exactly: MD5
+  `0ddc07fc56b07490e66a9b1967c6a0d0`, SHA-256
+  `ebd4d3294cf1dd6fdeccf8902e93399a6617d661dd7421d9dd260278670f3a15`.
+- HWB-050 is done. HWB-051 opens separate-PR promotion through `develop` and `main`; the occupied
+  CAOS_MANAGE checkout remains untouched.

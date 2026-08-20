@@ -1,9 +1,10 @@
 # Frobenius-minimality preprint
 
-`main.tex` is the version 0.19 candidate of the CAOS Research preprint; version 0.18 and all
+`main.tex` is version 0.19 of the CAOS Research preprint; version 0.18 and all
 earlier versions remain frozen. Version 0.19 adds the EXP-032 complete graded Betti polynomial of
-the cubic-colon quotient. The reversible Zenodo draft is reserved at DOI
-`10.5281/zenodo.22031481`; the exact one-file draft gate passes, but it is not yet published.
+the cubic-colon quotient. It passed the complete claim/build/render, authenticated upload,
+publication, concept-latest, and fresh-download workflow and is published at DOI
+`10.5281/zenodo.22031481`.
 Version 0.18 adds the EXP-031
 integral degree-seven contraction, proves
 `beta_(3,7)=0`, and completes the third homological row over every field. It passed the complete
@@ -146,7 +147,7 @@ Zenodo identifiers:
 - version 0.16 DOI: `10.5281/zenodo.22029468` (published and fresh-download verified)
 - version 0.17 DOI: `10.5281/zenodo.22030167` (published and fresh-download verified)
 - version 0.18 DOI: `10.5281/zenodo.22030743` (published and fresh-download verified)
-- version 0.19 DOI: `10.5281/zenodo.22031481` (exact one-file draft passes; unpublished)
+- version 0.19 DOI: `10.5281/zenodo.22031481` (published and fresh-download verified)
 - licence: CC BY 4.0
 
 Evidence sources are EXP-001 through EXP-032 under
@@ -421,10 +422,11 @@ Version 0.18 public-file verification:
   CC BY 4.0 licence, filename, bytes, MD5, SHA-256, and v0.18 description addendum match
 - a fresh unauthenticated public download matches the committed PDF exactly
 
-Version 0.19 candidate gate:
+Version 0.19 public-file verification:
 
-- reserved draft: record `22031481`, DOI `10.5281/zenodo.22031481`, concept DOI
-  `10.5281/zenodo.21763582`; exact one-file upload passes and no publication action has been taken
+- record `22031481`, DOI `10.5281/zenodo.22031481`, concept DOI
+  `10.5281/zenodo.21763582`; no upload or publication occurred before local QA and the exact
+  one-file draft gate
 - source record: immutable published v0.18 record `22030743`, verified concept-latest before the
   new-version draft was created
 - claim, two-pass warning-free build, PDF metadata/extraction, and all-page 150-DPI rendered
@@ -434,7 +436,8 @@ Version 0.19 candidate gate:
 - MD5: `0ddc07fc56b07490e66a9b1967c6a0d0`
 - SHA-256: `ebd4d3294cf1dd6fdeccf8902e93399a6617d661dd7421d9dd260278670f3a15`
 - sole authorship, sole ORCID, version, DOI, concept DOI, CC BY 4.0, attribution, scope, repository,
-  and exact draft-upload gates pass; publication, concept-latest, and fresh-download gates remain
-  pending
+  and exact draft-upload gates pass
 - the draft contains exactly one completed file named
   `huneke-wiegand-frobenius-minimality-v0.19.pdf`, whose bytes and MD5 match the committed PDF
+- record `22031481` is public and concept-latest at version `0.19`; public metadata and the sole
+  file match, and a fresh unauthenticated download matches the committed PDF by MD5 and SHA-256
