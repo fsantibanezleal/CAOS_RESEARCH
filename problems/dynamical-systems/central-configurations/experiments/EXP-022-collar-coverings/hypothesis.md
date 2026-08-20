@@ -80,3 +80,10 @@ stack (zero depth-cap failures; the widened 7/32 seed and CPU contention
 across eight concurrent coverings slowed it). Recorded as FAILED under
 the original declaration. NEW declaration: ONE resume from the last
 checkpoint, fresh 3 h budget, same depth cap and criteria.
+
+## Addendum (2026-08-20c): fa2b resume declaration
+
+fa2b exhausted its declared 12 h budget with 23 boxes on the stack (zero
+depth-cap failures; eight concurrent coverings shared the machine).
+Recorded as FAILED under the original declaration. NEW declaration: ONE
+resume from the last checkpoint, fresh 3 h budget, same criteria.
