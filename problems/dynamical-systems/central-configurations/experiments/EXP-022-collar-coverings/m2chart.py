@@ -1,9 +1,9 @@
 """EXP-022 mini-chart M2: the collinear quadruple corner.
 
-Blow-up of deep's corner {w < 1/64, rho < 1/32} (both pairs collapse onto
+Blow-up of deep's corner {w < 1/32, rho < 1/16} (both pairs collapse onto
 the axis while merged: the collinear limit): (2w, rho) = Rc (ct, st) with
 (ct, st) = ((1 - tt^2), 2 tt)/(1 + tt^2), tt in [0, 1] (first quadrant).
-Chart variables (Rc, tt, v, tau) in [0, 3/64] x [0, 1] x [-3, 3] x
+Chart variables (Rc, tt, v, tau) in [0, 3/32] x [0, 1] x [-3, 3] x
 [-1, 1]; two alpha-sign charts as in deep. Scaled positions:
 u = Rc uh, uh = (ct + st alpha)/2; p = Rc ph, ph = (ct - st alpha)/2;
 f = Rc st beta; cx = Rc CXd, CXd = sqrt(ct^2 + st^2 beta^2).
@@ -222,7 +222,7 @@ def make_discard(sgn):
 
 def main():
     resume = "--resume" in sys.argv
-    seed = [((F(0), F(3, 64)), (F(0), F(1)), (F(-3), F(3)), (F(-1), F(1)))]
+    seed = [((F(0), F(3, 32)), (F(0), F(1)), (F(-3), F(3)), (F(-1), F(1)))]
     for sgn in (1, -1):
         if not resume and not crosscheck(sgn):
             print("crosscheck FAILED, aborting")

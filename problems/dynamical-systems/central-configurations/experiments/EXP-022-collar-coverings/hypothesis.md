@@ -87,3 +87,23 @@ fa2b exhausted its declared 12 h budget with 23 boxes on the stack (zero
 depth-cap failures; eight concurrent coverings shared the machine).
 Recorded as FAILED under the original declaration. NEW declaration: ONE
 resume from the last checkpoint, fresh 3 h budget, same criteria.
+
+## Addendum (2026-08-20d): the deep/M2 boundary shift
+
+deep-R hit 13,354 GENUINE depth-cap failures concentrated in the sliver
+w in [1/64, 1/40], v ~ 3, tau ~ 1, rho ~ 1e-3: just OUTSIDE the declared
+M2 discard, where deep's rho^2 row scalings crush the rows (entries
+~1e-6) while the configurations approach the coincident-pairs structure
+(mA and mB columns merge as rho -> 0, so rank sits at exactly 3 and the
+tiny-entry minors cannot be certified at that conditioning). M2's joint
+Rc-rescaling is the right chart there. AMENDMENT (before any rerun): M2's
+region enlarges to Rc <= 3/32 and deep's corner discard widens to
+{w < 1/32, rho < 1/16}; the union argument is unchanged (the enlarged M2
+ball contains the enlarged discard square). deep reruns FRESH under the
+amended region with the original budgets; deep-R's 10,086 certificates
+remain valid for their boxes but the definitive artifact is the rerun.
+
+## Addendum (2026-08-20e): m1 resume declaration
+
+m1 exhausted its declared 6 h budget with 22 boxes on the stack (zero
+depth-cap failures). NEW declaration: ONE resume, fresh 3 h budget.

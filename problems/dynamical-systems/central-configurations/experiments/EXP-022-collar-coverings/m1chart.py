@@ -210,7 +210,7 @@ def main():
         entry_factory("iv"), entry_factory("dv"),
         HERE / "artifacts",
         "E:/_Datos/caos-research/central-configurations/EXP-022",
-        discard=discard, depth=44, budget=21600, resume=resume)
+        discard=discard, depth=44, budget=10800 if resume else 21600, resume=resume)
 
 if __name__ == "__main__":
     main()

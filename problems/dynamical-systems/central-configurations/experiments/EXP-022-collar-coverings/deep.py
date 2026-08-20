@@ -11,7 +11,7 @@ which cancels every wA^-3 and wB^-3 algebraically:
 Row scalings as in tube.py: (rho^2, rho^2, rho^2, rho^2, 1/rho^2, rho^2).
 Discards: {|v - 1| < 1/16} and {|v + 1| < 1/16} (both pairs near an axis
 body: bicorner-same and its mirror, widened to 7/32) and the quadruple
-corner {w < 1/64 and rho < 1/32} (all four pair bodies collapse onto the
+corner {w < 1/32 and rho < 1/16} (all four pair bodies collapse onto the
 axis: the collinear limit; its own chart, declared pending).
 """
 import sys
@@ -179,7 +179,7 @@ def discard(box):
         return True
     if vb[0] >= -1 - SIXT and vb[1] <= -1 + SIXT:
         return True
-    if wb[1] < F(1, 64) and rb[1] < F(1, 32):
+    if wb[1] < F(1, 32) and rb[1] < F(1, 16):
         return True                      # quadruple collinear corner
     return False
 
