@@ -61,3 +61,14 @@ budget exhaustion is a recorded FAILURE of that part; no silent extension.
 (new leading-order derivation, machine-verified before the run), then (c)
 ulow + swap identity, then (d) corners, (e) outer charts. Findings mirror
 to CAOS_MANAGE as CC-F33+ as they land.
+
+## Addendum (2026-08-20): fa1 resume declaration
+
+The fa1 covering exhausted its declared 12 h budget with 8 boxes left on
+the stack (zero depth-cap failures; 59,972 trap certificates made the run
+an order of magnitude costlier per box than the band). Per the standing
+rule this is recorded as a FAILED run under its original declaration. NEW
+declaration: ONE resume from the last checkpoint with a fresh 4 h budget,
+same depth cap 44, same success criterion (zero residual failures). If the
+resume also exhausts, the remaining boxes are investigated individually
+before any further declaration.
