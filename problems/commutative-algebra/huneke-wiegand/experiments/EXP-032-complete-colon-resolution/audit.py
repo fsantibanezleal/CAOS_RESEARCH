@@ -38,11 +38,19 @@ def polynomial_product(left: list[int], right: list[int]) -> list[int]:
     return output
 
 
+def binomial_row(n: int) -> list[int]:
+    row = [1]
+    for k in range(n):
+        row.append(row[-1] * (n - k) // (k + 1))
+    return row
+
+
 def audit_parameter(parameter: int, claimed: dict[str, object]) -> tuple[dict[str, object], dict[str, object]]:
     c = 2 * parameter - 2
     m = 8 * parameter
     total = c + m
-    alternating_binomial = [(-1) ** k * comb(c, k) for k in range(c + 1)]
+    low_binomials = binomial_row(c)
+    alternating_binomial = [(-1) ** k * value for k, value in enumerate(low_binomials)]
     numerator = polynomial_product([1, c, 1], alternating_binomial)
 
     # In degree a+1, minimality, regularity two, and the terminal-shift shape
@@ -52,19 +60,34 @@ def audit_parameter(parameter: int, claimed: dict[str, object]) -> tuple[dict[st
         linear[a] = (-1) ** a * numerator[a + 1]
     diagonal = [1] + [0] * c
     quadratic = [0] * c + [1]
-    koszul = [comb(m, t) for t in range(m + 1)]
+    koszul = binomial_row(m)
     full_diagonal = koszul
-    full_linear = polynomial_product(linear, koszul)
-    full_quadratic = polynomial_product(quadratic, koszul)
+    full_quadratic = [0] * c + koszul
+    full_numerator = polynomial_product(
+        [1, c, 1], [(-1) ** k * value for k, value in enumerate(binomial_row(total))]
+    )
+    full_linear = [0] * (total + 1)
+    for i in range(1, total):
+        diagonal_contribution = (
+            (-1) ** (i + 1) * full_diagonal[i + 1]
+            if i + 1 < len(full_diagonal)
+            else 0
+        )
+        quadratic_contribution = (
+            (-1) ** (i - 1) * full_quadratic[i - 1] if i >= 1 else 0
+        )
+        full_linear[i] = (-1) ** i * (
+            full_numerator[i + 1]
+            - diagonal_contribution
+            - quadratic_contribution
+        )
 
     observed_hashes = {
         "low_linear_hash": digest(linear),
         "full_diagonal_hash": digest(full_diagonal),
         "full_linear_hash": digest(full_linear),
         "full_quadratic_hash": digest(full_quadratic),
-        "hilbert_numerator_hash": digest(
-            polynomial_product([1, c, 1], [(-1) ** k * comb(total, k) for k in range(total + 1)])
-        ),
+        "hilbert_numerator_hash": digest(full_numerator),
     }
     comparisons = {
         name: observed == claimed[name] for name, observed in observed_hashes.items()
@@ -76,6 +99,9 @@ def audit_parameter(parameter: int, claimed: dict[str, object]) -> tuple[dict[st
         "claimed_hashes_match": all(comparisons.values()),
         "claimed_projective_dimension": claimed["projective_dimension"] == total,
         "claimed_regularity": claimed["regularity"] == 2,
+        "literal_small_koszul_convolution": (
+            parameter > 12 or full_linear == polynomial_product(linear, koszul)
+        ),
     }
     if not all(checks.values()):
         raise AssertionError((parameter, checks, comparisons))

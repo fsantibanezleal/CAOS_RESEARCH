@@ -38,6 +38,17 @@ def choose(n: int, k: int) -> int:
     return comb(n, k) if 0 <= k <= n else 0
 
 
+def binomial_row(n: int) -> list[int]:
+    row = [1]
+    for k in range(n):
+        row.append(row[-1] * (n - k) // (k + 1))
+    return row
+
+
+def row_value(row: list[int], k: int) -> int:
+    return row[k] if 0 <= k < len(row) else 0
+
+
 def write_json_atomic(path: Path, value: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".tmp")
@@ -57,12 +68,17 @@ def verify_premises() -> dict[str, str]:
     return observed
 
 
-def hilbert_numerator(exponent: int, h_linear: int) -> list[int]:
+def hilbert_numerator(
+    exponent: int, h_linear: int, binomials: list[int] | None = None
+) -> list[int]:
     """Coefficients of (1+h_linear*z+z^2)(1-z)^exponent."""
     h = (1, h_linear, 1)
+    coefficients = binomials or binomial_row(exponent)
     return [
         sum(
-            h[k] * (-1) ** (degree - k) * choose(exponent, degree - k)
+            h[k]
+            * (-1 if (degree - k) % 2 else 1)
+            * row_value(coefficients, degree - k)
             for k in range(3)
         )
         for degree in range(exponent + 3)
@@ -75,6 +91,23 @@ def linear_rank(codimension: int, homological_degree: int) -> int:
         codimension * choose(codimension, a)
         - choose(codimension, a + 1)
         - choose(codimension, a - 1)
+    )
+
+
+def full_linear_rank(
+    c: int,
+    homological_degree: int,
+    total_binomials: list[int],
+    killed_binomials: list[int],
+) -> int:
+    """Vandermonde form of sum_a lambda(c,a)*binom(m,i-a)."""
+    i = homological_degree
+    return (
+        c * row_value(total_binomials, i)
+        - row_value(total_binomials, i + 1)
+        - row_value(total_binomials, i - 1)
+        + row_value(killed_binomials, i + 1)
+        + row_value(killed_binomials, i - 1 - c)
     )
 
 
@@ -110,18 +143,28 @@ def parameter_row(parameter: int) -> tuple[dict[str, object], dict[str, object]]
     c = 2 * parameter - 2
     m = 8 * parameter
     total_codimension = c + m
+    low_binomials = binomial_row(c)
+    koszul = binomial_row(m)
+    total_binomials = binomial_row(total_codimension)
 
-    low_linear = [0] + [linear_rank(c, a) for a in range(1, c)] + [0]
+    low_linear = [0] + [
+        c * row_value(low_binomials, a)
+        - row_value(low_binomials, a + 1)
+        - row_value(low_binomials, a - 1)
+        for a in range(1, c)
+    ] + [0]
     low_diagonal = [1] + [0] * c
     low_quadratic = [0] * c + [1]
-    low_target = hilbert_numerator(c, c)
+    low_target = hilbert_numerator(c, c, low_binomials)
     low_reconstructed = reconstruct_numerator(c, low_diagonal, low_linear, low_quadratic)
 
-    koszul = [choose(m, t) for t in range(m + 1)]
     full_diagonal = koszul
-    full_linear = convolution(low_linear, koszul)
+    full_linear = [0] + [
+        full_linear_rank(c, i, total_binomials, koszul)
+        for i in range(1, total_codimension)
+    ] + [0]
     full_quadratic = convolution(low_quadratic, koszul)
-    full_target = hilbert_numerator(total_codimension, c)
+    full_target = hilbert_numerator(total_codimension, c, total_binomials)
     full_reconstructed = reconstruct_numerator(
         total_codimension, full_diagonal, full_linear, full_quadratic
     )
@@ -154,6 +197,9 @@ def parameter_row(parameter: int) -> tuple[dict[str, object], dict[str, object]]
         ),
         "low_hilbert_reconstruction": low_reconstructed == low_target,
         "full_hilbert_reconstruction": full_reconstructed == full_target,
+        "literal_small_koszul_convolution": (
+            parameter > 12 or full_linear == convolution(low_linear, koszul)
+        ),
         "full_gorenstein_symmetry": all(
             full_diagonal[i] == full_quadratic[total_codimension - i]
             for i in range(len(full_diagonal))

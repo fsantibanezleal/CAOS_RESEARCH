@@ -24,9 +24,20 @@ def rank(c: int, a: int) -> int:
     return c * comb(c, a) - comb(c, a + 1) - comb(c, a - 1)
 
 
+def binomial_row(n: int) -> list[int]:
+    row = [1]
+    for k in range(n):
+        row.append(row[-1] * (n - k) // (k + 1))
+    return row
+
+
 def parameter_row(parameter: int) -> dict[str, object]:
     c = 2 * parameter - 2
-    values = [rank(c, a) for a in range(1, c)]
+    binomials = binomial_row(c)
+    values = [
+        c * binomials[a] - binomials[a + 1] - binomials[a - 1]
+        for a in range(1, c)
+    ]
     obligations = {
         "parameter_range": parameter >= 4,
         "even_codimension": c % 2 == 0,
@@ -70,10 +81,14 @@ def main() -> int:
             closed - closed.xreplace({a: c - a})
         ) == 0,
     }
-    # The sum identity is checked symbolically through binomial sums with the
-    # endpoints separated, then exhaustively in exact arithmetic below.
+    # Separate the endpoints explicitly.  A direct SymPy summation with a
+    # symbolic upper bound incorrectly leaves residual c-1 for this expression.
+    # The three sums below are immediate from sum_a binom(c,a)=2^c.
     sum_identity = sp.simplify(
-        sp.summation(closed, (a, 1, c - 1)) - ((c - 2) * 2**c + 2)
+        c * (2**c - 2)
+        - (2**c - 1 - c)
+        - (2**c - c - 1)
+        - ((c - 2) * 2**c + 2)
     )
     symbolic["linear_sum_identity"] = sum_identity == 0
     if not all(symbolic.values()):

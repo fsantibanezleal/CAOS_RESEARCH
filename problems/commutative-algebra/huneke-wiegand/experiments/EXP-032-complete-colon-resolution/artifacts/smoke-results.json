@@ -1,7 +1,7 @@
 {
   "experiment": "EXP-032-complete-colon-resolution",
   "route": "canonical",
-  "generated_at": "2026-08-20T14:56:40.588975+00:00",
+  "generated_at": "2026-08-20T15:05:09.208783+00:00",
   "status": "PASS",
   "range": [
     4,
@@ -25,7 +25,7 @@
       "full_diagonal_hash": "c6b8646ca9fd35a83904d26b47d3ff9a2469f8fa46d8e593d91c386031de7d0e",
       "full_linear_hash": "c73a739608c3e21b4da7a806aeaea7d1e9058a9155b0cc9f65dee16863cb1b5c",
       "full_quadratic_hash": "3b030b18fbe7f483b2736b9ec300c5a3840430ba3300699f8ac070ad80ee9a26",
-      "hilbert_numerator_hash": "d6a11cbd24dea62cc18bcb207c4b82f9609d81b7eee61d375aed5a4afaabd928",
+      "hilbert_numerator_hash": "0a37693cc12a7e27b79b531521d235f693ede0394c999f7da255c572f3dfb1df",
       "checks": {
         "positive_linear_strand": true,
         "linear_strand_symmetric": true,
@@ -33,6 +33,7 @@
         "known_second_rank": true,
         "low_hilbert_reconstruction": true,
         "full_hilbert_reconstruction": true,
+        "literal_small_koszul_convolution": true,
         "full_gorenstein_symmetry": true,
         "projective_dimension": true,
         "regularity_two": true,
@@ -45,7 +46,7 @@
         "wrong_linear_sign_rejected": true,
         "spurious_quadratic_rejected": true
       },
-      "row_hash": "7379725748fb71c6f8fc35201b5f4ea3d39f43d6ea42c131f4556646f39f4c01"
+      "row_hash": "1be0546e9a814b6a5e069bae6b4c9df02e16da1a8d3b922a376167af462458e8"
     }
   ],
   "small_tables": {
@@ -202,6 +203,6 @@
     }
   },
   "claim_boundary": "Exact finite checks support the formula; the all-field theorem uses the separate Gorenstein-duality proof and does not determine the resolution of C_p.",
-  "elapsed_seconds": 0.002450500032864511,
-  "canonical_aggregate": "cbcf9c5dc860ba498219776781422f8bc5a5c8682705ebc55611c64693d9665d"
+  "elapsed_seconds": 0.0023905999842099845,
+  "canonical_aggregate": "72c67060ab05a7bdfce1021c2221d8bd365cd1207df314dec9a320e11e045372"
 }
