@@ -1054,3 +1054,18 @@
   `480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640` exactly.
 - HWB-044 is complete. HWB-046 owns checked research promotion and a later scoped management
   ledger reconciliation; no release tag is claimed for this research-only round.
+
+## 2026-08-20 - EXP-030 research promotion complete
+
+- PR #205 passed `guards` and `test` and merged the complete EXP-030 theorem, exact artifacts,
+  manuscript v0.17, and verified Zenodo record to `develop` at
+  `5a1a645f7552585f75f6a9d4f5415cb731df46da`.
+- PR #206 passed all required checks and promoted the exact tested `develop` state to `main` at
+  `4ec881a182b5ac2dc9fbb99d0bbab173c7ccaf69`.
+- Remote research work, `develop`, and `main` share payload tree
+  `33b044658401e9216705481ad627dea55dbdf754`.
+- CAOS_MANAGE was not touched: it remains occupied on
+  `task/difusion-rename-all-explorations-20260820` with 397 unrelated staged entries. HWB-046
+  remains active only for later scoped ledger reconciliation after management safely returns to
+  clean `develop`.
+- No release tag is claimed for this research-only round. HWB-035 resumes at `beta_(3,7)`.

@@ -721,3 +721,13 @@ theorem render was corrected before the final build and upload. Zenodo record `2
 `480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640`. HWB-046 owns the checked
 research promotion and later scoped management-ledger reconciliation. No release tag is claimed
 for this research-only round.
+
+Research promotion is complete. PR #205 passed `guards` and `test` and merged the complete EXP-030
+theorem, artifacts, manuscript v0.17, and verified Zenodo record to `develop` at
+`5a1a645f7552585f75f6a9d4f5415cb731df46da`. PR #206 passed all required checks and promoted the
+exact tested `develop` state to `main` at `4ec881a182b5ac2dc9fbb99d0bbab173c7ccaf69`.
+Research work, `develop`, and `main` share payload tree
+`33b044658401e9216705481ad627dea55dbdf754`. CAOS_MANAGE remains untouched on
+`task/difusion-rename-all-explorations-20260820` with 397 unrelated staged entries; HWB-046 stays
+open only for a later scoped ledger reconciliation after management safely returns to clean
+`develop`.
