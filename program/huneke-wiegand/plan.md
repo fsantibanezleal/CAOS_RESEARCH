@@ -799,3 +799,22 @@ EXP-032 must independently reconstruct every coefficient, verify Hilbert and sel
 identities through `p=300`, reject corrupted controls, and supply the all-parameter proof before
 any result or manuscript v0.19 gate is claimed. This route determines the colon quotient, not the
 still-open full resolution of `C_p`.
+
+EXP-032 is CONFIRMED for the complete graded Betti polynomial and free-module shape. Minimality,
+regularity two, and Gorenstein self-duality force the low resolution to have only one linear
+strand and the terminal entry `beta_(c,c+2)=1`. The Hilbert numerator determines
+
+```text
+lambda_(c,a)=c*binom(c,a)-binom(c,a+1)-binom(c,a-1),
+```
+
+and the disjoint high-variable Koszul complex gives the displayed full product. All 297 canonical
+rows through `p=300`, an independently reconstructed coefficient route, symbolic identities,
+complete `p=4,5,6` tables, and corrupted controls pass. Two budget-limited attempts and two
+representation/CAS defects were rejected and recorded before the final artifacts were generated.
+
+HWB-049 is done and HWB-050 opens the existing-manuscript v0.19 and Zenodo new-version gate. The
+scope is precise: every free-module rank and shift is proved, but explicit differential matrices
+and the full resolution of `C_p` remain open. After publication, the strongest mathematical route
+is the cubic mapping-cone comparison map against `P_p/Q_p`, using the now-complete colon table to
+turn unknown higher Betti entries into comparison-map ranks.

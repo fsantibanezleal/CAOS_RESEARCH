@@ -438,3 +438,33 @@ to search for whole diagonal recurrences.
 
 The theorem is included in the 42-page main manuscript v0.18, published and fresh-download
 verified at DOI `10.5281/zenodo.22030743`. The public artifact matches the committed PDF exactly.
+
+## Complete graded Betti polynomial of the cubic-colon quotient
+
+EXP-032 returns to the canonical idealization from EXP-030. Put `c=2p-2` and `m=8p`. Over the
+`2p` low variables it is a two-dimensional Gorenstein quotient with h-vector `(1,c,1)`, no linear
+equations, and regularity two. Minimality and self-duality therefore leave only a linear strand
+and the terminal entry `beta_(c,c+2)=1`. Coefficient extraction from
+
+```text
+(1+cz+z^2)(1-z)^c
+```
+
+gives
+
+```text
+lambda_(c,a)=c*binom(c,a)-binom(c,a+1)-binom(c,a-1),  1<=a<=c-1.
+```
+
+Tensoring with the Koszul complex on the `m` disjoint killed variables proves, over every field,
+
+```text
+B_(D_p)(x,z)
+ =(1+xz)^m(1+sum_(a=1)^(c-1)lambda_(c,a)x^a z^(a+1)+x^c z^(c+2)).
+```
+
+Thus `pd_(P_p)(D_p)=10p-2`, `reg_(P_p)(D_p)=2`, and every free-module rank and shift is known.
+The result does not provide explicit differential matrices. More importantly, the quadratic
+quotient `P_p/Q_p` and the cubic mapping-cone comparison maps still prevent this colon theorem
+from determining the full resolution of `C_p`. Those comparison-map ranks are now the strongest
+target: the colon side of the mapping cone is no longer an unknown.

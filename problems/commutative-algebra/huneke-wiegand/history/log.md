@@ -1150,3 +1150,28 @@
 - The declaration freezes the EXP-030 proof and verdict hashes and requires two exact routes,
   corrupted controls, and a written all-parameter self-duality proof.
 - No EXP-032 result or manuscript v0.19 update is claimed at declaration.
+
+## 2026-08-20 - EXP-032 confirmed
+
+- The first full formula campaign passed through `p=230` but exceeded the declared 120-second
+  budget; the first Vandermonde implementation passed through `p=223` and also exceeded it. Both
+  attempts remain preserved as `INCONCLUSIVE_BUDGET` and carry no result evidence.
+- Precomputed exact binomial rows reduced the fresh canonical campaign to 32.34 seconds. It passes
+  all 297 parameters `p=4,...,300`, stores complete tables at `p=4,5,6`, verifies Hilbert
+  reconstruction and Gorenstein symmetry, and rejects four corrupted controls.
+- The independent route reconstructed every coefficient from the alternating Hilbert numerator
+  without importing canonical code and matched every canonical row hash. The symbolic route
+  proved positivity, symmetry, the first two EXP-030 coefficients, total ranks, and endpoints.
+- The audit rejected a wrong post-Koszul Hilbert target and a canonical `-0.0` serialization. The
+  symbolic route rejected a false generic SymPy sum residual `c-1`; the proof instead uses the
+  explicit endpoint-separated binomial sum. All final artifacts were regenerated after correction.
+- Gorenstein self-duality and regularity force the low canonical idealization to have only its
+  linear strand and `beta_(c,c+2)=1`; the Hilbert numerator gives every rank, and the `8p` disjoint
+  high variables supply the exact Koszul factor. This proves the full graded Betti polynomial over
+  every field.
+- Canonical, independent-audit, and symbolic aggregates are
+  `907438b249b98ca9ffef689b7edb9574cdb0044cc3dd4cb52de523129f7d37ee`,
+  `43635c8497dfe57904997326e983c7477e7320809cb2fee661c7933041f47b09`, and
+  `f696390447a3ce20397d937aa73baebf23a3c5ae249d4ad1215ff48cb710a2ae`.
+- The claim determines every free-module rank and shift, not explicit differential matrices or the
+  full resolution of `C_p`. HWB-049 is done; HWB-050 opens the in-place manuscript v0.19 gate.
