@@ -72,3 +72,11 @@ declaration: ONE resume from the last checkpoint with a fresh 4 h budget,
 same depth cap 44, same success criterion (zero residual failures). If the
 resume also exhausts, the remaining boxes are investigated individually
 before any further declaration.
+
+## Addendum (2026-08-20b): bicorner-same resume declaration
+
+bicorner-same exhausted its declared 6 h budget with 20 boxes on the
+stack (zero depth-cap failures; the widened 7/32 seed and CPU contention
+across eight concurrent coverings slowed it). Recorded as FAILED under
+the original declaration. NEW declaration: ONE resume from the last
+checkpoint, fresh 3 h budget, same depth cap and criteria.
