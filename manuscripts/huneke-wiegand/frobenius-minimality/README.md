@@ -389,4 +389,5 @@ Version 0.18 prepublication verification:
 - all 42 pages passed final rendered inspection at 150 DPI; the final build has no warnings,
   unresolved references, overfull boxes, or underfull boxes
 - sole authorship, ORCID, version, DOI, concept DOI, CC BY 4.0, source, attribution, and scope gates
-  pass; exact draft upload, publication, concept-latest, and fresh-download gates remain pending
+  pass; the exact draft metadata and one-file upload also pass; publication, concept-latest, and
+  fresh-download gates remain pending

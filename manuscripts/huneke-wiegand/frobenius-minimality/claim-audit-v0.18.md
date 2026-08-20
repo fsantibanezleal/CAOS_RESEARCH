@@ -57,8 +57,10 @@ resolution, or classify arbitrary Huneke--Wiegand counterexamples.
   inspection of the front matter and new theorem/trust/scope pages;
 - sole-author and ORCID audit: PASS; Felipe Santibanez-Leal is the sole author and
   `0000-0002-0150-3246` is the sole ORCID; no machine authorship or coauthorship appears;
-- exact Zenodo draft metadata/file validation: PENDING;
+- exact Zenodo draft metadata/file validation: PASS; draft `22030743` reports version `0.18`, the
+  reserved DOI, one creator with the sole ORCID, the v0.18 description, and exactly one committed
+  file with the expected filename, 725,554 bytes, and MD5;
 - publication, concept-latest check, and fresh unauthenticated download: PENDING.
 
-No upload or publication is authorized by this audit until every pending gate is replaced by a
-recorded pass.
+Publication is now authorized by the completed prepublication and exact-draft gates. The public
+concept-latest and fresh-download gates remain mandatory after publication.
