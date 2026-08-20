@@ -43,8 +43,14 @@ def _dual_args(boxes, mids=False):
     return [DV(IV.raw(*b), E[i]) for i, b in enumerate(boxes)]
 
 def rank3_plain(J):
+    """None-tolerant: an entry may be None (undefined on the box, e.g. a
+    collision-singular quantity); minors touching a None are skipped. A
+    certified minor among DEFINED entries proves rank >= 3 regardless of
+    the undefined ones."""
     for rows, cols in MENU:
         try:
+            if any(J[r][c] is None for r in rows for c in cols):
+                continue
             if det3(J, rows, cols).excludes_zero():
                 return (rows, cols)
         except AssertionError:
@@ -60,6 +66,9 @@ def rank3_mv(entry_dv, boxes):
         return None
     for rows, cols in MENU:
         try:
+            if any(Jm[r][c] is None or Jb[r][c] is None
+                   for r in rows for c in cols):
+                continue
             dm = det3d(Jm, rows, cols)
             db = det3d(Jb, rows, cols)
             enc = dm.v
@@ -80,6 +89,8 @@ def trap(entry_iv, entry_dv, boxes):
         return None
     r2 = None
     for r, c in PAIRS2:
+        if any(J[i][j] is None for i in r for j in c):
+            continue
         m = J[r[0]][c[0]] * J[r[1]][c[1]] - J[r[0]][c[1]] * J[r[1]][c[0]]
         if m.excludes_zero():
             r2 = {"rows": list(r), "cols": list(c)}
@@ -93,6 +104,8 @@ def trap(entry_iv, entry_dv, boxes):
     packs = []
     for rows, cols in MENU:
         try:
+            if any(Jb[r][c] is None for r in rows for c in cols):
+                continue
             d = det3d(Jb, rows, cols)
             packs.append(((rows, cols), d.g))
         except AssertionError:

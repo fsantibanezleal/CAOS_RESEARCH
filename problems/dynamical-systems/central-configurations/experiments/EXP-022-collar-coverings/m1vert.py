@@ -80,10 +80,18 @@ def entry_factory(hemi, mode):
             return K_inv(x * x * x)
         id2A = icube(d2A); id2B = icube(d2B)
         A = (rys, t1, t2, Frac)
-        SQS = (gv.CSc2n(*A) * K_inv(gv.CSc2d(*A))).sqrt()
-        SQX = (gv.CXc2n(*A) * K_inv(gv.CXc2d(*A))).sqrt()
-        iSQS = icube(SQS)
-        iSQX = icube(SQX)
+        # Per-entry guards: on boxes touching a cone ({CSc = 0} or
+        # {CXc = 0}) the corresponding icube is UNDEFINED; entries using it
+        # become None and the None-tolerant pipeline skips minors touching
+        # them. No cone discard, no deeper chart.
+        try:
+            iSQS = icube((gv.CSc2n(*A) * K_inv(gv.CSc2d(*A))).sqrt())
+        except AssertionError:
+            iSQS = None
+        try:
+            iSQX = icube((gv.CXc2n(*A) * K_inv(gv.CXc2d(*A))).sqrt())
+        except AssertionError:
+            iSQX = None
         W1h = gv.W1n(*A) * K_inv(gv.W1d(*A)) * hemi
         W2h = gv.W2n(*A) * K_inv(gv.W2d(*A)) * hemi
         G5h = gv.G5n(*A) * K_inv(gv.G5d(*A)) * hemi
@@ -102,37 +110,48 @@ def entry_factory(hemi, mode):
         y3 = ry * ry * ry
         Ca2 = Cah.sq(); Cb2 = Cbh.sq()
         Ca3 = Ca2 * Cah; Cb3 = Cb2 * Cbh
-        J = [[Z] * 4 for _ in range(6)]
+        bothSX = iSQS is not None and iSQX is not None
+        J = [[None] * 4 for _ in range(6)]
         # L13 (bicorner scaling; regular entries direct)
+        J[0][0] = Z
         J[0][1] = m1_ * two * ca * (egt - id2A)
         J[0][2] = m1_ * sa * (one - eight * ca * ca * ca)
-        J[0][3] = four * (y3 * Cb2 * W1h - rr3 * Cb2 * W1h * iSQS
-                          + y3 * Cb2 * W2h - rr3 * Cb2 * W2h * iSQX)
+        if bothSX:
+            J[0][3] = four * (y3 * Cb2 * W1h - rr3 * Cb2 * W1h * iSQS
+                              + y3 * Cb2 * W2h - rr3 * Cb2 * W2h * iSQX)
         # L15
+        J[1][0] = Z
         J[1][1] = m1_ * two * rr * cb * (egt - id2B)
-        J[1][2] = four * rr * (Ca2 * W1h * iSQS - y3 * Ca2 * W1h
-                               + y3 * Ca2 * W2h - Ca2 * W2h * iSQX)
+        if bothSX:
+            J[1][2] = four * rr * (Ca2 * W1h * iSQS - y3 * Ca2 * W1h
+                                   + y3 * Ca2 * W2h - Ca2 * W2h * iSQX)
         J[1][3] = m1_ * rr * sb * (one - eight * cb * cb * cb)
         # L23
         J[2][0] = ra3 * ca * quarter - two * ca
+        J[2][1] = Z
         J[2][2] = ra2 * gam * (one - eight * ra3 * (ca * ca * ca) * id2A)
-        J[2][3] = ra2 * four * rr2 * (y3 * Cb2 * ra3 * id2B * (K5h + K6h)
-                                      - Cb2 * (K5h * iSQS + K6h * iSQX))
+        if bothSX:
+            J[2][3] = ra2 * four * rr2 * (y3 * Cb2 * ra3 * id2B * (K5h + K6h)
+                                          - Cb2 * (K5h * iSQS + K6h * iSQX))
         # L25
         J[3][0] = rr3 * ra3 * cb * quarter - two * cb
-        J[3][2] = rr2 * ra2 * four * (Ca2 * (K5h * iSQS - K6h * iSQX)
-                                      + y3 * Ca2 * ra3 * id2A * (K6h - K5h))
+        J[3][1] = Z
+        if bothSX:
+            J[3][2] = rr2 * ra2 * four * (Ca2 * (K5h * iSQS - K6h * iSQX)
+                                          + y3 * Ca2 * ra3 * id2A * (K6h - K5h))
         J[3][3] = rr2 * ra2 * g2 * (one - eight * rr3 * ra3 * (cb * cb * cb) * id2B)
         # L35 (/ rhoy on top of bicorner's)
         J[4][0] = ry * R3h * W1h
         J[4][1] = ra2 * rr2 * (id2A - id2B) * K5h
-        J[4][2] = ra2 * rr2 * Fch * (eight * Ca3 * iSQX - one)
-        J[4][3] = ra2 * rr2 * Fch * (one - eight * rr3 * Cb3 * iSQX)
+        if iSQX is not None:
+            J[4][2] = ra2 * rr2 * Fch * (eight * Ca3 * iSQX - one)
+            J[4][3] = ra2 * rr2 * Fch * (one - eight * rr3 * Cb3 * iSQX)
         # L36 (/ rhoy)
         J[5][0] = ry * R3h * W2h
         J[5][1] = ra2 * rr2 * (id2A - id2B) * K6h
-        J[5][2] = ra2 * rr2 * Fch * (eight * Ca3 * iSQS - one)
-        J[5][3] = ra2 * rr2 * Fch * (eight * rr3 * Cb3 * iSQS - one)
+        if iSQS is not None:
+            J[5][2] = ra2 * rr2 * Fch * (eight * Ca3 * iSQS - one)
+            J[5][3] = ra2 * rr2 * Fch * (eight * rr3 * Cb3 * iSQS - one)
         return J
     return entries
 
@@ -216,14 +235,8 @@ def make_discard(hemi):
         cb = (one - tb.sq()) * iob
         if ca.hi < 0 or cb.hi < 0:
             return True                  # unphysical
-        Frac = lambda a, b: IV(F(a, b))
-        A = (ry, t1, t2, Frac)
-        SQS2 = gv.CSc2n(*A) * (gv.CSc2d(*A)).inv()
-        if SQS2.hi < F(1, 256):
-            return True                  # SQS-cone: M1v2 (declared)
-        SQX2 = gv.CXc2n(*A) * (gv.CXc2d(*A)).inv()
-        if SQX2.hi < F(1, 256):
-            return True                  # SQX-cone: M1v2 (declared)
+        # NO cone discards: the None-tolerant pipeline handles the cones
+        # via per-entry guards (undefined entries skip their minors).
         return False
     return discard
 
