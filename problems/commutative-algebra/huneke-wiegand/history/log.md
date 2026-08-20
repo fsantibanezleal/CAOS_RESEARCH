@@ -923,3 +923,17 @@
   `main` trees match at `f234e662fa13834787c994b789d6607b486c19ec`.
 - HWB-040 is complete. Higher homological rows and the full Betti table remain open under HWB-035;
   no release tag is claimed for this research-only round.
+
+## 2026-08-20 - EXP-029 declared
+
+- Reconciled the post-EXP-028 state and performed a fresh primary-source and novelty sweep before
+  assigning machine time to another canonical experiment.
+- Exact read-only `H_2` probes at `p=4,5` found that the degree-five third Betti profile is exactly
+  the shifted unordered pair-sum distribution of the `8p` high variables in the already proved
+  linear cubic colon. The observed totals are `496` and `780`, equal to `binom(8p,2)`.
+- Redirected the next round from a broad whole-third-row enumeration to the colon-Koszul
+  degree-five diagonal. The grevlex initial ideal was independently ruled out as a stable or
+  strongly stable shortcut in both natural variable orders.
+- Declared EXP-029 before implementation or canonical artifacts. Its target is
+  `beta_(3,5)=4p(8p-1)` with exact pair-sum support and integral freeness; together with EXP-028
+  and the Hilbert numerator, confirmation would complete internal degree five.

@@ -583,3 +583,34 @@ delivery branches share tree `e35f420f59a5343ea09da15985786ab0b65897d6`. CAOS_MA
 on `develop`; PR #566 promoted only the scoped v0.15 controls and ledger to `main` at `ddafe393`,
 with management branches sharing tree `f234e662fa13834787c994b789d6607b486c19ec`. HWB-040 is done.
 No release tag is claimed for this research-only round.
+
+## 2026-08-20 - EXP-029 colon-Koszul degree-five diagonal
+
+A fresh source, novelty, and path preflight redirects HWB-035 from an immediate whole-third-row
+enumeration to a sharper mapping-cone invariant. EXP-027 already proves
+
+```text
+(Q_p:f_p)_1=span{X_a:a in G_p,a>=6p},
+```
+
+and this space has dimension `8p`. Read-only exact probes at `p=4,5` show that every observed
+`beta_(3,(5,b))` is indexed by an unordered pair of those high variables, shifted by the cubic
+offset `3p`. EXP-029 is declared before implementation with the predictions
+
+```text
+beta_(3,5)=binom(8p,2)=4p(8p-1),
+support=[15p+1,39p-3] minus {33p-1}.
+```
+
+The selected proof route combines primitive mapping-cone lower-bound classes with an integral
+relative `H_2` matching that must cancel every transient critical triangle by unit tetrahedron
+boundaries. If this succeeds, the frozen Hilbert numerator and EXP-028 give
+
+```text
+beta_(4,5)=2p(5p-1)(10p-3)(100p^2-110p+13)/3,
+```
+
+completing the internal-degree-five diagonal. The explicit grevlex initial ideal was checked and
+is neither stable nor strongly stable in either natural order, so degeneration remains a bound,
+not the selected formula engine. No EXP-029 result, manuscript version, or publication is claimed
+before the declared integral, computational, audit, and symbolic gates pass.

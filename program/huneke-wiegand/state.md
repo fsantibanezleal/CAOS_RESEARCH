@@ -87,8 +87,19 @@
 | 2026-08-19 | active | confirmed | EXP-028 proves the complete second row: `beta_(2,5)=p(2p-3)`, `beta_(2,6)=0`, exact three-block offset multiplicities, and characteristic independence by integral unit Smith form |
 | 2026-08-19 | confirmed | published | 34-page preprint v0.15 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.22016550`, and matched a fresh unauthenticated public download exactly |
 | 2026-08-19 | published | published | PRs #198/#199 passed required checks and promoted EXP-028 plus v0.15 through `develop` to `main`; CAOS_MANAGE PR #566 promoted the matching publication controls and ledger |
+| 2026-08-20 | published | active | EXP-029 declared before implementation: use the exact `8p`-variable linear cubic colon and integral relative `H_2` matching to determine `beta_(3,5)` and the complete internal-degree-five diagonal |
 
-Current state: **EXP-028 confirmed, v0.15 published, and checked promotion complete**. Integral
+Current state: **EXP-029 declared; EXP-028 and v0.15 remain confirmed, published, and promoted**.
+The new invariant-first prediction is
+
+```text
+beta_(3,5)=binom(8p,2)=4p(8p-1),
+```
+
+with offset multiplicity equal to the shifted unordered pair-sum distribution of the high colon
+variables and support `[15p+1,39p-3] minus {33p-1}`. If confirmed, the Hilbert coefficient would
+also determine `beta_(4,5)` and complete internal degree five. This is a declared target, not yet
+a theorem. The existing confirmed baseline is unchanged: integral
 relative offset-Koszul matching and unit Smith forms prove the complete second Betti row over every
 field:
 
