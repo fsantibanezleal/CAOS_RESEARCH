@@ -769,3 +769,10 @@ inspection; public metadata has one creator and the sole ORCID, record `22030743
 and the public 725,554-byte PDF matches Git by MD5 and SHA-256. HWB-047 is done and HWB-048 opens
 the separate-PR research promotion gate. The scoped CAOS_MANAGE ledger remains deferred while that
 checkout contains unrelated staged work.
+
+Research promotion is COMPLETE. PR #209 passed `guards` and `test` and merged the exact EXP-031
+plus v0.18 state to `develop` at `ce2b79b0b2d1c98f4613946fb3482190de8fc722`. PR #210 passed
+all required checks and promoted it to `main` at
+`842371a02758eea2123391bacfde1265197f4e3b`. All three delivery branches shared payload tree
+`8d37059beea83e662151fcdeb2ff1bef63d35c2c` before this handoff update. HWB-048 remains open only
+for the later scoped CAOS_MANAGE ledger reconciliation.

@@ -98,9 +98,10 @@
 | 2026-08-20 | published | active | EXP-031 declared before implementation: test whether zero-vertex Morse matching and unit tetrahedral fillers prove `beta_(3,7)=0` integrally and complete the third homological row |
 | 2026-08-20 | active | confirmed | EXP-031 proves `beta_(3,7)=0` over every field by an integral zero-vertex matching and signed unit filler block; the complete third row is now known and manuscript v0.18 gate opened |
 | 2026-08-20 | confirmed | published | 42-page preprint v0.18 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.22030743`, became concept-latest, and matched a fresh unauthenticated public download exactly |
+| 2026-08-20 | published | published | PR #209 passed `guards` and `test` and merged EXP-031 plus v0.18 to `develop` at `ce2b79b`; PR #210 passed all required checks and promoted the exact tested state to `main` at `842371a` |
 
-Current state: **EXP-031 and manuscript v0.18 are published; HWB-048 is active for research PR
-promotion; scoped management-ledger reconciliation remains deferred because CAOS_MANAGE is
+Current state: **EXP-031 and manuscript v0.18 are published and promoted through the research
+repository; HWB-048 remains active only for scoped management-ledger reconciliation because CAOS_MANAGE is
 occupied by unrelated staged work**. For
 `H_p={a in G_p:a>=6p}`, integral relative homology has the
 free pair basis
@@ -171,7 +172,13 @@ The 42-page main manuscript v0.18 is public as record `22030743`, DOI
 `10.5281/zenodo.22030743`, and is concept-latest. Its 725,554-byte fresh unauthenticated download
 has MD5 `558532167c4f2a39e03d1bcced9de18d` and SHA-256
 `0e40aa5ed4feb02209137c2982184a93cfd402ac03cc9d4aa6f9ba86ae4327b7`, exactly matching Git.
-HWB-047 is done; HWB-048 owns research promotion and the later scoped management mirror.
+HWB-047 is done; HWB-048 owns only the later scoped management mirror.
+
+Research promotion is complete. PR #209 passed `guards` and `test` and merged the exact work state
+to `develop` at `ce2b79b0b2d1c98f4613946fb3482190de8fc722`; PR #210 passed all required checks
+and promoted `develop` to `main` at `842371a02758eea2123391bacfde1265197f4e3b`. Before this
+handoff commit, work, `develop`, and `main` shared payload tree
+`8d37059beea83e662151fcdeb2ff1bef63d35c2c`.
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.
