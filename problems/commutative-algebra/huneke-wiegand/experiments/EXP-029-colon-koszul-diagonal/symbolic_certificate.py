@@ -45,21 +45,25 @@ def coverage_intervals(p: int) -> list[tuple[int, int, str]]:
     ]
 
 
-def interval_union(intervals: list[tuple[int, int, str]]) -> set[int]:
-    answer: set[int] = set()
-    for left, right, _label in intervals:
-        answer.update(range(left, right + 1))
-    return answer
+def interval_union_summary(intervals: list[tuple[int, int, str]]) -> tuple[int, list[tuple[int, int]]]:
+    merged: list[list[int]] = []
+    for left, right, _label in sorted(intervals):
+        if not merged or left > merged[-1][1] + 1:
+            merged.append([left, right])
+        else:
+            merged[-1][1] = max(merged[-1][1], right)
+    count = sum(right - left + 1 for left, right in merged)
+    return count, [(left, right) for left, right in merged]
 
 
 def arithmetic_checks(limit: int) -> list[dict[str, object]]:
     rows = []
     for p in range(4, limit + 1):
-        support = interval_union(coverage_intervals(p))
-        target = set(range(12 * p + 1, 36 * p - 2)) - {30 * p - 1}
+        support_count, components = interval_union_summary(coverage_intervals(p))
+        target_components = [(12 * p + 1, 30 * p - 2), (30 * p, 36 * p - 3)]
         beta35 = comb(8 * p, 2)
         numerator45 = 2 * p * (5 * p - 1) * (10 * p - 3) * (100 * p * p - 110 * p + 13)
-        if support != target or len(support) != 24 * p - 4:
+        if components != target_components or support_count != 24 * p - 4:
             raise AssertionError(f"p={p}: support coverage mismatch")
         if beta35 != 4 * p * (8 * p - 1) or numerator45 % 3:
             raise AssertionError(f"p={p}: closed formula mismatch")
@@ -67,7 +71,7 @@ def arithmetic_checks(limit: int) -> list[dict[str, object]]:
             rows.append(
                 {
                     "p": p,
-                    "support_count": len(support),
+                    "support_count": support_count,
                     "unshifted_hole": 30 * p - 1,
                     "beta_3_5": beta35,
                     "beta_4_5": numerator45 // 3,
@@ -139,4 +143,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

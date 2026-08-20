@@ -1,23 +1,22 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-20. Lifecycle: EXP-029 declared before implementation; EXP-028, manuscript
-v0.15, and the checked promotion remain complete. EXP-029 targets the colon-Koszul
-degree-five diagonal. Its declared, unconfirmed prediction is
+Updated: 2026-08-20. Lifecycle: EXP-029 is CONFIRMED; manuscript v0.16 and Zenodo new-version
+delivery are active under HWB-041. The integral colon-Koszul theorem gives
 
 ```text
+beta_(3,(5,b))=#{ {a,c} subset H_p:a<c and a+c=b-3p },
 beta_(3,5)=binom(8p,2)=4p(8p-1),
 ```
 
-with offset profile given by unordered pair sums of the `8p` high cubic-colon variables and
-support `[15p+1,39p-3] minus {33p-1}`. The confirmed baseline is that the entire second Betti row
-of the conductor special fiber is exact over every field:
+where `H_p={a in G_p:a>=6p}` has size `8p`; the support is
+`[15p+1,39p-3] minus {33p-1}`. Together with EXP-028 and the exact Hilbert numerator, the complete
+internal-degree-five diagonal over every field is
 
 ```text
-beta_(2,3)=2p(500p^2-330p+31)/3,
-beta_(2,4)=8p,
 beta_(2,5)=p(2p-3),
-beta_(2,6)=0,
-beta_(2,j)=0 otherwise.
+beta_(3,5)=4p(8p-1),
+beta_(4,5)=2p(5p-1)(10p-3)(100p^2-110p+13)/3,
+beta_(i,5)=0 otherwise.
 ```
 
 For `0<=r<=2p-4`, the degree-five support is the three intervals
@@ -70,7 +69,9 @@ Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
 16. the first interior Betti strand, with characteristic-free multiplicity-free offset support
     (EXP-027); and
 17. the complete second Betti row, with degree-five multiplicities, degree-six vanishing, and
-    characteristic independence (EXP-028).
+    characteristic independence (EXP-028); and
+18. the free colon-Koszul pair basis, exact third-row degree-five profile, and complete
+    internal-degree-five diagonal over every field (EXP-029).
 
 The public seed is
 
@@ -161,7 +162,7 @@ campaign is supporting evidence, not the proof.
 | EXP-026 | CONFIRMED | reduced grevlex profile `(50p^2-17p,5p-1,p-2)`, no later boundary, and flat Cohen--Macaulay monomial degeneration |
 | EXP-027 | CONFIRMED | `beta_(2,4)=8p` with complete multiplicity-free offset support and exact adjacent `beta_(3,4)` over every field |
 | EXP-028 | CONFIRMED | complete second row: exact degree-five three-block multiplicities, `beta_(2,5)=p(2p-3)`, and integral `beta_(2,6)=0` over every field |
-| EXP-029 | DECLARED | test whether the `8p` high colon variables give all `beta_(3,5)=binom(8p,2)` classes and complete internal degree five |
+| EXP-029 | CONFIRMED | free pair basis on the `8p` high colon variables gives `beta_(3,5)=4p(8p-1)`, exact support, and the complete internal-degree-five diagonal |
 
 ## 3a. Exact evidence anchors
 
@@ -198,26 +199,32 @@ campaign is supporting evidence, not the proof.
 - EXP-028 canonical campaign aggregate:
   `45f08e6a15e321512629fa4b6ab07161ddcc766ddf56e1d9579175f3444ec32f`; the independent
   rational/Smith audit and symbolic/arithmetic certificate both pass.
+- EXP-029 canonical campaign, independent audit, and symbolic aggregates:
+  `7564f15534e8a29f875a367d3a324b95041e8eef836d15deac3e35130e1ad37d`,
+  `337854eef5d773c84cdd79c7734e63b295fa0337c5a1852e652559c334949b04`, and
+  `605733497d6fb0ead97bfd25e26daaa66d546c297751960e1c427f29ff69f279`.
 
 ## 4. In flight
 
-EXP-029 is DECLARED and has no canonical run yet. Put
+EXP-029 is CONFIRMED. Put
 
 ```text
 H_p={a in G_p:a>=6p},        |H_p|=8p.
 ```
 
-The declared offset formula is
+The integral offset formula is
 
 ```text
 beta_(3,(5,b))=#{ {a,c} subset H_p:a<c and a+c=b-3p }.
 ```
 
-Read-only exact probes give totals `496` at `p=4` and `780` at `p=5`, with the complete `p=4`
-profile agreeing over `GF(2)` and `GF(1000003)`. These values and profiles motivate the
-hypothesis only. Confirmation requires an integral unit matching that cancels transient critical
-triangles, plus the primitive mapping-cone lower bound, independent audit, and symbolic support
-proof. The first command after implementation is the mandatory `p=4` smoke, not a full campaign.
+The integral relative normal form cancels every transient critical triangle by unit boundaries and
+leaves the free unordered-pair basis. Complete exact profiles at `p=4,5,6` total
+`496,780,1128`; the full `p=4` profile agrees over `GF(2)` and `GF(1000003)`; the 297-row campaign,
+independent rational boundary audit, and constant-memory arithmetic/Z3 certificate all pass. The
+first symbolic implementation exceeded its route budget because it materialized every support
+integer and is preserved as non-evidence. EXP-028 and the Hilbert numerator then give the complete
+internal-degree-five diagonal displayed at the top of this handoff.
 
 EXP-028 is CONFIRMED. For every `p>=4` and every field, the complete second row is
 
@@ -386,13 +393,15 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Implement EXP-029 with premise hashes, flushed progress, and atomic checkpoints; run only the
-   `p=4` smoke first.
-2. Require the integral transient-triangle cancellation and independent mapping-cone audit before
-   treating the pair profile as characteristic-free homology.
-3. If confirmed, derive the adjacent `beta_(4,5)` from the Hilbert numerator, reconcile every
-   durable record, and apply the manuscript trigger. If refuted or budget-limited, preserve that
-   verdict without extrapolating to the full table.
+1. Expand the existing Frobenius-minimality manuscript to v0.16 with the EXP-029 theorem, exact
+   support, integral normal form, evidence, and explicit full-table scope boundary.
+2. Run complete claim, two-pass build, all-page render, attribution, and metadata QA; publish a new
+   Zenodo version only after those gates pass, then verify a fresh unauthenticated download.
+3. Commit and push each verified milestone, promote the tested research payload through separate
+   work-to-`develop` and `develop`-to-`main` PRs, and promote the scoped CAOS_MANAGE ledger without
+   staging unrelated concurrent changes.
+4. Reopen HWB-035 at `beta_(3,6)`: derive its colon contribution and relative `H_2` obstruction
+   before attempting any broad full-resolution computation.
 
 ### Lenses ledger
 
@@ -416,8 +425,8 @@ Published baseline:
 - Relative-chain matching: EXP-027/028 turn offset-graded Betti entries into integral homology and
   use unit pivots/Smith forms to isolate actual classes without characteristic extrapolation.
 - Colon-Koszul redirection: EXP-029 reads the exact linear cubic colon two-sidedly. Its second
-  Koszul wedges supply candidate higher syzygies, while integral relative `H_2` matching must
-  decide completeness rather than a raw resolution sweep.
+  Koszul wedges supply all degree-five third syzygies; integral relative `H_2` matching proves
+  completeness and a primitive, characteristic-free pair basis without a raw resolution sweep.
 
 ## 7. Gotchas
 

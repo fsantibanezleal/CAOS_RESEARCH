@@ -937,3 +937,30 @@
 - Declared EXP-029 before implementation or canonical artifacts. Its target is
   `beta_(3,5)=4p(8p-1)` with exact pair-sum support and integral freeness; together with EXP-028
   and the Hilbert numerator, confirmation would complete internal degree five.
+
+## 2026-08-20 - EXP-029 confirmed
+
+- The mandatory `p=4` smoke passed over `GF(2)` and `GF(1000003)`. The canonical campaign then
+  passed 297 formula rows through `p=300` and complete exact relative `H_2` profiles at `p=4,5,6`,
+  with totals `496,780,1128`.
+- An independent rational boundary reconstruction passed at offsets `60` and `61` for `p=4`.
+  The first symbolic implementation exceeded its route budget because it materialized every
+  support integer; it is preserved as `INCONCLUSIVE_BUDGET` and is not evidence. A constant-memory
+  affine-endpoint implementation passed the unchanged support and coefficient obligations through
+  `p=10000`.
+- The integral normal form leaves a free basis indexed by unordered pairs of distinct variables in
+  `H_p={a in G_p:a>=6p}`. Therefore, over every field,
+
+  ```text
+  beta_(3,5)=4p(8p-1),
+  support=[15p+1,39p-3] minus {33p-1}.
+  ```
+
+- EXP-028 and the exact Hilbert numerator then give
+  `beta_(4,5)=2p(5p-1)(10p-3)(100p^2-110p+13)/3`, completing internal degree five. The campaign,
+  audit, and symbolic aggregates are respectively
+  `7564f15534e8a29f875a367d3a324b95041e8eef836d15deac3e35130e1ad37d`,
+  `337854eef5d773c84cdd79c7734e63b295fa0337c5a1852e652559c334949b04`, and
+  `605733497d6fb0ead97bfd25e26daaa66d546c297751960e1c427f29ff69f279`.
+- EXP-029 is CONFIRMED. HWB-041 opens the existing-manuscript v0.16 and Zenodo new-version gate;
+  `beta_(3,6)`, the remaining third row, and the full Betti table remain open under HWB-035.

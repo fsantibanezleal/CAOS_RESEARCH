@@ -614,3 +614,28 @@ completing the internal-degree-five diagonal. The explicit grevlex initial ideal
 is neither stable nor strongly stable in either natural order, so degeneration remains a bound,
 not the selected formula engine. No EXP-029 result, manuscript version, or publication is claimed
 before the declared integral, computational, audit, and symbolic gates pass.
+
+All declared EXP-029 gates now pass. The integral relative normal form leaves precisely the free
+basis indexed by unordered pairs `{a,c}` of the `8p` high-colon variables, in offset `3p+a+c`.
+Hence
+
+```text
+beta_(3,5)=4p(8p-1),
+support=[15p+1,39p-3] minus {33p-1}.
+```
+
+Together with EXP-028 and the exact Hilbert numerator, this gives
+
+```text
+beta_(4,5)=2p(5p-1)(10p-3)(100p^2-110p+13)/3
+```
+
+and completes internal degree five over every field. The canonical campaign aggregate is
+`7564f15534e8a29f875a367d3a324b95041e8eef836d15deac3e35130e1ad37d`; the independent audit
+aggregate is `337854eef5d773c84cdd79c7734e63b295fa0337c5a1852e652559c334949b04`; and the optimized
+symbolic aggregate is `605733497d6fb0ead97bfd25e26daaa66d546c297751960e1c427f29ff69f279`.
+The first symbolic implementation exceeded its declared budget by materializing all support
+integers and is preserved as non-evidence; the constant-memory endpoint implementation passed the
+same obligations through `p=10000`. EXP-029 is CONFIRMED and HWB-041 now owns the v0.16 manuscript
+and Zenodo new-version gate. The next mathematical target remains `beta_(3,6)`, not an unbounded
+full-resolution sweep.
