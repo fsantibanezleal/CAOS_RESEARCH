@@ -14,7 +14,7 @@
 \hypersetup{
   pdftitle={Frobenius Minimality, Minimum-Layer Uniqueness, and an Infinite Family of Huneke--Wiegand Counterexamples},
   pdfauthor={Felipe Santibanez-Leal},
-  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, conductor, tangent-cone, fiber-cone, defining-ideal, and complete third-row syzygy anatomy},
+  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, conductor, tangent-cone, fiber-cone, defining-ideal, and cubic-colon Betti anatomy},
   pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, trace ideals, conductors, associated graded rings, tangent cones, fiber cones, defining ideals, graded Betti numbers, relative simplicial homology, squarefree divisor complexes, canonical modules, Koszul algebras, Buchsbaum rings, Cohen-Macaulay rings, SAT, DRAT}
 }
 \usepackage{orcidlink}
@@ -36,18 +36,18 @@
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-20\\[2pt]\normalsize Version 0.18}
+\date{2026-08-20\\[2pt]\normalsize Version 0.19}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.18}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.19}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.18}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.19}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,8 +63,8 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.18 \textperiodcentered\ 2026-08-20\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22030743}{10.5281/zenodo.22030743}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.19 \textperiodcentered\ 2026-08-20\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22031481}{10.5281/zenodo.22031481}\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
 verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
@@ -79,7 +79,7 @@ reduction, tangent-cone, fiber-cone, defining-ideal, and syzygy anatomy.
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.18}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.19}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -211,6 +211,16 @@ unit Smith form, so the result again holds over every field. This completes one 
   \]
   with no other shifts. Its total rank is
   \(\beta_3=p(7500p^3-7988p^2+2025p-133)/6\).
+  The same canonical idealization determines much more about the cubic-colon quotient
+  \(D_p=P_p/(\mathfrak q_p:f_p)\). Put \(c=2p-2\), \(m=8p\), and
+  \(\lambda_{c,a}=c\binom ca-\binom c{a+1}-\binom c{a-1}\). Its complete graded Betti polynomial is
+  \[
+  B_{D_p}^{P_p}(x,z)=(1+xz)^m
+  \left(1+\sum_{a=1}^{c-1}\lambda_{c,a}x^az^{a+1}+x^cz^{c+2}\right).
+  \]
+  Hence every free-module rank and shift is known over every field, with projective dimension
+  \(10p-2\) and regularity two. This does not construct the differential matrices or determine the
+  full resolution of the special fiber.
 The results remain confined
 to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
@@ -2435,6 +2445,123 @@ symbolic aggregates are
 The computations validate the implementation; the integral matching and signed identity block
 prove the theorem.
 
+\subsection{The complete graded Betti polynomial of the cubic-colon quotient}
+
+The canonical idealization in Theorem~\ref{thm:colon-idealization-six} also determines every
+ordinary graded free-module rank and shift of the colon quotient. In this subsection put
+\[
+c=2p-2,\qquad m=8p,\qquad D_p=P_p/(\mathfrak q_p:f_p),
+\]
+and let \(S_p=\kfield[A_0,\ldots,A_p,B_0,\ldots,B_{p-2}]\) be the polynomial ring on the \(2p\)
+low variables. Write \(E_p=V_p\ltimes\omega_{V_p}\), so \(D_p\cong E_p\) as graded algebras, but
+the two displayed ambient polynomial rings record different Betti tables. For a graded module
+\(M\), set \(B_M(x,z)=\sum_{i,j}\beta_{i,j}(M)x^iz^j\).
+
+\begin{theorem}[Complete cubic-colon Betti polynomial, {\bf[D]}]
+\label{thm:colon-betti-polynomial}
+For every integer \(p\ge4\) and every field \(\kfield\), put
+\begin{equation}
+\lambda_{c,a}=c\binom ca-\binom c{a+1}-\binom c{a-1}
+\qquad(1\le a\le c-1).
+\label{eq:colon-linear-ranks}
+\end{equation}
+Then
+\begin{align}
+B_{E_p}^{S_p}(x,z)
+ &=1+\sum_{a=1}^{c-1}\lambda_{c,a}x^az^{a+1}+x^cz^{c+2},
+ \label{eq:low-colon-betti}\\
+B_{D_p}^{P_p}(x,z)
+ &=(1+xz)^m B_{E_p}^{S_p}(x,z).
+ \label{eq:full-colon-betti}
+\end{align}
+Equivalently, with out-of-range binomial coefficients read as zero,
+\begin{align}
+\beta_{i,i}^{P_p}(D_p)&=\binom mi,\notag\\
+\beta_{i,i+1}^{P_p}(D_p)&=
+ \sum_{a=1}^{c-1}\lambda_{c,a}\binom m{i-a},\label{eq:full-colon-rows}\\
+\beta_{i,i+2}^{P_p}(D_p)&=\binom m{i-c},
+\end{align}
+and every other entry vanishes. In particular,
+\begin{equation}
+\operatorname{pd}_{P_p}D_p=10p-2,\qquad
+\operatorname{reg}_{P_p}D_p=2.
+\label{eq:colon-pd-reg}
+\end{equation}
+The total Betti rank is
+\begin{equation}
+\sum_{i,j}\beta_{i,j}^{P_p}(D_p)
+=2^{8p}\left((2p-4)2^{2p-2}+4\right).
+\label{eq:colon-total-rank}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{thm:colon-idealization-six} identifies \(E_p\) as a two-dimensional standard graded
+Gorenstein algebra with Hilbert series
+\[
+H_{E_p}(z)=\frac{1+cz+z^2}{(1-z)^2}.
+\]
+It has codimension \(c\), no linear equations, regularity two, and a-invariant zero. Minimality
+therefore excludes \(\beta_{i,j}\) for \(i>0\) and \(j\le i\), while regularity excludes
+\(j-i>2\). Gorenstein self-duality has final shift \((c+2)+0=c+2\) and gives
+\begin{equation}
+\beta_{i,j}^{S_p}(E_p)=\beta_{c-i,c+2-j}^{S_p}(E_p).
+\label{eq:colon-self-duality}
+\end{equation}
+The row \(j-i=2\) is dual to the diagonal row, which contains only \(\beta_{0,0}=1\).
+Consequently its only entry is \(\beta_{c,c+2}=1\); every remaining entry lies on the linear
+strand.
+
+The alternating Betti numerator is
+\begin{equation}
+(1-z)^{c+2}H_{E_p}(z)=(1+cz+z^2)(1-z)^c.
+\label{eq:colon-hilbert-numerator}
+\end{equation}
+For \(1\le a\le c-1\), its coefficient in degree \(a+1\) is
+\[
+(-1)^a\left(c\binom ca-\binom c{a+1}-\binom c{a-1}\right).
+\]
+The proved resolution shape leaves only \((-1)^a\beta_{a,a+1}\) in that degree, which proves
+\eqref{eq:colon-linear-ranks} and \eqref{eq:low-colon-betti}. The factorization
+\[
+\lambda_{c,a}=\binom ca
+ \frac{a(c-a)(c+2)}{(a+1)(c-a+1)}
+\]
+proves positivity and makes self-dual symmetry visible. The endpoint-separated binomial sum gives
+\[
+\sum_{a=1}^{c-1}\lambda_{c,a}=(c-2)2^c+2.
+\]
+
+Finally, write \(P_p=S_p\otimes_\kfield T_p\), where \(T_p\) is the polynomial ring in the \(m\)
+high variables. Equation~\eqref{eq:complete-cubic-colon} gives
+\[
+D_p=E_p\otimes_\kfield T_p/(\text{all high variables}).
+\]
+Tensor the minimal \(S_p\)-resolution of \(E_p\) with the Koszul resolution over \(T_p\). The
+variables are disjoint, so the tensor complex is exact, and every differential entry lies in the
+homogeneous maximal ideal, so it is minimal. Its Betti polynomial is multiplied by \((1+xz)^m\),
+which proves \eqref{eq:full-colon-betti} and \eqref{eq:full-colon-rows}. The endpoint, regularity,
+and evaluation at \(x=z=1\) give \eqref{eq:colon-pd-reg} and \eqref{eq:colon-total-rank}.
+\end{proof}
+
+EXP-032 checks all \(297\) parameters \(p=4,\ldots,300\), stores complete tables at \(p=4,5,6\),
+and verifies Hilbert reconstruction, Gorenstein symmetry, positivity, endpoints, total ranks, and
+four corrupted controls \textbf{[MV]}. An independent implementation reconstructs every rank from
+the alternating coefficients of~\eqref{eq:colon-hilbert-numerator} without importing canonical
+code; a symbolic route checks the closed identities. Two budget-limited attempts are retained as
+inconclusive. The audit also rejected a wrong post-Koszul Hilbert target and a nonintegral
+\texttt{-0.0} serialization before the final artifacts were regenerated. The canonical, audit,
+and symbolic aggregates are
+\begin{center}
+{\fontsize{7}{8}\selectfont\ttfamily 907438b249b98ca9ffef689b7edb9574cdb0044cc3dd4cb52de523129f7d37ee},\\
+{\fontsize{7}{8}\selectfont\ttfamily 43635c8497dfe57904997326e983c7477e7320809cb2fee661c7933041f47b09},\\
+{\fontsize{7}{8}\selectfont\ttfamily f696390447a3ce20397d937aa73baebf23a3c5ae249d4ad1215ff48cb710a2ae}.
+\end{center}
+The finite routes validate the implementations. The all-parameter theorem follows from the
+canonical idealization, Gorenstein duality, the Hilbert numerator, and the minimal Koszul tensor
+argument. The theorem determines every free-module rank and shift, but not the differential
+matrices and not the full resolution of \(C_p\).
+
 \section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
@@ -2443,7 +2570,7 @@ All compact code, hypotheses, manifests, audits, and verdicts are in the public 
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
 minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
-also includes the compact EXP-011--031 campaigns, independent reconstruction audits, symbolic
+also includes the compact EXP-011--032 campaigns, independent reconstruction audits, symbolic
 proofs, the preserved EXP-013 correction, the EXP-015 refutation, and the EXP-022 quadratic
 refutation. The proof toolchain is
 pinned as follows:
@@ -2464,6 +2591,7 @@ EXP-028 & integral degree-five/six matching, 297 formula rows, two-field profile
 EXP-029 & integral pair-basis normal form, 297 formula rows, exact small profiles, and independent boundary audit\\
 EXP-030 & canonical-idealization profile, exact degree-six homology, corrected independent audit, and symbolic support certificate\\
 EXP-031 & integral degree-seven contraction, exact small profiles, independent filler audit, and arithmetic certificate\\
+EXP-032 & complete colon Betti polynomial, 297 exact rows, independent coefficient audit, and symbolic identities\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -2514,6 +2642,12 @@ and the signed identity block in Theorem~\ref{thm:complete-third-row}. The corre
 keys cells by both multigraded offset and tetrahedron; the earlier tuple-only collision is retained
 as invalid non-evidence.
 
+EXP-032 introduces no solver dependency. The finite campaigns test the coefficient implementation,
+including corrupted controls, but do not prove the theorem. The proof uses the frozen EXP-030
+canonical-idealization premise, standard Gorenstein self-duality, coefficient extraction from the
+Hilbert numerator, and the minimal Koszul tensor product. The claim is the complete graded Betti
+polynomial, not explicit differential matrices or the full special-fiber resolution.
+
 \section{\texorpdfstring{\enspace}{}Scope, attribution, and open questions}
 
 Son Pham retains discovery priority for the counterexample. Professor Craig Huneke's verification
@@ -2533,7 +2667,8 @@ Theorem~\ref{thm:interior-strand}, and its complete second Betti row in
 Theorem~\ref{thm:second-betti-row}, and the colon--Koszul degree-five diagonal in
 Theorem~\ref{thm:colon-koszul-diagonal}, and the cubic-colon idealization and degree-six strand in
 Theorem~\ref{thm:colon-idealization-six}, and the complete third homological row in
-Theorem~\ref{thm:complete-third-row}, together with
+Theorem~\ref{thm:complete-third-row}, and the complete cubic-colon Betti polynomial in
+Theorem~\ref{thm:colon-betti-polynomial}, together with
 their reproducible records.
 
 Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
@@ -2541,7 +2676,8 @@ Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomor
 \ref{thm:tangent}, \ref{thm:buchsbaum}, \ref{thm:module}, \ref{thm:fiber},
 \ref{thm:presentation}, \ref{thm:homological-edge}, \ref{thm:interior-strand},
 \ref{thm:second-betti-row}, \ref{thm:colon-koszul-diagonal},
-\ref{thm:colon-idealization-six}, and~\ref{thm:complete-third-row}
+\ref{thm:colon-idealization-six}, \ref{thm:complete-third-row},
+and~\ref{thm:colon-betti-polynomial}
 do not classify all higher
 Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
 or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
@@ -2555,9 +2691,9 @@ questions remain open:
   \item Which additional hypotheses on the endomorphism ring recover a positive theorem while
   excluding both the public example and the full family proved here?
   \item Can the finite certificates be imported into a smaller formally verified checker?
-  \item Can the complete second and third rows, Gorenstein duality, and the canonical-idealization
-  comparison map be combined into whole diagonal recurrences that determine the remaining
-  presentation-ring Betti table and full minimal resolution?
+  \item Can the cubic mapping-cone comparison maps between the now-complete colon Betti table and
+  the unresolved quadratic quotient determine the remaining presentation-ring Betti table and
+  full minimal resolution?
 \end{enumerate}
 
 \section*{Acknowledgments}

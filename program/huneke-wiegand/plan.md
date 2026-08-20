@@ -776,3 +776,73 @@ all required checks and promoted it to `main` at
 `842371a02758eea2123391bacfde1265197f4e3b`. All three delivery branches shared payload tree
 `8d37059beea83e662151fcdeb2ff1bef63d35c2c` before this handoff update. HWB-048 remains open only
 for the later scoped CAOS_MANAGE ledger reconciliation.
+
+## 2026-08-20 - EXP-032 complete cubic-colon resolution
+
+HWB-049 opens a declaration-first test of a stronger consequence of EXP-030. Put `c=2p-2` and
+`m=8p`. The low canonical idealization is two-dimensional Gorenstein with h-vector `(1,c,1)`, no
+linear equations, and regularity two. Minimality and Gorenstein self-duality predict that its
+resolution has only the linear strand
+
+```text
+lambda_(c,a)=c*binom(c,a)-binom(c,a+1)-binom(c,a-1),  1<=a<=c-1,
+```
+
+and the final entry `beta_(c,c+2)=1`. Tensoring with the `m` killed high variables predicts the
+complete colon-quotient Betti polynomial
+
+```text
+(1+xz)^m(1+sum_a lambda_(c,a)x^a z^(a+1)+x^c z^(c+2)).
+```
+
+EXP-032 must independently reconstruct every coefficient, verify Hilbert and self-duality
+identities through `p=300`, reject corrupted controls, and supply the all-parameter proof before
+any result or manuscript v0.19 gate is claimed. This route determines the colon quotient, not the
+still-open full resolution of `C_p`.
+
+EXP-032 is CONFIRMED for the complete graded Betti polynomial and free-module shape. Minimality,
+regularity two, and Gorenstein self-duality force the low resolution to have only one linear
+strand and the terminal entry `beta_(c,c+2)=1`. The Hilbert numerator determines
+
+```text
+lambda_(c,a)=c*binom(c,a)-binom(c,a+1)-binom(c,a-1),
+```
+
+and the disjoint high-variable Koszul complex gives the displayed full product. All 297 canonical
+rows through `p=300`, an independently reconstructed coefficient route, symbolic identities,
+complete `p=4,5,6` tables, and corrupted controls pass. Two budget-limited attempts and two
+representation/CAS defects were rejected and recorded before the final artifacts were generated.
+
+HWB-049 is done and HWB-050 opens the existing-manuscript v0.19 and Zenodo new-version gate. The
+scope is precise: every free-module rank and shift is proved, but explicit differential matrices
+and the full resolution of `C_p` remain open. After publication, the strongest mathematical route
+is the cubic mapping-cone comparison map against `P_p/Q_p`, using the now-complete colon table to
+turn unknown higher Betti entries into comparison-map ranks.
+
+## 2026-08-20 - manuscript v0.19 prepublication candidate validated
+
+The EXP-032 theorem is incorporated in place rather than split into a third manuscript. The
+43-page candidate passed its claim map, two consecutive warning-free LaTeX builds, text and PDF
+metadata extraction, complete 150-DPI page inspection, full-size inspection of the new theorem
+and boundary pages, sole-author/ORCID audit, content and structure guards, Ruff, all 60 tests, the
+full registry pipeline, and manifest/artifact consistency.
+
+The exact candidate is 741,461 bytes with MD5
+`0ddc07fc56b07490e66a9b1967c6a0d0` and SHA-256
+`ebd4d3294cf1dd6fdeccf8902e93399a6617d661dd7421d9dd260278670f3a15`. The pipeline also
+reconciled 13 previously stale experiment-registry entries, including EXP-021--032. Reversible
+Zenodo draft `22031481`, DOI `10.5281/zenodo.22031481`, remains empty and unpublished. The next
+gate is to commit and push this exact payload before authenticated upload and draft validation.
+
+The committed candidate was uploaded to draft `22031481` and the server reports exactly one
+completed file with the expected filename, 741,461 bytes, and MD5
+`0ddc07fc56b07490e66a9b1967c6a0d0`. Version, title, sole creator/ORCID, CC BY 4.0, open access,
+and the v0.19 description also match. Publication remains deliberately pending until this
+reversible checkpoint is committed and pushed.
+
+Manuscript v0.19 is now PUBLISHED at DOI `10.5281/zenodo.22031481` under concept DOI
+`10.5281/zenodo.21763582`. Public metadata and the sole file pass, record `22031481` is
+concept-latest, and a fresh unauthenticated 741,461-byte download matches MD5
+`0ddc07fc56b07490e66a9b1967c6a0d0` and SHA-256
+`ebd4d3294cf1dd6fdeccf8902e93399a6617d661dd7421d9dd260278670f3a15`. HWB-050 is done;
+HWB-051 opens the separate-PR research-promotion gate. No research release tag is implied.

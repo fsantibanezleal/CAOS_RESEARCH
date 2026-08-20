@@ -99,10 +99,26 @@
 | 2026-08-20 | active | confirmed | EXP-031 proves `beta_(3,7)=0` over every field by an integral zero-vertex matching and signed unit filler block; the complete third row is now known and manuscript v0.18 gate opened |
 | 2026-08-20 | confirmed | published | 42-page preprint v0.18 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.22030743`, became concept-latest, and matched a fresh unauthenticated public download exactly |
 | 2026-08-20 | published | published | PR #209 passed `guards` and `test` and merged EXP-031 plus v0.18 to `develop` at `ce2b79b`; PR #210 passed all required checks and promoted the exact tested state to `main` at `842371a` |
+| 2026-08-20 | published | active | EXP-032 declared before implementation: test the complete cubic-colon quotient resolution forced by its Gorenstein h-vector and the `8p`-variable Koszul factor |
+| 2026-08-20 | active | confirmed | EXP-032 proves the complete graded Betti polynomial and free-module shape of the cubic-colon quotient over every field; explicit differential matrices and the full `C_p` resolution remain open |
+| 2026-08-20 | confirmed | active | 43-page manuscript v0.19 candidate passed claim, two-pass build, all-page render, metadata, sole-authorship, tests, pipeline, and artifact gates; Zenodo draft `22031481` remains empty and unpublished pending exact upload validation |
+| 2026-08-20 | active | active | Zenodo draft `22031481` now passes exact metadata and one-file validation; the committed 741,461-byte PDF and server MD5 match, while publication remains pending |
+| 2026-08-20 | active | published | manuscript v0.19 is public and concept-latest at DOI `10.5281/zenodo.22031481`; a fresh unauthenticated download matches the committed PDF by MD5 and SHA-256 |
 
-Current state: **EXP-031 and manuscript v0.18 are published and promoted through the research
-repository; HWB-048 remains active only for scoped management-ledger reconciliation because CAOS_MANAGE is
-occupied by unrelated staged work**. For
+Current state: **EXP-032 is confirmed and manuscript v0.19 is published and fresh-download
+verified under HWB-050; HWB-051 owns checked research promotion; EXP-031 and manuscript v0.18 are
+published and promoted; HWB-048 remains active only for
+scoped management-ledger reconciliation because CAOS_MANAGE is occupied by unrelated staged
+work**. Put `c=2p-2` and `m=8p`. The complete cubic-colon quotient Betti polynomial is
+
+```text
+(1+xz)^m(1+sum_(a=1)^(c-1)lambda_(c,a)x^a z^(a+1)+x^c z^(c+2)),
+lambda_(c,a)=c*binom(c,a)-binom(c,a+1)-binom(c,a-1).
+```
+
+This gives every free-module rank and shift, projective dimension `10p-2`, and regularity two
+over every field. It does not construct differential matrices and does not determine the full
+resolution of `C_p`. For
 `H_p={a in G_p:a>=6p}`, integral relative homology has the
 free pair basis
 

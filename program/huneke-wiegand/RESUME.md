@@ -1,6 +1,11 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-20. Lifecycle: EXP-031 is CONFIRMED; manuscript v0.18 is published and
+Updated: 2026-08-20. Lifecycle: EXP-032 is CONFIRMED for the complete graded Betti polynomial and
+free-module shape of the cubic-colon quotient. The 43-page v0.19 passed claim, two-pass build,
+all-page render, metadata, sole-authorship, tests, pipeline, artifact, upload, publication, and
+fresh-download gates. It is public and concept-latest at DOI `10.5281/zenodo.22031481`; HWB-050
+is done and HWB-051 owns checked research promotion.
+EXP-031 is CONFIRMED; manuscript v0.18 is published and
 fresh-download verified at DOI `10.5281/zenodo.22030743`. HWB-047 is done and HWB-048 owns
 only deferred CAOS_MANAGE ledger reconciliation; research PRs #209/#210 passed all checks and
 promoted the exact v0.18 state through `develop` and `main`. EXP-030 and manuscript v0.17 were
@@ -68,6 +73,25 @@ two characteristics. Canonical and independent unit-filler counts agree for `p=4
 arithmetic obligations pass through `p=300`. HWB-045 is done. Higher rows and the full resolution
 remain open.
 
+EXP-032 proves the complete ordinary graded Betti polynomial of
+`D_p=P_p/(Q_p:f_p)`. Put `c=2p-2`, `m=8p`, and
+
+```text
+lambda_(c,a)=c*binom(c,a)-binom(c,a+1)-binom(c,a-1).
+```
+
+Then, over every field,
+
+```text
+B_(D_p)(x,z)
+ =(1+xz)^m(1+sum_(a=1)^(c-1)lambda_(c,a)x^a z^(a+1)+x^c z^(c+2)).
+```
+
+Consequently `pd=10p-2`, `reg=2`, and every free-module rank and shift is known. Canonical and
+independent exact routes pass every `p=4,...,300`; symbolic identities and complete small tables
+pass. This does not construct differential matrices or settle the full resolution of `C_p`.
+HWB-049 is done and HWB-050 owns manuscript v0.19.
+
 The 42-page manuscript v0.18 passed claim, two-pass warning-free build, all-page render,
 authorship, metadata, upload, and publication gates. Zenodo record `22030743` is concept-latest;
 its fresh unauthenticated 725,554-byte PDF has MD5 `558532167c4f2a39e03d1bcced9de18d`
@@ -119,7 +143,9 @@ Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
 19. the complete cubic-colon idealization and characteristic-free degree-six third-syzygy profile
     (EXP-030); and
 20. the integral zero-vertex contraction, degree-seven vanishing, and complete third homological
-    row over every field (EXP-031).
+    row over every field (EXP-031); and
+21. the complete graded Betti polynomial and free-module shape of the cubic-colon quotient over
+    every field (EXP-032).
 
 The public seed is
 
@@ -214,6 +240,7 @@ campaign is supporting evidence, not the proof.
 | EXP-029 | CONFIRMED | free pair basis on the `8p` high colon variables gives `beta_(3,5)=4p(8p-1)`, exact support, and the complete internal-degree-five diagonal |
 | EXP-030 | CONFIRMED | canonical-idealization colon, exact support, and `beta_(3,6)=8p(7p^2-12p+2)/3` over every field |
 | EXP-031 | CONFIRMED | integral zero-vertex matching and signed unit filler block give `beta_(3,7)=0` and complete the third row over every field |
+| EXP-032 | CONFIRMED | complete graded Betti polynomial and free-module ranks/shifts of the cubic-colon quotient; explicit differentials and the full `C_p` resolution remain open |
 
 ## 3a. Exact evidence anchors
 
@@ -262,6 +289,10 @@ campaign is supporting evidence, not the proof.
   `d68afbb5c54ebb86abbf420c389e1cacf666071cb35f83e5d2b67eccbc354858`,
   `0be4b659126064328b5ef14a40e488a836f874d2eed9b048d4d3f19da971346e`, and
   `e4bf2e0ae303e905efc9f985b239d059a5255b02d2ddc1d37abab5cc5cb2fc1f`.
+- EXP-032 canonical campaign, independent audit, and symbolic aggregates:
+  `907438b249b98ca9ffef689b7edb9574cdb0044cc3dd4cb52de523129f7d37ee`,
+  `43635c8497dfe57904997326e983c7477e7320809cb2fee661c7933041f47b09`, and
+  `f696390447a3ce20397d937aa73baebf23a3c5ae249d4ad1215ff48cb710a2ae`.
 
 ## 4. In flight
 
@@ -476,8 +507,11 @@ Published baseline:
 
 1. When CAOS_MANAGE is safely back on clean `develop`, reconcile and promote only the scoped
    publication ledger for the deferred v0.16--v0.18 rounds without touching unrelated work.
-2. Open a declaration-first experiment on whether the complete second and third
-   rows, canonical-module duality, and the known extremal rows force whole diagonal recurrences.
+2. Complete HWB-051: promote the exact tested and published EXP-032 plus v0.19 payload through a
+   work-to-`develop` PR and then a `develop`-to-`main` PR, with required checks passing.
+3. Declare a mapping-cone comparison experiment: use the complete colon Betti
+   table to isolate the unknown ranks against `P_p/Q_p`; do not claim a full `C_p` resolution from
+   colon data alone.
 
 ### Lenses ledger
 

@@ -1140,3 +1140,75 @@
   `8d37059beea83e662151fcdeb2ff1bef63d35c2c` before this handoff update.
 - CAOS_MANAGE remains untouched on its unrelated occupied branch. HWB-048 owns only the deferred
   scoped publication-ledger reconciliation.
+
+## 2026-08-20 - EXP-032 declared
+
+- The next route strengthens EXP-030 from one nonlinear coefficient to the complete resolution of
+  `D_p=P_p/(Q_p:f_p)`.
+- The falsifiable prediction combines the low Gorenstein h-vector `(1,2p-2,1)` with the Koszul
+  factor on the `8p` killed variables to give a closed complete Betti polynomial.
+- The declaration freezes the EXP-030 proof and verdict hashes and requires two exact routes,
+  corrupted controls, and a written all-parameter self-duality proof.
+- No EXP-032 result or manuscript v0.19 update is claimed at declaration.
+
+## 2026-08-20 - EXP-032 confirmed
+
+- The first full formula campaign passed through `p=230` but exceeded the declared 120-second
+  budget; the first Vandermonde implementation passed through `p=223` and also exceeded it. Both
+  attempts remain preserved as `INCONCLUSIVE_BUDGET` and carry no result evidence.
+- Precomputed exact binomial rows reduced the fresh canonical campaign to 32.34 seconds. It passes
+  all 297 parameters `p=4,...,300`, stores complete tables at `p=4,5,6`, verifies Hilbert
+  reconstruction and Gorenstein symmetry, and rejects four corrupted controls.
+- The independent route reconstructed every coefficient from the alternating Hilbert numerator
+  without importing canonical code and matched every canonical row hash. The symbolic route
+  proved positivity, symmetry, the first two EXP-030 coefficients, total ranks, and endpoints.
+- The audit rejected a wrong post-Koszul Hilbert target and a canonical `-0.0` serialization. The
+  symbolic route rejected a false generic SymPy sum residual `c-1`; the proof instead uses the
+  explicit endpoint-separated binomial sum. All final artifacts were regenerated after correction.
+- Gorenstein self-duality and regularity force the low canonical idealization to have only its
+  linear strand and `beta_(c,c+2)=1`; the Hilbert numerator gives every rank, and the `8p` disjoint
+  high variables supply the exact Koszul factor. This proves the full graded Betti polynomial over
+  every field.
+- Canonical, independent-audit, and symbolic aggregates are
+  `907438b249b98ca9ffef689b7edb9574cdb0044cc3dd4cb52de523129f7d37ee`,
+  `43635c8497dfe57904997326e983c7477e7320809cb2fee661c7933041f47b09`, and
+  `f696390447a3ce20397d937aa73baebf23a3c5ae249d4ad1215ff48cb710a2ae`.
+- The claim determines every free-module rank and shift, not explicit differential matrices or the
+  full resolution of `C_p`. HWB-049 is done; HWB-050 opens the in-place manuscript v0.19 gate.
+
+## 2026-08-20 - manuscript v0.19 prepublication candidate validated
+
+- The EXP-032 theorem was incorporated in the existing main manuscript; a third manuscript remains
+  deferred because this is the completion of the same cubic-colon object.
+- The 43-page PDF passed the claim map, two consecutive warning-free builds, text/metadata checks,
+  complete 150-DPI page inspection, full-size new-page inspection, and sole-author/ORCID audit.
+- The exact candidate is 741,461 bytes with MD5 `0ddc07fc56b07490e66a9b1967c6a0d0` and SHA-256
+  `ebd4d3294cf1dd6fdeccf8902e93399a6617d661dd7421d9dd260278670f3a15`.
+- Repository guards, Ruff, all 60 tests, the full registry pipeline, and artifact consistency pass.
+  Pipeline regeneration reconciled 13 previously absent experiment-registry entries.
+- Zenodo draft `22031481`, DOI `10.5281/zenodo.22031481`, is reserved but still empty and
+  unpublished. Exact upload/draft validation is the next reversible gate under HWB-050.
+
+## 2026-08-20 - manuscript v0.19 exact draft upload validated
+
+- Draft `22031481` reports version `0.19`, the expected title, one creator with the sole ORCID,
+  CC BY 4.0, open access, and the complete v0.19 description.
+- It contains exactly one completed file named
+  `huneke-wiegand-frobenius-minimality-v0.19.pdf`: 741,461 bytes with MD5
+  `0ddc07fc56b07490e66a9b1967c6a0d0`, matching commit `1318854` exactly.
+- A rejected one-element JSON registration and a local web-client null reference are recorded as
+  client failures before the final server-side file gate; neither changed the committed PDF.
+- The draft remains unpublished. This reversible upload checkpoint must be committed and pushed
+  before publication.
+
+## 2026-08-20 - manuscript v0.19 published
+
+- Zenodo record `22031481`, DOI `10.5281/zenodo.22031481`, is public and concept-latest under
+  concept DOI `10.5281/zenodo.21763582`.
+- Public metadata confirms version `0.19`, one creator with the sole ORCID, CC BY 4.0, open access,
+  and exactly one 741,461-byte file.
+- A fresh unauthenticated download matches Git exactly: MD5
+  `0ddc07fc56b07490e66a9b1967c6a0d0`, SHA-256
+  `ebd4d3294cf1dd6fdeccf8902e93399a6617d661dd7421d9dd260278670f3a15`.
+- HWB-050 is done. HWB-051 opens separate-PR promotion through `develop` and `main`; the occupied
+  CAOS_MANAGE checkout remains untouched.

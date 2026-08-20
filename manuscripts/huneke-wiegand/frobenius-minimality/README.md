@@ -1,7 +1,12 @@
 # Frobenius-minimality preprint
 
-`main.tex` is version 0.18 of the CAOS Research preprint; version 0.17 and all earlier versions
-remain frozen. Version 0.18 adds the EXP-031 integral degree-seven contraction, proves
+`main.tex` is version 0.19 of the CAOS Research preprint; version 0.18 and all
+earlier versions remain frozen. Version 0.19 adds the EXP-032 complete graded Betti polynomial of
+the cubic-colon quotient. It passed the complete claim/build/render, authenticated upload,
+publication, concept-latest, and fresh-download workflow and is published at DOI
+`10.5281/zenodo.22031481`.
+Version 0.18 adds the EXP-031
+integral degree-seven contraction, proves
 `beta_(3,7)=0`, and completes the third homological row over every field. It passed the complete
 claim/build/render, authenticated upload, publication, concept-latest, and fresh-download workflow
 and is published at DOI `10.5281/zenodo.22030743`. Version 0.17 passed the complete
@@ -88,6 +93,21 @@ beta_(3,j)=0 otherwise.
 ```
 
 Higher rows, the full Betti table, and the full resolution remain open.
+Version 0.19 returns to the cubic-colon quotient. Put `c=2p-2`, `m=8p`, and
+
+```text
+lambda_(c,a)=c*binom(c,a)-binom(c,a+1)-binom(c,a-1).
+```
+
+Its complete ordinary graded Betti polynomial over the `10p`-variable presentation ring is
+
+```text
+(1+xz)^m(1+sum_(a=1)^(c-1)lambda_(c,a)x^a z^(a+1)+x^c z^(c+2)).
+```
+
+Thus every free-module rank and shift of the colon quotient is known over every field, with
+projective dimension `10p-2` and regularity two. Explicit differential matrices and the full
+resolution of the special fiber remain open.
 
 Attribution is binding: Son Pham discovered the first public counterexample; CAOS contributes the
 certified minimality, minimum-layer uniqueness, and parametric-family extensions. Professor Craig
@@ -127,9 +147,10 @@ Zenodo identifiers:
 - version 0.16 DOI: `10.5281/zenodo.22029468` (published and fresh-download verified)
 - version 0.17 DOI: `10.5281/zenodo.22030167` (published and fresh-download verified)
 - version 0.18 DOI: `10.5281/zenodo.22030743` (published and fresh-download verified)
+- version 0.19 DOI: `10.5281/zenodo.22031481` (published and fresh-download verified)
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-031 under
+Evidence sources are EXP-001 through EXP-032 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
 finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
@@ -183,6 +204,12 @@ campaign checks residual formulas through `p=300`, every critical filler through
 small profiles; a separately encoded opposite-order audit and arithmetic certificate agree. The
 first tuple-only filler key is retained as invalid non-evidence because it compared cells from
 different multigraded offsets.
+EXP-032 proves the complete graded Betti polynomial and free-module shape of the cubic-colon
+quotient from the canonical idealization, Gorenstein self-duality, its Hilbert numerator, and the
+minimal Koszul tensor factor on the `8p` disjoint killed variables. Canonical and independently
+encoded routes pass all `p=4,...,300`; the symbolic identities pass; exact complete tables are
+stored at `p=4,5,6`. Two budget-limited attempts and the corrected Hilbert/hash/CAS defects are
+preserved or recorded as non-evidence. The claim does not include explicit differential matrices.
 
 Version 0.02 remains frozen with this public-file verification:
 
@@ -394,3 +421,23 @@ Version 0.18 public-file verification:
 - the concept latest resolves to record `22030743`; the public title, version, sole author/ORCID,
   CC BY 4.0 licence, filename, bytes, MD5, SHA-256, and v0.18 description addendum match
 - a fresh unauthenticated public download matches the committed PDF exactly
+
+Version 0.19 public-file verification:
+
+- record `22031481`, DOI `10.5281/zenodo.22031481`, concept DOI
+  `10.5281/zenodo.21763582`; no upload or publication occurred before local QA and the exact
+  one-file draft gate
+- source record: immutable published v0.18 record `22030743`, verified concept-latest before the
+  new-version draft was created
+- claim, two-pass warning-free build, PDF metadata/extraction, and all-page 150-DPI rendered
+  inspection gates pass; all 43 pages were inspected, with full-size review of page one and the
+  new theorem/proof/trust/scope/reference pages
+- bytes: `741461`
+- MD5: `0ddc07fc56b07490e66a9b1967c6a0d0`
+- SHA-256: `ebd4d3294cf1dd6fdeccf8902e93399a6617d661dd7421d9dd260278670f3a15`
+- sole authorship, sole ORCID, version, DOI, concept DOI, CC BY 4.0, attribution, scope, repository,
+  and exact draft-upload gates pass
+- the draft contains exactly one completed file named
+  `huneke-wiegand-frobenius-minimality-v0.19.pdf`, whose bytes and MD5 match the committed PDF
+- record `22031481` is public and concept-latest at version `0.19`; public metadata and the sole
+  file match, and a fresh unauthenticated download matches the committed PDF by MD5 and SHA-256
