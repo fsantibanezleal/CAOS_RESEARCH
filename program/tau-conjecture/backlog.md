@@ -30,6 +30,6 @@
 | TCB-024 | Doyle-Poonen read (V8 import gate) | todo | P2 | Before any uniform-boundedness import |
 | TCB-027 | Mod-p instrumentation: root counts of census records over F_p vs the Frobenius ceiling (V10) | todo | P2 | Cheap add-on to the census catalog; pairs with the V9 digit ladders |
 | TCB-028 | Paper v0.03 (deliberate): seven-rooter exclusion + digit ladders + punctured anatomy + V10 narrative; ship WITH the z_max(8) resolution | todo | P1 | R3 discipline: no reflexive publish |
-| TCB-029 | The final-pm 8-gate residual | reopened | P0 | 2026-08-19 EXP-008 INCONCLUSIVE: encoding semantics VALIDATED (pinned witness sat in 0.5s) but Z3 NIA cannot search the structure space (3 launches + 2 diagnostics recorded); re-scoped to bit-blasted propositional SAT or the TCB-005 census backend |
+| TCB-029 | The final-pm 8-gate residual | subsumed | P0 | 2026-08-20: EXP-010 (QF_BV) also engine-bound at known-answer scale: the solver lane is CLOSED (both backends, semantics proven, search intractable); the residual is decided by EXP-011 scan8 (all-gate, unconditional) |
 | TCB-030 | Evaluation-matrix instrumentation (V11): entry-growth measurements on record matrices; Mahler/height trade-off lemma target | todo | P2 | Context note 2026-08-03 |
 | TCB-031 | The scaling gap: bounds for T(2S) vs T(S) (no elementary substitution exists) | todo | P2 | Minted by the RL-3 note; concrete first case: T({0,+-2,+-4}) |
