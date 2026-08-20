@@ -12,17 +12,13 @@ family loophole empty; integer polynomial cycles have length at most 2.
 
 ## Open, with routes
 
-1. **The exact value of $z_{\max}(8)$** (known: $\ge 6$). Includes: does
-   an 8-gate SEVEN-rooter exist? Sub-question queued cheaply: among the
-   408 EXP-006 hits, was any union of size 7 (the artifact truncated
-   retention; a re-scan with full retention is ~2.4 h). Routes: hit
-   re-scan; then the $\pm$ final-gate case via the SAT lane (design
-   note 2026-08-02); full depth-8 census via TCB-005
-   canonicalization/compiled backend (~$10^9$ states).
-2. **The seven-root threshold** (known: $\ge 9$... precisely: $\ge 9$
-   only if $z_{\max}(8) < 7$, currently unknown; upper witness needed).
-   Route: moves calculus with the corrected cost model (chained
-   subtraction sharing), then SAT.
+1. **RESOLVED (2026-08-20, EXP-011): $z_{\max}(8) = 6$**, all final
+   gates, via the fully constructed depth-7 frontier (1,048,460,912
+   states) and the exhaustive last-gate scan. Paper v0.03
+   (DOI 10.5281/zenodo.22035884).
+2. **The seven-root threshold: $\{9, 10\}$** (lower bound EXP-011; upper
+   bound the 10-gate witness). Route: construction hunt with the
+   corrected cost model; a depth-9 census needs ~1 TB of scratch.
 3. **The bottom-law shape**: after plateaus at 4 and 7, does the growth
    function settle to steps of $\sim$2-3 gates per root (constant-
    building friction)? Data at depth 8+ needed.
