@@ -1,0 +1,4775 @@
+{
+  "experiment": "EXP-032-complete-colon-resolution",
+  "route": "symbolic-arithmetic",
+  "generated_at": "2026-08-20T15:06:40.904227+00:00",
+  "status": "PASS",
+  "range": [
+    4,
+    300
+  ],
+  "symbolic_obligations": {
+    "positive_factor_identity": true,
+    "first_rank_identity": true,
+    "second_rank_identity": true,
+    "symmetry_identity": true,
+    "linear_sum_identity": true
+  },
+  "positive_factor": "binom(c,a)*a*(c-a)*(c+2)/((a+1)*(c-a+1))",
+  "linear_rank_sum": "(c-2)*2^c+2",
+  "rows": [
+    {
+      "p": 4,
+      "c": 6,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "adf1c553ea950b84736cac40daeb2a727d05fa7aaa391470e76630202588c733"
+    },
+    {
+      "p": 5,
+      "c": 8,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "6ab23c432edd8a59e489e237daa73beb37563d83fb3382ab182873cc8c0a14f7"
+    },
+    {
+      "p": 6,
+      "c": 10,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "e3f475f27d0f44635ad1abd2532dc41ada1bc4c624b10d86a97921cccfbffe12"
+    },
+    {
+      "p": 7,
+      "c": 12,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "7f568966fb4036394a36995579cfd22cb66285eebaf7d1071e8f0c374851a7fd"
+    },
+    {
+      "p": 8,
+      "c": 14,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "e31fe07540be060186fb9022d64201541e8c4c9ae7bb3304720dc624699c1cbc"
+    },
+    {
+      "p": 9,
+      "c": 16,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "149b1eb43b984cce8ee4bd7a95ce4d898c37b93bbe88ba6c99e890df2a17bf61"
+    },
+    {
+      "p": 10,
+      "c": 18,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "d04063eb560f720cf95d111518d8bfb7f67e177dbe6498860783545ee6b595f2"
+    },
+    {
+      "p": 11,
+      "c": 20,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "f1d86c2db16bb489ddc5a1de015e387bd251246b4a2b4f5987fe262645365dce"
+    },
+    {
+      "p": 12,
+      "c": 22,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "0324aa7ab16a7ace3f3939039d6d2a6980a53570d23ff82540fe1e524356f7ee"
+    },
+    {
+      "p": 13,
+      "c": 24,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "1b6a4680984a5edebca210725cee7712de4dcf42658259ee5a69fdac74346e76"
+    },
+    {
+      "p": 14,
+      "c": 26,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "2182dbe1a1923f137787bd1c241b69b4bdfc7a77a2fe10c691327e23225d1bdc"
+    },
+    {
+      "p": 15,
+      "c": 28,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "8e7a7ea1bf5c2d6664504d5f4b44fa5fa9f3a3828d8f85ba19b925f56bf0891e"
+    },
+    {
+      "p": 16,
+      "c": 30,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "58fdbe66842d7b50aab72fb2582df79ad3e5b3a3045deb99a34a2211e945aa91"
+    },
+    {
+      "p": 17,
+      "c": 32,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "afb93a76dda27d65e97e10456825f81f6df61d97c3ccc2823a7b6ee102c35b1b"
+    },
+    {
+      "p": 18,
+      "c": 34,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "d4a95e50f4477f4198c414afe621fe050dc1a813804e7cfb658c44a6e2d480d1"
+    },
+    {
+      "p": 19,
+      "c": 36,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "986f1ee03492fe281568653f74c97b8ad966e19071f50edd52af218029c3526d"
+    },
+    {
+      "p": 20,
+      "c": 38,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "1b86b833283dd7f9de4442578c5fdb7509cb160d244497d98df084f4af6188e0"
+    },
+    {
+      "p": 21,
+      "c": 40,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "5498216aff4b9a656607667f84f8791a6f5d9a96a1ab0c0cbc18d20caf23cbed"
+    },
+    {
+      "p": 22,
+      "c": 42,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "b4820a5b0dbd40c803c3e6d35222d1c9dbffa92fa080f60926c9699311b0b3bb"
+    },
+    {
+      "p": 23,
+      "c": 44,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "4123055958013df30e08831955630ac093bc766f9a896d8cf2f94a23cc157b01"
+    },
+    {
+      "p": 24,
+      "c": 46,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "e65decb630d25cc152f6e9ab9e6615b57bc4b298d364b8c0245350aa03798fd1"
+    },
+    {
+      "p": 25,
+      "c": 48,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "43781ff4139743e896f242fc1100c8c641b9acccc304826b54db12c4bbf72567"
+    },
+    {
+      "p": 26,
+      "c": 50,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "d3d3e1e6d5aca2954d85effcc7b4975c2e128cecd56ea3e74f8435025cdea8ff"
+    },
+    {
+      "p": 27,
+      "c": 52,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "eea35e39efa5da0def0e51f726bbe4e3ac1055120b1efc6e9ea199d360040dbd"
+    },
+    {
+      "p": 28,
+      "c": 54,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "223eb5dcb59972ee6f2236ae4b77a468426a8a6dca5cc182ef2aa2a11074b35c"
+    },
+    {
+      "p": 29,
+      "c": 56,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "20773a5b76de58a3e463c290c96a9c5ed9a08d8444ad5c9f89fedb99c8c46019"
+    },
+    {
+      "p": 30,
+      "c": 58,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "742d3622bf4bdbbc870cc3a362fc3650e12b5fb5e068113dae98e29ec1c4d450"
+    },
+    {
+      "p": 31,
+      "c": 60,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "cf2ccd17e715976cc601ec922e05d1ca69a69f29983ecaf345893fba4dfd5415"
+    },
+    {
+      "p": 32,
+      "c": 62,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "d706517a8e0e74af907884731f426923bde4fbb0dea0e098c32e642628a1009b"
+    },
+    {
+      "p": 33,
+      "c": 64,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "fa63191c6e51c84d00f07b1ba8af0637e7d8c30953a4d46264be768c0db80ea4"
+    },
+    {
+      "p": 34,
+      "c": 66,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "243abe91d9569717be17aa1788f113fb1292fb8563316fd57ea3db48302320a5"
+    },
+    {
+      "p": 35,
+      "c": 68,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "15afd8e4c20a13f79fd1d15582311bd19ec12dc5e92d881ba907e88588351c0a"
+    },
+    {
+      "p": 36,
+      "c": 70,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "4651a9958285430c2b04425358bae90fdb503aed67b9235e707ffe58b30663cd"
+    },
+    {
+      "p": 37,
+      "c": 72,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "c5423bac54e8583b1c5837e65474e3f8bdc528f47969f9598006b024506519ad"
+    },
+    {
+      "p": 38,
+      "c": 74,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "ba22585a90666ee15d4a8cba63a6aefea0a1a4d1efe8190ff4ee84fcb635c929"
+    },
+    {
+      "p": 39,
+      "c": 76,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "a8efaf1c30bdf4ff0aa0f8da82dc8165883a700d28f410b5e7f7cd9fd0a8bf8a"
+    },
+    {
+      "p": 40,
+      "c": 78,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "6b28b929a56e2b01625d983f65c9cdf184017f36098ba0d54bc7464939fb2563"
+    },
+    {
+      "p": 41,
+      "c": 80,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "67f81b9bc967e6b7aa2a0e28deb53e08459b3ad924fa925482f6369e3090e57a"
+    },
+    {
+      "p": 42,
+      "c": 82,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "9c81c80819de580f97d1be12e16ab945f45bd70f0ab576dbdfdad3e9ebe3eab6"
+    },
+    {
+      "p": 43,
+      "c": 84,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "549996ce64a4fdf978e97810591b8d8fd145a0a9e8db366e91de92bb3be6504c"
+    },
+    {
+      "p": 44,
+      "c": 86,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "99f74196930299ba4bab5b9f65831d01106fa09e29523e23d4e91e5c6e649d63"
+    },
+    {
+      "p": 45,
+      "c": 88,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "894245dde39f72fa0dc701c3a0491b661043951352e72b3614bf7ec4c3fa3e3a"
+    },
+    {
+      "p": 46,
+      "c": 90,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "b288e05288db378dbe41f4858c5a3bf6ddb0a373118b0e9d268b694df0a26d91"
+    },
+    {
+      "p": 47,
+      "c": 92,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "f6cb74a413c60dbd8d63c2368849cc12c7e4eeab00eb223625e0ea096924795d"
+    },
+    {
+      "p": 48,
+      "c": 94,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "967e6e08d0a339d42fcc303510e429fa99a04e8b0e8d00e65abda4a4b7b8a66d"
+    },
+    {
+      "p": 49,
+      "c": 96,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "0f98786886b1e0a87ac929daaf9a83f08068af84c3fd758f9873a2c0c5f59837"
+    },
+    {
+      "p": 50,
+      "c": 98,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "a8a756e8bebd2a429af2f7c3c12e70073a7b79be4685384208471dd2908c744d"
+    },
+    {
+      "p": 51,
+      "c": 100,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "3d3f7e4eb5563942f55d2602b6aee80cfa57f48d9d9c48b933a0c4beeb19fd98"
+    },
+    {
+      "p": 52,
+      "c": 102,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "fde964d97a610d25f624168cff2095b721940b37293e5ef82706fa76b4adf545"
+    },
+    {
+      "p": 53,
+      "c": 104,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "cf684123aa29995e2803de7c27d316c16697d243ddad78bf2042ee212d851796"
+    },
+    {
+      "p": 54,
+      "c": 106,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "198b40d58941314aa78b56fa9d0c5a3c5eaefcbe6aa4ff8440e9a72610011329"
+    },
+    {
+      "p": 55,
+      "c": 108,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "96c77243c807acc5dd386b3914b6771399ae486bc8288a1b99f63df0a4cf47ef"
+    },
+    {
+      "p": 56,
+      "c": 110,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "cbde7d42ed7bdac1853d59907bf250b5edebc17db7f476bad9b093c87789fdd0"
+    },
+    {
+      "p": 57,
+      "c": 112,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "3d87bfd5d0641f31918c609d9f89c45573d13ba7173bbcd344d92ecfb9e01d7d"
+    },
+    {
+      "p": 58,
+      "c": 114,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "0f0b647dc93ca49d1190e404eb5c10f643b99e03022fce0ad640791db7b10664"
+    },
+    {
+      "p": 59,
+      "c": 116,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "28e737add0429df0b3ec8c537abd9ee0309a39846b275ca6631392ef4fa9857c"
+    },
+    {
+      "p": 60,
+      "c": 118,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "4847d5f339e52e174f9bed696ffa1e7c4b98e6ea4963c9b904ef2d69317fd551"
+    },
+    {
+      "p": 61,
+      "c": 120,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "ff41f81be01d27a27ecca1eee5ea7f51ef55b4480479acf2b6de62c1035a0ba5"
+    },
+    {
+      "p": 62,
+      "c": 122,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "39592d4b9fff2b23d7e93f72df5a6cb90bce63cbd46f4a1ce45c5378e6e77e2c"
+    },
+    {
+      "p": 63,
+      "c": 124,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "201a7fe8f4d560ff4acaa33ceb3425aed3ad3d1426540680735cbf66b732e16f"
+    },
+    {
+      "p": 64,
+      "c": 126,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "359382b139eb3c9591eb4d79e6d294a40e41487380dcd8a0fd5e1f7525f8fd6b"
+    },
+    {
+      "p": 65,
+      "c": 128,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "688d92f6d3ff2ce1b418b9505f2c12fc65f74aad83ef9b1e7e19a7ab7ef53d71"
+    },
+    {
+      "p": 66,
+      "c": 130,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "3bab270a9a7b7fd1c34caeedf58677471fdacd28cc3b1ede802d5d3fbe12dc1b"
+    },
+    {
+      "p": 67,
+      "c": 132,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "3099c2c9235fdaaef9e89b0986cce373e9d237bb84aa7a1fc04d596d8a3be3a4"
+    },
+    {
+      "p": 68,
+      "c": 134,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "abbffed6d2ce8c2696ec1cd85fb63cba6f64c7c12b3e1b79c674b8557e04587e"
+    },
+    {
+      "p": 69,
+      "c": 136,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "cf66a1becf3128edbc606e68847b02ffe339601d1a9e5d49381f1be8015245a7"
+    },
+    {
+      "p": 70,
+      "c": 138,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "48b04eacf5269482a6c85594a86057195e823f495eeb7089f62555fbb7462d84"
+    },
+    {
+      "p": 71,
+      "c": 140,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "869436dd36c6990f1fc415509cda2c591913187ce608fa4fda7ca0001afa1fb0"
+    },
+    {
+      "p": 72,
+      "c": 142,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "52e5680a2c63cec6b0b060b9c7594824a138d4e56c3fa3ac80a2e30543fa9118"
+    },
+    {
+      "p": 73,
+      "c": 144,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "96fc831758edd7e566a8d63159bddf54c9b7b8b1b7851a993216ec2bd5e635b8"
+    },
+    {
+      "p": 74,
+      "c": 146,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "f06e18fab4d4049c236af54461c70fb5c9d70847719057c227a0e31410ee54a9"
+    },
+    {
+      "p": 75,
+      "c": 148,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "9ac84a3a9b8717f5426564ccf60fb228060018bc2a640389caf6c2844076bb56"
+    },
+    {
+      "p": 76,
+      "c": 150,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "dc032de048de92685eb2cd7e11fe3d8b5fcf6ad5a5c60940446cbaa5bd22f0fb"
+    },
+    {
+      "p": 77,
+      "c": 152,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "52378bbcaf22570a0b58d713317c3e92277379b06fb68dd4d916de950e594ea8"
+    },
+    {
+      "p": 78,
+      "c": 154,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "95f6e5bbb7998b0d603a83df83641d1cbaf77d1deec1a30bfe681b57673d3529"
+    },
+    {
+      "p": 79,
+      "c": 156,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "cff79b2400f814a1ba73fe59ac20b1cbb285cfc7c729c4fbc1dcfd241282e261"
+    },
+    {
+      "p": 80,
+      "c": 158,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "da88dc9efc6da04fb70cc353dff38fada59304debd8156f7617135ececc5c5f4"
+    },
+    {
+      "p": 81,
+      "c": 160,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "e5dccb6dfb0f75c483e2bae678160b50b31330d04f1254c41870873e5e525fcf"
+    },
+    {
+      "p": 82,
+      "c": 162,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "2dc9b3ee5e78a81abc0dc597f17a3fe392ffe466086fb16f10820dee86d926bb"
+    },
+    {
+      "p": 83,
+      "c": 164,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "e49777e82b10f5afd290abad582a97685cb971f76b5a517fe5db6c4c8d6c8cf4"
+    },
+    {
+      "p": 84,
+      "c": 166,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "7e4e63340b3dd33563fbd38f01345adb9c8cb8b0ad3877b6fd2d43048664f355"
+    },
+    {
+      "p": 85,
+      "c": 168,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "8b4ebb00bd904f5f4ac9afb624d39a1093896410d8862ca945ab6942095a41e1"
+    },
+    {
+      "p": 86,
+      "c": 170,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "bf00781d7a1eeeb3685167e7d94dcffdc5e10a3c846453bab0c6d5dabcfad660"
+    },
+    {
+      "p": 87,
+      "c": 172,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "e7a2ea53ddc05581bb816516fb9ad8a728196b551761c58bdb486db273d4990a"
+    },
+    {
+      "p": 88,
+      "c": 174,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "f5cd17ae5d7f9f1dcdfaaa71d206f1e6b493daefb454c7f136d9906e3506dd45"
+    },
+    {
+      "p": 89,
+      "c": 176,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "8f87898545a4621ddaeb23f69302ce68552f4798fe91d6fc538084751d50aef3"
+    },
+    {
+      "p": 90,
+      "c": 178,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "3e07e15ea00b70f662dc21935c1c0c04ce27e242762eeaf3f74f302ed2f0e08e"
+    },
+    {
+      "p": 91,
+      "c": 180,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "1b88f0cfabd9002ff950b04a48e0b08190c50a3b22805fc873a308d881b588e9"
+    },
+    {
+      "p": 92,
+      "c": 182,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "78103ab05b338c719f3f977c6e445cf06c7ad7d8ba9ee1555f5dbfc664ca6864"
+    },
+    {
+      "p": 93,
+      "c": 184,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "3256d17efbb0351bee39cf088cf9e4407267ace18d14e084e38b56a914ffb28a"
+    },
+    {
+      "p": 94,
+      "c": 186,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "b52ed43dce23233aa3cfb181c04bc5d625d3679f95b24308bf5651eb9039419f"
+    },
+    {
+      "p": 95,
+      "c": 188,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "0b52d7dcffc755de70f21f99871438cc538f8669a8999262dd46894f94ffca66"
+    },
+    {
+      "p": 96,
+      "c": 190,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "ce29e269517485bd2c3dac412cb39b53558698a27052e690ba1acf557cdd134c"
+    },
+    {
+      "p": 97,
+      "c": 192,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "41a803cb756e3dfccae38265223de275d8c7d60b6f06a48a50223c9dbd5f1018"
+    },
+    {
+      "p": 98,
+      "c": 194,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "ad9559e912d546f86456dd20d7d2122d35efa191e77db825f2f5c01fc85212b2"
+    },
+    {
+      "p": 99,
+      "c": 196,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "2d48dfffeeb3ba38bfee6dee511aa342b05a0ba12d3b741df6c8e376b7ec7a1d"
+    },
+    {
+      "p": 100,
+      "c": 198,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "afbb97e6f8dc59e31666c05bbbb18476350576196d0b5c1a0829c8aeb4079f90"
+    },
+    {
+      "p": 101,
+      "c": 200,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "5fb9c8bc3d58e5d29438125fedb248acf79934657d45f847c25300f073c4c6d1"
+    },
+    {
+      "p": 102,
+      "c": 202,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "d5e1085ee70aff40195416d0c21140026e1e95720e299da7c4d04e3ec40e5e63"
+    },
+    {
+      "p": 103,
+      "c": 204,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "07fb3adce78cdc97f20a1a78151c7a493e8c24e232d7ae11fcac30bc17d686a7"
+    },
+    {
+      "p": 104,
+      "c": 206,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "fbc73e8a9e63146250998b8490f74fbb6038141f0d3cdc323a102429e7a98081"
+    },
+    {
+      "p": 105,
+      "c": 208,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "f61ce508d2dc7d7fc225a0e68ceadc1dab007d242823800ecd7c095467b4722a"
+    },
+    {
+      "p": 106,
+      "c": 210,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "5c8c996f63d69c26ee5d5d1525ed562b5e48de1c9313fb35c730079ab860b8ca"
+    },
+    {
+      "p": 107,
+      "c": 212,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "5245d555a495a052077041dc35e5d5e0c93d6c9decd6f08c261191e01a7878f5"
+    },
+    {
+      "p": 108,
+      "c": 214,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "f28c75c23a380b4a83233b9110ba942fc5d075c13a8cc54d2ec603ec424c3e6b"
+    },
+    {
+      "p": 109,
+      "c": 216,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "f11c558eeefcd386fe0d6ca1329d9ce6161304d3d5ad84295e850ac57632642b"
+    },
+    {
+      "p": 110,
+      "c": 218,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "24fb54eaf00aee6e0a0242bedf95664e0323b681fa2925fd284b7054f9ea09ba"
+    },
+    {
+      "p": 111,
+      "c": 220,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "3e615bdb38031d689edd2e1f60f5653eb8d51aba16b9408ec6260f7b381f9d58"
+    },
+    {
+      "p": 112,
+      "c": 222,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "72c65566c3ca21f10d8e1135ddb37f171809128960e252670688b7e13ea81b09"
+    },
+    {
+      "p": 113,
+      "c": 224,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "fe151f6fcc4a08ae3c3c549d0ae45802d6c1d6680f5147ae1d5b4a6b4d17cadd"
+    },
+    {
+      "p": 114,
+      "c": 226,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "1c4768c77769010a0e251ed9ca9311e5570e6cc3daf2ebed74bb7ab5f2931f19"
+    },
+    {
+      "p": 115,
+      "c": 228,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "6f18f54d7db92565c2cc163e576fafb1c67f695ecf3311104be502c9b5a27941"
+    },
+    {
+      "p": 116,
+      "c": 230,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "96ee65fa7579dfeb4b2b5e8e63910ac397725557f002c97162b34d99e6a88ab4"
+    },
+    {
+      "p": 117,
+      "c": 232,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "d90620f4355fedc6950effa3620dd24be1d44728c3ad6cf05276f65b2b53dd27"
+    },
+    {
+      "p": 118,
+      "c": 234,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "ce2c09a11512dd9bdd8d6d1fa96aecfe47b109f74a4d7396233499f8a24fe4fa"
+    },
+    {
+      "p": 119,
+      "c": 236,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "aaad46a67f7a2033ecd91bcc066e18262c2f28c9be7f777265b00275a4c0190e"
+    },
+    {
+      "p": 120,
+      "c": 238,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "5d38bbc7ef0c804bcf52b13f35b29eef4d22e21fe439378e618788abab17dcac"
+    },
+    {
+      "p": 121,
+      "c": 240,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "7110c5e6dfa22a30b104b464e34c9ecaf4fc34829813a9521e5952a90041b661"
+    },
+    {
+      "p": 122,
+      "c": 242,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "d2dac931dc825218847fa680703192c2c699abe2d0631508e3140669027d7eb7"
+    },
+    {
+      "p": 123,
+      "c": 244,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "8c389825b36d547dc5b0d315082beac405d41d68e891fdc5a1497f91182f7e3b"
+    },
+    {
+      "p": 124,
+      "c": 246,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "2d1da9c27989097bf99e2e2c8d76c9ea41657f2fc5f4103b3b9bf9373583bc36"
+    },
+    {
+      "p": 125,
+      "c": 248,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "e0e5a33af354168ca78411e20a23ffba86b6f1352097840e2b9f47bf286e8b32"
+    },
+    {
+      "p": 126,
+      "c": 250,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "411d55b286e14e6ced94ce7c98e546d7ff4a9e85488d5bdbd0b0898c13d9d4d2"
+    },
+    {
+      "p": 127,
+      "c": 252,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "96e165d1cdfd6b3c9b0e11b8fde279b97c23d37ee20751ddea8755c1d708d1aa"
+    },
+    {
+      "p": 128,
+      "c": 254,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "46fe93aef979f2f5bc209017607dec9f40db9a350cd157dd68acb75a2a488aca"
+    },
+    {
+      "p": 129,
+      "c": 256,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "2352755d67cfe7cd7aa78c6c4861e4bf8d3fe7e2bfe6dfc5729cc84c2aaeb289"
+    },
+    {
+      "p": 130,
+      "c": 258,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "a5611a79ff2b16b7a4faa238048a7af0072d5b8ac8e84e3a8eb2ffb1ea335bff"
+    },
+    {
+      "p": 131,
+      "c": 260,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "2e59117631d2727e164c3b5df3c5ad2cc8c7b7a3cb6401082f3637004b38c159"
+    },
+    {
+      "p": 132,
+      "c": 262,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "59d44b8e804c38789a966dceabeca8289520df0fed1759ecf402790747a1790e"
+    },
+    {
+      "p": 133,
+      "c": 264,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "97d3069d9d24b544b2796e205a8f1c88c581b029151fd0e267a68164de6ca890"
+    },
+    {
+      "p": 134,
+      "c": 266,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "d5e291fc16b7ac06da395879b0c7bf9563d83f634b01fd9477e31064c96808cc"
+    },
+    {
+      "p": 135,
+      "c": 268,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "1826948075a1a3aff1641a27c8ecdfea0c03a41397bd53ea5e8270b5809abae3"
+    },
+    {
+      "p": 136,
+      "c": 270,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "8149aa972ef52b901f431b78a8b4469300793320e5022781215ac7cfed96569e"
+    },
+    {
+      "p": 137,
+      "c": 272,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "3c2fe2ed9986a76e41d44455ba3b83bb6c2329f4eccec5109d97060f6b14f5a1"
+    },
+    {
+      "p": 138,
+      "c": 274,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "7da7c1c3fddf6fe45e68ffa33a6614170d93189d0a921ba7ba90ffbed4d35b0b"
+    },
+    {
+      "p": 139,
+      "c": 276,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "1c6978138298bdf3cdee0a17222969532165a5f623f83ca08b88b81a262ddf63"
+    },
+    {
+      "p": 140,
+      "c": 278,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "7bca1c6194971b785b125c23a6e6b7ad563e905b9d976a1a965acba79a8bb374"
+    },
+    {
+      "p": 141,
+      "c": 280,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "b96806b9880ee1b421c8ae0c4a82b3f22500a203c914f606cab81e34495c0b75"
+    },
+    {
+      "p": 142,
+      "c": 282,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "8d2f577f315fe2c6ec70379765f8801edf70913feaa63b50fb36f9d48acddf20"
+    },
+    {
+      "p": 143,
+      "c": 284,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "da1465003ebf193ca9aacaca7114b7b01cb9523b2cb7f357c8f9982c910a60a0"
+    },
+    {
+      "p": 144,
+      "c": 286,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "777be14146c738d434c3cfccc1222a38ca7ee69ac2a2276cd1a32c0056708efb"
+    },
+    {
+      "p": 145,
+      "c": 288,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "2d0be97eafe1bc8e77fc5fde10282e1fcce703a4a26152f84e046b8f9bfad7fe"
+    },
+    {
+      "p": 146,
+      "c": 290,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "8b48c60a0b8165fc424cb913b4aac2e95bdcd2eea7a5a53cf2646c78fd97ff78"
+    },
+    {
+      "p": 147,
+      "c": 292,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "0ae6c86469d42c1fbfd3d1207aa4f235177c94d8379b230e2ce1746e1dda60bb"
+    },
+    {
+      "p": 148,
+      "c": 294,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "a9056087d9075772ced313e731e840329757720a7d650ce799d013b58b6bdf7e"
+    },
+    {
+      "p": 149,
+      "c": 296,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "1b97973537ed229f5a2f09efaf068ca9e3df51df2fccc05f2dda4112df50c138"
+    },
+    {
+      "p": 150,
+      "c": 298,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "2c3401c72baf77fafb27f83f608fae3edc48828e46dc20f01ef408eec6b7627a"
+    },
+    {
+      "p": 151,
+      "c": 300,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "849ba600930f46962862a9baa402fe49d6652dcd420bd376359821a431b05f82"
+    },
+    {
+      "p": 152,
+      "c": 302,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "9e7da28e0c5d3cf70f09a869367b4334e8298249fee02faac691e8ab8f526289"
+    },
+    {
+      "p": 153,
+      "c": 304,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "df30c9a134cf5c83d4a785126a6c6ea1ab2d446a7478a7906acaad3654d276fb"
+    },
+    {
+      "p": 154,
+      "c": 306,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "da6aec0fa3a092c303e8bf8712efd1c78c008bc233b8470768134887b5a020c1"
+    },
+    {
+      "p": 155,
+      "c": 308,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "3cc3820c46a584e0c21e915c3641719b314d4c3dd301386b2f72726d032b8eb3"
+    },
+    {
+      "p": 156,
+      "c": 310,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "dd4b91f927add73195f4fb3c118cdacaef04b0aa9666468807180cfb86fe4fcf"
+    },
+    {
+      "p": 157,
+      "c": 312,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "2c94d5115fdc71b82ef46e907832e406af0f67213c592f19b5cf9bc6d43592a9"
+    },
+    {
+      "p": 158,
+      "c": 314,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "589fdd8bac900966b5b102d026aba12c59d48195907e0a2f84d411616e8b7113"
+    },
+    {
+      "p": 159,
+      "c": 316,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "64012fec646d27b8dcd950d8b90e13d93ce9c02a73d506ec1ec74bde88c1c0db"
+    },
+    {
+      "p": 160,
+      "c": 318,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "27adac41c77a602ec4d8e23cbca144566ab14d29a6b3fbf51a7dab9a1dfdd0f9"
+    },
+    {
+      "p": 161,
+      "c": 320,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "c7ad41702183fd5c5ba8e678d102d6815017bdb178ab8a474fe5c247f3f3b48b"
+    },
+    {
+      "p": 162,
+      "c": 322,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "a40a6746b0f7aff1b2e5c062eca883c5ec67b98caa8d452f02a2a3c54a8a0711"
+    },
+    {
+      "p": 163,
+      "c": 324,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "74fb0fa8dc8630a1343c375119ca9373d47a61b0f6e98e14b072c6440d880a8d"
+    },
+    {
+      "p": 164,
+      "c": 326,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "901529addb1f0a2e94446fd9e3b75f45ffbbc3ee9b634bb1875ab4254b76334d"
+    },
+    {
+      "p": 165,
+      "c": 328,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "0649663777b560e803f6d65b1ca6e39f5cfa64ef9fb84cfbc6bdf2ff92641df3"
+    },
+    {
+      "p": 166,
+      "c": 330,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "a3d4112bbfc31c8aed706af00b2ad37fae42d768d04518d2c311a6f6e4306749"
+    },
+    {
+      "p": 167,
+      "c": 332,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "79754783fdcd1ff29a2cc359169ee89d6f10039e50b53912ad2191a0d8e10908"
+    },
+    {
+      "p": 168,
+      "c": 334,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "6a5be0bc039393b520fdb01be539d89046075e8e983ede6efd4b859dddc5789a"
+    },
+    {
+      "p": 169,
+      "c": 336,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "334311afb5a2b39ee038057075e99bf901c621ff1cec2cc7f9380df3fb51670d"
+    },
+    {
+      "p": 170,
+      "c": 338,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "c343e66fec5946ebae960f68759f464fb7f2470e7fdcb77eaa27fbad7f10f70e"
+    },
+    {
+      "p": 171,
+      "c": 340,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "903c7844687d4c0eb3f1fac03f25d02d4c35a34e2a9cad794b53c4d2043144c4"
+    },
+    {
+      "p": 172,
+      "c": 342,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "7ac19d84989debed06a724def575461a4c8a32de02b1bde171fe423610bf1f1a"
+    },
+    {
+      "p": 173,
+      "c": 344,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "d75547daa13d58b09bd00a54e242102f4e7d71558a783115e8ced26335f23c7e"
+    },
+    {
+      "p": 174,
+      "c": 346,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "bc0fae7bdb63f551d857ececdd04edb248e142e0de60739effd2f1bba531016e"
+    },
+    {
+      "p": 175,
+      "c": 348,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "6ee980650b7ac435806382fa75d68e559bcc8589836f7cae1ac467c58b906871"
+    },
+    {
+      "p": 176,
+      "c": 350,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "2b9dea395631f0befca1acc0eaf3c852bd8199831b93c4627c75d389c4c4439a"
+    },
+    {
+      "p": 177,
+      "c": 352,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "7dbed0ffa5bd81f66c9af6ef0037d8b7e2940d0fa92ccaa2af687e0b874f94dc"
+    },
+    {
+      "p": 178,
+      "c": 354,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "4cb4400d8048ab45aabda12161cd0127a8c00a3f0a868a0d19942489b6c2b79f"
+    },
+    {
+      "p": 179,
+      "c": 356,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "4446576b30e565cb881b2da019c337feb716196b7d3d90d2ad11b28a5c7bd6cd"
+    },
+    {
+      "p": 180,
+      "c": 358,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "6bdfde0de223a91eac16b3317fab7335127df22c149218f92571cddf1093c1d2"
+    },
+    {
+      "p": 181,
+      "c": 360,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "e08a464df6f1b1eb365982cfe498c87129320562d8d3a777315db81fa9750855"
+    },
+    {
+      "p": 182,
+      "c": 362,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "24a02eff54ba73f6948b8ef6aed065995fda8257675a15c0b13d5d1232d167dd"
+    },
+    {
+      "p": 183,
+      "c": 364,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "ddac3e42aff410f20f92a4c5da98d542c35d4e2ff88e5e172e78f7010c43e39b"
+    },
+    {
+      "p": 184,
+      "c": 366,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "b9dbbe311c5bcf53402e46b998ee038765a8d62b46f16c75a6fe74dbc50ada4d"
+    },
+    {
+      "p": 185,
+      "c": 368,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "b4f4a979ea39bf708a6dc52dc06ee636257c226d6d5beaf08590626f8a352bc2"
+    },
+    {
+      "p": 186,
+      "c": 370,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "b05acc00c9a6c42697d66f912e2394897cec67d685aea3b9aea75f362c17daa9"
+    },
+    {
+      "p": 187,
+      "c": 372,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "bc0526e6b6fcf975f6cd2de4bf4cf6658e759912fb5736e7fab0ccdededc5046"
+    },
+    {
+      "p": 188,
+      "c": 374,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "b10936b99671a5fa8141afa1c3d2d3c83fa17d220f3345fe2285c7ac464b91d3"
+    },
+    {
+      "p": 189,
+      "c": 376,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "290ab3fa4f40b4d434f6694a6cfa4534887cecfcba8906e7efebed282fcd5bbf"
+    },
+    {
+      "p": 190,
+      "c": 378,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "94d5f46244a64322fe251b6838aa94e4e5ef81ec497b17bb2dc912ce4142aa93"
+    },
+    {
+      "p": 191,
+      "c": 380,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "1cd88bbbb74aca7dd8c000ad16d1102ae3696d6559408f0f2185dda520e0da8d"
+    },
+    {
+      "p": 192,
+      "c": 382,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "c3b6420b7ba67533c6056eacd0ef5bfdb0a5f4507176ee24db560400e6aa8572"
+    },
+    {
+      "p": 193,
+      "c": 384,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "13e7c299139d971c8ce6f7f70dbc3cb60553e0f23828561359bae7e563bdbd81"
+    },
+    {
+      "p": 194,
+      "c": 386,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "b41ae2d7cd5c495db9679cc2ae99a0f60eb25034fbfe83baf88d2d447eeeae86"
+    },
+    {
+      "p": 195,
+      "c": 388,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "ed19ed935aede00deb91a35b98e62f32076ae44604ef7bb092edba0eb9e9dafa"
+    },
+    {
+      "p": 196,
+      "c": 390,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "5dc8e0aa09e5bd85e69abec1dccd3e4a19d7b4f8a94ea2a9f58b7dc65abde006"
+    },
+    {
+      "p": 197,
+      "c": 392,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "e9f0fc4cec608df5be2a4d46c8cdf2d1eb926ec90c14fc435df0b1139c0e1f4a"
+    },
+    {
+      "p": 198,
+      "c": 394,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "de4b7906015c27bd8271c248e7672612491fcdb10d4c67691bfa397c3218d631"
+    },
+    {
+      "p": 199,
+      "c": 396,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "efa0241f57db47336eaa42d9d11a983933af5039e93f59108e90dc5e2e516fd8"
+    },
+    {
+      "p": 200,
+      "c": 398,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "2dd3d242074ddbf6d51eb8e36d79a5d9e05299b4f365e530ce49f8a716b3778e"
+    },
+    {
+      "p": 201,
+      "c": 400,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "ceee493b159ffea46f6aee77e100726d1437fda657b2b92a72c1cb5227df52bc"
+    },
+    {
+      "p": 202,
+      "c": 402,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "a44ff596358b245e2b7e195b13b58c63b3703181c03135c9531c521f787fbf5e"
+    },
+    {
+      "p": 203,
+      "c": 404,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "fa8ee3e3d65d29265e2033dc207196fa23f6b33a198656f51023006ad7a48970"
+    },
+    {
+      "p": 204,
+      "c": 406,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "c70705c6969b53f740fb0f2b31c5bd876c4d82bc661b9d5e005278788e23346e"
+    },
+    {
+      "p": 205,
+      "c": 408,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "643f231f1e946afd4f394ae36c63480ae61ab6d5542d0ba3c6d6113e337ed835"
+    },
+    {
+      "p": 206,
+      "c": 410,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "28c3f54a607c884fec22968c641f522e4de204182e126f9a4e402fa1d3a41923"
+    },
+    {
+      "p": 207,
+      "c": 412,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "e8ecfe4ec4cbca5a4158d2eaa1162be9c8e196c98a3d3e501a4ddb81ff119183"
+    },
+    {
+      "p": 208,
+      "c": 414,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "dbf7e87cce9cdd2adbbcf0c86553e93f7d3274033a48ddaed66c502b863ef51c"
+    },
+    {
+      "p": 209,
+      "c": 416,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "f6488fac03dbc5349e966491af67096a41ff88182e07d57152747b5c15d0efb2"
+    },
+    {
+      "p": 210,
+      "c": 418,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "e0ad3fd4c177bb7b830c81d81c21b8fbed9c73863652a6f9661072f69f3756da"
+    },
+    {
+      "p": 211,
+      "c": 420,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "747ce46af0369c92ddc8603fa60190eef454e23d59d24ee1116312569360f92b"
+    },
+    {
+      "p": 212,
+      "c": 422,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "fcb04aa5ecd73a2d3954318a5d6c53a50c237b6f80e61e55b60ea2a3b237d47d"
+    },
+    {
+      "p": 213,
+      "c": 424,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "040076a40bad2575a779cfa09af9016fc9bf03de305bef8c5c9fc139c3fea075"
+    },
+    {
+      "p": 214,
+      "c": 426,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "b42bdbe5aea52f30bb46c5fad01bcfa706734ea90d1d110e8f4841c39104a68a"
+    },
+    {
+      "p": 215,
+      "c": 428,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "ed7056c36e58a15f6157d7b3dc76be57ad6cf507a3ddacff308d336eb9a21960"
+    },
+    {
+      "p": 216,
+      "c": 430,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "fec5cb9b24e1ac80beb37010a9a899f0251074f677ab4816638f1391f2068fe4"
+    },
+    {
+      "p": 217,
+      "c": 432,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "bbdddd9c3becbf33e84dd9a8ab5b6ecd8bfcd39e2c293cbad02bf663025a9be0"
+    },
+    {
+      "p": 218,
+      "c": 434,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "2466b50bfa21fd318cd514b618f3b4d8f02d0c98ee153fcaf0bf96233b2e2222"
+    },
+    {
+      "p": 219,
+      "c": 436,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "38e1428810746130c63067e4e119c984761a54ee971380e9e4c269dd5e97798c"
+    },
+    {
+      "p": 220,
+      "c": 438,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "3c232bab48baddf282636701abae4b6008d04582107eb480cf7ab2bfc8e3e958"
+    },
+    {
+      "p": 221,
+      "c": 440,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "8016ad2b31eee143ab418e0f2a0c870f5120688c776a3033890b6895874e1d64"
+    },
+    {
+      "p": 222,
+      "c": 442,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "e24ed58d77aef89d74652a8d276931b7fbcec4067305cea46da729d5e54fa598"
+    },
+    {
+      "p": 223,
+      "c": 444,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "f650fa4e501e3c199aa8171b8f0b79c4a9ea6f2d780ff0a2500a885ca423304d"
+    },
+    {
+      "p": 224,
+      "c": 446,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "bd27250ef2f39ad0e7dcf3d6e712d201c709b7bd4ac59bef7726d7dc09da3f00"
+    },
+    {
+      "p": 225,
+      "c": 448,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "5a66b5f3fc6399a3734941cae3d5f07baf5e60b9b6b4747365c4e11cf71f51f3"
+    },
+    {
+      "p": 226,
+      "c": 450,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "4fbd5378dd077d8958ed4ffa815e468dab5025329deec01305181bda7d1a6668"
+    },
+    {
+      "p": 227,
+      "c": 452,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "7dfdc0e730357706d9d731ae2a597a39c68bdbe3f7422e7eb086a1a0b4dc9b3c"
+    },
+    {
+      "p": 228,
+      "c": 454,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "370580f686087a13d92c52966296b8364c1f6822b0e254fea57d773761253e0c"
+    },
+    {
+      "p": 229,
+      "c": 456,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "ce414aefd7dd99b27f4b75f703946a4d09521c5902459989ce6fc07e101b139a"
+    },
+    {
+      "p": 230,
+      "c": 458,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "79bded8725bbcb4359c59dcb0e37dfdef1a95895e7defbf2a02e96f96dfd5816"
+    },
+    {
+      "p": 231,
+      "c": 460,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "85060dfe38dc65b469d30b91a8e76dca0a334d9463ce2094f22af3052bdd6218"
+    },
+    {
+      "p": 232,
+      "c": 462,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "57b43828c6058e3b817840eecbe77a6feda272401dc6197b04eb84553f12a09f"
+    },
+    {
+      "p": 233,
+      "c": 464,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "d10afd33ffd489988dd45b6f3bc18c83207351bc7f428af1889cfdae54b11b8b"
+    },
+    {
+      "p": 234,
+      "c": 466,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "58be44db96986a23d1de57b4fe5cf0444d84e746dd550d0f715383fdb0f3c1cb"
+    },
+    {
+      "p": 235,
+      "c": 468,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "ab9d96ffedcbe26979b770b69a6a80b3c080f05a7cb5b4908da6cd47a4623c3c"
+    },
+    {
+      "p": 236,
+      "c": 470,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "75560387f63138dcaa0c2ed3b1e292ceaf7748ead240e874f5b1df0eddd194fc"
+    },
+    {
+      "p": 237,
+      "c": 472,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "9914c4767942f431f59a4fdfc9438e0f3afdc28535576f1cf13037a67ae69864"
+    },
+    {
+      "p": 238,
+      "c": 474,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "92188e72b9a1c89b88dc88dbc979e62c7525578923cda04a2dd89af2dfddb21c"
+    },
+    {
+      "p": 239,
+      "c": 476,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "30727f8cc607aa0e90091e7785507a920f3fb80fa602f180f66cdaa652a4ff3a"
+    },
+    {
+      "p": 240,
+      "c": 478,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "40e0a6ad456d253ac1d390e19fe39f8dc55ef3a274508640ce422e2d20749c4c"
+    },
+    {
+      "p": 241,
+      "c": 480,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "f29f854075e646f51bf29c52171407dbe02dec9b64fb9546188f8260309bbcc6"
+    },
+    {
+      "p": 242,
+      "c": 482,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "477c9ecc2cae1cfb5f795f3105e39b7cf2fba8def25f7d3af6b0ec126a9e1c7b"
+    },
+    {
+      "p": 243,
+      "c": 484,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "367d6c40e89344cc1acbf455b682ecf9d3f9878d946b12593b0c0f3d35682492"
+    },
+    {
+      "p": 244,
+      "c": 486,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "555a8c79a7f8d9fc115bd33a076eddd635c872aa7000c45b9a792c0f0b36b377"
+    },
+    {
+      "p": 245,
+      "c": 488,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "d688f7b9f00ea2f36a9424aef4b17fb32636109f9557f103c05ac1b8caf2ba93"
+    },
+    {
+      "p": 246,
+      "c": 490,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "ef8e3bfb9ca461ad2dbf614259a913564868eb6116e00b3de432f9992d8f805b"
+    },
+    {
+      "p": 247,
+      "c": 492,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "adb70ff9eec68694830b5220c53bdcaa05ecbfe7204768fe1f0d007ecb7fba6d"
+    },
+    {
+      "p": 248,
+      "c": 494,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "d78b80b0bb0996ee177d1786d8d9c7f6be1e2cff77001aec98999137e18673e5"
+    },
+    {
+      "p": 249,
+      "c": 496,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "6d44cc6d519d8cbf9413d7f377c6f558d93b2705b13b6615e19e9919817c3b1c"
+    },
+    {
+      "p": 250,
+      "c": 498,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "8f614f1005b18494a605b91c51a8e7d46a43389ba4b605723e7c7256c59281e6"
+    },
+    {
+      "p": 251,
+      "c": 500,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "aaef0b12a7af08a8fe32d8c98456315dfaced667c73bc4582563a9d8ca7f783d"
+    },
+    {
+      "p": 252,
+      "c": 502,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "4b7518eba8a530d0e8ee5fc8f1786f31348225888ec0b60abb75730a14988d28"
+    },
+    {
+      "p": 253,
+      "c": 504,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "d58403bf099468e01803cbfd216af41a5c4413b3464402ef9730619893438b3d"
+    },
+    {
+      "p": 254,
+      "c": 506,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "87cbb5c51e25c905024f6a094d2843ccb2b3f3f07896edb998541f8d0acedd95"
+    },
+    {
+      "p": 255,
+      "c": 508,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "9ee0a2c7db9ee5ae9a18a527c93f71a4b371fe4da1f51b661269b1fe9dd36ad5"
+    },
+    {
+      "p": 256,
+      "c": 510,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "aa35de436f126bae4830830888df121ccbc29b3df515e5c72a89e4a40fb53574"
+    },
+    {
+      "p": 257,
+      "c": 512,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "484fd48734827cc2ec4bc46cb9493db0e75dfd13317841eea042c2e4e65f5387"
+    },
+    {
+      "p": 258,
+      "c": 514,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "b3fb5fffea81c1ac9d89e6910bc2fb01953510d781cf82bcfe27ba76dcd15d12"
+    },
+    {
+      "p": 259,
+      "c": 516,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "0aa6d04fd5bd3acf823b60781f096adc6e86598a026b6046087e405de74ac221"
+    },
+    {
+      "p": 260,
+      "c": 518,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "8d14516959ea8f6af5b0c30026f669b05ae98a5f023313f4f665b93dcee89985"
+    },
+    {
+      "p": 261,
+      "c": 520,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "5e547ee08351ab33a3ddd431674c7f1e88c8d44d9773d28a0d4cb1dc4fc9bbf5"
+    },
+    {
+      "p": 262,
+      "c": 522,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "ebe832abc3f102311a46ddfe727dfcdc9ce51429099e47d071c8ad3959a91d00"
+    },
+    {
+      "p": 263,
+      "c": 524,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "85ed0a185879096403ff1561353bd2eeed81e80b4e247c0af4597f80c23acdb5"
+    },
+    {
+      "p": 264,
+      "c": 526,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "02c73584bd408db9acf13977d250a14b66087ddb1c60ad13af3bedb739e285df"
+    },
+    {
+      "p": 265,
+      "c": 528,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "70939e0ac4c0bed4a8a0a1bbdf960b4737165b0ab3d83a91cd99d6ad294e3092"
+    },
+    {
+      "p": 266,
+      "c": 530,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "5610dfed4692f092973e45dc77da39606dbfb5cfee673af2087efb16b4841ba5"
+    },
+    {
+      "p": 267,
+      "c": 532,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "e72e3e63f98ebfe49e9dcf6ac90e8b14d6df54df4f0e5d600a465f2ad87ddd40"
+    },
+    {
+      "p": 268,
+      "c": 534,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "c4b93fe21d7731e5f42e728e19542d7493411f06a56cf5bb11cd89fab49f0a4e"
+    },
+    {
+      "p": 269,
+      "c": 536,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "58d75d5b8ece9927202277c74b5586b400083355b783d655c91238216d01a7ca"
+    },
+    {
+      "p": 270,
+      "c": 538,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "9634c2684b1a4e85e016b82f09d5144929777f360192a09d88604d4640ec3890"
+    },
+    {
+      "p": 271,
+      "c": 540,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "329027b9c1ccd70f6d0f085348d3a117d89ffea76e3711ff238dfa46189e36bd"
+    },
+    {
+      "p": 272,
+      "c": 542,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "9517eba88ae550c46d0a536df494fe20c364b3121d6d0f9c67805d2e926c92ea"
+    },
+    {
+      "p": 273,
+      "c": 544,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "9577535c7f42faae45a9038b70906a4658172bd4e4d547cbbba372f144f2a3ae"
+    },
+    {
+      "p": 274,
+      "c": 546,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "25f43c23a97d5b1f2e541defbc2978d77a900bfa11d5fd39dcc672a952c3e79e"
+    },
+    {
+      "p": 275,
+      "c": 548,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "926b4922e8d761221d91ea5fab284322dec1878d109aed869c8251630a8edf83"
+    },
+    {
+      "p": 276,
+      "c": 550,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "0c3ff607553451e4619d80d9f271cac34bda1c11aae577a73c08b12891c7d5f0"
+    },
+    {
+      "p": 277,
+      "c": 552,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "8a25ebd4ac1f3fbe531df0d63d36857d60f3c960a7b85257fa4a738d63eee82e"
+    },
+    {
+      "p": 278,
+      "c": 554,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "13de837c18dd5a5b0874bc6a0629f0c14061bea6ed7f68918e27a9a1ddb5f966"
+    },
+    {
+      "p": 279,
+      "c": 556,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "1db5f7e95860b5c5d40228e7d2da3fa16b510d5164bc1d8a4fd94842feed8edd"
+    },
+    {
+      "p": 280,
+      "c": 558,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "c9291dd6797dda79af3aafda08eafd2cb51f0bf5d2bc6b96e87e35d14f73fc6b"
+    },
+    {
+      "p": 281,
+      "c": 560,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "f0378366368bdf516055cfea638445874b2c78792f4484c800c0aed1d0344eaf"
+    },
+    {
+      "p": 282,
+      "c": 562,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "18e7c0e3c37b9c16522cc40c38a65fea0ef67d282ed7ec8b652b3898022c64f5"
+    },
+    {
+      "p": 283,
+      "c": 564,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "12e8379a9676ccbe10d9ea99ef1d04965a64d8d661158cf9821bf884a93211cb"
+    },
+    {
+      "p": 284,
+      "c": 566,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "2dd2cab13e5fc9f78a79d2710ba8b4ddb599aad76914d359d126b7a575700f35"
+    },
+    {
+      "p": 285,
+      "c": 568,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "b10f4d8bedc94a8fc8eb8678a57d762cebda6805c8e8b60c444401f75dd351d9"
+    },
+    {
+      "p": 286,
+      "c": 570,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "1a9bb4056ccaa2123a014ad10ba5c2b444a4003296f13be99429e36bf0584e25"
+    },
+    {
+      "p": 287,
+      "c": 572,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "7bae6a524126443195d1a60eea06ff34aac469675ec4527d644ee4a11f930463"
+    },
+    {
+      "p": 288,
+      "c": 574,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "9096189b8ae206061460fc686b678b87060efc01f2d6fb5dd7918f85922a5975"
+    },
+    {
+      "p": 289,
+      "c": 576,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "4b5aeba924fea04e04f4a6f7c7a8702adf4524103ecf9df79fadaecbf8b97e4e"
+    },
+    {
+      "p": 290,
+      "c": 578,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "9097458c3107eadf4ee7a6358bb8ef756ad79319d9c99c239b577892ee6e153b"
+    },
+    {
+      "p": 291,
+      "c": 580,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "1b2e2cb0f4616271bb4171a22da1df2e97ada5ad6c333a90c094c39367faebd9"
+    },
+    {
+      "p": 292,
+      "c": 582,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "c3516bb5a2a3f4306d7e634526bbf770f9aca9b93e2328f81536024859b08aae"
+    },
+    {
+      "p": 293,
+      "c": 584,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "c335ab756b6df27b22ce1ac009f355c185e907f26fb6e8d2536aba08204bf3bd"
+    },
+    {
+      "p": 294,
+      "c": 586,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "8b634a59ae40e6eb8783dbe825133a498b6a1b1b037dd3d9778362820998c5db"
+    },
+    {
+      "p": 295,
+      "c": 588,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "756c11e0c3ac41ee5426505a70b6566ea0a2ce18fb4a79b581e26df6f81a6c15"
+    },
+    {
+      "p": 296,
+      "c": 590,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "10475963918549e306f96e7c90fd3a40798c87b8eed01bc130be7152de139a14"
+    },
+    {
+      "p": 297,
+      "c": 592,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "6221c9ba2f3861e52b1254e0a6d64bea077470afab57ae4da0dbab68132f4b71"
+    },
+    {
+      "p": 298,
+      "c": 594,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "95a8157ffb1dc89d42db785e32ef89aaae25e40c322904a2d0421e245f724e27"
+    },
+    {
+      "p": 299,
+      "c": 596,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "e2b82aecf14df4da0c47ba8f99a859d080a4424da434f94512fbabedcdf7df9e"
+    },
+    {
+      "p": 300,
+      "c": 598,
+      "obligations": {
+        "parameter_range": true,
+        "even_codimension": true,
+        "positive_linear_ranks": true,
+        "rank_symmetry": true,
+        "first_known_coefficient": true,
+        "second_known_coefficient": true,
+        "linear_rank_sum": true,
+        "low_total_rank": true,
+        "full_endpoint": true
+      },
+      "row_hash": "7bf7d376c5f52d1725e30fd371319e5a77034d128f9e635f1f45f167095c64ed"
+    }
+  ],
+  "proof_boundary": "Symbolic identities certify the arithmetic consequences. Gorenstein self-duality, minimality, regularity, and the Koszul tensor argument are proved in proof.md.",
+  "symbolic_aggregate": "f696390447a3ce20397d937aa73baebf23a3c5ae249d4ad1215ff48cb710a2ae"
+}
