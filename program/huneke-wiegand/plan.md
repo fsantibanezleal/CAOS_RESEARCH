@@ -846,3 +846,11 @@ concept-latest, and a fresh unauthenticated 741,461-byte download matches MD5
 `0ddc07fc56b07490e66a9b1967c6a0d0` and SHA-256
 `ebd4d3294cf1dd6fdeccf8902e93399a6617d661dd7421d9dd260278670f3a15`. HWB-050 is done;
 HWB-051 opens the separate-PR research-promotion gate. No research release tag is implied.
+
+Research promotion is complete. PR #213 passed `guards` and `test` and merged the full EXP-032,
+registry reconciliation, manuscript v0.19, and verified Zenodo record to `develop` at
+`0ded528712f18064a7483119bf57324edd8a3a2d`. PR #214 passed all required checks and promoted that
+tested state to `main` at `e04660ead2afa68f7490f32a4bf837cd0eaa3533`. Work, `develop`, and
+`main` shared payload tree `c2f9f58488c7a1fa7ccee181a75944f7209b795c` before this handoff
+update. HWB-051 is done; the next mathematical gate is a declaration-first mapping-cone
+comparison experiment, not an unsupported full-resolution claim.
