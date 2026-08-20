@@ -146,7 +146,11 @@ def run_covering(name, seed, entry_iv, entry_dv, art_dir, heavy_dir,
             break
         box, d = stack.pop()
         cnt["processed"] += 1
-        if discard is not None and discard(box):
+        try:
+            drop = discard is not None and discard(box)
+        except AssertionError:
+            drop = False        # undecidable discard: certify or bisect instead
+        if drop:
             cnt["discarded"] += 1
             continue
         try:
