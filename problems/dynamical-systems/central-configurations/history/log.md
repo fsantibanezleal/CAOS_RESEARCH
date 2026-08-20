@@ -578,3 +578,26 @@
 - The sq() dependency bug resurfaced in fa2's discard (tau*tau on
   straddling intervals): fixed with .sq(); pipeline discard hardened
   (AssertionError -> not discarded).
+
+## 2026-08-20 (round 34): the mini-chart cascade, derived end to end
+
+- Certified today: tube extension BOTH charts (w in [1/8, 7/32], zero
+  failures). Running: fa1-resume, fa2b, cb1, uplow, deep, both bi-corners
+  (all checkpoint-fresh; slow under 7-way CPU sharing with two gfan runs).
+- Derived, machine-verified (crosscheck gate 5/5 each), and queued:
+  M1 (quadruple cluster; REUSED the fartube generated polynomials via the
+  (c,s) <-> (a,b) identification, verified exactly; new Wronskian W1 and
+  G5 extractions), M2 (collinear quadruple; the deepest singular point is
+  UNPHYSICAL so the cascade terminates there), M3 (vertical far-corner;
+  codim-3 center, rational 2-sphere blow-up, 9-quantity generator; the
+  gate caught the signed-radius hemisphere error, fixed with the odd-hat
+  convention), M1-vert (vertical collision corner at body 1; the M3
+  pattern verbatim; seam bound rhoy <= sqrt3/8 < 1/4 exact).
+- Remaining mathematics: M1v2 alone (the two cones inside M1-vert where
+  the pairs ALSO merge; both centers are point-pairs on the blow-up
+  sphere; same generator recipe). Then the atlas is complete and the
+  chain assembles.
+- The crosscheck gate's running tally: SEVEN real errors caught before
+  any run (fa2 L36 sign, fa2 tau*tau dependency, cb1f misplaced eps^3
+  twice, bicorner-opp L25 signs, m3 hemisphere composition, and the
+  m2 grid-floor sampling artifact diagnosed as such).
