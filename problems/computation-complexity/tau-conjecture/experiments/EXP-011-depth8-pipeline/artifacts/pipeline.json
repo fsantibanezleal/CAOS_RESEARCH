@@ -1,0 +1,13 @@
+{
+ "expand_progress": {
+  "rows": 35575391,
+  "states": 500000
+ },
+ "validate": {
+  "elapsed_s": 185.2,
+  "frontier6": 25844905,
+  "new6": 134494,
+  "pass": true,
+  "raw_rows": 55358618
+ }
+}

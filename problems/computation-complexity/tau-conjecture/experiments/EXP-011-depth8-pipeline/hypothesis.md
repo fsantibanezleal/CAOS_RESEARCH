@@ -54,3 +54,13 @@ $z_{\max}(8)$ (reported as such, never as the census value).
 A completed scan8 is decision-complete for depth 8 (exact
 $z_{\max}(8)$, all-gate). Partial coverage gives lower bounds only.
 Nothing asymptotic follows either way.
+
+## Amendment (2026-08-20, before scan8 runs): histogram scope
+
+scan8's z histogram is counted PER OP-APPLICATION (with multiplicity
+across states and duplicate results); globally deduplicating the ~10^11
+depth-8 op results is out of scope for this experiment. z_max(8), the
+z >= 7 witness collection (with provenance), and the census DECISION are
+exact and unaffected: z_max is a maximum, not a count. Distinct-poly
+counts at depth 8 would require a further external-dedup pass and are
+recorded as future work, not silently claimed.
