@@ -43,4 +43,4 @@
 | HWB-039 | 1 | done | manuscript and Zenodo update for the complete second Betti row | v0.15 published and fresh-download verified at `10.5281/zenodo.22016550` |
 | HWB-040 | 1 | done | repository promotion and durable handoff for EXP-028 plus v0.15 | PRs #198/#199 passed required checks; payload tree `e35f420f59a5343ea09da15985786ab0b65897d6`; CAOS_MANAGE PR #566 promoted the verified publication ledger |
 | HWB-041 | 1 | done | manuscript and Zenodo update for the colon-Koszul degree-five diagonal | 36-page v0.16 passed all claim/build/render/authorship gates, published at DOI `10.5281/zenodo.22029468`, and matched a fresh public download exactly |
-| HWB-042 | 1 | in progress | repository promotion and durable handoff for EXP-029 plus v0.16 | promote the tested research payload through work-to-`develop` and `develop`-to-`main` PRs, then promote the scoped management ledger |
+| HWB-042 | 1 | in progress | repository promotion and durable handoff for EXP-029 plus v0.16 | research PRs #203/#204 passed and all delivery trees match; scoped CAOS_MANAGE ledger remains deferred while that checkout is occupied by unrelated staged work |

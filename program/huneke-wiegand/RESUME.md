@@ -1,7 +1,9 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-20. Lifecycle: EXP-029 is CONFIRMED and manuscript v0.16 is published and
-fresh-download verified; checked repository promotion is active under HWB-042. The integral
+Updated: 2026-08-20. Lifecycle: EXP-029 is CONFIRMED and manuscript v0.16 is published,
+fresh-download verified, and promoted through the research repository. The scoped CAOS_MANAGE
+ledger remains pending under HWB-042 because that checkout is occupied by unrelated staged
+diffusion work. The integral
 colon-Koszul theorem gives
 
 ```text
@@ -28,9 +30,10 @@ characteristic independence. The canonical EXP-029 campaign passes 297 rows, com
 profiles, two-field controls, an independent rational boundary audit, and arithmetic/Z3 checks.
 The 36-page main manuscript v0.16 is published and fresh-download verified at DOI
 `10.5281/zenodo.22029468`; its 691,569-byte PDF has SHA-256
-`4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`. HWB-041 is done and
-HWB-042 owns checked repository and management-ledger promotion. Higher homological rows and the
-full Betti table remain open.
+`4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`. HWB-041 is done. PRs
+#203/#204 passed all checks; research work, `develop`, and `main` share payload tree
+`f956e8109c986a841394f19ded669feb62164fa1`. HWB-042 now owns only the deferred management-ledger
+reconciliation. Higher homological rows and the full Betti table remain open.
 
 The published baseline remains intact: EXP-026 and focused companion v0.02 are published and
 fresh-download verified at DOI `10.5281/zenodo.22002907`, and PRs #190/#191 plus CAOS_MANAGE PR
@@ -400,12 +403,10 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Commit and push the verified v0.16 publication state, then promote the tested research payload
-   through separate
-   work-to-`develop` and `develop`-to-`main` PRs, and promote the scoped CAOS_MANAGE ledger without
-   staging unrelated concurrent changes.
-2. Reopen HWB-035 at `beta_(3,6)`: derive its colon contribution and relative `H_2` obstruction
+1. Reopen HWB-035 at `beta_(3,6)`: derive its colon contribution and relative `H_2` obstruction
    before attempting any broad full-resolution computation.
+2. When CAOS_MANAGE is safely back on clean `develop`, reconcile and promote only the scoped v0.16
+   publication ledger; do not touch its current staged diffusion rename work.
 
 ### Lenses ledger
 

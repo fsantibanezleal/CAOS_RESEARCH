@@ -649,3 +649,14 @@ MD5 `ad69991f41c4f35da3c03f2c1ce343e9` and SHA-256
 `4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`. HWB-042 now owns the
 checked repository and management-ledger promotion; no release tag is claimed for this
 research-only round.
+
+Research promotion is complete. PR #203 passed `guards` and `test` and merged the complete
+EXP-029 theorem, artifacts, manuscript v0.16, and verified publication record to `develop` at
+`0c9638d537bf29d1500007efeee0ba68e83bf020`. PR #204 passed all required checks and promoted the
+complete tested `develop` state to `main` at `633e547762460d6751e563565b577ff53da24425`.
+Research work, `develop`, and `main` share payload tree
+`f956e8109c986a841394f19ded669feb62164fa1`. The CAOS_MANAGE v0.16 mirror is deliberately deferred:
+that checkout is on `task/difusion-rename-all-explorations-20260820` with extensive staged
+diffusion renames, so touching or switching it would violate the parallel-session boundary.
+HWB-042 remains open only for that scoped management reconciliation. No release tag belongs to
+this research-only round.

@@ -90,9 +90,11 @@
 | 2026-08-20 | published | active | EXP-029 declared before implementation: use the exact `8p`-variable linear cubic colon and integral relative `H_2` matching to determine `beta_(3,5)` and the complete internal-degree-five diagonal |
 | 2026-08-20 | active | confirmed | EXP-029 proves the free colon-Koszul pair basis, `beta_(3,5)=4p(8p-1)`, exact offset support, and the complete internal-degree-five diagonal over every field; manuscript v0.16 gate opened |
 | 2026-08-20 | confirmed | published | 36-page preprint v0.16 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.22029468`, and matched a fresh unauthenticated public download exactly |
+| 2026-08-20 | published | published | PR #203 passed `guards` and `test` and merged EXP-029 plus v0.16 to `develop` at `0c9638d`; PR #204 passed all required checks and promoted the complete tested `develop` state to `main` at `633e547` |
 
-Current state: **EXP-029 and manuscript v0.16 are confirmed and published; checked repository
-promotion is active under HWB-042**. For `H_p={a in G_p:a>=6p}`, integral relative homology has the
+Current state: **EXP-029 and manuscript v0.16 are confirmed, published, and promoted through the
+research repository; scoped management-ledger reconciliation remains active under HWB-042**. For
+`H_p={a in G_p:a>=6p}`, integral relative homology has the
 free pair basis
 
 ```text
@@ -118,7 +120,11 @@ passes the unchanged obligations. The 36-page main manuscript v0.16 is public as
 `22029468`, DOI `10.5281/zenodo.22029468`; its 691,569-byte fresh download has SHA-256
 `4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`. HWB-041 is done. A
 separate manuscript remains deferred; `beta_(3,6)`, the rest of the third row, and the full Betti
-table remain open under HWB-035 after HWB-042 promotion closes.
+table remain open under HWB-035. Research work, `develop`, and `main` share payload tree
+`f956e8109c986a841394f19ded669feb62164fa1`. CAOS_MANAGE was not edited because its checkout is
+occupied on `task/difusion-rename-all-explorations-20260820` with extensive staged diffusion
+renames; the v0.16 management mirror must be reconciled only after that checkout is safely back on
+clean `develop`.
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.
