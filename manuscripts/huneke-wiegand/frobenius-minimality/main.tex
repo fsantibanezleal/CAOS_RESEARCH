@@ -36,18 +36,18 @@
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-19\\[2pt]\normalsize Version 0.15}
+\date{2026-08-20\\[2pt]\normalsize Version 0.16}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.15}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.16}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.15}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.16}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,8 +63,8 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.15 \textperiodcentered\ 2026-08-19\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22016550}{10.5281/zenodo.22016550}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.16 \textperiodcentered\ 2026-08-20\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22029468}{10.5281/zenodo.22029468}\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
 verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
@@ -79,7 +79,7 @@ reduction, tangent-cone, fiber-cone, defining-ideal, and syzygy anatomy.
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.15}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.16}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -177,7 +177,19 @@ are
 The degree-five support is the union of three explicit intervals, with pair-sum multiplicities on
 the outer blocks and a plateau profile on the middle block. An integral offset matching gives a
 unit Smith form, so the result again holds over every field. This completes one homological row,
-not the remaining Betti table.
+  not the remaining Betti table. We next determine the degree-five third syzygies. If
+  \(H_p=\{a\in\mathcal E_{p,1}:a\ge6p\}\), then
+  \[
+  \beta_{3,(5,b)}=\#\{\{a,c\}\subset H_p:a<c,\ a+c=b-3p\},
+  \qquad \beta_{3,5}=4p(8p-1).
+  \]
+  The support is \([15p+1,39p-3]\setminus\{33p-1\}\). An integral normal form leaves a primitive
+  free basis indexed by unordered pairs of the \(8p\) high cubic-colon variables. Combining this
+  with the complete second row and the Hilbert numerator gives
+  \[
+  \beta_{4,5}=\frac{2p(5p-1)(10p-3)(100p^2-110p+13)}{3},
+  \]
+  completing internal degree five over every field, but not the third row or the full resolution.
 The results remain confined
 to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
@@ -252,6 +264,8 @@ they are verified by exact machine computation and independently checked artifac
   complete multiplicity-free offset support, and the resulting exact formula for $\beta_{3,4}$.
   \item We complete the second Betti row over every field: $\beta_{2,5}=p(2p-3)$ with complete
   three-block offset multiplicities and $\beta_{2,6}=0$.
+  \item We determine the complete degree-five third-syzygy profile from the high cubic colon,
+  prove $\beta_{3,5}=4p(8p-1)$ over every field, and complete the internal-degree-five diagonal.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -2012,6 +2026,150 @@ is
 These calculations test the implementation and endpoints; the integral matching and unit Smith
 form prove the theorem.
 
+\subsection{The colon--Koszul degree-five diagonal}
+
+Put
+\begin{equation}
+H_p=\{a\in\mathcal E_{p,1}:a\ge6p\}.
+\label{eq:high-colon-set}
+\end{equation}
+Equation~\eqref{eq:quadratic-colon} gives \(|H_p|=8p\). The next theorem reads the second Koszul
+wedges of this exact linear colon inside the total-degree-five relative complex.
+
+\begin{theorem}[Colon--Koszul degree-five diagonal, {\bf[D]}]
+\label{thm:colon-koszul-diagonal}
+For every integer \(p\ge4\), every field \(\kfield\), and every offset \(b\),
+\begin{equation}
+\beta_{3,(5,b)}=
+\#\bigl\{\{a,c\}\subset H_p:a<c,\ a+c=b-3p\bigr\}.
+\label{eq:colon-koszul-profile}
+\end{equation}
+Consequently,
+\begin{equation}
+\beta_{3,5}=\binom{8p}{2}=4p(8p-1),
+\label{eq:beta-three-five}
+\end{equation}
+and its offset support is
+\begin{equation}
+[15p+1,39p-3]\setminus\{33p-1\}.
+\label{eq:colon-koszul-support}
+\end{equation}
+The corresponding integral relative homology is free abelian. The complete internal-degree-five
+diagonal is therefore
+\begin{align}
+\beta_{2,5}&=p(2p-3),\notag\\
+\beta_{3,5}&=4p(8p-1),\label{eq:degree-five-diagonal}\\
+\beta_{4,5}&=\frac{2p(5p-1)(10p-3)(100p^2-110p+13)}{3},\notag
+\end{align}
+with \(\beta_{i,5}=0\) in every other homological degree.
+\end{theorem}
+
+\begin{proof}
+The eleven-block formula for \(\mathcal E_{p,1}\) gives the disjoint decomposition
+\begin{align}
+H_p={}&[6p,8p-2]\cup[8p,10p-2]\cup\{10p\}\cup[11p-1,12p-1]\notag\\
+&\cup[13p+1,14p-2]\cup[14p,15p-1]\cup\{16p\}\cup[17p-1,18p-1].
+\label{eq:high-colon-blocks}
+\end{align}
+Its block lengths sum to \(8p\). The linear strand of
+\(P_p/(\mathfrak q_p:f_p)\) is the Koszul strand on these coordinate variables. Its second
+wedges are indexed by unordered distinct pairs \(\{a,c\}\subset H_p\), and the cubic shift gives
+bidegree \((5,3p+a+c)\). We prove that these candidate classes are complete and primitive rather
+than assuming that the full mapping cone is minimal.
+
+For fixed \(b\), the total-degree-five relative complex from~\eqref{eq:relative-betti} contains a
+cell \(F\) of size \(s\) exactly when
+\[
+b-\sum_{a\in F}a\in\mathcal E_{p,5-s}.
+\]
+Apply the same increasing-vertex integral matching as in
+Theorem~\ref{thm:second-betti-row}, now through cells of size four. Every matched incidence is a
+unit. The only failed toggles come from
+\[
+[2p+1,3p-1],\qquad[5p-1,6p-1],\qquad\{6p-1\},
+\]
+the gaps of \(\mathcal E_{p,2}\) and \(\mathcal E_{p,3}\). Substitution of the eleven blocks of
+\(\mathcal E_{p,1}\) gives the following integral normal form. If
+\[
+K_b=\{(p,a,c):a<c,\ a,c\in H_p,\ a+c=b-3p\},
+\]
+then, after contractible unit cancellations, the part bearing on second homology is
+\begin{equation}
+0\longrightarrow\mathbb Z^{T_b}
+\xrightarrow{(I,0)}\mathbb Z^{T_b}\oplus\mathbb Z^{K_b}
+\longrightarrow0.
+\label{eq:degree-five-normal-form}
+\end{equation}
+Here \(T_b\) indexes the transient critical triangles. Indeed, a critical triangle not of the
+form \((p,a,c)\) with \(a,c\in H_p\) has a least admissible tetrahedral filler in the same block
+of~\eqref{eq:high-colon-blocks}, or at the first vertex of the next block. Ordering first by the
+failed toggle and then lexicographically makes this boundary submatrix upper triangular with unit
+diagonal. For \((p,a,c)\), the residual is \(2p\), the right endpoint of the first component of
+\(\mathcal E_{p,2}\); the next toggle crosses one of the three displayed gaps, so no filler
+remains. The least-toggle order prevents a transient boundary from entering a pair row. These two
+cases exhaust the block endpoints and give~\eqref{eq:degree-five-normal-form}. Thus
+\[
+H_2(K_{(5,b)};\mathbb Z)=\mathbb Z^{K_b},
+\]
+which proves~\eqref{eq:colon-koszul-profile}, primitivity, and characteristic independence.
+
+It remains to identify the support. The following pair families already cover every possible sum
+except one; the letters denote the corresponding nonsingleton blocks of
+\eqref{eq:high-colon-blocks}.
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Pair & Sum interval & Pair & Sum interval\\
+\midrule
+\(AA\) & \([12p+1,16p-5]\) & \(AB\) & \([14p,18p-4]\)\\
+\(AD\) & \([17p-1,20p-3]\) & \(BD\) & \([19p-1,22p-3]\)\\
+\(BE\) & \([21p+1,24p-4]\) & \(AK\) & \([23p-1,26p-3]\)\\
+\(BK\) & \([25p-1,28p-3]\) & \(DK\) & \([28p-2,30p-2]\)\\
+\(EK\) & \([30p,32p-3]\) & \(FK\) & \([31p-1,33p-2]\)\\
+\(GK\) & \([33p-1,34p-1]\) & \(KK\) & \([34p-1,36p-3]\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+For \(p\ge4\) successive intervals overlap or meet, except between \(DK\) and \(EK\), where the
+sole missing integer is \(30p-1\). Direct substitution in the complementary gaps of
+\eqref{eq:high-colon-blocks} shows that no omitted block pair supplies this value. Hence the
+unshifted support is \([12p+1,36p-3]\setminus\{30p-1\}\), proving
+\eqref{eq:colon-koszul-support}. Summing~\eqref{eq:colon-koszul-profile} over \(b\) counts all
+unordered pairs and proves~\eqref{eq:beta-three-five}.
+
+Finally, Theorem~\ref{thm:second-betti-row} gives \(\beta_{2,5}=p(2p-3)\). No degree-five minimal
+equation exists, and the minimum-shift bound excludes homological degree at least five from
+internal degree five. Taking the coefficient of \(z^5\) in~\eqref{eq:betti-polynomial} therefore
+gives
+\[
+[z^5]\eqref{eq:betti-polynomial}=\beta_{2,5}-\beta_{3,5}+\beta_{4,5}.
+\]
+Substitution and expansion yield the third formula in~\eqref{eq:degree-five-diagonal}; one of its
+displayed factors is divisible by three in every residue class of \(p\) modulo three.
+\end{proof}
+
+EXP-029 checks all pair profiles, endpoints, totals, and Hilbert-coefficient identities for
+\(p=4,\ldots,300\) \textbf{[MV]}. Complete exact relative \(H_2\) profiles at \(p=4,5,6\) have
+totals \(496,780,1128\), and the complete \(p=4\) profile agrees over
+\(\operatorname{GF}(2)\) and \(\operatorname{GF}(1000003)\). An independent rational route
+reconstructs the left support boundary, and a constant-memory arithmetic/Z3 certificate checks the
+support-chain and coefficient identities through \(p=10000\). The campaign, audit, and symbolic
+aggregates are, respectively,
+\begin{center}
+{\fontsize{7}{8}\selectfont\ttfamily 7564f15534e8a29f875a367d3a324b95041e8eef836d15deac3e35130e1ad37d},
+\end{center}
+\begin{center}
+{\fontsize{7}{8}\selectfont\ttfamily 337854eef5d773c84cdd79c7734e63b295fa0337c5a1852e652559c334949b04},
+\end{center}
+and
+\begin{center}
+{\fontsize{7}{8}\selectfont\ttfamily 605733497d6fb0ead97bfd25e26daaa66d546c297751960e1c427f29ff69f279}.
+\end{center}
+The first symbolic implementation exceeded its route budget because it materialized every support
+integer; it is preserved as non-evidence. The optimized endpoint implementation checks the same
+obligations. These calculations validate the implementation; the integral normal form proves the
+theorem.
+
 \section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
@@ -2020,7 +2178,7 @@ All compact code, hypotheses, manifests, audits, and verdicts are in the public 
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
 minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
-also includes the compact EXP-011--028 campaigns, independent reconstruction audits, symbolic
+also includes the compact EXP-011--029 campaigns, independent reconstruction audits, symbolic
 proofs, the preserved EXP-013 correction, the EXP-015 refutation, and the EXP-022 quadratic
 refutation. The proof toolchain is
 pinned as follows:
@@ -2038,6 +2196,7 @@ EXP-023 query aggregate & {\fontsize{7}{8}\selectfont\ttfamily 832c8421fe66359b8
 EXP-024 campaign/audit & exact integer coefficient and dimension routes; 297 rows plus independent rebuild\\
 EXP-027 & relative-chain profiles, six exact Presburger queries, 297 formula rows, and independent reconstruction\\
 EXP-028 & integral degree-five/six matching, 297 formula rows, two-field profiles, and independent Smith forms\\
+EXP-029 & integral pair-basis normal form, 297 formula rows, exact small profiles, and independent boundary audit\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -2070,6 +2229,12 @@ premises. Its finite-field ranks are audits, not the source of characteristic in
 claim rests on the displayed unit matching and Smith normal form. The arithmetic/Z3 certificate
 checks endpoints and count identities without replacing the all-parameter interval argument.
 
+EXP-029 likewise uses finite and solver checks only as adversarial validation. The theorem rests on
+the integral normal form~\eqref{eq:degree-five-normal-form}, whose unit block proves both
+completeness and freeness. The arithmetic/Z3 certificate checks the pair-sum support chain and the
+Hilbert-coefficient identity, but does not certify the relative matching itself. The first
+over-budget symbolic implementation is retained explicitly as non-evidence.
+
 \section{Scope, attribution, and open questions}
 
 Son Pham retains discovery priority for the counterexample. Professor Craig Huneke's verification
@@ -2086,14 +2251,15 @@ Theorem~\ref{thm:fiber}, and its complete defining ideal in
 Theorem~\ref{thm:presentation}, and its exact homological edges in
 Theorem~\ref{thm:homological-edge}, its first interior Betti strand in
 Theorem~\ref{thm:interior-strand}, and its complete second Betti row in
-Theorem~\ref{thm:second-betti-row}, together with
+Theorem~\ref{thm:second-betti-row}, and the colon--Koszul degree-five diagonal in
+Theorem~\ref{thm:colon-koszul-diagonal}, together with
 their reproducible records.
 
 Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
 \ref{thm:type}, \ref{thm:trace}, \ref{thm:stability}, \ref{thm:reduction},
 \ref{thm:tangent}, \ref{thm:buchsbaum}, \ref{thm:module}, \ref{thm:fiber},
 \ref{thm:presentation}, \ref{thm:homological-edge}, \ref{thm:interior-strand},
-and~\ref{thm:second-betti-row}
+\ref{thm:second-betti-row}, and~\ref{thm:colon-koszul-diagonal}
 do not classify all higher
 Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
 or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
@@ -2107,9 +2273,9 @@ questions remain open:
   \item Which additional hypotheses on the endomorphism ring recover a positive theorem while
   excluding both the public example and the full family proved here?
   \item Can the finite certificates be imported into a smaller formally verified checker?
-  \item Can the relative-complex method determine the remaining interior rows of the
-  presentation-ring Betti table beyond the complete second row in
-  Theorem~\ref{thm:second-betti-row}?
+  \item Can the colon--Koszul and relative-complex methods determine \(\beta_{3,6}\), the rest of
+  the third homological row, and ultimately the remaining presentation-ring Betti table beyond
+  Theorems~\ref{thm:second-betti-row} and~\ref{thm:colon-koszul-diagonal}?
 \end{enumerate}
 
 \section*{Acknowledgments}

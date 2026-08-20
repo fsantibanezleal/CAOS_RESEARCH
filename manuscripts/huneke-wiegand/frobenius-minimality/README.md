@@ -1,9 +1,11 @@
 # Frobenius-minimality preprint
 
-`main.tex` is version 0.15 of the CAOS Research preprint; version 0.14 and all earlier versions
-remain frozen. Version 0.15 adds the EXP-028 theorem completing the second Betti row, passed the
-complete claim/build/render and publication workflow, and is published at DOI
-`10.5281/zenodo.22016550`. A fresh unauthenticated download matches the committed PDF exactly.
+`main.tex` is the version 0.16 candidate of the CAOS Research preprint; version 0.15 and all earlier
+versions remain frozen. Version 0.16 adds the EXP-029 colon--Koszul theorem and completes the
+internal-degree-five diagonal. Zenodo draft `22029468` reserves DOI
+`10.5281/zenodo.22029468`; no upload or publication is claimed before the complete
+claim/build/render and post-upload gates pass. Version 0.15 is published at DOI
+`10.5281/zenodo.22016550`, and a fresh unauthenticated download matches the committed PDF exactly.
 Version 0.14 remains
 published at DOI `10.5281/zenodo.22013515`, and a fresh unauthenticated download matches the
 committed v0.14 PDF exactly.
@@ -55,6 +57,13 @@ Version 0.15 completes the second Betti row. It proves
 `beta_(2,5)=p(2p-3)` with complete three-block offset multiplicities and
 `beta_(2,6)=0`. Integral lexicographic matching and a unit Smith form prove characteristic
 independence. The higher interior rows remain open.
+Version 0.16 determines the complete degree-five third-syzygy profile. If
+`H_p={a in G_p:a>=6p}`, then `beta_(3,(5,b))` counts unordered pairs of distinct elements of
+`H_p` with sum `b-3p`, so `beta_(3,5)=4p(8p-1)` and the support is
+`[15p+1,39p-3] minus {33p-1}`. The integral normal form is free on this pair basis. Together with
+EXP-028 and the exact Hilbert numerator, it gives
+`beta_(4,5)=2p(5p-1)(10p-3)(100p^2-110p+13)/3` and completes internal degree five over every
+field. The third row, full Betti table, and full resolution remain open.
 
 Attribution is binding: Son Pham discovered the first public counterexample; CAOS contributes the
 certified minimality, minimum-layer uniqueness, and parametric-family extensions. Professor Craig
@@ -91,9 +100,10 @@ Zenodo identifiers:
 - version 0.13 DOI: `10.5281/zenodo.21995498` (published and fresh-download verified)
 - version 0.14 DOI: `10.5281/zenodo.22013515` (published and fresh-download verified)
 - version 0.15 DOI: `10.5281/zenodo.22016550` (published and fresh-download verified)
+- version 0.16 DOI: `10.5281/zenodo.22029468` (reserved draft; not yet published)
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-028 under
+Evidence sources are EXP-001 through EXP-029 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
 finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
@@ -130,6 +140,11 @@ deductive proof without replacing it.
 EXP-028 completes the second Betti row using total-degree-five and degree-six relative complexes,
 an integral interval matching, a unit Smith normal form, 297 formula rows, complete small-parameter
 profiles, two-characteristic checks, and an independently encoded rational/Smith audit.
+EXP-029 proves the free colon--Koszul pair basis and the complete internal-degree-five diagonal.
+Its exact campaign checks 297 parameters through `p=300`, complete relative `H_2` profiles at
+`p=4,5,6`, two characteristics at `p=4`, an independent rational support-boundary audit, and a
+constant-memory arithmetic/Z3 support certificate through `p=10000`. The first symbolic
+implementation is preserved as non-evidence after exceeding its declared budget.
 
 Version 0.02 remains frozen with this public-file verification:
 
@@ -300,3 +315,14 @@ Version 0.15 public-file verification:
 - the concept latest resolves to record `22016550`; public title, version, sole author/ORCID,
   CC-BY-4.0 licence, filename, bytes, MD5, SHA-256, and v0.15 description addendum match
 - a fresh unauthenticated public download matches the committed PDF exactly
+
+Version 0.16 release-candidate verification:
+
+- reserved DOI: `10.5281/zenodo.22029468`; no upload or publication occurred before claim/build
+  and render QA
+- bytes: `691569`
+- MD5: `ad69991f41c4f35da3c03f2c1ce343e9`
+- SHA-256: `4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`
+- all 36 pages passed rendered inspection; the final build has no warnings, undefined references,
+  overfull boxes, or underfull boxes
+- authenticated post-upload, publication, concept-latest, and fresh-download gates remain pending
