@@ -1,0 +1,4476 @@
+{
+  "experiment": "EXP-031-final-third-row-vanishing",
+  "route": "symbolic-arithmetic",
+  "generated_at": "2026-08-20T14:05:36.587759+00:00",
+  "status": "PASS",
+  "range": [
+    4,
+    300
+  ],
+  "rows": [
+    {
+      "p": 4,
+      "hole": 23,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "98da1624f5b69afab34d99af5d4b7957fe800236ba01929c074f686caa07f285"
+    },
+    {
+      "p": 5,
+      "hole": 29,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "1ef40f7256dfcfe209250bf4a7e509798978f37af015397c6bc655d3d3357b79"
+    },
+    {
+      "p": 6,
+      "hole": 35,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "e792603f8ab8422e98195f90a0f23d362ddfc9f767aa74ad54929b382d588954"
+    },
+    {
+      "p": 7,
+      "hole": 41,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "d6dc391af09ccb5764d210a135e0e0f609a1190b2f0a436435dada73cc19d20e"
+    },
+    {
+      "p": 8,
+      "hole": 47,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "d90e49e44e293f1fedfca7b3292675c2a4dd643f560c8e4dd335875c4afad65f"
+    },
+    {
+      "p": 9,
+      "hole": 53,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "7dc5b851330ca9349d4afaec768452696a7507001105c81baa7c419ef36abd9e"
+    },
+    {
+      "p": 10,
+      "hole": 59,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "1572af3a5ecce70dba6a3892c88621303dd6a1001845f5b9b7dadac9b8081f74"
+    },
+    {
+      "p": 11,
+      "hole": 65,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "a921a0fd7e21942193acc3d38cf4e3721d0f37dc2bca441f3775eecef35639e2"
+    },
+    {
+      "p": 12,
+      "hole": 71,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "43e8afec5b04a81efb5628a92ac6c21f49ca6c774b74a0075344de817ac4c8ac"
+    },
+    {
+      "p": 13,
+      "hole": 77,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "14626177e1f60bbe4bd75ef28f9b694add406c9562962704ff0d5187ca2c969a"
+    },
+    {
+      "p": 14,
+      "hole": 83,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "53800c71a0209c7354b6a4ed5cb38c2315fa30d65179a4f9f35af35d61bdde3a"
+    },
+    {
+      "p": 15,
+      "hole": 89,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "43250951597d6859a3c9d20e78beda7eb2c7e5ed6124816cd6fd18c974f72efd"
+    },
+    {
+      "p": 16,
+      "hole": 95,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "ae85e7355af96d8aa1fd68de5addc75984d9d04267b7105a6ffc9d23e1173b82"
+    },
+    {
+      "p": 17,
+      "hole": 101,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "4b1604b9249b1134c9874e2699d159a3343b2f3ae7fa345f7b1b12a494fffa5f"
+    },
+    {
+      "p": 18,
+      "hole": 107,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "6e380dac8e6028bda682d9b4a2b0472e9e631a7a0459f5d1a6e43d414a403a0c"
+    },
+    {
+      "p": 19,
+      "hole": 113,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "48a3b00881f4bafe9944c238154210d650a64d24121ac3b4921dae66e74fb909"
+    },
+    {
+      "p": 20,
+      "hole": 119,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "90a332423c449fb29b090e20ca7036899d332fae0f93f6ec8df432db903cc665"
+    },
+    {
+      "p": 21,
+      "hole": 125,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "bf0c8af7a09603e50499babddf68a1e46513ac8aff89363ceab8f4e7e254e308"
+    },
+    {
+      "p": 22,
+      "hole": 131,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "46465b36c22a33d45ade3a6d28b5558f8680a431cbcb5959efb84c869f64d448"
+    },
+    {
+      "p": 23,
+      "hole": 137,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "d418137a7abd4a69232a04765cf9a760e251a61ba2b6be9636189c29d48dec65"
+    },
+    {
+      "p": 24,
+      "hole": 143,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "ca0340d10ff1823a303faf010c7961ca10279048c9d72e66d2f14f45396e25d0"
+    },
+    {
+      "p": 25,
+      "hole": 149,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "65a8c05d789962161abddc392549bb2530d9990ed78f9a95a56a0cb855c663ed"
+    },
+    {
+      "p": 26,
+      "hole": 155,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "c7649aafb05c275278487467852dff039b7589b7b357dc1e9cb4563a0dc3c530"
+    },
+    {
+      "p": 27,
+      "hole": 161,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "c7ab0a3ebfe0ea57f5072820f9485802d6752367b1ec829d7c3219cb69700066"
+    },
+    {
+      "p": 28,
+      "hole": 167,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "021e57017a3a560de4edd8ad0e15cf2282918ae030b945fc41f167b454cd8964"
+    },
+    {
+      "p": 29,
+      "hole": 173,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "84d15f3f2acd019fe0355afec9ec8c6890d5953dfb628755f0ce34b94a0d2421"
+    },
+    {
+      "p": 30,
+      "hole": 179,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "16aa5e1f116310b1a298b832bab027112223fe9f44a52c6c19b668fdff81ca48"
+    },
+    {
+      "p": 31,
+      "hole": 185,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "46dc46ef7308805a3938f54d83daa61ffd1349da4497831cd15ce98aa4d12d7e"
+    },
+    {
+      "p": 32,
+      "hole": 191,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "82e862aba5c0145899bc983b71e7497dbdac73c601623130317125ea50e1d318"
+    },
+    {
+      "p": 33,
+      "hole": 197,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "772d9c45b1bcf1a010f8d07d08fe5cdfc6feed17ab37d9c6f2a303df4e469922"
+    },
+    {
+      "p": 34,
+      "hole": 203,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "29860d61f9001fcd6b5e7acc9a9c8bca999305105ef6f0ca34705582424bbeee"
+    },
+    {
+      "p": 35,
+      "hole": 209,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "74d928b1fed9a6943bd8eb637fa83c946fec7f4b7c552646b71b735cd8f3940f"
+    },
+    {
+      "p": 36,
+      "hole": 215,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "ef27551b8bead72171780840699585cabf674d89a5af11aba025f4138039c88d"
+    },
+    {
+      "p": 37,
+      "hole": 221,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "b3fb7cb330e09e2e058f8dda6259190ff00723fae8833106d5cf8809bdbea950"
+    },
+    {
+      "p": 38,
+      "hole": 227,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "781caa9f1a1e6d0fa68c2d41650ac544b2dd6321fdf9da812437ed0f84f58c8a"
+    },
+    {
+      "p": 39,
+      "hole": 233,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "306f997a9a9e74e2b44858060463dd60fe8c9d2b89df040c7a9144a09644cfb9"
+    },
+    {
+      "p": 40,
+      "hole": 239,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "124bbdb18ce2b4e8fe2a6d5a312976617b83be7a6190cf897d461eda11025cb6"
+    },
+    {
+      "p": 41,
+      "hole": 245,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "a58ec154ca523ce1280c093ef92d61dd2aa19b0d0115280eb8b45129e6d12e99"
+    },
+    {
+      "p": 42,
+      "hole": 251,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "11f02b24904b5a1dc7b00fd85f344ca3592f2741792c7029c89b8db647a1f617"
+    },
+    {
+      "p": 43,
+      "hole": 257,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "b9ea93469ae68692c4b2ed70e2d7f78805bc372ca46e1285172540007dd80476"
+    },
+    {
+      "p": 44,
+      "hole": 263,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "b57106d29e5be54fbb32aa59d20d68c2bc5300a43a690ba70d32983e1c63bff7"
+    },
+    {
+      "p": 45,
+      "hole": 269,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "a9d2aa89e11a6afa24e2a7a4bcb9d3321d30aef6c96ebe569a7cc2c483d433c2"
+    },
+    {
+      "p": 46,
+      "hole": 275,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "a4f70aa5a90ac2441a8db6c35611e0d1dae89ac46ca519c41d20444b853428bf"
+    },
+    {
+      "p": 47,
+      "hole": 281,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "82c302a332fd9533be3bfd5d4f42f0204609bb3cbfeff1eb2e0478dafa8c5320"
+    },
+    {
+      "p": 48,
+      "hole": 287,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "7c85a938031bbe483a44fb1bf994b71a954f0f56c4bfc0e757a0664431701f98"
+    },
+    {
+      "p": 49,
+      "hole": 293,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "6fb7aa7bc0a2c627990a3f8e42298171510b0f3d018c4c189adde8d7eae859cd"
+    },
+    {
+      "p": 50,
+      "hole": 299,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "d9aeea558637493075f4237697dd0ce494a1666c548a795a2734b71a6f1ca66c"
+    },
+    {
+      "p": 51,
+      "hole": 305,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "f0f23842658d7f196093a0b961f17d10053a16d9e7d7fc63fe3cc3c9b0881830"
+    },
+    {
+      "p": 52,
+      "hole": 311,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "9bb4369d5c38ebcd9b5fad941f630bcc7ea5b8cfd96f02d4a11d35776b68df11"
+    },
+    {
+      "p": 53,
+      "hole": 317,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "6fca8184fae94dfd7bdc5a69df0958a915ad67353e20d764f55b8edac4bcb27f"
+    },
+    {
+      "p": 54,
+      "hole": 323,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "b4ad090b49052ffb9d8978505b89e69c04442b5b3772f71328e72da6ab670681"
+    },
+    {
+      "p": 55,
+      "hole": 329,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "1ae21b7d44c9077b496b25d3f0ece7acc93b8865d7827cee20bf211d6c1b6920"
+    },
+    {
+      "p": 56,
+      "hole": 335,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "b7493c5207f46c679e98f9c20239083c856ba60302c768eb6a26cab9481aabd5"
+    },
+    {
+      "p": 57,
+      "hole": 341,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "9bc6674a18b944560038a9f9a39df96493e47ac4cc4a9ff45445e402f4f6c7ef"
+    },
+    {
+      "p": 58,
+      "hole": 347,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "6b8789c4abbe0de10b59604b8332d2ccbe5f5d8fb527bc55c8506ecdc46db88d"
+    },
+    {
+      "p": 59,
+      "hole": 353,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "bb444eb4364c7bf0afccafdf80e7476b58c0a93ac2516f65924d153eb05b14d4"
+    },
+    {
+      "p": 60,
+      "hole": 359,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "e5140b8f5141e70152176666a43be357e321e23ed3a7e0f088dbdbf0a201cde5"
+    },
+    {
+      "p": 61,
+      "hole": 365,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "22a571e5c5c6f7b03a9d0629dbec71ba5dc06328206df154e6a6809b941eb287"
+    },
+    {
+      "p": 62,
+      "hole": 371,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "73c6c9e940082acb406d4f4cd908e9fc56a938990adb2f91a6525bd969aa4fd9"
+    },
+    {
+      "p": 63,
+      "hole": 377,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "8db7df6b2f91fa980ed706e0b37d8d347f95518cad0aeed60958170702077c3d"
+    },
+    {
+      "p": 64,
+      "hole": 383,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "a0e41464595fe393343776635f1f92a6118d8ff16156fe43e949c058b036d4c7"
+    },
+    {
+      "p": 65,
+      "hole": 389,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "54339bbb0fbea98ff4f3cc91d1f0173825b79a8fd1e880efaf8c63d0599cfef5"
+    },
+    {
+      "p": 66,
+      "hole": 395,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "9d03d7de3e42d9e127e01cdad5d31abf0c2083ab74382899b9f22d6c576dcbab"
+    },
+    {
+      "p": 67,
+      "hole": 401,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "2e635619dba55cc34ea46f917a9b223a83a3a110023c74a2f323aab5ac3d194e"
+    },
+    {
+      "p": 68,
+      "hole": 407,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "8500f199ca6431598197e8f5c70005eda838cf57d41aaf3183c1047c7d32e186"
+    },
+    {
+      "p": 69,
+      "hole": 413,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "8a964cbe9f3d6998620764c87a6cdb7d718bbf608ac6735f84d2cc9d39922d36"
+    },
+    {
+      "p": 70,
+      "hole": 419,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "371abffd01366f71974869580c1b8fa689a9ab78980c7260b16d508c5a2efe79"
+    },
+    {
+      "p": 71,
+      "hole": 425,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "0265a8e200b1443b6cd89f0995b03f8a0b5bb0ccfc45aed452db7bbbff289906"
+    },
+    {
+      "p": 72,
+      "hole": 431,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "3cb1f593c79715c5a3a300735255e7ec2d9693255e30b23039b85c900bed9e47"
+    },
+    {
+      "p": 73,
+      "hole": 437,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "e1e92065e04871a45adcb4ccae308a6c11f6943d88da7454a1fc1f216a901081"
+    },
+    {
+      "p": 74,
+      "hole": 443,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "d3de2e52441cd70d2b9ede24d731014b85b21f743a6b360059b1848902325fdc"
+    },
+    {
+      "p": 75,
+      "hole": 449,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "fb09c8b8e43fc89543bc33ab2ee266b22c50b7a23c92c86b346ac2d6a4a6c1db"
+    },
+    {
+      "p": 76,
+      "hole": 455,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "cdfc21d16118a3fe0eb159f408d4189dc6cf60cea9ea11ba84e0b25d89ed439f"
+    },
+    {
+      "p": 77,
+      "hole": 461,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "2ec27c293cf9176c0bdf97aa85f9a5e6197f006be65780ae2fb112c6fb0b1724"
+    },
+    {
+      "p": 78,
+      "hole": 467,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "889c90cbe9877bdd98e789238eed1992c72d86e06b6273f58a6a76c57eef59a9"
+    },
+    {
+      "p": 79,
+      "hole": 473,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "efebd9e80488c0f4ab69ee1717d8e3b6efe578e02d5e596ad5895d8135fc0d3d"
+    },
+    {
+      "p": 80,
+      "hole": 479,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "a7cccc70d648ef6e9d3a49d112c186394852268eafd36a1d7bc7830d8a135ca5"
+    },
+    {
+      "p": 81,
+      "hole": 485,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "89e816bde90dfff6a7f62e31188f9c468488288828379ea453a3eaa06287c8e3"
+    },
+    {
+      "p": 82,
+      "hole": 491,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "85300597302c005a43401567fefd793ee5a7af63e9672f603dc299cc797ab5ac"
+    },
+    {
+      "p": 83,
+      "hole": 497,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "a25842e8e4d971524e6c3d5439a24f2e29e53dd60d12b97022a4064ed9efdf40"
+    },
+    {
+      "p": 84,
+      "hole": 503,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "3a3221271d364f4febe1cee82e4df2f002835a0137a888c5ba0bff13da6611f4"
+    },
+    {
+      "p": 85,
+      "hole": 509,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "0cbd58d10c7bbbc7d85c36aabf4a8790892f662d5883571e0780575bbde2427e"
+    },
+    {
+      "p": 86,
+      "hole": 515,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "46c945c549d4c47f6ba623d5287e5652fd56a24557102c5b8f8dba40cf096869"
+    },
+    {
+      "p": 87,
+      "hole": 521,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "6df62e0b85ec3b85ace554e6712118fcffbb2609464f1a727a3d620c40f6aada"
+    },
+    {
+      "p": 88,
+      "hole": 527,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "82c7d4bd4675368476ea048ae0dd8f194dbfda5d4547ad5f06c9c4b28919eb0a"
+    },
+    {
+      "p": 89,
+      "hole": 533,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "8a3771bc98b216e62e83cf2111c0090c31209f60e83de7bdf370b95bd0fddf1e"
+    },
+    {
+      "p": 90,
+      "hole": 539,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "261092ba5059fc0fa0233b77c30bb6b78c69991fb253f9db62a93f3901fe21ce"
+    },
+    {
+      "p": 91,
+      "hole": 545,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "8370582647e2129a27b02b7a307c9afbf120d5d6a7dd2b3622cb392208326f27"
+    },
+    {
+      "p": 92,
+      "hole": 551,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "a76b6f5c4487f2cb15f8590be523f385d98cfded3c6a60fb90631d623d1b2296"
+    },
+    {
+      "p": 93,
+      "hole": 557,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "0825459de2c1aa15615bb25a17e89ac8315dde9355fc9bca13d254f6e629461f"
+    },
+    {
+      "p": 94,
+      "hole": 563,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "abbcf275648fb9dcc53416c9b18465bc9afe63f53c6f556c954d80cb27599a79"
+    },
+    {
+      "p": 95,
+      "hole": 569,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "5b87a43791f0ad8a043ea6b49dd16fd63d464e319ae9ba215c2ba97f8c75d4ca"
+    },
+    {
+      "p": 96,
+      "hole": 575,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "b9cab7c0c7a271c37d7f5334db72e5a7dcdccaf89c8fe1059e128c9a0ceec73a"
+    },
+    {
+      "p": 97,
+      "hole": 581,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "680641d553da5766fe7591b76a5b149da769c14c13b3a5b6b2c34b433489983f"
+    },
+    {
+      "p": 98,
+      "hole": 587,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "8ac5844fe2908b9726f82855d12b84658f216f8cbef2fee695639b475b92b0ac"
+    },
+    {
+      "p": 99,
+      "hole": 593,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "8a99e20463a086537f2c6f781918affba71f1391238f3add6867fa00d5b2f2b0"
+    },
+    {
+      "p": 100,
+      "hole": 599,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "0348d659559950e72cb5e0ae37f6c7f791a0da3fa96354fc5b8ca7dd7d301b1d"
+    },
+    {
+      "p": 101,
+      "hole": 605,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "32479e28eaad991ac49bc32b98b7caff0e97d5ff1725ce5b55da0d91db0adddb"
+    },
+    {
+      "p": 102,
+      "hole": 611,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "e7e341208c71a0377268aa30671b204ab9f2e8521cfa0bab3cab9124ff90e0bf"
+    },
+    {
+      "p": 103,
+      "hole": 617,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "89729ae325a4de969881c613a66944c8c0c04169fc6155ade8593b19645d515c"
+    },
+    {
+      "p": 104,
+      "hole": 623,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "2c11207a2a0903083e54726250c30a93d40eaf526c42d7fce4dfe3733d7a3866"
+    },
+    {
+      "p": 105,
+      "hole": 629,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "c8e5f492c8943b3194373882728e52654d002e16712502c770f5650d4f9c20f0"
+    },
+    {
+      "p": 106,
+      "hole": 635,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "c6f9b00c99be974d7f9e99dcbdd3a744e5c2055ad3725b03cbee55e4f619727c"
+    },
+    {
+      "p": 107,
+      "hole": 641,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "1fbd0666abce010affd680f4f0be0229e1217772cff3c93afb9310fefe2c6fc1"
+    },
+    {
+      "p": 108,
+      "hole": 647,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "c46725ad408db778e1c0d16edd335599590ca0bb3907c04e618e870ee02af992"
+    },
+    {
+      "p": 109,
+      "hole": 653,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "d2aadab2a21a92c11544595845a794e612c4c33df5546c29024f234305b73a5b"
+    },
+    {
+      "p": 110,
+      "hole": 659,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "a04e768c2caa7d4767f42c0ec386c1b8362e7abb7175408a7b1bcccd7561918f"
+    },
+    {
+      "p": 111,
+      "hole": 665,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "6a9f94ef8e1965838f046c74179f17dfb8d97e866a12e5d66d3c24c3bc009f5f"
+    },
+    {
+      "p": 112,
+      "hole": 671,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "aea95993ab69c94007de5120fdb7b3210fb37512ad4a82fb2758b753e446d3c7"
+    },
+    {
+      "p": 113,
+      "hole": 677,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "8cdd650cd9d93a1149196c2cbf552252fcde6ffe0ee810b933275faf758d0a09"
+    },
+    {
+      "p": 114,
+      "hole": 683,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "9615bad84c3c23b8163b031ce07cf29510bc36bde9590be711f533706e29b4de"
+    },
+    {
+      "p": 115,
+      "hole": 689,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "b637a2333ea5f5416a6ce19c54fd08046d404ecee67046d1b3dcef4fef07d491"
+    },
+    {
+      "p": 116,
+      "hole": 695,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "5c8ad7a79c3fde004cd76af9ed16a02b7aa1e9e22cdd33736278479981946260"
+    },
+    {
+      "p": 117,
+      "hole": 701,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "b6e1cb9f565ae11f957f2f8cbbdc365501b00738710668a3b7d07d88dcdc3232"
+    },
+    {
+      "p": 118,
+      "hole": 707,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "485891fd86d27d4b9e3a04828f1184b3fb09c5f22ea45cf1b740eb49ddc0b05f"
+    },
+    {
+      "p": 119,
+      "hole": 713,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "c96095e435372b54d0719d5f0582129dd4f7b536e1c033b15d4ddffb3435cacb"
+    },
+    {
+      "p": 120,
+      "hole": 719,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "406c340394e86a83f7dc1a9aa596815231c99423642633d5fa0dc25c3a69439c"
+    },
+    {
+      "p": 121,
+      "hole": 725,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "2b48d9d2d013d008d172c91ce87f7fc6de69ac07a9f0828976c12935197a9d43"
+    },
+    {
+      "p": 122,
+      "hole": 731,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "af1465468f392be7d75f07ae0cd51baee169201c7b189205d62977ef4f8c0e68"
+    },
+    {
+      "p": 123,
+      "hole": 737,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "5c8355ee81b39a1538c9b6856278455a7342c26b3347265d14f2a71bd067ea40"
+    },
+    {
+      "p": 124,
+      "hole": 743,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "482528d23c01bf36d7be0d4af6f6b1ccda8298c3dbd984771372eaeb4b56db73"
+    },
+    {
+      "p": 125,
+      "hole": 749,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "18969bf3e365b22eb499077fc8f363237a9f1b8944c3116dbefd96d77545aedb"
+    },
+    {
+      "p": 126,
+      "hole": 755,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "0777182ed9d288c66b0e8c88dbd798b8387074e99fa69f43ca58f7201a8a8b1b"
+    },
+    {
+      "p": 127,
+      "hole": 761,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "e7f8d29358cf31b5ab354942b3134ec28d74c5e792e16ecf85685b5ac0b8d2d9"
+    },
+    {
+      "p": 128,
+      "hole": 767,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "b1ba39f0e3307ce2fe63a1aad11e081352439d9ce2b8fcb1eaa3f80c067f60cb"
+    },
+    {
+      "p": 129,
+      "hole": 773,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "00210da45c3d58fb15aac301a4c93d79e333753b6d23417de2b0fb927f21bb53"
+    },
+    {
+      "p": 130,
+      "hole": 779,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "feb5d6ad3a2ab63f9c483cb42ec7424b1fd004104ba20264a80f8207a542fe11"
+    },
+    {
+      "p": 131,
+      "hole": 785,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "93153b342fa7edb4a1704eba486a58c0479d371a5a34443becb72a18c8f67c3e"
+    },
+    {
+      "p": 132,
+      "hole": 791,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "e6c07ce3cb251ec95257af0308e3de7f54c40f297f9b67f6a7b1097f870ec8c8"
+    },
+    {
+      "p": 133,
+      "hole": 797,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "80790f597368443227549dac51663043d121ba4c7cb0db61974067d8c57c22d8"
+    },
+    {
+      "p": 134,
+      "hole": 803,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "0d86d801d75b22dd21cb496ef518ae857d5d8920aba701fe82a89643a331ffbd"
+    },
+    {
+      "p": 135,
+      "hole": 809,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "ba480053f67ea94369367df41091794a909d32c3a75be7da1f019065b0350863"
+    },
+    {
+      "p": 136,
+      "hole": 815,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "bf224978e8c21a9b637941e75a99045f1e32436ddfbdace6581e91ed9e4f37f0"
+    },
+    {
+      "p": 137,
+      "hole": 821,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "209afb087e7220a9e3d088d923edc3f5bf6864b7415de99ce49f0f7bb0b497ac"
+    },
+    {
+      "p": 138,
+      "hole": 827,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "5ef28e7375fa6e4580269f8c8e51869377b00b58740cedb98026cbca47259205"
+    },
+    {
+      "p": 139,
+      "hole": 833,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "e1c1db8f35a91fde7fabcd474407740741107dc7089e91d3c34287ea0cd203c3"
+    },
+    {
+      "p": 140,
+      "hole": 839,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "f9ca4e2a8c4b6326f20422d98df86949048adae7f9fcec9fe8d16c2858a160c1"
+    },
+    {
+      "p": 141,
+      "hole": 845,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "51b0604408124ff14dde31fc069afbaa82759e1e208e2368b69cae52adba0b71"
+    },
+    {
+      "p": 142,
+      "hole": 851,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "721ccf79c60cfea7177ff3b3b5ea8d07f94f84f802b943700bf0d572e6cb59c9"
+    },
+    {
+      "p": 143,
+      "hole": 857,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "2fd57bfd133ddd960330a8a4a8a1639b51758c896a54e8eddc62655222e1ec7f"
+    },
+    {
+      "p": 144,
+      "hole": 863,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "5d3024c01bca9b338427189ddfdaa27ed99a7d5d3bc91fdd0d45d5c4fcd9c860"
+    },
+    {
+      "p": 145,
+      "hole": 869,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "3b667da0df1b2205bf9981810012383bb295fa529365a6350e9a55dde24013c7"
+    },
+    {
+      "p": 146,
+      "hole": 875,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "af5dfc66098dfb6553c3f1ef0a7f0d31f210f9aed43c6305f2d26653d2779e20"
+    },
+    {
+      "p": 147,
+      "hole": 881,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "95f5a18d6433829239e93b86646e910c6f328b3a3fdd2e2202521e353dbf54aa"
+    },
+    {
+      "p": 148,
+      "hole": 887,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "9e6a271b3e8f32d1c0965c07c36f2c1b441552eca6b77a3c7919ac3657e1146f"
+    },
+    {
+      "p": 149,
+      "hole": 893,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "c55fbf3bd0ffd4117def5951aac3965c9bde7de8daa4fb2c93e89f092c0deaef"
+    },
+    {
+      "p": 150,
+      "hole": 899,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "c6c7b09695613c6d1e69f63d1fc5ff4e219193552c81560b56d0af474f1735f9"
+    },
+    {
+      "p": 151,
+      "hole": 905,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "d3beffae098b77f229052ab1f9f77ce2b63fead34507d8bf4ee015a7ea9c4c0a"
+    },
+    {
+      "p": 152,
+      "hole": 911,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "cb08b1487f458734a5444db551d66b6066153141b92be3b049c74fadb6f2e6f6"
+    },
+    {
+      "p": 153,
+      "hole": 917,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "b4216ad9aa8027bd61320cc7ebf5afc04bede2d4fe80a2c785fc0ee3169419be"
+    },
+    {
+      "p": 154,
+      "hole": 923,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "531c15de99843a62fc0b3ebceb32afa882013e0721001a41e780363cba6f0b1f"
+    },
+    {
+      "p": 155,
+      "hole": 929,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "5bb333ca7736a924606878a99c21e5bb4e76af6da35236304e2e58113e7b0b97"
+    },
+    {
+      "p": 156,
+      "hole": 935,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "5730831d50f9b62ef6b03f4747f150f52d4df469679c2e04dcefea6ac44fb5fe"
+    },
+    {
+      "p": 157,
+      "hole": 941,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "396ad3db562762397212ee0a36f738f4c4f0c27d2e07d864c2195e297a0b86d8"
+    },
+    {
+      "p": 158,
+      "hole": 947,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "7466155ebf303fe7c5e00d2d855a32a4015146a538e35d751a6bb3d27b4ceb34"
+    },
+    {
+      "p": 159,
+      "hole": 953,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "99ecd62d97308f734b4455bc50bd07737b697e66ed40153ffddf815dfccdc569"
+    },
+    {
+      "p": 160,
+      "hole": 959,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "9be27a87f1c47e2c936137d7b322a142f6e6781a01ee96fc3b0ab61e5b5a5092"
+    },
+    {
+      "p": 161,
+      "hole": 965,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "22db21e9985fea2a9f1b19039ea4c3b8f09427aba51de6452d3644e9dd3e334f"
+    },
+    {
+      "p": 162,
+      "hole": 971,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "ea4f0bc1f04d8f701f403d7c5702f1db98f3be4f9fdfa379d88d43943f372bb9"
+    },
+    {
+      "p": 163,
+      "hole": 977,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "ad1a6becc6a92904845993ff594c543caebf809680002cdaa4ba83c95a7a9d2a"
+    },
+    {
+      "p": 164,
+      "hole": 983,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "a1579335622c0ca4f88fd7151bba62f3d2546535f1c69580ae24bcbd10d16985"
+    },
+    {
+      "p": 165,
+      "hole": 989,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "5f45e3d33aeaa2d0c8bb31b81a817c644ea20c7a04db808efd025e7ffde05755"
+    },
+    {
+      "p": 166,
+      "hole": 995,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "fb7a975948948a324e1b7028c66b1d301307884d89a1caf4ac06c3aae5a419cf"
+    },
+    {
+      "p": 167,
+      "hole": 1001,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "8350176ff2e7e387d8cf1a5a5cc76d8e17e908b157a1697c0e91b52fe06fbc2a"
+    },
+    {
+      "p": 168,
+      "hole": 1007,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "529bd0e2d4c59c0d3a80402746640ab3eed52d067528a9cbf6ebb8360aa390ce"
+    },
+    {
+      "p": 169,
+      "hole": 1013,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "32dd5d706f64e05c8781daa2b616bcf56387fbc25d1ea733af63ac9e66570014"
+    },
+    {
+      "p": 170,
+      "hole": 1019,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "e598a024de594ddefdb20e059381a998340262e90c28b727887183173c2ac450"
+    },
+    {
+      "p": 171,
+      "hole": 1025,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "27ca4f19e6bbddf60dd033ce0fbdec2ff9f7d230a46ef030958a2882f6ac0a37"
+    },
+    {
+      "p": 172,
+      "hole": 1031,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "1788bbb61b9cd30b0382372f55a8e41fc692f3eed87bcf46355e07aa8c2e1867"
+    },
+    {
+      "p": 173,
+      "hole": 1037,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "e2ea27abd06502139ee8f858fa572d3bd4ea5e08621f2e375cc9e68c35dc4e9e"
+    },
+    {
+      "p": 174,
+      "hole": 1043,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "f01b5ea3439182e727b7a20440d1b71a912bbf891e082689d369a019ed2ae5a3"
+    },
+    {
+      "p": 175,
+      "hole": 1049,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "aca3a77feaaa3ad4d818aed2667a2dd3ac5e18d58b344ccaa885b05947275dcd"
+    },
+    {
+      "p": 176,
+      "hole": 1055,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "7ce26ab4a664c7c9d14eddf686a46b75e1b14dc81ee3902a299822de6afac1a0"
+    },
+    {
+      "p": 177,
+      "hole": 1061,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "85d252477bfd9dcef07827b64aa07f6e60b1db93f987f7ecf492266cfc717551"
+    },
+    {
+      "p": 178,
+      "hole": 1067,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "75bf31c90f3a4e4c46c517293ae310bd5615336d52212cead5217cf991ab5401"
+    },
+    {
+      "p": 179,
+      "hole": 1073,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "00f39b5fe90ca6748ab9dc5b8e484e9e5484ebafba8ecb0b3e68d6343fee74a9"
+    },
+    {
+      "p": 180,
+      "hole": 1079,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "c98ff81ab7821d67db69fd2bc9149d2f388ca4c1dc5d8ddd555aa2f92cd17f2d"
+    },
+    {
+      "p": 181,
+      "hole": 1085,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "02cf6dbbd26c2f140040c9385ffe64bf669d12e32f59f5518127fb7aedf54534"
+    },
+    {
+      "p": 182,
+      "hole": 1091,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "a6c7709225c1ee51f80c9a361af13d32cf459efb570b032f00876d55a9403c5c"
+    },
+    {
+      "p": 183,
+      "hole": 1097,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "68c75636b0e5e85263f698635633c6b7165a5fd1c37ad6c33e119f69c0cdba67"
+    },
+    {
+      "p": 184,
+      "hole": 1103,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "726d5bbee4d7bc50740502c69465f7689b64db256096cd225137784e6c621f0d"
+    },
+    {
+      "p": 185,
+      "hole": 1109,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "8d52ab6216b712647424fbe496f9232b12db4a26cade6bc59d975edc3bb26ae2"
+    },
+    {
+      "p": 186,
+      "hole": 1115,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "30e4c7d3fe3f4a16738aef26daff489299b0169a58cb8d6d363d8ff7583cbfba"
+    },
+    {
+      "p": 187,
+      "hole": 1121,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "9caa62fbb684bc2c64b2dee4183566519e8afc2188d9fcd100e61f31ce22aaec"
+    },
+    {
+      "p": 188,
+      "hole": 1127,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "797984152e1b0e52f4a9204a0f6f9c45d1146afb6f2d8739353c91937b39cd20"
+    },
+    {
+      "p": 189,
+      "hole": 1133,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "6993b3eeef30ee1c595e33ae9d09a9a18a14abf30ac944191f3333026198f00f"
+    },
+    {
+      "p": 190,
+      "hole": 1139,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "bc9dc5ec8127a79b0cc2e9c36ae537bf44aec77e44cf510138e1687e5bc237dc"
+    },
+    {
+      "p": 191,
+      "hole": 1145,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "76fdcd5b223ea1631c752dcc42d3e25407b59b3bb2f419eb0b4d6b32f546984d"
+    },
+    {
+      "p": 192,
+      "hole": 1151,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "571df3e7d4fa17d221a24375ec1fabd3b9c89f0f719e28f80686690b169d4f86"
+    },
+    {
+      "p": 193,
+      "hole": 1157,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "094f1ce47d019118eaa82364102dcff3624afd87ac2953df7957b1dbfd40fc3a"
+    },
+    {
+      "p": 194,
+      "hole": 1163,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "98cc9165ca4952679c0766ce52666f2f4d113bd1d881a2c9c88759a7c83c75b5"
+    },
+    {
+      "p": 195,
+      "hole": 1169,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "ed58b93eabf71da4a2b6d2d7611bf1369f23b5f6d862495ccbd9abc927d1bead"
+    },
+    {
+      "p": 196,
+      "hole": 1175,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "88d717bd04b171fb4625ebaef0a7eb9c0dd73a29737c3f6bad1165f8fe7b1450"
+    },
+    {
+      "p": 197,
+      "hole": 1181,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "894c26854dc9c9ab652c1b70b20693fc69da37cc2c6328b30edf652567215d33"
+    },
+    {
+      "p": 198,
+      "hole": 1187,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "799ba06917cca38b4db379436feb917a7aceaaad131b6b855d643dacb35ff37c"
+    },
+    {
+      "p": 199,
+      "hole": 1193,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "c0f430f5080c405a72cbbec391a852369bfb38a5cb41223353d8a111ea0fd3af"
+    },
+    {
+      "p": 200,
+      "hole": 1199,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "808baa88f71747bd4428fc48dc30dcd092aecf8199e28f70d04669606043e58a"
+    },
+    {
+      "p": 201,
+      "hole": 1205,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "2f330718c6474be7f016dfbf79311514e29235f1e64c352c708203488b1e5534"
+    },
+    {
+      "p": 202,
+      "hole": 1211,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "95c95529472d2e1dae79ca2af088d9d257cfc90e2fca7601544318327604ab7a"
+    },
+    {
+      "p": 203,
+      "hole": 1217,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "79f2cd4cedc652cec8b5048339a69987ee88fc688d7db03ed5a78fb812c7fa3b"
+    },
+    {
+      "p": 204,
+      "hole": 1223,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "495f58bcf39bcd25bce676ad7105e810ff1ed9f62d502fc4424fb998ef28b6d7"
+    },
+    {
+      "p": 205,
+      "hole": 1229,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "6a0f8f001e6a4c9052b2e1218571dd9f4d5d137819d3410fb8665ad1f2788092"
+    },
+    {
+      "p": 206,
+      "hole": 1235,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "e3bba9e733167149253dfd47ad113ea84a152e1b96da45c0b37a9f3c83985740"
+    },
+    {
+      "p": 207,
+      "hole": 1241,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "4954cbcca6f122957a67437d89c555745fd80231cc83ecf9196324e5bcf283f8"
+    },
+    {
+      "p": 208,
+      "hole": 1247,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "80b92bcb41671b94024fbb01b13b4bc2f8a67d8f80c01190efda0fa388bc8646"
+    },
+    {
+      "p": 209,
+      "hole": 1253,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "9ae55e5463a416901085cb604ea1346e5d641c4c10813bff8a0cd35b88a7506c"
+    },
+    {
+      "p": 210,
+      "hole": 1259,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "c0e30517c75a84b40af86e6afe1d8f6d123050c09e44af53b5b4924e68567e7e"
+    },
+    {
+      "p": 211,
+      "hole": 1265,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "decd100fb99e18164837fc2f51ea93d455fbb53dac6ae9addc69a874e85946da"
+    },
+    {
+      "p": 212,
+      "hole": 1271,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "bc95ca35b4cb04a68bf65e67cc58910b6052b09a48a750735e03b95da024bc3e"
+    },
+    {
+      "p": 213,
+      "hole": 1277,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "8d292c56c3b1e160b93be4508acea9f024e197d679a53dab3ce91c8b0e9e0e4f"
+    },
+    {
+      "p": 214,
+      "hole": 1283,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "dcf8d6294b678d10bed41df54d2cbac37fe87d1f4ab99510f19fa1924b260aef"
+    },
+    {
+      "p": 215,
+      "hole": 1289,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "7cd300e6322c589c99c666499efcde747039502f648de1d739eebf62e04de5c4"
+    },
+    {
+      "p": 216,
+      "hole": 1295,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "a1a24592d3c075b2f246803e63ea30739610e39b50db39596b9fd406e0ed7179"
+    },
+    {
+      "p": 217,
+      "hole": 1301,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "cd68a4a936437db59670cf6e39920a0d8df4cd5af272ce19b566b7df1b5d2ef9"
+    },
+    {
+      "p": 218,
+      "hole": 1307,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "953a40a6c5a652770b6361e196725a2389ef00921fd3ed15ec77d9f48f6439bc"
+    },
+    {
+      "p": 219,
+      "hole": 1313,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "92bc1d168a5460a7d839c9fa6ab57ed6e5cb7980d5475c6a44e4b98d68d7084b"
+    },
+    {
+      "p": 220,
+      "hole": 1319,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "0663d6c3c42d9f3ea87500fbf437ae81319df7807a520fcce65806b42318c368"
+    },
+    {
+      "p": 221,
+      "hole": 1325,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "22d7d103d1c1586466b83880e8a9dcefbedea75d332d8a712a4a8c92bd4e4ccc"
+    },
+    {
+      "p": 222,
+      "hole": 1331,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "0b3118f50609b09a1b1d8ddc849ceab5fab2d214c484a74d05d840fe871aa7ac"
+    },
+    {
+      "p": 223,
+      "hole": 1337,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "df75d18bcade52795f4cbae5c2b15444ad62f5fc3308c44fcc29422388d2db78"
+    },
+    {
+      "p": 224,
+      "hole": 1343,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "7fbdb0b568e736273185b6161aa038911b9550fbb3d7c268700020a35520ca49"
+    },
+    {
+      "p": 225,
+      "hole": 1349,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "f6896e4c46061db0030f341fcc79f6ca87331bb8623a9a5d09e62900281c6b0c"
+    },
+    {
+      "p": 226,
+      "hole": 1355,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "4b54622b877daf8a4820905523b4d88cd140140c8a5a127ff8b67de89eb8f02a"
+    },
+    {
+      "p": 227,
+      "hole": 1361,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "7cde29a1f9fa67e4e31de03e90161ebe3a9558f2e1f25c085690833bbe8c9d7d"
+    },
+    {
+      "p": 228,
+      "hole": 1367,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "69bae6addb855727e6619bad07a42b9031173c8efd85774852b6d82c456f0464"
+    },
+    {
+      "p": 229,
+      "hole": 1373,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "e16a25f8b6f863e8e4c3c259893473b5bce0ba7aceb913f962a2e7d00ca98dba"
+    },
+    {
+      "p": 230,
+      "hole": 1379,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "b4928f2ac90b81e07139467dd26cd5a51519623854c3797f55014889cb37506d"
+    },
+    {
+      "p": 231,
+      "hole": 1385,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "452d8190f18172ca930303df3ed564b03864fc161fb3a54ad504c6169daa56a9"
+    },
+    {
+      "p": 232,
+      "hole": 1391,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "793becb46ccdaa0c429de65191af1f9c96208fc081ce968acee924283def04d4"
+    },
+    {
+      "p": 233,
+      "hole": 1397,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "808506b6c98ea35e02c92f9b845acbb63978adc4fe8c1ce4a239f0f41fdd6ad3"
+    },
+    {
+      "p": 234,
+      "hole": 1403,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "8e167e90b5097cadae6fb0b2fef69452e4bf2c920d1450ce96ee0ecbbe71281c"
+    },
+    {
+      "p": 235,
+      "hole": 1409,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "163017b01464bfef41c5c77dc06f1e347f3c2c4f685364b84fa1317de3422607"
+    },
+    {
+      "p": 236,
+      "hole": 1415,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "2400ef7f9136f96452a2f9d5c99923b2a68df15b7ec5a5c280bc510cdc0ee3bd"
+    },
+    {
+      "p": 237,
+      "hole": 1421,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "c3b729bac8571b0d05154c4fa1b62ffc528d9766b6b87ec0ac7080aa7491f33e"
+    },
+    {
+      "p": 238,
+      "hole": 1427,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "f53969529a95ffdd6e52b8edff776868bae9483864d849613228cc563f34a3c8"
+    },
+    {
+      "p": 239,
+      "hole": 1433,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "97482f2017c92e9827d9d9e8c8633bad2e147540e47e32d4d0f82353fa78e8c2"
+    },
+    {
+      "p": 240,
+      "hole": 1439,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "e0724430fee498c9e3363d67df08845be98b5b5dfce16c1248bae702d191c85a"
+    },
+    {
+      "p": 241,
+      "hole": 1445,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "6018d8eef4643e74a72549af48fc81cb59cf2347428d2d42c44454bed0949cf9"
+    },
+    {
+      "p": 242,
+      "hole": 1451,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "166be94e3ffb7e5cd9d5932e355fd6ff39e809325455a5117ad2ee498699e499"
+    },
+    {
+      "p": 243,
+      "hole": 1457,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "3aa5d20f11e27701e7559a1ccb2837dd91402cd4a88da7641a72d03a1e7a04dc"
+    },
+    {
+      "p": 244,
+      "hole": 1463,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "d96c2c000d6bf6038ee9add861fea2f2269f8d511ca87acc233b127886dbc1aa"
+    },
+    {
+      "p": 245,
+      "hole": 1469,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "6c062437cfa56e1e05876959a3edc445c2d943220bce6d6be6240520adc13338"
+    },
+    {
+      "p": 246,
+      "hole": 1475,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "a3739a4e0b44f38c1c68006f539516aaa5300ff6c574b5bc66e39a97932fca38"
+    },
+    {
+      "p": 247,
+      "hole": 1481,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "702ae2d8aed0549730bf0d4446ed5515708771cc14a6e10ad4cfe63c7019606c"
+    },
+    {
+      "p": 248,
+      "hole": 1487,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "57bd8cce89f23afe0a49221f8366f7bc0059099f6450433f60c4afafc05714e7"
+    },
+    {
+      "p": 249,
+      "hole": 1493,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "961149c4a3d919804bb3e92d267e98cfd930e736c019fef59464d33c947f15e7"
+    },
+    {
+      "p": 250,
+      "hole": 1499,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "f606da95a6ed3a291ef40e5501c144456ff76c821cbcd91d1ddc4cdc1729ce04"
+    },
+    {
+      "p": 251,
+      "hole": 1505,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "93f67eb3c582b90e2f2a9bc235cbf7e5c1ff636fa0bd4bdcc668a5696a9725a5"
+    },
+    {
+      "p": 252,
+      "hole": 1511,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "3a992cedd9666f0bdcb13ed1ab01e100449c6f0d587dbcb908f58a6dec3be0b6"
+    },
+    {
+      "p": 253,
+      "hole": 1517,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "3e7793e67126ee2e706e31b7b1b90b406fcce9055e1d7d1a9d1b59d1567a22d7"
+    },
+    {
+      "p": 254,
+      "hole": 1523,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "1173ebe6cfdece21f96eeb7b8389f7bf828f639a1313b3f2a58006b3fe0584be"
+    },
+    {
+      "p": 255,
+      "hole": 1529,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "c9807608e81d85858d360db926ae577a77b316ad4fd2f6539e5e38071704d7c7"
+    },
+    {
+      "p": 256,
+      "hole": 1535,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "ea78cf4853d7100a46ffe413a5fd3bc8a5d42414add3fc06087c5ab4a7573098"
+    },
+    {
+      "p": 257,
+      "hole": 1541,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "f473830752213a50d62e4b02b94f075c8e488f2f2e3b13a7f6e5df6b73d3116d"
+    },
+    {
+      "p": 258,
+      "hole": 1547,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "7fa9c7baf9cc18c1bb698051c825552881ee3d5135bf2d75b5fc9548088c874d"
+    },
+    {
+      "p": 259,
+      "hole": 1553,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "9de9d6f1328f7db4b2d00ca46aa290a9497ea6f0d4e5bc817aa2878ca68c856a"
+    },
+    {
+      "p": 260,
+      "hole": 1559,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "9508751b8964e6d67cabd600d8e479d775a65191d490307e353f8e1faf61cd96"
+    },
+    {
+      "p": 261,
+      "hole": 1565,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "f9bf710fdd13b0258fd0b80f5747a1f3cd2a108f335d0ff8bd39f6d98cb83de5"
+    },
+    {
+      "p": 262,
+      "hole": 1571,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "3fa2637d4c9f4bb486590f64db9daee31b44e9873acee4c889956f124c93479b"
+    },
+    {
+      "p": 263,
+      "hole": 1577,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "41ece14c0b65a04a24fd29243416ea136007138cf8cb94ba9a4fe50833112acf"
+    },
+    {
+      "p": 264,
+      "hole": 1583,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "8a98c6e44c4f007baf617cf8ad4067746c2d2f43c4dacc64f618152256e2c6fe"
+    },
+    {
+      "p": 265,
+      "hole": 1589,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "c190f42bcfb772b704da9687431a7722ef17d52f2031cd43c35d56a776f7b46d"
+    },
+    {
+      "p": 266,
+      "hole": 1595,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "1a132c0c035b7bb0945aeda1e8ddd61d3dccc137a2d401555efb59b4b7eed534"
+    },
+    {
+      "p": 267,
+      "hole": 1601,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "98cfa1bb3937b43f858f5b2735b141cd8147f19933b17e3a53a57ab8e4f51b4e"
+    },
+    {
+      "p": 268,
+      "hole": 1607,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "e16a0b3d82f942ed9cd9c96e7a975c17e8e6afb4cf5a114b6cff2c8d4e567382"
+    },
+    {
+      "p": 269,
+      "hole": 1613,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "0294603f3b248b8d366c0ad27378a942eae1143950de50a50d3ebea7e1febaa0"
+    },
+    {
+      "p": 270,
+      "hole": 1619,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "d64c549fa8188b7ddda85864c51ded1c821819d2db34e3acd312a3c2efbfbadd"
+    },
+    {
+      "p": 271,
+      "hole": 1625,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "f554523c34766b9f3072d41d33d32a872586e0a2e61ef43026a211824b975dc8"
+    },
+    {
+      "p": 272,
+      "hole": 1631,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "ed36ac07ee36e63edca50ba66579393468896315acb52dfc9c055978f0e6d7b8"
+    },
+    {
+      "p": 273,
+      "hole": 1637,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "42192b17dc61eefc26d79ce26af171dde1a55ab990a36e32f8158abbce317360"
+    },
+    {
+      "p": 274,
+      "hole": 1643,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "7c9786cb406c71221ab48fc87a777a19a6a8b99cefea1316434ae21047e53c7d"
+    },
+    {
+      "p": 275,
+      "hole": 1649,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "7faa4b1bf95eff57f99a9550e54b9a51b831f5474667e8334ba305f94b308b6c"
+    },
+    {
+      "p": 276,
+      "hole": 1655,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "aece972d34229d19fb02e0b0505c7892e8bf1c864f4e5c9501c28b96a85025a7"
+    },
+    {
+      "p": 277,
+      "hole": 1661,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "658ab37bddc8a1cccff42733640899430eec54078f4ef4857b1284dbfa1dc817"
+    },
+    {
+      "p": 278,
+      "hole": 1667,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "bb644a9f23e1e4cca6d47fe93d2312f7e58d2036b152ab0ec1661d3f89ce33ab"
+    },
+    {
+      "p": 279,
+      "hole": 1673,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "a575f49398763e2787486ecff1c5fb2377821d99f32e469d606f7a6532f3228a"
+    },
+    {
+      "p": 280,
+      "hole": 1679,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "89d1af2c5d63760eb642d1d6eae0822350791359a1ce52ec36f625e98ff33ab8"
+    },
+    {
+      "p": 281,
+      "hole": 1685,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "58bd8b2a256ced720b17f149052c4fb0b43311a7dce16188f6877cc23f139337"
+    },
+    {
+      "p": 282,
+      "hole": 1691,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "4e262fb1a14445b148c6542c4947b576cda2959fb6a4ce72f4ceda1761565400"
+    },
+    {
+      "p": 283,
+      "hole": 1697,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "89ecbb3488496482db58d3ae3f4d6ed8eedae21e2571b38fe1b8bc136b2630de"
+    },
+    {
+      "p": 284,
+      "hole": 1703,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "6cef5ccdc39fc5b67a3ef1c3000c0f29fb82106dbe0eb9972daebf528319ef59"
+    },
+    {
+      "p": 285,
+      "hole": 1709,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "6103eedc12c45b4b84181c2026fe90361eacc908d8e0ba99678c2528be0d7d49"
+    },
+    {
+      "p": 286,
+      "hole": 1715,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "35969b0439273369ed8214ef3da62e98cd45a375c788aa07501d7cfb3cbfe77a"
+    },
+    {
+      "p": 287,
+      "hole": 1721,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "a3697655efb6cd09d1b6e7501e30d6eb8f8eb5abb3fb8132421eac500133d80b"
+    },
+    {
+      "p": 288,
+      "hole": 1727,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "b163e068dc438003e1d2d6ef578d9432625c5a04358ddfa89cb4260f3d297f44"
+    },
+    {
+      "p": 289,
+      "hole": 1733,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "afb8d2468f83b1ff08aaab9a0aeabdff887b597d4212a1f81d8ebb3171ee9bd3"
+    },
+    {
+      "p": 290,
+      "hole": 1739,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "4bad88df6ef9cafbffe5a5030b882746f80b95ebfc54fb102d34eec30599262c"
+    },
+    {
+      "p": 291,
+      "hole": 1745,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "b7b2135a033ee71bb10906d05792aeee8e238e38aa89a76737443fd5591effd8"
+    },
+    {
+      "p": 292,
+      "hole": 1751,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "1a329789fee2f2429b036fdb671ff8763664dbd149730ab32efa34b8e8f03630"
+    },
+    {
+      "p": 293,
+      "hole": 1757,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "b875dbd84b7a3ca1a45863632b42d019aa92b6af3cdc9550b08a8295952227e9"
+    },
+    {
+      "p": 294,
+      "hole": 1763,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "6161b27262202129980ca4e66e4874bfdaf30113d5bd8873d92c8aeb3deecc10"
+    },
+    {
+      "p": 295,
+      "hole": 1769,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "45c187a5cd9dab3525ea11d537fd4ea73b1cee838b2d26fee63cc9c934d4a766"
+    },
+    {
+      "p": 296,
+      "hole": 1775,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "daa92341aa74c6c0dfe9dcb38499ee7ee8ac06a8903bb0c7bb90cbdd3e0f035f"
+    },
+    {
+      "p": 297,
+      "hole": 1781,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "c1b81bfb8333d20f9350ca004f40661c2aba907dfa6b38e32526d3ce09daaa4f"
+    },
+    {
+      "p": 298,
+      "hole": 1787,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "81e0b78316f3ab4d3b849c0425a2e6d3b86bcfc72bdb76f86219f24bd7270bbc"
+    },
+    {
+      "p": 299,
+      "hole": 1793,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "44b0e407588f4aad3433e540f8fa81f49ff500be838ffc17b8fda819900b89cf"
+    },
+    {
+      "p": 300,
+      "hole": 1799,
+      "obligations": {
+        "parameter_range": true,
+        "pool_is_low": true,
+        "three_set_misses_pool": true,
+        "residual_nonnegative": true,
+        "residual_below_conductor": true,
+        "residual_not_hole": true,
+        "unique_critical_face": true,
+        "unit_boundary": true
+      },
+      "row_hash": "2e9915bbaad3b462d01e24c2a942e77ceba63dd06c1e47f4397c29c8b60caff3"
+    }
+  ],
+  "proof_obligations": [
+    "zero-vertex Boolean matching is acyclic because every matched arrow adds vertex zero",
+    "critical triangles are exactly those with residual 6p-1",
+    "one of vertices 1,2,3,4 lies outside every three-element critical triangle",
+    "adjoining that vertex gives a valid tetrahedron with residual 6p-1-x",
+    "only deletion of the added vertex recovers residual 6p-1",
+    "the resulting reduced boundary block has signed unit diagonal"
+  ],
+  "symbolic_aggregate": "e4bf2e0ae303e905efc9f985b239d059a5255b02d2ddc1d37abab5cc5cb2fc1f"
+}

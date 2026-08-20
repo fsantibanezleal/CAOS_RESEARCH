@@ -1,8 +1,11 @@
 # Frobenius-minimality preprint
 
-`main.tex` is version 0.17 of the CAOS Research preprint; version 0.16 and all earlier versions
-remain frozen. Version 0.17 adds the EXP-030 cubic-colon idealization theorem and determines the
-complete degree-six third-syzygy profile. It passed the complete claim/build/render, authenticated
+`main.tex` is version 0.18 of the CAOS Research preprint; version 0.17 and all earlier versions
+remain frozen. Version 0.18 adds the EXP-031 integral degree-seven contraction, proves
+`beta_(3,7)=0`, and completes the third homological row over every field. It passed the complete
+claim/build/render, authenticated upload, publication, concept-latest, and fresh-download workflow
+and is published at DOI `10.5281/zenodo.22030743`. Version 0.17 passed the complete
+claim/build/render, authenticated
 upload, publication, concept-latest, and fresh-download workflow and is published at DOI
 `10.5281/zenodo.22030167`. Version 0.16 passed the complete claim/build/render, authenticated upload,
 publication, concept-latest, and fresh-download workflow and is published at DOI
@@ -70,8 +73,21 @@ Version 0.17 identifies the complete cubic-colon quotient as the canonical ideal
 `V_p semidirect omega_(V_p)` of the `p`-th Veronese rational normal curve ring. Its multigraded
 Hilbert numerator and an integral relative normal form prove
 `beta_(3,6)=8p(7p^2-12p+2)/3` over every field, with exact support
-`[3p+4,29p-5] minus ([6p-3,6p+1] union [9p-3,9p])`. The next open strand is
-`beta_(3,7)`; the complete third row, full Betti table, and full resolution remain open.
+`[3p+4,29p-5] minus ([6p-3,6p+1] union [9p-3,9p])`.
+Version 0.18 proves `beta_(3,7)=0` integrally. Zero-vertex matching leaves only residual-hole
+triangles, and a low positive vertex gives each one a distinct same-offset tetrahedral filler with
+a single unit critical boundary entry. Together with versions 0.14, 0.16, and 0.17, the complete
+third row is
+
+```text
+beta_(3,4)=p(5p-1)(500p^2-440p+47)/2,
+beta_(3,5)=4p(8p-1),
+beta_(3,6)=8p(7p^2-12p+2)/3,
+beta_(3,7)=0,
+beta_(3,j)=0 otherwise.
+```
+
+Higher rows, the full Betti table, and the full resolution remain open.
 
 Attribution is binding: Son Pham discovered the first public counterexample; CAOS contributes the
 certified minimality, minimum-layer uniqueness, and parametric-family extensions. Professor Craig
@@ -110,9 +126,10 @@ Zenodo identifiers:
 - version 0.15 DOI: `10.5281/zenodo.22016550` (published and fresh-download verified)
 - version 0.16 DOI: `10.5281/zenodo.22029468` (published and fresh-download verified)
 - version 0.17 DOI: `10.5281/zenodo.22030167` (published and fresh-download verified)
+- version 0.18 DOI: `10.5281/zenodo.22030743` (published and fresh-download verified)
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-030 under
+Evidence sources are EXP-001 through EXP-031 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
 finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
@@ -160,6 +177,12 @@ complete relative profiles for `p=4,5,6`; a separately encoded audit matches eve
 and selected rational ranks, and a symbolic certificate checks the scalar and support formulas.
 The audit's first implementation incorrectly inserted the forbidden offset `8p-1`; it is retained
 as invalid non-evidence, while the corrected implementation passes.
+EXP-031 proves the final degree-seven vanishing and completes the third row. Its all-parameter
+integral proof uses an acyclic zero-vertex matching and a signed unit filler block. The canonical
+campaign checks residual formulas through `p=300`, every critical filler through `p=12`, and exact
+small profiles; a separately encoded opposite-order audit and arithmetic certificate agree. The
+first tuple-only filler key is retained as invalid non-evidence because it compared cells from
+different multigraded offsets.
 
 Version 0.02 remains frozen with this public-file verification:
 
@@ -355,4 +378,19 @@ Version 0.17 public-file verification:
   overfull boxes, or underfull boxes
 - the concept latest resolves to record `22030167`; public title, version, sole author/ORCID,
   CC-BY-4.0 licence, filename, bytes, MD5, SHA-256, and v0.15/v0.16/v0.17 description addendum match
+- a fresh unauthenticated public download matches the committed PDF exactly
+
+Version 0.18 public-file verification:
+
+- reserved DOI: `10.5281/zenodo.22030743`; no upload or publication occurred before claim,
+  two-pass build, metadata, authorship, and rendered-page QA
+- bytes: `725554`
+- MD5: `558532167c4f2a39e03d1bcced9de18d`
+- SHA-256: `0e40aa5ed4feb02209137c2982184a93cfd402ac03cc9d4aa6f9ba86ae4327b7`
+- all 42 pages passed final rendered inspection at 150 DPI; the final build has no warnings,
+  unresolved references, overfull boxes, or underfull boxes
+- sole authorship, ORCID, version, DOI, concept DOI, CC BY 4.0, source, attribution, and scope gates
+  pass; the exact draft metadata and one-file upload also pass
+- the concept latest resolves to record `22030743`; the public title, version, sole author/ORCID,
+  CC BY 4.0 licence, filename, bytes, MD5, SHA-256, and v0.18 description addendum match
 - a fresh unauthenticated public download matches the committed PDF exactly
