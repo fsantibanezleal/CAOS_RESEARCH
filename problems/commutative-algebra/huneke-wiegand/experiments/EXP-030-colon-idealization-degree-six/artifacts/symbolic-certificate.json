@@ -1,0 +1,798 @@
+{
+  "experiment": "EXP-030-colon-idealization-degree-six",
+  "generated_at": "2026-08-20T13:18:02.325453+00:00",
+  "status": "PASS",
+  "route": "independent coefficient arrays plus SymPy scalar identities",
+  "sympy_version": "1.14.0",
+  "parameters": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    50,
+    100,
+    300
+  ],
+  "identities": {
+    "quadratic": true,
+    "linear_syzygy": true,
+    "degree_six": true,
+    "support_count": true
+  },
+  "divisibility_mod_3": {
+    "0": true,
+    "1": true,
+    "2": true
+  },
+  "rows": [
+    {
+      "p": 4,
+      "quadratic_total": 20,
+      "linear_syzygy_total": 64,
+      "degree_six_total": 704,
+      "support_count": 87,
+      "support_min": 16,
+      "support_max": 111,
+      "hole_intervals": [
+        [
+          21,
+          25
+        ],
+        [
+          33,
+          36
+        ]
+      ],
+      "profile_hash": "f48ebf5076d992b439ae52c431bb11a5089eb28aef420301fb784045f67b626d",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "095222051bd6ccf797693505e10ecc258b3f85da30ec72ab805dd2db509e6c63"
+    },
+    {
+      "p": 5,
+      "quadratic_total": 35,
+      "linear_syzygy_total": 160,
+      "degree_six_total": 1560,
+      "support_count": 113,
+      "support_min": 19,
+      "support_max": 140,
+      "hole_intervals": [
+        [
+          27,
+          31
+        ],
+        [
+          42,
+          45
+        ]
+      ],
+      "profile_hash": "7674e789094d1358a34e6c75110f3636c00de046ad32dd9e50acf0efb081e72c",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "50dd3eca9429c7541fe72283568713e3645e5ff1a06f9249e459e0480d94a9b2"
+    },
+    {
+      "p": 6,
+      "quadratic_total": 54,
+      "linear_syzygy_total": 320,
+      "degree_six_total": 2912,
+      "support_count": 139,
+      "support_min": 22,
+      "support_max": 169,
+      "hole_intervals": [
+        [
+          33,
+          37
+        ],
+        [
+          51,
+          54
+        ]
+      ],
+      "profile_hash": "2a98d682e2cc9351f54a211fc1e73f6a3101b857bbba5e2b435734e560209b9d",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "3aeb79dedb6b19fd967291349320fb22a2062401f1ee60f282a3e31b55c612ea"
+    },
+    {
+      "p": 7,
+      "quadratic_total": 77,
+      "linear_syzygy_total": 560,
+      "degree_six_total": 4872,
+      "support_count": 165,
+      "support_min": 25,
+      "support_max": 198,
+      "hole_intervals": [
+        [
+          39,
+          43
+        ],
+        [
+          60,
+          63
+        ]
+      ],
+      "profile_hash": "4daaa0e29bcb2b39425465a5b049e76ac11176c00b2d07986a9116daba0c549c",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "d4f29c86b5040a3d9c6613d71b999748d2b6cd1896619413479eee7cd12fcc99"
+    },
+    {
+      "p": 8,
+      "quadratic_total": 104,
+      "linear_syzygy_total": 896,
+      "degree_six_total": 7552,
+      "support_count": 191,
+      "support_min": 28,
+      "support_max": 227,
+      "hole_intervals": [
+        [
+          45,
+          49
+        ],
+        [
+          69,
+          72
+        ]
+      ],
+      "profile_hash": "50c15f6eb0240ba715d9b6b747040a1c8c009b84f3d9cfb0a7f931886db0fc36",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "1aeb4f114e0121a8f71fda0bee53984d9e7c74aee43f90bee4883ec1ee699c5f"
+    },
+    {
+      "p": 9,
+      "quadratic_total": 135,
+      "linear_syzygy_total": 1344,
+      "degree_six_total": 11064,
+      "support_count": 217,
+      "support_min": 31,
+      "support_max": 256,
+      "hole_intervals": [
+        [
+          51,
+          55
+        ],
+        [
+          78,
+          81
+        ]
+      ],
+      "profile_hash": "0af82adbb8c38cfc75ed36e555e656c6ff51d1d7105cfd5b0d2ebb3befa4b82b",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "90164858fd221a30c63364ff35abe66e7dc28e903c2699b76f776a3fe8aea2dd"
+    },
+    {
+      "p": 10,
+      "quadratic_total": 170,
+      "linear_syzygy_total": 1920,
+      "degree_six_total": 15520,
+      "support_count": 243,
+      "support_min": 34,
+      "support_max": 285,
+      "hole_intervals": [
+        [
+          57,
+          61
+        ],
+        [
+          87,
+          90
+        ]
+      ],
+      "profile_hash": "05e23bee2186edb2dccec6906dabcbcd4829fd95361f1f1ce9dc6e04df9eaf9c",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "dd1d162895eb32b1a3edd9266aa15bcc8188739c5f69f2dae290176e8080e893"
+    },
+    {
+      "p": 11,
+      "quadratic_total": 209,
+      "linear_syzygy_total": 2640,
+      "degree_six_total": 21032,
+      "support_count": 269,
+      "support_min": 37,
+      "support_max": 314,
+      "hole_intervals": [
+        [
+          63,
+          67
+        ],
+        [
+          96,
+          99
+        ]
+      ],
+      "profile_hash": "9617236b4f2472e29487952802a2dacca5e7e69545a3a4528f92445c217e3aa7",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "d2787f8cc73d278757533c8324f71c4fa6964d96bc321543d78af12800b1d2c5"
+    },
+    {
+      "p": 12,
+      "quadratic_total": 252,
+      "linear_syzygy_total": 3520,
+      "degree_six_total": 27712,
+      "support_count": 295,
+      "support_min": 40,
+      "support_max": 343,
+      "hole_intervals": [
+        [
+          69,
+          73
+        ],
+        [
+          105,
+          108
+        ]
+      ],
+      "profile_hash": "8cc7c88bd26c61c51d5ef47c80b51e5248f1ac461a3e096d84eb834c3fd845a3",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "014f7dc23b2f0ab52d137f5e0ae0a37f74eaa7f808665a45bed4ac493f2edeb9"
+    },
+    {
+      "p": 13,
+      "quadratic_total": 299,
+      "linear_syzygy_total": 4576,
+      "degree_six_total": 35672,
+      "support_count": 321,
+      "support_min": 43,
+      "support_max": 372,
+      "hole_intervals": [
+        [
+          75,
+          79
+        ],
+        [
+          114,
+          117
+        ]
+      ],
+      "profile_hash": "f173c50232c5e7df1234c9af29861dd50ed06716ca8fd54cb3cb4ea086b72394",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "51aeb11f37de53a215e65ebed9512e9e46a3a03b113a145251a2ce415184cd6a"
+    },
+    {
+      "p": 14,
+      "quadratic_total": 350,
+      "linear_syzygy_total": 5824,
+      "degree_six_total": 45024,
+      "support_count": 347,
+      "support_min": 46,
+      "support_max": 401,
+      "hole_intervals": [
+        [
+          81,
+          85
+        ],
+        [
+          123,
+          126
+        ]
+      ],
+      "profile_hash": "f19b4fef8893b0a1e61985324b8a6aed42973ca9f89269f1be4aefcba6930f7d",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "b077f48d27e8c5791d7361de55086ad0b1723ba9075ec348e76650436148e185"
+    },
+    {
+      "p": 15,
+      "quadratic_total": 405,
+      "linear_syzygy_total": 7280,
+      "degree_six_total": 55880,
+      "support_count": 373,
+      "support_min": 49,
+      "support_max": 430,
+      "hole_intervals": [
+        [
+          87,
+          91
+        ],
+        [
+          132,
+          135
+        ]
+      ],
+      "profile_hash": "8ff94714c0bcb841508b8f7f995c4d13dac6d2823eb9a6ed72ddf6019802367e",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "aa8df7c426e3d57bda5279bbabf53330896abab9c6474982d4a5f9dc565903e2"
+    },
+    {
+      "p": 16,
+      "quadratic_total": 464,
+      "linear_syzygy_total": 8960,
+      "degree_six_total": 68352,
+      "support_count": 399,
+      "support_min": 52,
+      "support_max": 459,
+      "hole_intervals": [
+        [
+          93,
+          97
+        ],
+        [
+          141,
+          144
+        ]
+      ],
+      "profile_hash": "6f50c179b5174ea3ffba76a971af82c388434cfa23d890208d02f48732b4d615",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "b7bd4a0a8db8aa0135c86c3409ca0f287385ad10ac25995777876e3720ab8570"
+    },
+    {
+      "p": 17,
+      "quadratic_total": 527,
+      "linear_syzygy_total": 10880,
+      "degree_six_total": 82552,
+      "support_count": 425,
+      "support_min": 55,
+      "support_max": 488,
+      "hole_intervals": [
+        [
+          99,
+          103
+        ],
+        [
+          150,
+          153
+        ]
+      ],
+      "profile_hash": "b9549f68ef43ade3ee0979f0e2bb4a67f5c4912d5ca1c0a6124c3592ce292ffa",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "45f470ee9d727955d8b23219e0ba5413da35b9843c5efba3c9c06c533fc7cb3f"
+    },
+    {
+      "p": 18,
+      "quadratic_total": 594,
+      "linear_syzygy_total": 13056,
+      "degree_six_total": 98592,
+      "support_count": 451,
+      "support_min": 58,
+      "support_max": 517,
+      "hole_intervals": [
+        [
+          105,
+          109
+        ],
+        [
+          159,
+          162
+        ]
+      ],
+      "profile_hash": "567ab41a64afbe133347aeebad5456a7d2ed482472ed1338ac2116d6c15aa619",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "3b48e478c272664d040dcb1b882a07cd9cdfa591f5eb12b79630b9526ea29157"
+    },
+    {
+      "p": 19,
+      "quadratic_total": 665,
+      "linear_syzygy_total": 15504,
+      "degree_six_total": 116584,
+      "support_count": 477,
+      "support_min": 61,
+      "support_max": 546,
+      "hole_intervals": [
+        [
+          111,
+          115
+        ],
+        [
+          168,
+          171
+        ]
+      ],
+      "profile_hash": "96834f3376aa083ea9f6b32aa6d9eb2c073c7a20a29fb48edd161bd238611ab6",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "74405424f7f62ea083e4c0f36ec8e661dee1dfab5b3103cb0c5cc58f020e8a05"
+    },
+    {
+      "p": 20,
+      "quadratic_total": 740,
+      "linear_syzygy_total": 18240,
+      "degree_six_total": 136640,
+      "support_count": 503,
+      "support_min": 64,
+      "support_max": 575,
+      "hole_intervals": [
+        [
+          117,
+          121
+        ],
+        [
+          177,
+          180
+        ]
+      ],
+      "profile_hash": "ee70ad00a0c33cf44a2e7b50d9a8a7089058ea1f3ef1a1b451629336307dc981",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "3424e6ae0daf1db25e638009570d2269284819709073d6afadbeb8466152f6d0"
+    },
+    {
+      "p": 21,
+      "quadratic_total": 819,
+      "linear_syzygy_total": 21280,
+      "degree_six_total": 158872,
+      "support_count": 529,
+      "support_min": 67,
+      "support_max": 604,
+      "hole_intervals": [
+        [
+          123,
+          127
+        ],
+        [
+          186,
+          189
+        ]
+      ],
+      "profile_hash": "8308602a8c8adb7a5977aaecc45e4ca393ca6f28ed3738c685e8e7d87ed097dd",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "1717fdfab0f174f13ab6b30ae248d6d0cd10fdb59b82d2ab0e000f8c94efd795"
+    },
+    {
+      "p": 22,
+      "quadratic_total": 902,
+      "linear_syzygy_total": 24640,
+      "degree_six_total": 183392,
+      "support_count": 555,
+      "support_min": 70,
+      "support_max": 633,
+      "hole_intervals": [
+        [
+          129,
+          133
+        ],
+        [
+          195,
+          198
+        ]
+      ],
+      "profile_hash": "96c58a731bada7c91f0017bca56026833b98f95a9780c7e0262afc4dc7e53816",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "9a07c279b1c9391d799213e31f448e965ded07593e711cc23083ab46b6ba56d4"
+    },
+    {
+      "p": 23,
+      "quadratic_total": 989,
+      "linear_syzygy_total": 28336,
+      "degree_six_total": 210312,
+      "support_count": 581,
+      "support_min": 73,
+      "support_max": 662,
+      "hole_intervals": [
+        [
+          135,
+          139
+        ],
+        [
+          204,
+          207
+        ]
+      ],
+      "profile_hash": "15b9f213ba05325240fa4cb2ae3fe95c57e91a3acc02950390c346b3ee8f2c89",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "6c8da1863db36770c70778eb98df4821cc0ad53b7cc3ceb5ea8c10af61c48ed0"
+    },
+    {
+      "p": 24,
+      "quadratic_total": 1080,
+      "linear_syzygy_total": 32384,
+      "degree_six_total": 239744,
+      "support_count": 607,
+      "support_min": 76,
+      "support_max": 691,
+      "hole_intervals": [
+        [
+          141,
+          145
+        ],
+        [
+          213,
+          216
+        ]
+      ],
+      "profile_hash": "50b666fd8c3aba984084085a107c336044525186fe08f1ce5b2534e3ef67ccf2",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "8e4705ed7af7c3c058139989c4d4c10e0cd0033dc239f1dcb168704779f67561"
+    },
+    {
+      "p": 25,
+      "quadratic_total": 1175,
+      "linear_syzygy_total": 36800,
+      "degree_six_total": 271800,
+      "support_count": 633,
+      "support_min": 79,
+      "support_max": 720,
+      "hole_intervals": [
+        [
+          147,
+          151
+        ],
+        [
+          222,
+          225
+        ]
+      ],
+      "profile_hash": "91f9707883a30e65f3106e732eeb6ea84feaa3828edf8afdb4d69638578790c3",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "17502e4d6581e1f76901dede07fb9aac4963df77810389df56576b1be3efa0dd"
+    },
+    {
+      "p": 50,
+      "quadratic_total": 4850,
+      "linear_syzygy_total": 313600,
+      "degree_six_total": 2253600,
+      "support_count": 1283,
+      "support_min": 154,
+      "support_max": 1445,
+      "hole_intervals": [
+        [
+          297,
+          301
+        ],
+        [
+          447,
+          450
+        ]
+      ],
+      "profile_hash": "3227f9848c4cbd837ce8acee5009f63a4a3b9667fbeb1f3dfa35cce605cd8ec8",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "28f269ba54d0d755a0e6907d638e0bea53cb98088bbab8f0ac9fdf9d5889e6b3"
+    },
+    {
+      "p": 100,
+      "quadratic_total": 19700,
+      "linear_syzygy_total": 2587200,
+      "degree_six_total": 18347200,
+      "support_count": 2583,
+      "support_min": 304,
+      "support_max": 2895,
+      "hole_intervals": [
+        [
+          597,
+          601
+        ],
+        [
+          897,
+          900
+        ]
+      ],
+      "profile_hash": "fc37a032fe1289d944f0e4793874ba8a73f9decd97bc241dbe489ee147e66c84",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "8f7c1e254401213b73fb17022abead4735a908cd475e42eec8c585b7f8eab46c"
+    },
+    {
+      "p": 300,
+      "quadratic_total": 179100,
+      "linear_syzygy_total": 71281600,
+      "degree_six_total": 501121600,
+      "support_count": 7783,
+      "support_min": 904,
+      "support_max": 8695,
+      "hole_intervals": [
+        [
+          1797,
+          1801
+        ],
+        [
+          2697,
+          2700
+        ]
+      ],
+      "profile_hash": "298445aeff46ed8d34bfd0c5d1987c37ed330ca11f02cc103a36f95b75495f7b",
+      "checks": {
+        "low_count": true,
+        "high_count": true,
+        "quadratic_total": true,
+        "linear_syzygy_total": true,
+        "degree_six_total": true,
+        "support": true,
+        "support_count": true
+      },
+      "row_hash": "2b0ed7dae6f52bd664a1364d45037a8a6c2d0cfeb1368ef4a871b4000099a82e"
+    }
+  ],
+  "symbolic_aggregate": "c519356b98ea0c76ec3d49d5f04e3512f711e601fa6491a8bf28dd337454968c"
+}

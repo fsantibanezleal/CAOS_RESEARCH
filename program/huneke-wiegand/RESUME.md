@@ -1,7 +1,9 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-20. Lifecycle: EXP-029 is CONFIRMED and manuscript v0.16 is published and
-fresh-download verified; checked repository promotion is active under HWB-042. The integral
+Updated: 2026-08-20. Lifecycle: EXP-030 is CONFIRMED and manuscript v0.17 is published and
+fresh-download verified. HWB-044 is done; HWB-046 owns checked research promotion. EXP-029 and
+manuscript v0.16 remain promoted through the research repository. The scoped CAOS_MANAGE ledger
+remains pending because that checkout is occupied by unrelated staged diffusion work. The integral
 colon-Koszul theorem gives
 
 ```text
@@ -28,9 +30,19 @@ characteristic independence. The canonical EXP-029 campaign passes 297 rows, com
 profiles, two-field controls, an independent rational boundary audit, and arithmetic/Z3 checks.
 The 36-page main manuscript v0.16 is published and fresh-download verified at DOI
 `10.5281/zenodo.22029468`; its 691,569-byte PDF has SHA-256
-`4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`. HWB-041 is done and
-HWB-042 owns checked repository and management-ledger promotion. Higher homological rows and the
-full Betti table remain open.
+`4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`. HWB-041 is done. PRs
+#203/#204 passed all checks; research work, `develop`, and `main` share payload tree
+`f956e8109c986a841394f19ded669feb62164fa1`. HWB-042 now owns only the deferred management-ledger
+reconciliation. Higher homological rows and the full Betti table remain open.
+
+EXP-030 identifies the complete cubic-colon quotient with the canonical idealization of the
+`p`-th Veronese rational normal curve ring and proves
+`beta_(3,6)=8p(7p^2-12p+2)/3` over every field, with exact support
+`[3p+4,29p-5] minus ([6p-3,6p+1] union [9p-3,9p])`. The 40-page manuscript v0.17 is published
+and concept-latest at DOI `10.5281/zenodo.22030167`. Its 714,021-byte fresh public download has
+MD5 `4c7daffba7539f37ea4ecb6d52fad9d9` and SHA-256
+`480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640`, exactly matching Git.
+`beta_(3,7)`, the complete third row, and the full resolution remain open.
 
 The published baseline remains intact: EXP-026 and focused companion v0.02 are published and
 fresh-download verified at DOI `10.5281/zenodo.22002907`, and PRs #190/#191 plus CAOS_MANAGE PR
@@ -73,7 +85,9 @@ Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
 17. the complete second Betti row, with degree-five multiplicities, degree-six vanishing, and
     characteristic independence (EXP-028); and
 18. the free colon-Koszul pair basis, exact third-row degree-five profile, and complete
-    internal-degree-five diagonal over every field (EXP-029).
+    internal-degree-five diagonal over every field (EXP-029); and
+19. the complete cubic-colon idealization and characteristic-free degree-six third-syzygy profile
+    (EXP-030).
 
 The public seed is
 
@@ -98,6 +112,7 @@ I = (t^56,t^70)R.
 | `C_p` | conductor special fiber `F(T_p)`, canonically `gr_(T_p)(R_p)/H^0` | EXP-021 theorem |
 | `J_p` | defining ideal of `C_p` in its `10p` degree-one variables | EXP-022/023 theorems |
 | `Q_p` | quadratic part of `J_p`, with `J_p=(Q_p,f_p)` and `f_p=X_0^2X_(3p)-X_p^3` | EXP-023/027 theorems |
+| `D_p` | cubic-colon quotient `P_p/(Q_p:f_p)`, the canonical idealization of the `p`th Veronese rational normal curve ring | EXP-030 theorem |
 | minimum layer | all normalized rigid pairs at the least Frobenius value 181 | EXP-005/007 |
 
 ## 2a. Infinite family theorem
@@ -165,6 +180,7 @@ campaign is supporting evidence, not the proof.
 | EXP-027 | CONFIRMED | `beta_(2,4)=8p` with complete multiplicity-free offset support and exact adjacent `beta_(3,4)` over every field |
 | EXP-028 | CONFIRMED | complete second row: exact degree-five three-block multiplicities, `beta_(2,5)=p(2p-3)`, and integral `beta_(2,6)=0` over every field |
 | EXP-029 | CONFIRMED | free pair basis on the `8p` high colon variables gives `beta_(3,5)=4p(8p-1)`, exact support, and the complete internal-degree-five diagonal |
+| EXP-030 | CONFIRMED | canonical-idealization colon, exact support, and `beta_(3,6)=8p(7p^2-12p+2)/3` over every field |
 
 ## 3a. Exact evidence anchors
 
@@ -208,24 +224,35 @@ campaign is supporting evidence, not the proof.
 
 ## 4. In flight
 
-EXP-029 is CONFIRMED. Put
+EXP-030 is CONFIRMED. Put
 
 ```text
-H_p={a in G_p:a>=6p},        |H_p|=8p.
+L_p=[0,p] union [3p,4p-2],
+A_i=X_i,                     0<=i<=p,
+B_j=X_(3p+j),                0<=j<=p-2.
 ```
 
-The integral offset formula is
+After killing the `8p` high variables in the cubic colon, the low quotient is
 
 ```text
-beta_(3,(5,b))=#{ {a,c} subset H_p:a<c and a+c=b-3p }.
+k[s,t]^(p) semidirect omega_(k[s,t]^(p)),
+H(z)=(1+(2p-2)z+z^2)/(1-z)^2.
 ```
 
-The integral relative normal form cancels every transient critical triangle by unit boundaries and
-leaves the free unordered-pair basis. Complete exact profiles at `p=4,5,6` total
-`496,780,1128`; the full `p=4` profile agrees over `GF(2)` and `GF(1000003)`; the 297-row campaign,
-independent rational boundary audit, and constant-memory arithmetic/Z3 certificate all pass. The
-first symbolic implementation exceeded its route budget because it materialized every support
-integer and is preserved as non-evidence. EXP-028 and the Hilbert numerator then give the complete
+The exact colon is `Q_p:f_p=Q_p+(X_h:h in H_p)`. Its Hilbert numerator and high-variable Koszul
+extension, followed by integral relative matching, give
+
+```text
+beta_(2,3)(P_p/(Q_p:f_p))=beta_(3,6)(C_p)=8p(7p^2-12p+2)/3.
+```
+
+The support is `[3p+4,29p-5] minus ([6p-3,6p+1] union [9p-3,9p])`, containing `26p-17` offsets.
+Complete profiles at `p=4,5,6` total `704,1560,2912`; the corrected independent audit matches every
+coefficient and selected rational ranks; the symbolic certificate passes. The first audit attempt
+that inserted forbidden offset `8p-1` is preserved as invalid non-evidence. HWB-043 is done.
+
+EXP-029 remains CONFIRMED. Its free pair basis gives
+`beta_(3,(5,b))=#{ {a,c} subset H_p:a<c and a+c=b-3p }`, where `|H_p|=8p`, and the complete
 internal-degree-five diagonal displayed at the top of this handoff.
 
 EXP-028 is CONFIRMED. For every `p>=4` and every field, the complete second row is
@@ -394,18 +421,21 @@ Published baseline:
 - v0.16 DOI `10.5281/zenodo.22029468`: colon-Koszul degree-five diagonal. The public 691,569-byte
   PDF has MD5 `ad69991f41c4f35da3c03f2c1ce343e9` and SHA-256
   `4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`.
+- v0.17 DOI `10.5281/zenodo.22030167`: complete cubic-colon idealization and degree-six third
+  strand. The public 714,021-byte PDF has MD5 `4c7daffba7539f37ea4ecb6d52fad9d9` and SHA-256
+  `480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `22029468`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `22030167`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Commit and push the verified v0.16 publication state, then promote the tested research payload
-   through separate
-   work-to-`develop` and `develop`-to-`main` PRs, and promote the scoped CAOS_MANAGE ledger without
-   staging unrelated concurrent changes.
-2. Reopen HWB-035 at `beta_(3,6)`: derive its colon contribution and relative `H_2` obstruction
-   before attempting any broad full-resolution computation.
+1. Complete HWB-046: promote the checked EXP-030/v0.17 research record through separate PRs to
+   `develop` and `main`, then verify matching payload trees.
+2. When CAOS_MANAGE is safely back on clean `develop`, reconcile and promote only the scoped
+   publication ledger without touching unrelated work.
+3. Begin HWB-045 at `beta_(3,7)`: derive the next strand of the canonical-idealization resolution
+   and its comparison map before any raw resolution sweep.
 
 ### Lenses ledger
 
@@ -431,6 +461,9 @@ Published baseline:
 - Colon-Koszul redirection: EXP-029 reads the exact linear cubic colon two-sidedly. Its second
   Koszul wedges supply all degree-five third syzygies; integral relative `H_2` matching proves
   completeness and a primitive, characteristic-free pair basis without a raw resolution sweep.
+- Recognition/idealization: EXP-030 identifies the entire cubic-colon quotient with the canonical
+  idealization of a rational normal curve. Its Hilbert numerator and integral relative normal form
+  determine the complete degree-six third strand without a raw resolution sweep.
 
 ## 7. Gotchas
 

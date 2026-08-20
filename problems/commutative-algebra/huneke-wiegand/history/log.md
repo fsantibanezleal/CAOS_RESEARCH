@@ -980,3 +980,77 @@
   `4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554` exactly.
 - HWB-041 is complete. HWB-042 owns checked research and management promotion; no release tag is
   claimed for this research-only round.
+
+## 2026-08-20 - EXP-029 research promotion complete
+
+- PR #203 passed `guards` and `test` and merged the complete EXP-029 theorem, exact artifacts,
+  manuscript v0.16, and verified Zenodo record to `develop` at
+  `0c9638d537bf29d1500007efeee0ba68e83bf020`.
+- PR #204 passed all required checks and promoted the complete tested `develop` state to `main` at
+  `633e547762460d6751e563565b577ff53da24425`.
+- Remote research work, `develop`, and `main` share payload tree
+  `f956e8109c986a841394f19ded669feb62164fa1`.
+- The CAOS_MANAGE mirror was not touched: its checkout is occupied on
+  `task/difusion-rename-all-explorations-20260820` with extensive staged diffusion renames. HWB-042
+  remains active only for a later scoped ledger reconciliation after management safely returns to
+  clean `develop`.
+- No release tag is claimed for this research-only round. HWB-035 resumes at `beta_(3,6)`.
+
+## 2026-08-20 - EXP-030 declared
+
+- A fresh primary-source sweep found no published computation of this family's cubic colon or
+  degree-six third strand. Recent KW-semigroup work confirms the value of recognizing a
+  family-wide classical model but does not apply to this nonreduced conductor fiber cone.
+- The invariant-first calculation predicts that, after killing the `8p` high colon variables, the
+  residual colon quotient is the canonical idealization of the rational normal curve ring.
+- Its Hilbert series would be `(1+(2p-2)z+z^2)/(1-z)^2`, forcing
+  `beta_(2,3)(P_p/(Q_p:f_p))=8p(7p^2-12p+2)/3`.
+- EXP-030 is declared before implementation with the falsifiable stronger prediction
+  `beta_(3,6)(C_p)=8p(7p^2-12p+2)/3` over every field. Colon agreement alone is explicitly
+  insufficient: independent integral relative `H_2` completeness remains mandatory.
+- Whole-resolution enumeration and initial-ideal equality are demoted. No EXP-030 result,
+  manuscript update, or publication is claimed.
+
+## 2026-08-20 - EXP-030 confirmed
+
+- The mandatory `p=4` smoke passed in 30.122 seconds with total relative `H_2=704` over both
+  `GF(2)` and `GF(1000003)`.
+- The bounded canonical campaign passed all 297 colon/formula rows and complete degree-six profiles
+  at `p=4,5,6`, whose totals are `704,1560,2912`. Runtime was 389.510 seconds inside the declared
+  900-second budget.
+- The first independent audit incorrectly filled forbidden generator offset `8p-1`, producing
+  `8p+1` high variables. It is preserved as `INVALID_IMPLEMENTATION` and carries no evidence. The
+  corrected auditor kept the gap and matched all three canonical profiles offset by offset.
+- The complete colon quotient is the canonical idealization of the `p`th Veronese rational normal
+  curve ring. Integral relative matching proves, over every field,
+
+  ```text
+  beta_(3,6)=8p(7p^2-12p+2)/3.
+  ```
+
+- The exact support is
+  `[3p+4,29p-5] minus ([6p-3,6p+1] union [9p-3,9p])`, with `26p-17` offsets and free integral
+  homology.
+- Canonical, corrected-audit, and symbolic aggregates are
+  `de439ff5cf0784b332fcf811b17217579221afca42510f755963c81ff8beaa4d`,
+  `bf5034efc37ec23edbd60d87c1eca36d437a9f9fc1e9d38f59816d8a7d3a7a16`, and
+  `c519356b98ea0c76ec3d49d5f04e3512f711e601fa6491a8bf28dd337454968c`.
+- EXP-030 is CONFIRMED and HWB-043 is done. HWB-044 opens the existing-manuscript v0.17 and Zenodo
+  gate. A separate manuscript remains deferred; `beta_(3,7)` is the strongest next research path.
+
+## 2026-08-20 - EXP-030 manuscript v0.17 published
+
+- Expanded the main Frobenius-minimality manuscript to v0.17 with the complete cubic-colon
+  theorem, canonical-idealization presentation, exact multigraded degree-six third strand,
+  integral normal-form proof, trust boundary, and EXP-030 evidence.
+- The DOI-bearing 40-page PDF passed two clean LaTeX builds and all-page rendered inspection. The
+  first full-resolution theorem review found an absorbed spacing command; it was corrected before
+  the final build, hash freeze, upload, and publication.
+- Explicitly reserved and published Zenodo version DOI `10.5281/zenodo.22030167` under concept DOI
+  `10.5281/zenodo.21763582`. Public record `22030167` is concept-latest and CC BY 4.0 with Felipe
+  Santibanez-Leal as sole creator and ORCID `0000-0002-0150-3246`.
+- A fresh unauthenticated 714,021-byte download matches MD5
+  `4c7daffba7539f37ea4ecb6d52fad9d9` and SHA-256
+  `480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640` exactly.
+- HWB-044 is complete. HWB-046 owns checked research promotion and a later scoped management
+  ledger reconciliation; no release tag is claimed for this research-only round.

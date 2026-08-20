@@ -649,3 +649,75 @@ MD5 `ad69991f41c4f35da3c03f2c1ce343e9` and SHA-256
 `4c2a49ae6e1a959afb8df4a365feb4c815d408f3746b5ef1df14ee5746abd554`. HWB-042 now owns the
 checked repository and management-ledger promotion; no release tag is claimed for this
 research-only round.
+
+Research promotion is complete. PR #203 passed `guards` and `test` and merged the complete
+EXP-029 theorem, artifacts, manuscript v0.16, and verified publication record to `develop` at
+`0c9638d537bf29d1500007efeee0ba68e83bf020`. PR #204 passed all required checks and promoted the
+complete tested `develop` state to `main` at `633e547762460d6751e563565b577ff53da24425`.
+Research work, `develop`, and `main` share payload tree
+`f956e8109c986a841394f19ded669feb62164fa1`. The CAOS_MANAGE v0.16 mirror is deliberately deferred:
+that checkout is on `task/difusion-rename-all-explorations-20260820` with extensive staged
+diffusion renames, so touching or switching it would violate the parallel-session boundary.
+HWB-042 remains open only for that scoped management reconciliation. No release tag belongs to
+this research-only round.
+
+## 2026-08-20 - EXP-030 cubic-colon idealization
+
+The next HWB-035 target is redirected from a broad degree-six chain enumeration to recognition of
+the cubic colon. Write the `2p` low variables as `A_i=X_i` for `0<=i<=p` and
+`B_j=X_(3p+j)` for `0<=j<=p-2`. EXP-030 predicts that, after the known `8p` high colon variables
+are killed, the residual quotient is
+
+```text
+k[s,t]^(p) semidirect omega_(k[s,t]^(p)),
+```
+
+the square-zero canonical idealization of the rational normal curve ring. Its predicted Hilbert
+series is `(1+(2p-2)z+z^2)/(1-z)^2`. The forced low-variable coefficient and its Koszul extension
+are
+
+```text
+beta_(2,3)^low=8p(p-1)(p-2)/3,
+beta_(2,3)(P_p/(Q_p:f_p))=8p(7p^2-12p+2)/3.
+```
+
+The experiment makes the falsifiable stronger prediction that these shifted classes primitively
+exhaust total-degree-six relative `H_2`, giving the same formula for `beta_(3,6)(C_p)` over every
+field. The canonical route proves the colon presentation and computes exact offset homology; an
+independent square-zero parametrization and two-characteristic/Smith route are mandatory. A finite
+campaign cannot replace the all-parameter integral matching proof. No result, manuscript update,
+or publication is claimed at declaration.
+
+EXP-030 is CONFIRMED. The complete colon is
+
+```text
+Q_p:f_p=Q_p+(X_h:h in H_p),
+```
+
+and its quotient is the canonical idealization of the `p`th Veronese rational normal curve ring.
+The low quotient has Hilbert series `(1+(2p-2)z+z^2)/(1-z)^2`. Its multigraded Hilbert numerator,
+the `8p`-variable Koszul extension, and an integral relative normal form give
+
+```text
+beta_(3,6)=8p(7p^2-12p+2)/3
+```
+
+over every field, with support
+`[3p+4,29p-5] minus ([6p-3,6p+1] union [9p-3,9p])`. The canonical profiles at `p=4,5,6` total
+`704,1560,2912`; the corrected independent audit matches every coefficient and selected rational
+ranks; the symbolic certificate passes. The first audit implementation inserted forbidden offset
+`8p-1`, is preserved as invalid non-evidence, and motivated an explicit endpoint clause in the
+proof. HWB-043 is done. HWB-044 opens an in-place v0.17 manuscript and Zenodo gate. The next
+research target is `beta_(3,7)` through the next canonical-idealization strand and comparison map.
+
+HWB-044 is complete. The existing manuscript was expanded in place to v0.17 with the complete
+colon theorem, canonical-idealization presentation, multigraded degree-six profile, integral
+normal-form proof, evidence ledger, and explicit `beta_(3,7)` boundary. The DOI-bearing 40-page
+PDF passed two clean LaTeX builds and complete rendered inspection. A visual defect in the first
+theorem render was corrected before the final build and upload. Zenodo record `22030167`, DOI
+`10.5281/zenodo.22030167`, is public and concept-latest under concept DOI
+`10.5281/zenodo.21763582`; its fresh unauthenticated 714,021-byte download matches MD5
+`4c7daffba7539f37ea4ecb6d52fad9d9` and SHA-256
+`480f135b9ecf8dbcec0fb91e85491f8fcf11e1e3c7417f6415ebeda366b5d640`. HWB-046 owns the checked
+research promotion and later scoped management-ledger reconciliation. No release tag is claimed
+for this research-only round.
