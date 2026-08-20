@@ -687,3 +687,25 @@ field. The canonical route proves the colon presentation and computes exact offs
 independent square-zero parametrization and two-characteristic/Smith route are mandatory. A finite
 campaign cannot replace the all-parameter integral matching proof. No result, manuscript update,
 or publication is claimed at declaration.
+
+EXP-030 is CONFIRMED. The complete colon is
+
+```text
+Q_p:f_p=Q_p+(X_h:h in H_p),
+```
+
+and its quotient is the canonical idealization of the `p`th Veronese rational normal curve ring.
+The low quotient has Hilbert series `(1+(2p-2)z+z^2)/(1-z)^2`. Its multigraded Hilbert numerator,
+the `8p`-variable Koszul extension, and an integral relative normal form give
+
+```text
+beta_(3,6)=8p(7p^2-12p+2)/3
+```
+
+over every field, with support
+`[3p+4,29p-5] minus ([6p-3,6p+1] union [9p-3,9p])`. The canonical profiles at `p=4,5,6` total
+`704,1560,2912`; the corrected independent audit matches every coefficient and selected rational
+ranks; the symbolic certificate passes. The first audit implementation inserted forbidden offset
+`8p-1`, is preserved as invalid non-evidence, and motivated an explicit endpoint clause in the
+proof. HWB-043 is done. HWB-044 opens an in-place v0.17 manuscript and Zenodo gate. The next
+research target is `beta_(3,7)` through the next canonical-idealization strand and comparison map.

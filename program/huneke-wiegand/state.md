@@ -92,10 +92,10 @@
 | 2026-08-20 | confirmed | published | 36-page preprint v0.16 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.22029468`, and matched a fresh unauthenticated public download exactly |
 | 2026-08-20 | published | published | PR #203 passed `guards` and `test` and merged EXP-029 plus v0.16 to `develop` at `0c9638d`; PR #204 passed all required checks and promoted the complete tested `develop` state to `main` at `633e547` |
 | 2026-08-20 | published | active | EXP-030 declared before implementation: recognize the cubic-colon quotient as a canonical idealization and test the predicted characteristic-independent formula `beta_(3,6)=8p(7p^2-12p+2)/3` |
+| 2026-08-20 | active | confirmed | EXP-030 proves the canonical idealization, exact `26p-17`-offset degree-six profile, integral freeness, and `beta_(3,6)=8p(7p^2-12p+2)/3` over every field; manuscript v0.17 gate opened |
 
-Current state: **EXP-030 is active after EXP-029 and manuscript v0.16 were confirmed, published,
-and promoted through the research repository; scoped management-ledger reconciliation remains
-active under HWB-042**. For
+Current state: **EXP-030 is confirmed and the manuscript v0.17 gate is active under HWB-044;
+scoped management-ledger reconciliation for v0.16 remains active under HWB-042**. For
 `H_p={a in G_p:a>=6p}`, integral relative homology has the
 free pair basis
 
@@ -128,11 +128,19 @@ occupied on `task/difusion-rename-all-explorations-20260820` with extensive stag
 renames; the v0.16 management mirror must be reconciled only after that checkout is safely back on
 clean `develop`.
 
-EXP-030 is a declared, unconfirmed recognition hypothesis. After killing the `8p` high variables
-in `Q_p:f_p`, the low quotient is predicted to be the canonical idealization of the `p`th Veronese
-of `k[s,t]`, with Hilbert series `(1+(2p-2)z+z^2)/(1-z)^2`. This predicts the colon coefficient
-`8p(7p^2-12p+2)/3` and, subject to a separate integral relative-`H_2` completeness gate, the same
-formula for `beta_(3,6)(C_p)`. No EXP-030 result is yet claimed.
+EXP-030 proves that, after killing the `8p` high variables in `Q_p:f_p`, the low quotient is the
+canonical idealization of the `p`th Veronese of `k[s,t]`, with Hilbert series
+`(1+(2p-2)z+z^2)/(1-z)^2`. Integral relative matching gives
+
+```text
+beta_(3,6)(C_p)=8p(7p^2-12p+2)/3.
+```
+
+Its offset support is `[3p+4,29p-5] minus ([6p-3,6p+1] union [9p-3,9p])`, of size `26p-17`, and
+the integral homology is free. Complete profiles at `p=4,5,6` total `704,1560,2912`; independent
+coefficient profiles, selected rational ranks, and the symbolic certificate pass. The first audit
+encoding that inserted forbidden offset `8p-1` is preserved as invalid non-evidence.
+`beta_(3,7)` and the remainder of the table stay open.
 
 EXP-001 provides the programme's independent calibration. External verification remains separate
 evidence and never substitutes for committed CAOS experiments.

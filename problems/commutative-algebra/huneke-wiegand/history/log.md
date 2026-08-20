@@ -1010,3 +1010,30 @@
   insufficient: independent integral relative `H_2` completeness remains mandatory.
 - Whole-resolution enumeration and initial-ideal equality are demoted. No EXP-030 result,
   manuscript update, or publication is claimed.
+
+## 2026-08-20 - EXP-030 confirmed
+
+- The mandatory `p=4` smoke passed in 30.122 seconds with total relative `H_2=704` over both
+  `GF(2)` and `GF(1000003)`.
+- The bounded canonical campaign passed all 297 colon/formula rows and complete degree-six profiles
+  at `p=4,5,6`, whose totals are `704,1560,2912`. Runtime was 389.510 seconds inside the declared
+  900-second budget.
+- The first independent audit incorrectly filled forbidden generator offset `8p-1`, producing
+  `8p+1` high variables. It is preserved as `INVALID_IMPLEMENTATION` and carries no evidence. The
+  corrected auditor kept the gap and matched all three canonical profiles offset by offset.
+- The complete colon quotient is the canonical idealization of the `p`th Veronese rational normal
+  curve ring. Integral relative matching proves, over every field,
+
+  ```text
+  beta_(3,6)=8p(7p^2-12p+2)/3.
+  ```
+
+- The exact support is
+  `[3p+4,29p-5] minus ([6p-3,6p+1] union [9p-3,9p])`, with `26p-17` offsets and free integral
+  homology.
+- Canonical, corrected-audit, and symbolic aggregates are
+  `de439ff5cf0784b332fcf811b17217579221afca42510f755963c81ff8beaa4d`,
+  `bf5034efc37ec23edbd60d87c1eca36d437a9f9fc1e9d38f59816d8a7d3a7a16`, and
+  `c519356b98ea0c76ec3d49d5f04e3512f711e601fa6491a8bf28dd337454968c`.
+- EXP-030 is CONFIRMED and HWB-043 is done. HWB-044 opens the existing-manuscript v0.17 and Zenodo
+  gate. A separate manuscript remains deferred; `beta_(3,7)` is the strongest next research path.
