@@ -1069,3 +1069,17 @@
   remains active only for later scoped ledger reconciliation after management safely returns to
   clean `develop`.
 - No release tag is claimed for this research-only round. HWB-035 resumes at `beta_(3,7)`.
+
+## 2026-08-20 - EXP-031 declared
+
+- The final third-row target is redirected from a broad resolution computation to the
+  total-degree-seven relative complex.
+- The exact residual sets leave only the hole `6p-1` between triangle and tetrahedron levels.
+  Zero-vertex Morse matching therefore predicts critical triangles exactly at that residual.
+- Each candidate critical triangle has at least four positive low vertices outside it. Adjoining
+  the least one predicts a distinct tetrahedral filler with a single critical face and unit
+  boundary coefficient.
+- EXP-031 is declared before implementation with the falsifiable all-parameter prediction
+  `beta_(3,7)=0` over every field. Complete small profiles, an independent filler audit,
+  adversarial controls, and a written integral proof remain mandatory.
+- No third-row completion or manuscript v0.18 update is claimed at declaration.

@@ -1,6 +1,7 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-20. Lifecycle: EXP-030 is CONFIRMED; manuscript v0.17 is published,
+Updated: 2026-08-20. Lifecycle: EXP-031 is ACTIVE with no result claimed. EXP-030 is CONFIRMED;
+manuscript v0.17 is published,
 fresh-download verified, and promoted through research PRs #205/#206. HWB-044 is done; HWB-046
 owns only deferred CAOS_MANAGE ledger reconciliation because that checkout is occupied by
 unrelated staged diffusion work. The integral
@@ -436,8 +437,9 @@ Published baseline:
    `develop`; research promotion is already complete through PRs #205/#206.
 2. When CAOS_MANAGE is safely back on clean `develop`, reconcile and promote only the scoped
    publication ledger without touching unrelated work.
-3. Begin HWB-045 at `beta_(3,7)`: derive the next strand of the canonical-idealization resolution
-   and its comparison map before any raw resolution sweep.
+3. Run the declared EXP-031 smoke and independent unit-filler audit for the candidate integral
+   vanishing `beta_(3,7)=0`; do not claim completion of the third row before the written proof and
+   every gate pass.
 
 ### Lenses ledger
 

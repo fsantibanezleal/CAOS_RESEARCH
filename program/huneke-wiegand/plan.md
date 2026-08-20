@@ -731,3 +731,20 @@ Research work, `develop`, and `main` share payload tree
 `task/difusion-rename-all-explorations-20260820` with 397 unrelated staged entries; HWB-046 stays
 open only for a later scoped ledger reconciliation after management safely returns to clean
 `develop`.
+
+## 2026-08-20 - EXP-031 final third-row vanishing
+
+HWB-045 is redirected from computing another colon coefficient to an integral contraction of the
+total-degree-seven relative complex. The decisive simplification is
+
+```text
+E_(p,5)=E_(p,4)=[0,24p-1],
+E_(p,3)=[0,24p-1] minus {6p-1}.
+```
+
+Boolean matching on vertex `0` predicts that the only unmatched triangles have residual `6p-1`.
+Every such triangle has a least positive low vertex outside it, and adjoining that vertex gives a
+tetrahedron with that triangle as its unique unmatched face. EXP-031 tests whether these fillers
+give a signed identity block, proving `beta_(3,7)=0` integrally for every `p>=4`. Complete small
+profiles, a separately encoded filler audit, adversarial controls, and a written all-parameter
+proof are mandatory. No result or manuscript v0.18 gate is claimed at declaration.

@@ -95,10 +95,12 @@
 | 2026-08-20 | active | confirmed | EXP-030 proves the canonical idealization, exact `26p-17`-offset degree-six profile, integral freeness, and `beta_(3,6)=8p(7p^2-12p+2)/3` over every field; manuscript v0.17 gate opened |
 | 2026-08-20 | confirmed | published | 40-page preprint v0.17 passed claim/build/render and sole-authorship QA, was published at DOI `10.5281/zenodo.22030167`, and matched a fresh unauthenticated public download exactly |
 | 2026-08-20 | published | published | PR #205 passed `guards` and `test` and merged EXP-030 plus v0.17 to `develop` at `5a1a645`; PR #206 passed all required checks and promoted the exact tested state to `main` at `4ec881a` |
+| 2026-08-20 | published | active | EXP-031 declared before implementation: test whether zero-vertex Morse matching and unit tetrahedral fillers prove `beta_(3,7)=0` integrally and complete the third homological row |
 
-Current state: **EXP-030 and manuscript v0.17 are published and promoted through the research
-repository; HWB-046 remains active only for scoped management-ledger reconciliation, deferred
-because CAOS_MANAGE is occupied by unrelated staged work**. For
+Current state: **EXP-031 is active with no result claimed; EXP-030 and manuscript v0.17 are
+published and promoted through the research repository; HWB-046 remains active only for scoped
+management-ledger reconciliation, deferred because CAOS_MANAGE is occupied by unrelated staged
+work**. For
 `H_p={a in G_p:a>=6p}`, integral relative homology has the
 free pair basis
 
