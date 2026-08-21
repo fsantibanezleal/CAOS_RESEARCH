@@ -834,3 +834,46 @@ collision loci, excluded from the open stratum by hypothesis, and on both
 the punctured collar carries rank >= 3 uniformly. The residual failures
 recorded by the coverings are therefore boxes containing excluded points,
 not evidence of any rank-2 set inside the stratum.
+
+## LEMMA PIECE 12: the pair-MERGE faces, and the atlas's complete face table
+
+2026-08-20. A gate was written to test the atlas's central design claim
+directly: set each chart's face parameter to exactly zero, sample the rest
+of the parameters at interior points, and measure the third singular value
+of the chart matrix ON the face. Eleven charts came back with sigma_3
+bounded away from zero (minima from 1.4e-2 to 2.4e-1): their rescalings
+work as designed and they need no lemma, which is precisely why they
+certified with no residual failures. Two came back at exactly zero: M1
+(rhoq -> 0, the quadruple cluster, where a body of pair A coincides with
+one of pair B) and fartube (rhof -> 0, the same merge at infinity).
+
+An entry-order probe on the ORIGINAL matrix along each parametrization
+diagnosed both: the row scalings are correct for five of the six rows, the
+L35 row is under-scaled by exactly one power, and the resulting face
+matrix has its m1 and m2 columns identically zero while the mA and mB
+columns survive. That is EXACTLY the structure of lemma piece 11, so the
+same mechanism closes it: dividing the two vanishing columns by the face
+parameter (positive off the face, so rank is untouched) restores rank.
+Verified in high precision on both faces, 40 interior samples at each of
+eps = 1e-4, 1e-6, 1e-8, with the rows normalised: the third singular value
+of the column-rescaled matrix is 1.0 at EVERY sample and every scale, with
+a structural reason: at the face the rows L13, L15, L23, L25 become
+multiples of distinct coordinate vectors, so the normalised face matrix is
+orthonormal in three of its directions.
+
+Both faces lie outside the open stratum (a merge of two bodies is a
+collision; the merge at infinity is not a configuration at all).
+
+**The atlas's face table is now complete:**
+
+    full rank on the face, no lemma needed:
+        tube R/L, tubeext R/L, deep, ulow, uplow (both faces), fa1,
+        fa2b, cb1, cb1f, bicorner-opp, bicorner-same
+    rank drops, closed in closed form:
+        corner face (a pair on an axis body)      -> piece 10
+        pair-collapse face (both pairs on axis)   -> piece 11
+        pair-merge faces (cluster, and infinity)  -> piece 12
+
+Every face of every chart is therefore accounted for, and on each one the
+punctured collar carries rank >= 3 uniformly. No face of the atlas can
+harbour a rank-2 set of the stratum.
