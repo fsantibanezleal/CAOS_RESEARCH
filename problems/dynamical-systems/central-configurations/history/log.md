@@ -651,3 +651,33 @@
   or closed in closed form by pieces 10, 11, 12.
 - Fleet: m1, bicorner-same, fartube, uplow, deep all at zero failures;
   m2's residue is exactly piece 11's face and is covered by it.
+
+## 2026-08-20 (round 38): piece 11 made effective; the (0,3) stratum opened
+
+- THE COLLAPSE CHART: lemma piece 11's column rescale implemented as an
+  actual chart, so the collar is certified INCLUDING its face (19/19 face
+  points certify rank >= 3 at eps = 0). No threshold left implicit.
+- Its discard was corrected: |f| < 1/16 rejected precisely the region m2's
+  residue occupies; the true criterion is cs < 1/32, since
+  cs^2 = eps^2 (c-s)^2 + f^2 is bounded below whenever either term is.
+  With the fix the chart certifies m2's residue DIRECTLY.
+- final-gates.py runs all four gates in sequence. ALL 20 chart artifacts
+  re-verify independently with negative controls firing (one blank result
+  was the gate tripping over guarded entries, fixed).
+- EXPLORATION (persisted): the machinery reaches ALL FOUR
+  reflection-symmetric strata of n = 6, because every one of them has a
+  4-dimensional shape space after gauge; only the mass count differs
+  (6, 5, 4, 3). The no-axis case is the easiest unsolved one.
+- EXP-023 OPENED, the (0, 3) stratum (three mirror pairs):
+  * the mirror symmetry kills L12, L34, L56 identically and pairs off the
+    rest, leaving SIX independent equations over THREE masses: a 6 x 3
+    matrix. Verified to 40 digits at random shapes.
+  * GENERIC RANK IS 3 = full rank, so the kernel is trivial and a generic
+    shape admits NO masses: central configurations of this stratum are
+    confined to the rank <= 2 locus, a codimension-2 subvariety.
+  * INSTRUMENT VALIDATED on a known member: the regular hexagon has rank
+    exactly 2 with kernel the equal-mass ray, reproducing the classical
+    regular-hexagon central configuration.
+  * the covering was built (matrix assembled generically from the six
+    positions, crosschecked 5/5 against the independent mpmath
+    derivation) and launched.
