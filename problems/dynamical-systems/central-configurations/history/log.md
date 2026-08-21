@@ -628,3 +628,26 @@
   the Klein-orbit closure) and a sampler blind spot (the collinear
   quadruple region was never sampled).
 - Fleet: eight coverings running, all at zero failures.
+
+## 2026-08-20 (round 36): the face table completed; pieces 11 and 12
+
+- LEMMA PIECE 11, the pair-collapse face: both pairs onto the axis. The
+  mass-column rescales leave only the mA, mB columns, so the face is rank
+  2; but the m1, m2 columns vanish to FIRST order, and dividing them by
+  the collapse parameter makes the face matrix generically RANK 4, with
+  the closed form C2 = 4ab[phi(1-v)phi(-1-q) - phi(-1-v)phi(1-q)],
+  phi(x) = x(1/8 - 1/|x|^3), verified to 8 digits, plus a branch table on
+  its zero curve (six points located, each with a surviving minor).
+- THE FACE-RANK GATE: evaluate every chart's matrix ON its face and
+  measure sigma_3. Eleven charts full rank (the reason they certify with
+  no residual failures); two at exactly zero, NAMED by the gate rather
+  than assumed: M1 and fartube.
+- The entry-order probe diagnosed both: five rows scaled correctly, L35
+  under-scaled by exactly one power, giving the piece-11 face structure.
+- LEMMA PIECE 12 closes them by the piece-11 mechanism, verified at three
+  scales and forty samples per face (sigma_3 = 1.0 throughout, with a
+  structural reason).
+- The atlas's face table is now COMPLETE: every face is either full rank
+  or closed in closed form by pieces 10, 11, 12.
+- Fleet: m1, bicorner-same, fartube, uplow, deep all at zero failures;
+  m2's residue is exactly piece 11's face and is covered by it.
