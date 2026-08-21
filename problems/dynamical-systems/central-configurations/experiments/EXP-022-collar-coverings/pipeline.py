@@ -53,7 +53,20 @@ def s_r12_factored(dsq_minus_4, d, K_inv, one, two, four, eight):
     corner charts' certificates on the collision face (cb1, cb1f).
     """
     d3 = d * d * d
-    return dsq_minus_4 * (d * d + two * d + four) * K_inv((d + two) * eight * d3)
+    fac = dsq_minus_4 * (d * d + two * d + four) * K_inv((d + two) * eight * d3)
+    naive = one * F(1, 8) - K_inv(d3)
+    # Both enclose the same real quantity, so their INTERSECTION does too.
+    # The factored form wins near d = 2 (no cancellation); the naive form
+    # wins away from it (fewer roundings). Taking the intersection keeps
+    # the better of the two everywhere: an artifact re-verification gate
+    # caught certificates that the factored form alone could not reproduce.
+    if isinstance(fac, IV):
+        return IV.raw(max(fac.lo, naive.lo), min(fac.hi, naive.hi))
+    lo = max(fac.v.lo, naive.v.lo)
+    hi = min(fac.v.hi, naive.v.hi)
+    g = [gf if (fac.v.hi - fac.v.lo) <= (naive.v.hi - naive.v.lo) else gn
+         for gf, gn in zip(fac.g, naive.g)]
+    return DV(IV.raw(lo, hi), g)
 
 def rank3_plain(J):
     """None-tolerant: an entry may be None (undefined on the box, e.g. a
