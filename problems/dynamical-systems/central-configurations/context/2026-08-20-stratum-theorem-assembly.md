@@ -156,6 +156,38 @@ WRONG-CHART artifact (deep's 13,354, at a sliver just outside the declared
 M2 discard) the boundary was shifted and the rerun certifies with zero
 failures.
 
+## 5a. The face table (completed 2026-08-20)
+
+The face principle needs, per face, either a full-rank rescaled matrix or
+a uniform lemma. A dedicated gate settled every case by evaluating each
+chart's matrix ON its face:
+
+    FULL RANK on the face (no lemma needed), min sigma_3 in brackets:
+      tube R [1.4e-2] / L [2.2e-2], tubeext, deep [1.5e-4],
+      ulow [1.6e-1], uplow u=0 [3.4e-2] and p=0 [2.6e-2],
+      fa1 [2.4e-1], fa2b [6.4e-2], cb1 [1.6e-1], cb1f [2.0e-1],
+      bicorner-opp [2.2e-1], bicorner-same [1.4e-2]
+
+    RANK DROPS, closed in closed form:
+      corner face      (a pair on an axis body)      lemma piece 10
+      collapse face    (both pairs onto the axis)    lemma piece 11
+      merge faces      (cluster; and at infinity)    lemma piece 12
+
+Pieces 11 and 12 share one mechanism: at those faces the two axis-body
+mass columns vanish to first order while the two pair columns survive, so
+dividing the vanishing columns by the face parameter (positive off the
+face, so rank is untouched) restores rank. Piece 11 carries it out in
+closed form, with the explicit leading coefficient
+4ab[phi(1-v)phi(-1-q) - phi(-1-v)phi(1-q)], phi(x) = x(1/8 - 1/|x|^3),
+and a branch table on its zero curve; piece 12 verifies the same mechanism
+on the two merge faces at three scales and forty samples each.
+
+Piece 10 is the different one: there the face is generically full rank and
+drops only on five explicit hypersurfaces, three of which carry a second
+minor while the remaining two ARE the collisions the stratum excludes.
+
+Every face of every chart is therefore accounted for.
+
 ## 6. Status
 
 Proven: k = 0, 1, 2, 4; the ladder's j = 0 level globally; the reduction,
