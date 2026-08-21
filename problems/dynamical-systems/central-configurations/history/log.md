@@ -601,3 +601,30 @@
   any run (fa2 L36 sign, fa2 tau*tau dependency, cb1f misplaced eps^3
   twice, bicorner-opp L25 signs, m3 hemisphere composition, and the
   m2 grid-floor sampling artifact diagnosed as such).
+
+## 2026-08-20 (round 35): the collision-collar gap closed; the atlas gate
+
+- Diagnosed ALL residual covering failures to one cause: boxes CONTAINING
+  an excluded face. Measured: every dyadic shell at positive distance
+  certifies (6 halvings, both corner charts). Proven: LEMMA PIECE 10, the
+  corner-face rank floor, uniform in the shell index, with a complete
+  branch table; the two branches with no surviving minor are exactly the
+  two collisions the open stratum excludes.
+- Found and fixed a catastrophic cancellation in the naive s(r12, d) form
+  (d -> 2 on the corner face); the exact identity d2B^2 - 4 =
+  rhoc(4 ssig + rhoc) gives a cancellation-free evaluator, now used by
+  cb1 and cb1f.
+- deep's 13,354 failures traced to a WRONG-CHART sliver just outside the
+  declared M2 discard; boundary shifted (M2 to Rc <= 3/32, deep's corner
+  discard to {w < 1/32, rho < 1/16}), rerun certifying with ZERO failures.
+- bicorner-same's 1020 failures traced to a dependency-inflated discard
+  test at the 1/16 seam; threshold widened to 1/8 with the seam re-proven
+  (rhoq <= 0.2795 < 3/8), both charts rerun fresh.
+- ASSEMBLY record written (atlas table, the face principle, the dimension
+  count term by term, the draft statement).
+- ATLAS SEAM GATE: 40k samples (half adversarial, near every face), zero
+  unclaimed points, with ELEVEN negative controls all firing. The controls
+  caught a double-cover transcription bug (manual swap images alongside
+  the Klein-orbit closure) and a sampler blind spot (the collinear
+  quadruple region was never sampled).
+- Fleet: eight coverings running, all at zero failures.
