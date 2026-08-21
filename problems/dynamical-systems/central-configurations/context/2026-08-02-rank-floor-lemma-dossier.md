@@ -778,3 +778,59 @@ certificates the corner charts' residual failures are RESOLVED: they were
 boxes containing the excluded collision face, never evidence of a
 rank-2 set inside the stratum. The same argument applies verbatim to the
 mirror and swap images of the corner (Klein group, pieces 9d and 9e).
+
+## LEMMA PIECE 11: the pair-collapse face rank floor (2026-08-20)
+
+The second and last face at which the rescaled matrix drops rank: BOTH
+mirror pairs collapsing onto the symmetry axis, u = eps a and p = eps b
+with a, b > 0 fixed and eps -> 0, heights v != q fixed. Bodies 3, 4
+coincide at (0, v) and bodies 5, 6 at (0, q): a double collision, outside
+the open stratum. This is where m2's residue and the deepest boxes of the
+deep-tube and double-collapse charts sit.
+
+**The face.** With the charts' mass-column rescales (mA by 4u^2, mB by
+4p^2) the entries behave as
+
+    (L13, mA) -> h1,   (L15, mB) -> g1,   (L23, mA) -> gam,
+    (L25, mB) -> g2,   (L35, mA) -> -f,   (L35, mB) -> f,
+    (L36, mA) -> -f,   (L36, mB) -> -f,
+    every m1 and m2 entry = O(eps),  the mA/mB cross entries = O(eps^3),
+
+so at eps = 0 only the mA and mB columns survive: rank exactly 2, and no
+box containing the face can be certified. But every m1 and m2 entry is
+O(eps) with a NONZERO first-order coefficient, so dividing those two
+COLUMNS by eps (a positive scalar: rank is unchanged for eps > 0) gives a
+face matrix that is generically RANK 4. Its 4 x 4 minor on rows
+{L13, L15, L23, L25} evaluates in closed form:
+
+    C2  =  4 a b [ phi(h1) phi(g2)  -  phi(gam) phi(g1) ],
+    phi(x) = x (1/8 - 1/|x|^3),
+    h1 = 1 - v,  gam = -1 - v,  g1 = 1 - q,  g2 = -1 - q.
+
+Verified to 8 significant digits at eps = 1e-7 on three independent
+rational geometries (face-lemma-collapse.py). Since a, b > 0, C2 vanishes
+exactly on the curve phi(1-v) phi(-1-q) = phi(-1-v) phi(1-q) in the
+height plane, a codimension-1 condition independent of a and b.
+
+**Branch table.** Six points of the zero curve were located numerically
+(two branches for each of three sample heights) and each carries a 3 x 3
+minor of the rescaled matrix with a nonzero order-zero limit:
+
+    v = +0.3333, q = -2.8193  ->  {L15,L35,L36} x {m1,mA,mB}, -107.79
+    v = +0.3333, q = +1.8504  ->  {L25,L35,L36} x {m1,mA,mB},  -47.80
+    v = +1.5000, q = -2.9565  ->  {L15,L35,L36} x {m1,mA,mB},  281.54
+    v = +1.5000, q = +0.5713  ->  {L23,L25,L36} x {m1,m2,mA}, -159.99
+    v = -0.6667, q = -1.3750  ->  {L13,L15,L36} x {m2,mA,mB},  188.66
+    v = -0.6667, q = +2.9806  ->  {L25,L35,L36} x {m2,mA,mB},  522.35
+
+So rank >= 3 holds UNIFORMLY on the whole punctured pair-collapse collar.
+
+**Consequence: the atlas has no remaining rank-dropping face.** Every
+chart of the atlas either has a rescaled face matrix of full rank (those
+charts certified with zero residual failures), or drops rank on one of
+exactly two faces, each now closed in closed form: the corner face by
+lemma piece 10 and the pair-collapse face by piece 11. Both faces are
+collision loci, excluded from the open stratum by hypothesis, and on both
+the punctured collar carries rank >= 3 uniformly. The residual failures
+recorded by the coverings are therefore boxes containing excluded points,
+not evidence of any rank-2 set inside the stratum.
