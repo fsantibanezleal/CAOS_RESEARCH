@@ -23,9 +23,12 @@ each carries its eps factor explicitly:
   (L35,mA)     = -f + 8 f eps^3 c^3 / cx^3        etc.
 
 and cs = sqrt(eps^2 (c-s)^2 + f^2), cx = sqrt(eps^2 (c+s)^2 + f^2) stay
-bounded below by |f|. Discards: |f| < 1/16 (the collision tube's job),
-and |v -+ 1| < 1/16 or |q -+ 1| < 1/16 (a pair meeting an axis body: the
-corner charts' job).
+bounded below whenever EITHER of their two contributions does. Discards:
+cs < 1/32 (the collision tube's job) and |v -+ 1| < 1/16 or
+|q -+ 1| < 1/16 (a pair meeting an axis body: the corner charts' job).
+The cs test replaced an earlier |f| < 1/16 test that was too aggressive:
+it rejected precisely the region m2's residue occupies, which this chart
+certifies directly.
 """
 import sys
 from fractions import Fraction as F
@@ -166,10 +169,21 @@ def crosscheck():
 SIXT = F(1, 16)
 
 def discard(box):
+    """Discard only the TRUE cs-collision (a body of pair A meeting one of
+    pair B), not every small |f|: cs^2 = eps^2 (c - s)^2 + f^2 stays
+    bounded below whenever EITHER factor does. The earlier |f| < 1/16 test
+    was too aggressive and rejected exactly the region m2's residue lives
+    in (u ~ p ~ 2e-5 with the heights separated by 0.037)."""
     eb, tb, vb, qb = box
-    flo, fhi = vb[0] - qb[1], vb[1] - qb[0]
-    if fhi < SIXT and flo > -SIXT:
-        return True                      # the collision tube's region
+    e, tt = IV.raw(*eb), IV.raw(*tb)
+    one, two = IV(1), IV(2)
+    iop = (one + tt.sq()).inv()
+    c = (one - tt.sq()) * iop
+    s = two * tt * iop
+    fiv = IV.raw(vb[0], vb[1]) - IV.raw(qb[0], qb[1])
+    cs2 = (e * (c - s)).sq() + fiv.sq()
+    if cs2.hi < F(1, 1024):              # cs < 1/32 : the collision tube
+        return True
     for xb in (vb, qb):
         if xb[0] >= 1 - SIXT and xb[1] <= 1 + SIXT:
             return True                  # a pair at an axis body: corner charts
