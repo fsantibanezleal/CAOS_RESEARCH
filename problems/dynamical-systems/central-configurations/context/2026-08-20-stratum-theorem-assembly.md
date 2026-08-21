@@ -23,6 +23,44 @@ mA-pair and mB-pair masses equal off {q = v}, so the mass vector is
 equations {L13, L15, L23, L25, L35, L36} in the nine quotient distances:
 a 6 x 4 matrix J(u, v, p, q) whose kernel gives the admissible masses.
 
+## 2a. The count, written out (the logical spine)
+
+Let X be the gauged shape variety of the stratum (dim X = 4, EXP-015,
+two-way engine agreement) and let
+
+    I = { (x, m) : x in X, m in ker J(x), m != 0 }
+
+be the incidence variety, with pi : I -> mass space the projection. Over
+the locus where rank J = r the fibre of I -> X is the kernel, of dimension
+4 - r, so
+
+    dim I  =  max over r of [ dim{ rank J = r } + (4 - r) ].
+
+Term by term, with R_j = {rank J <= j}:
+
+    r = 4 :  dim <= 4 + 0 = 4                          (X itself)
+    r = 3 :  dim <= dim R_3 + 1 <= 3 + 1 = 4           needs R_3 != X
+    r = 2 :  dim <= dim R_2 + 2 <= 2 + 2 = 4           needs dim R_2 <= 2
+    r = 1 :  dim <= dim R_1 + 3                        needs R_1 = empty
+    r = 0 :  dim <= dim R_0 + 4                        needs R_0 = empty
+
+So dim I <= 4, which is the dimension of the mass space; hence pi has
+finite generic fibres (and if pi is not dominant its image is a proper
+closed subset, so generic masses admit no such configuration at all:
+finiteness holds either way). The four requirements are exactly what the
+campaign supplies:
+
+    R_0 = empty      lemma piece 9-prep (exact, global)
+    R_1 = empty      every certified box carries either a rank >= 3 minor
+                     or a trap whose rank-2 witness excludes R_1
+    dim R_2 <= 2     rank >= 3 certificates off the trapped boxes, and on
+                     each trapped box R_2 lies in a smooth codimension-2
+                     manifold; finitely many boxes, so dim R_2 <= 2
+    R_3 != X         exact rank-4 witness W1 (EXP-016)
+
+The centered pentagon shows dim R_2 = 2 is ATTAINED, so the bound is
+sharp and no weaker hypothesis would do.
+
 ## 2. What the chain needs
 
 Following the Dias-Pan pattern (their Lemma 7.3), generic finiteness for
