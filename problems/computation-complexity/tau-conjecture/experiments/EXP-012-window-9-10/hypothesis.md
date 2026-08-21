@@ -74,3 +74,30 @@ the last-gate lemma; tclib arithmetic (sympy cross-checked).
 Phase A: 5 min. Phase B: 12 h cap, 20 workers, disk-resident frontier
 (read-only), per-partition JSON checkpoints; on budget kill report
 coverage and the partial (lower-bound) reading.
+
+## Refinement recorded BEFORE the scan result (2026-08-20)
+
+Reading the census as a ladder makes the decisive sub-question sharp.
+The measured maxima sit at
+$$(	au, z) = (2,2), (3,3), (5,4), (6,5), (8,6),$$
+i.e. the $	au$-gaps alternate $+1, +2, +1, +2$. Every "+2" step is a
+q-ladder step ($q = x(x-1)$; the factor $q - m(m+1)$ splits with roots
+$\{m+1, -m\}$, costing 3 gates: build the constant, subtract,
+multiply), and every "+1" step is MULTIPLY BY $x$, which adds the root
+0 for one gate: it works exactly when the even-root record does NOT
+already contain 0 (the 4-rooter $-(x^2-1)(x^2-4)$ does not, so
+$z=5$ at $	au=6$ follows for free).
+
+The pattern would continue to $z = 7$ at $	au = 9$ IF some 8-gate
+6-rooter avoids the root 0: multiplying it by $x$ would then give 7
+roots at 9 gates. The known witnesses (the $q$-ladder family, root
+blocks $\{-2..3\}$ and $\{-3..2\}$) all contain 0, and phase A found
+no operand with an outside root among the 50 stored witnesses (note
+that $x$ IS an operand there, so phase A also verifies $0 \in R_{f_8}$
+for those 50). The full scan decides it over all $1.05 	imes 10^9$
+states, together with the $(5,2)$, $(4,3)$ and remaining sub-cases.
+
+This refinement does NOT change prediction 2 (we still predict
+emptiness), but it lowers our stated confidence further: the ladder
+pattern is evidence FOR a 9-gate 7-rooter, and it is exactly the kind
+of structural argument the machine has refuted four times.
