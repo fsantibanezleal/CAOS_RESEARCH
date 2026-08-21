@@ -120,3 +120,19 @@ the postprocess + investigation flow). To free threads, EXP-005 pow3 is
 PARKED (killed; it has never reached its first checkpoint across four
 launches; pow2 keeps running from its checkpoint and remains the n = 6
 instrument).
+
+## Addendum (2026-08-20g): the bicorner-same/M1 seam widening
+
+bicorner-same's re-resume produced 1020 GENUINE depth-cap failures, all
+in one cluster: taua = taub (pairs on a common ray from body 1), rr in
+[0.9377, 0.9387], rhoa ~ 2e-4. There CSc = |1 - rr| ~ 0.0618, just BELOW
+the 1/16 discard threshold, but interval dependency inflates CSc.hi above
+1/16 so the discard never fires while the geometry is already
+near-collision: a seam-boundary artifact, not mathematics. FIX (declared
+before rerun): bicorner-same discards CSc < 1/8 (was 1/16) and M1's rhoq
+range widens to [0, 3/8] (was [0, 1/4]). Seam re-proven for the new
+threshold: CSc <= 1/8 gives |1 - rr| <= 1/8 and |dirA - dirB| <= 1/4,
+and the chord formula on tau in [-1, 1] gives |taua - taub| <= 1/4, so
+rhoq <= sqrt(1/64 + 1/16) = 0.2795 < 3/8. Both charts rerun FRESH under
+the amended declaration (their prior certificates remain valid for their
+boxes; the definitive artifacts are the reruns).

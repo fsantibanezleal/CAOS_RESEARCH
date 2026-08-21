@@ -161,7 +161,7 @@ def crosscheck():
     print(f"crosscheck: {ok}/5 points OK", flush=True)
     return ok == 5
 
-SIXT = F(1, 16)
+SIXT = F(1, 8)     # widened 2026-08-20: dependency inflates CSc.hi near 1/16
 
 def discard(box):
     rab, tab, rrb, tbb = box

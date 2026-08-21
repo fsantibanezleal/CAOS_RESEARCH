@@ -10,8 +10,8 @@ SEAM (exact, as for fartube): a bicorner-same point with CSc <= 1/16 has
 |1 - rr| <= 1/16 and |taua - taub| <= 1/8 (chord formula, both tau in
 [-1, 1]), so rhoq < 0.09 < 1/4. The CXc <= 1/16 discard also lands here
 (CXc small forces (rr, taua, taub) near (1, +-1, +-1), hence rhoq small);
-within M1 the vertical corner {CXc < 1/32} is re-discarded (M1-vert, the
-cascade's last level, declared).
+the seam threshold is CSc <= 1/8 (see hypothesis addendum 2026-08-20g),
+for which rhoq <= 0.2795 < 3/8, the declared chart range.
 
 Factorizations: CSc = rhoq Ch, Ch^2 = Qn/Qd and CXc^2 = CXn/CXd and
 Fc = rhoq Fhn/Fhd REUSED from fartube_gen (the (c, s) <-> (a, b)
@@ -204,7 +204,7 @@ def main():
     if not resume and not crosscheck():
         print("crosscheck FAILED, aborting")
         return
-    seed = [((F(0), F(7, 32)), (F(-1), F(1)), (F(0), F(1, 4)), (F(-1), F(1)))]
+    seed = [((F(0), F(7, 32)), (F(-1), F(1)), (F(0), F(3, 8)), (F(-1), F(1)))]
     pl.run_covering(
         "m1", seed,
         entry_factory("iv"), entry_factory("dv"),
