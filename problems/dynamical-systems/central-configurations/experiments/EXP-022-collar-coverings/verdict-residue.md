@@ -34,3 +34,15 @@ locus. Lemma piece 10 closes the corner face uniformly; the analogous
 uniform lemma for the pair-collapse face would close m2's residue in the
 same way, and the shell measurements already show every shell at positive
 distance certifying.
+
+## Addendum (2026-08-20): m2's residue maps onto lemma piece 11
+
+m2's uncertified boxes sit at chart coordinates Rc ~ 0.037, tt ~ 1,
+tau ~ 1, which in the original coordinates is u ~ p ~ 2e-5 with the two
+heights separated by f ~ 0.037. That is exactly lemma piece 11's regime:
+both mirror pairs collapsing onto the axis (eps ~ 2e-5 with a ~ b ~ 1) at
+distinct heights, which piece 11 covers uniformly on the whole punctured
+collar. The chart cannot certify those boxes itself because its own column
+scalings do not include the piece-11 division, but the mathematics is
+supplied. Making the artifact self-contained would need only that column
+rescale added to m2; the theorem does not wait on it.
