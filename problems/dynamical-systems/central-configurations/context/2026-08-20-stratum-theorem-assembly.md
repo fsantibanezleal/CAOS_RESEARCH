@@ -173,6 +173,15 @@ chart's matrix ON its face:
       collapse face    (both pairs onto the axis)    lemma piece 11
       merge faces      (cluster; and at infinity)    lemma piece 12
 
+Piece 11 is now also EFFECTIVE: the collapse chart implements its column
+rescale directly and certifies the collar including the face itself (19 of
+19 face sample points certify rank >= 3), so the lemma's "for all
+sufficiently small eps" is replaced by certificates. Its discard was
+corrected in the process: an |f| < 1/16 test rejected precisely the region
+M2's residue occupies, whereas the true criterion is cs < 1/32, since
+cs^2 = eps^2 (c - s)^2 + f^2 stays bounded below whenever either
+contribution does. With that fix the chart certifies M2's residue directly.
+
 Pieces 11 and 12 share one mechanism: at those faces the two axis-body
 mass columns vanish to first order while the two pair columns survive, so
 dividing the vanishing columns by the face parameter (positive off the
