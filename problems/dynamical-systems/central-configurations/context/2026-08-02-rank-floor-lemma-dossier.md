@@ -720,3 +720,61 @@ ball certificates, the k = 3 chain step then holds on the WHOLE stratum,
 and the chain k = 0, 1, 2, 3, 4 is COMPLETE: the stratum theorem follows.
 Per the standing rule, the exact statement wording goes to Felipe FIRST
 at that moment, before any manuscript or Zenodo step.
+
+## LEMMA PIECE 10: the corner-face rank floor, uniform in the collar (2026-08-20)
+
+The corner charts (cb1, cb1f) left a residual: boxes CONTAINING the
+collision face rhoc = 0 (pair B sitting on axis body 1) can never be
+certified, because the matrix genuinely has rank 2 there. Every dyadic
+shell {rhoc in [h 2^-k-1, h 2^-k]} certifies (measured, k = 0..5, both
+charts), so the punctured collar is covered by the union of shells; what
+was missing is a UNIFORM statement over all k. Piece 10 supplies it in
+closed form.
+
+**Setup.** p = rhoc csig, q = 1 + rhoc ssig (csig^2 + ssig^2 = 1,
+csig >= 0), pair A at bounded (u, v). Exact clearings, no cancellation:
+
+    d2B^2 - 4 = rhoc (4 ssig + rhoc)   (EXACT)
+    s(r12, d2B) = rhoc (4 ssig + rhoc) G,
+        G = (d2B^2 + 2 d2B + 4) / ((d2B + 2) 8 d2B^3),  G(0) = 3/64
+    (L15, m2) = -2 p s(r12, d2B) = -(3/8) rhoc^2 csig ssig + O(rhoc^3)
+    (L25, m1) =  2 p s(r12, d1B) = -2 csig rhoc^-2 + O(rhoc)   [d1B = rhoc]
+    (L25, mA) -> 0   (at rhoc = 0, cs = cx = d1A and the brackets are +-2u:
+                      the two s-terms cancel EXACTLY)
+
+**The limit.** M = det[{L15, L23, L25} x {m1, m2, mA}] expands along the
+m2 column (only L15 has an m2 entry), and the rhoc^2 of (L15, m2) cancels
+the rhoc^-2 of (L25, m1) exactly:
+
+    M  ->  C  =  -(3/2) * u * gam * csig^2 * ssig * s(d2A, 2u),
+    gam = -1 - v,  s(d2A, 2u) = 1/d2A^3 - 1/(2u)^3.
+
+Verified to 8 significant digits at rhoc = 1e-7 on three independent
+rational geometries (face-lemma2.py). So rank >= 3 holds UNIFORMLY for
+all small rhoc > 0 wherever C != 0.
+
+**Branch table (C = 0).** Five hypersurfaces, each with a second minor
+whose own rhoc-limit is nonzero (searched over the full 80-minor menu):
+
+    ssig = 0   (B displaced horizontally) -> {L13,L35,L36} x {m1,m2,mA},  0.0750
+    v = -1     (A at body 2's height)     -> {L15,L35,L36} x {m1,m2,mA},  0.1335
+    d2A = 2u   (equidistance)             -> {L15,L35,L36} x {m2,mA,mB}, -0.6662
+    u = 0      -> COLLISION (bodies 3, 4 coincide): outside the stratum
+    csig = 0   -> COLLISION (bodies 5, 6 coincide): outside the stratum
+
+The two branches with no surviving minor are exactly the two collisions,
+which the open stratum excludes by hypothesis: the table is COMPLETE on
+the stratum. Pairwise combinations, including the two that produced the
+actual covering failures, also survive:
+
+    ssig = 0 AND d2A = 2   (the cb1 failures)  -> {L23,L25,L36} x {m1,m2,mB},  0.5094
+    ssig = 0 AND u -> 0    (the cb1f failures) -> {L25,L35,L36} x {m1,m2,mA},  3.7e5
+    ssig = 0 AND v = -1                        -> {L13,L35,L36} x {m1,m2,mA}, -0.0606
+    ssig = 0 AND d2A = 2u                      -> {L13,L35,L36} x {m1,m2,mA}, -0.5623
+
+**Consequence.** rank J >= 3 on the whole punctured corner collar
+{0 < rhoc <= rhoc*} of the stratum, uniformly. Together with the shell
+certificates the corner charts' residual failures are RESOLVED: they were
+boxes containing the excluded collision face, never evidence of a
+rank-2 set inside the stratum. The same argument applies verbatim to the
+mirror and swap images of the corner (Klein group, pieces 9d and 9e).

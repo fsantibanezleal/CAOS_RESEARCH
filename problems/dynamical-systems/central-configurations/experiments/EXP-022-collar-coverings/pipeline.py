@@ -42,6 +42,19 @@ def _dual_args(boxes, mids=False):
         return [DV(IV((b[0] + b[1]) / 2), E[i]) for i, b in enumerate(boxes)]
     return [DV(IV.raw(*b), E[i]) for i, b in enumerate(boxes)]
 
+def s_r12_factored(dsq_minus_4, d, K_inv, one, two, four, eight):
+    """1/8 - 1/d^3 WITHOUT cancellation, given d^2 - 4 exactly.
+
+    1/8 - 1/d^3 = (d^3 - 8) / (8 d^3) = (d - 2)(d^2 + 2d + 4) / (8 d^3),
+    and d - 2 = (d^2 - 4)/(d + 2). The caller supplies d^2 - 4 as an exact
+    polynomial (no subtraction of nearly-equal radicals), so the enclosure
+    is tight even when d -> 2, where the naive difference of two ~1/8
+    quantities loses every significant digit. This is what defeated the
+    corner charts' certificates on the collision face (cb1, cb1f).
+    """
+    d3 = d * d * d
+    return dsq_minus_4 * (d * d + two * d + four) * K_inv((d + two) * eight * d3)
+
 def rank3_plain(J):
     """None-tolerant: an entry may be None (undefined on the box, e.g. a
     collision-singular quantity); minors touching a None are skipped. A

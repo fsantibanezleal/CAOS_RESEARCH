@@ -89,7 +89,10 @@ def entry_factory(mode):
         J[0][3] = eight * csig.sq() * a * ssig \
             - four * rc3 * e3 * csig.sq() * (iCs * Th135 - iCx * Th136)
         # L15 (/ rhoc)
-        J[1][1] = m1_ * two * csig * (egt - id2B)
+        # cancellation-free (d2B -> 2 on the corner face); d2B^2 - 4 exact:
+        s12_d2B = pl.s_r12_factored(rc * (four * ssig + rc), d2B,
+                                    K_inv, one, two, four, eight)
+        J[1][1] = m1_ * two * csig * s12_d2B
         J[1][2] = m1_ * a2_4 * ((iD1A - iCs) * Th135 + (iD1A - iCx) * Th136)
         J[1][3] = m1_ * ssig * (one - eight * cs3)
         # L23 (x eps)

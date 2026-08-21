@@ -79,9 +79,14 @@ def entry_factory(mode):
         Dl235 = rc * csig * gam + u * (two + rc * ssig)
         # Delta236 = -(u g2 + p gam) = u (2 + rhoc ssig) - rhoc csig gam
         Dl236 = u * (two + rc * ssig) - rc * csig * gam
-        s12_d2A = egt - id2A
-        s12_d1A = egt - id1A
-        s12_d2B = egt - id2B
+        # Cancellation-free s(r12, .) differences (2026-08-20): d -> 2 kills
+        # the naive form. Exact d^2 - 4 polynomials:
+        #   d1A^2 - 4 = u^2 + h1^2 - 4,  d2A^2 - 4 = u^2 + gam^2 - 4,
+        #   d2B^2 - 4 = rhoc (4 ssig + rhoc)   [exact, see docstring]
+        sf = lambda dsq4, d: pl.s_r12_factored(dsq4, d, K_inv, one, two, four, eight)
+        s12_d2A = sf(u.sq() + gam.sq() - four, d2A)
+        s12_d1A = sf(u.sq() + h1.sq() - four, d1A)
+        s12_d2B = sf(rc * (four * ssig + rc), d2B)
         sd2Ad2B = id2A - id2B
         J = [[Z] * 4 for _ in range(6)]
         # L13 (x 1)
