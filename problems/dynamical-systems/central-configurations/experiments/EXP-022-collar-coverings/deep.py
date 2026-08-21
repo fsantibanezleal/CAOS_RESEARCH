@@ -173,15 +173,30 @@ def crosscheck(sgn):
 
 SIXT = F(1, 16)
 
-def discard(box):
-    wb, vb, tb, rb = box
-    if vb[0] >= 1 - SIXT and vb[1] <= 1 + SIXT:
-        return True
-    if vb[0] >= -1 - SIXT and vb[1] <= -1 + SIXT:
-        return True
-    if wb[1] < F(1, 32) and rb[1] < F(1, 16):
-        return True                      # quadruple collinear corner
-    return False
+def make_discard(sgn):
+    def discard(box):
+        wb, vb, tb, rb = box
+        if vb[0] >= 1 - SIXT and vb[1] <= 1 + SIXT:
+            return True
+        if vb[0] >= -1 - SIXT and vb[1] <= -1 + SIXT:
+            return True
+        if wb[1] < F(1, 32) and rb[1] < F(1, 16):
+            return True                  # quadruple collinear corner -> M2
+        # UNPHYSICAL (2026-08-20): the chart's box product contains
+        # (w, rho) pairs with rho |alpha| > 2w, where p = w - rho alpha / 2
+        # or u = w + rho alpha / 2 is NEGATIVE: not a configuration at all.
+        # deep's residue was entirely of this kind; M2 always had the test.
+        w, tau, rho = IV.raw(*wb), IV.raw(*tb), IV.raw(*rb)
+        one, two = IV(1), IV(2)
+        iop = (one + tau.sq()).inv()
+        alpha = (one - tau.sq()) * iop * sgn
+        half = F(1, 2)
+        u = w + rho * alpha * half
+        p = w - rho * alpha * half
+        if u.hi <= 0 or p.hi <= 0:
+            return True
+        return False
+    return discard
 
 def main():
     resume = "--resume" in sys.argv
@@ -196,7 +211,7 @@ def main():
             entry_factory(sgn, "iv"), entry_factory(sgn, "dv"),
             HERE / "artifacts",
             "E:/_Datos/caos-research/central-configurations/EXP-022",
-            discard=discard, depth=44, budget=21600, resume=resume)
+            discard=make_discard(sgn), depth=44, budget=21600, resume=resume)
 
 if __name__ == "__main__":
     main()
