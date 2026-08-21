@@ -81,10 +81,22 @@ def entry_factory(mode):
         def icube(x):
             return K_inv(x * x * x)
         id2A = icube(d2A); id2B = icube(d2B)
-        Ch = (gen.Qn(rq, tq, Z, tb, Frac) * K_inv(gen.Qd(rq, tq, Z, tb, Frac))).sqrt()
-        iCh = icube(Ch)
-        CXc = (gen.CXn(rq, tq, Z, tb, Frac) * K_inv(gen.CXd(rq, tq, Z, tb, Frac))).sqrt()
-        iCXc = icube(CXc)
+        # Cone guards (2026-08-20): where CSc or CXc straddles zero the
+        # corresponding icube is undefined; the entry becomes None and the
+        # None-tolerant pipeline skips minors touching it. This absorbs the
+        # whole M1-vert region into M1 (M1-vert's own chart could not
+        # certify anything: its generated polynomials, 150-200 terms, and
+        # its structural forms both lose all precision at the cone).
+        try:
+            Ch = (gen.Qn(rq, tq, Z, tb, Frac) * K_inv(gen.Qd(rq, tq, Z, tb, Frac))).sqrt()
+            iCh = icube(Ch)
+        except AssertionError:
+            iCh = None
+        try:
+            CXc = (gen.CXn(rq, tq, Z, tb, Frac) * K_inv(gen.CXd(rq, tq, Z, tb, Frac))).sqrt()
+            iCXc = icube(CXc)
+        except AssertionError:
+            iCXc = None
         Fch = gen.Fhn(rq, tq, Z, tb, Frac) * K_inv(gen.Fhd(rq, tq, Z, tb, Frac))
         W1h = g1n.W1n(rq, tq, tb, Frac) * K_inv(g1n.W1d(rq, tq, tb, Frac))
         G5h = g1n.G5n(rq, tq, tb, Frac) * K_inv(g1n.G5d(rq, tq, tb, Frac))
@@ -101,37 +113,49 @@ def entry_factory(mode):
         cb3 = cb * cb * cb
         q2 = rq.sq()
         q3 = q2 * rq
-        J = [[Z] * 4 for _ in range(6)]
+        okS = iCh is not None
+        okX = iCXc is not None
+        J = [[None] * 4 for _ in range(6)]
         # L13 (x rhoq^2)
         J[0][1] = q2 * (m1_ * two * ca * (egt - id2A))
         J[0][2] = q2 * (m1_ * sa * (one - eight * ca3))
-        J[0][3] = four * cb.sq() * (q3 * W1h - rr3 * W1h * iCh
-                                    + q2 * (one - rr3 * iCXc) * W2)
+        if okS and okX:
+            J[0][3] = four * cb.sq() * (q3 * W1h - rr3 * W1h * iCh
+                                        + q2 * (one - rr3 * iCXc) * W2)
         # L15 (x rhoq^2)
         J[1][1] = q2 * (m1_ * two * rr * cb * (egt - id2B))
-        J[1][2] = four * rr * ca.sq() * (W1h * iCh - q3 * W1h
-                                         + q2 * (one - iCXc) * W2)
+        if okS and okX:
+            J[1][2] = four * rr * ca.sq() * (W1h * iCh - q3 * W1h
+                                             + q2 * (one - iCXc) * W2)
         J[1][3] = q2 * (m1_ * rr * sb * (one - eight * cb3))
         # L23 (x rhoq^2)
         J[2][0] = q2 * (ra3 * ca * quarter - two * ca)
         J[2][2] = q2 * ra2 * gam * (one - eight * ra3 * ca3 * id2A)
-        J[2][3] = ra2 * four * rr2 * cb.sq() * (
-            q2 * ra3 * id2B * (K5v + K6) - K5h * iCh - q2 * iCXc * K6)
+        if okS and okX:
+            J[2][3] = ra2 * four * rr2 * cb.sq() * (
+                q2 * ra3 * id2B * (K5v + K6) - K5h * iCh - q2 * iCXc * K6)
         # L25 (x rhoq^2)
         J[3][0] = q2 * (rr3 * ra3 * cb * quarter - two * cb)
-        J[3][2] = rr2 * ra2 * (four * ca.sq() * (K5h * iCh - q2 * iCXc * K6)
-                               + q2 * four * ra3 * ca.sq() * id2A * (K6 - K5v))
+        if okS and okX:
+            J[3][2] = rr2 * ra2 * (four * ca.sq() * (K5h * iCh - q2 * iCXc * K6)
+                                   + q2 * four * ra3 * ca.sq() * id2A * (K6 - K5v))
         J[3][3] = q2 * rr2 * ra2 * g2 * (one - eight * rr3 * ra3 * cb3 * id2B)
         # L35 (/ rhoq)
         J[4][0] = rq * R3h * W1h
         J[4][1] = ra2 * rr2 * (id2A - id2B) * K5h
-        J[4][2] = ra2 * rr2 * Fch * (eight * ca3 * iCXc - one)
-        J[4][3] = ra2 * rr2 * Fch * (one - eight * rr3 * cb3 * iCXc)
+        if okX:
+            J[4][2] = ra2 * rr2 * Fch * (eight * ca3 * iCXc - one)
+            J[4][3] = ra2 * rr2 * Fch * (one - eight * rr3 * cb3 * iCXc)
         # L36 (x rhoq^2)
         J[5][0] = q3 * R3h * W2
         J[5][1] = q2 * ra2 * rr2 * (id2A - id2B) * K6
-        J[5][2] = ra2 * rr2 * (eight * ca3 * Fch * iCh - q3 * Fch)
-        J[5][3] = ra2 * rr2 * (eight * rr3 * cb3 * Fch * iCh - q3 * Fch)
+        if okS:
+            J[5][2] = ra2 * rr2 * (eight * ca3 * Fch * iCh - q3 * Fch)
+            J[5][3] = ra2 * rr2 * (eight * rr3 * cb3 * Fch * iCh - q3 * Fch)
+        for i in range(6):
+            for j in range(4):
+                if J[i][j] is None and not ((i, j) in {(0,3),(1,2),(2,3),(3,2),(4,2),(4,3),(5,2),(5,3)}):
+                    J[i][j] = Z
         return J
     return entries
 
@@ -194,10 +218,7 @@ def discard(box):
     rq, tq, tb = IV.raw(*rqb), IV.raw(*tqb), IV.raw(*tbb)
     Z = IV(0)
     Frac = lambda a, b: IV(F(a, b))
-    CX2 = gen.CXn(rq, tq, Z, tb, Frac) * (gen.CXd(rq, tq, Z, tb, Frac)).inv()
-    if CX2.hi < F(1, 1024):
-        return True                      # M1-vert (pending)
-    return False
+    return False   # cones handled by the per-entry guards, not discarded
 
 def main():
     resume = "--resume" in sys.argv
