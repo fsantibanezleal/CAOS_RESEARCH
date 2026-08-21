@@ -106,8 +106,11 @@ def main():
             big.append((c - r, c + r))
         try:
             Jb = eiv([tuple(x) for x in big])
-            still = pl.det3(Jb, rows, cols).excludes_zero()
-        except AssertionError:
+            if any(Jb[i][j] is None for i in rows for j in cols):
+                still = False        # guarded entry: certificate not available
+            else:
+                still = pl.det3(Jb, rows, cols).excludes_zero()
+        except Exception:
             still = False
         if still:
             inflate_pass += 1
