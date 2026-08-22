@@ -72,31 +72,28 @@ def coefficient_one_minus(exponent: int, degree: int) -> int:
     return (-1) ** degree * math.comb(exponent, degree)
 
 
-def independent_low_linear_rank(c: int, a: int) -> int:
-    coefficient = (
-        coefficient_one_minus(c, a + 1)
-        + c * coefficient_one_minus(c, a)
-        + coefficient_one_minus(c, a - 1)
-    )
-    return (-1) ** a * coefficient
-
-
 def independent_strands(p: int) -> tuple[list[int], list[int]]:
     c = 2 * p - 2
     m = 8 * p
     n = 10 * p
-    low_ranks = {a: independent_low_linear_rank(c, a) for a in range(1, c)}
+    total_codimension = n - 2
+    numerator = [
+        coefficient_one_minus(total_codimension, degree)
+        + c * coefficient_one_minus(total_codimension, degree - 1)
+        + coefficient_one_minus(total_codimension, degree - 2)
+        for degree in range(n + 1)
+    ]
+    d_linear = []
+    for q in range(n - 1):
+        internal_degree = q + 1
+        diagonal = math.comb(m, internal_degree) if internal_degree <= m else 0
+        terminal = math.comb(m, q - 1 - c) if 0 <= q - 1 - c <= m else 0
+        d_linear.append((-1) ** q * numerator[internal_degree] + diagonal + terminal)
     row_three = []
     row_four = []
     for i in range(n):
         q = i - 1
-        row_three.append(
-            sum(
-                rank * math.comb(m, q - a)
-                for a, rank in low_ranks.items()
-                if 0 <= q - a <= m
-            )
-        )
+        row_three.append(d_linear[q] if q >= 0 else 0)
         row_four.append(math.comb(m, q - c) if 0 <= q - c <= m else 0)
     return row_three, row_four
 

@@ -86,9 +86,21 @@ def lambda_rank(codimension: int, homological_degree: int) -> int:
 
 
 def d_linear_rank(codimension: int, killed: int, homological_degree: int) -> int:
-    return sum(
-        lambda_rank(codimension, a) * choose(killed, homological_degree - a)
-        for a in range(1, codimension)
+    """Recover the Koszul convolution by one Hilbert-numerator coefficient.
+
+    Literal convolution is retained in the small stored tables through the resulting
+    coefficients, but recomputing all binomial summands for every parameter crossed the declared
+    budget.  This equivalent coefficient form follows after subtracting the diagonal and terminal
+    row from ``(1+c*z+z^2)(1-z)^(c+killed)``.
+    """
+    i = homological_degree
+    total_codimension = codimension + killed
+    return (
+        -choose(total_codimension, i + 1)
+        + codimension * choose(total_codimension, i)
+        - choose(total_codimension, i - 1)
+        + choose(killed, i + 1)
+        + choose(killed, i - 1 - codimension)
     )
 
 
