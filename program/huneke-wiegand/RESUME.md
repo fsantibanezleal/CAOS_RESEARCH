@@ -22,8 +22,10 @@ claim, two clean builds, all-page render inspection, sole-authorship, repository
 publication, concept-latest, and fresh-download gates. It is public at DOI
 `10.5281/zenodo.22062161`; the 774,246-byte public PDF matches MD5
 `69f45597e879afc8fd91ca4157fb2cf3` and SHA-256
-`163a3a2fc6a5d61b6ff97e3ed1089dc3b6e9b320aa9c68ed67d2f1155362d743` exactly. HWB-054 is active
-for PR promotion. The remaining mathematical
+`163a3a2fc6a5d61b6ff97e3ed1089dc3b6e9b320aa9c68ed67d2f1155362d743` exactly. PR #218 passed
+`guards` and `test` and merged the payload to `develop` at `28bac50`; PR #219 passed all required
+checks and promoted it to `main` at `c1e6b20`. Both remote branches share payload tree
+`f51cb2845d20b4fbf7d43029a71af0392bc3d6d9`. HWB-054 is done. The remaining mathematical
 frontier is the two lower strands of `A_p` via `0 -> K_p -> A_p -> D_p -> 0`; the cubic comparison
 maps are no longer unknown.
 
@@ -355,9 +357,9 @@ The cubic shift separates all comparison-map source and target degrees, proving
 top of this handoff. HWB-053 is complete: manuscript v0.20 is published and fresh-download
 verified at DOI `10.5281/zenodo.22062161`. Structure/content/template guards, Ruff, all 60 tests,
 the full registry pipeline, and manifest/artifact consistency pass. The pipeline reconciles four
-previously unbaked records, including EXP-033. HWB-054 is active for separate-PR promotion. The
-next mathematical route after delivery is the two lower strands of `A_p` through the same `K_p`
-extension.
+previously unbaked records, including EXP-033. PRs #218/#219 passed required checks and promoted
+the exact payload through `develop` and `main`; HWB-054 is done. The next mathematical route is the
+two lower strands of `A_p` through the same `K_p` extension.
 
 EXP-030 is CONFIRMED. Put
 
