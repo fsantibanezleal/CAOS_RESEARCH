@@ -472,3 +472,46 @@ target: the colon side of the mapping cone is no longer an unknown.
 The theorem is incorporated in the 43-page main manuscript v0.19, published and fresh-download
 verified at DOI `10.5281/zenodo.22031481`. The public record is concept-latest, and its exact PDF
 matches the committed artifact by MD5 and SHA-256.
+
+## Minimal cubic mapping cone and the two top strands
+
+EXP-033 resolves the comparison-map ambiguity left by EXP-032. Let
+
+```text
+A_p=P_p/Q_p,
+L_p=Q_p:f_p,
+T_p=D_p/f_pD_p.
+```
+
+Regularity of `f_p` on `D_p=P_p/L_p` gives
+`Q_p=(Q_p,f_p) intersect L_p`. The resulting pullback identifies the kernel of
+`A_p -> D_p` with the high-variable kernel `K_p` of `C_p -> T_p`. Its Hilbert series is
+
+```text
+H_(K_p)(z)=(8p z+10p z^2)/(1-z).
+```
+
+The regular element `X_0` makes `K_p` one-dimensional Cohen--Macaulay of regularity two. The exact
+sequence `0 -> K_p -> A_p -> D_p -> 0` then proves
+
+```text
+depth(A_p)=1,   pd(A_p)=10p-1,   reg(A_p)=2.
+```
+
+Every shift of `D_p(-3)` lies strictly above every shift of `A_p`, so the cubic mapping cone is
+minimal over every field:
+
+```text
+B_(C_p)(x,z)=B_(A_p)(x,z)+x z^3 B_(D_p)(x,z).
+```
+
+With `c=2p-2`, `m=8p`, and the EXP-032 ranks `lambda_(c,a)`, this gives the complete top strands
+
+```text
+beta_(i,i+3)=sum_(a=1)^(c-1)lambda_(c,a)binom(m,i-1-a),
+beta_(i,i+4)=binom(m,i-1-c).
+```
+
+The result determines all comparison ranks and both regularity-three/four strands, not the full
+Betti table. The remaining data are exactly the two lower strands of `A_p`; the next structural
+route is its extension by `K_p` and `D_p`.
