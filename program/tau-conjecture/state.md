@@ -128,3 +128,28 @@
 - **Next:** TCB-032 (the {9,10} window: construction hunt, corrected
   cost model); TCB-033 (digit/mod-p ladders at depth 8 replayed from
   the stored frontier); reads.
+
+## Round 11 in flight (2026-08-20/21): the nine-gate question
+
+Two scans decide whether 7 distinct integer roots are reachable in 9
+gates (z_max(8) = 6 is settled, so the last gate must involve the 8th
+value):
+
+- **EXP-012, multiplicative case** (final gate x): scans every depth-7
+  state for |R_v8 union R_b| >= 7. Scheduled task `tau_scan9`, 20
+  workers, resumable per partition in
+  `EXP-012-window-9-10/artifacts/scan9_parts_final/`. STATUS: 128/256
+  partitions; the completed 438M states show ZERO hits, max union 6.
+  Gate PASSED before production (793 hits at threshold 6).
+- **EXP-013, additive case** (final gate + or -): mod-p evaluation
+  filter over the window [-32,32] with exact promotion. Scheduled task
+  `tau_scan9add`, 8 workers (moves to 20 when EXP-012 finishes),
+  resumable in `EXP-013-additive-residual/artifacts/parts_final/`.
+  Gate PASSED (41 hits at threshold 5). Two numeric traps fixed before
+  production and recorded in its hypothesis (int64 overflow with 61-bit
+  primes; the identically-zero flood, excluded rigorously by degree).
+
+RESUME CONTRACT: read the two artifacts dirs first; relaunch the
+scheduled tasks (`schtasks /run /tn tau_scan9`, `tau_scan9add`) to
+continue from the last completed partition. Long runs MUST go through
+the Task Scheduler: Start-Process does not survive session teardown.
