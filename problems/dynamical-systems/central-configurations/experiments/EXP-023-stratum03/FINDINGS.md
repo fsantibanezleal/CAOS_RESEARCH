@@ -115,3 +115,37 @@ chart at infinity: a finite set of BOUNDED charts suffices. The contrast
 with the (2,2) stratum, which needed three closed-form face lemmas and a
 family of inverted charts, is entirely explained by the absence of
 axis-body mass columns here.
+
+## 9. Correction and refinement (2026-08-20, later still)
+
+The merge covering's first run produced failures, and chasing them
+sharpened two things.
+
+CONFIRMED, not retracted: the merge FACE is full rank. Re-verified
+directly on the exact face rho = 0, where the matrix reads
+
+    L13 ( 0,      0,     -0.9  )      L15 ( 0,     +0.9,   0    )
+    L14 ( 0,      0,     -0.3  )      L16 ( 0,     +0.3,   0    )
+    L35 (-0.115, +1.44,  +1.44 )      L36 ( 0,     +0.6,  +0.6  )
+
+so the pair-A column survives ONLY through row L35, the row the chart
+divides by rho^2, and the minor {L13, L15, L35} certifies. That is why the
+face test returns 40 of 40, and it holds at every tau sampled including
+right next to where the L35 pair-A entry crosses zero (tau ~ 0.813 at
+wu ~ 1, wv = 3): the determinant does not vanish where that single entry
+does.
+
+REFINED: the failures are not a face problem but the ordinary difficulty
+of resolving the rank <= 2 LOCUS, which in this stratum is exactly where
+central configurations live. Near it the certifying determinant is small
+(order 1e-5) while a box of width 5e-4 lets it vary by more, so the
+interval straddles zero. Extra bisection of one failing box discharged 58
+of its 74 descendants (28 by mean-value forms, 30 by trap certificates)
+within fourteen further halvings. The lever is therefore the depth cap,
+not new mathematics: it was 44 for a 4-dimensional box, giving only about
+eleven halvings per coordinate, and is now 60.
+
+So the honest statement about this stratum's faces is: every face is
+generically full rank and none needs a lemma, while the rank <= 2 locus
+inside the region needs the same resolution effort any covering needs
+where the object it is bounding actually lives.
