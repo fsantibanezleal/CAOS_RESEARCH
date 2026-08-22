@@ -103,3 +103,28 @@
 - **Next:** TCB-005 (depth-8 census backend: canonicalization proofs or
   compiled/parallel engine) as the route to z_max(8) AND the residual;
   TCB-027 mod-p instrumentation; reads.
+
+## Round 10 (2026-08-20): THE DEPTH-8 CASE IS RESOLVED
+
+- **EXP-011 CONFIRMED, all four predictions right: z_max(8) = 6.** The
+  depth-7 frontier was CONSTRUCTED IN FULL for the first time
+  (1,048,460,912 states; out-of-core hash-partitioned pipeline, 2h50m;
+  internal cross-anchor exact: 2,013,706 new depth-7 polys = EXP-004's
+  independent count) and scanned exhaustively (about 2e11 last-gate
+  applications, 20 workers, 6h48m): ZERO polynomials with 7+ roots at 8
+  gates, ANY final gate. Census decision-complete through depth 8:
+  1,2,3,3,4,5,5,6. Seven-root threshold in {9,10}. Every stage
+  known-answer-gated (validate 185s anchors exact; scan8 smoke 463s
+  reproduced z_max(7) = 5 over the full depth-6 frontier).
+- EXP-009 (symmetry audit): quotient route measured and closed. EXP-010
+  (QF_BV): engine-bound like NIA; the solver lane closed with a
+  validated-encoding record; subsumed by EXP-011.
+- **Paper v0.03 PUBLISHED**: title extended to depth eight; depth-8 and
+  digit-census sections added; version DOI 10.5281/zenodo.22035884
+  (concept 10.5281/zenodo.21753438 unchanged; verified live).
+  TCB-005/028 done; TCB-029 resolved.
+- Data assets: depth-7 frontier (28 GB) + poly catalog at
+  E:/_Datos/caos-research/tau-conjecture/ (sha256 manifest in repo).
+- **Next:** TCB-032 (the {9,10} window: construction hunt, corrected
+  cost model); TCB-033 (digit/mod-p ladders at depth 8 replayed from
+  the stored frontier); reads.

@@ -1,10 +1,13 @@
 # Frobenius-minimality preprint
 
-`main.tex` is version 0.19 of the CAOS Research preprint; version 0.18 and all
-earlier versions remain frozen. Version 0.19 adds the EXP-032 complete graded Betti polynomial of
-the cubic-colon quotient. It passed the complete claim/build/render, authenticated upload,
-publication, concept-latest, and fresh-download workflow and is published at DOI
-`10.5281/zenodo.22031481`.
+`main.tex` is version 0.20 of the CAOS Research preprint; version 0.19 and all
+earlier versions remain frozen. Version 0.20 adds the EXP-033 minimal-cubic-mapping-cone theorem
+and the complete two upper regularity strands of the special fiber. It passed the complete
+claim/build/render, authenticated upload, publication, concept-latest, and fresh-download workflow
+and is published at DOI `10.5281/zenodo.22062161`. Version 0.19 adds the EXP-032 complete graded
+Betti polynomial of the cubic-colon
+quotient. It passed the complete claim/build/render, authenticated upload, publication,
+concept-latest, and fresh-download workflow and is published at DOI `10.5281/zenodo.22031481`.
 Version 0.18 adds the EXP-031
 integral degree-seven contraction, proves
 `beta_(3,7)=0`, and completes the third homological row over every field. It passed the complete
@@ -109,6 +112,24 @@ Thus every free-module rank and shift of the colon quotient is known over every 
 projective dimension `10p-2` and regularity two. Explicit differential matrices and the full
 resolution of the special fiber remain open.
 
+Version 0.20 proves that the quadratic quotient `A_p=P_p/Q_p` has depth one, projective dimension
+`10p-1`, and regularity two. The strict grading gap therefore makes the cubic mapping cone minimal:
+
+```text
+B_(C_p)(x,z)=B_(A_p)(x,z)+x z^3 B_(D_p)(x,z).
+```
+
+Consequently, for `c=2p-2` and `m=8p`,
+
+```text
+beta_(i,i+3)(C_p)=sum_(a=1)^(c-1) lambda_(c,a) binom(m,i-1-a),
+beta_(i,i+4)(C_p)=binom(m,i-1-c).
+```
+
+This removes every comparison-rank ambiguity from the cubic cone and determines the complete two
+upper regularity strands over every field. The two lower strands of `A_p`, explicit differential
+matrices, and the full special-fiber resolution remain open.
+
 Attribution is binding: Son Pham discovered the first public counterexample; CAOS contributes the
 certified minimality, minimum-layer uniqueness, and parametric-family extensions. Professor Craig
 Huneke's verification is external evidence, not authorship of this paper.
@@ -148,9 +169,10 @@ Zenodo identifiers:
 - version 0.17 DOI: `10.5281/zenodo.22030167` (published and fresh-download verified)
 - version 0.18 DOI: `10.5281/zenodo.22030743` (published and fresh-download verified)
 - version 0.19 DOI: `10.5281/zenodo.22031481` (published and fresh-download verified)
+- version 0.20 DOI: `10.5281/zenodo.22062161` (published and fresh-download verified)
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-032 under
+Evidence sources are EXP-001 through EXP-033 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
 finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
@@ -210,6 +232,12 @@ minimal Koszul tensor factor on the `8p` disjoint killed variables. Canonical an
 encoded routes pass all `p=4,...,300`; the symbolic identities pass; exact complete tables are
 stored at `p=4,5,6`. Two budget-limited attempts and the corrected Hilbert/hash/CAS defects are
 preserved or recorded as non-evidence. The claim does not include explicit differential matrices.
+EXP-033 proves the exact colon intersection and pullback, computes the high-variable kernel, and
+uses its regular linear form to show that the quadratic quotient has depth one and regularity two.
+The resulting grading gap proves that the cubic mapping cone is minimal and fixes both upper
+special-fiber strands. Canonical and independently encoded routes pass all `p=4,...,300`; a
+structural kernel audit and symbolic certificate agree. Three exact budget stops are retained as
+inconclusive non-evidence. The two lower quadratic-quotient strands remain open.
 
 Version 0.02 remains frozen with this public-file verification:
 
@@ -440,4 +468,20 @@ Version 0.19 public-file verification:
 - the draft contains exactly one completed file named
   `huneke-wiegand-frobenius-minimality-v0.19.pdf`, whose bytes and MD5 match the committed PDF
 - record `22031481` is public and concept-latest at version `0.19`; public metadata and the sole
+  file match, and a fresh unauthenticated download matches the committed PDF by MD5 and SHA-256
+
+Version 0.20 public-file verification:
+
+- record `22062161`, DOI `10.5281/zenodo.22062161`, concept DOI
+  `10.5281/zenodo.21763582`
+- source record: immutable published v0.19 record `22031481`
+- two warning-free builds, PDF metadata/extraction, and all-page 150-DPI inspection pass; all 45
+  pages were inspected, with full-size review of page one and pages 40--45
+- bytes: `774246`
+- MD5: `69f45597e879afc8fd91ca4157fb2cf3`
+- SHA-256: `163a3a2fc6a5d61b6ff97e3ed1089dc3b6e9b320aa9c68ed67d2f1155362d743`
+- the exact prepublication draft had version `0.20`, the expected title, sole author and ORCID,
+  CC BY 4.0, open access, and exactly one completed file named
+  `huneke-wiegand-frobenius-minimality-v0.20.pdf`, whose bytes and MD5 matched the committed PDF
+- record `22062161` is public and concept-latest at version `0.20`; public metadata and the sole
   file match, and a fresh unauthenticated download matches the committed PDF by MD5 and SHA-256

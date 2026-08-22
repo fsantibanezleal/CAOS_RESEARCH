@@ -43,4 +43,9 @@ concept DOI [10.5281/zenodo.21753438](https://doi.org/10.5281/zenodo.21753438)
 | [EXP-003](../experiments/EXP-003-last-gate-depth6/) | $z_{\max}(6)$ via the last-gate scan | census CONFIRMED: $z_{\max}(6) = 5$ (min $\tau$ for 5 roots = 6); our "=4" prediction REFUTED |
 | [EXP-004](../experiments/EXP-004-depth7/) | $z_{\max}(7)$: does the bottom law continue? | CONFIRMED: $z_{\max}(7) = 5$; the law BREAKS (second plateau); min $\tau$ for 6 roots in $[8,9]$ |
 | [EXP-005](../experiments/EXP-005-family-towers/) | Family towers $x^2 - c$: is the parameterized loophole real? | CONFIRMED (empty; max 5 only at $c=2$); DISCOVERED the 2-cycle series $c = m^2{+}m{+}1$; cycle-length ceiling |
-| [EXP-006](../experiments/EXP-006-window-89/) | The $[8,9]$ window | WINDOW CLOSED: min $	au$(6 roots) = 8 (408 witnesses; our emptiness prediction refuted); five-rooter taxonomy corrected (7 patterns) |
+| [EXP-006](../experiments/EXP-006-window-89/) | The $[8,9]$ window | WINDOW CLOSED: min $\tau$(6 roots) = 8 (408 witnesses; our emptiness prediction refuted); five-rooter taxonomy corrected (7 patterns) |
+| [EXP-007](../experiments/EXP-007-union7-and-digit-census/) | 8-gate 7-rooter via times; digit census | CONFIRMED: max union 6; digit ladders measured (odd prediction refuted) |
+| [EXP-008](../experiments/EXP-008-sat-depth8/) | Final-pm residual by SMT | INCONCLUSIVE: encoding validated, NIA search intractable |
+| [EXP-009](../experiments/EXP-009-symmetry-audit/) | Symmetry quotient for depth 8? | CONFIRMED: route measured and closed; the plus-minus-1 lemma corroborated |
+| [EXP-010](../experiments/EXP-010-bv-residual/) | Residual by QF_BV | INCONCLUSIVE: engine-bound too; the solver lane closed |
+| [EXP-011](../experiments/EXP-011-depth8-pipeline/) | The full depth-8 census | **CONFIRMED: z_max(8) = 6**; depth-7 frontier built in full (1,048,460,912 states); 7-root threshold in {9,10}; paper v0.03 |

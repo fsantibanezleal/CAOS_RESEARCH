@@ -14,8 +14,8 @@
 \hypersetup{
   pdftitle={Frobenius Minimality, Minimum-Layer Uniqueness, and an Infinite Family of Huneke--Wiegand Counterexamples},
   pdfauthor={Felipe Santibanez-Leal},
-  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, conductor, tangent-cone, fiber-cone, defining-ideal, and cubic-colon Betti anatomy},
-  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, trace ideals, conductors, associated graded rings, tangent cones, fiber cones, defining ideals, graded Betti numbers, relative simplicial homology, squarefree divisor complexes, canonical modules, Koszul algebras, Buchsbaum rings, Cohen-Macaulay rings, SAT, DRAT}
+  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, conductor, tangent-cone, fiber-cone, defining-ideal, and minimal cubic mapping-cone anatomy},
+  pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, trace ideals, conductors, associated graded rings, tangent cones, fiber cones, defining ideals, graded Betti numbers, mapping cones, fiber products, relative simplicial homology, squarefree divisor complexes, canonical modules, Koszul algebras, Buchsbaum rings, Cohen-Macaulay rings, SAT, DRAT}
 }
 \usepackage{orcidlink}
 \usepackage{fancyhdr}
@@ -36,18 +36,18 @@
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-20\\[2pt]\normalsize Version 0.19}
+\date{2026-08-22\\[2pt]\normalsize Version 0.20}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.19}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.20}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.19}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.20}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,8 +63,8 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.19 \textperiodcentered\ 2026-08-20\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22031481}{10.5281/zenodo.22031481}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.20 \textperiodcentered\ 2026-08-22\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22062161}{10.5281/zenodo.22062161}\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
 verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
@@ -79,7 +79,7 @@ reduction, tangent-cone, fiber-cone, defining-ideal, and syzygy anatomy.
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.19}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.20}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -219,8 +219,16 @@ unit Smith form, so the result again holds over every field. This completes one 
   \left(1+\sum_{a=1}^{c-1}\lambda_{c,a}x^az^{a+1}+x^cz^{c+2}\right).
   \]
   Hence every free-module rank and shift is known over every field, with projective dimension
-  \(10p-2\) and regularity two. This does not construct the differential matrices or determine the
-  full resolution of the special fiber.
+  \(10p-2\) and regularity two. A colon-intersection pullback then proves that the quadratic
+  quotient \(A_p=P_p/\mathfrak q_p\) has depth one and regularity two. The grading gap makes the
+  cubic mapping cone minimal, so
+  \[
+  B_{C_p}^{P_p}(x,z)=B_{A_p}^{P_p}(x,z)+xz^3B_{D_p}^{P_p}(x,z).
+  \]
+  Consequently the complete regularity-three and regularity-four strands of the special fiber are
+  explicit binomial convolutions of the displayed colon polynomial, over every field. This removes
+  every comparison-rank ambiguity from the cubic cone, but the two lower strands of \(A_p\), the
+  differential matrices, and therefore the full resolution of the special fiber remain open.
 The results remain confined
 to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
@@ -302,6 +310,10 @@ they are verified by exact machine computation and independently checked artifac
   $\beta_{3,6}=8p(7p^2-12p+2)/3$ over every field.
   \item We prove the integral vanishing $\beta_{3,7}=0$ by a zero-vertex matching and a signed
   unit filler block, thereby determining the complete third homological row over every field.
+  \item We determine the complete graded Betti polynomial of the cubic-colon quotient over every
+  field, including every free-module rank and shift.
+  \item We prove that the quadratic quotient has depth one and regularity two, so the full cubic
+  mapping cone is minimal; this determines the two highest regularity strands of the special fiber.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -2562,6 +2574,142 @@ canonical idealization, Gorenstein duality, the Hilbert numerator, and the minim
 argument. The theorem determines every free-module rank and shift, but not the differential
 matrices and not the full resolution of \(C_p\).
 
+\subsection{The quadratic quotient and the minimal cubic mapping cone}
+
+The preceding colon theorem controls the source of the cubic mapping cone. A pullback through the
+same colon now bounds the target tightly enough to decide all possible cancellations. Retain
+\(c=2p-2\) and \(m=8p\), put \(N=10p\), and write
+\[
+A_p=P_p/\mathfrak q_p,\qquad
+L_p=\mathfrak q_p:f_p,\qquad
+U_p=D_p/f_pD_p.
+\]
+
+\begin{theorem}[Minimal cubic mapping cone, {\bf[D]}]
+\label{thm:minimal-cubic-cone}
+For every integer \(p\ge4\) and every field \(\kfield\),
+\begin{equation}
+\operatorname{depth}_{P_p}A_p=1,\qquad
+\operatorname{pd}_{P_p}A_p=N-1,\qquad
+\operatorname{reg}_{P_p}A_p=2.
+\label{eq:quadratic-quotient-invariants}
+\end{equation}
+The mapping cone of
+\[
+0\longrightarrow D_p(-3)\xrightarrow{\,f_p\,}A_p
+ \longrightarrow C_p\longrightarrow0
+\]
+is minimal. Equivalently,
+\begin{equation}
+B_{C_p}^{P_p}(x,z)=B_{A_p}^{P_p}(x,z)+xz^3B_{D_p}^{P_p}(x,z).
+\label{eq:minimal-cubic-cone}
+\end{equation}
+In particular, with out-of-range binomial coefficients read as zero, the two highest regularity
+strands of \(C_p\) are
+\begin{align}
+\beta_{i,i+3}^{P_p}(C_p)
+ &=\sum_{a=1}^{c-1}\lambda_{c,a}\binom m{i-1-a},
+ \label{eq:special-fiber-row-three}\\
+\beta_{i,i+4}^{P_p}(C_p)
+ &=\binom m{i-1-c}.
+ \label{eq:special-fiber-row-four}
+\end{align}
+The first of these strands is positive exactly for \(2\le i\le N-2\), while the second is
+positive exactly for \(2p-1\le i\le N-1\). Their total ranks are
+\begin{equation}
+\sum_i\beta_{i,i+3}^{P_p}(C_p)=2^m\bigl((c-2)2^c+2\bigr),
+\qquad
+\sum_i\beta_{i,i+4}^{P_p}(C_p)=2^m.
+\label{eq:special-fiber-upper-totals}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{thm:colon-idealization-six} proves that \(f_p\) is a nonzerodivisor on
+\(P_p/L_p=D_p\). We first claim
+\begin{equation}
+\mathfrak q_p=(\mathfrak q_p,f_p)\cap L_p.
+\label{eq:cubic-colon-intersection}
+\end{equation}
+Only the reverse inclusion needs proof. If \(g=q+af_p\) belongs to the intersection, with
+\(q\in\mathfrak q_p\), then \(af_p\in L_p\). Regularity of \(f_p\) modulo \(L_p\) gives
+\(a\in L_p=\mathfrak q_p:f_p\), and hence \(af_p\in\mathfrak q_p\). This proves
+\eqref{eq:cubic-colon-intersection}.
+
+The standard intersection sequence is therefore
+\[
+0\longrightarrow A_p\longrightarrow C_p\oplus D_p
+ \longrightarrow U_p\longrightarrow0.
+\]
+Projecting this pullback onto \(D_p\) gives
+\begin{equation}
+0\longrightarrow K_p\longrightarrow A_p\longrightarrow D_p\longrightarrow0,
+\qquad K_p=\ker(C_p\longrightarrow U_p).
+\label{eq:quadratic-pullback}
+\end{equation}
+Since \(f_p\) is \(D_p\)-regular of degree three, Theorem~\ref{thm:colon-betti-polynomial}
+and the known special-fiber Hilbert series give
+\begin{align*}
+H_{U_p}(z)
+ &=\frac{1+(2p-1)z+2pz^2+(2p-1)z^3+z^4}{1-z},\\
+H_{K_p}(z)
+ &=H_{C_p}(z)-H_{U_p}(z)
+   =\frac{8pz+10pz^2}{1-z}.
+\end{align*}
+The linear form \(X_0\) is regular on \(C_p\) by the flat degeneration used in the proof of
+Theorem~\ref{thm:homological-edge}; it is therefore regular on the submodule \(K_p\). Thus \(K_p\)
+is one-dimensional Cohen--Macaulay, and
+\[
+H_{K_p/X_0K_p}(z)=8pz+10pz^2
+\]
+shows that \(\operatorname{reg}K_p=2\).
+
+The module \(D_p\) is two-dimensional Cohen--Macaulay of regularity two. The depth lemma applied
+to~\eqref{eq:quadratic-pullback} gives \(\operatorname{depth}A_p=1\), while the regularity
+inequality gives \(\operatorname{reg}A_p\le2\). Auslander--Buchsbaum yields
+\(\operatorname{pd}A_p=N-1\). Moreover,
+\begin{equation}
+H_{A_p}(z)=
+\frac{1+(N-2)z+(2p+1)z^2-Nz^3}{(1-z)^2}.
+\label{eq:quadratic-quotient-hilbert}
+\end{equation}
+The coefficient of \(z^{N+1}\) in \((1-z)^NH_{A_p}(z)\) is \(-N\), because \(N\) is even.
+Under the bounds \(\operatorname{pd}A_p=N-1\) and \(\operatorname{reg}A_p\le2\), only
+\((-1)^{N-1}\beta_{N-1,N+1}(A_p)\) can contribute there. Hence
+\(\beta_{N-1,N+1}(A_p)=N\), proving equality in the regularity bound and all of
+\eqref{eq:quadratic-quotient-invariants}.
+
+In homological degree \(i\), every source summand in a lifted comparison map from the minimal
+resolution of \(D_p(-3)\) has shift at least \(i+3\), by
+Theorem~\ref{thm:colon-betti-polynomial}. Every target summand in the minimal resolution of \(A_p\)
+has shift at most \(i+2\), by~\eqref{eq:quadratic-quotient-invariants}. Every comparison entry
+therefore has positive degree. The cone admits no scalar cancellation and is minimal, proving
+\eqref{eq:minimal-cubic-cone}.
+
+The \(A_p\)-summand contributes only regularity at most two. The regularity-three and
+regularity-four strands consequently come from, respectively, the linear and terminal rows of
+\(D_p\), shifted by one homological and three internal degrees. Substitution in
+\eqref{eq:full-colon-rows} proves \eqref{eq:special-fiber-row-three} and
+\eqref{eq:special-fiber-row-four}. Positivity of the \(\lambda_{c,a}\), their support, and the
+binomial support give the stated endpoints. Summing the convolution and using
+\(\sum_{a=1}^{c-1}\lambda_{c,a}=(c-2)2^c+2\) proves
+\eqref{eq:special-fiber-upper-totals}.
+\end{proof}
+
+EXP-033 checks every parameter \(p=4,\ldots,300\), stores complete upper strands at
+\(p=4,5,6\), verifies all Hilbert identities and prior Betti anchors, and rejects six adversarial
+mutations \textbf{[MV]}. An independent implementation reconstructs all 297 coefficient arrays;
+a structural audit checks the kernel and the \(X_0\)-action at 25 parameters; and a symbolic route
+checks the closed identities. Three exact budget stops, at \(p=102,209,267\), are preserved as
+inconclusive non-evidence. The final canonical, independent, and symbolic aggregates are
+\begin{center}
+{\fontsize{7}{8}\selectfont\ttfamily 67bff9217c89f212916220e858ef5168abe2d64cdbd789488e0ce5f49204092a},\\
+{\fontsize{7}{8}\selectfont\ttfamily 6593291efaf092333bc42972c2f05712a151efb46f3f52ed9d28afd329585a4c},\\
+{\fontsize{7}{8}\selectfont\ttfamily 58ab24887c79c3c075fdefea1f38ff2e1c1ef539490f7f52359149ed2bb1a4c8}.
+\end{center}
+The all-parameter conclusion is deductive. The campaigns validate its implementations and frozen
+premises; they do not replace the colon-intersection, depth, regularity, and grading-gap proof.
+
 \section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
@@ -2570,7 +2718,7 @@ All compact code, hypotheses, manifests, audits, and verdicts are in the public 
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
 minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
-also includes the compact EXP-011--032 campaigns, independent reconstruction audits, symbolic
+also includes the compact EXP-011--033 campaigns, independent reconstruction audits, symbolic
 proofs, the preserved EXP-013 correction, the EXP-015 refutation, and the EXP-022 quadratic
 refutation. The proof toolchain is
 pinned as follows:
@@ -2592,6 +2740,7 @@ EXP-029 & integral pair-basis normal form, 297 formula rows, exact small profile
 EXP-030 & canonical-idealization profile, exact degree-six homology, corrected independent audit, and symbolic support certificate\\
 EXP-031 & integral degree-seven contraction, exact small profiles, independent filler audit, and arithmetic certificate\\
 EXP-032 & complete colon Betti polynomial, 297 exact rows, independent coefficient audit, and symbolic identities\\
+EXP-033 & minimal cubic cone, 297 upper-strand rows, kernel audit, independent reconstruction, and symbolic identities\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -2648,6 +2797,13 @@ canonical-idealization premise, standard Gorenstein self-duality, coefficient ex
 Hilbert numerator, and the minimal Koszul tensor product. The claim is the complete graded Betti
 polynomial, not explicit differential matrices or the full special-fiber resolution.
 
+EXP-033 has no solver dependency. Its theorem imports the frozen colon, Hilbert-series, and
+regular-element premises from EXP-023/024/026/030/032. The proof then uses an exact colon
+intersection, its pullback, the depth and regularity lemmas, the Auslander--Buchsbaum formula, and
+the strict grading gap in the comparison map. Finite, structural, independent, and symbolic routes
+audit these steps but are not extrapolated into the theorem. The minimal cone fixes both upper
+regularity strands; it does not determine the two lower strands of the quadratic quotient.
+
 \section{\texorpdfstring{\enspace}{}Scope, attribution, and open questions}
 
 Son Pham retains discovery priority for the counterexample. Professor Craig Huneke's verification
@@ -2668,7 +2824,8 @@ Theorem~\ref{thm:second-betti-row}, and the colon--Koszul degree-five diagonal i
 Theorem~\ref{thm:colon-koszul-diagonal}, and the cubic-colon idealization and degree-six strand in
 Theorem~\ref{thm:colon-idealization-six}, and the complete third homological row in
 Theorem~\ref{thm:complete-third-row}, and the complete cubic-colon Betti polynomial in
-Theorem~\ref{thm:colon-betti-polynomial}, together with
+Theorem~\ref{thm:colon-betti-polynomial}, and the minimal cubic mapping cone and complete upper
+special-fiber strands in Theorem~\ref{thm:minimal-cubic-cone}, together with
 their reproducible records.
 
 Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
@@ -2677,7 +2834,7 @@ Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomor
 \ref{thm:presentation}, \ref{thm:homological-edge}, \ref{thm:interior-strand},
 \ref{thm:second-betti-row}, \ref{thm:colon-koszul-diagonal},
 \ref{thm:colon-idealization-six}, \ref{thm:complete-third-row},
-and~\ref{thm:colon-betti-polynomial}
+\ref{thm:colon-betti-polynomial}, and~\ref{thm:minimal-cubic-cone}
 do not classify all higher
 Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
 or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
@@ -2691,9 +2848,9 @@ questions remain open:
   \item Which additional hypotheses on the endomorphism ring recover a positive theorem while
   excluding both the public example and the full family proved here?
   \item Can the finite certificates be imported into a smaller formally verified checker?
-  \item Can the cubic mapping-cone comparison maps between the now-complete colon Betti table and
-  the unresolved quadratic quotient determine the remaining presentation-ring Betti table and
-  full minimal resolution?
+  \item Can the two lower strands of the quadratic quotient in
+  \eqref{eq:quadratic-pullback} be determined, thereby completing the presentation-ring Betti
+  table and the full minimal resolution of the special fiber?
 \end{enumerate}
 
 \section*{Acknowledgments}

@@ -10,7 +10,7 @@
 | TCB-002 | Read Shub-Smale 1995 (Duke) in full; transcribe the exact theorem statements and proof route | blocked | P1 | 2026-08-01 access attempt failed (Project Euclid paywall; author page TLS broken); statement triply confirmed (Rojas Def 1 + survey + Koiran); needs a library credential |
 | TCB-003 | Read Rojas math/0304100 in full; pin the two weak versions + the 2-adic bound constants | done | P1 | 2026-08-01 read in full (round 2); constants pinned in references.md; feeds TC-P3 co-census |
 | TCB-004 | Read Cheng 2004 + Cheng 2003 + Strassen 1976/77; pin the upper-bound ladder for tau'(n!) | todo | P1 | Upper bounds quoted via Markstroem |
-| TCB-005 | Canonicalization lemmas (sign/reflection orbit quotient, dominated-state pruning; proofs first) or compiled backend | todo | P0 | Depth 6 was decided WITHOUT it (last-gate scan); now the blocker for depth 7 (depth-6 frontier ~20M states). sympy cross-check DONE 2026-08-01 (284/284) |
+| TCB-005 | Depth-8 backend | done | P0 | 2026-08-20 EXP-011: out-of-core pipeline (validate/build7/scan8, all known-answer-gated); depth-7 frontier built in full (1,048,460,912); z_max(8) = 6 |
 | TCB-006 | Integer census extension past Markstroem length 11 (checkpointed DFS; then GPU/multiprocess) | todo | P2 | Includes monotonicity probe for his Problem 2.1 |
 | TCB-007 | Witness anatomy: classify record mechanisms per tau; candidate infinite families + per-family rate lemmas | todo | P2 | Anatomy lens; two-sided reading of the census |
 | TCB-008 | Read KPT15 + Hrubes 2013 + Dutta 2021; real/SoS variant bounds transcription | todo | P2 | Reformulation lens |
@@ -29,7 +29,9 @@
 | TCB-023 | Narkiewicz read: pin the classical cycle-length <= 2 attribution | todo | P2 | Cited [MV] in EXP-005 verdict with our own [D] proof |
 | TCB-024 | Doyle-Poonen read (V8 import gate) | todo | P2 | Before any uniform-boundedness import |
 | TCB-027 | Mod-p instrumentation: root counts of census records over F_p vs the Frobenius ceiling (V10) | todo | P2 | Cheap add-on to the census catalog; pairs with the V9 digit ladders |
-| TCB-028 | Paper v0.03 (deliberate): seven-rooter exclusion + digit ladders + punctured anatomy + V10 narrative; ship WITH the z_max(8) resolution | todo | P1 | R3 discipline: no reflexive publish |
-| TCB-029 | The final-pm 8-gate residual | reopened | P0 | 2026-08-19 EXP-008 INCONCLUSIVE: encoding semantics VALIDATED (pinned witness sat in 0.5s) but Z3 NIA cannot search the structure space (3 launches + 2 diagnostics recorded); re-scoped to bit-blasted propositional SAT or the TCB-005 census backend |
+| TCB-028 | Paper v0.03 | done | P1 | 2026-08-20 PUBLISHED with the z_max(8) resolution: DOI 10.5281/zenodo.22035884 (concept unchanged) |
+| TCB-029 | The final-pm 8-gate residual | subsumed | P0 | 2026-08-20: EXP-010 (QF_BV) also engine-bound at known-answer scale: the solver lane is CLOSED (both backends, semantics proven, search intractable); the residual is decided by EXP-011 scan8 (all-gate, unconditional) |
 | TCB-030 | Evaluation-matrix instrumentation (V11): entry-growth measurements on record matrices; Mahler/height trade-off lemma target | todo | P2 | Context note 2026-08-03 |
 | TCB-031 | The scaling gap: bounds for T(2S) vs T(S) (no elementary substitution exists) | todo | P2 | Minted by the RL-3 note; concrete first case: T({0,+-2,+-4}) |
+| TCB-032 | The {9,10} window for 7 roots: construction hunt (corrected cost model), then depth-9 feasibility memo | todo | P1 | Depth-9 build needs ~1 TB scratch |
+| TCB-033 | Digit + mod-p ladders at depth 8, replayed from the stored frontier asset | todo | P2 | Frontier at E:/_Datos/caos-research/tau-conjecture/ |

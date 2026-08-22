@@ -854,3 +854,74 @@ tested state to `main` at `e04660ead2afa68f7490f32a4bf837cd0eaa3533`. Work, `dev
 `main` shared payload tree `c2f9f58488c7a1fa7ccee181a75944f7209b795c` before this handoff
 update. HWB-051 is done; the next mathematical gate is a declaration-first mapping-cone
 comparison experiment, not an unsupported full-resolution claim.
+
+## 2026-08-22 - EXP-033 minimal cubic mapping cone
+
+The comparison-map target was redirected before matrix construction. Put `A_p=P_p/Q_p` and
+`L_p=Q_p:f_p`. EXP-030 regularity of `f_p` modulo `L_p` gives the family-specific intersection
+
+```text
+Q_p=(Q_p,f_p) intersect L_p.
+```
+
+The pullback has a high-variable kernel `K_p` with
+
+```text
+H_(K_p)(z)=(8p z+10p z^2)/(1-z).
+```
+
+Since EXP-026 makes `X_0` regular on `C_p`, it is regular on `K_p`; hence `K_p` is
+one-dimensional Cohen--Macaulay of regularity two. The exact sequence
+`0 -> K_p -> A_p -> D_p -> 0` then forces
+
+```text
+depth(A_p)=1,   pd(A_p)=10p-1,   reg(A_p)=2.
+```
+
+EXP-033 is CONFIRMED. After the cubic shift, every source summand from `D_p(-3)` is in regularity
+rows three through five, strictly above all target summands of `A_p`. The entire comparison map is
+Tor-zero and the mapping cone is minimal:
+
+```text
+B_(C_p)(x,z)=B_(A_p)(x,z)+x z^3 B_(D_p)(x,z).
+```
+
+Consequently the complete regularity-three and regularity-four strands are
+
+```text
+beta_(i,i+3)=sum_(a=1)^(c-1)lambda_(c,a)binom(8p,i-1-a),
+beta_(i,i+4)=binom(8p,i-1-c),             c=2p-2.
+```
+
+All 297 canonical rows, all 297 independent coefficient reconstructions, 25 structural kernel
+audits, symbolic identities, prior Betti anchors, and adversarial controls pass. Three exact
+attempts stopped at `p=102,209,267` under the 120-second cap and remain preserved as
+`INCONCLUSIVE_BUDGET`; the final recurrence completes in 15.159 seconds with unchanged earlier
+hashes.
+
+HWB-052 is done. This material theorem opens HWB-053 for an in-place main-manuscript v0.20 and
+Zenodo new-version gate. The remaining mathematical frontier is no longer the cubic comparison
+map: it is the two lower strands of the regularity-two quadratic quotient, best approached through
+`0 -> K_p -> A_p -> D_p -> 0` rather than a raw full-resolution sweep.
+
+## 2026-08-22 - manuscript v0.20 publication and repository gates
+
+The EXP-033 theorem is incorporated in the existing main manuscript rather than split into a new
+paper. The 45-page v0.20 candidate passed its claim audit, two consecutive warning-free LaTeX
+builds, PDF metadata and text extraction, complete 150-DPI page inspection, full-size inspection
+of page one and pages 40--45, and sole-human-authorship/ORCID gates. The exact candidate is 774,246
+bytes with MD5 `69f45597e879afc8fd91ca4157fb2cf3` and SHA-256
+`163a3a2fc6a5d61b6ff97e3ed1089dc3b6e9b320aa9c68ed67d2f1155362d743`.
+
+After the committed candidate and reversible draft checkpoint were pushed, Zenodo record
+`22062161`, DOI `10.5281/zenodo.22062161`, was published under concept DOI
+`10.5281/zenodo.21763582`. It is concept-latest at version `0.20`; the public title, sole creator
+and ORCID, CC BY 4.0 license, filename, bytes, and MD5 agree. A fresh unauthenticated download
+matches the committed PDF by MD5 and SHA-256. HWB-053 is done.
+
+Repository gates also pass: template, content, and research-structure guards; Ruff over the CI
+scope and EXP-033 scripts; all 60 tests; the full registry pipeline; and manifest/artifact
+consistency. Regeneration reconciles EXP-033 plus three previously unbaked tau-conjecture records,
+which are retained as repository-wide generated state. HWB-054 is active for the required
+work-branch-to-`develop` PR followed by the `develop`-to-`main` PR. The next mathematical problem
+remains the two lower strands of `A_p` via `0 -> K_p -> A_p -> D_p -> 0`.

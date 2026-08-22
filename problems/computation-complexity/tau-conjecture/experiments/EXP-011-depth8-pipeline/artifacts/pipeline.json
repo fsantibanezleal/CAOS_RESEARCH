@@ -1,0 +1,19 @@
+{
+ "build7": {
+  "elapsed_s": 10179.4,
+  "frontier7": 1048460912,
+  "new7": 2013706,
+  "raw_rows": 2434020495
+ },
+ "expand_progress": {
+  "rows": 2401551850,
+  "states": 25500000
+ },
+ "validate": {
+  "elapsed_s": 185.2,
+  "frontier6": 25844905,
+  "new6": 134494,
+  "pass": true,
+  "raw_rows": 55358618
+ }
+}

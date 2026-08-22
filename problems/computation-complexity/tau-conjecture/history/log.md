@@ -240,3 +240,31 @@
   need their own kill criteria.
 - Dead ends: the SMT-NIA lane for structure search (closed by record,
   encoding reusable).
+
+## 2026-08-20 (round 10): z_max(8) = 6: the depth-8 case RESOLVED; paper v0.03
+
+- **EXP-011 CONFIRMED (all four committed predictions):** validate stage
+  reproduced the depth-6 anchors exactly (185 s); build7 constructed the
+  COMPLETE depth-7 frontier for the first time: 1,048,460,912 states
+  (2h50m; 2.43B raw rows, 256 hash partitions, independent in-RAM
+  dedups; cross-anchor exact: 2,013,706 new depth-7 polys = EXP-004);
+  scan8 smoke reproduced z_max(7) = 5 over all 25.8M depth-6 states
+  (463 s); scan8 final swept about 2e11 last-gate applications (20
+  workers, 6h48m): **z_max(8) = 6, zero 7-rooters at 8 gates, any final
+  gate**. Census decision-complete through depth 8: 1,2,3,3,4,5,5,6;
+  seven-root threshold in {9,10}.
+- Along the way: EXP-009 measured and closed the symmetry-quotient
+  route (counterexamples confirmed; +-1 lemma corroborated); EXP-010
+  closed the solver lane definitively (QF_BV engine-bound like NIA;
+  encodings validated on pinned witnesses; census construction beat
+  search).
+- **Paper v0.03 PUBLISHED** (title now "length at most eight"; depth-8
+  resolution + digit-census sections; four refuted mathematical
+  predictions + two tractability judgments disclosed): version DOI
+  10.5281/zenodo.22035884, concept unchanged, verified live.
+- Data assets relocated to E:/_Datos/caos-research/tau-conjecture/
+  (frontier7 28 GB + polys.pkl; manifests in repo); repo keeps
+  manifests only (a 69 MB pickle briefly tracked was untracked with
+  sha256 manifest same day).
+- Dead ends this arc: SMT-NIA and QF_BV structure search (closed with
+  records); the symmetry quotient (closed by measurement).

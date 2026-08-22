@@ -25,15 +25,15 @@
 
 \title{The Bottom of the Shub--Smale Tau Conjecture:\\
 an Exact Census of Integer Roots for Constant-Free\\
-Straight-Line Programs of Length at Most Seven}
+Straight-Line Programs of Length at Most Eight}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-02\\[2pt]\normalsize Version 0.02}
+\date{2026-08-20\\[2pt]\normalsize Version 0.03}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Tau-Conjecture Census \textperiodcentered\ v0.02}
+\fancyhead[R]{\small Tau-Conjecture Census \textperiodcentered\ v0.03}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
@@ -43,7 +43,7 @@ Straight-Line Programs of Length at Most Seven}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the tau-conjecture record \textperiodcentered\ version 0.02 \textperiodcentered\ 2026-08-02\\
+First paper of the tau-conjecture record \textperiodcentered\ version 0.03 \textperiodcentered\ 2026-08-20\\
 DOI \href{https://doi.org/10.5281/zenodo.21753438}{10.5281/zenodo.21753438} (concept DOI, resolves to the latest version)\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
 }}
@@ -60,17 +60,22 @@ We report the first exact census of the conjecture's growth function at the bott
 its ladder: writing $\zmax(\tau)$ for the maximum of $z(f)$ over all nonzero $f$ with
 $\tau(f) \le \tau$, we prove by exhaustive, exactly verified computation that
 \[
-\zmax(1),\dots,\zmax(7) \;=\; 1,\, 2,\, 3,\, 3,\, 4,\, 5,\, 5 .
+\zmax(1),\dots,\zmax(8) \;=\; 1,\, 2,\, 3,\, 3,\, 4,\, 5,\, 5,\, 6 .
 \]
 In particular the minimum cost of $4$ distinct integer roots is $5$ gates, of $5$
 roots is $6$ gates, and (new in this version) of $6$ roots is exactly $8$ gates, by an
 explicit verified witness: $q(q-2)(q-6)$ for $q = x^2 - x$, computable in $8$ gates by
 chained subtraction sharing; the growth function has plateaus at $\tau = 4$ and
-$\tau = 7$, so an extra gate does not always buy an extra root, and
-$z_{\max}(8) \ge 6$. The censuses are decision-complete: depth $6$ required the exact construction of
-all $25{,}844{,}905$ reachable computation states, and depth $7$ a complete scan of
+$\tau = 7$, so an extra gate does not always buy an extra root, and (new in this
+version) $z_{\max}(8) = 6$ exactly: no $8$-gate program of any shape has $7$
+distinct integer roots, so the seven-root threshold lies in $\{9, 10\}$. The censuses are decision-complete: depth $6$ required the exact construction of
+all $25{,}844{,}905$ reachable computation states; depth $7$ a complete scan of
 $2{,}013{,}706$ new polynomials, using a ``last-gate'' lemma that decides one depth
-beyond any exhausted frontier without storing the next frontier. The enumerator is
+beyond any exhausted frontier without storing the next frontier; and depth $8$
+(new in this version) the first complete construction of the depth-$7$ frontier
+itself: $1{,}048{,}460{,}912$ states, built out-of-core by hash-partitioned
+external deduplication and scanned exhaustively ($\sim\!2 \times 10^{11}$
+last-gate applications) by a validated multiprocess engine. The enumerator is
 anchored on Markstr\"om's published exhaustive census of integer targets (all
 fourteen anchor values reproduced exactly) and cross-checked against an independent
 computer-algebra root counter on $284$ polynomials. The six-root threshold was
@@ -86,8 +91,13 @@ family $h_c = x^2 - c$ with $c \le 200$ the maximum tower yield is $5$, attained
 at $c = 2$; a second yield series at $c = m^2 + m + 1$, produced by genuine integer
 $2$-cycles, is identified and closed by the classical fact that integer polynomial
 cycles have length at most $2$. All computations are exact integer arithmetic,
-reproducible from committed code with hypotheses declared before each run; three of our
-own pre-registered predictions were refuted by the machine and are reported as such.
+reproducible from committed code with hypotheses declared before each run; four of our
+own pre-registered mathematical predictions (and two solver-tractability
+judgments) were refuted by the machine and are reported as such. We also report
+the exact ladders of the digit-restricted census (the form of the conjecture
+Rojas proved sufficient): the maximum number of ODD roots grows as
+$1,2,2,2,2,3,4$ through $\tau = 7$, with its own extremal family
+$(x^2-1)(x^2-9)$, distinct from the unrestricted records.
 This is an experimental-mathematics record in the tradition of Markstr\"om's census:
 it decides nothing about the conjecture asymptotically, and says so.
 \end{abstract}
@@ -157,8 +167,9 @@ decision-complete, with per-depth state and polynomial counts, record galleries 
 replayed witness programs. Plateaus occur at $\tau = 4$ and $\tau = 7$.
 \item \textbf{Exact thresholds}: the minimum $\tau$ admitting $3$ distinct integer
 roots is $3$ ($x^3 - x$); for $4$ roots it is $5$; for $5$ roots it is $6$; for $6$
-roots it is exactly $8$ (Section~\ref{sec:window}: the census excludes $7$, and the
-scan of this version produced explicit verified $8$-gate witnesses).
+roots it is exactly $8$ (Section~\ref{sec:window}); for $7$ roots it is $9$ or $10$
+(Section~\ref{sec:depth8}: the complete depth-$8$ census excludes $8$; a $10$-gate
+witness exists).
 \item \textbf{A method lemma} (Lemma~\ref{lem:lastgate}): every polynomial of cost
 $d + 1$ is one gate over a normalized depth-$d$ state, so $\zmax(d+1)$ is computable
 from an exhausted depth-$d$ frontier without storing the depth-$(d+1)$ frontier. This
@@ -282,9 +293,9 @@ measurement only, by direct evaluation over a window proved correct in advance
 \begin{theorem}[the census; MV]\label{thm:census}
 In the model of Definition~\ref{def:model},
 \[
-\begin{array}{c|ccccccc}
-\tau & 1 & 2 & 3 & 4 & 5 & 6 & 7\\\hline
-\zmax(\tau) & 1 & 2 & 3 & 3 & 4 & 5 & 5
+\begin{array}{c|cccccccc}
+\tau & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\\hline
+\zmax(\tau) & 1 & 2 & 3 & 3 & 4 & 5 & 5 & 6
 \end{array}
 \]
 and the censuses behind each value are decision-complete.
@@ -293,13 +304,13 @@ and the censuses behind each value are decision-complete.
 The supporting exhaustive counts are:
 
 \begin{center}
-\begin{tabular}{lrrrrrrr}
+\begin{tabular}{lrrrrrrrr}
 \toprule
-$\tau$ & 1 & 2 & 3 & 4 & 5 & 6 & 7\\
+$\tau$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
 \midrule
-reached states & 9 & 98 & 1{,}462 & 29{,}506 & 778{,}087 & 25{,}844{,}905 & (not stored)\\
-new polynomials & 9 & 34 & 177 & 1{,}249 & 11{,}377 & 134{,}494 & 2{,}013{,}706\\
-$\zmax$ & 1 & 2 & 3 & 3 & 4 & 5 & 5\\
+reached states & 9 & 98 & 1{,}462 & 29{,}506 & 778{,}087 & 25{,}844{,}905 & 1{,}048{,}460{,}912 & (scan)\\
+new polynomials & 9 & 34 & 177 & 1{,}249 & 11{,}377 & 134{,}494 & 2{,}013{,}706 & (see text)\\
+$\zmax$ & 1 & 2 & 3 & 3 & 4 & 5 & 5 & 6\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -312,7 +323,8 @@ more.
 
 \begin{theorem}[cost thresholds; MV]\label{thm:thresholds}
 The minimum $\tau$ admitting $k$ distinct integer roots is: $k=1{:}\,1$;
-$k=2{:}\,2$; $k=3{:}\,3$; $k=4{:}\,5$; $k=5{:}\,6$; $k=6{:}\,8$.
+$k=2{:}\,2$; $k=3{:}\,3$; $k=4{:}\,5$; $k=5{:}\,6$; $k=6{:}\,8$; and for
+$k = 7$ it lies in $\{9, 10\}$.
 \end{theorem}
 
 The $k = 6$ lower bound is Theorem~\ref{thm:census} ($\zmax(7) = 5$); the upper
@@ -373,6 +385,49 @@ in fact the $67$ five-rooters realize seven root-set patterns, including the
 non-consecutive $\{-1,0,1,2,4\}$ and $\{-4,-2,-1,0,1\}$, and it is precisely such
 shifted and punctured sets that leave room for a co-occurring factor to complete six
 roots.
+
+\subsection{The depth-eight resolution}\label{sec:depth8}
+
+Version 0.03 completes depth $8$ in full:
+
+\begin{theorem}[MV]\label{thm:depth8}
+$\zmax(8) = 6$, and no $8$-gate program of ANY final-gate shape computes a
+polynomial with $7$ distinct integer roots. Hence the seven-root threshold is
+$9$ or $10$.
+\end{theorem}
+
+The lower side ($\zmax(8) \ge 6$) is Theorem~\ref{thm:window}. The upper side
+required the whole depth-$7$ frontier: it was CONSTRUCTED, for the first time,
+as $1{,}048{,}460{,}912$ reached-set states (out-of-core: 2.43 billion raw
+28-byte successor rows, hash-partitioned into 256 files that deduplicate
+independently in memory; 2h50m), with an exact internal cross-anchor: the
+build's count of new depth-$7$ polynomials, $2{,}013{,}706$, equals the value
+computed independently by the depth-$7$ scan of Section~\ref{sec:census}. The
+frontier was then scanned exhaustively by the last-gate lemma
+($\sim\!2 \times 10^{11}$ gate applications, 20 processes, 6h48m): zero
+results with $7$ or more distinct integer roots. Every pipeline stage passed a
+known-answer gate first (the identical machinery one level down reproduces the
+depth-$6$ frontier and the $\zmax(7) = 5$ census exactly). We record for
+methods completeness that two general-purpose solver engines (nonlinear
+integer arithmetic and pure bit-vector SAT over a gate-evaluation encoding)
+were validated semantically on pinned witnesses yet could not complete even
+the smallest free-structure known-answer search within generous budgets: at
+this problem's scale, exhaustive construction beat search.
+
+\subsection{The digit-restricted census}\label{sec:digit}
+
+Rojas' reduction makes a digit-restricted bound SUFFICIENT for the full
+conjecture: bounding only roots $\equiv 1 \pmod p$ for one fixed prime
+suffices. We measured that restricted growth function exactly through
+$\tau = 7$: the maximum number of odd roots is
+$1, 2, 2, 2, 2, 3, 4$, and for roots $\equiv 1 \pmod 3$:
+$1, 1, 1, 2, 2, 3, 3$. Our committed prediction (odd maximum $3$) was refuted:
+the digit-restricted world has its OWN extremal family, e.g.
+$(x^2 - 1)(x^2 - 9)$ at exactly $7$ gates with all four roots odd: symmetric
+products over odd squares, distinct from the unrestricted records (which crowd
+$\{0, \pm 1, \pm 2\}$ and are digit-poor). The sufficient form of the
+conjecture is thus measurably harder to grow AND mechanically independent at
+the bottom of the ladder.
 
 \section{Record mechanisms}\label{sec:mech}
 
@@ -502,10 +557,9 @@ the best known factory, linear-rate, exactly as when Rojas noted that the conjec
 fails for $\kappa < 1$ \cite{Rojas2003}.
 
 Concrete open items this record makes precise:
-(i) the exact value of $\zmax(8)$ (now known only to be $\ge 6$), including whether
-an $8$-gate seven-rooter exists, and the seven-root threshold: finite, SAT-shaped
-questions in the style of exact SLP synthesis over GF(2)
-\cite{FuhsSchneiderKamp2010};
+(i) the $\{9, 10\}$ window for the seven-root threshold, and $\zmax(9)$ (a
+depth-$8$ frontier build would need $\sim\!1$ TB of scratch: a construction
+hunt with the corrected cost model is the nearer route);
 (ii) extend the integer frontier past Markstr\"om's length $11$ \cite{Markstrom2014},
 including his monotonicity question for $\tau(n!)$;
 (iii) measure the growth of the valuation-spectrum bound
@@ -522,8 +576,11 @@ All code, hypotheses, run artifacts, verdicts and the wiki are committed at
 \texttt{problems/computation-complexity/tau-conjecture/} (experiments
 \texttt{EXP-001}--\texttt{EXP-005}; package \texttt{tclib} with its test suite). All
 computations are exact integer arithmetic in Python 3.13 standard library; total
-compute for every result in this paper is under five hours on one desktop CPU
-(24 cores available, single-threaded runs; peak memory $\sim$6\,GB).
+compute for every result in this paper is under twenty hours on one desktop
+machine (24 cores; the depth-8 pipeline used 20 processes and $\sim$29 GB of
+scratch disk; peak RAM $\sim$12 GB). The constructed depth-7 frontier
+($1{,}048{,}460{,}912$ states, 28 GB) and the polynomial catalog are retained
+as reusable data assets with hashes recorded in the repository.
 
 \begin{thebibliography}{99}\small
 
