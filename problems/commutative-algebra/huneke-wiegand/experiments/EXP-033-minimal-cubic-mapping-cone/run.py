@@ -69,7 +69,10 @@ def convolve(left: list[int], right: list[int]) -> list[int]:
 
 
 def one_minus_power(exponent: int) -> list[int]:
-    return [(-1) ** degree * math.comb(exponent, degree) for degree in range(exponent + 1)]
+    return [
+        (-1) ** degree * value
+        for degree, value in enumerate(binomial_row(exponent))
+    ]
 
 
 def choose(n: int, k: int) -> int:
