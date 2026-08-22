@@ -53,3 +53,39 @@ it is the generic condition, so it persists onto the faces.
   - the outer region |v| > 3 by inverted charts
   - then the same three requirements as the (2,2) chain: R_0 empty,
     dim R_1 <= 1, dim R_2 <= 2
+
+## 6. The merge chart (2026-08-20, later)
+
+Built and verified. The merge is TWO simultaneous collisions (B+ with C+
+and B- with C-, by the mirror), so the chart puts the B/C midpoint at
+(wu, wv) and the difference at rho (alpha, beta), making the merging
+distance exactly rho. Measured row orders: L13, L14, L15, L16, L36 blow up
+like rho^-2 and L35 vanishes like rho^2, exactly the tube pattern from the
+(2,2) campaign, so the row scalings are rho^2 on the five and 1/rho^2 on
+L35. Both singular factors are cleared ALGEBRAICALLY:
+
+    area(X, a, b)  = rho * [ (Pa - Px) x (-D) ]        D = the unit difference
+    1/r_ak^3 - 1/r_bk^3 = rho * (-2 D.(mid - Pk)) (B^2 + AB + A^2)
+                              / [ (B + A) A^3 B^3 ]
+
+with the second identity needed only for row L35, where BOTH factors carry
+a rho. Crosscheck 5/5 against the unscaled matrix with the declared
+scalings, and the MERGE FACE ITSELF certifies rank 3 at 40 of 40 sample
+points: full rank, no lemma needed, consistent with finding 4.
+
+The A/B merge needs NO separate chart. The three pairs are interchangeable
+(permuting them permutes rows and columns of the matrix), so re-gauging to
+make pair C the reference turns "A and B merge" into "the other two pairs
+merge", which is exactly this chart. The gauge choice, not the geometry,
+is what distinguishes them.
+
+## 7. Status of this stratum
+
+  reduction, generic rank, hexagon validation      DONE
+  bounded covering                                 running, zero failures
+  pair-collapse chart (and its S3 image)           DONE, face full rank
+  pair-merge chart (covers both merge types)       DONE, face full rank
+  outer region |v| > 3                             TO DO (inverted charts)
+  double-collapse corner                           TO DO
+
+No face lemma has been needed anywhere in this stratum.
