@@ -63,7 +63,9 @@ explicit differential matrices, or the full minimal resolution of the conductor 
   `163a3a2fc6a5d61b6ff97e3ed1089dc3b6e9b320aa9c68ed67d2f1155362d743`;
 - sole-author and sole-ORCID audit: PASS; Felipe Santibanez-Leal is the sole author and
   `0000-0002-0150-3246` is the sole ORCID; no machine authorship or coauthorship appears;
-- repository tests, pipeline, and artifact consistency: PENDING;
+- repository tests, pipeline, and artifact consistency: PASS; template, content, and research
+  structure guards pass, Ruff passes the CI scope and EXP-033 scripts, all 60 tests pass, the full
+  registry pipeline completes, and all three manifest/artifact pairs are consistent;
 - exact Zenodo metadata and one-file upload validation: PASS; draft `22062161` is unsubmitted at
   version `0.20`, with the expected title, one creator and ORCID, CC BY 4.0, open access, and exactly
   one completed file named `huneke-wiegand-frobenius-minimality-v0.20.pdf`, with 774,246 bytes and

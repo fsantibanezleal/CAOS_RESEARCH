@@ -108,9 +108,12 @@
 | 2026-08-22 | published | active | EXP-033 declared before implementation: decide `reg(P_p/Q_p)` and whether grading forces every cubic mapping-cone comparison map to vanish on Tor |
 | 2026-08-22 | active | confirmed | EXP-033 proves `depth(P_p/Q_p)=1`, `reg(P_p/Q_p)=2`, a minimal cubic mapping cone, and complete regularity-three/four Betti strands over every field |
 | 2026-08-22 | confirmed | active | HWB-053 opens the in-place main-manuscript v0.20 and Zenodo new-version gate; no publication is claimed before full artifact validation |
+| 2026-08-22 | active | published | 45-page manuscript v0.20 passed claim/build/render, sole-authorship, exact draft, and publication gates; DOI `10.5281/zenodo.22062161` is concept-latest and its fresh public PDF matches Git exactly |
+| 2026-08-22 | published | active | structure/content/template guards, Ruff, all 60 tests, full registry regeneration, and manifest/artifact consistency pass; HWB-054 opens separate-PR promotion to `develop` and then `main` |
 
-Current state: **EXP-033 is confirmed and HWB-053 is active for manuscript v0.20 and its Zenodo
-new-version gate; EXP-032 and manuscript v0.19 remain published, fresh-download verified, and
+Current state: **EXP-033 is confirmed; HWB-053 is done with manuscript v0.20 published and
+fresh-download verified at DOI `10.5281/zenodo.22062161`; HWB-054 is active for research PR
+promotion; EXP-032 and manuscript v0.19 remain published, fresh-download verified, and
 promoted under HWB-051; EXP-031 and manuscript v0.18 are
 published and promoted; HWB-048 remains active only for
 scoped management-ledger reconciliation because CAOS_MANAGE is occupied by unrelated staged

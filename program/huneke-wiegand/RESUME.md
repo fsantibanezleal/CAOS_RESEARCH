@@ -17,8 +17,13 @@ beta_(i,i+4)=binom(m,i-1-c).
 
 Canonical exact arithmetic passes all `p=4,...,300` in 15.159 seconds; the independent
 coefficient/structural audit and symbolic route pass. Three budget stops at `p=102,209,267` are
-preserved as non-evidence. HWB-052 is done, HWB-053 is active for the in-place manuscript v0.20
-and Zenodo version gate, and HWB-054 will own later PR promotion. The remaining mathematical
+preserved as non-evidence. HWB-052 and HWB-053 are done. The 45-page manuscript v0.20 passed
+claim, two clean builds, all-page render inspection, sole-authorship, repository, upload,
+publication, concept-latest, and fresh-download gates. It is public at DOI
+`10.5281/zenodo.22062161`; the 774,246-byte public PDF matches MD5
+`69f45597e879afc8fd91ca4157fb2cf3` and SHA-256
+`163a3a2fc6a5d61b6ff97e3ed1089dc3b6e9b320aa9c68ed67d2f1155362d743` exactly. HWB-054 is active
+for PR promotion. The remaining mathematical
 frontier is the two lower strands of `A_p` via `0 -> K_p -> A_p -> D_p -> 0`; the cubic comparison
 maps are no longer unknown.
 
@@ -347,9 +352,12 @@ beta_(10p-1,10p+1)(A_p)=10p.
 
 The cubic shift separates all comparison-map source and target degrees, proving
 `B_C=B_A+x z^3 B_D`. Thus both regularity-three/four strands have the complete formulas at the
-top of this handoff. HWB-053 is active for manuscript v0.20 and Zenodo; no publication is yet
-claimed. The next mathematical route after delivery is the two lower strands of `A_p` through the
-same `K_p` extension.
+top of this handoff. HWB-053 is complete: manuscript v0.20 is published and fresh-download
+verified at DOI `10.5281/zenodo.22062161`. Structure/content/template guards, Ruff, all 60 tests,
+the full registry pipeline, and manifest/artifact consistency pass. The pipeline reconciles four
+previously unbaked records, including EXP-033. HWB-054 is active for separate-PR promotion. The
+next mathematical route after delivery is the two lower strands of `A_p` through the same `K_p`
+extension.
 
 EXP-030 is CONFIRMED. Put
 

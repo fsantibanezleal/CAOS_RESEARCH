@@ -903,3 +903,25 @@ HWB-052 is done. This material theorem opens HWB-053 for an in-place main-manusc
 Zenodo new-version gate. The remaining mathematical frontier is no longer the cubic comparison
 map: it is the two lower strands of the regularity-two quadratic quotient, best approached through
 `0 -> K_p -> A_p -> D_p -> 0` rather than a raw full-resolution sweep.
+
+## 2026-08-22 - manuscript v0.20 publication and repository gates
+
+The EXP-033 theorem is incorporated in the existing main manuscript rather than split into a new
+paper. The 45-page v0.20 candidate passed its claim audit, two consecutive warning-free LaTeX
+builds, PDF metadata and text extraction, complete 150-DPI page inspection, full-size inspection
+of page one and pages 40--45, and sole-human-authorship/ORCID gates. The exact candidate is 774,246
+bytes with MD5 `69f45597e879afc8fd91ca4157fb2cf3` and SHA-256
+`163a3a2fc6a5d61b6ff97e3ed1089dc3b6e9b320aa9c68ed67d2f1155362d743`.
+
+After the committed candidate and reversible draft checkpoint were pushed, Zenodo record
+`22062161`, DOI `10.5281/zenodo.22062161`, was published under concept DOI
+`10.5281/zenodo.21763582`. It is concept-latest at version `0.20`; the public title, sole creator
+and ORCID, CC BY 4.0 license, filename, bytes, and MD5 agree. A fresh unauthenticated download
+matches the committed PDF by MD5 and SHA-256. HWB-053 is done.
+
+Repository gates also pass: template, content, and research-structure guards; Ruff over the CI
+scope and EXP-033 scripts; all 60 tests; the full registry pipeline; and manifest/artifact
+consistency. Regeneration reconciles EXP-033 plus three previously unbaked tau-conjecture records,
+which are retained as repository-wide generated state. HWB-054 is active for the required
+work-branch-to-`develop` PR followed by the `develop`-to-`main` PR. The next mathematical problem
+remains the two lower strands of `A_p` via `0 -> K_p -> A_p -> D_p -> 0`.
