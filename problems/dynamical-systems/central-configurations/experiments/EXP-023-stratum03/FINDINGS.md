@@ -89,3 +89,29 @@ is what distinguishes them.
   double-collapse corner                           TO DO
 
 No face lemma has been needed anywhere in this stratum.
+
+## 8. There is no region at infinity (2026-08-20)
+
+In the gauge v1 = 0, u1 = 1 the heights are unbounded, so a naive reading
+says this stratum needs inverted charts at infinity. It does not. Rescale
+a configuration whose heights are of size V >> 1 by 1/V: the heights
+become order 1 and every width becomes u_i/V <= 1/V, so the outer region
+maps onto the region where ALL THREE pairs are narrow, a near-collinear
+configuration. That is a COLLAPSE-type region, not a new kind of infinity,
+and the collapse recipe already covers it: with each mass column rescaled
+by 4 u_i^2 and all three widths scaled by a common eps, sigma_3 of the
+row-normalised matrix is 2.0 at eps = 1e-2, 1e-4 and 1e-6, flat across
+four orders of magnitude and over thirty samples at each scale.
+
+So the (0,3) stratum's complete face inventory is:
+
+    pair collapse            FULL RANK (27/27 on the face)
+    pair-pair merge          FULL RANK (40/40 on the face)
+    all pairs narrow         FULL RANK (sigma_3 = 2.0, flat)
+    (= the outer region, by rescaling)
+
+Every one of them is full rank, so this stratum needs NO face lemma and NO
+chart at infinity: a finite set of BOUNDED charts suffices. The contrast
+with the (2,2) stratum, which needed three closed-form face lemmas and a
+family of inverted charts, is entirely explained by the absence of
+axis-body mass columns here.
