@@ -101,3 +101,14 @@ This refinement does NOT change prediction 2 (we still predict
 emptiness), but it lowers our stated confidence further: the ladder
 pattern is evidence FOR a 9-gate 7-rooter, and it is exactly the kind
 of structural argument the machine has refuted four times.
+
+## Run note (2026-08-20): resume after a session teardown
+
+The first production launch (detached via Start-Process) was killed with
+the session at 107/256 partitions; the per-partition checkpoints made it
+resumable with zero loss. Partial reading at that point, recorded before
+the resume: 438,205,266 states scanned, ZERO hits, max union exactly 6.
+The remainder runs under the Windows Task Scheduler (task `tau_scan9`,
+launcher `run_scan9.bat`), which survives session teardown; this is now
+the standard way to run multi-hour scans here (Start-Process alone does
+not survive).
