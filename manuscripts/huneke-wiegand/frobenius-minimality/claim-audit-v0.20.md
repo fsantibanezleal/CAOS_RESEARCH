@@ -64,7 +64,10 @@ explicit differential matrices, or the full minimal resolution of the conductor 
 - sole-author and sole-ORCID audit: PASS; Felipe Santibanez-Leal is the sole author and
   `0000-0002-0150-3246` is the sole ORCID; no machine authorship or coauthorship appears;
 - repository tests, pipeline, and artifact consistency: PENDING;
-- exact Zenodo metadata and one-file upload validation: PENDING;
+- exact Zenodo metadata and one-file upload validation: PASS; draft `22062161` is unsubmitted at
+  version `0.20`, with the expected title, one creator and ORCID, CC BY 4.0, open access, and exactly
+  one completed file named `huneke-wiegand-frobenius-minimality-v0.20.pdf`, with 774,246 bytes and
+  MD5 `69f45597e879afc8fd91ca4157fb2cf3`;
 - publication, concept-latest check, and fresh unauthenticated download: PENDING.
 
 No publication claim is made until every pending gate above passes.

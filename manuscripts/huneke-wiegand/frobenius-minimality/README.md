@@ -3,9 +3,9 @@
 `main.tex` is version 0.20 of the CAOS Research preprint; version 0.19 and all
 earlier versions remain frozen. Version 0.20 adds the EXP-033 minimal-cubic-mapping-cone theorem
 and the complete two upper regularity strands of the special fiber. Zenodo draft `22062161` has
-reserved DOI `10.5281/zenodo.22062161`; publication remains gated on the committed candidate,
-two stable builds, all-page render inspection, exact upload validation, and public-download
-verification. Version 0.19 adds the EXP-032 complete graded Betti polynomial of the cubic-colon
+reserved DOI `10.5281/zenodo.22062161`; the exact committed PDF and metadata are uploaded and
+validated, while publication and public-download verification remain pending. Version 0.19 adds
+the EXP-032 complete graded Betti polynomial of the cubic-colon
 quotient. It passed the complete claim/build/render, authenticated upload, publication,
 concept-latest, and fresh-download workflow and is published at DOI `10.5281/zenodo.22031481`.
 Version 0.18 adds the EXP-031
@@ -469,3 +469,17 @@ Version 0.19 public-file verification:
   `huneke-wiegand-frobenius-minimality-v0.19.pdf`, whose bytes and MD5 match the committed PDF
 - record `22031481` is public and concept-latest at version `0.19`; public metadata and the sole
   file match, and a fresh unauthenticated download matches the committed PDF by MD5 and SHA-256
+
+Version 0.20 draft verification:
+
+- draft `22062161`, reserved DOI `10.5281/zenodo.22062161`, concept DOI
+  `10.5281/zenodo.21763582`; publication is not claimed at this checkpoint
+- source record: immutable published v0.19 record `22031481`
+- two warning-free builds, PDF metadata/extraction, and all-page 150-DPI inspection pass; all 45
+  pages were inspected, with full-size review of page one and pages 40--45
+- bytes: `774246`
+- MD5: `69f45597e879afc8fd91ca4157fb2cf3`
+- SHA-256: `163a3a2fc6a5d61b6ff97e3ed1089dc3b6e9b320aa9c68ed67d2f1155362d743`
+- the unsubmitted draft has version `0.20`, the expected title, sole author and ORCID,
+  CC BY 4.0, open access, and exactly one completed file named
+  `huneke-wiegand-frobenius-minimality-v0.20.pdf`, whose bytes and MD5 match the committed PDF
