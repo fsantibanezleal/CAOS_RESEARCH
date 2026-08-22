@@ -68,3 +68,25 @@ for e_pow in (3, 5, 7):
         vals.append(rank_and_s3(M)[2])
     vals.sort()
     print(f"   eps=1e-{e_pow}: min sigma3 {vals[0]:.4e}  median {vals[len(vals)//2]:.4e}")
+
+print("\nF3: pairs B and C merging (B+ -> C+), no rescale")
+for e_pow in (3, 5, 7):
+    eps = mp.mpf(10)**(-e_pow); vals=[]
+    for _ in range(30):
+        u2, v2 = rr(0.15,0.9), rr(-2.9,2.9)
+        M = matrix(mp.mpf(1), mp.mpf(0), u2, v2, u2+eps, v2+eps,
+                   [mp.mpf(1), mp.mpf(1), mp.mpf(1)])
+        vals.append(rank_and_s3(M)[2])
+    vals.sort()
+    print(f"   eps=1e-{e_pow}: min sigma3 {vals[0]:.4e}  median {vals[len(vals)//2]:.4e}")
+
+print("\nF4: pair B merging with pair A (B+ -> A+), no rescale")
+for e_pow in (3, 5, 7):
+    eps = mp.mpf(10)**(-e_pow); vals=[]
+    for _ in range(30):
+        u3, v3 = rr(0.15,0.9), rr(-2.9,2.9)
+        M = matrix(mp.mpf(1), mp.mpf(0), 1+eps, eps, u3, v3,
+                   [mp.mpf(1), mp.mpf(1), mp.mpf(1)])
+        vals.append(rank_and_s3(M)[2])
+    vals.sort()
+    print(f"   eps=1e-{e_pow}: min sigma3 {vals[0]:.4e}  median {vals[len(vals)//2]:.4e}")
