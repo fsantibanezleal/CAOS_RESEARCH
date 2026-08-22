@@ -170,3 +170,23 @@ def crosscheck():
 
 if __name__ == "__main__":
     crosscheck()
+
+
+# ---------------------------------------------------------------- covering
+SIXT = F(1, 16)
+
+def discard(box):
+    """Keep the B/C merge collar; the pairs must stay clear of pair A."""
+    rhob, taub, wub, wvb = box
+    # the merged cluster meeting pair A at (1, 0)
+    if wub[0] > 1 - SIXT and wub[1] < 1 + SIXT and wvb[0] > -SIXT and wvb[1] < SIXT:
+        return True
+    return False
+
+def main():
+    seed = ((F(0), F(1, 8)), (F(-1), F(1)), (F(1, 8), F(1)), (F(-3), F(3)))
+    cov.run_cover("mergeBC", seed, entry_factory("iv"), entry_factory("dv"),
+                  discard, budget=21600, resume="--resume" in sys.argv)
+
+if __name__ == "__main__" and "--cover" in sys.argv:
+    main()

@@ -184,29 +184,27 @@ def discard(box):
             return True                    # that pair meets pair A
     return False
 
-def main():
-    resume = "--resume" in sys.argv
+def run_cover(name, seed, eiv, edv, disc, budget=43200, resume=False):
+    """Shared covering loop for every (0,3) chart."""
     art = HERE / "artifacts"
     art.mkdir(exist_ok=True)
     heavy = Path("E:/_Datos/caos-research/central-configurations/EXP-023")
     heavy.mkdir(parents=True, exist_ok=True)
-    eiv, edv = entry_factory("iv"), entry_factory("dv")
-    ckpt = art / "cover-checkpoint.json"
-    certs = heavy / "cover-certificates.jsonl"
+    ckpt = art / f"{name}-checkpoint.json"
+    certs = heavy / f"{name}-certificates.jsonl"
     t0 = time.time()
     if resume and ckpt.exists():
         ck = json.loads(ckpt.read_text(encoding="utf-8"))
         stack = [(pl.dec_box(r), d) for r, d in ck["stack"]]
         cnt = ck["counters"]
     else:
-        seed = ((F(0), F(1)), (F(0), F(1)), (-VMAX, VMAX), (-VMAX, VMAX))
-        stack = [(seed, 0)]
+        stack = [(tuple(seed), 0)]
         cnt = {"processed": 0, "certified": 0, "mv_certified": 0,
                "trapped": 0, "discarded": 0, "failed": 0}
         certs.write_text("", encoding="utf-8")
     out = open(certs, "a", encoding="utf-8", buffering=1 << 20)
     last = time.time()
-    DEPTH, BUDGET = 44, 43200
+    DEPTH, BUDGET = 44, budget
     while stack:
         if time.time() - t0 > BUDGET:
             print("BUDGET EXHAUSTED", flush=True)
@@ -214,7 +212,7 @@ def main():
             break
         box, d = stack.pop()
         cnt["processed"] += 1
-        if discard(box):
+        if disc(box):
             cnt["discarded"] += 1
             continue
         got = None
@@ -262,10 +260,15 @@ def main():
             last = time.time()
     out.close()
     ok = cnt["failed"] == 0 and not stack
-    (art / "cover-summary.json").write_text(json.dumps(
+    (art / f"{name}-summary.json").write_text(json.dumps(
         {"ok": ok, "counters": cnt, "depth_cap": DEPTH,
          "wall_s": round(time.time() - t0)}, indent=1), encoding="utf-8")
-    print(f"EXP-023 COVER DONE ok={ok} {cnt}", flush=True)
+    print(f"EXP-023 {name} DONE ok={ok} {cnt}", flush=True)
+
+def main():
+    seed = ((F(0), F(1)), (F(0), F(1)), (-VMAX, VMAX), (-VMAX, VMAX))
+    run_cover("cover", seed, entry_factory("iv"), entry_factory("dv"),
+              discard, resume="--resume" in sys.argv)
 
 if __name__ == "__main__":
     main()

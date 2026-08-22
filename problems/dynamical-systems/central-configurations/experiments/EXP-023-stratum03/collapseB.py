@@ -139,3 +139,31 @@ if __name__ == "__main__":
             if cov.rank3_plain(J) is not None:
                 ok += 1
         print(f"FACE u2=0: {ok}/{tot} sample points certify rank 3 (full rank)")
+
+
+# ---------------------------------------------------------------- covering
+SIXT = F(1, 16)
+
+def discard(box):
+    """Keep the pair-B collapse collar; hand the rest to its own chart."""
+    u2b, u3b, v2b, v3b = box
+    if u3b[1] < SIXT:
+        return True                       # pair C also collapsing: its own chart
+    # B or C meeting pair A, or B meeting C: the merge chart's job
+    for ub, vb in ((u2b, v2b), (u3b, v3b)):
+        if ub[0] > 1 - SIXT and ub[1] < 1 + SIXT and vb[0] > -SIXT and vb[1] < SIXT:
+            return True
+    # box lies ENTIRELY inside the B/C merge region (not merely overlaps it):
+    # every point must have |u2-u3| < SIXT and |v2-v3| < SIXT
+    if (u2b[1] - u3b[0] < SIXT and u2b[0] - u3b[1] > -SIXT
+            and v2b[1] - v3b[0] < SIXT and v2b[0] - v3b[1] > -SIXT):
+        return True
+    return False
+
+def main():
+    seed = ((F(0), F(1, 4)), (F(1, 4), F(1)), (F(-3), F(3)), (F(-3), F(3)))
+    cov.run_cover("collapseB", seed, entry_factory("iv"), entry_factory("dv"),
+                  discard, budget=21600, resume="--resume" in sys.argv)
+
+if __name__ == "__main__" and "--cover" in sys.argv:
+    main()
