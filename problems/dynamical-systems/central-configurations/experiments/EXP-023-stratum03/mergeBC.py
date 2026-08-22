@@ -184,7 +184,13 @@ def discard(box):
     return False
 
 def main():
-    seed = ((F(0), F(1, 8)), (F(-1), F(1)), (F(1, 8), F(1)), (F(-3), F(3)))
+    # Seed widened 2026-08-20: the first run's failures all clustered at
+    # (rho, tau, wu, wv) -> (0, 0.8134, 1, 3), i.e. exactly where the merged
+    # cluster's width TIES pair A's (the S3 gauge boundary wu = u1 = 1) and
+    # the heights hit the artificial edge wv = 3. Both are chart boundaries,
+    # not geometry, so the box is extended past them and the tie becomes an
+    # interior point the covering can bisect around.
+    seed = ((F(0), F(1, 8)), (F(-1), F(1)), (F(1, 8), F(5, 4)), (F(-4), F(4)))
     cov.run_cover("mergeBC", seed, entry_factory("iv"), entry_factory("dv"),
                   discard, budget=21600, resume="--resume" in sys.argv)
 

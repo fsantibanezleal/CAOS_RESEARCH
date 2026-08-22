@@ -149,3 +149,38 @@ So the honest statement about this stratum's faces is: every face is
 generically full rank and none needs a lemma, while the rank <= 2 locus
 inside the region needs the same resolution effort any covering needs
 where the object it is bounding actually lives.
+
+## 10. The merge failures are a CHART-BOUNDARY artifact (2026-08-20)
+
+At depth 60 the merge covering still left 1083 failures, and locating them
+settled what they are. All of them sit in one tiny cluster,
+
+    rho -> 0,  tau ~ 0.8134,  wu -> 1,  wv -> 3,
+
+with 81.5% of the boxes touching the seed edge wv = 3 outright. Both
+limits are CHART boundaries, not geometry:
+
+  * wu = 1 is where the merged B/C cluster's width TIES pair A's, which is
+    the boundary of the S3 gauge choice "pair A is widest". At a tie the
+    gauge is ambiguous and the neighbouring chart (B widest) owns the
+    other side, so the covering was being asked to certify right on a seam
+    it does not own.
+  * wv = 3 was an arbitrary declared bound on the heights.
+
+The trap diagnostic confirms the character: the rank-2 witness EXISTS on
+those boxes (so R_1 is empty there, and R_0 with it), all twenty gradient
+packs evaluate, and the only thing missing is a separating gradient pair,
+whose best interval sits exactly astride zero - the signature of a box
+pinned on a boundary rather than a genuine singularity.
+
+Fix applied: the seed is extended past both boundaries, wu to 5/4 and wv
+to +-4, so the tie is an interior point the covering can bisect around.
+Earlier evidence that this is the right lever: bisecting one such box by
+hand discharged 58 of its 74 descendants once there was room to refine.
+
+Worth recording as a LEAD, not a claim: the limiting geometry there is
+pair A at (+-1, 0) with the merged B/C cluster at (+-1, 3), i.e. the four
+points forming a RECTANGLE. The rank <= 2 locus passes nearby, and in this
+stratum that locus is where central configurations live, so a genuine
+central configuration of the three-pair stratum may sit near a
+rectangle-like shape. Not investigated yet.
