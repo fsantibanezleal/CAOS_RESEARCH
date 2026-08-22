@@ -925,3 +925,10 @@ consistency. Regeneration reconciles EXP-033 plus three previously unbaked tau-c
 which are retained as repository-wide generated state. HWB-054 is active for the required
 work-branch-to-`develop` PR followed by the `develop`-to-`main` PR. The next mathematical problem
 remains the two lower strands of `A_p` via `0 -> K_p -> A_p -> D_p -> 0`.
+
+Promotion is complete. PR #218 passed `guards` and `test` and merged the full EXP-033 theorem,
+registry reconciliation, manuscript v0.20, and verified Zenodo record to `develop` at
+`28bac50f70bd775d17e61d0526eed367e0772ba0`. PR #219 passed all required checks and promoted the
+same tested state to `main` at `c1e6b20427d51781afeeb6ef1c5c2d57bf30c649`. Both remote branches
+share payload tree `f51cb2845d20b4fbf7d43029a71af0392bc3d6d9`. HWB-054 is done. No release
+tag belongs to this research-only round.
