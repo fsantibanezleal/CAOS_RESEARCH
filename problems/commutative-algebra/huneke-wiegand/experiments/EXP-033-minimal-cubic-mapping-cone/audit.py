@@ -72,29 +72,45 @@ def coefficient_one_minus(exponent: int, degree: int) -> int:
     return (-1) ** degree * math.comb(exponent, degree)
 
 
+def binomial_row(n: int) -> list[int]:
+    row = [1]
+    for k in range(n):
+        row.append(row[-1] * (n - k) // (k + 1))
+    return row
+
+
+def coefficient(row: list[int], k: int) -> int:
+    return row[k] if 0 <= k < len(row) else 0
+
+
 def independent_strands(p: int) -> tuple[list[int], list[int]]:
     c = 2 * p - 2
     m = 8 * p
     n = 10 * p
     total_codimension = n - 2
+    total_binomials = binomial_row(total_codimension)
+    killed_binomials = binomial_row(m)
     numerator = [
-        coefficient_one_minus(total_codimension, degree)
-        + c * coefficient_one_minus(total_codimension, degree - 1)
-        + coefficient_one_minus(total_codimension, degree - 2)
+        (-1) ** degree
+        * (
+            coefficient(total_binomials, degree)
+            - c * coefficient(total_binomials, degree - 1)
+            + coefficient(total_binomials, degree - 2)
+        )
         for degree in range(n + 1)
     ]
     d_linear = []
     for q in range(n - 1):
         internal_degree = q + 1
-        diagonal = math.comb(m, internal_degree) if internal_degree <= m else 0
-        terminal = math.comb(m, q - 1 - c) if 0 <= q - 1 - c <= m else 0
+        diagonal = coefficient(killed_binomials, internal_degree)
+        terminal = coefficient(killed_binomials, q - 1 - c)
         d_linear.append((-1) ** q * numerator[internal_degree] + diagonal + terminal)
     row_three = []
     row_four = []
     for i in range(n):
         q = i - 1
         row_three.append(d_linear[q] if q >= 0 else 0)
-        row_four.append(math.comb(m, q - c) if 0 <= q - c <= m else 0)
+        row_four.append(coefficient(killed_binomials, q - c))
     return row_three, row_four
 
 

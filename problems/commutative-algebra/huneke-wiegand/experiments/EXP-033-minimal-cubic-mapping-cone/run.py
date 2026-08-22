@@ -76,6 +76,17 @@ def choose(n: int, k: int) -> int:
     return math.comb(n, k) if 0 <= k <= n else 0
 
 
+def binomial_row(n: int) -> list[int]:
+    row = [1]
+    for k in range(n):
+        row.append(row[-1] * (n - k) // (k + 1))
+    return row
+
+
+def coefficient(row: list[int], k: int) -> int:
+    return row[k] if 0 <= k < len(row) else 0
+
+
 def lambda_rank(codimension: int, homological_degree: int) -> int:
     a = homological_degree
     return (
@@ -108,11 +119,20 @@ def predicted_strands(p: int) -> tuple[list[int], list[int]]:
     c = 2 * p - 2
     m = 8 * p
     variable_count = 10 * p
+    total_binomials = binomial_row(c + m)
+    killed_binomials = binomial_row(m)
     row_three = [0] * variable_count
     row_four = [0] * variable_count
     for i in range(variable_count):
-        row_three[i] = d_linear_rank(c, m, i - 1)
-        row_four[i] = choose(m, i - 1 - c)
+        q = i - 1
+        row_three[i] = (
+            -coefficient(total_binomials, q + 1)
+            + c * coefficient(total_binomials, q)
+            - coefficient(total_binomials, q - 1)
+            + coefficient(killed_binomials, q + 1)
+            + coefficient(killed_binomials, q - 1 - c)
+        )
+        row_four[i] = coefficient(killed_binomials, q - c)
     return row_three, row_four
 
 
