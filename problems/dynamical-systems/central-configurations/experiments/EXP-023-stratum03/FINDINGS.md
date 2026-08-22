@@ -213,3 +213,39 @@ it is why that campaign needed a seam gate.
 
 Consequence for the plan: build the all-narrow chart as a real covering,
 then re-check that every mergeBC residue box lies inside it.
+
+## 12. The all-narrow / outer chart is built and running
+
+One chart serves both roles, since the outer region rescales onto the
+all-narrow one (finding 8). Variables (eps, c1, c2, h): widths
+u_i = eps * (1, c1, c2) with c1, c2 in [0, 1] by the S3 symmetry, heights
+(0, 1, h) with h in [-2, 2], eps in [0, 1/4]. Each mass column is
+multiplied by 4 u_i^2, clearing that pair's own 1/w_i^3 by the same exact
+identity collapseB uses.
+
+Its FACE at eps = 0 certifies rank 3 at 34 of 34 sample points, matching
+the sigma_3 = 2.0 measurement from the probe.
+
+Worth recording because the gate earned its keep again: the crosscheck
+FAILED on first run, and the chart was right while the check was wrong. I
+had compared against cover.py expecting a single uniform scale factor, but
+the relation carries a per-COLUMN factor: under the length rescale taking
+this gauge to cover.py's, an entry scales by lambda^-1 while this chart
+additionally carries 4 u_j^2, so
+
+    narrow[i][j] / cover[i][j] = 4 * eps * a_j^2 ,   a = (1, c1, c2).
+
+The very first printed ratio, 0.875 at eps = 0.219, is exactly 4 eps,
+which is what identified the error. With the per-column factor the check
+passes 5/5.
+
+## 13. Current state of this stratum
+
+    cover.py      bounded interior      running, ZERO failures
+    collapseB.py  pair collapse         running, ZERO failures
+    mergeBC.py    pair-pair merge       running; residue is the ESCAPE seam
+    narrow.py     all-narrow = outer    running (face 34/34)
+
+The open item is the seam check: every mergeBC residue box must lie inside
+narrow's certified region. That is the same seam argument the (2,2) atlas
+uses, and it is what its seam gate was built to verify.
