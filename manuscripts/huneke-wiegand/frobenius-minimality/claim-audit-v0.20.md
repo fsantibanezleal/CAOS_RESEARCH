@@ -1,7 +1,7 @@
 # Claim audit - manuscript v0.20
 
-Date: 2026-08-22. Publication status: Zenodo draft `22062161` reserved at DOI
-`10.5281/zenodo.22062161`; publication is not yet claimed.
+Date: 2026-08-22. Publication status: published and fresh-download verified at DOI
+`10.5281/zenodo.22062161`.
 
 ## Claim-to-evidence matrix
 
@@ -19,7 +19,7 @@ Date: 2026-08-22. Publication status: Zenodo draft `22062161` reserved at DOI
 | rejected attempts | three exact budget-stop artifacts | PASS; stops at `p=102,209,267` are retained as inconclusive non-evidence |
 | scope | EXP-033 verdict and manuscript scope section | PASS; comparison-rank ambiguity is removed, but the two lower `A_p` strands and full special-fiber resolution remain open |
 | manuscript split decision | EXP-033 preflight and verdict | PASS; the theorem directly continues the v0.19 cubic-colon narrative and belongs in the main manuscript |
-| reserved publication identity | Zenodo draft `22062161`, metadata JSON, and page-one block | PASS locally; version, DOI, concept DOI, date, CC BY 4.0, sole author, and sole ORCID agree |
+| publication identity | Zenodo record `22062161`, metadata JSON, and page-one block | PASS; version, DOI, concept DOI, date, CC BY 4.0, sole author, and sole ORCID agree |
 
 ## Evidence identities
 
@@ -68,6 +68,11 @@ explicit differential matrices, or the full minimal resolution of the conductor 
   version `0.20`, with the expected title, one creator and ORCID, CC BY 4.0, open access, and exactly
   one completed file named `huneke-wiegand-frobenius-minimality-v0.20.pdf`, with 774,246 bytes and
   MD5 `69f45597e879afc8fd91ca4157fb2cf3`;
-- publication, concept-latest check, and fresh unauthenticated download: PENDING.
+- publication, concept-latest check, and fresh unauthenticated download: PASS; record `22062161` is
+  public and concept-latest at version `0.20`; its public title, DOI, concept DOI, sole creator and
+  ORCID, CC BY 4.0 license, filename, bytes, and MD5 agree, and a fresh unauthenticated download
+  matches the committed PDF by MD5 and SHA-256.
 
-No publication claim is made until every pending gate above passes.
+All manuscript publication gates pass. The immutable v0.20 artifact proves minimality of the cubic
+mapping cone and determines both upper special-fiber Betti strands. It does not claim the two lower
+quadratic-quotient strands, explicit differential matrices, or the full special-fiber resolution.
