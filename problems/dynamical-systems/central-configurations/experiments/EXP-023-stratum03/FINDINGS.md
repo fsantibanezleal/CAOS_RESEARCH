@@ -184,3 +184,32 @@ points forming a RECTANGLE. The rank <= 2 locus passes nearby, and in this
 stratum that locus is where central configurations live, so a genuine
 central configuration of the three-pair stratum may sit near a
 rectangle-like shape. Not investigated yet.
+
+## 11. The merge corner is the ESCAPE limit, i.e. the outer chart's seam
+
+Widening the seed moved the failures to the NEW corner (921 of 921 on the
+new edges), which settles that they track the box corner rather than any
+feature. Probing that corner explains why, and it is not a defect:
+
+  * sigma_3 there is 1.1e-5 and INDEPENDENT of rho, so it is a property of
+    the underlying configuration, not of the merge.
+  * A high-precision descent from that corner, with the two pairs kept
+    genuinely separate (|B - C| = 0.043), plateaus at sigma_3 = 1.1e-3 and
+    does NOT reach zero, so it is a near-degeneracy rather than a rank-2
+    point.
+  * Its near-kernel is (mA, mB, mC) = (-1, 0.0016, -0.0016): the pair-A
+    column is what is nearly vanishing, and the kernel is NOT sign-definite,
+    so even at the limit it would not give positive masses. No central
+    configuration here.
+
+The cause is geometric: as the merged B/C cluster climbs away from pair A,
+every pair-A coefficient decays like the inverse cube of the separation,
+so the matrix drifts toward rank 2 at large heights. That is the ESCAPE
+limit, which belongs to the OUTER region, and the outer region is exactly
+what rescales onto the all-narrow chart (finding 8). So the merge chart is
+correctly refusing to certify on a seam it does not own; the all-narrow
+chart must cover it. This is the same seam logic the (2,2) atlas uses, and
+it is why that campaign needed a seam gate.
+
+Consequence for the plan: build the all-narrow chart as a real covering,
+then re-check that every mergeBC residue box lies inside it.
