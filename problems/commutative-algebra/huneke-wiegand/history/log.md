@@ -1223,3 +1223,35 @@
   `c2f9f58488c7a1fa7ccee181a75944f7209b795c` before this handoff update.
 - HWB-051 is done. CAOS_MANAGE remains untouched on its unrelated occupied branch; no research
   release tag is claimed.
+
+## 2026-08-22 - EXP-033 declared
+
+- The comparison-map round was redirected from constructing differential matrices to proving the
+  regularity of `A_p=P_p/Q_p`.
+- The proposed pullback through `D_p/f_pD_p` predicted a high-variable kernel with Hilbert series
+  `(8p z+10p z^2)/(1-z)` and regularity two.
+- EXP-033 was declared before implementation with the falsifiable prediction
+  `depth(A_p)=1`, `reg(A_p)=2`, and a completely minimal cubic mapping cone.
+- No comparison-rank theorem, new Betti strand, manuscript v0.20, or publication was claimed at
+  declaration.
+
+## 2026-08-22 - EXP-033 confirmed
+
+- The colon nonzerodivisor theorem proves
+  `Q_p=(Q_p,f_p) intersect (Q_p:f_p)` and gives
+  `0 -> K_p -> A_p -> D_p -> 0`.
+- Exact Hilbert subtraction gives `H_(K_p)=(8p z+10p z^2)/(1-z)`. The EXP-026 regular element
+  `X_0` proves that `K_p` is one-dimensional Cohen--Macaulay of regularity two.
+- The depth and regularity lemmas give `depth(A_p)=1`, `pd(A_p)=10p-1`, and `reg(A_p)=2`; the
+  terminal coefficient is `beta_(10p-1,10p+1)(A_p)=10p`.
+- The cubic grading gap makes every comparison map Tor-zero, so
+  `B_C=B_A+x z^3 B_D` and the complete regularity-three/four strands have the closed formulas in
+  the verdict.
+- Canonical, independent, and symbolic aggregates are
+  `67bff9217c89f212916220e858ef5168abe2d64cdbd789488e0ce5f49204092a`,
+  `6593291efaf092333bc42972c2f05712a151efb46f3f52ed9d28afd329585a4c`, and
+  `58ab24887c79c3c075fdefea1f38ff2e1c1ef539490f7f52359149ed2bb1a4c8`.
+- Three exact attempts stopped at `p=102,209,267` under budget and remain non-evidence. The final
+  recurrence closes all `p=4,...,300` in 15.159 seconds.
+- HWB-052 is done. HWB-053 opens the in-place main-manuscript v0.20 and Zenodo version gate; a
+  separate manuscript remains deferred.

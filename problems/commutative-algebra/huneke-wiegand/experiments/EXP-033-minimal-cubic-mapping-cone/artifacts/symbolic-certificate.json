@@ -1,0 +1,5073 @@
+{
+  "experiment": "EXP-033-minimal-cubic-mapping-cone",
+  "route": "symbolic-arithmetic",
+  "generated_at": "2026-08-22T20:27:48.955225+00:00",
+  "status": "SYMBOLIC_CERTIFICATE_PASS",
+  "range": [
+    4,
+    300
+  ],
+  "symbolic_obligations": {
+    "section_h_identity": true,
+    "kernel_h_identity": true,
+    "a_h_identity": true,
+    "lambda_one_identity": true,
+    "lambda_two_identity": true,
+    "degree_six_identity": true,
+    "projective_dimensions": true,
+    "mapping_cone_top_degree": true
+  },
+  "rows": [
+    {
+      "p": 4,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "c40c499e50a8b39feb59f1ce0739a385e7d5b53812e9a1d0a454f121d63be07e"
+    },
+    {
+      "p": 5,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "7f02d4968dbe2cb85fcd3983f92c27f09d4fcf966f71339d18fe199c9bb258a9"
+    },
+    {
+      "p": 6,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "1e63fdb78d452fea6c9a4c389409e23ac9b353aa6be455c4c76c47efe0b10fee"
+    },
+    {
+      "p": 7,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "2d0ac558729ace4c711e8985a53f720c976aac34505d485e5ca3bd99d8179e6b"
+    },
+    {
+      "p": 8,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "bde57e478d0be0898793dbe594aa4bb73c1b94e41f3a49af9e1f81602990674f"
+    },
+    {
+      "p": 9,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "3c6c8e38ff043b4ecf10fd0f85f9a5b556102be12763da146573ab53fec3f5ae"
+    },
+    {
+      "p": 10,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "3a57de762c7839b4a65f043b4653693e5c12a3d822d4a722e21b79510395c165"
+    },
+    {
+      "p": 11,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "b66b61f708ef07529660dc516f0b337b5b7e02dacab7470fe23d3b3dbdb63128"
+    },
+    {
+      "p": 12,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "0d0637513e0d7915a683407d7dac3f8397f18e1888accb5e955c8325a91acd31"
+    },
+    {
+      "p": 13,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "4d8d26ea162802f38ac9da72f12cd1abd8f07721848346252ca2a12f6a0eec77"
+    },
+    {
+      "p": 14,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "27969bccf10ab11d9bee5a2c146ec3427548ca7849bd091246ff3a214ac70404"
+    },
+    {
+      "p": 15,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "6a785433629b82b318cf4b378d5ca1ec8d99b4341fad2d5bb763b8939bf313af"
+    },
+    {
+      "p": 16,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "f1c3e0e9ff6567d82ba9fccb3147d84d7461f84e0d130e4c760984883b04ccf9"
+    },
+    {
+      "p": 17,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "cfde5b21a08e8f463136598d9e401df4c17b224491993b838656281973a17118"
+    },
+    {
+      "p": 18,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "c2bdf6843db0fc18cfd62cd7b15c53f66c3297ded00b5f85de1a30ccfa7273cd"
+    },
+    {
+      "p": 19,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "dddeec6d35067afbfa5e2b2d05bd6cbbf1e86eb34a0206dd00a838eb96e53f0f"
+    },
+    {
+      "p": 20,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "0d22f7e701f15dbc669010c34799cdcfa3dfc7602faaec397a0e3262ce7b4208"
+    },
+    {
+      "p": 21,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d31f9cb8f2012de48c3f22ec67391f826f3b2b070622bf6680471b51eea84ab5"
+    },
+    {
+      "p": 22,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "86ce36ca033763d461e51fb1c8612f6b99b6ef23a6cd327162485faa2e3f5572"
+    },
+    {
+      "p": 23,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "5e4b9289f674785b1b387668aec41927de5119f93a88718aa0a2ff76f4498b5b"
+    },
+    {
+      "p": 24,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "2975b781590dfd77d9b138f3a9af517eef15d1ca94123169f619698db9083757"
+    },
+    {
+      "p": 25,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "a328b1caae41978714a6c8cd1efb70ec40e72967ace84c6ed2ca297a4f7ac8a4"
+    },
+    {
+      "p": 26,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "884684064d975a103e04d319fa932f645bf3e49e929a575497a6adc719b5a8dd"
+    },
+    {
+      "p": 27,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "e67e3bb1885f1a0ea7497bb92ae864221e1072e1aee6a8acb81eeb4d0ce03032"
+    },
+    {
+      "p": 28,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "112be81fc45065e932033ea10d379a86f255a3d0123ad0ca344ce50aeda0b9a6"
+    },
+    {
+      "p": 29,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "01bb5a0482f2290c5febbeadd6476e34edd14f34b63cc971afea335298c581f5"
+    },
+    {
+      "p": 30,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "cf5bd4e6783083b21d6222e6899fc2911de6378b099962faa1b84ea0c72f18e9"
+    },
+    {
+      "p": 31,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "0f721e4b5e59e01bbe42618dfa55eaab09744b2df021b6d7e83efc1db5bb5e9e"
+    },
+    {
+      "p": 32,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "c6c0a5c1ad7373e2b0e52e2048e5fb83c2e31a2d376c3dc808fd4a660ba5a866"
+    },
+    {
+      "p": 33,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d16468e4f64817db824a6ffe13e2d6d7e215ffdb5ab7be619f3c57082076a8dd"
+    },
+    {
+      "p": 34,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "7b0c3bcdea74cbf2fa508f48dfedbe2b774039c81c88fdf2ec345094f368207c"
+    },
+    {
+      "p": 35,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "8946a227f72328d9f568a49e13a1e179c66d30fed29fd7c7f63a9ba3976bd6cb"
+    },
+    {
+      "p": 36,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "920dc858aabedc1b29f62971371d853133bc12b9dcc82243f619f933a5760851"
+    },
+    {
+      "p": 37,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "6e2056023e7d8dd0ee1b31124ebb22a6d45b5bb93780ddbe264ee784d1018ad0"
+    },
+    {
+      "p": 38,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "c3ba361b5af725ab11f17ea4c862e905f63a8ec92842f19468e2117f177738a9"
+    },
+    {
+      "p": 39,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "215a570bbec1a3201c9e753b42859cee399873f0d456f9c22426397f2f3e4adf"
+    },
+    {
+      "p": 40,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "b421448ad87dcecf68fab84baa939d5886493713d37419fffa4436d69c8d605a"
+    },
+    {
+      "p": 41,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "1d0b33a95f43dfbbbea0fc31b98a9e45dc7fd71c86da922af8d1d164e2a3d6a4"
+    },
+    {
+      "p": 42,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "67cb6a3f6a54e2b7c3ddafa5cedc08b8844c1bd013b667c0bcdab5fc27e6b09c"
+    },
+    {
+      "p": 43,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "38ee561568ab6c30b497001a8d0c172729e13d7253baf2cb9714bfba39e2498e"
+    },
+    {
+      "p": 44,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "870c4892f1e01fed210680fa5642bdf66504a45af8f70d4c6a9c9933786a174b"
+    },
+    {
+      "p": 45,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "c556fb954ca3b72e0bf3d813704835026059578bda92b1411bd1d1acd0bcc345"
+    },
+    {
+      "p": 46,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "ab11636e84d84afa85d64a80f8e34200e56242c2d6b723f7e3f0a155dcad7bd5"
+    },
+    {
+      "p": 47,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "09b758a272b26d2a25522ad17048a7379386041160b45357e86df22a1d90a72b"
+    },
+    {
+      "p": 48,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "667155b7334acd42003d05e93cc630f49efa6dda618851ab4f3b55764c6dc0b7"
+    },
+    {
+      "p": 49,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "82ab8734d2418f5c4ec04c73320e78321d62e5c39da73086964218a2136889c1"
+    },
+    {
+      "p": 50,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "26c039d33aab1a61c48e0424b8e636fe994492b9e4c0de2f4a152224de75ab2d"
+    },
+    {
+      "p": 51,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "001fd1c8f097591f38d21314a4a713440024eb78984a1d9e8d7fa29b79567ce8"
+    },
+    {
+      "p": 52,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "beffc9dfef5876dff09a33ba257cbfaf5d19bbc1bfb1ff9e08f26c1c3194444c"
+    },
+    {
+      "p": 53,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "4ce65fca63bff7f8f0c0346560579f1240b441668827118843caa24dc9aa46d2"
+    },
+    {
+      "p": 54,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "9485730cb42cd3b09fb666932baf0100c47c789ba70395d77094f6d26b968735"
+    },
+    {
+      "p": 55,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "8ee0436ea9529ce0e89b8ad74ed52b2afe389bd5cea5d1b8b5288321320f88dd"
+    },
+    {
+      "p": 56,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "fe4c6b15f7e5a4ee6f574595e77e1794656437ea32d75d941b8bb5d362155c15"
+    },
+    {
+      "p": 57,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "58e3b13c2b9b0193f447d67ebf1d3cf0b5d9038d3177b88bd5409b1c93a671b4"
+    },
+    {
+      "p": 58,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "f55ef4cac20670d294de121e7d008b58cc66c9b7aef276c54ba7bb14b3581ca9"
+    },
+    {
+      "p": 59,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d9d7df39dba20f4c5228865b28362d6e1e03460853fc287302504bf603e8db12"
+    },
+    {
+      "p": 60,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "6691249efaef339ce1a27712ec356ad51c0162de77803919d324db3dd98e0017"
+    },
+    {
+      "p": 61,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "240bee30066327bfb6b02d55da332933515fc542aac33881d2652282e8a1a99f"
+    },
+    {
+      "p": 62,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "cee61470021972fb54599e2b585aa1201bf0d86f8540957cc5609ad5c104fe2c"
+    },
+    {
+      "p": 63,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "1e0146c5cc0c3563e80acea3d2557403bed2f06d31efa3bdf495591640f3453b"
+    },
+    {
+      "p": 64,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "471a1c0c22d03981139cf285a2e95712de8da495eb8c596e34e1f6b667f02458"
+    },
+    {
+      "p": 65,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "e653dfc79206029db0f813059d0679232c1a47cfaed99aeef1ccb72c116fa10a"
+    },
+    {
+      "p": 66,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d471a9f0979d73a7407203f8be27a19212d38b4ac2c8c7d502441e1bb968705f"
+    },
+    {
+      "p": 67,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "3859e462d6d223d2bc279cb720c9e201e4c60c0de5cf9f8c707c308eae40e4f1"
+    },
+    {
+      "p": 68,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "491cc2982efe3f91601ea01f126581dfe3181babfb1af991e0cd9cfed76da5ff"
+    },
+    {
+      "p": 69,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "276c24dbacda4b4634ffc4e5cbf7c7163ec28dfe34b9435164801c3f539e0b8c"
+    },
+    {
+      "p": 70,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "1343057b52939c2a7fcbc558835eb559f2251fef00584dee98b5aa3fc9adb009"
+    },
+    {
+      "p": 71,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "3932c8bfb1fdac24980550fcb63f0482b3937989e0d9e1034c8048c0a56dd937"
+    },
+    {
+      "p": 72,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "399c3fd223387137542fe5a9fe2e06be33361f026b237d29dca06a94a362ddb5"
+    },
+    {
+      "p": 73,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "4dcaf919af65e57c8b885115990421631245b7897c27bec30eb75807b1ff0a42"
+    },
+    {
+      "p": 74,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "bababad248ea502d3713e9fb5013c174c4e1fb41cbbff9190ef61c433466aeac"
+    },
+    {
+      "p": 75,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "51db2e871a39cded3db4abd9b434321359d79730af6f1fbff5ecfe5858c10fc7"
+    },
+    {
+      "p": 76,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "aecbad8cc1936c26da2c2f6f2ddca297f5bd2b86d0d36736ae136b64112dfebd"
+    },
+    {
+      "p": 77,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "a2bc00d2123af44f9bee6f06b3b1d71237d49a616e9811c6d8410e24fdac9300"
+    },
+    {
+      "p": 78,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "7078fbeea3f25126840c000051b32d441a8cbe38f55451a08faf4a9ca1fee031"
+    },
+    {
+      "p": 79,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "42c2ca6eecde26822ab3852177dbc39a30837c3a41a2f5f8c3ceb27ea2900c32"
+    },
+    {
+      "p": 80,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d88d1690a865da65ffebf68f94af08a4acb0b7833f9f3af425bc45bf2c3cc4b8"
+    },
+    {
+      "p": 81,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "323406923d991538fb6cabeab925bebaf1395f41fcf0157df271c8a7e07438df"
+    },
+    {
+      "p": 82,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "6b4165c320e79dc903e280f02e98fbce9bf93811c5d8f825e4cb6568bb9b3827"
+    },
+    {
+      "p": 83,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "72a86b03247c3b36699475d9f0375077619f0802688160544e9004ad3f4044da"
+    },
+    {
+      "p": 84,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "a7337c9bbf996ae94cb4195b8c551f01e82e07a5d8f79b948dda728368b5efd2"
+    },
+    {
+      "p": 85,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d58c47d624ad2263da5664a881daceb04804e1dbba346cd0c19101d42ba421e0"
+    },
+    {
+      "p": 86,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d529d8ebb8e4606a5863b77d797d2c996fe581033020c88826e07a687e057ced"
+    },
+    {
+      "p": 87,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d4f7e9d08f57828f85c152670f56bce35532287a6e6958886585ae639091a21b"
+    },
+    {
+      "p": 88,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "59a9fe0f14d4cb6c76653e618d861fbaae6c5f7ac3f296131c0af24a426dadd9"
+    },
+    {
+      "p": 89,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "10a7323f8c7b39c3b3665c16c3337add80e256f5185f47a0bab98881270de2ed"
+    },
+    {
+      "p": 90,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "1b1623454e5f3742d034a11e89b8924ee10fe3669ba87f3f1ecbde0958a9a435"
+    },
+    {
+      "p": 91,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "ab1ec52fd6199ba470b5b4c3274d684546daa12a90bf00e8301fed440b994918"
+    },
+    {
+      "p": 92,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "16133ff5bb810ae63b6da3f83323e834270ad5064cbfedd09bb2cf4f092373a9"
+    },
+    {
+      "p": 93,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d2f8a516c86242e8a65e404e5cb7aac14c937001430cd1742e86a8b8ef68c91b"
+    },
+    {
+      "p": 94,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "eac1372e845f49bb3b1ac7baf4519e8c2421b5c5b81d58fd3d7b867cf84a14e0"
+    },
+    {
+      "p": 95,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "8ae73664e693332bb2ec45da1132170503c60bb72548a5f240377bfffccf4c7a"
+    },
+    {
+      "p": 96,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "a158793e4c18ece4135f7a7d9c24ec2c04626fe731f8c88b0f6117abf7f20e2e"
+    },
+    {
+      "p": 97,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "4e8889d5e12197ae471871c3784fa12a1ba37ec83efa4288c6a4f6bfc41d25d7"
+    },
+    {
+      "p": 98,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "ac498b21d83495fd1267f58d8f53e0946cdf8e288470a08321e3196b888ee7a9"
+    },
+    {
+      "p": 99,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "28e9e1a904f09cac60e66c901ac983187a707156df9c70ccde76a54d6f414fa2"
+    },
+    {
+      "p": 100,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "25ade19200913d2048fab9ee83a2f26bc0338d9a417cb586265591ee4b584f4b"
+    },
+    {
+      "p": 101,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "dd841726b9637f487b4e1704feeed9f57af9d915731c171e6e61c3f17987c81d"
+    },
+    {
+      "p": 102,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "8b785599efff17ab4ca862ba8456df57cbce136abd7f5e859c27031b4dc334ad"
+    },
+    {
+      "p": 103,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "91c62fbd5a8257eb2b28d7dd9208e96b6b9750a50baf7404e2a82e6418432c5a"
+    },
+    {
+      "p": 104,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "4ae693a9b13ff8275613bb3de16b4b2764dacb8fda36ab48f611f43d2a4436d1"
+    },
+    {
+      "p": 105,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "1fb75dc81464ef1d9943a7d09301e157d12f934b89b487f6bb953728d51a4ccc"
+    },
+    {
+      "p": 106,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "ea832db39b32016b682d93f5ab1271043a22b14ad68aeef209175b6fab139abc"
+    },
+    {
+      "p": 107,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "275b731b01857162ea4a3a3f24a897739309c3062cf849af66c1c480e912ae06"
+    },
+    {
+      "p": 108,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "0bc71167c46e867822e86e82652915368b6afe91053086549ee543e40afbb3eb"
+    },
+    {
+      "p": 109,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "a4ec2cf81d0c674458da134f47ac8c318100021106ee6cabe1d0fbcd95796574"
+    },
+    {
+      "p": 110,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d0e271bcc3f59fe60025977ab960ded9268c3d69709f551561abe8a255bc6021"
+    },
+    {
+      "p": 111,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "f1ad19fb66dde68c13f4c4773d2960e58e84f8657c9867b1402715bc30e76a42"
+    },
+    {
+      "p": 112,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "2eb6c98f019ff978c5ecc0712694aaea02e7876f209f6ca6023e7ed042a238fc"
+    },
+    {
+      "p": 113,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "e4e6eb20900c296bc326873d65d7f97b18244dc5fccbc89ca80e778ac3830654"
+    },
+    {
+      "p": 114,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "3a56dbd55a03923f13f4415c3b663c99c2c35e311c5db85cbcdfc1b8e5ec50d3"
+    },
+    {
+      "p": 115,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "69bff179850dfff3e49d00ae736c1bc70ffdaad697401d2052dc6d3ec89f9aac"
+    },
+    {
+      "p": 116,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "43595b7f9ca7651b388b6556e57485f72a9a5cb07e0a5e3a6374d5fb03578875"
+    },
+    {
+      "p": 117,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "54c2fe00730a08faf610a5b530f116445fc07b882ecb88c0e34c3898ff5ff62a"
+    },
+    {
+      "p": 118,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "c3049962c215787e4bf9180c02a2bc5f8c07d249c171e713cbac6c8886d89806"
+    },
+    {
+      "p": 119,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "bc56db79f4e5f63f1bdb3a389c238d8f9c9c134a7f7e13cfc98c9ed3c9f69271"
+    },
+    {
+      "p": 120,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d6b9691a2fa2e60e2edcdbbfc0ca7eb68ad6a3e23fa0a571c78fff97dec134ae"
+    },
+    {
+      "p": 121,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "ddcb74eb557d01369ad4b8ca8806f7ab35fe46156a3ae095bbd5c165269b2460"
+    },
+    {
+      "p": 122,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "5d8e4dc997d135585b7fcd6e638e18d8e98ccb77c2c1e6f53d7ccfe895cd0bf8"
+    },
+    {
+      "p": 123,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "9593ddeed9bde6bf84c4375c07f519b297228ee31a61c05cbe9fee69985b00d9"
+    },
+    {
+      "p": 124,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "64919cba2c09706d25f697b7e060684d9e726347e592676df7acd3107789859f"
+    },
+    {
+      "p": 125,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "2ac474ffc07c2a145c0d2b39f6d637781b7296e898ab4320973f83c54bdf1ffa"
+    },
+    {
+      "p": 126,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d9f4fea8a660c77742ee2afbe5d1f4ff7cbaf6ad810a2781ab7aa1be0cb334b5"
+    },
+    {
+      "p": 127,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "65233cc057e45a2d4583417d8e11dca9d66d03edeb5a1821b87766778fd5892e"
+    },
+    {
+      "p": 128,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "c71c80d61f5f28534bf4c6010863cfbe117a4daa4707ebc0e1672a869d90712b"
+    },
+    {
+      "p": 129,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "eb57483e4f7793ae00176adc2978089e43ba7129e481ea9adf671a87a4ff9400"
+    },
+    {
+      "p": 130,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "ec4b144cd5a7f95ab64b6275068a2ce4ef080570ee84d1b30a76e5e8e97ca775"
+    },
+    {
+      "p": 131,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "acb476f7adde1f52109533c4f9ca5716557fd543a8fb1c8c2838a73382da74a5"
+    },
+    {
+      "p": 132,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "bcac9582a46b242280c3e834587a86f2baa7d1680ba55a887c8123ea0bcb551a"
+    },
+    {
+      "p": 133,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "966699b87f58c1c89c4f23d7f180590f24547cad01ea684ecca506a99a7eb6f0"
+    },
+    {
+      "p": 134,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "a2958e10ea04a45bba1ad3fe6a384807a72e06fd4bda31ffde6e295aac31d648"
+    },
+    {
+      "p": 135,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "4d58d0cf7bdf6f0ec6e549d9fffbdde8e71a97e77d651fb5fbd2c53c24a7c0a2"
+    },
+    {
+      "p": 136,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "a8f84b9e95dc26e474d43e7df801ba30fe012ff8db514a1fc95310c54426dc18"
+    },
+    {
+      "p": 137,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "2eec47e4bb54e88c69d400bfa25463d4c4eb0e29f0279b8ae514d3c9c0924b29"
+    },
+    {
+      "p": 138,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "254d4ec6429c8d858611d9252b9b7311fa6d8ce6d9e9e435dc2fa2fd6a22ec6e"
+    },
+    {
+      "p": 139,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "39a0ea94dcd31e34840ea0fa2df76959ecea77e144efb41d7bbc6e89cc355efe"
+    },
+    {
+      "p": 140,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "a417eda4671e404bd1b0d1152b6f8c58cdd453df657670a651cd7356e54bd6ac"
+    },
+    {
+      "p": 141,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "6c924877fd9a7df6bbaf217dee8bff7f36e83577d48a96befc5c321d3b4cd865"
+    },
+    {
+      "p": 142,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "f2414bea5a626c8e3c02cc64edfef7c5a06f4bbc6d341520ffda9436e96f4729"
+    },
+    {
+      "p": 143,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "e7070f302d6a8725d8a8d281e881a9562c1b1563023351ded4d5904f3d5bc8d6"
+    },
+    {
+      "p": 144,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "c359e5a3b60759734c928ec958f6675eb20f0373040d5d3cbb026ab2a55030e2"
+    },
+    {
+      "p": 145,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "da41ac3236fb25c192e0d8f28492a3f8b60dd0bf98bf3106f4e52ffd03d3d4ad"
+    },
+    {
+      "p": 146,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "2739676d27e0a2b74639aa1079f8018ca484c6a2b52eaad498441c72e38f9836"
+    },
+    {
+      "p": 147,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "e1946c82c174fb5f6a93f01c3d3fb55810488514aff4603b9f5e61c800351f87"
+    },
+    {
+      "p": 148,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "abb819334add80abc78f471a0917ba0bd25c196b58c85b26bc47f085af4864d7"
+    },
+    {
+      "p": 149,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d3d5f115fbc5a97d1e2a8f292c3fba6193cfd01350fdbbef80b27fb16153aad9"
+    },
+    {
+      "p": 150,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "e1b001fe03843275acf4acdb1817fecd8e905eafe22fb7419259e06c5dcc1b53"
+    },
+    {
+      "p": 151,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "eb56badc664d6915539e7e352047577c13d5564014f5527468c908a4c47e45bf"
+    },
+    {
+      "p": 152,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "ebbc61700383946c7d00fe3cd791b566ba7926f66d3b19186d9c5cacc38368df"
+    },
+    {
+      "p": 153,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "a803631d3796b50f414143c654a8886dd8038f88502dc2554b2de721337f5b93"
+    },
+    {
+      "p": 154,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "1597a1b6c11853a1713f9346c26f2233052d1740d0e4571e14493d1fcaa11246"
+    },
+    {
+      "p": 155,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "04b43b705bd1bca40e31b178e88fd38a63ba76bf5eb073ef89ac3c9bc35b11b7"
+    },
+    {
+      "p": 156,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "a88d05185f363298d9316441b7e154c56231ffe308fd70e842b80088483150f6"
+    },
+    {
+      "p": 157,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "869c4599652668cbbc30b4a66caa84d2019e9be9b2641dfc1988f6663549a0ed"
+    },
+    {
+      "p": 158,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "e1dd365f8c4cb7eeaa2e51124dd01215f11630b50be385b067bf1c80d80711fc"
+    },
+    {
+      "p": 159,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "b5160e35dbaf404fab39355b7c866e4b24eaa7373f8289d3d7841e7cdb1c026e"
+    },
+    {
+      "p": 160,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "9bff638733db6118a9cbce3740d4c2fc217e230b135e49026111d906217f42c0"
+    },
+    {
+      "p": 161,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "2becda25913e9994207e072412a7b1b36bdf8879bbad329fe701363552d3278e"
+    },
+    {
+      "p": 162,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "674c51b46c6150bb315941c09f4a46f90b86be91e05f47a0ddf94cc69518ca4e"
+    },
+    {
+      "p": 163,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "394705a62ee986d588dc43485a14739d2c71dcad755b4c1601fe39f3e642150b"
+    },
+    {
+      "p": 164,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "cfdf02a5627d4d3d7e223bf5486e932e59a9532c0ac45e5d8d2d1c8aa34f7e06"
+    },
+    {
+      "p": 165,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "c63c10ff0b5f7f5e7f8c802cbd86b32a8b4ff757095aabdb88c507e48f2ea7b5"
+    },
+    {
+      "p": 166,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "8dd8a0e97d317ebbbf7706e3d5fc645eaac01abadc86d785e1cffff5f7db13fd"
+    },
+    {
+      "p": 167,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "5536906fc21090d30eb434d50ccde4ba44645771c1751666fbf33a75f65ac6bd"
+    },
+    {
+      "p": 168,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "98d263c554740913fb8d8bfc7e08c534361eb5d8143e567e291c60280acce805"
+    },
+    {
+      "p": 169,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "e2eb61f515a09430990be2c64dfcda613642a5364ab5261481c6f58016f854d7"
+    },
+    {
+      "p": 170,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "6cf78e886bc73ca29f68ab1fa8e609d51b6fabae4b388b5a02bb09d3e26555a3"
+    },
+    {
+      "p": 171,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d0a6c9511d8598ec99d48370a6b68be51ebd486dd48b6b4bd3bde627d0e660ed"
+    },
+    {
+      "p": 172,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "db565773bad81458e21808820c2b0fac3e680a1198e7eb77e8e09cefe693419f"
+    },
+    {
+      "p": 173,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "72f81f98e289b55afa14ed4c083074f7be61f0c336a37c472dc6f312ed0645b8"
+    },
+    {
+      "p": 174,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "a8c38c389f05b44fe03dddfdc9722b05a06379221f96c56d14b2174ea125b1ac"
+    },
+    {
+      "p": 175,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "b76f96e62b63b2eecfa69882398af685983340dea0553055978b7356607bf89a"
+    },
+    {
+      "p": 176,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "6426e226f47e10fc5bc0689bab16f0a1f6c31068a345b34c6c9c4ed32e14ddf2"
+    },
+    {
+      "p": 177,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "0cba23c3299d351a3cdf4c532388729510328251af7fb69c9c1057c10c87804e"
+    },
+    {
+      "p": 178,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "c15850284ee48ab6a060ff6f2482c898a76a1af8c5ca214d028e5d5a319450e5"
+    },
+    {
+      "p": 179,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "b23c9e635d5054da3dba66a35f883974a9901511e96711af52b00b47d1e4f404"
+    },
+    {
+      "p": 180,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "07a6adc0c7ce2357a9a14fe18228e1876c8392eca1c08d6d8fa577be3d3ebe6d"
+    },
+    {
+      "p": 181,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "29657a1af1bb26c64091a3765cecb5450760ad5885c4d1beaad942dd97e3af7d"
+    },
+    {
+      "p": 182,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "f017d70e13487aef7b540b451eae145d03d9022308df1055db1d6af274e637d4"
+    },
+    {
+      "p": 183,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "ad08c5d51fbad138fa53347630a2bdd94f7743aa8742a4090117b8f20681eefc"
+    },
+    {
+      "p": 184,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "5270ddb3282d887eea0df78a35cf23902e0360fad9275f721fd14931a2188ceb"
+    },
+    {
+      "p": 185,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "0ed9f6538528625b7a4cf6cc5a7f639cc624d454cba59f064cf9b7d3d7c7c389"
+    },
+    {
+      "p": 186,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "ddc2ceaa10539c981e40328aa4e651a7269ae4a4033be573ce6ac04877972088"
+    },
+    {
+      "p": 187,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "4592c86df42d89cae700879a865491324f4d6a3a5a363a000200b29f2e301c5e"
+    },
+    {
+      "p": 188,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "fe3e90a8cf13105fb9d9ef88b539f996f440cb24898a121d36c0e5e5d68ebec1"
+    },
+    {
+      "p": 189,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "f885b8a2ce6ebba862e967f9cf212b7c8e3275d07e012dc9661c5b344943c179"
+    },
+    {
+      "p": 190,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "90d781592f396b4a19401fcd970da53ddd653764a4eff785a767e6ef01868ead"
+    },
+    {
+      "p": 191,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "c8a26bbc3326a858b5848259e7b7352c2a52ade316d74bac6d772e5d64158125"
+    },
+    {
+      "p": 192,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "95d5185683cd286cb3f3888a3436e02a4485a1368399d5898f93bedccf6861a6"
+    },
+    {
+      "p": 193,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "3720885e7b7fc728e3dd053cf24d398325548b8a3bbcacdaa668f7fd4939aa5c"
+    },
+    {
+      "p": 194,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "282ba732c9a86f090edbb1719c34f03ab47ae144b31e45600caa310cb5c9a388"
+    },
+    {
+      "p": 195,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "a723446af9709fa551e44498519f77c82ceef50777164b3158f806d6457badaf"
+    },
+    {
+      "p": 196,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "540026eea06356c87efa00793a6e03d60067415ed9b0ec9b9c3c2ca59156d855"
+    },
+    {
+      "p": 197,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "a053231518927423eeace9263e458e302c43d5345e1414392686267cfa122752"
+    },
+    {
+      "p": 198,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "6b4748eaa93b78a687185f47658ea5c9810c1cc76860f185520c57d2ed338da3"
+    },
+    {
+      "p": 199,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "e3ea828844ae5135a45a225567e8041c715a45e3b4332142b94edc7deb312a1e"
+    },
+    {
+      "p": 200,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "4231f92ec3b599e4724f3f5d93dd2d5ed1404bd3b974635152b5978949be0378"
+    },
+    {
+      "p": 201,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "64fa751610793074a541f1c886d2f940bfb9aa59ba4db8eba3743cb0dd692f8d"
+    },
+    {
+      "p": 202,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "bcd4cb728804b12a76c98c92abf7e93e93bcaecfa9dcbbdc0988f57f2132279a"
+    },
+    {
+      "p": 203,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "8f14d3dd53e422facdc177c343c789886793d08b3fc5d1dd5c9e8cfe0cf9efc1"
+    },
+    {
+      "p": 204,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "5304aa739050414b57fd33f0cdb65ff3e2234f7e3f703a155fe69074a2c27083"
+    },
+    {
+      "p": 205,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "b2b4cd0c9d8b8926bfb4011b50d69b242031d1dd62a00d7b2bdccbe415d7e36c"
+    },
+    {
+      "p": 206,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "4423de55238bce37a9aca9018bc207e7e4dd94da46a1d85d33469ccb7f17f836"
+    },
+    {
+      "p": 207,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "ecc2e806661942ae74c24e1aad73225ba1729a2a2d5300279824130e9d32c1dd"
+    },
+    {
+      "p": 208,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d71f7cc78f7cb3f2655c27c1edc7040d05655d396d0c0320ec11eddebb459dcb"
+    },
+    {
+      "p": 209,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "be11f71a53a978b15b84a947d037e53e1e5f0d6b8a081df0fe9fa57e08a3606b"
+    },
+    {
+      "p": 210,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "e6b88788ab85360543574745c6ca4fd60294c6f86239a446c121ddccd238a8b7"
+    },
+    {
+      "p": 211,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "b6cdb0b2478a695b767cd3763f8d2a2f911c907f088d35f3486349871b6fcec2"
+    },
+    {
+      "p": 212,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "e1bd6f999153e6ed33343eb88e4b4e6ff72cff09dcd642971224607e3cf550bb"
+    },
+    {
+      "p": 213,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "996fa174bb67c6523a7de4ac80a2a496c6b04fc236de94f104415816b4fda7df"
+    },
+    {
+      "p": 214,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "3abaf23c5debdafe640a0426807601ae466a2af5f1c40dd1d4e9439f5be3eeef"
+    },
+    {
+      "p": 215,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "ce3717f212b5cab49728b65f3bfc3077b44a77589fd125e9b3a85adfb5a765e4"
+    },
+    {
+      "p": 216,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "58a8a538ed46e3d307e3f39974a130a35481685c57f6534afa40d06ac0bf028b"
+    },
+    {
+      "p": 217,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "ffa69b49d6ae2af2bede9c53caf47063cfa5218241a7f60188ee70ee45c59151"
+    },
+    {
+      "p": 218,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "4c701724b0a1c6eb84e7356c4ae199415738b4f27b46886a39b4d6f482924263"
+    },
+    {
+      "p": 219,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "5464d2c7378c45de189e4e094788fa10afe2cf98a9a17572b298a8b76129c719"
+    },
+    {
+      "p": 220,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "902f0b6ba345cc4288f8b56b582ffb46ce17a3bdd870dd2558789ddab530293f"
+    },
+    {
+      "p": 221,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "46663fb269b8bd6a64f2cb2e833e06d4c7ffe955cf4a2e2f622e87a070127614"
+    },
+    {
+      "p": 222,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "555e4dbe5b0465e60982057a4e58e75f3a3fb95435b45fc223f958191cc8a6b3"
+    },
+    {
+      "p": 223,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "8ffc634b0080029d111df0ab74eb230c64376a63b074aa53e41f9078cd86f347"
+    },
+    {
+      "p": 224,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "06cd033aa58c41dffbe8b71486b10746dbbc0b529a9e0d8efb71e229cc0690a1"
+    },
+    {
+      "p": 225,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "a2c9333109001957752750149441fb4b0721df80c077849456065b54503066a3"
+    },
+    {
+      "p": 226,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "22f3613950707624002e6b23e627ebf339b20cc13992ef521d77b1a0b164adca"
+    },
+    {
+      "p": 227,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "e515b757a1ad40f02ebd1a75a6cab9c9fc862053a47d26a2fbf8580916d6600b"
+    },
+    {
+      "p": 228,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "e690ce9f99eb6b6e8ebc8cc08dec98f33e6f39d17b02698bf159a3cebef47245"
+    },
+    {
+      "p": 229,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "acd713214116bebe03c411ce03022fff85824744282fa140c17567922e6ad4c6"
+    },
+    {
+      "p": 230,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "59cbb77bfd8f7aeb43e97d5176807eec72b44fd8085db73129984aa83d44fd3c"
+    },
+    {
+      "p": 231,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "86cc3ce32af790db0c0e32ecc3339d915a1956f993f1993e75f681b0154ee64f"
+    },
+    {
+      "p": 232,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "b3f0c81b3c729901f3fd156ce6997d93182b91c6b966b86d30913a1ead04110a"
+    },
+    {
+      "p": 233,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "5012cb95fbb62241abaaba2abe36c979cd0af3f7db33cdb9d44421cb340b5e56"
+    },
+    {
+      "p": 234,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "9bedf9c89a3b6c3caabd54ffb4a1b656e923f7ccc39b89579583ea024ae26905"
+    },
+    {
+      "p": 235,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d9b3586e1db455feeaba03da10213ae0b5ac5ecbb6e94491b47f24e3bbe77886"
+    },
+    {
+      "p": 236,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "26bd6e7679dfc46bbc9634f4a35a029bd081442aa06ccf05002a87c1db03c8dc"
+    },
+    {
+      "p": 237,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "6c97c96ff552a0e1fde77ca642ec3ef56f56f9b4fc8e9da500d42fcfa2044544"
+    },
+    {
+      "p": 238,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "98523df37ae656fac728e6d657f87f11c62c56ddbf14cb43a2f13b8ceaa13424"
+    },
+    {
+      "p": 239,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "7db78ad16f2940460c2c3b532de7245745177068beedb51883a920508a71973c"
+    },
+    {
+      "p": 240,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "20e51576fcc453fba3fe9db37bd2b04d7f31c429b8f3f62232687d7d8a7c8cd3"
+    },
+    {
+      "p": 241,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "0261616e0c4eea89bb164d31a1c53376282051ec0cda7add927c4de7d7e4bf1b"
+    },
+    {
+      "p": 242,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "35cfaa37100c4f3e977a58ab8f516dc04fc106de6059e23f077ac194ac35dddc"
+    },
+    {
+      "p": 243,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "8b4ccf3ebd45c8bcf13b5d3285d2fd510398a6565ee926fa4e524a69d6ccd14a"
+    },
+    {
+      "p": 244,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "5a0ebf2ab0ffc07d2178c54b4338d2464ad01bf82be5423fe07076bb5e53093d"
+    },
+    {
+      "p": 245,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "a29943f4e59d20bcd67c277bfc453b8ab7471837178d17a5b684097b5bf0bc52"
+    },
+    {
+      "p": 246,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "408e0d7c472ac822bbe349333773c8812cd9d81810995107838fc7b9cf27a801"
+    },
+    {
+      "p": 247,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "bcb58cf66501aace4308ceafd2d73d53ed07e570da30f97a45d17ad7e51a1ec4"
+    },
+    {
+      "p": 248,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "e4b73e62de24ae3ca6a71d9f19375fad763172846697d820d1941b3ff986fb6b"
+    },
+    {
+      "p": 249,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "dfb32adace4a417dab1c0fe12e3c3dd9ca05e77c9dd8e33f45bc15e5f53f7791"
+    },
+    {
+      "p": 250,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "0372e9099591c31d10ec13a76099ab3abea51c999d2cbb314c35708641c2cdb6"
+    },
+    {
+      "p": 251,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d38d5c53254b5f969079e221aa7556e73a92c6d049a5fef0b0c5824e09b0bc16"
+    },
+    {
+      "p": 252,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "935d63287a23a7b547b497aa2c947a06a0845c7398fecced5c83c76296ec669b"
+    },
+    {
+      "p": 253,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "f20520cd7e216f7cb2b4fe03f924b5f06ee8327d2a6cf9b03cde335dd8f43182"
+    },
+    {
+      "p": 254,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "b2614900141499ef5e809f4a3fd4c6de3b49039241f12734806b3e0edcdfd553"
+    },
+    {
+      "p": 255,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d8e99f90470283fa4710ea699ae6e8d33843f61b566337f7f5e67331c3181394"
+    },
+    {
+      "p": 256,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "8ae4276d51e478554379c2173005b6a138e6e52c27a7195159f853137594fea9"
+    },
+    {
+      "p": 257,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "63ac44a098cf2de83de8e400ca05cdb9e04b793568e5e3b530d486f63ddf3ebf"
+    },
+    {
+      "p": 258,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "2f2151973d22d166d24f24a52b8e5af53e1640027ef5eecaeba125109014f453"
+    },
+    {
+      "p": 259,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "e01f64f13dc9c9ada32cb8b9f1c94f026f3ace9b43079c2f25cc3a6274f24f62"
+    },
+    {
+      "p": 260,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "50407ca958ce2e49b094bdc510f5486ad3ea03ba56216252715078eb6642261c"
+    },
+    {
+      "p": 261,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "9eee9c7545aecce3eaa79945eb5dae6a550793dec0f2f610326658e5a364efad"
+    },
+    {
+      "p": 262,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "3e66a7ca70ec4ca6795a96551ea8a9871b755e9249f43ba1b1f459ce152a0c3e"
+    },
+    {
+      "p": 263,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "8e65442f870d26e475b4cef3af6cc2f982d3fadbe8a8053cc3301b0867dc3181"
+    },
+    {
+      "p": 264,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "c586b80d45a6ce33e8214745e69033e5f9dd4df3d2a3f4b2b7d1f3e5b81e7b01"
+    },
+    {
+      "p": 265,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "2284e9a1ce561483548094370baff36450a363d4b1641e6970663736c86e867a"
+    },
+    {
+      "p": 266,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "778bd627e755ae4c7af8b4eb4f772fba4ce54a7b3dd1e79eda4c9e06a856787a"
+    },
+    {
+      "p": 267,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "1a16c6c2e25ed8d61f787173b25348a683eae7a417899509131d0e739294b3bc"
+    },
+    {
+      "p": 268,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "24d17a9c0dbf31970254e33bb1b66c675feea96bf558d04cc44b52e18c657f0e"
+    },
+    {
+      "p": 269,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "a09febe5a89ecea069310c4bb1358c98f07aba76d2d2e733afae71519a9f3ae4"
+    },
+    {
+      "p": 270,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "b8ca6dc85ba77d56381108ca135019d907abc9975f1e9dc0aff780b6e6a18301"
+    },
+    {
+      "p": 271,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d4d6ead373c345eddc598fe123dcbfbc9f0a19cc5135a0c9ec19ef6de7bebd78"
+    },
+    {
+      "p": 272,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "1742a4bb29be977e111f40c99b860c1e3ddd7c7ffa0ca51eb2fb71c2802addd0"
+    },
+    {
+      "p": 273,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "d099c1449d0a0f2e3fa72b5010747008a4c4cb08c157126055ffd8fdab15ee63"
+    },
+    {
+      "p": 274,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "dde9633d8588374d3eef95a2b864495d729f118e721e9d5c49901e2aa4a8ffaa"
+    },
+    {
+      "p": 275,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "a3c4221b255c7f613ef71efc2859f99b8edcb23e05e15e0cc2627900c162f3f4"
+    },
+    {
+      "p": 276,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "aacdc89fabc3108d3c1c5624dfdb67127def12dd49670f0f309732f00dc4e231"
+    },
+    {
+      "p": 277,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "8e6a05e4168103a6e085aa85d68f83515b669d12f2dd74ec6d541141193c3653"
+    },
+    {
+      "p": 278,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "b766cee1ceb74045cbc581ef27d71bc1712da6fcdda995777ac58559e72beb28"
+    },
+    {
+      "p": 279,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "fca2c2f3fdc111efb6816ce8f1b695de297576a1e005b25a4f3d865bfcbb8668"
+    },
+    {
+      "p": 280,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "954dfb6def2d46c52daf73ae5e3a0169d70fb2fd2a92837d3604c03dc8115c2a"
+    },
+    {
+      "p": 281,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "99463c1d23765f5af65a8433b1ce8c9121209bff2d048e74894b05f534f2f89d"
+    },
+    {
+      "p": 282,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "e2b78c8b4aa53a59d561a7c2f5ea772fc9b639604c81866d06905eeffa072cf0"
+    },
+    {
+      "p": 283,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "78810160655e80cd291e14bc5aadc23cd7f0fa5012a30df29606ad41d8dca96d"
+    },
+    {
+      "p": 284,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "2e29033cd24142586d7c7cbb6ea4ca2aab02b56ea36832a14f8eee583505905e"
+    },
+    {
+      "p": 285,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "8157cf824bc47ca5a31fae2c16f37a6dfdc8845a6016995fa309ec6e0879eff9"
+    },
+    {
+      "p": 286,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "9df355a306005d39da50370bb33b728dcb6a3e191248951e5a1ab4eeff15e39b"
+    },
+    {
+      "p": 287,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "ec93650eb65d5ccc81429316954e54134649a67e583883efef71dd2a1acae581"
+    },
+    {
+      "p": 288,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "110348117bbef0dd53429b7ec52b6e886b737602deed6c7ffe0996c9df8922e6"
+    },
+    {
+      "p": 289,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "e52c63971bab6cf063c708774888d18862e9753324b0b68cc87239e620290a3e"
+    },
+    {
+      "p": 290,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "fe28aaa8dc9e7c218c0f29014f41b3aa34466b46f79c3b0b7e209a4ea529884c"
+    },
+    {
+      "p": 291,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "401b09744b3dd8da19293dcdf1b11a8284f262edc180c37859ab9e9a6f9f597a"
+    },
+    {
+      "p": 292,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "a0743df0bae750ba69f7eeadac0395f8246fc6e06e9140a37efa841fb4c85286"
+    },
+    {
+      "p": 293,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "424da9d959c4875c010bdf38500f114623daed357affa4c34520b5862154ec39"
+    },
+    {
+      "p": 294,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "16cec20160a426fdaf76c547f3970403147f75c8a2f274c5ed49930b27d26aba"
+    },
+    {
+      "p": 295,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "9942c3ac34614992c93da7009f8c6b29ffed0ee1d8504f5c6cae20e2f2693abb"
+    },
+    {
+      "p": 296,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "389afb00425586dd1a6da07656c537242156895f965e028f01f674ad474bc711"
+    },
+    {
+      "p": 297,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "4e636b2cc65fe019e4e81da8812a2f003e12daaaed781f80043507bdfa9483c2"
+    },
+    {
+      "p": 298,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "8d0a8998f1079a6c17669e43ee94d9df821350557270c7106c3e68f847825451"
+    },
+    {
+      "p": 299,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "4802f912e27aac2caba353b010bb923a60660400e5d9cc35dc9c1570daa310bf"
+    },
+    {
+      "p": 300,
+      "obligations": {
+        "parameter_range": true,
+        "kernel_h_vector": true,
+        "kernel_stable_rank": true,
+        "a_h_numerator": true,
+        "beta_2_5_anchor": true,
+        "beta_3_6_anchor": true,
+        "row_three_support_end": true,
+        "row_four_support_start": true,
+        "row_four_support_end": true,
+        "penultimate_edge": true,
+        "terminal_edge": true
+      },
+      "row_hash": "0cedda8d3c74e8359bdadec8386f50ca922157bab5a179b8e3479289158e45f7"
+    }
+  ],
+  "proof_boundary": "The certificate checks Hilbert and Betti arithmetic. The intersection identity, Cohen-Macaulay kernel, regularity inequality, and minimal mapping cone are proved deductively in proof.md.",
+  "symbolic_aggregate": "58ab24887c79c3c075fdefea1f38ff2e1c1ef539490f7f52359149ed2bb1a4c8"
+}

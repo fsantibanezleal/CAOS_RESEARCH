@@ -105,9 +105,16 @@
 | 2026-08-20 | active | active | Zenodo draft `22031481` now passes exact metadata and one-file validation; the committed 741,461-byte PDF and server MD5 match, while publication remains pending |
 | 2026-08-20 | active | published | manuscript v0.19 is public and concept-latest at DOI `10.5281/zenodo.22031481`; a fresh unauthenticated download matches the committed PDF by MD5 and SHA-256 |
 | 2026-08-20 | published | published | PR #213 passed `guards` and `test` and merged EXP-032 plus v0.19 to `develop` at `0ded528`; PR #214 passed all required checks and promoted the exact tested state to `main` at `e04660e` |
+| 2026-08-22 | published | active | EXP-033 declared before implementation: decide `reg(P_p/Q_p)` and whether grading forces every cubic mapping-cone comparison map to vanish on Tor |
+| 2026-08-22 | active | confirmed | EXP-033 proves `depth(P_p/Q_p)=1`, `reg(P_p/Q_p)=2`, a minimal cubic mapping cone, and complete regularity-three/four Betti strands over every field |
+| 2026-08-22 | confirmed | active | HWB-053 opens the in-place main-manuscript v0.20 and Zenodo new-version gate; no publication is claimed before full artifact validation |
+| 2026-08-22 | active | published | 45-page manuscript v0.20 passed claim/build/render, sole-authorship, exact draft, and publication gates; DOI `10.5281/zenodo.22062161` is concept-latest and its fresh public PDF matches Git exactly |
+| 2026-08-22 | published | active | structure/content/template guards, Ruff, all 60 tests, full registry regeneration, and manifest/artifact consistency pass; HWB-054 opens separate-PR promotion to `develop` and then `main` |
 
-Current state: **EXP-032 is confirmed, manuscript v0.19 is published and fresh-download verified,
-and checked research promotion is complete under HWB-051; EXP-031 and manuscript v0.18 are
+Current state: **EXP-033 is confirmed; HWB-053 is done with manuscript v0.20 published and
+fresh-download verified at DOI `10.5281/zenodo.22062161`; HWB-054 is active for research PR
+promotion; EXP-032 and manuscript v0.19 remain published, fresh-download verified, and
+promoted under HWB-051; EXP-031 and manuscript v0.18 are
 published and promoted; HWB-048 remains active only for
 scoped management-ledger reconciliation because CAOS_MANAGE is occupied by unrelated staged
 work**. Put `c=2p-2` and `m=8p`. The complete cubic-colon quotient Betti polynomial is
@@ -118,8 +125,21 @@ lambda_(c,a)=c*binom(c,a)-binom(c,a+1)-binom(c,a-1).
 ```
 
 This gives every free-module rank and shift, projective dimension `10p-2`, and regularity two
-over every field. It does not construct differential matrices and does not determine the full
-resolution of `C_p`. For
+over every field. EXP-033 now proves that `A_p=P_p/Q_p` has depth one and regularity two, so the
+cubic mapping cone is minimal:
+
+```text
+B_(C_p)(x,z)=B_(A_p)(x,z)+x z^3 B_(D_p)(x,z).
+```
+
+Thus the complete regularity-three/four strands are
+
+```text
+beta_(i,i+3)=sum_a lambda_(c,a)binom(m,i-1-a),
+beta_(i,i+4)=binom(m,i-1-c).
+```
+
+The two lower strands of `A_p`, and hence the full resolution of `C_p`, remain open. For
 `H_p={a in G_p:a>=6p}`, integral relative homology has the
 free pair basis
 

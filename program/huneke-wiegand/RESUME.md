@@ -1,6 +1,33 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-20. Lifecycle: EXP-032 is CONFIRMED for the complete graded Betti polynomial and
+Updated: 2026-08-22. Lifecycle: EXP-033 is CONFIRMED. It proves that the quadratic quotient
+`A_p=P_p/Q_p` has depth one and regularity two, so the entire cubic mapping cone is minimal over
+every field:
+
+```text
+B_(C_p)(x,z)=B_(A_p)(x,z)+x z^3 B_(D_p)(x,z).
+```
+
+With `c=2p-2`, `m=8p`, and the EXP-032 ranks `lambda_(c,a)`, the complete new strands are
+
+```text
+beta_(i,i+3)=sum_(a=1)^(c-1)lambda_(c,a)binom(m,i-1-a),
+beta_(i,i+4)=binom(m,i-1-c).
+```
+
+Canonical exact arithmetic passes all `p=4,...,300` in 15.159 seconds; the independent
+coefficient/structural audit and symbolic route pass. Three budget stops at `p=102,209,267` are
+preserved as non-evidence. HWB-052 and HWB-053 are done. The 45-page manuscript v0.20 passed
+claim, two clean builds, all-page render inspection, sole-authorship, repository, upload,
+publication, concept-latest, and fresh-download gates. It is public at DOI
+`10.5281/zenodo.22062161`; the 774,246-byte public PDF matches MD5
+`69f45597e879afc8fd91ca4157fb2cf3` and SHA-256
+`163a3a2fc6a5d61b6ff97e3ed1089dc3b6e9b320aa9c68ed67d2f1155362d743` exactly. HWB-054 is active
+for PR promotion. The remaining mathematical
+frontier is the two lower strands of `A_p` via `0 -> K_p -> A_p -> D_p -> 0`; the cubic comparison
+maps are no longer unknown.
+
+EXP-032 remains CONFIRMED for the complete graded Betti polynomial and
 free-module shape of the cubic-colon quotient. The 43-page v0.19 passed claim, two-pass build,
 all-page render, metadata, sole-authorship, tests, pipeline, artifact, upload, publication, and
 fresh-download gates. It is public and concept-latest at DOI `10.5281/zenodo.22031481`; HWB-050
@@ -147,7 +174,9 @@ Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
 20. the integral zero-vertex contraction, degree-seven vanishing, and complete third homological
     row over every field (EXP-031); and
 21. the complete graded Betti polynomial and free-module shape of the cubic-colon quotient over
-    every field (EXP-032).
+    every field (EXP-032); and
+22. the depth-one regularity-two quadratic quotient, minimal cubic mapping cone, and complete
+    regularity-three/four strands over every field (EXP-033).
 
 The public seed is
 
@@ -173,6 +202,8 @@ I = (t^56,t^70)R.
 | `J_p` | defining ideal of `C_p` in its `10p` degree-one variables | EXP-022/023 theorems |
 | `Q_p` | quadratic part of `J_p`, with `J_p=(Q_p,f_p)` and `f_p=X_0^2X_(3p)-X_p^3` | EXP-023/027 theorems |
 | `D_p` | cubic-colon quotient `P_p/(Q_p:f_p)`, the canonical idealization of the `p`th Veronese rational normal curve ring | EXP-030 theorem |
+| `A_p` | quadratic quotient `P_p/Q_p`, depth one and regularity two | EXP-033 theorem |
+| `K_p` | high-variable kernel in `0 -> K_p -> A_p -> D_p -> 0`, with Hilbert numerator `8p z+10p z^2` | EXP-033 theorem |
 | minimum layer | all normalized rigid pairs at the least Frobenius value 181 | EXP-005/007 |
 
 ## 2a. Infinite family theorem
@@ -243,6 +274,7 @@ campaign is supporting evidence, not the proof.
 | EXP-030 | CONFIRMED | canonical-idealization colon, exact support, and `beta_(3,6)=8p(7p^2-12p+2)/3` over every field |
 | EXP-031 | CONFIRMED | integral zero-vertex matching and signed unit filler block give `beta_(3,7)=0` and complete the third row over every field |
 | EXP-032 | CONFIRMED | complete graded Betti polynomial and free-module ranks/shifts of the cubic-colon quotient; explicit differentials and the full `C_p` resolution remain open |
+| EXP-033 | CONFIRMED | `depth(P_p/Q_p)=1`, `reg(P_p/Q_p)=2`, a minimal cubic mapping cone, and complete regularity-three/four strands over every field |
 
 ## 3a. Exact evidence anchors
 
@@ -295,8 +327,37 @@ campaign is supporting evidence, not the proof.
   `907438b249b98ca9ffef689b7edb9574cdb0044cc3dd4cb52de523129f7d37ee`,
   `43635c8497dfe57904997326e983c7477e7320809cb2fee661c7933041f47b09`, and
   `f696390447a3ce20397d937aa73baebf23a3c5ae249d4ad1215ff48cb710a2ae`.
+- EXP-033 canonical campaign, independent audit, and symbolic aggregates:
+  `67bff9217c89f212916220e858ef5168abe2d64cdbd789488e0ce5f49204092a`,
+  `6593291efaf092333bc42972c2f05712a151efb46f3f52ed9d28afd329585a4c`, and
+  `58ab24887c79c3c075fdefea1f38ff2e1c1ef539490f7f52359149ed2bb1a4c8`.
 
 ## 4. In flight
+
+EXP-033 is CONFIRMED. Put `A_p=P_p/Q_p`. The colon intersection and pullback give
+
+```text
+Q_p=(Q_p,f_p) intersect (Q_p:f_p),
+0 -> K_p -> A_p -> D_p -> 0,
+H_(K_p)(z)=(8p z+10p z^2)/(1-z).
+```
+
+The EXP-026 regular element `X_0` makes `K_p` one-dimensional Cohen--Macaulay of regularity two.
+Depth, Auslander--Buchsbaum, and the terminal Hilbert coefficient then give
+
+```text
+depth(A_p)=1,   pd(A_p)=10p-1,   reg(A_p)=2,
+beta_(10p-1,10p+1)(A_p)=10p.
+```
+
+The cubic shift separates all comparison-map source and target degrees, proving
+`B_C=B_A+x z^3 B_D`. Thus both regularity-three/four strands have the complete formulas at the
+top of this handoff. HWB-053 is complete: manuscript v0.20 is published and fresh-download
+verified at DOI `10.5281/zenodo.22062161`. Structure/content/template guards, Ruff, all 60 tests,
+the full registry pipeline, and manifest/artifact consistency pass. The pipeline reconciles four
+previously unbaked records, including EXP-033. HWB-054 is active for separate-PR promotion. The
+next mathematical route after delivery is the two lower strands of `A_p` through the same `K_p`
+extension.
 
 EXP-030 is CONFIRMED. Put
 
