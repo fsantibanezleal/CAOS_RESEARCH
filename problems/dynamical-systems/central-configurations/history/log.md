@@ -681,3 +681,23 @@
   * the covering was built (matrix assembled generically from the six
     positions, crosschecked 5/5 against the independent mpmath
     derivation) and launched.
+
+## 2026-08-20 (round 40): the (0,3) stratum's face structure is COMPLETE
+
+- Merge chart built and verified: the merge is TWO simultaneous collisions
+  (mirror-forced), row orders match tube.py's pattern exactly, both
+  singular factors cleared algebraically, crosscheck 5/5, and the MERGE
+  FACE certifies rank 3 at 40/40. The S3 symmetry makes this one chart
+  cover both merge types (re-gauging to the third pair turns "A and B
+  merge" into "the other two merge").
+- NO REGION AT INFINITY: the outer region rescales onto the all-narrow
+  (near-collinear) region, which is a collapse region. Measured full rank
+  there, sigma_3 = 2.0 flat over four orders of magnitude.
+- The (0,3) face inventory is now complete and EVERY entry is full rank:
+  pair collapse 27/27, pair-pair merge 40/40, all-narrow flat at 2.0.
+  This stratum needs NO face lemma and NO chart at infinity, against the
+  (2,2) stratum's three lemmas plus inverted charts. The whole difference
+  is the absence of axis-body mass columns.
+- Fleet: twelve coverings running across both strata, all zero failures
+  (the four pending (2,2) charts were rerun on request; cb1 and cb1f now
+  use the tighter intersected evaluation).
