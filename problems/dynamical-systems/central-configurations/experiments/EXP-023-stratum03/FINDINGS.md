@@ -360,3 +360,33 @@ opens between 6570 and 14179 unclaimed configurations.
 So the (0,3) stratum now has a COMPACT atlas whose covering property is
 verified, replacing the pair of charts that were ping-ponging their
 residues across arbitrary boundaries.
+
+## 17. The compact atlas is running clean, faces included (2026-08-20)
+
+All five interior charts and all three collapse face charts are covering
+with ZERO failures:
+
+    U1 (cover.py)   157056 boxes    0 failures
+    U2               19184          0
+    U3               25972          0
+    V2               17574          0
+    V3               17621          0
+    collapse0          728          0
+    collapse1         9469          0
+    collapse2        10767          0
+
+The collapse charts are the compact-gauge rebuild of the face treatment.
+Each crosschecks 5/5 against the interior chart by the exact rescaling,
+and each FACE certifies rank 3 on its own: 30 of 30, 24 of 24, 24 of 24.
+Their discard keeps only the collar of the pair that is collapsing and
+hands every other collision to the chart that owns it.
+
+That is a complete turnaround from the previous gauge, where two charts
+between them produced forty thousand failures and handed each other
+residues neither covered. The difference is entirely the gauge: bounded
+ranges with geometric boundaries instead of arbitrary truncations of an
+unbounded region.
+
+REMAINING for this stratum: the merge face charts in the compact gauge
+(three of them, one per pair of pairs), then the residue and artifact
+gates over the whole atlas.
