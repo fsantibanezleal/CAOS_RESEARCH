@@ -972,3 +972,54 @@ The honest statement of the piece is therefore: **the merge face of the
 on it, with `E` given in closed form above.** Whether the rank-2 surface of
 the face is approached by genuine rank-2 points at positive `rho` is a
 separate question, and it is the one the covering answers box by box.
+
+### Piece 13, addendum: what happens ON the surface E = 0 (2026-08-23)
+
+The obvious worry about a vanishing floor is that it might mark real
+rank-2 points at positive separation. It does not. Expanding the cleared
+entry,
+
+    row(2,4) col0 (rho) = E(tau, wu, wv) + c(tau, wu, wv) rho^2 + O(rho^4)
+
+and on the surface `E = 0` the measured order in `rho` is exactly `+2` at
+every point tested, with `c` well away from zero:
+
+| face point | tau* (root of E) | c |
+|---|---|---|
+| w = (0.97, +0.99) | -1.006480704 | -0.1036 |
+| w = (0.50, +0.25) | -1.576736889 | +0.7712 |
+| w = (0.20, -0.70) | -0.579908718 | -0.3611 |
+| w = (0.75, +0.40) | -0.550529097 | +0.6334 |
+
+So the entry is NONZERO at every positive `rho` on the surface, and rank 3
+is restored the moment the pairs separate. The rank-2 behaviour lives
+strictly at `rho = 0`, which is a quadruple collision and not a
+configuration.
+
+Confirmed from the other side: at an `E = 0` point neither certificate
+fires on a thin box AT the face -- not the rank-3 test and not the trap --
+which is the correct answer, because the cleared matrix really does have
+rank 2 there. Bisection cannot help and was never going to.
+
+### What remains for this face, stated precisely
+
+The covering needs a FINITE cover of the punctured collar `rho in (0, r]`.
+Everywhere `E` is bounded away from zero, one box containing the face does
+it, by continuity from the face. On the neighbourhood of `{E = 0}` it does
+not, and there are two honest routes:
+
+  1. A BLOW-UP SUB-CHART. The expansion above specifies it completely:
+     introduce `sigma` with `E = sigma rho^2` and divide the fixed pair's
+     mass column by `rho^2`. The entry becomes `sigma + c + O(rho^2)`,
+     finite and generically nonzero, and the face is then an ordinary
+     analytic boundary of that chart rather than a degenerate one.
+  2. The SINGULAR-SEQUENCE route. Near the merge face the configuration
+     limits to a five-body configuration whose merged pair carries the
+     total mass, and finiteness for five bodies is known (Hampton-Moeckel
+     2006). Ruling out accumulation on the face then becomes an instance
+     of the Albouy-Kaloshin machinery rather than a covering question.
+
+Route 1 is self-contained and stays inside this campaign's instrument;
+route 2 imports a known theorem. Neither is done, and this is the (0,3)
+stratum's remaining open item. It does NOT affect the (2,2) stratum, whose
+merge faces are closed by piece 12 with floors bounded away from zero.
