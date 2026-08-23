@@ -258,14 +258,39 @@ Only when those close does the chain complete, and then the statement
 wording goes to Felipe FIRST, per the standing rule, before any manuscript
 or Zenodo step.
 
-## 7. The statement being assembled (draft, NOT yet to be recorded elsewhere)
+## 7. The statement being assembled (draft, WITHDRAWN 2026-08-23)
 
-For the two-pair reflection-symmetric stratum of the planar six-body
-problem - two bodies on the symmetry axis, two mirror pairs at distinct
-heights, no collisions - the pair masses are forced equal by the
-Laura-Andoyer equations, and for all mass vectors (m1, m2, mA, mB) outside
-a proper closed subset the number of such central configurations, counted
-in the gauge, is finite. The centered regular pentagon (bodies 1, 3, 4, 5,
-6 on a circle centered at body 2, exact rank 2, kernel = free central mass
-plus equal ring masses) is the sharp degenerate point: it is where the
-rank-2 locus attains the dimension the chain allows.
+The draft below is kept for the record and is NOT to be used. It names the
+centred regular pentagon as the sharp degenerate point of the stratum, and
+that is false as written: a second exact rank-2 point with an admissible
+mass ray was found on the face v = q = 0 (the cross point, see the
+dossier). The cross point lies on a face the stratum's declaration
+excludes from the interior, so a statement about the OPEN stratum may
+still stand, but the uniqueness wording does not and the whole sentence
+has to be rebuilt.
+
+WITHDRAWN DRAFT, for the record only:
+
+> For the two-pair reflection-symmetric stratum of the planar six-body
+> problem - two bodies on the symmetry axis, two mirror pairs at distinct
+> heights, no collisions - the pair masses are forced equal by the
+> Laura-Andoyer equations, and for all mass vectors (m1, m2, mA, mB)
+> outside a proper closed subset the number of such central
+> configurations, counted in the gauge, is finite. The centered regular
+> pentagon (bodies 1, 3, 4, 5, 6 on a circle centered at body 2, exact
+> rank 2, kernel = free central mass plus equal ring masses) is the sharp
+> degenerate point: it is where the rank-2 locus attains the dimension the
+> chain allows.
+
+What has to be settled before a statement is drafted again:
+
+  1. whether the cross point is the ONLY degenerate point on the closure
+     of the stratum, or only the only one on the cross face (the census
+     covered the cross face alone, in a bounded window);
+  2. whether the open stratum -- pairs at strictly distinct heights --
+     contains any degenerate point besides the centred pentagon;
+  3. whether the cross point is known in the literature. It has not been
+     checked and must not be presented as new.
+
+Per the standing rule, no statement wording goes anywhere until Felipe
+sees it first, and there is now nothing ready to show.

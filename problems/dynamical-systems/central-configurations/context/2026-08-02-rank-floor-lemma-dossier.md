@@ -1023,3 +1023,104 @@ Route 1 is self-contained and stays inside this campaign's instrument;
 route 2 imports a known theorem. Neither is done, and this is the (0,3)
 stratum's remaining open item. It does NOT affect the (2,2) stratum, whose
 merge faces are closed by piece 12 with floors bounded away from zero.
+
+## THE CROSS POINT: a degenerate central configuration on the face v = q = 0
+
+Found 2026-08-23 by following band's covering residue rather than
+dismissing it. This is the first time in the campaign that a residue
+turned out to be MATHEMATICS rather than resolution.
+
+### How it was found
+
+band's 44 residual boxes, and the 6 that survived a further 44 halvings,
+all sit at `v = q = 0` with `u` near `0.63092` and `p` near `1.45090`.
+`v = q = 0` puts both mirror pairs at height zero, so all four pair bodies
+lie on one horizontal line while the two axis bodies sit at `(0, +-1)`:
+the doubly symmetric CROSS.
+
+Two structural facts about that face:
+
+  * `sigma_4` vanishes IDENTICALLY on it (measured `1e-51` at every
+    sample), so the rank there is at most 3 everywhere;
+  * `sigma_3` is generically nonzero, so the rank is exactly 3 and each
+    point of the face determines a UNIQUE mass ray. Scanning the face,
+    that ray is all-positive on a substantial region, so the cross face
+    carries a two-parameter family of central configurations.
+
+band's residue is where `sigma_3` collapses too.
+
+### The point
+
+    u* = 0.6309181371067367971679885968642467138842
+    p* = 1.450907465908073057191660806806502905941
+
+with bodies at `(0, +-1)`, `(+-u*, 0)`, `(+-p*, 0)`. Smallest mutual
+distance `0.81999`, largest `2.90181`: no collisions.
+
+`sigma_3/sigma_1 = 3.6e-33` on the reduced 6x4 matrix, with `sigma_3`
+falling in exact proportion to the search bracket across thirteen orders
+of magnitude, which is linear vanishing and therefore a genuine zero.
+
+### Independent confirmation, with controls
+
+Symmetry forces `m1 = m2` and the centre of mass at the origin, so the
+central-configuration equations collapse to three scalar conditions, each
+LINEAR in `(m1, mA, mB, lambda)`: a 3 x 4 system built from scratch with
+no Laura-Andoyer reduction and no shared code with the covering.
+
+| point | sigma_3/sigma_1 | rank |
+|---|---|---|
+| (u*, p*) | 8.6e-34 | 2 |
+| (u* + 0.01, p*) | 8.55e-3 | 3 |
+| (u*, p* + 0.01) | 6.64e-3 | 3 |
+| (u* - 0.05, p* + 0.03) | 5.81e-2 | 3 |
+
+The controls fire. Rank 2 leaves a TWO-dimensional kernel, and its
+intersection with the positive orthant is an arc of width `1.2008` rad in
+which `m1`, `mA`, `mB` AND `lambda` are all positive. Sample points along
+the arc satisfy the equations with residuals `5e-34` to `2.4e-33`:
+
+| position on the arc | m1 | mA | mB | lambda |
+|---|---|---|---|---|
+| 0.10 | 0.2937914330 | 0.7502971514 | 0.0513858746 | 1 |
+| 0.33 | 0.5840123251 | 0.6519187038 | 0.1785227013 | 1 |
+| 0.50 | 0.8307850530 | 0.5682682206 | 0.2866262266 | 1 |
+| 0.67 | 1 | 0.3992510142 | 0.3709116522 | 0.8686210856 |
+| 0.90 | 1 | 0.1070110526 | 0.3974970560 | 0.5247632216 |
+
+So a SINGLE configuration is central for a one-parameter family of
+positive mass vectors. That is a degenerate central configuration.
+
+### Why it is isolated, and how many there are
+
+Rank `<= 2` for a 3 x 4 matrix is codimension `(3-2)(4-2) = 2`, and the
+cross face is 2-dimensional, so degenerate cross configurations are
+ISOLATED points. A census over the face -- a 5607-point grid on
+`sigma_3/sigma_1`, a local descent from each of the 7 basins, then an
+admissibility check -- finds exactly ONE, and four separate basins all
+converge to it. The other basins bottom out at `6.6e-4` and `2.1e-2`, not
+rank 2. Sweep window: `u` up to about 2.97, `p` up to about 3.63.
+
+### What it changes
+
+  1. band's residue is EXPLAINED, and the covering was right to refuse a
+     certificate there. A rank-3 certificate cannot exist at a rank-2
+     point.
+  2. The dimension count is NOT violated. The requirement is
+     `dim R_2 <= 2`, and an isolated point has dimension 0.
+  3. The draft statement in the assembly is WRONG as written. It called
+     the centred pentagon "the sharp degenerate point" of the stratum.
+     The cross point is a second rank-2 point with an admissible mass
+     ray. It lies on the face `v = q`, which the stratum's declaration
+     excludes from the interior, so the statement about the OPEN stratum
+     may survive; but the wording that names the pentagon as the unique
+     degenerate point does not, and the statement must be rewritten
+     before it goes anywhere.
+
+### UNVERIFIED
+
+Whether this configuration is new is NOT established. Degenerate central
+configurations are exactly the obstruction Smale's sixth problem is about,
+and symmetric six-body examples have been studied. No literature check has
+been run. Nothing here should be presented as a new configuration until
+one is.
