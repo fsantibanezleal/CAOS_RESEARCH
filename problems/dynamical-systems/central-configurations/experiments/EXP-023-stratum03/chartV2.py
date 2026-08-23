@@ -128,7 +128,13 @@ def crosscheck():
     return ok == 5
 
 def discard(box):
-    return False
+    """chartV2's coordinates are (u1, u2, u3, v3) with v1 = 0 and v2 = 1."""
+    u1b, u2b, u3b, v3b = box
+    return cov.collision_discard([
+        (u1b[0], u1b[1], F(0), F(0)),
+        (u2b[0], u2b[1], F(1), F(1)),
+        (u3b[0], u3b[1], v3b[0], v3b[1]),
+    ])
 
 def main():
     seed = ((F(0), F(1)), (F(0), F(1)), (F(0), F(1)), (F(-1), F(1)))

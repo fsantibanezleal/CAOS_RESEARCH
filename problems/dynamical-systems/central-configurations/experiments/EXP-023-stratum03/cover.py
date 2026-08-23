@@ -172,6 +172,36 @@ def trap(eiv, edv, box):
                                 "minor2": str(top[j][0]), "grad_cols": [a, b]}
     return None
 
+
+def collision_discard(uvs, sixt=F(1, 16)):
+    """Shared discard for every compact chart.
+
+    uvs is [(u_lo,u_hi,v_lo,v_hi)] x 3, one entry per pair, in the chart's
+    own coordinates. A box is discarded when it lies ENTIRELY inside a
+    collision neighbourhood, which is what the face charts own:
+
+      * a pair collapsing onto the axis:  u_i < sixt throughout
+      * two pairs merging:                |u_i - u_j| < sixt AND
+                                          |v_i - v_j| < sixt throughout
+
+    Containment, not overlap: an overlap test discards whole seeds (a bug
+    this campaign hit once already).
+    """
+    for (ulo, uhi, vlo, vhi) in uvs:
+        if uhi < sixt:
+            return True
+    for a in range(3):
+        for b in range(a + 1, 3):
+            ua_lo, ua_hi, va_lo, va_hi = uvs[a]
+            ub_lo, ub_hi, vb_lo, vb_hi = uvs[b]
+            du_hi = ua_hi - ub_lo
+            du_lo = ua_lo - ub_hi
+            dv_hi = va_hi - vb_lo
+            dv_lo = va_lo - vb_hi
+            if du_hi < sixt and du_lo > -sixt and dv_hi < sixt and dv_lo > -sixt:
+                return True
+    return False
+
 SIXT = F(1, 16)
 VMAX = F(1)   # compact gauge: max coordinate = 1, so |v| <= 1
 
