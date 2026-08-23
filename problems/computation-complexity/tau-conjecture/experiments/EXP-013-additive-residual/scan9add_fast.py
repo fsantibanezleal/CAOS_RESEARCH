@@ -143,6 +143,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--regress", type=int, nargs="*")
     ap.add_argument("--nproc", type=int, default=20)
+    ap.add_argument("--shard", type=int, default=-1)
+    ap.add_argument("--nshards", type=int, default=0)
     a = ap.parse_args()
     if a.regress:
         ok = True
@@ -162,6 +164,17 @@ def main():
         log("REGRESSION: " + ("PASS" if ok else "FAIL"))
         return 0 if ok else 1
     parts = list(range(256))
+    if a.nshards:
+        # Independent shard mode: no multiprocessing, no pipe handles.
+        # Robust under Task Scheduler (Pool spawn hits WinError 5 there).
+        mine = [p for p in parts if p % a.nshards == a.shard]
+        log(f"shard {a.shard}/{a.nshards}: {len(mine)} partitions")
+        for p in mine:
+            t0 = time.time()
+            worker((p, 7, "final"))
+            log(f"  shard {a.shard}: part {p} done in {time.time()-t0:.0f}s")
+        log(f"shard {a.shard} COMPLETE")
+        return 0
     done = 0
     with Pool(processes=a.nproc) as pool:
         for _ in pool.imap_unordered(worker, [(p, 7, "final") for p in parts]):

@@ -87,3 +87,26 @@ append-target log is still held open by another process (a `tail -f`
 monitor or a killed run), which presents as a scheduled task going
 straight to "Ready" with no output; use a fresh log name when swapping
 engines.
+
+## Launcher engineering (2026-08-23): three Windows failure modes, all diagnosed
+
+Getting a 20-way parallel scan to run detached on this machine took three
+fixes, recorded so the program does not rediscover them:
+
+1. `multiprocessing.Pool` under the Task Scheduler dies with
+   `PermissionError: [WinError 5]` when a spawned child tries to
+   duplicate the parent's pipe handle. Fix: SHARD mode: 20 independent
+   single-process runs (`--shard k --nshards 20`), each taking the
+   partitions with p mod 20 == k. No pipes, no handle duplication.
+2. `start "..." prog >> log` inside a batch file applies the redirection
+   to `start`, not to the child, and the children then hang without a
+   usable console. Fix: one batch file per shard, redirecting directly.
+3. A batch launcher fails instantly if its append-target log is still
+   held open by another process (a `tail -f` monitor, or a killed run);
+   the symptom is a scheduled task that jumps straight to "Ready" with
+   no output at all. Fix: fresh log names when swapping engines.
+
+Also note: twenty shards each load the 69 MB polynomial catalog at
+startup, so the first minutes show processes with ~0 CPU while they read
+from disk. That is not a hang; the per-shard logs appear once loading
+finishes.
