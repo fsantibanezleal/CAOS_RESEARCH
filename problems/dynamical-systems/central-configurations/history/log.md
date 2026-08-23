@@ -727,3 +727,53 @@
 - Records hygiene: CC-F54 was DROPPED by a parallel session merge that
   touched the same anchor; detected by grepping the pushed file rather
   than trusting the commit graph, and restored deliberately with a note.
+
+## Round 52 (2026-08-23): the residues are resolution, not mathematics
+
+- The mergeBC residue was diagnosed to the merge FACE, not to any interior
+  point: all 977 failures touch rho = 0 and NONE fails at positive rho.
+  The trap fires unchanged on every shell from rho = 2.4e-7 down to
+  7.5e-9, so the punctured collar is covered.
+- LEMMA PIECE 13. Measuring the vanishing order of each row shows the
+  chart's clearing is correct (the merging row really does vanish to order
+  exactly 2) but that it crushes the fixed pair's mass column to zero in
+  five of six rows. One entry, row (2,4) column 0, carries the whole
+  rank-3 certificate, and it has a closed form:
+  E = -(3/2) sum_k sin(2 phi_k)/|g_k|^3, with phi_k the angle from the
+  merge direction to the fixed pair's bodies. Validated against the chart
+  to 2.5e-12 relative at five points.
+- Unlike pieces 10, 11 and 12, this floor is NOT bounded below: E changes
+  sign three times along every line scanned in tau, so E = 0 is a surface
+  inside the face, and the residue sits on it (E = 1.7e-5 against
+  row-mates of 3.2e-3, matching the sigma_3 = 4.4e-3 measured
+  independently on the raw matrix). That costs the cheap one-box closure,
+  not the mathematics; mergeBC's depth cap went from 80 to 120.
+- THE FAMILY. Only (0,3) among the reflection-symmetric strata of n = 6
+  has an interior collinear locus. (6,0) is the collinear case itself;
+  in (4,1) and (2,2) collinearity always forces a collision, on the axis
+  or on a perpendicular line. That is why the (2,2) covering never met the
+  degeneracy.
+- CORRECTION to finding 21. It said the dimension count FAILS on the
+  collinear locus. That is right about the L-equations and wrong about the
+  geometry: those equations are vacuous there, so they measure nothing. By
+  Moulton every collinear shape is central for exactly one positive mass
+  ray, verified here on an exhibited collision-free witness (rank 6 of 7,
+  mass ray (0.288, 0.054, 0.236), all positive and mirror-symmetric). The
+  central configurations on the locus form a set of dimension 2, which
+  MEETS the bound rather than breaking it, as the centred pentagon does in
+  (2,2).
+- THE RESIDUE MEASUREMENT that reframes the whole (2,2) atlas: for every
+  chart with any failures, the failures share EXACTLY ONE box width, the
+  width the seed reaches at the depth cap. Not one residue in the atlas
+  failed before the cap. Fifteen charts are at exactly zero; cb1 (5) and
+  cb1f (2) are entirely face-touching and closed by piece 10; m2-L/R cover
+  a region the collapse chart covers at zero. fa2b's 200 boxes tile a
+  curve at ratio r = 0.9375, a dyadic value, so it is the bisection grid
+  crossing the locus and not a feature of it.
+- Residue re-runs were built for fa2b (depth 76) and band (depth 88 via a
+  depth-0 reseed), each writing to a separate artifact so the original
+  runs stay on the record. fa2b-residue is at 313 processed with ZERO
+  failures.
+- Process hygiene: three mergeBC processes were found running against one
+  artifact. pkill does not reach these Windows processes; they were killed
+  by PID through CIM and a single clean run relaunched.
