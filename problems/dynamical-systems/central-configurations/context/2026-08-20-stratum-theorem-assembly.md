@@ -248,15 +248,41 @@ chart also covers at zero failures. The one genuinely open item is fa2b,
 whose 200 boxes tile a curve at ratio r = 0.9375 -- a dyadic value, i.e.
 where the chart's bisection grid crosses, not a feature of any locus.
 
-### 6c. What remains before the chain is complete
+### 6c. Resolution of the two open residues (2026-08-23)
 
-  1. fa2b's residue re-run at depth 76 must discharge (in flight).
-  2. band's 44 must be re-run the same way.
-  3. The residue and artifact gates must be re-run over the final set.
+BOTH are now settled, and they came out differently.
 
-Only when those close does the chain complete, and then the statement
-wording goes to Felipe FIRST, per the standing rule, before any manuscript
-or Zenodo step.
+fa2b: the residue re-run at depth 76 finished `ok = True` with 1544 boxes
+processed and ZERO failures. The whole 200-box residue discharged, so it
+was purely a depth-cap artifact exactly as the box-width measurement
+predicted. fa2b is complete.
+
+band: the residue does NOT discharge, and it should not. Following it
+found an exact rank-2 point on the face `v = q = 0` -- the CROSS POINT --
+with a two-dimensional kernel meeting the positive orthant, i.e. a
+degenerate central configuration. A rank-3 certificate cannot exist at a
+rank-2 point, so the covering was right to refuse one. This is the first
+residue in the campaign that turned out to be mathematics rather than
+resolution. See the dossier section "THE CROSS POINT".
+
+So every residue in the atlas is now accounted for:
+
+| residue | disposition |
+|---|---|
+| 15 charts | zero failures |
+| fa2b (200) | DISCHARGED at depth 76, zero failures |
+| cb1 (5), cb1f (2) | entirely face-touching, closed by piece 10 |
+| m2-L, m2-R | region covered by the collapse chart at zero |
+| band (44) | the CROSS POINT, a genuine rank-2 degenerate configuration |
+| fa2, m1vert-N | retired and superseded |
+
+### 6d. What remains
+
+The covering side is closed. What is NOT closed is the STATEMENT, because
+the cross point falsifies the draft's uniqueness clause. Section 7 records
+the withdrawal and the three questions that have to be settled before any
+statement is drafted again. Nothing goes to Felipe as a statement until
+those are answered, and nothing goes anywhere else at all.
 
 ## 7. The statement being assembled (draft, WITHDRAWN 2026-08-23)
 

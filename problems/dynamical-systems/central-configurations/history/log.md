@@ -777,3 +777,44 @@
 - Process hygiene: three mergeBC processes were found running against one
   artifact. pkill does not reach these Windows processes; they were killed
   by PID through CIM and a single clean run relaunched.
+
+## Round 53 (2026-08-23): a residue that was mathematics
+
+- fa2b's residue re-run at depth 76 finished ok=True, 1544 boxes, ZERO
+  failures. Its whole 200-box residue was a depth-cap artifact, exactly as
+  the box-width measurement predicted.
+- band's residue did NOT discharge, and following it produced the
+  campaign's first residue that is mathematics rather than resolution.
+- THE CROSS POINT. All of band's failures sit at v = q = 0, both mirror
+  pairs at height zero, so the six bodies form a doubly symmetric cross.
+  On that face sigma_4 vanishes identically (1e-51 everywhere), so the
+  rank is 3 and each point determines a unique mass ray, positive over a
+  substantial region: the cross face carries a two-parameter family of
+  central configurations. band's residue is where sigma_3 collapses too.
+- At u = 0.6309181371067367971679885968642467138842 and
+  p = 1.450907465908073057191660806806502905941 the rank is EXACTLY 2.
+  sigma_3 falls in exact proportion to the search bracket over thirteen
+  orders of magnitude, which is linear vanishing, not a plateau. The three
+  earlier near-misses all plateaued; this one does not.
+- Confirmed independently by a 3 x 4 linear system in (m1, mA, mB, lambda)
+  built from scratch, no Laura-Andoyer reduction and no shared code:
+  sigma_3/sigma_1 = 8.6e-34 against controls at 8.6e-3, 6.6e-3 and 5.8e-2.
+  The two-dimensional kernel meets the positive orthant in an arc of width
+  1.2 rad, residuals 5e-34 to 2.4e-33. One configuration, a one-parameter
+  family of positive masses: a DEGENERATE central configuration. No
+  collisions, smallest mutual distance 0.82.
+- Rank <= 2 for a 3 x 4 matrix is codimension 2 and the face is
+  2-dimensional, so these points are isolated. A census over the face
+  (5607 grid points, 7 basins) finds exactly ONE, with four basins
+  converging to it.
+- CONSEQUENCE. The dimension count is untouched, since an isolated point
+  has dimension 0. But the draft statement named the centred pentagon as
+  THE sharp degenerate point of the stratum, and that is false as written.
+  The draft is WITHDRAWN rather than patched, and section 7 now records
+  the three questions that must be answered before another is drafted.
+- UNVERIFIED and flagged as such: whether this configuration is known.
+  No literature check has been run and it must not be presented as new.
+- A methodological note worth keeping: this was found by re-seeding a
+  covering with ONLY its failing boxes at a deeper cap, which costs 200
+  boxes instead of the 1.3 million the chart had already certified. The
+  same driver discharged fa2b and exposed band.
