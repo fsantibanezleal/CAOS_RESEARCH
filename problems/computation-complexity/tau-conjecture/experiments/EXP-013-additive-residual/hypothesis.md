@@ -65,3 +65,25 @@ is weaker than the depth-8 theorem, which is unconditional.
 1,048,460,912-state frontier. Resumable per partition; runs under the
 Windows Task Scheduler so it survives session teardown. Starts at 8
 workers alongside EXP-012 and moves to 20 when that finishes.
+
+## Engine upgrade (2026-08-23), validated by exact regression
+
+The per-state engine was numpy-overhead bound (~700 states/s), projecting
+~35 h even at 20 workers. A BATCHED engine (`scan9add_fast.py`, 48 states
+per tensor operation, identical mathematics, filter, zero-exclusion and
+exact promotion) replaces it. It was not allowed to contribute a single
+new result until it reproduced already-completed partitions EXACTLY:
+
+    part 0: ref(states=4095733, hits=0, promoted=4818)
+            new(states=4095733, hits=0, promoted=4818)   MATCH
+    part 1: ref(states=4094166, hits=0, promoted=4856)
+            new(states=4094166, hits=0, promoted=4856)   MATCH
+
+i.e. the old engine's finished work is the new engine's ground truth,
+down to the promotion counts. Measured speedup about 3x; the remaining
+~200 partitions project to roughly 11 h at 20 workers. Operational note
+recorded for the program: a Windows batch launcher fails instantly if its
+append-target log is still held open by another process (a `tail -f`
+monitor or a killed run), which presents as a scheduled task going
+straight to "Ready" with no output; use a fresh log name when swapping
+engines.
