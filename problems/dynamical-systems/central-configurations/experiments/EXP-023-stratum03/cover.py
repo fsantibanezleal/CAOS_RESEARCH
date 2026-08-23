@@ -1,9 +1,14 @@
 """EXP-023: certified covering of the (0,3) stratum's bounded region.
 
-Gauge v1 = 0, u1 = 1 (translation and scale), and by the S3 symmetry that
-permutes the three pairs we may take pair A widest, so u2, u3 in (0, 1].
-Free parameters (u2, u3, v2, v3); heights bounded by |v| <= VMAX here, the
-outer region deferred to inverted charts.
+COMPACT GAUGE (adopted 2026-08-20 after the ping-pong diagnosis, finding
+15): translation v1 = 0, and scale fixed by max(u1, u2, u3, |v2|, |v3|) = 1
+rather than by u1 = 1 alone. This chart is the case where the maximum is
+attained by u1, so u1 = 1 AND every other coordinate lies in [-1, 1]: the
+region is COMPACT and its boundaries are geometric (the maximum switching
+to another coordinate) rather than arbitrary truncations. The other four
+cases are charts U2, U3, V2, V3.
+
+Free parameters (u2, u3, v2, v3) in [0,1]^2 x [-1,1]^2.
 
 The matrix is 6 x 3, so a rank-3 certificate is FULL rank: the kernel is
 trivial and the box contains NO central configuration of the stratum at
@@ -168,7 +173,7 @@ def trap(eiv, edv, box):
     return None
 
 SIXT = F(1, 16)
-VMAX = F(3)
+VMAX = F(1)   # compact gauge: max coordinate = 1, so |v| <= 1
 
 def discard(box):
     u2b, u3b, v2b, v3b = box
