@@ -329,3 +329,34 @@ cleaner instrument and should have been the starting point here.
 FIRST STEP TAKEN: cover.py is chart U1 already except that its heights run
 to +-3 instead of +-1; under the compact gauge its job SHRINKS to
 [-1, 1] and everything beyond belongs to V2 and V3.
+
+## 16. The compact atlas is built and its seam gate passes (2026-08-20)
+
+Five charts, one per coordinate that can attain the maximum under the
+compact gauge, all crosschecked 5/5 against cover.py by the exact
+rescaling (an entry scales by lambda^-1 and column j additionally by
+4 u_j^2):
+
+    U1  u1 = 1   cover.py        running, zero failures
+    U2  u2 = 1   chartU2.py U2   running
+    U3  u3 = 1   chartU2.py U3   running
+    V2  v2 = 1   chartV2.py      running
+    V3  v3 = 1   chartU2.py V3   running
+
+A shared collision_discard now serves every chart, testing CONTAINMENT
+rather than overlap (an overlap test discarded a whole seed earlier in
+this campaign). chartV2's first run produced 20983 failures for the simple
+reason that it had been given no discard at all: every one of them sat at
+its corner (1,1,1,1), which is the B = C collision, i.e. face-chart
+territory. With the shared discard that disappears.
+
+SEAM GATE (seam-gate.py): sample configurations, normalise into the
+compact gauge, skip those inside a collision neighbourhood (the face
+charts own those), and check the rest are claimed by some chart. Result:
+48358 tested, ZERO gaps. And the part that makes it evidence rather than
+decoration - all five negative controls fire, dropping any single chart
+opens between 6570 and 14179 unclaimed configurations.
+
+So the (0,3) stratum now has a COMPACT atlas whose covering property is
+verified, replacing the pair of charts that were ping-ponging their
+residues across arbitrary boundaries.
