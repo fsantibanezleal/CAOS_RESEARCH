@@ -701,3 +701,29 @@
 - Fleet: twelve coverings running across both strata, all zero failures
   (the four pending (2,2) charts were rerun on request; cb1 and cb1f now
   use the tighter intersected evaluation).
+
+## 2026-08-23 (round 51): the collinear locus, and a merge residue that stays
+
+- THE COLLINEAR FINDING (finding 21, CC-F54): chasing a collapse-chart
+  failure cluster showed the matrix is IDENTICALLY ZERO where all three
+  pairs share a height, because every Laura-Andoyer coefficient carries a
+  triangle area and six collinear bodies span none. Rank 0 at 19/19 on the
+  locus, rank 3 at 20/20 just off it. So the equations are VACUOUS there.
+  It corrects an earlier claim: that locus is R_0 with dimension 2, and
+  the count needs dim R_0 <= 0, so the count fails there - because of the
+  FORMULATION, not the geometry. Moulton settles the collinear case
+  classically, so the architecture is a split: Moulton for collinear, the
+  covering for the complement. The discard is now in the shared predicate
+  and in mergeBC.
+- The (2,2) stratum is unaffected: with two bodies on the axis and pairs
+  off it, all six can never be collinear.
+- The collapse discard bug (masking a pair width disabled its merge test)
+  was fixed and those charts run clean.
+- mergeBC's interior cluster was probed and REJECTED as a central
+  configuration: sigma_3 plateaus at 1e-3 under a descent that holds the
+  pair separation fixed, and the near-kernel is not sign-definite. It is a
+  resolution limit (20 of 27 descendants discharge under ten more
+  halvings) and a small residue persists there.
+- Records hygiene: CC-F54 was DROPPED by a parallel session merge that
+  touched the same anchor; detected by grepping the pushed file rather
+  than trusting the commit graph, and restored deliberately with a note.
