@@ -26,7 +26,7 @@
 | TCB-025 | Re-scan with full hit retention | done | P1 | 2026-08-02 EXP-007: max union = 6: NO 8-gate 7-rooter via final x; 408 anchor reproduced |
 | TCB-026 | Anatomy pass: punctured five-rooters | done | P2 | 2026-08-02 EXP-007: two-center DOS products x^2(x^2-1)(x-2)(x-4); the hole is the second center |
 | TCB-022 | Manuscript gate assessment + paper | done | P1 | 2026-08-01 PUBLISHED: census paper v0.01, DOI 10.5281/zenodo.21753439 (concept .21753438) |
-| TCB-023 | Narkiewicz read: pin the classical cycle-length <= 2 attribution | todo | P2 | Cited [MV] in EXP-005 verdict with our own [D] proof |
+| TCB-023 | Narkiewicz read: pin the cycle-length <= 2 attribution | closed-as-far-as-reachable | P2 | 2026-08-23: two sweeps found the fact stated WITHOUT attribution in the current literature (e.g. Best-Dynes-Miller-Powell-Weiss 2015: 'for Z[x] it is known that cycles of length 1 and 2 occur, and no others'); standard treatment is Narkiewicz, Polynomial Mappings, LNM 1600 (print only, not reachable here). Our practice is correct: cite as classical + carry our own 5-line proof. No further action without the book. |
 | TCB-024 | Doyle-Poonen read (V8 import gate) | done | P2 | 2026-08-20 abstract read: function-field strong uniform boundedness for z^d+c; over number fields only for bounded eventual period. VERDICT: no unconditional constant for our tower question, so no import; our stall theorems remain self-contained. |
 | TCB-027 | Mod-p instrumentation: root counts of census records over F_p vs the Frobenius ceiling (V10) | todo | P2 | Cheap add-on to the census catalog; pairs with the V9 digit ladders |
 | TCB-028 | Paper v0.03 | done | P1 | 2026-08-20 PUBLISHED with the z_max(8) resolution: DOI 10.5281/zenodo.22035884 (concept unchanged) |
