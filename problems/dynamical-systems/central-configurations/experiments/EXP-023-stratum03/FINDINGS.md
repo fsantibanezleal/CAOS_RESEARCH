@@ -277,3 +277,55 @@ widest, so the S3 reduction is given up inside this chart; that costs
 compute, not correctness. Second, the seam now closes BY CONSTRUCTION
 (narrow's box provably contains the residue), but it will not be
 ESTABLISHED until narrow finishes covering that region with certificates.
+
+## 15. The charts PING-PONG, and the cause is the gauge (2026-08-20)
+
+Widening narrow to close the seam produced 19084 failures of its own, and
+all of them sit at ITS max corner (eps, c1, c2, h) -> (0.5, 2, 2, 1),
+which is the B/C merge: mergeBC's territory. Mapping those boxes into
+mergeBC's gauge puts them at wu ~ 2.0, while mergeBC covers wu in
+[0.125, 1.25]. So the residue is NOT covered there either:
+
+    mergeBC residue  ->  needs narrow beyond its declared box
+    narrow residue   ->  needs mergeBC beyond its declared box
+
+Each chart fails at its own boundary and hands the failure to a region the
+other one does not cover. Widening either box just moves its corner and
+regenerates the problem, which is exactly what the last two rounds
+observed happening twice.
+
+THE CAUSE IS THE GAUGE, not the charts. Both work in a gauge (v1 = 0,
+u1 = 1) that leaves the shape space NON-COMPACT: widths and heights can
+take any ratio, so every box bound is arbitrary, and an arbitrary bound
+always produces a corner the covering cannot certify. No amount of
+widening fixes a truncation of an unbounded region.
+
+THE FIX is a gauge that makes the shape space compact, so that chart
+boundaries are GEOMETRIC (where the maximum switches from one coordinate
+to another) rather than arbitrary:
+
+    translation:  v1 = 0
+    scale:        max(u1, u2, u3, |v2|, |v3|) = 1
+
+Then every coordinate lies in [-1, 1] and the space is covered by FIVE
+charts, one per coordinate that attains the maximum, each a COMPACT
+4-box:
+
+    U1: u1 = 1,  free (u2, u3, v2, v3) in [0,1]^2 x [-1,1]^2
+    U2: u2 = 1,  free (u1, u3, v2, v3)
+    U3: u3 = 1,  free (u1, u2, v2, v3)
+    V2: v2 = 1,  free (u1, u2, u3, v3) in [0,1]^3 x [-1,1]   (mirror gives v2 = -1)
+    V3: v3 = 1,  free (u1, u2, u3, v2)
+
+At a boundary between two of them the maximum is attained twice, and the
+neighbouring chart owns the other side with the tie interior to it: that
+is a genuine seam, and it is checkable, unlike an arbitrary cut.
+
+This also explains, in hindsight, why the (2,2) campaign needed a family
+of inverted charts at infinity: the same non-compactness, handled there by
+inverting coordinates instead of bounding them. The compact gauge is the
+cleaner instrument and should have been the starting point here.
+
+FIRST STEP TAKEN: cover.py is chart U1 already except that its heights run
+to +-3 instead of +-1; under the compact gauge its job SHRINKS to
+[-1, 1] and everything beyond belongs to V2 and V3.
