@@ -1124,3 +1124,51 @@ configurations are exactly the obstruction Smale's sixth problem is about,
 and symmetric six-body examples have been studied. No literature check has
 been run. Nothing here should be presented as a new configuration until
 one is.
+
+### The cross point: literature check (2026-08-23), replacing the UNVERIFIED flag
+
+The family IS known, and it has a name. Dias and Pan, "Generic finiteness
+for a class of symmetric planar central configurations of the six-body
+problem and the six-vortex problem", arXiv:1811.08681 (21 Nov 2018), call
+a symmetric planar central configuration of the Newtonian six-body problem
+a CROSS CENTRAL CONFIGURATION when precisely four bodies lie on a symmetry
+line. Taking the horizontal line as the symmetry line, the point found
+here is exactly that: four bodies on it at `(+-u*, 0)`, `(+-p*, 0)` and two
+off it at `(0, +-1)`.
+
+What they prove: for a GENERIC choice of positive masses
+`m1, m2, m3, m4, m5 = m6` there are finitely many cross central
+configurations, by complex algebraic geometry and Groebner bases. They also
+give one explicit example.
+
+Three things this establishes about the point found here.
+
+  1. It is NOT a new family. It sits inside Dias-Pan's class, in the
+     sub-locus with a second symmetry, so their `m1 = m4` and `m2 = m3`
+     (here `mB, mA, mA, mB` along the line) and `m5 = m6` (here the two
+     axis bodies).
+  2. It is NOT their example. Proposition 5.2 fixes
+     `m1 = m2 = m3 = m4 = 1` with `m5 = m6`, and imposes that four bodies
+     be collinear and that `x2, x3, x5, x6` form a SQUARE centred at the
+     origin with `r14 = 2`. That is a different configuration, and it is
+     used there as a genericity witness -- to show a certain rank is
+     maximal -- not as a degenerate one.
+  3. It does NOT contradict their theorem. A one-parameter family of
+     masses for ONE configuration is a degeneracy of the mass map, not an
+     infinite family of configurations at fixed mass. For each mass vector
+     on the arc, this configuration is one of the finitely many their
+     theorem allows.
+
+What it does contribute is narrow and worth stating narrowly: an EXPLICIT
+witness in the non-generic mass set their theorem has to exclude. The word
+"generic" in their statement is doing real work, and this exhibits a point
+where it is needed, with coordinates to forty digits and a verified
+one-parameter arc of admissible masses. The word "degenerate" appears in
+their text only in a bibliography entry (Lei and Santoprete on rosette
+configurations), and they exhibit no such point.
+
+Still not checked, and it should be before any claim of novelty for the
+POINT itself: whether this specific doubly symmetric cross configuration
+appears in the wider symmetric-central-configuration literature, which is
+large. The claim to make is about the family and the witness, not about
+having discovered a configuration.
