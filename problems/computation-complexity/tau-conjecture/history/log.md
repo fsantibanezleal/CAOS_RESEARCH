@@ -268,3 +268,27 @@
   sha256 manifest same day).
 - Dead ends this arc: SMT-NIA and QF_BV structure search (closed with
   records); the symmetry quotient (closed by measurement).
+
+## 2026-08-23 (round 11a): no 9-gate 7-rooter via multiplication
+
+- **EXP-012 CONFIRMED.** All 1,048,460,912 depth-7 states scanned (13.1 h,
+  20 workers, one lossless resume after a session teardown): for every
+  one-gate extension v8 and every operand b,
+  max |R_v8 union R_b| = 6, hits with union >= 7: ZERO. So no 9-gate
+  program with a MULTIPLICATIVE final gate has 7 distinct integer roots.
+  With EXP-011 (z_max(8) = 6 forces the final gate to involve the 8th
+  value), the seven-root threshold is 10 unless an ADDITIVE 9-gate
+  witness exists.
+- Gate before production: threshold-6 variant found 793 hits on one
+  partition, so the machinery finds unions when they exist. Phase A
+  (the (6,1) sub-case on stored witnesses) was empty, as predicted.
+- **The pre-registered growth rhythm is REFUTED on this side.** The
+  increments of z_max(1..8) = 1,2,3,3,4,5,5,6 follow (+1,+1,0) and
+  predicted z_max(9) = 7; multiplication does not deliver it. If the
+  additive scan is also empty, the rhythm breaks at tau = 9, giving a
+  third plateau and a threshold of 10 - itself a result, and one the
+  q-ladder arithmetic anticipates (the next ladder constant, 12, needs
+  two gates to build rather than one).
+- EXP-013 (additive residual) continues; a batched engine is under
+  exact regression against the partitions the per-state engine already
+  completed before it is allowed to contribute new results.
