@@ -877,3 +877,98 @@ collision; the merge at infinity is not a configuration at all).
 Every face of every chart is therefore accounted for, and on each one the
 punctured collar carries rank >= 3 uniformly. No face of the atlas can
 harbour a rank-2 set of the stratum.
+
+## LEMMA PIECE 13 -- the merge-face rank floor of the (0,3) stratum
+
+Established 2026-08-23. This is the (0,3) analogue of pieces 11 and 12, and
+it is the first face in the campaign whose rank floor VANISHES on a surface
+rather than staying bounded away from zero.
+
+### What the face is
+
+Two of the three mirror pairs run into each other. Writing the merging
+couple as `w +- (rho/2) n` with `w = (wu, wv)` their midpoint and
+`n = (alpha, beta) = ((1-tau^2)/(1+tau^2), 2 tau/(1+tau^2))` a UNIT vector,
+the vanishing separation is exactly `rho`, and the face is `rho = 0`. The
+third pair is fixed at `(+-1, 0)` by the compact gauge.
+
+### Why the floor collapses onto a single entry
+
+Measured orders in `rho` of the raw matrix (ratio at `rho = 2^-14` against
+`2^-16`, so an order of `+2` means the entry vanishes like `rho^2`):
+
+| row | col 0 (fixed pair) | col 1 | col 2 |
+|---|---|---|---|
+| (0,2) | 0 | 0 | -2 |
+| (0,3) | 0 | 0 | -2 |
+| (0,4) | 0 | -2 | 0 |
+| (0,5) | 0 | -2 | 0 |
+| (2,4) MERGING | +2 | +2 | +2 |
+| (2,5) | +1 | -2 | -2 |
+
+The chart's clearing is therefore correct: the merging row is divided by
+`rho^2` and every other row is multiplied by `rho^2`, which is exactly what
+those orders demand. But that same clearing SENDS THE FIXED PAIR'S MASS
+COLUMN TO ZERO in five of the six rows, because there it is order `0` or
+`+1` and gets multiplied by `rho^2`. On the face the cleared matrix is
+
+```
+    0        0       -0.037
+    0        0       -1.96
+    0      +0.037      0
+    0      +1.96       0
+    E      +0.0032   +0.0032      <- row (2,4)
+    0      +1.94     +1.94
+```
+
+Columns 1 and 2 give rank 2 for free. EVERY rank-3 minor has to take its
+column-0 entry from row (2,4). That single entry is the rank floor.
+
+### The floor in closed form
+
+With `g_k = w - P_k` the vector from the fixed pair's body `k` to the
+merge point, the two ingredients factor exactly:
+
+    area(2,4,k)              =  rho * cross(n, g_k)
+    r_{2k}^-3 - r_{4k}^-3    = -3 rho (n . g_k) / |g_k|^5 + O(rho^3)
+
+so the cleared entry has the limit
+
+    E(tau, wu, wv) = -3 * SUM_k (n . g_k) cross(n, g_k) / |g_k|^5
+                   = -(3/2) * [ sin(2 phi_0)/|g_0|^3 + sin(2 phi_1)/|g_1|^3 ]
+
+where `phi_k` is the angle from `n` to `g_k`. Since `n` is a unit vector,
+`(n . g)(n x g) = (|g|^2/2) sin(2 phi)`, which is where the second form
+comes from. Verified against the chart's own entry at five random face
+points, relative error `2.5e-12` to `2.5e-11`.
+
+### Why this face is different from pieces 10, 11 and 12
+
+Those three faces carry floors that are bounded away from zero on the whole
+face, so a single continuity argument closes a collar around each. `E` does
+NOT: it is a sum of two terms of comparable size and opposite sign, and it
+changes sign three times along every line scanned in `tau`. `E = 0` is one
+equation on the 3-dimensional face, hence a SURFACE, and the covering's
+residue sits on it -- `E = +1.72e-5` at the residue point against row-mates
+of `3.2e-3`, a relative floor of `5e-3` which is precisely the `sigma_3`
+measured independently on the raw matrix (`4.4e-3`).
+
+### What this does and does not settle
+
+It does NOT open a hole in the stratum. `rho = 0` is a quadruple collision
+(four bodies at two points) and is not in configuration space. At every
+positive `rho` tested the trap certificate fires unchanged, from
+`rho = 2.4e-7` down to `7.5e-9`, so the punctured collar is covered; and
+all 977 residual boxes touch `rho = 0`, with NONE failing at positive
+`rho`. What the vanishing of `E` costs is the CHEAP closure: a face whose
+floor is bounded below closes in one box, whereas this one needs the
+enclosure of `E` narrowed by subdividing `(tau, wu, wv)` wherever the
+surface `E = 0` passes through. The chart's depth cap was raised from the
+shared 80 to 120 for exactly that reason -- the residue needed about six
+more halvings, not new mathematics.
+
+The honest statement of the piece is therefore: **the merge face of the
+(0,3) stratum has rank exactly 3 away from the surface `E = 0` and rank 2
+on it, with `E` given in closed form above.** Whether the rank-2 surface of
+the face is approached by genuine rank-2 points at positive `rho` is a
+separate question, and it is the one the covering answers box by box.

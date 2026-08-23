@@ -205,8 +205,16 @@ def main():
     # coordinate lies in the unit box. wu is kept above 1/16 because a
     # merging pair that is also collapsing belongs to the collapse charts.
     seed = ((F(0), F(1, 8)), (F(-1), F(1)), (F(1, 16), F(1)), (F(-1), F(1)))
+    # DEPTH 120, not the shared 80 (2026-08-23). The merge face carries a
+    # rank floor E (lemma piece 13) that is the ONLY surviving entry of the
+    # fixed pair's mass column once the rows are cleared, and E vanishes on
+    # a surface inside the face. Near that surface E is genuinely small
+    # (1.7e-5 at the residue against row-mates of 3.2e-3), so the enclosure
+    # has to be narrowed by subdividing (tau, wu, wv); the shared cap of 80
+    # stops about six halvings short of resolving it.
     cov.run_cover("mergeBC", seed, entry_factory("iv"), entry_factory("dv"),
-                  discard, budget=21600, resume="--resume" in sys.argv)
+                  discard, budget=21600, resume="--resume" in sys.argv,
+                  depth=120)
 
 if __name__ == "__main__" and "--cover" in sys.argv:
     main()
