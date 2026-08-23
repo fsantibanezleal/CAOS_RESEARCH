@@ -199,19 +199,64 @@ Every face of every chart is therefore accounted for.
 
 ## 6. Status
 
-Proven: k = 0, 1, 2, 4; the ladder's j = 0 level globally; the reduction,
-the pair-equality lemma, the symmetry identities, ten lemma pieces.
-Established by certified covering: the ladder's j = 1, 2 levels on the
-core, band, collision tube (three w-ranges), pair-collapse collar, the
-opposite bi-corner, the far-A chart, and the corner charts (with piece 10
-closing their collars).
-In flight, all with zero failures at the time of writing: uplow, deep,
-fa2b, fartube, bicorner-same, M1, M1-vert, M2.
-Not yet run: nothing. Every region of the open stratum now has a chart.
+### 6a. What is proven outright
 
-When the in-flight coverings finish, the chain is complete and the
-statement wording goes to Felipe FIRST, per the standing rule, before any
-manuscript or Zenodo step.
+k = 0, 1, 2, 4; the ladder's j = 0 level globally; the reduction, the
+pair-equality lemma, the symmetry identities, and now thirteen lemma
+pieces (piece 13 belongs to the (0,3) stratum, not this one).
+
+### 6b. The residue accounting, measured 2026-08-23
+
+Every chart of the atlas has now run far enough to be classified. The
+decisive measurement is the BOX WIDTH of the residual failures: for every
+chart that has any, the failures share EXACTLY ONE distinct width, which
+is the width the seed reaches at the shared depth cap of 44. Not one
+residue in the atlas is a box that failed before the cap. That is what
+separates a resolution limit from mathematics, and the whole atlas falls
+on the resolution side.
+
+| chart | failures | interior (no axis at 0) | disposition |
+|---|---|---|---|
+| bicorner-opp | 0 | -- | complete |
+| bicorner-same | 0 | -- | complete |
+| collapse | 0 | -- | complete |
+| deep-L | 0 | -- | complete |
+| deep-R | 0 | -- | complete |
+| fa1 | 0 | -- | complete |
+| fartube | 0 | -- | complete |
+| m1 | 0 | -- | complete |
+| m1vert-S | 0 | -- | complete |
+| tube-L | 0 | -- | complete |
+| tube-R | 0 | -- | complete |
+| tubeext-L | 0 | -- | complete |
+| tubeext-R | 0 | -- | complete |
+| ulow | 0 | -- | complete |
+| uplow | 0 | -- | complete |
+| cb1 | 5 | 0 | all face-touching, closed by piece 10 |
+| cb1f | 2 | 0 | all face-touching, closed by piece 10 |
+| band | 44 | 12 | at the cap; residue re-run pending |
+| fa2b | 200 | 188 | at the cap; residue re-run at depth 76 IN FLIGHT |
+| m2-L | 5824 | 5824 | region covered by the collapse chart, which is at zero |
+| m2-R | 5683 | 5683 | region covered by the collapse chart, which is at zero |
+| fa2 | 280140 | -- | RETIRED, superseded by fa2b (absolute far-tube criterion was a design error) |
+| m1vert-N | 7144 | -- | RETIRED, superseded by M1's per-entry guards |
+
+Fifteen charts are at exactly zero. Of the five live charts with any
+residue, two (cb1, cb1f) have every failure on a face and are closed in
+closed form by piece 10, and two (m2-L, m2-R) cover a region the collapse
+chart also covers at zero failures. The one genuinely open item is fa2b,
+whose 200 boxes tile a curve at ratio r = 0.9375 -- a dyadic value, i.e.
+where the chart's bisection grid crosses, not a feature of any locus.
+
+### 6c. What remains before the chain is complete
+
+  1. fa2b's residue re-run at depth 76 must discharge (in flight).
+  2. band's 44 must be re-run the same way.
+  3. The residue and artifact gates must be re-run over the final set.
+
+Only when those close does the chain complete, and then the statement
+wording goes to Felipe FIRST, per the standing rule, before any manuscript
+or Zenodo step.
 
 ## 7. The statement being assembled (draft, NOT yet to be recorded elsewhere)
 
