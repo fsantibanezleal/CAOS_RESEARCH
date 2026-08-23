@@ -422,3 +422,32 @@ analytic wherever u_p stays away from zero. The reused chart avoids the
 case entirely because its widths are bounded below by the discard, so no
 u-clearing is needed there at all - only the rho-clearing. That is why
 reuse beat rewrite here.
+
+## 19. A discard bug that only one chart exposed (2026-08-23)
+
+With every other chart of the (0,3) atlas at ZERO genuine failures, one
+collapse chart reported 47790. Same code, different pair index, so the
+asymmetry was itself the clue. The failures sit at
+
+    u(collapsing) ~ 0.1249,  u(third) ~ 0.1250,  v ~ 0 for both,
+
+i.e. two pairs at nearly the same width AND nearly the same height: a
+MERGE, which is merge-chart territory and should have been discarded.
+
+The cause was in the collapse discard. To avoid discarding the very
+collar the chart exists to cover, it masked that pair width to 1 before
+calling the shared collision test - and that silently disabled the MERGE
+test for the same pair, because a masked width of 1 is nowhere near the
+other pair width of 0.125. The collapse test and the merge test needed
+different treatment and were getting the same one.
+
+Fixed by separating them: collapse of OTHER pairs is discarded, the
+covered pair collapse is not, and merges of ANY two pairs are discarded
+using the TRUE widths. Verified on the exact failing geometry (now
+discarded) and on the seed (still kept). All three collapse charts
+relaunched.
+
+Worth noting how this was caught: not by a gate, but by comparing sibling
+charts that should have behaved alike. Two of the three had zero failures
+and the third had forty-seven thousand, which is not a plausible
+geometric difference between pair indices.

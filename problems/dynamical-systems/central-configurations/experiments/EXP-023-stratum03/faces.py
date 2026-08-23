@@ -162,10 +162,24 @@ def make_discard(which):
         u[which] = (a[0], a[1]); u[ref] = (F(1), F(1)); u[third] = (b[0], b[1])
         v[0] = (F(0), F(0)); v[1] = (c[0], c[1]); v[2] = (d[0], d[1])
         uvs = [(u[i][0], u[i][1], v[i][0], v[i][1]) for i in range(3)]
-        # do NOT discard this pair's own collapse: that is what we cover
-        uvs2 = list(uvs)
-        uvs2[which] = (F(1), F(1), v[which][0], v[which][1])
-        return cov.collision_discard(uvs2)
+        # Collapse of OTHER pairs -> their own charts. Do NOT discard the
+        # collapse of the pair this chart covers.
+        for i in range(3):
+            if i != which and u[i][1] < F(1, 16):
+                return True
+        # MERGES of any two pairs -> the merge charts. These must use the
+        # TRUE widths: an earlier version masked this pair width to 1 to
+        # protect its collapse collar, which silently disabled the merge
+        # test for it and produced 47790 failures at a merge of pairs 0
+        # and 1, all of them merge-chart territory.
+        for a in range(3):
+            for b in range(a + 1, 3):
+                du_hi = u[a][1] - u[b][0]; du_lo = u[a][0] - u[b][1]
+                dv_hi = v[a][1] - v[b][0]; dv_lo = v[a][0] - v[b][1]
+                if (du_hi < F(1, 16) and du_lo > -F(1, 16)
+                        and dv_hi < F(1, 16) and dv_lo > -F(1, 16)):
+                    return True
+        return False
     return disc
 
 SEED = ((F(0), F(1, 8)), (F(0), F(1)), (F(-1), F(1)), (F(-1), F(1)))
