@@ -181,6 +181,13 @@ def discard(box):
     # the merged cluster meeting pair A at (1, 0)
     if wub[0] > 1 - SIXT and wub[1] < 1 + SIXT and wvb[0] > -SIXT and wvb[1] < SIXT:
         return True
+    # COLLINEAR locus (finding 21): the reference pair sits at height 0, so
+    # the six bodies are collinear exactly when the merged pair is at that
+    # height too. There every triangle area vanishes and the matrix is
+    # IDENTICALLY ZERO, so the equations say nothing; that locus is finite
+    # by Moulton and is excluded from the covering.
+    if wvb[0] > -SIXT and wvb[1] < SIXT:
+        return True
     return False
 
 def main():

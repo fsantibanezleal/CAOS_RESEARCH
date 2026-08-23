@@ -190,6 +190,16 @@ def collision_discard(uvs, sixt=F(1, 16)):
     for (ulo, uhi, vlo, vhi) in uvs:
         if uhi < sixt:
             return True
+    # COLLINEAR locus (finding 21): if all three pairs share a height the
+    # six bodies lie on one line, every triangle area vanishes, and the
+    # Laura-Andoyer matrix is IDENTICALLY ZERO - the equations say nothing
+    # there. That locus is finite by Moulton and is excluded from the
+    # covering rather than certified by it.
+    hs = [uvs[i][2:] for i in range(3)]
+    span_lo = min(h[0] for h in hs)
+    span_hi = max(h[1] for h in hs)
+    if span_hi - span_lo < sixt:
+        return True
     for a in range(3):
         for b in range(a + 1, 3):
             ua_lo, ua_hi, va_lo, va_hi = uvs[a]
