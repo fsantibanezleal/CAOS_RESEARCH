@@ -249,3 +249,31 @@ passes 5/5.
 The open item is the seam check: every mergeBC residue box must lie inside
 narrow's certified region. That is the same seam argument the (2,2) atlas
 uses, and it is what its seam gate was built to verify.
+
+## 14. The seam is quantified and closed by construction
+
+The open item from finding 13 was whether every mergeBC residue box lies
+inside narrow's region. The map between the two charts is a pure rescaling
+(divide all lengths by the B height):
+
+    eps = 1 / v2,   c1 = u_B / u_A,   c2 = u_C / u_A,   h = v_C / v_B .
+
+Applying it to all 1892 residue boxes, corner by corner, gives an exact
+requirement:
+
+    eps in [0.249998, 0.250122]
+    c1  in [1.248901, 1.250007]
+    c2  in [1.248894, 1.250000]
+    h   in [0.999985, 1.000000]
+
+against narrow's declared seed eps [0, 1/4], c [0, 1], h [-2, 2]. So the
+residue sits a hair outside on three coordinates - eps by one part in two
+thousand, and c1, c2 by 25%. narrow's seed is therefore widened to
+eps [0, 1/2], c [0, 2], h [-2, 2], which contains the requirement with
+room to spare, and relaunched.
+
+Two honest notes. First, c > 1 means the first pair is no longer the
+widest, so the S3 reduction is given up inside this chart; that costs
+compute, not correctness. Second, the seam now closes BY CONSTRUCTION
+(narrow's box provably contains the residue), but it will not be
+ESTABLISHED until narrow finishes covering that region with certificates.

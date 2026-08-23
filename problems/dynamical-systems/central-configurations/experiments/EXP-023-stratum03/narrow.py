@@ -151,7 +151,13 @@ def discard(box):
     return False
 
 def main():
-    seed = ((F(0), F(1, 4)), (F(0), F(1)), (F(0), F(1)), (F(-2), F(2)))
+    # Seed widened 2026-08-20 to CLOSE THE SEAM with mergeBC. The seam
+    # check maps every mergeBC residue box into this gauge and reports the
+    # range needed: eps up to 0.2501, c1 and c2 up to 1.2500, h ~ 1. The
+    # box below contains all of that with room to spare. Note c > 1 means
+    # the first pair is not the widest, so the S3 reduction is given up
+    # here in exchange for the seam; that costs work, not correctness.
+    seed = ((F(0), F(1, 2)), (F(0), F(2)), (F(0), F(2)), (F(-2), F(2)))
     cov.run_cover("narrow", seed, entry_factory("iv"), entry_factory("dv"),
                   discard, budget=21600, resume="--resume" in sys.argv)
 
