@@ -60,3 +60,32 @@ Certify the bounded region with zero residual failures, or with residues
 touching only collisions; then the outer region by inverted charts. Budget
 12 h per covering, resumable, failures recorded. This experiment does NOT
 claim the (2,2) theorem's statement and does not gate it.
+
+## AMENDMENT 2026-08-23: the architecture is a SPLIT, declared before the
+## remaining runs
+
+The hypothesis as declared on 2026-08-20 assumed the six L-equations
+govern the whole stratum. Findings 21 and 22 show they do not: where the
+three pairs share a height the six bodies are collinear, every triangle
+area vanishes, and the matrix is identically zero, so the equations are
+vacuous on a 2-dimensional subset of the shape space.
+
+The amended architecture, declared now and before the runs it governs:
+
+  1. COLLINEAR LOCUS. Settled by Moulton's theorem, not by covering. The
+     central configurations there form a 2-dimensional set (one positive
+     mass ray per shape, verified), which MEETS the bound `dim <= 2`.
+     The coverings discard a neighbourhood of it; the discard predicate is
+     shared (`cover.py: collision_discard`) and is also wired into
+     `mergeBC.py`, which carries its own.
+  2. COMPLEMENT. Covered by the atlas, where the equations are meaningful
+     and generic rank is 3.
+
+Nothing about the (2,2) stratum changes: finding 22 verifies that a
+collinear configuration there always forces a collision, so its
+L-equations never degenerate this way.
+
+What would REFUTE this amendment: a collinear symmetric shape admitting
+two independent positive mass rays (which would push the collinear
+dimension above 2), or a covering residue that survives at positive
+distance from both the collinear locus and every collision face.

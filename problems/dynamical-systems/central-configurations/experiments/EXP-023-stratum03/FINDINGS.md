@@ -521,3 +521,62 @@ The (2,2) stratum is untouched by this: with two bodies on the vertical
 axis and mirror pairs off it, all six can never be collinear, so its
 L-equations never degenerate this way. The issue is specific to strata
 whose pairs can all share a height.
+
+## 22. The collinear degeneracy is UNIQUE to this stratum, and on it the
+##     count is met exactly rather than broken (2026-08-23)
+
+Finding 21 established that the Laura-Andoyer matrix vanishes identically
+where the three pairs share a height, and concluded that the architecture
+must be a split. Two things were left open: whether the rest of the family
+inherits the defect, and what the true dimension of the central
+configurations on that locus is. Both are now settled
+(`family-collinear-probe.py`).
+
+### Only (0,3) has an interior collinear locus
+
+The reflection-symmetric strata of n = 6 are indexed by (a, b) with `a`
+bodies on the axis and `b` mirror pairs, `a + 2b = 6`. Six bodies can be
+collinear on exactly two kinds of line the mirror preserves: the axis
+itself, or a line perpendicular to it.
+
+| stratum | on the axis | on a perpendicular line | interior collinear locus |
+|---|---|---|---|
+| (6,0) | already there | -- | the WHOLE stratum |
+| (4,1) | needs `u = 0`, a collision | four axis bodies would share a height, a 4-fold collision | none |
+| (2,2) | needs `u = 0`, a collision | the two axis bodies would share a height, a collision | none |
+| (0,3) | needs `u_i = 0`, collisions | the three pairs share one height, ALL SIX DISTINCT | 2-dimensional |
+
+So (6,0) is the collinear case itself, settled classically by Moulton;
+(4,1) and (2,2) are clean; and (0,3) is the only stratum of the family
+where the degeneracy sits in the interior. That is why the (2,2) covering
+never met it and this one did. Witness exhibited: bodies at
+`x = +-1, +-0.6, +-0.25` on `y = 0`, smallest mutual distance `0.35`.
+
+### On that locus the count is MET, not broken
+
+Finding 21 said the dimension count fails on the collinear locus. That is
+right about the L-equations and wrong about the geometry, and the
+distinction matters for the theorem. The L-equations give `dim R_0 = 2`
+and would demand `dim R_0 <= 0`; but they are vacuous there, so they are
+not measuring the central configurations at all. What is actually true:
+
+  * a symmetric collinear shape is `(u1, u2, u3)` up to scale, so the
+    locus is 2-dimensional inside the 4-dimensional shape space;
+  * for the exhibited shape the collinear CC system has rank 6 out of 7
+    columns, so its kernel is exactly one-dimensional and the mass ray is
+    UNIQUE. It is `(0.28821, 0.05388, 0.23580)` per pair, all positive and
+    mirror-symmetric, with `lambda` normalized to 1;
+  * by Moulton every collinear shape is central for exactly one positive
+    mass ray, so the central configurations on the locus form a set of
+    dimension 2, not 5.
+
+Dimension 2 MEETS the bound `dim <= 2` without breaking it, exactly as the
+centred pentagon meets it in the (2,2) stratum. The collinear locus is
+therefore not an obstruction to the stratum theorem; it is a second place
+where the bound is attained, and it is attained by a classically known
+family rather than by anything this campaign discovered.
+
+### Sanity
+
+Largest entry of the covering's own matrix over 12 random collinear
+shapes: `0.000e+00` exactly. The vanishing is algebraic, not numerical.
