@@ -482,3 +482,42 @@ halvings (7 by plain certificates, 9 by mean-value forms, 4 by traps). The
 lever is therefore the depth cap again, raised 60 -> 80, and the chart
 relaunched. Boxes there are already 1.5e-5 wide, so the cost is real but
 the mathematics is not in question.
+
+## 21. THE COLLINEAR LOCUS IS A GAP IN THE EQUATION FORMULATION (2026-08-23)
+
+Chasing the collapse1 failures produced the most important correction of
+this stratum so far. They sit where all three pairs share a height, i.e.
+six bodies on one horizontal line. Probing there:
+
+    rank ON the collinear locus:   0  (19 of 19 samples)
+    rank just off it:              3  (20 of 20 at each of eps = 1e-2, 1e-4, 1e-6)
+
+The matrix is IDENTICALLY ZERO on the collinear locus, and the reason is
+structural rather than numerical: every Laura-Andoyer coefficient carries
+a triangle AREA, and six collinear bodies span no triangle at all. So the
+equations used throughout this stratum are VACUOUS on that locus - every
+mass vector satisfies them - which is plainly not the truth about
+collinear central configurations.
+
+Consequences, stated plainly because one of them corrects an earlier claim
+in this file:
+
+  * The collinear locus is R_0, the rank-zero locus, and it has dimension
+    2 (v2 = v3 = 0 is two conditions in the 4-dimensional shape space).
+    The dimension count needs dim R_0 + 3 <= 3, i.e. dim R_0 <= 0, so the
+    count FAILS there. Finding 2 said this stratum needs R_0 empty; that
+    is false as stated, and the reason is the formulation, not the
+    geometry.
+  * The truth about that locus comes from outside these equations:
+    Moulton's theorem gives exactly n!/2 collinear central configurations
+    for each positive mass vector, so finiteness there is classical and
+    complete.
+  * The correct architecture is therefore a SPLIT: the collinear locus,
+    finite by Moulton, and its complement, where the area-based equations
+    are meaningful and the covering applies. The coverings must discard a
+    neighbourhood of {v1 = v2 = v3}, which they currently do not.
+
+The (2,2) stratum is untouched by this: with two bodies on the vertical
+axis and mirror pairs off it, all six can never be collinear, so its
+L-equations never degenerate this way. The issue is specific to strata
+whose pairs can all share a height.
