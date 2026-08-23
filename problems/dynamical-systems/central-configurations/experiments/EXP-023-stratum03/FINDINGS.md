@@ -451,3 +451,34 @@ Worth noting how this was caught: not by a gate, but by comparing sibling
 charts that should have behaved alike. Two of the three had zero failures
 and the third had forty-seven thousand, which is not a plausible
 geometric difference between pair indices.
+
+## 20. The first INTERIOR failure cluster, and it is another near-miss
+
+The collapse discard fix worked: all three collapse charts now run clean.
+The merge chart, on its compact seed, produced 147 failures that are
+notable for being the first cluster in this stratum that is NOT on a chart
+boundary:
+
+    rho ~ 8e-6,  tau ~ 0.9922,  wu ~ 0.9707,  wv ~ 0.9940
+
+with wu inside [1/16, 1], wv inside [-1, 1] and tau interior. The geometry
+is the reference pair at (+-1, 0) with the other two nearly coincident at
+(+-0.97, 0.994), separated almost vertically. Since this stratum keeps its
+central configurations on the rank <= 2 locus, an interior cluster there
+is exactly where one might be.
+
+It is not one. sigma_3 sits at 4.4e-3 and, under a descent over
+(tau, wu, wv) with the pair separation held at 0.02, only falls to 1.05e-3
+without approaching zero, so the point is a NEAR-degeneracy rather than a
+rank-2 point. Its near-kernel is (mA, mB, mC) = (1, 3.7e-4, -3.5e-4),
+dominated by the reference pair and NOT sign-definite, so even in the
+limit it would not give positive masses. That is the third near-miss this
+campaign has examined and rejected, after the cross configuration in the
+(2,2) stratum and the escape corner.
+
+What the cluster actually marks is a resolution limit: bisecting one
+failing box by hand discharges 20 of its 27 descendants within ten further
+halvings (7 by plain certificates, 9 by mean-value forms, 4 by traps). The
+lever is therefore the depth cap again, raised 60 -> 80, and the chart
+relaunched. Boxes there are already 1.5e-5 wide, so the cost is real but
+the mathematics is not in question.

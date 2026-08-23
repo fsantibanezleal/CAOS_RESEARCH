@@ -239,7 +239,7 @@ def run_cover(name, seed, eiv, edv, disc, budget=43200, resume=False):
         certs.write_text("", encoding="utf-8")
     out = open(certs, "a", encoding="utf-8", buffering=1 << 20)
     last = time.time()
-    DEPTH, BUDGET = 60, budget
+    DEPTH, BUDGET = 80, budget
     while stack:
         if time.time() - t0 > BUDGET:
             print("BUDGET EXHAUSTED", flush=True)
