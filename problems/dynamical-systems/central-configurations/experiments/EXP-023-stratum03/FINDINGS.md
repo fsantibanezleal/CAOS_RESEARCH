@@ -390,3 +390,35 @@ unbounded region.
 REMAINING for this stratum: the merge face charts in the compact gauge
 (three of them, one per pair of pairs), then the residue and artifact
 gates over the whole atlas.
+
+## 18. The merge face in the compact gauge, by reuse not rewrite
+
+The merge chart had already been validated in the old gauge (crosscheck
+5/5, merge face 40/40); its ONLY defect was a non-compact box, which is
+what made it ping-pong residues with the outer chart. So the fix is a
+compact SEED, not a rewrite:
+
+    rho in [0, 1/8]      the merge collar
+    tau in [-1, 1]       the merge direction
+    wu  in [1/16, 1]     the merged width, bounded BELOW because a merging
+                         pair that is also collapsing belongs to the
+                         collapse charts, and ABOVE by the compact gauge
+    wv  in [-1, 1]       the merged height
+
+Under the compact gauge the non-merging pair is the widest, so its width
+is the scale and every other coordinate lies in the unit box. Re-verified
+on that box: crosscheck 5/5, and the merge FACE at rho = 0 certifies rank
+3 at 40 of 40 sample points. Launched.
+
+An attempted from-scratch rewrite (mergefaces.py) is kept but NOT used. It
+surfaced one genuinely new structural case worth recording: a term whose
+two slots are a pair OWN width (1/w_p^3) and the vanishing merge distance
+(1/rho^3) simultaneously, which after the row factor rho^2 and the column
+factor 4 u_p^2 reads
+
+    rho^3 * ah / (2 u_p)  -  4 u_p^2 * ah ,
+
+analytic wherever u_p stays away from zero. The reused chart avoids the
+case entirely because its widths are bounded below by the discard, so no
+u-clearing is needed there at all - only the rho-clearing. That is why
+reuse beat rewrite here.

@@ -190,7 +190,14 @@ def main():
     # the heights hit the artificial edge wv = 3. Both are chart boundaries,
     # not geometry, so the box is extended past them and the tie becomes an
     # interior point the covering can bisect around.
-    seed = ((F(0), F(1, 8)), (F(-1), F(1)), (F(1, 8), F(5, 4)), (F(-4), F(4)))
+    # COMPACT SEED (2026-08-23). This chart was validated in the old gauge
+    # (crosscheck 5/5, merge face 40/40); its only defect was a non-compact
+    # box, which is what made it ping-pong residues with the outer chart.
+    # Under the compact gauge the non-merging pair is the widest and its
+    # width is the scale, so u_A = 1 is the MAXIMUM and every other
+    # coordinate lies in the unit box. wu is kept above 1/16 because a
+    # merging pair that is also collapsing belongs to the collapse charts.
+    seed = ((F(0), F(1, 8)), (F(-1), F(1)), (F(1, 16), F(1)), (F(-1), F(1)))
     cov.run_cover("mergeBC", seed, entry_factory("iv"), entry_factory("dv"),
                   discard, budget=21600, resume="--resume" in sys.argv)
 

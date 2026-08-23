@@ -198,8 +198,13 @@ def crosscheck(mi, mj):
         v[mk] = F(0)
         if min(u) <= 0:
             continue
-        hs = [v[1] - v[0], v[2] - v[0], v[2] - v[1]]
-        if any(abs(h) < F(1, 8) for h in hs):
+        # Only the NON-merging separations must stay away from zero. The
+        # merging couple is close BY CONSTRUCTION, so requiring every gap
+        # to exceed 1/8 rejected every sample and the loop never
+        # terminated - the sampler, not the chart, was wrong.
+        gaps = [abs(v[mi] - v[mk]), abs(v[mj] - v[mk]),
+                abs(u[mi] - u[mk]), abs(u[mj] - u[mk])]
+        if min(gaps) < F(1, 8):
             continue
         tried += 1
         Jc = build(mi, mj, "iv")([(x, x) for x in (rv, tv, wuv, wvv)])
