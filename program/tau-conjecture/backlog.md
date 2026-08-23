@@ -27,7 +27,7 @@
 | TCB-026 | Anatomy pass: punctured five-rooters | done | P2 | 2026-08-02 EXP-007: two-center DOS products x^2(x^2-1)(x-2)(x-4); the hole is the second center |
 | TCB-022 | Manuscript gate assessment + paper | done | P1 | 2026-08-01 PUBLISHED: census paper v0.01, DOI 10.5281/zenodo.21753439 (concept .21753438) |
 | TCB-023 | Narkiewicz read: pin the classical cycle-length <= 2 attribution | todo | P2 | Cited [MV] in EXP-005 verdict with our own [D] proof |
-| TCB-024 | Doyle-Poonen read (V8 import gate) | todo | P2 | Before any uniform-boundedness import |
+| TCB-024 | Doyle-Poonen read (V8 import gate) | done | P2 | 2026-08-20 abstract read: function-field strong uniform boundedness for z^d+c; over number fields only for bounded eventual period. VERDICT: no unconditional constant for our tower question, so no import; our stall theorems remain self-contained. |
 | TCB-027 | Mod-p instrumentation: root counts of census records over F_p vs the Frobenius ceiling (V10) | todo | P2 | Cheap add-on to the census catalog; pairs with the V9 digit ladders |
 | TCB-028 | Paper v0.03 | done | P1 | 2026-08-20 PUBLISHED with the z_max(8) resolution: DOI 10.5281/zenodo.22035884 (concept unchanged) |
 | TCB-029 | The final-pm 8-gate residual | subsumed | P0 | 2026-08-20: EXP-010 (QF_BV) also engine-bound at known-answer scale: the solver lane is CLOSED (both backends, semantics proven, search intractable); the residual is decided by EXP-011 scan8 (all-gate, unconditional) |
