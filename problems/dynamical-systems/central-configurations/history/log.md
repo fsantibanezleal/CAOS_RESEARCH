@@ -818,3 +818,63 @@
   covering with ONLY its failing boxes at a deeper cap, which costs 200
   boxes instead of the 1.3 million the chart had already certified. The
   same driver discharged fa2b and exposed band.
+
+## Round 54 (2026-08-24): the degenerate set is finite, and the atlas has exactly one open region
+
+- THE CROSS POINT IS EXACT. Newton at 260 working digits gives residuals
+  at 1e-256 and a rank-2 ratio at 1e-257. PSLQ found nothing real: it
+  returned a degree-9 relation for every quantity tried and the best
+  candidate misses by 6.0e-41 against the 1e-180 tolerance it was
+  supposedly found at, so all of it was rejected.
+- THE EXACT SYSTEM. Symmetry reduces the equations to three conditions,
+  each LINEAR in (m1, mA, mB, lambda), with the half-powers made algebraic
+  by C^2(u^2+1)^3 = 1 and D^2(p^2+1)^3 = 1. Eliminating C and D by
+  resultants leaves two integer-coefficient polynomials in (u, p) of 2027
+  and 936 terms, both vanishing at the point to relative 3.6e-60 and
+  2.6e-65.
+- FINITENESS, PROVED. g1 is the square of an irreducible curve of total
+  degree 40, g2 is irreducible of total degree 56, and gcd(g1, g2) has
+  total degree 0. Coprime, so the common zero set is zero-dimensional:
+  the degenerate configurations of the doubly symmetric cross family are
+  FINITE, at most 40 x 56 = 2240 over C with multiplicity. A common factor
+  would have been a curve of degenerate configurations and would have
+  broken the dimension count; there is none. The polynomials are
+  resultants so they may carry extraneous factors, which puts the true
+  set INSIDE their common zero set, the direction finiteness needs.
+- BAND'S RESIDUE IS CLOSED. band certifies only rank >= 3 and has no trap,
+  which is why a rank-2 point defeated it forever. EXP-021's certify_ball
+  confines R_2 to a codimension-2 manifold, which is dimension 2 and
+  exactly the bound. It fires on all 92 residual boxes (44 + 48) with zero
+  open, witnesses at [0.3668, 0.3668] and [-105.5, -105.4], and the
+  negative control declines at 2^18 wider.
+- A COVERAGE CLAIM CORRECTED, AND A FALSE ALARM WITHDRAWN. The assembly
+  recorded m2's residue as covered by the collapse chart, on the strength
+  of collapse's own docstring. A first check compared the two charts' box
+  coordinates directly, reported a total hole, and was WRONG: the charts
+  do not share a parametrisation. With the real map, which gives
+  cs = Rc * st exactly, 6208 of each m2 chart's boxes are covered and the
+  rest are rejected by collapse's cs < 1/32 test. Following that
+  delegation closes into a loop: tube needs w >= 7/32, tube-ext w >= 1/8,
+  and deep covers w in [0, 1/8] but discards the quadruple corner and
+  hands it to m2, the chart that fails there.
+- THE LAST OPEN REGION, DIAGNOSED. Two causes, neither mathematics.
+  (1) A missing column rescale: the m1 and m2 columns are O(s) while mA
+  and mB are O(s^-2), a ratio of exactly s^3, and both small right
+  singular vectors live ENTIRELY on (m1, m2) with the other components at
+  zero to six decimals. On a failing box the chart's column maxima run
+  5.4e-6, 6.6e-7, 1.0, 1.0. (2) Boxes straddling the physical boundary
+  uh, ph >= 0, which is the curve ct = st alpha and is NOT axis aligned,
+  so bisection can approach but never resolve it: 51.3% of m2-R's residue
+  and 45.4% of m2-L's straddle it. Re-seeding at depth 84 confirms it,
+  m2-R produced ZERO certificates in 462 boxes.
+- THE FIX IS SPECIFIED. Reparametrise the corner by alpha = ct w / st, so
+  uh = ct(1+w)/2 and ph = ct(1-w)/2 and the physical region becomes
+  w in [-1, 1], axis aligned; and divide the two axis-mass columns by
+  their common factor of u, which exists because the measured entry order
+  is exactly +1.
+- fa2b's own cap was raised from 44 to 76, since its residue provably
+  discharges there (1544 boxes, zero failures).
+- (0,3) unchanged in structure: collapse1's 14485 failures are ALL
+  face-touching, the same vanishing-floor situation as the merge face, so
+  that stratum still has its two faces open and its blow-up sub-chart
+  unbuilt.
