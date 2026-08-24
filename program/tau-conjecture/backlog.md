@@ -32,6 +32,6 @@
 | TCB-028 | Paper v0.03 | done | P1 | 2026-08-20 PUBLISHED with the z_max(8) resolution: DOI 10.5281/zenodo.22035884 (concept unchanged) |
 | TCB-029 | The final-pm 8-gate residual | subsumed | P0 | 2026-08-20: EXP-010 (QF_BV) also engine-bound at known-answer scale: the solver lane is CLOSED (both backends, semantics proven, search intractable); the residual is decided by EXP-011 scan8 (all-gate, unconditional) |
 | TCB-030 | Evaluation-matrix instrumentation (V11): entry-growth measurements on record matrices; Mahler/height trade-off lemma target | todo | P2 | Context note 2026-08-03 |
-| TCB-031 | The scaling gap: bounds for T(2S) vs T(S) (no elementary substitution exists) | todo | P2 | Minted by the RL-3 note; concrete first case: T({0,+-2,+-4}) |
+| TCB-031 | The scaling gap: T(2S) vs T(S) | first case DONE | P2 | 2026-08-24: T({0,+-1,+-2}) = 6 but T({0,+-2,+-4}) = 8 EXACTLY (8-gate witness + census lower bound via the complete tau<=7 five-rooter taxonomy). Scaling is NOT in the +1 class of translation/reflection. General k left open. |
 | TCB-032 | The {9,10} window for 7 roots: construction hunt (corrected cost model), then depth-9 feasibility memo | todo | P1 | Depth-9 build needs ~1 TB scratch |
 | TCB-033 | Digit + mod-p ladders at depth 8, replayed from the stored frontier asset | todo | P2 | Frontier at E:/_Datos/caos-research/tau-conjecture/ |
