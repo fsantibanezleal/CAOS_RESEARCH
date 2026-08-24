@@ -320,3 +320,117 @@ What has to be settled before a statement is drafted again:
 
 Per the standing rule, no statement wording goes anywhere until Felipe
 sees it first, and there is now nothing ready to show.
+
+## 8. CORRECTION to section 6b: the m2 coverage claim was one third true (2026-08-24)
+
+Section 6b listed m2-L and m2-R as "region covered by the collapse chart,
+which is at zero". That came from collapse.py's own docstring, which says
+its `cs` test "replaced an earlier |f| < 1/16 test that was too
+aggressive: it rejected precisely the region m2's residue occupies, which
+this chart certifies directly". A comment is not evidence, and checking it
+changed the answer.
+
+### The check, and a false alarm on the way
+
+A first attempt compared the two charts' box coordinates directly and
+reported that ALL of m2's residue was discarded by collapse, i.e. a total
+hole. That was wrong and is withdrawn: the charts do not share a
+parametrisation. m2's box is `(Rc, tt, v, tau)` and collapse's is
+`(eps, t, v, q)`, so the comparison was meaningless.
+
+The real relation, worked out from the two docstrings, gives a clean
+identity. With `ct, st = (1 - tt^2, 2tt)/(1 + tt^2)`,
+`alpha = sgn(1 - tau^2)/(1 + tau^2)`, `beta = 2tau/(1 + tau^2)`:
+
+    u - p = Rc st alpha,   f = Rc st beta,   alpha^2 + beta^2 = 1
+
+so `cs^2 = (u-p)^2 + f^2 = Rc^2 st^2`, that is
+
+    cs = Rc * st    EXACTLY.
+
+### The result, per box and with intervals
+
+| | m2-L (26878 boxes) | m2-R (19962 boxes) |
+|---|---|---|
+| covered by collapse | 6208 | 6208 |
+| rejected by collapse's `cs < 1/32` | 20670 | 13754 |
+| rejected by collapse's axis slabs | 0 | 0 |
+| outside collapse's seed | 0 | 0 |
+
+So roughly a third is genuinely covered, and the smallest `cs` among those
+is `0.031113` against the threshold `0.03125`, which is how narrowly it
+holds.
+
+### Where the other two thirds go, and why nothing catches them
+
+collapse delegates `cs < 1/32` to the collision tube. Following that
+delegation to its end:
+
+  * `tube` requires `w in [7/32, 3]`, and m2's residue has `w` at 0;
+  * `tube-ext` requires `w in [1/8, 7/32]`, same problem;
+  * `deep` covers `w in [0, 1/8]` but DISCARDS the quadruple corner
+    `{w < 1/32 and rho < 1/16}`, delegating it to m2;
+  * m2's residue has `w = Rc ct/2` at 0 (its `tt` boxes touch 1, so
+    `ct` is 0) and `rho = cs` at about 0.056, which is inside that corner.
+
+The delegation closes into a loop: deep hands the corner to m2, and m2 is
+the chart that fails there. Nothing else covers it.
+
+### What the region is
+
+At `tt = 1` and `tau = 1` one has `ct = 0`, `st = 1`, `alpha = 0`,
+`beta = 1`, hence `uh = ph = 0` and `u = p = 0`: BOTH mirror pairs sitting
+exactly on the symmetry axis, which is a double collision and not a
+configuration of the stratum. m2's residual boxes touch that face. It is
+not the singularity m2's docstring anticipated -- that one is at
+`tt = 1, tau = 0`, where `CXd = 0`; here `CXd = 1` and nothing is
+singular about the chart itself.
+
+So this is the same shape as every other open residue in the campaign: a
+face that is a collision, where the certificates stop working, and where
+the covering needs either a face lemma or a trap that fires.
+
+### Status change
+
+The (2,2) atlas is NOT complete. band's residue is closed (section 9), but
+the quadruple corner is open, and section 6b overstated the position. The
+honest count of open regions in this stratum is ONE.
+
+## 9. band's residue is CLOSED by the trap (2026-08-24)
+
+band certifies only rank `>= 3`, by an interval minor or its mean-value
+form. It has no trap. At the cross point the rank IS 2, so no rank-3
+certificate can exist there and no amount of bisection was ever going to
+produce one; that is why the residue survived a further 44 halvings.
+
+The dimension count does not need rank 3 everywhere. It needs
+`dim R_2 <= 2`, and EXP-021 already carries the certificate for exactly
+that, `certify_ball`:
+
+  * a 2 x 2 minor interval-nonzero over the box, so rank `>= 2` holds
+    everywhere on it and `R_1` meets it nowhere; and
+  * two 3 x 3 minors whose gradients have a nonzero 2 x 2 subdeterminant
+    over the box, so `R_2` meets the box inside a smooth codimension-2
+    manifold.
+
+Codimension 2 in a 4-dimensional shape space is dimension 2, which is the
+bound.
+
+Applied to band's residue:
+
+| set | boxes | trapped | open |
+|---|---|---|---|
+| band | 44 | 44 | 0 |
+| band-residue (deeper cap) | 48 | 48 | 0 |
+
+with witnesses showing rank `>= 2` by a minor enclosing `[0.3668, 0.3668]`
+and `R_2` confined by minors `((0,1,5),(1,2,3))` and `((0,3,5),(1,2,3))`
+with gradient subdeterminant enclosing `[-105.5, -105.4]`.
+
+Negative controls: on a box `2^12` times wider the trap still fires, on
+one `2^18` times wider it declines. So it is not vacuous.
+
+This is the satisfying part. The trap was designed to bound the dimension
+of the rank-2 locus without excluding it, and here it does exactly that
+with a genuine degenerate central configuration sitting inside the boxes
+it certifies.
