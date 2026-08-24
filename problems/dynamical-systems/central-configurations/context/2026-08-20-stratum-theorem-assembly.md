@@ -434,3 +434,81 @@ This is the satisfying part. The trap was designed to bound the dimension
 of the rank-2 locus without excluding it, and here it does exactly that
 with a genuine degenerate central configuration sitting inside the boxes
 it certifies.
+
+## 10. The last open region, fully diagnosed (2026-08-24)
+
+m2's residue is the only open region left in this stratum. It is now
+explained, with two distinct causes and a specified fix for each. Neither
+is mathematics; both are chart defects.
+
+### It is not a depth problem
+
+Re-seeding m2's residue at depth 84, the lever that fully discharged
+fa2b's, does not work: `m2-R-residue` reached depth 84 with ZERO
+certificates in its first 102 boxes. `m2-L-residue` does discharge
+normally, which is itself informative.
+
+### It is not closable in the original coordinates either
+
+The trap in the original coordinates is what closed band. Here it cannot
+even be evaluated: m2's blow-up maps a chart box of width `1e-10` to an
+original box of width `1.2e-3` straddling `u = 0`, where the matrix is
+undefined. All 4000 boxes tried came back "not evaluable". That is
+precisely why the blow-up chart exists.
+
+### Cause 1: the missing column rescale
+
+Measured orders in `s` of every entry, as the pairs collapse
+(`s = 2^-10` against `2^-12`):
+
+| row | m1 | m2 | mA | mB |
+|---|---|---|---|---|
+| L13 | zero | +1 | -2 | +1 |
+| L15 | zero | +1 | +1 | -2 |
+| L23 | +1 | zero | -2 | +1 |
+| L25 | +1 | zero | +1 | -2 |
+| L35 | +1 | +1 | -2 | -2 |
+| L36 | +1 | +1 | -2 | -2 |
+
+The `m1` and `m2` columns are `O(s)`, the `mA` and `mB` columns are
+`O(s^-2)`: a ratio of exactly `s^3`. And the two small right singular
+vectors live ENTIRELY on `(m1, m2)`, with `mA` and `mB` components at
+`0.000000` at every scale tested. So `sigma_3` and `sigma_4` both vanish
+like `s^3` while `sigma_1` and `sigma_2` stay at 2.00 and 1.56, and the
+rank is still 3 in the open stratum, only by that much.
+
+m2's chart inherits deep's column rescales `mA x 4u^2` and `mB x 4p^2`,
+which clear the `s^-2`, but nothing rescales `m1` and `m2`. Measured on a
+failing box, the chart's column maxima are `m1: 5.4e-6`, `m2: 6.6e-7`,
+`mA: 1.0`, `mB: 1.0`, giving `sigma_3/sigma_1 = 2.7e-6`. Rank is invariant
+under invertible column scaling, so dividing the two axis-mass columns by
+their common factor of `s` restores an `O(1)` matrix and the certificates
+with it.
+
+### Cause 2: boxes straddling a boundary the bisection cannot see
+
+The physical region is `uh >= 0` and `ph >= 0`, where
+`uh, ph = (ct +- st alpha)/2`. That boundary is the curve
+`ct = st alpha` in `(tt, tau)`, which is NOT axis aligned. Axis-aligned
+bisection can approach it but never resolve it, so a box straddling it
+contains unphysical points forever and no certificate can hold on the
+whole box. That is exactly why more depth does not help.
+
+Measured: `10352` of m2-R's `20164` residual boxes (51.3%) and `12192` of
+m2-L's `26878` (45.4%) straddle `uh = 0` or `ph = 0`.
+
+m2's discard only rejects boxes that are WHOLLY unphysical
+(`uh.hi < 0 or ph.hi < 0`), which is the same shape as the bug found
+earlier in deep, where boxes with `p < 0` produced 10648 phantom failures.
+
+### The fix, specified
+
+One chart fixes both: reparametrise the corner by `(uh, ph)` themselves
+instead of `(tt, tau)`, which makes the physical boundary two coordinate
+planes, and add the column rescale on `m1` and `m2`. Then the unphysical
+region is discarded exactly, and every column is `O(1)`.
+
+Until that chart exists, this stratum's atlas has one open region, and the
+theorem chain is not complete. The dimension count is not in question
+there: `sigma_3` is nonzero throughout the open stratum, so `R_2` does not
+reach into this corner.
