@@ -110,3 +110,29 @@ Also note: twenty shards each load the 69 MB polynomial catalog at
 startup, so the first minutes show processes with ~0 CPU while they read
 from disk. That is not a hang; the per-shard logs appear once loading
 finishes.
+
+## Operational incidents (2026-08-23/24), recorded
+
+1. **We killed another session's processes.** While clearing what looked
+   like stale workers, the filter selected python processes by NAME and
+   START TIME with no path or command-line predicate, on a machine where
+   other CAOS sessions run their own python work (`cb1.py --resume` from
+   the CAOS_MANAGE venv). Those were terminated too. Rule adopted: NEVER
+   select processes to kill by image name alone; always require a
+   command-line or executable-path match for this experiment
+   (`*scan9add_fast.py*`). The keepalive guard is written that way.
+2. **A "hung" launch was actually CPU starvation.** Twenty freshly
+   launched shards showed ~0 CPU and ~2 MB RSS, which read as wedged; the
+   machine was in fact pinned at 100% by other work, so the new processes
+   were simply not scheduled. Diagnose saturation before declaring a
+   launcher broken.
+3. **PowerShell variables are case-insensitive**: a loop variable `$n`
+   silently overwrote the shard-count `$N`, so shards launched with
+   `--nshards 00, 01, 02, ...` and exited immediately ("shard 2/2: 0
+   partitions"). Renamed to `$tag`. No results were affected: mismatched
+   shards either did nothing or recomputed existing partitions, and all
+   partition writes are atomic and skip-if-present.
+4. **Self-healing launcher adopted**: `keepalive.ps1` under the scheduled
+   task `tau_keepalive` (every 15 minutes) relaunches only the shards
+   that still have unfinished partitions, and only when none of ours are
+   running. This survives session teardown, which killed the scan twice.
