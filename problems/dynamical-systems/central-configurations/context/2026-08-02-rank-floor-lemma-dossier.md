@@ -1223,3 +1223,50 @@ So the degenerate cross configuration is an exact algebraic point, cut out
 by `g1 = g2 = 0`, and the numeric above is an approximation to it rather
 than the object itself. The polynomials are stored at
 `experiments/EXP-022-collar-coverings/artifacts/cross-exact-g1g2.pkl`.
+
+### FINITENESS of the degenerate cross configurations, proved exactly (2026-08-24)
+
+The two polynomials `g1` and `g2` cut out the degenerate cross
+configurations. Eliminating `p` between them over the integers is out of
+reach (`g1` has total degree 80, degree 56 in each variable, 2027 terms;
+`g2` has total degree 56, 936 terms), and a univariate minimal polynomial
+is not worth chasing. The question that decides the mathematics is
+cheaper, and it has been answered.
+
+**Factorization.** `g1` is the SQUARE of an irreducible polynomial of
+total degree 40 (degree 28 in each variable); `g2` is irreducible of total
+degree 56 (44 in `u`, 32 in `p`). Both content 1.
+
+**Coprimality.** `gcd(g1, g2)` has total degree 0. They share no factor,
+and neither do the two irreducible curves that actually pass through the
+point.
+
+That settles finiteness without any numerics:
+
+> The degenerate configurations of the doubly symmetric cross family are
+> contained in the intersection of two coprime plane curves, hence form a
+> ZERO-DIMENSIONAL set. There are finitely many, and by Bezout at most
+> `40 x 56 = 2240` over the complex numbers counted with multiplicity.
+
+A common factor would have meant a CURVE of degenerate configurations,
+which would have broken the dimension count outright. There is none.
+
+**What the numerics then add.** The census over the face found exactly one
+real, collision-free point with an admissible (all-positive) mass ray, and
+four independent basins converge to it. The exact statement bounds how
+many there can be; the census says how many of them are physical. Both
+live factors vanish at that point, to relative `1.65e-59` and `4.95e-61`.
+
+**Scope, stated precisely.** This is the DOUBLY symmetric sub-family: the
+four bodies on the line carry masses `mB, mA, mA, mB` and the two off it
+carry a common mass. Dias and Pan's cross class is wider, with
+`m1, m2, m3, m4` free on the line and `m5 = m6` off it. The finiteness
+proved here is for the sub-family, and it concerns the DEGENERATE
+configurations specifically, which is a different question from theirs:
+they bound the configurations for a fixed generic mass vector, this bounds
+the mass vectors at which degeneracy can happen at all.
+
+**Direction of the containment.** `g1` and `g2` are resultants, so they
+can carry extraneous factors, which means the true degenerate set is
+CONTAINED in their common zero set. That is the direction finiteness
+needs, so the conclusion is safe.
