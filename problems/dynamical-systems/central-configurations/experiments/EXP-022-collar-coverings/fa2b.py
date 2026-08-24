@@ -190,7 +190,10 @@ def main():
         entry_factory("iv"), entry_factory("dv"),
         HERE / "artifacts",
         "E:/_Datos/caos-research/central-configurations/EXP-022",
-        discard=discard, depth=44, budget=10800 if resume else 43200, resume=resume)
+        # DEPTH 76, not the shared 44 (2026-08-24). The residue re-run
+        # proved this chart's entire 200-box residue discharges at 76 with
+        # zero failures, so the cap was the only thing holding it open.
+        discard=discard, depth=76, budget=10800 if resume else 43200, resume=resume)
 
 if __name__ == "__main__":
     main()

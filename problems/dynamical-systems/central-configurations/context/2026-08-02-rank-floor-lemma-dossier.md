@@ -1172,3 +1172,54 @@ POINT itself: whether this specific doubly symmetric cross configuration
 appears in the wider symmetric-central-configuration literature, which is
 large. The claim to make is about the family and the witness, not about
 having discovered a configuration.
+
+### The cross point is EXACT: its defining algebraic system (2026-08-24)
+
+The point was a forty-digit numeric. It is now pinned two ways.
+
+**Refined to 256 digits.** Newton on the two vanishing minors of the 3 x 4
+system, at 260 working digits, gives residuals `3.3e-256` and
+`-2.2e-256`, with
+
+    u* = 0.630918137106736797167988596864253187098618034747723407767631
+    p* = 1.45090746590807305719166080680651095948633549667961704443288
+
+and `sigma_3/sigma_1 = 5.6e-257` for the 3 x 4 system, `4.4e-256` for the
+6 x 4 reduced matrix. Rank 2 is confirmed to 256 digits.
+
+**No blind algebraic shortcut.** PSLQ on powers of `u*`, `p*`, `u*+p*`,
+`u*p*`, `p*/u*` and two mutual distances returned a "degree 9 relation"
+for every one of them, which is the signature of spurious hits. Checking
+the best candidate: its residual at `u*` is `6.0e-41`, against the
+`1e-180` tolerance it was supposedly found at. All rejected. Nothing
+algebraic is claimed from PSLQ.
+
+**The exact system, written down directly.** Symmetry puts the centre of
+mass at the origin and forces the two axis masses equal, so the
+central-configuration equations reduce to three scalar conditions, each
+LINEAR in `(m1, mA, mB, lambda)`:
+
+| | m1 | mA | mB | lambda |
+|---|---|---|---|---|
+| E1 at (u,0) | `-2uC` | `-1/(4u^2)` | `1/(p-u)^2 - 1/(p+u)^2` | `u` |
+| E2 at (p,0) | `-2pD` | `-1/(p-u)^2 - 1/(p+u)^2` | `-1/(4p^2)` | `p` |
+| E3 at (0,1) | `-1/4` | `-2C` | `-2D` | `1` |
+
+with `C = (u^2+1)^(-3/2)` and `D = (p^2+1)^(-3/2)`, algebraic through
+`C^2 (u^2+1)^3 = 1` and `D^2 (p^2+1)^3 = 1`.
+
+A degenerate configuration is exactly where this matrix drops to rank 2,
+so every 3 x 3 minor vanishes. Eliminating `C` and `D` from two
+independent minors by resultants leaves two polynomials with integer
+coefficients in `(u, p)` alone, of 2027 and 936 terms. Both vanish at the
+point:
+
+| | value at (u*, p*) | largest term | relative |
+|---|---|---|---|
+| g1 | 2.33e-43 | 6.46e+16 | 3.6e-60 |
+| g2 | 1.47e-54 | 5.59e+10 | 2.6e-65 |
+
+So the degenerate cross configuration is an exact algebraic point, cut out
+by `g1 = g2 = 0`, and the numeric above is an approximation to it rather
+than the object itself. The polynomials are stored at
+`experiments/EXP-022-collar-coverings/artifacts/cross-exact-g1g2.pkl`.
