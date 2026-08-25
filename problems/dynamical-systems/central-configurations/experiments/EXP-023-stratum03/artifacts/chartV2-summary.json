@@ -1,12 +1,12 @@
 {
  "ok": false,
  "counters": {
-  "processed": 426165,
-  "certified": 137427,
-  "mv_certified": 65328,
-  "trapped": 40,
-  "discarded": 10276,
-  "failed": 24
+  "processed": 671652,
+  "certified": 212593,
+  "mv_certified": 108766,
+  "trapped": 1584,
+  "discarded": 12872,
+  "failed": 23
  },
  "depth_cap": 80,
  "wall_s": 43200

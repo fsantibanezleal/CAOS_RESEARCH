@@ -101,13 +101,17 @@ def descend(x0, rnd, iters=1500, step0=0.25, shrink=0.5, every=150):
     return x, best
 
 
-def polish(x0, step0=1e-3, floor=1e-17):
+def polish(x0, step0=1e-3, floor=1e-17, screen=None):
     """Deterministic pattern search: drives the basin to its bottom.
 
     sigma_3 vanishes LINEARLY at a rank-2 point, so a coarse descent can
     only reach sigma_3 ~ (coordinate resolution). The bottom has to be
-    approached with a shrinking axis-aligned pattern, which is what
-    distinguishes a true zero from a positive plateau.
+    approached with a shrinking axis-aligned pattern.
+
+    screen: if given, abandon the basin as soon as the step has fallen
+    below it without the ratio following. A basin that is NOT heading for
+    zero plateaus, and screening those out early is what makes a census
+    over thousands of basins affordable.
     """
     x = list(x0)
     cur = obj(x)
@@ -132,6 +136,8 @@ def polish(x0, step0=1e-3, floor=1e-17):
                         cur, x, moved = v, y, True
         if not moved:
             step *= 0.35
+            if screen is not None and step < screen and cur > 1e-6:
+                return x, cur
     return x, cur
 
 
@@ -198,7 +204,10 @@ def main():
 
     seen, hits = [], []
     for v, x in sorted(cands):
-        xp, vp = polish(x)
+        xp, vp = polish(x, screen=1e-7)
+        if vp > 1e-6:
+            continue
+        xp, vp = polish(xp)
         if vp > 1e-11:
             continue
         if any(sum((a - b) ** 2 for a, b in zip(xp, y)) < 1e-8 for y in seen):
