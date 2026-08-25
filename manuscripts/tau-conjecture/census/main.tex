@@ -24,6 +24,7 @@
 \newcommand{\zmax}{z_{\max}}
 \newcommand{\zpmax}{z^{p}_{\max}}
 \newcommand{\zrmax}{z^{\mathbb{R}}_{\max}}
+\newcommand{\zqmax}{z^{\mathbb{Q}}_{\max}}
 
 \title{The Bottom of the Shub--Smale Tau Conjecture:\\
 an Exact Census of Integer Roots for Constant-Free\\
@@ -315,12 +316,17 @@ counts through depth $6$, and the record sets), and did.
 \textbf{Pre-registration.} Every computation ran under a hypothesis file committed to
 the repository \emph{before} the run, with falsifiable predictions, an explicit
 statement of what a pass and a fail would prove, a compute budget and a kill
-criterion. Three committed predictions were refuted by the machine: we predicted
+criterion. Five committed predictions were refuted by the machine: we predicted
 $\zmax(6) = 4$ (the census returned $5$; Section~\ref{sec:census}); we predicted zero
 tower yield off the fixed-point series (a second series exists;
-Section~\ref{sec:family}); and we predicted the six-root multiplication case empty at
-$8$ gates (the scan found $408$ witnesses; Section~\ref{sec:window}). Each refutation
-is reported alongside what it taught.
+Section~\ref{sec:family}); we predicted the six-root multiplication case empty at
+$8$ gates (the scan found $408$ witnesses; Section~\ref{sec:window}); we predicted at
+most three odd roots in the digit-restricted census (the ladder reaches four;
+Section~\ref{sec:digit}); and we predicted that the additive scan's evaluation window
+would leave most of its search space undecided (it decides $99.998\%$;
+Section~\ref{sec:seven}). A sixth, a growth rhythm predicting $\zmax(9) = 7$, is so
+far refuted only for a multiplicative final gate. Each refutation is reported
+alongside what it taught.
 One tooling incident is likewise on record: divisor-based root counting is infeasible
 against tower constant terms of size $c^{2^k}$, and was replaced, for the family
 measurement only, by direct evaluation over a window proved correct in advance
@@ -919,6 +925,40 @@ $\mathbb{F}_p$ the count doubles with every gate, which is the fastest the
 degree bound permits, and the extremal programs are the cheapest available:
 repeated squaring, then subtract one. The same polynomial $x^{2^k}-1$ has
 exactly two integer roots, $\pm 1$, for every $k$.
+
+\subsection{A fourth column: the rational ladder}\label{sec:rational}
+
+The conjecture counts \emph{integer} roots. Its natural algebraic relaxation
+counts rational ones, and it is not obvious which of the two constraints is
+doing the work. Writing $\zqmax(\tau)$ for the maximum number of distinct
+rational roots, computed exactly by the rational root theorem over $\mathbb{Z}$:
+\[
+\begin{array}{l|cccccc}
+\tau           & 1 & 2 & 3 & 4 & 5 & 6\\\hline
+\zmax(\tau)    & 1 & 2 & 3 & 3 & 4 & 5\\
+\zqmax(\tau)   & 1 & 2 & 3 & 3 & 4 & 5
+\end{array}
+\]
+exhaustively through $\tau = 6$ [MV], the $\tau = 6$ row again obtained by the
+last-gate lemma over the depth-$5$ frontier and gated by requiring the integer
+maximum on the same set to reproduce $\zmax(6) = 5$.
+
+The two ladders coincide: allowing denominators buys nothing at all. This is
+not because the rational world is a copy of the integer one, and the extremal
+objects are in fact different. The $\tau = 6$ rational record is
+\[
+  8x^6 - 10x^4 + 2x^2 \;=\; 2x^2(x-1)(x+1)(2x-1)(2x+1),
+\]
+with five distinct rational roots $\{0, \pm\tfrac12, \pm 1\}$ but only
+\emph{three} integer ones, while the $\tau = 6$ integer record attains five
+integer roots outright. Half-integer roots are cheap here, since the constants
+$2$ and $4$ are cheap, and they still do not raise the ceiling.
+
+So integrality is not where the difficulty lives, at least at the bottom of the
+ladder: the same growth function appears over $\mathbb{Q}$. Whatever separates
+$\mathbb{Z}$ from $\mathbb{R}$ and $\mathbb{F}_p$ in the table above already
+separates $\mathbb{Q}$ from them too. We state this as a measurement over the
+census range and claim nothing asymptotic from it.
 
 The mechanism is the one the three-worlds reading predicts. In
 $\mathbb{F}_p^{\times}$, cyclic of order $p-1$, the equation $x^d = 1$ has
