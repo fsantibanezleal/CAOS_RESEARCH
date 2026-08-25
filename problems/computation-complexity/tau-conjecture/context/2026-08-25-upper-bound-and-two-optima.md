@@ -98,9 +98,13 @@ mechanisms, and the mechanisms have different PARITY:
 
 At seven roots, an odd target, the tower is native and the interval needs
 its patch, and they come out EQUAL at ten gates. Through the whole
-exhaustive range (z <= 6) the minimal-gate root sets are intervals. So the
-census range never separates the two mechanisms; it ends exactly where
-they tie.
+exhaustive range an interval is always AMONG the minimal-gate record sets.
+It is NOT the only one, and an earlier draft of this note claimed otherwise:
+at tau = 5 the four-root records include the interval {-1,0,1,2} and also
+{+-1,+-2}, computed by x^2 - (x^2-2)^2, which is not an interval; at tau = 2
+the record {-1,1} is likewise not one. The census refutes the stronger claim.
+What survives is that the census range never separates the two mechanisms;
+it ends exactly where they tie.
 
 Height does separate them: witness A has height 56, witness B has 84, and
 the six-root interval has height 15 against 84 for the six-root tower.

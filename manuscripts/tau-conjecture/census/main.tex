@@ -603,8 +603,9 @@ $\{0,\pm1,\pm2,\pm4\}$, height $84$.
 Hence the seven-root threshold is at most $10$.
 \end{proposition}
 
-Both counts are tight against the model's conventions because the programs are
-run as data, not counted by hand. Witness (A) costs nothing extra for its
+Both gate counts are exact against the model's conventions because the programs
+are run as data rather than counted by hand; neither is claimed to be optimal,
+which is the business of the scan below. Witness (A) costs nothing extra for its
 third factor, since $q - 6 = (q-2) - 4$ and the constant $4$ is already in the
 state of the exhaustive $8$-gate six-rooter $q(q-2)(q-6)$ of
 Theorem~\ref{thm:window}; appending $(x-4)$ costs one subtraction and one
@@ -642,8 +643,11 @@ Squaring by $y = x^2$ has one self-paired value, $0$, whose preimage is the
 single point $x = 0$: squaring natively produces \emph{odd} counts, $2m+3$.
 
 Seven is odd, so the tower is native there and the interval needs its patch,
-and the two come out equal at ten gates. Across the entire exhaustive range
-($z \le 6$) the minimal-gate root sets are intervals. The census therefore ends
+and the two come out equal at ten gates. Across the exhaustive range an
+interval is always \emph{among} the minimal-gate record sets, though it is not
+the only one: at $\tau = 5$ the four-root records include the interval
+$\{-1,0,1,2\}$ and also the difference-of-squares set $\{\pm1,\pm2\}$, computed
+by $x^2 - (x^2-2)^2$, which is not an interval [MV]. The census therefore ends
 exactly where the two mechanisms tie, and never separates them.
 
 Height does separate them. Witness (A) has height $56$ against (B)'s $84$, and

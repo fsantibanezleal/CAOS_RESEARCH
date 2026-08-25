@@ -140,8 +140,10 @@ parity:
 
 At seven, an odd target, the tower is native and the interval needs its
 patch, and they come out EQUAL at ten gates. Through the whole exhaustive
-range ($z \le 6$) the minimal-gate sets are intervals. The census range
-therefore ends exactly where the two mechanisms tie, and never separates
+range an interval is always AMONG the minimal-gate record sets, but not the
+only one: at $\tau = 5$ the four-root records include both the interval
+$\{-1,0,1,2\}$ and $\{\pm1,\pm2\}$, computed by $x^2 - (x^2-2)^2$. The census
+range therefore ends exactly where the two mechanisms tie, and never separates
 them.
 
 Height does separate them: 56 for A against 84 for B, and 15 against 84 at

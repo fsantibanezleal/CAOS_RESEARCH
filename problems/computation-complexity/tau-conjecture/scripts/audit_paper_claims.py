@@ -147,5 +147,34 @@ check("q^8: (gates, degree, distinct integer roots)",
       (5, len(p)-1, sorted(integer_roots(p))), (5, 16, [0, 1]))
 
 print()
+print("== Record root sets: an interval is AMONG them, but not alone ==")
+from tclib.enum import census_polynomials
+_per, _fs, _c = census_polynomials(5)
+rec = {}
+for pp, tt in _fs.items():
+    if not pp:
+        continue
+    R = tuple(sorted(integer_roots(pp)))
+    rec.setdefault(tt, {}).setdefault(len(R), set()).add(R)
+
+
+def is_interval(R):
+    return len(R) > 0 and list(R) == list(range(R[0], R[0] + len(R)))
+
+
+for tt in sorted(rec):
+    zt = max(rec[tt])
+    sets = rec[tt][zt]
+    check(f"tau={tt}: an interval is among the record sets",
+          any(is_interval(R) for R in sets), True)
+# the specific counterexample the manuscript now names
+check("tau=5 records include the NON-interval {+-1,+-2}",
+      (-2, -1, 1, 2) in rec[5][max(rec[5])], True)
+check("tau=2 records include the NON-interval {-1,1}",
+      (-1, 1) in rec[2][max(rec[2])], True)
+check("NOT every tau=5 record set is an interval",
+      all(is_interval(R) for R in rec[5][max(rec[5])]), False)
+
+print()
 print("FAILURES:", FAIL if FAIL else "none")
 sys.exit(1 if FAIL else 0)

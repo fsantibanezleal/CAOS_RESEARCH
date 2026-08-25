@@ -112,6 +112,13 @@ We claim no growth rate for the real ladder. Six points cannot separate
 $\Theta(2^{\tau/2})$ from its neighbours, the family's own rate decays after
 $\tau = 8$, and the paper needs only the known failure of the real analogue.
 
+A caution on record sets, since it is easy to overstate: an interval is always
+*among* the minimal-gate record root sets in the exhaustive range, but it is not
+the only one. At $\tau = 5$ the four-root records include the interval
+$\{-1,0,1,2\}$ and also $\{\pm 1, \pm 2\}$, computed by $x^2 - (x^2-2)^2$, which
+is not an interval. An earlier draft of these notes claimed all minimal-gate
+record sets are intervals; the census refutes that.
+
 One observation worth keeping: the $\tau = 6$ real record has **zero** integer
 roots, while the $\tau = 6$ integer record has five. At equal cost the two
 worlds are optimized by completely disjoint polynomials. The real ladder is not
