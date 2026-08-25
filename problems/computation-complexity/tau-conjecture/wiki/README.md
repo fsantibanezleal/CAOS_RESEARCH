@@ -32,7 +32,8 @@ concept DOI [10.5281/zenodo.21753438](https://doi.org/10.5281/zenodo.21753438)
 | [03 the census](03-census.md) | Exact $z_{\max}(\tau)$ ladder, record gallery, the tower obstruction | transcribed 2026-08-01 (EXP-003 row pending its verdict) |
 | [04 mechanisms](04-mechanisms.md) | Move inventory, the two stall theorems, dual $T(S)$ table | transcribed 2026-08-01 (round 4) |
 | [05 open questions](05-open-questions.md) | The standing board with routes | transcribed 2026-08-02 |
-| 06 experiments index | One line per EXP-NNN with verdicts | current (below) |
+| [06 the nine-gate question](06-the-nine-gate-question.md) | The seven-root threshold: method, the decided multiplicative half, what each outcome means | transcribed 2026-08-24 |
+| 07 experiments index | One line per EXP-NNN with verdicts | current (below) |
 
 ## Experiments index
 
