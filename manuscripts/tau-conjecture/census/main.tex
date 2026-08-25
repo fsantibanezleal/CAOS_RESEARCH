@@ -545,6 +545,158 @@ measured exactly against our anchored integer census): within this family, the
 ``parameterized loophole'' left open by Theorem~\ref{thm:stall} is empty [MV for
 $c \le 200$; C beyond].
 
+\section{The seven-root threshold}\label{sec:seven}
+
+Theorem~\ref{thm:depth8} left the threshold for $7$ distinct integer roots at
+$9$ or $10$. This section closes the upper side constructively, decides the
+multiplicative half of the ninth gate exhaustively, and states exactly what
+remains conditional on the additive half.
+
+\subsection{Two ten-gate witnesses}\label{sec:seven:upper}
+
+Version 0.03 asserted a $10$-gate witness in passing. We now give two, written
+as explicit programs and executed gate by gate in the same exact arithmetic as
+the census; they are structurally different, and the difference is the point.
+
+\begin{proposition}[upper bound; MV]\label{prop:ten}
+Each of the following constant-free programs has length $10$ and computes a
+polynomial with $7$ distinct integer roots.
+\begin{enumerate}
+\item[(A)] With $q = x^2 - x$: $\; p_A = q(q-2)(q-6)\cdot(x-4)$, root set the
+interval $\{-2,\dots,4\}$, height $56$.
+\item[(B)] $\; p_B = x^2(x^2-1)(x^2-4)(x^2-16)$, root set the tower
+$\{0,\pm1,\pm2,\pm4\}$, height $84$.
+\end{enumerate}
+Hence the seven-root threshold is at most $10$.
+\end{proposition}
+
+Both counts are tight against the model's conventions because the programs are
+run as data, not counted by hand. Witness (A) costs nothing extra for its
+third factor, since $q - 6 = (q-2) - 4$ and the constant $4$ is already in the
+state of the exhaustive $8$-gate six-rooter $q(q-2)(q-6)$ of
+Theorem~\ref{thm:window}; appending $(x-4)$ costs one subtraction and one
+multiplication. Witness (B) is cheap for a different reason: each of its
+constants is a single squaring past the previous one ($2 \to 4 \to 16$), so it
+costs one gate, and each is a perfect square, so it contributes a genuine
+\emph{pair} of roots.
+
+That second mechanism generalizes.
+
+\begin{proposition}[square-tower family; MV for $m \le 4$]\label{prop:tower}
+Let $t_1 = 2$ and $t_{i+1} = t_i^2$, and set
+\[
+  p_m(x) \;=\; x^2\,(x^2-1)\prod_{i=2}^{m+1}\bigl(x^2 - t_i\bigr).
+\]
+Then $p_m$ has $z = 2m+3$ distinct integer roots and is computed by
+$\tau = 3m+4$ gates for $m \ge 1$ ($3$ gates when $m = 0$): three gates per two
+roots.
+\end{proposition}
+
+The family is a useful calibration precisely because it is \emph{not} uniformly
+optimal. At $m = 0$ it gives $3$ roots in $3$ gates and the census says the
+minimum for $3$ roots is exactly $3$; at $m = 1$ it gives $5$ roots in $7$
+gates where the census achieves $5$ roots in $6$. It therefore supplies upper
+bounds only, and it is the exhaustive scan below, not the construction, that
+decides optimality at seven.
+
+\subsection{Two arithmetics of opposite parity}\label{sec:seven:parity}
+
+Witnesses (A) and (B) exploit different mechanisms, and the mechanisms differ
+in parity. Folding by $q = x^2-x$ identifies $x$ with $1-x$, so every value
+with integer preimages contributes exactly two roots: folding natively produces
+\emph{even} root counts, and an odd count costs an extra linear factor.
+Squaring by $y = x^2$ has one self-paired value, $0$, whose preimage is the
+single point $x = 0$: squaring natively produces \emph{odd} counts, $2m+3$.
+
+Seven is odd, so the tower is native there and the interval needs its patch,
+and the two come out equal at ten gates. Across the entire exhaustive range
+($z \le 6$) the minimal-gate root sets are intervals. The census therefore ends
+exactly where the two mechanisms tie, and never separates them.
+
+Height does separate them. Witness (A) has height $56$ against (B)'s $84$, and
+at six roots the interval record has height $15$ against $84$ for the
+corresponding tower. This matches a direct measurement over the census
+witnesses: the minimal height of a polynomial in our catalog with $z$ distinct
+integer roots is $1, 1, 2, 4, 15$ for $z = 2,\dots,6$ [MV], attained by
+intervals. Additively structured root sets are the height-cheap ones;
+multiplicatively structured ones buy their constants at doubly exponential
+magnitude. We record this because it constrains proof strategies: a lower-bound
+argument tuned to spread, multiplicatively built root sets will be blind to
+interval sets, and conversely.
+
+\subsection{The ninth gate, multiplicative half}\label{sec:seven:mult}
+
+By the last-gate lemma a $9$-gate program is one gate over a depth-$8$ state,
+and since $\zmax(8) = 6$ the final gate of any $9$-gate seven-rooter must
+involve the eighth value. When that gate is a multiplication, $f = v\cdot b$
+and $z(f) = |R_v \cup R_b|$, so the question reduces to unions of root sets
+already known from the frontier, with no polynomial arithmetic in the inner
+loop.
+
+\begin{theorem}[MV]\label{thm:nine-mult}
+No $9$-gate constant-free program whose final gate is a multiplication computes
+a polynomial with $7$ distinct integer roots. Over all $1{,}048{,}460{,}912$
+depth-$7$ states, every one-gate extension and every operand, the maximum union
+size is exactly $6$.
+\end{theorem}
+
+The scan was gated before production: the same machinery run at threshold $6$
+returns $793$ unions on a single partition, so it detects unions when they
+exist. This half is unconditional; root-set unions require no evaluation
+window.
+
+\subsection{The additive half, and what ``windowed'' costs}\label{sec:seven:add}
+
+An additive final gate admits no such reduction, since root sets do not compose
+across addition. The instrument works with values instead: every operand and
+extension is evaluated on the window $[-32,32]$ modulo a $31$-bit prime, and
+$f = v \pm b$ vanishes at a point only if the residues agree, so counting
+modular agreements never misses a witness; candidates reaching seven agreements
+are promoted to exact construction and exact root counting. Two traps were
+fixed before production ($61$-bit primes overflow \texttt{int64} under modular
+multiplication, and identically-zero polynomials agree at every window point,
+excluded rigorously since a nonzero polynomial of degree below $65$ cannot
+vanish at $65$ points).
+
+Emptiness established this way is \emph{windowed}: on its own it excludes only
+witnesses all of whose roots lie in $[-32,32]$, and a $9$-gate program can build
+constants as large as $2^{256}$ by repeated squaring. The following turns that
+caveat from an unknown into a decidable criterion.
+
+\begin{lemma}[confinement; D, with the bound MV]\label{lem:confine}
+Let $f \in \Z[x]$ be nonzero with distinct integer roots $r_1,\dots,r_k$. Then
+$\prod_i (n - r_i)$ divides $f(n)$ for every $n \in \Z$. Consequently, if $f$
+has $7$ distinct integer roots and $c$ denotes its trailing (first nonzero)
+coefficient, then $|c| \le 395$ forces every integer root of $f$ to lie in
+$[-32,32]$.
+\end{lemma}
+\begin{proof}
+The $r_i$ are distinct integers, so $\prod_i (x - r_i)$ is monic in $\Z[x]$ and
+divides $f$ in $\mathbb{Q}[x]$; by Gauss the cofactor lies in $\Z[x]$, and evaluating at
+$n$ gives the divisibility. For the bound, suppose some root satisfies
+$|r_j| \ge 33$. If $0$ is not a root then $c = f(0)$ and $|c| \ge \prod_i|r_i|$;
+the six remaining roots are distinct and nonzero, so their product has absolute
+value at least $|(-1)(1)(-2)(2)(-3)(3)| = 36$, giving $|c| \ge 33 \cdot 36 =
+1188$. If $0$ is a root, write $f = x^m g$ with $c = g(0)$; the six other roots
+are distinct and nonzero, and the five non-escaping ones give a product of
+absolute value at least $12$, so $|c| \ge 33 \cdot 12 = 396$. Either way
+$|c| \ge 396$, contradicting $|c| \le 395$.
+\end{proof}
+
+The constant is sharp: searching seven-root sets containing an escaping root
+returns minimum trailing coefficient exactly $396$, at
+$\{-3,-2,-1,0,1,2,33\}$ [MV]. We note that the two witnesses of
+Proposition~\ref{prop:ten} have trailing coefficients $48$ and $-64$, an order
+of magnitude inside the criterion: the shapes that actually reach seven roots
+cheaply are exactly the ones the window sees.
+
+Lemma~\ref{lem:confine} does not make the additive scan unconditional. It
+prices the gap: the scan is conclusive on every candidate with $|c| \le 395$,
+and window-limited only on candidates with a large trailing coefficient. For an
+additive last gate the trailing coefficient is determined by the constant terms
+of $v$ and $b$, which the stored state already holds, so the window-limited
+fraction of the search space is measurable exactly rather than by estimate.
+
 \section{Limits, and what would count as progress}\label{sec:limits}
 
 Nothing above bears on the conjecture asymptotically: censuses to depth $7$ cannot
