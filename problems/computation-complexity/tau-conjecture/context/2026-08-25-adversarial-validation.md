@@ -79,10 +79,21 @@ key that the partition files do not have, so it silently reported 0. The files
 carry a histogram; reading the right field is what produced the definitive
 zmax(8) = 6 confirmation above.
 
+## Defect 17: a manifest whose hash is right and whose prose is wrong
+
+The catalog's manifest records 2,161,169 entries; the file contains 2,161,049.
+Its sha256 and size match the file exactly, so nothing drifted: the content
+line was mistranscribed at write time. A correct hash certifies the bytes and
+says nothing about the sentence beside it.
+
 ## What remains unverified, stated plainly
 
-- zmax(7) = 5 rests on EXP-004's stored artifact; re-running needs the
-  25.8M-state depth-6 frontier resident, which the additive scan rules out.
+- zmax(7) = 5 is CONFIRMED from stored evidence after all: EXP-004's artifact
+  carries a root-count histogram {0:742635, 1:904421, 2:299488, 3:63903,
+  4:3196, 5:63} that sums to exactly 2,013,706, its independently recorded
+  polynomial count, with 5 attained 63 times and no bucket at 6 or above. The
+  caveat in the first draft of this note was unnecessary; the evidence was
+  already on disk and I had not looked at the right field.
 - The SymPy cross-check was re-run on a 228-polynomial pool of my own
   reconstruction, not the identical 284-element pool EXP-003 used; the substance
   (two independent counters agree everywhere) is confirmed, the specific count
