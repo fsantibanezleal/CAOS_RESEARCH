@@ -7,16 +7,20 @@ polynomials, so the columns are comparable term by term.
 
 ## The three ladders
 
-| $\tau$ | 1 | 2 | 3 | 4 | 5 |
-|---|---|---|---|---|---|
-| $z_{\max}$ over $\mathbb{Z}$ | 1 | 2 | 3 | 3 | 4 |
-| $z_{\max}$ over $\mathbb{R}$ | 1 | 2 | 3 | 4 | 6 |
-| $z_{\max}$ over $\mathbb{F}_p$ | 1 | 2 | 4 | 8 | 16 |
-| degree ceiling $2^{\tau-1}$ | 1 | 2 | 4 | 8 | 16 |
+| $\tau$ | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|---|
+| $z_{\max}$ over $\mathbb{Z}$ | 1 | 2 | 3 | 3 | 4 | 5 |
+| $z_{\max}$ over $\mathbb{R}$ | 1 | 2 | 3 | 4 | 6 | 8 |
+| $z_{\max}$ over $\mathbb{F}_p$ | 1 | 2 | 4 | 8 | 16 | 32 |
+| degree ceiling $2^{\tau-1}$ | 1 | 2 | 4 | 8 | 16 | 32 |
 
-The integer row continues $5, 5, 6$ through $\tau = 8$ (decision-complete,
+The integer row continues $5, 6$ through $\tau = 8$ (decision-complete,
 [03 the census](03-census.md)). The $\mathbb{F}_p$ row continues $2^{\tau-1}$
-for every $\tau$, as a theorem. The real row is exhaustive through $\tau = 5$.
+for every $\tau$, as a theorem. The real row is exhaustive through $\tau = 6$;
+$\tau = 6$ was reached without a depth-6 census, by applying the last-gate lemma
+to the 778,087-state depth-5 frontier (134,497 new polynomials, 180 s), with a
+known-answer gate requiring the INTEGER maximum over the same set to come out
+at 5 before the real number was reported.
 
 Each world leaves $\mathbb{Z}$ at a different point: $\mathbb{F}_p$ at
 $\tau = 3$, $\mathbb{R}$ at $\tau = 4$.
@@ -75,9 +79,44 @@ record-maker. And it beats a Chebyshev tower at equal cost: $T_2 = 2x^2-1$
 costs three gates and composition repeats it, so a tower would give only four
 roots here. The real ladder is not simply the Chebyshev ladder.
 
-We claim no growth rate for the real ladder. Five points cannot separate
-$\Theta(2^{\tau/3})$ from its neighbours, and the paper needs only the known
-failure of the real analogue.
+### The real record mechanism, and where it stalls
+
+The $\tau = 6$ real record is
+$x^8 - 7x^6 + 14x^4 - 7x^2 + 1 = (x^4-3x^2+1)(x^4-4x^2+1)$, and its left factor
+is exactly the $\tau = 4$ record $g_1 = (x^2-1)^2 - x^2$. So the step from four
+gates to six is
+
+$$g \;\longmapsto\; g\cdot(g - x^2)$$
+
+which costs **two** gates ($x^2$ is already in the state) and **doubles** the
+real root count. That beats a Chebyshev tower, which costs three gates per
+doubling, and it matches the exhaustive census at both $\tau = 4$ and
+$\tau = 6$, so in that range it is the record and not merely a good
+construction.
+
+Iterating it, distinct real roots against degree:
+
+| gates | 4 | 6 | 8 | 10 | 12 |
+|---|---|---|---|---|---|
+| degree | 4 | 8 | 16 | 32 | 64 |
+| distinct real roots | 4 | 8 | 16 | 28 | 48 |
+
+Three clean doublings, reaching 16 distinct real roots at 8 gates, and then the
+polynomial stops being totally real. Successive ratios fall from 2 to 1.75 to
+1.71. This is the same shape as the integer-side results: a natural doubling
+construction runs a few steps and stalls, exactly as the monic stall theorem
+describes over $\mathbb{Z}$. The real side stalls later and from a far higher
+base.
+
+We claim no growth rate for the real ladder. Six points cannot separate
+$\Theta(2^{\tau/2})$ from its neighbours, the family's own rate decays after
+$\tau = 8$, and the paper needs only the known failure of the real analogue.
+
+One observation worth keeping: the $\tau = 6$ real record has **zero** integer
+roots, while the $\tau = 6$ integer record has five. At equal cost the two
+worlds are optimized by completely disjoint polynomials. The real ladder is not
+the integer ladder with extra roots attached; it is a different extremal problem
+that happens to share the difference-of-squares mechanism at the bottom.
 
 ## Multiplicity is free; distinctness is the cost
 

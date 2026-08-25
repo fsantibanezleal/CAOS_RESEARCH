@@ -210,7 +210,7 @@ if $f$ has $7$ distinct integer roots and trailing coefficient $c$ with
 $|c| \le 395$, every root lies in $[-32,32]$; the constant is sharp.
 \item \textbf{The three worlds} (Section~\ref{sec:fp}): on the same enumerated
 programs, $\zpmax(\tau) = 2^{\tau-1}$ exactly for every $\tau$ [D], while
-$\zrmax(1..5) = 1,2,3,4,6$ [MV] and the integer census stays linear. What limits
+$\zrmax(1..6) = 1,2,3,4,6,8$ [MV] and the integer census stays linear. What limits
 $\mathbb{Z}$ is not degree and not splitting, both of which cheap programs reach
 at exponential scale, but \emph{distinctness}: five gates already give a
 completely split polynomial of degree $16$ over $\mathbb{Z}$ with two distinct
@@ -786,12 +786,16 @@ Writing $\zrmax(\tau)$ for the maximum over $\tau$-gate polynomials:
 \begin{array}{l|ccccc|ccc}
 \tau            & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\\hline
 \zmax(\tau)     & 1 & 2 & 3 & 3 & 4 & 5 & 5 & 6\\
-\zrmax(\tau)    & 1 & 2 & 3 & 4 & 6 & \text{--} & \text{--} & \text{--}\\
+\zrmax(\tau)    & 1 & 2 & 3 & 4 & 6 & 8 & \text{--} & \text{--}\\
 \zpmax(\tau)    & 1 & 2 & 4 & 8 & 16 & 32 & 64 & 128
 \end{array}
 \]
-(The real row is exhaustive through $\tau = 5$; extending it needs the
-$25.8$M-state frontier resident, which we defer.) The three worlds separate at
+(The real row is exhaustive through $\tau = 6$. That row was obtained without a
+depth-$6$ census: the last-gate lemma applied to the $778{,}087$-state depth-$5$
+frontier enumerates all $134{,}497$ new $\tau = 6$ polynomials in $180$\,s, and
+the run carried a known-answer gate on the same set, requiring the \emph{integer}
+maximum to come out at $5$ before the real number was reported. Reaching
+$\tau = 7$ needs the $25.8$M-state depth-$6$ frontier resident, which we defer.) The three worlds separate at
 three different points: $\mathbb{F}_p$ leaves $\mathbb{Z}$ at $\tau = 3$ and
 saturates the degree ceiling $2^{\tau-1}$ at every $\tau$; $\mathbb{R}$ leaves
 $\mathbb{Z}$ at $\tau = 4$ and does \emph{not} saturate it ($4$ against $8$,
@@ -816,9 +820,43 @@ the real ladder is not merely the Chebyshev ladder, which buys a doubling per
 three gates ($T_2 = 2x^2-1$ costs three, and composition repeats it) and would
 give only four roots here.
 
-We claim no rate for $\zrmax$: five points cannot distinguish
-$\Theta(2^{\tau/3})$ from anything nearby, and the paper needs only the known
-failure of the real analogue.
+The $\tau = 6$ record exposes the mechanism. It is
+\[
+  x^8 - 7x^6 + 14x^4 - 7x^2 + 1 \;=\; (x^4-3x^2+1)(x^4-4x^2+1),
+\]
+whose left factor is exactly the $\tau = 4$ record $g_1 = (x^2-1)^2 - x^2$. So
+the step from four gates to six is $g \mapsto g\cdot(g-x^2)$, costing
+\emph{two} gates because $x^2$ is already in the state, and \emph{doubling} the
+real root count. It beats the obvious construction: a Chebyshev tower costs
+three gates per doubling ($T_2 = 2x^2-1$ is three gates and composition repeats
+it), so it reaches only about $2^{\tau/3}$. And it is not merely a good
+construction here, it matches the exhaustive census at both $\tau = 4$ and
+$\tau = 6$.
+
+It also stalls, in the same manner as the integer-side towers of
+Section~\ref{sec:stall}. Iterating the step gives distinct real roots against
+degree
+\[
+\begin{array}{l|ccccc}
+\text{gates} & 4 & 6 & 8 & 10 & 12\\\hline
+\deg         & 4 & 8 & 16 & 32 & 64\\
+\text{real}  & 4 & 8 & 16 & 28 & 48
+\end{array}
+\]
+[MV]: three clean doublings, reaching $16$ distinct real roots at $8$ gates,
+after which the iterate ceases to be totally real and the successive ratios fall
+to $1.75$ and $1.71$.
+
+We claim no rate for $\zrmax$: six points cannot distinguish
+$\Theta(2^{\tau/2})$ from anything nearby, the family's own rate decays past
+$\tau = 8$, and the paper needs only the known failure of the real analogue.
+
+One structural point is worth recording. The $\tau = 6$ real record has
+\emph{zero} integer roots, while the $\tau = 6$ integer record has five: at
+equal cost the two worlds are optimized by entirely disjoint polynomials. The
+real ladder is not the integer ladder with further roots attached, but a
+different extremal problem that happens to share the difference-of-squares
+mechanism at the bottom.
 
 Setting the three ladders side by side is the point of this section, and the
 $\mathbb{F}_p$ row is the one that is now exact.
