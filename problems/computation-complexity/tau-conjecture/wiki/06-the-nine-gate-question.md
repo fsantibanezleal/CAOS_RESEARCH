@@ -53,8 +53,36 @@ construction and exact root counting. Two traps were fixed before
 production (61-bit primes overflow int64 under modular multiplication;
 identically-zero polynomials agree at every window point and were
 excluded rigorously, since a nonzero polynomial of degree < 65 cannot
-vanish at 65 points). Emptiness on this side is therefore WINDOWED: it
-excludes only witnesses whose seven roots all lie in [-32, 32].
+vanish at 65 points). Emptiness on this side is therefore WINDOWED: on its own
+it excludes only witnesses whose seven roots all lie in $[-32, 32]$.
+
+### How much that caveat actually costs: 0.002%
+
+The confinement lemma turns "windowed" into a decidable criterion. If $f$ has
+7 distinct integer roots and trailing (first nonzero) coefficient $c$, then
+$|c| \le 1187$ when $0$ is not a root and $|c| \le 395$ when it is force every
+root into $[-32,32]$; the constant is sharp, the minimum being exactly $396$ at
+the root set $\{-3,-2,-1,0,1,2,33\}$.
+
+EXP-014 measured the price by constructing $6{,}400{,}000$ candidates
+$f = t \pm b$ EXACTLY across four partitions and reading each true trailing
+coefficient:
+
+| class | count | share of nonzero |
+|---|---|---|
+| confined by the lemma | 6,301,361 | 99.9248% |
+| excluded by $\deg f < 7$ | 4,619 | 0.0732% |
+| **window-limited** ($\deg f \ge 7$) | **122** | **0.0019%** |
+| identically zero (excluded) | 93,898 | 1.467% of all |
+
+The degree row is arithmetic, not a lemma: seven distinct roots need degree at
+least seven. So **99.998% of the additive search space is decided independently
+of the window**, and the residual is a narrow class (degrees 8, 9, 12; 64
+distinct $|c|$ between 512 and 38,220). These are sample estimates from 4 of 256
+partitions.
+
+This refuted our pre-registered expectation, which was that the decided fraction
+would be LOW. Fifth refutation in this problem.
 
 ## What each outcome means
 
@@ -63,7 +91,9 @@ z_max(9) = 7, i.e. the rhythm predicts a nine-gate seven-rooter. That
 prediction is already refuted on the multiplicative side. If the
 additive side is also empty:
 
-- the seven-root threshold is 10 (windowed on the additive side),
+- the seven-root threshold is 10, unconditionally on the multiplicative side
+  and on 99.998% of the additive side, windowed only on the measured 0.002%
+  residual above,
 - z_max(9) = 6, a THIRD plateau, and the 2-roots-per-3-gates rhythm
   breaks for the first time at tau = 9.
 

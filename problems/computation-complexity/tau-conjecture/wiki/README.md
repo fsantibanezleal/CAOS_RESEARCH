@@ -53,3 +53,4 @@ concept DOI [10.5281/zenodo.21753438](https://doi.org/10.5281/zenodo.21753438)
 | [EXP-011](../experiments/EXP-011-depth8-pipeline/) | The full depth-8 census | **CONFIRMED: z_max(8) = 6**; depth-7 frontier built in full (1,048,460,912 states); 7-root threshold in {9,10}; paper v0.03 |
 | [EXP-012](../experiments/EXP-012-window-9-10/) | Nine-gate seven-rooter via a final multiplication? | **DECIDED: empty**; max union 6 over all 1,048,460,912 depth-7 states; the pre-registered growth rhythm refuted on this side |
 | [EXP-013](../experiments/EXP-013-additive-residual/) | Nine-gate seven-rooter via a final $\pm$? | RUNNING (windowed on $[-32,32]$); zero hits so far |
+| [EXP-014](../experiments/EXP-014-window-gap/) | How much does the additive window leave undecided? | **0.002%**: the confinement lemma decides 99.9248% and degree excludes 0.0732%, so 99.998% of the space is decided independently of the window; our prediction refuted (5th) |
