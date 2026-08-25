@@ -775,16 +775,31 @@ $\zpmax(\tau) = 2^{\tau-1}$ for every $\tau \ge 1$.
 \end{proposition}
 \begin{proof}
 \emph{Upper bound.} For a value $v$ of a constant-free program let $\mu(v)$
-count the multiplicative gates in its sub-DAG. Then $\deg v \le 2^{\mu(v)}$:
-the input has degree $1$ and constants degree $0$; an additive gate obeys
-$\deg(a \pm b) \le \max(\deg a, \deg b)$; and a multiplicative gate obeys
-$\deg(ab) = \deg a + \deg b \le 2^{\mu(a)} + 2^{\mu(b)} \le
-2^{\mu(a)+\mu(b)+1}$. A program with no additive gate computes only $\pm x^k$
-or $0$, since the free constants are $-1,0,1$ and products of those remain in
-$\{-1,0,1\}$; such a polynomial has at most one distinct root in any field.
-Hence a non-monomial $f$ has at most $\tau - 1$ multiplicative gates, so
-$\deg f \le 2^{\tau-1}$, and a nonzero polynomial over a field has at most
-$\deg f$ roots.
+count the \emph{distinct} multiplicative gates in its sub-DAG. We claim
+$\deg v \le 2^{\mu(v)}$, by induction. The input has degree $1$ with
+$\mu = 0$, and constants have degree $0$. For an additive gate $v = a \pm b$,
+the sub-DAG of $v$ contains those of $a$ and $b$, so
+$\mu(v) \ge \max(\mu(a),\mu(b))$ and
+$\deg v \le \max(\deg a, \deg b) \le 2^{\max(\mu(a),\mu(b))} \le 2^{\mu(v)}$.
+For a multiplicative gate $v = ab$ we have
+$\mu(v) = |M(a) \cup M(b)| + 1 \ge \max(\mu(a),\mu(b)) + 1$, where $M(\cdot)$
+denotes the set of multiplicative gates in a sub-DAG, and hence
+\[
+  \deg v = \deg a + \deg b \le 2^{\mu(a)} + 2^{\mu(b)}
+  \le 2^{\max(\mu(a),\mu(b))+1} \le 2^{\mu(v)} .
+\]
+Counting \emph{distinct} gates, so that shared subexpressions are not charged
+twice, is what makes the multiplicative step close: bounding the exponent by
+$\mu(a)+\mu(b)+1$ instead would exceed $\mu(v)$ whenever $a$ and $b$ share
+gates.
+
+Now a sub-DAG with no additive gate computes only $\pm x^k$ or $0$, since the
+free constants are $-1,0,1$ and products of those remain in $\{-1,0,1\}$; such
+a polynomial has at most one distinct root in any field. So if $f$ is not of
+that form its sub-DAG contains an additive gate, whence
+$\mu(f) \le \tau(f) - 1$ and $\deg f \le 2^{\tau-1}$. Finally a polynomial
+that is nonzero over a field has at most its degree many roots, and reduction
+mod $p$ can only lower the degree.
 
 \emph{Lower bound.} By Dirichlet there is a prime $p \equiv 1 \pmod{2^k}$ for
 every $k$. Modulo such $p$ the polynomial $x^{2^k} - 1$ has exactly
@@ -793,8 +808,9 @@ subtraction, so $\tau \le k+1$. Taking $k = \tau - 1$ gives $2^{\tau-1}$.
 \end{proof}
 
 Both halves were checked mechanically: the degree bound holds on every
-non-monomial in the complete census to depth $5$, where it is moreover
-attained exactly ($\max \deg = 2^{\tau-1}$ at each $\tau$), and the
+non-monomial in the complete census to depth $6$, where it is moreover
+attained exactly ($\max \deg = 2^{\tau-1}$ at each $\tau$, against $2^{\tau}$
+for monomials), and the
 construction was verified for $k = 1,\dots,8$ at
 $p = 3, 5, 17, 17, 97, 193, 257, 257$ with root counts
 $2, 4, 8, 16, 32, 64, 128, 256$ [MV]. We note that the Fermat primes, which

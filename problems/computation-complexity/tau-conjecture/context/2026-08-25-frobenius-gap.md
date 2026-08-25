@@ -72,11 +72,15 @@ This note first recorded the exact value as an open target, on the grounds
 that the Fermat primes run out at 65537 and that degree alone gives only
 2^tau. Both objections dissolve; the statement is a theorem.
 
-UPPER BOUND. For a value v of a constant-free program let mu(v) count the
-multiplicative gates in its sub-DAG. Then deg(v) <= 2^mu(v), by induction:
-x has degree 1, constants degree 0, an additive gate satisfies
-deg(a +- b) <= max(deg a, deg b), and a multiplicative gate satisfies
-deg(a b) = deg a + deg b <= 2^mu(a) + 2^mu(b) <= 2^(mu(a)+mu(b)+1). A program
+UPPER BOUND. For a value v let mu(v) count the DISTINCT multiplicative gates in
+its sub-DAG. Then deg(v) <= 2^mu(v), by induction: x has degree 1, constants
+degree 0; an additive gate has mu(v) >= max(mu(a), mu(b)) and
+deg(a +- b) <= max(deg a, deg b) <= 2^mu(v); and a multiplicative gate has
+mu(v) = |M(a) union M(b)| + 1 >= max(mu(a), mu(b)) + 1, so
+deg(ab) = deg a + deg b <= 2^mu(a) + 2^mu(b) <= 2^(max(mu(a),mu(b))+1) <= 2^mu(v).
+Counting DISTINCT gates matters: bounding the exponent by mu(a)+mu(b)+1, as an
+earlier draft of this note did, exceeds mu(v) whenever a and b share gates, and
+so does not close the induction. A program
 with NO additive gate computes only +-x^k or 0, since the free constants are
 -1, 0, 1 and products of those stay in {-1,0,1}; such a polynomial has at most
 ONE distinct root in any field. So a non-monomial f has at most tau-1
@@ -84,7 +88,7 @@ multiplicative gates, hence degree at most 2^(tau-1), hence at most 2^(tau-1)
 roots in any F_p in which it does not vanish identically.
 
 The bound is tight as a degree bound too: over the complete census to depth 5,
-the maximum degree of a non-monomial is exactly 2^(tau-1) at every tau [MV].
+the maximum degree of a non-monomial is exactly 2^(tau-1) at every tau, now verified through depth 6 [MV].
 
 LOWER BOUND. The Fermat primes are a red herring: what is needed is only a
 prime p = 1 (mod 2^k), and Dirichlet supplies one for every k. Modulo such p
