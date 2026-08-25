@@ -690,10 +690,16 @@ extension is evaluated on the window $[-32,32]$ modulo a $31$-bit prime, and
 $f = v \pm b$ vanishes at a point only if the residues agree, so counting
 modular agreements never misses a witness; candidates reaching seven agreements
 are promoted to exact construction and exact root counting. Two traps were
-fixed before production ($61$-bit primes overflow \texttt{int64} under modular
-multiplication, and identically-zero polynomials agree at every window point,
-excluded rigorously since a nonzero polynomial of degree below $65$ cannot
-vanish at $65$ points).
+fixed before production. First, $61$-bit primes overflow \texttt{int64} under
+modular multiplication, so the modulus is $31$-bit. Second, identically-zero
+polynomials agree at every window point and would otherwise flood the
+promotion stage. They are excluded, but only under a degree side-condition:
+agreement at all $65$ window points is discarded when the candidate's degree
+bound is below $65$, since a nonzero polynomial of degree below $65$ cannot
+vanish at $65$ points, and is \emph{retained} when the degree bound is $65$ or
+more. The side-condition matters, because a $9$-gate polynomial can have degree
+up to $2^8$, and discarding full agreement unconditionally would have thrown
+away exactly the high-degree witnesses the scan is looking for.
 
 Emptiness established this way is \emph{windowed}: on its own it excludes only
 witnesses all of whose roots lie in $[-32,32]$, and a $9$-gate program can build
