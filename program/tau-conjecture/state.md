@@ -123,7 +123,7 @@
   digit-census sections added; version DOI 10.5281/zenodo.22035884
   (concept 10.5281/zenodo.21753438 unchanged; verified live).
   TCB-005/028 done; TCB-029 resolved.
-- Data assets: depth-7 frontier (28 GB) + poly catalog at
+- Data assets: depth-7 frontier (27.3 GiB, 29,356,905,536 bytes) + poly catalog at
   E:/_Datos/caos-research/tau-conjecture/ (sha256 manifest in repo).
 - **Next:** TCB-032 (the {9,10} window: construction hunt, corrected
   cost model); TCB-033 (digit/mod-p ladders at depth 8 replayed from

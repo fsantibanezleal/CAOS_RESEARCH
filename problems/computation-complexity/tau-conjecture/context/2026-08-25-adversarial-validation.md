@@ -1,5 +1,7 @@
 # Adversarial validation of the whole record, 2026-08-25
 
+<!-- consistency-gate: quotes-defects -- this file restates wrong values on purpose -->
+
 Commissioned as "review all adversarially, validate all data on the
 manuscripts, validate all the results". Everything below was recomputed or
 re-audited rather than taken from the notes.

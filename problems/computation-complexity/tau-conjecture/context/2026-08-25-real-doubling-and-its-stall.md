@@ -1,5 +1,7 @@
 # The real record mechanism: two gates per doubling, and where it stalls
 
+<!-- consistency-gate: quotes-defects -- the CORRECTION section restates the wrong count on purpose -->
+
 Round 11b, 2026-08-25, following the exhaustive real ladder.
 
 ## The ladder, now to tau = 6

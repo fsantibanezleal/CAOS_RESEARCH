@@ -30,7 +30,9 @@ FORBIDDEN = [
     ("experiment range", r"EXP-001\}--\texttt\{EXP-005", "experiments run to EXP-014"),
     ("interval overclaim", r"minimal-gate (root )?sets are intervals", "an interval is only AMONG the records"),
     ("chebyshev at tau=5", r"tower would give only four", "the tower is at two roots at five gates"),
-    ("frontier size", r"states, 28 GB", "29,356,905,536 bytes = 27.3 GiB"),
+    ("frontier size (paper)", r"states, 28 GB", "29,356,905,536 bytes = 27.3 GiB"),
+    ("frontier size (notes)", r"frontier7? ?\(?28 GB", "29,356,905,536 bytes = 27.3 GiB"),
+    ("catalog entry count", num("2", "161", "169"), "the catalog holds 2,161,049 entries"),
 ]
 
 # (label, canonical string, files that MUST contain it if they mention the topic)
@@ -50,6 +52,10 @@ SELFTEST = [
     (r"minimal-gate (root )?sets are intervals", "an interval is always AMONG the minimal-gate record sets", False),
     (r"tower would give only four", "so a tower would give only four roots here.", True),
     (r"states, 28 GB", "($1{,}048{,}460{,}912$ states, 28 GB) and the catalog", True),
+    (r"frontier7? ?\(?28 GB", "Data assets: depth-7 frontier (28 GB) + poly catalog", True),
+    (r"frontier7? ?\(?28 GB", "depth-7 frontier (27.3 GiB, 29,356,905,536 bytes)", False),
+    (num("2", "161", "169"), "interned poly table (2,161,169 entries)", True),
+    (num("2", "161", "169"), "interned poly table (2,161,049 entries)", False),
 ]
 
 
@@ -65,6 +71,13 @@ def self_test():
         else:
             print(f"  ok  {pat[:34]:<36} {'BAD ' if should else 'GOOD'} sample -> {got}")
     return bad
+
+# A file whose JOB is to document defects necessarily quotes them. Guessing at
+# the phrasings around each quotation was fragile (the first attempt missed
+# 'FALSE', '(it is 32)' and 'could not match'), so such a file declares itself
+# instead. The declaration is explicit, greppable, and reviewable; ladder checks
+# still apply to these files, only the forbidden-string checks are waived.
+OPT_OUT = 'consistency-gate: quotes-defects'
 
 # Canonical ladders, each identified by PLAIN SUBSTRINGS that must appear on the
 # same line (no regex, so no LaTeX escaping to get wrong).
@@ -147,14 +160,12 @@ for label, pat, why in FORBIDDEN:
             s = io.open(f, encoding="utf-8", errors="replace").read()
         except Exception:
             continue
+        if OPT_OUT in s:
+            continue
+        lines = s.split(chr(10))
         for m in re.finditer(pat, s):
-            line = s[:m.start()].count("\n") + 1
-            # a correction note may quote the wrong value on purpose
-            ctx = s[max(0, m.start()-260):m.start()+120].lower()
-            if any(w in ctx for w in ("earlier draft", "correction", "an earlier", "first reported",
-                                      "said four", "wrong", "forbidden", "against 134")):
-                continue
-            hits.append(f"{os.path.relpath(f, ROOT)}:{line}")
+            line_no = s[:m.start()].count(chr(10))
+            hits.append(f'{os.path.basename(f)}:{line_no + 1}')
     if hits:
         bad += len(hits)
         print(f"  FAIL  {label}: {why}")

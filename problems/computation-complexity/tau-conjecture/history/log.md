@@ -263,7 +263,7 @@
   predictions + two tractability judgments disclosed): version DOI
   10.5281/zenodo.22035884, concept unchanged, verified live.
 - Data assets relocated to E:/_Datos/caos-research/tau-conjecture/
-  (frontier7 28 GB + polys.pkl; manifests in repo); repo keeps
+  (frontier7 27.3 GiB + polys.pkl; manifests in repo); repo keeps
   manifests only (a 69 MB pickle briefly tracked was untracked with
   sha256 manifest same day).
 - Dead ends this arc: SMT-NIA and QF_BV structure search (closed with
