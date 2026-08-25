@@ -22,6 +22,7 @@
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Qp}{\mathbb{Q}_p}
 \newcommand{\zmax}{z_{\max}}
+\newcommand{\zpmax}{z^{p}_{\max}}
 
 \title{The Bottom of the Shub--Smale Tau Conjecture:\\
 an Exact Census of Integer Roots for Constant-Free\\
@@ -696,6 +697,78 @@ and window-limited only on candidates with a large trailing coefficient. For an
 additive last gate the trailing coefficient is determined by the constant terms
 of $v$ and $b$, which the stored state already holds, so the window-limited
 fraction of the search space is measurable exactly rather than by estimate.
+
+\section{The finite-field contrast, exactly}\label{sec:fp}
+
+It is folklore that the conjecture's analogue fails over finite fields, and
+that $x^{p-1}-1$ is the reason; this is why the statement is always made in
+characteristic zero. We record here that the finite-field question has an
+exact answer, obtained on the \emph{same} enumerated programs as the integer
+census, so that the two ladders are comparable term by term.
+
+For a prime $p$ write $z_p(f)$ for the number of distinct roots of $f$ in
+$\mathbb{F}_p$, defined only when $f \not\equiv 0 \pmod p$, and set
+\[
+  \zpmax(\tau) \;=\; \max\bigl\{\, z_p(f) \;:\; \tau(f) \le \tau,\; p \text{ prime},\;
+  f \not\equiv 0 \!\!\pmod p \,\bigr\}.
+\]
+
+\begin{proposition}[D, with both halves MV]\label{prop:fp}
+$\zpmax(\tau) = 2^{\tau-1}$ for every $\tau \ge 1$.
+\end{proposition}
+\begin{proof}
+\emph{Upper bound.} For a value $v$ of a constant-free program let $\mu(v)$
+count the multiplicative gates in its sub-DAG. Then $\deg v \le 2^{\mu(v)}$:
+the input has degree $1$ and constants degree $0$; an additive gate obeys
+$\deg(a \pm b) \le \max(\deg a, \deg b)$; and a multiplicative gate obeys
+$\deg(ab) = \deg a + \deg b \le 2^{\mu(a)} + 2^{\mu(b)} \le
+2^{\mu(a)+\mu(b)+1}$. A program with no additive gate computes only $\pm x^k$
+or $0$, since the free constants are $-1,0,1$ and products of those remain in
+$\{-1,0,1\}$; such a polynomial has at most one distinct root in any field.
+Hence a non-monomial $f$ has at most $\tau - 1$ multiplicative gates, so
+$\deg f \le 2^{\tau-1}$, and a nonzero polynomial over a field has at most
+$\deg f$ roots.
+
+\emph{Lower bound.} By Dirichlet there is a prime $p \equiv 1 \pmod{2^k}$ for
+every $k$. Modulo such $p$ the polynomial $x^{2^k} - 1$ has exactly
+$\gcd(2^k, p-1) = 2^k$ roots, and it is computed by $k$ squarings and one
+subtraction, so $\tau \le k+1$. Taking $k = \tau - 1$ gives $2^{\tau-1}$.
+\end{proof}
+
+Both halves were checked mechanically: the degree bound holds on every
+non-monomial in the complete census to depth $5$, where it is moreover
+attained exactly ($\max \deg = 2^{\tau-1}$ at each $\tau$), and the
+construction was verified for $k = 1,\dots,8$ at
+$p = 3, 5, 17, 17, 97, 193, 257, 257$ with root counts
+$2, 4, 8, 16, 32, 64, 128, 256$ [MV]. We note that the Fermat primes, which
+the small cases suggest, are not needed: only $p \equiv 1 \pmod{2^k}$ is.
+
+Setting the two ladders side by side on the same programs:
+\[
+\begin{array}{l|cccccccc}
+\tau            & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\\hline
+\zmax(\tau)     & 1 & 2 & 3 & 3 & 4 & 5 & 5 & 6\\
+\zpmax(\tau)    & 1 & 2 & 4 & 8 & 16 & 32 & 64 & 128
+\end{array}
+\]
+The ladders agree at $\tau \le 2$ and separate from $\tau = 3$ onward. Over
+$\mathbb{F}_p$ the count doubles with every gate, which is the fastest the
+degree bound permits, and the extremal programs are the cheapest available:
+repeated squaring, then subtract one. The same polynomial $x^{2^k}-1$ has
+exactly two integer roots, $\pm 1$, for every $k$.
+
+The mechanism is the one the three-worlds reading predicts. In
+$\mathbb{F}_p^{\times}$, cyclic of order $p-1$, the equation $x^d = 1$ has
+$\gcd(d,p-1)$ solutions, up to $d$ of them; in $\mathbb{Z}^{\times} =
+\{\pm 1\}$ it has at most two, for every $d$. The exponential ladder is
+precisely the $2^k$-torsion that the cyclic group carries and the integers do
+not. In this light the conjecture asserts that no program shape recovers over
+$\mathbb{Z}$ what the cyclotomic one achieves over $\mathbb{F}_p$, and the
+census is consistent with that: through $\tau = 8$ nothing over $\mathbb{Z}$
+does better than linear growth. What Proposition~\ref{prop:fp} contributes is
+that the comparison is now exact on one side, so the gap being conjectured is
+a gap between a proved exponential and a measured linear rate rather than
+between two informal impressions.
 
 \section{Limits, and what would count as progress}\label{sec:limits}
 

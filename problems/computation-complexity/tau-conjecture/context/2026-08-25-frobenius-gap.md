@@ -66,13 +66,45 @@ by the cyclotomic one. Our census is consistent with that: across all
 tau <= 8 polynomials, nothing recovers more than linear growth over Z, while
 the F_p side doubles every gate.
 
-Stated as a target rather than a result: is zpmax(tau) = 2^(tau-1) exactly,
-for all tau? The lower bound is the construction above whenever a Fermat
-prime is available, which is a genuine obstruction past 65537, so the general
-question is subtler than the small cases suggest. The upper bound is not
-proved; degree alone gives only 2^tau, and closing the factor of two would
-need an argument that top-degree tau-gate polynomials are forced to be
-monomials. Recorded as open.
+## CLOSED, same session: zpmax(tau) = 2^(tau-1) for every tau
+
+This note first recorded the exact value as an open target, on the grounds
+that the Fermat primes run out at 65537 and that degree alone gives only
+2^tau. Both objections dissolve; the statement is a theorem.
+
+UPPER BOUND. For a value v of a constant-free program let mu(v) count the
+multiplicative gates in its sub-DAG. Then deg(v) <= 2^mu(v), by induction:
+x has degree 1, constants degree 0, an additive gate satisfies
+deg(a +- b) <= max(deg a, deg b), and a multiplicative gate satisfies
+deg(a b) = deg a + deg b <= 2^mu(a) + 2^mu(b) <= 2^(mu(a)+mu(b)+1). A program
+with NO additive gate computes only +-x^k or 0, since the free constants are
+-1, 0, 1 and products of those stay in {-1,0,1}; such a polynomial has at most
+ONE distinct root in any field. So a non-monomial f has at most tau-1
+multiplicative gates, hence degree at most 2^(tau-1), hence at most 2^(tau-1)
+roots in any F_p in which it does not vanish identically.
+
+The bound is tight as a degree bound too: over the complete census to depth 5,
+the maximum degree of a non-monomial is exactly 2^(tau-1) at every tau [MV].
+
+LOWER BOUND. The Fermat primes are a red herring: what is needed is only a
+prime p = 1 (mod 2^k), and Dirichlet supplies one for every k. Modulo such p
+the polynomial x^(2^k) - 1 has exactly gcd(2^k, p-1) = 2^k roots, and it costs
+k squarings plus one subtraction, so tau = k+1. Verified directly for
+k = 1..8 (p = 3, 5, 17, 17, 97, 193, 257, 257), root counts exactly
+2, 4, 8, 16, 32, 64, 128, 256 [MV].
+
+So the finite-field question is completely settled, and the answer is
+EXPONENTIAL:
+
+    zpmax(tau) = 2^(tau-1)      (theorem, all tau)
+    zmax(tau)  = 1,2,3,3,4,5,5,6 (exhaustive census, tau = 1..8)
+
+The contrast is the point. The analogue of the conjecture over F_p is not
+merely false, it is false at the maximum rate the degree permits, and the
+extremal programs are the cheapest imaginable: repeated squaring, then
+subtract one. Whatever makes the integer side hard is exactly what removes
+that construction, and the census says the integers give back only linear
+growth in its place.
 
 ## Instrument note: the same degeneracy, a third time
 
