@@ -1026,7 +1026,12 @@ $\sim$12 GB.
 The constructed depth-$7$ frontier ($1{,}048{,}460{,}912$ states,
 $29{,}356{,}905{,}536$ bytes, that is $27.3$ GiB) and the polynomial catalog
 ($2{,}161{,}049$ entries) are retained as reusable data assets with SHA-256
-manifests recorded in the repository.
+manifests recorded in the repository. The frontier's manifest carries a digest
+for each of its 256 files together with an aggregate fingerprint
+(	exttt{7a3b4484...6baaf174}, the SHA-256 of the concatenated per-file digests
+in name order), and the state count in that manifest is derived from the file
+sizes rather than restated, so the asset and the census figure check against
+each other.
 
 \begin{thebibliography}{99}\small
 
