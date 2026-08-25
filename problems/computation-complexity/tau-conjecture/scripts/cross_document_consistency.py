@@ -66,6 +66,57 @@ def self_test():
             print(f"  ok  {pat[:34]:<36} {'BAD ' if should else 'GOOD'} sample -> {got}")
     return bad
 
+# Canonical ladders, each identified by PLAIN SUBSTRINGS that must appear on the
+# same line (no regex, so no LaTeX escaping to get wrong).
+#
+# Keying on the numeric prefix alone is wrong: zmax, zqmax and zrmax all begin
+# 1, 2, 3, and the doubling family's degree row begins 4, 8, 16 exactly like its
+# real-root row. The first version of this check keyed on the prefix and cried
+# wolf four times on correct rows.
+OTHER = ('zpmax', 'zrmax', 'zqmax', 'mathbb{F}', 'mathbb{R}', 'mathbb{Q}')
+LADDERS = [
+    ('zmax over Z',      ('zmax', 'mathbb{Z}'),        OTHER,      [1, 2, 3, 3, 4, 5, 5, 6]),
+    ('zpmax over F_p',   ('zpmax', 'mathbb{F}'),       (),         [1, 2, 4, 8, 16, 32, 64, 128]),
+    ('zrmax over R',     ('zrmax', 'mathbb{R}'),       (),         [1, 2, 3, 4, 6, 8]),
+    ('zqmax over Q',     ('zqmax', 'mathbb{Q}'),       (),         [1, 2, 3, 3, 4, 5]),
+    ('odd digit ladder', ('odd',),                     (),         [1, 2, 2, 2, 2, 3, 4]),
+    ('mod-3 ladder',     ('mod 3', 'pmod 3', 'mod-3'), (),         [1, 1, 1, 2, 2, 3, 3]),
+    ('minimal height',   ('height',),                  (),         [1, 1, 2, 4, 15]),
+    ('doubling real',    ('distinct real roots',),     ('degree',),[4, 8, 16, 28, 48]),
+]
+
+
+def check_ladders(files):
+    seq_re = re.compile(r'(?<![-0-9.])((?:[0-9]{1,3}[ ]*(?:,|&|[|])[ ]*){3,}[0-9]{1,3})(?![0-9.])')
+    bad = 0
+    for f in files:
+        try:
+            txt = io.open(f, encoding='utf-8', errors='replace').read()
+        except Exception:
+            continue
+        for ln_no, line in enumerate(txt.split(chr(10)), 1):
+            for m in seq_re.finditer(line):
+                try:
+                    seq = [int(v.strip()) for v in re.split(r'[,&|]', m.group(1)) if v.strip()]
+                except ValueError:
+                    continue
+                if len(seq) < 4:
+                    continue
+                for name, want, avoid, canon in LADDERS:
+                    if not any(w in line for w in want):
+                        continue
+                    if any(a in line for a in avoid):
+                        continue
+                    if seq[:3] != canon[:3]:
+                        continue
+                    if seq != canon[:len(seq)]:
+                        print(f'  FAIL  {name}: found {seq} at {os.path.basename(f)}:{ln_no}')
+                        print(f'          canonical is {canon}')
+                        bad += 1
+    if not bad:
+        print('  PASS  every labelled ladder row matches its canonical prefix')
+    return bad
+
 files = []
 for base in (ROOT, MIRROR):
     if not os.path.isdir(base):
@@ -111,6 +162,10 @@ for label, pat, why in FORBIDDEN:
             print(f"          {h}")
     else:
         print(f"  PASS  {label}")
+
+print()
+print('== ladder consistency ==')
+bad += check_ladders(files)
 
 print()
 print("inconsistencies:", bad)
