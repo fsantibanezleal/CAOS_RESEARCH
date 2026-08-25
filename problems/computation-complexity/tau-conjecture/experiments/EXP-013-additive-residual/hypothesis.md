@@ -136,3 +136,41 @@ finishes.
    task `tau_keepalive` (every 15 minutes) relaunches only the shards
    that still have unfinished partitions, and only when none of ours are
    running. This survives session teardown, which killed the scan twice.
+
+## Operational incident 2, 2026-08-25: I killed the running scan
+
+Two genuine defects were found in the launcher, and my fix for the second one
+destroyed the run.
+
+**Defect A (real, and it mattered).** `keepalive.ps1` kept `$want = 10` shards
+alive out of `$N = 20`, and chose them as "the first ten needy shards". So
+shard classes 10..19 were NEVER launched: at the time of discovery, classes
+0..9 had 5-7 unfinished partitions each while classes 10..19 had 8-9 each,
+untouched. Half the search space was waiting on the other half to finish
+completely. Fixed: the guard now tracks running SHARD NUMBERS and launches any
+needy class that is not running, up to `$want = 20`.
+
+**Defect B (not a defect; my misreading).** Alongside each working shard sat a
+process with the same command line, ~0.03 CPU-seconds and 1.1 MB resident,
+against the worker's ~23,800 CPU-seconds and 50-250 MB. I read the idle ones as
+dead weight from earlier launch waves that would block the guard, and killed
+them on a threshold of 60 CPU-seconds, which cleanly separated the two
+populations. Every worker died with them: each shard is a PARENT plus a WORKER
+sharing one command line, and killing the parent breaks the pipe. This is the
+same BrokenPipeError already sitting in `ka_00.err` from an earlier wave, which
+I had read as historical noise rather than as evidence of the process topology.
+
+**Cost.** Nine in-flight partitions, each up to ~1.5 h of shard time. Nothing
+completed was lost: results are written per partition, and all 111 finished
+partitions were intact. Wall-clock cost is small because the relaunch runs all
+20 classes in parallel, which is faster than the broken configuration would
+have been.
+
+**Rules taken forward.**
+1. A process consuming no CPU is not evidence that it can be killed. Establish
+   the process TOPOLOGY first (parent/child, who owns the pipe), then act.
+2. My previous rule "never kill by image name alone" was necessary but not
+   sufficient. The command-line predicate was correct here and still let me
+   destroy my own run. The predicate must identify the ROLE, not just ownership.
+3. An error already in the logs (the BrokenPipeError) described the topology.
+   Read the existing errors before forming a theory about the processes.
