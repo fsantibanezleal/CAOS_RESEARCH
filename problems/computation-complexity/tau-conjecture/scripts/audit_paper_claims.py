@@ -147,6 +147,15 @@ check("q^8: (gates, degree, distinct integer roots)",
       (5, len(p)-1, sorted(integer_roots(p))), (5, 16, [0, 1]))
 
 print()
+print("== Chebyshev tower: 3 gates per doubling ==")
+_a = pmul((0,1),(0,1)); _b = padd(_a,_a); _T = psub(_b,(1,)); _g = 3
+check("T_2: (gates, real roots)", (_g, zreal(_T)), (3, 2))
+for _k in (2, 3):
+    _d = pmul(_T,_T); _e = padd(_d,_d); _T = psub(_e,(1,)); _g += 3
+    # T_(2^k) costs 3k gates: T_2 is 3, and each composition adds 3.
+    check(f"T_{2**_k}: (gates, real roots)", (_g, zreal(_T)), (3*_k, 2**_k))
+
+print()
 print("== Record root sets: an interval is AMONG them, but not alone ==")
 from tclib.enum import census_polynomials
 _per, _fs, _c = census_polynomials(5)
