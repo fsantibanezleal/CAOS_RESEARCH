@@ -724,11 +724,32 @@ of magnitude inside the criterion: the shapes that actually reach seven roots
 cheaply are exactly the ones the window sees.
 
 Lemma~\ref{lem:confine} does not make the additive scan unconditional. It
-prices the gap: the scan is conclusive on every candidate with $|c| \le 395$,
-and window-limited only on candidates with a large trailing coefficient. For an
-additive last gate the trailing coefficient is determined by the constant terms
-of $v$ and $b$, which the stored state already holds, so the window-limited
-fraction of the search space is measurable exactly rather than by estimate.
+prices the gap, and we measured the price. Constructing every candidate
+$f = t \pm b$ exactly on a sample of $6{,}400{,}000$ candidates drawn from four
+hash-partitioned frontier files, and reading each one's true trailing
+coefficient [MV]:
+\[
+\begin{array}{lrr}
+\text{identically zero (excluded)} & 93{,}898 & 1.467\%\\
+\text{confined by Lemma~\ref{lem:confine}} & 6{,}301{,}361 & 99.9248\%\\
+\text{excluded by } \deg f < 7 & 4{,}619 & 0.0732\%\\
+\text{window-limited}, \deg f \ge 7 & 122 & 0.0019\%
+\end{array}
+\]
+the last three percentages being of the $6{,}306{,}102$ nonzero candidates. The
+degree row is arithmetic rather than a lemma: seven distinct roots require
+degree at least seven, so those candidates are excluded with no reference to the
+window at all. Together, $99.998\%$ of nonzero candidates are decided
+independently of the evaluation window, and the residual is a structurally
+narrow class (degrees $8$, $9$ and $12$; $64$ distinct trailing coefficients
+between $512$ and $38{,}220$).
+
+We state the consequence in the form the evidence supports, and no stronger:
+emptiness on the additive side holds outright for $99.998\%$ of the search
+space, and is windowed only on a measured residual near $0.002\%$. These are
+sample estimates from four of $256$ partitions, not exhaustive counts. Making
+the residual exhaustive is affordable precisely because it is rare, and is the
+natural next step.
 
 \section{The three worlds, measured}\label{sec:fp}
 
