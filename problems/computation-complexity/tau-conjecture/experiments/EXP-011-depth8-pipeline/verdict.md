@@ -1,5 +1,7 @@
 # EXP-011 verdict: CONFIRMED: $z_{\max}(8) = 6$: the census is decision-complete through depth 8
 
+<!-- consistency-gate: quotes-defects -- the 2026-08-25 addendum restates the wrong catalog count on purpose -->
+
 Runs 2026-08-20: validate 185 s; build7 2 h 50 m; scan8 smoke 463 s;
 scan8 final 6 h 48 m (20 workers). Artifacts: `artifacts/pipeline.json`,
 `artifacts/scan8_smoke.json`, `artifacts/scan8_final.json`,
