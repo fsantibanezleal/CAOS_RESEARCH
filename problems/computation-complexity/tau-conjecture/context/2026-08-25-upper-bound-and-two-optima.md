@@ -44,12 +44,21 @@ height from the expanded coefficients. Witness B is cross-checked against
 an independent expansion in `scripts/seven_root_construction.py`.
 
 **Consequence.** EXP-011 proved z_max(8) = 6, so seven roots need at least
-nine gates. EXP-012 decided the multiplicative nine-gate case (empty). If
-the additive case (EXP-013, running) is also empty, then
+nine gates. EXP-012 decided the multiplicative nine-gate case (empty,
+unconditionally: root-set unions need no window). If the additive case
+(EXP-013, running) is also empty, then
 
-    minimal tau for 7 distinct integer roots = 10, exactly
+    minimal tau for 7 distinct integer roots = 10
 
-lower bound exhaustive, upper bound constructive and now verified.
+with the upper bound constructive and verified, the lower bound exhaustive
+on the multiplicative side, and WINDOWED on the additive side: the additive
+instrument tests agreement on [-32, 32], so it excludes only a nine-gate
+seven-rooter all of whose roots lie in that range. A nine-gate program can
+in principle build constants as large as 2^256 by repeated squaring, so
+large-root witnesses are not formally excluded by this scan. Stating the
+result with that caveat attached, not without it; closing the gap needs
+either a root bound for tau-gate polynomials or a filter that is not
+window-based, and neither is in hand.
 
 ## 2. The square-tower family
 

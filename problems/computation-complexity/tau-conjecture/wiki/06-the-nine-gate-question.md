@@ -74,3 +74,49 @@ being purchasable there. The independently measured scaling gap
 (T({0,+-1,+-2}) = 6 but T({0,+-2,+-4}) = 8) is the same phenomenon
 priced on a different operation: past the free small constants, roots
 get more expensive.
+
+## The upper bound, now verified: two ten-gate witnesses
+
+The 10-gate bound was stated in prose in round 8. It is now written out as
+explicit programs and executed gate by gate
+(`../scripts/seven_root_two_witnesses.py`). Two structurally different
+programs reach seven roots in ten gates:
+
+**A, folding.** With $q = x^2 - x$, the exhaustive 8-gate six-rooter is
+$q(q-2)(q-6)$, and $q - 6 = (q-2) - 4$, so no constant 6 is needed;
+appending $\times (x-4)$ costs two gates. Roots $\{-2,\dots,4\}$, the
+INTERVAL, height 56.
+
+**B, squaring.** $x^2(x^2-1)(x^2-4)(x^2-16)$, constants by repeated
+squaring $2 \to 4 \to 16$. Roots $\{0,\pm 1,\pm 2,\pm 4\}$, a TOWER,
+height 84.
+
+Witness B generalizes: $p_m = x^2(x^2-1)\prod_{i=2}^{m+1}(x^2 - t_i)$ with
+$t_{i+1} = t_i^2$ gives $z = 2m+3$ roots in $\tau = 3m+4$ gates, verified
+for $m = 0..4$. It is optimal at $m=0$ (3 roots in 3 gates, matching the
+census threshold) but NOT at $m=1$ (5 roots in 7 gates, where the census
+does it in 6), so it supplies upper bounds only.
+
+## V12: folding and squaring have opposite parity
+
+The two witnesses use different mechanisms, and the difference is one of
+parity:
+
+- **Folding** ($q = x^2-x$) identifies $x$ with $1-x$, so every value with
+  integer preimages contributes exactly TWO roots: folding natively gives
+  EVEN counts, and an odd count costs an extra linear factor.
+- **Squaring** ($y = x^2$) has one self-paired value, $0$, whose preimage
+  is the single root $x=0$: squaring natively gives ODD counts, $2m+3$.
+
+At seven, an odd target, the tower is native and the interval needs its
+patch, and they come out EQUAL at ten gates. Through the whole exhaustive
+range ($z \le 6$) the minimal-gate sets are intervals. The census range
+therefore ends exactly where the two mechanisms tie, and never separates
+them.
+
+Height does separate them: 56 for A against 84 for B, and 15 against 84 at
+six roots. This matches the TCB-030 height measurement (minimal height
+$1,1,2,4,15$ for $z=2..6$, achieved by intervals): additively-structured
+root sets are height-cheap, multiplicatively-structured ones buy their
+constants at doubly exponential magnitude. A lower-bound argument tuned to
+one mechanism will be blind to the other.
