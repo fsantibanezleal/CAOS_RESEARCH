@@ -100,6 +100,17 @@ the exact ladders of the digit-restricted census (the form of the conjecture
 Rojas proved sufficient): the maximum number of ODD roots grows as
 $1,2,2,2,2,3,4$ through $\tau = 7$, with its own extremal family
 $(x^2-1)(x^2-9)$, distinct from the unrestricted records.
+Finally we place the census against its two neighbouring worlds, measured on the
+same enumerated programs. Over $\mathbb{F}_p$ the analogous maximum is
+\emph{exactly} $2^{\tau-1}$ for every $\tau$ (proved here; the extremal program is
+$k$ squarings and one subtraction, and the Fermat primes that the small cases
+suggest are not required, only a prime $p \equiv 1 \bmod 2^k$). Over $\mathbb{R}$ it
+is $1,2,3,4,6$ through $\tau = 5$, exhaustively, by exact Sturm counting with no
+floating point. The three ladders agree at $\tau \le 2$ and separate at $\tau = 3$
+and $\tau = 4$ respectively; over $\mathbb{F}_p$ the degree ceiling $2^{\tau-1}$ is
+saturated at every $\tau$, over $\mathbb{R}$ it is not, and over $\mathbb{Z}$ the
+census stays linear. A five-gate program with six distinct \emph{real} roots and
+only two integer ones exhibits the difference concretely.
 This is an experimental-mathematics record in the tradition of Markstr\"om's census:
 it decides nothing about the conjecture asymptotically, and says so.
 \end{abstract}
@@ -186,6 +197,24 @@ integer-root yield is $5$, attained only at $c = 2$; two yield-$4$ series exist,
 $c = m(m+1)$ (fixed and anti-fixed points) and $c = m^2 + m + 1$ (genuine
 $2$-cycles), and the classical bound on integer polynomial cycle lengths shows this
 inventory is complete.
+\item \textbf{The seven-root threshold} (Section~\ref{sec:seven}): the upper bound
+is verified by two structurally different $10$-gate programs, executed gate by
+gate, one folding ($q(q-2)(q-6)\cdot(x-4)$, root set the interval
+$\{-2,\dots,4\}$) and one squaring ($x^2(x^2-1)(x^2-4)(x^2-16)$, root set the
+tower $\{0,\pm1,\pm2,\pm4\}$); the squaring shape generalizes to a family giving
+$2m+3$ roots in $3m+4$ gates. On the lower side, no $9$-gate program whose final
+gate is a \emph{multiplication} reaches $7$ roots, over all $1{,}048{,}460{,}912$
+depth-$7$ states (maximum union size exactly $6$). We also prove a confinement
+lemma turning the additive case's evaluation window into a decidable criterion:
+if $f$ has $7$ distinct integer roots and trailing coefficient $c$ with
+$|c| \le 395$, every root lies in $[-32,32]$; the constant is sharp.
+\item \textbf{The three worlds} (Section~\ref{sec:fp}): on the same enumerated
+programs, $\zpmax(\tau) = 2^{\tau-1}$ exactly for every $\tau$ [D], while
+$\zrmax(1..5) = 1,2,3,4,6$ [MV] and the integer census stays linear. What limits
+$\mathbb{Z}$ is not degree and not splitting, both of which cheap programs reach
+at exponential scale, but \emph{distinctness}: five gates already give a
+completely split polynomial of degree $16$ over $\mathbb{Z}$ with two distinct
+roots.
 \item \textbf{Anchoring and audit} (Section~\ref{sec:anchor}): the enumerator
 reproduces all fourteen of Markstr\"om's published anchor values; an independent
 computer-algebra cross-check agrees on $284$ polynomials; every experiment's
