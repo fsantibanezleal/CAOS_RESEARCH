@@ -23,6 +23,7 @@
 \newcommand{\Qp}{\mathbb{Q}_p}
 \newcommand{\zmax}{z_{\max}}
 \newcommand{\zpmax}{z^{p}_{\max}}
+\newcommand{\zrmax}{z^{\mathbb{R}}_{\max}}
 
 \title{The Bottom of the Shub--Smale Tau Conjecture:\\
 an Exact Census of Integer Roots for Constant-Free\\
@@ -698,7 +699,7 @@ additive last gate the trailing coefficient is determined by the constant terms
 of $v$ and $b$, which the stored state already holds, so the window-limited
 fraction of the search space is measurable exactly rather than by estimate.
 
-\section{The finite-field contrast, exactly}\label{sec:fp}
+\section{The three worlds, measured}\label{sec:fp}
 
 It is folklore that the conjecture's analogue fails over finite fields, and
 that $x^{p-1}-1$ is the reason; this is why the statement is always made in
@@ -743,14 +744,55 @@ $p = 3, 5, 17, 17, 97, 193, 257, 257$ with root counts
 $2, 4, 8, 16, 32, 64, 128, 256$ [MV]. We note that the Fermat primes, which
 the small cases suggest, are not needed: only $p \equiv 1 \pmod{2^k}$ is.
 
-Setting the two ladders side by side on the same programs:
+\subsection{The real ladder}\label{sec:real}
+
+The real analogue of the conjecture is known to fail. We measured how far, on
+the same enumerated programs, counting distinct real roots exactly: take the
+square-free part $f/\gcd(f,f')$ and count real roots by Sturm's theorem in
+exact rational arithmetic, with no floating point at any stage. The instrument
+was gated on seven known answers first, among them $x^2+1$ (none), $x^2$ (a
+double root counted once), $T_4$ (four), and $(x^2-1)(x^2-4)(x^2-16)$ (six).
+Writing $\zrmax(\tau)$ for the maximum over $\tau$-gate polynomials:
 \[
-\begin{array}{l|cccccccc}
+\begin{array}{l|ccccc|ccc}
 \tau            & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\\hline
 \zmax(\tau)     & 1 & 2 & 3 & 3 & 4 & 5 & 5 & 6\\
+\zrmax(\tau)    & 1 & 2 & 3 & 4 & 6 & \text{--} & \text{--} & \text{--}\\
 \zpmax(\tau)    & 1 & 2 & 4 & 8 & 16 & 32 & 64 & 128
 \end{array}
 \]
+(The real row is exhaustive through $\tau = 5$; extending it needs the
+$25.8$M-state frontier resident, which we defer.) The three worlds separate at
+three different points: $\mathbb{F}_p$ leaves $\mathbb{Z}$ at $\tau = 3$ and
+saturates the degree ceiling $2^{\tau-1}$ at every $\tau$; $\mathbb{R}$ leaves
+$\mathbb{Z}$ at $\tau = 4$ and does \emph{not} saturate it ($4$ against $8$,
+then $6$ against $16$); $\mathbb{Z}$ trails both.
+
+The real record at $\tau = 5$ is worth writing out, because it is produced by
+the same difference-of-squares mechanism that Section~\ref{sec:mech} identifies
+as the integer record-maker:
+\[
+  a = x\cdot x,\quad b = a - 1,\quad c = b \cdot b,\quad d = c - a,\quad
+  e = b \cdot d,
+\]
+\[
+  e \;=\; (x-1)(x+1)(x^2-x-1)(x^2+x-1).
+\]
+Five gates, \emph{six} distinct real roots $\pm 1, \pm\varphi, \pm\varphi^{-1}$
+with $\varphi$ the golden ratio, and exactly \emph{two} distinct integer roots
+[MV]. The program is cheap and the roots are there; four of them are simply
+irrational. This is the conjecture's content in one line: what limits
+$\mathbb{Z}$ is arithmetic, not the cost of manufacturing roots. It also shows
+the real ladder is not merely the Chebyshev ladder, which buys a doubling per
+three gates ($T_2 = 2x^2-1$ costs three, and composition repeats it) and would
+give only four roots here.
+
+We claim no rate for $\zrmax$: five points cannot distinguish
+$\Theta(2^{\tau/3})$ from anything nearby, and the paper needs only the known
+failure of the real analogue.
+
+Setting the three ladders side by side is the point of this section, and the
+$\mathbb{F}_p$ row is the one that is now exact.
 The ladders agree at $\tau \le 2$ and separate from $\tau = 3$ onward. Over
 $\mathbb{F}_p$ the count doubles with every gate, which is the fastest the
 degree bound permits, and the extremal programs are the cheapest available:
