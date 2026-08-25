@@ -156,6 +156,16 @@ for _k in (2, 3):
     check(f"T_{2**_k}: (gates, real roots)", (_g, zreal(_T)), (3*_k, 2**_k))
 
 print()
+print("== The rational record at tau = 6 ==")
+_rp = (0, 0, 2, 0, -10, 0, 8)
+_P = sp.Poly(list(reversed(_rp)), x, domain="ZZ")
+check("tau=6 rational record: distinct rational roots", len(_P.ground_roots()), 5)
+check("tau=6 rational record: distinct integer roots",
+      sorted(integer_roots(_rp)), [-1, 0, 1])
+check("tau=6 rational record factorization",
+      str(sp.factor(_P.as_expr())), "2*x**2*(x - 1)*(x + 1)*(2*x - 1)*(2*x + 1)")
+
+print()
 print("== Record root sets: an interval is AMONG them, but not alone ==")
 from tclib.enum import census_polynomials
 _per, _fs, _c = census_polynomials(5)
