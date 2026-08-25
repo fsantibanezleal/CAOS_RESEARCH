@@ -12,7 +12,7 @@ enumerated programs:
 exhaustive through tau = 6. Rational roots computed exactly by the rational
 root theorem over ZZ (sympy ground_roots), never numerically. Depth 6 reached
 by the last-gate lemma over the 778,087-state depth-5 frontier, gated by
-requiring the INTEGER maximum on the same 134,497-polynomial set to reproduce
+requiring the INTEGER maximum on the same 134,494-polynomial set to reproduce
 the established zmax(6) = 5 before the rational number was reported.
 
 ## The ladders coincide, the extremal objects do not

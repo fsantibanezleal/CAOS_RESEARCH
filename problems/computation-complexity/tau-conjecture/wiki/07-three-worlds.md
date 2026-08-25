@@ -18,7 +18,7 @@ The integer row continues $5, 6$ through $\tau = 8$ (decision-complete,
 [03 the census](03-census.md)). The $\mathbb{F}_p$ row continues $2^{\tau-1}$
 for every $\tau$, as a theorem. The real row is exhaustive through $\tau = 6$;
 $\tau = 6$ was reached without a depth-6 census, by applying the last-gate lemma
-to the 778,087-state depth-5 frontier (134,497 new polynomials, 180 s), with a
+to the 778,087-state depth-5 frontier (134,494 new polynomials, 180 s), with a
 known-answer gate requiring the INTEGER maximum over the same set to come out
 at 5 before the real number was reported.
 
@@ -29,10 +29,15 @@ $\tau = 3$, $\mathbb{R}$ at $\tau = 4$.
 
 **Proposition.** $z^p_{\max}(\tau) = 2^{\tau-1}$ for every $\tau \ge 1$.
 
-*Upper bound.* For a value $v$ let $\mu(v)$ count the multiplicative gates in
-its sub-DAG. Then $\deg v \le 2^{\mu(v)}$: the input has degree 1, constants
-degree 0, $\deg(a \pm b) \le \max(\deg a, \deg b)$, and
-$\deg(ab) = \deg a + \deg b \le 2^{\mu(a)} + 2^{\mu(b)} \le 2^{\mu(a)+\mu(b)+1}$.
+*Upper bound.* For a value $v$ let $\mu(v)$ count the **distinct**
+multiplicative gates in its sub-DAG. Then $\deg v \le 2^{\mu(v)}$: the input
+has degree 1 and constants degree 0; an additive gate has
+$\mu(v) \ge \max(\mu(a),\mu(b))$ and $\deg(a \pm b) \le \max(\deg a, \deg b)$;
+and a multiplicative gate has $\mu(v) = |M(a) \cup M(b)| + 1 \ge \max(\mu(a),\mu(b)) + 1$,
+so $\deg(ab) = \deg a + \deg b \le 2^{\mu(a)} + 2^{\mu(b)} \le 2^{\max(\mu(a),\mu(b))+1} \le 2^{\mu(v)}$.
+Counting DISTINCT gates is what makes this close: bounding the exponent by
+$\mu(a)+\mu(b)+1$, as an earlier draft of this page did, exceeds $\mu(v)$
+whenever $a$ and $b$ share gates.
 A program with no additive gate computes only $\pm x^k$ or $0$, since the free
 constants are $-1, 0, 1$ and products of those stay in $\{-1,0,1\}$; such a
 polynomial has at most one distinct root in any field. So a non-monomial has
@@ -44,7 +49,7 @@ and it costs $k$ squarings plus one subtraction. The Fermat primes that the
 small cases suggest ($5, 17, 257$) are not needed.
 
 Both halves machine-checked: the degree bound holds on every non-monomial in
-the depth-5 census and is attained exactly at each $\tau$; the construction
+the census through depth 6 and is attained exactly at each $\tau$; the construction
 was verified for $k = 1..8$.
 
 That the analogue fails over finite fields is folklore, and is why the
@@ -59,7 +64,7 @@ seven known answers first, including $x^2+1$ (none), $x^2$ (a double root
 counted once), $T_4$ (four) and $(x^2-1)(x^2-4)(x^2-16)$ (six).
 
 Unlike $\mathbb{F}_p$, the real ladder does NOT reach the degree ceiling: 4
-against 8 at $\tau = 4$, 6 against 16 at $\tau = 5$. Making roots real is
+against 8 at $\tau = 4$, 6 against 16 at $\tau = 5$, 8 against 32 at $\tau = 6$. Making roots real is
 cheaper than making them integral but dearer than making them exist in a
 finite field.
 
@@ -75,9 +80,11 @@ The program is cheap, the roots are there, and four of them are irrational.
 
 Two further points. It is built by the same difference-of-squares mechanism
 that [04 mechanisms](04-mechanisms.md) identifies as the integer
-record-maker. And it beats a Chebyshev tower at equal cost: $T_2 = 2x^2-1$
-costs three gates and composition repeats it, so a tower would give only four
-roots here. The real ladder is not simply the Chebyshev ladder.
+record-maker. And it beats a Chebyshev tower at equal cost: that tower reaches
+$T_2 = 2x^2-1$ with two real roots at three gates and needs six for $T_4$'s four,
+so at five gates it is still at two, against this record's six. An earlier draft
+of this page said four; the tower ladder is exactly $T_{2^k}$ at $3k$ gates.
+The real ladder is not simply the Chebyshev ladder.
 
 ### The real record mechanism, and where it stalls
 

@@ -852,7 +852,7 @@ Writing $\zrmax(\tau)$ for the maximum over $\tau$-gate polynomials:
 \]
 (The real row is exhaustive through $\tau = 6$. That row was obtained without a
 depth-$6$ census: the last-gate lemma applied to the $778{,}087$-state depth-$5$
-frontier enumerates all $134{,}497$ new $\tau = 6$ polynomials in $180$\,s, and
+frontier enumerates all $134{,}494$ new $\tau = 6$ polynomials in $180$\,s, and
 the run carried a known-answer gate on the same set, requiring the \emph{integer}
 maximum to come out at $5$ before the real number was reported. Reaching
 $\tau = 7$ needs the $25.8$M-state depth-$6$ frontier resident, which we defer.) The three worlds separate at
@@ -1002,13 +1002,31 @@ with the pressure sitting on the digit-conjecture side of Rojas' reduction [C].
 All code, hypotheses, run artifacts, verdicts and the wiki are committed at
 \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH} under
 \texttt{problems/computation-complexity/tau-conjecture/} (experiments
-\texttt{EXP-001}--\texttt{EXP-005}; package \texttt{tclib} with its test suite). All
-computations are exact integer arithmetic in Python 3.13 standard library; total
-compute for every result in this paper is under twenty hours on one desktop
-machine (24 cores; the depth-8 pipeline used 20 processes and $\sim$29 GB of
-scratch disk; peak RAM $\sim$12 GB). The constructed depth-7 frontier
-($1{,}048{,}460{,}912$ states, 28 GB) and the polynomial catalog are retained
-as reusable data assets with hashes recorded in the repository.
+\texttt{EXP-001}--\texttt{EXP-014}; package \texttt{tclib} with its test suite).
+
+Every root count reported here is exact. The census enumerator and all integer
+root counting are exact integer arithmetic in the Python 3.13 standard library.
+Two later instruments add libraries without giving up exactness. The depth-$8$
+and nine-gate scans use NumPy for a modular pre-filter over a fixed evaluation
+window, whose surviving candidates are reconstructed and root-counted exactly by
+the standard-library engine, so the filter can over-admit but never discard a
+witness. The real and rational ladders use SymPy for square-free decomposition
+with Sturm sequences and for the rational root theorem, both in exact rational
+arithmetic with no floating point at any stage.
+
+Compute is dominated by the two largest scans, on one desktop machine with
+$32$ cores. The depth-$8$ pipeline took $2$h$50$m to build the frontier and
+$6$h$48$m to scan it with $20$ processes; the multiplicative nine-gate scan took
+$13.1$h; the earlier experiments together add roughly $17$h, of which $6.7$h was
+the inconclusive solver lane. The additive nine-gate scan is larger again,
+running for days across $20$ worker processes; it is memory-bandwidth-bound
+rather than core-bound, so additional workers do not shorten it. Peak RAM was
+$\sim$12 GB.
+
+The constructed depth-$7$ frontier ($1{,}048{,}460{,}912$ states,
+$29{,}356{,}905{,}536$ bytes, that is $27.3$ GiB) and the polynomial catalog
+($2{,}161{,}049$ entries) are retained as reusable data assets with SHA-256
+manifests recorded in the repository.
 
 \begin{thebibliography}{99}\small
 

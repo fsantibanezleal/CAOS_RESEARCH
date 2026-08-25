@@ -11,10 +11,20 @@ Round 11b, 2026-08-25, following the exhaustive real ladder.
     degree ceiling     1    2    4    8   16   32
 
 Depth 6 was reached without a depth-6 census: the last-gate lemma applied to the
-778,087-state depth-5 frontier enumerated all 134,497 new tau = 6 polynomials in
+778,087-state depth-5 frontier enumerated all 134,494 new tau = 6 polynomials in
 180 s. The run carried a known-answer gate on the same set, requiring the
 INTEGER maximum to come out at 5 (the exhaustively established zmax(6)); it did,
 and only then was the real number reported.
+
+CORRECTION (2026-08-25, adversarial validation pass): this note and the paper
+first reported 134,497 new polynomials, three more than EXP-003's recorded
+134,494. The three are exactly (-1), (1) and x, the FREE INPUTS, which
+last_gate_scan reports as new unless the known-set is seeded with them. EXP-003
+had already hit and fixed this same artifact one depth down (11,380 against
+11,377) and wrote it into its verdict; the seeded call reproduces 134,494
+exactly. The three have degrees 0, 1, 0 and 0, 1, 0 integer roots, so no
+maximum is affected: zRmax(6) = 8, zQmax(6) = 5 and zmax(6) = 5 all stand. Only
+the population count was wrong.
 
 ## The mechanism
 
