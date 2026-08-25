@@ -174,3 +174,21 @@ have been.
    destroy my own run. The predicate must identify the ROLE, not just ownership.
 3. An error already in the logs (the BrokenPipeError) described the topology.
    Read the existing errors before forming a theory about the processes.
+
+### Throughput note: the scan is memory-bandwidth-bound
+
+Measured across the reconfiguration. With 10 shards a partition took ~5,500 s;
+with 20 shards it takes ~10,000-13,600 s. Net throughput barely moved: 6.5
+parts/h against 6.7 parts/h. Doubling the workers bought almost no rate,
+because the inner loop streams 28-byte rows and residue columns rather than
+compute-bound arithmetic.
+
+So the launcher fix did not make the run faster in aggregate; what it fixed was
+COVERAGE. Under the old configuration classes 10..19 made no progress at all
+until classes 0..9 finished entirely, which is the same total work in two
+sequential halves. All 20 classes now advance together, so the verdict lands
+when the whole space is done rather than after two serial passes.
+
+Recorded because "add more workers" was the obvious lever and it is the wrong
+one here; a future speedup has to reduce bytes moved per candidate, not add
+parallelism.
