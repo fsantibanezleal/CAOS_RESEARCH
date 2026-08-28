@@ -1,0 +1,1626 @@
+{
+  "experiment": "EXP-034",
+  "route": "independent numerical-semigroup and literal-chain audit",
+  "status": "PASS_INDEPENDENT",
+  "generated_at": "2026-08-28T01:25:07.366657+00:00",
+  "canonical_artifact_sha256": "6df7f70cab4f16f207288dd29dc06658a153629b0fda4c9ff05335e10d602b61",
+  "parameters": {
+    "min_p": 4,
+    "max_p": 25,
+    "enumerate_max_p": 9,
+    "budget_seconds": 180.0
+  },
+  "controls": {
+    "filled_gap_changes_kernel_basis": true,
+    "wrong_target_rejected": true
+  },
+  "rows": [
+    {
+      "p": 4,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "c77ba50790068ace2aebaee21b97e4890ab2fdbfb8a90f0a131d796c1423c3eb",
+      "direct_degree_two_hash": "f69752b4d3eab97aaae593b2a77fd36a187349434c77ff12fe7efbebf953ff77",
+      "kernel_degree_one_hash": "8af04db7d91f7f8dc8c72589c6a3130f6a081f58bf921742dd4b4e06e30df040",
+      "kernel_degree_two_hash": "57272201614e1a66f2148e4f5648b9f948b366cf9961fdc98cad1246dd475414",
+      "representations": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "source_rows": [
+        {
+          "coefficient": 1,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 4,
+            "face": [
+              1,
+              2,
+              3
+            ],
+            "product": [
+              "ring",
+              5
+            ],
+            "sign": -1
+          }
+        },
+        {
+          "coefficient": 2,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 4,
+            "face": [
+              1,
+              2,
+              3
+            ],
+            "product": [
+              "ring",
+              6
+            ],
+            "sign": -1
+          }
+        },
+        {
+          "coefficient": 3,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 4,
+            "face": [
+              1,
+              2,
+              3
+            ],
+            "product": [
+              "ring",
+              7
+            ],
+            "sign": -1
+          }
+        },
+        {
+          "coefficient": 4,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 4,
+            "face": [
+              1,
+              2,
+              3
+            ],
+            "product": [
+              "ring",
+              8
+            ],
+            "sign": -1
+          }
+        }
+      ],
+      "row_hash": "1b990115fb9abfe90d327c0baaf966f50693e5f0e5399907ea865151ceb1f12f"
+    },
+    {
+      "p": 5,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "4dc684ab3f5e98334a0d6f5d4c8dd3ca11271ff1e18ee2171774f5d8ab4b81be",
+      "direct_degree_two_hash": "ae569c93b8df2ee5ec1d13663439d533f511ad3bd6eec218cde12ad694aa6112",
+      "kernel_degree_one_hash": "c11625e435c3e4ed50be43ac583f0051bd2224b692f9050f8d2e8ba92fece49a",
+      "kernel_degree_two_hash": "78c7d4b670b547e402266a8d77124035024f15a1cdd86c5e22c7ea3d4d5f550e",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "source_rows": [
+        {
+          "coefficient": 1,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 5,
+            "face": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "product": [
+              "ring",
+              6
+            ],
+            "sign": 1
+          }
+        },
+        {
+          "coefficient": 2,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 5,
+            "face": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "product": [
+              "ring",
+              7
+            ],
+            "sign": 1
+          }
+        },
+        {
+          "coefficient": 3,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 5,
+            "face": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "product": [
+              "ring",
+              8
+            ],
+            "sign": 1
+          }
+        },
+        {
+          "coefficient": 4,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 5,
+            "face": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "product": [
+              "ring",
+              9
+            ],
+            "sign": 1
+          }
+        },
+        {
+          "coefficient": 5,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 5,
+            "face": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "product": [
+              "ring",
+              10
+            ],
+            "sign": 1
+          }
+        }
+      ],
+      "row_hash": "c28eceb38d27cc18acce7209a1eac817ffe01b98e56a4eb6f4a0aa03418e2d1e"
+    },
+    {
+      "p": 6,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "a496b45cc2632779c6e217c72add3f02c81aa350241dfefc259ea0489bd86721",
+      "direct_degree_two_hash": "13c322e54062a706c0e0189fb154a689b75de014ff68a2861052fce4ddff5c5b",
+      "kernel_degree_one_hash": "65a04cfd5eaeecfa73b7ff9b91c074ba6997ffd96665fe40974cb8f19ae6cce4",
+      "kernel_degree_two_hash": "1ec2804013b6262a465ecd50a732cccd15945dbf316a27fb57085e57aefc97f0",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "source_rows": [
+        {
+          "coefficient": 1,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 6,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "product": [
+              "ring",
+              7
+            ],
+            "sign": -1
+          }
+        },
+        {
+          "coefficient": 2,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 6,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "product": [
+              "ring",
+              8
+            ],
+            "sign": -1
+          }
+        },
+        {
+          "coefficient": 3,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 6,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "product": [
+              "ring",
+              9
+            ],
+            "sign": -1
+          }
+        },
+        {
+          "coefficient": 4,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 6,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "product": [
+              "ring",
+              10
+            ],
+            "sign": -1
+          }
+        },
+        {
+          "coefficient": 5,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 6,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "product": [
+              "ring",
+              11
+            ],
+            "sign": -1
+          }
+        },
+        {
+          "coefficient": 6,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 6,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "product": [
+              "ring",
+              12
+            ],
+            "sign": -1
+          }
+        }
+      ],
+      "row_hash": "ae4a2e8c1b0cc253476d1bd1ade6df5f9af8600199ce8f8b94615b2cdbf7245e"
+    },
+    {
+      "p": 7,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "d84fb5481e792ef9bb9818b7e39604965d1d63bcb835b7fb4857afba6ab4fce2",
+      "direct_degree_two_hash": "e90835b00276dd113d958092e4efd16e8472b8dc62a926779d686a5bf7601b19",
+      "kernel_degree_one_hash": "4d0e796248553fe0ab9e2d0e6bfb30fdee9375e6e6b8b0188f189c38f14e382a",
+      "kernel_degree_two_hash": "cd8f6a8ef1273e3380b1b52a377e2d904774ef071d91a70236ef11a6a9732ec6",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "source_rows": [
+        {
+          "coefficient": 1,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 7,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "product": [
+              "ring",
+              8
+            ],
+            "sign": 1
+          }
+        },
+        {
+          "coefficient": 2,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 7,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "product": [
+              "ring",
+              9
+            ],
+            "sign": 1
+          }
+        },
+        {
+          "coefficient": 3,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 7,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "product": [
+              "ring",
+              10
+            ],
+            "sign": 1
+          }
+        },
+        {
+          "coefficient": 4,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 7,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "product": [
+              "ring",
+              11
+            ],
+            "sign": 1
+          }
+        },
+        {
+          "coefficient": 5,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 7,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "product": [
+              "ring",
+              12
+            ],
+            "sign": 1
+          }
+        },
+        {
+          "coefficient": 6,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 7,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "product": [
+              "ring",
+              13
+            ],
+            "sign": 1
+          }
+        },
+        {
+          "coefficient": 7,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 7,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "product": [
+              "ring",
+              14
+            ],
+            "sign": 1
+          }
+        }
+      ],
+      "row_hash": "cee98f9821734b3f1f52977e7e334cfb5e67acfca442de14e64c872414be50fe"
+    },
+    {
+      "p": 8,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "85d8ab678375afb6710188287e3bf735fc0bfae03e18ce6c9fc30a10979d1c3e",
+      "direct_degree_two_hash": "8f01ba38cbdcebed90e0164a28950e69e3858f3c00d41f7065a17a6a7bdb0287",
+      "kernel_degree_one_hash": "f826450e1ce7ef5a91f284b7d3a944e1abeb5eff4f8352a692ac372c33eafd5d",
+      "kernel_degree_two_hash": "d82cdc14afbc6cef72ec8d64b9d49ce8352918a20b6951bd789957caea4bb2b7",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "source_rows": [
+        {
+          "coefficient": 1,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 8,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "product": [
+              "ring",
+              9
+            ],
+            "sign": -1
+          }
+        },
+        {
+          "coefficient": 2,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 8,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "product": [
+              "ring",
+              10
+            ],
+            "sign": -1
+          }
+        },
+        {
+          "coefficient": 3,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 8,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "product": [
+              "ring",
+              11
+            ],
+            "sign": -1
+          }
+        },
+        {
+          "coefficient": 4,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 8,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "product": [
+              "ring",
+              12
+            ],
+            "sign": -1
+          }
+        },
+        {
+          "coefficient": 5,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 8,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "product": [
+              "ring",
+              13
+            ],
+            "sign": -1
+          }
+        },
+        {
+          "coefficient": 6,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 8,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "product": [
+              "ring",
+              14
+            ],
+            "sign": -1
+          }
+        },
+        {
+          "coefficient": 7,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 8,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "product": [
+              "ring",
+              15
+            ],
+            "sign": -1
+          }
+        },
+        {
+          "coefficient": 8,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 8,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "product": [
+              "ring",
+              16
+            ],
+            "sign": -1
+          }
+        }
+      ],
+      "row_hash": "45efd7985b9a8afa39cc0d79d0d7cc7ae74148ec06726b13e4a34107128fe0a1"
+    },
+    {
+      "p": 9,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "cbb769581e9bbb01e9d0dcdb678107450a96fb1e0fb59519e982e13cdb681a5f",
+      "direct_degree_two_hash": "468eed2308ae3d96987e47068142affec5b81f3f014df432866cecee8734b836",
+      "kernel_degree_one_hash": "4e25eef16e1e3d99a3d64a2ce31491870291c6fe45c06dbcdfbf12a845080395",
+      "kernel_degree_two_hash": "6b23c38ebee72ad98079f0c05e0a9ab762f6d5153d01afecdbf170088252a6aa",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "source_rows": [
+        {
+          "coefficient": 1,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 9,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "product": [
+              "ring",
+              10
+            ],
+            "sign": 1
+          }
+        },
+        {
+          "coefficient": 2,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 9,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "product": [
+              "ring",
+              11
+            ],
+            "sign": 1
+          }
+        },
+        {
+          "coefficient": 3,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 9,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "product": [
+              "ring",
+              12
+            ],
+            "sign": 1
+          }
+        },
+        {
+          "coefficient": 4,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 9,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "product": [
+              "ring",
+              13
+            ],
+            "sign": 1
+          }
+        },
+        {
+          "coefficient": 5,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 9,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "product": [
+              "ring",
+              14
+            ],
+            "sign": 1
+          }
+        },
+        {
+          "coefficient": 6,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 9,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "product": [
+              "ring",
+              15
+            ],
+            "sign": 1
+          }
+        },
+        {
+          "coefficient": 7,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 9,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "product": [
+              "ring",
+              16
+            ],
+            "sign": 1
+          }
+        },
+        {
+          "coefficient": 8,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 9,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "product": [
+              "ring",
+              17
+            ],
+            "sign": 1
+          }
+        },
+        {
+          "coefficient": 9,
+          "source_dimension": 1,
+          "boundary_rank_over_QQ": 1,
+          "unit_pivot": {
+            "removed": 9,
+            "face": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "product": [
+              "ring",
+              18
+            ],
+            "sign": 1
+          }
+        }
+      ],
+      "row_hash": "de2361faeaecad242fcaa73317ba9b3f26d6372a657d73cb8be3cfc0d58c616f"
+    },
+    {
+      "p": 10,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "c4413a3784ffb1f10fa19ba71751ed0f61fb443ada2c1ba313f458380fa023da",
+      "direct_degree_two_hash": "9a76bddb4fd8c030bf9e5a7d792dd57c3042e9f4e2ab5f0d55ee9782a18678dd",
+      "kernel_degree_one_hash": "cee7a399adc409673e3a6b7110f245611e2bbcff4db4949c376a32e14bc9c9bd",
+      "kernel_degree_two_hash": "426832330c0a63aca4a588ea243b6e99b57d84fb35e2786e3c707b99c3bfd25b",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "source_rows": [],
+      "row_hash": "c1ffacd5182ececce2735ba06bf8b9fb84f2aa4518ab116793a28fcd60dc546b"
+    },
+    {
+      "p": 11,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "3d35a21b1798aa79fca4bbfcd3d55bdfe60ce01416cf5225d5e126452fac86d0",
+      "direct_degree_two_hash": "4e544563cac0df8c9d8f8a00323c81dd377e807301dcb74347b9d90c15922451",
+      "kernel_degree_one_hash": "24dc6775a05103707507b7cac412764d3568605e4dd015c8c79dcfeffd8c472b",
+      "kernel_degree_two_hash": "838d8062658a0053ecd1e46d22998c6d44fb9bf3317952c60e61169567e9abf8",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "source_rows": [],
+      "row_hash": "1124d54e072303d438b15341926541f252b3c634a10e94d844ef29699268a1bc"
+    },
+    {
+      "p": 12,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "98706e3c52e20248993b6979d68035be53a76e99d65d6d27b3a35db015face28",
+      "direct_degree_two_hash": "a67d3a7096c078de1e8a6c9559b00eaf4936a86eb386252c5a416bd3f4979ebb",
+      "kernel_degree_one_hash": "ebfe258f38d942dbf4108dee147a561e8fcd5a83a9cb226f58ef2b8a42204251",
+      "kernel_degree_two_hash": "e98dcb5dd6bf947c9f9fee5652530968a44a6ecfa304012f77aad913d0e341e0",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source_rows": [],
+      "row_hash": "a44db1ed3cc0dc8919e77188c229220862bb29496f48a16fd840fcd0958d3928"
+    },
+    {
+      "p": 13,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "20d080ccf98a2db7bf358bb70e687423b6ef385b5e3aad836d4ee69a7a958d29",
+      "direct_degree_two_hash": "9588fa981fec180dc71057b68c7b09e1cc511ebbd5d8643c4f6622a477059310",
+      "kernel_degree_one_hash": "b8348d2a04c6e95be9aa6031c8f4b403196c1b880fcd1ece4f173c7734a0e97d",
+      "kernel_degree_two_hash": "ec18fd64b2ae5e18e8032f3577e49d0bde2a72efd4a87bc9dfdcdd01c99f0b9b",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "source_rows": [],
+      "row_hash": "3238f837b9ef47dabca66dc98004eaf056e0c3451e8d637b6c5ee490ddabd58f"
+    },
+    {
+      "p": 14,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "0108931df6306e3eed9e17131e77521e627ba7bdc4ec4551ea18ebddc372fa04",
+      "direct_degree_two_hash": "b3709232de0ad095b5afce9f909e538f8506b5dcff735ead0a50606a80be25d1",
+      "kernel_degree_one_hash": "9501f296bdb2abd222986bd6de0bf45fbc4ff3b74ac50d9129aefcf2dc3942bb",
+      "kernel_degree_two_hash": "66319df0d9cd85170e21faf2c5092517da3afb78f2df56bbc8d76ba72095c19f",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "source_rows": [],
+      "row_hash": "a1642207bf549cf2b020e1f1edf477a063327710309e13a9a8afd14b1785a0ec"
+    },
+    {
+      "p": 15,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "8c6441667d48cbc135dc6ac2dd6127497d3c952b07a78ac5ef4165b0644c3862",
+      "direct_degree_two_hash": "d93b003874a085f1d7ec28a2f948e98c2d6f7337be457f39ffd17f0e9b4f72bd",
+      "kernel_degree_one_hash": "428bbe2f751356b6643babbe918d178934c99dd0f52d5db2dbbea24aaa3f8b86",
+      "kernel_degree_two_hash": "b1fc81c93ffe5d0264324032cf329701d2d13c3a352f60a0c14a15b73c703a08",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "source_rows": [],
+      "row_hash": "82c65ab78bea5b0a7f7dc0f4b21bda785f6fa94a5dc3d4af47e6112f3ff8d517"
+    },
+    {
+      "p": 16,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "2faad5fbff24440b75a7563f98bcb6c99ee53735fc4d61f265acaf137b88527b",
+      "direct_degree_two_hash": "cf95d75a298f9a5f817942b1ce754800393db49b38a6843b8cd6ac504b85769e",
+      "kernel_degree_one_hash": "853dbb7a7cff88549f5147b782463ded573e03d64731cc4cca48f40d68e34430",
+      "kernel_degree_two_hash": "586eff280c21196c8b7fc317d5c3ec4fe14a53324d8ff4c76ea589b43be37f6f",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "source_rows": [],
+      "row_hash": "632d1195f96c2d814a4ef4b49ae5b3c15a805a02111394d28cb19b5858d05462"
+    },
+    {
+      "p": 17,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "533e26def76b8de867e9d5e2de7e736a8844b35534a9f6b2812fe5f449369453",
+      "direct_degree_two_hash": "ea54fa915ccdd4e90b2cc82ad299b8ea8bccaa098cf1af7e3b6d8c5967633204",
+      "kernel_degree_one_hash": "d74f4ebe818b0c51babcdff5fad8f6899a9914a57da3ef5184fa124e6e49eeaa",
+      "kernel_degree_two_hash": "3dc323d54df9cd50e82bd36941f906f0632a758d320752bb071e5766f82f05e8",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "source_rows": [],
+      "row_hash": "b5f91bffa93a25eb14803b2f46f95b9701afc647bd531eac6f6f49ca3c1dae4e"
+    },
+    {
+      "p": 18,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "bce753ca5c5911a029506bcf9f9db2c572cc19eba9f39c0a3e5977106a9523d9",
+      "direct_degree_two_hash": "0164b88c5bd1beef5b6116200d36fa50eabf5caa6e73b3a36973cb416306b097",
+      "kernel_degree_one_hash": "c5c1ff926f9b0e8900986fc0ecfcdf1861c34158410d8122014cfb1719981a39",
+      "kernel_degree_two_hash": "4b8a391cb88ff37f24287c12d6e5d3222da2129160c9c382efc290306ccdc614",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "source_rows": [],
+      "row_hash": "25d621a5aca3bc659bb5c8604307fb48945d03047eea9896c605842ea2a24749"
+    },
+    {
+      "p": 19,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "4bb7f906ccd29a6ff03877bc167cb031b99cbb29bbad7b303595eee368990ea3",
+      "direct_degree_two_hash": "350a84c616a5688f5e5abf31cc35c22cdbda14a55914c40ee0502f2e0afd1b57",
+      "kernel_degree_one_hash": "7668c4b22577d34601b1e3a8cd5bae68415bffd2ccb6f675e8bae7dc468d7c31",
+      "kernel_degree_two_hash": "b2e75ee99d87e1a181ce7e518d50eedfbbc818725fa2603b0d5cce1c08070582",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "source_rows": [],
+      "row_hash": "754598651904d39ef957037e6006b29fe402d7a828422dd645739cecae119116"
+    },
+    {
+      "p": 20,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "c5606fccfce5eef12d29bfedd43bfcfd82638134b7b089946ba60cd524b17aaa",
+      "direct_degree_two_hash": "54877e77d602f856055740e1ffebd8e855a46292257b6e5c214e5bd75649270b",
+      "kernel_degree_one_hash": "18bd2278f45f86aa755fd5caceb3d253cba69ab2fe0c91defe3098936e7fdc50",
+      "kernel_degree_two_hash": "92cbe67352bcd6ccbf595aa06909167f8f50136709ab4ec3490e3d403bddd916",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "source_rows": [],
+      "row_hash": "fcd4a4d8281d279b10d8d082af36c272af0b2dd650b1018cfc9f9a076f1ed690"
+    },
+    {
+      "p": 21,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "118ec543843cec6d3aeff038c6da9e8ba834958b2d993086a83bb0840e5a0c33",
+      "direct_degree_two_hash": "c9c8c222470f77b54f72f7e5147808e32eaac72df3f24fd4be299992aef50982",
+      "kernel_degree_one_hash": "fc2a4b9084f05bcec32aa9f6a18c084b55c129917f7235bec6773bc07c75104f",
+      "kernel_degree_two_hash": "7081aa152f71412c22c4cba01273a24dad9558bf3af47ecd65783e9081f5733d",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "source_rows": [],
+      "row_hash": "67f03a9a050de908331fc69e3f398172c025ed7e451d97a12f8aaee1c837cf70"
+    },
+    {
+      "p": 22,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "561c54c5946288280ebed6bd59c51ef3541554c0be3d41cb73cc1e304cbb1c21",
+      "direct_degree_two_hash": "f40e9bb8675293f0b5997468f25136f756fe84e37f8cea3aabcf12a0d5147118",
+      "kernel_degree_one_hash": "8e67f13c1ac5e8249bb61d3ed43f4db157853fd419d784703fc19944332d31ad",
+      "kernel_degree_two_hash": "6802c55fd85dd0047b5de0bc27a2c5e36f55ba104b74f21f9135ac099904eeeb",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "source_rows": [],
+      "row_hash": "cf391946aaab36e4a7bb25e36b265842d0657420e11bcf95db550dcda99227fa"
+    },
+    {
+      "p": 23,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "3dd94eb778cba078f1a2d440904142ca6f2ffe7b413659d375b9386b57929fac",
+      "direct_degree_two_hash": "cc7fcda694d6c8510f62117781019a98c7ab791b78e740b21e9f6b9a402d447c",
+      "kernel_degree_one_hash": "9eeefc2c40f499f09079e2037a951c0d32a970b0036e90d3dd9f777050d7e58b",
+      "kernel_degree_two_hash": "347a9175a373ac847697902dc41525b22fd2e2b6514d943672d142e94bf1d012",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "source_rows": [],
+      "row_hash": "7909144618de98b23cf13aea8206bdb1a732e7493d5a04f1a19c3103e33e2664"
+    },
+    {
+      "p": 24,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "788c9d51a621594fd976be9a303a9c43f3d5470c28bc882e1df812b30fa42a93",
+      "direct_degree_two_hash": "799777f392b4ac879a68944ce2703d0f3e67ed5355807e89416ff6701c595b05",
+      "kernel_degree_one_hash": "72c06c59e86f115fe964a705e61598f472ccf8849aae8c55a41a63cb12fef68f",
+      "kernel_degree_two_hash": "eb27582e943c2634bb61e0224ae4d9e9738554bcdbe6b52ef770c6448469133c",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "source_rows": [],
+      "row_hash": "0c9620eebbcc4f3604cb64c49ab0e05cfabf58bfba59fb5809b7b0248b2f53cd"
+    },
+    {
+      "p": 25,
+      "checks": {
+        "direct_degree_one_count": true,
+        "direct_degree_two_count": true,
+        "kernel_degree_one_count": true,
+        "kernel_degree_two_count": true,
+        "target_in_kernel_degree_two": true,
+        "target_not_degree_one": true,
+        "representations": true,
+        "literal_sources_have_unit_rank": true
+      },
+      "direct_degree_one_hash": "863833b20675d218a111380f426a34272b692a599d0f0c80fbe9b396822bd9a8",
+      "direct_degree_two_hash": "3ca9b2e730dcc5dfb7e0e31a8f8a69d9e90248d2f289a3dc106ce6a0cd6981f2",
+      "kernel_degree_one_hash": "55fbba078bd0a9e3e40f00b9628d655bd10ee8926769f5d42e7b63599ef3bd0f",
+      "kernel_degree_two_hash": "3d7bfa93a4a889235747970681233958147fcabb77cc8a57c75204038586b18a",
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "source_rows": [],
+      "row_hash": "44ee77dd231954c383601ecdae2e11278e10690ac8fa709fbf56d0174dbe1f06"
+    }
+  ],
+  "aggregate_sha256": "31479abd3c7247fe0ba464eefe06e437a595812c3d6055d0de8d0ced25d12794",
+  "elapsed_seconds": 39.401838,
+  "artifact_sha256": "b1c433d600a4d9f03d47c61589302ebabdfb52fff7442fb72850de8a7e1ef9f9"
+}
