@@ -2,8 +2,9 @@
 
 `main.tex` is the version 0.21 candidate of the CAOS Research preprint; version 0.20 and all
 earlier versions remain frozen. Version 0.21 adds the EXP-034 two-layer-kernel theorem and the
-first exact surviving lower-strand class in `K_p`, `A_p`, and `C_p` over every field. Its reserved
-version DOI is `10.5281/zenodo.22135689`; upload and publication remain gated on complete local QA.
+first exact surviving lower-strand class in `K_p`, `A_p`, and `C_p` over every field. Its exact
+candidate is uploaded to the validated draft at version DOI `10.5281/zenodo.22135689`; publication
+remains gated on repository QA.
 Version 0.20 adds the EXP-033 minimal-cubic-mapping-cone theorem
 and the complete two upper regularity strands of the special fiber. It passed the complete
 claim/build/render, authenticated upload, publication, concept-latest, and fresh-download workflow
@@ -187,7 +188,7 @@ Zenodo identifiers:
 - version 0.18 DOI: `10.5281/zenodo.22030743` (published and fresh-download verified)
 - version 0.19 DOI: `10.5281/zenodo.22031481` (published and fresh-download verified)
 - version 0.20 DOI: `10.5281/zenodo.22062161` (published and fresh-download verified)
-- version 0.21 DOI: `10.5281/zenodo.22135689` (reserved draft; publication pending local QA)
+- version 0.21 DOI: `10.5281/zenodo.22135689` (validated uploaded draft; publication pending)
 - licence: CC BY 4.0
 
 Evidence sources are EXP-001 through EXP-034 under

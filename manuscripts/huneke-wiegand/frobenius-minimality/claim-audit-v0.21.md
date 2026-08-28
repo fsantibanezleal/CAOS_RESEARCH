@@ -1,7 +1,7 @@
 # Claim audit - manuscript v0.21
 
-Date: 2026-08-27. Publication status: validated candidate reserved at DOI
-`10.5281/zenodo.22135689`; upload and publication are pending.
+Date: 2026-08-27. Publication status: exact candidate uploaded to the validated draft reserved at
+DOI `10.5281/zenodo.22135689`; publication is pending.
 
 ## Claim-to-evidence matrix
 
@@ -65,8 +65,11 @@ matrices, or the full minimal resolution of the conductor special fiber.
 - sole-author and sole-ORCID audit: PASS; Felipe Santibanez-Leal is the sole author and
   `0000-0002-0150-3246` is the sole ORCID; no machine authorship or coauthorship appears;
 - repository tests, pipeline, and artifact consistency: PENDING;
-- exact Zenodo metadata and one-file upload validation: PENDING;
+- exact Zenodo metadata and one-file upload validation: PASS; draft `22135689` is unsubmitted at
+  version `0.21`, with the expected title, date, one creator and ORCID, CC BY 4.0, open access, and
+  exactly one completed file named `huneke-wiegand-frobenius-minimality-v0.21.pdf`, with 792,863
+  bytes and MD5 `13b92773205a49977abb88cd7ab8dde1`;
 - publication, concept-latest check, and fresh unauthenticated download: PENDING.
 
-The manuscript candidate is frozen for repository gates and exact Zenodo upload. Publication is
-not yet claimed.
+The manuscript candidate is frozen and its exact bytes are in the validated Zenodo draft.
+Publication is not yet claimed.
