@@ -1,0 +1,45 @@
+{
+  "experiment": "EXP-034",
+  "route": "symbolic interval and source-uniqueness certificate",
+  "status": "PASS_SYMBOLIC",
+  "generated_at": "2026-08-28T01:22:51.563494+00:00",
+  "z3_obligations": [
+    {
+      "obligation": "first-low-block maps into first high block",
+      "status": "UNSAT"
+    },
+    {
+      "obligation": "second-low-block cannot represent target",
+      "status": "UNSAT"
+    },
+    {
+      "obligation": "high variable cannot represent target",
+      "status": "UNSAT"
+    },
+    {
+      "obligation": "connecting high label lies in first high block",
+      "status": "UNSAT"
+    },
+    {
+      "obligation": "a B exterior variable exceeds source multidegree",
+      "status": "UNSAT"
+    },
+    {
+      "obligation": "a B coefficient exceeds source multidegree",
+      "status": "UNSAT"
+    },
+    {
+      "obligation": "unit pivot product leaves Dbar ring interval",
+      "status": "UNSAT"
+    },
+    {
+      "obligation": "D row two can occur at homological degree p",
+      "status": "UNSAT"
+    }
+  ],
+  "shifted_d_diagonal_gap": "(p - 2)*(6*p - 1)",
+  "finite_rows": 299,
+  "aggregate_sha256": "b3f461298706a394cc0f1a296557e10f52435f78d2f1039452fb726871b79a4d",
+  "elapsed_seconds": 0.211329,
+  "artifact_sha256": "f8c5178ace6d4e3c3740677a90b97e8d1e476855556f5ad36b30485da486f7ee"
+}

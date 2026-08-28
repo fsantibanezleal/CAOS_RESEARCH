@@ -932,3 +932,66 @@ registry reconciliation, manuscript v0.20, and verified Zenodo record to `develo
 same tested state to `main` at `c1e6b20427d51781afeeb6ef1c5c2d57bf30c649`. Both remote branches
 share payload tree `f51cb2845d20b4fbf7d43029a71af0392bc3d6d9`. HWB-054 is done. No release
 tag belongs to this research-only round.
+
+## 2026-08-27 - EXP-034 two-layer kernel route
+
+EXP-034 is declared before implementation under HWB-055. It redirects the remaining lower-strand
+problem from a raw resolution of `A_p=P_p/Q_p` to the Artinian reduction
+`M_p=K_p/X_0K_p`. The proposed offset bases in degrees one and two make the resolution of `K_p`
+an explicit family of signed incidence maps.
+
+The first falsifiable target is the codomain cell labelled by
+
+```text
+b*=8p-1,   F*={1,...,p},   tau_p=8p-1+p(p+1)/2.
+```
+
+If its representation set is exactly `F*`, it has no incoming face and yields a primitive
+characteristic-free class in `beta_(p,p+2)(K_p)`. This would refute a naive maximal-rank model of
+the kernel. The stronger target is to prove that the same class survives the connecting map from
+`D_p` and therefore gives a new lower-strand entry of `A_p`. These targets are intentionally
+separate: the ordinary Betti polynomial of `D_p` cannot decide a multigraded connecting map.
+
+The canonical campaign, independent reconstruction, symbolic proof, and corrupted controls are
+specified in the experiment hypothesis. A proved kernel class is a relevant structural result;
+manuscript v0.21 and Zenodo remain gated on a new theorem for `A_p`.
+
+EXP-034 is CONFIRMED. The first missing degree-two offset `8p-1` and the minimum exterior set
+`{1,...,p}` give a one-dimensional integral cokernel in total offset
+`tau_p=8p-1+p(p+1)/2`. Every possible connecting-map contribution from `D_p` has a unique
+nonzero low boundary coordinate, so no source cycle can hit this class. Since the row-two strand
+of `D_p` starts at homological degree `2p-2`, the long exact Tor sequence gives
+
+```text
+beta_(p,(p+2,tau_p))(K_p)
+=beta_(p,(p+2,tau_p))(A_p)
+=beta_(p,(p+2,tau_p))(C_p)=1
+```
+
+over every field. Canonical rows pass for all `p=4,...,300`; exact finite-field ranks,
+independent numerical-semigroup reconstruction, rational literal sources, symbolic inequalities,
+and adversarial controls pass. HWB-055 is done. The theorem crosses the in-place main-manuscript
+v0.21 gate under HWB-056, while a separate manuscript and a complete-lower-strand claim remain
+deferred.
+
+## 2026-08-27 - manuscript v0.21 publication and repository gates
+
+The EXP-034 theorem is incorporated in the existing main manuscript rather than split into a new
+paper. The 48-page v0.21 candidate passed its claim audit, two consecutive warning-free LaTeX
+builds, PDF metadata and text extraction, complete 150-DPI page inspection, full-size inspection
+of page one and pages 41--48, and sole-human-authorship/ORCID gates. The exact candidate is
+792,863 bytes with MD5 `13b92773205a49977abb88cd7ab8dde1` and SHA-256
+`c717fbb4d6d3178e0fb0786a8a61c9e2c109d97d77a7b9e1308a2274c0f97539`.
+
+After the committed candidate and reversible draft checkpoint were pushed, Zenodo record
+`22135689`, DOI `10.5281/zenodo.22135689`, was published under concept DOI
+`10.5281/zenodo.21763582`. It is concept-latest at version `0.21`; the public title, date, sole
+creator and ORCID, CC BY 4.0 license, filename, bytes, and MD5 agree. A fresh unauthenticated
+download matches the committed PDF by MD5 and SHA-256. HWB-056 is done.
+
+Repository gates also pass: template, content, and research-structure guards; Ruff over the CI
+scope and EXP-034 scripts; all 60 tests; the full registry pipeline; and manifest/artifact
+consistency. Regeneration adds EXP-034 to the public experiment registry. HWB-057 is active for
+the required work-branch-to-`develop` PR followed by the `develop`-to-`main` PR. The next
+mathematical route remains classification of the other incidence cokernel cells and their
+connecting-map survival; a separate manuscript remains premature.

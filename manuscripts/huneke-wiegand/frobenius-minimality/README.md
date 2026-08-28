@@ -1,7 +1,11 @@
 # Frobenius-minimality preprint
 
-`main.tex` is version 0.20 of the CAOS Research preprint; version 0.19 and all
-earlier versions remain frozen. Version 0.20 adds the EXP-033 minimal-cubic-mapping-cone theorem
+`main.tex` is version 0.21 of the CAOS Research preprint; version 0.20 and all
+earlier versions remain frozen. Version 0.21 adds the EXP-034 two-layer-kernel theorem and the
+first exact surviving lower-strand class in `K_p`, `A_p`, and `C_p` over every field. It passed
+the complete claim/build/render, authenticated upload, publication, concept-latest, and
+fresh-download workflow and is published at DOI `10.5281/zenodo.22135689`.
+Version 0.20 adds the EXP-033 minimal-cubic-mapping-cone theorem
 and the complete two upper regularity strands of the special fiber. It passed the complete
 claim/build/render, authenticated upload, publication, concept-latest, and fresh-download workflow
 and is published at DOI `10.5281/zenodo.22062161`. Version 0.19 adds the EXP-032 complete graded
@@ -130,6 +134,20 @@ This removes every comparison-rank ambiguity from the cubic cone and determines 
 upper regularity strands over every field. The two lower strands of `A_p`, explicit differential
 matrices, and the full special-fiber resolution remain open.
 
+Version 0.21 reduces the EXP-033 kernel modulo `X_0` to a two-layer incidence module. Put
+`tau_p=8p-1+p(p+1)/2`. The first missing degree-two offset and a separate unit connecting-map
+pivot prove, over every field,
+
+```text
+beta_(p,(p+2,tau_p))(K_p)
+=beta_(p,(p+2,tau_p))(A_p)
+=beta_(p,(p+2,tau_p))(C_p)=1.
+```
+
+Consequently `beta_(p,p+2)(A_p)>=1` and
+`beta_(p,p+2)(C_p)>=binom(8p,p-1)+1`. This is one exact lower-strand point, not either complete
+lower strand or the full special-fiber resolution.
+
 Attribution is binding: Son Pham discovered the first public counterexample; CAOS contributes the
 certified minimality, minimum-layer uniqueness, and parametric-family extensions. Professor Craig
 Huneke's verification is external evidence, not authorship of this paper.
@@ -170,9 +188,10 @@ Zenodo identifiers:
 - version 0.18 DOI: `10.5281/zenodo.22030743` (published and fresh-download verified)
 - version 0.19 DOI: `10.5281/zenodo.22031481` (published and fresh-download verified)
 - version 0.20 DOI: `10.5281/zenodo.22062161` (published and fresh-download verified)
+- version 0.21 DOI: `10.5281/zenodo.22135689` (published and fresh-download verified)
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-033 under
+Evidence sources are EXP-001 through EXP-034 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
 finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
@@ -484,4 +503,20 @@ Version 0.20 public-file verification:
   CC BY 4.0, open access, and exactly one completed file named
   `huneke-wiegand-frobenius-minimality-v0.20.pdf`, whose bytes and MD5 matched the committed PDF
 - record `22062161` is public and concept-latest at version `0.20`; public metadata and the sole
+  file match, and a fresh unauthenticated download matches the committed PDF by MD5 and SHA-256
+
+Version 0.21 public-file verification:
+
+- record `22135689`, DOI `10.5281/zenodo.22135689`, concept DOI
+  `10.5281/zenodo.21763582`
+- source record: immutable published v0.20 record `22062161`
+- two warning-free builds, PDF metadata/extraction, and all-page 150-DPI inspection pass; all 48
+  pages were inspected, with full-size review of page one and pages 41--48
+- bytes: `792863`
+- MD5: `13b92773205a49977abb88cd7ab8dde1`
+- SHA-256: `c717fbb4d6d3178e0fb0786a8a61c9e2c109d97d77a7b9e1308a2274c0f97539`
+- the exact prepublication draft had version `0.21`, the expected title and date, sole author and
+  ORCID, CC BY 4.0, open access, and exactly one completed file named
+  `huneke-wiegand-frobenius-minimality-v0.21.pdf`, whose bytes and MD5 matched the committed PDF
+- record `22135689` is public and concept-latest at version `0.21`; public metadata and the sole
   file match, and a fresh unauthenticated download matches the committed PDF by MD5 and SHA-256
