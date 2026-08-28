@@ -14,7 +14,7 @@
 \hypersetup{
   pdftitle={Frobenius Minimality, Minimum-Layer Uniqueness, and an Infinite Family of Huneke--Wiegand Counterexamples},
   pdfauthor={Felipe Santibanez-Leal},
-  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, conductor, tangent-cone, fiber-cone, defining-ideal, and minimal cubic mapping-cone anatomy},
+  pdfsubject={Certified minimality, an explicit infinite family, and its endomorphism, conductor, tangent-cone, fiber-cone, defining-ideal, and graded-syzygy anatomy},
   pdfkeywords={Huneke-Wiegand conjecture, numerical semigroups, endomorphism rings, trace ideals, conductors, associated graded rings, tangent cones, fiber cones, defining ideals, graded Betti numbers, mapping cones, fiber products, relative simplicial homology, squarefree divisor complexes, canonical modules, Koszul algebras, Buchsbaum rings, Cohen-Macaulay rings, SAT, DRAT}
 }
 \usepackage{orcidlink}
@@ -36,18 +36,18 @@
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-22\\[2pt]\normalsize Version 0.20}
+\date{2026-08-27\\[2pt]\normalsize Version 0.21}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.20}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.21}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.20}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.21}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,8 +63,8 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.20 \textperiodcentered\ 2026-08-22\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22062161}{10.5281/zenodo.22062161}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.21 \textperiodcentered\ 2026-08-27\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22135689}{10.5281/zenodo.22135689}\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
 verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
@@ -79,7 +79,7 @@ reduction, tangent-cone, fiber-cone, defining-ideal, and syzygy anatomy.
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.20}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.21}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -227,8 +227,18 @@ unit Smith form, so the result again holds over every field. This completes one 
   \]
   Consequently the complete regularity-three and regularity-four strands of the special fiber are
   explicit binomial convolutions of the displayed colon polynomial, over every field. This removes
-  every comparison-rank ambiguity from the cubic cone, but the two lower strands of \(A_p\), the
-  differential matrices, and therefore the full resolution of the special fiber remain open.
+  every comparison-rank ambiguity from the cubic cone. Finally, put
+  \(\tau_p=8p-1+p(p+1)/2\). The Artinian reduction of the high-variable kernel is a two-layer
+  incidence module. Its first missing offset gives a unique primitive cokernel cell, and a
+  separate unit pivot proves that the connecting map from the colon quotient cannot hit it. Thus,
+  over every field,
+  \[
+  \beta_{p,(p+2,\tau_p)}(K_p)
+  =\beta_{p,(p+2,\tau_p)}(A_p)
+  =\beta_{p,(p+2,\tau_p)}(C_p)=1.
+  \]
+  This determines one exact point in a lower strand, not the two complete lower strands, the
+  differential matrices, or the full special-fiber resolution.
 The results remain confined
 to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
@@ -314,6 +324,9 @@ they are verified by exact machine computation and independently checked artifac
   field, including every free-module rank and shift.
   \item We prove that the quadratic quotient has depth one and regularity two, so the full cubic
   mapping cone is minimal; this determines the two highest regularity strands of the special fiber.
+  \item We reduce the high-variable kernel to a two-layer incidence module and prove the first
+  exact surviving regularity-two class in the kernel, quadratic quotient, and special fiber over
+  every field.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -2710,6 +2723,132 @@ inconclusive non-evidence. The final canonical, independent, and symbolic aggreg
 The all-parameter conclusion is deductive. The campaigns validate its implementations and frozen
 premises; they do not replace the colon-intersection, depth, regularity, and grading-gap proof.
 
+\subsection{The first surviving lower-strand class}
+
+The same pullback can determine an individual class in one of the two still-unknown strands.
+Retain the offset grading \(\deg X_g=(1,g)\), and put
+\begin{equation}
+b_p=8p-1,\qquad F_p=\{1,\ldots,p\},\qquad
+\tau_p=b_p+\sum_{g=1}^p g=8p-1+\frac{p(p+1)}2.
+\label{eq:first-surviving-data}
+\end{equation}
+
+\begin{theorem}[First surviving lower-strand class, {\bf[D]}]
+\label{thm:first-surviving-lower}
+For every integer \(p\ge4\) and every field \(\kfield\),
+\begin{equation}
+\beta_{p,(p+2,\tau_p)}^{P_p}(K_p)
+=\beta_{p,(p+2,\tau_p)}^{P_p}(A_p)
+=\beta_{p,(p+2,\tau_p)}^{P_p}(C_p)=1.
+\label{eq:first-surviving-class}
+\end{equation}
+Consequently,
+\begin{equation}
+\beta_{p,p+2}^{P_p}(A_p)\ge1,
+\qquad
+\beta_{p,p+2}^{P_p}(C_p)\ge\binom{8p}{p-1}+1.
+\label{eq:first-surviving-ordinary}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The element \(X_0\) is regular on \(K_p\) by the preceding proof. It is regular on \(D_p\) as
+well: in the canonical idealization of Theorem~\ref{thm:colon-idealization-six}, it acts as
+\(s^p\) on both the Veronese domain and its torsion-free canonical module. Sequence
+\eqref{eq:quadratic-pullback} then makes it regular on \(A_p\), and reduction modulo \(X_0\)
+preserves that exact sequence and all minimal Betti numbers. Write
+\[
+S_p=P_p/(X_0),\qquad M_p=K_p/X_0K_p.
+\]
+The offset bases used above give
+\begin{align*}
+(M_p)_1&=\langle u_h:h\in H_p\rangle,
+  &H_p&=\{g\in\mathcal E_{p,1}:g\ge6p\},\\
+(M_p)_2&=\langle v_b:b\in B_p\rangle,
+  &B_p&=[6p,24p-1]\setminus H_p,
+\end{align*}
+with dimensions \(8p\) and \(10p\), respectively, and \((M_p)_d=0\) for \(d\ge3\). For
+\(g\in\mathcal E_{p,1}\setminus\{0\}\), multiplication is
+\begin{equation}
+X_gu_h=\begin{cases}v_{g+h},&g+h\in B_p,\\0,&g+h\notin B_p.\end{cases}
+\label{eq:two-layer-multiplication}
+\end{equation}
+Indeed, an offset in \(H_p\) is the image of \(X_0u_{g+h}\), while an offset outside the stable
+kernel interval vanishes.
+
+Let \(V_p\) have basis \(e_g\), indexed by the positive degree-one offsets. In standard internal
+degree \(i+1\), the Koszul complex of \(M_p\) has only the map
+\begin{equation}
+\delta_i:\bigwedge^iV_p\otimes(M_p)_1
+ \longrightarrow\bigwedge^{i-1}V_p\otimes(M_p)_2,
+\label{eq:two-layer-incidence}
+\end{equation}
+where
+\[
+\delta_i(e_F\otimes u_h)=
+\sum_{\substack{g\in F\\h+g\in B_p}}
+(-1)^{\operatorname{pos}(g,F)}e_{F\setminus\{g\}}\otimes v_{h+g}.
+\]
+Thus the two Betti strands of \(K_p\) are the kernels and cokernels of these integral incidence
+maps.
+
+The smallest element of \(B_p\) is \(b_p=8p-1\), and the \(p\) smallest positive variable
+offsets are exactly \(F_p\). Hence the codomain of \(\delta_{p+1}\) in total offset \(\tau_p\) is
+one-dimensional, on \(e_{F_p}\otimes v_{b_p}\). Its possible incoming variables form
+\[
+R_{b_p}=\{g\in\mathcal E_{p,1}\setminus\{0\}:b_p-g\in H_p\}.
+\]
+For \(1\le g\le p\), the complement is in \([7p-1,8p-2]\subset H_p\). A variable in the
+second low block gives a complement at most \(5p-1\), while a high variable gives one at most
+\(2p-1\). Therefore \(R_{b_p}=F_p\). An incoming face would require an element of
+\(R_{b_p}\setminus F_p\), so this integral cokernel is free of rank one.
+
+It remains to exclude the connecting map from \(D_p\). The degree-one basis of
+\(D_p/X_0D_p\) has low offsets
+\[
+L'_p=[1,p]\cup[3p,4p-2].
+\]
+A differential contributing to the distinguished coordinate must remove a high exterior variable
+\(h_l=b_p-l\), where \(1\le l\le p\), and leaves the low chain
+\(e_{F_p}\otimes X_l\) at low total offset \(\sum F_p+l\). This is the only low chain in that
+multidegree. Indeed, using one exterior variable in the second block raises the exterior sum to
+at least \(3p+1+\cdots+(p-1)=\sum F_p+2p\), and using a coefficient in that block raises it by at
+least \(3p>l\). Without the second block, a size-\(p\) exterior set must be \(F_p\), and its
+coefficient is forced to be \(l\).
+
+The unique chain is not a cycle: removing \(p\) from its Koszul boundary gives the unit coordinate
+\[
+(-1)^{p-1}e_{\{1,\ldots,p-1\}}\otimes X_pX_l,
+\]
+and \(X_pX_l\ne0\) in the ring summand of \(D_p/X_0D_p\), at offset
+\(p+l\in[p+1,2p]\). The high variables annihilate \(D_p\), so its Koszul complex splits by high
+exterior set. Consequently every source cycle has zero coefficient on all of the selected chains,
+and the connecting map cannot hit the rank-one class.
+
+The row-two strand of \(D_p\) starts at homological degree \(c=2p-2>p\), by
+Theorem~\ref{thm:colon-betti-polynomial}. The long exact Tor sequence therefore gives the exact
+middle equality in~\eqref{eq:first-surviving-class}. Finally, the multigraded minimal cone could
+add at this offset only a shifted diagonal wedge of \(p-1\) high variables. Its smallest offset is
+\(3p+\sum_{h=6p}^{7p-2}h\), which exceeds \(\tau_p\) by
+\((p-2)(6p-1)>0\). This proves the last equality. Summing offsets and using the shifted diagonal
+rank \(\binom{8p}{p-1}\) proves~\eqref{eq:first-surviving-ordinary}.
+\end{proof}
+
+EXP-034 verifies the frozen premises and all 297 parameters \(p=4,\ldots,300\) \textbf{[MV]}.
+Exact rank probes pass through \(p=8\) over \(\mathbf F_2\) and \(\mathbf F_{1000003}\). An
+independent numerical-semigroup reconstruction matches the two Artinian layers through \(p=25\)
+and enumerates the rational unit sources through \(p=9\). Eight symbolic interval negations are
+UNSAT, and 299 separate arithmetic rows pass through \(p=1000\). The canonical, finite-rank,
+independent, and symbolic aggregates are
+\begin{center}
+{\fontsize{7}{8}\selectfont\ttfamily 65ef176dcd9f5bd5467c09e763fdb20c67798de9743443ce5d0e34958c1645ce},\\
+{\fontsize{7}{8}\selectfont\ttfamily 31d70c09d251bb6009b610be05c33a42ccd50e417b84aff2c0db561018e6acc5},\\
+{\fontsize{7}{8}\selectfont\ttfamily 31479abd3c7247fe0ba464eefe06e437a595812c3d6055d0de8d0ced25d12794},\\
+{\fontsize{7}{8}\selectfont\ttfamily b3f461298706a394cc0f1a296557e10f52435f78d2f1039452fb726871b79a4d}.
+\end{center}
+The theorem is deductive. These campaigns audit the bases, unit pivots, interval exclusions, and
+adversarial mutations; they do not replace the displayed all-parameter argument.
+
 \section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
@@ -2718,7 +2857,7 @@ All compact code, hypotheses, manifests, audits, and verdicts are in the public 
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
 minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
-also includes the compact EXP-011--033 campaigns, independent reconstruction audits, symbolic
+also includes the compact EXP-011--034 campaigns, independent reconstruction audits, symbolic
 proofs, the preserved EXP-013 correction, the EXP-015 refutation, and the EXP-022 quadratic
 refutation. The proof toolchain is
 pinned as follows:
@@ -2741,6 +2880,7 @@ EXP-030 & canonical-idealization profile, exact degree-six homology, corrected i
 EXP-031 & integral degree-seven contraction, exact small profiles, independent filler audit, and arithmetic certificate\\
 EXP-032 & complete colon Betti polynomial, 297 exact rows, independent coefficient audit, and symbolic identities\\
 EXP-033 & minimal cubic cone, 297 upper-strand rows, kernel audit, independent reconstruction, and symbolic identities\\
+EXP-034 & two-layer incidence class, 297 exact rows, two-field ranks, semigroup reconstruction, and symbolic exclusions\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -2804,6 +2944,13 @@ the strict grading gap in the comparison map. Finite, structural, independent, a
 audit these steps but are not extrapolated into the theorem. The minimal cone fixes both upper
 regularity strands; it does not determine the two lower strands of the quadratic quotient.
 
+EXP-034 uses Z3 only to negate eight elementary interval inequalities; its theorem does not rely
+on solver output or finite extrapolation. The proof rests on regular reduction, the displayed
+two-layer incidence map, uniqueness of the minimum-offset target, a characteristic-free unit
+source boundary, and the long exact Tor sequence. The independent route reconstructs the
+Artinian fiber bases from numerical-semigroup ideal powers rather than importing the canonical
+offset functions. The result is one exact lower-strand class, not a complete strand.
+
 \section{\texorpdfstring{\enspace}{}Scope, attribution, and open questions}
 
 Son Pham retains discovery priority for the counterexample. Professor Craig Huneke's verification
@@ -2825,7 +2972,8 @@ Theorem~\ref{thm:colon-koszul-diagonal}, and the cubic-colon idealization and de
 Theorem~\ref{thm:colon-idealization-six}, and the complete third homological row in
 Theorem~\ref{thm:complete-third-row}, and the complete cubic-colon Betti polynomial in
 Theorem~\ref{thm:colon-betti-polynomial}, and the minimal cubic mapping cone and complete upper
-special-fiber strands in Theorem~\ref{thm:minimal-cubic-cone}, together with
+special-fiber strands in Theorem~\ref{thm:minimal-cubic-cone}, and the first surviving
+lower-strand class in Theorem~\ref{thm:first-surviving-lower}, together with
 their reproducible records.
 
 Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
@@ -2834,7 +2982,8 @@ Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomor
 \ref{thm:presentation}, \ref{thm:homological-edge}, \ref{thm:interior-strand},
 \ref{thm:second-betti-row}, \ref{thm:colon-koszul-diagonal},
 \ref{thm:colon-idealization-six}, \ref{thm:complete-third-row},
-\ref{thm:colon-betti-polynomial}, and~\ref{thm:minimal-cubic-cone}
+\ref{thm:colon-betti-polynomial}, \ref{thm:minimal-cubic-cone},
+and~\ref{thm:first-surviving-lower}
 do not classify all higher
 Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
 or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
@@ -2848,9 +2997,10 @@ questions remain open:
   \item Which additional hypotheses on the endomorphism ring recover a positive theorem while
   excluding both the public example and the full family proved here?
   \item Can the finite certificates be imported into a smaller formally verified checker?
-  \item Can the two lower strands of the quadratic quotient in
-  \eqref{eq:quadratic-pullback} be determined, thereby completing the presentation-ring Betti
-  table and the full minimal resolution of the special fiber?
+  \item Can the remaining incidence cokernel cells and their connecting maps be classified to
+  determine the two complete lower strands of the quadratic quotient in
+  \eqref{eq:quadratic-pullback}, thereby completing the presentation-ring Betti table and the full
+  minimal resolution of the special fiber?
 \end{enumerate}
 
 \section*{Acknowledgments}

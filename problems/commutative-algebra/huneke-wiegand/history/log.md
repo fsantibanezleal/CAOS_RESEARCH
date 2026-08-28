@@ -1255,3 +1255,51 @@
   recurrence closes all `p=4,...,300` in 15.159 seconds.
 - HWB-052 is done. HWB-053 opens the in-place main-manuscript v0.20 and Zenodo version gate; a
   separate manuscript remains deferred.
+
+## 2026-08-27 - EXP-034 declared
+
+- The unresolved two lower strands are redirected through the exact sequence
+  `0 -> K_p -> A_p -> D_p -> 0` and the Artinian reduction `K_p/X_0K_p`.
+- The declaration freezes the EXP-030/032/033 proof boundary and records the external partial
+  Betti-splitting sweep; no cited general result directly decides the family-specific connecting
+  map.
+- The falsifiable first prediction is a primitive multigraded class of `K_p` at homological
+  degree `p`, ordinary degree `p+2`, and offset `8p-1+p(p+1)/2`.
+- Survival of that class in `A_p` is a separate stronger prediction requiring the exact
+  multigraded source or connecting-map rank. No EXP-034 result, manuscript v0.21, or publication
+  is claimed at declaration.
+
+## 2026-08-27 - EXP-034 confirmed
+
+- Modulo the common regular element `X_0`, the EXP-033 kernel has degree-one basis `H_p`,
+  degree-two basis `[6p,24p-1] minus H_p`, and explicit two-layer Koszul incidence maps.
+- The first missing offset `8p-1` and exterior `{1,...,p}` form the unique target cell in total
+  offset `8p-1+p(p+1)/2`; its representation set contains no extra incoming variable.
+- Every possible connecting-map coefficient from `D_p` leaves a unique low chain whose boundary
+  contains the unit `X_pX_l`. Hence no source cycle hits the distinguished coordinate.
+- The long exact Tor sequence and the multigraded minimal cubic cone prove exact multiplicity one
+  for this class in `K_p`, `A_p`, and `C_p` over every field.
+- Canonical, finite-rank, independent, and symbolic aggregates are
+  `65ef176dcd9f5bd5467c09e763fdb20c67798de9743443ce5d0e34958c1645ce`,
+  `31d70c09d251bb6009b610be05c33a42ccd50e417b84aff2c0db561018e6acc5`,
+  `31479abd3c7247fe0ba464eefe06e437a595812c3d6055d0de8d0ced25d12794`, and
+  `b3f461298706a394cc0f1a296557e10f52435f78d2f1039452fb726871b79a4d`.
+- HWB-055 is done. HWB-056 opens in-place manuscript v0.21; both complete lower strands remain
+  open, so no full-resolution claim is made.
+
+## 2026-08-27 - manuscript v0.21 published and verified
+
+- The EXP-034 theorem was incorporated into the existing main manuscript rather than split into
+  a separate paper.
+- The 48-page v0.21 candidate passed claim and scope audit, two warning-free builds, PDF metadata
+  and extraction, complete 150-DPI rendered inspection, full-size review of page one and pages
+  41--48, and sole-human-authorship/ORCID gates.
+- The frozen candidate is 792,863 bytes with MD5 `13b92773205a49977abb88cd7ab8dde1`
+  and SHA-256 `c717fbb4d6d3178e0fb0786a8a61c9e2c109d97d77a7b9e1308a2274c0f97539`.
+- Zenodo record `22135689`, DOI `10.5281/zenodo.22135689`, is public and concept-latest at version
+  `0.21`. The public date, title, sole creator and ORCID, CC BY 4.0 license, filename, bytes, and
+  MD5 agree, and a fresh unauthenticated download matches Git by MD5 and SHA-256.
+- Template, content, and research-structure guards, Ruff, all 60 tests, the full registry pipeline,
+  and manifest/artifact consistency pass. Regeneration adds EXP-034 to the public experiment
+  registry.
+- HWB-056 is done. HWB-057 owns promotion through separate PRs to `develop` and `main`.

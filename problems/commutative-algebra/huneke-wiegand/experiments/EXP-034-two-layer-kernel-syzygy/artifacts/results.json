@@ -1,0 +1,1820 @@
+{
+  "experiment": "EXP-034",
+  "status": "PASS_CANONICAL",
+  "generated_at": "2026-08-28T01:24:27.770698+00:00",
+  "parameters": {
+    "min_p": 4,
+    "max_p": 300,
+    "rank_max_p": 8,
+    "fields": [
+      2,
+      1000003
+    ],
+    "budget_seconds": 120.0
+  },
+  "premise_hashes": {
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-030-colon-idealization-degree-six/proof.md": "1822095a7d16207b7d04261b7a6645f7ca51b01f490ba9d212a84ab7ca5bc729",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-032-complete-colon-resolution/proof.md": "4dc37605c012b7f6a70ec5d383897c45a34e1dd5d5e4bb32a0582b7a6d651d1c",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-033-minimal-cubic-mapping-cone/proof.md": "e27cd386ad47da7ad5282e88a095d82f2b1156f76546e934b287e911da2c7b1c",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-033-minimal-cubic-mapping-cone/verdict.md": "674b2940259465f0a2cba96261a8bb021e103cb3e51db50a8aac4f64c0c5927b"
+  },
+  "theorem_boundary": {
+    "two_layer_kernel": "validated",
+    "primitive_kernel_class": "validated",
+    "connecting_coordinate": "annihilated by a unique integral low pivot",
+    "a_p_multigraded_value": "exactly one subject to written all-parameter proof",
+    "c_p_multigraded_value": "exactly one subject to written all-parameter proof",
+    "full_lower_strands": "not claimed"
+  },
+  "row_count": 297,
+  "aggregate_sha256": "65ef176dcd9f5bd5467c09e763fdb20c67798de9743443ce5d0e34958c1645ce",
+  "rank_aggregate_sha256": "31d70c09d251bb6009b610be05c33a42ccd50e417b84aff2c0db561018e6acc5",
+  "explicit_rows": [
+    {
+      "p": 4,
+      "target_offset": 31,
+      "homological_degree": 4,
+      "standard_internal_degree": 6,
+      "total_offset": 41,
+      "representation_count": 4,
+      "nonzero_two_layer_products": 575,
+      "shifted_d_diagonal_offset_floor": 87,
+      "predictions": {
+        "generator_count": true,
+        "degree_one_kernel_count": true,
+        "stable_kernel_count": true,
+        "artinian_degree_two_count": true,
+        "target_is_missing_generator": true,
+        "target_is_degree_two_basis": true,
+        "representation_set": true,
+        "no_incoming_face": true,
+        "target_is_first_degree_two_offset": true,
+        "exterior_has_minimum_sum": true,
+        "target_multidegree_cokernel_is_one": true,
+        "tau_formula": true,
+        "unit_target_coordinate": true,
+        "two_layer_product_formula": true,
+        "d_row_two_starts_after_p": true,
+        "shifted_d_diagonal_above_target": true
+      },
+      "controls": {
+        "filled_gap_rejected": true,
+        "deleted_variable_rejected": true,
+        "wrong_exterior_rejected": true,
+        "wrong_shift_rejected": true,
+        "low_high_partition_rejected": true
+      },
+      "exterior": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "representations": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "incoming_faces": [],
+      "degree_two_basis_hash": "57272201614e1a66f2148e4f5648b9f948b366cf9961fdc98cad1246dd475414",
+      "high_basis_hash": "8af04db7d91f7f8dc8c72589c6a3130f6a081f58bf921742dd4b4e06e30df040",
+      "row_hash": "926dafc4cae8e89ed9f4c839364698d1a3d12d7a8d44d42c5cc1c7fee0f795e0"
+    },
+    {
+      "p": 5,
+      "target_offset": 39,
+      "homological_degree": 5,
+      "standard_internal_degree": 7,
+      "total_offset": 54,
+      "representation_count": 5,
+      "nonzero_two_layer_products": 919,
+      "shifted_d_diagonal_offset_floor": 141,
+      "predictions": {
+        "generator_count": true,
+        "degree_one_kernel_count": true,
+        "stable_kernel_count": true,
+        "artinian_degree_two_count": true,
+        "target_is_missing_generator": true,
+        "target_is_degree_two_basis": true,
+        "representation_set": true,
+        "no_incoming_face": true,
+        "target_is_first_degree_two_offset": true,
+        "exterior_has_minimum_sum": true,
+        "target_multidegree_cokernel_is_one": true,
+        "tau_formula": true,
+        "unit_target_coordinate": true,
+        "two_layer_product_formula": true,
+        "d_row_two_starts_after_p": true,
+        "shifted_d_diagonal_above_target": true
+      },
+      "controls": {
+        "filled_gap_rejected": true,
+        "deleted_variable_rejected": true,
+        "wrong_exterior_rejected": true,
+        "wrong_shift_rejected": true,
+        "low_high_partition_rejected": true
+      },
+      "exterior": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "incoming_faces": [],
+      "degree_two_basis_hash": "78c7d4b670b547e402266a8d77124035024f15a1cdd86c5e22c7ea3d4d5f550e",
+      "high_basis_hash": "c11625e435c3e4ed50be43ac583f0051bd2224b692f9050f8d2e8ba92fece49a",
+      "row_hash": "52320b943b573f49798b9a291b9082ce7af78678f56581b05aae7d2aeee206d0"
+    },
+    {
+      "p": 6,
+      "target_offset": 47,
+      "homological_degree": 6,
+      "standard_internal_degree": 8,
+      "total_offset": 68,
+      "representation_count": 6,
+      "nonzero_two_layer_products": 1343,
+      "shifted_d_diagonal_offset_floor": 208,
+      "predictions": {
+        "generator_count": true,
+        "degree_one_kernel_count": true,
+        "stable_kernel_count": true,
+        "artinian_degree_two_count": true,
+        "target_is_missing_generator": true,
+        "target_is_degree_two_basis": true,
+        "representation_set": true,
+        "no_incoming_face": true,
+        "target_is_first_degree_two_offset": true,
+        "exterior_has_minimum_sum": true,
+        "target_multidegree_cokernel_is_one": true,
+        "tau_formula": true,
+        "unit_target_coordinate": true,
+        "two_layer_product_formula": true,
+        "d_row_two_starts_after_p": true,
+        "shifted_d_diagonal_above_target": true
+      },
+      "controls": {
+        "filled_gap_rejected": true,
+        "deleted_variable_rejected": true,
+        "wrong_exterior_rejected": true,
+        "wrong_shift_rejected": true,
+        "low_high_partition_rejected": true
+      },
+      "exterior": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "incoming_faces": [],
+      "degree_two_basis_hash": "1ec2804013b6262a465ecd50a732cccd15945dbf316a27fb57085e57aefc97f0",
+      "high_basis_hash": "65a04cfd5eaeecfa73b7ff9b91c074ba6997ffd96665fe40974cb8f19ae6cce4",
+      "row_hash": "3afe0b157bdbd01669937b7a86da994731f7f711c0e01c18a8b23e9dca5fb125"
+    },
+    {
+      "p": 300,
+      "target_offset": 2399,
+      "homological_degree": 300,
+      "standard_internal_degree": 302,
+      "total_offset": 47549,
+      "representation_count": 300,
+      "nonzero_two_layer_products": 3595199,
+      "shifted_d_diagonal_offset_floor": 583651,
+      "predictions": {
+        "generator_count": true,
+        "degree_one_kernel_count": true,
+        "stable_kernel_count": true,
+        "artinian_degree_two_count": true,
+        "target_is_missing_generator": true,
+        "target_is_degree_two_basis": true,
+        "representation_set": true,
+        "no_incoming_face": true,
+        "target_is_first_degree_two_offset": true,
+        "exterior_has_minimum_sum": true,
+        "target_multidegree_cokernel_is_one": true,
+        "tau_formula": true,
+        "unit_target_coordinate": true,
+        "two_layer_product_formula": true,
+        "d_row_two_starts_after_p": true,
+        "shifted_d_diagonal_above_target": true
+      },
+      "controls": {
+        "filled_gap_rejected": true,
+        "deleted_variable_rejected": true,
+        "wrong_exterior_rejected": true,
+        "wrong_shift_rejected": true,
+        "low_high_partition_rejected": true
+      },
+      "exterior": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        277,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300
+      ],
+      "representations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        242,
+        243,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        277,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300
+      ],
+      "incoming_faces": [],
+      "degree_two_basis_hash": "3e0171ce589b3a090d4adc315c516df513914900c33ccde2e798087acc02a169",
+      "high_basis_hash": "7ff176458bb6aca15bc1fbbf6bdaf95c16558662ead51824b6fb346f61c80391",
+      "row_hash": "6e2fcbf67dcb1640dcee6331a30dacfd4dfa84a2e5b0625b33d47b8d1476125e"
+    }
+  ],
+  "source_pivot_probes": [
+    {
+      "p": 4,
+      "coordinates_checked": 4,
+      "all_unique_unit_pivots": true,
+      "rows": [
+        {
+          "coefficient_offset": 1,
+          "high_exterior_offset": 30,
+          "low_total_offset": 11,
+          "source_columns": 1,
+          "target_rows": 1,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3
+            ],
+            "A",
+            5
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 2,
+          "high_exterior_offset": 29,
+          "low_total_offset": 12,
+          "source_columns": 1,
+          "target_rows": 2,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3
+            ],
+            "A",
+            6
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 3,
+          "high_exterior_offset": 28,
+          "low_total_offset": 13,
+          "source_columns": 1,
+          "target_rows": 3,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3
+            ],
+            "A",
+            7
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 4,
+          "high_exterior_offset": 27,
+          "low_total_offset": 14,
+          "source_columns": 1,
+          "target_rows": 4,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3
+            ],
+            "A",
+            8
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        }
+      ],
+      "row_hash": "69eb9c027348eaca4e096d4dcf8609acc2b472f5456bae14c937efa6a8bc38c7"
+    },
+    {
+      "p": 5,
+      "coordinates_checked": 5,
+      "all_unique_unit_pivots": true,
+      "rows": [
+        {
+          "coefficient_offset": 1,
+          "high_exterior_offset": 38,
+          "low_total_offset": 16,
+          "source_columns": 1,
+          "target_rows": 1,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            "A",
+            6
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 2,
+          "high_exterior_offset": 37,
+          "low_total_offset": 17,
+          "source_columns": 1,
+          "target_rows": 2,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            "A",
+            7
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 3,
+          "high_exterior_offset": 36,
+          "low_total_offset": 18,
+          "source_columns": 1,
+          "target_rows": 3,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            "A",
+            8
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 4,
+          "high_exterior_offset": 35,
+          "low_total_offset": 19,
+          "source_columns": 1,
+          "target_rows": 4,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            "A",
+            9
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 5,
+          "high_exterior_offset": 34,
+          "low_total_offset": 20,
+          "source_columns": 1,
+          "target_rows": 5,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            "A",
+            10
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        }
+      ],
+      "row_hash": "425fe7f2220832aa8da989f23f186cf325c5d5acab12c7a9e8c67b85e8e5a47c"
+    },
+    {
+      "p": 6,
+      "coordinates_checked": 6,
+      "all_unique_unit_pivots": true,
+      "rows": [
+        {
+          "coefficient_offset": 1,
+          "high_exterior_offset": 46,
+          "low_total_offset": 22,
+          "source_columns": 1,
+          "target_rows": 1,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "A",
+            7
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 2,
+          "high_exterior_offset": 45,
+          "low_total_offset": 23,
+          "source_columns": 1,
+          "target_rows": 2,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "A",
+            8
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 3,
+          "high_exterior_offset": 44,
+          "low_total_offset": 24,
+          "source_columns": 1,
+          "target_rows": 3,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "A",
+            9
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 4,
+          "high_exterior_offset": 43,
+          "low_total_offset": 25,
+          "source_columns": 1,
+          "target_rows": 4,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "A",
+            10
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 5,
+          "high_exterior_offset": 42,
+          "low_total_offset": 26,
+          "source_columns": 1,
+          "target_rows": 5,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "A",
+            11
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 6,
+          "high_exterior_offset": 41,
+          "low_total_offset": 27,
+          "source_columns": 1,
+          "target_rows": 6,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "A",
+            12
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        }
+      ],
+      "row_hash": "2862b01f98d563380c60ca4759ad90b7eec5d3e9dbd5c425d13570475a2292b0"
+    },
+    {
+      "p": 7,
+      "coordinates_checked": 7,
+      "all_unique_unit_pivots": true,
+      "rows": [
+        {
+          "coefficient_offset": 1,
+          "high_exterior_offset": 54,
+          "low_total_offset": 29,
+          "source_columns": 1,
+          "target_rows": 1,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "A",
+            8
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 2,
+          "high_exterior_offset": 53,
+          "low_total_offset": 30,
+          "source_columns": 1,
+          "target_rows": 2,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "A",
+            9
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 3,
+          "high_exterior_offset": 52,
+          "low_total_offset": 31,
+          "source_columns": 1,
+          "target_rows": 3,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "A",
+            10
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 4,
+          "high_exterior_offset": 51,
+          "low_total_offset": 32,
+          "source_columns": 1,
+          "target_rows": 4,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "A",
+            11
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 5,
+          "high_exterior_offset": 50,
+          "low_total_offset": 33,
+          "source_columns": 1,
+          "target_rows": 5,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "A",
+            12
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 6,
+          "high_exterior_offset": 49,
+          "low_total_offset": 34,
+          "source_columns": 1,
+          "target_rows": 6,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "A",
+            13
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 7,
+          "high_exterior_offset": 48,
+          "low_total_offset": 35,
+          "source_columns": 1,
+          "target_rows": 7,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "A",
+            14
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        }
+      ],
+      "row_hash": "51895294f418ffafc4aee9a7f3d4642b35dfed5e7f046be156aa63e86428e056"
+    },
+    {
+      "p": 8,
+      "coordinates_checked": 8,
+      "all_unique_unit_pivots": true,
+      "rows": [
+        {
+          "coefficient_offset": 1,
+          "high_exterior_offset": 62,
+          "low_total_offset": 37,
+          "source_columns": 1,
+          "target_rows": 1,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "A",
+            9
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 2,
+          "high_exterior_offset": 61,
+          "low_total_offset": 38,
+          "source_columns": 1,
+          "target_rows": 2,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "A",
+            10
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 3,
+          "high_exterior_offset": 60,
+          "low_total_offset": 39,
+          "source_columns": 1,
+          "target_rows": 3,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "A",
+            11
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 4,
+          "high_exterior_offset": 59,
+          "low_total_offset": 40,
+          "source_columns": 1,
+          "target_rows": 4,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "A",
+            12
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 5,
+          "high_exterior_offset": 58,
+          "low_total_offset": 41,
+          "source_columns": 1,
+          "target_rows": 5,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "A",
+            13
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 6,
+          "high_exterior_offset": 57,
+          "low_total_offset": 42,
+          "source_columns": 1,
+          "target_rows": 6,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "A",
+            14
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 7,
+          "high_exterior_offset": 56,
+          "low_total_offset": 43,
+          "source_columns": 1,
+          "target_rows": 7,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "A",
+            15
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 8,
+          "high_exterior_offset": 55,
+          "low_total_offset": 44,
+          "source_columns": 1,
+          "target_rows": 8,
+          "selected_column": 0,
+          "unique_unit_pivot": [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "A",
+            16
+          ],
+          "field_ranks": {
+            "2": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 1,
+              "rank_without_selected": 0,
+              "drop": 1
+            }
+          }
+        }
+      ],
+      "row_hash": "2dfeb87b721c6f0bcbd3af57d61ad87605a69649fd5d284a1f1a16c099be40b6"
+    }
+  ],
+  "elapsed_seconds": 1.304537,
+  "artifact_sha256": "6df7f70cab4f16f207288dd29dc06658a153629b0fda4c9ff05335e10d602b61"
+}
