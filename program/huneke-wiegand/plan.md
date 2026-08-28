@@ -995,3 +995,10 @@ consistency. Regeneration adds EXP-034 to the public experiment registry. HWB-05
 the required work-branch-to-`develop` PR followed by the `develop`-to-`main` PR. The next
 mathematical route remains classification of the other incidence cokernel cells and their
 connecting-map survival; a separate manuscript remains premature.
+
+Promotion is complete. PR #222 passed `guards` and `test` and merged the full EXP-034 theorem,
+registry update, manuscript v0.21, and verified Zenodo record to `develop` at
+`0092685731eda7b692d5849c86f0c4da2352181e`. PR #223 passed all required checks and promoted the
+same tested state to `main` at `4cde1856a0850df8c89cc0fa9473c19ccaaf2b58`. The work branch,
+`develop`, and `main` shared payload tree `f571fb955560c29489c181a6ce542548619209e0` before the
+documentation handoff. HWB-057 is done. No release tag belongs to this research-only round.

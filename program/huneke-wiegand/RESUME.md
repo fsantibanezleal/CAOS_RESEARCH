@@ -15,8 +15,10 @@ strands remain open. HWB-055 and HWB-056 are done. The 48-page v0.21 passed clai
 builds, all-page render inspection, sole-authorship, repository, exact-upload, publication,
 concept-latest, and fresh-download gates. It is public at DOI `10.5281/zenodo.22135689`; its
 792,863-byte public PDF matches MD5 `13b92773205a49977abb88cd7ab8dde1` and SHA-256
-`c717fbb4d6d3178e0fb0786a8a61c9e2c109d97d77a7b9e1308a2274c0f97539` exactly. HWB-057 is
-active for separate-PR promotion through `develop` and `main`. EXP-033
+`c717fbb4d6d3178e0fb0786a8a61c9e2c109d97d77a7b9e1308a2274c0f97539` exactly. PR #222 passed
+`guards` and `test` and merged the payload to `develop` at `0092685`; PR #223 passed all required
+checks and promoted it to `main` at `4cde185`. All three remote branches shared payload tree
+`f571fb955560c29489c181a6ce542548619209e0` before this handoff update. HWB-057 is done. EXP-033
 remains CONFIRMED. It proves that the quadratic quotient
 `A_p=P_p/Q_p` has depth one and regularity two, so the entire cubic mapping cone is minimal over
 every field:
@@ -374,8 +376,8 @@ cycle hits it. The long exact Tor sequence and minimal cubic cone give exact mul
 `K_p`, `A_p`, and `C_p`. Canonical rows pass for `p=4,...,300`; independent semigroup bases pass
 through `p=25`; rational literal sources, two finite fields, symbolic inequalities, and controls
 pass. HWB-055 and HWB-056 are done; manuscript v0.21 is published and fresh-download verified at
-DOI `10.5281/zenodo.22135689`. HWB-057 owns repository promotion. The complete lower strands
-remain open.
+DOI `10.5281/zenodo.22135689`. PRs #222/#223 passed the required checks and HWB-057 is done. The
+complete lower strands remain open.
 
 EXP-033 is CONFIRMED. Put `A_p=P_p/Q_p`. The colon intersection and pullback give
 
@@ -618,12 +620,12 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Promote the complete EXP-034 theorem and verified v0.21 publication record through a
-   work-to-`develop` PR and then a `develop`-to-`main` PR.
-2. Classify the remaining incidence cokernel cells by offset and test their
+1. Classify the remaining incidence cokernel cells by offset and test their
    connecting-map unit pivots; do not extrapolate a complete strand from the single exact class.
-3. Evaluate a separate manuscript only after the incidence method determines a complete strand
+2. Evaluate a separate manuscript only after the incidence method determines a complete strand
    or yields a transferable theorem beyond this family.
+3. Keep the maximal-rank model rejected unless a new exact incidence calculation restores it on
+   a precisely stated subregion.
 4. Leave CAOS_MANAGE untouched during this round; its deferred ledgers are outside the active
    product-repository scope.
 

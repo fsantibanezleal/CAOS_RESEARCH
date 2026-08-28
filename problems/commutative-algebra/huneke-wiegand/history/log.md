@@ -1303,3 +1303,15 @@
   and manifest/artifact consistency pass. Regeneration adds EXP-034 to the public experiment
   registry.
 - HWB-056 is done. HWB-057 owns promotion through separate PRs to `develop` and `main`.
+
+## 2026-08-27 - EXP-034 publication round promoted
+
+- PR #222 passed `guards` and `test` and merged the complete EXP-034 theorem, generated registry,
+  manuscript v0.21, and verified Zenodo record to `develop` at
+  `0092685731eda7b692d5849c86f0c4da2352181e`.
+- PR #223 passed all required checks and promoted the exact tested state to `main` at
+  `4cde1856a0850df8c89cc0fa9473c19ccaaf2b58`.
+- Work, `develop`, and `main` shared payload tree
+  `f571fb955560c29489c181a6ce542548619209e0` before this documentation handoff.
+- HWB-057 is done. CAOS_MANAGE remained untouched on `develop`; no research release tag is
+  claimed.
