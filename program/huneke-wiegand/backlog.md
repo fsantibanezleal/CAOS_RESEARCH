@@ -56,3 +56,4 @@
 | HWB-052 | 1 | done | decide the complete cubic mapping cone and its comparison ranks | EXP-033 proves `depth(P_p/Q_p)=1`, `reg(P_p/Q_p)=2`, Tor-vanishing of every cubic comparison map, and complete regularity-three/four strands over every field |
 | HWB-053 | 1 | done | manuscript and Zenodo update for the minimal-cone theorem | 45-page v0.20 passed all gates, was published at DOI `10.5281/zenodo.22062161`, became concept-latest, and matched a fresh public download exactly |
 | HWB-054 | 1 | done | repository promotion and durable handoff for EXP-033 plus v0.20 | PRs #218/#219 passed required checks and promoted payload tree `f51cb2845d20b4fbf7d43029a71af0392bc3d6d9` through `develop` and `main` |
+| HWB-055 | 1 | in progress | two-layer resolution of the EXP-033 kernel and first lower-strand survival test | EXP-034 declared before implementation; prove the primitive `K_p` class and decide its image in `A_p` multigradedly |

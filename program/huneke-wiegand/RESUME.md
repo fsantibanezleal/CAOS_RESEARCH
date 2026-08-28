@@ -1,6 +1,10 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-22. Lifecycle: EXP-033 is CONFIRMED. It proves that the quadratic quotient
+Updated: 2026-08-27. Lifecycle: EXP-034 is ACTIVE, with no result claimed. It targets the two
+lower strands left open by EXP-033 through the Artinian reduction of the high-variable kernel.
+The falsifiable first target is a primitive class in
+`beta_(p,(p+2,8p-1+p(p+1)/2))(K_p)`; the separate stronger target is survival of that class in
+`A_p=P_p/Q_p`. EXP-033 remains CONFIRMED. It proves that the quadratic quotient
 `A_p=P_p/Q_p` has depth one and regularity two, so the entire cubic mapping cone is minimal over
 every field:
 
@@ -26,8 +30,9 @@ publication, concept-latest, and fresh-download gates. It is public at DOI
 `guards` and `test` and merged the payload to `develop` at `28bac50`; PR #219 passed all required
 checks and promoted it to `main` at `c1e6b20`. Both remote branches share payload tree
 `f51cb2845d20b4fbf7d43029a71af0392bc3d6d9`. HWB-054 is done. The remaining mathematical
-frontier is the two lower strands of `A_p` via `0 -> K_p -> A_p -> D_p -> 0`; the cubic comparison
-maps are no longer unknown.
+frontier is now HWB-055/EXP-034: resolve the two-layer incidence complex of `K_p` and the
+multigraded connecting map in `0 -> K_p -> A_p -> D_p -> 0`; the cubic comparison maps are no
+longer unknown.
 
 EXP-032 remains CONFIRMED for the complete graded Betti polynomial and
 free-module shape of the cubic-colon quotient. The 43-page v0.19 passed claim, two-pass build,
@@ -336,6 +341,19 @@ campaign is supporting evidence, not the proof.
 
 ## 4. In flight
 
+EXP-034 is ACTIVE and was declared before implementation. With `S_p=P_p/(X_0)` and
+`M_p=K_p/X_0K_p`, it tests an explicit two-layer offset basis and signed incidence maps
+`delta_i`. The first proposed cell has
+
+```text
+b*=8p-1,   F*={1,...,p},   tau_p=8p-1+p(p+1)/2.
+```
+
+The declared route must first prove that this gives a primitive class in
+`Tor_p(K_p,k)_(p+2,tau_p)`, and then independently decide whether it is hit by
+`Tor_(p+1)(D_p,k)` in the same multidegree. A theorem about `K_p` alone is not yet a lower-strand
+theorem for `A_p`. HWB-055 is in progress.
+
 EXP-033 is CONFIRMED. Put `A_p=P_p/Q_p`. The colon intersection and pullback give
 
 ```text
@@ -570,11 +588,14 @@ Published baseline:
 
 ## 5. Next actions
 
-1. When CAOS_MANAGE is safely back on clean `develop`, reconcile and promote only the scoped
-   publication ledger for the deferred v0.16--v0.18 rounds without touching unrelated work.
-2. Declare a mapping-cone comparison experiment: use the complete colon Betti
-   table to isolate the unknown ranks against `P_p/Q_p`; do not claim a full `C_p` resolution from
-   colon data alone.
+1. Implement the EXP-034 canonical two-layer incidence model and exact premise gate; run the
+   bounded `p=4,...,300` offset campaign and adversarial controls.
+2. Reconstruct the target multidegree independently and decide whether the primitive `K_p` class
+   survives the connecting map from `D_p`; do not infer survival from ordinary Betti counts.
+3. Persist a proof/verdict at the strongest justified boundary. Open manuscript v0.21 and Zenodo
+   only if a new `A_p` lower-strand theorem is proved.
+4. Leave CAOS_MANAGE untouched during this round; its deferred ledgers are outside the active
+   product-repository scope.
 
 ### Lenses ledger
 
@@ -603,6 +624,9 @@ Published baseline:
 - Recognition/idealization: EXP-030 identifies the entire cubic-colon quotient with the canonical
   idealization of a rational normal curve. Its Hilbert numerator and integral relative normal form
   determine the complete degree-six third strand without a raw resolution sweep.
+- Two-layer Artinian reduction: EXP-034 kills the regular element on `K_p`, converts its resolution
+  to offset-labelled incidence maps, and separates existence of a kernel class from survival
+  through the multigraded connecting map.
 
 ## 7. Gotchas
 

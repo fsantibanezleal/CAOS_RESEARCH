@@ -932,3 +932,26 @@ registry reconciliation, manuscript v0.20, and verified Zenodo record to `develo
 same tested state to `main` at `c1e6b20427d51781afeeb6ef1c5c2d57bf30c649`. Both remote branches
 share payload tree `f51cb2845d20b4fbf7d43029a71af0392bc3d6d9`. HWB-054 is done. No release
 tag belongs to this research-only round.
+
+## 2026-08-27 - EXP-034 two-layer kernel route
+
+EXP-034 is declared before implementation under HWB-055. It redirects the remaining lower-strand
+problem from a raw resolution of `A_p=P_p/Q_p` to the Artinian reduction
+`M_p=K_p/X_0K_p`. The proposed offset bases in degrees one and two make the resolution of `K_p`
+an explicit family of signed incidence maps.
+
+The first falsifiable target is the codomain cell labelled by
+
+```text
+b*=8p-1,   F*={1,...,p},   tau_p=8p-1+p(p+1)/2.
+```
+
+If its representation set is exactly `F*`, it has no incoming face and yields a primitive
+characteristic-free class in `beta_(p,p+2)(K_p)`. This would refute a naive maximal-rank model of
+the kernel. The stronger target is to prove that the same class survives the connecting map from
+`D_p` and therefore gives a new lower-strand entry of `A_p`. These targets are intentionally
+separate: the ordinary Betti polynomial of `D_p` cannot decide a multigraded connecting map.
+
+The canonical campaign, independent reconstruction, symbolic proof, and corrupted controls are
+specified in the experiment hypothesis. A proved kernel class is a relevant structural result;
+manuscript v0.21 and Zenodo remain gated on a new theorem for `A_p`.

@@ -111,9 +111,11 @@
 | 2026-08-22 | active | published | 45-page manuscript v0.20 passed claim/build/render, sole-authorship, exact draft, and publication gates; DOI `10.5281/zenodo.22062161` is concept-latest and its fresh public PDF matches Git exactly |
 | 2026-08-22 | published | active | structure/content/template guards, Ruff, all 60 tests, full registry regeneration, and manifest/artifact consistency pass; HWB-054 opens separate-PR promotion to `develop` and then `main` |
 | 2026-08-22 | active | published | PR #218 passed `guards` and `test` and merged EXP-033 plus v0.20 to `develop` at `28bac50`; PR #219 passed all required checks and promoted the exact payload to `main` at `c1e6b20` |
+| 2026-08-27 | published | active | EXP-034 declared before implementation: reduce the EXP-033 kernel to an explicit two-layer Koszul incidence complex, prove or refute a primitive nonlinear class, and decide its multigraded survival in `P_p/Q_p` |
 
-Current state: **EXP-033 is confirmed; HWB-053 is done with manuscript v0.20 published and
-fresh-download verified at DOI `10.5281/zenodo.22062161`; HWB-054 is done after research PRs
+Current state: **EXP-034 is active with no result claimed. EXP-033 is confirmed; HWB-053 is done
+with manuscript v0.20 published and fresh-download verified at DOI
+`10.5281/zenodo.22062161`; HWB-054 is done after research PRs
 #218/#219 promoted the exact payload through `develop` and `main`; EXP-032 and manuscript v0.19
 remain published, fresh-download verified, and
 promoted under HWB-051; EXP-031 and manuscript v0.18 are

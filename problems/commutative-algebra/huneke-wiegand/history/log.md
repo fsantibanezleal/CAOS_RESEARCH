@@ -1255,3 +1255,16 @@
   recurrence closes all `p=4,...,300` in 15.159 seconds.
 - HWB-052 is done. HWB-053 opens the in-place main-manuscript v0.20 and Zenodo version gate; a
   separate manuscript remains deferred.
+
+## 2026-08-27 - EXP-034 declared
+
+- The unresolved two lower strands are redirected through the exact sequence
+  `0 -> K_p -> A_p -> D_p -> 0` and the Artinian reduction `K_p/X_0K_p`.
+- The declaration freezes the EXP-030/032/033 proof boundary and records the external partial
+  Betti-splitting sweep; no cited general result directly decides the family-specific connecting
+  map.
+- The falsifiable first prediction is a primitive multigraded class of `K_p` at homological
+  degree `p`, ordinary degree `p+2`, and offset `8p-1+p(p+1)/2`.
+- Survival of that class in `A_p` is a separate stronger prediction requiring the exact
+  multigraded source or connecting-map rank. No EXP-034 result, manuscript v0.21, or publication
+  is claimed at declaration.
