@@ -544,3 +544,8 @@ Thus `beta_(p,p+2)(A_p)>=1` and
 `beta_(p,p+2)(C_p)>=binom(8p,p-1)+1`. This is one exact point in a lower strand, not the complete
 strand. The next structural route is to classify the other incidence cokernel cells and their
 connecting-map survival.
+
+This theorem is incorporated in the 48-page main manuscript v0.21, published and fresh-download
+verified at DOI `10.5281/zenodo.22135689`. The exact public PDF matches the committed artifact by
+MD5 and SHA-256. The publication does not change the open boundary: both complete lower strands,
+explicit differential matrices, and the full special-fiber resolution remain unknown.

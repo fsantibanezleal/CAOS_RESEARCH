@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-27. Lifecycle: EXP-034 is CONFIRMED. Put
+Updated: 2026-08-27. Lifecycle: EXP-034 is CONFIRMED and manuscript v0.21 is PUBLISHED. Put
 `tau_p=8p-1+p(p+1)/2`. The Artinian reduction of the high-variable kernel and a separate unit
 connecting-map pivot prove, over every field,
 
@@ -11,7 +11,12 @@ beta_(p,(p+2,tau_p))(K_p)
 ```
 
 This is one exact point in the previously unresolved regularity-two strand; both complete lower
-strands remain open. HWB-055 is done and HWB-056 is active for main manuscript v0.21. EXP-033
+strands remain open. HWB-055 and HWB-056 are done. The 48-page v0.21 passed claim, two clean
+builds, all-page render inspection, sole-authorship, repository, exact-upload, publication,
+concept-latest, and fresh-download gates. It is public at DOI `10.5281/zenodo.22135689`; its
+792,863-byte public PDF matches MD5 `13b92773205a49977abb88cd7ab8dde1` and SHA-256
+`c717fbb4d6d3178e0fb0786a8a61c9e2c109d97d77a7b9e1308a2274c0f97539` exactly. HWB-057 is
+active for separate-PR promotion through `develop` and `main`. EXP-033
 remains CONFIRMED. It proves that the quadratic quotient
 `A_p=P_p/Q_p` has depth one and regularity two, so the entire cubic mapping cone is minimal over
 every field:
@@ -368,8 +373,9 @@ possible connecting-map contribution from `D_p` has a unique unit low boundary, 
 cycle hits it. The long exact Tor sequence and minimal cubic cone give exact multiplicity one in
 `K_p`, `A_p`, and `C_p`. Canonical rows pass for `p=4,...,300`; independent semigroup bases pass
 through `p=25`; rational literal sources, two finite fields, symbolic inequalities, and controls
-pass. HWB-055 is done. HWB-056 is active for manuscript v0.21 and Zenodo; the complete lower
-strands remain open.
+pass. HWB-055 and HWB-056 are done; manuscript v0.21 is published and fresh-download verified at
+DOI `10.5281/zenodo.22135689`. HWB-057 owns repository promotion. The complete lower strands
+remain open.
 
 EXP-033 is CONFIRMED. Put `A_p=P_p/Q_p`. The colon intersection and pullback give
 
@@ -603,18 +609,21 @@ Published baseline:
 - v0.20 DOI `10.5281/zenodo.22062161`: minimal cubic cone and complete top two strands. The public
   774,246-byte PDF has MD5 `69f45597e879afc8fd91ca4157fb2cf3` and SHA-256
   `163a3a2fc6a5d61b6ff97e3ed1089dc3b6e9b320aa9c68ed67d2f1155362d743`.
+- v0.21 DOI `10.5281/zenodo.22135689`: first surviving lower-strand class. The public 792,863-byte
+  PDF has MD5 `13b92773205a49977abb88cd7ab8dde1` and SHA-256
+  `c717fbb4d6d3178e0fb0786a8a61c9e2c109d97d77a7b9e1308a2274c0f97539`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `22062161`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `22135689`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Incorporate the EXP-034 theorem in the existing main manuscript as v0.21; run complete
-   claim/build/render/authorship QA before creating or uploading a Zenodo new version.
-2. After publication, classify the remaining incidence cokernel cells by offset and test their
+1. Promote the complete EXP-034 theorem and verified v0.21 publication record through a
+   work-to-`develop` PR and then a `develop`-to-`main` PR.
+2. Classify the remaining incidence cokernel cells by offset and test their
    connecting-map unit pivots; do not extrapolate a complete strand from the single exact class.
-3. Promote the validated research payload through separate `develop` and `main` PRs after all
-   repository gates and publication verification pass.
+3. Evaluate a separate manuscript only after the incidence method determines a complete strand
+   or yields a transferable theorem beyond this family.
 4. Leave CAOS_MANAGE untouched during this round; its deferred ledgers are outside the active
    product-repository scope.
 

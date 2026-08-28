@@ -1,7 +1,7 @@
 # Claim audit - manuscript v0.21
 
-Date: 2026-08-27. Publication status: exact candidate uploaded to the validated draft reserved at
-DOI `10.5281/zenodo.22135689`; publication is pending.
+Date: 2026-08-27. Publication status: published and fresh-download verified at DOI
+`10.5281/zenodo.22135689`.
 
 ## Claim-to-evidence matrix
 
@@ -19,7 +19,7 @@ DOI `10.5281/zenodo.22135689`; publication is pending.
 | finite validation | EXP-034 canonical, rank, independent, and symbolic artifacts | PASS; 297 canonical rows, two-field rank probes, independent reconstruction, and symbolic exclusions agree |
 | scope | EXP-034 verdict and manuscript scope section | PASS; one exact lower-strand point is proved, not either complete lower strand or the full resolution |
 | manuscript split decision | EXP-034 preflight and verdict | PASS; the theorem directly continues the v0.20 kernel and mapping-cone narrative and belongs in the main manuscript |
-| publication identity | reserved Zenodo record `22135689`, metadata JSON, and page-one block | PASS locally; version, DOI, concept DOI, date, CC BY 4.0, sole author, and sole ORCID agree |
+| publication identity | Zenodo record `22135689`, metadata JSON, and page-one block | PASS; version, DOI, concept DOI, date, CC BY 4.0, sole author, and sole ORCID agree |
 
 ## Evidence identities
 
@@ -67,11 +67,16 @@ matrices, or the full minimal resolution of the conductor special fiber.
 - repository tests, pipeline, and artifact consistency: PASS; template, content, and research
   structure guards pass, Ruff passes the CI scope and EXP-034 scripts, all 60 tests pass, the full
   registry pipeline completes, and all three manifest/artifact pairs are consistent;
-- exact Zenodo metadata and one-file upload validation: PASS; draft `22135689` is unsubmitted at
-  version `0.21`, with the expected title, date, one creator and ORCID, CC BY 4.0, open access, and
-  exactly one completed file named `huneke-wiegand-frobenius-minimality-v0.21.pdf`, with 792,863
-  bytes and MD5 `13b92773205a49977abb88cd7ab8dde1`;
-- publication, concept-latest check, and fresh unauthenticated download: PENDING.
+- exact Zenodo metadata and one-file upload validation: PASS; before publication, draft `22135689`
+  was unsubmitted at version `0.21`, with the expected title, date, one creator and ORCID, CC BY
+  4.0, open access, and exactly one completed file named
+  `huneke-wiegand-frobenius-minimality-v0.21.pdf`, with 792,863 bytes and MD5
+  `13b92773205a49977abb88cd7ab8dde1`;
+- publication, concept-latest check, and fresh unauthenticated download: PASS; record `22135689`
+  is public and concept-latest at version `0.21`; its public title, DOI, concept DOI, date, sole
+  creator and ORCID, CC BY 4.0 license, filename, bytes, and MD5 agree, and a fresh unauthenticated
+  download matches the committed PDF by MD5 and SHA-256.
 
-The manuscript candidate is frozen and its exact bytes are in the validated Zenodo draft.
-Publication is not yet claimed.
+All manuscript publication gates pass. The immutable v0.21 artifact proves one exact surviving
+lower-strand class for every family parameter and field. It does not claim either complete lower
+strand, explicit differential matrices, or the full special-fiber resolution.

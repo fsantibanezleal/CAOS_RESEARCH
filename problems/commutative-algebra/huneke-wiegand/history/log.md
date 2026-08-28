@@ -1286,3 +1286,20 @@
   `b3f461298706a394cc0f1a296557e10f52435f78d2f1039452fb726871b79a4d`.
 - HWB-055 is done. HWB-056 opens in-place manuscript v0.21; both complete lower strands remain
   open, so no full-resolution claim is made.
+
+## 2026-08-27 - manuscript v0.21 published and verified
+
+- The EXP-034 theorem was incorporated into the existing main manuscript rather than split into
+  a separate paper.
+- The 48-page v0.21 candidate passed claim and scope audit, two warning-free builds, PDF metadata
+  and extraction, complete 150-DPI rendered inspection, full-size review of page one and pages
+  41--48, and sole-human-authorship/ORCID gates.
+- The frozen candidate is 792,863 bytes with MD5 `13b92773205a49977abb88cd7ab8dde1`
+  and SHA-256 `c717fbb4d6d3178e0fb0786a8a61c9e2c109d97d77a7b9e1308a2274c0f97539`.
+- Zenodo record `22135689`, DOI `10.5281/zenodo.22135689`, is public and concept-latest at version
+  `0.21`. The public date, title, sole creator and ORCID, CC BY 4.0 license, filename, bytes, and
+  MD5 agree, and a fresh unauthenticated download matches Git by MD5 and SHA-256.
+- Template, content, and research-structure guards, Ruff, all 60 tests, the full registry pipeline,
+  and manifest/artifact consistency pass. Regeneration adds EXP-034 to the public experiment
+  registry.
+- HWB-056 is done. HWB-057 owns promotion through separate PRs to `develop` and `main`.

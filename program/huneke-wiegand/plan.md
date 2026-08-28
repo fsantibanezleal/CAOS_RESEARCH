@@ -973,3 +973,25 @@ independent numerical-semigroup reconstruction, rational literal sources, symbol
 and adversarial controls pass. HWB-055 is done. The theorem crosses the in-place main-manuscript
 v0.21 gate under HWB-056, while a separate manuscript and a complete-lower-strand claim remain
 deferred.
+
+## 2026-08-27 - manuscript v0.21 publication and repository gates
+
+The EXP-034 theorem is incorporated in the existing main manuscript rather than split into a new
+paper. The 48-page v0.21 candidate passed its claim audit, two consecutive warning-free LaTeX
+builds, PDF metadata and text extraction, complete 150-DPI page inspection, full-size inspection
+of page one and pages 41--48, and sole-human-authorship/ORCID gates. The exact candidate is
+792,863 bytes with MD5 `13b92773205a49977abb88cd7ab8dde1` and SHA-256
+`c717fbb4d6d3178e0fb0786a8a61c9e2c109d97d77a7b9e1308a2274c0f97539`.
+
+After the committed candidate and reversible draft checkpoint were pushed, Zenodo record
+`22135689`, DOI `10.5281/zenodo.22135689`, was published under concept DOI
+`10.5281/zenodo.21763582`. It is concept-latest at version `0.21`; the public title, date, sole
+creator and ORCID, CC BY 4.0 license, filename, bytes, and MD5 agree. A fresh unauthenticated
+download matches the committed PDF by MD5 and SHA-256. HWB-056 is done.
+
+Repository gates also pass: template, content, and research-structure guards; Ruff over the CI
+scope and EXP-034 scripts; all 60 tests; the full registry pipeline; and manifest/artifact
+consistency. Regeneration adds EXP-034 to the public experiment registry. HWB-057 is active for
+the required work-branch-to-`develop` PR followed by the `develop`-to-`main` PR. The next
+mathematical route remains classification of the other incidence cokernel cells and their
+connecting-map survival; a separate manuscript remains premature.
