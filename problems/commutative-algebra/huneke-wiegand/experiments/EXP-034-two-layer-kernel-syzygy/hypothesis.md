@@ -1,6 +1,7 @@
 # EXP-034 hypothesis - two-layer kernel and first unavoidable nonlinear syzygy
 
-Status at declaration: **ACTIVE, NO RESULT CLAIMED**.
+Status at declaration: **ACTIVE, NO RESULT CLAIMED**. Final status: **CONFIRMED**; see `proof.md`
+and `verdict.md`.
 
 ## Question
 
@@ -145,4 +146,3 @@ A surviving class in `A_p` changes the published lower Betti boundary and opens 
 v0.21 plus a Zenodo new-version gate. A class proved only for `K_p` is persisted as a structural
 theorem but does not by itself trigger publication. A separate manuscript is justified only if
 the two-layer incidence method yields a reusable theorem beyond this family.
-

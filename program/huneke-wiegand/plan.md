@@ -955,3 +955,21 @@ separate: the ordinary Betti polynomial of `D_p` cannot decide a multigraded con
 The canonical campaign, independent reconstruction, symbolic proof, and corrupted controls are
 specified in the experiment hypothesis. A proved kernel class is a relevant structural result;
 manuscript v0.21 and Zenodo remain gated on a new theorem for `A_p`.
+
+EXP-034 is CONFIRMED. The first missing degree-two offset `8p-1` and the minimum exterior set
+`{1,...,p}` give a one-dimensional integral cokernel in total offset
+`tau_p=8p-1+p(p+1)/2`. Every possible connecting-map contribution from `D_p` has a unique
+nonzero low boundary coordinate, so no source cycle can hit this class. Since the row-two strand
+of `D_p` starts at homological degree `2p-2`, the long exact Tor sequence gives
+
+```text
+beta_(p,(p+2,tau_p))(K_p)
+=beta_(p,(p+2,tau_p))(A_p)
+=beta_(p,(p+2,tau_p))(C_p)=1
+```
+
+over every field. Canonical rows pass for all `p=4,...,300`; exact finite-field ranks,
+independent numerical-semigroup reconstruction, rational literal sources, symbolic inequalities,
+and adversarial controls pass. HWB-055 is done. The theorem crosses the in-place main-manuscript
+v0.21 gate under HWB-056, while a separate manuscript and a complete-lower-strand claim remain
+deferred.

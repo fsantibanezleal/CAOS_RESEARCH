@@ -515,3 +515,32 @@ beta_(i,i+4)=binom(m,i-1-c).
 The result determines all comparison ranks and both regularity-three/four strands, not the full
 Betti table. The remaining data are exactly the two lower strands of `A_p`; the next structural
 route is its extension by `K_p` and `D_p`.
+
+## First surviving lower-strand class
+
+EXP-034 reduces `K_p` modulo the common regular element `X_0`. The resulting module has two
+layers: the `8p` high offsets in degree one and the `10p` missing offsets of
+`[6p,24p-1]` in degree two. Its resolution is therefore controlled by explicit signed incidence
+maps between exterior powers of the degree-one variables.
+
+Put
+
+```text
+tau_p=8p-1+p(p+1)/2.
+```
+
+The first missing degree-two offset is `8p-1`, and its representation set by a high offset plus a
+variable is exactly `{1,...,p}`. This produces a unique primitive cokernel cell. A separate unit
+pivot in the low idealization proves that the connecting map from `D_p` cannot hit it. The long
+exact Tor sequence and the multigraded minimal cubic cone give, over every field,
+
+```text
+beta_(p,(p+2,tau_p))(K_p)
+=beta_(p,(p+2,tau_p))(A_p)
+=beta_(p,(p+2,tau_p))(C_p)=1.
+```
+
+Thus `beta_(p,p+2)(A_p)>=1` and
+`beta_(p,p+2)(C_p)>=binom(8p,p-1)+1`. This is one exact point in a lower strand, not the complete
+strand. The next structural route is to classify the other incidence cokernel cells and their
+connecting-map survival.

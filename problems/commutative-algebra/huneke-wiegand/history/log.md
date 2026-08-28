@@ -1268,3 +1268,21 @@
 - Survival of that class in `A_p` is a separate stronger prediction requiring the exact
   multigraded source or connecting-map rank. No EXP-034 result, manuscript v0.21, or publication
   is claimed at declaration.
+
+## 2026-08-27 - EXP-034 confirmed
+
+- Modulo the common regular element `X_0`, the EXP-033 kernel has degree-one basis `H_p`,
+  degree-two basis `[6p,24p-1] minus H_p`, and explicit two-layer Koszul incidence maps.
+- The first missing offset `8p-1` and exterior `{1,...,p}` form the unique target cell in total
+  offset `8p-1+p(p+1)/2`; its representation set contains no extra incoming variable.
+- Every possible connecting-map coefficient from `D_p` leaves a unique low chain whose boundary
+  contains the unit `X_pX_l`. Hence no source cycle hits the distinguished coordinate.
+- The long exact Tor sequence and the multigraded minimal cubic cone prove exact multiplicity one
+  for this class in `K_p`, `A_p`, and `C_p` over every field.
+- Canonical, finite-rank, independent, and symbolic aggregates are
+  `65ef176dcd9f5bd5467c09e763fdb20c67798de9743443ce5d0e34958c1645ce`,
+  `31d70c09d251bb6009b610be05c33a42ccd50e417b84aff2c0db561018e6acc5`,
+  `31479abd3c7247fe0ba464eefe06e437a595812c3d6055d0de8d0ced25d12794`, and
+  `b3f461298706a394cc0f1a296557e10f52435f78d2f1039452fb726871b79a4d`.
+- HWB-055 is done. HWB-056 opens in-place manuscript v0.21; both complete lower strands remain
+  open, so no full-resolution claim is made.

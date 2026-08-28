@@ -1,10 +1,18 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-27. Lifecycle: EXP-034 is ACTIVE, with no result claimed. It targets the two
-lower strands left open by EXP-033 through the Artinian reduction of the high-variable kernel.
-The falsifiable first target is a primitive class in
-`beta_(p,(p+2,8p-1+p(p+1)/2))(K_p)`; the separate stronger target is survival of that class in
-`A_p=P_p/Q_p`. EXP-033 remains CONFIRMED. It proves that the quadratic quotient
+Updated: 2026-08-27. Lifecycle: EXP-034 is CONFIRMED. Put
+`tau_p=8p-1+p(p+1)/2`. The Artinian reduction of the high-variable kernel and a separate unit
+connecting-map pivot prove, over every field,
+
+```text
+beta_(p,(p+2,tau_p))(K_p)
+=beta_(p,(p+2,tau_p))(A_p)
+=beta_(p,(p+2,tau_p))(C_p)=1.
+```
+
+This is one exact point in the previously unresolved regularity-two strand; both complete lower
+strands remain open. HWB-055 is done and HWB-056 is active for main manuscript v0.21. EXP-033
+remains CONFIRMED. It proves that the quadratic quotient
 `A_p=P_p/Q_p` has depth one and regularity two, so the entire cubic mapping cone is minimal over
 every field:
 
@@ -30,9 +38,8 @@ publication, concept-latest, and fresh-download gates. It is public at DOI
 `guards` and `test` and merged the payload to `develop` at `28bac50`; PR #219 passed all required
 checks and promoted it to `main` at `c1e6b20`. Both remote branches share payload tree
 `f51cb2845d20b4fbf7d43029a71af0392bc3d6d9`. HWB-054 is done. The remaining mathematical
-frontier is now HWB-055/EXP-034: resolve the two-layer incidence complex of `K_p` and the
-multigraded connecting map in `0 -> K_p -> A_p -> D_p -> 0`; the cubic comparison maps are no
-longer unknown.
+frontier is to classify the other EXP-034 incidence cokernels and their multigraded survival in
+`0 -> K_p -> A_p -> D_p -> 0`; the cubic comparison maps are no longer unknown.
 
 EXP-032 remains CONFIRMED for the complete graded Betti polynomial and
 free-module shape of the cubic-colon quotient. The 43-page v0.19 passed claim, two-pass build,
@@ -183,7 +190,9 @@ Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
 21. the complete graded Betti polynomial and free-module shape of the cubic-colon quotient over
     every field (EXP-032); and
 22. the depth-one regularity-two quadratic quotient, minimal cubic mapping cone, and complete
-    regularity-three/four strands over every field (EXP-033).
+    regularity-three/four strands over every field (EXP-033); and
+23. the two-layer kernel incidence theorem and exact first surviving regularity-two Betti class
+    in `K_p`, `A_p`, and `C_p` over every field (EXP-034).
 
 The public seed is
 
@@ -209,8 +218,8 @@ I = (t^56,t^70)R.
 | `J_p` | defining ideal of `C_p` in its `10p` degree-one variables | EXP-022/023 theorems |
 | `Q_p` | quadratic part of `J_p`, with `J_p=(Q_p,f_p)` and `f_p=X_0^2X_(3p)-X_p^3` | EXP-023/027 theorems |
 | `D_p` | cubic-colon quotient `P_p/(Q_p:f_p)`, the canonical idealization of the `p`th Veronese rational normal curve ring | EXP-030 theorem |
-| `A_p` | quadratic quotient `P_p/Q_p`, depth one and regularity two | EXP-033 theorem |
-| `K_p` | high-variable kernel in `0 -> K_p -> A_p -> D_p -> 0`, with Hilbert numerator `8p z+10p z^2` | EXP-033 theorem |
+| `A_p` | quadratic quotient `P_p/Q_p`, depth one and regularity two, with exact EXP-034 class in row two | EXP-033/034 theorems |
+| `K_p` | high-variable kernel in `0 -> K_p -> A_p -> D_p -> 0`, with Hilbert numerator `8p z+10p z^2` and a two-layer incidence resolution | EXP-033/034 theorems |
 | minimum layer | all normalized rigid pairs at the least Frobenius value 181 | EXP-005/007 |
 
 ## 2a. Infinite family theorem
@@ -282,6 +291,7 @@ campaign is supporting evidence, not the proof.
 | EXP-031 | CONFIRMED | integral zero-vertex matching and signed unit filler block give `beta_(3,7)=0` and complete the third row over every field |
 | EXP-032 | CONFIRMED | complete graded Betti polynomial and free-module ranks/shifts of the cubic-colon quotient; explicit differentials and the full `C_p` resolution remain open |
 | EXP-033 | CONFIRMED | `depth(P_p/Q_p)=1`, `reg(P_p/Q_p)=2`, a minimal cubic mapping cone, and complete regularity-three/four strands over every field |
+| EXP-034 | CONFIRMED | exact characteristic-free class `beta_(p,(p+2,8p-1+p(p+1)/2))=1` in `K_p`, `A_p`, and `C_p` |
 
 ## 3a. Exact evidence anchors
 
@@ -338,21 +348,28 @@ campaign is supporting evidence, not the proof.
   `67bff9217c89f212916220e858ef5168abe2d64cdbd789488e0ce5f49204092a`,
   `6593291efaf092333bc42972c2f05712a151efb46f3f52ed9d28afd329585a4c`, and
   `58ab24887c79c3c075fdefea1f38ff2e1c1ef539490f7f52359149ed2bb1a4c8`.
+- EXP-034 canonical, finite-rank, independent, and symbolic aggregates:
+  `65ef176dcd9f5bd5467c09e763fdb20c67798de9743443ce5d0e34958c1645ce`,
+  `31d70c09d251bb6009b610be05c33a42ccd50e417b84aff2c0db561018e6acc5`,
+  `31479abd3c7247fe0ba464eefe06e437a595812c3d6055d0de8d0ced25d12794`, and
+  `b3f461298706a394cc0f1a296557e10f52435f78d2f1039452fb726871b79a4d`.
 
 ## 4. In flight
 
-EXP-034 is ACTIVE and was declared before implementation. With `S_p=P_p/(X_0)` and
-`M_p=K_p/X_0K_p`, it tests an explicit two-layer offset basis and signed incidence maps
-`delta_i`. The first proposed cell has
+EXP-034 is CONFIRMED. With `S_p=P_p/(X_0)` and `M_p=K_p/X_0K_p`, the kernel has an explicit
+two-layer offset basis and signed incidence maps `delta_i`. The first missing cell has
 
 ```text
 b*=8p-1,   F*={1,...,p},   tau_p=8p-1+p(p+1)/2.
 ```
 
-The declared route must first prove that this gives a primitive class in
-`Tor_p(K_p,k)_(p+2,tau_p)`, and then independently decide whether it is hit by
-`Tor_(p+1)(D_p,k)` in the same multidegree. A theorem about `K_p` alone is not yet a lower-strand
-theorem for `A_p`. HWB-055 is in progress.
+It is the unique target cell in that multidegree and has no incoming incidence face. Every
+possible connecting-map contribution from `D_p` has a unique unit low boundary, so no source
+cycle hits it. The long exact Tor sequence and minimal cubic cone give exact multiplicity one in
+`K_p`, `A_p`, and `C_p`. Canonical rows pass for `p=4,...,300`; independent semigroup bases pass
+through `p=25`; rational literal sources, two finite fields, symbolic inequalities, and controls
+pass. HWB-055 is done. HWB-056 is active for manuscript v0.21 and Zenodo; the complete lower
+strands remain open.
 
 EXP-033 is CONFIRMED. Put `A_p=P_p/Q_p`. The colon intersection and pullback give
 
@@ -582,18 +599,22 @@ Published baseline:
 - v0.18 DOI `10.5281/zenodo.22030743`: integral degree-seven vanishing and complete third row. The
   public 725,554-byte PDF has MD5 `558532167c4f2a39e03d1bcced9de18d` and SHA-256
   `0e40aa5ed4feb02209137c2982184a93cfd402ac03cc9d4aa6f9ba86ae4327b7`.
+- v0.19 DOI `10.5281/zenodo.22031481`: complete cubic-colon Betti polynomial.
+- v0.20 DOI `10.5281/zenodo.22062161`: minimal cubic cone and complete top two strands. The public
+  774,246-byte PDF has MD5 `69f45597e879afc8fd91ca4157fb2cf3` and SHA-256
+  `163a3a2fc6a5d61b6ff97e3ed1089dc3b6e9b320aa9c68ed67d2f1155362d743`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `22030743`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `22062161`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Implement the EXP-034 canonical two-layer incidence model and exact premise gate; run the
-   bounded `p=4,...,300` offset campaign and adversarial controls.
-2. Reconstruct the target multidegree independently and decide whether the primitive `K_p` class
-   survives the connecting map from `D_p`; do not infer survival from ordinary Betti counts.
-3. Persist a proof/verdict at the strongest justified boundary. Open manuscript v0.21 and Zenodo
-   only if a new `A_p` lower-strand theorem is proved.
+1. Incorporate the EXP-034 theorem in the existing main manuscript as v0.21; run complete
+   claim/build/render/authorship QA before creating or uploading a Zenodo new version.
+2. After publication, classify the remaining incidence cokernel cells by offset and test their
+   connecting-map unit pivots; do not extrapolate a complete strand from the single exact class.
+3. Promote the validated research payload through separate `develop` and `main` PRs after all
+   repository gates and publication verification pass.
 4. Leave CAOS_MANAGE untouched during this round; its deferred ledgers are outside the active
    product-repository scope.
 
