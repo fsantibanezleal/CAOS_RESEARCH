@@ -58,4 +58,4 @@
 | HWB-054 | 1 | done | repository promotion and durable handoff for EXP-033 plus v0.20 | PRs #218/#219 passed required checks and promoted payload tree `f51cb2845d20b4fbf7d43029a71af0392bc3d6d9` through `develop` and `main` |
 | HWB-055 | 1 | done | two-layer resolution of the EXP-033 kernel and first lower-strand survival test | EXP-034 proves `beta_(p,(p+2,8p-1+p(p+1)/2))=1` for `K_p`, `A_p`, and `C_p` over every field |
 | HWB-056 | 1 | done | manuscript and Zenodo update for the first surviving lower-strand class | 48-page v0.21 passed all gates, was published at DOI `10.5281/zenodo.22135689`, became concept-latest, and matched a fresh public download exactly |
-| HWB-057 | 1 | in progress | repository promotion and durable handoff for EXP-034 plus v0.21 | promote the complete theorem and verified publication record through separate PRs to `develop` and `main` |
+| HWB-057 | 1 | done | repository promotion and durable handoff for EXP-034 plus v0.21 | PRs #222/#223 passed required checks and promoted payload tree `f571fb955560c29489c181a6ce542548619209e0` through `develop` and `main` |
