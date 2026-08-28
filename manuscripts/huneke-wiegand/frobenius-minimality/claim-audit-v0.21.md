@@ -64,7 +64,9 @@ matrices, or the full minimal resolution of the conductor special fiber.
   `c717fbb4d6d3178e0fb0786a8a61c9e2c109d97d77a7b9e1308a2274c0f97539`;
 - sole-author and sole-ORCID audit: PASS; Felipe Santibanez-Leal is the sole author and
   `0000-0002-0150-3246` is the sole ORCID; no machine authorship or coauthorship appears;
-- repository tests, pipeline, and artifact consistency: PENDING;
+- repository tests, pipeline, and artifact consistency: PASS; template, content, and research
+  structure guards pass, Ruff passes the CI scope and EXP-034 scripts, all 60 tests pass, the full
+  registry pipeline completes, and all three manifest/artifact pairs are consistent;
 - exact Zenodo metadata and one-file upload validation: PASS; draft `22135689` is unsubmitted at
   version `0.21`, with the expected title, date, one creator and ORCID, CC BY 4.0, open access, and
   exactly one completed file named `huneke-wiegand-frobenius-minimality-v0.21.pdf`, with 792,863
