@@ -6,8 +6,9 @@ characteristic-dependent target campaign, separates kernel-incidence defects fro
 created by the connecting quotient, localizes the compact factor-two residual, preserves two
 refuted finite-data formulas, and proves all-parameter absence of the shifted cubic source at the
 declared targets. The exact characteristic-dependent values are finite through `(p,t)=(9,2)`;
-no infinite multiplicity formula or complete lower strand is claimed. Its reserved version DOI is
-`10.5281/zenodo.22181972`.
+no infinite multiplicity formula or complete lower strand is claimed. It passed the complete
+claim/build/render, authenticated upload, publication, concept-latest, and fresh-download workflow
+and is published at DOI `10.5281/zenodo.22181972`.
 Version 0.22 adds the EXP-035 primitive zero-row
 classification, consecutive kernel family, explicit connecting-cycle refutation, and the first
 characteristic-dependent lower multigraded Betti cell. It passed the complete
@@ -202,8 +203,8 @@ Zenodo identifiers:
 - version 0.20 DOI: `10.5281/zenodo.22062161` (published and fresh-download verified)
 - version 0.21 DOI: `10.5281/zenodo.22135689` (published and fresh-download verified)
 - version 0.22 DOI: `10.5281/zenodo.22177072` (published and fresh-download verified)
-- version 0.23 DOI: `10.5281/zenodo.22181972` (reserved draft; local candidate and exact
-  metadata/one-file upload validation passed; publication verification pending)
+- version 0.23 DOI: `10.5281/zenodo.22181972` (published, concept-latest, and fresh-download
+  verified)
 - licence: CC BY 4.0
 
 Evidence sources are EXP-001 through EXP-036 under
@@ -556,4 +557,20 @@ Version 0.22 public-file verification:
   ORCID, CC BY 4.0, and exactly one completed file named
   `huneke-wiegand-frobenius-minimality-v0.22.pdf`, whose bytes and MD5 matched the committed PDF
 - record `22177072` is public and concept-latest at version `0.22`; public metadata and the sole
+  file match, and a fresh unauthenticated download matches the committed PDF by MD5 and SHA-256
+
+Version 0.23 public-file verification:
+
+- record `22181972`, DOI `10.5281/zenodo.22181972`, concept DOI
+  `10.5281/zenodo.21763582`
+- source record: immutable published v0.22 record `22177072`
+- two warning-free stabilized builds, PDF metadata/extraction, and all-page 150-DPI inspection
+  pass; all 53 pages were inspected, with full-size review of page one and pages 46--51 and 53
+- bytes: `824114`
+- MD5: `6bcacfa265e840f40e89dcdb87b75f7b`
+- SHA-256: `c77b08a3724db90b14039c2c88e98325403ef4f656f52137057a27eb6fa5072d`
+- the exact prepublication draft had version `0.23`, the expected title and date, sole author and
+  ORCID, CC BY 4.0, English language, and exactly one completed file named
+  `huneke-wiegand-frobenius-minimality-v0.23.pdf`, whose bytes and MD5 matched the committed PDF
+- record `22181972` is public and concept-latest at version `0.23`; public metadata and the sole
   file match, and a fresh unauthenticated download matches the committed PDF by MD5 and SHA-256

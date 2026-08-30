@@ -637,3 +637,9 @@ cubic source exceeds its required offset by at least
 Thus the cubic source is absent at every declared target and `dim C_p=dim A_p` there.  This is an
 all-parameter transfer theorem, not an infinite proof of characteristic dependence.  The open
 structural problem is the parity-sensitive homology of the connecting-image quotient.
+
+These results are incorporated in the 53-page main manuscript v0.23, published and
+fresh-download verified at DOI `10.5281/zenodo.22181972`. The exact public 824,114-byte PDF
+matches the committed artifact by MD5 `6bcacfa265e840f40e89dcdb87b75f7b` and SHA-256
+`c77b08a3724db90b14039c2c88e98325403ef4f656f52137057a27eb6fa5072d`. Publication does not close
+the infinite connecting-parity problem or either complete lower strand.

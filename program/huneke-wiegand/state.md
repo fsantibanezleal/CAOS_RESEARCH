@@ -123,6 +123,7 @@
 | 2026-08-30 | published | active | EXP-036 declared for HWB-061: exact larger-parameter torsion screen and compact integral-core recognition; no new result claimed |
 | 2026-08-30 | active | active | EXP-036 canonical checkpoint completes every family cell through `p=6`; characteristic dependence persists by distinct kernel and connecting-map mechanisms, with a new `t=2` excess candidate `(p-3)^2` |
 | 2026-08-30 | active | confirmed | EXP-036 extends exact targets through `(9,2)`, refutes both finite excess fits, independently validates the ranks, localizes the compact factor-two residual, and proves all-parameter absence of the cubic source at every declared target |
+| 2026-08-30 | confirmed | published | 53-page manuscript v0.23 passed claim/build/render, sole-authorship, exact-draft, publication, concept-latest, and fresh-download gates; DOI `10.5281/zenodo.22181972` matches the committed PDF exactly |
 
 Current state: **EXP-036 is confirmed with structural propagation unresolved.  Exact complete
 targets through `(9,2)` prove repeated characteristic dependence by two mechanisms.  For tested
@@ -130,8 +131,9 @@ targets through `(9,2)` prove repeated characteristic dependence by two mechanis
 creates characteristic-two excesses `4,9,18,31,49`; both the square and quadratic fits are
 refuted.  The cubic-source gap is at least `3(p-1)^2` for all `p>=4`, `2<=t<=p-2`, so the exact
 `A_p` and `C_p` values agree throughout this family.  HWB-061 remains active for an infinite
-connecting-parity theorem; HWB-062 owns manuscript v0.23 and Zenodo publication; HWB-063 owns
-promotion.  EXP-035 is confirmed under completed HWB-058. It proves the all-parameter
+connecting-parity theorem. HWB-062 is done: the 53-page v0.23 is public and fresh-download
+verified at DOI `10.5281/zenodo.22181972`; HWB-063 owns promotion.  EXP-035 is confirmed under
+completed HWB-058. It proves the all-parameter
 primitive zero-row summand and consecutive `K_p` classes, and the exact component
 `beta_(5,(7,87))(A_4)=beta_(5,(7,87))(C_4)` equals `4` over `GF(2)` and `3` over `GF(3)`.
 HWB-059 is done with the 51-page manuscript v0.22 published and fresh-download verified at DOI

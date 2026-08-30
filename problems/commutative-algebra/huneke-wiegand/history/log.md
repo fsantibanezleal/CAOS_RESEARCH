@@ -1443,3 +1443,19 @@
 - EXP-036 is CONFIRMED for P1 and compact P2; the strong recognition clause is rejected for the
   canonical reduction and P3 remains unresolved.  HWB-061 retains the infinite connecting-parity
   problem; HWB-062 opens manuscript v0.23 and Zenodo publication.
+
+## 2026-08-30 - manuscript v0.23 published and verified
+
+- The finite propagation table, distinction between kernel and connecting mechanisms, compact
+  factor-two localization, two refuted interpolations, family-wide cubic-transfer theorem, and
+  finite-only scope boundary were incorporated into the existing main manuscript.
+- The 53-page v0.23 candidate passed the claim and scope audit, two warning-free stabilized
+  builds, metadata and text extraction, complete 150-DPI rendered inspection, sole-human-
+  authorship/ORCID checks, all 60 tests, registry regeneration, artifact consistency, and every
+  repository guard.
+- The frozen PDF is 824,114 bytes with MD5 `6bcacfa265e840f40e89dcdb87b75f7b` and SHA-256
+  `c77b08a3724db90b14039c2c88e98325403ef4f656f52137057a27eb6fa5072d`.
+- Zenodo record `22181972`, DOI `10.5281/zenodo.22181972`, is public and concept-latest at version
+  `0.23`. Public metadata, sole creator/ORCID, CC BY 4.0 licence, filename, bytes, and MD5 agree;
+  a fresh unauthenticated download matches Git by MD5 and SHA-256.
+- HWB-062 is done. HWB-063 is active for separate-PR promotion to `develop` and then `main`.

@@ -1,8 +1,8 @@
 # Claim audit - manuscript v0.23
 
-Date: 2026-08-30. Publication status: reserved Zenodo new-version draft `22181972`, DOI
-`10.5281/zenodo.22181972`; claim, build, render, metadata, extraction, and authorship gates pass.
-Upload, publication, concept-latest, and fresh-download gates remain pending.
+Date: 2026-08-30. Publication status: published and independently verified as Zenodo record
+`22181972`, DOI `10.5281/zenodo.22181972`. Claim, build, render, metadata, extraction, authorship,
+upload, publication, concept-latest, and fresh-download gates pass.
 
 ## Claim-to-evidence matrix
 
@@ -21,7 +21,7 @@ Upload, publication, concept-latest, and fresh-download gates remain pending.
 | independent validation | semigroup bases, dynamic exact sums, reverse pivots, GF(5) control | PASS for all eight cells through `(8,2)`; the `(9,2)` route is an explicit 47.5-GB inconclusive resource stop and contributes no evidence |
 | scope | EXP-036 verdict and manuscript theorem | PASS; finite characteristic dependence and all-parameter cubic absence are separated; no complete lower strand or infinite multiplicity formula is claimed |
 | manuscript split decision | EXP-036 hypothesis/verdict and programme plan | PASS; this extends the existing lower-strand narrative, while a separate paper remains gated on an infinite connecting theorem or complete strand |
-| publication identity | reserved Zenodo draft and manuscript page-one block | PASS at reservation; version 0.23, DOI, concept DOI, date, sole author, and sole ORCID agree |
+| publication identity | public Zenodo record and manuscript page-one block | PASS; version 0.23, DOI, concept DOI, date, sole author, sole ORCID, licence, and public file agree |
 
 ## Evidence identities
 
@@ -72,7 +72,12 @@ complete through `(8,2)`.
   `2026-08-30T23:06:43Z` confirmed version `0.23`, the expected title and date, sole author and
   ORCID, CC BY 4.0, English language, concept DOI `10.5281/zenodo.21763582`, and exactly one
   completed 824,114-byte file with MD5 `6bcacfa265e840f40e89dcdb87b75f7b`;
-- publication, concept-latest check, and fresh unauthenticated download: PENDING.
+- publication, concept-latest check, and fresh unauthenticated download: PASS; public record
+  `22181972` reports DOI `10.5281/zenodo.22181972`, version `0.23`, and concept DOI
+  `10.5281/zenodo.21763582`; the concept-latest endpoint resolves to the same record, and a fresh
+  unauthenticated download at `2026-08-30T23:08:20Z` matches 824,114 bytes, MD5
+  `6bcacfa265e840f40e89dcdb87b75f7b`, and SHA-256
+  `c77b08a3724db90b14039c2c88e98325403ef4f656f52137057a27eb6fa5072d`.
 
-The v0.23 manuscript may be published only after the final publication gate is replaced by
-verified public evidence.
+All v0.23 publication gates are closed. The public record is immutable; later corrections or
+extensions require a new version.

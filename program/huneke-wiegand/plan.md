@@ -1111,3 +1111,12 @@ complete 150-DPI rendered inspection, sole-human-authorship and ORCID checks, ex
 validation, publication, concept-latest verification, and a fresh public-download hash match.
 HWB-063 opens only after that publication is frozen and owns separate PR promotion through
 `develop` and `main`.
+
+The publication gate is complete.  The 53-page v0.23 passed the claim and scope audit, two
+warning-free stabilized builds, metadata and text extraction, complete 150-DPI rendered
+inspection, sole-human-authorship and ORCID checks, all repository tests and guards, exact
+one-file draft validation, publication, concept-latest verification, and a fresh unauthenticated
+download.  Zenodo record `22181972`, DOI `10.5281/zenodo.22181972`, contains the exact 824,114-byte
+PDF with MD5 `6bcacfa265e840f40e89dcdb87b75f7b` and SHA-256
+`c77b08a3724db90b14039c2c88e98325403ef4f656f52137057a27eb6fa5072d`.  HWB-062 is done and
+HWB-063 is active for separate-PR promotion to `develop` and then `main`.

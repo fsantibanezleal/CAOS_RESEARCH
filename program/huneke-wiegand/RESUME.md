@@ -8,7 +8,12 @@ over `GF(2)`;
 their `A_p=C_p` excesses are `4,9,18,31,49`.  Both the initial square and quadratic
 interpolations are refuted.  For every `p>=4` and `2<=t<=p-2`, the shifted cubic source is absent
 by the positive gap `g(p,t)>=3(p-1)^2`, so every future exact `A_p` value at these targets
-transfers to `C_p`.  This is not an infinite characteristic-dependence theorem.
+transfers to `C_p`.  This is not an infinite characteristic-dependence theorem. The 53-page
+manuscript v0.23 passed every publication gate and is public, concept-latest, and fresh-download
+verified at DOI `10.5281/zenodo.22181972`. Its 824,114-byte PDF has MD5
+`6bcacfa265e840f40e89dcdb87b75f7b` and SHA-256
+`c77b08a3724db90b14039c2c88e98325403ef4f656f52137057a27eb6fa5072d`. HWB-062 is done and
+HWB-063 is active for separate-PR promotion.
 
 EXP-035 remains CONFIRMED with its declared P3 mechanism refuted.
 For every `p>=4`, the exact zero-row criterion is
@@ -41,7 +46,8 @@ manuscript v0.22 is published and fresh-download verified at DOI
 #226/#227 passed required checks and promoted payload tree
 `0847e35a7641ab5592afd136f42bcf09ffe514f3` through `develop` and `main`. HWB-061 remains active
 for the infinite connecting-parity problem after the confirmed EXP-036 finite/anatomy gate.
-HWB-062 owns manuscript v0.23 and its Zenodo version; HWB-063 owns repository promotion.
+HWB-062 is done with manuscript v0.23 and its verified Zenodo version; HWB-063 owns repository
+promotion.
 EXP-034 is CONFIRMED and manuscript
 v0.21 is PUBLISHED. Put
 `tau_p=8p-1+p(p+1)/2`. The Artinian reduction of the high-variable kernel and a separate unit
@@ -705,14 +711,18 @@ Published baseline:
   characteristic-dependent lower cell. The public 810,905-byte PDF has MD5
   `5ed2409d6688b30147963a7293598440` and SHA-256
   `3868f511a047073c9d7bedf25e026f1aaf3a5ab2c05c45d03614675ef6bdf5c2`.
+- v0.23 DOI `10.5281/zenodo.22181972`: finite propagation through `(9,2)`, two torsion
+  mechanisms, compact localization, and family-wide cubic transfer. The public 824,114-byte PDF
+  has MD5 `6bcacfa265e840f40e89dcdb87b75f7b` and SHA-256
+  `c77b08a3724db90b14039c2c88e98325403ef4f656f52137057a27eb6fa5072d`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `22177072`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `22181972`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Publish the EXP-036 finite propagation, two-mechanism distinction, compact localization, and
-   all-parameter cubic-transfer theorem in the existing main manuscript v0.23.
+1. Promote the verified EXP-036 theorem and v0.23 publication through separate PRs to `develop`
+   and then `main`.
 2. Derive the `t=2` connecting-image defect from a parity-sensitive quotient complex.  Treat the
    values `1,4,9,18,31,49` as data only; both simple polynomial fits are rejected.
 3. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
