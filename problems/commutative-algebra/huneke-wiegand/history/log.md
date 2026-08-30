@@ -1315,3 +1315,14 @@
   `f571fb955560c29489c181a6ce542548619209e0` before this documentation handoff.
 - HWB-057 is done. CAOS_MANAGE remained untouched on `develop`; no research release tag is
   claimed.
+
+## 2026-08-30 - EXP-035 declared
+
+- The next lower-strand round is redirected from full incidence ranks to the invariant
+  `R_b subset F`, which exactly classifies integral zero rows.
+- The explicit block `b=10p+t`, `2<=t<=p-2`, is predicted to give primitive kernel classes in
+  every homological degree `p+1,...,2p-3`.
+- Survival in `A_p` is a separate stronger target. It requires exact connecting-source pivots;
+  the absence of the `D_p` row-two target below `2p-2` is not by itself sufficient.
+- The fresh primary-source sweep found no theorem that decides these family-specific Tor maps.
+  No EXP-035 result, manuscript v0.22, or Zenodo update is claimed at declaration.

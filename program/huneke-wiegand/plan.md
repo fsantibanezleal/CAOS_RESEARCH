@@ -1002,3 +1002,16 @@ registry update, manuscript v0.21, and verified Zenodo record to `develop` at
 same tested state to `main` at `4cde1856a0850df8c89cc0fa9473c19ccaaf2b58`. The work branch,
 `develop`, and `main` shared payload tree `f571fb955560c29489c181a6ce542548619209e0` before the
 documentation handoff. HWB-057 is done. No release tag belongs to this research-only round.
+
+## 2026-08-30 - EXP-035 zero-row classification gate
+
+HWB-058 is active. The invariant-first observation is that a codomain coordinate
+`e_F tensor v_b` is an integral zero row exactly when the representation set
+`R_b={g:b-g in H_p}` is contained in `F`. EXP-035 first classifies this canonical primitive
+cokernel summand without building full incidence matrices.
+
+The stronger target is the block `b=10p+t`, `2<=t<=p-2`, whose predicted representation set has
+size `2p-t-1`. These cells would fill the consecutive homological interval
+`p+1,...,2p-3` next to the EXP-034 class at `p`. Kernel existence and connecting-map survival are
+separate gates. Manuscript v0.22 and Zenodo remain closed unless the all-parameter survival theorem
+is proved and independently validated.

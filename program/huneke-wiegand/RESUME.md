@@ -1,6 +1,23 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-27. Lifecycle: EXP-034 is CONFIRMED and manuscript v0.21 is PUBLISHED. Put
+Updated: 2026-08-30. Lifecycle: EXP-035 is ACTIVE with no result claimed. It tests the exact
+zero-row criterion
+
+```text
+[b,F] is a zero incidence row if and only if R_b subset F,
+R_b={g in G_p minus {0}:b-g in H_p},
+```
+
+and the predicted block
+
+```text
+b=10p+t,  F=[3p,4p-2] union {t} union [t+2,p],  2<=t<=p-2.
+```
+
+If the connecting-source pivot test passes uniformly, these cells extend the EXP-034 result to
+every homological degree `p,...,2p-3`. The exact next action is to implement the canonical
+`p=4` smoke classifier and connecting complex, then preserve the first failed cell or continue to
+the independent and symbolic routes. EXP-034 is CONFIRMED and manuscript v0.21 is PUBLISHED. Put
 `tau_p=8p-1+p(p+1)/2`. The Artinian reduction of the high-variable kernel and a separate unit
 connecting-map pivot prove, over every field,
 
@@ -363,6 +380,17 @@ campaign is supporting evidence, not the proof.
 
 ## 4. In flight
 
+EXP-035 is declared before implementation under HWB-058. For each `b in B_p`, it classifies the
+primitive zero-coordinate summand by `R_b subset F` and tests the next low-cardinality block
+`b=10p+t`, `2<=t<=p-2`. The predicted representation set is
+
+```text
+[3p,4p-2] union {t} union [t+2,p],
+```
+
+of size `2p-t-1`. Kernel classes and survival through the connecting map are separate claims.
+No EXP-035 result, manuscript v0.22, or Zenodo update is currently claimed.
+
 EXP-034 is CONFIRMED. With `S_p=P_p/(X_0)` and `M_p=K_p/X_0K_p`, the kernel has an explicit
 two-layer offset basis and signed incidence maps `delta_i`. The first missing cell has
 
@@ -620,13 +648,16 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Classify the remaining incidence cokernel cells by offset and test their
-   connecting-map unit pivots; do not extrapolate a complete strand from the single exact class.
-2. Evaluate a separate manuscript only after the incidence method determines a complete strand
+1. Implement and run the EXP-035 `p=4` smoke gate: full zero-row classification plus the exact
+   selected connecting-source complex.
+2. If the smoke gate passes, run the bounded canonical, independent, and symbolic routes; if it
+   fails, persist the first exact source cycle and redirect the survival claim without weakening
+   the already declared zero-row theorem.
+3. Evaluate a separate manuscript only after the incidence method determines a complete strand
    or yields a transferable theorem beyond this family.
-3. Keep the maximal-rank model rejected unless a new exact incidence calculation restores it on
+4. Keep the maximal-rank model rejected unless a new exact incidence calculation restores it on
    a precisely stated subregion.
-4. Leave CAOS_MANAGE untouched during this round; its deferred ledgers are outside the active
+5. Leave CAOS_MANAGE untouched during this round; its deferred ledgers are outside the active
    product-repository scope.
 
 ### Lenses ledger
@@ -659,6 +690,9 @@ Published baseline:
 - Two-layer Artinian reduction: EXP-034 kills the regular element on `K_p`, converts its resolution
   to offset-labelled incidence maps, and separates existence of a kernel class from survival
   through the multigraded connecting map.
+- Forbidden-neighbor zero rows: EXP-035 uses `R_b subset F` to split off primitive integral
+  cokernel coordinates before any rank computation, then tests the connecting map on the first
+  block below the `D_p` row-two threshold.
 
 ## 7. Gotchas
 

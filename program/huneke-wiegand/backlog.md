@@ -59,3 +59,4 @@
 | HWB-055 | 1 | done | two-layer resolution of the EXP-033 kernel and first lower-strand survival test | EXP-034 proves `beta_(p,(p+2,8p-1+p(p+1)/2))=1` for `K_p`, `A_p`, and `C_p` over every field |
 | HWB-056 | 1 | done | manuscript and Zenodo update for the first surviving lower-strand class | 48-page v0.21 passed all gates, was published at DOI `10.5281/zenodo.22135689`, became concept-latest, and matched a fresh public download exactly |
 | HWB-057 | 1 | done | repository promotion and durable handoff for EXP-034 plus v0.21 | PRs #222/#223 passed required checks and promoted payload tree `f571fb955560c29489c181a6ce542548619209e0` through `develop` and `main` |
+| HWB-058 | 1 | in progress | classify primitive zero-row incidence summands and test the next consecutive survival family | EXP-035 declared before implementation; P1/P2 target `K_p`, while P3 separately tests survival in `A_p` and `C_p` |

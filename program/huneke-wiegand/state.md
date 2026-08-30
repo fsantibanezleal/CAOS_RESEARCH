@@ -116,8 +116,9 @@
 | 2026-08-27 | confirmed | published | 48-page manuscript v0.21 passed claim/build/render, sole-authorship, exact-draft, publication, concept-latest, and fresh-download gates; DOI `10.5281/zenodo.22135689` matches the committed PDF exactly |
 | 2026-08-27 | published | active | structure/content/template guards, Ruff, all 60 tests, full registry regeneration, and manifest/artifact consistency pass; HWB-057 opens separate-PR promotion to `develop` and then `main` |
 | 2026-08-27 | active | published | PR #222 passed `guards` and `test` and merged EXP-034 plus v0.21 to `develop` at `0092685`; PR #223 passed all required checks and promoted the exact tested state to `main` at `4cde185` |
+| 2026-08-30 | published | active | EXP-035 declared before implementation: classify every primitive zero row by `R_b subset F` and test whether the block `b=10p+t`, `2<=t<=p-2`, gives consecutive surviving regularity-two classes |
 
-Current state: **EXP-034 is confirmed; HWB-056 is done with manuscript v0.21 published and
+Current state: **EXP-035 is active under HWB-058 with no result claimed. EXP-034 is confirmed; HWB-056 is done with manuscript v0.21 published and
 fresh-download verified at DOI `10.5281/zenodo.22135689`; HWB-057 is done after PRs #222/#223
 promoted payload tree `f571fb955560c29489c181a6ce542548619209e0` through `develop` and `main`.
 EXP-033 is confirmed; HWB-053 is done
