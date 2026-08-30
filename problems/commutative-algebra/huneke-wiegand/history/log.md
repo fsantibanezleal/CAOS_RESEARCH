@@ -1356,3 +1356,17 @@
 - P1/P2 are confirmed for all `p>=4`; P3's coordinatewise mechanism is refuted, and no
   all-parameter connecting-survival claim is made. HWB-058 is done and HWB-059 opens manuscript
   v0.22. A separate manuscript remains premature.
+
+## 2026-08-30 - manuscript v0.22 published and verified
+
+- The EXP-035 theorem, explicit P3 refutation, full target quotient, Smith form, and narrowed
+  torsion question were incorporated into the existing main manuscript rather than split.
+- The 51-page v0.22 candidate passed claim and scope audit, two warning-free builds, metadata and
+  text extraction, complete 150-DPI rendered inspection, and sole-human-authorship/ORCID gates.
+- The frozen PDF is 810,905 bytes with MD5 `5ed2409d6688b30147963a7293598440` and SHA-256
+  `3868f511a047073c9d7bedf25e026f1aaf3a5ab2c05c45d03614675ef6bdf5c2`.
+- Zenodo record `22177072`, DOI `10.5281/zenodo.22177072`, is public and concept-latest at
+  version `0.22`. Public metadata, sole creator/ORCID, CC BY 4.0 license, filename, bytes, and MD5
+  agree, and a fresh unauthenticated download matches Git by MD5 and SHA-256.
+- Ruff, all 60 tests, full registry regeneration, artifact consistency, and repository guards
+  pass. HWB-059 is done; HWB-060 owns separate-PR promotion to `develop` and then `main`.

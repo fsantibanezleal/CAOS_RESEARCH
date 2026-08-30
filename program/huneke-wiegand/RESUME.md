@@ -23,9 +23,12 @@ beta_(5,(7,87))(K_4)=5 over GF(2),  4 over GF(3),
 beta_(5,(7,87))(A_4)=beta_(5,(7,87))(C_4)=4 over GF(2),  3 over GF(3).
 ```
 
-The integral kernel cokernel is `Z^4 direct-sum Z/2Z`. HWB-058 is done. HWB-059 is active for
-in-place manuscript v0.22; no Zenodo update is yet claimed. EXP-034 is CONFIRMED and manuscript
-v0.21 is PUBLISHED. Put
+The integral kernel cokernel is `Z^4 direct-sum Z/2Z`. HWB-058 and HWB-059 are done. The 51-page
+manuscript v0.22 is published and fresh-download verified at DOI
+`10.5281/zenodo.22177072`. Its 810,905-byte PDF has MD5
+`5ed2409d6688b30147963a7293598440` and SHA-256
+`3868f511a047073c9d7bedf25e026f1aaf3a5ab2c05c45d03614675ef6bdf5c2`. HWB-060 owns repository
+promotion. EXP-034 is CONFIRMED and manuscript v0.21 is PUBLISHED. Put
 `tau_p=8p-1+p(p+1)/2`. The Artinian reduction of the high-variable kernel and a separate unit
 connecting-map pivot prove, over every field,
 
@@ -406,8 +409,8 @@ primitive zero-coordinate summand is classified by `R_b subset F`. For `2<=t<=p-
 has size `2p-t-1`, giving consecutive kernel classes. The canonical classification passes through
 `p=300`. The first connecting smoke case has an explicit integral source cycle, but the complete
 target quotient proves characteristic dependence at `p=4`: dimensions are `4` over `GF(2)` and
-`3` over `GF(3)` for both `A_4` and `C_4`. HWB-058 is done. HWB-059 owns manuscript v0.22 and
-Zenodo; neither is yet claimed complete.
+`3` over `GF(3)` for both `A_4` and `C_4`. HWB-058 and HWB-059 are done. Manuscript v0.22 is
+published and fresh-download verified; HWB-060 owns repository promotion.
 
 EXP-034 is CONFIRMED. With `S_p=P_p/(X_0)` and `M_p=K_p/X_0K_p`, the kernel has an explicit
 two-layer offset basis and signed incidence maps `delta_i`. The first missing cell has
@@ -660,23 +663,25 @@ Published baseline:
 - v0.21 DOI `10.5281/zenodo.22135689`: first surviving lower-strand class. The public 792,863-byte
   PDF has MD5 `13b92773205a49977abb88cd7ab8dde1` and SHA-256
   `c717fbb4d6d3178e0fb0786a8a61c9e2c109d97d77a7b9e1308a2274c0f97539`.
+- v0.22 DOI `10.5281/zenodo.22177072`: primitive zero-row classification and first
+  characteristic-dependent lower cell. The public 810,905-byte PDF has MD5
+  `5ed2409d6688b30147963a7293598440` and SHA-256
+  `3868f511a047073c9d7bedf25e026f1aaf3a5ab2c05c45d03614675ef6bdf5c2`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `22135689`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `22177072`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Incorporate the EXP-035 theorem and explicit P3 refutation in the existing main manuscript as
-   v0.22; run claim, clean-build, rendered-page, metadata, and sole-authorship gates.
-2. Publish a Zenodo new version only after the committed PDF and draft metadata match exactly,
-   then verify a fresh public download.
-3. Open the next theorem experiment on the all-parameter anatomy of the discovered `2`-torsion;
+1. Promote the complete EXP-035 and verified v0.22 record through separate PRs to `develop` and
+   then `main`; verify required checks and final remote trees.
+2. Open the next theorem experiment on the all-parameter anatomy of the discovered `2`-torsion;
    do not extrapolate from `p=4` without a declaration and finite-target preflight.
-4. Evaluate a separate manuscript only after the incidence method determines a complete strand
+3. Evaluate a separate manuscript only after the incidence method determines a complete strand
    or yields a transferable theorem beyond this family.
-5. Keep the maximal-rank model rejected unless a new exact incidence calculation restores it on
+4. Keep the maximal-rank model rejected unless a new exact incidence calculation restores it on
    a precisely stated subregion.
-6. Leave CAOS_MANAGE untouched during this round; its deferred ledgers are outside the active
+5. Leave CAOS_MANAGE untouched during this round; its deferred ledgers are outside the active
    product-repository scope.
 
 ### Lenses ledger
