@@ -2,6 +2,9 @@
 
 Status at declaration: **ACTIVE, NO RESULT CLAIMED**.
 
+Final status: **P1 CONFIRMED; P2 COMPACT CORE CONFIRMED, SIX-VARIABLE RECOGNITION REJECTED FOR
+THE CANONICAL REDUCTION; P3 NOT ESTABLISHED.**  See `proof.md` and `verdict.md`.
+
 ## Question
 
 Is the `Z/2Z` factor found by EXP-035 an isolated `(p,t)=(4,2)` accident, or does it come from a

@@ -1,0 +1,629 @@
+{
+  "experiment": "EXP-036",
+  "route": "exact-sum finite torsion screen and unit residual",
+  "status": "PASS_FINITE_SCREEN",
+  "generated_at": "2026-08-30T22:29:16.553331+00:00",
+  "parameters": {
+    "p_min": 4,
+    "p_max": 5,
+    "targeted_cells": [
+      [
+        4,
+        2
+      ]
+    ],
+    "fields": [
+      2,
+      3,
+      1000003
+    ],
+    "budget_seconds": 120.0
+  },
+  "premise_hashes": {
+    "EXP-032 proof": "4dc37605c012b7f6a70ec5d383897c45a34e1dd5d5e4bb32a0582b7a6d651d1c",
+    "EXP-033 proof": "e27cd386ad47da7ad5282e88a095d82f2b1156f76546e934b287e911da2c7b1c",
+    "EXP-034 proof": "0d0a87b0a5fd4e3bbb5570e3e664eb59fcf8d07222abd62c48bdae9d20d61b4a",
+    "EXP-034 verdict": "ebbf52a0b2d85b0bb5c71ca6fb48846d17b1d91644e48e69dbc3a5e8a5f81304"
+  },
+  "rows": [
+    {
+      "p": 4,
+      "t": 2,
+      "target_offset": 42,
+      "homological_degree": 5,
+      "standard_internal_degree": 7,
+      "total_offset": 87,
+      "selected_row": [
+        [
+          2,
+          4,
+          12,
+          13,
+          14
+        ],
+        42
+      ],
+      "kernel_codomain_rows": 79,
+      "kernel_domain_columns": 119,
+      "d_source_columns": 710,
+      "selected_connecting_source_count": 5,
+      "kernel_codomain_hash": "07f914ec36c6f04b755998cf951567912e58f2e0d75af32d6844d9d791738152",
+      "kernel_domain_hash": "ccab1ef2304fbb10c06c4379c20af6f6753d10156039ca56077191dcf757af22",
+      "d_source_hash": "82c747b01bece3055f8ae21cc138110163b2bb9c76e479078a083e4f4fdcb367",
+      "field_rows": {
+        "2": {
+          "rank_kernel_boundary": 74,
+          "kernel_cokernel_dimension": 5,
+          "rank_d_boundary": 513,
+          "rank_combined": 588,
+          "connecting_image_dimension_in_kernel_cokernel": 1,
+          "surviving_a_dimension": 4
+        },
+        "3": {
+          "rank_kernel_boundary": 75,
+          "kernel_cokernel_dimension": 4,
+          "rank_d_boundary": 513,
+          "rank_combined": 589,
+          "connecting_image_dimension_in_kernel_cokernel": 1,
+          "surviving_a_dimension": 3
+        },
+        "1000003": {
+          "rank_kernel_boundary": 75,
+          "kernel_cokernel_dimension": 4,
+          "rank_d_boundary": 513,
+          "rank_combined": 589,
+          "connecting_image_dimension_in_kernel_cokernel": 1,
+          "surviving_a_dimension": 3
+        }
+      },
+      "even_rank_defect": 1,
+      "kernel_characteristic_dependent": true,
+      "a_characteristic_dependent": true,
+      "kernel_boundary_smith_profile": {
+        "integer_rank": 75,
+        "free_cokernel_rank": 4,
+        "torsion_invariant_factors": {
+          "2": 1
+        },
+        "diagonal_hash": "b57ebfd6175567e070f15e581c04e4fd920134736d11b92b90249cb9f36d2036"
+      },
+      "unit_residual": {
+        "unit_pivots": 74,
+        "residual_rows": 5,
+        "residual_columns": 45,
+        "residual_nonzeros": 2,
+        "residual_entry_gcd": 2,
+        "residual_max_abs": 2,
+        "residual_matrix_hash": "715ea50e3fb5c2a3aac50d942f6ff06311e8c1154a578f1956b721ca9a512e13",
+        "residual_smith_profile": {
+          "integer_rank": 1,
+          "free_cokernel_rank": 4,
+          "torsion_invariant_factors": {
+            "2": 1
+          },
+          "diagonal_hash": "038966de9f6b9a901b20b4c6ca8b2a46009feebe031babc842d43690c0bc222b"
+        },
+        "transform_certificate_hash": "1cd41f70abb13e79eb6cb3687134ddcdf4ddd0f69129803d799f7653710ece36",
+        "transform_certificate": {
+          "nonzero_residual_rows": [
+            2
+          ],
+          "nonzero_residual_columns": [
+            8,
+            19
+          ],
+          "row_basis": [
+            [
+              [
+                20,
+                1
+              ],
+              [
+                30,
+                -1
+              ],
+              [
+                35,
+                -1
+              ],
+              [
+                42,
+                1
+              ],
+              [
+                48,
+                1
+              ],
+              [
+                56,
+                -1
+              ],
+              [
+                58,
+                1
+              ],
+              [
+                62,
+                -1
+              ],
+              [
+                72,
+                1
+              ],
+              [
+                75,
+                -1
+              ]
+            ]
+          ],
+          "column_basis": [
+            [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                -1
+              ],
+              [
+                44,
+                1
+              ],
+              [
+                49,
+                -1
+              ],
+              [
+                51,
+                1
+              ],
+              [
+                53,
+                1
+              ],
+              [
+                58,
+                -1
+              ],
+              [
+                60,
+                -1
+              ],
+              [
+                69,
+                1
+              ],
+              [
+                71,
+                -1
+              ],
+              [
+                83,
+                1
+              ],
+              [
+                87,
+                -1
+              ],
+              [
+                90,
+                -1
+              ],
+              [
+                100,
+                -1
+              ],
+              [
+                103,
+                1
+              ],
+              [
+                111,
+                -1
+              ],
+              [
+                112,
+                1
+              ],
+              [
+                116,
+                1
+              ],
+              [
+                118,
+                -1
+              ]
+            ],
+            [
+              [
+                15,
+                -1
+              ],
+              [
+                25,
+                1
+              ],
+              [
+                29,
+                -1
+              ],
+              [
+                41,
+                1
+              ],
+              [
+                44,
+                1
+              ],
+              [
+                60,
+                -1
+              ],
+              [
+                73,
+                1
+              ],
+              [
+                83,
+                1
+              ],
+              [
+                87,
+                -1
+              ],
+              [
+                94,
+                -1
+              ],
+              [
+                100,
+                -1
+              ],
+              [
+                103,
+                1
+              ],
+              [
+                116,
+                1
+              ],
+              [
+                118,
+                -1
+              ]
+            ]
+          ],
+          "original_row_indices": [
+            20,
+            30,
+            35,
+            42,
+            48,
+            56,
+            58,
+            62,
+            72,
+            75
+          ],
+          "original_column_indices": [
+            0,
+            2,
+            15,
+            25,
+            29,
+            41,
+            44,
+            49,
+            51,
+            53,
+            58,
+            60,
+            69,
+            71,
+            73,
+            83,
+            87,
+            90,
+            94,
+            100,
+            103,
+            111,
+            112,
+            116,
+            118
+          ],
+          "exterior_variable_support": [
+            1,
+            2,
+            3,
+            4,
+            12,
+            13,
+            14,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "low_variable_support": [
+            1,
+            2,
+            3,
+            4,
+            12,
+            13,
+            14
+          ],
+          "module_offset_support": [
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            34,
+            36,
+            37,
+            38,
+            40,
+            41,
+            42
+          ]
+        },
+        "residual_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "row_hash": "ccd7c394df4788b2739cc423ef80ec81ef912d9981c33c9ace4b41ddbd876b8c"
+    }
+  ],
+  "elapsed_seconds": 0.079078,
+  "p1_finite_propagation": "NOT_REACHED",
+  "positive_cells": [
+    [
+      4,
+      2
+    ]
+  ],
+  "artifact_sha256": "8906751aaa2df6014c127808bf667aae81d6daccbf7a484526af01c77480109b"
+}

@@ -1076,3 +1076,36 @@ additional characteristic dependence even when the kernel is independent: `A_(5,
 `24` and `20`, while `A_(6,2)` has dimensions `95` and `86` over `GF(2)` and odd characteristic.
 Together with the EXP-035 gap at `p=4`, the `t=2` excess sequence is `1,4,9=(p-3)^2`. The next
 gate is a targeted `p=7,8` test and interval-block derivation, not a raw full-resolution sweep.
+
+EXP-036 is now CONFIRMED with structural propagation unresolved.  Targeted exact cells give
+`t=2` characteristic-two excesses
+
+```text
+p=4,5,6,7,8,9: 1,4,9,18,31,49.
+```
+
+The `p=7` value refutes `(p-3)^2`; the `p=9` value refutes the quadratic that fits `p=5,...,8`.
+For every tested `5<=p<=9`, the `t=2` kernel cokernel is characteristic-independent and the
+connecting-image rank creates the entire excess.  This is a second mechanism, distinct from the
+kernel rank defects at `(4,2)`, `(5,3)`, and `(6,3)`.  Independent semigroup reconstruction,
+dynamic exact sums, reverse pivots, and a third odd field reproduce the canonical targets.
+
+The `(4,2)` unit reduction confirms a compact factor-two residual but traces it to seven low
+variables, so the declared six-variable projective-plane recognition is not obtained.  A separate
+symbolic argument closes the family-wide cubic question: its shifted source misses the target by
+at least `3(p-1)^2`, hence `A_p=C_p` at every declared `(p,t)`.  This does not prove infinitely
+many characteristic-dependent cells or a formula for their multiplicities.  HWB-061 remains
+active only for that connecting-parity theorem.
+
+## 2026-08-30 - manuscript v0.23 publication gate
+
+HWB-062 opens an in-place update of the main manuscript.  The publication payload must include
+the finite propagation table, the distinction between kernel and connecting mechanisms, the
+compact integral localization, both refuted interpolations, the all-parameter cubic-source
+inequality, and an explicit finite-only scope statement.  A separate paper remains premature.
+
+The gate requires a fresh claim audit, two warning-free builds, PDF metadata and text checks,
+complete 150-DPI rendered inspection, sole-human-authorship and ORCID checks, exact Zenodo draft
+validation, publication, concept-latest verification, and a fresh public-download hash match.
+HWB-063 opens only after that publication is frozen and owns separate PR promotion through
+`develop` and `main`.

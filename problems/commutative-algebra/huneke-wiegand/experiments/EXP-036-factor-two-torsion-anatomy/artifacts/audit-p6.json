@@ -1,0 +1,325 @@
+{
+  "experiment": "EXP-036",
+  "route": "semigroup reconstruction, dynamic exact sums, reverse pivots",
+  "status": "PASS_INDEPENDENT_P6",
+  "generated_at": "2026-08-30T22:28:04.702789+00:00",
+  "canonical_artifact_sha256": "7c30e32740b27f8b41343246b7ea9da7e7270f35485cd0ec623778ea081fe365",
+  "comparisons": {
+    "4:2": {
+      "basis_counts": true,
+      "basis_hashes": true,
+      "gf2_ranks": true,
+      "gf3_ranks": true
+    },
+    "5:2": {
+      "basis_counts": true,
+      "basis_hashes": true,
+      "gf2_ranks": true,
+      "gf3_ranks": true
+    },
+    "5:3": {
+      "basis_counts": true,
+      "basis_hashes": true,
+      "gf2_ranks": true,
+      "gf3_ranks": true
+    },
+    "6:2": {
+      "basis_counts": true,
+      "basis_hashes": true,
+      "gf2_ranks": true,
+      "gf3_ranks": true
+    },
+    "6:3": {
+      "basis_counts": true,
+      "basis_hashes": true,
+      "gf2_ranks": true,
+      "gf3_ranks": true
+    },
+    "6:4": {
+      "basis_counts": true,
+      "basis_hashes": true,
+      "gf2_ranks": true,
+      "gf3_ranks": true
+    }
+  },
+  "rows": [
+    {
+      "p": 4,
+      "t": 2,
+      "checks": {
+        "degree_one_count": true,
+        "degree_two_count": true,
+        "high_count": true,
+        "kernel_degree_two_count": true,
+        "selected_representation_set": true,
+        "selected_row_present": true,
+        "odd_fields_agree": true
+      },
+      "kernel_codomain_rows": 79,
+      "kernel_domain_columns": 119,
+      "d_source_columns": 710,
+      "kernel_codomain_hash": "07f914ec36c6f04b755998cf951567912e58f2e0d75af32d6844d9d791738152",
+      "kernel_domain_hash": "ccab1ef2304fbb10c06c4379c20af6f6753d10156039ca56077191dcf757af22",
+      "d_source_hash": "82c747b01bece3055f8ae21cc138110163b2bb9c76e479078a083e4f4fdcb367",
+      "field_rows": {
+        "2": {
+          "rank_kernel_boundary": 74,
+          "kernel_cokernel_dimension": 5,
+          "rank_d_boundary": 513,
+          "rank_combined": 588,
+          "connecting_image_dimension_in_kernel_cokernel": 1,
+          "surviving_a_dimension": 4
+        },
+        "3": {
+          "rank_kernel_boundary": 75,
+          "kernel_cokernel_dimension": 4,
+          "rank_d_boundary": 513,
+          "rank_combined": 589,
+          "connecting_image_dimension_in_kernel_cokernel": 1,
+          "surviving_a_dimension": 3
+        },
+        "5": {
+          "rank_kernel_boundary": 75,
+          "kernel_cokernel_dimension": 4,
+          "rank_d_boundary": 513,
+          "rank_combined": 589,
+          "connecting_image_dimension_in_kernel_cokernel": 1,
+          "surviving_a_dimension": 3
+        }
+      },
+      "row_hash": "645c9669502fe09876f3e5a075f48d951ed03ad21ae5f4fa7fbd21a86d8fc581"
+    },
+    {
+      "p": 5,
+      "t": 2,
+      "checks": {
+        "degree_one_count": true,
+        "degree_two_count": true,
+        "high_count": true,
+        "kernel_degree_two_count": true,
+        "selected_representation_set": true,
+        "selected_row_present": true,
+        "odd_fields_agree": true
+      },
+      "kernel_codomain_rows": 262,
+      "kernel_domain_columns": 326,
+      "d_source_columns": 3384,
+      "kernel_codomain_hash": "d547dc5607b54408ac2a4dc3705285aee064ea541cb90ab7dd8415f5845a1475",
+      "kernel_domain_hash": "d2373911813befc17b8544db72877bfb119602efe5a521c8643669b167cb8329",
+      "d_source_hash": "dae226ede8103940df2731808a2f88fca50368c1e6e3c88f914a5dcf9ec974d4",
+      "field_rows": {
+        "2": {
+          "rank_kernel_boundary": 223,
+          "kernel_cokernel_dimension": 39,
+          "rank_d_boundary": 2697,
+          "rank_combined": 2935,
+          "connecting_image_dimension_in_kernel_cokernel": 15,
+          "surviving_a_dimension": 24
+        },
+        "3": {
+          "rank_kernel_boundary": 223,
+          "kernel_cokernel_dimension": 39,
+          "rank_d_boundary": 2697,
+          "rank_combined": 2939,
+          "connecting_image_dimension_in_kernel_cokernel": 19,
+          "surviving_a_dimension": 20
+        },
+        "5": {
+          "rank_kernel_boundary": 223,
+          "kernel_cokernel_dimension": 39,
+          "rank_d_boundary": 2697,
+          "rank_combined": 2939,
+          "connecting_image_dimension_in_kernel_cokernel": 19,
+          "surviving_a_dimension": 20
+        }
+      },
+      "row_hash": "73d46d067a70afe305984b7f298f9ec254205045ebdb67efb11616a3b8b38e99"
+    },
+    {
+      "p": 5,
+      "t": 3,
+      "checks": {
+        "degree_one_count": true,
+        "degree_two_count": true,
+        "high_count": true,
+        "kernel_degree_two_count": true,
+        "selected_representation_set": true,
+        "selected_row_present": true,
+        "odd_fields_agree": true
+      },
+      "kernel_codomain_rows": 695,
+      "kernel_domain_columns": 1421,
+      "d_source_columns": 7938,
+      "kernel_codomain_hash": "6f9a6f63e64694d7af2937dcfcec41833aaf8a173662ac65a71187e054bc38f5",
+      "kernel_domain_hash": "cdd354a77d40081afe398978214071f3cf7aee46da17305aa3eecfff2adeef72",
+      "d_source_hash": "75ecc98429c1312a7ab528297d0260e2b27bd69dfeb9fa5562c1c3390dd49468",
+      "field_rows": {
+        "2": {
+          "rank_kernel_boundary": 690,
+          "kernel_cokernel_dimension": 5,
+          "rank_d_boundary": 5168,
+          "rank_combined": 5860,
+          "connecting_image_dimension_in_kernel_cokernel": 2,
+          "surviving_a_dimension": 3
+        },
+        "3": {
+          "rank_kernel_boundary": 692,
+          "kernel_cokernel_dimension": 3,
+          "rank_d_boundary": 5168,
+          "rank_combined": 5861,
+          "connecting_image_dimension_in_kernel_cokernel": 1,
+          "surviving_a_dimension": 2
+        },
+        "5": {
+          "rank_kernel_boundary": 692,
+          "kernel_cokernel_dimension": 3,
+          "rank_d_boundary": 5168,
+          "rank_combined": 5861,
+          "connecting_image_dimension_in_kernel_cokernel": 1,
+          "surviving_a_dimension": 2
+        }
+      },
+      "row_hash": "a6189404eca43eec240de3ad8343555bf5a870b2294043d7ff69c7c736261580"
+    },
+    {
+      "p": 6,
+      "t": 2,
+      "checks": {
+        "degree_one_count": true,
+        "degree_two_count": true,
+        "high_count": true,
+        "kernel_degree_two_count": true,
+        "selected_representation_set": true,
+        "selected_row_present": true,
+        "odd_fields_agree": true
+      },
+      "kernel_codomain_rows": 732,
+      "kernel_domain_columns": 788,
+      "d_source_columns": 12891,
+      "kernel_codomain_hash": "ac86cd99860685e1307d2e4e5f4c9fd43b02eac25a68e6cae3fdb667ce2e7b2e",
+      "kernel_domain_hash": "cad2f9d439084c0541a4c3ab3e8aa26fd8554dbb9a6fe020ffddc0309f0beadb",
+      "d_source_hash": "bd480203277d0a0142bc4819422477617a1a0951f04407f58bfd1ff011f3f574",
+      "field_rows": {
+        "2": {
+          "rank_kernel_boundary": 554,
+          "kernel_cokernel_dimension": 178,
+          "rank_d_boundary": 10911,
+          "rank_combined": 11548,
+          "connecting_image_dimension_in_kernel_cokernel": 83,
+          "surviving_a_dimension": 95
+        },
+        "3": {
+          "rank_kernel_boundary": 554,
+          "kernel_cokernel_dimension": 178,
+          "rank_d_boundary": 10911,
+          "rank_combined": 11557,
+          "connecting_image_dimension_in_kernel_cokernel": 92,
+          "surviving_a_dimension": 86
+        },
+        "5": {
+          "rank_kernel_boundary": 554,
+          "kernel_cokernel_dimension": 178,
+          "rank_d_boundary": 10911,
+          "rank_combined": 11557,
+          "connecting_image_dimension_in_kernel_cokernel": 92,
+          "surviving_a_dimension": 86
+        }
+      },
+      "row_hash": "0756bf3402515690e42ed2cdd4794ae2644f17cc933c0a3f451735b3fb1c2664"
+    },
+    {
+      "p": 6,
+      "t": 3,
+      "checks": {
+        "degree_one_count": true,
+        "degree_two_count": true,
+        "high_count": true,
+        "kernel_degree_two_count": true,
+        "selected_representation_set": true,
+        "selected_row_present": true,
+        "odd_fields_agree": true
+      },
+      "kernel_codomain_rows": 2910,
+      "kernel_domain_columns": 5301,
+      "d_source_columns": 44953,
+      "kernel_codomain_hash": "78ddebab835ea27525c6f9e1b71d7936a0c88913ae56c52bf0da94738c053902",
+      "kernel_domain_hash": "aec5d53fa130a8e65d02a47db2708a8b5c3891752c2f366718309a1d025f415c",
+      "d_source_hash": "6a682ec18af7bc5eb5f246c8eff1eadd31c0706d4b33860cffb10aa53050dc11",
+      "field_rows": {
+        "2": {
+          "rank_kernel_boundary": 2797,
+          "kernel_cokernel_dimension": 113,
+          "rank_d_boundary": 32634,
+          "rank_combined": 35500,
+          "connecting_image_dimension_in_kernel_cokernel": 69,
+          "surviving_a_dimension": 44
+        },
+        "3": {
+          "rank_kernel_boundary": 2799,
+          "kernel_cokernel_dimension": 111,
+          "rank_d_boundary": 32634,
+          "rank_combined": 35507,
+          "connecting_image_dimension_in_kernel_cokernel": 74,
+          "surviving_a_dimension": 37
+        },
+        "5": {
+          "rank_kernel_boundary": 2799,
+          "kernel_cokernel_dimension": 111,
+          "rank_d_boundary": 32634,
+          "rank_combined": 35507,
+          "connecting_image_dimension_in_kernel_cokernel": 74,
+          "surviving_a_dimension": 37
+        }
+      },
+      "row_hash": "a6a09150659c4d518883dce0ac41505613b7b9710217ea58ced8b1c20ba8cde2"
+    },
+    {
+      "p": 6,
+      "t": 4,
+      "checks": {
+        "degree_one_count": true,
+        "degree_two_count": true,
+        "high_count": true,
+        "kernel_degree_two_count": true,
+        "selected_representation_set": true,
+        "selected_row_present": true,
+        "odd_fields_agree": true
+      },
+      "kernel_codomain_rows": 6462,
+      "kernel_domain_columns": 17117,
+      "d_source_columns": 88199,
+      "kernel_codomain_hash": "fbb0a9bac0e5aa20147f770774576130985ddb17260b94d6de8518379d347022",
+      "kernel_domain_hash": "c069709c7013482effecfb31e8f6c58e3e55d0eec173f91816ae782482ede1fe",
+      "d_source_hash": "440ddf862ee2372e0065644ddc8818d32f5a4406033e612a8506fd4f9d08e839",
+      "field_rows": {
+        "2": {
+          "rank_kernel_boundary": 6459,
+          "kernel_cokernel_dimension": 3,
+          "rank_d_boundary": 53385,
+          "rank_combined": 59845,
+          "connecting_image_dimension_in_kernel_cokernel": 1,
+          "surviving_a_dimension": 2
+        },
+        "3": {
+          "rank_kernel_boundary": 6459,
+          "kernel_cokernel_dimension": 3,
+          "rank_d_boundary": 53385,
+          "rank_combined": 59845,
+          "connecting_image_dimension_in_kernel_cokernel": 1,
+          "surviving_a_dimension": 2
+        },
+        "5": {
+          "rank_kernel_boundary": 6459,
+          "kernel_cokernel_dimension": 3,
+          "rank_d_boundary": 53385,
+          "rank_combined": 59845,
+          "connecting_image_dimension_in_kernel_cokernel": 1,
+          "surviving_a_dimension": 2
+        }
+      },
+      "row_hash": "2faff05b7fe7ffc30575e14f8ed1f44e6ec51de37698a0776e4b583704789283"
+    }
+  ],
+  "elapsed_seconds": 23.653565,
+  "artifact_sha256": "36c8c8b62fa81aa465fef63c9e10ba5bb8b74764c9790f4612eaf16565f47672"
+}

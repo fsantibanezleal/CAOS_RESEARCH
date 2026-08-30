@@ -1412,3 +1412,34 @@
   rank four and one factor-two summand.
 - These are canonical exact finite results, not yet an all-parameter theorem. Targeted `p=7,8`
   checks and an independently reconstructed interval-block proof are now required.
+
+## 2026-08-30 - EXP-036 confirmed with two characteristic mechanisms
+
+- Targeted exact-sum cells extend the `t=2` diagonal through `p=9`.  The characteristic-two
+  excesses in `A_p` and `C_p` are `1,4,9,18,31,49` for `p=4,...,9`.
+- The exact `p=7` value refutes `(p-3)^2`; the exact `p=9` value refutes the quadratic
+  `2p^2-17p+39` that fits `p=5,...,8`.  Both failed interpolations are retained as negative
+  controls.
+- For every tested `t=2` cell with `5<=p<=9`, the kernel cokernel has identical GF(2) and odd
+  dimensions.  The connecting image is smaller in characteristic two and creates the full
+  excess.  This is distinct from the kernel rank defects at `(4,2)`, `(5,3)`, and `(6,3)`.
+- The targeted canonical artifacts for `p=7,8` and `p=9` have internal hashes
+  `4773020bc77ff92777f067368c3169a80ef2c693b05d7f7e6693d3271716711f` and
+  `a59286a01def0b9314e79c70218efb8eb29b1aad586d2b7b8df1792df9509009`.
+- The independent semigroup/dynamic-sum/reverse-pivot route matches all bases and ranks through
+  `(8,2)`, with artifact hashes
+  `36c8c8b62fa81aa465fef63c9e10ba5bb8b74764c9790f4612eaf16565f47672` and
+  `99b1089fb1edcd770d2e90ed746b841768dbfb9fde6dde63b0819c0271690381`.
+  Its `(9,2)` attempt crossed 47.5 GB of private memory and is preserved as
+  `INCONCLUSIVE_RESOURCE_BUDGET`, not evidence.
+- Exact unit cancellation at `(4,2)` yields a compact factor-two residual and transform
+  certificate hash `1cd41f70abb13e79eb6cb3687134ddcdf4ddd0f69129803d799f7653710ece36`.
+  Its canonical active support uses seven low variables, so the proposed six-variable
+  projective-plane recognition is not obtained.
+- Symbolically, the least high-variable sum exceeds the shifted cubic target by
+  `10p^2-8pt-20p+t^2+2t+3`, whose minimum is `3(p-1)^2`.  Thus the cubic source is absent and
+  `A_p=C_p` at every declared family target.  The symbolic artifact hash is
+  `79f3156ee542a7c224fe0bf5e47fab6dcb1ce5bb4b09a2e002d156aebfd7e7b7`.
+- EXP-036 is CONFIRMED for P1 and compact P2; the strong recognition clause is rejected for the
+  canonical reduction and P3 remains unresolved.  HWB-061 retains the infinite connecting-parity
+  problem; HWB-062 opens manuscript v0.23 and Zenodo publication.

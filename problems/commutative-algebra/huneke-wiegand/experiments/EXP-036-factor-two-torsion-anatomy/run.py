@@ -259,12 +259,30 @@ def smith_profile(matrix: list[list[int]]) -> dict[str, object]:
     }
 
 
-def unit_residual(matrix: list[list[int]]) -> dict[str, object]:
+def add_scaled_basis(
+    target: dict[int, int], source: dict[int, int], scale: int
+) -> None:
+    for index, value in source.items():
+        updated = target.get(index, 0) + scale * value
+        if updated:
+            target[index] = updated
+        else:
+            target.pop(index, None)
+
+
+def unit_residual(
+    matrix: list[list[int]],
+    row_labels: list[tuple[tuple[int, ...], int]],
+    column_labels: list[tuple[tuple[int, ...], int]],
+    low: set[int],
+) -> dict[str, object]:
     """Cancel unit pivots by exact unimodular row and column operations."""
 
     work = [row[:] for row in matrix]
     row_count = len(work)
     column_count = len(work[0]) if work else 0
+    row_basis = [{index: 1} for index in range(row_count)]
+    column_basis = [{index: 1} for index in range(column_count)]
     pivot_count = 0
     while pivot_count < min(row_count, column_count):
         best: tuple[int, int, int] | None = None
@@ -288,10 +306,21 @@ def unit_residual(matrix: list[list[int]]) -> dict[str, object]:
             break
         _, pivot_row, pivot_column = best
         work[pivot_count], work[pivot_row] = work[pivot_row], work[pivot_count]
+        row_basis[pivot_count], row_basis[pivot_row] = (
+            row_basis[pivot_row],
+            row_basis[pivot_count],
+        )
         for row in work:
             row[pivot_count], row[pivot_column] = row[pivot_column], row[pivot_count]
+        column_basis[pivot_count], column_basis[pivot_column] = (
+            column_basis[pivot_column],
+            column_basis[pivot_count],
+        )
         if work[pivot_count][pivot_count] == -1:
             work[pivot_count] = [-value for value in work[pivot_count]]
+            row_basis[pivot_count] = {
+                index: -value for index, value in row_basis[pivot_count].items()
+            }
 
         for column in range(pivot_count + 1, column_count):
             factor = work[pivot_count][column]
@@ -299,16 +328,66 @@ def unit_residual(matrix: list[list[int]]) -> dict[str, object]:
                 continue
             for row in range(pivot_count, row_count):
                 work[row][column] -= factor * work[row][pivot_count]
+            add_scaled_basis(
+                column_basis[column], column_basis[pivot_count], -factor
+            )
         for row in range(pivot_count + 1, row_count):
             factor = work[row][pivot_count]
             if not factor:
                 continue
             for column in range(pivot_count, column_count):
                 work[row][column] -= factor * work[pivot_count][column]
+            add_scaled_basis(row_basis[row], row_basis[pivot_count], -factor)
         pivot_count += 1
 
     residual = [row[pivot_count:] for row in work[pivot_count:]]
     nonzero = [abs(value) for row in residual for value in row if value]
+    nonzero_rows = [
+        index for index, row in enumerate(residual) if any(value != 0 for value in row)
+    ]
+    nonzero_columns = sorted(
+        {
+            column
+            for row in residual
+            for column, value in enumerate(row)
+            if value != 0
+        }
+    )
+    active_row_basis = [row_basis[pivot_count + index] for index in nonzero_rows]
+    active_column_basis = [
+        column_basis[pivot_count + index] for index in nonzero_columns
+    ]
+    original_row_indices = sorted(
+        {index for basis in active_row_basis for index in basis}
+    )
+    original_column_indices = sorted(
+        {index for basis in active_column_basis for index in basis}
+    )
+    exterior_support = {
+        variable
+        for index in original_row_indices
+        for variable in row_labels[index][0]
+    } | {
+        variable
+        for index in original_column_indices
+        for variable in column_labels[index][0]
+    }
+    module_offset_support = {
+        row_labels[index][1] for index in original_row_indices
+    } | {
+        column_labels[index][1] for index in original_column_indices
+    }
+    transform_certificate = {
+        "nonzero_residual_rows": nonzero_rows,
+        "nonzero_residual_columns": nonzero_columns,
+        "row_basis": [sorted(basis.items()) for basis in active_row_basis],
+        "column_basis": [sorted(basis.items()) for basis in active_column_basis],
+        "original_row_indices": original_row_indices,
+        "original_column_indices": original_column_indices,
+        "exterior_variable_support": sorted(exterior_support),
+        "low_variable_support": sorted(exterior_support & low),
+        "module_offset_support": sorted(module_offset_support),
+    }
     residual_profile = smith_profile(residual) if residual and residual[0] else {
         "integer_rank": 0,
         "free_cokernel_rank": len(residual),
@@ -324,6 +403,8 @@ def unit_residual(matrix: list[list[int]]) -> dict[str, object]:
         "residual_max_abs": max(nonzero, default=0),
         "residual_matrix_hash": digest(residual),
         "residual_smith_profile": residual_profile,
+        "transform_certificate_hash": digest(transform_certificate),
+        "transform_certificate": transform_certificate,
         "residual_matrix": residual,
     }
 
@@ -455,7 +536,9 @@ def build_target(p: int, t: int, localize: bool) -> dict[str, object]:
     if localize:
         matrix = dense_matrix(codomain_rows, kernel_boundary_columns)
         row["kernel_boundary_smith_profile"] = smith_profile(matrix)
-        row["unit_residual"] = unit_residual(matrix)
+        row["unit_residual"] = unit_residual(
+            matrix, codomain_rows, kernel_domain_labels, low
+        )
     row["row_hash"] = digest(row)
     return row
 
@@ -491,11 +574,34 @@ def assert_p4_regression(row: dict[str, object]) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--p-max", type=int, default=5)
+    parser.add_argument(
+        "--cell",
+        action="append",
+        default=[],
+        help="target one or more cells as p:t; overrides the full 4..p-max triangle",
+    )
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--budget-seconds", type=float, default=420.0)
     args = parser.parse_args()
     if args.p_max < 4:
         raise ValueError("require p-max>=4")
+    if args.cell:
+        cells = []
+        for raw in args.cell:
+            try:
+                p_text, t_text = raw.split(":", maxsplit=1)
+                p, t = int(p_text), int(t_text)
+            except (ValueError, TypeError) as error:
+                raise ValueError(f"invalid cell {raw!r}; require p:t") from error
+            if p < 4 or not 2 <= t <= p - 2:
+                raise ValueError(f"invalid family cell {(p, t)}")
+            cells.append((p, t))
+    else:
+        cells = [
+            (p, t)
+            for p in range(4, args.p_max + 1)
+            for t in range(2, p - 1)
+        ]
 
     started = time.perf_counter()
     result: dict[str, object] = {
@@ -504,8 +610,9 @@ def main() -> int:
         "status": "RUNNING",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "parameters": {
-            "p_min": 4,
-            "p_max": args.p_max,
+            "p_min": min(p for p, _ in cells),
+            "p_max": max(p for p, _ in cells),
+            "targeted_cells": [list(cell) for cell in cells] if args.cell else None,
             "fields": list(PRIMES),
             "budget_seconds": args.budget_seconds,
         },
@@ -514,29 +621,25 @@ def main() -> int:
     }
     write_json_atomic(args.output, result)
 
-    completed_p5 = True
-    for p in range(4, args.p_max + 1):
-        for t in range(2, p - 1):
-            elapsed = time.perf_counter() - started
-            if elapsed > args.budget_seconds:
-                result["status"] = "INCONCLUSIVE_BUDGET"
-                result["elapsed_seconds"] = round(elapsed, 6)
-                result["artifact_sha256"] = digest(result)
-                write_json_atomic(args.output, result)
-                print("INCONCLUSIVE_BUDGET", flush=True)
-                return 2
-            row = build_target(p, t, localize=(p == 4 and t == 2))
-            if p == 4 and t == 2:
-                assert_p4_regression(row)
-                print("EXP-035 (4,2) regression: PASS", flush=True)
-            result["rows"].append(row)
-            result["elapsed_seconds"] = round(time.perf_counter() - started, 6)
+    for p, t in cells:
+        elapsed = time.perf_counter() - started
+        if elapsed > args.budget_seconds:
+            result["status"] = "INCONCLUSIVE_BUDGET"
+            result["elapsed_seconds"] = round(elapsed, 6)
+            result["artifact_sha256"] = digest(result)
             write_json_atomic(args.output, result)
-        if p == 5 and len([row for row in result["rows"] if row["p"] == 5]) != 2:
-            completed_p5 = False
+            print("INCONCLUSIVE_BUDGET", flush=True)
+            return 2
+        row = build_target(p, t, localize=(p == 4 and t == 2))
+        if p == 4 and t == 2:
+            assert_p4_regression(row)
+            print("EXP-035 (4,2) regression: PASS", flush=True)
+        result["rows"].append(row)
+        result["elapsed_seconds"] = round(time.perf_counter() - started, 6)
+        write_json_atomic(args.output, result)
 
     p5_rows = [row for row in result["rows"] if row["p"] == 5]
-    if completed_p5 and len(p5_rows) == 2:
+    if len(p5_rows) == 2 and {row["t"] for row in p5_rows} == {2, 3}:
         p1_pass = any(row["even_rank_defect"] > 0 for row in p5_rows)
         result["p1_finite_propagation"] = "CONFIRMED" if p1_pass else "REFUTED"
     else:

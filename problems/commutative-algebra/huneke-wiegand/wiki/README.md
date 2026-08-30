@@ -36,6 +36,13 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-027 | CONFIRMED | first interior strand: `beta_(2,4)=8p` with complete multiplicity-free offsets and exact adjacent `beta_(3,4)` over every field |
 | EXP-028 | CONFIRMED | complete second Betti row: exact degree-five three-block multiplicities, `beta_(2,5)=p(2p-3)`, and integral `beta_(2,6)=0` over every field |
 | EXP-029 | CONFIRMED | colon-Koszul pair basis gives `beta_(3,5)=4p(8p-1)` and completes the internal-degree-five diagonal over every field |
+| EXP-030 | CONFIRMED | canonical idealization of the cubic-colon quotient and exact characteristic-free degree-six third syzygies |
+| EXP-031 | CONFIRMED | integral zero-vertex contraction gives `beta_(3,7)=0` and completes the third homological row over every field |
+| EXP-032 | CONFIRMED | complete graded Betti polynomial and every free-module rank and shift of the cubic-colon quotient |
+| EXP-033 | CONFIRMED | depth-one regularity-two quadratic quotient, minimal cubic cone, and complete regularity-three/four strands |
+| EXP-034 | CONFIRMED | exact characteristic-free regularity-two class in `K_p`, `A_p`, and `C_p` for every `p>=4` |
+| EXP-035 | CONFIRMED with P3 mechanism refuted | complete primitive zero-row summand, consecutive kernel classes, and the first characteristic-dependent lower Betti cell |
+| EXP-036 | CONFIRMED with structural propagation unresolved | repeated characteristic-dependent cells through `p=9`, two distinct rank mechanisms, compact factor-two localization, and all-parameter cubic-source absence |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
@@ -53,6 +60,12 @@ Transcribe only closed experiment verdicts and proved derivations.
 | preprint v0.14 | published | first interior Betti-strand theorem, DOI [`10.5281/zenodo.22013515`](https://doi.org/10.5281/zenodo.22013515); exact public-file hash verified |
 | preprint v0.15 | published | complete second Betti-row theorem, DOI [`10.5281/zenodo.22016550`](https://doi.org/10.5281/zenodo.22016550); exact public-file hash verified |
 | preprint v0.16 | published | colon-Koszul degree-five diagonal theorem, DOI [`10.5281/zenodo.22029468`](https://doi.org/10.5281/zenodo.22029468); exact public-file hash verified |
+| preprint v0.17 | published | cubic-colon idealization and degree-six third-syzygy theorem, DOI [`10.5281/zenodo.22030167`](https://doi.org/10.5281/zenodo.22030167); exact public-file hash verified |
+| preprint v0.18 | published | complete third-row theorem, DOI [`10.5281/zenodo.22030743`](https://doi.org/10.5281/zenodo.22030743); exact public-file hash verified |
+| preprint v0.19 | published | complete cubic-colon quotient Betti polynomial, DOI [`10.5281/zenodo.22031481`](https://doi.org/10.5281/zenodo.22031481); exact public-file hash verified |
+| preprint v0.20 | published | minimal cubic mapping-cone and top-strands theorem, DOI [`10.5281/zenodo.22062161`](https://doi.org/10.5281/zenodo.22062161); exact public-file hash verified |
+| preprint v0.21 | published | first surviving lower-strand class, DOI [`10.5281/zenodo.22135689`](https://doi.org/10.5281/zenodo.22135689); exact public-file hash verified |
+| preprint v0.22 | published | zero-row family and first characteristic-dependent lower cell, DOI [`10.5281/zenodo.22177072`](https://doi.org/10.5281/zenodo.22177072); exact public-file hash verified |
 
 CAOS independently reproduces the public counterexample's decisive finite certificate. Discovery
 priority remains Son Pham's; EXP-001 is a replication result, not rediscovery. CAOS's novel
@@ -61,7 +74,8 @@ classification in EXP-007, the EXP-009 infinite family theorem, the EXP-011 unif
 endomorphism-overring theorem, the EXP-012/013 type-and-trace anatomy, the EXP-023 uniform minimal
 presentation of the conductor special fiber, the EXP-024 homological edge theorem, and the
 EXP-025/026 curvilinear and Groebner theorems, and the EXP-027--029 characteristic-free interior
-Betti theorems.
+Betti theorems, the EXP-030--034 structural resolution theorems, and the EXP-035/036
+characteristic-dependent lower-strand results.
 
 ## Uniform endomorphism anatomy
 
@@ -590,3 +604,35 @@ matrix, the `710`-column connecting source, an independent numerical-semigroup r
 four exact field ranks, and a Smith certificate support the result. This proves one
 characteristic-dependent multigraded cell and an all-parameter free zero-row family. It does not
 complete either ordinary lower strand or extend the torsion theorem beyond `p=4`.
+
+## Repeated characteristic dependence and the connecting quotient
+
+EXP-036 applies exact-sum enumeration to every family cell through `p=6` and to the targeted
+`t=2` cells through `p=9`.  The complete target dimensions over `GF(2)` and odd characteristic
+are
+
+```text
+(4,2): 4/3,   (5,2): 24/20,  (5,3): 3/2,
+(6,2): 95/86, (6,3): 44/37,  (6,4): 2/2,
+(7,2): 300/282, (8,2): 808/777, (9,2): 1933/1884.
+```
+
+The `t=2` kernel cokernel is characteristic-independent for every tested `5<=p<=9`; its
+characteristic dependence is produced by the connecting quotient.  This differs from `(4,2)`,
+`(5,3)`, and `(6,3)`, where the kernel incidence matrix already loses rank modulo two.  Exact
+values refute both the square and quadratic formulas suggested by shorter initial segments.
+
+At `(4,2)`, unimodular cancellation leaves a compact `5` by `45` matrix with four zero rows and
+one row containing two entries `-2`.  The active canonical certificate uses seven low variables,
+so the proposed six-variable real-projective-plane recognition is not obtained.
+
+For every integer `p>=4` and `2<=t<=p-2`, the least possible high-variable sum in the shifted
+cubic source exceeds its required offset by at least
+
+```text
+3(p-1)^2.
+```
+
+Thus the cubic source is absent at every declared target and `dim C_p=dim A_p` there.  This is an
+all-parameter transfer theorem, not an infinite proof of characteristic dependence.  The open
+structural problem is the parity-sensitive homology of the connecting-image quotient.
