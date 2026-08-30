@@ -1370,3 +1370,16 @@
   agree, and a fresh unauthenticated download matches Git by MD5 and SHA-256.
 - Ruff, all 60 tests, full registry regeneration, artifact consistency, and repository guards
   pass. HWB-059 is done; HWB-060 owns separate-PR promotion to `develop` and then `main`.
+
+## 2026-08-30 - EXP-035 publication round promoted
+
+- PR #226 passed `guards` and `test` and merged the complete EXP-035 theorem, regenerated public
+  registry, manuscript v0.22, and verified Zenodo publication to `develop` at
+  `95b944273a34d636c0b256b3e7de455d6371c997`.
+- PR #227 passed both required jobs and promoted the exact tested state to `main` at
+  `10d524a9f9226a95f9d1d23341c54f8af6ce0812`.
+- Work, `develop`, and `main` shared payload tree
+  `0847e35a7641ab5592afd136f42bcf09ffe514f3` before this documentation handoff.
+- HWB-060 is done. HWB-061 retains the all-parameter factor-two torsion path as pending; it
+  requires a fresh declaration and finite-target preflight. CAOS_MANAGE remained untouched on
+  `develop`, and no research release tag is claimed.
