@@ -1073,7 +1073,8 @@ The canonical finite checkpoint passes. The bounded exact-sum constructor reprod
 EXP-035 `(4,2)` target, then completes both `p=5` and all three `p=6` cells in 94.072 seconds.
 Kernel even-rank defects occur at `(4,2)`, `(5,3)`, and `(6,3)`. The connecting quotient creates
 additional characteristic dependence even when the kernel is independent: `A_(5,2)` has dimensions
-`24` and `20`, while `A_(6,2)` has dimensions `95` and `86` over `GF(2)` and odd characteristic.
+`24` and `20`, while `A_(6,2)` has dimensions `95` and `86` over `GF(2)` and `GF(3)`;
+`GF(1000003)` agrees with `GF(3)`.
 Together with the EXP-035 gap at `p=4`, the `t=2` excess sequence is `1,4,9=(p-3)^2`. The next
 gate is a targeted `p=7,8` test and interval-block derivation, not a raw full-resolution sweep.
 
@@ -1085,7 +1086,8 @@ p=4,5,6,7,8,9: 1,4,9,18,31,49.
 ```
 
 The `p=7` value refutes `(p-3)^2`; the `p=9` value refutes the quadratic that fits `p=5,...,8`.
-For every tested `5<=p<=9`, the `t=2` kernel cokernel is characteristic-independent and the
+For every tested `5<=p<=9`, the `t=2` kernel-cokernel dimensions agree over all three tested
+fields and the
 connecting-image rank creates the entire excess.  This is a second mechanism, distinct from the
 kernel rank defects at `(4,2)`, `(5,3)`, and `(6,3)`.  Independent semigroup reconstruction,
 dynamic exact sums, reverse pivots, and a third odd field reproduce the canonical targets.

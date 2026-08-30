@@ -126,7 +126,7 @@
 
 Current state: **EXP-036 is confirmed with structural propagation unresolved.  Exact complete
 targets through `(9,2)` prove repeated characteristic dependence by two mechanisms.  For tested
-`t=2` cells with `5<=p<=9`, the kernel cokernel is field-independent and the connecting quotient
+`t=2` cells with `5<=p<=9`, the kernel-cokernel dimensions agree in all three tested fields and the connecting quotient
 creates characteristic-two excesses `4,9,18,31,49`; both the square and quadratic fits are
 refuted.  The cubic-source gap is at least `3(p-1)^2` for all `p>=4`, `2<=t<=p-2`, so the exact
 `A_p` and `C_p` values agree throughout this family.  HWB-061 remains active for an infinite

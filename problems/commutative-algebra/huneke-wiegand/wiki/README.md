@@ -608,7 +608,7 @@ complete either ordinary lower strand or extend the torsion theorem beyond `p=4`
 ## Repeated characteristic dependence and the connecting quotient
 
 EXP-036 applies exact-sum enumeration to every family cell through `p=6` and to the targeted
-`t=2` cells through `p=9`.  The complete target dimensions over `GF(2)` and odd characteristic
+`t=2` cells through `p=9`.  The complete target dimensions over `GF(2)` and `GF(3)`
 are
 
 ```text
@@ -617,7 +617,8 @@ are
 (7,2): 300/282, (8,2): 808/777, (9,2): 1933/1884.
 ```
 
-The `t=2` kernel cokernel is characteristic-independent for every tested `5<=p<=9`; its
+The `t=2` kernel-cokernel dimension agrees over all three tested fields for every
+`5<=p<=9`; its
 characteristic dependence is produced by the connecting quotient.  This differs from `(4,2)`,
 `(5,3)`, and `(6,3)`, where the kernel incidence matrix already loses rank modulo two.  Exact
 values refute both the square and quadratic formulas suggested by shorter initial segments.

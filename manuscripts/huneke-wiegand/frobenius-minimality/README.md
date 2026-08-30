@@ -1,7 +1,14 @@
 # Frobenius-minimality preprint
 
-`main.tex` is version 0.22 of the CAOS Research preprint; version
-0.21 and all earlier versions remain frozen. Version 0.22 adds the EXP-035 primitive zero-row
+`main.tex` is version 0.23 of the CAOS Research preprint; version
+0.22 and all earlier versions remain frozen. Version 0.23 adds the EXP-036 repeated
+characteristic-dependent target campaign, separates kernel-incidence defects from dependence
+created by the connecting quotient, localizes the compact factor-two residual, preserves two
+refuted finite-data formulas, and proves all-parameter absence of the shifted cubic source at the
+declared targets. The exact characteristic-dependent values are finite through `(p,t)=(9,2)`;
+no infinite multiplicity formula or complete lower strand is claimed. Its reserved version DOI is
+`10.5281/zenodo.22181972`.
+Version 0.22 adds the EXP-035 primitive zero-row
 classification, consecutive kernel family, explicit connecting-cycle refutation, and the first
 characteristic-dependent lower multigraded Betti cell. It passed the complete
 claim/build/render, authenticated upload, publication, concept-latest, and fresh-download workflow
@@ -195,9 +202,11 @@ Zenodo identifiers:
 - version 0.20 DOI: `10.5281/zenodo.22062161` (published and fresh-download verified)
 - version 0.21 DOI: `10.5281/zenodo.22135689` (published and fresh-download verified)
 - version 0.22 DOI: `10.5281/zenodo.22177072` (published and fresh-download verified)
+- version 0.23 DOI: `10.5281/zenodo.22181972` (reserved draft; local candidate validation passed,
+  upload/publication verification pending)
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-035 under
+Evidence sources are EXP-001 through EXP-036 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
 finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
@@ -263,6 +272,12 @@ The resulting grading gap proves that the cubic mapping cone is minimal and fixe
 special-fiber strands. Canonical and independently encoded routes pass all `p=4,...,300`; a
 structural kernel audit and symbolic certificate agree. Three exact budget stops are retained as
 inconclusive non-evidence. The two lower quadratic-quotient strands remain open.
+EXP-036 uses complete exact-sum targets through `(9,2)`, exact ranks over GF(2), GF(3), and
+GF(1000003), an independently reconstructed semigroup/dynamic-sum/reverse-pivot route through
+`(8,2)`, exact unimodular localization at `(4,2)`, and a symbolic all-parameter cubic exclusion.
+The independent `(9,2)` route is retained as an inconclusive 47.5-GB resource stop and contributes
+no mathematical evidence. Equal tested odd-prime ranks are not promoted to a theorem for every
+odd characteristic.
 
 Version 0.02 remains frozen with this public-file verification:
 

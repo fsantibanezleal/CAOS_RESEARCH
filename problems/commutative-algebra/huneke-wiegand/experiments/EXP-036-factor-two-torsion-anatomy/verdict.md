@@ -9,8 +9,9 @@ EXP-036 proves that the characteristic-dependent EXP-035 cell is not an isolated
 phenomenon.  Exact complete-target calculations find characteristic dependence in seven of the
 eight newly tested cells.  At `(5,3)` and `(6,3)` the kernel incidence matrix itself has a
 mod-two rank defect.  At every tested `t=2` cell with `5<=p<=9`, the kernel cokernel has the same
-dimension in characteristic two and odd characteristic; the dependence is created entirely by
-the smaller connecting-image rank in characteristic two.
+dimension over `GF(2)` and `GF(3)`; the dependence is created entirely by the smaller
+connecting-image rank over `GF(2)`.  The additional tested field `GF(1000003)` agrees with
+`GF(3)`; no statement covering every odd characteristic is inferred.
 
 For `t=2`, the exact characteristic-two excesses in `A_p` and `C_p` are
 

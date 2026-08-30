@@ -24,7 +24,8 @@ EXP-036 proves three results.
 1. Characteristic dependence is not isolated at `(p,t)=(4,2)`: eight further exact target cells
    are computed, and seven of them are characteristic-dependent after the connecting quotient.
 2. Two mechanisms occur.  Some cells already have a mod-two rank defect in `Delta_(p,t)`, while
-   every tested `t=2` cell with `5<=p<=9` has a characteristic-independent kernel cokernel and
+   every tested `t=2` cell with `5<=p<=9` has the same kernel-cokernel dimension over the three
+   tested fields and
    acquires its characteristic dependence solely from the connecting-image rank.
 3. For every declared `(p,t)`, not merely the computed cells, the shifted cubic summand is absent.
    Hence the exact `A_p` values at these targets equal the corresponding `C_p` values.
@@ -71,7 +72,7 @@ No selected-coordinate submatrix is substituted for the complete target.
 ## 3. Finite propagation and two distinct mechanisms
 
 The complete `p<=6` triangle and the targeted `t=2` cells through `p=9` give the following exact
-dimensions.  Each pair is `GF(2) / odd characteristic`; GF(3) and GF(1000003) agree everywhere.
+dimensions.  Each pair is `GF(2) / GF(3)`; GF(1000003) agrees with GF(3) everywhere.
 
 | `(p,t)` | `dim coker(Delta)` | connecting-image dimension | `dim A=dim C` | excess in characteristic two |
 |---|---:|---:|---:|---:|
@@ -180,7 +181,7 @@ the deliberately different enumerator crossed 47.5 GB of private memory before p
 that attempt is preserved as `INCONCLUSIVE_RESOURCE_BUDGET` and is not mathematical evidence.
 The canonical `(9,2)` result retains two agreeing odd-prime controls.  The symbolic route
 rechecks (2)--(3), all nine finite cubic
-inequalities, every odd-field equality, the localization invariants, and the two deliberately
+inequalities, every tested odd-prime equality, the localization invariants, and the two deliberately
 failed interpolations.
 
 The results prove repeated characteristic-dependent multigraded Betti cells and an

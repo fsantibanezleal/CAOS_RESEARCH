@@ -2,8 +2,9 @@
 
 Updated: 2026-08-30. Lifecycle: EXP-036 is CONFIRMED with structural propagation unresolved.
 Exact complete-target calculations prove repeated characteristic dependence at eight of the nine
-tested family cells through `(p,t)=(9,2)`.  The tested `t=2` cells with `5<=p<=9` have a
-characteristic-independent kernel cokernel but a smaller connecting image in characteristic two;
+tested family cells through `(p,t)=(9,2)`.  The tested `t=2` cells with `5<=p<=9` have the same
+kernel-cokernel dimension over `GF(2)`, `GF(3)`, and `GF(1000003)` but a smaller connecting image
+over `GF(2)`;
 their `A_p=C_p` excesses are `4,9,18,31,49`.  Both the initial square and quadratic
 interpolations are refuted.  For every `p>=4` and `2<=t<=p-2`, the shifted cubic source is absent
 by the positive gap `g(p,t)>=3(p-1)^2`, so every future exact `A_p` value at these targets
@@ -416,7 +417,7 @@ campaign is supporting evidence, not the proof.
 
 EXP-036 is CONFIRMED with its all-parameter structural-propagation prediction unresolved.  Its
 exact-sum route reproduces EXP-035 and computes the complete `p<=6` triangle plus `(7,2)`,
-`(8,2)`, and `(9,2)`.  The exact `A_p=C_p` dimensions over `GF(2)` and odd characteristic are
+`(8,2)`, and `(9,2)`.  The exact `A_p=C_p` dimensions over `GF(2)` and `GF(3)` are
 
 ```text
 (4,2) 4/3, (5,2) 24/20, (5,3) 3/2, (6,2) 95/86,
@@ -424,8 +425,10 @@ exact-sum route reproduces EXP-035 and computes the complete `p<=6` triangle plu
 (8,2) 808/777, (9,2) 1933/1884.
 ```
 
-The tested `t=2` kernel cokernels are field-independent for `5<=p<=9`; their dependence is
-created by the connecting quotient.  The finite excess sequence `1,4,9,18,31,49` refutes both
+The tested `t=2` kernel cokernels have equal dimensions in all three tested fields for
+`5<=p<=9`; their dependence is
+created by the connecting quotient across the three tested fields.  The finite excess sequence
+`1,4,9,18,31,49` refutes both
 the candidate `(p-3)^2` and the later quadratic fit.  At `(4,2)`, 74 exact unit cancellations
 leave a compact `5` by `45` residual with two entries `-2` and Smith cokernel
 `Z^4 direct-sum Z/2Z`.  Its canonical active support has seven low variables, so the proposed
@@ -758,7 +761,8 @@ Published baseline:
 - Torsion recognition: EXP-036 confirms a compact factor-two residual but its canonical active
   support has seven low variables, so the declared six-variable projective-plane recognition is
   not obtained.
-- Connecting-parity redirection: exact `t=2` kernel cokernels are field-independent for
+- Connecting-parity redirection: exact `t=2` kernel-cokernel dimensions agree in the three tested
+  fields for
   `5<=p<=9`; the next invariant is the mod-two homology of the connecting quotient, not the Smith
   form of the kernel matrix or a polynomial fit to finite dimensions.
 
