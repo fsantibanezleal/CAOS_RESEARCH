@@ -1,0 +1,390 @@
+{
+  "experiment": "EXP-035",
+  "status": "P3_REFUTED_SMOKE",
+  "generated_at": "2026-08-30T12:43:35.982195+00:00",
+  "parameters": {
+    "min_p": 4,
+    "max_p": 4,
+    "connecting_max_p": 4,
+    "fields": [
+      2,
+      1000003
+    ],
+    "budget_seconds": 300.0
+  },
+  "premise_hashes": {
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-032-complete-colon-resolution/proof.md": "4dc37605c012b7f6a70ec5d383897c45a34e1dd5d5e4bb32a0582b7a6d651d1c",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-033-minimal-cubic-mapping-cone/proof.md": "e27cd386ad47da7ad5282e88a095d82f2b1156f76546e934b287e911da2c7b1c",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-034-two-layer-kernel-syzygy/proof.md": "0d0a87b0a5fd4e3bbb5570e3e664eb59fcf8d07222abd62c48bdae9d20d61b4a",
+    "problems/commutative-algebra/huneke-wiegand/experiments/EXP-034-two-layer-kernel-syzygy/verdict.md": "ebbf52a0b2d85b0bb5c71ca6fb48846d17b1d91644e48e69dbc3a5e8a5f81304"
+  },
+  "theorem_boundary": {
+    "zero_row_classification": "finite implementation validation",
+    "primitive_coordinate_formula": "finite implementation validation",
+    "consecutive_connecting_survival": "refuted by persisted integral cycle",
+    "all_parameter_claim": "requires written symbolic proof",
+    "complete_lower_strands": "not claimed"
+  },
+  "classification_row_count": 1,
+  "classification_aggregate_sha256": "c106b7d481635b78a79d05d7e3559861c490eeaf6bd8e62038a384ace1c9f292",
+  "explicit_classification_rows": [
+    {
+      "p": 4,
+      "representation_size_histogram": {
+        "4": 1,
+        "5": 1,
+        "6": 1,
+        "7": 3,
+        "8": 3,
+        "9": 1,
+        "12": 1,
+        "13": 3,
+        "14": 3,
+        "15": 6,
+        "16": 4,
+        "17": 2,
+        "18": 1,
+        "19": 2,
+        "20": 3,
+        "21": 3,
+        "23": 2
+      },
+      "minimum_representation_size": 4,
+      "minimum_cells": [
+        31
+      ],
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "t": 2,
+          "target_offset": 42,
+          "homological_degree": 5,
+          "total_offset": 87,
+          "representation_count": 5,
+          "zero_rank_lower_bound_at_degree": 36,
+          "checks": {
+            "representation_formula": true,
+            "cardinality_formula": true,
+            "below_d_row_two": true,
+            "offset_formula": true,
+            "zero_row": true,
+            "deleted_member_creates_incoming": true
+          },
+          "representations": [
+            2,
+            4,
+            12,
+            13,
+            14
+          ]
+        }
+      ],
+      "checks": {
+        "generator_count": true,
+        "high_count": true,
+        "degree_two_count": true,
+        "all_rows_classified": true,
+        "exp034_recovered": true,
+        "candidate_count": true,
+        "candidate_degrees_consecutive": true
+      },
+      "representation_profile_hash": "5a013eafb1c694aee09f7125576d91e02c11abf0a2fb04fc640cd84f5d1c60cd",
+      "row_hash": "ef14cd5b689b1e2e95e3318f1bafa196699e7b81868a5c73088eab8ddc7fbb6e"
+    }
+  ],
+  "connecting_probe_count": 1,
+  "connecting_aggregate_sha256": "c4d3dae20d150459df1a3fa29b822b71f380821d95d7f23aeecee6a5f4667dea",
+  "connecting_probes": [
+    {
+      "p": 4,
+      "t": 2,
+      "target_offset": 42,
+      "homological_degree": 5,
+      "total_offset": 87,
+      "coordinates_checked": 5,
+      "all_selected_columns_are_coloops": false,
+      "first_integral_cycle": {
+        "coefficient_offset": 2,
+        "sources": [
+          {
+            "exterior": [
+              1,
+              2,
+              3,
+              13,
+              14
+            ],
+            "coefficient": 14
+          },
+          {
+            "exterior": [
+              1,
+              2,
+              4,
+              12,
+              14
+            ],
+            "coefficient": 14
+          },
+          {
+            "exterior": [
+              1,
+              2,
+              4,
+              13,
+              14
+            ],
+            "coefficient": 13
+          },
+          {
+            "exterior": [
+              1,
+              3,
+              4,
+              12,
+              13
+            ],
+            "coefficient": 14
+          },
+          {
+            "exterior": [
+              1,
+              3,
+              4,
+              12,
+              14
+            ],
+            "coefficient": 13
+          },
+          {
+            "exterior": [
+              1,
+              3,
+              4,
+              13,
+              14
+            ],
+            "coefficient": 12
+          },
+          {
+            "exterior": [
+              1,
+              3,
+              12,
+              13,
+              14
+            ],
+            "coefficient": 4
+          },
+          {
+            "exterior": [
+              1,
+              4,
+              12,
+              13,
+              14
+            ],
+            "coefficient": 3
+          },
+          {
+            "exterior": [
+              2,
+              3,
+              4,
+              12,
+              13
+            ],
+            "coefficient": 13
+          },
+          {
+            "exterior": [
+              2,
+              3,
+              4,
+              12,
+              14
+            ],
+            "coefficient": 12
+          },
+          {
+            "exterior": [
+              2,
+              3,
+              12,
+              13,
+              14
+            ],
+            "coefficient": 3
+          },
+          {
+            "exterior": [
+              2,
+              4,
+              12,
+              13,
+              14
+            ],
+            "coefficient": 2
+          },
+          {
+            "exterior": [
+              3,
+              4,
+              12,
+              13,
+              14
+            ],
+            "coefficient": 1
+          }
+        ],
+        "integral_cycle": [
+          {
+            "source_index": 0,
+            "coefficient": 1
+          },
+          {
+            "source_index": 2,
+            "coefficient": -1
+          },
+          {
+            "source_index": 3,
+            "coefficient": -1
+          },
+          {
+            "source_index": 4,
+            "coefficient": 1
+          },
+          {
+            "source_index": 6,
+            "coefficient": 1
+          },
+          {
+            "source_index": 7,
+            "coefficient": -1
+          },
+          {
+            "source_index": 8,
+            "coefficient": 1
+          },
+          {
+            "source_index": 9,
+            "coefficient": -1
+          },
+          {
+            "source_index": 10,
+            "coefficient": -1
+          },
+          {
+            "source_index": 11,
+            "coefficient": 1
+          }
+        ]
+      },
+      "rows": [
+        {
+          "coefficient_offset": 2,
+          "low_total_offset": 47,
+          "source_columns": 13,
+          "target_rows": 17,
+          "selected_column": 11,
+          "selected_is_coloop": false,
+          "field_ranks": {
+            "2": {
+              "rank": 11,
+              "rank_without_selected": 11,
+              "drop": 0
+            },
+            "1000003": {
+              "rank": 11,
+              "rank_without_selected": 11,
+              "drop": 0
+            }
+          }
+        },
+        {
+          "coefficient_offset": 4,
+          "low_total_offset": 49,
+          "source_columns": 5,
+          "target_rows": 13,
+          "selected_column": 3,
+          "selected_is_coloop": true,
+          "field_ranks": {
+            "2": {
+              "rank": 5,
+              "rank_without_selected": 4,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 5,
+              "rank_without_selected": 4,
+              "drop": 1
+            }
+          }
+        },
+        {
+          "coefficient_offset": 12,
+          "low_total_offset": 57,
+          "source_columns": 4,
+          "target_rows": 3,
+          "selected_column": 3,
+          "selected_is_coloop": false,
+          "field_ranks": {
+            "2": {
+              "rank": 3,
+              "rank_without_selected": 3,
+              "drop": 0
+            },
+            "1000003": {
+              "rank": 3,
+              "rank_without_selected": 3,
+              "drop": 0
+            }
+          }
+        },
+        {
+          "coefficient_offset": 13,
+          "low_total_offset": 58,
+          "source_columns": 4,
+          "target_rows": 4,
+          "selected_column": 2,
+          "selected_is_coloop": false,
+          "field_ranks": {
+            "2": {
+              "rank": 3,
+              "rank_without_selected": 3,
+              "drop": 0
+            },
+            "1000003": {
+              "rank": 3,
+              "rank_without_selected": 3,
+              "drop": 0
+            }
+          }
+        },
+        {
+          "coefficient_offset": 14,
+          "low_total_offset": 59,
+          "source_columns": 2,
+          "target_rows": 3,
+          "selected_column": 0,
+          "selected_is_coloop": true,
+          "field_ranks": {
+            "2": {
+              "rank": 2,
+              "rank_without_selected": 1,
+              "drop": 1
+            },
+            "1000003": {
+              "rank": 2,
+              "rank_without_selected": 1,
+              "drop": 1
+            }
+          }
+        }
+      ],
+      "row_hash": "b16ada53813be971e1fe3d5c1b33e9cc69323bad870ff2ef6fa4a4e7e7970a95"
+    }
+  ],
+  "elapsed_seconds": 0.107197,
+  "artifact_sha256": "b917a6383a4571def2815c3d81470247fe95ad9aeaff5803daf85e2da4e7cbb5"
+}

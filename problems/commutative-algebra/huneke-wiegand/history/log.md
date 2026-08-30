@@ -1315,3 +1315,58 @@
   `f571fb955560c29489c181a6ce542548619209e0` before this documentation handoff.
 - HWB-057 is done. CAOS_MANAGE remained untouched on `develop`; no research release tag is
   claimed.
+
+## 2026-08-30 - EXP-035 declared
+
+- The next lower-strand round is redirected from full incidence ranks to the invariant
+  `R_b subset F`, which exactly classifies integral zero rows.
+- The explicit block `b=10p+t`, `2<=t<=p-2`, is predicted to give primitive kernel classes in
+  every homological degree `p+1,...,2p-3`.
+- Survival in `A_p` is a separate stronger target. It requires exact connecting-source pivots;
+  the absence of the `D_p` row-two target below `2p-2` is not by itself sufficient.
+- The fresh primary-source sweep found no theorem that decides these family-specific Tor maps.
+  No EXP-035 result, manuscript v0.22, or Zenodo update is claimed at declaration.
+
+## 2026-08-30 - EXP-035 smoke redirection
+
+- The canonical zero-row classifier passes all `p=4,...,300` in 51.889 seconds after replacing
+  an inefficient literal all-pairs profile with exact disjoint-interval counts. Its aggregate is
+  `cc98154e60bdc00fe1f503020aa7d5c66b53ff0cc4ce2158f199d03c2a5fda8b`.
+- At the mandatory first connecting case `(p,t)=(4,2)`, the selected coordinate is not a coloop.
+  An exact ten-term integral low-complex cycle contains the chain
+  `e_(2,4,12,13,14) tensor X_2` with coefficient one.
+- Ranks over `GF(2)` and `GF(1000003)` agree: deleting that selected column does not change rank
+  `11`. This refutes P3's proposed coordinatewise survival mechanism at the smoke gate.
+- P1 and P2 remain active: the zero-row summand and the explicit `K_p` family are unaffected.
+  The next calculation is the full target multidegree quotient, which can still contain a
+  different surviving linear combination after the connecting image is imposed.
+
+## 2026-08-30 - EXP-035 confirmed with characteristic dependence
+
+- The full `(p,t)=(4,2)` target contains `79` kernel cokernel rows, `119` kernel boundary columns,
+  and `710` connecting-source columns. No selected submatrix is used.
+- The kernel cokernel dimensions are five over `GF(2)` and four over `GF(3)`; Smith form gives
+  `Z^4 direct-sum Z/2Z` exactly.
+- The connecting image has dimension one in both fields. Therefore the surviving `A_4` target has
+  dimension four over `GF(2)` and three over `GF(3)`.
+- The shifted cubic diagonal is absent because its four-high-variable minimum is `102`, above the
+  required offset `75`; the same characteristic-dependent values hold for `C_4`.
+- An independent numerical-semigroup reconstruction matches all three basis hashes and every
+  rank using reversed pivots. Nine symbolic interval obligations and the offset formulas pass.
+- P1/P2 are confirmed for all `p>=4`; P3's coordinatewise mechanism is refuted, and no
+  all-parameter connecting-survival claim is made. HWB-058 is done and HWB-059 opens manuscript
+  v0.22. A separate manuscript remains premature.
+
+## 2026-08-30 - manuscript v0.22 published and verified
+
+- The EXP-035 theorem, explicit P3 refutation, full target quotient, Smith form, and narrowed
+  torsion question were incorporated into the existing main manuscript rather than split.
+- The 51-page v0.22 candidate passed claim and scope audit, two warning-free builds, metadata and
+  text extraction, complete 150-DPI rendered inspection, and sole-human-authorship/ORCID gates.
+- The frozen PDF is 810,905 bytes with MD5 `5ed2409d6688b30147963a7293598440` and SHA-256
+  `3868f511a047073c9d7bedf25e026f1aaf3a5ab2c05c45d03614675ef6bdf5c2`.
+- Zenodo record `22177072`, DOI `10.5281/zenodo.22177072`, is public and concept-latest at
+  version `0.22`. Public metadata, sole creator/ORCID, CC BY 4.0 license, filename, bytes, and MD5
+  agree, and a fresh unauthenticated download matches Git by MD5 and SHA-256.
+- Ruff, all 60 tests, full registry regeneration, artifact consistency, and repository guards
+  pass. HWB-059 is done; HWB-060 owns separate-PR promotion to `develop` and then `main`.
