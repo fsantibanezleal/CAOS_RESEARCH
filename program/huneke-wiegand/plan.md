@@ -1054,3 +1054,69 @@ same tested state to `main` at `10d524a9f9226a95f9d1d23341c54f8af6ce0812`. The w
 `develop`, and `main` shared payload tree `0847e35a7641ab5592afd136f42bcf09ffe514f3` before this
 documentation handoff. HWB-060 is done. HWB-061 is pending for a freshly declared experiment on
 the all-parameter anatomy of the observed factor-two torsion.
+
+## 2026-08-30 - EXP-036 factor-two torsion anatomy gate
+
+HWB-061 is active. EXP-036 first replaces literal combination enumeration by an exact-sum target
+constructor and must reproduce the complete EXP-035 `(4,2)` target before larger parameters are
+accepted. It then screens every declared family cell for `p=5`, followed by `p=6` only within the
+checkpointed budget. The mod-two versus odd-prime rank defect is the invariant-first torsion test;
+Smith form is reserved for positive cells.
+
+The complementary recognition lens reduces the known integral matrix by unimodular unit pivots.
+The declared strong prediction is a six-essential-variable core with the homology profile of the
+minimal real-projective-plane triangulation. This comparison is motivated by the fresh primary
+source sweep but is not a premise. A different residual support refutes the recognition clause
+while preserving any exact Smith result. No manuscript or Zenodo update is open at declaration.
+
+The canonical finite checkpoint passes. The bounded exact-sum constructor reproduces the complete
+EXP-035 `(4,2)` target, then completes both `p=5` and all three `p=6` cells in 94.072 seconds.
+Kernel even-rank defects occur at `(4,2)`, `(5,3)`, and `(6,3)`. The connecting quotient creates
+additional characteristic dependence even when the kernel is independent: `A_(5,2)` has dimensions
+`24` and `20`, while `A_(6,2)` has dimensions `95` and `86` over `GF(2)` and `GF(3)`;
+`GF(1000003)` agrees with `GF(3)`.
+Together with the EXP-035 gap at `p=4`, the `t=2` excess sequence is `1,4,9=(p-3)^2`. The next
+gate is a targeted `p=7,8` test and interval-block derivation, not a raw full-resolution sweep.
+
+EXP-036 is now CONFIRMED with structural propagation unresolved.  Targeted exact cells give
+`t=2` characteristic-two excesses
+
+```text
+p=4,5,6,7,8,9: 1,4,9,18,31,49.
+```
+
+The `p=7` value refutes `(p-3)^2`; the `p=9` value refutes the quadratic that fits `p=5,...,8`.
+For every tested `5<=p<=9`, the `t=2` kernel-cokernel dimensions agree over all three tested
+fields and the
+connecting-image rank creates the entire excess.  This is a second mechanism, distinct from the
+kernel rank defects at `(4,2)`, `(5,3)`, and `(6,3)`.  Independent semigroup reconstruction,
+dynamic exact sums, reverse pivots, and a third odd field reproduce the canonical targets.
+
+The `(4,2)` unit reduction confirms a compact factor-two residual but traces it to seven low
+variables, so the declared six-variable projective-plane recognition is not obtained.  A separate
+symbolic argument closes the family-wide cubic question: its shifted source misses the target by
+at least `3(p-1)^2`, hence `A_p=C_p` at every declared `(p,t)`.  This does not prove infinitely
+many characteristic-dependent cells or a formula for their multiplicities.  HWB-061 remains
+active only for that connecting-parity theorem.
+
+## 2026-08-30 - manuscript v0.23 publication gate
+
+HWB-062 opens an in-place update of the main manuscript.  The publication payload must include
+the finite propagation table, the distinction between kernel and connecting mechanisms, the
+compact integral localization, both refuted interpolations, the all-parameter cubic-source
+inequality, and an explicit finite-only scope statement.  A separate paper remains premature.
+
+The gate requires a fresh claim audit, two warning-free builds, PDF metadata and text checks,
+complete 150-DPI rendered inspection, sole-human-authorship and ORCID checks, exact Zenodo draft
+validation, publication, concept-latest verification, and a fresh public-download hash match.
+HWB-063 opens only after that publication is frozen and owns separate PR promotion through
+`develop` and `main`.
+
+The publication gate is complete.  The 53-page v0.23 passed the claim and scope audit, two
+warning-free stabilized builds, metadata and text extraction, complete 150-DPI rendered
+inspection, sole-human-authorship and ORCID checks, all repository tests and guards, exact
+one-file draft validation, publication, concept-latest verification, and a fresh unauthenticated
+download.  Zenodo record `22181972`, DOI `10.5281/zenodo.22181972`, contains the exact 824,114-byte
+PDF with MD5 `6bcacfa265e840f40e89dcdb87b75f7b` and SHA-256
+`c77b08a3724db90b14039c2c88e98325403ef4f656f52137057a27eb6fa5072d`.  HWB-062 is done and
+HWB-063 is active for separate-PR promotion to `develop` and then `main`.

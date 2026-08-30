@@ -1383,3 +1383,79 @@
 - HWB-060 is done. HWB-061 retains the all-parameter factor-two torsion path as pending; it
   requires a fresh declaration and finite-target preflight. CAOS_MANAGE remained untouched on
   `develop`, and no research release tag is claimed.
+
+## 2026-08-30 - EXP-036 declared
+
+- HWB-061 is active through EXP-036. The first gate is an exact-sum reconstruction of the known
+  `(p,t)=(4,2)` target, followed by complete `p=5` and budgeted `p=6` family screens.
+- The invariant-first test is the rank defect between `GF(2)` and an odd prime; integral Smith and
+  unit-cancellation localization run only on positive cells.
+- A fresh primary-source sweep identifies the six-vertex real-projective-plane complex as the
+  sharp classical factor-two mechanism. EXP-036 tests that recognition explicitly rather than
+  importing it as an assumption.
+- The hypothesis, premise dependencies, one-sided outcomes, checkpoints, and kill criteria were
+  written before implementation. No EXP-036 result or publication update is claimed.
+
+## 2026-08-30 - EXP-036 canonical finite checkpoint
+
+- The exact-sum constructor reproduces the EXP-035 `(4,2)` codomain, kernel-domain, and source
+  hashes and every declared field rank before accepting larger parameters.
+- All family cells through `p=6` complete in 94.072 seconds. Kernel even-rank defects have sizes
+  `1,2,2` at `(4,2)`, `(5,3)`, and `(6,3)`, respectively.
+- The connecting quotient supplies a second mechanism. At `(5,2)`, `K_5` has dimension `39` in
+  both characteristics, but `A_5` has dimensions `24` and `20`. At `(6,2)`, `K_6` has dimension
+  `178` in both, but `A_6` has dimensions `95` and `86`.
+- The `t=2` characteristic-two excess is therefore `1,4,9` for `p=4,5,6`, matching the fresh
+  candidate `(p-3)^2`. The `(6,4)` cell is characteristic-independent with dimension `2`.
+- At `(4,2)`, 74 unimodular unit pivots reduce the integral boundary to a residual with four zero
+  rows and one rank-one row containing only two entries `-2`, exactly recovering the known free
+  rank four and one factor-two summand.
+- These are canonical exact finite results, not yet an all-parameter theorem. Targeted `p=7,8`
+  checks and an independently reconstructed interval-block proof are now required.
+
+## 2026-08-30 - EXP-036 confirmed with two characteristic mechanisms
+
+- Targeted exact-sum cells extend the `t=2` diagonal through `p=9`.  The characteristic-two
+  excesses in `A_p` and `C_p` are `1,4,9,18,31,49` for `p=4,...,9`.
+- The exact `p=7` value refutes `(p-3)^2`; the exact `p=9` value refutes the quadratic
+  `2p^2-17p+39` that fits `p=5,...,8`.  Both failed interpolations are retained as negative
+  controls.
+- For every tested `t=2` cell with `5<=p<=9`, the kernel cokernel has identical GF(2) and odd
+  dimensions.  The connecting image is smaller in characteristic two and creates the full
+  excess.  This is distinct from the kernel rank defects at `(4,2)`, `(5,3)`, and `(6,3)`.
+- The targeted canonical artifacts for `p=7,8` and `p=9` have internal hashes
+  `4773020bc77ff92777f067368c3169a80ef2c693b05d7f7e6693d3271716711f` and
+  `a59286a01def0b9314e79c70218efb8eb29b1aad586d2b7b8df1792df9509009`.
+- The independent semigroup/dynamic-sum/reverse-pivot route matches all bases and ranks through
+  `(8,2)`, with artifact hashes
+  `36c8c8b62fa81aa465fef63c9e10ba5bb8b74764c9790f4612eaf16565f47672` and
+  `99b1089fb1edcd770d2e90ed746b841768dbfb9fde6dde63b0819c0271690381`.
+  Its `(9,2)` attempt crossed 47.5 GB of private memory and is preserved as
+  `INCONCLUSIVE_RESOURCE_BUDGET`, not evidence.
+- Exact unit cancellation at `(4,2)` yields a compact factor-two residual and transform
+  certificate hash `1cd41f70abb13e79eb6cb3687134ddcdf4ddd0f69129803d799f7653710ece36`.
+  Its canonical active support uses seven low variables, so the proposed six-variable
+  projective-plane recognition is not obtained.
+- Symbolically, the least high-variable sum exceeds the shifted cubic target by
+  `10p^2-8pt-20p+t^2+2t+3`, whose minimum is `3(p-1)^2`.  Thus the cubic source is absent and
+  `A_p=C_p` at every declared family target.  The symbolic artifact hash is
+  `79f3156ee542a7c224fe0bf5e47fab6dcb1ce5bb4b09a2e002d156aebfd7e7b7`.
+- EXP-036 is CONFIRMED for P1 and compact P2; the strong recognition clause is rejected for the
+  canonical reduction and P3 remains unresolved.  HWB-061 retains the infinite connecting-parity
+  problem; HWB-062 opens manuscript v0.23 and Zenodo publication.
+
+## 2026-08-30 - manuscript v0.23 published and verified
+
+- The finite propagation table, distinction between kernel and connecting mechanisms, compact
+  factor-two localization, two refuted interpolations, family-wide cubic-transfer theorem, and
+  finite-only scope boundary were incorporated into the existing main manuscript.
+- The 53-page v0.23 candidate passed the claim and scope audit, two warning-free stabilized
+  builds, metadata and text extraction, complete 150-DPI rendered inspection, sole-human-
+  authorship/ORCID checks, all 60 tests, registry regeneration, artifact consistency, and every
+  repository guard.
+- The frozen PDF is 824,114 bytes with MD5 `6bcacfa265e840f40e89dcdb87b75f7b` and SHA-256
+  `c77b08a3724db90b14039c2c88e98325403ef4f656f52137057a27eb6fa5072d`.
+- Zenodo record `22181972`, DOI `10.5281/zenodo.22181972`, is public and concept-latest at version
+  `0.23`. Public metadata, sole creator/ORCID, CC BY 4.0 licence, filename, bytes, and MD5 agree;
+  a fresh unauthenticated download matches Git by MD5 and SHA-256.
+- HWB-062 is done. HWB-063 is active for separate-PR promotion to `develop` and then `main`.

@@ -1,7 +1,15 @@
 # Frobenius-minimality preprint
 
-`main.tex` is version 0.22 of the CAOS Research preprint; version
-0.21 and all earlier versions remain frozen. Version 0.22 adds the EXP-035 primitive zero-row
+`main.tex` is version 0.23 of the CAOS Research preprint; version
+0.22 and all earlier versions remain frozen. Version 0.23 adds the EXP-036 repeated
+characteristic-dependent target campaign, separates kernel-incidence defects from dependence
+created by the connecting quotient, localizes the compact factor-two residual, preserves two
+refuted finite-data formulas, and proves all-parameter absence of the shifted cubic source at the
+declared targets. The exact characteristic-dependent values are finite through `(p,t)=(9,2)`;
+no infinite multiplicity formula or complete lower strand is claimed. It passed the complete
+claim/build/render, authenticated upload, publication, concept-latest, and fresh-download workflow
+and is published at DOI `10.5281/zenodo.22181972`.
+Version 0.22 adds the EXP-035 primitive zero-row
 classification, consecutive kernel family, explicit connecting-cycle refutation, and the first
 characteristic-dependent lower multigraded Betti cell. It passed the complete
 claim/build/render, authenticated upload, publication, concept-latest, and fresh-download workflow
@@ -195,9 +203,11 @@ Zenodo identifiers:
 - version 0.20 DOI: `10.5281/zenodo.22062161` (published and fresh-download verified)
 - version 0.21 DOI: `10.5281/zenodo.22135689` (published and fresh-download verified)
 - version 0.22 DOI: `10.5281/zenodo.22177072` (published and fresh-download verified)
+- version 0.23 DOI: `10.5281/zenodo.22181972` (published, concept-latest, and fresh-download
+  verified)
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-035 under
+Evidence sources are EXP-001 through EXP-036 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
 finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
@@ -263,6 +273,12 @@ The resulting grading gap proves that the cubic mapping cone is minimal and fixe
 special-fiber strands. Canonical and independently encoded routes pass all `p=4,...,300`; a
 structural kernel audit and symbolic certificate agree. Three exact budget stops are retained as
 inconclusive non-evidence. The two lower quadratic-quotient strands remain open.
+EXP-036 uses complete exact-sum targets through `(9,2)`, exact ranks over GF(2), GF(3), and
+GF(1000003), an independently reconstructed semigroup/dynamic-sum/reverse-pivot route through
+`(8,2)`, exact unimodular localization at `(4,2)`, and a symbolic all-parameter cubic exclusion.
+The independent `(9,2)` route is retained as an inconclusive 47.5-GB resource stop and contributes
+no mathematical evidence. Equal tested odd-prime ranks are not promoted to a theorem for every
+odd characteristic.
 
 Version 0.02 remains frozen with this public-file verification:
 
@@ -541,4 +557,20 @@ Version 0.22 public-file verification:
   ORCID, CC BY 4.0, and exactly one completed file named
   `huneke-wiegand-frobenius-minimality-v0.22.pdf`, whose bytes and MD5 matched the committed PDF
 - record `22177072` is public and concept-latest at version `0.22`; public metadata and the sole
+  file match, and a fresh unauthenticated download matches the committed PDF by MD5 and SHA-256
+
+Version 0.23 public-file verification:
+
+- record `22181972`, DOI `10.5281/zenodo.22181972`, concept DOI
+  `10.5281/zenodo.21763582`
+- source record: immutable published v0.22 record `22177072`
+- two warning-free stabilized builds, PDF metadata/extraction, and all-page 150-DPI inspection
+  pass; all 53 pages were inspected, with full-size review of page one and pages 46--51 and 53
+- bytes: `824114`
+- MD5: `6bcacfa265e840f40e89dcdb87b75f7b`
+- SHA-256: `c77b08a3724db90b14039c2c88e98325403ef4f656f52137057a27eb6fa5072d`
+- the exact prepublication draft had version `0.23`, the expected title and date, sole author and
+  ORCID, CC BY 4.0, English language, and exactly one completed file named
+  `huneke-wiegand-frobenius-minimality-v0.23.pdf`, whose bytes and MD5 matched the committed PDF
+- record `22181972` is public and concept-latest at version `0.23`; public metadata and the sole
   file match, and a fresh unauthenticated download matches the committed PDF by MD5 and SHA-256

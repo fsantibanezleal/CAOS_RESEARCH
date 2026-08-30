@@ -1,0 +1,17 @@
+{
+  "experiment": "EXP-036",
+  "route": "independent semigroup reconstruction, dynamic exact sums, reverse pivots",
+  "cell": [
+    9,
+    2
+  ],
+  "status": "INCONCLUSIVE_RESOURCE_BUDGET",
+  "started_at": "2026-08-30T22:36:32Z",
+  "stopped_at": "2026-08-30T22:50:26Z",
+  "observed_cpu_seconds": 682.75,
+  "observed_private_memory_bytes": 47570206720,
+  "reason": "The independent dynamic enumerator materialized the complete source layer and crossed the practical memory boundary before producing any rank.",
+  "mathematical_evidence": false,
+  "preserved_conclusion": "The canonical p=9,t=2 cell remains controlled by GF(2), GF(3), and GF(1000003). Independent basis/hash/rank validation is complete through p=8,t=2 only.",
+  "redirection": "A future p=9 independent audit must stream or feasibility-prune its dynamic states rather than retain every subset tuple."
+}

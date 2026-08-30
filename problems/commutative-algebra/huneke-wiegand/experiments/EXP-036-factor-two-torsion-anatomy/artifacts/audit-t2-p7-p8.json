@@ -1,0 +1,117 @@
+{
+  "experiment": "EXP-036",
+  "route": "semigroup reconstruction, dynamic exact sums, reverse pivots",
+  "status": "PASS_INDEPENDENT",
+  "generated_at": "2026-08-30T22:36:24.642068+00:00",
+  "canonical_artifact_sha256": "4773020bc77ff92777f067368c3169a80ef2c693b05d7f7e6693d3271716711f",
+  "comparisons": {
+    "7:2": {
+      "basis_counts": true,
+      "basis_hashes": true,
+      "gf2_ranks": true,
+      "gf3_ranks": true
+    },
+    "8:2": {
+      "basis_counts": true,
+      "basis_hashes": true,
+      "gf2_ranks": true,
+      "gf3_ranks": true
+    }
+  },
+  "rows": [
+    {
+      "p": 7,
+      "t": 2,
+      "checks": {
+        "degree_one_count": true,
+        "degree_two_count": true,
+        "high_count": true,
+        "kernel_degree_two_count": true,
+        "selected_representation_set": true,
+        "selected_row_present": true,
+        "odd_fields_agree": true
+      },
+      "kernel_codomain_rows": 1822,
+      "kernel_domain_columns": 1735,
+      "d_source_columns": 42130,
+      "kernel_codomain_hash": "aa81c9512c9df61d80165e9d52a6a3af5379dfb89baeb7d39e0ee37be9b59aab",
+      "kernel_domain_hash": "bcadc964ec11222193590c3c4242aafe14f77fb91d25d9081e91500f0829ccce",
+      "d_source_hash": "2192f001637c86678fde8be744ebe45df01bd3307ee462ffca35989da619cd8d",
+      "field_rows": {
+        "2": {
+          "rank_kernel_boundary": 1243,
+          "kernel_cokernel_dimension": 579,
+          "rank_d_boundary": 37089,
+          "rank_combined": 38611,
+          "connecting_image_dimension_in_kernel_cokernel": 279,
+          "surviving_a_dimension": 300
+        },
+        "3": {
+          "rank_kernel_boundary": 1243,
+          "kernel_cokernel_dimension": 579,
+          "rank_d_boundary": 37089,
+          "rank_combined": 38629,
+          "connecting_image_dimension_in_kernel_cokernel": 297,
+          "surviving_a_dimension": 282
+        },
+        "5": {
+          "rank_kernel_boundary": 1243,
+          "kernel_cokernel_dimension": 579,
+          "rank_d_boundary": 37089,
+          "rank_combined": 38629,
+          "connecting_image_dimension_in_kernel_cokernel": 297,
+          "surviving_a_dimension": 282
+        }
+      },
+      "row_hash": "1fc41d9feb7c5996f33cbe77c352954ecc2a056f885eba52f66b8c80a90fcb14"
+    },
+    {
+      "p": 8,
+      "t": 2,
+      "checks": {
+        "degree_one_count": true,
+        "degree_two_count": true,
+        "high_count": true,
+        "kernel_degree_two_count": true,
+        "selected_representation_set": true,
+        "selected_row_present": true,
+        "odd_fields_agree": true
+      },
+      "kernel_codomain_rows": 4144,
+      "kernel_domain_columns": 3535,
+      "d_source_columns": 121952,
+      "kernel_codomain_hash": "15cdaef910282b373761fd2697a2a1795e58427720bcb8b94b2b5338fd3d6d03",
+      "kernel_domain_hash": "9c212734c6e5650ad0fef32b93553224744e7969f6b345bb53c406b275713d4f",
+      "d_source_hash": "74043dae8192fe43823ae04728ecd4cfa0826a832915f95dc0877e39991137ea",
+      "field_rows": {
+        "2": {
+          "rank_kernel_boundary": 2574,
+          "kernel_cokernel_dimension": 1570,
+          "rank_d_boundary": 110358,
+          "rank_combined": 113694,
+          "connecting_image_dimension_in_kernel_cokernel": 762,
+          "surviving_a_dimension": 808
+        },
+        "3": {
+          "rank_kernel_boundary": 2574,
+          "kernel_cokernel_dimension": 1570,
+          "rank_d_boundary": 110358,
+          "rank_combined": 113725,
+          "connecting_image_dimension_in_kernel_cokernel": 793,
+          "surviving_a_dimension": 777
+        },
+        "5": {
+          "rank_kernel_boundary": 2574,
+          "kernel_cokernel_dimension": 1570,
+          "rank_d_boundary": 110358,
+          "rank_combined": 113725,
+          "connecting_image_dimension_in_kernel_cokernel": 793,
+          "surviving_a_dimension": 777
+        }
+      },
+      "row_hash": "e7654175b0edda177883085dc28ad99d88e8ef2761a67135b368378b4cfbd31a"
+    }
+  ],
+  "elapsed_seconds": 196.182257,
+  "artifact_sha256": "99b1089fb1edcd770d2e90ed746b841768dbfb9fde6dde63b0819c0271690381"
+}
