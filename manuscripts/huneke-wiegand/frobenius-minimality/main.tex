@@ -36,18 +36,18 @@
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-27\\[2pt]\normalsize Version 0.21}
+\date{2026-08-30\\[2pt]\normalsize Version 0.22}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.21}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.22}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.21}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.22}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,13 +63,13 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.21 \textperiodcentered\ 2026-08-27\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22135689}{10.5281/zenodo.22135689}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.22 \textperiodcentered\ 2026-08-30\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI reserved after prepublication QA\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
 verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
 separate explicit infinite family, and its uniform endomorphism, type, trace, conductor, stability,
-reduction, tangent-cone, fiber-cone, defining-ideal, and syzygy anatomy.
+reduction, tangent-cone, fiber-cone, defining-ideal, syzygy, and characteristic-dependence anatomy.
 }}
 \end{center}
 
@@ -79,7 +79,7 @@ reduction, tangent-cone, fiber-cone, defining-ideal, and syzygy anatomy.
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.21}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.22}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -237,9 +237,20 @@ unit Smith form, so the result again holds over every field. This completes one 
   =\beta_{p,(p+2,\tau_p)}(A_p)
   =\beta_{p,(p+2,\tau_p)}(C_p)=1.
   \]
-  This determines one exact point in a lower strand, not the two complete lower strands, the
-  differential matrices, or the full special-fiber resolution.
-The results remain confined
+  We then classify every primitive zero row of the incidence cokernel. If
+  $R_b=\{g:b-g\in H_p\}$, the coordinate $e_F\otimes v_b$ is a zero row exactly when
+  $R_b\subseteq F$, giving a closed free-summand count in every homological degree. The block
+  $b=10p+t$, $2\le t\le p-2$, supplies consecutive kernel classes in degrees
+  $p+1,\ldots,2p-3$. The first connecting cell does not repeat the unit-pivot mechanism, but its
+  complete target quotient exposes characteristic dependence:
+  \[
+  \beta_{5,(7,87)}(A_4)=\beta_{5,(7,87)}(C_4)
+  =\begin{cases}4,&\kfield=\mathbf F_2,\\3,&\kfield=\mathbf F_3.\end{cases}
+  \]
+  The corresponding integral kernel cokernel is
+  $\mathbb Z^4\oplus\mathbb Z/2\mathbb Z$. This determines exact lower-strand points and a
+  characteristic-dependent multigraded cell, not the two complete lower strands, the
+  differential matrices, or the full special-fiber resolution. The results remain confined
 to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
 \end{abstract}
@@ -327,6 +338,10 @@ they are verified by exact machine computation and independently checked artifac
   \item We reduce the high-variable kernel to a two-layer incidence module and prove the first
   exact surviving regularity-two class in the kernel, quadratic quotient, and special fiber over
   every field.
+  \item We classify all primitive zero rows of that incidence cokernel, obtain consecutive kernel
+  classes in homological degrees $p+1,\ldots,2p-3$, and prove that the first complete target
+  quotient has characteristic-dependent multigraded Betti number: four over $\mathbf F_2$ and
+  three over $\mathbf F_3$ for both the quadratic quotient and the special fiber.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -2849,6 +2864,140 @@ independent, and symbolic aggregates are
 The theorem is deductive. These campaigns audit the bases, unit pivots, interval exclusions, and
 adversarial mutations; they do not replace the displayed all-parameter argument.
 
+\subsection{Primitive zero rows and characteristic dependence}
+
+For $b\in B_p$, define the representation set
+\begin{equation}
+R_b=\{g\in\mathcal E_{p,1}\setminus\{0\}:b-g\in H_p\}.
+\label{eq:representation-set}
+\end{equation}
+The EXP-034 cell is the case $R_{8p-1}=\{1,\ldots,p\}$. The same invariant classifies a
+canonical part of every incidence cokernel.
+
+\begin{theorem}[Zero-row summands and a characteristic-dependent cell, {\bf[D/MV]}]
+\label{thm:zero-row-characteristic}
+Let $p\ge4$, and put $n=10p-1$. The coordinate
+$e_F\otimes v_b$ in the codomain of the two-layer incidence map is an integral zero row if and
+only if $R_b\subseteq F$. Consequently, in homological degree $i$, these coordinates split off
+a primitive free summand of rank
+\begin{equation}
+z_{p,i}=\sum_{\substack{b\in B_p\\|R_b|\le i}}
+\binom{10p-1-|R_b|}{i-|R_b|}
+\label{eq:zero-row-rank}
+\end{equation}
+from the regularity-two cokernel of $K_p$.
+
+For every $2\le t\le p-2$, set
+\begin{equation}
+b_{p,t}=10p+t,\qquad
+F_{p,t}=[3p,4p-2]\cup\{t\}\cup[t+2,p].
+\label{eq:zero-row-family}
+\end{equation}
+Then
+\begin{equation}
+R_{b_{p,t}}=F_{p,t},\qquad
+|F_{p,t}|=2p-t-1,\qquad
+b_{p,t}+\sum F_{p,t}=4p^2+6p-\frac{t(t-1)}2.
+\label{eq:zero-row-family-data}
+\end{equation}
+Thus $K_p$ has a primitive zero-coordinate class in every homological degree
+$p+1,\ldots,2p-3$.
+
+At $(p,t)=(4,2)$, the complete multigraded target satisfies
+\begin{align}
+\beta_{5,(7,87)}^{P_4}(K_4)&=
+\begin{cases}5,&\kfield=\mathbf F_2,\\4,&\kfield=\mathbf F_3,\end{cases}
+\label{eq:characteristic-kernel}\\
+\beta_{5,(7,87)}^{P_4}(A_4)
+=\beta_{5,(7,87)}^{P_4}(C_4)&=
+\begin{cases}4,&\kfield=\mathbf F_2,\\3,&\kfield=\mathbf F_3.\end{cases}
+\label{eq:characteristic-quotients}
+\end{align}
+The integral cokernel in~\eqref{eq:characteristic-kernel} is
+$\mathbb Z^4\oplus\mathbb Z/2\mathbb Z$. In particular, the lower multigraded Betti tables of
+$K_4$, $A_4$, and $C_4$ depend on the characteristic.
+\end{theorem}
+
+\begin{proof}
+By~\eqref{eq:two-layer-incidence}, a coefficient can enter the row
+$e_F\otimes v_b$ only from
+\[
+e_{F\cup\{g\}}\otimes u_{b-g},\qquad g\in R_b\setminus F.
+\]
+If this set is empty, the row is zero. Conversely, any element of it supplies an incidence entry
+with coefficient $1$ or $-1$. Hence the zero-row criterion is integral. The image of the
+incidence map has zero projection onto the coordinate module spanned by all such rows, so that
+module splits off from the cokernel. For fixed $b$, the number of size-$i$ supersets of $R_b$
+is the binomial coefficient in~\eqref{eq:zero-row-rank}, proving the first claim.
+
+Fix $2\le t\le p-2$ and $b=10p+t$. For $1\le g<t$, the complement $b-g$ lies strictly
+between the high singleton $10p$ and the next high block beginning at $11p-1$. The value
+$g=t$ gives $b-g=10p$, while $g=t+1$ gives the missing offset $10p-1$. Every
+$t+2\le g\le p$ gives $8p\le b-g\le10p-2$. For
+$3p\le g\le4p-2$,
+\[
+6p+t+2\le b-g\le7p+t\le8p-2,
+\]
+so the entire second low block represents $b$. A high variable $g\ge6p$ gives
+$b-g<6p$ and contributes nothing. This proves the set equality in
+\eqref{eq:zero-row-family-data}. Counting and summing its intervals gives the other two formulas.
+
+It remains to compute the first complete target. Here
+\[
+b=42,\qquad F=\{2,4,12,13,14\},\qquad i=5,\qquad\tau=87.
+\]
+The selected coordinate is not protected by the EXP-034 unit-pivot argument. With a fixed high
+exterior factor $e_{40}$, an exact ten-term low Koszul cycle has coefficient one on
+$e_F\otimes X_2$, and its connecting image therefore reaches $e_F\otimes v_{42}$.
+This refutes coordinatewise survival, but not survival of the full target quotient.
+
+The full target has $79$ kernel codomain rows and $119$ kernel boundary columns. Let $d_D$
+be the boundary on all $710$ degree-one source chains, $J$ the connecting chain map, and
+$\delta_K$ the kernel incidence boundary. For
+\[
+M=\begin{pmatrix}d_D&0\\J&\delta_K\end{pmatrix},
+\]
+projection of $\operatorname{im}M$ onto $\operatorname{im}d_D$ has kernel
+$\operatorname{im}\delta_K+J(\ker d_D)$. Therefore
+\begin{equation}
+\dim\operatorname{coker}\bigl(\operatorname{Tor}(D_4)\to
+\operatorname{coker}\delta_K\bigr)=79+\operatorname{rank}d_D-\operatorname{rank}M.
+\label{eq:complete-target-rank}
+\end{equation}
+Exact elimination gives
+\[
+\begin{array}{c|rrrrrr}
+\kfield&\operatorname{rank}\delta_K&\dim\operatorname{coker}\delta_K&
+\operatorname{rank}d_D&\operatorname{rank}M&\operatorname{rank}J&\dim A_4\\ \hline
+\mathbf F_2&74&5&513&588&1&4\\
+\mathbf F_3&75&4&513&589&1&3
+\end{array}
+\]
+and the same odd-field row over $\mathbf F_5$ and $\mathbf F_{1000003}$. Smith reduction of
+the integral $79$-by-$119$ matrix $\delta_K$ has rank $75$, free cokernel rank four, and
+one nonunit invariant factor, equal to $2$. This proves
+\eqref{eq:characteristic-kernel} and~\eqref{eq:characteristic-quotients} for $A_4$.
+
+The minimal cubic cone can add to the displayed $C_4$ component only from a four-high-variable
+diagonal at shifted offset $87-3p=75$. Its smallest possible offset is
+$24+25+26+27=102$. That source is absent, so the $C_4$ values equal the $A_4$ values.
+\end{proof}
+
+EXP-035 checks the zero-row and interval formulas for every $p=4,\ldots,300$
+\textbf{[MV]}. The first failed pivot is retained as an explicit integral cycle. The complete
+target matrices are rebuilt independently from numerical-semigroup ideal powers, using reversed
+column and pivot orders; all three basis hashes and every rank agree. Nine symbolic interval
+negations are UNSAT. The classification aggregate and target, independent, and symbolic artifact
+hashes are
+\begin{center}
+{\fontsize{7}{8}\selectfont\ttfamily cc98154e60bdc00fe1f503020aa7d5c66b53ff0cc4ce2158f199d03c2a5fda8b},\\
+{\fontsize{7}{8}\selectfont\ttfamily 4072a9fb7844d07763fae1b08e99da3d94d38cf3a40f980316c38f0931091276},\\
+{\fontsize{7}{8}\selectfont\ttfamily b92e787bc120b5fa12aac1fc4a10792883e699ed7315055958f3916e8d10b60b},\\
+{\fontsize{7}{8}\selectfont\ttfamily b1bfc105f3e9ace368f181ccf10f367fe1f4d23199e49c14275bd8e9b941569e}.
+\end{center}
+The zero-row theorem is deductive for all $p\ge4$. The characteristic-dependent theorem is the
+complete exact target at $p=4$; no extension of its torsion statement to $p>4$ is claimed.
+
 \section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
@@ -2857,7 +3006,7 @@ All compact code, hypotheses, manifests, audits, and verdicts are in the public 
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
 minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
-also includes the compact EXP-011--034 campaigns, independent reconstruction audits, symbolic
+also includes the compact EXP-011--035 campaigns, independent reconstruction audits, symbolic
 proofs, the preserved EXP-013 correction, the EXP-015 refutation, and the EXP-022 quadratic
 refutation. The proof toolchain is
 pinned as follows:
@@ -2881,6 +3030,7 @@ EXP-031 & integral degree-seven contraction, exact small profiles, independent f
 EXP-032 & complete colon Betti polynomial, 297 exact rows, independent coefficient audit, and symbolic identities\\
 EXP-033 & minimal cubic cone, 297 upper-strand rows, kernel audit, independent reconstruction, and symbolic identities\\
 EXP-034 & two-layer incidence class, 297 exact rows, two-field ranks, semigroup reconstruction, and symbolic exclusions\\
+EXP-035 & zero-row classification, complete characteristic target, Smith form, semigroup reconstruction, and symbolic exclusions\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -2951,6 +3101,14 @@ source boundary, and the long exact Tor sequence. The independent route reconstr
 Artinian fiber bases from numerical-semigroup ideal powers rather than importing the canonical
 offset functions. The result is one exact lower-strand class, not a complete strand.
 
+EXP-035 preserves the first failed connecting pivot rather than hiding it. The all-parameter
+zero-row theorem follows directly from the displayed integral incidence formula and interval
+partition. Characteristic dependence is an exact finite-target statement: the canonical route
+uses every row and column, the independent route reconstructs the Artinian bases from semigroup
+ideal powers and reverses the elimination order, and Smith form identifies the single factor two.
+The result proves one characteristic-dependent multigraded cell at $p=4$, not a complete lower
+strand or an all-parameter torsion theorem.
+
 \section{\texorpdfstring{\enspace}{}Scope, attribution, and open questions}
 
 Son Pham retains discovery priority for the counterexample. Professor Craig Huneke's verification
@@ -2973,7 +3131,8 @@ Theorem~\ref{thm:colon-idealization-six}, and the complete third homological row
 Theorem~\ref{thm:complete-third-row}, and the complete cubic-colon Betti polynomial in
 Theorem~\ref{thm:colon-betti-polynomial}, and the minimal cubic mapping cone and complete upper
 special-fiber strands in Theorem~\ref{thm:minimal-cubic-cone}, and the first surviving
-lower-strand class in Theorem~\ref{thm:first-surviving-lower}, together with
+lower-strand class in Theorem~\ref{thm:first-surviving-lower}, and the zero-row and
+characteristic-dependence theorem in Theorem~\ref{thm:zero-row-characteristic}, together with
 their reproducible records.
 
 Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
@@ -2983,7 +3142,7 @@ Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomor
 \ref{thm:second-betti-row}, \ref{thm:colon-koszul-diagonal},
 \ref{thm:colon-idealization-six}, \ref{thm:complete-third-row},
 \ref{thm:colon-betti-polynomial}, \ref{thm:minimal-cubic-cone},
-and~\ref{thm:first-surviving-lower}
+\ref{thm:first-surviving-lower}, and~\ref{thm:zero-row-characteristic}
 do not classify all higher
 Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
 or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
@@ -3001,6 +3160,9 @@ questions remain open:
   determine the two complete lower strands of the quadratic quotient in
   \eqref{eq:quadratic-pullback}, thereby completing the presentation-ring Betti table and the full
   minimal resolution of the special fiber?
+  \item Does the factor-two incidence torsion in Theorem~\ref{thm:zero-row-characteristic} extend
+  to infinitely many parameters or multidegrees, and can its supporting subcomplex be classified
+  integrally?
 \end{enumerate}
 
 \section*{Acknowledgments}
