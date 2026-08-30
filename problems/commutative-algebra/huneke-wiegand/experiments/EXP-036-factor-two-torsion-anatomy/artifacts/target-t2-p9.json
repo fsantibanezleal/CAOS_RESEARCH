@@ -1,0 +1,99 @@
+{
+  "experiment": "EXP-036",
+  "route": "exact-sum finite torsion screen and unit residual",
+  "status": "PASS_FINITE_SCREEN",
+  "generated_at": "2026-08-30T22:18:34.074439+00:00",
+  "parameters": {
+    "p_min": 4,
+    "p_max": 5,
+    "targeted_cells": [
+      [
+        9,
+        2
+      ]
+    ],
+    "fields": [
+      2,
+      3,
+      1000003
+    ],
+    "budget_seconds": 600.0
+  },
+  "premise_hashes": {
+    "EXP-032 proof": "4dc37605c012b7f6a70ec5d383897c45a34e1dd5d5e4bb32a0582b7a6d651d1c",
+    "EXP-033 proof": "e27cd386ad47da7ad5282e88a095d82f2b1156f76546e934b287e911da2c7b1c",
+    "EXP-034 proof": "0d0a87b0a5fd4e3bbb5570e3e664eb59fcf8d07222abd62c48bdae9d20d61b4a",
+    "EXP-034 verdict": "ebbf52a0b2d85b0bb5c71ca6fb48846d17b1d91644e48e69dbc3a5e8a5f81304"
+  },
+  "rows": [
+    {
+      "p": 9,
+      "t": 2,
+      "target_offset": 92,
+      "homological_degree": 15,
+      "standard_internal_degree": 17,
+      "total_offset": 377,
+      "selected_row": [
+        [
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34
+        ],
+        92
+      ],
+      "kernel_codomain_rows": 8750,
+      "kernel_domain_columns": 6714,
+      "d_source_columns": 319900,
+      "selected_connecting_source_count": 15,
+      "kernel_codomain_hash": "55db779da1bcacbfbe2e81b6c075c030aa76222e6e4ebbd7683b5ea3983071cc",
+      "kernel_domain_hash": "2a769605a305aa7021de1fca50338a85e6342f3eff825ceb780d82600e94ccc6",
+      "d_source_hash": "b14f6593257f4ffb99ea1e7d82a28dfa024cffb42576255754d2bfd3812d3b8c",
+      "field_rows": {
+        "2": {
+          "rank_kernel_boundary": 4974,
+          "kernel_cokernel_dimension": 3776,
+          "rank_d_boundary": 295352,
+          "rank_combined": 302169,
+          "connecting_image_dimension_in_kernel_cokernel": 1843,
+          "surviving_a_dimension": 1933
+        },
+        "3": {
+          "rank_kernel_boundary": 4974,
+          "kernel_cokernel_dimension": 3776,
+          "rank_d_boundary": 295352,
+          "rank_combined": 302218,
+          "connecting_image_dimension_in_kernel_cokernel": 1892,
+          "surviving_a_dimension": 1884
+        },
+        "1000003": {
+          "rank_kernel_boundary": 4974,
+          "kernel_cokernel_dimension": 3776,
+          "rank_d_boundary": 295352,
+          "rank_combined": 302218,
+          "connecting_image_dimension_in_kernel_cokernel": 1892,
+          "surviving_a_dimension": 1884
+        }
+      },
+      "even_rank_defect": 0,
+      "kernel_characteristic_dependent": false,
+      "a_characteristic_dependent": true,
+      "row_hash": "7bc08bb2d3ce5a2291e1cade485344712689471d894dcb8e1f2194cc9467657b"
+    }
+  ],
+  "elapsed_seconds": 411.113286,
+  "p1_finite_propagation": "NOT_REACHED",
+  "positive_cells": [],
+  "artifact_sha256": "a59286a01def0b9314e79c70218efb8eb29b1aad586d2b7b8df1792df9509009"
+}

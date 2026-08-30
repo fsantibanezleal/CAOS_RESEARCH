@@ -36,18 +36,18 @@
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-30\\[2pt]\normalsize Version 0.22}
+\date{2026-08-30\\[2pt]\normalsize Version 0.23}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.22}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.23}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.22}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.23}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -63,8 +63,8 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.22 \textperiodcentered\ 2026-08-30\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22177072}{10.5281/zenodo.22177072}\\
+First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.23 \textperiodcentered\ 2026-08-30\\
+Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22181972}{10.5281/zenodo.22181972}\\
 Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
 \textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
 verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
@@ -79,7 +79,7 @@ reduction, tangent-cone, fiber-cone, defining-ideal, syzygy, and characteristic-
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.22}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.23}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -249,7 +249,15 @@ unit Smith form, so the result again holds over every field. This completes one 
   \]
   The corresponding integral kernel cokernel is
   $\mathbb Z^4\oplus\mathbb Z/2\mathbb Z$. This determines exact lower-strand points and a
-  characteristic-dependent multigraded cell, not the two complete lower strands, the
+  characteristic-dependent multigraded cell. Exact complete-target calculations extend the
+  phenomenon through $(p,t)=(9,2)$. On the tested $t=2$ diagonal with $5\le p\le9$, the kernel
+  cokernel has the same dimension over $\mathbf F_2$ and $\mathbf F_3$, while the connecting image
+  is smaller over $\mathbf F_2$; the resulting excesses are $4,9,18,31,49$. Two formulas suggested
+  by shorter initial segments are explicitly refuted. For every $p\ge4$ and $2\le t\le p-2$, a
+  separate offset inequality shows that the shifted cubic source is absent, so the exact
+  quadratic-quotient and special-fiber values agree at every target in this family. This is not
+  an infinite characteristic-dependence theorem. The results do not determine the two complete
+  lower strands, the
   differential matrices, or the full special-fiber resolution. The results remain confined
 to two-generated monomial ideals over symmetric numerical semigroup rings and do not classify
 arbitrary Gorenstein domains and modules.
@@ -342,6 +350,10 @@ they are verified by exact machine computation and independently checked artifac
   classes in homological degrees $p+1,\ldots,2p-3$, and prove that the first complete target
   quotient has characteristic-dependent multigraded Betti number: four over $\mathbf F_2$ and
   three over $\mathbf F_3$ for both the quadratic quotient and the special fiber.
+  \item We extend the exact target campaign through $(p,t)=(9,2)$, distinguish kernel-incidence
+  rank defects from characteristic dependence created by the connecting quotient, localize the
+  first factor-two residual, refute two finite-data formulas, and prove that the cubic source is
+  absent at every target in the declared two-parameter family.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -2998,6 +3010,115 @@ hashes are
 The zero-row theorem is deductive for all $p\ge4$. The characteristic-dependent theorem is the
 complete exact target at $p=4$; no extension of its torsion statement to $p>4$ is claimed.
 
+\subsection{Repeated characteristic dependence and two rank mechanisms}
+
+Retain~\eqref{eq:zero-row-family} and put
+\begin{equation}
+i_{p,t}=2p-t-1,\qquad
+\tau_{p,t}=4p^2+6p-\frac{t(t-1)}2.
+\label{eq:torsion-family-target}
+\end{equation}
+The next result separates the kernel incidence boundary from the connecting quotient instead of
+extrapolating the single Smith factor at $p=4$.
+
+\begin{theorem}[Repeated characteristic dependence and cubic-source exclusion, {\bf[D/MV]}]
+\label{thm:repeated-characteristic}
+At the nine targets in Table~\ref{tab:torsion-targets}, the displayed dimensions are exact over
+$\mathbf F_2$ and $\mathbf F_3$. The full computation over $\mathbf F_{1000003}$ agrees with the
+$\mathbf F_3$ column in every cell.
+
+For every tested $(p,2)$ with $5\le p\le9$, the kernel cokernel has equal dimension over
+$\mathbf F_2$ and $\mathbf F_3$; all characteristic dependence in the last column is created by
+the connecting-image rank. In contrast, the kernel incidence matrix itself loses rank modulo two
+at $(4,2)$, $(5,3)$, and $(6,3)$.
+
+For every integer $p\ge4$ and $2\le t\le p-2$, the shifted cubic source at the target
+\eqref{eq:torsion-family-target} is zero. Consequently, over every field,
+\begin{equation}
+\beta_{i_{p,t},(i_{p,t}+2,\tau_{p,t})}^{P_p}(C_p)
+=\beta_{i_{p,t},(i_{p,t}+2,\tau_{p,t})}^{P_p}(A_p).
+\label{eq:cubic-family-transfer}
+\end{equation}
+\end{theorem}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}crrrr@{}}
+\toprule
+$(p,t)$ & $\dim\operatorname{coker}\delta_K$ & $\dim\operatorname{im}J$ & $\dim A_p=\dim C_p$ & $\mathbf F_2$ excess\\
+ & $\mathbf F_2/\mathbf F_3$ & $\mathbf F_2/\mathbf F_3$ & $\mathbf F_2/\mathbf F_3$ & in the last column\\
+\midrule
+$(4,2)$ & $5/4$ & $1/1$ & $4/3$ & $1$\\
+$(5,2)$ & $39/39$ & $15/19$ & $24/20$ & $4$\\
+$(5,3)$ & $5/3$ & $2/1$ & $3/2$ & $1$\\
+$(6,2)$ & $178/178$ & $83/92$ & $95/86$ & $9$\\
+$(6,3)$ & $113/111$ & $69/74$ & $44/37$ & $7$\\
+$(6,4)$ & $3/3$ & $1/1$ & $2/2$ & $0$\\
+$(7,2)$ & $579/579$ & $279/297$ & $300/282$ & $18$\\
+$(8,2)$ & $1570/1570$ & $762/793$ & $808/777$ & $31$\\
+$(9,2)$ & $3776/3776$ & $1843/1892$ & $1933/1884$ & $49$\\
+\bottomrule
+\end{tabular}
+\caption{Complete multigraded targets. Each slash separates $\mathbf F_2$ from $\mathbf F_3$;
+the independent odd control $\mathbf F_{1000003}$ agrees with $\mathbf F_3$.}
+\label{tab:torsion-targets}
+\end{table}
+
+\begin{proof}
+For each cell, fixed-cardinality subsets are enumerated only at the exact required offset. The
+canonical route first reproduces the frozen $(4,2)$ basis hashes, all $79$ kernel rows, all $119$
+kernel-boundary columns, all $710$ connecting-source columns, and every earlier field rank. For
+the larger targets it constructs the complete matrices $\delta_K$, $d_D$, and
+\[
+M=\begin{pmatrix}d_D&0\\J&\delta_K\end{pmatrix}.
+\]
+Equation~\eqref{eq:complete-target-rank} gives every entry of Table~\ref{tab:torsion-targets} by
+exact sparse elimination. The first two claims are therefore complete finite calculations, not
+interpolations.
+
+It remains to prove the family-wide cubic exclusion. A cubic contribution at this target would
+come from a shifted diagonal wedge of
+\[
+k=i_{p,t}-1=2p-t-2
+\]
+high variables at offset $\tau_{p,t}-3p$. The first high interval begins at $6p$ and contains at
+least $k$ consecutive offsets. Thus its least possible sum is
+\[
+6p+(6p+1)+\cdots+(6p+k-1).
+\]
+The difference between this minimum and the required shifted offset is
+\begin{equation}
+g(p,t)=10p^2-8pt-20p+t^2+2t+3.
+\label{eq:cubic-family-gap}
+\end{equation}
+Since $g(p,t+1)-g(p,t)=2t-8p+3<0$ on the declared interval, its minimum occurs at $t=p-2$ and is
+\[
+g(p,p-2)=3(p-1)^2>0.
+\]
+The shifted diagonal is absent, and the minimal cone gives~\eqref{eq:cubic-family-transfer}.
+\end{proof}
+
+At $(4,2)$, exact unimodular cancellation removes $74$ unit pivots from the integral
+$79$-by-$119$ matrix. The residual is $5$ by $45$, has four zero rows, and has only two nonzero
+entries, both $-2$, in its remaining row. This compactly recovers
+$\mathbb Z^4\oplus\mathbb Z/2\mathbb Z$. The traced active support in this deterministic reduction
+uses seven low variables, not the six predicted by the exploratory real-projective-plane analogy;
+that recognition is not obtained. This does not exclude every alternative unimodular reduction.
+
+The $t=2$ excesses for $p=4,\ldots,9$ are
+\[
+1,4,9,18,31,49.
+\]
+The first three suggest $(p-3)^2$, which predicts $16$ instead of $18$ at $p=7$. The next four
+values fit $2p^2-17p+39$, which predicts $48$ instead of $49$ at $p=9$. Both formulas are rejected.
+Independent semigroup-basis reconstruction, dynamic exact sums, reverse pivots, and an additional
+$\mathbf F_5$ control reproduce all eight cells through $(8,2)$. The independent $(9,2)$ attempt
+crossed a $47.5$-GB resource boundary before producing a rank and is retained as inconclusive
+non-evidence. The canonical $(9,2)$ calculation retains the two agreeing odd-prime controls. Thus
+the finite characteristic result stops at the displayed cells; only the cubic-source exclusion is
+proved for all parameters.
+
 \section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
 
 All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
@@ -3006,7 +3127,7 @@ All compact code, hypotheses, manifests, audits, and verdicts are in the public 
 \end{center}
 Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
 minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
-also includes the compact EXP-011--035 campaigns, independent reconstruction audits, symbolic
+also includes the compact EXP-011--036 campaigns, independent reconstruction audits, symbolic
 proofs, the preserved EXP-013 correction, the EXP-015 refutation, and the EXP-022 quadratic
 refutation. The proof toolchain is
 pinned as follows:
@@ -3031,6 +3152,7 @@ EXP-032 & complete colon Betti polynomial, 297 exact rows, independent coefficie
 EXP-033 & minimal cubic cone, 297 upper-strand rows, kernel audit, independent reconstruction, and symbolic identities\\
 EXP-034 & two-layer incidence class, 297 exact rows, two-field ranks, semigroup reconstruction, and symbolic exclusions\\
 EXP-035 & zero-row classification, complete characteristic target, Smith form, semigroup reconstruction, and symbolic exclusions\\
+EXP-036 & exact-sum target ranks, compact unit residual, independent ranks through $(8,2)$, and all-parameter cubic exclusion\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -3109,6 +3231,14 @@ ideal powers and reverses the elimination order, and Smith form identifies the s
 The result proves one characteristic-dependent multigraded cell at $p=4$, not a complete lower
 strand or an all-parameter torsion theorem.
 
+EXP-036 introduces no solver dependency. Its finite claims use complete target matrices, exact
+prime-field elimination, and a separately encoded semigroup-basis/reverse-pivot audit through
+$(8,2)$. The independent $(9,2)$ resource stop is disclosed and contributes no evidence. The
+all-parameter statement is only~\eqref{eq:cubic-family-transfer}, proved by the displayed offset
+inequality; the characteristic-dependent table is not extrapolated. The equal tested odd-prime
+ranks do not assert equality in every odd characteristic. Neither rejected finite formula is used
+as a premise.
+
 \section{\texorpdfstring{\enspace}{}Scope, attribution, and open questions}
 
 Son Pham retains discovery priority for the counterexample. Professor Craig Huneke's verification
@@ -3132,7 +3262,9 @@ Theorem~\ref{thm:complete-third-row}, and the complete cubic-colon Betti polynom
 Theorem~\ref{thm:colon-betti-polynomial}, and the minimal cubic mapping cone and complete upper
 special-fiber strands in Theorem~\ref{thm:minimal-cubic-cone}, and the first surviving
 lower-strand class in Theorem~\ref{thm:first-surviving-lower}, and the zero-row and
-characteristic-dependence theorem in Theorem~\ref{thm:zero-row-characteristic}, together with
+characteristic-dependence theorem in Theorem~\ref{thm:zero-row-characteristic}, and the
+repeated-target and cubic-exclusion theorem in
+Theorem~\ref{thm:repeated-characteristic}, together with
 their reproducible records.
 
 Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
@@ -3142,7 +3274,8 @@ Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomor
 \ref{thm:second-betti-row}, \ref{thm:colon-koszul-diagonal},
 \ref{thm:colon-idealization-six}, \ref{thm:complete-third-row},
 \ref{thm:colon-betti-polynomial}, \ref{thm:minimal-cubic-cone},
-\ref{thm:first-surviving-lower}, and~\ref{thm:zero-row-characteristic}
+\ref{thm:first-surviving-lower}, \ref{thm:zero-row-characteristic},
+and~\ref{thm:repeated-characteristic}
 do not classify all higher
 Frobenius values, prove a minimum multiplicity or embedding dimension across all counterexamples,
 or establish corresponding statements for arbitrary Gorenstein domains and modules. The following
@@ -3160,9 +3293,10 @@ questions remain open:
   determine the two complete lower strands of the quadratic quotient in
   \eqref{eq:quadratic-pullback}, thereby completing the presentation-ring Betti table and the full
   minimal resolution of the special fiber?
-  \item Does the factor-two incidence torsion in Theorem~\ref{thm:zero-row-characteristic} extend
-  to infinitely many parameters or multidegrees, and can its supporting subcomplex be classified
-  integrally?
+  \item Can the parity-sensitive connecting quotient in
+  Theorem~\ref{thm:repeated-characteristic} be identified by an integral or topological complex,
+  thereby proving or refuting infinitely many characteristic-dependent $t=2$ cells without
+  extrapolating their finite multiplicities?
 \end{enumerate}
 
 \section*{Acknowledgments}

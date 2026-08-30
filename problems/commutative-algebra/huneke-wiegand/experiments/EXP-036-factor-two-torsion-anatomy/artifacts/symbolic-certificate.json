@@ -1,0 +1,247 @@
+{
+  "experiment": "EXP-036",
+  "status": "PASS_SYMBOLIC_AND_CROSS_ARTIFACT",
+  "generated_at": "2026-08-30T22:51:09.785979+00:00",
+  "source_file_sha256": {
+    "results-p6.json": "b2452d307112b0d6010483cbafbdcde13fa83a46299f6c24b4a490f7e0cdd073",
+    "target-t2-p7-p8.json": "79da3d9f03ecf5dd7dfee27a8bd69382189214254e419ba7f2facd7e3fa06f31",
+    "target-t2-p9.json": "24be490dd4e9a17562d9731f9ec033906824e76b258d1d37afd12d37de732a29",
+    "audit-p6.json": "8c6fe6c23a85727ea735cd09f4003f627e318957b0f9390dcbdc96c25a72e2bd",
+    "audit-t2-p7-p8.json": "f8ed5f37070a48d61b0178501497cddd887f2bb34502ce869621577d70ee1bc9",
+    "audit-t2-p9-resource-stop.json": "f5e5403ddfb9be634ebb5689c8e9e62d6042fbffa6de01381531fee092e17f31",
+    "localization-p4.json": "3088a12e13b6f663e41a4e4c162e703ac26525dc49ea6a210e2863b8381a8ad1"
+  },
+  "cubic_cone_absence": {
+    "domain": "integers p>=4 and 2<=t<=p-2",
+    "source_exterior_size": "2*p - t - 2",
+    "minimum_high_sum": "14*p**2 - 8*p*t - 17*p + t**2/2 + 5*t/2 + 3",
+    "shifted_target_offset": "4*p**2 + 3*p - t*(t - 1)/2",
+    "gap": "10*p**2 - 8*p*t - 20*p + t**2 + 2*t + 3",
+    "forward_difference_in_t": "-8*p + 2*t + 3",
+    "endpoint_minimum": "3*(p - 1)**2",
+    "proof": "The gap decreases with t on the declared interval, so its minimum is 3*(p-1)^2 at t=p-2, which is positive for p>=4.",
+    "conclusion": "the shifted D_p(-3) diagonal is zero, hence C_p equals A_p at every declared target",
+    "finite_checks": {
+      "4:2": {
+        "source_exterior_size": 4,
+        "minimum_high_sum": 102,
+        "shifted_target_offset": 75,
+        "positive_gap": 27,
+        "checks": {
+          "literal_matches_symbolic": true,
+          "source_diagonal_absent": true
+        }
+      },
+      "5:2": {
+        "source_exterior_size": 6,
+        "minimum_high_sum": 195,
+        "shifted_target_offset": 114,
+        "positive_gap": 81,
+        "checks": {
+          "literal_matches_symbolic": true,
+          "source_diagonal_absent": true
+        }
+      },
+      "5:3": {
+        "source_exterior_size": 5,
+        "minimum_high_sum": 160,
+        "shifted_target_offset": 112,
+        "positive_gap": 48,
+        "checks": {
+          "literal_matches_symbolic": true,
+          "source_diagonal_absent": true
+        }
+      },
+      "6:2": {
+        "source_exterior_size": 8,
+        "minimum_high_sum": 316,
+        "shifted_target_offset": 161,
+        "positive_gap": 155,
+        "checks": {
+          "literal_matches_symbolic": true,
+          "source_diagonal_absent": true
+        }
+      },
+      "6:3": {
+        "source_exterior_size": 7,
+        "minimum_high_sum": 273,
+        "shifted_target_offset": 159,
+        "positive_gap": 114,
+        "checks": {
+          "literal_matches_symbolic": true,
+          "source_diagonal_absent": true
+        }
+      },
+      "6:4": {
+        "source_exterior_size": 6,
+        "minimum_high_sum": 231,
+        "shifted_target_offset": 156,
+        "positive_gap": 75,
+        "checks": {
+          "literal_matches_symbolic": true,
+          "source_diagonal_absent": true
+        }
+      },
+      "7:2": {
+        "source_exterior_size": 10,
+        "minimum_high_sum": 465,
+        "shifted_target_offset": 216,
+        "positive_gap": 249,
+        "checks": {
+          "literal_matches_symbolic": true,
+          "source_diagonal_absent": true
+        }
+      },
+      "8:2": {
+        "source_exterior_size": 12,
+        "minimum_high_sum": 642,
+        "shifted_target_offset": 279,
+        "positive_gap": 363,
+        "checks": {
+          "literal_matches_symbolic": true,
+          "source_diagonal_absent": true
+        }
+      },
+      "9:2": {
+        "source_exterior_size": 14,
+        "minimum_high_sum": 847,
+        "shifted_target_offset": 350,
+        "positive_gap": 497,
+        "checks": {
+          "literal_matches_symbolic": true,
+          "source_diagonal_absent": true
+        }
+      }
+    }
+  },
+  "finite_rank_checks": {
+    "cells": [
+      [
+        4,
+        2
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        9,
+        2
+      ]
+    ],
+    "canonical_odd_fields_agree": true,
+    "independent_cells_through_p8_pass": [
+      [
+        4,
+        2
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        8,
+        2
+      ]
+    ],
+    "independent_p9_status": "INCONCLUSIVE_RESOURCE_BUDGET",
+    "t2_p5_through_p9_kernel_characteristic_independent": true,
+    "t2_p5_through_p9_a_and_c_gaps": [
+      4,
+      9,
+      18,
+      31,
+      49
+    ]
+  },
+  "p4_integral_localization": {
+    "checks": {
+      "unit_pivots_74": true,
+      "residual_shape_5_by_45": true,
+      "two_nonzero_entries": true,
+      "entry_gcd_two": true,
+      "one_factor_two": true,
+      "seven_low_variables_in_this_reduction": true
+    },
+    "transform_certificate_hash": "1cd41f70abb13e79eb6cb3687134ddcdf4ddd0f69129803d799f7653710ece36",
+    "low_variable_support": [
+      1,
+      2,
+      3,
+      4,
+      12,
+      13,
+      14
+    ],
+    "recognition_scope": "this deterministic reduction uses seven low variables; the proposed six-variable RP2 recognition is not established"
+  },
+  "interpolation_negative_controls": {
+    "square_formula": {
+      "fit_cells": {
+        "4": 1,
+        "5": 4,
+        "6": 9
+      },
+      "prediction_p7": 16,
+      "actual_p7": 18,
+      "refuted": true
+    },
+    "quadratic_formula_2p2_minus_17p_plus_39": {
+      "fit_cells": {
+        "5": 4,
+        "6": 9,
+        "7": 18,
+        "8": 31
+      },
+      "prediction_p9": 48,
+      "actual_p9": 49,
+      "refuted": true
+    }
+  },
+  "scope": "All-parameter cubic absence is proved. Characteristic dependence is exact only for the nine computed cells; no infinite torsion formula is claimed.",
+  "artifact_sha256": "79f3156ee542a7c224fe0bf5e47fab6dcb1ce5bb4b09a2e002d156aebfd7e7b7"
+}

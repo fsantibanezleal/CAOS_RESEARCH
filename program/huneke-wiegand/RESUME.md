@@ -1,6 +1,21 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-30. Lifecycle: EXP-035 is CONFIRMED with its declared P3 mechanism refuted.
+Updated: 2026-08-30. Lifecycle: EXP-036 is CONFIRMED with structural propagation unresolved.
+Exact complete-target calculations prove repeated characteristic dependence at eight of the nine
+tested family cells through `(p,t)=(9,2)`.  The tested `t=2` cells with `5<=p<=9` have the same
+kernel-cokernel dimension over `GF(2)`, `GF(3)`, and `GF(1000003)` but a smaller connecting image
+over `GF(2)`;
+their `A_p=C_p` excesses are `4,9,18,31,49`.  Both the initial square and quadratic
+interpolations are refuted.  For every `p>=4` and `2<=t<=p-2`, the shifted cubic source is absent
+by the positive gap `g(p,t)>=3(p-1)^2`, so every future exact `A_p` value at these targets
+transfers to `C_p`.  This is not an infinite characteristic-dependence theorem. The 53-page
+manuscript v0.23 passed every publication gate and is public, concept-latest, and fresh-download
+verified at DOI `10.5281/zenodo.22181972`. Its 824,114-byte PDF has MD5
+`6bcacfa265e840f40e89dcdb87b75f7b` and SHA-256
+`c77b08a3724db90b14039c2c88e98325403ef4f656f52137057a27eb6fa5072d`. HWB-062 is done and
+HWB-063 is active for separate-PR promotion.
+
+EXP-035 remains CONFIRMED with its declared P3 mechanism refuted.
 For every `p>=4`, the exact zero-row criterion is
 
 ```text
@@ -29,8 +44,12 @@ manuscript v0.22 is published and fresh-download verified at DOI
 `5ed2409d6688b30147963a7293598440` and SHA-256
 `3868f511a047073c9d7bedf25e026f1aaf3a5ab2c05c45d03614675ef6bdf5c2`. HWB-060 is done: PRs
 #226/#227 passed required checks and promoted payload tree
-`0847e35a7641ab5592afd136f42bcf09ffe514f3` through `develop` and `main`. HWB-061 is pending for
-the all-parameter torsion anatomy. EXP-034 is CONFIRMED and manuscript v0.21 is PUBLISHED. Put
+`0847e35a7641ab5592afd136f42bcf09ffe514f3` through `develop` and `main`. HWB-061 remains active
+for the infinite connecting-parity problem after the confirmed EXP-036 finite/anatomy gate.
+HWB-062 is done with manuscript v0.23 and its verified Zenodo version; HWB-063 owns repository
+promotion.
+EXP-034 is CONFIRMED and manuscript
+v0.21 is PUBLISHED. Put
 `tau_p=8p-1+p(p+1)/2`. The Artinian reduction of the high-variable kernel and a separate unit
 connecting-map pivot prove, over every field,
 
@@ -332,6 +351,7 @@ campaign is supporting evidence, not the proof.
 | EXP-033 | CONFIRMED | `depth(P_p/Q_p)=1`, `reg(P_p/Q_p)=2`, a minimal cubic mapping cone, and complete regularity-three/four strands over every field |
 | EXP-034 | CONFIRMED | exact characteristic-free class `beta_(p,(p+2,8p-1+p(p+1)/2))=1` in `K_p`, `A_p`, and `C_p` |
 | EXP-035 | CONFIRMED with P3 mechanism refuted | all primitive zero rows; consecutive `K_p` family; `beta_(5,(7,87))(A_4)=beta_(5,(7,87))(C_4)` is `4` over `GF(2)` and `3` over `GF(3)` |
+| EXP-036 | CONFIRMED with structural propagation unresolved | repeated characteristic-dependent targets through `p=9`; distinct kernel and connecting mechanisms; compact factor-two residual; all-parameter cubic-source absence |
 
 ## 3a. Exact evidence anchors
 
@@ -401,6 +421,26 @@ campaign is supporting evidence, not the proof.
 
 ## 4. In flight
 
+EXP-036 is CONFIRMED with its all-parameter structural-propagation prediction unresolved.  Its
+exact-sum route reproduces EXP-035 and computes the complete `p<=6` triangle plus `(7,2)`,
+`(8,2)`, and `(9,2)`.  The exact `A_p=C_p` dimensions over `GF(2)` and `GF(3)` are
+
+```text
+(4,2) 4/3, (5,2) 24/20, (5,3) 3/2, (6,2) 95/86,
+(6,3) 44/37, (6,4) 2/2, (7,2) 300/282,
+(8,2) 808/777, (9,2) 1933/1884.
+```
+
+The tested `t=2` kernel cokernels have equal dimensions in all three tested fields for
+`5<=p<=9`; their dependence is
+created by the connecting quotient across the three tested fields.  The finite excess sequence
+`1,4,9,18,31,49` refutes both
+the candidate `(p-3)^2` and the later quadratic fit.  At `(4,2)`, 74 exact unit cancellations
+leave a compact `5` by `45` residual with two entries `-2` and Smith cokernel
+`Z^4 direct-sum Z/2Z`.  Its canonical active support has seven low variables, so the proposed
+six-variable projective-plane recognition is not obtained.  Independently, the cubic-source gap
+is at least `3(p-1)^2` for every declared `(p,t)`, proving `A_p=C_p` at all family targets.
+
 EXP-035 is CONFIRMED with P3's coordinatewise mechanism refuted. For each `b in B_p`, the
 primitive zero-coordinate summand is classified by `R_b subset F`. For `2<=t<=p-2`,
 
@@ -412,8 +452,9 @@ has size `2p-t-1`, giving consecutive kernel classes. The canonical classificati
 `p=300`. The first connecting smoke case has an explicit integral source cycle, but the complete
 target quotient proves characteristic dependence at `p=4`: dimensions are `4` over `GF(2)` and
 `3` over `GF(3)` for both `A_4` and `C_4`. HWB-058 through HWB-060 are done. Manuscript v0.22 is
-published, fresh-download verified, and promoted; HWB-061 is pending for a freshly declared
-all-parameter torsion experiment.
+published, fresh-download verified, and promoted.  HWB-061 remains open only for an infinite
+description of the parity-sensitive connecting quotient; the finite propagation and cubic
+transfer gates are now closed by EXP-036.  HWB-062 opens the in-place v0.23 manuscript update.
 
 EXP-034 is CONFIRMED. With `S_p=P_p/(X_0)` and `M_p=K_p/X_0K_p`, the kernel has an explicit
 two-layer offset basis and signed incidence maps `delta_i`. The first missing cell has
@@ -670,20 +711,26 @@ Published baseline:
   characteristic-dependent lower cell. The public 810,905-byte PDF has MD5
   `5ed2409d6688b30147963a7293598440` and SHA-256
   `3868f511a047073c9d7bedf25e026f1aaf3a5ab2c05c45d03614675ef6bdf5c2`.
+- v0.23 DOI `10.5281/zenodo.22181972`: finite propagation through `(9,2)`, two torsion
+  mechanisms, compact localization, and family-wide cubic transfer. The public 824,114-byte PDF
+  has MD5 `6bcacfa265e840f40e89dcdb87b75f7b` and SHA-256
+  `c77b08a3724db90b14039c2c88e98325403ef4f656f52137057a27eb6fa5072d`.
 - concept DOI `10.5281/zenodo.21763582`.
-- The concept latest resolves to record `22177072`; title, version, sole author/ORCID, licence,
+- The concept latest resolves to record `22181972`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
 
-1. Open the next theorem experiment on the all-parameter anatomy of the discovered `2`-torsion;
-   do not extrapolate from `p=4` without a declaration and finite-target preflight.
-2. Evaluate a separate manuscript only after the incidence method determines a complete strand
-   or yields a transferable theorem beyond this family.
-3. Keep the maximal-rank model rejected unless a new exact incidence calculation restores it on
-   a precisely stated subregion.
-4. Leave CAOS_MANAGE untouched during this round; its deferred ledgers are outside the active
-   product-repository scope.
+1. Promote the verified EXP-036 theorem and v0.23 publication through separate PRs to `develop`
+   and then `main`.
+2. Derive the `t=2` connecting-image defect from a parity-sensitive quotient complex.  Treat the
+   values `1,4,9,18,31,49` as data only; both simple polynomial fits are rejected.
+3. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
+   a signed core; keep this separate from the connecting-only `t=2` mechanism.
+4. Open a separate manuscript only after a complete strand, an infinite connecting theorem, or a
+   comparably transferable result is proved.
+5. Leave CAOS_MANAGE untouched during this round; its unrelated diffusion work remains preserved
+   on `develop`.
 
 ### Lenses ledger
 
@@ -721,6 +768,13 @@ Published baseline:
 - Torsion anatomy: the failed EXP-035 pivot reveals a `Z/2` incidence cokernel factor. Complete
   target quotients replace coordinatewise survival guesses, and characteristic comparison becomes
   the next invariant-first route.
+- Torsion recognition: EXP-036 confirms a compact factor-two residual but its canonical active
+  support has seven low variables, so the declared six-variable projective-plane recognition is
+  not obtained.
+- Connecting-parity redirection: exact `t=2` kernel-cokernel dimensions agree in the three tested
+  fields for
+  `5<=p<=9`; the next invariant is the mod-two homology of the connecting quotient, not the Smith
+  form of the kernel matrix or a polynomial fit to finite dimensions.
 
 ## 7. Gotchas
 
