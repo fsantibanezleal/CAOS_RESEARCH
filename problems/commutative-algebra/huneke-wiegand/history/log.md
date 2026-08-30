@@ -1459,3 +1459,15 @@
   `0.23`. Public metadata, sole creator/ORCID, CC BY 4.0 licence, filename, bytes, and MD5 agree;
   a fresh unauthenticated download matches Git by MD5 and SHA-256.
 - HWB-062 is done. HWB-063 is active for separate-PR promotion to `develop` and then `main`.
+
+## 2026-08-30 - EXP-036 publication round promoted
+
+- PR #230 passed `guards` and `test` and merged the complete EXP-036 theorem, regenerated public
+  registry, manuscript v0.23, and verified Zenodo publication to `develop` at
+  `fc40e74251c2b8c16e0875178742aeed45e25ce0`.
+- PR #231 passed both required jobs and promoted the exact tested state to `main` at
+  `817cc01ea76074f4989e28f11511ddb8c2343ce2`.
+- Work, `develop`, and `main` shared payload tree
+  `8ea3fbd0dfd136a7b91c508a31146be7d88eded1` before this documentation handoff.
+- HWB-063 is done. HWB-061 remains active for an infinite parity-sensitive theorem for the
+  connecting-image quotient. Neither complete lower strand nor a full resolution is claimed.
