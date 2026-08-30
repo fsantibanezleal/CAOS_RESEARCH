@@ -1,0 +1,61 @@
+{
+  "experiment": "EXP-035",
+  "route": "symbolic interval and characteristic-boundary certificate",
+  "status": "PASS_SYMBOLIC",
+  "generated_at": "2026-08-30T12:56:20.466280+00:00",
+  "zero_row_criterion": "the row [b,F] has an incoming coefficient iff R_b minus F is nonempty",
+  "z3_obligations": [
+    {
+      "obligation": "first-low values below t miss every high block",
+      "status": "UNSAT"
+    },
+    {
+      "obligation": "the value t lands at the high singleton",
+      "status": "UNSAT"
+    },
+    {
+      "obligation": "the value t+1 lands at the missing offset",
+      "status": "UNSAT"
+    },
+    {
+      "obligation": "remaining first-low values land in the second high interval",
+      "status": "UNSAT"
+    },
+    {
+      "obligation": "every second-low value lands in the first high interval",
+      "status": "UNSAT"
+    },
+    {
+      "obligation": "no high variable represents the target",
+      "status": "UNSAT"
+    },
+    {
+      "obligation": "candidate homological degree is below the D row-two threshold",
+      "status": "UNSAT"
+    },
+    {
+      "obligation": "candidate degrees fail to reach the lower endpoint",
+      "status": "UNSAT"
+    },
+    {
+      "obligation": "candidate degrees fail to reach the upper endpoint",
+      "status": "UNSAT"
+    }
+  ],
+  "candidate_cardinality": "2*p-t-1",
+  "candidate_total_offset": "(8*p**2 + 12*p - t**2 + t)/2",
+  "artifact_checks": {
+    "target_status": true,
+    "audit_status": true,
+    "audit_matches_target": true,
+    "kernel_smith_profile": true,
+    "characteristic_two_a_dimension": true,
+    "characteristic_three_a_dimension": true,
+    "connecting_rank_is_one": true,
+    "cubic_shifted_diagonal_absent": true
+  },
+  "target_artifact_sha256": "4072a9fb7844d07763fae1b08e99da3d94d38cf3a40f980316c38f0931091276",
+  "audit_artifact_sha256": "b92e787bc120b5fa12aac1fc4a10792883e699ed7315055958f3916e8d10b60b",
+  "elapsed_seconds": 0.213545,
+  "artifact_sha256": "b1bfc105f3e9ace368f181ccf10f367fe1f4d23199e49c14275bd8e9b941569e"
+}

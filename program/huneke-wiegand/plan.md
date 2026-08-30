@@ -1002,3 +1002,47 @@ registry update, manuscript v0.21, and verified Zenodo record to `develop` at
 same tested state to `main` at `4cde1856a0850df8c89cc0fa9473c19ccaaf2b58`. The work branch,
 `develop`, and `main` shared payload tree `f571fb955560c29489c181a6ce542548619209e0` before the
 documentation handoff. HWB-057 is done. No release tag belongs to this research-only round.
+
+## 2026-08-30 - EXP-035 zero-row classification gate
+
+HWB-058 is active. The invariant-first observation is that a codomain coordinate
+`e_F tensor v_b` is an integral zero row exactly when the representation set
+`R_b={g:b-g in H_p}` is contained in `F`. EXP-035 first classifies this canonical primitive
+cokernel summand without building full incidence matrices.
+
+The stronger target is the block `b=10p+t`, `2<=t<=p-2`, whose predicted representation set has
+size `2p-t-1`. These cells would fill the consecutive homological interval
+`p+1,...,2p-3` next to the EXP-034 class at `p`. Kernel existence and connecting-map survival are
+separate gates. Manuscript v0.22 and Zenodo remain closed unless the all-parameter survival theorem
+is proved and independently validated.
+
+EXP-035 is CONFIRMED with its declared P3 mechanism refuted. The zero-row criterion
+`R_b subset F` splits off an exact primitive free coordinate summand for every `p>=4`. The block
+`b=10p+t`, `2<=t<=p-2`, supplies consecutive kernel classes in homological degrees
+`p+1,...,2p-3`.
+
+The first connecting smoke case has an integral cycle, so coordinatewise survival fails. The full
+target quotient is stronger: at `(p,t)=(4,2)`, the multigraded Betti number of both `A_4` and
+`C_4` is four over `GF(2)` and three over `GF(3)`. The kernel incidence cokernel is
+`Z^4 direct-sum Z/2Z`. Complete exact matrices, a semigroup-derived independent reconstruction,
+Smith form, four field ranks, and symbolic interval proofs pass. HWB-058 is done. HWB-059 opens
+the in-place manuscript v0.22 gate; the next mathematical path is the all-parameter anatomy of
+the discovered two-torsion, not another naive unit-pivot sweep.
+
+## 2026-08-30 - manuscript v0.22 publication gate
+
+The EXP-035 result remains in the coherent main manuscript rather than opening a separate paper.
+The 51-page v0.22 candidate passed its claim/scope audit, two consecutive warning-free LaTeX
+builds, metadata and text extraction, complete 150-DPI rendered inspection, full-size inspection
+of page one and theorem pages 45--46, and sole-human-authorship/ORCID gates. The frozen candidate
+is 810,905 bytes with MD5 `5ed2409d6688b30147963a7293598440` and SHA-256
+`3868f511a047073c9d7bedf25e026f1aaf3a5ab2c05c45d03614675ef6bdf5c2`.
+
+After the committed DOI-baked candidate and validated draft checkpoints were pushed, Zenodo
+record `22177072`, DOI `10.5281/zenodo.22177072`, was published under concept DOI
+`10.5281/zenodo.21763582`. It is concept-latest at version `0.22`; the public title, date, sole
+creator and ORCID, CC BY 4.0 license, filename, bytes, and MD5 agree. A fresh unauthenticated
+download matches the committed PDF by MD5 and SHA-256. Ruff, all 60 tests, full registry
+regeneration, artifact consistency, and every repository guard pass. HWB-059 is done. HWB-060
+opens separate-PR promotion to `develop` and then `main`; no release tag belongs to this
+research-only round.

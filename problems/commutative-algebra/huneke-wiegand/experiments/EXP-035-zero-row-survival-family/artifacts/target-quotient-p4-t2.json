@@ -1,0 +1,158 @@
+{
+  "experiment": "EXP-035",
+  "route": "complete selected-multidegree quotient",
+  "status": "PASS_CHARACTERISTIC_DEPENDENCE",
+  "generated_at": "2026-08-30T12:53:04.396532+00:00",
+  "parameters": {
+    "p": 4,
+    "t": 2,
+    "fields": [
+      2,
+      3,
+      5,
+      1000003
+    ],
+    "budget_seconds": 300.0
+  },
+  "rank_identity": "dim A = dim C_K + rank(d_D) - rank([[d_D,0],[J,delta_K]])",
+  "row": {
+    "p": 4,
+    "t": 2,
+    "target_offset": 42,
+    "homological_degree": 5,
+    "standard_internal_degree": 7,
+    "total_offset": 87,
+    "selected_row": [
+      [
+        2,
+        4,
+        12,
+        13,
+        14
+      ],
+      42
+    ],
+    "kernel_codomain_rows": 79,
+    "kernel_domain_columns": 119,
+    "d_source_columns": 710,
+    "selected_connecting_source_count": 5,
+    "selected_connecting_sources": [
+      {
+        "source_index": 646,
+        "exterior": [
+          2,
+          4,
+          12,
+          13,
+          14,
+          28
+        ],
+        "coefficient": 14,
+        "sign": -1
+      },
+      {
+        "source_index": 647,
+        "exterior": [
+          2,
+          4,
+          12,
+          13,
+          14,
+          29
+        ],
+        "coefficient": 13,
+        "sign": -1
+      },
+      {
+        "source_index": 648,
+        "exterior": [
+          2,
+          4,
+          12,
+          13,
+          14,
+          30
+        ],
+        "coefficient": 12,
+        "sign": -1
+      },
+      {
+        "source_index": 649,
+        "exterior": [
+          2,
+          4,
+          12,
+          13,
+          14,
+          38
+        ],
+        "coefficient": 4,
+        "sign": -1
+      },
+      {
+        "source_index": 650,
+        "exterior": [
+          2,
+          4,
+          12,
+          13,
+          14,
+          40
+        ],
+        "coefficient": 2,
+        "sign": -1
+      }
+    ],
+    "kernel_codomain_hash": "07f914ec36c6f04b755998cf951567912e58f2e0d75af32d6844d9d791738152",
+    "kernel_domain_hash": "ccab1ef2304fbb10c06c4379c20af6f6753d10156039ca56077191dcf757af22",
+    "d_source_hash": "82c747b01bece3055f8ae21cc138110163b2bb9c76e479078a083e4f4fdcb367",
+    "field_rows": {
+      "2": {
+        "rank_kernel_boundary": 74,
+        "kernel_cokernel_dimension": 5,
+        "rank_d_boundary": 513,
+        "rank_combined": 588,
+        "connecting_image_dimension_in_kernel_cokernel": 1,
+        "surviving_a_dimension": 4
+      },
+      "3": {
+        "rank_kernel_boundary": 75,
+        "kernel_cokernel_dimension": 4,
+        "rank_d_boundary": 513,
+        "rank_combined": 589,
+        "connecting_image_dimension_in_kernel_cokernel": 1,
+        "surviving_a_dimension": 3
+      },
+      "5": {
+        "rank_kernel_boundary": 75,
+        "kernel_cokernel_dimension": 4,
+        "rank_d_boundary": 513,
+        "rank_combined": 589,
+        "connecting_image_dimension_in_kernel_cokernel": 1,
+        "surviving_a_dimension": 3
+      },
+      "1000003": {
+        "rank_kernel_boundary": 75,
+        "kernel_cokernel_dimension": 4,
+        "rank_d_boundary": 513,
+        "rank_combined": 589,
+        "connecting_image_dimension_in_kernel_cokernel": 1,
+        "surviving_a_dimension": 3
+      }
+    },
+    "kernel_boundary_smith_profile": {
+      "row_count": 79,
+      "column_count": 119,
+      "integer_rank": 75,
+      "free_cokernel_rank": 4,
+      "torsion_invariant_factors": {
+        "2": 1
+      },
+      "diagonal_hash": "b57ebfd6175567e070f15e581c04e4fd920134736d11b92b90249cb9f36d2036"
+    },
+    "characteristic_dependent": true,
+    "row_hash": "66550e9406a470c7f466b4d8b48403fa63bfddb0999e06ec456ea2df1d909b35"
+  },
+  "elapsed_seconds": 0.648623,
+  "artifact_sha256": "4072a9fb7844d07763fae1b08e99da3d94d38cf3a40f980316c38f0931091276"
+}

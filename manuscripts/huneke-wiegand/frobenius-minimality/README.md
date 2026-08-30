@@ -1,7 +1,12 @@
 # Frobenius-minimality preprint
 
-`main.tex` is version 0.21 of the CAOS Research preprint; version 0.20 and all
-earlier versions remain frozen. Version 0.21 adds the EXP-034 two-layer-kernel theorem and the
+`main.tex` is version 0.22 of the CAOS Research preprint; version
+0.21 and all earlier versions remain frozen. Version 0.22 adds the EXP-035 primitive zero-row
+classification, consecutive kernel family, explicit connecting-cycle refutation, and the first
+characteristic-dependent lower multigraded Betti cell. It passed the complete
+claim/build/render, authenticated upload, publication, concept-latest, and fresh-download workflow
+and is published at DOI `10.5281/zenodo.22177072`.
+Version 0.21 adds the EXP-034 two-layer-kernel theorem and the
 first exact surviving lower-strand class in `K_p`, `A_p`, and `C_p` over every field. It passed
 the complete claim/build/render, authenticated upload, publication, concept-latest, and
 fresh-download workflow and is published at DOI `10.5281/zenodo.22135689`.
@@ -189,9 +194,10 @@ Zenodo identifiers:
 - version 0.19 DOI: `10.5281/zenodo.22031481` (published and fresh-download verified)
 - version 0.20 DOI: `10.5281/zenodo.22062161` (published and fresh-download verified)
 - version 0.21 DOI: `10.5281/zenodo.22135689` (published and fresh-download verified)
+- version 0.22 DOI: `10.5281/zenodo.22177072` (published and fresh-download verified)
 - licence: CC BY 4.0
 
-Evidence sources are EXP-001 through EXP-034 under
+Evidence sources are EXP-001 through EXP-035 under
 `problems/commutative-algebra/huneke-wiegand/`. The heavy proof archive is hash-addressed by the
 committed EXP-004, EXP-005, EXP-006 and EXP-007 manifests. EXP-009 contains the family proof,
 finite exact campaign, formula-independent auditor, and adversarial controls. EXP-011 contains the
@@ -519,4 +525,20 @@ Version 0.21 public-file verification:
   ORCID, CC BY 4.0, open access, and exactly one completed file named
   `huneke-wiegand-frobenius-minimality-v0.21.pdf`, whose bytes and MD5 matched the committed PDF
 - record `22135689` is public and concept-latest at version `0.21`; public metadata and the sole
+  file match, and a fresh unauthenticated download matches the committed PDF by MD5 and SHA-256
+
+Version 0.22 public-file verification:
+
+- record `22177072`, DOI `10.5281/zenodo.22177072`, concept DOI
+  `10.5281/zenodo.21763582`
+- source record: immutable published v0.21 record `22135689`
+- two warning-free builds, PDF metadata/extraction, and all-page 150-DPI inspection pass; all 51
+  pages were inspected, with full-size review of page one and theorem pages 45--46
+- bytes: `810905`
+- MD5: `5ed2409d6688b30147963a7293598440`
+- SHA-256: `3868f511a047073c9d7bedf25e026f1aaf3a5ab2c05c45d03614675ef6bdf5c2`
+- the exact prepublication draft had version `0.22`, the expected title and date, sole author and
+  ORCID, CC BY 4.0, and exactly one completed file named
+  `huneke-wiegand-frobenius-minimality-v0.22.pdf`, whose bytes and MD5 matched the committed PDF
+- record `22177072` is public and concept-latest at version `0.22`; public metadata and the sole
   file match, and a fresh unauthenticated download matches the committed PDF by MD5 and SHA-256

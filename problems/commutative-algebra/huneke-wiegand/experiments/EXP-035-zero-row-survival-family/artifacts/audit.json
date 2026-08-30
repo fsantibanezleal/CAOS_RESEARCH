@@ -1,0 +1,72 @@
+{
+  "experiment": "EXP-035",
+  "route": "independent semigroup reconstruction and reverse-pivot rank audit",
+  "status": "PASS_INDEPENDENT",
+  "generated_at": "2026-08-30T12:55:03.203065+00:00",
+  "canonical_artifact_sha256": "4072a9fb7844d07763fae1b08e99da3d94d38cf3a40f980316c38f0931091276",
+  "comparisons": {
+    "basis_counts": true,
+    "basis_hashes": true,
+    "field_ranks": true
+  },
+  "row": {
+    "p": 4,
+    "t": 2,
+    "target_offset": 42,
+    "homological_degree": 5,
+    "total_offset": 87,
+    "checks": {
+      "degree_one_count": true,
+      "degree_two_count": true,
+      "high_count": true,
+      "kernel_degree_two_count": true,
+      "selected_representation_set": true,
+      "selected_row_present": true,
+      "characteristic_two_jump": true,
+      "odd_fields_agree": true
+    },
+    "kernel_codomain_rows": 79,
+    "kernel_domain_columns": 119,
+    "d_source_columns": 710,
+    "kernel_codomain_hash": "07f914ec36c6f04b755998cf951567912e58f2e0d75af32d6844d9d791738152",
+    "kernel_domain_hash": "ccab1ef2304fbb10c06c4379c20af6f6753d10156039ca56077191dcf757af22",
+    "d_source_hash": "82c747b01bece3055f8ae21cc138110163b2bb9c76e479078a083e4f4fdcb367",
+    "field_rows": {
+      "2": {
+        "rank_kernel_boundary": 74,
+        "kernel_cokernel_dimension": 5,
+        "rank_d_boundary": 513,
+        "rank_combined": 588,
+        "connecting_image_dimension_in_kernel_cokernel": 1,
+        "surviving_a_dimension": 4
+      },
+      "3": {
+        "rank_kernel_boundary": 75,
+        "kernel_cokernel_dimension": 4,
+        "rank_d_boundary": 513,
+        "rank_combined": 589,
+        "connecting_image_dimension_in_kernel_cokernel": 1,
+        "surviving_a_dimension": 3
+      },
+      "5": {
+        "rank_kernel_boundary": 75,
+        "kernel_cokernel_dimension": 4,
+        "rank_d_boundary": 513,
+        "rank_combined": 589,
+        "connecting_image_dimension_in_kernel_cokernel": 1,
+        "surviving_a_dimension": 3
+      },
+      "1000003": {
+        "rank_kernel_boundary": 75,
+        "kernel_cokernel_dimension": 4,
+        "rank_d_boundary": 513,
+        "rank_combined": 589,
+        "connecting_image_dimension_in_kernel_cokernel": 1,
+        "surviving_a_dimension": 3
+      }
+    },
+    "row_hash": "694022174926e66aa3968848e82821de8e9b85ceab722157d5529bc43ed4900e"
+  },
+  "elapsed_seconds": 0.636637,
+  "artifact_sha256": "b92e787bc120b5fa12aac1fc4a10792883e699ed7315055958f3916e8d10b60b"
+}

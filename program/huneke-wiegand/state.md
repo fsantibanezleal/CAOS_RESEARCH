@@ -116,8 +116,17 @@
 | 2026-08-27 | confirmed | published | 48-page manuscript v0.21 passed claim/build/render, sole-authorship, exact-draft, publication, concept-latest, and fresh-download gates; DOI `10.5281/zenodo.22135689` matches the committed PDF exactly |
 | 2026-08-27 | published | active | structure/content/template guards, Ruff, all 60 tests, full registry regeneration, and manifest/artifact consistency pass; HWB-057 opens separate-PR promotion to `develop` and then `main` |
 | 2026-08-27 | active | published | PR #222 passed `guards` and `test` and merged EXP-034 plus v0.21 to `develop` at `0092685`; PR #223 passed all required checks and promoted the exact tested state to `main` at `4cde185` |
+| 2026-08-30 | published | active | EXP-035 declared before implementation: classify every primitive zero row by `R_b subset F` and test whether the block `b=10p+t`, `2<=t<=p-2`, gives consecutive surviving regularity-two classes |
+| 2026-08-30 | active | confirmed | EXP-035 proves the complete primitive zero-row summand and consecutive `K_p` family; its P3 pivot mechanism is refuted, but the full `p=4` target proves characteristic-dependent Betti values `4` over `GF(2)` and `3` over `GF(3)` for both `A_4` and `C_4` |
+| 2026-08-30 | confirmed | published | 51-page manuscript v0.22 passed claim/build/render, sole-authorship, exact-draft, publication, concept-latest, and fresh-download gates; DOI `10.5281/zenodo.22177072` matches the committed PDF exactly |
 
-Current state: **EXP-034 is confirmed; HWB-056 is done with manuscript v0.21 published and
+Current state: **EXP-035 is confirmed under completed HWB-058. It proves the all-parameter
+primitive zero-row summand and consecutive `K_p` classes, and the exact component
+`beta_(5,(7,87))(A_4)=beta_(5,(7,87))(C_4)` equals `4` over `GF(2)` and `3` over `GF(3)`.
+HWB-059 is done with the 51-page manuscript v0.22 published and fresh-download verified at DOI
+`10.5281/zenodo.22177072`. HWB-060 is active for separate-PR promotion to `develop` and `main`.
+EXP-034 is
+confirmed; HWB-056 is done with manuscript v0.21 published and
 fresh-download verified at DOI `10.5281/zenodo.22135689`; HWB-057 is done after PRs #222/#223
 promoted payload tree `f571fb955560c29489c181a6ce542548619209e0` through `develop` and `main`.
 EXP-033 is confirmed; HWB-053 is done
