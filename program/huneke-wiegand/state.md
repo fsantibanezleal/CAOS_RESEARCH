@@ -121,6 +121,7 @@
 | 2026-08-30 | confirmed | published | 51-page manuscript v0.22 passed claim/build/render, sole-authorship, exact-draft, publication, concept-latest, and fresh-download gates; DOI `10.5281/zenodo.22177072` matches the committed PDF exactly |
 | 2026-08-30 | published | published | PR #226 passed `guards` and `test` and merged EXP-035 plus v0.22 to `develop` at `95b9442`; PR #227 passed both jobs and promoted the exact payload to `main` at `10d524a` |
 | 2026-08-30 | published | active | EXP-036 declared for HWB-061: exact larger-parameter torsion screen and compact integral-core recognition; no new result claimed |
+| 2026-08-30 | active | active | EXP-036 canonical checkpoint completes every family cell through `p=6`; characteristic dependence persists by distinct kernel and connecting-map mechanisms, with a new `t=2` excess candidate `(p-3)^2` |
 
 Current state: **EXP-035 is confirmed under completed HWB-058. It proves the all-parameter
 primitive zero-row summand and consecutive `K_p` classes, and the exact component

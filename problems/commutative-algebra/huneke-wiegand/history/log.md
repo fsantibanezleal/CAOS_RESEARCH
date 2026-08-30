@@ -1395,3 +1395,20 @@
   importing it as an assumption.
 - The hypothesis, premise dependencies, one-sided outcomes, checkpoints, and kill criteria were
   written before implementation. No EXP-036 result or publication update is claimed.
+
+## 2026-08-30 - EXP-036 canonical finite checkpoint
+
+- The exact-sum constructor reproduces the EXP-035 `(4,2)` codomain, kernel-domain, and source
+  hashes and every declared field rank before accepting larger parameters.
+- All family cells through `p=6` complete in 94.072 seconds. Kernel even-rank defects have sizes
+  `1,2,2` at `(4,2)`, `(5,3)`, and `(6,3)`, respectively.
+- The connecting quotient supplies a second mechanism. At `(5,2)`, `K_5` has dimension `39` in
+  both characteristics, but `A_5` has dimensions `24` and `20`. At `(6,2)`, `K_6` has dimension
+  `178` in both, but `A_6` has dimensions `95` and `86`.
+- The `t=2` characteristic-two excess is therefore `1,4,9` for `p=4,5,6`, matching the fresh
+  candidate `(p-3)^2`. The `(6,4)` cell is characteristic-independent with dimension `2`.
+- At `(4,2)`, 74 unimodular unit pivots reduce the integral boundary to a residual with four zero
+  rows and one rank-one row containing only two entries `-2`, exactly recovering the known free
+  rank four and one factor-two summand.
+- These are canonical exact finite results, not yet an all-parameter theorem. Targeted `p=7,8`
+  checks and an independently reconstructed interval-block proof are now required.

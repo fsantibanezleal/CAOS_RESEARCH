@@ -1068,3 +1068,11 @@ The declared strong prediction is a six-essential-variable core with the homolog
 minimal real-projective-plane triangulation. This comparison is motivated by the fresh primary
 source sweep but is not a premise. A different residual support refutes the recognition clause
 while preserving any exact Smith result. No manuscript or Zenodo update is open at declaration.
+
+The canonical finite checkpoint passes. The bounded exact-sum constructor reproduces the complete
+EXP-035 `(4,2)` target, then completes both `p=5` and all three `p=6` cells in 94.072 seconds.
+Kernel even-rank defects occur at `(4,2)`, `(5,3)`, and `(6,3)`. The connecting quotient creates
+additional characteristic dependence even when the kernel is independent: `A_(5,2)` has dimensions
+`24` and `20`, while `A_(6,2)` has dimensions `95` and `86` over `GF(2)` and odd characteristic.
+Together with the EXP-035 gap at `p=4`, the `t=2` excess sequence is `1,4,9=(p-3)^2`. The next
+gate is a targeted `p=7,8` test and interval-block derivation, not a raw full-resolution sweep.

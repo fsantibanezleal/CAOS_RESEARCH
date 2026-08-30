@@ -418,6 +418,21 @@ the `(4,2)` target with an exact-sum enumerator, then screen every feasible `p=5
 localize positive even-rank defects by unimodular cancellation. The stronger recognition target is
 a six-essential-variable real-projective-plane core; it is a falsifiable analogy, not a premise.
 
+The canonical EXP-036 checkpoint has now completed all six declared cells through `p=6`. The
+exact-sum constructor reproduces all EXP-035 `(4,2)` hashes and ranks. Kernel even-rank defects
+occur at `(4,2)`, `(5,3)`, and `(6,3)`, with sizes `1,2,2`. More strongly, the surviving `A_p`
+dimensions differ between `GF(2)` and odd characteristic in five cells:
+
+```text
+(4,2): 4 versus 3,    (5,2): 24 versus 20,   (5,3): 3 versus 2,
+(6,2): 95 versus 86,  (6,3): 44 versus 37.
+```
+
+The `(6,4)` cell is `2` in both characteristics. For `t=2`, the first three characteristic-two
+excesses are `1,4,9=(p-3)^2`; this is a fresh candidate requiring larger-parameter checks and a
+symbolic connecting-map proof. At `(4,2)`, 74 exact unit cancellations leave a `5` by `45`
+residual with only two nonzero entries, both `-2`, recovering `Z^4 direct-sum Z/2Z` compactly.
+
 EXP-034 is CONFIRMED. With `S_p=P_p/(X_0)` and `M_p=K_p/X_0K_p`, the kernel has an explicit
 two-layer offset basis and signed incidence maps `delta_i`. The first missing cell has
 
@@ -679,15 +694,17 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Implement EXP-036's bounded exact-sum target constructor and reproduce every EXP-035 `(4,2)`
-   basis hash and field rank before accepting a larger cell.
-2. Screen `p=5`, then `p=6` within the declared checkpoints; localize every even-rank defect by
-   integral unit cancellation and an independent semigroup reconstruction.
-3. Evaluate a separate manuscript only after the incidence method determines a complete strand
+1. Test the new `t=2` excess formula `(p-3)^2` at `p=7,8` with targeted exact cells, not the full
+   parameter triangle.
+2. Derive the `t=2` connecting-image rank defect by decomposing the low Koszul source into interval
+   blocks; independently reconstruct the exact targets from semigroup ideal powers.
+3. Localize the `(5,3)` and `(6,3)` kernel defects and decide whether their repeated size two has a
+   common integral core.
+4. Evaluate a separate manuscript only after the incidence method determines a complete strand
    or yields a transferable theorem beyond this family.
-4. Keep the maximal-rank model rejected unless a new exact incidence calculation restores it on
+5. Keep the maximal-rank model rejected unless a new exact incidence calculation restores it on
    a precisely stated subregion.
-5. Leave CAOS_MANAGE untouched during this round; its deferred ledgers are outside the active
+6. Leave CAOS_MANAGE untouched during this round; its deferred ledgers are outside the active
    product-repository scope.
 
 ### Lenses ledger
