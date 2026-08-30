@@ -1120,3 +1120,12 @@ download.  Zenodo record `22181972`, DOI `10.5281/zenodo.22181972`, contains the
 PDF with MD5 `6bcacfa265e840f40e89dcdb87b75f7b` and SHA-256
 `c77b08a3724db90b14039c2c88e98325403ef4f656f52137057a27eb6fa5072d`.  HWB-062 is done and
 HWB-063 is active for separate-PR promotion to `develop` and then `main`.
+
+The promotion gate is complete. PR #230 passed `guards` and `test` and merged the complete
+EXP-036 theorem, regenerated registry, manuscript v0.23, and verified Zenodo publication to
+`develop` at `fc40e74251c2b8c16e0875178742aeed45e25ce0`. PR #231 passed both required jobs and
+promoted the exact state to `main` at `817cc01ea76074f4989e28f11511ddb8c2343ce2`. Before this
+documentation handoff, work, `develop`, and `main` shared payload tree
+`8ea3fbd0dfd136a7b91c508a31146be7d88eded1`. HWB-063 is done. The strongest remaining route is
+HWB-061's infinite parity-sensitive connecting-quotient theorem; neither complete lower strand is
+claimed.
