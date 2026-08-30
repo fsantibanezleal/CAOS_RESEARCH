@@ -1,10 +1,11 @@
 # Frobenius-minimality preprint
 
-`main.tex` is the version 0.22 prepublication candidate of the CAOS Research preprint; version
+`main.tex` is the version 0.22 reserved-DOI candidate of the CAOS Research preprint; version
 0.21 and all earlier versions remain frozen. Version 0.22 adds the EXP-035 primitive zero-row
 classification, consecutive kernel family, explicit connecting-cycle refutation, and the first
-characteristic-dependent lower multigraded Betti cell. Local claim/build/render and Zenodo
-new-version gates remain pending; no v0.22 DOI or publication is claimed yet.
+characteristic-dependent lower multigraded Betti cell. The version DOI
+`10.5281/zenodo.22177072` is reserved; final DOI-baked build/upload/publication and
+fresh-download gates remain pending, so publication is not yet claimed.
 Version 0.21 adds the EXP-034 two-layer-kernel theorem and the
 first exact surviving lower-strand class in `K_p`, `A_p`, and `C_p` over every field. It passed
 the complete claim/build/render, authenticated upload, publication, concept-latest, and
