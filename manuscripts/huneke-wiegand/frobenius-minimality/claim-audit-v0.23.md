@@ -68,8 +68,11 @@ complete through `(8,2)`.
   tests`, `python -m pytest -q` (60 passed), `python -m researchlab.pipeline all`, and the artifact,
   template-residue, content-standards, and research-structure validators all passed on the exact
   candidate;
-- exact Zenodo metadata and one-file upload validation: PENDING;
+- exact Zenodo metadata and one-file upload validation: PASS; authenticated inspection at
+  `2026-08-30T23:06:43Z` confirmed version `0.23`, the expected title and date, sole author and
+  ORCID, CC BY 4.0, English language, concept DOI `10.5281/zenodo.21763582`, and exactly one
+  completed 824,114-byte file with MD5 `6bcacfa265e840f40e89dcdb87b75f7b`;
 - publication, concept-latest check, and fresh unauthenticated download: PENDING.
 
-The v0.23 manuscript may be published only after the repository, upload, and publication gates
-are replaced by verified evidence.
+The v0.23 manuscript may be published only after the final publication gate is replaced by
+verified public evidence.

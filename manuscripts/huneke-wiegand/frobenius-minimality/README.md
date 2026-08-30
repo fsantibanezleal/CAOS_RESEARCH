@@ -202,8 +202,8 @@ Zenodo identifiers:
 - version 0.20 DOI: `10.5281/zenodo.22062161` (published and fresh-download verified)
 - version 0.21 DOI: `10.5281/zenodo.22135689` (published and fresh-download verified)
 - version 0.22 DOI: `10.5281/zenodo.22177072` (published and fresh-download verified)
-- version 0.23 DOI: `10.5281/zenodo.22181972` (reserved draft; local candidate validation passed,
-  upload/publication verification pending)
+- version 0.23 DOI: `10.5281/zenodo.22181972` (reserved draft; local candidate and exact
+  metadata/one-file upload validation passed; publication verification pending)
 - licence: CC BY 4.0
 
 Evidence sources are EXP-001 through EXP-036 under
