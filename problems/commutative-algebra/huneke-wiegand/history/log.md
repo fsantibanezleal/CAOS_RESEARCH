@@ -1326,3 +1326,17 @@
   the absence of the `D_p` row-two target below `2p-2` is not by itself sufficient.
 - The fresh primary-source sweep found no theorem that decides these family-specific Tor maps.
   No EXP-035 result, manuscript v0.22, or Zenodo update is claimed at declaration.
+
+## 2026-08-30 - EXP-035 smoke redirection
+
+- The canonical zero-row classifier passes all `p=4,...,300` in 51.889 seconds after replacing
+  an inefficient literal all-pairs profile with exact disjoint-interval counts. Its aggregate is
+  `cc98154e60bdc00fe1f503020aa7d5c66b53ff0cc4ce2158f199d03c2a5fda8b`.
+- At the mandatory first connecting case `(p,t)=(4,2)`, the selected coordinate is not a coloop.
+  An exact ten-term integral low-complex cycle contains the chain
+  `e_(2,4,12,13,14) tensor X_2` with coefficient one.
+- Ranks over `GF(2)` and `GF(1000003)` agree: deleting that selected column does not change rank
+  `11`. This refutes P3's proposed coordinatewise survival mechanism at the smoke gate.
+- P1 and P2 remain active: the zero-row summand and the explicit `K_p` family are unaffected.
+  The next calculation is the full target multidegree quotient, which can still contain a
+  different surviving linear combination after the connecting image is imposed.

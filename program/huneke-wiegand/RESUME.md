@@ -14,10 +14,12 @@ and the predicted block
 b=10p+t,  F=[3p,4p-2] union {t} union [t+2,p],  2<=t<=p-2.
 ```
 
-If the connecting-source pivot test passes uniformly, these cells extend the EXP-034 result to
-every homological degree `p,...,2p-3`. The exact next action is to implement the canonical
-`p=4` smoke classifier and connecting complex, then preserve the first failed cell or continue to
-the independent and symbolic routes. EXP-034 is CONFIRMED and manuscript v0.21 is PUBLISHED. Put
+The mandatory `(p,t)=(4,2)` smoke gate refutes the proposed coordinatewise connecting survival:
+an exact ten-term integral low cycle carries the selected coefficient, and deleting that column
+does not change rank over either tested field. P1/P2 remain active because the zero-row summand and
+the explicit `K_p` family are unaffected. The exact next action is to compute the full target
+multidegree quotient after the connecting image, while independently and symbolically validating
+P1/P2. EXP-034 is CONFIRMED and manuscript v0.21 is PUBLISHED. Put
 `tau_p=8p-1+p(p+1)/2`. The Artinian reduction of the high-variable kernel and a separate unit
 connecting-map pivot prove, over every field,
 
@@ -388,8 +390,10 @@ primitive zero-coordinate summand by `R_b subset F` and tests the next low-cardi
 [3p,4p-2] union {t} union [t+2,p],
 ```
 
-of size `2p-t-1`. Kernel classes and survival through the connecting map are separate claims.
-No EXP-035 result, manuscript v0.22, or Zenodo update is currently claimed.
+of size `2p-t-1`. The canonical classification passes through `p=300`. The first connecting
+smoke case has an explicit integral source cycle, refuting the proposed coordinatewise survival
+mechanism without affecting the kernel classes. No all-parameter EXP-035 verdict, manuscript
+v0.22, or Zenodo update is currently claimed.
 
 EXP-034 is CONFIRMED. With `S_p=P_p/(X_0)` and `M_p=K_p/X_0K_p`, the kernel has an explicit
 two-layer offset basis and signed incidence maps `delta_i`. The first missing cell has
@@ -648,11 +652,9 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Implement and run the EXP-035 `p=4` smoke gate: full zero-row classification plus the exact
-   selected connecting-source complex.
-2. If the smoke gate passes, run the bounded canonical, independent, and symbolic routes; if it
-   fails, persist the first exact source cycle and redirect the survival claim without weakening
-   the already declared zero-row theorem.
+1. Compute the complete `(p,t)=(4,2)` target multidegree cokernel and connecting image to decide
+   whether any nonzero quotient class survives after the coordinatewise mechanism fails.
+2. Complete the independent semigroup reconstruction and symbolic interval proof of P1/P2.
 3. Evaluate a separate manuscript only after the incidence method determines a complete strand
    or yields a transferable theorem beyond this family.
 4. Keep the maximal-rank model rejected unless a new exact incidence calculation restores it on
