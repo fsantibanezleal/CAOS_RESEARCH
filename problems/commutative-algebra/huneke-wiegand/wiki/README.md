@@ -549,3 +549,44 @@ This theorem is incorporated in the 48-page main manuscript v0.21, published and
 verified at DOI `10.5281/zenodo.22135689`. The exact public PDF matches the committed artifact by
 MD5 and SHA-256. The publication does not change the open boundary: both complete lower strands,
 explicit differential matrices, and the full special-fiber resolution remain unknown.
+
+## Zero-row summands and characteristic dependence
+
+EXP-035 classifies a canonical part of every remaining incidence cokernel. For a degree-two
+offset `b`, put
+
+```text
+R_b={g in G_p minus {0}:b-g in H_p}.
+```
+
+The coordinate `e_F tensor v_b` is an integral zero row exactly when `R_b subset F`. Therefore
+the regularity-two cokernel of `K_p` contains a primitive free coordinate summand of rank
+
+```text
+z_(p,i)=sum_(b in B_p, |R_b|<=i) binom(10p-1-|R_b|,i-|R_b|)
+```
+
+in homological degree `i`. In particular, for every `2<=t<=p-2`,
+
+```text
+b=10p+t,
+R_b=[3p,4p-2] union {t} union [t+2,p]
+```
+
+gives a primitive kernel class in each homological degree `p+1,...,2p-3`.
+
+The first new connecting cell does not repeat the EXP-034 unit-pivot mechanism. At `p=4`,
+`t=2`, an exact ten-term integral source cycle hits the selected coordinate. The complete target
+quotient nevertheless survives and exposes genuine characteristic dependence:
+
+```text
+beta_(5,(7,87))(K_4)=5 over GF(2),  4 over GF(3),
+beta_(5,(7,87))(A_4)=4 over GF(2),  3 over GF(3),
+beta_(5,(7,87))(C_4)=4 over GF(2),  3 over GF(3).
+```
+
+The integral kernel cokernel is `Z^4 direct-sum Z/2Z`. A complete `79` by `119` incidence
+matrix, the `710`-column connecting source, an independent numerical-semigroup reconstruction,
+four exact field ranks, and a Smith certificate support the result. This proves one
+characteristic-dependent multigraded cell and an all-parameter free zero-row family. It does not
+complete either ordinary lower strand or extend the torsion theorem beyond `p=4`.

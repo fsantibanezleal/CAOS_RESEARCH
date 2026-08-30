@@ -1015,3 +1015,16 @@ size `2p-t-1`. These cells would fill the consecutive homological interval
 `p+1,...,2p-3` next to the EXP-034 class at `p`. Kernel existence and connecting-map survival are
 separate gates. Manuscript v0.22 and Zenodo remain closed unless the all-parameter survival theorem
 is proved and independently validated.
+
+EXP-035 is CONFIRMED with its declared P3 mechanism refuted. The zero-row criterion
+`R_b subset F` splits off an exact primitive free coordinate summand for every `p>=4`. The block
+`b=10p+t`, `2<=t<=p-2`, supplies consecutive kernel classes in homological degrees
+`p+1,...,2p-3`.
+
+The first connecting smoke case has an integral cycle, so coordinatewise survival fails. The full
+target quotient is stronger: at `(p,t)=(4,2)`, the multigraded Betti number of both `A_4` and
+`C_4` is four over `GF(2)` and three over `GF(3)`. The kernel incidence cokernel is
+`Z^4 direct-sum Z/2Z`. Complete exact matrices, a semigroup-derived independent reconstruction,
+Smith form, four field ranks, and symbolic interval proofs pass. HWB-058 is done. HWB-059 opens
+the in-place manuscript v0.22 gate; the next mathematical path is the all-parameter anatomy of
+the discovered two-torsion, not another naive unit-pivot sweep.

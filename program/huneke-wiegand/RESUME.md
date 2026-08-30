@@ -1,25 +1,31 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-30. Lifecycle: EXP-035 is ACTIVE with no result claimed. It tests the exact
-zero-row criterion
+Updated: 2026-08-30. Lifecycle: EXP-035 is CONFIRMED with its declared P3 mechanism refuted.
+For every `p>=4`, the exact zero-row criterion is
 
 ```text
 [b,F] is a zero incidence row if and only if R_b subset F,
 R_b={g in G_p minus {0}:b-g in H_p},
 ```
 
-and the predicted block
+and the block
 
 ```text
 b=10p+t,  F=[3p,4p-2] union {t} union [t+2,p],  2<=t<=p-2.
 ```
 
-The mandatory `(p,t)=(4,2)` smoke gate refutes the proposed coordinatewise connecting survival:
-an exact ten-term integral low cycle carries the selected coefficient, and deleting that column
-does not change rank over either tested field. P1/P2 remain active because the zero-row summand and
-the explicit `K_p` family are unaffected. The exact next action is to compute the full target
-multidegree quotient after the connecting image, while independently and symbolically validating
-P1/P2. EXP-034 is CONFIRMED and manuscript v0.21 is PUBLISHED. Put
+These rows split off a primitive `K_p` coordinate summand and give classes in every homological
+degree `p+1,...,2p-3`. The mandatory `(p,t)=(4,2)` smoke gate refutes coordinatewise survival by
+an exact integral cycle, but the complete target quotient yields the stronger result
+
+```text
+beta_(5,(7,87))(K_4)=5 over GF(2),  4 over GF(3),
+beta_(5,(7,87))(A_4)=beta_(5,(7,87))(C_4)=4 over GF(2),  3 over GF(3).
+```
+
+The integral kernel cokernel is `Z^4 direct-sum Z/2Z`. HWB-058 is done. HWB-059 is active for
+in-place manuscript v0.22; no Zenodo update is yet claimed. EXP-034 is CONFIRMED and manuscript
+v0.21 is PUBLISHED. Put
 `tau_p=8p-1+p(p+1)/2`. The Artinian reduction of the high-variable kernel and a separate unit
 connecting-map pivot prove, over every field,
 
@@ -218,7 +224,9 @@ Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
 22. the depth-one regularity-two quadratic quotient, minimal cubic mapping cone, and complete
     regularity-three/four strands over every field (EXP-033); and
 23. the two-layer kernel incidence theorem and exact first surviving regularity-two Betti class
-    in `K_p`, `A_p`, and `C_p` over every field (EXP-034).
+    in `K_p`, `A_p`, and `C_p` over every field (EXP-034); and
+24. the complete primitive zero-row summand, consecutive kernel family, and first
+    characteristic-dependent lower multigraded Betti cell (EXP-035).
 
 The public seed is
 
@@ -244,8 +252,8 @@ I = (t^56,t^70)R.
 | `J_p` | defining ideal of `C_p` in its `10p` degree-one variables | EXP-022/023 theorems |
 | `Q_p` | quadratic part of `J_p`, with `J_p=(Q_p,f_p)` and `f_p=X_0^2X_(3p)-X_p^3` | EXP-023/027 theorems |
 | `D_p` | cubic-colon quotient `P_p/(Q_p:f_p)`, the canonical idealization of the `p`th Veronese rational normal curve ring | EXP-030 theorem |
-| `A_p` | quadratic quotient `P_p/Q_p`, depth one and regularity two, with exact EXP-034 class in row two | EXP-033/034 theorems |
-| `K_p` | high-variable kernel in `0 -> K_p -> A_p -> D_p -> 0`, with Hilbert numerator `8p z+10p z^2` and a two-layer incidence resolution | EXP-033/034 theorems |
+| `A_p` | quadratic quotient `P_p/Q_p`, depth one and regularity two, with a characteristic-free EXP-034 class and characteristic-dependent EXP-035 cell in row two | EXP-033--035 theorems |
+| `K_p` | high-variable kernel in `0 -> K_p -> A_p -> D_p -> 0`, with Hilbert numerator `8p z+10p z^2`, a two-layer incidence resolution, and exact zero-row summands | EXP-033--035 theorems |
 | minimum layer | all normalized rigid pairs at the least Frobenius value 181 | EXP-005/007 |
 
 ## 2a. Infinite family theorem
@@ -318,6 +326,7 @@ campaign is supporting evidence, not the proof.
 | EXP-032 | CONFIRMED | complete graded Betti polynomial and free-module ranks/shifts of the cubic-colon quotient; explicit differentials and the full `C_p` resolution remain open |
 | EXP-033 | CONFIRMED | `depth(P_p/Q_p)=1`, `reg(P_p/Q_p)=2`, a minimal cubic mapping cone, and complete regularity-three/four strands over every field |
 | EXP-034 | CONFIRMED | exact characteristic-free class `beta_(p,(p+2,8p-1+p(p+1)/2))=1` in `K_p`, `A_p`, and `C_p` |
+| EXP-035 | CONFIRMED with P3 mechanism refuted | all primitive zero rows; consecutive `K_p` family; `beta_(5,(7,87))(A_4)=beta_(5,(7,87))(C_4)` is `4` over `GF(2)` and `3` over `GF(3)` |
 
 ## 3a. Exact evidence anchors
 
@@ -379,21 +388,26 @@ campaign is supporting evidence, not the proof.
   `31d70c09d251bb6009b610be05c33a42ccd50e417b84aff2c0db561018e6acc5`,
   `31479abd3c7247fe0ba464eefe06e437a595812c3d6055d0de8d0ced25d12794`, and
   `b3f461298706a394cc0f1a296557e10f52435f78d2f1039452fb726871b79a4d`.
+- EXP-035 classification aggregate and target, independent, and symbolic artifact hashes:
+  `cc98154e60bdc00fe1f503020aa7d5c66b53ff0cc4ce2158f199d03c2a5fda8b`,
+  `4072a9fb7844d07763fae1b08e99da3d94d38cf3a40f980316c38f0931091276`,
+  `b92e787bc120b5fa12aac1fc4a10792883e699ed7315055958f3916e8d10b60b`, and
+  `b1bfc105f3e9ace368f181ccf10f367fe1f4d23199e49c14275bd8e9b941569e`.
 
 ## 4. In flight
 
-EXP-035 is declared before implementation under HWB-058. For each `b in B_p`, it classifies the
-primitive zero-coordinate summand by `R_b subset F` and tests the next low-cardinality block
-`b=10p+t`, `2<=t<=p-2`. The predicted representation set is
+EXP-035 is CONFIRMED with P3's coordinatewise mechanism refuted. For each `b in B_p`, the
+primitive zero-coordinate summand is classified by `R_b subset F`. For `2<=t<=p-2`,
 
 ```text
 [3p,4p-2] union {t} union [t+2,p],
 ```
 
-of size `2p-t-1`. The canonical classification passes through `p=300`. The first connecting
-smoke case has an explicit integral source cycle, refuting the proposed coordinatewise survival
-mechanism without affecting the kernel classes. No all-parameter EXP-035 verdict, manuscript
-v0.22, or Zenodo update is currently claimed.
+has size `2p-t-1`, giving consecutive kernel classes. The canonical classification passes through
+`p=300`. The first connecting smoke case has an explicit integral source cycle, but the complete
+target quotient proves characteristic dependence at `p=4`: dimensions are `4` over `GF(2)` and
+`3` over `GF(3)` for both `A_4` and `C_4`. HWB-058 is done. HWB-059 owns manuscript v0.22 and
+Zenodo; neither is yet claimed complete.
 
 EXP-034 is CONFIRMED. With `S_p=P_p/(X_0)` and `M_p=K_p/X_0K_p`, the kernel has an explicit
 two-layer offset basis and signed incidence maps `delta_i`. The first missing cell has
@@ -652,14 +666,17 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Compute the complete `(p,t)=(4,2)` target multidegree cokernel and connecting image to decide
-   whether any nonzero quotient class survives after the coordinatewise mechanism fails.
-2. Complete the independent semigroup reconstruction and symbolic interval proof of P1/P2.
-3. Evaluate a separate manuscript only after the incidence method determines a complete strand
+1. Incorporate the EXP-035 theorem and explicit P3 refutation in the existing main manuscript as
+   v0.22; run claim, clean-build, rendered-page, metadata, and sole-authorship gates.
+2. Publish a Zenodo new version only after the committed PDF and draft metadata match exactly,
+   then verify a fresh public download.
+3. Open the next theorem experiment on the all-parameter anatomy of the discovered `2`-torsion;
+   do not extrapolate from `p=4` without a declaration and finite-target preflight.
+4. Evaluate a separate manuscript only after the incidence method determines a complete strand
    or yields a transferable theorem beyond this family.
-4. Keep the maximal-rank model rejected unless a new exact incidence calculation restores it on
+5. Keep the maximal-rank model rejected unless a new exact incidence calculation restores it on
    a precisely stated subregion.
-5. Leave CAOS_MANAGE untouched during this round; its deferred ledgers are outside the active
+6. Leave CAOS_MANAGE untouched during this round; its deferred ledgers are outside the active
    product-repository scope.
 
 ### Lenses ledger
@@ -695,6 +712,9 @@ Published baseline:
 - Forbidden-neighbor zero rows: EXP-035 uses `R_b subset F` to split off primitive integral
   cokernel coordinates before any rank computation, then tests the connecting map on the first
   block below the `D_p` row-two threshold.
+- Torsion anatomy: the failed EXP-035 pivot reveals a `Z/2` incidence cokernel factor. Complete
+  target quotients replace coordinatewise survival guesses, and characteristic comparison becomes
+  the next invariant-first route.
 
 ## 7. Gotchas
 

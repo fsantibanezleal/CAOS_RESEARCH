@@ -1,6 +1,8 @@
 # EXP-035 hypothesis - zero-row classification and consecutive survival family
 
-Status at declaration: **ACTIVE, NO RESULT CLAIMED**.
+Status at declaration: **ACTIVE, NO RESULT CLAIMED**. Final status: **P1/P2 CONFIRMED; P3'S
+COORDINATEWISE MECHANISM REFUTED; STRONGER CHARACTERISTIC-DEPENDENT TARGET CONFIRMED**. See
+`proof.md` and `verdict.md`.
 
 ## Question
 
@@ -163,4 +165,3 @@ trigger a Zenodo version. The all-parameter consecutive survival theorem (5) mat
 the lower-strand boundary and opens in-place manuscript v0.22. A separate manuscript remains
 deferred unless the zero-row method yields a transferable theorem beyond this family or a
 complete strand.
-

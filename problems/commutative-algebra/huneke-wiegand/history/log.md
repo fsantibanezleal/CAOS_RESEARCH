@@ -1340,3 +1340,19 @@
 - P1 and P2 remain active: the zero-row summand and the explicit `K_p` family are unaffected.
   The next calculation is the full target multidegree quotient, which can still contain a
   different surviving linear combination after the connecting image is imposed.
+
+## 2026-08-30 - EXP-035 confirmed with characteristic dependence
+
+- The full `(p,t)=(4,2)` target contains `79` kernel cokernel rows, `119` kernel boundary columns,
+  and `710` connecting-source columns. No selected submatrix is used.
+- The kernel cokernel dimensions are five over `GF(2)` and four over `GF(3)`; Smith form gives
+  `Z^4 direct-sum Z/2Z` exactly.
+- The connecting image has dimension one in both fields. Therefore the surviving `A_4` target has
+  dimension four over `GF(2)` and three over `GF(3)`.
+- The shifted cubic diagonal is absent because its four-high-variable minimum is `102`, above the
+  required offset `75`; the same characteristic-dependent values hold for `C_4`.
+- An independent numerical-semigroup reconstruction matches all three basis hashes and every
+  rank using reversed pivots. Nine symbolic interval obligations and the offset formulas pass.
+- P1/P2 are confirmed for all `p>=4`; P3's coordinatewise mechanism is refuted, and no
+  all-parameter connecting-survival claim is made. HWB-058 is done and HWB-059 opens manuscript
+  v0.22. A separate manuscript remains premature.
