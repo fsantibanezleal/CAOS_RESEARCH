@@ -29,8 +29,9 @@ manuscript v0.22 is published and fresh-download verified at DOI
 `5ed2409d6688b30147963a7293598440` and SHA-256
 `3868f511a047073c9d7bedf25e026f1aaf3a5ab2c05c45d03614675ef6bdf5c2`. HWB-060 is done: PRs
 #226/#227 passed required checks and promoted payload tree
-`0847e35a7641ab5592afd136f42bcf09ffe514f3` through `develop` and `main`. HWB-061 is pending for
-the all-parameter torsion anatomy. EXP-034 is CONFIRMED and manuscript v0.21 is PUBLISHED. Put
+`0847e35a7641ab5592afd136f42bcf09ffe514f3` through `develop` and `main`. HWB-061 is active through
+the declared EXP-036 factor-two torsion anatomy experiment. EXP-034 is CONFIRMED and manuscript
+v0.21 is PUBLISHED. Put
 `tau_p=8p-1+p(p+1)/2`. The Artinian reduction of the high-variable kernel and a separate unit
 connecting-map pivot prove, over every field,
 
@@ -412,8 +413,10 @@ has size `2p-t-1`, giving consecutive kernel classes. The canonical classificati
 `p=300`. The first connecting smoke case has an explicit integral source cycle, but the complete
 target quotient proves characteristic dependence at `p=4`: dimensions are `4` over `GF(2)` and
 `3` over `GF(3)` for both `A_4` and `C_4`. HWB-058 through HWB-060 are done. Manuscript v0.22 is
-published, fresh-download verified, and promoted; HWB-061 is pending for a freshly declared
-all-parameter torsion experiment.
+published, fresh-download verified, and promoted. EXP-036 is declared for HWB-061: first reproduce
+the `(4,2)` target with an exact-sum enumerator, then screen every feasible `p=5,6` family cell and
+localize positive even-rank defects by unimodular cancellation. The stronger recognition target is
+a six-essential-variable real-projective-plane core; it is a falsifiable analogy, not a premise.
 
 EXP-034 is CONFIRMED. With `S_p=P_p/(X_0)` and `M_p=K_p/X_0K_p`, the kernel has an explicit
 two-layer offset basis and signed incidence maps `delta_i`. The first missing cell has
@@ -676,13 +679,15 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Open the next theorem experiment on the all-parameter anatomy of the discovered `2`-torsion;
-   do not extrapolate from `p=4` without a declaration and finite-target preflight.
-2. Evaluate a separate manuscript only after the incidence method determines a complete strand
+1. Implement EXP-036's bounded exact-sum target constructor and reproduce every EXP-035 `(4,2)`
+   basis hash and field rank before accepting a larger cell.
+2. Screen `p=5`, then `p=6` within the declared checkpoints; localize every even-rank defect by
+   integral unit cancellation and an independent semigroup reconstruction.
+3. Evaluate a separate manuscript only after the incidence method determines a complete strand
    or yields a transferable theorem beyond this family.
-3. Keep the maximal-rank model rejected unless a new exact incidence calculation restores it on
+4. Keep the maximal-rank model rejected unless a new exact incidence calculation restores it on
    a precisely stated subregion.
-4. Leave CAOS_MANAGE untouched during this round; its deferred ledgers are outside the active
+5. Leave CAOS_MANAGE untouched during this round; its deferred ledgers are outside the active
    product-repository scope.
 
 ### Lenses ledger
@@ -721,6 +726,9 @@ Published baseline:
 - Torsion anatomy: the failed EXP-035 pivot reveals a `Z/2` incidence cokernel factor. Complete
   target quotients replace coordinatewise survival guesses, and characteristic comparison becomes
   the next invariant-first route.
+- Torsion recognition: EXP-036 compares the compact unimodular residual with the sharp six-vertex
+  real-projective-plane mechanism from characteristic-dependent monomial Betti theory, while the
+  parameter ladder tests whether the factor two propagates before any symbolic extrapolation.
 
 ## 7. Gotchas
 

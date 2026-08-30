@@ -1054,3 +1054,17 @@ same tested state to `main` at `10d524a9f9226a95f9d1d23341c54f8af6ce0812`. The w
 `develop`, and `main` shared payload tree `0847e35a7641ab5592afd136f42bcf09ffe514f3` before this
 documentation handoff. HWB-060 is done. HWB-061 is pending for a freshly declared experiment on
 the all-parameter anatomy of the observed factor-two torsion.
+
+## 2026-08-30 - EXP-036 factor-two torsion anatomy gate
+
+HWB-061 is active. EXP-036 first replaces literal combination enumeration by an exact-sum target
+constructor and must reproduce the complete EXP-035 `(4,2)` target before larger parameters are
+accepted. It then screens every declared family cell for `p=5`, followed by `p=6` only within the
+checkpointed budget. The mod-two versus odd-prime rank defect is the invariant-first torsion test;
+Smith form is reserved for positive cells.
+
+The complementary recognition lens reduces the known integral matrix by unimodular unit pivots.
+The declared strong prediction is a six-essential-variable core with the homology profile of the
+minimal real-projective-plane triangulation. This comparison is motivated by the fresh primary
+source sweep but is not a premise. A different residual support refutes the recognition clause
+while preserving any exact Smith result. No manuscript or Zenodo update is open at declaration.

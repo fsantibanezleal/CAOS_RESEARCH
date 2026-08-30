@@ -1383,3 +1383,15 @@
 - HWB-060 is done. HWB-061 retains the all-parameter factor-two torsion path as pending; it
   requires a fresh declaration and finite-target preflight. CAOS_MANAGE remained untouched on
   `develop`, and no research release tag is claimed.
+
+## 2026-08-30 - EXP-036 declared
+
+- HWB-061 is active through EXP-036. The first gate is an exact-sum reconstruction of the known
+  `(p,t)=(4,2)` target, followed by complete `p=5` and budgeted `p=6` family screens.
+- The invariant-first test is the rank defect between `GF(2)` and an odd prime; integral Smith and
+  unit-cancellation localization run only on positive cells.
+- A fresh primary-source sweep identifies the six-vertex real-projective-plane complex as the
+  sharp classical factor-two mechanism. EXP-036 tests that recognition explicitly rather than
+  importing it as an assumption.
+- The hypothesis, premise dependencies, one-sided outcomes, checkpoints, and kill criteria were
+  written before implementation. No EXP-036 result or publication update is claimed.
