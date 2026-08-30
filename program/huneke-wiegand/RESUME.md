@@ -12,8 +12,9 @@ transfers to `C_p`.  This is not an infinite characteristic-dependence theorem. 
 manuscript v0.23 passed every publication gate and is public, concept-latest, and fresh-download
 verified at DOI `10.5281/zenodo.22181972`. Its 824,114-byte PDF has MD5
 `6bcacfa265e840f40e89dcdb87b75f7b` and SHA-256
-`c77b08a3724db90b14039c2c88e98325403ef4f656f52137057a27eb6fa5072d`. HWB-062 is done and
-HWB-063 is active for separate-PR promotion.
+`c77b08a3724db90b14039c2c88e98325403ef4f656f52137057a27eb6fa5072d`. HWB-062 and HWB-063 are
+done: PRs #230/#231 passed required checks and promoted payload tree
+`8ea3fbd0dfd136a7b91c508a31146be7d88eded1` through `develop` and `main`.
 
 EXP-035 remains CONFIRMED with its declared P3 mechanism refuted.
 For every `p>=4`, the exact zero-row criterion is
@@ -46,8 +47,8 @@ manuscript v0.22 is published and fresh-download verified at DOI
 #226/#227 passed required checks and promoted payload tree
 `0847e35a7641ab5592afd136f42bcf09ffe514f3` through `develop` and `main`. HWB-061 remains active
 for the infinite connecting-parity problem after the confirmed EXP-036 finite/anatomy gate.
-HWB-062 is done with manuscript v0.23 and its verified Zenodo version; HWB-063 owns repository
-promotion.
+HWB-062 and HWB-063 are done with manuscript v0.23, its verified Zenodo version, and repository
+promotion through PRs #230/#231.
 EXP-034 is CONFIRMED and manuscript
 v0.21 is PUBLISHED. Put
 `tau_p=8p-1+p(p+1)/2`. The Artinian reduction of the high-variable kernel and a separate unit
@@ -721,15 +722,13 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Promote the verified EXP-036 theorem and v0.23 publication through separate PRs to `develop`
-   and then `main`.
-2. Derive the `t=2` connecting-image defect from a parity-sensitive quotient complex.  Treat the
+1. Derive the `t=2` connecting-image defect from a parity-sensitive quotient complex.  Treat the
    values `1,4,9,18,31,49` as data only; both simple polynomial fits are rejected.
-3. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
+2. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
    a signed core; keep this separate from the connecting-only `t=2` mechanism.
-4. Open a separate manuscript only after a complete strand, an infinite connecting theorem, or a
+3. Open a separate manuscript only after a complete strand, an infinite connecting theorem, or a
    comparably transferable result is proved.
-5. Leave CAOS_MANAGE untouched during this round; its unrelated diffusion work remains preserved
+4. Leave CAOS_MANAGE untouched during this round; its unrelated diffusion work remains preserved
    on `develop`.
 
 ### Lenses ledger
