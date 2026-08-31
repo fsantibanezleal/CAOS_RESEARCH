@@ -254,6 +254,27 @@ class GF2BitsetRank:
         return len(self.pivots)
 
 
+class GF2SparseRank:
+    """GF(2) elimination that does not allocate one global-width bitset per pivot."""
+
+    def __init__(self) -> None:
+        self.pivots: dict[int, set[int]] = {}
+
+    def add(self, entries: Iterable[tuple[int, int]]) -> None:
+        vector = {row for row, value in entries if value & 1}
+        while vector:
+            pivot = min(vector)
+            existing = self.pivots.get(pivot)
+            if existing is None:
+                self.pivots[pivot] = vector
+                return
+            vector.symmetric_difference_update(existing)
+
+    @property
+    def rank(self) -> int:
+        return len(self.pivots)
+
+
 class SparsePrimeRank:
     def __init__(self, prime: int) -> None:
         self.prime = prime
@@ -284,8 +305,12 @@ class SparsePrimeRank:
         return len(self.pivots)
 
 
-def rank_accumulator(prime: int) -> GF2BitsetRank | SparsePrimeRank:
-    return GF2BitsetRank() if prime == 2 else SparsePrimeRank(prime)
+def rank_accumulator(
+    prime: int, *, sparse_gf2: bool = False
+) -> GF2BitsetRank | GF2SparseRank | SparsePrimeRank:
+    if prime == 2:
+        return GF2SparseRank() if sparse_gf2 else GF2BitsetRank()
+    return SparsePrimeRank(prime)
 
 
 def signed_faces(exterior: tuple[int, ...]) -> Iterable[tuple[int, int, tuple[int, ...]]]:
@@ -430,28 +455,34 @@ def rank_matrix_after_leaf_peeling(
     entries_for_column: EntryFunction,
     primes: tuple[int, ...],
     budget: Budget,
-) -> tuple[dict[int, int], dict[str, int]]:
-    """Rank a sparse matrix after exact degree-one row cancellation.
+) -> tuple[dict[int, int], dict[str, object]]:
+    """Rank a sparse matrix after exact two-sided leaf cancellation.
 
     If a row occurs in exactly one active column, that column is independent
     over every field because all entries are signs.  Pivoting there introduces
-    no fill: delete the row and column and update the remaining row degrees.
+    no fill.  The transpose statement handles degree-one columns identically.
     Count/XOR sketches recover the unique incident column without storing the
-    enormous row-to-column adjacency.  Only the residual 2-core is sent to
-    field-specific elimination.
+    enormous initial row adjacency.  A compact CSR representation of the
+    row-peeled core then supports two-sided cancellation.  Only its final
+    bipartite 2-core is sent to field-specific elimination, with static
+    low-degree row and column order to control fill.
     """
 
     counts = array("I", [0]) * row_count
     incident_xor = array("I", [0]) * row_count
+    column_sizes = array("I", [0]) * column_count
     initial_nonzeros = 0
     for column in range(column_count):
         entries = entries_for_column(column)
-        initial_nonzeros += len(entries)
+        nonzero_count = 0
         for row, value in entries:
             if not value:
                 continue
+            nonzero_count += 1
             counts[row] += 1
             incident_xor[row] ^= column
+        column_sizes[column] = nonzero_count
+        initial_nonzeros += nonzero_count
         if column and column % 50_000 == 0:
             budget.check(f"{label} incidence scan")
             print(
@@ -460,10 +491,11 @@ def rank_matrix_after_leaf_peeling(
                 flush=True,
             )
 
-    active = bytearray([1]) * column_count
+    active = bytearray(1 if size else 0 for size in column_sizes)
+    del column_sizes
     leaf_rows = array("I", (row for row, count in enumerate(counts) if count == 1))
     initial_leaf_rows = len(leaf_rows)
-    peeled_rank = 0
+    row_leaf_pivots = 0
     while leaf_rows:
         row = leaf_rows.pop()
         if counts[row] != 1:
@@ -472,7 +504,7 @@ def rank_matrix_after_leaf_peeling(
         if not active[column]:
             raise AssertionError(f"{label}: stale unique-column sketch")
         active[column] = 0
-        peeled_rank += 1
+        row_leaf_pivots += 1
         for adjacent_row, value in entries_for_column(column):
             if not value:
                 continue
@@ -482,51 +514,184 @@ def rank_matrix_after_leaf_peeling(
             incident_xor[adjacent_row] ^= column
             if counts[adjacent_row] == 1:
                 leaf_rows.append(adjacent_row)
-        if peeled_rank % 50_000 == 0:
+        if row_leaf_pivots % 50_000 == 0:
             budget.check(f"{label} leaf peeling")
             print(
-                f"{label} peeled {peeled_rank}/{column_count} columns",
+                f"{label} row-peeled {row_leaf_pivots}/{column_count} columns",
                 flush=True,
             )
 
     del incident_xor, leaf_rows
     gc.collect()
-    residual_columns = sum(active)
-    residual_rows = sum(count > 0 for count in counts)
-    residual_nonzeros = sum(counts)
-    row_map = array("i", [-1]) * row_count
+    row_only_columns = sum(active)
+    row_only_rows = sum(count > 0 for count in counts)
+    row_only_nonzeros = sum(counts)
+    first_row_map = array("i", [-1]) * row_count
+    core_global_rows = array("I")
     local_row = 0
     for row, count in enumerate(counts):
         if count:
-            row_map[row] = local_row
+            first_row_map[row] = local_row
+            core_global_rows.append(row)
             local_row += 1
-    if local_row != residual_rows:
+    if local_row != row_only_rows:
         raise AssertionError(f"{label}: residual row-map mismatch")
-    del counts
+    print(
+        f"{label} row peel: rank={row_leaf_pivots}, "
+        f"core={row_only_rows}x{row_only_columns}, nnz={row_only_nonzeros}",
+        flush=True,
+    )
+
+    core_original_columns = array("I")
+    column_offsets = array("Q", [0])
+    edge_rows = array("I")
+    column_degrees = array("I")
+    for original_column, is_active in enumerate(active):
+        if not is_active:
+            continue
+        mapped_rows = [
+            first_row_map[row]
+            for row, value in entries_for_column(original_column)
+            if value and first_row_map[row] >= 0
+        ]
+        if not mapped_rows:
+            continue
+        core_original_columns.append(original_column)
+        edge_rows.extend(mapped_rows)
+        column_degrees.append(len(mapped_rows))
+        column_offsets.append(len(edge_rows))
+    del active, first_row_map
+    gc.collect()
+    if len(edge_rows) != row_only_nonzeros:
+        raise AssertionError(f"{label}: CSR nonzero mismatch")
+
+    row_degrees = array("I", [0]) * row_only_rows
+    for row in edge_rows:
+        row_degrees[row] += 1
+    row_offsets = array("Q", [0])
+    for degree in row_degrees:
+        row_offsets.append(row_offsets[-1] + degree)
+    row_edges = array("I", [0]) * len(edge_rows)
+    row_positions = array("Q", row_offsets[:-1])
+    for column in range(len(core_original_columns)):
+        for edge in range(column_offsets[column], column_offsets[column + 1]):
+            row = edge_rows[edge]
+            row_edges[row_positions[row]] = column
+            row_positions[row] += 1
+    del row_positions, counts
+    gc.collect()
+
+    active_rows = bytearray([1]) * row_only_rows
+    active_columns = bytearray([1]) * len(core_original_columns)
+    row_queue = array("I", (row for row, degree in enumerate(row_degrees) if degree == 1))
+    column_queue = array(
+        "I", (column for column, degree in enumerate(column_degrees) if degree == 1)
+    )
+    initial_leaf_columns = len(column_queue)
+    two_sided_pivots = 0
+
+    def cancel_pair(row: int, column: int) -> None:
+        nonlocal two_sided_pivots
+        active_rows[row] = 0
+        active_columns[column] = 0
+        two_sided_pivots += 1
+        for edge in range(column_offsets[column], column_offsets[column + 1]):
+            adjacent_row = edge_rows[edge]
+            if active_rows[adjacent_row]:
+                row_degrees[adjacent_row] -= 1
+                if row_degrees[adjacent_row] == 1:
+                    row_queue.append(adjacent_row)
+        for edge in range(row_offsets[row], row_offsets[row + 1]):
+            adjacent_column = row_edges[edge]
+            if active_columns[adjacent_column]:
+                column_degrees[adjacent_column] -= 1
+                if column_degrees[adjacent_column] == 1:
+                    column_queue.append(adjacent_column)
+        row_degrees[row] = 0
+        column_degrees[column] = 0
+
+    while row_queue or column_queue:
+        if row_queue:
+            row = row_queue.pop()
+            if not active_rows[row] or row_degrees[row] != 1:
+                continue
+            neighbors = [
+                row_edges[edge]
+                for edge in range(row_offsets[row], row_offsets[row + 1])
+                if active_columns[row_edges[edge]]
+            ]
+            if len(neighbors) != 1:
+                raise AssertionError(f"{label}: row leaf degree mismatch")
+            cancel_pair(row, neighbors[0])
+        else:
+            column = column_queue.pop()
+            if not active_columns[column] or column_degrees[column] != 1:
+                continue
+            neighbors = [
+                edge_rows[edge]
+                for edge in range(column_offsets[column], column_offsets[column + 1])
+                if active_rows[edge_rows[edge]]
+            ]
+            if len(neighbors) != 1:
+                raise AssertionError(f"{label}: column leaf degree mismatch")
+            cancel_pair(neighbors[0], column)
+        if two_sided_pivots and two_sided_pivots % 50_000 == 0:
+            budget.check(f"{label} two-sided peeling")
+            print(
+                f"{label} two-sided peeled {two_sided_pivots} more pivots",
+                flush=True,
+            )
+
+    final_local_rows = [
+        row
+        for row, is_active in enumerate(active_rows)
+        if is_active and row_degrees[row] > 0
+    ]
+    final_local_columns = [
+        column
+        for column, is_active in enumerate(active_columns)
+        if is_active and column_degrees[column] > 0
+    ]
+    final_local_rows.sort(key=row_degrees.__getitem__)
+    final_local_columns.sort(key=column_degrees.__getitem__)
+    final_row_map = array("i", [-1]) * row_count
+    for new_row, old_row in enumerate(final_local_rows):
+        final_row_map[core_global_rows[old_row]] = new_row
+    final_original_columns = [
+        core_original_columns[column] for column in final_local_columns
+    ]
+    residual_rows = len(final_local_rows)
+    residual_columns = len(final_original_columns)
+    residual_nonzeros = sum(row_degrees[row] for row in final_local_rows)
+    peeled_rank = row_leaf_pivots + two_sided_pivots
+    del (
+        core_global_rows,
+        core_original_columns,
+        final_local_rows,
+        final_local_columns,
+    )
     gc.collect()
     budget.check(f"{label} residual start")
     print(
-        f"{label} peel complete: rank={peeled_rank}, "
-        f"core={residual_rows}x{residual_columns}, nnz={residual_nonzeros}",
+        f"{label} two-sided peel complete: rank={peeled_rank}, "
+        f"2-core={residual_rows}x{residual_columns}, nnz={residual_nonzeros}",
         flush=True,
     )
 
     ranks: dict[int, int] = {}
     core_ranks: dict[str, int] = {}
     for prime in primes:
-        accumulator = rank_accumulator(prime)
+        accumulator = rank_accumulator(prime, sparse_gf2=residual_rows > 50_000)
         processed = 0
-        for column, is_active in enumerate(active):
-            if not is_active:
-                continue
+        for column in final_original_columns:
             entries = [
-                (row_map[row], value)
+                (final_row_map[row], value)
                 for row, value in entries_for_column(column)
-                if row_map[row] >= 0 and value
+                if final_row_map[row] >= 0 and value
             ]
             accumulator.add(entries)
             processed += 1
-            if processed % 25_000 == 0:
+            if processed % 10_000 == 0:
                 budget.check(f"{label} GF({prime}) residual rank")
                 print(
                     f"{label} GF({prime}) core {processed}/{residual_columns}: "
@@ -545,7 +710,13 @@ def rank_matrix_after_leaf_peeling(
         "columns": column_count,
         "initial_nonzeros": initial_nonzeros,
         "initial_leaf_rows": initial_leaf_rows,
+        "initial_leaf_columns_after_row_peel": initial_leaf_columns,
+        "row_leaf_pivots": row_leaf_pivots,
+        "two_sided_leaf_pivots": two_sided_pivots,
         "peeled_rank": peeled_rank,
+        "row_only_residual_rows": row_only_rows,
+        "row_only_residual_columns": row_only_columns,
+        "row_only_residual_nonzeros": row_only_nonzeros,
         "residual_rows": residual_rows,
         "residual_columns": residual_columns,
         "residual_nonzeros": residual_nonzeros,
@@ -560,7 +731,7 @@ def peeling_field_ranks(
     d_rows: list[object],
     primes: tuple[int, ...],
     budget: Budget,
-) -> tuple[dict[int, dict[str, int]], dict[str, dict[str, int]]]:
+) -> tuple[dict[int, dict[str, int]], dict[str, dict[str, object]]]:
     """Compute K, D, and combined ranks with a shared structural strategy."""
 
     p = int(basis["p"])
