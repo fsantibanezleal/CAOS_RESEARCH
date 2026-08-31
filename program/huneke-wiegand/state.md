@@ -139,8 +139,9 @@
 | 2026-08-31 | refuted | active | EXP-042 declared for HWB-069: independently extract the persistent signed component and test first-Bockstein ranks `3,4,5,7` before any further coefficient sweep |
 | 2026-08-31 | active | confirmed | EXP-042 passes P1/P2/P3: independently audited first-Bockstein ranks are `3,4,5,7`, proving exactly that many valuation-one Smith factors; representative atom localization is pivot dependent |
 | 2026-08-31 | confirmed | active | EXP-043 declared for HWB-070: prove the four rational ranks by verified distinct-prime modular ceilings and exact Hadamard product bounds |
+| 2026-08-31 | active | confirmed | EXP-043 passes P1/P2/P3: audited rational ranks are `1002,1607,2450,3586`; the complete isolated 2-primary cokernels are `(Z/2)^(3,4,5,7)` |
 
-Current state: **EXP-042 is confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
+Current state: **EXP-043 and EXP-042 are confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
 inconclusive with two finite passes; EXP-037 is refuted; EXP-036 remains confirmed with structural
 propagation unresolved.** The complete `(10,2)` block has surviving dimensions
 `4240` over `GF(2)` and `4168` over both `GF(3)` and `GF(5)`, so `e_10=72`; this refutes the
@@ -153,8 +154,10 @@ but refutes its simple transport with `95+7` at `p=11`. EXP-041 proves finitely 
 block does not switch semantic lineage: its normalized twelve-atom skeleton persists through
 `p=11`, with defect sequence `3,4,5,7`. HWB-069 now owns its signed normal form.
 EXP-042 proves that the first Bockstein has those same ranks, so each isolated integer matrix has
-exactly that many nonzero Smith factors of 2-adic valuation one. A rational-rank upper certificate
-is still required to rule out further 4-divisible factors; HWB-070 owns that finite closure.
+exactly that many nonzero Smith factors of 2-adic valuation one. EXP-043 supplies the matching
+rational-rank certificate and proves the complete isolated 2-primary types
+`(Z/2)^(3,4,5,7)`. HWB-071 now owns the uniform signed `D:B <-> K:C0` bridge needed to move from
+finite Smith data toward an all-parameter theorem.
 The cubic-source gap is at least `3(p-1)^2` for all `p>=4`, `2<=t<=p-2`, so the exact
 `A_p` and `C_p` values agree throughout this family.  HWB-061 remains active for an infinite
 connecting-parity theorem. HWB-062 is done: the 53-page v0.23 is public and fresh-download

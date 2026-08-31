@@ -1624,3 +1624,15 @@
   identifies the tested isolated 2-primary cokernels as `(Z/2)^(3,4,5,7)`.
 - Primality, distinctness, opposite-pivot ranks, and the exact product inequality require an
   independent audit. The finite certificate does not open an all-parameter or publication claim.
+
+## 2026-08-31 - EXP-043 completes the finite isolated 2-primary torsion
+
+- Minimal prefixes of `31,52,83,125` distinct verified 61-bit primes all give the declared ranks
+  and satisfy the exact squared Hadamard inequalities for `p=8,9,10,11`.
+- The resulting rational ranks are `1002,1607,2450,3586`. Independent low-pivot elimination
+  recomputes all 291 stored ranks and verifies every prime, product, and determinant bound.
+- Combined with EXP-042, the complete 2-primary torsion groups of the isolated cokernels are
+  `(Z/2)^3,(Z/2)^4,(Z/2)^5,(Z/2)^7`; no additional factor divisible by four exists.
+- HWB-070 is done. HWB-071 redirects to the uniform integral `D:B <-> K:C0` bridge. The result is
+  exact and relevant but finite, so no recurrence, all-parameter theorem, manuscript, or Zenodo
+  update is claimed.

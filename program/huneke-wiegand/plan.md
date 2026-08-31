@@ -1292,3 +1292,15 @@ The strong prediction is `rank_Q=1002,1607,2450,3586` for `p=8,9,10,11`. Combine
 this would completely identify the finite isolated 2-primary cokernels as elementary groups of
 ranks `3,4,5,7`. Opposite-pivot modular recomputation and deterministic primality verification are
 mandatory. No all-parameter or publication claim is opened.
+
+All three predictions pass. The exact rational ranks are `1002,1607,2450,3586`, certified by
+minimal prefixes of `31,52,83,125` distinct 61-bit primes. An independent low-pivot audit
+recomputes all 291 ranks, verifies every prime and exact product, and confirms the Hadamard bounds.
+Combined with EXP-042, the complete isolated 2-primary cokernels are
+`(Z/2)^3,(Z/2)^4,(Z/2)^5,(Z/2)^7`.
+
+HWB-070 is done. HWB-071 redirects from finite arithmetic to the chain mechanism: test exact row
+projections involving `D:B` and `K:C0`, identify whether deleting either side kills or transfers
+the Bockstein, and then build a parameterized integral matching. The representative dependence
+found by EXP-042 forbids declaring either atom the canonical carrier. No manuscript or Zenodo gate
+opens until a uniform theorem or comparably transferable result is proved.

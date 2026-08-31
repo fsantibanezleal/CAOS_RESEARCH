@@ -3942,6 +3942,31 @@
    "verdict_md": "# EXP-042 verdict\n\nStatus: **CONFIRMED** finitely for `p=8,...,11`. P1, P2, and P3 pass.\n\nThe exact isolated signed matrices reproduce every frozen hash, size, nonzero count, and rank.\nTheir first-Bockstein ranks are exactly `3,4,5,7`, under forward/reverse order and an independent\nopposite-pivot audit. Therefore the four matrices have exactly `3,4,5,7` nonzero Smith factors\nwhose 2-adic valuation is one. The entire observed odd-minus-two rank gap is detected by genuine\nfactor-two arithmetic inside the persistent twelve-atom sector.\n\nThe audit also rejects an overstrong localization: high-pivot representatives lie in the `D:B`\nrow atom, while low-pivot representatives lie in `K:C0`. The rank is intrinsic; either chosen\nrepresentative is reduction dependent. A signed bridge between those families is a research clue,\nnot yet a proved subcomplex.\n\nThe next strongest gate is a rigorous rational-rank upper certificate using modular ranks and a\nHadamard bound. If it passes, it will rule out additional 4-divisible factors and completely\nidentify the isolated block's 2-primary torsion at the tested parameters. EXP-042 does not prove a\nrecurrence, all-parameter theorem, or full lower strand, and it does not trigger a manuscript or\nZenodo update.\n"
   },
   {
+   "area": "commutative-algebra",
+   "artifacts": [
+    {
+     "bytes": 4867,
+     "name": "audit-certificate.json"
+    },
+    {
+     "bytes": 33227,
+     "name": "results.json"
+    },
+    {
+     "bytes": 4882,
+     "name": "smoke-p8.json"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-043 hypothesis - exact rational rank by modular Hadamard certificates\n\nDate: 2026-08-31. CPU only. Exact modular arithmetic and integer determinant bounds.\n\n## Predictions\n\nFor each EXP-042 isolated matrix, set `r` to its exact `GF(3)` rank and `d` to its maximum column\ndegree.\n\n### P1. Modular rank ceiling\n\nGenerate distinct verified 61-bit primes. Every selected prime has matrix rank exactly `r`:\n\n```text\np=8,9,10,11 -> r=1002,1607,2450,3586.\n```\n\nAny rank above `r` refutes the proposed rational rank immediately.\n\n### P2. Exact Hadamard coverage\n\nFor each parameter, accumulate `Q=product(q_i)` until\n\n```text\nQ^2 > 4*d^(r+1).\n```\n\nAll `(r+1)` minors are then both divisible by `Q` and smaller than `Q/2`, so they vanish. Together\nwith the nonzero rank-`r` minor modulo three, this proves `rank_Q(M_p)=r`.\n\n### P3. Complete finite 2-primary torsion\n\nCombine P2 with the independently audited EXP-042 first-Bockstein ranks. The predicted complete\n2-primary torsion of the four isolated cokernels is\n\n```text\np=8: (Z/2)^3\np=9: (Z/2)^4\np=10: (Z/2)^5\np=11: (Z/2)^7.\n```\n\nAn independent auditor must reverify primality, distinctness, every stored modular rank with the\nopposite pivot convention, the exact product inequality, and the EXP-042 artifact hashes.\n\n## Resource gate and claim boundary\n\nThe `p=8` smoke is capped at 300 seconds and 8 GB. The full matrix-artifact campaign is capped at\n1,200 seconds and 12 GB with one parameter checkpoint at a time. A resource stop is inconclusive.\nA pass is an exact finite Smith-theoretic result only. It does not prove the sequence, recurrence,\nOI/FI compatibility, an all-parameter connecting theorem, or the complete lower strand. No\nmanuscript or Zenodo gate opens from finite certificates alone.\n",
+   "id": "043",
+   "problem": "huneke-wiegand",
+   "slug": "EXP-043-hadamard-rank-certificate",
+   "title": "exact rational rank by modular Hadamard certificates",
+   "verdict": "",
+   "verdict_md": "# EXP-043 verdict\n\nStatus: **CONFIRMED** finitely for `p=8,...,11`. P1, P2, and P3 pass.\n\nDistinct verified 61-bit primes and exact Hadamard product bounds prove rational ranks\n`1002,1607,2450,3586` for the four persistent isolated matrices. An independent opposite-pivot\naudit recomputes all 291 modular ranks and every exact determinant bound.\n\nCombining these rational ranks with the EXP-042 first Bockstein proves that the complete 2-primary\ntorsion of the isolated cokernels is exactly\n\n```text\np=8:  (Z/2)^3\np=9:  (Z/2)^4\np=10: (Z/2)^5\np=11: (Z/2)^7.\n```\n\nThere are no additional nonzero Smith factors divisible by four. This is a relevant finite normal\nform result, but it does not prove a recurrence or an all-parameter lower-strand theorem. The next\nroute is a uniform signed reduction of the `D:B <-> K:C0` bridge indicated by EXP-042's\npivot-dependent representatives. No manuscript or Zenodo update is triggered by the finite result\nalone.\n"
+  },
+  {
    "area": "computation-complexity",
    "artifacts": [
     {

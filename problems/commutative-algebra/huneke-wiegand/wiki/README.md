@@ -49,6 +49,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-040 | REFUTED; P1 passes | `67+5` localizes the first correction at `p=10`; exact `95+7` refutes the declared `96+6` transport at `p=11` |
 | EXP-041 | REFUTED; P1 passes | the isolated block keeps one normalized twelve-atom semantic skeleton through `p=11`; the lineage-switch and distinguished-row predictions fail |
 | EXP-042 | CONFIRMED finitely | exact first-Bockstein ranks `3,4,5,7` prove that many valuation-one Smith factors in the persistent isolated block; atom representatives are pivot dependent |
+| EXP-043 | CONFIRMED finitely | exact modular Hadamard certificates prove rational ranks and complete isolated 2-primary types `(Z/2)^(3,4,5,7)` through `p=11` |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
@@ -689,3 +690,8 @@ EXP-042 acts on the signed integer matrices themselves. At `p=8,9,10,11`, their 
 ranks are exactly `3,4,5,7`, under independent reduction conventions. Thus every observed isolated
 rank gap has an explicit factor-two source. This is not yet the complete 2-primary Smith form:
 exact rational-rank upper bounds are needed to exclude additional factors divisible by four.
+
+EXP-043 supplies those upper bounds without a full Smith computation. Minimal products of
+`31,52,83,125` verified 61-bit primes exceed the exact Hadamard bounds on the next minors, proving
+rational ranks `1002,1607,2450,3586`. Hence the four displayed elementary 2-groups are the
+complete isolated 2-primary torsion groups, not lower bounds.

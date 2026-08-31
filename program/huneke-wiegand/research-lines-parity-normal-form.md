@@ -43,6 +43,11 @@ rank certificate. If it proves that the odd-field rank is the rational rank, the
 pivot dependent (`D:B` for high pivots and `K:C0` for low pivots), so a canonical one-atom
 localization is refuted.
 
+EXP-043 closes the rational-rank gap with exact modular Hadamard certificates. The complete finite
+isolated 2-primary types at `p=8,9,10,11` are `(Z/2)^3,(Z/2)^4,(Z/2)^5,(Z/2)^7`. The active proof
+bottleneck is no longer finite Smith arithmetic; it is a uniform integral reduction of the
+`D:B <-> K:C0` bridge and a compatible parameter transition.
+
 ### 2. Relative squarefree-divisor homology - structural fallback
 
 Multigraded Betti numbers of numerical semigroup rings can be represented by reduced homology of
