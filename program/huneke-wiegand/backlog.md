@@ -67,3 +67,4 @@
 | HWB-063 | 1 | done | repository promotion and durable handoff for EXP-036 plus v0.23 | PRs #230/#231 passed required checks and promoted payload tree `8ea3fbd0dfd136a7b91c508a31146be7d88eded1` through `develop` and `main` |
 | HWB-064 | 1 | done | derive or refute a quasipolynomial law for the `t=2` connecting-parity defect | EXP-037 exactly refutes the candidate at the first new cell: `e_10=72`, not 73; independent order and `GF(5)` audits pass |
 | HWB-065 | 1 | in progress | test whether the first discrepancy is a degree-six relation in the parity-defect module | audited exact `e_11=102` passes; conditional `e_12=138` test is active, while an explicit relation/recurrence proof remains mandatory |
+| HWB-066 | 1 | in progress | decompose the parity-sensitive combined core into recurring signed components | EXP-039 tests bounded defect-one connected components through `p=9`; failure redirects to matched-block/relative-homology structure |

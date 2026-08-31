@@ -1523,3 +1523,16 @@
 - The corrected denominator is equivalent from this point to an order-seven recurrence. Its first
   new check passes, and the already declared second prediction `e_12=138` is activated under a
   7,200-second, 40-GB cap. No all-parameter recurrence or relation is claimed.
+
+## 2026-08-30 - EXP-038 p=12 passes; EXP-039 redirects to core anatomy
+
+- The complete `(12,2)` presentation has 58,599 kernel rows, 33,068 kernel columns, 3,735,675
+  connecting-source columns, and 20,010,799 connecting rows.
+- Exact surviving dimensions are `16,822` over `GF(2)` and `16,684` over both `GF(3)` and
+  `GF(5)`, hence `e_12=138` exactly as declared. Low-degree and canonical orders agree on every
+  rank; the audit freezes both `p=11` and `p=12` evidence.
+- The first two recurrence residuals vanish, but no degree-six chain relation or all-parameter
+  recurrence is proved. EXP-038 is therefore INCONCLUSIVE for P1/P2, with both finite gates passed.
+- EXP-039 is declared before implementation. It tests whether connected components of the
+  unit-peeled combined core are bounded recurring defect-one blocks. A failure redirects to
+  matched-block/relative-homology decomposition rather than another coefficient fit.

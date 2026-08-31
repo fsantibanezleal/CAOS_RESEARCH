@@ -1181,3 +1181,18 @@ and then `e_12=138`. The primary gate is the complete `(11,2)` rank over `GF(2)`
 3,600 seconds and 40 GB. A pass requires a canonical-order `GF(2)` and `GF(5)` audit before any
 attempt to identify the proposed relation. A mismatch closes the formula immediately. No
 manuscript or Zenodo update is open at declaration.
+
+## 2026-08-30 - EXP-039 component-stabilization gate
+
+Both declared EXP-038 finite predictions pass exactly: `e_11=102` and `e_12=138`, independently
+audited by alternate residual order and `GF(5)`.  EXP-038 remains inconclusive because neither the
+degree-six relation nor the order-seven recurrence is proved.  A third large coefficient is
+therefore demoted behind a structural test.
+
+EXP-039 applies the anatomy, topology, invariant, and two-sided lenses to the combined signed
+presentation.  Exact unit peeling is followed by bipartite connected-component decomposition and
+per-component ranks.  The strong finite prediction is that every defective component through
+`p=9` is bounded by 5,000 vertices and contributes defect one, with recurring normalized signed
+types.  A giant defective component refutes that model and redirects to a finer matched-block or
+relative-homology decomposition.  The run is capped at 1,800 seconds and 20 GB with per-parameter
+checkpoints.  No publication gate is open.

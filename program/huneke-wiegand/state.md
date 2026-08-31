@@ -129,15 +129,17 @@
 | 2026-08-30 | active | refuted | EXP-037 computes the complete `(10,2)` block and finds exact excess `72`, not `73`; canonical-order `GF(2)` and independent `GF(5)` audit agree, refuting both the proposed series and its 73-point lattice index |
 | 2026-08-30 | refuted | active | EXP-038 declared for HWB-065: test whether the one-unit deficit is the first degree-six relation, forcing the new out-of-sample value `e_11=102`; no structural theorem claimed |
 | 2026-08-30 | active | active | EXP-038 gives audited exact `e_11=102`; alternate order and `GF(5)` agree, activating the previously declared second prediction `e_12=138` without claiming the recurrence or relation |
+| 2026-08-30 | active | inconclusive | EXP-038 gives independently audited exact `e_12=138`, so both finite predictions pass; P1/P2 remain unproved and no manuscript/Zenodo gate opens |
+| 2026-08-30 | inconclusive | active | EXP-039 declared for HWB-066: test whether the combined parity core splits into bounded recurring defect-one connected components before spending on another coefficient |
 
-Current state: **EXP-038 is declared; EXP-037 is refuted; EXP-036 remains confirmed with
-structural propagation unresolved.** The complete `(10,2)` block has surviving dimensions
+Current state: **EXP-039 is declared; EXP-038 is inconclusive with two finite passes; EXP-037 is
+refuted; EXP-036 remains confirmed with structural propagation unresolved.** The complete `(10,2)` block has surviving dimensions
 `4240` over `GF(2)` and `4168` over both `GF(3)` and `GF(5)`, so `e_10=72`; this refutes the
 period-six candidate prediction 73. Low-degree and canonical residual orders agree exactly. The
-finite sequence is now `1,4,9,18,31,49,72`. EXP-038 tests the separately declared correction
-`(1+2x+x^2+x^3-x^6)/((1-x)^2(1-x^2)(1-x^3))`. Its first new prediction passes with audited
-exact `e_11=102`; `e_12=138` is the active second gate. The recurrence and degree-six relation
-remain unproved. The cubic-source gap is at least `3(p-1)^2` for all `p>=4`, `2<=t<=p-2`, so the exact
+finite sequence is now `1,4,9,18,31,49,72,102,138`. EXP-038's separately declared correction
+passes at both `p=11` and `p=12`, but the recurrence and degree-six relation remain unproved.
+EXP-039 now tests the stronger component-stabilization mechanism through `p=9`. The cubic-source
+gap is at least `3(p-1)^2` for all `p>=4`, `2<=t<=p-2`, so the exact
 `A_p` and `C_p` values agree throughout this family.  HWB-061 remains active for an infinite
 connecting-parity theorem. HWB-062 is done: the 53-page v0.23 is public and fresh-download
 verified at DOI `10.5281/zenodo.22181972`. HWB-063 is done after PRs #230/#231 promoted payload
