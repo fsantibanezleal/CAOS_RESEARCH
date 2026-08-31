@@ -43,6 +43,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-034 | CONFIRMED | exact characteristic-free regularity-two class in `K_p`, `A_p`, and `C_p` for every `p>=4` |
 | EXP-035 | CONFIRMED with P3 mechanism refuted | complete primitive zero-row summand, consecutive kernel classes, and the first characteristic-dependent lower Betti cell |
 | EXP-036 | CONFIRMED with structural propagation unresolved | repeated characteristic-dependent cells through `p=9`, two distinct rank mechanisms, compact factor-two localization, and all-parameter cubic-source absence |
+| EXP-037 | REFUTED | exact `(10,2)` excess is 72, not the predicted 73; independent residual order and odd-prime audits pass |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
@@ -643,3 +644,20 @@ fresh-download verified at DOI `10.5281/zenodo.22181972`. The exact public 824,1
 matches the committed artifact by MD5 `6bcacfa265e840f40e89dcdb87b75f7b` and SHA-256
 `c77b08a3724db90b14039c2c88e98325403ef4f656f52137057a27eb6fa5072d`. Publication does not close
 the infinite connecting-parity problem or either complete lower strand.
+
+## Refuted period-six lattice count
+
+EXP-037 tests the six-term period-six fit at its first new cell. The complete `(10,2)` block has
+kernel-cokernel dimension 8,314 and connecting-boundary rank 725,343 in `GF(2)`, `GF(3)`, and
+`GF(5)`. The combined rank is 738,459 in `GF(2)` and 738,531 in both odd fields, so
+
+```text
+dim_GF(2) A_(10,2)=4240,
+dim_GF(3) A_(10,2)=dim_GF(5) A_(10,2)=4168,
+e_10=72.
+```
+
+The proposed generating function predicted 73. Low-degree and canonical residual orders give the
+same exact ranks, so the mismatch refutes both the series and its 73-point factor-two indexing.
+The finite excess sequence is `1,4,9,18,31,49,72`. EXP-036 transfers this exact result to `C_10`.
+No replacement all-parameter formula, full lower strand, or general conjecture resolution follows.

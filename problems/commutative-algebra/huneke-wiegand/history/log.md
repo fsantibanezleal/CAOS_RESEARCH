@@ -1484,3 +1484,30 @@
 - EXP-037 records the exact premise hashes, independent arithmetic route, compute budgets, and
   kill criteria before implementation. No new theorem, manuscript version, or publication is
   claimed.
+
+## 2026-08-30 - EXP-037 refuted at p=10
+
+- The complete `(10,2)` presentation contains 17,356 kernel rows, 12,006 kernel columns, 773,790
+  connecting-source columns, and 3,320,245 connecting rows.
+- Exact two-sided unit cancellation reduces the kernel, connecting, and combined blocks to
+  field-independent 2-cores before finite-field elimination. The primary run completes in 67.390
+  seconds.
+- The surviving dimensions are `4240` over `GF(2)` and `4168` over `GF(3)`, so `e_10=72`; the
+  declared prediction 73 and the 73-point lattice indexing are both refuted.
+- A canonical residual order reproduces every `GF(2)` rank, while `GF(5)` reproduces every
+  `GF(3)` rank. The frozen primary and alternate SHA-256 hashes are
+  `ca97087466fdd705e22f69e79cdfecfc7dbce0684475b98bd99757cfed030d7b` and
+  `a8456b4d2de3fcf53cf97a63b63671656b4968fac80f8b8f151b76f43aba1b05`.
+- The finite sequence is now `1,4,9,18,31,49,72`. This does not prove an infinite formula or
+  resolve the Huneke-Wiegand conjecture. HWB-064 is done; no manuscript/Zenodo gate opens.
+
+## 2026-08-30 - EXP-038 declared
+
+- The one-unit deficit first appears at `n=p-4=6`. EXP-038 tests whether this marks a first
+  degree-six relation, giving corrected numerator `1+2x+x^2+x^3-x^6` over the previous
+  denominator.
+- The corrected series is fitted through `p=10` and predicts the genuinely new value `e_11=102`
+  (then 138 at `p=12`). It is a falsification target, not evidence.
+- The frozen EXP-037 engine will compute the complete `(11,2)` block under a 3,600-second, 40-GB
+  cap. A numerical pass requires a separate pivot-order and odd-prime audit; structural P2 still
+  requires an explicit relation certificate.

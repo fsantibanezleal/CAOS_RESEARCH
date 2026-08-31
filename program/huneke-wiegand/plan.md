@@ -1145,3 +1145,26 @@ small-cell regressions. The structural route performs integral unit cancellation
 connecting presentation and seeks unmatched factor-two cells indexed by the lattice points of
 the generating function. Finite agreement cannot confirm the all-parameter statement. No
 manuscript or Zenodo update is open at declaration.
+
+EXP-037 is now REFUTED at the first out-of-sample gate. The complete `(10,2)` presentation gives
+surviving dimensions `4240` over `GF(2)` and `4168` over `GF(3)`, hence `e_10=72`, not 73. A
+canonical residual order reproduces every `GF(2)` rank, while `GF(5)` reproduces every `GF(3)`
+rank. The kernel cokernel and connecting boundary are field-independent; the 72-dimensional
+defect is entirely in the connecting image. The proposed 73-point lattice indexing therefore
+fails as well. HWB-064 is done. This finite refutation does not trigger manuscript v0.24 or a
+Zenodo version.
+
+## 2026-08-30 - EXP-038 degree-six relation gate
+
+HWB-065 is active under HWB-061. The smallest structural correction to the rejected free-lattice
+series is a first relation in degree six:
+
+```text
+(1+2x+x^2+x^3-x^6)/((1-x)^2(1-x^2)(1-x^3)).
+```
+
+This is fitted through `p=10`, not inferred as a theorem. It forces the new prediction `e_11=102`
+and then `e_12=138`. The primary gate is the complete `(11,2)` rank over `GF(2)` and `GF(3)` under
+3,600 seconds and 40 GB. A pass requires a canonical-order `GF(2)` and `GF(5)` audit before any
+attempt to identify the proposed relation. A mismatch closes the formula immediately. No
+manuscript or Zenodo update is open at declaration.

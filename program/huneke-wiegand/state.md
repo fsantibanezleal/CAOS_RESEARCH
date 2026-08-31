@@ -126,15 +126,16 @@
 | 2026-08-30 | confirmed | published | 53-page manuscript v0.23 passed claim/build/render, sole-authorship, exact-draft, publication, concept-latest, and fresh-download gates; DOI `10.5281/zenodo.22181972` matches the committed PDF exactly |
 | 2026-08-30 | published | published | PR #230 passed `guards` and `test` and merged EXP-036 plus v0.23 to `develop` at `fc40e74`; PR #231 passed both jobs and promoted the exact payload to `main` at `817cc01` |
 | 2026-08-30 | published | active | EXP-037 declared for HWB-064: exact `p=10,11` falsification of a new period-six cubic excess candidate plus integral connecting-presentation reduction; no new result claimed |
+| 2026-08-30 | active | refuted | EXP-037 computes the complete `(10,2)` block and finds exact excess `72`, not `73`; canonical-order `GF(2)` and independent `GF(5)` audit agree, refuting both the proposed series and its 73-point lattice index |
+| 2026-08-30 | refuted | active | EXP-038 declared for HWB-065: test whether the one-unit deficit is the first degree-six relation, forcing the new out-of-sample value `e_11=102`; no structural theorem claimed |
 
-Current state: **EXP-037 is declared; EXP-036 remains confirmed with structural propagation
-unresolved.** The new candidate has generating function
-`(1+2x+x^2+x^3)/((1-x)^2(1-x^2)(1-x^3))` and forces `e_10=73`, `e_11=104`; it is not yet
-evidence or a theorem. Exact complete
-targets through `(9,2)` prove repeated characteristic dependence by two mechanisms.  For tested
-`t=2` cells with `5<=p<=9`, the kernel-cokernel dimensions agree in all three tested fields and the connecting quotient
-creates characteristic-two excesses `4,9,18,31,49`; both the square and quadratic fits are
-refuted.  The cubic-source gap is at least `3(p-1)^2` for all `p>=4`, `2<=t<=p-2`, so the exact
+Current state: **EXP-038 is declared; EXP-037 is refuted; EXP-036 remains confirmed with
+structural propagation unresolved.** The complete `(10,2)` block has surviving dimensions
+`4240` over `GF(2)` and `4168` over both `GF(3)` and `GF(5)`, so `e_10=72`; this refutes the
+period-six candidate prediction 73. Low-degree and canonical residual orders agree exactly. The
+finite sequence is now `1,4,9,18,31,49,72`. EXP-038 tests the separately declared correction
+`(1+2x+x^2+x^3-x^6)/((1-x)^2(1-x^2)(1-x^3))`, which predicts `e_11=102`; it is not evidence or a
+theorem. The cubic-source gap is at least `3(p-1)^2` for all `p>=4`, `2<=t<=p-2`, so the exact
 `A_p` and `C_p` values agree throughout this family.  HWB-061 remains active for an infinite
 connecting-parity theorem. HWB-062 is done: the 53-page v0.23 is public and fresh-download
 verified at DOI `10.5281/zenodo.22181972`. HWB-063 is done after PRs #230/#231 promoted payload

@@ -1,15 +1,13 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-30. Lifecycle: EXP-037 is DECLARED; EXP-036 is CONFIRMED with structural
-propagation unresolved. EXP-037 tests the new period-six cubic candidate
-`(1+2x+x^2+x^3)/((1-x)^2(1-x^2)(1-x^3))`, which forces `e_10=73` and `e_11=104`. No new exact
-cell or infinite theorem is claimed at declaration.
-Exact complete-target calculations prove repeated characteristic dependence at eight of the nine
-tested family cells through `(p,t)=(9,2)`.  The tested `t=2` cells with `5<=p<=9` have the same
-kernel-cokernel dimension over `GF(2)`, `GF(3)`, and `GF(1000003)` but a smaller connecting image
-over `GF(2)`;
-their `A_p=C_p` excesses are `4,9,18,31,49`.  Both the initial square and quadratic
-interpolations are refuted.  For every `p>=4` and `2<=t<=p-2`, the shifted cubic source is absent
+Updated: 2026-08-30. Lifecycle: EXP-038 is DECLARED; EXP-037 is REFUTED; EXP-036 is CONFIRMED
+with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
+`4240` over `GF(2)` and `4168` over both `GF(3)` and `GF(5)`, hence exact excess `e_10=72`. This
+refutes the period-six prediction 73 and its 73-point lattice index at the first out-of-sample
+cell. Low-degree and canonical residual orders agree exactly. The finite `t=2` sequence is now
+`1,4,9,18,31,49,72`. EXP-038 tests whether the first deficit is a degree-six relation, with
+corrected numerator `1+2x+x^2+x^3-x^6` and genuinely new prediction `e_11=102`; this is not yet
+evidence or a theorem. For every `p>=4` and `2<=t<=p-2`, the shifted cubic source is absent
 by the positive gap `g(p,t)>=3(p-1)^2`, so every future exact `A_p` value at these targets
 transfers to `C_p`.  This is not an infinite characteristic-dependence theorem. The 53-page
 manuscript v0.23 passed every publication gate and is public, concept-latest, and fresh-download
@@ -356,7 +354,8 @@ campaign is supporting evidence, not the proof.
 | EXP-034 | CONFIRMED | exact characteristic-free class `beta_(p,(p+2,8p-1+p(p+1)/2))=1` in `K_p`, `A_p`, and `C_p` |
 | EXP-035 | CONFIRMED with P3 mechanism refuted | all primitive zero rows; consecutive `K_p` family; `beta_(5,(7,87))(A_4)=beta_(5,(7,87))(C_4)` is `4` over `GF(2)` and `3` over `GF(3)` |
 | EXP-036 | CONFIRMED with structural propagation unresolved | repeated characteristic-dependent targets through `p=9`; distinct kernel and connecting mechanisms; compact factor-two residual; all-parameter cubic-source absence |
-| EXP-037 | DECLARED | test `e_10=73`, `e_11=104`; seek an integral unit matching and period-six lattice index for the connecting defect |
+| EXP-037 | REFUTED | exact `e_10=72`, not 73; independent order and `GF(5)` audit pass; proposed lattice index fails |
+| EXP-038 | DECLARED | test the degree-six-relation correction at the new prediction `e_11=102`; structural relation remains unproved |
 
 ## 3a. Exact evidence anchors
 
@@ -423,19 +422,29 @@ campaign is supporting evidence, not the proof.
   `4072a9fb7844d07763fae1b08e99da3d94d38cf3a40f980316c38f0931091276`,
   `b92e787bc120b5fa12aac1fc4a10792883e699ed7315055958f3916e8d10b60b`, and
   `b1bfc105f3e9ace368f181ccf10f367fe1f4d23199e49c14275bd8e9b941569e`.
+- EXP-037 primary `(10,2)` and alternate-order audit hashes:
+  `ca97087466fdd705e22f69e79cdfecfc7dbce0684475b98bd99757cfed030d7b` and
+  `a8456b4d2de3fcf53cf97a63b63671656b4968fac80f8b8f151b76f43aba1b05`; the audit certificate
+  passes with hash `0c6e72a55202001cd3096e6c4999045eee6ce0aeb7b266d2403c83f93409ce42`.
 
 ## 4. In flight
 
-EXP-037 is DECLARED.  For `e_p=dim_GF(2) A_(p,2)-dim_GF(3) A_(p,2)`, the six exact EXP-036 values
-match the coefficients of
+EXP-038 is DECLARED. EXP-037 exactly refutes the previous series at its first new value:
 
 ```text
-(1+2x+x^2+x^3)/((1-x)^2(1-x^2)(1-x^3)).
+e_10=dim_GF(2) A_(10,2)-dim_GF(3) A_(10,2)=4240-4168=72, not 73.
 ```
 
-This candidate predicts `e_10=73` and `e_11=104`.  The exact `(10,2)` rank is the first gate;
-the stronger route requires integral unit cancellation and a signed lattice-indexed residual.
-Finite agreement does not prove the formula.
+Canonical-order `GF(2)` agrees with the primary low-degree order, and `GF(5)` agrees with
+`GF(3)`. The proposed 73-point lattice index is therefore refuted as stated. EXP-038 tests the
+smallest relation-style correction
+
+```text
+(1+2x+x^2+x^3-x^6)/((1-x)^2(1-x^2)(1-x^3)),
+```
+
+which predicts the genuinely new value `e_11=102`. This is a fitted falsification target. Even a
+numerical pass cannot prove the proposed degree-six relation without an explicit certificate.
 
 EXP-036 is CONFIRMED with its all-parameter structural-propagation prediction unresolved.  Its
 exact-sum route reproduces EXP-035 and computes the complete `p<=6` triangle plus `(7,2)`,
