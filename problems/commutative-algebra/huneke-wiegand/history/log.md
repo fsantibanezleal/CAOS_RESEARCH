@@ -1645,3 +1645,13 @@
   ranks `3,4,5,7`. Exact ranks over `GF(2)`, `GF(3)`, and `GF(5)` accompany both reduction orders.
 - An independent reconstruction and opposite-pivot audit are mandatory. Row projection is a
   localization diagnostic, not an integral matching or an all-parameter proof.
+
+## 2026-08-31 - EXP-044 refutes the two-atom carrier
+
+- P1 passes: deleting `D:B`, `K:C0`, or both makes all three field ranks equal and the first
+  Bockstein zero for every `p=8,...,11`.
+- P2 fails: retaining only `D:B union K:C0` also gives equal field ranks and Bockstein zero, so the
+  two necessary interfaces are not jointly sufficient.
+- P3 and all 158 independent low-pivot audit checks pass. The next gate is the complete 64-subset
+  lattice of the six normalized row atoms, not a guessed two-block integral reduction.
+- No recurrence, all-parameter theorem, manuscript, or Zenodo update is claimed.

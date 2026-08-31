@@ -1318,3 +1318,13 @@ be equally actionable: surviving torsion after a deletion or lost torsion in the
 would specify which larger atom set the integral matching must include. The computation does not
 substitute for unimodular reduction or compatible maps in `p`, so it cannot establish the uniform
 theorem or open a publication gate.
+
+The full result passes P1 and P3 but refutes P2. Deleting `D:B`, deleting `K:C0`, or deleting both
+gives equal ranks in all three fields and Bockstein zero for every `p=8,...,11`. Retaining only the
+union also gives zero, so the two atoms are necessary interfaces but not a sufficient carrier.
+The independent low-pivot audit passes all 158 checks.
+
+HWB-071 therefore redirects to a bounded atom-lattice gate: enumerate all 64 subsets of the six
+normalized row atoms, identify every inclusion-minimal subset preserving the full Bockstein, and
+require the minimal carrier pattern to agree across all four parameters. Integral Morse matching
+starts only after that carrier is known.

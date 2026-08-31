@@ -700,3 +700,8 @@ EXP-044 is the declared bridge-localization gate. It tests whether the two pivot
 atoms `D:B` and `K:C0` are jointly sufficient and individually necessary for the finite
 Bockstein, using exact deletion and union projections. Even a complete pass is only a guide for
 the required unimodular matching; it is not a uniform chain theorem.
+
+EXP-044 passes necessity but refutes sufficiency. Deleting either marked atom kills the finite
+Bockstein, yet their union alone also has Bockstein zero through `p=11`. The characteristic-two
+torsion is therefore a larger signed circuit. The next localization gate enumerates all subsets
+of the six row atoms before any integral normal form is proposed.

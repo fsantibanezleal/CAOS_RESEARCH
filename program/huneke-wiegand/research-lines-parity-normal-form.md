@@ -53,6 +53,12 @@ retaining only their union tests sufficiency. The experiment can refute or sharp
 bridge, but projection is not a unimodular equivalence and therefore cannot itself prove the
 desired normal form.
 
+The result refutes the two-atom carrier while preserving a sharper clue: deleting either marked
+atom kills the Bockstein, but their union also has Bockstein zero. The active object is therefore
+a larger signed circuit. The next finite action is exhaustive rather than speculative: enumerate
+all 64 subsets of the six row atoms and extract the inclusion-minimal full-Bockstein carriers
+shared by all four parameters.
+
 ### 2. Relative squarefree-divisor homology - structural fallback
 
 Multigraded Betti numbers of numerical semigroup rings can be represented by reduced homology of

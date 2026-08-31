@@ -3967,6 +3967,31 @@
    "verdict_md": "# EXP-043 verdict\n\nStatus: **CONFIRMED** finitely for `p=8,...,11`. P1, P2, and P3 pass.\n\nDistinct verified 61-bit primes and exact Hadamard product bounds prove rational ranks\n`1002,1607,2450,3586` for the four persistent isolated matrices. An independent opposite-pivot\naudit recomputes all 291 modular ranks and every exact determinant bound.\n\nCombining these rational ranks with the EXP-042 first Bockstein proves that the complete 2-primary\ntorsion of the isolated cokernels is exactly\n\n```text\np=8:  (Z/2)^3\np=9:  (Z/2)^4\np=10: (Z/2)^5\np=11: (Z/2)^7.\n```\n\nThere are no additional nonzero Smith factors divisible by four. This is a relevant finite normal\nform result, but it does not prove a recurrence or an all-parameter lower-strand theorem. The next\nroute is a uniform signed reduction of the `D:B <-> K:C0` bridge indicated by EXP-042's\npivot-dependent representatives. No manuscript or Zenodo update is triggered by the finite result\nalone.\n"
   },
   {
+   "area": "commutative-algebra",
+   "artifacts": [
+    {
+     "bytes": 13009,
+     "name": "audit-certificate.json"
+    },
+    {
+     "bytes": 31209,
+     "name": "results.json"
+    },
+    {
+     "bytes": 8841,
+     "name": "smoke-p8.json"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-044 hypothesis - row-projection localization of the signed bridge\n\nDate: 2026-08-31. CPU only. Exact integer and finite-field arithmetic.\n\n## Question\n\nEXP-042 found that the same intrinsic Bockstein classes have `D:B` representatives under one\npivot convention and `K:C0` representatives under the opposite convention. EXP-044 tests whether\nthese two row atoms form a necessary and sufficient two-sided torsion bridge, or whether they are\nonly basis-dependent shadows of a larger signed relation.\n\nFor each frozen isolated matrix at `p=8,9,10,11`, form exact row projections that:\n\n1. delete `D:B`;\n2. delete `K:C0`;\n3. delete both atoms;\n4. retain only the union `D:B union K:C0`.\n\nZero columns remain part of each projected presentation. Every projection is evaluated by exact\n`GF(2)`, `GF(3)`, and `GF(5)` ranks and by forward and reverse first-Bockstein reductions.\n\n## Predictions\n\n### P1. Each side is necessary\n\nDeleting either `D:B` or `K:C0` eliminates the full first Bockstein at every tested parameter.\nThe predicted projected Bockstein ranks are all zero. A surviving class refutes the claim that the\ntorsion requires the proposed two-sided bridge.\n\n### P2. The union is sufficient\n\nRetaining only `D:B union K:C0` preserves the full Bockstein ranks\n\n```text\np=8,9,10,11 -> 3,4,5,7.\n```\n\nFailure means that additional row atoms participate essentially and the bridge must be enlarged\nbefore an integral normal form is attempted.\n\n### P3. Projection and field-rank agreement\n\nFor every projection, forward and reverse Bockstein ranks agree. Whenever the projected odd-field\nranks agree, their common rank minus the `GF(2)` rank equals the Bockstein rank. This is a finite\nconsistency check, not a rational-rank certificate for the projected matrices.\n\n## Audit and claim boundary\n\nThe runner must verify the exact EXP-042 script, result, and matrix hashes before computation. An\nindependent auditor must reload the frozen matrices, rebuild every projection, recompute all\nfinite-field ranks with the opposite pivot convention, and recompute the first Bockstein without\ncalling the runner's projection routine.\n\nThe `p=8` smoke is capped at 300 seconds and 8 GB. The full campaign is capped at 1,200 seconds\nand 16 GB. A resource stop is inconclusive. A pass would identify a finite bridge candidate only;\nit would not construct a unimodular matching, an OI/FI map, an all-parameter theorem, or the full\nlower strand. No manuscript or Zenodo gate opens from row projections alone.\n",
+   "id": "044",
+   "problem": "huneke-wiegand",
+   "slug": "EXP-044-row-projection-bridge",
+   "title": "row-projection localization of the signed bridge",
+   "verdict": "",
+   "verdict_md": "# EXP-044 verdict\n\nStatus: **REFUTED overall** for `p=8,...,11`. P1 and P3 pass; P2 fails.\n\nDeleting either pivot-dependent row atom `D:B` or `K:C0` eliminates every tested first\nBockstein, confirming that both are necessary interfaces. However, retaining only their union\nalso gives equal ranks over `GF(2)`, `GF(3)`, and `GF(5)` and Bockstein rank zero at every\nparameter. The proposed two-atom bridge is therefore not sufficient.\n\nThe finite torsion belongs to a larger signed circuit involving additional normalized row atoms.\nThis redirects the proof search from a guessed two-block normal form to an exhaustive six-atom\nsubset lattice, followed by integral matching only after a stable minimal carrier is identified.\nThe result is an exact localization correction, not an all-parameter theorem, and it does not\ntrigger a manuscript or Zenodo update.\n"
+  },
+  {
    "area": "computation-complexity",
    "artifacts": [
     {

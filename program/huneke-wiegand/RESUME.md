@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-31. Lifecycle: EXP-044 is DECLARED; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
+Updated: 2026-08-31. Lifecycle: EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
 with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
@@ -20,7 +20,9 @@ switch: the isolated blocks at `p=8,...,11` have one normalized twelve-atom skel
 first Bockstein: ranks are again `3,4,5,7`, proving exactly that many
 nonzero valuation-one Smith factors in the four isolated integer matrices. EXP-043 supplies exact
 rational-rank upper certificates and closes their complete 2-primary types as
-`(Z/2)^3,(Z/2)^4,(Z/2)^5,(Z/2)^7`. For every `p>=4` and
+`(Z/2)^3,(Z/2)^4,(Z/2)^5,(Z/2)^7`. EXP-044 then refutes the proposed two-atom carrier:
+`D:B` and `K:C0` are necessary row-projection interfaces, but their union has Bockstein zero. For
+every `p>=4` and
 `2<=t<=p-2`, the shifted cubic source is absent
 by the positive gap `g(p,t)>=3(p-1)^2`, so every future exact `A_p` value at these targets
 transfers to `C_p`.  This is not an infinite characteristic-dependence theorem. The 53-page
@@ -375,7 +377,7 @@ campaign is supporting evidence, not the proof.
 | EXP-041 | REFUTED; P1 PASSES | every frozen component is reproduced; the isolated `R` block keeps one normalized twelve-atom skeleton through `p=11`, refuting the switch; the distinguished row is absent from all defective cores |
 | EXP-042 | CONFIRMED FINITELY | exact first-Bockstein ranks `3,4,5,7` prove that many valuation-one Smith factors; high/low pivot atom representatives differ |
 | EXP-043 | CONFIRMED FINITELY | audited modular Hadamard certificates prove rational ranks `1002,1607,2450,3586` and complete isolated 2-primary types `(Z/2)^(3,4,5,7)` |
-| EXP-044 | DECLARED | exact row projections test whether `D:B` and `K:C0` are individually necessary and jointly sufficient for the finite Bockstein |
+| EXP-044 | REFUTED; P1/P3 PASS | deleting either marked atom kills the Bockstein, but their union also has Bockstein zero; a larger signed circuit is essential |
 
 ## 3a. Exact evidence anchors
 
@@ -474,11 +476,14 @@ campaign is supporting evidence, not the proof.
 - EXP-043 primary SHA-256:
   `612d481eff7e00f5c5128d450a5eb05f79aacccb27bcd88c106dc0d5bf7426e6`; audit certificate
   external SHA-256 `6bad2a878e72b54fd3f2db704cb90dff425aff06531cc55ccdd2fde6cff5f01e`.
+- EXP-044 primary SHA-256:
+  `6766b6ca249f1b02ba9a83a6fb8434eea4e511172c982840fc3c6db6a192e886`; audit certificate
+  external SHA-256 `324c98de4cdcf98b4fb6010343df9ceeab4c6347938c36c2614e2850cad254e1`.
 
 ## 4. In flight
 
-EXP-044 is DECLARED for HWB-071. EXP-043 is CONFIRMED finitely and closes HWB-070. EXP-042 is
-CONFIRMED finitely and advances HWB-069; HWB-071 owns the uniform signed bridge.
+EXP-044 is REFUTED overall with P1/P3 retained. EXP-043 is CONFIRMED finitely and closes HWB-070.
+EXP-042 is CONFIRMED finitely and advances HWB-069; HWB-071 owns the larger uniform signed circuit.
 EXP-041 is REFUTED overall, with its P1 finite classifier retained; HWB-068 is done. EXP-040 is
 REFUTED overall, with its P1 finite localization retained. EXP-037 exactly
 refutes the previous series at its first new value:
@@ -519,6 +524,9 @@ representatives lie in `K:C0`, so the atom localization is not canonical.
 EXP-043 uses minimal prefixes of `31,52,83,125` verified 61-bit primes and exact squared Hadamard
 bounds to prove rational ranks `1002,1607,2450,3586`. Combined with the Bockstein, the complete
 isolated 2-primary cokernels are `(Z/2)^3,(Z/2)^4,(Z/2)^5,(Z/2)^7`.
+EXP-044 proves finitely that `D:B` and `K:C0` are necessary row-projection interfaces but not a
+sufficient carrier: deleting either and retaining only their union all give Bockstein zero. The
+active object is a larger signed circuit among the six normalized row atoms.
 
 EXP-036 is CONFIRMED with its all-parameter structural-propagation prediction unresolved.  Its
 exact-sum route reproduces EXP-035 and computes the complete `p<=6` triangle plus `(7,2)`,
@@ -820,11 +828,10 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Implement and audit EXP-044. Test the full Bockstein after deleting `D:B`, deleting `K:C0`,
-   deleting both, and retaining only their union.
-2. Use the EXP-044 verdict to extract the signed `D:B <-> K:C0` bridge without treating either
-   pivot representative as canonical. Require an integral matching and explicit parameter maps
-   before claiming OI/FI stability.
+1. Declare and run a complete 64-subset lattice of the six normalized row atoms. Identify every
+   inclusion-minimal subset that preserves the full Bockstein at `p=8,...,11`.
+2. Use the stable carrier to construct an integral matching and explicit parameter maps before
+   claiming OI/FI stability. Do not treat either pivot representative as canonical.
 3. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
    a signed core; keep this separate from the connecting-only `t=2` mechanism.
 4. Open a separate manuscript only after a complete strand, an infinite connecting theorem, or a
@@ -898,9 +905,9 @@ Published baseline:
 - Rational-rank closure: EXP-043 makes all `(r+1)` minors divisible by a distinct-prime product
   larger than twice their Hadamard bound. This proves `rank_Q=r` and completes the tested isolated
   2-primary torsion without a full Smith form.
-- Signed-bridge localization: EXP-044 uses exact row projections to distinguish an intrinsic
-  bridge from the pivot-dependent representatives found by EXP-042. Integral reduction remains
-  mandatory after the diagnostic.
+- Signed-circuit localization: EXP-044 refutes the two-atom carrier. Both marked atoms are
+  necessary interfaces, but their union is insufficient. The complete six-row-atom subset lattice
+  is the next bounded gate; integral reduction remains mandatory afterward.
 
 ## 7. Gotchas
 
