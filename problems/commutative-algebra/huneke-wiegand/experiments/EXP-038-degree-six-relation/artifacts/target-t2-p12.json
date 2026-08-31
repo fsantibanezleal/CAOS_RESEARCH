@@ -1,0 +1,223 @@
+{
+  "experiment": "EXP-038",
+  "route": "degree-six-relation falsifier with frozen two-sided exact ranks",
+  "status": "PASS_FINITE_OUT_OF_SAMPLE",
+  "generated_at": "2026-08-31T02:41:49.017919+00:00",
+  "parameters": {
+    "p": 12,
+    "t": 2,
+    "fields": [
+      2,
+      3
+    ],
+    "core_order": "low-degree",
+    "budget_seconds": 7200.0,
+    "memory_gib": 40.0
+  },
+  "premise_hashes": {
+    "EXP-037 proof": "ae2c3be4ec509264717fef48dd2cd73a47fe51c46a37240372a7a117ff5cc330",
+    "EXP-037 verdict": "ccc185190e885c334bcf6f401d47c2f4b1f44d8a3931226b240b3528e07b70bb",
+    "EXP-037 run.py": "1abebc24c99398dded97aa08216211db089889e154736ed9eb5a7202de0b5df0",
+    "EXP-037 p=10 target": "ca97087466fdd705e22f69e79cdfecfc7dbce0684475b98bd99757cfed030d7b",
+    "EXP-037 audit": "03682871743842bb8a3224b70aee72436ed21056de3d83dfb178f9023c7ad088"
+  },
+  "formula_certificate": {
+    "known_checks": {
+      "4": 1,
+      "5": 4,
+      "6": 9,
+      "7": 18,
+      "8": 31,
+      "9": 49,
+      "10": 72
+    },
+    "predictions": {
+      "11": 102,
+      "12": 138
+    },
+    "coefficients_p4_p40": [
+      1,
+      4,
+      9,
+      18,
+      31,
+      49,
+      72,
+      102,
+      138,
+      182,
+      234,
+      295,
+      365,
+      446,
+      537,
+      640,
+      755,
+      883,
+      1024,
+      1180,
+      1350,
+      1536,
+      1738,
+      1957,
+      2193,
+      2448,
+      2721,
+      3014,
+      3327,
+      3661,
+      4016,
+      4394,
+      4794,
+      5218,
+      5666,
+      6139,
+      6637
+    ],
+    "shifted_denominator_corrections_p4_p40": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      4,
+      7,
+      11,
+      16,
+      23,
+      31,
+      41,
+      53,
+      67,
+      83,
+      102,
+      123,
+      147,
+      174,
+      204,
+      237,
+      274,
+      314,
+      358,
+      406,
+      458,
+      514,
+      575,
+      640,
+      710,
+      785,
+      865,
+      950,
+      1041
+    ],
+    "coefficient_hash": "d04e3306595add8848374110f57c9b42fc6e83dc8e4c0353c0ae91a190c47dde"
+  },
+  "rows": [
+    {
+      "p": 12,
+      "t": 2,
+      "target_offset": 122,
+      "homological_degree": 21,
+      "total_offset": 647,
+      "kernel_codomain_rows": 58599,
+      "kernel_domain_columns": 33068,
+      "d_source_columns": 3735675,
+      "d_codomain_rows": 20010799,
+      "kernel_codomain_hash": "e8bcbf24d330d39decf7def536255bdafaff0502b053d017d7156b084474b4a5",
+      "kernel_domain_hash": "0ec8b070428b1eee8c6f899c326dd6b0566d40fb2155e4ea2a2d701dde6240b7",
+      "d_source_hash": "304b9925aba87959d5869ab439e4858616361025b832062916692225e6ac4959",
+      "field_rows": {
+        "2": {
+          "rank_kernel_boundary": 25698,
+          "kernel_cokernel_dimension": 32901,
+          "rank_d_boundary": 3575985,
+          "rank_combined": 3617762,
+          "connecting_image_dimension_in_kernel_cokernel": 16079,
+          "surviving_a_dimension": 16822
+        },
+        "3": {
+          "rank_kernel_boundary": 25698,
+          "kernel_cokernel_dimension": 32901,
+          "rank_d_boundary": 3575985,
+          "rank_combined": 3617900,
+          "connecting_image_dimension_in_kernel_cokernel": 16217,
+          "surviving_a_dimension": 16684
+        }
+      },
+      "predicted_excess": 138,
+      "structural_profiles": {
+        "kernel": {
+          "rows": 58599,
+          "columns": 33068,
+          "initial_nonzeros": 156122,
+          "initial_leaf_rows": 9664,
+          "initial_leaf_columns_after_row_peel": 3764,
+          "row_leaf_pivots": 11973,
+          "two_sided_leaf_pivots": 5887,
+          "peeled_rank": 17860,
+          "row_only_residual_rows": 22615,
+          "row_only_residual_columns": 19887,
+          "row_only_residual_nonzeros": 76215,
+          "residual_rows": 16728,
+          "residual_columns": 9877,
+          "residual_nonzeros": 43025,
+          "core_order": "low-degree",
+          "core_ranks": {
+            "2": 7838,
+            "3": 7838
+          }
+        },
+        "d_boundary": {
+          "rows": 20010799,
+          "columns": 3735675,
+          "initial_nonzeros": 33470937,
+          "initial_leaf_rows": 13396459,
+          "initial_leaf_columns_after_row_peel": 71371,
+          "row_leaf_pivots": 2411801,
+          "two_sided_leaf_pivots": 69863,
+          "peeled_rank": 2481664,
+          "row_only_residual_rows": 3509232,
+          "row_only_residual_columns": 1316660,
+          "row_only_residual_nonzeros": 8962056,
+          "residual_rows": 3439369,
+          "residual_columns": 1237558,
+          "residual_nonzeros": 8790260,
+          "core_order": "low-degree",
+          "core_ranks": {
+            "2": 1094321,
+            "3": 1094321
+          }
+        },
+        "combined": {
+          "rows": 20069398,
+          "columns": 3768743,
+          "initial_nonzeros": 34519867,
+          "initial_leaf_rows": 13396459,
+          "initial_leaf_columns_after_row_peel": 70120,
+          "row_leaf_pivots": 2411801,
+          "two_sided_leaf_pivots": 71248,
+          "peeled_rank": 2483049,
+          "row_only_residual_rows": 3554509,
+          "row_only_residual_columns": 1348958,
+          "row_only_residual_nonzeros": 9532442,
+          "residual_rows": 3483261,
+          "residual_columns": 1264937,
+          "residual_nonzeros": 9269351,
+          "core_order": "low-degree",
+          "core_ranks": {
+            "2": 1134713,
+            "3": 1134851
+          }
+        }
+      },
+      "actual_excess": 138,
+      "candidate_matches": true,
+      "row_hash": "db511110611a632c9cd48a01b6da4831cba360beeb72c6373db4aae1dfa16dda"
+    }
+  ],
+  "elapsed_seconds": 440.771096,
+  "artifact_sha256": "13e4be8c8c45df0761f2480eb396707c992c7f56c3c950ff454cc19f8f482c9e"
+}
