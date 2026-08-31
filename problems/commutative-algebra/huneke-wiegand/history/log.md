@@ -1573,3 +1573,19 @@
 - The `p=8` smoke and `p=8,...,11` campaign have explicit time, memory, progress, checkpoint, and
   one-sidedness gates. No bridge deletion, manuscript update, or Zenodo version is authorized by a
   finite-only semantic pass.
+
+## 2026-08-31 - EXP-041 refutes the switch and isolates a persistent skeleton
+
+- Every frozen support hash and defect partition is reproduced. At `p=8`, the defect-three `R`
+  anchor is uniquely recognized without component index, size, or rank by omission of `H1/C1`;
+  P1 therefore passes finitely.
+- P2 is refuted. The isolated components at `p=8,...,11` have the same eight coefficient tags and,
+  after the declared affine normalization, exactly the same twelve semantic atoms. Their defects
+  are `3,4,5,7`, so the `p=11` jump is internal to one persistent skeleton rather than a lineage
+  switch.
+- P3 is refuted as an anchor: the selected EXP-035 row is absent from every defective profile.
+  No claim is made about the particular pivot or stage at which it leaves the residual core.
+- Forward and reversed tag construction agree exactly; the independent certificate audits every
+  interval partition, frozen component, histogram sum, atom shape, and the common skeleton hash.
+  HWB-068 is done and HWB-069 redirects to an exact signed normal form. Finite semantic evidence
+  alone does not open a manuscript or Zenodo gate.

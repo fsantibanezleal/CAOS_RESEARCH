@@ -47,6 +47,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-038 | INCONCLUSIVE; two finite passes | audited exact excesses `e_11=102` and `e_12=138`; the degree-six relation and recurrence remain unproved |
 | EXP-039 | REFUTED with redirect | bounded defect-one components fail; exact signed partitions expose four latent sectors and a support merger |
 | EXP-040 | REFUTED; P1 passes | `67+5` localizes the first correction at `p=10`; exact `95+7` refutes the declared `96+6` transport at `p=11` |
+| EXP-041 | REFUTED; P1 passes | the isolated block keeps one normalized twelve-atom semantic skeleton through `p=11`; the lineage-switch and distinguished-row predictions fail |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
@@ -677,6 +678,8 @@ binom(p-2,3), p-4, p-4, p-5.
 At `p=9`, the first three support sectors merge with defect `35+5+5=45`, while the last contributes
 four. EXP-040 localizes the first correction at `p=10`: the two defective components contribute
 `67+5`, exactly. Its conditional transport prediction fails at `p=11`, where the exact partition
-is `95+7`, not `96+6`; both odd fields agree componentwise. The next structural task is semantic
-interval-tag identification across the support merger. None of these finite component results
+is `95+7`, not `96+6`; both odd fields agree componentwise. EXP-041 then refutes the proposed
+lineage switch: the isolated components at `p=8,...,11` have one common normalized twelve-atom
+semantic skeleton, with defect sequence `3,4,5,7`. The next structural task is its signed
+chain-level normal form. None of these finite component results
 proves the degree-six relation or triggers a new manuscript/Zenodo version.

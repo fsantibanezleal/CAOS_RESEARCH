@@ -133,10 +133,11 @@
 | 2026-08-30 | inconclusive | active | EXP-039 declared for HWB-066: test whether the combined parity core splits into bounded recurring defect-one connected components before spending on another coefficient |
 | 2026-08-30 | active | refuted | EXP-039 refutes bounded defect-one components but exposes four latent sectors and a `p=9` support merger; all defective blocks are orientation-sensitive |
 | 2026-08-30 | refuted | active | EXP-040 declared for HWB-067: test merged-sector partitions `67+5` at `p=10` and conditionally `96+6` at `p=11`, then extract signed bridge relations |
-| 2026-08-30 | active | refuted | EXP-040 confirms exact `67+5` at `p=10` but refutes P2 with `95+7` at `p=11`; component identity is not a stable sector grading and P3 is not attempted |
+| 2026-08-30 | active | refuted | EXP-040 confirms exact `67+5` at `p=10` but refutes P2 with `95+7` at `p=11`; its simple partition transport fails, while semantic component identity remains unresolved and P3 is not attempted |
 | 2026-08-31 | refuted | active | EXP-041 declared for HWB-068: exact semantic interval fingerprints must decide the isolated-component lineage across `p=8,...,11` before any signed bridge deletion |
+| 2026-08-31 | active | refuted | EXP-041 passes P1 finitely but refutes P2/P3: the isolated component retains one normalized twelve-atom `R` skeleton through `p=11`, so the `5 -> 7` jump is internal; the distinguished row is absent from all defective cores |
 
-Current state: **EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
+Current state: **EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
 inconclusive with two finite passes; EXP-037 is refuted; EXP-036 remains confirmed with structural
 propagation unresolved.** The complete `(10,2)` block has surviving dimensions
 `4240` over `GF(2)` and `4168` over both `GF(3)` and `GF(5)`, so `e_10=72`; this refutes the
@@ -145,7 +146,9 @@ finite sequence is now `1,4,9,18,31,49,72,102,138`. EXP-038's separately declare
 passes at both `p=11` and `p=12`, but the recurrence and degree-six relation remain unproved.
 EXP-039 refutes bounded defect-one components but finds latent sector dimensions
 `binom(p-2,3),p-4,p-4,p-5`; EXP-040 localizes the first correction with exact `67+5` at `p=10`
-but refutes its simple transport with `95+7` at `p=11`. HWB-068 now owns semantic sector tagging.
+but refutes its simple transport with `95+7` at `p=11`. EXP-041 proves finitely that the isolated
+block does not switch semantic lineage: its normalized twelve-atom skeleton persists through
+`p=11`, with defect sequence `3,4,5,7`. HWB-069 now owns its signed normal form.
 The cubic-source gap is at least `3(p-1)^2` for all `p>=4`, `2<=t<=p-2`, so the exact
 `A_p` and `C_p` values agree throughout this family.  HWB-061 remains active for an infinite
 connecting-parity theorem. HWB-062 is done: the 53-page v0.23 is public and fresh-download

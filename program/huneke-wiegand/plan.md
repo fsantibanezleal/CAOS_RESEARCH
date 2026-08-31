@@ -1216,9 +1216,9 @@ their ranks are `218451/218518/218518` and `2445/2450/2450` over `GF(2)/GF(3)/GF
 first correction from free total 73 to exact 72 is localized inside the large merged component.
 
 The conditional second partition is refuted. At `p=11`, the exact split is `95+7`, not `96+6`,
-while the aggregate remains 102 and both odd fields agree componentwise. The failure shows that
-connected-component identity is not a stable sector grading: the isolated component may switch
-from the latent `p-5` sector to one of the `p-4` sectors. P3 bridge deletion is not attempted
+while the aggregate remains 102 and both odd fields agree componentwise. This leaves
+connected-component identity unresolved: the isolated component might switch from the latent
+`p-5` sector to one of the `p-4` sectors, or might change rank internally. P3 bridge deletion is not attempted
 because its P2 transport premise failed. HWB-067 is done; HWB-068 records semantic interval-tag
 profiling as the next route. No manuscript or Zenodo gate opens.
 
@@ -1236,3 +1236,18 @@ profiles count as evidence. It then stores exact defective-component histograms 
 sum/reversed-tag audit. A failure refutes component-level interval grading and redirects to chain
 generators inside the merged support. The campaign is capped at 2,400 seconds and 36 GB with
 atomic parameter checkpoints. No manuscript or Zenodo gate is open at declaration.
+
+The completed profiles reproduce all frozen support hashes and partitions. P1 passes finitely:
+at `p=8`, the defect-three anchor is the unique defective component omitting `H1/C1`. P2 is
+refuted more strongly than a support-only failure. The isolated component keeps the same eight
+coefficient tags and, after subtracting `p` from its `L0/L1` exterior counts, exactly the same
+twelve semantic atoms for `p=8,...,11`. Its defect sequence is `3,4,5,7`; the last jump is an
+internal signed-rank event, not an `R -> L` identity switch. P3 is refuted because the selected
+EXP-035 row is absent from every defective profile; no particular peeling history is inferred.
+
+HWB-068 is done and HWB-069 is active. The next gate is not another coefficient. It is an exact
+signed normal form for the persistent twelve-atom family: extract the incidence blocks, cancel
+unit/matched pairs integrally, and audit the residual over `GF(2)`, two odd primes, and, if small
+enough, Smith normal form. A chain-level relative-homology or OI-module description is the proof
+route only after explicit parameter maps are constructed. Toric gluing remains downstream until
+an actual ideal or chain splitting exists. No manuscript or Zenodo gate opens from EXP-041.

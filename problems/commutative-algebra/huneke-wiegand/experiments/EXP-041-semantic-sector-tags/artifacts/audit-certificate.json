@@ -1,7 +1,7 @@
 {
   "experiment": "EXP-041",
   "status": "PASS",
-  "generated_at": "2026-08-31T14:30:16.336268+00:00",
+  "generated_at": "2026-08-31T15:16:34.964690+00:00",
   "artifact_hashes": {
     "primary": "069e587b779bd1571d72e1a47bf74f4d1640dae5fbbf09907d2bf798c4941534",
     "reverse": "eafad05553cb7401c27ebeafcf686da6b436a25031dbc0f89e638096a6e02a1b"
@@ -95,5 +95,5 @@
     "isolated_normalized_atom_skeleton_hash": "d0c296e39c7c4f10ffd886b23b3b3d4d9cea0a291dd1aed6fcc079998c57676d"
   },
   "scope": "exact finite semantic support through p=11; no chain-level sector, recurrence, or all-parameter theorem is claimed",
-  "certificate_hash": "9dbf4b9124b5c64bb2f450d651362e6f4666c1aba0891f4dbcf558f7f02dbb22"
+  "certificate_hash": "6f1f66bc469715f9c90f2fd2f8e6f637d422742cc7af2fed8b533cc6f4994530"
 }
