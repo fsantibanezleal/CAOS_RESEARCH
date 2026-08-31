@@ -1,24 +1,27 @@
 """EXP-037 exact connecting-parity falsifier and quasipolynomial certificate.
 
 CPU only. Canonical bases use the frozen EXP-036 exact-sum constructor. Rank
-arithmetic is independently encoded here: bitset elimination over GF(2) and
-reverse sparse elimination over odd prime fields. Columns are generated on
-demand so the complete block presentation does not need to be materialized.
+arithmetic is independently encoded here. The default engine first performs
+exact degree-one row cancellation and sends only the residual 2-core to bitset
+elimination over GF(2) or reverse sparse elimination over odd prime fields.
+Columns are generated on demand; the complete block is never materialized.
 """
 
 from __future__ import annotations
 
 import argparse
 import ctypes
+import gc
 import hashlib
 import importlib.util
 import json
 import os
 import time
+from array import array
 from datetime import datetime, timezone
 from pathlib import Path
 from types import ModuleType
-from typing import Iterable
+from typing import Callable, Iterable
 
 
 HERE = Path(__file__).resolve().parent
@@ -212,10 +215,19 @@ def private_bytes() -> int | None:
 
     counters = ProcessMemoryCountersEx()
     counters.cb = ctypes.sizeof(counters)
-    process = ctypes.windll.kernel32.GetCurrentProcess()
-    success = ctypes.windll.psapi.GetProcessMemoryInfo(
-        process, ctypes.byref(counters), counters.cb
-    )
+    kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+    get_current_process = kernel32.GetCurrentProcess
+    get_current_process.argtypes = []
+    get_current_process.restype = ctypes.c_void_p
+    get_process_memory_info = kernel32.K32GetProcessMemoryInfo
+    get_process_memory_info.argtypes = [
+        ctypes.c_void_p,
+        ctypes.POINTER(ProcessMemoryCountersEx),
+        ctypes.c_ulong,
+    ]
+    get_process_memory_info.restype = ctypes.c_int
+    process = get_current_process()
+    success = get_process_memory_info(process, ctypes.byref(counters), counters.cb)
     return int(counters.PrivateUsage) if success else None
 
 
@@ -407,6 +419,240 @@ def field_rank(
     }
 
 
+EntryFunction = Callable[[int], list[tuple[int, int]]]
+
+
+def rank_matrix_after_leaf_peeling(
+    *,
+    label: str,
+    row_count: int,
+    column_count: int,
+    entries_for_column: EntryFunction,
+    primes: tuple[int, ...],
+    budget: Budget,
+) -> tuple[dict[int, int], dict[str, int]]:
+    """Rank a sparse matrix after exact degree-one row cancellation.
+
+    If a row occurs in exactly one active column, that column is independent
+    over every field because all entries are signs.  Pivoting there introduces
+    no fill: delete the row and column and update the remaining row degrees.
+    Count/XOR sketches recover the unique incident column without storing the
+    enormous row-to-column adjacency.  Only the residual 2-core is sent to
+    field-specific elimination.
+    """
+
+    counts = array("I", [0]) * row_count
+    incident_xor = array("I", [0]) * row_count
+    initial_nonzeros = 0
+    for column in range(column_count):
+        entries = entries_for_column(column)
+        initial_nonzeros += len(entries)
+        for row, value in entries:
+            if not value:
+                continue
+            counts[row] += 1
+            incident_xor[row] ^= column
+        if column and column % 50_000 == 0:
+            budget.check(f"{label} incidence scan")
+            print(
+                f"{label} incidence {column}/{column_count}: "
+                f"nonzeros={initial_nonzeros}",
+                flush=True,
+            )
+
+    active = bytearray([1]) * column_count
+    leaf_rows = array("I", (row for row, count in enumerate(counts) if count == 1))
+    initial_leaf_rows = len(leaf_rows)
+    peeled_rank = 0
+    while leaf_rows:
+        row = leaf_rows.pop()
+        if counts[row] != 1:
+            continue
+        column = incident_xor[row]
+        if not active[column]:
+            raise AssertionError(f"{label}: stale unique-column sketch")
+        active[column] = 0
+        peeled_rank += 1
+        for adjacent_row, value in entries_for_column(column):
+            if not value:
+                continue
+            if counts[adjacent_row] == 0:
+                raise AssertionError(f"{label}: incidence underflow")
+            counts[adjacent_row] -= 1
+            incident_xor[adjacent_row] ^= column
+            if counts[adjacent_row] == 1:
+                leaf_rows.append(adjacent_row)
+        if peeled_rank % 50_000 == 0:
+            budget.check(f"{label} leaf peeling")
+            print(
+                f"{label} peeled {peeled_rank}/{column_count} columns",
+                flush=True,
+            )
+
+    del incident_xor, leaf_rows
+    gc.collect()
+    residual_columns = sum(active)
+    residual_rows = sum(count > 0 for count in counts)
+    residual_nonzeros = sum(counts)
+    row_map = array("i", [-1]) * row_count
+    local_row = 0
+    for row, count in enumerate(counts):
+        if count:
+            row_map[row] = local_row
+            local_row += 1
+    if local_row != residual_rows:
+        raise AssertionError(f"{label}: residual row-map mismatch")
+    del counts
+    gc.collect()
+    budget.check(f"{label} residual start")
+    print(
+        f"{label} peel complete: rank={peeled_rank}, "
+        f"core={residual_rows}x{residual_columns}, nnz={residual_nonzeros}",
+        flush=True,
+    )
+
+    ranks: dict[int, int] = {}
+    core_ranks: dict[str, int] = {}
+    for prime in primes:
+        accumulator = rank_accumulator(prime)
+        processed = 0
+        for column, is_active in enumerate(active):
+            if not is_active:
+                continue
+            entries = [
+                (row_map[row], value)
+                for row, value in entries_for_column(column)
+                if row_map[row] >= 0 and value
+            ]
+            accumulator.add(entries)
+            processed += 1
+            if processed % 25_000 == 0:
+                budget.check(f"{label} GF({prime}) residual rank")
+                print(
+                    f"{label} GF({prime}) core {processed}/{residual_columns}: "
+                    f"rank={accumulator.rank}",
+                    flush=True,
+                )
+        core_rank = accumulator.rank
+        ranks[prime] = peeled_rank + core_rank
+        core_ranks[str(prime)] = core_rank
+        del accumulator
+        gc.collect()
+        budget.check(f"{label} GF({prime}) residual complete")
+
+    profile = {
+        "rows": row_count,
+        "columns": column_count,
+        "initial_nonzeros": initial_nonzeros,
+        "initial_leaf_rows": initial_leaf_rows,
+        "peeled_rank": peeled_rank,
+        "residual_rows": residual_rows,
+        "residual_columns": residual_columns,
+        "residual_nonzeros": residual_nonzeros,
+        "core_ranks": core_ranks,
+    }
+    return ranks, profile
+
+
+def peeling_field_ranks(
+    exp036: ModuleType,
+    basis: dict[str, object],
+    d_rows: list[object],
+    primes: tuple[int, ...],
+    budget: Budget,
+) -> tuple[dict[int, dict[str, int]], dict[str, dict[str, int]]]:
+    """Compute K, D, and combined ranks with a shared structural strategy."""
+
+    p = int(basis["p"])
+    low = basis["low"]
+    degree_two = basis["degree_two"]
+    codomain = basis["codomain"]
+    kernel_domain = basis["kernel_domain"]
+    source = basis["source"]
+    k_index = {row: index for index, row in enumerate(codomain)}
+    d_index = {row: index for index, row in enumerate(d_rows)}
+    k_base = len(d_rows)
+
+    def kernel_entries(column: int) -> list[tuple[int, int]]:
+        exterior, coefficient = kernel_domain[column]
+        entries: list[tuple[int, int]] = []
+        for variable, sign, face in signed_faces(exterior):
+            product_offset = coefficient + variable
+            if product_offset in degree_two:
+                entries.append((k_index[(face, product_offset)], sign))
+        return entries
+
+    def source_entries(column: int, include_connecting: bool) -> list[tuple[int, int]]:
+        exterior, coefficient = source[column]
+        entries: list[tuple[int, int]] = []
+        for variable, sign, face in signed_faces(exterior):
+            if variable in low:
+                product = exp036.low_product(p, variable, coefficient)
+                if product is not None:
+                    entries.append((d_index[(face, product[0], product[1])], sign))
+            elif include_connecting:
+                product_offset = variable + coefficient
+                if product_offset in degree_two:
+                    entries.append((k_base + k_index[(face, product_offset)], sign))
+        return entries
+
+    def d_entries(column: int) -> list[tuple[int, int]]:
+        return source_entries(column, False)
+
+    def combined_entries(column: int) -> list[tuple[int, int]]:
+        if column < len(source):
+            return source_entries(column, True)
+        return [
+            (k_base + row, value)
+            for row, value in kernel_entries(column - len(source))
+        ]
+
+    kernel_ranks, kernel_profile = rank_matrix_after_leaf_peeling(
+        label="K",
+        row_count=len(codomain),
+        column_count=len(kernel_domain),
+        entries_for_column=kernel_entries,
+        primes=primes,
+        budget=budget,
+    )
+    d_ranks, d_profile = rank_matrix_after_leaf_peeling(
+        label="D",
+        row_count=len(d_rows),
+        column_count=len(source),
+        entries_for_column=d_entries,
+        primes=primes,
+        budget=budget,
+    )
+    combined_ranks, combined_profile = rank_matrix_after_leaf_peeling(
+        label="M",
+        row_count=len(d_rows) + len(codomain),
+        column_count=len(source) + len(kernel_domain),
+        entries_for_column=combined_entries,
+        primes=primes,
+        budget=budget,
+    )
+    field_rows: dict[int, dict[str, int]] = {}
+    for prime in primes:
+        rank_kernel = kernel_ranks[prime]
+        rank_d = d_ranks[prime]
+        rank_combined = combined_ranks[prime]
+        field_rows[prime] = {
+            "rank_kernel_boundary": rank_kernel,
+            "kernel_cokernel_dimension": len(codomain) - rank_kernel,
+            "rank_d_boundary": rank_d,
+            "rank_combined": rank_combined,
+            "connecting_image_dimension_in_kernel_cokernel": (
+                rank_combined - rank_d - rank_kernel
+            ),
+            "surviving_a_dimension": len(codomain) + rank_d - rank_combined,
+        }
+    return field_rows, {
+        "kernel": kernel_profile,
+        "d_boundary": d_profile,
+        "combined": combined_profile,
+    }
+
+
 def assert_regression(p: int, t: int, prime: int, row: dict[str, int]) -> None:
     expected = REGRESSION_FIELDS.get((p, t), {}).get(prime)
     if expected is None:
@@ -445,6 +691,12 @@ def main() -> int:
     parser.add_argument("--cell", action="append", default=[], help="complete target p:t")
     parser.add_argument("--fields", default="2,3")
     parser.add_argument("--formula-only", action="store_true")
+    parser.add_argument(
+        "--engine",
+        choices=("peel", "streaming"),
+        default="peel",
+        help="exact rank engine; streaming is retained as a small-cell audit",
+    )
     parser.add_argument("--budget-seconds", type=float, default=1800.0)
     parser.add_argument("--memory-gib", type=float, default=24.0)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
@@ -464,7 +716,7 @@ def main() -> int:
     budget = Budget(args.budget_seconds, args.memory_gib)
     result: dict[str, object] = {
         "experiment": "EXP-037",
-        "route": "quasipolynomial falsifier with independent streaming field ranks",
+        "route": "quasipolynomial falsifier with exact leaf-peeling field ranks",
         "status": "RUNNING",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "parameters": {
@@ -472,6 +724,7 @@ def main() -> int:
             "fields": list(fields),
             "budget_seconds": args.budget_seconds,
             "memory_gib": args.memory_gib,
+            "engine": args.engine,
         },
         "premise_hashes": verify_premises(),
         "formula_certificate": stored_formula_certificate(),
@@ -507,20 +760,40 @@ def main() -> int:
             write_json_atomic(args.output, result)
             print(f"basis checkpoint: D rows={len(d_rows)}", flush=True)
 
-            for prime in fields:
-                budget.check(f"GF({prime}) start")
-                print(f"starting GF({prime}) reverse streaming ranks", flush=True)
-                field_row = field_rank(exp036, basis, d_rows, prime, budget)
-                assert_regression(p, t, prime, field_row)
-                row["field_rows"][str(prime)] = field_row
+            if args.engine == "peel":
+                print("starting exact leaf-peeling ranks", flush=True)
+                all_field_rows, profiles = peeling_field_ranks(
+                    exp036, basis, d_rows, fields, budget
+                )
+                row["structural_profiles"] = profiles
+                for prime, field_row in all_field_rows.items():
+                    assert_regression(p, t, prime, field_row)
+                    row["field_rows"][str(prime)] = field_row
+                    print(
+                        f"GF({prime}) complete: "
+                        f"K={field_row['kernel_cokernel_dimension']}, "
+                        f"image={field_row['connecting_image_dimension_in_kernel_cokernel']}, "
+                        f"A={field_row['surviving_a_dimension']}",
+                        flush=True,
+                    )
                 result["elapsed_seconds"] = round(budget.elapsed, 6)
                 write_json_atomic(args.output, result)
-                print(
-                    f"GF({prime}) complete: K={field_row['kernel_cokernel_dimension']}, "
-                    f"image={field_row['connecting_image_dimension_in_kernel_cokernel']}, "
-                    f"A={field_row['surviving_a_dimension']}",
-                    flush=True,
-                )
+            else:
+                for prime in fields:
+                    budget.check(f"GF({prime}) start")
+                    print(f"starting GF({prime}) reverse streaming ranks", flush=True)
+                    field_row = field_rank(exp036, basis, d_rows, prime, budget)
+                    assert_regression(p, t, prime, field_row)
+                    row["field_rows"][str(prime)] = field_row
+                    result["elapsed_seconds"] = round(budget.elapsed, 6)
+                    write_json_atomic(args.output, result)
+                    print(
+                        f"GF({prime}) complete: "
+                        f"K={field_row['kernel_cokernel_dimension']}, "
+                        f"image={field_row['connecting_image_dimension_in_kernel_cokernel']}, "
+                        f"A={field_row['surviving_a_dimension']}",
+                        flush=True,
+                    )
 
             if 2 in fields and 3 in fields:
                 actual = (
