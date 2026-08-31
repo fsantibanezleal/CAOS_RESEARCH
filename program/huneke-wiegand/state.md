@@ -137,8 +137,9 @@
 | 2026-08-31 | refuted | active | EXP-041 declared for HWB-068: exact semantic interval fingerprints must decide the isolated-component lineage across `p=8,...,11` before any signed bridge deletion |
 | 2026-08-31 | active | refuted | EXP-041 passes P1 finitely but refutes P2/P3: the isolated component retains one normalized twelve-atom `R` skeleton through `p=11`, so the `5 -> 7` jump is internal; the distinguished row is absent from all defective cores |
 | 2026-08-31 | refuted | active | EXP-042 declared for HWB-069: independently extract the persistent signed component and test first-Bockstein ranks `3,4,5,7` before any further coefficient sweep |
+| 2026-08-31 | active | confirmed | EXP-042 passes P1/P2/P3: independently audited first-Bockstein ranks are `3,4,5,7`, proving exactly that many valuation-one Smith factors; representative atom localization is pivot dependent |
 
-Current state: **EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
+Current state: **EXP-042 is confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
 inconclusive with two finite passes; EXP-037 is refuted; EXP-036 remains confirmed with structural
 propagation unresolved.** The complete `(10,2)` block has surviving dimensions
 `4240` over `GF(2)` and `4168` over both `GF(3)` and `GF(5)`, so `e_10=72`; this refutes the
@@ -150,6 +151,9 @@ EXP-039 refutes bounded defect-one components but finds latent sector dimensions
 but refutes its simple transport with `95+7` at `p=11`. EXP-041 proves finitely that the isolated
 block does not switch semantic lineage: its normalized twelve-atom skeleton persists through
 `p=11`, with defect sequence `3,4,5,7`. HWB-069 now owns its signed normal form.
+EXP-042 proves that the first Bockstein has those same ranks, so each isolated integer matrix has
+exactly that many nonzero Smith factors of 2-adic valuation one. A rational-rank upper certificate
+is still required to rule out further 4-divisible factors; HWB-070 owns that finite closure.
 The cubic-source gap is at least `3(p-1)^2` for all `p>=4`, `2<=t<=p-2`, so the exact
 `A_p` and `C_p` values agree throughout this family.  HWB-061 remains active for an infinite
 connecting-parity theorem. HWB-062 is done: the 53-page v0.23 is public and fresh-download

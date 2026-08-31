@@ -1266,3 +1266,16 @@ without a rational-rank upper bound it is not a complete Smith form. Forward/rev
 frozen multi-prime ranks, and an independent witness audit are mandatory. OI/FI stability,
 relative homology, and toric gluing remain downstream until explicit chain maps or splittings are
 constructed. No publication gate is open.
+
+The full campaign passes all three predictions. Exact first-Bockstein ranks are `3,4,5,7`, equal
+to the isolated odd-minus-two rank gaps. Independent high- and low-pivot implementations agree on
+rank. They disagree on representative atom: high pivots place images in `D:B`, while low pivots
+place them in `K:C0`. The rank therefore proves finite valuation-one Smith factors; neither atom
+is a canonical torsion carrier.
+
+HWB-070 is the next finite closure gate. Use a product of distinct primes whose logarithm exceeds
+the Hadamard bound for every `(r+1)` minor. If every modular rank stays at `r=rank_GF(3)`, all such
+minors vanish over the integers and `rank_Q=r`. Combined with EXP-042, this would prove that the
+complete 2-primary torsion of each tested isolated cokernel is elementary. A uniform
+matched-block/chain-map theorem remains necessary for an all-parameter result. No manuscript or
+Zenodo gate opens from the finite Bockstein result.

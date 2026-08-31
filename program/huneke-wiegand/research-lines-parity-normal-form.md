@@ -36,6 +36,13 @@ Immediate actions:
 This route is strongest because it acts directly on the observed characteristic gap and may turn
 the finite defects `3,4,5,7` into explicit torsion witnesses.
 
+EXP-042 completes the first finite gate: independently audited Bockstein ranks are exactly
+`3,4,5,7`, proving that many valuation-one Smith factors. The next action is a Hadamard modular
+rank certificate. If it proves that the odd-field rank is the rational rank, the tested isolated
+2-primary cokernels are completely elementary. The atom chosen to represent a Bockstein image is
+pivot dependent (`D:B` for high pivots and `K:C0` for low pivots), so a canonical one-atom
+localization is refuted.
+
 ### 2. Relative squarefree-divisor homology - structural fallback
 
 Multigraded Betti numbers of numerical semigroup rings can be represented by reduced homology of

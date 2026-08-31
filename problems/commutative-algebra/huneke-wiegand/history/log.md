@@ -1600,3 +1600,16 @@
   reproduce every frozen signed hash and multi-prime rank before lifting mod-two kernel vectors.
 - Forward/reverse order and an independent witness audit are mandatory. A finite pass supplies
   exact factor-two directions but neither an all-parameter recurrence nor a publication trigger.
+
+## 2026-08-31 - EXP-042 confirms the finite first Bockstein
+
+- Every isolated matrix reproduces its frozen support hash, signed hash, size, nonzero count, and
+  available ranks. New `GF(5)` ranks at `p=8,9` equal the frozen `GF(3)` ranks.
+- The first-Bockstein ranks at `p=8,9,10,11` are exactly `3,4,5,7`. Hence the matrices have exactly
+  that many nonzero Smith factors with 2-adic valuation one.
+- Forward/reverse order and independent high/low pivot implementations agree on rank. The audit
+  refutes canonical atom localization: high-pivot representatives lie in `D:B`, while low-pivot
+  representatives lie in `K:C0`.
+- HWB-070 opens the exact rational-rank upper gate. A distinct-prime product exceeding the
+  Hadamard minor bound can close the finite 2-primary Smith statement without a full Smith form.
+  No recurrence, all-parameter theorem, manuscript, or Zenodo update follows yet.

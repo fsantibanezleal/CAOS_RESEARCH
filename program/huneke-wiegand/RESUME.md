@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-31. Lifecycle: EXP-042 is DECLARED; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
+Updated: 2026-08-31. Lifecycle: EXP-042 is CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
 with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
@@ -16,7 +16,10 @@ relation remain unproved. EXP-039 refutes bounded defect-one components but expo
 `p=10`, localizing the first correction inside the large component, but refutes its simple
 transport with exact `95+7` at `p=11` instead of `96+6`. EXP-041 refutes the proposed semantic
 switch: the isolated blocks at `p=8,...,11` have one normalized twelve-atom skeleton, with defects
-`3,4,5,7`. The jump is internal to a persistent finite semantic type. For every `p>=4` and
+`3,4,5,7`. The jump is internal to a persistent finite semantic type. EXP-042 computes its exact
+first Bockstein: ranks are again `3,4,5,7`, proving exactly that many
+nonzero valuation-one Smith factors in the four isolated integer matrices. A rational-rank upper
+certificate is still needed to exclude additional 4-divisible factors. For every `p>=4` and
 `2<=t<=p-2`, the shifted cubic source is absent
 by the positive gap `g(p,t)>=3(p-1)^2`, so every future exact `A_p` value at these targets
 transfers to `C_p`.  This is not an infinite characteristic-dependence theorem. The 53-page
@@ -369,7 +372,7 @@ campaign is supporting evidence, not the proof.
 | EXP-039 | REFUTED WITH REDIRECT | bounded defect-one components fail; exact partitions expose four latent orientation-sensitive sectors and a `p=9` support merger |
 | EXP-040 | REFUTED; P1 PASSES | exact `67+5` localizes the first correction at `p=10`; `95+7` refutes the declared `96+6` transport at `p=11`; P3 not attempted |
 | EXP-041 | REFUTED; P1 PASSES | every frozen component is reproduced; the isolated `R` block keeps one normalized twelve-atom skeleton through `p=11`, refuting the switch; the distinguished row is absent from all defective cores |
-| EXP-042 | DECLARED | extract the persistent signed block and test whether first-Bockstein ranks are exactly `3,4,5,7` at `p=8,...,11` |
+| EXP-042 | CONFIRMED FINITELY | exact first-Bockstein ranks `3,4,5,7` prove that many valuation-one Smith factors; high/low pivot atom representatives differ |
 
 ## 3a. Exact evidence anchors
 
@@ -458,11 +461,19 @@ campaign is supporting evidence, not the proof.
   external SHA-256 `41b7ce59e354d841d82fe97ec3f74b0c5cc06836e85f332dc0318622b1a41cd2`.
   Its audited normalized isolated-skeleton hash is
   `d0c296e39c7c4f10ffd886b23b3b3d4d9cea0a291dd1aed6fcc079998c57676d`.
+- EXP-042 primary SHA-256:
+  `3c4ae292fb17a5daf473aee0ed37e473000de686607b5da0a0f4c357a8216ee2`; matrix SHA-256 values
+  for `p=8,9,10,11` are `7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff`,
+  `00c20e30d81861a599448535c2ecc7625b56b1951fe863e64d40ce6f56ff218c`,
+  `c7d6bbf0ec655296a0dafe81ab41ce70300c0fa4a837e5c141f55811e29f6f4d`, and
+  `69e8519a3b239ec90c3b5af526f806a9a0aabf003517ea28233167d7e2b68dd9`. Audit certificate
+  external SHA-256 `e35f38a86c4d6ab807d32cb3e8cd99b348e310df1d1a6840818a9ab84157cb8a`.
 
 ## 4. In flight
 
-EXP-042 is DECLARED and owns HWB-069. EXP-041 is REFUTED overall, with its P1 finite classifier
-retained; HWB-068 is done. EXP-040 is REFUTED overall, with its P1 finite localization retained. EXP-037 exactly
+EXP-042 is CONFIRMED finitely and advances HWB-069; HWB-070 owns the rational-rank upper gate.
+EXP-041 is REFUTED overall, with its P1 finite classifier retained; HWB-068 is done. EXP-040 is
+REFUTED overall, with its P1 finite localization retained. EXP-037 exactly
 refutes the previous series at its first new value:
 
 ```text
@@ -494,6 +505,10 @@ atoms across `p=8,...,11`. Its switch prediction is refuted: all four isolated c
 the same eight coefficient tags and the same normalized twelve-atom skeleton. The defects
 `3,4,5,7` must therefore be explained by the signed differential inside that skeleton. The
 distinguished EXP-035 row is absent from every defective profile and cannot anchor the reduction.
+EXP-042 lifts the mod-two kernel through the exact signed integer matrices. Its independently
+audited Bockstein ranks are `3,4,5,7`, so the isolated blocks have exactly that many nonzero Smith
+factors of 2-adic valuation one. High-pivot image representatives lie in `D:B`; low-pivot
+representatives lie in `K:C0`, so the atom localization is not canonical.
 
 EXP-036 is CONFIRMED with its all-parameter structural-propagation prediction unresolved.  Its
 exact-sum route reproduces EXP-035 and computes the complete `p<=6` triangle plus `(7,2)`,
@@ -795,11 +810,11 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Implement and smoke-test EXP-042 at `p=8`. Extract the isolated twelve-atom component with
-   exact signed entries and reproduce its frozen ranks and hashes before evaluating predictions.
-2. Apply deterministic matched-block cancellation inside that component. Audit the reduced core
-   over `GF(2)`, `GF(3)`, and `GF(5)`; attempt Smith normal form only if the certified residual is
-   small enough. Require explicit parameter maps before claiming OI/FI stability.
+1. Declare the HWB-070 rational-rank experiment before computation. Use distinct-prime modular
+   ranks and a Hadamard bound to certify `rank_Q=rank_GF(3)` for the four isolated matrices.
+2. If the rank certificate passes, combine it with EXP-042 to close the complete finite 2-primary
+   Smith statement. Then extract the signed `D:B <-> K:C0` bridge without treating either pivot
+   representative as canonical. Require explicit parameter maps before claiming OI/FI stability.
 3. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
    a signed core; keep this separate from the connecting-only `t=2` mechanism.
 4. Open a separate manuscript only after a complete strand, an infinite connecting theorem, or a
@@ -867,9 +882,12 @@ Published baseline:
   component. Relative squarefree-divisor homology and OI/FI finite generation are proof frameworks
   only after explicit chain maps are constructed; toric gluing remains downstream because no
   toric-ideal or chain splitting is yet proved.
-- Bockstein gate: EXP-042 lifts a canonical mod-two kernel basis through the signed integer matrix
-  and reduces the divided even boundary in the mod-two cokernel. It predicts ranks `3,4,5,7` and
-  requires forward/reverse and independent witness audits before any torsion interpretation.
+- Bockstein gate: EXP-042 proves finite first-Bockstein ranks `3,4,5,7` under independent
+  reductions. This counts valuation-one Smith factors exactly. Its row-atom representative is
+  pivot dependent, preventing a false canonical localization claim.
+- Rational-rank closure: HWB-070 will make all `(r+1)` minors divisible by a distinct-prime product
+  larger than twice their Hadamard bound. A pass proves `rank_Q=r` and completes the tested
+  isolated 2-primary torsion without a full Smith form.
 
 ## 7. Gotchas
 

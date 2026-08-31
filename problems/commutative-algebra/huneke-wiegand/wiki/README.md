@@ -48,6 +48,7 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-039 | REFUTED with redirect | bounded defect-one components fail; exact signed partitions expose four latent sectors and a support merger |
 | EXP-040 | REFUTED; P1 passes | `67+5` localizes the first correction at `p=10`; exact `95+7` refutes the declared `96+6` transport at `p=11` |
 | EXP-041 | REFUTED; P1 passes | the isolated block keeps one normalized twelve-atom semantic skeleton through `p=11`; the lineage-switch and distinguished-row predictions fail |
+| EXP-042 | CONFIRMED finitely | exact first-Bockstein ranks `3,4,5,7` prove that many valuation-one Smith factors in the persistent isolated block; atom representatives are pivot dependent |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
@@ -683,3 +684,8 @@ lineage switch: the isolated components at `p=8,...,11` have one common normaliz
 semantic skeleton, with defect sequence `3,4,5,7`. The next structural task is its signed
 chain-level normal form. None of these finite component results
 proves the degree-six relation or triggers a new manuscript/Zenodo version.
+
+EXP-042 acts on the signed integer matrices themselves. At `p=8,9,10,11`, their first-Bockstein
+ranks are exactly `3,4,5,7`, under independent reduction conventions. Thus every observed isolated
+rank gap has an explicit factor-two source. This is not yet the complete 2-primary Smith form:
+exact rational-rank upper bounds are needed to exclude additional factors divisible by four.

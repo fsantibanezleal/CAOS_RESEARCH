@@ -3901,6 +3901,47 @@
    "verdict_md": "# EXP-041 verdict\n\nStatus: **REFUTED** overall. P1 passes finitely; P2 and P3 are refuted.\n\nThe exact semantic profiles reproduce every frozen component and partition through `p=11`. At\n`p=8`, the defect-three `R` anchor is uniquely recognized by omission of the `H1/C1` coefficient\ntags, so P1 supplies a rank-free finite classifier.\n\nP2's predicted switch is false. The isolated components at `p=8,9,10,11` have exactly the same\neight coefficient tags and, after the declared affine normalization, the same twelve semantic\natoms. Their defects are `3,4,5,7`. Thus the `p=11` change is internal to a persistent semantic\nskeleton, not a transport between differently labelled components.\n\nP3 also fails: the distinguished EXP-035 row occurs in none of the defective profiles. This only\nproves absence from the defective cores; it does not identify a particular peeling pivot.\n\nThe strongest next route is a signed normal form for the twelve-atom isolated family, using exact\nmatched-block cancellation and an integral or multi-prime audit. More coefficient fitting and\ntoric gluing are lower priority until a chain-level map or actual splitting is proved. No\nrecurrence, all-parameter parity theorem, manuscript revision, or Zenodo update follows from\nEXP-041 alone.\n"
   },
   {
+   "area": "commutative-algebra",
+   "artifacts": [
+    {
+     "bytes": 5447,
+     "name": "audit-certificate.json"
+    },
+    {
+     "bytes": 928447,
+     "name": "matrix-p10.json"
+    },
+    {
+     "bytes": 1467704,
+     "name": "matrix-p11.json"
+    },
+    {
+     "bytes": 323772,
+     "name": "matrix-p8.json"
+    },
+    {
+     "bytes": 563610,
+     "name": "matrix-p9.json"
+    },
+    {
+     "bytes": 37702,
+     "name": "results.json"
+    },
+    {
+     "bytes": 7566,
+     "name": "smoke-p8.json"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-042 hypothesis - Bockstein normal form of the persistent isolated sector\n\nDate: 2026-08-31. CPU only. Exact signed integer extraction plus bit-packed mod-two reduction.\n\n## Question and predictions\n\nLet `M_p` be the exact signed matrix of the isolated normalized twelve-atom component identified\nby EXP-041 for `p=8,...,11`.\n\n### P1. Frozen extraction\n\nAn independent extractor must reproduce the frozen component support hash, signed hash, row and\ncolumn counts, nonzero count, and available ranks over `GF(2)` and `GF(3)` at every parameter. It\nmust also reproduce the frozen `GF(5)` ranks at `p=10,11` and predict/verify `GF(5)=GF(3)` at\n`p=8,9`. Failure is an implementation failure and no Bockstein output is evidence.\n\n### P2. The observed rank gap is visible in the first Bockstein\n\nFor a canonical basis of `ker(M_p mod 2)`, form\n\n```text\nbeta_p(z) = (M_p z)/2 mod (2, im(M_p mod 2)).\n```\n\nThe predicted Bockstein ranks are exactly the frozen odd-minus-two defects:\n\n```text\np=8,9,10,11 -> rank(beta_p)=3,4,5,7.\n```\n\nA pass produces that many independent order-exactly-two elementary-divisor directions in each\nfinite isolated component. It does not prove that these are all integral torsion factors unless a\nseparate rational-rank upper bound is supplied.\n\n### P3. Order and basis independence\n\nForward and reversed column orders must produce the same kernel dimension, matrix rank, and\nBockstein rank. A separately implemented auditor must verify every stored kernel equation over\n`GF(2)`, every even lift, every quotient reduction, and the final ranks from compact witness\ncertificates.\n\n## Method\n\n1. Reconstruct the EXP-039/041 signed support and exact two-sided leaf peeling.\n2. Select the unique defective component with the frozen EXP-041 coefficient-tag support and\n   normalized twelve-atom skeleton.\n3. Store its signed sparse columns, semantic atom labels, and frozen hashes.\n4. Reduce bit-packed row vectors over `GF(2)` while tracking kernel combinations.\n5. Lift every kernel basis vector with coefficients in `{0,1}`, compute the even integer boundary,\n   divide by two, and reduce the result modulo the mod-two column image.\n6. Reduce the resulting quotient classes to compute `rank(beta_p)` and retain independent compact\n   witness hashes.\n7. Repeat with reversed column order and audit independently.\n\n## Evidence boundary and resource gate\n\nThe `p=8` smoke is capped at 600 seconds and 20 GB. The primary `p=8,...,11` campaign is capped at\n2,400 seconds and 36 GB with atomic per-parameter output. A resource stop is inconclusive. Exact\nfinite Bockstein ranks do not prove an all-parameter recurrence, an OI/FI structure, the full\nlower strand, or a new Huneke--Wiegand theorem. No manuscript or Zenodo update is authorized by a\nfinite pass alone.\n",
+   "id": "042",
+   "problem": "huneke-wiegand",
+   "slug": "EXP-042-bockstein-normal-form",
+   "title": "Bockstein normal form of the persistent isolated sector",
+   "verdict": "",
+   "verdict_md": "# EXP-042 verdict\n\nStatus: **CONFIRMED** finitely for `p=8,...,11`. P1, P2, and P3 pass.\n\nThe exact isolated signed matrices reproduce every frozen hash, size, nonzero count, and rank.\nTheir first-Bockstein ranks are exactly `3,4,5,7`, under forward/reverse order and an independent\nopposite-pivot audit. Therefore the four matrices have exactly `3,4,5,7` nonzero Smith factors\nwhose 2-adic valuation is one. The entire observed odd-minus-two rank gap is detected by genuine\nfactor-two arithmetic inside the persistent twelve-atom sector.\n\nThe audit also rejects an overstrong localization: high-pivot representatives lie in the `D:B`\nrow atom, while low-pivot representatives lie in `K:C0`. The rank is intrinsic; either chosen\nrepresentative is reduction dependent. A signed bridge between those families is a research clue,\nnot yet a proved subcomplex.\n\nThe next strongest gate is a rigorous rational-rank upper certificate using modular ranks and a\nHadamard bound. If it passes, it will rule out additional 4-divisible factors and completely\nidentify the isolated block's 2-primary torsion at the tested parameters. EXP-042 does not prove a\nrecurrence, all-parameter theorem, or full lower strand, and it does not trigger a manuscript or\nZenodo update.\n"
+  },
+  {
    "area": "computation-complexity",
    "artifacts": [
     {
