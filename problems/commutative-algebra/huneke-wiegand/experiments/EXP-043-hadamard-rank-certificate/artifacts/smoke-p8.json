@@ -1,0 +1,174 @@
+{
+  "experiment": "EXP-043",
+  "route": "distinct-prime modular ranks plus exact Hadamard minor bound",
+  "status": "COMPLETE",
+  "parameters": {
+    "p_min": 8,
+    "p_max": 8,
+    "budget_seconds": 300.0,
+    "memory_gib": 8.0,
+    "prime_pool": 160,
+    "prime_bits": 61
+  },
+  "premise_hashes": {
+    "EXP-042 results": "3c4ae292fb17a5daf473aee0ed37e473000de686607b5da0a0f4c357a8216ee2",
+    "EXP-042 audit": "e35f38a86c4d6ab807d32cb3e8cd99b348e310df1d1a6840818a9ab84157cb8a",
+    "EXP-042 p8": "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
+    "EXP-042 p9": "00c20e30d81861a599448535c2ecc7625b56b1951fe863e64d40ce6f56ff218c",
+    "EXP-042 p10": "c7d6bbf0ec655296a0dafe81ab41ce70300c0fa4a837e5c141f55811e29f6f4d",
+    "EXP-042 p11": "69e8519a3b239ec90c3b5af526f806a9a0aabf003517ea28233167d7e2b68dd9"
+  },
+  "rows": [
+    {
+      "p": 8,
+      "matrix_artifact_sha256": "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
+      "rows": 2675,
+      "columns": 1094,
+      "nonzeros": 6747,
+      "target_rank": 1002,
+      "maximum_column_degree": 13,
+      "minor_order": 1003,
+      "prime_tests": [
+        {
+          "prime": "2305843009213693951",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693921",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693907",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693723",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693693",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693669",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693613",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693561",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693549",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693487",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693421",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693373",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693277",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693193",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693153",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693133",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693123",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693109",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693093",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213693013",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213692967",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213692937",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213692799",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213692757",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213692737",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213692671",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213692653",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213692601",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213692581",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213692527",
+          "rank": 1002
+        },
+        {
+          "prime": "2305843009213692463",
+          "rank": 1002
+        }
+      ],
+      "prime_count": 31,
+      "prime_product_hex": "0x7ffffffffffe8b3c000000020793e99ffffe328ad2626b01254eda6be3def9eecaba35fd9430acee9b37e4d6f274cd5d792ffa1075b2dc4cdd3f79ed6ffa71f03bc76ca2153edaa3b8653932ad386e032a53d651e9bd620529d10bba0619ec11a8000cdf0062f941781f4d48e69631362b1a5f705caa54d6e11167b81f385cd439d4f217f435824ae038ffc9ba3d3828e2688b9e6e49d7c44293238c2deead786a1d77924a5937dd2f517a4a8de363a6d4e139337da45bba3f5104ee67bd4d9b2954d2d20fb7b0b377c34f49e9dcf4db35959e40e1195c9222a24288cfe22ff2189097a730842decd4871044d",
+      "prime_product_bits": 1891,
+      "exact_squared_hadamard_coverage": true,
+      "all_modular_ranks_match": true,
+      "rational_rank_certified": true,
+      "rank_mod_two": 999,
+      "first_bockstein_rank": 3,
+      "complete_two_primary_torsion": true,
+      "two_primary_type": "(Z/2)^3"
+    }
+  ],
+  "elapsed_seconds": 0.7125452000036603,
+  "p1_status": "NOT_EVALUATED",
+  "p2_status": "NOT_EVALUATED",
+  "p3_status": "NOT_EVALUATED",
+  "artifact_hash": "cfb6519e6bef5a1a8f8250682902c2a074671f1168b5b3c1806457cc5300a8fa"
+}

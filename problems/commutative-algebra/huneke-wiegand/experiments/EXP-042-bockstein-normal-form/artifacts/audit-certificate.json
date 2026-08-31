@@ -1,0 +1,149 @@
+{
+  "experiment": "EXP-042",
+  "status": "PASS",
+  "artifact_hashes": {
+    "results": "3c4ae292fb17a5daf473aee0ed37e473000de686607b5da0a0f4c357a8216ee2",
+    "matrices": {
+      "8": "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
+      "9": "00c20e30d81861a599448535c2ecc7625b56b1951fe863e64d40ce6f56ff218c",
+      "10": "c7d6bbf0ec655296a0dafe81ab41ce70300c0fa4a837e5c141f55811e29f6f4d",
+      "11": "69e8519a3b239ec90c3b5af526f806a9a0aabf003517ea28233167d7e2b68dd9"
+    }
+  },
+  "checks": {
+    "results_hash": true,
+    "parameter_coverage": true,
+    "primary_status_complete": true,
+    "primary_predictions_pass": true,
+    "p8_external_hash": true,
+    "p8_result_pointer": true,
+    "p8_internal_hash": true,
+    "p8_dimensions": true,
+    "p8_support_hash": true,
+    "p8_signed_hash": true,
+    "p8_skeleton_hash": true,
+    "p8_independent_ranks": true,
+    "p8_forward_certificate": true,
+    "p8_reverse_certificate": true,
+    "p8_alternate_order_rank": true,
+    "p8_high_pivot_image_atom": true,
+    "p8_low_pivot_image_atom": true,
+    "p8_representative_is_pivot_dependent": true,
+    "p9_external_hash": true,
+    "p9_result_pointer": true,
+    "p9_internal_hash": true,
+    "p9_dimensions": true,
+    "p9_support_hash": true,
+    "p9_signed_hash": true,
+    "p9_skeleton_hash": true,
+    "p9_independent_ranks": true,
+    "p9_forward_certificate": true,
+    "p9_reverse_certificate": true,
+    "p9_alternate_order_rank": true,
+    "p9_high_pivot_image_atom": true,
+    "p9_low_pivot_image_atom": true,
+    "p9_representative_is_pivot_dependent": true,
+    "p10_external_hash": true,
+    "p10_result_pointer": true,
+    "p10_internal_hash": true,
+    "p10_dimensions": true,
+    "p10_support_hash": true,
+    "p10_signed_hash": true,
+    "p10_skeleton_hash": true,
+    "p10_independent_ranks": true,
+    "p10_forward_certificate": true,
+    "p10_reverse_certificate": true,
+    "p10_alternate_order_rank": true,
+    "p10_high_pivot_image_atom": true,
+    "p10_low_pivot_image_atom": true,
+    "p10_representative_is_pivot_dependent": true,
+    "p11_external_hash": true,
+    "p11_result_pointer": true,
+    "p11_internal_hash": true,
+    "p11_dimensions": true,
+    "p11_support_hash": true,
+    "p11_signed_hash": true,
+    "p11_skeleton_hash": true,
+    "p11_independent_ranks": true,
+    "p11_forward_certificate": true,
+    "p11_reverse_certificate": true,
+    "p11_alternate_order_rank": true,
+    "p11_high_pivot_image_atom": true,
+    "p11_low_pivot_image_atom": true,
+    "p11_representative_is_pivot_dependent": true
+  },
+  "rows": [
+    {
+      "p": 8,
+      "ranks": {
+        "2": 999,
+        "3": 1002,
+        "5": 1002
+      },
+      "kernel_dimension": 95,
+      "bockstein_rank": 3,
+      "high_pivot_image_atom": "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]",
+      "low_pivot_image_atom": "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]",
+      "alternate_forward_class_hash": "757d986d45064ba5705b7b5e30a31418b7585af425fbe3b1f5f699243c2e42d3",
+      "alternate_reverse_class_hash": "564bff2480b95d7760cf4edca5b3761d2f228d99b2510c0f59b4bec313eeaba8"
+    },
+    {
+      "p": 9,
+      "ranks": {
+        "2": 1603,
+        "3": 1607,
+        "5": 1607
+      },
+      "kernel_dimension": 126,
+      "bockstein_rank": 4,
+      "high_pivot_image_atom": "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]",
+      "low_pivot_image_atom": "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]",
+      "alternate_forward_class_hash": "916f5a81d5549025d9823ee904d3c944db47ff19d530b0c3323a26b27107a8cf",
+      "alternate_reverse_class_hash": "1c2af6cb653a8c5702fe0bd84f05a8cc846d7aab09b6444cd26f12e5c68a35fc"
+    },
+    {
+      "p": 10,
+      "ranks": {
+        "2": 2445,
+        "3": 2450,
+        "5": 2450
+      },
+      "kernel_dimension": 162,
+      "bockstein_rank": 5,
+      "high_pivot_image_atom": "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]",
+      "low_pivot_image_atom": "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]",
+      "alternate_forward_class_hash": "769b1dfb450d823aabaae3c418a276f96bd5e9b366659eb50519d36e8be457cb",
+      "alternate_reverse_class_hash": "c72be63698bb7bf9a25fd8b5882870b20242d683112ad2bab4c6892942f0f42e"
+    },
+    {
+      "p": 11,
+      "ranks": {
+        "2": 3579,
+        "3": 3586,
+        "5": 3586
+      },
+      "kernel_dimension": 206,
+      "bockstein_rank": 7,
+      "high_pivot_image_atom": "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]",
+      "low_pivot_image_atom": "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]",
+      "alternate_forward_class_hash": "d5b0c1ea102cebe1e5cc9d38eb9ced801c6605dab15b907a17032976e5d96558",
+      "alternate_reverse_class_hash": "a5d017f06aa93c0a5e2f6425e93306c79b4d27075bc508ec81d840423fd220f1"
+    }
+  ],
+  "result": {
+    "p1_status": "PASS_FINITE",
+    "p2_status": "PASS_FINITE",
+    "p3_status": "PASS_FINITE",
+    "bockstein_ranks": {
+      "8": 3,
+      "9": 4,
+      "10": 5,
+      "11": 7
+    },
+    "high_pivot_image_atom": "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]",
+    "low_pivot_image_atom": "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]",
+    "image_representative_is_pivot_dependent": true
+  },
+  "scope": "exact finite first-Bockstein ranks and pivot-dependent representative comparison through p=11; no rational rank upper bound, full Smith form, recurrence, or all-parameter theorem is claimed",
+  "certificate_hash": "a173de6a8454f44a84914d64273c12a61250e0d95ae7719117f1d3720a9467d8"
+}

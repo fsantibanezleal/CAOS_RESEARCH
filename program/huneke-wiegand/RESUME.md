@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-30. Lifecycle: EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
+Updated: 2026-08-31. Lifecycle: EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
 with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
@@ -14,7 +14,17 @@ corrected numerator `1+2x+x^2+x^3-x^6`. Its first genuinely new prediction passe
 relation remain unproved. EXP-039 refutes bounded defect-one components but exposes latent sectors
 `binom(p-2,3),p-4,p-4,p-5` and their `p=9` support merger. EXP-040 confirms exact `67+5` at
 `p=10`, localizing the first correction inside the large component, but refutes its simple
-transport with exact `95+7` at `p=11` instead of `96+6`. Semantic sector tagging is next. For every `p>=4` and
+transport with exact `95+7` at `p=11` instead of `96+6`. EXP-041 refutes the proposed semantic
+switch: the isolated blocks at `p=8,...,11` have one normalized twelve-atom skeleton, with defects
+`3,4,5,7`. The jump is internal to a persistent finite semantic type. EXP-042 computes its exact
+first Bockstein: ranks are again `3,4,5,7`, proving exactly that many
+nonzero valuation-one Smith factors in the four isolated integer matrices. EXP-043 supplies exact
+rational-rank upper certificates and closes their complete 2-primary types as
+`(Z/2)^3,(Z/2)^4,(Z/2)^5,(Z/2)^7`. EXP-044 then refutes the proposed two-atom carrier:
+`D:B` and `K:C0` are necessary row-projection interfaces, but their union has Bockstein zero. For
+EXP-045 exhausts the six-row-atom lattice: minimal full carriers are stably masks `59` and `62`,
+their intersection mask `58` has ranks `1,2,3,5`, and either completion adds exactly two. For every
+`p>=4` and
 `2<=t<=p-2`, the shifted cubic source is absent
 by the positive gap `g(p,t)>=3(p-1)^2`, so every future exact `A_p` value at these targets
 transfers to `C_p`.  This is not an infinite characteristic-dependence theorem. The 53-page
@@ -366,6 +376,11 @@ campaign is supporting evidence, not the proof.
 | EXP-038 | INCONCLUSIVE; TWO FINITE PASSES | audited exact `e_11=102` and `e_12=138`; all-parameter recurrence and structural relation remain unproved |
 | EXP-039 | REFUTED WITH REDIRECT | bounded defect-one components fail; exact partitions expose four latent orientation-sensitive sectors and a `p=9` support merger |
 | EXP-040 | REFUTED; P1 PASSES | exact `67+5` localizes the first correction at `p=10`; `95+7` refutes the declared `96+6` transport at `p=11`; P3 not attempted |
+| EXP-041 | REFUTED; P1 PASSES | every frozen component is reproduced; the isolated `R` block keeps one normalized twelve-atom skeleton through `p=11`, refuting the switch; the distinguished row is absent from all defective cores |
+| EXP-042 | CONFIRMED FINITELY | exact first-Bockstein ranks `3,4,5,7` prove that many valuation-one Smith factors; high/low pivot atom representatives differ |
+| EXP-043 | CONFIRMED FINITELY | audited modular Hadamard certificates prove rational ranks `1002,1607,2450,3586` and complete isolated 2-primary types `(Z/2)^(3,4,5,7)` |
+| EXP-044 | REFUTED; P1/P3 PASS | deleting either marked atom kills the Bockstein, but their union also has Bockstein zero; a larger signed circuit is essential |
+| EXP-045 | REFUTED WITH STRUCTURAL REDIRECT | exhaustive 256-projection lattice gives stable minimal full carriers `59,62`, core ranks `1,2,3,5`, constant completion two, and a `p=11` threshold at mask `56` |
 
 ## 3a. Exact evidence anchors
 
@@ -448,10 +463,37 @@ campaign is supporting evidence, not the proof.
   `8107af8e2810414144e5ee94f4caeaa634ca81e14af92b26050b3f50d48648b6` and
   `ad1fec04199ff94b803f95f98650c8c8ab386386240d584f447afbb9fe27668b`; audit certificate
   external SHA-256 `625f9ac10b8aaaf1e2cf4f8ba0d2d12cf1fe3b68745d2c418707c1e8be501482`.
+- EXP-041 primary and reverse-profile SHA-256 hashes:
+  `069e587b779bd1571d72e1a47bf74f4d1640dae5fbbf09907d2bf798c4941534` and
+  `eafad05553cb7401c27ebeafcf686da6b436a25031dbc0f89e638096a6e02a1b`; audit certificate
+  external SHA-256 `41b7ce59e354d841d82fe97ec3f74b0c5cc06836e85f332dc0318622b1a41cd2`.
+  Its audited normalized isolated-skeleton hash is
+  `d0c296e39c7c4f10ffd886b23b3b3d4d9cea0a291dd1aed6fcc079998c57676d`.
+- EXP-042 primary SHA-256:
+  `3c4ae292fb17a5daf473aee0ed37e473000de686607b5da0a0f4c357a8216ee2`; matrix SHA-256 values
+  for `p=8,9,10,11` are `7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff`,
+  `00c20e30d81861a599448535c2ecc7625b56b1951fe863e64d40ce6f56ff218c`,
+  `c7d6bbf0ec655296a0dafe81ab41ce70300c0fa4a837e5c141f55811e29f6f4d`, and
+  `69e8519a3b239ec90c3b5af526f806a9a0aabf003517ea28233167d7e2b68dd9`. Audit certificate
+  external SHA-256 `e35f38a86c4d6ab807d32cb3e8cd99b348e310df1d1a6840818a9ab84157cb8a`.
+- EXP-043 primary SHA-256:
+  `612d481eff7e00f5c5128d450a5eb05f79aacccb27bcd88c106dc0d5bf7426e6`; audit certificate
+  external SHA-256 `6bad2a878e72b54fd3f2db704cb90dff425aff06531cc55ccdd2fde6cff5f01e`.
+- EXP-044 primary SHA-256:
+  `6766b6ca249f1b02ba9a83a6fb8434eea4e511172c982840fc3c6db6a192e886`; audit certificate
+  external SHA-256 `324c98de4cdcf98b4fb6010343df9ceeab4c6347938c36c2614e2850cad254e1`.
+- EXP-045 primary SHA-256:
+  `569220667e9d82f0806ea96cb8f60c49e94cb6317817170c39f2e574e619bcb8`; audit certificate
+  external SHA-256 `a1a5bc105ecb7171970dd9b0b8daf4d823190a56b9a0f8e1e64a59479dcac3dd`.
 
 ## 4. In flight
 
-EXP-040 is REFUTED overall, with its P1 finite localization retained. EXP-037 exactly refutes the previous series at its first new value:
+EXP-045 is REFUTED with a stable full-carrier antichain retained. EXP-044 is REFUTED overall with
+P1/P3 retained. EXP-043 is CONFIRMED finitely and closes HWB-070. EXP-042 is CONFIRMED finitely
+and advances HWB-069; HWB-071 owns the relative integral completion problem.
+EXP-041 is REFUTED overall, with its P1 finite classifier retained; HWB-068 is done. EXP-040 is
+REFUTED overall, with its P1 finite localization retained. EXP-037 exactly
+refutes the previous series at its first new value:
 
 ```text
 e_10=dim_GF(2) A_(10,2)-dim_GF(3) A_(10,2)=4240-4168=72, not 73.
@@ -477,7 +519,24 @@ relative-homology decomposition. EXP-039 performs that component test and refute
 defect-one blocks, but its partitions identify four latent sectors. At `p=9`, the first three
 merge with defect `35+5+5=45` and the fourth remains four. EXP-040 finds exact `67+5` at `p=10`,
 so the first correction is in the large merged block. At `p=11`, exact `95+7` refutes the declared
-`96+6` transport; semantic component identity must be established before bridge deletion.
+`96+6` transport. EXP-041 profiles exact module-side, coefficient-interval, and exterior-block
+atoms across `p=8,...,11`. Its switch prediction is refuted: all four isolated components retain
+the same eight coefficient tags and the same normalized twelve-atom skeleton. The defects
+`3,4,5,7` must therefore be explained by the signed differential inside that skeleton. The
+distinguished EXP-035 row is absent from every defective profile and cannot anchor the reduction.
+EXP-042 lifts the mod-two kernel through the exact signed integer matrices. Its independently
+audited Bockstein ranks are `3,4,5,7`, so the isolated blocks have exactly that many nonzero Smith
+factors of 2-adic valuation one. High-pivot image representatives lie in `D:B`; low-pivot
+representatives lie in `K:C0`, so the atom localization is not canonical.
+EXP-043 uses minimal prefixes of `31,52,83,125` verified 61-bit primes and exact squared Hadamard
+bounds to prove rational ranks `1002,1607,2450,3586`. Combined with the Bockstein, the complete
+isolated 2-primary cokernels are `(Z/2)^3,(Z/2)^4,(Z/2)^5,(Z/2)^7`.
+EXP-044 proves finitely that `D:B` and `K:C0` are necessary row-projection interfaces but not a
+sufficient carrier: deleting either and retaining only their union all give Bockstein zero. The
+active object is a larger signed circuit among the six normalized row atoms.
+EXP-045 exhausts that row-atom lattice. Full carriers are exactly `59,62,63`, with minimal
+antichain `{59,62}` for every tested parameter. Their intersection `58` carries `1,2,3,5`, exactly
+two below the full ranks; the minimal nonzero carrier changes to `56` at `p=11`.
 
 EXP-036 is CONFIRMED with its all-parameter structural-propagation prediction unresolved.  Its
 exact-sum route reproduces EXP-035 and computes the complete `p<=6` triangle plus `(7,2)`,
@@ -779,14 +838,15 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Profile semantic interval labels in the defective `p=8,...,11` components and test whether the
-   isolated block changes from the latent `p-5` sector to a `p-4` sector. Do not attempt bridge
-   deletion or `p=12` component ranks before this identity gate.
-2. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
+1. Declare a relative-presentation experiment comparing `58->59` and `58->62`. Test whether the
+   alternative completions add integrally equivalent two-class factor-two blocks.
+2. Isolate the separate `56->58` threshold at `p=11`, then construct a uniform integral matching
+   and explicit parameter maps before claiming OI/FI stability.
+3. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
    a signed core; keep this separate from the connecting-only `t=2` mechanism.
-3. Open a separate manuscript only after a complete strand, an infinite connecting theorem, or a
+4. Open a separate manuscript only after a complete strand, an infinite connecting theorem, or a
    comparably transferable result is proved.
-4. Leave CAOS_MANAGE untouched during this round; its unrelated diffusion work remains preserved
+5. Leave CAOS_MANAGE untouched during this round; its unrelated work remains preserved
    on `develop`.
 
 ### Lenses ledger
@@ -842,6 +902,25 @@ Published baseline:
 - Sector-identity correction: EXP-040 localizes the first correction at `p=10` but refutes the
   naive component transport at `p=11`. The next invariant is the semantic interval tag of each
   component, not another rank total or an assumed persistent support label.
+- Semantic-tag recognition: EXP-041 applies exact affine interval atoms and a frozen-component
+  regression. Its declared lineage switch is false: one normalized twelve-atom skeleton persists,
+  so the next invariant is its signed differential rather than another component label.
+- Signed-normal-form route: HWB-069 prioritizes integral matched-block cancellation in the isolated
+  component. Relative squarefree-divisor homology and OI/FI finite generation are proof frameworks
+  only after explicit chain maps are constructed; toric gluing remains downstream because no
+  toric-ideal or chain splitting is yet proved.
+- Bockstein gate: EXP-042 proves finite first-Bockstein ranks `3,4,5,7` under independent
+  reductions. This counts valuation-one Smith factors exactly. Its row-atom representative is
+  pivot dependent, preventing a false canonical localization claim.
+- Rational-rank closure: EXP-043 makes all `(r+1)` minors divisible by a distinct-prime product
+  larger than twice their Hadamard bound. This proves `rank_Q=r` and completes the tested isolated
+  2-primary torsion without a full Smith form.
+- Signed-circuit localization: EXP-044 refutes the two-atom carrier. Both marked atoms are
+  necessary interfaces, but their union is insufficient. The complete six-row-atom subset lattice
+  is the next bounded gate; integral reduction remains mandatory afterward.
+- Carrier lattice: EXP-045 gives stable minimal full masks `59,62`, common core ranks `1,2,3,5`,
+  and constant completion two. Relative integral presentations, not further global ranks, are now
+  the active finite proof gate.
 
 ## 7. Gotchas
 

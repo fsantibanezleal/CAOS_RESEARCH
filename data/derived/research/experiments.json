@@ -3872,6 +3872,151 @@
    "verdict_md": "# EXP-040 verdict\n\nStatus: **REFUTED** overall. P1 passes; P2 fails; P3 was not attempted.\n\nThe exact `p=10` characteristic-defect partition is `67+5`, exactly as declared.  This localizes\nthe first correction from the free-sector value 73 to the merged component: its predicted free\ncount 68 becomes 67, while the other component contributes five.  Every component agrees over\n`GF(3)` and `GF(5)`.\n\nThe conditional `p=11` prediction fails.  The observed partition is `95+7`, not `96+6`, although\nboth sum to the already audited total 102.  Therefore the simple rule that translated relations\nremain wholly in the merged sector while a fourth sector follows `p-5` is false.  Sign erasure and\none-sign-flip controls confirm that both observed components depend essentially on orientation.\n\nThe strongest next route is semantic component profiling: identify which row/column interval\ntypes form the small components at `p=10` and `p=11`, transport tags from the four pre-merge\nsectors, and only then test signed bridge removal.  The finite P1 localization is relevant but is\nnot an explicit relation or an all-parameter theorem.  Manuscript and Zenodo gates remain closed.\n"
   },
   {
+   "area": "commutative-algebra",
+   "artifacts": [
+    {
+     "bytes": 3640,
+     "name": "audit-certificate.json"
+    },
+    {
+     "bytes": 29157,
+     "name": "results.json"
+    },
+    {
+     "bytes": 29157,
+     "name": "reverse-tag-results.json"
+    },
+    {
+     "bytes": 10508,
+     "name": "smoke-p8.json"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-041 hypothesis - semantic sector tags across support mergers\n\nDate: 2026-08-31. CPU only. Exact combinatorial profiling plus frozen exact rank evidence.\n\n## Question and predictions\n\nUse the complete signed combined presentation `M_(p,2)` and the exact EXP-039 unit-peeling order.\nFor each active row and column, record its module side, affine coefficient interval, and the counts\nof exterior variables in every affine generator interval.\n\n### P1. Interval tags separate the four pre-merger sectors\n\nAt `p=8`, the four defective components with defects `20,4,4,3` have distinct exact semantic\nfingerprints. In particular, the defect-three component, called the finite `R` anchor, is\ndistinguished from both defect-four components without using component number, vertex count, rank,\nor a post-run fitted threshold.\n\n### P2. The isolated component changes lineage at p=11\n\nThe isolated defective components at `p=9` and `p=10` retain the unique coefficient-tag support of\nthe `p=8` `R` anchor. The isolated defect-seven component at `p=11` loses that support and acquires\nthe support of exactly one of the two `p=8` defect-four anchors. This is the declared semantic\nswitch behind the failed EXP-040 prediction `96+6`.\n\n### P3. Distinguished-row localization\n\nThe distinguished EXP-035 selected row, if it survives unit peeling, belongs to a uniquely\nidentified lineage at every completed parameter. Its component membership must agree with P1/P2;\notherwise P3 is refuted even if aggregate fingerprints appear compatible.\n\n## Exact tag dictionary\n\nDegree-one exterior variables use these disjoint tags:\n\n```text\nL0=[1,p], L1=[3p,4p-2], H0=[6p,8p-2], H1=[8p,10p-2], H2={10p},\nH3=[11p-1,12p-1], H4=[13p+1,14p-2], H5=[14p,15p-1],\nH6={16p}, H7=[17p-1,18p-1].\n```\n\nKernel-row coefficients use the eight complementary degree-two tags:\n\n```text\nC0={8p-1}, C1={10p-1}, C2=[10p+1,11p-2], C3=[12p,13p],\nC4={14p-1}, C5=[15p,16p-1], C6=[16p+1,17p-2], C7=[18p,24p-1].\n```\n\nSource columns use `L0/L1`, kernel columns use `H0,...,H7`, and connecting rows use their exact\n`A/B` product kind. A component fingerprint is the complete sorted histogram of\n\n```text\n(row-or-column, D/K/S kind, coefficient tag, exterior block-count vector).\n```\n\nP1 requires exact fingerprint inequality and a rank-free distinguishing tag support. P2 requires\nthe declared support persistence/switch, not visual similarity.\n\n## Premise dependencies\n\n- EXP-039 is refuted as a bounded-component model but freezes exact components through `p=9`.\n- EXP-040 is refuted overall but freezes the exact `p=10,11` components and partitions.\n- EXP-037/038 freeze aggregate ranks. EXP-041 does not recompute or strengthen them.\n- The source-complete preflight is\n  `context/2026-08-31-exp041-semantic-sector-tags-preflight.md`.\n\n## Method and adversarial controls\n\n1. Reconstruct the exact EXP-039 support and unit peeling without finite-field elimination.\n2. Reproduce frozen component counts, support hashes, and defective component identities for every\n   completed parameter.\n3. Persist full semantic histograms only for defective components; persist compact hashes for all\n   components.\n4. Independently audit every stored histogram sum against its component row and column counts.\n5. Permute component enumeration and reverse the interval-tag construction; hashes and lineage\n   decisions must remain unchanged.\n6. Refuse any lineage assignment based only on defect, component index, size, or a fitted numeric\n   distance.\n\n## What PASS and FAIL prove\n\n- **P1 PASS** supplies a finite exact semantic classifier before the support merger. It does not\n  prove that a classifier is an invariant subcomplex.\n- **P1 FAIL** refutes coarse interval tags as sector identifiers and redirects to chain generators.\n- **P2 PASS** establishes a finite exact component-lineage switch at `p=11`; it does not prove why\n  the defect moves or establish the degree-six relation.\n- **P2 FAIL** refutes the proposed switch interpretation. It may instead show persistent `R`\n  identity with an internal relation, or that component-level lineage is undefined.\n- **P3 PASS** localizes the distinguished row finitely. **P3 FAIL** prevents it from anchoring a\n  bridge theorem.\n\n## Resource gate\n\nThe `p=8` smoke run has a 600-second, 20-GB cap. The full `p=8,...,11` campaign has a 2,400-second,\n36-GB cap, flushed progress, and atomic per-parameter checkpoints. A resource stop is inconclusive.\nNo manuscript or Zenodo gate opens from finite semantic profiles alone.\n",
+   "id": "041",
+   "problem": "huneke-wiegand",
+   "slug": "EXP-041-semantic-sector-tags",
+   "title": "semantic sector tags across support mergers",
+   "verdict": "",
+   "verdict_md": "# EXP-041 verdict\n\nStatus: **REFUTED** overall. P1 passes finitely; P2 and P3 are refuted.\n\nThe exact semantic profiles reproduce every frozen component and partition through `p=11`. At\n`p=8`, the defect-three `R` anchor is uniquely recognized by omission of the `H1/C1` coefficient\ntags, so P1 supplies a rank-free finite classifier.\n\nP2's predicted switch is false. The isolated components at `p=8,9,10,11` have exactly the same\neight coefficient tags and, after the declared affine normalization, the same twelve semantic\natoms. Their defects are `3,4,5,7`. Thus the `p=11` change is internal to a persistent semantic\nskeleton, not a transport between differently labelled components.\n\nP3 also fails: the distinguished EXP-035 row occurs in none of the defective profiles. This only\nproves absence from the defective cores; it does not identify a particular peeling pivot.\n\nThe strongest next route is a signed normal form for the twelve-atom isolated family, using exact\nmatched-block cancellation and an integral or multi-prime audit. More coefficient fitting and\ntoric gluing are lower priority until a chain-level map or actual splitting is proved. No\nrecurrence, all-parameter parity theorem, manuscript revision, or Zenodo update follows from\nEXP-041 alone.\n"
+  },
+  {
+   "area": "commutative-algebra",
+   "artifacts": [
+    {
+     "bytes": 5447,
+     "name": "audit-certificate.json"
+    },
+    {
+     "bytes": 928447,
+     "name": "matrix-p10.json"
+    },
+    {
+     "bytes": 1467704,
+     "name": "matrix-p11.json"
+    },
+    {
+     "bytes": 323772,
+     "name": "matrix-p8.json"
+    },
+    {
+     "bytes": 563610,
+     "name": "matrix-p9.json"
+    },
+    {
+     "bytes": 37702,
+     "name": "results.json"
+    },
+    {
+     "bytes": 7566,
+     "name": "smoke-p8.json"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-042 hypothesis - Bockstein normal form of the persistent isolated sector\n\nDate: 2026-08-31. CPU only. Exact signed integer extraction plus bit-packed mod-two reduction.\n\n## Question and predictions\n\nLet `M_p` be the exact signed matrix of the isolated normalized twelve-atom component identified\nby EXP-041 for `p=8,...,11`.\n\n### P1. Frozen extraction\n\nAn independent extractor must reproduce the frozen component support hash, signed hash, row and\ncolumn counts, nonzero count, and available ranks over `GF(2)` and `GF(3)` at every parameter. It\nmust also reproduce the frozen `GF(5)` ranks at `p=10,11` and predict/verify `GF(5)=GF(3)` at\n`p=8,9`. Failure is an implementation failure and no Bockstein output is evidence.\n\n### P2. The observed rank gap is visible in the first Bockstein\n\nFor a canonical basis of `ker(M_p mod 2)`, form\n\n```text\nbeta_p(z) = (M_p z)/2 mod (2, im(M_p mod 2)).\n```\n\nThe predicted Bockstein ranks are exactly the frozen odd-minus-two defects:\n\n```text\np=8,9,10,11 -> rank(beta_p)=3,4,5,7.\n```\n\nA pass produces that many independent order-exactly-two elementary-divisor directions in each\nfinite isolated component. It does not prove that these are all integral torsion factors unless a\nseparate rational-rank upper bound is supplied.\n\n### P3. Order and basis independence\n\nForward and reversed column orders must produce the same kernel dimension, matrix rank, and\nBockstein rank. A separately implemented auditor must verify every stored kernel equation over\n`GF(2)`, every even lift, every quotient reduction, and the final ranks from compact witness\ncertificates.\n\n## Method\n\n1. Reconstruct the EXP-039/041 signed support and exact two-sided leaf peeling.\n2. Select the unique defective component with the frozen EXP-041 coefficient-tag support and\n   normalized twelve-atom skeleton.\n3. Store its signed sparse columns, semantic atom labels, and frozen hashes.\n4. Reduce bit-packed row vectors over `GF(2)` while tracking kernel combinations.\n5. Lift every kernel basis vector with coefficients in `{0,1}`, compute the even integer boundary,\n   divide by two, and reduce the result modulo the mod-two column image.\n6. Reduce the resulting quotient classes to compute `rank(beta_p)` and retain independent compact\n   witness hashes.\n7. Repeat with reversed column order and audit independently.\n\n## Evidence boundary and resource gate\n\nThe `p=8` smoke is capped at 600 seconds and 20 GB. The primary `p=8,...,11` campaign is capped at\n2,400 seconds and 36 GB with atomic per-parameter output. A resource stop is inconclusive. Exact\nfinite Bockstein ranks do not prove an all-parameter recurrence, an OI/FI structure, the full\nlower strand, or a new Huneke--Wiegand theorem. No manuscript or Zenodo update is authorized by a\nfinite pass alone.\n",
+   "id": "042",
+   "problem": "huneke-wiegand",
+   "slug": "EXP-042-bockstein-normal-form",
+   "title": "Bockstein normal form of the persistent isolated sector",
+   "verdict": "",
+   "verdict_md": "# EXP-042 verdict\n\nStatus: **CONFIRMED** finitely for `p=8,...,11`. P1, P2, and P3 pass.\n\nThe exact isolated signed matrices reproduce every frozen hash, size, nonzero count, and rank.\nTheir first-Bockstein ranks are exactly `3,4,5,7`, under forward/reverse order and an independent\nopposite-pivot audit. Therefore the four matrices have exactly `3,4,5,7` nonzero Smith factors\nwhose 2-adic valuation is one. The entire observed odd-minus-two rank gap is detected by genuine\nfactor-two arithmetic inside the persistent twelve-atom sector.\n\nThe audit also rejects an overstrong localization: high-pivot representatives lie in the `D:B`\nrow atom, while low-pivot representatives lie in `K:C0`. The rank is intrinsic; either chosen\nrepresentative is reduction dependent. A signed bridge between those families is a research clue,\nnot yet a proved subcomplex.\n\nThe next strongest gate is a rigorous rational-rank upper certificate using modular ranks and a\nHadamard bound. If it passes, it will rule out additional 4-divisible factors and completely\nidentify the isolated block's 2-primary torsion at the tested parameters. EXP-042 does not prove a\nrecurrence, all-parameter theorem, or full lower strand, and it does not trigger a manuscript or\nZenodo update.\n"
+  },
+  {
+   "area": "commutative-algebra",
+   "artifacts": [
+    {
+     "bytes": 4867,
+     "name": "audit-certificate.json"
+    },
+    {
+     "bytes": 33227,
+     "name": "results.json"
+    },
+    {
+     "bytes": 4882,
+     "name": "smoke-p8.json"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-043 hypothesis - exact rational rank by modular Hadamard certificates\n\nDate: 2026-08-31. CPU only. Exact modular arithmetic and integer determinant bounds.\n\n## Predictions\n\nFor each EXP-042 isolated matrix, set `r` to its exact `GF(3)` rank and `d` to its maximum column\ndegree.\n\n### P1. Modular rank ceiling\n\nGenerate distinct verified 61-bit primes. Every selected prime has matrix rank exactly `r`:\n\n```text\np=8,9,10,11 -> r=1002,1607,2450,3586.\n```\n\nAny rank above `r` refutes the proposed rational rank immediately.\n\n### P2. Exact Hadamard coverage\n\nFor each parameter, accumulate `Q=product(q_i)` until\n\n```text\nQ^2 > 4*d^(r+1).\n```\n\nAll `(r+1)` minors are then both divisible by `Q` and smaller than `Q/2`, so they vanish. Together\nwith the nonzero rank-`r` minor modulo three, this proves `rank_Q(M_p)=r`.\n\n### P3. Complete finite 2-primary torsion\n\nCombine P2 with the independently audited EXP-042 first-Bockstein ranks. The predicted complete\n2-primary torsion of the four isolated cokernels is\n\n```text\np=8: (Z/2)^3\np=9: (Z/2)^4\np=10: (Z/2)^5\np=11: (Z/2)^7.\n```\n\nAn independent auditor must reverify primality, distinctness, every stored modular rank with the\nopposite pivot convention, the exact product inequality, and the EXP-042 artifact hashes.\n\n## Resource gate and claim boundary\n\nThe `p=8` smoke is capped at 300 seconds and 8 GB. The full matrix-artifact campaign is capped at\n1,200 seconds and 12 GB with one parameter checkpoint at a time. A resource stop is inconclusive.\nA pass is an exact finite Smith-theoretic result only. It does not prove the sequence, recurrence,\nOI/FI compatibility, an all-parameter connecting theorem, or the complete lower strand. No\nmanuscript or Zenodo gate opens from finite certificates alone.\n",
+   "id": "043",
+   "problem": "huneke-wiegand",
+   "slug": "EXP-043-hadamard-rank-certificate",
+   "title": "exact rational rank by modular Hadamard certificates",
+   "verdict": "",
+   "verdict_md": "# EXP-043 verdict\n\nStatus: **CONFIRMED** finitely for `p=8,...,11`. P1, P2, and P3 pass.\n\nDistinct verified 61-bit primes and exact Hadamard product bounds prove rational ranks\n`1002,1607,2450,3586` for the four persistent isolated matrices. An independent opposite-pivot\naudit recomputes all 291 modular ranks and every exact determinant bound.\n\nCombining these rational ranks with the EXP-042 first Bockstein proves that the complete 2-primary\ntorsion of the isolated cokernels is exactly\n\n```text\np=8:  (Z/2)^3\np=9:  (Z/2)^4\np=10: (Z/2)^5\np=11: (Z/2)^7.\n```\n\nThere are no additional nonzero Smith factors divisible by four. This is a relevant finite normal\nform result, but it does not prove a recurrence or an all-parameter lower-strand theorem. The next\nroute is a uniform signed reduction of the `D:B <-> K:C0` bridge indicated by EXP-042's\npivot-dependent representatives. No manuscript or Zenodo update is triggered by the finite result\nalone.\n"
+  },
+  {
+   "area": "commutative-algebra",
+   "artifacts": [
+    {
+     "bytes": 13009,
+     "name": "audit-certificate.json"
+    },
+    {
+     "bytes": 31209,
+     "name": "results.json"
+    },
+    {
+     "bytes": 8841,
+     "name": "smoke-p8.json"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-044 hypothesis - row-projection localization of the signed bridge\n\nDate: 2026-08-31. CPU only. Exact integer and finite-field arithmetic.\n\n## Question\n\nEXP-042 found that the same intrinsic Bockstein classes have `D:B` representatives under one\npivot convention and `K:C0` representatives under the opposite convention. EXP-044 tests whether\nthese two row atoms form a necessary and sufficient two-sided torsion bridge, or whether they are\nonly basis-dependent shadows of a larger signed relation.\n\nFor each frozen isolated matrix at `p=8,9,10,11`, form exact row projections that:\n\n1. delete `D:B`;\n2. delete `K:C0`;\n3. delete both atoms;\n4. retain only the union `D:B union K:C0`.\n\nZero columns remain part of each projected presentation. Every projection is evaluated by exact\n`GF(2)`, `GF(3)`, and `GF(5)` ranks and by forward and reverse first-Bockstein reductions.\n\n## Predictions\n\n### P1. Each side is necessary\n\nDeleting either `D:B` or `K:C0` eliminates the full first Bockstein at every tested parameter.\nThe predicted projected Bockstein ranks are all zero. A surviving class refutes the claim that the\ntorsion requires the proposed two-sided bridge.\n\n### P2. The union is sufficient\n\nRetaining only `D:B union K:C0` preserves the full Bockstein ranks\n\n```text\np=8,9,10,11 -> 3,4,5,7.\n```\n\nFailure means that additional row atoms participate essentially and the bridge must be enlarged\nbefore an integral normal form is attempted.\n\n### P3. Projection and field-rank agreement\n\nFor every projection, forward and reverse Bockstein ranks agree. Whenever the projected odd-field\nranks agree, their common rank minus the `GF(2)` rank equals the Bockstein rank. This is a finite\nconsistency check, not a rational-rank certificate for the projected matrices.\n\n## Audit and claim boundary\n\nThe runner must verify the exact EXP-042 script, result, and matrix hashes before computation. An\nindependent auditor must reload the frozen matrices, rebuild every projection, recompute all\nfinite-field ranks with the opposite pivot convention, and recompute the first Bockstein without\ncalling the runner's projection routine.\n\nThe `p=8` smoke is capped at 300 seconds and 8 GB. The full campaign is capped at 1,200 seconds\nand 16 GB. A resource stop is inconclusive. A pass would identify a finite bridge candidate only;\nit would not construct a unimodular matching, an OI/FI map, an all-parameter theorem, or the full\nlower strand. No manuscript or Zenodo gate opens from row projections alone.\n",
+   "id": "044",
+   "problem": "huneke-wiegand",
+   "slug": "EXP-044-row-projection-bridge",
+   "title": "row-projection localization of the signed bridge",
+   "verdict": "",
+   "verdict_md": "# EXP-044 verdict\n\nStatus: **REFUTED overall** for `p=8,...,11`. P1 and P3 pass; P2 fails.\n\nDeleting either pivot-dependent row atom `D:B` or `K:C0` eliminates every tested first\nBockstein, confirming that both are necessary interfaces. However, retaining only their union\nalso gives equal ranks over `GF(2)`, `GF(3)`, and `GF(5)` and Bockstein rank zero at every\nparameter. The proposed two-atom bridge is therefore not sufficient.\n\nThe finite torsion belongs to a larger signed circuit involving additional normalized row atoms.\nThis redirects the proof search from a guessed two-block normal form to an exhaustive six-atom\nsubset lattice, followed by integral matching only after a stable minimal carrier is identified.\nThe result is an exact localization correction, not an all-parameter theorem, and it does not\ntrigger a manuscript or Zenodo update.\n"
+  },
+  {
+   "area": "commutative-algebra",
+   "artifacts": [
+    {
+     "bytes": 88531,
+     "name": "audit-certificate.json"
+    },
+    {
+     "bytes": 303584,
+     "name": "results.json"
+    },
+    {
+     "bytes": 76742,
+     "name": "smoke-p8.json"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-045 hypothesis - complete row-atom carrier lattice\n\nDate: 2026-08-31. CPU only. Exact integer and finite-field arithmetic.\n\n## Question and atom universe\n\nEXP-044 proves that the pivot-dependent `D:B` and `K:C0` atoms are necessary row-projection\ninterfaces but that their union is insufficient. The isolated matrices have exactly six\nnormalized row atoms. Give them stable aliases in sorted semantic order:\n\n```text\nR0 = [\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]\nR1 = [\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]\nR2 = [\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]\nR3 = [\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]\nR4 = [\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]\nR5 = [\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]\n```\n\nFor each frozen `p=8,9,10,11` matrix, retain every one of the `2^6=64` row-atom subsets, keep all\ncolumns including zero columns, and compute exact ranks over `GF(2)`, `GF(3)`, and `GF(5)` plus\nthe first-Bockstein rank in opposite reduction conventions.\n\n## Predictions\n\n### P1. Six-way essentiality\n\nDeleting any one atom from the full presentation kills the first Bockstein for every parameter.\nThus all six semantic row atoms are individually necessary under row projection.\n\n### P2. Unique full carrier\n\nThe full six-atom set is the only subset with nonzero Bockstein. It has ranks `3,4,5,7`; every\nproper subset has rank zero. A refutation must report every inclusion-minimal subset with nonzero\nBockstein and every inclusion-minimal subset carrying the full source rank.\n\n### P3. Cross-parameter carrier stability\n\nThe family of inclusion-minimal nonzero and full carriers is identical across `p=8,...,11`.\nForward/high and reverse/low reductions agree, both odd fields agree, and the odd-minus-two rank\ngap equals the first-Bockstein rank for every subset.\n\n## Audit and claim boundary\n\nThe runner verifies all frozen EXP-042 matrix hashes and the EXP-044 result hash. The independent\nauditor must reconstruct all 256 projected matrices without calling the runner's projection code,\nuse reverse columns and low row pivots, and verify the complete subset table and minimal-carrier\nantichains.\n\nThe `p=8` smoke is capped at 300 seconds and 8 GB. The full campaign is capped at 1,800 seconds\nand 20 GB, checkpointed by parameter. A resource stop is inconclusive. Even a complete pass is a\nfinite row-projection theorem, not a unimodular equivalence, compatible family map, recurrence,\nor all-parameter lower-strand theorem. No manuscript or Zenodo gate opens from this result alone.\n",
+   "id": "045",
+   "problem": "huneke-wiegand",
+   "slug": "EXP-045-row-atom-carrier-lattice",
+   "title": "complete row-atom carrier lattice",
+   "verdict": "",
+   "verdict_md": "# EXP-045 verdict\n\nStatus: **REFUTED overall** for `p=8,...,11`; P1, P2, and P3 fail as declared. A stronger stable\nfull-carrier structure is retained.\n\nThe exhaustive 256-projection lattice proves that the minimal full-Bockstein carriers are exactly\nmasks `59` and `62` at every tested parameter. Their intersection mask `58` carries Bockstein\nranks `1,2,3,5`, while either alternative completion adds exactly two classes and reaches the full\nranks `3,4,5,7`.\n\nThe minimal nonzero carrier changes from mask `58` through `p=10` to mask `56` at `p=11`, where\nthe triad `R3,R4,R5` first carries one class. This identifies a semantic threshold behind the\nprevious defect jump and redirects the proof toward relative integral presentations for\n`58 -> 59`, `58 -> 62`, and `56 -> 58`.\n\nThe carrier lattice is exact and independently audited, but row projection is not a unimodular\nnormal form. No recurrence, all-parameter theorem, manuscript, or Zenodo update is claimed.\n"
+  },
+  {
    "area": "computation-complexity",
    "artifacts": [
     {

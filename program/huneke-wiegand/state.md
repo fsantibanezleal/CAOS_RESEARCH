@@ -133,9 +133,19 @@
 | 2026-08-30 | inconclusive | active | EXP-039 declared for HWB-066: test whether the combined parity core splits into bounded recurring defect-one connected components before spending on another coefficient |
 | 2026-08-30 | active | refuted | EXP-039 refutes bounded defect-one components but exposes four latent sectors and a `p=9` support merger; all defective blocks are orientation-sensitive |
 | 2026-08-30 | refuted | active | EXP-040 declared for HWB-067: test merged-sector partitions `67+5` at `p=10` and conditionally `96+6` at `p=11`, then extract signed bridge relations |
-| 2026-08-30 | active | refuted | EXP-040 confirms exact `67+5` at `p=10` but refutes P2 with `95+7` at `p=11`; component identity is not a stable sector grading and P3 is not attempted |
+| 2026-08-30 | active | refuted | EXP-040 confirms exact `67+5` at `p=10` but refutes P2 with `95+7` at `p=11`; its simple partition transport fails, while semantic component identity remains unresolved and P3 is not attempted |
+| 2026-08-31 | refuted | active | EXP-041 declared for HWB-068: exact semantic interval fingerprints must decide the isolated-component lineage across `p=8,...,11` before any signed bridge deletion |
+| 2026-08-31 | active | refuted | EXP-041 passes P1 finitely but refutes P2/P3: the isolated component retains one normalized twelve-atom `R` skeleton through `p=11`, so the `5 -> 7` jump is internal; the distinguished row is absent from all defective cores |
+| 2026-08-31 | refuted | active | EXP-042 declared for HWB-069: independently extract the persistent signed component and test first-Bockstein ranks `3,4,5,7` before any further coefficient sweep |
+| 2026-08-31 | active | confirmed | EXP-042 passes P1/P2/P3: independently audited first-Bockstein ranks are `3,4,5,7`, proving exactly that many valuation-one Smith factors; representative atom localization is pivot dependent |
+| 2026-08-31 | confirmed | active | EXP-043 declared for HWB-070: prove the four rational ranks by verified distinct-prime modular ceilings and exact Hadamard product bounds |
+| 2026-08-31 | active | confirmed | EXP-043 passes P1/P2/P3: audited rational ranks are `1002,1607,2450,3586`; the complete isolated 2-primary cokernels are `(Z/2)^(3,4,5,7)` |
+| 2026-08-31 | confirmed | active | EXP-044 declared for HWB-071: exact row projections test whether `D:B` and `K:C0` are a necessary and sufficient two-sided Bockstein bridge |
+| 2026-08-31 | active | refuted | EXP-044 passes necessity and audit consistency but refutes sufficiency: every deletion and the two-atom union have Bockstein zero, so a larger signed circuit is essential |
+| 2026-08-31 | refuted | active | EXP-045 declared for HWB-071: enumerate the complete six-row-atom subset lattice and extract stable minimal Bockstein carriers |
+| 2026-08-31 | active | refuted | EXP-045 refutes all declared predictions but proves a stable full-carrier antichain `{59,62}`; core mask `58` has ranks `1,2,3,5` and either completion adds exactly two |
 
-Current state: **EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
+Current state: **EXP-043 and EXP-042 are confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
 inconclusive with two finite passes; EXP-037 is refuted; EXP-036 remains confirmed with structural
 propagation unresolved.** The complete `(10,2)` block has surviving dimensions
 `4240` over `GF(2)` and `4168` over both `GF(3)` and `GF(5)`, so `e_10=72`; this refutes the
@@ -144,7 +154,18 @@ finite sequence is now `1,4,9,18,31,49,72,102,138`. EXP-038's separately declare
 passes at both `p=11` and `p=12`, but the recurrence and degree-six relation remain unproved.
 EXP-039 refutes bounded defect-one components but finds latent sector dimensions
 `binom(p-2,3),p-4,p-4,p-5`; EXP-040 localizes the first correction with exact `67+5` at `p=10`
-but refutes its simple transport with `95+7` at `p=11`. HWB-068 now owns semantic sector tagging.
+but refutes its simple transport with `95+7` at `p=11`. EXP-041 proves finitely that the isolated
+block does not switch semantic lineage: its normalized twelve-atom skeleton persists through
+`p=11`, with defect sequence `3,4,5,7`. HWB-069 now owns its signed normal form.
+EXP-042 proves that the first Bockstein has those same ranks, so each isolated integer matrix has
+exactly that many nonzero Smith factors of 2-adic valuation one. EXP-043 supplies the matching
+rational-rank certificate and proves the complete isolated 2-primary types
+`(Z/2)^(3,4,5,7)`. EXP-044 proves that `D:B` and `K:C0` are necessary interfaces but their union
+is insufficient. HWB-071 now requires the complete six-row-atom carrier lattice before any
+uniform integral matching is claimed.
+EXP-045 completes that finite lattice: minimal full carriers are `59` and `62` throughout, while
+the minimal nonzero carrier changes from `58` to `56` at `p=11`. The next proof gate is the
+relative integral equivalence of the two stable completions and the separate threshold quotient.
 The cubic-source gap is at least `3(p-1)^2` for all `p>=4`, `2<=t<=p-2`, so the exact
 `A_p` and `C_p` values agree throughout this family.  HWB-061 remains active for an infinite
 connecting-parity theorem. HWB-062 is done: the 53-page v0.23 is public and fresh-download
