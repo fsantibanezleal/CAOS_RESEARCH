@@ -138,6 +138,7 @@
 | 2026-08-31 | active | refuted | EXP-041 passes P1 finitely but refutes P2/P3: the isolated component retains one normalized twelve-atom `R` skeleton through `p=11`, so the `5 -> 7` jump is internal; the distinguished row is absent from all defective cores |
 | 2026-08-31 | refuted | active | EXP-042 declared for HWB-069: independently extract the persistent signed component and test first-Bockstein ranks `3,4,5,7` before any further coefficient sweep |
 | 2026-08-31 | active | confirmed | EXP-042 passes P1/P2/P3: independently audited first-Bockstein ranks are `3,4,5,7`, proving exactly that many valuation-one Smith factors; representative atom localization is pivot dependent |
+| 2026-08-31 | confirmed | active | EXP-043 declared for HWB-070: prove the four rational ranks by verified distinct-prime modular ceilings and exact Hadamard product bounds |
 
 Current state: **EXP-042 is confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
 inconclusive with two finite passes; EXP-037 is refuted; EXP-036 remains confirmed with structural

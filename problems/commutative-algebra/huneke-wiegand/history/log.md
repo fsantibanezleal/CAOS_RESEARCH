@@ -1613,3 +1613,14 @@
 - HWB-070 opens the exact rational-rank upper gate. A distinct-prime product exceeding the
   Hadamard minor bound can close the finite 2-primary Smith statement without a full Smith form.
   No recurrence, all-parameter theorem, manuscript, or Zenodo update follows yet.
+
+## 2026-08-31 - EXP-043 rational-rank certificate declared
+
+- A full Smith computation is replaced by an exact modular determinant certificate. If every
+  selected prime gives rank at most `r`, every `(r+1)` minor is divisible by their product `Q`.
+- The exact gate `Q^2>4*d^(r+1)`, with `d` the maximum column degree, makes Hadamard's bound smaller
+  than `Q/2` and forces all those minors to vanish over the integers.
+- EXP-043 predicts rational ranks `1002,1607,2450,3586`. Combined with EXP-042, a pass completely
+  identifies the tested isolated 2-primary cokernels as `(Z/2)^(3,4,5,7)`.
+- Primality, distinctness, opposite-pivot ranks, and the exact product inequality require an
+  independent audit. The finite certificate does not open an all-parameter or publication claim.

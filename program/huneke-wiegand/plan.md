@@ -1279,3 +1279,16 @@ minors vanish over the integers and `rank_Q=r`. Combined with EXP-042, this woul
 complete 2-primary torsion of each tested isolated cokernel is elementary. A uniform
 matched-block/chain-map theorem remains necessary for an all-parameter result. No manuscript or
 Zenodo gate opens from the finite Bockstein result.
+
+## 2026-08-31 - EXP-043 Hadamard rational-rank gate
+
+EXP-043 is declared before modular computation. For each isolated matrix, let `r` be the frozen
+`GF(3)` rank and `d` its maximum column degree. Distinct verified 61-bit primes must all give rank
+`r`; their exact product `Q` is accumulated until `Q^2>4*d^(r+1)`. Then every `(r+1)` minor is
+divisible by `Q` and strictly bounded by `Q/2`, proving it is zero. The existing rank-`r` minor
+modulo three supplies the matching lower bound.
+
+The strong prediction is `rank_Q=1002,1607,2450,3586` for `p=8,9,10,11`. Combined with EXP-042,
+this would completely identify the finite isolated 2-primary cokernels as elementary groups of
+ranks `3,4,5,7`. Opposite-pivot modular recomputation and deterministic primality verification are
+mandatory. No all-parameter or publication claim is opened.

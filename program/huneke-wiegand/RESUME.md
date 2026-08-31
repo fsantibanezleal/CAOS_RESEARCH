@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-31. Lifecycle: EXP-042 is CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
+Updated: 2026-08-31. Lifecycle: EXP-043 is DECLARED; EXP-042 is CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
 with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
@@ -373,6 +373,7 @@ campaign is supporting evidence, not the proof.
 | EXP-040 | REFUTED; P1 PASSES | exact `67+5` localizes the first correction at `p=10`; `95+7` refutes the declared `96+6` transport at `p=11`; P3 not attempted |
 | EXP-041 | REFUTED; P1 PASSES | every frozen component is reproduced; the isolated `R` block keeps one normalized twelve-atom skeleton through `p=11`, refuting the switch; the distinguished row is absent from all defective cores |
 | EXP-042 | CONFIRMED FINITELY | exact first-Bockstein ranks `3,4,5,7` prove that many valuation-one Smith factors; high/low pivot atom representatives differ |
+| EXP-043 | DECLARED | certify the four rational ranks by distinct-prime modular ceilings and exact Hadamard product bounds; then close finite 2-primary torsion |
 
 ## 3a. Exact evidence anchors
 
@@ -471,7 +472,7 @@ campaign is supporting evidence, not the proof.
 
 ## 4. In flight
 
-EXP-042 is CONFIRMED finitely and advances HWB-069; HWB-070 owns the rational-rank upper gate.
+EXP-043 is DECLARED and owns HWB-070. EXP-042 is CONFIRMED finitely and advances HWB-069.
 EXP-041 is REFUTED overall, with its P1 finite classifier retained; HWB-068 is done. EXP-040 is
 REFUTED overall, with its P1 finite localization retained. EXP-037 exactly
 refutes the previous series at its first new value:
@@ -810,8 +811,8 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Declare the HWB-070 rational-rank experiment before computation. Use distinct-prime modular
-   ranks and a Hadamard bound to certify `rank_Q=rank_GF(3)` for the four isolated matrices.
+1. Implement and smoke-test EXP-043 at `p=8`. Verify each 61-bit prime, recompute modular ranks,
+   and require the exact squared Hadamard inequality before accepting a rational-rank certificate.
 2. If the rank certificate passes, combine it with EXP-042 to close the complete finite 2-primary
    Smith statement. Then extract the signed `D:B <-> K:C0` bridge without treating either pivot
    representative as canonical. Require explicit parameter maps before claiming OI/FI stability.
