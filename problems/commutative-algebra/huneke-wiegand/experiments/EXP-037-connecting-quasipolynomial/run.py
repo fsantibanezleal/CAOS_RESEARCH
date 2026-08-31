@@ -454,6 +454,7 @@ def rank_matrix_after_leaf_peeling(
     column_count: int,
     entries_for_column: EntryFunction,
     primes: tuple[int, ...],
+    core_order: str,
     budget: Budget,
 ) -> tuple[dict[int, int], dict[str, object]]:
     """Rank a sparse matrix after exact two-sided leaf cancellation.
@@ -652,8 +653,14 @@ def rank_matrix_after_leaf_peeling(
         for column, is_active in enumerate(active_columns)
         if is_active and column_degrees[column] > 0
     ]
-    final_local_rows.sort(key=row_degrees.__getitem__)
-    final_local_columns.sort(key=column_degrees.__getitem__)
+    if core_order == "low-degree":
+        final_local_rows.sort(key=row_degrees.__getitem__)
+        final_local_columns.sort(key=column_degrees.__getitem__)
+    elif core_order == "reverse-low-degree":
+        final_local_rows.sort(key=row_degrees.__getitem__, reverse=True)
+        final_local_columns.sort(key=column_degrees.__getitem__, reverse=True)
+    elif core_order != "canonical":
+        raise ValueError(f"unknown core order: {core_order}")
     final_row_map = array("i", [-1]) * row_count
     for new_row, old_row in enumerate(final_local_rows):
         final_row_map[core_global_rows[old_row]] = new_row
@@ -720,6 +727,7 @@ def rank_matrix_after_leaf_peeling(
         "residual_rows": residual_rows,
         "residual_columns": residual_columns,
         "residual_nonzeros": residual_nonzeros,
+        "core_order": core_order,
         "core_ranks": core_ranks,
     }
     return ranks, profile
@@ -730,6 +738,7 @@ def peeling_field_ranks(
     basis: dict[str, object],
     d_rows: list[object],
     primes: tuple[int, ...],
+    core_order: str,
     budget: Budget,
 ) -> tuple[dict[int, dict[str, int]], dict[str, dict[str, object]]]:
     """Compute K, D, and combined ranks with a shared structural strategy."""
@@ -784,6 +793,7 @@ def peeling_field_ranks(
         column_count=len(kernel_domain),
         entries_for_column=kernel_entries,
         primes=primes,
+        core_order=core_order,
         budget=budget,
     )
     d_ranks, d_profile = rank_matrix_after_leaf_peeling(
@@ -792,6 +802,7 @@ def peeling_field_ranks(
         column_count=len(source),
         entries_for_column=d_entries,
         primes=primes,
+        core_order=core_order,
         budget=budget,
     )
     combined_ranks, combined_profile = rank_matrix_after_leaf_peeling(
@@ -800,6 +811,7 @@ def peeling_field_ranks(
         column_count=len(source) + len(kernel_domain),
         entries_for_column=combined_entries,
         primes=primes,
+        core_order=core_order,
         budget=budget,
     )
     field_rows: dict[int, dict[str, int]] = {}
@@ -868,6 +880,12 @@ def main() -> int:
         default="peel",
         help="exact rank engine; streaming is retained as a small-cell audit",
     )
+    parser.add_argument(
+        "--core-order",
+        choices=("low-degree", "canonical", "reverse-low-degree"),
+        default="low-degree",
+        help="residual row/column order; alternate orders provide rank audits",
+    )
     parser.add_argument("--budget-seconds", type=float, default=1800.0)
     parser.add_argument("--memory-gib", type=float, default=24.0)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
@@ -896,6 +914,7 @@ def main() -> int:
             "budget_seconds": args.budget_seconds,
             "memory_gib": args.memory_gib,
             "engine": args.engine,
+            "core_order": args.core_order,
         },
         "premise_hashes": verify_premises(),
         "formula_certificate": stored_formula_certificate(),
@@ -934,7 +953,7 @@ def main() -> int:
             if args.engine == "peel":
                 print("starting exact leaf-peeling ranks", flush=True)
                 all_field_rows, profiles = peeling_field_ranks(
-                    exp036, basis, d_rows, fields, budget
+                    exp036, basis, d_rows, fields, args.core_order, budget
                 )
                 row["structural_profiles"] = profiles
                 for prime, field_row in all_field_rows.items():
