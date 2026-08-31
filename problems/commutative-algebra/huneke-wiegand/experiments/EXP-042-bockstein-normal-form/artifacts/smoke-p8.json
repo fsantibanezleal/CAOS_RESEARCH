@@ -1,0 +1,170 @@
+{
+  "experiment": "EXP-042",
+  "route": "first Bockstein of the persistent isolated signed component",
+  "status": "COMPLETE",
+  "parameters": {
+    "p_min": 8,
+    "p_max": 8,
+    "t": 2,
+    "budget_seconds": 600.0,
+    "memory_gib": 20.0
+  },
+  "premise_hashes": {
+    "EXP-037 rank engine": "1abebc24c99398dded97aa08216211db089889e154736ed9eb5a7202de0b5df0",
+    "EXP-039 component engine": "8ab5678829094a2b314a23889201b06f555aafc5af176500ef62a5eb30e4a352",
+    "EXP-039 p8-p9 components": "831a4300cac10bf44753050a686a7993fabef09bf28b4332c6bb1fb9881c9e2c",
+    "EXP-040 p10-p11 components": "ad1fec04199ff94b803f95f98650c8c8ab386386240d584f447afbb9fe27668b",
+    "EXP-041 semantic profiles": "069e587b779bd1571d72e1a47bf74f4d1640dae5fbbf09907d2bf798c4941534"
+  },
+  "rows": [
+    {
+      "p": 8,
+      "rows": 2675,
+      "columns": 1094,
+      "nonzeros": 6747,
+      "support_hash": "226fe0db14b3ace29537ba3c7a3d4ceccf78b19d3591badc69ed5e5c6eb02f5b",
+      "signed_hash": "7b1b2c8c93fd9919c5415d42688ccbf6ea852c3bd1514a891a9122b76950757f",
+      "ranks": {
+        "2": 999,
+        "3": 1002,
+        "5": 1002
+      },
+      "frozen_checks": {
+        "rows": true,
+        "columns": true,
+        "nonzeros": true,
+        "support_hash": true,
+        "signed_hash": true,
+        "rank_two": true,
+        "rank_three": true,
+        "rank_five": true,
+        "skeleton": true,
+        "defect": true
+      },
+      "bockstein": {
+        "forward": {
+          "order": "forward",
+          "rank_mod_two": 999,
+          "kernel_dimension": 95,
+          "kernel_basis_hash": "c1b6f6c8f27d491e7590f45de1c95140eef841f05f3921ebe7eaee9afa6cc04c",
+          "bockstein_rank": 3,
+          "bockstein_class_hash": "fcca4a2126ff82f949e942bbff6ddbe27fcb09abf7d4665a3a24d9372876f8ef",
+          "independent_witnesses": [
+            {
+              "cycle_hash": "265c2b38484d126d0beabaffd7ee1e4bcc114b009ecc1a8c95454a7fd159de1f",
+              "cycle_weight": 34,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 17,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 17
+              },
+              "divided_boundary_hash": "2599c4fad4eb43302e802a42b93c0504940dd89b0ab970ca18c714d8771ca8ac",
+              "quotient_class_hash": "3624a70fba20032894e7a4ff80de916402fcca1825b282c0997a981d0c78bb2e",
+              "quotient_weight": 3,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3
+              }
+            },
+            {
+              "cycle_hash": "20fee8826557da420c4ddab05b87efdad594c9bd3e0cb05d0a14e8bb69d3dff6",
+              "cycle_weight": 65,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 28,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 37
+              },
+              "divided_boundary_hash": "d75e3e28728377411bb6b1f22f50d8167a1207983fcb62e84bd14e8667e66125",
+              "quotient_class_hash": "e6eafcd5322fcfef34bb08723a1a92c60be8da4c6f858f064703f4d24efb36a0",
+              "quotient_weight": 2,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 2
+              }
+            },
+            {
+              "cycle_hash": "b399eb2f9e3e43d23f4043339a259a53b49545291929016ef5ffe76523138c9d",
+              "cycle_weight": 55,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 24,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 31
+              },
+              "divided_boundary_hash": "6f5d96f9517420a1ed1a8a9149ef833773385c119f8fa51a69df8c377301b840",
+              "quotient_class_hash": "58291c70bda570deab450c38afc302d61b6cfd9528885e605df9e31eeefa111b",
+              "quotient_weight": 1,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1
+              }
+            }
+          ]
+        },
+        "reverse": {
+          "order": "reverse",
+          "rank_mod_two": 999,
+          "kernel_dimension": 95,
+          "kernel_basis_hash": "6e363dd3dec0bac48ac74cd396890b27ed9d8313d016df162623c7e4eab403cc",
+          "bockstein_rank": 3,
+          "bockstein_class_hash": "c1c53d4c1c2c3327971bf03f539e595c6100efc33d1e51a451b59b4f0e50cbab",
+          "independent_witnesses": [
+            {
+              "cycle_hash": "265c2b38484d126d0beabaffd7ee1e4bcc114b009ecc1a8c95454a7fd159de1f",
+              "cycle_weight": 34,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 17,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 17
+              },
+              "divided_boundary_hash": "2599c4fad4eb43302e802a42b93c0504940dd89b0ab970ca18c714d8771ca8ac",
+              "quotient_class_hash": "3624a70fba20032894e7a4ff80de916402fcca1825b282c0997a981d0c78bb2e",
+              "quotient_weight": 3,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3
+              }
+            },
+            {
+              "cycle_hash": "520da0ebf2252b1a67ee77f094d8f613c26a1897744557ff57f6dd440fe51a13",
+              "cycle_weight": 181,
+              "cycle_column_atoms": {
+                "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 13,
+                "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 88,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 79
+              },
+              "divided_boundary_hash": "5a1db445fdb5102391642c83a24bc710d4e008a5ac589311f89f6dadbdf56f24",
+              "quotient_class_hash": "4625bf639642a5f4fa2088f123e2a43dc4a40bb90d41afde74e6e847de5e6d1c",
+              "quotient_weight": 4,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 4
+              }
+            },
+            {
+              "cycle_hash": "7f207504e285efa675f677b777ee3897b7bcf2ccde34a979ca2bda5b6cc94f1a",
+              "cycle_weight": 152,
+              "cycle_column_atoms": {
+                "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 15,
+                "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 68,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 68
+              },
+              "divided_boundary_hash": "a09fec574b69f52419572ab7b4ef5bb8f0e56e2b9324fa1bcd2cbf228af98685",
+              "quotient_class_hash": "b81f559ad67d4f9061e9f7c53d57aae33ab2250bc0d386a034f5de8dad687b40",
+              "quotient_weight": 6,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 6
+              }
+            }
+          ]
+        }
+      },
+      "order_agreement": {
+        "rank_mod_two": true,
+        "kernel_dimension": true,
+        "bockstein_rank": true
+      },
+      "prediction_matches": true,
+      "matrix_artifact": "matrix-p8.json",
+      "matrix_artifact_sha256": "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
+      "matrix_internal_hash": "701aa2498001518fbb0aaf47941205fdc8add56944331c4074d5c917b50a76b3"
+    }
+  ],
+  "elapsed_seconds": 8.270046400000865,
+  "p1_status": "NOT_EVALUATED",
+  "p2_status": "NOT_EVALUATED",
+  "p3_status": "NOT_EVALUATED",
+  "artifact_hash": "9c501319b7a981f8b9b8e19496b900c84dc07ca19b1c889096a7b199ea408f4c"
+}
