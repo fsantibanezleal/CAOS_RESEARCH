@@ -1,0 +1,802 @@
+{
+  "experiment": "EXP-044",
+  "route": "row-projection localization of the signed Bockstein bridge",
+  "status": "COMPLETE",
+  "parameters": {
+    "p_min": 8,
+    "p_max": 11,
+    "budget_seconds": 1200.0,
+    "memory_gib": 16.0
+  },
+  "target_atoms": {
+    "db": "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]",
+    "kc0": "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]"
+  },
+  "premise_hashes": {
+    "EXP-042-bockstein-normal-form\\run.py": "3a57fc52a6a1e10ba42d97c6ebe27062324b8c90b76df7a288db41dffabd69bf",
+    "EXP-042-bockstein-normal-form\\artifacts\\results.json": "3c4ae292fb17a5daf473aee0ed37e473000de686607b5da0a0f4c357a8216ee2",
+    "EXP-042-bockstein-normal-form\\artifacts\\matrix-p8.json": "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
+    "EXP-042-bockstein-normal-form\\artifacts\\matrix-p9.json": "00c20e30d81861a599448535c2ecc7625b56b1951fe863e64d40ce6f56ff218c",
+    "EXP-042-bockstein-normal-form\\artifacts\\matrix-p10.json": "c7d6bbf0ec655296a0dafe81ab41ce70300c0fa4a837e5c141f55811e29f6f4d",
+    "EXP-042-bockstein-normal-form\\artifacts\\matrix-p11.json": "69e8519a3b239ec90c3b5af526f806a9a0aabf003517ea28233167d7e2b68dd9"
+  },
+  "rows": [
+    {
+      "p": 8,
+      "source_matrix": "matrix-p8.json",
+      "source_sha256": "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
+      "source_dimensions": [
+        2675,
+        1094
+      ],
+      "source_ranks": {
+        "2": 999,
+        "3": 1002,
+        "5": 1002
+      },
+      "source_bockstein_rank": 3,
+      "target_atom_row_counts": {
+        "db": 1706,
+        "kc0": 15
+      },
+      "projections": {
+        "drop_db": {
+          "rows": 969,
+          "columns": 1094,
+          "nonzero_columns": 815,
+          "nonzeros": 2444,
+          "kept_row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "projection_hash": "624b6296f7920dc0847be51b5375627e14106eb39c9393980e45f905127f34f8",
+          "name": "drop_db",
+          "ranks": {
+            "2": 510,
+            "3": 510,
+            "5": 510
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein": {
+            "forward": {
+              "order": "forward",
+              "rank_mod_two": 510,
+              "kernel_dimension": 584,
+              "kernel_basis_hash": "6cb0179fc6381331f57512fd0bdcd770078fa84a6cf29e67b18e23fdd19d70b0",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            },
+            "reverse": {
+              "order": "reverse",
+              "rank_mod_two": 510,
+              "kernel_dimension": 584,
+              "kernel_basis_hash": "c5c818b2b620a0e1480fa16af6f36a6f75c52c247528b782b1e6cce533d93d1c",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            }
+          },
+          "order_agreement": true,
+          "rank_gap_matches_bockstein": true
+        },
+        "drop_kc0": {
+          "rows": 2660,
+          "columns": 1094,
+          "nonzero_columns": 1094,
+          "nonzeros": 6645,
+          "kept_row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "projection_hash": "6bfb07be51833ac9a82589be23d7981886baae4876314e6d0f539c7396fc3b14",
+          "name": "drop_kc0",
+          "ranks": {
+            "2": 987,
+            "3": 987,
+            "5": 987
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein": {
+            "forward": {
+              "order": "forward",
+              "rank_mod_two": 987,
+              "kernel_dimension": 107,
+              "kernel_basis_hash": "0ec18875373903dc93741fd9c06b1c90cbfbaddb7e2e97e4e02a2e16b40ae325",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            },
+            "reverse": {
+              "order": "reverse",
+              "rank_mod_two": 987,
+              "kernel_dimension": 107,
+              "kernel_basis_hash": "510bdad32abc72e1ff25cc156aa90f2ee569ce95632e5860de394f73d650ff47",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            }
+          },
+          "order_agreement": true,
+          "rank_gap_matches_bockstein": true
+        },
+        "drop_both": {
+          "rows": 954,
+          "columns": 1094,
+          "nonzero_columns": 815,
+          "nonzeros": 2342,
+          "kept_row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "projection_hash": "2dd1edff30b8d689ea2441d2e9e42f38a04e19d109a8f78a5b32713fe5d7595c",
+          "name": "drop_both",
+          "ranks": {
+            "2": 495,
+            "3": 495,
+            "5": 495
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein": {
+            "forward": {
+              "order": "forward",
+              "rank_mod_two": 495,
+              "kernel_dimension": 599,
+              "kernel_basis_hash": "f845c6e29b8419b5b10ec976961965eb760b9d26c638036ed5cfe7a93b25bc46",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            },
+            "reverse": {
+              "order": "reverse",
+              "rank_mod_two": 495,
+              "kernel_dimension": 599,
+              "kernel_basis_hash": "27f7eef202f51c2c03f2101a86be44ae0b2739bff20c30f8a35c28bd4c90fb46",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            }
+          },
+          "order_agreement": true,
+          "rank_gap_matches_bockstein": true
+        },
+        "only_union": {
+          "rows": 1721,
+          "columns": 1094,
+          "nonzero_columns": 1065,
+          "nonzeros": 4405,
+          "kept_row_atom_counts": {
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15
+          },
+          "projection_hash": "743ff9748f82b38d8f780a45dfd6e7027612bac7a9ba94d66f005929e9431642",
+          "name": "only_union",
+          "ranks": {
+            "2": 915,
+            "3": 915,
+            "5": 915
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein": {
+            "forward": {
+              "order": "forward",
+              "rank_mod_two": 915,
+              "kernel_dimension": 179,
+              "kernel_basis_hash": "e23b620a198c49f019344adf3c7c62f4ce3204aec673983cbdb4d8e7c630cbea",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            },
+            "reverse": {
+              "order": "reverse",
+              "rank_mod_two": 915,
+              "kernel_dimension": 179,
+              "kernel_basis_hash": "cfa4a8f3dc96c17296fc2babb5491c8847b6d1975e1f191c42a9a668fe665fa0",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            }
+          },
+          "order_agreement": true,
+          "rank_gap_matches_bockstein": true
+        }
+      }
+    },
+    {
+      "p": 9,
+      "source_matrix": "matrix-p9.json",
+      "source_sha256": "00c20e30d81861a599448535c2ecc7625b56b1951fe863e64d40ce6f56ff218c",
+      "source_dimensions": [
+        4757,
+        1729
+      ],
+      "source_ranks": {
+        "2": 1603,
+        "3": 1607,
+        "5": 1607
+      },
+      "source_bockstein_rank": 4,
+      "target_atom_row_counts": {
+        "db": 3089,
+        "kc0": 19
+      },
+      "projections": {
+        "drop_db": {
+          "rows": 1668,
+          "columns": 1729,
+          "nonzero_columns": 1257,
+          "nonzeros": 4138,
+          "kept_row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 36,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 1477,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 68,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 19,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 68
+          },
+          "projection_hash": "d5bafe839d40627ea2c4a8d579ee2b091aa8f5146e6001ba4ba25143cb88f0a1",
+          "name": "drop_db",
+          "ranks": {
+            "2": 802,
+            "3": 802,
+            "5": 802
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein": {
+            "forward": {
+              "order": "forward",
+              "rank_mod_two": 802,
+              "kernel_dimension": 927,
+              "kernel_basis_hash": "7ebaf84c8c71e755a718e0d62d3167833c1c7670af4bc19d70d0951ed0c67f99",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            },
+            "reverse": {
+              "order": "reverse",
+              "rank_mod_two": 802,
+              "kernel_dimension": 927,
+              "kernel_basis_hash": "01ed1e6249bd2987626f4b5814d89cb25d4bdc3fee3f6749b928c92a1af783c2",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            }
+          },
+          "order_agreement": true,
+          "rank_gap_matches_bockstein": true
+        },
+        "drop_kc0": {
+          "rows": 4738,
+          "columns": 1729,
+          "nonzero_columns": 1729,
+          "nonzeros": 11710,
+          "kept_row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 36,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 1477,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 68,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3089,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 68
+          },
+          "projection_hash": "7115857fb3e3f620448c03b14c9e57d1c3d806c19285f53ea3788e87133e3dc5",
+          "name": "drop_kc0",
+          "ranks": {
+            "2": 1588,
+            "3": 1588,
+            "5": 1588
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein": {
+            "forward": {
+              "order": "forward",
+              "rank_mod_two": 1588,
+              "kernel_dimension": 141,
+              "kernel_basis_hash": "e8c90eba72ba289775d8bb7ceb04e46bf10976627e86458ae7457d9c37f6562e",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            },
+            "reverse": {
+              "order": "reverse",
+              "rank_mod_two": 1588,
+              "kernel_dimension": 141,
+              "kernel_basis_hash": "45cb6e09921e478969cef18364448b7cbc241f1364c066fb7d1b9c7a06b79955",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            }
+          },
+          "order_agreement": true,
+          "rank_gap_matches_bockstein": true
+        },
+        "drop_both": {
+          "rows": 1649,
+          "columns": 1729,
+          "nonzero_columns": 1257,
+          "nonzeros": 3999,
+          "kept_row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 36,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 1477,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 68,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 68
+          },
+          "projection_hash": "7e79d5b98a063e4e03b83bfec8961f151f803d95592c0508d06ad4bf9b2df80d",
+          "name": "drop_both",
+          "ranks": {
+            "2": 783,
+            "3": 783,
+            "5": 783
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein": {
+            "forward": {
+              "order": "forward",
+              "rank_mod_two": 783,
+              "kernel_dimension": 946,
+              "kernel_basis_hash": "1e69b46595ab5cbb228ed33b6a316c3de1475baaec7d8c5f5fc5122afc7e7be9",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            },
+            "reverse": {
+              "order": "reverse",
+              "rank_mod_two": 783,
+              "kernel_dimension": 946,
+              "kernel_basis_hash": "42c3d9d8e46fda3afcee134e8bdb034d02c2dd1be6a05fce49301cdfb05a78eb",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            }
+          },
+          "order_agreement": true,
+          "rank_gap_matches_bockstein": true
+        },
+        "only_union": {
+          "rows": 3108,
+          "columns": 1729,
+          "nonzero_columns": 1695,
+          "nonzeros": 7850,
+          "kept_row_atom_counts": {
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3089,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 19
+          },
+          "projection_hash": "a7bb71cc111686c449a9df924ba549b03df3cb0178b23cd966c297f6079ffb36",
+          "name": "only_union",
+          "ranks": {
+            "2": 1493,
+            "3": 1493,
+            "5": 1493
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein": {
+            "forward": {
+              "order": "forward",
+              "rank_mod_two": 1493,
+              "kernel_dimension": 236,
+              "kernel_basis_hash": "b2022415e89b893e087ffb73adbf4c6944d9f40793a80c543a666ede445e02c3",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            },
+            "reverse": {
+              "order": "reverse",
+              "rank_mod_two": 1493,
+              "kernel_dimension": 236,
+              "kernel_basis_hash": "dd1a31785b7cf6676c76978de4bdd77dc9d824d9d5e4c855be8e9a0d2151fe91",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            }
+          },
+          "order_agreement": true,
+          "rank_gap_matches_bockstein": true
+        }
+      }
+    },
+    {
+      "p": 10,
+      "source_matrix": "matrix-p10.json",
+      "source_sha256": "c7d6bbf0ec655296a0dafe81ab41ce70300c0fa4a837e5c141f55811e29f6f4d",
+      "source_dimensions": [
+        7973,
+        2607
+      ],
+      "source_ranks": {
+        "2": 2445,
+        "3": 2450,
+        "5": 2450
+      },
+      "source_bockstein_rank": 5,
+      "target_atom_row_counts": {
+        "db": 5237,
+        "kc0": 24
+      },
+      "projections": {
+        "drop_db": {
+          "rows": 2736,
+          "columns": 2607,
+          "nonzero_columns": 1860,
+          "nonzeros": 6696,
+          "kept_row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 45,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 2487,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 87,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 24,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 93
+          },
+          "projection_hash": "75b1528fad7c57a387c9b792ad797a390bbc24dca9f2099cdf675006ef8b8c37",
+          "name": "drop_db",
+          "ranks": {
+            "2": 1205,
+            "3": 1205,
+            "5": 1205
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein": {
+            "forward": {
+              "order": "forward",
+              "rank_mod_two": 1205,
+              "kernel_dimension": 1402,
+              "kernel_basis_hash": "2aaedba60e0bea22fb212f55a36be6d44894853666e1cdff584d475fbfeeec2f",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            },
+            "reverse": {
+              "order": "reverse",
+              "rank_mod_two": 1205,
+              "kernel_dimension": 1402,
+              "kernel_basis_hash": "08e51ac612cce1ad9f025f3eade3c4ea870c66589d3ada7bcba19162a5142cd3",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            }
+          },
+          "order_agreement": true,
+          "rank_gap_matches_bockstein": true
+        },
+        "drop_kc0": {
+          "rows": 7949,
+          "columns": 2607,
+          "nonzero_columns": 2607,
+          "nonzeros": 19466,
+          "kept_row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 45,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 2487,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 87,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 5237,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 93
+          },
+          "projection_hash": "69982a607db89199e4d9be91201c07809f90c9c2e228a007acf72bf8b676c060",
+          "name": "drop_kc0",
+          "ranks": {
+            "2": 2426,
+            "3": 2426,
+            "5": 2426
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein": {
+            "forward": {
+              "order": "forward",
+              "rank_mod_two": 2426,
+              "kernel_dimension": 181,
+              "kernel_basis_hash": "9811333af01653b445d9cf734d98e5ec84fea211effb850d882b57a748b1b104",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            },
+            "reverse": {
+              "order": "reverse",
+              "rank_mod_two": 2426,
+              "kernel_dimension": 181,
+              "kernel_basis_hash": "2cd9357996a74659e099beea69c520b7ea981b588a949b8339c63eb434726833",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            }
+          },
+          "order_agreement": true,
+          "rank_gap_matches_bockstein": true
+        },
+        "drop_both": {
+          "rows": 2712,
+          "columns": 2607,
+          "nonzero_columns": 1860,
+          "nonzeros": 6508,
+          "kept_row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 45,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 2487,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 87,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 93
+          },
+          "projection_hash": "0b01e791a67a6741a005022cb6a7c67cc2d42db4324578b57c4d015f67c7de62",
+          "name": "drop_both",
+          "ranks": {
+            "2": 1181,
+            "3": 1181,
+            "5": 1181
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein": {
+            "forward": {
+              "order": "forward",
+              "rank_mod_two": 1181,
+              "kernel_dimension": 1426,
+              "kernel_basis_hash": "090f9b28131b37730b62f0e19a5428e84a4880be9cb0fa24a5abbbf5732e40ab",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            },
+            "reverse": {
+              "order": "reverse",
+              "rank_mod_two": 1181,
+              "kernel_dimension": 1426,
+              "kernel_basis_hash": "8daf6b3146aaa10c2a19873a352cd0e3ac039045987eb78c6769e16022ba8080",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            }
+          },
+          "order_agreement": true,
+          "rank_gap_matches_bockstein": true
+        },
+        "only_union": {
+          "rows": 5261,
+          "columns": 2607,
+          "nonzero_columns": 2569,
+          "nonzeros": 13146,
+          "kept_row_atom_counts": {
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 5237,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 24
+          },
+          "projection_hash": "adc509f179937c34efb2343ee460647ea9b21a1fd73e9d8a84b0601427eefd0e",
+          "name": "only_union",
+          "ranks": {
+            "2": 2304,
+            "3": 2304,
+            "5": 2304
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein": {
+            "forward": {
+              "order": "forward",
+              "rank_mod_two": 2304,
+              "kernel_dimension": 303,
+              "kernel_basis_hash": "c31568c2217be63acc101dc6a0b9c0691454df6651a21973f3c484a894079515",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            },
+            "reverse": {
+              "order": "reverse",
+              "rank_mod_two": 2304,
+              "kernel_dimension": 303,
+              "kernel_basis_hash": "71b974431540a3fe78055d7181ade2b8186db8675a2f457b3ac0a7d2e7587786",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            }
+          },
+          "order_agreement": true,
+          "rank_gap_matches_bockstein": true
+        }
+      }
+    },
+    {
+      "p": 11,
+      "source_matrix": "matrix-p11.json",
+      "source_sha256": "69e8519a3b239ec90c3b5af526f806a9a0aabf003517ea28233167d7e2b68dd9",
+      "source_dimensions": [
+        12711,
+        3785
+      ],
+      "source_ranks": {
+        "2": 3579,
+        "3": 3586,
+        "5": 3586
+      },
+      "source_bockstein_rank": 7,
+      "target_atom_row_counts": {
+        "db": 8428,
+        "kc0": 29
+      },
+      "projections": {
+        "drop_db": {
+          "rows": 4283,
+          "columns": 3785,
+          "nonzero_columns": 2656,
+          "nonzeros": 10365,
+          "kept_row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 55,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 3968,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 108,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 29,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 123
+          },
+          "projection_hash": "f83e84f9ee599b3b5e6c37761904e83a61dfe6680d9c595b47894e5008d94c02",
+          "name": "drop_db",
+          "ranks": {
+            "2": 1742,
+            "3": 1742,
+            "5": 1742
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein": {
+            "forward": {
+              "order": "forward",
+              "rank_mod_two": 1742,
+              "kernel_dimension": 2043,
+              "kernel_basis_hash": "48a9b73b5a67ee8d6893cdab8a26adf3fb8f02ff2e6b5eaec402232e05fe87f7",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            },
+            "reverse": {
+              "order": "reverse",
+              "rank_mod_two": 1742,
+              "kernel_dimension": 2043,
+              "kernel_basis_hash": "4a7e7b3cd448fb7e03cca5c59620c168c5164401f22f4128cc72a8c929ce6852",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            }
+          },
+          "order_agreement": true,
+          "rank_gap_matches_bockstein": true
+        },
+        "drop_kc0": {
+          "rows": 12682,
+          "columns": 3785,
+          "nonzero_columns": 3785,
+          "nonzeros": 30831,
+          "kept_row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 55,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 3968,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 108,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 8428,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 123
+          },
+          "projection_hash": "eed447d9a62759f269571284bc025a471326e70a81647291b87f5a58c7ea8730",
+          "name": "drop_kc0",
+          "ranks": {
+            "2": 3557,
+            "3": 3557,
+            "5": 3557
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein": {
+            "forward": {
+              "order": "forward",
+              "rank_mod_two": 3557,
+              "kernel_dimension": 228,
+              "kernel_basis_hash": "86210793793f2eda0415e7c9095eefc689cee969505317a5fa5767f0b2c14de2",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            },
+            "reverse": {
+              "order": "reverse",
+              "rank_mod_two": 3557,
+              "kernel_dimension": 228,
+              "kernel_basis_hash": "7ba8cbbb8a208627bbec83cdd79e291b08056e8bed8b6d191327477e770e5de0",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            }
+          },
+          "order_agreement": true,
+          "rank_gap_matches_bockstein": true
+        },
+        "drop_both": {
+          "rows": 4254,
+          "columns": 3785,
+          "nonzero_columns": 2656,
+          "nonzeros": 10123,
+          "kept_row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 55,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 3968,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 108,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 123
+          },
+          "projection_hash": "c7132162b98be7673b1810cd6f45356b8360becf9fd53fdedbf2dc1f0b48ae45",
+          "name": "drop_both",
+          "ranks": {
+            "2": 1713,
+            "3": 1713,
+            "5": 1713
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein": {
+            "forward": {
+              "order": "forward",
+              "rank_mod_two": 1713,
+              "kernel_dimension": 2072,
+              "kernel_basis_hash": "40c5e2e3ba55981470736ba4972047d33f3f67f5baece7b0fc35d0605f92fc2e",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            },
+            "reverse": {
+              "order": "reverse",
+              "rank_mod_two": 1713,
+              "kernel_dimension": 2072,
+              "kernel_basis_hash": "c7ece685230eac4c98042f5a38a35b6a3aa81839df8b966a8aa988d2d586cab3",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            }
+          },
+          "order_agreement": true,
+          "rank_gap_matches_bockstein": true
+        },
+        "only_union": {
+          "rows": 8457,
+          "columns": 3785,
+          "nonzero_columns": 3742,
+          "nonzeros": 20950,
+          "kept_row_atom_counts": {
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 8428,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 29
+          },
+          "projection_hash": "3b6605f4872dc1b16c1828b555ab9235e025c3c4afd24c3fde39dcd021d0396e",
+          "name": "only_union",
+          "ranks": {
+            "2": 3403,
+            "3": 3403,
+            "5": 3403
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein": {
+            "forward": {
+              "order": "forward",
+              "rank_mod_two": 3403,
+              "kernel_dimension": 382,
+              "kernel_basis_hash": "d541b156308f9c38c3a003a7a4ca1ab1301e14a763528fd054ad59958c4cbabd",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            },
+            "reverse": {
+              "order": "reverse",
+              "rank_mod_two": 3403,
+              "kernel_dimension": 382,
+              "kernel_basis_hash": "1f588a3a7556f64eb57579cf63b58d8fd14e7431bec4dd451fe76977c7ad8fbf",
+              "bockstein_rank": 0,
+              "bockstein_class_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+              "independent_witnesses": []
+            }
+          },
+          "order_agreement": true,
+          "rank_gap_matches_bockstein": true
+        }
+      }
+    }
+  ],
+  "elapsed_seconds": 6.094188100003521,
+  "p1_status": "PASS_FINITE",
+  "p2_status": "REFUTED",
+  "p3_status": "PASS_FINITE",
+  "artifact_hash": "9e4b71edb03243bde06052c547d89931bbc9856150123a96f8b392905fc1fe23"
+}

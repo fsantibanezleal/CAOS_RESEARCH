@@ -1,0 +1,400 @@
+{
+  "experiment": "EXP-044",
+  "status": "PASS",
+  "artifact_hashes": {
+    "run": "39ed1d3538917d96282b22b35ac9cb1b0dc6083af879a6910f2098eb6f764517",
+    "results": "6766b6ca249f1b02ba9a83a6fb8434eea4e511172c982840fc3c6db6a192e886",
+    "matrices": {
+      "8": "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
+      "9": "00c20e30d81861a599448535c2ecc7625b56b1951fe863e64d40ce6f56ff218c",
+      "10": "c7d6bbf0ec655296a0dafe81ab41ce70300c0fa4a837e5c141f55811e29f6f4d",
+      "11": "69e8519a3b239ec90c3b5af526f806a9a0aabf003517ea28233167d7e2b68dd9"
+    }
+  },
+  "checks": {
+    "run_hash": true,
+    "results_external_hash": true,
+    "results_internal_hash": true,
+    "parameter_coverage": true,
+    "primary_complete": true,
+    "primary_verdict": true,
+    "p8_matrix_hash": true,
+    "p8_source_beta": true,
+    "p8_drop_db_dimensions": true,
+    "p8_drop_db_nonzeros": true,
+    "p8_drop_db_atom_counts": true,
+    "p8_drop_db_projection_hash": true,
+    "p8_drop_db_opposite_ranks": true,
+    "p8_drop_db_rank_two_consistency": true,
+    "p8_drop_db_opposite_bockstein": true,
+    "p8_drop_db_zero_gap": true,
+    "p8_drop_db_zero_bockstein": true,
+    "p8_drop_kc0_dimensions": true,
+    "p8_drop_kc0_nonzeros": true,
+    "p8_drop_kc0_atom_counts": true,
+    "p8_drop_kc0_projection_hash": true,
+    "p8_drop_kc0_opposite_ranks": true,
+    "p8_drop_kc0_rank_two_consistency": true,
+    "p8_drop_kc0_opposite_bockstein": true,
+    "p8_drop_kc0_zero_gap": true,
+    "p8_drop_kc0_zero_bockstein": true,
+    "p8_drop_both_dimensions": true,
+    "p8_drop_both_nonzeros": true,
+    "p8_drop_both_atom_counts": true,
+    "p8_drop_both_projection_hash": true,
+    "p8_drop_both_opposite_ranks": true,
+    "p8_drop_both_rank_two_consistency": true,
+    "p8_drop_both_opposite_bockstein": true,
+    "p8_drop_both_zero_gap": true,
+    "p8_drop_both_zero_bockstein": true,
+    "p8_only_union_dimensions": true,
+    "p8_only_union_nonzeros": true,
+    "p8_only_union_atom_counts": true,
+    "p8_only_union_projection_hash": true,
+    "p8_only_union_opposite_ranks": true,
+    "p8_only_union_rank_two_consistency": true,
+    "p8_only_union_opposite_bockstein": true,
+    "p8_only_union_zero_gap": true,
+    "p8_only_union_zero_bockstein": true,
+    "p9_matrix_hash": true,
+    "p9_source_beta": true,
+    "p9_drop_db_dimensions": true,
+    "p9_drop_db_nonzeros": true,
+    "p9_drop_db_atom_counts": true,
+    "p9_drop_db_projection_hash": true,
+    "p9_drop_db_opposite_ranks": true,
+    "p9_drop_db_rank_two_consistency": true,
+    "p9_drop_db_opposite_bockstein": true,
+    "p9_drop_db_zero_gap": true,
+    "p9_drop_db_zero_bockstein": true,
+    "p9_drop_kc0_dimensions": true,
+    "p9_drop_kc0_nonzeros": true,
+    "p9_drop_kc0_atom_counts": true,
+    "p9_drop_kc0_projection_hash": true,
+    "p9_drop_kc0_opposite_ranks": true,
+    "p9_drop_kc0_rank_two_consistency": true,
+    "p9_drop_kc0_opposite_bockstein": true,
+    "p9_drop_kc0_zero_gap": true,
+    "p9_drop_kc0_zero_bockstein": true,
+    "p9_drop_both_dimensions": true,
+    "p9_drop_both_nonzeros": true,
+    "p9_drop_both_atom_counts": true,
+    "p9_drop_both_projection_hash": true,
+    "p9_drop_both_opposite_ranks": true,
+    "p9_drop_both_rank_two_consistency": true,
+    "p9_drop_both_opposite_bockstein": true,
+    "p9_drop_both_zero_gap": true,
+    "p9_drop_both_zero_bockstein": true,
+    "p9_only_union_dimensions": true,
+    "p9_only_union_nonzeros": true,
+    "p9_only_union_atom_counts": true,
+    "p9_only_union_projection_hash": true,
+    "p9_only_union_opposite_ranks": true,
+    "p9_only_union_rank_two_consistency": true,
+    "p9_only_union_opposite_bockstein": true,
+    "p9_only_union_zero_gap": true,
+    "p9_only_union_zero_bockstein": true,
+    "p10_matrix_hash": true,
+    "p10_source_beta": true,
+    "p10_drop_db_dimensions": true,
+    "p10_drop_db_nonzeros": true,
+    "p10_drop_db_atom_counts": true,
+    "p10_drop_db_projection_hash": true,
+    "p10_drop_db_opposite_ranks": true,
+    "p10_drop_db_rank_two_consistency": true,
+    "p10_drop_db_opposite_bockstein": true,
+    "p10_drop_db_zero_gap": true,
+    "p10_drop_db_zero_bockstein": true,
+    "p10_drop_kc0_dimensions": true,
+    "p10_drop_kc0_nonzeros": true,
+    "p10_drop_kc0_atom_counts": true,
+    "p10_drop_kc0_projection_hash": true,
+    "p10_drop_kc0_opposite_ranks": true,
+    "p10_drop_kc0_rank_two_consistency": true,
+    "p10_drop_kc0_opposite_bockstein": true,
+    "p10_drop_kc0_zero_gap": true,
+    "p10_drop_kc0_zero_bockstein": true,
+    "p10_drop_both_dimensions": true,
+    "p10_drop_both_nonzeros": true,
+    "p10_drop_both_atom_counts": true,
+    "p10_drop_both_projection_hash": true,
+    "p10_drop_both_opposite_ranks": true,
+    "p10_drop_both_rank_two_consistency": true,
+    "p10_drop_both_opposite_bockstein": true,
+    "p10_drop_both_zero_gap": true,
+    "p10_drop_both_zero_bockstein": true,
+    "p10_only_union_dimensions": true,
+    "p10_only_union_nonzeros": true,
+    "p10_only_union_atom_counts": true,
+    "p10_only_union_projection_hash": true,
+    "p10_only_union_opposite_ranks": true,
+    "p10_only_union_rank_two_consistency": true,
+    "p10_only_union_opposite_bockstein": true,
+    "p10_only_union_zero_gap": true,
+    "p10_only_union_zero_bockstein": true,
+    "p11_matrix_hash": true,
+    "p11_source_beta": true,
+    "p11_drop_db_dimensions": true,
+    "p11_drop_db_nonzeros": true,
+    "p11_drop_db_atom_counts": true,
+    "p11_drop_db_projection_hash": true,
+    "p11_drop_db_opposite_ranks": true,
+    "p11_drop_db_rank_two_consistency": true,
+    "p11_drop_db_opposite_bockstein": true,
+    "p11_drop_db_zero_gap": true,
+    "p11_drop_db_zero_bockstein": true,
+    "p11_drop_kc0_dimensions": true,
+    "p11_drop_kc0_nonzeros": true,
+    "p11_drop_kc0_atom_counts": true,
+    "p11_drop_kc0_projection_hash": true,
+    "p11_drop_kc0_opposite_ranks": true,
+    "p11_drop_kc0_rank_two_consistency": true,
+    "p11_drop_kc0_opposite_bockstein": true,
+    "p11_drop_kc0_zero_gap": true,
+    "p11_drop_kc0_zero_bockstein": true,
+    "p11_drop_both_dimensions": true,
+    "p11_drop_both_nonzeros": true,
+    "p11_drop_both_atom_counts": true,
+    "p11_drop_both_projection_hash": true,
+    "p11_drop_both_opposite_ranks": true,
+    "p11_drop_both_rank_two_consistency": true,
+    "p11_drop_both_opposite_bockstein": true,
+    "p11_drop_both_zero_gap": true,
+    "p11_drop_both_zero_bockstein": true,
+    "p11_only_union_dimensions": true,
+    "p11_only_union_nonzeros": true,
+    "p11_only_union_atom_counts": true,
+    "p11_only_union_projection_hash": true,
+    "p11_only_union_opposite_ranks": true,
+    "p11_only_union_rank_two_consistency": true,
+    "p11_only_union_opposite_bockstein": true,
+    "p11_only_union_zero_gap": true,
+    "p11_only_union_zero_bockstein": true
+  },
+  "rows": [
+    {
+      "p": 8,
+      "source_bockstein_rank": 3,
+      "target_atom_row_counts": {
+        "db": 1706,
+        "kc0": 15
+      },
+      "projections": {
+        "drop_db": {
+          "rows": 969,
+          "nonzeros": 2444,
+          "ranks": {
+            "2": 510,
+            "3": 510,
+            "5": 510
+          },
+          "bockstein_rank": 0,
+          "projection_hash": "624b6296f7920dc0847be51b5375627e14106eb39c9393980e45f905127f34f8"
+        },
+        "drop_kc0": {
+          "rows": 2660,
+          "nonzeros": 6645,
+          "ranks": {
+            "2": 987,
+            "3": 987,
+            "5": 987
+          },
+          "bockstein_rank": 0,
+          "projection_hash": "6bfb07be51833ac9a82589be23d7981886baae4876314e6d0f539c7396fc3b14"
+        },
+        "drop_both": {
+          "rows": 954,
+          "nonzeros": 2342,
+          "ranks": {
+            "2": 495,
+            "3": 495,
+            "5": 495
+          },
+          "bockstein_rank": 0,
+          "projection_hash": "2dd1edff30b8d689ea2441d2e9e42f38a04e19d109a8f78a5b32713fe5d7595c"
+        },
+        "only_union": {
+          "rows": 1721,
+          "nonzeros": 4405,
+          "ranks": {
+            "2": 915,
+            "3": 915,
+            "5": 915
+          },
+          "bockstein_rank": 0,
+          "projection_hash": "743ff9748f82b38d8f780a45dfd6e7027612bac7a9ba94d66f005929e9431642"
+        }
+      }
+    },
+    {
+      "p": 9,
+      "source_bockstein_rank": 4,
+      "target_atom_row_counts": {
+        "db": 3089,
+        "kc0": 19
+      },
+      "projections": {
+        "drop_db": {
+          "rows": 1668,
+          "nonzeros": 4138,
+          "ranks": {
+            "2": 802,
+            "3": 802,
+            "5": 802
+          },
+          "bockstein_rank": 0,
+          "projection_hash": "d5bafe839d40627ea2c4a8d579ee2b091aa8f5146e6001ba4ba25143cb88f0a1"
+        },
+        "drop_kc0": {
+          "rows": 4738,
+          "nonzeros": 11710,
+          "ranks": {
+            "2": 1588,
+            "3": 1588,
+            "5": 1588
+          },
+          "bockstein_rank": 0,
+          "projection_hash": "7115857fb3e3f620448c03b14c9e57d1c3d806c19285f53ea3788e87133e3dc5"
+        },
+        "drop_both": {
+          "rows": 1649,
+          "nonzeros": 3999,
+          "ranks": {
+            "2": 783,
+            "3": 783,
+            "5": 783
+          },
+          "bockstein_rank": 0,
+          "projection_hash": "7e79d5b98a063e4e03b83bfec8961f151f803d95592c0508d06ad4bf9b2df80d"
+        },
+        "only_union": {
+          "rows": 3108,
+          "nonzeros": 7850,
+          "ranks": {
+            "2": 1493,
+            "3": 1493,
+            "5": 1493
+          },
+          "bockstein_rank": 0,
+          "projection_hash": "a7bb71cc111686c449a9df924ba549b03df3cb0178b23cd966c297f6079ffb36"
+        }
+      }
+    },
+    {
+      "p": 10,
+      "source_bockstein_rank": 5,
+      "target_atom_row_counts": {
+        "db": 5237,
+        "kc0": 24
+      },
+      "projections": {
+        "drop_db": {
+          "rows": 2736,
+          "nonzeros": 6696,
+          "ranks": {
+            "2": 1205,
+            "3": 1205,
+            "5": 1205
+          },
+          "bockstein_rank": 0,
+          "projection_hash": "75b1528fad7c57a387c9b792ad797a390bbc24dca9f2099cdf675006ef8b8c37"
+        },
+        "drop_kc0": {
+          "rows": 7949,
+          "nonzeros": 19466,
+          "ranks": {
+            "2": 2426,
+            "3": 2426,
+            "5": 2426
+          },
+          "bockstein_rank": 0,
+          "projection_hash": "69982a607db89199e4d9be91201c07809f90c9c2e228a007acf72bf8b676c060"
+        },
+        "drop_both": {
+          "rows": 2712,
+          "nonzeros": 6508,
+          "ranks": {
+            "2": 1181,
+            "3": 1181,
+            "5": 1181
+          },
+          "bockstein_rank": 0,
+          "projection_hash": "0b01e791a67a6741a005022cb6a7c67cc2d42db4324578b57c4d015f67c7de62"
+        },
+        "only_union": {
+          "rows": 5261,
+          "nonzeros": 13146,
+          "ranks": {
+            "2": 2304,
+            "3": 2304,
+            "5": 2304
+          },
+          "bockstein_rank": 0,
+          "projection_hash": "adc509f179937c34efb2343ee460647ea9b21a1fd73e9d8a84b0601427eefd0e"
+        }
+      }
+    },
+    {
+      "p": 11,
+      "source_bockstein_rank": 7,
+      "target_atom_row_counts": {
+        "db": 8428,
+        "kc0": 29
+      },
+      "projections": {
+        "drop_db": {
+          "rows": 4283,
+          "nonzeros": 10365,
+          "ranks": {
+            "2": 1742,
+            "3": 1742,
+            "5": 1742
+          },
+          "bockstein_rank": 0,
+          "projection_hash": "f83e84f9ee599b3b5e6c37761904e83a61dfe6680d9c595b47894e5008d94c02"
+        },
+        "drop_kc0": {
+          "rows": 12682,
+          "nonzeros": 30831,
+          "ranks": {
+            "2": 3557,
+            "3": 3557,
+            "5": 3557
+          },
+          "bockstein_rank": 0,
+          "projection_hash": "eed447d9a62759f269571284bc025a471326e70a81647291b87f5a58c7ea8730"
+        },
+        "drop_both": {
+          "rows": 4254,
+          "nonzeros": 10123,
+          "ranks": {
+            "2": 1713,
+            "3": 1713,
+            "5": 1713
+          },
+          "bockstein_rank": 0,
+          "projection_hash": "c7132162b98be7673b1810cd6f45356b8360becf9fd53fdedbf2dc1f0b48ae45"
+        },
+        "only_union": {
+          "rows": 8457,
+          "nonzeros": 20950,
+          "ranks": {
+            "2": 3403,
+            "3": 3403,
+            "5": 3403
+          },
+          "bockstein_rank": 0,
+          "projection_hash": "3b6605f4872dc1b16c1828b555ab9235e025c3c4afd24c3fde39dcd021d0396e"
+        }
+      }
+    }
+  ],
+  "result": {
+    "p1_status": "PASS_FINITE",
+    "p2_status": "REFUTED",
+    "p3_status": "PASS_FINITE",
+    "interpretation": "each marked atom is necessary, their union is insufficient, and the finite Bockstein therefore belongs to a larger signed circuit"
+  },
+  "scope": "exact finite row-projection diagnostic for p=8,...,11; no integral equivalence, recurrence, or all-parameter theorem is claimed",
+  "certificate_hash": "21dfcfee3f8d2d6b58aa4e582880ca93c7e3b2ec3f3cb8af510f217be0a33930"
+}
