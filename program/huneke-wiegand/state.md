@@ -125,8 +125,12 @@
 | 2026-08-30 | active | confirmed | EXP-036 extends exact targets through `(9,2)`, refutes both finite excess fits, independently validates the ranks, localizes the compact factor-two residual, and proves all-parameter absence of the cubic source at every declared target |
 | 2026-08-30 | confirmed | published | 53-page manuscript v0.23 passed claim/build/render, sole-authorship, exact-draft, publication, concept-latest, and fresh-download gates; DOI `10.5281/zenodo.22181972` matches the committed PDF exactly |
 | 2026-08-30 | published | published | PR #230 passed `guards` and `test` and merged EXP-036 plus v0.23 to `develop` at `fc40e74`; PR #231 passed both jobs and promoted the exact payload to `main` at `817cc01` |
+| 2026-08-30 | published | active | EXP-037 declared for HWB-064: exact `p=10,11` falsification of a new period-six cubic excess candidate plus integral connecting-presentation reduction; no new result claimed |
 
-Current state: **EXP-036 is confirmed with structural propagation unresolved.  Exact complete
+Current state: **EXP-037 is declared; EXP-036 remains confirmed with structural propagation
+unresolved.** The new candidate has generating function
+`(1+2x+x^2+x^3)/((1-x)^2(1-x^2)(1-x^3))` and forces `e_10=73`, `e_11=104`; it is not yet
+evidence or a theorem. Exact complete
 targets through `(9,2)` prove repeated characteristic dependence by two mechanisms.  For tested
 `t=2` cells with `5<=p<=9`, the kernel-cokernel dimensions agree in all three tested fields and the connecting quotient
 creates characteristic-two excesses `4,9,18,31,49`; both the square and quadratic fits are

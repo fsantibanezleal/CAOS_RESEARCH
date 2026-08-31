@@ -1,6 +1,9 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-30. Lifecycle: EXP-036 is CONFIRMED with structural propagation unresolved.
+Updated: 2026-08-30. Lifecycle: EXP-037 is DECLARED; EXP-036 is CONFIRMED with structural
+propagation unresolved. EXP-037 tests the new period-six cubic candidate
+`(1+2x+x^2+x^3)/((1-x)^2(1-x^2)(1-x^3))`, which forces `e_10=73` and `e_11=104`. No new exact
+cell or infinite theorem is claimed at declaration.
 Exact complete-target calculations prove repeated characteristic dependence at eight of the nine
 tested family cells through `(p,t)=(9,2)`.  The tested `t=2` cells with `5<=p<=9` have the same
 kernel-cokernel dimension over `GF(2)`, `GF(3)`, and `GF(1000003)` but a smaller connecting image
@@ -353,6 +356,7 @@ campaign is supporting evidence, not the proof.
 | EXP-034 | CONFIRMED | exact characteristic-free class `beta_(p,(p+2,8p-1+p(p+1)/2))=1` in `K_p`, `A_p`, and `C_p` |
 | EXP-035 | CONFIRMED with P3 mechanism refuted | all primitive zero rows; consecutive `K_p` family; `beta_(5,(7,87))(A_4)=beta_(5,(7,87))(C_4)` is `4` over `GF(2)` and `3` over `GF(3)` |
 | EXP-036 | CONFIRMED with structural propagation unresolved | repeated characteristic-dependent targets through `p=9`; distinct kernel and connecting mechanisms; compact factor-two residual; all-parameter cubic-source absence |
+| EXP-037 | DECLARED | test `e_10=73`, `e_11=104`; seek an integral unit matching and period-six lattice index for the connecting defect |
 
 ## 3a. Exact evidence anchors
 
@@ -421,6 +425,17 @@ campaign is supporting evidence, not the proof.
   `b1bfc105f3e9ace368f181ccf10f367fe1f4d23199e49c14275bd8e9b941569e`.
 
 ## 4. In flight
+
+EXP-037 is DECLARED.  For `e_p=dim_GF(2) A_(p,2)-dim_GF(3) A_(p,2)`, the six exact EXP-036 values
+match the coefficients of
+
+```text
+(1+2x+x^2+x^3)/((1-x)^2(1-x^2)(1-x^3)).
+```
+
+This candidate predicts `e_10=73` and `e_11=104`.  The exact `(10,2)` rank is the first gate;
+the stronger route requires integral unit cancellation and a signed lattice-indexed residual.
+Finite agreement does not prove the formula.
 
 EXP-036 is CONFIRMED with its all-parameter structural-propagation prediction unresolved.  Its
 exact-sum route reproduces EXP-035 and computes the complete `p<=6` triangle plus `(7,2)`,

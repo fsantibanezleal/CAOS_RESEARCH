@@ -1471,3 +1471,16 @@
   `8ea3fbd0dfd136a7b91c508a31146be7d88eded1` before this documentation handoff.
 - HWB-063 is done. HWB-061 remains active for an infinite parity-sensitive theorem for the
   connecting-image quotient. Neither complete lower strand nor a full resolution is claimed.
+
+## 2026-08-30 - EXP-037 declared
+
+- The exact characteristic-two excess sequence `1,4,9,18,31,49` matches the first six
+  coefficients of `(1+2x+x^2+x^3)/((1-x)^2(1-x^2)(1-x^3))`.
+- This lookup is a heuristic only. The new candidate forces `e_10=73` and `e_11=104`, so the next
+  calculation is a genuine out-of-sample falsification rather than a refit.
+- The structural prediction is stronger: integral unit cancellation should leave factor-two
+  cells indexed by the lattice points counted by the generating function. Finite rank agreement
+  cannot establish this claim.
+- EXP-037 records the exact premise hashes, independent arithmetic route, compute budgets, and
+  kill criteria before implementation. No new theorem, manuscript version, or publication is
+  claimed.

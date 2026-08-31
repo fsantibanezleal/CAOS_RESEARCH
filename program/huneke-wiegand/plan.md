@@ -1129,3 +1129,19 @@ documentation handoff, work, `develop`, and `main` shared payload tree
 `8ea3fbd0dfd136a7b91c508a31146be7d88eded1`. HWB-063 is done. The strongest remaining route is
 HWB-061's infinite parity-sensitive connecting-quotient theorem; neither complete lower strand is
 claimed.
+
+## 2026-08-30 - EXP-037 connecting-parity quasipolynomial gate
+
+HWB-064 is active under the still-open HWB-061 structural objective. A sequence lookup after two
+failed interpolations exposes a new period-six cubic candidate with rational generating function
+
+```text
+(1+2x+x^2+x^3)/((1-x)^2(1-x^2)(1-x^3)).
+```
+
+This is a falsification target, not evidence. It predicts the new exact excesses `73` and `104`
+at `p=10,11`. The invariant-first route computes `(10,2)` over `GF(2)` and `GF(3)` after exact
+small-cell regressions. The structural route performs integral unit cancellation on the full
+connecting presentation and seeks unmatched factor-two cells indexed by the lattice points of
+the generating function. Finite agreement cannot confirm the all-parameter statement. No
+manuscript or Zenodo update is open at declaration.
