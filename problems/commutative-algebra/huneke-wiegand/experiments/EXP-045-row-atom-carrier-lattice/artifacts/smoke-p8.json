@@ -1,0 +1,2488 @@
+{
+  "experiment": "EXP-045",
+  "route": "complete subset lattice of the six normalized row atoms",
+  "status": "COMPLETE",
+  "parameters": {
+    "p_min": 8,
+    "p_max": 8,
+    "budget_seconds": 300.0,
+    "memory_gib": 8.0
+  },
+  "atom_aliases": {
+    "R0": "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]",
+    "R1": "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]",
+    "R2": "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]",
+    "R3": "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]",
+    "R4": "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]",
+    "R5": "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]"
+  },
+  "premise_hashes": {
+    "EXP-042-bockstein-normal-form\\artifacts\\matrix-p8.json": "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
+    "EXP-042-bockstein-normal-form\\artifacts\\matrix-p9.json": "00c20e30d81861a599448535c2ecc7625b56b1951fe863e64d40ce6f56ff218c",
+    "EXP-042-bockstein-normal-form\\artifacts\\matrix-p10.json": "c7d6bbf0ec655296a0dafe81ab41ce70300c0fa4a837e5c141f55811e29f6f4d",
+    "EXP-042-bockstein-normal-form\\artifacts\\matrix-p11.json": "69e8519a3b239ec90c3b5af526f806a9a0aabf003517ea28233167d7e2b68dd9",
+    "EXP-044-row-projection-bridge\\artifacts\\results.json": "6766b6ca249f1b02ba9a83a6fb8434eea4e511172c982840fc3c6db6a192e886"
+  },
+  "rows": [
+    {
+      "p": 8,
+      "source_matrix_sha256": "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
+      "source_bockstein_rank": 3,
+      "subsets": [
+        {
+          "mask": 0,
+          "aliases": [],
+          "atom_count": 0,
+          "rows": 0,
+          "columns": 1094,
+          "nonzero_columns": 0,
+          "nonzeros": 0,
+          "row_atom_counts": {},
+          "ranks": {
+            "2": 0,
+            "3": 0,
+            "5": 0
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 0,
+            "kernel_dimension": 1094,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 0,
+            "kernel_dimension": 1094,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "3832c5c821df990a89129f176bd0ff98a5a330b9dcc47a75016399c762a6793d"
+        },
+        {
+          "mask": 1,
+          "aliases": [
+            "R0"
+          ],
+          "atom_count": 1,
+          "rows": 28,
+          "columns": 1094,
+          "nonzero_columns": 15,
+          "nonzeros": 56,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28
+          },
+          "ranks": {
+            "2": 13,
+            "3": 13,
+            "5": 13
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 13,
+            "kernel_dimension": 1081,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 13,
+            "kernel_dimension": 1081,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "3f374c12ea4f773c6c195b2d22a959b17cd2bc91000e15bdef25da809c1bf4b2"
+        },
+        {
+          "mask": 2,
+          "aliases": [
+            "R1"
+          ],
+          "atom_count": 1,
+          "rows": 827,
+          "columns": 1094,
+          "nonzero_columns": 542,
+          "nonzeros": 1853,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827
+          },
+          "ranks": {
+            "2": 425,
+            "3": 425,
+            "5": 425
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 425,
+            "kernel_dimension": 669,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 425,
+            "kernel_dimension": 669,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "078d7bcb98eed56fcd87ef474f425a1d231c9335af9067a0389a626b1d194910"
+        },
+        {
+          "mask": 3,
+          "aliases": [
+            "R0",
+            "R1"
+          ],
+          "atom_count": 2,
+          "rows": 855,
+          "columns": 1094,
+          "nonzero_columns": 557,
+          "nonzeros": 1909,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827
+          },
+          "ranks": {
+            "2": 438,
+            "3": 438,
+            "5": 438
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 438,
+            "kernel_dimension": 656,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 438,
+            "kernel_dimension": 656,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "96b8884377199762a0fd21f5d46fc0453a21d9b19e278b4f8b1450d099620196"
+        },
+        {
+          "mask": 4,
+          "aliases": [
+            "R2"
+          ],
+          "atom_count": 1,
+          "rows": 51,
+          "columns": 1094,
+          "nonzero_columns": 24,
+          "nonzeros": 105,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51
+          },
+          "ranks": {
+            "2": 22,
+            "3": 22,
+            "5": 22
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 22,
+            "kernel_dimension": 1072,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 22,
+            "kernel_dimension": 1072,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "3f56e89db496af8371fc01db39a7bfa2e199be63f275d7dcfab137b9b90deb39"
+        },
+        {
+          "mask": 5,
+          "aliases": [
+            "R0",
+            "R2"
+          ],
+          "atom_count": 2,
+          "rows": 79,
+          "columns": 1094,
+          "nonzero_columns": 24,
+          "nonzeros": 161,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51
+          },
+          "ranks": {
+            "2": 22,
+            "3": 22,
+            "5": 22
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 22,
+            "kernel_dimension": 1072,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 22,
+            "kernel_dimension": 1072,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "d9cf3eb775e8d6daa08ad135722d5804703a91b7913f7056d9b5aa2272f037eb"
+        },
+        {
+          "mask": 6,
+          "aliases": [
+            "R1",
+            "R2"
+          ],
+          "atom_count": 2,
+          "rows": 878,
+          "columns": 1094,
+          "nonzero_columns": 566,
+          "nonzeros": 1958,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51
+          },
+          "ranks": {
+            "2": 447,
+            "3": 447,
+            "5": 447
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 447,
+            "kernel_dimension": 647,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 447,
+            "kernel_dimension": 647,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "557ceb9673e721a74ca3cd01f1f5da72dfe925799d1eb131f54d20d0041db53f"
+        },
+        {
+          "mask": 7,
+          "aliases": [
+            "R0",
+            "R1",
+            "R2"
+          ],
+          "atom_count": 3,
+          "rows": 906,
+          "columns": 1094,
+          "nonzero_columns": 566,
+          "nonzeros": 2014,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51
+          },
+          "ranks": {
+            "2": 447,
+            "3": 447,
+            "5": 447
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 447,
+            "kernel_dimension": 647,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 447,
+            "kernel_dimension": 647,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "653e245c8f07b444231644d86b9a8d98249ce08dde6810bf1bd4b51042e7838c"
+        },
+        {
+          "mask": 8,
+          "aliases": [
+            "R3"
+          ],
+          "atom_count": 1,
+          "rows": 1706,
+          "columns": 1094,
+          "nonzero_columns": 1034,
+          "nonzeros": 4303,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706
+          },
+          "ranks": {
+            "2": 900,
+            "3": 900,
+            "5": 900
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 900,
+            "kernel_dimension": 194,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 900,
+            "kernel_dimension": 194,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "398aee7f3d00135a058f6042c845582c2de89f7e24d3a98915bf20f3f3c0a0fc"
+        },
+        {
+          "mask": 9,
+          "aliases": [
+            "R0",
+            "R3"
+          ],
+          "atom_count": 2,
+          "rows": 1734,
+          "columns": 1094,
+          "nonzero_columns": 1049,
+          "nonzeros": 4359,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706
+          },
+          "ranks": {
+            "2": 913,
+            "3": 913,
+            "5": 913
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 913,
+            "kernel_dimension": 181,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 913,
+            "kernel_dimension": 181,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "946c4a08ec88ccf2f041b5779778c5b7102322ff4e5b13b80526b953fb1cb06d"
+        },
+        {
+          "mask": 10,
+          "aliases": [
+            "R1",
+            "R3"
+          ],
+          "atom_count": 2,
+          "rows": 2533,
+          "columns": 1094,
+          "nonzero_columns": 1035,
+          "nonzeros": 6156,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706
+          },
+          "ranks": {
+            "2": 917,
+            "3": 917,
+            "5": 917
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 917,
+            "kernel_dimension": 177,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 917,
+            "kernel_dimension": 177,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "bae523b69c41fc78b7cd6481ed1a38c8c066beb2638a0358c450a9f9c948c310"
+        },
+        {
+          "mask": 11,
+          "aliases": [
+            "R0",
+            "R1",
+            "R3"
+          ],
+          "atom_count": 3,
+          "rows": 2561,
+          "columns": 1094,
+          "nonzero_columns": 1050,
+          "nonzeros": 6212,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706
+          },
+          "ranks": {
+            "2": 930,
+            "3": 930,
+            "5": 930
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 930,
+            "kernel_dimension": 164,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 930,
+            "kernel_dimension": 164,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "2486d5bc3ca0409f892c5bd49d004e8e7ac72210070240c145eadb03923da65c"
+        },
+        {
+          "mask": 12,
+          "aliases": [
+            "R2",
+            "R3"
+          ],
+          "atom_count": 2,
+          "rows": 1757,
+          "columns": 1094,
+          "nonzero_columns": 1058,
+          "nonzeros": 4408,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706
+          },
+          "ranks": {
+            "2": 922,
+            "3": 922,
+            "5": 922
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 922,
+            "kernel_dimension": 172,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 922,
+            "kernel_dimension": 172,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "52be2c66e9585bfc4652b85a54a426b1471ac87d55cb7915d4be5ac1b0bc7678"
+        },
+        {
+          "mask": 13,
+          "aliases": [
+            "R0",
+            "R2",
+            "R3"
+          ],
+          "atom_count": 3,
+          "rows": 1785,
+          "columns": 1094,
+          "nonzero_columns": 1058,
+          "nonzeros": 4464,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706
+          },
+          "ranks": {
+            "2": 922,
+            "3": 922,
+            "5": 922
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 922,
+            "kernel_dimension": 172,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 922,
+            "kernel_dimension": 172,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "8a6eefcedc92f812a0978314febaa37f5525bca55f3bddb0f51d5839b57e40cd"
+        },
+        {
+          "mask": 14,
+          "aliases": [
+            "R1",
+            "R2",
+            "R3"
+          ],
+          "atom_count": 3,
+          "rows": 2584,
+          "columns": 1094,
+          "nonzero_columns": 1059,
+          "nonzeros": 6261,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706
+          },
+          "ranks": {
+            "2": 939,
+            "3": 939,
+            "5": 939
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 939,
+            "kernel_dimension": 155,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 939,
+            "kernel_dimension": 155,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "0201d902140907b9d2fb6a9a125ac73a74eff095dbe72ce0645d2e27772d5ed2"
+        },
+        {
+          "mask": 15,
+          "aliases": [
+            "R0",
+            "R1",
+            "R2",
+            "R3"
+          ],
+          "atom_count": 4,
+          "rows": 2612,
+          "columns": 1094,
+          "nonzero_columns": 1059,
+          "nonzeros": 6317,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706
+          },
+          "ranks": {
+            "2": 939,
+            "3": 939,
+            "5": 939
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 939,
+            "kernel_dimension": 155,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 939,
+            "kernel_dimension": 155,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "3968e2ac4480342f916744ba7d9e5651d1ded13b8a2c2824fc75f56a46f7d664"
+        },
+        {
+          "mask": 16,
+          "aliases": [
+            "R4"
+          ],
+          "atom_count": 1,
+          "rows": 15,
+          "columns": 1094,
+          "nonzero_columns": 102,
+          "nonzeros": 102,
+          "row_atom_counts": {
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15
+          },
+          "ranks": {
+            "2": 15,
+            "3": 15,
+            "5": 15
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 15,
+            "kernel_dimension": 1079,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 15,
+            "kernel_dimension": 1079,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "26956907a8135dce518c6fbf7388eaeb2cead371de856a88ee3490ec0cf02404"
+        },
+        {
+          "mask": 17,
+          "aliases": [
+            "R0",
+            "R4"
+          ],
+          "atom_count": 2,
+          "rows": 43,
+          "columns": 1094,
+          "nonzero_columns": 117,
+          "nonzeros": 158,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15
+          },
+          "ranks": {
+            "2": 28,
+            "3": 28,
+            "5": 28
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 28,
+            "kernel_dimension": 1066,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 28,
+            "kernel_dimension": 1066,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "bc901a3c7e902d7ccdd1d36d9e51fd991fc2aaba88800663bad1218d001cf76b"
+        },
+        {
+          "mask": 18,
+          "aliases": [
+            "R1",
+            "R4"
+          ],
+          "atom_count": 2,
+          "rows": 842,
+          "columns": 1094,
+          "nonzero_columns": 572,
+          "nonzeros": 1955,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15
+          },
+          "ranks": {
+            "2": 440,
+            "3": 440,
+            "5": 440
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 440,
+            "kernel_dimension": 654,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 440,
+            "kernel_dimension": 654,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "d4a6264f932d009626fb01b22be7e7f86fbb49c4b7b04b70a08e583a67c876df"
+        },
+        {
+          "mask": 19,
+          "aliases": [
+            "R0",
+            "R1",
+            "R4"
+          ],
+          "atom_count": 3,
+          "rows": 870,
+          "columns": 1094,
+          "nonzero_columns": 587,
+          "nonzeros": 2011,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15
+          },
+          "ranks": {
+            "2": 453,
+            "3": 453,
+            "5": 453
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 453,
+            "kernel_dimension": 641,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 453,
+            "kernel_dimension": 641,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "c90eafff2f758061d1989f69878bce69819d291aad36f9e111b749168be7add7"
+        },
+        {
+          "mask": 20,
+          "aliases": [
+            "R2",
+            "R4"
+          ],
+          "atom_count": 2,
+          "rows": 66,
+          "columns": 1094,
+          "nonzero_columns": 126,
+          "nonzeros": 207,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15
+          },
+          "ranks": {
+            "2": 37,
+            "3": 37,
+            "5": 37
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 37,
+            "kernel_dimension": 1057,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 37,
+            "kernel_dimension": 1057,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "7dc9448380f358324cefb3df4b39db2ac05c7b8ab84d9cb127fa1701edf670bb"
+        },
+        {
+          "mask": 21,
+          "aliases": [
+            "R0",
+            "R2",
+            "R4"
+          ],
+          "atom_count": 3,
+          "rows": 94,
+          "columns": 1094,
+          "nonzero_columns": 126,
+          "nonzeros": 263,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15
+          },
+          "ranks": {
+            "2": 37,
+            "3": 37,
+            "5": 37
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 37,
+            "kernel_dimension": 1057,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 37,
+            "kernel_dimension": 1057,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "22c7b44a3abcc2951610cbc80129c788520bdc5095371329b2e27bd6e461dc07"
+        },
+        {
+          "mask": 22,
+          "aliases": [
+            "R1",
+            "R2",
+            "R4"
+          ],
+          "atom_count": 3,
+          "rows": 893,
+          "columns": 1094,
+          "nonzero_columns": 596,
+          "nonzeros": 2060,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15
+          },
+          "ranks": {
+            "2": 462,
+            "3": 462,
+            "5": 462
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 462,
+            "kernel_dimension": 632,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 462,
+            "kernel_dimension": 632,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "ebd03b1840be9ea09e25fffb815db99412dfa15e1cc86d70710657e17e7596e3"
+        },
+        {
+          "mask": 23,
+          "aliases": [
+            "R0",
+            "R1",
+            "R2",
+            "R4"
+          ],
+          "atom_count": 4,
+          "rows": 921,
+          "columns": 1094,
+          "nonzero_columns": 596,
+          "nonzeros": 2116,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15
+          },
+          "ranks": {
+            "2": 462,
+            "3": 462,
+            "5": 462
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 462,
+            "kernel_dimension": 632,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 462,
+            "kernel_dimension": 632,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "fc2d16edea5f9faed8e0c0048587f4be6aa042a63c79b7d90e766b9ab15bfd02"
+        },
+        {
+          "mask": 24,
+          "aliases": [
+            "R3",
+            "R4"
+          ],
+          "atom_count": 2,
+          "rows": 1721,
+          "columns": 1094,
+          "nonzero_columns": 1065,
+          "nonzeros": 4405,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15
+          },
+          "ranks": {
+            "2": 915,
+            "3": 915,
+            "5": 915
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 915,
+            "kernel_dimension": 179,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 915,
+            "kernel_dimension": 179,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "743ff9748f82b38d8f780a45dfd6e7027612bac7a9ba94d66f005929e9431642"
+        },
+        {
+          "mask": 25,
+          "aliases": [
+            "R0",
+            "R3",
+            "R4"
+          ],
+          "atom_count": 3,
+          "rows": 1749,
+          "columns": 1094,
+          "nonzero_columns": 1080,
+          "nonzeros": 4461,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15
+          },
+          "ranks": {
+            "2": 928,
+            "3": 928,
+            "5": 928
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 928,
+            "kernel_dimension": 166,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 928,
+            "kernel_dimension": 166,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "a2c3fa36f4ec552a3b5c293d0e6c4117ef28ee2dca4f78f2932625eb1a8884ce"
+        },
+        {
+          "mask": 26,
+          "aliases": [
+            "R1",
+            "R3",
+            "R4"
+          ],
+          "atom_count": 3,
+          "rows": 2548,
+          "columns": 1094,
+          "nonzero_columns": 1065,
+          "nonzeros": 6258,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15
+          },
+          "ranks": {
+            "2": 932,
+            "3": 932,
+            "5": 932
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 932,
+            "kernel_dimension": 162,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 932,
+            "kernel_dimension": 162,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "7e092b6e708726044099e94c12fc088298efc2e293b44872c3712d15a94d6bf4"
+        },
+        {
+          "mask": 27,
+          "aliases": [
+            "R0",
+            "R1",
+            "R3",
+            "R4"
+          ],
+          "atom_count": 4,
+          "rows": 2576,
+          "columns": 1094,
+          "nonzero_columns": 1080,
+          "nonzeros": 6314,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15
+          },
+          "ranks": {
+            "2": 945,
+            "3": 945,
+            "5": 945
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 945,
+            "kernel_dimension": 149,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 945,
+            "kernel_dimension": 149,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "a038eae4647dde6e90bd21129a529e00dbfc2195d08aeba9ad528f61d26fd060"
+        },
+        {
+          "mask": 28,
+          "aliases": [
+            "R2",
+            "R3",
+            "R4"
+          ],
+          "atom_count": 3,
+          "rows": 1772,
+          "columns": 1094,
+          "nonzero_columns": 1089,
+          "nonzeros": 4510,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15
+          },
+          "ranks": {
+            "2": 937,
+            "3": 937,
+            "5": 937
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 937,
+            "kernel_dimension": 157,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 937,
+            "kernel_dimension": 157,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "91fbd5f47da38740c6501eef367d88bd3d3ce7188496ff70a95b1002f111ec74"
+        },
+        {
+          "mask": 29,
+          "aliases": [
+            "R0",
+            "R2",
+            "R3",
+            "R4"
+          ],
+          "atom_count": 4,
+          "rows": 1800,
+          "columns": 1094,
+          "nonzero_columns": 1089,
+          "nonzeros": 4566,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15
+          },
+          "ranks": {
+            "2": 937,
+            "3": 937,
+            "5": 937
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 937,
+            "kernel_dimension": 157,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 937,
+            "kernel_dimension": 157,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "ddbc460c798df3dcc4e1b94ec9e21930033cd352881a60afa1f369476abcf116"
+        },
+        {
+          "mask": 30,
+          "aliases": [
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ],
+          "atom_count": 4,
+          "rows": 2599,
+          "columns": 1094,
+          "nonzero_columns": 1089,
+          "nonzeros": 6363,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15
+          },
+          "ranks": {
+            "2": 954,
+            "3": 954,
+            "5": 954
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 954,
+            "kernel_dimension": 140,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 954,
+            "kernel_dimension": 140,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "6cb486fc271b7abb05565812bc5cc5fac4768a06c0d2c9e6b556cc687a48aba4"
+        },
+        {
+          "mask": 31,
+          "aliases": [
+            "R0",
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ],
+          "atom_count": 5,
+          "rows": 2627,
+          "columns": 1094,
+          "nonzero_columns": 1089,
+          "nonzeros": 6419,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15
+          },
+          "ranks": {
+            "2": 954,
+            "3": 954,
+            "5": 954
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 954,
+            "kernel_dimension": 140,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 954,
+            "kernel_dimension": 140,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "d1bf741632664281835c6028161fbaec20879b0a09a415208ccab39e7b584648"
+        },
+        {
+          "mask": 32,
+          "aliases": [
+            "R5"
+          ],
+          "atom_count": 1,
+          "rows": 48,
+          "columns": 1094,
+          "nonzero_columns": 261,
+          "nonzeros": 328,
+          "row_atom_counts": {
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 48,
+            "3": 48,
+            "5": 48
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 48,
+            "kernel_dimension": 1046,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 48,
+            "kernel_dimension": 1046,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "167e7bb5202742aca36bdbb247df4bdf75d9e2351587c30ee5cbffd17678d4f1"
+        },
+        {
+          "mask": 33,
+          "aliases": [
+            "R0",
+            "R5"
+          ],
+          "atom_count": 2,
+          "rows": 76,
+          "columns": 1094,
+          "nonzero_columns": 264,
+          "nonzeros": 384,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 61,
+            "3": 61,
+            "5": 61
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 61,
+            "kernel_dimension": 1033,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 61,
+            "kernel_dimension": 1033,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "d00182a67b92bbff71c03f386670f860aca8219ed8d52bee48504fa8cbb74b82"
+        },
+        {
+          "mask": 34,
+          "aliases": [
+            "R1",
+            "R5"
+          ],
+          "atom_count": 2,
+          "rows": 875,
+          "columns": 1094,
+          "nonzero_columns": 803,
+          "nonzeros": 2181,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 473,
+            "3": 473,
+            "5": 473
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 473,
+            "kernel_dimension": 621,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 473,
+            "kernel_dimension": 621,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "f72fe5f385e022390fe4e60d6ec05afa513ce440de1b0dd656fa1ae7abbb0da0"
+        },
+        {
+          "mask": 35,
+          "aliases": [
+            "R0",
+            "R1",
+            "R5"
+          ],
+          "atom_count": 3,
+          "rows": 903,
+          "columns": 1094,
+          "nonzero_columns": 806,
+          "nonzeros": 2237,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 486,
+            "3": 486,
+            "5": 486
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 486,
+            "kernel_dimension": 608,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 486,
+            "kernel_dimension": 608,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "c2b83e7f8d4123053e78c151c05a5a80bba886408355fc56b54ba4d1b652550b"
+        },
+        {
+          "mask": 36,
+          "aliases": [
+            "R2",
+            "R5"
+          ],
+          "atom_count": 2,
+          "rows": 99,
+          "columns": 1094,
+          "nonzero_columns": 273,
+          "nonzeros": 433,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 70,
+            "3": 70,
+            "5": 70
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 70,
+            "kernel_dimension": 1024,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 70,
+            "kernel_dimension": 1024,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "a68061d992ffd09166ec66a4c1deface1dfbb3bb14670173a36ef1c3c5fe2a1c"
+        },
+        {
+          "mask": 37,
+          "aliases": [
+            "R0",
+            "R2",
+            "R5"
+          ],
+          "atom_count": 3,
+          "rows": 127,
+          "columns": 1094,
+          "nonzero_columns": 273,
+          "nonzeros": 489,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 70,
+            "3": 70,
+            "5": 70
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 70,
+            "kernel_dimension": 1024,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 70,
+            "kernel_dimension": 1024,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "d96bd39b87981358225637ad3a6a70541aec2aaba08ac534e7525a28ed0994e5"
+        },
+        {
+          "mask": 38,
+          "aliases": [
+            "R1",
+            "R2",
+            "R5"
+          ],
+          "atom_count": 3,
+          "rows": 926,
+          "columns": 1094,
+          "nonzero_columns": 815,
+          "nonzeros": 2286,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 495,
+            "3": 495,
+            "5": 495
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 495,
+            "kernel_dimension": 599,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 495,
+            "kernel_dimension": 599,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "01e776b2f7f19d2357a85c22ef27addb7177692d7d4aeb3ed451f88d53aa53a3"
+        },
+        {
+          "mask": 39,
+          "aliases": [
+            "R0",
+            "R1",
+            "R2",
+            "R5"
+          ],
+          "atom_count": 4,
+          "rows": 954,
+          "columns": 1094,
+          "nonzero_columns": 815,
+          "nonzeros": 2342,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 495,
+            "3": 495,
+            "5": 495
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 495,
+            "kernel_dimension": 599,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 495,
+            "kernel_dimension": 599,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "2dd1edff30b8d689ea2441d2e9e42f38a04e19d109a8f78a5b32713fe5d7595c"
+        },
+        {
+          "mask": 40,
+          "aliases": [
+            "R3",
+            "R5"
+          ],
+          "atom_count": 2,
+          "rows": 1754,
+          "columns": 1094,
+          "nonzero_columns": 1081,
+          "nonzeros": 4631,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 948,
+            "3": 948,
+            "5": 948
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 948,
+            "kernel_dimension": 146,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 948,
+            "kernel_dimension": 146,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "1a1d4a1d317787aaf7a2b5c14f09051ada769f7d97f6d201dd1d3e7763ee60f1"
+        },
+        {
+          "mask": 41,
+          "aliases": [
+            "R0",
+            "R3",
+            "R5"
+          ],
+          "atom_count": 3,
+          "rows": 1782,
+          "columns": 1094,
+          "nonzero_columns": 1084,
+          "nonzeros": 4687,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 961,
+            "3": 961,
+            "5": 961
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 961,
+            "kernel_dimension": 133,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 961,
+            "kernel_dimension": 133,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "7485824af6d25a09826bd439ecbb0400f58c3d991038c0d65067040467f56f52"
+        },
+        {
+          "mask": 42,
+          "aliases": [
+            "R1",
+            "R3",
+            "R5"
+          ],
+          "atom_count": 3,
+          "rows": 2581,
+          "columns": 1094,
+          "nonzero_columns": 1082,
+          "nonzeros": 6484,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 965,
+            "3": 965,
+            "5": 965
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 965,
+            "kernel_dimension": 129,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 965,
+            "kernel_dimension": 129,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "072dcab1f3f18a3738a9847c75a052512cbf857f05a91f41f30ccfa03bdc95e4"
+        },
+        {
+          "mask": 43,
+          "aliases": [
+            "R0",
+            "R1",
+            "R3",
+            "R5"
+          ],
+          "atom_count": 4,
+          "rows": 2609,
+          "columns": 1094,
+          "nonzero_columns": 1085,
+          "nonzeros": 6540,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 978,
+            "3": 978,
+            "5": 978
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 978,
+            "kernel_dimension": 116,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 978,
+            "kernel_dimension": 116,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "44a14e319513a537374adc85d0a55a9546bcb2b134db9432a653ea6585de3dd9"
+        },
+        {
+          "mask": 44,
+          "aliases": [
+            "R2",
+            "R3",
+            "R5"
+          ],
+          "atom_count": 3,
+          "rows": 1805,
+          "columns": 1094,
+          "nonzero_columns": 1093,
+          "nonzeros": 4736,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 970,
+            "3": 970,
+            "5": 970
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 970,
+            "kernel_dimension": 124,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 970,
+            "kernel_dimension": 124,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "562f5c5070c4785e0fd52d6c51b5c10fafa9133ce517a5ac664ede8d22d09d6c"
+        },
+        {
+          "mask": 45,
+          "aliases": [
+            "R0",
+            "R2",
+            "R3",
+            "R5"
+          ],
+          "atom_count": 4,
+          "rows": 1833,
+          "columns": 1094,
+          "nonzero_columns": 1093,
+          "nonzeros": 4792,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 970,
+            "3": 970,
+            "5": 970
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 970,
+            "kernel_dimension": 124,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 970,
+            "kernel_dimension": 124,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "b7a1bdcf7de55f8f54bd2efef574891d54551dc793a7ffa8be6595b47d1b3fc8"
+        },
+        {
+          "mask": 46,
+          "aliases": [
+            "R1",
+            "R2",
+            "R3",
+            "R5"
+          ],
+          "atom_count": 4,
+          "rows": 2632,
+          "columns": 1094,
+          "nonzero_columns": 1094,
+          "nonzeros": 6589,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 987,
+            "3": 987,
+            "5": 987
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 987,
+            "kernel_dimension": 107,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 987,
+            "kernel_dimension": 107,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "ddcac05ffdcc71c5dba74136b5925981b177deefecf363d39f91da8c45a8f255"
+        },
+        {
+          "mask": 47,
+          "aliases": [
+            "R0",
+            "R1",
+            "R2",
+            "R3",
+            "R5"
+          ],
+          "atom_count": 5,
+          "rows": 2660,
+          "columns": 1094,
+          "nonzero_columns": 1094,
+          "nonzeros": 6645,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 987,
+            "3": 987,
+            "5": 987
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 987,
+            "kernel_dimension": 107,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 987,
+            "kernel_dimension": 107,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "6bfb07be51833ac9a82589be23d7981886baae4876314e6d0f539c7396fc3b14"
+        },
+        {
+          "mask": 48,
+          "aliases": [
+            "R4",
+            "R5"
+          ],
+          "atom_count": 2,
+          "rows": 63,
+          "columns": 1094,
+          "nonzero_columns": 333,
+          "nonzeros": 430,
+          "row_atom_counts": {
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 63,
+            "3": 63,
+            "5": 63
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 63,
+            "kernel_dimension": 1031,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 63,
+            "kernel_dimension": 1031,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "7eced204be276089bca8be20fdbce6b703fccc45bf8890cb767482526949d084"
+        },
+        {
+          "mask": 49,
+          "aliases": [
+            "R0",
+            "R4",
+            "R5"
+          ],
+          "atom_count": 3,
+          "rows": 91,
+          "columns": 1094,
+          "nonzero_columns": 336,
+          "nonzeros": 486,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 76,
+            "3": 76,
+            "5": 76
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 76,
+            "kernel_dimension": 1018,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 76,
+            "kernel_dimension": 1018,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "ae07c455fecf8f44e4e66a7eabdd3144c1ca26dc4bcf07348c8ea6c5e0244adf"
+        },
+        {
+          "mask": 50,
+          "aliases": [
+            "R1",
+            "R4",
+            "R5"
+          ],
+          "atom_count": 3,
+          "rows": 890,
+          "columns": 1094,
+          "nonzero_columns": 803,
+          "nonzeros": 2283,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 488,
+            "3": 488,
+            "5": 488
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 488,
+            "kernel_dimension": 606,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 488,
+            "kernel_dimension": 606,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "c1e2824a7330347f35d74212bd070b2912fd0c70d0704f433efde3115f997f53"
+        },
+        {
+          "mask": 51,
+          "aliases": [
+            "R0",
+            "R1",
+            "R4",
+            "R5"
+          ],
+          "atom_count": 4,
+          "rows": 918,
+          "columns": 1094,
+          "nonzero_columns": 806,
+          "nonzeros": 2339,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 501,
+            "3": 501,
+            "5": 501
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 501,
+            "kernel_dimension": 593,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 501,
+            "kernel_dimension": 593,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "16fbf06125cfd1868789242c3cc76990c963e0650de622aae6dae8241dd43f40"
+        },
+        {
+          "mask": 52,
+          "aliases": [
+            "R2",
+            "R4",
+            "R5"
+          ],
+          "atom_count": 3,
+          "rows": 114,
+          "columns": 1094,
+          "nonzero_columns": 345,
+          "nonzeros": 535,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 85,
+            "3": 85,
+            "5": 85
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 85,
+            "kernel_dimension": 1009,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 85,
+            "kernel_dimension": 1009,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "10f46fca54c8f375a2e5bd68ba5d5d16e3b16f4cd15e86f91327f56d0d0e9c7e"
+        },
+        {
+          "mask": 53,
+          "aliases": [
+            "R0",
+            "R2",
+            "R4",
+            "R5"
+          ],
+          "atom_count": 4,
+          "rows": 142,
+          "columns": 1094,
+          "nonzero_columns": 345,
+          "nonzeros": 591,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 85,
+            "3": 85,
+            "5": 85
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 85,
+            "kernel_dimension": 1009,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 85,
+            "kernel_dimension": 1009,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "180a8a5ee3f8e5607dba1033ea785b2973ad267d18df382900ad70a808ef16b1"
+        },
+        {
+          "mask": 54,
+          "aliases": [
+            "R1",
+            "R2",
+            "R4",
+            "R5"
+          ],
+          "atom_count": 4,
+          "rows": 941,
+          "columns": 1094,
+          "nonzero_columns": 815,
+          "nonzeros": 2388,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 510,
+            "3": 510,
+            "5": 510
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 510,
+            "kernel_dimension": 584,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 510,
+            "kernel_dimension": 584,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "cfce7b86593d2046038ac541d88b338c2898dd68fe9876dc8b15731dae7f59aa"
+        },
+        {
+          "mask": 55,
+          "aliases": [
+            "R0",
+            "R1",
+            "R2",
+            "R4",
+            "R5"
+          ],
+          "atom_count": 5,
+          "rows": 969,
+          "columns": 1094,
+          "nonzero_columns": 815,
+          "nonzeros": 2444,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 510,
+            "3": 510,
+            "5": 510
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 510,
+            "kernel_dimension": 584,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 510,
+            "kernel_dimension": 584,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "624b6296f7920dc0847be51b5375627e14106eb39c9393980e45f905127f34f8"
+        },
+        {
+          "mask": 56,
+          "aliases": [
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "atom_count": 3,
+          "rows": 1769,
+          "columns": 1094,
+          "nonzero_columns": 1082,
+          "nonzeros": 4733,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 963,
+            "3": 963,
+            "5": 963
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 963,
+            "kernel_dimension": 131,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 963,
+            "kernel_dimension": 131,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "9b36b5f0a74944c4a29c684b5e4a8a82405ac110ed0046e161aa8aabe34e639c"
+        },
+        {
+          "mask": 57,
+          "aliases": [
+            "R0",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "atom_count": 4,
+          "rows": 1797,
+          "columns": 1094,
+          "nonzero_columns": 1085,
+          "nonzeros": 4789,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 976,
+            "3": 976,
+            "5": 976
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 976,
+            "kernel_dimension": 118,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 976,
+            "kernel_dimension": 118,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "0354273324f453945e69eb04be92e39ecf85b183dfe0d8cdadd9c873ffa05d22"
+        },
+        {
+          "mask": 58,
+          "aliases": [
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "atom_count": 4,
+          "rows": 2596,
+          "columns": 1094,
+          "nonzero_columns": 1082,
+          "nonzeros": 6586,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 979,
+            "3": 980,
+            "5": 980
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 1,
+          "bockstein_high_forward": {
+            "rank_mod_two": 979,
+            "kernel_dimension": 115,
+            "bockstein_rank": 1
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 979,
+            "kernel_dimension": 115,
+            "bockstein_rank": 1
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "d1468cc0f616affc85ac7805e013451388d3c4c05b78c5135d3c0db141169203"
+        },
+        {
+          "mask": 59,
+          "aliases": [
+            "R0",
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "atom_count": 5,
+          "rows": 2624,
+          "columns": 1094,
+          "nonzero_columns": 1085,
+          "nonzeros": 6642,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 990,
+            "3": 993,
+            "5": 993
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 3,
+          "bockstein_high_forward": {
+            "rank_mod_two": 990,
+            "kernel_dimension": 104,
+            "bockstein_rank": 3
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 990,
+            "kernel_dimension": 104,
+            "bockstein_rank": 3
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "a40ec869e4a6390fc713e578a9d5d3107b47b8ca3a582fa90ba3646ea1b1659b"
+        },
+        {
+          "mask": 60,
+          "aliases": [
+            "R2",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "atom_count": 4,
+          "rows": 1820,
+          "columns": 1094,
+          "nonzero_columns": 1094,
+          "nonzeros": 4838,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 985,
+            "3": 985,
+            "5": 985
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 985,
+            "kernel_dimension": 109,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 985,
+            "kernel_dimension": 109,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "568799a457b7ac516011f02aa831022fba1d698233f55127542a0456b5bed21d"
+        },
+        {
+          "mask": 61,
+          "aliases": [
+            "R0",
+            "R2",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "atom_count": 5,
+          "rows": 1848,
+          "columns": 1094,
+          "nonzero_columns": 1094,
+          "nonzeros": 4894,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 985,
+            "3": 985,
+            "5": 985
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 0,
+          "bockstein_high_forward": {
+            "rank_mod_two": 985,
+            "kernel_dimension": 109,
+            "bockstein_rank": 0
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 985,
+            "kernel_dimension": 109,
+            "bockstein_rank": 0
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "e6b286f2013765db5eea8e97ca453ab9331adabd1defdea4753a21b02dc010bf"
+        },
+        {
+          "mask": 62,
+          "aliases": [
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "atom_count": 5,
+          "rows": 2647,
+          "columns": 1094,
+          "nonzero_columns": 1094,
+          "nonzeros": 6691,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 999,
+            "3": 1002,
+            "5": 1002
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 3,
+          "bockstein_high_forward": {
+            "rank_mod_two": 999,
+            "kernel_dimension": 95,
+            "bockstein_rank": 3
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 999,
+            "kernel_dimension": 95,
+            "bockstein_rank": 3
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "b57a766b4ff8e4496d14ae98d1b3cf7ef558a85368034ea68c78a013ae48a3c8"
+        },
+        {
+          "mask": 63,
+          "aliases": [
+            "R0",
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "atom_count": 6,
+          "rows": 2675,
+          "columns": 1094,
+          "nonzero_columns": 1094,
+          "nonzeros": 6747,
+          "row_atom_counts": {
+            "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+            "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+            "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+            "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+            "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+            "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+          },
+          "ranks": {
+            "2": 999,
+            "3": 1002,
+            "5": 1002
+          },
+          "odd_rank_agreement": true,
+          "odd_minus_two_rank": 3,
+          "bockstein_high_forward": {
+            "rank_mod_two": 999,
+            "kernel_dimension": 95,
+            "bockstein_rank": 3
+          },
+          "bockstein_low_reverse": {
+            "rank_mod_two": 999,
+            "kernel_dimension": 95,
+            "bockstein_rank": 3
+          },
+          "opposite_agreement": true,
+          "rank_gap_matches_bockstein": true,
+          "projection_hash": "d0f491656bf9ee48d57e2593d27c48eb3f6545b6f6d5219eadc64402a56ac08a"
+        }
+      ],
+      "nonzero_carrier_masks": [
+        58,
+        59,
+        62,
+        63
+      ],
+      "minimal_nonzero_carrier_masks": [
+        58
+      ],
+      "full_carrier_masks": [
+        59,
+        62,
+        63
+      ],
+      "minimal_full_carrier_masks": [
+        59,
+        62
+      ]
+    }
+  ],
+  "elapsed_seconds": 3.6058797000005143,
+  "p1_status": "NOT_EVALUATED",
+  "p2_status": "NOT_EVALUATED",
+  "p3_status": "NOT_EVALUATED",
+  "artifact_hash": "1e08b32df3efbb829fecbf2145734777d5f7257ae7bb1b520cc73607c5331a71"
+}
