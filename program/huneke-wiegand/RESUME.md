@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-31. Lifecycle: EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
+Updated: 2026-08-31. Lifecycle: EXP-042 is DECLARED; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
 with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
@@ -369,6 +369,7 @@ campaign is supporting evidence, not the proof.
 | EXP-039 | REFUTED WITH REDIRECT | bounded defect-one components fail; exact partitions expose four latent orientation-sensitive sectors and a `p=9` support merger |
 | EXP-040 | REFUTED; P1 PASSES | exact `67+5` localizes the first correction at `p=10`; `95+7` refutes the declared `96+6` transport at `p=11`; P3 not attempted |
 | EXP-041 | REFUTED; P1 PASSES | every frozen component is reproduced; the isolated `R` block keeps one normalized twelve-atom skeleton through `p=11`, refuting the switch; the distinguished row is absent from all defective cores |
+| EXP-042 | DECLARED | extract the persistent signed block and test whether first-Bockstein ranks are exactly `3,4,5,7` at `p=8,...,11` |
 
 ## 3a. Exact evidence anchors
 
@@ -460,8 +461,8 @@ campaign is supporting evidence, not the proof.
 
 ## 4. In flight
 
-EXP-041 is REFUTED overall, with its P1 finite classifier retained; HWB-068 is done and HWB-069 is
-active. EXP-040 is REFUTED overall, with its P1 finite localization retained. EXP-037 exactly
+EXP-042 is DECLARED and owns HWB-069. EXP-041 is REFUTED overall, with its P1 finite classifier
+retained; HWB-068 is done. EXP-040 is REFUTED overall, with its P1 finite localization retained. EXP-037 exactly
 refutes the previous series at its first new value:
 
 ```text
@@ -794,8 +795,8 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Declare the HWB-069 signed-normal-form experiment before implementation. Extract the isolated
-   twelve-atom component with exact signed entries and reproduce its frozen ranks and hashes.
+1. Implement and smoke-test EXP-042 at `p=8`. Extract the isolated twelve-atom component with
+   exact signed entries and reproduce its frozen ranks and hashes before evaluating predictions.
 2. Apply deterministic matched-block cancellation inside that component. Audit the reduced core
    over `GF(2)`, `GF(3)`, and `GF(5)`; attempt Smith normal form only if the certified residual is
    small enough. Require explicit parameter maps before claiming OI/FI stability.
@@ -866,6 +867,9 @@ Published baseline:
   component. Relative squarefree-divisor homology and OI/FI finite generation are proof frameworks
   only after explicit chain maps are constructed; toric gluing remains downstream because no
   toric-ideal or chain splitting is yet proved.
+- Bockstein gate: EXP-042 lifts a canonical mod-two kernel basis through the signed integer matrix
+  and reduces the divided even boundary in the mod-two cokernel. It predicts ranks `3,4,5,7` and
+  requires forward/reverse and independent witness audits before any torsion interpretation.
 
 ## 7. Gotchas
 

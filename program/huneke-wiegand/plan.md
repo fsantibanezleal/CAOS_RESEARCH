@@ -1251,3 +1251,18 @@ unit/matched pairs integrally, and audit the residual over `GF(2)`, two odd prim
 enough, Smith normal form. A chain-level relative-homology or OI-module description is the proof
 route only after explicit parameter maps are constructed. Toric gluing remains downstream until
 an actual ideal or chain splitting exists. No manuscript or Zenodo gate opens from EXP-041.
+
+## 2026-08-31 - EXP-042 Bockstein normal-form gate
+
+The path audit ranks a matrix Bockstein plus integral matched-block reduction above another
+coefficient computation. EXP-042 is declared before implementation. It independently extracts the
+persistent isolated signed matrix and computes the first Bockstein
+`ker(M mod 2) -> coker(M mod 2)` by lifting binary kernel vectors, dividing their even integer
+boundaries by two, and reducing again modulo two. The exact prediction is Bockstein rank
+`3,4,5,7` at `p=8,9,10,11`.
+
+A pass proves finitely that the observed defects have independent order-exactly-two directions;
+without a rational-rank upper bound it is not a complete Smith form. Forward/reverse reductions,
+frozen multi-prime ranks, and an independent witness audit are mandatory. OI/FI stability,
+relative homology, and toric gluing remain downstream until explicit chain maps or splittings are
+constructed. No publication gate is open.

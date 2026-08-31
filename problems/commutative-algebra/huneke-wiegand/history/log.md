@@ -1589,3 +1589,14 @@
   interval partition, frozen component, histogram sum, atom shape, and the common skeleton hash.
   HWB-068 is done and HWB-069 redirects to an exact signed normal form. Finite semantic evidence
   alone does not open a manuscript or Zenodo gate.
+
+## 2026-08-31 - EXP-042 declared after path reprioritization
+
+- The route audit ranks first-Bockstein extraction and integral matched-block cancellation above
+  another coefficient sweep. Relative squarefree-divisor homology and OI/FI finite generation are
+  proof frameworks only after explicit chain maps exist; toric gluing is conditional on an actual
+  splitting.
+- EXP-042 declares Bockstein ranks `3,4,5,7` for the isolated `p=8,...,11` matrices. It must
+  reproduce every frozen signed hash and multi-prime rank before lifting mod-two kernel vectors.
+- Forward/reverse order and an independent witness audit are mandatory. A finite pass supplies
+  exact factor-two directions but neither an all-parameter recurrence nor a publication trigger.

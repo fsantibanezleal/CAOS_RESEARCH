@@ -136,6 +136,7 @@
 | 2026-08-30 | active | refuted | EXP-040 confirms exact `67+5` at `p=10` but refutes P2 with `95+7` at `p=11`; its simple partition transport fails, while semantic component identity remains unresolved and P3 is not attempted |
 | 2026-08-31 | refuted | active | EXP-041 declared for HWB-068: exact semantic interval fingerprints must decide the isolated-component lineage across `p=8,...,11` before any signed bridge deletion |
 | 2026-08-31 | active | refuted | EXP-041 passes P1 finitely but refutes P2/P3: the isolated component retains one normalized twelve-atom `R` skeleton through `p=11`, so the `5 -> 7` jump is internal; the distinguished row is absent from all defective cores |
+| 2026-08-31 | refuted | active | EXP-042 declared for HWB-069: independently extract the persistent signed component and test first-Bockstein ranks `3,4,5,7` before any further coefficient sweep |
 
 Current state: **EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
 inconclusive with two finite passes; EXP-037 is refuted; EXP-036 remains confirmed with structural
