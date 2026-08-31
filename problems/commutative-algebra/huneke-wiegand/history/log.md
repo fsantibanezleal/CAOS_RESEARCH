@@ -1636,3 +1636,12 @@
 - HWB-070 is done. HWB-071 redirects to the uniform integral `D:B <-> K:C0` bridge. The result is
   exact and relevant but finite, so no recurrence, all-parameter theorem, manuscript, or Zenodo
   update is claimed.
+
+## 2026-08-31 - EXP-044 row-projection bridge declared
+
+- The experiment is declared before reading projected ranks. It deletes `D:B`, deletes `K:C0`,
+  deletes both, and retains only their union in each frozen isolated matrix.
+- The strong bridge prediction says either deletion kills the Bockstein while the union preserves
+  ranks `3,4,5,7`. Exact ranks over `GF(2)`, `GF(3)`, and `GF(5)` accompany both reduction orders.
+- An independent reconstruction and opposite-pivot audit are mandatory. Row projection is a
+  localization diagnostic, not an integral matching or an all-parameter proof.

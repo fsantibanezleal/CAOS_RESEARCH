@@ -48,6 +48,11 @@ isolated 2-primary types at `p=8,9,10,11` are `(Z/2)^3,(Z/2)^4,(Z/2)^5,(Z/2)^7`.
 bottleneck is no longer finite Smith arithmetic; it is a uniform integral reduction of the
 `D:B <-> K:C0` bridge and a compatible parameter transition.
 
+EXP-044 is the declared localization diagnostic. Deleting either row family tests necessity;
+retaining only their union tests sufficiency. The experiment can refute or sharpen the proposed
+bridge, but projection is not a unimodular equivalence and therefore cannot itself prove the
+desired normal form.
+
 ### 2. Relative squarefree-divisor homology - structural fallback
 
 Multigraded Betti numbers of numerical semigroup rings can be represented by reduced homology of

@@ -1304,3 +1304,17 @@ projections involving `D:B` and `K:C0`, identify whether deleting either side ki
 the Bockstein, and then build a parameterized integral matching. The representative dependence
 found by EXP-042 forbids declaring either atom the canonical carrier. No manuscript or Zenodo gate
 opens until a uniform theorem or comparably transferable result is proved.
+
+## 2026-08-31 - EXP-044 row-projection bridge gate
+
+EXP-044 is declared before projected ranks are read. It tests four exact presentations of every
+isolated `p=8,...,11` matrix: delete `D:B`, delete `K:C0`, delete both, and retain only their union.
+The strong two-sided-bridge hypothesis predicts that deleting either side kills the first
+Bockstein, while retaining the union preserves ranks `3,4,5,7`. Forward/reverse Bocksteins and
+three finite-field ranks are mandatory for every projection.
+
+A pass would identify the smallest currently visible row-atom bridge candidate. A refutation would
+be equally actionable: surviving torsion after a deletion or lost torsion in the union projection
+would specify which larger atom set the integral matching must include. The computation does not
+substitute for unimodular reduction or compatible maps in `p`, so it cannot establish the uniform
+theorem or open a publication gate.

@@ -695,3 +695,8 @@ EXP-043 supplies those upper bounds without a full Smith computation. Minimal pr
 `31,52,83,125` verified 61-bit primes exceed the exact Hadamard bounds on the next minors, proving
 rational ranks `1002,1607,2450,3586`. Hence the four displayed elementary 2-groups are the
 complete isolated 2-primary torsion groups, not lower bounds.
+
+EXP-044 is the declared bridge-localization gate. It tests whether the two pivot-dependent row
+atoms `D:B` and `K:C0` are jointly sufficient and individually necessary for the finite
+Bockstein, using exact deletion and union projections. Even a complete pass is only a guide for
+the required unimodular matching; it is not a uniform chain theorem.

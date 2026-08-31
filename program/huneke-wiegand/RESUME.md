@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-31. Lifecycle: EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
+Updated: 2026-08-31. Lifecycle: EXP-044 is DECLARED; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
 with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
@@ -375,6 +375,7 @@ campaign is supporting evidence, not the proof.
 | EXP-041 | REFUTED; P1 PASSES | every frozen component is reproduced; the isolated `R` block keeps one normalized twelve-atom skeleton through `p=11`, refuting the switch; the distinguished row is absent from all defective cores |
 | EXP-042 | CONFIRMED FINITELY | exact first-Bockstein ranks `3,4,5,7` prove that many valuation-one Smith factors; high/low pivot atom representatives differ |
 | EXP-043 | CONFIRMED FINITELY | audited modular Hadamard certificates prove rational ranks `1002,1607,2450,3586` and complete isolated 2-primary types `(Z/2)^(3,4,5,7)` |
+| EXP-044 | DECLARED | exact row projections test whether `D:B` and `K:C0` are individually necessary and jointly sufficient for the finite Bockstein |
 
 ## 3a. Exact evidence anchors
 
@@ -476,8 +477,8 @@ campaign is supporting evidence, not the proof.
 
 ## 4. In flight
 
-EXP-043 is CONFIRMED finitely and closes HWB-070. EXP-042 is CONFIRMED finitely and advances
-HWB-069; HWB-071 owns the uniform signed bridge.
+EXP-044 is DECLARED for HWB-071. EXP-043 is CONFIRMED finitely and closes HWB-070. EXP-042 is
+CONFIRMED finitely and advances HWB-069; HWB-071 owns the uniform signed bridge.
 EXP-041 is REFUTED overall, with its P1 finite classifier retained; HWB-068 is done. EXP-040 is
 REFUTED overall, with its P1 finite localization retained. EXP-037 exactly
 refutes the previous series at its first new value:
@@ -819,9 +820,9 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Declare a row-projection experiment for HWB-071 before computation. Test the full Bockstein
-   after deleting `D:B`, deleting `K:C0`, deleting both, and retaining only their union.
-2. Use the projection verdict to extract the signed `D:B <-> K:C0` bridge without treating either
+1. Implement and audit EXP-044. Test the full Bockstein after deleting `D:B`, deleting `K:C0`,
+   deleting both, and retaining only their union.
+2. Use the EXP-044 verdict to extract the signed `D:B <-> K:C0` bridge without treating either
    pivot representative as canonical. Require an integral matching and explicit parameter maps
    before claiming OI/FI stability.
 3. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
@@ -897,8 +898,9 @@ Published baseline:
 - Rational-rank closure: EXP-043 makes all `(r+1)` minors divisible by a distinct-prime product
   larger than twice their Hadamard bound. This proves `rank_Q=r` and completes the tested isolated
   2-primary torsion without a full Smith form.
-- Signed-bridge localization: HWB-071 must use exact row projections and integral reductions to
-  distinguish an intrinsic bridge from the pivot-dependent representatives found by EXP-042.
+- Signed-bridge localization: EXP-044 uses exact row projections to distinguish an intrinsic
+  bridge from the pivot-dependent representatives found by EXP-042. Integral reduction remains
+  mandatory after the diagnostic.
 
 ## 7. Gotchas
 
