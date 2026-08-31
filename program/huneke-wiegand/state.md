@@ -134,6 +134,7 @@
 | 2026-08-30 | active | refuted | EXP-039 refutes bounded defect-one components but exposes four latent sectors and a `p=9` support merger; all defective blocks are orientation-sensitive |
 | 2026-08-30 | refuted | active | EXP-040 declared for HWB-067: test merged-sector partitions `67+5` at `p=10` and conditionally `96+6` at `p=11`, then extract signed bridge relations |
 | 2026-08-30 | active | refuted | EXP-040 confirms exact `67+5` at `p=10` but refutes P2 with `95+7` at `p=11`; component identity is not a stable sector grading and P3 is not attempted |
+| 2026-08-31 | refuted | active | EXP-041 declared for HWB-068: exact semantic interval fingerprints must decide the isolated-component lineage across `p=8,...,11` before any signed bridge deletion |
 
 Current state: **EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
 inconclusive with two finite passes; EXP-037 is refuted; EXP-036 remains confirmed with structural

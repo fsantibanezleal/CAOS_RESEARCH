@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-30. Lifecycle: EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
+Updated: 2026-08-31. Lifecycle: EXP-041 is DECLARED; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
 with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
@@ -14,7 +14,7 @@ corrected numerator `1+2x+x^2+x^3-x^6`. Its first genuinely new prediction passe
 relation remain unproved. EXP-039 refutes bounded defect-one components but exposes latent sectors
 `binom(p-2,3),p-4,p-4,p-5` and their `p=9` support merger. EXP-040 confirms exact `67+5` at
 `p=10`, localizing the first correction inside the large component, but refutes its simple
-transport with exact `95+7` at `p=11` instead of `96+6`. Semantic sector tagging is next. For every `p>=4` and
+transport with exact `95+7` at `p=11` instead of `96+6`. EXP-041 now tests semantic sector tagging. For every `p>=4` and
 `2<=t<=p-2`, the shifted cubic source is absent
 by the positive gap `g(p,t)>=3(p-1)^2`, so every future exact `A_p` value at these targets
 transfers to `C_p`.  This is not an infinite characteristic-dependence theorem. The 53-page
@@ -366,6 +366,7 @@ campaign is supporting evidence, not the proof.
 | EXP-038 | INCONCLUSIVE; TWO FINITE PASSES | audited exact `e_11=102` and `e_12=138`; all-parameter recurrence and structural relation remain unproved |
 | EXP-039 | REFUTED WITH REDIRECT | bounded defect-one components fail; exact partitions expose four latent orientation-sensitive sectors and a `p=9` support merger |
 | EXP-040 | REFUTED; P1 PASSES | exact `67+5` localizes the first correction at `p=10`; `95+7` refutes the declared `96+6` transport at `p=11`; P3 not attempted |
+| EXP-041 | DECLARED | exact interval-atom fingerprints across `p=8,...,11`; test the isolated-component lineage switch before bridge deletion |
 
 ## 3a. Exact evidence anchors
 
@@ -451,7 +452,7 @@ campaign is supporting evidence, not the proof.
 
 ## 4. In flight
 
-EXP-040 is REFUTED overall, with its P1 finite localization retained. EXP-037 exactly refutes the previous series at its first new value:
+EXP-041 is declared and owns HWB-068. EXP-040 is REFUTED overall, with its P1 finite localization retained. EXP-037 exactly refutes the previous series at its first new value:
 
 ```text
 e_10=dim_GF(2) A_(10,2)-dim_GF(3) A_(10,2)=4240-4168=72, not 73.
@@ -477,7 +478,10 @@ relative-homology decomposition. EXP-039 performs that component test and refute
 defect-one blocks, but its partitions identify four latent sectors. At `p=9`, the first three
 merge with defect `35+5+5=45` and the fourth remains four. EXP-040 finds exact `67+5` at `p=10`,
 so the first correction is in the large merged block. At `p=11`, exact `95+7` refutes the declared
-`96+6` transport; semantic component identity must be established before bridge deletion.
+`96+6` transport. EXP-041 profiles exact module-side, coefficient-interval, and exterior-block
+atoms across `p=8,...,11`; it predicts that the isolated `p=9,10` components retain the finite
+`p-5` anchor while the `p=11` component switches to one `p-4` anchor. Semantic identity must be
+established before bridge deletion.
 
 EXP-036 is CONFIRMED with its all-parameter structural-propagation prediction unresolved.  Its
 exact-sum route reproduces EXP-035 and computes the complete `p<=6` triangle plus `(7,2)`,
@@ -779,14 +783,15 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Profile semantic interval labels in the defective `p=8,...,11` components and test whether the
-   isolated block changes from the latent `p-5` sector to a `p-4` sector. Do not attempt bridge
-   deletion or `p=12` component ranks before this identity gate.
-2. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
+1. Implement and smoke-test EXP-041 at `p=8`; require frozen component/hash reproduction and an
+   atomic semantic-profile checkpoint.
+2. Run the checkpointed `p=8,...,11` campaign and audit histogram sums plus reversed tag
+   construction. Decide P1/P2/P3 before bridge deletion or `p=12` component ranks.
+3. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
    a signed core; keep this separate from the connecting-only `t=2` mechanism.
-3. Open a separate manuscript only after a complete strand, an infinite connecting theorem, or a
+4. Open a separate manuscript only after a complete strand, an infinite connecting theorem, or a
    comparably transferable result is proved.
-4. Leave CAOS_MANAGE untouched during this round; its unrelated diffusion work remains preserved
+5. Leave CAOS_MANAGE untouched during this round; its unrelated work remains preserved
    on `develop`.
 
 ### Lenses ledger
@@ -842,6 +847,9 @@ Published baseline:
 - Sector-identity correction: EXP-040 localizes the first correction at `p=10` but refutes the
   naive component transport at `p=11`. The next invariant is the semantic interval tag of each
   component, not another rank total or an assumed persistent support label.
+- Semantic-tag recognition: EXP-041 applies exact affine interval atoms and a frozen-component
+  regression before any signed bridge attempt. The fresh gluing analogy is recorded but remains
+  downstream because no toric-ideal or chain splitting is yet proved.
 
 ## 7. Gotchas
 

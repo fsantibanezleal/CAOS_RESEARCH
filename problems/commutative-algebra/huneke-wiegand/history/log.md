@@ -1561,3 +1561,15 @@
   suggests that the isolated support component changes latent sector identity across parameters.
 - HWB-067 is done. HWB-068 records semantic interval-tag profiling before any bridge deletion,
   further coefficient computation, manuscript update, or Zenodo version.
+
+## 2026-08-31 - EXP-041 declared
+
+- The source-complete pass found no published semantic decomposition for the signed connecting
+  core. Toric gluing gives tensor-product resolutions only after a genuine ideal splitting, and
+  the generalized-arithmetic-sequence positive theorem does not cover the EXP-009 family.
+- EXP-041 declares exact interval-atom fingerprints before implementation. It must reproduce all
+  frozen components and predicts that the isolated `p=9,10` blocks continue the finite `p-5`
+  anchor, while the isolated `p=11` block switches to one `p-4` anchor.
+- The `p=8` smoke and `p=8,...,11` campaign have explicit time, memory, progress, checkpoint, and
+  one-sidedness gates. No bridge deletion, manuscript update, or Zenodo version is authorized by a
+  finite-only semantic pass.

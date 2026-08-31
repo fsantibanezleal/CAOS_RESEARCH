@@ -1221,3 +1221,18 @@ connected-component identity is not a stable sector grading: the isolated compon
 from the latent `p-5` sector to one of the `p-4` sectors. P3 bridge deletion is not attempted
 because its P2 transport premise failed. HWB-067 is done; HWB-068 records semantic interval-tag
 profiling as the next route. No manuscript or Zenodo gate opens.
+
+## 2026-08-31 - EXP-041 semantic-sector gate
+
+HWB-068 is active. EXP-041 is declared before implementation and replaces component size or rank
+matching by exact semantic atoms: module side, affine coefficient interval, and exterior
+interval-count vector. The `p=8` partition `20+4+4+3` supplies three named anchor types without
+using component indices. The strong prediction is that the isolated components at `p=9,10`
+retain the defect-three anchor's coefficient-tag support, while the isolated defect-seven
+component at `p=11` switches to exactly one defect-four anchor.
+
+The implementation must reproduce every frozen support hash and component partition before its
+profiles count as evidence. It then stores exact defective-component histograms and an independent
+sum/reversed-tag audit. A failure refutes component-level interval grading and redirects to chain
+generators inside the merged support. The campaign is capped at 2,400 seconds and 36 GB with
+atomic parameter checkpoints. No manuscript or Zenodo gate is open at declaration.
