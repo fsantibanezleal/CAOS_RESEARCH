@@ -1548,3 +1548,16 @@
 - EXP-040 is declared before computation. It predicts `67+5` at `p=10` and, conditionally,
   `96+6` at `p=11`, localizing the degree-six correction and its first translates inside the
   merged signed sector.
+
+## 2026-08-30 - EXP-040 localizes p=10 and refutes the p=11 transport
+
+- At `p=10`, the exact characteristic-defect partition is `67+5`, as declared. The large merged
+  component carries the first one-unit correction from free count 68 to 67; the other component
+  contributes five.
+- At `p=11`, the conditional prediction fails: the exact partition is `95+7`, not `96+6`.
+  `GF(3)` and `GF(5)` agree on every component at both parameters, and all orientation controls
+  detect sign erasure and a one-sign perturbation.
+- P1 is a relevant finite localization, but P2 is refuted and P3 is not attempted. The evidence
+  suggests that the isolated support component changes latent sector identity across parameters.
+- HWB-067 is done. HWB-068 records semantic interval-tag profiling before any bridge deletion,
+  further coefficient computation, manuscript update, or Zenodo version.

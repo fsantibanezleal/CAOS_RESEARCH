@@ -44,6 +44,9 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-035 | CONFIRMED with P3 mechanism refuted | complete primitive zero-row summand, consecutive kernel classes, and the first characteristic-dependent lower Betti cell |
 | EXP-036 | CONFIRMED with structural propagation unresolved | repeated characteristic-dependent cells through `p=9`, two distinct rank mechanisms, compact factor-two localization, and all-parameter cubic-source absence |
 | EXP-037 | REFUTED | exact `(10,2)` excess is 72, not the predicted 73; independent residual order and odd-prime audits pass |
+| EXP-038 | INCONCLUSIVE; two finite passes | audited exact excesses `e_11=102` and `e_12=138`; the degree-six relation and recurrence remain unproved |
+| EXP-039 | REFUTED with redirect | bounded defect-one components fail; exact signed partitions expose four latent sectors and a support merger |
+| EXP-040 | REFUTED; P1 passes | `67+5` localizes the first correction at `p=10`; exact `95+7` refutes the declared `96+6` transport at `p=11` |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
@@ -661,3 +664,19 @@ The proposed generating function predicted 73. Low-degree and canonical residual
 same exact ranks, so the mismatch refutes both the series and its 73-point factor-two indexing.
 The finite excess sequence is `1,4,9,18,31,49,72`. EXP-036 transfers this exact result to `C_10`.
 No replacement all-parameter formula, full lower strand, or general conjecture resolution follows.
+
+EXP-038 tests the smallest degree-six correction and obtains independently audited new values
+`e_11=102` and `e_12=138`. These are two finite passes, not a recurrence proof. EXP-039 then
+decomposes the signed residual cores. Its bounded defect-one prediction fails, but the exact
+partitions at `p=6,7,8` are
+
+```text
+binom(p-2,3), p-4, p-4, p-5.
+```
+
+At `p=9`, the first three support sectors merge with defect `35+5+5=45`, while the last contributes
+four. EXP-040 localizes the first correction at `p=10`: the two defective components contribute
+`67+5`, exactly. Its conditional transport prediction fails at `p=11`, where the exact partition
+is `95+7`, not `96+6`; both odd fields agree componentwise. The next structural task is semantic
+interval-tag identification across the support merger. None of these finite component results
+proves the degree-six relation or triggers a new manuscript/Zenodo version.

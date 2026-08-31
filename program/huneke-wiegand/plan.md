@@ -1210,3 +1210,14 @@ value `56+6+6=68` loses exactly one relation while the fourth sector remains fiv
 conditional `p=11` prediction is `96+6`, corresponding to two degree-one translates.  Both odd
 fields must agree componentwise.  Only after both partitions pass may signed bridge extraction
 begin.  No manuscript or Zenodo gate is open.
+
+The first partition passes exactly. At `p=10`, the two defective components contribute `67+5`;
+their ranks are `218451/218518/218518` and `2445/2450/2450` over `GF(2)/GF(3)/GF(5)`. Thus the
+first correction from free total 73 to exact 72 is localized inside the large merged component.
+
+The conditional second partition is refuted. At `p=11`, the exact split is `95+7`, not `96+6`,
+while the aggregate remains 102 and both odd fields agree componentwise. The failure shows that
+connected-component identity is not a stable sector grading: the isolated component may switch
+from the latent `p-5` sector to one of the `p-4` sectors. P3 bridge deletion is not attempted
+because its P2 transport premise failed. HWB-067 is done; HWB-068 records semantic interval-tag
+profiling as the next route. No manuscript or Zenodo gate opens.
