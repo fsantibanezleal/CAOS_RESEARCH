@@ -10,8 +10,9 @@ by EXP-041 for `p=8,...,11`.
 ### P1. Frozen extraction
 
 An independent extractor must reproduce the frozen component support hash, signed hash, row and
-column counts, nonzero count, and ranks over `GF(2)`, `GF(3)`, and `GF(5)` at every parameter.
-Failure is an implementation failure and no Bockstein output is evidence.
+column counts, nonzero count, and available ranks over `GF(2)` and `GF(3)` at every parameter. It
+must also reproduce the frozen `GF(5)` ranks at `p=10,11` and predict/verify `GF(5)=GF(3)` at
+`p=8,9`. Failure is an implementation failure and no Bockstein output is evidence.
 
 ### P2. The observed rank gap is visible in the first Bockstein
 
