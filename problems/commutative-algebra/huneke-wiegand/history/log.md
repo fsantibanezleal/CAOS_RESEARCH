@@ -1511,3 +1511,15 @@
 - The frozen EXP-037 engine will compute the complete `(11,2)` block under a 3,600-second, 40-GB
   cap. A numerical pass requires a separate pivot-order and odd-prime audit; structural P2 still
   requires an explicit relation certificate.
+
+## 2026-08-30 - EXP-038 p=11 prediction passes and p=12 gate opens
+
+- The complete `(11,2)` presentation has 32,644 kernel rows, 20,374 kernel columns, 1,749,529
+  connecting-source columns, and 8,436,587 connecting rows.
+- Exact surviving dimensions are `8688` over `GF(2)` and `8586` over `GF(3)`, so `e_11=102` as
+  predicted. The kernel cokernel and connecting boundary remain field-independent.
+- Canonical residual order reproduces every `GF(2)` rank and `GF(5)` reproduces every `GF(3)`
+  rank. Primary and audit runs complete in 330.533246 and 176.288232 seconds.
+- The corrected denominator is equivalent from this point to an order-seven recurrence. Its first
+  new check passes, and the already declared second prediction `e_12=138` is activated under a
+  7,200-second, 40-GB cap. No all-parameter recurrence or relation is claimed.

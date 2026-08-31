@@ -1146,6 +1146,19 @@ connecting presentation and seeks unmatched factor-two cells indexed by the latt
 the generating function. Finite agreement cannot confirm the all-parameter statement. No
 manuscript or Zenodo update is open at declaration.
 
+The first EXP-038 gate passes. The complete `(11,2)` block gives surviving dimensions `8688` over
+`GF(2)` and `8586` over both `GF(3)` and `GF(5)`, hence `e_11=102`. Low-degree and canonical
+orders agree on every exact rank. The denominator implies the order-seven recurrence
+
+```text
+e_n-2e_(n-1)+e_(n-3)+e_(n-4)-2e_(n-6)+e_(n-7)=0,
+```
+
+and `p=11` is its first nontrivial out-of-sample check. Measured primary/audit times of 330.533246
+and 176.288232 seconds activate the already declared second prediction `e_12=138` under a
+7,200-second, 40-GB cap. Even two finite passes do not prove the recurrence or its proposed
+degree-six relation.
+
 EXP-037 is now REFUTED at the first out-of-sample gate. The complete `(10,2)` presentation gives
 surviving dimensions `4240` over `GF(2)` and `4168` over `GF(3)`, hence `e_10=72`, not 73. A
 canonical residual order reproduces every `GF(2)` rank, while `GF(5)` reproduces every `GF(3)`

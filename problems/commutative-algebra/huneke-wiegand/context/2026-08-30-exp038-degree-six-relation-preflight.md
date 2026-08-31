@@ -54,8 +54,17 @@ EXP-037 audit       03682871743842bb8a3224b70aee72436ed21056de3d83dfb178f9023c7a
 - formula and premise gate: 30 seconds, 2 GB;
 - primary `(11,2)` target: 3,600 seconds, 40 GB private memory;
 - audit: the same envelope, only after primary completion;
+- conditional `(12,2)` phase: 7,200 seconds, 40 GB, opened only after the audited `p=11` pass;
 - stop immediately at an exact mismatch or a resource boundary; neither is silently promoted to
   evidence for a different claim.
 
 No manuscript or Zenodo update opens at declaration. A second out-of-sample value plus a concrete
 relation certificate would trigger reassessment; another finite fit alone would not.
+
+## Phase-two activation
+
+The primary `(11,2)` run completed in 330.533246 seconds and the canonical-order/`GF(5)` audit in
+176.288232 seconds. Both give exact excess 102, with identical bases, structural profiles, and
+same-field ranks. This measured headroom activates the already declared `e_12=138` prediction
+under the conditional budget above. The second finite value still cannot substitute for the
+relation or recurrence proof.

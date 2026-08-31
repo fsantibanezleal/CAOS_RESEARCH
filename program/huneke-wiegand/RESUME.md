@@ -6,8 +6,10 @@ with structural propagation unresolved. The complete `(10,2)` block gives surviv
 refutes the period-six prediction 73 and its 73-point lattice index at the first out-of-sample
 cell. Low-degree and canonical residual orders agree exactly. The finite `t=2` sequence is now
 `1,4,9,18,31,49,72`. EXP-038 tests whether the first deficit is a degree-six relation, with
-corrected numerator `1+2x+x^2+x^3-x^6` and genuinely new prediction `e_11=102`; this is not yet
-evidence or a theorem. For every `p>=4` and `2<=t<=p-2`, the shifted cubic source is absent
+corrected numerator `1+2x+x^2+x^3-x^6`. Its first genuinely new prediction passes: the complete
+`(11,2)` block gives `8688/8586` and audited exact `e_11=102`. The active second gate is
+`e_12=138`; the recurrence and proposed relation remain unproved. For every `p>=4` and
+`2<=t<=p-2`, the shifted cubic source is absent
 by the positive gap `g(p,t)>=3(p-1)^2`, so every future exact `A_p` value at these targets
 transfers to `C_p`.  This is not an infinite characteristic-dependence theorem. The 53-page
 manuscript v0.23 passed every publication gate and is public, concept-latest, and fresh-download
@@ -444,7 +446,10 @@ smallest relation-style correction
 ```
 
 which predicts the genuinely new value `e_11=102`. This is a fitted falsification target. Even a
-numerical pass cannot prove the proposed degree-six relation without an explicit certificate.
+numerical pass cannot prove the proposed degree-six relation without an explicit certificate. The
+first gate now passes: `dim A_(11,2)=8688` over `GF(2)` and 8586 over both `GF(3)` and `GF(5)`, so
+`e_11=102`. Low-degree and canonical orders agree. The active second gate is `e_12=138` under a
+7,200-second, 40-GB cap.
 
 EXP-036 is CONFIRMED with its all-parameter structural-propagation prediction unresolved.  Its
 exact-sum route reproduces EXP-035 and computes the complete `p<=6` triangle plus `(7,2)`,
