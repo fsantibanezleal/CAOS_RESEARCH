@@ -47,6 +47,9 @@ Transcribe only closed experiment verdicts and proved derivations.
 | EXP-038 | INCONCLUSIVE; two finite passes | audited exact excesses `e_11=102` and `e_12=138`; the degree-six relation and recurrence remain unproved |
 | EXP-039 | REFUTED with redirect | bounded defect-one components fail; exact signed partitions expose four latent sectors and a support merger |
 | EXP-040 | REFUTED; P1 passes | `67+5` localizes the first correction at `p=10`; exact `95+7` refutes the declared `96+6` transport at `p=11` |
+| EXP-041 | REFUTED; P1 passes | the isolated block keeps one normalized twelve-atom semantic skeleton through `p=11`; the lineage-switch and distinguished-row predictions fail |
+| EXP-042 | CONFIRMED finitely | exact first-Bockstein ranks `3,4,5,7` prove that many valuation-one Smith factors in the persistent isolated block; atom representatives are pivot dependent |
+| EXP-043 | CONFIRMED finitely | exact modular Hadamard certificates prove rational ranks and complete isolated 2-primary types `(Z/2)^(3,4,5,7)` through `p=11` |
 | preprint v0.02 | published | minimality plus minimum-layer uniqueness, DOI [`10.5281/zenodo.21764868`](https://doi.org/10.5281/zenodo.21764868); v0.01 remains frozen |
 | preprint v0.03 | published | family theorem, DOI [`10.5281/zenodo.21873911`](https://doi.org/10.5281/zenodo.21873911); exact public-file hash verified |
 | preprint v0.04 | published | uniform endomorphism-overring theorem, DOI [`10.5281/zenodo.21876338`](https://doi.org/10.5281/zenodo.21876338); exact public-file hash verified |
@@ -677,6 +680,37 @@ binom(p-2,3), p-4, p-4, p-5.
 At `p=9`, the first three support sectors merge with defect `35+5+5=45`, while the last contributes
 four. EXP-040 localizes the first correction at `p=10`: the two defective components contribute
 `67+5`, exactly. Its conditional transport prediction fails at `p=11`, where the exact partition
-is `95+7`, not `96+6`; both odd fields agree componentwise. The next structural task is semantic
-interval-tag identification across the support merger. None of these finite component results
+is `95+7`, not `96+6`; both odd fields agree componentwise. EXP-041 then refutes the proposed
+lineage switch: the isolated components at `p=8,...,11` have one common normalized twelve-atom
+semantic skeleton, with defect sequence `3,4,5,7`. The next structural task is its signed
+chain-level normal form. None of these finite component results
 proves the degree-six relation or triggers a new manuscript/Zenodo version.
+
+EXP-042 acts on the signed integer matrices themselves. At `p=8,9,10,11`, their first-Bockstein
+ranks are exactly `3,4,5,7`, under independent reduction conventions. Thus every observed isolated
+rank gap has an explicit factor-two source. This is not yet the complete 2-primary Smith form:
+exact rational-rank upper bounds are needed to exclude additional factors divisible by four.
+
+EXP-043 supplies those upper bounds without a full Smith computation. Minimal products of
+`31,52,83,125` verified 61-bit primes exceed the exact Hadamard bounds on the next minors, proving
+rational ranks `1002,1607,2450,3586`. Hence the four displayed elementary 2-groups are the
+complete isolated 2-primary torsion groups, not lower bounds.
+
+EXP-044 is the declared bridge-localization gate. It tests whether the two pivot-dependent row
+atoms `D:B` and `K:C0` are jointly sufficient and individually necessary for the finite
+Bockstein, using exact deletion and union projections. Even a complete pass is only a guide for
+the required unimodular matching; it is not a uniform chain theorem.
+
+EXP-044 passes necessity but refutes sufficiency. Deleting either marked atom kills the finite
+Bockstein, yet their union alone also has Bockstein zero through `p=11`. The characteristic-two
+torsion is therefore a larger signed circuit. The next localization gate enumerates all subsets
+of the six row atoms before any integral normal form is proposed.
+
+EXP-045 is the declared exhaustive version of that gate. It evaluates the complete 64-subset
+lattice at every tested parameter and records all minimal nonzero and full-rank Bockstein
+carriers. This removes further guesswork from selecting the critical row circuit.
+
+EXP-045 finds a stable full-carrier antichain rather than the predicted unique six-atom carrier.
+The minimal full masks are `59` and `62` throughout; their common mask `58` carries ranks
+`1,2,3,5`, and either completion adds two. The first nonzero carrier shrinks from `58` to `56` at
+`p=11`. This splits the next integral task into a stable completion block and a threshold block.

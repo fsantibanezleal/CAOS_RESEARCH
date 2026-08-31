@@ -1,0 +1,801 @@
+{
+  "experiment": "EXP-042",
+  "route": "first Bockstein of the persistent isolated signed component",
+  "status": "COMPLETE",
+  "parameters": {
+    "p_min": 8,
+    "p_max": 11,
+    "t": 2,
+    "budget_seconds": 2400.0,
+    "memory_gib": 36.0
+  },
+  "premise_hashes": {
+    "EXP-037 rank engine": "1abebc24c99398dded97aa08216211db089889e154736ed9eb5a7202de0b5df0",
+    "EXP-039 component engine": "8ab5678829094a2b314a23889201b06f555aafc5af176500ef62a5eb30e4a352",
+    "EXP-039 p8-p9 components": "831a4300cac10bf44753050a686a7993fabef09bf28b4332c6bb1fb9881c9e2c",
+    "EXP-040 p10-p11 components": "ad1fec04199ff94b803f95f98650c8c8ab386386240d584f447afbb9fe27668b",
+    "EXP-041 semantic profiles": "069e587b779bd1571d72e1a47bf74f4d1640dae5fbbf09907d2bf798c4941534"
+  },
+  "rows": [
+    {
+      "p": 8,
+      "rows": 2675,
+      "columns": 1094,
+      "nonzeros": 6747,
+      "support_hash": "226fe0db14b3ace29537ba3c7a3d4ceccf78b19d3591badc69ed5e5c6eb02f5b",
+      "signed_hash": "7b1b2c8c93fd9919c5415d42688ccbf6ea852c3bd1514a891a9122b76950757f",
+      "ranks": {
+        "2": 999,
+        "3": 1002,
+        "5": 1002
+      },
+      "frozen_checks": {
+        "rows": true,
+        "columns": true,
+        "nonzeros": true,
+        "support_hash": true,
+        "signed_hash": true,
+        "rank_two": true,
+        "rank_three": true,
+        "rank_five": true,
+        "skeleton": true,
+        "defect": true
+      },
+      "bockstein": {
+        "forward": {
+          "order": "forward",
+          "rank_mod_two": 999,
+          "kernel_dimension": 95,
+          "kernel_basis_hash": "c1b6f6c8f27d491e7590f45de1c95140eef841f05f3921ebe7eaee9afa6cc04c",
+          "bockstein_rank": 3,
+          "bockstein_class_hash": "fcca4a2126ff82f949e942bbff6ddbe27fcb09abf7d4665a3a24d9372876f8ef",
+          "independent_witnesses": [
+            {
+              "cycle_hash": "265c2b38484d126d0beabaffd7ee1e4bcc114b009ecc1a8c95454a7fd159de1f",
+              "cycle_weight": 34,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 17,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 17
+              },
+              "divided_boundary_hash": "2599c4fad4eb43302e802a42b93c0504940dd89b0ab970ca18c714d8771ca8ac",
+              "quotient_class_hash": "3624a70fba20032894e7a4ff80de916402fcca1825b282c0997a981d0c78bb2e",
+              "quotient_weight": 3,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3
+              }
+            },
+            {
+              "cycle_hash": "20fee8826557da420c4ddab05b87efdad594c9bd3e0cb05d0a14e8bb69d3dff6",
+              "cycle_weight": 65,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 28,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 37
+              },
+              "divided_boundary_hash": "d75e3e28728377411bb6b1f22f50d8167a1207983fcb62e84bd14e8667e66125",
+              "quotient_class_hash": "e6eafcd5322fcfef34bb08723a1a92c60be8da4c6f858f064703f4d24efb36a0",
+              "quotient_weight": 2,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 2
+              }
+            },
+            {
+              "cycle_hash": "b399eb2f9e3e43d23f4043339a259a53b49545291929016ef5ffe76523138c9d",
+              "cycle_weight": 55,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 24,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 31
+              },
+              "divided_boundary_hash": "6f5d96f9517420a1ed1a8a9149ef833773385c119f8fa51a69df8c377301b840",
+              "quotient_class_hash": "58291c70bda570deab450c38afc302d61b6cfd9528885e605df9e31eeefa111b",
+              "quotient_weight": 1,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1
+              }
+            }
+          ]
+        },
+        "reverse": {
+          "order": "reverse",
+          "rank_mod_two": 999,
+          "kernel_dimension": 95,
+          "kernel_basis_hash": "6e363dd3dec0bac48ac74cd396890b27ed9d8313d016df162623c7e4eab403cc",
+          "bockstein_rank": 3,
+          "bockstein_class_hash": "c1c53d4c1c2c3327971bf03f539e595c6100efc33d1e51a451b59b4f0e50cbab",
+          "independent_witnesses": [
+            {
+              "cycle_hash": "265c2b38484d126d0beabaffd7ee1e4bcc114b009ecc1a8c95454a7fd159de1f",
+              "cycle_weight": 34,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 17,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 17
+              },
+              "divided_boundary_hash": "2599c4fad4eb43302e802a42b93c0504940dd89b0ab970ca18c714d8771ca8ac",
+              "quotient_class_hash": "3624a70fba20032894e7a4ff80de916402fcca1825b282c0997a981d0c78bb2e",
+              "quotient_weight": 3,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3
+              }
+            },
+            {
+              "cycle_hash": "520da0ebf2252b1a67ee77f094d8f613c26a1897744557ff57f6dd440fe51a13",
+              "cycle_weight": 181,
+              "cycle_column_atoms": {
+                "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 13,
+                "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 88,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 79
+              },
+              "divided_boundary_hash": "5a1db445fdb5102391642c83a24bc710d4e008a5ac589311f89f6dadbdf56f24",
+              "quotient_class_hash": "4625bf639642a5f4fa2088f123e2a43dc4a40bb90d41afde74e6e847de5e6d1c",
+              "quotient_weight": 4,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 4
+              }
+            },
+            {
+              "cycle_hash": "7f207504e285efa675f677b777ee3897b7bcf2ccde34a979ca2bda5b6cc94f1a",
+              "cycle_weight": 152,
+              "cycle_column_atoms": {
+                "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 15,
+                "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 68,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 68
+              },
+              "divided_boundary_hash": "a09fec574b69f52419572ab7b4ef5bb8f0e56e2b9324fa1bcd2cbf228af98685",
+              "quotient_class_hash": "b81f559ad67d4f9061e9f7c53d57aae33ab2250bc0d386a034f5de8dad687b40",
+              "quotient_weight": 6,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 6
+              }
+            }
+          ]
+        }
+      },
+      "order_agreement": {
+        "rank_mod_two": true,
+        "kernel_dimension": true,
+        "bockstein_rank": true
+      },
+      "prediction_matches": true,
+      "matrix_artifact": "matrix-p8.json",
+      "matrix_artifact_sha256": "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
+      "matrix_internal_hash": "701aa2498001518fbb0aaf47941205fdc8add56944331c4074d5c917b50a76b3"
+    },
+    {
+      "p": 9,
+      "rows": 4757,
+      "columns": 1729,
+      "nonzeros": 11849,
+      "support_hash": "f0ae2b05186daf7db912364f2de843a5bd94552243e1a9da5c52345f86f8ef96",
+      "signed_hash": "33fd10f22cc55fbfc851f983fe5eaa8c60270e5a8f2b25fda9cd56172c46b763",
+      "ranks": {
+        "2": 1603,
+        "3": 1607,
+        "5": 1607
+      },
+      "frozen_checks": {
+        "rows": true,
+        "columns": true,
+        "nonzeros": true,
+        "support_hash": true,
+        "signed_hash": true,
+        "rank_two": true,
+        "rank_three": true,
+        "rank_five": true,
+        "skeleton": true,
+        "defect": true
+      },
+      "bockstein": {
+        "forward": {
+          "order": "forward",
+          "rank_mod_two": 1603,
+          "kernel_dimension": 126,
+          "kernel_basis_hash": "297450a59bc5ae6df91223de013a3e2d0955d48c11c19b4af9e35173e7052684",
+          "bockstein_rank": 4,
+          "bockstein_class_hash": "50d9b9b5dcab1ff0f28f26814b72fcff6e1138ff6e556f54324e68dcced38ed8",
+          "independent_witnesses": [
+            {
+              "cycle_hash": "792337d1c1437a1a6fe4d674e0e6922313b4ef7de8b71f37d43d27a96681a150",
+              "cycle_weight": 59,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 26,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 33
+              },
+              "divided_boundary_hash": "9f76a856a2093aab080e071670b7cc296df01134e9b0804b0d2a48822874f9a9",
+              "quotient_class_hash": "e21ff993b0d238169d61e23a57e8a07fbbbe5f2dcce6c4bf89f6b45c415c54db",
+              "quotient_weight": 3,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3
+              }
+            },
+            {
+              "cycle_hash": "21f7cbbe3d98a1e92abb02231c1eece420ed2e8f85a1c08bb861c01857ddda25",
+              "cycle_weight": 82,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 35,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 47
+              },
+              "divided_boundary_hash": "0b6a939e94201e052f114516765dc94131d6273cad401df4bb0ab4f3cc77b072",
+              "quotient_class_hash": "b68f5e7c5effa4acf2001a52a91472ed19a6591cdc062b22cc3e67a6b249e2d7",
+              "quotient_weight": 3,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3
+              }
+            },
+            {
+              "cycle_hash": "a3adc8f0e64d12af7265ee1f10a4907ad14d481290bb85e84a6d23ddb0a1c576",
+              "cycle_weight": 87,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 36,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 51
+              },
+              "divided_boundary_hash": "928b49bb685b66897227c164e56368e036b6128cb046ddccb456cd1ba3a2d2a4",
+              "quotient_class_hash": "ce8e99cedbc4aeaa2987eb3453bcd66a83cf7a95953083a9984b0d99d528025e",
+              "quotient_weight": 2,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 2
+              }
+            },
+            {
+              "cycle_hash": "4d4bb012482403b461b722fbf6cab2cb35a07f563975592ba031ccd00cc75c16",
+              "cycle_weight": 68,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 29,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 39
+              },
+              "divided_boundary_hash": "9126f49c6db2817f5671df7e6601943bb7b2557d77e0d75fb9890ddb4e56dabc",
+              "quotient_class_hash": "0fdfdf85cd4d672edf11bdf598cffffa157e1cc719daac0e7dbb47fc2437f960",
+              "quotient_weight": 1,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1
+              }
+            }
+          ]
+        },
+        "reverse": {
+          "order": "reverse",
+          "rank_mod_two": 1603,
+          "kernel_dimension": 126,
+          "kernel_basis_hash": "1d26ef7d1a79a6250c559cc9996ddd927d61a45574df6140b0095dbb917fa312",
+          "bockstein_rank": 4,
+          "bockstein_class_hash": "aff5c019617ee251ea04f18de1e67ed374a6385b8727884ebeb727274628efe9",
+          "independent_witnesses": [
+            {
+              "cycle_hash": "139bdb4767f8506a7e6b79d291c5534e5ee48126ada0c7e818f49bee9c3f1ca0",
+              "cycle_weight": 209,
+              "cycle_column_atoms": {
+                "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 23,
+                "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 91,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 94
+              },
+              "divided_boundary_hash": "c31bd2d8335f24c78e1a719cf1a2b19a2ca358fa2c2ba14e02525e04919d4798",
+              "quotient_class_hash": "d17ad764526a5a3eec2c7f279eeec74afdfa03b7c7ef19e3407eb2638b136a85",
+              "quotient_weight": 6,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 6
+              }
+            },
+            {
+              "cycle_hash": "47de9396fdba3a636c78b8c692030168b45ba8ef865e060f4dc0f8c6ccb9732a",
+              "cycle_weight": 101,
+              "cycle_column_atoms": {
+                "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 18,
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 41,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 42
+              },
+              "divided_boundary_hash": "3da0d85ab48e77a8c8073f772e89a8415a7477e385691cd040ff23fdb4d4cb53",
+              "quotient_class_hash": "fc576a4842ef540f6184e5714b2cc00376efe4a7e029da3c0e10fe0fb84296d0",
+              "quotient_weight": 5,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 5
+              }
+            },
+            {
+              "cycle_hash": "792337d1c1437a1a6fe4d674e0e6922313b4ef7de8b71f37d43d27a96681a150",
+              "cycle_weight": 59,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 26,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 33
+              },
+              "divided_boundary_hash": "9f76a856a2093aab080e071670b7cc296df01134e9b0804b0d2a48822874f9a9",
+              "quotient_class_hash": "e21ff993b0d238169d61e23a57e8a07fbbbe5f2dcce6c4bf89f6b45c415c54db",
+              "quotient_weight": 3,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3
+              }
+            },
+            {
+              "cycle_hash": "e73f04c958e7e914b6a93f0fcac36e45295685ffe882d7bc60a27245f80f86eb",
+              "cycle_weight": 62,
+              "cycle_column_atoms": {
+                "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 9,
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 26,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 27
+              },
+              "divided_boundary_hash": "84e221c972fe788e845d5cd6396ca6ef73cacb75106b851b5a10f88d96dcae43",
+              "quotient_class_hash": "6ffcfcecc5634a5166c7ad1c00543e417a3fd4d05b1c3229bc5d0a68b97baf72",
+              "quotient_weight": 6,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 6
+              }
+            }
+          ]
+        }
+      },
+      "order_agreement": {
+        "rank_mod_two": true,
+        "kernel_dimension": true,
+        "bockstein_rank": true
+      },
+      "prediction_matches": true,
+      "matrix_artifact": "matrix-p9.json",
+      "matrix_artifact_sha256": "00c20e30d81861a599448535c2ecc7625b56b1951fe863e64d40ce6f56ff218c",
+      "matrix_internal_hash": "8039cc3aa06c9dee67156caa2afa3a69dce3a32067a1ee0eb44dc65f7b8e759e"
+    },
+    {
+      "p": 10,
+      "rows": 7973,
+      "columns": 2607,
+      "nonzeros": 19654,
+      "support_hash": "bcdb558d4afb10b03e7f37af29d5b3a5ca8422a4f92be9bdf954bf1db3899be9",
+      "signed_hash": "427c4565a8446119ed68595213f4ee1848c969024430e10b6764d0ce25878185",
+      "ranks": {
+        "2": 2445,
+        "3": 2450,
+        "5": 2450
+      },
+      "frozen_checks": {
+        "rows": true,
+        "columns": true,
+        "nonzeros": true,
+        "support_hash": true,
+        "signed_hash": true,
+        "rank_two": true,
+        "rank_three": true,
+        "rank_five": true,
+        "skeleton": true,
+        "defect": true
+      },
+      "bockstein": {
+        "forward": {
+          "order": "forward",
+          "rank_mod_two": 2445,
+          "kernel_dimension": 162,
+          "kernel_basis_hash": "3363e4f7870822ac14908ee40d671fbe176e95ffd7ffc7a5a309096114707158",
+          "bockstein_rank": 5,
+          "bockstein_class_hash": "bd7f43df2bc49219f580ff5e89f6d0a0983ba356ba1d55f38b9486e7afb0aaee",
+          "independent_witnesses": [
+            {
+              "cycle_hash": "eb499e767e158615378fe49bf1990cafacfdb21295dd30617f51f873c69a0a8f",
+              "cycle_weight": 73,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 32,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 41
+              },
+              "divided_boundary_hash": "7432d0cc5ae8f43440ceb4eb25c7dbd19c2ca2cb598ebbfd5f946bfe9441fbf3",
+              "quotient_class_hash": "72b9c3ad1c7cb88468d75fdd86273af8a6897bdd058eb205baef75be46b49b62",
+              "quotient_weight": 6,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 6
+              }
+            },
+            {
+              "cycle_hash": "3695b43f65655fdeda3343c10eb71c2d651fdb1251d4b4845e2850cc4422649d",
+              "cycle_weight": 84,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 35,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 49
+              },
+              "divided_boundary_hash": "ddc23a7535bf20404a98cd2567d2ed059f0c4edf65acd1264744a2397e6842cb",
+              "quotient_class_hash": "e214798f3984b0a078fc56c18cd6bb2f52a93b9827b990ac70b37362d03aaf73",
+              "quotient_weight": 4,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 4
+              }
+            },
+            {
+              "cycle_hash": "e65ed482b3d9bb7ad28766867e57dfe6293936a3d635f10cf943e2e467f48f8c",
+              "cycle_weight": 113,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 46,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 67
+              },
+              "divided_boundary_hash": "cf5e3da2b756577db7dd9e9303aca1ec4b6d80a1151919533311ae0d1b52e61a",
+              "quotient_class_hash": "53f466f5a51c7994c5fbd2abddcd00288049b90e6b4107129f5b3dc151313828",
+              "quotient_weight": 4,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 4
+              }
+            },
+            {
+              "cycle_hash": "771a5f572e2bb61266859fee7354858d2474ccb0fdd554ef8ea29a3267c04187",
+              "cycle_weight": 109,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 44,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 65
+              },
+              "divided_boundary_hash": "b291b15c0fb6fdc3884d58d5a827e375bc28ae579da3a3377b058096b8754cb4",
+              "quotient_class_hash": "5f9220fa40d11b7062cf94be8f0b64fb85ffc40f0ab68c6d196e19bc826331c0",
+              "quotient_weight": 2,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 2
+              }
+            },
+            {
+              "cycle_hash": "468d54bfc173a7257eced3c9cfe7ddefec76f68a8d26e9eef1b955d8c27956c6",
+              "cycle_weight": 81,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 34,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 47
+              },
+              "divided_boundary_hash": "15a8d276a23fb403ad674be7dbec6fa8eb27f665511a2f6af24cff4f876c1d82",
+              "quotient_class_hash": "678faf9d43166681b3669459c7528eea8762efcc6ce75e5e4c54311727d89200",
+              "quotient_weight": 2,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 2
+              }
+            }
+          ]
+        },
+        "reverse": {
+          "order": "reverse",
+          "rank_mod_two": 2445,
+          "kernel_dimension": 162,
+          "kernel_basis_hash": "f036e4579aec67438c9a58d55942ecf9c46c45d6340ba32eb7bf31f2d383ee2b",
+          "bockstein_rank": 5,
+          "bockstein_class_hash": "43ae7db8a93def31b811531937aedba42d85243f8922953ac682d633b7fedf72",
+          "independent_witnesses": [
+            {
+              "cycle_hash": "1ed9cd5a592acfb0e9fdcc002121745976aefa787c42153452e526327ed4e7c6",
+              "cycle_weight": 115,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 59,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 56
+              },
+              "divided_boundary_hash": "9fcb6fc0bddef4cc2949d1d4b0803ac31d18af44a5f4bcab73c3f4fd54726d40",
+              "quotient_class_hash": "0fb84cdcf96037bcd455af9a284af45b7406b79adbf1bbec520d8c76570c3524",
+              "quotient_weight": 10,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 10
+              }
+            },
+            {
+              "cycle_hash": "0da4ac2824e3539e0d5a3088f90c88ea9023260263d5a5af0a76512df8ef12a2",
+              "cycle_weight": 413,
+              "cycle_column_atoms": {
+                "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 17,
+                "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 209,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 186
+              },
+              "divided_boundary_hash": "d99d8217b13ddd8d0ec95e95120169a234c180494b32fb2fb73236371cb05b4e",
+              "quotient_class_hash": "43433bfbb2823566841b077cdf4826affacc7620b49f409e8c5059dc8c51fe8f",
+              "quotient_weight": 12,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 12
+              }
+            },
+            {
+              "cycle_hash": "eb499e767e158615378fe49bf1990cafacfdb21295dd30617f51f873c69a0a8f",
+              "cycle_weight": 73,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 32,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 41
+              },
+              "divided_boundary_hash": "7432d0cc5ae8f43440ceb4eb25c7dbd19c2ca2cb598ebbfd5f946bfe9441fbf3",
+              "quotient_class_hash": "72b9c3ad1c7cb88468d75fdd86273af8a6897bdd058eb205baef75be46b49b62",
+              "quotient_weight": 6,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 6
+              }
+            },
+            {
+              "cycle_hash": "9d8fa11eff70b6a92f65ec671bd8e0ba11de8c312d05ff664a1e9a8abb0480e5",
+              "cycle_weight": 324,
+              "cycle_column_atoms": {
+                "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 21,
+                "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 154,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 148
+              },
+              "divided_boundary_hash": "eae92cd37740344394fffb76060d0d13d8537314ee7013f2415efb277e970740",
+              "quotient_class_hash": "4b229e2c0a0d88ac27bab81d6b9fe7ce58a982dba087bd8aad0902da440eb1f7",
+              "quotient_weight": 8,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 8
+              }
+            },
+            {
+              "cycle_hash": "9521b2225432c5ff31dc106aa681a28e03d442d5b33093625f284866b0cc365e",
+              "cycle_weight": 340,
+              "cycle_column_atoms": {
+                "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 27,
+                "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 151,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 161
+              },
+              "divided_boundary_hash": "e7915d7852300f9b6fb82eb9dec43c650f1631e9182a1a1a57422a681728b05c",
+              "quotient_class_hash": "58a5d8117a1c8a1050932ae96a135c241ef4862205cb16de32e4f4ef2f939f0c",
+              "quotient_weight": 14,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 14
+              }
+            }
+          ]
+        }
+      },
+      "order_agreement": {
+        "rank_mod_two": true,
+        "kernel_dimension": true,
+        "bockstein_rank": true
+      },
+      "prediction_matches": true,
+      "matrix_artifact": "matrix-p10.json",
+      "matrix_artifact_sha256": "c7d6bbf0ec655296a0dafe81ab41ce70300c0fa4a837e5c141f55811e29f6f4d",
+      "matrix_internal_hash": "6cf757d7d7c873b83d2587a5b33467bb936b2a11575324e54ea5dbd86170eca2"
+    },
+    {
+      "p": 11,
+      "rows": 12711,
+      "columns": 3785,
+      "nonzeros": 31073,
+      "support_hash": "227a94ea264a15ff38ff0837f4dbcfeea370015cc5dd328080eb4d94ef5a4e2c",
+      "signed_hash": "d532dcd7e9eb7d364feae9a9f25439d53347d205bcfef9bfc11b14b64e91c856",
+      "ranks": {
+        "2": 3579,
+        "3": 3586,
+        "5": 3586
+      },
+      "frozen_checks": {
+        "rows": true,
+        "columns": true,
+        "nonzeros": true,
+        "support_hash": true,
+        "signed_hash": true,
+        "rank_two": true,
+        "rank_three": true,
+        "rank_five": true,
+        "skeleton": true,
+        "defect": true
+      },
+      "bockstein": {
+        "forward": {
+          "order": "forward",
+          "rank_mod_two": 3579,
+          "kernel_dimension": 206,
+          "kernel_basis_hash": "d83f2cc90a02e9ddaf14984f56dcb721d741f04e7c8c3a8cd4c2368488e9587c",
+          "bockstein_rank": 7,
+          "bockstein_class_hash": "0b8caa3721b37eb3444b45ebdc23c518116c88829ef61ea489a90cd9a9739383",
+          "independent_witnesses": [
+            {
+              "cycle_hash": "0136518562a37ade9ba9ac64485bef5267c780f609f6eab281fb2ffdd8d98c3d",
+              "cycle_weight": 52,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 25,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 27
+              },
+              "divided_boundary_hash": "c52c3353c1350ebcbce3c6ab019b46b887dd0c24fde0453b6a35f5ed4c67db63",
+              "quotient_class_hash": "9b23144e1306deaa416742bc5bc89730256eeb4083ca4489804dc2faad593114",
+              "quotient_weight": 5,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 5
+              }
+            },
+            {
+              "cycle_hash": "d24baf74108f3daf9a4fc8a7167ea10dbe7a038c11d4a5115f56ea9f36f529fd",
+              "cycle_weight": 107,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 44,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 63
+              },
+              "divided_boundary_hash": "1743920129d0851849193efab0fce2f26830a51c4b196c530bef77b59f56156b",
+              "quotient_class_hash": "3976c2e2708f23e5f2b357a38d021442cbbe3f1b77930ac485019e44a76dd785",
+              "quotient_weight": 4,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 4
+              }
+            },
+            {
+              "cycle_hash": "77ff2f1085af45213d6ee1c913d9f36d81b0f8d29674252c73426b5176942fea",
+              "cycle_weight": 109,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 44,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 65
+              },
+              "divided_boundary_hash": "bfcb2e9dce6e08d2b1868dc1580b75a6913a1d6075e27b40fe655d1004786a26",
+              "quotient_class_hash": "0bf27b0904cf51a465268a0b7b27592cd44a7a93c4709f109483269d6cdf68d0",
+              "quotient_weight": 3,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3
+              }
+            },
+            {
+              "cycle_hash": "9bca6cbf93c8268db65b804e803fd72f189aab8447ca94b73221b6755b1a9d75",
+              "cycle_weight": 133,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 54,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 79
+              },
+              "divided_boundary_hash": "53c5585e31d6daa5aa8f1f9f9759dcde0848a5cfcdac2c6cea2651b68d9351df",
+              "quotient_class_hash": "7bfb573a8669d3fc70d52cad5136d4d281879fbf7ef7f4a91a17e5919241917d",
+              "quotient_weight": 4,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 4
+              }
+            },
+            {
+              "cycle_hash": "f2a30b026dde870b90d0ad70c9913ff5f2f8f3583b729ab06e24031ec1072685",
+              "cycle_weight": 144,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 57,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 87
+              },
+              "divided_boundary_hash": "bf5cad1c9827f278c6b8103eb643e0bc4d5d6c9ef2eed1bf513f91dfb5855e5b",
+              "quotient_class_hash": "43094db53c3bbec442eded7e40bb51eebecdcc74da2946907c89e6ecb1a56ca2",
+              "quotient_weight": 3,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3
+              }
+            },
+            {
+              "cycle_hash": "96a34cb6d4fb8cc7603c7857ee0cf53e332c68fcac26428ac79002370f20cb3b",
+              "cycle_weight": 131,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 52,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 79
+              },
+              "divided_boundary_hash": "df27093df15fe4efae7197af59ef3e280ad02815ea85c4e2673fb3893533470e",
+              "quotient_class_hash": "b6fef0cf3c2923727c07b9bb89e43173d9547b585ed7881e88cbd655400e429b",
+              "quotient_weight": 3,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3
+              }
+            },
+            {
+              "cycle_hash": "c4e2ba4361ebea13104ec6e4c9c3b62384b9e54169e4c24268e495f26fe6611f",
+              "cycle_weight": 94,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 39,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 55
+              },
+              "divided_boundary_hash": "ebf352982b2513c4801e0d4ca305a654b4806df8b0bf589a05b1040356fda4f0",
+              "quotient_class_hash": "eedbb4143b0b9045c8cf48364d5fc58172a27f2b0d7665ea05ac977ad697014c",
+              "quotient_weight": 1,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1
+              }
+            }
+          ]
+        },
+        "reverse": {
+          "order": "reverse",
+          "rank_mod_two": 3579,
+          "kernel_dimension": 206,
+          "kernel_basis_hash": "040771a03ffa2db1bfc6df9147b226fe6767d12d99aefa82cd201a14eb41c6f1",
+          "bockstein_rank": 7,
+          "bockstein_class_hash": "a64d2d284bc0cc23c1f63dc8de99046ab23213346d69675f3c50def47daaf7fc",
+          "independent_witnesses": [
+            {
+              "cycle_hash": "08af3faaf86712337d69d0c8bef8da2780339bac59d9e0f24f1472a5efe6e4f2",
+              "cycle_weight": 385,
+              "cycle_column_atoms": {
+                "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 38,
+                "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 168,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 178
+              },
+              "divided_boundary_hash": "834115a3a230c8978d085d18a60e28bfa79e1292e6039ed8eb84b55a140267db",
+              "quotient_class_hash": "2ef7ede621315c75527c47ef1109c3590629d0c1e83a2e5bd41b14491884a303",
+              "quotient_weight": 11,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 11
+              }
+            },
+            {
+              "cycle_hash": "da356996d1ad1ebf5278a9f7a07747d07cd71d5f6856b146adf5b63f1071607c",
+              "cycle_weight": 168,
+              "cycle_column_atoms": {
+                "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 33,
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 69,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 66
+              },
+              "divided_boundary_hash": "08bab37a78458a81c93eb12b0f3d5f52795c2ced39cfd7d0aa83b095f096dcf9",
+              "quotient_class_hash": "37fff08ae74ae913bfd5c6a54caa54587013eaa72c0537516163326d38cf113f",
+              "quotient_weight": 10,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 10
+              }
+            },
+            {
+              "cycle_hash": "0136518562a37ade9ba9ac64485bef5267c780f609f6eab281fb2ffdd8d98c3d",
+              "cycle_weight": 52,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 25,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 27
+              },
+              "divided_boundary_hash": "c52c3353c1350ebcbce3c6ab019b46b887dd0c24fde0453b6a35f5ed4c67db63",
+              "quotient_class_hash": "9b23144e1306deaa416742bc5bc89730256eeb4083ca4489804dc2faad593114",
+              "quotient_weight": 5,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 5
+              }
+            },
+            {
+              "cycle_hash": "31d5e3e2c1a2a3c617ef6a2dcb02a3f4b63eaa4fd15abc783c71438343d083a5",
+              "cycle_weight": 137,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 61,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 76
+              },
+              "divided_boundary_hash": "5b710ae5a362a915ce918469945bd5f6d09ab7aba6476125f131cea1abe935e4",
+              "quotient_class_hash": "c923d32bb1be1146894eb2394a4307f16e67e65f1af59befb1fa0a2e450c4d8f",
+              "quotient_weight": 8,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 8
+              }
+            },
+            {
+              "cycle_hash": "5a6f9592b3ce1e4b5d11d6c730fef608e523a8bdad522cc04b3228a112cbb556",
+              "cycle_weight": 136,
+              "cycle_column_atoms": {
+                "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 22,
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 61,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 53
+              },
+              "divided_boundary_hash": "16531496741295a672d4c6781b2ab6b07a0bd16d94ca30b0497838a963ecba12",
+              "quotient_class_hash": "9140819964ffb2dd8fbcf9e78bc4d046803644e37dba517dfa63c115df0451fe",
+              "quotient_weight": 10,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 10
+              }
+            },
+            {
+              "cycle_hash": "0e6c83c5fcebeb6e6e2833f46f6910ed066fcf82f07597678e8e7a80fad9362f",
+              "cycle_weight": 138,
+              "cycle_column_atoms": {
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 69,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 69
+              },
+              "divided_boundary_hash": "4c9f0e213cbd5eaa03b17b70068d6bc54b50187747bcaa0e105a487913ee20be",
+              "quotient_class_hash": "d755d894ef80104ea36e2f7dd9d37b56dfc46c87fe233b0e71fd83a2721f4a45",
+              "quotient_weight": 12,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 12
+              }
+            },
+            {
+              "cycle_hash": "b4d7901c55f75bc612bba03914891f67b6f62787a0e9867535e8816573471912",
+              "cycle_weight": 106,
+              "cycle_column_atoms": {
+                "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 11,
+                "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 45,
+                "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 50
+              },
+              "divided_boundary_hash": "1925dbcb4c942dd8a36ecbc0f2bdfc0288581ca21934bc577eac30349a02a607",
+              "quotient_class_hash": "8cbedabf2ad7bec60865d85065ca1bbfcbf8224fce8abd35aa62f4b2522d341c",
+              "quotient_weight": 13,
+              "quotient_row_atoms": {
+                "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 13
+              }
+            }
+          ]
+        }
+      },
+      "order_agreement": {
+        "rank_mod_two": true,
+        "kernel_dimension": true,
+        "bockstein_rank": true
+      },
+      "prediction_matches": true,
+      "matrix_artifact": "matrix-p11.json",
+      "matrix_artifact_sha256": "69e8519a3b239ec90c3b5af526f806a9a0aabf003517ea28233167d7e2b68dd9",
+      "matrix_internal_hash": "717e4a921fb04686415e90ce570848278ed5935d50acb76344dea5357e844a29"
+    }
+  ],
+  "elapsed_seconds": 258.8141114999962,
+  "p1_status": "PASS_FINITE",
+  "p2_status": "PASS_FINITE",
+  "p3_status": "PASS_FINITE",
+  "artifact_hash": "b096a6e023da2fcad963b5fe0c4bfc31853d39ec2a771c306779cbb129912dbe"
+}

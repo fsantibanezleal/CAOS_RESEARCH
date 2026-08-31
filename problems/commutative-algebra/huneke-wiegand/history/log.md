@@ -1561,3 +1561,116 @@
   suggests that the isolated support component changes latent sector identity across parameters.
 - HWB-067 is done. HWB-068 records semantic interval-tag profiling before any bridge deletion,
   further coefficient computation, manuscript update, or Zenodo version.
+
+## 2026-08-31 - EXP-041 declared
+
+- The source-complete pass found no published semantic decomposition for the signed connecting
+  core. Toric gluing gives tensor-product resolutions only after a genuine ideal splitting, and
+  the generalized-arithmetic-sequence positive theorem does not cover the EXP-009 family.
+- EXP-041 declares exact interval-atom fingerprints before implementation. It must reproduce all
+  frozen components and predicts that the isolated `p=9,10` blocks continue the finite `p-5`
+  anchor, while the isolated `p=11` block switches to one `p-4` anchor.
+- The `p=8` smoke and `p=8,...,11` campaign have explicit time, memory, progress, checkpoint, and
+  one-sidedness gates. No bridge deletion, manuscript update, or Zenodo version is authorized by a
+  finite-only semantic pass.
+
+## 2026-08-31 - EXP-041 refutes the switch and isolates a persistent skeleton
+
+- Every frozen support hash and defect partition is reproduced. At `p=8`, the defect-three `R`
+  anchor is uniquely recognized without component index, size, or rank by omission of `H1/C1`;
+  P1 therefore passes finitely.
+- P2 is refuted. The isolated components at `p=8,...,11` have the same eight coefficient tags and,
+  after the declared affine normalization, exactly the same twelve semantic atoms. Their defects
+  are `3,4,5,7`, so the `p=11` jump is internal to one persistent skeleton rather than a lineage
+  switch.
+- P3 is refuted as an anchor: the selected EXP-035 row is absent from every defective profile.
+  No claim is made about the particular pivot or stage at which it leaves the residual core.
+- Forward and reversed tag construction agree exactly; the independent certificate audits every
+  interval partition, frozen component, histogram sum, atom shape, and the common skeleton hash.
+  HWB-068 is done and HWB-069 redirects to an exact signed normal form. Finite semantic evidence
+  alone does not open a manuscript or Zenodo gate.
+
+## 2026-08-31 - EXP-042 declared after path reprioritization
+
+- The route audit ranks first-Bockstein extraction and integral matched-block cancellation above
+  another coefficient sweep. Relative squarefree-divisor homology and OI/FI finite generation are
+  proof frameworks only after explicit chain maps exist; toric gluing is conditional on an actual
+  splitting.
+- EXP-042 declares Bockstein ranks `3,4,5,7` for the isolated `p=8,...,11` matrices. It must
+  reproduce every frozen signed hash and multi-prime rank before lifting mod-two kernel vectors.
+- Forward/reverse order and an independent witness audit are mandatory. A finite pass supplies
+  exact factor-two directions but neither an all-parameter recurrence nor a publication trigger.
+
+## 2026-08-31 - EXP-042 confirms the finite first Bockstein
+
+- Every isolated matrix reproduces its frozen support hash, signed hash, size, nonzero count, and
+  available ranks. New `GF(5)` ranks at `p=8,9` equal the frozen `GF(3)` ranks.
+- The first-Bockstein ranks at `p=8,9,10,11` are exactly `3,4,5,7`. Hence the matrices have exactly
+  that many nonzero Smith factors with 2-adic valuation one.
+- Forward/reverse order and independent high/low pivot implementations agree on rank. The audit
+  refutes canonical atom localization: high-pivot representatives lie in `D:B`, while low-pivot
+  representatives lie in `K:C0`.
+- HWB-070 opens the exact rational-rank upper gate. A distinct-prime product exceeding the
+  Hadamard minor bound can close the finite 2-primary Smith statement without a full Smith form.
+  No recurrence, all-parameter theorem, manuscript, or Zenodo update follows yet.
+
+## 2026-08-31 - EXP-043 rational-rank certificate declared
+
+- A full Smith computation is replaced by an exact modular determinant certificate. If every
+  selected prime gives rank at most `r`, every `(r+1)` minor is divisible by their product `Q`.
+- The exact gate `Q^2>4*d^(r+1)`, with `d` the maximum column degree, makes Hadamard's bound smaller
+  than `Q/2` and forces all those minors to vanish over the integers.
+- EXP-043 predicts rational ranks `1002,1607,2450,3586`. Combined with EXP-042, a pass completely
+  identifies the tested isolated 2-primary cokernels as `(Z/2)^(3,4,5,7)`.
+- Primality, distinctness, opposite-pivot ranks, and the exact product inequality require an
+  independent audit. The finite certificate does not open an all-parameter or publication claim.
+
+## 2026-08-31 - EXP-043 completes the finite isolated 2-primary torsion
+
+- Minimal prefixes of `31,52,83,125` distinct verified 61-bit primes all give the declared ranks
+  and satisfy the exact squared Hadamard inequalities for `p=8,9,10,11`.
+- The resulting rational ranks are `1002,1607,2450,3586`. Independent low-pivot elimination
+  recomputes all 291 stored ranks and verifies every prime, product, and determinant bound.
+- Combined with EXP-042, the complete 2-primary torsion groups of the isolated cokernels are
+  `(Z/2)^3,(Z/2)^4,(Z/2)^5,(Z/2)^7`; no additional factor divisible by four exists.
+- HWB-070 is done. HWB-071 redirects to the uniform integral `D:B <-> K:C0` bridge. The result is
+  exact and relevant but finite, so no recurrence, all-parameter theorem, manuscript, or Zenodo
+  update is claimed.
+
+## 2026-08-31 - EXP-044 row-projection bridge declared
+
+- The experiment is declared before reading projected ranks. It deletes `D:B`, deletes `K:C0`,
+  deletes both, and retains only their union in each frozen isolated matrix.
+- The strong bridge prediction says either deletion kills the Bockstein while the union preserves
+  ranks `3,4,5,7`. Exact ranks over `GF(2)`, `GF(3)`, and `GF(5)` accompany both reduction orders.
+- An independent reconstruction and opposite-pivot audit are mandatory. Row projection is a
+  localization diagnostic, not an integral matching or an all-parameter proof.
+
+## 2026-08-31 - EXP-044 refutes the two-atom carrier
+
+- P1 passes: deleting `D:B`, `K:C0`, or both makes all three field ranks equal and the first
+  Bockstein zero for every `p=8,...,11`.
+- P2 fails: retaining only `D:B union K:C0` also gives equal field ranks and Bockstein zero, so the
+  two necessary interfaces are not jointly sufficient.
+- P3 and all 158 independent low-pivot audit checks pass. The next gate is the complete 64-subset
+  lattice of the six normalized row atoms, not a guessed two-block integral reduction.
+- No recurrence, all-parameter theorem, manuscript, or Zenodo update is claimed.
+
+## 2026-08-31 - EXP-045 row-atom carrier lattice declared
+
+- All 64 subsets of the fixed six-row-atom alphabet will be tested for each frozen matrix.
+- The strong prediction is that all six atoms are individually essential and the full set is the
+  unique nonzero Bockstein carrier. A failure must expose the complete minimal-carrier antichain.
+- Exact three-field ranks, opposite Bockstein reductions, premise hashes, and an independent
+  reconstruction of all 256 projections are mandatory.
+
+## 2026-08-31 - EXP-045 proves the stable full-carrier antichain
+
+- All 256 row projections and 2,855 independent audit checks pass, although P1/P2/P3 are refuted
+  as declared.
+- Nonzero carriers are exactly the supersets of mask `58` through `p=10` and the supersets of mask
+  `56` at `p=11`. The latter triad first carries one Bockstein class at the threshold.
+- Full carriers are exactly `59,62,63` for all four parameters. The minimal antichain `{59,62}` is
+  stable; its intersection `58` has ranks `1,2,3,5`, and either completion adds exactly two.
+- HWB-071 redirects to relative integral presentations for the two alternative completions and
+  the separate `p=11` threshold. No publication gate opens from the finite lattice alone.
