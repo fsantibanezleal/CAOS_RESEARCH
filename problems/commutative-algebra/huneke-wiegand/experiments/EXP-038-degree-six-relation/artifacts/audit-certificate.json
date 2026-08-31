@@ -1,7 +1,7 @@
 {
   "experiment": "EXP-038",
   "status": "PASS",
-  "generated_at": "2026-08-31T03:01:43.113014+00:00",
+  "generated_at": "2026-08-31T03:04:34.201638+00:00",
   "cells": [
     {
       "p": 11,
@@ -110,5 +110,5 @@
     138
   ],
   "scope": "audited finite agreement at (p,t)=(11,2) and (12,2); the proposed degree-six relation, order-seven recurrence, and all-parameter series remain unproved",
-  "certificate_hash": "86f7e3720c116b1e60882e07969bfd0d0e014b96eebc0dd5471791f0b78d7a9c"
+  "certificate_hash": "6208c2677a5a99fb62565ce49d744e7cd7576d4d21a9b3d33d1d9f7078100fc0"
 }

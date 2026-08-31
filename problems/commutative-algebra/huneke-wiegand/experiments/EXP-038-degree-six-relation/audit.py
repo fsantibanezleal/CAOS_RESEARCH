@@ -152,7 +152,9 @@ def main() -> int:
         ),
     }
     certificate["certificate_hash"] = digest(certificate)
-    OUTPUT.write_text(json.dumps(certificate, indent=2) + "\n", encoding="utf-8")
+    OUTPUT.write_text(
+        json.dumps(certificate, indent=2) + "\n", encoding="utf-8", newline="\n"
+    )
     print(json.dumps(certificate, indent=2))
     return 0
 
