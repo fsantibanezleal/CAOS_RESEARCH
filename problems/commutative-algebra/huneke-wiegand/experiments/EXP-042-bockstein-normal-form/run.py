@@ -93,6 +93,7 @@ def load_frozen() -> dict[int, dict[str, object]]:
     source_rows = {int(row["p"]): row for row in exp039["rows"] if int(row["p"]) in (8, 9)}
     source_rows.update({int(row["p"]): row for row in exp040["rows"]})
     isolated_hashes = {int(p): value for p, value in exp041["isolated_hashes"].items()}
+    isolated_hashes[8] = exp041["anchor_hashes"]["R"]
     frozen: dict[int, dict[str, object]] = {}
     for p, support_hash in isolated_hashes.items():
         matches = [
