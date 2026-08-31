@@ -1663,3 +1663,14 @@
   unique nonzero Bockstein carrier. A failure must expose the complete minimal-carrier antichain.
 - Exact three-field ranks, opposite Bockstein reductions, premise hashes, and an independent
   reconstruction of all 256 projections are mandatory.
+
+## 2026-08-31 - EXP-045 proves the stable full-carrier antichain
+
+- All 256 row projections and 2,855 independent audit checks pass, although P1/P2/P3 are refuted
+  as declared.
+- Nonzero carriers are exactly the supersets of mask `58` through `p=10` and the supersets of mask
+  `56` at `p=11`. The latter triad first carries one Bockstein class at the threshold.
+- Full carriers are exactly `59,62,63` for all four parameters. The minimal antichain `{59,62}` is
+  stable; its intersection `58` has ranks `1,2,3,5`, and either completion adds exactly two.
+- HWB-071 redirects to relative integral presentations for the two alternative completions and
+  the separate `p=11` threshold. No publication gate opens from the finite lattice alone.

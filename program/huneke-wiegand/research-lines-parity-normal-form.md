@@ -63,6 +63,12 @@ EXP-045 declares that exhaustive lattice before computation. Its strong predicti
 full six-atom set is the unique nonzero carrier. A refutation remains decisive because the stored
 minimal-carrier antichains will specify the exact smaller circuit that replaces it.
 
+The exhaustive result refutes that prediction and supplies the replacement. Minimal full
+carriers are stably `59` and `62`; their intersection `58` carries ranks `1,2,3,5`, and either
+completion adds exactly two. The `p=11` minimal nonzero carrier drops to `56`, exposing a separate
+threshold class. The highest-value action is now an integral relative comparison of the two
+alternative completions, not another global rank or coefficient sweep.
+
 ### 2. Relative squarefree-divisor homology - structural fallback
 
 Multigraded Betti numbers of numerical semigroup rings can be represented by reduced homology of

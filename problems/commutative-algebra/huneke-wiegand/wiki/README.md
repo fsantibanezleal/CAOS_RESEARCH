@@ -709,3 +709,8 @@ of the six row atoms before any integral normal form is proposed.
 EXP-045 is the declared exhaustive version of that gate. It evaluates the complete 64-subset
 lattice at every tested parameter and records all minimal nonzero and full-rank Bockstein
 carriers. This removes further guesswork from selecting the critical row circuit.
+
+EXP-045 finds a stable full-carrier antichain rather than the predicted unique six-atom carrier.
+The minimal full masks are `59` and `62` throughout; their common mask `58` carries ranks
+`1,2,3,5`, and either completion adds two. The first nonzero carrier shrinks from `58` to `56` at
+`p=11`. This splits the next integral task into a stable completion block and a threshold block.

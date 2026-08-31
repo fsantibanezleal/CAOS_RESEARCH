@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-31. Lifecycle: EXP-045 is DECLARED; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
+Updated: 2026-08-31. Lifecycle: EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
 with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
@@ -22,7 +22,9 @@ nonzero valuation-one Smith factors in the four isolated integer matrices. EXP-0
 rational-rank upper certificates and closes their complete 2-primary types as
 `(Z/2)^3,(Z/2)^4,(Z/2)^5,(Z/2)^7`. EXP-044 then refutes the proposed two-atom carrier:
 `D:B` and `K:C0` are necessary row-projection interfaces, but their union has Bockstein zero. For
-every `p>=4` and
+EXP-045 exhausts the six-row-atom lattice: minimal full carriers are stably masks `59` and `62`,
+their intersection mask `58` has ranks `1,2,3,5`, and either completion adds exactly two. For every
+`p>=4` and
 `2<=t<=p-2`, the shifted cubic source is absent
 by the positive gap `g(p,t)>=3(p-1)^2`, so every future exact `A_p` value at these targets
 transfers to `C_p`.  This is not an infinite characteristic-dependence theorem. The 53-page
@@ -378,7 +380,7 @@ campaign is supporting evidence, not the proof.
 | EXP-042 | CONFIRMED FINITELY | exact first-Bockstein ranks `3,4,5,7` prove that many valuation-one Smith factors; high/low pivot atom representatives differ |
 | EXP-043 | CONFIRMED FINITELY | audited modular Hadamard certificates prove rational ranks `1002,1607,2450,3586` and complete isolated 2-primary types `(Z/2)^(3,4,5,7)` |
 | EXP-044 | REFUTED; P1/P3 PASS | deleting either marked atom kills the Bockstein, but their union also has Bockstein zero; a larger signed circuit is essential |
-| EXP-045 | DECLARED | enumerate all 64 subsets of the six row atoms and extract every minimal nonzero and full-Bockstein carrier |
+| EXP-045 | REFUTED WITH STRUCTURAL REDIRECT | exhaustive 256-projection lattice gives stable minimal full carriers `59,62`, core ranks `1,2,3,5`, constant completion two, and a `p=11` threshold at mask `56` |
 
 ## 3a. Exact evidence anchors
 
@@ -480,12 +482,15 @@ campaign is supporting evidence, not the proof.
 - EXP-044 primary SHA-256:
   `6766b6ca249f1b02ba9a83a6fb8434eea4e511172c982840fc3c6db6a192e886`; audit certificate
   external SHA-256 `324c98de4cdcf98b4fb6010343df9ceeab4c6347938c36c2614e2850cad254e1`.
+- EXP-045 primary SHA-256:
+  `569220667e9d82f0806ea96cb8f60c49e94cb6317817170c39f2e574e619bcb8`; audit certificate
+  external SHA-256 `a1a5bc105ecb7171970dd9b0b8daf4d823190a56b9a0f8e1e64a59479dcac3dd`.
 
 ## 4. In flight
 
-EXP-045 is DECLARED for HWB-071. EXP-044 is REFUTED overall with P1/P3 retained. EXP-043 is
-CONFIRMED finitely and closes HWB-070. EXP-042 is CONFIRMED finitely and advances HWB-069;
-HWB-071 owns the larger uniform signed circuit.
+EXP-045 is REFUTED with a stable full-carrier antichain retained. EXP-044 is REFUTED overall with
+P1/P3 retained. EXP-043 is CONFIRMED finitely and closes HWB-070. EXP-042 is CONFIRMED finitely
+and advances HWB-069; HWB-071 owns the relative integral completion problem.
 EXP-041 is REFUTED overall, with its P1 finite classifier retained; HWB-068 is done. EXP-040 is
 REFUTED overall, with its P1 finite localization retained. EXP-037 exactly
 refutes the previous series at its first new value:
@@ -529,6 +534,9 @@ isolated 2-primary cokernels are `(Z/2)^3,(Z/2)^4,(Z/2)^5,(Z/2)^7`.
 EXP-044 proves finitely that `D:B` and `K:C0` are necessary row-projection interfaces but not a
 sufficient carrier: deleting either and retaining only their union all give Bockstein zero. The
 active object is a larger signed circuit among the six normalized row atoms.
+EXP-045 exhausts that row-atom lattice. Full carriers are exactly `59,62,63`, with minimal
+antichain `{59,62}` for every tested parameter. Their intersection `58` carries `1,2,3,5`, exactly
+two below the full ranks; the minimal nonzero carrier changes to `56` at `p=11`.
 
 EXP-036 is CONFIRMED with its all-parameter structural-propagation prediction unresolved.  Its
 exact-sum route reproduces EXP-035 and computes the complete `p<=6` triangle plus `(7,2)`,
@@ -830,10 +838,10 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Implement and audit EXP-045's complete 64-subset lattice. Identify every inclusion-minimal
-   subset that preserves a nonzero or full Bockstein at `p=8,...,11`.
-2. Use the stable carrier to construct an integral matching and explicit parameter maps before
-   claiming OI/FI stability. Do not treat either pivot representative as canonical.
+1. Declare a relative-presentation experiment comparing `58->59` and `58->62`. Test whether the
+   alternative completions add integrally equivalent two-class factor-two blocks.
+2. Isolate the separate `56->58` threshold at `p=11`, then construct a uniform integral matching
+   and explicit parameter maps before claiming OI/FI stability.
 3. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
    a signed core; keep this separate from the connecting-only `t=2` mechanism.
 4. Open a separate manuscript only after a complete strand, an infinite connecting theorem, or a
@@ -910,6 +918,9 @@ Published baseline:
 - Signed-circuit localization: EXP-044 refutes the two-atom carrier. Both marked atoms are
   necessary interfaces, but their union is insufficient. The complete six-row-atom subset lattice
   is the next bounded gate; integral reduction remains mandatory afterward.
+- Carrier lattice: EXP-045 gives stable minimal full masks `59,62`, common core ranks `1,2,3,5`,
+  and constant completion two. Relative integral presentations, not further global ranks, are now
+  the active finite proof gate.
 
 ## 7. Gotchas
 

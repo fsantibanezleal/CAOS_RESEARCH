@@ -1340,3 +1340,14 @@ select a favorable subset after computation.
 All three fields and two genuinely opposite Bockstein conventions are required for every one of
 the 256 projections. The finite carrier table is a map for integral Morse reduction, not a
 replacement for it; no uniform theorem or publication gate is opened in advance.
+
+All three predictions are refuted as declared, but the exhaustive table exposes a stronger useful
+structure. For `p=8,9,10`, nonzero carriers are exactly the supersets of mask `58`; at `p=11` they
+are exactly the supersets of mask `56`. Full carriers are exactly `59,62,63` for every parameter,
+with stable minimal antichain `{59,62}`. The intersection core `58` has Bockstein sequence
+`1,2,3,5`, and either alternative completion adds exactly two classes to give `3,4,5,7`.
+
+The independent low-pivot audit passes all 2,855 checks. HWB-071 now targets relative integral
+presentations for `58->59` and `58->62`, seeking a signed equivalence of their two-class
+completion. The separate `56->58` quotient owns the new `p=11` threshold. More coefficients remain
+lower priority until these relative blocks are understood.

@@ -3992,6 +3992,31 @@
    "verdict_md": "# EXP-044 verdict\n\nStatus: **REFUTED overall** for `p=8,...,11`. P1 and P3 pass; P2 fails.\n\nDeleting either pivot-dependent row atom `D:B` or `K:C0` eliminates every tested first\nBockstein, confirming that both are necessary interfaces. However, retaining only their union\nalso gives equal ranks over `GF(2)`, `GF(3)`, and `GF(5)` and Bockstein rank zero at every\nparameter. The proposed two-atom bridge is therefore not sufficient.\n\nThe finite torsion belongs to a larger signed circuit involving additional normalized row atoms.\nThis redirects the proof search from a guessed two-block normal form to an exhaustive six-atom\nsubset lattice, followed by integral matching only after a stable minimal carrier is identified.\nThe result is an exact localization correction, not an all-parameter theorem, and it does not\ntrigger a manuscript or Zenodo update.\n"
   },
   {
+   "area": "commutative-algebra",
+   "artifacts": [
+    {
+     "bytes": 88531,
+     "name": "audit-certificate.json"
+    },
+    {
+     "bytes": 303584,
+     "name": "results.json"
+    },
+    {
+     "bytes": 76742,
+     "name": "smoke-p8.json"
+    }
+   ],
+   "date": "",
+   "hypothesis_md": "# EXP-045 hypothesis - complete row-atom carrier lattice\n\nDate: 2026-08-31. CPU only. Exact integer and finite-field arithmetic.\n\n## Question and atom universe\n\nEXP-044 proves that the pivot-dependent `D:B` and `K:C0` atoms are necessary row-projection\ninterfaces but that their union is insufficient. The isolated matrices have exactly six\nnormalized row atoms. Give them stable aliases in sorted semantic order:\n\n```text\nR0 = [\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]\nR1 = [\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]\nR2 = [\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]\nR3 = [\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]\nR4 = [\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]\nR5 = [\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]\n```\n\nFor each frozen `p=8,9,10,11` matrix, retain every one of the `2^6=64` row-atom subsets, keep all\ncolumns including zero columns, and compute exact ranks over `GF(2)`, `GF(3)`, and `GF(5)` plus\nthe first-Bockstein rank in opposite reduction conventions.\n\n## Predictions\n\n### P1. Six-way essentiality\n\nDeleting any one atom from the full presentation kills the first Bockstein for every parameter.\nThus all six semantic row atoms are individually necessary under row projection.\n\n### P2. Unique full carrier\n\nThe full six-atom set is the only subset with nonzero Bockstein. It has ranks `3,4,5,7`; every\nproper subset has rank zero. A refutation must report every inclusion-minimal subset with nonzero\nBockstein and every inclusion-minimal subset carrying the full source rank.\n\n### P3. Cross-parameter carrier stability\n\nThe family of inclusion-minimal nonzero and full carriers is identical across `p=8,...,11`.\nForward/high and reverse/low reductions agree, both odd fields agree, and the odd-minus-two rank\ngap equals the first-Bockstein rank for every subset.\n\n## Audit and claim boundary\n\nThe runner verifies all frozen EXP-042 matrix hashes and the EXP-044 result hash. The independent\nauditor must reconstruct all 256 projected matrices without calling the runner's projection code,\nuse reverse columns and low row pivots, and verify the complete subset table and minimal-carrier\nantichains.\n\nThe `p=8` smoke is capped at 300 seconds and 8 GB. The full campaign is capped at 1,800 seconds\nand 20 GB, checkpointed by parameter. A resource stop is inconclusive. Even a complete pass is a\nfinite row-projection theorem, not a unimodular equivalence, compatible family map, recurrence,\nor all-parameter lower-strand theorem. No manuscript or Zenodo gate opens from this result alone.\n",
+   "id": "045",
+   "problem": "huneke-wiegand",
+   "slug": "EXP-045-row-atom-carrier-lattice",
+   "title": "complete row-atom carrier lattice",
+   "verdict": "",
+   "verdict_md": "# EXP-045 verdict\n\nStatus: **REFUTED overall** for `p=8,...,11`; P1, P2, and P3 fail as declared. A stronger stable\nfull-carrier structure is retained.\n\nThe exhaustive 256-projection lattice proves that the minimal full-Bockstein carriers are exactly\nmasks `59` and `62` at every tested parameter. Their intersection mask `58` carries Bockstein\nranks `1,2,3,5`, while either alternative completion adds exactly two classes and reaches the full\nranks `3,4,5,7`.\n\nThe minimal nonzero carrier changes from mask `58` through `p=10` to mask `56` at `p=11`, where\nthe triad `R3,R4,R5` first carries one class. This identifies a semantic threshold behind the\nprevious defect jump and redirects the proof toward relative integral presentations for\n`58 -> 59`, `58 -> 62`, and `56 -> 58`.\n\nThe carrier lattice is exact and independently audited, but row projection is not a unimodular\nnormal form. No recurrence, all-parameter theorem, manuscript, or Zenodo update is claimed.\n"
+  },
+  {
    "area": "computation-complexity",
    "artifacts": [
     {
