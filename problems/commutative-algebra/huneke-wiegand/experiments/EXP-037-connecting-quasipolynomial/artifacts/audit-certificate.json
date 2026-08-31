@@ -1,0 +1,51 @@
+{
+  "experiment": "EXP-037",
+  "status": "PASS",
+  "generated_at": "2026-08-31T02:23:16.866174+00:00",
+  "artifact_hashes": {
+    "primary": "ca97087466fdd705e22f69e79cdfecfc7dbce0684475b98bd99757cfed030d7b",
+    "alternate": "a8456b4d2de3fcf53cf97a63b63671656b4968fac80f8b8f151b76f43aba1b05"
+  },
+  "checks": {
+    "primary_status_refuted": true,
+    "alternate_status_complete": true,
+    "premise_agreement": true,
+    "basis_agreement": true,
+    "structural_agreement": true,
+    "gf2_rank_agreement_across_orders": true,
+    "gf3_gf5_odd_rank_agreement": true,
+    "exact_excess_is_72": true,
+    "prediction_was_73": true,
+    "candidate_refuted": true
+  },
+  "ranks": {
+    "GF2": {
+      "rank_kernel_boundary": 9042,
+      "kernel_cokernel_dimension": 8314,
+      "rank_d_boundary": 725343,
+      "rank_combined": 738459,
+      "connecting_image_dimension_in_kernel_cokernel": 4074,
+      "surviving_a_dimension": 4240
+    },
+    "GF3": {
+      "rank_kernel_boundary": 9042,
+      "kernel_cokernel_dimension": 8314,
+      "rank_d_boundary": 725343,
+      "rank_combined": 738531,
+      "connecting_image_dimension_in_kernel_cokernel": 4146,
+      "surviving_a_dimension": 4168
+    },
+    "GF5": {
+      "rank_kernel_boundary": 9042,
+      "kernel_cokernel_dimension": 8314,
+      "rank_d_boundary": 725343,
+      "rank_combined": 738531,
+      "connecting_image_dimension_in_kernel_cokernel": 4146,
+      "surviving_a_dimension": 4168
+    }
+  },
+  "actual_excess": 72,
+  "refuted_prediction": 73,
+  "scope": "exact finite refutation at (p,t)=(10,2); no all-parameter formula and no resolution of the Huneke-Wiegand conjecture",
+  "certificate_hash": "0c6e72a55202001cd3096e6c4999045eee6ce0aeb7b266d2403c83f93409ce42"
+}

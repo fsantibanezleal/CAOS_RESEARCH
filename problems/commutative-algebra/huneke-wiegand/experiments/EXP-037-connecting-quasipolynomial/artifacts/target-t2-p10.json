@@ -1,0 +1,220 @@
+{
+  "experiment": "EXP-037",
+  "route": "quasipolynomial falsifier with exact leaf-peeling field ranks",
+  "status": "REFUTED_QUASIPOLYNOMIAL",
+  "generated_at": "2026-08-31T02:17:23.801159+00:00",
+  "parameters": {
+    "cells": [
+      [
+        10,
+        2
+      ]
+    ],
+    "fields": [
+      2,
+      3
+    ],
+    "budget_seconds": 1800.0,
+    "memory_gib": 24.0,
+    "engine": "peel"
+  },
+  "premise_hashes": {
+    "EXP-036 proof": "8e1dc8f69dbbd1e0587f33509fc80566bbb1e72e2a991e5db9c07ab2a7d2cc02",
+    "EXP-036 verdict": "d6a86209cf36c8b78fca7bdefbf33ec23872b392c3cae26db7f7611646d69cbc",
+    "EXP-036 run.py": "1c6923c7c6456673402b5bdd3dada137970f6d01985690f29c960af65a981d03",
+    "EXP-036 p<=6": "b2452d307112b0d6010483cbafbdcde13fa83a46299f6c24b4a490f7e0cdd073",
+    "EXP-036 p=7,8": "79da3d9f03ecf5dd7dfee27a8bd69382189214254e419ba7f2facd7e3fa06f31",
+    "EXP-036 p=9": "24be490dd4e9a17562d9731f9ec033906824e76b258d1d37afd12d37de732a29"
+  },
+  "formula_certificate": {
+    "known_checks": [
+      {
+        "p": 4,
+        "stored_excess": 1,
+        "closed_formula": 1,
+        "lattice_coefficient": 1,
+        "row_hash": "3e8de662988561e7c1fb71becfbc937fec561a532ec3d4b452e3cef9f9abd20e"
+      },
+      {
+        "p": 5,
+        "stored_excess": 4,
+        "closed_formula": 4,
+        "lattice_coefficient": 4,
+        "row_hash": "6911a7c868924ff3ec5f117c976ca4006d0227a58c80710ede373f052435ee25"
+      },
+      {
+        "p": 6,
+        "stored_excess": 9,
+        "closed_formula": 9,
+        "lattice_coefficient": 9,
+        "row_hash": "9181c8d740ce27ef921f24bebbe92e6b3058104b83201fc320487a660aaa8ee2"
+      },
+      {
+        "p": 7,
+        "stored_excess": 18,
+        "closed_formula": 18,
+        "lattice_coefficient": 18,
+        "row_hash": "06209d5f6d6095933e0713436aeb4caa4d45785b74b42a9de798cc7b8b720678"
+      },
+      {
+        "p": 8,
+        "stored_excess": 31,
+        "closed_formula": 31,
+        "lattice_coefficient": 31,
+        "row_hash": "abcf404ef43bb6008c939aab5a8549ebd3459b81cf77988fff5de85c8467ba3b"
+      },
+      {
+        "p": 9,
+        "stored_excess": 49,
+        "closed_formula": 49,
+        "lattice_coefficient": 49,
+        "row_hash": "7bc08bb2d3ce5a2291e1cade485344712689471d894dcb8e1f2194cc9467657b"
+      }
+    ],
+    "predictions": {
+      "10": 73,
+      "11": 104
+    },
+    "coefficients_p4_p40": [
+      1,
+      4,
+      9,
+      18,
+      31,
+      49,
+      73,
+      104,
+      142,
+      189,
+      245,
+      311,
+      388,
+      477,
+      578,
+      693,
+      822,
+      966,
+      1126,
+      1303,
+      1497,
+      1710,
+      1942,
+      2194,
+      2467,
+      2762,
+      3079,
+      3420,
+      3785,
+      4175,
+      4591,
+      5034,
+      5504,
+      6003,
+      6531,
+      7089,
+      7678
+    ],
+    "coefficient_hash": "880cfe3c1594653d418ffb6f89d2a8473c0448037f5e8104873f6a78e31f0230"
+  },
+  "rows": [
+    {
+      "p": 10,
+      "t": 2,
+      "target_offset": 102,
+      "homological_degree": 17,
+      "total_offset": 459,
+      "kernel_codomain_rows": 17356,
+      "kernel_domain_columns": 12006,
+      "d_source_columns": 773790,
+      "d_codomain_rows": 3320245,
+      "kernel_codomain_hash": "5a8f41e3ea2b6a1265045e70514c48c4c71bd8d4ec3ee2a3048bff0200bf5626",
+      "kernel_domain_hash": "f05f64a7e25e6f358b84c808850fd9c3340226d9b34b4c2e5ca9a2e649468d41",
+      "d_source_hash": "497cc14907beaf4a0fb9d3cf4b326f63f92ccd5061ebc8be11da5ef22d6f041d",
+      "field_rows": {
+        "2": {
+          "rank_kernel_boundary": 9042,
+          "kernel_cokernel_dimension": 8314,
+          "rank_d_boundary": 725343,
+          "rank_combined": 738459,
+          "connecting_image_dimension_in_kernel_cokernel": 4074,
+          "surviving_a_dimension": 4240
+        },
+        "3": {
+          "rank_kernel_boundary": 9042,
+          "kernel_cokernel_dimension": 8314,
+          "rank_d_boundary": 725343,
+          "rank_combined": 738531,
+          "connecting_image_dimension_in_kernel_cokernel": 4146,
+          "surviving_a_dimension": 4168
+        }
+      },
+      "predicted_excess": 73,
+      "structural_profiles": {
+        "kernel": {
+          "rows": 17356,
+          "columns": 12006,
+          "initial_nonzeros": 47469,
+          "initial_leaf_rows": 3337,
+          "initial_leaf_columns_after_row_peel": 1656,
+          "row_leaf_pivots": 4059,
+          "two_sided_leaf_pivots": 2464,
+          "peeled_rank": 6523,
+          "row_only_residual_rows": 7442,
+          "row_only_residual_columns": 7436,
+          "row_only_residual_nonzeros": 25408,
+          "residual_rows": 4978,
+          "residual_columns": 3058,
+          "residual_nonzeros": 12382,
+          "core_ranks": {
+            "2": 2519,
+            "3": 2519
+          }
+        },
+        "d_boundary": {
+          "rows": 3320245,
+          "columns": 773790,
+          "initial_nonzeros": 5705992,
+          "initial_leaf_rows": 2064630,
+          "initial_leaf_columns_after_row_peel": 23662,
+          "row_leaf_pivots": 440827,
+          "two_sided_leaf_pivots": 23047,
+          "peeled_rank": 463874,
+          "row_only_residual_rows": 739557,
+          "row_only_residual_columns": 330228,
+          "row_only_residual_nonzeros": 1879742,
+          "residual_rows": 716510,
+          "residual_columns": 303529,
+          "residual_nonzeros": 1823232,
+          "core_ranks": {
+            "2": 261469,
+            "3": 261469
+          }
+        },
+        "combined": {
+          "rows": 3337601,
+          "columns": 785796,
+          "initial_nonzeros": 5972704,
+          "initial_leaf_rows": 2064630,
+          "initial_leaf_columns_after_row_peel": 23135,
+          "row_leaf_pivots": 440827,
+          "two_sided_leaf_pivots": 23664,
+          "peeled_rank": 464491,
+          "row_only_residual_rows": 753800,
+          "row_only_residual_columns": 341947,
+          "row_only_residual_nonzeros": 2036250,
+          "residual_rows": 730136,
+          "residual_columns": 313039,
+          "residual_nonzeros": 1946578,
+          "core_ranks": {
+            "2": 273968,
+            "3": 274040
+          }
+        }
+      },
+      "actual_excess": 72,
+      "candidate_matches": false
+    }
+  ],
+  "elapsed_seconds": 67.390048,
+  "artifact_sha256": "1d88bb9d889aa36f21be027a230a4c6c3aef00d9ac04986d03241884828e12de"
+}

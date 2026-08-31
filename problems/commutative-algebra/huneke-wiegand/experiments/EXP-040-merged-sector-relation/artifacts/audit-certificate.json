@@ -1,0 +1,37 @@
+{
+  "experiment": "EXP-040",
+  "status": "PASS",
+  "generated_at": "2026-08-31T03:31:37.110182+00:00",
+  "artifact_hashes": {
+    "primary_p10": "8107af8e2810414144e5ee94f4caeaa634ca81e14af92b26050b3f50d48648b6",
+    "combined": "ad1fec04199ff94b803f95f98650c8c8ab386386240d584f447afbb9fe27668b"
+  },
+  "checks": {
+    "combined_run_refutes_p2": true,
+    "p1_passes": true,
+    "p2_refuted": true,
+    "p3_not_attempted": true,
+    "p10_reproduced": true,
+    "p10_partition_67_5": true,
+    "p11_partition_95_7": true,
+    "declared_p11_partition_refuted": true,
+    "p10_aggregate_ranks": true,
+    "p10_componentwise_odd_agreement": true,
+    "p10_orientation_controls": true,
+    "p11_aggregate_ranks": true,
+    "p11_componentwise_odd_agreement": true,
+    "p11_orientation_controls": true
+  },
+  "observed_partitions": {
+    "10": [
+      67,
+      5
+    ],
+    "11": [
+      95,
+      7
+    ]
+  },
+  "scope": "P1 is exact finite evidence; P2 is refuted and P3 was not attempted; no all-parameter sector or degree-six relation theorem is claimed",
+  "certificate_hash": "6a778b46a93fa59b9361608b20fa570ee3fb9c462b213101a65889c7e2eb271a"
+}

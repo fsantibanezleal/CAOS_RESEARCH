@@ -1129,3 +1129,95 @@ documentation handoff, work, `develop`, and `main` shared payload tree
 `8ea3fbd0dfd136a7b91c508a31146be7d88eded1`. HWB-063 is done. The strongest remaining route is
 HWB-061's infinite parity-sensitive connecting-quotient theorem; neither complete lower strand is
 claimed.
+
+## 2026-08-30 - EXP-037 connecting-parity quasipolynomial gate
+
+HWB-064 is active under the still-open HWB-061 structural objective. A sequence lookup after two
+failed interpolations exposes a new period-six cubic candidate with rational generating function
+
+```text
+(1+2x+x^2+x^3)/((1-x)^2(1-x^2)(1-x^3)).
+```
+
+This is a falsification target, not evidence. It predicts the new exact excesses `73` and `104`
+at `p=10,11`. The invariant-first route computes `(10,2)` over `GF(2)` and `GF(3)` after exact
+small-cell regressions. The structural route performs integral unit cancellation on the full
+connecting presentation and seeks unmatched factor-two cells indexed by the lattice points of
+the generating function. Finite agreement cannot confirm the all-parameter statement. No
+manuscript or Zenodo update is open at declaration.
+
+The first EXP-038 gate passes. The complete `(11,2)` block gives surviving dimensions `8688` over
+`GF(2)` and `8586` over both `GF(3)` and `GF(5)`, hence `e_11=102`. Low-degree and canonical
+orders agree on every exact rank. The denominator implies the order-seven recurrence
+
+```text
+e_n-2e_(n-1)+e_(n-3)+e_(n-4)-2e_(n-6)+e_(n-7)=0,
+```
+
+and `p=11` is its first nontrivial out-of-sample check. Measured primary/audit times of 330.533246
+and 176.288232 seconds activate the already declared second prediction `e_12=138` under a
+7,200-second, 40-GB cap. Even two finite passes do not prove the recurrence or its proposed
+degree-six relation.
+
+EXP-037 is now REFUTED at the first out-of-sample gate. The complete `(10,2)` presentation gives
+surviving dimensions `4240` over `GF(2)` and `4168` over `GF(3)`, hence `e_10=72`, not 73. A
+canonical residual order reproduces every `GF(2)` rank, while `GF(5)` reproduces every `GF(3)`
+rank. The kernel cokernel and connecting boundary are field-independent; the 72-dimensional
+defect is entirely in the connecting image. The proposed 73-point lattice indexing therefore
+fails as well. HWB-064 is done. This finite refutation does not trigger manuscript v0.24 or a
+Zenodo version.
+
+## 2026-08-30 - EXP-038 degree-six relation gate
+
+HWB-065 is active under HWB-061. The smallest structural correction to the rejected free-lattice
+series is a first relation in degree six:
+
+```text
+(1+2x+x^2+x^3-x^6)/((1-x)^2(1-x^2)(1-x^3)).
+```
+
+This is fitted through `p=10`, not inferred as a theorem. It forces the new prediction `e_11=102`
+and then `e_12=138`. The primary gate is the complete `(11,2)` rank over `GF(2)` and `GF(3)` under
+3,600 seconds and 40 GB. A pass requires a canonical-order `GF(2)` and `GF(5)` audit before any
+attempt to identify the proposed relation. A mismatch closes the formula immediately. No
+manuscript or Zenodo update is open at declaration.
+
+## 2026-08-30 - EXP-039 component-stabilization gate
+
+Both declared EXP-038 finite predictions pass exactly: `e_11=102` and `e_12=138`, independently
+audited by alternate residual order and `GF(5)`.  EXP-038 remains inconclusive because neither the
+degree-six relation nor the order-seven recurrence is proved.  A third large coefficient is
+therefore demoted behind a structural test.
+
+EXP-039 applies the anatomy, topology, invariant, and two-sided lenses to the combined signed
+presentation.  Exact unit peeling is followed by bipartite connected-component decomposition and
+per-component ranks.  The strong finite prediction is that every defective component through
+`p=9` is bounded by 5,000 vertices and contributes defect one, with recurring normalized signed
+types.  A giant defective component refutes that model and redirects to a finer matched-block or
+relative-homology decomposition.  The run is capped at 1,800 seconds and 20 GB with per-parameter
+checkpoints.  No publication gate is open.
+
+## 2026-08-30 - EXP-040 merged-sector relation gate
+
+EXP-039 is refuted at `p=6`: defects are not one per bounded connected component.  Its exact
+partitions nevertheless reveal four latent sectors with dimensions
+`binom(p-2,3),p-4,p-4,p-5` for `p=6,7,8`.  At `p=9`, the first three merge in support and retain
+combined defect `35+5+5=45`; the fourth remains four.  Erasing signs or flipping one sign changes
+every defective odd rank, so support-only topology is insufficient.
+
+EXP-040 is declared before computation.  At `p=10`, it predicts partition `67+5`: the merged free
+value `56+6+6=68` loses exactly one relation while the fourth sector remains five.  On a pass, the
+conditional `p=11` prediction is `96+6`, corresponding to two degree-one translates.  Both odd
+fields must agree componentwise.  Only after both partitions pass may signed bridge extraction
+begin.  No manuscript or Zenodo gate is open.
+
+The first partition passes exactly. At `p=10`, the two defective components contribute `67+5`;
+their ranks are `218451/218518/218518` and `2445/2450/2450` over `GF(2)/GF(3)/GF(5)`. Thus the
+first correction from free total 73 to exact 72 is localized inside the large merged component.
+
+The conditional second partition is refuted. At `p=11`, the exact split is `95+7`, not `96+6`,
+while the aggregate remains 102 and both odd fields agree componentwise. The failure shows that
+connected-component identity is not a stable sector grading: the isolated component may switch
+from the latent `p-5` sector to one of the `p-4` sectors. P3 bridge deletion is not attempted
+because its P2 transport premise failed. HWB-067 is done; HWB-068 records semantic interval-tag
+profiling as the next route. No manuscript or Zenodo gate opens.
