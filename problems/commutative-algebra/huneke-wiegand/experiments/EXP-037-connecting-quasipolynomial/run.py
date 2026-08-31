@@ -1,0 +1,564 @@
+"""EXP-037 exact connecting-parity falsifier and quasipolynomial certificate.
+
+CPU only. Canonical bases use the frozen EXP-036 exact-sum constructor. Rank
+arithmetic is independently encoded here: bitset elimination over GF(2) and
+reverse sparse elimination over odd prime fields. Columns are generated on
+demand so the complete block presentation does not need to be materialized.
+"""
+
+from __future__ import annotations
+
+import argparse
+import ctypes
+import hashlib
+import importlib.util
+import json
+import os
+import time
+from datetime import datetime, timezone
+from pathlib import Path
+from types import ModuleType
+from typing import Iterable
+
+
+HERE = Path(__file__).resolve().parent
+EXP036 = HERE.parent / "EXP-036-factor-two-torsion-anatomy"
+DEFAULT_OUTPUT = HERE / "artifacts" / "results.json"
+PREMISES = {
+    "EXP-036 proof": (
+        EXP036 / "proof.md",
+        "8e1dc8f69dbbd1e0587f33509fc80566bbb1e72e2a991e5db9c07ab2a7d2cc02",
+    ),
+    "EXP-036 verdict": (
+        EXP036 / "verdict.md",
+        "d6a86209cf36c8b78fca7bdefbf33ec23872b392c3cae26db7f7611646d69cbc",
+    ),
+    "EXP-036 run.py": (
+        EXP036 / "run.py",
+        "1c6923c7c6456673402b5bdd3dada137970f6d01985690f29c960af65a981d03",
+    ),
+    "EXP-036 p<=6": (
+        EXP036 / "artifacts" / "results-p6.json",
+        "b2452d307112b0d6010483cbafbdcde13fa83a46299f6c24b4a490f7e0cdd073",
+    ),
+    "EXP-036 p=7,8": (
+        EXP036 / "artifacts" / "target-t2-p7-p8.json",
+        "79da3d9f03ecf5dd7dfee27a8bd69382189214254e419ba7f2facd7e3fa06f31",
+    ),
+    "EXP-036 p=9": (
+        EXP036 / "artifacts" / "target-t2-p9.json",
+        "24be490dd4e9a17562d9731f9ec033906824e76b258d1d37afd12d37de732a29",
+    ),
+}
+STORED_FILES = (
+    EXP036 / "artifacts" / "results-p6.json",
+    EXP036 / "artifacts" / "target-t2-p7-p8.json",
+    EXP036 / "artifacts" / "target-t2-p9.json",
+)
+KNOWN_EXCESS = {4: 1, 5: 4, 6: 9, 7: 18, 8: 31, 9: 49}
+REGRESSION_FIELDS = {
+    (4, 2): {
+        2: (74, 513, 588, 5, 1, 4),
+        3: (75, 513, 589, 4, 1, 3),
+    },
+    (5, 2): {
+        2: (223, 2697, 2935, 39, 15, 24),
+        3: (223, 2697, 2939, 39, 19, 20),
+    },
+}
+
+
+def digest(value: object) -> str:
+    encoded = json.dumps(value, sort_keys=True, separators=(",", ":")).encode()
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def file_hash(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def write_json_atomic(path: Path, value: object) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8", newline="\n")
+    temporary.replace(path)
+
+
+def verify_premises() -> dict[str, str]:
+    actual = {name: file_hash(path) for name, (path, _) in PREMISES.items()}
+    expected = {name: expected for name, (_, expected) in PREMISES.items()}
+    if actual != expected:
+        raise AssertionError({"premise_hash_mismatch": {"actual": actual, "expected": expected}})
+    return actual
+
+
+def load_exp036() -> ModuleType:
+    path = EXP036 / "run.py"
+    spec = importlib.util.spec_from_file_location("exp036_frozen", path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"cannot load {path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def candidate_closed(p: int) -> int:
+    n = p - 4
+    if n < 0:
+        raise ValueError("require p>=4")
+    return (10 * n**3 + 63 * n**2 + 126 * n + 89) // 72
+
+
+def candidate_lattice(p: int) -> int:
+    n = p - 4
+    weights = (1, 2, 1, 1)
+    total = 0
+    for residue, weight in enumerate(weights):
+        remaining = n - residue
+        if remaining < 0:
+            continue
+        for c_value in range(remaining // 3 + 1):
+            after_c = remaining - 3 * c_value
+            for b_value in range(after_c // 2 + 1):
+                total += weight * (after_c - 2 * b_value + 1)
+    return total
+
+
+def stored_formula_certificate() -> dict[str, object]:
+    rows: dict[int, dict[str, object]] = {}
+    for path in STORED_FILES:
+        artifact = json.loads(path.read_text(encoding="utf-8"))
+        for row in artifact["rows"]:
+            if row["t"] == 2:
+                rows[row["p"]] = row
+    if set(rows) != set(KNOWN_EXCESS):
+        raise AssertionError({"stored_t2_parameters": sorted(rows)})
+
+    checks = []
+    for p in sorted(rows):
+        field_rows = rows[p]["field_rows"]
+        actual = (
+            field_rows["2"]["surviving_a_dimension"]
+            - field_rows["3"]["surviving_a_dimension"]
+        )
+        closed = candidate_closed(p)
+        lattice = candidate_lattice(p)
+        expected = KNOWN_EXCESS[p]
+        if not actual == expected == closed == lattice:
+            raise AssertionError(
+                {"p": p, "actual": actual, "expected": expected, "closed": closed, "lattice": lattice}
+            )
+        checks.append(
+            {
+                "p": p,
+                "stored_excess": actual,
+                "closed_formula": closed,
+                "lattice_coefficient": lattice,
+                "row_hash": rows[p]["row_hash"],
+            }
+        )
+
+    coefficients = [candidate_lattice(p) for p in range(4, 41)]
+    if coefficients != [candidate_closed(p) for p in range(4, 41)]:
+        raise AssertionError("closed formula and lattice coefficients disagree")
+    return {
+        "known_checks": checks,
+        "predictions": {"10": candidate_closed(10), "11": candidate_closed(11)},
+        "coefficients_p4_p40": coefficients,
+        "coefficient_hash": digest(coefficients),
+    }
+
+
+class BudgetStop(RuntimeError):
+    pass
+
+
+class Budget:
+    def __init__(self, seconds: float, memory_gib: float) -> None:
+        self.started = time.perf_counter()
+        self.seconds = seconds
+        self.memory_bytes = int(memory_gib * 1024**3)
+
+    @property
+    def elapsed(self) -> float:
+        return time.perf_counter() - self.started
+
+    def check(self, stage: str) -> None:
+        if self.elapsed > self.seconds:
+            raise BudgetStop(f"time budget crossed during {stage}")
+        private = private_bytes()
+        if private is not None and private > self.memory_bytes:
+            raise BudgetStop(f"memory budget crossed during {stage}: {private} bytes")
+
+
+def private_bytes() -> int | None:
+    if os.name != "nt":
+        return None
+
+    class ProcessMemoryCountersEx(ctypes.Structure):
+        _fields_ = [
+            ("cb", ctypes.c_ulong),
+            ("PageFaultCount", ctypes.c_ulong),
+            ("PeakWorkingSetSize", ctypes.c_size_t),
+            ("WorkingSetSize", ctypes.c_size_t),
+            ("QuotaPeakPagedPoolUsage", ctypes.c_size_t),
+            ("QuotaPagedPoolUsage", ctypes.c_size_t),
+            ("QuotaPeakNonPagedPoolUsage", ctypes.c_size_t),
+            ("QuotaNonPagedPoolUsage", ctypes.c_size_t),
+            ("PagefileUsage", ctypes.c_size_t),
+            ("PeakPagefileUsage", ctypes.c_size_t),
+            ("PrivateUsage", ctypes.c_size_t),
+        ]
+
+    counters = ProcessMemoryCountersEx()
+    counters.cb = ctypes.sizeof(counters)
+    process = ctypes.windll.kernel32.GetCurrentProcess()
+    success = ctypes.windll.psapi.GetProcessMemoryInfo(
+        process, ctypes.byref(counters), counters.cb
+    )
+    return int(counters.PrivateUsage) if success else None
+
+
+class GF2BitsetRank:
+    def __init__(self) -> None:
+        self.pivots: dict[int, int] = {}
+
+    def add(self, entries: Iterable[tuple[int, int]]) -> None:
+        vector = 0
+        for row, value in entries:
+            if value & 1:
+                vector ^= 1 << row
+        while vector:
+            low_bit = vector & -vector
+            pivot = low_bit.bit_length() - 1
+            existing = self.pivots.get(pivot)
+            if existing is None:
+                self.pivots[pivot] = vector
+                return
+            vector ^= existing
+
+    @property
+    def rank(self) -> int:
+        return len(self.pivots)
+
+
+class SparsePrimeRank:
+    def __init__(self, prime: int) -> None:
+        self.prime = prime
+        self.pivots: dict[int, dict[int, int]] = {}
+
+    def add(self, entries: Iterable[tuple[int, int]]) -> None:
+        prime = self.prime
+        vector = {row: value % prime for row, value in entries if value % prime}
+        while vector:
+            pivot = min(vector)
+            existing = self.pivots.get(pivot)
+            if existing is None:
+                inverse = pow(vector[pivot], -1, prime)
+                self.pivots[pivot] = {
+                    row: value * inverse % prime for row, value in vector.items()
+                }
+                return
+            factor = vector[pivot]
+            for row, value in existing.items():
+                updated = (vector.get(row, 0) - factor * value) % prime
+                if updated:
+                    vector[row] = updated
+                else:
+                    vector.pop(row, None)
+
+    @property
+    def rank(self) -> int:
+        return len(self.pivots)
+
+
+def rank_accumulator(prime: int) -> GF2BitsetRank | SparsePrimeRank:
+    return GF2BitsetRank() if prime == 2 else SparsePrimeRank(prime)
+
+
+def signed_faces(exterior: tuple[int, ...]) -> Iterable[tuple[int, int, tuple[int, ...]]]:
+    for position, variable in enumerate(exterior):
+        yield variable, (-1 if position % 2 else 1), exterior[:position] + exterior[position + 1 :]
+
+
+def build_basis(exp036: ModuleType, p: int, t: int) -> dict[str, object]:
+    target, selected, degree, total_offset = exp036.predicted_family(p, t)
+    generators = tuple(sorted(exp036.degree_one_offsets(p) - {0}))
+    low = exp036.low_offsets(p)
+    high = exp036.high_offsets(p)
+    degree_two = exp036.degree_two_offsets(p)
+    codomain = exp036.labelled_subsets(generators, degree, total_offset, degree_two)
+    kernel_domain = exp036.labelled_subsets(generators, degree + 1, total_offset, high)
+    source = exp036.labelled_subsets(generators, degree + 1, total_offset, low)
+    selected_row = (tuple(sorted(selected)), target)
+    if selected_row not in set(codomain):
+        raise AssertionError("selected row absent")
+    return {
+        "p": p,
+        "t": t,
+        "target": target,
+        "degree": degree,
+        "total_offset": total_offset,
+        "generators": generators,
+        "low": low,
+        "degree_two": degree_two,
+        "codomain": codomain,
+        "kernel_domain": kernel_domain,
+        "source": source,
+        "selected_row": selected_row,
+        "hashes": {
+            "kernel_codomain_hash": digest([[list(e), c] for e, c in codomain]),
+            "kernel_domain_hash": digest([[list(e), c] for e, c in kernel_domain]),
+            "d_source_hash": digest([[list(e), c] for e, c in source]),
+        },
+    }
+
+
+def d_rows_for_basis(exp036: ModuleType, basis: dict[str, object], budget: Budget) -> list[object]:
+    p = int(basis["p"])
+    low = basis["low"]
+    rows: set[object] = set()
+    source = basis["source"]
+    for index, (exterior, coefficient) in enumerate(source):
+        for variable, _, face in signed_faces(exterior):
+            if variable in low:
+                product = exp036.low_product(p, variable, coefficient)
+                if product is not None:
+                    rows.add((face, product[0], product[1]))
+        if index and index % 50_000 == 0:
+            budget.check("D-row enumeration")
+            print(f"D rows scan {index}/{len(source)}: {len(rows)} rows", flush=True)
+    return sorted(rows, key=repr)
+
+
+def field_rank(
+    exp036: ModuleType,
+    basis: dict[str, object],
+    d_rows: list[object],
+    prime: int,
+    budget: Budget,
+) -> dict[str, int]:
+    p = int(basis["p"])
+    low = basis["low"]
+    degree_two = basis["degree_two"]
+    codomain = basis["codomain"]
+    kernel_domain = basis["kernel_domain"]
+    source = basis["source"]
+    k_index = {row: index for index, row in enumerate(codomain)}
+    d_index = {row: index for index, row in enumerate(d_rows)}
+    k_base = len(d_rows)
+    kernel_rank = rank_accumulator(prime)
+    d_rank = rank_accumulator(prime)
+    combined_rank = rank_accumulator(prime)
+
+    for count, (exterior, coefficient) in enumerate(reversed(kernel_domain), start=1):
+        entries: list[tuple[int, int]] = []
+        for variable, sign, face in signed_faces(exterior):
+            product_offset = coefficient + variable
+            if product_offset in degree_two:
+                entries.append((k_index[(face, product_offset)], sign))
+        kernel_rank.add(entries)
+        combined_rank.add((k_base + row, value) for row, value in entries)
+        if count % 50_000 == 0:
+            budget.check(f"GF({prime}) kernel rank")
+            print(
+                f"GF({prime}) K {count}/{len(kernel_domain)} rank={kernel_rank.rank}",
+                flush=True,
+            )
+
+    for count, (exterior, coefficient) in enumerate(reversed(source), start=1):
+        d_entries: list[tuple[int, int]] = []
+        combined_entries: list[tuple[int, int]] = []
+        for variable, sign, face in signed_faces(exterior):
+            if variable in low:
+                product = exp036.low_product(p, variable, coefficient)
+                if product is not None:
+                    row = d_index[(face, product[0], product[1])]
+                    d_entries.append((row, sign))
+                    combined_entries.append((row, sign))
+            else:
+                product_offset = variable + coefficient
+                if product_offset in degree_two:
+                    row = k_index[(face, product_offset)]
+                    combined_entries.append((k_base + row, sign))
+        d_rank.add(d_entries)
+        combined_rank.add(combined_entries)
+        if count % 25_000 == 0:
+            budget.check(f"GF({prime}) connecting rank")
+            print(
+                f"GF({prime}) D/J {count}/{len(source)} "
+                f"d={d_rank.rank} combined={combined_rank.rank}",
+                flush=True,
+            )
+
+    rank_kernel = kernel_rank.rank
+    rank_d = d_rank.rank
+    rank_combined = combined_rank.rank
+    kernel_dimension = len(codomain) - rank_kernel
+    connecting_dimension = rank_combined - rank_d - rank_kernel
+    surviving_dimension = len(codomain) + rank_d - rank_combined
+    return {
+        "rank_kernel_boundary": rank_kernel,
+        "kernel_cokernel_dimension": kernel_dimension,
+        "rank_d_boundary": rank_d,
+        "rank_combined": rank_combined,
+        "connecting_image_dimension_in_kernel_cokernel": connecting_dimension,
+        "surviving_a_dimension": surviving_dimension,
+    }
+
+
+def assert_regression(p: int, t: int, prime: int, row: dict[str, int]) -> None:
+    expected = REGRESSION_FIELDS.get((p, t), {}).get(prime)
+    if expected is None:
+        return
+    actual = (
+        row["rank_kernel_boundary"],
+        row["rank_d_boundary"],
+        row["rank_combined"],
+        row["kernel_cokernel_dimension"],
+        row["connecting_image_dimension_in_kernel_cokernel"],
+        row["surviving_a_dimension"],
+    )
+    if actual != expected:
+        raise AssertionError({"regression": [p, t, prime], "actual": actual, "expected": expected})
+
+
+def compact_basis_record(basis: dict[str, object], d_rows: list[object]) -> dict[str, object]:
+    return {
+        "p": basis["p"],
+        "t": basis["t"],
+        "target_offset": basis["target"],
+        "homological_degree": basis["degree"],
+        "total_offset": basis["total_offset"],
+        "kernel_codomain_rows": len(basis["codomain"]),
+        "kernel_domain_columns": len(basis["kernel_domain"]),
+        "d_source_columns": len(basis["source"]),
+        "d_codomain_rows": len(d_rows),
+        **basis["hashes"],
+        "field_rows": {},
+        "predicted_excess": candidate_closed(int(basis["p"])),
+    }
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--cell", action="append", default=[], help="complete target p:t")
+    parser.add_argument("--fields", default="2,3")
+    parser.add_argument("--formula-only", action="store_true")
+    parser.add_argument("--budget-seconds", type=float, default=1800.0)
+    parser.add_argument("--memory-gib", type=float, default=24.0)
+    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    args = parser.parse_args()
+    fields = tuple(int(value) for value in args.fields.split(",") if value)
+    if any(value < 2 for value in fields):
+        raise ValueError("fields must be prime integers")
+
+    cells: list[tuple[int, int]] = []
+    for raw in args.cell:
+        p_text, t_text = raw.split(":", maxsplit=1)
+        p, t = int(p_text), int(t_text)
+        if p < 4 or not 2 <= t <= p - 2:
+            raise ValueError(f"invalid cell {(p, t)}")
+        cells.append((p, t))
+
+    budget = Budget(args.budget_seconds, args.memory_gib)
+    result: dict[str, object] = {
+        "experiment": "EXP-037",
+        "route": "quasipolynomial falsifier with independent streaming field ranks",
+        "status": "RUNNING",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "parameters": {
+            "cells": [list(cell) for cell in cells],
+            "fields": list(fields),
+            "budget_seconds": args.budget_seconds,
+            "memory_gib": args.memory_gib,
+        },
+        "premise_hashes": verify_premises(),
+        "formula_certificate": stored_formula_certificate(),
+        "rows": [],
+    }
+    write_json_atomic(args.output, result)
+    print(
+        "formula regression: PASS; predictions e_10=73, e_11=104",
+        flush=True,
+    )
+    if args.formula_only or not cells:
+        result["status"] = "PASS_FORMULA_REGRESSION_ONLY"
+        result["elapsed_seconds"] = round(budget.elapsed, 6)
+        result["artifact_sha256"] = digest(result)
+        write_json_atomic(args.output, result)
+        return 0
+
+    exp036 = load_exp036()
+    try:
+        for p, t in cells:
+            budget.check("basis start")
+            print(f"building complete basis for ({p},{t})", flush=True)
+            basis = build_basis(exp036, p, t)
+            print(
+                f"basis ({p},{t}): K rows={len(basis['codomain'])}, "
+                f"K cols={len(basis['kernel_domain'])}, D cols={len(basis['source'])}",
+                flush=True,
+            )
+            d_rows = d_rows_for_basis(exp036, basis, budget)
+            row = compact_basis_record(basis, d_rows)
+            result["rows"].append(row)
+            result["elapsed_seconds"] = round(budget.elapsed, 6)
+            write_json_atomic(args.output, result)
+            print(f"basis checkpoint: D rows={len(d_rows)}", flush=True)
+
+            for prime in fields:
+                budget.check(f"GF({prime}) start")
+                print(f"starting GF({prime}) reverse streaming ranks", flush=True)
+                field_row = field_rank(exp036, basis, d_rows, prime, budget)
+                assert_regression(p, t, prime, field_row)
+                row["field_rows"][str(prime)] = field_row
+                result["elapsed_seconds"] = round(budget.elapsed, 6)
+                write_json_atomic(args.output, result)
+                print(
+                    f"GF({prime}) complete: K={field_row['kernel_cokernel_dimension']}, "
+                    f"image={field_row['connecting_image_dimension_in_kernel_cokernel']}, "
+                    f"A={field_row['surviving_a_dimension']}",
+                    flush=True,
+                )
+
+            if 2 in fields and 3 in fields:
+                actual = (
+                    row["field_rows"]["2"]["surviving_a_dimension"]
+                    - row["field_rows"]["3"]["surviving_a_dimension"]
+                )
+                row["actual_excess"] = actual
+                row["candidate_matches"] = actual == row["predicted_excess"]
+                if not row["candidate_matches"]:
+                    result["status"] = "REFUTED_QUASIPOLYNOMIAL"
+                    result["elapsed_seconds"] = round(budget.elapsed, 6)
+                    result["artifact_sha256"] = digest(result)
+                    write_json_atomic(args.output, result)
+                    print(
+                        f"candidate REFUTED at p={p}: actual {actual}, "
+                        f"predicted {row['predicted_excess']}",
+                        flush=True,
+                    )
+                    return 1
+            row["row_hash"] = digest(row)
+            write_json_atomic(args.output, result)
+    except BudgetStop as error:
+        result["status"] = "INCONCLUSIVE_RESOURCE_BUDGET"
+        result["stop_reason"] = str(error)
+        result["elapsed_seconds"] = round(budget.elapsed, 6)
+        result["private_bytes_at_stop"] = private_bytes()
+        result["artifact_sha256"] = digest(result)
+        write_json_atomic(args.output, result)
+        print(f"INCONCLUSIVE_RESOURCE_BUDGET: {error}", flush=True)
+        return 2
+
+    result["status"] = "PASS_FINITE_OUT_OF_SAMPLE"
+    result["elapsed_seconds"] = round(budget.elapsed, 6)
+    result["artifact_sha256"] = digest(result)
+    write_json_atomic(args.output, result)
+    print(json.dumps(result, indent=2), flush=True)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
