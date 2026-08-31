@@ -1,0 +1,123 @@
+{
+  "experiment": "EXP-039",
+  "status": "PASS",
+  "generated_at": "2026-08-31T03:19:43.785798+00:00",
+  "result_sha256": "831a4300cac10bf44753050a686a7993fabef09bf28b4332c6bb1fb9881c9e2c",
+  "checks": {
+    "complete_declared_range": true,
+    "experiment_complete": true,
+    "p1_refuted": true,
+    "p2_refuted": true,
+    "p4_component_count": true,
+    "p4_partition": true,
+    "p4_complete_ranks": true,
+    "p4_row_hash": true,
+    "p4_rank_sum": true,
+    "p4_orientation_controls": true,
+    "p5_component_count": true,
+    "p5_partition": true,
+    "p5_complete_ranks": true,
+    "p5_row_hash": true,
+    "p5_rank_sum": true,
+    "p5_orientation_controls": true,
+    "p6_component_count": true,
+    "p6_partition": true,
+    "p6_complete_ranks": true,
+    "p6_row_hash": true,
+    "p6_rank_sum": true,
+    "p6_orientation_controls": true,
+    "p7_component_count": true,
+    "p7_partition": true,
+    "p7_complete_ranks": true,
+    "p7_row_hash": true,
+    "p7_rank_sum": true,
+    "p7_orientation_controls": true,
+    "p8_component_count": true,
+    "p8_partition": true,
+    "p8_complete_ranks": true,
+    "p8_row_hash": true,
+    "p8_rank_sum": true,
+    "p8_orientation_controls": true,
+    "p9_component_count": true,
+    "p9_partition": true,
+    "p9_complete_ranks": true,
+    "p9_row_hash": true,
+    "p9_rank_sum": true,
+    "p9_orientation_controls": true,
+    "p6_free_sector_partition": true,
+    "p7_free_sector_partition": true,
+    "p8_free_sector_partition": true,
+    "p9_support_merge_preserves_latent_partition": true,
+    "free_sector_total_matches_p6_p9": true,
+    "free_sector_extension_predicts_old_p10_value": true,
+    "exp037_first_relation_deficit": true
+  },
+  "observed": {
+    "4": {
+      "partition": [
+        1
+      ],
+      "defective_components": 1,
+      "total_defect": 1
+    },
+    "5": {
+      "partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "defective_components": 4,
+      "total_defect": 4
+    },
+    "6": {
+      "partition": [
+        4,
+        2,
+        2,
+        1
+      ],
+      "defective_components": 4,
+      "total_defect": 9
+    },
+    "7": {
+      "partition": [
+        10,
+        3,
+        3,
+        2
+      ],
+      "defective_components": 4,
+      "total_defect": 18
+    },
+    "8": {
+      "partition": [
+        20,
+        4,
+        4,
+        3
+      ],
+      "defective_components": 4,
+      "total_defect": 31
+    },
+    "9": {
+      "partition": [
+        45,
+        4
+      ],
+      "defective_components": 2,
+      "total_defect": 49
+    }
+  },
+  "latent_free_sector_law_p6_p10": "C(p-2,3)+(p-4)+(p-4)+(p-5)",
+  "latent_p9_partition": [
+    35,
+    5,
+    5,
+    4
+  ],
+  "free_p10_prediction": 73,
+  "exact_p10_value": 72,
+  "scope": "exact finite component partitions and orientation controls; the latent sector identification and degree-six relation require a new experiment",
+  "certificate_hash": "2835a0001cba10ffc204a687c7cccc604f59d4b78654ff53f13cc30223c814ad"
+}

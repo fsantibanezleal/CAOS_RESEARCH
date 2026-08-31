@@ -1,0 +1,114 @@
+{
+  "experiment": "EXP-038",
+  "status": "PASS",
+  "generated_at": "2026-08-31T03:04:34.201638+00:00",
+  "cells": [
+    {
+      "p": 11,
+      "t": 2,
+      "artifact_hashes": {
+        "primary": "7b72b272338acfbd26dfe8e82a7fa425174e5d3fc3729ed785948f7d868a6ca1",
+        "alternate": "4f7b60229c5e782891f3369ad6075c636a1452455d5df195844e919a2f3a47f1"
+      },
+      "checks": {
+        "both_runs_complete": true,
+        "premise_agreement": true,
+        "formula_agreement": true,
+        "basis_agreement": true,
+        "structural_agreement": true,
+        "gf2_rank_agreement_across_orders": true,
+        "gf3_gf5_odd_rank_agreement": true,
+        "exact_excess_matches": true,
+        "prediction_matches": true,
+        "candidate_matches": true
+      },
+      "ranks": {
+        "GF2": {
+          "rank_kernel_boundary": 15599,
+          "kernel_cokernel_dimension": 17045,
+          "rank_d_boundary": 1659351,
+          "rank_combined": 1683307,
+          "connecting_image_dimension_in_kernel_cokernel": 8357,
+          "surviving_a_dimension": 8688
+        },
+        "GF3": {
+          "rank_kernel_boundary": 15599,
+          "kernel_cokernel_dimension": 17045,
+          "rank_d_boundary": 1659351,
+          "rank_combined": 1683409,
+          "connecting_image_dimension_in_kernel_cokernel": 8459,
+          "surviving_a_dimension": 8586
+        },
+        "GF5": {
+          "rank_kernel_boundary": 15599,
+          "kernel_cokernel_dimension": 17045,
+          "rank_d_boundary": 1659351,
+          "rank_combined": 1683409,
+          "connecting_image_dimension_in_kernel_cokernel": 8459,
+          "surviving_a_dimension": 8586
+        }
+      },
+      "actual_excess": 102
+    },
+    {
+      "p": 12,
+      "t": 2,
+      "artifact_hashes": {
+        "primary": "960585dff4288a19242d0388f0c229a13701c2112dfa2f9cae415f5a2ff3d14e",
+        "alternate": "dbf5f7b34bead8dba6fda769b9561ee311455f62215df8b07370b051f8359097"
+      },
+      "checks": {
+        "both_runs_complete": true,
+        "premise_agreement": true,
+        "formula_agreement": true,
+        "basis_agreement": true,
+        "structural_agreement": true,
+        "gf2_rank_agreement_across_orders": true,
+        "gf3_gf5_odd_rank_agreement": true,
+        "exact_excess_matches": true,
+        "prediction_matches": true,
+        "candidate_matches": true
+      },
+      "ranks": {
+        "GF2": {
+          "rank_kernel_boundary": 25698,
+          "kernel_cokernel_dimension": 32901,
+          "rank_d_boundary": 3575985,
+          "rank_combined": 3617762,
+          "connecting_image_dimension_in_kernel_cokernel": 16079,
+          "surviving_a_dimension": 16822
+        },
+        "GF3": {
+          "rank_kernel_boundary": 25698,
+          "kernel_cokernel_dimension": 32901,
+          "rank_d_boundary": 3575985,
+          "rank_combined": 3617900,
+          "connecting_image_dimension_in_kernel_cokernel": 16217,
+          "surviving_a_dimension": 16684
+        },
+        "GF5": {
+          "rank_kernel_boundary": 25698,
+          "kernel_cokernel_dimension": 32901,
+          "rank_d_boundary": 3575985,
+          "rank_combined": 3617900,
+          "connecting_image_dimension_in_kernel_cokernel": 16217,
+          "surviving_a_dimension": 16684
+        }
+      },
+      "actual_excess": 138
+    }
+  ],
+  "finite_sequence_p4_p12": [
+    1,
+    4,
+    9,
+    18,
+    31,
+    49,
+    72,
+    102,
+    138
+  ],
+  "scope": "audited finite agreement at (p,t)=(11,2) and (12,2); the proposed degree-six relation, order-seven recurrence, and all-parameter series remain unproved",
+  "certificate_hash": "6208c2677a5a99fb62565ce49d744e7cd7576d4d21a9b3d33d1d9f7078100fc0"
+}

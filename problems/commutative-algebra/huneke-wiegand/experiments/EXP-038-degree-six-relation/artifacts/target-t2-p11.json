@@ -1,0 +1,223 @@
+{
+  "experiment": "EXP-038",
+  "route": "degree-six-relation falsifier with frozen two-sided exact ranks",
+  "status": "PASS_FINITE_OUT_OF_SAMPLE",
+  "generated_at": "2026-08-31T02:29:53.768503+00:00",
+  "parameters": {
+    "p": 11,
+    "t": 2,
+    "fields": [
+      2,
+      3
+    ],
+    "core_order": "low-degree",
+    "budget_seconds": 3600.0,
+    "memory_gib": 40.0
+  },
+  "premise_hashes": {
+    "EXP-037 proof": "ae2c3be4ec509264717fef48dd2cd73a47fe51c46a37240372a7a117ff5cc330",
+    "EXP-037 verdict": "ccc185190e885c334bcf6f401d47c2f4b1f44d8a3931226b240b3528e07b70bb",
+    "EXP-037 run.py": "1abebc24c99398dded97aa08216211db089889e154736ed9eb5a7202de0b5df0",
+    "EXP-037 p=10 target": "ca97087466fdd705e22f69e79cdfecfc7dbce0684475b98bd99757cfed030d7b",
+    "EXP-037 audit": "03682871743842bb8a3224b70aee72436ed21056de3d83dfb178f9023c7ad088"
+  },
+  "formula_certificate": {
+    "known_checks": {
+      "4": 1,
+      "5": 4,
+      "6": 9,
+      "7": 18,
+      "8": 31,
+      "9": 49,
+      "10": 72
+    },
+    "predictions": {
+      "11": 102,
+      "12": 138
+    },
+    "coefficients_p4_p40": [
+      1,
+      4,
+      9,
+      18,
+      31,
+      49,
+      72,
+      102,
+      138,
+      182,
+      234,
+      295,
+      365,
+      446,
+      537,
+      640,
+      755,
+      883,
+      1024,
+      1180,
+      1350,
+      1536,
+      1738,
+      1957,
+      2193,
+      2448,
+      2721,
+      3014,
+      3327,
+      3661,
+      4016,
+      4394,
+      4794,
+      5218,
+      5666,
+      6139,
+      6637
+    ],
+    "shifted_denominator_corrections_p4_p40": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      4,
+      7,
+      11,
+      16,
+      23,
+      31,
+      41,
+      53,
+      67,
+      83,
+      102,
+      123,
+      147,
+      174,
+      204,
+      237,
+      274,
+      314,
+      358,
+      406,
+      458,
+      514,
+      575,
+      640,
+      710,
+      785,
+      865,
+      950,
+      1041
+    ],
+    "coefficient_hash": "d04e3306595add8848374110f57c9b42fc6e83dc8e4c0353c0ae91a190c47dde"
+  },
+  "rows": [
+    {
+      "p": 11,
+      "t": 2,
+      "target_offset": 112,
+      "homological_degree": 19,
+      "total_offset": 549,
+      "kernel_codomain_rows": 32644,
+      "kernel_domain_columns": 20374,
+      "d_source_columns": 1749529,
+      "d_codomain_rows": 8436587,
+      "kernel_codomain_hash": "ee3e3e0b0f016bbce293b1aed7782f8b6008be4f5ab6f19ef04493cbe66b291e",
+      "kernel_domain_hash": "fe0ec134fa6cbb92482cbb4f0597234bbe51eb462d624a17ffb4de606016e4b4",
+      "d_source_hash": "670d2c9fce328f47ec9de866a827d07bc8953a494669c792a5c669073267aa79",
+      "field_rows": {
+        "2": {
+          "rank_kernel_boundary": 15599,
+          "kernel_cokernel_dimension": 17045,
+          "rank_d_boundary": 1659351,
+          "rank_combined": 1683307,
+          "connecting_image_dimension_in_kernel_cokernel": 8357,
+          "surviving_a_dimension": 8688
+        },
+        "3": {
+          "rank_kernel_boundary": 15599,
+          "kernel_cokernel_dimension": 17045,
+          "rank_d_boundary": 1659351,
+          "rank_combined": 1683409,
+          "connecting_image_dimension_in_kernel_cokernel": 8459,
+          "surviving_a_dimension": 8586
+        }
+      },
+      "predicted_excess": 102,
+      "structural_profiles": {
+        "kernel": {
+          "rows": 32644,
+          "columns": 20374,
+          "initial_nonzeros": 88230,
+          "initial_leaf_rows": 5835,
+          "initial_leaf_columns_after_row_peel": 2548,
+          "row_leaf_pivots": 7174,
+          "two_sided_leaf_pivots": 3879,
+          "peeled_rank": 11053,
+          "row_only_residual_rows": 13183,
+          "row_only_residual_columns": 12400,
+          "row_only_residual_nonzeros": 44773,
+          "residual_rows": 9304,
+          "residual_columns": 5658,
+          "residual_nonzeros": 23548,
+          "core_order": "low-degree",
+          "core_ranks": {
+            "2": 4546,
+            "3": 4546
+          }
+        },
+        "d_boundary": {
+          "rows": 8436587,
+          "columns": 1749529,
+          "initial_nonzeros": 14293020,
+          "initial_leaf_rows": 5457460,
+          "initial_leaf_columns_after_row_peel": 42075,
+          "row_leaf_pivots": 1065564,
+          "two_sided_leaf_pivots": 41104,
+          "peeled_rank": 1106668,
+          "row_only_residual_rows": 1665941,
+          "row_only_residual_columns": 679434,
+          "row_only_residual_nonzeros": 4245295,
+          "residual_rows": 1624837,
+          "residual_columns": 632432,
+          "residual_nonzeros": 4144389,
+          "core_order": "low-degree",
+          "core_ranks": {
+            "2": 552683,
+            "3": 552683
+          }
+        },
+        "combined": {
+          "rows": 8469231,
+          "columns": 1769903,
+          "initial_nonzeros": 14836268,
+          "initial_leaf_rows": 5457460,
+          "initial_leaf_columns_after_row_peel": 41257,
+          "row_leaf_pivots": 1065564,
+          "two_sided_leaf_pivots": 42024,
+          "peeled_rank": 1107588,
+          "row_only_residual_rows": 1691941,
+          "row_only_residual_columns": 699329,
+          "row_only_residual_nonzeros": 4551722,
+          "residual_rows": 1649917,
+          "residual_columns": 648987,
+          "residual_nonzeros": 4394740,
+          "core_order": "low-degree",
+          "core_ranks": {
+            "2": 575719,
+            "3": 575821
+          }
+        }
+      },
+      "actual_excess": 102,
+      "candidate_matches": true,
+      "row_hash": "50ada46658429a36b1f17a0282814090e482284e8fd8e4cb6c7c87f1026d0c31"
+    }
+  ],
+  "elapsed_seconds": 330.533246,
+  "artifact_sha256": "e0e1934b154985a3cb9dafb9e8b3041ae0d3f9a6f18e8a2f36f24b6fbc7229a2"
+}

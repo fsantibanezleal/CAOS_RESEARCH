@@ -1471,3 +1471,93 @@
   `8ea3fbd0dfd136a7b91c508a31146be7d88eded1` before this documentation handoff.
 - HWB-063 is done. HWB-061 remains active for an infinite parity-sensitive theorem for the
   connecting-image quotient. Neither complete lower strand nor a full resolution is claimed.
+
+## 2026-08-30 - EXP-037 declared
+
+- The exact characteristic-two excess sequence `1,4,9,18,31,49` matches the first six
+  coefficients of `(1+2x+x^2+x^3)/((1-x)^2(1-x^2)(1-x^3))`.
+- This lookup is a heuristic only. The new candidate forces `e_10=73` and `e_11=104`, so the next
+  calculation is a genuine out-of-sample falsification rather than a refit.
+- The structural prediction is stronger: integral unit cancellation should leave factor-two
+  cells indexed by the lattice points counted by the generating function. Finite rank agreement
+  cannot establish this claim.
+- EXP-037 records the exact premise hashes, independent arithmetic route, compute budgets, and
+  kill criteria before implementation. No new theorem, manuscript version, or publication is
+  claimed.
+
+## 2026-08-30 - EXP-037 refuted at p=10
+
+- The complete `(10,2)` presentation contains 17,356 kernel rows, 12,006 kernel columns, 773,790
+  connecting-source columns, and 3,320,245 connecting rows.
+- Exact two-sided unit cancellation reduces the kernel, connecting, and combined blocks to
+  field-independent 2-cores before finite-field elimination. The primary run completes in 67.390
+  seconds.
+- The surviving dimensions are `4240` over `GF(2)` and `4168` over `GF(3)`, so `e_10=72`; the
+  declared prediction 73 and the 73-point lattice indexing are both refuted.
+- A canonical residual order reproduces every `GF(2)` rank, while `GF(5)` reproduces every
+  `GF(3)` rank. The frozen primary and alternate SHA-256 hashes are
+  `ca97087466fdd705e22f69e79cdfecfc7dbce0684475b98bd99757cfed030d7b` and
+  `a8456b4d2de3fcf53cf97a63b63671656b4968fac80f8b8f151b76f43aba1b05`.
+- The finite sequence is now `1,4,9,18,31,49,72`. This does not prove an infinite formula or
+  resolve the Huneke-Wiegand conjecture. HWB-064 is done; no manuscript/Zenodo gate opens.
+
+## 2026-08-30 - EXP-038 declared
+
+- The one-unit deficit first appears at `n=p-4=6`. EXP-038 tests whether this marks a first
+  degree-six relation, giving corrected numerator `1+2x+x^2+x^3-x^6` over the previous
+  denominator.
+- The corrected series is fitted through `p=10` and predicts the genuinely new value `e_11=102`
+  (then 138 at `p=12`). It is a falsification target, not evidence.
+- The frozen EXP-037 engine will compute the complete `(11,2)` block under a 3,600-second, 40-GB
+  cap. A numerical pass requires a separate pivot-order and odd-prime audit; structural P2 still
+  requires an explicit relation certificate.
+
+## 2026-08-30 - EXP-038 p=11 prediction passes and p=12 gate opens
+
+- The complete `(11,2)` presentation has 32,644 kernel rows, 20,374 kernel columns, 1,749,529
+  connecting-source columns, and 8,436,587 connecting rows.
+- Exact surviving dimensions are `8688` over `GF(2)` and `8586` over `GF(3)`, so `e_11=102` as
+  predicted. The kernel cokernel and connecting boundary remain field-independent.
+- Canonical residual order reproduces every `GF(2)` rank and `GF(5)` reproduces every `GF(3)`
+  rank. Primary and audit runs complete in 330.533246 and 176.288232 seconds.
+- The corrected denominator is equivalent from this point to an order-seven recurrence. Its first
+  new check passes, and the already declared second prediction `e_12=138` is activated under a
+  7,200-second, 40-GB cap. No all-parameter recurrence or relation is claimed.
+
+## 2026-08-30 - EXP-038 p=12 passes; EXP-039 redirects to core anatomy
+
+- The complete `(12,2)` presentation has 58,599 kernel rows, 33,068 kernel columns, 3,735,675
+  connecting-source columns, and 20,010,799 connecting rows.
+- Exact surviving dimensions are `16,822` over `GF(2)` and `16,684` over both `GF(3)` and
+  `GF(5)`, hence `e_12=138` exactly as declared. Low-degree and canonical orders agree on every
+  rank; the audit freezes both `p=11` and `p=12` evidence.
+- The first two recurrence residuals vanish, but no degree-six chain relation or all-parameter
+  recurrence is proved. EXP-038 is therefore INCONCLUSIVE for P1/P2, with both finite gates passed.
+- EXP-039 is declared before implementation. It tests whether connected components of the
+  unit-peeled combined core are bounded recurring defect-one blocks. A failure redirects to
+  matched-block/relative-homology decomposition rather than another coefficient fit.
+
+## 2026-08-30 - EXP-039 refuted; EXP-040 declares a merged-sector relation
+
+- EXP-039 exactly decomposes every complete combined residual core through `p=9`. P1 fails at
+  `p=6`: the defect partition is `4+2+2+1`, and components are neither bounded nor defect one.
+- The partitions at `p=6,7,8` are exactly `binom(p-2,3),p-4,p-4,p-5`. At `p=9`, the first three
+  support sectors merge but preserve combined defect `35+5+5=45`; the fourth contributes four.
+- Every defective component is orientation-sensitive: sign erasure changes its odd rank, and one
+  sign flip raises it by one. The unsigned support graph cannot carry the relation theorem.
+- EXP-040 is declared before computation. It predicts `67+5` at `p=10` and, conditionally,
+  `96+6` at `p=11`, localizing the degree-six correction and its first translates inside the
+  merged signed sector.
+
+## 2026-08-30 - EXP-040 localizes p=10 and refutes the p=11 transport
+
+- At `p=10`, the exact characteristic-defect partition is `67+5`, as declared. The large merged
+  component carries the first one-unit correction from free count 68 to 67; the other component
+  contributes five.
+- At `p=11`, the conditional prediction fails: the exact partition is `95+7`, not `96+6`.
+  `GF(3)` and `GF(5)` agree on every component at both parameters, and all orientation controls
+  detect sign erasure and a one-sign perturbation.
+- P1 is a relevant finite localization, but P2 is refuted and P3 is not attempted. The evidence
+  suggests that the isolated support component changes latent sector identity across parameters.
+- HWB-067 is done. HWB-068 records semantic interval-tag profiling before any bridge deletion,
+  further coefficient computation, manuscript update, or Zenodo version.
