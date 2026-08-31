@@ -1196,3 +1196,17 @@ per-component ranks.  The strong finite prediction is that every defective compo
 types.  A giant defective component refutes that model and redirects to a finer matched-block or
 relative-homology decomposition.  The run is capped at 1,800 seconds and 20 GB with per-parameter
 checkpoints.  No publication gate is open.
+
+## 2026-08-30 - EXP-040 merged-sector relation gate
+
+EXP-039 is refuted at `p=6`: defects are not one per bounded connected component.  Its exact
+partitions nevertheless reveal four latent sectors with dimensions
+`binom(p-2,3),p-4,p-4,p-5` for `p=6,7,8`.  At `p=9`, the first three merge in support and retain
+combined defect `35+5+5=45`; the fourth remains four.  Erasing signs or flipping one sign changes
+every defective odd rank, so support-only topology is insufficient.
+
+EXP-040 is declared before computation.  At `p=10`, it predicts partition `67+5`: the merged free
+value `56+6+6=68` loses exactly one relation while the fourth sector remains five.  On a pass, the
+conditional `p=11` prediction is `96+6`, corresponding to two degree-one translates.  Both odd
+fields must agree componentwise.  Only after both partitions pass may signed bridge extraction
+begin.  No manuscript or Zenodo gate is open.

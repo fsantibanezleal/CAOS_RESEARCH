@@ -1536,3 +1536,15 @@
 - EXP-039 is declared before implementation. It tests whether connected components of the
   unit-peeled combined core are bounded recurring defect-one blocks. A failure redirects to
   matched-block/relative-homology decomposition rather than another coefficient fit.
+
+## 2026-08-30 - EXP-039 refuted; EXP-040 declares a merged-sector relation
+
+- EXP-039 exactly decomposes every complete combined residual core through `p=9`. P1 fails at
+  `p=6`: the defect partition is `4+2+2+1`, and components are neither bounded nor defect one.
+- The partitions at `p=6,7,8` are exactly `binom(p-2,3),p-4,p-4,p-5`. At `p=9`, the first three
+  support sectors merge but preserve combined defect `35+5+5=45`; the fourth contributes four.
+- Every defective component is orientation-sensitive: sign erasure changes its odd rank, and one
+  sign flip raises it by one. The unsigned support graph cannot carry the relation theorem.
+- EXP-040 is declared before computation. It predicts `67+5` at `p=10` and, conditionally,
+  `96+6` at `p=11`, localizing the degree-six correction and its first translates inside the
+  merged signed sector.

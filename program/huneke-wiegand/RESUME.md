@@ -1,6 +1,7 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-30. Lifecycle: EXP-039 is DECLARED; EXP-038 is INCONCLUSIVE with both finite
+Updated: 2026-08-30. Lifecycle: EXP-040 is DECLARED; EXP-039 is REFUTED with a sector redirect;
+EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
 with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
 `4240` over `GF(2)` and `4168` over both `GF(3)` and `GF(5)`, hence exact excess `e_10=72`. This
@@ -10,8 +11,9 @@ cell. Low-degree and canonical residual orders agree exactly. The finite `t=2` s
 corrected numerator `1+2x+x^2+x^3-x^6`. Its first genuinely new prediction passes: the complete
 `(11,2)` block gives `8688/8586` and audited exact `e_11=102`; the complete `(12,2)` block gives
 `16822/16684` and audited exact `e_12=138`. Both finite gates pass, but the recurrence and proposed
-relation remain unproved. EXP-039 is declared to test bounded recurring components in the combined
-signed core before another coefficient is attempted. For every `p>=4` and
+relation remain unproved. EXP-039 refutes bounded defect-one components but exposes latent sectors
+`binom(p-2,3),p-4,p-4,p-5` and their `p=9` support merger. EXP-040 predicts `67+5` at `p=10` and
+conditionally `96+6` at `p=11`, localizing the correction inside the merged signed sector. For every `p>=4` and
 `2<=t<=p-2`, the shifted cubic source is absent
 by the positive gap `g(p,t)>=3(p-1)^2`, so every future exact `A_p` value at these targets
 transfers to `C_p`.  This is not an infinite characteristic-dependence theorem. The 53-page
@@ -361,7 +363,8 @@ campaign is supporting evidence, not the proof.
 | EXP-036 | CONFIRMED with structural propagation unresolved | repeated characteristic-dependent targets through `p=9`; distinct kernel and connecting mechanisms; compact factor-two residual; all-parameter cubic-source absence |
 | EXP-037 | REFUTED | exact `e_10=72`, not 73; independent order and `GF(5)` audit pass; proposed lattice index fails |
 | EXP-038 | INCONCLUSIVE; TWO FINITE PASSES | audited exact `e_11=102` and `e_12=138`; all-parameter recurrence and structural relation remain unproved |
-| EXP-039 | DECLARED | test whether unit-peeled combined cores decompose into bounded recurring defect-one connected components through `p=9` |
+| EXP-039 | REFUTED WITH REDIRECT | bounded defect-one components fail; exact partitions expose four latent orientation-sensitive sectors and a `p=9` support merger |
+| EXP-040 | DECLARED | predict merged-sector partitions `67+5` at `p=10` and conditionally `96+6` at `p=11`; seek signed bridge relations |
 
 ## 3a. Exact evidence anchors
 
@@ -435,7 +438,7 @@ campaign is supporting evidence, not the proof.
 
 ## 4. In flight
 
-EXP-039 is DECLARED. EXP-037 exactly refutes the previous series at its first new value:
+EXP-040 is DECLARED. EXP-037 exactly refutes the previous series at its first new value:
 
 ```text
 e_10=dim_GF(2) A_(10,2)-dim_GF(3) A_(10,2)=4240-4168=72, not 73.
@@ -457,7 +460,10 @@ with low-degree and canonical orders agreeing. EXP-038 remains inconclusive beca
 all-parameter recurrence or degree-six relation is proved. EXP-039 redirects from coefficient
 extrapolation to exact connected-component anatomy of the unit-peeled combined core through
 `p=9`; a giant defective component will refute that coarse model and activate matched-block or
-relative-homology decomposition.
+relative-homology decomposition. EXP-039 performs that component test and refutes bounded
+defect-one blocks, but its partitions identify four latent sectors. At `p=9`, the first three
+merge with defect `35+5+5=45` and the fourth remains four. EXP-040 tests whether the merged block
+has defect `67` at `p=10` and `96` at `p=11`, leaving the fourth sector at five and six.
 
 EXP-036 is CONFIRMED with its all-parameter structural-propagation prediction unresolved.  Its
 exact-sum route reproduces EXP-035 and computes the complete `p<=6` triangle plus `(7,2)`,
@@ -759,9 +765,8 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Run EXP-039's exact support-component decomposition through `p=9`; if a giant defective
-   component appears, redirect to matched-block/relative-homology decomposition without fitting
-   another coefficient.
+1. Run EXP-040 at `p=10`; continue to `p=11` only if the declared partition `67+5` passes, then
+   attempt signed bridge/tag extraction for the merged sector.
 2. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
    a signed core; keep this separate from the connecting-only `t=2` mechanism.
 3. Open a separate manuscript only after a complete strand, an infinite connecting theorem, or a
@@ -816,6 +821,9 @@ Published baseline:
   Hilbert numerator. EXP-039 tests the cheapest exact structural consequence first: whether the
   signed residual support splits into bounded recurring defect-one blocks. Failure activates a
   finer matched-block or squarefree-divisor-complex homology analysis.
+- Merged-sector relation: EXP-039 refutes bounded components but turns the old coefficient law
+  into four exact finite sectors. EXP-040 tests whether the `-x^6` correction is carried entirely
+  by their merged orientation-sensitive block, with relation multiplicities one and two.
 
 ## 7. Gotchas
 
