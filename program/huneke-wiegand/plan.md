@@ -1328,3 +1328,15 @@ HWB-071 therefore redirects to a bounded atom-lattice gate: enumerate all 64 sub
 normalized row atoms, identify every inclusion-minimal subset preserving the full Bockstein, and
 require the minimal carrier pattern to agree across all four parameters. Integral Morse matching
 starts only after that carrier is known.
+
+## 2026-08-31 - EXP-045 complete row-atom carrier lattice
+
+EXP-045 is declared before any new subset ranks are read. It enumerates all 64 subsets of the six
+normalized row atoms for each `p=8,...,11`. The strong prediction is six-way essentiality: every
+proper subset has Bockstein zero and the full set alone carries ranks `3,4,5,7`. If refuted, the
+runner must return the complete inclusion-minimal nonzero and full-carrier antichains rather than
+select a favorable subset after computation.
+
+All three fields and two genuinely opposite Bockstein conventions are required for every one of
+the 256 projections. The finite carrier table is a map for integral Morse reduction, not a
+replacement for it; no uniform theorem or publication gate is opened in advance.

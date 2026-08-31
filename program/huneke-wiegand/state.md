@@ -142,6 +142,7 @@
 | 2026-08-31 | active | confirmed | EXP-043 passes P1/P2/P3: audited rational ranks are `1002,1607,2450,3586`; the complete isolated 2-primary cokernels are `(Z/2)^(3,4,5,7)` |
 | 2026-08-31 | confirmed | active | EXP-044 declared for HWB-071: exact row projections test whether `D:B` and `K:C0` are a necessary and sufficient two-sided Bockstein bridge |
 | 2026-08-31 | active | refuted | EXP-044 passes necessity and audit consistency but refutes sufficiency: every deletion and the two-atom union have Bockstein zero, so a larger signed circuit is essential |
+| 2026-08-31 | refuted | active | EXP-045 declared for HWB-071: enumerate the complete six-row-atom subset lattice and extract stable minimal Bockstein carriers |
 
 Current state: **EXP-043 and EXP-042 are confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
 inconclusive with two finite passes; EXP-037 is refuted; EXP-036 remains confirmed with structural

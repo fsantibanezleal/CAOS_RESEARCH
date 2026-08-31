@@ -1655,3 +1655,11 @@
 - P3 and all 158 independent low-pivot audit checks pass. The next gate is the complete 64-subset
   lattice of the six normalized row atoms, not a guessed two-block integral reduction.
 - No recurrence, all-parameter theorem, manuscript, or Zenodo update is claimed.
+
+## 2026-08-31 - EXP-045 row-atom carrier lattice declared
+
+- All 64 subsets of the fixed six-row-atom alphabet will be tested for each frozen matrix.
+- The strong prediction is that all six atoms are individually essential and the full set is the
+  unique nonzero Bockstein carrier. A failure must expose the complete minimal-carrier antichain.
+- Exact three-field ranks, opposite Bockstein reductions, premise hashes, and an independent
+  reconstruction of all 256 projections are mandatory.

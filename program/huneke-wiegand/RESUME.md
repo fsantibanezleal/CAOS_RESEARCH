@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-31. Lifecycle: EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
+Updated: 2026-08-31. Lifecycle: EXP-045 is DECLARED; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
 with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
@@ -378,6 +378,7 @@ campaign is supporting evidence, not the proof.
 | EXP-042 | CONFIRMED FINITELY | exact first-Bockstein ranks `3,4,5,7` prove that many valuation-one Smith factors; high/low pivot atom representatives differ |
 | EXP-043 | CONFIRMED FINITELY | audited modular Hadamard certificates prove rational ranks `1002,1607,2450,3586` and complete isolated 2-primary types `(Z/2)^(3,4,5,7)` |
 | EXP-044 | REFUTED; P1/P3 PASS | deleting either marked atom kills the Bockstein, but their union also has Bockstein zero; a larger signed circuit is essential |
+| EXP-045 | DECLARED | enumerate all 64 subsets of the six row atoms and extract every minimal nonzero and full-Bockstein carrier |
 
 ## 3a. Exact evidence anchors
 
@@ -482,8 +483,9 @@ campaign is supporting evidence, not the proof.
 
 ## 4. In flight
 
-EXP-044 is REFUTED overall with P1/P3 retained. EXP-043 is CONFIRMED finitely and closes HWB-070.
-EXP-042 is CONFIRMED finitely and advances HWB-069; HWB-071 owns the larger uniform signed circuit.
+EXP-045 is DECLARED for HWB-071. EXP-044 is REFUTED overall with P1/P3 retained. EXP-043 is
+CONFIRMED finitely and closes HWB-070. EXP-042 is CONFIRMED finitely and advances HWB-069;
+HWB-071 owns the larger uniform signed circuit.
 EXP-041 is REFUTED overall, with its P1 finite classifier retained; HWB-068 is done. EXP-040 is
 REFUTED overall, with its P1 finite localization retained. EXP-037 exactly
 refutes the previous series at its first new value:
@@ -828,8 +830,8 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Declare and run a complete 64-subset lattice of the six normalized row atoms. Identify every
-   inclusion-minimal subset that preserves the full Bockstein at `p=8,...,11`.
+1. Implement and audit EXP-045's complete 64-subset lattice. Identify every inclusion-minimal
+   subset that preserves a nonzero or full Bockstein at `p=8,...,11`.
 2. Use the stable carrier to construct an integral matching and explicit parameter maps before
    claiming OI/FI stability. Do not treat either pivot representative as canonical.
 3. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share

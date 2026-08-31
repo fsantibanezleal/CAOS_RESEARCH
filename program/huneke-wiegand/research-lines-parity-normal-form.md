@@ -59,6 +59,10 @@ a larger signed circuit. The next finite action is exhaustive rather than specul
 all 64 subsets of the six row atoms and extract the inclusion-minimal full-Bockstein carriers
 shared by all four parameters.
 
+EXP-045 declares that exhaustive lattice before computation. Its strong prediction is that the
+full six-atom set is the unique nonzero carrier. A refutation remains decisive because the stored
+minimal-carrier antichains will specify the exact smaller circuit that replaces it.
+
 ### 2. Relative squarefree-divisor homology - structural fallback
 
 Multigraded Betti numbers of numerical semigroup rings can be represented by reduced homology of

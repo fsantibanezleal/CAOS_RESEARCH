@@ -705,3 +705,7 @@ EXP-044 passes necessity but refutes sufficiency. Deleting either marked atom ki
 Bockstein, yet their union alone also has Bockstein zero through `p=11`. The characteristic-two
 torsion is therefore a larger signed circuit. The next localization gate enumerates all subsets
 of the six row atoms before any integral normal form is proposed.
+
+EXP-045 is the declared exhaustive version of that gate. It evaluates the complete 64-subset
+lattice at every tested parameter and records all minimal nonzero and full-rank Bockstein
+carriers. This removes further guesswork from selecting the critical row circuit.
