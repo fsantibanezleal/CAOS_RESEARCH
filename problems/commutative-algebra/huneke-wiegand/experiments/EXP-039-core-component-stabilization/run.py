@@ -304,7 +304,11 @@ def analyze_combined_core(
     row_components = array("i", [-1]) * row_only_rows
     column_components = array("i", [-1]) * len(core_original_columns)
     for seed in range(len(core_original_columns)):
-        if not active_columns[seed] or column_components[seed] >= 0:
+        if (
+            not active_columns[seed]
+            or column_degrees[seed] == 0
+            or column_components[seed] >= 0
+        ):
             continue
         component = len(component_columns)
         rows_here = array("I")
@@ -332,9 +336,17 @@ def analyze_combined_core(
         component_rows.append(rows_here)
         component_columns.append(columns_here)
 
-    if sum(map(len, component_rows)) != sum(active_rows):
+    residual_row_count = sum(
+        1 for row, is_active in enumerate(active_rows) if is_active and row_degrees[row] > 0
+    )
+    residual_column_count = sum(
+        1
+        for column, is_active in enumerate(active_columns)
+        if is_active and column_degrees[column] > 0
+    )
+    if sum(map(len, component_rows)) != residual_row_count:
         raise AssertionError("active row component coverage mismatch")
-    if sum(map(len, component_columns)) != sum(active_columns):
+    if sum(map(len, component_columns)) != residual_column_count:
         raise AssertionError("active column component coverage mismatch")
 
     records: list[dict[str, object]] = []
@@ -455,8 +467,8 @@ def analyze_combined_core(
             "row_only_residual_rows": row_only_rows,
             "row_only_residual_columns": row_only_columns,
             "row_only_residual_nonzeros": row_only_nonzeros,
-            "residual_rows": sum(active_rows),
-            "residual_columns": sum(active_columns),
+            "residual_rows": residual_row_count,
+            "residual_columns": residual_column_count,
             "residual_nonzeros": sum(int(record["nonzeros"]) for record in records),
             "component_count": len(records),
             "complete_ranks": {str(prime): rank for prime, rank in complete_ranks.items()},
@@ -529,7 +541,18 @@ def main() -> int:
         result["elapsed_seconds"] = budget.elapsed
         result["artifact_hash"] = digest(result)
         write_json_atomic(args.output, result)
-        print(json.dumps(result, indent=2), flush=True)
+        print(
+            json.dumps(
+                {
+                    "experiment": result["experiment"],
+                    "status": result["status"],
+                    "completed_parameters": [row["p"] for row in result["rows"]],
+                    "resource_stop": result["resource_stop"],
+                },
+                indent=2,
+            ),
+            flush=True,
+        )
         return 2
 
     rows = result["rows"]
@@ -545,12 +568,29 @@ def main() -> int:
     result["p1_status"] = "PASS_FINITE" if all_p1 else "REFUTED"
     result["p2_normalized_type_count"] = len(normalized_types)
     result["p2_recurring_normalized_types"] = recurring
-    result["p2_status"] = "SUPPORTED_FINITE" if recurring and all_p1 else "REFUTED"
+    if len(rows) < 2:
+        result["p2_status"] = "NOT_EVALUATED"
+    else:
+        result["p2_status"] = "SUPPORTED_FINITE" if recurring and all_p1 else "REFUTED"
     result["status"] = "COMPLETE"
     result["elapsed_seconds"] = budget.elapsed
     result["artifact_hash"] = digest(result)
     write_json_atomic(args.output, result)
-    print(json.dumps(result, indent=2), flush=True)
+    print(
+        json.dumps(
+            {
+                "experiment": result["experiment"],
+                "status": result["status"],
+                "completed_parameters": [row["p"] for row in rows],
+                "p1_status": result["p1_status"],
+                "p2_status": result["p2_status"],
+                "elapsed_seconds": result["elapsed_seconds"],
+                "artifact_hash": result["artifact_hash"],
+            },
+            indent=2,
+        ),
+        flush=True,
+    )
     return 0
 
 
