@@ -1674,3 +1674,50 @@
   stable; its intersection `58` has ranks `1,2,3,5`, and either completion adds exactly two.
 - HWB-071 redirects to relative integral presentations for the two alternative completions and
   the separate `p=11` threshold. No publication gate opens from the finite lattice alone.
+
+## 2026-09-02 - EXP-046 relative unit cores declared
+
+- A fresh primary-source sweep adds matroids over rings as a deletion-contraction and torsion
+  dictionary; it does not prove that the CAOS family is a uniform matroid over a ring.
+- EXP-045's stored ranks give finite contraction laws `(2p-3,2p-5)` for `58->59` and
+  `(4p-10,4p-12)` for `58->62`. Both completions have constant parity defect two.
+- EXP-046 is declared before peeling. Exact unit-leaf cancellations test whether that completion
+  separates into two defect-one components and whether mask `56` isolates the new `p=11` class.
+- Full Smith computation and further coefficients remain demoted until the integral critical-core
+  sizes and component signatures are known.
+
+## 2026-09-02 - EXP-046 refutes leaf compression and preserves the threshold
+
+- P1 is refuted: masks `59` and `62` admit zero unit-leaf cancellations at every tested parameter.
+  Masks `56` and `58` shrink only at their boundary, not to bounded critical complexes.
+- P2 is refuted: every one of the sixteen residuals is a single connected nonzero component, so
+  the constant-two completion never separates into two defect-one blocks.
+- P3 passes finitely. Mask `56` has defect sequence `0,0,0,1`, and its normalized row aliases and
+  column-atom set are unchanged through `p=11`; the threshold is internal sign/rank behavior.
+- Forward and reverse reductions recompose every three-field rank and Bockstein. A separately
+  implemented maximum-index column-first audit passes all 214 checks.
+- HWB-072 is done. HWB-073 redirects to fill-producing relative integer presentations for
+  `58->59`, `58->62`, and separately `56->58`. The finite negative result does not trigger a
+  manuscript or Zenodo update.
+
+## 2026-09-02 - EXP-047 relative-kernel Smith forms declared
+
+- The exact row-inclusion sequence identifies the missing relative module as
+  `Z^(T-S)/B(ker_Z A)` for `M_T=[A;B]`.
+- EXP-047 is declared before HNF or Smith computation. It predicts `(Z/2)^2` after the distinct
+  free parts of both stable completions and `(Z/2)^(p-7)` for the threshold quotient.
+- A transformed HNF supplies a saturated integer kernel basis; exact annihilation, field-rank
+  recomposition, compact Smith forms, explicit budgets, and an independent audit are required.
+
+## 2026-09-02 - EXP-047 proves exact finite relative modules
+
+- All three predictions pass. The stable `58->59` and `58->62` completions each have relative
+  torsion `(Z/2)^2`; `56->58` has `(Z/2)^(p-7)` for `p=8,...,11`.
+- Their respective free ranks are `binom(p-2,2)`, `p^2-4p-3`, and
+  `rows(R1)-(3p-7)`. No relative odd torsion or factor divisible by four occurs.
+- The transformed HNFs certify the rational ranks of masks `56,58,59,62`; with the prior
+  Bocksteins, their complete tested 2-primary groups are now known.
+- The independent audit passes 202 checks. Modular Hadamard bounds prove exact rank ceilings, and
+  explicit Bareiss minors prove top determinantal divisors `4` and `2^(p-7)`.
+- HWB-073 is done. HWB-074 owns the uniform `I direct-sum 2I` reduction and semantic parameter
+  maps. The finite result is not a manuscript or Zenodo trigger.

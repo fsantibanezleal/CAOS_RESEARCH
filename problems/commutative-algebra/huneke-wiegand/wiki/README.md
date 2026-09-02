@@ -714,3 +714,27 @@ EXP-045 finds a stable full-carrier antichain rather than the predicted unique s
 The minimal full masks are `59` and `62` throughout; their common mask `58` carries ranks
 `1,2,3,5`, and either completion adds two. The first nonzero carrier shrinks from `58` to `56` at
 `p=11`. This splits the next integral task into a stable completion block and a threshold block.
+
+EXP-046 is declared to compute the exact unit-leaf two-cores of those four masks. It tests whether
+the constant-two completion separates into two defect-one components and whether the new mask-56
+class at `p=11` is isolated. The arithmetic-matroid viewpoint organizes deletion and contraction;
+the certificate still has to come from integral reductions of the CAOS matrices.
+
+EXP-046 closes that elementary route negatively. Both minimal full carriers have zero unit-leaf
+cancellations for `p=8,...,11`, and every tested residual has one connected nonzero component.
+The full defect therefore cannot be decomposed by existing degree-one pivots. Mask `56` has
+defects `0,0,0,1` under one persistent semantic atom-set support, locating the `p=11` change in
+the signed ranks rather than in a new atom. The next route is a certified fraction-free relative
+integer reduction that creates fill and isolates the parity quotient.
+
+EXP-047 declares that reduction in exact sequence form. If `M_T=[A;B]`, the relative kernel is
+`Z^(T-S)/B(ker_Z A)`. Transformed Hermite form supplies a saturated basis of the integer kernel;
+the resulting compact matrix has an exact Smith form. The finite predictions are two copies of
+`Z/2` for either stable completion and `p-7` copies for the `56->58` threshold quotient.
+
+EXP-047 confirms those finite predictions exactly. The two stable completion modules have
+different free ranks but identical torsion `(Z/2)^2`; the threshold module has
+`(Z/2)^(p-7)`. Independent Hadamard rank ceilings and Bareiss-minor determinantal divisors rule
+out hidden odd or higher 2-power factors. This is the first exact integral relative-module
+description behind the carrier lattice. A uniform result still needs semantic unimodular bases
+and explicit `p->p+1` compatibility.

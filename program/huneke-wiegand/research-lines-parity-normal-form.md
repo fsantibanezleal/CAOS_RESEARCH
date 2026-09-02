@@ -1,6 +1,6 @@
 # Parity-normal-form research lines
 
-Updated: 2026-08-31. Scope: unresolved all-parameter characteristic-two connecting quotient in
+Updated: 2026-09-02. Scope: unresolved all-parameter characteristic-two connecting quotient in
 the EXP-009 family. The broad Huneke--Wiegand conjecture is already false and is not the target.
 
 ## Solvability assessment
@@ -69,6 +69,61 @@ completion adds exactly two. The `p=11` minimal nonzero carrier drops to `56`, e
 threshold class. The highest-value action is now an integral relative comparison of the two
 alternative completions, not another global rank or coefficient sweep.
 
+### Arithmetic deletion-contraction refinement - completed leaf gate
+
+Fink and Moci's matroids-over-rings framework records quotient modules, torsion, deletion,
+contraction, and base change for integral vector configurations. The CAOS row masks are grouped
+row families rather than a proved instance of the desired uniform object, so the framework is a
+dictionary and invariant ledger, not a theorem transfer.
+
+Applied to the finite carrier table, the contraction-rank increments are
+
+```text
+58 -> 59: (delta_Q,delta_2)=(2p-3,2p-5),
+58 -> 62: (delta_Q,delta_2)=(4p-10,4p-12)
+```
+
+at every tested parameter. Both expose the same defect-two completion despite different ambient
+ranks. EXP-046 tests the cheapest integral explanation: unit-leaf cancellation followed by
+component decomposition.
+
+That explanation is now refuted. All sixteen tested projections leave one connected nonzero core;
+masks `59` and `62` have zero unit-leaf cancellations, so their defect-two increments cannot be
+peeled off as separate blocks. Mask `56` changes from defect zero to one at `p=11` without changing
+its semantic atom-set support. The active route must therefore create fill through certified
+integer operations rather than search for existing leaves.
+
+### Fill-producing relative presentation - active
+
+For a row inclusion `S subset T`, use the exact cokernel sequence induced by
+`M_p(S) -> M_p(T)` to present the relative quotient after eliminating free directions. The finite
+rank increments are different for `R0` and `R2`, but both parity increments are two. The immediate
+test is whether fraction-free signed Hermite elimination produces a bounded parity presentation
+with equivalent mod-two and Bockstein data for `58->59` and `58->62`.
+
+The certificate must record every integral pivot and permutation, preserve the source hashes, and
+recompose ranks over at least three fields. If the residual parity matrix grows with `p`, the next
+fallback is a filtered relative squarefree-divisor complex with explicit chain maps. A field-only
+Schur complement is diagnostic and cannot establish the integral claim.
+
+EXP-047 declares the exact finite gate. For `M_T=[A;B]`, it computes
+`Z^(T-S)/B(ker_Z A)` from a transformed Hermite basis and then reads its compact Smith form. The
+predictions are `(Z/2)^2` after free stabilization for both alternative completions and
+`(Z/2)^(p-7)` for `56->58`. These finite Smith forms can validate the relative-module target but
+cannot replace the later uniform basis and parameter maps.
+
+EXP-047 confirms all three finite predictions. The two alternative completions are noncanonically
+equivalent after free stabilization, with exact torsion `(Z/2)^2`; the threshold module has exact
+torsion `(Z/2)^(p-7)`. Independent determinant certificates show that these are Smith facts, not
+just mod-two rank losses. The HNF ranks also complete the tested 2-primary types of masks
+`56,58,59,62`.
+
+The active task is now symbolic certificate extraction. Seek recorded unimodular reductions with
+unit-block sizes `2p-5`, `4p-12`, and `2p`, leaving parity blocks `2I_2`, `2I_2`, and
+`2I_(p-7)`. Normalize pivots by semantic interval coordinates and prove that the same operation
+families extend under `p->p+1`. A fifth coefficient is lower value until that attempt either
+succeeds or exposes a specific missing family.
+
 ### 2. Relative squarefree-divisor homology - structural fallback
 
 Multigraded Betti numbers of numerical semigroup rings can be represented by reduced homology of
@@ -121,6 +176,11 @@ proved or explicitly conjectured transition law.
   <https://arxiv.org/abs/1209.1183>.
 - Dalili and Kummini connect characteristic-dependent Betti numbers with simplicial homology and
   discrete Morse constructions: <https://arxiv.org/abs/1009.4243>.
+- Fink and Moci organize quotient modules, torsion, base change, deletion, and contraction for
+  matroids over a commutative ring: <https://arxiv.org/abs/1209.6571>.
+- Pagaria and Paolini use reduction and signed Hermite normal form for representations of
+  torsion-free arithmetic matroids; their torsion-free hypothesis prevents a direct theorem
+  transfer here: <https://arxiv.org/abs/1908.04137>.
 
 None of these sources supplies the missing chain maps or the CAOS recurrence. They justify the
 route vocabulary and proof obligations only.
