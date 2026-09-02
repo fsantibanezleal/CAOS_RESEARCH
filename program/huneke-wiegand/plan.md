@@ -1388,3 +1388,23 @@ The strong prediction is that both stable completions have torsion exactly `(Z/2
 different free summands are removed, while `56->58` has `(Z/2)^(p-7)`. Frozen sources,
 annihilation, rank recomposition, a `p=8` smoke, explicit resource budgets, and an independent
 compact-matrix audit are mandatory. No all-parameter or publication claim is opened in advance.
+
+All three predictions pass on the complete range. The exact relative modules are
+
+```text
+Q_p(58,59) = Z^binom(p-2,2) direct-sum (Z/2)^2,
+Q_p(58,62) = Z^(p^2-4p-3) direct-sum (Z/2)^2,
+Q_p(56,58) = Z^(rows(R1)-(3p-7)) direct-sum (Z/2)^(p-7).
+```
+
+The 1,799-second exact campaign certifies every saturated source kernel and compact Smith form.
+The independent audit passes all 202 checks and replaces trust in the Smith output by modular
+Hadamard rank ceilings plus explicit Bareiss-minor determinantal divisors `4` and `2^(p-7)`.
+Together with the prior Bocksteins, the HNF rational ranks also complete the 2-primary types of
+masks `56`, `58`, `59`, and `62` throughout the tested range.
+
+HWB-073 is done. HWB-074 is now the strongest path: reduce the compact matrices by recorded
+unimodular operations to `I_(2p-5)+2I_2`, `I_(4p-12)+2I_2`, and
+`I_(2p)+2I_(p-7)`, then identify parameter-compatible pivot families. Do not prioritize `p=12`
+until this symbolic extraction fails. The result is exact and relevant but finite, so manuscript
+v0.23 and Zenodo remain unchanged.

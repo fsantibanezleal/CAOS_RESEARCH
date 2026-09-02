@@ -731,3 +731,10 @@ EXP-047 declares that reduction in exact sequence form. If `M_T=[A;B]`, the rela
 `Z^(T-S)/B(ker_Z A)`. Transformed Hermite form supplies a saturated basis of the integer kernel;
 the resulting compact matrix has an exact Smith form. The finite predictions are two copies of
 `Z/2` for either stable completion and `p-7` copies for the `56->58` threshold quotient.
+
+EXP-047 confirms those finite predictions exactly. The two stable completion modules have
+different free ranks but identical torsion `(Z/2)^2`; the threshold module has
+`(Z/2)^(p-7)`. Independent Hadamard rank ceilings and Bareiss-minor determinantal divisors rule
+out hidden odd or higher 2-power factors. This is the first exact integral relative-module
+description behind the carrier lattice. A uniform result still needs semantic unimodular bases
+and explicit `p->p+1` compatibility.

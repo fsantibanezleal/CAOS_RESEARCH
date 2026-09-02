@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-09-02. Lifecycle: EXP-047 is DECLARED; EXP-046 is REFUTED overall with P3 retained; EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
+Updated: 2026-09-02. Lifecycle: EXP-047 is CONFIRMED FINITELY; EXP-046 is REFUTED overall with P3 retained; EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
 with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
@@ -26,8 +26,11 @@ EXP-045 exhausts the six-row-atom lattice: minimal full carriers are stably mask
 their intersection mask `58` has ranks `1,2,3,5`, and either completion adds exactly two. For every
 tested parameter, EXP-046 leaves each carrier in one connected nonzero unit core; masks `59` and
 `62` have zero unit-leaf cancellations. Mask `56` has defects `0,0,0,1` in unchanged semantic
-support, so the `p=11` threshold is internal sign/rank behavior. HWB-073 now owns a certified
-fill-producing relative integer presentation.
+support, so the `p=11` threshold is internal sign/rank behavior. EXP-047 completes the certified
+finite relative integer presentation: both
+stable completion quotients have exact torsion `(Z/2)^2`, while `56->58` has
+`(Z/2)^(p-7)`, with explicit free ranks and no hidden odd or higher 2-power factors. HWB-074 now
+owns the uniform semantic basis and parameter-compatible reduction.
 For every
 `p>=4` and
 `2<=t<=p-2`, the shifted cubic source is absent
@@ -387,7 +390,7 @@ campaign is supporting evidence, not the proof.
 | EXP-044 | REFUTED; P1/P3 PASS | deleting either marked atom kills the Bockstein, but their union also has Bockstein zero; a larger signed circuit is essential |
 | EXP-045 | REFUTED WITH STRUCTURAL REDIRECT | exhaustive 256-projection lattice gives stable minimal full carriers `59,62`, core ranks `1,2,3,5`, constant completion two, and a `p=11` threshold at mask `56` |
 | EXP-046 | REFUTED; P3 PASSES FINITELY | both minimal full carriers have zero unit-leaf cancellations; every residual is one connected core; mask `56` changes defect inside persistent semantic support |
-| EXP-047 | DECLARED | exact transformed-Hermite kernel images and compact Smith forms test `(Z/2)^2` for both stable completions and `(Z/2)^(p-7)` for the threshold quotient |
+| EXP-047 | CONFIRMED FINITELY | exact relative modules give `(Z/2)^2` for both stable completions and `(Z/2)^(p-7)` for the threshold quotient; 202 independent determinant checks pass |
 
 ## 3a. Exact evidence anchors
 
@@ -495,10 +498,15 @@ campaign is supporting evidence, not the proof.
 - EXP-046 primary SHA-256:
   `1e78f650ef041eb1f45b4e979ea90a78709ef59ff443e57613edbc9cc6ea15b0`; audit certificate
   external SHA-256 `cae21dd006af047179242b9e5c60b3022c344953da3d57b62f826e4c682ab35a`.
+- EXP-047 primary SHA-256:
+  `c3bc7d7ec8acb6a096fc590457853db12ca7d2d87f33917039cb091ddb1047b9`; audit certificate
+  external SHA-256 `f98124d6b7e46d7a170debe650843d8ae4518f406f43de1329daa2be784ed04d`.
 
 ## 4. In flight
 
-EXP-047 is DECLARED for HWB-073. EXP-046 is REFUTED overall with P3 retained, and HWB-072 is done. Masks `59` and `62` have no
+EXP-047 is CONFIRMED FINITELY and HWB-073 is done. Both stable completion quotients have exact
+torsion `(Z/2)^2`, and `56->58` has `(Z/2)^(p-7)`. HWB-074 owns the uniform semantic reduction.
+EXP-046 is REFUTED overall with P3 retained, and HWB-072 is done. Masks `59` and `62` have no
 unit leaves and all tested residuals have one connected core. HWB-073 owns the fill-producing
 relative integer comparison. EXP-045 is REFUTED with a stable full-carrier antichain retained.
 EXP-044 is REFUTED overall with P1/P3 retained. EXP-043 is CONFIRMED finitely and closes HWB-070.
@@ -851,10 +859,10 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Implement the declared EXP-047 transformed-Hermite kernel-image runner and complete the
-   mandatory `p=8` smoke before the full campaign.
-2. Treat `56->58` separately: identify the signed rank event that first creates a class at `p=11`,
-   then construct explicit parameter maps before claiming OI/FI stability.
+1. Build a certificate-producing unimodular reduction of the compact relative matrices to unit
+   blocks plus `2I_2`, `2I_2`, and `2I_(p-7)`.
+2. Classify the pivots by semantic interval coordinates and construct explicit `p->p+1` maps
+   before claiming an all-parameter theorem or OI/FI stability.
 3. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
    a signed core; keep this separate from the connecting-only `t=2` mechanism.
 4. Open a separate manuscript only after a complete strand, an infinite connecting theorem, or a
@@ -938,9 +946,10 @@ Published baseline:
   row-subset lattice. EXP-046 refutes the cheaper unit-core mechanism: the minimal full carriers
   have no leaves and all residuals stay connected. No uniform matroid-over-rings structure is
   claimed.
-- Fill-producing relative reduction: HWB-073 must use certified fraction-free Hermite or
-  Schur-complement operations to remove free directions and expose the two parity classes. A
-  field-only reduction is diagnostic, not an integral proof.
+- Fill-producing relative reduction: HWB-073 uses certified fraction-free Hermite or
+  Schur-complement operations to remove free directions and expose the two parity classes.
+  EXP-047 completes the exact finite Smith step; HWB-074 must now turn it into a uniform semantic
+  reduction. A field-only reduction is diagnostic, not an integral proof.
 
 ## 7. Gotchas
 

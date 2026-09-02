@@ -112,6 +112,18 @@ predictions are `(Z/2)^2` after free stabilization for both alternative completi
 `(Z/2)^(p-7)` for `56->58`. These finite Smith forms can validate the relative-module target but
 cannot replace the later uniform basis and parameter maps.
 
+EXP-047 confirms all three finite predictions. The two alternative completions are noncanonically
+equivalent after free stabilization, with exact torsion `(Z/2)^2`; the threshold module has exact
+torsion `(Z/2)^(p-7)`. Independent determinant certificates show that these are Smith facts, not
+just mod-two rank losses. The HNF ranks also complete the tested 2-primary types of masks
+`56,58,59,62`.
+
+The active task is now symbolic certificate extraction. Seek recorded unimodular reductions with
+unit-block sizes `2p-5`, `4p-12`, and `2p`, leaving parity blocks `2I_2`, `2I_2`, and
+`2I_(p-7)`. Normalize pivots by semantic interval coordinates and prove that the same operation
+families extend under `p->p+1`. A fifth coefficient is lower value until that attempt either
+succeeds or exposes a specific missing family.
+
 ### 2. Relative squarefree-divisor homology - structural fallback
 
 Multigraded Betti numbers of numerical semigroup rings can be represented by reduced homology of

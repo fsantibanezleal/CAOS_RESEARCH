@@ -1708,3 +1708,16 @@
   free parts of both stable completions and `(Z/2)^(p-7)` for the threshold quotient.
 - A transformed HNF supplies a saturated integer kernel basis; exact annihilation, field-rank
   recomposition, compact Smith forms, explicit budgets, and an independent audit are required.
+
+## 2026-09-02 - EXP-047 proves exact finite relative modules
+
+- All three predictions pass. The stable `58->59` and `58->62` completions each have relative
+  torsion `(Z/2)^2`; `56->58` has `(Z/2)^(p-7)` for `p=8,...,11`.
+- Their respective free ranks are `binom(p-2,2)`, `p^2-4p-3`, and
+  `rows(R1)-(3p-7)`. No relative odd torsion or factor divisible by four occurs.
+- The transformed HNFs certify the rational ranks of masks `56,58,59,62`; with the prior
+  Bocksteins, their complete tested 2-primary groups are now known.
+- The independent audit passes 202 checks. Modular Hadamard bounds prove exact rank ceilings, and
+  explicit Bareiss minors prove top determinantal divisors `4` and `2^(p-7)`.
+- HWB-073 is done. HWB-074 owns the uniform `I direct-sum 2I` reduction and semantic parameter
+  maps. The finite result is not a manuscript or Zenodo trigger.
