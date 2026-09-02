@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-09-02. Lifecycle: EXP-046 is REFUTED overall with P3 retained; EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
+Updated: 2026-09-02. Lifecycle: EXP-047 is DECLARED; EXP-046 is REFUTED overall with P3 retained; EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
 with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
@@ -387,6 +387,7 @@ campaign is supporting evidence, not the proof.
 | EXP-044 | REFUTED; P1/P3 PASS | deleting either marked atom kills the Bockstein, but their union also has Bockstein zero; a larger signed circuit is essential |
 | EXP-045 | REFUTED WITH STRUCTURAL REDIRECT | exhaustive 256-projection lattice gives stable minimal full carriers `59,62`, core ranks `1,2,3,5`, constant completion two, and a `p=11` threshold at mask `56` |
 | EXP-046 | REFUTED; P3 PASSES FINITELY | both minimal full carriers have zero unit-leaf cancellations; every residual is one connected core; mask `56` changes defect inside persistent semantic support |
+| EXP-047 | DECLARED | exact transformed-Hermite kernel images and compact Smith forms test `(Z/2)^2` for both stable completions and `(Z/2)^(p-7)` for the threshold quotient |
 
 ## 3a. Exact evidence anchors
 
@@ -497,7 +498,7 @@ campaign is supporting evidence, not the proof.
 
 ## 4. In flight
 
-EXP-046 is REFUTED overall with P3 retained, and HWB-072 is done. Masks `59` and `62` have no
+EXP-047 is DECLARED for HWB-073. EXP-046 is REFUTED overall with P3 retained, and HWB-072 is done. Masks `59` and `62` have no
 unit leaves and all tested residuals have one connected core. HWB-073 owns the fill-producing
 relative integer comparison. EXP-045 is REFUTED with a stable full-carrier antichain retained.
 EXP-044 is REFUTED overall with P1/P3 retained. EXP-043 is CONFIRMED finitely and closes HWB-070.
@@ -850,9 +851,8 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Declare and implement the fill-producing relative-presentation gate for `58->59` and
-   `58->62`. Eliminate their different free directions with certified integer operations and
-   compare the resulting parity quotients.
+1. Implement the declared EXP-047 transformed-Hermite kernel-image runner and complete the
+   mandatory `p=8` smoke before the full campaign.
 2. Treat `56->58` separately: identify the signed rank event that first creates a class at `p=11`,
    then construct explicit parameter maps before claiming OI/FI stability.
 3. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share

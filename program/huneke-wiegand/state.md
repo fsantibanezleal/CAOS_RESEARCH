@@ -147,6 +147,7 @@
 | 2026-09-02 | refuted | active | EXP-046 declared for HWB-072: exact unit-leaf cores test whether the stable constant-two carrier completion separates from mask `58` and whether the mask-56 threshold is an isolated component |
 | 2026-09-02 | active | refuted | EXP-046 refutes the leaf mechanism: masks `59` and `62` have zero cancellations and all sixteen residuals have one connected core; P3 retains the mask-56 threshold inside persistent semantic support |
 | 2026-09-02 | refuted | active | HWB-073 redirects to certified fill-producing relative integer presentations for `58->59`, `58->62`, and the separate `56->58` threshold |
+| 2026-09-02 | active | active | EXP-047 declared for HWB-073: transformed Hermite bases of the source kernels and exact Smith forms will decide the three finite relative modules |
 
 Current state: **EXP-046 is refuted overall with P3 retained; EXP-043 and EXP-042 are confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
 inconclusive with two finite passes; EXP-037 is refuted; EXP-036 remains confirmed with structural

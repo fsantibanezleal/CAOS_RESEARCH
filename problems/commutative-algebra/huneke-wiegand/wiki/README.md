@@ -726,3 +726,8 @@ The full defect therefore cannot be decomposed by existing degree-one pivots. Ma
 defects `0,0,0,1` under one persistent semantic atom-set support, locating the `p=11` change in
 the signed ranks rather than in a new atom. The next route is a certified fraction-free relative
 integer reduction that creates fill and isolates the parity quotient.
+
+EXP-047 declares that reduction in exact sequence form. If `M_T=[A;B]`, the relative kernel is
+`Z^(T-S)/B(ker_Z A)`. Transformed Hermite form supplies a saturated basis of the integer kernel;
+the resulting compact matrix has an exact Smith form. The finite predictions are two copies of
+`Z/2` for either stable completion and `p-7` copies for the `56->58` threshold quotient.

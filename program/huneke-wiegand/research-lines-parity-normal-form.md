@@ -106,6 +106,12 @@ recompose ranks over at least three fields. If the residual parity matrix grows 
 fallback is a filtered relative squarefree-divisor complex with explicit chain maps. A field-only
 Schur complement is diagnostic and cannot establish the integral claim.
 
+EXP-047 declares the exact finite gate. For `M_T=[A;B]`, it computes
+`Z^(T-S)/B(ker_Z A)` from a transformed Hermite basis and then reads its compact Smith form. The
+predictions are `(Z/2)^2` after free stabilization for both alternative completions and
+`(Z/2)^(p-7)` for `56->58`. These finite Smith forms can validate the relative-module target but
+cannot replace the later uniform basis and parameter maps.
+
 ### 2. Relative squarefree-divisor homology - structural fallback
 
 Multigraded Betti numbers of numerical semigroup rings can be represented by reduced homology of

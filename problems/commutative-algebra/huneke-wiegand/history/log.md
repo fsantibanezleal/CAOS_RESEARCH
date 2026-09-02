@@ -1699,3 +1699,12 @@
 - HWB-072 is done. HWB-073 redirects to fill-producing relative integer presentations for
   `58->59`, `58->62`, and separately `56->58`. The finite negative result does not trigger a
   manuscript or Zenodo update.
+
+## 2026-09-02 - EXP-047 relative-kernel Smith forms declared
+
+- The exact row-inclusion sequence identifies the missing relative module as
+  `Z^(T-S)/B(ker_Z A)` for `M_T=[A;B]`.
+- EXP-047 is declared before HNF or Smith computation. It predicts `(Z/2)^2` after the distinct
+  free parts of both stable completions and `(Z/2)^(p-7)` for the threshold quotient.
+- A transformed HNF supplies a saturated integer kernel basis; exact annihilation, field-rank
+  recomposition, compact Smith forms, explicit budgets, and an independent audit are required.

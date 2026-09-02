@@ -1376,3 +1376,15 @@ a fill-producing reduction. Construct the exact relative cokernel presentations 
 operations; then compare the residual parity quotients. Treat `56->58` separately because its
 threshold is a rank event inside persistent support. No manuscript or Zenodo gate opens from this
 finite obstruction.
+
+## 2026-09-02 - EXP-047 relative-kernel Smith gate
+
+For `M_T=[A;B]`, the kernel of `coker(M_T) -> coker(A)` is exactly
+`Z^(T-S)/B(ker_Z A)`. EXP-047 is declared before computing this matrix. It obtains a saturated
+integer kernel basis from a transformed Hermite normal form of `A^T`, multiplies by the added-row
+block, and computes the compact Smith form.
+
+The strong prediction is that both stable completions have torsion exactly `(Z/2)^2` after
+different free summands are removed, while `56->58` has `(Z/2)^(p-7)`. Frozen sources,
+annihilation, rank recomposition, a `p=8` smoke, explicit resource budgets, and an independent
+compact-matrix audit are mandatory. No all-parameter or publication claim is opened in advance.
