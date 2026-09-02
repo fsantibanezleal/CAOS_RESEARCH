@@ -86,10 +86,10 @@ over exactly `2` or `p-7` even invariant factors. Therefore every nonunit factor
 no odd torsion or higher 2-power is possible. All 202 audit checks pass.
 
 The primary result SHA-256 is
-`c3bc7d7ec8acb6a096fc590457853db12ca7d2d87f33917039cb091ddb1047b9`, with internal artifact
-hash `39c5e45402b8afc905384f86b4df3dcdd64634a3a8168bea92e84d2bf5051f11`. The audit certificate
-has internal hash `b0b3529e9026be08c317da248326061e54c4a9cf78f785ed8ebf6ebab5d322f3` and external SHA-256
-`f98124d6b7e46d7a170debe650843d8ae4518f406f43de1329daa2be784ed04d`.
+`f78d251ae1746a88d1190756572aa251b9daf70ceb103cef9765c6d73b26f46c`, with internal artifact
+hash `d74557c6cd9ca4874bbee4c77b96b5c5d8dd19a7daf8c711766baacb45eec165`. The audit certificate
+has internal hash `edf5d4f36fe16c666bb9ea4068c2007cbe3c7643f2e38b97a085e9f855083e28` and external SHA-256
+`bbdfaca4f9ba2032beac04f23b9e1db13fd6f1ca37518b957d91a1f55321c028`.
 
 ## What could make this wrong?
 

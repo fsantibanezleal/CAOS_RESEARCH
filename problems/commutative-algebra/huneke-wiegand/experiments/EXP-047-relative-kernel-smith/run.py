@@ -231,7 +231,7 @@ def smith_record(matrix_rows: list[list[int]]) -> dict[str, object]:
         "max_entry_bits": max(
             (abs(value).bit_length() for row in matrix_rows for value in row), default=0
         ),
-        "matrix_hash": digest(matrix_rows),
+        "matrix_hash": digest(columns),
         "rank_q": len(nonzero_diagonal),
         "ranks": ranks,
         "unit_invariant_count": units,
@@ -272,7 +272,8 @@ def relative_module(
         "source_rows_hash": digest(source_rows),
         "added_rows_hash": digest(added_rows),
         "kernel_basis_hash": source_kernel["kernel_basis_hash"],
-        "matrix_rows": matrix_rows,
+        "matrix_shape": [len(matrix_rows), len(matrix_rows[0]) if matrix_rows else 0],
+        "matrix_columns": sparse_columns(matrix_rows),
     }
     artifact["artifact_hash"] = digest(artifact)
     artifact_path = HERE / "artifacts" / f"relative-p{p}-m{source_mask}-m{target_mask}.json"

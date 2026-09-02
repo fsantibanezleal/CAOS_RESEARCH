@@ -499,8 +499,8 @@ campaign is supporting evidence, not the proof.
   `1e78f650ef041eb1f45b4e979ea90a78709ef59ff443e57613edbc9cc6ea15b0`; audit certificate
   external SHA-256 `cae21dd006af047179242b9e5c60b3022c344953da3d57b62f826e4c682ab35a`.
 - EXP-047 primary SHA-256:
-  `c3bc7d7ec8acb6a096fc590457853db12ca7d2d87f33917039cb091ddb1047b9`; audit certificate
-  external SHA-256 `f98124d6b7e46d7a170debe650843d8ae4518f406f43de1329daa2be784ed04d`.
+  `f78d251ae1746a88d1190756572aa251b9daf70ceb103cef9765c6d73b26f46c`; audit certificate
+  external SHA-256 `bbdfaca4f9ba2032beac04f23b9e1db13fd6f1ca37518b957d91a1f55321c028`.
 
 ## 4. In flight
 

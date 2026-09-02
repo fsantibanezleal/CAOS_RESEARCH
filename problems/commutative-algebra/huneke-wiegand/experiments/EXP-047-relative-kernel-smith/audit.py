@@ -13,9 +13,9 @@ HERE = Path(__file__).resolve().parent
 EXP042 = HERE.parent / "EXP-042-bockstein-normal-form"
 RESULTS = HERE / "artifacts" / "results.json"
 OUTPUT = HERE / "artifacts" / "audit-certificate.json"
-EXPECTED_RUN_SHA256 = "3b8ce822b23175bddf255fb8c0203839be888bab4b54ff9d9040bc3ba6915408"
+EXPECTED_RUN_SHA256 = "1350159ebc2c718208f62e08231f54ae2cc6178aa653bb5b67c100b56cd2a82b"
 EXPECTED_RESULTS_SHA256 = (
-    "c3bc7d7ec8acb6a096fc590457853db12ca7d2d87f33917039cb091ddb1047b9"
+    "f78d251ae1746a88d1190756572aa251b9daf70ceb103cef9765c6d73b26f46c"
 )
 EXPECTED_MATRIX_SHA256 = {
     8: "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
@@ -24,18 +24,18 @@ EXPECTED_MATRIX_SHA256 = {
     11: "69e8519a3b239ec90c3b5af526f806a9a0aabf003517ea28233167d7e2b68dd9",
 }
 EXPECTED_RELATIVE_SHA256 = {
-    (8, 56, 58): "0f92c7337037be3efaed30bcd551c80d9c63b8eb4a283a3d369e60b9fbc594b0",
-    (8, 58, 59): "41f4743099ed476a07f729935ec586896efe67a1cfa8b6570ed5c267e676e79f",
-    (8, 58, 62): "b9eba962c688b571e6f7ce36a9a79d42ee80e47e1572f7abf87e71dc47dd39a7",
-    (9, 56, 58): "ee745dade823cfac831bb956d60a11c810024e392df8a08a8459523e513f9fc6",
-    (9, 58, 59): "cd5b68c70394111f236ae57eaaa05b504f37075e0cce16e0be86f83dbb816a74",
-    (9, 58, 62): "7f5ababa3becf7f7dbe4a1bf3d98afd605ff85e3c89d09052fb7881a9f4a292f",
-    (10, 56, 58): "79ac4ee7f9ab0e6bdeb7e3ea922fe4c8dd627f01ce6d4f4b4b2e2c981a4f6d59",
-    (10, 58, 59): "94aff85d6b9735555a4205609149750bebea387f066259e7e289cc6873d59437",
-    (10, 58, 62): "fd6c2966e92adc3308e9dee5aface95270d24f9ac6817526021a1780221d45d2",
-    (11, 56, 58): "3e87286d14ad6ce596ee5646cf420db8c1d4f195109d68e514f4110cdcdb7600",
-    (11, 58, 59): "e4e575fedf398c5b4c596431ffeabf35952785416a437046ea110050a2e39765",
-    (11, 58, 62): "79b35ce1f4f7e556a33ee295618564179ef3e11d09ec624dd6f93342114ee4e2",
+    (8, 56, 58): "3e9cbd723761a2c28dc5cf7110bf4407fd80b3717bcfcd96922f505bbdb4aa20",
+    (8, 58, 59): "37e5c293b6aa4b2615c5c3705af13cde4a223f8ea00db16ba4d8f3b875c1ac6d",
+    (8, 58, 62): "03dc1c2cb89673cce99b3700192712394230b3686c6bc7a9b0d81c2e1c4fa5f7",
+    (9, 56, 58): "e77c4786ef3d0423c183071bdc6da6431ec84f271aec35500be63e4c3f816f8b",
+    (9, 58, 59): "78e9a2bc34784a41ee56b46bfdfae3f62e4978ba3945c411296f30dfbbaadd3a",
+    (9, 58, 62): "58aa31d8dc6c4a958c09134d42a09c92d6e1b7f22db7dbcede7689b3d5ac373d",
+    (10, 56, 58): "c69053b960cc55db51c12f964ff9fed6a09662905a090da4203d03bf171ba29b",
+    (10, 58, 59): "4aad918a41768e73d3d9f86b004fd9622d53ece76a213cfaf02137a6acc37aa4",
+    (10, 58, 62): "35d45ddcc1aebcae6bb4b79e09db37331a41ec3dc67a83a015fa8609cf6b1f74",
+    (11, 56, 58): "af9639fc0265a9490b27b7d48ace4f0c4cd0258cba72a502c361a74856669d8b",
+    (11, 58, 59): "0c803c24907a9404ffe3160a87a74e6b2c926daf7666aecb2193a8c202b89d23",
+    (11, 58, 62): "5435894d965d8745a203df75ba20202f92795b8e81eb5dac2876041310e8d6d5",
 }
 ATOM_ALIASES = {
     "R0": '["row","D","A",[-2,-3,1,0,1,0,0,0,0,0]]',
@@ -308,9 +308,15 @@ def main() -> int:
             artifact = json.loads(artifact_path.read_text(encoding="utf-8"))
             artifact_without_hash = dict(artifact)
             artifact_internal_hash = artifact_without_hash.pop("artifact_hash")
-            matrix_rows = artifact["matrix_rows"]
-            columns = sparse_columns(matrix_rows)
             relative = record["relative"]
+            columns = artifact["matrix_columns"]
+            matrix_rows = [
+                [0] * int(artifact["matrix_shape"][1])
+                for _ in range(int(artifact["matrix_shape"][0]))
+            ]
+            for column, entries in enumerate(columns):
+                for matrix_row, value in entries:
+                    matrix_rows[int(matrix_row)][column] = int(value)
             rank = int(relative["rank_q"])
             expected_torsion = (
                 [2] * (p - 7) if (source, target) == (56, 58) else [2, 2]
@@ -363,7 +369,7 @@ def main() -> int:
                         len(matrix_rows) == int(relative["rows"]) == len(added_rows)
                         and len(columns) == int(relative["columns"])
                     ),
-                    f"{prefix}_matrix_hash": digest(matrix_rows)
+                    f"{prefix}_matrix_hash": digest(columns)
                     == relative["matrix_hash"],
                     f"{prefix}_modular_ranks": ranks == relative["ranks"],
                     f"{prefix}_rank_lower": ranks["3"] == ranks["5"] == rank,
