@@ -1,0 +1,3126 @@
+{
+  "experiment": "EXP-046",
+  "route": "exact integral unit-leaf cores of stable row carriers",
+  "status": "COMPLETE",
+  "parameters": {
+    "p_min": 8,
+    "p_max": 11,
+    "masks": [
+      56,
+      58,
+      59,
+      62
+    ],
+    "budget_seconds": 1200.0,
+    "memory_gib": 16.0
+  },
+  "atom_aliases": {
+    "R0": "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]",
+    "R1": "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]",
+    "R2": "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]",
+    "R3": "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]",
+    "R4": "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]",
+    "R5": "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]"
+  },
+  "premise_hashes": {
+    "EXP-042-bockstein-normal-form\\run.py": "3a57fc52a6a1e10ba42d97c6ebe27062324b8c90b76df7a288db41dffabd69bf",
+    "EXP-042-bockstein-normal-form\\artifacts\\matrix-p8.json": "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
+    "EXP-042-bockstein-normal-form\\artifacts\\matrix-p9.json": "00c20e30d81861a599448535c2ecc7625b56b1951fe863e64d40ce6f56ff218c",
+    "EXP-042-bockstein-normal-form\\artifacts\\matrix-p10.json": "c7d6bbf0ec655296a0dafe81ab41ce70300c0fa4a837e5c141f55811e29f6f4d",
+    "EXP-042-bockstein-normal-form\\artifacts\\matrix-p11.json": "69e8519a3b239ec90c3b5af526f806a9a0aabf003517ea28233167d7e2b68dd9",
+    "EXP-045-row-atom-carrier-lattice\\artifacts\\results.json": "569220667e9d82f0806ea96cb8f60c49e94cb6317817170c39f2e574e619bcb8"
+  },
+  "rows": [
+    {
+      "p": 8,
+      "source_matrix_sha256": "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
+      "masks": {
+        "56": {
+          "aliases": [
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "source": {
+            "rows": 1769,
+            "columns": 1094,
+            "nonzeros": 4733,
+            "ranks": {
+              "2": 963,
+              "3": 963,
+              "5": 963
+            },
+            "bockstein_rank": 0
+          },
+          "forward": {
+            "order": "forward-row-first",
+            "cancellations": 74,
+            "cancelled_pairs_hash": "46ac159c55ff59d259ec5e2d7906e6ac7ba6e38cb7d4dc9f724b62d73d6a0266",
+            "free_rows": 0,
+            "zero_columns": 15,
+            "core_rows": 1695,
+            "core_columns": 1005,
+            "components": [
+              {
+                "rows": 1695,
+                "columns": 1005,
+                "nonzeros": 4397,
+                "ranks": {
+                  "2": 889,
+                  "3": 889,
+                  "5": 889
+                },
+                "odd_minus_two_rank": 0,
+                "bockstein": {
+                  "rank_mod_two": 889,
+                  "kernel_dimension": 116,
+                  "bockstein_rank": 0
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1656,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 6,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 33
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 26,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 489,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 490
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "4f85790aeb86884670625d59cfcf7304e39727066cbc9401e64b718178a031f2",
+                "defect_signature_hash": "b33ac143a4e32dd9791557601019e4e19edd61a4b97d2248bb95f428acad35aa",
+                "support_hash": "a9d8dd61ed8f9f8e42b65599da2ba55e27f7aaef4de3eeaee03ace09fdb0823d",
+                "signed_hash": "324533638c888566a48bcce81a7df9f66ea92113f409783b1587e33c373b31ca"
+              }
+            ],
+            "component_summary": [
+              [
+                1695,
+                1005,
+                4397,
+                889,
+                889,
+                889,
+                0
+              ]
+            ],
+            "component_summary_hash": "2d7f4032184bde24f4f2e7b08836105d5814be4ccea366d7dba597f2e48c4599"
+          },
+          "reverse": {
+            "order": "reverse-column-first",
+            "cancellations": 74,
+            "cancelled_pairs_hash": "8459ca66b88d3fb38aeebf2bee51cca2140b4b0043582892006a1a4bf3fa9802",
+            "free_rows": 0,
+            "zero_columns": 15,
+            "core_rows": 1695,
+            "core_columns": 1005,
+            "components": [
+              {
+                "rows": 1695,
+                "columns": 1005,
+                "nonzeros": 4397,
+                "ranks": {
+                  "2": 889,
+                  "3": 889,
+                  "5": 889
+                },
+                "odd_minus_two_rank": 0,
+                "bockstein": {
+                  "rank_mod_two": 889,
+                  "kernel_dimension": 116,
+                  "bockstein_rank": 0
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1656,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 6,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 33
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 26,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 489,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 490
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "4f85790aeb86884670625d59cfcf7304e39727066cbc9401e64b718178a031f2",
+                "defect_signature_hash": "b33ac143a4e32dd9791557601019e4e19edd61a4b97d2248bb95f428acad35aa",
+                "support_hash": "a9d8dd61ed8f9f8e42b65599da2ba55e27f7aaef4de3eeaee03ace09fdb0823d",
+                "signed_hash": "324533638c888566a48bcce81a7df9f66ea92113f409783b1587e33c373b31ca"
+              }
+            ],
+            "component_summary": [
+              [
+                1695,
+                1005,
+                4397,
+                889,
+                889,
+                889,
+                0
+              ]
+            ],
+            "component_summary_hash": "2d7f4032184bde24f4f2e7b08836105d5814be4ccea366d7dba597f2e48c4599"
+          },
+          "forward_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "reverse_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "order_component_agreement": true,
+          "positive_defects": []
+        },
+        "58": {
+          "aliases": [
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "source": {
+            "rows": 2596,
+            "columns": 1094,
+            "nonzeros": 6586,
+            "ranks": {
+              "2": 979,
+              "3": 980,
+              "5": 980
+            },
+            "bockstein_rank": 1
+          },
+          "forward": {
+            "order": "forward-row-first",
+            "cancellations": 19,
+            "cancelled_pairs_hash": "e223aa2e784babc2b0c821967f775adc420237d8e86fac6e79fc55171faaaa86",
+            "free_rows": 0,
+            "zero_columns": 13,
+            "core_rows": 2577,
+            "core_columns": 1062,
+            "components": [
+              {
+                "rows": 2577,
+                "columns": 1062,
+                "nonzeros": 6452,
+                "ranks": {
+                  "2": 960,
+                  "3": 961,
+                  "5": 961
+                },
+                "odd_minus_two_rank": 1,
+                "bockstein": {
+                  "rank_mod_two": 960,
+                  "kernel_dimension": 102,
+                  "bockstein_rank": 1
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1704,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 10,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 36
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 29,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 542,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 491
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "eff5c4813de49658735c31812e02060f1beab6c2b6c279d567281cb1d1b22971",
+                "defect_signature_hash": "d4b97c8b08a8cdbb55fd046c324c777637300eb29af5211d29005a287166b8fb",
+                "support_hash": "a08134c10b5fccf725f3e949c7223f0d4553865f7a209a45def04c19d6d69938",
+                "signed_hash": "c4ddbf0ce63eb855926262e27b7d41d6541bc60a1c796f69f8b1190824f45210"
+              }
+            ],
+            "component_summary": [
+              [
+                2577,
+                1062,
+                6452,
+                960,
+                961,
+                961,
+                1
+              ]
+            ],
+            "component_summary_hash": "0934b7fcaaf752eb29fe6be71b9bd090b0d218a53f81b788c78abad997cffe3c"
+          },
+          "reverse": {
+            "order": "reverse-column-first",
+            "cancellations": 19,
+            "cancelled_pairs_hash": "f725ea0ad7998a69ecbf5a2ebb6af2c67e09954fa248b888a8e12817c66c1056",
+            "free_rows": 0,
+            "zero_columns": 13,
+            "core_rows": 2577,
+            "core_columns": 1062,
+            "components": [
+              {
+                "rows": 2577,
+                "columns": 1062,
+                "nonzeros": 6452,
+                "ranks": {
+                  "2": 960,
+                  "3": 961,
+                  "5": 961
+                },
+                "odd_minus_two_rank": 1,
+                "bockstein": {
+                  "rank_mod_two": 960,
+                  "kernel_dimension": 102,
+                  "bockstein_rank": 1
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1704,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 10,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 36
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 29,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 542,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 491
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "eff5c4813de49658735c31812e02060f1beab6c2b6c279d567281cb1d1b22971",
+                "defect_signature_hash": "d4b97c8b08a8cdbb55fd046c324c777637300eb29af5211d29005a287166b8fb",
+                "support_hash": "a08134c10b5fccf725f3e949c7223f0d4553865f7a209a45def04c19d6d69938",
+                "signed_hash": "c4ddbf0ce63eb855926262e27b7d41d6541bc60a1c796f69f8b1190824f45210"
+              }
+            ],
+            "component_summary": [
+              [
+                2577,
+                1062,
+                6452,
+                960,
+                961,
+                961,
+                1
+              ]
+            ],
+            "component_summary_hash": "0934b7fcaaf752eb29fe6be71b9bd090b0d218a53f81b788c78abad997cffe3c"
+          },
+          "forward_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "reverse_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "order_component_agreement": true,
+          "positive_defects": [
+            1
+          ]
+        },
+        "59": {
+          "aliases": [
+            "R0",
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "source": {
+            "rows": 2624,
+            "columns": 1094,
+            "nonzeros": 6642,
+            "ranks": {
+              "2": 990,
+              "3": 993,
+              "5": 993
+            },
+            "bockstein_rank": 3
+          },
+          "forward": {
+            "order": "forward-row-first",
+            "cancellations": 0,
+            "cancelled_pairs_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "free_rows": 0,
+            "zero_columns": 9,
+            "core_rows": 2624,
+            "core_columns": 1085,
+            "components": [
+              {
+                "rows": 2624,
+                "columns": 1085,
+                "nonzeros": 6642,
+                "ranks": {
+                  "2": 990,
+                  "3": 993,
+                  "5": 993
+                },
+                "odd_minus_two_rank": 3,
+                "bockstein": {
+                  "rank_mod_two": 990,
+                  "kernel_dimension": 95,
+                  "bockstein_rank": 3
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 34,
+                  "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                  "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]": 15,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 542,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 493
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R0",
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5",
+                    "RX"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "70bdcec9f136656a6eb13980ba1e0224e8396f18b6474aa767fa03a4b310e8cf",
+                "defect_signature_hash": "8c97250df7c179a0e40b803f0bd40d623ec4de81c24d85a82dfa62b23e51b86b",
+                "support_hash": "fbed6cb61b162e70e08f92a02d69309da65bfe8e66e653b562c910dd4b12cef2",
+                "signed_hash": "aa610d7dd745a494cbdcd645f574717224c3f1e986aacaf6d26df2c5c756cd45"
+              }
+            ],
+            "component_summary": [
+              [
+                2624,
+                1085,
+                6642,
+                990,
+                993,
+                993,
+                3
+              ]
+            ],
+            "component_summary_hash": "4a463e51cf20594e4e4e04a619de98d74016559bf72e5c7555908b9eebbf53d1"
+          },
+          "reverse": {
+            "order": "reverse-column-first",
+            "cancellations": 0,
+            "cancelled_pairs_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "free_rows": 0,
+            "zero_columns": 9,
+            "core_rows": 2624,
+            "core_columns": 1085,
+            "components": [
+              {
+                "rows": 2624,
+                "columns": 1085,
+                "nonzeros": 6642,
+                "ranks": {
+                  "2": 990,
+                  "3": 993,
+                  "5": 993
+                },
+                "odd_minus_two_rank": 3,
+                "bockstein": {
+                  "rank_mod_two": 990,
+                  "kernel_dimension": 95,
+                  "bockstein_rank": 3
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 28,
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 34,
+                  "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                  "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]": 15,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 542,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 493
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R0",
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5",
+                    "RX"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "70bdcec9f136656a6eb13980ba1e0224e8396f18b6474aa767fa03a4b310e8cf",
+                "defect_signature_hash": "8c97250df7c179a0e40b803f0bd40d623ec4de81c24d85a82dfa62b23e51b86b",
+                "support_hash": "fbed6cb61b162e70e08f92a02d69309da65bfe8e66e653b562c910dd4b12cef2",
+                "signed_hash": "aa610d7dd745a494cbdcd645f574717224c3f1e986aacaf6d26df2c5c756cd45"
+              }
+            ],
+            "component_summary": [
+              [
+                2624,
+                1085,
+                6642,
+                990,
+                993,
+                993,
+                3
+              ]
+            ],
+            "component_summary_hash": "4a463e51cf20594e4e4e04a619de98d74016559bf72e5c7555908b9eebbf53d1"
+          },
+          "forward_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "reverse_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "order_component_agreement": true,
+          "positive_defects": [
+            3
+          ]
+        },
+        "62": {
+          "aliases": [
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "source": {
+            "rows": 2647,
+            "columns": 1094,
+            "nonzeros": 6691,
+            "ranks": {
+              "2": 999,
+              "3": 1002,
+              "5": 1002
+            },
+            "bockstein_rank": 3
+          },
+          "forward": {
+            "order": "forward-row-first",
+            "cancellations": 0,
+            "cancelled_pairs_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "free_rows": 0,
+            "zero_columns": 0,
+            "core_rows": 2647,
+            "core_columns": 1094,
+            "components": [
+              {
+                "rows": 2647,
+                "columns": 1094,
+                "nonzeros": 6691,
+                "ranks": {
+                  "2": 999,
+                  "3": 1002,
+                  "5": 1002
+                },
+                "odd_minus_two_rank": 3,
+                "bockstein": {
+                  "rank_mod_two": 999,
+                  "kernel_dimension": 95,
+                  "bockstein_rank": 3
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+                  "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 34,
+                  "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                  "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]": 15,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 542,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 493,
+                  "[\"column\",\"S\",\"L1\",[0,-4,1,0,1,0,0,0,0,0]]": 9
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R1",
+                    "R2",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5",
+                    "RX"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[0,-4,1,0,1,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "3b730aae914cdb4877b8fe481bf0f2c823502e699658c93263b33935e9f069fb",
+                "defect_signature_hash": "14a3e8288babbbb8e8e1457c48d8200d739876d0ff623c47ac9df0aefcfc478a",
+                "support_hash": "dfbfc4d4827cde152f276291930869f9fa518d5aaaba32a3dec840e3996d5c48",
+                "signed_hash": "3587eda5330749763d4b1d49ab81f6103d732ddada26e3150468f032e226cea8"
+              }
+            ],
+            "component_summary": [
+              [
+                2647,
+                1094,
+                6691,
+                999,
+                1002,
+                1002,
+                3
+              ]
+            ],
+            "component_summary_hash": "7074954fa1a3c7976439fd772a65b7d8c813cb2d73860283cb9a8dde29ebd606"
+          },
+          "reverse": {
+            "order": "reverse-column-first",
+            "cancellations": 0,
+            "cancelled_pairs_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "free_rows": 0,
+            "zero_columns": 0,
+            "core_rows": 2647,
+            "core_columns": 1094,
+            "components": [
+              {
+                "rows": 2647,
+                "columns": 1094,
+                "nonzeros": 6691,
+                "ranks": {
+                  "2": 999,
+                  "3": 1002,
+                  "5": 1002
+                },
+                "odd_minus_two_rank": 3,
+                "bockstein": {
+                  "rank_mod_two": 999,
+                  "kernel_dimension": 95,
+                  "bockstein_rank": 3
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 827,
+                  "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 51,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 1706,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 48
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 34,
+                  "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                  "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]": 15,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 542,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 493,
+                  "[\"column\",\"S\",\"L1\",[0,-4,1,0,1,0,0,0,0,0]]": 9
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R1",
+                    "R2",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5",
+                    "RX"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[0,-4,1,0,1,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "3b730aae914cdb4877b8fe481bf0f2c823502e699658c93263b33935e9f069fb",
+                "defect_signature_hash": "14a3e8288babbbb8e8e1457c48d8200d739876d0ff623c47ac9df0aefcfc478a",
+                "support_hash": "dfbfc4d4827cde152f276291930869f9fa518d5aaaba32a3dec840e3996d5c48",
+                "signed_hash": "3587eda5330749763d4b1d49ab81f6103d732ddada26e3150468f032e226cea8"
+              }
+            ],
+            "component_summary": [
+              [
+                2647,
+                1094,
+                6691,
+                999,
+                1002,
+                1002,
+                3
+              ]
+            ],
+            "component_summary_hash": "7074954fa1a3c7976439fd772a65b7d8c813cb2d73860283cb9a8dde29ebd606"
+          },
+          "forward_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "reverse_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "order_component_agreement": true,
+          "positive_defects": [
+            3
+          ]
+        }
+      }
+    },
+    {
+      "p": 9,
+      "source_matrix_sha256": "00c20e30d81861a599448535c2ecc7625b56b1951fe863e64d40ce6f56ff218c",
+      "masks": {
+        "56": {
+          "aliases": [
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "source": {
+            "rows": 3176,
+            "columns": 1729,
+            "nonzeros": 8341,
+            "ranks": {
+              "2": 1561,
+              "3": 1561,
+              "5": 1561
+            },
+            "bockstein_rank": 0
+          },
+          "forward": {
+            "order": "forward-row-first",
+            "cancellations": 92,
+            "cancelled_pairs_hash": "401984f64a184abd106999dd7624a6ee141e0947b13fed7811d68db5c4cff4eb",
+            "free_rows": 0,
+            "zero_columns": 17,
+            "core_rows": 3084,
+            "core_columns": 1620,
+            "components": [
+              {
+                "rows": 3084,
+                "columns": 1620,
+                "nonzeros": 7928,
+                "ranks": {
+                  "2": 1469,
+                  "3": 1469,
+                  "5": 1469
+                },
+                "odd_minus_two_rank": 0,
+                "bockstein": {
+                  "rank_mod_two": 1469,
+                  "kernel_dimension": 151,
+                  "bockstein_rank": 0
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3023,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 10,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 51
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 35,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 782,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 803
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "4f85790aeb86884670625d59cfcf7304e39727066cbc9401e64b718178a031f2",
+                "defect_signature_hash": "b33ac143a4e32dd9791557601019e4e19edd61a4b97d2248bb95f428acad35aa",
+                "support_hash": "f1153cf4b35f02abd70483630ecfb8ae097e6f88e0eaa7dc4c915483ef9f068a",
+                "signed_hash": "4324b179382c0e0473a5b7c4c025eb6e1924ef31a28346c31d81923c65569588"
+              }
+            ],
+            "component_summary": [
+              [
+                3084,
+                1620,
+                7928,
+                1469,
+                1469,
+                1469,
+                0
+              ]
+            ],
+            "component_summary_hash": "4fc2e41fb353a53fb5c776e049266e60a25f8f1c43fc27a10f2d910b74e8f9dc"
+          },
+          "reverse": {
+            "order": "reverse-column-first",
+            "cancellations": 92,
+            "cancelled_pairs_hash": "fca71bfc442188ecbe103eaae05cad5bdab5048f60b1b0bc23d537016a9ab10a",
+            "free_rows": 0,
+            "zero_columns": 17,
+            "core_rows": 3084,
+            "core_columns": 1620,
+            "components": [
+              {
+                "rows": 3084,
+                "columns": 1620,
+                "nonzeros": 7928,
+                "ranks": {
+                  "2": 1469,
+                  "3": 1469,
+                  "5": 1469
+                },
+                "odd_minus_two_rank": 0,
+                "bockstein": {
+                  "rank_mod_two": 1469,
+                  "kernel_dimension": 151,
+                  "bockstein_rank": 0
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3023,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 10,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 51
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 35,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 782,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 803
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "4f85790aeb86884670625d59cfcf7304e39727066cbc9401e64b718178a031f2",
+                "defect_signature_hash": "b33ac143a4e32dd9791557601019e4e19edd61a4b97d2248bb95f428acad35aa",
+                "support_hash": "f1153cf4b35f02abd70483630ecfb8ae097e6f88e0eaa7dc4c915483ef9f068a",
+                "signed_hash": "4324b179382c0e0473a5b7c4c025eb6e1924ef31a28346c31d81923c65569588"
+              }
+            ],
+            "component_summary": [
+              [
+                3084,
+                1620,
+                7928,
+                1469,
+                1469,
+                1469,
+                0
+              ]
+            ],
+            "component_summary_hash": "4fc2e41fb353a53fb5c776e049266e60a25f8f1c43fc27a10f2d910b74e8f9dc"
+          },
+          "forward_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "reverse_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "order_component_agreement": true,
+          "positive_defects": []
+        },
+        "58": {
+          "aliases": [
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "source": {
+            "rows": 4653,
+            "columns": 1729,
+            "nonzeros": 11638,
+            "ranks": {
+              "2": 1579,
+              "3": 1581,
+              "5": 1581
+            },
+            "bockstein_rank": 2
+          },
+          "forward": {
+            "order": "forward-row-first",
+            "cancellations": 21,
+            "cancelled_pairs_hash": "ba7a2076a02a1c1fc0508dc9c75dee29d8f328cc369e344a1fcdaec1c9f924d6",
+            "free_rows": 0,
+            "zero_columns": 15,
+            "core_rows": 4632,
+            "core_columns": 1693,
+            "components": [
+              {
+                "rows": 4632,
+                "columns": 1693,
+                "nonzeros": 11479,
+                "ranks": {
+                  "2": 1558,
+                  "3": 1560,
+                  "5": 1560
+                },
+                "odd_minus_two_rank": 2,
+                "bockstein": {
+                  "rank_mod_two": 1558,
+                  "kernel_dimension": 135,
+                  "bockstein_rank": 2
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 1477,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3087,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 14,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 54
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 38,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 851,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 804
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "eff5c4813de49658735c31812e02060f1beab6c2b6c279d567281cb1d1b22971",
+                "defect_signature_hash": "3d188297f04bf1c7597ac3a2afa1a02d4212ffb99c8274dd2661fac84e6ec80f",
+                "support_hash": "cbf6b262e5c4ec77a0b4f4a005691a3308147164b97638f378b8b309e7198672",
+                "signed_hash": "55e3710cdf78192746330ca0f3cc70cebe23f4ec34b15d22196f8d33199ea683"
+              }
+            ],
+            "component_summary": [
+              [
+                4632,
+                1693,
+                11479,
+                1558,
+                1560,
+                1560,
+                2
+              ]
+            ],
+            "component_summary_hash": "f9b9b022577e3e0640b982748093c5998a86ef7537de4e2f7dc8d1e13f5bdde2"
+          },
+          "reverse": {
+            "order": "reverse-column-first",
+            "cancellations": 21,
+            "cancelled_pairs_hash": "b61c508bdfb6e7c2218bd79e8fae0217ba1b2f4f6eb9256e4ab99fdf1df855db",
+            "free_rows": 0,
+            "zero_columns": 15,
+            "core_rows": 4632,
+            "core_columns": 1693,
+            "components": [
+              {
+                "rows": 4632,
+                "columns": 1693,
+                "nonzeros": 11479,
+                "ranks": {
+                  "2": 1558,
+                  "3": 1560,
+                  "5": 1560
+                },
+                "odd_minus_two_rank": 2,
+                "bockstein": {
+                  "rank_mod_two": 1558,
+                  "kernel_dimension": 135,
+                  "bockstein_rank": 2
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 1477,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3087,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 14,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 54
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 38,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 851,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 804
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "eff5c4813de49658735c31812e02060f1beab6c2b6c279d567281cb1d1b22971",
+                "defect_signature_hash": "3d188297f04bf1c7597ac3a2afa1a02d4212ffb99c8274dd2661fac84e6ec80f",
+                "support_hash": "cbf6b262e5c4ec77a0b4f4a005691a3308147164b97638f378b8b309e7198672",
+                "signed_hash": "55e3710cdf78192746330ca0f3cc70cebe23f4ec34b15d22196f8d33199ea683"
+              }
+            ],
+            "component_summary": [
+              [
+                4632,
+                1693,
+                11479,
+                1558,
+                1560,
+                1560,
+                2
+              ]
+            ],
+            "component_summary_hash": "f9b9b022577e3e0640b982748093c5998a86ef7537de4e2f7dc8d1e13f5bdde2"
+          },
+          "forward_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "reverse_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "order_component_agreement": true,
+          "positive_defects": [
+            2
+          ]
+        },
+        "59": {
+          "aliases": [
+            "R0",
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "source": {
+            "rows": 4689,
+            "columns": 1729,
+            "nonzeros": 11710,
+            "ranks": {
+              "2": 1592,
+              "3": 1596,
+              "5": 1596
+            },
+            "bockstein_rank": 4
+          },
+          "forward": {
+            "order": "forward-row-first",
+            "cancellations": 0,
+            "cancelled_pairs_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "free_rows": 0,
+            "zero_columns": 11,
+            "core_rows": 4689,
+            "core_columns": 1718,
+            "components": [
+              {
+                "rows": 4689,
+                "columns": 1718,
+                "nonzeros": 11710,
+                "ranks": {
+                  "2": 1592,
+                  "3": 1596,
+                  "5": 1596
+                },
+                "odd_minus_two_rank": 4,
+                "bockstein": {
+                  "rank_mod_two": 1592,
+                  "kernel_dimension": 126,
+                  "bockstein_rank": 4
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 36,
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 1477,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3089,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 19,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 68
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 43,
+                  "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                  "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]": 17,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 851,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 806
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R0",
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5",
+                    "RX"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "70bdcec9f136656a6eb13980ba1e0224e8396f18b6474aa767fa03a4b310e8cf",
+                "defect_signature_hash": "aa7bc145bd989e49912bd1c44acfab8e285dbc67b11b6e431359fe6c888b1d64",
+                "support_hash": "81282b0f863f30e2699557e35820b329916d1de4b3c2989af91c1abd2a54d2a0",
+                "signed_hash": "b31be84b67dff250edccdf2bd6fe7abe0cbadec3575944329908ef3de85c9931"
+              }
+            ],
+            "component_summary": [
+              [
+                4689,
+                1718,
+                11710,
+                1592,
+                1596,
+                1596,
+                4
+              ]
+            ],
+            "component_summary_hash": "6f464f72c7aad3999af1097aecc75ee4f3e82a447d42113c1131348dc25937b8"
+          },
+          "reverse": {
+            "order": "reverse-column-first",
+            "cancellations": 0,
+            "cancelled_pairs_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "free_rows": 0,
+            "zero_columns": 11,
+            "core_rows": 4689,
+            "core_columns": 1718,
+            "components": [
+              {
+                "rows": 4689,
+                "columns": 1718,
+                "nonzeros": 11710,
+                "ranks": {
+                  "2": 1592,
+                  "3": 1596,
+                  "5": 1596
+                },
+                "odd_minus_two_rank": 4,
+                "bockstein": {
+                  "rank_mod_two": 1592,
+                  "kernel_dimension": 126,
+                  "bockstein_rank": 4
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 36,
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 1477,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3089,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 19,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 68
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 43,
+                  "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                  "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]": 17,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 851,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 806
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R0",
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5",
+                    "RX"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "70bdcec9f136656a6eb13980ba1e0224e8396f18b6474aa767fa03a4b310e8cf",
+                "defect_signature_hash": "aa7bc145bd989e49912bd1c44acfab8e285dbc67b11b6e431359fe6c888b1d64",
+                "support_hash": "81282b0f863f30e2699557e35820b329916d1de4b3c2989af91c1abd2a54d2a0",
+                "signed_hash": "b31be84b67dff250edccdf2bd6fe7abe0cbadec3575944329908ef3de85c9931"
+              }
+            ],
+            "component_summary": [
+              [
+                4689,
+                1718,
+                11710,
+                1592,
+                1596,
+                1596,
+                4
+              ]
+            ],
+            "component_summary_hash": "6f464f72c7aad3999af1097aecc75ee4f3e82a447d42113c1131348dc25937b8"
+          },
+          "forward_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "reverse_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "order_component_agreement": true,
+          "positive_defects": [
+            4
+          ]
+        },
+        "62": {
+          "aliases": [
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "source": {
+            "rows": 4721,
+            "columns": 1729,
+            "nonzeros": 11777,
+            "ranks": {
+              "2": 1603,
+              "3": 1607,
+              "5": 1607
+            },
+            "bockstein_rank": 4
+          },
+          "forward": {
+            "order": "forward-row-first",
+            "cancellations": 0,
+            "cancelled_pairs_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "free_rows": 0,
+            "zero_columns": 0,
+            "core_rows": 4721,
+            "core_columns": 1729,
+            "components": [
+              {
+                "rows": 4721,
+                "columns": 1729,
+                "nonzeros": 11777,
+                "ranks": {
+                  "2": 1603,
+                  "3": 1607,
+                  "5": 1607
+                },
+                "odd_minus_two_rank": 4,
+                "bockstein": {
+                  "rank_mod_two": 1603,
+                  "kernel_dimension": 126,
+                  "bockstein_rank": 4
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 1477,
+                  "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 68,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3089,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 19,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 68
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 43,
+                  "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                  "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]": 17,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 851,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 806,
+                  "[\"column\",\"S\",\"L1\",[0,-4,1,0,1,0,0,0,0,0]]": 11
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R1",
+                    "R2",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5",
+                    "RX"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[0,-4,1,0,1,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "3b730aae914cdb4877b8fe481bf0f2c823502e699658c93263b33935e9f069fb",
+                "defect_signature_hash": "bca754683eac0fb8bb601d13b8d7ab756d1c124ef0bceb33cc26c5ce07dd4a75",
+                "support_hash": "cd1641cbeb93aaa9ba02f531a89d06ab435b5af00e42443a647bc30891f73433",
+                "signed_hash": "b3556e9f5185dcb4cadcd54b0dc3662713215798bd4bc2652948af73ffe9cdcd"
+              }
+            ],
+            "component_summary": [
+              [
+                4721,
+                1729,
+                11777,
+                1603,
+                1607,
+                1607,
+                4
+              ]
+            ],
+            "component_summary_hash": "f6ac5e3b3057a42ce3bebe1b70f00b51c14f5bb50228d23425e683358b6bb7f4"
+          },
+          "reverse": {
+            "order": "reverse-column-first",
+            "cancellations": 0,
+            "cancelled_pairs_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "free_rows": 0,
+            "zero_columns": 0,
+            "core_rows": 4721,
+            "core_columns": 1729,
+            "components": [
+              {
+                "rows": 4721,
+                "columns": 1729,
+                "nonzeros": 11777,
+                "ranks": {
+                  "2": 1603,
+                  "3": 1607,
+                  "5": 1607
+                },
+                "odd_minus_two_rank": 4,
+                "bockstein": {
+                  "rank_mod_two": 1603,
+                  "kernel_dimension": 126,
+                  "bockstein_rank": 4
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 1477,
+                  "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 68,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 3089,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 19,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 68
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 43,
+                  "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                  "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]": 17,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 851,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 806,
+                  "[\"column\",\"S\",\"L1\",[0,-4,1,0,1,0,0,0,0,0]]": 11
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R1",
+                    "R2",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5",
+                    "RX"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[0,-4,1,0,1,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "3b730aae914cdb4877b8fe481bf0f2c823502e699658c93263b33935e9f069fb",
+                "defect_signature_hash": "bca754683eac0fb8bb601d13b8d7ab756d1c124ef0bceb33cc26c5ce07dd4a75",
+                "support_hash": "cd1641cbeb93aaa9ba02f531a89d06ab435b5af00e42443a647bc30891f73433",
+                "signed_hash": "b3556e9f5185dcb4cadcd54b0dc3662713215798bd4bc2652948af73ffe9cdcd"
+              }
+            ],
+            "component_summary": [
+              [
+                4721,
+                1729,
+                11777,
+                1603,
+                1607,
+                1607,
+                4
+              ]
+            ],
+            "component_summary_hash": "f6ac5e3b3057a42ce3bebe1b70f00b51c14f5bb50228d23425e683358b6bb7f4"
+          },
+          "forward_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "reverse_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "order_component_agreement": true,
+          "positive_defects": [
+            4
+          ]
+        }
+      }
+    },
+    {
+      "p": 10,
+      "source_matrix_sha256": "c7d6bbf0ec655296a0dafe81ab41ce70300c0fa4a837e5c141f55811e29f6f4d",
+      "masks": {
+        "56": {
+          "aliases": [
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "source": {
+            "rows": 5354,
+            "columns": 2607,
+            "nonzeros": 13855,
+            "ranks": {
+              "2": 2397,
+              "3": 2397,
+              "5": 2397
+            },
+            "bockstein_rank": 0
+          },
+          "forward": {
+            "order": "forward-row-first",
+            "cancellations": 114,
+            "cancelled_pairs_hash": "f079bf1baa777bc5aa3b9b9c9ffce31f62793175bd2fd57b43a83be04a1c350a",
+            "free_rows": 0,
+            "zero_columns": 19,
+            "core_rows": 5240,
+            "core_columns": 2474,
+            "components": [
+              {
+                "rows": 5240,
+                "columns": 2474,
+                "nonzeros": 13351,
+                "ranks": {
+                  "2": 2283,
+                  "3": 2283,
+                  "5": 2283
+                },
+                "odd_minus_two_rank": 0,
+                "bockstein": {
+                  "rank_mod_two": 2283,
+                  "kernel_dimension": 191,
+                  "bockstein_rank": 0
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 5151,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 74
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 45,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 1186,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 1243
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "4f85790aeb86884670625d59cfcf7304e39727066cbc9401e64b718178a031f2",
+                "defect_signature_hash": "b33ac143a4e32dd9791557601019e4e19edd61a4b97d2248bb95f428acad35aa",
+                "support_hash": "eeee08353bd43f9d7837bc2582d7bfc2523197431fc1abd86c7aed0c83682659",
+                "signed_hash": "871f6f59ba393c762f681e320d4715cf862ac9f27b7791896c540360430a95fa"
+              }
+            ],
+            "component_summary": [
+              [
+                5240,
+                2474,
+                13351,
+                2283,
+                2283,
+                2283,
+                0
+              ]
+            ],
+            "component_summary_hash": "1517dfc3f0c389e4bddfc31e616b1d8d67cd5ddb50beea085b0c811583aa1577"
+          },
+          "reverse": {
+            "order": "reverse-column-first",
+            "cancellations": 114,
+            "cancelled_pairs_hash": "2330a84dbc5e69de9113fa053e98f7a5e41339d0ec00fb39254a12ce70edf121",
+            "free_rows": 0,
+            "zero_columns": 19,
+            "core_rows": 5240,
+            "core_columns": 2474,
+            "components": [
+              {
+                "rows": 5240,
+                "columns": 2474,
+                "nonzeros": 13351,
+                "ranks": {
+                  "2": 2283,
+                  "3": 2283,
+                  "5": 2283
+                },
+                "odd_minus_two_rank": 0,
+                "bockstein": {
+                  "rank_mod_two": 2283,
+                  "kernel_dimension": 191,
+                  "bockstein_rank": 0
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 5151,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 15,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 74
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 45,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 1186,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 1243
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "4f85790aeb86884670625d59cfcf7304e39727066cbc9401e64b718178a031f2",
+                "defect_signature_hash": "b33ac143a4e32dd9791557601019e4e19edd61a4b97d2248bb95f428acad35aa",
+                "support_hash": "eeee08353bd43f9d7837bc2582d7bfc2523197431fc1abd86c7aed0c83682659",
+                "signed_hash": "871f6f59ba393c762f681e320d4715cf862ac9f27b7791896c540360430a95fa"
+              }
+            ],
+            "component_summary": [
+              [
+                5240,
+                2474,
+                13351,
+                2283,
+                2283,
+                2283,
+                0
+              ]
+            ],
+            "component_summary_hash": "1517dfc3f0c389e4bddfc31e616b1d8d67cd5ddb50beea085b0c811583aa1577"
+          },
+          "forward_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "reverse_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "order_component_agreement": true,
+          "positive_defects": []
+        },
+        "58": {
+          "aliases": [
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "source": {
+            "rows": 7841,
+            "columns": 2607,
+            "nonzeros": 19387,
+            "ranks": {
+              "2": 2417,
+              "3": 2420,
+              "5": 2420
+            },
+            "bockstein_rank": 3
+          },
+          "forward": {
+            "order": "forward-row-first",
+            "cancellations": 23,
+            "cancelled_pairs_hash": "e0ff6d2dd3a42d360f6d57515afb8f6c8497aecf7217a25cb30d149627ad8751",
+            "free_rows": 0,
+            "zero_columns": 17,
+            "core_rows": 7818,
+            "core_columns": 2567,
+            "components": [
+              {
+                "rows": 7818,
+                "columns": 2567,
+                "nonzeros": 19201,
+                "ranks": {
+                  "2": 2394,
+                  "3": 2397,
+                  "5": 2397
+                },
+                "odd_minus_two_rank": 3,
+                "bockstein": {
+                  "rank_mod_two": 2394,
+                  "kernel_dimension": 173,
+                  "bockstein_rank": 3
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 2487,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 5235,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 19,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 77
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 48,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 1275,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 1244
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "eff5c4813de49658735c31812e02060f1beab6c2b6c279d567281cb1d1b22971",
+                "defect_signature_hash": "c6b88d263814eefc2faa109f4300e117f5b5a06b843a775977bb22114fca42da",
+                "support_hash": "6daf840e97120bc47a4c3179fc0c4a6f471b5d8043d1eae803eb04e1335ef4f4",
+                "signed_hash": "1423eceb335713d638fa7dac830756cbe846a4f61337cc31cf71b559b8d3e7e7"
+              }
+            ],
+            "component_summary": [
+              [
+                7818,
+                2567,
+                19201,
+                2394,
+                2397,
+                2397,
+                3
+              ]
+            ],
+            "component_summary_hash": "d885bb8334053a65ebbb443c69e300820fcca08a2fd95aa8f5b05bd45332f281"
+          },
+          "reverse": {
+            "order": "reverse-column-first",
+            "cancellations": 23,
+            "cancelled_pairs_hash": "37a617ccbd3beb5a858b0d2207ab197940f1c6c9f134a81866af922cc8f160a9",
+            "free_rows": 0,
+            "zero_columns": 17,
+            "core_rows": 7818,
+            "core_columns": 2567,
+            "components": [
+              {
+                "rows": 7818,
+                "columns": 2567,
+                "nonzeros": 19201,
+                "ranks": {
+                  "2": 2394,
+                  "3": 2397,
+                  "5": 2397
+                },
+                "odd_minus_two_rank": 3,
+                "bockstein": {
+                  "rank_mod_two": 2394,
+                  "kernel_dimension": 173,
+                  "bockstein_rank": 3
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 2487,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 5235,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 19,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 77
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 48,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 1275,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 1244
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "eff5c4813de49658735c31812e02060f1beab6c2b6c279d567281cb1d1b22971",
+                "defect_signature_hash": "c6b88d263814eefc2faa109f4300e117f5b5a06b843a775977bb22114fca42da",
+                "support_hash": "6daf840e97120bc47a4c3179fc0c4a6f471b5d8043d1eae803eb04e1335ef4f4",
+                "signed_hash": "1423eceb335713d638fa7dac830756cbe846a4f61337cc31cf71b559b8d3e7e7"
+              }
+            ],
+            "component_summary": [
+              [
+                7818,
+                2567,
+                19201,
+                2394,
+                2397,
+                2397,
+                3
+              ]
+            ],
+            "component_summary_hash": "d885bb8334053a65ebbb443c69e300820fcca08a2fd95aa8f5b05bd45332f281"
+          },
+          "forward_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "reverse_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "order_component_agreement": true,
+          "positive_defects": [
+            3
+          ]
+        },
+        "59": {
+          "aliases": [
+            "R0",
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "source": {
+            "rows": 7886,
+            "columns": 2607,
+            "nonzeros": 19477,
+            "ranks": {
+              "2": 2432,
+              "3": 2437,
+              "5": 2437
+            },
+            "bockstein_rank": 5
+          },
+          "forward": {
+            "order": "forward-row-first",
+            "cancellations": 0,
+            "cancelled_pairs_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "free_rows": 0,
+            "zero_columns": 13,
+            "core_rows": 7886,
+            "core_columns": 2594,
+            "components": [
+              {
+                "rows": 7886,
+                "columns": 2594,
+                "nonzeros": 19477,
+                "ranks": {
+                  "2": 2432,
+                  "3": 2437,
+                  "5": 2437
+                },
+                "odd_minus_two_rank": 5,
+                "bockstein": {
+                  "rank_mod_two": 2432,
+                  "kernel_dimension": 162,
+                  "bockstein_rank": 5
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 45,
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 2487,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 5237,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 24,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 93
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 53,
+                  "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                  "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]": 19,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 1275,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 1246
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R0",
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5",
+                    "RX"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "70bdcec9f136656a6eb13980ba1e0224e8396f18b6474aa767fa03a4b310e8cf",
+                "defect_signature_hash": "d07162a85ac39e80c94be7c4f67cbb13666b6be2562e248dc6a6adcd1b7b4082",
+                "support_hash": "a7b24afc73c3988477201cace6fa4385cb4cc35f8a99c560b34bfab0387933db",
+                "signed_hash": "d7041eaae81de627567fa0f9068fe3fa593b091686dd2ed1cd532be8efbd889d"
+              }
+            ],
+            "component_summary": [
+              [
+                7886,
+                2594,
+                19477,
+                2432,
+                2437,
+                2437,
+                5
+              ]
+            ],
+            "component_summary_hash": "968e668702b9c24af36a5196f57c93b27a079995cc13c9e30004ae179ea799ff"
+          },
+          "reverse": {
+            "order": "reverse-column-first",
+            "cancellations": 0,
+            "cancelled_pairs_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "free_rows": 0,
+            "zero_columns": 13,
+            "core_rows": 7886,
+            "core_columns": 2594,
+            "components": [
+              {
+                "rows": 7886,
+                "columns": 2594,
+                "nonzeros": 19477,
+                "ranks": {
+                  "2": 2432,
+                  "3": 2437,
+                  "5": 2437
+                },
+                "odd_minus_two_rank": 5,
+                "bockstein": {
+                  "rank_mod_two": 2432,
+                  "kernel_dimension": 162,
+                  "bockstein_rank": 5
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 45,
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 2487,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 5237,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 24,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 93
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 53,
+                  "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                  "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]": 19,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 1275,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 1246
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R0",
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5",
+                    "RX"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "70bdcec9f136656a6eb13980ba1e0224e8396f18b6474aa767fa03a4b310e8cf",
+                "defect_signature_hash": "d07162a85ac39e80c94be7c4f67cbb13666b6be2562e248dc6a6adcd1b7b4082",
+                "support_hash": "a7b24afc73c3988477201cace6fa4385cb4cc35f8a99c560b34bfab0387933db",
+                "signed_hash": "d7041eaae81de627567fa0f9068fe3fa593b091686dd2ed1cd532be8efbd889d"
+              }
+            ],
+            "component_summary": [
+              [
+                7886,
+                2594,
+                19477,
+                2432,
+                2437,
+                2437,
+                5
+              ]
+            ],
+            "component_summary_hash": "968e668702b9c24af36a5196f57c93b27a079995cc13c9e30004ae179ea799ff"
+          },
+          "forward_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "reverse_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "order_component_agreement": true,
+          "positive_defects": [
+            5
+          ]
+        },
+        "62": {
+          "aliases": [
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "source": {
+            "rows": 7928,
+            "columns": 2607,
+            "nonzeros": 19564,
+            "ranks": {
+              "2": 2445,
+              "3": 2450,
+              "5": 2450
+            },
+            "bockstein_rank": 5
+          },
+          "forward": {
+            "order": "forward-row-first",
+            "cancellations": 0,
+            "cancelled_pairs_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "free_rows": 0,
+            "zero_columns": 0,
+            "core_rows": 7928,
+            "core_columns": 2607,
+            "components": [
+              {
+                "rows": 7928,
+                "columns": 2607,
+                "nonzeros": 19564,
+                "ranks": {
+                  "2": 2445,
+                  "3": 2450,
+                  "5": 2450
+                },
+                "odd_minus_two_rank": 5,
+                "bockstein": {
+                  "rank_mod_two": 2445,
+                  "kernel_dimension": 162,
+                  "bockstein_rank": 5
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 2487,
+                  "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 87,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 5237,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 24,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 93
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 53,
+                  "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                  "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]": 19,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 1275,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 1246,
+                  "[\"column\",\"S\",\"L1\",[0,-4,1,0,1,0,0,0,0,0]]": 13
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R1",
+                    "R2",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5",
+                    "RX"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[0,-4,1,0,1,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "3b730aae914cdb4877b8fe481bf0f2c823502e699658c93263b33935e9f069fb",
+                "defect_signature_hash": "4dd5d7c232480f236c487029c2bdc91ba69a4487662480ff86023797780193f0",
+                "support_hash": "500523dc490f0772fc4a8a1955ac37f7a61e66c2e7d6d738a01fb92a6ea8a3cf",
+                "signed_hash": "fb773b10be0fadc2a8bde79dd7c040d304484d9ae8479118967cca363cfdee0a"
+              }
+            ],
+            "component_summary": [
+              [
+                7928,
+                2607,
+                19564,
+                2445,
+                2450,
+                2450,
+                5
+              ]
+            ],
+            "component_summary_hash": "885e4f777abc08d24f56001430d67583e236bc4f596e6b76545b4d7a8a501239"
+          },
+          "reverse": {
+            "order": "reverse-column-first",
+            "cancellations": 0,
+            "cancelled_pairs_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "free_rows": 0,
+            "zero_columns": 0,
+            "core_rows": 7928,
+            "core_columns": 2607,
+            "components": [
+              {
+                "rows": 7928,
+                "columns": 2607,
+                "nonzeros": 19564,
+                "ranks": {
+                  "2": 2445,
+                  "3": 2450,
+                  "5": 2450
+                },
+                "odd_minus_two_rank": 5,
+                "bockstein": {
+                  "rank_mod_two": 2445,
+                  "kernel_dimension": 162,
+                  "bockstein_rank": 5
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 2487,
+                  "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 87,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 5237,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 24,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 93
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 53,
+                  "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                  "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]": 19,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 1275,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 1246,
+                  "[\"column\",\"S\",\"L1\",[0,-4,1,0,1,0,0,0,0,0]]": 13
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R1",
+                    "R2",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5",
+                    "RX"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[0,-4,1,0,1,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "3b730aae914cdb4877b8fe481bf0f2c823502e699658c93263b33935e9f069fb",
+                "defect_signature_hash": "4dd5d7c232480f236c487029c2bdc91ba69a4487662480ff86023797780193f0",
+                "support_hash": "500523dc490f0772fc4a8a1955ac37f7a61e66c2e7d6d738a01fb92a6ea8a3cf",
+                "signed_hash": "fb773b10be0fadc2a8bde79dd7c040d304484d9ae8479118967cca363cfdee0a"
+              }
+            ],
+            "component_summary": [
+              [
+                7928,
+                2607,
+                19564,
+                2445,
+                2450,
+                2450,
+                5
+              ]
+            ],
+            "component_summary_hash": "885e4f777abc08d24f56001430d67583e236bc4f596e6b76545b4d7a8a501239"
+          },
+          "forward_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "reverse_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "order_component_agreement": true,
+          "positive_defects": [
+            5
+          ]
+        }
+      }
+    },
+    {
+      "p": 11,
+      "source_matrix_sha256": "69e8519a3b239ec90c3b5af526f806a9a0aabf003517ea28233167d7e2b68dd9",
+      "masks": {
+        "56": {
+          "aliases": [
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "source": {
+            "rows": 8580,
+            "columns": 3785,
+            "nonzeros": 21939,
+            "ranks": {
+              "2": 3525,
+              "3": 3526,
+              "5": 3526
+            },
+            "bockstein_rank": 1
+          },
+          "forward": {
+            "order": "forward-row-first",
+            "cancellations": 141,
+            "cancelled_pairs_hash": "d5f0552fc2aab07107228d25767069fc5d30c8e1199e189c6bad87d5da67aed7",
+            "free_rows": 0,
+            "zero_columns": 21,
+            "core_rows": 8439,
+            "core_columns": 3623,
+            "components": [
+              {
+                "rows": 8439,
+                "columns": 3623,
+                "nonzeros": 21327,
+                "ranks": {
+                  "2": 3384,
+                  "3": 3385,
+                  "5": 3385
+                },
+                "odd_minus_two_rank": 1,
+                "bockstein": {
+                  "rank_mod_two": 3384,
+                  "kernel_dimension": 239,
+                  "bockstein_rank": 1
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 8317,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 20,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 102
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 56,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 1725,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 1842
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "4f85790aeb86884670625d59cfcf7304e39727066cbc9401e64b718178a031f2",
+                "defect_signature_hash": "6187c63ec64d60cd5c825f8cb26a23a2bdd064b82d937eaf0c691d5df11270a3",
+                "support_hash": "0d7051504a8538b149b480af24d8803c21dce8f9be3f3fb5d53990b9771027b3",
+                "signed_hash": "058969bed26ba11e0fe17bab05977de167026d1fa09344d9d9a2ac1e634d88a7"
+              }
+            ],
+            "component_summary": [
+              [
+                8439,
+                3623,
+                21327,
+                3384,
+                3385,
+                3385,
+                1
+              ]
+            ],
+            "component_summary_hash": "0d2dc1d1dde9b1a1b9b4d384f4afbcf1978a47095fd551c04cf4df99e2d12feb"
+          },
+          "reverse": {
+            "order": "reverse-column-first",
+            "cancellations": 141,
+            "cancelled_pairs_hash": "5032d1cd4a8925a684c14bc9a4380d463f6a2cfea61e936a37fcef8fbba359bd",
+            "free_rows": 0,
+            "zero_columns": 21,
+            "core_rows": 8439,
+            "core_columns": 3623,
+            "components": [
+              {
+                "rows": 8439,
+                "columns": 3623,
+                "nonzeros": 21327,
+                "ranks": {
+                  "2": 3384,
+                  "3": 3385,
+                  "5": 3385
+                },
+                "odd_minus_two_rank": 1,
+                "bockstein": {
+                  "rank_mod_two": 3384,
+                  "kernel_dimension": 239,
+                  "bockstein_rank": 1
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 8317,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 20,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 102
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 56,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 1725,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 1842
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "4f85790aeb86884670625d59cfcf7304e39727066cbc9401e64b718178a031f2",
+                "defect_signature_hash": "6187c63ec64d60cd5c825f8cb26a23a2bdd064b82d937eaf0c691d5df11270a3",
+                "support_hash": "0d7051504a8538b149b480af24d8803c21dce8f9be3f3fb5d53990b9771027b3",
+                "signed_hash": "058969bed26ba11e0fe17bab05977de167026d1fa09344d9d9a2ac1e634d88a7"
+              }
+            ],
+            "component_summary": [
+              [
+                8439,
+                3623,
+                21327,
+                3384,
+                3385,
+                3385,
+                1
+              ]
+            ],
+            "component_summary_hash": "0d2dc1d1dde9b1a1b9b4d384f4afbcf1978a47095fd551c04cf4df99e2d12feb"
+          },
+          "forward_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "reverse_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "order_component_agreement": true,
+          "positive_defects": [
+            1
+          ]
+        },
+        "58": {
+          "aliases": [
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "source": {
+            "rows": 12548,
+            "columns": 3785,
+            "nonzeros": 30744,
+            "ranks": {
+              "2": 3547,
+              "3": 3552,
+              "5": 3552
+            },
+            "bockstein_rank": 5
+          },
+          "forward": {
+            "order": "forward-row-first",
+            "cancellations": 25,
+            "cancelled_pairs_hash": "410eb8164588f9e80addc1db74efe40fb4b967293e9234d2bcdc5022a56f7483",
+            "free_rows": 0,
+            "zero_columns": 19,
+            "core_rows": 12523,
+            "core_columns": 3741,
+            "components": [
+              {
+                "rows": 12523,
+                "columns": 3741,
+                "nonzeros": 30529,
+                "ranks": {
+                  "2": 3522,
+                  "3": 3527,
+                  "5": 3527
+                },
+                "odd_minus_two_rank": 5,
+                "bockstein": {
+                  "rank_mod_two": 3522,
+                  "kernel_dimension": 219,
+                  "bockstein_rank": 5
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 3968,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 8426,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 24,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 105
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 59,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 1839,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 1843
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "eff5c4813de49658735c31812e02060f1beab6c2b6c279d567281cb1d1b22971",
+                "defect_signature_hash": "9b1f4e2d1ffb2b6da689c458a9b51a2f9679936874e5c1a19187b229a6a9cdcd",
+                "support_hash": "89d17f4663fa20a12bdc100859536ca763bf3e551055109039579027f769f3fe",
+                "signed_hash": "19f594344a69e7bfa004e2a1f2edd0467e4094dc9fc57c32456813ddff3db19b"
+              }
+            ],
+            "component_summary": [
+              [
+                12523,
+                3741,
+                30529,
+                3522,
+                3527,
+                3527,
+                5
+              ]
+            ],
+            "component_summary_hash": "72b6c5ccf20539eb5bebd255aeeee06ebac7aae72ae045d97bd010ee7ef0d935"
+          },
+          "reverse": {
+            "order": "reverse-column-first",
+            "cancellations": 25,
+            "cancelled_pairs_hash": "53240b34b036fc9583b526ba20b5e658802256ff5a0cca6912be33b592c249d1",
+            "free_rows": 0,
+            "zero_columns": 19,
+            "core_rows": 12523,
+            "core_columns": 3741,
+            "components": [
+              {
+                "rows": 12523,
+                "columns": 3741,
+                "nonzeros": 30529,
+                "ranks": {
+                  "2": 3522,
+                  "3": 3527,
+                  "5": 3527
+                },
+                "odd_minus_two_rank": 5,
+                "bockstein": {
+                  "rank_mod_two": 3522,
+                  "kernel_dimension": 219,
+                  "bockstein_rank": 5
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 3968,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 8426,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 24,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 105
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 59,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 1839,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 1843
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "eff5c4813de49658735c31812e02060f1beab6c2b6c279d567281cb1d1b22971",
+                "defect_signature_hash": "9b1f4e2d1ffb2b6da689c458a9b51a2f9679936874e5c1a19187b229a6a9cdcd",
+                "support_hash": "89d17f4663fa20a12bdc100859536ca763bf3e551055109039579027f769f3fe",
+                "signed_hash": "19f594344a69e7bfa004e2a1f2edd0467e4094dc9fc57c32456813ddff3db19b"
+              }
+            ],
+            "component_summary": [
+              [
+                12523,
+                3741,
+                30529,
+                3522,
+                3527,
+                3527,
+                5
+              ]
+            ],
+            "component_summary_hash": "72b6c5ccf20539eb5bebd255aeeee06ebac7aae72ae045d97bd010ee7ef0d935"
+          },
+          "forward_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "reverse_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "order_component_agreement": true,
+          "positive_defects": [
+            5
+          ]
+        },
+        "59": {
+          "aliases": [
+            "R0",
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "source": {
+            "rows": 12603,
+            "columns": 3785,
+            "nonzeros": 30854,
+            "ranks": {
+              "2": 3564,
+              "3": 3571,
+              "5": 3571
+            },
+            "bockstein_rank": 7
+          },
+          "forward": {
+            "order": "forward-row-first",
+            "cancellations": 0,
+            "cancelled_pairs_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "free_rows": 0,
+            "zero_columns": 15,
+            "core_rows": 12603,
+            "core_columns": 3770,
+            "components": [
+              {
+                "rows": 12603,
+                "columns": 3770,
+                "nonzeros": 30854,
+                "ranks": {
+                  "2": 3564,
+                  "3": 3571,
+                  "5": 3571
+                },
+                "odd_minus_two_rank": 7,
+                "bockstein": {
+                  "rank_mod_two": 3564,
+                  "kernel_dimension": 206,
+                  "bockstein_rank": 7
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 55,
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 3968,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 8428,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 29,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 123
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 64,
+                  "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                  "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]": 21,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 1839,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 1845
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R0",
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5",
+                    "RX"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "70bdcec9f136656a6eb13980ba1e0224e8396f18b6474aa767fa03a4b310e8cf",
+                "defect_signature_hash": "adb706fc58aef0404367bf360a742267089dfaea57055d468a3f7510e7721a95",
+                "support_hash": "2ea9f13ff6d688e18a09d59309d004ea700f2b53b2b54090effab4937b311b58",
+                "signed_hash": "851c2a42b29518b5ccc1000d700f14b7469a03f86ec74b24f808c1c69bbc7dad"
+              }
+            ],
+            "component_summary": [
+              [
+                12603,
+                3770,
+                30854,
+                3564,
+                3571,
+                3571,
+                7
+              ]
+            ],
+            "component_summary_hash": "84cf3adce16e7ee97dbc3790f4e804ef0b969341f20e36bb8e4b4445809c81c4"
+          },
+          "reverse": {
+            "order": "reverse-column-first",
+            "cancellations": 0,
+            "cancelled_pairs_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "free_rows": 0,
+            "zero_columns": 15,
+            "core_rows": 12603,
+            "core_columns": 3770,
+            "components": [
+              {
+                "rows": 12603,
+                "columns": 3770,
+                "nonzeros": 30854,
+                "ranks": {
+                  "2": 3564,
+                  "3": 3571,
+                  "5": 3571
+                },
+                "odd_minus_two_rank": 7,
+                "bockstein": {
+                  "rank_mod_two": 3564,
+                  "kernel_dimension": 206,
+                  "bockstein_rank": 7
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-2,-3,1,0,1,0,0,0,0,0]]": 55,
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 3968,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 8428,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 29,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 123
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 64,
+                  "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                  "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]": 21,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 1839,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 1845
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R0",
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5",
+                    "RX"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "70bdcec9f136656a6eb13980ba1e0224e8396f18b6474aa767fa03a4b310e8cf",
+                "defect_signature_hash": "adb706fc58aef0404367bf360a742267089dfaea57055d468a3f7510e7721a95",
+                "support_hash": "2ea9f13ff6d688e18a09d59309d004ea700f2b53b2b54090effab4937b311b58",
+                "signed_hash": "851c2a42b29518b5ccc1000d700f14b7469a03f86ec74b24f808c1c69bbc7dad"
+              }
+            ],
+            "component_summary": [
+              [
+                12603,
+                3770,
+                30854,
+                3564,
+                3571,
+                3571,
+                7
+              ]
+            ],
+            "component_summary_hash": "84cf3adce16e7ee97dbc3790f4e804ef0b969341f20e36bb8e4b4445809c81c4"
+          },
+          "forward_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "reverse_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "order_component_agreement": true,
+          "positive_defects": [
+            7
+          ]
+        },
+        "62": {
+          "aliases": [
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "source": {
+            "rows": 12656,
+            "columns": 3785,
+            "nonzeros": 30963,
+            "ranks": {
+              "2": 3579,
+              "3": 3586,
+              "5": 3586
+            },
+            "bockstein_rank": 7
+          },
+          "forward": {
+            "order": "forward-row-first",
+            "cancellations": 0,
+            "cancelled_pairs_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "free_rows": 0,
+            "zero_columns": 0,
+            "core_rows": 12656,
+            "core_columns": 3785,
+            "components": [
+              {
+                "rows": 12656,
+                "columns": 3785,
+                "nonzeros": 30963,
+                "ranks": {
+                  "2": 3579,
+                  "3": 3586,
+                  "5": 3586
+                },
+                "odd_minus_two_rank": 7,
+                "bockstein": {
+                  "rank_mod_two": 3579,
+                  "kernel_dimension": 206,
+                  "bockstein_rank": 7
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 3968,
+                  "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 108,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 8428,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 29,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 123
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 64,
+                  "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                  "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]": 21,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 1839,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 1845,
+                  "[\"column\",\"S\",\"L1\",[0,-4,1,0,1,0,0,0,0,0]]": 15
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R1",
+                    "R2",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5",
+                    "RX"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[0,-4,1,0,1,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "3b730aae914cdb4877b8fe481bf0f2c823502e699658c93263b33935e9f069fb",
+                "defect_signature_hash": "f7871b37449c430757cab31e8dbed96c1ee11064bc3cf59be357fffc3ca32731",
+                "support_hash": "75ace5bd09c9cdf41b54a30a1fe45f169f7f927c0d457e0561786e9ad4065b97",
+                "signed_hash": "bd8e63bf76547bf81195a565aeec3ee33f6de86b11928b5a9fc5723a4b46826e"
+              }
+            ],
+            "component_summary": [
+              [
+                12656,
+                3785,
+                30963,
+                3579,
+                3586,
+                3586,
+                7
+              ]
+            ],
+            "component_summary_hash": "c8b1ef09604db216ece02713617992437a39061fe1d5b508147399bf6d738536"
+          },
+          "reverse": {
+            "order": "reverse-column-first",
+            "cancellations": 0,
+            "cancelled_pairs_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "free_rows": 0,
+            "zero_columns": 0,
+            "core_rows": 12656,
+            "core_columns": 3785,
+            "components": [
+              {
+                "rows": 12656,
+                "columns": 3785,
+                "nonzeros": 30963,
+                "ranks": {
+                  "2": 3579,
+                  "3": 3586,
+                  "5": 3586
+                },
+                "odd_minus_two_rank": 7,
+                "bockstein": {
+                  "rank_mod_two": 3579,
+                  "kernel_dimension": 206,
+                  "bockstein_rank": 7
+                },
+                "rank_gap_matches_bockstein": true,
+                "row_atom_counts": {
+                  "[\"row\",\"D\",\"A\",[-3,-2,2,0,0,0,0,0,0,0]]": 3968,
+                  "[\"row\",\"D\",\"B\",[-1,-4,1,0,1,0,0,0,0,0]]": 108,
+                  "[\"row\",\"D\",\"B\",[-2,-3,2,0,0,0,0,0,0,0]]": 8428,
+                  "[\"row\",\"K\",\"C0\",[-2,-2,1,0,0,0,0,0,0,0]]": 29,
+                  "[\"row\",\"K\",\"C2\",[-1,-3,1,0,0,0,0,0,0,0]]": 123
+                },
+                "column_atom_counts": {
+                  "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]": 64,
+                  "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]": 1,
+                  "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]": 21,
+                  "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]": 1839,
+                  "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]": 1845,
+                  "[\"column\",\"S\",\"L1\",[0,-4,1,0,1,0,0,0,0,0]]": 15
+                },
+                "atom_set_signature": {
+                  "row_aliases": [
+                    "R1",
+                    "R2",
+                    "R3",
+                    "R4",
+                    "R5"
+                  ],
+                  "normalized_completion_aliases": [
+                    "R1",
+                    "R3",
+                    "R4",
+                    "R5",
+                    "RX"
+                  ],
+                  "column_atoms": [
+                    "[\"column\",\"K\",\"H0\",[-1,-2,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"K\",\"H2\",[0,-3,1,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-1,-3,1,0,1,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L0\",[-2,-2,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[-1,-3,2,0,0,0,0,0,0,0]]",
+                    "[\"column\",\"S\",\"L1\",[0,-4,1,0,1,0,0,0,0,0]]"
+                  ]
+                },
+                "semantic_support_hash": "3b730aae914cdb4877b8fe481bf0f2c823502e699658c93263b33935e9f069fb",
+                "defect_signature_hash": "f7871b37449c430757cab31e8dbed96c1ee11064bc3cf59be357fffc3ca32731",
+                "support_hash": "75ace5bd09c9cdf41b54a30a1fe45f169f7f927c0d457e0561786e9ad4065b97",
+                "signed_hash": "bd8e63bf76547bf81195a565aeec3ee33f6de86b11928b5a9fc5723a4b46826e"
+              }
+            ],
+            "component_summary": [
+              [
+                12656,
+                3785,
+                30963,
+                3579,
+                3586,
+                3586,
+                7
+              ]
+            ],
+            "component_summary_hash": "c8b1ef09604db216ece02713617992437a39061fe1d5b508147399bf6d738536"
+          },
+          "forward_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "reverse_recomposition": {
+            "rank_2": true,
+            "rank_3": true,
+            "rank_5": true,
+            "bockstein": true,
+            "free_rank_three": true
+          },
+          "order_component_agreement": true,
+          "positive_defects": [
+            7
+          ]
+        }
+      }
+    }
+  ],
+  "elapsed_seconds": 5.521445499995025,
+  "p1_status": "REFUTED",
+  "p2_status": "REFUTED",
+  "p3_status": "PASS_FINITE",
+  "artifact_hash": "2c0d7ce8eb4bd170337f8b3e2ce5518cdf92a62f409168627adae6393805c447"
+}
