@@ -212,7 +212,15 @@ def component_record(
         "row_atom_counts": dict(sorted(Counter(local_row_atoms).items())),
         "column_atom_counts": dict(sorted(Counter(local_column_atoms).items())),
         "atom_set_signature": atom_set_signature,
-        "normalized_signature_hash": digest(
+        "semantic_support_hash": digest(
+            {
+                "normalized_completion_aliases": atom_set_signature[
+                    "normalized_completion_aliases"
+                ],
+                "column_atoms": atom_set_signature["column_atoms"],
+            }
+        ),
+        "defect_signature_hash": digest(
             {
                 "normalized_completion_aliases": atom_set_signature[
                     "normalized_completion_aliases"
@@ -422,7 +430,7 @@ def positive_defects(peel: dict[str, object]) -> list[int]:
 def completion_signatures(record: dict[str, object], alias: str) -> list[str]:
     atom = ATOM_ALIASES[alias]
     return sorted(
-        str(component["normalized_signature_hash"])
+        str(component["semantic_support_hash"])
         for component in record["forward"]["components"]
         if atom in component["row_atom_counts"]
         and int(component["bockstein"]["bockstein_rank"]) > 0
@@ -548,13 +556,13 @@ def main() -> int:
         int(row["p"]): row["masks"]["56"]["positive_defects"] for row in result["rows"]
     }
     earlier_signatures = {
-        component["normalized_signature_hash"]
+        component["semantic_support_hash"]
         for row in result["rows"]
         if int(row["p"]) < 11
         for component in row["masks"]["56"]["forward"]["components"]
     }
     p11_positive_signatures = {
-        component["normalized_signature_hash"]
+        component["semantic_support_hash"]
         for row in result["rows"]
         if int(row["p"]) == 11
         for component in row["masks"]["56"]["forward"]["components"]
