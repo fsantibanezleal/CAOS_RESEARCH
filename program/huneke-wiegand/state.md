@@ -144,6 +144,7 @@
 | 2026-08-31 | active | refuted | EXP-044 passes necessity and audit consistency but refutes sufficiency: every deletion and the two-atom union have Bockstein zero, so a larger signed circuit is essential |
 | 2026-08-31 | refuted | active | EXP-045 declared for HWB-071: enumerate the complete six-row-atom subset lattice and extract stable minimal Bockstein carriers |
 | 2026-08-31 | active | refuted | EXP-045 refutes all declared predictions but proves a stable full-carrier antichain `{59,62}`; core mask `58` has ranks `1,2,3,5` and either completion adds exactly two |
+| 2026-09-02 | refuted | active | EXP-046 declared for HWB-072: exact unit-leaf cores test whether the stable constant-two carrier completion separates from mask `58` and whether the mask-56 threshold is an isolated component |
 
 Current state: **EXP-043 and EXP-042 are confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
 inconclusive with two finite passes; EXP-037 is refuted; EXP-036 remains confirmed with structural

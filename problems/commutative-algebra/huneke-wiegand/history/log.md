@@ -1674,3 +1674,14 @@
   stable; its intersection `58` has ranks `1,2,3,5`, and either completion adds exactly two.
 - HWB-071 redirects to relative integral presentations for the two alternative completions and
   the separate `p=11` threshold. No publication gate opens from the finite lattice alone.
+
+## 2026-09-02 - EXP-046 relative unit cores declared
+
+- A fresh primary-source sweep adds matroids over rings as a deletion-contraction and torsion
+  dictionary; it does not prove that the CAOS family is a uniform matroid over a ring.
+- EXP-045's stored ranks give finite contraction laws `(2p-3,2p-5)` for `58->59` and
+  `(4p-10,4p-12)` for `58->62`. Both completions have constant parity defect two.
+- EXP-046 is declared before peeling. Exact unit-leaf cancellations test whether that completion
+  separates into two defect-one components and whether mask `56` isolates the new `p=11` class.
+- Full Smith computation and further coefficients remain demoted until the integral critical-core
+  sizes and component signatures are known.

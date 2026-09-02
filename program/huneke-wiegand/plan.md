@@ -1351,3 +1351,15 @@ The independent low-pivot audit passes all 2,855 checks. HWB-071 now targets rel
 presentations for `58->59` and `58->62`, seeking a signed equivalence of their two-class
 completion. The separate `56->58` quotient owns the new `p=11` threshold. More coefficients remain
 lower priority until these relative blocks are understood.
+
+## 2026-09-02 - EXP-046 relative integral unit-core gate
+
+The exploration sweep adds an arithmetic deletion-contraction lens from matroids over rings. It
+organizes the row-subset cokernels and their torsion, but does not supply the missing parameter
+maps. The invariant-first action remains elementary integral cancellation: compute the unit-leaf
+two-cores of masks `56,58,59,62` before attempting Hermite or Smith normal forms.
+
+EXP-046 is declared before those cores are computed. It predicts that masks `59` and `62` split
+their constant completion defect into two defect-one residual components beyond the mask-58 core,
+and that mask `56` has one isolated defect-one component only at `p=11`. Opposite peeling orders,
+three exact fields, first Bocksteins, signed hashes, and explicit resource gates are mandatory.

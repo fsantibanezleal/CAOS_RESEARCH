@@ -714,3 +714,8 @@ EXP-045 finds a stable full-carrier antichain rather than the predicted unique s
 The minimal full masks are `59` and `62` throughout; their common mask `58` carries ranks
 `1,2,3,5`, and either completion adds two. The first nonzero carrier shrinks from `58` to `56` at
 `p=11`. This splits the next integral task into a stable completion block and a threshold block.
+
+EXP-046 is declared to compute the exact unit-leaf two-cores of those four masks. It tests whether
+the constant-two completion separates into two defect-one components and whether the new mask-56
+class at `p=11` is isolated. The arithmetic-matroid viewpoint organizes deletion and contraction;
+the certificate still has to come from integral reductions of the CAOS matrices.

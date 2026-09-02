@@ -69,6 +69,25 @@ completion adds exactly two. The `p=11` minimal nonzero carrier drops to `56`, e
 threshold class. The highest-value action is now an integral relative comparison of the two
 alternative completions, not another global rank or coefficient sweep.
 
+### Arithmetic deletion-contraction refinement - active companion
+
+Fink and Moci's matroids-over-rings framework records quotient modules, torsion, deletion,
+contraction, and base change for integral vector configurations. The CAOS row masks are grouped
+row families rather than a proved instance of the desired uniform object, so the framework is a
+dictionary and invariant ledger, not a theorem transfer.
+
+Applied to the finite carrier table, the contraction-rank increments are
+
+```text
+58 -> 59: (delta_Q,delta_2)=(2p-3,2p-5),
+58 -> 62: (delta_Q,delta_2)=(4p-10,4p-12)
+```
+
+at every tested parameter. Both expose the same defect-two completion despite different ambient
+ranks. EXP-046 tests the cheapest integral explanation: unit-leaf cancellation followed by
+component decomposition. Signed Hermite reduction is deferred until the residual core size is
+known.
+
 ### 2. Relative squarefree-divisor homology - structural fallback
 
 Multigraded Betti numbers of numerical semigroup rings can be represented by reduced homology of
@@ -121,6 +140,11 @@ proved or explicitly conjectured transition law.
   <https://arxiv.org/abs/1209.1183>.
 - Dalili and Kummini connect characteristic-dependent Betti numbers with simplicial homology and
   discrete Morse constructions: <https://arxiv.org/abs/1009.4243>.
+- Fink and Moci organize quotient modules, torsion, base change, deletion, and contraction for
+  matroids over a commutative ring: <https://arxiv.org/abs/1209.6571>.
+- Pagaria and Paolini use reduction and signed Hermite normal form for representations of
+  torsion-free arithmetic matroids; their torsion-free hypothesis prevents a direct theorem
+  transfer here: <https://arxiv.org/abs/1908.04137>.
 
 None of these sources supplies the missing chain maps or the CAOS recurrence. They justify the
 route vocabulary and proof obligations only.

@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-08-31. Lifecycle: EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
+Updated: 2026-09-02. Lifecycle: EXP-046 is DECLARED; EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
 with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
@@ -21,7 +21,7 @@ first Bockstein: ranks are again `3,4,5,7`, proving exactly that many
 nonzero valuation-one Smith factors in the four isolated integer matrices. EXP-043 supplies exact
 rational-rank upper certificates and closes their complete 2-primary types as
 `(Z/2)^3,(Z/2)^4,(Z/2)^5,(Z/2)^7`. EXP-044 then refutes the proposed two-atom carrier:
-`D:B` and `K:C0` are necessary row-projection interfaces, but their union has Bockstein zero. For
+`D:B` and `K:C0` are necessary row-projection interfaces, but their union has Bockstein zero.
 EXP-045 exhausts the six-row-atom lattice: minimal full carriers are stably masks `59` and `62`,
 their intersection mask `58` has ranks `1,2,3,5`, and either completion adds exactly two. For every
 `p>=4` and
@@ -381,6 +381,7 @@ campaign is supporting evidence, not the proof.
 | EXP-043 | CONFIRMED FINITELY | audited modular Hadamard certificates prove rational ranks `1002,1607,2450,3586` and complete isolated 2-primary types `(Z/2)^(3,4,5,7)` |
 | EXP-044 | REFUTED; P1/P3 PASS | deleting either marked atom kills the Bockstein, but their union also has Bockstein zero; a larger signed circuit is essential |
 | EXP-045 | REFUTED WITH STRUCTURAL REDIRECT | exhaustive 256-projection lattice gives stable minimal full carriers `59,62`, core ranks `1,2,3,5`, constant completion two, and a `p=11` threshold at mask `56` |
+| EXP-046 | DECLARED | exact unit-leaf cores test whether the two alternative completions split into common defect-one blocks and whether mask `56` isolates the `p=11` threshold |
 
 ## 3a. Exact evidence anchors
 
@@ -488,9 +489,10 @@ campaign is supporting evidence, not the proof.
 
 ## 4. In flight
 
-EXP-045 is REFUTED with a stable full-carrier antichain retained. EXP-044 is REFUTED overall with
-P1/P3 retained. EXP-043 is CONFIRMED finitely and closes HWB-070. EXP-042 is CONFIRMED finitely
-and advances HWB-069; HWB-071 owns the relative integral completion problem.
+EXP-046 is DECLARED for HWB-072. EXP-045 is REFUTED with a stable full-carrier antichain retained.
+EXP-044 is REFUTED overall with P1/P3 retained. EXP-043 is CONFIRMED finitely and closes HWB-070.
+EXP-042 is CONFIRMED finitely and advances HWB-069; HWB-071/HWB-072 own the relative integral
+completion problem.
 EXP-041 is REFUTED overall, with its P1 finite classifier retained; HWB-068 is done. EXP-040 is
 REFUTED overall, with its P1 finite localization retained. EXP-037 exactly
 refutes the previous series at its first new value:
@@ -838,9 +840,10 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Declare a relative-presentation experiment comparing `58->59` and `58->62`. Test whether the
-   alternative completions add integrally equivalent two-class factor-two blocks.
-2. Isolate the separate `56->58` threshold at `p=11`, then construct a uniform integral matching
+1. Implement and audit EXP-046. Compute unit-leaf cores for masks `56,58,59,62` and compare their
+   torsion-component partitions under opposite peeling orders.
+2. Use the residual blocks to test the alternative completions and isolate `56->58` at `p=11`,
+   then construct a uniform integral matching
    and explicit parameter maps before claiming OI/FI stability.
 3. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
    a signed core; keep this separate from the connecting-only `t=2` mechanism.
@@ -921,6 +924,9 @@ Published baseline:
 - Carrier lattice: EXP-045 gives stable minimal full masks `59,62`, common core ranks `1,2,3,5`,
   and constant completion two. Relative integral presentations, not further global ranks, are now
   the active finite proof gate.
+- Arithmetic deletion-contraction: matroids over rings provide a module-valued vocabulary for the
+  row-subset lattice. EXP-046 applies the cheaper integral unit-core invariant first; no uniform
+  matroid-over-rings structure is claimed.
 
 ## 7. Gotchas
 
