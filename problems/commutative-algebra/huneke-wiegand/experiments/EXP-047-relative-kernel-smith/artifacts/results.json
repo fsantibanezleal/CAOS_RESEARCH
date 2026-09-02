@@ -1,0 +1,767 @@
+{
+  "experiment": "EXP-047",
+  "route": "saturated integer kernel images and exact relative Smith forms",
+  "status": "COMPLETE",
+  "engine": {
+    "python_flint": "0.9.0"
+  },
+  "parameters": {
+    "p_min": 8,
+    "p_max": 11,
+    "inclusions": [
+      [
+        58,
+        59
+      ],
+      [
+        58,
+        62
+      ],
+      [
+        56,
+        58
+      ]
+    ],
+    "budget_seconds": 3600.0
+  },
+  "premise_hashes": {
+    "EXP-042-bockstein-normal-form\\artifacts\\matrix-p8.json": "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
+    "EXP-042-bockstein-normal-form\\artifacts\\matrix-p9.json": "00c20e30d81861a599448535c2ecc7625b56b1951fe863e64d40ce6f56ff218c",
+    "EXP-042-bockstein-normal-form\\artifacts\\matrix-p10.json": "c7d6bbf0ec655296a0dafe81ab41ce70300c0fa4a837e5c141f55811e29f6f4d",
+    "EXP-042-bockstein-normal-form\\artifacts\\matrix-p11.json": "69e8519a3b239ec90c3b5af526f806a9a0aabf003517ea28233167d7e2b68dd9",
+    "EXP-045-row-atom-carrier-lattice\\artifacts\\results.json": "569220667e9d82f0806ea96cb8f60c49e94cb6317817170c39f2e574e619bcb8"
+  },
+  "rows": [
+    {
+      "p": 8,
+      "source_matrix_sha256": "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
+      "inclusions": [
+        {
+          "source_mask": 58,
+          "target_mask": 59,
+          "source_aliases": [
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "target_aliases": [
+            "R0",
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "added_aliases": [
+            "R0"
+          ],
+          "source_rows": 2596,
+          "added_rows": 28,
+          "added_rows_hash": "d7bb76fbc2a73cd8bac4acc7c8f3067f4092b637afcf1ddd6a5dfe1b65252910",
+          "source_kernel": {
+            "source_rows": 2596,
+            "columns": 1094,
+            "rank_q": 980,
+            "kernel_nullity": 114,
+            "kernel_basis_hash": "26b3109973b8ba7ab8df25b8bbc5b205506228737f8beb6b53d3f7b0bed7b405",
+            "annihilation_from_zero_hnf_rows": true
+          },
+          "relative": {
+            "rows": 28,
+            "columns": 114,
+            "nonzeros": 333,
+            "max_entry_bits": 3,
+            "matrix_hash": "f40f62df2d72bf7d85b006238482457cfb8fd160966ac535350c607689b4c6b0",
+            "rank_q": 13,
+            "ranks": {
+              "2": 11,
+              "3": 13,
+              "5": 13
+            },
+            "unit_invariant_count": 11,
+            "torsion_invariants": [
+              2,
+              2
+            ],
+            "free_rank": 15,
+            "smith_diagonal_hash": "e0882d24fb6027d900e6068027142e9ec17eea047428903fd466dc7459c69e8e",
+            "rank_from_smith_matches_mod_odd": true,
+            "rank_mod_two_from_smith": true
+          },
+          "relative_artifact": "artifacts\\relative-p8-m58-m59.json",
+          "relative_artifact_sha256": "41f4743099ed476a07f729935ec586896efe67a1cfa8b6570ed5c267e676e79f",
+          "relative_artifact_internal_hash": "dbc2491ec5b697982f562585fed53efdf6510430fb885af760e0ce936f145465",
+          "exact_target_rank_q": 993,
+          "source_rank_matches_stored_odd": true,
+          "target_rank_matches_stored_odd": true
+        },
+        {
+          "source_mask": 58,
+          "target_mask": 62,
+          "source_aliases": [
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "target_aliases": [
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "added_aliases": [
+            "R2"
+          ],
+          "source_rows": 2596,
+          "added_rows": 51,
+          "added_rows_hash": "94b023078c50e4e0f4b23a734177b88bc33c4225f819d50c3a2b9e6f7b6a8646",
+          "source_kernel": {
+            "source_rows": 2596,
+            "columns": 1094,
+            "rank_q": 980,
+            "kernel_nullity": 114,
+            "kernel_basis_hash": "26b3109973b8ba7ab8df25b8bbc5b205506228737f8beb6b53d3f7b0bed7b405",
+            "annihilation_from_zero_hnf_rows": true
+          },
+          "relative": {
+            "rows": 51,
+            "columns": 114,
+            "nonzeros": 488,
+            "max_entry_bits": 3,
+            "matrix_hash": "d5f589de96b6800d6692d13ddfe2cf8f2bf9927491d428c57c7a296d93bf1b51",
+            "rank_q": 22,
+            "ranks": {
+              "2": 20,
+              "3": 22,
+              "5": 22
+            },
+            "unit_invariant_count": 20,
+            "torsion_invariants": [
+              2,
+              2
+            ],
+            "free_rank": 29,
+            "smith_diagonal_hash": "0d10877022fae74d280e5d2ee4385b3e73b70a4fc2e6d6b40810ae87916b023f",
+            "rank_from_smith_matches_mod_odd": true,
+            "rank_mod_two_from_smith": true
+          },
+          "relative_artifact": "artifacts\\relative-p8-m58-m62.json",
+          "relative_artifact_sha256": "b9eba962c688b571e6f7ce36a9a79d42ee80e47e1572f7abf87e71dc47dd39a7",
+          "relative_artifact_internal_hash": "ed159b6f9ec373f310f3be0e73ad93e9433d3d69953acd0522744d79a7e18b91",
+          "exact_target_rank_q": 1002,
+          "source_rank_matches_stored_odd": true,
+          "target_rank_matches_stored_odd": true
+        },
+        {
+          "source_mask": 56,
+          "target_mask": 58,
+          "source_aliases": [
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "target_aliases": [
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "added_aliases": [
+            "R1"
+          ],
+          "source_rows": 1769,
+          "added_rows": 827,
+          "added_rows_hash": "cb1693a8df95f68e8c09487406bf8fdbca27a5eca9c9391da9a1217d2e4a6b92",
+          "source_kernel": {
+            "source_rows": 1769,
+            "columns": 1094,
+            "rank_q": 963,
+            "kernel_nullity": 131,
+            "kernel_basis_hash": "f2017ce285bba0f9aaf0e1c7c04b0738ee26c1fa384241b524dd7f28419e2546",
+            "annihilation_from_zero_hnf_rows": true
+          },
+          "relative": {
+            "rows": 827,
+            "columns": 131,
+            "nonzeros": 1477,
+            "max_entry_bits": 3,
+            "matrix_hash": "9bca06d077156ce129dcd8c3d7d96b51751c2139e0f7d4f2c17eb8f074e4ae6d",
+            "rank_q": 17,
+            "ranks": {
+              "2": 16,
+              "3": 17,
+              "5": 17
+            },
+            "unit_invariant_count": 16,
+            "torsion_invariants": [
+              2
+            ],
+            "free_rank": 810,
+            "smith_diagonal_hash": "aadf5faded07a4efc28bead9b021f001a8dc36ed4ccf1942709144ccf7aa7bca",
+            "rank_from_smith_matches_mod_odd": true,
+            "rank_mod_two_from_smith": true
+          },
+          "relative_artifact": "artifacts\\relative-p8-m56-m58.json",
+          "relative_artifact_sha256": "0f92c7337037be3efaed30bcd551c80d9c63b8eb4a283a3d369e60b9fbc594b0",
+          "relative_artifact_internal_hash": "43bebd6fd877e3170cee158de8272ac9da9fa1de3aad8aefd811842defd1424b",
+          "exact_target_rank_q": 980,
+          "source_rank_matches_stored_odd": true,
+          "target_rank_matches_stored_odd": true
+        }
+      ]
+    },
+    {
+      "p": 9,
+      "source_matrix_sha256": "00c20e30d81861a599448535c2ecc7625b56b1951fe863e64d40ce6f56ff218c",
+      "inclusions": [
+        {
+          "source_mask": 58,
+          "target_mask": 59,
+          "source_aliases": [
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "target_aliases": [
+            "R0",
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "added_aliases": [
+            "R0"
+          ],
+          "source_rows": 4653,
+          "added_rows": 36,
+          "added_rows_hash": "abd0c917e7b36d5785575515370d99b3ef09e5cb71b678fda06698a8a1cad01e",
+          "source_kernel": {
+            "source_rows": 4653,
+            "columns": 1729,
+            "rank_q": 1581,
+            "kernel_nullity": 148,
+            "kernel_basis_hash": "da560ecc3350a1275914437e56a1d4f1ed06a46663f4119a72867b60a9fe7e22",
+            "annihilation_from_zero_hnf_rows": true
+          },
+          "relative": {
+            "rows": 36,
+            "columns": 148,
+            "nonzeros": 545,
+            "max_entry_bits": 3,
+            "matrix_hash": "982b8551fca31cf006e4e13ebca729fdde5d2664257f6c6ed8828af74d19d688",
+            "rank_q": 15,
+            "ranks": {
+              "2": 13,
+              "3": 15,
+              "5": 15
+            },
+            "unit_invariant_count": 13,
+            "torsion_invariants": [
+              2,
+              2
+            ],
+            "free_rank": 21,
+            "smith_diagonal_hash": "d7c96dd84c7cffc0cda5c46d065e1155c5188a98fc97cf3f4c46d1ebdef0e07a",
+            "rank_from_smith_matches_mod_odd": true,
+            "rank_mod_two_from_smith": true
+          },
+          "relative_artifact": "artifacts\\relative-p9-m58-m59.json",
+          "relative_artifact_sha256": "cd5b68c70394111f236ae57eaaa05b504f37075e0cce16e0be86f83dbb816a74",
+          "relative_artifact_internal_hash": "eb29d580eee650dfe7529aa589d73d077826977af7efc2fabb8c4c938b78d541",
+          "exact_target_rank_q": 1596,
+          "source_rank_matches_stored_odd": true,
+          "target_rank_matches_stored_odd": true
+        },
+        {
+          "source_mask": 58,
+          "target_mask": 62,
+          "source_aliases": [
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "target_aliases": [
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "added_aliases": [
+            "R2"
+          ],
+          "source_rows": 4653,
+          "added_rows": 68,
+          "added_rows_hash": "6a950853b3052e26b0fcba918c011de40b30e60365fa78019e233d9201e62fb5",
+          "source_kernel": {
+            "source_rows": 4653,
+            "columns": 1729,
+            "rank_q": 1581,
+            "kernel_nullity": 148,
+            "kernel_basis_hash": "da560ecc3350a1275914437e56a1d4f1ed06a46663f4119a72867b60a9fe7e22",
+            "annihilation_from_zero_hnf_rows": true
+          },
+          "relative": {
+            "rows": 68,
+            "columns": 148,
+            "nonzeros": 783,
+            "max_entry_bits": 3,
+            "matrix_hash": "fa75d7ea16c30eb490572d250d819dfc9cec45c8302b57f3fcbcf292e362ddd2",
+            "rank_q": 26,
+            "ranks": {
+              "2": 24,
+              "3": 26,
+              "5": 26
+            },
+            "unit_invariant_count": 24,
+            "torsion_invariants": [
+              2,
+              2
+            ],
+            "free_rank": 42,
+            "smith_diagonal_hash": "33cc5849c900fd462d1106971a4156f4414049bda8d93515cc6745ca6fe4b1b5",
+            "rank_from_smith_matches_mod_odd": true,
+            "rank_mod_two_from_smith": true
+          },
+          "relative_artifact": "artifacts\\relative-p9-m58-m62.json",
+          "relative_artifact_sha256": "7f5ababa3becf7f7dbe4a1bf3d98afd605ff85e3c89d09052fb7881a9f4a292f",
+          "relative_artifact_internal_hash": "87ba7d4904b8a7e05e8072507934c7f888ad46a7c60c6897bcd871b24f578242",
+          "exact_target_rank_q": 1607,
+          "source_rank_matches_stored_odd": true,
+          "target_rank_matches_stored_odd": true
+        },
+        {
+          "source_mask": 56,
+          "target_mask": 58,
+          "source_aliases": [
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "target_aliases": [
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "added_aliases": [
+            "R1"
+          ],
+          "source_rows": 3176,
+          "added_rows": 1477,
+          "added_rows_hash": "79931f94ab1972603f6b34d5a31d207b757dbca782fdb7d88e0e15a082589ae1",
+          "source_kernel": {
+            "source_rows": 3176,
+            "columns": 1729,
+            "rank_q": 1561,
+            "kernel_nullity": 168,
+            "kernel_basis_hash": "57c520121ec9a7d80e1b123e9116e3272e2647b4f1de8a7683dda88f22b9e830",
+            "annihilation_from_zero_hnf_rows": true
+          },
+          "relative": {
+            "rows": 1477,
+            "columns": 168,
+            "nonzeros": 2727,
+            "max_entry_bits": 3,
+            "matrix_hash": "c8323895bf086dc88a01cbe69dcf8649bed94dcd70bae9de9c204e1b17a7c108",
+            "rank_q": 20,
+            "ranks": {
+              "2": 18,
+              "3": 20,
+              "5": 20
+            },
+            "unit_invariant_count": 18,
+            "torsion_invariants": [
+              2,
+              2
+            ],
+            "free_rank": 1457,
+            "smith_diagonal_hash": "f028e983739b2175bb2732fb296eadc3ee86bea30f323b56a315c623fe292791",
+            "rank_from_smith_matches_mod_odd": true,
+            "rank_mod_two_from_smith": true
+          },
+          "relative_artifact": "artifacts\\relative-p9-m56-m58.json",
+          "relative_artifact_sha256": "ee745dade823cfac831bb956d60a11c810024e392df8a08a8459523e513f9fc6",
+          "relative_artifact_internal_hash": "a3f87a2e464a5ccdf92815b7a63829a0a39b52142c68515491bf763ee2f60446",
+          "exact_target_rank_q": 1581,
+          "source_rank_matches_stored_odd": true,
+          "target_rank_matches_stored_odd": true
+        }
+      ]
+    },
+    {
+      "p": 10,
+      "source_matrix_sha256": "c7d6bbf0ec655296a0dafe81ab41ce70300c0fa4a837e5c141f55811e29f6f4d",
+      "inclusions": [
+        {
+          "source_mask": 58,
+          "target_mask": 59,
+          "source_aliases": [
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "target_aliases": [
+            "R0",
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "added_aliases": [
+            "R0"
+          ],
+          "source_rows": 7841,
+          "added_rows": 45,
+          "added_rows_hash": "e0483bb9d40cf33ea00512e718a3e8cac01a976f993f36255cbc987013c4924a",
+          "source_kernel": {
+            "source_rows": 7841,
+            "columns": 2607,
+            "rank_q": 2420,
+            "kernel_nullity": 187,
+            "kernel_basis_hash": "41edc31464113c5517ea790b293b34f0213518738f5037e3b3e5104e40ca88e2",
+            "annihilation_from_zero_hnf_rows": true
+          },
+          "relative": {
+            "rows": 45,
+            "columns": 187,
+            "nonzeros": 786,
+            "max_entry_bits": 3,
+            "matrix_hash": "7e0afa2d12d31745ab1d53d1e454e33149f3fc7c860b1460ec6e070ee9404143",
+            "rank_q": 17,
+            "ranks": {
+              "2": 15,
+              "3": 17,
+              "5": 17
+            },
+            "unit_invariant_count": 15,
+            "torsion_invariants": [
+              2,
+              2
+            ],
+            "free_rank": 28,
+            "smith_diagonal_hash": "fcde1db529c806337a27633084aef4c48502a73eb2e49dce6c3f47bb52880d30",
+            "rank_from_smith_matches_mod_odd": true,
+            "rank_mod_two_from_smith": true
+          },
+          "relative_artifact": "artifacts\\relative-p10-m58-m59.json",
+          "relative_artifact_sha256": "94aff85d6b9735555a4205609149750bebea387f066259e7e289cc6873d59437",
+          "relative_artifact_internal_hash": "07432d3454b056287d3ffbba71126603bf783d6d8b8969b9cf75280ebe6cb4d8",
+          "exact_target_rank_q": 2437,
+          "source_rank_matches_stored_odd": true,
+          "target_rank_matches_stored_odd": true
+        },
+        {
+          "source_mask": 58,
+          "target_mask": 62,
+          "source_aliases": [
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "target_aliases": [
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "added_aliases": [
+            "R2"
+          ],
+          "source_rows": 7841,
+          "added_rows": 87,
+          "added_rows_hash": "0ed8ae29c676dc87f3898b8febeb090b875920417dd960514a09ab59b5b1d48e",
+          "source_kernel": {
+            "source_rows": 7841,
+            "columns": 2607,
+            "rank_q": 2420,
+            "kernel_nullity": 187,
+            "kernel_basis_hash": "41edc31464113c5517ea790b293b34f0213518738f5037e3b3e5104e40ca88e2",
+            "annihilation_from_zero_hnf_rows": true
+          },
+          "relative": {
+            "rows": 87,
+            "columns": 187,
+            "nonzeros": 1142,
+            "max_entry_bits": 3,
+            "matrix_hash": "0698f960acef922f5578ce43e27172b3bfdb2dd0304277a325b49cbcead0bd7b",
+            "rank_q": 30,
+            "ranks": {
+              "2": 28,
+              "3": 30,
+              "5": 30
+            },
+            "unit_invariant_count": 28,
+            "torsion_invariants": [
+              2,
+              2
+            ],
+            "free_rank": 57,
+            "smith_diagonal_hash": "d3592f2b4cc6038d7e89a584da6744c968d58dbd02d8f499f571581fa2ad1e97",
+            "rank_from_smith_matches_mod_odd": true,
+            "rank_mod_two_from_smith": true
+          },
+          "relative_artifact": "artifacts\\relative-p10-m58-m62.json",
+          "relative_artifact_sha256": "fd6c2966e92adc3308e9dee5aface95270d24f9ac6817526021a1780221d45d2",
+          "relative_artifact_internal_hash": "79f1d9eaad8fc5ae304695eac75415089a7c440e7a05c5dfa9dc071027306f2d",
+          "exact_target_rank_q": 2450,
+          "source_rank_matches_stored_odd": true,
+          "target_rank_matches_stored_odd": true
+        },
+        {
+          "source_mask": 56,
+          "target_mask": 58,
+          "source_aliases": [
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "target_aliases": [
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "added_aliases": [
+            "R1"
+          ],
+          "source_rows": 5354,
+          "added_rows": 2487,
+          "added_rows_hash": "e3554abf962b5e7e6686fbffe77e6a49786326e9a4d06aedda2852c6c45244a2",
+          "source_kernel": {
+            "source_rows": 5354,
+            "columns": 2607,
+            "rank_q": 2397,
+            "kernel_nullity": 210,
+            "kernel_basis_hash": "5dedc0c80e680826c12f1634e30b67db23fb97a7281802e0885380e279b3c4b9",
+            "annihilation_from_zero_hnf_rows": true
+          },
+          "relative": {
+            "rows": 2487,
+            "columns": 210,
+            "nonzeros": 4600,
+            "max_entry_bits": 3,
+            "matrix_hash": "81af889384542ec584df025c1f931a45cecad2126465ae0892688d9bb2e637db",
+            "rank_q": 23,
+            "ranks": {
+              "2": 20,
+              "3": 23,
+              "5": 23
+            },
+            "unit_invariant_count": 20,
+            "torsion_invariants": [
+              2,
+              2,
+              2
+            ],
+            "free_rank": 2464,
+            "smith_diagonal_hash": "eefbfb266d7735f20a9071a5070b7fcc9cb57c4c151cf6b007b96249b0528c33",
+            "rank_from_smith_matches_mod_odd": true,
+            "rank_mod_two_from_smith": true
+          },
+          "relative_artifact": "artifacts\\relative-p10-m56-m58.json",
+          "relative_artifact_sha256": "79ac4ee7f9ab0e6bdeb7e3ea922fe4c8dd627f01ce6d4f4b4b2e2c981a4f6d59",
+          "relative_artifact_internal_hash": "7d8d23848f2bb9b13fa59fbcd6766ea64bf99411c3826ff27d92a819f4330dc2",
+          "exact_target_rank_q": 2420,
+          "source_rank_matches_stored_odd": true,
+          "target_rank_matches_stored_odd": true
+        }
+      ]
+    },
+    {
+      "p": 11,
+      "source_matrix_sha256": "69e8519a3b239ec90c3b5af526f806a9a0aabf003517ea28233167d7e2b68dd9",
+      "inclusions": [
+        {
+          "source_mask": 58,
+          "target_mask": 59,
+          "source_aliases": [
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "target_aliases": [
+            "R0",
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "added_aliases": [
+            "R0"
+          ],
+          "source_rows": 12548,
+          "added_rows": 55,
+          "added_rows_hash": "1ccf874dbd4d8a127afa59eaf92fd3ebe039ba027f4e50bef809289ede8f0bb2",
+          "source_kernel": {
+            "source_rows": 12548,
+            "columns": 3785,
+            "rank_q": 3552,
+            "kernel_nullity": 233,
+            "kernel_basis_hash": "98ff972cc4baeea545760b7a0191cec5bd30fdc482ef808ca20200728fa9fb56",
+            "annihilation_from_zero_hnf_rows": true
+          },
+          "relative": {
+            "rows": 55,
+            "columns": 233,
+            "nonzeros": 1085,
+            "max_entry_bits": 3,
+            "matrix_hash": "782c467c51f1428dfa7aa5a07a9bcc1cebe24346dad4f5f6324c84f44e029eb2",
+            "rank_q": 19,
+            "ranks": {
+              "2": 17,
+              "3": 19,
+              "5": 19
+            },
+            "unit_invariant_count": 17,
+            "torsion_invariants": [
+              2,
+              2
+            ],
+            "free_rank": 36,
+            "smith_diagonal_hash": "76839ce35b115626ff0b9bff970d72a9b9e8335a9abff5c0288e5ec2792313e0",
+            "rank_from_smith_matches_mod_odd": true,
+            "rank_mod_two_from_smith": true
+          },
+          "relative_artifact": "artifacts\\relative-p11-m58-m59.json",
+          "relative_artifact_sha256": "e4e575fedf398c5b4c596431ffeabf35952785416a437046ea110050a2e39765",
+          "relative_artifact_internal_hash": "3d7e621dada07c49535381d5cfdc8b3e6786ab3b145b263291bdb960a9805210",
+          "exact_target_rank_q": 3571,
+          "source_rank_matches_stored_odd": true,
+          "target_rank_matches_stored_odd": true
+        },
+        {
+          "source_mask": 58,
+          "target_mask": 62,
+          "source_aliases": [
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "target_aliases": [
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "added_aliases": [
+            "R2"
+          ],
+          "source_rows": 12548,
+          "added_rows": 108,
+          "added_rows_hash": "b526e2b9812680df242b11f91b0d6f49a25583c2481e3a207ac49e8b621a8c79",
+          "source_kernel": {
+            "source_rows": 12548,
+            "columns": 3785,
+            "rank_q": 3552,
+            "kernel_nullity": 233,
+            "kernel_basis_hash": "98ff972cc4baeea545760b7a0191cec5bd30fdc482ef808ca20200728fa9fb56",
+            "annihilation_from_zero_hnf_rows": true
+          },
+          "relative": {
+            "rows": 108,
+            "columns": 233,
+            "nonzeros": 1600,
+            "max_entry_bits": 3,
+            "matrix_hash": "b7217b3e8d9ec0a6794990e1572ff611e7e630cfbde4edc1e1c3da626d4f8b61",
+            "rank_q": 34,
+            "ranks": {
+              "2": 32,
+              "3": 34,
+              "5": 34
+            },
+            "unit_invariant_count": 32,
+            "torsion_invariants": [
+              2,
+              2
+            ],
+            "free_rank": 74,
+            "smith_diagonal_hash": "8ee26737b3517982da8e243bfdb7e93f90ab1e7769f940f61ddd5e4d37679c07",
+            "rank_from_smith_matches_mod_odd": true,
+            "rank_mod_two_from_smith": true
+          },
+          "relative_artifact": "artifacts\\relative-p11-m58-m62.json",
+          "relative_artifact_sha256": "79b35ce1f4f7e556a33ee295618564179ef3e11d09ec624dd6f93342114ee4e2",
+          "relative_artifact_internal_hash": "417582f27794d8723930f7968c4a377e42b07f0f342540296fb0278dff03e0f2",
+          "exact_target_rank_q": 3586,
+          "source_rank_matches_stored_odd": true,
+          "target_rank_matches_stored_odd": true
+        },
+        {
+          "source_mask": 56,
+          "target_mask": 58,
+          "source_aliases": [
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "target_aliases": [
+            "R1",
+            "R3",
+            "R4",
+            "R5"
+          ],
+          "added_aliases": [
+            "R1"
+          ],
+          "source_rows": 8580,
+          "added_rows": 3968,
+          "added_rows_hash": "40387329e6f670c79e38dcba9c9a5ae7fc460692435c1c57c52ee6f6ecf45411",
+          "source_kernel": {
+            "source_rows": 8580,
+            "columns": 3785,
+            "rank_q": 3526,
+            "kernel_nullity": 259,
+            "kernel_basis_hash": "e683ebb2a1a31c87f9227bb9de0d5526378bb87df442432efe074df1c260d36b",
+            "annihilation_from_zero_hnf_rows": true
+          },
+          "relative": {
+            "rows": 3968,
+            "columns": 259,
+            "nonzeros": 7025,
+            "max_entry_bits": 3,
+            "matrix_hash": "d85c6bb74a7b7293c093eb278ee635371be1d033f73802832a70d45d79774e86",
+            "rank_q": 26,
+            "ranks": {
+              "2": 22,
+              "3": 26,
+              "5": 26
+            },
+            "unit_invariant_count": 22,
+            "torsion_invariants": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "free_rank": 3942,
+            "smith_diagonal_hash": "0b24914115c80feccb01df057a859cf7deb124ef5ff13b8f6397835bd51d0200",
+            "rank_from_smith_matches_mod_odd": true,
+            "rank_mod_two_from_smith": true
+          },
+          "relative_artifact": "artifacts\\relative-p11-m56-m58.json",
+          "relative_artifact_sha256": "3e87286d14ad6ce596ee5646cf420db8c1d4f195109d68e514f4110cdcdb7600",
+          "relative_artifact_internal_hash": "e1e340b57c592b71a253658e02cd55131ee07f39e9ffa12994cfd98b9390f7cd",
+          "exact_target_rank_q": 3552,
+          "source_rank_matches_stored_odd": true,
+          "target_rank_matches_stored_odd": true
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 1799.3429999999935,
+  "p1_status": "PASS_FINITE",
+  "p2_status": "PASS_FINITE",
+  "p3_status": "PASS_FINITE",
+  "artifact_hash": "39c5e45402b8afc905384f86b4df3dcdd64634a3a8168bea92e84d2bf5051f11"
+}
