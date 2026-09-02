@@ -434,11 +434,11 @@ def main() -> int:
                 "p2_status": result["p2_status"],
                 "p3_status": result["p3_status"],
                 "torsion": {
-                    f"p{p}_{source}_{target}": records_by_key[p, source, target][
+                    f"p{row['p']}_{record['source_mask']}_{record['target_mask']}": record[
                         "relative"
                     ]["torsion_invariants"]
-                    for p in range(8, 12)
-                    for source, target in INCLUSIONS
+                    for row in result["rows"]
+                    for record in row["inclusions"]
                 },
                 "elapsed_seconds": result["elapsed_seconds"],
                 "artifact_hash": result["artifact_hash"],
