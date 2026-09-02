@@ -145,8 +145,10 @@
 | 2026-08-31 | refuted | active | EXP-045 declared for HWB-071: enumerate the complete six-row-atom subset lattice and extract stable minimal Bockstein carriers |
 | 2026-08-31 | active | refuted | EXP-045 refutes all declared predictions but proves a stable full-carrier antichain `{59,62}`; core mask `58` has ranks `1,2,3,5` and either completion adds exactly two |
 | 2026-09-02 | refuted | active | EXP-046 declared for HWB-072: exact unit-leaf cores test whether the stable constant-two carrier completion separates from mask `58` and whether the mask-56 threshold is an isolated component |
+| 2026-09-02 | active | refuted | EXP-046 refutes the leaf mechanism: masks `59` and `62` have zero cancellations and all sixteen residuals have one connected core; P3 retains the mask-56 threshold inside persistent semantic support |
+| 2026-09-02 | refuted | active | HWB-073 redirects to certified fill-producing relative integer presentations for `58->59`, `58->62`, and the separate `56->58` threshold |
 
-Current state: **EXP-043 and EXP-042 are confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
+Current state: **EXP-046 is refuted overall with P3 retained; EXP-043 and EXP-042 are confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
 inconclusive with two finite passes; EXP-037 is refuted; EXP-036 remains confirmed with structural
 propagation unresolved.** The complete `(10,2)` block has surviving dimensions
 `4240` over `GF(2)` and `4168` over both `GF(3)` and `GF(5)`, so `e_10=72`; this refutes the
@@ -167,6 +169,9 @@ uniform integral matching is claimed.
 EXP-045 completes that finite lattice: minimal full carriers are `59` and `62` throughout, while
 the minimal nonzero carrier changes from `58` to `56` at `p=11`. The next proof gate is the
 relative integral equivalence of the two stable completions and the separate threshold quotient.
+EXP-046 proves that unit-leaf peeling cannot supply it: both full carriers have zero cancellations,
+every tested residual stays connected, and the mask-56 threshold occurs in unchanged semantic
+support. HWB-073 therefore requires fill-producing certified integer elimination.
 The cubic-source gap is at least `3(p-1)^2` for all `p>=4`, `2<=t<=p-2`, so the exact
 `A_p` and `C_p` values agree throughout this family.  HWB-061 remains active for an infinite
 connecting-parity theorem. HWB-062 is done: the 53-page v0.23 is public and fresh-download

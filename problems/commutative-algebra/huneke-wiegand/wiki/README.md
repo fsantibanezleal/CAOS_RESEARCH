@@ -719,3 +719,10 @@ EXP-046 is declared to compute the exact unit-leaf two-cores of those four masks
 the constant-two completion separates into two defect-one components and whether the new mask-56
 class at `p=11` is isolated. The arithmetic-matroid viewpoint organizes deletion and contraction;
 the certificate still has to come from integral reductions of the CAOS matrices.
+
+EXP-046 closes that elementary route negatively. Both minimal full carriers have zero unit-leaf
+cancellations for `p=8,...,11`, and every tested residual has one connected nonzero component.
+The full defect therefore cannot be decomposed by existing degree-one pivots. Mask `56` has
+defects `0,0,0,1` under one persistent semantic atom-set support, locating the `p=11` change in
+the signed ranks rather than in a new atom. The next route is a certified fraction-free relative
+integer reduction that creates fill and isolates the parity quotient.

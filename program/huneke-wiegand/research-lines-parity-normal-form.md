@@ -1,6 +1,6 @@
 # Parity-normal-form research lines
 
-Updated: 2026-08-31. Scope: unresolved all-parameter characteristic-two connecting quotient in
+Updated: 2026-09-02. Scope: unresolved all-parameter characteristic-two connecting quotient in
 the EXP-009 family. The broad Huneke--Wiegand conjecture is already false and is not the target.
 
 ## Solvability assessment
@@ -69,7 +69,7 @@ completion adds exactly two. The `p=11` minimal nonzero carrier drops to `56`, e
 threshold class. The highest-value action is now an integral relative comparison of the two
 alternative completions, not another global rank or coefficient sweep.
 
-### Arithmetic deletion-contraction refinement - active companion
+### Arithmetic deletion-contraction refinement - completed leaf gate
 
 Fink and Moci's matroids-over-rings framework records quotient modules, torsion, deletion,
 contraction, and base change for integral vector configurations. The CAOS row masks are grouped
@@ -85,8 +85,26 @@ Applied to the finite carrier table, the contraction-rank increments are
 
 at every tested parameter. Both expose the same defect-two completion despite different ambient
 ranks. EXP-046 tests the cheapest integral explanation: unit-leaf cancellation followed by
-component decomposition. Signed Hermite reduction is deferred until the residual core size is
-known.
+component decomposition.
+
+That explanation is now refuted. All sixteen tested projections leave one connected nonzero core;
+masks `59` and `62` have zero unit-leaf cancellations, so their defect-two increments cannot be
+peeled off as separate blocks. Mask `56` changes from defect zero to one at `p=11` without changing
+its semantic atom-set support. The active route must therefore create fill through certified
+integer operations rather than search for existing leaves.
+
+### Fill-producing relative presentation - active
+
+For a row inclusion `S subset T`, use the exact cokernel sequence induced by
+`M_p(S) -> M_p(T)` to present the relative quotient after eliminating free directions. The finite
+rank increments are different for `R0` and `R2`, but both parity increments are two. The immediate
+test is whether fraction-free signed Hermite elimination produces a bounded parity presentation
+with equivalent mod-two and Bockstein data for `58->59` and `58->62`.
+
+The certificate must record every integral pivot and permutation, preserve the source hashes, and
+recompose ranks over at least three fields. If the residual parity matrix grows with `p`, the next
+fallback is a filtered relative squarefree-divisor complex with explicit chain maps. A field-only
+Schur complement is diagnostic and cannot establish the integral claim.
 
 ### 2. Relative squarefree-divisor homology - structural fallback
 

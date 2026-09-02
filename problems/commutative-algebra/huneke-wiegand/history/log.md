@@ -1685,3 +1685,17 @@
   separates into two defect-one components and whether mask `56` isolates the new `p=11` class.
 - Full Smith computation and further coefficients remain demoted until the integral critical-core
   sizes and component signatures are known.
+
+## 2026-09-02 - EXP-046 refutes leaf compression and preserves the threshold
+
+- P1 is refuted: masks `59` and `62` admit zero unit-leaf cancellations at every tested parameter.
+  Masks `56` and `58` shrink only at their boundary, not to bounded critical complexes.
+- P2 is refuted: every one of the sixteen residuals is a single connected nonzero component, so
+  the constant-two completion never separates into two defect-one blocks.
+- P3 passes finitely. Mask `56` has defect sequence `0,0,0,1`, and its normalized row aliases and
+  column-atom set are unchanged through `p=11`; the threshold is internal sign/rank behavior.
+- Forward and reverse reductions recompose every three-field rank and Bockstein. A separately
+  implemented maximum-index column-first audit passes all 214 checks.
+- HWB-072 is done. HWB-073 redirects to fill-producing relative integer presentations for
+  `58->59`, `58->62`, and separately `56->58`. The finite negative result does not trigger a
+  manuscript or Zenodo update.

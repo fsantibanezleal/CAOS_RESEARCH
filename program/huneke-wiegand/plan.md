@@ -1363,3 +1363,16 @@ EXP-046 is declared before those cores are computed. It predicts that masks `59`
 their constant completion defect into two defect-one residual components beyond the mask-58 core,
 and that mask `56` has one isolated defect-one component only at `p=11`. Opposite peeling orders,
 three exact fields, first Bocksteins, signed hashes, and explicit resource gates are mandatory.
+
+EXP-046 refutes the proposed leaf mechanism. Every tested residual has one connected nonzero
+component, and the minimal full carriers `59` and `62` admit zero unit-leaf cancellations at every
+parameter. Their defect partitions are the singletons `3,4,5,7`, not the mask-58 defect plus two
+defect-one blocks. Mask `56` does pass its finite threshold test: defects are `0,0,0,1`, while its
+normalized row and column atom support is unchanged.
+
+All 214 independent opposite-priority audit checks pass. HWB-072 is done and HWB-073 redirects to
+a fill-producing reduction. Construct the exact relative cokernel presentations for `58->59` and
+`58->62`; eliminate free directions by fraction-free signed Hermite or certified Schur-complement
+operations; then compare the residual parity quotients. Treat `56->58` separately because its
+threshold is a rank event inside persistent support. No manuscript or Zenodo gate opens from this
+finite obstruction.

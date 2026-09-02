@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-09-02. Lifecycle: EXP-046 is DECLARED; EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
+Updated: 2026-09-02. Lifecycle: EXP-046 is REFUTED overall with P3 retained; EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
 with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
@@ -24,6 +24,11 @@ rational-rank upper certificates and closes their complete 2-primary types as
 `D:B` and `K:C0` are necessary row-projection interfaces, but their union has Bockstein zero.
 EXP-045 exhausts the six-row-atom lattice: minimal full carriers are stably masks `59` and `62`,
 their intersection mask `58` has ranks `1,2,3,5`, and either completion adds exactly two. For every
+tested parameter, EXP-046 leaves each carrier in one connected nonzero unit core; masks `59` and
+`62` have zero unit-leaf cancellations. Mask `56` has defects `0,0,0,1` in unchanged semantic
+support, so the `p=11` threshold is internal sign/rank behavior. HWB-073 now owns a certified
+fill-producing relative integer presentation.
+For every
 `p>=4` and
 `2<=t<=p-2`, the shifted cubic source is absent
 by the positive gap `g(p,t)>=3(p-1)^2`, so every future exact `A_p` value at these targets
@@ -381,7 +386,7 @@ campaign is supporting evidence, not the proof.
 | EXP-043 | CONFIRMED FINITELY | audited modular Hadamard certificates prove rational ranks `1002,1607,2450,3586` and complete isolated 2-primary types `(Z/2)^(3,4,5,7)` |
 | EXP-044 | REFUTED; P1/P3 PASS | deleting either marked atom kills the Bockstein, but their union also has Bockstein zero; a larger signed circuit is essential |
 | EXP-045 | REFUTED WITH STRUCTURAL REDIRECT | exhaustive 256-projection lattice gives stable minimal full carriers `59,62`, core ranks `1,2,3,5`, constant completion two, and a `p=11` threshold at mask `56` |
-| EXP-046 | DECLARED | exact unit-leaf cores test whether the two alternative completions split into common defect-one blocks and whether mask `56` isolates the `p=11` threshold |
+| EXP-046 | REFUTED; P3 PASSES FINITELY | both minimal full carriers have zero unit-leaf cancellations; every residual is one connected core; mask `56` changes defect inside persistent semantic support |
 
 ## 3a. Exact evidence anchors
 
@@ -486,10 +491,15 @@ campaign is supporting evidence, not the proof.
 - EXP-045 primary SHA-256:
   `569220667e9d82f0806ea96cb8f60c49e94cb6317817170c39f2e574e619bcb8`; audit certificate
   external SHA-256 `a1a5bc105ecb7171970dd9b0b8daf4d823190a56b9a0f8e1e64a59479dcac3dd`.
+- EXP-046 primary SHA-256:
+  `1e78f650ef041eb1f45b4e979ea90a78709ef59ff443e57613edbc9cc6ea15b0`; audit certificate
+  external SHA-256 `cae21dd006af047179242b9e5c60b3022c344953da3d57b62f826e4c682ab35a`.
 
 ## 4. In flight
 
-EXP-046 is DECLARED for HWB-072. EXP-045 is REFUTED with a stable full-carrier antichain retained.
+EXP-046 is REFUTED overall with P3 retained, and HWB-072 is done. Masks `59` and `62` have no
+unit leaves and all tested residuals have one connected core. HWB-073 owns the fill-producing
+relative integer comparison. EXP-045 is REFUTED with a stable full-carrier antichain retained.
 EXP-044 is REFUTED overall with P1/P3 retained. EXP-043 is CONFIRMED finitely and closes HWB-070.
 EXP-042 is CONFIRMED finitely and advances HWB-069; HWB-071/HWB-072 own the relative integral
 completion problem.
@@ -840,11 +850,11 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Implement and audit EXP-046. Compute unit-leaf cores for masks `56,58,59,62` and compare their
-   torsion-component partitions under opposite peeling orders.
-2. Use the residual blocks to test the alternative completions and isolate `56->58` at `p=11`,
-   then construct a uniform integral matching
-   and explicit parameter maps before claiming OI/FI stability.
+1. Declare and implement the fill-producing relative-presentation gate for `58->59` and
+   `58->62`. Eliminate their different free directions with certified integer operations and
+   compare the resulting parity quotients.
+2. Treat `56->58` separately: identify the signed rank event that first creates a class at `p=11`,
+   then construct explicit parameter maps before claiming OI/FI stability.
 3. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
    a signed core; keep this separate from the connecting-only `t=2` mechanism.
 4. Open a separate manuscript only after a complete strand, an infinite connecting theorem, or a
@@ -925,8 +935,12 @@ Published baseline:
   and constant completion two. Relative integral presentations, not further global ranks, are now
   the active finite proof gate.
 - Arithmetic deletion-contraction: matroids over rings provide a module-valued vocabulary for the
-  row-subset lattice. EXP-046 applies the cheaper integral unit-core invariant first; no uniform
-  matroid-over-rings structure is claimed.
+  row-subset lattice. EXP-046 refutes the cheaper unit-core mechanism: the minimal full carriers
+  have no leaves and all residuals stay connected. No uniform matroid-over-rings structure is
+  claimed.
+- Fill-producing relative reduction: HWB-073 must use certified fraction-free Hermite or
+  Schur-complement operations to remove free directions and expose the two parity classes. A
+  field-only reduction is diagnostic, not an integral proof.
 
 ## 7. Gotchas
 
