@@ -1,0 +1,453 @@
+{
+  "experiment": "EXP-046",
+  "status": "PASS",
+  "audit_route": "independent low-pivot ranks and Bockstein with maximum-index column-first unit peeling",
+  "artifact_hashes": {
+    "run": "60d003d158349ef29cfd7cec476cad83e0af8871bc09d385b1284f62a651b14a",
+    "results": "1e78f650ef041eb1f45b4e979ea90a78709ef59ff443e57613edbc9cc6ea15b0",
+    "exp045_results": "569220667e9d82f0806ea96cb8f60c49e94cb6317817170c39f2e574e619bcb8",
+    "matrices": {
+      "8": "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
+      "9": "00c20e30d81861a599448535c2ecc7625b56b1951fe863e64d40ce6f56ff218c",
+      "10": "c7d6bbf0ec655296a0dafe81ab41ce70300c0fa4a837e5c141f55811e29f6f4d",
+      "11": "69e8519a3b239ec90c3b5af526f806a9a0aabf003517ea28233167d7e2b68dd9"
+    }
+  },
+  "checks": {
+    "run_hash": true,
+    "results_external_hash": true,
+    "results_internal_hash": true,
+    "exp045_hash": true,
+    "parameter_coverage": true,
+    "primary_complete": true,
+    "declared_statuses": true,
+    "atom_aliases": true,
+    "p8_matrix_hash": true,
+    "p8_m56_dimensions": true,
+    "p8_m56_nonzeros": true,
+    "p8_m56_cancellations": true,
+    "p8_m56_core_dimensions": true,
+    "p8_m56_free_zero": true,
+    "p8_m56_component_summary": true,
+    "p8_m56_semantic_supports": true,
+    "p8_m56_defects": true,
+    "p8_m56_recompose_ranks": true,
+    "p8_m56_recompose_beta": true,
+    "p8_m56_single_core": true,
+    "p8_m56_component_rank_checks": true,
+    "p8_m58_dimensions": true,
+    "p8_m58_nonzeros": true,
+    "p8_m58_cancellations": true,
+    "p8_m58_core_dimensions": true,
+    "p8_m58_free_zero": true,
+    "p8_m58_component_summary": true,
+    "p8_m58_semantic_supports": true,
+    "p8_m58_defects": true,
+    "p8_m58_recompose_ranks": true,
+    "p8_m58_recompose_beta": true,
+    "p8_m58_single_core": true,
+    "p8_m58_component_rank_checks": true,
+    "p8_m59_dimensions": true,
+    "p8_m59_nonzeros": true,
+    "p8_m59_cancellations": true,
+    "p8_m59_core_dimensions": true,
+    "p8_m59_free_zero": true,
+    "p8_m59_component_summary": true,
+    "p8_m59_semantic_supports": true,
+    "p8_m59_defects": true,
+    "p8_m59_recompose_ranks": true,
+    "p8_m59_recompose_beta": true,
+    "p8_m59_single_core": true,
+    "p8_m59_component_rank_checks": true,
+    "p8_m59_no_leaf_cancellation": true,
+    "p8_m62_dimensions": true,
+    "p8_m62_nonzeros": true,
+    "p8_m62_cancellations": true,
+    "p8_m62_core_dimensions": true,
+    "p8_m62_free_zero": true,
+    "p8_m62_component_summary": true,
+    "p8_m62_semantic_supports": true,
+    "p8_m62_defects": true,
+    "p8_m62_recompose_ranks": true,
+    "p8_m62_recompose_beta": true,
+    "p8_m62_single_core": true,
+    "p8_m62_component_rank_checks": true,
+    "p8_m62_no_leaf_cancellation": true,
+    "p9_matrix_hash": true,
+    "p9_m56_dimensions": true,
+    "p9_m56_nonzeros": true,
+    "p9_m56_cancellations": true,
+    "p9_m56_core_dimensions": true,
+    "p9_m56_free_zero": true,
+    "p9_m56_component_summary": true,
+    "p9_m56_semantic_supports": true,
+    "p9_m56_defects": true,
+    "p9_m56_recompose_ranks": true,
+    "p9_m56_recompose_beta": true,
+    "p9_m56_single_core": true,
+    "p9_m56_component_rank_checks": true,
+    "p9_m58_dimensions": true,
+    "p9_m58_nonzeros": true,
+    "p9_m58_cancellations": true,
+    "p9_m58_core_dimensions": true,
+    "p9_m58_free_zero": true,
+    "p9_m58_component_summary": true,
+    "p9_m58_semantic_supports": true,
+    "p9_m58_defects": true,
+    "p9_m58_recompose_ranks": true,
+    "p9_m58_recompose_beta": true,
+    "p9_m58_single_core": true,
+    "p9_m58_component_rank_checks": true,
+    "p9_m59_dimensions": true,
+    "p9_m59_nonzeros": true,
+    "p9_m59_cancellations": true,
+    "p9_m59_core_dimensions": true,
+    "p9_m59_free_zero": true,
+    "p9_m59_component_summary": true,
+    "p9_m59_semantic_supports": true,
+    "p9_m59_defects": true,
+    "p9_m59_recompose_ranks": true,
+    "p9_m59_recompose_beta": true,
+    "p9_m59_single_core": true,
+    "p9_m59_component_rank_checks": true,
+    "p9_m59_no_leaf_cancellation": true,
+    "p9_m62_dimensions": true,
+    "p9_m62_nonzeros": true,
+    "p9_m62_cancellations": true,
+    "p9_m62_core_dimensions": true,
+    "p9_m62_free_zero": true,
+    "p9_m62_component_summary": true,
+    "p9_m62_semantic_supports": true,
+    "p9_m62_defects": true,
+    "p9_m62_recompose_ranks": true,
+    "p9_m62_recompose_beta": true,
+    "p9_m62_single_core": true,
+    "p9_m62_component_rank_checks": true,
+    "p9_m62_no_leaf_cancellation": true,
+    "p10_matrix_hash": true,
+    "p10_m56_dimensions": true,
+    "p10_m56_nonzeros": true,
+    "p10_m56_cancellations": true,
+    "p10_m56_core_dimensions": true,
+    "p10_m56_free_zero": true,
+    "p10_m56_component_summary": true,
+    "p10_m56_semantic_supports": true,
+    "p10_m56_defects": true,
+    "p10_m56_recompose_ranks": true,
+    "p10_m56_recompose_beta": true,
+    "p10_m56_single_core": true,
+    "p10_m56_component_rank_checks": true,
+    "p10_m58_dimensions": true,
+    "p10_m58_nonzeros": true,
+    "p10_m58_cancellations": true,
+    "p10_m58_core_dimensions": true,
+    "p10_m58_free_zero": true,
+    "p10_m58_component_summary": true,
+    "p10_m58_semantic_supports": true,
+    "p10_m58_defects": true,
+    "p10_m58_recompose_ranks": true,
+    "p10_m58_recompose_beta": true,
+    "p10_m58_single_core": true,
+    "p10_m58_component_rank_checks": true,
+    "p10_m59_dimensions": true,
+    "p10_m59_nonzeros": true,
+    "p10_m59_cancellations": true,
+    "p10_m59_core_dimensions": true,
+    "p10_m59_free_zero": true,
+    "p10_m59_component_summary": true,
+    "p10_m59_semantic_supports": true,
+    "p10_m59_defects": true,
+    "p10_m59_recompose_ranks": true,
+    "p10_m59_recompose_beta": true,
+    "p10_m59_single_core": true,
+    "p10_m59_component_rank_checks": true,
+    "p10_m59_no_leaf_cancellation": true,
+    "p10_m62_dimensions": true,
+    "p10_m62_nonzeros": true,
+    "p10_m62_cancellations": true,
+    "p10_m62_core_dimensions": true,
+    "p10_m62_free_zero": true,
+    "p10_m62_component_summary": true,
+    "p10_m62_semantic_supports": true,
+    "p10_m62_defects": true,
+    "p10_m62_recompose_ranks": true,
+    "p10_m62_recompose_beta": true,
+    "p10_m62_single_core": true,
+    "p10_m62_component_rank_checks": true,
+    "p10_m62_no_leaf_cancellation": true,
+    "p11_matrix_hash": true,
+    "p11_m56_dimensions": true,
+    "p11_m56_nonzeros": true,
+    "p11_m56_cancellations": true,
+    "p11_m56_core_dimensions": true,
+    "p11_m56_free_zero": true,
+    "p11_m56_component_summary": true,
+    "p11_m56_semantic_supports": true,
+    "p11_m56_defects": true,
+    "p11_m56_recompose_ranks": true,
+    "p11_m56_recompose_beta": true,
+    "p11_m56_single_core": true,
+    "p11_m56_component_rank_checks": true,
+    "p11_m58_dimensions": true,
+    "p11_m58_nonzeros": true,
+    "p11_m58_cancellations": true,
+    "p11_m58_core_dimensions": true,
+    "p11_m58_free_zero": true,
+    "p11_m58_component_summary": true,
+    "p11_m58_semantic_supports": true,
+    "p11_m58_defects": true,
+    "p11_m58_recompose_ranks": true,
+    "p11_m58_recompose_beta": true,
+    "p11_m58_single_core": true,
+    "p11_m58_component_rank_checks": true,
+    "p11_m59_dimensions": true,
+    "p11_m59_nonzeros": true,
+    "p11_m59_cancellations": true,
+    "p11_m59_core_dimensions": true,
+    "p11_m59_free_zero": true,
+    "p11_m59_component_summary": true,
+    "p11_m59_semantic_supports": true,
+    "p11_m59_defects": true,
+    "p11_m59_recompose_ranks": true,
+    "p11_m59_recompose_beta": true,
+    "p11_m59_single_core": true,
+    "p11_m59_component_rank_checks": true,
+    "p11_m59_no_leaf_cancellation": true,
+    "p11_m62_dimensions": true,
+    "p11_m62_nonzeros": true,
+    "p11_m62_cancellations": true,
+    "p11_m62_core_dimensions": true,
+    "p11_m62_free_zero": true,
+    "p11_m62_component_summary": true,
+    "p11_m62_semantic_supports": true,
+    "p11_m62_defects": true,
+    "p11_m62_recompose_ranks": true,
+    "p11_m62_recompose_beta": true,
+    "p11_m62_single_core": true,
+    "p11_m62_component_rank_checks": true,
+    "p11_m62_no_leaf_cancellation": true,
+    "mask56_persistent_semantic_support": true,
+    "constant_two_completion_defect": true
+  },
+  "rows": [
+    {
+      "p": 8,
+      "masks": {
+        "56": {
+          "cancellations": 74,
+          "core_rows": 1695,
+          "core_columns": 1005,
+          "component_count": 1,
+          "positive_defects": [],
+          "semantic_support_hashes": [
+            "4f85790aeb86884670625d59cfcf7304e39727066cbc9401e64b718178a031f2"
+          ]
+        },
+        "58": {
+          "cancellations": 19,
+          "core_rows": 2577,
+          "core_columns": 1062,
+          "component_count": 1,
+          "positive_defects": [
+            1
+          ],
+          "semantic_support_hashes": [
+            "eff5c4813de49658735c31812e02060f1beab6c2b6c279d567281cb1d1b22971"
+          ]
+        },
+        "59": {
+          "cancellations": 0,
+          "core_rows": 2624,
+          "core_columns": 1085,
+          "component_count": 1,
+          "positive_defects": [
+            3
+          ],
+          "semantic_support_hashes": [
+            "70bdcec9f136656a6eb13980ba1e0224e8396f18b6474aa767fa03a4b310e8cf"
+          ]
+        },
+        "62": {
+          "cancellations": 0,
+          "core_rows": 2647,
+          "core_columns": 1094,
+          "component_count": 1,
+          "positive_defects": [
+            3
+          ],
+          "semantic_support_hashes": [
+            "3b730aae914cdb4877b8fe481bf0f2c823502e699658c93263b33935e9f069fb"
+          ]
+        }
+      }
+    },
+    {
+      "p": 9,
+      "masks": {
+        "56": {
+          "cancellations": 92,
+          "core_rows": 3084,
+          "core_columns": 1620,
+          "component_count": 1,
+          "positive_defects": [],
+          "semantic_support_hashes": [
+            "4f85790aeb86884670625d59cfcf7304e39727066cbc9401e64b718178a031f2"
+          ]
+        },
+        "58": {
+          "cancellations": 21,
+          "core_rows": 4632,
+          "core_columns": 1693,
+          "component_count": 1,
+          "positive_defects": [
+            2
+          ],
+          "semantic_support_hashes": [
+            "eff5c4813de49658735c31812e02060f1beab6c2b6c279d567281cb1d1b22971"
+          ]
+        },
+        "59": {
+          "cancellations": 0,
+          "core_rows": 4689,
+          "core_columns": 1718,
+          "component_count": 1,
+          "positive_defects": [
+            4
+          ],
+          "semantic_support_hashes": [
+            "70bdcec9f136656a6eb13980ba1e0224e8396f18b6474aa767fa03a4b310e8cf"
+          ]
+        },
+        "62": {
+          "cancellations": 0,
+          "core_rows": 4721,
+          "core_columns": 1729,
+          "component_count": 1,
+          "positive_defects": [
+            4
+          ],
+          "semantic_support_hashes": [
+            "3b730aae914cdb4877b8fe481bf0f2c823502e699658c93263b33935e9f069fb"
+          ]
+        }
+      }
+    },
+    {
+      "p": 10,
+      "masks": {
+        "56": {
+          "cancellations": 114,
+          "core_rows": 5240,
+          "core_columns": 2474,
+          "component_count": 1,
+          "positive_defects": [],
+          "semantic_support_hashes": [
+            "4f85790aeb86884670625d59cfcf7304e39727066cbc9401e64b718178a031f2"
+          ]
+        },
+        "58": {
+          "cancellations": 23,
+          "core_rows": 7818,
+          "core_columns": 2567,
+          "component_count": 1,
+          "positive_defects": [
+            3
+          ],
+          "semantic_support_hashes": [
+            "eff5c4813de49658735c31812e02060f1beab6c2b6c279d567281cb1d1b22971"
+          ]
+        },
+        "59": {
+          "cancellations": 0,
+          "core_rows": 7886,
+          "core_columns": 2594,
+          "component_count": 1,
+          "positive_defects": [
+            5
+          ],
+          "semantic_support_hashes": [
+            "70bdcec9f136656a6eb13980ba1e0224e8396f18b6474aa767fa03a4b310e8cf"
+          ]
+        },
+        "62": {
+          "cancellations": 0,
+          "core_rows": 7928,
+          "core_columns": 2607,
+          "component_count": 1,
+          "positive_defects": [
+            5
+          ],
+          "semantic_support_hashes": [
+            "3b730aae914cdb4877b8fe481bf0f2c823502e699658c93263b33935e9f069fb"
+          ]
+        }
+      }
+    },
+    {
+      "p": 11,
+      "masks": {
+        "56": {
+          "cancellations": 141,
+          "core_rows": 8439,
+          "core_columns": 3623,
+          "component_count": 1,
+          "positive_defects": [
+            1
+          ],
+          "semantic_support_hashes": [
+            "4f85790aeb86884670625d59cfcf7304e39727066cbc9401e64b718178a031f2"
+          ]
+        },
+        "58": {
+          "cancellations": 25,
+          "core_rows": 12523,
+          "core_columns": 3741,
+          "component_count": 1,
+          "positive_defects": [
+            5
+          ],
+          "semantic_support_hashes": [
+            "eff5c4813de49658735c31812e02060f1beab6c2b6c279d567281cb1d1b22971"
+          ]
+        },
+        "59": {
+          "cancellations": 0,
+          "core_rows": 12603,
+          "core_columns": 3770,
+          "component_count": 1,
+          "positive_defects": [
+            7
+          ],
+          "semantic_support_hashes": [
+            "70bdcec9f136656a6eb13980ba1e0224e8396f18b6474aa767fa03a4b310e8cf"
+          ]
+        },
+        "62": {
+          "cancellations": 0,
+          "core_rows": 12656,
+          "core_columns": 3785,
+          "component_count": 1,
+          "positive_defects": [
+            7
+          ],
+          "semantic_support_hashes": [
+            "3b730aae914cdb4877b8fe481bf0f2c823502e699658c93263b33935e9f069fb"
+          ]
+        }
+      }
+    }
+  ],
+  "result": {
+    "p1_status": "REFUTED",
+    "p2_status": "REFUTED",
+    "p3_status": "PASS_FINITE",
+    "minimal_full_carriers_have_no_unit_leaf": [
+      59,
+      62
+    ],
+    "all_tested_residuals_have_one_connected_component": true,
+    "mask56_threshold_occurs_in_persistent_semantic_support": true
+  },
+  "scope": "finite p=8,...,11 exact unit-core obstruction; no all-parameter recurrence or Huneke-Wiegand theorem is claimed",
+  "certificate_hash": "d6956bd1e0eefbd20ff3556e598f3fe0a410dfc08b49b83423adad744b076c90"
+}
