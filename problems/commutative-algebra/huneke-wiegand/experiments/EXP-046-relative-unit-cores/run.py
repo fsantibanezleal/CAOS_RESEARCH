@@ -181,7 +181,11 @@ def component_record(
 ) -> dict[str, object]:
     row_map = {original: local for local, original in enumerate(rows)}
     local_columns = [
-        [[row_map[int(row)], int(sign)] for row, sign in original_columns[column]]
+        [
+            [row_map[int(row)], int(sign)]
+            for row, sign in original_columns[column]
+            if int(row) in row_map
+        ]
         for column in columns
     ]
     local_row_atoms = [row_atoms[row] for row in rows]
