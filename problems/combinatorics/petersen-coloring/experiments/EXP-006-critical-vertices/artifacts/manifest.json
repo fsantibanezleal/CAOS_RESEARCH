@@ -1,0 +1,133 @@
+{
+  "edges": {},
+  "experiment": "EXP-006",
+  "free_vertices": {
+    "G52": [
+      1,
+      18,
+      35,
+      51
+    ]
+  },
+  "predictions": {},
+  "reproduction_G52_bound0": {
+    "cnf_sha256": "cab78f29332625d2b93f955845d5289a3e0dc95edc3ee8c68d4c4fc3a298b437",
+    "drat_trim_seconds": 1.416,
+    "drat_trim_tail": "with 1170 variables and 34010 clauses\n\nc finished parsing, read 4094201 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 25507 of 34010 clauses in core                            \n\nc 40307 of 77212 lemmas in core using 1330095 resolution steps\n\nc 0 RAT lemmas in core; 17340 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 1.103 seconds\n",
+    "drat_trim_verified": true,
+    "exit_code": 20,
+    "proof_bytes": 4094201,
+    "proof_sha256": "2776f61ab51997c65a967996374e325340da47bb04a67800de089c256bf82727",
+    "seconds": 1.587,
+    "solver_stderr_tail": "",
+    "solver_stdout_tail": "s UNSATISFIABLE\n",
+    "status": "UNSAT"
+  },
+  "tools": {
+    "cadical": "1.7.3",
+    "drat_trim_banner": [
+      "usage: drat-trim [INPUT] [<PROOF>] [<option> ...]",
+      ""
+    ]
+  },
+  "vertices": {
+    "G52": {
+      "0": {
+        "cnf_sha256": "3077eef10e24aa949fd396370d64656072a02cb210af6d66e873ae52e3d2870a",
+        "critical": false,
+        "proof_sha256": "d914191131fa113f97aafd35187169f4f72878041ef8a9c681734d18bcbb5ed4",
+        "seconds": 1.642,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "1": {
+        "cnf_sha256": "1141139bf78903e6f2cb70c578a94ad885b7c57c1ea91924fffcbf78e14c65da",
+        "critical": false,
+        "proof_sha256": "9d1043020a8940a7f8a6daf4adef9a2d2777993f116e0a76e9bfa0789d0d1cb3",
+        "seconds": 2.817,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "18": {
+        "cnf_sha256": "a206c7e54eed0cb01a9935ad8e9f380934b2e860a40b158c9b98751248e52808",
+        "critical": false,
+        "proof_sha256": "94728ee22822a263df9f411b974f0d73e3aa3344c1013c3fb195019c91a4e780",
+        "seconds": 1.4,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "2": {
+        "cnf_sha256": "0a87a7ad2d1e947ff30f43b0caad6faaf2a0ecb65e6f81ff976900e16b03b1cc",
+        "critical": false,
+        "proof_sha256": "29f45625e3cdf94122d40d729b2470488e0fe9dd405b2cd138f9b2ef66fa7e82",
+        "seconds": 1.815,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "3": {
+        "cnf_sha256": "6361df71e133def3b80725a4257c41688f5cf716425d4ef670c5b658f8d8831a",
+        "critical": false,
+        "proof_sha256": "83142ecdfb9ed7e288f0d8c706186b8954e0c6720c1f01faaa5421fc6cbf4482",
+        "seconds": 4.401,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "35": {
+        "cnf_sha256": "a8bdf2f1d8f6100d3700c8f4e62858bf7fb4a0976c43d12887065ac3a1685110",
+        "critical": false,
+        "proof_sha256": "8a15b62cc2864ed7712408dd344d8a4234f51ee6c5f07beae86e74f742fe2498",
+        "seconds": 1.271,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "4": {
+        "cnf_sha256": "7b5991733a97a4b08e3ca8ce496b8319f4f4b9df7f60edb09487e62d496db400",
+        "critical": false,
+        "proof_sha256": "614f50ddc4bd9785937d3cc273937245d4639266107d24724160db422c10e327",
+        "seconds": 5.35,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "5": {
+        "cnf_sha256": "2a8ee990ac8ed899aba2fb33a346bd96728810cf5b0776946975deb606919992",
+        "critical": false,
+        "proof_sha256": "68d8c09e2dc514d0c13187b77316c20aae8b103564f6d8c879fe1ab061efe597",
+        "seconds": 1.991,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "51": {
+        "cnf_sha256": "36a6ca73f18cf90d57aa75c12034178d72a2b260c755da5db271baa8df5f0abb",
+        "critical": false,
+        "proof_sha256": "57a725ccff189e3382a5017217b3722c0f8792d1c4fde809f023b466ea3237ad",
+        "seconds": 2.554,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "6": {
+        "cnf_sha256": "7f7cf3452284de8eae2e708442b444f8bc40192905520f97236f0613c068ba1c",
+        "critical": false,
+        "proof_sha256": "6e69233e99db4f3026e294cd32198c9144e8ecd4fbdd10f1922ac1f3e8970628",
+        "seconds": 4.108,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "7": {
+        "cnf_sha256": "f7f3928d55745b01d569c3e69134e8151956249045edc8faa1242f70a1706b3e",
+        "critical": false,
+        "proof_sha256": "82ca9fb9ffdf4dda6c6fafb15462246f65cb7ada473078578a22f5a9b92aa64a",
+        "seconds": 2.9,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "8": {
+        "cnf_sha256": "f02efa767f115ff5bda49089d08e7e3ce828813de47273b6182d3ac08891b933",
+        "critical": false,
+        "proof_sha256": "026decabf0f982fa20f990f9f3cd5ef8aa9697496435163cb9e2f0efcac01f9c",
+        "seconds": 3.951,
+        "status": "UNSAT",
+        "verified": true
+      }
+    }
+  }
+}

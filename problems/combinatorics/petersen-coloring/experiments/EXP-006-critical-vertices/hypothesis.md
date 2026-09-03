@@ -68,3 +68,21 @@ CPU only. 10 minutes per Petersen instance, 30 minutes per normal-5 instance; wh
 - REFUTED if every vertex of some graph is non-critical with verified proofs (P-defect at least
   2 for that graph).
 - INCONCLUSIVE if the deciding instances time out.
+
+## Addendum declared 2026-09-03 13:00, before any pair instance ran
+
+The first single-vertex relaxations of `G52` (its four free vertices and the first vertices of
+the copies of `F`) are UNSAT with verified proofs, so P1 is heading to REFUTED: no single vertex
+of `G52` absorbs the obstruction. A new, separately declared question follows, tested by the
+runner `run_pairs.py` after the single sweep completes:
+
+- P6: is the P-defect of `G52` exactly 2? For every unordered pair `{u, v}` of vertices, decide
+  whether an edge map exists whose star condition fails only at `u` and `v` (encoding
+  `petersen_relaxed_vertices` with both pair-constraint sets removed; symmetry breaking on an
+  edge disjoint from both). If some pair is SAT with a checker defect of exactly 2, the
+  P-defect is 2 and the critical pairs are listed; if every pair is UNSAT with verified proofs,
+  the P-defect is at least 3 (and the budget decides whether triples are attempted). Committed
+  expectation: some pair is SAT; the critical pairs are not confined to the free vertices.
+- Budget: 1,326 Petersen instances of `G52` at about 2 to 10 seconds each; cap 10 minutes per
+  instance; whole sweep under 4 hours. The 112-vertex graphs are out of scope for pairs in this
+  round (6,216 instances at about a minute each).
