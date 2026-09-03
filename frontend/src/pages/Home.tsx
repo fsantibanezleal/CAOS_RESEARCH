@@ -61,6 +61,8 @@ export default function Home() {
                     <td>
                       {p.slug === 'jacobian-conjecture' ? (
                         <Link to="/problems/jacobian-conjecture">{p.slug}</Link>
+                      ) : p.slug === 'petersen-coloring' ? (
+                        <Link to="/problems/petersen-coloring">{p.slug}</Link>
                       ) : (
                         p.slug
                       )}
@@ -94,6 +96,8 @@ export default function Home() {
             <span className="prob">
               {e.problem === 'jacobian-conjecture' ? (
                 <Link to="/problems/jacobian-conjecture" className="rs-badge state">{e.problem}</Link>
+              ) : e.problem === 'petersen-coloring' ? (
+                <Link to="/problems/petersen-coloring" className="rs-badge state">{e.problem}</Link>
               ) : (
                 <span className="rs-badge state">{e.problem}</span>
               )}

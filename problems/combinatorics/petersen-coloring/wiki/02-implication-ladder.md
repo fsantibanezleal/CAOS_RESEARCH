@@ -21,6 +21,8 @@ $$
 - 3-edge-colorable cubic graphs have Petersen colorings [V, Open Problem Garden], so the whole
   ladder is about snarks.
 
+![The implication ladder after the disproof](assets/implication-ladder.svg)
+
 ## After the disproof
 
 The top of the ladder is false (Putman 2026; Jooken 2026; Goedgebeur-Jooken-Macajova-Mattiolo-
