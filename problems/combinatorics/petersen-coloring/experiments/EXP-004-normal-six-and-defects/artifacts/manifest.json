@@ -1,0 +1,586 @@
+{
+  "experiment": "EXP-004",
+  "failures": [
+    "P4 G112 normal-5 defect undecided (> 0)",
+    "P5 G112 P-defect undecided (> 0)",
+    "P4 H112 normal-5 defect undecided (> 0)",
+    "P5 H112 P-defect undecided (> 0)",
+    "P4 G52 normal-5 defect undecided (> 0)"
+  ],
+  "heavy_files": {
+    "G112_ndef_0.cnf": {
+      "bytes": 169183,
+      "sha256": "b56570d9dc4abe552d64a0c1bf88835e7099b9684f8f040af1d9668ec0593ea7"
+    },
+    "G112_ndef_0.drat": {
+      "bytes": 717856987,
+      "sha256": "c79ac7fb9dcdd5736cd8ba5df84f31efcf37b1f3e16036ce0cf15c01286bac41"
+    },
+    "G112_ndef_1.cnf": {
+      "bytes": 174519,
+      "sha256": "31a487a32f513f359ece1abbdade74c34ec9e1ba26f1cdf1bc49a017025b1f47"
+    },
+    "G112_ndef_1.drat": {
+      "bytes": 1953574912,
+      "sha256": "7f19ded149c4ff56fd1ed850934c3f75a987867ac3069d6b63d5794927ffd9a9"
+    },
+    "G112_normal6.cnf": {
+      "bytes": 194146,
+      "sha256": "35447bd860ea2b671e7466688fb6ec4db889a97d52cb2df9355a822dad529bc4"
+    },
+    "G112_normal6.drat": {
+      "bytes": 12178,
+      "sha256": "89519892568b06a0c528193383668fda61f241e9d57ed0d90ba4953f261659e8"
+    },
+    "G112_pdef_0.cnf": {
+      "bytes": 1248878,
+      "sha256": "9a1c7489237ad757e87f6f5a3f2a9ac4de217d9d91451a3e7b24527a6f6744f2"
+    },
+    "G112_pdef_0.drat": {
+      "bytes": 563296006,
+      "sha256": "b1ab7282500c7543ceee08783e930033adee8840d5c81f1bef0d4b6f2aa6a28a"
+    },
+    "G112_pdef_1.cnf": {
+      "bytes": 1252435,
+      "sha256": "f92d2b92d0dfb1c47e0ac32538ae27131d7635170e5d5cd75c689ea019468e84"
+    },
+    "G112_pdef_1.drat": {
+      "bytes": 3202306048,
+      "sha256": "9eeb531b8ec10cf713df5aff596dc5def72c8148594b9b5a0faa57177a23f002"
+    },
+    "G112_strong6.cnf": {
+      "bytes": 195322,
+      "sha256": "2813f76600b115eb270881a6dadf0e4eb01d13d97ff1b20474854396a7df3bc9"
+    },
+    "G112_strong6.drat": {
+      "bytes": 39345,
+      "sha256": "4b298dfc83c633fcb4ef1851fa6cc5f67c524cd0fa5b9f8c1917f1fee3772710"
+    },
+    "G52_ndef_0.cnf": {
+      "bytes": 73528,
+      "sha256": "9eb2c200809d0c0312f944e995929772ffc62f7c245cce1dbf2e174739bc1266"
+    },
+    "G52_ndef_0.drat": {
+      "bytes": 235036283,
+      "sha256": "d003ad772cc72c02f0666bd9eab7d2dc15cfae59fdf2346417c42be2d7630bfe"
+    },
+    "G52_ndef_1.cnf": {
+      "bytes": 75947,
+      "sha256": "09873718cae3097032c8cdcd525ff6b4b0a99a0c807baf545e86ac56c5b23f76"
+    },
+    "G52_ndef_1.drat": {
+      "bytes": 1360707584,
+      "sha256": "8a31661c701e88f5d6507fdb2d165d39e954a670c66f72113ed4a881d6e18968"
+    },
+    "G52_normal6.cnf": {
+      "bytes": 85364,
+      "sha256": "b043daa2ab8fcb3a650aa2cdfbc8eef033dea10fb2e0221fe2fe502a3a05971c"
+    },
+    "G52_normal6.drat": {
+      "bytes": 2448,
+      "sha256": "8f57e09f44c04d8df9384df06ac4c57e2298582bd8452dbd45c204324fd3714f"
+    },
+    "G52_pdef_0.cnf": {
+      "bytes": 544867,
+      "sha256": "fbd22320798a516d39d7cbec6acf1a24dfbde2f2c7f1152aa023ea33ac4c704f"
+    },
+    "G52_pdef_0.drat": {
+      "bytes": 92389126,
+      "sha256": "1ffe884faad7406444a6f301a595d5cb3c53781c368314f4a4a316bd7089498d"
+    },
+    "G52_pdef_1.cnf": {
+      "bytes": 546504,
+      "sha256": "03b9d594543b84b7b37044ab6935adf17dd581428ca5b857b0a89de3c831e2fd"
+    },
+    "G52_pdef_1.drat": {
+      "bytes": 548686502,
+      "sha256": "3fb153cbb573e85abcb8dd271f5befa24f9f2392aca986c4f1c4e8f2f39aef54"
+    },
+    "G52_pdef_2.cnf": {
+      "bytes": 548144,
+      "sha256": "969d7e9d0611c983eddb9a0290dd4318682052fa0060b4538bc55cf53a494bfd"
+    },
+    "G52_pdef_2.drat": {
+      "bytes": 2108,
+      "sha256": "6122fbd8ad991edee2d4fcbe7051413a6b227dc5e6bb9a6eea85283d7ce5f666"
+    },
+    "G52_strong6.cnf": {
+      "bytes": 85869,
+      "sha256": "5315260f728679ba32233d594ef6100673eac299780de7ffa60fbafc53f85174"
+    },
+    "G52_strong6.drat": {
+      "bytes": 26441,
+      "sha256": "a0257f0522a92058b42687a2daad3ac61e65c90846647750708ab49ec7efd79f"
+    },
+    "H112_ndef_0.cnf": {
+      "bytes": 169183,
+      "sha256": "cf2db8c46088fb5e9d0a00834bc06234057abc75290f601d17bb930b8f1d70f4"
+    },
+    "H112_ndef_0.drat": {
+      "bytes": 821205416,
+      "sha256": "aa1cb77e3730f44f6c26c88e56fd3b498c5ce9d5de23ebe76e7f4971ceba220f"
+    },
+    "H112_ndef_1.cnf": {
+      "bytes": 174519,
+      "sha256": "9aa94d75305cc9da438892ec583fb8b5151150367d01fd4825bce48e26f181da"
+    },
+    "H112_ndef_1.drat": {
+      "bytes": 2204434432,
+      "sha256": "709aa39c8fb3cbb07c0e7561da1826cb05a84dfa1d98c3e7b4439f7e816bccd3"
+    },
+    "H112_normal6.cnf": {
+      "bytes": 194146,
+      "sha256": "1d751b9f2fd4328fa3e0cd14fd5e2458afefb7ed2ddf2d9b00430793a311eff3"
+    },
+    "H112_normal6.drat": {
+      "bytes": 10107,
+      "sha256": "f8176c0005cc12765aa0473817afdf768082110d62f8610b8b1602e68de9aa44"
+    },
+    "H112_pdef_0.cnf": {
+      "bytes": 1248878,
+      "sha256": "afa4d04c33a04ad64952bfd2484a9c6ebc824e575f10194ed110791566c7f501"
+    },
+    "H112_pdef_0.drat": {
+      "bytes": 574830154,
+      "sha256": "a837471e79627cde57e4213110c93fe3e8fae2ef6c4f2615d9f8567132648fe9"
+    },
+    "H112_pdef_1.cnf": {
+      "bytes": 1252435,
+      "sha256": "06b6ce294ad93c1242e86e9e86f89be97f654aa502c1dfc2306ecb6db024f402"
+    },
+    "H112_pdef_1.drat": {
+      "bytes": 3166797824,
+      "sha256": "0fb23f8eba028fed5514950ead7bddb9a47e16a7a138304c2ba79f5b22529110"
+    },
+    "H112_strong6.cnf": {
+      "bytes": 195322,
+      "sha256": "4022aa1a9cf5e12291cada826ae0b2ef95cf36a6fcaf14a0175bbbbc1ab739fa"
+    },
+    "H112_strong6.drat": {
+      "bytes": 48002,
+      "sha256": "98934bbd14042a23a87dbcc0aaf77776e89ec7fc4371bffc1502ed387fdd325e"
+    },
+    "J5_ndef_0.cnf": {
+      "bytes": 26219,
+      "sha256": "a29fbd44707c6c806891f60527955ec0be3aeb11b05ff821a7683d48ce03ad3e"
+    },
+    "J5_ndef_0.drat": {
+      "bytes": 2314,
+      "sha256": "fc8fba2ae17c903f8b34ea747bfb65bb305d6498831a2b5440ad0ee8de5fde12"
+    },
+    "J5_pdef_0.cnf": {
+      "bytes": 191864,
+      "sha256": "4f65cf14a91cff6124dc8fc2cea789c0833e597068234b687e1f07130217b172"
+    },
+    "J5_pdef_0.drat": {
+      "bytes": 3690,
+      "sha256": "1830cac1f444e3589d1a3a99dc5905ba579450247bb0dd81aa8bc029ed41d44d"
+    },
+    "J5_strong6.cnf": {
+      "bytes": 30552,
+      "sha256": "969f987c3b53e58be16b275c1578fc35f4aff9b6650919f3df3e8eb260c7bbf3"
+    },
+    "J5_strong6.drat": {
+      "bytes": 6558,
+      "sha256": "2edf5abcb5c8265d1674436201498d14346cdc6323d259ccab6adc8f770e63a1"
+    },
+    "petersen_ndef_0.cnf": {
+      "bytes": 12441,
+      "sha256": "fe810decc239af0e353571955b11909da1d6a58909b379bda336d6f3b0b9b04c"
+    },
+    "petersen_ndef_0.drat": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "petersen_pdef_0.cnf": {
+      "bytes": 92769,
+      "sha256": "ca399ae676563a953c109af721fddb55e7a5cb4ab56aca9467a7d92fea54733e"
+    },
+    "petersen_pdef_0.drat": {
+      "bytes": 332,
+      "sha256": "8366096b814dcabd482b296ac840c7ae76055641571be4a14e0bd4fcbcde297d"
+    },
+    "petersen_strong6.cnf": {
+      "bytes": 14423,
+      "sha256": "da56cfdc340c7405759542ecca4c6be69c573aff606438487045e54b78cbf1c4"
+    },
+    "petersen_strong6.drat": {
+      "bytes": 2700,
+      "sha256": "249a64b389ae2d47c0fcba2740c426b856cfaa7c94c168137c4ca1dfa97b0529"
+    }
+  },
+  "instances": {
+    "G112_ndef_0": {
+      "clauses": 11256,
+      "cnf_sha256": "b56570d9dc4abe552d64a0c1bf88835e7099b9684f8f040af1d9668ec0593ea7",
+      "drat_trim_seconds": 1271.766,
+      "drat_trim_tail": "iables and 11256 clauses\n\nc finished parsing, read 717856987 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 11244 of 11256 clauses in core                            \n\nc 2569080 of 10331485 lemmas in core using 75372443 resolution steps\n\nc 0 RAT lemmas in core; 1689756 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 1270.611 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "G112_ndef_0",
+      "proof_bytes": 717856987,
+      "proof_sha256": "c79ac7fb9dcdd5736cd8ba5df84f31efcf37b1f3e16036ce0cf15c01286bac41",
+      "seconds": 1529.704,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 2856
+    },
+    "G112_ndef_1": {
+      "clauses": 11590,
+      "cnf_sha256": "31a487a32f513f359ece1abbdade74c34ec9e1ba26f1cdf1bc49a017025b1f47",
+      "instance": "G112_ndef_1",
+      "seconds": 1800.011,
+      "status": "TIMEOUT",
+      "variables": 3024
+    },
+    "G112_normal6": {
+      "checker_defect": 0,
+      "checker_ok": true,
+      "clauses": 13776,
+      "cnf_sha256": "35447bd860ea2b671e7466688fb6ec4db889a97d52cb2df9355a822dad529bc4",
+      "exit_code": 10,
+      "instance": "G112_normal6",
+      "seconds": 0.207,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": " -3125 -3126\nv -3127 -3128 -3129 -3130 3131 3132 3133 3134 -3135 -3136 -3137 -3138 -3139\nv -3140 3141 -3142 3143 3144 -3145 -3146 -3147 3148 -3149 -3150 3151 -3152\nv -3153 3154 -3155 3156 -3157 -3158 -3159 3160 3161 -3162 -3163 -3164 3165\nv -3166 3167 -3168 -3169 -3170 3171 -3172 3173 -3174 -3175 3176 -3177 3178\nv -3179 -3180 -3181 -3182 3183 3184 -3185 -3186 3187 3188 -3189 -3190 -3191\nv -3192 0\n",
+      "status": "SAT",
+      "variables": 3192
+    },
+    "G112_pdef_0": {
+      "clauses": 73360,
+      "cnf_sha256": "9a1c7489237ad757e87f6f5a3f2a9ac4de217d9d91451a3e7b24527a6f6744f2",
+      "drat_trim_seconds": 261.616,
+      "drat_trim_tail": "riables and 73360 clauses\n\nc finished parsing, read 563296006 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 70588 of 73360 clauses in core                            \n\nc 1932304 of 4287196 lemmas in core using 168110925 resolution steps\n\nc 0 RAT lemmas in core; 3017326 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 261.541 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "G112_pdef_0",
+      "proof_bytes": 563296006,
+      "proof_sha256": "b1ab7282500c7543ceee08783e930033adee8840d5c81f1bef0d4b6f2aa6a28a",
+      "seconds": 262.091,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 2632
+    },
+    "G112_pdef_1": {
+      "clauses": 73582,
+      "cnf_sha256": "f92d2b92d0dfb1c47e0ac32538ae27131d7635170e5d5cd75c689ea019468e84",
+      "instance": "G112_pdef_1",
+      "seconds": 1800.016,
+      "status": "TIMEOUT",
+      "variables": 2744
+    },
+    "G112_strong6": {
+      "checker_defect": 0,
+      "checker_ok": true,
+      "clauses": 13944,
+      "cnf_sha256": "2813f76600b115eb270881a6dadf0e4eb01d13d97ff1b20474854396a7df3bc9",
+      "exit_code": 10,
+      "instance": "G112_strong6",
+      "seconds": 0.138,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "3124 3125\nv 3126 -3127 3128 -3129 -3130 -3131 3132 -3133 3134 -3135 -3136 3137 -3138\nv 3139 -3140 3141 3142 -3143 -3144 3145 -3146 3147 -3148 -3149 3150 -3151\nv -3152 -3153 3154 3155 -3156 -3157 -3158 -3159 3160 -3161 -3162 3163 -3164\nv -3165 3166 3167 3168 -3169 3170 -3171 -3172 3173 -3174 3175 -3176 -3177\nv -3178 -3179 3180 3181 -3182 3183 -3184 -3185 -3186 -3187 3188 -3189 3190\nv -3191 -3192 0\n",
+      "status": "SAT",
+      "variables": 3192
+    },
+    "G52_ndef_0": {
+      "clauses": 5226,
+      "cnf_sha256": "9eb2c200809d0c0312f944e995929772ffc62f7c245cce1dbf2e174739bc1266",
+      "drat_trim_seconds": 222.828,
+      "drat_trim_tail": "6 variables and 5226 clauses\n\nc finished parsing, read 235036283 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 5226 of 5226 clauses in core                            \n\nc 2042449 of 3732751 lemmas in core using 53693802 resolution steps\n\nc 0 RAT lemmas in core; 1496908 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 222.521 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "G52_ndef_0",
+      "proof_bytes": 235036283,
+      "proof_sha256": "d003ad772cc72c02f0666bd9eab7d2dc15cfae59fdf2346417c42be2d7630bfe",
+      "seconds": 137.407,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 1326
+    },
+    "G52_ndef_1": {
+      "clauses": 5380,
+      "cnf_sha256": "09873718cae3097032c8cdcd525ff6b4b0a99a0c807baf545e86ac56c5b23f76",
+      "instance": "G52_ndef_1",
+      "seconds": 1800.006,
+      "status": "TIMEOUT",
+      "variables": 1404
+    },
+    "G52_normal6": {
+      "checker_defect": 0,
+      "checker_ok": true,
+      "clauses": 6396,
+      "cnf_sha256": "b043daa2ab8fcb3a650aa2cdfbc8eef033dea10fb2e0221fe2fe502a3a05971c",
+      "exit_code": 10,
+      "instance": "G52_normal6",
+      "seconds": 0.1,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "4 -1415 -1416 -1417 -1418 -1419 -1420 1421 1422 -1423 -1424 1425\nv 1426 -1427 -1428 -1429 -1430 -1431 -1432 -1433 -1434 -1435 1436 1437 1438\nv 1439 -1440 -1441 -1442 -1443 1444 1445 -1446 -1447 1448 -1449 1450 -1451\nv -1452 -1453 -1454 1455 -1456 -1457 -1458 -1459 -1460 -1461 -1462 -1463 1464\nv 1465 -1466 -1467 1468 1469 1470 -1471 1472 1473 -1474 1475 -1476 -1477 -1478\nv -1479 -1480 -1481 1482 0\n",
+      "status": "SAT",
+      "variables": 1482
+    },
+    "G52_pdef_0": {
+      "clauses": 34060,
+      "cnf_sha256": "fbd22320798a516d39d7cbec6acf1a24dfbde2f2c7f1152aa023ea33ac4c704f",
+      "drat_trim_seconds": 62.528,
+      "drat_trim_tail": "222 variables and 34060 clauses\n\nc finished parsing, read 92389126 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 32770 of 34060 clauses in core                            \n\nc 515404 of 948091 lemmas in core using 34864625 resolution steps\n\nc 0 RAT lemmas in core; 674008 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 62.458 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "G52_pdef_0",
+      "proof_bytes": 92389126,
+      "proof_sha256": "1ffe884faad7406444a6f301a595d5cb3c53781c368314f4a4a316bd7089498d",
+      "seconds": 50.387,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 1222
+    },
+    "G52_pdef_1": {
+      "clauses": 34162,
+      "cnf_sha256": "03b9d594543b84b7b37044ab6935adf17dd581428ca5b857b0a89de3c831e2fd",
+      "drat_trim_seconds": 578.137,
+      "drat_trim_tail": "riables and 34162 clauses\n\nc finished parsing, read 548686502 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 32723 of 34162 clauses in core                            \n\nc 1487788 of 3092388 lemmas in core using 194355121 resolution steps\n\nc 0 RAT lemmas in core; 2624948 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 578.668 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "G52_pdef_1",
+      "proof_bytes": 548686502,
+      "proof_sha256": "3fb153cbb573e85abcb8dd271f5befa24f9f2392aca986c4f1c4e8f2f39aef54",
+      "seconds": 532.377,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 1274
+    },
+    "G52_pdef_2": {
+      "checker_defect": 2,
+      "checker_ok": true,
+      "clauses": 34265,
+      "cnf_sha256": "969d7e9d0611c983eddb9a0290dd4318682052fa0060b4538bc55cf53a494bfd",
+      "exit_code": 10,
+      "instance": "G52_pdef_2",
+      "seconds": 0.093,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "49 1250 1251 1252 1253 1254 1255 1256 1257\nv 1258 1259 1260 1261 1262 1263 1264 1265 1266 1267 1268 1269 1270 1271 1272\nv 1273 1274 1275 1276 1277 1278 1279 1280 1281 1282 1283 1284 1285 1286 1287\nv 1288 1289 1290 1291 1292 1293 1294 1295 1296 1297 1298 1299 1300 1301 1302\nv 1303 1304 1305 1306 1307 1308 1309 1310 1311 1312 1313 1314 1315 1316 1317\nv 1318 1319 1320 1321 1322 1323 1324 1325 1326 0\n",
+      "status": "SAT",
+      "variables": 1326
+    },
+    "G52_strong6": {
+      "checker_defect": 0,
+      "checker_ok": true,
+      "clauses": 6474,
+      "cnf_sha256": "5315260f728679ba32233d594ef6100673eac299780de7ffa60fbafc53f85174",
+      "exit_code": 10,
+      "instance": "G52_strong6",
+      "seconds": 0.067,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": " 1414 -1415 1416 -1417 1418 -1419\nv -1420 -1421 1422 1423 -1424 1425 -1426 -1427 -1428 -1429 1430 1431 -1432\nv 1433 -1434 1435 1436 -1437 -1438 -1439 1440 -1441 -1442 -1443 1444 -1445\nv -1446 -1447 1448 1449 -1450 -1451 1452 1453 -1454 -1455 -1456 1457 1458\nv -1459 -1460 1461 -1462 -1463 -1464 1465 1466 -1467 -1468 -1469 1470 -1471\nv -1472 -1473 -1474 -1475 1476 -1477 1478 1479 -1480 1481 -1482 0\n",
+      "status": "SAT",
+      "variables": 1482
+    },
+    "H112_ndef_0": {
+      "clauses": 11256,
+      "cnf_sha256": "cf2db8c46088fb5e9d0a00834bc06234057abc75290f601d17bb930b8f1d70f4",
+      "drat_trim_seconds": 984.305,
+      "drat_trim_tail": "iables and 11256 clauses\n\nc finished parsing, read 821205416 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 11242 of 11256 clauses in core                            \n\nc 3625161 of 11395207 lemmas in core using 118087084 resolution steps\n\nc 0 RAT lemmas in core; 2576318 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 984.713 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "H112_ndef_0",
+      "proof_bytes": 821205416,
+      "proof_sha256": "aa1cb77e3730f44f6c26c88e56fd3b498c5ce9d5de23ebe76e7f4971ceba220f",
+      "seconds": 859.07,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 2856
+    },
+    "H112_ndef_1": {
+      "clauses": 11590,
+      "cnf_sha256": "9aa94d75305cc9da438892ec583fb8b5151150367d01fd4825bce48e26f181da",
+      "instance": "H112_ndef_1",
+      "seconds": 1800.009,
+      "status": "TIMEOUT",
+      "variables": 3024
+    },
+    "H112_normal6": {
+      "checker_defect": 0,
+      "checker_ok": true,
+      "clauses": 13776,
+      "cnf_sha256": "1d751b9f2fd4328fa3e0cd14fd5e2458afefb7ed2ddf2d9b00430793a311eff3",
+      "exit_code": 10,
+      "instance": "H112_normal6",
+      "seconds": 0.07,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "3124 3125 3126\nv -3127 3128 3129 -3130 3131 -3132 -3133 3134 -3135 3136 -3137 -3138 -3139\nv -3140 3141 3142 -3143 -3144 3145 -3146 -3147 -3148 -3149 -3150 3151 3152\nv -3153 3154 -3155 -3156 3157 -3158 3159 -3160 -3161 3162 -3163 -3164 -3165\nv 3166 3167 -3168 -3169 3170 -3171 -3172 -3173 -3174 3175 3176 -3177 -3178\nv 3179 3180 -3181 3182 -3183 -3184 3185 -3186 -3187 3188 3189 -3190 -3191\nv -3192 0\n",
+      "status": "SAT",
+      "variables": 3192
+    },
+    "H112_pdef_0": {
+      "clauses": 73360,
+      "cnf_sha256": "afa4d04c33a04ad64952bfd2484a9c6ebc824e575f10194ed110791566c7f501",
+      "drat_trim_seconds": 281.678,
+      "drat_trim_tail": "riables and 73360 clauses\n\nc finished parsing, read 574830154 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 70572 of 73360 clauses in core                            \n\nc 1965752 of 4460785 lemmas in core using 173294017 resolution steps\n\nc 0 RAT lemmas in core; 3044323 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 282.313 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "H112_pdef_0",
+      "proof_bytes": 574830154,
+      "proof_sha256": "a837471e79627cde57e4213110c93fe3e8fae2ef6c4f2615d9f8567132648fe9",
+      "seconds": 278.616,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 2632
+    },
+    "H112_pdef_1": {
+      "clauses": 73582,
+      "cnf_sha256": "06b6ce294ad93c1242e86e9e86f89be97f654aa502c1dfc2306ecb6db024f402",
+      "instance": "H112_pdef_1",
+      "seconds": 1800.012,
+      "status": "TIMEOUT",
+      "variables": 2744
+    },
+    "H112_strong6": {
+      "checker_defect": 0,
+      "checker_ok": true,
+      "clauses": 13944,
+      "cnf_sha256": "4022aa1a9cf5e12291cada826ae0b2ef95cf36a6fcaf14a0175bbbbc1ab739fa",
+      "exit_code": 10,
+      "instance": "H112_strong6",
+      "seconds": 0.076,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "124 -3125\nv -3126 3127 3128 3129 -3130 -3131 -3132 -3133 3134 3135 -3136 -3137 -3138\nv -3139 3140 3141 -3142 -3143 3144 -3145 -3146 3147 -3148 3149 3150 -3151\nv -3152 -3153 3154 -3155 -3156 -3157 3158 3159 -3160 -3161 -3162 3163 -3164\nv -3165 3166 3167 -3168 -3169 -3170 3171 -3172 -3173 3174 -3175 3176 -3177\nv -3178 3179 3180 -3181 -3182 -3183 3184 3185 -3186 3187 -3188 -3189 -3190\nv -3191 3192 0\n",
+      "status": "SAT",
+      "variables": 3192
+    },
+    "J5_ndef_0": {
+      "checker_defect": 0,
+      "checker_ok": true,
+      "clauses": 2010,
+      "cnf_sha256": "a29fbd44707c6c806891f60527955ec0be3aeb11b05ff821a7683d48ce03ad3e",
+      "exit_code": 10,
+      "instance": "J5_ndef_0",
+      "seconds": 0.132,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "6 427 -428 429 -430 -431 432 -433 -434 435 -436 -437 438 -439 -440 -441\nv -442 443 444 -445 -446 447 448 -449 -450 451 -452 453 -454 455 -456 -457 458\nv -459 460 -461 -462 463 -464 -465 466 467 -468 469 -470 -471 472 -473 -474\nv 475 -476 477 -478 -479 -480 481 -482 -483 484 -485 486 487 -488 489 -490 491\nv -492 -493 -494 -495 496 -497 498 499 -500 -501 -502 503 -504 505 -506 -507\nv 508 -509 510 0\n",
+      "status": "SAT",
+      "variables": 510
+    },
+    "J5_pdef_0": {
+      "checker_defect": 0,
+      "checker_ok": true,
+      "clauses": 13100,
+      "cnf_sha256": "4f65cf14a91cff6124dc8fc2cea789c0833e597068234b687e1f07130217b172",
+      "exit_code": 10,
+      "instance": "J5_pdef_0",
+      "seconds": 0.138,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "2 393 -394 -395 -396 -397 -398\nv -399 -400 -401 -402 -403 -404 -405 -406 -407 -408 -409 -410 -411 -412 -413\nv 414 -415 -416 -417 -418 -419 -420 -421 -422 -423 -424 -425 -426 -427 -428\nv -429 -430 -431 -432 -433 434 -435 -436 437 -438 -439 -440 -441 -442 -443\nv -444 -445 -446 -447 -448 -449 -450 -451 -452 -453 -454 -455 -456 -457 -458\nv -459 -460 -461 -462 -463 -464 -465 -466 -467 -468 -469 -470 0\n",
+      "status": "SAT",
+      "variables": 470
+    },
+    "J5_strong6": {
+      "checker_defect": 0,
+      "checker_ok": true,
+      "clauses": 2490,
+      "cnf_sha256": "969f987c3b53e58be16b275c1578fc35f4aff9b6650919f3df3e8eb260c7bbf3",
+      "exit_code": 10,
+      "instance": "J5_strong6",
+      "seconds": 0.128,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "-487 -488 489 -490 -491 492 493 494 -495 -496 -497 498 -499 -500 -501 -502\nv 503 -504 505 506 -507 -508 509 -510 -511 512 -513 514 515 -516 -517 -518 519\nv -520 521 522 -523 -524 525 526 -527 -528 -529 -530 -531 532 533 -534 -535\nv 536 -537 -538 539 -540 -541 -542 -543 544 545 546 -547 -548 -549 -550 551\nv -552 -553 554 -555 -556 557 558 -559 -560 -561 -562 -563 564 565 -566 567\nv -568 -569 570 0\n",
+      "status": "SAT",
+      "variables": 570
+    },
+    "petersen_ndef_0": {
+      "checker_defect": 0,
+      "checker_ok": true,
+      "clauses": 1005,
+      "cnf_sha256": "fe810decc239af0e353571955b11909da1d6a58909b379bda336d6f3b0b9b04c",
+      "exit_code": 10,
+      "instance": "petersen_ndef_0",
+      "seconds": 0.142,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "71 172 -173 174 -175 -176 177 178 -179 -180 -181 -182 183 184\nv -185 -186 187 -188 -189 190 -191 192 -193 -194 195 196 -197 -198 199 200\nv -201 -202 -203 204 -205 -206 207 208 -209 -210 211 212 -213 214 -215 -216\nv -217 -218 219 220 -221 222 -223 224 -225 -226 227 -228 229 -230 -231 232\nv -233 234 -235 -236 237 238 -239 -240 241 -242 -243 244 -245 -246 247 248\nv -249 250 -251 -252 253 -254 -255 0\n",
+      "status": "SAT",
+      "variables": 255
+    },
+    "petersen_pdef_0": {
+      "checker_defect": 0,
+      "checker_ok": true,
+      "clauses": 6550,
+      "cnf_sha256": "ca399ae676563a953c109af721fddb55e7a5cb4ab56aca9467a7d92fea54733e",
+      "exit_code": 10,
+      "instance": "petersen_pdef_0",
+      "seconds": 0.161,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": " -158\nv -159 160 -161 -162 -163 -164 -165 -166 -167 -168 -169 -170 -171 -172 -173\nv -174 -175 -176 177 -178 -179 -180 -181 -182 -183 -184 -185 -186 -187 -188\nv -189 -190 -191 -192 -193 194 -195 -196 -197 -198 -199 -200 -201 -202 -203\nv -204 -205 -206 -207 208 -209 -210 -211 -212 -213 -214 -215 -216 -217 -218\nv -219 -220 -221 -222 -223 -224 225 -226 -227 -228 -229 -230 -231 -232 -233\nv -234 -235 0\n",
+      "status": "SAT",
+      "variables": 235
+    },
+    "petersen_strong6": {
+      "checker_defect": 0,
+      "checker_ok": true,
+      "clauses": 1245,
+      "cnf_sha256": "da56cfdc340c7405759542ecca4c6be69c573aff606438487045e54b78cbf1c4",
+      "exit_code": 10,
+      "instance": "petersen_strong6",
+      "seconds": 0.127,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "202 -203 -204 205 -206 -207 208 -209 210 -211 -212 213 -214\nv 215 -216 -217 218 -219 -220 221 -222 223 224 -225 -226 -227 228 -229 -230\nv 231 -232 -233 234 -235 236 237 -238 239 -240 -241 -242 -243 244 -245 -246\nv 247 248 -249 250 -251 -252 253 -254 255 -256 -257 -258 -259 260 261 -262\nv -263 264 265 -266 -267 268 -269 -270 -271 -272 273 -274 275 276 -277 278\nv -279 -280 281 -282 -283 -284 -285 0\n",
+      "status": "SAT",
+      "variables": 285
+    }
+  },
+  "predictions": {
+    "P1": true,
+    "P1_controls": true,
+    "P2": true,
+    "P3": {
+      "committed_expectation": true,
+      "decided": true
+    },
+    "P4": {
+      "committed_expectation": 1,
+      "decided": false
+    },
+    "P5": {
+      "committed_expectation": 1,
+      "decided": false
+    },
+    "P6": true
+  },
+  "target_values": {
+    "G112": {
+      "normal5_defect": null,
+      "normal5_defect_lower_bound_exclusive": 0,
+      "normal_6": "SAT",
+      "petersen_defect": null,
+      "petersen_defect_lower_bound_exclusive": 0,
+      "strong_normal_6": true
+    },
+    "G52": {
+      "normal5_defect": null,
+      "normal5_defect_lower_bound_exclusive": 0,
+      "normal_6": "SAT",
+      "petersen_defect": 2,
+      "petersen_defect_lower_bound_exclusive": 1,
+      "strong_normal_6": true
+    },
+    "H112": {
+      "normal5_defect": null,
+      "normal5_defect_lower_bound_exclusive": 0,
+      "normal_6": "SAT",
+      "petersen_defect": null,
+      "petersen_defect_lower_bound_exclusive": 0,
+      "strong_normal_6": true
+    }
+  },
+  "tools": {
+    "cadical": "1.7.3",
+    "drat_trim_banner": [
+      "usage: drat-trim [INPUT] [<PROOF>] [<option> ...]",
+      ""
+    ]
+  }
+}

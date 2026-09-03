@@ -1,0 +1,49 @@
+{
+  "classes": {
+    "k5m0": {
+      "class": "k5m0",
+      "found": [],
+      "iterations": 15,
+      "k": 5,
+      "learned": 14,
+      "m": 0,
+      "n": 40,
+      "seconds": 3.2,
+      "status": "exhausted-universal",
+      "witnesses": 0
+    },
+    "k5m2": {
+      "class": "k5m2",
+      "found": [],
+      "iterations": 1992,
+      "k": 5,
+      "learned": 80832,
+      "m": 2,
+      "n": 42,
+      "seconds": 7206.0,
+      "status": "budget",
+      "witnesses": 1752
+    },
+    "k6m0": {
+      "class": "k6m0",
+      "found": [],
+      "iterations": 27,
+      "k": 6,
+      "learned": 26,
+      "m": 0,
+      "n": 48,
+      "seconds": 5.5,
+      "status": "exhausted-universal",
+      "witnesses": 0
+    }
+  },
+  "experiment": "EXP-005",
+  "predictions": {},
+  "tools": {
+    "cadical": "1.7.3",
+    "drat_trim_banner": [
+      "usage: drat-trim [INPUT] [<PROOF>] [<option> ...]",
+      ""
+    ]
+  }
+}
