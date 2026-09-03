@@ -1,0 +1,620 @@
+{
+  "experiment": "EXP-050",
+  "audit": "independent artifact, parity, correction, and exact-route checks",
+  "status": "PASS",
+  "checks_passed": 152,
+  "checks_total": 152,
+  "run_sha256": "9a7ccb9d5a1fcea24b4e9adaf7b8b1946635ad20233b7ac15301f46b8109a07e",
+  "results_sha256": "2dc8f85097171e24f4080ce25684127914d86661a6291bab69fb334c2c987983",
+  "checks": [
+    {
+      "name": "results internal hash",
+      "pass": true
+    },
+    {
+      "name": "results complete",
+      "pass": true
+    },
+    {
+      "name": "declared parameter set",
+      "pass": true
+    },
+    {
+      "name": "P1 finite pass",
+      "pass": true
+    },
+    {
+      "name": "P2 refuted",
+      "pass": true
+    },
+    {
+      "name": "P3 refuted",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 semantic row range",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit route exact",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit rank",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 chain 1 exact hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 chain 1 witness hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 chain 1 correction hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 chain 1 parity",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 chain 1 correction identity",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 chain 1 nonzero correction",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 chain 1 P2 bound fails",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 chain 2 exact hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 chain 2 witness hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 chain 2 correction hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 chain 2 parity",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 chain 2 correction identity",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 chain 2 nonzero correction",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 chain 2 P2 bound fails",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 semantic row range",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit route exact",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit rank",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 chain 1 exact hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 chain 1 witness hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 chain 1 correction hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 chain 1 parity",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 chain 1 correction identity",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 chain 1 nonzero correction",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 chain 1 P2 bound fails",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 chain 2 exact hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 chain 2 witness hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 chain 2 correction hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 chain 2 parity",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 chain 2 correction identity",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 chain 2 nonzero correction",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 chain 2 P2 bound fails",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 semantic row range",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit route exact",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit rank",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 chain 1 exact hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 chain 1 witness hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 chain 1 correction hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 chain 1 parity",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 chain 1 correction identity",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 chain 1 nonzero correction",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 chain 1 P2 bound fails",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 chain 2 exact hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 chain 2 witness hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 chain 2 correction hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 chain 2 parity",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 chain 2 correction identity",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 chain 2 nonzero correction",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 chain 2 P2 bound fails",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 semantic row range",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit route exact",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit rank",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 chain 1 exact hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 chain 1 witness hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 chain 1 correction hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 chain 1 parity",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 chain 1 correction identity",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 chain 1 nonzero correction",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 chain 1 P2 bound fails",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 chain 2 exact hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 chain 2 witness hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 chain 2 correction hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 chain 2 parity",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 chain 2 correction identity",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 chain 2 nonzero correction",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 chain 2 P2 bound fails",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 semantic row range",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit route exact",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit rank",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 chain 1 exact hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 chain 1 witness hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 chain 1 correction hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 chain 1 parity",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 chain 1 correction identity",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 chain 1 nonzero correction",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 chain 1 P2 bound fails",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 chain 2 exact hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 chain 2 witness hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 chain 2 correction hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 chain 2 parity",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 chain 2 correction identity",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 chain 2 nonzero correction",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 chain 2 P2 bound fails",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 semantic row range",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit route exact",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit rank",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 chain 1 exact hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 chain 1 witness hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 chain 1 correction hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 chain 1 parity",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 chain 1 correction identity",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 chain 1 nonzero correction",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 chain 1 P2 bound fails",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 chain 2 exact hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 chain 2 witness hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 chain 2 correction hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 chain 2 parity",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 chain 2 correction identity",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 chain 2 nonzero correction",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 chain 2 P2 bound fails",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 semantic row range",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit route exact",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit rank",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 chain 1 exact hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 chain 1 witness hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 chain 1 correction hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 chain 1 parity",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 chain 1 correction identity",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 chain 1 nonzero correction",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 chain 1 P2 bound fails",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 chain 2 exact hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 chain 2 witness hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 chain 2 correction hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 chain 2 parity",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 chain 2 correction identity",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 chain 2 nonzero correction",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 chain 2 P2 bound fails",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 semantic row range",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit route exact",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit rank",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 chain 1 exact hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 chain 1 witness hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 chain 1 correction hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 chain 1 parity",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 chain 1 correction identity",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 chain 1 nonzero correction",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 chain 1 P2 bound fails",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 chain 2 exact hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 chain 2 witness hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 chain 2 correction hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 chain 2 parity",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 chain 2 correction identity",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 chain 2 nonzero correction",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 chain 2 P2 bound fails",
+      "pass": true
+    },
+    {
+      "name": "sixteen corrected records",
+      "pass": true
+    },
+    {
+      "name": "P3 support law refuted",
+      "pass": true
+    }
+  ],
+  "artifact_hash": "51c6a2c36bcdde9c1327178d09460ce93f131daba2f9fc08ec9ff9546b5aa5c4"
+}
