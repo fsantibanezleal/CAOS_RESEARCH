@@ -207,6 +207,14 @@ export default function PetersenColoring() {
             )}
           </p>
           <Equation tex={String.raw`\mathrm{oddness}(G)=\min_{M,\ \mathrm{col}}\ \#\{\,e\in E\setminus M:\ \mathrm{col}(u_e)=\mathrm{col}(v_e)\,\}`} />
+          <h3>{t('How far from colorable: the Petersen defect (EXP-004, EXP-006)', 'Cuan lejos de coloreable: el defecto de Petersen (EXP-004, EXP-006)')}</h3>
+          <p>
+            {t(
+              'All three graphs admit normal and strong normal 6-edge-colorings, so their normal chromatic index is exactly 6. Define the Petersen defect as the least number of vertices at which the star condition must fail over all edge maps into the Petersen graph. A parity argument shows the defect is never exactly 1 for any cubic graph: the label vectors of the bad vertices sum to an element of the cut space of the Petersen graph, and an odd cut of size 1 or 3 there is a star. So every counterexample has defect at least 2. The 52-vertex graph attains 2, and does so at every one of its 1,326 vertex pairs (explicit witnesses; all 52 single-vertex relaxations refuted with checked proofs); both 112-vertex graphs attain 2 at every pair of their 16 vertices outside the twelve disjoint copies of F.',
+              'Los tres grafos admiten 6-arista-coloraciones normales y normales fuertes, asi que su indice cromatico normal es exactamente 6. Definase el defecto de Petersen como el menor numero de vertices en los que la condicion de estrella debe fallar sobre todos los mapas de aristas al grafo de Petersen. Un argumento de paridad muestra que el defecto nunca es exactamente 1 para ningun grafo cubico: los vectores de etiquetas de los vertices malos suman un elemento del espacio de cortes del grafo de Petersen, y un corte impar de tamano 1 o 3 alli es una estrella. Asi, todo contraejemplo tiene defecto al menos 2. El grafo de 52 vertices lo alcanza, y lo hace en cada uno de sus 1.326 pares de vertices (testigos explicitos; las 52 relajaciones de un solo vertice refutadas con pruebas verificadas); ambos grafos de 112 vertices lo alcanzan en cada par de sus 16 vertices fuera de las doce copias disjuntas de F.',
+            )}
+          </p>
+          <Equation tex={String.raw`\sum_{v\ \mathrm{bad}} \chi_v \;=\; \sum_{u\ \mathrm{good}} \chi(\partial_P(w_u)) \;\in\; \mathrm{Cut}(P)\subset\mathbb F_2^{E(P)}`} />
           <h3>{t('Predictions kept in the record', 'Predicciones que quedan en el registro')}</h3>
           <p>
             {t(
@@ -279,8 +287,8 @@ export default function PetersenColoring() {
             </li>
             <li>
               {t(
-                'Does every bridgeless cubic graph have a normal 6-edge-coloring? Open in general; decided on the three counterexamples in EXP-004.',
-                'Todo grafo cubico sin puentes tiene una 6-arista-coloracion normal? Abierto en general; decidido en los tres contraejemplos en EXP-004.',
+                'Does every bridgeless cubic graph have a normal 6-edge-coloring? Open in general; true on the three counterexamples (EXP-004). Are the compositions of copies of F with a few free vertices below 52 vertices all colorable? Classes without free vertices are (a one-line proof); the classes with free vertices did not converge under counterexample-guided search and need symmetry breaking (EXP-005).',
+                'Todo grafo cubico sin puentes tiene una 6-arista-coloracion normal? Abierto en general; cierto en los tres contraejemplos (EXP-004). Son coloreables todas las composiciones de copias de F con pocos vertices libres bajo 52 vertices? Las clases sin vertices libres lo son (prueba de una linea); las clases con vertices libres no convergieron bajo busqueda guiada por contraejemplos y necesitan ruptura de simetria (EXP-005).',
               )}
             </li>
             <li>

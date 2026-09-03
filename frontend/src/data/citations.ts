@@ -286,6 +286,6 @@ export const CITATIONS: Citation[] = [
     label: 'Audit record 2026',
     citation:
       'Santibañez-Leal F. (2026). Berge-Fulkerson covers, cycle double covers, flows and exact normality defects of the first counterexamples to the Petersen coloring conjecture. Preprint, CC BY 4.0, v0.01.',
-    url: 'https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/manuscripts/petersen-coloring/consequence-audit',
+    doi: '10.5281/zenodo.22285164',
   },
 ];
