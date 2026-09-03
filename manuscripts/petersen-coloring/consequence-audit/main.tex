@@ -1,0 +1,305 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\definecolor{linknavy}{RGB}{25, 55, 125}
+\usepackage[colorlinks=true, linkcolor=linknavy, citecolor=linknavy, urlcolor=linknavy]{hyperref}
+\hypersetup{
+  pdftitle={Berge-Fulkerson covers, cycle double covers, flows and exact normality defects of the first counterexamples to the Petersen coloring conjecture},
+  pdfauthor={Felipe Santibanez-Leal},
+  pdfkeywords={Petersen coloring conjecture, normal edge-coloring, Berge-Fulkerson conjecture, cycle double cover, perfect matching index, oddness, resistance, snarks, SAT, DRAT}
+}
+\usepackage{orcidlink}
+\usepackage{fancyhdr}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\PG}{P}
+\newcommand{\Gmain}{G_{112}}
+\newcommand{\Gsym}{H_{112}}
+\newcommand{\Gfty}{G_{52}}
+\newcommand{\Zfive}{\mathbb{Z}_5}
+
+\newcommand{\doctype}{Preprint}
+\newcommand{\docsubtype}{independent certification and consequence audit}
+\newcommand{\docversion}{v0.01}
+\newcommand{\docdate}{3 September 2026}
+\newcommand{\doclicense}{CC BY 4.0}
+\newcommand{\docdoi}{10.5281/zenodo.DOIVERSION}
+\newcommand{\docconceptdoi}{10.5281/zenodo.DOICONCEPT}
+\newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
+
+\title{Berge--Fulkerson Covers, Cycle Double Covers, Flows and Exact Normality Defects\\
+of the First Counterexamples to the Petersen Coloring Conjecture}
+\author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
+\date{2026-09-03\\[2pt]\normalsize Version 0.01}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small CAOS Research Preprint}
+\fancyhead[R]{\small Petersen Coloring Counterexamples: Audit \textperiodcentered\ v0.01}
+\fancyfoot[C]{\small \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\begin{document}
+\maketitle
+\begin{center}
+\fbox{\parbox{0.94\textwidth}{\small\raggedright
+\textbf{\doctype} (\docsubtype) \quad$\cdot$\quad \docversion, \docdate \quad$\cdot$\quad
+Licence \doclicense\\[2pt]
+CAOS Research open-problems programme \quad$\cdot$\quad problem \texttt{petersen-coloring},
+experiments 001--004\\[2pt]
+Version DOI \href{https://doi.org/\docdoi}{\texttt{\docdoi}} \quad$\cdot$\quad
+concept DOI (always latest) \href{https://doi.org/\docconceptdoi}{\texttt{\docconceptdoi}}\\[2pt]
+Not peer reviewed. Source, declared hypotheses, artifacts and verdicts: \texttt{\docrepo}\\[2pt]
+\textbf{Provenance.} The counterexamples are due to Putman (two graphs on 112 vertices, August
+2026), with a human-checkable proof by Jooken, and to Goedgebeur, Jooken, M\'a\v{c}ajov\'a,
+Mattiolo and Mazzuoccolo (52 vertices and infinite families). This paper contributes an
+independent certification and the audit of what the conjecture used to imply.
+}}
+\end{center}
+\vspace{4pt}
+
+\begin{abstract}
+Jaeger's Petersen coloring conjecture (1988), which asserted that every bridgeless cubic graph
+admits an edge map onto the Petersen graph sending every vertex star onto a vertex star, was
+refuted in August 2026: Putman exhibited two nonisomorphic 112-vertex counterexamples with
+SAT-solver certificates, Jooken gave a human-checkable proof, and Goedgebeur, Jooken,
+M\'a\v{c}ajov\'a, Mattiolo and Mazzuoccolo found a 52-vertex counterexample together with
+infinite families, placing the smallest counterexample between 38 and 52 vertices. The
+conjecture had been the strongest known sufficient condition for the Berge--Fulkerson
+conjecture and the 5-cycle double cover conjecture. We audit, by exact proof-carrying
+computation, what survives on the three retrievable counterexamples. First, independent
+encodings sharing no variable scheme with the public ones refute Petersen colorings and normal
+5-edge-colorings of all three graphs with proofs checked by \texttt{drat-trim}; five colorable
+controls are accepted, and Putman's four public proofs verify under our checker. Second, every
+one of the three graphs admits a Berge--Fulkerson cover, a Berge cover by five perfect
+matchings, a Fan--Raspaud triple, a 5-cycle double cover and a nowhere-zero 5-flow, all given
+as explicit witnesses re-verified from the graph alone; none admits a nowhere-zero 4-flow. Their
+perfect matching index is exactly 4, one below the Petersen graph's value. The two 112-vertex
+graphs have oddness 4 and resistance 3, whereas the 52-vertex graph has oddness 2 and
+resistance 2, every value certified from both sides. AUDITFOUR All computations are
+propositional with checked DRAT certificates or explicit witnesses; hypotheses were declared
+before each run, and a refuted prediction of ours (oddness 2 for the 112-vertex graphs) is
+preserved. The paper decides nothing about the general conjectures and says so.
+\end{abstract}
+
+\section{Introduction}
+
+\subsection{The conjecture and its ladder}
+
+Let $\PG$ denote the Petersen graph. For a cubic graph $G$, a \emph{Petersen coloring} is a map
+$\sigma : E(G) \to E(\PG)$ such that for every vertex $v$ of $G$ there is a vertex $w$ of $\PG$
+with $\sigma(\partial_G(v)) = \partial_\PG(w)$, where $\partial(\cdot)$ denotes the set of edges
+at a vertex; equivalently, the three edges at $v$ map bijectively onto the three edges at $w$.
+A proper 5-edge-coloring is \emph{normal} if every edge $uv$ is \emph{poor}
+($|c(\partial u) \cup c(\partial v)| = 3$) or \emph{rich} ($= 5$); the \emph{normal chromatic
+index} $\chi'_N(G)$ is the least $k$ admitting a normal $k$-edge-coloring.
+
+\begin{conjecture}[Jaeger 1988~\cite{Jaeger1988}]
+Every bridgeless cubic graph admits a Petersen coloring.
+\end{conjecture}
+
+Jaeger~\cite{Jaeger1985} proved that a cubic graph has a Petersen coloring iff it has a normal
+5-edge-coloring (an explicit bijective form is Proposition~2.1 of~\cite{Putman2026}). The
+conjecture implies the Berge--Fulkerson conjecture (six perfect matchings covering every edge
+exactly twice) and the 5-cycle double cover conjecture~\cite{Jooken2026, MazzMkrt2020}; the
+Berge conjecture (perfect matching index at most~5) and the Fan--Raspaud conjecture (three
+perfect matchings with empty intersection) follow from Berge--Fulkerson. Every 3-edge-colorable
+cubic graph is trivially Petersen colorable, so the whole ladder concerns snarks. Exhaustive
+generation had verified the conjecture for every snark on at most 36 vertices~\cite{BGHM2013} and
+for every weak snark on 36 vertices~\cite{GMS2019}, so any counterexample has at least 38
+vertices~\cite{GJMMM2026}.
+
+\subsection{The disproof}
+
+On 6 August 2026 Putman~\cite{Putman2026} published a simple bridgeless cubic graph $\Gmain$ on
+112 vertices and 168 edges with no Petersen coloring and no normal 5-edge-coloring, certified by
+CaDiCaL proofs checked with \texttt{drat-trim}, together with a nonisomorphic $D_3$-symmetric
+counterexample $\Gsym$; both have girth~5 and edge- and vertex-connectivity~3. The construction
+composes copies of the 4-pole $F$ (the Petersen graph minus the endpoints of one edge) with claw
+six-poles: $L = 4F + C$ and $\Gmain = 3L + C$. Jooken~\cite{Jooken2026} gave a human-checkable
+proof through the Petersen-coloring sets of $F$ and $L$ and a 4-clique obstruction in the line
+graph of $\PG$. Goedgebeur, Jooken, M\'a\v{c}ajov\'a, Mattiolo and Mazzuoccolo~\cite{GJMMM2026}
+then gave a cyclically 4-edge-connected girth-5 counterexample $\Gfty$ on 52 vertices, infinite
+cyclically 4-edge-connected families, and the frontier $38 \le n_{\min} \le 52$ for the smallest
+counterexample; they verified a strong normal 6-edge-coloring of one 112-vertex graph and left
+open whether every bridgeless cubic graph has a normal 6-edge-coloring (their Conjecture~6,
+attributed to \v{S}\'amal) and whether cyclically 5-edge-connected counterexamples exist. A
+68-vertex counterexample was announced on a social network without a retrievable edge list and is
+not treated here.
+
+\subsection{What this paper does}
+
+The three retrievable counterexamples are the first bridgeless cubic graphs for which the
+Petersen route to a Berge--Fulkerson cover or a 5-cycle double cover is closed. We therefore
+ask, for each of $\Gmain$, $\Gsym$ and $\Gfty$, which of the conjectures below the top of the
+ladder still hold, and how far each graph is from being colorable. Every answer is exact: a
+positive answer is an explicit witness re-verified by a standard-library checker that reads only
+the graph, and a negative answer is a DRAT proof checked by \texttt{drat-trim}. Section~2 records
+the independent certification (a replication, labeled as such), Section~3 the perfect matching
+covers, Section~4 the cycle double covers, flows, oddness and resistance, Section~5 the normal
+6-edge-colorings and the exact defects, and Section~6 the open questions. Hypotheses were
+declared and committed before each run; one of our committed predictions was refuted by the
+machine and is reported.
+
+\section{Independent certification}
+
+\subsection{The graphs}
+
+We use Putman's normalized digest: the SHA-256 of the compact JSON serialization of the sorted
+edge list with $u < v$. The three graphs are
+$\Gmain$ (digest \texttt{dc16cc18\ldots{}e8b}), $\Gsym$ (digest \texttt{0f2d8858\ldots{}35c7}),
+both transcribed from Putman's CC0 archive, and $\Gfty$, transcribed from the appendix
+of~\cite{GJMMM2026} with vertices renumbered from $1..52$ to $0..51$ (digest
+\texttt{27db5d3b\ldots}); the full edge lists are in the repository.
+
+\begin{proposition}[machine-verified]\label{prop:structure}
+Each of $\Gmain$, $\Gsym$, $\Gfty$ is simple, cubic, connected, has edge connectivity~3, girth~5,
+and cyclic edge connectivity exactly~4: no set of at most three edges is cycle-separating
+(exhaustive search over all edge subsets of size at most three), and an explicit cycle-separating
+4-cut exists (edges $\{2,6,9,12\}$ of the sorted edge lists of both 112-vertex graphs and
+$\{2,3,8,14\}$ of $\Gfty$).
+\end{proposition}
+
+\subsection{Encodings}
+
+Our Petersen encoding uses only edge-image variables $y_{e,f}$ ($e \in E(G)$, $f \in E(\PG)$), one
+image per edge, with the constraint that adjacent edges of $G$ receive distinct adjacent edges of
+$\PG$. This suffices because $\PG$ is triangle-free: three pairwise adjacent distinct edges of a
+triangle-free graph form a star. Two units break symmetry, using the edge-transitivity of $\PG$
+and the transitivity of an edge stabilizer on the four edges adjacent to a fixed edge. Our
+normal-5 encoding uses edge-color variables $x_{e,c}$, side-presence variables $p_{e,c}, q_{e,c}$
+(``color $c$ appears among the two other edges at $u$'', respectively at $v$), and a rich
+indicator $r_e$; richness is $\lnot(p_{e,c} \land q_{e,c})$ for every $c$ and poorness is
+$p_{e,c} \leftrightarrow q_{e,c}$ for every $c$. Neither encoding shares a variable scheme with
+Putman's vertex-witness and missing-pair encodings.
+
+\begin{theorem}[machine-verified, replication]\label{thm:certify}
+$\Gmain$, $\Gsym$ and $\Gfty$ admit no Petersen coloring and no normal 5-edge-coloring. All six
+refutations, and the three Petersen refutations with symmetry breaking removed, carry DRAT
+proofs accepted by \texttt{drat-trim} (Table~\ref{tab:certify}). The same encoders accept the
+Petersen graph, $K_4$, the prism and the flower snarks $J_5$, $J_7$ with checker-validated
+colorings. Putman's four archived proofs are accepted by our \texttt{drat-trim} binary against
+his archived formulas.
+\end{theorem}
+
+\begin{table}[h]\centering\small
+\begin{tabular}{lrrrrr}
+\toprule
+instance & variables & clauses & solve (s) & proof (bytes) & check (s)\\
+\midrule
+$\Gmain$ Petersen & 2{,}520 & 73{,}250 & 65.6 & 98{,}426{,}474 & 43.7\\
+$\Gmain$ normal-5 & 2{,}688 & 11{,}088 & 1{,}216.8 & 786{,}818{,}036 & 900.5\\
+$\Gsym$ Petersen & 2{,}520 & 73{,}250 & 29.5 & 95{,}632{,}373 & 24.5\\
+$\Gsym$ normal-5 & 2{,}688 & 11{,}088 & 977.2 & 868{,}156{,}862 & 1{,}293.5\\
+$\Gfty$ Petersen & 1{,}170 & 34{,}010 & 1.8 & 4{,}094{,}201 & 1.2\\
+$\Gfty$ normal-5 & 1{,}248 & 5{,}148 & 178.8 & 226{,}490{,}830 & 231.8\\
+\bottomrule
+\end{tabular}
+\caption{Certified refutations (CaDiCaL 1.7.3 under WSL, \texttt{drat-trim}); every check printed
+\texttt{s VERIFIED}.}\label{tab:certify}
+\end{table}
+
+\section{Perfect matching covers}
+
+\begin{theorem}[machine-verified]\label{thm:covers}
+Each of $\Gmain$, $\Gsym$, $\Gfty$ admits a Berge--Fulkerson cover, a Berge cover by five perfect
+matchings, three perfect matchings with empty intersection, and a cover by four perfect
+matchings. Consequently their perfect matching index equals~4.
+\end{theorem}
+
+\begin{proof}
+The matchings are explicit (the repository file \texttt{witnesses.json} of experiment~002 lists
+them as edge index sets) and were re-verified by a checker that tests each set to be a perfect
+matching and then counts the coverage of every edge. The index is at least~4 because the graphs
+are not 3-edge-colorable (Theorem~\ref{thm:certify} and the trivial direction of the conjecture).
+\end{proof}
+
+The value~4 is one below the Petersen graph's own perfect matching index~5, which our control
+recovers with a verified refutation of the four-matching instance. Thus, on the first
+counterexamples, the Berge--Fulkerson, Berge and Fan--Raspaud conjectures all hold, and the
+graphs are in this sense better behaved than the Petersen graph.
+
+\section{Cycle double covers, flows, oddness and resistance}
+
+\begin{theorem}[machine-verified]\label{thm:cdc}
+Each of $\Gmain$, $\Gsym$, $\Gfty$ admits a 5-cycle double cover (five even subgraphs covering
+every edge exactly twice) and a nowhere-zero $\Zfive$-flow, and none admits a nowhere-zero
+$\mathbb{Z}_4$-flow. The oddness and resistance are
+\[
+\mathrm{odd}(\Gmain) = \mathrm{odd}(\Gsym) = 4,\quad \mathrm{odd}(\Gfty) = 2,\qquad
+\mathrm{res}(\Gmain) = \mathrm{res}(\Gsym) = 3,\quad \mathrm{res}(\Gfty) = 2 .
+\]
+\end{theorem}
+
+\begin{proof}
+Double covers and flows are explicit witnesses; the 4-flow refutations carry checked proofs.
+Oddness is decided from both sides: for a bound $b$, the formula asks for a perfect matching $M$
+and a vertex 2-coloring of the 2-factor $E \setminus M$ with at most $b$ monochromatic edges. An
+odd cycle forces at least one monochromatic edge and an even cycle admits none, so the least
+satisfiable $b$ is the oddness. Bounds $1, 2, 3$ are refuted with checked proofs for the
+112-vertex graphs and bound~$4$ is satisfied by a perfect matching whose 2-factor has exactly four
+odd cycles (counted by the checker); for $\Gfty$ bound~$1$ is refuted and bound~$2$ satisfied.
+Resistance uses a deletion indicator per edge and a proper 3-edge-coloring of the remaining
+edges, with the same two-sided protocol.
+\end{proof}
+
+Our committed prediction was oddness~2 for all three graphs; it was refuted for the 112-vertex
+graphs. The value is consistent with the theorem that the smallest snarks with oddness at
+least~4 and cyclic connectivity~4 have order~44~\cite{GMS2019}. The 52-vertex graph, by contrast,
+has the least possible oddness of a snark.
+
+\section{Normal 6-edge-colorings and exact defects}
+
+AUDITFOURSECTION
+
+\section{Open questions and non-claims}
+
+Nothing here bears on the general Berge--Fulkerson, cycle double cover, 5-flow or normal
+6-edge-coloring conjectures: the audit concerns three graphs. The questions left open by the
+disproof, the smallest counterexample in $[38, 52]$, cyclically 5-edge-connected counterexamples,
+and Conjecture~6 of~\cite{GJMMM2026}, remain open. The 68-vertex graph announced on a social
+network is not covered. Every claim above is traceable to an experiment folder with a declared
+hypothesis, a deterministic runner, artifacts with SHA-256 digests, and a verdict, under
+\texttt{problems/combinatorics/petersen-coloring/} in the repository.
+
+\begin{thebibliography}{9}
+\bibitem{Jaeger1988} F.~Jaeger, Nowhere-zero flow problems, in: L.~W. Beineke, R.~J. Wilson
+(eds.), Selected Topics in Graph Theory 3, Academic Press, London, 1988, 71--95.
+\bibitem{Jaeger1985} F.~Jaeger, On five-edge-colorings of cubic graphs and nowhere-zero flow
+problems, Ars Combinatoria 20-B (1985), 229--244.
+\bibitem{Putman2026} B.~Putman, A 112-vertex counterexample to the Petersen Coloring Conjecture,
+Zenodo v1.1.0 (2026), \href{https://doi.org/10.5281/zenodo.21845291}{doi:10.5281/zenodo.21845291};
+arXiv:2608.10012.
+\bibitem{Jooken2026} J.~Jooken, A human-checkable proof of the 112-vertex counterexample to the
+Petersen coloring conjecture, arXiv:2608.10028v2 (2026).
+\bibitem{GJMMM2026} J.~Goedgebeur, J.~Jooken, E.~M\'a\v{c}ajov\'a, D.~Mattiolo, G.~Mazzuoccolo,
+A smaller counterexample and infinite family of counterexamples to the Petersen Coloring
+Conjecture, Zenodo (2026), \href{https://doi.org/10.5281/zenodo.21933785}{doi:10.5281/zenodo.21933785}.
+\bibitem{MazzMkrt2020} G.~Mazzuoccolo, V.~V. Mkrtchyan, Normal edge-colorings of cubic graphs,
+J. Graph Theory 94 (2020), 75--91, \href{https://doi.org/10.1002/jgt.22507}{doi:10.1002/jgt.22507}.
+\bibitem{BGHM2013} G.~Brinkmann, J.~Goedgebeur, J.~H\"agglund, K.~Markstr\"om, Generation and
+properties of snarks, J. Combin. Theory Ser. B 103 (2013), 468--488,
+\href{https://doi.org/10.1016/j.jctb.2013.05.001}{doi:10.1016/j.jctb.2013.05.001}.
+\bibitem{GMS2019} J.~Goedgebeur, E.~M\'a\v{c}ajov\'a, M.~\v{S}koviera, Smallest snarks with oddness
+4 and cyclic connectivity 4 have order 44, Ars Math. Contemp. 16 (2019), 277--298,
+\href{https://doi.org/10.26493/1855-3974.1601.e75}{doi:10.26493/1855-3974.1601.e75}.
+\bibitem{MMSW2025} Y.~Ma, D.~Mattiolo, E.~Steffen, I.~H. Wolf, Sets of $r$-graphs that color all
+$r$-graphs, Combinatorica 45 (2025), Article 16,
+\href{https://doi.org/10.1007/s00493-025-00144-4}{doi:10.1007/s00493-025-00144-4}.
+\end{thebibliography}
+
+\end{document}
