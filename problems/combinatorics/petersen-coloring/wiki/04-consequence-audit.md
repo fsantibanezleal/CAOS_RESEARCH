@@ -1,6 +1,6 @@
 # 04 - The consequence audit
 
-Sources: EXP-002 and EXP-003 verdicts (EXP-004 pending). Every value below is exact: positive
+Sources: EXP-002, EXP-003, EXP-004 verdicts and the EXP-006 sweep (in progress). Every value below is exact: positive
 entries carry an explicit witness re-verified from the graph alone, negative entries carry a
 drat-trim-verified DRAT proof.
 
@@ -18,6 +18,10 @@ drat-trim-verified DRAT proof.
 | nowhere-zero 4-flow (equivalently 3-edge-colorable) | no (proof) | no (proof) | no (proof) | no (proof) |
 | oddness | **4** | **4** | 2 | 2 |
 | resistance | **3** | **3** | 2 | 2 |
+| normal 6-edge-coloring | yes | yes | yes | yes |
+| strong normal 6-edge-coloring (every edge rich) | yes | yes | yes | yes |
+| normal chromatic index | 6 | 6 | 6 | 5 |
+| Petersen defect (min. number of bad vertices over all edge maps) | at least 1 (EXP-006 running) | at least 1 (EXP-006 running) | **2** (no single vertex absorbs the obstruction; pairs do) | 0 |
 
 Bold entries are the ones that differ from the Petersen graph.
 
