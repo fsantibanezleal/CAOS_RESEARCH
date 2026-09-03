@@ -383,7 +383,13 @@ def left_dual(
                 rhs ^= existing[1]
             if not bits and rhs:
                 raise AssertionError({"dual_system_inconsistent": wanted, "high": high})
-        solution = sum(1 << pivot for pivot, (_, rhs) in basis.items() if rhs)
+        solution = 0
+        pivot_order = sorted(basis) if high else sorted(basis, reverse=True)
+        for pivot in pivot_order:
+            bits, rhs = basis[pivot]
+            known = (bits & solution).bit_count() & 1
+            if known != rhs:
+                solution |= 1 << pivot
         if solution >> row_count:
             raise AssertionError("dual index outside row range")
         duals.append(solution)
@@ -410,14 +416,23 @@ def verify_duals(
     }
 
 
+def add_semantic_dual_supports(
+    record: dict[str, object], tokens: list[dict[str, object]]
+) -> dict[str, object]:
+    return record | {
+        "semantic_supports": [
+            [tokens[row] for row in support] for support in record["supports"]
+        ]
+    }
+
+
 def chain_record(
-    *, index: int, chain: list[int], relative_columns: list[list[list[int]]], hnf: fmpz_mat,
-    transform: fmpz_mat, pivots: list[int], kernel_rows: list[list[int]],
+    *, index: int, chain: list[int], relative_columns: list[list[list[int]]],
+    y: list[int] | None, kernel_rows: list[list[int]] | None,
     full_columns: list[list[list[int]]], source_rows: list[int], added_rows: list[int],
     column_atoms: list[str]
 ) -> dict[str, object]:
-    target = [2 if row in set(chain) else 0 for row in range(hnf.ncols())]
-    y = solve_row_lattice(hnf, transform, pivots, target)
+    target = [2 if row in set(chain) else 0 for row in range(len(added_rows))]
     if y is None:
         return {
             "chain_index": index,
@@ -426,6 +441,8 @@ def chain_record(
             "support_size": len(chain),
             "exact_membership": False,
         }
+    if kernel_rows is None:
+        raise AssertionError("source kernel required for an exact relative witness")
     if multiply_sparse_columns(relative_columns, y, len(target)) != target:
         raise AssertionError({"relative_multiplication": index})
     x = [
@@ -513,9 +530,10 @@ def main() -> int:
             if component["signed_columns_hash"] != digest(full_columns):
                 raise AssertionError({"p": p, "signed_column_reconstruction": False})
             source_rows = exp047.rows_for_mask(row_atoms, 58)
-            print(f"p={p} compute saturated mask-58 source kernel", flush=True)
-            kernel_rows, source_kernel = exp047.saturated_kernel(full_columns, source_rows)
-            budget.check(f"p={p} source kernel")
+            kernel_rows: list[list[int]] | None = None
+            source_kernel: dict[str, object] = {
+                "status": "NOT_COMPUTED_UNLESS_EXACT_MEMBERSHIP_PASSES"
+            }
             p_record: dict[str, object] = {
                 "p": p,
                 "source_matrix_sha256": sha256(matrix_path),
@@ -526,8 +544,6 @@ def main() -> int:
                 print(f"p={p} {source}->{target_mask} exact chain lifts", flush=True)
                 relative_path = EXP047 / "artifacts" / f"relative-p{p}-m{source}-m{target_mask}.json"
                 relative = json.loads(relative_path.read_text(encoding="utf-8"))
-                if relative["kernel_basis_hash"] != source_kernel["kernel_basis_hash"]:
-                    raise AssertionError({"p": p, "kernel_hash": False})
                 relative_columns = relative["matrix_columns"]
                 added_rows, tokens, semantic_order = semantic_rows(
                     exp047=exp047,
@@ -553,14 +569,28 @@ def main() -> int:
                 hnf, transform, pivots = hnf_lattice_solver(
                     relative_columns, len(added_rows)
                 )
+                targets = [
+                    [2 if row in set(chain) else 0 for row in range(len(added_rows))]
+                    for chain in chains
+                ]
+                solutions = [
+                    solve_row_lattice(hnf, transform, pivots, target_vector)
+                    for target_vector in targets
+                ]
+                if any(solution is not None for solution in solutions) and kernel_rows is None:
+                    print(f"p={p} compute saturated mask-58 source kernel", flush=True)
+                    kernel_rows, source_kernel = exp047.saturated_kernel(
+                        full_columns, source_rows
+                    )
+                    budget.check(f"p={p} source kernel")
+                    if relative["kernel_basis_hash"] != source_kernel["kernel_basis_hash"]:
+                        raise AssertionError({"p": p, "kernel_hash": False})
                 chain_records = [
                     chain_record(
                         index=index + 1,
                         chain=chain,
                         relative_columns=relative_columns,
-                        hnf=hnf,
-                        transform=transform,
-                        pivots=pivots,
+                        y=solutions[index],
                         kernel_rows=kernel_rows,
                         full_columns=full_columns,
                         source_rows=source_rows,
@@ -569,15 +599,21 @@ def main() -> int:
                     )
                     for index, chain in enumerate(chains)
                 ]
-                low = verify_duals(
-                    relative_columns,
-                    chains,
-                    left_dual(relative_columns, chains, len(added_rows), high=False),
+                low = add_semantic_dual_supports(
+                    verify_duals(
+                        relative_columns,
+                        chains,
+                        left_dual(relative_columns, chains, len(added_rows), high=False),
+                    ),
+                    tokens,
                 )
-                high = verify_duals(
-                    relative_columns,
-                    chains,
-                    left_dual(relative_columns, chains, len(added_rows), high=True),
+                high = add_semantic_dual_supports(
+                    verify_duals(
+                        relative_columns,
+                        chains,
+                        left_dual(relative_columns, chains, len(added_rows), high=True),
+                    ),
+                    tokens,
                 )
                 expected_pairings = [[1, 0], [0, 1]]
                 if (
@@ -586,7 +622,15 @@ def main() -> int:
                     or low["pairings"] != expected_pairings
                     or high["pairings"] != expected_pairings
                 ):
-                    raise AssertionError({"p": p, "inclusion": [source, target_mask], "duals": False})
+                    raise AssertionError(
+                        {
+                            "p": p,
+                            "inclusion": [source, target_mask],
+                            "duals": False,
+                            "low": low,
+                            "high": high,
+                        }
+                    )
                 p_record["inclusions"].append(
                     {
                         "source_mask": source,
@@ -605,6 +649,7 @@ def main() -> int:
                 result["elapsed_seconds"] = budget.elapsed
                 write_json_atomic(args.output, result | {"rows": result["rows"] + [p_record]})
                 budget.check(f"p={p} {source}->{target_mask}")
+            p_record["source_kernel"] = source_kernel
             result["rows"].append(p_record)
             result["elapsed_seconds"] = budget.elapsed
             write_json_atomic(args.output, result)

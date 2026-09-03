@@ -751,3 +751,15 @@ support shapes. The proof programme therefore splits. For the two stable complet
 source cycles with boundary twice the four interval chains and dual parity characters detecting
 them. For `56->58`, seek a relative Morse filtration or dual description rather than fitting one
 translated generator. Neither finite classification is yet an all-parameter theorem.
+
+EXP-049 shows that the first proposed integral lift is too literal. Exact HNF membership, repeated
+with reversed relation order, proves that none of the sixteen tested equations `Ry=2a` is
+solvable. Thus the zero-one `alpha/beta` chains describe the right mod-two classes but not the
+integral torsion vectors themselves. Each must be corrected to `b=a+2c` before lifting.
+
+The dual half is much simpler. Two independently computed parity functionals annihilate each
+relative matrix and pair as the identity with its two named chains. Every support has at most four
+rows. For `58->62`, the same two endpoint-row formulas work throughout `p=8,...,11`; EXP-049
+records them explicitly and a 98-check audit rebuilds them. This supplies a concrete finite lower
+bound mechanism. A uniform theorem still needs a symbolic incidence proof for the duals, corrected
+source cycles, and a separate free-complement or relative-Morse upper bound.

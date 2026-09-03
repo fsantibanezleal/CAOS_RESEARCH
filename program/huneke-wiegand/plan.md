@@ -1430,3 +1430,21 @@ chains and two dual parity functionals proving independence. That pair of constr
 prove the constant `(Z/2)^2` completion uniformly without a global Smith reduction. The
 `56->58` threshold remains separate and moves to dual-character or relative-Morse analysis. No
 manuscript or Zenodo gate opens from the finite formulas.
+
+## 2026-09-03 - EXP-049 exact-chain lift and dual gate
+
+EXP-049 tests the stronger literal claim hidden inside the EXP-048 proposal: whether the zero-one
+chains `a` themselves satisfy `2a in im_Z(R)`. Transformed HNF supplies the primary lattice test;
+reversed relation order supplies an independent exact audit. Binary low- and high-pivot solvers
+construct dual parity characters without using the Smith diagonal.
+
+P1 and P2 are refuted at every finite case. None of the sixteen literal equations `Ry=2a` is
+solvable over the integers. Hence the correct integral target is `b=a+2c`, not `a`. P3 passes:
+every completion has two dual characters with support at most four and identity pairing. The
+`58->62` low-pivot supports satisfy two explicit endpoint-row formulas at all four parameters; a
+98-check audit rederives every nonmembership and dual certificate.
+
+HWB-076 is the next primal gate: retain exact Bockstein provenance through quotient reduction,
+construct `b`, `c`, and `y`, and map `y` to original source cycles. In parallel, prove the bounded
+dual formulas by a generic signed-incidence calculation. The upper bound remains a separate
+relative-Morse or free-complement theorem. No manuscript or Zenodo update is triggered.

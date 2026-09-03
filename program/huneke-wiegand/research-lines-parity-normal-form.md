@@ -211,3 +211,25 @@ lower-strand manuscript only after at least one of these occurs:
 
 A finite Bockstein certificate is an experiment milestone and a route-selection result, not by
 itself a publication trigger.
+
+## 2026-09-03 route correction after EXP-049
+
+The EXP-048 support formula must not be confused with an integral torsion representative.
+EXP-049 proves finitely that every literal chain `a` fails `2a in im_Z(R)`. The correct primal
+object is `b=a+2c`, with its even correction retained rather than discarded during mod-two
+quotient reduction.
+
+The dual route is now ranked first for the uniform lower bound. Both completions admit two
+identity-paired functionals supported on at most four added rows at every tested parameter. For
+`58->62`, the low-pivot supports already obey fixed endpoint-row formulas. The immediate actions
+are therefore:
+
+1. prove those dual formulas annihilate every generic relative relation and pair with the two
+   `beta` chains;
+2. reconstruct corrected integral representatives by provenance-preserving Bockstein reduction;
+3. classify the corrections and source cycles under `p->p+1`; and
+4. treat the torsion upper bound separately through a relative-Morse reduction or an explicit
+   free complement.
+
+The `56->58` threshold does not inherit this bounded completion pattern and remains a separate
+filtered-relative-complex problem.

@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-09-02. Lifecycle: EXP-048 is REFUTED overall with explicit completion-chain candidates retained; EXP-047 is CONFIRMED FINITELY; EXP-046 is REFUTED overall with P3 retained; EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
+Updated: 2026-09-03. Lifecycle: EXP-049 is REFUTED overall with bounded dual parity certificates retained; EXP-048 is REFUTED overall with explicit completion-chain candidates retained; EXP-047 is CONFIRMED FINITELY; EXP-046 is REFUTED overall with P3 retained; EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
 with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
@@ -36,6 +36,12 @@ have sizes `(p-4,p-4)` and the two `58->62` supports have sizes `(2p-8,p-4)`. Th
 formulas pass a separate 78-check audit on `p=8,...,11`. The `56->58` canonical section is not one
 translation family, so HWB-075 prioritizes integral lifts of the four stable completion chains and
 dual parity characters; the threshold block moves to a relative-Morse fallback.
+EXP-049 proves that none of the sixteen literal zero-one equations `Ry=2a` is integrally solvable:
+the correct torsion representatives require nonzero even corrections `b=a+2c`. Conversely, two
+independent parity duals exist for each completion at every tested parameter, and every support has
+size at most four. The `58->62` low-pivot duals obey two explicit endpoint-row formulas on the
+complete finite range. HWB-076 now targets provenance-preserving corrected lifts; the uniform
+upper bound remains a separate relative-Morse or free-complement obligation.
 For every
 `p>=4` and
 `2<=t<=p-2`, the shifted cubic source is absent
@@ -397,6 +403,7 @@ campaign is supporting evidence, not the proof.
 | EXP-046 | REFUTED; P3 PASSES FINITELY | both minimal full carriers have zero unit-leaf cancellations; every residual is one connected core; mask `56` changes defect inside persistent semantic support |
 | EXP-047 | CONFIRMED FINITELY | exact relative modules give `(Z/2)^2` for both stable completions and `(Z/2)^(p-7)` for the threshold quotient; 202 independent determinant checks pass |
 | EXP-048 | REFUTED; P1 PASSES FINITELY | canonical relative Bocksteins recover ranks `2,2,p-7`; bounded/local templates fail, but four explicit completion interval chains with support laws `(p-4,p-4)` and `(2p-8,p-4)` survive 78 audit checks |
+| EXP-049 | REFUTED; P3 PASSES FINITELY | all sixteen literal equations `Ry=2a` fail exact lattice membership, but two identity-paired dual characters of support at most four exist in every completion; `58->62` has explicit finite dual formulas |
 
 ## 3a. Exact evidence anchors
 
@@ -511,14 +518,20 @@ campaign is supporting evidence, not the proof.
   `ba44eae4c9193bc941411b059dc7a7d7a4c69dff3d818e05d3395338e125a400`; its 78-check audit
   passes with internal hash `880e428c8abe78a7430546b1fb3d2e67b48b17e1c3a85b6e04fa402aff75e8da`
   and external SHA-256 `738d3b8e77c3a7cf2ca82692d7d7c9b1b4b97799a82ed3d808f8a6a1e621efed`.
+- EXP-049 primary SHA-256:
+  `567f554abaa1456133a4c0cd475d1848dad92a36dd8b9412381fe2fab9fc39b7`; its 98-check audit
+  passes with internal hash `df2663ed0c81d4db9f24a205667a44868b152a9107177aac52ce4306978eb997`
+  and external SHA-256 `fd74e83350c35a6e4e4f6a4778766c9b59e9c30347dc00104b428a904e0e6ca6`.
 
 ## 4. In flight
 
-EXP-048 is REFUTED overall with P1 and four exact finite completion-chain formulas retained.
-HWB-074 remains open for the uniform semantic reduction, and HWB-075 owns exact source-domain
-lifts plus dual parity functionals for those chains. EXP-047 is CONFIRMED FINITELY and HWB-073 is
-done. Both stable completion quotients have exact torsion `(Z/2)^2`, and `56->58` has
-`(Z/2)^(p-7)`.
+EXP-049 is REFUTED overall with P3 and a bounded dual mechanism retained. Every literal zero-one
+completion chain needs a nonzero even correction before it can be an integral torsion vector. Two
+identity-paired parity duals of support at most four exist for both stable completions; the
+`58->62` pair has explicit finite endpoint-row formulas. HWB-076 owns corrected integral
+representatives and semantic source-cycle extraction. HWB-074 remains open for the uniform upper
+reduction. EXP-047 is CONFIRMED FINITELY and HWB-073 is done. Both stable completion quotients have
+exact torsion `(Z/2)^2`, and `56->58` has `(Z/2)^(p-7)`.
 EXP-046 is REFUTED overall with P3 retained, and HWB-072 is done. Masks `59` and `62` have no
 unit leaves and all tested residuals have one connected core. HWB-073 owns the fill-producing
 relative integer comparison. EXP-045 is REFUTED with a stable full-carrier antichain retained.
@@ -872,14 +885,16 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Lift the four explicit EXP-048 completion chains to semantic source-domain cycles with exact
-   boundary twice the displayed rows, and construct two dual parity functionals proving their
-   independence.
-2. Use those lifts and functionals to prove the `58->59` and `58->62` factor-two completions for
-   all `p`; derive the unit/free complement only after the torsion mechanism is explicit.
-3. Treat `56->58` separately by dual parity characters or a relative algebraic-Morse filtration;
+1. Carry exact Bockstein provenance through quotient reduction to construct corrected chains
+   `b=a+2c`, relative witnesses `Ry=2b`, and original source-domain cycles; classify `c` and the
+   source supports under `p->p+1`.
+2. Prove the two explicit `58->62` parity-dual formulas by a generic signed-incidence calculation,
+   then find a stable formula or invariant description for the bounded `58->59` duals.
+3. Build the independent upper bound: reduce the quotient left after the two detected classes to
+   a free module by a parameterized relative-Morse matching or explicit integral complement.
+4. Treat `56->58` separately by dual parity characters or a relative algebraic-Morse filtration;
    its canonical representatives refute the single-translation-family model.
-4. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
+5. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
    a signed core; keep this separate from the connecting-only `t=2` mechanism.
 5. Open a separate manuscript only after a complete strand, an infinite connecting theorem, or a
    comparably transferable result is proved.
@@ -970,6 +985,11 @@ Published baseline:
   interval chains for the stable completions. Their linear growth refutes a bounded-critical-set
   premise but supplies the first concrete `p->p+1` targets. The new proof obligation is an exact
   source lift plus dual parity functionals, not another canonical quotient basis.
+- Integral-lift separation and duality: EXP-049 proves the zero-one semantic supports are not
+  literal torsion vectors and isolates the required even corrections. The dual side is much
+  smaller: all finite certificates use at most four rows, and the `58->62` pair has fixed endpoint
+  formulas. This now outranks a global primal Smith reduction for the lower bound, while a
+  relative-Morse/free-complement theorem owns the upper bound.
 
 ## 7. Gotchas
 

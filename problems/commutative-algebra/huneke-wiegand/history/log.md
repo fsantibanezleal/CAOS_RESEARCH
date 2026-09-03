@@ -1748,3 +1748,19 @@
 - HWB-075 now targets exact source lifts and dual parity functionals for the four stable chains.
   The threshold moves to a separate relative-Morse route. The formulas remain finite and do not
   trigger a manuscript or Zenodo update.
+
+## 2026-09-02 to 2026-09-03 - EXP-049 exact-chain lift gate
+
+- EXP-049 was declared and pushed before computation after a fresh primary-source and
+  invariant-first preflight. It asks whether the literal EXP-048 zero-one chains have exact
+  boundary twice themselves and requires independent parity duals.
+- P1 is refuted in all sixteen cases. Reversed-order HNF independently confirms that
+  `2a not in im_Z(R)` for both chains, both completions, and `p=8,...,11`.
+- The refutation identifies the corrected primal target: `b=a+2c` with nonzero even correction
+  and `Ry=2b`. It does not weaken the exact relative `(Z/2)^2` from EXP-047.
+- P3 passes finitely. Low- and high-pivot solvers independently produce identity-paired dual
+  characters, all with support at most four.
+- The `58->62` low-pivot duals have exact endpoint-row formulas throughout the tested range. The
+  separate audit reconstructs those formulas and passes all 98 checks.
+- HWB-076 now owns corrected Bockstein lifts. The uniform upper bound remains a distinct
+  relative-Morse/free-complement obligation. No manuscript or Zenodo update is triggered.
