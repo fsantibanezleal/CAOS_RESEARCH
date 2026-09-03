@@ -365,8 +365,13 @@ $\PG$.
 The counterexample-guided search of experiment 005 (join formula for the matching; structural
 check; Petersen-colorability of each candidate; sound blocking clauses learned from every
 coloring found, each recorded with its witness) exhausted $\mathcal C(5,0)$ and $\mathcal C(6,0)$
-in seconds by exactly such a universal coloring, and PENDING005. We do not claim anything
-about classes it did not exhaust.
+in seconds by exactly such a universal coloring, but did not converge on classes with free
+vertices: the 26-vertex control $\mathcal C(3,2)$ stopped at its 15-minute budget after
+$1{,}059$ iterations and $29{,}052$ learned clauses, and $\mathcal C(5,2)$ (42 vertices) stopped at
+its two-hour budget after $1{,}992$ iterations and $80{,}832$ learned clauses, both without
+finding a counterexample and without exhausting; $\mathcal C(6,2)$ was running when this version
+was frozen. We do not claim anything about classes the search did not exhaust; a symmetry-broken
+enumeration is the declared next step.
 
 \section{Open questions and non-claims}
 
