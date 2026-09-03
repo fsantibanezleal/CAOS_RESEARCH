@@ -104,3 +104,14 @@ lemma). Redirected questions:
   relaxed edge`): if any is SAT the normal-5 defect is exactly 1; if all are UNSAT with verified
   proofs the defect is at least 2. No committed expectation (the parity argument does not
   transfer). Budget: 30 minutes per instance.
+
+## Addendum 3 declared 2026-09-03 13:08, before the full 112-vertex pair sweeps ran
+
+All 120 free-vertex pairs of `G112` are critical (SAT, checker defect exactly 2, slowest 2.6 s),
+so the Petersen defect of `G112` is exactly 2 (with the parity lemma). Since every pair of `G52`
+was critical, the natural strengthening is declared:
+
+- P9: is EVERY unordered pair of vertices of `G112` (6,216 pairs) and of `H112` (6,216 pairs) a
+  critical pair? Committed expectation: yes for both. A single verified UNSAT pair refutes the
+  expectation and is reported as a structural distinction from `G52`. Budget: 10 minutes per
+  instance, whole sweep per graph under 8 hours; undecided pairs listed.
