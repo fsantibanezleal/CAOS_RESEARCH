@@ -1,0 +1,1648 @@
+{
+  "experiment": "EXP-051",
+  "audit": "independent raw-matrix, quotient-rank, exact-identity, and bound checks",
+  "status": "PASS",
+  "checks_passed": 409,
+  "checks_total": 409,
+  "run_sha256": "4e0debc35c7aa286cfcc73dcbe6c6d4e1d15cfcc5e7d184db7e81e45f5e8b98a",
+  "results_sha256": "f1acaa6b769ec04b7d87a1ac416c184ffac2f5007d18a04efb397c8013ec8b1f",
+  "checks": [
+    {
+      "name": "results internal hash",
+      "pass": true
+    },
+    {
+      "name": "results complete",
+      "pass": true
+    },
+    {
+      "name": "declared parameter set",
+      "pass": true
+    },
+    {
+      "name": "P1 finite pass",
+      "pass": true
+    },
+    {
+      "name": "P2 finite pass",
+      "pass": true
+    },
+    {
+      "name": "P3 refuted",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=0 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=0 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=0 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=0 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=0 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=0 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=0 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=0 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=0 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=0 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=0 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=1 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=1 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=1 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=1 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=1 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=1 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=1 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=1 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=1 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=1 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary lift=1 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary quotient rank",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 primary subspace hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=0 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=0 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=0 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=0 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=0 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=0 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=0 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=0 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=0 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=0 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=0 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=1 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=1 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=1 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=1 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=1 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=1 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=1 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=1 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=1 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=1 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit lift=1 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit quotient rank",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 audit subspace hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 route subspace agreement",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=0 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=0 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=0 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=0 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=0 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=0 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=0 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=0 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=0 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=0 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=0 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=1 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=1 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=1 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=1 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=1 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=1 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=1 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=1 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=1 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=1 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary lift=1 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary quotient rank",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 primary subspace hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=0 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=0 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=0 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=0 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=0 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=0 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=0 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=0 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=0 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=0 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=0 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=1 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=1 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=1 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=1 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=1 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=1 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=1 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=1 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=1 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=1 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit lift=1 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit quotient rank",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 audit subspace hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 route subspace agreement",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=0 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=0 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=0 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=0 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=0 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=0 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=0 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=0 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=0 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=0 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=0 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=1 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=1 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=1 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=1 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=1 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=1 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=1 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=1 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=1 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=1 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary lift=1 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary quotient rank",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 primary subspace hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=0 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=0 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=0 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=0 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=0 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=0 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=0 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=0 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=0 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=0 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=0 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=1 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=1 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=1 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=1 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=1 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=1 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=1 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=1 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=1 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=1 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit lift=1 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit quotient rank",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 audit subspace hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 route subspace agreement",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=0 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=0 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=0 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=0 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=0 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=0 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=0 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=0 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=0 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=0 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=0 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=1 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=1 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=1 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=1 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=1 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=1 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=1 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=1 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=1 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=1 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary lift=1 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary quotient rank",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 primary subspace hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=0 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=0 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=0 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=0 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=0 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=0 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=0 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=0 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=0 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=0 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=0 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=1 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=1 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=1 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=1 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=1 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=1 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=1 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=1 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=1 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=1 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit lift=1 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit quotient rank",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 audit subspace hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 route subspace agreement",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=0 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=0 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=0 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=0 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=0 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=0 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=0 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=0 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=0 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=0 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=0 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=1 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=1 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=1 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=1 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=1 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=1 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=1 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=1 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=1 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=1 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary lift=1 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary quotient rank",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 primary subspace hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=0 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=0 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=0 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=0 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=0 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=0 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=0 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=0 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=0 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=0 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=0 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=1 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=1 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=1 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=1 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=1 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=1 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=1 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=1 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=1 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=1 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit lift=1 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit quotient rank",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 audit subspace hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 route subspace agreement",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=0 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=0 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=0 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=0 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=0 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=0 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=0 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=0 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=0 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=0 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=0 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=1 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=1 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=1 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=1 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=1 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=1 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=1 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=1 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=1 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=1 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary lift=1 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary quotient rank",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 primary subspace hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=0 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=0 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=0 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=0 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=0 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=0 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=0 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=0 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=0 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=0 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=0 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=1 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=1 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=1 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=1 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=1 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=1 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=1 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=1 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=1 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=1 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit lift=1 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit quotient rank",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 audit subspace hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 route subspace agreement",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=0 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=0 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=0 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=0 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=0 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=0 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=0 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=0 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=0 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=0 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=0 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=1 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=1 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=1 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=1 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=1 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=1 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=1 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=1 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=1 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=1 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary lift=1 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary quotient rank",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 primary subspace hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=0 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=0 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=0 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=0 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=0 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=0 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=0 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=0 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=0 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=0 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=0 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=1 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=1 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=1 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=1 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=1 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=1 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=1 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=1 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=1 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=1 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit lift=1 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit quotient rank",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 audit subspace hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 route subspace agreement",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=0 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=0 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=0 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=0 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=0 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=0 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=0 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=0 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=0 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=0 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=0 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=1 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=1 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=1 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=1 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=1 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=1 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=1 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=1 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=1 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=1 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary lift=1 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary quotient rank",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 primary subspace hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=0 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=0 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=0 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=0 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=0 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=0 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=0 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=0 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=0 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=0 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=0 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=1 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=1 exact identity",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=1 boundary hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=1 cycle hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=1 cycle support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=1 boundary support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=1 boundary height",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=1 quotient class",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=1 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=1 P1 bounds",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit lift=1 P2 bound",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit quotient rank",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 audit subspace hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 route subspace agreement",
+      "pass": true
+    },
+    {
+      "name": "thirty-two exact route records",
+      "pass": true
+    },
+    {
+      "name": "P3 details independently reproduced",
+      "pass": true
+    },
+    {
+      "name": "P3 has a non-affine series",
+      "pass": true
+    }
+  ],
+  "artifact_hash": "38653b72caa24c642000c47a83af93af728fafc5fe9d6c30b88b6bc62523fbd0"
+}
