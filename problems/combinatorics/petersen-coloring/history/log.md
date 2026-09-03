@@ -36,3 +36,27 @@
 - Declared EXP-004 (normal 6, strong normal 6, exact normal-5 defect, exact P-defect).
 - Context dossier and references written from the primary texts (Putman, Jooken, GJMMM read in
   full); wiki 01, 03, 04 transcribed.
+
+## 2026-09-03 - EXP-004 to EXP-006, the parity theorem, manuscript and web page
+
+- EXP-004: normal and strong normal 6-edge-colorings on all three graphs (normal chromatic index
+  exactly 6); cardinality-encoded defect ladders stalled at bound 1 under the 30-minute cap,
+  except `G52` whose P-defect came out exactly 2 by that route (bound 1 UNSAT in 532 s, bound 2
+  SAT).
+- EXP-005 declared and run on the classes of `k` copies of `F` plus `m` free vertices: `(5,0)`
+  and `(6,0)` exhausted in seconds by a universal coloring, which became the pure-F proposition
+  (context note); the 26-vertex control `(3,2)` did not converge in 15 minutes (1,059
+  iterations, 29,052 clauses), and `(5,2)`/`(6,2)` ran under 2-hour budgets. Convergence
+  measured, refinement recorded (research lines PCR-4b/4c).
+- EXP-006 declared: designated relaxation. All 52 single-vertex relaxations of `G52` UNSAT
+  (verified); the pattern was proved for every cubic graph (parity theorem: bad-set label vectors
+  sum into the cut space of `P`; odd cuts of size 1 or 3 are stars), so the 112-vertex single
+  sweep was stopped after one vertex. All 1,326 pairs of `G52` critical (defect exactly 2 at
+  every pair); all 120 free-vertex pairs of `G112` and of `H112` critical (defect exactly 2).
+  Full pair sweeps of the 112-vertex graphs and the edge-relaxation sweep of `G52` (normal-5
+  defect) launched.
+- Manuscript v0.01 drafted from the verdicts (7 pages), Zenodo DOI reserved
+  (10.5281/zenodo.22285165, concept 10.5281/zenodo.22285164), header printed; web problem page
+  built and gated (24 screenshots, light/dark, EN/ES, all tabs, no overflow); wiki 01-05 written.
+- Incidents: a shell heredoc split a Python string literal and mangled LaTeX (fixed through the
+  file tools); an orphaned solver process of the stopped single sweep was killed by hand.

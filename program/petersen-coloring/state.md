@@ -6,7 +6,8 @@
 | 2026-09-03 | scoped | opened | source dossier, plan, backlog, RESUME and management mirror written; EXP-001 declared before any run |
 | 2026-09-03 | opened | exploring | EXP-001 CONFIRMED: independent DRAT-certified refutation of the three public counterexamples with passing controls |
 | 2026-09-03 | exploring | analyzing | EXP-002 and EXP-003 CONFIRMED: Berge-Fulkerson, Berge, Fan-Raspaud, 5-cycle double covers and 5-flows all hold; perfect matching index 4; oddness 4/4/2, resistance 3/3/2 |
+| 2026-09-03 | analyzing | consolidating | EXP-004 (normal chromatic index 6), EXP-005 (pure-F proposition; convergence measured), EXP-006 (parity theorem; Petersen defect exactly 2 on all three; G52 universally 2-critical); manuscript v0.01 drafted with a reserved DOI; web page gated |
 
-- **State:** analyzing (2026-09-03).
-- **Now:** EXP-004 running (normal 6, strong normal 6, exact defects).
-- **Next:** EXP-004 verdict; wiki 02/05; manuscript v0.01 and Zenodo; PR to develop.
+- **State:** consolidating (2026-09-03).
+- **Now:** EXP-005 `(5,2)`/`(6,2)` under budget; EXP-006 full pair sweeps of the 112-vertex graphs and the G52 edge sweep running.
+- **Next:** freeze manuscript v0.01 (EXP-005 sentence), attach and publish on Zenodo, PR to develop; next round PCR-4b, PCR-1/2, PCR-3.
