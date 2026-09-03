@@ -738,3 +738,16 @@ different free ranks but identical torsion `(Z/2)^2`; the threshold module has
 out hidden odd or higher 2-power factors. This is the first exact integral relative-module
 description behind the carrier lattice. A uniform result still needs semantic unimodular bases
 and explicit `p->p+1` compatibility.
+
+EXP-048 replaces the arithmetic HNF coordinates by exact interval-labelled Bockstein
+representatives. The declared bounded-template model fails, but in a controlled way. Both
+`58->59` classes are interval chains of length `p-4`; the `58->62` classes have lengths `2p-8`
+and `p-4`. Their four complete row-set formulas are recorded in the EXP-048 proof and pass a
+separate 78-check audit at every `p=8,...,11`. These are the first concrete semantic objects that
+can plausibly be transported under `p->p+1`.
+
+The same section does not simplify the threshold quotient: its `p-7` basis vectors have multiple
+support shapes. The proof programme therefore splits. For the two stable completions, seek exact
+source cycles with boundary twice the four interval chains and dual parity characters detecting
+them. For `56->58`, seek a relative Morse filtration or dual description rather than fitting one
+translated generator. Neither finite classification is yet an all-parameter theorem.

@@ -150,8 +150,10 @@
 | 2026-09-02 | active | active | EXP-047 declared for HWB-073: transformed Hermite bases of the source kernels and exact Smith forms will decide the three finite relative modules |
 | 2026-09-02 | active | confirmed | EXP-047 passes P1/P2/P3: both stable completions have exact relative torsion `(Z/2)^2`, while `56->58` has `(Z/2)^(p-7)`; 202 independent determinant checks pass |
 | 2026-09-02 | confirmed | active | HWB-074 targets a uniform certificate-producing `I direct-sum 2I` reduction and semantic parameter maps; another coefficient is demoted |
+| 2026-09-02 | active | refuted | EXP-048 passes the relative Bockstein rank regression but refutes bounded completion templates and a single translated threshold family |
+| 2026-09-02 | refuted | active | four explicit completion interval chains survive with supports `(p-4,p-4)` and `(2p-8,p-4)`; HWB-075 targets exact source lifts and dual parity functionals |
 
-Current state: **EXP-047 is confirmed finitely; EXP-046 is refuted overall with P3 retained; EXP-043 and EXP-042 are confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
+Current state: **EXP-048 is refuted overall with four semantic completion chains retained; EXP-047 is confirmed finitely; EXP-046 is refuted overall with P3 retained; EXP-043 and EXP-042 are confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
 inconclusive with two finite passes; EXP-037 is refuted; EXP-036 remains confirmed with structural
 propagation unresolved.** The complete `(10,2)` block has surviving dimensions
 `4240` over `GF(2)` and `4168` over both `GF(3)` and `GF(5)`, so `e_10=72`; this refutes the
@@ -177,6 +179,11 @@ every tested residual stays connected, and the mask-56 threshold occurs in uncha
 support. EXP-047 supplies the fill-producing exact relative presentations: both completion
 quotients have torsion `(Z/2)^2`, and `56->58` has `(Z/2)^(p-7)`, with no odd or higher 2-power
 torsion. HWB-074 now requires a uniform semantic basis and parameter-compatible reduction.
+EXP-048 shows that the stable completion Bockstein classes are explicit growing interval sums,
+not bounded local representatives. The exact finite support laws are `(p-4,p-4)` and
+`(2p-8,p-4)`, while the threshold canonical section has multiple skeletons. HWB-075 therefore
+targets integral lifts and dual parity functionals for the stable chains, with a separate
+relative-Morse route for `56->58`.
 The cubic-source gap is at least `3(p-1)^2` for all `p>=4`, `2<=t<=p-2`, so the exact
 `A_p` and `C_p` values agree throughout this family.  HWB-061 remains active for an infinite
 connecting-parity theorem. HWB-062 is done: the 53-page v0.23 is public and fresh-download

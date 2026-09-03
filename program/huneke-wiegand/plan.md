@@ -1408,3 +1408,25 @@ unimodular operations to `I_(2p-5)+2I_2`, `I_(4p-12)+2I_2`, and
 `I_(2p)+2I_(p-7)`, then identify parameter-compatible pivot families. Do not prioritize `p=12`
 until this symbolic extraction fails. The result is exact and relevant but finite, so manuscript
 v0.23 and Zenodo remain unchanged.
+
+## 2026-09-02 - EXP-048 semantic relative Bockstein gate
+
+EXP-048 tests the Bockstein image itself as the canonical object to transport. It independently
+reconstructs the exact added-row labels, orders them by normalized interval coordinates, and
+computes a quotient-reduced Bockstein basis. P1 requires ranks `2,2,p-7`. P2 predicts bounded
+stable representatives for the completions. P3 predicts one affine translation family for the
+threshold quotient. Reverse relation traversal and exact hash reconstruction are mandatory.
+
+P1 passes and P2/P3 are refuted. The completion representatives grow linearly rather than remain
+bounded, and the threshold basis has multiple support skeletons. The P2 failure nevertheless
+exposes four exact finite interval chains. The two `58->59` supports have sizes `(p-4,p-4)`; the
+two `58->62` supports have sizes `(2p-8,p-4)`. Their row sets satisfy the closed `alpha_(p,j)` and
+`beta_(p,j)` formulas in the proof record at every `p=8,...,11`; a separate 78-check audit
+regenerates them exactly.
+
+This changes the strongest path. Do not seek a bounded critical complex for the stable
+completions. HWB-075 instead seeks source-domain cycles with exact boundary twice the four named
+chains and two dual parity functionals proving independence. That pair of constructions could
+prove the constant `(Z/2)^2` completion uniformly without a global Smith reduction. The
+`56->58` threshold remains separate and moves to dual-character or relative-Morse analysis. No
+manuscript or Zenodo gate opens from the finite formulas.

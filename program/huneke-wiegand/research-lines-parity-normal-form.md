@@ -124,6 +124,20 @@ unit-block sizes `2p-5`, `4p-12`, and `2p`, leaving parity blocks `2I_2`, `2I_2`
 families extend under `p->p+1`. A fifth coefficient is lower value until that attempt either
 succeeds or exposes a specific missing family.
 
+EXP-048 supplies that specific refinement. A canonical semantic Bockstein section refutes bounded
+representatives: the two completion bases grow with support sizes `(p-4,p-4)` and
+`(2p-8,p-4)`. They are not opaque, however. Four explicit interval-chain formulas describe every
+row at `p=8,...,11`. The best route is now a torsion pairing rather than a full Smith reduction:
+
+1. construct exact source cycles whose relative boundaries are twice the four chains;
+2. construct two mod-two row characters vanishing on every relation and pairing nonsingularly
+   with the two chains; and
+3. prove that the remaining relative lattice is primitive, separately from the torsion pairing.
+
+Steps 1 and 2 would prove the constant factor-two completion and its independence uniformly. The
+threshold `56->58` block does not share this canonical-chain behavior and stays on the relative
+Morse/dual-character fallback. An out-of-sample HNF remains lower value than the symbolic lift.
+
 ### 2. Relative squarefree-divisor homology - structural fallback
 
 Multigraded Betti numbers of numerical semigroup rings can be represented by reduced homology of
