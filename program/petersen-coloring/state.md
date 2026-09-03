@@ -8,6 +8,7 @@
 | 2026-09-03 | exploring | analyzing | EXP-002 and EXP-003 CONFIRMED: Berge-Fulkerson, Berge, Fan-Raspaud, 5-cycle double covers and 5-flows all hold; perfect matching index 4; oddness 4/4/2, resistance 3/3/2 |
 | 2026-09-03 | analyzing | consolidating | EXP-004 (normal chromatic index 6), EXP-005 (pure-F proposition; convergence measured), EXP-006 (parity theorem; Petersen defect exactly 2 on all three; all three universally 2-critical); web page gated |
 | 2026-09-03 | consolidating | consolidating | preprint v0.01 published on Zenodo, DOI 10.5281/zenodo.22285165 (concept 10.5281/zenodo.22285164); public download hash-verified |
+| 2026-09-03 | consolidating | consolidating | PR #242 passed guards and test and merged round 1 to develop at 65ab9de4 |
 
 - **State:** consolidating (2026-09-03).
 - **Now:** EXP-005 `(5,2)`/`(6,2)` under budget; EXP-006 full pair sweeps of the 112-vertex graphs and the G52 edge sweep running.
