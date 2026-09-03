@@ -12,6 +12,18 @@
       "status": "exhausted-universal",
       "witnesses": 0
     },
+    "k5m2": {
+      "class": "k5m2",
+      "found": [],
+      "iterations": 1992,
+      "k": 5,
+      "learned": 80832,
+      "m": 2,
+      "n": 42,
+      "seconds": 7206.0,
+      "status": "budget",
+      "witnesses": 1752
+    },
     "k6m0": {
       "class": "k6m0",
       "found": [],

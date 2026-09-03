@@ -32,9 +32,9 @@ re-verified from the graph alone):
 - EXP-006: Petersen defect. Parity THEOREM [D]: for any cubic graph and any edge map into `P`
   the number of bad vertices is never exactly 1 (bad-set label vectors sum into the cut space of
   `P`; odd cuts of size 1 or 3 in `P` are stars). `G52`: all 52 singles UNSAT, all 1,326 pairs
-  critical: defect exactly 2. `G112`, `H112`: all 120 free-vertex pairs critical: defect exactly 2.
-  Full 6,216-pair sweeps of both 112-vertex graphs and the 78 edge relaxations of `G52` (normal-5
-  defect) were RUNNING at this update.
+  critical: defect exactly 2. `G112`, `H112`: all 6,216 pairs critical each: defect exactly 2 and
+  universal 2-criticality on all three graphs (13,758 pair witnesses, bad set always the relaxed
+  pair). The 78 edge relaxations of `G52` (normal-5 defect) were RUNNING at this update.
 
 Key formula (oddness encoding): $\mathrm{oddness}(G) = \min_{M,\mathrm{col}} \#\{e \in E
 \setminus M : \mathrm{col}(u_e) = \mathrm{col}(v_e)\}$ over perfect matchings $M$ and vertex
@@ -60,13 +60,12 @@ Key formula (oddness encoding): $\mathrm{oddness}(G) = \min_{M,\mathrm{col}} \#\
 | 003 | double covers, flows, oddness, resistance | CONFIRMED (oddness prediction refuted) | 5-CDC, 5-flow; oddness 4/4/2; resistance 3/3/2 |
 | 004 | normal 6, defects | normal 6 CONFIRMED; defects INCONCLUSIVE | $\chi'_N = 6$ on all three |
 | 005 | compositions of `F` below 52 | partial: `(5,0)`, `(6,0)` exhausted; `(5,2)`, `(6,2)` budget | pure-F proposition; CEGAR non-convergence measured |
-| 006 | critical vertices and pairs | CONFIRMED as redirected (P1, P2 refuted by theorem) | parity theorem; defect 2 on all three; `G52` universally 2-critical |
+| 006 | critical vertices and pairs | CONFIRMED as redirected (P1, P2 refuted by theorem) | parity theorem; defect 2 on all three; all three universally 2-critical |
 
 ## 4. In flight
 
-- EXP-006 full pair sweeps of `G112` and `H112` (runner `run_pairs.py --graph <name>`, resumable
-  from `artifacts/pairs-<name>.json`); edge relaxations of `G52` (`run.py --skip-vertices`, log
-  `artifacts/run-edges-G52.log`).
+- EXP-006 edge relaxations of `G52` (`run.py --skip-vertices`, log `artifacts/run-edges-G52.log`,
+  13 of 78 UNSAT at this update); pair sweeps complete.
 - EXP-005 classes `(5,2)`, `(6,2)` under their 2-hour budgets (`run.py --skip-controls --classes`).
 - EXP-004 last instance (`G52_pdef_1`, cardinality bound 1, expected UNSAT or timeout).
 

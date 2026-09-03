@@ -94,7 +94,7 @@ resistance 2, every value certified from both sides. All three admit normal and 
 6-edge-colorings, so their normal chromatic index is exactly 6. Defining the Petersen defect as
 the least number of vertices at which the star condition must fail, we prove that the 52-vertex
 graph has defect exactly~2: no single vertex absorbs the obstruction (52 checked refutations),
-while every one of its 1{,}326 vertex pairs does (explicit witnesses). A parity argument explains the first half in general: for any edge map into the Petersen graph the number of bad vertices is never exactly one, so every counterexample has defect at least~2 and the 52-vertex graph is extremal. Finally, we prove that
+while every one of its 1{,}326 vertex pairs does (explicit witnesses); the same holds for the two 112-vertex graphs at every one of their 6{,}216 pairs. A parity argument explains the first half in general: for any edge map into the Petersen graph the number of bad vertices is never exactly one, so every counterexample has defect at least~2 and the three known counterexamples are extremal. Finally, we prove that
 no counterexample consists solely of copies of the Petersen 4-pole $F$ from which all known
 counterexamples are built, and report a counterexample-guided search over compositions of $F$
 with free vertices below 52 vertices. All computations are
@@ -335,9 +335,11 @@ space of $\PG$. For the 112-vertex graphs the theorem already gives defect at le
 it equals~2 is decided by pair relaxations, reported in the repository record (experiment 006)
 for the pairs of vertices outside the twelve disjoint copies of $F$: all $120$ such pairs of
 $\Gmain$ and all $120$ of $\Gsym$ are critical (explicit witnesses, at most $3.1$ seconds each),
-so both 112-vertex graphs have Petersen defect exactly~2 as well. Whether, as for $\Gfty$,
-every one of their $6{,}216$ vertex pairs is critical was being swept when this version was
-frozen; the repository record carries the answer.
+so both 112-vertex graphs have Petersen defect exactly~2 as well. The full sweeps then showed
+that, as for $\Gfty$, every one of their $6{,}216$ vertex pairs is critical (explicit
+witnesses, slowest $20$ seconds; the checker reports exactly the two relaxed vertices as bad in
+all $13{,}758$ pair witnesses of the three graphs). We call this property, verified here for the
+three graphs and unexplained by the parity argument, \emph{universal 2-criticality}.
 
 \section{Compositions of copies of the Petersen 4-pole}\label{sec:compositions}
 

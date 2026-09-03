@@ -15,8 +15,8 @@ Sources: GJMMM Section 5; EXP-005 and EXP-006 verdicts; `program/petersen-colori
 ## Our exact results that sharpen the picture
 
 - Every counterexample has Petersen defect at least 2 (parity theorem, `[D]`), and the three
-  known ones have defect exactly 2 (EXP-006 `[MV]`); for the 52-vertex graph every pair of
-  vertices is critical.
+  known ones have defect exactly 2 (EXP-006 `[MV]`); for all three, every pair of vertices is
+  critical (universal 2-criticality), a property without a proof yet.
 - No counterexample consists only of copies of the pole $F$ (Proposition, `[D]`, `[MV]`).
 - Perfect matching index 4 on all three; oddness 4 on the 112-vertex graphs versus 2 on the
   52-vertex graph (EXP-002, EXP-003).

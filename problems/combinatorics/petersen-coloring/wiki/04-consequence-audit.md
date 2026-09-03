@@ -21,7 +21,7 @@ drat-trim-verified DRAT proof.
 | normal 6-edge-coloring | yes | yes | yes | yes |
 | strong normal 6-edge-coloring (every edge rich) | yes | yes | yes | yes |
 | normal chromatic index | 6 | 6 | 6 | 5 |
-| Petersen defect (min. number of bad vertices over all edge maps) | **2** (all 120 free-vertex pairs critical; full pair sweep running) | **2** (free-vertex pair sweep running) | **2** (every one of the 1,326 vertex pairs is critical) | 0 |
+| Petersen defect (min. number of bad vertices over all edge maps) | **2** (every one of the 6,216 vertex pairs is critical) | **2** (every one of the 6,216 vertex pairs is critical) | **2** (every one of the 1,326 vertex pairs is critical) | 0 |
 
 The defect is never 1 for any cubic graph: the parity theorem in
 `context/2026-09-03-defect-parity-lemma.md` (the bad set's label vectors sum to an element of the

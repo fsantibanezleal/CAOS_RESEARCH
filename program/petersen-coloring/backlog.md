@@ -16,5 +16,5 @@
 | PCB-011 | Wiki pages 01-05 (statement and history; implication ladder; counterexamples; audit; open questions) | done | P2 | 2026-09-03 written with the round |
 | PCB-012 | Web problem page | built and gated | P3 | `frontend/src/pages/PetersenColoring.tsx`; 24-shot gate pass; goes live at the next serialized release (bake) |
 | PCB-013 | Cyclically 5-edge-connected counterexamples (GJMMM Problem 5) | todo | P3 | only after PCB-009 |
-| PCB-015 | Full 6,216-pair sweeps of G112 and H112 (EXP-006 addendum 3, P9) | running | P2 | launched 2026-09-03 13:08 and 13:09 |
-| PCB-016 | Critical-pair structure (PCR-3): distance profile, which pairs, per graph | todo | P2 | after PCB-015 |
+| PCB-015 | Full 6,216-pair sweeps of G112 and H112 (EXP-006 addendum 3, P9) | done | P2 | 2026-09-03: every pair critical in both |
+| PCB-016 | Explain universal 2-criticality (PCR-3): is every pair critical in every counterexample? structure of the two bad stars in pair witnesses | todo | P1 | after PCB-015: the pair set is complete, so the object is the witnesses |
