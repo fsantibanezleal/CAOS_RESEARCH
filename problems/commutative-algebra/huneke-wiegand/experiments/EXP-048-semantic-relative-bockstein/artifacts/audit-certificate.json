@@ -1,0 +1,326 @@
+{
+  "experiment": "EXP-048",
+  "audit": "independent rank recomposition and explicit completion-chain formulas",
+  "status": "PASS",
+  "checks_passed": 78,
+  "checks_total": 78,
+  "run_sha256": "ec245859931cf1b3992630c8faab207a158ae5b72a3283783ec938cd3b76e70a",
+  "results_sha256": "ba44eae4c9193bc941411b059dc7a7d7a4c69dff3d818e05d3395338e125a400",
+  "exp047_results_sha256": "f78d251ae1746a88d1190756572aa251b9daf70ceb103cef9765c6d73b26f46c",
+  "formula_scope": "post-result exact finite classification, not an all-parameter proof",
+  "checks": [
+    {
+      "name": "results internal hash",
+      "pass": true
+    },
+    {
+      "name": "results complete",
+      "pass": true
+    },
+    {
+      "name": "declared parameter set",
+      "pass": true
+    },
+    {
+      "name": "P1 finite pass",
+      "pass": true
+    },
+    {
+      "name": "P2 refuted",
+      "pass": true
+    },
+    {
+      "name": "P3 refuted",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 rank",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 rank agrees EXP-047",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 reverse audit",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 representative hashes",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 rank",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 rank agrees EXP-047",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 reverse audit",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 representative hashes",
+      "pass": true
+    },
+    {
+      "name": "p=8 56->58 rank",
+      "pass": true
+    },
+    {
+      "name": "p=8 56->58 rank agrees EXP-047",
+      "pass": true
+    },
+    {
+      "name": "p=8 56->58 reverse audit",
+      "pass": true
+    },
+    {
+      "name": "p=8 56->58 representative hashes",
+      "pass": true
+    },
+    {
+      "name": "p=8 alpha-1 formula",
+      "pass": true
+    },
+    {
+      "name": "p=8 alpha-2 formula",
+      "pass": true
+    },
+    {
+      "name": "p=8 beta-1 formula",
+      "pass": true
+    },
+    {
+      "name": "p=8 beta-2 formula",
+      "pass": true
+    },
+    {
+      "name": "p=8 alpha support law",
+      "pass": true
+    },
+    {
+      "name": "p=8 beta support law",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 rank",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 rank agrees EXP-047",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 reverse audit",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 representative hashes",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 rank",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 rank agrees EXP-047",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 reverse audit",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 representative hashes",
+      "pass": true
+    },
+    {
+      "name": "p=9 56->58 rank",
+      "pass": true
+    },
+    {
+      "name": "p=9 56->58 rank agrees EXP-047",
+      "pass": true
+    },
+    {
+      "name": "p=9 56->58 reverse audit",
+      "pass": true
+    },
+    {
+      "name": "p=9 56->58 representative hashes",
+      "pass": true
+    },
+    {
+      "name": "p=9 alpha-1 formula",
+      "pass": true
+    },
+    {
+      "name": "p=9 alpha-2 formula",
+      "pass": true
+    },
+    {
+      "name": "p=9 beta-1 formula",
+      "pass": true
+    },
+    {
+      "name": "p=9 beta-2 formula",
+      "pass": true
+    },
+    {
+      "name": "p=9 alpha support law",
+      "pass": true
+    },
+    {
+      "name": "p=9 beta support law",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 rank",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 rank agrees EXP-047",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 reverse audit",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 representative hashes",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 rank",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 rank agrees EXP-047",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 reverse audit",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 representative hashes",
+      "pass": true
+    },
+    {
+      "name": "p=10 56->58 rank",
+      "pass": true
+    },
+    {
+      "name": "p=10 56->58 rank agrees EXP-047",
+      "pass": true
+    },
+    {
+      "name": "p=10 56->58 reverse audit",
+      "pass": true
+    },
+    {
+      "name": "p=10 56->58 representative hashes",
+      "pass": true
+    },
+    {
+      "name": "p=10 alpha-1 formula",
+      "pass": true
+    },
+    {
+      "name": "p=10 alpha-2 formula",
+      "pass": true
+    },
+    {
+      "name": "p=10 beta-1 formula",
+      "pass": true
+    },
+    {
+      "name": "p=10 beta-2 formula",
+      "pass": true
+    },
+    {
+      "name": "p=10 alpha support law",
+      "pass": true
+    },
+    {
+      "name": "p=10 beta support law",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 rank",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 rank agrees EXP-047",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 reverse audit",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 representative hashes",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 rank",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 rank agrees EXP-047",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 reverse audit",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 representative hashes",
+      "pass": true
+    },
+    {
+      "name": "p=11 56->58 rank",
+      "pass": true
+    },
+    {
+      "name": "p=11 56->58 rank agrees EXP-047",
+      "pass": true
+    },
+    {
+      "name": "p=11 56->58 reverse audit",
+      "pass": true
+    },
+    {
+      "name": "p=11 56->58 representative hashes",
+      "pass": true
+    },
+    {
+      "name": "p=11 alpha-1 formula",
+      "pass": true
+    },
+    {
+      "name": "p=11 alpha-2 formula",
+      "pass": true
+    },
+    {
+      "name": "p=11 beta-1 formula",
+      "pass": true
+    },
+    {
+      "name": "p=11 beta-2 formula",
+      "pass": true
+    },
+    {
+      "name": "p=11 alpha support law",
+      "pass": true
+    },
+    {
+      "name": "p=11 beta support law",
+      "pass": true
+    }
+  ],
+  "artifact_hash": "880e428c8abe78a7430546b1fb3d2e67b48b17e1c3a85b6e04fa402aff75e8da"
+}
