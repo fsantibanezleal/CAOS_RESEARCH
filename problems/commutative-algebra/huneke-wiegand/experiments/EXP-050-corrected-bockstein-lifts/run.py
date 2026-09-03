@@ -250,6 +250,14 @@ def canonical_rref(vectors: Iterable[int]) -> list[int]:
     return [basis[pivot] for pivot in sorted(basis)]
 
 
+def reduce_quotient(vector: int, image_basis: list[int]) -> int:
+    for basis_vector in image_basis:
+        pivot = (basis_vector & -basis_vector).bit_length() - 1
+        if (vector >> pivot) & 1:
+            vector ^= basis_vector
+    return vector
+
+
 def fit_affine(values: list[int], parameters: list[int]) -> list[int] | None:
     for slope in range(-100, 101):
         intercept = values[0] - slope * parameters[0]
@@ -260,6 +268,13 @@ def fit_affine(values: list[int], parameters: list[int]) -> list[int] | None:
 
 def classify(rows: list[dict[str, object]]) -> dict[str, object]:
     full = [int(row["p"]) for row in rows] == [8, 9, 10, 11]
+    if not full:
+        return {
+            "p1_status": "NOT_EVALUATED",
+            "p2_status": "NOT_EVALUATED",
+            "p3_status": "NOT_EVALUATED",
+            "p3_details": {},
+        }
     primary = [
         record
         for row in rows
@@ -444,7 +459,11 @@ def main() -> int:
                 audit_basis = exact_bockstein_basis(
                     columns, len(added_rows), high=True, reverse=True
                 )
-                audit_canonical = canonical_rref(int(record["parity"]) for record in audit_basis)
+                image_basis = canonical_rref(column_bits(columns))
+                audit_canonical = canonical_rref(
+                    reduce_quotient(int(record["parity"]), image_basis)
+                    for record in audit_basis
+                )
                 if audit_canonical != canonical_rref(formula_bits):
                     raise AssertionError({"p": p, "inclusion": [source, target], "audit_subspace": False})
                 p_record["inclusions"].append(
