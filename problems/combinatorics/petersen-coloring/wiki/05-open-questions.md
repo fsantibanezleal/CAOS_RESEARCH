@@ -24,8 +24,8 @@ Sources: GJMMM Section 5; EXP-005 and EXP-006 verdicts; `program/petersen-colori
 ## Our nulls and budget stops (honest record)
 
 - Composition classes $\mathcal C(k, m)$ (k copies of $F$, m free vertices) below 52 vertices:
-  $(5,0)$ and $(6,0)$ exhausted (universal coloring); $(3,2)$ control and $(5,2)$ did not converge
-  under counterexample-guided search within budget (EXP-005): the outer loop needs symmetry
+  $(5,0)$ and $(6,0)$ exhausted (universal coloring); $(3,2)$ control, $(5,2)$ and $(6,2)$ did not
+  converge under counterexample-guided search within budget (EXP-005): the outer loop needs symmetry
   breaking or a QBF formulation (research line PCR-4b, PCR-4c). No claim is made for the
   unexhausted classes.
 - Normal-5 defect: at least 1 on all three (EXP-001); the cardinality-encoded bound-1 instances

@@ -28,7 +28,7 @@ re-verified from the graph alone):
   encoded defect ladders stalled at bound 1 (30-minute cap): INCONCLUSIVE on defects.
 - EXP-005: classes of `k` copies of `F` plus `m` free vertices; `(5,0)`, `(6,0)` exhausted by a
   universal coloring (Proposition: pure compositions of `F` are always colorable, [D]); `(3,2)`
-  control and `(5,2)` did not converge in budget (CEGAR with one clause per coloring).
+  control, `(5,2)` and `(6,2)` did not converge in budget (CEGAR with one clause per coloring).
 - EXP-006: Petersen defect. Parity THEOREM [D]: for any cubic graph and any edge map into `P`
   the number of bad vertices is never exactly 1 (bad-set label vectors sum into the cut space of
   `P`; odd cuts of size 1 or 3 in `P` are stars). `G52`: all 52 singles UNSAT, all 1,326 pairs
@@ -59,14 +59,13 @@ Key formula (oddness encoding): $\mathrm{oddness}(G) = \min_{M,\mathrm{col}} \#\
 | 002 | perfect matching covers | CONFIRMED | BF, Berge-5, FR hold; index 4 |
 | 003 | double covers, flows, oddness, resistance | CONFIRMED (oddness prediction refuted) | 5-CDC, 5-flow; oddness 4/4/2; resistance 3/3/2 |
 | 004 | normal 6, defects | normal 6 CONFIRMED; defects INCONCLUSIVE | $\chi'_N = 6$ on all three |
-| 005 | compositions of `F` below 52 | partial: `(5,0)`, `(6,0)` exhausted; `(5,2)`, `(6,2)` budget | pure-F proposition; CEGAR non-convergence measured |
+| 005 | compositions of `F` below 52 | INCONCLUSIVE: `(5,0)`, `(6,0)` exhausted; `(5,2)`, `(6,2)` budget-stopped | pure-F proposition; CEGAR non-convergence measured |
 | 006 | critical vertices and pairs | CONFIRMED as redirected (P1, P2 refuted by theorem) | parity theorem; defect 2 on all three; all three universally 2-critical |
 
 ## 4. In flight
 
 - EXP-006 edge relaxations of `G52` (`run.py --skip-vertices`, log `artifacts/run-edges-G52.log`,
   13 of 78 UNSAT at this update); pair sweeps complete.
-- EXP-005 classes `(5,2)`, `(6,2)` under their 2-hour budgets (`run.py --skip-controls --classes`).
 - EXP-004 last instance (`G52_pdef_1`, cardinality bound 1, expected UNSAT or timeout).
 
 ## 5. Next actions, ordered
