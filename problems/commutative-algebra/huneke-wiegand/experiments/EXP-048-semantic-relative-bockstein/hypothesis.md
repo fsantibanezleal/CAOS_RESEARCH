@@ -19,10 +19,13 @@ first Bockstein as a subspace of the mod-two cokernel. It does not compute anoth
   `58->62`, and `56->58`, respectively, at every `p=8,...,11`.
 - **P2 (stable completions):** after lexicographically ordering the normalized added-row
   coordinates and taking the canonical quotient-reduced row-echelon basis, each completion has a
-  bounded-support two-vector Bockstein basis whose normalized support-template multiset is
-  independent of `p`.
+  two-vector Bockstein basis with at most `64` rows per vector whose normalized support-template
+  multiset is independent of `p`.
 - **P3 (threshold family):** the `56->58` canonical basis consists of one translation family
-  indexed by `1,...,p-7`, with no exceptional template whose number grows with `p`.
+  indexed by `k=1,...,p-7`, with no exceptional template whose number grows with `p`. Operationally,
+  after lexicographically sorting the representatives, their nonnumeric support skeletons must be
+  identical and every numeric coordinate must have one integer-affine formula `a*p+b*k+c` with
+  `-4<=a,b<=4` across the complete finite table.
 
 Here a normalized row coordinate records the missing elements of `L0=[1,p]`, the missing elements
 of `L1=[3p,4p-2]` relative to both endpoints, the selected high-interval elements relative to both
