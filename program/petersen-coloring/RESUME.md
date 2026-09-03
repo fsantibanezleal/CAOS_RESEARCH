@@ -88,7 +88,7 @@ Key formula (oddness encoding): $\mathrm{oddness}(G) = \min_{M,\mathrm{col}} \#\
 |---|---|
 | problem tree | `problems/combinatorics/petersen-coloring/` (data/, code/pcclib, experiments/EXP-001..006, wiki/01-05, context/) |
 | programme record | `program/petersen-coloring/` (plan, state, backlog, research lines, this file) |
-| scouting record | `program/scouting-2026-09/` |
+| scouting record | `problems/combinatorics/petersen-coloring/context/scouting-2026-09/` |
 | external evidence and heavy artifacts | `E:/_Datos/caos-research/petersen-coloring/` (sources, EXP-001..006 CNFs and proofs, web-gate screenshots) |
 | manuscript | `manuscripts/petersen-coloring/consequence-audit/` |
 | web page | `frontend/src/pages/PetersenColoring.tsx` (gate `_CAOS_MANAGE/tools/visual-verify/_pcc-gate.mjs`: 24 shots, pass) |

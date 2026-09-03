@@ -1,6 +1,6 @@
 # Petersen coloring counterexamples: program plan
 
-Opened 2026-09-03 from the scouting round (`program/scouting-2026-09/`), the scoping sheet
+Opened 2026-09-03 from the scouting round (`problems/combinatorics/petersen-coloring/context/scouting-2026-09/`), the scoping sheet
 (`scoping-2026-09-03.md`), and the source dossier under
 `problems/combinatorics/petersen-coloring/context/`. Feasibility A; GPU no (proof-carrying SAT
 and exact enumeration on CPU).

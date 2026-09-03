@@ -3,7 +3,7 @@
 ## 2026-09-03 - scouting, selection, and opening
 
 - Scouted the September 2026 landscape of computer-found counterexamples (six primary-source
-  dossiers under `program/scouting-2026-09/`); scored candidates on the counterexample radar.
+  dossiers under `problems/combinatorics/petersen-coloring/context/scouting-2026-09/`); scored candidates on the counterexample radar.
 - Selected the 2026 disproof of Jaeger's Petersen coloring conjecture: Putman's two 112-vertex
   graphs (Zenodo 21845291, arXiv:2608.10012), Jooken's human-checkable proof (arXiv:2608.10028),
   and the 52-vertex graph plus infinite families of Goedgebeur, Jooken, Macajova, Mattiolo and

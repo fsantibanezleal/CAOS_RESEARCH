@@ -29,4 +29,7 @@ problems:
   - { slug: centralizers,          area: dynamical-systems,      state: proposed,  feasibility: C,  gpu: false }
   - { slug: hodge,                 area: algebraic-geometry,     state: proposed,  feasibility: C,  gpu: false }
   - { slug: huneke-wiegand,        area: commutative-algebra,    state: published,     feasibility: A,  gpu: false,   opened: "2026-08-01" }
-  - { slug: petersen-coloring,     area: combinatorics,          state: opened,    feasibility: A,  gpu: false,   opened: "2026-09-03" }
+  - { slug: petersen-coloring,     area: combinatorics,          state: consolidating, feasibility: A, gpu: false, opened: "2026-09-03" }
+  - { slug: bougard-joret,         area: combinatorics,          state: proposed,  feasibility: A,  gpu: false }
+  - { slug: hoa-mnh,               area: combinatorics,          state: proposed,  feasibility: A,  gpu: false }
+  - { slug: boij-soderberg-realizability, area: commutative-algebra, state: proposed, feasibility: A, gpu: false }

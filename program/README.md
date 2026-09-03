@@ -22,7 +22,10 @@ The in-repo status section: which problems exist, in which lifecycle state (see
 | Centralizer density (Smale 12) | dynamical-systems | proposed | C+ | no | |
 | Hodge conjecture | algebraic-geometry | proposed | C+ | no | |
 | Huneke-Wiegand counterexample extensions | commutative-algebra | published | A | no | [huneke-wiegand/plan.md](huneke-wiegand/plan.md) |
-| Petersen coloring counterexamples (consequence audit) | combinatorics | opened | A | no | [petersen-coloring/plan.md](petersen-coloring/plan.md) |
+| Petersen coloring counterexamples (consequence audit) | combinatorics | consolidating | A | no | [petersen-coloring/plan.md](petersen-coloring/plan.md) |
+| Bougard-Joret corrected first regime (k-connected graphs, independence number) | combinatorics | proposed | A | no | scouting dossier under the petersen-coloring context, `scouting-2026-09/` |
+| Hoa maximal non-Hamiltonian conjecture: least counterexample order | combinatorics | proposed | A | no | same scouting dossier set |
+| Boij-Soderberg realizability (Erman-Sam Questions 6.1/6.2) | commutative-algebra | proposed | A | no | same scouting dossier set |
 
 Portfolio selection is also informed by the finite-certificate and validation-loop criteria in
 [`counterexample-radar.md`](counterexample-radar.md). Prestige is not a substitute for a tractable
