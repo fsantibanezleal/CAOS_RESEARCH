@@ -90,7 +90,14 @@ matchings, a Fan--Raspaud triple, a 5-cycle double cover and a nowhere-zero 5-fl
 as explicit witnesses re-verified from the graph alone; none admits a nowhere-zero 4-flow. Their
 perfect matching index is exactly 4, one below the Petersen graph's value. The two 112-vertex
 graphs have oddness 4 and resistance 3, whereas the 52-vertex graph has oddness 2 and
-resistance 2, every value certified from both sides. AUDITFOUR All computations are
+resistance 2, every value certified from both sides. All three admit normal and strong normal
+6-edge-colorings, so their normal chromatic index is exactly 6. Defining the Petersen defect as
+the least number of vertices at which the star condition must fail, we prove that the 52-vertex
+graph has defect exactly~2: no single vertex absorbs the obstruction (52 checked refutations),
+while PENDINGPAIRS of its 1{,}326 vertex pairs do (explicit witnesses). Finally, we prove that
+no counterexample consists solely of copies of the Petersen 4-pole $F$ from which all known
+counterexamples are built, and report a counterexample-guided search over compositions of $F$
+with free vertices below 52 vertices. All computations are
 propositional with checked DRAT certificates or explicit witnesses; hypotheses were declared
 before each run, and a refuted prediction of ours (oddness 2 for the 112-vertex graphs) is
 preserved. The paper decides nothing about the general conjectures and says so.
@@ -262,9 +269,77 @@ graphs. The value is consistent with the theorem that the smallest snarks with o
 least~4 and cyclic connectivity~4 have order~44~\cite{GMS2019}. The 52-vertex graph, by contrast,
 has the least possible oddness of a snark.
 
-\section{Normal 6-edge-colorings and exact defects}
+\section{Normal 6-edge-colorings and the Petersen defect}
 
-AUDITFOURSECTION
+\subsection{Normal chromatic index}
+
+Mazzuoccolo and Mkrtchyan proved that every simple cubic graph admits a normal 7-edge-coloring
+and asked whether 6 colors always suffice for bridgeless cubic graphs~\cite{MazzMkrt2020}; the
+question is restated as Conjecture~6 in~\cite{GJMMM2026}, who verified a strong normal
+6-edge-coloring (every edge rich) of one 112-vertex graph.
+
+\begin{theorem}[machine-verified]\label{thm:normal6}
+Each of $\Gmain$, $\Gsym$, $\Gfty$ admits a normal 6-edge-coloring and a strong normal
+6-edge-coloring. Since none admits a normal 5-edge-coloring (Theorem~\ref{thm:certify}), their
+normal chromatic index is exactly~6.
+\end{theorem}
+
+The colorings are explicit witnesses re-verified by a checker that recomputes, for every edge,
+the number of colors on its two end stars. All six instances solved in well under a second.
+
+\subsection{How far from colorable: the Petersen defect}
+
+Define the \emph{Petersen defect} of a cubic graph $G$ as the least number of vertices at which
+the star condition fails, over all maps $E(G) \to E(\PG)$ (equivalently, the least number of
+vertices whose star constraints must be dropped for a coloring to exist); a Petersen coloring is
+a map of defect~0. Encoding the defect through a cardinality constraint over all vertices proved
+hard for the solver (the bound-1 instances of all three graphs exceeded a 30-minute cap), so we
+decided it by \emph{designated relaxation}: for each vertex $v$, a formula whose star
+constraints are dropped at $v$ only; and for each pair $\{u, v\}$, a formula relaxed at both.
+
+\begin{theorem}[machine-verified]\label{thm:defect52}
+The Petersen defect of $\Gfty$ is exactly~2. For every one of its $52$ vertices, the map relaxed
+at that vertex alone does not exist (DRAT proofs checked by \texttt{drat-trim}, each in about
+two seconds), while PENDINGPAIRS of the $1{,}326$ vertex pairs admit a map whose star
+condition fails exactly at the two relaxed vertices (explicit witnesses; the checker reports
+exactly those two bad vertices).
+\end{theorem}
+
+Thus the obstruction in the smallest known counterexample is not localized: no single vertex,
+in particular none of the four vertices outside the six disjoint copies of $F$ (measured in
+Section~\ref{sec:compositions}), can absorb it, whereas PENDINGPAIRSWORD pairs can. For the
+112-vertex graphs the single-vertex sweep is reported in the repository record (experiment
+006); at the time of this version the sweep over their free vertices had established
+PENDING112.
+
+\section{Compositions of copies of the Petersen 4-pole}\label{sec:compositions}
+
+All known counterexamples contain the 4-pole $F$~\cite{GJMMM2026}. A packing computation
+(exhaustive enumeration of the 8-vertex sets with a 4-edge boundary that induce $F$, followed by
+an exact maximum disjoint packing) shows that $\Gfty$ contains exactly six disjoint copies of $F$
+and four further vertices, and that each 112-vertex graph contains twelve disjoint copies and
+sixteen further vertices. This suggests the class $\mathcal C(k, m)$ of simple cubic bridgeless
+graphs made of $k$ disjoint copies of $F$ and $m$ free vertices, the $4k + 3m$ semi-edges being
+joined by a perfect matching.
+
+\begin{proposition}[derived; machine-witnessed]\label{prop:pure}
+Every graph in $\mathcal C(k, 0)$ has a Petersen coloring. Hence no counterexample consists
+solely of copies of $F$.
+\end{proposition}
+
+\begin{proof}
+$F$ admits a Petersen coloring in which its four semi-edges carry the same edge $x$ of $\PG$
+(the distance-zero case of Jooken's Lemma~2.1~\cite{Jooken2026}; an explicit such coloring is
+recorded in the repository). Color every copy by it, with the same $x$. Every join edge then
+carries $x$ at both ends, and every vertex star is a star of a copy of $F$, hence a star of
+$\PG$.
+\end{proof}
+
+The counterexample-guided search of experiment 005 (join formula for the matching; structural
+check; Petersen-colorability of each candidate; sound blocking clauses learned from every
+coloring found, each recorded with its witness) exhausted $\mathcal C(5,0)$ and $\mathcal C(6,0)$
+in seconds by exactly such a universal coloring, and PENDING005. We do not claim anything
+about classes it did not exhaust.
 
 \section{Open questions and non-claims}
 
