@@ -1721,3 +1721,30 @@
   explicit Bareiss minors prove top determinantal divisors `4` and `2^(p-7)`.
 - HWB-073 is done. HWB-074 owns the uniform `I direct-sum 2I` reduction and semantic parameter
   maps. The finite result is not a manuscript or Zenodo trigger.
+
+## 2026-09-02 - EXP-048 semantic relative Bockstein gate declared
+
+- The experiment is committed before computation and acts on the frozen EXP-047 matrices rather
+  than computing a fifth coefficient.
+- It independently reconstructs exact added-row labels and computes the Bockstein image in a
+  canonical semantic quotient section under forward and reverse relation traversal.
+- P1 requires the known ranks `2,2,p-7`. P2 predicts bounded stable completion representatives;
+  P3 predicts one affine translation family for the threshold block. Both structural predictions
+  have explicit failure redirects.
+- A fresh source sweep finds no existing theorem supplying the missing CAOS transition maps. The
+  Bockstein image, rather than an HNF basis or single row atom, is the new object to transport.
+
+## 2026-09-02 - EXP-048 refutes local templates and exposes interval chains
+
+- P1 passes exactly: the relative Bockstein ranks are `2`, `2`, and `p-7` for every
+  `p=8,...,11`, and agree with independent EXP-047 rational-minus-binary ranks.
+- P2 is refuted because the completion representatives grow. The exact support laws are
+  `(p-4,p-4)` for `58->59` and `(2p-8,p-4)` for `58->62`.
+- The failure exposes four explicit interval-chain formulas `alpha_(p,1)`, `alpha_(p,2)`,
+  `beta_(p,1)`, and `beta_(p,2)`. A separate 78-check audit regenerates every row and validates
+  both linear support laws.
+- P3 is refuted: the `p-7` threshold representatives have multiple nonnumeric skeletons and
+  support sizes `13`; `18,14`; `24,19,32`; and `31,25,38,20`.
+- HWB-075 now targets exact source lifts and dual parity functionals for the four stable chains.
+  The threshold moves to a separate relative-Morse route. The formulas remain finite and do not
+  trigger a manuscript or Zenodo update.

@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-09-02. Lifecycle: EXP-047 is CONFIRMED FINITELY; EXP-046 is REFUTED overall with P3 retained; EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
+Updated: 2026-09-02. Lifecycle: EXP-048 is REFUTED overall with explicit completion-chain candidates retained; EXP-047 is CONFIRMED FINITELY; EXP-046 is REFUTED overall with P3 retained; EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
 with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
@@ -30,7 +30,12 @@ support, so the `p=11` threshold is internal sign/rank behavior. EXP-047 complet
 finite relative integer presentation: both
 stable completion quotients have exact torsion `(Z/2)^2`, while `56->58` has
 `(Z/2)^(p-7)`, with explicit free ranks and no hidden odd or higher 2-power factors. HWB-074 now
-owns the uniform semantic basis and parameter-compatible reduction.
+owns the uniform semantic basis and parameter-compatible reduction. EXP-048 refutes bounded local
+representatives but exposes four explicit interval chains: the two `58->59` Bockstein supports
+have sizes `(p-4,p-4)` and the two `58->62` supports have sizes `(2p-8,p-4)`. Their exact row
+formulas pass a separate 78-check audit on `p=8,...,11`. The `56->58` canonical section is not one
+translation family, so HWB-075 prioritizes integral lifts of the four stable completion chains and
+dual parity characters; the threshold block moves to a relative-Morse fallback.
 For every
 `p>=4` and
 `2<=t<=p-2`, the shifted cubic source is absent
@@ -391,6 +396,7 @@ campaign is supporting evidence, not the proof.
 | EXP-045 | REFUTED WITH STRUCTURAL REDIRECT | exhaustive 256-projection lattice gives stable minimal full carriers `59,62`, core ranks `1,2,3,5`, constant completion two, and a `p=11` threshold at mask `56` |
 | EXP-046 | REFUTED; P3 PASSES FINITELY | both minimal full carriers have zero unit-leaf cancellations; every residual is one connected core; mask `56` changes defect inside persistent semantic support |
 | EXP-047 | CONFIRMED FINITELY | exact relative modules give `(Z/2)^2` for both stable completions and `(Z/2)^(p-7)` for the threshold quotient; 202 independent determinant checks pass |
+| EXP-048 | REFUTED; P1 PASSES FINITELY | canonical relative Bocksteins recover ranks `2,2,p-7`; bounded/local templates fail, but four explicit completion interval chains with support laws `(p-4,p-4)` and `(2p-8,p-4)` survive 78 audit checks |
 
 ## 3a. Exact evidence anchors
 
@@ -501,11 +507,18 @@ campaign is supporting evidence, not the proof.
 - EXP-047 primary SHA-256:
   `f78d251ae1746a88d1190756572aa251b9daf70ceb103cef9765c6d73b26f46c`; audit certificate
   external SHA-256 `bbdfaca4f9ba2032beac04f23b9e1db13fd6f1ca37518b957d91a1f55321c028`.
+- EXP-048 primary SHA-256:
+  `ba44eae4c9193bc941411b059dc7a7d7a4c69dff3d818e05d3395338e125a400`; its 78-check audit
+  passes with internal hash `880e428c8abe78a7430546b1fb3d2e67b48b17e1c3a85b6e04fa402aff75e8da`
+  and external SHA-256 `738d3b8e77c3a7cf2ca82692d7d7c9b1b4b97799a82ed3d808f8a6a1e621efed`.
 
 ## 4. In flight
 
-EXP-047 is CONFIRMED FINITELY and HWB-073 is done. Both stable completion quotients have exact
-torsion `(Z/2)^2`, and `56->58` has `(Z/2)^(p-7)`. HWB-074 owns the uniform semantic reduction.
+EXP-048 is REFUTED overall with P1 and four exact finite completion-chain formulas retained.
+HWB-074 remains open for the uniform semantic reduction, and HWB-075 owns exact source-domain
+lifts plus dual parity functionals for those chains. EXP-047 is CONFIRMED FINITELY and HWB-073 is
+done. Both stable completion quotients have exact torsion `(Z/2)^2`, and `56->58` has
+`(Z/2)^(p-7)`.
 EXP-046 is REFUTED overall with P3 retained, and HWB-072 is done. Masks `59` and `62` have no
 unit leaves and all tested residuals have one connected core. HWB-073 owns the fill-producing
 relative integer comparison. EXP-045 is REFUTED with a stable full-carrier antichain retained.
@@ -859,16 +872,19 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Build a certificate-producing unimodular reduction of the compact relative matrices to unit
-   blocks plus `2I_2`, `2I_2`, and `2I_(p-7)`.
-2. Classify the pivots by semantic interval coordinates and construct explicit `p->p+1` maps
-   before claiming an all-parameter theorem or OI/FI stability.
-3. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
+1. Lift the four explicit EXP-048 completion chains to semantic source-domain cycles with exact
+   boundary twice the displayed rows, and construct two dual parity functionals proving their
+   independence.
+2. Use those lifts and functionals to prove the `58->59` and `58->62` factor-two completions for
+   all `p`; derive the unit/free complement only after the torsion mechanism is explicit.
+3. Treat `56->58` separately by dual parity characters or a relative algebraic-Morse filtration;
+   its canonical representatives refute the single-translation-family model.
+4. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
    a signed core; keep this separate from the connecting-only `t=2` mechanism.
-4. Open a separate manuscript only after a complete strand, an infinite connecting theorem, or a
+5. Open a separate manuscript only after a complete strand, an infinite connecting theorem, or a
    comparably transferable result is proved.
-5. Leave CAOS_MANAGE untouched during this round; its unrelated work remains preserved
-   on `develop`.
+6. Reconcile only the scoped CAOS_MANAGE Huneke-Wiegand mirror on its existing `develop` branch;
+   preserve its unrelated dirty work.
 
 ### Lenses ledger
 
@@ -950,6 +966,10 @@ Published baseline:
   Schur-complement operations to remove free directions and expose the two parity classes.
   EXP-047 completes the exact finite Smith step; HWB-074 must now turn it into a uniform semantic
   reduction. A field-only reduction is diagnostic, not an integral proof.
+- Semantic Bockstein transport: EXP-048 replaces opaque HNF classes by four explicit growing
+  interval chains for the stable completions. Their linear growth refutes a bounded-critical-set
+  premise but supplies the first concrete `p->p+1` targets. The new proof obligation is an exact
+  source lift plus dual parity functionals, not another canonical quotient basis.
 
 ## 7. Gotchas
 
