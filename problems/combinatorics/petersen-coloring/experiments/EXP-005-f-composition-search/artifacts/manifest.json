@@ -35,10 +35,34 @@
       "seconds": 5.5,
       "status": "exhausted-universal",
       "witnesses": 0
+    },
+    "k6m2": {
+      "class": "k6m2",
+      "found": [],
+      "iterations": 1498,
+      "k": 6,
+      "learned": 75286,
+      "m": 2,
+      "n": 50,
+      "seconds": 7206.8,
+      "status": "budget",
+      "witnesses": 1419
     }
   },
   "experiment": "EXP-005",
-  "predictions": {},
+  "failures": [],
+  "predictions": {
+    "P3": {
+      "committed_expectation": "no counterexample below 52 in the listed classes",
+      "found_below_52": [],
+      "statuses": {
+        "k5m0": "exhausted-universal",
+        "k5m2": "budget",
+        "k6m0": "exhausted-universal",
+        "k6m2": "budget"
+      }
+    }
+  },
   "tools": {
     "cadical": "1.7.3",
     "drat_trim_banner": [

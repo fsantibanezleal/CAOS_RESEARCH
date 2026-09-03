@@ -69,3 +69,5 @@
 - Manuscript v0.01 frozen (7 pages, 351,989 bytes, SHA-256 `40b476f6...`), attached to the
   reserved Zenodo draft and PUBLISHED: DOI 10.5281/zenodo.22285165, concept
   10.5281/zenodo.22285164. Public download verified against the committed PDF.
+- EXP-005 closed INCONCLUSIVE on its question: `(6,2)` also budget-stopped (1,498 iterations,
+  75,286 clauses, no counterexample); verdict written.
