@@ -40,6 +40,7 @@ const config: ShellConfig = {
     { path: '/problems/jacobian-conjecture', en: 'Jacobian conjecture', es: 'Conjetura jacobiana' },
     { path: '/problems/central-configurations', en: 'Central configurations', es: 'Configuraciones centrales' },
     { path: '/problems/unsplittable-flow-cost', en: 'Unsplittable flow cost', es: 'Costo de flujo indivisible' },
+    { path: '/problems/petersen-coloring', en: 'Petersen coloring', es: 'Coloracion de Petersen' },
   ],
   links: {
     github: 'https://github.com/fsantibanezleal/CAOS_RESEARCH',
