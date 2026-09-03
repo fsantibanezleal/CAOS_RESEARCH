@@ -185,12 +185,19 @@ def classify(rows: list[dict[str, object]]) -> dict[str, object]:
             "p3_status": "NOT_EVALUATED",
             "p3_details": {},
         }
-    selections = [
+    primary_selections = [
         selected
         for row in rows
         for inclusion in row["inclusions"]
         for selected in inclusion["primary"]["selected"]
     ]
+    audit_selections = [
+        selected
+        for row in rows
+        for inclusion in row["inclusions"]
+        for selected in inclusion["audit"]["selected"]
+    ]
+    selections = primary_selections + audit_selections
     p1 = all(
         selected["exact_identity"]
         and int(selected["boundary_support_size"]) <= 8 * int(selected["p"])
@@ -332,6 +339,12 @@ def main() -> int:
         for inclusion in row["inclusions"]
         for item in inclusion["primary"]["selected"]
     ]
+    audit_selected = [
+        item
+        for row in result["rows"]
+        for inclusion in row["inclusions"]
+        for item in inclusion["audit"]["selected"]
+    ]
     print(
         json.dumps(
             {
@@ -343,6 +356,15 @@ def main() -> int:
                 "boundary_supports": [item["boundary_support_size"] for item in selected],
                 "boundary_max_abs": [item["boundary_max_abs"] for item in selected],
                 "cycle_supports": [item["cycle_support_size"] for item in selected],
+                "audit_boundary_supports": [
+                    item["boundary_support_size"] for item in audit_selected
+                ],
+                "audit_boundary_max_abs": [
+                    item["boundary_max_abs"] for item in audit_selected
+                ],
+                "audit_cycle_supports": [
+                    item["cycle_support_size"] for item in audit_selected
+                ],
                 "elapsed_seconds": result["elapsed_seconds"],
                 "artifact_hash": result["artifact_hash"],
             },
