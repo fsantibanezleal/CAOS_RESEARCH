@@ -226,3 +226,56 @@ def proper_edge_coloring(g: Graph, k: int) -> CNF:
             for c in range(k):
                 f.add(-x[a, c], -x[b, c])
     return f
+
+
+# --- oddness and resistance -----------------------------------------------------------------
+
+
+def oddness(g: Graph, bound: int) -> CNF:
+    """Is there a 2-factor with at most `bound` odd cycles?
+
+    A perfect matching m(e) fixes the 2-factor E minus M. A vertex 2-coloring col(v) of the
+    2-factor has, on each cycle, at least one monochromatic edge iff the cycle is odd, and even
+    cycles admit a coloring with none. So the minimum over M and col of the number of
+    monochromatic 2-factor edges equals the oddness. Variables: m(e), col(v), mono(e).
+    """
+    inc = _stars(g)
+    f = CNF()
+    m = {e: f.var(f"m_{e}") for e in range(len(g.edges))}
+    col = {v: f.var(f"col_{v}") for v in range(g.n)}
+    for v in range(g.n):
+        f.exactly_one([m[e] for e in inc[v]])
+    monos = []
+    for e, (u, v) in enumerate(g.edges):
+        mono = f.var(f"mono_{e}")
+        monos.append(mono)
+        # if e is in the 2-factor (not in M) and col(u) == col(v) then mono
+        f.add(m[e], mono, col[u], col[v])
+        f.add(m[e], mono, -col[u], -col[v])
+    f.at_most_k(monos, bound)
+    f.add(col[0])
+    return f
+
+
+def resistance(g: Graph, bound: int) -> CNF:
+    """Is there an edge set S with |S| <= bound such that G - S is 3-edge-colorable?
+
+    Variables x(e,c) for c in 0..2 and del(e); every non-deleted edge has exactly one color and
+    incident non-deleted edges differ.
+    """
+    inc = _stars(g)
+    f = CNF()
+    x = {(e, c): f.var(f"x_{e}_{c}") for e in range(len(g.edges)) for c in range(3)}
+    d = {e: f.var(f"del_{e}") for e in range(len(g.edges))}
+    for e in range(len(g.edges)):
+        f.add(d[e], x[e, 0], x[e, 1], x[e, 2])
+        for a, b in itertools.combinations(range(3), 2):
+            f.add(-x[e, a], -x[e, b])
+        for c in range(3):
+            f.add(-d[e], -x[e, c])
+    for v in range(g.n):
+        for a, b in itertools.combinations(inc[v], 2):
+            for c in range(3):
+                f.add(-x[a, c], -x[b, c])
+    f.at_most_k(list(d.values()), bound)
+    return f

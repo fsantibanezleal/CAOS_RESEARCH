@@ -120,3 +120,43 @@ def check_flow(g: Graph, values: list[int], k: int) -> bool:
         net[u] += values[e]
         net[v] -= values[e]
     return all(x % k == 0 for x in net)
+
+
+def odd_cycles_of_two_factor(g: Graph, matching: set[int]) -> int:
+    """Number of odd cycles in the 2-factor E minus `matching` (requires a perfect matching)."""
+    if not is_perfect_matching(g, matching):
+        raise ValueError("not a perfect matching")
+    inc = g.incidence()
+    seen = [False] * g.n
+    odd = 0
+    for s in range(g.n):
+        if seen[s]:
+            continue
+        stack = [s]
+        seen[s] = True
+        size = 0
+        while stack:
+            v = stack.pop()
+            size += 1
+            for e in inc[v]:
+                if e in matching:
+                    continue
+                w = g.other_end(e, v)
+                if not seen[w]:
+                    seen[w] = True
+                    stack.append(w)
+        if size % 2 == 1:
+            odd += 1
+    return odd
+
+
+def check_three_edge_colorable_minus(g: Graph, colors: dict[int, int], deleted: set[int]) -> bool:
+    """colors maps every non-deleted edge to 0..2; incident non-deleted edges must differ."""
+    inc = g.incidence()
+    if set(colors) != set(range(len(g.edges))) - set(deleted):
+        return False
+    for v in range(g.n):
+        cs = [colors[e] for e in inc[v] if e not in deleted]
+        if len(cs) != len(set(cs)):
+            return False
+    return True

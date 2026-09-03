@@ -98,7 +98,7 @@ def main() -> None:
     moved = [set(M) for M in ms]
     e = next(iter(moved[0]))
     moved[0].remove(e)
-    moved[0].add(next(x for x in range(15) if x not in moved[0]))
+    moved[0].add(next(x for x in range(15) if x not in moved[0] and x != e))
     p5 = checkers.check_berge_fulkerson(controls["petersen"], swapped) and not checkers.check_berge_fulkerson(controls["petersen"], moved)
     if not p5:
         failures.append("P5 corrupted witness handling")

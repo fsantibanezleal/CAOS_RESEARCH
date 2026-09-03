@@ -109,3 +109,38 @@ def test_solver_roundtrip(tmp_path: Path):
     f2.write(c2)
     rec2 = solver.solve(c2, tmp_path / "k.drat", timeout_s=60)
     assert rec2["status"] == "UNSAT" and rec2["drat_trim_verified"]
+
+
+def test_oddness_checker_on_petersen_and_k4():
+    p = graphs.petersen()
+    for M in itertools.combinations(range(15), 5):
+        if checkers.is_perfect_matching(p, set(M)):
+            assert checkers.odd_cycles_of_two_factor(p, set(M)) == 2
+            break
+    k = graphs.k4()
+    assert checkers.odd_cycles_of_two_factor(k, {0, 5}) == 0
+
+
+@pytest.mark.skipif(not HAS_WSL, reason="needs WSL CaDiCaL")
+def test_oddness_and_resistance_of_petersen(tmp_path: Path):
+    p = graphs.petersen()
+    f1 = encoders.oddness(p, 1)
+    c1 = tmp_path / "o1.cnf"
+    f1.write(c1)
+    assert solver.solve(c1, tmp_path / "o1.drat", 60)["status"] == "UNSAT"
+    f2 = encoders.oddness(p, 2)
+    c2 = tmp_path / "o2.cnf"
+    f2.write(c2)
+    rec = solver.solve(c2, tmp_path / "o2.drat", 60)
+    assert rec["status"] == "SAT"
+    model = set(rec["model"])
+    M = {e for e in range(15) if f2.names[f"m_{e}"] in model}
+    assert checkers.odd_cycles_of_two_factor(p, M) == 2
+    r1 = encoders.resistance(p, 1)
+    c3 = tmp_path / "r1.cnf"
+    r1.write(c3)
+    assert solver.solve(c3, tmp_path / "r1.drat", 60)["status"] == "UNSAT"
+    r2 = encoders.resistance(p, 2)
+    c4 = tmp_path / "r2.cnf"
+    r2.write(c4)
+    assert solver.solve(c4, tmp_path / "r2.drat", 60)["status"] == "SAT"
