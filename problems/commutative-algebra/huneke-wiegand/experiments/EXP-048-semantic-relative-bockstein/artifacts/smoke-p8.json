@@ -1,0 +1,1517 @@
+{
+  "experiment": "EXP-048",
+  "route": "canonical relative Bockstein image in normalized added-row coordinates",
+  "status": "COMPLETE",
+  "parameters": {
+    "p_min": 8,
+    "p_max": 8,
+    "budget_seconds": 180.0,
+    "memory_gib": 8.0
+  },
+  "premise_hashes": {
+    "EXP-036-factor-two-torsion-anatomy\\run.py": "1c6923c7c6456673402b5bdd3dada137970f6d01985690f29c960af65a981d03",
+    "EXP-037-connecting-quasipolynomial\\run.py": "1abebc24c99398dded97aa08216211db089889e154736ed9eb5a7202de0b5df0",
+    "EXP-042-bockstein-normal-form\\run.py": "3a57fc52a6a1e10ba42d97c6ebe27062324b8c90b76df7a288db41dffabd69bf",
+    "EXP-042-bockstein-normal-form\\artifacts\\results.json": "3c4ae292fb17a5daf473aee0ed37e473000de686607b5da0a0f4c357a8216ee2",
+    "EXP-047-relative-kernel-smith\\artifacts\\results.json": "f78d251ae1746a88d1190756572aa251b9daf70ceb103cef9765c6d73b26f46c"
+  },
+  "rows": [
+    {
+      "p": 8,
+      "component_rows": 2675,
+      "component_columns": 1094,
+      "component_signed_hash": "7b1b2c8c93fd9919c5415d42688ccbf6ea852c3bd1514a891a9122b76950757f",
+      "inclusions": [
+        {
+          "source_mask": 58,
+          "target_mask": 59,
+          "added_rows": 28,
+          "semantic_row_hash": "9a1fb23e45fa7a41f00f655fa649ad06a091ab226e15d7052b1e51165ece4d50",
+          "bockstein_rank": 2,
+          "bockstein_subspace_hash": "016624eaf81506c330d4f9dd4125a6f4f9595ab2175eb3033d4553bdeed61191",
+          "reverse_agrees": true,
+          "support_sizes": [
+            4,
+            4
+          ],
+          "representative_template_hashes": [
+            "a23a468dc793817063b38a0169880ef42e6b39fb6729cc498ba20040b20945e9",
+            "53eb0f3478ef71095bd7d20d4f61ea0f2848570c871afe79fa7b54fc3a95448e"
+          ],
+          "representatives": [
+            [
+              {
+                "kind": "A",
+                "product": [
+                  1,
+                  1
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "L",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    2
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    1
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "A",
+                "product": [
+                  2,
+                  -3
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    2
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    0
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    1
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "A",
+                "product": [
+                  1,
+                  4
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    2
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    1
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    1
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "A",
+                "product": [
+                  1,
+                  2
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    2
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    1
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "kind": "A",
+                "product": [
+                  1,
+                  1
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "L",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    2
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "A",
+                "product": [
+                  2,
+                  -3
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    0
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    2
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "A",
+                "product": [
+                  1,
+                  4
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    1
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    2
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "A",
+                "product": [
+                  1,
+                  3
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    2
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    2
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "source_mask": 58,
+          "target_mask": 62,
+          "added_rows": 51,
+          "semantic_row_hash": "b226e99e24c5ccfa625d8880ab6de82ca93dc6a4193c3446f04f94301e25a454",
+          "bockstein_rank": 2,
+          "bockstein_subspace_hash": "e38eadb2b5d42c7c053f39cfafef7192cbbcac4a45e0a4f05840d1042183818c",
+          "reverse_agrees": true,
+          "support_sizes": [
+            8,
+            4
+          ],
+          "representative_template_hashes": [
+            "16b2ee474e7fcd10e6e4d3741e7daf83a9681d4546031b22f10f2d09e1210032",
+            "e62aee53c901b6d8558edb5fabd27d49e31bbb6d9876b42038f0fef922995dab"
+          ],
+          "representatives": [
+            [
+              {
+                "kind": "B",
+                "product": [
+                  4,
+                  0
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    2
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    1
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    3
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "B",
+                "product": [
+                  4,
+                  3
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    2
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    1
+                  ],
+                  [
+                    "L1",
+                    "R",
+                    0
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "B",
+                "product": [
+                  4,
+                  2
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    2
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    1
+                  ],
+                  [
+                    "L1",
+                    "R",
+                    1
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "B",
+                "product": [
+                  4,
+                  1
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    2
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    1
+                  ],
+                  [
+                    "L1",
+                    "R",
+                    2
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "B",
+                "product": [
+                  4,
+                  1
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    2
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    2
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    3
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "B",
+                "product": [
+                  4,
+                  4
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    2
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    2
+                  ],
+                  [
+                    "L1",
+                    "R",
+                    0
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "B",
+                "product": [
+                  4,
+                  3
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    2
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    2
+                  ],
+                  [
+                    "L1",
+                    "R",
+                    1
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "B",
+                "product": [
+                  4,
+                  2
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    2
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    2
+                  ],
+                  [
+                    "L1",
+                    "R",
+                    2
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              }
+            ],
+            [
+              {
+                "kind": "B",
+                "product": [
+                  4,
+                  0
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    2
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    3
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "B",
+                "product": [
+                  4,
+                  3
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    2
+                  ],
+                  [
+                    "L1",
+                    "R",
+                    0
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "B",
+                "product": [
+                  4,
+                  2
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    2
+                  ],
+                  [
+                    "L1",
+                    "R",
+                    1
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "B",
+                "product": [
+                  4,
+                  1
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    0
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    2
+                  ],
+                  [
+                    "L1",
+                    "R",
+                    2
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    0
+                  ]
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "source_mask": 56,
+          "target_mask": 58,
+          "added_rows": 827,
+          "semantic_row_hash": "38dae31a0789588a8e70ab13ed177174443dedd3559629675e023edf07d97aff",
+          "bockstein_rank": 1,
+          "bockstein_subspace_hash": "748a42f408ac6decb497c52fa639825630f77c12c10b09b9f946b5f48e70f1dd",
+          "reverse_agrees": true,
+          "support_sizes": [
+            13
+          ],
+          "representative_template_hashes": [
+            "99b9f60dfdd511772767951a675d41993fe2dc1fa4f9e1f92fa8533e3c02208c"
+          ],
+          "representatives": [
+            [
+              {
+                "kind": "A",
+                "product": [
+                  1,
+                  1
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "L",
+                    1
+                  ],
+                  [
+                    "L0",
+                    "L",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "R",
+                    0
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H0",
+                    "R",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "A",
+                "product": [
+                  1,
+                  1
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "L",
+                    1
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    0
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    2
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H0",
+                    "R",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "A",
+                "product": [
+                  1,
+                  2
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "L",
+                    1
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    0
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    3
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H0",
+                    "R",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "A",
+                "product": [
+                  2,
+                  -3
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "L",
+                    1
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    0
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "R",
+                    0
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H0",
+                    "R",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "A",
+                "product": [
+                  1,
+                  4
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "L",
+                    1
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    0
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "R",
+                    1
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H0",
+                    "R",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "A",
+                "product": [
+                  1,
+                  3
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "L",
+                    1
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    0
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "R",
+                    2
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H0",
+                    "R",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "A",
+                "product": [
+                  1,
+                  1
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "L",
+                    1
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    1
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    3
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H0",
+                    "R",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "A",
+                "product": [
+                  1,
+                  4
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "L",
+                    1
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    1
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "R",
+                    0
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H0",
+                    "R",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "A",
+                "product": [
+                  1,
+                  3
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "L",
+                    1
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    1
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "R",
+                    1
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H0",
+                    "R",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "A",
+                "product": [
+                  1,
+                  2
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "L",
+                    1
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    1
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "R",
+                    2
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H0",
+                    "R",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "A",
+                "product": [
+                  1,
+                  3
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "L",
+                    1
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    2
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "R",
+                    0
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H0",
+                    "R",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "A",
+                "product": [
+                  1,
+                  2
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "L",
+                    1
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    2
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "R",
+                    1
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H0",
+                    "R",
+                    0
+                  ]
+                ]
+              },
+              {
+                "kind": "A",
+                "product": [
+                  1,
+                  1
+                ],
+                "l0_missing": [
+                  [
+                    "L0",
+                    "L",
+                    1
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    3
+                  ],
+                  [
+                    "L0",
+                    "R",
+                    2
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "R",
+                    2
+                  ]
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    0
+                  ],
+                  [
+                    "H0",
+                    "R",
+                    0
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 8.882622300000094,
+  "p1_status": "NOT_EVALUATED",
+  "p2_status": "NOT_EVALUATED",
+  "p3_status": "NOT_EVALUATED",
+  "artifact_hash": "a62c974a055030b79e670383b5712a19ee0a9bbbf243c101d7ac50e2d6dad889"
+}
