@@ -86,3 +86,21 @@ runner `run_pairs.py` after the single sweep completes:
 - Budget: 1,326 Petersen instances of `G52` at about 2 to 10 seconds each; cap 10 minutes per
   instance; whole sweep under 4 hours. The 112-vertex graphs are out of scope for pairs in this
   round (6,216 instances at about a minute each).
+
+## Addendum 2 declared 2026-09-03 13:10, before the 112-vertex pair instances ran
+
+Result so far: all 52 single relaxations of `G52` UNSAT (verified), all 1,326 pair relaxations
+SAT with checker defect exactly 2. The single-vertex outcome has a proof for every cubic graph
+(context note `2026-09-03-defect-parity-lemma.md`: the bad set's label vector sum lies in the
+cut space of `P`, and an odd cut of size 1 or 3 in `P` is a star). Therefore P2 (a critical
+single vertex in the 112-vertex graphs) is REFUTED by theorem, and the 112-vertex single sweep
+is stopped as pointless after vertex 8 of `G112` (its result, UNSAT, is an instance of the
+lemma). Redirected questions:
+
+- P7: the 120 pairs of free vertices of `G112` (the 16 vertices outside the twelve disjoint
+  copies of `F`): which are critical? If any is SAT the Petersen defect of `G112` is exactly 2.
+  Committed expectation: some free-vertex pair is critical. Budget: 10 minutes per instance.
+- P8: the normal-5 defect of `G52` by single-edge relaxation over all 78 edges (`normal5
+  relaxed edge`): if any is SAT the normal-5 defect is exactly 1; if all are UNSAT with verified
+  proofs the defect is at least 2. No committed expectation (the parity argument does not
+  transfer). Budget: 30 minutes per instance.

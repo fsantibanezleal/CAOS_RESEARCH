@@ -116,6 +116,14 @@
         "seconds": 121.158,
         "status": "UNSAT",
         "verified": true
+      },
+      "9": {
+        "cnf_sha256": "616a0eb20e16ff85450bbb0f4f80ca268fc237fd6d01f846483f3db99e192882",
+        "critical": false,
+        "proof_sha256": "2016dd352c770b87b5b2cd23d4f9b057d417b77061c98c14f4b62598ff552dfa",
+        "seconds": 159.544,
+        "status": "UNSAT",
+        "verified": true
       }
     },
     "G52": {
