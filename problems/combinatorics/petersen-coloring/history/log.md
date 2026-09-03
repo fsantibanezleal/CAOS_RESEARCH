@@ -60,3 +60,12 @@
   built and gated (24 screenshots, light/dark, EN/ES, all tabs, no overflow); wiki 01-05 written.
 - Incidents: a shell heredoc split a Python string literal and mangled LaTeX (fixed through the
   file tools); an orphaned solver process of the stopped single sweep was killed by hand.
+
+## 2026-09-03 - publication
+
+- EXP-006 closed: all 6,216 pairs of `G112` and of `H112` critical (universal 2-criticality on
+  all three graphs); verdict written. EXP-005 `(5,2)` stopped at its 2-hour budget (1,992
+  iterations, 80,832 clauses, no counterexample); `(6,2)` running.
+- Manuscript v0.01 frozen (7 pages, 351,989 bytes, SHA-256 `40b476f6...`), attached to the
+  reserved Zenodo draft and PUBLISHED: DOI 10.5281/zenodo.22285165, concept
+  10.5281/zenodo.22285164. Public download verified against the committed PDF.

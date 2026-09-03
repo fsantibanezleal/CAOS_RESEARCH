@@ -73,10 +73,9 @@ Key formula (oddness encoding): $\mathrm{oddness}(G) = \min_{M,\mathrm{col}} \#\
 
 1. Close EXP-004, EXP-005, EXP-006 verdicts from their manifests; wiki 04/05 already carry the
    decided rows.
-2. Manuscript v0.01 (`manuscripts/petersen-coloring/consequence-audit/main.tex`): fill the
-   remaining sentence on EXP-005 (`PENDING005`), rebuild twice, visual QA, then the vault
-   prereserve flow: `python tools/zenodo/reserve_doi.py petersen-coloring consequence-audit`,
-   print the DOIs in the header, rebuild, `attach_pdf.py`, `publish_manuscripts.py`.
+2. Manuscript v0.01 PUBLISHED: DOI 10.5281/zenodo.22285165 (concept 10.5281/zenodo.22285164),
+   351,989 bytes, SHA-256 `40b476f6277879dff75e6c749f780676fcb2829931eb0a2491927498a4485ffb`.
+   Updates ship as Zenodo new versions (vault `tools/zenodo/`).
 3. Open the PR `work/petersen-coloring/open -> develop`; do not bump the version or bake.
 4. Next round: PCR-4b (symmetry-broken composition search), PCR-1/2 (families), PCR-3
    (critical-pair structure: distance profile of pairs; which pairs are critical in the 112s).

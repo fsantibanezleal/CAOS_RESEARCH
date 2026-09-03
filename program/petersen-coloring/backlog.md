@@ -8,7 +8,7 @@
 | PCB-004 | EXP-003: 5-cycle double cover, nowhere-zero 5-flow, oddness, resistance | done | P1 | 2026-09-03 CONFIRMED; oddness 4/4/2, resistance 3/3/2 |
 | PCB-005 | EXP-004: normal 6 and strong normal 6 on all three (GJMMM did strong normal 6 on one 112 only) | done | P1 | 2026-09-03 CONFIRMED: normal chromatic index exactly 6 on all three |
 | PCB-006 | Exact P-defect and normal-5 defect | P-defect done; normal-5 running | P1 | EXP-006: parity theorem (never 1); P-defect exactly 2 on all three; G52 edge-relaxation sweep for the normal-5 defect running |
-| PCB-007 | Manuscript v0.01 on Zenodo (preprint) transcribed from EXP-001..004 verdicts | todo | P1 | header standard; prereserve flow; after EXP-004 |
+| PCB-007 | Manuscript v0.01 on Zenodo (preprint) transcribed from EXP-001..006 verdicts | done | P1 | 2026-09-03 published: DOI 10.5281/zenodo.22285165 (concept 10.5281/zenodo.22285164), 7 pages, 351,989 bytes |
 | PCB-014 | Read Goedgebeur-Macajova-Skoviera 2019 in full before comparing oddness 4 with their order-44 theorem in the manuscript | todo | P1 | the comparison is `[U]` until then |
 | PCB-008 | Reproduce `P-Col(F)`, `P-Col(C)`, `P-Col(L)` exactly and the GJMMM composition lemmas | todo | P2 | anatomy lens |
 | PCB-009 | Composition classes C(k,m) below 52 vertices | partial | P2 | EXP-005: (5,0), (6,0) exhausted (pure-F proposition); CEGAR non-convergent at 26 semi-edges; next PCR-4b symmetry-broken enumeration |

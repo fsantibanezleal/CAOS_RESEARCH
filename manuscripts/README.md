@@ -17,6 +17,8 @@ preserved through the rename.
 
 | [unsplittable-flow-cost](unsplittable-flow-cost/) | [counterexample-verification/](unsplittable-flow-cost/counterexample-verification/) | [10.5281/zenodo.21554259](https://doi.org/10.5281/zenodo.21554259) (v0.01; concept [10.5281/zenodo.21554258](https://doi.org/10.5281/zenodo.21554258)) | The independent exact verification of the 2026 counterexample to Goemans' cost conjecture, plus the violation constant it forces (16/15, so the conjecture falls by one unit), the consistency battery against every proved result, the K4 class-boundary placement, the separation-LP optimality of the published cost vector, the single-terminal minimality theorem, and a retracted two-terminal prediction. |
 
+| [petersen-coloring](petersen-coloring/) | [consequence-audit/](petersen-coloring/consequence-audit/) | [10.5281/zenodo.22285165](https://doi.org/10.5281/zenodo.22285165) (v0.01; concept [10.5281/zenodo.22285164](https://doi.org/10.5281/zenodo.22285164)) | Independent certification of the three retrievable 2026 counterexamples to the Petersen coloring conjecture; the consequence audit (Berge-Fulkerson, Berge, Fan-Raspaud, 5-cycle double cover, 5-flow, oddness, resistance, normal chromatic index 6); the defect parity theorem (never 1) with the exact defect 2 and universal 2-criticality of all three graphs; the pure-F proposition; the composition-search record. |
+
 The web app links each problem's manuscripts directly from its problem page.
 
 Concept DOIs (always resolve to the latest version): A 10.5281/zenodo.21503365 ·
