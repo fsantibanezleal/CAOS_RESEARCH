@@ -35,3 +35,23 @@ Is the consequence audit still the best route given what round 1 measured? Yes f
 manuscript (it is complete and unclaimed); after publication the highest-value line is PCR-4
 (a certified minimality statement inside the grammar, cheap with the Petersen encoding) and
 PCR-1/2 (structure along the infinite families), which reuse the round-1 tooling unchanged.
+
+## Round 1 measurements that reshape PCR-4 (composition search)
+
+- Classes without free vertices are trivial: a single universal coloring (all boundary labels
+  equal) colors every composition (context note `2026-09-03-pure-f-compositions.md`).
+- Counterexample-guided search with one blocking clause per coloring does not converge at 26
+  semi-edges: the 26-vertex control `(3,2)` reached 1,059 iterations and 29,052 clauses in 15
+  minutes without exhausting; `(5,2)` (also 26 semi-edges) is running under a 2-hour budget.
+- Refinement for the next round (PCR-4b): break the outer symmetry with lex-leader constraints
+  for the generators of the symmetry group of the join formula (the 8 semi-edge automorphisms of
+  each copy of `F`, transpositions of copies, transpositions of free vertices, permutations of the
+  three slots of a free vertex); a sound partial lex-leader encoding keeps at least one member of
+  every orbit. Orbit estimates: `(5,2)` about 3e4, `(6,2)` about 5e5, `(5,4)` about 1.5e6; each
+  candidate decision costs about 0.1 to 2 seconds with the Petersen encoding, so `(5,2)` and
+  `(6,2)` become hours of CPU, and `(5,4)` a multi-core day.
+- Alternative (PCR-4c): a 2QBF formulation (exists matching, for all labelings, some gadget
+  constraint or equality fails) for a QBF solver; not attempted (no solver installed).
+- The defect result reshapes PCR-3: the obstruction in `G52` needs two relaxed vertices and the
+  pairs are plentiful; the critical-pair structure (which pairs, at what distance) is the next
+  anatomical object.
