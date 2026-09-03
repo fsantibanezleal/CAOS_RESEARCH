@@ -144,3 +144,16 @@ def test_oddness_and_resistance_of_petersen(tmp_path: Path):
     c4 = tmp_path / "r2.cnf"
     r2.write(c4)
     assert solver.solve(c4, tmp_path / "r2.drat", 60)["status"] == "SAT"
+
+
+def test_relaxed_encodings_on_petersen_and_composition_pieces():
+    from pcclib import compose, relaxed
+    p = graphs.petersen()
+    f = relaxed.petersen_relaxed_vertices(p, {0, 1})
+    assert f.nvars == 15 * 15 and len(f.clauses) > 0
+    # F has four owners of degree 2 and eight semi-edge automorphisms
+    assert len(compose.F_OWNERS) == 4 and len(compose.F_AUTS) == 8
+    comp = compose.Composition(2, 1)
+    assert comp.n_semi == 11 and all(comp.admissible(a, b) for (a, b) in comp.pairs)
+    # a free vertex may not be joined to itself
+    assert not comp.admissible(8, 9)

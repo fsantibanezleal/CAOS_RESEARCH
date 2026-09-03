@@ -5,6 +5,24 @@
   "edges": {},
   "experiment": "EXP-006",
   "free_vertices": {
+    "G112": [
+      8,
+      9,
+      10,
+      11,
+      36,
+      37,
+      38,
+      39,
+      48,
+      49,
+      50,
+      51,
+      84,
+      85,
+      86,
+      87
+    ],
     "G52": [
       1,
       18,
@@ -90,6 +108,16 @@
     ]
   },
   "vertices": {
+    "G112": {
+      "8": {
+        "cnf_sha256": "8f85259465a9547e1f9539970352d2ca6a8fe785bb63afaad5383d73fc471ddc",
+        "critical": false,
+        "proof_sha256": "3894a16de0475d4d5350a83dcb5a4e31093de733c5055ce67dc321474030f9a9",
+        "seconds": 121.158,
+        "status": "UNSAT",
+        "verified": true
+      }
+    },
     "G52": {
       "0": {
         "cnf_sha256": "3077eef10e24aa949fd396370d64656072a02cb210af6d66e873ae52e3d2870a",
