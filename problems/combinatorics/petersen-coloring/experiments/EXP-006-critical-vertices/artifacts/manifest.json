@@ -2,7 +2,17 @@
   "critical_vertices": {
     "G52": []
   },
-  "edges": {},
+  "edges": {
+    "G52": {
+      "0": {
+        "cnf_sha256": "b3a75ebc8e9a8032aa3ee71d9464dc55a165755755beb289b8b21ca0a5ea382a",
+        "critical": false,
+        "seconds": 186.823,
+        "status": "UNSAT",
+        "verified": true
+      }
+    }
+  },
   "experiment": "EXP-006",
   "free_vertices": {
     "G112": [
@@ -28,6 +38,24 @@
       18,
       35,
       51
+    ],
+    "H112": [
+      8,
+      9,
+      10,
+      11,
+      44,
+      45,
+      46,
+      47,
+      80,
+      81,
+      82,
+      83,
+      108,
+      109,
+      110,
+      111
     ]
   },
   "noncritical_vertices_verified": {
@@ -89,13 +117,13 @@
   "predictions": {},
   "reproduction_G52_bound0": {
     "cnf_sha256": "cab78f29332625d2b93f955845d5289a3e0dc95edc3ee8c68d4c4fc3a298b437",
-    "drat_trim_seconds": 1.416,
-    "drat_trim_tail": "with 1170 variables and 34010 clauses\n\nc finished parsing, read 4094201 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 25507 of 34010 clauses in core                            \n\nc 40307 of 77212 lemmas in core using 1330095 resolution steps\n\nc 0 RAT lemmas in core; 17340 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 1.103 seconds\n",
+    "drat_trim_seconds": 1.213,
+    "drat_trim_tail": "with 1170 variables and 34010 clauses\n\nc finished parsing, read 4094201 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 25507 of 34010 clauses in core                            \n\nc 40307 of 77212 lemmas in core using 1330095 resolution steps\n\nc 0 RAT lemmas in core; 17340 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.969 seconds\n",
     "drat_trim_verified": true,
     "exit_code": 20,
     "proof_bytes": 4094201,
     "proof_sha256": "2776f61ab51997c65a967996374e325340da47bb04a67800de089c256bf82727",
-    "seconds": 1.587,
+    "seconds": 1.282,
     "solver_stderr_tail": "",
     "solver_stdout_tail": "s UNSATISFIABLE\n",
     "status": "UNSAT"
