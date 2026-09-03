@@ -100,6 +100,7 @@ def free_vertices(g: graphs.Graph) -> list[int]:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--edges-112", action="store_true", help="also sweep the free-vertex edges of the 112-vertex graphs")
+    ap.add_argument("--skip-vertices", action="store_true", help="addendum 2: skip the single-vertex sweeps (decided by the parity lemma)")
     args = ap.parse_args()
     ARTIFACTS.mkdir(exist_ok=True)
     HEAVY.mkdir(parents=True, exist_ok=True)
@@ -130,6 +131,8 @@ def main() -> None:
         fv = free_vertices(g)
         manifest.setdefault("free_vertices", {})[name] = fv
         log(f"{name}: free vertices {fv}")
+        if args.skip_vertices:
+            continue
         order = fv + [v for v in range(g.n) if v not in fv]
         res = manifest["vertices"].setdefault(name, {})
         for v in order:
