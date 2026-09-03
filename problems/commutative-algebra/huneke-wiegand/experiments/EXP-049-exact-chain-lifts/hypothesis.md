@@ -85,8 +85,9 @@ Bockstein rank, or full Smith form cannot answer this sharper question more chea
 - Smoke: `p=8`, at most 300 seconds and 10 GiB.
 - Full range: `p=8,...,11`, at most 2,400 seconds and 24 GiB, with an atomic checkpoint after each
   inclusion.
-- Stop immediately on a premise hash mismatch, semantic support mismatch, failed exact division,
-  exact multiplication mismatch, source-annihilation failure, or dual-audit disagreement.
+- Stop immediately on a premise hash mismatch, semantic support mismatch, a claimed HNF solution
+  with a failed exact division, exact multiplication mismatch, source-annihilation failure, or
+  dual-audit disagreement. Ordinary nonmembership of `2a` is a P1 refutation and is recorded.
 - A budget stop yields `INCONCLUSIVE_RESOURCE_BUDGET` and no positive conclusion.
 
 No manuscript or Zenodo update is authorized by declaration. The trigger remains a uniform
