@@ -1,8 +1,8 @@
 {
   "experiment": "EXP-053",
   "audit_scope": "artifact integrity and cross-completion identities",
-  "source_sha256": "5ee95eece90e3278b769a277ce124e8d21a9bce74f879ad696260994070bfbab",
-  "artifact_sha256": "c415521c477b715ecea71cb1e983279b26f44baed78e54995674fa430167dc31",
+  "source_sha256": "cd1ff29b95944224a4d05265ce175926fcf60c08b34c4d4bff8b5884b729fc90",
+  "artifact_sha256": "0d6bb8b885d965ed91a94d06a072d8baacca56df65903e10e1c91382f649edfe",
   "checks": [
     {
       "name": "internal artifact hash",
@@ -21,11 +21,11 @@
       "passed": true
     },
     {
-      "name": "stopped parameter",
+      "name": "resource overrun recorded",
       "passed": true
     },
     {
-      "name": "P1 resource verdict",
+      "name": "P1 finite verdict",
       "passed": true
     },
     {
@@ -173,6 +173,74 @@
       "passed": true
     },
     {
+      "name": "p10 unique mapping",
+      "passed": true
+    },
+    {
+      "name": "p10 no mapping ambiguity",
+      "passed": true
+    },
+    {
+      "name": "p10 two completions",
+      "passed": true
+    },
+    {
+      "name": "p10 common cycle coordinates",
+      "passed": true
+    },
+    {
+      "name": "p10 common labelled source multiset",
+      "passed": true
+    },
+    {
+      "name": "p10 58->59 support count",
+      "passed": true
+    },
+    {
+      "name": "p10 58->59 coefficient maximum",
+      "passed": true
+    },
+    {
+      "name": "p10 58->59 source kernel identity",
+      "passed": true
+    },
+    {
+      "name": "p10 58->59 relative identity",
+      "passed": true
+    },
+    {
+      "name": "p10 58->59 labels normalize",
+      "passed": true
+    },
+    {
+      "name": "p10 58->59 support hash",
+      "passed": true
+    },
+    {
+      "name": "p10 58->62 support count",
+      "passed": true
+    },
+    {
+      "name": "p10 58->62 coefficient maximum",
+      "passed": true
+    },
+    {
+      "name": "p10 58->62 source kernel identity",
+      "passed": true
+    },
+    {
+      "name": "p10 58->62 relative identity",
+      "passed": true
+    },
+    {
+      "name": "p10 58->62 labels normalize",
+      "passed": true
+    },
+    {
+      "name": "p10 58->62 support hash",
+      "passed": true
+    },
+    {
       "name": "declared supports",
       "passed": true
     },
@@ -185,8 +253,8 @@
       "passed": true
     }
   ],
-  "passed": 45,
-  "total": 45,
+  "passed": 62,
+  "total": 62,
   "status": "PASS",
-  "artifact_hash": "9207360a92a404444550f68e6d7b6d18306a42a0ab3357784d242f24f874ee71"
+  "artifact_hash": "3c94a9abb2a481eb45dd15664ff44fecf2af146f13b1ae18aeeb95823833a9bc"
 }

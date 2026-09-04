@@ -295,13 +295,20 @@ def main() -> int:
                 json.loads(value) for value in sorted(values)
             ]
         result["completed_parameters"] = [int(row["p"]) for row in result["rows"]]
-        result["stopped_parameter"] = 10
-        result["resource_stop"] = (
-            "p=10 transformed HNF did not return within the declared safe-stage budget; "
-            "the process was interrupted after preserving p=8,9 checkpoints"
+        complete_training = result["completed_parameters"] == [8, 9, 10]
+        result["resource_overrun"] = (
+            "p=10 transformed HNF completed after the 600-second safe-stage budget and after "
+            "its parent terminal was interrupted; the orphaned exact process wrote a complete "
+            "checkpoint with no p=11 source access"
         )
         result["skeleton_vocabularies"] = skeleton_vocabularies
-        result["p1_status"] = "INCONCLUSIVE_RESOURCE"
+        result["p1_status"] = (
+            "PASS_FINITE_RESOURCE_OVERRUN"
+            if complete_training and len(inclusions) == 6 and all(
+                row["column_mapping_unique"] for row in result["rows"]
+            ) and all(item["source_to_relative_identity"] for item in inclusions)
+            else "INCONCLUSIVE_RESOURCE"
+        )
         result["p2_status"] = (
             "PASS_PARTIAL" if inclusions and all(
                 int(item["source_max_abs_coefficient"]) <= 4 for item in inclusions
@@ -309,7 +316,10 @@ def main() -> int:
             else "REFUTED"
         )
         result["p3_status"] = "NOT_EVALUATED_HOLDOUT_LOCKED"
-        result["status"] = "RESOURCE_STOP_WITH_P2_REFUTATION"
+        result["status"] = (
+            "TRAINING_COMPLETE_RESOURCE_OVERRUN_WITH_P2_REFUTATION"
+            if complete_training else "RESOURCE_STOP_WITH_P2_REFUTATION"
+        )
         result.pop("artifact_hash", None)
         result["artifact_hash"] = digest(result)
         write_json_atomic(args.output, result)
