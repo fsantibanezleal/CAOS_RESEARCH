@@ -1,0 +1,1182 @@
+{
+  "control_values": {
+    "J5": {
+      "oddness": 2,
+      "resistance": 2
+    },
+    "K4": {
+      "oddness": 0,
+      "resistance": 0
+    },
+    "petersen": {
+      "oddness": 2,
+      "resistance": 2
+    },
+    "prism": {
+      "oddness": 0,
+      "resistance": 0
+    }
+  },
+  "experiment": "EXP-003",
+  "failures": [],
+  "heavy_files": {
+    "G112_cdc5.cnf": {
+      "bytes": 76499,
+      "sha256": "8994a07503187af8dd38074f2f82c3db82e1f06d41b48463c144df63e1d18951"
+    },
+    "G112_cdc5.drat": {
+      "bytes": 21822,
+      "sha256": "f367a326e7b1d5504f8a206906d50fd8b7dbe2dc88524b7082bca464eca8860d"
+    },
+    "G112_flow4.cnf": {
+      "bytes": 46584,
+      "sha256": "f254ad28ec9feb82a2992a1370e5d5f666b7f6f9f71c7988314a59bb3edf1720"
+    },
+    "G112_flow4.drat": {
+      "bytes": 9037,
+      "sha256": "7503f2ebeff2e97406714733e88bd4a36f5653dfd06fc6c878421f237095eb73"
+    },
+    "G112_flow5.cnf": {
+      "bytes": 110924,
+      "sha256": "89ec3f78836fd622bc1d0a084d4d6d889a329702cde0b2daece4159ba5c779f7"
+    },
+    "G112_flow5.drat": {
+      "bytes": 620,
+      "sha256": "d8e3f6df844670539027d45593759a2af3dcb8f8983495519faeac5ff9d39a45"
+    },
+    "G112_odd_1.cnf": {
+      "bytes": 16851,
+      "sha256": "177fe05848981ac9961dc1aad310f9fe012f81935425c14777d81a2ea3178c6b"
+    },
+    "G112_odd_1.drat": {
+      "bytes": 13376,
+      "sha256": "6eb348866f20e438c005d24e01d7492e9972208091e2aa9c185eb7a7981aa429"
+    },
+    "G112_odd_2.cnf": {
+      "bytes": 21367,
+      "sha256": "c418744d0733282d9914cc742aec5e2d5fdd25e5c46fe7f8d23f2fe7935b2e3f"
+    },
+    "G112_odd_2.drat": {
+      "bytes": 18906,
+      "sha256": "8770eca6eb240e5c254a7c7c81b95bcaca367c14ce6882708a3509282459ad67"
+    },
+    "G112_odd_3.cnf": {
+      "bytes": 25883,
+      "sha256": "c5853cd9091045ed9fdd3aa8e99e05e226bd1f28dc53137aff709e07cb5b3962"
+    },
+    "G112_odd_3.drat": {
+      "bytes": 456646,
+      "sha256": "ccfadca3e24fa2e73a18fe5727bf0975d31e294717812238033a5262c31851c5"
+    },
+    "G112_odd_4.cnf": {
+      "bytes": 30876,
+      "sha256": "838084e3a778be998c81c4f283aa2a4284870e8727f1c037ed3df343b69bd5a2"
+    },
+    "G112_odd_4.drat": {
+      "bytes": 16417,
+      "sha256": "2e98472180f486e47a19520ca659a9224f5397fe32cb804897e69c182b44afeb"
+    },
+    "G112_res_1.cnf": {
+      "bytes": 32077,
+      "sha256": "ac4b5f0d516b88af5351833920642c35caaea4ec71d4fd7702dc750cca0c7696"
+    },
+    "G112_res_1.drat": {
+      "bytes": 16412,
+      "sha256": "149be8526e8d74fab6feaad280a7e48bff5ec5171bfee90e7e8c99be97e2c6be"
+    },
+    "G112_res_2.cnf": {
+      "bytes": 36626,
+      "sha256": "952dbc6e1fef7c2e6d596aa7c46b3b98552ab2ba1646e3ac188082ffd8e61b38"
+    },
+    "G112_res_2.drat": {
+      "bytes": 31223,
+      "sha256": "f81c0e6f08a32f486ed8e7f15b81d4b325f0f3df4f5245cf40ab0612a0daec43"
+    },
+    "G112_res_3.cnf": {
+      "bytes": 41812,
+      "sha256": "9af8dfe9e60a180a9517c4e98492118a1dad1161a2ced7e6717a2bc5861bb126"
+    },
+    "G112_res_3.drat": {
+      "bytes": 16603,
+      "sha256": "268a1f82851a8add03017b6c0fb28e6a6ebc1c0ffd5d20db5fa5724f9bb8469c"
+    },
+    "G52_cdc5.cnf": {
+      "bytes": 34498,
+      "sha256": "e348f7c42cacf540920a04604bfe1f7dd32b943ca24e2cc322fc749a45c47b7c"
+    },
+    "G52_cdc5.drat": {
+      "bytes": 923,
+      "sha256": "bf74372b728879ddbce552b5ea045f162c13d4cbb4f6b98c67473e682ccaf649"
+    },
+    "G52_flow4.cnf": {
+      "bytes": 20663,
+      "sha256": "b6a1f8177d77e78f2fd33cce93f3d29b76eb319780a3353ac23264427f5bd172"
+    },
+    "G52_flow4.drat": {
+      "bytes": 7419,
+      "sha256": "0bef9fd6c7af1627f86f69c4fe484b99ecc61a902b96001b9618fed2bfdce8e1"
+    },
+    "G52_flow5.cnf": {
+      "bytes": 49783,
+      "sha256": "8ff5edec5502c9dea3ca37a86fcec67092f06580e5e95b37e40d91af875b60ea"
+    },
+    "G52_flow5.drat": {
+      "bytes": 529,
+      "sha256": "f9c7d8e05af94ae78175d32aebd19dd124006ab75d3335ede8dce1cb5257ee6c"
+    },
+    "G52_odd_1.cnf": {
+      "bytes": 7410,
+      "sha256": "4cd0272b1e06d5a6fe16d4a127cf441240ca0921c8112917645562fd4be86165"
+    },
+    "G52_odd_1.drat": {
+      "bytes": 13331,
+      "sha256": "a936065e416eaa943234ca64d2c32d6afb3300f4c1abd04b63689c0fb9566650"
+    },
+    "G52_odd_2.cnf": {
+      "bytes": 9496,
+      "sha256": "0a5680ada607837e46fe355d65448bdbc4e1578cd12c582a9bd2bf383c2bdb28"
+    },
+    "G52_odd_2.drat": {
+      "bytes": 4173,
+      "sha256": "adf1d8d91a0db1d20463421a3018be9059574cadf69141b1421d0ac24853c5d6"
+    },
+    "G52_res_1.cnf": {
+      "bytes": 14436,
+      "sha256": "a87b0f2ee671551151f8b8e775bd0c5feccc6792abd96248de91fc6c08f34cb5"
+    },
+    "G52_res_1.drat": {
+      "bytes": 32665,
+      "sha256": "2f4c311cb360d56de37d4535c5f0a2d8851608313a2bb7f9b61355fe5874e794"
+    },
+    "G52_res_2.cnf": {
+      "bytes": 16522,
+      "sha256": "4cb178386b89e12e338cba561d44fa086c109794d97d630d0eb8b815d570b079"
+    },
+    "G52_res_2.drat": {
+      "bytes": 3526,
+      "sha256": "f6043ebe874f666f6bd645c9ddadbad307c63f7e3f0f38df948e195a98a1ff0a"
+    },
+    "H112_cdc5.cnf": {
+      "bytes": 76499,
+      "sha256": "19bb0cb77566a233da8fd984d166cab6dd31e0078687cd8a20befa1702a0076f"
+    },
+    "H112_cdc5.drat": {
+      "bytes": 13388,
+      "sha256": "335e73cb957d3d1ea623900c6c305a0f0dfaa838904ccbea1027ae71cc5d7162"
+    },
+    "H112_flow4.cnf": {
+      "bytes": 46584,
+      "sha256": "0b418acbe64637ded40f3661d92db63edfd95daf06997461a9d4a149e76d722e"
+    },
+    "H112_flow4.drat": {
+      "bytes": 10344,
+      "sha256": "e0dd646ec6dfa988d2f7655fd20d07e5f266ba50b860652066255cc1159bc4c4"
+    },
+    "H112_flow5.cnf": {
+      "bytes": 110924,
+      "sha256": "ec474c46d9718b9f094fdf2a677e8fbf395459ff84723793fdb00aa48e017c68"
+    },
+    "H112_flow5.drat": {
+      "bytes": 2644,
+      "sha256": "17ca941cb7dab7f73eec1a579eb21bb69e4911d891e058d9179e26f49df73bc3"
+    },
+    "H112_odd_1.cnf": {
+      "bytes": 16851,
+      "sha256": "0bdadcd69163ef04ee0fa14955cfe91f52a89d6b82feb5170f0902693bbe6a7f"
+    },
+    "H112_odd_1.drat": {
+      "bytes": 10464,
+      "sha256": "34009f49aa427e5ef368c303276c3fa96c1ca94183e0746e9a5cc5d8f91c62c4"
+    },
+    "H112_odd_2.cnf": {
+      "bytes": 21367,
+      "sha256": "765f5449fc8fa79a827ba0697659f1ba8ef21b8e37e54ecc37027d146ed2d06e"
+    },
+    "H112_odd_2.drat": {
+      "bytes": 50597,
+      "sha256": "9cb615faadc5bf2d97086b4dfe202a7b44025f16afbbac1320eed12f310dad5e"
+    },
+    "H112_odd_3.cnf": {
+      "bytes": 25883,
+      "sha256": "adaf33971d7609dfbb6dbfa9db500f929a38bda1fe99b0778db5b29475bb8bcf"
+    },
+    "H112_odd_3.drat": {
+      "bytes": 548923,
+      "sha256": "9a7d3ea29a9294bb218b261aebee2696cc296c632ad99522af665d9706bcaa5f"
+    },
+    "H112_odd_4.cnf": {
+      "bytes": 30876,
+      "sha256": "2f9efd583547fb9fbb5d401c73ecd9aecd34f9130733ad54e26af3baa67e21e2"
+    },
+    "H112_odd_4.drat": {
+      "bytes": 12503,
+      "sha256": "f0efe7c03cca00de0aabcf2b875db31cf2b5c6a13fb6189a4c6adad01f75eff2"
+    },
+    "H112_res_1.cnf": {
+      "bytes": 32077,
+      "sha256": "a74c873b971fddb12c72c9bb74dd290ec0d8c6b186eb0e787ecf49950772b1b0"
+    },
+    "H112_res_1.drat": {
+      "bytes": 53175,
+      "sha256": "4a2ac4d602b314a74800c841a54fc93325b8b112f13c48efb69fb146fcd42715"
+    },
+    "H112_res_2.cnf": {
+      "bytes": 36626,
+      "sha256": "be22c11fd454b3e826a05d524c1256809859c755b05c416d386c648bc2f5b390"
+    },
+    "H112_res_2.drat": {
+      "bytes": 39116,
+      "sha256": "2f94fe818d4c9774d252f16b46d54e4d6171531a1a24c3aa39c7e422088ab27b"
+    },
+    "H112_res_3.cnf": {
+      "bytes": 41812,
+      "sha256": "69cdffef615d7832190d4c0063cc7464c2ec84ed8b0574755e51ad79216f94fd"
+    },
+    "H112_res_3.drat": {
+      "bytes": 34657,
+      "sha256": "94a3de92aeb1f38c3f6f5d01ba5a28ec49a87b5cb8a5136025ebc3f613c09bbe"
+    },
+    "J5_cdc5.cnf": {
+      "bytes": 12096,
+      "sha256": "760b29012640286b8f2360bc6e761574a4881732e36e132f04677ae821a567f3"
+    },
+    "J5_cdc5.drat": {
+      "bytes": 368,
+      "sha256": "fe1ef1921142d6f972b31f2b59798830c486fcfc202a4a93a5ba8231279d38ca"
+    },
+    "J5_flow4.cnf": {
+      "bytes": 6989,
+      "sha256": "68737b65953515e0e2a93da7054b8f75b2735a360d812a56280c4382a0229e3c"
+    },
+    "J5_flow4.drat": {
+      "bytes": 5564,
+      "sha256": "771eb1731f09cb15d28eaf87b844e5e081e6032e597a5315c4f2ebe92fc6ef5e"
+    },
+    "J5_flow5.cnf": {
+      "bytes": 17174,
+      "sha256": "1fd34e0bbcb5fa2894a2315134b7aa4fcd59b0625fca843d72a92d2eafe5db91"
+    },
+    "J5_flow5.drat": {
+      "bytes": 173,
+      "sha256": "e466a25c15ebd59f9f406b4c41615638fee0ae4b84ad9ba33196f5da2b487519"
+    },
+    "J5_odd_1.cnf": {
+      "bytes": 2549,
+      "sha256": "75ea4c71d2e901c5ec256e6223478126ac04382ef38851cc6b7c0ee588d79bbd"
+    },
+    "J5_odd_1.drat": {
+      "bytes": 16005,
+      "sha256": "92d2dcb751f8537a11df519d4e233123ede3ea15bb9a5debf1e842eac5fa7fdc"
+    },
+    "J5_odd_2.cnf": {
+      "bytes": 3311,
+      "sha256": "48893481d765b205c70b535663b934d26d37721acf8b720cede96b96371f7bad"
+    },
+    "J5_odd_2.drat": {
+      "bytes": 2365,
+      "sha256": "2cee1f7a9d8432ac885261e698a59bf95d16a710e4142afe905c8bd25ca29994"
+    },
+    "J5_res_1.cnf": {
+      "bytes": 5045,
+      "sha256": "415502e0e209b971253137e4346d2c11067b972ebfacf648168a51d26a7b671d"
+    },
+    "J5_res_1.drat": {
+      "bytes": 66998,
+      "sha256": "064db547e997aa23f6a8f4f6b8db0e08a6fdc71e89fc73020f7064ea9c4d35ad"
+    },
+    "J5_res_2.cnf": {
+      "bytes": 5827,
+      "sha256": "91762b8f068e5d426eba39fefddb1a5c07f11fe225b468a658a5f1ba0ba3de90"
+    },
+    "J5_res_2.drat": {
+      "bytes": 12,
+      "sha256": "ff2de1c15e3e0606d449fa614d4acd020b50889e8c823bdca8221825506017ff"
+    },
+    "K4_cdc5.cnf": {
+      "bytes": 2137,
+      "sha256": "443da21175d9dc8befefcc5582d898a0fa9bb254e901756f8164921cf4901520"
+    },
+    "K4_cdc5.drat": {
+      "bytes": 13,
+      "sha256": "0494eeee497f5b1c9eece829bc9a51dd78934abf7c315610eaddde9513932b90"
+    },
+    "K4_flow4.cnf": {
+      "bytes": 1301,
+      "sha256": "6adf263c144b26e73c368b9c31bfb87cc6ed2585c10716bafc3e1588e1bacdbb"
+    },
+    "K4_flow4.drat": {
+      "bytes": 13,
+      "sha256": "77c77e95107f4b3c1073d2c25137477b859431a7c25dbb98a8833ef870b8c24b"
+    },
+    "K4_flow5.cnf": {
+      "bytes": 3118,
+      "sha256": "ab957e14cf2ab64edac9018fc90952bafd111006fac2ad422ae623ed152b74c0"
+    },
+    "K4_flow5.drat": {
+      "bytes": 13,
+      "sha256": "5cfdb7120c3d7f4597cd6e0acc1fbe06dc91fa8b131dff13ef276fcd164692ad"
+    },
+    "K4_odd_0.cnf": {
+      "bytes": 349,
+      "sha256": "26e8644e562d921dcb380f8f3d584ccfbcab8539fb961185b05508501c599b58"
+    },
+    "K4_odd_0.drat": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "K4_res_0.cnf": {
+      "bytes": 799,
+      "sha256": "2b40cc662e1b9c873a9437e2a6a16828e30719d2fa8cff4eb7ddd2530e815aec"
+    },
+    "K4_res_0.drat": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "petersen_cdc5.cnf": {
+      "bytes": 5533,
+      "sha256": "56349204db32cfd6cb5e78be268bda51d54358199d31283f4493f61637102e68"
+    },
+    "petersen_cdc5.drat": {
+      "bytes": 158,
+      "sha256": "f15a29cfdc886670e7204419e0f8c2a6780dfb99c013931ee524943a587bb2e5"
+    },
+    "petersen_flow4.cnf": {
+      "bytes": 3440,
+      "sha256": "7e4eab231af5fa4abdcbf5e6ac8386e6ceb2658a4d1b1193363d362900fa320d"
+    },
+    "petersen_flow4.drat": {
+      "bytes": 966,
+      "sha256": "0784130307501b50515a117ddc9ed4ee6d1055c664d52d315743283f4e9bd924"
+    },
+    "petersen_flow5.cnf": {
+      "bytes": 8158,
+      "sha256": "391fa2dd462fd455942155aace0fd15535eac1c2c32a47b8a17ea77a6525d071"
+    },
+    "petersen_flow5.drat": {
+      "bytes": 85,
+      "sha256": "db2184a30f19fae7378313bc91fed73e425d2b125313fdab2c9e122ecb532d6e"
+    },
+    "petersen_odd_1.cnf": {
+      "bytes": 1232,
+      "sha256": "57c29d33f7440b51617653ea4d104b4e01f6f63ee19d2dfc07f3d36edf845aa5"
+    },
+    "petersen_odd_1.drat": {
+      "bytes": 1669,
+      "sha256": "69456bbb62a651c3f5decc7b5fb153fb9bdf4ca1a3abcf5a5d358f98fdc14950"
+    },
+    "petersen_odd_2.cnf": {
+      "bytes": 1546,
+      "sha256": "8bcf74f08247b573b8222fc61c73c8f8b019b43c2d9ae2e97f0f1afeb1494a23"
+    },
+    "petersen_odd_2.drat": {
+      "bytes": 484,
+      "sha256": "f0f899f3a990d3ba426161888d9585677fe0a52afa7193d18747d26f728b2fb5"
+    },
+    "petersen_res_1.cnf": {
+      "bytes": 2377,
+      "sha256": "96bb41f81580fc6ddf3b875d08c3e86a40bcd1ae4072405e261fa58799bc3a3c"
+    },
+    "petersen_res_1.drat": {
+      "bytes": 2564,
+      "sha256": "89b5c387aacb5a26180108333b4cdd564c92e30cb456325789491c7d818ae5b5"
+    },
+    "petersen_res_2.cnf": {
+      "bytes": 2691,
+      "sha256": "35f072e18c6ca24ba81b7f3ddda3dc96bd5a8798d1d451ee02ee8f3584725303"
+    },
+    "petersen_res_2.drat": {
+      "bytes": 518,
+      "sha256": "ebfe3e15f59e32592c1597abd0d3184648e45bd458d1852ecd632bc06d30e151"
+    },
+    "prism_cdc5.cnf": {
+      "bytes": 3270,
+      "sha256": "e395eaf32e2cbc4fa0c8ec600ac75107068c8328ec0a78cc851d82bd53f455bc"
+    },
+    "prism_cdc5.drat": {
+      "bytes": 47,
+      "sha256": "54ca5ebb755825f2d248b5ede2f3444532a9b4b765566f706aed2916fa30989b"
+    },
+    "prism_flow4.cnf": {
+      "bytes": 2015,
+      "sha256": "3e35a3b106e5399e5c269cf93e7ae0cdce865a0a836e4a4849b990dcf484d14b"
+    },
+    "prism_flow4.drat": {
+      "bytes": 30,
+      "sha256": "3327e171929828df492d2148372392b301c043f55c0b5baa1da1a4cfad111ddf"
+    },
+    "prism_flow5.cnf": {
+      "bytes": 4799,
+      "sha256": "36e0eaec4cf15ee4a2e0d4214b843569764583f5d947684e0c0b5960af651f95"
+    },
+    "prism_flow5.drat": {
+      "bytes": 30,
+      "sha256": "c6201797264899755df47e0d747787c0c86c572fae3a603aa94abf729ec6aa7f"
+    },
+    "prism_odd_0.cnf": {
+      "bytes": 537,
+      "sha256": "201485adce723e44ff1267ed53f67249210923506ee8529bfca515cc1b978839"
+    },
+    "prism_odd_0.drat": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "prism_res_0.cnf": {
+      "bytes": 1223,
+      "sha256": "96a1c422f0fff8d21902f479d32e69ef3db39eddeada4fafc85b2587361cd1aa"
+    },
+    "prism_res_0.drat": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "instances": {
+    "G112_cdc5": {
+      "checker_ok": true,
+      "clauses": 4762,
+      "cnf_sha256": "8994a07503187af8dd38074f2f82c3db82e1f06d41b48463c144df63e1d18951",
+      "exit_code": 10,
+      "instance": "G112_cdc5",
+      "seconds": 0.146,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": " 757 -758 -759 -760 -761 -762 -763 764 765\nv 766 -767 -768 769 -770 771 -772 -773 -774 775 776 777 -778 -779 -780 -781\nv 782 -783 784 -785 786 -787 -788 789 -790 791 -792 793 -794 -795 796 797 -798\nv -799 -800 801 802 -803 -804 -805 -806 807 808 -809 -810 -811 812 -813 -814\nv 815 816 -817 -818 819 -820 -821 -822 823 824 -825 -826 827 -828 829 -830\nv -831 -832 -833 834 835 -836 837 -838 839 -840 0\n",
+      "status": "SAT",
+      "variables": 840
+    },
+    "G112_flow4": {
+      "clauses": 3024,
+      "cnf_sha256": "f254ad28ec9feb82a2992a1370e5d5f666b7f6f9f71c7988314a59bb3edf1720",
+      "drat_trim_seconds": 0.456,
+      "drat_trim_tail": "ing input formula with 504 variables and 3024 clauses\n\nc finished parsing, read 9037 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 786 of 3024 clauses in core                            \n\nc 629 of 808 lemmas in core using 6801 resolution steps\n\nc 0 RAT lemmas in core; 33 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.096 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "G112_flow4",
+      "proof_bytes": 9037,
+      "proof_sha256": "7503f2ebeff2e97406714733e88bd4a36f5653dfd06fc6c878421f237095eb73",
+      "seconds": 0.132,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 504
+    },
+    "G112_flow5": {
+      "checker_ok": true,
+      "clauses": 7000,
+      "cnf_sha256": "89ec3f78836fd622bc1d0a084d4d6d889a329702cde0b2daece4159ba5c779f7",
+      "exit_code": 10,
+      "instance": "G112_flow5",
+      "seconds": 0.147,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "91 -592 593 -594 -595 -596 -597 -598\nv -599 600 -601 602 -603 -604 -605 606 -607 -608 -609 -610 611 -612 -613 -614\nv -615 616 -617 -618 619 -620 -621 -622 -623 624 -625 -626 -627 628 -629 -630\nv -631 632 633 -634 -635 -636 637 -638 -639 -640 -641 -642 -643 644 -645 646\nv -647 -648 -649 650 -651 -652 -653 -654 655 -656 -657 -658 -659 660 -661 -662\nv -663 664 -665 -666 -667 668 -669 -670 -671 672 0\n",
+      "status": "SAT",
+      "variables": 672
+    },
+    "G112_odd_1": {
+      "clauses": 1287,
+      "cnf_sha256": "177fe05848981ac9961dc1aad310f9fe012f81935425c14777d81a2ea3178c6b",
+      "drat_trim_seconds": 0.435,
+      "drat_trim_tail": "ng input formula with 616 variables and 1287 clauses\n\nc finished parsing, read 13376 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 665 of 1287 clauses in core                            \n\nc 328 of 624 lemmas in core using 9626 resolution steps\n\nc 0 RAT lemmas in core; 56 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.073 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "G112_odd_1",
+      "proof_bytes": 13376,
+      "proof_sha256": "6eb348866f20e438c005d24e01d7492e9972208091e2aa9c185eb7a7981aa429",
+      "seconds": 0.129,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 616
+    },
+    "G112_odd_2": {
+      "clauses": 1622,
+      "cnf_sha256": "c418744d0733282d9914cc742aec5e2d5fdd25e5c46fe7f8d23f2fe7935b2e3f",
+      "drat_trim_seconds": 0.474,
+      "drat_trim_tail": "input formula with 784 variables and 1622 clauses\n\nc finished parsing, read 18906 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 1125 of 1622 clauses in core                            \n\nc 584 of 1268 lemmas in core using 18669 resolution steps\n\nc 0 RAT lemmas in core; 74 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.095 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "G112_odd_2",
+      "proof_bytes": 18906,
+      "proof_sha256": "8770eca6eb240e5c254a7c7c81b95bcaca367c14ce6882708a3509282459ad67",
+      "seconds": 0.141,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 784
+    },
+    "G112_odd_3": {
+      "clauses": 1957,
+      "cnf_sha256": "c5853cd9091045ed9fdd3aa8e99e05e226bd1f28dc53137aff709e07cb5b3962",
+      "drat_trim_seconds": 0.543,
+      "drat_trim_tail": " formula with 952 variables and 1957 clauses\n\nc finished parsing, read 456646 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 1528 of 1957 clauses in core                            \n\nc 6573 of 11858 lemmas in core using 201959 resolution steps\n\nc 0 RAT lemmas in core; 699 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.189 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "G112_odd_3",
+      "proof_bytes": 456646,
+      "proof_sha256": "ccfadca3e24fa2e73a18fe5727bf0975d31e294717812238033a5262c31851c5",
+      "seconds": 0.331,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 952
+    },
+    "G112_odd_4": {
+      "checker_odd_cycles": 4,
+      "checker_ok": true,
+      "clauses": 2292,
+      "cnf_sha256": "838084e3a778be998c81c4f283aa2a4284870e8727f1c037ed3df343b69bd5a2",
+      "exit_code": 10,
+      "instance": "G112_odd_4",
+      "seconds": 0.135,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "43 1044 1045 1046 1047 1048 1049 1050\nv 1051 1052 1053 1054 1055 1056 1057 1058 1059 1060 1061 1062 1063 1064 1065\nv 1066 1067 1068 1069 1070 1071 1072 1073 1074 1075 1076 1077 1078 1079 1080\nv 1081 1082 1083 1084 1085 1086 1087 1088 1089 1090 1091 1092 1093 1094 1095\nv 1096 1097 1098 1099 1100 1101 1102 1103 1104 1105 1106 1107 1108 1109 1110\nv 1111 1112 1113 1114 1115 1116 1117 1118 1119 1120 0\n",
+      "status": "SAT",
+      "variables": 1120
+    },
+    "G112_res_1": {
+      "clauses": 2686,
+      "cnf_sha256": "ac4b5f0d516b88af5351833920642c35caaea4ec71d4fd7702dc750cca0c7696",
+      "drat_trim_seconds": 0.448,
+      "drat_trim_tail": " input formula with 840 variables and 2686 clauses\n\nc finished parsing, read 16412 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 951 of 2686 clauses in core                            \n\nc 591 of 1025 lemmas in core using 23599 resolution steps\n\nc 0 RAT lemmas in core; 63 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.086 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "G112_res_1",
+      "proof_bytes": 16412,
+      "proof_sha256": "149be8526e8d74fab6feaad280a7e48bff5ec5171bfee90e7e8c99be97e2c6be",
+      "seconds": 0.132,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 840
+    },
+    "G112_res_2": {
+      "clauses": 3021,
+      "cnf_sha256": "952dbc6e1fef7c2e6d596aa7c46b3b98552ab2ba1646e3ac188082ffd8e61b38",
+      "drat_trim_seconds": 0.474,
+      "drat_trim_tail": "nput formula with 1008 variables and 3021 clauses\n\nc finished parsing, read 31223 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 1512 of 3021 clauses in core                            \n\nc 983 of 1978 lemmas in core using 43155 resolution steps\n\nc 0 RAT lemmas in core; 81 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.113 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "G112_res_2",
+      "proof_bytes": 31223,
+      "proof_sha256": "f81c0e6f08a32f486ed8e7f15b81d4b325f0f3df4f5245cf40ab0612a0daec43",
+      "seconds": 0.15,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 1008
+    },
+    "G112_res_3": {
+      "checker_ok": true,
+      "clauses": 3356,
+      "cnf_sha256": "9af8dfe9e60a180a9517c4e98492118a1dad1161a2ced7e6717a2bc5861bb126",
+      "exit_code": 10,
+      "instance": "G112_res_3",
+      "seconds": 0.14,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "99 1100 1101 1102\nv 1103 1104 1105 1106 1107 1108 1109 1110 1111 1112 1113 1114 1115 1116 1117\nv 1118 1119 1120 1121 1122 1123 1124 1125 1126 1127 1128 1129 1130 1131 1132\nv 1133 1134 1135 1136 1137 1138 1139 1140 1141 1142 1143 1144 1145 1146 1147\nv 1148 1149 1150 1151 1152 1153 1154 1155 1156 1157 1158 1159 1160 1161 1162\nv 1163 1164 1165 1166 1167 1168 1169 1170 1171 1172 1173 1174 1175 1176 0\n",
+      "status": "SAT",
+      "variables": 1176
+    },
+    "G52_cdc5": {
+      "checker_ok": true,
+      "clauses": 2212,
+      "cnf_sha256": "e348f7c42cacf540920a04604bfe1f7dd32b943ca24e2cc322fc749a45c47b7c",
+      "exit_code": 10,
+      "instance": "G52_cdc5",
+      "seconds": 0.139,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "6 -307 -308 309 310 -311 312 -313 314 -315 -316\nv -317 318 319 -320 321 -322 -323 324 -325 326 -327 -328 -329 330 -331 332\nv -333 -334 335 -336 -337 -338 339 340 -341 -342 -343 344 345 346 -347 -348\nv 349 -350 -351 352 -353 -354 355 -356 357 -358 359 -360 -361 362 -363 364\nv -365 366 -367 -368 -369 370 -371 372 -373 -374 375 -376 -377 -378 379 380\nv -381 382 -383 -384 385 -386 -387 -388 389 390 0\n",
+      "status": "SAT",
+      "variables": 390
+    },
+    "G52_flow4": {
+      "clauses": 1404,
+      "cnf_sha256": "b6a1f8177d77e78f2fd33cce93f3d29b76eb319780a3353ac23264427f5bd172",
+      "drat_trim_seconds": 0.459,
+      "drat_trim_tail": "ing input formula with 234 variables and 1404 clauses\n\nc finished parsing, read 7419 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 729 of 1404 clauses in core                            \n\nc 564 of 697 lemmas in core using 5148 resolution steps\n\nc 0 RAT lemmas in core; 25 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.087 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "G52_flow4",
+      "proof_bytes": 7419,
+      "proof_sha256": "0bef9fd6c7af1627f86f69c4fe484b99ecc61a902b96001b9618fed2bfdce8e1",
+      "seconds": 0.141,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 234
+    },
+    "G52_flow5": {
+      "checker_ok": true,
+      "clauses": 3250,
+      "cnf_sha256": "8ff5edec5502c9dea3ca37a86fcec67092f06580e5e95b37e40d91af875b60ea",
+      "exit_code": 10,
+      "instance": "G52_flow5",
+      "seconds": 0.155,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "31 -232 -233 234 -235 -236 -237 238 -239 -240 241 -242 -243 -244 -245\nv 246 -247 -248 -249 250 -251 -252 -253 -254 255 -256 -257 -258 -259 260 -261\nv -262 -263 264 -265 -266 -267 268 -269 -270 -271 272 273 -274 -275 -276 277\nv -278 -279 -280 -281 -282 -283 284 -285 286 -287 -288 -289 290 -291 -292 -293\nv -294 295 -296 -297 -298 -299 300 -301 -302 -303 304 -305 -306 -307 308 -309\nv -310 -311 312 0\n",
+      "status": "SAT",
+      "variables": 312
+    },
+    "G52_odd_1": {
+      "clauses": 597,
+      "cnf_sha256": "4cd0272b1e06d5a6fe16d4a127cf441240ca0921c8112917645562fd4be86165",
+      "drat_trim_seconds": 0.49,
+      "drat_trim_tail": "ing input formula with 286 variables and 597 clauses\n\nc finished parsing, read 13331 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 565 of 597 clauses in core                            \n\nc 496 of 705 lemmas in core using 18169 resolution steps\n\nc 0 RAT lemmas in core; 84 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.105 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "G52_odd_1",
+      "proof_bytes": 13331,
+      "proof_sha256": "a936065e416eaa943234ca64d2c32d6afb3300f4c1abd04b63689c0fb9566650",
+      "seconds": 0.143,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 286
+    },
+    "G52_odd_2": {
+      "checker_odd_cycles": 2,
+      "checker_ok": true,
+      "clauses": 752,
+      "cnf_sha256": "0a5680ada607837e46fe355d65448bdbc4e1578cd12c582a9bd2bf383c2bdb28",
+      "exit_code": 10,
+      "instance": "G52_odd_2",
+      "seconds": 0.137,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "5 -276 277 -278 279 -280 281 -282 283 -284 285 -286 287 -288 289 -290\nv 291 -292 293 -294 295 -296 297 -298 299 -300 301 -302 303 -304 305 -306 307\nv -308 309 -310 311 -312 313 -314 315 -316 317 -318 319 -320 321 -322 323 -324\nv 325 -326 327 -328 329 -330 331 -332 333 -334 335 336 337 338 339 340 341 342\nv 343 344 345 346 347 348 349 350 351 352 353 354 355 356 357 358 359 360 361\nv 362 363 364 0\n",
+      "status": "SAT",
+      "variables": 364
+    },
+    "G52_res_1": {
+      "clauses": 1246,
+      "cnf_sha256": "a87b0f2ee671551151f8b8e775bd0c5feccc6792abd96248de91fc6c08f34cb5",
+      "drat_trim_seconds": 0.501,
+      "drat_trim_tail": "nput formula with 390 variables and 1246 clauses\n\nc finished parsing, read 32665 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 794 of 1246 clauses in core                            \n\nc 1232 of 1891 lemmas in core using 49019 resolution steps\n\nc 0 RAT lemmas in core; 147 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.111 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "G52_res_1",
+      "proof_bytes": 32665,
+      "proof_sha256": "2f4c311cb360d56de37d4535c5f0a2d8851608313a2bb7f9b61355fe5874e794",
+      "seconds": 0.156,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 390
+    },
+    "G52_res_2": {
+      "checker_ok": true,
+      "clauses": 1401,
+      "cnf_sha256": "4cb178386b89e12e338cba561d44fa086c109794d97d630d0eb8b815d570b079",
+      "exit_code": 10,
+      "instance": "G52_res_2",
+      "seconds": 0.137,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "380 381 -382\nv 383 -384 385 -386 387 -388 389 -390 391 -392 393 -394 395 -396 397 -398 399\nv -400 401 -402 403 -404 405 -406 407 -408 409 -410 411 -412 413 -414 415 -416\nv 417 -418 419 -420 421 -422 423 -424 425 -426 427 -428 429 -430 431 -432 433\nv -434 435 -436 437 -438 439 -440 441 -442 443 -444 445 446 447 448 449 450\nv 451 452 453 454 455 456 457 458 459 460 461 462 463 464 465 466 467 468 0\n",
+      "status": "SAT",
+      "variables": 468
+    },
+    "H112_cdc5": {
+      "checker_ok": true,
+      "clauses": 4762,
+      "cnf_sha256": "19bb0cb77566a233da8fd984d166cab6dd31e0078687cd8a20befa1702a0076f",
+      "exit_code": 10,
+      "instance": "H112_cdc5",
+      "seconds": 0.126,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": " -757 758 -759 -760 -761 762 763 -764 -765 -766 -767 768\nv 769 -770 -771 772 773 -774 -775 -776 777 -778 779 -780 -781 782 -783 784\nv -785 -786 -787 788 789 -790 -791 792 -793 -794 795 796 -797 -798 799 -800\nv -801 -802 -803 804 805 -806 -807 808 -809 810 811 -812 -813 -814 815 816\nv -817 818 -819 -820 821 822 -823 -824 -825 -826 827 -828 829 -830 831 -832\nv -833 834 -835 836 837 -838 -839 -840 0\n",
+      "status": "SAT",
+      "variables": 840
+    },
+    "H112_flow4": {
+      "clauses": 3024,
+      "cnf_sha256": "0b418acbe64637ded40f3661d92db63edfd95daf06997461a9d4a149e76d722e",
+      "drat_trim_seconds": 0.454,
+      "drat_trim_tail": "ng input formula with 504 variables and 3024 clauses\n\nc finished parsing, read 10344 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 801 of 3024 clauses in core                            \n\nc 711 of 919 lemmas in core using 7573 resolution steps\n\nc 0 RAT lemmas in core; 16 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.096 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "H112_flow4",
+      "proof_bytes": 10344,
+      "proof_sha256": "e0dd646ec6dfa988d2f7655fd20d07e5f266ba50b860652066255cc1159bc4c4",
+      "seconds": 0.132,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 504
+    },
+    "H112_flow5": {
+      "checker_ok": true,
+      "clauses": 7000,
+      "cnf_sha256": "ec474c46d9718b9f094fdf2a677e8fbf395459ff84723793fdb00aa48e017c68",
+      "exit_code": 10,
+      "instance": "H112_flow5",
+      "seconds": 0.134,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "91 -592 -593 -594 -595 596 -597 -598\nv 599 -600 -601 602 -603 -604 -605 -606 -607 608 -609 -610 -611 612 -613 -614\nv -615 616 -617 -618 619 -620 621 -622 -623 -624 -625 -626 -627 628 -629 -630\nv -631 632 -633 634 -635 -636 -637 -638 639 -640 -641 -642 -643 644 -645 646\nv -647 -648 -649 -650 -651 652 -653 -654 -655 656 -657 -658 -659 660 -661 662\nv -663 -664 -665 -666 -667 668 -669 -670 -671 672 0\n",
+      "status": "SAT",
+      "variables": 672
+    },
+    "H112_odd_1": {
+      "clauses": 1287,
+      "cnf_sha256": "0bdadcd69163ef04ee0fa14955cfe91f52a89d6b82feb5170f0902693bbe6a7f",
+      "drat_trim_seconds": 0.447,
+      "drat_trim_tail": "g input formula with 616 variables and 1287 clauses\n\nc finished parsing, read 10464 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 677 of 1287 clauses in core                            \n\nc 353 of 666 lemmas in core using 13145 resolution steps\n\nc 0 RAT lemmas in core; 38 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.083 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "H112_odd_1",
+      "proof_bytes": 10464,
+      "proof_sha256": "34009f49aa427e5ef368c303276c3fa96c1ca94183e0746e9a5cc5d8f91c62c4",
+      "seconds": 0.133,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 616
+    },
+    "H112_odd_2": {
+      "clauses": 1622,
+      "cnf_sha256": "765f5449fc8fa79a827ba0697659f1ba8ef21b8e37e54ecc37027d146ed2d06e",
+      "drat_trim_seconds": 0.481,
+      "drat_trim_tail": "input formula with 784 variables and 1622 clauses\n\nc finished parsing, read 50597 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 1116 of 1622 clauses in core                            \n\nc 597 of 2063 lemmas in core using 19618 resolution steps\n\nc 0 RAT lemmas in core; 19 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.111 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "H112_odd_2",
+      "proof_bytes": 50597,
+      "proof_sha256": "9cb615faadc5bf2d97086b4dfe202a7b44025f16afbbac1320eed12f310dad5e",
+      "seconds": 0.148,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 784
+    },
+    "H112_odd_3": {
+      "clauses": 1957,
+      "cnf_sha256": "adaf33971d7609dfbb6dbfa9db500f929a38bda1fe99b0778db5b29475bb8bcf",
+      "drat_trim_seconds": 0.59,
+      "drat_trim_tail": " formula with 952 variables and 1957 clauses\n\nc finished parsing, read 548923 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 1522 of 1957 clauses in core                            \n\nc 7934 of 14184 lemmas in core using 235290 resolution steps\n\nc 0 RAT lemmas in core; 796 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.213 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "H112_odd_3",
+      "proof_bytes": 548923,
+      "proof_sha256": "9a7d3ea29a9294bb218b261aebee2696cc296c632ad99522af665d9706bcaa5f",
+      "seconds": 0.4,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 952
+    },
+    "H112_odd_4": {
+      "checker_odd_cycles": 4,
+      "checker_ok": true,
+      "clauses": 2292,
+      "cnf_sha256": "2f9efd583547fb9fbb5d401c73ecd9aecd34f9130733ad54e26af3baa67e21e2",
+      "exit_code": 10,
+      "instance": "H112_odd_4",
+      "seconds": 0.131,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "44 1045 1046 1047 -1048 1049 1050 1051\nv -1052 1053 1054 1055 -1056 1057 1058 1059 -1060 1061 1062 1063 -1064 1065\nv 1066 1067 1068 1069 1070 1071 1072 1073 1074 1075 1076 1077 1078 1079 1080\nv 1081 1082 1083 1084 1085 1086 1087 1088 1089 1090 1091 1092 1093 1094 1095\nv 1096 1097 1098 1099 1100 1101 1102 1103 1104 1105 1106 1107 1108 1109 1110\nv 1111 1112 1113 1114 1115 1116 1117 1118 1119 1120 0\n",
+      "status": "SAT",
+      "variables": 1120
+    },
+    "H112_res_1": {
+      "clauses": 2686,
+      "cnf_sha256": "a74c873b971fddb12c72c9bb74dd290ec0d8c6b186eb0e787ecf49950772b1b0",
+      "drat_trim_seconds": 0.469,
+      "drat_trim_tail": "put formula with 840 variables and 2686 clauses\n\nc finished parsing, read 53175 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 1608 of 2686 clauses in core                            \n\nc 1516 of 2580 lemmas in core using 67135 resolution steps\n\nc 0 RAT lemmas in core; 332 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.114 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "H112_res_1",
+      "proof_bytes": 53175,
+      "proof_sha256": "4a2ac4d602b314a74800c841a54fc93325b8b112f13c48efb69fb146fcd42715",
+      "seconds": 0.15,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 840
+    },
+    "H112_res_2": {
+      "clauses": 3021,
+      "cnf_sha256": "be22c11fd454b3e826a05d524c1256809859c755b05c416d386c648bc2f5b390",
+      "drat_trim_seconds": 0.564,
+      "drat_trim_tail": "nput formula with 1008 variables and 3021 clauses\n\nc finished parsing, read 39116 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 1491 of 3021 clauses in core                            \n\nc 846 of 2064 lemmas in core using 35347 resolution steps\n\nc 0 RAT lemmas in core; 63 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.100 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "H112_res_2",
+      "proof_bytes": 39116,
+      "proof_sha256": "2f94fe818d4c9774d252f16b46d54e4d6171531a1a24c3aa39c7e422088ab27b",
+      "seconds": 0.143,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 1008
+    },
+    "H112_res_3": {
+      "checker_ok": true,
+      "clauses": 3356,
+      "cnf_sha256": "69cdffef615d7832190d4c0063cc7464c2ec84ed8b0574755e51ad79216f94fd",
+      "exit_code": 10,
+      "instance": "H112_res_3",
+      "seconds": 0.147,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": " 1103 -1104 1105 1106 -1107 1108 1109 -1110 1111\nv 1112 -1113 1114 1115 -1116 1117 1118 -1119 1120 1121 -1122 1123 1124 -1125\nv 1126 1127 -1128 1129 1130 -1131 1132 1133 -1134 1135 1136 -1137 1138 1139\nv -1140 1141 1142 -1143 1144 1145 -1146 1147 1148 -1149 1150 1151 -1152 1153\nv 1154 1155 1156 1157 1158 1159 1160 1161 1162 1163 1164 1165 1166 1167 1168\nv 1169 1170 1171 1172 1173 1174 1175 1176 0\n",
+      "status": "SAT",
+      "variables": 1176
+    },
+    "J5_cdc5": {
+      "checker_ok": true,
+      "clauses": 852,
+      "cnf_sha256": "760b29012640286b8f2360bc6e761574a4881732e36e132f04677ae821a567f3",
+      "exit_code": 10,
+      "instance": "J5_cdc5",
+      "seconds": 0.145,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "7 -58 59 -60 61 -62 -63 64 -65\nv 66 -67 -68 -69 70 -71 72 73 -74 -75 76 -77 78 -79 -80 81 -82 -83 84 -85 -86\nv -87 88 89 -90 -91 -92 93 94 -95 -96 -97 -98 99 100 -101 102 -103 104 -105\nv -106 -107 108 -109 110 -111 -112 113 114 -115 -116 -117 -118 119 120 -121\nv -122 -123 124 125 -126 -127 128 -129 130 -131 132 -133 -134 135 -136 137\nv -138 139 -140 -141 142 -143 -144 145 -146 -147 -148 149 150 0\n",
+      "status": "SAT",
+      "variables": 150
+    },
+    "J5_flow4": {
+      "clauses": 540,
+      "cnf_sha256": "68737b65953515e0e2a93da7054b8f75b2735a360d812a56280c4382a0229e3c",
+      "drat_trim_seconds": 0.446,
+      "drat_trim_tail": "arsing input formula with 90 variables and 540 clauses\n\nc finished parsing, read 5564 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 474 of 540 clauses in core                            \n\nc 492 of 669 lemmas in core using 7728 resolution steps\n\nc 0 RAT lemmas in core; 26 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.093 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "J5_flow4",
+      "proof_bytes": 5564,
+      "proof_sha256": "771eb1731f09cb15d28eaf87b844e5e081e6032e597a5315c4f2ebe92fc6ef5e",
+      "seconds": 0.136,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 90
+    },
+    "J5_flow5": {
+      "checker_ok": true,
+      "clauses": 1250,
+      "cnf_sha256": "1fd34e0bbcb5fa2894a2315134b7aa4fcd59b0625fca843d72a92d2eafe5db91",
+      "exit_code": 10,
+      "instance": "J5_flow5",
+      "seconds": 0.138,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "\nv -24 -25 26 -27 -28 29 -30 -31 -32 -33 34 -35 -36 -37 38 -39 -40 -41 42 -43\nv -44 45 -46 -47 -48 49 -50 -51 -52 -53 -54 -55 56 -57 58 -59 -60 -61 62 -63\nv -64 -65 -66 -67 68 -69 -70 -71 72 -73 -74 75 -76 -77 -78 79 -80 81 -82 -83\nv -84 85 -86 -87 -88 89 -90 -91 -92 -93 -94 95 -96 -97 -98 -99 100 -101 -102\nv -103 104 -105 -106 -107 108 -109 110 -111 -112 -113 -114 -115 116 -117 -118\nv -119 120 0\n",
+      "status": "SAT",
+      "variables": 120
+    },
+    "J5_odd_1": {
+      "clauses": 229,
+      "cnf_sha256": "75ea4c71d2e901c5ec256e6223478126ac04382ef38851cc6b7c0ee588d79bbd",
+      "drat_trim_seconds": 0.464,
+      "drat_trim_tail": "ng input formula with 110 variables and 229 clauses\n\nc finished parsing, read 16005 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 221 of 229 clauses in core                            \n\nc 599 of 749 lemmas in core using 23485 resolution steps\n\nc 0 RAT lemmas in core; 109 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.087 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "J5_odd_1",
+      "proof_bytes": 16005,
+      "proof_sha256": "92d2dcb751f8537a11df519d4e233123ede3ea15bb9a5debf1e842eac5fa7fdc",
+      "seconds": 0.136,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 110
+    },
+    "J5_odd_2": {
+      "checker_odd_cycles": 2,
+      "checker_ok": true,
+      "clauses": 288,
+      "cnf_sha256": "48893481d765b205c70b535663b934d26d37721acf8b720cede96b96371f7bad",
+      "exit_code": 10,
+      "instance": "J5_odd_2",
+      "seconds": 0.141,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "41 -42 -43 44\nv 45 46 47 -48 -49 -50 -51 -52 -53 -54 -55 -56 57 -58 59 -60 -61 -62 -63 -64\nv -65 -66 -67 -68 -69 -70 -71 -72 -73 -74 -75 -76 -77 -78 -79 -80 -81 -82 -83\nv -84 -85 -86 -87 -88 -89 -90 -91 -92 93 -94 95 -96 97 98 99 100 101 102 103\nv 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122\nv 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 0\n",
+      "status": "SAT",
+      "variables": 140
+    },
+    "J5_res_1": {
+      "clauses": 478,
+      "cnf_sha256": "415502e0e209b971253137e4346d2c11067b972ebfacf648168a51d26a7b671d",
+      "drat_trim_seconds": 0.494,
+      "drat_trim_tail": " input formula with 150 variables and 478 clauses\n\nc finished parsing, read 66998 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 349 of 478 clauses in core                            \n\nc 1527 of 1710 lemmas in core using 66140 resolution steps\n\nc 0 RAT lemmas in core; 478 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.118 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "J5_res_1",
+      "proof_bytes": 66998,
+      "proof_sha256": "064db547e997aa23f6a8f4f6b8db0e08a6fdc71e89fc73020f7064ea9c4d35ad",
+      "seconds": 0.16,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 150
+    },
+    "J5_res_2": {
+      "checker_ok": true,
+      "clauses": 537,
+      "cnf_sha256": "91762b8f068e5d426eba39fefddb1a5c07f11fe225b468a658a5f1ba0ba3de90",
+      "exit_code": 10,
+      "instance": "J5_res_2",
+      "seconds": 0.153,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "0 -101 -102 -103\nv -104 -105 -106 -107 -108 -109 -110 -111 -112 -113 114 -115 116 -117 -118\nv -119 -120 -121 -122 -123 -124 -125 -126 -127 -128 -129 -130 -131 -132 -133\nv -134 -135 -136 -137 -138 -139 -140 -141 -142 -143 -144 -145 -146 -147 -148\nv -149 -150 -151 -152 -153 -154 -155 -156 -157 -158 -159 -160 -161 -162 -163\nv -164 -165 -166 167 -168 169 -170 171 172 173 174 175 176 177 178 179 180 0\n",
+      "status": "SAT",
+      "variables": 180
+    },
+    "K4_cdc5": {
+      "checker_ok": true,
+      "clauses": 172,
+      "cnf_sha256": "443da21175d9dc8befefcc5582d898a0fa9bb254e901756f8164921cf4901520",
+      "exit_code": 10,
+      "instance": "K4_cdc5",
+      "seconds": 0.136,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s SATISFIABLE\nv 1 2 -3 -4 -5 6 -7 -8 9 -10 -11 12 -13 14 -15 16 -17 -18 -19 20 -21 22 -23\nv -24 25 -26 -27 -28 29 30 0\n",
+      "status": "SAT",
+      "variables": 30
+    },
+    "K4_flow4": {
+      "checker_ok": true,
+      "clauses": 108,
+      "cnf_sha256": "6adf263c144b26e73c368b9c31bfb87cc6ed2585c10716bafc3e1588e1bacdbb",
+      "exit_code": 10,
+      "instance": "K4_flow4",
+      "seconds": 0.138,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s SATISFIABLE\nv 1 -2 -3 4 -5 -6 -7 8 -9 -10 11 -12 -13 -14 15 -16 -17 18 0\n",
+      "status": "SAT",
+      "variables": 18
+    },
+    "K4_flow5": {
+      "checker_ok": true,
+      "clauses": 250,
+      "cnf_sha256": "ab957e14cf2ab64edac9018fc90952bafd111006fac2ad422ae623ed152b74c0",
+      "exit_code": 10,
+      "instance": "K4_flow5",
+      "seconds": 0.138,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s SATISFIABLE\nv -1 2 -3 -4 5 -6 -7 -8 -9 10 -11 -12 -13 -14 15 -16 -17 -18 -19 20 -21 -22\nv -23 24 0\n",
+      "status": "SAT",
+      "variables": 24
+    },
+    "K4_odd_0": {
+      "checker_odd_cycles": 0,
+      "checker_ok": true,
+      "clauses": 35,
+      "cnf_sha256": "26e8644e562d921dcb380f8f3d584ccfbcab8539fb961185b05508501c599b58",
+      "exit_code": 10,
+      "instance": "K4_odd_0",
+      "seconds": 0.133,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s SATISFIABLE\nv 1 -2 -3 -4 -5 6 7 8 -9 -10 -11 -12 -13 -14 -15 -16 0\n",
+      "status": "SAT",
+      "variables": 16
+    },
+    "K4_res_0": {
+      "checker_ok": true,
+      "clauses": 84,
+      "cnf_sha256": "2b40cc662e1b9c873a9437e2a6a16828e30719d2fa8cff4eb7ddd2530e815aec",
+      "exit_code": 10,
+      "instance": "K4_res_0",
+      "seconds": 0.137,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s SATISFIABLE\nv 1 -2 -3 -4 5 -6 -7 -8 9 -10 -11 12 -13 14 -15 16 -17 -18 -19 -20 -21 -22 -23\nv -24 0\n",
+      "status": "SAT",
+      "variables": 24
+    },
+    "petersen_cdc5": {
+      "checker_ok": true,
+      "clauses": 427,
+      "cnf_sha256": "56349204db32cfd6cb5e78be268bda51d54358199d31283f4493f61637102e68",
+      "exit_code": 10,
+      "instance": "petersen_cdc5",
+      "seconds": 0.142,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s SATISFIABLE\nv 1 2 -3 -4 -5 -6 7 -8 -9 10 11 -12 -13 -14 15 16 -17 -18 -19 20 -21 -22 23\nv -24 25 26 -27 28 -29 -30 -31 -32 33 34 -35 -36 37 38 -39 -40 -41 42 -43 44\nv -45 -46 -47 -48 49 50 51 -52 -53 54 -55 56 -57 -58 -59 60 -61 -62 63 -64 65\nv -66 -67 -68 69 70 -71 72 -73 -74 75 0\n",
+      "status": "SAT",
+      "variables": 75
+    },
+    "petersen_flow4": {
+      "clauses": 270,
+      "cnf_sha256": "7e4eab231af5fa4abdcbf5e6ac8386e6ceb2658a4d1b1193363d362900fa320d",
+      "drat_trim_seconds": 0.441,
+      "drat_trim_tail": " parsing input formula with 45 variables and 270 clauses\n\nc finished parsing, read 966 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 216 of 270 clauses in core                            \n\nc 129 of 179 lemmas in core using 1061 resolution steps\n\nc 0 RAT lemmas in core; 2 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.097 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "petersen_flow4",
+      "proof_bytes": 966,
+      "proof_sha256": "0784130307501b50515a117ddc9ed4ee6d1055c664d52d315743283f4e9bd924",
+      "seconds": 0.127,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 45
+    },
+    "petersen_flow5": {
+      "checker_ok": true,
+      "clauses": 625,
+      "cnf_sha256": "391fa2dd462fd455942155aace0fd15535eac1c2c32a47b8a17ea77a6525d071",
+      "exit_code": 10,
+      "instance": "petersen_flow5",
+      "seconds": 0.138,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s SATISFIABLE\nv -1 2 -3 -4 -5 -6 -7 8 -9 -10 -11 12 13 -14 -15 -16 -17 18 -19 -20 -21 22 -23\nv -24 25 -26 -27 -28 -29 30 -31 -32 -33 34 -35 -36 -37 -38 39 -40 -41 -42 43\nv -44 -45 -46 -47 48 -49 -50 -51 52 -53 -54 -55 56 -57 -58 -59 60 0\n",
+      "status": "SAT",
+      "variables": 60
+    },
+    "petersen_odd_1": {
+      "clauses": 114,
+      "cnf_sha256": "57c29d33f7440b51617653ea4d104b4e01f6f63ee19d2dfc07f3d36edf845aa5",
+      "drat_trim_seconds": 0.424,
+      "drat_trim_tail": "parsing input formula with 55 variables and 114 clauses\n\nc finished parsing, read 1669 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 109 of 114 clauses in core                            \n\nc 89 of 143 lemmas in core using 1284 resolution steps\n\nc 0 RAT lemmas in core; 14 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.074 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "petersen_odd_1",
+      "proof_bytes": 1669,
+      "proof_sha256": "69456bbb62a651c3f5decc7b5fb153fb9bdf4ca1a3abcf5a5d358f98fdc14950",
+      "seconds": 0.13,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 55
+    },
+    "petersen_odd_2": {
+      "checker_odd_cycles": 2,
+      "checker_ok": true,
+      "clauses": 143,
+      "cnf_sha256": "8bcf74f08247b573b8222fc61c73c8f8b019b43c2d9ae2e97f0f1afeb1494a23",
+      "exit_code": 10,
+      "instance": "petersen_odd_2",
+      "seconds": 0.138,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s SATISFIABLE\nv 1 -2 -3 -4 -5 6 -7 8 -9 10 -11 -12 -13 14 -15 16 -17 18 19 -20 -21 22 -23\nv -24 25 -26 -27 28 29 -30 -31 -32 -33 -34 -35 -36 -37 -38 -39 -40 -41 -42 -43\nv -44 45 -46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68\nv 69 70 0\n",
+      "status": "SAT",
+      "variables": 70
+    },
+    "petersen_res_1": {
+      "clauses": 238,
+      "cnf_sha256": "96bb41f81580fc6ddf3b875d08c3e86a40bcd1ae4072405e261fa58799bc3a3c",
+      "drat_trim_seconds": 0.473,
+      "drat_trim_tail": "arsing input formula with 75 variables and 238 clauses\n\nc finished parsing, read 2564 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 144 of 238 clauses in core                            \n\nc 151 of 218 lemmas in core using 2607 resolution steps\n\nc 0 RAT lemmas in core; 12 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.105 seconds\n",
+      "drat_trim_verified": true,
+      "exit_code": 20,
+      "instance": "petersen_res_1",
+      "proof_bytes": 2564,
+      "proof_sha256": "89b5c387aacb5a26180108333b4cdd564c92e30cb456325789491c7d818ae5b5",
+      "seconds": 0.13,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s UNSATISFIABLE\n",
+      "status": "UNSAT",
+      "variables": 75
+    },
+    "petersen_res_2": {
+      "checker_ok": true,
+      "clauses": 267,
+      "cnf_sha256": "35f072e18c6ca24ba81b7f3ddda3dc96bd5a8798d1d451ee02ee8f3584725303",
+      "exit_code": 10,
+      "instance": "petersen_res_2",
+      "seconds": 0.14,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s SATISFIABLE\nv 1 -2 -3 -4 -5 6 -7 -8 -9 -10 -11 -12 -13 -14 15 16 -17 -18 -19 -20 21 22 -23\nv -24 -25 26 -27 28 -29 -30 -31 32 -33 -34 -35 36 -37 38 -39 40 -41 -42 -43 44\nv -45 -46 -47 48 49 -50 -51 -52 -53 -54 -55 -56 -57 -58 -59 -60 -61 -62 -63\nv -64 65 -66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88\nv 89 90 0\n",
+      "status": "SAT",
+      "variables": 90
+    },
+    "prism_cdc5": {
+      "checker_ok": true,
+      "clauses": 257,
+      "cnf_sha256": "e395eaf32e2cbc4fa0c8ec600ac75107068c8328ec0a78cc851d82bd53f455bc",
+      "exit_code": 10,
+      "instance": "prism_cdc5",
+      "seconds": 0.137,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s SATISFIABLE\nv 1 2 -3 -4 -5 6 -7 8 -9 -10 -11 12 13 -14 -15 16 -17 -18 19 -20 -21 22 -23 24\nv -25 -26 -27 28 29 -30 -31 32 -33 -34 35 -36 -37 38 -39 40 -41 -42 -43 44 45\nv 0\n",
+      "status": "SAT",
+      "variables": 45
+    },
+    "prism_flow4": {
+      "checker_ok": true,
+      "clauses": 162,
+      "cnf_sha256": "3e35a3b106e5399e5c269cf93e7ae0cdce865a0a836e4a4849b990dcf484d14b",
+      "exit_code": 10,
+      "instance": "prism_flow4",
+      "seconds": 0.152,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s SATISFIABLE\nv -1 2 -3 4 -5 -6 7 -8 -9 10 -11 -12 13 -14 -15 -16 17 -18 -19 20 -21 -22 -23\nv 24 -25 -26 27 0\n",
+      "status": "SAT",
+      "variables": 27
+    },
+    "prism_flow5": {
+      "checker_ok": true,
+      "clauses": 375,
+      "cnf_sha256": "36e0eaec4cf15ee4a2e0d4214b843569764583f5d947684e0c0b5960af651f95",
+      "exit_code": 10,
+      "instance": "prism_flow5",
+      "seconds": 0.145,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s SATISFIABLE\nv -1 2 -3 -4 5 -6 -7 -8 -9 10 -11 -12 13 -14 -15 -16 17 -18 -19 -20 -21 22 -23\nv -24 -25 -26 27 -28 -29 -30 -31 32 -33 -34 -35 36 0\n",
+      "status": "SAT",
+      "variables": 36
+    },
+    "prism_odd_0": {
+      "checker_odd_cycles": 0,
+      "checker_ok": true,
+      "clauses": 52,
+      "cnf_sha256": "201485adce723e44ff1267ed53f67249210923506ee8529bfca515cc1b978839",
+      "exit_code": 10,
+      "instance": "prism_odd_0",
+      "seconds": 0.135,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s SATISFIABLE\nv 1 -2 -3 -4 -5 6 7 -8 -9 10 11 -12 -13 -14 15 -16 -17 -18 -19 -20 -21 -22 -23\nv -24 0\n",
+      "status": "SAT",
+      "variables": 24
+    },
+    "prism_res_0": {
+      "checker_ok": true,
+      "clauses": 126,
+      "cnf_sha256": "96a1c422f0fff8d21902f479d32e69ef3db39eddeada4fafc85b2587361cd1aa",
+      "exit_code": 10,
+      "instance": "prism_res_0",
+      "seconds": 0.136,
+      "solver_stderr_tail": "",
+      "solver_stdout_tail": "s SATISFIABLE\nv 1 -2 -3 -4 5 -6 -7 -8 9 -10 -11 12 -13 14 -15 16 -17 -18 19 -20 -21 -22 23\nv -24 -25 -26 27 -28 -29 -30 -31 -32 -33 -34 -35 -36 0\n",
+      "status": "SAT",
+      "variables": 36
+    }
+  },
+  "predictions": {
+    "P1": true,
+    "P2": true,
+    "P3": true,
+    "P4": {
+      "committed_expectation": 2,
+      "decided": true,
+      "values": {
+        "G112": 4,
+        "G52": 2,
+        "H112": 4
+      }
+    },
+    "P5": {
+      "committed_expectation": 2,
+      "decided": true,
+      "values": {
+        "G112": 3,
+        "G52": 2,
+        "H112": 3
+      }
+    },
+    "P6": true
+  },
+  "target_values": {
+    "G112": {
+      "oddness": 4,
+      "resistance": 3
+    },
+    "G52": {
+      "oddness": 2,
+      "resistance": 2
+    },
+    "H112": {
+      "oddness": 4,
+      "resistance": 3
+    }
+  },
+  "tools": {
+    "cadical": "1.7.3",
+    "drat_trim_banner": [
+      "usage: drat-trim [INPUT] [<PROOF>] [<option> ...]",
+      ""
+    ]
+  }
+}

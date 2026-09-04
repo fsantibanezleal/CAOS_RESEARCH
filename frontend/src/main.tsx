@@ -15,6 +15,7 @@ import Methodology from './pages/Methodology';
 import Jacobian from './pages/Jacobian';
 import CentralConfigurations from './pages/CentralConfigurations';
 import UnsplittableFlowCost from './pages/UnsplittableFlowCost';
+import PetersenColoring from './pages/PetersenColoring';
 
 // Display version X.XX.XXX derived from the semver manifest (single source, no drift).
 const displayVersion = pkg.version
@@ -39,6 +40,7 @@ const config: ShellConfig = {
     { path: '/problems/jacobian-conjecture', en: 'Jacobian conjecture', es: 'Conjetura jacobiana' },
     { path: '/problems/central-configurations', en: 'Central configurations', es: 'Configuraciones centrales' },
     { path: '/problems/unsplittable-flow-cost', en: 'Unsplittable flow cost', es: 'Costo de flujo indivisible' },
+    { path: '/problems/petersen-coloring', en: 'Petersen coloring', es: 'Coloracion de Petersen' },
   ],
   links: {
     github: 'https://github.com/fsantibanezleal/CAOS_RESEARCH',
@@ -70,6 +72,7 @@ createRoot(document.getElementById('root')!).render(
             <Route path="/problems/jacobian-conjecture" element={<Jacobian />} />
             <Route path="/problems/central-configurations" element={<CentralConfigurations />} />
             <Route path="/problems/unsplittable-flow-cost" element={<UnsplittableFlowCost />} />
+            <Route path="/problems/petersen-coloring" element={<PetersenColoring />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </AppShell>
