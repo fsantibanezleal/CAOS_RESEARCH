@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-09-03. Lifecycle: EXP-049 is REFUTED overall with bounded dual parity certificates retained; EXP-048 is REFUTED overall with explicit completion-chain candidates retained; EXP-047 is CONFIRMED FINITELY; EXP-046 is REFUTED overall with P3 retained; EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
+Updated: 2026-09-04. Lifecycle: EXP-052 is CONFIRMED FINITELY with an untouched semantic holdout; EXP-051 is REFUTED overall with P1/P2 retained; EXP-050 is REFUTED overall with P1 retained; EXP-049 is REFUTED overall with bounded dual parity certificates retained; EXP-048 is REFUTED overall with explicit completion-chain candidates retained; EXP-047 is CONFIRMED FINITELY; EXP-046 is REFUTED overall with P3 retained; EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
 with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
@@ -40,8 +40,15 @@ EXP-049 proves that none of the sixteen literal zero-one equations `Ry=2a` is in
 the correct torsion representatives require nonzero even corrections `b=a+2c`. Conversely, two
 independent parity duals exist for each completion at every tested parameter, and every support has
 size at most four. The `58->62` low-pivot duals obey two explicit endpoint-row formulas on the
-complete finite range. HWB-076 now targets provenance-preserving corrected lifts; the uniform
-upper bound remains a separate relative-Morse or free-complement obligation.
+complete finite range. EXP-050 constructs all corrected representatives `b=a+2c` and exact
+witnesses `Ry=2b`, but their large canonical corrections are quotient-section artifacts.
+EXP-051 selects before quotient normalization and obtains primary binary witnesses supported on
+at most six source columns, with divided-boundary coefficients bounded by two. EXP-052 freezes
+semantic formulas using only `p=8,9,10`: the `58->59` divided boundary has six alternating edge
+families and support `6p-30`, while `58->62` has four alternating triangular/interval families and
+support `binom(p,2)-5`. They reproduce all 36 and 50 coefficient-token rows at untouched `p=11`,
+and a separate reconstruction passes 31/31 checks. HWB-076 is done. HWB-077 owns the generic
+source-chain identity, the second independent class, bounded dual proof, and separate upper bound.
 For every
 `p>=4` and
 `2<=t<=p-2`, the shifted cubic source is absent
@@ -404,6 +411,9 @@ campaign is supporting evidence, not the proof.
 | EXP-047 | CONFIRMED FINITELY | exact relative modules give `(Z/2)^2` for both stable completions and `(Z/2)^(p-7)` for the threshold quotient; 202 independent determinant checks pass |
 | EXP-048 | REFUTED; P1 PASSES FINITELY | canonical relative Bocksteins recover ranks `2,2,p-7`; bounded/local templates fail, but four explicit completion interval chains with support laws `(p-4,p-4)` and `(2p-8,p-4)` survive 78 audit checks |
 | EXP-049 | REFUTED; P3 PASSES FINITELY | all sixteen literal equations `Ry=2a` fail exact lattice membership, but two identity-paired dual characters of support at most four exist in every completion; `58->62` has explicit finite dual formulas |
+| EXP-050 | REFUTED; P1 PASSES FINITELY | all sixteen corrected representatives `b=a+2c` and exact lifts `Ry=2b` exist, but canonical corrections have support up to 101 and coefficients up to 71, refuting that section as a uniform proof basis |
+| EXP-051 | REFUTED; P1/P2 PASS FINITELY | unreduced selection gives two exact independent cycles per completion; primary source support is at most six and divided-boundary coefficients are at most two, while raw support-size extrapolation fails |
+| EXP-052 | CONFIRMED FINITELY | formulas trained on `p=8,9,10` exactly predict 36 and 50 coefficient-labelled holdout rows at `p=11`; direct identities and a separate 31-check reconstruction pass |
 
 ## 3a. Exact evidence anchors
 
@@ -522,16 +532,30 @@ campaign is supporting evidence, not the proof.
   `567f554abaa1456133a4c0cd475d1848dad92a36dd8b9412381fe2fab9fc39b7`; its 98-check audit
   passes with internal hash `df2663ed0c81d4db9f24a205667a44868b152a9107177aac52ce4306978eb997`
   and external SHA-256 `fd74e83350c35a6e4e4f6a4778766c9b59e9c30347dc00104b428a904e0e6ca6`.
+- EXP-050 results SHA-256:
+  `2dc8f85097171e24f4080ce25684127914d86661a6291bab69fb334c2c987983`; its 152-check audit
+  has external SHA-256 `eb62ef3e0b7801c44856ad135748f067a3d16846a109788af6e292ac074d99fe`.
+- EXP-051 results SHA-256:
+  `f1acaa6b769ec04b7d87a1ac416c184ffac2f5007d18a04efb397c8013ec8b1f`; its 409-check audit
+  has external SHA-256 `aa1cddf1d40ca280d9c2bb3e7eaaed2039a204727e39e883eef1ddd1f59df6b4`.
+- EXP-052 frozen candidate SHA-256:
+  `6a16d8cf2c112a800558d634f6cd058ea00be43986c7b92f7f9406a6d282ca0c`; training, candidate
+  check, holdout, and audit artifacts have SHA-256 values
+  `259ff476b7bb09c12566e4bd771da5c88af17f541cc5732db4dc7f2067e2ec70`,
+  `8b69d8bb37535211c21569249b9dc1f8f9632121fa2c9da3e4e80120169892e7`,
+  `0bb32fd050a8e9739ea866ffb6e75b612189899c84c350a1214b60ed78eebc8b`, and
+  `ec48aa7cb63d5d445a4a9c6682b4ea3838748f0ace80e76dededc84e167f49f7` respectively.
 
 ## 4. In flight
 
-EXP-049 is REFUTED overall with P3 and a bounded dual mechanism retained. Every literal zero-one
-completion chain needs a nonzero even correction before it can be an integral torsion vector. Two
-identity-paired parity duals of support at most four exist for both stable completions; the
-`58->62` pair has explicit finite endpoint-row formulas. HWB-076 owns corrected integral
-representatives and semantic source-cycle extraction. HWB-074 remains open for the uniform upper
-reduction. EXP-047 is CONFIRMED FINITELY and HWB-073 is done. Both stable completion quotients have
-exact torsion `(Z/2)^2`, and `56->58` has `(Z/2)^(p-7)`.
+EXP-052 is CONFIRMED FINITELY with an untouched semantic holdout. It gives exact candidate formulas
+for one nonzero class in each stable completion, but it is not an all-parameter theorem.
+HWB-077 is active: construct labelled source chains proving `R_p y_p=2b_p` for arbitrary `p`,
+obtain the second independent class, prove the bounded dual formulas generically, and prove an
+independent free-complement or relative-Morse upper bound. EXP-051 shows that sparse unreduced
+selection is the correct primal language; EXP-050 shows why canonical quotient sections are not.
+EXP-047 remains the exact finite rank-two target, and EXP-049 supplies its finite dual lower-bound
+mechanism. The `56->58` threshold quotient remains a separate filtered-relative problem.
 EXP-046 is REFUTED overall with P3 retained, and HWB-072 is done. Masks `59` and `62` have no
 unit leaves and all tested residuals have one connected core. HWB-073 owns the fill-producing
 relative integer comparison. EXP-045 is REFUTED with a stable full-carrier antichain retained.
@@ -885,20 +909,19 @@ Published baseline:
 
 ## 5. Next actions
 
-1. Carry exact Bockstein provenance through quotient reduction to construct corrected chains
-   `b=a+2c`, relative witnesses `Ry=2b`, and original source-domain cycles; classify `c` and the
-   source supports under `p->p+1`.
-2. Prove the two explicit `58->62` parity-dual formulas by a generic signed-incidence calculation,
-   then find a stable formula or invariant description for the bounded `58->59` duals.
+1. Lift the frozen EXP-052 formulas to labelled source-domain chains `y_p` and prove the signed
+   identity `R_p y_p=2b_p` symbolically for arbitrary `p`; do not substitute another size fit.
+2. Extract and holdout-test a semantic formula for the second independent class in each
+   completion, then prove both support-four parity-dual formulas by generic signed incidence.
 3. Build the independent upper bound: reduce the quotient left after the two detected classes to
    a free module by a parameterized relative-Morse matching or explicit integral complement.
 4. Treat `56->58` separately by dual parity characters or a relative algebraic-Morse filtration;
    its canonical representatives refute the single-translation-family model.
 5. Localize `(5,3)` and `(6,3)` integrally to decide whether their equal kernel rank defects share
    a signed core; keep this separate from the connecting-only `t=2` mechanism.
-5. Open a separate manuscript only after a complete strand, an infinite connecting theorem, or a
+6. Open a separate manuscript only after a complete strand, an infinite connecting theorem, or a
    comparably transferable result is proved.
-6. Reconcile only the scoped CAOS_MANAGE Huneke-Wiegand mirror on its existing `develop` branch;
+7. Reconcile only the scoped CAOS_MANAGE Huneke-Wiegand mirror on its existing `develop` branch;
    preserve its unrelated dirty work.
 
 ### Lenses ledger
@@ -990,6 +1013,14 @@ Published baseline:
   smaller: all finite certificates use at most four rows, and the `58->62` pair has fixed endpoint
   formulas. This now outranks a global primal Smith reduction for the lower bound, while a
   relative-Morse/free-complement theorem owns the upper bound.
+- Canonical-section obstruction: EXP-050 proves existence of every corrected lift but shows that
+  HNF-selected correction growth is a coordinate artifact, not evidence against a uniform chain.
+- Unreduced-cycle selection: EXP-051 finds the simple object before quotient normalization. Its
+  primary source cycles use at most six columns and its exact divided boundaries use only
+  coefficients of absolute value one or two.
+- Leakage-controlled semantic holdout: EXP-052 freezes the formula after `p=8,9,10` and only then
+  opens `p=11`; exact multiset prediction, direct multiplication, and an independent rebuild all
+  pass. This is materially stronger than interpolation but remains finite evidence.
 
 ## 7. Gotchas
 

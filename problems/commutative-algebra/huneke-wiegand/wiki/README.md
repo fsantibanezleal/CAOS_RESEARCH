@@ -763,3 +763,24 @@ rows. For `58->62`, the same two endpoint-row formulas work throughout `p=8,...,
 records them explicitly and a 98-check audit rebuilds them. This supplies a concrete finite lower
 bound mechanism. A uniform theorem still needs a symbolic incidence proof for the duals, corrected
 source cycles, and a separate free-complement or relative-Morse upper bound.
+
+EXP-050 completes the finite existence question for corrected representatives. Every named class
+has `b=a+2c` and an exact integral witness `Ry=2b`, but the HNF-selected corrections are large and
+unstable. Their growth belongs to the quotient section, so it is not a productive uniform basis.
+
+EXP-051 instead selects sparse cycles before quotient normalization. The primary route needs at
+most six source columns and produces divided boundaries with coefficients only `+/-1,+/-2`.
+Independent selection reaches the same rank-two quotient, and a 409-check raw reconstruction
+validates all identities. This establishes that simple integral representatives were hidden by
+the canonical section.
+
+EXP-052 translates the unique primary two-column witness in each completion into semantic row
+formulas. The formulas are learned only on `p=8,9,10`, frozen, and then tested at untouched
+`p=11`. All 36 rows for `58->59` and all 50 rows for `58->62` match with exact coefficients;
+direct identities and a separate 31-check reconstruction also pass. Their supports are `6p-30`
+and `binom(p,2)-5` respectively.
+
+The finite evidence is now strong enough to define the precise proof target, not to claim the
+all-parameter result. One must express the source witness in labelled variables and prove
+`R_p y_p=2b_p` for arbitrary `p`, construct the second independent class, prove the bounded dual
+pair, and exclude extra torsion by a free complement or relative-Morse reduction.

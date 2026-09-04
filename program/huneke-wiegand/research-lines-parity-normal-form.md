@@ -233,3 +233,27 @@ are therefore:
 
 The `56->58` threshold does not inherit this bounded completion pattern and remains a separate
 filtered-relative-complex problem.
+
+## 2026-09-03 route correction after EXP-050 to EXP-052
+
+Corrected canonical representatives exist, but EXP-050 shows that their large coefficients and
+supports are artifacts of the selected quotient section. EXP-051 identifies the better object:
+choose a sparse unreduced binary source cycle `z` first, then use the exact integer divided
+boundary `b=Rz/2`. In the primary route the source support is at most six and the boundary
+coefficients have absolute value at most two.
+
+EXP-052 turns the unique two-column primary witness into semantic formulas with a genuine holdout.
+Training uses only `p=8,9,10`; the frozen formulas then predict every coefficient-labelled row at
+`p=11`. The `58->59` support is `6p-30`, and the `58->62` support is `binom(p,2)-5`. These formulas
+are now the leading candidates for symbolic telescoping in the labelled source complex.
+
+The new priority order is:
+
+1. prove the first semantic source-chain identity for arbitrary `p`;
+2. extract and prove the second class and the bounded dual pair;
+3. prove a free complement or relative-Morse upper bound; and
+4. only then return to the separate `56->58` threshold filtration.
+
+This decomposition is intentionally asymmetric. One explicit torsion class proves neither the
+rank-two lower bound nor the absence of further torsion. Finite exactness and untouched holdout
+validation justify the candidate; they do not replace a uniform proof.

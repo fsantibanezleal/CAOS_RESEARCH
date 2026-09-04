@@ -1764,3 +1764,31 @@
   separate audit reconstructs those formulas and passes all 98 checks.
 - HWB-076 now owns corrected Bockstein lifts. The uniform upper bound remains a distinct
   relative-Morse/free-complement obligation. No manuscript or Zenodo update is triggered.
+
+## 2026-09-03 - EXP-050 constructs corrected lifts and refutes the canonical section
+
+- Exact provenance constructs all sixteen `b=a+2c` and `Ry=2b` witnesses for both completions and
+  `p=8,...,11`; the independent audit passes 152 checks.
+- P2/P3 fail: correction supports reach 101 and coefficients reach absolute value 71. The large
+  representatives are quotient-section artifacts, so the next experiment selects before HNF
+  normalization.
+
+## 2026-09-03 - EXP-051 exposes sparse unreduced representatives
+
+- Two independent binary source cycles exist per completion at every tested parameter. The
+  primary cycles use at most six columns; divided boundaries have support at most `8p` and
+  coefficients bounded by two.
+- A reversed/high-pivot route reaches the same rank-two quotient. The independent raw-matrix audit
+  passes 409 checks.
+- Affine support extrapolation fails, redirecting the proof language from indices to labelled
+  source and row families.
+
+## 2026-09-03 - EXP-052 passes a frozen semantic holdout
+
+- Training is restricted to `p=8,9,10`; formulas are committed before semantic access to `p=11`.
+- The frozen `58->59` and `58->62` formulas predict all 36 and 50 coefficient-labelled holdout
+  rows exactly, and direct multiplication gives `Rz=2b` with nonzero quotient classes.
+- A separate full reconstruction passes 31/31 checks. HWB-076 is done; HWB-077 owns the generic
+  source identity, second class, dual proof, and free-complement upper bound.
+- This is confirmed finite evidence, not an all-parameter solution and not a manuscript or Zenodo
+  trigger.
