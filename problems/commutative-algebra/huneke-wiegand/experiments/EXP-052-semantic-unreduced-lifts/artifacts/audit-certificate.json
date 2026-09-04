@@ -1,0 +1,140 @@
+{
+  "experiment": "EXP-052",
+  "audit": "independent p=11 labelled reconstruction and exact formula comparison",
+  "status": "PASS",
+  "checks_passed": 31,
+  "checks_total": 31,
+  "frozen_hashes": {
+    "EXP-052-semantic-unreduced-lifts\\run_holdout.py": "2bd9d28fcfaf44b303a58ec674b972b095fd4fe5b91b015c773bf788d4759c7b",
+    "EXP-052-semantic-unreduced-lifts\\candidate.py": "6a16d8cf2c112a800558d634f6cd058ea00be43986c7b92f7f9406a6d282ca0c",
+    "EXP-052-semantic-unreduced-lifts\\artifacts\\holdout-p11.json": "0bb32fd050a8e9739ea866ffb6e75b612189899c84c350a1214b60ed78eebc8b"
+  },
+  "elapsed_seconds": 129.8616474999999,
+  "checks": [
+    {
+      "name": "holdout internal hash",
+      "pass": true
+    },
+    {
+      "name": "holdout complete",
+      "pass": true
+    },
+    {
+      "name": "P1 finite pass",
+      "pass": true
+    },
+    {
+      "name": "P2 training pass",
+      "pass": true
+    },
+    {
+      "name": "P3 finite holdout pass",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 added-row hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 frozen formula",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 observed size",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 predicted size",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 observed hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 predicted hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 exact labelled rows",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 nonzero quotient",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 exact result flag",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 formula result flag",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 added-row hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 even boundary",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 frozen formula",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 observed size",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 predicted size",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 observed hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 predicted hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 exact labelled rows",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 nonzero quotient",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 quotient hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 exact result flag",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 formula result flag",
+      "pass": true
+    }
+  ],
+  "artifact_hash": "519a34566e9177a7d8b34b14b0ba28cf5d926bc0b67eaaf7640ccd9c871bd0cc"
+}
