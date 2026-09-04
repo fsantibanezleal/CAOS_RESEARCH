@@ -261,8 +261,9 @@ validation justify the candidate; they do not replace a uniform proof.
 ## 2026-09-04 route correction after EXP-053
 
 Pulling the two selected coordinates back through a generic transformed HNF is exact but not
-semantic: supports already grow `125,178`, the source descriptions contain 75 skeletons, and the
-`p=10` transform misses its safe-stage gate. Do not spend further computation on that basis.
+semantic: supports grow `125,178,238`, the source descriptions contain 78 skeletons, and the
+`p=10` transform completes only after overrunning its safe-stage gate. Do not spend further
+computation on that basis.
 
 The positive observation is stronger than a second independent completion computation. The
 `58->59` and `58->62` witnesses are restrictions of the same labelled source chain over mask

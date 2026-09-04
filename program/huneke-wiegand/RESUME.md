@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-Updated: 2026-09-04. Lifecycle: EXP-053 is REFUTED on P2 with P1 resource-inconclusive and a common source class retained; EXP-052 is CONFIRMED FINITELY with an untouched semantic holdout; EXP-051 is REFUTED overall with P1/P2 retained; EXP-050 is REFUTED overall with P1 retained; EXP-049 is REFUTED overall with bounded dual parity certificates retained; EXP-048 is REFUTED overall with explicit completion-chain candidates retained; EXP-047 is CONFIRMED FINITELY; EXP-046 is REFUTED overall with P3 retained; EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
+Updated: 2026-09-04. Lifecycle: EXP-053 is REFUTED on P2 with P1 passed finitely after a resource overrun and a common source class retained; EXP-052 is CONFIRMED FINITELY with an untouched semantic holdout; EXP-051 is REFUTED overall with P1/P2 retained; EXP-050 is REFUTED overall with P1 retained; EXP-049 is REFUTED overall with bounded dual parity certificates retained; EXP-048 is REFUTED overall with explicit completion-chain candidates retained; EXP-047 is CONFIRMED FINITELY; EXP-046 is REFUTED overall with P3 retained; EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
 with structural propagation unresolved. The complete `(10,2)` block gives surviving dimensions
@@ -49,8 +49,9 @@ families and support `6p-30`, while `58->62` has four alternating triangular/int
 support `binom(p,2)-5`. They reproduce all 36 and 50 coefficient-token rows at untouched `p=11`,
 and a separate reconstruction passes 31/31 checks. HWB-076 is done. HWB-077 owns the generic
 source-chain identity, the second independent class, bounded dual proof, and separate upper bound.
-EXP-053 uniquely pulls that class back at `p=8,9` but refutes HNF coordinates as a compact proof
-language: supports are 125 and 178 with 75 semantic skeletons, and `p=10` misses the resource gate.
+EXP-053 uniquely pulls that class back at `p=8,9,10` but refutes HNF coordinates as a compact proof
+language: supports are 125, 178, and 238 with 78 semantic skeletons, and `p=10` overruns the
+resource gate.
 The same labelled source chain serves both completions, so HWB-078 now targets one simultaneous
 telescoping identity on the union `58->63`.
 For every
@@ -418,7 +419,7 @@ campaign is supporting evidence, not the proof.
 | EXP-050 | REFUTED; P1 PASSES FINITELY | all sixteen corrected representatives `b=a+2c` and exact lifts `Ry=2b` exist, but canonical corrections have support up to 101 and coefficients up to 71, refuting that section as a uniform proof basis |
 | EXP-051 | REFUTED; P1/P2 PASS FINITELY | unreduced selection gives two exact independent cycles per completion; primary source support is at most six and divided-boundary coefficients are at most two, while raw support-size extrapolation fails |
 | EXP-052 | CONFIRMED FINITELY | formulas trained on `p=8,9,10` exactly predict 36 and 50 coefficient-labelled holdout rows at `p=11`; direct identities and a separate 31-check reconstruction pass |
-| EXP-053 | REFUTED ON P2; P1 RESOURCE-INCONCLUSIVE | exact labelled pullbacks at `p=8,9` have supports 125 and 178 with 75 skeletons; both completions use the same source chain, while `p=10` misses the HNF gate and `p=11` remains locked |
+| EXP-053 | REFUTED ON P2; P1 PASSES FINITELY WITH RESOURCE OVERRUN | exact labelled pullbacks at `p=8,9,10` have supports 125, 178, and 238 with 78 skeletons; both completions use the same source chain, while `p=11` remains locked |
 
 ## 3a. Exact evidence anchors
 
@@ -550,13 +551,13 @@ campaign is supporting evidence, not the proof.
   `8b69d8bb37535211c21569249b9dc1f8f9632121fa2c9da3e4e80120169892e7`,
   `0bb32fd050a8e9739ea866ffb6e75b612189899c84c350a1214b60ed78eebc8b`, and
   `ec48aa7cb63d5d445a4a9c6682b4ea3838748f0ace80e76dededc84e167f49f7` respectively.
-- EXP-053 partial training SHA-256:
-  `c415521c477b715ecea71cb1e983279b26f44baed78e54995674fa430167dc31`; its 45-check audit has
-  external SHA-256 `8d90589fdb4b5eaf359f2e7d5eebc6077afbf05a98631430eae7088c91a57fc3`.
+- EXP-053 training SHA-256:
+  `0d6bb8b885d965ed91a94d06a072d8baacca56df65903e10e1c91382f649edfe`; its 62-check audit has
+  external SHA-256 `4f283e79434d312c6de06a063b6784c17f6e0b422a4c97054c3a63c4dc822127`.
 
 ## 4. In flight
 
-EXP-053 is REFUTED on P2 and resource-inconclusive on P1. It proves finitely that the same source
+EXP-053 is REFUTED on P2 and passes P1 finitely after a resource overrun. It proves that the same source
 chain produces both EXP-052 completion boundaries, while refuting generic HNF pullback as a
 semantic route. HWB-078 therefore seeks one direct labelled identity on union mask `63`.
 EXP-052 is CONFIRMED FINITELY with an untouched semantic holdout. It gives exact candidate formulas

@@ -786,8 +786,9 @@ all-parameter result. One must express the source witness in labelled variables 
 pair, and exclude extra torsion by a free complement or relative-Morse reduction.
 
 EXP-053 checks whether the corresponding HNF coordinates themselves reveal that source chain.
-They do not: exact pullbacks at `p=8,9` have supports 125 and 178 and 75 semantic skeletons, and
-the `p=10` transform exceeds its safe-stage resource gate. Generic HNF pullback is therefore
+They do not: exact pullbacks at `p=8,9,10` have supports 125, 178, and 238 and 78 semantic
+skeletons, while the `p=10` transform completes only after a safe-stage resource overrun. Generic
+HNF pullback is therefore
 demoted as both a proof language and an experiment path.
 
 The pullback nevertheless exposes a new unification. At each completed parameter, both stable
