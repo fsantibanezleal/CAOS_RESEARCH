@@ -59,8 +59,8 @@ The training artifact has SHA-256
 `4aabacb66133ac97c7ebc7b12341d0f9fff9d7ef32a8b2c2ecd256e6a1392fa4`. The holdout artifact has
 SHA-256 `0bb32fd050a8e9739ea866ffb6e75b612189899c84c350a1214b60ed78eebc8b` and internal hash
 `516bbc925c8d17dd9fab021258a2082f5ff4e31df95e78507213478af452a503`. The audit certificate has
-SHA-256 `ec48aa7cb63d5d445a4a9c6682b4ea3838748f0ace80e76dededc84e167f49f7` and internal hash
-`519a34566e9177a7d8b34b14b0ba28cf5d926bc0b67eaaf7640ccd9c871bd0cc`.
+SHA-256 `22adf44c85ec6e84ccc58be88024cd8ee04efca787a7b7c24a4a786eb0535fb1` and internal hash
+`14b35c90111a8c12efedf7783cb5a0396a9bc5838b9ca2ec1c87a8c4577efafc`.
 
 ## Mathematical boundary
 

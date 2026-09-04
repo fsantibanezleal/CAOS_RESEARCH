@@ -9,7 +9,7 @@
     "EXP-052-semantic-unreduced-lifts\\candidate.py": "6a16d8cf2c112a800558d634f6cd058ea00be43986c7b92f7f9406a6d282ca0c",
     "EXP-052-semantic-unreduced-lifts\\artifacts\\holdout-p11.json": "0bb32fd050a8e9739ea866ffb6e75b612189899c84c350a1214b60ed78eebc8b"
   },
-  "elapsed_seconds": 129.8616474999999,
+  "elapsed_seconds": 233.42593640000268,
   "checks": [
     {
       "name": "holdout internal hash",
@@ -136,5 +136,5 @@
       "pass": true
     }
   ],
-  "artifact_hash": "519a34566e9177a7d8b34b14b0ba28cf5d926bc0b67eaaf7640ccd9c871bd0cc"
+  "artifact_hash": "14b35c90111a8c12efedf7783cb5a0396a9bc5838b9ca2ec1c87a8c4577efafc"
 }

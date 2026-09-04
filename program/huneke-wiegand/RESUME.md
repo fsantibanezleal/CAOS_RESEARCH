@@ -550,7 +550,7 @@ campaign is supporting evidence, not the proof.
   `259ff476b7bb09c12566e4bd771da5c88af17f541cc5732db4dc7f2067e2ec70`,
   `8b69d8bb37535211c21569249b9dc1f8f9632121fa2c9da3e4e80120169892e7`,
   `0bb32fd050a8e9739ea866ffb6e75b612189899c84c350a1214b60ed78eebc8b`, and
-  `ec48aa7cb63d5d445a4a9c6682b4ea3838748f0ace80e76dededc84e167f49f7` respectively.
+  `22adf44c85ec6e84ccc58be88024cd8ee04efca787a7b7c24a4a786eb0535fb1` respectively.
 - EXP-053 training SHA-256:
   `0d6bb8b885d965ed91a94d06a072d8baacca56df65903e10e1c91382f649edfe`; its 62-check audit has
   external SHA-256 `4f283e79434d312c6de06a063b6784c17f6e0b422a4c97054c3a63c4dc822127`.
