@@ -1748,3 +1748,56 @@
 - HWB-075 now targets exact source lifts and dual parity functionals for the four stable chains.
   The threshold moves to a separate relative-Morse route. The formulas remain finite and do not
   trigger a manuscript or Zenodo update.
+
+## 2026-09-02 to 2026-09-03 - EXP-049 exact-chain lift gate
+
+- EXP-049 was declared and pushed before computation after a fresh primary-source and
+  invariant-first preflight. It asks whether the literal EXP-048 zero-one chains have exact
+  boundary twice themselves and requires independent parity duals.
+- P1 is refuted in all sixteen cases. Reversed-order HNF independently confirms that
+  `2a not in im_Z(R)` for both chains, both completions, and `p=8,...,11`.
+- The refutation identifies the corrected primal target: `b=a+2c` with nonzero even correction
+  and `Ry=2b`. It does not weaken the exact relative `(Z/2)^2` from EXP-047.
+- P3 passes finitely. Low- and high-pivot solvers independently produce identity-paired dual
+  characters, all with support at most four.
+- The `58->62` low-pivot duals have exact endpoint-row formulas throughout the tested range. The
+  separate audit reconstructs those formulas and passes all 98 checks.
+- HWB-076 now owns corrected Bockstein lifts. The uniform upper bound remains a distinct
+  relative-Morse/free-complement obligation. No manuscript or Zenodo update is triggered.
+
+## 2026-09-03 - EXP-050 constructs corrected lifts and refutes the canonical section
+
+- Exact provenance constructs all sixteen `b=a+2c` and `Ry=2b` witnesses for both completions and
+  `p=8,...,11`; the independent audit passes 152 checks.
+- P2/P3 fail: correction supports reach 101 and coefficients reach absolute value 71. The large
+  representatives are quotient-section artifacts, so the next experiment selects before HNF
+  normalization.
+
+## 2026-09-03 - EXP-051 exposes sparse unreduced representatives
+
+- Two independent binary source cycles exist per completion at every tested parameter. The
+  primary cycles use at most six columns; divided boundaries have support at most `8p` and
+  coefficients bounded by two.
+- A reversed/high-pivot route reaches the same rank-two quotient. The independent raw-matrix audit
+  passes 409 checks.
+- Affine support extrapolation fails, redirecting the proof language from indices to labelled
+  source and row families.
+
+## 2026-09-03 - EXP-052 passes a frozen semantic holdout
+
+- Training is restricted to `p=8,9,10`; formulas are committed before semantic access to `p=11`.
+- The frozen `58->59` and `58->62` formulas predict all 36 and 50 coefficient-labelled holdout
+  rows exactly, and direct multiplication gives `Rz=2b` with nonzero quotient classes.
+- A separate full reconstruction passes 31/31 checks. HWB-076 is done; HWB-077 owns the generic
+  source identity, second class, dual proof, and free-complement upper bound.
+- This is confirmed finite evidence, not an all-parameter solution and not a manuscript or Zenodo
+  trigger.
+
+## 2026-09-04 - EXP-053 refutes generic HNF pullback and unifies the first class
+
+- Exact original-column reconstruction and source-to-relative identities pass at `p=8,9,10` with
+  no mapping ambiguity; a 62-check artifact/cross-completion audit passes.
+- P2 is refuted: source supports are 125, 178, and 238 with 78 semantic skeletons, even though all
+  coefficients remain bounded by four. The `p=10` HNF overruns the safe-stage gate; `p=11` stays locked.
+- Both completions use the identical labelled source chain. HWB-078 now targets one direct
+  telescoping identity on `58->63` whose two boundary restrictions are the EXP-052 formulas.

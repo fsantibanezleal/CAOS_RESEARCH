@@ -1,0 +1,260 @@
+{
+  "experiment": "EXP-053",
+  "audit_scope": "artifact integrity and cross-completion identities",
+  "source_sha256": "cd1ff29b95944224a4d05265ce175926fcf60c08b34c4d4bff8b5884b729fc90",
+  "artifact_sha256": "0d6bb8b885d965ed91a94d06a072d8baacca56df65903e10e1c91382f649edfe",
+  "checks": [
+    {
+      "name": "internal artifact hash",
+      "passed": true
+    },
+    {
+      "name": "resource status",
+      "passed": true
+    },
+    {
+      "name": "holdout locked",
+      "passed": true
+    },
+    {
+      "name": "completed parameters",
+      "passed": true
+    },
+    {
+      "name": "resource overrun recorded",
+      "passed": true
+    },
+    {
+      "name": "P1 finite verdict",
+      "passed": true
+    },
+    {
+      "name": "P2 refuted",
+      "passed": true
+    },
+    {
+      "name": "P3 unevaluated",
+      "passed": true
+    },
+    {
+      "name": "p8 unique mapping",
+      "passed": true
+    },
+    {
+      "name": "p8 no mapping ambiguity",
+      "passed": true
+    },
+    {
+      "name": "p8 two completions",
+      "passed": true
+    },
+    {
+      "name": "p8 common cycle coordinates",
+      "passed": true
+    },
+    {
+      "name": "p8 common labelled source multiset",
+      "passed": true
+    },
+    {
+      "name": "p8 58->59 support count",
+      "passed": true
+    },
+    {
+      "name": "p8 58->59 coefficient maximum",
+      "passed": true
+    },
+    {
+      "name": "p8 58->59 source kernel identity",
+      "passed": true
+    },
+    {
+      "name": "p8 58->59 relative identity",
+      "passed": true
+    },
+    {
+      "name": "p8 58->59 labels normalize",
+      "passed": true
+    },
+    {
+      "name": "p8 58->59 support hash",
+      "passed": true
+    },
+    {
+      "name": "p8 58->62 support count",
+      "passed": true
+    },
+    {
+      "name": "p8 58->62 coefficient maximum",
+      "passed": true
+    },
+    {
+      "name": "p8 58->62 source kernel identity",
+      "passed": true
+    },
+    {
+      "name": "p8 58->62 relative identity",
+      "passed": true
+    },
+    {
+      "name": "p8 58->62 labels normalize",
+      "passed": true
+    },
+    {
+      "name": "p8 58->62 support hash",
+      "passed": true
+    },
+    {
+      "name": "p9 unique mapping",
+      "passed": true
+    },
+    {
+      "name": "p9 no mapping ambiguity",
+      "passed": true
+    },
+    {
+      "name": "p9 two completions",
+      "passed": true
+    },
+    {
+      "name": "p9 common cycle coordinates",
+      "passed": true
+    },
+    {
+      "name": "p9 common labelled source multiset",
+      "passed": true
+    },
+    {
+      "name": "p9 58->59 support count",
+      "passed": true
+    },
+    {
+      "name": "p9 58->59 coefficient maximum",
+      "passed": true
+    },
+    {
+      "name": "p9 58->59 source kernel identity",
+      "passed": true
+    },
+    {
+      "name": "p9 58->59 relative identity",
+      "passed": true
+    },
+    {
+      "name": "p9 58->59 labels normalize",
+      "passed": true
+    },
+    {
+      "name": "p9 58->59 support hash",
+      "passed": true
+    },
+    {
+      "name": "p9 58->62 support count",
+      "passed": true
+    },
+    {
+      "name": "p9 58->62 coefficient maximum",
+      "passed": true
+    },
+    {
+      "name": "p9 58->62 source kernel identity",
+      "passed": true
+    },
+    {
+      "name": "p9 58->62 relative identity",
+      "passed": true
+    },
+    {
+      "name": "p9 58->62 labels normalize",
+      "passed": true
+    },
+    {
+      "name": "p9 58->62 support hash",
+      "passed": true
+    },
+    {
+      "name": "p10 unique mapping",
+      "passed": true
+    },
+    {
+      "name": "p10 no mapping ambiguity",
+      "passed": true
+    },
+    {
+      "name": "p10 two completions",
+      "passed": true
+    },
+    {
+      "name": "p10 common cycle coordinates",
+      "passed": true
+    },
+    {
+      "name": "p10 common labelled source multiset",
+      "passed": true
+    },
+    {
+      "name": "p10 58->59 support count",
+      "passed": true
+    },
+    {
+      "name": "p10 58->59 coefficient maximum",
+      "passed": true
+    },
+    {
+      "name": "p10 58->59 source kernel identity",
+      "passed": true
+    },
+    {
+      "name": "p10 58->59 relative identity",
+      "passed": true
+    },
+    {
+      "name": "p10 58->59 labels normalize",
+      "passed": true
+    },
+    {
+      "name": "p10 58->59 support hash",
+      "passed": true
+    },
+    {
+      "name": "p10 58->62 support count",
+      "passed": true
+    },
+    {
+      "name": "p10 58->62 coefficient maximum",
+      "passed": true
+    },
+    {
+      "name": "p10 58->62 source kernel identity",
+      "passed": true
+    },
+    {
+      "name": "p10 58->62 relative identity",
+      "passed": true
+    },
+    {
+      "name": "p10 58->62 labels normalize",
+      "passed": true
+    },
+    {
+      "name": "p10 58->62 support hash",
+      "passed": true
+    },
+    {
+      "name": "declared supports",
+      "passed": true
+    },
+    {
+      "name": "bounded coefficients",
+      "passed": true
+    },
+    {
+      "name": "skeleton obstruction",
+      "passed": true
+    }
+  ],
+  "passed": 62,
+  "total": 62,
+  "status": "PASS",
+  "artifact_hash": "3c94a9abb2a481eb45dd15664ff44fecf2af146f13b1ae18aeeb95823833a9bc"
+}

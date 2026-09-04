@@ -211,3 +211,62 @@ lower-strand manuscript only after at least one of these occurs:
 
 A finite Bockstein certificate is an experiment milestone and a route-selection result, not by
 itself a publication trigger.
+
+## 2026-09-03 route correction after EXP-049
+
+The EXP-048 support formula must not be confused with an integral torsion representative.
+EXP-049 proves finitely that every literal chain `a` fails `2a in im_Z(R)`. The correct primal
+object is `b=a+2c`, with its even correction retained rather than discarded during mod-two
+quotient reduction.
+
+The dual route is now ranked first for the uniform lower bound. Both completions admit two
+identity-paired functionals supported on at most four added rows at every tested parameter. For
+`58->62`, the low-pivot supports already obey fixed endpoint-row formulas. The immediate actions
+are therefore:
+
+1. prove those dual formulas annihilate every generic relative relation and pair with the two
+   `beta` chains;
+2. reconstruct corrected integral representatives by provenance-preserving Bockstein reduction;
+3. classify the corrections and source cycles under `p->p+1`; and
+4. treat the torsion upper bound separately through a relative-Morse reduction or an explicit
+   free complement.
+
+The `56->58` threshold does not inherit this bounded completion pattern and remains a separate
+filtered-relative-complex problem.
+
+## 2026-09-03 route correction after EXP-050 to EXP-052
+
+Corrected canonical representatives exist, but EXP-050 shows that their large coefficients and
+supports are artifacts of the selected quotient section. EXP-051 identifies the better object:
+choose a sparse unreduced binary source cycle `z` first, then use the exact integer divided
+boundary `b=Rz/2`. In the primary route the source support is at most six and the boundary
+coefficients have absolute value at most two.
+
+EXP-052 turns the unique two-column primary witness into semantic formulas with a genuine holdout.
+Training uses only `p=8,9,10`; the frozen formulas then predict every coefficient-labelled row at
+`p=11`. The `58->59` support is `6p-30`, and the `58->62` support is `binom(p,2)-5`. These formulas
+are now the leading candidates for symbolic telescoping in the labelled source complex.
+
+The new priority order is:
+
+1. prove the first semantic source-chain identity for arbitrary `p`;
+2. extract and prove the second class and the bounded dual pair;
+3. prove a free complement or relative-Morse upper bound; and
+4. only then return to the separate `56->58` threshold filtration.
+
+This decomposition is intentionally asymmetric. One explicit torsion class proves neither the
+rank-two lower bound nor the absence of further torsion. Finite exactness and untouched holdout
+validation justify the candidate; they do not replace a uniform proof.
+
+## 2026-09-04 route correction after EXP-053
+
+Pulling the two selected coordinates back through a generic transformed HNF is exact but not
+semantic: supports grow `125,178,238`, the source descriptions contain 78 skeletons, and the
+`p=10` transform completes only after overrunning its safe-stage gate. Do not spend further
+computation on that basis.
+
+The positive observation is stronger than a second independent completion computation. The
+`58->59` and `58->62` witnesses are restrictions of the same labelled source chain over mask
+`58`. The first uniform primal identity should therefore be written once for the union mask `63`,
+with the two frozen EXP-052 formulas as disjoint boundary blocks. This simultaneous telescoping
+view is now the highest-priority source-chain route.

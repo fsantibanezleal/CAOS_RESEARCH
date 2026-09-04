@@ -751,3 +751,47 @@ support shapes. The proof programme therefore splits. For the two stable complet
 source cycles with boundary twice the four interval chains and dual parity characters detecting
 them. For `56->58`, seek a relative Morse filtration or dual description rather than fitting one
 translated generator. Neither finite classification is yet an all-parameter theorem.
+
+EXP-049 shows that the first proposed integral lift is too literal. Exact HNF membership, repeated
+with reversed relation order, proves that none of the sixteen tested equations `Ry=2a` is
+solvable. Thus the zero-one `alpha/beta` chains describe the right mod-two classes but not the
+integral torsion vectors themselves. Each must be corrected to `b=a+2c` before lifting.
+
+The dual half is much simpler. Two independently computed parity functionals annihilate each
+relative matrix and pair as the identity with its two named chains. Every support has at most four
+rows. For `58->62`, the same two endpoint-row formulas work throughout `p=8,...,11`; EXP-049
+records them explicitly and a 98-check audit rebuilds them. This supplies a concrete finite lower
+bound mechanism. A uniform theorem still needs a symbolic incidence proof for the duals, corrected
+source cycles, and a separate free-complement or relative-Morse upper bound.
+
+EXP-050 completes the finite existence question for corrected representatives. Every named class
+has `b=a+2c` and an exact integral witness `Ry=2b`, but the HNF-selected corrections are large and
+unstable. Their growth belongs to the quotient section, so it is not a productive uniform basis.
+
+EXP-051 instead selects sparse cycles before quotient normalization. The primary route needs at
+most six source columns and produces divided boundaries with coefficients only `+/-1,+/-2`.
+Independent selection reaches the same rank-two quotient, and a 409-check raw reconstruction
+validates all identities. This establishes that simple integral representatives were hidden by
+the canonical section.
+
+EXP-052 translates the unique primary two-column witness in each completion into semantic row
+formulas. The formulas are learned only on `p=8,9,10`, frozen, and then tested at untouched
+`p=11`. All 36 rows for `58->59` and all 50 rows for `58->62` match with exact coefficients;
+direct identities and a separate 31-check reconstruction also pass. Their supports are `6p-30`
+and `binom(p,2)-5` respectively.
+
+The finite evidence is now strong enough to define the precise proof target, not to claim the
+all-parameter result. One must express the source witness in labelled variables and prove
+`R_p y_p=2b_p` for arbitrary `p`, construct the second independent class, prove the bounded dual
+pair, and exclude extra torsion by a free complement or relative-Morse reduction.
+
+EXP-053 checks whether the corresponding HNF coordinates themselves reveal that source chain.
+They do not: exact pullbacks at `p=8,9,10` have supports 125, 178, and 238 and 78 semantic
+skeletons, while the `p=10` transform completes only after a safe-stage resource overrun. Generic
+HNF pullback is therefore
+demoted as both a proof language and an experiment path.
+
+The pullback nevertheless exposes a new unification. At each completed parameter, both stable
+completions use the identical labelled source chain. The two EXP-052 formulas are its restrictions
+to the complementary added-row blocks. The next construction should telescope their union on
+`58->63` once, then project to obtain the first nonzero class in each completion.

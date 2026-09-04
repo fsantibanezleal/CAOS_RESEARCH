@@ -1430,3 +1430,85 @@ chains and two dual parity functionals proving independence. That pair of constr
 prove the constant `(Z/2)^2` completion uniformly without a global Smith reduction. The
 `56->58` threshold remains separate and moves to dual-character or relative-Morse analysis. No
 manuscript or Zenodo gate opens from the finite formulas.
+
+## 2026-09-03 - EXP-049 exact-chain lift and dual gate
+
+EXP-049 tests the stronger literal claim hidden inside the EXP-048 proposal: whether the zero-one
+chains `a` themselves satisfy `2a in im_Z(R)`. Transformed HNF supplies the primary lattice test;
+reversed relation order supplies an independent exact audit. Binary low- and high-pivot solvers
+construct dual parity characters without using the Smith diagonal.
+
+P1 and P2 are refuted at every finite case. None of the sixteen literal equations `Ry=2a` is
+solvable over the integers. Hence the correct integral target is `b=a+2c`, not `a`. P3 passes:
+every completion has two dual characters with support at most four and identity pairing. The
+`58->62` low-pivot supports satisfy two explicit endpoint-row formulas at all four parameters; a
+98-check audit rederives every nonmembership and dual certificate.
+
+HWB-076 is the next primal gate: retain exact Bockstein provenance through quotient reduction,
+construct `b`, `c`, and `y`, and map `y` to original source cycles. In parallel, prove the bounded
+dual formulas by a generic signed-incidence calculation. The upper bound remains a separate
+relative-Morse or free-complement theorem. No manuscript or Zenodo update is triggered.
+
+## 2026-09-03 - EXP-050 corrected Bockstein lifts
+
+EXP-050 retains the exact quotient provenance discarded by the literal EXP-049 test. For every
+named class, completion, and `p=8,...,11`, it constructs `b=a+2c` and a source witness satisfying
+`Ry=2b`. P1 passes in all sixteen cases under primary and reversed/high-pivot constructions, and
+the independent audit passes all 152 checks.
+
+P2 and P3 are refuted. Canonical correction supports range from 26 to 101, coefficients reach
+absolute value 71, and most sorted support series are not affine. This is a section obstruction,
+not evidence that simple representatives do not exist. The route therefore moves before quotient
+normalization: select sparse binary source cycles first and divide their exact integer boundary.
+
+## 2026-09-03 - EXP-051 sparse unreduced lifts
+
+EXP-051 implements that change of coordinates. The primary route finds two independent binary
+cycles per stable completion with support at most six. Their exact boundaries are divisible by two,
+the divided-boundary supports are at most `8p`, and every coefficient has absolute value at most
+two. A high-pivot/reversed relation order finds the same rank-two quotient through a separate
+selection. The independent audit reconstructs the raw matrices and passes all 409 checks.
+
+P1 and P2 pass finitely; P3 is refuted because raw support sizes do not obey one affine law. Index
+sequences are therefore not the proof object. The unique two-column primary witness in each
+completion is promoted to a leakage-controlled semantic formula gate.
+
+## 2026-09-03 - EXP-052 semantic unreduced-lift holdout
+
+EXP-052 extracts coefficient-labelled row tokens only from `p=8,9,10`. Before inspecting semantic
+holdout rows, it freezes two formulas: six alternating edge families of total support `6p-30` for
+`58->59`, and four alternating triangular/interval families of support `binom(p,2)-5` for
+`58->62`. Coefficients are always `+/-1` or `+/-2`.
+
+The untouched `p=11` holdout passes exactly: all 36 and 50 predicted tokens match, both direct
+identities `Rz=2b` hold, and both quotient classes are nonzero. A separate full reconstruction
+passes 31/31 checks. This confirms a finite semantic candidate and is the strongest current
+primal result; it does not prove the formula for arbitrary `p`.
+
+HWB-077 is now the proof-critical path:
+
+1. express the two-column witnesses as labelled source-domain chains and prove
+   `R_p y_p=2b_p` term by term for arbitrary `p`;
+2. find and hold out a semantic formula for the second independent class;
+3. prove the two bounded dual functionals generically to obtain the rank-two lower bound; and
+4. construct an explicit free complement or acyclic relative-Morse matching for the upper bound.
+
+Additional parameter computation is subordinate to these symbolic obligations. EXP-052 is a
+relevant result but not a manuscript or Zenodo trigger.
+
+## 2026-09-04 - EXP-053 labelled source pullback
+
+EXP-053 reconstructs exact original source labels behind the two HNF coordinates. At `p=8,9,10`,
+every frozen matrix column maps uniquely, the saturated-kernel hashes agree, and direct source-to-
+relative identities pass. Both completions select the identical source chain. Their EXP-052
+boundary formulas are therefore restrictions of one common class to the two added-row blocks.
+
+P2 is refuted: the HNF pullbacks have supports 125, 178, and 238 and 78 semantic skeletons,
+although coefficients remain bounded by four. The `p=10` transformed HNF completes only after the
+safe-stage gate, so P1 passes finitely with a resource overrun and P3 remains locked. A 62-check
+artifact and cross-completion audit passes.
+
+HWB-078 redirects away from generic HNF coordinates. Solve one direct telescoping equation on the
+union completion `58->63`, using the already-frozen `58->59` and `58->62` formulas as its two
+boundary restrictions. This unifies the first-class construction; it does not remove the need for
+the second class, generic duals, or the upper bound.
