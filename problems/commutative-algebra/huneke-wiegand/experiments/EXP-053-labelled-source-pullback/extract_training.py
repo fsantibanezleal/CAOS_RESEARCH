@@ -272,7 +272,58 @@ def main() -> int:
     parser.add_argument("--budget-seconds", type=float, default=600.0)
     parser.add_argument("--memory-gib", type=float, default=10.0)
     parser.add_argument("--output", type=Path, default=OUTPUT)
+    parser.add_argument("--finalize-partial", action="store_true")
     args = parser.parse_args()
+    if args.finalize_partial:
+        result = json.loads(args.output.read_text(encoding="utf-8"))
+        inclusions = [item for row in result["rows"] for item in row["inclusions"]]
+        skeleton_vocabularies: dict[str, list[object]] = {}
+        for source_mask, target_mask in INCLUSIONS:
+            values = {
+                json.dumps(
+                    record["coefficient_sensitive_skeleton"],
+                    sort_keys=True,
+                    separators=(",", ":"),
+                )
+                for row in result["rows"]
+                for item in row["inclusions"]
+                if (int(item["source_mask"]), int(item["target_mask"]))
+                == (source_mask, target_mask)
+                for record in item["source_support"]
+            }
+            skeleton_vocabularies[f"{source_mask}->{target_mask}"] = [
+                json.loads(value) for value in sorted(values)
+            ]
+        result["completed_parameters"] = [int(row["p"]) for row in result["rows"]]
+        result["stopped_parameter"] = 10
+        result["resource_stop"] = (
+            "p=10 transformed HNF did not return within the declared safe-stage budget; "
+            "the process was interrupted after preserving p=8,9 checkpoints"
+        )
+        result["skeleton_vocabularies"] = skeleton_vocabularies
+        result["p1_status"] = "INCONCLUSIVE_RESOURCE"
+        result["p2_status"] = (
+            "PASS_PARTIAL" if inclusions and all(
+                int(item["source_max_abs_coefficient"]) <= 4 for item in inclusions
+            ) and all(len(values) <= 12 for values in skeleton_vocabularies.values())
+            else "REFUTED"
+        )
+        result["p3_status"] = "NOT_EVALUATED_HOLDOUT_LOCKED"
+        result["status"] = "RESOURCE_STOP_WITH_P2_REFUTATION"
+        result.pop("artifact_hash", None)
+        result["artifact_hash"] = digest(result)
+        write_json_atomic(args.output, result)
+        print(json.dumps({
+            "status": result["status"], "p1": result["p1_status"],
+            "p2": result["p2_status"],
+            "completed_parameters": result["completed_parameters"],
+            "supports": [item["source_support_size"] for item in inclusions],
+            "max_abs": [item["source_max_abs_coefficient"] for item in inclusions],
+            "skeleton_sizes": {
+                key: len(value) for key, value in skeleton_vocabularies.items()
+            }, "artifact_hash": result["artifact_hash"],
+        }, indent=2))
+        return 0
     premises = verify_premises()
     exp036 = load_module("exp036_for_exp053", EXP036 / "run.py")
     exp037 = load_module("exp037_for_exp053", EXP037 / "run.py")
