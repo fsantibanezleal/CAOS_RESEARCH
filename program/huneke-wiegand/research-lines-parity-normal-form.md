@@ -257,3 +257,15 @@ The new priority order is:
 This decomposition is intentionally asymmetric. One explicit torsion class proves neither the
 rank-two lower bound nor the absence of further torsion. Finite exactness and untouched holdout
 validation justify the candidate; they do not replace a uniform proof.
+
+## 2026-09-04 route correction after EXP-053
+
+Pulling the two selected coordinates back through a generic transformed HNF is exact but not
+semantic: supports already grow `125,178`, the source descriptions contain 75 skeletons, and the
+`p=10` transform misses its safe-stage gate. Do not spend further computation on that basis.
+
+The positive observation is stronger than a second independent completion computation. The
+`58->59` and `58->62` witnesses are restrictions of the same labelled source chain over mask
+`58`. The first uniform primal identity should therefore be written once for the union mask `63`,
+with the two frozen EXP-052 formulas as disjoint boundary blocks. This simultaneous telescoping
+view is now the highest-priority source-chain route.

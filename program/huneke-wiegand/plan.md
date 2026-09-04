@@ -1495,3 +1495,20 @@ HWB-077 is now the proof-critical path:
 
 Additional parameter computation is subordinate to these symbolic obligations. EXP-052 is a
 relevant result but not a manuscript or Zenodo trigger.
+
+## 2026-09-04 - EXP-053 labelled source pullback
+
+EXP-053 reconstructs exact original source labels behind the two HNF coordinates. At `p=8,9`,
+every frozen matrix column maps uniquely, the saturated-kernel hashes agree, and direct source-to-
+relative identities pass. Both completions select the identical source chain. Their EXP-052
+boundary formulas are therefore restrictions of one common class to the two added-row blocks.
+
+P2 is refuted: the HNF pullbacks have supports 125 and 178 and 75 semantic skeletons, although
+coefficients remain bounded by four. The `p=10` transformed HNF does not return within the
+safe-stage gate, leaving P1 resource-inconclusive and P3 locked. A 45-check artifact and cross-
+completion audit passes.
+
+HWB-078 redirects away from generic HNF coordinates. Solve one direct telescoping equation on the
+union completion `58->63`, using the already-frozen `58->59` and `58->62` formulas as its two
+boundary restrictions. This unifies the first-class construction; it does not remove the need for
+the second class, generic duals, or the upper bound.

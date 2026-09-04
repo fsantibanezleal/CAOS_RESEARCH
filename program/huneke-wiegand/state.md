@@ -158,8 +158,10 @@
 | 2026-09-03 | refuted | active | EXP-051 selects exact representatives before quotient normalization; primary binary witnesses have support at most six and all divided-boundary coefficients have absolute value at most two |
 | 2026-09-03 | active | confirmed | EXP-052 freezes semantic formulas from `p=8,9,10` and exactly predicts the untouched `p=11` coefficient-token multisets of sizes 36 and 50; a separate reconstruction passes 31 checks |
 | 2026-09-03 | confirmed | active | HWB-077 now owns the all-parameter source-chain identity and second independent class; bounded dual detection and the free-complement upper bound remain separate obligations |
+| 2026-09-04 | active | refuted | EXP-053 uniquely pulls the common source chain back at `p=8,9`, but its supports 125 and 178 have 75 semantic skeletons; the `p=10` transformed HNF exceeds the safe-stage gate |
+| 2026-09-04 | refuted | active | both stable completions use the identical source chain at each completed parameter, so HWB-078 targets one direct telescoping identity on the union `58->63` instead of further generic HNF pullback |
 
-Current state: **EXP-052 is confirmed finitely with an untouched semantic holdout; EXP-051 and EXP-050 are refuted overall with decisive finite constructions retained; EXP-049 is refuted overall with P3 and a bounded dual mechanism retained; EXP-048 is refuted overall with four semantic completion chains retained; EXP-047 is confirmed finitely; EXP-046 is refuted overall with P3 retained; EXP-043 and EXP-042 are confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
+Current state: **EXP-053 refutes generic HNF pullback as the semantic proof route but retains one common source class across both completions; EXP-052 is confirmed finitely with an untouched semantic holdout; EXP-051 and EXP-050 are refuted overall with decisive finite constructions retained; EXP-049 is refuted overall with P3 and a bounded dual mechanism retained; EXP-048 is refuted overall with four semantic completion chains retained; EXP-047 is confirmed finitely; EXP-046 is refuted overall with P3 retained; EXP-043 and EXP-042 are confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
 inconclusive with two finite passes; EXP-037 is refuted; EXP-036 remains confirmed with structural
 propagation unresolved.** The complete `(10,2)` block has surviving dimensions
 `4240` over `GF(2)` and `4168` over both `GF(3)` and `GF(5)`, so `e_10=72`; this refutes the
@@ -205,6 +207,11 @@ only from `p=8,9,10`. The `58->59` family has support `6p-30`; the `58->62` fami
 31-check reconstruction. This is a holdout-validated finite candidate, not an all-parameter
 identity. HWB-076 is done; HWB-077 now requires labelled source chains proving `R_p y_p=2b_p`, a
 second independent class, generic dual identities, and a separate uniform free complement.
+EXP-053 tests the missing pullback. At `p=8,9`, exact label reconstruction is unique and the same
+source chain gives both completion boundaries, with supports 125 and 178 and coefficients bounded
+by four. Seventy-five semantic skeletons refute the compact HNF-pullback hypothesis, and `p=10`
+does not clear the transformed-HNF resource gate. HWB-078 therefore seeks one direct labelled
+telescoping chain whose boundary is the union of both frozen EXP-052 formulas on mask `63`.
 The cubic-source gap is at least `3(p-1)^2` for all `p>=4`, `2<=t<=p-2`, so the exact
 `A_p` and `C_p` values agree throughout this family.  HWB-061 remains active for an infinite
 connecting-parity theorem. HWB-062 is done: the 53-page v0.23 is public and fresh-download

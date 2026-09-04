@@ -1792,3 +1792,13 @@
   source identity, second class, dual proof, and free-complement upper bound.
 - This is confirmed finite evidence, not an all-parameter solution and not a manuscript or Zenodo
   trigger.
+
+## 2026-09-04 - EXP-053 refutes generic HNF pullback and unifies the first class
+
+- Exact original-column reconstruction and source-to-relative identities pass at `p=8,9` with no
+  mapping ambiguity; a 45-check artifact/cross-completion audit passes.
+- P2 is refuted: source supports are 125 and 178 with 75 semantic skeletons, even though all
+  coefficients remain bounded by four. The `p=10` HNF misses the resource gate; `p=11` stays
+  locked.
+- Both completions use the identical labelled source chain. HWB-078 now targets one direct
+  telescoping identity on `58->63` whose two boundary restrictions are the EXP-052 formulas.

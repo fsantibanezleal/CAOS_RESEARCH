@@ -784,3 +784,13 @@ The finite evidence is now strong enough to define the precise proof target, not
 all-parameter result. One must express the source witness in labelled variables and prove
 `R_p y_p=2b_p` for arbitrary `p`, construct the second independent class, prove the bounded dual
 pair, and exclude extra torsion by a free complement or relative-Morse reduction.
+
+EXP-053 checks whether the corresponding HNF coordinates themselves reveal that source chain.
+They do not: exact pullbacks at `p=8,9` have supports 125 and 178 and 75 semantic skeletons, and
+the `p=10` transform exceeds its safe-stage resource gate. Generic HNF pullback is therefore
+demoted as both a proof language and an experiment path.
+
+The pullback nevertheless exposes a new unification. At each completed parameter, both stable
+completions use the identical labelled source chain. The two EXP-052 formulas are its restrictions
+to the complementary added-row blocks. The next construction should telescope their union on
+`58->63` once, then project to obtain the first nonzero class in each completion.
