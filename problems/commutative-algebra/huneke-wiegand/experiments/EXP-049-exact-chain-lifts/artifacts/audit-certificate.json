@@ -1,0 +1,405 @@
+{
+  "experiment": "EXP-049",
+  "audit": "reverse-column HNF nonmembership and direct parity certificates",
+  "status": "PASS",
+  "checks_passed": 98,
+  "checks_total": 98,
+  "run_sha256": "83a6f0b248516aea77bd0af15c716eccb01ec1ad84260a75e21bb632986dc130",
+  "results_sha256": "567f554abaa1456133a4c0cd475d1848dad92a36dd8b9412381fe2fab9fc39b7",
+  "beta_dual_scope": "exact on p=8,...,11; conjectural as an all-parameter formula",
+  "checks": [
+    {
+      "name": "results internal hash",
+      "pass": true
+    },
+    {
+      "name": "results complete",
+      "pass": true
+    },
+    {
+      "name": "declared parameter set",
+      "pass": true
+    },
+    {
+      "name": "P1 refuted",
+      "pass": true
+    },
+    {
+      "name": "P2 refuted",
+      "pass": true
+    },
+    {
+      "name": "P3 finite pass",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 chain 1 hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 chain 1 reverse-HNF nonmembership",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 chain 2 hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 chain 2 reverse-HNF nonmembership",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 dual_low annihilation",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 dual_low pairings",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 dual_low bounded support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 dual_high annihilation",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 dual_high pairings",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->59 dual_high bounded support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 chain 1 hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 chain 1 reverse-HNF nonmembership",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 chain 2 hash",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 chain 2 reverse-HNF nonmembership",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 dual_low annihilation",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 dual_low pairings",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 dual_low bounded support",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 dual_high annihilation",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 dual_high pairings",
+      "pass": true
+    },
+    {
+      "name": "p=8 58->62 dual_high bounded support",
+      "pass": true
+    },
+    {
+      "name": "p=8 beta dual formulas",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 chain 1 hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 chain 1 reverse-HNF nonmembership",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 chain 2 hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 chain 2 reverse-HNF nonmembership",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 dual_low annihilation",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 dual_low pairings",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 dual_low bounded support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 dual_high annihilation",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 dual_high pairings",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->59 dual_high bounded support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 chain 1 hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 chain 1 reverse-HNF nonmembership",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 chain 2 hash",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 chain 2 reverse-HNF nonmembership",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 dual_low annihilation",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 dual_low pairings",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 dual_low bounded support",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 dual_high annihilation",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 dual_high pairings",
+      "pass": true
+    },
+    {
+      "name": "p=9 58->62 dual_high bounded support",
+      "pass": true
+    },
+    {
+      "name": "p=9 beta dual formulas",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 chain 1 hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 chain 1 reverse-HNF nonmembership",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 chain 2 hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 chain 2 reverse-HNF nonmembership",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 dual_low annihilation",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 dual_low pairings",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 dual_low bounded support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 dual_high annihilation",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 dual_high pairings",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->59 dual_high bounded support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 chain 1 hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 chain 1 reverse-HNF nonmembership",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 chain 2 hash",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 chain 2 reverse-HNF nonmembership",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 dual_low annihilation",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 dual_low pairings",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 dual_low bounded support",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 dual_high annihilation",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 dual_high pairings",
+      "pass": true
+    },
+    {
+      "name": "p=10 58->62 dual_high bounded support",
+      "pass": true
+    },
+    {
+      "name": "p=10 beta dual formulas",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 chain 1 hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 chain 1 reverse-HNF nonmembership",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 chain 2 hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 chain 2 reverse-HNF nonmembership",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 dual_low annihilation",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 dual_low pairings",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 dual_low bounded support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 dual_high annihilation",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 dual_high pairings",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->59 dual_high bounded support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 relative hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 chain 1 hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 chain 1 reverse-HNF nonmembership",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 chain 2 hash",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 chain 2 reverse-HNF nonmembership",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 dual_low annihilation",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 dual_low pairings",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 dual_low bounded support",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 dual_high annihilation",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 dual_high pairings",
+      "pass": true
+    },
+    {
+      "name": "p=11 58->62 dual_high bounded support",
+      "pass": true
+    },
+    {
+      "name": "p=11 beta dual formulas",
+      "pass": true
+    }
+  ],
+  "artifact_hash": "df2663ed0c81d4db9f24a205667a44868b152a9107177aac52ce4306978eb997"
+}

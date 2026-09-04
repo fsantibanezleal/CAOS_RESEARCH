@@ -152,8 +152,16 @@
 | 2026-09-02 | confirmed | active | HWB-074 targets a uniform certificate-producing `I direct-sum 2I` reduction and semantic parameter maps; another coefficient is demoted |
 | 2026-09-02 | active | refuted | EXP-048 passes the relative Bockstein rank regression but refutes bounded completion templates and a single translated threshold family |
 | 2026-09-02 | refuted | active | four explicit completion interval chains survive with supports `(p-4,p-4)` and `(2p-8,p-4)`; HWB-075 targets exact source lifts and dual parity functionals |
+| 2026-09-03 | active | refuted | EXP-049 proves by two exact HNF routes that none of the sixteen literal zero-one completion chains has boundary twice itself; every integral torsion representative needs a nonzero even correction |
+| 2026-09-03 | refuted | active | two independent parity duals exist with support at most four in every completion; the `58->62` dual supports obey two explicit formulas on `p=8,...,11`, and HWB-076 targets corrected lifts |
+| 2026-09-03 | active | refuted | EXP-050 constructs all sixteen exact corrected representatives but refutes small or stable corrections to the canonical quotient section; the large coordinates are section artifacts |
+| 2026-09-03 | refuted | active | EXP-051 selects exact representatives before quotient normalization; primary binary witnesses have support at most six and all divided-boundary coefficients have absolute value at most two |
+| 2026-09-03 | active | confirmed | EXP-052 freezes semantic formulas from `p=8,9,10` and exactly predicts the untouched `p=11` coefficient-token multisets of sizes 36 and 50; a separate reconstruction passes 31 checks |
+| 2026-09-03 | confirmed | active | HWB-077 now owns the all-parameter source-chain identity and second independent class; bounded dual detection and the free-complement upper bound remain separate obligations |
+| 2026-09-04 | active | refuted | EXP-053 uniquely pulls the common source chain back at `p=8,9,10`, but supports 125, 178, and 238 have 78 semantic skeletons; the `p=10` transformed HNF completes only after a safe-stage overrun |
+| 2026-09-04 | refuted | active | both stable completions use the identical source chain at each completed parameter, so HWB-078 targets one direct telescoping identity on the union `58->63` instead of further generic HNF pullback |
 
-Current state: **EXP-048 is refuted overall with four semantic completion chains retained; EXP-047 is confirmed finitely; EXP-046 is refuted overall with P3 retained; EXP-043 and EXP-042 are confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
+Current state: **EXP-053 refutes generic HNF pullback as the semantic proof route but retains one common source class across both completions; EXP-052 is confirmed finitely with an untouched semantic holdout; EXP-051 and EXP-050 are refuted overall with decisive finite constructions retained; EXP-049 is refuted overall with P3 and a bounded dual mechanism retained; EXP-048 is refuted overall with four semantic completion chains retained; EXP-047 is confirmed finitely; EXP-046 is refuted overall with P3 retained; EXP-043 and EXP-042 are confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
 inconclusive with two finite passes; EXP-037 is refuted; EXP-036 remains confirmed with structural
 propagation unresolved.** The complete `(10,2)` block has surviving dimensions
 `4240` over `GF(2)` and `4168` over both `GF(3)` and `GF(5)`, so `e_10=72`; this refutes the
@@ -184,6 +192,27 @@ not bounded local representatives. The exact finite support laws are `(p-4,p-4)`
 `(2p-8,p-4)`, while the threshold canonical section has multiple skeletons. HWB-075 therefore
 targets integral lifts and dual parity functionals for the stable chains, with a separate
 relative-Morse route for `56->58`.
+EXP-049 separates the mod-two and integral claims. Every literal equation `Ry=2a` for the four
+displayed chains fails at every `p=8,...,11`, so an exact torsion representative must be
+`b=a+2c` with nonzero correction. Conversely, low- and high-pivot dual solvers give two exact
+parity characters of support at most four. The `58->62` low-pivot duals satisfy explicit stable
+row formulas throughout the finite range. EXP-050 constructs every corrected `b,c,y` but refutes
+the canonical section as a simple proof basis: correction supports reach 101 and coefficients
+reach absolute value 71. EXP-051 removes that artifact by selecting before quotient reduction.
+Its exact binary witnesses have support at most six in the primary route, and all divided-boundary
+coefficients lie in `{+/-1,+/-2}`; the 409-check audit reconstructs 32 identities.
+EXP-052 then converts the always-two-column witness into explicit semantic row formulas learned
+only from `p=8,9,10`. The `58->59` family has support `6p-30`; the `58->62` family has support
+`binom(p,2)-5`. Both formulas reproduce the untouched `p=11` multisets exactly under a separate
+31-check reconstruction. This is a holdout-validated finite candidate, not an all-parameter
+identity. HWB-076 is done; HWB-077 now requires labelled source chains proving `R_p y_p=2b_p`, a
+second independent class, generic dual identities, and a separate uniform free complement.
+EXP-053 tests the missing pullback. At `p=8,9,10`, exact label reconstruction is unique and the
+same source chain gives both completion boundaries, with supports 125, 178, and 238 and
+coefficients bounded by four. Seventy-eight semantic skeletons refute the compact HNF-pullback
+hypothesis, and `p=10` completes only after a transformed-HNF resource overrun. HWB-078 seeks a
+direct labelled telescoping chain whose boundary is the union of both frozen EXP-052 formulas on
+mask `63`.
 The cubic-source gap is at least `3(p-1)^2` for all `p>=4`, `2<=t<=p-2`, so the exact
 `A_p` and `C_p` values agree throughout this family.  HWB-061 remains active for an infinite
 connecting-parity theorem. HWB-062 is done: the 53-page v0.23 is public and fresh-download

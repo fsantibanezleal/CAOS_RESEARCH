@@ -1,0 +1,71 @@
+{
+  "experiment": "EXP-052",
+  "phase": "TRAINING_CANDIDATE_CHECK",
+  "status": "PASS",
+  "checks_passed": 6,
+  "checks_total": 6,
+  "p2_status": "PASS_TRAINING",
+  "checks": [
+    {
+      "p": 8,
+      "source_mask": 58,
+      "target_mask": 59,
+      "pass": true,
+      "observed_hash": "34155da73e1353b933bff2f42b26efcf8dc0f7c741de9de5b07b96df33ec86ab",
+      "predicted_hash": "34155da73e1353b933bff2f42b26efcf8dc0f7c741de9de5b07b96df33ec86ab",
+      "observed_size": 18,
+      "predicted_size": 18
+    },
+    {
+      "p": 8,
+      "source_mask": 58,
+      "target_mask": 62,
+      "pass": true,
+      "observed_hash": "35b6ae778f5c67414e71599432c078c981235de5d75c7fd97b293fac12ce0f57",
+      "predicted_hash": "35b6ae778f5c67414e71599432c078c981235de5d75c7fd97b293fac12ce0f57",
+      "observed_size": 23,
+      "predicted_size": 23
+    },
+    {
+      "p": 9,
+      "source_mask": 58,
+      "target_mask": 59,
+      "pass": true,
+      "observed_hash": "f82e1ad17847dac9f6d08eba21f51dbf2da6688c091ff79faa0cd2cd1b37fbe2",
+      "predicted_hash": "f82e1ad17847dac9f6d08eba21f51dbf2da6688c091ff79faa0cd2cd1b37fbe2",
+      "observed_size": 24,
+      "predicted_size": 24
+    },
+    {
+      "p": 9,
+      "source_mask": 58,
+      "target_mask": 62,
+      "pass": true,
+      "observed_hash": "059c53c1ad383739685e38b485ccd39dd8e6f525a38a4de6d977bb2c2c0e3379",
+      "predicted_hash": "059c53c1ad383739685e38b485ccd39dd8e6f525a38a4de6d977bb2c2c0e3379",
+      "observed_size": 31,
+      "predicted_size": 31
+    },
+    {
+      "p": 10,
+      "source_mask": 58,
+      "target_mask": 59,
+      "pass": true,
+      "observed_hash": "dd30a915b14c8dd4e4ca88386219c21b77e602586edb2aef183d0fd2e0e4fd03",
+      "predicted_hash": "dd30a915b14c8dd4e4ca88386219c21b77e602586edb2aef183d0fd2e0e4fd03",
+      "observed_size": 30,
+      "predicted_size": 30
+    },
+    {
+      "p": 10,
+      "source_mask": 58,
+      "target_mask": 62,
+      "pass": true,
+      "observed_hash": "e11b55c7d286c8b3ad987e75a0597053ebce65573100415a07d49849a71f68db",
+      "predicted_hash": "e11b55c7d286c8b3ad987e75a0597053ebce65573100415a07d49849a71f68db",
+      "observed_size": 40,
+      "predicted_size": 40
+    }
+  ],
+  "artifact_hash": "4394459b9b82203c71e6f45c91e70ebde6e573f432355e269eef1bc11cb40fe8"
+}

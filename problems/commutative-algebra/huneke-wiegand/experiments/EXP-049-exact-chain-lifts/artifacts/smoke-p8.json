@@ -1,0 +1,307 @@
+{
+  "experiment": "EXP-049",
+  "route": "exact lattice lifts and dual parity certificates for EXP-048 chains",
+  "status": "COMPLETE",
+  "engine": {
+    "python_flint": "0.9.0"
+  },
+  "parameters": {
+    "p_min": 8,
+    "p_max": 8,
+    "budget_seconds": 300.0,
+    "memory_gib": 10.0
+  },
+  "premise_hashes": {
+    "EXP-042-bockstein-normal-form\\run.py": "3a57fc52a6a1e10ba42d97c6ebe27062324b8c90b76df7a288db41dffabd69bf",
+    "EXP-047-relative-kernel-smith\\run.py": "1350159ebc2c718208f62e08231f54ae2cc6178aa653bb5b67c100b56cd2a82b",
+    "EXP-047-relative-kernel-smith\\artifacts\\results.json": "f78d251ae1746a88d1190756572aa251b9daf70ceb103cef9765c6d73b26f46c",
+    "EXP-048-semantic-relative-bockstein\\run.py": "ec245859931cf1b3992630c8faab207a158ae5b72a3283783ec938cd3b76e70a",
+    "EXP-048-semantic-relative-bockstein\\artifacts\\results.json": "ba44eae4c9193bc941411b059dc7a7d7a4c69dff3d818e05d3395338e125a400"
+  },
+  "rows": [
+    {
+      "p": 8,
+      "source_matrix_sha256": "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
+      "source_kernel": {
+        "source_rows": 2596,
+        "columns": 1094,
+        "rank_q": 980,
+        "kernel_nullity": 114,
+        "kernel_basis_hash": "26b3109973b8ba7ab8df25b8bbc5b205506228737f8beb6b53d3f7b0bed7b405",
+        "annihilation_from_zero_hnf_rows": true
+      },
+      "inclusions": [
+        {
+          "source_mask": 58,
+          "target_mask": 59,
+          "relative_sha256": "37e5c293b6aa4b2615c5c3705af13cde4a223f8ea00db16ba4d8f3b875c1ac6d",
+          "added_rows": 28,
+          "formula_semantic_chain_rows": [
+            [
+              13,
+              18,
+              20,
+              26
+            ],
+            [
+              15,
+              23,
+              25,
+              27
+            ]
+          ],
+          "hnf_rank": 13,
+          "hnf_diagonal": [
+            1,
+            1,
+            1,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "chains": [
+            {
+              "chain_index": 1,
+              "chain_rows": [
+                3,
+                5,
+                11,
+                17
+              ],
+              "chain_hash": "f6952a1f3bde717d0b5819838bf364309b90c15ab3a3bbc79a35ba46bc339618",
+              "support_size": 4,
+              "exact_membership": false
+            },
+            {
+              "chain_index": 2,
+              "chain_rows": [
+                6,
+                8,
+                10,
+                18
+              ],
+              "chain_hash": "4be6fbaa88369d3d2479c3069b63ad6ae2290b3a1203205d4575495bddf07a5e",
+              "support_size": 4,
+              "exact_membership": false
+            }
+          ],
+          "dual_low": {
+            "annihilation": [
+              true,
+              true
+            ],
+            "pairings": [
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "support_sizes": [
+              2,
+              2
+            ],
+            "supports": [
+              [
+                1,
+                3
+              ],
+              [
+                2,
+                6
+              ]
+            ]
+          },
+          "dual_high": {
+            "annihilation": [
+              true,
+              true
+            ],
+            "pairings": [
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "support_sizes": [
+              2,
+              2
+            ],
+            "supports": [
+              [
+                15,
+                17
+              ],
+              [
+                16,
+                18
+              ]
+            ]
+          }
+        },
+        {
+          "source_mask": 58,
+          "target_mask": 62,
+          "relative_sha256": "03dc1c2cb89673cce99b3700192712394230b3686c6bc7a9b0d81c2e1c4fa5f7",
+          "added_rows": 51,
+          "formula_semantic_chain_rows": [
+            [
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42
+            ],
+            [
+              47,
+              48,
+              49,
+              50
+            ]
+          ],
+          "hnf_rank": 22,
+          "hnf_diagonal": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "chains": [
+            {
+              "chain_index": 1,
+              "chain_rows": [
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25
+              ],
+              "chain_hash": "c59b2e89f7d0ea730dbc8138d386bd4ad26806d55800b77e4cf88cedd1986756",
+              "support_size": 8,
+              "exact_membership": false
+            },
+            {
+              "chain_index": 2,
+              "chain_rows": [
+                27,
+                28,
+                29,
+                30
+              ],
+              "chain_hash": "5287cc7b65fe1cd268d5f24085171e782c7a036c10a797c16641d70847beb7dd",
+              "support_size": 4,
+              "exact_membership": false
+            }
+          ],
+          "dual_low": {
+            "annihilation": [
+              true,
+              true
+            ],
+            "pairings": [
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "support_sizes": [
+              2,
+              4
+            ],
+            "supports": [
+              [
+                13,
+                22
+              ],
+              [
+                13,
+                18,
+                22,
+                27
+              ]
+            ]
+          },
+          "dual_high": {
+            "annihilation": [
+              true,
+              true
+            ],
+            "pairings": [
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "support_sizes": [
+              2,
+              4
+            ],
+            "supports": [
+              [
+                16,
+                25
+              ],
+              [
+                16,
+                21,
+                25,
+                30
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 33.57800000000043,
+  "p1_status": "REFUTED",
+  "p2_status": "REFUTED",
+  "p3_status": "PASS_FINITE",
+  "artifact_hash": "1bb1a8297ec4de4670af63f182ec003bea626ea4b620656dd79c2198ab222f03"
+}

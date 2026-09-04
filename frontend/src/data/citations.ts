@@ -225,4 +225,67 @@ export const CITATIONS: Citation[] = [
       'Santibañez-Leal F. (2026). An independent exact verification of the 2026 counterexample to Goemans unsplittable-flow cost conjecture, with the violation constant it forces. Preprint, CC BY 4.0, v0.01.',
     doi: '10.5281/zenodo.21554258',
   },
+  {
+    id: 'jaeger1988',
+    label: 'Jaeger 1988',
+    citation:
+      'Jaeger F. (1988). Nowhere-zero flow problems. In Beineke L. W., Wilson R. J. (eds.), Selected Topics in Graph Theory 3, Academic Press, 71-95. Origin of the Petersen coloring conjecture.',
+    url: 'https://www.openproblemgarden.org/op/petersen_coloring_conjecture',
+  },
+  {
+    id: 'jaeger1985',
+    label: 'Jaeger 1985',
+    citation:
+      'Jaeger F. (1985). On five-edge-colorings of cubic graphs and nowhere-zero flow problems. Ars Combinatoria 20-B, 229-244. Petersen colorings are equivalent to normal 5-edge-colorings.',
+    url: 'https://arxiv.org/abs/1804.09449',
+  },
+  {
+    id: 'putman2026',
+    label: 'Putman 2026',
+    citation:
+      'Putman B. (2026). A 112-vertex counterexample to the Petersen Coloring Conjecture. Zenodo v1.1.0, 2026-08-08; arXiv:2608.10012. Two nonisomorphic 112-vertex counterexamples with CaDiCaL/DRAT certificates.',
+    doi: '10.5281/zenodo.21845291',
+  },
+  {
+    id: 'jooken2026',
+    label: 'Jooken 2026',
+    citation:
+      'Jooken J. (2026). A human-checkable proof of the 112-vertex counterexample to the Petersen coloring conjecture. arXiv:2608.10028v2, 2026-08-14.',
+    url: 'https://arxiv.org/abs/2608.10028',
+  },
+  {
+    id: 'gjmmm2026',
+    label: 'Goedgebeur, Jooken, Macajova, Mattiolo & Mazzuoccolo 2026',
+    citation:
+      'Goedgebeur J., Jooken J., Macajova E., Mattiolo D., Mazzuoccolo G. (2026). A smaller counterexample and infinite family of counterexamples to the Petersen Coloring Conjecture. Zenodo, 2026-08-14. The 52-vertex counterexample, infinite cyclically 4-edge-connected families, and the frontier 38 to 52 for the smallest counterexample.',
+    doi: '10.5281/zenodo.21933785',
+  },
+  {
+    id: 'bghm2013',
+    label: 'Brinkmann, Goedgebeur, Hagglund & Markstrom 2013',
+    citation:
+      'Brinkmann G., Goedgebeur J., Hagglund J., Markstrom K. (2013). Generation and properties of snarks. Journal of Combinatorial Theory, Series B 103(4), 468-488. All snarks on at most 36 vertices; the Petersen coloring conjecture holds for all of them.',
+    doi: '10.1016/j.jctb.2013.05.001',
+  },
+  {
+    id: 'gms2019',
+    label: 'Goedgebeur, Macajova & Skoviera 2019',
+    citation:
+      'Goedgebeur J., Macajova E., Skoviera M. (2019). Smallest snarks with oddness 4 and cyclic connectivity 4 have order 44. Ars Mathematica Contemporanea 16, 277-298. Completes the order-36 verification for weak snarks of girth 4.',
+    doi: '10.26493/1855-3974.1601.e75',
+  },
+  {
+    id: 'mazzmkrt2020',
+    label: 'Mazzuoccolo & Mkrtchyan 2020',
+    citation:
+      'Mazzuoccolo G., Mkrtchyan V. V. (2020). Normal edge-colorings of cubic graphs. Journal of Graph Theory 94(1), 75-91. Every simple cubic graph has a normal 7-edge-coloring; the normal 6 question.',
+    doi: '10.1002/jgt.22507',
+  },
+  {
+    id: 'pccaudit',
+    label: 'Audit record 2026',
+    citation:
+      'Santibañez-Leal F. (2026). Berge-Fulkerson covers, cycle double covers, flows and exact normality defects of the first counterexamples to the Petersen coloring conjecture. Preprint, CC BY 4.0, v0.01.',
+    doi: '10.5281/zenodo.22285164',
+  },
 ];

@@ -39,6 +39,7 @@ on prior chat history.
 | Algebraic geometry | [Jacobian conjecture](problems/algebraic-geometry/jacobian-conjecture/) | exploring (opened 2026-07-20) |
 | Dynamical systems | [Central configurations](problems/dynamical-systems/central-configurations/) | exploring (opened 2026-07-23) |
 | Optimization and discrete geometry | [Unsplittable-flow cost](problems/optimization-geometry/unsplittable-flow-cost/) | exploring (opened 2026-07-24) |
+| Combinatorics and graph theory | [Petersen coloring counterexamples](problems/combinatorics/petersen-coloring/) | analyzing (opened 2026-09-03) |
 
 The complete portfolio, including proposed and scoped problems, lives in
 [`program/portfolio.yaml`](program/portfolio.yaml). Each active problem's current heartbeat is its

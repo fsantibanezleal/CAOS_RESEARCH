@@ -1,0 +1,4391 @@
+{
+  "experiment": "EXP-051",
+  "route": "minimum-complexity exact lifts before quotient normalization",
+  "status": "COMPLETE",
+  "parameters": {
+    "p_min": 8,
+    "p_max": 11,
+    "budget_seconds": 60.0
+  },
+  "premise_hashes": {
+    "EXP-047-relative-kernel-smith\\artifacts\\results.json": "f78d251ae1746a88d1190756572aa251b9daf70ceb103cef9765c6d73b26f46c",
+    "EXP-049-exact-chain-lifts\\artifacts\\results.json": "567f554abaa1456133a4c0cd475d1848dad92a36dd8b9412381fe2fab9fc39b7",
+    "EXP-050-corrected-bockstein-lifts\\run.py": "9a7ccb9d5a1fcea24b4e9adaf7b8b1946635ad20233b7ac15301f46b8109a07e",
+    "EXP-050-corrected-bockstein-lifts\\artifacts\\results.json": "2dc8f85097171e24f4080ce25684127914d86661a6291bab69fb334c2c987983"
+  },
+  "rows": [
+    {
+      "p": 8,
+      "inclusions": [
+        {
+          "source_mask": 58,
+          "target_mask": 59,
+          "relative_sha256": "37e5c293b6aa4b2615c5c3705af13cde4a223f8ea00db16ba4d8f3b875c1ac6d",
+          "primary": {
+            "order": "low-forward",
+            "kernel_dimension": 103,
+            "nonzero_candidate_count": 14,
+            "nonzero_quotient_classes_seen": 3,
+            "selected": [
+              {
+                "quotient_class_rows": [
+                  3,
+                  5,
+                  11,
+                  17
+                ],
+                "quotient_class_hash": "86f698fbc91a1226ca946f75d03991730ebdfd532608d1aeaccb4e043b2138a3",
+                "cycle_columns": [
+                  12
+                ],
+                "cycle_hash": "8b926d75599a618e21f1341318e66517be26e18cc7496783d2b59758c1333be8",
+                "cycle_support_size": 1,
+                "boundary": [
+                  [
+                    3,
+                    -1
+                  ],
+                  [
+                    5,
+                    1
+                  ],
+                  [
+                    7,
+                    1
+                  ],
+                  [
+                    9,
+                    -1
+                  ],
+                  [
+                    12,
+                    -1
+                  ],
+                  [
+                    14,
+                    1
+                  ],
+                  [
+                    16,
+                    -1
+                  ],
+                  [
+                    17,
+                    1
+                  ],
+                  [
+                    18,
+                    1
+                  ],
+                  [
+                    19,
+                    1
+                  ],
+                  [
+                    21,
+                    -1
+                  ],
+                  [
+                    23,
+                    1
+                  ],
+                  [
+                    24,
+                    -1
+                  ],
+                  [
+                    26,
+                    1
+                  ],
+                  [
+                    27,
+                    1
+                  ]
+                ],
+                "boundary_hash": "842c1acc92554451aae5c2187e368744a6b863cfc9449901251f967415fde851",
+                "boundary_support_size": 15,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 8
+              },
+              {
+                "quotient_class_rows": [
+                  6,
+                  8,
+                  10,
+                  18
+                ],
+                "quotient_class_hash": "cc65de1d591850f1ddc5214d831ca3921323ba0a3690afcf901d2e72cba16d5d",
+                "cycle_columns": [
+                  9,
+                  52
+                ],
+                "cycle_hash": "2a6e92298517b60606b6f644d982c3f64263c5264216a76ac67efa5a0f05d58f",
+                "cycle_support_size": 2,
+                "boundary": [
+                  [
+                    3,
+                    -2
+                  ],
+                  [
+                    5,
+                    2
+                  ],
+                  [
+                    6,
+                    -1
+                  ],
+                  [
+                    7,
+                    2
+                  ],
+                  [
+                    8,
+                    1
+                  ],
+                  [
+                    9,
+                    -2
+                  ],
+                  [
+                    10,
+                    -1
+                  ],
+                  [
+                    12,
+                    -1
+                  ],
+                  [
+                    14,
+                    1
+                  ],
+                  [
+                    16,
+                    -1
+                  ],
+                  [
+                    17,
+                    2
+                  ],
+                  [
+                    18,
+                    2
+                  ],
+                  [
+                    19,
+                    1
+                  ],
+                  [
+                    21,
+                    -1
+                  ],
+                  [
+                    23,
+                    1
+                  ],
+                  [
+                    24,
+                    -1
+                  ],
+                  [
+                    26,
+                    1
+                  ],
+                  [
+                    27,
+                    1
+                  ]
+                ],
+                "boundary_hash": "90e74d0f5204a7e278e2164b588ec51c5572a8cc9cd209d4ce26bde8f1537ad7",
+                "boundary_support_size": 18,
+                "boundary_max_abs": 2,
+                "exact_identity": true,
+                "p": 8
+              }
+            ],
+            "selected_subspace_hash": "93150d5b086e5cb042b1e15dff65397a1e9786256072b9761c2fb594405f01e0"
+          },
+          "audit": {
+            "order": "high-reverse",
+            "kernel_dimension": 103,
+            "nonzero_candidate_count": 6,
+            "nonzero_quotient_classes_seen": 3,
+            "selected": [
+              {
+                "quotient_class_rows": [
+                  3,
+                  5,
+                  11,
+                  17
+                ],
+                "quotient_class_hash": "86f698fbc91a1226ca946f75d03991730ebdfd532608d1aeaccb4e043b2138a3",
+                "cycle_columns": [
+                  13,
+                  63,
+                  66,
+                  76,
+                  79,
+                  90,
+                  93,
+                  105
+                ],
+                "cycle_hash": "0558fece536fcd7f5ddfc1615ee06ea30468156714ec58e6f4172c08e3949200",
+                "cycle_support_size": 8,
+                "boundary": [
+                  [
+                    3,
+                    -1
+                  ],
+                  [
+                    5,
+                    1
+                  ],
+                  [
+                    7,
+                    1
+                  ],
+                  [
+                    9,
+                    -1
+                  ],
+                  [
+                    12,
+                    -1
+                  ],
+                  [
+                    14,
+                    1
+                  ],
+                  [
+                    16,
+                    -1
+                  ],
+                  [
+                    17,
+                    1
+                  ],
+                  [
+                    18,
+                    1
+                  ],
+                  [
+                    24,
+                    -1
+                  ],
+                  [
+                    26,
+                    1
+                  ]
+                ],
+                "boundary_hash": "dc68db5325e1b5c73484c37e6fe818b49baf7bac7c2f7a9d1bb50234355f3f0a",
+                "boundary_support_size": 11,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 8
+              },
+              {
+                "quotient_class_rows": [
+                  3,
+                  5,
+                  6,
+                  8,
+                  10,
+                  11,
+                  17,
+                  18
+                ],
+                "quotient_class_hash": "e806ea9acd6c3dfaf7bef28b7d7f99352d409c8cea076a9d8a58956c9ac7e178",
+                "cycle_columns": [
+                  11,
+                  55,
+                  66,
+                  76,
+                  79,
+                  90,
+                  93,
+                  105
+                ],
+                "cycle_hash": "30112b9329a94a6dbf5656aa7bdf4b796b77f326b6e0a16a08178ebc1cf31c58",
+                "cycle_support_size": 8,
+                "boundary": [
+                  [
+                    3,
+                    -1
+                  ],
+                  [
+                    5,
+                    1
+                  ],
+                  [
+                    6,
+                    -1
+                  ],
+                  [
+                    7,
+                    1
+                  ],
+                  [
+                    8,
+                    1
+                  ],
+                  [
+                    9,
+                    -1
+                  ],
+                  [
+                    10,
+                    -1
+                  ],
+                  [
+                    13,
+                    -1
+                  ],
+                  [
+                    15,
+                    1
+                  ],
+                  [
+                    18,
+                    1
+                  ],
+                  [
+                    24,
+                    -1
+                  ],
+                  [
+                    26,
+                    1
+                  ]
+                ],
+                "boundary_hash": "5116d2c3270e51d8e8fd87a987a5e9a5f190dd66f73cd1d6e4b522b5770efb5e",
+                "boundary_support_size": 12,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 8
+              }
+            ],
+            "selected_subspace_hash": "93150d5b086e5cb042b1e15dff65397a1e9786256072b9761c2fb594405f01e0"
+          }
+        },
+        {
+          "source_mask": 58,
+          "target_mask": 62,
+          "relative_sha256": "03dc1c2cb89673cce99b3700192712394230b3686c6bc7a9b0d81c2e1c4fa5f7",
+          "primary": {
+            "order": "low-forward",
+            "kernel_dimension": 94,
+            "nonzero_candidate_count": 14,
+            "nonzero_quotient_classes_seen": 3,
+            "selected": [
+              {
+                "quotient_class_rows": [
+                  22,
+                  23,
+                  24,
+                  25,
+                  26
+                ],
+                "quotient_class_hash": "6429c56228eba4e1ce5cdca050cbdc4259c3bac4ac2cd5a24d505f62325a0ff0",
+                "cycle_columns": [
+                  12
+                ],
+                "cycle_hash": "8b926d75599a618e21f1341318e66517be26e18cc7496783d2b59758c1333be8",
+                "cycle_support_size": 1,
+                "boundary": [
+                  [
+                    22,
+                    1
+                  ],
+                  [
+                    23,
+                    -1
+                  ],
+                  [
+                    24,
+                    1
+                  ],
+                  [
+                    25,
+                    -1
+                  ],
+                  [
+                    26,
+                    1
+                  ],
+                  [
+                    31,
+                    -1
+                  ],
+                  [
+                    32,
+                    1
+                  ],
+                  [
+                    33,
+                    -1
+                  ],
+                  [
+                    34,
+                    1
+                  ],
+                  [
+                    35,
+                    1
+                  ],
+                  [
+                    36,
+                    -1
+                  ],
+                  [
+                    37,
+                    1
+                  ],
+                  [
+                    38,
+                    -1
+                  ],
+                  [
+                    42,
+                    -1
+                  ],
+                  [
+                    43,
+                    1
+                  ],
+                  [
+                    44,
+                    -1
+                  ],
+                  [
+                    47,
+                    1
+                  ],
+                  [
+                    48,
+                    -1
+                  ],
+                  [
+                    50,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "53a57f1053d0477ff8c356f94edaf88242ec71516cedfe07f2a6cec4e862dd09",
+                "boundary_support_size": 19,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 8
+              },
+              {
+                "quotient_class_rows": [
+                  27,
+                  28,
+                  29,
+                  30
+                ],
+                "quotient_class_hash": "8af30b17236fc8faded682d11bb8a6f980036b436a6322d9147d90e750a01423",
+                "cycle_columns": [
+                  9,
+                  52
+                ],
+                "cycle_hash": "2a6e92298517b60606b6f644d982c3f64263c5264216a76ac67efa5a0f05d58f",
+                "cycle_support_size": 2,
+                "boundary": [
+                  [
+                    22,
+                    2
+                  ],
+                  [
+                    23,
+                    -2
+                  ],
+                  [
+                    24,
+                    2
+                  ],
+                  [
+                    25,
+                    -2
+                  ],
+                  [
+                    26,
+                    2
+                  ],
+                  [
+                    27,
+                    1
+                  ],
+                  [
+                    28,
+                    -1
+                  ],
+                  [
+                    29,
+                    1
+                  ],
+                  [
+                    30,
+                    -1
+                  ],
+                  [
+                    31,
+                    -2
+                  ],
+                  [
+                    32,
+                    2
+                  ],
+                  [
+                    33,
+                    -2
+                  ],
+                  [
+                    34,
+                    2
+                  ],
+                  [
+                    35,
+                    1
+                  ],
+                  [
+                    36,
+                    -1
+                  ],
+                  [
+                    37,
+                    1
+                  ],
+                  [
+                    38,
+                    -1
+                  ],
+                  [
+                    42,
+                    -1
+                  ],
+                  [
+                    43,
+                    1
+                  ],
+                  [
+                    44,
+                    -1
+                  ],
+                  [
+                    47,
+                    1
+                  ],
+                  [
+                    48,
+                    -1
+                  ],
+                  [
+                    50,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "c444faef44df28f7cdecab24028e96b928ea85b46a3d44cb7b916eb6c3417075",
+                "boundary_support_size": 23,
+                "boundary_max_abs": 2,
+                "exact_identity": true,
+                "p": 8
+              }
+            ],
+            "selected_subspace_hash": "7259c34487c00b1dd38d55af8312bf5dae624116e57adc31536eeba1bde10ce0"
+          },
+          "audit": {
+            "order": "high-reverse",
+            "kernel_dimension": 94,
+            "nonzero_candidate_count": 6,
+            "nonzero_quotient_classes_seen": 3,
+            "selected": [
+              {
+                "quotient_class_rows": [
+                  22,
+                  23,
+                  24,
+                  25,
+                  26
+                ],
+                "quotient_class_hash": "6429c56228eba4e1ce5cdca050cbdc4259c3bac4ac2cd5a24d505f62325a0ff0",
+                "cycle_columns": [
+                  13,
+                  63,
+                  66,
+                  76,
+                  79,
+                  90,
+                  93,
+                  105
+                ],
+                "cycle_hash": "0558fece536fcd7f5ddfc1615ee06ea30468156714ec58e6f4172c08e3949200",
+                "cycle_support_size": 8,
+                "boundary": [
+                  [
+                    22,
+                    1
+                  ],
+                  [
+                    23,
+                    -1
+                  ],
+                  [
+                    24,
+                    1
+                  ],
+                  [
+                    25,
+                    -1
+                  ],
+                  [
+                    26,
+                    1
+                  ],
+                  [
+                    31,
+                    -1
+                  ],
+                  [
+                    32,
+                    1
+                  ],
+                  [
+                    33,
+                    -1
+                  ],
+                  [
+                    34,
+                    1
+                  ],
+                  [
+                    35,
+                    1
+                  ],
+                  [
+                    36,
+                    -1
+                  ],
+                  [
+                    37,
+                    1
+                  ],
+                  [
+                    38,
+                    -1
+                  ],
+                  [
+                    47,
+                    1
+                  ],
+                  [
+                    48,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "c368edecd96b5cfeef21c264af803dd9c552ee828bb2fd15443922ec4034b411",
+                "boundary_support_size": 15,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 8
+              },
+              {
+                "quotient_class_rows": [
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30
+                ],
+                "quotient_class_hash": "f348f2d7e2c8ea11cbfcb1925f3d9a2bf932e08c7033aff5fb292ead1ed2d7db",
+                "cycle_columns": [
+                  11,
+                  55,
+                  66,
+                  76,
+                  79,
+                  90,
+                  93,
+                  105
+                ],
+                "cycle_hash": "30112b9329a94a6dbf5656aa7bdf4b796b77f326b6e0a16a08178ebc1cf31c58",
+                "cycle_support_size": 8,
+                "boundary": [
+                  [
+                    22,
+                    1
+                  ],
+                  [
+                    23,
+                    -1
+                  ],
+                  [
+                    24,
+                    1
+                  ],
+                  [
+                    25,
+                    -1
+                  ],
+                  [
+                    26,
+                    1
+                  ],
+                  [
+                    27,
+                    1
+                  ],
+                  [
+                    28,
+                    -1
+                  ],
+                  [
+                    29,
+                    1
+                  ],
+                  [
+                    30,
+                    -1
+                  ],
+                  [
+                    31,
+                    -1
+                  ],
+                  [
+                    32,
+                    1
+                  ],
+                  [
+                    33,
+                    -1
+                  ],
+                  [
+                    34,
+                    1
+                  ],
+                  [
+                    39,
+                    1
+                  ],
+                  [
+                    40,
+                    -1
+                  ],
+                  [
+                    41,
+                    1
+                  ],
+                  [
+                    47,
+                    1
+                  ],
+                  [
+                    48,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "022d2b1a29f58c6c6da690b79ed0b57344720c22dd797865d82181998d5817e5",
+                "boundary_support_size": 18,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 8
+              }
+            ],
+            "selected_subspace_hash": "7259c34487c00b1dd38d55af8312bf5dae624116e57adc31536eeba1bde10ce0"
+          }
+        }
+      ]
+    },
+    {
+      "p": 9,
+      "inclusions": [
+        {
+          "source_mask": 58,
+          "target_mask": 59,
+          "relative_sha256": "78e9a2bc34784a41ee56b46bfdfae3f62e4978ba3945c411296f30dfbbaadd3a",
+          "primary": {
+            "order": "low-forward",
+            "kernel_dimension": 135,
+            "nonzero_candidate_count": 16,
+            "nonzero_quotient_classes_seen": 3,
+            "selected": [
+              {
+                "quotient_class_rows": [
+                  3,
+                  5,
+                  11,
+                  17,
+                  25
+                ],
+                "quotient_class_hash": "097321dedeb95351f1b63a072d9215d230e8a2253b4b93e949f8b62d54dce19e",
+                "cycle_columns": [
+                  18,
+                  22,
+                  26,
+                  29,
+                  47,
+                  121
+                ],
+                "cycle_hash": "9b5e7812aa6e4dd7ed8abad9175200d00a8fbb14982debca1be58276b8b4871f",
+                "cycle_support_size": 6,
+                "boundary": [
+                  [
+                    3,
+                    -1
+                  ],
+                  [
+                    5,
+                    1
+                  ],
+                  [
+                    7,
+                    1
+                  ],
+                  [
+                    9,
+                    -1
+                  ],
+                  [
+                    12,
+                    -1
+                  ],
+                  [
+                    13,
+                    1
+                  ],
+                  [
+                    14,
+                    1
+                  ],
+                  [
+                    15,
+                    -1
+                  ],
+                  [
+                    16,
+                    -1
+                  ],
+                  [
+                    17,
+                    2
+                  ],
+                  [
+                    18,
+                    1
+                  ],
+                  [
+                    19,
+                    -2
+                  ],
+                  [
+                    25,
+                    -1
+                  ],
+                  [
+                    35,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "23bcc886e5e0d03bfe587adaae294ee227ac43086f6bce43ae67a15d8591d007",
+                "boundary_support_size": 14,
+                "boundary_max_abs": 2,
+                "exact_identity": true,
+                "p": 9
+              },
+              {
+                "quotient_class_rows": [
+                  6,
+                  8,
+                  10,
+                  18,
+                  26
+                ],
+                "quotient_class_hash": "3b27d9711dab0d48a492e8f57058a31d49000ef107f36bbab0b1c7e77bb31561",
+                "cycle_columns": [
+                  12,
+                  70
+                ],
+                "cycle_hash": "041880738e7708ae8b327ab9c925974a9571df025b5f214643047656d4417c17",
+                "cycle_support_size": 2,
+                "boundary": [
+                  [
+                    3,
+                    -2
+                  ],
+                  [
+                    5,
+                    2
+                  ],
+                  [
+                    6,
+                    -1
+                  ],
+                  [
+                    7,
+                    2
+                  ],
+                  [
+                    8,
+                    1
+                  ],
+                  [
+                    9,
+                    -2
+                  ],
+                  [
+                    10,
+                    -1
+                  ],
+                  [
+                    12,
+                    -1
+                  ],
+                  [
+                    14,
+                    1
+                  ],
+                  [
+                    16,
+                    -1
+                  ],
+                  [
+                    17,
+                    2
+                  ],
+                  [
+                    18,
+                    2
+                  ],
+                  [
+                    19,
+                    -2
+                  ],
+                  [
+                    20,
+                    1
+                  ],
+                  [
+                    22,
+                    -1
+                  ],
+                  [
+                    24,
+                    1
+                  ],
+                  [
+                    25,
+                    -2
+                  ],
+                  [
+                    26,
+                    -2
+                  ],
+                  [
+                    27,
+                    -1
+                  ],
+                  [
+                    29,
+                    1
+                  ],
+                  [
+                    31,
+                    -1
+                  ],
+                  [
+                    32,
+                    1
+                  ],
+                  [
+                    34,
+                    -1
+                  ],
+                  [
+                    35,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "ed15fc7d96146e395a67076968b4a5d1b9f110a5d26f028595d73b4d3ffe5a92",
+                "boundary_support_size": 24,
+                "boundary_max_abs": 2,
+                "exact_identity": true,
+                "p": 9
+              }
+            ],
+            "selected_subspace_hash": "1bb290aa56ec447c9c72cff0c73c5345112e9636bc85bb13dcccdf7b8b229348"
+          },
+          "audit": {
+            "order": "high-reverse",
+            "kernel_dimension": 135,
+            "nonzero_candidate_count": 7,
+            "nonzero_quotient_classes_seen": 3,
+            "selected": [
+              {
+                "quotient_class_rows": [
+                  3,
+                  5,
+                  11,
+                  17,
+                  25
+                ],
+                "quotient_class_hash": "097321dedeb95351f1b63a072d9215d230e8a2253b4b93e949f8b62d54dce19e",
+                "cycle_columns": [
+                  19,
+                  78,
+                  81,
+                  91,
+                  94,
+                  106,
+                  109,
+                  122,
+                  125,
+                  139
+                ],
+                "cycle_hash": "9dcef5d5947494796c5cb093d69bde6b16789b57579c7f6fd14d575f8b2d8f14",
+                "cycle_support_size": 10,
+                "boundary": [
+                  [
+                    3,
+                    -1
+                  ],
+                  [
+                    5,
+                    1
+                  ],
+                  [
+                    7,
+                    1
+                  ],
+                  [
+                    9,
+                    -1
+                  ],
+                  [
+                    12,
+                    -1
+                  ],
+                  [
+                    14,
+                    1
+                  ],
+                  [
+                    16,
+                    -1
+                  ],
+                  [
+                    17,
+                    1
+                  ],
+                  [
+                    18,
+                    1
+                  ],
+                  [
+                    19,
+                    -1
+                  ],
+                  [
+                    25,
+                    -1
+                  ],
+                  [
+                    27,
+                    -1
+                  ],
+                  [
+                    29,
+                    1
+                  ],
+                  [
+                    31,
+                    -1
+                  ],
+                  [
+                    35,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "af96d4b2e8e6b025cf2b095dc1942afdc34afb7c82b0b50f3ee7dc716b3ce6f9",
+                "boundary_support_size": 15,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 9
+              },
+              {
+                "quotient_class_rows": [
+                  3,
+                  5,
+                  6,
+                  8,
+                  10,
+                  11,
+                  17,
+                  18,
+                  25,
+                  26
+                ],
+                "quotient_class_hash": "280f8f71d01e92884bf74402925dff91ea962c297ae58addfe349254c68574bd",
+                "cycle_columns": [
+                  13,
+                  70,
+                  81,
+                  91,
+                  94,
+                  106,
+                  109,
+                  122,
+                  125,
+                  139
+                ],
+                "cycle_hash": "96b289f7e440cb9f6b1909e1b14f2145247e1bcca3661e7371fd33a2720e67c4",
+                "cycle_support_size": 10,
+                "boundary": [
+                  [
+                    3,
+                    -1
+                  ],
+                  [
+                    5,
+                    1
+                  ],
+                  [
+                    6,
+                    -1
+                  ],
+                  [
+                    7,
+                    1
+                  ],
+                  [
+                    8,
+                    1
+                  ],
+                  [
+                    9,
+                    -1
+                  ],
+                  [
+                    10,
+                    -1
+                  ],
+                  [
+                    13,
+                    -1
+                  ],
+                  [
+                    15,
+                    1
+                  ],
+                  [
+                    18,
+                    1
+                  ],
+                  [
+                    25,
+                    -1
+                  ],
+                  [
+                    26,
+                    -1
+                  ],
+                  [
+                    27,
+                    -1
+                  ],
+                  [
+                    29,
+                    1
+                  ],
+                  [
+                    31,
+                    -1
+                  ],
+                  [
+                    35,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "7cf48d192ce32c23d72ac80cf8916b6649b89becae04ecc9b0bcb3c0f83a31f9",
+                "boundary_support_size": 16,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 9
+              }
+            ],
+            "selected_subspace_hash": "1bb290aa56ec447c9c72cff0c73c5345112e9636bc85bb13dcccdf7b8b229348"
+          }
+        },
+        {
+          "source_mask": 58,
+          "target_mask": 62,
+          "relative_sha256": "58aa31d8dc6c4a958c09134d42a09c92d6e1b7f22db7dbcede7689b3d5ac373d",
+          "primary": {
+            "order": "low-forward",
+            "kernel_dimension": 124,
+            "nonzero_candidate_count": 16,
+            "nonzero_quotient_classes_seen": 3,
+            "selected": [
+              {
+                "quotient_class_rows": [
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32
+                ],
+                "quotient_class_hash": "7ebbd5e798ad6255e17afb0248f538cd2c2dce51ac1d3f8fee20ebd091b93a54",
+                "cycle_columns": [
+                  18,
+                  22,
+                  26,
+                  29,
+                  47,
+                  121
+                ],
+                "cycle_hash": "9b5e7812aa6e4dd7ed8abad9175200d00a8fbb14982debca1be58276b8b4871f",
+                "cycle_support_size": 6,
+                "boundary": [
+                  [
+                    27,
+                    -1
+                  ],
+                  [
+                    28,
+                    1
+                  ],
+                  [
+                    29,
+                    -1
+                  ],
+                  [
+                    30,
+                    1
+                  ],
+                  [
+                    31,
+                    -1
+                  ],
+                  [
+                    32,
+                    1
+                  ],
+                  [
+                    38,
+                    1
+                  ],
+                  [
+                    39,
+                    -1
+                  ],
+                  [
+                    40,
+                    1
+                  ],
+                  [
+                    41,
+                    -1
+                  ],
+                  [
+                    42,
+                    1
+                  ],
+                  [
+                    43,
+                    -1
+                  ],
+                  [
+                    44,
+                    1
+                  ],
+                  [
+                    45,
+                    -1
+                  ],
+                  [
+                    46,
+                    1
+                  ],
+                  [
+                    47,
+                    -1
+                  ],
+                  [
+                    48,
+                    1
+                  ],
+                  [
+                    49,
+                    -1
+                  ],
+                  [
+                    50,
+                    1
+                  ],
+                  [
+                    51,
+                    -1
+                  ],
+                  [
+                    67,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "92cc70d760d54f63ac07bdd2e1f405fe3bb5310f9b07558de8888e479705c1cb",
+                "boundary_support_size": 21,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 9
+              },
+              {
+                "quotient_class_rows": [
+                  33,
+                  34,
+                  35,
+                  36,
+                  37
+                ],
+                "quotient_class_hash": "c8746fd72ec773b0f45dcc1d697a3c5708e83ebc14e09165121fd7e4a78f124c",
+                "cycle_columns": [
+                  12,
+                  70
+                ],
+                "cycle_hash": "041880738e7708ae8b327ab9c925974a9571df025b5f214643047656d4417c17",
+                "cycle_support_size": 2,
+                "boundary": [
+                  [
+                    27,
+                    -2
+                  ],
+                  [
+                    28,
+                    2
+                  ],
+                  [
+                    29,
+                    -2
+                  ],
+                  [
+                    30,
+                    2
+                  ],
+                  [
+                    31,
+                    -2
+                  ],
+                  [
+                    32,
+                    2
+                  ],
+                  [
+                    33,
+                    -1
+                  ],
+                  [
+                    34,
+                    1
+                  ],
+                  [
+                    35,
+                    -1
+                  ],
+                  [
+                    36,
+                    1
+                  ],
+                  [
+                    37,
+                    -1
+                  ],
+                  [
+                    38,
+                    2
+                  ],
+                  [
+                    39,
+                    -2
+                  ],
+                  [
+                    40,
+                    2
+                  ],
+                  [
+                    41,
+                    -2
+                  ],
+                  [
+                    42,
+                    2
+                  ],
+                  [
+                    43,
+                    -1
+                  ],
+                  [
+                    44,
+                    1
+                  ],
+                  [
+                    45,
+                    -1
+                  ],
+                  [
+                    46,
+                    1
+                  ],
+                  [
+                    47,
+                    -1
+                  ],
+                  [
+                    52,
+                    1
+                  ],
+                  [
+                    53,
+                    -1
+                  ],
+                  [
+                    54,
+                    1
+                  ],
+                  [
+                    55,
+                    -1
+                  ],
+                  [
+                    59,
+                    -1
+                  ],
+                  [
+                    60,
+                    1
+                  ],
+                  [
+                    61,
+                    -1
+                  ],
+                  [
+                    64,
+                    1
+                  ],
+                  [
+                    65,
+                    -1
+                  ],
+                  [
+                    67,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "93b72448446994fec7d9e74e2a51b94412c4233e6bb847a95e130b248e99e2ee",
+                "boundary_support_size": 31,
+                "boundary_max_abs": 2,
+                "exact_identity": true,
+                "p": 9
+              }
+            ],
+            "selected_subspace_hash": "632e6c66dace3bc5090a2f00ebaa3b6b2041854b3fa923079f02ecde27dbf511"
+          },
+          "audit": {
+            "order": "high-reverse",
+            "kernel_dimension": 124,
+            "nonzero_candidate_count": 7,
+            "nonzero_quotient_classes_seen": 3,
+            "selected": [
+              {
+                "quotient_class_rows": [
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32
+                ],
+                "quotient_class_hash": "7ebbd5e798ad6255e17afb0248f538cd2c2dce51ac1d3f8fee20ebd091b93a54",
+                "cycle_columns": [
+                  19,
+                  78,
+                  81,
+                  91,
+                  94,
+                  106,
+                  109,
+                  122,
+                  125,
+                  139
+                ],
+                "cycle_hash": "9dcef5d5947494796c5cb093d69bde6b16789b57579c7f6fd14d575f8b2d8f14",
+                "cycle_support_size": 10,
+                "boundary": [
+                  [
+                    27,
+                    -1
+                  ],
+                  [
+                    28,
+                    1
+                  ],
+                  [
+                    29,
+                    -1
+                  ],
+                  [
+                    30,
+                    1
+                  ],
+                  [
+                    31,
+                    -1
+                  ],
+                  [
+                    32,
+                    1
+                  ],
+                  [
+                    38,
+                    1
+                  ],
+                  [
+                    39,
+                    -1
+                  ],
+                  [
+                    40,
+                    1
+                  ],
+                  [
+                    41,
+                    -1
+                  ],
+                  [
+                    42,
+                    1
+                  ],
+                  [
+                    43,
+                    -1
+                  ],
+                  [
+                    44,
+                    1
+                  ],
+                  [
+                    45,
+                    -1
+                  ],
+                  [
+                    46,
+                    1
+                  ],
+                  [
+                    47,
+                    -1
+                  ],
+                  [
+                    59,
+                    -1
+                  ],
+                  [
+                    60,
+                    1
+                  ],
+                  [
+                    61,
+                    -1
+                  ],
+                  [
+                    67,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "ac33a7630106641222a73d8e4f48c442a1cb0364f7f0e58a91ddfc4a3e9cf835",
+                "boundary_support_size": 20,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 9
+              },
+              {
+                "quotient_class_rows": [
+                  27,
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37
+                ],
+                "quotient_class_hash": "ba06bb6ff01b6db973e065d5484538d6e040e6add5d56227ea36f9772ccf270f",
+                "cycle_columns": [
+                  13,
+                  70,
+                  81,
+                  91,
+                  94,
+                  106,
+                  109,
+                  122,
+                  125,
+                  139
+                ],
+                "cycle_hash": "96b289f7e440cb9f6b1909e1b14f2145247e1bcca3661e7371fd33a2720e67c4",
+                "cycle_support_size": 10,
+                "boundary": [
+                  [
+                    27,
+                    -1
+                  ],
+                  [
+                    28,
+                    1
+                  ],
+                  [
+                    29,
+                    -1
+                  ],
+                  [
+                    30,
+                    1
+                  ],
+                  [
+                    31,
+                    -1
+                  ],
+                  [
+                    32,
+                    1
+                  ],
+                  [
+                    33,
+                    -1
+                  ],
+                  [
+                    34,
+                    1
+                  ],
+                  [
+                    35,
+                    -1
+                  ],
+                  [
+                    36,
+                    1
+                  ],
+                  [
+                    37,
+                    -1
+                  ],
+                  [
+                    38,
+                    1
+                  ],
+                  [
+                    39,
+                    -1
+                  ],
+                  [
+                    40,
+                    1
+                  ],
+                  [
+                    41,
+                    -1
+                  ],
+                  [
+                    42,
+                    1
+                  ],
+                  [
+                    48,
+                    -1
+                  ],
+                  [
+                    49,
+                    1
+                  ],
+                  [
+                    50,
+                    -1
+                  ],
+                  [
+                    51,
+                    1
+                  ],
+                  [
+                    59,
+                    -1
+                  ],
+                  [
+                    60,
+                    1
+                  ],
+                  [
+                    61,
+                    -1
+                  ],
+                  [
+                    67,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "412ba864287c571e46fbf9dd12750db02cb5e51645f8cef55ec06dc892db07e0",
+                "boundary_support_size": 24,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 9
+              }
+            ],
+            "selected_subspace_hash": "632e6c66dace3bc5090a2f00ebaa3b6b2041854b3fa923079f02ecde27dbf511"
+          }
+        }
+      ]
+    },
+    {
+      "p": 10,
+      "inclusions": [
+        {
+          "source_mask": 58,
+          "target_mask": 59,
+          "relative_sha256": "4aad918a41768e73d3d9f86b004fd9622d53ece76a213cfaf02137a6acc37aa4",
+          "primary": {
+            "order": "low-forward",
+            "kernel_dimension": 172,
+            "nonzero_candidate_count": 18,
+            "nonzero_quotient_classes_seen": 3,
+            "selected": [
+              {
+                "quotient_class_rows": [
+                  1,
+                  5,
+                  11,
+                  17,
+                  25,
+                  34
+                ],
+                "quotient_class_hash": "17124e057974d1cf17df3c85f45f31a6d3764a44fe1508f2fea8335e4de5ce5a",
+                "cycle_columns": [
+                  23
+                ],
+                "cycle_hash": "761a941bccfaa75dd8ac321e53f2b0a76740e2df7272bc021b2e9efe2a88e63b",
+                "cycle_support_size": 1,
+                "boundary": [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    5,
+                    -1
+                  ],
+                  [
+                    7,
+                    -1
+                  ],
+                  [
+                    9,
+                    1
+                  ],
+                  [
+                    12,
+                    1
+                  ],
+                  [
+                    14,
+                    -1
+                  ],
+                  [
+                    16,
+                    -1
+                  ],
+                  [
+                    17,
+                    1
+                  ],
+                  [
+                    18,
+                    1
+                  ],
+                  [
+                    19,
+                    -1
+                  ],
+                  [
+                    20,
+                    -1
+                  ],
+                  [
+                    22,
+                    1
+                  ],
+                  [
+                    24,
+                    1
+                  ],
+                  [
+                    25,
+                    -1
+                  ],
+                  [
+                    26,
+                    -1
+                  ],
+                  [
+                    27,
+                    1
+                  ],
+                  [
+                    29,
+                    1
+                  ],
+                  [
+                    31,
+                    -1
+                  ],
+                  [
+                    33,
+                    -1
+                  ],
+                  [
+                    34,
+                    1
+                  ],
+                  [
+                    35,
+                    1
+                  ],
+                  [
+                    36,
+                    -1
+                  ],
+                  [
+                    38,
+                    1
+                  ],
+                  [
+                    40,
+                    1
+                  ],
+                  [
+                    41,
+                    1
+                  ],
+                  [
+                    42,
+                    -1
+                  ],
+                  [
+                    44,
+                    1
+                  ]
+                ],
+                "boundary_hash": "8dc31e899d15b4910a9903394df117ec4a596832e4c3a6b28fd1f626b2ea1e4b",
+                "boundary_support_size": 27,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 10
+              },
+              {
+                "quotient_class_rows": [
+                  6,
+                  8,
+                  10,
+                  18,
+                  26,
+                  35
+                ],
+                "quotient_class_hash": "1e384abde13862c58be6f1becb386e88905a36081ec2419762acbc158092b74e",
+                "cycle_columns": [
+                  15,
+                  88
+                ],
+                "cycle_hash": "96b790924c2c594d60d8b820287e2ad62e6837cc6619a6a550f254c9b8e02900",
+                "cycle_support_size": 2,
+                "boundary": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    5,
+                    -2
+                  ],
+                  [
+                    6,
+                    1
+                  ],
+                  [
+                    7,
+                    -2
+                  ],
+                  [
+                    8,
+                    -1
+                  ],
+                  [
+                    9,
+                    2
+                  ],
+                  [
+                    10,
+                    -1
+                  ],
+                  [
+                    12,
+                    1
+                  ],
+                  [
+                    14,
+                    -1
+                  ],
+                  [
+                    16,
+                    -1
+                  ],
+                  [
+                    17,
+                    2
+                  ],
+                  [
+                    18,
+                    2
+                  ],
+                  [
+                    19,
+                    -2
+                  ],
+                  [
+                    20,
+                    -1
+                  ],
+                  [
+                    22,
+                    1
+                  ],
+                  [
+                    24,
+                    1
+                  ],
+                  [
+                    25,
+                    -2
+                  ],
+                  [
+                    26,
+                    -2
+                  ],
+                  [
+                    27,
+                    2
+                  ],
+                  [
+                    29,
+                    1
+                  ],
+                  [
+                    31,
+                    -1
+                  ],
+                  [
+                    33,
+                    -1
+                  ],
+                  [
+                    34,
+                    2
+                  ],
+                  [
+                    35,
+                    2
+                  ],
+                  [
+                    36,
+                    -1
+                  ],
+                  [
+                    38,
+                    1
+                  ],
+                  [
+                    40,
+                    1
+                  ],
+                  [
+                    41,
+                    1
+                  ],
+                  [
+                    42,
+                    -1
+                  ],
+                  [
+                    44,
+                    1
+                  ]
+                ],
+                "boundary_hash": "e2c85ceefd651ae59f0889b01ba3acdf4e3ad35e3b2693777e7b32d8a55a2cf1",
+                "boundary_support_size": 30,
+                "boundary_max_abs": 2,
+                "exact_identity": true,
+                "p": 10
+              }
+            ],
+            "selected_subspace_hash": "2a1e05138f6b726a317e058c70eb6044dc0d762b213b84f3b954bd23a110c403"
+          },
+          "audit": {
+            "order": "high-reverse",
+            "kernel_dimension": 172,
+            "nonzero_candidate_count": 7,
+            "nonzero_quotient_classes_seen": 3,
+            "selected": [
+              {
+                "quotient_class_rows": [
+                  1,
+                  5,
+                  11,
+                  17,
+                  25,
+                  34
+                ],
+                "quotient_class_hash": "17124e057974d1cf17df3c85f45f31a6d3764a44fe1508f2fea8335e4de5ce5a",
+                "cycle_columns": [
+                  25,
+                  96,
+                  99,
+                  109,
+                  112,
+                  124,
+                  127,
+                  141,
+                  144,
+                  159,
+                  162,
+                  178
+                ],
+                "cycle_hash": "2efe93ecd9729c89dee1358e52bc039a3a1a67fb8e0afbacf14a93501ee0da14",
+                "cycle_support_size": 12,
+                "boundary": [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    5,
+                    -1
+                  ],
+                  [
+                    7,
+                    -1
+                  ],
+                  [
+                    9,
+                    1
+                  ],
+                  [
+                    12,
+                    1
+                  ],
+                  [
+                    14,
+                    -1
+                  ],
+                  [
+                    16,
+                    -1
+                  ],
+                  [
+                    17,
+                    1
+                  ],
+                  [
+                    18,
+                    1
+                  ],
+                  [
+                    19,
+                    -1
+                  ],
+                  [
+                    25,
+                    -1
+                  ],
+                  [
+                    27,
+                    1
+                  ],
+                  [
+                    28,
+                    -1
+                  ],
+                  [
+                    29,
+                    1
+                  ],
+                  [
+                    31,
+                    -1
+                  ],
+                  [
+                    33,
+                    -1
+                  ],
+                  [
+                    34,
+                    1
+                  ],
+                  [
+                    35,
+                    1
+                  ],
+                  [
+                    41,
+                    1
+                  ],
+                  [
+                    42,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "419b973e0824697ae504bda3d94c1f321e3695abb35a3c03917f370e2ceaa27b",
+                "boundary_support_size": 20,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 10
+              },
+              {
+                "quotient_class_rows": [
+                  1,
+                  5,
+                  6,
+                  8,
+                  10,
+                  11,
+                  17,
+                  18,
+                  25,
+                  26,
+                  34,
+                  35
+                ],
+                "quotient_class_hash": "f3411f43025eecf3fc87b6f533e6cf89066d482072180872c3bb3f95bd3c1875",
+                "cycle_columns": [
+                  13,
+                  88,
+                  99,
+                  109,
+                  112,
+                  124,
+                  127,
+                  141,
+                  144,
+                  159,
+                  162,
+                  178
+                ],
+                "cycle_hash": "4aeee391d163cd3709615550cd781e6f4aa20a20b24e5787394e8c3c07e41fbd",
+                "cycle_support_size": 12,
+                "boundary": [
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    5,
+                    -1
+                  ],
+                  [
+                    6,
+                    1
+                  ],
+                  [
+                    7,
+                    -1
+                  ],
+                  [
+                    8,
+                    -1
+                  ],
+                  [
+                    9,
+                    1
+                  ],
+                  [
+                    10,
+                    -1
+                  ],
+                  [
+                    13,
+                    1
+                  ],
+                  [
+                    15,
+                    -1
+                  ],
+                  [
+                    18,
+                    1
+                  ],
+                  [
+                    25,
+                    -1
+                  ],
+                  [
+                    26,
+                    -1
+                  ],
+                  [
+                    27,
+                    1
+                  ],
+                  [
+                    29,
+                    1
+                  ],
+                  [
+                    31,
+                    -1
+                  ],
+                  [
+                    33,
+                    -1
+                  ],
+                  [
+                    34,
+                    1
+                  ],
+                  [
+                    35,
+                    2
+                  ],
+                  [
+                    41,
+                    1
+                  ],
+                  [
+                    42,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "ce3cfe889a27db11e8d33bf5a3ec33d4c43f877dd67928cc49f88a2847a984d3",
+                "boundary_support_size": 20,
+                "boundary_max_abs": 2,
+                "exact_identity": true,
+                "p": 10
+              }
+            ],
+            "selected_subspace_hash": "2a1e05138f6b726a317e058c70eb6044dc0d762b213b84f3b954bd23a110c403"
+          }
+        },
+        {
+          "source_mask": 58,
+          "target_mask": 62,
+          "relative_sha256": "35d45ddcc1aebcae6bb4b79e09db37331a41ec3dc67a83a015fa8609cf6b1f74",
+          "primary": {
+            "order": "low-forward",
+            "kernel_dimension": 159,
+            "nonzero_candidate_count": 18,
+            "nonzero_quotient_classes_seen": 3,
+            "selected": [
+              {
+                "quotient_class_rows": [
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38
+                ],
+                "quotient_class_hash": "011ca51bd84ae7368801000d87864a0ac75baee6b38569712d7075287dcdc697",
+                "cycle_columns": [
+                  23
+                ],
+                "cycle_hash": "761a941bccfaa75dd8ac321e53f2b0a76740e2df7272bc021b2e9efe2a88e63b",
+                "cycle_support_size": 1,
+                "boundary": [
+                  [
+                    32,
+                    1
+                  ],
+                  [
+                    33,
+                    -1
+                  ],
+                  [
+                    34,
+                    1
+                  ],
+                  [
+                    35,
+                    -1
+                  ],
+                  [
+                    36,
+                    1
+                  ],
+                  [
+                    37,
+                    -1
+                  ],
+                  [
+                    38,
+                    1
+                  ],
+                  [
+                    45,
+                    -1
+                  ],
+                  [
+                    46,
+                    1
+                  ],
+                  [
+                    47,
+                    -1
+                  ],
+                  [
+                    48,
+                    1
+                  ],
+                  [
+                    49,
+                    -1
+                  ],
+                  [
+                    50,
+                    1
+                  ],
+                  [
+                    51,
+                    1
+                  ],
+                  [
+                    52,
+                    -1
+                  ],
+                  [
+                    53,
+                    1
+                  ],
+                  [
+                    54,
+                    -1
+                  ],
+                  [
+                    55,
+                    1
+                  ],
+                  [
+                    56,
+                    -1
+                  ],
+                  [
+                    62,
+                    -1
+                  ],
+                  [
+                    63,
+                    1
+                  ],
+                  [
+                    64,
+                    -1
+                  ],
+                  [
+                    65,
+                    1
+                  ],
+                  [
+                    66,
+                    -1
+                  ],
+                  [
+                    71,
+                    1
+                  ],
+                  [
+                    72,
+                    -1
+                  ],
+                  [
+                    73,
+                    1
+                  ],
+                  [
+                    74,
+                    -1
+                  ],
+                  [
+                    78,
+                    -1
+                  ],
+                  [
+                    79,
+                    1
+                  ],
+                  [
+                    80,
+                    -1
+                  ],
+                  [
+                    83,
+                    1
+                  ],
+                  [
+                    84,
+                    -1
+                  ],
+                  [
+                    86,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "7d8863df61b0bc203eb6c1c5883c98e62eed1d60f2b4786363ecdaa450ca4153",
+                "boundary_support_size": 34,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 10
+              },
+              {
+                "quotient_class_rows": [
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44
+                ],
+                "quotient_class_hash": "15303e8ebc4dee5b6333ac386b7571899f74eb5a1af320567b81ae50dbefe05b",
+                "cycle_columns": [
+                  15,
+                  88
+                ],
+                "cycle_hash": "96b790924c2c594d60d8b820287e2ad62e6837cc6619a6a550f254c9b8e02900",
+                "cycle_support_size": 2,
+                "boundary": [
+                  [
+                    32,
+                    2
+                  ],
+                  [
+                    33,
+                    -2
+                  ],
+                  [
+                    34,
+                    2
+                  ],
+                  [
+                    35,
+                    -2
+                  ],
+                  [
+                    36,
+                    2
+                  ],
+                  [
+                    37,
+                    -2
+                  ],
+                  [
+                    38,
+                    2
+                  ],
+                  [
+                    39,
+                    1
+                  ],
+                  [
+                    40,
+                    -1
+                  ],
+                  [
+                    41,
+                    1
+                  ],
+                  [
+                    42,
+                    -1
+                  ],
+                  [
+                    43,
+                    1
+                  ],
+                  [
+                    44,
+                    -1
+                  ],
+                  [
+                    45,
+                    -2
+                  ],
+                  [
+                    46,
+                    2
+                  ],
+                  [
+                    47,
+                    -2
+                  ],
+                  [
+                    48,
+                    2
+                  ],
+                  [
+                    49,
+                    -2
+                  ],
+                  [
+                    50,
+                    2
+                  ],
+                  [
+                    51,
+                    1
+                  ],
+                  [
+                    52,
+                    -1
+                  ],
+                  [
+                    53,
+                    1
+                  ],
+                  [
+                    54,
+                    -1
+                  ],
+                  [
+                    55,
+                    1
+                  ],
+                  [
+                    56,
+                    -1
+                  ],
+                  [
+                    62,
+                    -1
+                  ],
+                  [
+                    63,
+                    1
+                  ],
+                  [
+                    64,
+                    -1
+                  ],
+                  [
+                    65,
+                    1
+                  ],
+                  [
+                    66,
+                    -1
+                  ],
+                  [
+                    71,
+                    1
+                  ],
+                  [
+                    72,
+                    -1
+                  ],
+                  [
+                    73,
+                    1
+                  ],
+                  [
+                    74,
+                    -1
+                  ],
+                  [
+                    78,
+                    -1
+                  ],
+                  [
+                    79,
+                    1
+                  ],
+                  [
+                    80,
+                    -1
+                  ],
+                  [
+                    83,
+                    1
+                  ],
+                  [
+                    84,
+                    -1
+                  ],
+                  [
+                    86,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "0f3e0b33ec43b4231a41283e1a45a9b7b7e0e4e47b71b4b969dc8e41d0c76399",
+                "boundary_support_size": 40,
+                "boundary_max_abs": 2,
+                "exact_identity": true,
+                "p": 10
+              }
+            ],
+            "selected_subspace_hash": "ab2d0b3a2403d8e1bb21a7c626b5b55bccfa201c3b0738e8f5228f92271062c3"
+          },
+          "audit": {
+            "order": "high-reverse",
+            "kernel_dimension": 159,
+            "nonzero_candidate_count": 7,
+            "nonzero_quotient_classes_seen": 3,
+            "selected": [
+              {
+                "quotient_class_rows": [
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38
+                ],
+                "quotient_class_hash": "011ca51bd84ae7368801000d87864a0ac75baee6b38569712d7075287dcdc697",
+                "cycle_columns": [
+                  25,
+                  96,
+                  99,
+                  109,
+                  112,
+                  124,
+                  127,
+                  141,
+                  144,
+                  159,
+                  162,
+                  178
+                ],
+                "cycle_hash": "2efe93ecd9729c89dee1358e52bc039a3a1a67fb8e0afbacf14a93501ee0da14",
+                "cycle_support_size": 12,
+                "boundary": [
+                  [
+                    32,
+                    1
+                  ],
+                  [
+                    33,
+                    -1
+                  ],
+                  [
+                    34,
+                    1
+                  ],
+                  [
+                    35,
+                    -1
+                  ],
+                  [
+                    36,
+                    1
+                  ],
+                  [
+                    37,
+                    -1
+                  ],
+                  [
+                    38,
+                    1
+                  ],
+                  [
+                    45,
+                    -1
+                  ],
+                  [
+                    46,
+                    1
+                  ],
+                  [
+                    47,
+                    -1
+                  ],
+                  [
+                    48,
+                    1
+                  ],
+                  [
+                    49,
+                    -1
+                  ],
+                  [
+                    50,
+                    1
+                  ],
+                  [
+                    51,
+                    1
+                  ],
+                  [
+                    52,
+                    -1
+                  ],
+                  [
+                    53,
+                    1
+                  ],
+                  [
+                    54,
+                    -1
+                  ],
+                  [
+                    55,
+                    1
+                  ],
+                  [
+                    56,
+                    -1
+                  ],
+                  [
+                    71,
+                    1
+                  ],
+                  [
+                    72,
+                    -1
+                  ],
+                  [
+                    73,
+                    1
+                  ],
+                  [
+                    74,
+                    -1
+                  ],
+                  [
+                    83,
+                    1
+                  ],
+                  [
+                    84,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "f995b65632c743aa3bcee9ca51fd19aaa040f6f6120540f7dee5d045d1500a5d",
+                "boundary_support_size": 25,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 10
+              },
+              {
+                "quotient_class_rows": [
+                  32,
+                  33,
+                  34,
+                  35,
+                  36,
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44
+                ],
+                "quotient_class_hash": "7f4225592e9e0ca76adad5236705c6d31541fe6135af7a070de661e470035eca",
+                "cycle_columns": [
+                  13,
+                  88,
+                  99,
+                  109,
+                  112,
+                  124,
+                  127,
+                  141,
+                  144,
+                  159,
+                  162,
+                  178
+                ],
+                "cycle_hash": "4aeee391d163cd3709615550cd781e6f4aa20a20b24e5787394e8c3c07e41fbd",
+                "cycle_support_size": 12,
+                "boundary": [
+                  [
+                    32,
+                    1
+                  ],
+                  [
+                    33,
+                    -1
+                  ],
+                  [
+                    34,
+                    1
+                  ],
+                  [
+                    35,
+                    -1
+                  ],
+                  [
+                    36,
+                    1
+                  ],
+                  [
+                    37,
+                    -1
+                  ],
+                  [
+                    38,
+                    1
+                  ],
+                  [
+                    39,
+                    1
+                  ],
+                  [
+                    40,
+                    -1
+                  ],
+                  [
+                    41,
+                    1
+                  ],
+                  [
+                    42,
+                    -1
+                  ],
+                  [
+                    43,
+                    1
+                  ],
+                  [
+                    44,
+                    -1
+                  ],
+                  [
+                    45,
+                    -1
+                  ],
+                  [
+                    46,
+                    1
+                  ],
+                  [
+                    47,
+                    -1
+                  ],
+                  [
+                    48,
+                    1
+                  ],
+                  [
+                    49,
+                    -1
+                  ],
+                  [
+                    50,
+                    1
+                  ],
+                  [
+                    57,
+                    1
+                  ],
+                  [
+                    58,
+                    -1
+                  ],
+                  [
+                    59,
+                    1
+                  ],
+                  [
+                    60,
+                    -1
+                  ],
+                  [
+                    61,
+                    1
+                  ],
+                  [
+                    71,
+                    1
+                  ],
+                  [
+                    72,
+                    -1
+                  ],
+                  [
+                    73,
+                    1
+                  ],
+                  [
+                    74,
+                    -1
+                  ],
+                  [
+                    83,
+                    1
+                  ],
+                  [
+                    84,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "a29d5faa534d5fd292928d152be70a90bbcdfae2ce1e0207f53ae7071e67b6c7",
+                "boundary_support_size": 30,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 10
+              }
+            ],
+            "selected_subspace_hash": "ab2d0b3a2403d8e1bb21a7c626b5b55bccfa201c3b0738e8f5228f92271062c3"
+          }
+        }
+      ]
+    },
+    {
+      "p": 11,
+      "inclusions": [
+        {
+          "source_mask": 58,
+          "target_mask": 59,
+          "relative_sha256": "0c803c24907a9404ffe3160a87a74e6b2c926daf7666aecb2193a8c202b89d23",
+          "primary": {
+            "order": "low-forward",
+            "kernel_dimension": 216,
+            "nonzero_candidate_count": 20,
+            "nonzero_quotient_classes_seen": 3,
+            "selected": [
+              {
+                "quotient_class_rows": [
+                  5,
+                  7,
+                  11,
+                  17,
+                  25,
+                  35,
+                  44,
+                  50
+                ],
+                "quotient_class_hash": "cddc8ef1cd883974da9a89dfab58cb51d87bdf69e03da3d6f4eee7166e68b6d0",
+                "cycle_columns": [
+                  33,
+                  44,
+                  50,
+                  55,
+                  86,
+                  202
+                ],
+                "cycle_hash": "922fcd04aa93158ce1ab681f4b90a8b2637ab0c588b1aa29dfd2b847ccae7795",
+                "cycle_support_size": 6,
+                "boundary": [
+                  [
+                    3,
+                    -1
+                  ],
+                  [
+                    5,
+                    1
+                  ],
+                  [
+                    9,
+                    1
+                  ],
+                  [
+                    11,
+                    -1
+                  ],
+                  [
+                    12,
+                    -1
+                  ],
+                  [
+                    13,
+                    2
+                  ],
+                  [
+                    14,
+                    -1
+                  ],
+                  [
+                    15,
+                    1
+                  ],
+                  [
+                    16,
+                    1
+                  ],
+                  [
+                    17,
+                    -1
+                  ],
+                  [
+                    18,
+                    1
+                  ],
+                  [
+                    19,
+                    -2
+                  ],
+                  [
+                    21,
+                    -1
+                  ],
+                  [
+                    27,
+                    1
+                  ],
+                  [
+                    28,
+                    -1
+                  ],
+                  [
+                    29,
+                    1
+                  ],
+                  [
+                    31,
+                    1
+                  ],
+                  [
+                    37,
+                    -1
+                  ],
+                  [
+                    38,
+                    1
+                  ],
+                  [
+                    40,
+                    -1
+                  ],
+                  [
+                    54,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "f66a54d0d27a880caa812cd27611495d65bf60b2cb3f78bb4941231f320715d5",
+                "boundary_support_size": 21,
+                "boundary_max_abs": 2,
+                "exact_identity": true,
+                "p": 11
+              },
+              {
+                "quotient_class_rows": [
+                  0,
+                  8,
+                  10,
+                  18,
+                  26,
+                  36,
+                  45
+                ],
+                "quotient_class_hash": "0fc2a17970d03def8d4c8582ce29e6031ab5a0a50c55a29a50139a5bbe0db502",
+                "cycle_columns": [
+                  20,
+                  108
+                ],
+                "cycle_hash": "a75a6ee9c0e2d1ffd8c82d20aeec88e5d97ae021958085d98292a0d6f86b6613",
+                "cycle_support_size": 2,
+                "boundary": [
+                  [
+                    0,
+                    -1
+                  ],
+                  [
+                    3,
+                    -2
+                  ],
+                  [
+                    5,
+                    2
+                  ],
+                  [
+                    8,
+                    -1
+                  ],
+                  [
+                    9,
+                    2
+                  ],
+                  [
+                    10,
+                    1
+                  ],
+                  [
+                    11,
+                    -2
+                  ],
+                  [
+                    12,
+                    -1
+                  ],
+                  [
+                    13,
+                    2
+                  ],
+                  [
+                    14,
+                    -1
+                  ],
+                  [
+                    16,
+                    1
+                  ],
+                  [
+                    18,
+                    2
+                  ],
+                  [
+                    19,
+                    -2
+                  ],
+                  [
+                    20,
+                    1
+                  ],
+                  [
+                    21,
+                    -2
+                  ],
+                  [
+                    22,
+                    1
+                  ],
+                  [
+                    24,
+                    -1
+                  ],
+                  [
+                    26,
+                    -2
+                  ],
+                  [
+                    27,
+                    2
+                  ],
+                  [
+                    30,
+                    -1
+                  ],
+                  [
+                    31,
+                    2
+                  ],
+                  [
+                    32,
+                    -1
+                  ],
+                  [
+                    34,
+                    1
+                  ],
+                  [
+                    36,
+                    2
+                  ],
+                  [
+                    37,
+                    -2
+                  ],
+                  [
+                    39,
+                    1
+                  ],
+                  [
+                    40,
+                    -2
+                  ],
+                  [
+                    41,
+                    1
+                  ],
+                  [
+                    43,
+                    -1
+                  ],
+                  [
+                    45,
+                    -2
+                  ],
+                  [
+                    46,
+                    -1
+                  ],
+                  [
+                    47,
+                    -1
+                  ],
+                  [
+                    49,
+                    1
+                  ],
+                  [
+                    51,
+                    1
+                  ],
+                  [
+                    53,
+                    -1
+                  ],
+                  [
+                    54,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "ccb647ae8ddd186408aafb21e21b1b7e74f297777cf7e34f814838efc057a574",
+                "boundary_support_size": 36,
+                "boundary_max_abs": 2,
+                "exact_identity": true,
+                "p": 11
+              }
+            ],
+            "selected_subspace_hash": "f54241b25e73134f76632841b4e00b649665051573f1493a4b6b563efc15ee33"
+          },
+          "audit": {
+            "order": "high-reverse",
+            "kernel_dimension": 216,
+            "nonzero_candidate_count": 7,
+            "nonzero_quotient_classes_seen": 3,
+            "selected": [
+              {
+                "quotient_class_rows": [
+                  5,
+                  7,
+                  11,
+                  17,
+                  25,
+                  35,
+                  44,
+                  50
+                ],
+                "quotient_class_hash": "cddc8ef1cd883974da9a89dfab58cb51d87bdf69e03da3d6f4eee7166e68b6d0",
+                "cycle_columns": [
+                  33,
+                  119,
+                  122,
+                  132,
+                  135,
+                  147,
+                  150,
+                  164,
+                  167,
+                  183,
+                  186,
+                  203,
+                  206,
+                  224
+                ],
+                "cycle_hash": "b18a1f579951c4f54e6ce1d8ba42035483042643406b3f4e0dbfbf185d4bcc59",
+                "cycle_support_size": 14,
+                "boundary": [
+                  [
+                    3,
+                    -1
+                  ],
+                  [
+                    5,
+                    1
+                  ],
+                  [
+                    9,
+                    1
+                  ],
+                  [
+                    11,
+                    -1
+                  ],
+                  [
+                    12,
+                    -1
+                  ],
+                  [
+                    13,
+                    1
+                  ],
+                  [
+                    14,
+                    -1
+                  ],
+                  [
+                    16,
+                    1
+                  ],
+                  [
+                    18,
+                    1
+                  ],
+                  [
+                    19,
+                    -1
+                  ],
+                  [
+                    21,
+                    -1
+                  ],
+                  [
+                    27,
+                    1
+                  ],
+                  [
+                    28,
+                    -1
+                  ],
+                  [
+                    30,
+                    -1
+                  ],
+                  [
+                    31,
+                    1
+                  ],
+                  [
+                    32,
+                    -1
+                  ],
+                  [
+                    34,
+                    1
+                  ],
+                  [
+                    36,
+                    1
+                  ],
+                  [
+                    37,
+                    -1
+                  ],
+                  [
+                    40,
+                    -1
+                  ],
+                  [
+                    46,
+                    -1
+                  ],
+                  [
+                    47,
+                    -1
+                  ],
+                  [
+                    49,
+                    1
+                  ],
+                  [
+                    54,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "86d163297754cc41dfe94e43a3bec0c094504a127825a3db2bc3b1cc721d7210",
+                "boundary_support_size": 24,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 11
+              },
+              {
+                "quotient_class_rows": [
+                  0,
+                  5,
+                  7,
+                  8,
+                  10,
+                  11,
+                  17,
+                  18,
+                  25,
+                  26,
+                  35,
+                  36,
+                  44,
+                  45,
+                  50
+                ],
+                "quotient_class_hash": "ea401a637d7737e92b6e7e886d1a63d50d82f0ab74afa04045f65e6837748c11",
+                "cycle_columns": [
+                  16,
+                  111,
+                  122,
+                  132,
+                  135,
+                  147,
+                  150,
+                  164,
+                  167,
+                  183,
+                  186,
+                  203,
+                  206,
+                  224
+                ],
+                "cycle_hash": "6aa0eee6809948aaee237a22dc2dc9299ab16644d80a1b29ad6a07be2fafd1e2",
+                "cycle_support_size": 14,
+                "boundary": [
+                  [
+                    0,
+                    -1
+                  ],
+                  [
+                    3,
+                    -1
+                  ],
+                  [
+                    5,
+                    1
+                  ],
+                  [
+                    8,
+                    -1
+                  ],
+                  [
+                    9,
+                    1
+                  ],
+                  [
+                    10,
+                    1
+                  ],
+                  [
+                    11,
+                    -1
+                  ],
+                  [
+                    15,
+                    -1
+                  ],
+                  [
+                    17,
+                    1
+                  ],
+                  [
+                    18,
+                    1
+                  ],
+                  [
+                    21,
+                    -1
+                  ],
+                  [
+                    26,
+                    -1
+                  ],
+                  [
+                    27,
+                    1
+                  ],
+                  [
+                    29,
+                    -1
+                  ],
+                  [
+                    30,
+                    -1
+                  ],
+                  [
+                    31,
+                    1
+                  ],
+                  [
+                    32,
+                    -1
+                  ],
+                  [
+                    34,
+                    1
+                  ],
+                  [
+                    36,
+                    2
+                  ],
+                  [
+                    37,
+                    -1
+                  ],
+                  [
+                    38,
+                    -1
+                  ],
+                  [
+                    40,
+                    -1
+                  ],
+                  [
+                    45,
+                    -1
+                  ],
+                  [
+                    46,
+                    -1
+                  ],
+                  [
+                    47,
+                    -1
+                  ],
+                  [
+                    49,
+                    1
+                  ],
+                  [
+                    54,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "a67f56c2732be85a55a1fa8844ee2240fedeb580f24ff49fe558349d4eab1d9d",
+                "boundary_support_size": 27,
+                "boundary_max_abs": 2,
+                "exact_identity": true,
+                "p": 11
+              }
+            ],
+            "selected_subspace_hash": "f54241b25e73134f76632841b4e00b649665051573f1493a4b6b563efc15ee33"
+          }
+        },
+        {
+          "source_mask": 58,
+          "target_mask": 62,
+          "relative_sha256": "5435894d965d8745a203df75ba20202f92795b8e81eb5dac2876041310e8d6d5",
+          "primary": {
+            "order": "low-forward",
+            "kernel_dimension": 201,
+            "nonzero_candidate_count": 20,
+            "nonzero_quotient_classes_seen": 3,
+            "selected": [
+              {
+                "quotient_class_rows": [
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44
+                ],
+                "quotient_class_hash": "9ccf6f8e402b5c0e1d0dda93192dd91ea0e4b18f252745100eb41d18da4905be",
+                "cycle_columns": [
+                  33,
+                  44,
+                  50,
+                  55,
+                  86,
+                  202
+                ],
+                "cycle_hash": "922fcd04aa93158ce1ab681f4b90a8b2637ab0c588b1aa29dfd2b847ccae7795",
+                "cycle_support_size": 6,
+                "boundary": [
+                  [
+                    7,
+                    -1
+                  ],
+                  [
+                    8,
+                    1
+                  ],
+                  [
+                    9,
+                    -1
+                  ],
+                  [
+                    10,
+                    1
+                  ],
+                  [
+                    11,
+                    -1
+                  ],
+                  [
+                    12,
+                    1
+                  ],
+                  [
+                    13,
+                    -1
+                  ],
+                  [
+                    14,
+                    1
+                  ],
+                  [
+                    52,
+                    1
+                  ],
+                  [
+                    53,
+                    -1
+                  ],
+                  [
+                    54,
+                    1
+                  ],
+                  [
+                    55,
+                    -1
+                  ],
+                  [
+                    56,
+                    1
+                  ],
+                  [
+                    57,
+                    -1
+                  ],
+                  [
+                    58,
+                    1
+                  ],
+                  [
+                    59,
+                    -1
+                  ],
+                  [
+                    60,
+                    1
+                  ],
+                  [
+                    61,
+                    -1
+                  ],
+                  [
+                    62,
+                    1
+                  ],
+                  [
+                    63,
+                    -1
+                  ],
+                  [
+                    64,
+                    1
+                  ],
+                  [
+                    65,
+                    -1
+                  ],
+                  [
+                    66,
+                    1
+                  ],
+                  [
+                    67,
+                    -1
+                  ],
+                  [
+                    68,
+                    1
+                  ],
+                  [
+                    69,
+                    -1
+                  ],
+                  [
+                    70,
+                    1
+                  ],
+                  [
+                    71,
+                    -1
+                  ],
+                  [
+                    107,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "dd999d24eb6a2ef49d85ad3139e0fb4c50b7fed29703b8c5fab5305468692cdf",
+                "boundary_support_size": 29,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 11
+              },
+              {
+                "quotient_class_rows": [
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51
+                ],
+                "quotient_class_hash": "f2a7dda135aa4c11938c085fa12d17bc0516cf608ee50736f994503e5870d4d7",
+                "cycle_columns": [
+                  20,
+                  108
+                ],
+                "cycle_hash": "a75a6ee9c0e2d1ffd8c82d20aeec88e5d97ae021958085d98292a0d6f86b6613",
+                "cycle_support_size": 2,
+                "boundary": [
+                  [
+                    7,
+                    -2
+                  ],
+                  [
+                    8,
+                    2
+                  ],
+                  [
+                    9,
+                    -2
+                  ],
+                  [
+                    10,
+                    2
+                  ],
+                  [
+                    11,
+                    -2
+                  ],
+                  [
+                    12,
+                    2
+                  ],
+                  [
+                    13,
+                    -2
+                  ],
+                  [
+                    14,
+                    2
+                  ],
+                  [
+                    45,
+                    -1
+                  ],
+                  [
+                    46,
+                    1
+                  ],
+                  [
+                    47,
+                    -1
+                  ],
+                  [
+                    48,
+                    1
+                  ],
+                  [
+                    49,
+                    -1
+                  ],
+                  [
+                    50,
+                    1
+                  ],
+                  [
+                    51,
+                    -1
+                  ],
+                  [
+                    52,
+                    2
+                  ],
+                  [
+                    53,
+                    -2
+                  ],
+                  [
+                    54,
+                    2
+                  ],
+                  [
+                    55,
+                    -2
+                  ],
+                  [
+                    56,
+                    2
+                  ],
+                  [
+                    57,
+                    -2
+                  ],
+                  [
+                    58,
+                    2
+                  ],
+                  [
+                    59,
+                    -1
+                  ],
+                  [
+                    60,
+                    1
+                  ],
+                  [
+                    61,
+                    -1
+                  ],
+                  [
+                    62,
+                    1
+                  ],
+                  [
+                    63,
+                    -1
+                  ],
+                  [
+                    64,
+                    1
+                  ],
+                  [
+                    65,
+                    -1
+                  ],
+                  [
+                    72,
+                    1
+                  ],
+                  [
+                    73,
+                    -1
+                  ],
+                  [
+                    74,
+                    1
+                  ],
+                  [
+                    75,
+                    -1
+                  ],
+                  [
+                    76,
+                    1
+                  ],
+                  [
+                    77,
+                    -1
+                  ],
+                  [
+                    83,
+                    -1
+                  ],
+                  [
+                    84,
+                    1
+                  ],
+                  [
+                    85,
+                    -1
+                  ],
+                  [
+                    86,
+                    1
+                  ],
+                  [
+                    87,
+                    -1
+                  ],
+                  [
+                    92,
+                    1
+                  ],
+                  [
+                    93,
+                    -1
+                  ],
+                  [
+                    94,
+                    1
+                  ],
+                  [
+                    95,
+                    -1
+                  ],
+                  [
+                    99,
+                    -1
+                  ],
+                  [
+                    100,
+                    1
+                  ],
+                  [
+                    101,
+                    -1
+                  ],
+                  [
+                    104,
+                    1
+                  ],
+                  [
+                    105,
+                    -1
+                  ],
+                  [
+                    107,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "8cada28fccbdb489f0b6226dcadaf38d8fb5971636e78733adf428a6b1e53dbd",
+                "boundary_support_size": 50,
+                "boundary_max_abs": 2,
+                "exact_identity": true,
+                "p": 11
+              }
+            ],
+            "selected_subspace_hash": "74a6992e5fb61ab9bc89b161adbb9930a848b0762723fdba0cbca8775b87529e"
+          },
+          "audit": {
+            "order": "high-reverse",
+            "kernel_dimension": 201,
+            "nonzero_candidate_count": 7,
+            "nonzero_quotient_classes_seen": 3,
+            "selected": [
+              {
+                "quotient_class_rows": [
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44
+                ],
+                "quotient_class_hash": "9ccf6f8e402b5c0e1d0dda93192dd91ea0e4b18f252745100eb41d18da4905be",
+                "cycle_columns": [
+                  33,
+                  119,
+                  122,
+                  132,
+                  135,
+                  147,
+                  150,
+                  164,
+                  167,
+                  183,
+                  186,
+                  203,
+                  206,
+                  224
+                ],
+                "cycle_hash": "b18a1f579951c4f54e6ce1d8ba42035483042643406b3f4e0dbfbf185d4bcc59",
+                "cycle_support_size": 14,
+                "boundary": [
+                  [
+                    7,
+                    -1
+                  ],
+                  [
+                    8,
+                    1
+                  ],
+                  [
+                    9,
+                    -1
+                  ],
+                  [
+                    10,
+                    1
+                  ],
+                  [
+                    11,
+                    -1
+                  ],
+                  [
+                    12,
+                    1
+                  ],
+                  [
+                    13,
+                    -1
+                  ],
+                  [
+                    14,
+                    1
+                  ],
+                  [
+                    52,
+                    1
+                  ],
+                  [
+                    53,
+                    -1
+                  ],
+                  [
+                    54,
+                    1
+                  ],
+                  [
+                    55,
+                    -1
+                  ],
+                  [
+                    56,
+                    1
+                  ],
+                  [
+                    57,
+                    -1
+                  ],
+                  [
+                    58,
+                    1
+                  ],
+                  [
+                    59,
+                    -1
+                  ],
+                  [
+                    60,
+                    1
+                  ],
+                  [
+                    61,
+                    -1
+                  ],
+                  [
+                    62,
+                    1
+                  ],
+                  [
+                    63,
+                    -1
+                  ],
+                  [
+                    64,
+                    1
+                  ],
+                  [
+                    65,
+                    -1
+                  ],
+                  [
+                    83,
+                    -1
+                  ],
+                  [
+                    84,
+                    1
+                  ],
+                  [
+                    85,
+                    -1
+                  ],
+                  [
+                    86,
+                    1
+                  ],
+                  [
+                    87,
+                    -1
+                  ],
+                  [
+                    99,
+                    -1
+                  ],
+                  [
+                    100,
+                    1
+                  ],
+                  [
+                    101,
+                    -1
+                  ],
+                  [
+                    107,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "87b2b8379da2d460ffc10441549d626c9bc4f556b502bc09f9f7cbf290207c2f",
+                "boundary_support_size": 31,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 11
+              },
+              {
+                "quotient_class_rows": [
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  45,
+                  46,
+                  47,
+                  48,
+                  49,
+                  50,
+                  51
+                ],
+                "quotient_class_hash": "73592977ab276b108bee1407835ce2fa5e054d9dc6596406705df328b4b3ef55",
+                "cycle_columns": [
+                  16,
+                  111,
+                  122,
+                  132,
+                  135,
+                  147,
+                  150,
+                  164,
+                  167,
+                  183,
+                  186,
+                  203,
+                  206,
+                  224
+                ],
+                "cycle_hash": "6aa0eee6809948aaee237a22dc2dc9299ab16644d80a1b29ad6a07be2fafd1e2",
+                "cycle_support_size": 14,
+                "boundary": [
+                  [
+                    7,
+                    -1
+                  ],
+                  [
+                    8,
+                    1
+                  ],
+                  [
+                    9,
+                    -1
+                  ],
+                  [
+                    10,
+                    1
+                  ],
+                  [
+                    11,
+                    -1
+                  ],
+                  [
+                    12,
+                    1
+                  ],
+                  [
+                    13,
+                    -1
+                  ],
+                  [
+                    14,
+                    1
+                  ],
+                  [
+                    45,
+                    -1
+                  ],
+                  [
+                    46,
+                    1
+                  ],
+                  [
+                    47,
+                    -1
+                  ],
+                  [
+                    48,
+                    1
+                  ],
+                  [
+                    49,
+                    -1
+                  ],
+                  [
+                    50,
+                    1
+                  ],
+                  [
+                    51,
+                    -1
+                  ],
+                  [
+                    52,
+                    1
+                  ],
+                  [
+                    53,
+                    -1
+                  ],
+                  [
+                    54,
+                    1
+                  ],
+                  [
+                    55,
+                    -1
+                  ],
+                  [
+                    56,
+                    1
+                  ],
+                  [
+                    57,
+                    -1
+                  ],
+                  [
+                    58,
+                    1
+                  ],
+                  [
+                    66,
+                    -1
+                  ],
+                  [
+                    67,
+                    1
+                  ],
+                  [
+                    68,
+                    -1
+                  ],
+                  [
+                    69,
+                    1
+                  ],
+                  [
+                    70,
+                    -1
+                  ],
+                  [
+                    71,
+                    1
+                  ],
+                  [
+                    83,
+                    -1
+                  ],
+                  [
+                    84,
+                    1
+                  ],
+                  [
+                    85,
+                    -1
+                  ],
+                  [
+                    86,
+                    1
+                  ],
+                  [
+                    87,
+                    -1
+                  ],
+                  [
+                    99,
+                    -1
+                  ],
+                  [
+                    100,
+                    1
+                  ],
+                  [
+                    101,
+                    -1
+                  ],
+                  [
+                    107,
+                    -1
+                  ]
+                ],
+                "boundary_hash": "c2c23f1102b296a75eb0273ef1780923e24268f56704e19affef7ff3a74e99c7",
+                "boundary_support_size": 37,
+                "boundary_max_abs": 1,
+                "exact_identity": true,
+                "p": 11
+              }
+            ],
+            "selected_subspace_hash": "74a6992e5fb61ab9bc89b161adbb9930a848b0762723fdba0cbca8775b87529e"
+          }
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 0.125,
+  "p1_status": "PASS_FINITE",
+  "p2_status": "PASS_FINITE",
+  "p3_status": "REFUTED",
+  "p3_details": {
+    "58->59": {
+      "boundary_support_series": [
+        [
+          15,
+          14,
+          27,
+          21
+        ],
+        [
+          18,
+          24,
+          30,
+          36
+        ]
+      ],
+      "boundary_affine_slope_intercept": [
+        null,
+        [
+          6,
+          -30
+        ]
+      ],
+      "cycle_support_series": [
+        [
+          1,
+          6,
+          1,
+          6
+        ],
+        [
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "cycle_affine_slope_intercept": [
+        null,
+        [
+          0,
+          2
+        ]
+      ],
+      "passes": false
+    },
+    "58->62": {
+      "boundary_support_series": [
+        [
+          19,
+          21,
+          34,
+          29
+        ],
+        [
+          23,
+          31,
+          40,
+          50
+        ]
+      ],
+      "boundary_affine_slope_intercept": [
+        null,
+        null
+      ],
+      "cycle_support_series": [
+        [
+          1,
+          6,
+          1,
+          6
+        ],
+        [
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "cycle_affine_slope_intercept": [
+        null,
+        [
+          0,
+          2
+        ]
+      ],
+      "passes": false
+    }
+  },
+  "artifact_hash": "ff6784398e1c00931e0b6cbc20f482dfa24780774081a5f4ec6fb4a368c45364"
+}
