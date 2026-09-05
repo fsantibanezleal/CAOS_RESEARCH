@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "title": "The next matching level for triangle-free graphs with bounded degree",
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "publication_date": "2026-09-05",
+    "version": "0.01",
+    "creators": [
+      {
+        "name": "Santibanez-Leal, Felipe",
+        "orcid": "0000-0002-0150-3246",
+        "affiliation": "CAOS Research program"
+      }
+    ],
+    "description": "<p>For every integer d at least 7, the maximum number of edges in a triangle-free graph with maximum degree at most d and matching number at most d+1 is d squared plus d plus 2. A shortest-odd-cycle deficit argument and five-type equality obstruction prove the fixed-order bound on 2d+3 vertices, and Tutte-Berge extends it to arbitrary order. The attaining construction is due to Banak, Ekim and Taskin; the contribution is the uniform upper bound, resolving the next-matching slice of the Ahanjideh-Ekim-Yildiz conjecture, including the published 184-versus-185 gap at (13,14). A secondary application gives a one-edge bracket for the Bougard-Joret parameters (2d+3,2,d+2), with an unbounded strict-interior discrepancy from the degree-sum prediction. The exact bracket endpoint, remaining AEY matching levels and general revised Bougard-Joret problem remain unresolved. Forty-eight exact graphs, independent matching and connectivity checks, a degree-six boundary control and a rejected complement shortcut accompany the proof. Preprint, not peer reviewed.</p>",
+    "access_right": "open",
+    "license": "cc-by-4.0",
+    "keywords": [
+      "triangle-free graphs",
+      "matching number",
+      "maximum degree",
+      "extremal graph theory",
+      "Tutte-Berge formula",
+      "Bougard-Joret conjecture"
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "10.1007/s10878-024-01123-z",
+        "relation": "references",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "10.1016/j.disopt.2023.100802",
+        "relation": "references",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "10.1002/jgt.20289",
+        "relation": "references",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "10.48550/arXiv.2608.18828",
+        "relation": "references",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "10.5281/zenodo.22341644",
+        "relation": "references",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "relation": "isSupplementTo",
+        "scheme": "url"
+      }
+    ]
+  },
+  "publication": {
+    "record_id": 22343022,
+    "doi": "10.5281/zenodo.22343022",
+    "concept_doi": "10.5281/zenodo.22343021",
+    "version": "0.01",
+    "public_url": "https://zenodo.org/records/22343022",
+    "public_file_url": "https://zenodo.org/api/records/22343022/files/bougard-joret-next-matching-v0.01.pdf/content",
+    "publication_verified": true,
+    "latest_version_verified": true,
+    "unauthenticated_fresh_download_matches": true,
+    "bytes": 352871,
+    "md5": "ae0b33876aedff56f7eb17bd0c32ee33",
+    "sha256": "2dbce0d07fcd8b7afab8864cc2cf03d37a753356d395036725b8428ca56b6680",
+    "verified_utc": "2026-09-05T12:19:24.518300+00:00",
+    "pdf_pages": 7,
+    "visual_qa": "all seven pages rendered and inspected; no final LaTeX warnings",
+    "tests": "101 passed",
+    "experiment": "EXP-003-triangle-free-next-matching",
+    "research_commit": "ece3361",
+    "scope": "T(d,d+1)=d^2+d+2 for all d>=7; full AEY conjecture and exact Bougard bracket endpoint unresolved"
+  }
+}

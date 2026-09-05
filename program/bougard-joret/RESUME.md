@@ -4,6 +4,12 @@ Updated: 2026-09-05.
 
 ## 1. State in one screen
 
+[D] EXP-003 proves $T(d,d+1)=d^2+d+2$ for every integer $d\ge7$, where $T$ is the maximum triangle-free edge count under degree and matching bounds. The fixed-order bound at $2d+3$ is also sharp. The new contribution is the uniform upper bound; the attaining BET construction and finite values through $d=12$ are prior work. In particular, $T(13,14)=184$, closing BET's 184-to-185 interval. The full AEY conjecture remains open.
+
+[D] Secondary result: $d^2+4d+1\le f(2d+3,2,d+2)\le d^2+4d+2$, $d\ge7$. The exact endpoint remains undetermined. The lower bound exceeds the degree-sum prediction by $\lfloor d/2\rfloor-2$. The raw BET extremizer's complement has connectivity $d+1$, so it cannot attain the required Bougard-Joret connectivity $d+2$.
+
+[MV] EXP-003 certificates PASS: 48 graphs over $d=7,\ldots,30$, 24 rejected raw-complement cuts, and no survivors among 287,564 five-type candidates. The separate NetworkX audit checks all 48 matching numbers, complement independence numbers, and complement connectivities. Independent reasoning audit passed. The separate next-matching manuscript v0.01 is published at DOI 10.5281/zenodo.22343022, with public-byte verification complete; scoped integration is complete through research PR #255 and private mirror PR #613. First-shell v0.02 is preserved.
+
 [D] EXP-002 extends the result to the full first interior shell: for every $k\ge3$, $2\le\alpha\le k+1$, $f(\alpha+k+1,\alpha,k)=\lceil k(\alpha+k+1)/2\rceil$. For $\alpha=2$, every extremal graph is the complement of disjoint cycles of lengths at least five. The proof owns these universal statements; the experiment verdict owns final audit status. General shell extremizers are not classified beyond this case and the original tree strip.
 
 [MV] EXP-002 certificate PASS: 75 graphs, 45 independent direct checks, 36 Harary cases, 15 odd-degree-sum cases, 75 damaged-edge controls, eight complement-cycle controls, and the complete order-six census of 32,768 graphs with 60 extremals.
@@ -23,6 +29,11 @@ Updated: 2026-09-05.
 | Certificate | EXP-001 `artifacts/certificate.json`, exact finite controls |
 | First interior shell | $n=\alpha+k+1$, $k\ge3$, $2\le\alpha\le k+1$; EXP-002 proof |
 | Shell certificate | EXP-002 `artifacts/certificate.json`; finite PASS is not a universal proof |
+| $T(d,m)$ | Maximum edges of a triangle-free graph with $\Delta\le d$, $\nu\le m$; distinct from Bougard-Joret $f$ |
+| Next matching level | $T(d,d+1)=d^2+d+2$, all $d\ge7$; EXP-003 proof |
+| $Q_d$ | Known BET attaining graph; its complement has connectivity $d+1$ |
+| Bougard bracket | $d^2+4d+1\le f(2d+3,2,d+2)\le d^2+4d+2$; exact endpoint open |
+| Matching certificate | EXP-003 certificate and separate NetworkX receipt; finite checks support the proof |
 
 ## 3. Experiment index
 
@@ -30,10 +41,13 @@ Updated: 2026-09-05.
 |---|---|---|---|
 | EXP-001-tree-strip | Adjacent diagonal value and all extremals | CONFIRMED | Uniform proof plus independently checked finite constructions |
 | EXP-002-next-shell | Full first-shell value; all alpha-two extremals | CONFIRMED | Complete proof audited; independent exact certificates pass |
+| EXP-003-triangle-free-next-matching | Exact next matching level for every $d\ge7$ | Proof and independent audits PASS; published | Uniform upper bound; known BET construction; v0.01 DOI 10.5281/zenodo.22343022; scoped integration complete |
 
 ## 4. In flight
 
-Current round: manuscript v0.02 is PUBLISHED at version DOI [10.5281/zenodo.22341644](https://doi.org/10.5281/zenodo.22341644), concept DOI 10.5281/zenodo.22315251. All 343,535 bytes match a fresh unauthenticated download; SHA-256 `faed3c5a760390a89bc77945e99837c85a55b09f6923570dcde50f289439d4b7`. API latest-version check and all ten PDF pages pass. After incorporating concurrent develop changes, all 100 repository tests pass. Research PR #251 passed current-head CI and merged at `8055fec`; private mirror PR #611 merged at `a6d642fd`. This research/publication round is complete. No mathematical run remains active.
+Current round: EXP-003's committed preflight is `f3fdda6`. Its proof and independent audits pass. The separate next-matching manuscript v0.01 is PUBLISHED at [version DOI 10.5281/zenodo.22343022](https://doi.org/10.5281/zenodo.22343022), [concept DOI 10.5281/zenodo.22343021](https://doi.org/10.5281/zenodo.22343021). The [receipt](../../manuscripts/bougard-joret/next-matching/publication-verification.json) confirms latest-version status and all 352,871 bytes against a fresh unauthenticated download. SHA-256: `2dbce0d07fcd8b7afab8864cc2cf03d37a753356d395036725b8428ca56b6680`. All seven pages passed visual QA, no final LaTeX warnings remain, and 101 tests passed. Research PR #255 passed both CI jobs on head b8eb3f6 and merged at 03dc4694beb42184900b238d036dbf5ada84816e. Private mirror PR #613 merged at 74e36ce08fc31d3cb13e983688ed14596cd55b0f. Research, publication and scoped develop integration are complete. The global main release remains separately serialized. Read the [next-matching source review](../../problems/combinatorics/bougard-joret/context/2026-09-05-next-matching-review.md) and [current plan](plan-2026-09-05-triangle-free.md).
+
+Previous completed round: manuscript v0.02 is PUBLISHED at version DOI [10.5281/zenodo.22341644](https://doi.org/10.5281/zenodo.22341644), concept DOI 10.5281/zenodo.22315251. All 343,535 bytes matched a fresh unauthenticated download at publication; SHA-256 `faed3c5a760390a89bc77945e99837c85a55b09f6923570dcde50f289439d4b7`. API latest-version check and all ten PDF pages passed. After incorporating concurrent develop changes, all 100 repository tests passed. Research PR #251 passed current-head CI and merged at `8055fec`; private mirror PR #611 merged at `a6d642fd`. That research/publication round is complete, and its manuscript is preserved.
 
 The paragraph below records the completed September 4 baseline.
 
@@ -41,12 +55,11 @@ Manuscript v0.01 remains frozen at version DOI `10.5281/zenodo.22315252`. At its
 
 ## 5. Next actions
 
-1. Replay: `python problems/combinatorics/bougard-joret/experiments/EXP-001-tree-strip/run.py --output tmp/bougard-replay.json`.
-2. Regression: `python -m pytest tests/test_bougard_joret_tree_strip.py`.
-3. Read `problems/combinatorics/bougard-joret/context/report-source.md` before selecting another target; it records all 20 portfolio rows and important unsplittable-flow updates.
-4. Read EXP-002 `proof.md`, `verdict.md`, and the September 5 portfolio refresh; replay `python problems/combinatorics/bougard-joret/experiments/EXP-002-next-shell/run.py --output tmp/bougard-shell-replay.json`.
-5. The September 5 proof, publication and scoped integration are complete. See [the closed plan](plan-2026-09-05.md); further research requires a new committed hypothesis.
-6. Further research: classify remaining shell extremizers or declare a new hypothesis for $n=\alpha+k+2$. The general problem remains open.
+1. Read the [EXP-003 proof](../../problems/combinatorics/bougard-joret/experiments/EXP-003-triangle-free-next-matching/proof.md), certificate, independent audit, and the next-matching source review. The experiment verdict owns final evidence status.
+2. Preserve the published next-matching manuscript v0.01, its verified DOI and receipt, and the earlier tree-strip manuscript v0.02. Publication, all-page review and public-byte verification are complete.
+3. This scoped research/publication round is complete: research PR #255 and private mirror PR #613 merged to develop. Future research requires a new committed hypothesis; global release remains separately serialized.
+4. EXP-001 and EXP-002 remain replayable from their own experiment directories. Their proofs and published manuscript are completed baselines, not pending new work.
+5. Further research may address remaining triangle-free matching levels, the exact Bougard bracket endpoint, other shell extremizers, or $n=\alpha+k+2$. Require a new committed hypothesis before further computation. The full AEY conjecture and general revised Bougard-Joret problem remain open.
 
 ## 6. Where everything lives
 
@@ -54,16 +67,22 @@ Manuscript v0.01 remains frozen at version DOI `10.5281/zenodo.22315252`. At its
 - Sources and portfolio audit: `problems/combinatorics/bougard-joret/context/`.
 - Proof, code and certificate: `problems/combinatorics/bougard-joret/experiments/EXP-001-tree-strip/`.
 - Full-shell proof, code and certificate: `problems/combinatorics/bougard-joret/experiments/EXP-002-next-shell/`.
+- Next-matching proof and certificates: `problems/combinatorics/bougard-joret/experiments/EXP-003-triangle-free-next-matching/`.
 - Narrative: `problems/combinatorics/bougard-joret/wiki/`.
-- Manuscript: `manuscripts/bougard-joret/tree-strip/`.
+- Preserved published manuscript: `manuscripts/bougard-joret/tree-strip/`, v0.02.
+- New published manuscript: `manuscripts/bougard-joret/next-matching/`, v0.01, DOI 10.5281/zenodo.22343022; scoped integration complete.
 - Private mirror: `plans/caos-research/bougard-joret/` in the management repository.
 
 ## 7. Gotchas
 
+- $T(d,m)$ is a maximum under degree/matching constraints; $f(n,\alpha,k)$ is a minimum under independence/connectivity constraints. Keep them distinct.
+- BET owns the attaining construction and known finite values. The new claim is the uniform upper bound, with $T(13,14)=184$.
+- Complementing the matching extremizer yields connectivity $d+1$, not the required $d+2$. Only the one-edge Bougard bracket is proved.
+- The $d=6$ five-cycle blowup has 45 edges, not the formula's 44; it is deliberately outside the theorem range.
 - Exactly two surviving tree vertices require the double-star case; the shared-neighbor argument alone is incomplete.
 - Nonstar is necessary: a star yields independence number $k$.
 - Tree representations do not automatically count unmarked isomorphism classes.
 - The local finite controls do not establish the universal quantifier; the written proof does.
 - Existing worktrees and management media edits were preserved. Shared releases remain serialized; no global bake or version bump belongs to this problem round.
 
-Lenses ledger: exclusion/degree sum forces regularity; invariant/residual cyclomatic number forces a tree; anatomy supplies missing-neighbor fibers; adversarial review repairs the two-vertex case; the portfolio comparison identifies a future residual-graph generalization.
+Lenses ledger: degree sum and residual cyclomatic number yield the tree strip; missing-neighbor fibers and cyclic gaps yield the first shell; shortest-odd-cycle deficits and five neighborhood types yield the next matching upper bound; Tutte-Berge controls arbitrary order; adversarial complement cuts limit the Bougard translation.

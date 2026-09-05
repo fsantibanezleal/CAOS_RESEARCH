@@ -1,0 +1,483 @@
+{
+  "boundary_d6_edges": 45,
+  "boundary_exceeds_formula": true,
+  "five_type_controls": [
+    {
+      "all_positive_compositions": 1820,
+      "compositions_with_singletons": 1490,
+      "d": 7,
+      "survivors": []
+    },
+    {
+      "all_positive_compositions": 3060,
+      "compositions_with_singletons": 2345,
+      "d": 8,
+      "survivors": []
+    },
+    {
+      "all_positive_compositions": 4845,
+      "compositions_with_singletons": 3480,
+      "d": 9,
+      "survivors": []
+    },
+    {
+      "all_positive_compositions": 7315,
+      "compositions_with_singletons": 4935,
+      "d": 10,
+      "survivors": []
+    }
+  ],
+  "graphs": [
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 8,
+      "d": 7,
+      "edge_count": 58,
+      "kind": "known-extremizer",
+      "matching_number": 8,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 9,
+      "d": 7,
+      "edge_count": 57,
+      "kind": "subdivided-crown",
+      "matching_number": 8,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 9,
+      "d": 8,
+      "edge_count": 74,
+      "kind": "known-extremizer",
+      "matching_number": 9,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 10,
+      "d": 8,
+      "edge_count": 73,
+      "kind": "subdivided-crown",
+      "matching_number": 9,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 10,
+      "d": 9,
+      "edge_count": 92,
+      "kind": "known-extremizer",
+      "matching_number": 10,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 11,
+      "d": 9,
+      "edge_count": 91,
+      "kind": "subdivided-crown",
+      "matching_number": 10,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 11,
+      "d": 10,
+      "edge_count": 112,
+      "kind": "known-extremizer",
+      "matching_number": 11,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 12,
+      "d": 10,
+      "edge_count": 111,
+      "kind": "subdivided-crown",
+      "matching_number": 11,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 12,
+      "d": 11,
+      "edge_count": 134,
+      "kind": "known-extremizer",
+      "matching_number": 12,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 13,
+      "d": 11,
+      "edge_count": 133,
+      "kind": "subdivided-crown",
+      "matching_number": 12,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 13,
+      "d": 12,
+      "edge_count": 158,
+      "kind": "known-extremizer",
+      "matching_number": 13,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 14,
+      "d": 12,
+      "edge_count": 157,
+      "kind": "subdivided-crown",
+      "matching_number": 13,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 14,
+      "d": 13,
+      "edge_count": 184,
+      "kind": "known-extremizer",
+      "matching_number": 14,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 15,
+      "d": 13,
+      "edge_count": 183,
+      "kind": "subdivided-crown",
+      "matching_number": 14,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 15,
+      "d": 14,
+      "edge_count": 212,
+      "kind": "known-extremizer",
+      "matching_number": 15,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 16,
+      "d": 14,
+      "edge_count": 211,
+      "kind": "subdivided-crown",
+      "matching_number": 15,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 16,
+      "d": 15,
+      "edge_count": 242,
+      "kind": "known-extremizer",
+      "matching_number": 16,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 17,
+      "d": 15,
+      "edge_count": 241,
+      "kind": "subdivided-crown",
+      "matching_number": 16,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 17,
+      "d": 16,
+      "edge_count": 274,
+      "kind": "known-extremizer",
+      "matching_number": 17,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 18,
+      "d": 16,
+      "edge_count": 273,
+      "kind": "subdivided-crown",
+      "matching_number": 17,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 18,
+      "d": 17,
+      "edge_count": 308,
+      "kind": "known-extremizer",
+      "matching_number": 18,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 19,
+      "d": 17,
+      "edge_count": 307,
+      "kind": "subdivided-crown",
+      "matching_number": 18,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 19,
+      "d": 18,
+      "edge_count": 344,
+      "kind": "known-extremizer",
+      "matching_number": 19,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 20,
+      "d": 18,
+      "edge_count": 343,
+      "kind": "subdivided-crown",
+      "matching_number": 19,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 20,
+      "d": 19,
+      "edge_count": 382,
+      "kind": "known-extremizer",
+      "matching_number": 20,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 21,
+      "d": 19,
+      "edge_count": 381,
+      "kind": "subdivided-crown",
+      "matching_number": 20,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 21,
+      "d": 20,
+      "edge_count": 422,
+      "kind": "known-extremizer",
+      "matching_number": 21,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 22,
+      "d": 20,
+      "edge_count": 421,
+      "kind": "subdivided-crown",
+      "matching_number": 21,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 22,
+      "d": 21,
+      "edge_count": 464,
+      "kind": "known-extremizer",
+      "matching_number": 22,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 23,
+      "d": 21,
+      "edge_count": 463,
+      "kind": "subdivided-crown",
+      "matching_number": 22,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 23,
+      "d": 22,
+      "edge_count": 508,
+      "kind": "known-extremizer",
+      "matching_number": 23,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 24,
+      "d": 22,
+      "edge_count": 507,
+      "kind": "subdivided-crown",
+      "matching_number": 23,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 24,
+      "d": 23,
+      "edge_count": 554,
+      "kind": "known-extremizer",
+      "matching_number": 24,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 25,
+      "d": 23,
+      "edge_count": 553,
+      "kind": "subdivided-crown",
+      "matching_number": 24,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 25,
+      "d": 24,
+      "edge_count": 602,
+      "kind": "known-extremizer",
+      "matching_number": 25,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 26,
+      "d": 24,
+      "edge_count": 601,
+      "kind": "subdivided-crown",
+      "matching_number": 25,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 26,
+      "d": 25,
+      "edge_count": 652,
+      "kind": "known-extremizer",
+      "matching_number": 26,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 27,
+      "d": 25,
+      "edge_count": 651,
+      "kind": "subdivided-crown",
+      "matching_number": 26,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 27,
+      "d": 26,
+      "edge_count": 704,
+      "kind": "known-extremizer",
+      "matching_number": 27,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 28,
+      "d": 26,
+      "edge_count": 703,
+      "kind": "subdivided-crown",
+      "matching_number": 27,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 28,
+      "d": 27,
+      "edge_count": 758,
+      "kind": "known-extremizer",
+      "matching_number": 28,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 29,
+      "d": 27,
+      "edge_count": 757,
+      "kind": "subdivided-crown",
+      "matching_number": 28,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 29,
+      "d": 28,
+      "edge_count": 814,
+      "kind": "known-extremizer",
+      "matching_number": 29,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 30,
+      "d": 28,
+      "edge_count": 813,
+      "kind": "subdivided-crown",
+      "matching_number": 29,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 30,
+      "d": 29,
+      "edge_count": 872,
+      "kind": "known-extremizer",
+      "matching_number": 30,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 31,
+      "d": 29,
+      "edge_count": 871,
+      "kind": "subdivided-crown",
+      "matching_number": 30,
+      "rejected_cut_checked": false
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 31,
+      "d": 30,
+      "edge_count": 932,
+      "kind": "known-extremizer",
+      "matching_number": 31,
+      "rejected_cut_checked": true
+    },
+    {
+      "complement_alpha": 2,
+      "complement_connectivity": 32,
+      "d": 30,
+      "edge_count": 931,
+      "kind": "subdivided-crown",
+      "matching_number": 31,
+      "rejected_cut_checked": false
+    }
+  ],
+  "hash_normalization": "UTF-8 source bytes with CRLF replaced by LF",
+  "networkx_version": "3.4.1",
+  "schema": 1,
+  "scope": "Independent finite saved-graph audit; not a uniform theorem or arbitrary-graph census",
+  "sha256_lf": {
+    "audit.py": "840b8c071d40d47d478e85dad710b3ce5de8eb66f1eb886a0675f8daeb3bcedb",
+    "certificate.json": "07c9d283a2cd12417e03ed1bbd403f9099f4e4192a30fc0238484c37a0ebf9fb",
+    "proof.md": "0db4fe64853855243a444bf19ab24502eef8cfaf73356ed2ce839eb7f283cea8",
+    "run.py": "ef4022a57d44fc6f64bb0e8732b3f587341edd52041a68de151014ff77c03066"
+  },
+  "status": "PASS",
+  "summary": {
+    "clique_checks": 48,
+    "full_connectivity_checks": 48,
+    "graphs": 48,
+    "matching_checks": 48,
+    "rejected_cuts": 24
+  },
+  "triangle_corruption_rejected": true
+}

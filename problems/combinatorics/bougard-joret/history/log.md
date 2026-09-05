@@ -33,3 +33,19 @@ Theorem/manuscript commit `91189c4` is pushed. Research PR #251 targets develop.
 ## 2026-09-05: merged round
 
 Research PR #251 passed current-head CI on `be25aa4` and merged to develop at `8055fec`. Private mirror PR #611 merged at `a6d642fd`. The full-shell result, portfolio refresh, manuscript and verified public publication are complete. Final handoff documents these observed merges. No mathematical process remains, and no global main release was performed by this round.
+
+## 2026-09-05: EXP-003 uniform next matching level
+
+The repeated portfolio request reviewed all 13 unstarted and seven active rows, with six active checks explicitly carried forward from the same-day ledger and a deep new triangle-free source investigation. [The new dossier](../context/2026-09-05-next-matching-review.md) records source versions, alternative Hoa/Boij gates and the corrected September 2 Lamzouri submission date. EXP-003 preflight commit f3fdda6 preceded computation.
+
+[EXP-003](../experiments/EXP-003-triangle-free-next-matching/verdict.md) proves T(d,d+1)=d squared plus d plus two for all d>=7. BET's construction is prior work; the new uniform upper bound resolves its 184-versus-185 benchmark at (13,14). The proof combines shortest-odd-cycle deficit, five-type equality exclusion and Tutte-Berge, with a separately checked AEY reduction. Internal mathematical and implementation audits pass; 48 exact graphs and 287,564 primary equality controls agree, with 48 independent full-connectivity checks and all 101 repository tests passing.
+
+The failed direct-complement shortcut is retained: the known maximizer has complement connectivity d+1. Only the one-edge Bougard bracket is proved, with unbounded strict-interior discrepancy. A new coherent next-matching preprint is being prepared under its own concept DOI; the first-shell v0.02 remains unchanged. Publication and integration receipts follow after verification. Global main release remains separately serialized.
+
+## 2026-09-05: next-matching publication verified
+
+The seven-page separate preprint v0.01 is public at DOI 10.5281/zenodo.22343022, concept DOI 10.5281/zenodo.22343021. The API conceptrecid was checked before publication; metadata, latest-version and a fresh unauthenticated download were verified afterward. All 352,871 bytes match the reviewed PDF, SHA-256 2dbce0d07fcd8b7afab8864cc2cf03d37a753356d395036725b8428ca56b6680. Both final LaTeX passes and all-page visual review passed. The separate manuscript audit corrected a potentially ambiguous abstract reference to the already disproved original Bougard conjecture. Research commit ece3361 is pushed; scoped PR integration follows.
+
+## 2026-09-05: next-matching integration close
+
+Research PR #255 passed both CI jobs on head b8eb3f6 and merged at 03dc4694beb42184900b238d036dbf5ada84816e. Private mirror PR #613 merged at 74e36ce08fc31d3cb13e983688ed14596cd55b0f. Research, publication and scoped develop integration are complete. The global main release remains separately serialized. All 101 tests passed; the published seven-page PDF and its verified bytes remain frozen. No mathematical process remains active.
