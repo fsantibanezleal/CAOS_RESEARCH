@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "title": "Uniform integral annihilators and potential connecting maps in a Huneke-Wiegand family",
+    "creators": [
+      {
+        "name": "Santiba\u00f1ez-Leal, Felipe",
+        "orcid": "0000-0002-0150-3246",
+        "affiliation": "CAOS Research programme, Santiago, Chile"
+      }
+    ],
+    "description": "<p>We study an explicit integral connecting presentation arising in the lower Koszul strand of a previously constructed Huneke-Wiegand counterexample family. For every integer p&gt;=8, we construct a labelled original-domain source V_p with complete boundary M_p V_p=2 eta_p, where eta_p is a fixed four-row endpoint representative. The tracked class, and its previously derived connecting representative, therefore have order dividing two and vanish after base change to any coefficient ring in which 2 is invertible.</p><p>The proof uses signed potential cycles, reflection-symmetric interval potentials, an exact triangle telescoping identity, and two original kernel-domain corrections. No omitted boundary coordinate, projected matrix, Hermite normal form, or extrapolation from finite ranks is used for the uniform annihilator. Independently, we give a complete integral potential basis for the D-kernel in one fixed-high sector, of rank binomial(p-1,2), with each basis image supported on at most seven K rows.</p><p>The record includes the independently certified failure of a radius-two source search at p=8, 861 exact potential-basis checks, and an independently reconstructed 18-parameter campaign through p=100 for the annihilator. Every full labelled source is preserved in a deterministic compressed certificate archive. The signed derivations, rather than these finite ranges, establish the uniform statements.</p><p>Scope: order dividing two is not order exactly two. Uniform nonvanishing in characteristic two, a second independent class, the full connecting quotient and its recurrence remain open. The paper does not claim to resolve the remaining Huneke-Wiegand extensions or the Jacobian conjecture. Son Pham retains priority for the original public counterexample; this is a separate homological companion to the CAOS family record. Preprint, not peer reviewed.</p>",
+    "keywords": [
+      "Huneke-Wiegand conjecture",
+      "Koszul homology",
+      "integral connecting maps",
+      "uniform annihilators",
+      "potential bases",
+      "numerical semigroups",
+      "characteristic dependence",
+      "exact certificates"
+    ],
+    "license": "cc-by-4.0",
+    "access_right": "open",
+    "related_identifiers": [
+      {
+        "relation": "isSupplementTo",
+        "identifier": "10.5281/zenodo.22181972",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "isSupplementedBy",
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "resource_type": "software"
+      },
+      {
+        "relation": "references",
+        "identifier": "https://github.com/sonpham-org/huneke-wiegand-candidate-verification",
+        "resource_type": "software"
+      }
+    ],
+    "version": "0.01",
+    "language": "eng",
+    "publication_date": "2026-09-05"
+  }
+}
