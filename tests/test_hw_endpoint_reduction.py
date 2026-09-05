@@ -69,7 +69,7 @@ def test_outside_declared_parameter_range_is_rejected(runner, p):
 
 
 def test_invalid_budget_is_rejected(runner, tmp_path):
-    with pytest.raises(ValueError, match="budget must be positive"):
+    with pytest.raises(ValueError, match="budget must be finite and positive"):
         runner.run(tmp_path / "invalid.json", budget=0)
 
 
