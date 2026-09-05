@@ -16,20 +16,20 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small A tree characterization\textperiodcentered\ v0.01}
+\fancyhead[R]{\small First interior shell\textperiodcentered\ v0.02}
 \fancyfoot[C]{\thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
-\title{A tree characterization one vertex above the\\Bougard--Joret counterexample boundary}
+\title{The first interior shell of the\\Bougard--Joret extremal problem}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program\\
 \small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-09-04\\[2pt]\normalsize Version 0.01}
+\date{2026-09-05\\[2pt]\normalsize Version 0.02}
 \begin{document}
 \maketitle
 \begin{center}\small
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT}\textperiodcentered\ not peer reviewed\textperiodcentered\ CAOS Research\\
-Bougard--Joret research series, first paper\textperiodcentered\ v0.01\textperiodcentered\ 2026-09-04\\
+Bougard--Joret research series, first paper\textperiodcentered\ v0.02\textperiodcentered\ 2026-09-05\\
 \href{https://doi.org/10.5281/zenodo.22315251}{Concept DOI: 10.5281/zenodo.22315251} (latest version)\\
 CC BY 4.0\textperiodcentered\ \href{https://github.com/fsantibanezleal/CAOS_RESEARCH}{Public sources and exact verification record}
 }}
@@ -37,12 +37,13 @@ CC BY 4.0\textperiodcentered\ \href{https://github.com/fsantibanezleal/CAOS_RESE
 \begin{abstract}
 Let $f(n,\alpha,k)$ be the minimum size of a $k$-connected graph of order $n$ and independence number $\alpha$.
 Das and Gupta recently determined the boundary $n=\alpha+k$ and disproved the proposed Bougard--Joret formula there.
-We prove that $f(2k,k-1,k)=k^2$ for every $k\ge3$, and characterize all extremal graphs.
-They arise from a nonstar tree $T$ on $k+1$ vertices and an independent set of $k-1$ vertices, partitioned into missing-neighbor fibers of sizes $\dd_T(t)-1$.
-The proof is elementary and includes the exceptional connectivity case in which only two tree vertices survive a deletion.
-For $k\ge4$ this settles the diagonal immediately above the known counterexample family; the numerical case $k=3$ was already known.
-Exact finite controls use 86 nonstar trees, independent vertex-cut and max-flow checks, and a complete labeled order-six census.
-The universal statement follows from the proof, not from that census. The general interior and second regimes remain unresolved.
+We determine the entire admissible first interior shell:
+$f(\alpha+k+1,\alpha,k)=\lceil k(\alpha+k+1)/2\rceil$ for every $k\ge3$ and $2\le\alpha\le k+1$.
+The construction augments classical Harary graphs with complement matchings and attaches an independent set through distinct missing-neighbor pairs.
+An elementary cyclic-gap proof controls connectivity, including all parity cases.
+We characterize all extremizers when $\alpha=2$ as complements of unions of cycles of lengths at least five, and retain the complete nonstar-tree characterization when $\alpha=k-1$ from version 0.01.
+The full-shell extension is supported by 75 exact finite constructions, an independent implementation audit, and adversarial controls.
+The universal statement follows from the proof, not from finite computation. The general revised first regime and second regime remain unresolved.
 \end{abstract}
 
 \section{Problem, prior work and scope}
@@ -66,14 +67,17 @@ f(2k-1,k-1,k)=k^2-1,
 with extremals exactly the joins of an independent $(k-1)$-set and a tree on $k$ vertices \cite{DG}.
 The original disproof and this preceding-boundary characterization are their results.
 
-The present work addresses the adjacent diagonal $(n,\alpha,k)=(2k,k-1,k)$.
-It proves a formula and an equality characterization on this diagonal, not a corrected general conjecture.
-The numerical range $k\ge4$ lies outside the identified cases in Section~6 of \cite{BJ} and the boundary treated in \cite{DG}.
-For $k=3$, the numerical value is already covered by $n=k\alpha$; it serves as a consistency case here.
-Targeted literature searches and both papers' final sections revealed no matching adjacent-diagonal characterization, but this is not an assertion of exhaustive bibliographic priority.
+Version 0.01 proved the adjacent diagonal $(n,\alpha,k)=(2k,k-1,k)$ and characterized its extremizers \cite{Record}.
+Version 0.02 extends the numerical result to every admissible parameter on $n=\alpha+k+1$, and adds a complete equality classification for $\alpha=2$.
+The full-shell formula includes classical overlaps: $\alpha=k+1$ is covered by $n=2\alpha$ in \cite{BJ}, and $(n,\alpha,k)=(6,2,3)$ is covered by $n=k\alpha$.
+The $\alpha=k-1$ strip is the already published result of version 0.01.
+Targeted searches and the final sections of both primary problem papers revealed no formula for the entire next shell, but this is not an assertion of exhaustive bibliographic priority.
+Harary's connectivity constructions \cite{Harary} are classical ingredients, not new claims of this work.
 
 Our universal deductions are labeled [D], exact finite computations [MV], and suggested extensions [C].
-The proof and verification are recorded in the repository's EXP-001 \cite{Record}.
+The proofs and verification are recorded in EXP-001 and EXP-002 \cite{Record,ShellRecord}.
+
+\input{shell.tex}
 
 \section{The tree construction and the extremal theorem}
 
@@ -209,10 +213,34 @@ Connectivity must still be proved separately; the double-star case shows why a c
 
 \section{Exact validation and adversarial controls}
 
-The computational record \cite{Record} is deliberately finite.
-It supports the proof by testing constructions and implementation failure modes; it is not the source of the universal quantifier.
+The computational records \cite{Record,ShellRecord} are deliberately finite.
+They support the proof by testing constructions and implementation failure modes; they are not the source of the universal quantifier.
 All arithmetic is integer and all choices are deterministic.
 The hypothesis was committed before the run.
+
+\subsection{Full-shell controls, EXP-002}
+
+The full grid contains every $k=3,\ldots,12$ and every $a=2,\ldots,k+1$, totaling 75 graphs.
+All pass exact degree and edge counts, recursive independence, and vertex-split max-flow connectivity.
+For the 45 graphs of order at most 16, direct subset enumeration and exhaustive vertex deletion agree with those checks.
+The 36 Harary cases also pass both connectivity checks on their starting and augmented residual graphs.
+The 15 odd-degree-sum cases each have exactly one degree-$(k+1)$ vertex.
+Deleting an edge incident to a degree-$k$ vertex is rejected in every one of the 75 constructions.
+Eight complement-cycle controls test triangles, $4$-cycles, and unions of longer cycles.
+A regenerated census of all 32,768 labeled order-six graphs finds 60 extremizers, exactly the complements of six-cycles.
+This census shares the earlier checker library; it is an independent regeneration, not a wholly independent implementation.
+
+A separate implementation using NetworkX 3.4.1 reconstructs the saved raw edge lists without importing either CAOS graph checker.
+Exact node connectivity and maximal cliques of the complement independently verify connectivity and independence for all 75 graphs.
+It also verifies the 36 residual constructions, all damaged-edge controls, and the cycle controls.
+The receipt binds the proof, certificate and verifier sources by SHA-256.
+
+The first smoke run passed its graph checks but stopped on a wrapper schema mismatch: the older certificate used \texttt{passed}, while the new wrapper expected \texttt{PASS}.
+Correcting that assertion changed no mathematical acceptance criterion; the full run then passed.
+The independent reasoning audit checked the complete proof, particularly odd-order cyclic rotations, matching parity, the cycle-power independence bound and the two-survivor case.
+No gap was found. These checks are not external peer review or a proof-assistant formalization.
+
+\subsection{Retained tree-strip controls, EXP-001}
 
 Leaf augmentation generates every tree: deleting a leaf reduces any tree to a smaller tree.
 Canonical encodings obtained by minimizing rooted parenthesis encodings over all roots deduplicate isomorphic trees.
@@ -253,22 +281,25 @@ These checks are not peer review or a proof-assistant formalization.
 
 \section{Remaining questions and reproducibility}
 
-The entire shell $n=\alpha+k+1$ remains outside this theorem when $k-\alpha\ne1$.
-In degree-sum equality cases, a maximum independent set again yields missing-neighbor fibers, but the residual graph need not be a tree [C, proposed research direction].
-A new argument must control its connectivity and independence number.
-Neither the corrected general first regime nor the second regime is established here.
+Theorem~\ref{thm:shell} settles the entire admissible shell $n=\alpha+k+1$.
+We do not classify all remaining shell extremizers here.
+The residual construction supplies extremizers, but does not assert that every extremizer has injective misses.
+The uniqueness of unmarked tree representations is also separate.
+Extending the edge formula to $n\ge\alpha+k+2$ is a further research direction [C]; neither the revised general first regime nor the second regime is established here.
 
-The experiment directory contains \texttt{hypothesis.md}, \texttt{proof.md}, \texttt{run.py}, \texttt{verdict.md}, and \texttt{artifacts/certificate.json}.
+Each experiment directory contains \texttt{hypothesis.md}, \texttt{proof.md}, \texttt{run.py}, \texttt{verdict.md}, and \texttt{artifacts/certificate.json}.
 From the repository root, run:
 \begin{quote}\small\ttfamily
 python problems/combinatorics/bougard-joret/\\
-experiments/EXP-001-tree-strip/run.py
+experiments/EXP-002-next-shell/run.py
 \end{quote}
 The displayed path is wrapped typographically; the shell command uses one uninterrupted path.
-The checker uses only the Python standard library.
+The main checkers use only the Python standard library.
+EXP-002's separate \texttt{audit.py} requires NetworkX; its version is recorded in the audit receipt.
 A portfolio-wide literature review and its limitations are stored separately in the problem context; they are not claims of this theorem.
 The experiment's verdict, rather than a dashboard or manuscript summary, owns the computational evidence.
 
+\clearpage
 \begin{thebibliography}{9}
 \bibitem{BJ} N. Bougard and G. Joret.
 Turan's theorem and $k$-connected graphs.
@@ -285,5 +316,14 @@ arXiv:2608.18828v1, 19 August 2026.
 CAOS Research, Bougard--Joret EXP-001: tree-strip proof and exact certificate, 4 September 2026.
 \href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/work/bougard-joret/literature-boundary-20260904/problems/combinatorics/bougard-joret/experiments/EXP-001-tree-strip}{Public experiment record}.
 Preprint version DOI: \href{https://doi.org/10.5281/zenodo.22315252}{10.5281/zenodo.22315252}.
+
+\bibitem{Harary} F. Harary.
+The maximum connectivity of a graph.
+\emph{Proceedings of the National Academy of Sciences} 48 (1962), 1142--1146.
+\href{https://doi.org/10.1073/pnas.48.7.1142}{doi:10.1073/pnas.48.7.1142}.
+
+\bibitem{ShellRecord} F. Santiba\~nez-Leal.
+CAOS Research, Bougard--Joret EXP-002: first interior shell, proof and exact certificates, 5 September 2026.
+\href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/develop/problems/combinatorics/bougard-joret/experiments/EXP-002-next-shell}{Public experiment record}.
 \end{thebibliography}
 \end{document}
