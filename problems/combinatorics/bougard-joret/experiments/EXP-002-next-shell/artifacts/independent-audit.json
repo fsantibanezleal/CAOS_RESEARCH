@@ -1,0 +1,833 @@
+{
+  "audit_source_sha256": "f0b2e5f6cd2d7123aba5b8a8565f1f762515ac539706e023f85742e2afd22a9b",
+  "cases": [
+    {
+      "alpha": 2,
+      "connectivity": 3,
+      "damaged_connectivity": 2,
+      "edges": 9,
+      "epsilon": 0,
+      "k": 3,
+      "n": 6
+    },
+    {
+      "alpha": 3,
+      "connectivity": 3,
+      "damaged_connectivity": 2,
+      "edges": 11,
+      "epsilon": 1,
+      "k": 3,
+      "n": 7
+    },
+    {
+      "alpha": 4,
+      "connectivity": 3,
+      "damaged_connectivity": 2,
+      "edges": 12,
+      "epsilon": 0,
+      "k": 3,
+      "n": 8
+    },
+    {
+      "alpha": 2,
+      "connectivity": 4,
+      "damaged_connectivity": 3,
+      "edges": 14,
+      "epsilon": 0,
+      "k": 4,
+      "n": 7
+    },
+    {
+      "alpha": 3,
+      "connectivity": 4,
+      "damaged_connectivity": 3,
+      "edges": 16,
+      "epsilon": 0,
+      "k": 4,
+      "n": 8
+    },
+    {
+      "alpha": 4,
+      "connectivity": 4,
+      "damaged_connectivity": 3,
+      "edges": 18,
+      "epsilon": 0,
+      "k": 4,
+      "n": 9
+    },
+    {
+      "alpha": 5,
+      "connectivity": 4,
+      "damaged_connectivity": 3,
+      "edges": 20,
+      "epsilon": 0,
+      "k": 4,
+      "n": 10
+    },
+    {
+      "alpha": 2,
+      "connectivity": 5,
+      "damaged_connectivity": 4,
+      "edges": 20,
+      "epsilon": 0,
+      "k": 5,
+      "n": 8
+    },
+    {
+      "alpha": 3,
+      "base_connectivity": 2,
+      "connectivity": 5,
+      "damaged_connectivity": 4,
+      "edges": 23,
+      "epsilon": 1,
+      "k": 5,
+      "n": 9,
+      "residual_connectivity": 2
+    },
+    {
+      "alpha": 4,
+      "connectivity": 5,
+      "damaged_connectivity": 4,
+      "edges": 25,
+      "epsilon": 0,
+      "k": 5,
+      "n": 10
+    },
+    {
+      "alpha": 5,
+      "connectivity": 5,
+      "damaged_connectivity": 4,
+      "edges": 28,
+      "epsilon": 1,
+      "k": 5,
+      "n": 11
+    },
+    {
+      "alpha": 6,
+      "connectivity": 5,
+      "damaged_connectivity": 4,
+      "edges": 30,
+      "epsilon": 0,
+      "k": 5,
+      "n": 12
+    },
+    {
+      "alpha": 2,
+      "connectivity": 6,
+      "damaged_connectivity": 5,
+      "edges": 27,
+      "epsilon": 0,
+      "k": 6,
+      "n": 9
+    },
+    {
+      "alpha": 3,
+      "base_connectivity": 3,
+      "connectivity": 6,
+      "damaged_connectivity": 5,
+      "edges": 30,
+      "epsilon": 0,
+      "k": 6,
+      "n": 10,
+      "residual_connectivity": 3
+    },
+    {
+      "alpha": 4,
+      "base_connectivity": 2,
+      "connectivity": 6,
+      "damaged_connectivity": 5,
+      "edges": 33,
+      "epsilon": 0,
+      "k": 6,
+      "n": 11,
+      "residual_connectivity": 2
+    },
+    {
+      "alpha": 5,
+      "connectivity": 6,
+      "damaged_connectivity": 5,
+      "edges": 36,
+      "epsilon": 0,
+      "k": 6,
+      "n": 12
+    },
+    {
+      "alpha": 6,
+      "connectivity": 6,
+      "damaged_connectivity": 5,
+      "edges": 39,
+      "epsilon": 0,
+      "k": 6,
+      "n": 13
+    },
+    {
+      "alpha": 7,
+      "connectivity": 6,
+      "damaged_connectivity": 5,
+      "edges": 42,
+      "epsilon": 0,
+      "k": 6,
+      "n": 14
+    },
+    {
+      "alpha": 2,
+      "connectivity": 7,
+      "damaged_connectivity": 6,
+      "edges": 35,
+      "epsilon": 0,
+      "k": 7,
+      "n": 10
+    },
+    {
+      "alpha": 3,
+      "base_connectivity": 4,
+      "connectivity": 7,
+      "damaged_connectivity": 6,
+      "edges": 39,
+      "epsilon": 1,
+      "k": 7,
+      "n": 11,
+      "residual_connectivity": 4
+    },
+    {
+      "alpha": 4,
+      "base_connectivity": 3,
+      "connectivity": 7,
+      "damaged_connectivity": 6,
+      "edges": 42,
+      "epsilon": 0,
+      "k": 7,
+      "n": 12,
+      "residual_connectivity": 3
+    },
+    {
+      "alpha": 5,
+      "base_connectivity": 2,
+      "connectivity": 7,
+      "damaged_connectivity": 6,
+      "edges": 46,
+      "epsilon": 1,
+      "k": 7,
+      "n": 13,
+      "residual_connectivity": 2
+    },
+    {
+      "alpha": 6,
+      "connectivity": 7,
+      "damaged_connectivity": 6,
+      "edges": 49,
+      "epsilon": 0,
+      "k": 7,
+      "n": 14
+    },
+    {
+      "alpha": 7,
+      "connectivity": 7,
+      "damaged_connectivity": 6,
+      "edges": 53,
+      "epsilon": 1,
+      "k": 7,
+      "n": 15
+    },
+    {
+      "alpha": 8,
+      "connectivity": 7,
+      "damaged_connectivity": 6,
+      "edges": 56,
+      "epsilon": 0,
+      "k": 7,
+      "n": 16
+    },
+    {
+      "alpha": 2,
+      "connectivity": 8,
+      "damaged_connectivity": 7,
+      "edges": 44,
+      "epsilon": 0,
+      "k": 8,
+      "n": 11
+    },
+    {
+      "alpha": 3,
+      "base_connectivity": 5,
+      "connectivity": 8,
+      "damaged_connectivity": 7,
+      "edges": 48,
+      "epsilon": 0,
+      "k": 8,
+      "n": 12,
+      "residual_connectivity": 5
+    },
+    {
+      "alpha": 4,
+      "base_connectivity": 4,
+      "connectivity": 8,
+      "damaged_connectivity": 7,
+      "edges": 52,
+      "epsilon": 0,
+      "k": 8,
+      "n": 13,
+      "residual_connectivity": 4
+    },
+    {
+      "alpha": 5,
+      "base_connectivity": 3,
+      "connectivity": 8,
+      "damaged_connectivity": 7,
+      "edges": 56,
+      "epsilon": 0,
+      "k": 8,
+      "n": 14,
+      "residual_connectivity": 3
+    },
+    {
+      "alpha": 6,
+      "base_connectivity": 2,
+      "connectivity": 8,
+      "damaged_connectivity": 7,
+      "edges": 60,
+      "epsilon": 0,
+      "k": 8,
+      "n": 15,
+      "residual_connectivity": 2
+    },
+    {
+      "alpha": 7,
+      "connectivity": 8,
+      "damaged_connectivity": 7,
+      "edges": 64,
+      "epsilon": 0,
+      "k": 8,
+      "n": 16
+    },
+    {
+      "alpha": 8,
+      "connectivity": 8,
+      "damaged_connectivity": 7,
+      "edges": 68,
+      "epsilon": 0,
+      "k": 8,
+      "n": 17
+    },
+    {
+      "alpha": 9,
+      "connectivity": 8,
+      "damaged_connectivity": 7,
+      "edges": 72,
+      "epsilon": 0,
+      "k": 8,
+      "n": 18
+    },
+    {
+      "alpha": 2,
+      "connectivity": 9,
+      "damaged_connectivity": 8,
+      "edges": 54,
+      "epsilon": 0,
+      "k": 9,
+      "n": 12
+    },
+    {
+      "alpha": 3,
+      "base_connectivity": 6,
+      "connectivity": 9,
+      "damaged_connectivity": 8,
+      "edges": 59,
+      "epsilon": 1,
+      "k": 9,
+      "n": 13,
+      "residual_connectivity": 6
+    },
+    {
+      "alpha": 4,
+      "base_connectivity": 5,
+      "connectivity": 9,
+      "damaged_connectivity": 8,
+      "edges": 63,
+      "epsilon": 0,
+      "k": 9,
+      "n": 14,
+      "residual_connectivity": 5
+    },
+    {
+      "alpha": 5,
+      "base_connectivity": 4,
+      "connectivity": 9,
+      "damaged_connectivity": 8,
+      "edges": 68,
+      "epsilon": 1,
+      "k": 9,
+      "n": 15,
+      "residual_connectivity": 4
+    },
+    {
+      "alpha": 6,
+      "base_connectivity": 3,
+      "connectivity": 9,
+      "damaged_connectivity": 8,
+      "edges": 72,
+      "epsilon": 0,
+      "k": 9,
+      "n": 16,
+      "residual_connectivity": 3
+    },
+    {
+      "alpha": 7,
+      "base_connectivity": 2,
+      "connectivity": 9,
+      "damaged_connectivity": 8,
+      "edges": 77,
+      "epsilon": 1,
+      "k": 9,
+      "n": 17,
+      "residual_connectivity": 2
+    },
+    {
+      "alpha": 8,
+      "connectivity": 9,
+      "damaged_connectivity": 8,
+      "edges": 81,
+      "epsilon": 0,
+      "k": 9,
+      "n": 18
+    },
+    {
+      "alpha": 9,
+      "connectivity": 9,
+      "damaged_connectivity": 8,
+      "edges": 86,
+      "epsilon": 1,
+      "k": 9,
+      "n": 19
+    },
+    {
+      "alpha": 10,
+      "connectivity": 9,
+      "damaged_connectivity": 8,
+      "edges": 90,
+      "epsilon": 0,
+      "k": 9,
+      "n": 20
+    },
+    {
+      "alpha": 2,
+      "connectivity": 10,
+      "damaged_connectivity": 9,
+      "edges": 65,
+      "epsilon": 0,
+      "k": 10,
+      "n": 13
+    },
+    {
+      "alpha": 3,
+      "base_connectivity": 7,
+      "connectivity": 10,
+      "damaged_connectivity": 9,
+      "edges": 70,
+      "epsilon": 0,
+      "k": 10,
+      "n": 14,
+      "residual_connectivity": 7
+    },
+    {
+      "alpha": 4,
+      "base_connectivity": 6,
+      "connectivity": 10,
+      "damaged_connectivity": 9,
+      "edges": 75,
+      "epsilon": 0,
+      "k": 10,
+      "n": 15,
+      "residual_connectivity": 6
+    },
+    {
+      "alpha": 5,
+      "base_connectivity": 5,
+      "connectivity": 10,
+      "damaged_connectivity": 9,
+      "edges": 80,
+      "epsilon": 0,
+      "k": 10,
+      "n": 16,
+      "residual_connectivity": 5
+    },
+    {
+      "alpha": 6,
+      "base_connectivity": 4,
+      "connectivity": 10,
+      "damaged_connectivity": 9,
+      "edges": 85,
+      "epsilon": 0,
+      "k": 10,
+      "n": 17,
+      "residual_connectivity": 4
+    },
+    {
+      "alpha": 7,
+      "base_connectivity": 3,
+      "connectivity": 10,
+      "damaged_connectivity": 9,
+      "edges": 90,
+      "epsilon": 0,
+      "k": 10,
+      "n": 18,
+      "residual_connectivity": 3
+    },
+    {
+      "alpha": 8,
+      "base_connectivity": 2,
+      "connectivity": 10,
+      "damaged_connectivity": 9,
+      "edges": 95,
+      "epsilon": 0,
+      "k": 10,
+      "n": 19,
+      "residual_connectivity": 2
+    },
+    {
+      "alpha": 9,
+      "connectivity": 10,
+      "damaged_connectivity": 9,
+      "edges": 100,
+      "epsilon": 0,
+      "k": 10,
+      "n": 20
+    },
+    {
+      "alpha": 10,
+      "connectivity": 10,
+      "damaged_connectivity": 9,
+      "edges": 105,
+      "epsilon": 0,
+      "k": 10,
+      "n": 21
+    },
+    {
+      "alpha": 11,
+      "connectivity": 10,
+      "damaged_connectivity": 9,
+      "edges": 110,
+      "epsilon": 0,
+      "k": 10,
+      "n": 22
+    },
+    {
+      "alpha": 2,
+      "connectivity": 11,
+      "damaged_connectivity": 10,
+      "edges": 77,
+      "epsilon": 0,
+      "k": 11,
+      "n": 14
+    },
+    {
+      "alpha": 3,
+      "base_connectivity": 8,
+      "connectivity": 11,
+      "damaged_connectivity": 10,
+      "edges": 83,
+      "epsilon": 1,
+      "k": 11,
+      "n": 15,
+      "residual_connectivity": 8
+    },
+    {
+      "alpha": 4,
+      "base_connectivity": 7,
+      "connectivity": 11,
+      "damaged_connectivity": 10,
+      "edges": 88,
+      "epsilon": 0,
+      "k": 11,
+      "n": 16,
+      "residual_connectivity": 7
+    },
+    {
+      "alpha": 5,
+      "base_connectivity": 6,
+      "connectivity": 11,
+      "damaged_connectivity": 10,
+      "edges": 94,
+      "epsilon": 1,
+      "k": 11,
+      "n": 17,
+      "residual_connectivity": 6
+    },
+    {
+      "alpha": 6,
+      "base_connectivity": 5,
+      "connectivity": 11,
+      "damaged_connectivity": 10,
+      "edges": 99,
+      "epsilon": 0,
+      "k": 11,
+      "n": 18,
+      "residual_connectivity": 5
+    },
+    {
+      "alpha": 7,
+      "base_connectivity": 4,
+      "connectivity": 11,
+      "damaged_connectivity": 10,
+      "edges": 105,
+      "epsilon": 1,
+      "k": 11,
+      "n": 19,
+      "residual_connectivity": 4
+    },
+    {
+      "alpha": 8,
+      "base_connectivity": 3,
+      "connectivity": 11,
+      "damaged_connectivity": 10,
+      "edges": 110,
+      "epsilon": 0,
+      "k": 11,
+      "n": 20,
+      "residual_connectivity": 3
+    },
+    {
+      "alpha": 9,
+      "base_connectivity": 2,
+      "connectivity": 11,
+      "damaged_connectivity": 10,
+      "edges": 116,
+      "epsilon": 1,
+      "k": 11,
+      "n": 21,
+      "residual_connectivity": 2
+    },
+    {
+      "alpha": 10,
+      "connectivity": 11,
+      "damaged_connectivity": 10,
+      "edges": 121,
+      "epsilon": 0,
+      "k": 11,
+      "n": 22
+    },
+    {
+      "alpha": 11,
+      "connectivity": 11,
+      "damaged_connectivity": 10,
+      "edges": 127,
+      "epsilon": 1,
+      "k": 11,
+      "n": 23
+    },
+    {
+      "alpha": 12,
+      "connectivity": 11,
+      "damaged_connectivity": 10,
+      "edges": 132,
+      "epsilon": 0,
+      "k": 11,
+      "n": 24
+    },
+    {
+      "alpha": 2,
+      "connectivity": 12,
+      "damaged_connectivity": 11,
+      "edges": 90,
+      "epsilon": 0,
+      "k": 12,
+      "n": 15
+    },
+    {
+      "alpha": 3,
+      "base_connectivity": 9,
+      "connectivity": 12,
+      "damaged_connectivity": 11,
+      "edges": 96,
+      "epsilon": 0,
+      "k": 12,
+      "n": 16,
+      "residual_connectivity": 9
+    },
+    {
+      "alpha": 4,
+      "base_connectivity": 8,
+      "connectivity": 12,
+      "damaged_connectivity": 11,
+      "edges": 102,
+      "epsilon": 0,
+      "k": 12,
+      "n": 17,
+      "residual_connectivity": 8
+    },
+    {
+      "alpha": 5,
+      "base_connectivity": 7,
+      "connectivity": 12,
+      "damaged_connectivity": 11,
+      "edges": 108,
+      "epsilon": 0,
+      "k": 12,
+      "n": 18,
+      "residual_connectivity": 7
+    },
+    {
+      "alpha": 6,
+      "base_connectivity": 6,
+      "connectivity": 12,
+      "damaged_connectivity": 11,
+      "edges": 114,
+      "epsilon": 0,
+      "k": 12,
+      "n": 19,
+      "residual_connectivity": 6
+    },
+    {
+      "alpha": 7,
+      "base_connectivity": 5,
+      "connectivity": 12,
+      "damaged_connectivity": 11,
+      "edges": 120,
+      "epsilon": 0,
+      "k": 12,
+      "n": 20,
+      "residual_connectivity": 5
+    },
+    {
+      "alpha": 8,
+      "base_connectivity": 4,
+      "connectivity": 12,
+      "damaged_connectivity": 11,
+      "edges": 126,
+      "epsilon": 0,
+      "k": 12,
+      "n": 21,
+      "residual_connectivity": 4
+    },
+    {
+      "alpha": 9,
+      "base_connectivity": 3,
+      "connectivity": 12,
+      "damaged_connectivity": 11,
+      "edges": 132,
+      "epsilon": 0,
+      "k": 12,
+      "n": 22,
+      "residual_connectivity": 3
+    },
+    {
+      "alpha": 10,
+      "base_connectivity": 2,
+      "connectivity": 12,
+      "damaged_connectivity": 11,
+      "edges": 138,
+      "epsilon": 0,
+      "k": 12,
+      "n": 23,
+      "residual_connectivity": 2
+    },
+    {
+      "alpha": 11,
+      "connectivity": 12,
+      "damaged_connectivity": 11,
+      "edges": 144,
+      "epsilon": 0,
+      "k": 12,
+      "n": 24
+    },
+    {
+      "alpha": 12,
+      "connectivity": 12,
+      "damaged_connectivity": 11,
+      "edges": 150,
+      "epsilon": 0,
+      "k": 12,
+      "n": 25
+    },
+    {
+      "alpha": 13,
+      "connectivity": 12,
+      "damaged_connectivity": 11,
+      "edges": 156,
+      "epsilon": 0,
+      "k": 12,
+      "n": 26
+    }
+  ],
+  "certificate_sha256": "471e311c25f636ce85a5e0961127de739b33c1414179fb549d81959749b8044d",
+  "checked_source_sha256": {
+    "EXP-001-tree-strip/run.py": "61a3bfbedfd8b6d1f022b8338a2cc569f23147be9f26d5e1a73015bd1b49d67a",
+    "EXP-002-next-shell/run.py": "ae4d26efef9eabf23aef95dcdc56c235b5e160510ef9729253c753a9d88af797"
+  },
+  "cycle_controls": [
+    {
+      "alpha_two": false,
+      "cycle_lengths": [
+        3,
+        3
+      ],
+      "k_connected": true
+    },
+    {
+      "alpha_two": true,
+      "cycle_lengths": [
+        4,
+        4
+      ],
+      "k_connected": false
+    },
+    {
+      "alpha_two": true,
+      "cycle_lengths": [
+        4,
+        5
+      ],
+      "k_connected": false
+    },
+    {
+      "alpha_two": true,
+      "cycle_lengths": [
+        5,
+        5
+      ],
+      "k_connected": true
+    },
+    {
+      "alpha_two": true,
+      "cycle_lengths": [
+        5,
+        6
+      ],
+      "k_connected": true
+    },
+    {
+      "alpha_two": true,
+      "cycle_lengths": [
+        6
+      ],
+      "k_connected": true
+    },
+    {
+      "alpha_two": true,
+      "cycle_lengths": [
+        7
+      ],
+      "k_connected": true
+    },
+    {
+      "alpha_two": true,
+      "cycle_lengths": [
+        8
+      ],
+      "k_connected": true
+    }
+  ],
+  "method": "Raw edge lists; NetworkX node_connectivity; complement maximal cliques",
+  "networkx_version": "3.4.1",
+  "proof_sha256": "fb63d0c2bf107e12946e53e8a394a206c8e5a474f40d9c2273e20bdbde138d7a",
+  "schema": 1,
+  "scope": "Finite 75-case verification; not formal proof, peer review, or novelty certification",
+  "status": "PASS",
+  "summary": {
+    "cycle_controls": 8,
+    "damaged_edge_controls": 75,
+    "graphs": 75,
+    "harary_bases": 36,
+    "odd_degree_sum_cases": 15
+  }
+}

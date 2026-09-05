@@ -1,0 +1,202 @@
+\section{The entire first interior shell}
+
+Write $a$ for the prescribed independence number. Our main extension is the following.
+
+\begin{theorem}[First interior shell, D]\label{thm:shell}
+For every integer $k\ge3$ and every integer $2\le a\le k+1$,
+\[
+f(a+k+1,a,k)=\left\lceil\frac{k(a+k+1)}2\right\rceil.
+\]
+\end{theorem}
+
+The restriction $a\le k+1$ is exactly $n\ge2a$ on this shell.
+Also $n\le ka$, because $a(k-1)\ge k+1$ for $a\ge2$, $k\ge3$.
+Every $k$-connected graph has minimum degree at least $k$, so the claimed value is a lower bound by the degree sum.
+We give constructions attaining it with exact independence number $a$.
+
+\subsection{Two elementary residual-graph lemmas}
+
+\begin{lemma}[Matching bound]\label{lem:matching}
+A nonempty graph of minimum degree at least $b\ge0$ has a matching of size at least $\lceil b/2\rceil$.
+\end{lemma}
+\begin{proof}
+Take a maximal matching $Q$. If a vertex $v$ is unmatched, all its neighbors are matched endpoints, so $2|Q|\ge\dd(v)\ge b$.
+If every vertex is matched, $2|Q|$ is the order of the graph and is at least $b+1$.
+A subset of $Q$ realizes any smaller prescribed size.
+\end{proof}
+
+Number a cycle of order $m$ cyclically by $0,\ldots,m-1$.
+Its $r$th power $C_m^r$ joins pairs at cyclic distance at most $r$.
+We use $r\ge1$ and $m\ge2r+4$.
+The following are classical Harary constructions \cite{Harary}; we include the needed connectivity proof.
+
+\begin{lemma}[Cyclic gaps]\label{lem:harary}
+The graph $C_m^r$ is $2r$-connected and $2r$-regular. The following augmentations are $(2r+1)$-connected:
+\begin{enumerate}
+\item For $m=2q$, add the antipodal matching $\{i,i+q\}$, $0\le i<q$.
+The result is $(2r+1)$-regular.
+\item For $m=2q+1$, add $\{i,i+q\}$, $0\le i\le q$.
+The result has degree $2r+2$ at $q$ and degree $2r+1$ elsewhere.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+In the cyclic list of surviving vertices, consecutive survivors are adjacent if their intervening gap has fewer than $r$ deleted vertices.
+With at most one larger gap, these edges form a spanning path or cycle.
+Disconnection therefore requires two gaps, each with at least $r$ deletions, proving $2r$-connectivity of the cycle power.
+Its degree gives the matching upper bound on connectivity.
+
+For either odd-degree augmentation, only exactly $2r$ deletions require attention.
+If the cycle power disconnects, these deletions must form exactly two blocks of length $r$, leaving two nonempty surviving arcs.
+Let the shorter arc have length $p$. Rotate coordinates for the geometric argument so that
+\[
+A=\{0,\ldots,p-1\},\qquad B=\{p+r,\ldots,m-r-1\}.
+\]
+For $m=2q$, we have $p\le q-r$, and for every $x\in A$,
+\[
+p+r\le q\le x+q\le q+p-1\le2q-r-1.
+\]
+Its antipode therefore lies in $B$, yielding a surviving added edge.
+For $m=2q+1$, again $p\le q-r$; both $x+q$ and $x+q+1$ lie in $B$, since their indices range from $q$ to $q+p\le2q-r$.
+Every vertex in the odd-order construction has an added neighbor at one of these two almost-antipodal positions.
+This property survives coordinate rotation even though the chosen edge cover need not be rotation invariant.
+Thus an added edge joins the two internally connected arcs in either parity.
+The endpoint lists in the odd-order construction overlap only at $q$, giving its degree pattern; the even-order added edges are a perfect matching.
+\end{proof}
+
+We will also use
+\begin{equation}\label{eq:cycle-alpha}
+\alpha(C_m^r)\le\left\lfloor\frac{m}{r+1}\right\rfloor.
+\end{equation}
+Indeed, the forward cyclic distances between consecutive members of an independent set of size at least two are all at least $r+1$, and sum to $m$.
+A singleton also satisfies the bound.
+
+\subsection{An injective missing-neighbor lemma}
+
+\begin{lemma}[Residual lift]\label{lem:lift}
+Let $k\ge a\ge3$, $d=k-a$, and let $H$ have order $k+1$.
+Choose $M\subseteq V(H)$ with $|M|=a$. Suppose that $\alpha(H)\le a$, that
+\[
+\dd_H(t)\ge
+\begin{cases}d+1,&t\in M,\\d,&t\notin M,\end{cases}
+\]
+and, when $d\ge1$, that $H$ is $d$-connected.
+Add an independent set $S$ of size $a$, put it in bijection with $M$, and join each $s\in S$ to every vertex of $H$ except its assigned vertex.
+Then the resulting graph $G$ has $\alpha(G)=a$ and $\kappa(G)=k$.
+\end{lemma}
+\begin{proof}
+Each vertex of $S$ has degree $k$.
+With $r_t=1$ for $t\in M$ and $r_t=0$ otherwise,
+\[
+\dd_G(t)=\dd_H(t)+a-r_t\ge k.
+\]
+An independent set within either part has size at most $a$.
+A mixed independent set contains at most one residual vertex, since a vertex of $S$ misses only one vertex of $H$.
+It contains at most one vertex of $S$, since the misses are distinct.
+Its size is therefore at most two. The set $S$ witnesses equality $\alpha(G)=a$.
+
+Delete $X$ with $|X|<k$, and write $A=S\setminus X$, $B=V(H)\setminus X$.
+Always $|B|\ge2$.
+If $A$ is empty, $d=0$ is impossible and fewer than $d=k-a$ residual vertices were deleted, so $d$-connectivity of $H$ suffices.
+
+Suppose $A\ne\varnothing$ and $|B|\ge3$.
+Any two vertices of $A$ share a neighbor in $B$, so all of $A$ and every member of $B$ adjacent to it lie in a common component $C$.
+At most one residual vertex $t$ can lie outside $C$; it is missed by all of $A$, so $|A|\le r_t$.
+If it is disconnected, all its $H$-neighbors have been deleted. Hence
+\[
+|X|\ge a-|A|+\dd_H(t)\ge a-r_t+\dd_H(t)=\dd_G(t)\ge k,
+\]
+a contradiction.
+
+If $|B|=2$, precisely $k-1$ residual vertices were deleted, and all of $S$ survives.
+Since its $a\ge3$ vertices miss distinct residual vertices, some $s\in S$ is adjacent to both members of $B$.
+Every other member of $S$ is adjacent to at least one of them, so the remainder is connected.
+Thus $\kappa(G)\ge k$, while the degree-$k$ vertices in $S$ give equality.
+\end{proof}
+
+\subsection{The generic residual construction}
+
+Set $m=k+1=a+d+1$, $n=a+m$, $\varepsilon=kn\bmod2$, and $r=\lfloor d/2\rfloor\ge1$.
+We construct a $d$-connected residual graph $H$ with degree $d+1$ at exactly $a+\varepsilon$ distinct vertices and degree $d$ elsewhere.
+Every case contains $C_m^r$.
+
+If $d=2r$, start with $C_m^r$.
+Its complement is $a$-regular, and $\varepsilon$ is the parity of $a$ because $n=2a+d+1$ is odd.
+Lemma~\ref{lem:matching} supplies a complement matching of size $(a+\varepsilon)/2$.
+Adding it raises exactly $a+\varepsilon$ degrees by one.
+
+If $d=2r+1$ and $m$ is even, start with the antipodal augmentation in Lemma~\ref{lem:harary}.
+It is $d$-regular, its complement is $a$-regular, $a$ is even, and $\varepsilon=0$.
+Add a complement matching of size $a/2$.
+
+If $d=2r+1$ and $m=2q+1$ is odd, start with the odd-order augmentation.
+Its unique higher-degree vertex is $w=q$.
+Here $a$ is odd and $\varepsilon=0$.
+Every other vertex has degree $a$ in the complement; after deleting $w$, that complement has minimum degree at least $a-1$.
+Add a matching of size $(a-1)/2$ in it.
+Its endpoints avoid $w$, so precisely $a$ vertices now have degree $d+1$.
+All three constructions preserve the starting graph's $d$-connectivity.
+
+By \eqref{eq:cycle-alpha} and $d\le2r+1$,
+\[
+m=a+d+1\le a+2r+2<(a+1)(r+1),\qquad \alpha(H)\le a.
+\]
+The strict inequality follows from $r(a-1)-1\ge1$.
+Choose any $a$ higher-degree vertices for $M$ and apply Lemma~\ref{lem:lift}.
+Every vertex in $S$ and every selected residual vertex has degree $k$.
+The residual vertices of degree $d$ also have total degree $k$.
+When $\varepsilon=1$, the sole unselected higher-degree vertex has total degree $k+1$.
+Consequently
+\[
+\e(G)=\frac{kn+\varepsilon}{2}=\left\lceil\frac{kn}{2}\right\rceil,
+\]
+proving Theorem~\ref{thm:shell} in this range.
+
+\subsection{The remaining parameters}
+
+For $a=k$, take a residual matching of $\lceil k/2\rceil$ edges on $k+1$ vertices and choose $k$ distinct endpoints for $M$.
+Its independence number is $k+1-\lceil k/2\rceil\le k$.
+Lemma~\ref{lem:lift} applies with $d=0$, without requiring residual connectivity.
+For even $k$, all degrees in $G$ are $k$; for odd $k$, the single unselected matching endpoint has total degree $k+1$ and every other degree is $k$.
+Thus the required edge bound is attained.
+
+For $a=k-1$ and $k\ge4$, use $H=P_{k+1}$ and let $M$ be its $k-1$ internal vertices.
+The path is connected, its selected degrees are two, its remaining degrees are one, and
+\[
+\alpha(P_{k+1})=\left\lceil\frac{k+1}{2}\right\rceil\le k-1.
+\]
+Lemma~\ref{lem:lift} with $d=1$ gives a $k$-regular extremal graph.
+The stronger complete tree characterization from version 0.01 is retained in Theorem~\ref{thm:main} below.
+Its $k=3$ case is covered by $a=2$.
+
+For $a=k+1$, use the crown graph $K_{a,a}$ minus a perfect matching.
+It is $k$-regular, and its independence number is $a$: a mixed independent set has size at most two, while each part has size $a$.
+After fewer than $a-1$ deletions, at least two vertices survive in each part and at least $a+2\ge6$ survive in total.
+One part therefore has at least three vertices.
+Any two vertices in the other part share a neighbor there, and every remaining vertex has a neighbor across the bipartition.
+The surviving graph is connected.
+
+The last case, $a=2$, gives an additional equality classification.
+
+\begin{theorem}[Cycle-complement extremizers, D]\label{thm:cycles}
+For $k\ge3$ and $n=k+3$, all extremizers for $f(n,2,k)$ are precisely the complements of disjoint unions of cycles of lengths at least five, with total order $n$.
+\end{theorem}
+\begin{proof}
+Let $F$ be such a cycle union and $G=\overline F$.
+Then $G$ is $(n-3)$-regular and $\alpha(G)=\omega(F)=2$.
+The degree sum $n(n-3)$ is even, giving $\e(G)=nk/2$.
+If fewer than $k=n-3$ deletions disconnected $G$, at least four vertices would survive.
+Partition the surviving components into nonempty sets $U,V$ with no $G$-edges between them.
+All cross pairs belong to $F$.
+Since $F$ has maximum degree two, $|U|,|V|\le2$, so both must equal two.
+Their four cross edges consume all endpoint degrees and form a whole $4$-cycle component of $F$, a contradiction.
+Taking $F=C_n$ provides an example for every $n\ge6$, completing the numerical proof of Theorem~\ref{thm:shell}.
+
+Conversely, equality and minimum degree at least $k$ force an extremizer to be $k$-regular, so its complement is $2$-regular.
+It is therefore a union of cycles.
+Triangles violate $\alpha(G)=2$.
+For a $4$-cycle component, delete all $n-4=k-1$ vertices outside it; its complement consists of two disjoint edges, contradicting $k$-connectivity.
+Every cycle must have length at least five, and the first part proves sufficiency.
+\end{proof}
+
+The constructions exhaust $2\le a\le k+1$: either $a=2$, $a\in\{k-1,k,k+1\}$, or $a\ge3$ and $k-a\ge2$.
+Only the cycle-complement and tree-strip subfamilies receive complete equality classifications here.
