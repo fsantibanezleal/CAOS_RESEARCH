@@ -9,7 +9,7 @@
 | BJB-005 | proof and certificate ready; see EXP-002 verdict | Full first interior shell value, all alpha-two extremizers, 75 exact constructions and complete order-six control census |
 | BJB-006 | open | Determine when different maximum independent sets yield different tree representations |
 | BJB-007 | recorded handoff | Owning unsplittable-flow round should reconcile August two-sided disproof and external lower bounds from the portfolio audit |
-| BJB-008 | in progress | Prepare and visually verify v0.02 full-shell manuscript; scoped integration, Zenodo version DOI and public-download verification pending |
+| BJB-008 | in progress | Ten-page v0.02 published and byte-verified at DOI 10.5281/zenodo.22341644; 100 tests pass on combined develop baseline; research PR #251 integration pending |
 | BJB-009 | open | Classify all first-shell extremizers beyond alpha two and the tree strip |
 | BJB-010 | open | Scope $n=\alpha+k+2$ or a broader corrected regime with a new preflight and source comparison |
 

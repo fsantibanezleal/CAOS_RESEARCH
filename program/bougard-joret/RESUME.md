@@ -29,13 +29,15 @@ Updated: 2026-09-05.
 | Experiment | Question | Verdict | Load-bearing result |
 |---|---|---|---|
 | EXP-001-tree-strip | Adjacent diagonal value and all extremals | CONFIRMED | Uniform proof plus independently checked finite constructions |
-| EXP-002-next-shell | Full first-shell value; all alpha-two extremals | See owning verdict; certificate PASS | All-parameter construction proof and finite independent controls |
+| EXP-002-next-shell | Full first-shell value; all alpha-two extremals | CONFIRMED | Complete proof audited; independent exact certificates pass |
 
 ## 4. In flight
 
-Current round: manuscript v0.02 is being prepared for the full-shell result. Publication, version DOI and public-download verification are pending; do not use the v0.01 DOI as evidence of v0.02 publication. The paragraph below records the completed September 4 baseline.
+Current round: manuscript v0.02 is PUBLISHED at version DOI [10.5281/zenodo.22341644](https://doi.org/10.5281/zenodo.22341644), concept DOI 10.5281/zenodo.22315251. All 343,535 bytes match a fresh unauthenticated download; SHA-256 `faed3c5a760390a89bc77945e99837c85a55b09f6923570dcde50f289439d4b7`. API latest-version check and all ten PDF pages pass. After incorporating concurrent develop changes, all 100 repository tests pass. Research PR #251 is the remaining integration gate. No mathematical run remains active.
 
-No mathematical computation remains active. Manuscript v0.01 is PUBLISHED at version DOI `10.5281/zenodo.22315252`, concept DOI `10.5281/zenodo.22315251`. An unauthenticated fresh download matches all 319,548 local PDF bytes, SHA-256 `a804014fddf8d47ae0dc3988c7b1e6a0d3619daf0a423b398724321095bbb323`; the API confirms it is concept-latest. Research PR #248 merged to develop at `2507925`, and management PR #608 merged at `f09d60ee`. No serialized global release is claimed.
+The paragraph below records the completed September 4 baseline.
+
+Manuscript v0.01 remains frozen at version DOI `10.5281/zenodo.22315252`. At its publication, a fresh download matched all 319,548 PDF bytes, SHA-256 `a804014fddf8d47ae0dc3988c7b1e6a0d3619daf0a423b398724321095bbb323`, and the API confirmed it was then concept-latest. Research PR #248 merged to develop at `2507925`, and management PR #608 merged at `f09d60ee`. No serialized global release is claimed by this round.
 
 ## 5. Next actions
 
@@ -43,7 +45,7 @@ No mathematical computation remains active. Manuscript v0.01 is PUBLISHED at ver
 2. Regression: `python -m pytest tests/test_bougard_joret_tree_strip.py`.
 3. Read `problems/combinatorics/bougard-joret/context/report-source.md` before selecting another target; it records all 20 portfolio rows and important unsplittable-flow updates.
 4. Read EXP-002 `proof.md`, `verdict.md`, and the September 5 portfolio refresh; replay `python problems/combinatorics/bougard-joret/experiments/EXP-002-next-shell/run.py --output tmp/bougard-shell-replay.json`.
-5. Complete v0.02 rendered verification, scoped integration and Zenodo publication before calling this round delivered. See [the September 5 plan](plan-2026-09-05.md).
+5. Complete scoped PR integration; v0.02 publication and rendered/public-byte verification are complete. See [the September 5 plan](plan-2026-09-05.md).
 6. Further research: classify remaining shell extremizers or declare a new hypothesis for $n=\alpha+k+2$. The general problem remains open.
 
 ## 6. Where everything lives

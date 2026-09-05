@@ -8,4 +8,4 @@
 4. [Exact experiments](04-experiments.md)
 5. [Open questions](05-open-questions.md)
 
-Authority: [EXP-002 proof](../experiments/EXP-002-next-shell/proof.md), [EXP-002 verdict](../experiments/EXP-002-next-shell/verdict.md), and [EXP-001 verdict](../experiments/EXP-001-tree-strip/verdict.md). [Portfolio refresh](../context/2026-09-05-portfolio-refresh.md). Manuscript: `manuscripts/bougard-joret/tree-strip/`. Version v0.02 is being prepared; its publication and DOI are pending. The existing v0.01 DOI identifies the earlier strip result only.
+Authority: [EXP-002 proof](../experiments/EXP-002-next-shell/proof.md), [EXP-002 verdict](../experiments/EXP-002-next-shell/verdict.md), and [EXP-001 verdict](../experiments/EXP-001-tree-strip/verdict.md). [Portfolio refresh](../context/2026-09-05-portfolio-refresh.md). Manuscript: `manuscripts/bougard-joret/tree-strip/`. [Published v0.02](https://doi.org/10.5281/zenodo.22341644), ten pages, public bytes verified. The v0.01 DOI identifies the earlier strip result only.
