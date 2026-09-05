@@ -8,7 +8,9 @@ uniform missing-pivot filler. EXP-056 proves `M s=b_A+b_B+gamma`; EXP-057 proves
 Nonvanishing, uniform order two, the second class and upper bound remain distinct gates.
 All 99 integrated tests and guards pass. Both frozen manuscript PDFs match fresh public Zenodo
 downloads; the v0.15 management-ledger drift is corrected to v0.23, without a new publication.
-Research PR #247 and management PR #610 track this round. Later text is chronological history.
+Research PRs #247/#250 are merged through main at `2d0c10a`; management PR #610 is merged
+at `602ad88`. EXP-058 was committed before computation (`0170a99`) and is active: bounded
+radius-two source search for `2eta` with complete original equations. Later text is history.
 
 | date | from | to | reason |
 |---|---|---|---|

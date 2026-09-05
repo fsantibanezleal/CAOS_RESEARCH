@@ -1823,3 +1823,15 @@
   No new publication was made because the stronger manuscript theorem gate remains unmet.
 - Integrated concurrent Bougard-Joret changes without overwriting them; 99 tests, Ruff, and all
   content/template/research guards pass. Research PR #247 and management PR #610 track promotion.
+
+## 2026-09-05 - checked promotion and local endpoint-source gate
+
+- Research PR #247 merged into develop at `5e20b7b`, then PR #250 passed all checks and
+  merged into main at `2d0c10a`. Management PR #610 merged at `602ad88`; its develop checkout
+  remained unchanged in name and concurrent Rajo files were preserved.
+- EXP-058's hypothesis was committed and pushed at `0170a99` before computation. It asks
+  whether the radius-two inverse-incidence neighborhood supplies an integral source for
+  `2eta` at training parameters 8,9,10, with every additional boundary equation retained.
+- The 60-second, 1200-column, 20000-nonzero limits prohibit repeating the old unrestricted
+  HNF pullback. Noninteger rational sections are explicitly inconclusive, and local rational
+  obstruction cannot exclude a full-domain source. The original p=11 source holdout stays locked.

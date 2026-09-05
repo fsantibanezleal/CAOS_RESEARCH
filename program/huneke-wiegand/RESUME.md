@@ -39,14 +39,18 @@ the finite range. The integrated repository passes 99 tests and all structural/c
 Manuscripts: v0.23 and companion v0.02 are unchanged. Both public latest-version endpoints and
 fresh PDF downloads matched on 2026-09-05 UTC. See the manuscript scope audit. The management
 ledger is repaired through v0.23. No new Zenodo version was published; the stronger theorem gate
-remains unmet. Research PR #247 and management PR #610 own this round's promotion.
+remains unmet. Research PRs #247/#250 are merged through `main` (merge `2d0c10a`);
+management PR #610 is merged (merge `602ad88`). EXP-058 is now declared and active on the
+same product branch; it tests bounded local original-source membership before any larger run.
 
 ### Exact next actions
 
-1. Declare the next experiment for a parity functional on the full original relations with
-   `lambda(eta_p)=1`. The single odd row is a vector invariant, not yet a dual certificate.
-2. Independently construct a generic source for `2eta_p`. The known finite corrected sources
-   transfer by `M(2(s_p+q_p)-z_p)=2eta_p`; they do not supply a uniform formula.
+1. Complete EXP-058's radius-two original-source search for `2eta_p` at training parameters
+   `8,9,10`, with exact full-boundary audit and strict caps. A nonintegral rational section is
+   inconclusive about integer membership. Inspect symbolic support before another compute round.
+2. Independently construct a parity functional on all original relations with
+   `lambda(eta_p)=1`, and a generic source for `2eta_p`. The single odd row is not a dual
+   certificate; known finite corrected sources do not supply a uniform formula.
 3. Then obtain the second independent class and a separate integral upper bound. Test a
    primitive signed subset-incidence model or relative Morse reduction before any new HNF.
 4. Keep the `56->58` threshold and full lower-strand recurrence separate; do not compute `p=13`
@@ -58,8 +62,9 @@ Cheap repeatable checks (from repository root; use temporary outputs for audits)
 .venv/Scripts/python.exe -m pytest tests/test_hw_full_source_boundary.py tests/test_hw_unit_filler.py tests/test_hw_uniform_low_source.py tests/test_hw_endpoint_reduction.py -q
 ```
 
-Proofs and exact commands live in the EXP-054--057 folders under
-`problems/commutative-algebra/huneke-wiegand/experiments/`. No experiment process remains active.
+Proofs and exact commands live in the EXP-054--058 folders under
+`problems/commutative-algebra/huneke-wiegand/experiments/`. EXP-058 implementation is in flight;
+check its checkpoint and active processes before rerunning it.
 The existing product branch is `work/huneke-wiegand/open`; CAOS_MANAGE stays on `develop`.
 
 ## Historical checkpoint through EXP-053
