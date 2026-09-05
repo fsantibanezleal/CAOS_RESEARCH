@@ -9,8 +9,12 @@ and vanishes over any coefficient ring where two is invertible. The independent
 18-parameter exact audit passes; a lossless archive preserves every labelled
 source. This theorem meets the narrow homological-companion publication gate.
 
-EXP-061 is declared but not a closed result yet. Exact order two, a second
-independent class and the full quotient are not implied by annihilation alone.
+EXP-061 now proves nonvanishing by a twelve-row relative functional on the
+full original presentation. The independent audit covers 65 complete sectors
+and 23695 original sources. Together with EXP-060, the tracked class has exact
+order two for every p>=8. Its complete proof includes h=10p-3 and all free
+d=2 potentials. EXP-062's proposed all-triangle family is still under audit;
+a full quotient upper bound is not implied by this first class.
 
 ## Superseded result checkpoint through EXP-059, 2026-09-05
 

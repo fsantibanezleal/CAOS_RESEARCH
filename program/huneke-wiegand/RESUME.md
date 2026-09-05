@@ -1,8 +1,8 @@
 # Huneke-Wiegand extensions - session handoff
 
-## Current checkpoint: EXP-060 closed; EXP-061 declared, 2026-09-05
+## Current checkpoint: EXP-061 closed; EXP-062 declared, 2026-09-05
 
-**The tracked class is uniformly annihilated by two. The full connecting-parity
+**The tracked class has exact order two for every p>=8. The full connecting-parity
 problem remains open.** EXP-060 proves `M V_p=2eta_p` for every p>=8 in the
 complete original integer presentation. Its explicit interval-potential source,
 including both short K corrections, also gives
@@ -14,19 +14,25 @@ are committed and pushed on `work/huneke-wiegand/open`.
 EXP-061's twelve-row relative parity functional was committed and pushed in
 `9169f23` BEFORE computation. Independent paper preflight supports full-map
 nonvanishing after explicitly including h=10p-3 and the complete d=2 kernel.
-Producer and independent full-sector F2 audit are IN FLIGHT; exact order two
-is not yet a closed experiment verdict. Start here, not with old HNF extraction.
+The producer passes 2123 potential checks; the independent audit certifies 65
+complete sectors with 23695 original S sources. The proof/audit conjunction is
+CONFIRMED and committed at 0625ec4; portable LF receipts are fixed at 31f53a0.
+Start here, not with old HNF extraction.
 The original p=11 HNF-source labels remain unread.
 
 A new homological companion is being prepared under
 `manuscripts/huneke-wiegand/integral-connecting-annihilators/`. Its reserved
 version DOI is `10.5281/zenodo.22342976`, concept `10.5281/zenodo.22342975`.
-It is NOT published yet. EXP-060 meets the genuine all-parameter theorem gate;
-EXP-061 may strengthen the unpublished text only after proof and audit closure.
+It is NOT published yet. EXP-060/061 meet the genuine all-parameter theorem gate;
+the unpublished text now includes the full uniform nonvanishing proof.
 Existing main v0.23 and curvilinear companion v0.02 remain frozen and unaffected.
 
-Next: close EXP-061; finalize claim/build/all-page render/public-download gates;
-then pursue a second independent class and a separate full-quotient upper bound.
+EXP-062 was committed at 8daa0d4 before computation. It tests all distinct
+triangles i<j<k of sum p-2, aiming to certify q=floor(((p-2)^2+3)/12)
+independent order-two classes. Its producer/auditor are in flight; this quadratic
+lower bound is not yet a closed verdict. Next close this gate, then finalize
+claim/build/all-page render/public-download checks. Full-quotient upper bounds
+and the relative completion identification remain separate obligations.
 Issue #252 and PR #253 own this round. Product branch stays as above;
 CAOS_MANAGE stays on develop, preserving concurrent Rajo edits. No global
 version bump, bake, or frontend release is included.

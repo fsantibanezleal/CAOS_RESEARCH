@@ -1881,3 +1881,18 @@
   and full-sector F2 audit are now active, not yet a uniform nonvanishing verdict.
 - Concurrent Bougard-Joret updates were merged without modifying unrelated Rajo
   edits. CAOS_MANAGE stayed on develop; no new branch or worktree was created.
+
+## 2026-09-05 - uniform exact order two and all-triangle extension
+
+- EXP-061 is CONFIRMED at 0625ec4: the relative twelve-row functional gives
+  full-original-map nonvanishing and EXP-060 gives annihilation. Thus eta and
+  b_A+b_B have exact integral order two for every p>=8. Independent audit:
+  65 complete sectors, 23695 original S columns, 108261 D rows and 231986
+  incidences; 2123 producer chains and 21 focused tests also pass.
+- Git-blob validation caught a Windows CRLF receipt mismatch. Commit 31f53a0
+  changes only the writer to explicit LF and replays the full audit; mathematical
+  certificates and counts are unchanged, with portable hashes recorded in the verdict.
+- EXP-062 was frozen at 8daa0d4 before execution. Independent paper review extends
+  the signed source and relative functional to every distinct triple of sum p-2,
+  suggesting quadratically many independent two-torsion classes. This is a new
+  lower-bound gate, not an inferred full quotient or recurrence. Audit is active.

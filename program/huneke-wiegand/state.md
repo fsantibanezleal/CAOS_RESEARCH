@@ -2,9 +2,11 @@
 
 Current heartbeat: 2026-09-05. EXP-060 is CONFIRMED: the explicit full original
 source satisfies `M V=2eta` for every p>=8. Independent 18-parameter audit and
-152 integrated tests pass; result commit 6e87a27 is pushed. EXP-061's twelve-row
-relative parity functional is declared at 9169f23 and under independent full-sector
-audit. Uniform nonvanishing/exact order two remain pending that closure. A new
+152 integrated tests passed at the EXP-060 checkpoint; result commit 6e87a27 is
+pushed. EXP-061 is now CONFIRMED at 0625ec4: its twelve-row relative functional
+proves exact order two for every p>=8; independent full-sector audit covers 65
+sectors and 23695 original sources. Portable receipts are fixed at 31f53a0.
+EXP-062's all-triangle quadratic torsion family is declared at 8daa0d4 and active. A new
 complementary preprint has draft DOI 22342976 (concept 22342975), not yet published.
 PR #253 and issue #252 remain open. Second class and full quotient are still open.
 
