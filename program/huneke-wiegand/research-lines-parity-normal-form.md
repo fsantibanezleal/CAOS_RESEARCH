@@ -5,9 +5,10 @@
 EXP-058 closes the first local gate negatively: an exact 40-row integer dual excludes `2eta_8`
 from the complete radius-two source span. Any later source must include a column on which
 that dual evaluates nontrivially. This necessary escape condition is not a global parity dual.
-EXP-059 now tests a uniform integral potential parametrization in the fixed high pair
-`{6p,8p-4}`. Its predicted constant-size connecting columns are a structural alternative to
-neighborhood growth; the full quotient and mixed-high compatibility must still be proved.
+EXP-059 proves a uniform integral potential parametrization in the fixed high pair
+`{6p,8p-4}`. Its at-most-seven-row connecting columns are independently audited and provide a
+structural alternative to neighborhood growth. The full quotient and mixed-high compatibility
+must still be proved; do not confuse a complete sector D-kernel with the full torsion normal form.
 The new primary-source dossier on relative divisor complexes is conditional background, not
 an asserted identification of the CAOS presentation with a projective-plane complex.
 

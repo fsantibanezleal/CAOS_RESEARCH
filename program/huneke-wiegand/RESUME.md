@@ -6,13 +6,16 @@
 representative, not the obsolete generic HNF source extraction. All 53 earlier verdict summaries
 and both manuscript dependency indexes were reviewed in the EXP-054--057 round.
 
-Latest closed experiment: EXP-058 refutes radius-two source membership at p=8. Its complete
+Latest closed experiments: EXP-058 refutes radius-two source membership at p=8. Its complete
 330-column, 1803-row neighborhood has a 40-row integer dual annihilating every column but
 pairing to 4 with `2eta_8`; a separate coefficient-first reconstruction verifies all 2669
 incidences. This is a local rational obstruction, not a global quotient certificate. The run
-stopped before p=9/10. EXP-059 is declared and in flight: a proposed complete integral
-potential basis for one fixed-high D-cycle sector, mapping each basis chain to at most seven
-K rows. Do not resume by blindly increasing the neighborhood radius.
+stopped before p=9/10. EXP-059 now proves a complete integral potential basis for the D-cycle
+sector with exterior high set `{6p,8p-4}`, of rank `binom(p-1,2)`. Each unit basis chain has
+height one, support at most `3p-5`, and complete original boundary on at most seven K rows.
+All 861 frozen chains pass independent full-boundary audit, including literal differential
+cross-checks of every basis chain at p=8,...,16. Completeness comes from the signed vertex-zero
+reconstruction proof, not this finite range. Do not resume by increasing the neighborhood radius.
 
 Put `L_p=[1,p] union [3p,4p-2]` and
 `G_p(a,j;c)=[K,(L_p minus {a,3p,3p+j}) union {6p};10p+c]`.
@@ -41,8 +44,9 @@ No original `p=11` HNF-source labels were accessed.
 
 Current validation: EXP-054 audit 213 checks; EXP-055 audit 456 checks plus 1793 complement-sign
 identities; EXP-056 and retained EXP-057 identities pass all 93 stress parameters `p=8,...,100`
-under independent exact differentials. The uniform proofs are the signed face derivations, not
-the finite range. The integrated repository passes 99 tests and all structural/content guards.
+under independent exact differentials. EXP-058's two local duals and EXP-059's 861 chains are
+independently audited. The uniform proofs are the signed face and potential derivations, not
+the finite range. The integrated repository passes 132 tests, including concurrent Bougard-Joret work.
 
 Manuscripts: v0.23 and companion v0.02 are unchanged. Both public latest-version endpoints and
 fresh PDF downloads matched on 2026-09-05 UTC. See the manuscript scope audit. The management
@@ -53,9 +57,10 @@ draft PR #253; EXP-058 is committed in `a918326`, EXP-059 declared in `08adadb`.
 
 ### Exact next actions
 
-1. Complete EXP-059's frozen potential-basis campaign, signed completeness proof and independent
-   audit. It selects all basis chains at p=8,...,16 and four frozen stress pairs at p=17,...,100.
-   Then use the sparse connecting map or EXP-058's separating dual to select the next relation.
+1. Use EXP-059's explicit connecting columns to derive cross-high relations. A proposed extension
+   from high `8p-4` to `8p-3` and a K-column correction is under symbolic review, not yet a
+   declared or numerically verified experiment. Freeze its complete formulas before testing.
+   Keep C0 cancellation, exceptional high-free faces and the C2 range explicit.
 2. Independently construct a parity functional on all original relations with
    `lambda(eta_p)=1`, and a generic source for `2eta_p`. The single odd row is not a dual
    certificate; known finite corrected sources do not supply a uniform formula.
@@ -71,8 +76,8 @@ Cheap repeatable checks (from repository root; use temporary outputs for audits)
 ```
 
 Proofs and exact commands live in the EXP-054--059 folders under
-`problems/commutative-algebra/huneke-wiegand/experiments/`. EXP-059 implementation is in flight;
-check its checkpoint and active processes before rerunning it.
+`problems/commutative-algebra/huneke-wiegand/experiments/`. Both canonical runs and audits are
+complete; no experiment process remains active. The next cross-high proposal is not a result.
 The existing product branch is `work/huneke-wiegand/open`; CAOS_MANAGE stays on `develop`.
 
 ## Historical checkpoint through EXP-053

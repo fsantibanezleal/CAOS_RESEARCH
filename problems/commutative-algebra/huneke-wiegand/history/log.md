@@ -1850,3 +1850,18 @@
 - Re-read Bruns-Herzog Proposition 1.1 and its proof from the scanned published source. The
   relative divisor-complex interpretation remains conditional until its actual chain map is
   identified; it is not imported as a CAOS torsion theorem. Publication triggers are unchanged.
+
+## 2026-09-05 - complete potential-basis theorem in a fixed-high sector
+
+- EXP-059 proves an integral basis of the entire D-kernel for exterior high set `{6p,8p-4}`.
+  Its rank is `binom(p-1,2)`; vertex-zero A equations and unit-star B equations give an
+  explicit integral inverse, so completeness is not inferred from finite ranks.
+- Every unit potential produces a height-one source of support at most `3p-5` and a full
+  original boundary on at most seven K rows, with no D residual or discarded high face.
+- All 861 declared chains pass the producer's two literal differentials and the separate
+  bitset audit; all 525 small-parameter basis chains also pass the auditor's literal
+  differential cross-check. Wrong-sign and coefficient-mutation controls pass. Audit SHA-256:
+  `9120cf1d98e60802b84a4c2d8351dae373342accda9cb517d641b8f1f4fbc0a7`.
+- Integrated the concurrently promoted Bougard-Joret full-shell work without overwriting it.
+  All 132 tests and Ruff pass. The next mathematical gate is explicit cross-high compatibility,
+  not a larger neighborhood search. Generic annihilation/nonvanishing and upper bounds remain open.

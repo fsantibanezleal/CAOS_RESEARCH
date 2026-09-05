@@ -2,6 +2,13 @@
 
 ## Current result and limits, 2026-09-05
 
+EXP-059 proves that the full integral D-kernel in the fixed exterior high sector
+`{6p,8p-4}` has an explicit potential basis of rank `binom(p-1,2)`. Every basis source has
+unit coefficients, at most `3p-5` terms, and a full original connecting image with at most
+seven K rows. The signed vertex-zero reconstruction proves completeness for every p>=8;
+861 independently checked chains attack its formulas. This is a sector theorem, not a full
+torsion normal form, and does not establish `2eta` as a boundary or eta as a nonzero class.
+
 EXP-058 independently refutes local radius-two source membership at p=8: its 330 original
 columns and 2669 signed incidences are annihilated by an integer functional pairing to 4
 with `2eta_8`. This is a rigorous local rational exclusion. It neither excludes a longer

@@ -10,9 +10,10 @@ All 99 integrated tests and guards pass. Both frozen manuscript PDFs match fresh
 downloads; the v0.15 management-ledger drift is corrected to v0.23, without a new publication.
 Research PRs #247/#250 are merged through main at `2d0c10a`; management PR #610 is merged
 at `602ad88`. EXP-058 is closed and independently refutes radius-two source membership at
-p=8; 111 integrated tests pass. EXP-059 was declared before computation (`08adadb`) and is
-active: a uniform potential basis and sparse connecting map in one fixed-high sector.
-Issue #252 and draft PR #253 own this new round. Later text is history.
+p=8. EXP-059 is complete: a uniform integral potential basis of rank `binom(p-1,2)` in the
+fixed-high sector `{6p,8p-4}`, with at most seven K rows per basis image. All 861 chains pass
+independent audit, and all 132 integrated tests pass. Cross-high compatibility is the next
+symbolic gate, not yet an experiment. Issue #252 and PR #253 own promotion. Later text is history.
 
 | date | from | to | reason |
 |---|---|---|---|

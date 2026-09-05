@@ -4,9 +4,10 @@
 
 EXP-058's complete radius-two neighborhood is excluded by an independently checked integer
 separating functional at p=8. Do not expand it blindly: any genuine source must use an omitted
-column detected by this functional. EXP-059 instead declares a uniform potential basis of
-one fixed-high D-kernel, with an at-most-seven-row connecting image. Audit this structural
-parametrization before testing mixed high-variable choices or any further source search.
+column detected by this functional. EXP-059 proves a uniform integral potential basis of
+one fixed-high D-kernel, with an at-most-seven-row connecting image. Its complete signed proof
+and independent 861-chain audit pass. Next derive and freeze mixed high-variable relations,
+retaining all K corrections and exceptional faces, before any further source search.
 
 EXP-054--057 supersede generic HNF pullback as the active route. The first-class representative
 is now the explicit four-row endpoint `eta_p` in EXP-057, with exact integral transfer
