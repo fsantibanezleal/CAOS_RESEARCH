@@ -40,8 +40,14 @@ version DOI [`10.5281/zenodo.22342976`](https://doi.org/10.5281/zenodo.22342976)
 concept DOI `10.5281/zenodo.22342975`. Fresh unauthenticated public/latest
 metadata and download checks passed at 13:36:50 UTC for all 503,686 bytes,
 SHA-256 `c4b73414eb06d141c09a2980a7c349043bdc576326a9018e800a0b6e349a0ec8`.
-The source/PDF is in commit `422e942`; PR #253 remains open, so checked
-promotion is still pending.
+The source/PDF is in commit `422e942`. Research PR #253 merged at
+`4073d730158ea8bf239f85e5d83ed2bbfd234657`, followed by PR #257 at
+`4aed2b050ccd282d13e5389a4ee732e8859ce09f` on 2026-09-05 at 13:46:22 UTC.
+Both passed guards/tests, including pipeline smoke, and work/develop/main
+synchronized at `4aed2b0`. Management PR #616 merged at
+`7ff09f87f8217e96fc7919d3deb8bd3cad9d7c2a`, synchronizing develop/main
+without changing the 32 dirty Rajo paths. The core round is delivered; these
+IDs identify its release, independently of later documentation-only receipts.
 The result checkpoints below are historical; their earlier open-gate language
 does not supersede this closed EXP-062 verdict.
 

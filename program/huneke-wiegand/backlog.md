@@ -15,11 +15,16 @@ The older relative rank-two items remain conditional on the first comparison,
 not evidence that the full-map second class is still missing. No EXP-063 is
 declared or authorized by this navigation update.
 
-Delivery remains HWB-083: the new 18-page companion passed manuscript QA and
+HWB-083's core delivery is complete: the new 18-page companion passed manuscript QA and
 213 repository tests pass. It was published at version DOI
 `10.5281/zenodo.22342976` on 2026-09-05 at 13:35:34 UTC; the fresh public
 latest/download check passed at 13:36:50 UTC for all 503,686 PDF bytes.
-Source/PDF commit: `422e942`. PR #253 is open; checked PR promotion remains.
+Source/PDF commit: `422e942`. Research PRs #253/#257 merged with green guards
+and tests, including pipeline smoke; work/develop/main synchronized at
+`4aed2b050ccd282d13e5389a4ee732e8859ce09f`. Management PR #616 merged at
+`7ff09f87f8217e96fc7919d3deb8bd3cad9d7c2a`, with develop/main synchronized
+and 32 unrelated dirty Rajo paths preserved. These IDs identify the verified
+core release; later documentation-only receipts do not change its mathematical scope.
 
 | id | priority | status | item | gate |
 |---|---:|---|---|---|
@@ -105,6 +110,6 @@ Source/PDF commit: `422e942`. PR #253 is open; checked PR promotion remains.
 | HWB-080 | 0 | done | construct a uniform original source for twice the endpoint class | EXP-060 proves `M V=2eta` for all p>=8 using explicit interval potentials and both K corrections; all 18 independent original-boundary checks pass |
 | HWB-081 | 1 | in progress | construct explicit maps between the full triangle family and isolated/relative presentations | First prove well-defined integral source/target maps and their effect on labelled classes, including `58->59`, `58->62`, and the separate `56->58` threshold; EXP-062 already supplies multiple independent full-map classes |
 | HWB-082 | 0 | done | promote EXP-054--057 and reconcile the current handoff | Research PRs #247/#250 merged through main at 2d0c10a; management PR #610 merged at 602ad88; checked CI and fresh remote refs |
-| HWB-083 | 0 | in progress | promote EXP-058--062 and the complementary manuscript | EXP-058--062 closed, 18-page manuscript QA and 213 tests pass; DOI 22342976 published and fresh-public-download verified, source/PDF commit 422e942; PR #253 open and checked promotion pending |
+| HWB-083 | 0 | done | promote EXP-058--062 and the complementary manuscript | Core round delivered: verified DOI 22342976, 18-page manuscript, 213 tests; research PRs #253/#257 merged with green guards/tests at 4aed2b0, management PR #616 merged at 7ff09f8 |
 | HWB-084 | 0 | done | certify the all-triangle independent torsion family | EXP-062 proves `(Z/2)^floor(((p-2)^2+3)/12)` as a direct summand for all p>=8, with exact relation lattice, signed sources and eta=x02 in the quotient; all independent audits and 39 dedicated tests pass |
 | HWB-085 | 2 | pending | bound the complementary full integral cokernel | After HWB-081 comparison maps, prove an integral reduction or explicit complement; the nonconstructive EXP-062 retraction supplies no full upper bound, free-rank formula or odd-torsion exclusion |
