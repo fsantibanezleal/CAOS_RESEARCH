@@ -1,6 +1,22 @@
 # Parity-normal-form research lines
 
-## Current route correction, 2026-09-05
+## Current route after uniform annihilation, 2026-09-05
+
+EXP-060 closes the first uniform twice-source gate in the FULL integer map.
+Its reflection-triangle identity is the useful transferable mechanism, not a
+larger local matrix. EXP-061 now attacks full-map nonvanishing with a twelve-row
+relative functional: kill all K boundaries and all connecting images of complete
+D cycles, without requiring an explicitly extended global D functional. The
+corrected complete reachability list includes h=10p-3. Exact computational audit
+is pending; do not yet call the class uniformly nonzero.
+
+After this gate, rank candidate triangle classes by a sparse dual-pairing matrix.
+This may supply a second independent class. It is a new declared experiment,
+not permission to infer all quotient dimensions. The complete upper bound and
+recurrence remain independent structural problems. EXP-060 justifies the narrow
+new companion manuscript; previous no-publication decisions below are historical.
+
+## Superseded route correction through EXP-059, 2026-09-05
 
 EXP-058 closes the first local gate negatively: an exact 40-row integer dual excludes `2eta_8`
 from the complete radius-two source span. Any later source must include a column on which

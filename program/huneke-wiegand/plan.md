@@ -1,6 +1,23 @@
 # Huneke-Wiegand extensions - research plan
 
-## Current priority, 2026-09-05
+## Current priority after EXP-060, 2026-09-05
+
+The uniform integer source obligation is CLOSED: EXP-060 proves `M V=2eta`
+in the complete original map for every p>=8. The signed interval triangle and
+two exact K corrections replace local source expansion. Its independent audit
+checks all 18 declared parameters through p=100. This is a uniform proof,
+not an extrapolated sequence. It triggers a separate homological manuscript.
+
+Priority zero is EXP-061's frozen twelve-row relative parity functional, with
+complete D-kernel coverage in all reachable high sectors. If independently
+confirmed, it upgrades the tracked class from order dividing two to exact order
+two. Then seek a second class using distinct interval triangles and a dual pairing
+matrix; do not assume their independence or a full-quotient upper bound.
+The upper-bound/recurrence route requires a complete signed normal form or actual
+chain equivalence. No new coefficient or unrestricted HNF is justified merely
+because the first class is closed. Manuscript/Zenodo and PR gates run in this round.
+
+## Superseded priority through EXP-059, 2026-09-05
 
 EXP-058's complete radius-two neighborhood is excluded by an independently checked integer
 separating functional at p=8. Do not expand it blindly: any genuine source must use an omitted

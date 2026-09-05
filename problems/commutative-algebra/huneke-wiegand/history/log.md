@@ -1865,3 +1865,19 @@
 - Integrated the concurrently promoted Bougard-Joret full-shell work without overwriting it.
   All 132 tests and Ruff pass. The next mathematical gate is explicit cross-high compatibility,
   not a larger neighborhood search. Generic annihilation/nonvanishing and upper bounds remain open.
+
+## 2026-09-05 - uniform annihilator and declared complete parity audit
+
+- EXP-060 was declared at db3642d before computation and closed at 6e87a27.
+  Its all-parameter signed proof gives `M V=2eta` in the full original map,
+  including both short K corrections. All 18 declared cases through p=100 pass
+  independent reconstruction; all sources are preserved losslessly. All 152 tests pass.
+- This closes HWB-080 and meets the stronger all-parameter publication gate.
+  A separate companion manuscript has reserved DOI 22342976, concept 22342975;
+  reservation is not publication. Existing PDFs remain unchanged.
+- Independent paper review of a twelve-row relative parity functional found and
+  repaired an omitted reachable h=10p-3 sector before EXP-061's declaration
+  commit 9169f23. The complete d=2 kernel retains the f_u(u) freedoms. Producer
+  and full-sector F2 audit are now active, not yet a uniform nonvanishing verdict.
+- Concurrent Bougard-Joret updates were merged without modifying unrelated Rajo
+  edits. CAOS_MANAGE stayed on develop; no new branch or worktree was created.

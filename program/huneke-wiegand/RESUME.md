@@ -1,6 +1,37 @@
 # Huneke-Wiegand extensions - session handoff
 
-## Current checkpoint: 2026-09-05
+## Current checkpoint: EXP-060 closed; EXP-061 declared, 2026-09-05
+
+**The tracked class is uniformly annihilated by two. The full connecting-parity
+problem remains open.** EXP-060 proves `M V_p=2eta_p` for every p>=8 in the
+complete original integer presentation. Its explicit interval-potential source,
+including both short K corrections, also gives
+`M(2s_p+2q_p-V_p)=2(b_A+b_B)`. Independent full-boundary audit passes all 18
+declared parameters through p=100; all labelled sources are preserved losslessly.
+The full repository suite passes 152 tests. Hypothesis `db3642d`, result `6e87a27`
+are committed and pushed on `work/huneke-wiegand/open`.
+
+EXP-061's twelve-row relative parity functional was committed and pushed in
+`9169f23` BEFORE computation. Independent paper preflight supports full-map
+nonvanishing after explicitly including h=10p-3 and the complete d=2 kernel.
+Producer and independent full-sector F2 audit are IN FLIGHT; exact order two
+is not yet a closed experiment verdict. Start here, not with old HNF extraction.
+The original p=11 HNF-source labels remain unread.
+
+A new homological companion is being prepared under
+`manuscripts/huneke-wiegand/integral-connecting-annihilators/`. Its reserved
+version DOI is `10.5281/zenodo.22342976`, concept `10.5281/zenodo.22342975`.
+It is NOT published yet. EXP-060 meets the genuine all-parameter theorem gate;
+EXP-061 may strengthen the unpublished text only after proof and audit closure.
+Existing main v0.23 and curvilinear companion v0.02 remain frozen and unaffected.
+
+Next: close EXP-061; finalize claim/build/all-page render/public-download gates;
+then pursue a second independent class and a separate full-quotient upper bound.
+Issue #252 and PR #253 own this round. Product branch stays as above;
+CAOS_MANAGE stays on develop, preserving concurrent Rajo edits. No global
+version bump, bake, or frontend release is included.
+
+## Superseded checkpoint through EXP-059: 2026-09-05
 
 **The all-parameter connecting-parity problem is OPEN.** Resume at EXP-057's four-row endpoint
 representative, not the obsolete generic HNF source extraction. All 53 earlier verdict summaries

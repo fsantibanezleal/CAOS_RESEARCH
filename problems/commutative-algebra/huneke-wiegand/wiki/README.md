@@ -1,6 +1,18 @@
 # Huneke-Wiegand extensions - research wiki
 
-## Current result and limits, 2026-09-05
+## Current closed result: uniform annihilation, 2026-09-05
+
+EXP-060 proves `M_p V_p=2eta_p` for every integer p>=8 using explicit signed
+interval potentials and two original K-source corrections. All boundary rows
+are retained. Consequently the tracked integral class has order dividing two
+and vanishes over any coefficient ring where two is invertible. The independent
+18-parameter exact audit passes; a lossless archive preserves every labelled
+source. This theorem meets the narrow homological-companion publication gate.
+
+EXP-061 is declared but not a closed result yet. Exact order two, a second
+independent class and the full quotient are not implied by annihilation alone.
+
+## Superseded result checkpoint through EXP-059, 2026-09-05
 
 EXP-059 proves that the full integral D-kernel in the fixed exterior high sector
 `{6p,8p-4}` has an explicit potential basis of rank `binom(p-1,2)`. Every basis source has
