@@ -29,3 +29,7 @@ Manuscript v0.02 expands the original paper to ten pages. All pages were rendere
 Published v0.02 at DOI `10.5281/zenodo.22341644`, same concept DOI `10.5281/zenodo.22315251`. All 343,535 public PDF bytes match, SHA-256 `faed3c5a760390a89bc77945e99837c85a55b09f6923570dcde50f289439d4b7`; unauthenticated metadata confirms concept-latest. The publish API returned legacy metadata rather than the expected native DOI shape; publication succeeded, and its existing public record was read to reconcile the receipt without repeating the publish action or creating another version.
 
 Theorem/manuscript commit `91189c4` is pushed. Research PR #251 targets develop. Concurrent Huneke-Wiegand integration was incorporated at `ce7f68d`; the combined suite passes all 100 tests. Certificate serialization is explicitly LF, and recorded source/certificate bytes match staged Git blobs across the Windows/Linux boundary. The independent audit was rerun after that serialization repair and passes. Scoped PR integration remains at this entry; no global main promotion is included.
+
+## 2026-09-05: merged round
+
+Research PR #251 passed current-head CI on `be25aa4` and merged to develop at `8055fec`. Private mirror PR #611 merged at `a6d642fd`. The full-shell result, portfolio refresh, manuscript and verified public publication are complete. Final handoff documents these observed merges. No mathematical process remains, and no global main release was performed by this round.

@@ -22,4 +22,8 @@ EXP-002 preflight was committed at `d15f240` before implementation. The proof es
 
 The exact certificate is PASS: 75 graphs, 45 direct checks, 36 Harary cases, 15 odd-degree-sum cases, 75 damaged-edge controls, eight cycle controls, and 32,768 order-six graphs yielding 60 extremals. These finite checks support the written universal proof.
 
-Lifecycle remains consolidating. Manuscript v0.02 is published at DOI `10.5281/zenodo.22341644`; concept-latest and public-byte verification pass for all 343,535 bytes. All ten pages were inspected, final LaTeX warnings are absent, and the combined repository suite has 100 passing tests after integrating concurrent develop. Both complete-proof and manuscript-transcription audits pass. Research PR #251 is the pending scoped integration gate. No global release is asserted. Navigation: [September 5 plan](plan-2026-09-05.md).
+Lifecycle remains consolidating. Manuscript v0.02 is published at DOI `10.5281/zenodo.22341644`; concept-latest and public-byte verification pass for all 343,535 bytes. All ten pages were inspected, final LaTeX warnings are absent, and the combined repository suite has 100 passing tests after integrating concurrent develop. Both complete-proof and manuscript-transcription audits pass. No global release is asserted. Navigation: [September 5 plan](plan-2026-09-05.md).
+
+## 2026-09-05 integration close
+
+Research PR #251 passed both CI jobs on head `be25aa4` and merged to develop at `8055fecfe0dffa30ec087a73199d7ba627fed1e7`. Private mirror PR #611 merged at `a6d642fd3457e3b8453f10e7fd336dd4b4a71e20`. BJB-005 and BJB-008 are complete. No mathematical process or publication gate remains; general conjecture work and serialized global release remain separate.
