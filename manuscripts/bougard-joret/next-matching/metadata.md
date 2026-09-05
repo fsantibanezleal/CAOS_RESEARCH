@@ -8,7 +8,7 @@ Published version DOI: [10.5281/zenodo.22343022](https://doi.org/10.5281/zenodo.
 
 Evidence: CAOS_RESEARCH EXP-003 proof, verdict, source dossier, main certificate and independent NetworkX audit. Main theorem T(d,d+1)=d squared plus d plus two for every d>=7, including T(13,14)=184. BET owns the attaining construction and finite values through degree twelve; this paper supplies the uniform upper bound. The related Bougard result is only a one-edge bracket. The full AEY conjecture, exact bracket endpoint and general revised Bougard problem remain unresolved.
 
-Two final LaTeX passes; all seven pages visually inspected; no final warnings. Separate proof and manuscript reasoning audits pass. Forty-eight exact saved graphs have independent maximum matching, clique and full vertex-connectivity checks; all 101 repository tests pass. Research implementation/manuscript commit ece3361 is pushed; develop PR integration is recorded in the handoff.
+Two final LaTeX passes; all seven pages visually inspected; no final warnings. Separate proof and manuscript reasoning audits pass. Forty-eight exact saved graphs have independent maximum matching, clique and full vertex-connectivity checks; all 101 repository tests pass. Research PR #255 passed both CI jobs on head b8eb3f6 and merged at 03dc4694beb42184900b238d036dbf5ada84816e. Private mirror PR #613 merged at 74e36ce08fc31d3cb13e983688ed14596cd55b0f. Research, publication and scoped develop integration are complete. The global main release remains separately serialized.
 
 ## Version history and next trigger
 

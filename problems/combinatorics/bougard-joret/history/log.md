@@ -45,3 +45,7 @@ The failed direct-complement shortcut is retained: the known maximizer has compl
 ## 2026-09-05: next-matching publication verified
 
 The seven-page separate preprint v0.01 is public at DOI 10.5281/zenodo.22343022, concept DOI 10.5281/zenodo.22343021. The API conceptrecid was checked before publication; metadata, latest-version and a fresh unauthenticated download were verified afterward. All 352,871 bytes match the reviewed PDF, SHA-256 2dbce0d07fcd8b7afab8864cc2cf03d37a753356d395036725b8428ca56b6680. Both final LaTeX passes and all-page visual review passed. The separate manuscript audit corrected a potentially ambiguous abstract reference to the already disproved original Bougard conjecture. Research commit ece3361 is pushed; scoped PR integration follows.
+
+## 2026-09-05: next-matching integration close
+
+Research PR #255 passed both CI jobs on head b8eb3f6 and merged at 03dc4694beb42184900b238d036dbf5ada84816e. Private mirror PR #613 merged at 74e36ce08fc31d3cb13e983688ed14596cd55b0f. Research, publication and scoped develop integration are complete. The global main release remains separately serialized. All 101 tests passed; the published seven-page PDF and its verified bytes remain frozen. No mathematical process remains active.
