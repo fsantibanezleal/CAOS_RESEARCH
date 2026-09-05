@@ -1,0 +1,57 @@
+{
+  "experiment": "EXP-055",
+  "status": "INDEPENDENT_AUDIT_PASS",
+  "p3_status": "PASS",
+  "checks": 456,
+  "filler_parameters_verified": [
+    4,
+    100
+  ],
+  "filler_count": 97,
+  "p11_source_accessed": false,
+  "training": [
+    {
+      "p": 8,
+      "corrected_full_identity": true,
+      "corrected_boundary_hash": "9f1f3cb5352c0294c79f49d549ddef8d132760b21eb8456991f2eb902f47fab8",
+      "fixed_high_source_support": 7,
+      "k_boundary_support": 7,
+      "correction_sign_mutation_detected": true
+    },
+    {
+      "p": 9,
+      "corrected_full_identity": true,
+      "corrected_boundary_hash": "f982e8c0b038e9888030d39a9caac31601fb5f45d846b0ffb5cf7cd2917cbd8a",
+      "fixed_high_source_support": 8,
+      "k_boundary_support": 8,
+      "correction_sign_mutation_detected": true
+    },
+    {
+      "p": 10,
+      "corrected_full_identity": true,
+      "corrected_boundary_hash": "cc3416110b882cadc4be35cd7501bf78e9d9524ceac73927d9547683971946f2",
+      "fixed_high_source_support": 9,
+      "k_boundary_support": 9,
+      "correction_sign_mutation_detected": true
+    }
+  ],
+  "complement": {
+    "universe_sizes": [
+      1,
+      8
+    ],
+    "signed_insertion_checks": 1793,
+    "reversed_sign_mutations_rejected": 1793,
+    "passed": true
+  },
+  "scope": "uniform filler checked against direct interval proof; other source claims finite",
+  "premise_sha256": {
+    "EXP-053-labelled-source-pullback/artifacts/training-p8-p10.json": "0d6bb8b885d965ed91a94d06a072d8baacca56df65903e10e1c91382f649edfe",
+    "EXP-052-semantic-unreduced-lifts/artifacts/training-p8-p10.json": "259ff476b7bb09c12566e4bd771da5c88af17f541cc5732db4dc7f2067e2ec70",
+    "EXP-054-full-source-boundary/audit.py": "9e21b8a03694938e04dc7aba3555944fa511e4d1ac0d4dfc92727288ed7a1b63",
+    "EXP-055-unit-filler-and-low-complement/run.py": "95e23a3e9136e1e46b1272a337796901cededb51d0c3345f1f08cc0ba4103fef",
+    "EXP-055-unit-filler-and-low-complement/artifacts/results.json": "c54419a4b0de90ffc5caccaa6bc71ac7b3758bc88cd7bbc5ba9671831cad6bc7"
+  },
+  "audit_code_sha256": "ae738cfa9e3d647f7d590e5a8aed8e6a0061dc5f5c04179314c4cf1b9618e6db",
+  "artifact_hash": "a801d171b2ebb05a36a187c33650bb143a3e4064e10498c82de8974ecdfb14a2"
+}

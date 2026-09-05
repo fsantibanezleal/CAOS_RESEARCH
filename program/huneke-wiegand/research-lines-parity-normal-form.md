@@ -1,5 +1,30 @@
 # Parity-normal-form research lines
 
+## Current route correction, 2026-09-05
+
+EXP-054 finds a missing full-boundary coordinate in the EXP-053 literal source inclusion;
+the reduced matrix identities remain valid. EXP-055 removes it by a uniform singleton unit
+filler. EXP-056 proves a `p-1`-term source formula and transfers the class to `gamma_p`.
+EXP-057 reduces it further to four endpoint rows `eta_p`, with exactly one odd coordinate.
+Its declared minus sign was refuted; the correct identity is `M(s+q)=b_A+b_B+eta`.
+
+Priority is now: (1) a parity functional annihilating **all original relations** and pairing
+nontrivially with `eta`; (2) a uniform integer source for `2eta`; (3) a second class and a
+separate upper bound. This bounded representative is not a complete critical complex or a
+proof of nonvanishing. Solvability remains plausible, not proved or guaranteed.
+
+New lenses: signed low-exterior complements turn deletion into insertion on three missing
+indices; one unit column cancels the long K-side interval. A signed subset-incidence model is
+a testable upper-bound candidate, not inferred from matching Smith factors. Sparse dual identities
+`lambda B=mu A mod 2` are sufficient for relative annihilation; failure need not refute a dual
+because reduction of the saturated integral kernel can be smaller than the modular kernel.
+Do not run another full HNF or compute another coefficient before these invariant-first gates.
+
+The earlier strategy and manuscript split gate below remain historical context. The gate is
+not satisfied merely by the new representative identities. Standard chain-map background:
+https://arxiv.org/html/1311.5803v1; possible subset-incidence recognition:
+https://arxiv.org/html/0709.3144v1. Neither paper supplies the missing CAOS proof.
+
 Updated: 2026-09-02. Scope: unresolved all-parameter characteristic-two connecting quotient in
 the EXP-009 family. The broad Huneke--Wiegand conjecture is already false and is not the target.
 

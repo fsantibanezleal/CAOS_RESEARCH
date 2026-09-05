@@ -1,5 +1,9 @@
 # Curvilinear conductor fiber cones
 
+Current publication/dependency review:
+[2026-09-04 scope audit](../frobenius-minimality/scope-audit-2026-09-04.md).
+The existing v0.02 public PDF was freshly downloaded and matched; it is unchanged.
+
 Focused companion preprint for EXP-025 and EXP-026. Version 0.01 is the frozen, published,
 fresh-download-verified six-page primary-structure paper. Version 0.02 is the frozen, published,
 fresh-download-verified eight-page revision that adds the complete reduced grevlex basis, its
