@@ -1,0 +1,45 @@
+{
+  "scope": "EXP-058--062 quadratic torsion theorem and complementary manuscript core release",
+  "snapshot_utc": "2026-09-05T13:46:22Z",
+  "research": {
+    "integration_pr": 253,
+    "integration_merge": "4073d730158ea8bf239f85e5d83ed2bbfd234657",
+    "promotion_pr": 257,
+    "promotion_merge": "4aed2b050ccd282d13e5389a4ee732e8859ce09f",
+    "payload_tree": "a863fdcb1aafe7d25c6699505d6c9093c23b6c8a",
+    "checks": [
+      "guards: SUCCESS",
+      "test: SUCCESS",
+      "pipeline smoke: SUCCESS",
+      "artifact contract: SUCCESS"
+    ],
+    "local_branch": "work/huneke-wiegand/open",
+    "refs_synchronized_after_promotion": true,
+    "local_worktree_clean": true
+  },
+  "management": {
+    "promotion_pr": 616,
+    "promotion_merge": "7ff09f87f8217e96fc7919d3deb8bd3cad9d7c2a",
+    "payload_tree": "c933f6aded7387a96a5ec78dec7fd6c7486dd72d",
+    "local_branch": "develop",
+    "refs_synchronized_after_promotion": true,
+    "unrelated_dirty_rajo_paths_preserved": 32,
+    "publisher_offline_tests_passed": 25
+  },
+  "publication": {
+    "doi": "10.5281/zenodo.22342976",
+    "concept_doi": "10.5281/zenodo.22342975",
+    "pages": 18,
+    "bytes": 503686,
+    "sha256": "c4b73414eb06d141c09a2980a7c349043bdc576326a9018e800a0b6e349a0ec8",
+    "published_utc": "2026-09-05T13:35:34Z",
+    "public_verified_utc": "2026-09-05T13:36:50Z",
+    "unauthenticated_fresh_download": true
+  },
+  "remaining_mathematics": [
+    "explicit isolated/relative comparison maps",
+    "complementary quotient and upper bound",
+    "lower-strand recurrence"
+  ],
+  "interpretation": "Historical verified core-release snapshot. Later documentation-only commits may advance refs without altering this theorem, evidence or publication."
+}

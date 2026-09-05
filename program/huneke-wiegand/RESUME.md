@@ -58,10 +58,12 @@ version DOI is `10.5281/zenodo.22342976`, concept `10.5281/zenodo.22342975`.
 Published 2026-09-05T13:35:34Z; public/latest metadata and a fresh unauthenticated
 download passed at 13:36:50Z. The frozen 18-page PDF is 503686 bytes, SHA-256
 `c4b73414eb06d141c09a2980a7c349043bdc576326a9018e800a0b6e349a0ec8`.
-Claim/build/all-page-render/publication gates are complete. PR promotion remains
-a delivery gate. Existing main v0.23 and curvilinear companion
-v0.02 remain frozen. Issue #252 and open PR #253 own this round; no completed
-develop/main promotion is claimed. CAOS_MANAGE stays on `develop`, preserving
+Claim/build/all-page-render/publication gates are complete. Research PR #253
+merged into develop at `4073d73`; PR #257 passed both fresh CI jobs and merged
+into main at `4aed2b0`. Work/develop/main were synchronized to that merge.
+Issue #252 is closed. Existing main v0.23 and curvilinear companion v0.02
+remain frozen. Management PR #616 merged at `7ff09f87`, with develop/main
+synchronized. CAOS_MANAGE stays on `develop`, preserving
 concurrent Rajo edits. No global version bump, bake, or frontend release is included.
 
 To resume: read root `Entry_point.md`, this checkpoint, the EXP-062 primary
