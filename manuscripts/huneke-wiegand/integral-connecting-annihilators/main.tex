@@ -1,0 +1,1313 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,array}
+\usepackage{microtype}
+\microtypesetup{expansion=false}
+\usepackage{xcolor}
+\definecolor{linknavy}{RGB}{25,55,125}
+\usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
+\usepackage{orcidlink}
+\usepackage{fancyhdr}
+\hypersetup{
+  pdftitle={A quadratic family of integral two-torsion classes in a Huneke-Wiegand Koszul presentation},
+  pdfauthor={Felipe Santibanez-Leal},
+  pdfsubject={Explicit integral two-torsion, independent triangle classes, and a direct summand of a Koszul cokernel},
+  pdfkeywords={Koszul differential, integral cokernel, two-torsion, direct summand, numerical semigroups, exact certificates}
+}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\src}[3]{#1[#2;#3]}
+\newcommand{\VersionDOI}{10.5281/zenodo.22342976}
+\newcommand{\ConceptDOI}{10.5281/zenodo.22342975}
+\newcommand{\Exp}[2]{\href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/commutative-algebra/huneke-wiegand/experiments/#1}{#2}}
+\newcommand{\Repo}{\href{https://github.com/fsantibanezleal/CAOS_RESEARCH}{CAOS\_RESEARCH}}
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small CAOS Research Preprint}
+\fancyhead[R]{\small Quadratic Integral Two-Torsion \textperiodcentered\ v0.01}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\title{A quadratic family of integral two-torsion classes\\
+in a Huneke--Wiegand Koszul presentation}
+\author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\small CAOS Research programme, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
+\date{2026-09-05\\[2pt]\normalsize Version 0.01}
+
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+\begin{center}\small
+\fbox{\parbox{0.92\textwidth}{\centering
+\textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
+Homological companion in the Huneke--Wiegand extension record\\
+Version 0.01 \textperiodcentered\ 2026-09-05 \textperiodcentered\ licensed CC BY 4.0\\
+Version DOI: \href{https://doi.org/\VersionDOI}{\VersionDOI}\\
+Concept DOI: \href{https://doi.org/\ConceptDOI}{\ConceptDOI} (resolves to latest)\\
+Sources and exact certificates: \Repo\\[2pt]
+\textbf{Scope.} A quadratically growing direct summand of integral
+two-torsion, not a description of the whole connecting quotient.
+}}
+\end{center}
+
+\begin{abstract}
+We study an explicit integral Koszul presentation arising in the graded-syzygy
+analysis of a previously constructed Huneke--Wiegand family. For every integer
+$p\geq8$, its cokernel contains a direct summand isomorphic to
+$(\Z/2)^{\lfloor((p-2)^2+3)/12\rfloor}$. The classes are indexed by all
+strictly increasing nonnegative triples of sum $p-2$. Reflection-symmetric
+interval potentials give explicit original integral sources for twice each
+class. Relative parity functionals, supported on ten to twelve original rows,
+detect the classes independently and vanish on every complete connecting
+image; extension over the remaining target gives a nonconstructive retraction.
+A previously tracked four-row vector is integrally congruent to one selected
+class, with an explicit source for the difference. We also give its full
+twice-source, two short kernel-domain corrections, and a neighboring integral
+potential basis of rank $\binom{p-1}{2}$ with at most seven-row images.
+Independent finite campaigns check the signed identities and complete-sector
+parity certificates, preserving all tested sources in lossless archives.
+A failed local search is retained as an exact locality obstruction.
+The uniform theorem follows from signed reconstruction, exhaustive source
+classification, and an elementary counting recurrence, not finite rank
+extrapolation. The full cokernel, an upper bound, and identification with
+earlier isolated subpresentations remain unresolved.
+\end{abstract}
+
+\section{Introduction and scope}
+
+Exact linear algebra can certify a finite presentation without revealing why
+the same phenomenon should persist with a parameter. This distinction matters
+for the connecting maps studied here: a displayed target vector, an integral
+multiple in the image, and a nonzero quotient class are different assertions.
+The source identity and relative parity argument close the second and third
+of these obligations for a quadratically growing independent family of target
+classes. Their subgroup is a direct summand, although its complement remains
+undetermined.
+
+The underlying family and its conductor-fiber-cone and graded-syzygy context
+were developed in the first paper of this programme \cite{CAOSMain}. We make
+the present matrix problem self-contained by defining its complete integral
+presentation below. The new result is therefore checkable without reproducing
+the semigroup construction. Its application to that family uses the
+presentation identified in the earlier record; it does not repeat or claim
+priority for the discovery of a counterexample addressed by that programme.
+
+Signed Koszul strands admit useful combinatorial descriptions. For semigroup
+quotients, Bruns and Herzog provide a relative simplicial viewpoint
+\cite{BrunsHerzog}. Here the arguments use explicit oriented bases and
+low-exterior complements. We do not infer a simplicial or projective-plane
+model from a matrix with entries $0,1,-1$, and no unidentified topological
+model is a premise of the proof. Potentials and signed complements are
+classical tools; the contribution is the explicit triangle family in this
+presentation, including its full sources, all boundary corrections, and
+complete relative functionals. The general fact that vector-space functionals
+extend is used only to deduce splitting; it is not claimed as a new method.
+
+Statements proved deductively are marked [D]; finite exact checks are marked
+[MV]. Remaining research questions are marked [C]. The annihilator theorem
+alone says \emph{order dividing two}. The additional nonvanishing proof in
+Section~\ref{sec:parity} upgrades the tracked class to order exactly two.
+Section~\ref{sec:family} constructs all triangle classes, proves their exact
+relation lattice and count, and derives the direct-summand corollary.
+These are lower-bound and partial-decomposition results, not the whole quotient.
+
+\paragraph{Independent validation boundary.}
+The generic parity, independence and splitting arguments below are deductive
+and have undergone independent paper review. The separate full-sector audit
+for all 27 triangles at five declared parameters also passes.
+Section~\ref{sec:validation} distinguishes these finite certificates from
+the exhaustive all-parameter proof; no finite rank pattern is extrapolated.
+
+\section{The complete integral presentation}\label{sec:matrix}
+
+All intervals in this paper contain integers, and an empty interval contributes
+nothing. Fix $p\geq8$. Put
+\[
+ L_0=[1,p],\qquad L_1=[3p,4p-2],\qquad L=L_0\cup L_1,
+ \qquad N=|L|=2p-1.
+\]
+The high set is the following disjoint union:
+\begin{align*}
+ H_0&=[6p,8p-2],& H_1&=[8p,10p-2],& H_2&=\{10p\},\\
+ H_3&=[11p-1,12p-1],& H_4&=[13p+1,14p-2],\\
+ H_5&=[14p,15p-1],& H_6&=\{16p\},& H_7&=[17p-1,18p-1].
+\end{align*}
+Write $H=\bigcup_{i=0}^7H_i$ and $G=L\cup H$. The degree-two high
+coefficient set is $\mathcal B=[6p,24p-1]\setminus H$, explicitly
+\begin{align*}
+ \mathcal B={}&\{8p-1,10p-1,14p-1\}\cup[10p+1,11p-2]\cup[12p,13p]\\
+ &\cup[15p,16p-1]\cup[16p+1,17p-2]\cup[18p,24p-1].
+\end{align*}
+For later labels, $\mathrm C_0=\{8p-1\}$ and
+$\mathrm C_2=[10p+1,11p-2]$. These are names for coefficient subsets,
+not subquotients asserted to split off.
+
+Define a low product with values in formal degree-two symbols by
+\begin{equation}\label{eq:lowproduct}
+ \mu(a,c)=
+ \begin{cases}
+  \mathsf A_{a+c},&a,c\in L_0,\ a+c>p,\\
+  \mathsf B_{a+c},&a,c\text{ lie in different }L_i,\ a+c\geq4p-1,\\
+  0,&\text{otherwise}.
+ \end{cases}
+\end{equation}
+The total offset of the strand is
+\[
+ \tau=4p^2+6p-1=\sum_{a\in L}a+10p-2,
+ \qquad \sum_{a\in L}a=4p^2-4p+1.
+\]
+Let $\mathcal S_p$ be free over $\Z$ on all labels $S[E;c]$ with
+$E\subseteq G$, $|E|=2p-2$, $c\in L$, and $\sum E+c=\tau$.
+Let $\mathcal K_p$ have the analogous basis $K[E;c]$ with $c\in H$.
+All exterior sets are ordered increasingly. The target is free on labels
+\[
+ D[E;\mathsf A_d],\quad D[E;\mathsf B_d],\quad K[E;b],
+ \qquad |E|=2p-3,\quad \sum E+d=\sum E+b=\tau,
+\]
+where $d\in[p+1,2p]$ for type $\mathsf A$,
+$d\in[4p-1,5p-2]$ for type $\mathsf B$, and $b\in\mathcal B$.
+Only the appropriate offset is used in each label. Denote the D and K
+target summands by $\mathcal D'_p$ and $\mathcal K'_p$.
+
+For $E=\{e_0<\cdots<e_{2p-3}\}$, define
+\begin{align}
+ M_pS[E;c]={}&
+ \sum_{\substack{i:e_i\in L\\\mu(e_i,c)\ne0}}
+ (-1)^iD[E\setminus\{e_i\};\mu(e_i,c)]\notag\\
+ &+\sum_{\substack{i:e_i\in H\\e_i+c\in\mathcal B}}
+ (-1)^iK[E\setminus\{e_i\};e_i+c],\label{eq:MS}\\
+ M_pK[E;c]={}&\sum_{\substack{i:e_i+c\in\mathcal B}}
+ (-1)^iK[E\setminus\{e_i\};e_i+c].\label{eq:MK}
+\end{align}
+Thus $M_p:\mathcal S_p\oplus\mathcal K_p\longrightarrow
+\mathcal D'_p\oplus\mathcal K'_p$ is completely specified over the integers.
+There is no implicit projection in these definitions. Our quotient is
+$\coker_{\Z}M_p$, and a source identity always refers to this entire map.
+
+\section{The four-row target and its earlier representative}\label{sec:eta}
+
+Set
+\[
+ G_p(a,j;c)=K[(L\setminus\{a,3p,3p+j\})\cup\{6p\};10p+c].
+\]
+The tracked endpoint vector is
+\begin{equation}\label{eq:eta}
+ \begin{split}
+ \eta_p=(-1)^p\bigl(&2G_p(p-3,2;p-3)-G_p(p-2,2;p-2)\\
+                  &+2G_p(p-2,1;p-3)-2G_p(p-3,1;p-4)\bigr).
+ \end{split}
+\end{equation}
+These are four distinct original rows. Their coefficient offsets are
+$11p-3,11p-2,11p-3,11p-4$, all in $\mathrm C_2$.
+Exactly one row coefficient is odd. This is a statement about a vector,
+not a nonvanishing result in the cokernel.
+
+For completeness, define the larger D representative without a choice of
+quotient coordinates. Put
+\[
+ T(a,j)=S[(L\setminus\{a,3p,3p+j\})\cup\{6p,10p\};a+j-2]
+\]
+and set $s_p=\sum w_j(a)T(a,j)$, with the only nonzero weights
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+$j$ & $a$ & $w_j(a)$\\
+\midrule
+2 & $1\leq a\leq p-4$ & $(-1)^{a+1}$\\
+2 & $a=p-3$ & $(-1)^{p+1}$\\
+1 & $a=p-2$ & $2(-1)^{p+1}$\\
+1 & $a=p-3$ & $2(-1)^p$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Let $b_p^A$ and $b_p^B$ be respectively the type-A and type-B parts of
+$M_ps_p$, and write $b_p=b_p^A+b_p^B$. This defines them explicitly
+through \eqref{eq:lowproduct}--\eqref{eq:MS}; it is the representative
+recorded in EXP-052 and derived uniformly in EXP-056. Define also
+\[
+ q_p=K[(L\setminus\{3p,3p+2\})\cup\{6p\};10p].
+\]
+
+\begin{proposition}[[D] Original representative transfer]\label{prop:transfer}
+For every $p\geq8$,
+\begin{equation}\label{eq:transfer}
+ M_p(s_p+q_p)=b_p+\eta_p.
+\end{equation}
+Consequently $[b_p]=-[\eta_p]$ in $\coker_{\Z}M_p$.
+\end{proposition}
+\begin{proof}
+Every coefficient of $s_p$ lies in $[1,p-3]$. Its $6p$ face vanishes,
+while its $10p$ face has negative sign and survives. Hence
+$M_ps_p=b_p+\gamma_p$ with
+$\gamma_p=-\sum w_j(a)G_p(a,j;a+j-2)$.
+In $q_p$, the first-low faces $a=1,\ldots,p-2$ survive with sign
+$(-1)^{a-1}$, and the other first-low faces vanish in $H_3$.
+Every present second-low face vanishes in $H_4$, and the $6p$ face
+vanishes at coefficient offset $16p$. Thus
+\[
+ M_pq_p=\sum_{a=1}^{p-2}(-1)^{a-1}G_p(a,2;a).
+\]
+Adding this expression to $\gamma_p$ cancels the interval
+$1\leq a\leq p-4$ and leaves exactly \eqref{eq:eta}.
+\end{proof}
+
+\section{A complete integral potential basis in one sector}\label{sec:basis}
+
+First fix the exterior high set $\{6p,8p-4\}$, not the high set used
+later for the final annihilator. Index first-low variables as $p-r$,
+$0\leq r\leq p-1$, and second-low variables as $3p+u$,
+$0\leq u\leq p-2$. There are exactly two possible source families:
+\begin{align*}
+ A_u(r,s)&=S[(L\setminus\{p-r,p-s,3p+u\})\cup\{6p,8p-4\};p+2+u-r-s],\\
+ B_r(u,v)&=S[(L\setminus\{p-r,3p+u,3p+v\})\cup\{6p,8p-4\};3p+2+u+v-r].
+\end{align*}
+Here $r<s$, $u+2\leq r+s\leq p+u+1$ in the first family. In the
+second, $u<v$ and
+\[
+ \max(0,u+v-p+4)\leq r\leq\min(p-1,u+v+2).
+\]
+Indeed, the coefficient offset is the sum of the three omitted low
+variables minus $4p-2$. Three omitted first-low variables make it negative;
+three omitted second-low variables make it exceed $4p-2$. The remaining
+two types give exactly these bounds. Thus no original source in this
+fixed-high sector has been omitted.
+
+\begin{theorem}[[D] Integral potential basis]\label{thm:basis}
+Let $d_D$ be the D component of $M_p$ restricted to this sector. Choose
+arbitrary integral potentials $f_u(r)$ vanishing for $r\leq u+1$.
+For $r<s$ put $\alpha_u(r,s)=f_u(s)-f_u(r)$. For $u<v$ put
+$R=u+v$, $F=f_u-f_v$, and
+\[
+ \beta_r(u,v)=
+ \begin{cases}F(r)-F(R+3),&R\leq p-4,\\F(r),&R\geq p-3.
+ \end{cases}
+\]
+The source with actual coefficients
+\[
+ (-1)^{p+r+s+u}\alpha_u(r,s)\quad\hbox{on }A_u(r,s),\qquad
+ (-1)^{p+r+u+v}\beta_r(u,v)\quad\hbox{on }B_r(u,v)
+\]
+parametrizes $\ker_{\Z}d_D$ uniquely. Its unit potentials, indexed by
+$0\leq u\leq p-3$, $u+2\leq r\leq p-1$, form an integral basis of
+rank $\binom{p-1}{2}$. Each basis source has coefficient height one and
+at most $3p-5$ terms; its full $M_p$ boundary has at most seven K rows
+and no D rows.
+\end{theorem}
+
+\begin{proof}
+We give the signed reconstruction, including truncation boundaries.
+Complement an increasing low exterior $E$ inside $L$, and orient its
+omitted variables in increasing first-endpoint order followed by increasing
+second-endpoint order. For missing positions $d_1,\ldots,d_k$ in $L$,
+the unreordered complement sign is
+\[
+ (-1)^{k(N-1)-\sum d_i-k(k-1)/2}.
+\]
+For $k=3$, reversing the omitted first-low variables gives exactly the
+two source signs in the theorem. Complementing contraction gives wedge
+insertion, with common factor $(-1)^{|E|-1}=-1$ here. Therefore all
+nonzero D equations, up to a common unit sign on each row, are
+\begin{align}
+ \alpha_u(r,s)-\alpha_u(r,t)+\alpha_u(s,t)&=0,\label{eq:Aclosure}\\
+ \alpha_u(r,s)-\alpha_v(r,s)+\beta_r(u,v)-\beta_s(u,v)&=0.\label{eq:Bclosure}
+\end{align}
+Equation \eqref{eq:Aclosure} has $r<s<t$ and
+$u+2\leq r+s+t\leq p+u+1$. Equation \eqref{eq:Bclosure} has
+$r<s$, $u<v$, and
+$\max(0,R-p+4)\leq r+s\leq R+3$. Inadmissible source coefficients
+are zero. These equations exhaust the A and B products in
+\eqref{eq:lowproduct}.
+
+For fixed $u$, read $f_u(r)=\alpha_u(0,r)$ when $r\geq u+2$ and
+set the remaining values to zero. Every admissible pair $0<r<s$ occurs
+in the A equation with endpoint zero. It forces
+$\alpha_u(r,s)=f_u(s)-f_u(r)$. Pairs below the lower sum bound have
+both potentials zero. Pairs above the upper bound cannot occur in an A
+equation. Conversely these differences solve every A equation.
+
+For a B equation, $r+s\leq R+3\leq p+u+1$ since $v\leq p-2$,
+so upper truncation cannot spoil the potential formula. Lower truncation
+has both relevant potentials zero. Equation \eqref{eq:Bclosure} becomes
+$\beta_r-F(r)=\beta_s-F(s)$. If $R\leq p-4$, the beta interval is
+$0,\ldots,R+2$. The equation on $\{0,R+3\}$ forces
+$\beta_0=-F(R+3)$, and the equations on $\{0,r\}$ give the displayed
+formula. If $R\geq p-3$, write $a=R-p+4\geq1$. Its beta interval
+is $a,\ldots,p-1$, and $a\leq u+2$. Both potentials vanish below
+$a$, so the equations with endpoint zero give $\beta_r=F(r)$.
+The remaining equations hold by subtraction. Reconstruction is unique
+and uses no division. The distinguished alpha coordinates therefore give
+an integral inverse and an identity coordinate minor.
+
+For one unit potential, alpha has at most $p-1$ terms. Beta is supported
+only on second pairs containing its active second index. Usually such a
+pair contributes at most one term. At most one pair satisfies
+$R=r_0-3$ and contributes a constant interval of at most $p-1$ terms.
+Thus beta has at most $2p-4$ terms, and all coefficients have absolute
+value one.
+
+Finally, every $6p$ face vanishes because
+$6p+L_0\subset H_0$ and $6p+L_1\subset H_1$.
+The negative $8p-4$ face survives only for first-low coefficient 3
+or second-low coefficients $3p,3p+1,3p+2$. A unit potential gives at
+most one first case, on $r+s=p+u-1$. In the second case there are at
+most three ordinary partners, determined by $r_0-u_0$, $r_0-u_0-1$,
+$r_0-u_0-2$, and at most three rows from the exceptional partner
+$r_0-u_0-3$. This proves the full seven-row bound.
+\end{proof}
+
+\begin{remark}
+This is a complete basis theorem for one D kernel. It is not a normal form
+of $\coker M_p$, nor a claim that the whole connecting presentation has
+seven rows. In particular, subsequent K relations may kill its images.
+\end{remark}
+
+\section{The shifted potential operator}\label{sec:shift}
+
+For the annihilator, move the last high variable to $h=8p-2$.
+Let $f_u(r)$ be integral and vanish for $r\leq u$. Define $P(f)$ by
+the following two families, omitting zero terms and combining equal labels:
+\begin{align}
+ &S[(L\setminus\{p-r,p-s,3p+u\})\cup\{6p,h\};p+u-r-s],\notag\\[-3pt]
+ &\hspace{18mm}\text{weight }(-1)^{p+r+s+u}(f_u(s)-f_u(r)),
+ \quad r<s,\ u\leq r+s\leq p+u-1;\label{eq:Palpha}\\
+ &S[(L\setminus\{p-r,3p+u,3p+v\})\cup\{6p,h\};3p+R-r],\notag\\[-3pt]
+ &\hspace{18mm}\text{weight }(-1)^{p+r+u+v}\beta_r(u,v),
+ \quad u<v,\ \max(0,R-p+2)\leq r\leq\min(p-1,R),\label{eq:Pbeta}
+\end{align}
+where $R=u+v$, $F=f_u-f_v$, and
+\begin{equation}\label{eq:shiftbeta}
+ \beta_r(u,v)=\begin{cases}F(r)-F(R+1),&R\leq p-2,\\F(r),&R\geq p-1.
+ \end{cases}
+\end{equation}
+The coefficient offset is now the omitted-low sum minus $4p$, so all
+labels have total offset $\tau$. The bounds put their coefficients in
+$L_0$ and $L_1$, respectively. Moving the last high variable does not
+change the exterior ordering sign. We assert a construction for these
+potentials, not a complete basis theorem for the shifted sector.
+
+\begin{lemma}[[D] Full shifted boundary]\label{lem:shift}
+The D component of $M_pP(f)$ is zero. Every $6p$ face vanishes. The
+only other surviving faces are the negative $h$ faces with first-low
+coefficient 1 or second-low coefficient $3p$.
+\end{lemma}
+\begin{proof}
+The A and B equations retain the signs \eqref{eq:Aclosure} and
+\eqref{eq:Bclosure}, with bounds now
+\[
+ u\leq r+s+t\leq p+u-1,
+ \qquad \max(0,R-p+2)\leq r+s\leq R+1.
+\]
+In an A equation, a pair below its admissibility bound has both potentials
+zero, and no pair exceeds the upper bound. Its differences telescope.
+In a B equation, $r+s\leq R+1\leq p+u-1$, so alpha again has no
+upper truncation. Its equation is $\beta_r-F(r)=\beta_s-F(s)$.
+For $R\leq p-2$, formula \eqref{eq:shiftbeta} extends as zero at
+the absent endpoint $R+1$. No endpoint in the equation can exceed it.
+For $R\geq p-1$, the lower beta endpoint is $a=R-p+2\leq u$;
+both potentials vanish below $a$, so the second formula extends there
+by zero. This proves every D equation.
+
+As before, the $6p$ products lie in $H_0$ or $H_1$.
+For $c\in L_0$, $h+c$ is in $\mathcal B$ only at $c=1$,
+where it equals $8p-1$. The remaining values lie in $H_1$.
+For $c=3p+t\in L_1$, $h+c=11p-2+t$ survives only at $t=0$;
+the remaining values lie in $H_3$. The low exterior has even size
+$2p-4$, so the last high face has negative sign. No other original
+boundary row occurs.
+\end{proof}
+
+Use the signed K row
+\begin{equation}\label{eq:erow}
+ e(r;u,v)=(-1)^{p+r+u+v}
+ K[(L\setminus\{p-r,3p+u,3p+v\})\cup\{6p\};11p-2+u+v-r],
+\end{equation}
+only for admissible indices and degree-two offsets. Put
+$x_{uv}=e(u+v;u,v)$ when $u<v$ and $u+v\leq p-1$.
+For orientation, let $y_{uv}=x_{uv}$ if $u<v$,
+$y_{uv}=-x_{vu}$ if $u>v$, and $y_{uu}=0$.
+In particular, $x_{01}=e(1;0,1)$ is different from $e(2;0,1)$.
+
+The C0 boundary in Lemma~\ref{lem:shift} lies on
+$r+s=p+u-1$. Its normalized coefficient is $-\alpha_u(r,s)$.
+The C2 boundary is diagonal: for $R\leq p-2$ its coefficient on
+$x_{uv}$ is $F(R+1)-F(R)$; at $R=p-1$ it is $-F(p-1)$.
+There is no such diagonal row for $R>p-1$. This last endpoint cannot
+be replaced by an unrestricted difference formula.
+
+\section{Reflection intervals and the uniform annihilator}\label{sec:annihilator}
+
+\begin{lemma}[[D] Signed interval triangle]\label{lem:triangle}
+Let $i,a,b$ be distinct nonnegative second indices, with $a<b$ and
+$i+a+b=p-2$. Let $T_i(a,b)$ have the single nonzero potential
+\[
+ f_i(r)=1\quad\text{for }i+a+1\leq r\leq i+b.
+\]
+Then the exact original boundary is
+\begin{equation}\label{eq:triangle}
+ M_pP(T_i(a,b))=y_{ia}-y_{ib}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The interval lies strictly inside $i<r<p-1$ and its endpoints sum to
+$p+i-1$. It is therefore invariant under $r\mapsto p+i-1-r$.
+Every possible C0 pair has this sum, so its two potential values agree,
+including pairs outside the interval. All C0 rows vanish.
+For C2 write $g(t)=f_i(i+t)$. Lemma~\ref{lem:shift} gives the
+oriented edge coefficient $g(v+1)-g(v)$. The interval indicator jumps
+by $+1$ at $v=a$ and by $-1$ at $v=b$, and nowhere else.
+There is no top-endpoint contribution because the interval ends below
+$p-1$. This proves \eqref{eq:triangle} in the full target, not just
+after quotienting by K relations.
+\end{proof}
+
+For $j=1,2$, put $k=p-2-j$. Define the three-interval potential
+\begin{equation}\label{eq:Fj}
+ \begin{aligned}
+ (F_j)_0(r)&=1&&\text{for }j+1\leq r\leq k,\\
+ (F_j)_j(r)&=-1&&\text{for }j+1\leq r\leq p-2,\\
+ (F_j)_k(r)&=-1&&\text{for }k+1\leq r\leq p-2,
+ \end{aligned}
+\end{equation}
+and set all other values to zero. The indices $0,j,k$ are distinct
+for every $p\geq8$.
+
+\begin{proposition}[[D] Twice-edge source]\label{prop:twiceedge}
+For $j=1,2$, $M_pP(F_j)=2x_{0j}$.
+\end{proposition}
+\begin{proof}
+The definition is $F_j=T_0(j,k)-T_j(0,k)-T_k(0,j)$. Since $j<k$,
+Lemma~\ref{lem:triangle} gives
+\[
+ M_pP(F_j)=(x_{0j}-x_{0k})-(-x_{0j}-x_{jk})-(-x_{0k}+x_{jk})
+          =2x_{0j}.
+\]
+All three interval sources have zero C0 boundary individually.
+The auxiliary edge satisfies $j+k=p-2$, within the diagonal domain.
+\end{proof}
+
+Two original K-source corrections are required to recover the particular
+four-row target, rather than just the diagonal edges. Let $\delta_{0a}$
+be the unit potential at $(u,r)=(0,a)$, and, for $a=2,3$, let
+\begin{equation}\label{eq:Qa}
+ Q_a=K[(L\setminus\{p-a,3p\})\cup\{6p\};8p-2-a]
+\end{equation}
+with \emph{positive} unit coefficient.
+
+\begin{lemma}[[D] Exact short corrections]\label{lem:corrections}
+Put $B=P(\delta_{03})-Q_3$ and $D=P(\delta_{02})+Q_2$. Then
+\begin{align}
+ M_pB&=e(3;0,1)+x_{02}+e(3;0,2),\label{eq:Bboundary}\\
+ M_pD&=x_{01}+e(2;0,1).\label{eq:Dboundary}
+\end{align}
+\end{lemma}
+\begin{proof}
+Lemma~\ref{lem:shift} gives diagonal boundary
+$x_{0,a-1}-x_{0a}$ for $P(\delta_{0a})$.
+Its only C0 pair is $(a,p-1-a)$, with distinct increasing endpoints
+for $a=2,3$ and $p\geq8$. The normalized alpha value is $-1$;
+its source sign is $(-1)^{2p-1}=-1$ and the high-face sign is negative.
+Thus the actual C0 coefficient is $-1$.
+
+The only first-low face of $Q_a$ surviving in $\mathcal B$ removes
+$a+1$, has coefficient offset $8p-1$, and sign $(-1)^a$.
+Indeed the omitted first-low variable $p-a$ is larger than $a+1$,
+so the latter has exterior position $a$. This is the same C0 row.
+The surviving second-low faces remove $3p+v$, $1\leq v\leq a$.
+Their coefficient offset is $11p-2-a+v$, and their exterior sign is
+$(-1)^{p+v-2}$. In the signed convention \eqref{eq:erow}, their
+coefficient on $e(a;0,v)$ is $(-1)^a$. Every other low product lies
+in $H$. The high face has coefficient offset $14p-2-a$; the two
+values $14p-4$ and $14p-5$ both lie in $H_4$ when $p\geq8$.
+There is therefore no discarded high-free row or hidden filler.
+
+Consequently the source $J_a=P(\delta_{0a})+(-1)^aQ_a$ cancels C0 exactly.
+Its boundary is
+\[
+ M_pJ_a=x_{0,a-1}+\sum_{v=1}^{a-1}e(a;0,v).
+\]
+Specializing to $a=3$ and $a=2$ proves the lemma.
+\end{proof}
+
+\begin{theorem}[[D] Uniform original-map annihilation]\label{thm:main}
+For every integer $p\geq8$, the explicitly defined integral source
+\begin{equation}\label{eq:V}
+ V_p=P(F_2+2F_1-4\delta_{03}-4\delta_{02})+4Q_3-4Q_2
+\end{equation}
+satisfies $M_pV_p=2\eta_p$. Hence both $[\eta_p]$ and $[b_p]$ have
+order dividing two in the full integral cokernel.
+\end{theorem}
+\begin{proof}
+Changing \eqref{eq:eta} from raw to signed row labels gives
+\[
+ \eta_p=-2e(3;0,2)-x_{02}-2e(2;0,1)-2e(3;0,1).
+\]
+Equations \eqref{eq:Bboundary}--\eqref{eq:Dboundary} therefore give
+the exact target-vector equality
+\[
+ \eta_p=x_{02}+2x_{01}-2M_pB-2M_pD.
+\]
+By Proposition~\ref{prop:twiceedge}, twice the right-hand side is
+\[
+ M_p\bigl(P(F_2)+2P(F_1)-4B-4D\bigr)=M_pV_p.
+\]
+Every term is an admissible original source and every boundary row has
+been included. Proposition~\ref{prop:transfer} also gives the explicit
+identity $M_p(2s_p+2q_p-V_p)=2b_p$.
+\end{proof}
+
+\begin{corollary}[[D] Base change with two invertible]\label{cor:basechange}
+Let $R$ be any commutative coefficient ring in which $2$ is a unit.
+In the cokernel of $M_p\otimes_{\Z}R$, the images of $\eta_p$ and
+$b_p$ vanish, with explicit sources $V_p/2$ and
+$s_p+q_p-V_p/2$, respectively.
+\end{corollary}
+\begin{proof}
+Tensor the two original source identities with $R$ and multiply by the
+unit $2^{-1}$. This argument concerns only the two tracked classes.
+\end{proof}
+
+\section{A relative parity functional and exact order two}\label{sec:parity}
+
+All coefficients in this section lie in $\mathbb F_2$. Write the full map as
+\[
+ M_p(s,t)=(d_Ds,\ d_K^Ss+d_K^Kt).
+\]
+A functional on the K target need not annihilate every S column individually.
+It suffices to annihilate $d_K^K$ and $d_K^S(\ker d_D)$ while taking
+value one on $\eta_p$. This relative formulation is essential: no functional
+on a truncated matrix is substituted for a statement about the full map.
+
+\subsection{The reflection template and its twelve-row specialization}
+
+Let $T$ be any unordered triple of distinct indices in $[0,p-2]$ whose
+sum is $p-2$. Define
+\[
+ z^T_{uv}=
+ \begin{cases}
+  1,&\{u,v,p-2-u-v\}\text{ is the multiset }T,\\
+  0,&\text{otherwise}.
+ \end{cases}
+\]
+Invalid indices and diagonals have value zero. Write $z=z^T$ temporarily.
+It is symmetric and has the reflection identity
+\begin{equation}\label{eq:zreflection}
+ z_{uv}=z_{vu}=z_{u,p-2-u-v}.
+\end{equation}
+Assign the row $e(r;u,v)$ the value $z_{uv}$ when $r=u+v$ or $u+v+1$,
+and zero otherwise. On a C0 row
+\[
+ K[(L\setminus\{p-r,p-s,3p+u\})\cup\{6p\};8p-1],
+ \qquad r<s,\quad r+s=p+u-1,
+\]
+assign value
+\begin{equation}\label{eq:dreflection}
+ d_u(r)=z_{u,r-u}+z_{u,r-u-1}.
+\end{equation}
+Set every other original K row to zero. This defines $\lambda_T$.
+
+The C0 definition does not depend on which endpoint is used. If
+$n=p-1-u$ and $t=r-u$, then $s-u=n-t$, and
+\eqref{eq:zreflection} exchanges the two summands of $d_u(r)$ and
+$d_u(s)$. At a reflected fixed point $r=s$, the summands coincide and
+$d_u(r)=0$. Thus no repeated exterior variable is introduced. Possible
+cancellations in \eqref{eq:dreflection} are retained. More precisely, write
+$T=\{i,j,k\}$ with $i<j<k$. For each $u\in T$, let $v<w$ be its other
+two entries. The C0 pairs are
+\[
+ (r,s;u)=(u+v,u+w+1;u),\qquad (u+v+1,u+w;u).
+\]
+The second pair is omitted if $w=v+1$: it is a fixed point and its two
+values cancel modulo two. All endpoints lie in $[0,p-1]$, and distinct
+$u$ give distinct omitted second-low variables. There are always six
+distinct C2 rows, so the exact support size is
+\begin{equation}\label{eq:template-support}
+ |\supp\lambda_T|=12-\mathbf1_{j=i+1}-\mathbf1_{k=j+1}.
+\end{equation}
+It ranges from ten to twelve; for example $T=\{1,2,3\}$ at $p=8$ has
+ten rows. No numerical support count is assumed in this argument.
+
+For the tracked class choose $T=\{0,2,k\}$, where $k=p-4$, and write
+$\lambda_K=\lambda_T$. Its six C2 rows are
+\[
+ e(S;u,v),\ e(S+1;u,v),\qquad
+ (u,v)=(0,2),(0,k),(2,k),\quad S=u+v.
+\]
+Its six C0 rows have omitted endpoints
+\begin{equation}\label{eq:twelveC0}
+ \begin{gathered}
+ (r,s;u)=(2,p-3;0),(3,p-4;0),(2,p-1;2),\\
+ (3,p-2;2),(p-4,p-1;k),(p-3,p-2;k).
+ \end{gathered}
+\end{equation}
+All twelve rows are distinct and admissible for $p\geq8$. The C0
+omitted-low sum is $4p+1$, which verifies its target grading; C2 grading
+follows from \eqref{eq:erow}. The two coefficient types are distinct.
+Modulo two, \eqref{eq:eta} is just $e(2;0,2)$, so
+\begin{equation}\label{eq:eta-pairing}
+ \lambda_K(\eta_p)=z_{02}=1.
+\end{equation}
+
+\subsection{All original K sources}
+
+\begin{lemma}[[D] Complete K-source annihilation]\label{lem:Kparity}
+Every reflection template $\lambda_T$ annihilates $d_K^K$.
+\end{lemma}
+\begin{proof}
+A source with no exterior high variable cannot reach a supporting row.
+With at least two exterior highs, a low face retains too many highs,
+while a high face has coefficient at least $12p$, larger than every
+supported coefficient. With one high different from $6p$, a low face
+retains the wrong high and a high face has none. It remains only to
+consider exterior high set $\{6p\}$.
+
+Its low exterior omits two elements of $L$. If their sum is $m$, grading
+forces coefficient $4p-2+m$. Two omitted first-low endpoints $r<s$
+would give $6p-2-r-s<6p$, not an original K coefficient.
+One omitted first-low and one second-low variable gives
+\[
+ X(r,u)=K[(L\setminus\{p-r,3p+u\})\cup\{6p\};8p-2+u-r].
+\]
+The only excluded high value in its possible coefficient range is $8p-1$,
+so this column exists precisely when $r\geq u$ or $r\leq u-2$.
+If $r\leq u-2$, neither supported C2 endpoint is possible and the
+other C0 endpoint would exceed $p-1$. If $r\geq u$, its possible
+C0 face has reflected endpoint $s=p+u-1-r$ and value $d_u(r)$.
+At $s=r$ the face is absent but its assigned value is zero. Its C2
+faces have second indices $r-u$ and $r-u-1$, with total value again
+$d_u(r)$; invalid or already omitted indices have value zero.
+The two contributions cancel, and the high face is invisible.
+
+Finally, two omitted second-low indices $u<v$, of sum $S$, force
+coefficient $10p-2+S$. This is in $H$ precisely for $S=2$ or
+$S\geq p+1$. In the first case both supported first endpoints 2 and
+3 are present and have the same value $z_{uv}$. In the second neither
+$S$ nor $S+1$ is an available endpoint. Other faces are invisible.
+This exhausts every original K source.
+\end{proof}
+
+\subsection{Reachability and complete D kernels}
+
+An S source can reach the functional only by deleting a high variable
+from an exterior high set $\{6p,h\}$. If $b$ is a supported target
+coefficient and $c\in L$ the source coefficient, then $h=b-c\in H$.
+The complete intersection calculation is
+\begin{center}\small
+\begin{tabular}{lll}
+\toprule
+$b$ & $c\in L_0$ & $c\in L_1$\\
+\midrule
+$8p-1$ & $[7p-1,8p-2]$ & none\\
+$11p-2$ & $\{10p-2,10p\}$ & $[7p,8p-2]$\\
+$11p-3$ & $\{10p-3,10p-2,10p\}$ & $[7p-1,8p-3]$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Thus only
+\begin{equation}\label{eq:visible-highs}
+ h\in[7p-1,8p-2]\cup\{10p-3,10p-2,10p\}
+\end{equation}
+can matter. In particular $10p-3$ is present: first-low coefficient
+$p$ reaches $11p-3$. The D differential preserves the complete
+exterior-high set. Its kernel therefore splits into kernels of the
+individual high-set sectors, and all sectors outside
+\eqref{eq:visible-highs} have zero pairing term by term.
+
+Consider first $h=8p-d$, with $2\leq d\leq p+1$. A source omits
+three low variables of sum $m$, with coefficient $m-4p+d-2$.
+Three omitted first-low variables make this at most $d-p-5<1$;
+three omitted second-low variables make it at least $5p+d+1>4p-2$.
+The two exhaustive source families and their coefficients are
+\begin{align*}
+ \alpha_u(r,s):&\quad p+d-2+u-r-s,
+ &u+d-2&\leq r+s\leq p+u+d-3,\quad r<s;\\
+ \beta_r(u,v):&\quad 3p+d-2+S-r,
+ &\max(0,S+d-p)&\leq r\leq\min(p-1,S+d-2),\quad u<v.
+\end{align*}
+They have the same omitted-variable patterns as the alpha and beta
+sources of Section~\ref{sec:basis}. Alpha coefficients can only lie
+in $L_0$, beta coefficients only in $L_1$.
+
+\begin{proposition}[[D] Complete generalized potential reconstruction]\label{prop:complete-d}
+Every D cycle in this sector is uniquely parametrized over $\mathbb F_2$
+by potentials satisfying
+\[
+ f_u(0)=0,\qquad f_u(r)=0\text{ for }r<u+d-2.
+\]
+Its coefficients are
+\begin{align}
+ \alpha_u(r,s)&=f_u(r)+f_u(s),\label{eq:fullalpha}\\
+ \beta_r(u,v)&=
+ \begin{cases}
+ F(r)+F(S+d-1),&S\leq p-d,\\
+ F(r),&S\geq p-d+1,
+ \end{cases}\qquad F=f_u+f_v.\label{eq:fullbeta}
+\end{align}
+In particular, for $d=2$ the coordinates $f_u(u)$ are free for every
+$u\geq1$. Only $f_0(0)$ is excluded by the endpoint-zero convention.
+\end{proposition}
+\begin{proof}
+The complete A equations are
+\[
+ \alpha_u(r,s)+\alpha_u(r,t)+\alpha_u(s,t)=0,
+ \quad u+d-2\leq r+s+t\leq p+u+d-3.
+\]
+Set $f_u(r)=\alpha_u(0,r)$ for $r>0$ with $r\geq u+d-2$,
+and zero otherwise. The pair's upper bound is at least $p-1$.
+Every other admissible pair occurs in its A equation with endpoint zero,
+which forces \eqref{eq:fullalpha}. Conversely these potentials solve
+all A equations: a pair below the lower bound has both potentials zero,
+and a pair above the upper bound cannot occur in an admissible triple.
+
+The complete B equations are
+\[
+ \alpha_u(r,s)+\alpha_v(r,s)+\beta_r(u,v)+\beta_s(u,v)=0,
+ \quad\max(0,S+d-p)\leq r+s\leq S+d-1.
+\]
+Since $S+d-1\leq p+u+d-3$, both alpha terms can be replaced by
+their potential sums, including lower truncations. The equation becomes
+$\beta_r+F(r)=\beta_s+F(s)$.
+
+If $S\leq p-d$, the beta interval is $0,\ldots,b$ with
+$b=S+d-2\leq p-2$. The equation on $\{0,b+1\}$ forces
+$\beta_0=F(b+1)$; the other endpoint-zero equations force the first
+formula in \eqref{eq:fullbeta}. It extends as zero at $b+1$ and solves
+every B equation. If $S\geq p-d+1$, put $a=S+d-p\geq1$.
+The beta interval is $a,\ldots,p-1$, possibly empty, and
+$a\leq u+d-2$. Both potentials vanish below $a$, so the endpoint-zero
+equations force $\beta_r=F(r)$; this extends by zero below $a$.
+If $a>p-1$, both potentials vanish everywhere and there is no beta
+source. Thus all truncations, empty intervals, and converses are checked.
+The reconstruction reads original coordinates, not a rank pattern.
+\end{proof}
+
+The additional free coordinates at $d=2$ cannot be suppressed here.
+Section~\ref{sec:shift} used a restricted integral construction with
+$f_u(r)=0$ for $r\leq u$; nonvanishing requires the complete kernel,
+including its previously unused diagonal coordinates. The first-low endpoint
+zero used in the reconstruction is available even when the smallest
+second-low index in $T$ is positive. It places no restriction on the triangle.
+
+\subsection{Pairing the complete kernels and the remaining sectors}
+
+For a supported C0 face in a generalized potential cycle, the source
+coefficient is $d-1$ and $r+s=p+u-1$. Reflection makes its value
+$(f_u(r)+f_u(s))d_u(r)$. Fixed points contribute zero. Every nonzero
+potential has $r\geq u$, so its reflected endpoint is also available.
+Summing all distinct pairs gives
+\begin{equation}\label{eq:parity-equal}
+ \sum_{u,r}f_u(r)d_u(r)
+   =\sum_{u<v}z_{uv}\bigl(F(u+v)+F(u+v+1)\bigr).
+\end{equation}
+On the support of a triple template, $1\leq S=u+v\leq p-2$,
+so both potential indices in this sum are available.
+
+For C2, only $r=S$ and $r=S+1$ can pair. Their source coefficients
+are $3p+d-2$ and $3p+d-3$. If $d=2$, only $r=S$ is admissible;
+\eqref{eq:fullbeta} gives $F(S)+F(S+1)$. If $3\leq d\leq p$,
+both endpoints are admissible, and their common beta constant, when
+present, cancels. If $d=p+1$, only $r=S+1$ is admissible. The sole
+possible nonzero potential is $f_0(p-1)$, so $F(S)=0$ and the same
+expression remains. Thus C2 pairing equals \eqref{eq:parity-equal}.
+It cancels C0 over $\mathbb F_2$. Every other K face has functional
+value zero; it need not itself vanish.
+
+It remains to treat $h=10p-3,10p-2,10p$. Sources omitting two first-low
+and one second-low variable cannot occur: their omitted sum is at most
+$6p-3$, giving coefficient at most $-2$ even for $h=10p-3$.
+Three omitted first-low variables also cannot occur. Sources omitting
+three second-low variables, if admissible, have second-low coefficients
+and do not contribute to A rows. Therefore the only source family with
+first-low coefficient omits one first-low and two second-low variables.
+For fixed $u<v$ and $S=u+v$, write its coefficients as $a_r$.
+Its coefficient offsets are respectively
+\[
+ p+1+S-r,\qquad p+S-r,\qquad p-2+S-r.
+\]
+The lower endpoint bounds are $r\geq S+1$, $r\geq S$, and
+$r\geq\max(0,S-2)$.
+
+For each existing $r>0$, removal of the first-low variable $p$ gives
+an A equation on endpoints $\{0,r\}$. Its only possible other
+contributor is $a_0$. In the first two high sectors $a_0$ is absent,
+so these equations force every $a_r$ to zero. For $h=10p$ the same
+argument applies when $S\geq3$. For the remaining possible sums
+$S=1,2$, use the A row on endpoints $\{S,S+1\}$. Its coefficient
+offset is $2p-3-S>p$ and its only contributors are
+$a_S+a_{S+1}$, which therefore vanishes. These are exactly the two
+supported C2 contributions. This also covers triple templates containing
+$\{0,1\}$; the selected twelve-row template itself has sums
+$2,p-4,p-2$. There is no C0 contribution in these three high sectors.
+Other families may contribute to B equations but cannot change the A
+constraints used here.
+
+We have proved the following relative statement on the complete map.
+\begin{proposition}[[D] Relative reflection functional]\label{prop:relative-functional}
+For every distinct triple template $T$ above,
+\[
+ \lambda_Td_K^K=0,\qquad
+ \lambda_Td_K^S(s)=0\quad\text{whenever }d_Ds=0.
+\]
+This statement applies to every triangle, including those with positive
+smallest entry; Section~\ref{sec:family} uses it to establish independence.
+\end{proposition}
+
+\begin{theorem}[[D] Exact order of the tracked class]\label{thm:exact-order}
+For every $p\geq8$, $\eta_p$ is nonzero in the cokernel of
+$M_p\otimes\mathbb F_2$. Its class in $\coker_{\Z}M_p$ has exact
+order two. The same is true of the class of $b_p$.
+\end{theorem}
+\begin{proof}
+Suppose $\eta_p=M_p(s,t)$ over $\mathbb F_2$. Its zero D component
+implies $d_Ds=0$. Lemma~\ref{lem:Kparity} and
+Proposition~\ref{prop:relative-functional}, for $T=\{0,2,p-4\}$,
+would give
+\[
+ 1=\lambda_K(\eta_p)=\lambda_K(d_K^Ss+d_K^Kt)=0,
+\]
+contradicting \eqref{eq:eta-pairing}. An integral source for $\eta_p$
+would reduce to a source modulo two, so its integral class is also nonzero.
+Theorem~\ref{thm:main} proves twice the class is zero. Its order is
+therefore exactly two. Proposition~\ref{prop:transfer} transfers the
+conclusion to $[b_p]=-[\eta_p]$.
+\end{proof}
+
+\section{The quadratic triangle family and its splitting}\label{sec:family}
+
+Return to integral coefficients for source identities, and put $n=p-2$.
+Let
+\[
+ \mathcal T_p=\{(i,j,k):0\leq i<j<k,\ i+j+k=n\},\qquad
+ \mathcal C_p=\coker_{\Z}M_p.
+\]
+For $T=(i,j,k)$ select the original signed row $x_T=x_{ij}$ from
+\eqref{eq:erow}. Its first endpoint $i+j$ is at most $p-2$, and its
+coefficient offset is $11p-2$, so it is an admissible original target.
+All subsequent relation statements take place in $\mathcal C_p$, not in
+a projected or isolated subpresentation.
+
+\begin{proposition}[[D] Full original triangle sources]\label{prop:all-triangle-sources}
+For every $T=(i,j,k)\in\mathcal T_p$, define
+\begin{equation}\label{eq:WT}
+ F_T=T_i(j,k)-T_j(i,k)-T_k(i,j),\qquad W_T=P(F_T).
+\end{equation}
+Here each $T_u(a,b)$ is the integral interval potential of
+Lemma~\ref{lem:triangle}, and $P$ retains exactly the source labels and
+signs in \eqref{eq:Palpha}--\eqref{eq:shiftbeta}. Then
+$M_pW_T=2x_T$ in the full original target.
+\end{proposition}
+\begin{proof}
+For distinct $u,a,b$ with $a<b$ and $u+a+b=n$, the interval
+$[u+a+1,u+b]$ is nonempty, lies strictly above $u$, and ends at
+$n-a\leq p-2$. Its endpoints sum to $p+u-1$. Thus every interval
+in \eqref{eq:WT} satisfies all hypotheses of Lemma~\ref{lem:triangle},
+regardless of whether $i=0$. The complete D boundary cancels by the
+signed potential equations; every $6p$ face vanishes; reflection kills
+C0; and the two interval jumps give precisely its oriented C2 edges.
+Consequently
+\[
+ \begin{split}
+ M_pW_T
+  &=(x_{ij}-x_{ik})-(-x_{ij}-x_{jk})-(-x_{ik}+x_{jk})\\
+  &=2x_{ij}.
+ \end{split}
+\]
+All coefficients here are integers. No unsupported boundary row has been
+dropped, and no subsequent K relation is needed for the equality.
+\end{proof}
+
+\begin{theorem}[[D] Independent triangle classes and exact count]\label{thm:quadratic}
+For every $p\geq8$, the relation lattice of the classes
+$([x_T])_{T\in\mathcal T_p}$ in $\mathcal C_p$ is exactly
+$2\Z^{\mathcal T_p}$. In particular there is an injection
+\begin{equation}\label{eq:family-injection}
+ \iota:(\Z/2)^{\mathcal T_p}\lhook\joinrel\longrightarrow\mathcal C_p,
+ \qquad \mathbf e_T\longmapsto[x_T],
+ \qquad |\mathcal T_p|=\left\lfloor\frac{(p-2)^2+3}{12}\right\rfloor.
+\end{equation}
+\end{theorem}
+\begin{proof}
+An unordered edge $\{a,b\}$ belongs to at most one triple of sum $n$:
+its third entry must be $n-a-b$. Thus different triangles have disjoint
+unordered edge sets. By the C2 definition of the relative functionals,
+\begin{equation}\label{eq:diagonal-pairing}
+ \lambda_T(x_U)=\delta_{TU}\quad\text{over }\mathbb F_2.
+\end{equation}
+Suppose that $\sum_U m_Ux_U=M_p(s,t)$ integrally. Reducing the full
+source equation modulo two, its zero D component gives $d_Ds=0$.
+Proposition~\ref{prop:relative-functional} therefore forces every
+$\lambda_T$ to evaluate to zero on the right-hand K component.
+Equation~\eqref{eq:diagonal-pairing} gives $m_T\equiv0\pmod2$ for
+every $T$. Conversely, every even coefficient vector is a relation by
+Proposition~\ref{prop:all-triangle-sources}. This proves the exact
+relation lattice and the injection, not merely nonzero target vectors.
+
+To count the triples, let $q(n)$ count strictly increasing nonnegative
+triples of sum $n$. For $n\geq6$, triples with smallest entry at least
+two correspond bijectively to those of sum $n-6$, by subtracting two
+from every entry. Those with smallest entry zero number
+$\lfloor(n-1)/2\rfloor$, and those with smallest entry one number
+$\lfloor(n-2)/2\rfloor-1$. Hence
+\begin{equation}\label{eq:count-recurrence}
+ q(n)-q(n-6)=n-3\qquad(n\geq6).
+\end{equation}
+The initial counts for $n=0,\ldots,5$ are $0,0,0,1,1,2$.
+The function $\lfloor(n^2+3)/12\rfloor$ has those same values and
+the same recurrence, since the two unrounded arguments differ by the
+integer $n-3$. Induction in each residue class modulo six proves the
+formula for all $n\geq0$, hence for $n=p-2$.
+\end{proof}
+
+\begin{corollary}[[D] A direct summand of integral two-torsion]\label{cor:splitting}
+The injection \eqref{eq:family-injection} splits as a homomorphism of
+abelian groups. Thus, for some unspecified abelian group $\mathcal C'_p$,
+\[
+ \mathcal C_p\cong
+ (\Z/2)^{\lfloor((p-2)^2+3)/12\rfloor}\oplus\mathcal C'_p.
+\]
+This is an existence statement for a retraction, not an explicit uniform
+formula for its values on all D rows or a complete cokernel computation.
+\end{corollary}
+\begin{proof}
+Work first over $\mathbb F_2$. For each $T$, define a functional on
+the subspace $\operatorname{im}d_D$ of the full D target by
+\[
+ \mu_T(d_Ds)=\lambda_T(d_K^Ss).
+\]
+It is well-defined: two choices of $s$ differ by a complete D cycle,
+whose connecting image is annihilated by
+Proposition~\ref{prop:relative-functional}. Extend $\mu_T$ linearly
+to the entire D target, by completing a basis of $\operatorname{im}d_D$.
+The target is finite-dimensional for each fixed $p$, so such an extension
+exists. The functional $(\mu_T,\lambda_T)$ annihilates the full map:
+on an S source its two values are equal and cancel over $\mathbb F_2$,
+and on a K source the value is zero by Lemma~\ref{lem:Kparity}.
+
+Reduction modulo two followed by these extended functionals therefore
+defines a group homomorphism
+$\rho:\mathcal C_p\longrightarrow(\Z/2)^{\mathcal T_p}$.
+Every selected target $x_U$ has zero D component, so
+\eqref{eq:diagonal-pairing} gives $\rho\iota=\mathrm{id}$.
+Thus $\mathcal C_p=\operatorname{im}\iota\oplus\ker\rho$.
+The extension is noncanonical; no global D-row certificate is asserted.
+\end{proof}
+
+\begin{proposition}[[D] Exact transfer of the tracked class]\label{prop:eta-edge}
+The original source
+\begin{equation}\label{eq:eta-edge-source}
+ C=P(F_1)-2B-2D
+   =P(F_1-2\delta_{03}-2\delta_{02})+2Q_3-2Q_2
+\end{equation}
+satisfies $M_pC=\eta_p-x_{02}$. Hence
+$[\eta_p]=[x_{02}]$ and $[b_p]=-[x_{02}]$ in $\mathcal C_p$,
+where $x_{02}$ is chosen for the triangle $(0,2,p-4)$.
+\end{proposition}
+\begin{proof}
+The target identity in the proof of Theorem~\ref{thm:main} is
+$\eta_p=x_{02}+2x_{01}-2M_pB-2M_pD$. Apply
+$M_pP(F_1)=2x_{01}$ and then Proposition~\ref{prop:transfer}.
+This proves a quotient equality with an explicit source for its difference,
+not equality of the original target vectors $\eta_p$ and $x_{02}$.
+\end{proof}
+
+In particular there are at least $3,4,5,7$ independent integral
+two-torsion classes at $p=8,9,10,11$, respectively, and their number
+is quadratically unbounded. If two is invertible in a coefficient ring,
+each selected class vanishes with source $W_T/2$; this gives no vanishing
+claim for the complementary quotient. Agreement of these lower bounds
+with earlier finite isolated ranks does not identify that isolated object
+with $\mathcal C_p$, nor does it establish an upper bound.
+
+\section{Local obstruction and exact validation}\label{sec:validation}
+
+\subsection{A failed locality prediction}
+
+Before the interval construction, EXP-058 explored original source columns
+incident to the four endpoint rows, retaining all their boundary rows.
+Each row-column-row round gives the next radius. At $p=8$, the complete
+declared radius-two span excludes $2\eta_8$ even over $\mathbb Q$ [MV].
+The decisive certificates are integer row functionals:
+\begin{center}
+\begin{tabular}{rrrrr}
+\toprule
+Radius & Source columns & Boundary rows & Incidences & Dual support\\
+\midrule
+1 & 47 & 240 & 306 & 14\\
+2 & 330 & 1803 & 2669 & 40\\
+\bottomrule
+\end{tabular}
+\end{center}
+For each selected matrix $M_{\mathrm{loc}}$, the stored functional satisfies
+$\lambda M_{\mathrm{loc}}=0$ and $\lambda(2\eta_8)=4$.
+The radius-two functional has 35 D rows and five K rows, all nonzero
+coefficients equal to $1$ or $-1$. A coefficient-first reconstruction of
+the complete neighborhoods, a separate original differential, and a dual
+mutation check verify the certificates independently. The experiment stopped
+at $p=8$; its planned $p=9,10$ cases were not run.
+
+If a full source $z$ satisfies $M_8z=2\eta_8$, then some column outside
+the selected radius-two set must have nonzero coefficient in $z$ and
+nonzero pairing with $\lambda$. Otherwise applying $\lambda$ gives
+$0=4$. This elementary escaping-column conclusion is compatible with
+Theorem~\ref{thm:main}: the explicit source is not restricted to that
+neighborhood. The local dual is not a functional on the full cokernel,
+and its even target pairing is not a characteristic-two nonvanishing
+certificate.
+
+\subsection{Campaigns and adversarial controls}
+
+For Theorem~\ref{thm:basis}, EXP-059 checks every unit potential at
+$p=8,\ldots,16$, giving 525 chains, and four frozen endpoint pairs
+at each $p=17,\ldots,100$, giving 336 more [MV]. All 861 full original
+boundaries agree with the seven-row formula. The producer uses both
+left-to-right and independently encoded right-to-left differentials.
+A separate coefficient-first source reconstruction and bitset differential
+audit all 861 cases; the latter also crosschecks the literal differential
+on the 525 small cases. Source support ranges from 9 to 197 and boundary
+support from 3 to 7 in this declared campaign. The integral completeness
+claim, however, follows from the coordinate reconstruction proof.
+
+For Theorem~\ref{thm:main}, EXP-060 checks the fixed parameters
+\[
+ 8,9,\ldots,20,25,32,50,64,100.
+\]
+At all 18 values, two original differential implementations verify the
+potential components, both short corrections, and $M_pV_p=2\eta_p$ [MV].
+The independent auditor reconstructs all source labels and coefficients,
+verifies the full boundary by a separately encoded bitset method, and
+performs 25 literal differential crosschecks on five sources at each
+$p=8,\ldots,12$. The complete boundary has four K rows and no D rows.
+Observed source support is 110 at $p=8$ and 3054 at $p=100$, with
+coefficient height five at each checked value. These are finite support
+observations, not a separately proved uniform counting formula.
+
+Wrong signs and single-coefficient changes are rejected. Two pre-declaration
+paper errors are retained explicitly. Omitting the $\delta_{02}/Q_2$
+correction gives $V_{\mathrm{omit}}=V_p+4D$ and
+\[
+ M_pV_{\mathrm{omit}}-2\eta_p=4(x_{01}+e(2;0,1))\ne0.
+\]
+The earliest proposal also had the opposite $F_1$ sign, giving
+$V_{\mathrm{early}}=V_{\mathrm{omit}}-4P(F_1)$ and
+\[
+ M_pV_{\mathrm{early}}-2\eta_p=4(e(2;0,1)-x_{01})\ne0.
+\]
+The rows are distinct, so both failures hold uniformly. They were corrected
+on paper before the final hypothesis was committed, not hidden after an
+experimental failure.
+
+Each producer and audit completed within its declared 60-second,
+one-CPU-process and 1-GiB private-memory cap. There is no new HNF,
+Smith-form or full ambient-basis computation in these campaigns. No old
+labelled HNF source, including the original $p=11$ source holdout, is
+an input. Checking the new formula at $p=11$ is not described as a new
+untouched holdout. The dedicated suites contain 12 tests for the local
+obstruction and 20 each for the potential basis and annihilator; tests
+write only temporary outputs.
+
+\subsection{Full-sector parity verification}
+
+EXP-061 checks the twelve-row functional and 2,123 complete-sector unit
+potential chains at $p=8,\ldots,16,25,32,50,64,100$ [MV]. Every basis
+element is checked at $p\leq12$; larger parameters use frozen first,
+middle and last basis indices, together with the newly free $d=2$
+diagonal coordinate $(u,r)=(1,1)$. All chains have zero complete D
+boundary and equal C0 and C2 pairings. The original K inverse-incidence
+enumeration at $p=8,\ldots,12$ finds 13 incident K columns at each
+parameter and annihilates every one. The reachable high-sector lists
+include $10p-3$. The producer's 21 dedicated tests include the free
+diagonal cases $(u,r)=(2,2)$ and $(4,4)$ at $p=8$, where the two
+individual pairings are both one and cancel.
+
+The independent audit does not use the producer's potential formulas.
+It enumerates every original S source in every reachable high sector
+at $p=8,\ldots,12$, constructs all original D rows over $\mathbb F_2$,
+and certifies that the K pairing lies in the row span of that complete
+D matrix. Equivalently, the pairing vanishes on its entire kernel.
+The totals are 65 sectors, 23,695 original S sources, 108,261 D rows
+and 231,986 incidences. The saved original-D-row dual certificates
+contain 1,070 terms in total. Complete kernel dimensions agree with
+the potential reconstruction, including the additional $d=2$ freedom.
+
+All 20 independent adversarial controls pass. They include removal of the
+odd eta-pairing row, mutation of a support index, an explicit diagnostic
+for the otherwise omitted $h=10p-3$ sector, and a functional that passes
+a proper local column subset but fails an added original column. The
+producer and auditor each finish within their separately declared
+120-second, one-process, 1-GiB caps. These finite checks challenge the
+full-sector argument, not just a local span; the proof of
+Theorem~\ref{thm:exact-order} remains the source classification and
+relative-functional contradiction above.
+
+\subsection{All-triangle identities and independent sector certificates}
+
+EXP-062 verifies all 49 triangle sources at $p=8,\ldots,14$ and the
+first, middle and last lexicographic triangle at each of
+$p=16,20,25,32,50,64,100$, for 70 full integral identities [MV].
+The producer also checks seven complete small-parameter pairing matrices,
+93 count identities at $p=8,\ldots,100$, and the five original
+$\eta_p-x_{02}$ transfers at $p=8,\ldots,12$. Both original
+differential encodings agree on every signed source and transfer boundary.
+The source selection was frozen before computation; the count theorem at
+$p=100$ does not mean that every source at that parameter was run.
+
+The independent auditor reconstructs all 70 signed sources, all five
+transfers, the pairings, counts and mutation controls without importing
+producer mathematics. For every one of the 27 triangles at
+$p=8,\ldots,12$, it additionally enumerates all original S columns
+in every reachable high sector and gives exact $\mathbb F_2$ row-span
+certificates on the complete D matrix. The totals are
+\begin{center}\small
+\begin{tabular}{lr}
+\toprule
+Complete-audit quantity & Count\\
+\midrule
+Distinct $(p,h)$ sectors & 65\\
+Distinct original S sources & 23,695\\
+Triangle-sector certificates & 364\\
+S-source instances across certificates & 151,319\\
+D-row instances across certificates & 713,511\\
+D incidences across certificates & 1,528,426\\
+Labelled original D-row dual terms & 5,550\\
+\bottomrule
+\end{tabular}
+\end{center}
+Instance counts repeat a physical sector for different triangle functionals;
+they are not counts of distinct matrices or columns. All original D rows
+are retained in each certificate. This tests complete-kernel annihilation,
+not merely the producer's constructed potential chains.
+
+The ten-row adjacency case $T=(1,2,3)$ at $p=8$ is included. Removing
+a functional row is detected by an explicit original K column. Changed
+source signs or coefficients have nonzero full unit-column residuals;
+permanent tests also multiply the actually altered sources. Duplicate
+and mirrored edge choices give singular pairing matrices. All 39 combined
+tests pass, comprising 24 producer and 15 independent-audit tests, and
+the independent audit replays byte-for-byte to temporary outputs.
+
+Observed source support ranges from 38 to 13,594, with coefficient height
+two throughout this campaign. These are finite observations, whereas
+\eqref{eq:template-support} proves the ten-to-twelve-row functional bound
+uniformly. Producer and auditor each finish within their own declared
+120-second, one-process, 1-GiB caps. No dense full ambient matrix, integral
+HNF/SNF or old labelled $p=11$ HNF source is used. Finite certification
+and the uniform proof remain separate layers of evidence.
+
+\section{Remaining obligations}
+
+The uniform twice-source, nonvanishing and independent-family obligations
+are closed: Theorem~\ref{thm:quadratic} and Corollary~\ref{cor:splitting}
+give the quadratically growing direct summand for every $p\geq8$.
+The tracked endpoint class is explicitly identified with one selected
+triangle class. What remains [C] is the complementary group: the complete
+cokernel, a matching upper bound, its free rank and any additional torsion
+are not determined. The functionals are not asserted to exhaust the full
+dual space. In particular, the theorem does not identify the full
+presentation with an earlier isolated component or relative-completion
+quotient, and it does not prove a lower-strand recurrence.
+
+The mathematical premise imported from the earlier family is the integral
+coefficient presentation itself. Independent encodings attack implementation,
+sign and boundary errors but do not rederive that family-to-presentation
+identification. Within the explicit presentation of Section~\ref{sec:matrix},
+the proofs above are self-contained. The new potential basis, signed
+interval triangle and relative parity proof provide explicit sources and
+detectors for further reductions. The parity argument exhausts the sectors
+visible to each functional; it does not assert that those sectors exhaust
+the whole map. The splitting is a proved existence result, but computing
+a uniform global D-row retraction remains a separate constructive task.
+
+\appendix
+\section{Evidence map and source persistence}
+
+All evidence is in the public \Repo\ repository, under the Huneke--Wiegand
+experiment tree. The following links lead to the primary declarations,
+proofs, verdicts, source code and exact artifacts. Mathematical claims are
+owned by those primary records, not by a resume or summary page.
+
+\begin{center}\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.43\textwidth}>{\raggedright\arraybackslash}p{0.46\textwidth}}
+\toprule
+Claim in this paper & Primary record\\
+\midrule
+Original presentation and product rules &
+\Exp{EXP-036-factor-two-torsion-anatomy}{EXP-036},
+\Exp{EXP-054-full-source-boundary}{EXP-054}\\[3pt]
+Proposition~\ref{prop:transfer} and four-row target &
+\Exp{EXP-056-uniform-low-source}{EXP-056},
+\Exp{EXP-057-four-row-kernel-normal-form}{EXP-057}\\[3pt]
+Local radius-two exclusion and duals &
+\Exp{EXP-058-local-endpoint-source}{EXP-058}\\[3pt]
+Theorem~\ref{thm:basis}, 861-chain audit &
+\Exp{EXP-059-potential-connecting-map}{EXP-059}\\[3pt]
+Lemmas~\ref{lem:shift}--\ref{lem:corrections}, Theorem~\ref{thm:main},
+Corollary~\ref{cor:basechange} &
+\Exp{EXP-060-uniform-endpoint-annihilator}{EXP-060}\\[3pt]
+Complete relative parity proof and Theorem~\ref{thm:exact-order} &
+\Exp{EXP-061-uniform-parity-functional}{EXP-061}\\[3pt]
+Theorem~\ref{thm:quadratic}, Corollary~\ref{cor:splitting},
+Proposition~\ref{prop:eta-edge} and complete triangle audits &
+\Exp{EXP-062-triangle-torsion-family}{EXP-062}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The full EXP-060 source archive retains every original exterior label and
+integer coefficient for all 18 declared parameters. The EXP-062 archive
+similarly retains all 70 tested triangle sources and five transfer sources.
+Both deterministic gzip encodings have zero timestamp and empty embedded
+filename. Their compact manifests store compressed and raw SHA-256 hashes,
+byte counts, parameter counts, and per-source hashes. The auditors decompress
+the archives and independently reconstruct all labels; no mathematical
+information is discarded by compression.
+
+\begin{center}\small
+\begin{tabular}{lrrl}
+\toprule
+Artifact & Raw bytes & Stored bytes & SHA-256 prefix\\
+\midrule
+EXP-060 source archive & 4,508,227 & 80,250 & \texttt{85f8ea0800f0e8b6}\dots\\
+EXP-060 result manifest & 462,616 & 462,616 & \texttt{f57fa704d045a8a8}\dots\\
+EXP-060 independent audit & \multicolumn{2}{c}{exact JSON certificate} & \texttt{3bcf3cabe5b0330f}\dots\\
+EXP-062 source archive & 17,253,771 & 252,812 & \texttt{8475ffb305c1567e}\dots\\
+EXP-062 independent audit & \multicolumn{2}{c}{exact JSON certificate} & \texttt{854405294fab1d88}\dots\\
+\bottomrule
+\end{tabular}
+\end{center}
+Archive prefixes in this table identify the compressed bytes.
+The EXP-060 raw digest starts with \texttt{d70c6ce4}\allowbreak\texttt{d7b331ef};
+the EXP-062 raw digest starts with \texttt{af39d545}\allowbreak\texttt{d2f664de}.
+Prefixes are navigation aids,
+not sufficient integrity checks. Reproduction must verify the full 64-digit
+hashes in the manifest and audit certificate. The accompanying permanent
+tests also verify deterministic gzip replay, all stored source hashes,
+failure checkpoint preservation, and the original $b_p$ source transfer
+at $p=8$.
+
+\begin{thebibliography}{9}
+\bibitem{CAOSMain}
+F.~Santiba\~nez-Leal,
+\emph{Frobenius Minimality, Minimum-Layer Uniqueness, and an Infinite Family
+of Huneke--Wiegand Counterexamples}, version 0.23, CAOS Research preprint,
+2026. \href{https://doi.org/10.5281/zenodo.22181972}{doi:10.5281/zenodo.22181972}.
+
+\bibitem{BrunsHerzog}
+W.~Bruns and J.~Herzog,
+\emph{Semigroup rings and simplicial complexes},
+Journal of Pure and Applied Algebra \textbf{122} (1997), 185--208.
+\href{https://www.home.uni-osnabrueck.de/wbruns/brunsw/pdf-article/SimpSemi.published.pdf}{Author-hosted published paper}.
+\end{thebibliography}
+\end{document}

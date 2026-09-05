@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "title": "A quadratic family of integral two-torsion classes in a Huneke-Wiegand Koszul presentation",
+    "creators": [
+      {
+        "name": "Santiba\u00f1ez-Leal, Felipe",
+        "orcid": "0000-0002-0150-3246",
+        "affiliation": "CAOS Research programme, Santiago, Chile"
+      }
+    ],
+    "description": "<p>For every integer p&gt;=8, we prove that an explicit integral Koszul presentation associated with a previously constructed Huneke-Wiegand family has a direct summand (Z/2)^q, where q=floor(((p-2)^2+3)/12). The classes are indexed by the strictly increasing nonnegative triples i&lt;j&lt;k with i+j+k=p-2. Reflection-symmetric interval potentials give complete original-domain integer sources for twice each class; relative parity functionals with ten to twelve supporting K rows detect the classes independently. An elementary six-step counting argument gives the quadratic growth, and a vector-space extension argument gives the splitting. No explicit uniform global retraction or complete Smith form is claimed.</p><p>The proof includes an exhaustive classification of every source that can meet the functionals and a complete reconstruction of the D-kernel in every relevant high-variable sector, including the free diagonal potentials at the endpoint sector. It also proves exact order two for a previously tracked four-row connecting representative, constructs its original signed annihilator and its transfer to one triangle class, and gives a complete integral potential basis of rank binomial(p-1,2) in a neighboring sector with at most seven K rows per basis image.</p><p>Independent exact audits verify all 70 declared triangle sources, five representative-transfer identities, and 364 complete triangle-sector parity certificates at p=8,...,12. These certificates concern 27 functionals on 65 distinct sectors containing 23,695 distinct original S sources; repeated sector incidences are not counted as distinct matrices. Separate campaigns check 861 neighboring-sector chains, 18 full annihilators, and 2,123 complete-kernel potential chains. Every tested signed source is preserved in deterministic lossless archives. The uniform theorems follow from the complete symbolic proofs, not extrapolation from these finite checks.</p><p>Scope: this is a partial direct-summand decomposition of the full explicit integral presentation, not a classification of its entire cokernel, an upper bound, an identification with an isolated or relative-completion quotient, or a proof of the lower-strand recurrence. The family-to-presentation identification is an explicitly imported premise. Son Pham retains priority for the original public counterexample; this is a separate homological companion to the CAOS family record. The Jacobian conjecture is not addressed. Preprint, not peer reviewed.</p>",
+    "keywords": [
+      "Huneke-Wiegand conjecture",
+      "Koszul homology",
+      "integral connecting maps",
+      "uniform annihilators",
+      "integral two-torsion",
+      "quadratic torsion growth",
+      "potential bases",
+      "numerical semigroups",
+      "characteristic dependence",
+      "exact certificates"
+    ],
+    "license": "cc-by-4.0",
+    "access_right": "open",
+    "related_identifiers": [
+      {
+        "relation": "isSupplementTo",
+        "identifier": "10.5281/zenodo.22181972",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "relation": "isSupplementedBy",
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "resource_type": "software"
+      },
+      {
+        "relation": "references",
+        "identifier": "https://github.com/sonpham-org/huneke-wiegand-candidate-verification",
+        "resource_type": "software"
+      }
+    ],
+    "version": "0.01",
+    "language": "eng",
+    "publication_date": "2026-09-05"
+  }
+}

@@ -1823,3 +1823,121 @@
   No new publication was made because the stronger manuscript theorem gate remains unmet.
 - Integrated concurrent Bougard-Joret changes without overwriting them; 99 tests, Ruff, and all
   content/template/research guards pass. Research PR #247 and management PR #610 track promotion.
+
+## 2026-09-05 - checked promotion and local endpoint-source gate
+
+- Research PR #247 merged into develop at `5e20b7b`, then PR #250 passed all checks and
+  merged into main at `2d0c10a`. Management PR #610 merged at `602ad88`; its develop checkout
+  remained unchanged in name and concurrent Rajo files were preserved.
+- EXP-058's hypothesis was committed and pushed at `0170a99` before computation. It asks
+  whether the radius-two inverse-incidence neighborhood supplies an integral source for
+  `2eta` at training parameters 8,9,10, with every additional boundary equation retained.
+- The 60-second, 1200-column, 20000-nonzero limits prohibit repeating the old unrestricted
+  HNF pullback. Noninteger rational sections are explicitly inconclusive, and local rational
+  obstruction cannot exclude a full-domain source. The original p=11 source holdout stays locked.
+
+## 2026-09-05 - local obstruction and declared potential-map redirect
+
+- EXP-058 stopped at p=8 after the complete radius-two neighborhood (330 columns, 1803 rows,
+  2669 incidences) was excluded over QQ. Its 40-row plus/minus-one dual pairs to 4 with
+  `2eta`; all incidences, residuals and dual equations were independently reconstructed.
+- No p=9/10 continuation or radius-three expansion occurred. The obstruction only excludes
+  this local span; it implies a necessary escaping-column condition for any later source.
+  Twelve new focused tests and the full 111-test suite pass. Commit `a918326` is pushed.
+- EXP-059 was frozen at `08adadb` before computation. It proposes a complete integer potential
+  basis for one fixed-high D-kernel and a seven-row connecting map per basis element. The
+  signed proof and 861-chain bounded audit are in flight under issue #252 and draft PR #253.
+- Re-read Bruns-Herzog Proposition 1.1 and its proof from the scanned published source. The
+  relative divisor-complex interpretation remains conditional until its actual chain map is
+  identified; it is not imported as a CAOS torsion theorem. Publication triggers are unchanged.
+
+## 2026-09-05 - complete potential-basis theorem in a fixed-high sector
+
+- EXP-059 proves an integral basis of the entire D-kernel for exterior high set `{6p,8p-4}`.
+  Its rank is `binom(p-1,2)`; vertex-zero A equations and unit-star B equations give an
+  explicit integral inverse, so completeness is not inferred from finite ranks.
+- Every unit potential produces a height-one source of support at most `3p-5` and a full
+  original boundary on at most seven K rows, with no D residual or discarded high face.
+- All 861 declared chains pass the producer's two literal differentials and the separate
+  bitset audit; all 525 small-parameter basis chains also pass the auditor's literal
+  differential cross-check. Wrong-sign and coefficient-mutation controls pass. Audit SHA-256:
+  `9120cf1d98e60802b84a4c2d8351dae373342accda9cb517d641b8f1f4fbc0a7`.
+- Integrated the concurrently promoted Bougard-Joret full-shell work without overwriting it.
+  All 132 tests and Ruff pass. The next mathematical gate is explicit cross-high compatibility,
+  not a larger neighborhood search. Generic annihilation/nonvanishing and upper bounds remain open.
+
+## 2026-09-05 - uniform annihilator and declared complete parity audit
+
+- EXP-060 was declared at db3642d before computation and closed at 6e87a27.
+  Its all-parameter signed proof gives `M V=2eta` in the full original map,
+  including both short K corrections. All 18 declared cases through p=100 pass
+  independent reconstruction; all sources are preserved losslessly. All 152 tests pass.
+- This closes HWB-080 and meets the stronger all-parameter publication gate.
+  A separate companion manuscript has reserved DOI 22342976, concept 22342975;
+  reservation is not publication. Existing PDFs remain unchanged.
+- Independent paper review of a twelve-row relative parity functional found and
+  repaired an omitted reachable h=10p-3 sector before EXP-061's declaration
+  commit 9169f23. The complete d=2 kernel retains the f_u(u) freedoms. Producer
+  and full-sector F2 audit are now active, not yet a uniform nonvanishing verdict.
+- Concurrent Bougard-Joret updates were merged without modifying unrelated Rajo
+  edits. CAOS_MANAGE stayed on develop; no new branch or worktree was created.
+
+## 2026-09-05 - uniform exact order two and all-triangle extension
+
+- EXP-061 is CONFIRMED at 0625ec4: the relative twelve-row functional gives
+  full-original-map nonvanishing and EXP-060 gives annihilation. Thus eta and
+  b_A+b_B have exact integral order two for every p>=8. Independent audit:
+  65 complete sectors, 23695 original S columns, 108261 D rows and 231986
+  incidences; 2123 producer chains and 21 focused tests also pass.
+- Git-blob validation caught a Windows CRLF receipt mismatch. Commit 31f53a0
+  changes only the writer to explicit LF and replays the full audit; mathematical
+  certificates and counts are unchanged, with portable hashes recorded in the verdict.
+- EXP-062 was frozen at 8daa0d4 before execution. Independent paper review extends
+  the signed source and relative functional to every distinct triple of sum p-2,
+  suggesting quadratically many independent two-torsion classes. This is a new
+  lower-bound gate, not an inferred full quotient or recurrence. Audit is active.
+
+## 2026-09-05 - quadratic triangle theorem and reconciled research priorities
+
+- EXP-062 is CONFIRMED after independent source, functional and complete-sector
+  audits. For every `p>=8`, the full explicit integral cokernel contains a
+  direct summand `(Z/2)^floor(((p-2)^2+3)/12)`. Signed original sources prove
+  `M W_T=2x_T`; relative functionals detect the exact relation lattice `2Z^T`;
+  vector-space extension over the full D target gives a nonconstructive retraction.
+- The source `C=P(F_1)-2B-2D` proves `M C=eta-x_02`. This identifies the
+  tracked class with one selected triangle class in the quotient, not as an
+  equality of original target vectors. EXP-057 transfers the original D class
+  up to sign. The complete quotient and isolated/relative identifications remain open.
+- All 70 triangle-source identities, five eta transfers, seven small pairing
+  matrices and 93 count checks pass. Complete parity audits cover all 27 triangles
+  at `p=8,...,12`: 364 triangle-sector certificates on 65 distinct sectors and
+  23,695 distinct S sources. Repeated-certificate totals are 151,319 source
+  instances, 713,511 D-row instances, 1,528,426 incidences and 5,550 dual terms.
+  All 39 dedicated tests pass; the current repository test suite has 213 passes.
+- The complementary 18-page manuscript has completed claim/build/render QA.
+  Version DOI `10.5281/zenodo.22342976` and concept DOI
+  `10.5281/zenodo.22342975` remain reserved-unpublished at this checkpoint.
+  PR #253 is open; publication, fresh unauthenticated latest/download checks,
+  and checked PR-based promotion are not reported as complete.
+- Reconciled backlog, plan, parity research lines and wiki without deleting
+  their historical checkpoints. Next mathematics is explicit integral comparison
+  maps to the earlier isolated/relative presentations, then a complementary-
+  quotient upper bound, then the connecting/lower-strand recurrence. Equal
+  finite counts do not identify those objects. No EXP-063 has been declared.
+
+## 2026-09-05 - quadratic-family companion published and publicly verified
+
+- The new companion was published at 13:35:34 UTC, version DOI
+  `10.5281/zenodo.22342976`, concept DOI `10.5281/zenodo.22342975`.
+  This closes the publication gate left open in the preceding checkpoint;
+  older published manuscript versions remain unchanged.
+- Fresh unauthenticated public/latest metadata and download checks passed at
+  13:36:50 UTC. The full 503,686-byte PDF matches SHA-256
+  `c4b73414eb06d141c09a2980a7c349043bdc576326a9018e800a0b6e349a0ec8`.
+  Research and management mirror retain the public-verification receipt.
+- The 18-page source/PDF is committed at `422e942`. PR #253 remains open;
+  no merge or final remote-promotion completion is claimed at this checkpoint.
+  Reconciled the current navigation facts without rewriting the prior
+  reservation/unpublished checkpoint. The next mathematics remains comparison
+  maps, then the complementary quotient, then the recurrence; no new experiment
+  or additional manuscript is introduced by this publication closeout.
