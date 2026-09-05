@@ -1,0 +1,3324 @@
+{
+  "arithmetic": "exact integer combinatorics",
+  "base_census": {
+    "extremals": 60,
+    "labeled_graphs": 32768,
+    "maximum_independent_sets_all_checked": true
+  },
+  "residual_orders": [
+    {
+      "assignments": 28,
+      "disconnected": 0,
+      "k": 3,
+      "nonstar_trees": 12,
+      "residual_graphs": 16,
+      "stars": 4
+    },
+    {
+      "assignments": 605,
+      "disconnected": 10,
+      "k": 4,
+      "nonstar_trees": 120,
+      "residual_graphs": 135,
+      "stars": 5
+    },
+    {
+      "assignments": 22986,
+      "disconnected": 285,
+      "k": 5,
+      "nonstar_trees": 1290,
+      "residual_graphs": 1581,
+      "stars": 6
+    }
+  ],
+  "schema": 1,
+  "script_sha256": "61a3bfbedfd8b6d1f022b8338a2cc569f23147be9f26d5e1a73015bd1b49d67a",
+  "status": "passed",
+  "tree_orders": [
+    {
+      "order": 4,
+      "trees": [
+        {
+          "alpha": 2,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "tree_key": "(((())))"
+        },
+        {
+          "alpha": 3,
+          "star_negative_control": true,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "tree_key": "((()()))"
+        }
+      ],
+      "valid_nonstar": 1
+    },
+    {
+      "order": 5,
+      "trees": [
+        {
+          "alpha": 3,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "tree_key": "((((()))))"
+        },
+        {
+          "alpha": 3,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "tree_key": "(((()())))"
+        },
+        {
+          "alpha": 4,
+          "star_negative_control": true,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "tree_key": "((()()()))"
+        }
+      ],
+      "valid_nonstar": 2
+    },
+    {
+      "order": 6,
+      "trees": [
+        {
+          "alpha": 4,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "tree_key": "(((((())))))"
+        },
+        {
+          "alpha": 4,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "tree_key": "((((()()))))"
+        },
+        {
+          "alpha": 4,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "tree_key": "((((())())))"
+        },
+        {
+          "alpha": 4,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "tree_key": "(((()()())))"
+        },
+        {
+          "alpha": 4,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ]
+          ],
+          "tree_key": "(((()())()))"
+        },
+        {
+          "alpha": 5,
+          "star_negative_control": true,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ]
+          ],
+          "tree_key": "((()()()()))"
+        }
+      ],
+      "valid_nonstar": 5
+    },
+    {
+      "order": 7,
+      "trees": [
+        {
+          "alpha": 5,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "tree_key": "((((((()))))))"
+        },
+        {
+          "alpha": 5,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "tree_key": "(((((()())))))"
+        },
+        {
+          "alpha": 5,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "tree_key": "(((((())()))))"
+        },
+        {
+          "alpha": 5,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "tree_key": "((((()()()))))"
+        },
+        {
+          "alpha": 5,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "tree_key": "((((()())())))"
+        },
+        {
+          "alpha": 5,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ]
+          ],
+          "tree_key": "((((()()))()))"
+        },
+        {
+          "alpha": 5,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "tree_key": "((((())(()))))"
+        },
+        {
+          "alpha": 5,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "tree_key": "((((())()())))"
+        },
+        {
+          "alpha": 5,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "tree_key": "(((()()()())))"
+        },
+        {
+          "alpha": 5,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ]
+          ],
+          "tree_key": "(((()()())()))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": true,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ]
+          ],
+          "tree_key": "((()()()()()))"
+        }
+      ],
+      "valid_nonstar": 10
+    },
+    {
+      "order": 8,
+      "trees": [
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "tree_key": "(((((((())))))))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "tree_key": "((((((()()))))))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "tree_key": "((((((())())))))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "tree_key": "((((((()))()))))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "tree_key": "(((((()()())))))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "tree_key": "(((((()())()))))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "tree_key": "(((((()()))())))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              7
+            ]
+          ],
+          "tree_key": "(((((()())))()))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "tree_key": "(((((())(())))))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "tree_key": "(((((())()()))))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "tree_key": "(((((())())())))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "tree_key": "((((()()()()))))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ]
+          ],
+          "tree_key": "((((()()())())))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              7
+            ]
+          ],
+          "tree_key": "((((()()()))()))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              7
+            ]
+          ],
+          "tree_key": "((((()())(()))))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "tree_key": "((((()())()())))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ]
+          ],
+          "tree_key": "((((()())())()))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "tree_key": "((((())(())())))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "tree_key": "((((())()()())))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "tree_key": "(((()()()()())))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              7
+            ]
+          ],
+          "tree_key": "(((()()()())()))"
+        },
+        {
+          "alpha": 6,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ]
+          ],
+          "tree_key": "(((()()())()()))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": true,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ]
+          ],
+          "tree_key": "((()()()()()()))"
+        }
+      ],
+      "valid_nonstar": 22
+    },
+    {
+      "order": 9,
+      "trees": [
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "((((((((()))))))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "(((((((()())))))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "(((((((())()))))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "(((((((()))())))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "((((((()()()))))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "((((((()())())))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "((((((()()))()))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "((((((()())))())))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              8
+            ]
+          ],
+          "tree_key": "((((((()()))))()))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "((((((())(()))))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "((((((())()())))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "((((((())())()))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "tree_key": "((((((())()))())))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "tree_key": "((((((()))(())))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "tree_key": "((((((()))()()))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "(((((()()()())))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "(((((()()())()))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              7
+            ]
+          ],
+          "tree_key": "(((((()()()))())))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              7
+            ],
+            [
+              5,
+              8
+            ]
+          ],
+          "tree_key": "(((((()()())))()))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              6,
+              8
+            ]
+          ],
+          "tree_key": "(((((()())(())))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "(((((()())()()))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              6,
+              8
+            ]
+          ],
+          "tree_key": "(((((()())())())))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              7
+            ]
+          ],
+          "tree_key": "(((((()())()))()))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              8
+            ]
+          ],
+          "tree_key": "(((((()()))(()))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "(((((()()))()())))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "(((((())(())()))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "(((((())(()))())))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "(((((())()()()))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "tree_key": "(((((())()())())))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "((((()()()()()))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              7
+            ]
+          ],
+          "tree_key": "((((()()()())())))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              8
+            ]
+          ],
+          "tree_key": "((((()()()()))()))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              8
+            ]
+          ],
+          "tree_key": "((((()()())(()))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "((((()()())()())))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              8
+            ]
+          ],
+          "tree_key": "((((()()())())()))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              7
+            ]
+          ],
+          "tree_key": "((((()()()))()()))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "((((()())(()()))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              8
+            ]
+          ],
+          "tree_key": "((((()())(())())))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "((((()())()()())))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              8
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              6
+            ]
+          ],
+          "tree_key": "((((()())()())()))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              8
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "tree_key": "((((())(())(()))))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              3,
+              8
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              5,
+              6
+            ]
+          ],
+          "tree_key": "((((())(())()())))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              6,
+              7
+            ]
+          ],
+          "tree_key": "((((())()()()())))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "tree_key": "(((()()()()()())))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              8
+            ]
+          ],
+          "tree_key": "(((()()()()())()))"
+        },
+        {
+          "alpha": 7,
+          "star_negative_control": false,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              8
+            ]
+          ],
+          "tree_key": "(((()()()())()()))"
+        },
+        {
+          "alpha": 8,
+          "star_negative_control": true,
+          "tree_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              1,
+              8
+            ]
+          ],
+          "tree_key": "((()()()()()()()))"
+        }
+      ],
+      "valid_nonstar": 46
+    }
+  ],
+  "universal_proof": "proof.md, not finite enumeration"
+}

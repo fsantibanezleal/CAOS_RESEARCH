@@ -10,11 +10,11 @@ The selected first proof target is the infinite strip $(n,\alpha,k)=(2k,k-1,k)$,
 
 ## Research and verification steps
 
-1. Discovery: primary-source review of the portfolio, exact statements and novelty risks. IN PROGRESS.
-2. Follow-up: read Bougard-Joret Section 6 and Das-Gupta through their final remarks; check the tree classification against prior work.
-3. Declare and commit EXP-001 before any computation; derive the all-parameter proof and attempt to refute it through an independent argument and exhaustive small controls.
-4. Synthesis: write verdict, wiki, handoff and manuscript from persisted evidence; document all remaining gaps.
-5. Deliverable verification: exact certificate replay, structural/content checks, PDF rendering, authorized Zenodo publication if novelty and proof survive, and scoped PR promotion.
+1. Discovery: COMPLETE. All 20 portfolio rows reviewed with explicit source-access limits.
+2. Follow-up: COMPLETE. Both primary final sections and independent novelty/disconfirmation review checked.
+3. EXP-001: COMPLETE. Committed preflight, all-parameter proof, adversarial repair and exact finite controls persisted.
+4. Synthesis: COMPLETE. Verdict, wiki, handoff and manuscript transcribed from the records.
+5. Deliverable verification: IN PROGRESS. Exact replay, structural/content checks, PDF rendering, authorized Zenodo publication and scoped PR promotion.
 
 The runtime has no callable update_plan tool; this file is the durable plan required by the deep-research workflow.
 

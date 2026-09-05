@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" role="img" aria-labelledby="title desc">
+<title id="title">Nonstar tree and missing-neighbor fibers, k equals four</title>
+<desc id="desc">Five vertices form a path. Three independent vertices each miss one internal path vertex. Every other edge between the two rows is added.</desc>
+<style>text{fill:#263b62;font:16px sans-serif}.v{fill:#fff;stroke:#315f91;stroke-width:3}.tree{stroke:#315f91;stroke-width:3}.miss{stroke:#ba4b45;stroke-width:2;stroke-dasharray:6 5}@media(prefers-color-scheme:dark){text{fill:#d9e5fa}.v{fill:#172639;stroke:#8fb9e8}.tree{stroke:#8fb9e8}.miss{stroke:#f3978d}}</style>
+<text x="320" y="28" text-anchor="middle">T = P5; S has three vertices</text>
+<path class="tree" fill="none" d="M80 80H560"/>
+<path class="miss" d="M200 80V180M320 80V180M440 80V180"/>
+<g class="v"><circle cx="80" cy="80" r="8"/><circle cx="200" cy="80" r="8"/><circle cx="320" cy="80" r="8"/><circle cx="440" cy="80" r="8"/><circle cx="560" cy="80" r="8"/><circle cx="200" cy="180" r="8"/><circle cx="320" cy="180" r="8"/><circle cx="440" cy="180" r="8"/></g>
+<text x="320" y="224" text-anchor="middle">Dashed pairs are NONEDGES.</text>
+<text x="320" y="248" text-anchor="middle">Add all other cross-row edges: 8 vertices, 16 edges.</text>
+</svg>
