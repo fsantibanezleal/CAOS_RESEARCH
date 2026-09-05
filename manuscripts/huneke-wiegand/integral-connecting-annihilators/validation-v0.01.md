@@ -9,8 +9,9 @@ Reviewed 2026-09-05. Scope and dependencies are mapped in
 EXP-060--062 contain complete uniform proofs, independently reviewed against
 the full original source and target. The result is the quadratic direct summand,
 not the complete cokernel. The splitting is an existence argument, not an
-explicit global D-row formula. The manuscript retains both the imported
-family-to-presentation premise and Son Pham's original discovery priority.
+explicit global D-row formula. The manuscript states the imported
+family-to-presentation premise and disclaims discovery priority; the Zenodo
+description explicitly credits Son Pham for the original public counterexample.
 
 The integrated suite passes 213 tests. EXP-062 contributes 39 producer/auditor
 tests; its independent audit reconstructs all 70 frozen signed triangle sources

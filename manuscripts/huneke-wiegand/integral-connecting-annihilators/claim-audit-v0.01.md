@@ -44,8 +44,10 @@ This is not external peer review; the document is explicitly a preprint.
 Classical potential, complement and linear-extension methods are not claimed
 as new general techniques. The contribution is the explicit, complete
 application to this coefficient presentation and the proved quadratic family
-of valuation-one two-torsion summands. The prior public counterexample remains
-attributed to Son Pham; the earlier CAOS family record is cited by immutable DOI.
+of valuation-one two-torsion summands. The Zenodo description explicitly
+attributes the prior public counterexample to Son Pham. The manuscript
+disclaims discovery priority and cites the earlier CAOS family record by
+immutable DOI; it does not provide a separate history of the original discovery.
 
 The theorem does not determine the full cokernel, its free rank, odd torsion,
 remaining two-primary factors, any complete quotient upper bound, or the
