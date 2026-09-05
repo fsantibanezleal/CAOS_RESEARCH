@@ -1,0 +1,31 @@
+{
+  "check": "unauthenticated public record and fresh PDF verification",
+  "local_date": "2026-09-04",
+  "records": [
+    {
+      "id": 22181972,
+      "version": "0.23",
+      "doi": "10.5281/zenodo.22181972",
+      "latest_id": 22181972,
+      "verified_utc": "2026-09-05T02:37:34.4619265Z",
+      "bytes": 824114,
+      "md5": "6bcacfa265e840f40e89dcdb87b75f7b",
+      "sha256": "c77b08a3724db90b14039c2c88e98325403ef4f656f52137057a27eb6fa5072d",
+      "matches_committed_pdf": true,
+      "public_description_matches_template_plus_addendum": true
+    },
+    {
+      "id": 22002907,
+      "version": "0.02",
+      "doi": "10.5281/zenodo.22002907",
+      "latest_id": 22002907,
+      "verified_utc": "2026-09-05T02:37:37.5880103Z",
+      "bytes": 453621,
+      "md5": "53123ab5bed9a6c84c37ebde1610c3f7",
+      "sha256": "12cc380bcc72613694b24cc9f74284f8f3d35e4958ec3569b6ebacce3225e398",
+      "matches_committed_pdf": true
+    }
+  ],
+  "external_writes": false,
+  "new_version_published": false
+}

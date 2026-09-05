@@ -1,5 +1,15 @@
 # Huneke-Wiegand extensions - state
 
+Current heartbeat: 2026-09-05. EXP-054--057 are closed. The all-parameter connecting-parity
+problem remains open, with its displayed candidate uniformly reduced to the four-row `eta_p`
+of EXP-057. EXP-054 corrects EXP-053's projected-source interpretation; EXP-055 supplies the
+uniform missing-pivot filler. EXP-056 proves `M s=b_A+b_B+gamma`; EXP-057 proves
+`eta=gamma+Mq` and retains `M(s+q)=b_A+b_B+eta` after refuting its declared minus sign.
+Nonvanishing, uniform order two, the second class and upper bound remain distinct gates.
+All 99 integrated tests and guards pass. Both frozen manuscript PDFs match fresh public Zenodo
+downloads; the v0.15 management-ledger drift is corrected to v0.23, without a new publication.
+Research PR #247 and management PR #610 track this round. Later text is chronological history.
+
 | date | from | to | reason |
 |---|---|---|---|
 | 2026-08-01 | proposed externally | scoped | public candidate and independent expert note audited; extension programme has an exact computational surface |
