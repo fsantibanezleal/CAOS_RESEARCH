@@ -11,3 +11,7 @@ Exploration: missing-neighbor fibers translate degree equality into a residual-g
 ## 2026-09-04: public preprint and integration
 
 Published v0.01 at DOI `10.5281/zenodo.22315252`, concept DOI `10.5281/zenodo.22315251`. The fresh unauthenticated download matches the 319,548-byte rendered PDF, SHA-256 `a804014fddf8d47ae0dc3988c7b1e6a0d3619daf0a423b398724321095bbb323`. Full verification is in `manuscripts/bougard-joret/tree-strip/publication-verification.json`. All five pages visually inspected; 61 tests and structural/content guards pass. Research PR #248 carries the scoped round into develop. No global release is included.
+
+## 2026-09-04: merged round
+
+PR #248 merged to develop at `2507925` after current-head CI passed. The private mirror merged through PR #608 at `f09d60ee`. Publication and research-round integration are complete. The final handoff records these actual merge results; no main release, version bump or cross-problem bake is claimed.

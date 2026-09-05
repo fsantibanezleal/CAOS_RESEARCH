@@ -26,7 +26,7 @@ Updated: 2026-09-04.
 
 ## 4. In flight
 
-No mathematical computation remains active. Manuscript v0.01 is PUBLISHED at version DOI `10.5281/zenodo.22315252`, concept DOI `10.5281/zenodo.22315251`. An unauthenticated fresh download matches all 319,548 local PDF bytes, SHA-256 `a804014fddf8d47ae0dc3988c7b1e6a0d3619daf0a423b398724321095bbb323`; the API confirms it is concept-latest. Research PR #248 targets develop; its final state is recorded in the closing report. No serialized global release is claimed.
+No mathematical computation remains active. Manuscript v0.01 is PUBLISHED at version DOI `10.5281/zenodo.22315252`, concept DOI `10.5281/zenodo.22315251`. An unauthenticated fresh download matches all 319,548 local PDF bytes, SHA-256 `a804014fddf8d47ae0dc3988c7b1e6a0d3619daf0a423b398724321095bbb323`; the API confirms it is concept-latest. Research PR #248 merged to develop at `2507925`, and management PR #608 merged at `f09d60ee`. No serialized global release is claimed.
 
 ## 5. Next actions
 
