@@ -1,5 +1,72 @@
 # Huneke-Wiegand extensions - session handoff
 
+## Current checkpoint: 2026-09-05
+
+**The all-parameter connecting-parity problem is OPEN.** Resume at EXP-057's four-row endpoint
+representative, not the obsolete generic HNF source extraction. All 53 earlier verdict summaries
+and both manuscript dependency indexes were reviewed in the EXP-054--057 round.
+
+Put `L_p=[1,p] union [3p,4p-2]` and
+`G_p(a,j;c)=[K,(L_p minus {a,3p,3p+j}) union {6p};10p+c]`.
+For every `p>=8`, EXP-056/057 prove, over the integers in the **full original presentation**,
+
+```text
+M_p s_p = b_p^A+b_p^B+gamma_p,       support(s_p)=support(gamma_p)=p-1,
+q_p=[K,(L_p minus {3p,3p+2}) union {6p};10p],
+eta_p=gamma_p+M_p q_p
+     =(-1)^p(2G_p(p-3,2;p-3)-G_p(p-2,2;p-2)
+              +2G_p(p-2,1;p-3)-2G_p(p-3,1;p-4)),
+M_p(s_p+q_p)=b_p^A+b_p^B+eta_p.
+```
+
+Thus `[b_A+b_B]=-[eta_p]` in `coker_Z(M_p)`. The representative has four rows and only one
+odd coordinate. This does NOT prove nonzero quotient class, uniform order two, a second class,
+or the complete quotient upper bound. EXP-057's declared minus sign was refuted and is preserved;
+the correct formula uses **plus**.
+
+Source-provenance correction: EXP-053's positive identities were projected-component identities.
+EXP-054 finds `M z=2(b_A+b_B)+2(-1)^p e_p` at `p=8,9,10`, where
+`e_p=[K,L_p minus {2,3p};13p]`. EXP-055 proves the uniform filler
+`c_p=[K,(L_p minus {2,3p}) union {7p};6p]`, `M c_p=-e_p`; adding `2(-1)^p c_p`
+repairs the three known full sources. The old finite Smith/Bockstein certificates are unaffected.
+No original `p=11` HNF-source labels were accessed.
+
+Current validation: EXP-054 audit 213 checks; EXP-055 audit 456 checks plus 1793 complement-sign
+identities; EXP-056 and retained EXP-057 identities pass all 93 stress parameters `p=8,...,100`
+under independent exact differentials. The uniform proofs are the signed face derivations, not
+the finite range. The integrated repository passes 99 tests and all structural/content guards.
+
+Manuscripts: v0.23 and companion v0.02 are unchanged. Both public latest-version endpoints and
+fresh PDF downloads matched on 2026-09-05 UTC. See the manuscript scope audit. The management
+ledger is repaired through v0.23. No new Zenodo version was published; the stronger theorem gate
+remains unmet. Research PR #247 and management PR #610 own this round's promotion.
+
+### Exact next actions
+
+1. Declare the next experiment for a parity functional on the full original relations with
+   `lambda(eta_p)=1`. The single odd row is a vector invariant, not yet a dual certificate.
+2. Independently construct a generic source for `2eta_p`. The known finite corrected sources
+   transfer by `M(2(s_p+q_p)-z_p)=2eta_p`; they do not supply a uniform formula.
+3. Then obtain the second independent class and a separate integral upper bound. Test a
+   primitive signed subset-incidence model or relative Morse reduction before any new HNF.
+4. Keep the `56->58` threshold and full lower-strand recurrence separate; do not compute `p=13`
+   or extrapolate another series without a distinguishing structural prediction.
+
+Cheap repeatable checks (from repository root; use temporary outputs for audits):
+
+```powershell
+.venv/Scripts/python.exe -m pytest tests/test_hw_full_source_boundary.py tests/test_hw_unit_filler.py tests/test_hw_uniform_low_source.py tests/test_hw_endpoint_reduction.py -q
+```
+
+Proofs and exact commands live in the EXP-054--057 folders under
+`problems/commutative-algebra/huneke-wiegand/experiments/`. No experiment process remains active.
+The existing product branch is `work/huneke-wiegand/open`; CAOS_MANAGE stays on `develop`.
+
+## Historical checkpoint through EXP-053
+
+The chronological material below is retained for provenance. Its original-source and next-action
+language is superseded by the current checkpoint and EXP-054--057 verdicts above.
+
 Updated: 2026-09-04. Lifecycle: EXP-053 is REFUTED on P2 with P1 passed finitely after a resource overrun and a common source class retained; EXP-052 is CONFIRMED FINITELY with an untouched semantic holdout; EXP-051 is REFUTED overall with P1/P2 retained; EXP-050 is REFUTED overall with P1 retained; EXP-049 is REFUTED overall with bounded dual parity certificates retained; EXP-048 is REFUTED overall with explicit completion-chain candidates retained; EXP-047 is CONFIRMED FINITELY; EXP-046 is REFUTED overall with P3 retained; EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
 gates passed; EXP-037 is REFUTED; EXP-036 is CONFIRMED
@@ -420,6 +487,10 @@ campaign is supporting evidence, not the proof.
 | EXP-051 | REFUTED; P1/P2 PASS FINITELY | unreduced selection gives two exact independent cycles per completion; primary source support is at most six and divided-boundary coefficients are at most two, while raw support-size extrapolation fails |
 | EXP-052 | CONFIRMED FINITELY | formulas trained on `p=8,9,10` exactly predict 36 and 50 coefficient-labelled holdout rows at `p=11`; direct identities and a separate 31-check reconstruction pass |
 | EXP-053 | REFUTED ON P2; P1 PASSES FINITELY WITH RESOURCE OVERRUN | exact labelled pullbacks at `p=8,9,10` have supports 125, 178, and 238 with 78 skeletons; both completions use the same source chain, while `p=11` remains locked |
+| EXP-054 | P1 REFUTED; P2/P3 PASS FINITELY | one omitted full-boundary row at each training parameter; 213-check audit; projected identities remain valid |
+| EXP-055 | UNIFORM FILLER PROVED; FINITE SOURCES REPAIRED | one even correction removes the residual; fixed-high source slice has only `p-1` terms |
+| EXP-056 | UNIFORM IDENTITY PROVED | `M s=b_A+b_B+gamma`, with `p-1` source and K-side terms; 93 stress parameters pass |
+| EXP-057 | P3 REFUTED; UNIFORM ENDPOINT REDUCTION RETAINED | `eta=gamma+Mq` has four rows and one odd coordinate; correct source is `s+q`, not `s-q` |
 
 ## 3a. Exact evidence anchors
 
@@ -556,6 +627,10 @@ campaign is supporting evidence, not the proof.
   external SHA-256 `4f283e79434d312c6de06a063b6784c17f6e0b422a4c97054c3a63c4dc822127`.
 
 ## 4. In flight
+
+Current override: EXP-054--057 are closed; the active proof gates are the full-map endpoint dual,
+uniform order-two source, second class and upper bound in the checkpoint above. Older in-flight
+entries below are archival, not instructions to restart HNF or publish another finite table.
 
 EXP-053 is REFUTED on P2 and passes P1 finitely after a resource overrun. It proves that the same source
 chain produces both EXP-052 completion boundaries, while refuting generic HNF pullback as a
@@ -920,6 +995,10 @@ Published baseline:
   filename, bytes and both hashes were checked from a fresh public download.
 
 ## 5. Next actions
+
+The numbered list below is historical through EXP-053. Use **Exact next actions** in the current
+checkpoint instead; EXP-054--057 supersede the first source-chain route without solving its
+nonvanishing/order-two obligations.
 
 1. Construct one labelled source-domain chain directly against the union of the frozen EXP-052
    formulas on `58->63`, and prove `R_p y_p=2(b_p^A+b_p^B)` symbolically for arbitrary `p`.

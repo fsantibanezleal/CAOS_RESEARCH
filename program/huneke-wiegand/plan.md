@@ -1,5 +1,24 @@
 # Huneke-Wiegand extensions - research plan
 
+## Current priority, 2026-09-05
+
+EXP-054--057 supersede generic HNF pullback as the active route. The first-class representative
+is now the explicit four-row endpoint `eta_p` in EXP-057, with exact integral transfer
+`[b_A+b_B]=-[eta_p]`. Seek a full-relation parity dual and, separately, a uniform source with
+boundary `2eta_p`. One odd coefficient alone proves neither. Then seek the second class and
+an integral upper bound. The `56->58` threshold and global recurrence remain separate.
+
+The review preserved every prior refutation and finite certificate, corrected the missing full
+source coordinate, and derived a uniform `p-1`-term low source using bounded missing sets.
+The endpoint reduction is not a full quotient normal form. The stronger manuscript trigger is
+unchanged: no new publication until a genuine all-parameter torsion or comparably strong theorem.
+Both published papers were dependency-audited and freshly verified on Zenodo; no erratum applies.
+
+The systematic spine is paired with signed-complement anatomy, a full-map dual invariant, and
+conditional subset-incidence recognition. Ordinary FI/OI theory is not a substitute for actual
+weight-compatible chain maps. See https://arxiv.org/html/1311.5803v1 for the contraction-map
+discipline; its complete proof was read and the elementary unit filler was rederived in EXP-055.
+
 ## Objective
 
 Turn the public counterexample into independently checked, structurally understood and

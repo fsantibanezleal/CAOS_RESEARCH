@@ -1,5 +1,25 @@
 # Huneke-Wiegand extensions - research wiki
 
+## Current result and limits, 2026-09-05
+
+EXP-054 corrects the EXP-053 source interpretation: retained original labels were verified only
+after projection, and direct multiplication has one omitted even row. EXP-055 gives its uniform
+unit filler and repairs all three known full source chains. The finite relative torsion
+certificates remain valid under integral unit cancellation.
+
+EXP-056 proves `M_p s_p=b_p^A+b_p^B+gamma_p` for every `p>=8`, with `p-1` terms in both
+`s_p` and `gamma_p`. EXP-057 proves `eta_p=gamma_p+M_pq_p` has four endpoint rows and a
+single odd coordinate, so `[b_A+b_B]=-[eta_p]` in the full integral cokernel. The correct source
+identity uses `s_p+q_p`; the declared minus sign is preserved as a refutation. Both uniform
+derivations have independent exact stress checks through `p=100`.
+
+See the primary EXP-054--057 proofs/verdicts for formulas and validation. No uniform nonzero
+class, order-two source, second independent class, or complete quotient upper bound follows
+from a small representative. Those are the next research gates. Neither existing manuscript
+depends on the corrected EXP-053 interpretation; both frozen Zenodo PDFs were freshly verified.
+The older result summaries below retain their original finite scope and are superseded where
+they describe original source lifting or the previous HNF-first route.
+
 Transcribe only closed experiment verdicts and proved derivations.
 
 | record | status | result |

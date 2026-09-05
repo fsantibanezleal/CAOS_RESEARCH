@@ -1,0 +1,124 @@
+{
+  "experiment": "EXP-054",
+  "status": "INDEPENDENT_AUDIT_PASS",
+  "p3_status": "PASS_FINITE",
+  "checks": 213,
+  "independence": "direct gap intervals and reverse-order exterior differential",
+  "scope": "p=8,9,10 only; projected regression plus full semantic differential; no uniform claim",
+  "p11_source_accessed": false,
+  "premise_sha256": {
+    "EXP-053-labelled-source-pullback/artifacts/training-p8-p10.json": "0d6bb8b885d965ed91a94d06a072d8baacca56df65903e10e1c91382f649edfe",
+    "EXP-052-semantic-unreduced-lifts/artifacts/training-p8-p10.json": "259ff476b7bb09c12566e4bd771da5c88af17f541cc5732db4dc7f2067e2ec70",
+    "EXP-054-full-source-boundary/run.py": "bb6c35f36da17d4e4045670348416a18d9cbb28bf5f5774fcf1deabf28ed951f",
+    "EXP-054-full-source-boundary/artifacts/results.json": "2e8fad6fea215517a4007f9628e1f14e6c39918ed2920e9a4e7d62a6f229f36a"
+  },
+  "audit_code_sha256": "9e21b8a03694938e04dc7aba3555944fa511e4d1ac0d4dfc92727288ed7a1b63",
+  "rows": [
+    {
+      "p": 8,
+      "source_support_checked": 125,
+      "full_boundary_support_checked": 42,
+      "component_rows_checked": 2675,
+      "residual": [
+        {
+          "coefficient": 2,
+          "exact_label": [
+            "K",
+            [
+              1,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30
+            ],
+            104
+          ]
+        }
+      ],
+      "sign_mutation_detected": true,
+      "mutation_difference_support": 7,
+      "independent_boundary_hash": "373301798747a80c588b1dc9f30a6d3808bac46b1c3cbaa273d1bf6033fbc3ce"
+    },
+    {
+      "p": 9,
+      "source_support_checked": 178,
+      "full_boundary_support_checked": 56,
+      "component_rows_checked": 4757,
+      "residual": [
+        {
+          "coefficient": -2,
+          "exact_label": [
+            "K",
+            [
+              1,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34
+            ],
+            117
+          ]
+        }
+      ],
+      "sign_mutation_detected": true,
+      "mutation_difference_support": 8,
+      "independent_boundary_hash": "5c62919bf7b36710904a5bb99beb2bfc5d0219084dd0448e0f42eee2bd52fef0"
+    },
+    {
+      "p": 10,
+      "source_support_checked": 238,
+      "full_boundary_support_checked": 71,
+      "component_rows_checked": 7973,
+      "residual": [
+        {
+          "coefficient": 2,
+          "exact_label": [
+            "K",
+            [
+              1,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38
+            ],
+            130
+          ]
+        }
+      ],
+      "sign_mutation_detected": true,
+      "mutation_difference_support": 9,
+      "independent_boundary_hash": "c578eebd691888a96a70f0ba98b7564bbc7aef52e456f826fe672c696f06d14f"
+    }
+  ],
+  "artifact_hash": "b7452a07571409a491fd6a85efc97c51912862feca6072ecb2da2c967f8fa040"
+}
