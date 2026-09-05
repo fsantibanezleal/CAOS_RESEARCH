@@ -9,7 +9,7 @@ Access dates: 2026-09-04 and 2026-09-05. [V] primary text checked; [D] derived h
 
 [D] [EXP-001](../experiments/EXP-001-tree-strip/proof.md) determines $f(2k,k-1,k)=k^2$ for all $k\ge3$ and characterizes every extremal graph relative to a maximum independent set by a nonstar tree and prescribed missing-neighbor fibers. This published v0.01 result remains unchanged.
 
-[D] [EXP-002](../experiments/EXP-002-next-shell/proof.md) determines the full first interior shell: $f(\alpha+k+1,\alpha,k)=\lceil k(\alpha+k+1)/2\rceil$ for $k\ge3$, $2\le\alpha\le k+1$. For alpha two, its equality classification is precisely complements of unions of cycles of lengths at least five. No general classification of all shell extremizers is asserted. The general revised first regime and second regime remain open. See the owning verdict for audit status; v0.02 publication is pending.
+[D] [EXP-002](../experiments/EXP-002-next-shell/proof.md) determines the full first interior shell: $f(\alpha+k+1,\alpha,k)=\lceil k(\alpha+k+1)/2\rceil$ for $k\ge3$, $2\le\alpha\le k+1$. For alpha two, its equality classification is precisely complements of unions of cycles of lengths at least five. No general classification of all shell extremizers is asserted. The general revised first regime and second regime remain open. See the owning verdict for audit status; v0.02 is published at DOI 10.5281/zenodo.22341644.
 
 Known shell overlaps: $\alpha=k+1$ has $n=2\alpha$ in the original paper; $(6,2,3)$ lies on $n=k\alpha$; $\alpha=k-1$ is EXP-001. Original large-order results contribute no further shell overlap. Harary's classical graph construction is credited to Frank Harary, *The maximum connectivity of a graph* (1962), [DOI](https://doi.org/10.1073/pnas.48.7.1142). [U] Full original text was inaccessible in this refresh; EXP-002 proves every connectivity property it uses rather than relying on an unchecked theorem statement.
 
@@ -26,3 +26,11 @@ Searches: exact title; Bougard Joret corrected boundary 2026; Bougard Joret alph
 | Portfolio currency | [September 5 refresh](2026-09-05-portfolio-refresh.md), all 20 rows | Primary access limits explicit; external computational proofs not replayed |
 
 The September 5 targeted queries added the full next-shell expression and compared both original final sections. No matching full-shell formula was located; absence from search results is not proof of novelty.
+
+## Next-matching sources and contribution (2026-09-05)
+
+[V] Ahanjideh-Ekim-Yildiz, [final 2024 article](https://doi.org/10.1007/s10878-024-01123-z), Conjecture 6.1 and Corollary 3.5, and Banak-Ekim-Taskin, [2023 full author manuscript](https://arxiv.org/html/2304.01729), Proposition 4.1 and Table 3, define the exact novelty floor. The latter already supplies the attaining graph and values through d=12; it leaves T(13,14) between 184 and 185.
+
+[D] [EXP-003](../experiments/EXP-003-triangle-free-next-matching/verdict.md) proves the uniform maximum T(d,d+1)=d squared plus d plus two for every d>=7, by a fixed-order deficit argument and direct Tutte-Berge reduction. It gives a one-edge Bougard bracket, not its exact endpoint. [Detailed source/access ledger](2026-09-05-next-matching-review.md).
+
+[V] Caro-Tuza, *Regular Turan numbers*, Australasian Journal of Combinatorics 78(1) (2020), 133-144, [Theorem 2(iii)](https://ajc.maths.uq.edu.au/pdf/78/ajc_v78_p133.pdf), already supplies the odd-order regular triangle-free extremum. The subsequent Cambie-de Joannis de Verclos-Kang [2023 paper](https://doi.org/10.1002/jgt.22857) also belongs to the regular prior art. Neither is presented as a new consequence here. The new fixed-order theorem concerns arbitrary graphs under a maximum-degree bound.
