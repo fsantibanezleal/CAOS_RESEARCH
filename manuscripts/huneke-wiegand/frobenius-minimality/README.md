@@ -1,5 +1,8 @@
 # Frobenius-minimality preprint
 
+Current publication/dependency review: [2026-09-04 scope audit](scope-audit-2026-09-04.md).
+Both public PDFs were freshly downloaded and matched; no new version was published.
+
 `main.tex` is version 0.23 of the CAOS Research preprint; version
 0.22 and all earlier versions remain frozen. Version 0.23 adds the EXP-036 repeated
 characteristic-dependent target campaign, separates kernel-incidence defects from dependence
