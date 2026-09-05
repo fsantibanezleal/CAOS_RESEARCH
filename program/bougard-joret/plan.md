@@ -1,5 +1,7 @@
 # Bougard-Joret research plan
 
+Current plan: [2026-09-05 full-shell continuation, complete](plan-2026-09-05.md). It supersedes the research target below while preserving the completed September 4 plan as historical context. EXP-002 covers the full first interior shell, with alpha-two equality classification; v0.02 is published and byte-verified. Research PR #251 and private PR #611 are merged. The broader problem remains open.
+
 Date: 2026-09-04. Scope authorized by the user's portfolio-wide review and autonomous problem selection.
 
 ## Scope and assumptions

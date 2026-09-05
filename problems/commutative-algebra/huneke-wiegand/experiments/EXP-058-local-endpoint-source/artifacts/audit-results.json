@@ -1,0 +1,121 @@
+{
+  "experiment": "EXP-058",
+  "status": "INDEPENDENT_AUDIT_PASS",
+  "p2_status": "NOT_APPLICABLE_NO_INTEGRAL_WITNESS",
+  "verified_integral_parameters": 0,
+  "rows": [
+    {
+      "p": 8,
+      "status": "QQ_REFUTED",
+      "neighborhoods": [
+        {
+          "radius": 1,
+          "classification": "QQ_INCONSISTENT",
+          "columns_verified": 47,
+          "rows_verified": 240,
+          "nonzero_incidence_entries_verified": 306,
+          "full_incidence_verified": true,
+          "rational_residual_verified": true,
+          "integer_dual_verified": true,
+          "dual_details": {
+            "support": 14,
+            "maximum_absolute_coefficient": 1,
+            "target_pairing": 4,
+            "coefficient_mutation_rejected": true,
+            "row_kinds": {
+              "D": 11,
+              "K": 3
+            },
+            "target_contributions": [
+              {
+                "exact_label": [
+                  "K",
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    6,
+                    7,
+                    8,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    48
+                  ],
+                  84
+                ],
+                "pairing": 4
+              }
+            ]
+          },
+          "witness_mutation_columns_verified": 0,
+          "source_span_scope": "this complete local neighborhood only"
+        },
+        {
+          "radius": 2,
+          "classification": "QQ_INCONSISTENT",
+          "columns_verified": 330,
+          "rows_verified": 1803,
+          "nonzero_incidence_entries_verified": 2669,
+          "full_incidence_verified": true,
+          "rational_residual_verified": true,
+          "integer_dual_verified": true,
+          "dual_details": {
+            "support": 40,
+            "maximum_absolute_coefficient": 1,
+            "target_pairing": 4,
+            "coefficient_mutation_rejected": true,
+            "row_kinds": {
+              "D": 35,
+              "K": 5
+            },
+            "target_contributions": [
+              {
+                "exact_label": [
+                  "K",
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    6,
+                    7,
+                    8,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    48
+                  ],
+                  84
+                ],
+                "pairing": 4
+              }
+            ]
+          },
+          "witness_mutation_columns_verified": 0,
+          "source_span_scope": "this complete local neighborhood only"
+        }
+      ],
+      "independent_size_cap": null
+    }
+  ],
+  "p11_original_source_accessed": false,
+  "old_hnf_source_accessed": false,
+  "scope": "full original incidence; QQ duals exclude only declared local spans",
+  "result_sha256": "710029d2460e4a6b7fc319161bb337740bcb35b2ec961bec532db0b4e99127cd",
+  "producer_sha256": "10c812fff961c2dca780986726b8f9be254f2a05472877cde925db5b56972037",
+  "audit_code_sha256": "7d9cbce1a47603923b832e47d82c858bafabd76e14f7772870952dc425f7b024",
+  "premises": {
+    "EXP-058-local-endpoint-source/hypothesis.md": "f538be10015e085851e7a355df97dc73018fc6aa1d4da89c88692ccff18ed7b4",
+    "EXP-057-four-row-kernel-normal-form/run.py": "e07ea055a55df8faa909653b763aa95cc07a42b40fde552fbc7043dc1299b05d",
+    "EXP-054-full-source-boundary/run.py": "bb6c35f36da17d4e4045670348416a18d9cbb28bf5f5774fcf1deabf28ed951f",
+    "EXP-054-full-source-boundary/audit.py": "9e21b8a03694938e04dc7aba3555944fa511e4d1ac0d4dfc92727288ed7a1b63",
+    "EXP-036-factor-two-torsion-anatomy/run.py": "1c6923c7c6456673402b5bdd3dada137970f6d01985690f29c960af65a981d03"
+  },
+  "artifact_hash": "c6fa6f017aa590d80fb1cd18a820c54a522c1fc86674e04e5ddd5da98cc50fe5"
+}

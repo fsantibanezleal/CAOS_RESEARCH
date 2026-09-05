@@ -1,6 +1,82 @@
 # Huneke-Wiegand extensions - research plan
 
-## Current priority, 2026-09-05
+## Current priority after EXP-062, 2026-09-05
+
+The full-original-map lower-bound problem has a uniform theorem. EXP-062 proves
+that `coker_Z(M_p)` contains a direct summand `(Z/2)^q` for every `p>=8`, with
+`q=floor(((p-2)^2+3)/12)`. For each increasing nonnegative triple `T=(i,j,k)`
+of sum `p-2`, its explicit signed source satisfies `M W_T=2x_ij`; the complete
+relative functionals pair as the identity and give the exact relation lattice
+`2Z^T`. Extending these functionals over the D target proves a nonconstructive
+retraction. The source `C=P(F_1)-2B-2D` proves `M C=eta-x_02`, so the tracked
+class is integrally congruent to one selected triangle class, not equal as a
+target vector. EXP-060/061's annihilation and nonvanishing gates are closed.
+
+The next mathematical priorities are, in order:
+
+1. **Explicit comparison maps.** Relate this full original presentation and
+   its triangle classes to the earlier isolated component and relative modules
+   `58->59`, `58->62`, and the distinct `56->58` threshold. Prove integral
+   well-definedness and the class images before transferring any rank or
+   quotient assertion. Agreement at `3,4,5,7` is not an identification.
+2. **Complementary quotient and upper bound.** Use those maps and the explicit
+   source/potential structure to seek a genuine integral reduction or complement.
+   The abstract splitting does not determine the remaining group, its free
+   rank, further two-primary torsion, or odd torsion.
+3. **Recurrence only after the structural bridge.** Derive the connecting/lower-
+   strand transition from actual compatible maps or a normal form. The triangle
+   count recurrence is not a recurrence for the full connecting quotient.
+
+These are research directions, not a new experiment declaration: no EXP-063
+has been opened. Any computation needs a separate frozen hypothesis, exact
+certificate format, independent controls and resource cap. No unrestricted
+HNF or new coefficient sweep is justified by the lower-bound theorem alone.
+
+The independent EXP-062 audit closes all 70 signed-source identities, five
+eta transfers, seven small pairing matrices and 93 count checks. All 27
+triangles at `p=8,...,12` have 364 complete triangle-sector certificates,
+covering 65 distinct sectors and 23,695 distinct original S sources. The
+151,319 source instances repeat sectors across triangle functionals; they
+must not be described as distinct columns. All 39 dedicated tests pass.
+
+The all-parameter theorem meets the unchanged stronger manuscript gate.
+The complementary 18-page preprint, *A quadratic family of integral two-torsion
+classes in a Huneke-Wiegand Koszul presentation*, has passed manuscript QA;
+213 repository tests pass. It was published at 2026-09-05 13:35:34 UTC under
+version DOI `10.5281/zenodo.22342976`, concept DOI
+`10.5281/zenodo.22342975`. Fresh unauthenticated public/latest metadata and
+download checks passed at 13:36:50 UTC: all 503,686 bytes match PDF SHA-256
+`c4b73414eb06d141c09a2980a7c349043bdc576326a9018e800a0b6e349a0ec8`.
+The source/PDF is in commit `422e942`. Issue #252 and open PR #253 track
+delivery; checked PR-based promotion remains before calling the round delivered.
+Historical checkpoints below are retained, not current instructions to rerun
+already closed experiments or publish another manuscript for the same result.
+
+## Superseded priority after EXP-060, 2026-09-05
+
+The uniform integer source obligation is CLOSED: EXP-060 proves `M V=2eta`
+in the complete original map for every p>=8. The signed interval triangle and
+two exact K corrections replace local source expansion. Its independent audit
+checks all 18 declared parameters through p=100. This is a uniform proof,
+not an extrapolated sequence. It triggers a separate homological manuscript.
+
+Priority zero is EXP-061's frozen twelve-row relative parity functional, with
+complete D-kernel coverage in all reachable high sectors. If independently
+confirmed, it upgrades the tracked class from order dividing two to exact order
+two. Then seek a second class using distinct interval triangles and a dual pairing
+matrix; do not assume their independence or a full-quotient upper bound.
+The upper-bound/recurrence route requires a complete signed normal form or actual
+chain equivalence. No new coefficient or unrestricted HNF is justified merely
+because the first class is closed. Manuscript/Zenodo and PR gates run in this round.
+
+## Superseded priority through EXP-059, 2026-09-05
+
+EXP-058's complete radius-two neighborhood is excluded by an independently checked integer
+separating functional at p=8. Do not expand it blindly: any genuine source must use an omitted
+column detected by this functional. EXP-059 proves a uniform integral potential basis of
+one fixed-high D-kernel, with an at-most-seven-row connecting image. Its complete signed proof
+and independent 861-chain audit pass. Next derive and freeze mixed high-variable relations,
+retaining all K corrections and exceptional faces, before any further source search.
 
 EXP-054--057 supersede generic HNF pullback as the active route. The first-class representative
 is now the explicit four-row endpoint `eta_p` in EXP-057, with exact integral transfer

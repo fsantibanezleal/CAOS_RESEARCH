@@ -1,6 +1,80 @@
 # Huneke-Wiegand extensions - research wiki
 
-## Current result and limits, 2026-09-05
+## Current closed result: quadratic two-torsion direct summand, 2026-09-05
+
+[EXP-062's closed proof and verdict](../experiments/EXP-062-triangle-torsion-family/verdict.md)
+prove that the full explicit integral cokernel `coker_Z(M_p)` contains a direct
+summand `(Z/2)^q` for every `p>=8`, where `q=floor(((p-2)^2+3)/12)`.
+All increasing nonnegative triples `T=(i,j,k)` of sum `p-2` contribute a
+selected original class `x_T=x_ij`. Reflected interval sources give
+`M W_T=2x_T`, complete relative functionals pair as the identity, and the
+relation lattice among these classes is exactly `2Z^T`. Their extension to
+the full D target proves splitting nonconstructively; no global retraction
+formula or complete cokernel is asserted.
+
+The exact original source `C=P(F_1)-2B-2D` has `M C=eta-x_02`.
+Thus `[eta]=[x_02]` and `[b_A+b_B]=-[x_02]` are quotient equalities,
+not equalities of the original target vectors. Generic functional support
+has `12-1_(j=i+1)-1_(k=j+1)` rows, including ten-row adjacency cases.
+The proof includes every reachable high sector, notably `10p-3`, and all
+free diagonal `d=2` potentials; it is not a restricted-kernel calculation.
+
+Independent validation passes all 70 signed sources, five eta transfers,
+seven small pairing matrices and 93 count checks. All 27 triangles at
+`p=8,...,12` receive 364 complete triangle-sector certificates on 65 distinct
+sectors with 23,695 distinct original S columns. The repeated-certificate
+totals are 151,319 source instances, 713,511 D-row instances, 1,528,426
+incidences and 5,550 labelled dual terms. All 39 dedicated tests pass.
+The uniform proof, not these finite counts, establishes the theorem.
+
+The full quotient, a matching upper bound, free rank, additional torsion,
+and identification with earlier isolated/relative presentations remain open.
+Next: explicit comparison maps first, the complementary quotient second,
+then any connecting/lower-strand recurrence. Matching finite ranks
+`3,4,5,7` does not identify the objects. No EXP-063 is declared.
+
+The new 18-page companion *A quadratic family of integral two-torsion classes
+in a Huneke-Wiegand Koszul presentation* has passed manuscript QA; 213
+repository tests pass. It was published on 2026-09-05 at 13:35:34 UTC under
+version DOI [`10.5281/zenodo.22342976`](https://doi.org/10.5281/zenodo.22342976),
+concept DOI `10.5281/zenodo.22342975`. Fresh unauthenticated public/latest
+metadata and download checks passed at 13:36:50 UTC for all 503,686 bytes,
+SHA-256 `c4b73414eb06d141c09a2980a7c349043bdc576326a9018e800a0b6e349a0ec8`.
+The source/PDF is in commit `422e942`; PR #253 remains open, so checked
+promotion is still pending.
+The result checkpoints below are historical; their earlier open-gate language
+does not supersede this closed EXP-062 verdict.
+
+## Superseded result checkpoint: uniform annihilation, 2026-09-05
+
+EXP-060 proves `M_p V_p=2eta_p` for every integer p>=8 using explicit signed
+interval potentials and two original K-source corrections. All boundary rows
+are retained. Consequently the tracked integral class has order dividing two
+and vanishes over any coefficient ring where two is invertible. The independent
+18-parameter exact audit passes; a lossless archive preserves every labelled
+source. This theorem meets the narrow homological-companion publication gate.
+
+EXP-061 now proves nonvanishing by a twelve-row relative functional on the
+full original presentation. The independent audit covers 65 complete sectors
+and 23695 original sources. Together with EXP-060, the tracked class has exact
+order two for every p>=8. Its complete proof includes h=10p-3 and all free
+d=2 potentials. EXP-062's proposed all-triangle family is still under audit;
+a full quotient upper bound is not implied by this first class.
+
+## Superseded result checkpoint through EXP-059, 2026-09-05
+
+EXP-059 proves that the full integral D-kernel in the fixed exterior high sector
+`{6p,8p-4}` has an explicit potential basis of rank `binom(p-1,2)`. Every basis source has
+unit coefficients, at most `3p-5` terms, and a full original connecting image with at most
+seven K rows. The signed vertex-zero reconstruction proves completeness for every p>=8;
+861 independently checked chains attack its formulas. This is a sector theorem, not a full
+torsion normal form, and does not establish `2eta` as a boundary or eta as a nonzero class.
+
+EXP-058 independently refutes local radius-two source membership at p=8: its 330 original
+columns and 2669 signed incidences are annihilated by an integer functional pairing to 4
+with `2eta_8`. This is a rigorous local rational exclusion. It neither excludes a longer
+source nor proves a global mod-two obstruction. Any full source must contain a column
+escaping that functional. See EXP-058's exact certificate and necessary-condition lemma.
 
 EXP-054 corrects the EXP-053 source interpretation: retained original labels were verified only
 after projection, and direct multiplication has one omitted even row. EXP-055 gives its uniform

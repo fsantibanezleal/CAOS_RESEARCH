@@ -2,6 +2,9 @@
 
 Current publication/dependency review: [2026-09-04 scope audit](scope-audit-2026-09-04.md).
 Both public PDFs were freshly downloaded and matched; no new version was published.
+Latest trigger decision: [EXP-058/059 scope audit](scope-audit-2026-09-05.md). The uniform
+potential-basis theorem is preserved in the research record; cross-sector consequences remain
+the next companion-publication gate.
 
 `main.tex` is version 0.23 of the CAOS Research preprint; version
 0.22 and all earlier versions remain frozen. Version 0.23 adds the EXP-036 repeated
