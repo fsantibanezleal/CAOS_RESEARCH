@@ -1,43 +1,78 @@
 # Huneke-Wiegand extensions - session handoff
 
-## Current checkpoint: EXP-061 closed; EXP-062 declared, 2026-09-05
+## Current checkpoint: uniform quadratic torsion theorem, 2026-09-05
 
-**The tracked class has exact order two for every p>=8. The full connecting-parity
-problem remains open.** EXP-060 proves `M V_p=2eta_p` for every p>=8 in the
-complete original integer presentation. Its explicit interval-potential source,
-including both short K corrections, also gives
-`M(2s_p+2q_p-V_p)=2(b_A+b_B)`. Independent full-boundary audit passes all 18
-declared parameters through p=100; all labelled sources are preserved losslessly.
-The full repository suite passes 152 tests. Hypothesis `db3642d`, result `6e87a27`
-are committed and pushed on `work/huneke-wiegand/open`.
+**EXP-054--062 are closed. For every integer p>=8, the full original integer
+cokernel contains a direct summand `(Z/2)^q`, where
+`q=floor(((p-2)^2+3)/12)`. The full quotient is not yet classified.**
+EXP-062 is CONFIRMED, with hypothesis `8daa0d4` frozen before execution and
+result `ebcfa20` committed and pushed on `work/huneke-wiegand/open`.
 
-EXP-061's twelve-row relative parity functional was committed and pushed in
-`9169f23` BEFORE computation. Independent paper preflight supports full-map
-nonvanishing after explicitly including h=10p-3 and the complete d=2 kernel.
-The producer passes 2123 potential checks; the independent audit certifies 65
-complete sectors with 23695 original S sources. The proof/audit conjunction is
-CONFIRMED and committed at 0625ec4; portable LF receipts are fixed at 31f53a0.
-Start here, not with old HNF extraction.
-The original p=11 HNF-source labels remain unread.
+The classes are indexed by all nonnegative triples `T=(i<j<k)` of sum `p-2`.
+Explicit signed interval sources give `M W_T=2x_ij`; complete relative parity
+functionals pair as the identity with these classes. Their relation lattice is
+exactly `2Z^{T_p}`. Extending the relative functionals over the D target proves
+the direct-summand assertion; no explicit uniform global D-row extension or
+complete Smith form is claimed. This is an all-parameter proof, not a fit.
 
-A new homological companion is being prepared under
-`manuscripts/huneke-wiegand/integral-connecting-annihilators/`. Its reserved
+EXP-060/061 already prove that `eta_p` and `b_A+b_B` have exact integral order
+two for every p>=8. EXP-062 further gives an explicit integral source for
+`eta_p-x_02`; EXP-057 gives `[b_A+b_B]=-[eta_p]`. The tracked class is therefore
+one member of the quadratic family, not a distinct extra generator.
+
+### Read first and validation
+
+Start with the primary [EXP-062 proof](../../problems/commutative-algebra/huneke-wiegand/experiments/EXP-062-triangle-torsion-family/proof.md)
+and [verdict](../../problems/commutative-algebra/huneke-wiegand/experiments/EXP-062-triangle-torsion-family/verdict.md),
+then EXP-061's complete parity proof and EXP-060's original signed source.
+The producer preserves all 70 declared signed sources and five exact eta
+transfers. Independent audit covers all 27 triangles at p=8,...,12 on 364
+triangle-sector certificates, comprising 65 distinct high sectors and 23695
+distinct original S sources; repeated-sector instance counts are not new
+matrices. All 39 focused EXP-062 tests and the integrated 213-test suite pass,
+along with the repository structure, content, artifact-contract and Ruff gates.
+Audits replay byte-identically to temporary outputs. The original p=11
+HNF-source labels remain unread; no global HNF/SNF was needed.
+
+### Next research, in order
+
+1. Construct explicit integral maps between the triangle classes in the full
+   original presentation and the exact isolated/relative-completion
+   presentations. Determine which classes descend and what they detect there.
+   The counts `3,4,5,7` agree with earlier finite isolated torsion counts, but
+   this is NOT an identification. The second class in each stable relative
+   completion and its uniform rank-two theorem remain open.
+2. After those maps, prove a primitive complement or a complete signed normal
+   form for the specified presentation. This is the missing upper-bound gate;
+   the direct summand alone does not exhaust torsion, free rank, or Smith factors.
+3. Only then revisit parameter transport, the degree-six relation and the full
+   lower-strand recurrence. Keep `56->58` separate. No EXP-063 is declared or
+   running; freeze any next hypothesis before computation.
+
+### Publication and repository delivery
+
+The complementary manuscript is **A quadratic family of integral two-torsion
+classes in a Huneke-Wiegand Koszul presentation**, under
+`manuscripts/huneke-wiegand/integral-connecting-annihilators/`. Its published
 version DOI is `10.5281/zenodo.22342976`, concept `10.5281/zenodo.22342975`.
-It is NOT published yet. EXP-060/061 meet the genuine all-parameter theorem gate;
-the unpublished text now includes the full uniform nonvanishing proof.
-Existing main v0.23 and curvilinear companion v0.02 remain frozen and unaffected.
+Published 2026-09-05T13:35:34Z; public/latest metadata and a fresh unauthenticated
+download passed at 13:36:50Z. The frozen 18-page PDF is 503686 bytes, SHA-256
+`c4b73414eb06d141c09a2980a7c349043bdc576326a9018e800a0b6e349a0ec8`.
+Claim/build/all-page-render/publication gates are complete. PR promotion remains
+a delivery gate. Existing main v0.23 and curvilinear companion
+v0.02 remain frozen. Issue #252 and open PR #253 own this round; no completed
+develop/main promotion is claimed. CAOS_MANAGE stays on `develop`, preserving
+concurrent Rajo edits. No global version bump, bake, or frontend release is included.
 
-EXP-062 was committed at 8daa0d4 before computation. It tests all distinct
-triangles i<j<k of sum p-2, aiming to certify q=floor(((p-2)^2+3)/12)
-independent order-two classes. Its producer/auditor are in flight; this quadratic
-lower bound is not yet a closed verdict. Next close this gate, then finalize
-claim/build/all-page render/public-download checks. Full-quotient upper bounds
-and the relative completion identification remain separate obligations.
-Issue #252 and PR #253 own this round. Product branch stays as above;
-CAOS_MANAGE stays on develop, preserving concurrent Rajo edits. No global
-version bump, bake, or frontend release is included.
+To resume: read root `Entry_point.md`, this checkpoint, the EXP-062 primary
+proof/verdict and the ranked items above. The chronological material below is
+preserved evidence, not a command queue. The broad Huneke-Wiegand conjecture
+was already disproved; Son Pham's discovery priority is unchanged.
 
 ## Superseded checkpoint through EXP-059: 2026-09-05
+
+This records the pre-EXP-060 frontier. Its open-gate and next-action language is
+historical; use the single current checkpoint above for present decisions.
 
 **The all-parameter connecting-parity problem is OPEN.** Resume at EXP-057's four-row endpoint
 representative, not the obsolete generic HNF source extraction. All 53 earlier verdict summaries
@@ -79,7 +114,7 @@ EXP-054 finds `M z=2(b_A+b_B)+2(-1)^p e_p` at `p=8,9,10`, where
 repairs the three known full sources. The old finite Smith/Bockstein certificates are unaffected.
 No original `p=11` HNF-source labels were accessed.
 
-Current validation: EXP-054 audit 213 checks; EXP-055 audit 456 checks plus 1793 complement-sign
+Historical validation through EXP-059: EXP-054 audit 213 checks; EXP-055 audit 456 checks plus 1793 complement-sign
 identities; EXP-056 and retained EXP-057 identities pass all 93 stress parameters `p=8,...,100`
 under independent exact differentials. EXP-058's two local duals and EXP-059's 861 chains are
 independently audited. The uniform proofs are the signed face and potential derivations, not
@@ -92,7 +127,7 @@ remains unmet. Research PRs #247/#250 are merged through `main` (merge `2d0c10a`
 management PR #610 is merged (merge `602ad88`). The new round is tracked by issue #252 and
 draft PR #253; EXP-058 is committed in `a918326`, EXP-059 declared in `08adadb`.
 
-### Exact next actions
+### Superseded next actions through EXP-059
 
 1. Use EXP-059's explicit connecting columns to derive cross-high relations. A proposed extension
    from high `8p-4` to `8p-3` and a K-column correction is under symbolic review, not yet a
@@ -106,7 +141,7 @@ draft PR #253; EXP-058 is committed in `a918326`, EXP-059 declared in `08adadb`.
 4. Keep the `56->58` threshold and full lower-strand recurrence separate; do not compute `p=13`
    or extrapolate another series without a distinguishing structural prediction.
 
-Cheap repeatable checks (from repository root; use temporary outputs for audits):
+Historical focused check set (not the current complete validation suite):
 
 ```powershell
 .venv/Scripts/python.exe -m pytest tests/test_hw_full_source_boundary.py tests/test_hw_unit_filler.py tests/test_hw_uniform_low_source.py tests/test_hw_endpoint_reduction.py -q
@@ -120,7 +155,7 @@ The existing product branch is `work/huneke-wiegand/open`; CAOS_MANAGE stays on 
 ## Historical checkpoint through EXP-053
 
 The chronological material below is retained for provenance. Its original-source and next-action
-language is superseded by the current checkpoint and EXP-054--057 verdicts above.
+language is superseded by the current checkpoint and EXP-054--062 verdicts.
 
 Updated: 2026-09-04. Lifecycle: EXP-053 is REFUTED on P2 with P1 passed finitely after a resource overrun and a common source class retained; EXP-052 is CONFIRMED FINITELY with an untouched semantic holdout; EXP-051 is REFUTED overall with P1/P2 retained; EXP-050 is REFUTED overall with P1 retained; EXP-049 is REFUTED overall with bounded dual parity certificates retained; EXP-048 is REFUTED overall with explicit completion-chain candidates retained; EXP-047 is CONFIRMED FINITELY; EXP-046 is REFUTED overall with P3 retained; EXP-045 is REFUTED with a stable full-carrier antichain retained; EXP-044 is REFUTED overall with P1/P3 retained; EXP-043 and EXP-042 are CONFIRMED finitely; EXP-041 is REFUTED overall with P1 retained; EXP-040 is REFUTED with P1 retained; EXP-039 is REFUTED with a sector redirect;
 EXP-038 is INCONCLUSIVE with both finite
@@ -376,7 +411,7 @@ fresh-download verified at DOI `10.5281/zenodo.22002907`, and PRs #190/#191 plus
 `10.5281/zenodo.21997378`; EXP-024 v0.13 remains immutable at DOI
 `10.5281/zenodo.21995498`.
 
-## 1. State in one screen
+## 1. State in one screen - historical through EXP-053
 
 Son Pham has priority for the first public counterexample, independently verified by Professor
 Craig Huneke. CAOS does not claim that discovery. Its validated extensions are:
@@ -681,11 +716,12 @@ campaign is supporting evidence, not the proof.
   `0d6bb8b885d965ed91a94d06a072d8baacca56df65903e10e1c91382f649edfe`; its 62-check audit has
   external SHA-256 `4f283e79434d312c6de06a063b6784c17f6e0b422a4c97054c3a63c4dc822127`.
 
-## 4. In flight
+## 4. In flight - historical record through EXP-053
 
-Current override: EXP-054--057 are closed; the active proof gates are the full-map endpoint dual,
-uniform order-two source, second class and upper bound in the checkpoint above. Older in-flight
-entries below are archival, not instructions to restart HNF or publish another finite table.
+EXP-054--062 subsequently closed the full-map source, nonvanishing and quadratic
+independent-family gates. These older entries are archival, not instructions to
+restart HNF. The current checkpoint separates the proved full-cokernel theorem
+from the still-open presentation maps, relative-completion classes and upper bounds.
 
 EXP-053 is REFUTED on P2 and passes P1 finitely after a resource overrun. It proves that the same source
 chain produces both EXP-052 completion boundaries, while refuting generic HNF pullback as a
@@ -1049,11 +1085,11 @@ Published baseline:
 - The concept latest resolves to record `22181972`; title, version, sole author/ORCID, licence,
   filename, bytes and both hashes were checked from a fresh public download.
 
-## 5. Next actions
+## 5. Next actions - historical through EXP-053
 
-The numbered list below is historical through EXP-053. Use **Exact next actions** in the current
-checkpoint instead; EXP-054--057 supersede the first source-chain route without solving its
-nonvanishing/order-two obligations.
+The numbered list below is preserved history. Use **Next research, in order**
+in the current checkpoint. EXP-060--062 later solved the full-map nonvanishing,
+order-two and independent-family obligations, not the complete relative quotient.
 
 1. Construct one labelled source-domain chain directly against the union of the frozen EXP-052
    formulas on `58->63`, and prove `R_p y_p=2(b_p^A+b_p^B)` symbolically for arbitrary `p`.
@@ -1198,11 +1234,12 @@ nonvanishing/order-two obligations.
 | external evidence | `E:/_Datos/caos-research/huneke-wiegand/` |
 | management mirror | `_CAOS_MANAGE/plans/caos-research/huneke-wiegand/` |
 
-## Resume command
+## Historical navigation recipe
 
-Read root `Entry_point.md`, this file, `plan.md`, `state.md`, `backlog.md`, and the latest relevant
-experiment verdict. Continue the highest-priority unblocked item without changing the product
-branch or importing the candidate repository's verifier as CAOS evidence.
+The current resume instruction is in the sole current checkpoint at the top.
+Read root `Entry_point.md`, this file, `plan.md`, `state.md`, `backlog.md`, and
+the relevant primary verdicts. Do not resume the dated in-flight tasks below
+or import the candidate repository's verifier as CAOS evidence.
 
 ## 2026-08-12 in flight - EXP-021
 

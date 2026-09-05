@@ -1896,3 +1896,48 @@
   the signed source and relative functional to every distinct triple of sum p-2,
   suggesting quadratically many independent two-torsion classes. This is a new
   lower-bound gate, not an inferred full quotient or recurrence. Audit is active.
+
+## 2026-09-05 - quadratic triangle theorem and reconciled research priorities
+
+- EXP-062 is CONFIRMED after independent source, functional and complete-sector
+  audits. For every `p>=8`, the full explicit integral cokernel contains a
+  direct summand `(Z/2)^floor(((p-2)^2+3)/12)`. Signed original sources prove
+  `M W_T=2x_T`; relative functionals detect the exact relation lattice `2Z^T`;
+  vector-space extension over the full D target gives a nonconstructive retraction.
+- The source `C=P(F_1)-2B-2D` proves `M C=eta-x_02`. This identifies the
+  tracked class with one selected triangle class in the quotient, not as an
+  equality of original target vectors. EXP-057 transfers the original D class
+  up to sign. The complete quotient and isolated/relative identifications remain open.
+- All 70 triangle-source identities, five eta transfers, seven small pairing
+  matrices and 93 count checks pass. Complete parity audits cover all 27 triangles
+  at `p=8,...,12`: 364 triangle-sector certificates on 65 distinct sectors and
+  23,695 distinct S sources. Repeated-certificate totals are 151,319 source
+  instances, 713,511 D-row instances, 1,528,426 incidences and 5,550 dual terms.
+  All 39 dedicated tests pass; the current repository test suite has 213 passes.
+- The complementary 18-page manuscript has completed claim/build/render QA.
+  Version DOI `10.5281/zenodo.22342976` and concept DOI
+  `10.5281/zenodo.22342975` remain reserved-unpublished at this checkpoint.
+  PR #253 is open; publication, fresh unauthenticated latest/download checks,
+  and checked PR-based promotion are not reported as complete.
+- Reconciled backlog, plan, parity research lines and wiki without deleting
+  their historical checkpoints. Next mathematics is explicit integral comparison
+  maps to the earlier isolated/relative presentations, then a complementary-
+  quotient upper bound, then the connecting/lower-strand recurrence. Equal
+  finite counts do not identify those objects. No EXP-063 has been declared.
+
+## 2026-09-05 - quadratic-family companion published and publicly verified
+
+- The new companion was published at 13:35:34 UTC, version DOI
+  `10.5281/zenodo.22342976`, concept DOI `10.5281/zenodo.22342975`.
+  This closes the publication gate left open in the preceding checkpoint;
+  older published manuscript versions remain unchanged.
+- Fresh unauthenticated public/latest metadata and download checks passed at
+  13:36:50 UTC. The full 503,686-byte PDF matches SHA-256
+  `c4b73414eb06d141c09a2980a7c349043bdc576326a9018e800a0b6e349a0ec8`.
+  Research and management mirror retain the public-verification receipt.
+- The 18-page source/PDF is committed at `422e942`. PR #253 remains open;
+  no merge or final remote-promotion completion is claimed at this checkpoint.
+  Reconciled the current navigation facts without rewriting the prior
+  reservation/unpublished checkpoint. The next mathematics remains comparison
+  maps, then the complementary quotient, then the recurrence; no new experiment
+  or additional manuscript is introduced by this publication closeout.

@@ -1,5 +1,26 @@
 # Huneke-Wiegand extensions - backlog
 
+## Current dispatch after EXP-062, 2026-09-05
+
+EXP-062 is closed: for every `p>=8`, the full explicit integral cokernel has
+a direct summand `(Z/2)^q`, where `q=floor(((p-2)^2+3)/12)`. Its selected
+triangle classes have explicit twice-sources and identity-paired relative
+functionals; `[eta]=[x_02]` by an explicit original source. This closes the
+full-map independent-family gate, not the earlier isolated or relative-module
+identification. Historical finite ranks do not provide those missing maps.
+
+Next mathematical order: HWB-081/HWB-069 explicit isolated/relative comparison
+maps; then HWB-085 complementary-quotient upper bound; then HWB-065 recurrence.
+The older relative rank-two items remain conditional on the first comparison,
+not evidence that the full-map second class is still missing. No EXP-063 is
+declared or authorized by this navigation update.
+
+Delivery remains HWB-083: the new 18-page companion passed manuscript QA and
+213 repository tests pass. It was published at version DOI
+`10.5281/zenodo.22342976` on 2026-09-05 at 13:35:34 UTC; the fresh public
+latest/download check passed at 13:36:50 UTC for all 503,686 PDF bytes.
+Source/PDF commit: `422e942`. PR #253 is open; checked PR promotion remains.
+
 | id | priority | status | item | gate |
 |---|---:|---|---|---|
 | HWB-001 | 0 | done | EXP-001 independent Singular/4ti2 reproduction | P1-P6 confirmed; failed toolchain attempts preserved |
@@ -62,27 +83,28 @@
 | HWB-058 | 1 | done | classify primitive zero-row incidence summands and test the next consecutive survival family | EXP-035 proves the all-parameter zero-row summand and consecutive `K_p` family; the coordinatewise P3 mechanism fails, while the full `p=4` target is characteristic-dependent |
 | HWB-059 | 1 | done | manuscript and Zenodo update for zero-row and characteristic-dependence theorems | 51-page v0.22 passed all gates, was published at DOI `10.5281/zenodo.22177072`, became concept-latest, and matched a fresh public download exactly |
 | HWB-060 | 1 | done | repository promotion and durable handoff for EXP-035 plus v0.22 | PRs #226/#227 passed required checks and promoted payload tree `0847e35a7641ab5592afd136f42bcf09ffe514f3` through `develop` and `main` |
-| HWB-061 | 1 | in progress | all-parameter anatomy of the EXP-035 factor-two torsion | EXP-036 confirms repeated dependence and two mechanisms through `p=9`, refutes two finite fits, and proves family-wide cubic transfer; still require an infinite theorem for the parity-sensitive connecting quotient |
+| HWB-061 | 1 | in progress | all-parameter anatomy of the EXP-035 factor-two torsion | EXP-062 proves a quadratic two-torsion direct summand in the full explicit map; comparison with the earlier isolated/relative objects and complete quotient anatomy remain open |
 | HWB-062 | 1 | done | manuscript and Zenodo update for EXP-036 | 53-page v0.23 passed every gate, was published at DOI `10.5281/zenodo.22181972`, became concept-latest, and matched a fresh public download exactly |
 | HWB-063 | 1 | done | repository promotion and durable handoff for EXP-036 plus v0.23 | PRs #230/#231 passed required checks and promoted payload tree `8ea3fbd0dfd136a7b91c508a31146be7d88eded1` through `develop` and `main` |
 | HWB-064 | 1 | done | derive or refute a quasipolynomial law for the `t=2` connecting-parity defect | EXP-037 exactly refutes the candidate at the first new cell: `e_10=72`, not 73; independent order and `GF(5)` audits pass |
-| HWB-065 | 1 | in progress | test whether the first discrepancy is a degree-six relation in the parity-defect module | audited exact `e_11=102` and `e_12=138` pass; EXP-041 refutes the proposed identity switch and confines the isolated contribution to one persistent twelve-atom skeleton, but an explicit relation/recurrence proof remains mandatory |
+| HWB-065 | 3 | in progress | test whether the first discrepancy is a degree-six relation in the parity-defect module | audited exact `e_11=102` and `e_12=138` remain finite evidence; revisit the relation/recurrence only after explicit comparison maps and the complementary-quotient bound, not from EXP-062's lower-bound count |
 | HWB-066 | 1 | done | decompose the parity-sensitive combined core into recurring signed components | EXP-039 refutes bounded defect-one blocks but exposes exact latent sectors `binom(p-2,3),p-4,p-4,p-5` and their `p=9` support merger |
 | HWB-067 | 1 | done | localize the first degree-six correction inside the merged signed sector | EXP-040 confirms `67+5` at `p=10` but refutes the simple translation split with exact `95+7` at `p=11`; all components agree over both odd fields |
 | HWB-068 | 1 | done | identify semantic sector tags across support mergers | EXP-041 reproduces every frozen component; P1 gives a finite rank-free classifier, while P2/P3 fail: the isolated block keeps one normalized twelve-atom `R` skeleton through `p=11` and the distinguished row is absent from every defective core |
-| HWB-069 | 1 | in progress | derive a signed normal form for the persistent twelve-atom isolated sector | EXP-042 proves finite first-Bockstein ranks `3,4,5,7`, hence exactly that many valuation-one Smith factors; a uniform matched-block or chain-map theorem remains open |
+| HWB-069 | 1 | in progress | derive a signed normal form for the persistent twelve-atom isolated sector | EXP-042/043 finite types remain valid; first construct explicit integral maps to EXP-062's full-map triangle classes, since matching counts `3,4,5,7` do not identify the objects |
 | HWB-070 | 1 | done | certify the rational ranks and complete finite 2-primary torsion of the isolated sector | EXP-043 proves rational ranks `1002,1607,2450,3586` and complete 2-primary types `(Z/2)^(3,4,5,7)` by audited modular Hadamard certificates |
 | HWB-071 | 1 | in progress | prove the stable alternative-completion circuit for the persistent 2-primary torsion | EXP-045 gives minimal full carriers `59,62` and core ranks `1,2,3,5`; compare relative presentations `58->59`, `58->62`, and the `p=11` threshold `56->58` before a uniform matching |
 | HWB-072 | 1 | done | compute exact integral unit cores for the stable carrier inclusions | EXP-046 refutes leaf compression of the two minimal full carriers: both have zero cancellations and one global core; mask `56` retains a finite persistent-support threshold |
 | HWB-073 | 1 | done | construct fill-producing relative integer presentations for the stable carrier inclusions | EXP-047 proves exact finite relative modules: both completions have `(Z/2)^2`, while `56->58` has `(Z/2)^(p-7)`, plus explicit free ranks |
 | HWB-074 | 1 | in progress | derive a uniform semantic relative Smith reduction | EXP-048 refutes bounded canonical representatives but exposes exact finite `alpha/beta` interval chains for both stable completions; a uniform integral proof remains open |
-| HWB-075 | 1 | in progress | lift the four completion chains and construct dual parity functionals | EXP-049 refutes literal zero-one lifts but constructs support-at-most-four duals; EXP-052 gives one exact semantic class per completion, while the generic dual proof and second class remain open |
+| HWB-075 | 1 | in progress | lift the four completion chains and construct dual parity functionals | EXP-049/052 finite relative certificates remain valid; EXP-061/062 close full-map duals and an independent family, but their transfer to both relative completions still requires explicit comparison maps |
 | HWB-076 | 1 | done | construct and classify corrected integral completion representatives | EXP-050 constructs all corrected `b,c,y`; EXP-051 replaces their large section-dependent corrections by height-two unreduced representatives; EXP-052 extracts holdout-validated semantic formulas |
-| HWB-077 | 1 | in progress | prove the semantic exact-lift formulas and complete the stable rank-two quotient | Construct labelled source chains proving `R_p y_p=2b_p` for arbitrary `p`, find the second independent class, prove the bounded dual formulas generically, and build a free complement or relative-Morse upper bound |
-| HWB-078 | 1 | redirected | construct the first labelled source chain directly on the union completion | EXP-054 corrects the projected-source reading, EXP-055 repairs known sources, EXP-056/057 uniformly reduce the class to four endpoint rows; generic order-two source remains HWB-080 |
+| HWB-077 | 1 | in progress | prove the semantic exact-lift formulas and complete the stable rank-two quotient | Full original sources and a quadratic independent family are now proved; transport them through certified integral maps to `58->59` and `58->62` before claiming their exact relative rank-two quotient or a relative upper bound |
+| HWB-078 | 1 | redirected | construct the first labelled source chain directly on the union completion | EXP-054 corrects the projected-source reading, EXP-055 repairs known sources, EXP-056/057 reduce to eta, and EXP-060/062 close the full-map source and eta-to-x02 transfer; relative comparison remains HWB-077/081 |
 | HWB-079 | 0 | done | prove full-map nonvanishing of the four-row endpoint class | EXP-061 proves the twelve-row relative functional kills all original relations and pairs to one; 65 complete sector certificates independently checked; exact order two for all p>=8 with EXP-060 |
 | HWB-080 | 0 | done | construct a uniform original source for twice the endpoint class | EXP-060 proves `M V=2eta` for all p>=8 using explicit interval potentials and both K corrections; all 18 independent original-boundary checks pass |
-| HWB-081 | 1 | pending | identify a primitive signed-incidence model and the second class | Use missing-set coordinates and exact integral maps; matching Smith invariants alone is not an identification or upper bound |
+| HWB-081 | 1 | in progress | construct explicit maps between the full triangle family and isolated/relative presentations | First prove well-defined integral source/target maps and their effect on labelled classes, including `58->59`, `58->62`, and the separate `56->58` threshold; EXP-062 already supplies multiple independent full-map classes |
 | HWB-082 | 0 | done | promote EXP-054--057 and reconcile the current handoff | Research PRs #247/#250 merged through main at 2d0c10a; management PR #610 merged at 602ad88; checked CI and fresh remote refs |
-| HWB-083 | 0 | in progress | promote EXP-058--062 and the complementary manuscript | EXP-058--061 closed; EXP-062 audit, manuscript QA/publication, issue #252/PR #253 and final remote checks remain |
-| HWB-084 | 0 | in progress | certify the all-triangle independent torsion family | EXP-062 declared at 8daa0d4: signed twice-edge sources, full relative functionals, identity pairing and quadratic count; full quotient upper bound is excluded |
+| HWB-083 | 0 | in progress | promote EXP-058--062 and the complementary manuscript | EXP-058--062 closed, 18-page manuscript QA and 213 tests pass; DOI 22342976 published and fresh-public-download verified, source/PDF commit 422e942; PR #253 open and checked promotion pending |
+| HWB-084 | 0 | done | certify the all-triangle independent torsion family | EXP-062 proves `(Z/2)^floor(((p-2)^2+3)/12)` as a direct summand for all p>=8, with exact relation lattice, signed sources and eta=x02 in the quotient; all independent audits and 39 dedicated tests pass |
+| HWB-085 | 2 | pending | bound the complementary full integral cokernel | After HWB-081 comparison maps, prove an integral reduction or explicit complement; the nonconstructive EXP-062 retraction supplies no full upper bound, free-rank formula or odd-torsion exclusion |

@@ -1,6 +1,47 @@
 # Parity-normal-form research lines
 
-## Current route after uniform annihilation, 2026-09-05
+## Current route after the quadratic direct summand, 2026-09-05
+
+EXP-062 closes the all-triangle lower-bound route uniformly for the full
+explicit integral presentation: `(Z/2)^q` is a direct summand, with
+`q=floor(((p-2)^2+3)/12)` for every `p>=8`. Reflected interval sources prove
+`M W_T=2x_T`; complete relative functionals pair as the identity; their
+extension over the D target gives a nonconstructive retraction. The exact
+source `C=P(F_1)-2B-2D` proves `[eta]=[x_02]`. This closes the full-map
+second-class question much more strongly, but does not identify the earlier
+isolated sector or prove either stable relative quotient uniformly.
+
+Rank the remaining paths as follows:
+
+1. Construct explicit integral source/target comparison maps between the full
+   triangle presentation and the isolated/relative objects. Track class images
+   and any discarded rows or unit fillers. Equal finite Smith types, disjoint
+   displayed supports, and the counts `3,4,5,7` do not supply those maps.
+2. Bound the complementary quotient by a proved integral reduction, compatible
+   matching, or explicit complement. The abstract direct summand is real, but
+   its proof does not compute every D-row retraction value or all cokernel factors.
+3. Only then derive the lower-strand or connecting recurrence from the proved
+   structural maps. The elementary six-step triangle-count recurrence does not
+   establish the old parity-defect recurrence or the `56->58` threshold formula.
+
+The broad Huneke-Wiegand conjecture is already false; the remaining target is
+this family's full homological description. A quadratically unbounded torsion
+family is proved, while the full-quotient problem remains open with a specific
+comparison-map bottleneck. No EXP-063 or new numerical campaign is declared.
+Keep complete original faces, use declaration-first bounded exact experiments,
+and do not return to unrestricted HNF or undirected coefficient searches.
+
+EXP-062's independent audit and all 39 dedicated tests pass. The new 18-page
+companion has completed manuscript QA and the repository has 213 passing tests.
+DOI `10.5281/zenodo.22342976` is published and its 503,686-byte PDF passed
+fresh unauthenticated public/latest/download verification at 2026-09-05
+13:36:50 UTC; source/PDF commit is `422e942`. PR #253 remains open, so
+checked promotion is pending. The existing stronger publication gate was met
+by the uniform theorem, not relaxed to admit finite evidence. No additional
+manuscript is needed for this closed result. The dated route assessments below
+are historical and superseded wherever they describe these source/duality gates.
+
+## Superseded route after uniform annihilation, 2026-09-05
 
 EXP-060 closes the first uniform twice-source gate in the FULL integer map.
 Its reflection-triangle identity is the useful transferable mechanism, not a
@@ -54,7 +95,7 @@ https://arxiv.org/html/0709.3144v1. Neither paper supplies the missing CAOS proo
 Updated: 2026-09-02. Scope: unresolved all-parameter characteristic-two connecting quotient in
 the EXP-009 family. The broad Huneke--Wiegand conjecture is already false and is not the target.
 
-## Solvability assessment
+## Historical solvability assessment, 2026-09-02
 
 The CAOS target is not solved. It is now materially more tractable than it was after EXP-038:
 EXP-041 replaces an apparently changing component decomposition by one isolated family with a
@@ -67,7 +108,7 @@ functorial transition map for the persistent component and prove that it control
 characteristic-sensitive quotient for every `p`. A recurrence fitted to dimensions cannot replace
 that step.
 
-## Ranked routes
+## Historical ranked routes through EXP-048
 
 ### 1. Bockstein plus signed matched-block normal form - active
 
@@ -250,7 +291,7 @@ proved or explicitly conjectured transition law.
 None of these sources supplies the missing chain maps or the CAOS recurrence. They justify the
 route vocabulary and proof obligations only.
 
-## Manuscript split gate
+## Manuscript split gate - retained standard, satisfied by EXP-060--062
 
 Do not update v0.23 or Zenodo for another finite rank/profile table. Open a complementary
 lower-strand manuscript only after at least one of these occurs:
@@ -262,6 +303,11 @@ lower-strand manuscript only after at least one of these occurs:
 
 A finite Bockstein certificate is an experiment milestone and a route-selection result, not by
 itself a publication trigger.
+
+Current application: the all-parameter triangle torsion and splitting theorem
+meets the first trigger. The separate companion is now published at DOI
+`10.5281/zenodo.22342976` with a fresh public-download receipt; no repeat
+publication is justified merely by this navigation reconciliation.
 
 ## 2026-09-03 route correction after EXP-049
 

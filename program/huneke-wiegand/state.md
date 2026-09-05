@@ -1,14 +1,38 @@
 # Huneke-Wiegand extensions - state
 
-Current heartbeat: 2026-09-05. EXP-060 is CONFIRMED: the explicit full original
-source satisfies `M V=2eta` for every p>=8. Independent 18-parameter audit and
-152 integrated tests passed at the EXP-060 checkpoint; result commit 6e87a27 is
-pushed. EXP-061 is now CONFIRMED at 0625ec4: its twelve-row relative functional
-proves exact order two for every p>=8; independent full-sector audit covers 65
-sectors and 23695 original sources. Portable receipts are fixed at 31f53a0.
-EXP-062's all-triangle quadratic torsion family is declared at 8daa0d4 and active. A new
-complementary preprint has draft DOI 22342976 (concept 22342975), not yet published.
-PR #253 and issue #252 remain open. Second class and full quotient are still open.
+Current heartbeat: 2026-09-05. **EXP-062 is CONFIRMED and committed/pushed at
+`ebcfa20`: the full original integral cokernel has a direct summand `(Z/2)^q`
+for every p>=8, with `q=floor(((p-2)^2+3)/12)`.** The explicit classes are
+indexed by all distinct nonnegative triples of sum p-2. Signed twice-class
+sources, complete relative parity functionals and identity pairing prove their
+relation lattice is `2Z^{T_p}`; vector-space extension proves the splitting.
+No explicit global D-row extension or complete Smith form is claimed.
+
+EXP-060/061 prove exact order two for the tracked eta and b_A+b_B, and EXP-062
+identifies `[eta]=[x_02]` by an explicit integral source. All EXP-054--062 are
+closed. The new campaign preserves 70 signed sources and five transfers;
+independent audit checks all 27 small-parameter triangles on 364 triangle-sector
+certificates, using 65 distinct high sectors and 23695 distinct original S
+sources. All 39 EXP-062 tests and the integrated 213-test suite pass, as do
+Ruff and the structure/content/artifact-contract gates. Primary EXP-062
+proof/verdict/artifacts own the theorem and exact certificate hashes.
+
+Still open: explicit maps to the isolated and relative-completion presentations,
+the second class in each stable relative completion, primitive-complement/normal-form
+upper bounds, and lower-strand recurrence. Equality of the new q values `3,4,5,7`
+with earlier finite isolated counts is not an identification. Next rank is
+explicit maps, then the upper bound, then structural parameter transport. No
+EXP-063 is declared or running.
+
+The complementary manuscript, **A quadratic family of integral two-torsion
+classes in a Huneke-Wiegand Koszul presentation**, is published at DOI
+`10.5281/zenodo.22342976` (concept `10.5281/zenodo.22342975`). Published
+2026-09-05T13:35:34Z; fresh public/latest metadata and all 503686 PDF bytes
+passed unauthenticated verification at 13:36:50Z. The 18-page all-page QA and
+mathematical gates are complete. PR promotion remains a delivery gate.
+Issue #252 and PR #253 remain open; no develop/main promotion is claimed.
+Existing published v0.23 and curvilinear v0.02 remain frozen. The transitions
+and dated narratives below retain the earlier states rather than overwrite them.
 
 Historical heartbeat through EXP-059 (superseded): EXP-054--057 are closed. The all-parameter connecting-parity
 problem remains open, with its displayed candidate uniformly reduced to the four-row `eta_p`
@@ -185,8 +209,16 @@ symbolic gate, not yet an experiment. Issue #252 and PR #253 own promotion. Late
 | 2026-09-03 | confirmed | active | HWB-077 now owns the all-parameter source-chain identity and second independent class; bounded dual detection and the free-complement upper bound remain separate obligations |
 | 2026-09-04 | active | refuted | EXP-053 uniquely pulls the common source chain back at `p=8,9,10`, but supports 125, 178, and 238 have 78 semantic skeletons; the `p=10` transformed HNF completes only after a safe-stage overrun |
 | 2026-09-04 | refuted | active | both stable completions use the identical source chain at each completed parameter, so HWB-078 targets one direct telescoping identity on the union `58->63` instead of further generic HNF pullback |
+| 2026-09-05 | active | corrected | EXP-054 exposes the omitted full K boundary in EXP-053; EXP-055 gives its uniform unit filler, without invalidating the earlier reduced certificates |
+| 2026-09-05 | corrected | confirmed | EXP-056 proves the p-1-term full source; EXP-057 retains the exact four-row endpoint and PLUS transfer after refuting its declared minus sign |
+| 2026-09-05 | active | refuted locally | EXP-058 excludes the complete radius-two source span over QQ at p=8; its integer dual is not a global obstruction, and no p=9/10 continuation runs |
+| 2026-09-05 | redirected | confirmed | EXP-059 proves a complete integral potential basis in the fixed high sector and independently audits all 861 declared chains |
+| 2026-09-05 | active | confirmed | EXP-060 proves the uniform original source `M V=2eta`, committed/pushed at 6e87a27; the 18-case audit checks complete signed boundaries |
+| 2026-09-05 | active | confirmed | EXP-061 proves full-map nonvanishing, hence exact order two with EXP-060; result 0625ec4 and portable-receipt fix 31f53a0 are pushed |
+| 2026-09-05 | declared | confirmed | EXP-062, frozen at 8daa0d4 and closed at ebcfa20, proves the quadratic full-cokernel two-torsion direct summand; all 39 focused tests and the independent original-sector audit pass |
+| 2026-09-05 | confirmed | structural identification open | Prioritize explicit maps to isolated/relative presentations before complement/upper-bound work and recurrence; matching q=3,4,5,7 is not a chain identification |
 
-Current state: **EXP-053 refutes generic HNF pullback as the semantic proof route but retains one common source class across both completions; EXP-052 is confirmed finitely with an untouched semantic holdout; EXP-051 and EXP-050 are refuted overall with decisive finite constructions retained; EXP-049 is refuted overall with P3 and a bounded dual mechanism retained; EXP-048 is refuted overall with four semantic completion chains retained; EXP-047 is confirmed finitely; EXP-046 is refuted overall with P3 retained; EXP-043 and EXP-042 are confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
+Historical state narrative through EXP-053 (superseded by the current heartbeat): **EXP-053 refutes generic HNF pullback as the semantic proof route but retains one common source class across both completions; EXP-052 is confirmed finitely with an untouched semantic holdout; EXP-051 and EXP-050 are refuted overall with decisive finite constructions retained; EXP-049 is refuted overall with P3 and a bounded dual mechanism retained; EXP-048 is refuted overall with four semantic completion chains retained; EXP-047 is confirmed finitely; EXP-046 is refuted overall with P3 retained; EXP-043 and EXP-042 are confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
 inconclusive with two finite passes; EXP-037 is refuted; EXP-036 remains confirmed with structural
 propagation unresolved.** The complete `(10,2)` block has surviving dimensions
 `4240` over `GF(2)` and `4168` over both `GF(3)` and `GF(5)`, so `e_10=72`; this refutes the

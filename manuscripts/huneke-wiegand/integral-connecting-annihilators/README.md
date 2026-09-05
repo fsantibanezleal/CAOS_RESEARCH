@@ -1,6 +1,9 @@
 # A quadratic family of integral two-torsion classes
 
-New homological companion, version 0.01, in preparation. It is not published yet.
+Homological companion, version 0.01, published 2026-09-05 at
+[10.5281/zenodo.22342976](https://doi.org/10.5281/zenodo.22342976).
+Public/latest metadata and a fresh unauthenticated download match the frozen
+18-page PDF exactly; see [metadata](metadata.md) and the public verification receipt.
 
 The trigger is EXP-060's proved all-parameter original-source identity `M V=2eta`
 and the transferable interval-triangle construction, together with EXP-059's
@@ -18,7 +21,7 @@ EXP-059 (potential basis), EXP-060 (uniform annihilator), EXP-061 (complete
 nonvanishing) and EXP-062 (quadratic independent family), all in
 `problems/commutative-algebra/huneke-wiegand/experiments/`.
 
-Required before publication: complete theorem-to-verdict audit, independent
+Completed publication gates: complete theorem-to-verdict audit, independent
 source-certificate checks, clean stabilized LaTeX build, all-page visual review,
 sole human authorship/ORCID and CC BY 4.0 metadata, exact uploaded file checks,
 and fresh unauthenticated public download/latest-version verification.
