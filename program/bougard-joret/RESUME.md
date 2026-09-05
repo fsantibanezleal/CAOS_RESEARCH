@@ -33,7 +33,7 @@ Updated: 2026-09-05.
 
 ## 4. In flight
 
-Current round: manuscript v0.02 is PUBLISHED at version DOI [10.5281/zenodo.22341644](https://doi.org/10.5281/zenodo.22341644), concept DOI 10.5281/zenodo.22315251. All 343,535 bytes match a fresh unauthenticated download; SHA-256 `faed3c5a760390a89bc77945e99837c85a55b09f6923570dcde50f289439d4b7`. API latest-version check and all ten PDF pages pass. After incorporating concurrent develop changes, all 100 repository tests pass. Research PR #251 is the remaining integration gate. No mathematical run remains active.
+Current round: manuscript v0.02 is PUBLISHED at version DOI [10.5281/zenodo.22341644](https://doi.org/10.5281/zenodo.22341644), concept DOI 10.5281/zenodo.22315251. All 343,535 bytes match a fresh unauthenticated download; SHA-256 `faed3c5a760390a89bc77945e99837c85a55b09f6923570dcde50f289439d4b7`. API latest-version check and all ten PDF pages pass. After incorporating concurrent develop changes, all 100 repository tests pass. Research PR #251 passed current-head CI and merged at `8055fec`; private mirror PR #611 merged at `a6d642fd`. This research/publication round is complete. No mathematical run remains active.
 
 The paragraph below records the completed September 4 baseline.
 
@@ -45,7 +45,7 @@ Manuscript v0.01 remains frozen at version DOI `10.5281/zenodo.22315252`. At its
 2. Regression: `python -m pytest tests/test_bougard_joret_tree_strip.py`.
 3. Read `problems/combinatorics/bougard-joret/context/report-source.md` before selecting another target; it records all 20 portfolio rows and important unsplittable-flow updates.
 4. Read EXP-002 `proof.md`, `verdict.md`, and the September 5 portfolio refresh; replay `python problems/combinatorics/bougard-joret/experiments/EXP-002-next-shell/run.py --output tmp/bougard-shell-replay.json`.
-5. Complete scoped PR integration; v0.02 publication and rendered/public-byte verification are complete. See [the September 5 plan](plan-2026-09-05.md).
+5. The September 5 proof, publication and scoped integration are complete. See [the closed plan](plan-2026-09-05.md); further research requires a new committed hypothesis.
 6. Further research: classify remaining shell extremizers or declare a new hypothesis for $n=\alpha+k+2$. The general problem remains open.
 
 ## 6. Where everything lives
