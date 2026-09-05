@@ -9,8 +9,10 @@ Nonvanishing, uniform order two, the second class and upper bound remain distinc
 All 99 integrated tests and guards pass. Both frozen manuscript PDFs match fresh public Zenodo
 downloads; the v0.15 management-ledger drift is corrected to v0.23, without a new publication.
 Research PRs #247/#250 are merged through main at `2d0c10a`; management PR #610 is merged
-at `602ad88`. EXP-058 was committed before computation (`0170a99`) and is active: bounded
-radius-two source search for `2eta` with complete original equations. Later text is history.
+at `602ad88`. EXP-058 is closed and independently refutes radius-two source membership at
+p=8; 111 integrated tests pass. EXP-059 was declared before computation (`08adadb`) and is
+active: a uniform potential basis and sparse connecting map in one fixed-high sector.
+Issue #252 and draft PR #253 own this new round. Later text is history.
 
 | date | from | to | reason |
 |---|---|---|---|

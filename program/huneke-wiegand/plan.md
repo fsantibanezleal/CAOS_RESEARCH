@@ -2,6 +2,12 @@
 
 ## Current priority, 2026-09-05
 
+EXP-058's complete radius-two neighborhood is excluded by an independently checked integer
+separating functional at p=8. Do not expand it blindly: any genuine source must use an omitted
+column detected by this functional. EXP-059 instead declares a uniform potential basis of
+one fixed-high D-kernel, with an at-most-seven-row connecting image. Audit this structural
+parametrization before testing mixed high-variable choices or any further source search.
+
 EXP-054--057 supersede generic HNF pullback as the active route. The first-class representative
 is now the explicit four-row endpoint `eta_p` in EXP-057, with exact integral transfer
 `[b_A+b_B]=-[eta_p]`. Seek a full-relation parity dual and, separately, a uniform source with

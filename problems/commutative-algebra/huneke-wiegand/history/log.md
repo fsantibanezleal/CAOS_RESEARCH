@@ -1835,3 +1835,18 @@
 - The 60-second, 1200-column, 20000-nonzero limits prohibit repeating the old unrestricted
   HNF pullback. Noninteger rational sections are explicitly inconclusive, and local rational
   obstruction cannot exclude a full-domain source. The original p=11 source holdout stays locked.
+
+## 2026-09-05 - local obstruction and declared potential-map redirect
+
+- EXP-058 stopped at p=8 after the complete radius-two neighborhood (330 columns, 1803 rows,
+  2669 incidences) was excluded over QQ. Its 40-row plus/minus-one dual pairs to 4 with
+  `2eta`; all incidences, residuals and dual equations were independently reconstructed.
+- No p=9/10 continuation or radius-three expansion occurred. The obstruction only excludes
+  this local span; it implies a necessary escaping-column condition for any later source.
+  Twelve new focused tests and the full 111-test suite pass. Commit `a918326` is pushed.
+- EXP-059 was frozen at `08adadb` before computation. It proposes a complete integer potential
+  basis for one fixed-high D-kernel and a seven-row connecting map per basis element. The
+  signed proof and 861-chain bounded audit are in flight under issue #252 and draft PR #253.
+- Re-read Bruns-Herzog Proposition 1.1 and its proof from the scanned published source. The
+  relative divisor-complex interpretation remains conditional until its actual chain map is
+  identified; it is not imported as a CAOS torsion theorem. Publication triggers are unchanged.

@@ -6,6 +6,14 @@
 representative, not the obsolete generic HNF source extraction. All 53 earlier verdict summaries
 and both manuscript dependency indexes were reviewed in the EXP-054--057 round.
 
+Latest closed experiment: EXP-058 refutes radius-two source membership at p=8. Its complete
+330-column, 1803-row neighborhood has a 40-row integer dual annihilating every column but
+pairing to 4 with `2eta_8`; a separate coefficient-first reconstruction verifies all 2669
+incidences. This is a local rational obstruction, not a global quotient certificate. The run
+stopped before p=9/10. EXP-059 is declared and in flight: a proposed complete integral
+potential basis for one fixed-high D-cycle sector, mapping each basis chain to at most seven
+K rows. Do not resume by blindly increasing the neighborhood radius.
+
 Put `L_p=[1,p] union [3p,4p-2]` and
 `G_p(a,j;c)=[K,(L_p minus {a,3p,3p+j}) union {6p};10p+c]`.
 For every `p>=8`, EXP-056/057 prove, over the integers in the **full original presentation**,
@@ -40,14 +48,14 @@ Manuscripts: v0.23 and companion v0.02 are unchanged. Both public latest-version
 fresh PDF downloads matched on 2026-09-05 UTC. See the manuscript scope audit. The management
 ledger is repaired through v0.23. No new Zenodo version was published; the stronger theorem gate
 remains unmet. Research PRs #247/#250 are merged through `main` (merge `2d0c10a`);
-management PR #610 is merged (merge `602ad88`). EXP-058 is now declared and active on the
-same product branch; it tests bounded local original-source membership before any larger run.
+management PR #610 is merged (merge `602ad88`). The new round is tracked by issue #252 and
+draft PR #253; EXP-058 is committed in `a918326`, EXP-059 declared in `08adadb`.
 
 ### Exact next actions
 
-1. Complete EXP-058's radius-two original-source search for `2eta_p` at training parameters
-   `8,9,10`, with exact full-boundary audit and strict caps. A nonintegral rational section is
-   inconclusive about integer membership. Inspect symbolic support before another compute round.
+1. Complete EXP-059's frozen potential-basis campaign, signed completeness proof and independent
+   audit. It selects all basis chains at p=8,...,16 and four frozen stress pairs at p=17,...,100.
+   Then use the sparse connecting map or EXP-058's separating dual to select the next relation.
 2. Independently construct a parity functional on all original relations with
    `lambda(eta_p)=1`, and a generic source for `2eta_p`. The single odd row is not a dual
    certificate; known finite corrected sources do not supply a uniform formula.
@@ -62,8 +70,8 @@ Cheap repeatable checks (from repository root; use temporary outputs for audits)
 .venv/Scripts/python.exe -m pytest tests/test_hw_full_source_boundary.py tests/test_hw_unit_filler.py tests/test_hw_uniform_low_source.py tests/test_hw_endpoint_reduction.py -q
 ```
 
-Proofs and exact commands live in the EXP-054--058 folders under
-`problems/commutative-algebra/huneke-wiegand/experiments/`. EXP-058 implementation is in flight;
+Proofs and exact commands live in the EXP-054--059 folders under
+`problems/commutative-algebra/huneke-wiegand/experiments/`. EXP-059 implementation is in flight;
 check its checkpoint and active processes before rerunning it.
 The existing product branch is `work/huneke-wiegand/open`; CAOS_MANAGE stays on `develop`.
 

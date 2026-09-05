@@ -2,6 +2,15 @@
 
 ## Current route correction, 2026-09-05
 
+EXP-058 closes the first local gate negatively: an exact 40-row integer dual excludes `2eta_8`
+from the complete radius-two source span. Any later source must include a column on which
+that dual evaluates nontrivially. This necessary escape condition is not a global parity dual.
+EXP-059 now tests a uniform integral potential parametrization in the fixed high pair
+`{6p,8p-4}`. Its predicted constant-size connecting columns are a structural alternative to
+neighborhood growth; the full quotient and mixed-high compatibility must still be proved.
+The new primary-source dossier on relative divisor complexes is conditional background, not
+an asserted identification of the CAOS presentation with a projective-plane complex.
+
 EXP-054 finds a missing full-boundary coordinate in the EXP-053 literal source inclusion;
 the reduced matrix identities remain valid. EXP-055 removes it by a uniform singleton unit
 filler. EXP-056 proves a `p-1`-term source formula and transfers the class to `gamma_p`.

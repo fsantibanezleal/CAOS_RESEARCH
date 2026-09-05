@@ -2,6 +2,12 @@
 
 ## Current result and limits, 2026-09-05
 
+EXP-058 independently refutes local radius-two source membership at p=8: its 330 original
+columns and 2669 signed incidences are annihilated by an integer functional pairing to 4
+with `2eta_8`. This is a rigorous local rational exclusion. It neither excludes a longer
+source nor proves a global mod-two obstruction. Any full source must contain a column
+escaping that functional. See EXP-058's exact certificate and necessary-condition lemma.
+
 EXP-054 corrects the EXP-053 source interpretation: retained original labels were verified only
 after projection, and direct multiplication has one omitted even row. EXP-055 gives its uniform
 unit filler and repairs all three known full source chains. The finite relative torsion
