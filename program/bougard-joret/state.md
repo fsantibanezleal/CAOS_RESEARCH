@@ -6,7 +6,7 @@
 | 2026-09-04 | opened | exploring | Deterministic exact checker and full controls run |
 | 2026-09-04 | exploring | consolidating | EXP-001 uniform theorem and equality characterization survived adversarial audit; manuscript v0.01 prepared |
 
-The broader extremal problem is open. No solver or detached research process remains running.
+The broader extremal problem is open. The September 4 process closure below describes that completed round; current work is recorded in the September 5 section.
 
 ## 2026-09-04 publication
 
@@ -15,3 +15,11 @@ Manuscript v0.01 is public at [version DOI 10.5281/zenodo.22315252](https://doi.
 ## 2026-09-04 integration close
 
 Research PR #248 passed both CI jobs on head `287e4ad` and merged to develop at `25079250b2e8b3acebbdb2fb9d3865a6b4778d5b`. Management PR #608 merged at `f09d60eeafe64f2e4d1c507a23aedf0be23913ff`. BJB-004 is complete. The next research action is BJB-005, with a new committed hypothesis before computation. No detached process or pending mathematical run remains.
+
+## 2026-09-05 full-shell continuation
+
+EXP-002 preflight was committed at `d15f240` before implementation. The proof establishes $f(\alpha+k+1,\alpha,k)=\lceil k(\alpha+k+1)/2\rceil$ for all $k\ge3$, $2\le\alpha\le k+1$, and characterizes alpha-two extremizers as complements of unions of cycles of lengths at least five. EXP-001 remains unchanged. Refer to EXP-002's verdict for the final independent-audit disposition.
+
+The exact certificate is PASS: 75 graphs, 45 direct checks, 36 Harary cases, 15 odd-degree-sum cases, 75 damaged-edge controls, eight cycle controls, and 32,768 order-six graphs yielding 60 extremals. These finite checks support the written universal proof.
+
+Lifecycle remains consolidating. Manuscript v0.02 is published at DOI `10.5281/zenodo.22341644`; concept-latest and public-byte verification pass for all 343,535 bytes. All ten pages were inspected, final LaTeX warnings are absent, and the combined repository suite has 100 passing tests after integrating concurrent develop. Both complete-proof and manuscript-transcription audits pass. Research PR #251 is the pending scoped integration gate. No global release is asserted. Navigation: [September 5 plan](plan-2026-09-05.md).

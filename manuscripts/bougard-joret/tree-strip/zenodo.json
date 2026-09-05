@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "title": "A tree characterization one vertex above the Bougard-Joret counterexample boundary",
+    "title": "The first interior shell of the Bougard-Joret extremal problem",
     "upload_type": "publication",
     "publication_type": "preprint",
-    "publication_date": "2026-09-04",
-    "version": "0.01",
+    "publication_date": "2026-09-05",
+    "version": "0.02",
     "creators": [
       {
         "name": "Santibanez-Leal, Felipe",
@@ -12,7 +12,7 @@
         "affiliation": "CAOS Research program"
       }
     ],
-    "description": "<p>We prove that for every integer k at least 3, the minimum number of edges of a k-connected graph on 2k vertices with independence number k-1 equals k squared. We characterize every extremal graph using a nonstar tree on k+1 vertices and independent missing-neighbor fibers of sizes degree minus one. The numerical extension beyond previously identified ranges begins at k=4; k=3 is a known consistency case. The proof includes the exceptional two-surviving-tree-vertices connectivity case. Exact finite controls include all nonisomorphic trees on 4 through 9 vertices, independent cut and max-flow verifiers, and a complete labeled order-six census. Das and Gupta retain priority for the original Bougard-Joret disproof and preceding boundary classification. This preprint does not resolve the full revised first regime or second regime, and has not been peer reviewed.</p>",
+    "description": "<p>Version 0.02 proves the entire admissible first interior shell: for every integer k at least 3 and every independence number a from 2 through k+1, the minimum size of a k-connected graph of order a+k+1 and independence number a is ceiling(k(a+k+1)/2). The construction combines classical Harary graphs, complement matchings and injective missing-neighbor pairs, with a self-contained connectivity proof for all parity cases. All extremizers at a=2 are complements of disjoint cycles of lengths at least five. The complete nonstar-tree characterization at a=k-1 from version 0.01 is retained. Exact finite controls cover 75 graphs and include an independent NetworkX audit. The original disproof remains credited to Das and Gupta; classical and previously published parameter overlaps are identified. This settles a restricted infinite shell, not the general revised first regime or second regime. Preprint, not peer reviewed.</p>",
     "access_right": "open",
     "license": "cc-by-4.0",
     "keywords": [
@@ -20,7 +20,7 @@
       "vertex connectivity",
       "independence number",
       "Bougard-Joret conjecture",
-      "trees",
+      "Harary graphs",
       "exact verification"
     ],
     "related_identifiers": [
@@ -38,27 +38,54 @@
         "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
         "relation": "isSupplementTo",
         "scheme": "url"
+      },
+      {
+        "identifier": "10.1073/pnas.48.7.1142",
+        "relation": "references",
+        "scheme": "doi"
       }
     ]
   },
+  "previous_publications": [
+    {
+      "record_id": 22315252,
+      "doi": "10.5281/zenodo.22315252",
+      "concept_doi": "10.5281/zenodo.22315251",
+      "version": "0.01",
+      "public_url": "https://zenodo.org/records/22315252",
+      "public_file_url": "https://zenodo.org/api/records/22315252/files/bougard-joret-tree-strip-v0.01.pdf/content",
+      "publication_verified": true,
+      "latest_version_verified": true,
+      "unauthenticated_fresh_download_matches": true,
+      "bytes": 319548,
+      "md5": "49f3376531bd8a61b5764f452c95b128",
+      "sha256": "a804014fddf8d47ae0dc3988c7b1e6a0d3619daf0a423b398724321095bbb323",
+      "verified_utc": "2026-09-05T02:38:28.448762+00:00",
+      "pdf_pages": 5,
+      "visual_qa": "all five pages rendered and inspected",
+      "tests": "61 passed",
+      "experiment": "EXP-001-tree-strip",
+      "scope": "adjacent exceptional strip only; full general problem remains open"
+    }
+  ],
   "publication": {
-    "record_id": 22315252,
-    "doi": "10.5281/zenodo.22315252",
+    "record_id": 22341644,
+    "doi": "10.5281/zenodo.22341644",
     "concept_doi": "10.5281/zenodo.22315251",
-    "version": "0.01",
-    "public_url": "https://zenodo.org/records/22315252",
-    "public_file_url": "https://zenodo.org/api/records/22315252/files/bougard-joret-tree-strip-v0.01.pdf/content",
+    "version": "0.02",
+    "public_url": "https://zenodo.org/records/22341644",
+    "public_file_url": "https://zenodo.org/api/records/22341644/files/bougard-joret-tree-strip-v0.02.pdf/content",
     "publication_verified": true,
     "latest_version_verified": true,
     "unauthenticated_fresh_download_matches": true,
-    "bytes": 319548,
-    "md5": "49f3376531bd8a61b5764f452c95b128",
-    "sha256": "a804014fddf8d47ae0dc3988c7b1e6a0d3619daf0a423b398724321095bbb323",
-    "verified_utc": "2026-09-05T02:38:28.448762+00:00",
-    "pdf_pages": 5,
-    "visual_qa": "all five pages rendered and inspected",
-    "tests": "61 passed",
-    "experiment": "EXP-001-tree-strip",
-    "scope": "adjacent exceptional strip only; full general problem remains open"
+    "bytes": 343535,
+    "md5": "8538423d7341f25cd88b8a3f7dac43f9",
+    "sha256": "faed3c5a760390a89bc77945e99837c85a55b09f6923570dcde50f289439d4b7",
+    "verified_utc": "2026-09-05T11:26:29.929118+00:00",
+    "pdf_pages": 10,
+    "visual_qa": "all ten pages rendered and inspected; no final LaTeX warnings",
+    "tests": "62 passed",
+    "experiment": "EXP-002-next-shell, retaining EXP-001",
+    "scope": "entire admissible n=alpha+k+1 shell; general revised regimes remain open"
   }
 }

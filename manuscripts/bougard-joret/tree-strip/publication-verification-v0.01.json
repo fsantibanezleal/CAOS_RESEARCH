@@ -1,0 +1,20 @@
+{
+  "record_id": 22315252,
+  "doi": "10.5281/zenodo.22315252",
+  "concept_doi": "10.5281/zenodo.22315251",
+  "version": "0.01",
+  "public_url": "https://zenodo.org/records/22315252",
+  "public_file_url": "https://zenodo.org/api/records/22315252/files/bougard-joret-tree-strip-v0.01.pdf/content",
+  "publication_verified": true,
+  "latest_version_verified": true,
+  "unauthenticated_fresh_download_matches": true,
+  "bytes": 319548,
+  "md5": "49f3376531bd8a61b5764f452c95b128",
+  "sha256": "a804014fddf8d47ae0dc3988c7b1e6a0d3619daf0a423b398724321095bbb323",
+  "verified_utc": "2026-09-05T02:38:28.448762+00:00",
+  "pdf_pages": 5,
+  "visual_qa": "all five pages rendered and inspected",
+  "tests": "61 passed",
+  "experiment": "EXP-001-tree-strip",
+  "scope": "adjacent exceptional strip only; full general problem remains open"
+}
