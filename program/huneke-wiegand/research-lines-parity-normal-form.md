@@ -35,8 +35,12 @@ EXP-062's independent audit and all 39 dedicated tests pass. The new 18-page
 companion has completed manuscript QA and the repository has 213 passing tests.
 DOI `10.5281/zenodo.22342976` is published and its 503,686-byte PDF passed
 fresh unauthenticated public/latest/download verification at 2026-09-05
-13:36:50 UTC; source/PDF commit is `422e942`. PR #253 remains open, so
-checked promotion is pending. The existing stronger publication gate was met
+13:36:50 UTC; source/PDF commit is `422e942`. Research PRs #253/#257 merged
+with green guards/tests, including pipeline smoke, and work/develop/main
+synchronized at `4aed2b0`. Management PR #616 merged at `7ff09f8`, with
+develop/main synchronized and 32 dirty Rajo paths untouched. The core round
+is delivered. These commit IDs identify the core theorem/publication release.
+The existing stronger publication gate was met
 by the uniform theorem, not relaxed to admit finite evidence. No additional
 manuscript is needed for this closed result. The dated route assessments below
 are historical and superseded wherever they describe these source/duality gates.

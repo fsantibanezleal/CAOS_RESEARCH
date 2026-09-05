@@ -1941,3 +1941,20 @@
   reservation/unpublished checkpoint. The next mathematics remains comparison
   maps, then the complementary quotient, then the recurrence; no new experiment
   or additional manuscript is introduced by this publication closeout.
+
+## 2026-09-05 - checked promotion closes the quadratic-family core round
+
+- Research PR #253 merged at `4073d730158ea8bf239f85e5d83ed2bbfd234657`.
+  PR #257 then merged at `4aed2b050ccd282d13e5389a4ee732e8859ce09f`
+  at 13:46:22 UTC. Both passed guards/tests, including pipeline smoke;
+  work, develop and main synchronized at `4aed2b0`.
+- Management PR #616 merged at `7ff09f87f8217e96fc7919d3deb8bd3cad9d7c2a`.
+  Its develop/main refs synchronized; the 32 unrelated dirty Rajo paths
+  remained untouched. The management checkout was not branched or isolated.
+- HWB-083 is done: EXP-058--062, the 18-page published and freshly verified
+  companion, and their core repository promotion are delivered. The current
+  navigation sections now supersede their earlier open-PR checkpoints.
+- This receipt identifies the verified core release, without predicting later
+  documentation-only commit or PR identities. Mathematical priorities remain explicit comparison
+  maps, complementary quotient/upper bound, then recurrence; no new experiment,
+  manuscript, computation or live API action is introduced by this reconciliation.

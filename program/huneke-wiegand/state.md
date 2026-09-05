@@ -29,8 +29,10 @@ classes in a Huneke-Wiegand Koszul presentation**, is published at DOI
 `10.5281/zenodo.22342976` (concept `10.5281/zenodo.22342975`). Published
 2026-09-05T13:35:34Z; fresh public/latest metadata and all 503686 PDF bytes
 passed unauthenticated verification at 13:36:50Z. The 18-page all-page QA and
-mathematical gates are complete. PR promotion remains a delivery gate.
-Issue #252 and PR #253 remain open; no develop/main promotion is claimed.
+mathematical gates are complete. PR #253 merged at `4073d73`; checked PR #257
+promoted to main at `4aed2b0`, followed by work/develop synchronization.
+Issue #252 is closed. Management PR #616 merged at `7ff09f87`, with its
+develop/main synchronized and all 32 unrelated dirty Rajo paths preserved.
 Existing published v0.23 and curvilinear v0.02 remain frozen. The transitions
 and dated narratives below retain the earlier states rather than overwrite them.
 

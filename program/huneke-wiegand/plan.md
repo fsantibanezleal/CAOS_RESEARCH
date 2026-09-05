@@ -47,8 +47,14 @@ version DOI `10.5281/zenodo.22342976`, concept DOI
 `10.5281/zenodo.22342975`. Fresh unauthenticated public/latest metadata and
 download checks passed at 13:36:50 UTC: all 503,686 bytes match PDF SHA-256
 `c4b73414eb06d141c09a2980a7c349043bdc576326a9018e800a0b6e349a0ec8`.
-The source/PDF is in commit `422e942`. Issue #252 and open PR #253 track
-delivery; checked PR-based promotion remains before calling the round delivered.
+The source/PDF is in commit `422e942`. The core round is delivered: research
+PR #253 merged at `4073d730158ea8bf239f85e5d83ed2bbfd234657`, and PR #257
+merged at `4aed2b050ccd282d13e5389a4ee732e8859ce09f` on 2026-09-05 at
+13:46:22 UTC. Both passed guards/tests including pipeline smoke; work,
+develop and main synchronized at the latter commit. Management PR #616 merged
+at `7ff09f87f8217e96fc7919d3deb8bd3cad9d7c2a`, synchronizing develop/main
+while leaving 32 dirty Rajo paths untouched. These IDs identify the verified
+core release; subsequent documentation-only receipts do not reset its delivered state.
 Historical checkpoints below are retained, not current instructions to rerun
 already closed experiments or publish another manuscript for the same result.
 
