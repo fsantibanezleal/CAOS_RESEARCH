@@ -5,15 +5,60 @@
     "publication_type": "preprint",
     "publication_date": "2026-09-04",
     "version": "0.01",
-    "creators": [{"name": "Santibanez-Leal, Felipe", "orcid": "0000-0002-0150-3246", "affiliation": "CAOS Research program"}],
+    "creators": [
+      {
+        "name": "Santibanez-Leal, Felipe",
+        "orcid": "0000-0002-0150-3246",
+        "affiliation": "CAOS Research program"
+      }
+    ],
     "description": "<p>We prove that for every integer k at least 3, the minimum number of edges of a k-connected graph on 2k vertices with independence number k-1 equals k squared. We characterize every extremal graph using a nonstar tree on k+1 vertices and independent missing-neighbor fibers of sizes degree minus one. The numerical extension beyond previously identified ranges begins at k=4; k=3 is a known consistency case. The proof includes the exceptional two-surviving-tree-vertices connectivity case. Exact finite controls include all nonisomorphic trees on 4 through 9 vertices, independent cut and max-flow verifiers, and a complete labeled order-six census. Das and Gupta retain priority for the original Bougard-Joret disproof and preceding boundary classification. This preprint does not resolve the full revised first regime or second regime, and has not been peer reviewed.</p>",
     "access_right": "open",
     "license": "cc-by-4.0",
-    "keywords": ["extremal graph theory", "vertex connectivity", "independence number", "Bougard-Joret conjecture", "trees", "exact verification"],
+    "keywords": [
+      "extremal graph theory",
+      "vertex connectivity",
+      "independence number",
+      "Bougard-Joret conjecture",
+      "trees",
+      "exact verification"
+    ],
     "related_identifiers": [
-      {"identifier": "10.48550/arXiv.2608.18828", "relation": "references", "scheme": "doi"},
-      {"identifier": "10.1002/jgt.20289", "relation": "references", "scheme": "doi"},
-      {"identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH", "relation": "isSupplementTo", "scheme": "url"}
+      {
+        "identifier": "10.48550/arXiv.2608.18828",
+        "relation": "references",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "10.1002/jgt.20289",
+        "relation": "references",
+        "scheme": "doi"
+      },
+      {
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "relation": "isSupplementTo",
+        "scheme": "url"
+      }
     ]
+  },
+  "publication": {
+    "record_id": 22315252,
+    "doi": "10.5281/zenodo.22315252",
+    "concept_doi": "10.5281/zenodo.22315251",
+    "version": "0.01",
+    "public_url": "https://zenodo.org/records/22315252",
+    "public_file_url": "https://zenodo.org/api/records/22315252/files/bougard-joret-tree-strip-v0.01.pdf/content",
+    "publication_verified": true,
+    "latest_version_verified": true,
+    "unauthenticated_fresh_download_matches": true,
+    "bytes": 319548,
+    "md5": "49f3376531bd8a61b5764f452c95b128",
+    "sha256": "a804014fddf8d47ae0dc3988c7b1e6a0d3619daf0a423b398724321095bbb323",
+    "verified_utc": "2026-09-05T02:38:28.448762+00:00",
+    "pdf_pages": 5,
+    "visual_qa": "all five pages rendered and inspected",
+    "tests": "61 passed",
+    "experiment": "EXP-001-tree-strip",
+    "scope": "adjacent exceptional strip only; full general problem remains open"
   }
 }

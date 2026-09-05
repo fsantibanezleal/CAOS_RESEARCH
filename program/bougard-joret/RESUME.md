@@ -26,7 +26,7 @@ Updated: 2026-09-04.
 
 ## 4. In flight
 
-No mathematical computation remains active. Manuscript v0.01 is compiled/publication work in progress; reserved version DOI `10.5281/zenodo.22315252`, concept record `22315251` checked from the API. A reservation is not publication. Final publication and PR verification are recorded in the closing state entry.
+No mathematical computation remains active. Manuscript v0.01 is PUBLISHED at version DOI `10.5281/zenodo.22315252`, concept DOI `10.5281/zenodo.22315251`. An unauthenticated fresh download matches all 319,548 local PDF bytes, SHA-256 `a804014fddf8d47ae0dc3988c7b1e6a0d3619daf0a423b398724321095bbb323`; the API confirms it is concept-latest. Research PR #248 targets develop; its final state is recorded in the closing report. No serialized global release is claimed.
 
 ## 5. Next actions
 

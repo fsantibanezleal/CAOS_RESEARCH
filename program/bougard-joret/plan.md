@@ -14,7 +14,7 @@ The selected first proof target is the infinite strip $(n,\alpha,k)=(2k,k-1,k)$,
 2. Follow-up: COMPLETE. Both primary final sections and independent novelty/disconfirmation review checked.
 3. EXP-001: COMPLETE. Committed preflight, all-parameter proof, adversarial repair and exact finite controls persisted.
 4. Synthesis: COMPLETE. Verdict, wiki, handoff and manuscript transcribed from the records.
-5. Deliverable verification: IN PROGRESS. Exact replay, structural/content checks, PDF rendering, authorized Zenodo publication and scoped PR promotion.
+5. Deliverable verification: IN PROGRESS only at PR #248 integration. Exact replay, all 61 tests, structural/content checks, all-page PDF inspection, Zenodo publication, concept-latest check and fresh public download verification are COMPLETE.
 
 The runtime has no callable update_plan tool; this file is the durable plan required by the deep-research workflow.
 
