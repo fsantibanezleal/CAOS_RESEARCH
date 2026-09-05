@@ -1801,3 +1801,25 @@
   coefficients remain bounded by four. The `p=10` HNF overruns the safe-stage gate; `p=11` stays locked.
 - Both completions use the identical labelled source chain. HWB-078 now targets one direct
   telescoping identity on `58->63` whose two boundary restrictions are the EXP-052 formulas.
+
+## 2026-09-04 to 2026-09-05 - source audit and uniform endpoint reduction
+
+- EXP-054 refutes a literal full-source reading of EXP-053: exactly one residual row remains,
+  with coefficient `2(-1)^p`, at each training parameter. All projected identities remain valid;
+  its independent full-boundary audit passes 213 checks.
+- EXP-055 proves a one-column unit filler for every p>=4, repairs the three known sources by
+  an even correction, and exposes a fixed-high S slice with only `p-1` terms. Its audit passes
+  456 checks plus 1793 complement-sign identities. No original p=11 HNF source was accessed.
+- EXP-056 proves the uniform full-map identity `M s=b_A+b_B+gamma` by a complete signed face
+  calculation. Source and K residual each have `p-1` terms. All 93 stress parameters pass two
+  exact implementations and mutation controls.
+- EXP-057 proves `eta=gamma+Mq` has four rows and one odd coefficient. The declared minus
+  source sign is refuted, with the p=8 six-row discrepancy preserved. The corrected identity
+  `M(s+q)=b_A+b_B+eta` passes all 93 parameters. Uniform nonvanishing/order-two and the complete
+  quotient are NOT established. HWB-079/080 now own those two independent proof gates.
+- Reviewed all 53 preceding verdict summaries and both manuscript dependency indexes. Neither
+  published paper uses EXP-053. Fresh unauthenticated Zenodo latest-record checks and downloads
+  match the committed v0.23/v0.02 PDFs exactly; management ledger drift from v0.15 is corrected.
+  No new publication was made because the stronger manuscript theorem gate remains unmet.
+- Integrated concurrent Bougard-Joret changes without overwriting them; 99 tests, Ruff, and all
+  content/template/research guards pass. Research PR #247 and management PR #610 track promotion.
