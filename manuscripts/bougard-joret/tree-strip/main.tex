@@ -1,0 +1,289 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.05in,headheight=14pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs,tikz}
+\usepackage{xcolor}
+\definecolor{linknavy}{RGB}{25,55,125}
+\usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
+\usepackage{orcidlink,fancyhdr}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small CAOS Research Preprint}
+\fancyhead[R]{\small A tree characterization\textperiodcentered\ v0.01}
+\fancyfoot[C]{\thepage}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
+\title{A tree characterization one vertex above the\\Bougard--Joret counterexample boundary}
+\author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\small CAOS Research program\\
+\small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
+\date{2026-09-04\\[2pt]\normalsize Version 0.01}
+\begin{document}
+\maketitle
+\begin{center}\small
+\fbox{\parbox{0.92\textwidth}{\centering
+\textbf{PREPRINT}\textperiodcentered\ not peer reviewed\textperiodcentered\ CAOS Research\\
+Bougard--Joret research series, first paper\textperiodcentered\ v0.01\textperiodcentered\ 2026-09-04\\
+\href{https://doi.org/10.5281/zenodo.22315251}{Concept DOI: 10.5281/zenodo.22315251} (latest version)\\
+CC BY 4.0\textperiodcentered\ \href{https://github.com/fsantibanezleal/CAOS_RESEARCH}{Public sources and exact verification record}
+}}
+\end{center}
+\begin{abstract}
+Let $f(n,\alpha,k)$ be the minimum size of a $k$-connected graph of order $n$ and independence number $\alpha$.
+Das and Gupta recently determined the boundary $n=\alpha+k$ and disproved the proposed Bougard--Joret formula there.
+We prove that $f(2k,k-1,k)=k^2$ for every $k\ge3$, and characterize all extremal graphs.
+They arise from a nonstar tree $T$ on $k+1$ vertices and an independent set of $k-1$ vertices, partitioned into missing-neighbor fibers of sizes $\dd_T(t)-1$.
+The proof is elementary and includes the exceptional connectivity case in which only two tree vertices survive a deletion.
+For $k\ge4$ this settles the diagonal immediately above the known counterexample family; the numerical case $k=3$ was already known.
+Exact finite controls use 86 nonstar trees, independent vertex-cut and max-flow checks, and a complete labeled order-six census.
+The universal statement follows from the proof, not from that census. The general interior and second regimes remain unresolved.
+\end{abstract}
+
+\section{Problem, prior work and scope}
+
+All graphs are finite, simple and undirected. Write $\e(G)$ for the number of edges, $\alpha(G)$ for the maximum size of an independent set, and $\kappa(G)$ for vertex connectivity.
+A graph is $k$-connected if it has more than $k$ vertices and deletion of fewer than $k$ vertices leaves it connected.
+
+Bougard and Joret conjectured, under $n\ge2\alpha$, $n\ge\alpha+k$, $\alpha\ge2$, $k\ge3$, that
+\[
+f(n,\alpha,k)=
+\begin{cases}
+\lceil nk/2\rceil,&n\le k\alpha,\\
+t(n,\alpha)+\lceil k\alpha/2\rceil,&n>k\alpha,
+\end{cases}
+\]
+where $t(n,\alpha)$ denotes the edge count of the balanced union of $\alpha$ cliques \cite{BJ}.
+Das and Gupta determine the whole boundary $n=\alpha+k$; in particular, for $k\ge4$ they prove
+\begin{equation}\label{eq:old}
+f(2k-1,k-1,k)=k^2-1,
+\end{equation}
+with extremals exactly the joins of an independent $(k-1)$-set and a tree on $k$ vertices \cite{DG}.
+The original disproof and this preceding-boundary characterization are their results.
+
+The present work addresses the adjacent diagonal $(n,\alpha,k)=(2k,k-1,k)$.
+It proves a formula and an equality characterization on this diagonal, not a corrected general conjecture.
+The numerical range $k\ge4$ lies outside the identified cases in Section~6 of \cite{BJ} and the boundary treated in \cite{DG}.
+For $k=3$, the numerical value is already covered by $n=k\alpha$; it serves as a consistency case here.
+Targeted literature searches and both papers' final sections revealed no matching adjacent-diagonal characterization, but this is not an assertion of exhaustive bibliographic priority.
+
+Our universal deductions are labeled [D], exact finite computations [MV], and suggested extensions [C].
+The proof and verification are recorded in the repository's EXP-001 \cite{Record}.
+
+\section{The tree construction and the extremal theorem}
+
+For a tree $T$ on $k+1$ vertices, let $S$ be a disjoint independent set of size $k-1$.
+Partition $S$ into fibers $(S_t:t\in V(T))$ satisfying
+\begin{equation}\label{eq:fiber}
+|S_t|=\dd_T(t)-1.
+\end{equation}
+Keep all edges of $T$, and for each $s\in S_t$ add edges from $s$ to every tree vertex except $t$.
+Call the resulting graph $G(T,(S_t))$.
+The required partition exists because
+\begin{equation}\label{eq:sum}
+\sum_{t\in V(T)}(\dd_T(t)-1)=2k-(k+1)=k-1.
+\end{equation}
+
+\begin{theorem}[Adjacent exceptional strip, D]\label{thm:main}
+For every integer $k\ge3$,
+\[
+f(2k,k-1,k)=k^2.
+\]
+A graph is extremal for these parameters if and only if it is isomorphic to $G(T,(S_t))$ for a nonstar tree $T$ on $k+1$ vertices and fibers satisfying \eqref{eq:fiber}.
+Every extremal graph has this representation relative to each of its maximum independent sets.
+\end{theorem}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=1.05,vertex/.style={circle,draw=linknavy,fill=white,inner sep=2.5pt}]
+\foreach \i in {0,...,4}{\node[vertex,label=above:{$t_{\i}$}] (t\i) at (1.4*\i,1.5) {};}
+\foreach \i in {0,...,3}{\pgfmathtruncatemacro{\j}{\i+1}\draw[thick,linknavy] (t\i)--(t\j);}
+\foreach \i in {1,...,3}{\node[vertex,label=below:{$s_{\i}$}] (s\i) at (1.4*\i,0) {};
+\draw[dashed,red!65!black,thick] (s\i)--(t\i);}
+\end{tikzpicture}
+\caption{The $k=4$ path construction. The solid path is $T=P_5$; the three dashed pairs are \emph{nonedges}. Add every other pair between the two rows, and no pair within the lower row. This yields an eight-vertex, 16-edge extremal graph.}
+\label{fig:path}
+\end{figure}
+
+\subsection{Regularity and independence}
+
+Every vertex of $S$ has degree $k$. At a tree vertex $t$,
+\[
+\dd_G(t)=\dd_T(t)+(k-1)-|S_t|=k.
+\]
+Thus the graph is $k$-regular, has order $2k$, and has $k^2$ edges.
+
+A nonstar tree of order $k+1$ cannot contain an independent $k$-set: all its edges would then meet the remaining vertex, and connectedness would force a star.
+Consequently $\alpha(T)\le k-1$, and also $\dd_T(t)\le k-1$ for every $t$.
+An independent set contained in either $S$ or $T$ therefore has size at most $k-1$.
+An independent set meeting both parts contains only one tree vertex $t$, because each member of $S$ has only one nonneighbor in $T$.
+Its other vertices lie in $S_t$, so its size is at most
+\[
+1+|S_t|=\dd_T(t)\le k-1.
+\]
+Since $S$ is itself independent, $\alpha(G)=k-1$.
+
+\subsection{Connectivity}
+
+Let $X\subseteq V(G)$ satisfy $|X|<k$, and set
+\[
+A=S\setminus X,\qquad B=V(T)\setminus X.
+\]
+There are at least two vertices in $B$.
+If $A$ is empty, deletion of all $k-1$ vertices of $S$ uses the available deletion budget. Hence $G-X=T$ is connected.
+
+Assume $A\ne\varnothing$ and $|B|\ge3$.
+Any two vertices of $A$ share a neighbor in $B$, since each misses at most one member of $B$.
+All of $A$, and all tree vertices adjacent to at least one member of $A$, therefore lie in a common component $C$.
+At most one tree vertex $t$ can remain outside $C$: such a vertex must be the unique missed vertex of every member of $A$, so $A\subseteq S_t$.
+If $t$ is disconnected from $C$, all its tree neighbors must have been deleted.
+All vertices of $S\setminus A$ were also deleted, and these sets are disjoint. Therefore
+\begin{align*}
+|X|&\ge k-1-|A|+\dd_T(t)\\
+&\ge k-1-|S_t|+\dd_T(t)=k,
+\end{align*}
+a contradiction.
+
+The case $|B|=2$ requires a different argument.
+Write $B=\{u,v\}$. Exactly $k-1$ tree vertices have been deleted, so every member of $S$ survives.
+If a vertex of $S$ misses a tree vertex other than $u,v$, it is adjacent to both $u$ and $v$.
+Every other member of $S$ is adjacent to at least one of them, proving connectedness.
+Otherwise the only nonempty fibers are $S_u,S_v$.
+By \eqref{eq:fiber}, every other tree vertex is a leaf.
+Since $T$ is nonstar, $u,v$ are exactly its two nonleaf vertices, and they must be adjacent: an internal vertex on their path would be a third nonleaf vertex.
+The surviving edge $uv$ reconnects the graph.
+Thus $G$ is $k$-connected in every case.
+
+\subsection{Optimality and all equality cases}
+
+Any $k$-connected graph on $2k$ vertices has minimum degree at least $k$ and hence at least $k^2$ edges.
+The constructed graphs attain this lower bound, proving the numerical statement.
+
+Conversely, let $G$ be extremal, and let $S$ be any maximum independent set, of order $k-1$.
+Equality in the degree-sum lower bound forces $k$-regularity.
+The residual graph $H=G-S$ has $k+1$ vertices and is connected, since fewer than $k$ vertices were deleted.
+Each vertex of $S$ misses exactly one vertex of $H$.
+There are $k(k-1)$ edges between $S$ and $H$, leaving
+\[
+\e(H)=k^2-k(k-1)=k.
+\]
+Thus $H$ is a tree.
+Writing $S_t$ for the vertices that miss $t$, regularity gives
+\[
+k=\dd_H(t)+(k-1)-|S_t|,
+\]
+so \eqref{eq:fiber} holds.
+If $H$ were a star, its $k$ leaves would form an independent set in $G$, contrary to $\alpha(G)=k-1$.
+This completes the proof of Theorem~\ref{thm:main}.\hfill$\square$
+
+\begin{remark}
+The theorem characterizes graphs relative to a marked maximum independent set.
+It does not assert a bijection between nonstar trees and unmarked graph isomorphism classes.
+Different maximum independent sets in the same graph need not give a uniquely determined representation without a further argument.
+\end{remark}
+
+\section{Boundary transition and a residual-graph viewpoint}
+
+Combining Theorem~\ref{thm:main} with \eqref{eq:old} gives the following precise transition.
+\begin{corollary}[D, using the preceding-boundary theorem of \cite{DG}]
+For every $k\ge4$,
+\[
+f(2k,k-1,k)-f(2k-1,k-1,k)=1.
+\]
+The excess over the degree-sum prediction drops from $\lfloor k/2\rfloor-1$ to zero.
+\end{corollary}
+\begin{proof}
+The values are $k^2$ and $k^2-1$.
+At order $2k-1$, the prediction is $\lceil k(2k-1)/2\rceil=k^2-\lfloor k/2\rfloor$; at order $2k$ it is $k^2$.
+\end{proof}
+
+The mechanism differs from simply adding a vertex to a preceding-boundary extremal graph.
+On the original boundary every independent-set vertex is adjacent to every residual vertex.
+On the new diagonal it misses exactly one. The sizes of these missing-neighbor fibers compensate for the residual tree degrees, making every total degree equal to $k$.
+Connectivity must still be proved separately; the double-star case shows why a common-neighbor argument alone is insufficient.
+
+\section{Exact validation and adversarial controls}
+
+The computational record \cite{Record} is deliberately finite.
+It supports the proof by testing constructions and implementation failure modes; it is not the source of the universal quantifier.
+All arithmetic is integer and all choices are deterministic.
+The hypothesis was committed before the run.
+
+Leaf augmentation generates every tree: deleting a leaf reduces any tree to a smaller tree.
+Canonical encodings obtained by minimizing rooted parenthesis encodings over all roots deduplicate isomorphic trees.
+All 92 trees of orders four through nine were generated; six stars failed the independence target, while all 86 nonstars passed.
+For every valid construction, exhaustive deletion of fewer than $k$ vertices agreed with a separately implemented vertex-split max-flow test.
+Independence was verified both by include/exclude recursion and by direct subset enumeration.
+Deleting an edge from a valid construction was rejected by the connectivity checker.
+
+An independent enumeration starts with \emph{all labeled residual graphs} on $k+1$ vertices with $k$ edges and no isolates, rather than assuming a tree.
+Every allowed missing-neighbor assignment is enumerated from the degree sequence.
+The assignments for a fixed residual graph differ by explicit permutations of $S$, so expensive invariants are checked once per residual graph.
+Table~\ref{tab:residual} records the results; the accepted graphs are exactly the connected nonstars.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{rrrrrr}
+\toprule
+$k$ & Residuals & Assignments & Nonstar trees & Stars & Disconnected\\
+\midrule
+3 & 16 & 28 & 12 & 4 & 0\\
+4 & 135 & 605 & 120 & 5 & 10\\
+5 & 1581 & 22986 & 1290 & 6 & 285\\
+\bottomrule
+\end{tabular}
+\caption{Exact labeled residual enumeration [MV]. Assignment totals include rejected residuals; they are not counts of unmarked extremal graphs.}
+\label{tab:residual}
+\end{table}
+
+A separate exhaustive census visits all $2^{15}=32768$ labeled graphs on six vertices.
+It finds 60 extremal graphs for $(6,2,3)$ and verifies the tree characterization relative to every maximum independent set in each.
+The result is consistent with the triangular-prism base case.
+The experiment emits deterministic JSON checkpoints and a source hash; its regression test reruns the certificate into a temporary directory and compares the complete result.
+
+An independent adversarial reasoning review caught the initially omitted $|B|=2$ case before computation.
+The committed hypothesis and the proof above include its repair.
+The same review rejected an unsupported uniqueness interpretation for unmarked tree representations.
+These checks are not peer review or a proof-assistant formalization.
+
+\section{Remaining questions and reproducibility}
+
+The entire shell $n=\alpha+k+1$ remains outside this theorem when $k-\alpha\ne1$.
+In degree-sum equality cases, a maximum independent set again yields missing-neighbor fibers, but the residual graph need not be a tree [C, proposed research direction].
+A new argument must control its connectivity and independence number.
+Neither the corrected general first regime nor the second regime is established here.
+
+The experiment directory contains \texttt{hypothesis.md}, \texttt{proof.md}, \texttt{run.py}, \texttt{verdict.md}, and \texttt{artifacts/certificate.json}.
+From the repository root, run:
+\begin{quote}\small\ttfamily
+python problems/combinatorics/bougard-joret/\\
+experiments/EXP-001-tree-strip/run.py
+\end{quote}
+The displayed path is wrapped typographically; the shell command uses one uninterrupted path.
+The checker uses only the Python standard library.
+A portfolio-wide literature review and its limitations are stored separately in the problem context; they are not claims of this theorem.
+The experiment's verdict, rather than a dashboard or manuscript summary, owns the computational evidence.
+
+\begin{thebibliography}{9}
+\bibitem{BJ} N. Bougard and G. Joret.
+Turan's theorem and $k$-connected graphs.
+\emph{Journal of Graph Theory} 58 (2008), 1--13.
+\href{https://doi.org/10.1002/jgt.20289}{doi:10.1002/jgt.20289}.
+Author version: \url{https://gjoret.be/papers/turan.pdf}.
+
+\bibitem{DG} J. Das and S. Gupta.
+Counterexample to the Bougard--Joret conjecture.
+arXiv:2608.18828v1, 19 August 2026.
+\url{https://arxiv.org/abs/2608.18828v1}.
+
+\bibitem{Record} F. Santiba\~nez-Leal.
+CAOS Research, Bougard--Joret EXP-001: tree-strip proof and exact certificate, 4 September 2026.
+\href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/work/bougard-joret/literature-boundary-20260904/problems/combinatorics/bougard-joret/experiments/EXP-001-tree-strip}{Public experiment record}.
+Preprint version DOI: \href{https://doi.org/10.5281/zenodo.22315252}{10.5281/zenodo.22315252}.
+\end{thebibliography}
+\end{document}

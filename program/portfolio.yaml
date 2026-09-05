@@ -1,7 +1,7 @@
 # Machine-readable portfolio board (baked into the web home page by the data-pipeline).
 # States per methodology/01-lifecycle.md. Feasibility: A real experimental surface, B verification/
 # visualization surface, C mainly expository.
-updated: "2026-09-03"
+updated: "2026-09-04"
 areas:
   - { slug: algebraic-geometry,      name: "Algebraic geometry and polynomial maps" }
   - { slug: number-theory,           name: "Number theory and L-functions" }
@@ -30,6 +30,6 @@ problems:
   - { slug: hodge,                 area: algebraic-geometry,     state: proposed,  feasibility: C,  gpu: false }
   - { slug: huneke-wiegand,        area: commutative-algebra,    state: published,     feasibility: A,  gpu: false,   opened: "2026-08-01" }
   - { slug: petersen-coloring,     area: combinatorics,          state: consolidating, feasibility: A, gpu: false, opened: "2026-09-03" }
-  - { slug: bougard-joret,         area: combinatorics,          state: proposed,  feasibility: A,  gpu: false }
+  - { slug: bougard-joret,         area: combinatorics,          state: consolidating, feasibility: A, gpu: false, opened: "2026-09-04" }
   - { slug: hoa-mnh,               area: combinatorics,          state: proposed,  feasibility: A,  gpu: false }
   - { slug: boij-soderberg-realizability, area: commutative-algebra, state: proposed, feasibility: A, gpu: false }
