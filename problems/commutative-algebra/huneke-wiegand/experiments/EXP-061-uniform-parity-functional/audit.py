@@ -359,7 +359,7 @@ def save_checkpoint(output, result):
     result.pop("artifact_hash", None)
     result["artifact_hash"] = digest(result)
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
 
 
 def audit(output=HERE / "artifacts" / "audit-results.json", seconds=120, memory_mib=1024):

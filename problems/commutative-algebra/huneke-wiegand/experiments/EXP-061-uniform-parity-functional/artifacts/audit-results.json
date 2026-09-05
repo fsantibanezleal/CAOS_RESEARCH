@@ -1,8 +1,8 @@
 {
   "arithmetic": "F2 using separately encoded original offset intervals and all source faces",
-  "artifact_hash": "fad1fa7b54eda0c4334bce2c5e899d1416c9f54e07a3bc23440142bdedfe26a7",
+  "artifact_hash": "42e3014f0c08c65374ec8d9ab95d092ef90dccf28b7f87aa1ed49081d43a80c5",
   "audit": "complete_original_F2_sector_row_space",
-  "auditor_sha256": "3c4447cf551bbb47388f37925b0c638d23318819dacd93b380504b0f1388a65c",
+  "auditor_sha256": "2808798097a4c257c640e864ad73ffc23981197d4f422ee3e8472c14f7ab3ab5",
   "campaign": [
     8,
     9,

@@ -75,13 +75,19 @@ temporary output paths. No dense global ambient matrix, HNF/SNF, or old
 |---|---|
 | `run.py` | `767b34ffe8dcd880ece54743bfff400a59f3c91471483afc5a76350d8de60968` |
 | `artifacts/results.json` | `0dbff45a4da41912b5d0857f7fea7d3b22b45cfc1ff955f14a008d47a1a1dc7c` |
-| `audit.py` | `3c4447cf551bbb47388f37925b0c638d23318819dacd93b380504b0f1388a65c` |
-| `artifacts/audit-results.json` | `0a2641673c1bffa62221d0073e6443a6acb9ee3cde2ce768d309ccb3f071e44f` |
+| `audit.py` | `2808798097a4c257c640e864ad73ffc23981197d4f422ee3e8472c14f7ab3ab5` |
+| `artifacts/audit-results.json` | `0d891037c2dd007d3f0cd2c971a4be7529d789c4317307355b711e1afc882b07` |
 
 Producer internal hash:
 `14192d0977aad7b876a94f3c8bcb91c93c67b2997ebe65e28023a983548cf2df`.
 Independent certificate internal hash:
-`fad1fa7b54eda0c4334bce2c5e899d1416c9f54e07a3bc23440142bdedfe26a7`.
+`42e3014f0c08c65374ec8d9ab95d092ef90dccf28b7f87aa1ed49081d43a80c5`.
+
+After the first result commit, a Git-blob comparison caught Windows CRLF in the
+audit receipt while the repository enforces LF. The writer now explicitly emits
+LF; a complete rerun reproduces every mathematical certificate and count. The
+hashes above identify this portable replay, not the earlier platform-dependent
+serialization. No hypothesis, source formula, or proof changed.
 
 ## Research and publication boundary
 
