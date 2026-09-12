@@ -56,5 +56,18 @@
     {"path": "program/riemann-hypothesis/release-0.65.000/screenshots/desktop-en-light-exp004.png", "bytes": 234920, "sha256": "e800eed06af4750be22c5df1da75dd544e76cab6346fd653122c45291a8577fe"},
     {"path": "program/riemann-hypothesis/release-0.65.000/screenshots/phone-es-dark-exp004-verdict.png", "bytes": 53129, "sha256": "43e62f7d348f2f29b5138c92f795cdae48d41fbf47ec9e02ae60e3d888ddc943"}
   ],
-  "deployment": {"status": "pending", "main_commit": null, "tag": null, "pages_run": null, "live_receipt": null}
+  "deployment": {
+    "status": "live-verified",
+    "main_commit": "24a2cb250e44fa59c9f6a56c86eefdf009258e70",
+    "tag": "v0.65.000",
+    "pages_run": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/34718338730",
+    "live_receipt": {
+      "path": "program/riemann-hypothesis/release-0.65.000/live-verification.json",
+      "browser_receipt_path": "tmp/riemann-live-v065/receipt.json",
+      "browser_receipt_sha256": "38681d6fdf8810fbec99b74433a9355debcb9a5cb4ebc710d0e95355a2c21840",
+      "verified_utc": "2026-09-12T20:59:16.785Z",
+      "scenarios": 8,
+      "failures": 0
+    }
+  }
 }
