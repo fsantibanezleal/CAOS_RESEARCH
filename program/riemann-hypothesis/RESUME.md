@@ -5,9 +5,9 @@
 Read [state.md](state.md), [backlog.md](backlog.md), [plan.md](plan.md), then the
 latest source verdicts. Evidence outranks this handoff. Public release v0.65.000
 is released and live-verified; v0.02 is published at DOI 10.5281/zenodo.22728744
-and the four-record replay is integrated. Main commit
-`bb96e72393b3e8eb0d7a7e400b9cdf665d09eae2`, tag `v0.65.000`, CI and Pages runs,
-and the live receipt are recorded below. The general RH remains open.
+and the four-record replay is integrated. The release commit
+`24a2cb250e44fa59c9f6a56c86eefdf009258e70` (tag `v0.65.000`), CI and Pages runs,
+and the live receipt are recorded below; the general RH remains open.
 
 ## 2. The objects table
 
