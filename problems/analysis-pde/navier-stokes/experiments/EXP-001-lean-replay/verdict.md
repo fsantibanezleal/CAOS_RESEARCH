@@ -42,36 +42,45 @@ A caution about the three "error" matches a naive grep finds in the smoke log: t
 names `NavierStokes.ErrorHarmonics`, `GlobalBaseError` and `GaussianErrorNaturality`. Grepping for
 "error" without looking is how a clean build gets reported as a broken one.
 
-## Result, Euler: INCONCLUSIVE, and the cause is this machine
+## Result, Euler: build DISRUPTED by a corrupted cache, not by the artifact; repair in progress
 
-The full build, which additionally compiles the Euler development, was disrupted. It produced 25
-errors, and their distribution is the whole story:
+The full build, which additionally compiles the Euler development, failed. The failure was diagnosed
+in three passes rather than reported at face value, because the committed hypothesis said a red build
+is first of all evidence about this machine.
+
+The error distribution across both build attempts is the whole story:
 
 | error kind | count |
 |---|---|
-| `failed to read file` | 19 |
-| `Lean exited with code 3221226505` | 5 |
-| unknown identifier, type mismatch, sorry, or any other mathematical error | **0** |
+| `failed to read file ...olean` / `...olean.private` | many, on scattered unrelated mathlib files |
+| `Lean exited with code 3221226505` (`0xC0000409`, a Windows process crash) | several |
+| unknown identifier, type mismatch, `sorryAx`, or any other mathematical error | **0** |
 
-The 19 read failures are on **nineteen different, unrelated files**:
-`Mathlib/SetTheory/Ordinal/Basic.olean.private`, `Mathlib/Topology/Separation/Hausdorff.olean.private`,
-`Mathlib/Tactic/FieldSimp.olean`, `Mathlib/Tactic/ITauto.ir`, and among them
-`elan/toolchains/.../Lean/Elab/Tactic/Omega/Frontend.olean.private`, which is part of **the Lean
-toolchain itself and not of the project under test**. `3221226505` is `0xC0000409`, a Windows process
-crash, consistent with reads returning truncated or locked data.
+The failing reads are on files the **Euler** modules import but the Navier-Stokes modules do not
+(`Mathlib/Analysis/InnerProductSpace/Dual`, `Analysis/Asymptotics/Defs`, `Tactic/FieldSimp`,
+`SetTheory/Ordinal/Basic`, and one inside the Lean toolchain itself). That is exactly why the smoke
+build (Navier-Stokes only) succeeds while the full build (Euler) fails: Euler touches a larger,
+different slice of mathlib.
 
-The named files exist and are intact: `Ordinal/Basic.olean.private` is 1,058,760 bytes on disk. The
-cache holds 8,371 `.olean.private` files against 8,381 `.olean`.
+Diagnosis, refined across the attempts:
 
-The cause is external and was visible while it happened. During this stage, free space on E: went from
-12 GB to 337 GB to 3,917 GB as several hundred gigabytes were deleted by something outside this
-session. Heavy concurrent deletion on the same volume is a sufficient explanation for scattered
-transient read failures and crashed reader processes, and no other explanation accounts for a failure
-inside the toolchain's own files.
+1. **First attempt (09:xx).** During this build, several hundred gigabytes were deleted on E: by
+   something outside this session (free space jumped 12 GB to 337 GB to 3,917 GB). Live I/O
+   contention during that storm explained scattered transient read failures.
+2. **Second attempt (14:xx), disk quiet.** The read failures RECURRED on the same class of files with
+   the volume idle. So the storm did not merely disrupt reads in flight, it **corrupted** some cached
+   mathlib oleans: they exist at full size (`Ordinal/Basic.olean.private` is 1,058,760 bytes) but read
+   as damaged. `lake exe cache get` reports them "already decompressed" and trusts them, so the
+   corruption persists across runs.
 
-**Per the hypothesis committed before the run: this is evidence about the machine, not about the
-artifact, and it is not reported as a defect.** The Euler half is re-run once the volume is quiet; the
-outcome is recorded here when it lands.
+Either way, zero mathematical errors, and the fault is in the local mathlib cache, not in the OpenAI
+artifact. Per the committed hypothesis, this is not reported as a defect in the certificate.
+
+**Repair in progress.** `lake exe cache get!` forces a fresh re-fetch of all mathlib oleans, replacing
+the corrupted files, followed by a clean full build. The driver is `E:/_Temp/lean-repair.sh`, logs
+under `E:/_Temp/lean-build/` (`cache-repair.log`, `build-repair.log`). The Euler outcome is recorded
+here when it lands; the Navier-Stokes confirmation above stands regardless, having built cleanly three
+times.
 
 ## What this does and does not establish
 
@@ -90,6 +99,6 @@ experiment only shows the proof of it is machine-checkable.
 | stage | budget | actual |
 |---|---|---|
 | toolchain plus mathlib cache | 90 min | about 46 min, exit 0 |
-| smoke build of the Navier-Stokes comparator module | 2 h | about 60 min, exit 0 |
-| full build including Euler | 8 h | disrupted, rerun pending |
+| smoke build of the Navier-Stokes comparator module | 2 h | about 60 min, exit 0, and re-confirmed on two later runs |
+| full build including Euler | 8 h | corrupted-cache repair in progress |
 | disk floor | abort below 5 GB free | low-water mark about 12 GB, never triggered |
