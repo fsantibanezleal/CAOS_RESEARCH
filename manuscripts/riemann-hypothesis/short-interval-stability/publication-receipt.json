@@ -1,10 +1,13 @@
 {
-  "record_id": 22727389,
-  "version_doi": "10.5281/zenodo.22727389",
+  "record_id": "22728744",
+  "version_doi": "10.5281/zenodo.22728744",
   "concept_doi": "10.5281/zenodo.22727388",
-  "verified_utc": "2026-09-12T16:01:24.122190+00:00",
-  "public_url": "https://zenodo.org/records/22727389",
-  "filename": "riemann-short-interval-stability-v0.01.pdf",
+  "version": "0.02",
+  "source_id": "22727389",
+  "verified_utc": "2026-09-12T19:36:45.464853+00:00",
+  "public_url": "https://zenodo.org/records/22728744",
+  "filename": "riemann-short-interval-stability-v0.02.pdf",
+  "fresh_unauthenticated_download": true,
   "public_metadata": {
     "resource_type": {
       "id": "publication-preprint",
@@ -34,7 +37,7 @@
         ]
       }
     ],
-    "title": "A stability refinement for simple critical zeros in short intervals",
+    "title": "Simple critical zeros in short intervals: stability, pressure, and parity",
     "publisher": "Zenodo",
     "publication_date": "2026-09-12",
     "subjects": [
@@ -48,7 +51,7 @@
         "subject": "simple critical zeros"
       },
       {
-        "subject": "distinct zeros"
+        "subject": "odd multiplicity"
       },
       {
         "subject": "pair correlation"
@@ -124,7 +127,7 @@
         }
       }
     ],
-    "version": "0.01",
+    "version": "0.02",
     "rights": [
       {
         "id": "cc-by-4.0",
@@ -141,23 +144,29 @@
         }
       }
     ],
-    "description": "<p>We derive a stability refinement of Biao Wang's 2026 short-interval bounds for simple critical zeros and distinct zeros of the Riemann zeta function. For each fixed exponent theta above the unique positive-proportion threshold of the cosine bound, the refinement is strictly positive. The argument transfers the known stability-enhanced rank-trace inequality from the ainta manuscript to Lamzouri's exact finite Hilbert operator, retains the simple-atom Gram defect, and uses a quantitative obstruction to additive triples of cosine-kernel zeros. It preserves Wang's fixed-support short-interval pair-correlation hypotheses and takes the large-height limit before the smoothing and support limits.</p><p>A reproducible Arb certificate at theta = 3/4 gives a simple-critical proportion of at least 0.4190768284253039967 and a distinct-zero proportion of at least 0.7095384142126519983. The finite certificate has 48,761 partition nodes and zero unresolved boxes, with an alternate sinc Taylor evaluation at 256-bit precision.</p><p>This is a self-published preprint, not peer reviewed. The imported stability lemma and analytic inputs are attributed to their sources. The result does not prove the Riemann hypothesis, establish a new global zero-proportion record, improve the positivity exponent, or provide an effective height threshold. The proof is not an end-to-end Lean formalization.</p>"
+    "description": "<p>We study proportions of simple and distinct nontrivial zeros of the Riemann zeta function in short intervals. The finite stable Hilbert rank-trace method and Wang's fixed-test short-interval input are retained with their stated assumptions. An odd-multiplicity parity transfer combines a fixed classical positive density of distinct odd-multiplicity critical zeros with the multiplicity excess in the finite inequality. For every fixed exponent theta in (0.51,1), this gives a simple-critical lower bound max{0,c(theta),(c(theta)+2 kappa)/3}, where c(theta)=2-theta/2-cot(theta/sqrt(2))/sqrt(2) and kappa is one fixed positive classical density constant. Consequently some fixed theta below Wang's cosine positivity root has positive simple-critical density; a separate identity gives a distinct-zero proportion greater than one half at another exponent below that root. The new exponent and kappa are intentionally left unquantified.</p><p>The same finite method is strengthened by an odd-frame pressure transfer. At theta=3/4, a certified two-variable interval certificate with 16,797 nodes and zero unresolved cells gives simple-critical lower bound 0.419087888170111727959091183775 and distinct companion 0.709543944085055863979545591888. Construction and a separate sinc-Taylor replay pass under the declared rational parameters.</p><p>The parity census and arithmetic controls are reproducible from the accompanying CAOS Research repository. The scientific proof and imported analytic interfaces were independently audited within the project; this is a self-published preprint and has not received external peer review or end-to-end formal verification. The work does not prove the Riemann hypothesis, establish a new global record, provide an effective starting height, or claim a numerical improvement to the positivity exponent.</p>"
   },
-  "fresh_unauthenticated_download": true,
   "verified_fields": [
     "title",
     "sole_author",
     "orcid",
+    "affiliation",
     "version",
     "date",
+    "description",
+    "keywords",
+    "related_identifiers",
+    "language",
     "license",
     "preprint_type",
     "version_doi",
     "concept_doi",
+    "latest_version",
     "public_access",
-    "exact_pdf_bytes"
+    "exact_pdf_bytes",
+    "frozen_source_pdf"
   ],
-  "bytes": 368644,
-  "sha256": "f38d47b6daebc3fa2277542e009ce2cd5625e5daeb05bda57df726a46cc48761",
-  "md5": "cee28b5bc133a5a71dbc210a914f9fe7"
+  "bytes": 498500,
+  "sha256": "56b0ce29935fe3d115d9d40432f87f82b030355b028f3ea942fd3d3c671e2b1c",
+  "md5": "95936def23bafe758e1948b1e2907e84"
 }

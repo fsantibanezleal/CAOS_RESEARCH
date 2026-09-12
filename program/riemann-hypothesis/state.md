@@ -1,7 +1,15 @@
 # Riemann hypothesis state
 
 Updated: 2026-09-12. Current public release: **0.64.000**, deployed and live-verified.
-Current research round: **EXP-003 confirmed; EXP-004 declared and under exact validation**.
+Current research round: **EXP-003 and EXP-004 confirmed; v0.02 published on Zenodo and public replay integration in progress**.
+
+EXP-004 has a separate confirmed verdict and proof-review record. It proves a
+qualitative extension of the simple-critical positivity range below Wang's
+cosine root: for one fixed classical density constant $\kappa>0$, a fixed
+$\theta_1<\theta_0$ has $\liminf S/N\ge\kappa/3$ for every fixed
+$\theta\in[\theta_1,1)$. A distinct-count inequality gives an analogous
+above-one-half consequence below the root. No numerical $\kappa$, $\theta_1$,
+effective height, or new decimal exponent is claimed.
 
 [D+MV] [EXP-003](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/verdict.md) confirms a stronger odd-frame theorem throughout
 the complete positive short-interval cosine curve and a new pressure certificate.
@@ -19,22 +27,23 @@ premises remain explicit; this is not end-to-end Lean verification or peer revie
 The theorem, separate-stage verdict, source audit, scientific code, candidates and
 canonical results are committed and pushed in the pressure work branch. Research
 [PR #266](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/266) is a draft;
-publication of a v0.02 expansion and its public replay release are not complete.
-The sole published preprint remains v0.01, DOI 10.5281/zenodo.22727389.
+the expanded preprint is published at [10.5281/zenodo.22728744](https://doi.org/10.5281/zenodo.22728744)
+and the public replay release is not yet deployed. The v0.01 record remains
+immutable at DOI 10.5281/zenodo.22727389.
 
-The user's latest direction broadens the investigation beyond constant tuning.
+The user's latest direction broadened the investigation beyond constant tuning.
 Three primary-source dossiers now cover classical odd/critical zero counts and
 multiplicity, spectral negative-mass/optimization witnesses, and alternative RH
 reformulations. Commit be5aac4 preserves the cross-area review and verified archive.
 EXP-004 was declared and pushed in e03413b before implementation or computation.
 Its finite parity certificates, source conventions, seed packing and legal support
-limits have passed paper-level independent review; its exact runner, final proof
-review and verdict remain active gates. No further computational family is declared.
+limits, complete proof, exact runner, final proof review and verdict are confirmed.
+No further computational family is declared.
 
-EXP-003 does not lower the positivity exponent or solve RH. EXP-004 tests a
+EXP-003 does not lower the positivity exponent or solve RH. EXP-004 confirms a
 qualitative extension below the zero of Wang's cosine curve. Its imported classical
 density is positive but unspecified; no new decimal exponent is claimed. General
-RH remains open, and no EXP-004 confirmed verdict is asserted at this snapshot.
+RH remains open.
 
 The first release closure is recorded in [its live receipt](release-0.64.000/live-verification.json):
 public PRs #263/#264 merged, main 08660dc, tag v0.64.000, successful Pages run

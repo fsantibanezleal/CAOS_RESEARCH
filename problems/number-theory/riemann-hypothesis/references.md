@@ -245,8 +245,11 @@ in short intervals.* CAOS Research Preprint, version 0.01, September 12, 2026.
 [10.5281/zenodo.22727389](https://doi.org/10.5281/zenodo.22727389), and concept DOI
 [10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388).
 The [publication receipt](../../../manuscripts/riemann-hypothesis/short-interval-stability/publication-receipt.json)
-records verification of fresh public metadata and the downloaded 10-page PDF:
-368,644 bytes, SHA-256
-`f38d47b6daebc3fa2277542e009ce2cd5625e5daeb05bda57df726a46cc48761`.
-This self-published preprint is not peer reviewed. The dated novelty search
-does not guarantee priority against undiscovered concurrent work.
+records verification of fresh public metadata and the downloaded v0.02 PDF:
+498,500 bytes, SHA-256
+`56b0ce29935fe3d115d9d40432f87f82b030355b028f3ea942fd3d3c671e2b1c`, version DOI
+[10.5281/zenodo.22728744](https://doi.org/10.5281/zenodo.22728744). The immutable
+v0.01 baseline remains at [10.5281/zenodo.22727389](https://doi.org/10.5281/zenodo.22727389)
+and its archived 10-page PDF is unchanged. This self-published preprint is not peer
+reviewed. The dated novelty search does not guarantee priority against undiscovered
+concurrent work.

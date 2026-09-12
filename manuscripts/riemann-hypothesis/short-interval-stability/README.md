@@ -1,24 +1,27 @@
-# A stability refinement for simple critical zeros in short intervals
+# Simple critical zeros in short intervals: stability, pressure, and parity
 
-Published version 0.01, 2026-09-12. Sole author: Felipe Santibanez-Leal,
+Published version 0.02, 2026-09-12. Sole author: Felipe Santibanez-Leal,
 ORCID [0000-0002-0150-3246](https://orcid.org/0000-0002-0150-3246).
 
-This preprint derives a strict refinement of Wang's positive short-interval cosine curve,
-using the attributed finite stability inequality and a quantitative kernel obstruction.
-The certified example at theta=3/4 improves the simple-critical lower proportion from
-0.4190750129754243337 to 0.4190768284253039967. It does not prove RH or claim a global record.
-Automated adversarial review is distinguished from peer review and end-to-end formalization.
+This preprint combines the attributed finite stability inequality with an odd-multiplicity
+parity transfer and a pressure certificate. EXP-004 proves a qualitative extension of the
+simple-critical positivity range below Wang's cosine root, with an unspecified fixed
+classical density constant. EXP-003 gives a certified theta=3/4 simple-critical lower
+proportion of 0.4190878881701117279 and distinct companion 0.7095439440850558640.
+It does not prove RH or claim a global record. Automated adversarial review is distinguished
+from external peer review and end-to-end formalization.
 
 - [Paper PDF](main.pdf) and [LaTeX source](main.tex).
-- [Experiment proof and certificate](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/).
+- [EXP-004 proof and exact certificate](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/).
+- [EXP-003 pressure proof and certificate](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/).
 - [Publication gate](publication-gate.json) records final content, PDF, rendered-page hashes and checks.
-- Frozen version DOI: [10.5281/zenodo.22727389](https://doi.org/10.5281/zenodo.22727389).
+- Version DOI: [10.5281/zenodo.22728744](https://doi.org/10.5281/zenodo.22728744).
 - Latest-version concept DOI: [10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388).
 
 [The publication receipt](publication-receipt.json) records a fresh unauthenticated download
-matching all 368,644 frozen PDF bytes and verifies metadata, author, ORCID, license and both DOIs.
-Published bytes are never replaced; corrections require a new version and a new receipt.
-The manuscript is CC BY 4.0 and research code is MIT.
+matching all 498,500 published PDF bytes and verifies metadata, author, ORCID, license and both DOIs.
+Version 0.01 remains byte-identical in [the archive](versions/v0.01/); future corrections require
+a new version and receipt. The manuscript is CC BY 4.0 and research code is MIT.
 
 Build from this directory using two passes of `pdflatex -interaction=nonstopmode
 -halt-on-error main.tex`, then render every page with `pdftoppm -png` and inspect it.

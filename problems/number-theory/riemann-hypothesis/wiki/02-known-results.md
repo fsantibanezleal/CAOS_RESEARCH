@@ -174,3 +174,22 @@ EXP-003 strengthens the first released short-interval bound. See the
 The expanded [prior-art review](../context/2026-09-12-pressure-frame-prior-art.md)
 credits global pressure and capacity methods and distinguishes their dyadic
 formal statements from the short-interval application. The general RH remains open.
+
+
+## Classical parity input and the new range extension
+
+The primary Selberg theorem, restated in Karatsuba's 1985 paper, counts distinct
+odd-multiplicity critical zeros in intervals of length T^(1/2+epsilon). Karatsuba's
+stronger theorem uses exponent 27/82+epsilon. The proof's sign-change intervals
+confirm the distinct odd convention. EXP-004 uses only the fixed Selberg seed at
+51/100, packs it into longer fixed-exponent intervals, and retains its unspecified
+positive density. The [source dossier](../context/2026-09-12-critical-mass-and-multiplicity-route.md)
+records the exact pages and an independent source audit.
+
+Odd zeros are not assumed simple. The new [parity theorem](07-parity-density-transfer.md)
+charges each nonsimple odd point to multiplicity excess and combines that fact
+with Wang's pair estimate. The result extends the simple-critical positivity
+range qualitatively; a separate inequality also extends distinct density above
+one half. It does not improve the already much shorter classical range for
+merely positive distinct density. The finite spectral inequalities and imported
+classical theorems retain their original attribution.

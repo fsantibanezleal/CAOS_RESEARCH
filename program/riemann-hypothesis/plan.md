@@ -65,14 +65,14 @@ families require a fresh source-complete declaration; an already known theorem o
 an unsupported infinite-limit step rejects a proposed novelty claim.
 
 Those dossiers are now persisted. EXP-004 was declared in e03413b before computation,
-with exact parity/multiplicity certificates and a qualitative below-threshold theorem
-as its target. The classical density constant and new decimal exponent remain
-unquantified. Complete its deterministic checks and independent proof adjudication;
-retain the other source-reviewed routes as separate hypotheses with their missing
-arithmetic or infinite-limit inputs explicit.
+and is confirmed in fbc4f9f with exact parity/multiplicity certificates, a complete
+qualitative below-threshold theorem, and independent proof adjudication. The classical
+density constant and new decimal exponent remain unquantified. Retain the other
+source-reviewed routes as separate hypotheses with their missing arithmetic or
+infinite-limit inputs explicit.
 
-The release owner continues to preserve EXP-003 while those reviews run. The revised
-manuscript will include only completed verdict-backed results. No new DOI version is
-published during unresolved scope selection. Once the research block is complete,
-finish the full manuscript, bilingual replay, scoped promotion, serialized release,
-all-page/rendered reviews and exact live verification in the same delivery round.
+The release owner preserved EXP-003 while the reviews ran. The revised manuscript is
+now frozen and published as v0.02 at DOI 10.5281/zenodo.22728744 after a two-pass,
+21-page rendered review. Finish the bilingual replay, scoped promotion, serialized
+release, all-page/rendered checks and exact live verification in the same delivery
+round. The v0.01 publication and archive remain unchanged.

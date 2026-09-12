@@ -1,5 +1,29 @@
 # Riemann hypothesis history
 
+## 2026-09-12: EXP-004 confirmed and v0.02 published
+
+Declaration `e03413b2301bf45ca68ff6e945f25add9a1c3a89` preceded implementation and
+computation. Commit `fbc4f9f` records the complete proof, exact runner, canonical
+artifacts, final verdict and proof-review binding. The parity transfer combines a
+fixed positive classical odd-zero density seed with multiplicity excess and proves
+a fixed exponent below Wang's cosine positivity root with positive simple-critical
+liminf. It also gives a distinct proportion above one half on a nearby fixed range.
+The classical constant, new exponent, effective height and numerical threshold remain
+unquantified; general RH remains open.
+
+The run passed two symbolic identities, 24 atom regressions, all 19,683 declared
+vectors and 59,049 slack evaluations, 42 rational primal/dual cases, 36 sharpness
+controls and one negative distinct-count control. Two independent raw census checks
+passed. The 1,234,096-byte census and all generated receipts are retained under the
+EXP-004 artifacts directory. The exporter requires the proof-review record and binds
+the declaration revision, premises and raw hashes.
+
+The v0.02 manuscript was built twice without warnings, rendered across all 21 pages,
+and visually reviewed. It is published and freshly verified at
+[10.5281/zenodo.22728744](https://doi.org/10.5281/zenodo.22728744), 498,500 bytes,
+SHA-256 `56b0ce29935fe3d115d9d40432f87f82b030355b028f3ea942fd3d3c671e2b1c`.
+The v0.01 PDF remains unchanged at DOI 10.5281/zenodo.22727389.
+
 ## 2026-09-12: source-led opening
 
 The user requested a full review of the recent zero-proportion breakthrough and its successors,
