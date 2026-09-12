@@ -35,6 +35,10 @@ After committing the source artifacts, run `python -m researchlab.pipeline all`.
 export reads experiment bytes from Git HEAD, records source paths, experiment identifiers,
 source commits, sizes and SHA-256 hashes, and writes `data/derived/research/riemann.json` plus
 its manifest. It refuses absent committed evidence or unconfirmed arithmetic receipts.
+The Riemann experiment dialogs also read Git HEAD, including their hypothesis, verdict and
+artifact sizes; dirty, staged-only or locally deleted files cannot change the exported record.
+Use a full-history clone so the source-changing commits agree with release provenance.
+The exporters and experiment runners write explicit UTF-8/LF bytes on Windows and Unix.
 
 Build the existing frontend with `npm ci` and `npm run build` in `frontend/`. On the Program
 page, follow the Riemann hypothesis link in the portfolio table. The six sections cover the
@@ -46,3 +50,23 @@ For a release, inspect every section in English and Spanish, in light and dark t
 desktop and phone widths. Navigate with the pointer from Program, exercise the proof controls
 and experiment modal, check document viewport fit and formula rendering, then verify the
 deployed build and artifact hashes. Compilation and HTTP success alone do not close this gate.
+
+## Reproduce the rendered release matrix
+
+Install the tested browser harness dependency in a disposable directory and start the built
+frontend with `npm run preview -- --host 127.0.0.1 --port 4182` in `frontend/`. Then, from the
+repository root in PowerShell:
+
+```powershell
+npm install --prefix tmp/ui-qa-tools --no-save playwright@1.61.0
+node tmp/ui-qa-tools/node_modules/playwright/cli.js install chromium
+$env:PLAYWRIGHT_MODULE = (Resolve-Path tmp/ui-qa-tools/node_modules/playwright).Path
+node scripts/verify_riemann_ui.mjs --base-url http://127.0.0.1:4182/ --output-dir tmp/riemann-ui-review --adr-viewports --content-screenshots all
+```
+
+The harness drives real pointer navigation from Program, language/theme controls, all six
+research sections, four proof stages, both experiment records and the architecture modal.
+It records viewport containment, single-row navigation, browser errors, equation rendering,
+source links and screenshot hashes. It captures successive content viewports, including long
+experiment records. Automated success and visual inspection are recorded separately.
+The published QA record is under `program/riemann-hypothesis/release-0.64.000/`.

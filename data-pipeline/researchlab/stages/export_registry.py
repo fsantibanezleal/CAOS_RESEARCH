@@ -56,22 +56,30 @@ def _committed_bytes(path: str) -> bytes:
     ).stdout
 
 
+def _committed_riemann_paths() -> set[str]:
+    return set(subprocess.run(
+        ["git", "ls-tree", "-r", "--name-only", "HEAD", "--",
+         "problems/number-theory/riemann-hypothesis/experiments/"],
+        cwd=ROOT, check=True, capture_output=True, text=True,
+    ).stdout.splitlines())
+
+
 def _read_experiments() -> list[dict]:
     out: list[dict] = []
     tracked = _tracked_problem_paths()
-    for probdir in sorted((ROOT / "problems").glob("*/*")):
+    riemann_paths = _committed_riemann_paths()
+    problem_dirs = set((ROOT / "problems").glob("*/*"))
+    if riemann_paths:
+        problem_dirs.add(ROOT / "problems/number-theory/riemann-hypothesis")
+    for probdir in sorted(problem_dirs):
         exps = probdir / "experiments"
-        if not exps.is_dir():
-            continue
         committed_replay = probdir.name == "riemann-hypothesis"
+        if not committed_replay and not exps.is_dir():
+            continue
         source_paths = tracked
         if committed_replay:
             prefix = exps.relative_to(ROOT).as_posix() + "/"
-            listing = subprocess.run(
-                ["git", "ls-tree", "-r", "--name-only", "HEAD", "--", prefix],
-                cwd=ROOT, check=True, capture_output=True, text=True,
-            ).stdout
-            source_paths = set(listing.splitlines())
+            source_paths = riemann_paths
             expdirs = {exps / p[len(prefix):].split("/")[0] for p in source_paths}
         else:
             expdirs = set(exps.iterdir())
@@ -88,13 +96,15 @@ def _read_experiments() -> list[dict]:
             ver_rel = ver.relative_to(ROOT).as_posix()
             if hyp_rel not in source_paths and ver_rel not in source_paths:
                 continue
-            if hyp_rel in source_paths if committed_replay else hyp.exists():
+            has_hypothesis = hyp_rel in source_paths if committed_replay else hyp.exists()
+            if has_hypothesis:
                 text = (_committed_bytes(hyp_rel).decode("utf-8") if committed_replay
                         else hyp.read_text(encoding="utf-8"))
                 first = text.splitlines()[0]
                 rec["title"] = first.lstrip("# ").split(" - ", 1)[-1].strip()
                 rec["hypothesis_md"] = text
-            if ver_rel in source_paths if committed_replay else ver.exists():
+            has_verdict = ver_rel in source_paths if committed_replay else ver.exists()
+            if has_verdict:
                 text = (_committed_bytes(ver_rel).decode("utf-8") if committed_replay
                         else ver.read_text(encoding="utf-8"))
                 first = text.splitlines()[0]

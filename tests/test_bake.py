@@ -130,6 +130,20 @@ def test_riemann_modal_records_ignore_dirty_and_staged_only_files(committed_riem
     assert next(a for a in record["artifacts"] if a["name"] == "result.json")["bytes"] == committed_size
 
 
+@pytest.mark.parametrize("missing_directory", ["experiments", "problem"])
+def test_riemann_modal_records_survive_deleted_worktree_directories(
+    committed_riemann, missing_directory,
+):
+    root, exp_two, _, _ = committed_riemann
+    original = export_registry._read_experiments()
+    source = exp_two.parent if missing_directory == "experiments" else exp_two.parent.parent
+    destination = root / "removed-working-files"
+    assert source.resolve().is_relative_to(root.resolve())
+    assert destination.resolve().is_relative_to(root.resolve())
+    source.rename(destination)
+    assert export_registry._read_experiments() == original
+
+
 @pytest.mark.parametrize("verdict", ["confirmed", "PASS"])
 def test_registry_reads_lowercase_verdict_headers_and_body_dates(tmp_path, monkeypatch, verdict):
     relative = "problems/number-theory/parser-fixture/experiments/EXP-002-test/verdict.md"
@@ -138,6 +152,7 @@ def test_registry_reads_lowercase_verdict_headers_and_body_dates(tmp_path, monke
     path.write_text(f"# EXP-002 verdict: {verdict} for a bounded claim\n\nDate: 2026-09-12.\n")
     monkeypatch.setattr(export_registry, "ROOT", tmp_path)
     monkeypatch.setattr(export_registry, "_tracked_problem_paths", lambda: {relative})
+    monkeypatch.setattr(export_registry, "_committed_riemann_paths", set)
     record, = export_registry._read_experiments()
     assert record["verdict"] == verdict.lower()
     assert record["date"] == "2026-09-12"
