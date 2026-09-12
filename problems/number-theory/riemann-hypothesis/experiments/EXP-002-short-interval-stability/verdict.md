@@ -24,12 +24,16 @@ of priority or independent acceptance.
 
 [MV] With $\theta=3/4$, $R=21/4$, and $d=1/7000$, exhaustive interval arithmetic proves
 
-$$2\{k_{3/4}(u)^2+k_{3/4}(v)^2+k_{3/4}(u+v)^2\}\ge1/7000$$
+$$
+2\{k_{3/4}(u)^2+k_{3/4}(v)^2+k_{3/4}(u+v)^2\}\ge1/7000
+$$
 
 for every $u,v\ge0$ with $u+v\le21/4$. The resulting simple-critical bound is
 
-$$c_* = \frac{3c(3/4)-2/(7000R)}{3-1/7000}
-       =0.4190768284253039967366657875\ldots,$$
+$$
+c_* = \frac{3c(3/4)-2/(7000R)}{3-1/7000}
+       =0.4190768284253039967366657875\ldots,
+$$
 
 compared with $c(3/4)=0.4190750129754243337345536107\ldots$. The gain in proportion is
 $0.0000018154498796630021121768\ldots$. The distinction between proportions and percentage
