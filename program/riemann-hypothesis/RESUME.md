@@ -5,7 +5,9 @@
 Opened 2026-09-12 for a source-led zero-proportion investigation. The general RH remains outside
 the established result. Imported baseline: $c_0=3/2-\cot(1/\sqrt2)/\sqrt2$ and
 $c(\theta)=2-\theta/2-\cot(\theta/\sqrt2)/\sqrt2$ for short intervals.
-No CAOS improvement is established yet. Hypotheses precede all experimental runs.
+EXP-002 now derives a strict short-interval improvement; EXP-001 confirms the baseline.
+The numerical example improves 0.4190750129754243337 to 0.4190768284253039967.
+Lifecycle: consolidating. Hypotheses were committed in `266486f` before computation.
 
 ## 2. The objects table
 
@@ -21,22 +23,24 @@ No CAOS improvement is established yet. Hypotheses precede all experimental runs
 
 | Experiment | Question | Status |
 |---|---|---|
-| EXP-001-source-and-constant-audit | Do independent exact/certified checks reproduce the imported constants and normalization? | declared |
-| EXP-002-short-interval-stability | Does the finite stability defect give a strict improvement to Wang's bound? | declared |
+| EXP-001-source-and-constant-audit | Do independent exact/certified checks reproduce the imported constants and normalization? | confirmed |
+| EXP-002-short-interval-stability | Does the finite stability defect give a strict improvement to Wang's bound? | confirmed |
 
 ## 4. In flight
 
-The proposed route retains $\operatorname{tr}\Psi(G)$ for the Gram matrix of simple real
-atoms instead of discarding it. A three-point kernel-energy bound, compactness, and interval
-length counting may force a positive defect. The counting factor, bandwidth limit, and
-analytic transfer must all survive independent review before a positive verdict.
+The finite signed Hilbert operator retains the known Gram stability defect. A new
+three-point cosine-root obstruction and disjoint-triple counting give strict improvement
+of every positive point of Wang's curve. Independent audits checked multiplicities, signed
+off-line terms, the factor one third, the analytic interface, and the order of limits.
+The numerical certificate uses theta=3/4, R=21/4 and d=1/7000, with zero unresolved boxes.
+The manuscript and public replay are being completed from these persisted proofs.
 
 ## 5. Next actions
 
-1. Finish context dossiers and source checks; keep unverified candidates quarantined.
-2. Execute declared source and finite-kernel certificate runners once their code is reviewed.
-3. Reconcile independent mathematical audits and write exact verdicts.
-4. Transcribe validated results, run scoped tests and repository guards, then promote.
+1. Complete wiki transcription and manuscript PDF review.
+2. Publish the frozen validated preprint on Zenodo and verify public bytes and metadata.
+3. Validate the bilingual public replay in both themes and all six sections.
+4. Promote scoped PRs, serialize the release bake/version/tag, and verify live deployment.
 
 ## 6. Where everything lives
 
@@ -59,5 +63,5 @@ license; preserve local copies and public provenance without silently relicensin
 |---|---|
 | Exclusion and anatomy | Pure kernel optimization and aggregate rank optimization reproduce known barriers |
 | Reformulation | Short-interval transfer of the stability defect selected for an adversarial proof attempt |
-| Invariant | Simultaneous kernel zeros at two gaps and their sum appear algebraically impossible |
+| Invariant | Simultaneous kernel zeros at two gaps and their sum are algebraically impossible, with an explicit positive bound |
 | External dialogue | Original proof, simplification, formal sources, and later candidates compared |

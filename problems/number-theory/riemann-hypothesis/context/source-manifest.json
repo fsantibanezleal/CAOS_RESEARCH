@@ -1,0 +1,476 @@
+{
+  "schema": "riemann-source-manifest-v1",
+  "reviewed_on": "2026-09-12",
+  "documents": [
+    {
+      "filename": "claude-original-20260810.pdf",
+      "source_url": "https://www-cdn.anthropic.com/564f962e60643842f5fcb4a17c9dbc8f608f1c37.pdf",
+      "bytes": 631785,
+      "sha256": "6792988e6cd0e17690621ce898abd5d534f98407741bc7cb14bbe7d07c77d72f",
+      "pages": 35,
+      "note": "original supplied PDF; printed August 10, 2026",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "not-stated-in-inspected-source",
+        "redistribution_basis": "local research archive; not relicensed"
+      },
+      "version": "original supplied PDF; printed August 10, 2026",
+      "cache_path": "source-cache/claude-original-20260810.pdf",
+      "tracked_fulltext": false,
+      "text_cache_path": "source-cache/claude-original-20260810.txt",
+      "text_sha256": "9b02e53c31d7926cf584bec2bade8feacfe17633ee9d4705521eb6d47d902432"
+    },
+    {
+      "filename": "claude-revised-20260811.pdf",
+      "source_url": "https://www-cdn.anthropic.com/95c246936988e43127bc6b2ceb7077c1dad2d68e.pdf",
+      "bytes": 458932,
+      "sha256": "19f827bee5834d61aa6dd756cdaea582492703ddbfd6bdc2058de10b93f7e814",
+      "pages": 17,
+      "note": "current blog PDF; printed August 11, blog update August 13",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "not-stated-in-inspected-source",
+        "redistribution_basis": "local research archive; not relicensed"
+      },
+      "version": "current blog PDF; printed August 11, blog update August 13",
+      "cache_path": "source-cache/claude-revised-20260811.pdf",
+      "tracked_fulltext": false,
+      "text_cache_path": "source-cache/claude-revised-20260811.txt",
+      "text_sha256": "c472179274eb420d80e0e731e35f4859168c785a6f8d834507aaaa9a4325c767"
+    },
+    {
+      "filename": "alpoege-furman-informal-note.pdf",
+      "source_url": "https://www-cdn.anthropic.com/23455459f8832d06bb175cc0f88d019aed962ef8.pdf",
+      "bytes": 191249,
+      "sha256": "45e0330ad37965e5531fa1f4f11e5bebcae147a5237a3e5b3d029efa7ddf759d",
+      "pages": 5,
+      "note": "informal human verification note",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "not-stated-in-inspected-source",
+        "redistribution_basis": "local research archive; not relicensed"
+      },
+      "version": "informal human verification note",
+      "cache_path": "source-cache/alpoege-furman-informal-note.pdf",
+      "tracked_fulltext": false,
+      "text_cache_path": "source-cache/alpoege-furman-informal-note.txt",
+      "text_sha256": "69bdfce6e53f691d965f3c4d4aaa1536b2bea3debcd68e3baa25dda142acd984"
+    },
+    {
+      "filename": "claude-discovery-appendix.pdf",
+      "source_url": "https://www-cdn.anthropic.com/d7f3ecf1d01392d887f8bc974ca187e2a121b1ed.pdf",
+      "bytes": 1058230,
+      "sha256": "271aba2d2083ffa778a53c2994f2061fad7fdda450bc296ec49c7cc41e91dd2d",
+      "pages": 95,
+      "note": "discovery/process evidence, not a proof substitute",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "not-stated-in-inspected-source",
+        "redistribution_basis": "local research archive; not relicensed"
+      },
+      "version": "discovery/process evidence, not a proof substitute",
+      "cache_path": "source-cache/claude-discovery-appendix.pdf",
+      "tracked_fulltext": false,
+      "text_cache_path": "source-cache/claude-discovery-appendix.txt",
+      "text_sha256": "6e4e8fd52c95f73f6bbc0ffde05120e2def8b7044aee153e43078cf0c65c0114"
+    },
+    {
+      "filename": "claude-transcripts.pdf",
+      "source_url": "https://www-cdn.anthropic.com/8a0d1add3c637b858a9a181e98c40e9548c3f44f.pdf",
+      "bytes": 1952068,
+      "sha256": "ebb34c5ed65b1dc96a72bdf76068814a34da9ceb1675624f68a2088180123ada",
+      "pages": 116,
+      "note": "annotated E2 and E2-pairs transcripts",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "not-stated-in-inspected-source",
+        "redistribution_basis": "local research archive; not relicensed"
+      },
+      "version": "annotated E2 and E2-pairs transcripts",
+      "cache_path": "source-cache/claude-transcripts.pdf",
+      "tracked_fulltext": false,
+      "text_cache_path": "source-cache/claude-transcripts.txt",
+      "text_sha256": "8965c2ded9bed5a445d40d29532178f06fe82a6d25db723e52076a63d6d8cc63"
+    },
+    {
+      "filename": "alpoege-furman-2608.13637v2.pdf",
+      "source_url": "https://arxiv.org/pdf/2608.13637v2",
+      "bytes": 478663,
+      "sha256": "6de3b156342e7b4a802c34f8ef40432567e9dabe006938da04233f19fc4ef444",
+      "pages": 21,
+      "note": "arXiv v2 August 19; manuscript printed August 21; 21 pages",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "verified-from-version-landing-page",
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "name": "arXiv non-exclusive distribution license",
+        "redistribution_basis": "local research archive; author license retained; not relicensed"
+      },
+      "metadata_url": "https://arxiv.org/abs/2608.13637v2",
+      "metadata_sha256": "c64200bdc92ebe03e85d7463d437a0912945a2bc43c3ec2d7db2fd44a56aaea3",
+      "version": "v2",
+      "cache_path": "source-cache/alpoege-furman-2608.13637v2.pdf",
+      "tracked_fulltext": false,
+      "metadata_cache_path": "source-cache/metadata-2608.13637v2.html",
+      "text_cache_path": "source-cache/alpoege-furman-2608.13637v2.txt",
+      "text_sha256": "e23ccb576883393706f6bc37d6fda78403cc917b39e3689d4c9869d368b51c54"
+    },
+    {
+      "filename": "lamzouri-2609.02882v2.pdf",
+      "source_url": "https://arxiv.org/pdf/2609.02882v2",
+      "bytes": 535564,
+      "sha256": "305df7fcbbf96e61ccca2cbae13dcb2b7f9251b054d02dd0c78551982621046b",
+      "pages": 17,
+      "note": "v2 September 8; manuscript printed September 9",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "verified-from-version-landing-page",
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "name": "arXiv non-exclusive distribution license",
+        "redistribution_basis": "local research archive; author license retained; not relicensed"
+      },
+      "metadata_url": "https://arxiv.org/abs/2609.02882v2",
+      "metadata_sha256": "1de8ab96cdd8eff49d8e258d54e264a609589e9b45410cc9bfe2d724c2929925",
+      "version": "v2",
+      "cache_path": "source-cache/lamzouri-2609.02882v2.pdf",
+      "tracked_fulltext": false,
+      "metadata_cache_path": "source-cache/metadata-2609.02882v2.html",
+      "text_cache_path": "source-cache/lamzouri-2609.02882v2.txt",
+      "text_sha256": "ffc2b0da968c0610d3bf98aac4192eec92c7881a2d2a2c2629ba477f1fcde7ac"
+    },
+    {
+      "filename": "wang-2609.07918v1.pdf",
+      "source_url": "https://arxiv.org/pdf/2609.07918v1",
+      "bytes": 400145,
+      "sha256": "6e34a86265b7389a2cc1f4dcd1f6034578261c3b02b40c6581a8ddb316308079",
+      "pages": 13,
+      "note": "v1 submitted September 7; manuscript printed September 9",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "verified-from-version-landing-page",
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "name": "arXiv non-exclusive distribution license",
+        "redistribution_basis": "local research archive; author license retained; not relicensed"
+      },
+      "metadata_url": "https://arxiv.org/abs/2609.07918v1",
+      "metadata_sha256": "434bd18b1534624e7fd3795a2d9ee3d663225fabea34f739c2f03c06695c4bcf",
+      "version": "v1",
+      "cache_path": "source-cache/wang-2609.07918v1.pdf",
+      "tracked_fulltext": false,
+      "metadata_cache_path": "source-cache/metadata-2609.07918v1.html",
+      "text_cache_path": "source-cache/wang-2609.07918v1.txt",
+      "text_sha256": "cb42c32f46756f2b2f1a46497baa3bcd57aac12164f93473b5578500e9f208f6"
+    },
+    {
+      "filename": "przz-1802.10521.pdf",
+      "source_url": "https://arxiv.org/pdf/1802.10521v3",
+      "bytes": 2544803,
+      "sha256": "147187ac00831b06e674a99705b0798181eb03024b1b09fc2b740610c80b90aa",
+      "pages": 60,
+      "note": "downloaded current URL; internal stamp v3 September 15, 2019",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "verified-from-version-landing-page",
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "name": "arXiv non-exclusive distribution license",
+        "redistribution_basis": "local research archive; author license retained; not relicensed"
+      },
+      "metadata_url": "https://arxiv.org/abs/1802.10521v3",
+      "metadata_sha256": "ef8c630d0f9da9dea9d5d7ca31788ce7544f9cc5cbba5060fdb3152d6d92ce9e",
+      "version": "v3",
+      "cache_path": "source-cache/przz-1802.10521.pdf",
+      "tracked_fulltext": false,
+      "metadata_cache_path": "source-cache/metadata-1802.10521v3.html",
+      "text_cache_path": "source-cache/przz-1802.10521.txt",
+      "text_sha256": "29e96b6c0db1f874514b88f4a0136fa0046f1416987e3d85dd6d36210c216e17"
+    },
+    {
+      "filename": "bgstb-2306.04799v1.pdf",
+      "source_url": "https://arxiv.org/pdf/2306.04799v1",
+      "bytes": 210602,
+      "sha256": "133071c4d85c875fe9b1a7d4001f22d7174270ab8f1fa8e6cee6178d20276ee9",
+      "pages": 13,
+      "note": "published Acta Arith. 214 (2024); error correction in 2501.14545v3",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "verified-from-version-landing-page",
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "name": "arXiv non-exclusive distribution license",
+        "redistribution_basis": "local research archive; author license retained; not relicensed"
+      },
+      "metadata_url": "https://arxiv.org/abs/2306.04799v1",
+      "metadata_sha256": "088d2be531ea5bafc5098dc91939e19fe7614f777bc26760046c91dbe5273afb",
+      "version": "v1",
+      "cache_path": "source-cache/bgstb-2306.04799v1.pdf",
+      "tracked_fulltext": false,
+      "metadata_cache_path": "source-cache/metadata-2306.04799v1.html",
+      "text_cache_path": "source-cache/bgstb-2306.04799v1.txt",
+      "text_sha256": "a58b15e3092216e0ef2130e40df4a04b60b93b49ba78d02c44423fff77938bf7"
+    },
+    {
+      "filename": "aryan-1902.05473.pdf",
+      "source_url": "https://arxiv.org/pdf/1902.05473",
+      "bytes": 213912,
+      "sha256": "659c0815b068a1b2f4e88700da007bfc9ce9a29b6b1868a2167c7f1b965cbce5",
+      "pages": 17,
+      "note": "current PDF retrieved September 12, 2026",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "verified-from-version-landing-page",
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "name": "arXiv non-exclusive distribution license",
+        "redistribution_basis": "local research archive; author license retained; not relicensed"
+      },
+      "metadata_url": "https://arxiv.org/abs/1902.05473",
+      "metadata_sha256": "29387dab571316d9374a8242ea95cafa90a879425ea12a6645109839221c6d7d",
+      "version": "current at retrieval; see PDF internal version and sha256",
+      "cache_path": "source-cache/aryan-1902.05473.pdf",
+      "tracked_fulltext": false,
+      "metadata_cache_path": "source-cache/metadata-1902.05473.html",
+      "text_cache_path": "source-cache/aryan-1902.05473.txt",
+      "text_sha256": "5d832e6f0afcaaf2baf8e17888f1314171727091064afd3b6dcd27d165b954d1"
+    },
+    {
+      "filename": "bgstb-2501.14545.pdf",
+      "source_url": "https://arxiv.org/pdf/2501.14545v3",
+      "bytes": 376884,
+      "sha256": "0a16b0b0f19b06490111e048a6841f4fe68717c546fae4cb7a44555dc0f96cb3",
+      "pages": 16,
+      "note": "downloaded current URL; internal stamp v3 September 1, 2026",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "verified-from-version-landing-page",
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "name": "arXiv non-exclusive distribution license",
+        "redistribution_basis": "local research archive; author license retained; not relicensed"
+      },
+      "metadata_url": "https://arxiv.org/abs/2501.14545v3",
+      "metadata_sha256": "d638fa8b2c2c9da1be3a51fbd939f49340bbc176b48a16696452035af20c7417",
+      "version": "v3",
+      "cache_path": "source-cache/bgstb-2501.14545.pdf",
+      "tracked_fulltext": false,
+      "metadata_cache_path": "source-cache/metadata-2501.14545v3.html",
+      "text_cache_path": "source-cache/bgstb-2501.14545.txt",
+      "text_sha256": "7296c4f264600306011cb885672ea468a15aaa80b51a0b7e1e5c927d904b0a10"
+    },
+    {
+      "filename": "goldston-suriajaya-2511.20059.pdf",
+      "source_url": "https://arxiv.org/pdf/2511.20059",
+      "bytes": 345194,
+      "sha256": "7b4f638cbd0438123b7a54869fc998fc3d4dee9b74572c04cef9da0463ed4c6f",
+      "pages": 9,
+      "note": "current PDF retrieved September 12, 2026",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "verified-from-version-landing-page",
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "name": "arXiv non-exclusive distribution license",
+        "redistribution_basis": "local research archive; author license retained; not relicensed"
+      },
+      "metadata_url": "https://arxiv.org/abs/2511.20059",
+      "metadata_sha256": "d35baff799f975fd4bc75c9f2eee719c2da5427ea7c13ad876dd14bd713f9683",
+      "version": "current at retrieval; see PDF internal version and sha256",
+      "cache_path": "source-cache/goldston-suriajaya-2511.20059.pdf",
+      "tracked_fulltext": false,
+      "metadata_cache_path": "source-cache/metadata-2511.20059.html",
+      "text_cache_path": "source-cache/goldston-suriajaya-2511.20059.txt",
+      "text_sha256": "65a87ea32d6c2cb70dc3ec39e9304dfa79f73805c6e30edbfd52ed3f749bc3f0"
+    },
+    {
+      "filename": "goldston-suriajaya-2603.28104.pdf",
+      "source_url": "https://arxiv.org/pdf/2603.28104",
+      "bytes": 339445,
+      "sha256": "67866b1ee3f9999c4673e78d4a0e81fcb97584a5e4221af8d4b02b10d3ce01c4",
+      "pages": 7,
+      "note": "current PDF retrieved September 12, 2026",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "verified-from-version-landing-page",
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "name": "arXiv non-exclusive distribution license",
+        "redistribution_basis": "local research archive; author license retained; not relicensed"
+      },
+      "metadata_url": "https://arxiv.org/abs/2603.28104",
+      "metadata_sha256": "6f8581cba4db692f13719233ced9c8533bf48ae538f39bf72a6e7bac5b2e249d",
+      "version": "current at retrieval; see PDF internal version and sha256",
+      "cache_path": "source-cache/goldston-suriajaya-2603.28104.pdf",
+      "tracked_fulltext": false,
+      "metadata_cache_path": "source-cache/metadata-2603.28104.html",
+      "text_cache_path": "source-cache/goldston-suriajaya-2603.28104.txt",
+      "text_sha256": "ad49ffd5ec540007dc4fa8358cfdab77defeb52e5bb01c65cf6a3377836b7654"
+    },
+    {
+      "filename": "mrt-1707.01315.pdf",
+      "source_url": "https://arxiv.org/pdf/1707.01315",
+      "bytes": 786506,
+      "sha256": "e93924c5a97b7813320ca84dcbf4619a958b47781e2e7ab36f6e2fd11a9493a1",
+      "pages": 80,
+      "note": "current PDF retrieved September 12, 2026",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "verified-from-version-landing-page",
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "name": "arXiv non-exclusive distribution license",
+        "redistribution_basis": "local research archive; author license retained; not relicensed"
+      },
+      "metadata_url": "https://arxiv.org/abs/1707.01315",
+      "metadata_sha256": "ba844039221dca01c0a6debb278a02e2b5c92bd49cacb053514eedd8df223fbb",
+      "version": "current at retrieval; see PDF internal version and sha256",
+      "cache_path": "source-cache/mrt-1707.01315.pdf",
+      "tracked_fulltext": false,
+      "metadata_cache_path": "source-cache/metadata-1707.01315.html",
+      "text_cache_path": "source-cache/mrt-1707.01315.txt",
+      "text_sha256": "01ff62ae317b04624e929f1b919c1d351cba977113592bfce0c6db23a7ba2d43"
+    },
+    {
+      "filename": "yang-zenodo-21975237.pdf",
+      "source_url": "https://zenodo.org/records/21975237/files/More%20than%200.7962%20on%20the%20critical%20line-EN.pdf?download=1",
+      "bytes": 598532,
+      "sha256": "0abaa78e0eb4421fdbae647a0b3b6b0299a4dde5d49b0e56ca6f33831c5e3ea0",
+      "pages": 38,
+      "note": "quarantined higher-moment candidate; see original-literature.md and issue snapshot",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "verified-from-record-api",
+        "record_license": {
+          "id": "cc-by-4.0"
+        },
+        "redistribution_basis": "retain record license; not relicensed"
+      },
+      "metadata_url": "https://zenodo.org/api/records/21975237",
+      "metadata_sha256": "7e349df61fe2b1c7336df4eb452ad9cbef2ce38c7dd3e29df8daa598d4e66971",
+      "version": "1.0",
+      "cache_path": "source-cache/yang-zenodo-21975237.pdf",
+      "tracked_fulltext": false,
+      "metadata_cache_path": "source-cache/metadata-zenodo-21975237.json",
+      "text_cache_path": "source-cache/yang-zenodo-21975237.txt",
+      "text_sha256": "0de2f2d086e4ec0fa98cb4ce3dcc50d6722e31f02834bd234b38947ef4aff26b"
+    },
+    {
+      "filename": "lamzouri-2609.02882v1.pdf",
+      "source_url": "https://arxiv.org/pdf/2609.02882v1",
+      "bytes": 505955,
+      "sha256": "fa33485f517b3c94d2f6e4d4366f3ab14a1e413a738db512e1862f4a0944f5f9",
+      "retrieved_utc": "2026-09-12T15:19:19.3907760Z",
+      "cache_path": "source-cache/lamzouri-2609.02882v1.pdf",
+      "license": {
+        "name": "arXiv non-exclusive distribution license",
+        "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+      },
+      "tracked_fulltext": false
+    },
+    {
+      "filename": "lamzouri-2609.02882v1-source.tar",
+      "source_url": "https://arxiv.org/src/2609.02882v1",
+      "bytes": 15508,
+      "sha256": "22e5dda4e4857798de9df6028f58cb8f54edd30a8ef819d6cd32e3ad365ab182",
+      "retrieved_utc": "2026-09-12T15:19:20.4152573Z",
+      "cache_path": "source-cache/lamzouri-2609.02882v1-source.tar",
+      "license": {
+        "name": "arXiv non-exclusive distribution license",
+        "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+      },
+      "tracked_fulltext": false
+    },
+    {
+      "filename": "lamzouri-2609.02882v2-source.tar",
+      "source_url": "https://arxiv.org/src/2609.02882v2",
+      "bytes": 16864,
+      "sha256": "70370356f7010c422c92b6e467e86e8e9fe5a40696a5990e61f05582d4b3cf59",
+      "retrieved_utc": "2026-09-12T15:19:20.6387084Z",
+      "cache_path": "source-cache/lamzouri-2609.02882v2-source.tar",
+      "license": {
+        "name": "arXiv non-exclusive distribution license",
+        "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+      },
+      "tracked_fulltext": false
+    },
+    {
+      "filename": "arxiv-abs-2609.02882v2.html",
+      "source_url": "https://arxiv.org/abs/2609.02882v2",
+      "bytes": 43133,
+      "sha256": "1de8ab96cdd8eff49d8e258d54e264a609589e9b45410cc9bfe2d724c2929925",
+      "retrieved_utc": "2026-09-12T15:19:20.7353309Z",
+      "cache_path": "source-cache/arxiv-abs-2609.02882v2.html",
+      "license": {
+        "name": "arXiv non-exclusive distribution license",
+        "url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+      },
+      "tracked_fulltext": false
+    },
+    {
+      "filename": "anthropic-riemann-zeta-20260912.html",
+      "source_url": "https://www.anthropic.com/research/riemann-zeta",
+      "bytes": 176754,
+      "sha256": "7e379e67ed04c0ad1654b304dfc658d4b8473b11efcea0feea684268c181a4a6",
+      "retrieved_on": "2026-09-12",
+      "version": "article snapshot retrieved 2026-09-12",
+      "license": {
+        "status": "not-stated-in-inspected-source",
+        "redistribution_basis": "local research archive; not relicensed"
+      },
+      "cache_path": "source-cache/anthropic-riemann-zeta-20260912.html",
+      "tracked_fulltext": false
+    }
+  ],
+  "repositories": [
+    {
+      "source_url": "https://github.com/AxiomMath/ZetaZerosV2",
+      "commit": "4c73b317232173a5e6d4253702c9870ee66c2c7b",
+      "commit_date": "2026-09-08T16:04:09+01:00",
+      "archive_path": "source-snapshots/axiom-zeta-zeros-v2-4c73b3172321.zip",
+      "bytes": 140709,
+      "sha256": "2746d137514e4435c9af154d05137384993e998805facbfe6f8e71be09f16e09",
+      "license": "Apache-2.0",
+      "license_sha256": "47b2b7375318c574ef44d0def1e28d296e8bac5940d24d2694f5d99e7053b780",
+      "scope": [
+        "entire tracked repository"
+      ],
+      "redistribution": "upstream license retained inside snapshot"
+    },
+    {
+      "source_url": "https://github.com/anthropics/formal-math",
+      "commit": "fbdc36bbf17d20af3fd0447c6d1a8a02773c9844",
+      "commit_date": "2026-09-05T09:38:00-07:00",
+      "archive_path": "source-snapshots/anthropic-zeta23-fbdc36bbf17d.zip",
+      "bytes": 1584228,
+      "sha256": "b3b7a0de5c3b9c99dcccab9f738d9caa74c540e5d3619e17b6cdc9aa3a679fb8",
+      "license": "Apache-2.0",
+      "license_sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6",
+      "scope": [
+        "zeta23",
+        "LICENSE"
+      ],
+      "redistribution": "upstream license retained inside snapshot"
+    },
+    {
+      "source_url": "https://github.com/ainta/zeta-simple-zeros",
+      "commit": "040c5e899e658aed7b56a2a87f501798fe10761d",
+      "commit_date": "2026-08-10T21:31:22-07:00",
+      "archive_path": "source-snapshots/ainta-stability-040c5e899e65.zip",
+      "bytes": 112179,
+      "sha256": "a28b562ae1009cbf1281bb662a54c0745dae88807debb711053f633311c23a3c",
+      "license": "MIT",
+      "license_sha256": "1f157d0f9ab2186d23b5a573e160090b50b580bea1a56b29c4472693dccc81aa",
+      "scope": [
+        "entire tracked repository"
+      ],
+      "redistribution": "upstream license retained inside snapshot"
+    },
+    {
+      "source_url": "https://github.com/trmdy/zeta-simple-zeros-673137",
+      "commit": "1610b97b7895ff34982260f8dcaf04a0f7b82cf7",
+      "commit_date": "2026-08-12T21:14:14+02:00",
+      "archive_path": "source-snapshots/trmdy-stability-1610b97b7895.zip",
+      "bytes": 329342,
+      "sha256": "e47cc8713a1b2c15a77115e5e91013edf9d1fb1df5aa4c2e705790279b51149a",
+      "license": "MIT",
+      "license_sha256": "5e683712414576ea70cf8c45ed158aebc6ef324986d63b06b7381d93493b1592",
+      "scope": [
+        "entire tracked repository"
+      ],
+      "redistribution": "upstream license retained inside snapshot"
+    }
+  ],
+  "storage_policy": "Full-text documents are downloaded locally into source-cache; public provenance and permissively licensed code snapshots are tracked. No source is relicensed."
+}

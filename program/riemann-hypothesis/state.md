@@ -1,12 +1,19 @@
 # Riemann hypothesis state
 
-Updated: 2026-09-12. Lifecycle: opened. No CAOS zero-proportion improvement is yet established.
+Updated: 2026-09-12. Lifecycle: **consolidating**.
 
-[V] Lamzouri v2 states the unconditional simple-critical proportion
-$c_0=3/2-\cot(1/\sqrt2)/\sqrt2$, approximately 0.672500703679.
-[V] Wang v1 extends the method to fixed intervals of length $T^\theta$ with
-$c(\theta)=2-\theta/2-\cot(\theta/\sqrt2)/\sqrt2$.
+[D] EXP-002 establishes a strict refinement of Wang's entire positive short-interval
+cosine curve for each fixed theta between its positivity threshold and one. The derivation
+has an independent adversarial audit; it is not an end-to-end Lean proof or peer review.
+[MV] At theta=3/4 the certified bound is 0.4190768284253039967, compared with
+0.4190750129754243337. All 48,761 certificate nodes were reconstructed; both arithmetic
+evaluators accepted every energy leaf with zero unresolved boxes.
 
-The current source audit distinguishes original/revised PDFs and formalization assumptions.
-Subsequent numerical improvement claims are under review. The first two experiments are
-declared; computation and verdicts are pending. See RESUME and the experiment hypotheses.
+EXP-001 independently reproduces the baseline constants and normalization correction using
+exact rational series and Arb. Its public CI mode deliberately does not claim local PDF
+verification. Versioned source and formalization audits distinguish assumptions from proofs.
+
+The candidate contribution is a short-interval theorem using attributed stability ideas.
+There is no global-record or RH-solution claim and no guarantee of publication priority.
+Manuscript authoring, all-page PDF review, Zenodo publication, public replay QA, and scoped
+promotion remain release gates. See `RESUME.md` and the source experiment verdicts.

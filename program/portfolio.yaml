@@ -17,7 +17,7 @@ problems:
   - { slug: central-configurations, area: dynamical-systems,     state: exploring, feasibility: A,  gpu: true,    opened: "2026-07-23" }
   - { slug: sphere-log-energy,     area: optimization-geometry,  state: scoped,    feasibility: A,  gpu: true }
   - { slug: tau-conjecture,        area: computation-complexity, state: exploring, feasibility: A,  gpu: true,    opened: "2026-08-01" }
-  - { slug: riemann-hypothesis,    area: number-theory,          state: opened,    feasibility: A,  gpu: true, opened: "2026-09-12" }
+  - { slug: riemann-hypothesis,    area: number-theory,          state: consolidating,    feasibility: A,  gpu: true, opened: "2026-09-12" }
   - { slug: unsplittable-flow-cost, area: optimization-geometry, state: exploring, feasibility: A,  gpu: partial, opened: "2026-07-24" }
   - { slug: diophantine-2var,      area: computation-complexity, state: proposed,  feasibility: B,  gpu: partial }
   - { slug: hilbert-16,            area: dynamical-systems,      state: proposed,  feasibility: A,  gpu: true }

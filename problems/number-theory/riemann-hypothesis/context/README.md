@@ -1,17 +1,29 @@
-# Source audit
+# Source audit and local archive
 
-Review date: 2026-09-12. The initial source pass resolves the supplied references to the original
-35-page Anthropic proof, its revised 17-page proof, Lamzouri v1/v2, AxiomMath's pinned formal
-source, and Wang's short-interval successor. Detailed source inventory and audits are being
-assembled in this directory. The source-backed plan is `program/riemann-hypothesis/plan.md`.
+Review cutoff: 2026-09-12. The archive contains 21 primary-source documents and four
+licensed code snapshots. The original supplied Anthropic PDF is distinct from its revision.
+The original-proof acquisition subset comprises 16 PDFs and 559 pages; review depth is
+reported honestly in the dossiers and was concentrated on theorem dependencies and proofs.
 
-Primary entry points: <https://www.anthropic.com/research/riemann-zeta>,
-<https://arxiv.org/abs/2608.13637>, <https://arxiv.org/abs/2609.02882v2>,
-<https://arxiv.org/abs/2609.07918v1>, <https://github.com/AxiomMath/ZetaZerosV2>,
-<https://github.com/anthropics/formal-math>, <https://github.com/ainta/zeta-simple-zeros>,
-and <https://github.com/trmdy/zeta-simple-zeros-673137>.
+| Record | Scope |
+|---|---|
+| [Source manifest](source-manifest.json) | Original URLs, versions, licenses, exact byte counts and SHA-256 |
+| [Original and successor review](2026-09-12-original-and-successor-review.md) | Historical record, original argument, later candidates and objections |
+| [Lamzouri analysis](2026-09-12-lamzouri-analysis.md) | Finite Hilbert framework, constants and prior-art barriers |
+| [Formalization audit](2026-09-12-formalization-audit.md) | Pinned Lean sources, explicit assumptions and current CI coverage |
+| [Wang transfer audit](2026-09-12-wang-transfer-audit.md) | Short-interval theorem, deweighting, error estimates and smoothing |
 
-Downloaded source files with no identified public redistribution permission are retained in
-the local `source-cache/` directory. Public records contain hashes, original URLs, versions,
-licenses, and independently authored analysis. Permissively licensed code snapshots retain
-their upstream license. No third-party source is relabeled as CAOS authorship.
+Full text whose public redistribution permission was not identified is retained locally in
+`source-cache/`. The public record contains provenance and independently authored analysis.
+Four permissively licensed code ZIPs in `source-snapshots/` retain upstream licenses.
+No third-party source is relabeled as CAOS authorship.
+
+From the repository root, restore or verify the archive with:
+
+```text
+python problems/number-theory/riemann-hypothesis/code/restore_sources.py
+python problems/number-theory/riemann-hypothesis/code/restore_sources.py --verify-only
+```
+
+Restoration checks exact size and SHA-256, failing closed if an upstream URL changes.
+Derived mathematical claims belong to the experiment verdicts and their adversarial audits.
