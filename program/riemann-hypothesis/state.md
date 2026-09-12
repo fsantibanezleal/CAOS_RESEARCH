@@ -1,7 +1,7 @@
 # Riemann hypothesis state
 
-Updated: 2026-09-12. Current public release: **0.64.000**, deployed and live-verified.
-Current research round: **EXP-003 and EXP-004 confirmed; v0.02 published on Zenodo and public replay integration in progress**.
+Updated: 2026-09-12. Release candidate: **0.65.000**, locally validated; main deployment and live verification are pending.
+Current research round: **EXP-003 and EXP-004 confirmed; v0.02 published on Zenodo and replay integrated**.
 
 EXP-004 has a separate confirmed verdict and proof-review record. It proves a
 qualitative extension of the simple-critical positivity range below Wang's
@@ -26,10 +26,12 @@ premises remain explicit; this is not end-to-end Lean verification or peer revie
 
 The theorem, separate-stage verdict, source audit, scientific code, candidates and
 canonical results are committed and pushed in the pressure work branch. Research
-[PR #266](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/266) is a draft;
+[PR #266](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/266) merged to develop
+at `65980d33f40c291c86a384420afa888b53abbea0`;
 the expanded preprint is published at [10.5281/zenodo.22728744](https://doi.org/10.5281/zenodo.22728744)
-and the public replay release is not yet deployed. The v0.01 record remains
-immutable at DOI 10.5281/zenodo.22727389.
+the public replay release candidate is validated in
+[release-0.65.000](release-0.65.000/README.md). The v0.01 record remains immutable
+at DOI 10.5281/zenodo.22727389.
 
 The user's latest direction broadened the investigation beyond constant tuning.
 Three primary-source dossiers now cover classical odd/critical zero counts and
