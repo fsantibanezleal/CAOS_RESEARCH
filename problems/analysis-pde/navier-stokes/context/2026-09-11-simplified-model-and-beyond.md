@@ -1,5 +1,23 @@
 # Can we build a simplified model with the same behaviour, and can we go beyond it?
 
+> **Superseded in part, 2026-09-12.** This dossier is preserved as written, including the estimate it
+> got wrong and the smoke test that caught it. Three things changed the next day and a reader should
+> take them from the later documents rather than from here:
+>
+> 1. The bare threshold question is **not ours**. It is published by the originators: Cordoba,
+>    Martinez-Zoroa and Zheng prove blowup for every `|grad|^alpha` exponent below `(22 - 8 sqrt 7)/9`.
+>    See [`2026-09-12-phase0-gate.md`](2026-09-12-phase0-gate.md).
+> 2. The bound below is stated as a flat `alpha <= 1/4`. The correct statement carries the frequency
+>    exponent: `alpha_c(p) = 1/(4p)`, with `p > 1` forced, which recovers `1/4` only as the limiting
+>    case. See [EXP-003](../experiments/EXP-003-threshold-sweep/verdict.md).
+> 3. Section 2.5 below predicts that hold-interval damping would push the threshold DOWN. It does
+>    not: it gives the same exponent as growth positivity. That prediction was wrong and the reason is
+>    structural, in EXP-003's verdict.
+>
+> What survives unchanged: the dissipative modulation system of Subsection 2.1, now verified against a
+> full nonlinear PDE by [EXP-002](../experiments/EXP-002-reduction-control/verdict.md); the frequency
+> cap of 2.2; and the reading of the published record in 2.4.
+
 Date: 2026-09-11. This answers the three questions put to the session: whether a simplified version of
 the September 2026 blowup can be built, how deep the argument and the scenario really go, and whether
 there is anything beyond the current findings that is ours to take. It is written from the dossiers in
