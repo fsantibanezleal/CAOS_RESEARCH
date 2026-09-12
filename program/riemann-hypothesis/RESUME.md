@@ -2,75 +2,98 @@
 
 ## 1. State in one screen
 
-Opened 2026-09-12 for a source-led zero-proportion investigation. The general RH remains outside
-the established result. Imported baseline: $c_0=3/2-\cot(1/\sqrt2)/\sqrt2$ and
-$c(\theta)=2-\theta/2-\cot(\theta/\sqrt2)/\sqrt2$ for short intervals.
-EXP-002 now derives a strict short-interval improvement; EXP-001 confirms the baseline.
-The numerical example improves 0.4190750129754243337 to 0.4190768284253039967.
-Lifecycle: published research record; RH remains open. Hypotheses were committed in
-`266486f` before computation. The 10-page preprint v0.01 is published and byte-verified:
-version DOI 10.5281/zenodo.22727389, concept DOI 10.5281/zenodo.22727388.
+Read [state.md](state.md), [backlog.md](backlog.md), [plan.md](plan.md), then the
+latest source verdicts. Evidence outranks this handoff. Public v0.64.000 and
+preprints v0.01/v0.02 are delivered; v0.02 is published at DOI
+10.5281/zenodo.22728744 and its replay integration remains in progress. The general
+RH remains open.
 
 ## 2. The objects table
 
-| Object | Definition | Owner |
+| Object | Role | Current evidence |
 |---|---|---|
-| $N(T,H)$ | Nontrivial zeros in $(T,T+H]$, counted with multiplicity | Wang source |
-| $S(T,H)$ | Simple zeros on the critical line in that interval | Wang source |
-| $Q$ | Squared Hilbert-Schmidt norm of the finite zero operator | Lamzouri source |
-| $\Psi(t)$ | $(t-1)^2$ for $0\le t\le2$, $2t-3$ for $t\ge2$ | ainta stability source |
-| $k_\lambda$ | Normalized Fourier transform of a compact cosine profile | EXP-002 |
+| $N,s,r,b,E$ | Multiplicity and support counts in a finite zero multiset | EXP-002/003/004 proofs |
+| $Q,D,\sigma$ | Hilbert--Schmidt moment, simple Gram defect and residual slack | EXP-002/004 exact identities |
+| $c(\theta)$ | Wang cosine baseline and its positive root $\theta_0$ | Wang source and EXP-004 comparison |
+| EXP-002 certificate | Three-point compact energy certificate | Published v0.01 archive |
+| EXP-003 pressure certificate | Odd-frame pressure improvement at $\theta=3/4$ | Confirmed 16,797-node replay |
+| EXP-004 parity transfer | Qualitative fixed-exponent range extension | Confirmed exact run and proof review |
+| Alternative route dossiers | Spectral, Nyman--Beurling, Li/Weil, heat-flow and mollifier options | Source-reviewed proposals with open gates |
 
 ## 3. Experiment index
 
-| Experiment | Question | Status |
+| Experiment | Scope | Outcome |
 |---|---|---|
-| EXP-001-source-and-constant-audit | Do independent exact/certified checks reproduce the imported constants and normalization? | confirmed |
-| EXP-002-short-interval-stability | Does the finite stability defect give a strict improvement to Wang's bound? | confirmed |
+| EXP-001 | Source constants and normalization | confirmed |
+| EXP-002 | First short-interval stability theorem and compact certificate | confirmed and released |
+| EXP-003 A | Odd-frame amplification with the prior certificate | confirmed |
+| EXP-003 B | New pressure inequality and more than 25% gain over A | confirmed |
+| EXP-004 | Parity density transfer below the cosine positivity threshold | confirmed; proof review and exact arithmetic committed in fbc4f9f |
+
+The [EXP-003 verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/verdict.md), [proof](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/mathematical-proof.md),
+[audit](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/adversarial-audit.md), and [results](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/artifacts/result.json) give the
+current bound 0.419087888170111727959091183775 at theta=3/4. Its new 16,797-node
+certificate passed both arithmetic evaluators. Full repository validation passed
+288 Python tests. EXP-003 was declared in 8ed806d before all computation; proof
+commit e21618c and result commit abfa001 preserve the sequence.
+
+## 3a. Confirmed EXP-004 result
+
+The parity theorem retains odd critical support and multiplicity excess in the
+finite inequality, then packs one fixed classical odd-zero density seed into every
+longer fixed-exponent interval. It proves a fixed $\theta_1<\theta_0$ with positive
+simple-critical liminf on $[\theta_1,1)$ and a distinct proportion above one half
+on a nearby range. The constants $\kappa$, $\theta_1$ and the effective onset remain
+unquantified. See [the complete proof](../../problems/number-theory/riemann-hypothesis/wiki/07-parity-density-transfer.md)
+and [confirmed verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/verdict.md).
 
 ## 4. In flight
 
-The finite signed Hilbert operator retains the known Gram stability defect. An explicit
-quantitative bound for the known three-point cosine-root obstruction, combined with
-disjoint-triple counting, gives strict improvement of every positive point of Wang's curve.
-Independent audits checked multiplicities, signed
-off-line terms, the factor one third, the analytic interface, and the order of limits.
-The numerical certificate uses theta=3/4, R=21/4 and d=1/7000, with zero unresolved boxes.
-The manuscript and complete wiki are finished. Public replay QA passed all 20 scenarios,
-five viewports and both languages/themes, with 960 screenshots and separate visual reviews.
-The full suite has 251 passing Python tests plus two frontend tests. No research process is
-running. Only scoped integration, the 0.64.000 release and live verification remain in flight.
+The user's latest request explicitly asks for alternatives across mathematical areas
+and a more relevant result. Completed source dossiers investigate:
+
+1. Parity, multiplicity slack, and existing positive critical-zero mass as a possible
+   route to a stronger positivity range. Exact seed theorem definitions, uniformity,
+   interval packing and prior-art checks are essential.
+2. Full-operator negative spectrum and spectral/optimization witnesses. Negative
+   eigenvalue counts alone are known prior art; near-line conditioning can obstruct
+   any uniform quantitative gain.
+3. Nyman-Beurling approximation, Li/Weil positivity, spectral realizations and heat
+   flow. A finite diagnostic must state what it proves and what remains an infinite
+   limit. Proposed finite-prime compression requires an adversarial obstruction check.
+
+EXP-004 is confirmed in fbc4f9f after complete exact checks, independent proof review
+and verdict. The full-operator,
+approximation/tail, heat-flow and generalized short-mollifier routes remain separate
+source/paper proposals. Preserve every rejected route. The v0.02 manuscript is frozen
+and published at DOI 10.5281/zenodo.22728744; all 21 rendered pages were reviewed,
+the PDF is 498,500 bytes, and the local publication helper's 43 boundary tests pass.
+The published v0.01 archive remains byte-identical.
 
 ## 5. Next actions
 
-1. Check the latest CI for research PR #263, then promote it to develop.
-2. Open the separate develop-to-main release PR, wait for checks, merge and tag v0.64.000.
-3. Verify Pages deployment, live artifact hashes and pointer-driven research navigation.
-4. Record observed closure receipts in this handoff and the private management mirror.
-
-Reproduction commands and source restoration: `docs/guides/riemann-replay.md`.
-Rendered evidence and exact build hashes: `program/riemann-hypothesis/release-0.64.000/`.
+Continue current consolidation: bake the committed EXP-004 evidence, integrate the
+four-experiment bilingual web surface, promote PR #266, serialize the next release,
+and verify the live browser journeys.
+Publication, scoped PR #266, serialized release, rendered QA and live verification
+must each have observed receipts before their states advance.
 
 ## 6. Where everything lives
 
-Operational files: `program/riemann-hypothesis/`. Primary record:
-`problems/number-theory/riemann-hypothesis/{context,code,experiments,history,wiki}/`.
-Frozen manuscript and publication receipt: `manuscripts/riemann-hypothesis/short-interval-stability/`.
-Management mirror: `plans/caos-research/riemann-hypothesis/` in the private management repo.
+Problem: `problems/number-theory/riemann-hypothesis/`. The EXP-003 execution receipt
+records exact commands and deterministic result hashes. Source restoration and replay
+instructions: `docs/guides/riemann-replay.md`. The exporter reads committed Git HEAD
+bytes and binds the hypothesis, code, runner, seeds, candidate list and certificates.
+Dirty files cannot become replay evidence.
+
+First release receipts: `program/riemann-hypothesis/release-0.64.000/`.
+Frozen first preprint archive: `manuscripts/riemann-hypothesis/short-interval-stability/versions/v0.01/`.
+Private coordination: `plans/caos-research/riemann-hypothesis/` in CAOS_MANAGE.
 
 ## 7. Gotchas
 
-Do not confuse simple, critical-line, simple-critical, distinct, or simple-or-critical counts.
-Keep asymptotic liminf theorems distinct from finite-height verification. AxiomMath's zeta
-theorems take two explicit classical analytic assumptions. Its default CI library build is
-not a comparator replay. Lamzouri's arXiv license is nonexclusive, not a CC redistribution
-license; preserve local copies and public provenance without silently relicensing them.
-
-## Lenses tried
-
-| Lens | Outcome |
-|---|---|
-| Exclusion and anatomy | Pure kernel optimization and aggregate rank optimization reproduce known barriers |
-| Reformulation | Short-interval transfer of the stability defect selected for an adversarial proof attempt |
-| Invariant | Simultaneous kernel zeros at two gaps and their sum are algebraically impossible, with an explicit positive bound |
-| External dialogue | Original proof, simplification, formal sources, and later candidates compared |
+N counts all copies; simple-critical, odd-critical, distinct-critical and all distinct
+counts differ. The Hilbert pair sum uses ordinary complex squares. Test functions and
+support are fixed before height limits. A numerical energy certificate is a finite
+premise, not a stand-alone zeta theorem. Imported pressure/stability frameworks retain
+their authorship; dated source searches do not guarantee priority or peer acceptance.

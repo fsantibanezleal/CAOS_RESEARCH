@@ -1,0 +1,281 @@
+{
+  "schema": "riemann-pressure-candidates-v1",
+  "declaration_commit": "8ed806d64e5df2b83ab1ad75cb9f17a5633208bc",
+  "status": "exploration only; all lower bounds remain unproved",
+  "theta": "3/4",
+  "method": "deterministic 600-interval triangular grid plus local 17x17 refinements; no random numbers",
+  "reserve_fraction": "1/20",
+  "maximum_candidates": 3,
+  "prior_exploration_sha256": "0fbf8a2bb238b272a9d6e5813d0202f743ba75c6458117edd387203b2b5355ec",
+  "exploration_source_sha256": "aeae7f47afc50ab7422fb4663957804ec2eccb3b0faccfdbaf9405759b497674",
+  "trials": [
+    {
+      "pressure": "1/500000",
+      "epsilon": "10893/500000000",
+      "cutoff": "10893/1000",
+      "sample_minimum": 2.2933349889190763e-05,
+      "sample_witness": [
+        "16046883/4000000",
+        "42718719/8000000"
+      ],
+      "sample_conditional_gain": 2.564984116318552e-06,
+      "sample_gain_ratio_to_stage_a": 0.9419543122508978,
+      "eligible_by_floating_preflight": false,
+      "k": 45901
+    },
+    {
+      "pressure": "1/250000",
+      "epsilon": "18783/500000000",
+      "cutoff": "18783/2000",
+      "sample_minimum": 3.954351040316589e-05,
+      "sample_witness": [
+        "32083881/8000000",
+        "32083881/8000000"
+      ],
+      "sample_conditional_gain": 3.871485966488804e-06,
+      "sample_gain_ratio_to_stage_a": 1.421748726532879,
+      "eligible_by_floating_preflight": true,
+      "k": 26619
+    },
+    {
+      "pressure": "1/125000",
+      "epsilon": "16729/250000000",
+      "cutoff": "16729/2000",
+      "sample_minimum": 7.043800184715872e-05,
+      "sample_witness": [
+        "32061959/8000000",
+        "536951/200000"
+      ],
+      "sample_conditional_gain": 6.021411782661845e-06,
+      "sample_gain_ratio_to_stage_a": 2.2112787203756246,
+      "eligible_by_floating_preflight": true,
+      "k": 14944
+    },
+    {
+      "pressure": "1/62500",
+      "epsilon": "117067/1000000000",
+      "cutoff": "117067/16000",
+      "sample_minimum": 0.00012322891540570013,
+      "sample_witness": [
+        "21459057/8000000",
+        "21459057/8000000"
+      ],
+      "sample_conditional_gain": 8.52992726516366e-06,
+      "sample_gain_ratio_to_stage_a": 3.1324957217043266,
+      "eligible_by_floating_preflight": true,
+      "k": 8542
+    },
+    {
+      "pressure": "3/125000",
+      "epsilon": "157839/1000000000",
+      "cutoff": "52613/8000",
+      "sample_minimum": 0.00016614693695767317,
+      "sample_witness": [
+        "2679140387/998795706",
+        "5364741/2000000"
+      ],
+      "sample_conditional_gain": 9.07319042211009e-06,
+      "sample_gain_ratio_to_stage_a": 3.3320014691735134,
+      "eligible_by_floating_preflight": true,
+      "k": 6335
+    },
+    {
+      "pressure": "1/31250",
+      "epsilon": "198611/1000000000",
+      "cutoff": "198611/32000",
+      "sample_minimum": 0.0002090647750105067,
+      "sample_witness": [
+        "668623781/249267063",
+        "668623781/249267063"
+      ],
+      "sample_conditional_gain": 9.61645351742626e-06,
+      "sample_gain_ratio_to_stage_a": 3.5315071940098552,
+      "eligible_by_floating_preflight": true,
+      "k": 5034
+    },
+    {
+      "pressure": "3/62500",
+      "epsilon": "140077/500000000",
+      "cutoff": "140077/24000",
+      "sample_minimum": 0.0002948999006951627,
+      "sample_witness": [
+        "2145869/800000",
+        "2145869/800000"
+      ],
+      "sample_conditional_gain": 1.0702770397074746e-05,
+      "sample_gain_ratio_to_stage_a": 3.93044177716996,
+      "eligible_by_floating_preflight": true,
+      "k": 3569
+    },
+    {
+      "pressure": "1/15625",
+      "epsilon": "361697/1000000000",
+      "cutoff": "361697/64000",
+      "sample_minimum": 0.00038073429250467497,
+      "sample_witness": [
+        "2234467435/833037428",
+        "2234467435/833037428"
+      ],
+      "sample_conditional_gain": 1.1789086909363754e-05,
+      "sample_gain_ratio_to_stage_a": 4.329376225422467,
+      "eligible_by_floating_preflight": true,
+      "k": 2764
+    },
+    {
+      "pressure": "1/12500",
+      "epsilon": "443239/1000000000",
+      "cutoff": "443239/80000",
+      "sample_minimum": 0.0004665679504706373,
+      "sample_witness": [
+        "2231882437/832080882",
+        "2231882437/832080882"
+      ],
+      "sample_conditional_gain": 1.287519468739418e-05,
+      "sample_gain_ratio_to_stage_a": 4.728234018956633,
+      "eligible_by_floating_preflight": true,
+      "k": 2256
+    },
+    {
+      "pressure": "3/31250",
+      "epsilon": "510687/1000000000",
+      "cutoff": "170229/32000",
+      "sample_minimum": 0.0005375655156934852,
+      "sample_witness": [
+        "2139349/800000",
+        "10966191/8000000"
+      ],
+      "sample_conditional_gain": 1.1008080365271716e-05,
+      "sample_gain_ratio_to_stage_a": 4.042562565476863,
+      "eligible_by_floating_preflight": true,
+      "k": 1958
+    },
+    {
+      "pressure": "2/15625",
+      "epsilon": "633653/1000000000",
+      "cutoff": "633653/128000",
+      "sample_minimum": 0.0006670033586917733,
+      "sample_witness": [
+        "851864013/621452347",
+        "1337071/500000"
+      ],
+      "sample_conditional_gain": 4.774069453895882e-06,
+      "sample_gain_ratio_to_stage_a": 1.7532098076056957,
+      "eligible_by_floating_preflight": true,
+      "k": 1578
+    },
+    {
+      "pressure": "3/15625",
+      "epsilon": "43979/50000000",
+      "cutoff": "43979/9600",
+      "sample_minimum": 0.0009258737654538986,
+      "sample_witness": [
+        "857006036/625213403",
+        "2229171869/833630243"
+      ],
+      "sample_conditional_gain": -7.694997343786314e-06,
+      "sample_gain_ratio_to_stage_a": -2.8258794604709094,
+      "eligible_by_floating_preflight": false,
+      "k": 1136
+    },
+    {
+      "pressure": "4/15625",
+      "epsilon": "2251/2000000",
+      "cutoff": "2251/512",
+      "sample_minimum": 0.0011847371343771769,
+      "sample_witness": [
+        "1367568250/997700479",
+        "534793/200000"
+      ],
+      "sample_conditional_gain": -2.016553013499741e-05,
+      "sample_gain_ratio_to_stage_a": -7.405507094035821,
+      "eligible_by_floating_preflight": false,
+      "k": 888
+    },
+    {
+      "pressure": "6/15625",
+      "epsilon": "1534743/1000000000",
+      "cutoff": "511581/128000",
+      "sample_minimum": 0.0016155190594933965,
+      "sample_witness": [
+        "1364563/1000000",
+        "1359473953/996270749"
+      ],
+      "sample_conditional_gain": -6.241373638553965e-05,
+      "sample_gain_ratio_to_stage_a": -22.920566157903036,
+      "eligible_by_floating_preflight": false,
+      "k": 651
+    },
+    {
+      "pressure": "8/15625",
+      "epsilon": "1866599/1000000000",
+      "cutoff": "1866599/512000",
+      "sample_minimum": 0.001964841464251855,
+      "sample_witness": [
+        "10916147/8000000",
+        "10916147/8000000"
+      ],
+      "sample_conditional_gain": -0.00012087734521188421,
+      "sample_gain_ratio_to_stage_a": -44.39050357130323,
+      "eligible_by_floating_preflight": false,
+      "k": 535
+    },
+    {
+      "pressure": "12/15625",
+      "epsilon": "2530279/1000000000",
+      "cutoff": "2530279/768000",
+      "sample_minimum": 0.0026634521310032913,
+      "sample_witness": [
+        "2728859/2000000",
+        "2728859/2000000"
+      ],
+      "sample_conditional_gain": -0.000237811485128803,
+      "sample_gain_ratio_to_stage_a": -87.33292050220483,
+      "eligible_by_floating_preflight": false,
+      "k": 395
+    }
+  ],
+  "candidates": [
+    {
+      "pressure": "1/12500",
+      "epsilon": "443239/1000000000",
+      "cutoff": "443239/80000",
+      "sample_minimum": 0.0004665679504706373,
+      "sample_witness": [
+        "2231882437/832080882",
+        "2231882437/832080882"
+      ],
+      "sample_conditional_gain": 1.287519468739418e-05,
+      "sample_gain_ratio_to_stage_a": 4.728234018956633,
+      "eligible_by_floating_preflight": true,
+      "k": 2256
+    },
+    {
+      "pressure": "1/15625",
+      "epsilon": "361697/1000000000",
+      "cutoff": "361697/64000",
+      "sample_minimum": 0.00038073429250467497,
+      "sample_witness": [
+        "2234467435/833037428",
+        "2234467435/833037428"
+      ],
+      "sample_conditional_gain": 1.1789086909363754e-05,
+      "sample_gain_ratio_to_stage_a": 4.329376225422467,
+      "eligible_by_floating_preflight": true,
+      "k": 2764
+    },
+    {
+      "pressure": "3/31250",
+      "epsilon": "510687/1000000000",
+      "cutoff": "170229/32000",
+      "sample_minimum": 0.0005375655156934852,
+      "sample_witness": [
+        "2139349/800000",
+        "10966191/8000000"
+      ],
+      "sample_conditional_gain": 1.1008080365271716e-05,
+      "sample_gain_ratio_to_stage_a": 4.042562565476863,
+      "eligible_by_floating_preflight": true,
+      "k": 1958
+    }
+  ]
+}

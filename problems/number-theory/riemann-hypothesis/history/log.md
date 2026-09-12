@@ -1,5 +1,29 @@
 # Riemann hypothesis history
 
+## 2026-09-12: EXP-004 confirmed and v0.02 published
+
+Declaration `e03413b2301bf45ca68ff6e945f25add9a1c3a89` preceded implementation and
+computation. Commit `fbc4f9f` records the complete proof, exact runner, canonical
+artifacts, final verdict and proof-review binding. The parity transfer combines a
+fixed positive classical odd-zero density seed with multiplicity excess and proves
+a fixed exponent below Wang's cosine positivity root with positive simple-critical
+liminf. It also gives a distinct proportion above one half on a nearby fixed range.
+The classical constant, new exponent, effective height and numerical threshold remain
+unquantified; general RH remains open.
+
+The run passed two symbolic identities, 24 atom regressions, all 19,683 declared
+vectors and 59,049 slack evaluations, 42 rational primal/dual cases, 36 sharpness
+controls and one negative distinct-count control. Two independent raw census checks
+passed. The 1,234,096-byte census and all generated receipts are retained under the
+EXP-004 artifacts directory. The exporter requires the proof-review record and binds
+the declaration revision, premises and raw hashes.
+
+The v0.02 manuscript was built twice without warnings, rendered across all 21 pages,
+and visually reviewed. It is published and freshly verified at
+[10.5281/zenodo.22728744](https://doi.org/10.5281/zenodo.22728744), 498,500 bytes,
+SHA-256 `56b0ce29935fe3d115d9d40432f87f82b030355b028f3ea942fd3d3c671e2b1c`.
+The v0.01 PDF remains unchanged at DOI 10.5281/zenodo.22727389.
+
 ## 2026-09-12: source-led opening
 
 The user requested a full review of the recent zero-proportion breakthrough and its successors,
@@ -48,3 +72,76 @@ modal records independent of dirty, staged-only or locally deleted files. The ca
 EXP-001 LF replay matches its original Git artifact exactly; no mathematical result or frozen
 manuscript bytes changed. Lifecycle advances to published under the web-content gate.
 Version 0.64.000 promotion and live deployment remain separately observed release actions.
+
+## 2026-09-12: version 0.64.000 delivered and live-verified
+
+Research PR #263 merged at `00eace9e2a746c0b4122c5b085b84d804f5f47a0`.
+Release PR #264 merged to main at `08660dc2d6bc91eae0d3a5105447793f0fbc670c`,
+tagged `v0.64.000`. Pages run 34706614866 succeeded. The
+[release closeout](../../../../program/riemann-hypothesis/release-0.64.000/README.md)
+and [live receipt](../../../../program/riemann-hypothesis/release-0.64.000/live-verification.json)
+record 13 public files matching the reviewed bytes and all eight EN/ES light/dark
+desktop/phone scenarios passing, with 224 screenshots and no console, page or HTTP
+errors. The 5,958-byte receipt was copied without alteration and its two raw-receipt
+hashes were checked. RH-008 is complete. The published EXP-002 theorem and frozen
+manuscript remain unchanged; live delivery is not external mathematical acceptance.
+
+## 2026-09-12: pressure-frame source preflight and EXP-003 declaration
+
+The [new primary-source dossier](../context/2026-09-12-pressure-frame-prior-art.md)
+audits the tawanerguo, trmdy, Yuhang Shi and related multi-point pressure constructions.
+Two new MIT repository snapshots and five source documents extend the archive to
+26 documents and six snapshots, all passing byte/hash verification. Existing archive
+entries were preserved. Pressure terms, nonuniform capacities, mixed certificates and
+cross-boundary packing are prior art; the exact proposed odd-frame short-interval
+consequence was not located in this bounded search.
+
+[EXP-003](../experiments/EXP-003-odd-frame-pressure/hypothesis.md) is declared to test
+odd-frame amplification using the frozen triangle certificate, followed by a separately
+bounded two-variable pressure search. The declaration and full source preflight must be
+committed before implementation or computation. At this handoff the run and verdict are
+pending, and no new numerical lower bound is asserted. Stage A and Stage B require
+separate outcomes and adversarial checks. The first release remains the authoritative
+published baseline for comparison.
+
+
+## 2026-09-12: EXP-003 confirmed; investigation broadens
+
+Declaration 8ed806d preceded all computation. Proof and coordinating audit e21618c
+establish the odd-frame pressure theorem. Result commit abfa001 confirms both stages:
+Stage A replays the prior certificate and improves its assembly; Stage B certifies
+p=1/12500, epsilon=443239/10^9 with 16,797 nodes and both arithmetic evaluators.
+The theta=3/4 bound is 0.419087888170111727959091183775. One floating design pass
+froze three candidates; the first passed and the other two were not run. No failed
+search was erased or represented as a proof of optimality.
+
+The full repository suite passed 288 Python tests after committed-source export
+validation. The user then explicitly requested cross-area alternatives and a more
+relevant result. New source-only reviews investigate critical-zero parity/multiplicity,
+negative-spectrum witnesses, and established RH reformulations. No experiment in
+those new families is declared or run at this entry. Current manuscript expansion
+and replay consolidation remain in progress; v0.01 and public v0.64.000 are the
+latest delivered versions. Private coordination PRs #631/#632 were merged and their
+develop/main heads verified at 2bde950d.
+
+## 2026-09-12: cross-area review persisted and EXP-004 declared
+
+Commit be5aac4 archives the spectral and alternative-reformulation dossiers and
+the source manifest, with all 61 then-listed documents passing exact restoration
+verification. The reviews retain precise barriers for finite positivity, omitted
+Nyman-Beurling coordinates, approximation/tail transfer, and zero-time heat-flow
+limits; unreviewed external computational candidates remain attributed as such.
+
+The parity route passed independent source and paper preflight. Declaration
+e03413b2301bf45ca68ff6e945f25add9a1c3a89 was committed and pushed before
+implementation or computation. EXP-004 will check exact residual certificates,
+a fixed count census, primal/dual scalar controls, and the legal short-interval
+deduction. The proposed consequence is positive simple-critical density at some
+fixed exponent below the zero of Wang's cosine curve. Its classical density is
+unspecified; no new numeric exponent is asserted. Finite arithmetic, complete
+proof review and the final verdict are still pending at this chronological entry.
+
+Commit 235b261 preserves five byte-identical v0.01 manuscript/publication files
+under versions/v0.01. The old public DOI and PDF are unchanged. Private draft PR
+#633 carries the confirmed pressure mirror and tested version helper. No new
+Zenodo version is reserved or published at this point.

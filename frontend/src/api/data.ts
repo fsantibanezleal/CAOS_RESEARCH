@@ -41,8 +41,63 @@ export const loadExperiments = () =>
 export const loadJacobian = () => load<JacobianData>('jacobian');
 
 export type RiemannBound = { lower: string; upper: string; display: string };
+export type RiemannPressureWinner = {
+  candidate: number; status: 'arithmetic_verified';
+  theta: string; pressure: string; epsilon: string; cutoff: string;
+  k: number; frame_size: number;
+  baseline: RiemannBound; improved: RiemannBound; gain: RiemannBound; distinct: RiemannBound;
+  strict_gain_gate: RiemannBound; certificate_sha256: string;
+  audit: {
+    verified: boolean; independent_sinc_taylor: boolean; precision_bits: number;
+    nodes: number; validated_leaves: number; pressure_leaves: number; certificate_sha256: string;
+  };
+};
+export type RiemannPressureOutcome = RiemannPressureWinner | {
+  candidate: number;
+  status: 'inconclusive' | 'refuted_by_exact_witness' | 'rejected_gain_gate' | 'not_run_after_higher_ranked_success';
+  reason?: string; pressure?: string; epsilon?: string; cutoff?: string;
+};
+export type RiemannParityResult = {
+  schema: 'riemann-exp004-results-v1';
+  experiment: 'EXP-004-parity-density-transfer';
+  arithmetic_status: 'verified';
+  scope: string;
+  provenance: {
+    declaration_commit: string;
+    hypothesis: { path: string; sha256: string; source_commit: string };
+    inputs: { path: string; sha256: string; source_commit: string }[];
+    runner: { path: string; sha256: string };
+  };
+  symbolic: { residual_identities: number; multiplicity_regression_cases: number; raw_artifact: string; sha256: string };
+  census: {
+    vectors: number; sigma_evaluations: number; sigma_values: number[];
+    raw_artifact: string; sha256: string; scope: string;
+  };
+  relaxation: { cases: number; raw_artifact: string; sha256: string };
+  sharpness: {
+    cases: number; raw_artifact: string; sha256: string;
+    negative_control: { N: number; s: number; Z: number; false_half_sum_residual: number };
+  };
+  threshold: {
+    alpha: string; c_alpha_upper: string; c_alpha_upper_negative: boolean;
+    derivative_cap: string; derivative_cap_less_than: string; derivative_formula_verified: boolean;
+    classical_a: null; kappa: null; theta0_numeric: null; theta1_decimal: null;
+    delta_formula: string; theta1_formula: string; simple_lower_formula: string; distinct_lower_formula: string;
+    scope: string;
+  };
+  proof_status: { all_height_theorem: string; classical_seed: string; full_proof_and_final_verdict: string };
+};
+export type RiemannParityReview = {
+  schema: 'riemann-exp004-proof-review-v1';
+  scientific_verdict: 'confirmed';
+  universal_finite_proof_reviewed: boolean; asymptotic_transfer_reviewed: boolean;
+  numerical_exponent_claimed: false;
+  declaration_commit: string; reviewed_utc: string; confirmed_conclusion: string;
+  review_scope: string; novelty_scope: string; imported_inputs: string[]; unquantified: string[];
+  source_sha256: Record<'parity_result' | 'parity_hypothesis' | 'parity_proof' | 'parity_audit' | 'parity_verdict', string>;
+};
 export type RiemannData = {
-  schema: 'riemann-replay-v1';
+  schema: 'riemann-replay-v3';
   reviewed_on: string;
   result: {
     theta: string; radius: string; delta: string;
@@ -60,6 +115,24 @@ export type RiemannData = {
       exact: { decimal_lower: string; decimal_upper: string; lower: string; upper: string };
     }>;
   };
+  pressure_result: {
+    schema: 'riemann-exp003-results-v1';
+    stage_a: {
+      arithmetic_status: 'verified'; theta: string; radius: string; delta: string;
+      k: number; frame_size: number; gain_ratio_to_exp002: string;
+      baseline: RiemannBound; improved: RiemannBound; gain: RiemannBound; distinct: RiemannBound;
+      invariants: { index_cases: number; symbolic_identities: number; pairs_disjoint: boolean; spans_telescope: boolean };
+      replay: { verified: boolean; independent_sinc_taylor: boolean; precision_bits: number;
+        nodes: number; energy_leaves: number; outside_leaves: number };
+    };
+    stage_b: {
+      arithmetic_status: 'verified' | 'not_confirmed'; candidate_list_sha256: string;
+      outcomes: RiemannPressureOutcome[];
+    };
+    scope: string;
+  };
+  parity_result: RiemannParityResult;
+  parity_review: RiemannParityReview;
   provenance: {
     role: string; source_exp: string; path: string; source_commit: string;
     bytes: number; sha256: string;

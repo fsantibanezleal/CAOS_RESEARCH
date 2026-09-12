@@ -24,6 +24,16 @@ export const CITATIONS: Citation[] = [
     url: 'https://arxiv.org/abs/2609.07918v1',
   },
   {
+    id: 'riemann-karatsuba1985', label: 'Karatsuba 1985',
+    citation: 'Karatsuba A. A. (1985). On the zeros of the Riemann zeta-function on the critical line. Mathematics of the USSR-Izvestiya 24(3), 523–537. Theorem B restates Selberg’s distinct odd-order critical-zero density; the paper also proves a stronger shorter seed exponent.',
+    url: 'https://www.mathnet.ru/eng/im1456',
+  },
+  {
+    id: 'riemann-parity2026', label: 'CAOS EXP-004: parity transfer',
+    citation: 'Santibáñez-Leal F. (2026). Parity density transfer across the cosine positivity threshold. CAOS Research EXP-004: complete finite proof, exact controls, independent source binding and qualitative short-interval range extension. No numerical new exponent or RH proof is claimed.',
+    url: 'https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/mathematical-proof.md',
+  },
+  {
     id: 'riemann-bgstb2026', label: 'BGSTB, corrected version 2026',
     citation: 'Baluyot S. A. C., Goldston D. A., Suriajaya A. I., Turnage-Butterbaugh C. L. (2026). Pair correlation of zeros of the Riemann zeta function I: Proportions of simple zeros and critical zeros. arXiv:2501.14545v3. Corrected uniform error terms; the cited integrated applications remain valid.',
     url: 'https://arxiv.org/abs/2501.14545v3',
@@ -50,8 +60,23 @@ export const CITATIONS: Citation[] = [
   },
   {
     id: 'riemann-refinement2026', label: 'CAOS short-interval refinement',
-    citation: 'Santibáñez-Leal F. (2026). A stability refinement for simple critical zeros in short intervals. Research preprint with an analytic proof, a finite Arb certificate, and an independent arithmetic evaluator; EXP-002.',
-    doi: '10.5281/zenodo.22727388',
+    citation: 'Santibáñez-Leal F. (2026). A stability refinement for simple critical zeros in short intervals, version 0.01. First published EXP-002 proof and compact certificate; a separate sinc-Taylor evaluator shares Arb and geometry with the certifier.',
+    doi: '10.5281/zenodo.22727389',
+  },
+  {
+    id: 'riemann-pressure2026', label: 'CAOS EXP-003: odd-frame pressure',
+    citation: 'Santibáñez-Leal F. (2026). Odd-frame pressure refinement of the short-interval cosine bound. EXP-003 mathematical proof and confirmed verdict. Stronger short-interval consequences of attributed finite stability and pressure frameworks; finite arithmetic and analytic scope are separate evidence layers.',
+    url: 'https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/mathematical-proof.md',
+  },
+  {
+    id: 'riemann-tawanerguo2026', label: 'tawanerguo: pressure and capacities',
+    citation: 'tawanerguo-cn (2026). zeta-simple-zeros, commit 45149f6d403059a71be73c5e3f884cee7cd62b20. Global finite stability, pressure-frame and nonuniform-capacity framework. Attribution does not import the repository’s global numerical claims as short-interval results.',
+    url: 'https://github.com/tawanerguo-cn/zeta-simple-zeros/tree/45149f6d403059a71be73c5e3f884cee7cd62b20',
+  },
+  {
+    id: 'riemann-yuhangshi2026', label: 'Yuhang Shi: mixed frames',
+    citation: 'Yuhang Shi (2026). zeta-simple-zeros-673316977, commit 1aeda8e9f0678166a824c75313a813b09eb478cd. Mixed-frame and spectral-envelope refinements in the existing global framework. The audited short-interval consequence is separately stated in EXP-003.',
+    url: 'https://github.com/yuhangshi888/zeta-simple-zeros-673316977/tree/1aeda8e9f0678166a824c75313a813b09eb478cd',
   },
   {
     id: 'alpoge2026',

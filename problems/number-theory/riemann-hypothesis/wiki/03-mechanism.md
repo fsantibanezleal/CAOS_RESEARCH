@@ -1,4 +1,7 @@
-# 3. Full finite-operator and short-interval proof
+# 3. First finite-operator and short-interval proof
+
+This is the EXP-002 derivation preserved as the first released theorem.
+[Chapter 6](06-odd-frame-pressure.md) gives the stronger EXP-003 pressure theorem.
 
 Date: 2026-09-12. Status: mathematical derivation with independent adversarial
 review; not an end-to-end Lean certificate. The application uses Wang's stated

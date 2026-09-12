@@ -42,3 +42,37 @@ if the novelty gate is met. Publish coherent validated manuscripts to Zenodo und
 versioning, data bake, frontend replay, rendered checks, and the develop-to-main deployment.
 The initial finite calculations are CPU tasks. GPU use requires a demonstrated search workload
 and a separate exact/certified validation path.
+
+## Completed first release and current bounded round
+
+The first source review, EXP-001, EXP-002, wiki and version 0.01 preprint are complete.
+Research PR #263 and release PR #264 merged; main `08660dc` is tagged `v0.64.000`.
+Pages run 34706614866 succeeded. The
+[live receipt](release-0.64.000/live-verification.json) closes the first delivery round:
+13 public files match the reviewed bytes, and all eight desktop/phone EN/ES light/dark
+scenarios pass with 224 screenshots. The separate predeployment matrix and visual reviews
+remain in [the release evidence](release-0.64.000/README.md).
+
+[EXP-003](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/verdict.md) is now confirmed in both stages. Its odd-frame
+assembly strengthens the entire positive curve; a 16,797-node pressure certificate
+gives the stronger explicit theta=3/4 result. The declared source/compute sequence,
+budgets, checkpoint semantics and unattempted lower-ranked candidates are persisted.
+
+The latest user instruction expands the objective beyond constant optimization.
+Three bounded primary-source reviews examine parity/multiplicity transfer, full
+negative-spectrum information, and alternative RH reformulations. New computational
+families require a fresh source-complete declaration; an already known theorem or
+an unsupported infinite-limit step rejects a proposed novelty claim.
+
+Those dossiers are now persisted. EXP-004 was declared in e03413b before computation,
+and is confirmed in fbc4f9f with exact parity/multiplicity certificates, a complete
+qualitative below-threshold theorem, and independent proof adjudication. The classical
+density constant and new decimal exponent remain unquantified. Retain the other
+source-reviewed routes as separate hypotheses with their missing arithmetic or
+infinite-limit inputs explicit.
+
+The release owner preserved EXP-003 while the reviews ran. The revised manuscript is
+now frozen and published as v0.02 at DOI 10.5281/zenodo.22728744 after a two-pass,
+21-page rendered review. Finish the bilingual replay, scoped promotion, serialized
+release, all-page/rendered checks and exact live verification in the same delivery
+round. The v0.01 publication and archive remain unchanged.

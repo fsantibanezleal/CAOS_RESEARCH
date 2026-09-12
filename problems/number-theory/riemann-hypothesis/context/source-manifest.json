@@ -411,6 +411,761 @@
       },
       "cache_path": "source-cache/anthropic-riemann-zeta-20260912.html",
       "tracked_fulltext": false
+    },
+    {
+      "filename": "teal-four-point-c614e65188f0.md",
+      "source_url": "https://raw.githubusercontent.com/teal-sea/zeta-lab/c614e65188f0b5d73b342436383ae558fbd3aafd/hunts/ainta_seven_point/FOUR-POINT.md",
+      "bytes": 39463,
+      "sha256": "e2e8131505576dad04c153ddb24c2484de50609bc4dc08a2aeeae724d6ea9947",
+      "note": "Pressure-frame prior-art audit; primary repository source, no verifier execution",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "not-separately-audited-for-this-cache-entry",
+        "redistribution_basis": "local research archive; not publicly redistributed or relicensed"
+      },
+      "version": "c614e65188f0b5d73b342436383ae558fbd3aafd",
+      "cache_path": "source-cache/teal-four-point-c614e65188f0.md",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-pressure-frame-prior-art.md"
+    },
+    {
+      "filename": "teal-n-point-bridge-c614e65188f0.md",
+      "source_url": "https://raw.githubusercontent.com/teal-sea/zeta-lab/c614e65188f0b5d73b342436383ae558fbd3aafd/hunts/ainta_seven_point/BRIDGE.md",
+      "bytes": 31291,
+      "sha256": "471762655ff3883bc73236159b660204be966797c89da53688229063cc2cf8fb",
+      "note": "Pressure-frame prior-art audit; primary repository source, no verifier execution",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "not-separately-audited-for-this-cache-entry",
+        "redistribution_basis": "local research archive; not publicly redistributed or relicensed"
+      },
+      "version": "c614e65188f0b5d73b342436383ae558fbd3aafd",
+      "cache_path": "source-cache/teal-n-point-bridge-c614e65188f0.md",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-pressure-frame-prior-art.md"
+    },
+    {
+      "filename": "teal-pressure-mission-c614e65188f0.md",
+      "source_url": "https://raw.githubusercontent.com/teal-sea/zeta-lab/c614e65188f0b5d73b342436383ae558fbd3aafd/hunts/four_point_pressure/MISSION.md",
+      "bytes": 1896,
+      "sha256": "13ea58679707fef8690ffcceaa974d24091fb3fb38ac691321d5d275a6b10e04",
+      "note": "Pressure-frame prior-art audit; primary repository source, no verifier execution",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "not-separately-audited-for-this-cache-entry",
+        "redistribution_basis": "local research archive; not publicly redistributed or relicensed"
+      },
+      "version": "c614e65188f0b5d73b342436383ae558fbd3aafd",
+      "cache_path": "source-cache/teal-pressure-mission-c614e65188f0.md",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-pressure-frame-prior-art.md"
+    },
+    {
+      "filename": "teal-pressure-runs-c614e65188f0.md",
+      "source_url": "https://raw.githubusercontent.com/teal-sea/zeta-lab/c614e65188f0b5d73b342436383ae558fbd3aafd/hunts/four_point_pressure/RUNS.md",
+      "bytes": 5648,
+      "sha256": "d228fe1a50ee8c27dc5a54725fdce6c6649ecb4be08ace41a48053bdfc018f75",
+      "note": "Pressure-frame prior-art audit; primary repository source, no verifier execution",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "not-separately-audited-for-this-cache-entry",
+        "redistribution_basis": "local research archive; not publicly redistributed or relicensed"
+      },
+      "version": "c614e65188f0b5d73b342436383ae558fbd3aafd",
+      "cache_path": "source-cache/teal-pressure-runs-c614e65188f0.md",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-pressure-frame-prior-art.md"
+    },
+    {
+      "filename": "npip-proof-72a01ac5ea38.md",
+      "source_url": "https://raw.githubusercontent.com/npip99/zeta-zeros/72a01ac5ea3837f2a4c4583d831f885d005f8af1/docs/proof.md",
+      "bytes": 2381,
+      "sha256": "4afc5a26cf48234b804709a8fde72706a1e2f792421586fc946ff66fd6c097b4",
+      "note": "Pressure-frame prior-art audit; primary repository source, no verifier execution",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "not-separately-audited-for-this-cache-entry",
+        "redistribution_basis": "local research archive; not publicly redistributed or relicensed"
+      },
+      "version": "72a01ac5ea3837f2a4c4583d831f885d005f8af1",
+      "cache_path": "source-cache/npip-proof-72a01ac5ea38.md",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-pressure-frame-prior-art.md"
+    },
+    {
+      "filename": "suzuki-screw-function-2606.09096v1.pdf",
+      "title": "Weil's quadratic form via the screw function",
+      "source_url": "https://arxiv.org/pdf/2606.09096v1",
+      "bytes": 501231,
+      "sha256": "06e2abeb778d9414f98589d8654ecf06a7f6d9d0b9914961e88365a6b48b91b2",
+      "cache_path": "source-cache/suzuki-screw-function-2606.09096v1.pdf",
+      "text_cache_path": "source-cache/suzuki-screw-function-2606.09096v1.txt",
+      "text_sha256": "fa89b7ec0c9213a9aaf7340fcef3e9b92d57c99fe3aa27d0726cf61fb67c7f3c",
+      "retrieved_on": "2026-09-12",
+      "version": "arXiv:2606.09096v1; PDF printed June 9, 2026",
+      "tracked_fulltext": false,
+      "pages": 30,
+      "review_dossier": "2026-09-12-spectral-optimization-alternatives.md",
+      "license": {
+        "status": "arXiv perpetual non-exclusive license",
+        "redistribution_basis": "local research archive; source not relicensed; public manifest links original"
+      },
+      "note": "Theorem1.1 and Corollary1.6 checked in PDF; printed June9,2026. Nominal v1 HTML showed different August24 date, so PDF bytes are canonical."
+    },
+    {
+      "filename": "kim-et-al-suzuki-numerics-2607.24830v1.pdf",
+      "title": "A Numerical Realization of Suzuki's Weil-Quadratic-Form Operator: The Archimedean Spectral Law, its Universality, and an Operator Form of Weil's Positivity Criterion",
+      "source_url": "https://arxiv.org/pdf/2607.24830v1",
+      "bytes": 284788,
+      "sha256": "ab8e2ddab80764baca435ea245438236b871e5469a5d034dee833ebc6b93541f",
+      "cache_path": "source-cache/kim-et-al-suzuki-numerics-2607.24830v1.pdf",
+      "text_cache_path": "source-cache/kim-et-al-suzuki-numerics-2607.24830v1.txt",
+      "text_sha256": "e7d4e0250133bd6740bd6646218b2f227ee7a1cea2b49a1f04de31eea925d9b0",
+      "retrieved_on": "2026-09-12",
+      "version": "arXiv:2607.24830v1; July 23, 2026",
+      "tracked_fulltext": false,
+      "pages": 18,
+      "review_dossier": "2026-09-12-spectral-optimization-alternatives.md",
+      "license": {
+        "status": "CC BY 4.0",
+        "redistribution_basis": "local research archive; source not relicensed; public manifest links original"
+      },
+      "note": "Experimental spectral study; ?3.1 explicitly labels symbol-law derivation heuristic and ?4 says residual proof assumes RH."
+    },
+    {
+      "filename": "conrey-li-9812166.pdf",
+      "source_url": "https://arxiv.org/pdf/math/9812166v1",
+      "bytes": 133850,
+      "sha256": "bdb68ede69e41939be0c2b740cbe1955da8b24940e30eb8c8f4554878dfb4568",
+      "cache_path": "source-cache/conrey-li-9812166.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "arXiv:math/9812166v1",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "arXiv distribution license; not treated as general republication permission",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "http://arxiv.org/licenses/assumed-1991-2003/"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier.",
+      "pages": 10,
+      "text_cache_path": "source-cache/conrey-li-9812166.txt",
+      "text_sha256": "c6a7e07d5e0fe64d1d556ae2bb26137a61834d3195d9a24185be964e994529f0"
+    },
+    {
+      "filename": "burnol-0103058.pdf",
+      "source_url": "https://arxiv.org/pdf/math/0103058v2",
+      "bytes": 151216,
+      "sha256": "999f05d5045fd909c3fb985677c4e40459f2a8b1e8b7d932f34b35bdc52d6e7d",
+      "cache_path": "source-cache/burnol-0103058.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "arXiv:math/0103058v2",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "arXiv distribution license; not treated as general republication permission",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "http://arxiv.org/licenses/assumed-1991-2003/"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier.",
+      "pages": 17,
+      "text_cache_path": "source-cache/burnol-0103058.txt",
+      "text_sha256": "1f9a9540b70d1fa7b627094540cad30624d924cc93e49b0913e55f03858a8d2d"
+    },
+    {
+      "filename": "bettin-conrey-farmer-1211.5191v1.pdf",
+      "source_url": "https://arxiv.org/pdf/1211.5191v1",
+      "bytes": 142519,
+      "sha256": "10aec1235df42b351c55b77b4b207802e867219560cff14eaa7b43e0aa425468",
+      "cache_path": "source-cache/bettin-conrey-farmer-1211.5191v1.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "arXiv:1211.5191v1",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "arXiv distribution license; not treated as general republication permission",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier.",
+      "pages": 9,
+      "text_cache_path": "source-cache/bettin-conrey-farmer-1211.5191v1.txt",
+      "text_sha256": "8aa92cb528113cd073a304e45ea87130b021ec8ba47dd6ffc55a05681fce81c9"
+    },
+    {
+      "filename": "baez-duarte-0205003v1.pdf",
+      "source_url": "https://arxiv.org/pdf/math/0205003v1",
+      "bytes": 139803,
+      "sha256": "13a2dcc763d3fdd5b52afc87845c6d77c83764a56aab06f574a91ee43c8a152b",
+      "cache_path": "source-cache/baez-duarte-0205003v1.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "arXiv:math/0205003v1",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "arXiv distribution license; not treated as general republication permission",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "http://arxiv.org/licenses/assumed-1991-2003/"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier.",
+      "pages": 9,
+      "text_cache_path": "source-cache/baez-duarte-0205003v1.txt",
+      "text_sha256": "40b72009dfdf35be6384a8e91c8ce0a69b23a9861e877d8661d20f0206e34df8"
+    },
+    {
+      "filename": "suzuki-2209.04658v3.pdf",
+      "source_url": "https://arxiv.org/pdf/2209.04658v3",
+      "bytes": 179263,
+      "sha256": "022d42869c10420f81c0f09ccf49c5e0a037a2fd50c35392d4205db61683db42",
+      "cache_path": "source-cache/suzuki-2209.04658v3.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "arXiv:2209.04658v3",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "arXiv distribution license; not treated as general republication permission",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier.",
+      "pages": 9,
+      "text_cache_path": "source-cache/suzuki-2209.04658v3.txt",
+      "text_sha256": "e03661e3d67ae1b712c0b6ffd65646d9829c75973a13277fc8ee573e138c3e4c"
+    },
+    {
+      "filename": "suzuki-2206.03682v4.pdf",
+      "source_url": "https://arxiv.org/pdf/2206.03682v4",
+      "bytes": 433447,
+      "sha256": "eabccec3c2bfee2eb12077181b564e508270f80698f4a8c64ccf105b30119f41",
+      "cache_path": "source-cache/suzuki-2206.03682v4.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "arXiv:2206.03682v4",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "arXiv distribution license; not treated as general republication permission",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier.",
+      "pages": 32,
+      "text_cache_path": "source-cache/suzuki-2206.03682v4.txt",
+      "text_sha256": "2361a5bcd770b95255cfb72b4ab1a41d6e855e2e508aae256b6c4510fca6a626"
+    },
+    {
+      "filename": "rodgers-tao-1801.05914.pdf",
+      "source_url": "https://arxiv.org/pdf/1801.05914v5",
+      "bytes": 503405,
+      "sha256": "376bb2c1ab941cd5b035546835c5481f2d026767b8e830a48cd5565114a1ec91",
+      "cache_path": "source-cache/rodgers-tao-1801.05914.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "arXiv:1801.05914v5",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "CC BY 3.0 stated on PDF page1; arXiv distribution license also linked",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "https://creativecommons.org/licenses/by/3.0/"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier.",
+      "pages": 61,
+      "text_cache_path": "source-cache/rodgers-tao-1801.05914.txt",
+      "text_sha256": "4dafa02d1104f667f2f9c27e56d7d0b50fd73c5510d9b5a3be5c978ec15e3bb6"
+    },
+    {
+      "filename": "voros-0404213.pdf",
+      "source_url": "https://arxiv.org/pdf/math/0404213v2",
+      "bytes": 103233,
+      "sha256": "47aa62002c3b13ab8db0148fdb65ddf1ff43209afe049eaf8611bbfe9a6a793d",
+      "cache_path": "source-cache/voros-0404213.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "arXiv:math/0404213v2",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "arXiv distribution license; not treated as general republication permission",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "http://arxiv.org/licenses/assumed-1991-2003/"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier.",
+      "pages": 5,
+      "text_cache_path": "source-cache/voros-0404213.txt",
+      "text_sha256": "d3671d82380283707647f5a4876ba35530a103f48f58d02b3ef38bdc05961c5d"
+    },
+    {
+      "filename": "carvill-2510.18132.pdf",
+      "source_url": "https://arxiv.org/pdf/2510.18132v1",
+      "bytes": 895481,
+      "sha256": "c72c144f3d088032895be0903267757e1618065f034b70d814453cd8b758635f",
+      "cache_path": "source-cache/carvill-2510.18132.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "arXiv:2510.18132v1",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "author notice: non-commercial academic use only; commercial rights reserved; arXiv nonexclusive distribution",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+        "notice_page": 1
+      },
+      "note": "Proof step in Theorem6.1 uses false log-distance lower bound; quarantined as a theorem premise.",
+      "pages": 13,
+      "text_cache_path": "source-cache/carvill-2510.18132.txt",
+      "text_sha256": "7fff03c4c39a0dbfe0bf5357b128e8ed157d52be36b40d214c32f508c0cb1281"
+    },
+    {
+      "filename": "polymath-1904.12438.pdf",
+      "source_url": "https://arxiv.org/pdf/1904.12438v2",
+      "bytes": 2158176,
+      "sha256": "60d0d2d381227d32f98535a5c43dedb86e333a9006d6819f0bdebdd734085603",
+      "cache_path": "source-cache/polymath-1904.12438.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "arXiv:1904.12438v2",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "arXiv distribution license; not treated as general republication permission",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier.",
+      "pages": 68,
+      "text_cache_path": "source-cache/polymath-1904.12438.txt",
+      "text_sha256": "d4bccd311917c6f7804ae78958ab3646960869f4564af49dd4511b4f6c094cde"
+    },
+    {
+      "filename": "alouges-darses-hillion-2006.02953v2.pdf",
+      "source_url": "https://arxiv.org/pdf/2006.02953v2",
+      "bytes": 224936,
+      "sha256": "36b419c75ce4854cf54833fe289b69f83e79ff38dfe0e652e8f3cf212a596bf5",
+      "cache_path": "source-cache/alouges-darses-hillion-2006.02953v2.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "arXiv:2006.02953v2",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "arXiv distribution license; not treated as general republication permission",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier.",
+      "pages": 14,
+      "text_cache_path": "source-cache/alouges-darses-hillion-2006.02953v2.txt",
+      "text_sha256": "ff37554f3eab695b364850b9cb890328972f788c9489600a38d83c4aa3a88d4d"
+    },
+    {
+      "filename": "baez-duarte-arithmetic-0011254.pdf",
+      "source_url": "https://arxiv.org/pdf/math/0011254v1",
+      "bytes": 255860,
+      "sha256": "951ecc56eaae5b80eb8128ab4f98b5184d06ed97da608a130d65940daea8e94c",
+      "cache_path": "source-cache/baez-duarte-arithmetic-0011254.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "arXiv:math/0011254v1",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "arXiv distribution license; not treated as general republication permission",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "http://arxiv.org/licenses/assumed-1991-2003/"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier.",
+      "pages": 21,
+      "text_cache_path": "source-cache/baez-duarte-arithmetic-0011254.txt",
+      "text_sha256": "71bacf1c3f7413ee1e78a06bb2bd8b59a71c8619c399bc28650f0687687c7d91"
+    },
+    {
+      "filename": "pyvovarov-2607.12084v3.pdf",
+      "source_url": "https://arxiv.org/pdf/2607.12084v3",
+      "bytes": 460766,
+      "sha256": "c85660d6c2bcbca5458e82cb048afd8c62311c216fd1fe88cbea8d6ffb4c48c7",
+      "cache_path": "source-cache/pyvovarov-2607.12084v3.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "arXiv:2607.12084v3",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "arXiv distribution license; not treated as general republication permission",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier.",
+      "pages": 66,
+      "text_cache_path": "source-cache/pyvovarov-2607.12084v3.txt",
+      "text_sha256": "bce4e71735acc757533d4b9d442ed7a2a6c07123c3b21d831d8faf2f033b1276"
+    },
+    {
+      "filename": "bombieri-lagarias-1999.pdf",
+      "source_url": "https://websites.umich.edu/~lagarias/doc/bombieri.pdf?download=1",
+      "bytes": 204958,
+      "sha256": "cd13c8560f961c68e21256e5ba107bdd08fa7f34ce1e2cffbd4b63a16e8d48e0",
+      "cache_path": "source-cache/bombieri-lagarias-1999.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "author-hosted PDF retrieved2026-09-12",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "not-stated-in-inspected-source",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged"
+      },
+      "note": "Author PDF has broken extracted-text font encoding; general multiset theorem page3 visually checked from rendered PDF. Pages1and3 rendered locally.",
+      "pages": 12,
+      "text_cache_path": "source-cache/bombieri-lagarias-1999.txt",
+      "text_sha256": "bae5d0b23c9cd22343ede5648060e5cd4c6d7797ba689fddc02061fd75a95bc7"
+    },
+    {
+      "filename": "calderaro-manzur-noor-santos-2203.05030.pdf",
+      "source_url": "https://arxiv.org/pdf/2203.05030v4",
+      "bytes": 262057,
+      "sha256": "fe44d0d0345979f09da28f8cef11e7c883e5de7e2d67f0de2c03aa53ca9cf0b5",
+      "cache_path": "source-cache/calderaro-manzur-noor-santos-2203.05030.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "arXiv:2203.05030v4",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "CC BY 4.0 linked from arXiv landing page",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier.",
+      "pages": 17,
+      "text_cache_path": "source-cache/calderaro-manzur-noor-santos-2203.05030.txt",
+      "text_sha256": "77af8abb284d9b509d3f28290b22902e4c98e6ec3bf014dce783d5ccd1dfee72"
+    },
+    {
+      "filename": "judegomila-README.md",
+      "source_url": "https://raw.githubusercontent.com/judegomila/dbn-lambda-01787854-candidate-audit/a74738deb6d5e0f76887cb36901da08b68dca705/README.md",
+      "bytes": 16376,
+      "sha256": "72a1ebf74a17d0c2624cd22d5a7f678d347475c05a12a970850f1fd47534bfb4",
+      "cache_path": "source-cache/judegomila-README.md",
+      "retrieved_on": "2026-09-12",
+      "version": "a74738deb6d5e0f76887cb36901da08b68dca705",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "CC BY 4.0 for original documentation; authored paper and named third-party paths excluded",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "https://raw.githubusercontent.com/judegomila/dbn-lambda-01787854-candidate-audit/a74738deb6d5e0f76887cb36901da08b68dca705/LICENSE-DOCS"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier."
+    },
+    {
+      "filename": "judegomila-PROOF_NOTE.md",
+      "source_url": "https://raw.githubusercontent.com/judegomila/dbn-lambda-01787854-candidate-audit/a74738deb6d5e0f76887cb36901da08b68dca705/PROOF_NOTE.md",
+      "bytes": 16679,
+      "sha256": "eb669afe2f9973a42c5851b950d274d8db8a2f996c75837390e7998f1c151bf8",
+      "cache_path": "source-cache/judegomila-PROOF_NOTE.md",
+      "retrieved_on": "2026-09-12",
+      "version": "a74738deb6d5e0f76887cb36901da08b68dca705",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "CC BY 4.0 for original documentation; authored paper and named third-party paths excluded",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "https://raw.githubusercontent.com/judegomila/dbn-lambda-01787854-candidate-audit/a74738deb6d5e0f76887cb36901da08b68dca705/LICENSE-DOCS"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier."
+    },
+    {
+      "filename": "judegomila-TAIL_LEMMA.md",
+      "source_url": "https://raw.githubusercontent.com/judegomila/dbn-lambda-01787854-candidate-audit/a74738deb6d5e0f76887cb36901da08b68dca705/TAIL_LEMMA.md",
+      "bytes": 14476,
+      "sha256": "197d12684c6e3811762214091efcab64d474a5c4deca3e4823dfe9437c68c282",
+      "cache_path": "source-cache/judegomila-TAIL_LEMMA.md",
+      "retrieved_on": "2026-09-12",
+      "version": "a74738deb6d5e0f76887cb36901da08b68dca705",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "CC BY 4.0 for original documentation; authored paper and named third-party paths excluded",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "https://raw.githubusercontent.com/judegomila/dbn-lambda-01787854-candidate-audit/a74738deb6d5e0f76887cb36901da08b68dca705/LICENSE-DOCS"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier."
+    },
+    {
+      "filename": "judegomila-LICENSE-DOCS",
+      "source_url": "https://raw.githubusercontent.com/judegomila/dbn-lambda-01787854-candidate-audit/a74738deb6d5e0f76887cb36901da08b68dca705/LICENSE-DOCS",
+      "bytes": 1282,
+      "sha256": "7b393c886ba28ff8b0bd4d9ed872dc936dcd118c89a5295287c9e2334969e04b",
+      "cache_path": "source-cache/judegomila-LICENSE-DOCS",
+      "retrieved_on": "2026-09-12",
+      "version": "a74738deb6d5e0f76887cb36901da08b68dca705",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "CC BY 4.0 for original documentation; authored paper and named third-party paths excluded",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "https://raw.githubusercontent.com/judegomila/dbn-lambda-01787854-candidate-audit/a74738deb6d5e0f76887cb36901da08b68dca705/LICENSE-DOCS"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier."
+    },
+    {
+      "filename": "judegomila-LICENSE",
+      "source_url": "https://raw.githubusercontent.com/judegomila/dbn-lambda-01787854-candidate-audit/a74738deb6d5e0f76887cb36901da08b68dca705/LICENSE",
+      "bytes": 1423,
+      "sha256": "cf3cef645439d98d6a4e153699e52842adcf294e5074225770d46044e8cf77f4",
+      "cache_path": "source-cache/judegomila-LICENSE",
+      "retrieved_on": "2026-09-12",
+      "version": "a74738deb6d5e0f76887cb36901da08b68dca705",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "MIT software license text; named manuscript and third-party exceptions remain",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "https://raw.githubusercontent.com/judegomila/dbn-lambda-01787854-candidate-audit/a74738deb6d5e0f76887cb36901da08b68dca705/LICENSE-DOCS"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier."
+    },
+    {
+      "filename": "LeonardSEO-paper_main.tex",
+      "source_url": "https://raw.githubusercontent.com/LeonardSEO/certified-riemann-xi-positivity/6d5f6ce7ad1031cee8740e47b044dda139dd497c/paper/main.tex",
+      "bytes": 33140,
+      "sha256": "7d8a72e22f4277c2c11a10e94d5904f5d483e629837302657d94c0cb25fb2f34",
+      "cache_path": "source-cache/LeonardSEO-paper_main.tex",
+      "retrieved_on": "2026-09-12",
+      "version": "6d5f6ce7ad1031cee8740e47b044dda139dd497c",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "scholarly materials all rights reserved; software AGPL-3.0-only",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "https://raw.githubusercontent.com/LeonardSEO/certified-riemann-xi-positivity/6d5f6ce7ad1031cee8740e47b044dda139dd497c/NOTICE"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier."
+    },
+    {
+      "filename": "LeonardSEO-README.md",
+      "source_url": "https://raw.githubusercontent.com/LeonardSEO/certified-riemann-xi-positivity/6d5f6ce7ad1031cee8740e47b044dda139dd497c/README.md",
+      "bytes": 3974,
+      "sha256": "0eb6634e87d6ff9763de3041d80e0e5cea2c44865cb3bc4057ed7a70ac7084d6",
+      "cache_path": "source-cache/LeonardSEO-README.md",
+      "retrieved_on": "2026-09-12",
+      "version": "6d5f6ce7ad1031cee8740e47b044dda139dd497c",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "scholarly materials all rights reserved; software AGPL-3.0-only",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "https://raw.githubusercontent.com/LeonardSEO/certified-riemann-xi-positivity/6d5f6ce7ad1031cee8740e47b044dda139dd497c/NOTICE"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier."
+    },
+    {
+      "filename": "LeonardSEO-research_adversarial_ANALYTIC_OBSTRUCTION.md",
+      "source_url": "https://raw.githubusercontent.com/LeonardSEO/certified-riemann-xi-positivity/6d5f6ce7ad1031cee8740e47b044dda139dd497c/research/adversarial/ANALYTIC_OBSTRUCTION.md",
+      "bytes": 4053,
+      "sha256": "b407f9ad74ad214da42353cde3d3da5d18f22f05e5df1029eda34955a2f176d8",
+      "cache_path": "source-cache/LeonardSEO-research_adversarial_ANALYTIC_OBSTRUCTION.md",
+      "retrieved_on": "2026-09-12",
+      "version": "6d5f6ce7ad1031cee8740e47b044dda139dd497c",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "scholarly materials all rights reserved; software AGPL-3.0-only",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "https://raw.githubusercontent.com/LeonardSEO/certified-riemann-xi-positivity/6d5f6ce7ad1031cee8740e47b044dda139dd497c/NOTICE"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier."
+    },
+    {
+      "filename": "judegomila-research_lower_time_01782354_LOWER_TIME_01782354_PROOF_GAP.md",
+      "source_url": "https://raw.githubusercontent.com/judegomila/dbn-lambda-01787854-candidate-audit/a74738deb6d5e0f76887cb36901da08b68dca705/research/lower_time_01782354/LOWER_TIME_01782354_PROOF_GAP.md",
+      "bytes": 7163,
+      "sha256": "fdc4a945aa6befeb69c570590a9d4f9e6134a201f5d5bfe476e93dc9c4018869",
+      "cache_path": "source-cache/judegomila-research_lower_time_01782354_LOWER_TIME_01782354_PROOF_GAP.md",
+      "retrieved_on": "2026-09-12",
+      "version": "a74738deb6d5e0f76887cb36901da08b68dca705",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "CC BY 4.0 for original documentation; authored paper and named third-party paths excluded",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "https://raw.githubusercontent.com/judegomila/dbn-lambda-01787854-candidate-audit/a74738deb6d5e0f76887cb36901da08b68dca705/LICENSE-DOCS"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier."
+    },
+    {
+      "filename": "judegomila-OPEN_REVIEW_QUESTIONS.md",
+      "source_url": "https://raw.githubusercontent.com/judegomila/dbn-lambda-01787854-candidate-audit/a74738deb6d5e0f76887cb36901da08b68dca705/OPEN_REVIEW_QUESTIONS.md",
+      "bytes": 9876,
+      "sha256": "f7b1aaa91ed90e7ee942e60a396580201d5f1bcc9269856fd46708ec3f7305a4",
+      "cache_path": "source-cache/judegomila-OPEN_REVIEW_QUESTIONS.md",
+      "retrieved_on": "2026-09-12",
+      "version": "a74738deb6d5e0f76887cb36901da08b68dca705",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "CC BY 4.0 for original documentation; authored paper and named third-party paths excluded",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "https://raw.githubusercontent.com/judegomila/dbn-lambda-01787854-candidate-audit/a74738deb6d5e0f76887cb36901da08b68dca705/LICENSE-DOCS"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier."
+    },
+    {
+      "filename": "LeonardSEO-LICENSE",
+      "source_url": "https://raw.githubusercontent.com/LeonardSEO/certified-riemann-xi-positivity/6d5f6ce7ad1031cee8740e47b044dda139dd497c/LICENSE",
+      "bytes": 34523,
+      "sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef",
+      "cache_path": "source-cache/LeonardSEO-LICENSE",
+      "retrieved_on": "2026-09-12",
+      "version": "6d5f6ce7ad1031cee8740e47b044dda139dd497c",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "scholarly materials all rights reserved; software AGPL-3.0-only",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "https://raw.githubusercontent.com/LeonardSEO/certified-riemann-xi-positivity/6d5f6ce7ad1031cee8740e47b044dda139dd497c/NOTICE"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier."
+    },
+    {
+      "filename": "LeonardSEO-NOTICE",
+      "source_url": "https://raw.githubusercontent.com/LeonardSEO/certified-riemann-xi-positivity/6d5f6ce7ad1031cee8740e47b044dda139dd497c/NOTICE",
+      "bytes": 1525,
+      "sha256": "8b615530a0f21ca5292e4e70200d064d330de9e352f716b4982ba721bb5bf06f",
+      "cache_path": "source-cache/LeonardSEO-NOTICE",
+      "retrieved_on": "2026-09-12",
+      "version": "6d5f6ce7ad1031cee8740e47b044dda139dd497c",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "scholarly materials all rights reserved; software AGPL-3.0-only",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "https://raw.githubusercontent.com/LeonardSEO/certified-riemann-xi-positivity/6d5f6ce7ad1031cee8740e47b044dda139dd497c/NOTICE"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier."
+    },
+    {
+      "filename": "tao-optimization-dbn-20260912.html",
+      "source_url": "https://teorth.github.io/optimizationproblems/constants/21a.html",
+      "bytes": 7143,
+      "sha256": "586210d2594801164f28c5aa16e95c8d6a75d75f376073faa7d995c3285a5038",
+      "cache_path": "source-cache/tao-optimization-dbn-20260912.html",
+      "retrieved_on": "2026-09-12",
+      "version": "accessed2026-09-12",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "not-stated-in-inspected-source",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier."
+    },
+    {
+      "filename": "LeonardSEO-research_partition_monotonicity_rh_equivalence_audit_20260720.md",
+      "source_url": "https://raw.githubusercontent.com/LeonardSEO/certified-riemann-xi-positivity/6d5f6ce7ad1031cee8740e47b044dda139dd497c/research/partition_monotonicity/rh_equivalence_audit_20260720.md",
+      "bytes": 4661,
+      "sha256": "9c02b8a4ab994c8d8465458832891c0a8140ce73796057679e847bfcb079fca7",
+      "cache_path": "source-cache/LeonardSEO-research_partition_monotonicity_rh_equivalence_audit_20260720.md",
+      "retrieved_on": "2026-09-12",
+      "version": "6d5f6ce7ad1031cee8740e47b044dda139dd497c",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "scholarly materials all rights reserved; software AGPL-3.0-only",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "https://raw.githubusercontent.com/LeonardSEO/certified-riemann-xi-positivity/6d5f6ce7ad1031cee8740e47b044dda139dd497c/NOTICE"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier."
+    },
+    {
+      "filename": "judegomila-gomila_dbn_lambda_01787854_release.pdf",
+      "source_url": "https://raw.githubusercontent.com/judegomila/dbn-lambda-01787854-candidate-audit/a74738deb6d5e0f76887cb36901da08b68dca705/gomila_dbn_lambda_01787854_release.pdf",
+      "bytes": 561860,
+      "sha256": "441117c412b8af5e43dc6474cd1f09419e071d87fee033af24ed64db3effc295",
+      "cache_path": "source-cache/judegomila-gomila_dbn_lambda_01787854_release.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "a74738deb6d5e0f76887cb36901da08b68dca705",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "all rights reserved: authored manuscript expressly excluded from CC BY documentation license",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "https://raw.githubusercontent.com/judegomila/dbn-lambda-01787854-candidate-audit/a74738deb6d5e0f76887cb36901da08b68dca705/LICENSE-DOCS"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier.",
+      "pages": 32,
+      "text_cache_path": "source-cache/judegomila-gomila_dbn_lambda_01787854_release.txt",
+      "text_sha256": "f5c73a23bbd173e994f2c51d7d9b0c6d509cc276df5405479e0805ee8d6a01f4"
+    },
+    {
+      "filename": "LeonardSEO-paper_main.pdf",
+      "source_url": "https://raw.githubusercontent.com/LeonardSEO/certified-riemann-xi-positivity/6d5f6ce7ad1031cee8740e47b044dda139dd497c/paper/main.pdf",
+      "bytes": 470335,
+      "sha256": "3cc02d06b3adf45fe3a7772dc366bf154d97a38d057ed88bf3a61cc4779353ed",
+      "cache_path": "source-cache/LeonardSEO-paper_main.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "6d5f6ce7ad1031cee8740e47b044dda139dd497c",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-alternative-rh-reformulations.md",
+      "license": {
+        "status": "scholarly materials all rights reserved; software AGPL-3.0-only",
+        "redistribution_basis": "local research archive only; source not relicensed or publicly repackaged",
+        "url": "https://raw.githubusercontent.com/LeonardSEO/certified-riemann-xi-positivity/6d5f6ce7ad1031cee8740e47b044dda139dd497c/NOTICE"
+      },
+      "note": "Primary-source archival review; no numerical certificates replayed; exact reviewed scope in linked dossier.",
+      "pages": 14,
+      "text_cache_path": "source-cache/LeonardSEO-paper_main.txt",
+      "text_sha256": "890c9c14a7545935380ed6a729885f5bc944494984f4ae51496622f3dcc2d516"
+    },
+    {
+      "source_url": "https://webdoc.sub.gwdg.de/ebook/e/1999/steuding/253563305.pdf",
+      "bytes": 460641,
+      "sha256": "6a8a742287f71c1e0dbf9e8d49527462c70bba0ee24c217aa72392bb55e692b2",
+      "cache_path": "source-cache/steuding-1999-dissertation.pdf",
+      "text_cache_path": "source-cache/steuding-1999-dissertation.txt",
+      "text_sha256": "f9d2838cc9c4c6f4e4ab0af55303eae176b5a5771e777158ffb1901f08bb347f",
+      "filename": "steuding-1999-dissertation.pdf",
+      "title": "On simple zeros of the Riemann zeta-function",
+      "retrieved_on": "2026-09-12",
+      "version": "1999 primary publication",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-critical-mass-and-multiplicity-route.md",
+      "license": {
+        "status": "no open redistribution license identified",
+        "redistribution_basis": "local research archive only; do not redistribute full text"
+      },
+      "note": "Hannover dissertation, defended1998-12-16, publishedJanuary1999.64PDFpages. Theorem2.1 and following paragraph p11 provide0.552 simple-critical every-interval bound;2002 published counterpart DOI10.1023/A:1019767816190.",
+      "pages": 64
+    },
+    {
+      "source_url": "https://www.mathnet.ru/php/getFT.phtml?jrnid=im&paperid=1456&what=fullteng&option_lang=eng",
+      "bytes": 518106,
+      "sha256": "af5d1c40afeb3cbbe24286427a26dafefaa09c25618c371844b9923a2ec20c55",
+      "cache_path": "source-cache/karatsuba-1985-short-interval-odd-zeros.pdf",
+      "text_cache_path": "source-cache/karatsuba-1985-short-interval-odd-zeros.txt",
+      "text_sha256": "c6e5233695a7163c6f18d0c2b01d43e9f3f3beaf90ef97b3a5512e1b1180721e",
+      "filename": "karatsuba-1985-short-interval-odd-zeros.pdf",
+      "title": "On the zeros of the function zeta(s) on short intervals of the critical line",
+      "retrieved_on": "2026-09-12",
+      "version": "1985 primary publication",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-critical-mass-and-multiplicity-route.md",
+      "license": {
+        "status": "Copyright1985 American Mathematical Society; no open redistribution license identified",
+        "redistribution_basis": "local research archive only; do not redistribute full text"
+      },
+      "note": "Math USSR-Izv24(3),523-537. Russian original1984. Received1984-02-17. Official redirecthttps://www.mathnet.ru/links/b63daace1fd057b918c33d49f34b777c/im1456_eng.pdf. Main theorem p524 and final distinct sign-change counting p536 visually inspected;TheoremB p523 reproducesSelberg1942 exact odd-count seed.",
+      "pages": 15,
+      "doi": "10.1070/IM1985v024n03ABEH001246"
+    },
+    {
+      "title": "Short mollifiers of the Riemann zeta-function",
+      "source_url": "https://arxiv.org/pdf/2508.11108v1",
+      "bytes": 3641829,
+      "sha256": "8a6f1d62af8d64dcca09ddc2a319f1d1d3aa0bc88e72e4db262a1d7dec43c38c",
+      "cache_path": "source-cache/cfkltb-short-mollifiers-2508.11108v1.pdf",
+      "text_cache_path": "source-cache/cfkltb-short-mollifiers-2508.11108v1.txt",
+      "text_sha256": "c1426a037742d3c94bf7ba3ea4389f6c05c630ef22d9a4fa58d038c7f4ffebfb",
+      "license": "CC BY4.0 per arXiv HTMLlicense",
+      "review_dossier": "2026-09-12-critical-mass-and-multiplicity-route.md",
+      "filename": "cfkltb-short-mollifiers-2508.11108v1.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "2508.11108v1",
+      "tracked_fulltext": false,
+      "redistribution_basis": "CC BY 4.0 reported by the arXiv source; retained as local reference archive.",
+      "note": "Primary PDF pinned by exact bytes. New paper-only localization lead; no numerical result or generalized Steuding moment transfer claimed. Section 7 leaves the full-range 2u/3 target open."
     }
   ],
   "repositories": [
@@ -470,6 +1225,104 @@
         "entire tracked repository"
       ],
       "redistribution": "upstream license retained inside snapshot"
+    },
+    {
+      "source_url": "https://github.com/tawanerguo-cn/zeta-simple-zeros",
+      "commit": "45149f6d403059a71be73c5e3f884cee7cd62b20",
+      "commit_date": "2026-08-11T16:37:57Z",
+      "retrieved_on": "2026-09-12",
+      "download_url": "https://codeload.github.com/tawanerguo-cn/zeta-simple-zeros/zip/45149f6d403059a71be73c5e3f884cee7cd62b20",
+      "archive_path": "source-snapshots/tawanerguo-stability-45149f6d4030.zip",
+      "bytes": 3148620,
+      "sha256": "702c553be62f3034a0d93458590a34476f5b3f624f56e20fdc0af737416e864a",
+      "license": "MIT",
+      "license_sha256": "894e5f64c954afa0b675d3e8ab7ef254b5dd590ef2eb9ffd82e8e8facaeb9e08",
+      "scope": [
+        "entire tracked repository"
+      ],
+      "redistribution": "upstream license retained inside snapshot",
+      "review_dossier": "2026-09-12-pressure-frame-prior-art.md",
+      "reviewed_files": [
+        {
+          "path": "paper/riemann.tex",
+          "bytes": 16623,
+          "sha256": "d03bd8aae5f3a7ad423e4275c00bfbadf7a45e872af723866696a2806482a95b",
+          "source_url": "https://raw.githubusercontent.com/tawanerguo-cn/zeta-simple-zeros/45149f6d403059a71be73c5e3f884cee7cd62b20/paper/riemann.tex"
+        },
+        {
+          "path": "docs/trace_energy_envelope.md",
+          "bytes": 2482,
+          "sha256": "af6e86f227671b649a0a7751a7b7a6a2af7ab9aa944aba62475b64c8e42c55a1",
+          "source_url": "https://raw.githubusercontent.com/tawanerguo-cn/zeta-simple-zeros/45149f6d403059a71be73c5e3f884cee7cd62b20/docs/trace_energy_envelope.md"
+        },
+        {
+          "path": "BELLMAN_COBBOUNDARY_PROOF.md",
+          "bytes": 2845,
+          "sha256": "fb2a7711019841712e399a3d0710b67c42d5b8672ec83d5bad6297469b4dffc2",
+          "source_url": "https://raw.githubusercontent.com/tawanerguo-cn/zeta-simple-zeros/45149f6d403059a71be73c5e3f884cee7cd62b20/BELLMAN_COBBOUNDARY_PROOF.md"
+        },
+        {
+          "path": "NEXT_FRONTIER.md",
+          "bytes": 698,
+          "sha256": "3e752e508ce7c14111d30902611a3e2c3d15456d4e283d7e125bdb6d1332d893",
+          "source_url": "https://raw.githubusercontent.com/tawanerguo-cn/zeta-simple-zeros/45149f6d403059a71be73c5e3f884cee7cd62b20/NEXT_FRONTIER.md"
+        },
+        {
+          "path": "archive/original/GLOBAL_SPECTRAL_DUAL.md",
+          "bytes": 6473,
+          "sha256": "93d92a9de4b6e633fe0eab9c1c8c48d669fdeecf000f164cbb858ca01ff367a2",
+          "source_url": "https://raw.githubusercontent.com/tawanerguo-cn/zeta-simple-zeros/45149f6d403059a71be73c5e3f884cee7cd62b20/archive/original/GLOBAL_SPECTRAL_DUAL.md"
+        }
+      ]
+    },
+    {
+      "source_url": "https://github.com/yuhangshi888/zeta-simple-zeros-673316977",
+      "commit": "1aeda8e9f0678166a824c75313a813b09eb478cd",
+      "commit_date": "2026-09-11T11:16:13Z",
+      "retrieved_on": "2026-09-12",
+      "download_url": "https://codeload.github.com/yuhangshi888/zeta-simple-zeros-673316977/zip/1aeda8e9f0678166a824c75313a813b09eb478cd",
+      "archive_path": "source-snapshots/yuhangshi-mixed-frames-1aeda8e9f067.zip",
+      "bytes": 252030,
+      "sha256": "5ad921bbef069c3372406ed85d3276d5775ba93b532bd4ecda01a70a2ca99c0d",
+      "license": "MIT",
+      "license_sha256": "4ed3897105601c9587fbb2014c29db78a30e7903ddcd73fe7e1b66bf7ae3c120",
+      "scope": [
+        "entire tracked repository"
+      ],
+      "redistribution": "upstream license retained inside snapshot",
+      "review_dossier": "2026-09-12-pressure-frame-prior-art.md",
+      "reviewed_files": [
+        {
+          "path": "main.tex",
+          "bytes": 18100,
+          "sha256": "d4f8f1de8ae11d276593be658ce2236bc81dfad9fcfe859d7124bf685d982cbd",
+          "source_url": "https://raw.githubusercontent.com/yuhangshi888/zeta-simple-zeros-673316977/1aeda8e9f0678166a824c75313a813b09eb478cd/main.tex"
+        },
+        {
+          "path": "PROOF_OUTLINE.md",
+          "bytes": 2590,
+          "sha256": "c0702ffda59ffd5cbb39bfa15739161c7f14e7f92766e75e9b8869a98b6fa8ab",
+          "source_url": "https://raw.githubusercontent.com/yuhangshi888/zeta-simple-zeros-673316977/1aeda8e9f0678166a824c75313a813b09eb478cd/PROOF_OUTLINE.md"
+        },
+        {
+          "path": "CLAIM_LEDGER.md",
+          "bytes": 5299,
+          "sha256": "6b268e04f73a5848f37c2e625051bbe26bfc01306c3e4579878c5bacf006ff62",
+          "source_url": "https://raw.githubusercontent.com/yuhangshi888/zeta-simple-zeros-673316977/1aeda8e9f0678166a824c75313a813b09eb478cd/CLAIM_LEDGER.md"
+        },
+        {
+          "path": "PROVENANCE.md",
+          "bytes": 3547,
+          "sha256": "a41b66d9d693c7ea525e68a092c82ebf62694a6c97c8516552b8f0b88f6edad2",
+          "source_url": "https://raw.githubusercontent.com/yuhangshi888/zeta-simple-zeros-673316977/1aeda8e9f0678166a824c75313a813b09eb478cd/PROVENANCE.md"
+        },
+        {
+          "path": "lean/README.md",
+          "bytes": 4349,
+          "sha256": "cf0722e245ae6d430b080b636c1bb555eea0f81c52baff1625a7a28cb1e0c267",
+          "source_url": "https://raw.githubusercontent.com/yuhangshi888/zeta-simple-zeros-673316977/1aeda8e9f0678166a824c75313a813b09eb478cd/lean/README.md"
+        }
+      ]
     }
   ],
   "storage_policy": "Full-text documents are downloaded locally into source-cache; public provenance and permissively licensed code snapshots are tracked. No source is relicensed."
