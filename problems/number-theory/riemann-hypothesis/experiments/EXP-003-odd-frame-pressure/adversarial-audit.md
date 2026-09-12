@@ -253,9 +253,29 @@ The numerical implementation is independently owned and must meet the committed
 - Canonical result bytes must be deterministic UTF-8/LF. Runtime progress belongs in
   separate operational logs.
 
-These are outstanding validation requirements at the initial writing of this audit,
-not reported completed tests. The verdict and artifacts are the source of truth for
-their eventual outcome.
+These were outstanding requirements at the initial writing of this audit. The completed
+[verdict](verdict.md) and its linked artifacts are now the source of truth: Stage A
+replayed all 48,761 inherited nodes at 256 bits and checked two symbolic identities
+plus 328 index cases; Stage B candidate one completed a new 16,797-node certificate
+at 160 bits and replayed it at 256 bits, with 8,351 validated leaves, 48 pressure-only
+leaves, and zero unresolved boxes. The ten-node smoke and restart checks passed.
+Candidates two and three were retained without execution after the first succeeded.
+
+The read-only code review confirmed closed-square reconstruction, exact pressure-only
+boundary acceptance, and valid whole-rectangle energy-plus-pressure lower bounds.
+It prompted three fixes before the recorded runs: restoration now counts against the
+replay deadline, negative or inexact sample-witness gaps are rejected, and smoke receipts
+are bound to the current source identity and stop/resume invariants. A fully forged
+completed-prefix regression recomputes all hashes and coverage metadata, yet the resumed
+verifier rechecks the arithmetic and rejects its false root leaf. The numerical owner
+reports 29 focused tests passing at this milestone.
+
+Construction checkpoints are candidate proof state and their old leaves are not
+arithmetically revalidated during construction resume. Mandatory final replay certifies
+the completed tree. Replay checkpoints provide an identity-checked restart that
+rechecks the entire prefix; no arithmetic work-saving claim is made. Both prefix
+restoration and rechecking count within the remaining replay budget. The raw
+construction/replay receipts completed within the declared caps.
 
 The [source-complete prior-art review](../../context/2026-09-12-pressure-frame-prior-art.md)
 credits pressure, capacities, pinching, and spectral envelopes to the global successor

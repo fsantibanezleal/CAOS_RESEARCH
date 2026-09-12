@@ -1,0 +1,20 @@
+{
+  "verified": true,
+  "forced_stop_nodes": 10,
+  "resumed_equals_fresh": true,
+  "mismatched_parameters_rejected": true,
+  "replay": {
+    "verified": true,
+    "independent_sinc_taylor": true,
+    "precision_bits": 256,
+    "certificate_sha256": "a107a36c253f98c9f3b69892116380521b671040eb81b364246ea23fe0488b06",
+    "nodes": 31,
+    "validated_leaves": 12,
+    "pressure_leaves": 4
+  },
+  "source_identity": {
+    "riemann_pressure.py": "5097f1602515fd151819242991070654bcc19e8622d7fc80bae1ba358a2ee287",
+    "riemann_certificates.py": "1de3dcf98afc3043ad7f08c3df73833834e647501252ee5378f8a8fd77960dfa"
+  },
+  "replay_restart_policy": "Checkpoint identity is validated; prior arithmetic is rechecked, never trusted"
+}

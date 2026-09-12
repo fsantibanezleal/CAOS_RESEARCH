@@ -1,0 +1,6 @@
+{
+  "elapsed_seconds": 5.1993285000007745,
+  "combined_budget_seconds": 600,
+  "budget_extended": false,
+  "replay_checkpoint_policy": "Validated restart; all prefix rechecking counts inside remaining budget"
+}
