@@ -373,3 +373,94 @@ unpublished work, unindexed recent material, or a missed equivalent
 formulation. The stronger local theorem must first survive its own
 adversarial experiment. Publication, expert acceptance, and RH remain
 separate questions.
+
+## 10. Additional adversarial novelty check: what the parametric bridge covers
+
+A second independent source pass on 2026-09-12 tested the strongest immediate
+priority objection: perhaps teal-sea's parametric theorem already states the
+proposed result for $H=T^\theta$, so that changing a few parameters would
+already give the whole short-interval conclusion. Direct inspection of the
+Lean declarations and their arithmetic passage does not support that
+objection at the inspected head `c614e65188f0b5d73b342436383ae558fbd3aafd`.
+This is a scope determination from source, not a new Lean build.
+
+**[V] What is actually parameterized.**
+[`Bridge/Main.lean`, lines 281-292](https://github.com/teal-sea/zeta-lab/blob/c614e65188f0b5d73b342436383ae558fbd3aafd/lean/bridge/Zeta23Ext/Bridge/Main.lean#L281)
+quantifies the number of points $n$, certificate floor $c$, frame size $m$
+and pressure denominator $p$. Its conclusion is explicitly about
+`Ncount T (2 * T)` and `N0simple T (2 * T)`. It does not quantify an upper
+endpoint, interval length, or short-interval exponent. The
+[four-point corollary, lines 178-194](https://github.com/teal-sea/zeta-lab/blob/c614e65188f0b5d73b342436383ae558fbd3aafd/lean/bridge/FourPoint/Main.lean#L178)
+retains those same endpoints.
+
+**[V] The kernel and baseline are fixed.**
+[`Bridge/Defs.lean`, lines 45-54](https://github.com/teal-sea/zeta-lab/blob/c614e65188f0b5d73b342436383ae558fbd3aafd/lean/bridge/Zeta23Ext/Bridge/Defs.lean#L45)
+defines the overlap integral with $\cos(\sqrt2t)$ on $[-1/2,1/2]$.
+Its `Phi_n` definition at lines 157-162 uses `HD 1`. Its `mtParams`
+definition at lines 217-220 chooses the Montgomery-Taylor family at
+$\lambda=1$. Consequently, replacing $n$, $c$, $m$ or $p$ does not
+change the profile into $K_\theta$ or replace the baseline by Wang's
+$c(\theta)$.
+
+**[V] The arithmetic passage has the same dyadic scope.**
+[`Bridge/S8.lean`, lines 39-84](https://github.com/teal-sea/zeta-lab/blob/c614e65188f0b5d73b342436383ae558fbd3aafd/lean/bridge/Zeta23Ext/Bridge/S8.lean#L39)
+proves `tail_passage` for a `ZeroConfig` satisfying the imported
+`PaperInputs`; its conclusion still counts $(T,2T]$ and carries `HD 1`.
+The source's discussion of validity at $\lambda=1$ concerns this dyadic
+analytic framework. It supplies no permission to replace Wang's required
+fixed $\lambda<\theta$ by its endpoint. The two error analyses have
+different interval lengths. An arbitrary finite-matrix lemma can be reused
+on a short-interval Gram matrix, but the appropriate short-interval pair-sum
+estimate and limit passage must still be supplied.
+
+**[V] A potentially misleading derivative lead is also global.**
+[`asymptotic_transfer.py`, lines 16-27 and 56-78](https://github.com/teal-sea/zeta-lab/blob/c614e65188f0b5d73b342436383ae558fbd3aafd/hunts/frontier_math/asymptotic_transfer.py#L16)
+discusses the variable cosine profile, a density parameter, and derivatives
+of `HD(lam)`. Its stated counting expression is `N0*(T,2T)`.
+The identifier `theta` in that module denotes a retained spectral/census
+factor, not Wang's interval exponent. The file explicitly stops short of
+claiming a new zero proportion. It was read as source and was not executed.
+Separately, [`docs/13-moments.md`, lines 292-295](https://github.com/teal-sea/zeta-lab/blob/c614e65188f0b5d73b342436383ae558fbd3aafd/docs/13-moments.md#L292)
+explains that its short-window numerical normalization does not turn the
+global moment theorem into a short-interval theorem.
+
+The comparison is therefore stronger than a title search: a dyadic theorem
+does not yield an every-short-interval theorem by renaming its parameter.
+Simultaneously matching $T'=T$ and $2T'=T+T^\theta$ is impossible for
+$0<\theta<1$ and large $T$. A global lower proportion also does not control
+how that proportion is distributed among all shorter subintervals.
+
+The audit additionally scanned 271 primary Markdown, TeX and bridge Lean
+files, totaling 3,950,122 bytes, with zero retrieval failures. The scope was
+`docs/`, all bridge step files, and the zeta-related Ainta, frontier-math,
+family-wall, cycle-moment, quotient, rogue-frontier, prime-pair-error,
+higher-xi, outband, overlap, effective-constant and wide-search dossiers.
+Search terms were `short interval`, `short-interval`, `Wang`,
+`2609.07918`, `odd-frame` and `pair-disjoint`. No Wang citation or matching
+short-interval simple-critical theorem was located. The returned interval
+references concerned kernel-root boxes, prime counts, moment statistics or
+other explicitly different problems. This was a content scan plus direct
+reading of the decisive theorem interfaces, not a claim to have fully
+reviewed every mathematical argument in all 271 files.
+
+The additional immutable source hashes are:
+
+| Source under the inspected teal-sea head | Bytes | SHA-256 |
+|---|---:|---|
+| `lean/bridge/Zeta23Ext/Bridge/Defs.lean` | 13,708 | `258b242ffc96444237dd923e5843f8425148a46bb81359932a50dea814f4ede3` |
+| `lean/bridge/Zeta23Ext/Bridge/Main.lean` | 23,196 | `82878d715638e695aeffe4867f337a6022793e568160d9eb6695483125d872ed` |
+| `lean/bridge/Zeta23Ext/Bridge/S8.lean` | 4,866 | `c8dac20f89c4ac3335ca9a5af24dff2eb0d797d8ff27fa5be2e8097daaf9ceae` |
+| `lean/bridge/FourPoint/Main.lean` | 9,998 | `4c0f7e675a936fc80c4cdfcc5e32f5414e37543a2833e251ebd604facd2bee40` |
+| `hunts/frontier_math/asymptotic_transfer.py` | 41,110 | `06409e6cc1be2acff55f7165f6334f902488719497b8550ecb9f00fafa80ec77` |
+| `docs/13-moments.md` | 25,614 | `fa64ee3e11f0eca7d00340740eee10b65f67a73d57ff45f1eccc02eb944f106d` |
+
+The scoped novelty assessment is unchanged: the odd-frame result is a
+modest, apparently new short-interval consequence of attributed finite
+methods and Wang's arithmetic input, if the declared experiment validates
+it. The simple choice of an alternating cover is not presented as a new
+general packing theory or an advance in the underlying arithmetic estimates.
+The exact formula may be absent from the sources yet remain an elementary
+consequence of their finite framework. That distinction should remain
+explicit in any manuscript. This pass found no already stated theorem
+covering the same $H=T^\theta$ conclusion, but does not certify absolute
+priority or publication significance.
