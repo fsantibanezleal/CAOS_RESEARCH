@@ -5,9 +5,9 @@ parity-density transfer in the public replay. The Riemann hypothesis remains
 open. EXP-004 is a qualitative fixed-exponent extension: its classical density
 constant, new exponent and effective starting height remain unquantified.
 
-## Pre-release closure
+## Release closure
 
-- The release branch starts from public develop merge `65980d33f40c291c86a384420afa888b53abbea0`.
+- The release branch starts from public develop merge `65980d33f40c291c86a384420afa888b53abbea0`; release PR #267 merged at `24a2cb250e44fa59c9f6a56c86eefdf009258e70`, and tag `v0.65.000` is published.
 - The replay schema is `riemann-replay-v3`; the exporter binds committed EXP-004
   source bytes, the declaration, four raw artifacts and a separate proof review.
 - Zenodo v0.02 is published at [10.5281/zenodo.22728744](https://doi.org/10.5281/zenodo.22728744).
@@ -40,5 +40,10 @@ root. It does not prove RH, all zeros simple, an effective height, a new decimal
 positivity exponent or a new global record. Publication and automated audits do
 not replace external mathematical peer review or end-to-end formalization.
 
-Deployment, the GitHub release tag and live-file verification are recorded only
-after the main-release PR and Pages run succeed.
+The GitHub release tag and live-file verification are recorded in
+[live-verification.json](live-verification.json). Main-release PR #267, release
+CI run 34718338752, Pages runs 34718338730 and 34719132914, and final CI run
+34719132932 all succeeded. The live receipt covers 8 EN/ES light/dark
+desktop/phone scenarios, 48 tab visits, 288 screenshots, and zero failures; live
+asset and data hashes match the release build. The direct static deep link uses the
+committed Pages 404 shim and restores the client route after root load.
