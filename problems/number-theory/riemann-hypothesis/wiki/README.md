@@ -17,7 +17,7 @@ contribution is their direct short-interval application and its quantitative
 certificate. See the [confirmed EXP-002 verdict](../experiments/EXP-002-short-interval-stability/verdict.md)
 and [independent adversarial audit](../experiments/EXP-002-short-interval-stability/adversarial-audit.md).
 
-[MV] At $\theta=3/4$, the certified choice $R=21/4$, $d=1/7000$ gives
+[D+MV] At $\theta=3/4$, the certified choice $R=21/4$, $d=1/7000$ gives
 
 $$c_*=0.4190768284253039967366657875\ldots,
 \qquad \frac{1+c_*}{2}=0.7095384142126519983\ldots.$$

@@ -28,9 +28,10 @@ Lifecycle: consolidating. Hypotheses were committed in `266486f` before computat
 
 ## 4. In flight
 
-The finite signed Hilbert operator retains the known Gram stability defect. A new
-three-point cosine-root obstruction and disjoint-triple counting give strict improvement
-of every positive point of Wang's curve. Independent audits checked multiplicities, signed
+The finite signed Hilbert operator retains the known Gram stability defect. An explicit
+quantitative bound for the known three-point cosine-root obstruction, combined with
+disjoint-triple counting, gives strict improvement of every positive point of Wang's curve.
+Independent audits checked multiplicities, signed
 off-line terms, the factor one third, the analytic interface, and the order of limits.
 The numerical certificate uses theta=3/4, R=21/4 and d=1/7000, with zero unresolved boxes.
 The manuscript and public replay are being completed from these persisted proofs.

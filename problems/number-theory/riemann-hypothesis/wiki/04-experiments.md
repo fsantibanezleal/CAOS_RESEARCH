@@ -61,9 +61,14 @@ source locations in the experiment verdict.
 Full mode verifies four required PDF hashes against both built-in pins and
 the [source manifest](../context/source-manifest.json). It rejects missing
 files, changed bytes, absent provenance, and cache paths escaping the source
-directory. A fresh full replay produced the committed result byte for byte,
-with SHA-256
-`963313dc7cc1c5add51ddf4e6eb2d561a48156289861f27f946e857fca1df483`.
+directory. A fresh full replay produces the canonical UTF-8/LF Git artifact
+byte for byte: 13,276 bytes, SHA-256
+`a472e624ce0bf95e5a700fc663f6a37c57905e844b257f0a105a60f14da8cd62`.
+The initial Windows CRLF replay had 13,474 bytes and SHA-256
+`963313dc7cc1c5add51ddf4e6eb2d561a48156289861f27f946e857fca1df483`;
+it contains identical mathematics. Both experiment runners and the shared
+checkpoint writer now specify UTF-8 and LF explicitly, preserving byte hashes
+across platforms. Regression checks exercise the actual saved bytes.
 Source verification covers byte identity and metadata, rather than the
 correctness of everything asserted inside those bytes.
 

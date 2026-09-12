@@ -81,17 +81,21 @@ def test_math_replay_is_deterministic_and_restores_arb_precision(math_result):
     assert json.dumps(repeated, sort_keys=True) == json.dumps(math_result, sort_keys=True)
 
 
-def test_math_only_cli_works_without_source_manifest(tmp_path, math_result):
-    destination = tmp_path / "certificate-output"
-    completed = subprocess.run(
-        [sys.executable, str(EXPERIMENT / "run.py"), "--math-only",
-         "--source-dir", str(tmp_path / "missing"), "--output-dir", str(destination)],
-        check=True, capture_output=True, text=True,
-    )
-    console_result = json.loads(completed.stdout)
-    assert console_result["status"] == "PASS_MATH_ONLY"
-    saved = json.loads((destination / "result.json").read_text())
-    assert saved == math_result
+def test_math_only_cli_writes_deterministic_utf8_lf_without_source_manifest(tmp_path, math_result):
+    expected = (json.dumps(math_result, indent=2, sort_keys=True) + "\n").encode("utf-8")
+    for replay in range(2):
+        destination = tmp_path / f"certificate-output-{replay}"
+        completed = subprocess.run(
+            [sys.executable, str(EXPERIMENT / "run.py"), "--math-only",
+             "--source-dir", str(tmp_path / "missing"), "--output-dir", str(destination)],
+            check=True, capture_output=True, text=True,
+        )
+        console_result = json.loads(completed.stdout)
+        assert console_result["status"] == "PASS_MATH_ONLY"
+        saved = (destination / "result.json").read_bytes()
+        assert b"\r\n" not in saved
+        assert saved == expected
+        assert json.loads(saved.decode("utf-8")) == math_result
 
 
 @pytest.fixture

@@ -30,7 +30,8 @@ def main() -> None:
     theta, radius, delta = Fraction(3, 4), Fraction(args.radius), Fraction(args.threshold)
     cert = certify_triangle(theta, radius, delta, budget=args.budget,
         max_nodes=args.max_nodes, checkpoint=args.output_dir / "checkpoint.json", resume=args.resume)
-    (args.output_dir / "triangle-certificate.json").write_text(json.dumps(cert, indent=2) + "\n")
+    (args.output_dir / "triangle-certificate.json").write_text(json.dumps(cert, indent=2) + "\n",
+                                                            encoding="utf-8", newline="\n")
     ctx.prec = 256
     audit = verify_triangle(cert)
     result = improved_bound(theta, radius, delta)
@@ -41,7 +42,8 @@ def main() -> None:
         "baseline": bracket(c_value(theta)), "improved": bracket(result),
         "gain": bracket(gain), "audit": audit,
         "scope": "Finite certificate plus EXP-002 written proof; not a global zero-proportion record"}
-    (args.output_dir / "result.json").write_text(json.dumps(summary, indent=2) + "\n")
+    (args.output_dir / "result.json").write_text(json.dumps(summary, indent=2) + "\n",
+                                              encoding="utf-8", newline="\n")
     print(json.dumps(summary, indent=2), flush=True)
 
 

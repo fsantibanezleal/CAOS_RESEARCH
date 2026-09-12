@@ -106,7 +106,8 @@ def certify_triangle(theta: Fraction, radius: Fraction, threshold: Fraction, *,
         if checkpoint is not None:
             checkpoint.parent.mkdir(parents=True, exist_ok=True)
             checkpoint.write_text(json.dumps({"spec": spec, "tree": "".join(tree),
-                "pending": [[str(q) for q in b] for b in stack], "counts": counts}, indent=2) + "\n")
+                "pending": [[str(q) for q in b] for b in stack], "counts": counts}, indent=2) + "\n",
+                encoding="utf-8", newline="\n")
 
     print(json.dumps({"event": "start", **spec, "pending": len(stack)}), flush=True)
     save()

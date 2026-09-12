@@ -24,9 +24,14 @@ Four required source PDFs match hard-coded SHA-256 pins and their manifest
 entries; source URLs, byte counts, and license metadata are checked before
 arithmetic. Missing sources, changed bytes, absent metadata, or disagreement
 between arithmetic paths produce an `INCONCLUSIVE` result and a nonzero exit.
-A changed-source negative control was rejected before arithmetic. A fresh
-replay reproduced the result artifact byte for byte, with SHA-256
-`963313dc7cc1c5add51ddf4e6eb2d561a48156289861f27f946e857fca1df483`.
+A changed-source negative control was rejected before arithmetic. The canonical
+Git artifact uses UTF-8 and LF newlines: 13,276 bytes, SHA-256
+`a472e624ce0bf95e5a700fc663f6a37c57905e844b257f0a105a60f14da8cd62`.
+The initial successful Windows replay used CRLF newlines (13,474 bytes,
+SHA-256 `963313dc7cc1c5add51ddf4e6eb2d561a48156289861f27f946e857fca1df483`).
+These files encode identical mathematics. The runner now writes explicit UTF-8
+and LF on every platform; a fresh full replay matches the canonical Git blob
+byte for byte. EXP-002 results and shared checkpoints use the same newline policy.
 This full replay used the repository's `context/source-manifest.json` and each
 row's relative `cache_path` under `context/source-cache`. Version and rendered
 date notes are retained from the manifest; the Lamzouri v2 hash is unchanged.
@@ -69,7 +74,7 @@ Math-only output has top-level status `PASS_MATH_ONLY`, `math_status: PASS`,
 and `source_verification.status: NOT_PERFORMED`. It opens neither the manifest
 nor its cached files. The committed result is the full source-verified replay.
 The eleven cheap tests reproduce exact constants and symbolic identities,
-compare the recorded mathematics, check deterministic output and precision
+compare the recorded mathematics, check deterministic UTF-8/LF bytes and precision
 restoration, exercise the CLI with absent source files, and reject changed
 source bytes and escaping cache paths using synthetic fixtures. These tests
 require no redistributed PDFs. Scoped Ruff and all eleven tests passed.

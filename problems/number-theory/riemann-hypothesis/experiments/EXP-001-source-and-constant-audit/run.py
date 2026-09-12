@@ -224,9 +224,11 @@ def main() -> None:
         result = run(args.source_dir, math_only=args.math_only)
     except Exception as exc:
         (args.output_dir / "result.json").write_text(json.dumps({"experiment": HERE.name,
-            "status": "INCONCLUSIVE", "error_type": type(exc).__name__, "error": str(exc)}, indent=2) + "\n")
+            "status": "INCONCLUSIVE", "error_type": type(exc).__name__, "error": str(exc)}, indent=2) + "\n",
+            encoding="utf-8", newline="\n")
         raise
-    (args.output_dir / "result.json").write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
+    (args.output_dir / "result.json").write_text(json.dumps(result, indent=2, sort_keys=True) + "\n",
+                                              encoding="utf-8", newline="\n")
     print(json.dumps({"status": result["status"], "source_verification": result["source_verification"], "constants": {
         name: item["exact"]["decimal_lower"] for name, item in result["constants"].items()},
         "symbolic_audits": {name: value["status"] for name, value in result["symbolic_audits"].items()}}, indent=2))

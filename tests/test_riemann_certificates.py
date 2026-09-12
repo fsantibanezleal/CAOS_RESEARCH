@@ -96,7 +96,9 @@ def test_checkpoint_resume_is_identical_and_fail_closed(tmp_path, capsys):
     spec = (Fraction(3, 4), Fraction(1), Fraction(1, 10))
     with pytest.raises(TimeoutError, match="unresolved"):
         certify_triangle(*spec, max_nodes=1, checkpoint=checkpoint, progress_every=1)
-    saved = json.loads(checkpoint.read_text())
+    saved_bytes = checkpoint.read_bytes()
+    assert b"\r\n" not in saved_bytes
+    saved = json.loads(saved_bytes.decode("utf-8"))
     assert saved["pending"]
     assert saved["counts"]["nodes"] == 1
     assert saved["tree"] == "B"
@@ -104,6 +106,7 @@ def test_checkpoint_resume_is_identical_and_fail_closed(tmp_path, capsys):
     resumed = certify_triangle(*spec, checkpoint=checkpoint, resume=True)
     fresh = certify_triangle(*spec)
     assert resumed == fresh
+    assert b"\r\n" not in checkpoint.read_bytes()
     assert not json.loads(checkpoint.read_text())["pending"]
     assert verify_triangle(resumed, independent=False)["verified"]
     assert verify_triangle(resumed, independent=True)["verified"]
