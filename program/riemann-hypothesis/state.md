@@ -1,41 +1,40 @@
 # Riemann hypothesis state
 
-Updated: 2026-09-12. Lifecycle: **published** (research, web-content and live-release gates
-passed for v0.64.000). Next investigation: **EXP-003 declared, run pending**.
+Updated: 2026-09-12. Current public release: **0.64.000**, deployed and live-verified.
+Current research round: **EXP-003 confirmed; broader alternatives in source preflight**.
 
-[D] EXP-002 establishes a strict refinement of Wang's entire positive short-interval
-cosine curve for each fixed theta between its positivity threshold and one. The derivation
-has an independent adversarial audit; it is not an end-to-end Lean proof or peer review.
-[MV] At theta=3/4 the certified bound is 0.4190768284253039967, compared with
-0.4190750129754243337. All 48,761 certificate nodes were reconstructed; both arithmetic
-evaluators accepted every energy leaf with zero unresolved boxes.
+[D+MV] [EXP-003](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/verdict.md) confirms a stronger odd-frame theorem throughout
+the complete positive short-interval cosine curve and a new pressure certificate.
+At theta=3/4, its bound is 0.419087888170111727959091183775, with distinct companion
+0.709543944085055863979545591887. The Wang baseline is 0.419075012975424333734553610698;
+the first published EXP-002 example is 0.419076828425303996736665787527.
 
-EXP-001 independently reproduces the baseline constants and normalization correction using
-exact rational series and Arb. Its public CI mode deliberately does not claim local PDF
-verification. Versioned source and formalization audits distinguish assumptions from proofs.
+The new certificate has 16,797 nodes, 8,351 energy-plus-pressure leaves, 48 pressure
+leaves and zero unresolved cells. Construction at 160 bits and complete sinc-Taylor
+replay at 256 bits passed. Stage A also replayed all 48,761 earlier nodes and checked
+328 incidence/boundary cases. The full repository suite passed **288 tests** after
+the new committed-source export gates. Shared Arb/geometry and external analytic
+premises remain explicit; this is not end-to-end Lean verification or peer review.
 
-The candidate contribution is a short-interval theorem using attributed stability ideas.
-There is no global-record or RH-solution claim and no guarantee of publication priority.
-The 10-page preprint v0.01 is published as DOI 10.5281/zenodo.22727389. Its full PDF
-render and fresh public-byte/metadata verification passed. The complete public replay QA
-passed: 20 scenarios, five viewports, both languages/themes, 960 screenshots, and separate
-visual reviews. The full Python suite has 251 passing tests; frontend tests, build and
-applicable guards pass. Evidence: [release QA](release-0.64.000/README.md).
+The theorem, separate-stage verdict, source audit, scientific code, candidates and
+canonical results are committed and pushed in the pressure work branch. Research
+[PR #266](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/266) is a draft;
+publication of a v0.02 expansion and its public replay release are not complete.
+The sole published preprint remains v0.01, DOI 10.5281/zenodo.22727389.
 
-Research [PR #263](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/263) merged at
-`00eace9e2a746c0b4122c5b085b84d804f5f47a0`. Release
-[PR #264](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/264) merged to main at
-`08660dc2d6bc91eae0d3a5105447793f0fbc670c`, tagged `v0.64.000`.
-[Pages run 34706614866](https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/34706614866)
-succeeded. The [live receipt](release-0.64.000/live-verification.json), verified at
-2026-09-12 17:01:22 UTC, records 13 public files matching the reviewed build/data bytes
-and eight passing desktop/phone language/theme scenarios with 224 screenshots. Console,
-page and HTTP error arrays are empty in every scenario. These observed delivery gates
-close RH-008; they do not establish mathematical acceptance.
+The user's latest direction broadens the investigation beyond constant tuning.
+Three independent source-led reviews examine classical odd/critical zero counts and
+multiplicity, spectral negative-mass/optimization witnesses, and alternative RH
+reformulations such as Nyman-Beurling approximation and positivity criteria. No
+new experiment in those families has run. Their claims remain proposals until the
+source-complete gate, declaration commit, proof, and adversarial validation pass.
 
-[EXP-003](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/hypothesis.md)
-is declared to test odd-frame amplification, then a bounded pressure-certificate search.
-Its [prior-art preflight](../../problems/number-theory/riemann-hypothesis/context/2026-09-12-pressure-frame-prior-art.md)
-and expanded archive are complete. Implementation, runs, independent validation and verdict
-remain pending. The published EXP-002 numerical bound remains the latest validated local
-bound at this snapshot.
+The established result does not lower the positivity exponent or solve RH. A possible
+multiplicity/parity transfer is being investigated precisely because it may change
+the interval range; this state does not prematurely adopt that proposed consequence.
+
+The first release closure is recorded in [its live receipt](release-0.64.000/live-verification.json):
+public PRs #263/#264 merged, main 08660dc, tag v0.64.000, successful Pages run
+34706614866, 13 exact live-file comparisons and eight passing live UI scenarios.
+Private coordination PRs #631/#632 are also merged; its develop/main heads were
+verified at 2bde950d. Unrelated original worktrees remain preserved.

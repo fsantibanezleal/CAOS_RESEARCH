@@ -164,3 +164,13 @@ $o(N)$ and therefore does not alone refute the asymptotic theorem. The
 records this limited conclusion.
 
 [Previous: statement](01-statement.md) | [Next: full proof](03-mechanism.md)
+
+
+## Confirmed pressure-frame extension
+
+EXP-003 strengthens the first released short-interval bound. See the
+[complete odd-frame theorem](06-odd-frame-pressure.md) and
+[separate-stage verdict](../experiments/EXP-003-odd-frame-pressure/verdict.md).
+The expanded [prior-art review](../context/2026-09-12-pressure-frame-prior-art.md)
+credits global pressure and capacity methods and distinguishes their dyadic
+formal statements from the short-interval application. The general RH remains open.

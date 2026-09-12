@@ -79,3 +79,23 @@ committed before implementation or computation. At this handoff the run and verd
 pending, and no new numerical lower bound is asserted. Stage A and Stage B require
 separate outcomes and adversarial checks. The first release remains the authoritative
 published baseline for comparison.
+
+
+## 2026-09-12: EXP-003 confirmed; investigation broadens
+
+Declaration 8ed806d preceded all computation. Proof and coordinating audit e21618c
+establish the odd-frame pressure theorem. Result commit abfa001 confirms both stages:
+Stage A replays the prior certificate and improves its assembly; Stage B certifies
+p=1/12500, epsilon=443239/10^9 with 16,797 nodes and both arithmetic evaluators.
+The theta=3/4 bound is 0.419087888170111727959091183775. One floating design pass
+froze three candidates; the first passed and the other two were not run. No failed
+search was erased or represented as a proof of optimality.
+
+The full repository suite passed 288 Python tests after committed-source export
+validation. The user then explicitly requested cross-area alternatives and a more
+relevant result. New source-only reviews investigate critical-zero parity/multiplicity,
+negative-spectrum witnesses, and established RH reformulations. No experiment in
+those new families is declared or run at this entry. Current manuscript expansion
+and replay consolidation remain in progress; v0.01 and public v0.64.000 are the
+latest delivered versions. Private coordination PRs #631/#632 were merged and their
+develop/main heads verified at 2bde950d.

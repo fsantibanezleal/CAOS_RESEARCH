@@ -53,23 +53,19 @@ Pages run 34706614866 succeeded. The
 scenarios pass with 224 screenshots. The separate predeployment matrix and visual reviews
 remain in [the release evidence](release-0.64.000/README.md).
 
-The next [declared round, EXP-003](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/hypothesis.md),
-has not yet run. Its completed
-[source preflight](../../problems/number-theory/riemann-hypothesis/context/2026-09-12-pressure-frame-prior-art.md)
-identifies pressure frames, nonuniform pair weights, mixed certificates and global
-capacitated matching as prior art. The prospective result is a stronger short-interval
-consequence, with the general RH and global records outside its claim.
+[EXP-003](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/verdict.md) is now confirmed in both stages. Its odd-frame
+assembly strengthens the entire positive curve; a 16,797-node pressure certificate
+gives the stronger explicit theta=3/4 result. The declared source/compute sequence,
+budgets, checkpoint semantics and unattempted lower-ranked candidates are persisted.
 
-Stage A first checks a pair-disjoint alternating-triple cover inside an odd frame,
-reusing the already certified EXP-002 energy floor. Its decisive invariants are pair
-incidence, telescoping span, the spectral cap, shifted-partition boundary counts and
-the order of analytic limits. After that audit, Stage B permits one bounded
-two-variable pressure exploration and at most three rational certificate candidates
-under the hypothesis's time, node, checkpoint and independent-replay limits. Stage
-outcomes are recorded separately; a failed search cannot erase a validated symbolic
-result or justify an undeclared larger campaign.
+The latest user instruction expands the objective beyond constant optimization.
+Three bounded primary-source reviews examine parity/multiplicity transfer, full
+negative-spectrum information, and alternative RH reformulations. New computational
+families require a fresh source-complete declaration; an already known theorem or
+an unsupported infinite-limit step rejects a proposed novelty claim.
 
-Commit the declaration and source preflight before implementation or computation.
-Any new bound enters derived documentation only after a complete verdict and
-independent adversarial review. Preserve the first release's frozen manuscript,
-publication bytes and replay evidence throughout the new round.
+The release owner continues to preserve EXP-003 while those reviews run. The revised
+manuscript will include only completed verdict-backed results. No new DOI version is
+published during unresolved scope selection. Once the research block is complete,
+finish the full manuscript, bilingual replay, scoped promotion, serialized release,
+all-page/rendered reviews and exact live verification in the same delivery round.

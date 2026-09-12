@@ -123,3 +123,13 @@ The next chapter explains why its improvement comes from retained finite
 geometry rather than another optimization of the same cosine functional.
 
 [Next: known results and barriers](02-known-results.md) | [Wiki index](README.md)
+
+
+## Confirmed pressure-frame extension
+
+EXP-003 strengthens the first released short-interval bound. See the
+[complete odd-frame theorem](06-odd-frame-pressure.md) and
+[separate-stage verdict](../experiments/EXP-003-odd-frame-pressure/verdict.md).
+The expanded [prior-art review](../context/2026-09-12-pressure-frame-prior-art.md)
+credits global pressure and capacity methods and distinguishes their dyadic
+formal statements from the short-interval application. The general RH remains open.

@@ -1,14 +1,18 @@
 # 5. Open questions, rejected routes, and falsification targets
 
-The confirmed local result is the strict refinement documented in
-[EXP-002](../experiments/EXP-002-short-interval-stability/verdict.md). The
+The current confirmed result is the stronger refinement documented in
+[EXP-003](../experiments/EXP-003-odd-frame-pressure/verdict.md). The
 directions below are research questions, not extensions already proved by
 that experiment. They are separated from the original Riemann hypothesis,
 which remains open.
 
-## Improve the explicit short-interval example
+## Further improve the explicit short-interval example
 
-[C] The certified choice $R=21/4$, $d=1/7000$ is conservative. For fixed
+EXP-003 has completed one pressure-certificate improvement and the odd-frame
+transfer. The next question is whether a separately declared campaign can improve
+its current bound further or certify a range of exponents.
+
+[C] The original certified choice $R=21/4$, $d=1/7000$ is conservative. For fixed
 $\theta$, let
 
 $$d_\theta(R)=\min\left(1,\inf_{u,v\ge0,\ u+v\le R}
@@ -32,7 +36,10 @@ parameter values unless a joint interval certificate covers all intermediate
 exponents. The falsification target is an unresolved box or a rigorously
 enclosed energy value below the proposed threshold.
 
-## Retain more of the actual Gram matrix
+## Retain still more of the actual Gram matrix
+
+[D] EXP-003 now supplies a valid larger-frame assembly and a stronger short-interval
+bound. The open task is to go beyond this elementary unit-cap frame family.
 
 [C] Consecutive triples lose information when convex pinching removes
 interactions between blocks. Larger windows might make the defect larger.
@@ -44,9 +51,8 @@ is available, but the combinatorial overlap penalty and the compact-domain
 dimension also increase. The
 [Ainta](https://github.com/ainta/zeta-simple-zeros/tree/040c5e899e658aed7b56a2a87f501798fe10761d)
 and [trmdy](https://github.com/trmdy/zeta-simple-zeros-673137/tree/1610b97b7895ff34982260f8dcaf04a0f7b82cf7)
-global window refinements are direct prior art for this direction. The next
-novelty question concerns the precise short-interval transfer, not the idea
-of using larger blocks.
+global window refinements are direct prior art for this direction. EXP-003 supplies that transfer for its alternating schedule. Any further
+novelty claim must compare with the expanded pressure-frame source dossier.
 
 Any proposed improvement must prove a valid disjoint partition or fractional
 cover inequality. Adding defects of overlapping principal submatrices with
