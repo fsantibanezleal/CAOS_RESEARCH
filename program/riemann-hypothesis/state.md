@@ -1,6 +1,6 @@
 # Riemann hypothesis state
 
-Updated: 2026-09-12. Release candidate: **0.65.000**, locally validated; main deployment and live verification are pending.
+Updated: 2026-09-12. Release: **0.65.000**, released and live-verified at main documentation commit `ad912096f484d386258be5a14f14f2b121232ac0` (release commit `24a2cb250e44fa59c9f6a56c86eefdf009258e70`, tag `v0.65.000`).
 Current research round: **EXP-003 and EXP-004 confirmed; v0.02 published on Zenodo and replay integrated**.
 
 EXP-004 has a separate confirmed verdict and proof-review record. It proves a
@@ -27,9 +27,9 @@ premises remain explicit; this is not end-to-end Lean verification or peer revie
 The theorem, separate-stage verdict, source audit, scientific code, candidates and
 canonical results are committed and pushed in the pressure work branch. Research
 [PR #266](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/266) merged to develop
-at `65980d33f40c291c86a384420afa888b53abbea0`;
+at `65980d33f40c291c86a384420afa888b53abbea0`; release PR [#267](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/267), develop synchronization [#268](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/268), live receipt [#269](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/269), and main promotion [#270](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/270) are merged.
 the expanded preprint is published at [10.5281/zenodo.22728744](https://doi.org/10.5281/zenodo.22728744)
-the public replay release candidate is validated in
+the public replay release is live-verified in
 [release-0.65.000](release-0.65.000/README.md). The v0.01 record remains immutable
 at DOI 10.5281/zenodo.22727389.
 
@@ -50,5 +50,4 @@ RH remains open.
 The first release closure is recorded in [its live receipt](release-0.64.000/live-verification.json):
 public PRs #263/#264 merged, main 08660dc, tag v0.64.000, successful Pages run
 34706614866, 13 exact live-file comparisons and eight passing live UI scenarios.
-Private coordination PRs #631/#632 are also merged; its develop/main heads were
-verified at 2bde950d. Unrelated original worktrees remain preserved.
+The expanded release closure is recorded in [the v0.65 live receipt](release-0.65.000/live-verification.json): CI and Pages runs 34718338752, 34718338730, 34719132932, and 34719132914 passed; deployed assets and data hashes matched; eight EN/ES light/dark desktop/phone scenarios visited all six research tabs, with 48 tab visits, 288 screenshots, and zero failures. Private coordination PRs #631/#632/#635/#636 are merged; private main/develop now contain the synchronized v0.65 records. Unrelated original worktrees remain preserved.
