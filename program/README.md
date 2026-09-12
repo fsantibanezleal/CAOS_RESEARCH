@@ -15,7 +15,7 @@ The in-repo status section: which problems exist, in which lifecycle state (see
 | Diophantine 2-variable decidability | computation-complexity | proposed | B+ | partial | |
 | Hilbert 16th, part 2 | dynamical-systems | proposed | A- | yes | |
 | Strongly polynomial LP | computation-complexity | proposed | B+ | partial | |
-| Navier-Stokes regularity (September 2026 forced-blowup claims; mechanism and certificate audit) | analysis-pde | opened | B | yes | [navier-stokes/plan.md](navier-stokes/plan.md) |
+| Navier-Stokes regularity (September 2026 forced-blowup claims; mechanism and certificate audit) | analysis-pde | exploring | B | yes | [navier-stokes/plan.md](navier-stokes/plan.md) |
 | Yang-Mills mass gap | mathematical-physics | proposed | B | yes | |
 | Birch and Swinnerton-Dyer | number-theory | proposed | B | marginal | |
 | P vs NP | computation-complexity | proposed | C+ | partial | |

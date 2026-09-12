@@ -1,6 +1,6 @@
 # navier-stokes: RESUME (zero-loss handoff)
 
-Updated 2026-09-11 (opening round, research only, no experiment run). First read for any fresh
+Updated 2026-09-12 (execution round: Phase 0 gate closed, EXP-002 and EXP-003 CONFIRMED). First read for any fresh
 session, per methodology 07. Derived view: on conflict, the context dossiers win.
 
 ## 1. State in one screen
@@ -68,23 +68,38 @@ giving eigenvalues `-nu (lambda r)^(2 alpha) +/- sqrt(A) sin(phi)` and the frequ
 
 ## 3. Experiment index
 
-None run. EXP-001 to EXP-003 are specified in `backlog.md` as NS-003, NS-006 and NS-007, each with a
-declared budget and kill criterion. The only code that exists is the preflight smoke test
-`problems/analysis-pde/navier-stokes/code/modulation_smoke.py`, which is not an experiment.
+| id | subject | verdict |
+|---|---|---|
+| EXP-001 | replay the OpenAI Lean build and both Comparator challenges | RUNNING |
+| EXP-002 | does the reduced model predict the Boussinesq PDE? | **CONFIRMED** |
+| EXP-003 | does the repaired cascade model predict the published threshold? | **CONFIRMED** |
+
+EXP-002: peak rate to 4e-05 relative, band structure present, frequency independence to 2.7e-04 across
+`lambda` in [20, 160], derived dissipative term to 2.6e-04 absolute, three negative controls all
+failing at a non-degenerate angle.
+
+EXP-003: `alpha_c = 1/(4p)` to 2.59e-06 against the horizon-corrected prediction; both repaired
+omissions non-binding; `p = 11/4 + sqrt 7` exactly at the published threshold; 1,000,000 schedules with
+zero violations.
 
 ## 4. In flight
 
-Nothing is running. The plan is written and is **awaiting Felipe's validation**, per the mandatory
-build sequence step 3. No machine time until then.
+EXP-001, the Lean build, running in the background from `E:/_Temp/lean-build.sh` with logs under
+`E:/_Temp/lean-build/`. Kill criterion: abort below 5 GB free on E:. Watch the olean count under
+`E:/_Temp/lean-ns/.lake` rather than the parent process CPU, which stays flat while child processes do
+the work.
 
 ## 5. Next actions
 
-1. NS-001 and NS-002: close the primary-source gap. Sections 3 to 10 of the Alpoge-Buckmaster
-   Boussinesq paper, and the two Cordoba-Martinez-Zoroa sources the program rests on. If the
-   dissipative analysis is already published there, rewrite the plan rather than execute it.
-2. NS-004: audit the unforced Euler formal statement.
-3. NS-003: replay the Lean build, the only verification available today.
-4. Then Phase 2 and Phase 3 of `plan.md`, in that order, one heavy job at a time.
+1. Close EXP-001 with a verdict when the build finishes or hits its kill criterion.
+2. **A multi-layer PDE simulation.** EXP-002 licenses the SINGLE-layer reduction only; EXP-003's
+   bookkeeping assumes many nested layers and has never been checked against a PDE. This is the
+   largest open gap and the first item of any continuation.
+3. Derive `p` from the construction's own localization and correction requirements. That is what would
+   turn the consistency relation into a theorem about the model.
+4. NS-002 remainder: the two Cordoba-Martinez-Zoroa sources ([5] and [6] of the Boussinesq paper) are
+   still unread in the primary source.
+5. NS-010: compare exponents the day the Alpoge-Buckmaster hypodissipative paper appears.
 
 ## 6. Where everything lives
 
@@ -116,8 +131,14 @@ build sequence step 3. No machine time until then.
 - **Dissipation does not rest during holding intervals.** The construction steers the laboratory
   component to zero so the next layer grows undisturbed, but the damping term does not vanish there.
   This is the largest missing piece and it pushes the threshold down.
-- **Novelty is UNVERIFIED.** Alpoge and Buckmaster have an unreleased hypo-dissipative Navier-Stokes
-  paper and have had it since before 2026-09-07. Expect to be second; say so.
+- **The bare threshold question is NOT ours.** Cordoba, Martinez-Zoroa and Zheng published it in 2024
+  (ARMA 2026): blowup for every `|grad|^alpha` exponent below `(22 - 8 sqrt 7)/9`, with rough forcing.
+  Our cap is consistent with it and loose by 5.40. What is ours is the calibration relation, and it is
+  a consistency statement rather than a derivation. Alpoge and Buckmaster additionally have an
+  unreleased hypodissipative paper, presumably the smooth-forcing upgrade.
+- **A finite horizon cannot see a late stall.** A bisection truncated at `Q` stages overreports the
+  threshold by `1 + 2 log(1/nu) / (g (Q-1))`; at `nu = 1e-10`, `Q = 400` that is 11.5 percent. The
+  binding stage is `Q-1`, not `Q`, and the difference is not cosmetic.
 - **Attribution is a gate.** Cordoba and Martinez-Zoroa originated the program. Never present the
   layer or pulse mechanism as ours.
 - The OpenAI announcement and the Buckmaster statement disagree about the history. The source dossier
