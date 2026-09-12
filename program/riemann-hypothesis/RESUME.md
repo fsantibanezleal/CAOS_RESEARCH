@@ -3,10 +3,11 @@
 ## 1. State in one screen
 
 Read [state.md](state.md), [backlog.md](backlog.md), [plan.md](plan.md), then the
-latest source verdicts. Evidence outranks this handoff. Public release candidate
-v0.65.000 is locally validated; v0.02 is published at DOI 10.5281/zenodo.22728744
-and the four-record replay is integrated. Main deployment and live verification
-remain the final release gates. The general RH remains open.
+latest source verdicts. Evidence outranks this handoff. Public release v0.65.000
+is released and live-verified; v0.02 is published at DOI 10.5281/zenodo.22728744
+and the four-record replay is integrated. Main commit
+`ad912096f484d386258be5a14f14f2b121232ac0`, tag `v0.65.000`, CI and Pages runs,
+and the live receipt are recorded below. The general RH remains open.
 
 ## 2. The objects table
 
@@ -72,11 +73,11 @@ The published v0.01 archive remains byte-identical.
 
 ## 5. Next actions
 
-Continue current consolidation: promote the v0.65.000 release branch to main,
-run Pages, record the live byte and browser receipt, and synchronize the private
-mirror's release state.
-Publication, scoped PR #266, serialized release, rendered QA and live verification
-must each have observed receipts before their states advance.
+Continue the remaining cross-area source preflight while preserving the released
+v0.65.000 evidence. The public release, tag, CI, Pages deployment, live browser
+receipt, and private mirror promotion are complete. Future substantive work needs
+a new declared experiment and a new release decision. Publication, serialized
+release, rendered QA and live verification receipts remain immutable evidence.
 
 ## 6. Where everything lives
 
@@ -87,7 +88,7 @@ bytes and binds the hypothesis, code, runner, seeds, candidate list and certific
 Dirty files cannot become replay evidence.
 
 First release receipts: `program/riemann-hypothesis/release-0.64.000/`; current
-candidate evidence: `program/riemann-hypothesis/release-0.65.000/`.
+release and live evidence: `program/riemann-hypothesis/release-0.65.000/`.
 Frozen first preprint archive: `manuscripts/riemann-hypothesis/short-interval-stability/versions/v0.01/`.
 Private coordination: `plans/caos-research/riemann-hypothesis/` in CAOS_MANAGE.
 
