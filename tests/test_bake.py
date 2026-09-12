@@ -37,6 +37,7 @@ def test_bake_writes_valid_registry(tmp_path, monkeypatch):
     assert manifest["sources"] == riemann["provenance"]
     assert {p["source_exp"] for p in manifest["sources"]} == {
         "EXP-001-source-and-constant-audit", "EXP-002-short-interval-stability", "source-review",
+        "EXP-003-odd-frame-pressure",
     }
 
 
@@ -52,19 +53,53 @@ def committed_riemann(tmp_path, monkeypatch):
     problem = tmp_path / "problems/number-theory/riemann-hypothesis"
     exp_one = problem / "experiments/EXP-001-source-and-constant-audit"
     exp_two = problem / "experiments/EXP-002-short-interval-stability"
+    exp_three = problem / "experiments/EXP-003-odd-frame-pressure"
     files = {
         exp_one / "artifacts/result.json": {"status": "PASS"},
         exp_two / "artifacts/result.json": {
             "audit": {"verified": True, "independent_sinc_taylor": True},
         },
         exp_two / "artifacts/triangle-certificate.json": {"tree": "E"},
+        exp_two / "artifacts/exploration.json": {"rows": []},
         exp_two / "mathematical-proof.md": "# A committed proof\n",
         exp_two / "verdict.md": "# A committed verdict\n",
         problem / "context/source-manifest.json": {"reviewed_on": "2026-09-12"},
+        exp_three / "mathematical-proof.md": "# The committed odd-frame proof\n",
+        exp_three / "verdict.md": "# EXP-003 verdict: confirmed\n",
+        exp_three / "adversarial-audit.md": "# The committed adversarial audit\n",
+        exp_three / "hypothesis.md": "# The declaration\n",
+        exp_three / "artifacts/candidates.json": {"candidates": []},
+        exp_three / "run.py": "# The declared runner\n",
+        exp_three / "explore.py": "# The bounded design pass\n",
+        problem / "code/riemann_pressure.py": "# Pressure checker\n",
+        problem / "code/riemann_certificates.py": "# Legacy checker\n",
     }
     for path, content in files.items():
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(content if isinstance(content, str) else json.dumps(content), encoding="utf-8")
+        path.write_text(content if isinstance(content, str) else json.dumps(content),
+                        encoding="utf-8", newline="\n")
+
+    def checksum(path):
+        return hashlib.sha256(path.read_bytes()).hexdigest()
+
+    (exp_three / "artifacts/candidates.json").write_text(json.dumps({"candidates": [],
+        "exploration_source_sha256": checksum(exp_three / "explore.py"),
+        "prior_exploration_sha256": checksum(exp_two / "artifacts/exploration.json")}), encoding="utf-8")
+
+    source_identity = {
+        "hypothesis": {"sha256": checksum(exp_three / "hypothesis.md")},
+        "certificate_code": {name: checksum(problem / "code" / name)
+                             for name in ("riemann_pressure.py", "riemann_certificates.py")},
+        "runner_sha256": checksum(exp_three / "run.py"),
+        "reused_certificate": {"sha256": checksum(exp_two / "artifacts/triangle-certificate.json")},
+    }
+    (exp_three / "artifacts/result.json").write_text(json.dumps({
+        "schema": "riemann-exp003-results-v1",
+        "stage_a": {"arithmetic_status": "verified", "provenance": source_identity,
+                    "replay": {"verified": True, "independent_sinc_taylor": True}},
+        "stage_b": {"arithmetic_status": "not_confirmed", "outcomes": [],
+                    "candidate_list_sha256": checksum(exp_three / "artifacts/candidates.json")},
+    }), encoding="utf-8")
 
     def commit():
         git("add", ".")
@@ -113,6 +148,78 @@ def test_riemann_export_rejects_failed_recorded_crosscheck(committed_riemann):
         export_registry._riemann_payload()
 
 
+def test_pressure_export_ignores_worktree_replacement_and_binds_committed_code(committed_riemann):
+    _, exp_two, _, commit = committed_riemann
+    code = exp_two.parent.parent / "code/riemann_pressure.py"
+    expected = export_registry._riemann_payload()["pressure_result"]
+    code.write_text("# Unreviewed checker replacement\n", encoding="utf-8", newline="\n")
+    assert export_registry._riemann_payload()["pressure_result"] == expected
+    commit()
+    with pytest.raises(ValueError, match="committed input differs: pressure_code"):
+        export_registry._riemann_payload()
+
+
+def test_pressure_export_rejects_a_verified_stage_without_a_winning_certificate(committed_riemann):
+    _, exp_two, _, commit = committed_riemann
+    result_file = exp_two.parent / "EXP-003-odd-frame-pressure/artifacts/result.json"
+    value = json.loads(result_file.read_text(encoding="utf-8"))
+    value["stage_b"]["arithmetic_status"] = "verified"
+    result_file.write_text(json.dumps(value), encoding="utf-8")
+    commit()
+    with pytest.raises(ValueError, match="no complete certificate"):
+        export_registry._riemann_payload()
+
+
+def test_pressure_export_binds_frozen_candidates(committed_riemann):
+    _, exp_two, _, commit = committed_riemann
+    candidates = exp_two.parent / "EXP-003-odd-frame-pressure/artifacts/candidates.json"
+    candidates.write_text('{"candidates":[{"pressure":"1/2","epsilon":"1/4"}]}', encoding="utf-8")
+    commit()
+    with pytest.raises(ValueError, match="candidate list differs"):
+        export_registry._riemann_payload()
+
+
+@pytest.mark.parametrize("tamper", ["none", "certificate", "audit", "strict_gain", "frozen_parameters"])
+def test_pressure_export_requires_matching_complete_certificate(committed_riemann, tamper):
+    _, exp_two, _, commit = committed_riemann
+    exp_three = exp_two.parent / "EXP-003-odd-frame-pressure"
+    result_file = exp_three / "artifacts/result.json"
+    value = json.loads(result_file.read_text(encoding="utf-8"))
+    certificate = {"theta": "3/4", "pressure": "1/100", "epsilon": "1/10", "cutoff": "10",
+                   "tree": "V", "unresolved_boxes": 0}
+    cert_file = exp_three / "artifacts/stage-b/candidate-1/pressure-certificate.json"
+    cert_file.parent.mkdir(parents=True)
+    cert_file.write_text(json.dumps(certificate), encoding="utf-8")
+    identity = hashlib.sha256((json.dumps(certificate, sort_keys=True, separators=(",", ":")) + "\n").encode()).hexdigest()
+    candidates = exp_three / "artifacts/candidates.json"
+    candidate_record = json.loads(candidates.read_text(encoding="utf-8"))
+    candidate_record["candidates"] = [{"pressure": "1/100", "epsilon": "1/10"}]
+    candidates.write_text(json.dumps(candidate_record), encoding="utf-8")
+    candidates_hash = hashlib.sha256(candidates.read_bytes()).hexdigest()
+    winner = {"candidate": 1, "status": "arithmetic_verified", **certificate,
+        "certificate_sha256": identity, "strict_gain_gate": {"lower": "1/100000"},
+        "audit": {"verified": True, "independent_sinc_taylor": True, "certificate_sha256": identity},
+        "provenance": {**value["stage_a"]["provenance"], "candidate_list_sha256": candidates_hash}}
+    if tamper == "certificate":
+        cert_file.write_text(json.dumps({**certificate, "unresolved_boxes": 1}), encoding="utf-8")
+    elif tamper == "audit":
+        winner["audit"]["independent_sinc_taylor"] = False
+    elif tamper == "strict_gain":
+        winner["strict_gain_gate"]["lower"] = "0"
+    elif tamper == "frozen_parameters":
+        winner["pressure"] = "1/99"
+    value["stage_b"] = {"arithmetic_status": "verified", "outcomes": [winner],
+                        "candidate_list_sha256": candidates_hash}
+    result_file.write_text(json.dumps(value), encoding="utf-8")
+    commit()
+    if tamper == "none":
+        payload = export_registry._riemann_payload()
+        assert any(p["role"] == "pressure_certificate_1" for p in payload["provenance"])
+    else:
+        with pytest.raises(ValueError):
+            export_registry._riemann_payload()
+
+
 def test_riemann_modal_records_ignore_dirty_and_staged_only_files(committed_riemann):
     root, exp_two, git, _ = committed_riemann
     verdict = exp_two / "verdict.md"
@@ -124,7 +231,8 @@ def test_riemann_modal_records_ignore_dirty_and_staged_only_files(committed_riem
     extra = exp_two / "hypothesis.md"
     extra.write_text("# An uncommitted hypothesis", encoding="utf-8")
     git("add", extra.relative_to(root).as_posix())
-    record, = export_registry._read_experiments()
+    record, = [item for item in export_registry._read_experiments()
+               if item["slug"] == exp_two.name]
     assert record["verdict_md"] == original
     assert record["hypothesis_md"] == ""
     assert next(a for a in record["artifacts"] if a["name"] == "result.json")["bytes"] == committed_size

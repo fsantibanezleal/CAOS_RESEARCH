@@ -12,6 +12,7 @@ import hashlib
 import json
 import re
 import subprocess
+from fractions import Fraction
 from pathlib import Path
 
 import yaml
@@ -202,6 +203,7 @@ def _riemann_payload() -> dict:
     problem = "problems/number-theory/riemann-hypothesis"
     exp_one = "EXP-001-source-and-constant-audit"
     exp_two = "EXP-002-short-interval-stability"
+    exp_three = "EXP-003-odd-frame-pressure"
     specifications = [
         ("constant_audit", exp_one, f"experiments/{exp_one}/artifacts/result.json"),
         ("result", exp_two, f"experiments/{exp_two}/artifacts/result.json"),
@@ -209,9 +211,22 @@ def _riemann_payload() -> dict:
         ("proof", exp_two, f"experiments/{exp_two}/mathematical-proof.md"),
         ("verdict", exp_two, f"experiments/{exp_two}/verdict.md"),
         ("source_manifest", "source-review", "context/source-manifest.json"),
+        ("pressure_result", exp_three, f"experiments/{exp_three}/artifacts/result.json"),
+        ("pressure_proof", exp_three, f"experiments/{exp_three}/mathematical-proof.md"),
+        ("pressure_verdict", exp_three, f"experiments/{exp_three}/verdict.md"),
+        ("pressure_audit", exp_three, f"experiments/{exp_three}/adversarial-audit.md"),
+        ("pressure_hypothesis", exp_three, f"experiments/{exp_three}/hypothesis.md"),
+        ("pressure_candidates", exp_three, f"experiments/{exp_three}/artifacts/candidates.json"),
+        ("pressure_code", exp_three, "code/riemann_pressure.py"),
+        ("legacy_certificate_code", exp_two, "code/riemann_certificates.py"),
+        ("pressure_runner", exp_three, f"experiments/{exp_three}/run.py"),
+        ("pressure_exploration", exp_three, f"experiments/{exp_three}/explore.py"),
+        ("legacy_exploration", exp_two, f"experiments/{exp_two}/artifacts/exploration.json"),
     ]
-    payload: dict = {"schema": "riemann-replay-v1", "provenance": []}
-    for role, experiment, relative in specifications:
+    payload: dict = {"schema": "riemann-replay-v2", "provenance": []}
+    source_bytes: dict[str, bytes] = {}
+
+    def read_source(role: str, experiment: str, relative: str) -> bytes:
         path = f"{problem}/{relative}"
         content = _committed_bytes(path)
         commit = subprocess.run(
@@ -223,7 +238,12 @@ def _riemann_payload() -> dict:
             "source_commit": commit, "bytes": len(content),
             "sha256": hashlib.sha256(content).hexdigest(),
         })
-        if role in {"constant_audit", "result"}:
+        source_bytes[role] = content
+        return content
+
+    for role, experiment, relative in specifications:
+        content = read_source(role, experiment, relative)
+        if role in {"constant_audit", "result", "pressure_result"}:
             payload[role] = json.loads(content)
         elif role == "source_manifest":
             payload["reviewed_on"] = json.loads(content)["reviewed_on"]
@@ -232,6 +252,71 @@ def _riemann_payload() -> dict:
     audit = payload["result"]["audit"]
     if not (audit["verified"] and audit["independent_sinc_taylor"]):
         raise ValueError("Riemann certificate requires both recorded arithmetic checks")
+    pressure = payload["pressure_result"]
+    if pressure.get("schema") != "riemann-exp003-results-v1":
+        raise ValueError("Unexpected EXP-003 result schema")
+    stage_a = pressure["stage_a"]
+    if not (stage_a["arithmetic_status"] == "verified"
+            and stage_a["replay"]["verified"] is True
+            and stage_a["replay"]["independent_sinc_taylor"] is True):
+        raise ValueError("Odd-frame reuse requires complete recorded replay")
+
+    def check_provenance(record: dict, *, reused: bool) -> None:
+        expected = {
+            "pressure_hypothesis": record["hypothesis"]["sha256"],
+            "pressure_code": record["certificate_code"]["riemann_pressure.py"],
+            "legacy_certificate_code": record["certificate_code"]["riemann_certificates.py"],
+            "pressure_runner": record["runner_sha256"],
+        }
+        if reused:
+            expected["certificate"] = record["reused_certificate"]["sha256"]
+        for role, recorded in expected.items():
+            if hashlib.sha256(source_bytes[role]).hexdigest() != recorded:
+                raise ValueError(f"EXP-003 committed input differs: {role}")
+
+    check_provenance(stage_a["provenance"], reused=True)
+    stage_b = pressure["stage_b"]
+    candidates_hash = hashlib.sha256(source_bytes["pressure_candidates"]).hexdigest()
+    if stage_b["candidate_list_sha256"] != candidates_hash:
+        raise ValueError("EXP-003 candidate list differs from recorded source")
+    candidate_record = json.loads(source_bytes["pressure_candidates"])
+    for field, role in (("exploration_source_sha256", "pressure_exploration"),
+                        ("prior_exploration_sha256", "legacy_exploration")):
+        if candidate_record[field] != hashlib.sha256(source_bytes[role]).hexdigest():
+            raise ValueError(f"Pressure exploration source differs: {role}")
+    winners = [o for o in stage_b["outcomes"] if o["status"] == "arithmetic_verified"]
+    if stage_b["arithmetic_status"] == "verified":
+        if not winners:
+            raise ValueError("Verified pressure stage has no complete certificate")
+    elif stage_b["arithmetic_status"] != "not_confirmed" or winners:
+        raise ValueError("Pressure stage status contradicts its outcomes")
+    for winner in winners:
+        candidate = winner["candidate"]
+        if type(candidate) is not int or not 1 <= candidate <= 3:
+            raise ValueError("Invalid pressure candidate index")
+        frozen = candidate_record["candidates"]
+        if candidate > len(frozen) or any(
+                Fraction(frozen[candidate - 1][key]) != Fraction(winner[key])
+                for key in ("pressure", "epsilon")):
+            raise ValueError("Winning pressure parameters differ from the frozen candidate list")
+        if Fraction(winner["strict_gain_gate"]["lower"]) <= 0:
+            raise ValueError("Pressure result does not record the strict declared gain")
+        content = read_source(f"pressure_certificate_{candidate}", exp_three,
+            f"experiments/{exp_three}/artifacts/stage-b/candidate-{candidate}/pressure-certificate.json")
+        certificate = json.loads(content)
+        # This is canonical JSON identity checking, not a numerical verification.
+        encoded = (json.dumps(certificate, sort_keys=True, separators=(",", ":")) + "\n").encode()
+        identity = hashlib.sha256(encoded).hexdigest()
+        crosscheck = winner["audit"]
+        if not (crosscheck["verified"] is True and crosscheck["independent_sinc_taylor"] is True
+                and crosscheck["certificate_sha256"] == winner["certificate_sha256"] == identity
+                and certificate["unresolved_boxes"] == 0):
+            raise ValueError("Pressure certificate requires complete matching arithmetic checks")
+        if any(certificate[key] != winner[key] for key in ("theta", "pressure", "epsilon", "cutoff")):
+            raise ValueError("Pressure certificate parameters differ from the recorded theorem")
+        check_provenance(winner["provenance"], reused=False)
+        if winner["provenance"]["candidate_list_sha256"] != candidates_hash:
+            raise ValueError("Winning pressure certificate cites a different candidate list")
     return payload
 
 
