@@ -1,0 +1,63 @@
+{
+  "args": {
+    "n": 1024,
+    "device": "cuda",
+    "mode": "frozen",
+    "A0": 4.0,
+    "A1": 4.0,
+    "lam0": 1,
+    "lam1b": 16,
+    "lam1": 12,
+    "lam2": 192,
+    "phi1": 1.5707963267948966,
+    "phi2": 1.5707963267948966,
+    "Theta1": 0.002,
+    "Theta2": 1e-07,
+    "grow1": 2.4,
+    "measure2": 0.08,
+    "settle": 2.0,
+    "mask_frac": 0.35,
+    "dt": 0.0004,
+    "nu": 0.0,
+    "alpha": 1.0,
+    "out": "../experiments/EXP-004-multilayer-handoff/result-frozen.json"
+  },
+  "mode": "frozen",
+  "wall_seconds": 33.5,
+  "background": {
+    "A0": 4.0,
+    "lam0": 1,
+    "A1": 4.0,
+    "lam1b": 16,
+    "steady_state_drift_over_200_steps": 1.4487146753258072e-15
+  },
+  "layer2": {
+    "k": [
+      192,
+      0
+    ],
+    "cutoff": 55.42562584220407,
+    "settle_steps": 400,
+    "n_masked_points": 302080
+  },
+  "H1_full_two_scale_gradient": {
+    "corr": 0.9994526918648524,
+    "slope": 1.3575948848796744,
+    "rmse": 0.1876830940182004,
+    "measured_mean": 2.1481290162281654,
+    "predicted_mean": 2.093223641052368
+  },
+  "H2_control_base_only": {
+    "corr": 0.21160061302515992,
+    "slope": 0.4955593935056242,
+    "rmse": 0.808339713830815,
+    "measured_mean": 2.1481290162281654,
+    "predicted_mean": 1.7063862150747935
+  },
+  "pattern_confirmed": true,
+  "control_discriminates": true,
+  "slope_gate_committed": false,
+  "H1_pass": false,
+  "H2_control_is_worse": true,
+  "all_pass": false
+}

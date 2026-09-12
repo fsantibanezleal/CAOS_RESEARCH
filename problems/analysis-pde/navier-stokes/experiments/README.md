@@ -7,9 +7,10 @@ DECIDED-IN-PART, and a refuted prediction is preserved rather than edited away.
 
 | id | question | verdict |
 |---|---|---|
-| [EXP-001](EXP-001-lean-replay/) | Does the OpenAI Lean certificate build, and do the Comparator challenges accept it? | RUNNING |
+| [EXP-001](EXP-001-lean-replay/) | Does the OpenAI Lean certificate build, and do the Comparator challenges accept it? | Navier-Stokes **CONFIRMED**; Euler rebuild pending |
 | [EXP-002](EXP-002-reduction-control/) | Does the reduced modulation model predict the Boussinesq PDE? | **CONFIRMED** |
 | [EXP-003](EXP-003-threshold-sweep/) | Does the repaired cascade model predict the published threshold? | **CONFIRMED** |
+| [EXP-004](EXP-004-multilayer-handoff/) | Does the layer-to-layer handoff survive in the full nonlinear PDE? | pattern **CONFIRMED** (frozen), slope systematic characterized |
 
 ## EXP-001, the Lean replay
 
@@ -44,8 +45,19 @@ The result is deliberately stated as a consistency relation rather than a deriva
 requires before machine time. It has already done its job once, by refuting the first reading of the
 threshold inside the session that produced it.
 
-## What none of these cover
+## EXP-004, the multi-layer handoff
 
-**A multi-layer PDE simulation.** EXP-002 validated one layer; EXP-003's bookkeeping assumes
-infinitely many nested ones. That gap is named in both verdicts and in the RESUME, and it is the first
-item of any continuation.
+The gap EXP-002 and EXP-003 named: does a layer respond to the TOTAL accumulated low-frequency
+gradient, not just the base stratification? Tested on a frozen two-scale background (an exact steady
+state, drift 1.5e-15). The local rate of a fine wave follows the total two-scale gradient at
+correlation 0.99945 and the base alone at 0.212, confirming the load-bearing premise. The absolute
+slope carries a measurement-geometry systematic (a factor ~1.36, present already at one scale,
+shrinking toward flat regions), so the pre-committed slope sub-gate was not met and is reported as
+not met. The dynamical companion run is inconclusive by construction, because it does not implement
+the steering that freezes the previous layer; that is recorded honestly.
+
+## What still remains open
+
+A fully dynamical multi-layer confirmation WITH steering implemented, so each grown layer is held
+frozen while the next grows. EXP-004 Part B establishes the essential physics on a frozen surrogate;
+the dynamical cascade with steering is a larger build and the natural next step.

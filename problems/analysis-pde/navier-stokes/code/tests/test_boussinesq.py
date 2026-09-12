@@ -57,6 +57,32 @@ def test_stratification_is_an_exact_steady_state(grid):
     assert float(om.abs().max()) < 1e-10
 
 
+def test_two_scale_vertical_background_is_steady(grid):
+    """theta = -(A0/lam0) sin(lam0 x2) - (A1/lam1) sin(lam1 x2), omega = 0 is steady.
+
+    Any function of x2 alone has d_1 theta = 0 (every mode has k1 = 0), so the vorticity
+    source vanishes and, with u = 0, nothing is advected. This is what makes the
+    frozen multi-scale background of EXP-004 a legitimate control: the mid-scale term
+    stands in for an earlier layer's deposited gradient while the whole field stays put.
+    """
+    solver = B.Boussinesq2D(grid, nu=0.0, alpha=1.0)
+    x1, x2 = grid.coords()
+    theta = -(4.0 / 1) * torch.sin(1 * x2) - (4.0 / 8) * torch.sin(8 * x2)
+    th = torch.fft.fft2(theta)
+    om = torch.zeros_like(th)
+    th0 = th.clone()
+    for _ in range(100):
+        th, om = solver.step(th, om, 1e-3)
+    assert float((th - th0).abs().max()) < 1e-9
+    assert float(om.abs().max()) < 1e-9
+    # a term with k1 != 0 would NOT be steady, confirming the test is not vacuous
+    tilted = torch.fft.fft2(theta + 0.1 * torch.sin(8 * x1))
+    om2 = torch.zeros_like(tilted)
+    for _ in range(20):
+        tilted, om2 = solver.step(tilted, om2, 1e-3)
+    assert float(om2.abs().max()) > 1e-6
+
+
 def test_mode_amplitude_roundtrip(grid):
     x1, x2 = grid.coords()
     k = (5, 3)
