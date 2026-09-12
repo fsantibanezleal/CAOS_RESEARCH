@@ -37,8 +37,8 @@ export default function Home() {
       <h2>{t('The portfolio board', 'El tablero del portafolio')}</h2>
       <p>
         {t(
-          'Problems move through a fixed lifecycle (proposed, scoped, opened, exploring, consolidating, published) with artifact gates between states; one problem is brought to published before the next opens.',
-          'Los problemas avanzan por un ciclo de vida fijo (propuesto, delimitado, abierto, explorando, consolidando, publicado) con compuertas de artefactos entre estados; un problema llega a publicado antes de abrir el siguiente.',
+          'Problems move through a fixed lifecycle (proposed, scoped, opened, exploring, consolidating, published) with artifact gates between states. Independent research rounds may proceed in parallel; public releases are serialized after validation.',
+          'Los problemas avanzan por un ciclo de vida fijo (propuesto, delimitado, abierto, explorando, consolidando, publicado) con compuertas de artefactos entre estados. Las rondas de investigación independientes pueden avanzar en paralelo; las publicaciones se realizan en secuencia tras la validación.',
         )}
       </p>
       {portfolio ? (
@@ -63,6 +63,8 @@ export default function Home() {
                         <Link to="/problems/jacobian-conjecture">{p.slug}</Link>
                       ) : p.slug === 'petersen-coloring' ? (
                         <Link to="/problems/petersen-coloring">{p.slug}</Link>
+                      ) : p.slug === 'riemann-hypothesis' ? (
+                        <Link className="rh-program-link" to="/problems/riemann-hypothesis">{t('Riemann hypothesis', 'Hipótesis de Riemann')}</Link>
                       ) : (
                         p.slug
                       )}
@@ -98,6 +100,8 @@ export default function Home() {
                 <Link to="/problems/jacobian-conjecture" className="rs-badge state">{e.problem}</Link>
               ) : e.problem === 'petersen-coloring' ? (
                 <Link to="/problems/petersen-coloring" className="rs-badge state">{e.problem}</Link>
+              ) : e.problem === 'riemann-hypothesis' ? (
+                <Link to="/problems/riemann-hypothesis" className="rs-badge state">{t('Riemann hypothesis', 'Hipótesis de Riemann')}</Link>
               ) : (
                 <span className="rs-badge state">{e.problem}</span>
               )}
