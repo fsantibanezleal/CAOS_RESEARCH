@@ -70,14 +70,30 @@ re-downloaded, checkable against what we actually read.
 - P.-L. Lions, global regularity of hyperdissipative Navier-Stokes for `alpha >= 5/2` in the
   `|grad|^alpha` convention. `[U]`, cited through Cordoba-Martinez-Zoroa-Zheng Section 1.1 `[V]`.
 
-- D. Cordoba, L. Martinez-Zoroa, *Finite time singularities to the 3D incompressible Euler equations
-  for solutions in C-infinity(R3 minus origin) intersect C-1,alpha intersect L2*, arXiv:2410.22920v3.
-  <https://arxiv.org/abs/2410.22920v3> `[P]`.
+- D. Cordoba, L. Martinez-Zoroa, *Finite time singularities of smooth solutions for the 2D
+  incompressible porous media (IPM) equation with a smooth source*, arXiv:2410.22920v3 (dated
+  2025-02-13). <https://arxiv.org/abs/2410.22920> `[V]` abstract, Theorem, Remarks 1 and 2, and the
+  reformulation; `[P]` the construction.
   549,167 bytes, sha256 `14c3a2423cbcec2d6ca5c54258ae4bd978f66631165fdb6217248bda280d45e8`.
-- D. Cordoba, L. Martinez-Zoroa, forced IPM blowup with spatially smooth source. `[U]`, cited as [6]
-  by the Alpoge-Buckmaster Boussinesq paper; the obligation to read it in the primary source is open.
+  **This is reference [6] of the Alpoge-Buckmaster Boussinesq paper**, the source of the layer
+  organization and of the principle that the approximation order increases as the spatial scale
+  decreases. Its Remark 1 states that the `L^inf_t C^inf_x` time regularity was chosen for
+  simplicity, that `C^1_t C^inf_x` follows with extra work, and that `C^inf_t C^inf_x` "should even
+  be able to" be obtained. That remark is precisely the gap the 2026 Alpoge-Buckmaster papers close.
+
+  > **Correction, 2026-09-12.** This entry previously carried the title *Finite time singularities to
+  > the 3D incompressible Euler equations for solutions in C-infinity(R3 minus origin) intersect
+  > C-1,alpha intersect L2*, which is a DIFFERENT Cordoba-Martinez-Zoroa paper (reference [9] of the
+  > Alpoge-Buckmaster Euler paper). The arXiv number and hash were always right; the title was taken
+  > from the wrong bibliography entry and was not checked against the downloaded file. Checking it
+  > also closed an obligation: this paper is [6], so it was already in hand while recorded as
+  > outstanding.
+- D. Cordoba, L. Martinez-Zoroa, Zheng, 3D Euler singularities in
+  `C-infinity(R3 minus origin) intersect C-1,alpha intersect L2`. `[U]`, cited as [9] by the
+  Alpoge-Buckmaster Euler paper. NOT obtained; distinct from 2410.22920 above.
 - D. Cordoba, A. Lain-Sanclemente, L. Martinez-Zoroa, Boussinesq multi-layer pendulum construction.
-  `[U]`, cited as [5] by the Alpoge-Buckmaster Boussinesq paper; open obligation.
+  `[U]`, cited as [5] by the Alpoge-Buckmaster Boussinesq paper; **this one remains the open
+  obligation**.
 
 ## Problem statement and background
 
