@@ -1,6 +1,6 @@
 # Riemann hypothesis handoff
 
-## State and authority
+## 1. State in one screen
 
 Read [state.md](state.md), [backlog.md](backlog.md), [plan.md](plan.md), then the
 latest source verdicts. Evidence outranks this handoff. Public v0.64.000 and
@@ -8,7 +8,19 @@ preprints v0.01/v0.02 are delivered; v0.02 is published at DOI
 10.5281/zenodo.22728744 and its replay integration remains in progress. The general
 RH remains open.
 
-## Experiment index
+## 2. The objects table
+
+| Object | Role | Current evidence |
+|---|---|---|
+| $N,s,r,b,E$ | Multiplicity and support counts in a finite zero multiset | EXP-002/003/004 proofs |
+| $Q,D,\sigma$ | Hilbert--Schmidt moment, simple Gram defect and residual slack | EXP-002/004 exact identities |
+| $c(\theta)$ | Wang cosine baseline and its positive root $\theta_0$ | Wang source and EXP-004 comparison |
+| EXP-002 certificate | Three-point compact energy certificate | Published v0.01 archive |
+| EXP-003 pressure certificate | Odd-frame pressure improvement at $\theta=3/4$ | Confirmed 16,797-node replay |
+| EXP-004 parity transfer | Qualitative fixed-exponent range extension | Confirmed exact run and proof review |
+| Alternative route dossiers | Spectral, Nyman--Beurling, Li/Weil, heat-flow and mollifier options | Source-reviewed proposals with open gates |
+
+## 3. Experiment index
 
 | Experiment | Scope | Outcome |
 |---|---|---|
@@ -25,7 +37,7 @@ certificate passed both arithmetic evaluators. Full repository validation passed
 288 Python tests. EXP-003 was declared in 8ed806d before all computation; proof
 commit e21618c and result commit abfa001 preserve the sequence.
 
-## Confirmed EXP-004 result
+## 3a. Confirmed EXP-004 result
 
 The parity theorem retains odd critical support and multiplicity excess in the
 finite inequality, then packs one fixed classical odd-zero density seed into every
@@ -35,7 +47,7 @@ on a nearby range. The constants $\kappa$, $\theta_1$ and the effective onset re
 unquantified. See [the complete proof](../../problems/number-theory/riemann-hypothesis/wiki/07-parity-density-transfer.md)
 and [confirmed verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/verdict.md).
 
-## Active work and next actions
+## 4. In flight
 
 The user's latest request explicitly asks for alternatives across mathematical areas
 and a more relevant result. Completed source dossiers investigate:
@@ -58,13 +70,15 @@ and published at DOI 10.5281/zenodo.22728744; all 21 rendered pages were reviewe
 the PDF is 498,500 bytes, and the local publication helper's 43 boundary tests pass.
 The published v0.01 archive remains byte-identical.
 
+## 5. Next actions
+
 Continue current consolidation: bake the committed EXP-004 evidence, integrate the
 four-experiment bilingual web surface, promote PR #266, serialize the next release,
 and verify the live browser journeys.
 Publication, scoped PR #266, serialized release, rendered QA and live verification
 must each have observed receipts before their states advance.
 
-## Reproduction and files
+## 6. Where everything lives
 
 Problem: `problems/number-theory/riemann-hypothesis/`. The EXP-003 execution receipt
 records exact commands and deterministic result hashes. Source restoration and replay
@@ -76,7 +90,7 @@ First release receipts: `program/riemann-hypothesis/release-0.64.000/`.
 Frozen first preprint archive: `manuscripts/riemann-hypothesis/short-interval-stability/versions/v0.01/`.
 Private coordination: `plans/caos-research/riemann-hypothesis/` in CAOS_MANAGE.
 
-## Quantifier and trust reminders
+## 7. Gotchas
 
 N counts all copies; simple-critical, odd-critical, distinct-critical and all distinct
 counts differ. The Hilbert pair sum uses ordinary complex squares. Test functions and
