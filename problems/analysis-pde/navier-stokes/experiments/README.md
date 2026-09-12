@@ -1,25 +1,51 @@
 # navier-stokes experiments
 
-Empty at open time, 2026-09-11. No experiment has been run and none will start before the plan in
-`program/navier-stokes/plan.md` is validated.
+Each experiment gets its own directory holding, per methodology 02: the hypothesis committed **before**
+the run, the exact command and environment, the raw outputs, the controls (at least one positive and
+one deliberately corrupted negative), and the verdict. A verdict is CONFIRMED, REFUTED, INCONCLUSIVE or
+DECIDED-IN-PART, and a refuted prediction is preserved rather than edited away.
 
-Each experiment gets its own directory `EXP-00N-<slug>/` holding, per methodology 02: the hypothesis
-committed **before** the run, the exact command and environment, the raw outputs, the controls (at
-least one positive and one deliberately corrupted negative), and the verdict. A verdict is CONFIRMED,
-REFUTED, INCONCLUSIVE or DECIDED-IN-PART, and a refuted prediction is preserved rather than edited
-away.
+| id | question | verdict |
+|---|---|---|
+| [EXP-001](EXP-001-lean-replay/) | Does the OpenAI Lean certificate build, and do the Comparator challenges accept it? | RUNNING |
+| [EXP-002](EXP-002-reduction-control/) | Does the reduced modulation model predict the Boussinesq PDE? | **CONFIRMED** |
+| [EXP-003](EXP-003-threshold-sweep/) | Does the repaired cascade model predict the published threshold? | **CONFIRMED** |
 
-Queued, with budgets and kill criteria already declared in `program/navier-stokes/backlog.md`:
+## EXP-001, the Lean replay
 
-- **EXP-001** (NS-003): build `openai/NavierStokesAndEuler` and run both Comparator challenges. The
-  only verification of the September 2026 claims that anyone can perform today.
-- **EXP-002** (NS-005, NS-006): reproduce the inviscid modulation system and validate it against a
-  direct 2D pseudo-spectral Boussinesq simulation through one growth, steering and holding cycle.
-  Positive control that the reduction tracks the PDE; negative control with a corrupted coefficient
-  that must fail the same comparison.
-- **EXP-003** (NS-007): add the time budget and the hold-interval damping to the cascade recursion,
-  then sweep the dissipation threshold as a batched GPU ensemble.
+The only verification of the September 2026 claims mechanically available to a third party. Its
+[hypothesis](EXP-001-lean-replay/hypothesis.md) was committed before the result and states the
+asymmetry plainly: a green build is weak positive evidence, and a red build is in the first instance
+evidence about our machine rather than about the artifact.
 
-The preflight check that already exists, `../code/modulation_smoke.py`, is not an experiment. It is
-the tooling smoke test methodology 12 requires before machine time, and it has already done its job
-once by refuting the first reading of the threshold.
+## EXP-002, the reduction control
+
+A reduced model never checked against the equation it reduces is a picture, not an instrument. This
+runs the full nonlinear 2D Boussinesq system on the GPU and asks whether the modulation system
+predicts it. Peak growth rate to 4e-05 relative, band structure present, frequency independence to
+2.7e-04 across an eightfold range of `lambda`, and the dissipative term derived in this problem
+tracking the measured rate to 2.6e-04 absolute.
+
+Its stated validity boundary matters as much as its result: scale separation at least 20, small
+amplitudes, **a single layer**, and a short horizon. Nothing in it licenses a claim about many
+interacting layers.
+
+## EXP-003, the threshold sweep
+
+`alpha_c = 1/(4p)`, measured over 1,000,000 schedules with zero violations, and the published
+threshold `(22 - 8 sqrt 7)/9` corresponding to `p = 11/4 + sqrt 7` exactly. Both omissions the model
+was repaired to fix turn out not to move the exponent, which was not the expected outcome.
+
+The result is deliberately stated as a consistency relation rather than a derivation.
+
+## The preflight that is not an experiment
+
+[`../code/modulation_smoke.py`](../code/modulation_smoke.py) is the tooling smoke test methodology 12
+requires before machine time. It has already done its job once, by refuting the first reading of the
+threshold inside the session that produced it.
+
+## What none of these cover
+
+**A multi-layer PDE simulation.** EXP-002 validated one layer; EXP-003's bookkeeping assumes
+infinitely many nested ones. That gap is named in both verdicts and in the RESUME, and it is the first
+item of any continuation.
