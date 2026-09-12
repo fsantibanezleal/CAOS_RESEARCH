@@ -364,16 +364,16 @@ async function proofControls(page, panel, scenario, tab) {
     descriptions.push(text);
     check(scenario, `${tab}: proof stage ${index + 1} explanatory text`, text.length > 80, text);
     const href = await detail.locator('a').getAttribute('href');
-    check(scenario, `${tab}: proof stage ${index + 1} source`, /^https:\/\/(arxiv\.org|github\.com)\//.test(href || ''), href);
+    check(scenario, `${tab}: proof stage ${index + 1} source`, /^https:\/\/(arxiv\.org|github\.com|www\.mathnet\.ru)\//.test(href || ''), href);
     await capture(page, scenario, `${tab}-proof-stage-${index + 1}`);
   }
   check(scenario, `${tab}: stage content changes`, new Set(descriptions).size === 4);
 }
 async function experimentViews(page, panel, scenario, text) {
   const buttons = panel.locator('.rh-experiments .rs-exp-open');
-  check(scenario, 'both experiment launch controls present', await buttons.count() === 2);
-  requireCondition(await buttons.count() === 2, 'Expected both experiment records');
-  for (const id of ['001', '002']) {
+  check(scenario, 'all four experiment launch controls present', await buttons.count() === 4);
+  requireCondition(await buttons.count() === 4, 'Expected all four experiment records');
+  for (const id of ['001', '002', '003', '004']) {
     const launch = buttons.filter({ hasText: new RegExp(`^EXP-${id}:`) });
     await pointerClick(page, launch, scenario, `open EXP-${id}`);
     const dialog = page.locator('.rs-modal[role="dialog"]');
@@ -473,6 +473,7 @@ async function runScenario(viewport, lang, theme) {
     await page.locator('.rh-results tbody tr').first().waitFor({ state: 'visible' });
     await page.evaluate(() => document.fonts.ready);
     check(scenario, 'recorded numerical result loaded', (await page.locator('.rh-results').innerText()).includes('0.4190768284253039967'));
+    check(scenario, 'qualitative EXP-004 result is rendered', norm(await page.locator('.rh-page').innerText()).includes('EXP-004'));
     const tablist = page.locator('.rh-page > .tabs > .tablist');
     check(scenario, 'six research sections present', await tablist.getByRole('tab').count() === 6);
     for (let index = 0; index < tabIds.length; index += 1) {
