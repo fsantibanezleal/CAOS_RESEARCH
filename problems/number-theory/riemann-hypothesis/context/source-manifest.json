@@ -1149,6 +1149,23 @@
       "note": "Math USSR-Izv24(3),523-537. Russian original1984. Received1984-02-17. Official redirecthttps://www.mathnet.ru/links/b63daace1fd057b918c33d49f34b777c/im1456_eng.pdf. Main theorem p524 and final distinct sign-change counting p536 visually inspected;TheoremB p523 reproducesSelberg1942 exact odd-count seed.",
       "pages": 15,
       "doi": "10.1070/IM1985v024n03ABEH001246"
+    },
+    {
+      "title": "Short mollifiers of the Riemann zeta-function",
+      "source_url": "https://arxiv.org/pdf/2508.11108v1",
+      "bytes": 3641829,
+      "sha256": "8a6f1d62af8d64dcca09ddc2a319f1d1d3aa0bc88e72e4db262a1d7dec43c38c",
+      "cache_path": "source-cache/cfkltb-short-mollifiers-2508.11108v1.pdf",
+      "text_cache_path": "source-cache/cfkltb-short-mollifiers-2508.11108v1.txt",
+      "text_sha256": "c1426a037742d3c94bf7ba3ea4389f6c05c630ef22d9a4fa58d038c7f4ffebfb",
+      "license": "CC BY4.0 per arXiv HTMLlicense",
+      "review_dossier": "2026-09-12-critical-mass-and-multiplicity-route.md",
+      "filename": "cfkltb-short-mollifiers-2508.11108v1.pdf",
+      "retrieved_on": "2026-09-12",
+      "version": "2508.11108v1",
+      "tracked_fulltext": false,
+      "redistribution_basis": "CC BY 4.0 reported by the arXiv source; retained as local reference archive.",
+      "note": "Primary PDF pinned by exact bytes. New paper-only localization lead; no numerical result or generalized Steuding moment transfer claimed. Section 7 leaves the full-range 2u/3 target open."
     }
   ],
   "repositories": [
