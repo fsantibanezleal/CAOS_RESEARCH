@@ -39,3 +39,30 @@ export const loadPortfolio = () => load<Portfolio>('portfolio');
 export const loadExperiments = () =>
   load<{ experiments: ExperimentRec[] }>('experiments').then((d) => d.experiments);
 export const loadJacobian = () => load<JacobianData>('jacobian');
+
+export type RiemannBound = { lower: string; upper: string; display: string };
+export type RiemannData = {
+  schema: 'riemann-replay-v1';
+  reviewed_on: string;
+  result: {
+    theta: string; radius: string; delta: string;
+    baseline: RiemannBound; improved: RiemannBound; gain: RiemannBound;
+    audit: {
+      verified: boolean; independent_sinc_taylor: boolean; precision_bits: number;
+      nodes: number; energy_leaves: number; outside_leaves: number;
+    };
+    scope: string;
+  };
+  constant_audit: {
+    status: string;
+    constants: Record<string, {
+      status: string;
+      exact: { decimal_lower: string; decimal_upper: string; lower: string; upper: string };
+    }>;
+  };
+  provenance: {
+    role: string; source_exp: string; path: string; source_commit: string;
+    bytes: number; sha256: string;
+  }[];
+};
+export const loadRiemann = () => load<RiemannData>('riemann');

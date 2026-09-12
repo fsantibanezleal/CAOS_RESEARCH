@@ -1,0 +1,63 @@
+{
+ "artifact": {
+  "bytes": 16876,
+  "path": "research/riemann.json",
+  "sha256": "66887e1ecf555c8378620ec78a4b0151bc944467fcccdd8892d5c6ea0924c99a"
+ },
+ "case_id": "riemann",
+ "gate": {
+  "lane": "precompute",
+  "reason": "baked registry export; the web replays it"
+ },
+ "lane": "precompute",
+ "sources": [
+  {
+   "bytes": 13276,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-001-source-and-constant-audit/artifacts/result.json",
+   "role": "constant_audit",
+   "sha256": "a472e624ce0bf95e5a700fc663f6a37c57905e844b257f0a105a60f14da8cd62",
+   "source_commit": "c3ab36ffbc462652b39871bab091e43850d42493",
+   "source_exp": "EXP-001-source-and-constant-audit"
+  },
+  {
+   "bytes": 1688,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/artifacts/result.json",
+   "role": "result",
+   "sha256": "75297e7caa94bd2d37e73bb4447ae7377c664bd37aa8f760e957b1ec5c000d73",
+   "source_commit": "c3ab36ffbc462652b39871bab091e43850d42493",
+   "source_exp": "EXP-002-short-interval-stability"
+  },
+  {
+   "bytes": 49119,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/artifacts/triangle-certificate.json",
+   "role": "certificate",
+   "sha256": "bd8254477c25124b6bf9fc01e0db88f7f5a16d1bc82357c6eb4cbd594a731463",
+   "source_commit": "c3ab36ffbc462652b39871bab091e43850d42493",
+   "source_exp": "EXP-002-short-interval-stability"
+  },
+  {
+   "bytes": 15928,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/mathematical-proof.md",
+   "role": "proof",
+   "sha256": "36031922ed09440bdf769272431d98c111fb8155a50fc727628a0a65112fc54c",
+   "source_commit": "c3ab36ffbc462652b39871bab091e43850d42493",
+   "source_exp": "EXP-002-short-interval-stability"
+  },
+  {
+   "bytes": 5140,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/verdict.md",
+   "role": "verdict",
+   "sha256": "e82b82de1249587fba9de57416bf965d80b1ca1fb994fd1a428d081e495b50ca",
+   "source_commit": "ad2bb003484cbd1e160c6e3fa37231b62a5cbb24",
+   "source_exp": "EXP-002-short-interval-stability"
+  },
+  {
+   "bytes": 22778,
+   "path": "problems/number-theory/riemann-hypothesis/context/source-manifest.json",
+   "role": "source_manifest",
+   "sha256": "bd1b0384b2b83a3a8bce3f62fe4a10afe9c4b6625ab5d852c7850e0083a5b13e",
+   "source_commit": "c3ab36ffbc462652b39871bab091e43850d42493",
+   "source_exp": "source-review"
+  }
+ ]
+}

@@ -4,6 +4,8 @@ SimLab-style navigable wiki (ADR-0056), authored **as the product is built**, no
 its validation + these docs are the primary product; the web app is a projection of a validated subset.
 
 ## Map
+- **[Riemann result replay](guides/riemann-replay.md)**, restore pinned sources, reproduce certified
+  arithmetic, trace committed artifacts into the public page, and validate the release.
 - **[architecture/](architecture/)**, how the repo works: the frozen base, the two data contracts, determinism +
   trace, the live/precompute gate, the staged pipeline, model evaluation, deploy.
 - **[frameworks/](frameworks/)**, one card per research-chosen engine/library (what/why · install · usage ·

@@ -5,8 +5,9 @@ folder holds `main.tex` and its built `main.pdf` (committed per release; two-pas
 pdflatex). Relocated from three root-level folders on 2026-07-23; git history is
 preserved through the rename.
 
-| Problem | Manuscript | DOI (published on Zenodo, 2026-07-23) | What it records |
+| Problem | Manuscript | Published version DOI | What it records |
 |---|---|---|---|
+| [riemann-hypothesis](riemann-hypothesis/) | [short-interval-stability/](riemann-hypothesis/short-interval-stability/) | [10.5281/zenodo.22727389](https://doi.org/10.5281/zenodo.22727389) (v0.01, 2026-09-12; concept [10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388)) | Strict refinement of Wang's positive short-interval cosine curve, a distinct-zero companion, explicit finite-Hilbert stability transfer, and a certified theta=3/4 example. No global record or solution of RH is claimed. |
 | [huneke-wiegand](huneke-wiegand/) | [frobenius-minimality/](huneke-wiegand/frobenius-minimality/) | [10.5281/zenodo.21908785](https://doi.org/10.5281/zenodo.21908785) (v0.09; concept [10.5281/zenodo.21763582](https://doi.org/10.5281/zenodo.21763582)) | Certified Frobenius minimality, minimum-layer uniqueness, infinite family, and uniform endomorphism, conductor, reduction, depth-zero, and Buchsbaum tangent-cone anatomy, preserving Son Pham's counterexample discovery priority. |
 | [jacobian-conjecture](jacobian-conjecture/) | [foundational/](jacobian-conjecture/foundational/) | [10.5281/zenodo.21503366](https://doi.org/10.5281/zenodo.21503366) | Paper A: the counterexample validation, structure, family, escape geometry, char-p certificates, the 3D aftermath. |
 | [jacobian-conjecture](jacobian-conjecture/) | [planar/](jacobian-conjecture/planar/) | [10.5281/zenodo.21503368](https://doi.org/10.5281/zenodo.21503368) | Paper B: the planar program: the theorem ladder, staircase transport, GGHV frontier and the (72,108) campaign. |

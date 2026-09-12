@@ -11,6 +11,10 @@
   {
    "case_id": "jacobian",
    "manifest_path": "manifests/jacobian.json"
+  },
+  {
+   "case_id": "riemann",
+   "manifest_path": "manifests/riemann.json"
   }
  ],
  "contract": "research-registry-v1"
