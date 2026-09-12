@@ -99,3 +99,25 @@ those new families is declared or run at this entry. Current manuscript expansio
 and replay consolidation remain in progress; v0.01 and public v0.64.000 are the
 latest delivered versions. Private coordination PRs #631/#632 were merged and their
 develop/main heads verified at 2bde950d.
+
+## 2026-09-12: cross-area review persisted and EXP-004 declared
+
+Commit be5aac4 archives the spectral and alternative-reformulation dossiers and
+the source manifest, with all 61 then-listed documents passing exact restoration
+verification. The reviews retain precise barriers for finite positivity, omitted
+Nyman-Beurling coordinates, approximation/tail transfer, and zero-time heat-flow
+limits; unreviewed external computational candidates remain attributed as such.
+
+The parity route passed independent source and paper preflight. Declaration
+e03413b2301bf45ca68ff6e945f25add9a1c3a89 was committed and pushed before
+implementation or computation. EXP-004 will check exact residual certificates,
+a fixed count census, primal/dual scalar controls, and the legal short-interval
+deduction. The proposed consequence is positive simple-critical density at some
+fixed exponent below the zero of Wang's cosine curve. Its classical density is
+unspecified; no new numeric exponent is asserted. Finite arithmetic, complete
+proof review and the final verdict are still pending at this chronological entry.
+
+Commit 235b261 preserves five byte-identical v0.01 manuscript/publication files
+under versions/v0.01. The old public DOI and PDF are unchanged. Private draft PR
+#633 carries the confirmed pressure mirror and tested version helper. No new
+Zenodo version is reserved or published at this point.

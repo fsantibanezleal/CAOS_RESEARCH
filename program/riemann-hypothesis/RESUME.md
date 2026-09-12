@@ -15,6 +15,7 @@ published or deployed. The general RH remains open.
 | EXP-002 | First short-interval stability theorem and compact certificate | confirmed and released |
 | EXP-003 A | Odd-frame amplification with the prior certificate | confirmed |
 | EXP-003 B | New pressure inequality and more than 25% gain over A | confirmed |
+| EXP-004 | Parity density transfer below the cosine positivity threshold | declared in e03413b; exact validation in progress |
 
 The [EXP-003 verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/verdict.md), [proof](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/mathematical-proof.md),
 [audit](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/adversarial-audit.md), and [results](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/artifacts/result.json) give the
@@ -26,7 +27,7 @@ commit e21618c and result commit abfa001 preserve the sequence.
 ## Active work and next actions
 
 The user's latest request explicitly asks for alternatives across mathematical areas
-and a more relevant result. Current source-only reviews investigate:
+and a more relevant result. Completed source dossiers investigate:
 
 1. Parity, multiplicity slack, and existing positive critical-zero mass as a possible
    route to a stronger positivity range. Exact seed theorem definitions, uniformity,
@@ -38,8 +39,12 @@ and a more relevant result. Current source-only reviews investigate:
    flow. A finite diagnostic must state what it proves and what remains an infinite
    limit. Proposed finite-prime compression requires an adversarial obstruction check.
 
-Finish those source preflights, choose a falsifiable new experiment, and commit its
-hypothesis before computation. Preserve every rejected route. The v0.02 manuscript
+EXP-004 is now declared in commit e03413b, before implementation or computation.
+It tests the exact parity transfer and its qualitative interval-range consequence,
+with classical odd-zero density as a fixed positive but unspecified input. Complete
+its frozen exact checks, independent proof review and verdict. The full-operator,
+approximation/tail, heat-flow and generalized short-mollifier routes remain separate
+source/paper proposals. Preserve every rejected route. The v0.02 manuscript
 draft is not frozen or published; its scope will reflect the completed broader round.
 No additional Zenodo draft has yet been reserved. The current publication helper has
 39 offline boundary tests, including idempotent recovery and unconditional guards.
@@ -58,7 +63,7 @@ bytes and binds the hypothesis, code, runner, seeds, candidate list and certific
 Dirty files cannot become replay evidence.
 
 First release receipts: `program/riemann-hypothesis/release-0.64.000/`.
-Frozen first preprint: `manuscripts/riemann-hypothesis/short-interval-stability/`.
+Frozen first preprint archive: `manuscripts/riemann-hypothesis/short-interval-stability/versions/v0.01/`.
 Private coordination: `plans/caos-research/riemann-hypothesis/` in CAOS_MANAGE.
 
 ## Quantifier and trust reminders

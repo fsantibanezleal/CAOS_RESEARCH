@@ -1,7 +1,7 @@
 # Riemann hypothesis state
 
 Updated: 2026-09-12. Current public release: **0.64.000**, deployed and live-verified.
-Current research round: **EXP-003 confirmed; broader alternatives in source preflight**.
+Current research round: **EXP-003 confirmed; EXP-004 declared and under exact validation**.
 
 [D+MV] [EXP-003](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/verdict.md) confirms a stronger odd-frame theorem throughout
 the complete positive short-interval cosine curve and a new pressure certificate.
@@ -23,15 +23,18 @@ publication of a v0.02 expansion and its public replay release are not complete.
 The sole published preprint remains v0.01, DOI 10.5281/zenodo.22727389.
 
 The user's latest direction broadens the investigation beyond constant tuning.
-Three independent source-led reviews examine classical odd/critical zero counts and
+Three primary-source dossiers now cover classical odd/critical zero counts and
 multiplicity, spectral negative-mass/optimization witnesses, and alternative RH
-reformulations such as Nyman-Beurling approximation and positivity criteria. No
-new experiment in those families has run. Their claims remain proposals until the
-source-complete gate, declaration commit, proof, and adversarial validation pass.
+reformulations. Commit be5aac4 preserves the cross-area review and verified archive.
+EXP-004 was declared and pushed in e03413b before implementation or computation.
+Its finite parity certificates, source conventions, seed packing and legal support
+limits have passed paper-level independent review; its exact runner, final proof
+review and verdict remain active gates. No further computational family is declared.
 
-The established result does not lower the positivity exponent or solve RH. A possible
-multiplicity/parity transfer is being investigated precisely because it may change
-the interval range; this state does not prematurely adopt that proposed consequence.
+EXP-003 does not lower the positivity exponent or solve RH. EXP-004 tests a
+qualitative extension below the zero of Wang's cosine curve. Its imported classical
+density is positive but unspecified; no new decimal exponent is claimed. General
+RH remains open, and no EXP-004 confirmed verdict is asserted at this snapshot.
 
 The first release closure is recorded in [its live receipt](release-0.64.000/live-verification.json):
 public PRs #263/#264 merged, main 08660dc, tag v0.64.000, successful Pages run

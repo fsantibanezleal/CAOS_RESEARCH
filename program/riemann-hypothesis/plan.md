@@ -64,6 +64,13 @@ negative-spectrum information, and alternative RH reformulations. New computatio
 families require a fresh source-complete declaration; an already known theorem or
 an unsupported infinite-limit step rejects a proposed novelty claim.
 
+Those dossiers are now persisted. EXP-004 was declared in e03413b before computation,
+with exact parity/multiplicity certificates and a qualitative below-threshold theorem
+as its target. The classical density constant and new decimal exponent remain
+unquantified. Complete its deterministic checks and independent proof adjudication;
+retain the other source-reviewed routes as separate hypotheses with their missing
+arithmetic or infinite-limit inputs explicit.
+
 The release owner continues to preserve EXP-003 while those reviews run. The revised
 manuscript will include only completed verdict-backed results. No new DOI version is
 published during unresolved scope selection. Once the research block is complete,
