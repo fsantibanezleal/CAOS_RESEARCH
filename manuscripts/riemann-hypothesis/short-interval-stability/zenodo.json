@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "title": "A stability refinement for simple critical zeros in short intervals",
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "publication_date": "2026-09-12",
+    "version": "0.01",
+    "language": "eng",
+    "creators": [{
+      "name": "Santibañez-Leal, Felipe",
+      "orcid": "0000-0002-0150-3246",
+      "affiliation": "CAOS Research program"
+    }],
+    "description": "<p>We derive a stability refinement of Biao Wang's 2026 short-interval bounds for simple critical zeros and distinct zeros of the Riemann zeta function. For each fixed exponent theta above the unique positive-proportion threshold of the cosine bound, the refinement is strictly positive. The argument transfers the known stability-enhanced rank-trace inequality from the ainta manuscript to Lamzouri's exact finite Hilbert operator, retains the simple-atom Gram defect, and uses a quantitative obstruction to additive triples of cosine-kernel zeros. It preserves Wang's fixed-support short-interval pair-correlation hypotheses and takes the large-height limit before the smoothing and support limits.</p><p>A reproducible Arb certificate at theta = 3/4 gives a simple-critical proportion of at least 0.4190768284253039967 and a distinct-zero proportion of at least 0.7095384142126519983. The finite certificate has 48,761 partition nodes and zero unresolved boxes, with an alternate sinc Taylor evaluation at 256-bit precision.</p><p>This is a self-published preprint, not peer reviewed. The imported stability lemma and analytic inputs are attributed to their sources. The result does not prove the Riemann hypothesis, establish a new global zero-proportion record, improve the positivity exponent, or provide an effective height threshold. The proof is not an end-to-end Lean formalization.</p>",
+    "keywords": ["Riemann zeta function", "short intervals", "simple critical zeros", "distinct zeros", "pair correlation", "Gram matrix stability", "interval arithmetic"],
+    "license": "cc-by-4.0",
+    "access_right": "open",
+    "related_identifiers": [
+      {"identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH", "relation": "isSupplementTo", "resource_type": "software"},
+      {"identifier": "10.48550/arXiv.2609.07918", "relation": "cites", "resource_type": "publication-preprint"},
+      {"identifier": "10.48550/arXiv.2609.02882", "relation": "cites", "resource_type": "publication-preprint"}
+    ]
+  }
+}

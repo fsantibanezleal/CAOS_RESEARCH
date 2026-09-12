@@ -106,3 +106,87 @@
 .rs-modal-artifacts li { padding: 0.18rem 0; }
 .rs-modal-foot { margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid var(--rs-border); }
 @media (max-width: 640px) { .rs-modal-overlay { padding: 0; } .rs-modal { max-height: 100vh; border-radius: 0; } .rs-modal-head { border-radius: 0; } }
+
+/* Riemann replay: route-scoped containment for the existing shared shell. */
+.rh-program-link { display: inline-flex; align-items: center; min-height: 44px; padding-block: 0.25rem; }
+body:has(.rh-page) .app-shell { height: 100dvh; min-height: 0; overflow: hidden; }
+body:has(.rh-page) .page { display: flex; min-height: 0; min-width: 0; overflow: hidden; }
+body:has(.rh-page) .site-header { flex: none; }
+body:has(.rh-page) .header-inner,
+body:has(.rh-page) .main-nav { min-width: 0; }
+body:has(.rh-page) .main-nav { overflow-x: auto; white-space: nowrap; }
+body:has(.rh-page) .brand,
+body:has(.rh-page) .header-actions { flex-shrink: 0; }
+body:has(.rh-page) .site-footer { flex: none; margin-top: 0; max-height: 16dvh; overflow: auto; }
+body:has(.rh-page) .footer-inner { padding-block: 0.5rem; }
+.rh-page { flex: 1; min-height: 0; min-width: 0; display: flex; flex-direction: column; padding-block: 1rem 0; }
+.rh-head { flex: none; padding-bottom: 0.65rem; }
+.rh-head h1 { font-size: clamp(1.25rem, 2.3vw, 1.9rem); margin: 0.4rem 0; }
+.rh-head p { margin: 0; font-size: 0.9rem; }
+.rh-title-row { display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: center; font-size: 0.82rem; }
+.rh-page > .tabs { display: flex; flex: 1; flex-direction: column; min-height: 0; min-width: 0; overflow: hidden; }
+.rh-page > .tabs > .tablist { flex: none; flex-wrap: nowrap; min-width: 0; overflow-x: auto; margin-bottom: 0; gap: 0.15rem; }
+.rh-page > .tabs > .tablist .tab { flex: none; white-space: nowrap; padding-inline: 0.75rem; }
+.rh-page > .tabs > .tabpanel:not([hidden]) { min-height: 0; min-width: 0; overflow-y: auto; overflow-x: hidden; padding: 0.3rem 0.9rem 2rem 0.1rem; scrollbar-gutter: stable; }
+.rh-page > .tabs > .tabpanel > section { margin-top: 1rem; }
+.rh-page h2 { font-size: 1.18rem; margin: 1.5rem 0 0.5rem; }
+.rh-page h3 { font-size: 1.02rem; }
+.rh-page p { line-height: 1.65; }
+.rh-page li { margin-block: 0.5rem; }
+.rh-lead { color: var(--rs-subtle); font-size: 1.04rem; }
+.rh-parameters { font-family: var(--font-mono); text-align: center; color: var(--rs-accent); }
+.rh-results caption { text-align: left; padding-block: 0.45rem; color: var(--rs-subtle); font-size: 0.88rem; }
+.rh-results td { vertical-align: top; }
+.rh-number { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: 0.83rem; overflow-wrap: anywhere; }
+.rh-hash { overflow-wrap: anywhere; font: 0.76rem/1.6 var(--font-mono); margin-inline-start: 0; }
+.rh-figure { margin: 1.1rem 0; border: 1px solid var(--rs-border); border-radius: 10px; padding: 0.8rem; background: var(--rs-surface); }
+.rh-figure svg { width: 100%; height: auto; display: block; }
+.rh-figure .rh-proof-map-mobile { display: none; }
+.rh-figure .dg-box-title { font-size: 12px; }
+.rh-figure .dg-box-sub { font-size: 10px; }
+.rh-stage-controls { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.rh-stage-controls .btn { font-size: 0.8rem; }
+.rh-stage-detail { min-height: 7rem; font-size: 0.89rem; }
+.rh-stage-detail p { margin-bottom: 0.4rem; }
+.rh-source-links { display: flex; flex-wrap: wrap; gap: 0.7rem 1.3rem; margin-block: 1rem; }
+.rh-source-links a { text-decoration: underline; text-underline-offset: 3px; }
+.rh-experiments { list-style: none; padding-left: 0; }
+.rh-experiments li { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; padding: 0.65rem 0; border-bottom: 1px solid var(--rs-border); }
+.rh-audit-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--rs-border); padding-block: 0.7rem; gap: 1rem; }
+.rh-audit-grid dt { color: var(--rs-subtle); font-size: 0.82rem; }
+.rh-audit-grid dd { margin: 0.2rem 0 0; font-family: var(--font-mono); font-size: 1.06rem; }
+.rh-details { margin-block: 1rem; border: 1px solid var(--rs-border); border-radius: 8px; padding: 0.65rem 0.85rem; }
+.rh-details summary { cursor: pointer; color: var(--rs-accent); font-weight: 600; }
+.rh-details ul { padding-left: 1rem; }
+.rh-questions { padding-left: 1.3rem; }
+.rh-exp-modal .rs-modal-body { min-width: 0; overflow-x: hidden; }
+.rh-exp-modal .rs-md { overflow-wrap: anywhere; }
+.rh-exp-modal .katex-display { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding-block: 0.2rem; }
+.rh-exp-modal pre { max-width: 100%; overflow-x: auto; }
+@media (max-width: 640px) {
+  body:has(.rh-page) [role="dialog"] [role="tablist"] {
+    flex-wrap: nowrap !important; min-width: 0; flex-shrink: 0; overflow-x: auto;
+    scrollbar-width: thin;
+  }
+  body:has(.rh-page) [role="dialog"] [role="tablist"] [role="tab"] {
+    flex: none; min-height: 44px; white-space: nowrap;
+  }
+  .rh-stage-controls { flex-wrap: nowrap; min-width: 0; overflow-x: auto; scrollbar-width: thin; padding-block: 2px; }
+  .rh-stage-controls .btn { flex: none; min-height: 44px; white-space: nowrap; }
+  body:has(.rh-page) .header-inner { padding-inline: 0.6rem; gap: 0.35rem; }
+  body:has(.rh-page) .header-actions { gap: 0; }
+  .rh-page { padding-inline: 0.75rem; padding-top: 0.6rem; }
+  .rh-page > .tabs > .tablist .tab { padding: 0.5rem 0.65rem; font-size: 0.84rem; }
+  .rh-title-row { gap: 0.5rem; }
+  .rh-title-row .small { display: none; }
+  .rh-audit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rh-results { font-size: 0.82rem; }
+  .rh-results th, .rh-results td { padding-inline: 0.3rem; }
+  .rh-figure { padding: 0.5rem; }
+  .rh-figure > svg { min-height: 100px; }
+  .rh-figure .rh-proof-map-wide { display: none; }
+  .rh-figure .rh-proof-map-mobile { display: block; }
+  .rh-proof-map-mobile .dg-box-title { font-size: 14px; }
+  .rh-proof-map-mobile .dg-box-sub { font-size: 12px; }
+  .rh-stage-detail { min-height: 10rem; }
+}

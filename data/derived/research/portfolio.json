@@ -31,6 +31,10 @@
   {
    "name": "Commutative algebra and module theory",
    "slug": "commutative-algebra"
+  },
+  {
+   "name": "Combinatorics and graph theory",
+   "slug": "combinatorics"
   }
  ],
  "problems": [
@@ -69,8 +73,9 @@
    "area": "number-theory",
    "feasibility": "A",
    "gpu": true,
+   "opened": "2026-09-12",
    "slug": "riemann-hypothesis",
-   "state": "scoped"
+   "state": "published"
   },
   {
    "area": "optimization-geometry",
@@ -150,7 +155,37 @@
    "opened": "2026-08-01",
    "slug": "huneke-wiegand",
    "state": "published"
+  },
+  {
+   "area": "combinatorics",
+   "feasibility": "A",
+   "gpu": false,
+   "opened": "2026-09-03",
+   "slug": "petersen-coloring",
+   "state": "consolidating"
+  },
+  {
+   "area": "combinatorics",
+   "feasibility": "A",
+   "gpu": false,
+   "opened": "2026-09-04",
+   "slug": "bougard-joret",
+   "state": "consolidating"
+  },
+  {
+   "area": "combinatorics",
+   "feasibility": "A",
+   "gpu": false,
+   "slug": "hoa-mnh",
+   "state": "proposed"
+  },
+  {
+   "area": "commutative-algebra",
+   "feasibility": "A",
+   "gpu": false,
+   "slug": "boij-soderberg-realizability",
+   "state": "proposed"
   }
  ],
- "updated": "2026-08-01"
+ "updated": "2026-09-12"
 }
