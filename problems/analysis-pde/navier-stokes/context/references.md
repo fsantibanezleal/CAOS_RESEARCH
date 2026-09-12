@@ -54,6 +54,22 @@ re-downloaded, checkable against what we actually read.
 
 ## The program these results extend
 
+- D. Cordoba, L. Martinez-Zoroa, F. Zheng, *Finite time blow-up for the hypodissipative Navier Stokes
+  equations with a force in L1_t C^{1,eps}_x and L^inf_t L^2_x*, Arch. Ration. Mech. Anal. 250 (2026),
+  article 38, [doi:10.1007/s00205-026-02198-0](https://doi.org/10.1007/s00205-026-02198-0),
+  [arXiv:2407.06776v2](https://arxiv.org/abs/2407.06776). `[V]` abstract, Theorem 1, Section 1.1;
+  `[P]` the rest. 395,139 bytes,
+  sha256 `56801b195f3e378bf7b91dd6a04fc06b42da2a300e06250bf586ee83c35e4a34`.
+  **This is the published ground truth for the dissipative question**: blowup for every
+  `alpha < alpha_0 = (22 - 8 sqrt 7)/9` in the `|grad|^alpha` convention, with rough forcing. See
+  [`2026-09-12-phase0-gate.md`](2026-09-12-phase0-gate.md).
+- D. Cordoba, O. Dominguez, J. Lucas-Manchon, L. Martinez-Zoroa, *Blow-up at finite time for the
+  generalized SQG equations in the Sobolev well-posedness regime*,
+  [arXiv:2608.17192v1](https://arxiv.org/abs/2608.17192). `[U]`, held for the reference set; not read.
+  935,266 bytes, sha256 `7e60335059c6efc93de95ceb1073b7d1a09d2e531419e7f60f6f3c26989d0e4e`.
+- P.-L. Lions, global regularity of hyperdissipative Navier-Stokes for `alpha >= 5/2` in the
+  `|grad|^alpha` convention. `[U]`, cited through Cordoba-Martinez-Zoroa-Zheng Section 1.1 `[V]`.
+
 - D. Cordoba, L. Martinez-Zoroa, *Finite time singularities to the 3D incompressible Euler equations
   for solutions in C-infinity(R3 minus origin) intersect C-1,alpha intersect L2*, arXiv:2410.22920v3.
   <https://arxiv.org/abs/2410.22920v3> `[P]`.

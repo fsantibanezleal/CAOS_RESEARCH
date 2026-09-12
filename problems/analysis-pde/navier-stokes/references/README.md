@@ -1,6 +1,6 @@
 # navier-stokes: archived reference PDFs
 
-Archived copies of the primary sources this problem is built on, retrieved 2026-09-11 and committed on
+Archived copies of the primary sources this problem is built on, retrieved 2026-09-11 and 2026-09-12 and committed on
 Felipe's explicit instruction so that the record is reproducible from the repository alone. The index
 with read depth, full hashes and the role each source plays is
 [`../context/references.md`](../context/references.md).
@@ -29,8 +29,10 @@ the hash we actually verified, makes the transcription auditable later by anyone
 | `chen-hou-2210.07191.pdf` | `arxiv.org/pdf/2210.07191` | 5,181,971 | `2714863f3fe0f5411a297945f678a87a463c4b5e194a1fa233bd42c4b0455697` |
 | `hou-wang-yang-2509.25116.pdf` | `arxiv.org/pdf/2509.25116` | 2,148,337 | `2d369eade29bd0d5e8dfc6d7def7ed19b8282ab4450860978f3691176d9f8318` |
 | `dm-unstable-2509.14185.pdf` | `arxiv.org/pdf/2509.14185` | 2,225,069 | `ade2c449cbbc9314504fcf715f91f33d706960c93dea5cb2c6133cf8a5772613` |
+| `cmz-zheng-hypodissipative-2407.06776.pdf` | `arxiv.org/pdf/2407.06776v2` | 395,139 | `56801b195f3e378bf7b91dd6a04fc06b42da2a300e06250bf586ee83c35e4a34` |
+| `cdlm-gsqg-2608.17192.pdf` | `arxiv.org/pdf/2608.17192v1` | 935,266 | `7e60335059c6efc93de95ceb1073b7d1a09d2e531419e7f60f6f3c26989d0e4e` |
 
-Total 18,452,586 bytes across 13 files. Verify any of them with
+Total 19,782,991 bytes across 15 files. The last two were added on 2026-09-12 by the Phase 0 gate. Verify any of them with
 `python -c "import hashlib,sys;print(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest())" <file>`.
 
 ## Rights

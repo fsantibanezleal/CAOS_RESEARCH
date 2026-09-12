@@ -1,7 +1,8 @@
 # navier-stokes: plan
 
 Written 2026-09-11 from the dossiers in `problems/analysis-pde/navier-stokes/context/`, not from
-memory or from chat. **Status: awaiting Felipe's validation before any experiment gets machine time.**
+memory or from chat. **Status: VALIDATED by Felipe 2026-09-12, with the instruction to execute all of it. Phase 0 ran the
+same day and reframed the target; see the Phase 0 gate dossier.**
 
 ## What we are not doing
 
@@ -35,7 +36,21 @@ a real blowup mechanism, published days ago, extensible to dissipation in three 
 
 One target, two controls around it.
 
-**Target.** Locate the dissipation threshold of the layer-cascade ansatz. The dossier derives the
+**Target (reframed 2026-09-12 by the Phase 0 gate; see**
+`problems/analysis-pde/navier-stokes/context/2026-09-12-phase0-gate.md`**).** The bare threshold
+question is NOT ours: Cordoba, Martinez-Zoroa and Zheng published finite-time blowup for
+hypodissipative Navier-Stokes for every `alpha < alpha_0 = (22 - 8 sqrt 7)/9` in 2024, in ARMA in
+2026, with rough forcing. Our derived cap of `1/4` (our convention) is consistent with their
+`0.0463` (same convention) and loose by a factor of 5.40.
+
+What that hands us is better than an open question: a published exact number to calibrate against.
+The target is now a single falsifiable question. **Does the reduced modulation model, with the time
+budget and the hold-interval damping put back in, predict `alpha_0`?** If it does, the reduction has
+demonstrated predictive power and can be aimed at what is actually open, such as the exponent cost of
+smooth forcing. If it does not, the layer bookkeeping is not what sets `alpha_0`, which is a
+publishable negative result inside the problem record.
+
+**Superseded target.** Locate the dissipation threshold of the layer-cascade ansatz. The dossier derives the
 dissipative modulation system and a frequency cap
 $\lambda_q\lesssim A_q^{1/(4\alpha)}\nu^{-1/(2\alpha)}$, giving an upper bound of $\alpha\le 1/4$ on
 the exponent for which the cascade can close. That bound has two known omissions: no time budget
