@@ -1,0 +1,33 @@
+{
+  "release_ready": true,
+  "date": "2026-09-12",
+  "pages": 10,
+  "rendered_pages_reviewed": 10,
+  "warnings": 0,
+  "overfull": 0,
+  "underfull": 0,
+  "bytes": 368644,
+  "sha256": "f38d47b6daebc3fa2277542e009ce2cd5625e5daeb05bda57df726a46cc48761",
+  "md5": "cee28b5bc133a5a71dbc210a914f9fe7",
+  "tex_sha256": "a5b153a6cd707871d66ff3b2216a6ae5346c3753dffe6954d285bfab9d32e09c",
+  "metadata_sha256": "1e8afad22cd5411105b1b57a722b7175b28e0a6cf3943b8815e54530b3ef0e27",
+  "page_render_sha256": {
+    "page-01.png": "21fff01fbbb6c75f8ee659ff4cd5a5515b586715d3604eedab5b51367745e299",
+    "page-02.png": "21c5ea1ce5804376c506f31321f470182fca082edea7dcbfc5a957c3597fb962",
+    "page-03.png": "3835ab960cd0a9e8af888d2f93c8614400f40874c0084dd78215ffefdd52a36b",
+    "page-04.png": "3da34bf414441ba832bfa2535082d25f3883aae92d85b54dd4471f0a27c1e62f",
+    "page-05.png": "cb9b9403dac8e1f3c1353e1d1267a37ab054640a467614be802bb494edaf584b",
+    "page-06.png": "e3d695e53d68b9b25d165802b7226401ae7ccd8e34e92d2bafbe5a5b75174304",
+    "page-07.png": "296c92a11c1f0b6771f634f708ae7038537d58dec2230d8523aceab99ef48afc",
+    "page-08.png": "31a197e800817983311f7940a24c58f3092e5510547613e9023826f3a46e4835",
+    "page-09.png": "ee47930903f755113942e9d0caf55370210d71ae58a251540ad5f037990228e0",
+    "page-10.png": "8a7ae827591062e10e3ec4ab890b2a505e4464a2db1b26976132571efbe549c9"
+  },
+  "focused_tests": {
+    "passed": 30,
+    "command": "pytest tests/test_riemann_baseline.py tests/test_riemann_certificates.py"
+  },
+  "proof_review": "EXP-002 mathematical-proof.md and adversarial-audit.md; automated review, not peer review",
+  "source_review": "Pinned context dossiers and source-manifest.json",
+  "build": "MiKTeX pdflatex, converged references; Poppler render at1500px"
+}
