@@ -29,6 +29,10 @@ def _read_portfolio() -> dict:
 
 VERDICT_RE = re.compile(r"Verdict:\s*([A-Z][A-Z 0-9,\-]+?)\s*[(.]")
 DATE_RE = re.compile(r"(\d{4}-\d{2}-\d{2})")
+BODY_VERDICT_RE = re.compile(r"Verdict:\s*\*\*([a-z][a-z -]+)\*\*", re.IGNORECASE)
+HEADER_VERDICT_RE = re.compile(
+    r"\bverdict:\s*(confirmed|refuted|mixed|pass|inconclusive)\b", re.IGNORECASE,
+)
 
 
 def _tracked_problem_paths() -> set[str]:
@@ -46,6 +50,12 @@ def _tracked_problem_paths() -> set[str]:
     }
 
 
+def _committed_bytes(path: str) -> bytes:
+    return subprocess.run(
+        ["git", "show", f"HEAD:{path}"], cwd=ROOT, check=True, capture_output=True,
+    ).stdout
+
+
 def _read_experiments() -> list[dict]:
     out: list[dict] = []
     tracked = _tracked_problem_paths()
@@ -53,8 +63,20 @@ def _read_experiments() -> list[dict]:
         exps = probdir / "experiments"
         if not exps.is_dir():
             continue
-        for expdir in sorted(exps.iterdir()):
-            if not expdir.is_dir() or not expdir.name.startswith("EXP-"):
+        committed_replay = probdir.name == "riemann-hypothesis"
+        source_paths = tracked
+        if committed_replay:
+            prefix = exps.relative_to(ROOT).as_posix() + "/"
+            listing = subprocess.run(
+                ["git", "ls-tree", "-r", "--name-only", "HEAD", "--", prefix],
+                cwd=ROOT, check=True, capture_output=True, text=True,
+            ).stdout
+            source_paths = set(listing.splitlines())
+            expdirs = {exps / p[len(prefix):].split("/")[0] for p in source_paths}
+        else:
+            expdirs = set(exps.iterdir())
+        for expdir in sorted(expdirs):
+            if (not committed_replay and not expdir.is_dir()) or not expdir.name.startswith("EXP-"):
                 continue
             rec = {"problem": probdir.name, "area": probdir.parent.name,
                    "id": expdir.name.split("-")[1], "slug": expdir.name,
@@ -64,25 +86,38 @@ def _read_experiments() -> list[dict]:
             ver = expdir / "verdict.md"
             hyp_rel = hyp.relative_to(ROOT).as_posix()
             ver_rel = ver.relative_to(ROOT).as_posix()
-            if hyp_rel not in tracked and ver_rel not in tracked:
+            if hyp_rel not in source_paths and ver_rel not in source_paths:
                 continue
-            if hyp.exists():
-                text = hyp.read_text(encoding="utf-8")
+            if hyp_rel in source_paths if committed_replay else hyp.exists():
+                text = (_committed_bytes(hyp_rel).decode("utf-8") if committed_replay
+                        else hyp.read_text(encoding="utf-8"))
                 first = text.splitlines()[0]
                 rec["title"] = first.lstrip("# ").split(" - ", 1)[-1].strip()
                 rec["hypothesis_md"] = text
-            if ver.exists():
-                text = ver.read_text(encoding="utf-8")
+            if ver_rel in source_paths if committed_replay else ver.exists():
+                text = (_committed_bytes(ver_rel).decode("utf-8") if committed_replay
+                        else ver.read_text(encoding="utf-8"))
                 first = text.splitlines()[0]
                 m = VERDICT_RE.search(first)
                 if m:
                     rec["verdict"] = m.group(1).strip().lower()
-                dm = DATE_RE.search(first)
+                elif headline_match := HEADER_VERDICT_RE.search(first):
+                    rec["verdict"] = headline_match.group(1).lower()
+                elif body_match := BODY_VERDICT_RE.search(text):
+                    rec["verdict"] = body_match.group(1).strip().lower()
+                dm = DATE_RE.search(first) or DATE_RE.search(text[:500])
                 if dm:
                     rec["date"] = dm.group(1)
                 rec["verdict_md"] = text
             arts = expdir / "artifacts"
-            if arts.is_dir():
+            if committed_replay:
+                art_prefix = arts.relative_to(ROOT).as_posix() + "/"
+                rec["artifacts"] = sorted(
+                    [{"name": p[len(art_prefix):], "bytes": len(_committed_bytes(p))}
+                     for p in source_paths
+                     if p.startswith(art_prefix) and "/" not in p[len(art_prefix):]],
+                    key=lambda r: r["name"])
+            elif arts.is_dir():
                 rec["artifacts"] = sorted(
                     [{"name": f.name, "bytes": f.stat().st_size}
                      for f in arts.iterdir()
@@ -148,6 +183,48 @@ def _jacobian_payload() -> dict:
     }
 
 
+def _riemann_payload() -> dict:
+    """Replay committed experiment bytes, retaining their exact bounds and provenance.
+
+    HEAD reads deliberately reject uncommitted inputs. No optimizer, verifier, or
+    mathematical calculation runs in the export or in the browser.
+    """
+    problem = "problems/number-theory/riemann-hypothesis"
+    exp_one = "EXP-001-source-and-constant-audit"
+    exp_two = "EXP-002-short-interval-stability"
+    specifications = [
+        ("constant_audit", exp_one, f"experiments/{exp_one}/artifacts/result.json"),
+        ("result", exp_two, f"experiments/{exp_two}/artifacts/result.json"),
+        ("certificate", exp_two, f"experiments/{exp_two}/artifacts/triangle-certificate.json"),
+        ("proof", exp_two, f"experiments/{exp_two}/mathematical-proof.md"),
+        ("verdict", exp_two, f"experiments/{exp_two}/verdict.md"),
+        ("source_manifest", "source-review", "context/source-manifest.json"),
+    ]
+    payload: dict = {"schema": "riemann-replay-v1", "provenance": []}
+    for role, experiment, relative in specifications:
+        path = f"{problem}/{relative}"
+        content = _committed_bytes(path)
+        commit = subprocess.run(
+            ["git", "log", "-1", "--format=%H", "HEAD", "--", path],
+            cwd=ROOT, check=True, capture_output=True, text=True,
+        ).stdout.strip()
+        payload["provenance"].append({
+            "role": role, "source_exp": experiment, "path": path,
+            "source_commit": commit, "bytes": len(content),
+            "sha256": hashlib.sha256(content).hexdigest(),
+        })
+        if role in {"constant_audit", "result"}:
+            payload[role] = json.loads(content)
+        elif role == "source_manifest":
+            payload["reviewed_on"] = json.loads(content)["reviewed_on"]
+    if payload["constant_audit"]["status"] != "PASS":
+        raise ValueError("Riemann source and constant audit has not passed")
+    audit = payload["result"]["audit"]
+    if not (audit["verified"] and audit["independent_sinc_taylor"]):
+        raise ValueError("Riemann certificate requires both recorded arithmetic checks")
+    return payload
+
+
 def run() -> list[Path]:
     DERIVED.mkdir(parents=True, exist_ok=True)
     (DERIVED / "research").mkdir(parents=True, exist_ok=True)
@@ -156,6 +233,7 @@ def run() -> list[Path]:
         "portfolio": _read_portfolio(),
         "experiments": {"experiments": _read_experiments()},
         "jacobian": _jacobian_payload(),
+        "riemann": _riemann_payload(),
     }
     written: list[Path] = []
     index = {"contract": "research-registry-v1", "cases": []}
@@ -163,18 +241,20 @@ def run() -> list[Path]:
         art_rel = f"research/{name}.json"
         art_path = DERIVED / art_rel
         art_path.write_text(json.dumps(payload, indent=1, sort_keys=True) + "\n",
-                            encoding="utf-8")
+                            encoding="utf-8", newline="\n")
         digest = hashlib.sha256(art_path.read_bytes()).hexdigest()
         manifest = {"case_id": name, "artifact": {"path": art_rel,
                     "bytes": art_path.stat().st_size, "sha256": digest},
                     "lane": "precompute", "gate": {"lane": "precompute",
                     "reason": "baked registry export; the web replays it"}}
+        if name == "riemann":
+            manifest["sources"] = payload["provenance"]
         man_rel = f"manifests/{name}.json"
         (DERIVED / man_rel).write_text(json.dumps(manifest, indent=1, sort_keys=True) + "\n",
-                                       encoding="utf-8")
+                                       encoding="utf-8", newline="\n")
         index["cases"].append({"case_id": name, "manifest_path": man_rel})
         written += [art_path, DERIVED / man_rel]
     (MANIFESTS / "index.json").write_text(json.dumps(index, indent=1, sort_keys=True) + "\n",
-                                          encoding="utf-8")
+                                          encoding="utf-8", newline="\n")
     written.append(MANIFESTS / "index.json")
     return written
