@@ -100,10 +100,16 @@ supported force where (5) only asks for rapid decay.
 `Euler.exists_compact_smooth_euler_singularity` and `Euler.euler_breakdown_R3` are declared in
 `Euler/Solution.lean` with the same zero-`sorry`, three-axiom profile and their own Comparator config.
 Their subject is the **unforced** equation, which is the claim with the greater mathematical
-consequence and which has no Clay reference statement to be checked against. That asymmetry matters:
-the Navier-Stokes statement inherits a third-party reference, the Euler statement does not, so the
-Euler formal statement deserves a separate line-by-line audit of its own definitions before we repeat
-the claim anywhere. That audit is not done and is logged in the backlog.
+consequence and which has no Clay reference statement to be checked against.
+
+> **CORRECTED 2026-09-12.** This paragraph originally continued: "the Navier-Stokes statement inherits
+> a third-party reference, the Euler statement does not". That is wrong. The Euler challenge file
+> carries the same provenance header and is adapted from the same DeepMind Formal Conjectures module,
+> specialized to zero viscosity and zero force. The inference was drawn from the absence of a Clay
+> reference for Euler and was not checked against the file. The full audit is in
+> [`2026-09-12-euler-statement-audit.md`](2026-09-12-euler-statement-audit.md), and its verdict is
+> that the Euler statement is faithful, with a maximality clause pinning the lifespan in both
+> directions and local regularity before the endpoint.
 
 ## What this audit does not establish
 
