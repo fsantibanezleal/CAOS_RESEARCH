@@ -18,17 +18,20 @@ alternatives (C) and (D), plus **unforced** 3D Euler blowup, with Lean certifica
 multiscale program of Diego Cordoba and Luis Martinez-Zoroa, who hold the intellectual credit and whom
 both parties credit explicitly. Neither proof is community-verified; Clay has not commented.
 
-Our opening round did research only, and produced three things.
+The opening round (2026-09-11) did research only; the execution round (2026-09-12) closed two
+experiments. What we hold:
 
 - **A statement audit.** The OpenAI Lean certificate states Fefferman (C) and (D) faithfully, checked
   clause by clause. 2,659 files, 641,332 lines, zero `sorry` outside the comparator reference stubs,
   zero added axioms, three standard axioms permitted. The strongest fact: the reference statement is
   adapted from DeepMind's Formal Conjectures, so the definitions that decide whether it is the right
   theorem were written by a third party before the claim existed. The **unforced Euler** certificate
-  has NOT been audited and has no third-party reference to inherit, so it needs one more.
+  was audited on 2026-09-12 and is faithful too, and it inherits the SAME third-party reference (the
+  2026-09-11 dossier claimed otherwise and is corrected in place).
 - **An exact transcription** of the Alpoge-Buckmaster modulation system, with the growth rate settled
-  by computation rather than by reading the PDF.
-- **A derived obstruction**, the one candidate for something of our own.
+  by computation rather than by reading the PDF, now verified against a full nonlinear PDE simulation.
+- **A derived obstruction and its calibration**: `alpha_c = 1/(4p)`, and the published hypodissipative
+  threshold corresponds to `p = 11/4 + sqrt 7` exactly. A consistency relation, not a derivation.
 
 ## 2. The objects table
 
@@ -126,11 +129,13 @@ the work.
   coefficient crossing as a critical exponent of 1/4. The smoke test showed the transition moves with
   `nu` and with the amplitude budget. The surviving claim is only that 1/4 is an **upper bound**, with
   no escape observed above it. Do not restore the stronger wording.
-- **The recursion has no time axis.** Finite-time blowup also needs the stage times to sum. Escape of
-  the gradient is necessary, not sufficient. Adding the time budget is the first task of EXP-003.
-- **Dissipation does not rest during holding intervals.** The construction steers the laboratory
-  component to zero so the next layer grows undisturbed, but the damping term does not vanish there.
-  This is the largest missing piece and it pushes the threshold down.
+- **Both first-pass omissions turned out NOT to move the exponent** (EXP-003, and this was not the
+  expected outcome). The time budget is not binding because stage times decay geometrically. Damping
+  during the holds gives the SAME exponent as growth positivity, because the remaining time shrinks
+  like `1/sqrt(A_q)`, exactly the rate at which the growth rate rises. Do not reintroduce either as an
+  open worry.
+- **The real open gap is multi-layer.** EXP-002 validated a SINGLE layer against the PDE. EXP-003's
+  bookkeeping assumes infinitely many nested layers and has never been checked against one.
 - **The bare threshold question is NOT ours.** Cordoba, Martinez-Zoroa and Zheng published it in 2024
   (ARMA 2026): blowup for every `|grad|^alpha` exponent below `(22 - 8 sqrt 7)/9`, with rough forcing.
   Our cap is consistent with it and loose by 5.40. What is ours is the calibration relation, and it is
