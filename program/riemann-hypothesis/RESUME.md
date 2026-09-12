@@ -10,6 +10,8 @@ The numerical example improves 0.4190750129754243337 to 0.4190768284253039967.
 Lifecycle: published research record; RH remains open. Hypotheses were committed in
 `266486f` before computation. The 10-page preprint v0.01 is published and byte-verified:
 version DOI 10.5281/zenodo.22727389, concept DOI 10.5281/zenodo.22727388.
+Release v0.64.000 is deployed and live-verified at main `08660dc`; research PR #263
+and release PR #264 are merged. EXP-003 is declared, with its run pending.
 
 ## 2. The objects table
 
@@ -27,6 +29,7 @@ version DOI 10.5281/zenodo.22727389, concept DOI 10.5281/zenodo.22727388.
 |---|---|---|
 | EXP-001-source-and-constant-audit | Do independent exact/certified checks reproduce the imported constants and normalization? | confirmed |
 | EXP-002-short-interval-stability | Does the finite stability defect give a strict improvement to Wang's bound? | confirmed |
+| EXP-003-odd-frame-pressure | Can pair-disjoint triples amplify the short-interval gain, followed by a bounded pressure-certificate search? | declared; run pending |
 
 ## 4. In flight
 
@@ -36,17 +39,29 @@ disjoint-triple counting, gives strict improvement of every positive point of Wa
 Independent audits checked multiplicities, signed
 off-line terms, the factor one third, the analytic interface, and the order of limits.
 The numerical certificate uses theta=3/4, R=21/4 and d=1/7000, with zero unresolved boxes.
-The manuscript and complete wiki are finished. Public replay QA passed all 20 scenarios,
+The manuscript and complete wiki are finished. Predeployment replay QA passed all 20 scenarios,
 five viewports and both languages/themes, with 960 screenshots and separate visual reviews.
-The full suite has 251 passing Python tests plus two frontend tests. No research process is
-running. Only scoped integration, the 0.64.000 release and live verification remain in flight.
+The full suite has 251 passing Python tests plus two frontend tests. Research PR #263 merged
+at `00eace9`; release PR #264 merged to main at `08660dc`, tagged v0.64.000. Pages run
+34706614866 succeeded. The [live receipt](release-0.64.000/live-verification.json) records
+13 public files matching the reviewed bytes and all eight desktop/phone EN/ES light/dark
+scenarios passing, with 224 screenshots and no console, page or HTTP errors.
+
+The next [declared experiment](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/hypothesis.md)
+tests odd-frame pressure amplification and then a separately bounded two-variable search.
+Its [source preflight](../../problems/number-theory/riemann-hypothesis/context/2026-09-12-pressure-frame-prior-art.md)
+credits the existing global pressure and capacity framework. No new numerical bound is
+claimed at this handoff; both experimental stages await their run and verdict.
 
 ## 5. Next actions
 
-1. Check the latest CI for research PR #263, then promote it to develop.
-2. Open the separate develop-to-main release PR, wait for checks, merge and tag v0.64.000.
-3. Verify Pages deployment, live artifact hashes and pointer-driven research navigation.
-4. Record observed closure receipts in this handoff and the private management mirror.
+1. Confirm the EXP-003 declaration and complete source preflight are committed before running.
+2. Complete and adversarially audit Stage A using the frozen EXP-002 certificate and exact
+   pair-incidence, frame-span and denominator checks.
+3. Run Stage B only under its declared candidate, time and node limits; record each stage's
+   outcome separately, including null or inconclusive results.
+4. Transcribe validated outcomes to the operational record, wiki and any later publication
+   under the usual gates. Preserve the released manuscript and its existing receipt.
 
 Reproduction commands and source restoration: `docs/guides/riemann-replay.md`.
 Rendered evidence and exact build hashes: `program/riemann-hypothesis/release-0.64.000/`.

@@ -42,3 +42,34 @@ if the novelty gate is met. Publish coherent validated manuscripts to Zenodo und
 versioning, data bake, frontend replay, rendered checks, and the develop-to-main deployment.
 The initial finite calculations are CPU tasks. GPU use requires a demonstrated search workload
 and a separate exact/certified validation path.
+
+## Completed first release and current bounded round
+
+The first source review, EXP-001, EXP-002, wiki and version 0.01 preprint are complete.
+Research PR #263 and release PR #264 merged; main `08660dc` is tagged `v0.64.000`.
+Pages run 34706614866 succeeded. The
+[live receipt](release-0.64.000/live-verification.json) closes the first delivery round:
+13 public files match the reviewed bytes, and all eight desktop/phone EN/ES light/dark
+scenarios pass with 224 screenshots. The separate predeployment matrix and visual reviews
+remain in [the release evidence](release-0.64.000/README.md).
+
+The next [declared round, EXP-003](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/hypothesis.md),
+has not yet run. Its completed
+[source preflight](../../problems/number-theory/riemann-hypothesis/context/2026-09-12-pressure-frame-prior-art.md)
+identifies pressure frames, nonuniform pair weights, mixed certificates and global
+capacitated matching as prior art. The prospective result is a stronger short-interval
+consequence, with the general RH and global records outside its claim.
+
+Stage A first checks a pair-disjoint alternating-triple cover inside an odd frame,
+reusing the already certified EXP-002 energy floor. Its decisive invariants are pair
+incidence, telescoping span, the spectral cap, shifted-partition boundary counts and
+the order of analytic limits. After that audit, Stage B permits one bounded
+two-variable pressure exploration and at most three rational certificate candidates
+under the hypothesis's time, node, checkpoint and independent-replay limits. Stage
+outcomes are recorded separately; a failed search cannot erase a validated symbolic
+result or justify an undeclared larger campaign.
+
+Commit the declaration and source preflight before implementation or computation.
+Any new bound enters derived documentation only after a complete verdict and
+independent adversarial review. Preserve the first release's frozen manuscript,
+publication bytes and replay evidence throughout the new round.
