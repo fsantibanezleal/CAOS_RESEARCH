@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" height="300"
+     role="img" aria-labelledby="title desc">
+  <title id="title">The dissipation-exponent landscape for fractional Navier-Stokes</title>
+  <desc id="desc">A number line in the dissipation order alpha, marking the region where blowup is
+  proved, the cascade frequency cap, classical viscosity, and the region where global regularity is
+  proved.</desc>
+  <style>
+    /* Theme-aware without page tokens: a standalone SVG honours prefers-color-scheme
+       even when loaded through an img element, which var(--token) does not. */
+    :root { color-scheme: light dark; }
+    .bg    { fill: #ffffff; }
+    .axis  { stroke: #33373d; stroke-width: 1.6; }
+    .tick  { stroke: #33373d; stroke-width: 1.2; }
+    .lbl   { fill: #23262b; font: 13px ui-sans-serif, system-ui, sans-serif; }
+    .lblsm { fill: #5b6169; font: 11.5px ui-sans-serif, system-ui, sans-serif; }
+    .mono  { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .proved   { fill: #2f6f4f; opacity: .22; }
+    .capzone  { fill: #4a6fa5; opacity: .18; }
+    .open     { fill: #8a6d3b; opacity: .14; }
+    .regular  { fill: #6b4a7a; opacity: .20; }
+    .provedln  { stroke: #2f6f4f; stroke-width: 2.4; }
+    .capln     { stroke: #4a6fa5; stroke-width: 2.4; stroke-dasharray: 6 4; }
+    .classln   { stroke: #a8452f; stroke-width: 2.4; }
+    .regln     { stroke: #6b4a7a; stroke-width: 2.4; }
+    .note  { fill: #5b6169; font: 11.5px ui-sans-serif, system-ui, sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .bg    { fill: #0f1115; }
+      .axis, .tick { stroke: #c8ccd2; }
+      .lbl   { fill: #e6e9ee; }
+      .lblsm, .note { fill: #9aa1ab; }
+      .proved  { fill: #5fd39a; opacity: .20; }
+      .capzone { fill: #7aa7e8; opacity: .18; }
+      .open    { fill: #d8b46a; opacity: .13; }
+      .regular { fill: #b18fd0; opacity: .20; }
+      .provedln { stroke: #5fd39a; }
+      .capln    { stroke: #7aa7e8; }
+      .classln  { stroke: #ef7a5e; }
+      .regln    { stroke: #b18fd0; }
+    }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="760" height="300"/>
+
+  <!-- log-ish axis: 0.0463 -> x=150, 0.25 -> x=300, 1 -> x=520, 1.25 -> x=600 -->
+  <rect class="proved"  x="60"  y="120" width="90"  height="44"/>
+  <rect class="capzone" x="150" y="120" width="150" height="44"/>
+  <rect class="open"    x="300" y="120" width="300" height="44"/>
+  <rect class="regular" x="600" y="120" width="110" height="44"/>
+
+  <line class="axis" x1="60" y1="164" x2="712" y2="164"/>
+  <polygon points="712,164 703,159.5 703,168.5" fill="#33373d"/>
+
+  <line class="provedln" x1="150" y1="112" x2="150" y2="176"/>
+  <line class="capln"    x1="300" y1="112" x2="300" y2="176"/>
+  <line class="classln"  x1="520" y1="112" x2="520" y2="176"/>
+  <line class="regln"    x1="600" y1="112" x2="600" y2="176"/>
+
+  <text class="lbl mono" x="150" y="196" text-anchor="middle">0.0463</text>
+  <text class="lbl mono" x="300" y="196" text-anchor="middle">0.25</text>
+  <text class="lbl mono" x="520" y="196" text-anchor="middle">1</text>
+  <text class="lbl mono" x="600" y="196" text-anchor="middle">1.25</text>
+  <text class="lblsm" x="712" y="196" text-anchor="end">alpha, in the (-Laplacian)^alpha convention</text>
+
+  <text class="lbl" x="105" y="100" text-anchor="middle">blowup PROVED</text>
+  <text class="lblsm" x="105" y="82" text-anchor="middle">Cordoba, Martinez-Zoroa, Zheng</text>
+  <text class="lbl" x="225" y="100" text-anchor="middle">cascade cap</text>
+  <text class="lblsm" x="225" y="82" text-anchor="middle">necessary, not sufficient</text>
+  <text class="lbl" x="450" y="100" text-anchor="middle">OPEN</text>
+  <text class="lbl" x="655" y="100" text-anchor="middle">regularity PROVED</text>
+  <text class="lblsm" x="655" y="82" text-anchor="middle">Lions</text>
+
+  <text class="lblsm" x="520" y="218" text-anchor="middle">classical Navier-Stokes</text>
+
+  <text class="lbl" x="60" y="44">The dissipation-exponent landscape</text>
+  <text class="note" x="60" y="64">The layer cascade cannot reach beyond 0.25, which sits inside the open window. Classical viscosity is four times that.</text>
+
+  <text class="note" x="60" y="252">Published threshold (22 - 8*sqrt(7))/9 = 0.0927 in the |grad|^alpha convention, halved here.</text>
+  <text class="note" x="60" y="270">Our cap is loose by a factor 5.40 against it; equivalently the frequency exponent is p = 11/4 + sqrt(7).</text>
+  <text class="note" x="60" y="288">Axis is not to scale.</text>
+</svg>
