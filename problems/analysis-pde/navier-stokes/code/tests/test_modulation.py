@@ -73,7 +73,8 @@ def test_self_advection_cancels_on_the_grid():
     zeta = r * M.rot(phi)
     s = lam * (zeta[0] * X1 + zeta[1] * X2)
     Theta, Omega = -0.3, -0.7
-    vartheta = Theta * np.sin(s)
+    # The wave itself is Theta*sin(s); only its GRADIENT enters the cancellation, and it
+    # is written out analytically below, so the field is not materialized.
     # v = Omega / (lam |zeta|^2) * J zeta * sin s
     Jz = M.J(zeta)
     coef = Omega / (lam * float(zeta @ zeta))
