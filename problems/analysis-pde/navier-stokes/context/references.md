@@ -3,10 +3,12 @@
 Status marks: `[V]` read in the primary source; `[P]` partial read (abstract, introduction, or the
 specific theorem only); `[U]` cited only through another source.
 
-All files below were downloaded on 2026-09-11 and hashed. Third-party PDFs are NOT redistributed in
-this repository (same rule the bougard-joret and petersen-coloring dossiers follow); the local mirror
-lives outside git at `E:/_Temp/ns-research/pdfs/`. The SHA-256 column is what makes a later re-download
-checkable.
+All files below were downloaded on 2026-09-11 and hashed. On Felipe's instruction of 2026-09-12 the
+PDFs are archived in the repository at [`../references/`](../references/), with provenance, byte counts
+and hashes in [`../references/README.md`](../references/README.md); this departs from the
+reference-only convention the bougard-joret and petersen-coloring dossiers follow, and it is deliberate.
+Copyright stays with the authors. The SHA-256 column below is what makes any copy, in the repository or
+re-downloaded, checkable against what we actually read.
 
 ## The September 2026 claims
 
