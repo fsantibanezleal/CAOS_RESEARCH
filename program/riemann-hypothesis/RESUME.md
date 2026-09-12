@@ -7,7 +7,9 @@ the established result. Imported baseline: $c_0=3/2-\cot(1/\sqrt2)/\sqrt2$ and
 $c(\theta)=2-\theta/2-\cot(\theta/\sqrt2)/\sqrt2$ for short intervals.
 EXP-002 now derives a strict short-interval improvement; EXP-001 confirms the baseline.
 The numerical example improves 0.4190750129754243337 to 0.4190768284253039967.
-Lifecycle: consolidating. Hypotheses were committed in `266486f` before computation.
+Lifecycle: published research record; RH remains open. Hypotheses were committed in
+`266486f` before computation. The 10-page preprint v0.01 is published and byte-verified:
+version DOI 10.5281/zenodo.22727389, concept DOI 10.5281/zenodo.22727388.
 
 ## 2. The objects table
 
@@ -34,20 +36,26 @@ disjoint-triple counting, gives strict improvement of every positive point of Wa
 Independent audits checked multiplicities, signed
 off-line terms, the factor one third, the analytic interface, and the order of limits.
 The numerical certificate uses theta=3/4, R=21/4 and d=1/7000, with zero unresolved boxes.
-The manuscript and public replay are being completed from these persisted proofs.
+The manuscript and complete wiki are finished. Public replay QA passed all 20 scenarios,
+five viewports and both languages/themes, with 960 screenshots and separate visual reviews.
+The full suite has 251 passing Python tests plus two frontend tests. No research process is
+running. Only scoped integration, the 0.64.000 release and live verification remain in flight.
 
 ## 5. Next actions
 
-1. Complete wiki transcription and manuscript PDF review.
-2. Publish the frozen validated preprint on Zenodo and verify public bytes and metadata.
-3. Validate the bilingual public replay in both themes and all six sections.
-4. Promote scoped PRs, serialize the release bake/version/tag, and verify live deployment.
+1. Check the latest CI for research PR #263, then promote it to develop.
+2. Open the separate develop-to-main release PR, wait for checks, merge and tag v0.64.000.
+3. Verify Pages deployment, live artifact hashes and pointer-driven research navigation.
+4. Record observed closure receipts in this handoff and the private management mirror.
+
+Reproduction commands and source restoration: `docs/guides/riemann-replay.md`.
+Rendered evidence and exact build hashes: `program/riemann-hypothesis/release-0.64.000/`.
 
 ## 6. Where everything lives
 
 Operational files: `program/riemann-hypothesis/`. Primary record:
 `problems/number-theory/riemann-hypothesis/{context,code,experiments,history,wiki}/`.
-Manuscripts, when triggered: `manuscripts/riemann-hypothesis/`.
+Frozen manuscript and publication receipt: `manuscripts/riemann-hypothesis/short-interval-stability/`.
 Management mirror: `plans/caos-research/riemann-hypothesis/` in the private management repo.
 
 ## 7. Gotchas

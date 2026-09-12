@@ -1,0 +1,599 @@
+{
+  "base_url": "http://127.0.0.1:4182/",
+  "scope": "Real mouse clicks and wheel scroll; no injected application state; source links hit-tested without navigating",
+  "checks": [
+    {
+      "size": "390x844",
+      "lang": "en",
+      "theme": "light",
+      "tab": "method",
+      "passed": true,
+      "errors": [],
+      "scrollTop": 278,
+      "max": 278,
+      "viewport": [
+        390,
+        844
+      ],
+      "rows": 1,
+      "links": [
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-001-source-and-constant-audit",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/tests/test_riemann_certificates.py",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/code",
+          "visible": true,
+          "centerHitsLink": true
+        }
+      ]
+    },
+    {
+      "size": "390x844",
+      "lang": "en",
+      "theme": "light",
+      "tab": "science",
+      "passed": true,
+      "errors": [],
+      "scrollTop": 364,
+      "max": 364,
+      "viewport": [
+        390,
+        844
+      ],
+      "rows": 1,
+      "links": [
+        {
+          "href": "https://arxiv.org/abs/2609.07918v1",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://arxiv.org/abs/2609.02882v2",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/ainta/zeta-simple-zeros/blob/040c5e899e658aed7b56a2a87f501798fe10761d/docs/proof.md",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/mathematical-proof.md",
+          "visible": true,
+          "centerHitsLink": true
+        }
+      ]
+    },
+    {
+      "size": "390x844",
+      "lang": "en",
+      "theme": "dark",
+      "tab": "method",
+      "passed": true,
+      "errors": [],
+      "scrollTop": 278,
+      "max": 278,
+      "viewport": [
+        390,
+        844
+      ],
+      "rows": 1,
+      "links": [
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-001-source-and-constant-audit",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/tests/test_riemann_certificates.py",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/code",
+          "visible": true,
+          "centerHitsLink": true
+        }
+      ]
+    },
+    {
+      "size": "390x844",
+      "lang": "en",
+      "theme": "dark",
+      "tab": "science",
+      "passed": true,
+      "errors": [],
+      "scrollTop": 364,
+      "max": 364,
+      "viewport": [
+        390,
+        844
+      ],
+      "rows": 1,
+      "links": [
+        {
+          "href": "https://arxiv.org/abs/2609.07918v1",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://arxiv.org/abs/2609.02882v2",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/ainta/zeta-simple-zeros/blob/040c5e899e658aed7b56a2a87f501798fe10761d/docs/proof.md",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/mathematical-proof.md",
+          "visible": true,
+          "centerHitsLink": true
+        }
+      ]
+    },
+    {
+      "size": "390x844",
+      "lang": "es",
+      "theme": "light",
+      "tab": "method",
+      "passed": true,
+      "errors": [],
+      "scrollTop": 342,
+      "max": 342,
+      "viewport": [
+        390,
+        844
+      ],
+      "rows": 1,
+      "links": [
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-001-source-and-constant-audit",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/tests/test_riemann_certificates.py",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/code",
+          "visible": true,
+          "centerHitsLink": true
+        }
+      ]
+    },
+    {
+      "size": "390x844",
+      "lang": "es",
+      "theme": "light",
+      "tab": "science",
+      "passed": true,
+      "errors": [],
+      "scrollTop": 428,
+      "max": 428,
+      "viewport": [
+        390,
+        844
+      ],
+      "rows": 1,
+      "links": [
+        {
+          "href": "https://arxiv.org/abs/2609.07918v1",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://arxiv.org/abs/2609.02882v2",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/ainta/zeta-simple-zeros/blob/040c5e899e658aed7b56a2a87f501798fe10761d/docs/proof.md",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/mathematical-proof.md",
+          "visible": true,
+          "centerHitsLink": true
+        }
+      ]
+    },
+    {
+      "size": "390x844",
+      "lang": "es",
+      "theme": "dark",
+      "tab": "method",
+      "passed": true,
+      "errors": [],
+      "scrollTop": 342,
+      "max": 342,
+      "viewport": [
+        390,
+        844
+      ],
+      "rows": 1,
+      "links": [
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-001-source-and-constant-audit",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/tests/test_riemann_certificates.py",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/code",
+          "visible": true,
+          "centerHitsLink": true
+        }
+      ]
+    },
+    {
+      "size": "390x844",
+      "lang": "es",
+      "theme": "dark",
+      "tab": "science",
+      "passed": true,
+      "errors": [],
+      "scrollTop": 428,
+      "max": 428,
+      "viewport": [
+        390,
+        844
+      ],
+      "rows": 1,
+      "links": [
+        {
+          "href": "https://arxiv.org/abs/2609.07918v1",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://arxiv.org/abs/2609.02882v2",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/ainta/zeta-simple-zeros/blob/040c5e899e658aed7b56a2a87f501798fe10761d/docs/proof.md",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/mathematical-proof.md",
+          "visible": true,
+          "centerHitsLink": true
+        }
+      ]
+    },
+    {
+      "size": "1600x900",
+      "lang": "en",
+      "theme": "light",
+      "tab": "method",
+      "passed": true,
+      "errors": [],
+      "scrollTop": 172,
+      "max": 172,
+      "viewport": [
+        1600,
+        900
+      ],
+      "rows": 1,
+      "links": [
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-001-source-and-constant-audit",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/tests/test_riemann_certificates.py",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/code",
+          "visible": true,
+          "centerHitsLink": true
+        }
+      ]
+    },
+    {
+      "size": "1600x900",
+      "lang": "en",
+      "theme": "light",
+      "tab": "science",
+      "passed": true,
+      "errors": [],
+      "scrollTop": 215,
+      "max": 215,
+      "viewport": [
+        1600,
+        900
+      ],
+      "rows": 1,
+      "links": [
+        {
+          "href": "https://arxiv.org/abs/2609.07918v1",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://arxiv.org/abs/2609.02882v2",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/ainta/zeta-simple-zeros/blob/040c5e899e658aed7b56a2a87f501798fe10761d/docs/proof.md",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/mathematical-proof.md",
+          "visible": true,
+          "centerHitsLink": true
+        }
+      ]
+    },
+    {
+      "size": "1600x900",
+      "lang": "en",
+      "theme": "dark",
+      "tab": "method",
+      "passed": true,
+      "errors": [],
+      "scrollTop": 172,
+      "max": 172,
+      "viewport": [
+        1600,
+        900
+      ],
+      "rows": 1,
+      "links": [
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-001-source-and-constant-audit",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/tests/test_riemann_certificates.py",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/code",
+          "visible": true,
+          "centerHitsLink": true
+        }
+      ]
+    },
+    {
+      "size": "1600x900",
+      "lang": "en",
+      "theme": "dark",
+      "tab": "science",
+      "passed": true,
+      "errors": [],
+      "scrollTop": 215,
+      "max": 215,
+      "viewport": [
+        1600,
+        900
+      ],
+      "rows": 1,
+      "links": [
+        {
+          "href": "https://arxiv.org/abs/2609.07918v1",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://arxiv.org/abs/2609.02882v2",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/ainta/zeta-simple-zeros/blob/040c5e899e658aed7b56a2a87f501798fe10761d/docs/proof.md",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/mathematical-proof.md",
+          "visible": true,
+          "centerHitsLink": true
+        }
+      ]
+    },
+    {
+      "size": "1600x900",
+      "lang": "es",
+      "theme": "light",
+      "tab": "method",
+      "passed": true,
+      "errors": [],
+      "scrollTop": 215,
+      "max": 215,
+      "viewport": [
+        1600,
+        900
+      ],
+      "rows": 1,
+      "links": [
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-001-source-and-constant-audit",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/tests/test_riemann_certificates.py",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/code",
+          "visible": true,
+          "centerHitsLink": true
+        }
+      ]
+    },
+    {
+      "size": "1600x900",
+      "lang": "es",
+      "theme": "light",
+      "tab": "science",
+      "passed": true,
+      "errors": [],
+      "scrollTop": 237,
+      "max": 237,
+      "viewport": [
+        1600,
+        900
+      ],
+      "rows": 1,
+      "links": [
+        {
+          "href": "https://arxiv.org/abs/2609.07918v1",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://arxiv.org/abs/2609.02882v2",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/ainta/zeta-simple-zeros/blob/040c5e899e658aed7b56a2a87f501798fe10761d/docs/proof.md",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/mathematical-proof.md",
+          "visible": true,
+          "centerHitsLink": true
+        }
+      ]
+    },
+    {
+      "size": "1600x900",
+      "lang": "es",
+      "theme": "dark",
+      "tab": "method",
+      "passed": true,
+      "errors": [],
+      "scrollTop": 215,
+      "max": 215,
+      "viewport": [
+        1600,
+        900
+      ],
+      "rows": 1,
+      "links": [
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-001-source-and-constant-audit",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/tests/test_riemann_certificates.py",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/code",
+          "visible": true,
+          "centerHitsLink": true
+        }
+      ]
+    },
+    {
+      "size": "1600x900",
+      "lang": "es",
+      "theme": "dark",
+      "tab": "science",
+      "passed": true,
+      "errors": [],
+      "scrollTop": 237,
+      "max": 237,
+      "viewport": [
+        1600,
+        900
+      ],
+      "rows": 1,
+      "links": [
+        {
+          "href": "https://arxiv.org/abs/2609.07918v1",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://arxiv.org/abs/2609.02882v2",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/ainta/zeta-simple-zeros/blob/040c5e899e658aed7b56a2a87f501798fe10761d/docs/proof.md",
+          "visible": true,
+          "centerHitsLink": true
+        },
+        {
+          "href": "https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/mathematical-proof.md",
+          "visible": true,
+          "centerHitsLink": true
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

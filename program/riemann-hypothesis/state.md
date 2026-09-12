@@ -1,6 +1,6 @@
 # Riemann hypothesis state
 
-Updated: 2026-09-12. Lifecycle: **consolidating**.
+Updated: 2026-09-12. Lifecycle: **published** (research and web-content gates passed).
 
 [D] EXP-002 establishes a strict refinement of Wang's entire positive short-interval
 cosine curve for each fixed theta between its positivity threshold and one. The derivation
@@ -16,5 +16,10 @@ verification. Versioned source and formalization audits distinguish assumptions 
 The candidate contribution is a short-interval theorem using attributed stability ideas.
 There is no global-record or RH-solution claim and no guarantee of publication priority.
 The 10-page preprint v0.01 is published as DOI 10.5281/zenodo.22727389. Its full PDF
-render and fresh public-byte/metadata verification passed. Public replay QA and scoped
-promotion remain release gates. See `RESUME.md` and the source experiment verdicts.
+render and fresh public-byte/metadata verification passed. The complete public replay QA
+passed: 20 scenarios, five viewports, both languages/themes, 960 screenshots, and separate
+visual reviews. The full Python suite has 251 passing tests; frontend tests, build and
+applicable guards pass. Evidence: [release QA](release-0.64.000/README.md).
+
+Version 0.64.000 is prepared. Scoped PR promotion, the main release, and live verification
+remain external delivery gates at this snapshot. See `RESUME.md` and the source verdicts.

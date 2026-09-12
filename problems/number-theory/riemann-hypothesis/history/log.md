@@ -34,3 +34,17 @@ A fresh unauthenticated download matches all 368,644 reviewed bytes; public meta
 the sole author, ORCID, date, version, preprint type, license and both DOIs. The publication
 receipt is persisted beside the frozen PDF. This is a self-published preprint, not peer review.
 The research unit remains consolidating until the public replay and release gates pass.
+
+## 2026-09-12: public replay gate passed
+
+The complete six-section EN/ES replay and contextual architecture passed 20 automated
+language/theme/viewport scenarios with 960 screenshots and separate visual inspections.
+Supplementary lower-diagram/source-link scrolling passed all 16 combinations. The full
+Python suite has 251 passing tests; the frontend tests, TypeScript/build, Ruff and applicable
+guards pass. The gate evidence is in `program/riemann-hypothesis/release-0.64.000/`.
+
+Adversarial release review corrected Windows-versus-Git newline provenance and made Riemann
+modal records independent of dirty, staged-only or locally deleted files. The canonical
+EXP-001 LF replay matches its original Git artifact exactly; no mathematical result or frozen
+manuscript bytes changed. Lifecycle advances to published under the web-content gate.
+Version 0.64.000 promotion and live deployment remain separately observed release actions.

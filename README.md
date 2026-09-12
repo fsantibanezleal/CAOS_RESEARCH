@@ -40,7 +40,7 @@ on prior chat history.
 | Dynamical systems | [Central configurations](problems/dynamical-systems/central-configurations/) | exploring (opened 2026-07-23) |
 | Optimization and discrete geometry | [Unsplittable-flow cost](problems/optimization-geometry/unsplittable-flow-cost/) | exploring (opened 2026-07-24) |
 | Combinatorics and graph theory | [Petersen coloring counterexamples](problems/combinatorics/petersen-coloring/) | analyzing (opened 2026-09-03) |
-| Number theory | [Riemann hypothesis](problems/number-theory/riemann-hypothesis/wiki/) | consolidating (opened 2026-09-12) |
+| Number theory | [Riemann hypothesis](problems/number-theory/riemann-hypothesis/wiki/) | published research record (opened 2026-09-12; RH open) |
 
 The complete portfolio, including proposed and scoped problems, lives in
 [`program/portfolio.yaml`](program/portfolio.yaml). Each active problem's current heartbeat is its
@@ -62,6 +62,8 @@ certified arithmetic; floats are exploration-only). See `methodology/02-experime
 For the Riemann source archive, short-interval proof and interval certificate, use the
 [reproduction guide](docs/guides/riemann-replay.md). The general hypothesis remains open;
 the result concerns lower asymptotic proportions in fixed short intervals.
+The [rendered QA record](program/riemann-hypothesis/release-0.64.000/) includes the
+browser matrix, visual reviews and representative desktop/phone screenshots.
 
 ## Versioning
 
