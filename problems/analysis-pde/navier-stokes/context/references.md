@@ -91,9 +91,20 @@ re-downloaded, checkable against what we actually read.
 - D. Cordoba, L. Martinez-Zoroa, Zheng, 3D Euler singularities in
   `C-infinity(R3 minus origin) intersect C-1,alpha intersect L2`. `[U]`, cited as [9] by the
   Alpoge-Buckmaster Euler paper. NOT obtained; distinct from 2410.22920 above.
-- D. Cordoba, A. Lain-Sanclemente, L. Martinez-Zoroa, Boussinesq multi-layer pendulum construction.
-  `[U]`, cited as [5] by the Alpoge-Buckmaster Boussinesq paper; **this one remains the open
-  obligation**.
+- D. Cordoba, A. Lain-Sanclemente, L. Martinez-Zoroa, *Finite-time singularity via multi-layer
+  degenerate pendula for the 2D Boussinesq equation with uniform C^(1, sqrt(4/3) - 1 - eps) and L2
+  force*, Adv. Math. 480 Part A (2025), article 110480,
+  [doi:10.1016/j.aim.2025.110480](https://doi.org/10.1016/j.aim.2025.110480),
+  [arXiv:2505.20988v3](https://arxiv.org/abs/2505.20988) (dated 2025-09-01).
+  `[V]` abstract and contents; `[P]` the construction.
+  1,556,459 bytes, sha256 `6b351de87695a6539c4d34f98c22958d760bcb95f66be321834ae2247f234488`.
+  **This is reference [5] of the Alpoge-Buckmaster Boussinesq paper**, the direct Boussinesq
+  predecessor. Their stated mechanism is "an accumulated hysteresis effect on the vorticity caused by
+  an infinite chain of degenerate pendula and flickering density", and their force is uniform
+  `C^(1, sqrt(4/3) - 1 - eps)` and `L2` with compact support in the vorticity and density equations,
+  preserved at the blow-up time. The Alpoge-Buckmaster contribution against this baseline is the
+  upgrade to forces that are smooth with every mixed space-time derivative and supported in one fixed
+  ball. This closes NS-002.
 
 ## Problem statement and background
 

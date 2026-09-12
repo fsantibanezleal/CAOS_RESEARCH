@@ -31,8 +31,9 @@ the hash we actually verified, makes the transcription auditable later by anyone
 | `dm-unstable-2509.14185.pdf` | `arxiv.org/pdf/2509.14185` | 2,225,069 | `ade2c449cbbc9314504fcf715f91f33d706960c93dea5cb2c6133cf8a5772613` |
 | `cmz-zheng-hypodissipative-2407.06776.pdf` | `arxiv.org/pdf/2407.06776v2` | 395,139 | `56801b195f3e378bf7b91dd6a04fc06b42da2a300e06250bf586ee83c35e4a34` |
 | `cdlm-gsqg-2608.17192.pdf` | `arxiv.org/pdf/2608.17192v1` | 935,266 | `7e60335059c6efc93de95ceb1073b7d1a09d2e531419e7f60f6f3c26989d0e4e` |
+| `clsmz-boussinesq-pendula-2505.20988.pdf` | `arxiv.org/pdf/2505.20988` | 1,556,459 | `6b351de87695a6539c4d34f98c22958d760bcb95f66be321834ae2247f234488` |
 
-Total 19,782,991 bytes across 15 files. The last two were added on 2026-09-12 by the Phase 0 gate. Verify any of them with
+Total 21,339,450 bytes across 16 files. The last three were added on 2026-09-12, two by the Phase 0 gate and one when the last open source obligation (NS-002) was closed. Verify any of them with
 `python -c "import hashlib,sys;print(hashlib.sha256(open(sys.argv[1],'rb').read()).hexdigest())" <file>`.
 
 ## Rights

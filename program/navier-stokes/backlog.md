@@ -6,7 +6,7 @@ and a kill criterion per methodology 12.
 | id | title | axis | status | priority | effort | budget | kill criterion |
 |---|---|---|---|---|---|---|---|
 | NS-001 | Read Sections 3 to 10 of the Alpoge-Buckmaster Boussinesq paper; determine whether the dissipative analysis is already there | research | done | P0 | M | none | n/a |
-| NS-002 | Obtain the two Cordoba-Martinez-Zoroa primary sources ([5] and [6] of the Boussinesq paper) and read the layer organization at implementation level | research | [6] done, [5] open | P0 | M | none | n/a |
+| NS-002 | Obtain the two Cordoba-Martinez-Zoroa primary sources ([5] and [6] of the Boussinesq paper) and read the layer organization at implementation level | research | done | P0 | M | none | n/a |
 | NS-003 | EXP-001: build `openai/NavierStokesAndEuler` and run both Comparator challenges | validation | todo | P1 | L | 6 h wall clock, 60 GB disk on E: | abandon if the mathlib cache plus one module smoke build exceeds 90 min or if peak RSS exceeds available RAM |
 | NS-004 | Statement audit of the unforced Euler certificate, to the standard already applied to (C) and (D) | validation | done | P1 | M | none | n/a |
 | NS-005 | EXP-002 part A: inviscid modulation system reproduced with the exact profile `F`, not just `sin` | implementation | done | P1 | S | CPU only | n/a |
