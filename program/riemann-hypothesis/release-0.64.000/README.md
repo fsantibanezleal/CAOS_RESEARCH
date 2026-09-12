@@ -1,9 +1,30 @@
 # Riemann release 0.64.000: validation evidence
 
-The research record is ready for publication on the web. This local release gate is separate
-from the subsequent PR merges and live deployment, whose observed receipts are recorded at
-round closure. The [preprint](https://doi.org/10.5281/zenodo.22727389) is already published;
-its frozen public PDF and metadata were verified independently of the website.
+Release v0.64.000 is deployed and live-verified. The research and release PRs are merged,
+the release tag is present, and the live receipt closes the web delivery gate. The
+[preprint](https://doi.org/10.5281/zenodo.22727389) is published; its frozen public PDF and
+metadata were verified independently of the website.
+
+## Observed release closure
+
+- Research [PR #263](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/263) merged at
+  `00eace9e2a746c0b4122c5b085b84d804f5f47a0`.
+- Release [PR #264](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/264) merged to main
+  at `08660dc2d6bc91eae0d3a5105447793f0fbc670c`, tagged `v0.64.000`.
+- [Pages run 34706614866](https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/34706614866)
+  succeeded, and the deployed site is [research.fasl-work.com](https://research.fasl-work.com/).
+- [Live verification](live-verification.json), recorded at 2026-09-12 17:01:22 UTC,
+  checks 13 public build/data files against the reviewed bytes and records eight passing
+  pointer-driven browser scenarios with 224 screenshots. The live matrix covers
+  1440x1000 and 390x844, EN/ES and light/dark, with all six research tabs visited.
+  Every scenario has empty console, page and HTTP error arrays.
+
+The receipt is preserved as an exact 5,958-byte copy of the original live record,
+SHA-256 `fb35a9d06d82ef3befafaf2a8ee6e412c67ccff014785725dc63eca27d69ebc6`.
+Its two referenced raw-receipt hashes were checked against the retained local evidence.
+The live screenshots and raw receipts remain in ignored `tmp/riemann-live-0.64/`;
+the public summary preserves their hashes and scenario outcomes. These deployment
+checks are separate from mathematical proof acceptance and the earlier visual sampling.
 
 ## Automated and visual evidence
 

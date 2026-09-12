@@ -8,9 +8,9 @@
 \usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
 \usepackage{orcidlink,fancyhdr}
 \hypersetup{
-  pdftitle={A stability refinement for simple critical zeros in short intervals},
+  pdftitle={Simple critical zeros in short intervals: stability, pressure, and parity},
   pdfauthor={Felipe Santibanez-Leal},
-  pdfsubject={Short-interval zeta-zero proportions and finite Hilbert-space stability},
+  pdfsubject={Short-interval simple critical zeros, finite stability, pressure certificates, and odd-multiplicity density},
   pdfkeywords={Riemann zeta function, simple zeros, short intervals, pair correlation, Gram matrix, interval arithmetic}
 }
 \newtheorem{theorem}{Theorem}[section]
@@ -26,22 +26,22 @@
 \newcommand{\HS}{\mathrm{HS}}
 \newcommand{\cE}{\mathcal E}
 \newcommand{\cC}{\mathcal C}
-\newcommand{\versiondoi}{10.5281/zenodo.22727389}
+\newcommand{\versiondoi}{10.5281/zenodo.22728744}
 \newcommand{\conceptdoi}{10.5281/zenodo.22727388}
 \newcommand{\recordurl}{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Short-interval stability\textperiodcentered\ v0.01}
+\fancyhead[R]{\small Stability, pressure, and parity\textperiodcentered\ v0.02}
 \fancyfoot[C]{\thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
 \allowdisplaybreaks[1]
 
-\title{A stability refinement for simple critical zeros\\in short intervals}
+\title{Simple critical zeros in short intervals:\\stability, pressure, and parity}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program\\
 \small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-09-12\\[2pt]\normalsize Version 0.01}
+\date{2026-09-12\\[2pt]\normalsize Version 0.02}
 
 \begin{document}
 \maketitle
@@ -50,7 +50,7 @@
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT}\textperiodcentered\ not peer reviewed\textperiodcentered\ CAOS Research\\
 Riemann-hypothesis research series, first paper\\
-Version 0.01\textperiodcentered\ 2026-09-12\textperiodcentered\ CC BY 4.0\\
+Version 0.02\textperiodcentered\ 2026-09-12\textperiodcentered\ CC BY 4.0\\
 Version DOI: \href{https://doi.org/\versiondoi}{\versiondoi}\\
 Concept DOI: \href{https://doi.org/\conceptdoi}{\conceptdoi} (latest version)\\
 \href{\recordurl}{Public sources, proof audit, and reproducible certificates}
@@ -58,31 +58,79 @@ Concept DOI: \href{https://doi.org/\conceptdoi}{\conceptdoi} (latest version)\\
 \end{center}
 
 \begin{abstract}
-For each fixed $\theta$ for which Wang's short-interval cosine bound
-$c(\theta)=2-\theta/2-\cot(\theta/\sqrt2)/\sqrt2$ is positive, we give an
-explicit constant strictly larger than $c(\theta)$ as a lower asymptotic
-proportion of simple critical zeros in $(T,T+T^\theta]$. The corresponding
-distinct-zero bound also improves. We transfer the known stable rank--trace
-inequality in the \texttt{ainta} manuscript directly to Lamzouri's finite
-Hilbert operator, retain the Gram defect of its simple real points, and
-combine three shifted partitions into consecutive triples. A quantitative
-obstruction to additive triples of cosine-kernel zeros supplies a positive
-gap for every fixed admissible $\theta$. Wang's fixed-test pair-correlation
-theorem provides the arithmetic input; smoothing is performed after the
-large-height limit. An interval certificate at $\theta=3/4$ improves the
-simple-critical constant from $0.4190750129754243\ldots$ to
-$0.4190768284253039\ldots$, and gives distinct proportion
-$0.7095384142126519\ldots$. The general strict improvement has an analytic
-proof independent of numerical minimization. This does not improve the
-positivity exponent, claim a global record, or resolve the Riemann hypothesis.
+Let $c(\theta)=2-\theta/2-\cot(\theta/\sqrt2)/\sqrt2$, and let
+$\theta_0$ be its unique zero in $(0,1)$. We combine the finite stable
+rank--trace inequality underlying recent zeta-zero results with a classical
+positive density of distinct odd-multiplicity critical zeros. If $\kappa>0$
+is one fixed Selberg density constant packed into every longer interval,
+then, for each fixed $0.51<\theta<1$, the lower asymptotic simple-critical
+proportion in $(T,T+T^\theta]$ is at least
+$\max\{0,c(\theta),(c(\theta)+2\kappa)/3\}$. Consequently it is positive
+at some fixed exponent strictly below $\theta_0$. A separate multiplicity
+identity gives the correct distinct-zero companion, including a proportion
+greater than one half at another exponent below $\theta_0$. The new exponents
+are expressed in terms of the unevaluated classical constant; no new decimal
+exponent is claimed. We also strengthen the entire positive cosine curve by
+an odd-frame pressure transfer. A two-variable interval certificate at
+$\theta=3/4$ yields the simple-critical bound
+$0.4190878881701117\ldots$ and distinct bound
+$0.7095439440850558\ldots$. The finite stability, classical sign-change
+theorems, and prior global pressure methods are explicitly attributed.
+Wang's fixed-test pair-correlation theorem supplies the arithmetic input;
+all smoothing and support limits follow the height limit. The qualitative
+parity result requires no numerical zero sampling or kernel optimization.
+No global record, effective starting height, or solution of the Riemann
+hypothesis is claimed.
 \end{abstract}
+
+\section*{Changes in version 0.02}
+
+The central addition is a parity transfer from classical odd-multiplicity
+critical zeros to simple critical zeros. Retaining multiplicity excess in
+the known finite stability inequality yields a qualitative extension below
+the zero of Wang's cosine bound. This changes the admissible interval-length
+range rather than only a numerical proportion. The explicit dependence on
+the classical density constant and the separate distinct-zero argument are
+proved below.
+
+Version 0.01's finite Hilbert transfer and explicit compact energy bound
+are retained with their source attribution~\cite{FirstVersion}. Further
+additions are the odd-frame pressure theorem, its stronger consequence
+throughout the positive short-interval curve, reuse of the earlier finite
+certificate, and a new certified two-variable pressure bound. The published
+version 0.01 PDF and its artifacts remain unchanged. The following table
+compares the separate quantitative outcomes; the parity range theorem has
+no certified decimal exponent and is not represented by a numerical row.
+
+\begin{quote}\small
+\textbf{Recorded verification.} EXP-003's two pressure stages and EXP-004's
+parity deduction are confirmed in their separate scientific verdicts
+\cite{RecordIII,RecordIV}. Exact finite checks, primary-source interfaces,
+and mathematical reviews are recorded separately. These research verdicts
+do not constitute external peer review or end-to-end formal verification.
+\end{quote}
+
+\begin{center}\small
+\begin{tabular}{lrr}
+\toprule
+Bound at $\theta=3/4$ & Simple-critical proportion & Gain above Wang\\
+\midrule
+Wang & $0.4190750129754\ldots$ & $0$\\
+Version 0.01 & $0.4190768284253\ldots$ & $1.8154498796\ldots\times10^{-6}$\\
+Odd-frame reuse & $0.4190777360205\ldots$ & $2.7230451445\ldots\times10^{-6}$\\
+New pressure certificate & $0.4190878881701\ldots$ & $1.2875194687\ldots\times10^{-5}$\\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section{Statement and relation to prior work}
 
 Let $N(T,H)$ count the nontrivial zeros $\rho=\beta+i\gamma$ of $\zeta(s)$
 with $T<\gamma\le T+H$, including multiplicity. Let $N_0^s(T,H)$ count the
 simple zeros among them with $\beta=1/2$, and let $N^d(T,H)$ count distinct
-complex zeros, each once. Every proportion below has denominator $N(T,H)$.
+complex zeros, each once. Let $N_{\rm odd}(T,H)$ count distinct critical
+zeros of odd multiplicity, also each once. It does not count their
+multiplicity. Every proportion below has denominator $N(T,H)$.
 
 The recent argument discovered by Claude and communicated by Alp\"oge and
 Furman~\cite{AF} made the optimized Montgomery--Taylor simple-critical
@@ -103,19 +151,81 @@ where
 The derivative is $c'(\theta)=\tfrac12\cot^2(\theta/\sqrt2)>0$. Since
 $c(\theta)\to-\infty$ as $\theta\downarrow0$ and $c(1)>0$, there is a
 unique zero $\theta_0\in(0,1)$, numerically
-$\theta_0=0.550193964744154\ldots$.
+$\theta_0\approx0.550193964744154\ldots$, as printed by Wang. The
+proof below uses its defining equation and rational comparisons, not a
+numerical root certificate.
 
 The stable rank--trace inequality, convex Gram defect, pinching method, and
 cosine-root non-additivity used here are prior work in the
-\texttt{ainta} repository~\cite{Ainta}. Further global window and block
-refinements are also under active development~\cite{Trmdy}. We do not claim
-these ingredients or an improved global record. Our contribution is their
-direct finite-Hilbert transfer, an explicit quantitative three-point bound,
-and the strict refinement of Wang's entire positive short-interval curve.
-The finite proof below is included to make the treatment of off-line zeros,
-multiplicities, and singular Gram matrices explicit.
+\texttt{ainta} repository~\cite{Ainta}. Global pressure windows, larger
+frames, nonuniform pair capacities, spectral envelopes, and combinations
+of certificates are developed in~\cite{Trmdy,Tawan,Shi}. The alternating
+schedule used below is a simple choice within this established framework.
+We do not claim these ingredients or an improved global record. Version
+0.01 gave their direct finite-Hilbert transfer, an explicit quantitative
+three-point bound, and a strict refinement of Wang's positive
+short-interval curve. This version develops two consequences. First,
+classical odd-multiplicity density and the retained multiplicity excess
+extend the positivity range qualitatively. Second, odd-frame pressure
+strengthens the positive curve quantitatively, with independently replayed
+numerical inputs. The finite proof keeps off-line signs, multiplicities,
+and singular Gram matrices explicit.
 
-\begin{theorem}[Strict short-interval refinement, D]\label{thm:main}
+Selberg's positive density theorem at lengths $T^{1/2+\epsilon}$ is
+reproduced as Theorem B in Karatsuba's primary article~\cite{Karatsuba}.
+Karatsuba's own theorem works at $T^{27/82+\epsilon}$. These count distinct
+odd-order critical zeros. They do not already assert a positive simple-zero
+proportion. Steuding's later simple-critical theorem gives the explicit
+exponent $0.552$~\cite{Steuding,SteudingThesis}; Wang gives the smaller
+explicit threshold $\theta_0$. The combination below uses only the
+convenient fixed classical seed $\alpha=51/100$, and neither improves
+Karatsuba's odd-zero theorem nor computes a replacement decimal for
+$\theta_0$.
+
+The labels [D] and [MV] distinguish mathematical deductions from finite
+machine-verifiable statements. The following main range result is a
+deduction from the stated primary analytic inputs. Exact finite checks
+audit its algebra; they do not replace those inputs or prove all-height
+statements by enumeration.
+
+\begin{theorem}[Parity transfer and qualitative range extension, D]
+\label{thm:parity}
+Put $\alpha=51/100$. There exists a constant $\kappa>0$ such that, for
+every fixed $\alpha<\theta<1$,
+\begin{align}
+\liminf_{T\to\infty}\frac{N_0^s(T,T^\theta)}{N(T,T^\theta)}
+&\ge\max\left\{0,c(\theta),\frac{c(\theta)+2\kappa}{3}\right\},
+\label{eq:paritysimple}\\
+\liminf_{T\to\infty}\frac{N^d(T,T^\theta)}{N(T,T^\theta)}
+&\ge\max\left\{\kappa,\frac{1+c(\theta)}2,
+                    \frac{3+2c(\theta)+\kappa}{6}\right\}.
+\label{eq:paritydistinct}
+\end{align}
+One fixed $\kappa$ works for all these fixed exponents; the eventual height
+may depend on $\theta$. Define
+\begin{equation}\label{eq:paritydelta}
+\delta=\min\left\{\frac{\theta_0-\alpha}{2},\frac\kappa4\right\}>0,
+\qquad \theta_1=\theta_0-\delta.
+\end{equation}
+Then $\alpha<\theta_1<\theta_0$ and the lower simple-critical proportion
+at every fixed $\theta_1\le\theta<1$ is at least $\kappa/3>0$.
+Separately, set
+\begin{equation}\label{eq:halfdelta}
+\delta_{\rm half}=\min\left\{\frac{\theta_0-\alpha}{2},
+                                      \frac\kappa{16}\right\},
+\qquad \theta_{\rm half}=\theta_0-\delta_{\rm half}.
+\end{equation}
+For every fixed $\theta_{\rm half}\le\theta<1$, the lower distinct-zero
+proportion is at least $1/2+\kappa/12$.
+\end{theorem}
+
+The distinct claim is greater than one half on some shorter intervals; it
+is not a new exponent for merely positive distinct density, which already
+follows from the classical odd-zero theorem. Theorem~\ref{thm:parity}
+does not give an effective value of $\kappa$, a numerical value of either
+new exponent, or a uniform theorem when $\theta$ varies with $T$.
+
+\begin{theorem}[Retained version 0.01 refinement, D]\label{thm:main}
 Fix $\theta_0<\theta<1$ and $R>2/c(\theta)$. Define
 \begin{equation}\label{eq:explicit}
 \begin{aligned}
@@ -141,12 +251,35 @@ we have
 In particular, $R=4/c(\theta)$ gives a fully specified positive improvement.
 \end{theorem}
 
-The labels [D] and [MV] distinguish mathematical deductions from finite
-machine-verifiable statements. The conservative gap in
-Theorem~\ref{thm:main} requires no numerical search. A stronger finite
-certificate gives the following example.
+\begin{theorem}[Odd-frame pressure refinement, D]\label{thm:pressure}
+Fix $\theta_0<\theta<1$. Suppose $p,\varepsilon>0$ and the cosine kernel
+$K_\theta$ of \eqref{eq:density} satisfies
+\begin{equation}\label{eq:pressure}
+ 2\{K_\theta(u)^2+K_\theta(v)^2+K_\theta(u+v)^2\}
+ +p(u+v)\ge\varepsilon\qquad(u,v\ge0).
+\end{equation}
+For every fixed integer $k\ge1$ with $k\varepsilon\le1$, put
+\begin{equation}\label{eq:pressureconstant}
+ c_{\rm odd}=c(\theta)+
+ \frac{k\{\varepsilon c(\theta)-2p\}}{2k+1-k\varepsilon}.
+\end{equation}
+Then the lower asymptotic simple-critical and distinct proportions are at
+least $c_{\rm odd}$ and $(1+c_{\rm odd})/2$, respectively. The gain is
+strictly positive when $\varepsilon c(\theta)>2p$.
+\end{theorem}
 
-\begin{corollary}[Certified example, D+MV]\label{cor:example}
+\begin{corollary}[Stronger entire positive curve, D]\label{cor:wholecurve}
+For the analytic $\delta$ in \eqref{eq:explicit}, one has $0<\delta<1/4$.
+Every integer $k>1$ with $k\delta\le1$ strengthens
+Theorem~\ref{thm:main} by replacing its gain coefficient
+$\delta/(3-\delta)$ with $k\delta/(2k+1-k\delta)$. In particular $k=2$
+is available for every fixed $\theta_0<\theta<1$.
+\end{corollary}
+
+The conservative gap in Theorem~\ref{thm:main} requires no numerical
+search. A stronger finite certificate gives the following example.
+
+\begin{corollary}[Retained version 0.01 example, D+MV]\label{cor:example}
 Set $\theta=3/4$, $R=21/4$, $d=1/7000$, and
 \[
  C_*:=\frac{3c(3/4)-2d/R}{3-d}
@@ -161,10 +294,39 @@ The improvement in the simple-critical proportion is
 $0.000001815449879663002112176828\ldots$.
 \end{corollary}
 
+\begin{corollary}[Odd-frame reuse and new certificate, D+MV]\label{cor:pressureexample}
+At $\theta=3/4$, the existing compact energy certificate with $d=1/7000$
+and $R=21/4$ gives, with $k=7000$,
+\begin{equation}\label{eq:reuseexample}
+ C_A=c(3/4)+\frac{c(3/4)-8/21}{14000}
+ =0.419077736020568836833221725071\ldots.
+\end{equation}
+The new all-gap pressure certificate has
+\begin{equation}\label{eq:newparams}
+ p=\frac1{12500},\qquad\varepsilon=\frac{443239}{10^9},
+ \qquad k=2256,\qquad 2k+1=4513.
+\end{equation}
+It yields
+\begin{align}\label{eq:newexample}
+ C_B&=c(3/4)+\frac{2256\{(443239/10^9)c(3/4)-2/12500\}}
+                         {4513-2256(443239/10^9)}\notag\\
+ &=0.419087888170111727959091183775\ldots.
+\end{align}
+The respective distinct companions are
+\[
+ (1+C_A)/2=0.709538868010284418416610862535\ldots,
+\]
+\[
+ (1+C_B)/2=0.709543944085055863979545591887\ldots.
+\]
+\end{corollary}
+
 The conclusion is for each fixed exponent and all sufficiently large
 heights in the asymptotic sense. We do not provide an effective starting
-height or uniformity as $\theta\downarrow\theta_0$. In particular, this
-does not lower Wang's positive-proportion threshold. The analytic dependency
+height or uniformity as an exponent approaches its endpoint. The pressure
+corollaries themselves concern $\theta>\theta_0$; the distinct parity
+argument in Theorem~\ref{thm:parity} supplies the qualitative extension
+below $\theta_0$. The common analytic dependency
 is Wang's inspected preprint theorem, whose underlying pair-correlation
 method is due to Baluyot, Goldston, Suriajaya, and
 Turnage-Butterbaugh~\cite{BGSTB,BGSTBcorrection}.
@@ -181,7 +343,7 @@ $\eta\in L^2(\R)$ with $\int\eta^2=1$, and define
  \widehat f(t)=\int_{\R}f(u)e^{-2\pi itu}\,du.
 \]
 Every $v_z$ belongs to $L^2$ because $Z$ is finite and the support is compact.
-Work in the finite-dimensional span $E$ of these vectors. Our inner product
+Work in the finite-dimensional span $\mathcal H$ of these vectors. Our inner product
 is $\langle v,w\rangle=\int\bar v w$, linear in the second variable; write
 $|v\rangle\langle w|$ for $h\mapsto v\langle w,h\rangle$.
 
@@ -235,7 +397,7 @@ Then
 \begin{proof}
 This is the unit-column case of the stability inequality in
 \cite[Section 2]{Ainta}. We give a spectral proof that keeps all zero
-eigenvalues. Let $m=\dim E$ and let $p_1\le\cdots\le p_m$ be the
+eigenvalues. Let $m=\dim\mathcal H$ and let $p_1\le\cdots\le p_m$ be the
 eigenvalues of $P$. If $d<m$, the min-max principle gives
 $\lambda_i(P+C)\le p_{i+d}$ for $1\le i\le m-d$: intersect the span
 of the first $i+d$ eigenvectors of $P$ with a codimension-at-most-$d$
@@ -277,6 +439,81 @@ This proof retains the signed off-line remainder throughout. The positive
 Gram defect belongs only to the actual simple real points. The second
 inequality in \eqref{eq:finite}, rather than elementary counting from a
 simple-zero proportion, will yield the distinct-zero companion.
+
+\subsection{Retaining multiplicity excess and parity}
+
+Keep the notation of Proposition~\ref{prop:finite}; in this subsection $k$
+counts nonreal pairs, not frame length. Let $O$ count the distinct real
+support points of odd multiplicity, and define the nonnegative excess
+\begin{equation}\label{eq:excess}
+ E=N-s-2r-2k.
+\end{equation}
+An atom of real multiplicity $m\ge2$ contributes $m-2$ to $E$; a nonreal
+pair of multiplicity $m$ contributes $2(m-1)$. Thus
+\begin{equation}\label{eq:oddexcess}
+ O\le s+E.
+\end{equation}
+Indeed, a nonsimple odd real point has multiplicity at least three and
+contributes at least one to $E$. This is a statement about distinct odd
+points, not a bound for odd-multiplicity copies.
+
+\begin{proposition}[Exact parity and distinct residuals]\label{prop:parity}
+For the finite multiset above,
+\begin{equation}\label{eq:finiteparity}
+ 3s\ge2N-Q+2O+D(G),\qquad
+ 6D_Z\ge7N-2Q+O+2D(G).
+\end{equation}
+\end{proposition}
+\begin{proof}
+The strong form already proved in Proposition~\ref{prop:finite} is
+\[
+ Q\ge4N-3s-4r-4k+D(G)=2N-s+2E+D(G).
+\]
+Write its nonnegative slack as
+$\sigma=Q-(4N-3s-4r-4k+D(G))$. Direct substitution gives the exact
+identities
+\begin{align}
+3s-\{2N-Q+2O+D(G)\}&=2(s+E-O)+\sigma,
+\label{eq:parityresidual}\\
+6D_Z-\{7N-2Q+O+2D(G)\}&=(s+E-O)+6k+2\sigma.
+\label{eq:distinctresidual}
+\end{align}
+Both right-hand sides are nonnegative by \eqref{eq:oddexcess}.
+\end{proof}
+
+For clarity, the atomic contributions to $s+E-O$ are zero at a simple
+real point, $m-2$ at a real even point, $m-3$ at a real odd point of
+multiplicity at least three, and $2(m-1)$ at a nonreal pair. This proves
+the bookkeeping for all integer multiplicities without a finite cutoff.
+The parity inequalities are consequences of the known stable multiplicity
+bound, not a claim of a new rank--trace theorem.
+
+\begin{remark}[Sharp accounting and a false shortcut]
+The inequality $2D_Z\ge N+s$ is false for general multisets: one real
+point of multiplicity three has $(N,s,D_Z)=(3,0,1)$. The exact difference
+is $2D_Z-N-s=2k-E$. Thus one cannot take one half of one plus the parity
+simple-zero bound to obtain \eqref{eq:paritydistinct}.
+
+Both residuals can vanish in a genuine finite Hilbert model. Take the
+probability density $\mathbf1_{[-1/2,1/2]}$ and distinct integer support
+points with multiplicities one or two. Their features are orthonormal,
+so $Q=s+4r$, $N=s+2r$, $O=s$, and $E=k=D(G)=\sigma=0$.
+This is sharpness of the finite bookkeeping. It does not assert that zeta
+zeros realize these configurations.
+\end{remark}
+
+One can also express the algebra as a scalar optimization. From normalized
+bounds $s-2e\ge c$ and $s+e\ge o$, with $s,e,o\ge0$, the exact minimum
+of $s$ in this relaxation is
+\begin{equation}\label{eq:relaxedLP}
+ \max\{0,c,(c+2o)/3\}.
+\end{equation}
+The three terms are immediate lower bounds. Conversely, take $s$ equal
+to the displayed maximum and $e=\max\{0,o-s\}$. If $s\ge o$, then
+$e=0$ and $s\ge c$; otherwise $s-2e=3s-2o\ge c$. This proves
+feasibility and the stated relaxation optimum. Extra total-mass or Gram
+constraints are not included, so no optimum over actual zero configurations
+is claimed.
 
 \section{From three-point energy to a density gain}
 
@@ -331,6 +568,64 @@ also covers $s<3$.
 
 The factor $1/3$ records the three shifted partitions. Overlapping triples
 cannot simply be summed without this step.
+
+\subsection{Odd frames and exact pressure accounting}
+
+The next construction adds energies of pair-disjoint triples inside one
+frame. It applies defect pinching only between disjoint full frames. This
+distinction is essential: arbitrary overlapping triple defects cannot be
+summed. For instance, two consecutive three-by-three all-ones blocks have
+total defect ten, while their four-by-four all-ones parent has defect eight.
+
+\begin{lemma}[Odd-frame pressure bound]\label{lem:oddframe}
+Let $K$ be a real even positive-type kernel with $K(0)=1$, satisfying
+\eqref{eq:pressure} with parameters $p,\varepsilon>0$. Let $k\ge1$,
+$M=2k+1$, and $k\varepsilon\le1$. For the Gram matrix of $s$ ordered
+points of total span $\ell$, set
+\[
+ \alpha=\frac{k\varepsilon}{M},\qquad
+ \beta=\frac{(M-1)p}{M}=\frac{2kp}{M}.
+\]
+Then
+\begin{equation}\label{eq:oddpacking}
+ D(G)\ge\alpha(s-M+1)-\beta\ell.
+\end{equation}
+As before, set $\ell=0$ for $s\le1$.
+\end{lemma}
+\begin{proof}
+For an $M$-point frame $y_1\le\cdots\le y_M$, select triples
+$(y_{2j-1},y_{2j},y_{2j+1})$, $1\le j\le k$. They share at most one
+vertex and no unordered pair. Thus their doubled pair energies sum to at
+most $\cE(G_F)$, while their spans telescope:
+\[
+ \sum_{j=1}^k(y_{2j+1}-y_{2j-1})=y_M-y_1=:\ell_F.
+\]
+Adding their pressure inequalities gives
+$\cE(G_F)+p\ell_F\ge k\varepsilon$. By Lemma~\ref{lem:pinch},
+\begin{equation}\label{eq:framepressure}
+ D(G_F)+p\ell_F\ge k\varepsilon.
+\end{equation}
+Indeed, if $\cE(G_F)\le1$, then $D(G_F)\ge\cE(G_F)$; otherwise
+$D(G_F)\ge1\ge k\varepsilon$. This is where the unit cap is used.
+
+Partition the full sequence into complete frames with starts in one
+residue class modulo $M$, adding unused indices as singletons. Within
+each class the frames are disjoint. Across all $M$ classes, there are
+exactly $(s-M+1)_+$ complete frames, one for each possible start. Expanding
+their spans into adjacent gaps gives
+\[
+ \sum_{a=1}^{s-M+1}(x_{a+M-1}-x_a)\le(M-1)\ell,
+\]
+because each gap occurs at most $M-1$ times. Apply pinching and
+\eqref{eq:framepressure} in each class and average. This gives
+\eqref{eq:oddpacking} for $s\ge M$. For $s<M$ its right side is
+nonpositive, so nonnegativity of $D$ completes the proof.
+\end{proof}
+
+The construction is a simple nonuniform pair-capacity schedule within
+the prior global pressure/frame methods of~\cite{Ainta,Trmdy,Tawan,Shi}.
+Its short-interval consequence is obtained below from the exact finite
+operator, without an additional large-frame Gram approximation.
 
 \section{A quantitative obstruction for the cosine kernel}
 
@@ -533,7 +828,207 @@ $d=\delta$. Its constant equals \eqref{eq:cstar}. The gain is strictly
 positive because $R>2/c(\theta)$.
 \end{proof}
 
-\section{The certified numerical example}\label{sec:certificate}
+\begin{proof}[Proof of Theorem~\ref{thm:pressure}]
+First fix $0<\varepsilon'<\varepsilon$, keeping $p$ and $k$ fixed.
+Choose fixed smooth densities $f_j$ supported inside
+$(-\lambda_j/2,\lambda_j/2)$, with $\lambda_j<\theta$, converging to
+$f_\theta$ in $L^1$ and $L^2$. The uniform estimate
+\eqref{eq:uniform} changes the triple energy by at most
+$12\|f_j-f_\theta\|_1$. Thus every sufficiently large $j$ satisfies
+the all-gap pressure inequality with the same $p$ and target
+$\varepsilon'$. Also $k\varepsilon'<1$.
+
+Put $M=2k+1$, $\alpha'=k\varepsilon'/M$ and $\beta=2kp/M$.
+For each individual fixed $j$, Proposition~\ref{prop:finite} and
+Lemma~\ref{lem:oddframe} give
+\[
+ (1-\alpha')\frac{s}{N}\ge2-\frac QN
+ -\beta\frac{X_T}{N}-\frac{\alpha'(M-1)}{N}.
+\]
+Take $T\to\infty$ with this test fixed. If $c_j=2-\cC(f_j)$ and
+$b_j=(c_j-\beta)/(1-\alpha')$, then $\liminf s/N\ge b_j$.
+The stronger finite inequality for distinct points gives
+\[
+ 2\liminf\frac{N^d(T,T^\theta)}{N}
+ \ge1+c_j+\alpha'b_j-\beta=1+b_j.
+\]
+The identity follows from $(1-\alpha')b_j=c_j-\beta$. It does not
+use the false general counting shortcut $N^d\ge(N+s)/2$.
+
+Now let $j\to\infty$, so $c_j\to c(\theta)$, and finally let
+$\varepsilon'\uparrow\varepsilon$. The limiting denominator is at
+least $M-1>0$, including the endpoint $k\varepsilon=1$.
+This proves both proportions in Theorem~\ref{thm:pressure}.
+No support parameter or smoothing scale varies within a height limit.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:wholecurve}]
+Lemma~\ref{lem:gap} gives the compact energy bound with $d=\delta$.
+Nonnegativity outside its triangle gives the all-gap inequality
+\[
+ 2\{K_\theta(u)^2+K_\theta(v)^2+K_\theta(u+v)^2\}
+ +(d/R)(u+v)\ge d.
+\]
+Apply Theorem~\ref{thm:pressure} with $\varepsilon=d$ and $p=d/R$.
+The gain coefficient satisfies
+\[
+ \frac{kd}{2k+1-kd}-\frac d{3-d}
+ =\frac{d(k-1)}{(2k+1-kd)(3-d)}>0
+\]
+for $k>1$. Finally $b\le q/2$ and $B>q$ in \eqref{eq:explicit}, so
+$2(b/B)^2<1/2$ and $0<\delta=(b/B)^2<1/4$. Thus $k=2$ is always
+admissible, giving the stronger entire positive curve.
+\end{proof}
+
+The same compact-to-pressure conversion works with any stronger certified
+$d$, using strict lower targets during smoothing before the final scalar
+limit. In particular $d=1/7000$, $R=21/4$, $k=7000$ gives
+\eqref{eq:reuseexample}. Its gain relative to the original triple bound
+is exactly $(3-d)/2=20999/14000$. This is a ratio of gains above Wang's
+baseline, not a ratio of the full proportions.
+
+\section{Classical odd zeros and the range extension}\label{sec:parityproof}
+
+The positive Gram defect is useful for quantitative pressure improvements.
+For the qualitative parity theorem we may discard it: the multiplicity
+excess in the same finite inequality already supplies the missing
+information when combined with a classical sign-change theorem.
+
+\subsection{The exact classical count and interval packing}
+
+We use the following fixed consequence of Selberg's theorem, stated as
+Theorem B on p.~523 of Karatsuba~\cite{Karatsuba}: for the fixed
+$\alpha=51/100$ there exist constants $a>0$ and $t_a$ such that
+\begin{equation}\label{eq:seed}
+ N_{\rm odd}(t,t^\alpha)\ge a t^\alpha\log t\qquad(t\ge t_a).
+\end{equation}
+The zeros in this count are distinct and of odd order on the critical
+line. Karatsuba's stronger main theorem, p.~524, gives the same kind of
+bound for $\alpha=27/82+\epsilon$, $0<\epsilon\le0.001$. His final
+argument in Section~12, p.~536, selects disjoint sign-changing intervals;
+this confirms the distinct-count convention. The main theorem and final
+counting passage were checked in the actual PDF as well as its extracted
+text. We import the classical theorem and its analytic estimates; we do
+not reprove them. The older original Selberg paper was not independently
+acquired, so our source for its exact statement is Karatsuba's primary
+article.
+
+Fix $\alpha<\theta<1$ and put $H=T^\theta$. Starting at $t_0=T$, define
+$t_{j+1}=t_j+t_j^\alpha$ and keep all complete adjacent intervals lying
+inside $(T,T+H]$. Their total length is $H-O(T^\alpha)=H(1-o(1))$.
+Their endpoints are all $T(1+o(1))$, and hence their logarithms are
+$\log T+o(1)$. Summing \eqref{eq:seed} gives
+\begin{equation}\label{eq:packedodd}
+ N_{\rm odd}(T,H)\ge (a+o(1))H\log T.
+\end{equation}
+If a seed is stated with different open or closed endpoint conventions,
+at most two distinct points per block must be removed. There are
+$O(H/T^\alpha+1)$ blocks, so this loss is $o(H\log T)$ and does not
+change the conclusion. Counting odd copies instead would not justify
+this bounded endpoint loss, which is another reason to keep the precise
+classical convention.
+
+The Riemann--von Mangoldt formula gives
+$N(T,H)\sim H\log T/(2\pi)$. Choose once and for all a sufficiently
+small $\kappa>0$ with $\kappa<2\pi a$. Then
+\begin{equation}\label{eq:oddseedlimit}
+ \liminf_{T\to\infty}\frac{N_{\rm odd}(T,T^\theta)}{N(T,T^\theta)}
+ \ge\kappa
+ \qquad\hbox{for every fixed }\alpha<\theta<1.
+\end{equation}
+The same $\kappa$ works because it was chosen from the one fixed seed.
+Only the eventual height is allowed to depend on $\theta$. Nothing here
+permits $\theta-\alpha$ to shrink with $T$.
+
+\subsection{Fixed-test transfer, including nonpositive cosine bounds}
+
+Fix $\alpha<\theta<1$ and $0<\lambda<\theta$. Use the transformed
+zeta multiset and one fixed smooth probability density $f=\eta^2$ with
+support in $(-\lambda/2,\lambda/2)$ from the arithmetic transfer above.
+Its real simple and odd points are precisely those counted by $N_0^s$
+and $N_{\rm odd}$. Equations \eqref{eq:unweighted} and
+\eqref{eq:functional} give
+\[
+ Q/N\longrightarrow\cC(f).
+\]
+This is an exact unweighted pair sum followed by an asymptotic limit.
+The weight removal uses Wang's theorem separately for two fixed test
+functions, including the differentiated test; it does not assume that
+individual complex pair terms are nonnegative. Its normalized error is
+$O_f(1/\log T+T^{\lambda-\theta}\log T)=o(1)$.
+
+Apply Proposition~\ref{prop:parity}, Proposition~\ref{prop:finite},
+$D(G)\ge0$, $N^d\ge N_{\rm odd}$, and \eqref{eq:oddseedlimit}.
+For this fixed test we obtain
+\begin{align*}
+\liminf N_0^s/N&\ge\max\{0,2-\cC(f),[2-\cC(f)+2\kappa]/3\},\\
+\liminf N^d/N&\ge\max\{\kappa,[3-\cC(f)]/2,
+                            [7-2\cC(f)+\kappa]/6\}.
+\end{align*}
+Choose the normalized squares of smooth cutoffs of the cosine square
+root described earlier, with fixed support parameter $\lambda$.
+After the height limit, let the cutoff converge in $L^1$ and $L^2$ to
+$f_\lambda$. Then $\cC(f)\to2-c(\lambda)$ by \eqref{eq:cost}.
+Finally let $\lambda\uparrow\theta$. Continuity gives
+\eqref{eq:paritysimple}--\eqref{eq:paritydistinct}. This argument is
+valid when $c(\lambda)\le0$; positivity was needed for the pressure gain,
+not for the pair-sum limit or the finite inequalities.
+
+For completeness, the cosine cost also has a short direct evaluation.
+Let $J(x)=\int|x-y|f_\lambda(y)\,dy$. On the support interior,
+$J''=2f_\lambda$ and $f_\lambda''=-2f_\lambda$. The even function
+$f_\lambda+J$ is therefore constant. At $b=\lambda/2$ it equals
+$b+\cot(\lambda/\sqrt2)/\sqrt2$, since $J(b)=b$. Multiplication by
+$f_\lambda$ and integration gives
+\[
+ \cC(f_\lambda)=\frac\lambda2+
+               \frac1{\sqrt2}\cot(\lambda/\sqrt2)=2-c(\lambda).
+\]
+The legal order is thus fixed test, height limit, smooth approximation,
+and support limit. No test or derivative degree grows with the height.
+
+\subsection{Proof of the strict range statements}
+
+The definition of $\theta_0$ and the derivative formula require no
+computed root. To verify $\alpha<\theta_0$, put $a_0=\alpha/\sqrt2$.
+The elementary bounds $\cos a_0\ge1-a_0^2/2>0$ and
+$0<\sin a_0/a_0\le1$ imply
+\[
+ a_0\cot a_0\ge1-\alpha^2/4,
+ \qquad c(\alpha)\le2-\frac1\alpha-\frac\alpha4
+                  =-\frac{1801}{20400}<0.
+\]
+Also $\tan x>x$ on $(0,\pi/2)$ gives $c(1)>1/2$, and
+$c'(\theta)>0$ gives the unique zero. On $[\alpha,\theta_0]$,
+\begin{equation}\label{eq:derivativecap}
+ c'(\theta)=\tfrac12\cot^2(\theta/\sqrt2)
+     <\frac1{\theta^2}\le\frac{10000}{2601}<4.
+\end{equation}
+
+For $\delta$ in \eqref{eq:paritydelta}, we have
+$\alpha<\theta_1<\theta_0$ and
+\[
+ c(\theta_1)=-\int_{\theta_1}^{\theta_0}c'(t)\,dt
+             >-4\delta\ge-\kappa.
+\]
+The right-hand side of \eqref{eq:paritysimple} is therefore greater
+than $\kappa/3$ at $\theta_1$, and is no smaller at any fixed larger
+exponent. With $\delta_{\rm half}$ in \eqref{eq:halfdelta}, the same
+argument gives $c(\theta_{\rm half})>-\kappa/4$; the separately proved
+distinct formula yields
+\[
+ \frac{3+2c(\theta_{\rm half})+\kappa}{6}
+      >\frac12+\frac\kappa{12}.
+\]
+This proves the remaining claims of Theorem~\ref{thm:parity}.
+
+At $\theta_0$ itself, \eqref{eq:paritysimple} gives a lower proportion
+at least $2\kappa/3>0$. The strict extension follows from this positive
+margin and continuity, without a new pair-correlation support estimate.
+Its numerical size remains unknown because the imported fixed classical
+constant has not been evaluated.
+
+\section{The inherited compact certificate}\label{sec:certificate}
 
 For $\theta=3/4$ and $R=21/4$, the recorded finite computation proves
 \begin{equation}\label{eq:numericalgap}
@@ -654,25 +1149,189 @@ The canonical preorder tree has SHA-256 digest
 78829635026aeacd69c02213cc899b5029ef2566bbfaf1c86b757cc5f92ffe55
 \end{center}
 
+\section{The new pressure certificate and separate stage outcomes}
+
+For the rational parameters \eqref{eq:newparams}, pressure alone proves
+\eqref{eq:pressure} when $u+v\ge R_{\rm cut}=\varepsilon/p=443239/80000$.
+The new finite computation certifies the remaining closed triangle. It
+reconstructs a complete binary partition of the square
+$[0,R_{\rm cut}]^2$. Each leaf is either accepted by an outward-rounded
+energy-plus-pressure bound on its entire rectangle, or by the exact
+inequality $p(u_0+v_0)\ge\varepsilon$ at its lower corner. Equality at
+the cutoff is permitted. Outside the square, pressure alone suffices.
+
+The energy enclosure is the one justified in \eqref{eq:lipschitz}; the
+pressure contribution on a box is bounded below by $p(u_0+v_0)$.
+The certificate has 16,797 nodes, 8,351 validated energy-plus-pressure
+leaves, 48 pressure-only leaves, and zero unresolved boxes. Construction
+uses Arb at 160 bits. Every accepted leaf is replayed at 256 bits with the
+separately derived sinc-Taylor evaluator. These evaluators share Arb,
+geometric subdivision, and the Lipschitz estimate; this is not a wholly
+independent verifier or a formal proof of the analytic theorem.
+
+The declared EXP-003 campaign had two independent stages. Stage A reused
+the earlier 48,761-node certificate, checked two symbolic identities and
+328 small-index incidence/boundary cases, and established $C_A$ in
+\eqref{eq:reuseexample}. Its complete 256-bit replay took about 26.9
+seconds, below the one-minute cap. Stage B required a new pressure
+certificate whose gain exceeded $5/4$ of the Stage A gain. The new result
+has
+\[
+ C_B-c(3/4)=0.000012875194687394224537573076\ldots,
+\]
+and
+\[
+ (C_B-c(3/4))-\tfrac54(C_A-c(3/4))
+ =0.000009471388256765351202430110\ldots>0.
+\]
+Together with $k\varepsilon=999947184/10^9<1$, the finite certificate and
+Theorem~\ref{thm:pressure} prove the new part of
+Corollary~\ref{cor:pressureexample}.
+
+The single floating design pass took about 0.25 seconds and froze three
+rational candidates before certification. Samples were used only to
+choose parameters. The first candidate completed construction and full
+replay in about 5.2 seconds, within the combined ten-minute and two-million
+node cap. Candidates two and three were not run after this success; they
+remain neither confirmed nor refuted. No global optimization claim follows.
+
+An initial ten-node smoke run demonstrated flushed progress, checkpoint
+creation, resume equal to a fresh construction, and rejection of mismatched
+parameters. Construction checkpoints are candidate proof state; completed
+certificates require final arithmetic replay. A replay restart checks the
+checkpoint identity and revalidates its entire prefix. It does not claim
+to save the prefix's arithmetic work. Restoration and rechecking count
+inside the remaining budget. A forged completed prefix with recomputed
+hashes is rejected by the leaf arithmetic. The recorded focused suite had
+29 passing tests at this milestone.
+
+The canonical result, frozen candidates, pressure proof tree, provenance
+hashes, budget receipts, and exact rational endpoints are preserved in
+EXP-003~\cite{RecordIII}. Mathematical artifacts use deterministic UTF-8/LF
+bytes; elapsed-time logs are separate metadata. To reproduce with the
+repository virtual environment, run each command with a fresh output
+directory:
+\begin{verbatim}
+python problems/number-theory/riemann-hypothesis/experiments/\
+  EXP-003-odd-frame-pressure/run.py --stage A \
+  --output-dir tmp/riemann-a
+python problems/number-theory/riemann-hypothesis/experiments/\
+  EXP-003-odd-frame-pressure/run.py --stage smoke \
+  --output-dir tmp/riemann-smoke
+python -m pytest tests/test_riemann_pressure.py
+\end{verbatim}
+The Stage B command and its frozen-candidate arguments are given in the
+experiment verdict to avoid an overlong shell line here. The displayed
+backslashes are typographical line continuations; combine each command
+on shells that use another continuation convention.
+
+\section{Parity verification and its analytic boundary}
+
+The parity hypothesis and source preflight were committed before any
+finite checking as \texttt{e03413b}. The EXP-004 record~\cite{RecordIV}
+separates the exact certificates \eqref{eq:parityresidual}--
+\eqref{eq:distinctresidual}, universal atom formulas, finite regression
+censuses, the scalar relaxation \eqref{eq:relaxedLP}, sharpness examples,
+and the analytic source audit. No interval optimization, zeta-zero
+sampling, or GPU computation is needed for this route. In particular,
+the classical $\kappa$ and the new numerical exponent are deliberately
+unevaluated fields, not outputs of a finite census.
+
+The completed scientific verdict confirms the qualitative range theorem
+within the stated analytic inputs. The full paper proof and coordinating
+audit were committed as \texttt{6984177}. Its independent reviews cover the
+signed finite operator, multiplicity charges, distinct-odd convention,
+interval packing, exact deweighting, and legal limiting sequence. A separate
+\href{https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/proof-review.json}{proof-review record}
+binds the proof, audit, hypothesis, result, and verdict by their hashes.
+
+The single declared arithmetic run passed in about 8.04 seconds, within the
+fixed 60-second budget. It verified two symbolic residual identities and
+nonnegative arbitrary-multiplicity atom families, supplemented by 24
+single-atom cases through multiplicity 12. The full census consists of
+19,683 count vectors in $\{0,1,2\}^9$, with 59,049 evaluations at three
+nonnegative slack values. All 42 rational scalar-relaxation cases have
+matching feasible primal and dual witnesses. All 36 finite sinc
+simple/double-support examples attain equality, while a real triple point
+rejects the false distinct half-sum with residual $-1$. The exact derivative
+identity and rational comparisons in \eqref{eq:derivativecap} passed.
+
+The focused software suite had 36 passing tests, including count tampering,
+exact committed-source bytes, preservation of an incomplete census prefix,
+input rejection, and overwrite refusal. Two reviewers separately parsed
+every stored census row with direct formulas without importing the runner;
+all count vectors, residuals, linked artifact hashes, and intentionally null
+numerical constants matched. No failed full run, replacement parameter
+search, or budget extension occurred. The original process outputs were
+copied unchanged into the public experiment record. Operational timing is
+kept separate from deterministic mathematical bytes.
+
+The canonical result has SHA-256 digest
+\begin{center}\small\ttfamily
+bc9e28ca1792657e24da77268e6e2108c3f52684b7e16504f07b32cfce014d6e
+\end{center}
+To reproduce the declared finite campaign in a fresh directory, use
+\begin{verbatim}
+python problems/number-theory/riemann-hypothesis/experiments/\
+  EXP-004-parity-density-transfer/run.py \
+  --output tmp/riemann-parity-replay
+pytest tests/test_riemann_parity.py
+\end{verbatim}
+The displayed backslashes are typographical line continuations. The exact
+receipt certifies the recorded algebra and finite controls. The universal
+atom argument, Selberg's theorem, interval packing, Wang's fixed-test
+transfer, and the approximation limits supply the unbounded quantifiers.
+A finite PASS cannot establish those analytic statements by enumeration.
+The census slack samples are not claimed to be geometric realizations of
+zeta zeros, and the scalar optimum concerns only the stated relaxation.
+
+\section{Source audit and limitations}
+
 The source comparison was completed on 2026-09-12. It used the full
 Wang v1 manuscript, Lamzouri v2, the current Alp\"oge--Furman paper,
-and pinned snapshots of the directly relevant global stability
-repositories. Queries combining the Wang identifier, short intervals,
+and pinned snapshots of the directly relevant global stability,
+pressure-frame, Bellman-coboundary, and mixed-certificate repositories.
+Queries combining the Wang identifier, short intervals, pressure,
 stability, Gram defects, and exact numerical signatures found no prior
-public statement of this short-interval refinement. This supports the
+public statement of these short-interval refinements. The exact odd-frame
+schedule was not located, but is a simple instance of known global pair
+capacities and pressure methods. The globally asserted spectrum-energy
+envelope is excluded from new-theorem claims. This supports the
 scoped contribution claimed here, without establishing exhaustive
 priority or detecting unpublished concurrent work. The known finite
 stability inequality and cosine-root mechanism are explicitly credited
 to the repository identifier \texttt{ainta}; no personal author identity
 is inferred from that identifier.
 
-The theorem relies on established classical analytic inputs through
-Wang's recent preprint, not on an end-to-end machine formalization of
-those inputs. The analytic and numerical reviews can still contain
-errors, and the two numerical evaluators share arithmetic and geometric
-components. No effective height threshold, uniform exponent limit,
-lower positivity threshold, global-record claim, or elimination of all
-off-line zeros follows from this work.
+The parity preflight additionally inspected Karatsuba's complete primary
+paper, Steuding's archived dissertation and published abstract, and
+\emph{Short mollifiers of the Riemann zeta-function}~\cite{CFKL}.
+The short-mollifier result concerns critical-zero density
+using higher derivatives; it supplies no automatic simple-zero theorem.
+Steuding's stated localized theorem uses the first derivative. His proof
+suggests a route to fixed higher derivatives, but a uniform two-shift
+extension, the detector's exact counting convention, and a certified
+explicit seed would all require additional proof. None is assumed here.
+Likewise, weighted all-critical Gram defects and negative off-line spectral
+mass are separate research directions, not premises of the parity theorem.
+
+A bounded search of primary literature and the pinned contributor sources
+did not locate the exact short-interval parity combination. The finite
+accounting is already a consequence of known general multiplicity
+inequalities; the claimed contribution is its stated and proved asymptotic
+consequence with a classical odd-zero seed. This is not an assertion of
+exhaustive priority or a replacement for specialist peer review. In
+particular, no numerical improvement on the best explicit published
+positivity exponent is asserted.
+
+The analytic inputs include Wang's recent preprint and the classical
+sign-change theorems, not an end-to-end machine formalization. The
+mathematical and numerical reviews can still contain errors, and the
+two numerical evaluators share arithmetic and geometric components.
+The parity theorem gives an existentially smaller fixed exponent; it
+does not give its decimal value, an effective starting height, uniformity
+for moving exponents, a global-record proportion, or elimination of all
+off-line zeros.
 
 AI assistance was used for derivation, source research, adversarial
 review, and implementation. These automated reviews do not constitute
@@ -683,7 +1342,26 @@ retain their own licenses. In particular, local copies of arXiv texts
 with nonexclusive-distribution licenses are not relicensed by this
 manuscript.
 
-\begin{thebibliography}{9}\small\raggedright
+\section{Conclusions and further questions}
+
+Finite stability retains two different kinds of information. The Gram
+defect yields quantitative gains when simple critical points occur close
+enough for certified pressure windows to interact. Multiplicity excess,
+combined with distinct odd-multiplicity density, yields a qualitative
+range extension even at the zero of the baseline cosine bound. The
+two mechanisms have separate hypotheses, certificates, and distinct-zero
+consequences; neither proves the Riemann hypothesis.
+
+The next analytic task for the parity route is to make one classical
+seed constant explicit enough to evaluate $\theta_1$. A further localized
+short-mollifier argument might supply stronger seed information, but the
+necessary general derivative theorem and precise zero count must first
+be proved. For the pressure route, richer windows may improve constants
+within the established framework; their existence does not establish
+global optimality. These are open tasks rather than conclusions of the
+present manuscript.
+
+\begin{thebibliography}{99}\small\raggedright
 
 \bibitem{AF}
 L.~Alp\"oge and R.~Furman,
@@ -704,6 +1382,43 @@ B.~Wang,
 \emph{Simple critical zeros and distinct zeros of the Riemann
 zeta-function in short intervals}, arXiv:2609.07918v1 (2026).
 \url{https://arxiv.org/abs/2609.07918v1}.
+
+\bibitem{Karatsuba}
+A.~A.~Karatsuba,
+\emph{On the zeros of the function $\zeta(s)$ on short intervals of the
+critical line}, Mathematics of the USSR-Izvestiya \textbf{24} (1985),
+523--537; Russian original, Izvestiya Akademii Nauk SSSR, Seriya
+Matematicheskaya \textbf{48} (1984), 569--584. Theorem B on p.~523
+reproduces Selberg's classical odd-zero density theorem; the main theorem
+is on p.~524 and the distinct sign-change count is in Section~12.
+\url{https://doi.org/10.1070/IM1985v024n03ABEH001246}.
+\url{https://www.mathnet.ru/eng/im1456}.
+
+\bibitem{Steuding}
+J.~Steuding,
+\emph{On simple zeros of the Riemann zeta-function in short intervals},
+Acta Mathematica Hungarica \textbf{96} (2002), 259--308.
+The publisher abstract gives the exponent $0.552$; the corresponding
+detailed proof was inspected in the author's dissertation below.
+\url{https://doi.org/10.1023/A:1019767816190}.
+
+\bibitem{SteudingThesis}
+J.~Steuding,
+\emph{On simple zeros of the Riemann zeta-function},
+doctoral dissertation, Universit\"at Hannover, defense December 1998,
+archived January 1999. Theorem 2.1 and its consequences on printed
+pp.~10--12; derivative estimates and the degree restriction discussed
+later in the proof.
+\url{https://webdoc.sub.gwdg.de/ebook/e/1999/steuding/253563305.pdf}.
+
+\bibitem{CFKL}
+J.~B.~Conrey, D.~W.~Farmer, C.-H.~Kwan, Y.~Lin, and
+C.~L.~Turnage-Butterbaugh,
+\emph{Short mollifiers of the Riemann zeta-function},
+arXiv:2508.11108v1 (2025).
+Theorem 1 gives the sufficiently-short-mollifier result; the full-range
+extension is posed as a question in Section 7.
+\url{https://arxiv.org/abs/2508.11108v1}.
 
 \bibitem{Ainta}
 \texttt{ainta} (repository maintainer identifier),
@@ -730,6 +1445,23 @@ of the Riemann zeta-function}, Acta Arith. \textbf{214} (2024), 357--376;
 arXiv:2306.04799.
 \url{https://arxiv.org/abs/2306.04799}.
 
+\bibitem{Tawan}
+\texttt{tawanerguo-cn} repository and contributors,
+\emph{Zeta simple-zero refinements}, research repository, 2026.
+Pinned commit \texttt{45149f6d403059a71be73c5e3f884cee7cd62b20};
+trace-energy envelope, pressure frames, Bellman coboundaries, and global
+spectral dual notes; accessed 2026-09-12.
+\href{https://github.com/tawanerguo-cn/zeta-simple-zeros/tree/45149f6d403059a71be73c5e3f884cee7cd62b20}{Pinned source repository}.
+
+\bibitem{Shi}
+Y.~Shi,
+\emph{Zeta simple-zero proportion via simultaneous pressure certificates},
+research repository, 2026. Inspected commit
+\texttt{1aeda8e9f0678166a824c75313a813b09eb478cd};
+proof outline, manuscript, and claim ledger; accessed 2026-09-12.
+\href{https://github.com/yuhangshi888/zeta-simple-zeros-673316977/tree/1aeda8e9f0678166a824c75313a813b09eb478cd}{Pinned source repository}.
+Earlier archived release: \url{https://doi.org/10.5281/zenodo.21926962}.
+
 \bibitem{BGSTBcorrection}
 S.~A.~C.~Baluyot, D.~A.~Goldston, A.~I.~Suriajaya, and C.~L.~Turnage-Butterbaugh,
 \emph{Pair correlation of zeros of the Riemann zeta function I:
@@ -744,6 +1476,29 @@ F.~Santiba\~nez-Leal,
 stability}, CAOS Research, 2026. Proof, source comparisons, code, exact
 partition certificate, and adversarial audit.
 \url{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis}.
+
+\bibitem{RecordIII}
+F.~Santiba\~nez-Leal,
+\emph{EXP-003: odd-frame amplification and pressure certificates},
+CAOS Research, 2026. Declaration committed before computation, complete
+paper proof, independent audits, exact incidence checks, frozen candidates,
+and exhaustive two-path certificates.
+\href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure}{Public experiment record}.
+
+\bibitem{RecordIV}
+F.~Santiba\~nez-Leal,
+\emph{EXP-004: parity-density transfer}, CAOS Research, 2026.
+Declared hypothesis, primary-source audit, complete finite and asymptotic
+proof, exact-check campaign, and confirmed coordinating verdict, dated
+2026-09-12. Confirmation is within the stated mathematical inputs and
+does not assert external peer acceptance or exhaustive priority.
+\href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer}{Public experiment record}.
+
+\bibitem{FirstVersion}
+F.~Santiba\~nez-Leal,
+\emph{A stability refinement for simple critical zeros in short intervals},
+version 0.01, CAOS Research preprint, 2026.
+\url{https://doi.org/10.5281/zenodo.22727389}.
 
 \end{thebibliography}
 \end{document}

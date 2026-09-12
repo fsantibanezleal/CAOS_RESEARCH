@@ -1,7 +1,9 @@
 # 4. Experiments, certificates, and reproduction
 
-The mathematical evidence consists of two declared experiments. Their
-hypotheses were committed as `266486f` before the reported computations.
+The mathematical evidence consists of four declared experiments. EXP-001/002
+hypotheses were committed as `266486f`; EXP-003 was declared in `8ed806d`,
+with its complete pressure-method source preflight before computation. EXP-004
+was declared in e03413b before its implementation and exact census.
 The [first verdict](../experiments/EXP-001-source-and-constant-audit/verdict.md)
 is a reproduction and algebraic audit. The
 [second verdict](../experiments/EXP-002-short-interval-stability/verdict.md)
@@ -161,7 +163,7 @@ from a finite list of zeros nor an effective guarantee at a specified height.
 ## Reproduction from the repository root
 
 Use the repository's pinned Python environment. The source archive contains
-21 primary-source documents and four permissively licensed code snapshots.
+62 source documents/pages and six permissively licensed code snapshots.
 Raw files whose redistribution permission was not identified remain in the
 ignored local cache; the public manifest records how to restore exact bytes.
 
@@ -202,9 +204,85 @@ mathematical validation by separate agents, rather than community peer review.
 The [audit](../experiments/EXP-002-short-interval-stability/adversarial-audit.md)
 records what was checked and why tempting shortcuts were invalid.
 
-Passing the tests does not establish a new positivity exponent, a global
+Passing EXP-001/002 tests does not establish a new positivity exponent, a global
 record, a starting height, a full upstream Lean replay, or the Riemann
-hypothesis. The candidate contribution has a complete mathematical record;
+hypothesis. The later EXP-004 range extension has its own universal proof below. The candidate contribution has a complete mathematical record;
 its analytic acceptance and priority remain subject to outside scrutiny.
 
 [Previous: full proof](03-mechanism.md) | [Next: open questions](05-open-questions.md)
+
+
+## EXP-003: odd-frame amplification and a new pressure certificate
+
+[The third verdict](../experiments/EXP-003-odd-frame-pressure/verdict.md) confirms
+two separate predictions. Stage A checks the stronger alternating-frame assembly,
+including 328 pair-incidence/span/boundary cases and two symbolic identities, then
+replays the entire 48,761-node prior certificate. Its gain over EXP-002 increases
+by the exact factor $20999/14000$.
+
+Stage B performed one deterministic floating design pass over 16 pressure values,
+using the previous EXP-002 exploration only as additional witness seeds. It froze
+three rational candidates before certification. The first candidate passed; the
+remaining two are recorded as not run after that success. A sampled minimum was
+never accepted as a certificate. The full new tree has 16,797 nodes and its exact
+parameters are $p=1/12500$, $\epsilon=443239/10^9$ at $\theta=3/4$.
+
+The new acceptance functional is $E_3(u,v)+p(u+v)\ge\epsilon$. Its cutoff
+$\epsilon/p=443239/80000$ is derived from the same rational parameters.
+Pressure-only leaves use the exact inequality at each box's lower endpoints,
+including equality. Other leaves certify the whole cell with an outward energy
+bound plus the exact minimum pressure. The full square is reconstructed, and
+pressure alone covers everything outside it in the nonnegative quadrant.
+
+Construction genuinely resumes from its saved candidate partition. Replay validates
+checkpoint identity and rechecks the prefix arithmetic before continuing; it does
+not trust saved acceptance claims or promise to skip that work. The tiny smoke
+forced a ten-node stop, checked flushed output and exact construction resume, and
+rejected mismatched parameters. Budget time includes replay restoration. The
+record distinguishes deterministic mathematical outputs from operational timings.
+
+Canonical [result](../experiments/EXP-003-odd-frame-pressure/artifacts/result.json),
+[frozen candidate list](../experiments/EXP-003-odd-frame-pressure/artifacts/candidates.json),
+[runner](../experiments/EXP-003-odd-frame-pressure/run.py),
+[checker](../code/riemann_pressure.py) and
+[adversarial audit](../experiments/EXP-003-odd-frame-pressure/adversarial-audit.md)
+preserve the complete evidence. The [replay guide](../../../../docs/guides/riemann-replay.md)
+contains the current reproduction commands. Committed source hashes bind the reused
+certificate, declaration, code, runner, exploration seeds and frozen candidates.
+
+
+## EXP-004: exact parity transfer and a qualitative range extension
+
+The [fourth verdict](../experiments/EXP-004-parity-density-transfer/verdict.md)
+is confirmed. The full [Chapter 7 proof](07-parity-density-transfer.md) retains
+odd critical support and multiplicity excess in the signed-operator inequality,
+then combines one fixed classical density seed with Wang's fixed-test theorem.
+Its precise quantifiers produce some fixed $\theta_1<\theta_0$, with positive
+simple-critical density for every fixed exponent at least $\theta_1$ and below one.
+No unspecified constant is replaced with a guessed numerical value.
+
+The declaration froze two residual identities, multiplicity atoms, a census of
+19,683 vectors with three slack values each, 42 rational relaxation controls,
+36 sinc sharpness cases, and one false distinct-count control. All passed in the
+single full run, 8.0353704 seconds against a 60-second budget. The 36 focused
+software tests also passed. Two reviewers separately parsed every raw census
+row with direct formulas, without importing the experiment runner.
+
+The canonical result has SHA-256
+`bc9e28ca1792657e24da77268e6e2108c3f52684b7e16504f07b32cfce014d6e`.
+The 1,234,096-byte full census, original flushed stdout, operational timing,
+exact witnesses, checkpoint and execution receipt are preserved under
+[artifacts](../experiments/EXP-004-parity-density-transfer/artifacts/).
+The runner reports finite arithmetic success separately from the all-height
+claim. A [hashed review record](../experiments/EXP-004-parity-density-transfer/proof-review.json)
+binds the final proof, audit, hypothesis, result and verdict. The public exporter
+requires both gates; changed proof bytes invalidate the review binding.
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/run.py --output tmp/riemann-parity-replay
+pytest tests/test_riemann_parity.py
+```
+
+The elementary primal/dual result proves optimality only in its declared scalar
+relaxation, not among all Gram methods or zeta arguments. Checkpoint prefixes
+record interrupted work; the complete census is rechecked on fresh replay.

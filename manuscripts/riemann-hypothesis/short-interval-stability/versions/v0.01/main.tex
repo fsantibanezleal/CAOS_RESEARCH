@@ -1,0 +1,749 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs}
+\microtypesetup{expansion=false}
+\usepackage[margin=1.05in,headheight=14pt]{geometry}
+\usepackage{xcolor}
+\definecolor{linknavy}{RGB}{25,55,125}
+\usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
+\usepackage{orcidlink,fancyhdr}
+\hypersetup{
+  pdftitle={A stability refinement for simple critical zeros in short intervals},
+  pdfauthor={Felipe Santibanez-Leal},
+  pdfsubject={Short-interval zeta-zero proportions and finite Hilbert-space stability},
+  pdfkeywords={Riemann zeta function, simple zeros, short intervals, pair correlation, Gram matrix, interval arithmetic}
+}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\supp}{supp}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\HS}{\mathrm{HS}}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\versiondoi}{10.5281/zenodo.22727389}
+\newcommand{\conceptdoi}{10.5281/zenodo.22727388}
+\newcommand{\recordurl}{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small CAOS Research Preprint}
+\fancyhead[R]{\small Short-interval stability\textperiodcentered\ v0.01}
+\fancyfoot[C]{\thepage}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
+\allowdisplaybreaks[1]
+
+\title{A stability refinement for simple critical zeros\\in short intervals}
+\author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\small CAOS Research program\\
+\small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
+\date{2026-09-12\\[2pt]\normalsize Version 0.01}
+
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+\begin{center}\small
+\fbox{\parbox{0.92\textwidth}{\centering
+\textbf{PREPRINT}\textperiodcentered\ not peer reviewed\textperiodcentered\ CAOS Research\\
+Riemann-hypothesis research series, first paper\\
+Version 0.01\textperiodcentered\ 2026-09-12\textperiodcentered\ CC BY 4.0\\
+Version DOI: \href{https://doi.org/\versiondoi}{\versiondoi}\\
+Concept DOI: \href{https://doi.org/\conceptdoi}{\conceptdoi} (latest version)\\
+\href{\recordurl}{Public sources, proof audit, and reproducible certificates}
+}}
+\end{center}
+
+\begin{abstract}
+For each fixed $\theta$ for which Wang's short-interval cosine bound
+$c(\theta)=2-\theta/2-\cot(\theta/\sqrt2)/\sqrt2$ is positive, we give an
+explicit constant strictly larger than $c(\theta)$ as a lower asymptotic
+proportion of simple critical zeros in $(T,T+T^\theta]$. The corresponding
+distinct-zero bound also improves. We transfer the known stable rank--trace
+inequality in the \texttt{ainta} manuscript directly to Lamzouri's finite
+Hilbert operator, retain the Gram defect of its simple real points, and
+combine three shifted partitions into consecutive triples. A quantitative
+obstruction to additive triples of cosine-kernel zeros supplies a positive
+gap for every fixed admissible $\theta$. Wang's fixed-test pair-correlation
+theorem provides the arithmetic input; smoothing is performed after the
+large-height limit. An interval certificate at $\theta=3/4$ improves the
+simple-critical constant from $0.4190750129754243\ldots$ to
+$0.4190768284253039\ldots$, and gives distinct proportion
+$0.7095384142126519\ldots$. The general strict improvement has an analytic
+proof independent of numerical minimization. This does not improve the
+positivity exponent, claim a global record, or resolve the Riemann hypothesis.
+\end{abstract}
+
+\section{Statement and relation to prior work}
+
+Let $N(T,H)$ count the nontrivial zeros $\rho=\beta+i\gamma$ of $\zeta(s)$
+with $T<\gamma\le T+H$, including multiplicity. Let $N_0^s(T,H)$ count the
+simple zeros among them with $\beta=1/2$, and let $N^d(T,H)$ count distinct
+complex zeros, each once. Every proportion below has denominator $N(T,H)$.
+
+The recent argument discovered by Claude and communicated by Alp\"oge and
+Furman~\cite{AF} made the optimized Montgomery--Taylor simple-critical
+proportion $0.672500703679\ldots$ unconditional. Lamzouri~\cite{Lamzouri}
+replaced its finite-compression machinery by a Hilbert-space inequality for
+conjugation-invariant multisets. Wang~\cite{Wang} established the needed
+short-interval pair-correlation theorem and deduced, for fixed $0<\theta<1$,
+\begin{equation}\label{eq:wang}
+ \liminf_{T\to\infty}\frac{N_0^s(T,T^\theta)}{N(T,T^\theta)}\ge c(\theta),
+ \qquad
+ \liminf_{T\to\infty}\frac{N^d(T,T^\theta)}{N(T,T^\theta)}
+ \ge\frac{1+c(\theta)}2,
+\end{equation}
+where
+\begin{equation}\label{eq:c}
+ c(\theta)=2-\frac\theta2-\frac1{\sqrt2}\cot(\theta/\sqrt2).
+\end{equation}
+The derivative is $c'(\theta)=\tfrac12\cot^2(\theta/\sqrt2)>0$. Since
+$c(\theta)\to-\infty$ as $\theta\downarrow0$ and $c(1)>0$, there is a
+unique zero $\theta_0\in(0,1)$, numerically
+$\theta_0=0.550193964744154\ldots$.
+
+The stable rank--trace inequality, convex Gram defect, pinching method, and
+cosine-root non-additivity used here are prior work in the
+\texttt{ainta} repository~\cite{Ainta}. Further global window and block
+refinements are also under active development~\cite{Trmdy}. We do not claim
+these ingredients or an improved global record. Our contribution is their
+direct finite-Hilbert transfer, an explicit quantitative three-point bound,
+and the strict refinement of Wang's entire positive short-interval curve.
+The finite proof below is included to make the treatment of off-line zeros,
+multiplicities, and singular Gram matrices explicit.
+
+\begin{theorem}[Strict short-interval refinement, D]\label{thm:main}
+Fix $\theta_0<\theta<1$ and $R>2/c(\theta)$. Define
+\begin{equation}\label{eq:explicit}
+\begin{aligned}
+ a&=\theta/\sqrt2,\qquad q=a\tan a,\qquad M=\pi\theta R,\\
+ B&=q(1+M^2/a^2),\\
+ b&=\min\left\{\frac q2,
+       \frac{q^4}{4(q+M)^2(M+3q/2)}\right\},\qquad
+ \delta=\frac12\min\{1,2(b/B)^2\}.
+\end{aligned}
+\end{equation}
+Then $0<\delta\le1/2$, and, with
+\begin{equation}\label{eq:cstar}
+ c_*(\theta,R)=c(\theta)
+       +\frac{\delta\{c(\theta)-2/R\}}{3-\delta}>c(\theta),
+\end{equation}
+we have
+\begin{equation}\label{eq:mainbounds}
+ \liminf_{T\to\infty}\frac{N_0^s(T,T^\theta)}{N(T,T^\theta)}
+ \ge c_*(\theta,R),\qquad
+ \liminf_{T\to\infty}\frac{N^d(T,T^\theta)}{N(T,T^\theta)}
+ \ge\frac{1+c_*(\theta,R)}2.
+\end{equation}
+In particular, $R=4/c(\theta)$ gives a fully specified positive improvement.
+\end{theorem}
+
+The labels [D] and [MV] distinguish mathematical deductions from finite
+machine-verifiable statements. The conservative gap in
+Theorem~\ref{thm:main} requires no numerical search. A stronger finite
+certificate gives the following example.
+
+\begin{corollary}[Certified example, D+MV]\label{cor:example}
+Set $\theta=3/4$, $R=21/4$, $d=1/7000$, and
+\[
+ C_*:=\frac{3c(3/4)-2d/R}{3-d}
+ =0.419076828425303996736665787527\ldots.
+\]
+Then the simple-critical proportion in \eqref{eq:mainbounds} is at least
+$C_*$, and the distinct-zero proportion is at least
+\[
+ \frac{1+C_*}2=0.709538414212651998368332893763\ldots.
+\]
+The improvement in the simple-critical proportion is
+$0.000001815449879663002112176828\ldots$.
+\end{corollary}
+
+The conclusion is for each fixed exponent and all sufficiently large
+heights in the asymptotic sense. We do not provide an effective starting
+height or uniformity as $\theta\downarrow\theta_0$. In particular, this
+does not lower Wang's positive-proportion threshold. The analytic dependency
+is Wang's inspected preprint theorem, whose underlying pair-correlation
+method is due to Baluyot, Goldston, Suriajaya, and
+Turnage-Butterbaugh~\cite{BGSTB,BGSTBcorrection}.
+
+\section{A stable inequality for finite multisets}
+
+Let $Z$ be a finite conjugation-invariant multiset in $\C$. We sum over its
+distinct support with positive integer multiplicities $m_z=m_{\bar z}$,
+and put $N=\sum_zm_z$. Choose a real even compactly supported
+$\eta\in L^2(\R)$ with $\int\eta^2=1$, and define
+\[
+ v_z(u)=\eta(u)e^{-2\pi izu},\qquad
+ K(t)=\widehat{\eta^2}(t),\qquad
+ \widehat f(t)=\int_{\R}f(u)e^{-2\pi itu}\,du.
+\]
+Every $v_z$ belongs to $L^2$ because $Z$ is finite and the support is compact.
+Work in the finite-dimensional span $E$ of these vectors. Our inner product
+is $\langle v,w\rangle=\int\bar v w$, linear in the second variable; write
+$|v\rangle\langle w|$ for $h\mapsto v\langle w,h\rangle$.
+
+Define the reflected rank-one operator
+\begin{equation}\label{eq:operator}
+ A=\sum_zm_z|v_z\rangle\langle v_{\bar z}|.
+\end{equation}
+It is selfadjoint by conjugation invariance. Direct multiplication gives
+\begin{equation}\label{eq:trace}
+ \tr A=N,\qquad
+ Q:=\|A\|_{\HS}^2=\tr A^2
+   =\sum_{z,w}m_zm_wK(z-w)^2.
+\end{equation}
+Indeed, $\langle v_{\bar z},v_z\rangle=\int\eta^2=1$, while the trace
+of the product of the $z$ and $w$ terms, before multiplicity factors, is
+$K(w-z)K(z-w)=K(z-w)^2$, since $K$ is even. The ordinary square in
+\eqref{eq:trace} is essential. Individual terms for complex arguments need
+not be positive or even real; their complete sum is a nonnegative operator
+norm.
+
+Let $x_1<\cdots<x_s$ be the simple real points of $Z$. Let $r$ be the
+number of distinct multiple real points and $k$ the number of distinct
+nonreal conjugate pairs. Put
+\[
+ P=\sum_{j=1}^s|v_{x_j}\rangle\langle v_{x_j}|=VV^*,\qquad
+ G=V^*V=(K(x_i-x_j))_{i,j=1}^s,\qquad C=A-P.
+\]
+Then $G$ is positive semidefinite with diagonal one and $\tr P=s$.
+For each nonreal pair put
+$g=(v_z+v_{\bar z})/2$ and $h=(v_z-v_{\bar z})/(2i)$. Its contribution
+to $C$ is $2m_z(|g\rangle\langle g|-|h\rangle\langle h|)$.
+The form of $C$ is nonpositive on the orthogonal complement of the $r$
+multiple-real vectors and $k$ vectors $g$. Thus
+\begin{equation}\label{eq:inertia}
+ n_+(C)\le r+k,\qquad N\ge s+2r+2k.
+\end{equation}
+No distance of a nonreal point from the real axis is assumed.
+
+\begin{lemma}[Known stable rank--trace inequality]\label{lem:stable}
+Suppose $P=VV^*$ on a finite-dimensional Hilbert space, the $s$ columns of
+$V$ have norm one, $C$ is selfadjoint, and $n_+(C)\le d$. Define
+\[
+ \Psi(t)=\begin{cases}(t-1)^2,&0\le t\le2,\\2t-3,&t\ge2.
+ \end{cases}
+\]
+Then
+\begin{equation}\label{eq:stable}
+ \|P+C\|_{\HS}^2\ge4\tr(P+C)-3s-4d+\tr\Psi(V^*V).
+\end{equation}
+\end{lemma}
+\begin{proof}
+This is the unit-column case of the stability inequality in
+\cite[Section 2]{Ainta}. We give a spectral proof that keeps all zero
+eigenvalues. Let $m=\dim E$ and let $p_1\le\cdots\le p_m$ be the
+eigenvalues of $P$. If $d<m$, the min-max principle gives
+$\lambda_i(P+C)\le p_{i+d}$ for $1\le i\le m-d$: intersect the span
+of the first $i+d$ eigenvectors of $P$ with a codimension-at-most-$d$
+subspace on which $C\le0$.
+
+It follows that
+\[
+ \tr(P+C-2I)^2\ge\sum_{j=d+1}^m(2-p_j)_+^2
+ \ge\sum_{j=1}^m(2-p_j)_+^2-4d.
+\]
+Here $0\le(2-p_j)_+^2\le4$. If $d\ge m$, the final right-hand side is
+nonpositive and the same inequality is immediate. For every $p\ge0$,
+$(2-p)_+^2=\Psi(p)-2p+3$. The nonzero spectra of $VV^*$ and $V^*V$
+agree, and $\Psi(0)=1$, so
+\[
+ \tr\Psi(P)=\tr\Psi(V^*V)+m-s.
+\]
+Substitute these identities and $\tr P=s$, and expand the left-hand
+square. All dimensional terms cancel and give \eqref{eq:stable}.
+\end{proof}
+
+\begin{proposition}[Finite Hilbert stability transfer]\label{prop:finite}
+For the multiset and operator above, write $D(G)=\tr\Psi(G)$ and
+$D_Z=s+r+2k$ for the number of distinct support points. Then
+\begin{equation}\label{eq:finite}
+ s\ge2N-Q+D(G),\qquad
+ D_Z\ge\frac{3N-Q+D(G)}2.
+\end{equation}
+\end{proposition}
+\begin{proof}
+By Lemma~\ref{lem:stable} and \eqref{eq:inertia},
+$Q\ge4N-3s-4(r+k)+D(G)$. The multiplicity bound in
+\eqref{eq:inertia} makes this at least $2N-s+D(G)$. For the second
+claim, the difference between $4N-3s-4(r+k)$ and $3N-2D_Z$ is
+$N-s-2r\ge0$.
+\end{proof}
+
+This proof retains the signed off-line remainder throughout. The positive
+Gram defect belongs only to the actual simple real points. The second
+inequality in \eqref{eq:finite}, rather than elementary counting from a
+simple-zero proportion, will yield the distinct-zero companion.
+
+\section{From three-point energy to a density gain}
+
+For a positive semidefinite matrix $M$ with diagonal one, define
+$\cE(M)=2\sum_{i<j}|M_{ij}|^2$.
+
+\begin{lemma}[Block defect and pinching]\label{lem:pinch}
+We have $D(M)\ge\min\{1,\cE(M)\}$. If $M_j$ are the principal blocks
+of a partition of $M$, then $D(M)\ge\sum_jD(M_j)$.
+\end{lemma}
+\begin{proof}
+If all eigenvalues of $M$ are at most 2, then
+$D(M)=\tr(M-I)^2=\cE(M)$. If some eigenvalue exceeds 2, its own
+$\Psi$ value exceeds 1 and all other terms are nonnegative.
+For pinching, diagonalize each principal block and let $(w_i)$ be the
+resulting orthonormal basis of the full space. Scalar Jensen applied to
+the spectral resolution of $M$ gives
+\[
+ \sum_jD(M_j)=\sum_i\Psi(\langle w_i,Mw_i\rangle)
+ \le\sum_i\langle w_i,\Psi(M)w_i\rangle=D(M).
+\]
+Only scalar convexity of $\Psi$ is used; no operator-convex assertion is
+needed.
+\end{proof}
+
+\begin{lemma}[Three shifted partitions]\label{lem:triples}
+Suppose $0<d\le1$, $R>0$, and the real even kernel satisfies
+\begin{equation}\label{eq:triangle}
+ 2\{K(u)^2+K(v)^2+K(u+v)^2\}\ge d,
+ \qquad u,v\ge0,\quad u+v\le R.
+\end{equation}
+If $\ell=x_s-x_1$ is the span of the simple real points, with $\ell=0$
+when $s\le1$, then
+\begin{equation}\label{eq:packing}
+ D(G)\ge\frac d3\left(s-2-\frac{2\ell}{R}\right).
+\end{equation}
+\end{lemma}
+\begin{proof}
+For $s\ge3$, the sum of the spans of its $s-2$ consecutive triples is
+at most $2\ell$, since each successive gap occurs at most twice. Hence
+at most $2\ell/R$ triples have span greater than $R$. Every remaining
+triple has defect at least $d$ by Lemma~\ref{lem:pinch}.
+
+Separate the starting indices of consecutive triples into their three
+residue classes modulo 3. Within each class the triples are disjoint
+principal blocks; add the unused points as singleton blocks. Apply
+pinching to each partition and average the three inequalities. Every
+short triple has been counted once, proving \eqref{eq:packing}. If its
+right-hand side is negative, nonnegativity proves the inequality; this
+also covers $s<3$.
+\end{proof}
+
+The factor $1/3$ records the three shifted partitions. Overlapping triples
+cannot simply be summed without this step.
+
+\section{A quantitative obstruction for the cosine kernel}
+
+For $0<\lambda\le1$ put
+\begin{equation}\label{eq:density}
+ f_\lambda(u)=\frac{\cos(\sqrt2u)}{\sqrt2\sin(\lambda/\sqrt2)}
+       \mathbf1_{[-\lambda/2,\lambda/2]}(u),\qquad
+ K_\lambda=\widehat f_\lambda.
+\end{equation}
+This is a nonnegative probability density. Set $a=\lambda/\sqrt2$,
+$q=a\tan a$, and $X=\pi\lambda t$. Integration yields
+\begin{equation}\label{eq:kernel}
+ K_\lambda(t)=
+ \frac{\cos X-(X/a)\cot(a)\sin X}{1-X^2/a^2}.
+\end{equation}
+The apparent singularities at $X=\pm a$ are removable. Equivalently,
+with $\operatorname{sinc}(x)=\sin(x)/x$ continuously extended at zero,
+\begin{equation}\label{eq:sinc}
+ K_\lambda(t)=
+ \frac{\operatorname{sinc}(X-a)+\operatorname{sinc}(X+a)}
+      {2\operatorname{sinc}(a)}.
+\end{equation}
+
+An actual positive root satisfies $X\tan X=q$. If $X,Y,X+Y$ all
+corresponded to positive roots, tangent addition would force
+$X^2+XY+Y^2+q^2=0$. The following estimate gives a quantitative version
+without dividing by a possibly vanishing cosine or removable denominator.
+
+\begin{lemma}[Explicit positive triangle energy]\label{lem:gap}
+Fix $R>0$, put $M=\pi\lambda R$, and define $B,b$ as in
+\eqref{eq:explicit}, using $a=\lambda/\sqrt2$ and $q=a\tan a$.
+Then, throughout $u,v\ge0$, $u+v\le R$,
+\begin{equation}\label{eq:gap}
+ 2\{K_\lambda(u)^2+K_\lambda(v)^2+K_\lambda(u+v)^2\}
+ \ge2(b/B)^2>0.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let $A_X=q\cos X-X\sin X$. For $Z=X+Y$, angle addition gives
+\begin{equation}\label{eq:addition}
+ (X^2+XY+Y^2+q^2)\sin X\sin Y
+ =A_XA_Y-XA_X\sin Y-YA_Y\sin X-qA_Z.
+\end{equation}
+Take $X,Y\ge0$, $Z\le M$, and put
+$h=\max\{|A_X|,|A_Y|,|A_Z|\}$. If $h\le q/2$, then
+\[
+ q\le q|\cos X|+q|\sin X|
+ \le h+(q+X)|\sin X|,
+\]
+so $|\sin X|\ge q/[2(q+M)]$, and likewise for $Y$. Taking absolute
+values in \eqref{eq:addition} therefore yields
+\[
+ \frac{q^4}{4(q+M)^2}\le h^2+(M+q)h
+ \le(M+3q/2)h.
+\]
+If $h>q/2$, the other alternative in the definition of $b$ applies.
+In either case $h\ge b>0$. The identity
+\[
+ A_X=q(1-X^2/a^2)K_\lambda(X/(\pi\lambda))
+\]
+holds also at the removable points by continuity. Since
+$|q(1-X^2/a^2)|\le B$ for $0\le X\le M$, at least one of the three
+kernel values has absolute value at least $b/B$. This proves
+\eqref{eq:gap}.
+\end{proof}
+
+The zero-set obstruction itself is already used in~\cite{Ainta}. The
+explicit formula in Lemma~\ref{lem:gap} makes its positive compact gap
+available for every fixed exponent without a numerical minimum. Its
+small size is acceptable for the qualitative strict-improvement theorem;
+Section~\ref{sec:certificate} certifies a more useful gap in one example.
+
+\section{Short-interval arithmetic and passage to the sharp density}
+
+We record the exact analytic interface to avoid a support or smoothing
+uniformity assumption. Fix $0<\lambda<\theta<1$, put $H=T^\theta$,
+$L=\log T$, and $I=(T,T+H]$. Wang's Theorem 2.2 states that for every
+fixed real even $g\in C_c^\infty(\R)$ supported in $[-\lambda,\lambda]$,
+\begin{align}\label{eq:wangtest}
+ W_I(g)&:=\sum_{\gamma,\gamma'\in I}
+ \widehat g\!\left(\frac{i(\rho-\rho')L}{2\pi}\right)
+ \frac4{4-(\rho-\rho')^2}\notag\\
+ &=\frac{HL}{2\pi}\left(g(0)+\int_\R|\alpha|g(\alpha)d\alpha\right)
+      +O_g(H+T^\lambda L^2).
+\end{align}
+The constants may depend on fixed $\lambda,\theta$. This is an
+unconditional complex-zero formula; RH is not an assumption.
+
+Choose a fixed real even $\eta\in C_c^\infty((-\lambda/2,\lambda/2))$
+with $\int\eta^2=1$, and write $f=\eta^2$, $K=\widehat f$, $g=f*f$.
+Both $g$ and $g''$ meet the fixed-test hypotheses. At
+$z=i(\rho-\rho')L/(2\pi)$, differentiation of the Fourier transform gives
+\[
+ \widehat {g''}(z)=-4\pi^2z^2K(z)^2
+                  =L^2(\rho-\rho')^2K(z)^2.
+\]
+The exact identity
+\[
+ \left(\widehat g(z)-\frac{\widehat {g''}(z)}{4L^2}\right)
+ \frac4{4-(\rho-\rho')^2}=K(z)^2
+\]
+removes the rational weight. Apply \eqref{eq:wangtest} separately to
+the two fixed tests and combine the resulting estimates. As in
+\cite[Lemma 3.1]{Wang}, this gives
+\begin{equation}\label{eq:unweighted}
+ \sum_{\gamma,\gamma'\in I}K(z_\rho-z_{\rho'})^2
+ =\cC(f)\frac{HL}{2\pi}+O_f(H+T^\lambda L^2),
+\end{equation}
+where
+\begin{equation}\label{eq:functional}
+ z_\rho=\frac{i(\rho-1/2)L}{2\pi},\qquad
+ \cC(f)=\int f^2+\iint|u-v|f(u)f(v)\,du\,dv.
+\end{equation}
+Indeed, the main term for $g''$ is
+$-\int(f')^2+2\int f^2$, finite for the fixed smooth density, and its
+coefficient is $1/(4L^2)$. A varying scalar coefficient after applying
+the theorem to two fixed tests does not require a varying-test theorem.
+
+Reflection $\rho\mapsto1-\bar\rho$ preserves the height interval and
+multiplicity and maps $z_\rho$ to $\bar z_\rho$. Thus the multiset
+$Z_T=\{z_\rho:\gamma\in I\}$ satisfies Proposition~\ref{prop:finite}.
+Its simple real points are precisely the simple critical zeros. Their
+real-coordinate span is at most $X_T=HL/(2\pi)$. The short-interval
+Riemann--von Mangoldt formula gives
+\begin{equation}\label{eq:normalization}
+ N(T,H)=X_T+O(H+\log T),\qquad X_T/N(T,H)\longrightarrow1.
+\end{equation}
+After division by $N$, the error in \eqref{eq:unweighted} is
+$O_f(1/L+T^{\lambda-\theta}L)=o(1)$. The strict support gap
+$\lambda<\theta$ is therefore necessary at this stage.
+
+The cosine density \eqref{eq:density} is Wang's minimizing density and
+satisfies
+\begin{equation}\label{eq:cost}
+ \cC(f_\lambda)=\frac\lambda2+
+         \frac1{\sqrt2}\cot(\lambda/\sqrt2)=2-c(\lambda).
+\end{equation}
+It is not a smooth compactly supported test because its endpoint values
+do not vanish. Choose even cutoffs $0\le\chi_\varepsilon\le1$, supported
+strictly inside $(-\lambda/2,\lambda/2)$ and approaching one in the
+interior. Normalizing $\eta_\varepsilon=\chi_\varepsilon\sqrt{f_\lambda}/
+\|\chi_\varepsilon\sqrt{f_\lambda}\|_2$ gives densities
+$f_\varepsilon=\eta_\varepsilon^2$ converging in both $L^1$ and $L^2$
+to $f_\lambda$. Moreover $f_\lambda\to f_\theta$ in those spaces as
+$\lambda\uparrow\theta$, and $\cC$ is continuous for these convergences
+on bounded support~\cite[Section 4]{Wang}.
+
+For normalized nonnegative densities,
+\begin{equation}\label{eq:uniform}
+ \sup_{x\in\R}|\widehat f(x)-K_\theta(x)|\le\|f-f_\theta\|_1,
+ \qquad |\widehat f(x)|,|K_\theta(x)|\le1.
+\end{equation}
+Thus the doubled triple energy changes by at most
+$12\|f-f_\theta\|_1$. This retains a fixed positive energy margin
+through the smooth approximation.
+
+\begin{proposition}[Transfer with a certified limiting gap]\label{prop:transfer}
+Fix $0<\theta<1$, $R>0$, and $0<d\le1$. Suppose \eqref{eq:triangle}
+holds for $K_\theta$. Define
+\[
+ c_d=\frac{c(\theta)-2d/(3R)}{1-d/3}.
+\]
+Then the simple-critical and distinct proportions in \eqref{eq:mainbounds}
+are at least $c_d$ and $(1+c_d)/2$, respectively.
+\end{proposition}
+\begin{proof}
+First fix $0<d'<d$. Choose a sequence of fixed smooth densities $f_j$
+supported in $(-\lambda_j/2,\lambda_j/2)$, with
+$\lambda_j<\theta$, converging to $f_\theta$ in $L^1$ and $L^2$.
+By \eqref{eq:uniform}, every sufficiently large $j$ has triple energy
+at least $d'$. Fix such a $j$ before letting $T$ grow.
+
+Write $s=N_0^s(T,H)$, $N=N(T,H)$, and $Q$ for the pair sum with this
+fixed kernel. Propositions~\ref{prop:finite} and Lemma~\ref{lem:triples},
+with actual span at most $X_T$, imply
+\[
+ \left(1-\frac{d'}3\right)\frac sN
+ \ge2-\frac QN-\frac{2d'}{3N}-\frac{2d'X_T}{3RN}.
+\]
+Let $T\to\infty$, using \eqref{eq:unweighted} and
+\eqref{eq:normalization}, and then let $j\to\infty$. The result is
+$\liminf s/N\ge c_{d'}$.
+
+For the distinct count, the other finite inequality gives
+\[
+ \liminf\frac{N^d(T,H)}N
+ \ge\frac{1+c(\theta)}2+\frac{d'}6(c_{d'}-2/R)
+ =\frac{1+c_{d'}}2.
+\]
+The equality uses $c_{d'}-c(\theta)=d'(c_{d'}-2/R)/3$.
+Finally let $d'\uparrow d$; all scalar expressions are continuous since
+$d\le1<3$. No test function changes inside a large-$T$ limit.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Lemma~\ref{lem:gap} with $\lambda=\theta$ proves a limiting-kernel gap
+at least $2(b/B)^2$, and hence at least the positive $\delta$ in
+\eqref{eq:explicit}. Apply Proposition~\ref{prop:transfer} with
+$d=\delta$. Its constant equals \eqref{eq:cstar}. The gain is strictly
+positive because $R>2/c(\theta)$.
+\end{proof}
+
+\section{The certified numerical example}\label{sec:certificate}
+
+For $\theta=3/4$ and $R=21/4$, the recorded finite computation proves
+\begin{equation}\label{eq:numericalgap}
+ 2\{K_{3/4}(u)^2+K_{3/4}(v)^2+K_{3/4}(u+v)^2\}\ge\frac1{7000}
+ \quad(u,v\ge0,\ u+v\le21/4).
+\end{equation}
+The certificate is a complete binary partition of the square $[0,R]^2$.
+Every endpoint and threshold is rational. A box is either subdivided,
+proved wholly outside the triangle, or accepted using an energy lower
+bound valid on the entire box. The final tree contains 48,761 nodes,
+24,252 accepted energy leaves, 129 outside leaves, and no unresolved
+boxes~\cite{Record}.
+
+For completeness, the analytic enclosure used at each leaf is simple.
+Since $f_\theta$ is a probability density on $[-\theta/2,\theta/2]$,
+\begin{equation}\label{eq:lipschitz}
+ |K_\theta'(x)|\le2\pi\int|u|f_\theta(u)du\le\pi\theta.
+\end{equation}
+On a real interval with center $x_0$ and radius $r$, an outward interval
+evaluation of $K_\theta(x_0)$ therefore supplies the valid lower bound
+\[
+ |K_\theta(x)|\ge
+ \max\{0,\operatorname{lower}(|K_\theta(x_0)|)-\pi\theta r\}.
+\]
+Apply this separately to the box ranges for $u$, $v$, and $u+v$, square
+the nonnegative lower bounds, and double their sum. Every acceptance
+comparison requires the entire lower enclosure to exceed the rational
+threshold. An outside box is discarded only if the sum of its two lower
+coordinates is strictly greater than $R$, so the triangle boundary is
+retained.
+
+Discovery used Arb through \texttt{python-flint==0.9.0} at 160-bit
+precision and the removable-singularity-free formula \eqref{eq:sinc}.
+Each accepted leaf was replayed at 256 bits with a separately derived
+Taylor evaluator. For real $x$,
+\begin{equation}\label{eq:taylor}
+ \operatorname{sinc}(x)=\sum_{j=0}^{95}\frac{(-1)^jx^{2j}}{(2j+1)!}
+ +\mathcal R(x),\qquad
+ |\mathcal R(x)|\le\frac{|x|^{192}}{193!}.
+\end{equation}
+The remainder follows by applying the real sine Taylor theorem through
+degree 192 and dividing by $x$, with continuous extension at zero.
+Arb encloses both the polynomial and its remainder. This replay is an
+independent kernel evaluator; it shares the partition reconstruction,
+Lipschitz argument, and Arb library with the first computation. It is
+not a second independent full verifier or a Lean proof.
+
+\begin{proof}[Proof of Corollary~\ref{cor:example}]
+Use the finite certificate \eqref{eq:numericalgap} in
+Proposition~\ref{prop:transfer}, with $d=1/7000$ and $R=21/4$.
+The full threshold $d$ is available because the proposition first uses
+every $d'<d$ through smoothing and then passes to $d$. Substitution
+gives the stated constants. The outward rational enclosures for their
+values and positive difference are recorded with the certificate.
+\end{proof}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+Proportion at $\theta=3/4$ & Wang baseline & This certificate\\
+\midrule
+Simple and critical & $0.4190750129754243\ldots$ & $0.4190768284253039\ldots$\\
+Distinct & $0.7095375064877121\ldots$ & $0.7095384142126519\ldots$\\
+\bottomrule
+\end{tabular}
+\caption{All denominators count nontrivial zeros with multiplicity in
+$(T,T+T^{3/4}]$. The entries are proportions, not percentages.}
+\end{table}
+
+The certificate's role is quantitative. Even without it,
+Theorem~\ref{thm:main} proves a strict improvement for every fixed
+$\theta>\theta_0$ using its explicit analytic gap. Conversely, the
+finite numerical inequality alone does not prove a theorem about zeta
+zeros without the finite operator and fixed-test analytic transfer.
+
+\appendix
+\section{Reproducibility, provenance, and scope}
+
+The public record~\cite{Record}, experiment
+\texttt{EXP-002-short-interval-stability}, contains the mathematical proof,
+an adversarial audit, the interval runner, the canonical partition tree,
+and rational enclosures for the constants. The hypothesis and permitted
+parameter family were declared before computation in repository commit
+\texttt{266486f}. A
+deterministic floating grid selected candidate radii; its sampled values
+were never used as certified lower bounds. The final certification used
+CPU arithmetic; no GPU was necessary.
+
+From the repository root, with the problem's pinned requirements installed,
+a fresh output directory preserves the canonical artifacts:
+\begin{verbatim}
+python problems/number-theory/riemann-hypothesis/experiments/\
+EXP-002-short-interval-stability/run.py \
+  --output-dir tmp/riemann-replay --radius 21/4 --threshold 1/7000
+pytest tests/test_riemann_certificates.py
+\end{verbatim}
+The displayed backslashes indicate line continuation for readability;
+use one command line on shells with different continuation syntax.
+The runner fails with an exact resumable checkpoint if its time or node
+budget expires while boxes remain. It does not report a certificate in
+that state. A separate bounded trial exercised termination and exact
+resume behavior.
+
+The tree replay checks its hash, reconstructs every box, verifies all
+accepted leaves, and rejects missing, trailing, unknown, or miscounted
+nodes. A hash protects accidental corruption; geometric replay is still
+required when a modified tree has a recomputed hash. Adversarial checks
+rejected false whole-square acceptance, a false outside-domain claim,
+truncation, appended data, altered counts, an unresolved flag, an invalid
+exponent, and an inflated threshold. Nineteen focused tests, including
+one complete 256-bit certificate replay, passed in the recorded run.
+These are implementation checks, not formal verification of the entire
+analytic proof.
+
+The canonical preorder tree has SHA-256 digest
+\begin{center}\small\ttfamily
+78829635026aeacd69c02213cc899b5029ef2566bbfaf1c86b757cc5f92ffe55
+\end{center}
+
+The source comparison was completed on 2026-09-12. It used the full
+Wang v1 manuscript, Lamzouri v2, the current Alp\"oge--Furman paper,
+and pinned snapshots of the directly relevant global stability
+repositories. Queries combining the Wang identifier, short intervals,
+stability, Gram defects, and exact numerical signatures found no prior
+public statement of this short-interval refinement. This supports the
+scoped contribution claimed here, without establishing exhaustive
+priority or detecting unpublished concurrent work. The known finite
+stability inequality and cosine-root mechanism are explicitly credited
+to the repository identifier \texttt{ainta}; no personal author identity
+is inferred from that identifier.
+
+The theorem relies on established classical analytic inputs through
+Wang's recent preprint, not on an end-to-end machine formalization of
+those inputs. The analytic and numerical reviews can still contain
+errors, and the two numerical evaluators share arithmetic and geometric
+components. No effective height threshold, uniform exponent limit,
+lower positivity threshold, global-record claim, or elimination of all
+off-line zeros follows from this work.
+
+AI assistance was used for derivation, source research, adversarial
+review, and implementation. These automated reviews do not constitute
+independent peer review. The new manuscript and original research
+exposition are released under CC BY 4.0; code follows the repository's
+MIT license. Cited third-party materials
+retain their own licenses. In particular, local copies of arXiv texts
+with nonexclusive-distribution licenses are not relicensed by this
+manuscript.
+
+\begin{thebibliography}{9}\small\raggedright
+
+\bibitem{AF}
+L.~Alp\"oge and R.~Furman,
+\emph{More than two thirds of the zeta zeros are simple and on the
+critical line}, arXiv:2608.13637v2 (2026).
+Proof discovered by Claude and verified and communicated by the listed
+authors, as described in the paper's provenance.
+\url{https://arxiv.org/abs/2608.13637v2}.
+
+\bibitem{Lamzouri}
+Y.~Lamzouri,
+\emph{A new proof that more than $2/3$ of the zeros of the Riemann zeta
+function are simple and on the critical line}, arXiv:2609.02882v2 (2026).
+\url{https://arxiv.org/abs/2609.02882v2}.
+
+\bibitem{Wang}
+B.~Wang,
+\emph{Simple critical zeros and distinct zeros of the Riemann
+zeta-function in short intervals}, arXiv:2609.07918v1 (2026).
+\url{https://arxiv.org/abs/2609.07918v1}.
+
+\bibitem{Ainta}
+\texttt{ainta} (repository maintainer identifier),
+\emph{More than 67.3\% of the zeros of the Riemann zeta function are
+simple and lie on the critical line}, manuscript in
+\texttt{zeta-simple-zeros}, 2026, MIT license.
+Pinned commit \texttt{040c5e899e658aed7b56a2a87f501798fe10761d},
+\texttt{paper/riemann.tex}; accessed 2026-09-12.
+\href{https://github.com/ainta/zeta-simple-zeros/tree/040c5e899e658aed7b56a2a87f501798fe10761d}{Pinned manuscript and source snapshot on GitHub}.
+
+\bibitem{Trmdy}
+\texttt{trmdy} repository and contributors,
+\emph{Zeta simple-zero proportion refinement}, research repository
+\texttt{zeta-simple-zeros-673137}, 2026, MIT license.
+Pinned commit \texttt{1610b97b7895ff34982260f8dcaf04a0f7b82cf7};
+accessed 2026-09-12. Candidate global bounds are not used as analytic
+premises of this paper.
+\href{https://github.com/trmdy/zeta-simple-zeros-673137/tree/1610b97b7895ff34982260f8dcaf04a0f7b82cf7}{Pinned contributor manuscript and certificates on GitHub}.
+
+\bibitem{BGSTB}
+S.~A.~C.~Baluyot, D.~A.~Goldston, A.~I.~Suriajaya, and C.~L.~Turnage-Butterbaugh,
+\emph{An unconditional Montgomery theorem for pair correlation of zeros
+of the Riemann zeta-function}, Acta Arith. \textbf{214} (2024), 357--376;
+arXiv:2306.04799.
+\url{https://arxiv.org/abs/2306.04799}.
+
+\bibitem{BGSTBcorrection}
+S.~A.~C.~Baluyot, D.~A.~Goldston, A.~I.~Suriajaya, and C.~L.~Turnage-Butterbaugh,
+\emph{Pair correlation of zeros of the Riemann zeta function I:
+Proportions of simple zeros and critical zeros},
+arXiv:2501.14545v3 (2026), especially Section 3 on the
+corrected error term in the earlier Montgomery theorem.
+\url{https://arxiv.org/abs/2501.14545v3}.
+
+\bibitem{Record}
+F.~Santiba\~nez-Leal,
+\emph{Riemann-hypothesis research record, EXP-002: short-interval
+stability}, CAOS Research, 2026. Proof, source comparisons, code, exact
+partition certificate, and adversarial audit.
+\url{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis}.
+
+\end{thebibliography}
+\end{document}

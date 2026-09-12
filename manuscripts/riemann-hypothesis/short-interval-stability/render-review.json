@@ -1,0 +1,254 @@
+{
+  "schema": "riemann-manuscript-render-review-v1",
+  "reviewed_utc": "2026-09-12T18:31:20.498377+00:00",
+  "reviewer": "lamzouri_analysis automated visual and source audit",
+  "title": "Simple critical zeros in short intervals: stability, pressure, and parity",
+  "version": "0.02",
+  "version_doi": "10.5281/zenodo.22728744",
+  "concept_doi": "10.5281/zenodo.22727388",
+  "publication_performed": false,
+  "canonical_promotion_ready": true,
+  "source": {
+    "path": "tmp/riemann-manuscript-v002/main.tex",
+    "sha256": "a9af46c41cea2cea4c5199ec79953df64d8bdfcc9576605994d739021546812c",
+    "bytes": 69316,
+    "encoding": "UTF-8",
+    "line_endings": "LF"
+  },
+  "pdf": {
+    "path": "tmp/riemann-manuscript-v002/main.pdf",
+    "sha256": "56b0ce29935fe3d115d9d40432f87f82b030355b028f3ea942fd3d3c671e2b1c",
+    "bytes": 498500,
+    "pages": 21
+  },
+  "build": {
+    "compiler": "MiKTeX pdfTeX 1.40.26 (MiKTeX24.4)",
+    "passes_after_final_doi": 2,
+    "exit_codes": [
+      0,
+      0
+    ],
+    "log_path": "tmp/riemann-manuscript-v002/main.log",
+    "log_sha256": "b6a7dd302e6e40832ff6be6e449d133bf3c0248f10bf41f2fc186f8ec5a2561f",
+    "warnings": 0,
+    "overfull_boxes": 0,
+    "underfull_boxes": 0,
+    "undefined_references": 0,
+    "multiply_defined_labels": 0
+  },
+  "render": {
+    "renderer": "Poppler pdftoppm24.04.0",
+    "format": "PNG",
+    "dpi": 110,
+    "page_dimensions_pixels": [
+      935,
+      1210
+    ],
+    "command": "pdftoppm -r 110 -png tmp/riemann-manuscript-v002/main.pdf tmp/riemann-manuscript-v002/qa-page",
+    "output_directory": "tmp/riemann-manuscript-v002",
+    "completed_exit_code": 0
+  },
+  "visual_review": {
+    "all_pages_reviewed": true,
+    "page_count": 21,
+    "method": "All pages1-20 visually inspected in four-up contact sheets; individual pages6,14,21 additionally inspected at original resolution. Each contact sheet contains full page images, without crop.",
+    "reviewed_contact_sheets": [
+      "tmp/riemann-manuscript-v002/qa-sheet-1.png",
+      "tmp/riemann-manuscript-v002/qa-sheet-2.png",
+      "tmp/riemann-manuscript-v002/qa-sheet-3.png",
+      "tmp/riemann-manuscript-v002/qa-sheet-4.png",
+      "tmp/riemann-manuscript-v002/qa-sheet-5.png"
+    ],
+    "individual_original_resolution_pages": [
+      6,
+      14,
+      21
+    ],
+    "clipping_or_overlap_observed": false,
+    "missing_glyphs_observed": false,
+    "page_numbering": "continuous1-21",
+    "observations": [
+      {
+        "page": 1,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-01.png",
+        "sha256": "bacd1f996213f8257a1624845bb7f9faf41d98b87b908453cc32c9bc2ea20303",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Title, sole author, version/date, reserved DOI and concept DOI, preprint box, abstract and changes heading are legible and aligned."
+      },
+      {
+        "page": 2,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-02.png",
+        "sha256": "e78c3357458a455e666e901916988fbfe3f32a72ae05ceeb6eba43eecc7c674a",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Verification scope, quantitative comparison table, denominator conventions, baseline equations and prior-work discussion fit the margins."
+      },
+      {
+        "page": 3,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-03.png",
+        "sha256": "07e404821172f6311f448c9f82cf3726592e87026b219c03990c2b9940bced90",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Lead parity theorem, both exact-in-kappa deltas and inherited analytic theorem are intact; math glyphs and equation numbers are clear."
+      },
+      {
+        "page": 4,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-04.png",
+        "sha256": "0dc63bcd7c2af10650cd3d0f2f955f6e1013c3b05bf06d7397a01b04ecbea89a",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Pressure theorem and all numerical corollaries fit without collisions; asymptotic interval scope remains visible."
+      },
+      {
+        "page": 5,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-05.png",
+        "sha256": "f4e00e2a9ab335a95bfba65657079df9d5f498b57234916bdb3fb98e5aba0888",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Reflected finite operator, ordinary-square Hilbert identity, signed remainder and known stability lemma render correctly."
+      },
+      {
+        "page": 6,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-06.png",
+        "sha256": "eed65394e4ab90feb14444b1db49777fc82f861b916bd9153a18a7ac814f6b2c",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Spectral proof, finite Hilbert bound, multiplicity excess and parity proposition are clear; additionally inspected full-size page PNG."
+      },
+      {
+        "page": 7,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-07.png",
+        "sha256": "b7deb89fefdd2f63af4c111c1ff571f81d5e5badd44b98682dea6d235a2eeea3",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Both exact residuals, false half-sum control, sharpness, scalar relaxation and pinching lemma are readable."
+      },
+      {
+        "page": 8,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-08.png",
+        "sha256": "2d37a382420bfdcabad2b6ec6f8e2d6a65e0fdc3c53e114fe3cfe2d59994d94e",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Three-shift count, odd-frame definitions and energy-pressure argument have clear displays and proof transitions."
+      },
+      {
+        "page": 9,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-09.png",
+        "sha256": "75b645acb535b30c6fc03665bf941a5f3e962a58eea062f47d007c2cbc009d98",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Odd-frame boundary count, cosine kernel, removable singularities and quantitative identity fit the page."
+      },
+      {
+        "page": 10,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-10.png",
+        "sha256": "addf689ce2b80c96cf27a77bba04c4e4780664c87ef997580a4d4b2bd1a2789c",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Kernel obstruction proof and Wang fixed-test/deweighting equations are readable and unclipped."
+      },
+      {
+        "page": 11,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-11.png",
+        "sha256": "b64761b4e4dcac2c170083f392f1f7041d22b9c4d1ad0fe50219319dc0971240",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Normalization, support/smoothing limits and retained transfer proposition fit; numbered displays remain separate from text."
+      },
+      {
+        "page": 12,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-12.png",
+        "sha256": "301dc57d3d3e9f24a7d3c130114d570b8608b1ea968f4e4b769ca79b907e693b",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Pressure endpoint limits, whole-curve gain and transition to the classical parity proof are clear."
+      },
+      {
+        "page": 13,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-13.png",
+        "sha256": "b5847714330cb5fd34d09d8f68ebc340bfadd48030f2101e58d0b97ca69ac0c2",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Classical seed, distinct-count convention, interval packing and fixed-test parity bounds render intact."
+      },
+      {
+        "page": 14,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-14.png",
+        "sha256": "5aa25d726f08a36cd0bcf2945be749cccb6962af7c684e348767bf5f4b7ae73c",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Cosine cost, rational threshold comparison, derivative cap, both delta conclusions and compact-certificate statement are legible; additionally inspected full-size PNG."
+      },
+      {
+        "page": 15,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-15.png",
+        "sha256": "2a7328037e890ca8bfabf9eea84d2400bbe72311e99282e3423f2f4c56e922d9",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Inherited certificate method, sinc-Taylor remainder and comparison table are aligned; caption and narrative remain clear."
+      },
+      {
+        "page": 16,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-16.png",
+        "sha256": "68a2650d3af18992ff558180c3f4c576f9f7a328cd6db0bb46c1624fa69f26b8",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Reproduction commands, inherited tree hash and pressure-certificate appendix are readable; line continuations stay within margins."
+      },
+      {
+        "page": 17,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-17.png",
+        "sha256": "629e34a469af225bbd0dc9b590d0afe6b58ed777b25b9aedba79d372442ec207",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Stage A/B gains, separate numerical outcomes, replay semantics, reproduction commands and parity-review heading render clearly."
+      },
+      {
+        "page": 18,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-18.png",
+        "sha256": "d6676e6d7d2512c0e7f57365252dde0b6424758cb5b07bd54c755a3654923474",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Confirmed parity evidence, result hash, reproduction commands, universal/finite distinction and source-audit heading are intact."
+      },
+      {
+        "page": 19,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-19.png",
+        "sha256": "97f72921f073a820dc00d9a72399e3573be3333a02fa632bdefed22c7a47fd44",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Excluded routes, novelty and numerical-exponent limits, conclusions and beginning of bibliography are readable."
+      },
+      {
+        "page": 20,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-20.png",
+        "sha256": "6a3cc9fd6a774bfe282a9b13301f654210b8b0b0c700b6267761e0498510a8e5",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Primary-source and pinned-repository bibliography entries and links fit without clipping."
+      },
+      {
+        "page": 21,
+        "image_path": "tmp/riemann-manuscript-v002/qa-page-21.png",
+        "sha256": "1d04d0fe930af281ba4a62362f92714426fabb1c17eb936c22048e3ffb37b25e",
+        "visually_reviewed": true,
+        "result": "pass",
+        "observation": "Final four bibliography entries, including confirmed EXP004 and immutable v0.01 DOI, are complete; final-page whitespace is normal bibliography continuation."
+      }
+    ]
+  },
+  "scientific_scope": {
+    "independent_mathematical_review": "Prior complete manuscript review found no material discrepancy; final scientific-status changes transcribed confirmed EXP004 verdict and proof-review record.",
+    "finite_computation_vs_asymptotic_proof": "Explicitly separated in abstract, main statement, parity verification and limitations.",
+    "new_decimal_exponent_claimed": false,
+    "new_seed_constant_evaluated": false,
+    "external_peer_review_or_formal_verification_claimed": false,
+    "global_record_or_RH_solution_claimed": false
+  },
+  "preservation": {
+    "published_v001_edited": false,
+    "immutable_experiment_inputs_edited": false,
+    "canonical_repository_promotion": "root ownership, not performed by this operation"
+  }
+}

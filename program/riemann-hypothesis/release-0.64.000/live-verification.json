@@ -1,0 +1,219 @@
+{
+  "schema": "riemann-live-release-v1",
+  "version": "0.64.000",
+  "verified_utc": "2026-09-12T17:01:22.683537+00:00",
+  "base_url": "https://research.fasl-work.com/",
+  "main_commit": "08660dc2d6bc91eae0d3a5105447793f0fbc670c",
+  "research_pr": 263,
+  "release_pr": 264,
+  "pages_run": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/34706614866",
+  "tag": "v0.64.000",
+  "public_files": [
+    {
+      "url": "https://research.fasl-work.com/assets/ExperimentModal-BqwVkVIn.js",
+      "bytes": 176143,
+      "sha256": "fadae241d90ee429da50c03416fb9fe2ce4d6b5f401ce69ab5a60391147fa8f0"
+    },
+    {
+      "url": "https://research.fasl-work.com/assets/index-CftVb1pP.css",
+      "bytes": 64941,
+      "sha256": "8c6d51e7dca5b59c12f7754bd5b316540ebe217d043d67bc4fe6e8e2247b3e78"
+    },
+    {
+      "url": "https://research.fasl-work.com/assets/index-CWVyrNnf.js",
+      "bytes": 693134,
+      "sha256": "67cc522cd9e43574e52e7944db848026a753cf050c296fecaa1b4402da723dd8"
+    },
+    {
+      "url": "https://research.fasl-work.com/index.html",
+      "bytes": 591,
+      "sha256": "af080803df5488bf7365e413b2fa65a71a8864f7b8c12d988593095b1f7dbdf6"
+    },
+    {
+      "url": "https://research.fasl-work.com/data/research/experiments.json",
+      "bytes": 1695229,
+      "sha256": "1758d5d18ddecb15a971ac76dad48f78cbb70c51aff8905cb1439278e453391c"
+    },
+    {
+      "url": "https://research.fasl-work.com/data/research/jacobian.json",
+      "bytes": 3582,
+      "sha256": "c8a269dcfbcb69555370e23003888865f868283ab19860c4b6e54dc8b8d112e0"
+    },
+    {
+      "url": "https://research.fasl-work.com/data/research/portfolio.json",
+      "bytes": 3754,
+      "sha256": "ec19ec6a8fdde230db4dbb70e042359b832c615a5b95dd21cf55d14da68dfc0e"
+    },
+    {
+      "url": "https://research.fasl-work.com/data/research/riemann.json",
+      "bytes": 16876,
+      "sha256": "66887e1ecf555c8378620ec78a4b0151bc944467fcccdd8892d5c6ea0924c99a"
+    },
+    {
+      "url": "https://research.fasl-work.com/data/manifests/experiments.json",
+      "bytes": 305,
+      "sha256": "def3609237cc787cc83f08d397cf92c8e730217c085f1bff13e2a85a542f2fe0"
+    },
+    {
+      "url": "https://research.fasl-work.com/data/manifests/index.json",
+      "bytes": 385,
+      "sha256": "c7876e573a0f4f0cd662351aed089fe3fd685b55f660881f5dfb85480ce7f337"
+    },
+    {
+      "url": "https://research.fasl-work.com/data/manifests/jacobian.json",
+      "bytes": 296,
+      "sha256": "5db96d3b9f8f041a9f36e43d0ef52f4adb6c83b80f68e2af69957df2dd2a00b3"
+    },
+    {
+      "url": "https://research.fasl-work.com/data/manifests/portfolio.json",
+      "bytes": 298,
+      "sha256": "c22069be1a73b4ed8baa0544aa39880ce475edb07d4f077f05848bd6eb85b916"
+    },
+    {
+      "url": "https://research.fasl-work.com/data/manifests/riemann.json",
+      "bytes": 2494,
+      "sha256": "e75be3c235bf59691fa42ee927412411d056ad98a93df43710399af473a26af3"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "1440x1000-en-light",
+      "passed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 28,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": []
+    },
+    {
+      "id": "1440x1000-en-dark",
+      "passed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 28,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": []
+    },
+    {
+      "id": "1440x1000-es-light",
+      "passed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 28,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": []
+    },
+    {
+      "id": "1440x1000-es-dark",
+      "passed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 28,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": []
+    },
+    {
+      "id": "390x844-en-light",
+      "passed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 28,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": []
+    },
+    {
+      "id": "390x844-en-dark",
+      "passed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 28,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": []
+    },
+    {
+      "id": "390x844-es-light",
+      "passed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 28,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": []
+    },
+    {
+      "id": "390x844-es-dark",
+      "passed": true,
+      "tabs_visited": [
+        "summary",
+        "context",
+        "approaches",
+        "strategy",
+        "results",
+        "open"
+      ],
+      "screenshots": 28,
+      "console_errors": [],
+      "page_errors": [],
+      "http_errors": []
+    }
+  ],
+  "raw_receipts": [
+    {
+      "file": "tmp/riemann-live-0.64/1440x1000/receipt.json",
+      "sha256": "b96281d4c6707d55044d057bfef467a0cd4557d0e6aacf753e7d664471205b61"
+    },
+    {
+      "file": "tmp/riemann-live-0.64/390x844/receipt.json",
+      "sha256": "77ea7cbe9e8ca363c1bf9365a472cba483073bcdbbc9e4a7843afecdd9d94817"
+    }
+  ],
+  "scope": "Live source/build/data equality and pointer-driven EN/ES light/dark desktop/phone navigation. Mathematical proof acceptance is a separate question."
+}

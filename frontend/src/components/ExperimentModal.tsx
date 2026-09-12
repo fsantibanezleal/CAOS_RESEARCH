@@ -9,6 +9,51 @@ import type { ExperimentRec } from '../api/data';
 
 const REPO = 'https://github.com/fsantibanezleal/CAOS_RESEARCH';
 
+/**
+ * remark-math treats a one-line `$$...$$` span as inline math.  The Riemann
+ * records use that compact form for a few tagged equations, and KaTeX only
+ * permits `\\tag` in display mode.  Normalize those spans for presentation;
+ * the committed source bytes and their provenance remain unchanged.
+ */
+function normalizeRiemannMath(markdown: string): string {
+  const output: string[] = [];
+  let inBlock = false;
+  for (const line of markdown.split(/\r?\n/)) {
+    const indent = line.match(/^\s*/)?.[0] ?? '';
+    if (!inBlock) {
+      const start = line.match(/^(\s*)\$\$(.*)$/);
+      if (start && start[2].trim() !== '') {
+        const end = start[2].indexOf('$$');
+        if (end >= 0) {
+          const expression = start[2].slice(0, end);
+          const suffix = start[2].slice(end + 2).trim();
+          output.push(`${start[1]}$$`, `${start[1]}${expression}`, `${start[1]}$$`);
+          if (suffix) output.push(suffix);
+        } else {
+          output.push(`${start[1]}$$`, `${start[1]}${start[2]}`);
+          inBlock = true;
+        }
+      } else {
+        output.push(line);
+        if (line.trim() === '$$') inBlock = true;
+      }
+      continue;
+    }
+    const end = line.indexOf('$$');
+    if (end < 0) {
+      output.push(line);
+      continue;
+    }
+    const expression = line.slice(0, end);
+    const suffix = line.slice(end + 2).trim();
+    if (expression.trim()) output.push(expression);
+    output.push(`${indent}$$`);
+    if (suffix) output.push(suffix);
+    inBlock = false;
+  }
+  return output.join('\n');
+}
+
 function expPath(e: ExperimentRec): string {
   return `problems/${e.area}/${e.problem}/experiments/${e.slug}`;
 }
@@ -20,6 +65,8 @@ export default function ExperimentModal({ exp, onClose }: { exp: ExperimentRec; 
   const renderMath = exp.problem === 'riemann-hypothesis';
   const remarkPlugins = renderMath ? [remarkGfm, remarkMath] : [remarkGfm];
   const rehypePlugins = renderMath ? [rehypeKatex] : [];
+  const hypothesis = renderMath ? normalizeRiemannMath(exp.hypothesis_md) : exp.hypothesis_md;
+  const verdict = renderMath ? normalizeRiemannMath(exp.verdict_md) : exp.verdict_md;
   const recordUrl = (url: string) => {
     const safe = defaultUrlTransform(url);
     if (!safe || /^(?:[a-z][a-z0-9+.-]*:|\/|#)/i.test(safe)) return safe;
@@ -72,7 +119,7 @@ export default function ExperimentModal({ exp, onClose }: { exp: ExperimentRec; 
                 <FlaskConical size={16} /> {t('Hypothesis (declared before the run)', 'Hipotesis (declarada antes de la corrida)')}
               </h3>
               <div className="rs-md">
-                <ReactMarkdown remarkPlugins={remarkPlugins} rehypePlugins={rehypePlugins} urlTransform={renderMath ? recordUrl : undefined}>{exp.hypothesis_md}</ReactMarkdown>
+                <ReactMarkdown remarkPlugins={remarkPlugins} rehypePlugins={rehypePlugins} urlTransform={renderMath ? recordUrl : undefined}>{hypothesis}</ReactMarkdown>
               </div>
             </section>
           ) : (
@@ -84,7 +131,7 @@ export default function ExperimentModal({ exp, onClose }: { exp: ExperimentRec; 
                 <FileText size={16} /> {t('Verdict (persisted after the run)', 'Veredicto (persistido despues de la corrida)')}
               </h3>
               <div className="rs-md">
-                <ReactMarkdown remarkPlugins={remarkPlugins} rehypePlugins={rehypePlugins} urlTransform={renderMath ? recordUrl : undefined}>{exp.verdict_md}</ReactMarkdown>
+                <ReactMarkdown remarkPlugins={remarkPlugins} rehypePlugins={rehypePlugins} urlTransform={renderMath ? recordUrl : undefined}>{verdict}</ReactMarkdown>
               </div>
             </section>
           ) : (

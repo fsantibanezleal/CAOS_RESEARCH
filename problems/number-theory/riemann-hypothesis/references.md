@@ -201,6 +201,33 @@ certificate of this unit's entire short-interval theorem.
     Additional prior art against presenting consequences of the existing
     arbitrary-parameter rank-trace inequality as a fresh discovery.
 
+21. **tawanerguo-cn repository.** *zeta-simple-zeros*, pinned at
+    [`45149f6d403059a71be73c5e3f884cee7cd62b20`](https://github.com/tawanerguo-cn/zeta-simple-zeros/tree/45149f6d403059a71be73c5e3f884cee7cd62b20).
+    Its [Bellman certificate](https://github.com/tawanerguo-cn/zeta-simple-zeros/blob/45149f6d403059a71be73c5e3f884cee7cd62b20/BELLMAN_COBBOUNDARY_PROOF.md),
+    [finite trace-envelope proof](https://github.com/tawanerguo-cn/zeta-simple-zeros/blob/45149f6d403059a71be73c5e3f884cee7cd62b20/docs/trace_energy_envelope.md), and
+    [global spectral dual](https://github.com/tawanerguo-cn/zeta-simple-zeros/blob/45149f6d403059a71be73c5e3f884cee7cd62b20/archive/original/GLOBAL_SPECTRAL_DUAL.md)
+    are prior art for nonuniform pressure, capacity-constrained edges,
+    cross-boundary packing and the finite-size envelope. The numerical
+    thermodynamic conversion of the last framework is explicitly unfinished.
+    The complete archived repository retains its MIT license.
+
+22. **Yuhang Shi.** *zeta-simple-zeros-673316977*, pinned at
+    [`1aeda8e9f0678166a824c75313a813b09eb478cd`](https://github.com/yuhangshi888/zeta-simple-zeros-673316977/tree/1aeda8e9f0678166a824c75313a813b09eb478cd).
+    [Version 0.1.0 DOI](https://doi.org/10.5281/zenodo.21926962).
+    The [proof outline](https://github.com/yuhangshi888/zeta-simple-zeros-673316977/blob/1aeda8e9f0678166a824c75313a813b09eb478cd/PROOF_OUTLINE.md)
+    combines two existing trmdy certificates on one 219-point frame to claim
+    $0.6733169771424713134\ldots$. The
+    [claim ledger](https://github.com/yuhangshi888/zeta-simple-zeros-673316977/blob/1aeda8e9f0678166a824c75313a813b09eb478cd/CLAIM_LEDGER.md)
+    states which upstream searches were not replayed and which inequalities
+    remain formal hypotheses. Its local Palomar registration is not an
+    end-to-end formal proof of the new zeta proportion. The complete archived
+    repository retains its MIT license.
+
+The [pressure-frame prior-art dossier](context/2026-09-12-pressure-frame-prior-art.md)
+also records npip99's predecessor and the teal-sea registered four-point
+bound versus its canceled stronger-candidate build. It distinguishes an
+apparently new short-interval consequence from inherited global methods.
+
 ## Local derived record and publication status
 
 The [EXP-001 verdict](experiments/EXP-001-source-and-constant-audit/verdict.md)
@@ -218,8 +245,11 @@ in short intervals.* CAOS Research Preprint, version 0.01, September 12, 2026.
 [10.5281/zenodo.22727389](https://doi.org/10.5281/zenodo.22727389), and concept DOI
 [10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388).
 The [publication receipt](../../../manuscripts/riemann-hypothesis/short-interval-stability/publication-receipt.json)
-records verification of fresh public metadata and the downloaded 10-page PDF:
-368,644 bytes, SHA-256
-`f38d47b6daebc3fa2277542e009ce2cd5625e5daeb05bda57df726a46cc48761`.
-This self-published preprint is not peer reviewed. The dated novelty search
-does not guarantee priority against undiscovered concurrent work.
+records verification of fresh public metadata and the downloaded v0.02 PDF:
+498,500 bytes, SHA-256
+`56b0ce29935fe3d115d9d40432f87f82b030355b028f3ea942fd3d3c671e2b1c`, version DOI
+[10.5281/zenodo.22728744](https://doi.org/10.5281/zenodo.22728744). The immutable
+v0.01 baseline remains at [10.5281/zenodo.22727389](https://doi.org/10.5281/zenodo.22727389)
+and its archived 10-page PDF is unchanged. This self-published preprint is not peer
+reviewed. The dated novelty search does not guarantee priority against undiscovered
+concurrent work.

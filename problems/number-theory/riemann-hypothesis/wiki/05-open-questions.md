@@ -1,14 +1,17 @@
 # 5. Open questions, rejected routes, and falsification targets
 
-The confirmed local result is the strict refinement documented in
-[EXP-002](../experiments/EXP-002-short-interval-stability/verdict.md). The
-directions below are research questions, not extensions already proved by
-that experiment. They are separated from the original Riemann hypothesis,
-which remains open.
+The current confirmed results are the explicit pressure improvement in
+[EXP-003](../experiments/EXP-003-odd-frame-pressure/verdict.md) and the qualitative
+interval-range improvement in [EXP-004](../experiments/EXP-004-parity-density-transfer/verdict.md).
+The Riemann hypothesis remains open. The questions below go beyond those proved results.
 
-## Improve the explicit short-interval example
+## Further improve the explicit short-interval example
 
-[C] The certified choice $R=21/4$, $d=1/7000$ is conservative. For fixed
+EXP-003 has completed one pressure-certificate improvement and the odd-frame
+transfer. The next question is whether a separately declared campaign can improve
+its current bound further or certify a range of exponents.
+
+[C] The original certified choice $R=21/4$, $d=1/7000$ is conservative. For fixed
 $\theta$, let
 
 $$d_\theta(R)=\min\left(1,\inf_{u,v\ge0,\ u+v\le R}
@@ -32,7 +35,10 @@ parameter values unless a joint interval certificate covers all intermediate
 exponents. The falsification target is an unresolved box or a rigorously
 enclosed energy value below the proposed threshold.
 
-## Retain more of the actual Gram matrix
+## Retain still more of the actual Gram matrix
+
+[D] EXP-003 now supplies a valid larger-frame assembly and a stronger short-interval
+bound. The open task is to go beyond this elementary unit-cap frame family.
 
 [C] Consecutive triples lose information when convex pinching removes
 interactions between blocks. Larger windows might make the defect larger.
@@ -44,9 +50,8 @@ is available, but the combinatorial overlap penalty and the compact-domain
 dimension also increase. The
 [Ainta](https://github.com/ainta/zeta-simple-zeros/tree/040c5e899e658aed7b56a2a87f501798fe10761d)
 and [trmdy](https://github.com/trmdy/zeta-simple-zeros-673137/tree/1610b97b7895ff34982260f8dcaf04a0f7b82cf7)
-global window refinements are direct prior art for this direction. The next
-novelty question concerns the precise short-interval transfer, not the idea
-of using larger blocks.
+global window refinements are direct prior art for this direction. EXP-003 supplies that transfer for its alternating schedule. Any further
+novelty claim must compare with the expanded pressure-frame source dossier.
 
 Any proposed improvement must prove a valid disjoint partition or fractional
 cover inequality. Adding defects of overlapping principal submatrices with
@@ -54,21 +59,44 @@ coefficient one is unjustified. EXP-002's factor $1/3$ comes from three actual
 partitions; it cannot be changed to $1/2$ merely because each gap belongs to
 two consecutive triples.
 
-## Can stability lower the positivity threshold?
+## Quantify the new positivity range
 
-[C] The present proof cannot answer this by continuity alone. Its gain is
-positive only when $R>2/c(\theta)$, which requires $c(\theta)>0$. As
-$\theta\downarrow\theta_0$, admissible radii diverge and the available
-analytic energy bound deteriorates. There is no uniform estimate established
-in this limit.
+[D] EXP-004 answers the qualitative range question by supplying the missing
+odd-zero input and retaining multiplicity excess. Its [complete proof](07-parity-density-transfer.md)
+gives a fixed $\theta_1<\theta_0$, with no numerical value assigned to the
+classical density $\kappa$. Pressure amplification by itself still requires a
+positive baseline and does not prove this extension.
 
-A lower exponent would require additional information that forces useful
-simple-zero mass before this positive baseline is available, or a different
-finite inequality connecting the full configuration to a stronger statistic.
-The current inequality gives a better value after the baseline becomes
-positive. It does not create positivity where the input bound is negative.
-A claimed exponent improvement should therefore display the exact replacement
-for that step, with all constants and quantifiers.
+[C] A certified decimal exponent would require a quantitative classical seed
+and explicit control of its conversion to $O/N$. Assigning a convenient small
+number to an unspecified positive constant is invalid. The scalar parity
+relaxation is already sharp; a stronger transfer needs additional information.
+
+## Cross-area routes and their unresolved interfaces
+
+The [critical-mass dossier](../context/2026-09-12-critical-mass-and-multiplicity-route.md)
+also studies weighted Gram defects and high-degree short mollifiers. A local
+weighted-block deduction is recorded, but no new asymptotic theorem is claimed
+from it. The CFKL route still needs a suitable detected count, an arbitrary-degree
+localized moment theorem, and a certified numerical seed. A table entry does not
+discharge those requirements.
+
+The [spectral dossier](../context/2026-09-12-spectral-optimization-alternatives.md)
+retains negative spectral mass and proposes optimization witnesses. Near-line
+pairs make their negative eigenvalues arbitrarily small, so counting negative
+directions alone supplies no uniform extra gain. Proposed third-moment witnesses
+lack the required unconditional short-interval arithmetic input.
+
+The [alternative-reformulation dossier](../context/2026-09-12-alternative-rh-reformulations.md)
+examines Nyman-Beurling approximation, Li/Weil positivity, spectral realizations,
+and heat flow. Sparse-prime approximation has a known positive-distance
+obstruction. A coupled approximation/tail objective is proposed with its exact
+infinite-limit criterion; no finite optimizer has proved that limit. Finite
+positivity and heat-flow limits cannot simply be extrapolated to all zeros.
+
+These routes were source-reviewed and adversarially evaluated. They were not
+declared or run as additional computational experiments and are not discoveries
+establishing RH. Their rejected shortcuts remain documented.
 
 ## Effective height and uniformity
 
