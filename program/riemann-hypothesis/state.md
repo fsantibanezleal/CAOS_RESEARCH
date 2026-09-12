@@ -1,6 +1,6 @@
 # Riemann hypothesis state
 
-Updated: 2026-09-12. Release: **0.65.000**, released and live-verified at final main commit `bb96e72393b3e8eb0d7a7e400b9cdf665d09eae2` (release commit `24a2cb250e44fa59c9f6a56c86eefdf009258e70`, tag `v0.65.000`).
+Updated: 2026-09-12. Release: **0.65.000**, released and live-verified from release commit `24a2cb250e44fa59c9f6a56c86eefdf009258e70` (tag `v0.65.000`).
 Current research round: **EXP-003 and EXP-004 confirmed; v0.02 published on Zenodo and replay integrated**.
 
 EXP-004 has a separate confirmed verdict and proof-review record. It proves a
