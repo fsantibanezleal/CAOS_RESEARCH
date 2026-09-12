@@ -100,6 +100,41 @@ def alpha_c(p: float) -> float:
     return 1.0 / (4.0 * p)
 
 
+def detectable_alpha_p(nu: float, g: float = 1.0, stages: int = 400) -> float:
+    """Largest product alpha*p whose stall is still visible within `stages`.
+
+    A supercritical schedule does not stall immediately. The growth rate stays
+    positive while
+
+        g q / 2 + log sin(phi) > log nu + 2 alpha p g q,
+
+    so the first stalled stage is near q* = log(1/nu) / (g (2 alpha p - 1/2)). Stages
+    are indexed q = 0 .. Q-1, so the LAST stage a run of Q stages inspects is Q-1 and
+    that is the binding one. A truncated run therefore cannot see any schedule with
+
+        alpha p < 1/4 + log(1/nu) / (2 g (Q - 1)),
+
+    and a bisection on such a run reports a threshold too HIGH by the factor
+    1 + 2 log(1/nu) / (g (Q - 1)). The Q versus Q-1 distinction is not cosmetic: with
+    Q it leaves 47 apparent violations in a million-schedule ensemble, and with Q-1 it
+    leaves none, the tightest closing schedule sitting 2.7e-06 below the bound.
+
+    This is the same trap that produced the refuted first-pass estimate: a long
+    transient is not escape. Quote this bound whenever a numerically measured
+    threshold is compared with the closed form.
+    """
+    if nu <= 0.0:
+        return 0.25
+    return 0.25 + math.log(1.0 / nu) / (2.0 * g * max(1, stages - 1))
+
+
+def alpha_c_finite_horizon(p: float, nu: float, g: float = 1.0, stages: int = 400) -> float:
+    """Threshold a finite-horizon bisection will actually report."""
+    if p <= 0:
+        raise ValueError("p must be positive")
+    return detectable_alpha_p(nu, g, stages) / p
+
+
 def implied_p(alpha0_cmz: float = ALPHA0_CMZ) -> float:
     """Frequency growth exponent implied by a |grad|^alpha threshold."""
     return 1.0 / (2.0 * alpha0_cmz)
