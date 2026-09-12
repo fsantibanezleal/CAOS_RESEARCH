@@ -15,5 +15,6 @@ verification. Versioned source and formalization audits distinguish assumptions 
 
 The candidate contribution is a short-interval theorem using attributed stability ideas.
 There is no global-record or RH-solution claim and no guarantee of publication priority.
-Manuscript authoring, all-page PDF review, Zenodo publication, public replay QA, and scoped
+The 10-page preprint v0.01 is published as DOI 10.5281/zenodo.22727389. Its full PDF
+render and fresh public-byte/metadata verification passed. Public replay QA and scoped
 promotion remain release gates. See `RESUME.md` and the source experiment verdicts.

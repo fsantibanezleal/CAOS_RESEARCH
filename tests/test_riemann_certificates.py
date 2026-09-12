@@ -148,4 +148,3 @@ def test_full_committed_certificate_replays_with_separate_sinc_evaluator():
     assert result["verified"]
     assert result["independent_sinc_taylor"]
     assert result["nodes"] == certificate["nodes"]
-

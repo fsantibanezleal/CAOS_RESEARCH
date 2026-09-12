@@ -1,0 +1,163 @@
+{
+  "record_id": 22727389,
+  "version_doi": "10.5281/zenodo.22727389",
+  "concept_doi": "10.5281/zenodo.22727388",
+  "verified_utc": "2026-09-12T16:01:24.122190+00:00",
+  "public_url": "https://zenodo.org/records/22727389",
+  "filename": "riemann-short-interval-stability-v0.01.pdf",
+  "public_metadata": {
+    "resource_type": {
+      "id": "publication-preprint",
+      "title": {
+        "de": "Preprint",
+        "en": "Preprint"
+      }
+    },
+    "creators": [
+      {
+        "person_or_org": {
+          "type": "personal",
+          "name": "Santibañez-Leal, Felipe",
+          "given_name": "Felipe",
+          "family_name": "Santibañez-Leal",
+          "identifiers": [
+            {
+              "identifier": "0000-0002-0150-3246",
+              "scheme": "orcid"
+            }
+          ]
+        },
+        "affiliations": [
+          {
+            "name": "CAOS Research program"
+          }
+        ]
+      }
+    ],
+    "title": "A stability refinement for simple critical zeros in short intervals",
+    "publisher": "Zenodo",
+    "publication_date": "2026-09-12",
+    "subjects": [
+      {
+        "subject": "Riemann zeta function"
+      },
+      {
+        "subject": "short intervals"
+      },
+      {
+        "subject": "simple critical zeros"
+      },
+      {
+        "subject": "distinct zeros"
+      },
+      {
+        "subject": "pair correlation"
+      },
+      {
+        "subject": "Gram matrix stability"
+      },
+      {
+        "subject": "interval arithmetic"
+      }
+    ],
+    "languages": [
+      {
+        "id": "eng",
+        "title": {
+          "en": "English"
+        }
+      }
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "scheme": "url",
+        "relation_type": {
+          "id": "issupplementto",
+          "title": {
+            "de": "Ergänzt",
+            "en": "Is supplement to"
+          }
+        },
+        "resource_type": {
+          "id": "software",
+          "title": {
+            "de": "Software",
+            "en": "Software"
+          }
+        }
+      },
+      {
+        "identifier": "10.48550/arXiv.2609.07918",
+        "scheme": "doi",
+        "relation_type": {
+          "id": "cites",
+          "title": {
+            "de": "Zitiert",
+            "en": "Cites"
+          }
+        },
+        "resource_type": {
+          "id": "publication-preprint",
+          "title": {
+            "de": "Preprint",
+            "en": "Preprint"
+          }
+        }
+      },
+      {
+        "identifier": "10.48550/arXiv.2609.02882",
+        "scheme": "doi",
+        "relation_type": {
+          "id": "cites",
+          "title": {
+            "de": "Zitiert",
+            "en": "Cites"
+          }
+        },
+        "resource_type": {
+          "id": "publication-preprint",
+          "title": {
+            "de": "Preprint",
+            "en": "Preprint"
+          }
+        }
+      }
+    ],
+    "version": "0.01",
+    "rights": [
+      {
+        "id": "cc-by-4.0",
+        "title": {
+          "en": "Creative Commons Attribution 4.0 International"
+        },
+        "description": {
+          "en": "The Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited."
+        },
+        "icon": "cc-by-icon",
+        "props": {
+          "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "scheme": "spdx"
+        }
+      }
+    ],
+    "description": "<p>We derive a stability refinement of Biao Wang's 2026 short-interval bounds for simple critical zeros and distinct zeros of the Riemann zeta function. For each fixed exponent theta above the unique positive-proportion threshold of the cosine bound, the refinement is strictly positive. The argument transfers the known stability-enhanced rank-trace inequality from the ainta manuscript to Lamzouri's exact finite Hilbert operator, retains the simple-atom Gram defect, and uses a quantitative obstruction to additive triples of cosine-kernel zeros. It preserves Wang's fixed-support short-interval pair-correlation hypotheses and takes the large-height limit before the smoothing and support limits.</p><p>A reproducible Arb certificate at theta = 3/4 gives a simple-critical proportion of at least 0.4190768284253039967 and a distinct-zero proportion of at least 0.7095384142126519983. The finite certificate has 48,761 partition nodes and zero unresolved boxes, with an alternate sinc Taylor evaluation at 256-bit precision.</p><p>This is a self-published preprint, not peer reviewed. The imported stability lemma and analytic inputs are attributed to their sources. The result does not prove the Riemann hypothesis, establish a new global zero-proportion record, improve the positivity exponent, or provide an effective height threshold. The proof is not an end-to-end Lean formalization.</p>"
+  },
+  "fresh_unauthenticated_download": true,
+  "verified_fields": [
+    "title",
+    "sole_author",
+    "orcid",
+    "version",
+    "date",
+    "license",
+    "preprint_type",
+    "version_doi",
+    "concept_doi",
+    "public_access",
+    "exact_pdf_bytes"
+  ],
+  "bytes": 368644,
+  "sha256": "f38d47b6daebc3fa2277542e009ce2cd5625e5daeb05bda57df726a46cc48761",
+  "md5": "cee28b5bc133a5a71dbc210a914f9fe7"
+}

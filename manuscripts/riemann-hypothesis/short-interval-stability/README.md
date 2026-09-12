@@ -1,6 +1,6 @@
 # A stability refinement for simple critical zeros in short intervals
 
-Version 0.01, 2026-09-12. Sole author: Felipe Santibanez-Leal,
+Published version 0.01, 2026-09-12. Sole author: Felipe Santibanez-Leal,
 ORCID [0000-0002-0150-3246](https://orcid.org/0000-0002-0150-3246).
 
 This preprint derives a strict refinement of Wang's positive short-interval cosine curve,
@@ -15,9 +15,10 @@ Automated adversarial review is distinguished from peer review and end-to-end fo
 - Frozen version DOI: [10.5281/zenodo.22727389](https://doi.org/10.5281/zenodo.22727389).
 - Latest-version concept DOI: [10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388).
 
-Publication is complete only when `publication-receipt.json` records a fresh unauthenticated
-download matching the frozen PDF. Published bytes are never replaced; corrections require
-a new version and a new receipt. The manuscript is CC BY 4.0 and research code is MIT.
+[The publication receipt](publication-receipt.json) records a fresh unauthenticated download
+matching all 368,644 frozen PDF bytes and verifies metadata, author, ORCID, license and both DOIs.
+Published bytes are never replaced; corrections require a new version and a new receipt.
+The manuscript is CC BY 4.0 and research code is MIT.
 
 Build from this directory using two passes of `pdflatex -interaction=nonstopmode
 -halt-on-error main.tex`, then render every page with `pdftoppm -png` and inspect it.

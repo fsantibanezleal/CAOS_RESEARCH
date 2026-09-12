@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="716" viewBox="0 0 1040 716" role="img" aria-labelledby="title desc">
+  <title id="title">Short-interval stability proof dependencies</title>
+  <desc id="desc">Two inputs meet in an exact finite operator: Wang's short-interval pair sum and the signed geometry of complex zeros. The known Gram stability defect, a positive three-point energy bound, and three shifted partitions give a strictly improved asymptotic proportion. The diagram separates imported inputs, the derived transfer, and its finite numerical certificate.</desc>
+  <style>
+    :root { color-scheme: light dark; }
+    .bg { fill:#f8fafc; }
+    .box { fill:#ffffff; stroke:#94a3b8; stroke-width:1.5; }
+    .derived { fill:#eff6ff; stroke:#2563eb; stroke-width:1.8; }
+    .cert { fill:#ecfdf5; stroke:#047857; stroke-width:1.5; }
+    .title { fill:#0f172a; font:700 25px system-ui, sans-serif; }
+    .heading { fill:#0f172a; font:650 18px system-ui, sans-serif; }
+    .body { fill:#334155; font:16px system-ui, sans-serif; }
+    .small { fill:#475569; font:14px system-ui, sans-serif; }
+    .formula { fill:#123c6a; font:19px Georgia, serif; }
+    .arrow { fill:none; stroke:#64748b; stroke-width:2; marker-end:url(#arrow); }
+    .arrowhead { fill:#64748b; }
+    @media (prefers-color-scheme:dark) {
+      .bg { fill:#0f172a; }
+      .box { fill:#17233a; stroke:#64748b; }
+      .derived { fill:#142d4e; stroke:#60a5fa; }
+      .cert { fill:#103c35; stroke:#6ee7b7; }
+      .title,.heading { fill:#f1f5f9; }
+      .body { fill:#dbe4f0; }
+      .small { fill:#cbd5e1; }
+      .formula { fill:#bfdbfe; }
+      .arrow { stroke:#94a3b8; }
+      .arrowhead { fill:#94a3b8; }
+    }
+  </style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0L10 5L0 10Z"/></marker></defs>
+  <rect class="bg" width="1040" height="716" rx="16"/>
+  <text class="title" x="36" y="44">A strict gain from finite zero geometry</text>
+  <text class="small" x="36" y="70">Fixed exponent above Wang's positivity threshold; no claim that RH is solved</text>
+
+  <rect class="box" x="36" y="98" width="468" height="104" rx="10"/>
+  <text class="heading" x="56" y="128">Imported analytic input: Wang</text>
+  <text class="body" x="56" y="155">Fixed smooth test, bandwidth below the exponent</text>
+  <text class="formula" x="56" y="184">Q / N → C(f)</text>
+
+  <rect class="box" x="536" y="98" width="468" height="104" rx="10"/>
+  <text class="heading" x="556" y="128">Imported geometry: Lamzouri</text>
+  <text class="body" x="556" y="155">Real atoms plus signed reflected off-line pairs</text>
+  <text class="formula" x="556" y="184">tr A = N,    Q = ||A||²</text>
+
+  <path class="arrow" d="M270 202V221H520V239"/>
+  <path class="arrow" d="M770 202V221H520"/>
+  <rect class="derived" x="190" y="244" width="660" height="105" rx="10"/>
+  <text class="heading" x="212" y="274">Direct finite transfer of the known Ainta stability lemma</text>
+  <text class="formula" x="212" y="306">s ≥ 2N − Q + D(G)</text>
+  <text class="small" x="212" y="331">G is the Gram matrix of actual simple critical zeros; multiplicities stay in A.</text>
+
+  <rect class="box" x="36" y="393" width="468" height="109" rx="10"/>
+  <text class="heading" x="56" y="423">Cosine-root obstruction</text>
+  <text class="body" x="56" y="450">No three positive additive kernel roots</text>
+  <text class="formula" x="56" y="480">2{K(u)² + K(v)² + K(u + v)²} ≥ d &gt; 0</text>
+
+  <rect class="box" x="536" y="393" width="468" height="109" rx="10"/>
+  <text class="heading" x="556" y="423">Three shifted, disjoint triple partitions</text>
+  <text class="body" x="556" y="450">Convex pinching and total span L</text>
+  <text class="formula" x="556" y="480">D(G) ≥ (d / 3)(s − 2 − 2L / R)</text>
+  <path class="arrow" d="M520 349V371H770V388"/>
+  <path class="arrow" d="M504 449H531"/>
+
+  <path class="arrow" d="M770 502V524H520V542"/>
+  <rect class="derived" x="190" y="547" width="660" height="72" rx="10"/>
+  <text class="heading" x="212" y="575">Fixed-test limit, then smoothing and bandwidth limits</text>
+  <text class="formula" x="212" y="602">c* = (3c − 2d / R) / (3 − d) &gt; c,    provided R &gt; 2 / c</text>
+
+  <rect class="cert" x="36" y="642" width="968" height="49" rx="10"/>
+  <text class="body" x="56" y="672">Certified example: θ = 3/4, R = 21/4, d = 1/7000  →  c* = 0.4190768284253…</text>
+</svg>

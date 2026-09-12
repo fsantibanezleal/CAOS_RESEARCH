@@ -25,3 +25,12 @@ Pure kernel optimization and aggregate multiplicity refinements were excluded as
 The new result is a candidate contribution with a limited search-based novelty assessment.
 Advanced to consolidating after adversarial review; manuscript, publication and web release
 gates remain pending and are recorded separately.
+
+## 2026-09-12: preprint published and public bytes verified
+
+Published v0.01, DOI 10.5281/zenodo.22727389, concept 10.5281/zenodo.22727388.
+The 10-page PDF passed full visual inspection with zero LaTeX warnings or overflowing boxes.
+A fresh unauthenticated download matches all 368,644 reviewed bytes; public metadata verifies
+the sole author, ORCID, date, version, preprint type, license and both DOIs. The publication
+receipt is persisted beside the frozen PDF. This is a self-published preprint, not peer review.
+The research unit remains consolidating until the public replay and release gates pass.
