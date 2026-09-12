@@ -3,6 +3,28 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.65.000] - 2026-09-12
+
+### Added
+- Riemann EXP-004 parity-density transfer: exact multiplicity/parity identities,
+  a source-bound proof review, complete finite census and sharpness controls, and
+  a qualitative fixed-exponent extension below Wang's cosine positivity root.
+- EXP-003 pressure replay and the bilingual four-experiment web surface are now
+  exported through `riemann-replay-v3` with committed-source and raw-evidence gates.
+- Zenodo v0.02 manuscript metadata, release QA, and representative rendered captures
+  are retained under `program/riemann-hypothesis/release-0.65.000/`.
+
+### Changed
+- Experiment dialogs normalize tagged display equations for KaTeX presentation while
+  preserving the committed scientific source bytes and hashes.
+- The release matrix covers 20 pointer-driven EN/ES light/dark scenarios at five
+  viewports, including all four Riemann experiment records and proof stages.
+
+### Boundaries
+- The Riemann hypothesis remains open. No numerical new exponent, effective height,
+  global record or universal simplicity claim is made; publication and automated
+  verification remain separate from external peer review and formalization.
+
 ## [0.64.000] - 2026-09-12
 
 ### Added

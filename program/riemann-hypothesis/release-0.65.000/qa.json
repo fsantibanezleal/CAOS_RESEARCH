@@ -1,0 +1,60 @@
+{
+  "schema": "riemann-release-qa-v2",
+  "release": "0.65.000",
+  "recorded_utc": "2026-09-12T20:47:34.9151496Z",
+  "base_develop_merge": "65980d33f40c291c86a384420afa888b53abbea0",
+  "tests": {
+    "python_passed": 364,
+    "frontend_passed": 14,
+    "ruff": "PASS",
+    "structure_guard": "PASS",
+    "pipeline_bake": "PASS",
+    "typescript_build": "PASS"
+  },
+  "browser": {
+    "harness": "scripts/verify_riemann_ui.mjs",
+    "scenarios": 20,
+    "research_tab_visits": 120,
+    "screenshots": 2102,
+    "failures": 0,
+    "console_errors": 0,
+    "page_errors": 0,
+    "request_failures": 0,
+    "http_errors": 0,
+    "matrix": ["1440x1000", "390x844", "1280x800", "1600x900", "2560x1440"],
+    "languages": ["en", "es"],
+    "themes": ["light", "dark"],
+    "content": "all successive content viewports, proof stages, experiment records and architecture panels",
+    "raw_receipt": {
+      "path": "tmp/riemann-ui-v065/receipt.json",
+      "bytes": 55389105,
+      "sha256": "e9c10a2eb27e049562dff413740ade54854e1b6725eb56e6c39f9ffefe7eff6b"
+    }
+  },
+  "build_files": [
+    {"path": "frontend/dist/index.html", "bytes": 591, "sha256": "03a34386af19353c8643432e3559a054dbd912aa604b760910b588d2df1f2fe2"},
+    {"path": "frontend/dist/assets/ExperimentModal-Cb1RYfm2.js", "bytes": 176791, "sha256": "7a4934811ff7dd7671e1a460bd2bd57459719daa79f72ee05c565769813f0cff"},
+    {"path": "frontend/dist/assets/index-CftVb1pP.css", "bytes": 64941, "sha256": "8c6d51e7dca5b59c12f7754bd5b316540ebe217d043d67bc4fe6e8e2247b3e78"},
+    {"path": "frontend/dist/assets/index-yIfUkLNg.js", "bytes": 743629, "sha256": "34757874f328539170a13bb2bbddbe981f05a88d56c8bba4e596481dd1e1e918"}
+  ],
+  "data_files": [
+    {"path": "data/derived/research/experiments.json", "bytes": 1746742, "sha256": "8ea3c07bb5b85aed4975e00feb84f77fef40984d9b11151b920be999a43714eb"},
+    {"path": "data/derived/research/jacobian.json", "bytes": 3582, "sha256": "c8a269dcfbcb69555370e23003888865f868283ab19860c4b6e54dc8b8d112e0"},
+    {"path": "data/derived/research/portfolio.json", "bytes": 3754, "sha256": "ec19ec6a8fdde230db4dbb70e042359b832c615a5b95dd21cf55d14da68dfc0e"},
+    {"path": "data/derived/research/riemann.json", "bytes": 41149, "sha256": "d8815db7876f455e68951ced726bda8222f9ec61cf65dda2d9bdf18d182b6006"},
+    {"path": "data/derived/manifests/index.json", "bytes": 385, "sha256": "c7876e573a0f4f0cd662351aed089fe3fd685b55f660881f5dfb85480ce7f337"},
+    {"path": "data/derived/manifests/riemann.json", "bytes": 12426, "sha256": "a286b6ea3130bc83d8751375724c4364fe9732ea6408f25441d5bd28b5714ff8"}
+  ],
+  "manuscript": {
+    "doi": "10.5281/zenodo.22728744",
+    "pdf_bytes": 498500,
+    "pdf_sha256": "56b0ce29935fe3d115d9d40432f87f82b030355b028f3ea942fd3d3c671e2b1c"
+  },
+  "representative_screenshots": [
+    {"path": "program/riemann-hypothesis/release-0.65.000/screenshots/desktop-en-light-summary.png", "bytes": 127798, "sha256": "f619d9a48ec80fc7993df87368452334c382e39332e9a8aba09973399452b0b9"},
+    {"path": "program/riemann-hypothesis/release-0.65.000/screenshots/desktop-en-light-results.png", "bytes": 115892, "sha256": "5acdc19a132f6f698f3cb58b51421ceaa48aab747b8d4e6348bea5160f49cc13"},
+    {"path": "program/riemann-hypothesis/release-0.65.000/screenshots/desktop-en-light-exp004.png", "bytes": 234920, "sha256": "e800eed06af4750be22c5df1da75dd544e76cab6346fd653122c45291a8577fe"},
+    {"path": "program/riemann-hypothesis/release-0.65.000/screenshots/phone-es-dark-exp004-verdict.png", "bytes": 53129, "sha256": "43e62f7d348f2f29b5138c92f795cdae48d41fbf47ec9e02ae60e3d888ddc943"}
+  ],
+  "deployment": {"status": "pending", "main_commit": null, "tag": null, "pages_run": null, "live_receipt": null}
+}

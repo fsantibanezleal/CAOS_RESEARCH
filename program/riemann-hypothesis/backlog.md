@@ -25,4 +25,4 @@ The new bound is 0.419087888170111727959091183775 at theta=3/4.
 |---|---|---|---|
 | RH-010 | Source-complete alternative methods, including parity/multiplicity, spectral witnesses and approximation criteria | done for declared scope; dossiers and verified archive committed | P0 |
 | RH-011 | Declare and adversarially test the strongest relevant alternative | done; EXP-004 confirmed in fbc4f9f with proof-review binding | P0 |
-| RH-012 | Consolidate the expanded manuscript, public replay, publication and release evidence | doing; v0.02 published, replay and release gates remain | P0 |
+| RH-012 | Consolidate the expanded manuscript, public replay, publication and release evidence | doing; v0.65.000 candidate validated, main/Pages/live gates remain | P0 |

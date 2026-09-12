@@ -3,10 +3,10 @@
 ## 1. State in one screen
 
 Read [state.md](state.md), [backlog.md](backlog.md), [plan.md](plan.md), then the
-latest source verdicts. Evidence outranks this handoff. Public v0.64.000 and
-preprints v0.01/v0.02 are delivered; v0.02 is published at DOI
-10.5281/zenodo.22728744 and its replay integration remains in progress. The general
-RH remains open.
+latest source verdicts. Evidence outranks this handoff. Public release candidate
+v0.65.000 is locally validated; v0.02 is published at DOI 10.5281/zenodo.22728744
+and the four-record replay is integrated. Main deployment and live verification
+remain the final release gates. The general RH remains open.
 
 ## 2. The objects table
 
@@ -72,9 +72,9 @@ The published v0.01 archive remains byte-identical.
 
 ## 5. Next actions
 
-Continue current consolidation: bake the committed EXP-004 evidence, integrate the
-four-experiment bilingual web surface, promote PR #266, serialize the next release,
-and verify the live browser journeys.
+Continue current consolidation: promote the v0.65.000 release branch to main,
+run Pages, record the live byte and browser receipt, and synchronize the private
+mirror's release state.
 Publication, scoped PR #266, serialized release, rendered QA and live verification
 must each have observed receipts before their states advance.
 
@@ -86,7 +86,8 @@ instructions: `docs/guides/riemann-replay.md`. The exporter reads committed Git 
 bytes and binds the hypothesis, code, runner, seeds, candidate list and certificates.
 Dirty files cannot become replay evidence.
 
-First release receipts: `program/riemann-hypothesis/release-0.64.000/`.
+First release receipts: `program/riemann-hypothesis/release-0.64.000/`; current
+candidate evidence: `program/riemann-hypothesis/release-0.65.000/`.
 Frozen first preprint archive: `manuscripts/riemann-hypothesis/short-interval-stability/versions/v0.01/`.
 Private coordination: `plans/caos-research/riemann-hypothesis/` in CAOS_MANAGE.
 
