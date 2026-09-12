@@ -1,0 +1,30 @@
+{
+  "asymptotic_transfer_reviewed": true,
+  "confirmed_conclusion": "Existence of a fixed theta1 below the cosine positivity root with positive simple-critical asymptotic proportion in every sufficiently high interval of each fixed exponent theta>=theta1, theta<1.",
+  "declaration_commit": "e03413b2301bf45ca68ff6e945f25add9a1c3a89",
+  "imported_inputs": [
+    "Known finite Hilbert stability mechanism",
+    "Selberg distinct odd-zero seed as restated in Karatsuba",
+    "Wang fixed-test short-interval pair theorem"
+  ],
+  "novelty_scope": "Dated bounded primary-source and repository search found no matching short-interval parity combination; no absolute priority guarantee.",
+  "numerical_exponent_claimed": false,
+  "review_scope": "Independent automated mathematical and source audits, coordinating full-proof review, and two separate complete raw-census checks; not external peer review or end-to-end formal verification.",
+  "reviewed_utc": "2026-09-12T18:17:12+00:00",
+  "schema": "riemann-exp004-proof-review-v1",
+  "scientific_verdict": "confirmed",
+  "source_sha256": {
+    "parity_audit": "a1c5285b44aa561cbd0a8921ae3ec05b1841861d2c06cb252efeb3340c9628c2",
+    "parity_hypothesis": "d1731c3e586e786f39b296cc4c6ac184705f175451f6312ca43b1834d9c4e4a1",
+    "parity_proof": "98f9f82212ecc28e1baf2e4a182d4d376be419581fe40888fcdcd96e19099f42",
+    "parity_result": "bc9e28ca1792657e24da77268e6e2108c3f52684b7e16504f07b32cfce014d6e",
+    "parity_verdict": "123b9478153f814295b4c72a3c1f556e8230a578966aa6d7e7dd7b360a368588"
+  },
+  "universal_finite_proof_reviewed": true,
+  "unquantified": [
+    "classical density constant",
+    "kappa",
+    "theta1 decimal",
+    "effective onset height"
+  ]
+}

@@ -44,10 +44,28 @@ declared experiment.
 
 ## Computational validation
 
-Pending at the creation of this record. The runner must execute the frozen checks
-and retain its stdout, exact census and witness records, operational receipt and
-source identities. The final verdict must cite actual outcomes. A paper review is
-not a substitute for an unexecuted computational stage.
+The declared single full run passed in 8.0353704 seconds, below the 60-second cap.
+Its 19,683 count vectors and 59,049 slack evaluations passed, together with two
+symbolic identities, 24 atom regressions, 42 exact primal/dual controls and 36
+sinc sharpness configurations. The negative control correctly rejects the false
+distinct half-sum inequality. The 36 focused software tests passed, including
+forged weighted-odd counts, missing conjugate copies, negative/float slack,
+source-byte changes, interruption-prefix preservation and existing-output refusal.
+
+Two reviewers then independently parsed every stored census row using direct
+count and residual formulas without importing the runner. Both checks passed.
+The coordinating review also verified each linked raw-artifact SHA-256, the
+absence of a failure record, the original stdout hash, the observed budget, and
+null fields for unquantified numerical constants. The source-bound run itself
+checked its hypothesis and four exact premise files against declaration e03413b.
+
+All eight process-generated files were copied unchanged into artifacts, followed
+by a portable execution receipt. The deterministic result hash is
+`bc9e28ca1792657e24da77268e6e2108c3f52684b7e16504f07b32cfce014d6e`;
+the full census hash is
+`03e3f42e3c887e729057e02b88b53c07673c171113f5389e0b7d92ee18acc421`.
+No failed full run, replacement search or budget extension was omitted. The
+[confirmed verdict](verdict.md) states the theorem and its exact boundaries.
 
 ## Residual risks and theorem limits
 
