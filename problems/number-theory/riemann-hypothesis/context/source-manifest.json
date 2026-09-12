@@ -411,6 +411,86 @@
       },
       "cache_path": "source-cache/anthropic-riemann-zeta-20260912.html",
       "tracked_fulltext": false
+    },
+    {
+      "filename": "teal-four-point-c614e65188f0.md",
+      "source_url": "https://raw.githubusercontent.com/teal-sea/zeta-lab/c614e65188f0b5d73b342436383ae558fbd3aafd/hunts/ainta_seven_point/FOUR-POINT.md",
+      "bytes": 39463,
+      "sha256": "e2e8131505576dad04c153ddb24c2484de50609bc4dc08a2aeeae724d6ea9947",
+      "note": "Pressure-frame prior-art audit; primary repository source, no verifier execution",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "not-separately-audited-for-this-cache-entry",
+        "redistribution_basis": "local research archive; not publicly redistributed or relicensed"
+      },
+      "version": "c614e65188f0b5d73b342436383ae558fbd3aafd",
+      "cache_path": "source-cache/teal-four-point-c614e65188f0.md",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-pressure-frame-prior-art.md"
+    },
+    {
+      "filename": "teal-n-point-bridge-c614e65188f0.md",
+      "source_url": "https://raw.githubusercontent.com/teal-sea/zeta-lab/c614e65188f0b5d73b342436383ae558fbd3aafd/hunts/ainta_seven_point/BRIDGE.md",
+      "bytes": 31291,
+      "sha256": "471762655ff3883bc73236159b660204be966797c89da53688229063cc2cf8fb",
+      "note": "Pressure-frame prior-art audit; primary repository source, no verifier execution",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "not-separately-audited-for-this-cache-entry",
+        "redistribution_basis": "local research archive; not publicly redistributed or relicensed"
+      },
+      "version": "c614e65188f0b5d73b342436383ae558fbd3aafd",
+      "cache_path": "source-cache/teal-n-point-bridge-c614e65188f0.md",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-pressure-frame-prior-art.md"
+    },
+    {
+      "filename": "teal-pressure-mission-c614e65188f0.md",
+      "source_url": "https://raw.githubusercontent.com/teal-sea/zeta-lab/c614e65188f0b5d73b342436383ae558fbd3aafd/hunts/four_point_pressure/MISSION.md",
+      "bytes": 1896,
+      "sha256": "13ea58679707fef8690ffcceaa974d24091fb3fb38ac691321d5d275a6b10e04",
+      "note": "Pressure-frame prior-art audit; primary repository source, no verifier execution",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "not-separately-audited-for-this-cache-entry",
+        "redistribution_basis": "local research archive; not publicly redistributed or relicensed"
+      },
+      "version": "c614e65188f0b5d73b342436383ae558fbd3aafd",
+      "cache_path": "source-cache/teal-pressure-mission-c614e65188f0.md",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-pressure-frame-prior-art.md"
+    },
+    {
+      "filename": "teal-pressure-runs-c614e65188f0.md",
+      "source_url": "https://raw.githubusercontent.com/teal-sea/zeta-lab/c614e65188f0b5d73b342436383ae558fbd3aafd/hunts/four_point_pressure/RUNS.md",
+      "bytes": 5648,
+      "sha256": "d228fe1a50ee8c27dc5a54725fdce6c6649ecb4be08ace41a48053bdfc018f75",
+      "note": "Pressure-frame prior-art audit; primary repository source, no verifier execution",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "not-separately-audited-for-this-cache-entry",
+        "redistribution_basis": "local research archive; not publicly redistributed or relicensed"
+      },
+      "version": "c614e65188f0b5d73b342436383ae558fbd3aafd",
+      "cache_path": "source-cache/teal-pressure-runs-c614e65188f0.md",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-pressure-frame-prior-art.md"
+    },
+    {
+      "filename": "npip-proof-72a01ac5ea38.md",
+      "source_url": "https://raw.githubusercontent.com/npip99/zeta-zeros/72a01ac5ea3837f2a4c4583d831f885d005f8af1/docs/proof.md",
+      "bytes": 2381,
+      "sha256": "4afc5a26cf48234b804709a8fde72706a1e2f792421586fc946ff66fd6c097b4",
+      "note": "Pressure-frame prior-art audit; primary repository source, no verifier execution",
+      "retrieved_on": "2026-09-12",
+      "license": {
+        "status": "not-separately-audited-for-this-cache-entry",
+        "redistribution_basis": "local research archive; not publicly redistributed or relicensed"
+      },
+      "version": "72a01ac5ea3837f2a4c4583d831f885d005f8af1",
+      "cache_path": "source-cache/npip-proof-72a01ac5ea38.md",
+      "tracked_fulltext": false,
+      "review_dossier": "2026-09-12-pressure-frame-prior-art.md"
     }
   ],
   "repositories": [
@@ -470,6 +550,104 @@
         "entire tracked repository"
       ],
       "redistribution": "upstream license retained inside snapshot"
+    },
+    {
+      "source_url": "https://github.com/tawanerguo-cn/zeta-simple-zeros",
+      "commit": "45149f6d403059a71be73c5e3f884cee7cd62b20",
+      "commit_date": "2026-08-11T16:37:57Z",
+      "retrieved_on": "2026-09-12",
+      "download_url": "https://codeload.github.com/tawanerguo-cn/zeta-simple-zeros/zip/45149f6d403059a71be73c5e3f884cee7cd62b20",
+      "archive_path": "source-snapshots/tawanerguo-stability-45149f6d4030.zip",
+      "bytes": 3148620,
+      "sha256": "702c553be62f3034a0d93458590a34476f5b3f624f56e20fdc0af737416e864a",
+      "license": "MIT",
+      "license_sha256": "894e5f64c954afa0b675d3e8ab7ef254b5dd590ef2eb9ffd82e8e8facaeb9e08",
+      "scope": [
+        "entire tracked repository"
+      ],
+      "redistribution": "upstream license retained inside snapshot",
+      "review_dossier": "2026-09-12-pressure-frame-prior-art.md",
+      "reviewed_files": [
+        {
+          "path": "paper/riemann.tex",
+          "bytes": 16623,
+          "sha256": "d03bd8aae5f3a7ad423e4275c00bfbadf7a45e872af723866696a2806482a95b",
+          "source_url": "https://raw.githubusercontent.com/tawanerguo-cn/zeta-simple-zeros/45149f6d403059a71be73c5e3f884cee7cd62b20/paper/riemann.tex"
+        },
+        {
+          "path": "docs/trace_energy_envelope.md",
+          "bytes": 2482,
+          "sha256": "af6e86f227671b649a0a7751a7b7a6a2af7ab9aa944aba62475b64c8e42c55a1",
+          "source_url": "https://raw.githubusercontent.com/tawanerguo-cn/zeta-simple-zeros/45149f6d403059a71be73c5e3f884cee7cd62b20/docs/trace_energy_envelope.md"
+        },
+        {
+          "path": "BELLMAN_COBBOUNDARY_PROOF.md",
+          "bytes": 2845,
+          "sha256": "fb2a7711019841712e399a3d0710b67c42d5b8672ec83d5bad6297469b4dffc2",
+          "source_url": "https://raw.githubusercontent.com/tawanerguo-cn/zeta-simple-zeros/45149f6d403059a71be73c5e3f884cee7cd62b20/BELLMAN_COBBOUNDARY_PROOF.md"
+        },
+        {
+          "path": "NEXT_FRONTIER.md",
+          "bytes": 698,
+          "sha256": "3e752e508ce7c14111d30902611a3e2c3d15456d4e283d7e125bdb6d1332d893",
+          "source_url": "https://raw.githubusercontent.com/tawanerguo-cn/zeta-simple-zeros/45149f6d403059a71be73c5e3f884cee7cd62b20/NEXT_FRONTIER.md"
+        },
+        {
+          "path": "archive/original/GLOBAL_SPECTRAL_DUAL.md",
+          "bytes": 6473,
+          "sha256": "93d92a9de4b6e633fe0eab9c1c8c48d669fdeecf000f164cbb858ca01ff367a2",
+          "source_url": "https://raw.githubusercontent.com/tawanerguo-cn/zeta-simple-zeros/45149f6d403059a71be73c5e3f884cee7cd62b20/archive/original/GLOBAL_SPECTRAL_DUAL.md"
+        }
+      ]
+    },
+    {
+      "source_url": "https://github.com/yuhangshi888/zeta-simple-zeros-673316977",
+      "commit": "1aeda8e9f0678166a824c75313a813b09eb478cd",
+      "commit_date": "2026-09-11T11:16:13Z",
+      "retrieved_on": "2026-09-12",
+      "download_url": "https://codeload.github.com/yuhangshi888/zeta-simple-zeros-673316977/zip/1aeda8e9f0678166a824c75313a813b09eb478cd",
+      "archive_path": "source-snapshots/yuhangshi-mixed-frames-1aeda8e9f067.zip",
+      "bytes": 252030,
+      "sha256": "5ad921bbef069c3372406ed85d3276d5775ba93b532bd4ecda01a70a2ca99c0d",
+      "license": "MIT",
+      "license_sha256": "4ed3897105601c9587fbb2014c29db78a30e7903ddcd73fe7e1b66bf7ae3c120",
+      "scope": [
+        "entire tracked repository"
+      ],
+      "redistribution": "upstream license retained inside snapshot",
+      "review_dossier": "2026-09-12-pressure-frame-prior-art.md",
+      "reviewed_files": [
+        {
+          "path": "main.tex",
+          "bytes": 18100,
+          "sha256": "d4f8f1de8ae11d276593be658ce2236bc81dfad9fcfe859d7124bf685d982cbd",
+          "source_url": "https://raw.githubusercontent.com/yuhangshi888/zeta-simple-zeros-673316977/1aeda8e9f0678166a824c75313a813b09eb478cd/main.tex"
+        },
+        {
+          "path": "PROOF_OUTLINE.md",
+          "bytes": 2590,
+          "sha256": "c0702ffda59ffd5cbb39bfa15739161c7f14e7f92766e75e9b8869a98b6fa8ab",
+          "source_url": "https://raw.githubusercontent.com/yuhangshi888/zeta-simple-zeros-673316977/1aeda8e9f0678166a824c75313a813b09eb478cd/PROOF_OUTLINE.md"
+        },
+        {
+          "path": "CLAIM_LEDGER.md",
+          "bytes": 5299,
+          "sha256": "6b268e04f73a5848f37c2e625051bbe26bfc01306c3e4579878c5bacf006ff62",
+          "source_url": "https://raw.githubusercontent.com/yuhangshi888/zeta-simple-zeros-673316977/1aeda8e9f0678166a824c75313a813b09eb478cd/CLAIM_LEDGER.md"
+        },
+        {
+          "path": "PROVENANCE.md",
+          "bytes": 3547,
+          "sha256": "a41b66d9d693c7ea525e68a092c82ebf62694a6c97c8516552b8f0b88f6edad2",
+          "source_url": "https://raw.githubusercontent.com/yuhangshi888/zeta-simple-zeros-673316977/1aeda8e9f0678166a824c75313a813b09eb478cd/PROVENANCE.md"
+        },
+        {
+          "path": "lean/README.md",
+          "bytes": 4349,
+          "sha256": "cf0722e245ae6d430b080b636c1bb555eea0f81c52baff1625a7a28cb1e0c267",
+          "source_url": "https://raw.githubusercontent.com/yuhangshi888/zeta-simple-zeros-673316977/1aeda8e9f0678166a824c75313a813b09eb478cd/lean/README.md"
+        }
+      ]
     }
   ],
   "storage_policy": "Full-text documents are downloaded locally into source-cache; public provenance and permissively licensed code snapshots are tracked. No source is relicensed."
