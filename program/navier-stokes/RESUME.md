@@ -73,9 +73,10 @@ giving eigenvalues `-nu (lambda r)^(2 alpha) +/- sqrt(A) sin(phi)` and the frequ
 
 | id | subject | verdict |
 |---|---|---|
-| EXP-001 | replay the OpenAI Lean build and both Comparator challenges | RUNNING |
+| EXP-001 | replay the OpenAI Lean build | Navier-Stokes **CONFIRMED** (built clean x3, 0 sorryAx, standard axioms); Euler build in cache repair |
 | EXP-002 | does the reduced model predict the Boussinesq PDE? | **CONFIRMED** |
 | EXP-003 | does the repaired cascade model predict the published threshold? | **CONFIRMED** |
+| EXP-004 | does the multi-layer handoff survive in the PDE? | pattern **CONFIRMED** (frozen two-scale, corr 0.999 vs base 0.21); slope systematic characterized; dynamical companion inconclusive |
 
 EXP-002: peak rate to 4e-05 relative, band structure present, frequency independence to 2.7e-04 across
 `lambda` in [20, 160], derived dissipative term to 2.6e-04 absolute, three negative controls all
@@ -87,22 +88,22 @@ zero violations.
 
 ## 4. In flight
 
-EXP-001, the Lean build, running in the background from `E:/_Temp/lean-build.sh` with logs under
-`E:/_Temp/lean-build/`. Kill criterion: abort below 5 GB free on E:. Watch the olean count under
-`E:/_Temp/lean-ns/.lake` rather than the parent process CPU, which stays flat while child processes do
-the work.
+EXP-001 Euler build repair: `E:/_Temp/lean-repair.sh` runs `lake exe cache get!` (forced re-fetch to
+replace oleans the external disk-deletion storm corrupted) then a full `lake build`. Logs under
+`E:/_Temp/lean-build/` (`cache-repair.log`, `build-repair.log`, `repair-driver.log`). The Navier-Stokes
+half is already CONFIRMED (built clean three times). Watch the olean/target count in the log, not the
+parent process CPU. Do NOT run heavy GPU work concurrently with the Lean build.
 
 ## 5. Next actions
 
-1. Close EXP-001 with a verdict when the build finishes or hits its kill criterion.
-2. **A multi-layer PDE simulation.** EXP-002 licenses the SINGLE-layer reduction only; EXP-003's
-   bookkeeping assumes many nested layers and has never been checked against a PDE. This is the
-   largest open gap and the first item of any continuation.
+1. Record the Euler build outcome in the EXP-001 verdict when the repair build lands.
+2. **The fully dynamical multi-layer test WITH steering.** EXP-004 Part B confirmed the handoff on a
+   FROZEN two-scale surrogate (the rate follows the total gradient, corr 0.999). The dynamical version
+   needs the steering that freezes each layer during the next layer's growth; that is a larger build
+   and the natural next step.
 3. Derive `p` from the construction's own localization and correction requirements. That is what would
    turn the consistency relation into a theorem about the model.
-4. NS-002 remainder: the two Cordoba-Martinez-Zoroa sources ([5] and [6] of the Boussinesq paper) are
-   still unread in the primary source.
-5. NS-010: compare exponents the day the Alpoge-Buckmaster hypodissipative paper appears.
+4. NS-010: compare exponents the day the Alpoge-Buckmaster hypodissipative paper appears.
 
 ## 6. Where everything lives
 
@@ -134,8 +135,13 @@ the work.
   during the holds gives the SAME exponent as growth positivity, because the remaining time shrinks
   like `1/sqrt(A_q)`, exactly the rate at which the growth rate rises. Do not reintroduce either as an
   open worry.
-- **The real open gap is multi-layer.** EXP-002 validated a SINGLE layer against the PDE. EXP-003's
-  bookkeeping assumes infinitely many nested layers and has never been checked against one.
+- **The multi-layer handoff is now checked on a frozen surrogate (EXP-004).** The rate of a fine wave
+  follows the TOTAL two-scale gradient (corr 0.999), not the base alone (0.21), confirming EXP-003's
+  premise. Still open: the fully dynamical cascade WITH steering, so each grown layer is held frozen
+  while the next grows. The naive dynamical run without steering is inconclusive by construction.
+- **EXP-004 carries a ~1.36 slope systematic**, present already at one scale and shrinking toward flat
+  regions: it is a measurement-geometry effect, not a handoff failure, and the absolute rate was
+  pinned by EXP-002. Do not read it as the rate being 1.36x too big.
 - **The bare threshold question is NOT ours.** Cordoba, Martinez-Zoroa and Zheng published it in 2024
   (ARMA 2026): blowup for every `|grad|^alpha` exponent below `(22 - 8 sqrt 7)/9`, with rough forcing.
   Our cap is consistent with it and loose by 5.40. What is ours is the calibration relation, and it is

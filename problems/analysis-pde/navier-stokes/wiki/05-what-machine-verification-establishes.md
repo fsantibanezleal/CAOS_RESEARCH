@@ -78,23 +78,33 @@ favour: a compactly supported force where (5) asks only for rapid decay.
 
 ## What a faithful statement still does not give you
 
-1. **That the project compiles.** This is EXP-001 and is the only one of these that is mechanically
-   available to a third party today.
-2. **That Comparator and the external re-checkers accept the solution modules.** Same experiment.
+1. **That the project compiles.** This is [EXP-001](../experiments/EXP-001-lean-replay/verdict.md), and
+   it is the one mechanically available check. For **Navier-Stokes it is now done**: the
+   `NavierStokes.ComparatorSolution` module, which transitively pulls the entire Navier-Stokes
+   development, built cleanly (9,371 jobs) on an independent machine, three separate times, with zero
+   `sorryAx` anywhere and both headline theorems depending on exactly `propext`, `Classical.choice`,
+   `Quot.sound`. The Euler development is a larger, separate build that was blocked by local cache
+   corruption from an external disk event, not by the artifact, and is being repaired.
+2. **That Comparator and the external re-checkers accept the solution modules.** `lake build`
+   type-checks the proofs; running `Comparator` with `lean4export` and `nanoda_bin` to re-check the
+   solution against the challenge outside the Lean kernel is a further step, not yet attempted.
 3. **That the human-readable manuscripts contain the arguments the Lean encodes.** The Navier-Stokes
    paper is 165 pages plus three appendices; only the introduction and the physical description were
    read here.
 4. **That the community accepts the result.** At the time of writing nobody had, and the Clay
    Mathematics Institute had not commented. OpenAI stated it does not intend to claim the prize.
 
-Items 3 and 4 are the ones that matter for whether this is mathematics, and neither is settled by a
-certificate.
+A compiling certificate settles item 1: the proof has no gaps under the kernel. Items 3 and 4 are the
+ones that decide whether this is accepted mathematics, and neither is settled by a certificate.
 
 ## The honest summary, for any surface we publish
 
 The statements are faithful and the certificates are well engineered, with third-party reference
-statements and external kernel re-checking. Nobody has yet confirmed that the human-readable arguments
-support them, and independent replay of the builds is the cheapest real check available.
+statements and external kernel re-checking. We independently rebuilt the Navier-Stokes certificate
+from a clean checkout and it type-checks with no gaps and only the standard axioms; the Euler build is
+in repair after a local cache corruption. Nobody has yet confirmed that the human-readable arguments
+support the statements, and the community has not weighed in. A compiling certificate is real evidence
+that the proof has no logical gaps; it is not the same as the result being accepted.
 
 ## Lessons we are taking into our own work
 
