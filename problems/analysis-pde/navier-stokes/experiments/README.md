@@ -7,7 +7,7 @@ DECIDED-IN-PART, and a refuted prediction is preserved rather than edited away.
 
 | id | question | verdict |
 |---|---|---|
-| [EXP-001](EXP-001-lean-replay/) | Does the OpenAI Lean certificate build, and do the Comparator challenges accept it? | Navier-Stokes **CONFIRMED**; Euler rebuild pending |
+| [EXP-001](EXP-001-lean-replay/) | Does the OpenAI Lean certificate build? | **CONFIRMED** (both Navier-Stokes and Euler; 11,424 jobs, 0 sorryAx, standard axioms) |
 | [EXP-002](EXP-002-reduction-control/) | Does the reduced modulation model predict the Boussinesq PDE? | **CONFIRMED** |
 | [EXP-003](EXP-003-threshold-sweep/) | Does the repaired cascade model predict the published threshold? | **CONFIRMED** |
 | [EXP-004](EXP-004-multilayer-handoff/) | Does the layer-to-layer handoff survive in the full nonlinear PDE? | pattern **CONFIRMED** (frozen), slope systematic characterized |

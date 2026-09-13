@@ -115,11 +115,13 @@ Of the same family (a check that cannot see what it claims to test), across the 
 **EXP-001, Navier-Stokes CONFIRMED.** `NavierStokes.ComparatorSolution`, which transitively pulls the
 whole Navier-Stokes development, built cleanly three separate times: 9,371 jobs, zero `sorryAx`, and
 both headline theorems (Fefferman C and D) depending on exactly `propext`, `Classical.choice`,
-`Quot.sound`. The proof of the Millennium claim type-checks under the kernel on an independent machine
-with no gaps. The Euler build (the mathematically stronger unforced claim) is a larger, separate build
-blocked by mathlib-cache corruption from an external multi-hundred-GB disk deletion that happened
-during the first attempt; the certificate is not at fault (zero mathematical errors, only olean read
-failures and process crashes). A forced cache re-fetch and rebuild is in progress.
+`Quot.sound`. On 2026-09-13 the FULL build completed too (11,424 jobs, zero `sorryAx`, zero errors),
+adding both unforced-Euler theorems (`euler_breakdown_R3`, `exists_compact_smooth_euler_singularity`)
+on the same three axioms. So the ENTIRE certificate type-checks with no gaps. The Euler half needed a
+two-part cache repair: `unpack!` to overwrite oleans the external disk-deletion storm had corrupted,
+then an incremental convergence loop (5 passes, read errors 34 to 22 to 11 to 9 to 5 to 0) to ride out
+Windows read-contention from heavy build parallelism. The certificate was never at fault: every
+failure was a file-read error or process crash, never a mathematical one.
 
 **EXP-004, the multi-layer handoff, CONFIRMED on pattern.** On a frozen two-scale vertical background
 (an exact steady state, drift 1.45e-15), the local growth rate of a fine wave follows the TOTAL
@@ -137,9 +139,11 @@ source PDFs archived.
 
 ## Next
 
-1. Record the Euler build outcome when the repair rebuild lands.
-2. The fully dynamical multi-layer test WITH steering, so each grown layer is held frozen while the
+All four experiments are closed with verdicts and EXP-001 confirmed both certificate halves. The
+remaining items are next-round scope:
+
+1. The fully dynamical multi-layer test WITH steering, so each grown layer is held frozen while the
    next grows. EXP-004 confirmed the physics on a frozen surrogate; the steered dynamical cascade is
    the larger open build.
-3. Derive `p = 11/4 + sqrt 7` from the construction's own localization and correction requirements,
+2. Derive `p = 11/4 + sqrt 7` from the construction's own localization and correction requirements,
    which would turn the consistency relation into a theorem about the model.

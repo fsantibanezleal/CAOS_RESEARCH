@@ -1,7 +1,8 @@
 # navier-stokes: RESUME (zero-loss handoff)
 
-Updated 2026-09-12 (execution round: Phase 0 gate closed, EXP-002 and EXP-003 CONFIRMED). First read for any fresh
-session, per methodology 07. Derived view: on conflict, the context dossiers win.
+Updated 2026-09-13 (continuation: EXP-004 pattern confirmed; EXP-001 fully CONFIRMED, both
+Navier-Stokes and Euler build clean). First read for any fresh session, per methodology 07. Derived
+view: on conflict, the context dossiers win.
 
 ## 1. State in one screen
 
@@ -73,7 +74,7 @@ giving eigenvalues `-nu (lambda r)^(2 alpha) +/- sqrt(A) sin(phi)` and the frequ
 
 | id | subject | verdict |
 |---|---|---|
-| EXP-001 | replay the OpenAI Lean build | Navier-Stokes **CONFIRMED** (built clean x3, 0 sorryAx, standard axioms); Euler build in cache repair |
+| EXP-001 | replay the OpenAI Lean build | **CONFIRMED**, both halves: 11,424 jobs, 0 sorryAx, all four theorems (C, D, and both Euler) on standard axioms |
 | EXP-002 | does the reduced model predict the Boussinesq PDE? | **CONFIRMED** |
 | EXP-003 | does the repaired cascade model predict the published threshold? | **CONFIRMED** |
 | EXP-004 | does the multi-layer handoff survive in the PDE? | pattern **CONFIRMED** (frozen two-scale, corr 0.999 vs base 0.21); slope systematic characterized; dynamical companion inconclusive |
@@ -88,22 +89,23 @@ zero violations.
 
 ## 4. In flight
 
-EXP-001 Euler build repair: `E:/_Temp/lean-repair.sh` runs `lake exe cache get!` (forced re-fetch to
-replace oleans the external disk-deletion storm corrupted) then a full `lake build`. Logs under
-`E:/_Temp/lean-build/` (`cache-repair.log`, `build-repair.log`, `repair-driver.log`). The Navier-Stokes
-half is already CONFIRMED (built clean three times). Watch the olean/target count in the log, not the
-parent process CPU. Do NOT run heavy GPU work concurrently with the Lean build.
+Nothing running. EXP-001 fully closed on 2026-09-13: the whole certificate builds clean (11,424
+jobs, 0 sorryAx). The Euler build needed a two-part cache repair (unpack! to fix disk-storm
+corruption, then an incremental convergence loop to ride out Windows read-contention, 5 passes
+34->22->11->9->5->0). Logs: `E:/_Temp/lean-build/build-pass*.log`, loop `E:/_Temp/lean-build-loop.sh`.
 
 ## 5. Next actions
 
-1. Record the Euler build outcome in the EXP-001 verdict when the repair build lands.
-2. **The fully dynamical multi-layer test WITH steering.** EXP-004 Part B confirmed the handoff on a
+1. **The fully dynamical multi-layer test WITH steering.** EXP-004 Part B confirmed the handoff on a
    FROZEN two-scale surrogate (the rate follows the total gradient, corr 0.999). The dynamical version
    needs the steering that freezes each layer during the next layer's growth; that is a larger build
    and the natural next step.
-3. Derive `p` from the construction's own localization and correction requirements. That is what would
+2. Derive `p` from the construction's own localization and correction requirements. That is what would
    turn the consistency relation into a theorem about the model.
-4. NS-010: compare exponents the day the Alpoge-Buckmaster hypodissipative paper appears.
+3. NS-010: compare exponents the day the Alpoge-Buckmaster hypodissipative paper appears.
+
+All four experiments are now closed with verdicts; EXP-001 fully confirmed both certificate halves.
+The two items above are next-round scope, not blockers.
 
 ## 6. Where everything lives
 

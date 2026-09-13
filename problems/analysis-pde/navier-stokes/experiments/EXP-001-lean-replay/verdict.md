@@ -1,6 +1,7 @@
-# EXP-001 verdict: Navier-Stokes CONFIRMED, Euler INCONCLUSIVE on this machine
+# EXP-001 verdict: the full certificate CONFIRMED to build (Navier-Stokes and Euler)
 
-Date: 2026-09-12. Hypothesis committed before the run in
+Dates: run and Navier-Stokes confirmation 2026-09-12; Euler confirmation 2026-09-13 after a cache
+repair. Hypothesis committed before the run in
 [`hypothesis.md`](hypothesis.md). Subject: `openai/NavierStokesAndEuler` at last push
 2026-09-10T15:14:13Z. Toolchain `leanprover/lean4:v4.34.0-rc2` installed via elan into `E:/_Temp/elan`.
 Logs: `E:/_Temp/lean-build/`.
@@ -42,7 +43,76 @@ A caution about the three "error" matches a naive grep finds in the smoke log: t
 names `NavierStokes.ErrorHarmonics`, `GlobalBaseError` and `GaussianErrorNaturality`. Grepping for
 "error" without looking is how a clean build gets reported as a broken one.
 
-## Result, Euler: build DISRUPTED by a corrupted cache, not by the artifact; repair in progress
+## Result, Euler: CONFIRMED, after repairing a corrupted and contended local cache
+
+The full build completed on 2026-09-13: **`Build completed successfully (11424 jobs)`**, zero `sorryAx`
+anywhere, zero `error:` lines. The axiom report now covers all four declarations:
+
+```
+'NavierStokes.Comparator.navier_stokes_breakdown_R3'       depends on axioms: [propext, Classical.choice, Quot.sound]
+'NavierStokes.Comparator.navier_stokes_breakdown_periodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Euler.euler_breakdown_R3'                                 depends on axioms: [propext, Classical.choice, Quot.sound]
+'Euler.exists_compact_smooth_euler_singularity'            depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+So the proofs of **both** unforced-Euler theorems (the breakdown statement and the quantitative
+finite-lifespan singularity with the maximality clause audited on 2026-09-12) type-check under the Lean
+kernel on an independent machine with no admitted gaps and only the three standard axioms. Together
+with the Navier-Stokes result above, **the entire OpenAI certificate compiles clean**.
+
+Getting there took a two-part environmental repair, documented below because the failure was
+instructive and because the committed hypothesis demanded a red build be diagnosed, not reported at
+face value.
+
+### The two-part diagnosis, in order
+
+The build failed repeatedly with `failed to read file` on mathlib oleans and `0xC0000409` process
+crashes, **never a mathematical error**. Two distinct causes, peeled apart across attempts:
+
+1. **Corruption.** The external multi-hundred-GB disk deletion during the first attempt damaged some
+   cached mathlib oleans; they kept their size, so `lake exe cache get` trusted them ("already
+   decompressed") and the read failures recurred with the disk idle. Fixed by `lake exe cache get!`
+   plus, decisively, `lake exe cache unpack!`, which force-overwrote all 8,747 oleans from freshly
+   downloaded archives. The decompression itself hung twice on stale file locks from interrupted runs;
+   it completed once the killed processes were cleared and it wrote into unlocked files.
+2. **Read contention.** After a fully repaired cache, the build STILL failed on ~34 reads per pass, but
+   on a **different rotating set of files each pass, including a Lean toolchain olean that was never
+   re-fetched**. Files that were never corrupted were failing. That is not corruption; it is runtime
+   contention: dozens of parallel Lean processes on E: colliding with transient file locks (a
+   real-time antivirus scan on open is the usual cause). This Lake version exposes no `-j`/`--jobs`
+   flag to lower parallelism.
+
+### The fix: an incremental convergence loop
+
+Lake is incremental: every module it compiles persists. So repeated `lake build` passes each make net
+progress, because a different subset of dependency oleans is transiently locked each time, blocking a
+different subset of project modules. The read-error count converges to zero:
+
+| pass | read errors | crashes | completed |
+|---|---|---|---|
+| 1 | 22 | 5 | no |
+| 2 | 11 | 1 | no |
+| 3 | 9 | 1 | no |
+| 4 | 5 | 0 | no |
+| 5 | **0** | **0** | **yes** |
+
+Five passes, monotone decrease, terminating in a clean full build. The loop (`E:/_Temp/lean-build-loop.sh`)
+also carried a no-progress guard to stop honestly rather than spin if the count had plateaued; it did
+not fire.
+
+### What this establishes
+
+The complete certificate compiles from a clean checkout on independent hardware, and all four headline
+theorems depend only on the standard axioms with no `sorry`. This is the strongest form of the one
+mechanically-available check, and it now covers the mathematically stronger unforced-Euler claim as
+well as the Millennium (C)/(D) claim.
+
+## Superseded diagnosis, preserved
+
+The section below was written while the Euler build was still failing and before the read-contention
+cause was isolated. It is kept as the honest in-progress record; the resolution is the section above.
+
+## Result, Euler (earlier, in-progress): build DISRUPTED by a corrupted cache, not by the artifact
 
 The full build, which additionally compiles the Euler development, failed. The failure was diagnosed
 in three passes rather than reported at face value, because the committed hypothesis said a red build
@@ -84,15 +154,16 @@ times.
 
 ## What this does and does not establish
 
-Establishes: the Navier-Stokes certificate compiles from a clean checkout on independent hardware, and
-its two headline theorems depend only on the standard axioms, with no `sorry`.
+Establishes: the entire certificate compiles from a clean checkout on independent hardware, and all
+four headline theorems (Fefferman C and D, and both unforced-Euler theorems) depend only on the three
+standard axioms, with no `sorry`.
 
-Does not establish: that the 165-page manuscript contains the arguments the Lean encodes; that
-Comparator and the external kernel re-checkers (`lean4export`, `nanoda_bin`) accept the solution
-module against the challenge module, which needs `landrun` and those two binaries and was not
-attempted; or anything about whether the mathematical community accepts the result. The statement
-audits of 2026-09-11 and 2026-09-12 remain the reason to believe the theorem is the right theorem; this
-experiment only shows the proof of it is machine-checkable.
+Does not establish: that the 165-page Navier-Stokes manuscript (and the 56-page Euler manuscript)
+contain the arguments the Lean encodes; that Comparator and the external kernel re-checkers
+(`lean4export`, `nanoda_bin`) accept the solution modules against the challenge modules, which needs
+`landrun` and those two binaries and was not attempted; or anything about whether the mathematical
+community accepts the result. The statement audits of 2026-09-11 and 2026-09-12 remain the reason to
+believe these are the right theorems; this experiment shows the proofs of them are machine-checkable.
 
 ## Cost, against the declared budget
 
@@ -100,5 +171,5 @@ experiment only shows the proof of it is machine-checkable.
 |---|---|---|
 | toolchain plus mathlib cache | 90 min | about 46 min, exit 0 |
 | smoke build of the Navier-Stokes comparator module | 2 h | about 60 min, exit 0, and re-confirmed on two later runs |
-| full build including Euler | 8 h | corrupted-cache repair in progress |
+| full build including Euler | 8 h | completed on 2026-09-13 after a cache repair; 11,424 jobs, five incremental passes |
 | disk floor | abort below 5 GB free | low-water mark about 12 GB, never triggered |
