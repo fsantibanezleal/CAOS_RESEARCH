@@ -1,0 +1,822 @@
+{
+ "constant_audit": {
+  "constants": {
+   "c0": {
+    "arb_comparison": {
+     "exact_bracket_contained": true,
+     "lower": "38935130746302184583692016088695834879110681793011356611354812536987042987517/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+     "precision_bits": 256,
+     "upper": "19467565373151092291846008044347917439555340896505678305677406268493521493763/28948022309329048855892746252171976963317496166410141009864396001978282409984"
+    },
+    "exact": {
+     "decimal_lower": "0.672500703679411645734379790803295188593403028",
+     "decimal_upper": "0.672500703679411645734379790803295188593403029",
+     "lower": "35737297017462836698135779876202509896092785968891125643089892512817467051275431587119347647036454169932788031549405460722593902619555683/53140906503049835406762222945524172758928761345126658175324136577019600534390175660480916268627947120420527900962095153534321157789944434",
+     "upper": "645854765375834398159080359208479094507700951245020342947407696014773500926664426273241222536803388613243157196676002302215552456979923/960377828368370519399317282148027218534857132743252858590195239343727720501027270972546679553517116634105925921001719642186526948011044",
+     "width": "26835357243917158163694409994099940290562575588519948735974696676176739627136713323635651066578464322322902527709323102487515324883317765/25517674192462809816791412746104064548498121747359759965381123808707427326415416899321449409615955968397971033435864616042848386004568896743738771912843296563634030545283273520288052658451336221223345178525502253953165887740929586826522797313635823658195215615119789164548"
+    },
+    "published_decimal_bracket": [
+     "672500703679/1000000000000",
+     "2101564699/3125000000"
+    ],
+    "status": "PASS"
+   },
+   "c1": {
+    "arb_comparison": {
+     "exact_bracket_contained": true,
+     "lower": "96831175364960282295477508593039788805745674125831638631083604540943607807483/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+     "precision_bits": 256,
+     "upper": "96831175364960282295477508593039788805745674125831638631083604540943607807495/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+    },
+    "exact": {
+     "decimal_lower": "0.836250351839705822867189895401647594296701514",
+     "decimal_upper": "0.836250351839705822867189895401647594296701515",
+     "lower": "88878203520512672104898002821726682655021547314017783818414029089837067585665607247600263915664401290353315932511500614256915060409500117/106281813006099670813524445891048345517857522690253316350648273154039201068780351320961832537255894240841055801924190307068642315579888868",
+     "upper": "1606232593744204917558397641356506313042558083988273201537602935358501221427691697245787902090320505247349083117677721944402079404990967/1920755656736741038798634564296054437069714265486505717180390478687455441002054541945093359107034233268211851842003439284373053896022088",
+     "width": "26835357243917158163694409994099940290562575588519948735974696676176739627136713323635651066578464322322902527709323102487515324883317765/51035348384925619633582825492208129096996243494719519930762247617414854652830833798642898819231911936795942066871729232085696772009137793487477543825686593127268061090566547040576105316902672442446690357051004507906331775481859173653045594627271647316390431230239578329096"
+    },
+    "published_decimal_bracket": [
+     "836250351839/1000000000000",
+     "5226564699/6250000000"
+    ],
+    "status": "PASS"
+   },
+   "c2": {
+    "arb_comparison": {
+     "exact_bracket_contained": true,
+     "lower": "51389687597618188235924168748557490781715868122167160661353120138848291399335/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+     "precision_bits": 256,
+     "upper": "51389687597618188235924168748557490781715868122167160661353120138848291399343/57896044618658097711785492504343953926634992332820282019728792003956564819968"
+    },
+    "exact": {
+     "decimal_lower": "0.887620008173354339866075859447995101695171639",
+     "decimal_upper": "0.887620008173354339866075859447995101695171640",
+     "lower": "687301704812007175503745847865236951636547895613426965827087641769465269883535304449457058628166666445464799565616131627893204202075283774802666922336904024742052850514625390723827319275640983035326320345113767541875883957340033006856759/774319752239942169046878063211845265950727772494604628488258862090475937299109024816264901736124131197903498912679580091951840477927227529802666922336904024742052850514625390723827319275640983035326320345113767541875883957340033006856759",
+     "upper": "388159848350154654840217911068469663951363645866016735218611243469201018383020691518895176183076054106947620190403454065102211412747008909439623194358367813484422187343798523993498532062834729633790854964882895084683880022096607489063/437304076942738423784004930277774058330606799225115565787796797114350115191514886003161653841937574110207427803579347399472676176970621565689623194358367813484422187343798523993498532062834729633790854964882895084683880022096607489063",
+     "width": "1305784428401501233629534064967193171225969600800539957571877080573080984000439434666354413016757153139585572925044561696557861770312064784965998286137419496322272915380675425383510915255418779701678625640837533583601154730369787833112150495428626520422752247452663308308906250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/338613184511817823259985113543557968140071094533939412322180601050825208427890878999094930078919492529891080934147864100371381185798670900595596719719456152131263722320003572963643883373020916307266083701636554463578058882362120742255625531756039343953768101380198995116876207249790677966659341793173951875048554890950205345740990307211948733646842506368060829462506627055623270556043398692531363041916259729503516179615105321543519875560894501394866893050671349100126817"
+    },
+    "published_decimal_bracket": [
+     "887620008173/1000000000000",
+     "443810004087/500000000000"
+    ],
+    "status": "PASS"
+   },
+   "c_three_quarters": {
+    "arb_comparison": {
+     "exact_bracket_contained": true,
+     "lower": "97051142599159553881936962992131595259009598817779002717585660921010063163499/231584178474632390847141970017375815706539969331281128078915168015826259279872",
+     "precision_bits": 256,
+     "upper": "97051142599159553881936962992131595259009598817779002717585660921010063163557/231584178474632390847141970017375815706539969331281128078915168015826259279872"
+    },
+    "exact": {
+     "decimal_lower": "0.419075012975424333734553610698242466165668648",
+     "decimal_upper": "0.419075012975424333734553610698242466165668649",
+     "lower": "1600865074103763187329716896277776065974596484180365337934984853976662167931533977679629912043589260061759737666322383104491034113019284307088830106673806309508265436673/3819996479240441247540354276931687270421458886386497131384525864914629129731214656498417487060437757652305608599521741519707392419918926230433407514870728038401485317672",
+     "upper": "602735344165573489205465698899765085080796869043812250728533454057478225877836587981788370498339329842530021711717764723076443566648826922849710241550445037249274663/1438251686461009505851037001856809966273139640958771510310438955163640485591571783320187306875164818393187352635362101475793445941234535478325831143635837265646755248",
+     "width": "5868539533541777399277203534934829361271320483654373772999068228480047799084029675946322118088832639143346306774274816176999423604364686475016038681420286067397572599356012890489386962981/76307171924203934901474928307511475666753716798998338710419951782548604727208343851562697597864212482740993616545399146417719639970725373145936183361929389466050473496750070642397112117149031938219516796048532417467359912691840297680161127167700457703479842255257788940461635241964657397237227377502810978223370219987872323323793648"
+    },
+    "published_decimal_bracket": [
+     "419/1000",
+     "21/50"
+    ],
+    "status": "PASS"
+   }
+  },
+  "dependencies": {
+   "python_flint": "0.9.0",
+   "sympy": "1.14.0"
+  },
+  "experiment": "EXP-001-source-and-constant-audit",
+  "hypothesis_commit": "266486f",
+  "limitations": [
+   "No independent proof of imported analytic theorems",
+   "No finite-height zero-count certification",
+   "No novelty established by this experiment",
+   "No local replay of upstream Lean developments"
+  ],
+  "math_status": "PASS",
+  "primary_arithmetic": "Python Fraction, exact alternating Taylor sums",
+  "scope": "Narrow reproduction, source normalization correction, and exact algebraic identity checks",
+  "series": {
+   "a_squared": "theta^2/2",
+   "lower_last_index": 41,
+   "sqrt_two_decimal_scale_digits": 100,
+   "upper_last_index": 40
+  },
+  "source_verification": {
+   "required_pdfs_checked": 4,
+   "status": "PASS"
+  },
+  "sources": [
+   {
+    "bytes": 631785,
+    "cache_path": "source-cache/claude-original-20260810.pdf",
+    "filename": "claude-original-20260810.pdf",
+    "license": {
+     "redistribution_basis": "local research archive; not relicensed",
+     "status": "not-stated-in-inspected-source"
+    },
+    "note": "original supplied PDF; printed August 10, 2026",
+    "sha256": "6792988e6cd0e17690621ce898abd5d534f98407741bc7cb14bbe7d07c77d72f",
+    "source_url": "https://www-cdn.anthropic.com/564f962e60643842f5fcb4a17c9dbc8f608f1c37.pdf",
+    "status": "PASS",
+    "version": "original supplied PDF; printed August 10, 2026"
+   },
+   {
+    "bytes": 458932,
+    "cache_path": "source-cache/claude-revised-20260811.pdf",
+    "filename": "claude-revised-20260811.pdf",
+    "license": {
+     "redistribution_basis": "local research archive; not relicensed",
+     "status": "not-stated-in-inspected-source"
+    },
+    "note": "current blog PDF; printed August 11, blog update August 13",
+    "sha256": "19f827bee5834d61aa6dd756cdaea582492703ddbfd6bdc2058de10b93f7e814",
+    "source_url": "https://www-cdn.anthropic.com/95c246936988e43127bc6b2ceb7077c1dad2d68e.pdf",
+    "status": "PASS",
+    "version": "current blog PDF; printed August 11, blog update August 13"
+   },
+   {
+    "bytes": 535564,
+    "cache_path": "source-cache/lamzouri-2609.02882v2.pdf",
+    "filename": "lamzouri-2609.02882v2.pdf",
+    "license": {
+     "name": "arXiv non-exclusive distribution license",
+     "redistribution_basis": "local research archive; author license retained; not relicensed",
+     "status": "verified-from-version-landing-page",
+     "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+    },
+    "note": "v2 September 8; manuscript printed September 9",
+    "sha256": "305df7fcbbf96e61ccca2cbae13dcb2b7f9251b054d02dd0c78551982621046b",
+    "source_url": "https://arxiv.org/pdf/2609.02882v2",
+    "status": "PASS",
+    "version": "v2"
+   },
+   {
+    "bytes": 400145,
+    "cache_path": "source-cache/wang-2609.07918v1.pdf",
+    "filename": "wang-2609.07918v1.pdf",
+    "license": {
+     "name": "arXiv non-exclusive distribution license",
+     "redistribution_basis": "local research archive; author license retained; not relicensed",
+     "status": "verified-from-version-landing-page",
+     "url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/"
+    },
+    "note": "v1 submitted September 7; manuscript printed September 9",
+    "sha256": "6e34a86265b7389a2cc1f4dcd1f6034578261c3b02b40c6581a8ddb316308079",
+    "source_url": "https://arxiv.org/pdf/2609.07918v1",
+    "status": "PASS",
+    "version": "v1"
+   }
+  ],
+  "status": "PASS",
+  "symbolic_audits": {
+   "dyadic_normalization": {
+    "coefficient_positive_reason": "log(2)=2*atanh(1/3)>2/3, hence 2*log(2)-1>1/3",
+    "corrected_formula": "N(2T)-N(T)-floor(T*log(T/(2*pi))/(2*pi))=(2*log(2)-1)*T/(2*pi)+O(log(T))",
+    "floor_effect": "Replacing the continuous dimension by its floor adds a value in [0,1)",
+    "relative_conclusion": "d/N(T,2T) tends to 1; an O(log T) absolute discrepancy is false",
+    "source_scope": "Original Eq.(1.2) gives the correct count main term; revised section 2.2 asserts d=N(T,2T)+O(L)",
+    "status": "PASS",
+    "symbolic_difference": "T*(-1 + log(4))/(2*pi)",
+    "theorem_impact": "The correction is O(T)=o(N); it does not alone refute the limiting proportion"
+   },
+   "tangent_obstruction": {
+    "difference": "-q*(X**2 + X*Y + Y**2 + q**2)/((X + Y)*(-X*Y + q**2))",
+    "excluded_denominator_case": "X*Y=q^2 makes tan(X+Y) undefined; it cannot be a kernel root",
+    "positive_numerator": "q*(X^2+X*Y+Y^2+q^2) for X,Y,q>0",
+    "removable_kernel_points": "X=+/-a are not automatically roots",
+    "status": "PASS"
+   },
+   "triple_numerator": {
+    "circle_constraints_needed": false,
+    "circle_ideal_remainder": "0",
+    "expanded_residual": "0",
+    "identity": "(X^2+XY+Y^2+q^2)sx*sy=Ax*Ay-X*Ax*sy-Y*Ay*sx-q*A(X+Y)",
+    "status": "PASS"
+   }
+  }
+ },
+ "parity_result": {
+  "arithmetic_status": "verified",
+  "census": {
+   "columns": [
+    "index",
+    "a_1",
+    "a_2",
+    "a_3",
+    "a_4",
+    "a_5",
+    "a_6",
+    "b_1",
+    "b_2",
+    "b_3",
+    "N",
+    "s",
+    "r",
+    "b",
+    "O",
+    "E",
+    "Z",
+    "charge",
+    "A_sigma0",
+    "B_sigma0",
+    "A_sigma1",
+    "B_sigma1",
+    "A_sigma2",
+    "B_sigma2"
+   ],
+   "gram_defect": "0; the symbolic identities cancel arbitrary D",
+   "order": "Lexicographic Cartesian product {0,1,2}^9",
+   "raw_artifact": "census.jsonl",
+   "scope": "Exact scalar residual checks; sigma samples are not claimed geometric realizations",
+   "sha256": "03e3f42e3c887e729057e02b88b53c07673c171113f5389e0b7d92ee18acc421",
+   "sigma_evaluations": 59049,
+   "sigma_values": [
+    0,
+    1,
+    2
+   ],
+   "vectors": 19683
+  },
+  "experiment": "EXP-004-parity-density-transfer",
+  "proof_status": {
+   "all_height_theorem": "Not proved by this computational runner",
+   "classical_seed": "Imported Selberg theorem restated in Karatsuba; no numeric constant",
+   "full_proof_and_final_verdict": "Separate required gate",
+   "preflight": "Independent paper and source audit committed with declaration"
+  },
+  "provenance": {
+   "declaration_commit": "e03413b2301bf45ca68ff6e945f25add9a1c3a89",
+   "hypothesis": {
+    "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/hypothesis.md",
+    "sha256": "d1731c3e586e786f39b296cc4c6ac184705f175451f6312ca43b1834d9c4e4a1",
+    "source_commit": "e03413b2301bf45ca68ff6e945f25add9a1c3a89"
+   },
+   "inputs": [
+    {
+     "path": "problems/number-theory/riemann-hypothesis/context/2026-09-12-critical-mass-and-multiplicity-route.md",
+     "sha256": "189b993b39c9d653fa66e226a6d81ffee085720c12b2756930d4da30e6a65531",
+     "source_commit": "e03413b2301bf45ca68ff6e945f25add9a1c3a89"
+    },
+    {
+     "path": "problems/number-theory/riemann-hypothesis/context/2026-09-12-parity-transfer-adversarial-audit.md",
+     "sha256": "91962ba8c1566bdb33ab7910d194f0d138a7aa6b3f803f9f658116bd1a888d14",
+     "source_commit": "e03413b2301bf45ca68ff6e945f25add9a1c3a89"
+    },
+    {
+     "path": "problems/number-theory/riemann-hypothesis/context/2026-09-12-wang-transfer-audit.md",
+     "sha256": "950fc327ddcd1071b0bb48b6ad4d4d11c8c157dc67cf77549de78b2aa7b5232b",
+     "source_commit": "e03413b2301bf45ca68ff6e945f25add9a1c3a89"
+    },
+    {
+     "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/mathematical-proof.md",
+     "sha256": "9df9ff826772edb2d6097af58684c95b1d421de641eb0746ae459f5aa58bc6bc",
+     "source_commit": "e03413b2301bf45ca68ff6e945f25add9a1c3a89"
+    }
+   ],
+   "runner": {
+    "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/run.py",
+    "sha256": "fa4392330a9f1bd2e2ba1216c9a6ad713440acd1aca22d10ee50f6320c490f52"
+   }
+  },
+  "relaxation": {
+   "cases": 42,
+   "raw_artifact": "relaxation.json",
+   "sha256": "c6c53ea51372063a72047c0e4e172fbc6533b701395b22fdc78db7399ac2a03c"
+  },
+  "schema": "riemann-exp004-results-v1",
+  "scope": "Declared exact identities and finite controls only; no numerical exponent claim",
+  "sharpness": {
+   "cases": 36,
+   "negative_control": {
+    "E": 1,
+    "N": 3,
+    "O": 1,
+    "Z": 1,
+    "b": 0,
+    "false_half_sum_residual": -1,
+    "r": 1,
+    "real_multiplicities": [
+     3
+    ],
+    "s": 0
+   },
+   "raw_artifact": "sharpness.json",
+   "sha256": "2b19910ae6685716972bd66facc9cfafeee2c882be3f9138df10f76ac7c4c26b"
+  },
+  "symbolic": {
+   "multiplicity_regression_cases": 24,
+   "raw_artifact": "symbolic.json",
+   "residual_identities": 2,
+   "sha256": "f0b6a3590649559be3fb471946e03024be427fbec620dccef7887a563759518a"
+  },
+  "threshold": {
+   "alpha": "51/100",
+   "c_alpha_upper": "-1801/20400",
+   "c_alpha_upper_negative": true,
+   "classical_a": null,
+   "delta_formula": "min((theta0-alpha)/2,kappa/4)",
+   "derivative_cap": "10000/2601",
+   "derivative_cap_less_than": "4",
+   "derivative_formula_verified": true,
+   "distinct_lower_formula": "max(kappa,(1+c(theta))/2,(3+2*c(theta)+kappa)/6)",
+   "elementary_paper_inputs": [
+    "cos(x)>=1-x^2/2",
+    "sin(x)<=x",
+    "tan(x)>x for 0<x<pi/2"
+   ],
+   "kappa": null,
+   "root_comparison": "alpha<theta0<1 by the recorded elementary analytic inequalities",
+   "scope": "Exact rational comparisons and symbolic differentiation; no numerical root or seed constant",
+   "simple_lower_formula": "max(0,c(theta),(c(theta)+2*kappa)/3)",
+   "theta0_numeric": null,
+   "theta1_decimal": null,
+   "theta1_formula": "theta0-delta"
+  }
+ },
+ "parity_review": {
+  "asymptotic_transfer_reviewed": true,
+  "confirmed_conclusion": "Existence of a fixed theta1 below the cosine positivity root with positive simple-critical asymptotic proportion in every sufficiently high interval of each fixed exponent theta>=theta1, theta<1.",
+  "declaration_commit": "e03413b2301bf45ca68ff6e945f25add9a1c3a89",
+  "imported_inputs": [
+   "Known finite Hilbert stability mechanism",
+   "Selberg distinct odd-zero seed as restated in Karatsuba",
+   "Wang fixed-test short-interval pair theorem"
+  ],
+  "novelty_scope": "Dated bounded primary-source and repository search found no matching short-interval parity combination; no absolute priority guarantee.",
+  "numerical_exponent_claimed": false,
+  "review_scope": "Independent automated mathematical and source audits, coordinating full-proof review, and two separate complete raw-census checks; not external peer review or end-to-end formal verification.",
+  "reviewed_utc": "2026-09-12T18:17:12+00:00",
+  "schema": "riemann-exp004-proof-review-v1",
+  "scientific_verdict": "confirmed",
+  "source_sha256": {
+   "parity_audit": "a1c5285b44aa561cbd0a8921ae3ec05b1841861d2c06cb252efeb3340c9628c2",
+   "parity_hypothesis": "d1731c3e586e786f39b296cc4c6ac184705f175451f6312ca43b1834d9c4e4a1",
+   "parity_proof": "98f9f82212ecc28e1baf2e4a182d4d376be419581fe40888fcdcd96e19099f42",
+   "parity_result": "bc9e28ca1792657e24da77268e6e2108c3f52684b7e16504f07b32cfce014d6e",
+   "parity_verdict": "123b9478153f814295b4c72a3c1f556e8230a578966aa6d7e7dd7b360a368588"
+  },
+  "universal_finite_proof_reviewed": true,
+  "unquantified": [
+   "classical density constant",
+   "kappa",
+   "theta1 decimal",
+   "effective onset height"
+  ]
+ },
+ "pressure_result": {
+  "schema": "riemann-exp003-results-v1",
+  "scope": "Finite arithmetic and exact incidence evidence. The asymptotic theorem and prior-art scope require the separate mathematical proof and source review; no RH or global-record claim.",
+  "stage_a": {
+   "arithmetic_status": "verified",
+   "baseline": {
+    "display": "[0.419075012975424333734553610698242466165668649 +/- 8.26e-47]",
+    "lower": "97051142599159553881936962992131595259009598817779002717585660921010063163499/231584178474632390847141970017375815706539969331281128078915168015826259279872",
+    "upper": "97051142599159553881936962992131595259009598817779002717585660921010063163557/231584178474632390847141970017375815706539969331281128078915168015826259279872"
+   },
+   "delta": "1/7000",
+   "distinct": {
+    "display": "[0.709538868010284418416610862535897870994040921 +/- 4.69e-46]",
+    "lower": "82158987921991170953957440344607036208202687004799491126023538847759433162927/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+    "upper": "82158987921991170953957440344607036208202687004799491126023538847759433162943/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+   },
+   "frame_size": 14001,
+   "gain": {
+    "display": "[2.72304514450309866811437355327582241319401914e-6 +/- 3.63e-52]",
+    "lower": "2582995651539299331392999099325920301792748084566866302265156408976213363907/948568795032094272909893509191171341133987714380927500611236528192824358010355712",
+    "upper": "10331982606157197325571996397303681207170992338267465209060625635904853455697/3794275180128377091639574036764685364535950857523710002444946112771297432041422848"
+   },
+   "gain_ratio_to_exp002": "20999/14000",
+   "improved": {
+    "display": "[0.419077736020568836833221725071795741988081843 +/- 6.35e-47]",
+    "lower": "24262943303333073242171947840263082281567694671979209106294746843802868342959/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+    "upper": "24262943303333073242171947840263082281567694671979209106294746843802868342975/57896044618658097711785492504343953926634992332820282019728792003956564819968"
+   },
+   "invariants": {
+    "alpha": "1/14001",
+    "beta": "8/294021",
+    "frame_sizes": [
+     3,
+     5,
+     7,
+     9,
+     11,
+     13,
+     15,
+     17
+    ],
+    "index_cases": 328,
+    "offset_coverage_and_boundary": true,
+    "pairs_disjoint": true,
+    "sequence_lengths": [
+     0,
+     40
+    ],
+    "spans_telescope": true,
+    "symbolic_identities": 2
+   },
+   "k": 7000,
+   "provenance": {
+    "certificate_code": {
+     "riemann_certificates.py": "1de3dcf98afc3043ad7f08c3df73833834e647501252ee5378f8a8fd77960dfa",
+     "riemann_pressure.py": "5097f1602515fd151819242991070654bcc19e8622d7fc80bae1ba358a2ee287"
+    },
+    "hypothesis": {
+     "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/hypothesis.md",
+     "sha256": "282d425479a87af401439e3c78664ae00ded0db6902d9390d94967bc674f39a0",
+     "source_commit": "8ed806d64e5df2b83ab1ad75cb9f17a5633208bc"
+    },
+    "reused_certificate": {
+     "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/artifacts/triangle-certificate.json",
+     "sha256": "bd8254477c25124b6bf9fc01e0db88f7f5a16d1bc82357c6eb4cbd594a731463",
+     "source_commit": "8ed806d64e5df2b83ab1ad75cb9f17a5633208bc"
+    },
+    "runner_sha256": "f778a3e8cf10767e22aa060669b2c5e75e7ab1d4ae132c640b6cb4699df589fa"
+   },
+   "radius": "21/4",
+   "replay": {
+    "energy_leaves": 24252,
+    "independent_sinc_taylor": true,
+    "nodes": 48761,
+    "outside_leaves": 129,
+    "precision_bits": 256,
+    "verified": true
+   },
+   "scope": "Arithmetic and incidence evidence; complete proof and source review remain separate gates",
+   "stage": "A",
+   "theta": "3/4"
+  },
+  "stage_b": {
+   "arithmetic_status": "verified",
+   "candidate_list_sha256": "55b0163ac3f18ff3dd768f35f2a17d436a9108492c7ba77ab1e3bafb461007e4",
+   "outcomes": [
+    {
+     "audit": {
+      "certificate_sha256": "9cccc45eccf3d4e999e37f58b516d572fb2eec4c16854c4ddb144f053f2c9624",
+      "independent_sinc_taylor": true,
+      "nodes": 16797,
+      "precision_bits": 256,
+      "pressure_leaves": 48,
+      "validated_leaves": 8351,
+      "verified": true
+     },
+     "baseline": {
+      "display": "[0.419075012975424333734553610698242466165668649 +/- 8.26e-47]",
+      "lower": "97051142599159553881936962992131595259009598817779002717585660921010063163499/231584178474632390847141970017375815706539969331281128078915168015826259279872",
+      "upper": "97051142599159553881936962992131595259009598817779002717585660921010063163557/231584178474632390847141970017375815706539969331281128078915168015826259279872"
+     },
+     "candidate": 1,
+     "certificate_sha256": "9cccc45eccf3d4e999e37f58b516d572fb2eec4c16854c4ddb144f053f2c9624",
+     "cutoff": "443239/80000",
+     "distinct": {
+      "display": "[0.709543944085055863979545591887611733990853272 +/- 1.24e-46]",
+      "lower": "82159575691294081467991878660527822085402953553085810653942892244363465818469/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+      "upper": "82159575691294081467991878660527822085402953553085810653942892244363465818487/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+     },
+     "epsilon": "443239/1000000000",
+     "frame_size": 4513,
+     "gain": {
+      "display": "[1.28751946873942245375730769810018160378953296e-5 +/- 1.13e-50]",
+      "lower": "48852031641700645086521468581926929403839500830504046931804825477788966186983/3794275180128377091639574036764685364535950857523710002444946112771297432041422848",
+      "upper": "48852031641700645086521468581926929403839500830504046931804825477788968128537/3794275180128377091639574036764685364535950857523710002444946112771297432041422848"
+     },
+     "improved": {
+      "display": "[0.419087888170111727959091183775223467981706544 +/- 2.48e-46]",
+      "lower": "97054124290543935024825544624735472635071844881062114536856400961627603994011/231584178474632390847141970017375815706539969331281128078915168015826259279872",
+      "upper": "97054124290543935024825544624735472635071844881062114536856400961627603994075/231584178474632390847141970017375815706539969331281128078915168015826259279872"
+     },
+     "k": 2256,
+     "pressure": "1/12500",
+     "provenance": {
+      "candidate_list_sha256": "55b0163ac3f18ff3dd768f35f2a17d436a9108492c7ba77ab1e3bafb461007e4",
+      "certificate_code": {
+       "riemann_certificates.py": "1de3dcf98afc3043ad7f08c3df73833834e647501252ee5378f8a8fd77960dfa",
+       "riemann_pressure.py": "5097f1602515fd151819242991070654bcc19e8622d7fc80bae1ba358a2ee287"
+      },
+      "hypothesis": {
+       "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/hypothesis.md",
+       "sha256": "282d425479a87af401439e3c78664ae00ded0db6902d9390d94967bc674f39a0",
+       "source_commit": "8ed806d64e5df2b83ab1ad75cb9f17a5633208bc"
+      },
+      "runner_sha256": "f778a3e8cf10767e22aa060669b2c5e75e7ab1d4ae132c640b6cb4699df589fa"
+     },
+     "status": "arithmetic_verified",
+     "strict_gain_gate": {
+      "display": "[9.47138825676535120243011003940703802140280566e-6 +/- 3.34e-51]",
+      "lower": "35937053384004148429556473085297327894875760407669715420479043432907900362269/3794275180128377091639574036764685364535950857523710002444946112771297432041422848",
+      "upper": "35937053384004148429556473085297327894875760407669715420479043432907900362407/3794275180128377091639574036764685364535950857523710002444946112771297432041422848"
+     },
+     "theta": "3/4"
+    },
+    {
+     "candidate": 2,
+     "status": "not_run_after_higher_ranked_success"
+    },
+    {
+     "candidate": 3,
+     "status": "not_run_after_higher_ranked_success"
+    }
+   ],
+   "scope": "Finite pressure arithmetic; theorem and novelty verdict require separate proof review",
+   "stage": "B"
+  }
+ },
+ "provenance": [
+  {
+   "bytes": 13276,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-001-source-and-constant-audit/artifacts/result.json",
+   "role": "constant_audit",
+   "sha256": "a472e624ce0bf95e5a700fc663f6a37c57905e844b257f0a105a60f14da8cd62",
+   "source_commit": "c3ab36ffbc462652b39871bab091e43850d42493",
+   "source_exp": "EXP-001-source-and-constant-audit"
+  },
+  {
+   "bytes": 1688,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/artifacts/result.json",
+   "role": "result",
+   "sha256": "75297e7caa94bd2d37e73bb4447ae7377c664bd37aa8f760e957b1ec5c000d73",
+   "source_commit": "c3ab36ffbc462652b39871bab091e43850d42493",
+   "source_exp": "EXP-002-short-interval-stability"
+  },
+  {
+   "bytes": 49119,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/artifacts/triangle-certificate.json",
+   "role": "certificate",
+   "sha256": "bd8254477c25124b6bf9fc01e0db88f7f5a16d1bc82357c6eb4cbd594a731463",
+   "source_commit": "c3ab36ffbc462652b39871bab091e43850d42493",
+   "source_exp": "EXP-002-short-interval-stability"
+  },
+  {
+   "bytes": 15928,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/mathematical-proof.md",
+   "role": "proof",
+   "sha256": "36031922ed09440bdf769272431d98c111fb8155a50fc727628a0a65112fc54c",
+   "source_commit": "c3ab36ffbc462652b39871bab091e43850d42493",
+   "source_exp": "EXP-002-short-interval-stability"
+  },
+  {
+   "bytes": 5140,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/verdict.md",
+   "role": "verdict",
+   "sha256": "e82b82de1249587fba9de57416bf965d80b1ca1fb994fd1a428d081e495b50ca",
+   "source_commit": "ad2bb003484cbd1e160c6e3fa37231b62a5cbb24",
+   "source_exp": "EXP-002-short-interval-stability"
+  },
+  {
+   "bytes": 72384,
+   "path": "problems/number-theory/riemann-hypothesis/context/source-manifest.json",
+   "role": "source_manifest",
+   "sha256": "89e6eaad9ce95a2c89fc5f89c5631d3a820bfd8574ff93ca029305808e9270c9",
+   "source_commit": "1e7840368169db8cdee3670e71cee144b6d881f4",
+   "source_exp": "source-review"
+  },
+  {
+   "bytes": 8391,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/artifacts/result.json",
+   "role": "pressure_result",
+   "sha256": "4c6e6ae37dba53164092da631c2aa120d084bcb32e711723ee819e6f6095f85e",
+   "source_commit": "abfa001ce048e723b1ef146fb0e1e6c82061b2fc",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 18497,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/mathematical-proof.md",
+   "role": "pressure_proof",
+   "sha256": "9df9ff826772edb2d6097af58684c95b1d421de641eb0746ae459f5aa58bc6bc",
+   "source_commit": "e21618c40e5469edd3b7e5e52ba7b31306de2f83",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 11386,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/verdict.md",
+   "role": "pressure_verdict",
+   "sha256": "c33626d3a7b038f3efbf658807b346b669ad8b21607b1c18e25ffa03249ac2dd",
+   "source_commit": "abfa001ce048e723b1ef146fb0e1e6c82061b2fc",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 14572,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/adversarial-audit.md",
+   "role": "pressure_audit",
+   "sha256": "9855ba3c317d275ffd843c0088e82789d0f29fde334c60c01f6ef87edd9acad3",
+   "source_commit": "abfa001ce048e723b1ef146fb0e1e6c82061b2fc",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 17004,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/hypothesis.md",
+   "role": "pressure_hypothesis",
+   "sha256": "282d425479a87af401439e3c78664ae00ded0db6902d9390d94967bc674f39a0",
+   "source_commit": "8ed806d64e5df2b83ab1ad75cb9f17a5633208bc",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 8710,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/artifacts/candidates.json",
+   "role": "pressure_candidates",
+   "sha256": "55b0163ac3f18ff3dd768f35f2a17d436a9108492c7ba77ab1e3bafb461007e4",
+   "source_commit": "abfa001ce048e723b1ef146fb0e1e6c82061b2fc",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 11563,
+   "path": "problems/number-theory/riemann-hypothesis/code/riemann_pressure.py",
+   "role": "pressure_code",
+   "sha256": "5097f1602515fd151819242991070654bcc19e8622d7fc80bae1ba358a2ee287",
+   "source_commit": "abfa001ce048e723b1ef146fb0e1e6c82061b2fc",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 7321,
+   "path": "problems/number-theory/riemann-hypothesis/code/riemann_certificates.py",
+   "role": "legacy_certificate_code",
+   "sha256": "1de3dcf98afc3043ad7f08c3df73833834e647501252ee5378f8a8fd77960dfa",
+   "source_commit": "737b050eed7e854920ad683f821f013532435b8d",
+   "source_exp": "EXP-002-short-interval-stability"
+  },
+  {
+   "bytes": 13140,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/run.py",
+   "role": "pressure_runner",
+   "sha256": "f778a3e8cf10767e22aa060669b2c5e75e7ab1d4ae132c640b6cb4699df589fa",
+   "source_commit": "abfa001ce048e723b1ef146fb0e1e6c82061b2fc",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 5184,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/explore.py",
+   "role": "pressure_exploration",
+   "sha256": "aeae7f47afc50ab7422fb4663957804ec2eccb3b0faccfdbaf9405759b497674",
+   "source_commit": "abfa001ce048e723b1ef146fb0e1e6c82061b2fc",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 1616,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/artifacts/exploration.json",
+   "role": "legacy_exploration",
+   "sha256": "0fbf8a2bb238b272a9d6e5813d0202f743ba75c6458117edd387203b2b5355ec",
+   "source_commit": "c3ab36ffbc462652b39871bab091e43850d42493",
+   "source_exp": "EXP-002-short-interval-stability"
+  },
+  {
+   "bytes": 3894,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/artifacts/result.json",
+   "role": "parity_result",
+   "sha256": "bc9e28ca1792657e24da77268e6e2108c3f52684b7e16504f07b32cfce014d6e",
+   "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 11374,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/hypothesis.md",
+   "role": "parity_hypothesis",
+   "sha256": "d1731c3e586e786f39b296cc4c6ac184705f175451f6312ca43b1834d9c4e4a1",
+   "source_commit": "e03413b2301bf45ca68ff6e945f25add9a1c3a89",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 19247,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/run.py",
+   "role": "parity_runner",
+   "sha256": "fa4392330a9f1bd2e2ba1216c9a6ad713440acd1aca22d10ee50f6320c490f52",
+   "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 18122,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/mathematical-proof.md",
+   "role": "parity_proof",
+   "sha256": "98f9f82212ecc28e1baf2e4a182d4d376be419581fe40888fcdcd96e19099f42",
+   "source_commit": "6984177230b4419695a3477f225cdbd042581d57",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 6786,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/adversarial-audit.md",
+   "role": "parity_audit",
+   "sha256": "a1c5285b44aa561cbd0a8921ae3ec05b1841861d2c06cb252efeb3340c9628c2",
+   "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 8976,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/verdict.md",
+   "role": "parity_verdict",
+   "sha256": "123b9478153f814295b4c72a3c1f556e8230a578966aa6d7e7dd7b360a368588",
+   "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 1703,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/proof-review.json",
+   "role": "parity_review",
+   "sha256": "5db05d81e239abf9fd9beb8c4f20687ba137c6d94bae32d3bcd52c56cee12722",
+   "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 17333,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/artifacts/stage-b/candidate-1/pressure-certificate.json",
+   "role": "pressure_certificate_1",
+   "sha256": "0bbcec6fe990b4388428397d87422cd0d2564098dba4186e9576387e37a5d6ea",
+   "source_commit": "abfa001ce048e723b1ef146fb0e1e6c82061b2fc",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 26538,
+   "path": "problems/number-theory/riemann-hypothesis/context/2026-09-12-critical-mass-and-multiplicity-route.md",
+   "role": "parity_premise_0",
+   "sha256": "189b993b39c9d653fa66e226a6d81ffee085720c12b2756930d4da30e6a65531",
+   "source_commit": "e03413b2301bf45ca68ff6e945f25add9a1c3a89",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 14983,
+   "path": "problems/number-theory/riemann-hypothesis/context/2026-09-12-parity-transfer-adversarial-audit.md",
+   "role": "parity_premise_1",
+   "sha256": "91962ba8c1566bdb33ab7910d194f0d138a7aa6b3f803f9f658116bd1a888d14",
+   "source_commit": "e03413b2301bf45ca68ff6e945f25add9a1c3a89",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 19637,
+   "path": "problems/number-theory/riemann-hypothesis/context/2026-09-12-wang-transfer-audit.md",
+   "role": "parity_premise_2",
+   "sha256": "950fc327ddcd1071b0bb48b6ad4d4d11c8c157dc67cf77549de78b2aa7b5232b",
+   "source_commit": "c3ab36ffbc462652b39871bab091e43850d42493",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 18497,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/mathematical-proof.md",
+   "role": "parity_premise_3",
+   "sha256": "9df9ff826772edb2d6097af58684c95b1d421de641eb0746ae459f5aa58bc6bc",
+   "source_commit": "e21618c40e5469edd3b7e5e52ba7b31306de2f83",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 2352,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/artifacts/symbolic.json",
+   "role": "parity_symbolic_raw",
+   "sha256": "f0b6a3590649559be3fb471946e03024be427fbec620dccef7887a563759518a",
+   "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 1234096,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/artifacts/census.jsonl",
+   "role": "parity_census_raw",
+   "sha256": "03e3f42e3c887e729057e02b88b53c07673c171113f5389e0b7d92ee18acc421",
+   "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 3936,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/artifacts/relaxation.json",
+   "role": "parity_relaxation_raw",
+   "sha256": "c6c53ea51372063a72047c0e4e172fbc6533b701395b22fdc78db7399ac2a03c",
+   "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 2764,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/artifacts/sharpness.json",
+   "role": "parity_sharpness_raw",
+   "sha256": "2b19910ae6685716972bd66facc9cfafeee2c882be3f9138df10f76ac7c4c26b",
+   "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
+   "source_exp": "EXP-004-parity-density-transfer"
+  }
+ ],
+ "result": {
+  "audit": {
+   "energy_leaves": 24252,
+   "independent_sinc_taylor": true,
+   "nodes": 48761,
+   "outside_leaves": 129,
+   "precision_bits": 256,
+   "verified": true
+  },
+  "baseline": {
+   "display": "[0.419075012975424333734553610698242466165668649 +/- 8.26e-47]",
+   "lower": "97051142599159553881936962992131595259009598817779002717585660921010063163499/231584178474632390847141970017375815706539969331281128078915168015826259279872",
+   "upper": "97051142599159553881936962992131595259009598817779002717585660921010063163557/231584178474632390847141970017375815706539969331281128078915168015826259279872"
+  },
+  "delta": "1/7000",
+  "gain": {
+   "display": "[1.81544987966300211217682888451171550001029896e-6 +/- 4.96e-51]",
+   "lower": "110213062706758045665418695794848544711953058896705186286469838680065090818169/60708402882054033466233184588234965832575213720379360039119137804340758912662765568",
+   "upper": "110213062706758045665418695794848544711953058896705186286469838680065122201479/60708402882054033466233184588234965832575213720379360039119137804340758912662765568"
+  },
+  "improved": {
+   "display": "[0.419076828425303996736665787527126977881168659 +/- 2.17e-46]",
+   "lower": "97051563028628497508514971333714064621439072515666029333439109673751610042717/231584178474632390847141970017375815706539969331281128078915168015826259279872",
+   "upper": "97051563028628497508514971333714064621439072515666029333439109673751610042781/231584178474632390847141970017375815706539969331281128078915168015826259279872"
+  },
+  "radius": "21/4",
+  "scope": "Finite certificate plus EXP-002 written proof; not a global zero-proportion record",
+  "theta": "3/4"
+ },
+ "reviewed_on": "2026-09-12",
+ "schema": "riemann-replay-v3"
+}

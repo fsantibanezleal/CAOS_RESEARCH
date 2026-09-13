@@ -4,6 +4,81 @@ import type { Citation } from '@fasl-work/caos-app-shell';
 // Inline <Cite id="..."/> resolves against this list via the CitationsProvider at the app root.
 export const CITATIONS: Citation[] = [
   {
+    id: 'riemann-anthropic2026', label: 'Anthropic 2026',
+    citation: 'Anthropic (2026). New results on the Riemann zeta function. Research announcement, original and revised proofs, human verification notes, and formalization links. Reviewed 2026-09-12.',
+    url: 'https://www.anthropic.com/research/riemann-zeta',
+  },
+  {
+    id: 'riemann-alpogefurman2026', label: 'Alpoge–Furman 2026',
+    citation: 'Alpöge L., Furman R. (2026). More than two thirds of the zeros of the Riemann zeta function are simple and on the critical line. arXiv:2608.13637v2. The named authors verified and take responsibility for the Claude-discovered and written argument.',
+    url: 'https://arxiv.org/abs/2608.13637v2',
+  },
+  {
+    id: 'riemann-lamzouri2026', label: 'Lamzouri 2026',
+    citation: 'Lamzouri Y. (2026). A new proof that more than 2/3 of the zeros of the Riemann zeta function are simple and on the critical line. arXiv:2609.02882v2. The pinned source for the finite self-adjoint operator and multiplicity bounds.',
+    url: 'https://arxiv.org/abs/2609.02882v2',
+  },
+  {
+    id: 'riemann-wang2026', label: 'Wang 2026',
+    citation: 'Wang B. (2026). Simple critical zeros and distinct zeros of the Riemann zeta-function in short intervals. arXiv:2609.07918v1, submitted September 7; manuscript dated September 9. The arithmetic input and cosine baseline used in the refinement.',
+    url: 'https://arxiv.org/abs/2609.07918v1',
+  },
+  {
+    id: 'riemann-karatsuba1985', label: 'Karatsuba 1985',
+    citation: 'Karatsuba A. A. (1985). On the zeros of the Riemann zeta-function on the critical line. Mathematics of the USSR-Izvestiya 24(3), 523–537. Theorem B restates Selberg’s distinct odd-order critical-zero density; the paper also proves a stronger shorter seed exponent.',
+    url: 'https://www.mathnet.ru/eng/im1456',
+  },
+  {
+    id: 'riemann-parity2026', label: 'CAOS EXP-004: parity transfer',
+    citation: 'Santibáñez-Leal F. (2026). Parity density transfer across the cosine positivity threshold. CAOS Research EXP-004: complete finite proof, exact controls, independent source binding and qualitative short-interval range extension. No numerical new exponent or RH proof is claimed.',
+    url: 'https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/mathematical-proof.md',
+  },
+  {
+    id: 'riemann-bgstb2026', label: 'BGSTB, corrected version 2026',
+    citation: 'Baluyot S. A. C., Goldston D. A., Suriajaya A. I., Turnage-Butterbaugh C. L. (2026). Pair correlation of zeros of the Riemann zeta function I: Proportions of simple zeros and critical zeros. arXiv:2501.14545v3. Corrected uniform error terms; the cited integrated applications remain valid.',
+    url: 'https://arxiv.org/abs/2501.14545v3',
+  },
+  {
+    id: 'riemann-axiom2026', label: 'AxiomMath: ZetaZerosV2',
+    citation: 'AxiomMath (2026). ZetaZerosV2, commit 4c73b317232173a5e6d4253702c9870ee66c2c7b. Apache-2.0 Lean development. Headline zeta results explicitly assume Riemann–von Mangoldt and pair correlation.',
+    url: 'https://github.com/AxiomMath/ZetaZerosV2/tree/4c73b317232173a5e6d4253702c9870ee66c2c7b',
+  },
+  {
+    id: 'riemann-formalmath2026', label: 'Anthropic: formal-math',
+    citation: 'Anthropic (2026). formal-math, commit fbdc36bbf17d20af3fd0447c6d1a8a02773c9844. The zeta23 development contains the analytic input proofs; source review and upstream verification receipts are distinguished from local replay.',
+    url: 'https://github.com/anthropics/formal-math/tree/fbdc36bbf17d20af3fd0447c6d1a8a02773c9844',
+  },
+  {
+    id: 'riemann-ainta2026', label: 'ainta: spectral stability',
+    citation: 'ainta (2026). zeta-simple-zeros, commit 040c5e899e658aed7b56a2a87f501798fe10761d. A convex spectral defect and finite configurations of consecutive simple zeros. Source of the inherited stability mechanism.',
+    url: 'https://github.com/ainta/zeta-simple-zeros/blob/040c5e899e658aed7b56a2a87f501798fe10761d/docs/proof.md',
+  },
+  {
+    id: 'riemann-trmdy2026', label: 'trmdy: successor certificates',
+    citation: 'trmdy (2026). zeta-simple-zeros-673137, commit 1610b97b7895ff34982260f8dcaf04a0f7b82cf7. Higher-point stability certificates and record candidates; the analytic interfaces are not all formalized in Lean.',
+    url: 'https://github.com/trmdy/zeta-simple-zeros-673137/tree/1610b97b7895ff34982260f8dcaf04a0f7b82cf7',
+  },
+  {
+    id: 'riemann-refinement2026', label: 'CAOS short-interval refinement',
+    citation: 'Santibáñez-Leal F. (2026). A stability refinement for simple critical zeros in short intervals, version 0.01. First published EXP-002 proof and compact certificate; a separate sinc-Taylor evaluator shares Arb and geometry with the certifier.',
+    doi: '10.5281/zenodo.22727389',
+  },
+  {
+    id: 'riemann-pressure2026', label: 'CAOS EXP-003: odd-frame pressure',
+    citation: 'Santibáñez-Leal F. (2026). Odd-frame pressure refinement of the short-interval cosine bound. EXP-003 mathematical proof and confirmed verdict. Stronger short-interval consequences of attributed finite stability and pressure frameworks; finite arithmetic and analytic scope are separate evidence layers.',
+    url: 'https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/mathematical-proof.md',
+  },
+  {
+    id: 'riemann-tawanerguo2026', label: 'tawanerguo: pressure and capacities',
+    citation: 'tawanerguo-cn (2026). zeta-simple-zeros, commit 45149f6d403059a71be73c5e3f884cee7cd62b20. Global finite stability, pressure-frame and nonuniform-capacity framework. Attribution does not import the repository’s global numerical claims as short-interval results.',
+    url: 'https://github.com/tawanerguo-cn/zeta-simple-zeros/tree/45149f6d403059a71be73c5e3f884cee7cd62b20',
+  },
+  {
+    id: 'riemann-yuhangshi2026', label: 'Yuhang Shi: mixed frames',
+    citation: 'Yuhang Shi (2026). zeta-simple-zeros-673316977, commit 1aeda8e9f0678166a824c75313a813b09eb478cd. Mixed-frame and spectral-envelope refinements in the existing global framework. The audited short-interval consequence is separately stated in EXP-003.',
+    url: 'https://github.com/yuhangshi888/zeta-simple-zeros-673316977/tree/1aeda8e9f0678166a824c75313a813b09eb478cd',
+  },
+  {
     id: 'alpoge2026',
     label: 'Alpöge 2026',
     citation:

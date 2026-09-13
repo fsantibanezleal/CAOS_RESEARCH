@@ -3,6 +3,53 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.65.000] - 2026-09-12
+
+### Added
+- Riemann EXP-004 parity-density transfer: exact multiplicity/parity identities,
+  a source-bound proof review, complete finite census and sharpness controls, and
+  a qualitative fixed-exponent extension below Wang's cosine positivity root.
+- EXP-003 pressure replay and the bilingual four-experiment web surface are now
+  exported through `riemann-replay-v3` with committed-source and raw-evidence gates.
+- Zenodo v0.02 manuscript metadata, release QA, and representative rendered captures
+  are retained under `program/riemann-hypothesis/release-0.65.000/`.
+
+### Changed
+- Experiment dialogs normalize tagged display equations for KaTeX presentation while
+  preserving the committed scientific source bytes and hashes.
+- The release matrix covers 20 pointer-driven EN/ES light/dark scenarios at five
+  viewports, including all four Riemann experiment records and proof stages.
+
+### Boundaries
+- The Riemann hypothesis remains open. No numerical new exponent, effective height,
+  global record or universal simplicity claim is made; publication and automated
+  verification remain separate from external peer review and formalization.
+
+## [0.64.000] - 2026-09-12
+
+### Added
+- Riemann research: version-pinned primary-source archive, original and successor proof audits,
+  formalization boundaries, and exact baseline checks. Third-party full text stays in its local
+  cache where public redistribution rights were not identified; licensed code snapshots retain notices.
+- A derived strict refinement of Wang's positive short-interval cosine curve, with attributed
+  stability inputs, an explicit analytic gap, and a reproducible numerical example at theta=3/4.
+  The 48,761-node interval certificate has zero unresolved boxes and a second kernel evaluator.
+- A complete research wiki, 10-page preprint, Zenodo publication receipts, and a bilingual
+  six-section public replay with source hashes and experiment records. No RH-solution,
+  global-record, effective-height, or end-to-end formal-verification claim is made.
+
+### Changed
+- The offline registry exports Riemann data only from committed experiment bytes and records
+  their source commits and hashes. The Program portfolio links to the new research page.
+- The serialized bake includes previously landed Huneke-Wiegand, tau-conjecture,
+  Petersen-coloring, and Bougard-Joret rounds since the previous version tag. Their
+  original problem states, theorem boundaries, and publication records are preserved.
+
+### Fixed
+- Riemann replay JSON uses explicit UTF-8 and LF line endings across platforms. Its experiment
+  dialogs read committed hypotheses, verdicts, and artifact sizes, excluding dirty local work.
+- Full-history CI and deployment checkouts preserve reproducible source-commit provenance.
+
 ## [0.63.000], 2026-08-10
 
 ### Added

@@ -11,7 +11,7 @@ The in-repo status section: which problems exist, in which lifecycle state (see
 | Unsplittable-flow cost | optimization-geometry | exploring | A | partial | [unsplittable-flow-cost/plan.md](unsplittable-flow-cost/plan.md) |
 | Log-energy points on S^2 (Smale 7) | optimization-geometry | scoped | A | yes | (wave 2) |
 | Shub-Smale tau conjecture | computation-complexity | exploring | A | yes | [tau-conjecture/plan.md](tau-conjecture/plan.md) |
-| Riemann hypothesis | number-theory | scoped | A | yes | (wave 2) |
+| Riemann hypothesis | number-theory | opened | A | yes | [riemann-hypothesis/plan.md](riemann-hypothesis/plan.md) |
 | Diophantine 2-variable decidability | computation-complexity | proposed | B+ | partial | |
 | Hilbert 16th, part 2 | dynamical-systems | proposed | A- | yes | |
 | Strongly polynomial LP | computation-complexity | proposed | B+ | partial | |

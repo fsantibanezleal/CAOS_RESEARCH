@@ -1,0 +1,172 @@
+{
+  "record_id": "22728744",
+  "version_doi": "10.5281/zenodo.22728744",
+  "concept_doi": "10.5281/zenodo.22727388",
+  "version": "0.02",
+  "source_id": "22727389",
+  "verified_utc": "2026-09-12T19:36:45.464853+00:00",
+  "public_url": "https://zenodo.org/records/22728744",
+  "filename": "riemann-short-interval-stability-v0.02.pdf",
+  "fresh_unauthenticated_download": true,
+  "public_metadata": {
+    "resource_type": {
+      "id": "publication-preprint",
+      "title": {
+        "de": "Preprint",
+        "en": "Preprint"
+      }
+    },
+    "creators": [
+      {
+        "person_or_org": {
+          "type": "personal",
+          "name": "Santibañez-Leal, Felipe",
+          "given_name": "Felipe",
+          "family_name": "Santibañez-Leal",
+          "identifiers": [
+            {
+              "identifier": "0000-0002-0150-3246",
+              "scheme": "orcid"
+            }
+          ]
+        },
+        "affiliations": [
+          {
+            "name": "CAOS Research program"
+          }
+        ]
+      }
+    ],
+    "title": "Simple critical zeros in short intervals: stability, pressure, and parity",
+    "publisher": "Zenodo",
+    "publication_date": "2026-09-12",
+    "subjects": [
+      {
+        "subject": "Riemann zeta function"
+      },
+      {
+        "subject": "short intervals"
+      },
+      {
+        "subject": "simple critical zeros"
+      },
+      {
+        "subject": "odd multiplicity"
+      },
+      {
+        "subject": "pair correlation"
+      },
+      {
+        "subject": "Gram matrix stability"
+      },
+      {
+        "subject": "interval arithmetic"
+      }
+    ],
+    "languages": [
+      {
+        "id": "eng",
+        "title": {
+          "en": "English"
+        }
+      }
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "scheme": "url",
+        "relation_type": {
+          "id": "issupplementto",
+          "title": {
+            "de": "Ergänzt",
+            "en": "Is supplement to"
+          }
+        },
+        "resource_type": {
+          "id": "software",
+          "title": {
+            "de": "Software",
+            "en": "Software"
+          }
+        }
+      },
+      {
+        "identifier": "10.48550/arXiv.2609.07918",
+        "scheme": "doi",
+        "relation_type": {
+          "id": "cites",
+          "title": {
+            "de": "Zitiert",
+            "en": "Cites"
+          }
+        },
+        "resource_type": {
+          "id": "publication-preprint",
+          "title": {
+            "de": "Preprint",
+            "en": "Preprint"
+          }
+        }
+      },
+      {
+        "identifier": "10.48550/arXiv.2609.02882",
+        "scheme": "doi",
+        "relation_type": {
+          "id": "cites",
+          "title": {
+            "de": "Zitiert",
+            "en": "Cites"
+          }
+        },
+        "resource_type": {
+          "id": "publication-preprint",
+          "title": {
+            "de": "Preprint",
+            "en": "Preprint"
+          }
+        }
+      }
+    ],
+    "version": "0.02",
+    "rights": [
+      {
+        "id": "cc-by-4.0",
+        "title": {
+          "en": "Creative Commons Attribution 4.0 International"
+        },
+        "description": {
+          "en": "The Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited."
+        },
+        "icon": "cc-by-icon",
+        "props": {
+          "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+          "scheme": "spdx"
+        }
+      }
+    ],
+    "description": "<p>We study proportions of simple and distinct nontrivial zeros of the Riemann zeta function in short intervals. The finite stable Hilbert rank-trace method and Wang's fixed-test short-interval input are retained with their stated assumptions. An odd-multiplicity parity transfer combines a fixed classical positive density of distinct odd-multiplicity critical zeros with the multiplicity excess in the finite inequality. For every fixed exponent theta in (0.51,1), this gives a simple-critical lower bound max{0,c(theta),(c(theta)+2 kappa)/3}, where c(theta)=2-theta/2-cot(theta/sqrt(2))/sqrt(2) and kappa is one fixed positive classical density constant. Consequently some fixed theta below Wang's cosine positivity root has positive simple-critical density; a separate identity gives a distinct-zero proportion greater than one half at another exponent below that root. The new exponent and kappa are intentionally left unquantified.</p><p>The same finite method is strengthened by an odd-frame pressure transfer. At theta=3/4, a certified two-variable interval certificate with 16,797 nodes and zero unresolved cells gives simple-critical lower bound 0.419087888170111727959091183775 and distinct companion 0.709543944085055863979545591888. Construction and a separate sinc-Taylor replay pass under the declared rational parameters.</p><p>The parity census and arithmetic controls are reproducible from the accompanying CAOS Research repository. The scientific proof and imported analytic interfaces were independently audited within the project; this is a self-published preprint and has not received external peer review or end-to-end formal verification. The work does not prove the Riemann hypothesis, establish a new global record, provide an effective starting height, or claim a numerical improvement to the positivity exponent.</p>"
+  },
+  "verified_fields": [
+    "title",
+    "sole_author",
+    "orcid",
+    "affiliation",
+    "version",
+    "date",
+    "description",
+    "keywords",
+    "related_identifiers",
+    "language",
+    "license",
+    "preprint_type",
+    "version_doi",
+    "concept_doi",
+    "latest_version",
+    "public_access",
+    "exact_pdf_bytes",
+    "frozen_source_pdf"
+  ],
+  "bytes": 498500,
+  "sha256": "56b0ce29935fe3d115d9d40432f87f82b030355b028f3ea942fd3d3c671e2b1c",
+  "md5": "95936def23bafe758e1948b1e2907e84"
+}

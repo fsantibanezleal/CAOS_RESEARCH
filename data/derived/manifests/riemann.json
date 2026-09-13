@@ -1,0 +1,279 @@
+{
+ "artifact": {
+  "bytes": 41149,
+  "path": "research/riemann.json",
+  "sha256": "d8815db7876f455e68951ced726bda8222f9ec61cf65dda2d9bdf18d182b6006"
+ },
+ "case_id": "riemann",
+ "gate": {
+  "lane": "precompute",
+  "reason": "baked registry export; the web replays it"
+ },
+ "lane": "precompute",
+ "sources": [
+  {
+   "bytes": 13276,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-001-source-and-constant-audit/artifacts/result.json",
+   "role": "constant_audit",
+   "sha256": "a472e624ce0bf95e5a700fc663f6a37c57905e844b257f0a105a60f14da8cd62",
+   "source_commit": "c3ab36ffbc462652b39871bab091e43850d42493",
+   "source_exp": "EXP-001-source-and-constant-audit"
+  },
+  {
+   "bytes": 1688,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/artifacts/result.json",
+   "role": "result",
+   "sha256": "75297e7caa94bd2d37e73bb4447ae7377c664bd37aa8f760e957b1ec5c000d73",
+   "source_commit": "c3ab36ffbc462652b39871bab091e43850d42493",
+   "source_exp": "EXP-002-short-interval-stability"
+  },
+  {
+   "bytes": 49119,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/artifacts/triangle-certificate.json",
+   "role": "certificate",
+   "sha256": "bd8254477c25124b6bf9fc01e0db88f7f5a16d1bc82357c6eb4cbd594a731463",
+   "source_commit": "c3ab36ffbc462652b39871bab091e43850d42493",
+   "source_exp": "EXP-002-short-interval-stability"
+  },
+  {
+   "bytes": 15928,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/mathematical-proof.md",
+   "role": "proof",
+   "sha256": "36031922ed09440bdf769272431d98c111fb8155a50fc727628a0a65112fc54c",
+   "source_commit": "c3ab36ffbc462652b39871bab091e43850d42493",
+   "source_exp": "EXP-002-short-interval-stability"
+  },
+  {
+   "bytes": 5140,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/verdict.md",
+   "role": "verdict",
+   "sha256": "e82b82de1249587fba9de57416bf965d80b1ca1fb994fd1a428d081e495b50ca",
+   "source_commit": "ad2bb003484cbd1e160c6e3fa37231b62a5cbb24",
+   "source_exp": "EXP-002-short-interval-stability"
+  },
+  {
+   "bytes": 72384,
+   "path": "problems/number-theory/riemann-hypothesis/context/source-manifest.json",
+   "role": "source_manifest",
+   "sha256": "89e6eaad9ce95a2c89fc5f89c5631d3a820bfd8574ff93ca029305808e9270c9",
+   "source_commit": "1e7840368169db8cdee3670e71cee144b6d881f4",
+   "source_exp": "source-review"
+  },
+  {
+   "bytes": 8391,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/artifacts/result.json",
+   "role": "pressure_result",
+   "sha256": "4c6e6ae37dba53164092da631c2aa120d084bcb32e711723ee819e6f6095f85e",
+   "source_commit": "abfa001ce048e723b1ef146fb0e1e6c82061b2fc",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 18497,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/mathematical-proof.md",
+   "role": "pressure_proof",
+   "sha256": "9df9ff826772edb2d6097af58684c95b1d421de641eb0746ae459f5aa58bc6bc",
+   "source_commit": "e21618c40e5469edd3b7e5e52ba7b31306de2f83",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 11386,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/verdict.md",
+   "role": "pressure_verdict",
+   "sha256": "c33626d3a7b038f3efbf658807b346b669ad8b21607b1c18e25ffa03249ac2dd",
+   "source_commit": "abfa001ce048e723b1ef146fb0e1e6c82061b2fc",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 14572,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/adversarial-audit.md",
+   "role": "pressure_audit",
+   "sha256": "9855ba3c317d275ffd843c0088e82789d0f29fde334c60c01f6ef87edd9acad3",
+   "source_commit": "abfa001ce048e723b1ef146fb0e1e6c82061b2fc",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 17004,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/hypothesis.md",
+   "role": "pressure_hypothesis",
+   "sha256": "282d425479a87af401439e3c78664ae00ded0db6902d9390d94967bc674f39a0",
+   "source_commit": "8ed806d64e5df2b83ab1ad75cb9f17a5633208bc",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 8710,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/artifacts/candidates.json",
+   "role": "pressure_candidates",
+   "sha256": "55b0163ac3f18ff3dd768f35f2a17d436a9108492c7ba77ab1e3bafb461007e4",
+   "source_commit": "abfa001ce048e723b1ef146fb0e1e6c82061b2fc",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 11563,
+   "path": "problems/number-theory/riemann-hypothesis/code/riemann_pressure.py",
+   "role": "pressure_code",
+   "sha256": "5097f1602515fd151819242991070654bcc19e8622d7fc80bae1ba358a2ee287",
+   "source_commit": "abfa001ce048e723b1ef146fb0e1e6c82061b2fc",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 7321,
+   "path": "problems/number-theory/riemann-hypothesis/code/riemann_certificates.py",
+   "role": "legacy_certificate_code",
+   "sha256": "1de3dcf98afc3043ad7f08c3df73833834e647501252ee5378f8a8fd77960dfa",
+   "source_commit": "737b050eed7e854920ad683f821f013532435b8d",
+   "source_exp": "EXP-002-short-interval-stability"
+  },
+  {
+   "bytes": 13140,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/run.py",
+   "role": "pressure_runner",
+   "sha256": "f778a3e8cf10767e22aa060669b2c5e75e7ab1d4ae132c640b6cb4699df589fa",
+   "source_commit": "abfa001ce048e723b1ef146fb0e1e6c82061b2fc",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 5184,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/explore.py",
+   "role": "pressure_exploration",
+   "sha256": "aeae7f47afc50ab7422fb4663957804ec2eccb3b0faccfdbaf9405759b497674",
+   "source_commit": "abfa001ce048e723b1ef146fb0e1e6c82061b2fc",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 1616,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/artifacts/exploration.json",
+   "role": "legacy_exploration",
+   "sha256": "0fbf8a2bb238b272a9d6e5813d0202f743ba75c6458117edd387203b2b5355ec",
+   "source_commit": "c3ab36ffbc462652b39871bab091e43850d42493",
+   "source_exp": "EXP-002-short-interval-stability"
+  },
+  {
+   "bytes": 3894,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/artifacts/result.json",
+   "role": "parity_result",
+   "sha256": "bc9e28ca1792657e24da77268e6e2108c3f52684b7e16504f07b32cfce014d6e",
+   "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 11374,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/hypothesis.md",
+   "role": "parity_hypothesis",
+   "sha256": "d1731c3e586e786f39b296cc4c6ac184705f175451f6312ca43b1834d9c4e4a1",
+   "source_commit": "e03413b2301bf45ca68ff6e945f25add9a1c3a89",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 19247,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/run.py",
+   "role": "parity_runner",
+   "sha256": "fa4392330a9f1bd2e2ba1216c9a6ad713440acd1aca22d10ee50f6320c490f52",
+   "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 18122,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/mathematical-proof.md",
+   "role": "parity_proof",
+   "sha256": "98f9f82212ecc28e1baf2e4a182d4d376be419581fe40888fcdcd96e19099f42",
+   "source_commit": "6984177230b4419695a3477f225cdbd042581d57",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 6786,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/adversarial-audit.md",
+   "role": "parity_audit",
+   "sha256": "a1c5285b44aa561cbd0a8921ae3ec05b1841861d2c06cb252efeb3340c9628c2",
+   "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 8976,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/verdict.md",
+   "role": "parity_verdict",
+   "sha256": "123b9478153f814295b4c72a3c1f556e8230a578966aa6d7e7dd7b360a368588",
+   "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 1703,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/proof-review.json",
+   "role": "parity_review",
+   "sha256": "5db05d81e239abf9fd9beb8c4f20687ba137c6d94bae32d3bcd52c56cee12722",
+   "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 17333,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/artifacts/stage-b/candidate-1/pressure-certificate.json",
+   "role": "pressure_certificate_1",
+   "sha256": "0bbcec6fe990b4388428397d87422cd0d2564098dba4186e9576387e37a5d6ea",
+   "source_commit": "abfa001ce048e723b1ef146fb0e1e6c82061b2fc",
+   "source_exp": "EXP-003-odd-frame-pressure"
+  },
+  {
+   "bytes": 26538,
+   "path": "problems/number-theory/riemann-hypothesis/context/2026-09-12-critical-mass-and-multiplicity-route.md",
+   "role": "parity_premise_0",
+   "sha256": "189b993b39c9d653fa66e226a6d81ffee085720c12b2756930d4da30e6a65531",
+   "source_commit": "e03413b2301bf45ca68ff6e945f25add9a1c3a89",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 14983,
+   "path": "problems/number-theory/riemann-hypothesis/context/2026-09-12-parity-transfer-adversarial-audit.md",
+   "role": "parity_premise_1",
+   "sha256": "91962ba8c1566bdb33ab7910d194f0d138a7aa6b3f803f9f658116bd1a888d14",
+   "source_commit": "e03413b2301bf45ca68ff6e945f25add9a1c3a89",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 19637,
+   "path": "problems/number-theory/riemann-hypothesis/context/2026-09-12-wang-transfer-audit.md",
+   "role": "parity_premise_2",
+   "sha256": "950fc327ddcd1071b0bb48b6ad4d4d11c8c157dc67cf77549de78b2aa7b5232b",
+   "source_commit": "c3ab36ffbc462652b39871bab091e43850d42493",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 18497,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/mathematical-proof.md",
+   "role": "parity_premise_3",
+   "sha256": "9df9ff826772edb2d6097af58684c95b1d421de641eb0746ae459f5aa58bc6bc",
+   "source_commit": "e21618c40e5469edd3b7e5e52ba7b31306de2f83",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 2352,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/artifacts/symbolic.json",
+   "role": "parity_symbolic_raw",
+   "sha256": "f0b6a3590649559be3fb471946e03024be427fbec620dccef7887a563759518a",
+   "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 1234096,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/artifacts/census.jsonl",
+   "role": "parity_census_raw",
+   "sha256": "03e3f42e3c887e729057e02b88b53c07673c171113f5389e0b7d92ee18acc421",
+   "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 3936,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/artifacts/relaxation.json",
+   "role": "parity_relaxation_raw",
+   "sha256": "c6c53ea51372063a72047c0e4e172fbc6533b701395b22fdc78db7399ac2a03c",
+   "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
+   "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 2764,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/artifacts/sharpness.json",
+   "role": "parity_sharpness_raw",
+   "sha256": "2b19910ae6685716972bd66facc9cfafeee2c882be3f9138df10f76ac7c4c26b",
+   "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
+   "source_exp": "EXP-004-parity-density-transfer"
+  }
+ ]
+}

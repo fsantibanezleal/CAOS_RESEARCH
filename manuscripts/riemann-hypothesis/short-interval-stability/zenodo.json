@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "title": "Simple critical zeros in short intervals: stability, pressure, and parity",
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "publication_date": "2026-09-12",
+    "version": "0.02",
+    "language": "eng",
+    "creators": [{
+      "name": "Santibañez-Leal, Felipe",
+      "orcid": "0000-0002-0150-3246",
+      "affiliation": "CAOS Research program"
+    }],
+    "description": "<p>We study proportions of simple and distinct nontrivial zeros of the Riemann zeta function in short intervals. The finite stable Hilbert rank-trace method and Wang's fixed-test short-interval input are retained with their stated assumptions. An odd-multiplicity parity transfer combines a fixed classical positive density of distinct odd-multiplicity critical zeros with the multiplicity excess in the finite inequality. For every fixed exponent theta in (0.51,1), this gives a simple-critical lower bound max{0,c(theta),(c(theta)+2 kappa)/3}, where c(theta)=2-theta/2-cot(theta/sqrt(2))/sqrt(2) and kappa is one fixed positive classical density constant. Consequently some fixed theta below Wang's cosine positivity root has positive simple-critical density; a separate identity gives a distinct-zero proportion greater than one half at another exponent below that root. The new exponent and kappa are intentionally left unquantified.</p><p>The same finite method is strengthened by an odd-frame pressure transfer. At theta=3/4, a certified two-variable interval certificate with 16,797 nodes and zero unresolved cells gives simple-critical lower bound 0.419087888170111727959091183775 and distinct companion 0.709543944085055863979545591888. Construction and a separate sinc-Taylor replay pass under the declared rational parameters.</p><p>The parity census and arithmetic controls are reproducible from the accompanying CAOS Research repository. The scientific proof and imported analytic interfaces were independently audited within the project; this is a self-published preprint and has not received external peer review or end-to-end formal verification. The work does not prove the Riemann hypothesis, establish a new global record, provide an effective starting height, or claim a numerical improvement to the positivity exponent.</p>",
+    "keywords": ["Riemann zeta function", "short intervals", "simple critical zeros", "odd multiplicity", "pair correlation", "Gram matrix stability", "interval arithmetic"],
+    "license": "cc-by-4.0",
+    "access_right": "open",
+    "related_identifiers": [
+      {"identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH", "relation": "isSupplementTo", "resource_type": "software"},
+      {"identifier": "10.48550/arXiv.2609.07918", "relation": "cites", "resource_type": "publication-preprint"},
+      {"identifier": "10.48550/arXiv.2609.02882", "relation": "cites", "resource_type": "publication-preprint"}
+    ]
+  }
+}

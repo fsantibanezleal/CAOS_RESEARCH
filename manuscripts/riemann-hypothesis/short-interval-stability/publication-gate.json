@@ -1,0 +1,19 @@
+{
+  "release_ready": true,
+  "date": "2026-09-12",
+  "pages": 21,
+  "rendered_pages_reviewed": 21,
+  "warnings": 0,
+  "overfull": 0,
+  "underfull": 0,
+  "bytes": 498500,
+  "sha256": "56b0ce29935fe3d115d9d40432f87f82b030355b028f3ea942fd3d3c671e2b1c",
+  "md5": "95936def23bafe758e1948b1e2907e84",
+  "tex_sha256": "a9af46c41cea2cea4c5199ec79953df64d8bdfcc9576605994d739021546812c",
+  "metadata_sha256": "5aaad778f40ad429c5cab4051d258adfc440b2e375287a7e9af8275c5aa4606a",
+  "render_review_sha256": "05a2114c8f9b3b7360db4a2391199ef0a6923c2235c5626eccfc12bf1e7f4ecd",
+  "render_review": "render-review.json; all 21 pages inspected",
+  "proof_review": "EXP-003 and EXP-004 confirmed proof and artifact review; independent automated review, not external peer review",
+  "version_doi": "10.5281/zenodo.22728744",
+  "concept_doi": "10.5281/zenodo.22727388"
+}

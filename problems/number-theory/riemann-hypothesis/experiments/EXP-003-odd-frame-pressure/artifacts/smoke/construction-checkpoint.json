@@ -1,0 +1,24 @@
+{
+  "schema": "riemann-pressure-checkpoint-v1",
+  "phase": "construction",
+  "spec": {
+    "theta": "3/4",
+    "pressure": "1/20",
+    "epsilon": "1/10",
+    "cutoff": "2"
+  },
+  "precision_bits": 160,
+  "evaluator": "native-sinc",
+  "source_identity": {
+    "riemann_pressure.py": "5097f1602515fd151819242991070654bcc19e8622d7fc80bae1ba358a2ee287",
+    "riemann_certificates.py": "1de3dcf98afc3043ad7f08c3df73833834e647501252ee5378f8a8fd77960dfa"
+  },
+  "tree": "BBBVBVBVVBVBBVVPBBBVBBVVBVPBVPP",
+  "tree_sha256": "4039cea4ba5709aa81d86e2f099861de2508457c1735e1553ea6e2941668f4ac",
+  "pending": [],
+  "counts": {
+    "nodes": 31,
+    "validated_leaves": 12,
+    "pressure_leaves": 4
+  }
+}

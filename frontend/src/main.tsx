@@ -1,13 +1,14 @@
-import { StrictMode } from 'react';
+import { StrictMode, type ReactNode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import { FlaskConical } from 'lucide-react';
-import { AppShell, applyTheme, readTheme, CitationsProvider, type ShellConfig } from '@fasl-work/caos-app-shell';
+import { AppShell, applyTheme, readTheme, CitationsProvider, useShellLang, type ShellConfig } from '@fasl-work/caos-app-shell';
 import '@fasl-work/caos-app-shell/styles.css';
 import 'katex/dist/katex.min.css';
 import './research.css';
 import { CITATIONS } from './data/citations';
 import { ARCHITECTURE } from './lib/architecture';
+import { riemannArchitecture } from './lib/riemannArchitecture';
 import pkg from '../package.json';
 
 import Home from './pages/Home';
@@ -16,6 +17,7 @@ import Jacobian from './pages/Jacobian';
 import CentralConfigurations from './pages/CentralConfigurations';
 import UnsplittableFlowCost from './pages/UnsplittableFlowCost';
 import PetersenColoring from './pages/PetersenColoring';
+import RiemannHypothesis from './pages/RiemannHypothesis';
 
 // Display version X.XX.XXX derived from the semver manifest (single source, no drift).
 const displayVersion = pkg.version
@@ -51,21 +53,30 @@ const config: ShellConfig = {
   architecture: ARCHITECTURE,
   footer: {
     provenance: {
-      en: 'Sources: primary literature (DOI/arXiv linked inline) and the repository experiment records of every problem on this site; every number here is baked from a persisted, hash-manifested artifact. Engines, all offline: sympy over exact rationals, msolve for certified real solving, gfan for the polyhedral and tropical computations, and an exact Bland-rule simplex for the rational linear programs; the site itself computes nothing.',
-      es: 'Fuentes: literatura primaria (DOI/arXiv enlazados en linea) y los registros de experimentos de cada problema de este sitio; cada numero aqui se hornea desde un artefacto persistido con manifiesto de hash. Motores, todos offline: sympy sobre racionales exactos, msolve para resolucion real certificada, gfan para las computaciones poliedrales y tropicales, y un simplex exacto con regla de Bland para los programas lineales racionales; el sitio no calcula nada.',
+      en: 'Sources: primary literature (DOI/arXiv linked inline) and the repository experiment records of every problem on this site; every number here is baked from a persisted, hash-manifested artifact. Engines, all offline: sympy over exact rationals, msolve for certified real solving, gfan for the polyhedral and tropical computations, an exact Bland-rule simplex for the rational linear programs, and Arb interval arithmetic for the Riemann certificates; the site itself computes nothing.',
+      es: 'Fuentes: literatura primaria (DOI/arXiv enlazados en linea) y los registros de experimentos de cada problema de este sitio; cada numero aqui se hornea desde un artefacto persistido con manifiesto de hash. Motores, todos offline: sympy sobre racionales exactos, msolve para resolucion real certificada, gfan para las computaciones poliedrales y tropicales, un simplex exacto con regla de Bland para los programas lineales racionales y aritmética de intervalos Arb para los certificados de Riemann; el sitio no calcula nada.',
     },
     disclaimer: {
-      en: 'A research record, not a peer-reviewed venue: verdicts are labeled machine-verified, derived or conjecture, refuted attempts stay in the record, and open questions are stated as open. The Jacobian conjecture remains open in dimension 2, Smale’s 6th problem remains open from six bodies on, and Goemans’ unsplittable-flow cost conjecture is refuted while its quantitative frontier stays open; results replicated from the literature, including counterexamples found by others, are labeled as replications.',
-      es: 'Un registro de investigacion, no un medio con revision por pares: los veredictos se etiquetan como verificados a maquina, derivados o conjetura, los intentos refutados quedan en el registro y las preguntas abiertas se declaran abiertas. La conjetura jacobiana sigue abierta en dimension 2, el sexto problema de Smale sigue abierto desde seis cuerpos, y la conjetura de costo de flujo indivisible de Goemans esta refutada mientras su frontera cuantitativa sigue abierta; los resultados replicados de la literatura, incluidos contraejemplos hallados por otros, se etiquetan como replicaciones.',
+      en: 'The Riemann hypothesis remains open. A research record, not a peer-reviewed venue: verdicts are labeled machine-verified, derived or conjecture, refuted attempts stay in the record, and open questions are stated as open. The Jacobian conjecture remains open in dimension 2, Smale’s 6th problem remains open from six bodies on, and Goemans’ unsplittable-flow cost conjecture is refuted while its quantitative frontier stays open; results replicated from the literature, including counterexamples found by others, are labeled as replications.',
+      es: 'La hipótesis de Riemann sigue abierta. Un registro de investigacion, no un medio con revision por pares: los veredictos se etiquetan como verificados a maquina, derivados o conjetura, los intentos refutados quedan en el registro y las preguntas abiertas se declaran abiertas. La conjetura jacobiana sigue abierta en dimension 2, el sexto problema de Smale sigue abierto desde seis cuerpos, y la conjetura de costo de flujo indivisible de Goemans esta refutada mientras su frontera cuantitativa sigue abierta; los resultados replicados de la literatura, incluidos contraejemplos hallados por otros, se etiquetan como replicaciones.',
     },
   },
 };
+
+function ContextualShell({ children }: { children: ReactNode }) {
+  const { pathname } = useLocation();
+  const lang = useShellLang();
+  const shell = pathname.replace(/\/$/, '') === '/problems/riemann-hypothesis'
+    ? { ...config, architecture: riemannArchitecture(lang) }
+    : config;
+  return <AppShell config={shell}>{children}</AppShell>;
+}
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <CitationsProvider items={CITATIONS}>
-        <AppShell config={config}>
+        <ContextualShell>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/methodology" element={<Methodology />} />
@@ -73,9 +84,10 @@ createRoot(document.getElementById('root')!).render(
             <Route path="/problems/central-configurations" element={<CentralConfigurations />} />
             <Route path="/problems/unsplittable-flow-cost" element={<UnsplittableFlowCost />} />
             <Route path="/problems/petersen-coloring" element={<PetersenColoring />} />
+            <Route path="/problems/riemann-hypothesis" element={<RiemannHypothesis />} />
             <Route path="*" element={<Home />} />
           </Routes>
-        </AppShell>
+        </ContextualShell>
       </CitationsProvider>
     </BrowserRouter>
   </StrictMode>,
