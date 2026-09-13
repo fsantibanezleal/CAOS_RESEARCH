@@ -1,0 +1,62 @@
+{
+  "args": {
+    "n": 768,
+    "device": "cuda",
+    "A0": 4.0,
+    "lam0": 1,
+    "lam": 40,
+    "phi": 0.7853981633974483,
+    "Theta0": 1e-06,
+    "t_end": 0.6,
+    "dt": 0.0005,
+    "mode": "controls",
+    "out": "../experiments/EXP-002-reduction-control/controls-phi-pi4.json"
+  },
+  "cases": {
+    "negative_controls": [
+      {
+        "lam": 40,
+        "nu": 0.0,
+        "alpha": 1.0,
+        "corrupt": "drop-zeta1",
+        "knorm": 39.59797974644666,
+        "damp": 0.0,
+        "peak_measured": 1.414271764546335,
+        "peak_predicted": 2.0,
+        "p1_max_rel_err": 0.31033777194680084,
+        "p1_median_rel_err": 0.2972057057926637,
+        "p2_unstable_growth_factor": 2.3362894399447622,
+        "p2_stable_growth_factor": 0.7044782113503998
+      },
+      {
+        "lam": 40,
+        "nu": 0.0,
+        "alpha": 1.0,
+        "corrupt": "drop-invnorm",
+        "knorm": 39.59797974644666,
+        "damp": 0.0,
+        "peak_measured": 1.414271764546335,
+        "peak_predicted": 8.899211172508119,
+        "p1_max_rel_err": 0.8450059865567102,
+        "p1_median_rel_err": 0.8420546988752344,
+        "p2_unstable_growth_factor": 2.3362894399447622,
+        "p2_stable_growth_factor": 0.7044782113503998
+      },
+      {
+        "lam": 40,
+        "nu": 0.0,
+        "alpha": 1.0,
+        "corrupt": "swap-sign",
+        "knorm": 39.59797974644666,
+        "damp": 0.0,
+        "peak_measured": 1.414271764546335,
+        "peak_predicted": 0.0,
+        "p1_max_rel_err": 1414271764546.335,
+        "p1_median_rel_err": 1387107987545.2607,
+        "p2_unstable_growth_factor": 2.3362894399447622,
+        "p2_stable_growth_factor": 0.7044782113503998
+      }
+    ]
+  },
+  "wall_seconds": 76.4
+}
