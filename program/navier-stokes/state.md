@@ -97,15 +97,49 @@ plus a theme-aware figure.
 
 ## Errors found and fixed rather than shipped
 
-Four, all of the same family (a check that cannot see what it claims to test):
+Of the same family (a check that cannot see what it claims to test), across the whole build:
 
 - a negative control at a degenerate angle where the corruption changed nothing;
 - a log-slope fit in a region where the amplitude crosses zero;
 - a stage horizon too short to observe the stall it was testing for;
 - an off-by-one in the horizon bound (the binding stage is `Q-1`, not `Q`), which left 47 apparent
-  violations in a million-schedule ensemble and a hundredfold worse residual.
+  violations in a million-schedule ensemble and a hundredfold worse residual;
+- (EXP-004) a wave placed above the 2/3 dealiasing limit, annihilated silently and fitting garbage
+  near rate 970, now a loud guard;
+- (EXP-004) an injection transient read as an inflated rate, now removed by a settling interval;
+- (EXP-001) a stale run-1 build log misread as the current run's output, and a naive grep for "error"
+  matching module NAMES (`ErrorHarmonics`); the real checks are `sorryAx` count and the axiom lines.
+
+## Done, 2026-09-12/13 (continuation)
+
+**EXP-001, Navier-Stokes CONFIRMED.** `NavierStokes.ComparatorSolution`, which transitively pulls the
+whole Navier-Stokes development, built cleanly three separate times: 9,371 jobs, zero `sorryAx`, and
+both headline theorems (Fefferman C and D) depending on exactly `propext`, `Classical.choice`,
+`Quot.sound`. The proof of the Millennium claim type-checks under the kernel on an independent machine
+with no gaps. The Euler build (the mathematically stronger unforced claim) is a larger, separate build
+blocked by mathlib-cache corruption from an external multi-hundred-GB disk deletion that happened
+during the first attempt; the certificate is not at fault (zero mathematical errors, only olean read
+failures and process crashes). A forced cache re-fetch and rebuild is in progress.
+
+**EXP-004, the multi-layer handoff, CONFIRMED on pattern.** On a frozen two-scale vertical background
+(an exact steady state, drift 1.45e-15), the local growth rate of a fine wave follows the TOTAL
+two-scale gradient at correlation 0.99945 and the base stratification alone at 0.212. This is the
+load-bearing premise of EXP-003: a layer responds to the total accumulated low-frequency gradient. The
+absolute slope carries a ~1.36 measurement-geometry systematic (present at one scale, shrinking toward
+flat regions, absolute rate already pinned by EXP-002), so the pre-committed slope sub-gate was not
+met and is reported as not met. The naive dynamical companion (no steering) is inconclusive by
+construction and recorded as such.
+
+**NS-002 fully closed.** Both Cordoba-Martinez-Zoroa sources the program rests on are now read in the
+primary source: the IPM paper (arXiv:2410.22920, reference [6], whose title I had mislabelled) and the
+multi-layer degenerate-pendula Boussinesq paper (arXiv:2505.20988, Adv. Math. 480, reference [5]). 16
+source PDFs archived.
 
 ## Next
 
-EXP-001, the Lean build replay, is running. After it: a multi-layer PDE simulation, which is the gap
-EXP-003's verdict names as the first item of any continuation.
+1. Record the Euler build outcome when the repair rebuild lands.
+2. The fully dynamical multi-layer test WITH steering, so each grown layer is held frozen while the
+   next grows. EXP-004 confirmed the physics on a frozen surrogate; the steered dynamical cascade is
+   the larger open build.
+3. Derive `p = 11/4 + sqrt 7` from the construction's own localization and correction requirements,
+   which would turn the consistency relation into a theorem about the model.
