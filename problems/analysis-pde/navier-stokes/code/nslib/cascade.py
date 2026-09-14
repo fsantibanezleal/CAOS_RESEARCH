@@ -54,13 +54,15 @@ alpha_0 / 2 in our convention. Inverting,
     p = 1 / (4 * (alpha_0 / 2)) = 1 / (2 alpha_0) = 9 / (2 (22 - 8 sqrt 7))
       = 9 (22 + 8 sqrt 7) / 72 = (22 + 8 sqrt 7) / 8 = 11/4 + sqrt 7   EXACTLY.
 
-What that does and does not establish. It is a consistency statement, not a
-derivation: any threshold corresponds to SOME p. The content is that alpha_c = 1/(4p)
-falls out of two independent constraints, and that the p it assigns to the published
-threshold is the clean algebraic number 11/4 + sqrt 7 rather than an arbitrary
-decimal, which is what one expects if their optimization solves a quadratic naturally
-posed in p. Deriving p = 11/4 + sqrt 7 from the construction's own localization and
-correction requirements is the open target, not a result here.
+What that does and does not establish. CORRECTED 2026-09-14: it establishes nothing
+about where alpha_0 sits. alpha_c = 1/(4p) is the construction's dissipation
+constraint saturated, and the published family saturates it at EVERY alpha, so
+p = 1/(2 alpha) holds identically along it; the value at alpha_0 is just the identity
+evaluated there. That 11/4 + sqrt 7 looks clean is automatic arithmetic in Q(sqrt 7).
+The published threshold is set by a force-regularity constraint this model does not
+contain, the outer velocity acting on the inner layer; `cmz_budget` derives
+(22 - 8 sqrt 7)/9 from it exactly. The relation above remains correct as a statement
+about this model's own threshold.
 """
 
 from __future__ import annotations

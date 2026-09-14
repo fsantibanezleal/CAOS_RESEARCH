@@ -81,6 +81,25 @@ exactly the statement that the frequency must grow like the `(11/4 + sqrt 7)` po
 gradient. Deriving `p = 11/4 + sqrt 7` from the construction's own localization and correction
 requirements is the open target, and it is what would turn this into a theorem about the model.
 
+> **CORRECTED 2026-09-14. H3 is tautological, and both reasons given above for it being non-empty are
+> withdrawn.** Reading Section 4 of Cordoba-Martinez-Zoroa-Zheng in full
+> ([`../../context/2026-09-14-threshold-reconstruction.md`](../../context/2026-09-14-threshold-reconstruction.md)):
+>
+> 1. `alpha_c = 1/(4p)` is the paper's dissipation constraint saturated, and the construction saturates
+>    it at **every** alpha (`a = alpha R`). Along the whole published family `2p = 1/alpha`
+>    identically, so the identity holds at `alpha_0` only because it holds everywhere. It does not
+>    select `alpha_0`.
+> 2. "Clean algebraic number" is automatic: the inverse of an element of `Q(sqrt 7)` stays in
+>    `Q(sqrt 7)`, and it is tidy here only because the norm of `22 - 8 sqrt 7` is 36.
+>
+> What actually sets `alpha_0` is a force-regularity constraint our cascade model does not contain:
+> the action of the outer layers' velocity on the inner layer (their Section 4.3.4). With dissipation
+> and self-interaction saturated, it gives `4s < 2 + 3 alpha - 7 alpha R - 2/R`; its optimum over the
+> frequency ratio is exactly the paper's `alpha R^2 = 2/7`, and `s = 0` there is exactly
+> `(22 - 8 sqrt 7)/9`. That derivation has no fitted constants and is checked in exact arithmetic in CI
+> (`tests/test_navier_stokes_threshold.py`). H1, H2 and the ensemble above are unaffected: they concern
+> our model's own threshold, which is correct as stated for that model.
+
 ## Ensemble: CONFIRMED
 
 1,000,000 random schedules over `p` in [1.5, 12], `alpha` in [0.002, 0.302], `g` in [0.5, 2.0],

@@ -86,6 +86,7 @@ the repair was built to fix turn out NOT to move the exponent: the time budget i
 hold-interval damping gives the same exponent as growth positivity because the remaining time shrinks
 at exactly the rate the growth rate rises. Inverting at the published threshold gives
 `p = 11/4 + sqrt 7` exactly, to 6.2e-15. Stated as a consistency relation, not a derivation.
+(Corrected 2026-09-14: tautological along the published family; see the 2026-09-14 section.)
 
 **NS-004.** The unforced Euler certificate audited and found faithful, with maximality pinning the
 lifespan in both directions, local regularity before the endpoint, nonzero compactly supported data,
@@ -145,5 +146,22 @@ remaining items are next-round scope:
 1. The fully dynamical multi-layer test WITH steering, so each grown layer is held frozen while the
    next grows. EXP-004 confirmed the physics on a frozen surrogate; the steered dynamical cascade is
    the larger open build.
-2. Derive `p = 11/4 + sqrt 7` from the construction's own localization and correction requirements,
-   which would turn the consistency relation into a theorem about the model.
+2. (Done 2026-09-14, see below.) The published threshold is derived from the construction's own
+   exponent budget; the round-1 calibration is withdrawn as tautological.
+
+## Done, 2026-09-14 (round 2, part 1): the published threshold, derived
+
+Reading Cordoba-Martinez-Zoroa-Zheng Sections 1.2.4 and 4 in full, the threshold
+`(22 - 8 sqrt 7)/9` is derived exactly from the construction's own exponent bookkeeping, with no fitted
+constants: with dissipation (4.3.5) and self-interaction (4.3.2) saturated, the binding constraint is
+the outer velocity acting on the inner layer (4.3.4), `4s < 2 + 3 alpha - 7 alpha R - 2/R`; its optimum
+over the frequency ratio is exactly the paper's `alpha R^2 = 2/7`, and `s = 0` there is exactly
+`alpha_0`. Localization (4.3.3) is slack by `(sqrt(2 alpha/7) - alpha)/2`. The paper's heuristic binds on
+localization instead and gives `5 - 2 sqrt 6`, so the heuristic-to-proof gap is exactly a swap of the
+binding constraint. Code `nslib/cmz_budget.py` (30 tests), exact sympy guard in CI
+(`tests/test_navier_stokes_threshold.py`), dossier `context/2026-09-14-threshold-reconstruction.md`.
+
+**Correction recorded in place** in EXP-003's verdict, `cascade.py`, wiki page 4, the experiments
+index, RESUME and test docstrings: the round-1 calibration `p = 11/4 + sqrt 7` is tautological, because
+the construction saturates the dissipation constraint at every alpha, and its clean form is automatic
+in `Q(sqrt 7)`. Both reasons previously given for it being non-empty are withdrawn.

@@ -37,7 +37,7 @@ interacting layers.
 threshold `(22 - 8 sqrt 7)/9` corresponding to `p = 11/4 + sqrt 7` exactly. Both omissions the model
 was repaired to fix turn out not to move the exponent, which was not the expected outcome.
 
-The result is deliberately stated as a consistency relation rather than a derivation.
+The result was stated as a consistency relation. Corrected 2026-09-14: it is tautological, since the construction saturates the dissipation constraint at every alpha. The published threshold is derived exactly from a different constraint (the outer velocity acting on the inner layer); see `context/2026-09-14-threshold-reconstruction.md`.
 
 ## The preflight that is not an experiment
 

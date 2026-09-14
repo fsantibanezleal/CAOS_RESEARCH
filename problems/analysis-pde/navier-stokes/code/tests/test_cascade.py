@@ -20,7 +20,11 @@ def test_alpha_c_rejects_nonpositive_p():
 
 
 def test_published_threshold_gives_p_star_exactly():
-    """p = 1/(2 alpha_0) = (22 + 8 sqrt 7)/8 = 11/4 + sqrt 7."""
+    """p = 1/(2 alpha_0) = (22 + 8 sqrt 7)/8 = 11/4 + sqrt 7.
+
+    Arithmetic regression only. Corrected 2026-09-14: the identity holds at every alpha
+    along the published family and does not locate alpha_0; see nslib.cmz_budget.
+    """
     p = C.implied_p(C.ALPHA0_CMZ)
     assert p == pytest.approx(11.0 / 4.0 + math.sqrt(7.0), rel=1e-13)
     assert p == pytest.approx((22.0 + 8.0 * math.sqrt(7.0)) / 8.0, rel=1e-13)

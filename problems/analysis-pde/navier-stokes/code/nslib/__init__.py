@@ -21,14 +21,14 @@ from __future__ import annotations
 import importlib
 from typing import TYPE_CHECKING
 
-from . import cascade, modulation
+from . import cascade, cmz_budget, modulation
 
 if TYPE_CHECKING:  # pragma: no cover
     from . import boussinesq, sweep
 
 _LAZY = {"boussinesq", "sweep"}
 
-__all__ = ["boussinesq", "cascade", "modulation", "sweep"]
+__all__ = ["boussinesq", "cascade", "cmz_budget", "modulation", "sweep"]
 
 
 def __getattr__(name: str):

@@ -103,18 +103,45 @@ $$p = \frac{1}{2\alpha_0} = \frac{9}{2(22-8\sqrt7)} = \frac{9(22+8\sqrt7)}{72}
 exactly, confirmed to $6.2\times10^{-15}$. **The published threshold is precisely the statement that
 the frequency must grow like the $(11/4+\sqrt7)$ power of the background gradient.**
 
-## What this is and is not
+## What this is and is not: the calibration is tautological
 
-It is a **consistency relation, not a derivation.** Any threshold corresponds to some $p$, so the
-relation cannot be wrong on its own. Two things keep it from being empty:
+> **Corrected 2026-09-14.** An earlier version of this page argued the calibration above was not empty,
+> for two reasons. Reading the construction's Section 4 in full showed both were wrong.
 
-1. $\alpha_c=1/(4p)$ comes from two independent constraints that were not tuned to reach any number,
-   and the second was expected to give a different exponent and did not.
-2. The assigned $p$ is a clean algebraic number rather than an arbitrary decimal, which is what one
-   expects if the published optimization solves a quadratic naturally posed in the frequency exponent.
+1. **It selects nothing.** $\alpha_c=1/(4p)$ is the construction's dissipation constraint at equality,
+   $a=\alpha R$, and the published family keeps that equality at **every** $\alpha$. Along the whole
+   family $\ln M_n=\tfrac{1}{\alpha}\ln A_{n-1}$, so $2p=1/\alpha$ identically. Evaluating it at
+   $\alpha_0$ says nothing about why $\alpha_0$ is where it is.
+2. **"Clean" is automatic.** $\alpha_0\in\mathbb{Q}(\sqrt7)$, inverses stay in $\mathbb{Q}(\sqrt7)$,
+   and the result is tidy only because the norm of $22-8\sqrt7$ is $36$.
 
-Deriving $p=11/4+\sqrt7$ from the construction's own localization and correction requirements is the
-open target and would turn this into a theorem about the model.
+## Where the threshold actually comes from
+
+The constant is set by a force-regularity constraint that our cascade model does not contain: the
+action of the **outer layers' velocity on the inner layer** (Section 4.3.4 of the paper). In the
+paper's exponents ($M_n=N^{R^n}$, $A_n=N^{aR^n}$, $L_n=N^{bR^n}$, force margin $s$), with dissipation
+and self-interaction saturated, it reads
+
+$$4s < 2 + 3\alpha - 7\alpha R - \frac{2}{R}.$$
+
+Maximizing over the frequency ratio gives $\alpha R^2 = 2/7$, **exactly the paper's choice**
+$R=\sqrt{2/(7\alpha)}$, and then
+
+$$s(\alpha)=\frac{2+3\alpha-2\sqrt{14\alpha}}{4}, \qquad s(\alpha)=0 \iff \alpha=\frac{22-8\sqrt7}{9}.$$
+
+No coefficient is fitted; each comes from a displayed exponent in the paper. The **localization**
+constraint is slack at that point, by $\tfrac12(\sqrt{2\alpha/7}-\alpha)\approx0.035$ at $\alpha_0$. The
+paper's own heuristic (its Section 1.2.4) binds on localization instead and omits the outer-velocity
+term; optimizing that version gives $\alpha R^2=1/3$ and the threshold $5-2\sqrt6\approx0.1010$. **The
+whole gap between the heuristic $0.1010$ and the proved $0.0927$ is a swap of which constraint binds.**
+
+Full derivation: [`context/2026-09-14-threshold-reconstruction.md`](../context/2026-09-14-threshold-reconstruction.md).
+Verified in exact arithmetic in CI (`tests/test_navier_stokes_threshold.py`) and numerically in
+[`code/tests/test_cmz_budget.py`](../code/tests/test_cmz_budget.py).
+
+What survives from above: our frequency cap is a correct statement about our reduced model, and it
+agrees with the construction's dissipation constraint, which is a genuine consistency check. It is not
+an account of the published constant.
 
 ## A numerical warning worth carrying
 

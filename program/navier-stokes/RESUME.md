@@ -32,7 +32,10 @@ experiments. What we hold:
 - **An exact transcription** of the Alpoge-Buckmaster modulation system, with the growth rate settled
   by computation rather than by reading the PDF, now verified against a full nonlinear PDE simulation.
 - **A derived obstruction and its calibration**: `alpha_c = 1/(4p)`, and the published hypodissipative
-  threshold corresponds to `p = 11/4 + sqrt 7` exactly. A consistency relation, not a derivation.
+  threshold corresponds to `p = 11/4 + sqrt 7` exactly. CORRECTED 2026-09-14: that identity is
+  tautological (it holds at every alpha along the published family). The published threshold is
+  now DERIVED exactly from the construction's outer-velocity constraint (their 4.3.4), with the
+  paper's own frequency ratio as the optimum; see `context/2026-09-14-threshold-reconstruction.md`.
 
 ## 2. The objects table
 
@@ -100,8 +103,9 @@ corruption, then an incremental convergence loop to ride out Windows read-conten
    FROZEN two-scale surrogate (the rate follows the total gradient, corr 0.999). The dynamical version
    needs the steering that freezes each layer during the next layer's growth; that is a larger build
    and the natural next step.
-2. Derive `p` from the construction's own localization and correction requirements. That is what would
-   turn the consistency relation into a theorem about the model.
+2. DONE 2026-09-14, in corrected form: the published threshold is derived from the construction's
+   own exponent budget (binding constraint: outer velocity on the inner layer, 4.3.4). Our cascade
+   model lacks that constraint; adding a force-regularity budget to it is the model-side follow-up.
 3. NS-010: compare exponents the day the Alpoge-Buckmaster hypodissipative paper appears.
 
 All four experiments are now closed with verdicts; EXP-001 fully confirmed both certificate halves.
