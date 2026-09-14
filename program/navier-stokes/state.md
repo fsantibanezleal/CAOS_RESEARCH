@@ -6,8 +6,9 @@
 | 2026-09-11 | scoped | opened | Context dossiers persisted at `3f8d76d`; `plan.md`, `state.md`, `backlog.md`, `RESUME.md` written; strategy chosen and scope limits declared |
 | 2026-09-12 | opened | exploring | Plan validated by Felipe; Phase 0 gate closed; EXP-002 and EXP-003 both CONFIRMED with controls; wiki authored |
 
-- **State:** exploring (2026-09-12). Plan validated by Felipe on 2026-09-12 with the instruction to
-  execute all of it. Two experiments closed with verdicts; EXP-001 (Lean replay) is running.
+- **State:** exploring (since 2026-09-12; heartbeat 2026-09-14). Plan validated by Felipe on
+  2026-09-12 with the instruction to execute all of it. EXP-001 to EXP-004 closed with verdicts;
+  round 2 derived the published threshold and opened EXP-005 (steered cascade).
 - **Area:** analysis-pde. This is the first problem opened in that area; it was previously an area
   name with nothing on disk.
 - **Feasibility:** the portfolio row stays B. The Clay problem is not our target and the 2026-09-05

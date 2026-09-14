@@ -1,7 +1,7 @@
 # navier-stokes: RESUME (zero-loss handoff)
 
-Updated 2026-09-13 (continuation: EXP-004 pattern confirmed; EXP-001 fully CONFIRMED, both
-Navier-Stokes and Euler build clean). First read for any fresh session, per methodology 07. Derived
+Updated 2026-09-14 (round 2: published threshold derived exactly; round-1 calibration withdrawn;
+EXP-005 steered cascade next). First read for any fresh session, per methodology 07. Derived
 view: on conflict, the context dossiers win.
 
 ## 1. State in one screen
@@ -87,8 +87,8 @@ EXP-002: peak rate to 4e-05 relative, band structure present, frequency independ
 failing at a non-degenerate angle.
 
 EXP-003: `alpha_c = 1/(4p)` to 2.59e-06 against the horizon-corrected prediction; both repaired
-omissions non-binding; `p = 11/4 + sqrt 7` exactly at the published threshold; 1,000,000 schedules with
-zero violations.
+omissions non-binding; 1,000,000 schedules with zero violations. Its H3 (`p = 11/4 + sqrt 7` at the
+published threshold) is arithmetically true but tautological, corrected 2026-09-14 in its verdict.
 
 ## 4. In flight
 
@@ -150,9 +150,12 @@ The two items above are next-round scope, not blockers.
   pinned by EXP-002. Do not read it as the rate being 1.36x too big.
 - **The bare threshold question is NOT ours.** Cordoba, Martinez-Zoroa and Zheng published it in 2024
   (ARMA 2026): blowup for every `|grad|^alpha` exponent below `(22 - 8 sqrt 7)/9`, with rough forcing.
-  Our cap is consistent with it and loose by 5.40. What is ours is the calibration relation, and it is
-  a consistency statement rather than a derivation. Alpoge and Buckmaster additionally have an
-  unreleased hypodissipative paper, presumably the smooth-forcing upgrade.
+  Our cap is consistent with it and loose by 5.40. The round-1 "calibration relation" was
+  tautological (withdrawn 2026-09-14). What we hold instead is the exact reconstruction of their
+  constant from their own exponent budget (`nslib/cmz_budget.py`): the outer-velocity constraint
+  binds, localization is slack. Do not revive the calibration as evidence of anything. Alpoge and
+  Buckmaster additionally have an unreleased hypodissipative paper, presumably the smooth-forcing
+  upgrade.
 - **A finite horizon cannot see a late stall.** A bisection truncated at `Q` stages overreports the
   threshold by `1 + 2 log(1/nu) / (g (Q-1))`; at `nu = 1e-10`, `Q = 400` that is 11.5 percent. The
   binding stage is `Q-1`, not `Q`, and the difference is not cosmetic.
