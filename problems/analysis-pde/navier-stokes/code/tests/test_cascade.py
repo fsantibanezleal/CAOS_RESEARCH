@@ -130,3 +130,38 @@ def test_classical_viscosity_is_far_above_every_plausible_threshold():
     """alpha = 1 is the classical case. No p > 1 admits it."""
     for p in (1.0, 2.0, C.P_STAR, 20.0):
         assert C.alpha_c(p) < 1.0
+
+
+# ------------------------------------------- super-geometric schedules (NS-016)
+
+
+def test_amplitude_summability_is_R_less_than_p():
+    assert C.c1_holds_for_schedule(1.0, 1.5)
+    assert not C.c1_holds_for_schedule(1.5, 1.5)
+    assert not C.c1_holds_for_schedule(2.0, 1.5)
+    # the geometric case is the old constraint p > 1
+    assert C.c1_holds_for_schedule(1.0, 1.0001)
+    assert not C.c1_holds_for_schedule(1.0, 0.999)
+    assert C.log_theta_growth_exponent(1.0, 2.0) == pytest.approx(-0.5)
+
+
+def test_our_cap_of_one_quarter_is_never_reached_under_the_published_budget():
+    """The point of NS-016: the schedule our cap would need is inadmissible.
+
+    Our constraints cap the dissipation exponent at 1/(4p) with p > R, so a schedule of
+    ratio R caps it at 1/(4R). The published force budget admits no ratio at all above its
+    own threshold, so above that there is no schedule to speak of.
+    """
+    published_ours = C.ALPHA0_CMZ / 2.0
+    assert C.alpha_c_under_admissible_ratios(0.01) < 0.25
+    assert C.alpha_c_under_admissible_ratios(published_ours * 0.999) is not None
+    assert C.alpha_c_under_admissible_ratios(published_ours * 1.001) is None
+    assert C.alpha_c_under_admissible_ratios(0.1) is None
+    assert C.alpha_c_under_admissible_ratios(0.25) is None
+
+
+def test_the_cap_tightens_as_dissipation_rises():
+    caps = [C.alpha_c_under_admissible_ratios(a) for a in (0.005, 0.01, 0.02, 0.04)]
+    assert all(c is not None for c in caps)
+    assert caps == sorted(caps, reverse=True)
+    assert caps[0] < 0.25          # strictly below the dissipation-only cap everywhere

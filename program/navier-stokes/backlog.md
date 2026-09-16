@@ -19,7 +19,8 @@ and a kill criterion per methodology 12.
 | NS-013 | Reconstruct the published threshold from Cordoba-Martinez-Zoroa-Zheng's own exponent budget, and re-examine the round-1 calibration | research | done 2026-09-14 (calibration withdrawn as tautological) | P1 | M | none | n/a |
 | NS-014 | EXP-005: transcribe the first-stage steering control and run the growth, steering and hold cycle in the PDE, then the dynamical two-layer handoff | implementation | in flight | P1 | XL | 8 GB VRAM, one heavy job at a time | abandon a configuration whose wave exceeds the 2/3 dealiasing limit (loud guard) |
 | NS-015 | EXP-006: independent kernel replay of the certificate with the toolchain's `leanchecker` | validation | in flight | P1 | L | 6 h wall clock, 4 Lean threads | abandon if resident memory exceeds available RAM or a module exceeds 30 min |
-| NS-016 | Add a force-regularity budget to our cascade model, the constraint that actually sets the published constant | implementation | open | P2 | L | CPU only | n/a |
+| NS-016 | Add a force-regularity budget to our cascade model, the constraint that actually sets the published constant | implementation | half done 2026-09-16: general schedules done (C1 becomes R < p), and importing the published admissible-ratio interval shows our 1/4 cap is unreachable; deriving OUR force terms still open | P2 | L | CPU only | n/a |
+| NS-017 | Apply our dissipative extension to the published Alpoge-Buckmaster schedule and record the prediction it implies, with a falsification criterion | research | done 2026-09-16 (prediction UNVERIFIED by construction; NS-010 checks it) | P2 | M | CPU only | n/a |
 | NS-010 | Re-read the Alpoge-Buckmaster hypo-dissipative paper the day it appears and compare its exponent with ours; record whoever is first | research | blocked | P2 | S | none | unblocks when they post |
 
 ## Standing obligations

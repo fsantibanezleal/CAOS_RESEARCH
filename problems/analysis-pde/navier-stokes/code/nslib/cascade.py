@@ -252,3 +252,57 @@ def critical_alpha_numeric(
         else:
             b = m
     return a
+
+
+# ------------------------------------------- super-geometric schedules (NS-016)
+
+
+def log_theta_growth_exponent(R: float, p: float) -> float:
+    """Exponent of `log Theta_q` along a schedule with frequency ratio `R`.
+
+    Write `u_q = log lambda_q`. A schedule with `u_{q+1} = R u_q` is super-geometric for
+    `R > 1` and the geometric schedule of the rest of this module for `R = 1`. With
+    `lambda_q = c A_q^p`, so `log A_q = u_q / p` up to a constant, the amplification
+    identity `A_{q+1} = lambda_q Theta_q` gives
+
+        log Theta_q = u_q (R/p - 1),
+
+    so the amplitudes are summable exactly when `R < p`. That is C1 for a general
+    schedule, and it reduces to `p > 1` at `R = 1`.
+
+    Note `R` is not a free parameter beside `p`: rearranging the same identity gives
+    `R = p (1 + log Theta_q / u_q)`, so choosing how much amplitude each stage spends IS
+    choosing the schedule, and `R < p` always holds while `Theta_q < 1`.
+    """
+    if p <= 0.0:
+        raise ValueError("p must be positive")
+    return R / p - 1.0
+
+
+def c1_holds_for_schedule(R: float, p: float) -> bool:
+    """Summable amplitudes along a schedule of ratio `R`: exactly `R < p`."""
+    return log_theta_growth_exponent(R, p) < 0.0
+
+
+def alpha_c_under_admissible_ratios(alpha_ours: float) -> float | None:
+    """Our cascade cap once the SCHEDULE must be one the published force budget admits.
+
+    Our own constraints give `alpha_c = 1/(4p)` with `p > R`, so a schedule of ratio `R`
+    caps the dissipation exponent at `1/(4R)`. The published force budget admits a ratio
+    only inside an interval that closes at its threshold (`cmz_budget.feasible_R_interval`,
+    in the `|grad|^alpha` convention, hence the factor two here). Combining the two:
+
+        alpha < 1 / (4 R_-(2 alpha)),      and no admissible R at all above the threshold.
+
+    Returns that cap, or None when no ratio is admissible. The consequence is the point of
+    this function: **our model's own cap of 1/4 is never reached.** For every exponent
+    above the published threshold there is no admissible schedule at all, so the cascade
+    cannot close for reasons that have nothing to do with the dissipation constraint that
+    produced 1/4.
+    """
+    from . import cmz_budget
+
+    interval = cmz_budget.feasible_R_interval(2.0 * alpha_ours)
+    if interval is None:
+        return None
+    return 1.0 / (4.0 * interval[0])
