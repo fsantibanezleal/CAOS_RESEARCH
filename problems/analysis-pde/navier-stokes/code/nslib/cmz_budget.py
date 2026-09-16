@@ -161,3 +161,51 @@ def implied_p_is_tautological(alpha: float) -> float:
     p = Point.published(alpha)
     ln_M_over_ln_rate = 1.0 / (p.a / p.R)   # per R^n: ln M_n = R^n, ln A_{n-1} = (a/R) R^n
     return ln_M_over_ln_rate / 2.0 - 1.0 / (2.0 * alpha)
+
+
+# ------------------------------------------------- the admissible frequency ratios
+
+
+def feasible_R_interval(alpha: float) -> tuple[float, float] | None:
+    """Range of frequency ratios `R` that admit a positive force margin, or None.
+
+    With dissipation and self-interaction saturated, the outer-velocity constraint reads
+    `4 s < 2 + 3 alpha - 7 alpha R - 2/R`, so a positive margin needs
+
+        7 alpha R^2 - (2 + 3 alpha) R + 2 < 0,
+
+    a quadratic in `R` whose roots bound the admissible interval:
+
+        R_pm = [ (2 + 3 alpha) +/- sqrt((2 + 3 alpha)^2 - 56 alpha) ] / (14 alpha).
+
+    The discriminant is exactly `9 alpha^2 - 44 alpha + 4`, so it vanishes at
+    `alpha_0 = (22 - 8 sqrt 7)/9`: **the interval of admissible frequency ratios closes to
+    a single point precisely at the published threshold**, and that point is the paper's
+    own `R = sqrt(2/(7 alpha))`. Above the threshold there is no admissible ratio at all.
+
+    The lower end is what matters structurally: `R_- > 1` for every `alpha > 0`, tending
+    to 1 only as `alpha -> 0`. A cascade whose frequencies grow geometrically, so that
+    `ln M_n` is linear in `n` rather than geometric, is the case `R = 1`, and it is
+    inadmissible at every positive dissipation: with `R = 1` the localization constraint
+    needs `b >= a + 1 + s` while self-interaction allows only `b <= 1 - a - s`, which
+    forces `alpha + s <= 0`. **The construction does not merely prefer super-geometric
+    frequency growth, it requires it**, and requires more of it as `alpha` rises.
+    """
+    if alpha <= 0.0:
+        raise ValueError("alpha must be positive")
+    disc = (2.0 + 3.0 * alpha) ** 2 - 56.0 * alpha
+    if disc < 0.0:
+        return None
+    root = math.sqrt(disc)
+    return ((2.0 + 3.0 * alpha - root) / (14.0 * alpha),
+            (2.0 + 3.0 * alpha + root) / (14.0 * alpha))
+
+
+def geometric_cascade_margin(alpha: float) -> float:
+    """Force margin available at `R = 1`, the geometric cascade. Always negative.
+
+    Evaluates `(2 + 3 alpha - 7 alpha - 2)/4 = -alpha` at `R = 1`: the outer-velocity
+    budget allows only `s < -alpha`, so a geometric cascade has no admissible force
+    margin at any positive dissipation, and the deficit is exactly `alpha`.
+    """
+    return s_bound_outer(alpha, 1.0)

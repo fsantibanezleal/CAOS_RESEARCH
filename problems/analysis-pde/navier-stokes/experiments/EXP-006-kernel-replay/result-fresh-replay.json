@@ -1,0 +1,36 @@
+{
+  "toolchain": "leanprover/lean4:v4.34.0-rc2",
+  "checker": "leanchecker, built into the toolchain since Lean v4.28.0",
+  "mode": "--fresh: import the module closure once, replay every constant into an empty kernel environment",
+  "targets": {
+    "NavierStokes": {
+      "exit": 0,
+      "seconds": 2972,
+      "log": "replaying NavierStokes with --fresh"
+    },
+    "Euler": {
+      "exit": 0,
+      "seconds": 1588,
+      "log": "replaying Euler with --fresh"
+    }
+  },
+  "package_olean_count": 2659,
+  "negative_controls": {
+    "bogus_module": {
+      "command": "leanchecker NavierStokes.ThisDoesNotExist",
+      "exit": 1,
+      "stderr": "uncaught exception: Could not find any oleans for: NavierStokes.ThisDoesNotExist"
+    },
+    "no_project_environment": {
+      "command": "leanchecker --version (outside lake env)",
+      "exit": 1,
+      "stderr": "uncaught exception: Could not find any oleans for: FluidEquations"
+    }
+  },
+  "abandoned_strategy": {
+    "mode": "prefix sweep over all 2659 modules",
+    "why": "one task per module, each loading its own import closure; I/O bound on this machine",
+    "measured": "80 minutes wall, 144 seconds CPU, 11.6 GB resident, no module finished"
+  },
+  "peak_resident_gb": 6.4
+}

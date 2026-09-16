@@ -74,3 +74,36 @@ def test_heuristic_and_proof_differ_exactly_by_the_binding_swap():
     """Same D and S; replacing O by L moves the threshold from alpha_0 to 5 - 2 sqrt 6."""
     assert B.ALPHA0 == pytest.approx(0.0926655012759195, rel=1e-13)
     assert B.ALPHA_HEURISTIC == pytest.approx(0.101020514433644, rel=1e-13)
+
+
+# ------------------------------------------- the admissible frequency-ratio interval
+
+
+def test_the_admissible_ratio_interval_closes_exactly_at_the_threshold():
+    lo, hi = B.feasible_R_interval(B.ALPHA0)
+    assert hi - lo < 1e-6
+    assert lo == pytest.approx(B.optimal_R_outer(B.ALPHA0), rel=1e-6)
+    assert B.feasible_R_interval(B.ALPHA0 * 1.001) is None
+    assert B.feasible_R_interval(0.10) is None
+
+
+@pytest.mark.parametrize("alpha", [1e-4, 1e-3, 1e-2, 0.05, 0.09])
+def test_geometric_frequencies_are_never_admissible(alpha):
+    """R = 1, a geometric cascade, has a force deficit of exactly alpha."""
+    lo, hi = B.feasible_R_interval(alpha)
+    assert lo > 1.0
+    assert lo < B.optimal_R_outer(alpha) < hi
+    assert B.geometric_cascade_margin(alpha) == pytest.approx(-alpha, rel=1e-12)
+
+
+def test_the_lower_end_approaches_one_only_as_dissipation_vanishes():
+    ends = [B.feasible_R_interval(a)[0] for a in (1e-2, 1e-3, 1e-4, 1e-5)]
+    assert all(e > 1.0 for e in ends)
+    assert ends == sorted(ends, reverse=True)      # monotone down toward 1
+    assert ends[-1] < 1.001
+
+
+def test_the_published_ratio_sits_inside_the_interval_below_the_threshold():
+    for alpha in (0.01, 0.05, 0.09):
+        lo, hi = B.feasible_R_interval(alpha)
+        assert lo < B.Point.published(alpha).R < hi

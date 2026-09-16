@@ -76,3 +76,46 @@ def test_round_one_calibration_is_tautological_along_the_family():
     assert sp.simplify(1 / (ap / Rp) - 1 / al) == 0
     # and the 'clean' inverse is automatic arithmetic in Q(sqrt 7): norm of 22 - 8 sqrt 7 is 36
     assert sp.expand((22 - 8 * sp.sqrt(7)) * (22 + 8 * sp.sqrt(7))) == 36
+
+
+def test_the_admissible_frequency_ratios_close_exactly_at_the_threshold():
+    """Exact statement: the interval of admissible R degenerates at alpha_0, and the
+    geometric cascade R = 1 is excluded at every positive alpha.
+
+    A positive force margin needs `7 alpha R^2 - (2 + 3 alpha) R + 2 < 0`. The
+    discriminant of that quadratic in R is the SAME polynomial whose root is the
+    published threshold, so the range of admissible frequency ratios closes to a point
+    precisely where the theorem stops.
+    """
+    alpha, R = sp.symbols("alpha R", positive=True)
+    quad = 7 * alpha * R**2 - (2 + 3 * alpha) * R + 2
+    disc = sp.expand(sp.discriminant(quad, R))
+    assert sp.simplify(disc - (9 * alpha**2 - 44 * alpha + 4)) == 0
+
+    alpha0 = (22 - 8 * sp.sqrt(7)) / 9
+    assert sp.simplify(disc.subs(alpha, alpha0)) == 0
+    # and the single admissible ratio there is the paper's own choice. Compare squares,
+    # which avoids asking sympy to denest sqrt(2/(7 (22 - 8 sqrt 7)/9)) by hand.
+    double_root = (2 + 3 * alpha0) / (14 * alpha0)
+    assert sp.simplify(double_root**2 - 2 / (7 * alpha0)) == 0
+    assert sp.simplify(quad.subs({alpha: alpha0, R: double_root})) == 0
+
+    # R = 1 is the geometric cascade: its margin is exactly -alpha, never positive
+    s_at_one = (2 + 3 * alpha - 7 * alpha * 1 - 2 / sp.Integer(1)) / 4
+    assert sp.simplify(s_at_one + alpha) == 0
+
+
+def test_a_geometric_cascade_is_excluded_by_localization_against_self_interaction():
+    """The same exclusion read off the two constraints directly, without the optimum.
+
+    At R = 1 the dissipation constraint gives a = alpha, self-interaction allows
+    b <= 1 - a - s, localization demands b >= a + 1 + s, and the two can only agree if
+    alpha + s <= 0.
+    """
+    alpha, s, b = sp.symbols("alpha s b", positive=True)
+    a = alpha                                  # D at R = 1
+    self_interaction_upper = 1 - 2 * a + a - s  # S: b <= 1 - 2a + a/R - s at R = 1
+    localization_lower = a + 1 + s             # L: b >= a + 1/R + s at R = 1
+    gap = sp.simplify(self_interaction_upper - localization_lower)
+    assert sp.simplify(gap + 2 * alpha + 2 * s) == 0
+    assert sp.simplify(gap.subs({alpha: sp.Rational(1, 10), s: sp.Rational(1, 100)})) < 0
