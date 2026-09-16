@@ -168,3 +168,40 @@ def smooth_forcing_is_incompatible_with_dissipation(
         raise ValueError("epsilon must be positive")
     q = int(math.ceil(s.delta / (4.0 * epsilon))) + 1
     return s.alpha_max(q) < epsilon and s.stall_stage(epsilon) is not None
+
+
+def alpha_max_for_derivatives(k: int, delta: float = 1.0) -> float:
+    """Largest dissipation exponent compatible with controlling `k` derivatives.
+
+    Their rule `120 k <= Q` fixes the frequency ratio a given force regularity costs, and
+    the dissipation constraint is `alpha < delta / (4 Q)`. Together:
+
+        alpha < delta / (480 k).
+
+    The default `delta = 1` is the most generous amplitude margin the amplification
+    identity allows, so this is an upper bound for the mechanism, not for their design.
+    Even then **one derivative caps the exponent at 1/480 = 0.00208**, which is 22 times
+    below the threshold already proved for a `C^{1,eps}` force by
+    Cordoba-Martinez-Zoroa-Zheng (0.0463 in our convention).
+
+    The reading: it is not the constants of the published design that keep this scheme out
+    of the hypodissipative regime, it is the correction hierarchy's exchange rate of 120
+    ratio per derivative. A hypodissipative version has to change that rate, not retune
+    around it.
+    """
+    if k < 1:
+        raise ValueError("k must be at least 1; a force with no derivatives controlled is not the case of interest")
+    if not 0.0 < delta <= 1.0:
+        raise ValueError("delta must lie in (0, 1]")
+    return delta / (float(DERIVATIVES_PER_RATIO) * 4.0 * k)
+
+
+def gap_to_published_threshold(k: int = 1, delta: float = 1.0) -> float:
+    """How far short of the published hypodissipative threshold this scheme falls.
+
+    Ratio of the published threshold (in our convention) to `alpha_max_for_derivatives`.
+    Greater than one means the scheme cannot reach the regime that is already proved.
+    """
+    from . import cascade
+
+    return (cascade.ALPHA0_CMZ / 2.0) / alpha_max_for_derivatives(k, delta)

@@ -52,6 +52,21 @@ stages and stops, and a finite cascade gives a finite gradient.
 | frequency ratio compatible with $\alpha=0.0463$ | $0.675$, that is, below 1 |
 | derivatives of the force affordable there | $0.006$, that is, none |
 
+## Read the other way: what one derivative costs
+
+Their rule $120k\le Q$ and the constraint $\alpha<\delta/(4Q)$ combine into
+
+$$\alpha<\frac{\delta}{480\,k},$$
+
+so even with the most generous margin the amplification identity allows, $\delta\to1$, **controlling a
+single derivative of the force caps the exponent at $1/480=0.00208$**: twenty-two times below the
+threshold already proved for a $C^{1,\epsilon}$ force, and one hundred and seventy-eight times below
+it at their own $\delta=1/8$.
+
+The obstruction is therefore not the published constants, which are design choices, but the exchange
+rate of 120 units of frequency ratio per derivative. Changing it means changing the correction
+hierarchy, not retuning around it.
+
 ## The corner our own cap sits in
 
 The trade-off in one line is $\alpha<\delta/(4Q)$. [Page 4](04-dissipation-and-the-frequency-cap.md)'s
