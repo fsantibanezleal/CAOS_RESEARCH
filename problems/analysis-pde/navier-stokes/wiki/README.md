@@ -35,6 +35,10 @@ case produced by **OpenAI**. Nothing in this problem is our mechanism.
    The control that returns a grown layer to rest, transcribed and run against the PDE in a
    co-rotating frame; the exact cost of a holding interval under dissipation; and the fact that the
    cascade always runs against a faster instability of its own background.
+8. [Smoothness of the force against dissipation](08-smoothness-versus-dissipation.md).
+   What our dissipative extension charges the published smooth-forcing schedule, the one-line trade-off
+   between the amplitude margin and the frequency ratio, and a dated, falsifiable prediction about the
+   unreleased hypodissipative sequel.
 
 ## The one-paragraph version
 

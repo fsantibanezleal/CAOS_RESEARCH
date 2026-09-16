@@ -1,0 +1,77 @@
+# 8. Smoothness of the force against dissipation
+
+Two September 2026 results sit at opposite corners of the same budget. Alpoge and Buckmaster prove
+blowup for 2D Boussinesq with a **smooth** force and no viscosity. Cordoba, Martinez-Zoroa and Zheng
+prove it with a **rough** force, $C^{1,\epsilon}$, and hypodissipation up to
+$\alpha_0=0.0463$ in our convention. This page asks what our dissipative extension
+([page 4](04-dissipation-and-the-frequency-cap.md)) says about the first schedule, and the answer is
+that the two goods are bought from the same budget.
+
+Everything here is exponent bookkeeping on published constants; the prediction at the end is ours and
+is dated and falsifiable. Full derivation:
+[`context/2026-09-16-smoothness-versus-dissipation.md`](../context/2026-09-16-smoothness-versus-dissipation.md).
+
+## What their schedule fixes
+
+From Alpoge-Buckmaster (3.7) and (3.8):
+
+$$\lambda_q=\lambda_{q-1}^{\,Q_q},\qquad Q_q=Q^\ast+q,\qquad Q^\ast\ge200,\qquad
+120\,k_q\le Q_q,$$
+
+with $k_q$ the number of derivatives of the force controlled uniformly, and the amplitude rule whose
+exact consequence they state,
+
+$$|\Theta^{\rm seed}_q|\,e^{L_q}=\lambda_q^{-7/8}.$$
+
+So a layer stops at $\lambda_q^{-7/8}$ and, by the amplification identity
+$\nabla\vartheta(0)=\lambda\Theta\zeta$, deposits a gradient $A_{q+1}=\lambda_q^{1/8}$. Call the
+exponent the **amplitude margin**, $\delta=1/8$.
+
+The rule $120k_q\le Q_q$ is the price list: **each further derivative of the force costs another 120
+in the frequency ratio**, and a $C^{\infty}$ force needs $k_q\to\infty$, which is why $Q_q$ grows with
+the stage.
+
+## What dissipation would charge
+
+Our damping term $\nu(\lambda|\zeta|)^{2\alpha}$ against their growth rate $\sqrt A\sin\varphi$ gives,
+at stage $q$,
+
+$$\boxed{\;\alpha<\frac{\delta}{4Q_q}\;}$$
+
+with an insertion angle of order one, and a factor $Q_{q-1}$ tighter with their own angle (3.10). In
+our cascade notation this is just C2, $\alpha p<1/4$, with $p=Q_q/\delta$.
+
+**$Q_q$ is unbounded, so no positive $\alpha$ survives every stage.** The cascade runs finitely many
+stages and stops, and a finite cascade gives a finite gradient.
+
+| with the published constants | |
+|---|---|
+| largest $\alpha$ the first stage carries | $1.55\times10^{-4}$ |
+| the same with their own insertion angle | $7.70\times10^{-7}$ |
+| stages before stalling at $\alpha=10^{-4}$ | 113 |
+| frequency ratio compatible with $\alpha=0.0463$ | $0.675$, that is, below 1 |
+| derivatives of the force affordable there | $0.006$, that is, none |
+
+## The corner our own cap sits in
+
+The trade-off in one line is $\alpha<\delta/(4Q)$. [Page 4](04-dissipation-and-the-frequency-cap.md)'s
+cap of $1/4$ is the corner $\delta\to1$, $Q\to1$: a layer that stops just below $\lambda^{-1}$ and a
+frequency that barely grows. The smooth-forcing design sits at $\delta=1/8$, $Q\ge200$, seven orders
+of magnitude away, because both budgets were spent on the smoothness of the force. And
+[page 6](06-where-the-published-threshold-comes-from.md) shows the other end is not free either: the
+force budget of the hypodissipative construction forbids $Q=1$ outright.
+
+## The prediction
+
+A hypodissipative version of this mechanism must **bound the frequency ratio** (hence control only
+finitely many derivatives, so a force of finite regularity), or **raise the amplitude margin** toward
+1, or **change the growth law** to one whose rate is the background gradient itself rather than its
+square root, as the vortex-layer construction does. Its threshold should scale like $\delta/(4Q)$.
+
+It is wrong if a hypodissipative result appears with a positive threshold, an unbounded stage-dependent
+$Q_q$, a margin near $1/8$ and the same square-root growth law. Recorded 2026-09-16, before that paper
+appeared, and guarded in CI.
+
+## Next
+
+Back to the [index](README.md).
