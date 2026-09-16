@@ -143,6 +143,31 @@ What survives from above: our frequency cap is a correct statement about our red
 agrees with the construction's dissipation constraint, which is a genuine consistency check. It is not
 an account of the published constant.
 
+## The cap is correct for this model, and unreachable in the real one
+
+Added 2026-09-16, after the budget of [page 6](06-where-the-published-threshold-comes-from.md) was
+reconstructed. Allow any frequency schedule $\log\lambda_{q+1}=R\log\lambda_q$, so $R=1$ is the
+geometric schedule above and $R>1$ is what every published construction actually uses. Only C1 moves,
+to $R<p$; C2 and C4 are unchanged, so $\alpha_c=1/(4p)$ stands, now with $p>R$.
+
+But the force budget admits a frequency ratio only inside an interval that closes at the published
+threshold, and whose lower end exceeds 1 at every positive $\alpha$. Combining the two:
+
+$$\alpha_c\le\frac{1}{4R_-(\alpha)},\qquad\text{and no admissible }R\text{ at all above }\alpha_0 .$$
+
+| $\alpha$ (our convention) | admissible $R$ | cap $1/(4R_-)$ |
+|---|---|---|
+| $0.01$ | $(1.045,\ 13.67)$ | $0.239$ |
+| $0.02$ | $(1.105,\ 6.47)$ | $0.226$ |
+| $0.0463$ | $(1.716,\ 1.80)$ | $0.146$ |
+| $0.05$ | none | none |
+
+**So the cap of $1/4$ is never reached.** It comes from the dissipation constraint alone, and the
+schedules that approach it are excluded by the force budget long before dissipation binds. The honest
+reading of this page's result is that $\alpha_c=1/(4p)$ is correct for the reduced model and loose as
+a statement about the real problem, for a reason that is now identified rather than suspected:
+[`context/2026-09-16-model-side-force-budget.md`](../context/2026-09-16-model-side-force-budget.md).
+
 ## A numerical warning worth carrying
 
 A finite-horizon bisection cannot measure $\alpha_c$ directly. A supercritical schedule does not stall
