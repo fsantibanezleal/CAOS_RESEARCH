@@ -208,7 +208,7 @@ positive alpha, with margin exactly `-alpha` at `R = 1`: a GEOMETRIC cascade, wh
 model uses, is inadmissible at any viscosity. Super-geometric frequency growth is forced, not
 preferred.
 
-**A gate added after a near miss.** Writing wiki page 6 through a shell heredoc turned every `lpha`
+**A gate added after a near miss.** Writing wiki page 6 through a shell heredoc turned every `\alpha`
 into a BEL byte; the page still rendered. `scripts/check_content_standards.py` now flags stray control
 characters in tracked text, verified against a planted corruption.
 
