@@ -323,15 +323,32 @@ class FirstStage:
         return self.t1 + self.design.tau_b / self.Gamma
 
     def Z(self, t: float) -> float:
-        """Laboratory phase component `zeta_1(t)` for a unit `zeta`."""
+        """Laboratory phase component `zeta_1(t)`, for a unit `zeta`, AS REALIZED.
+
+        The schedule asks for `sin(s) z(tau)`, and for a large trial pulse that request can
+        exceed 1 in magnitude, which no component of a unit vector can be: the rotation
+        that would deliver it does not exist. The value is therefore clipped to [-1, 1],
+        and `clips` reports whether a given trial needed clipping. Leaving it unclipped
+        would have the ODE follow a schedule the PDE cannot realize, and the two would
+        disagree for a reason that has nothing to do with the physics being tested.
+        """
+        return max(-1.0, min(1.0, self.requested_Z(t)))
+
+    def requested_Z(self, t: float) -> float:
+        """What the control law asks for, before the unit-vector constraint."""
         if t <= self.t1:
             return self.sin_s
         return self.sin_s * self.design.z(self.Gamma * (t - self.t1), self.mu)
 
+    def clips(self, samples: int = 4000) -> bool:
+        """Does this trial ask for a phase component outside [-1, 1] anywhere?"""
+        span = self.t_b - self.t1
+        return any(abs(self.requested_Z(self.t1 + span * i / samples)) > 1.0
+                   for i in range(samples + 1))
+
     def rotation_angle(self, t: float) -> float:
         """Common rotation angle `alpha = s - arcsin Z`, zero during growth."""
-        z = max(-1.0, min(1.0, self.Z(t) / 1.0))
-        return self.s - math.asin(z)
+        return self.s - math.asin(self.Z(t))
 
     def gravity(self, t: float) -> tuple[float, float]:
         """Laboratory gravity direction expressed in co-rotating coordinates."""

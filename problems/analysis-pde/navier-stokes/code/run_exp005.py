@@ -288,12 +288,14 @@ def part_b(args, grid, dev) -> dict:
     for name, mu in (("mu_0", 0.0), ("mu_star", mu_star), ("mu_2star", 2.0 * mu_star)):
         if name == "mu_star":
             endpoint[name] = {"mu": mu, "landing_pde": m_main["landing_pde"],
-                              "landing_ode": m_main["landing_ode"]}
+                              "landing_ode": m_main["landing_ode"],
+                              "schedule_clipped": stage.clips()}
             continue
         r = run_cycle(args, stage, mu, grid, dev, samples=200)
         m = cycle_metrics(r, args)
         endpoint[name] = {"mu": mu, "landing_pde": m["landing_pde"],
-                          "landing_ode": m["landing_ode"]}
+                          "landing_ode": m["landing_ode"],
+                          "schedule_clipped": r["stage"].clips()}
     endpoint_max_gap = max(abs(v["landing_pde"] - v["landing_ode"]) for v in endpoint.values())
 
     # numerical control: halve dt
