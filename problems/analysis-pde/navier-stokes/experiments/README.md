@@ -12,7 +12,7 @@ DECIDED-IN-PART, and a refuted prediction is preserved rather than edited away.
 | [EXP-003](EXP-003-threshold-sweep/) | Does the repaired cascade model predict the published threshold? | **CONFIRMED** |
 | [EXP-004](EXP-004-multilayer-handoff/) | Does the layer-to-layer handoff survive in the full nonlinear PDE? | pattern **CONFIRMED** (frozen), slope systematic characterized |
 | [EXP-005](EXP-005-steered-cycle/) | Does the growth, steering and hold cycle work in the PDE, and does a steered layer carry the next one? | **DECIDED IN PART** (A, B, C pass; the committed parameters are refuted by the background's own instability; D confirms the pattern at 0.81, below its 0.9 gate) |
-| [EXP-006](EXP-006-kernel-replay/) | Does the Lean KERNEL accept the certificate, not just the elaborator? | running |
+| [EXP-006](EXP-006-kernel-replay/) | Does the Lean KERNEL accept the certificate, not just the elaborator? | **CONFIRMED**, both halves replayed from an empty environment |
 
 ## EXP-001, the Lean replay
 
@@ -78,8 +78,10 @@ saves the real construction is localization, not speed.
 
 `leanchecker` ships with the Lean toolchain since v4.28.0, and the certificate pins v4.34.0-rc2, so
 the certificate can be re-checked by the kernel alone rather than trusted from a successful build.
-The Navier-Stokes half has already replayed clean from a fresh environment in 49 minutes; the Euler
-half is running.
+Both halves replay clean from an EMPTY environment: NavierStokes in 2,972 s and Euler in 1,588 s,
+exit 0 for both, at most 6.4 GB resident. That closes the gap EXP-001 left open, since a build and an
+axiom report both read the environment the elaborator produced. The tool's own scope statement is
+kept rather than inflated: it detects environment hacking, it is not an external verifier.
 
 ## What still remains open
 

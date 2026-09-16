@@ -100,6 +100,30 @@ the heuristic. The paper itself flags the heuristic as "only a back-of-the-envel
 reality there are other sources of error"; this identifies which source it is, and shows that it is
 the only one that moves the constant.
 
+## 4b. A consequence: the admissible frequency ratios, and why geometric cascades are excluded
+
+The same budget is a quadratic in `R`. A positive margin needs `7 alpha R^2 - (2 + 3 alpha) R + 2 < 0`,
+so the admissible ratios form an interval whose endpoints are
+
+    R_pm = [ (2 + 3 alpha) +/- sqrt(9 alpha^2 - 44 alpha + 4) ] / (14 alpha),
+
+and the discriminant is EXACTLY the polynomial whose root is `alpha_0`. Three consequences, all
+checked (`feasible_R_interval`, `geometric_cascade_margin`, and the exact sympy pair in
+`tests/test_navier_stokes_threshold.py`):
+
+1. The interval closes to a single point precisely at `alpha_0`, and that point is the paper's own
+   `R = sqrt(2/(7 alpha))`. Above `alpha_0` it is empty, which is the theorem's boundary seen from a
+   different direction.
+2. `R_- > 1` for every `alpha > 0`, approaching 1 only as `alpha -> 0`: at `alpha = 0.001` the
+   interval is `(1.002, 285.1)`, at `alpha = 0.05` it is `(1.143, 5.000)`.
+3. At `R = 1`, the geometric cascade, the margin is exactly `-alpha`. Independently of the optimum,
+   `R = 1` forces `b >= a + 1 + s` (localization) against `b <= 1 - a - s` (self-interaction), hence
+   `alpha + s <= 0`.
+
+So super-geometric frequency growth is not a convenience of the construction, it is forced, and the
+amount forced rises with the dissipation. Our own cascade model uses a geometric schedule, which is
+why it can carry the dissipation constraint but not a force budget: item NS-016.
+
 ## 5. Verification
 
 - Exact (sympy), in CI: `tests/test_navier_stokes_threshold.py`. Derives the **O** budget from **D**

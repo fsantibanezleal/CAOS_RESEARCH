@@ -79,6 +79,41 @@ slack in the proof; the proof's binder is absent from the heuristic. That also s
 change for the threshold to move: a better treatment of the outer layers' velocity acting on the inner
 layer, nothing else.
 
+## What else the same inequality says: the frequencies must grow super-geometrically
+
+The budget above is a quadratic in the frequency ratio. A positive force margin needs
+
+$$7\alpha R^{2}-(2+3\alpha)R+2<0,$$
+
+so the admissible ratios form an interval $(R_-,R_+)$ with
+
+$$R_\pm=\frac{(2+3\alpha)\pm\sqrt{9\alpha^{2}-44\alpha+4}}{14\alpha}.$$
+
+The discriminant is **exactly** the polynomial whose root is $\alpha_0$. So the interval of admissible
+frequency ratios closes to a single point precisely at the published threshold, and that point is the
+paper's own $R=\sqrt{2/(7\alpha)}$:
+
+| $\alpha$ | admissible $R$ | the paper's choice |
+|---|---|---|
+| $0.001$ | $(1.002,\ 285.1)$ | $16.90$ |
+| $0.01$ | $(1.021,\ 27.98)$ | $5.345$ |
+| $0.05$ | $(1.143,\ 5.000)$ | $2.390$ |
+| $\alpha_0=0.09267$ | $\{1.7559\}$ | $1.7559$ |
+| $0.10$ | empty | none |
+
+**The lower end is above 1 at every positive $\alpha$.** A cascade whose frequencies grow
+geometrically, so that $\log M_n$ is linear in $n$, is the case $R=1$, and there the margin is exactly
+$-\alpha$: negative for every viscosity. Read off the constraints directly, $R=1$ forces
+$b\ge a+1+s$ from localization and $b\le1-a-s$ from self-interaction, so $\alpha+s\le0$.
+
+**The construction does not merely prefer super-geometric frequency growth, it requires it**, and
+requires more of it as the dissipation rises, until at $\alpha_0$ only one ratio is left. That is a
+statement about our own cascade model too: its schedule is geometric, so a rigorous version of it
+would have to move to $M_{n+1}=M_n^{R}$ before a force budget could close.
+
+Checked in exact arithmetic in CI (the discriminant identity and the $R=1$ exclusion) and numerically
+in [`code/tests/test_cmz_budget.py`](../code/tests/test_cmz_budget.py).
+
 ## Two things this does not say
 
 It is exponent bookkeeping, with $\delta\to0$, logarithms dropped and constants ignored. It reproduces
