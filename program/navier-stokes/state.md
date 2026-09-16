@@ -194,10 +194,23 @@ base gradient, then layer 2 grown on it: the local rate follows the TOTAL gradie
 not met; the limit is measured (a reading window with an interior optimum, and separation 6 to 12
 moving 0.755 to 0.808).
 
-**EXP-006 opened and running.** `leanchecker` ships with the toolchain since Lean v4.28.0 and the
-certificate pins v4.34.0-rc2, so the kernel can re-check the certificate independently of the
-elaborator. The Navier-Stokes half replayed CLEAN from a fresh environment in 49 minutes (every
-constant in its closure, mathlib included); the Euler half is running.
+**EXP-006 CONFIRMED.** `leanchecker` ships with the toolchain since Lean v4.28.0 and the certificate
+pins v4.34.0-rc2, so the kernel can re-check the certificate independently of the elaborator. Both
+halves replay CLEAN from an EMPTY environment, every constant in the closure and mathlib included:
+NavierStokes 2,972 s, Euler 1,588 s, exit 0, at most 6.4 GB resident. A per-module sweep was tried
+first and abandoned for a measured reason (80 minutes wall for 144 seconds of CPU, I/O bound, nothing
+finished), and the swap is recorded in the verdict.
+
+**Derived from the same budget, and new:** the admissible frequency ratios form an interval whose
+discriminant is exactly the polynomial whose root is `alpha_0`, so it closes to a single point at the
+threshold, and that point is the paper's own `R = sqrt(2/(7 alpha))`. Its lower end exceeds 1 at every
+positive alpha, with margin exactly `-alpha` at `R = 1`: a GEOMETRIC cascade, which is what our own
+model uses, is inadmissible at any viscosity. Super-geometric frequency growth is forced, not
+preferred.
+
+**A gate added after a near miss.** Writing wiki page 6 through a shell heredoc turned every `lpha`
+into a BEL byte; the page still rendered. `scripts/check_content_standards.py` now flags stray control
+characters in tracked text, verified against a planted corruption.
 
 Wiki pages 6 (where the published threshold comes from) and 7 (steering, and what a holding interval
 costs) authored with the results.

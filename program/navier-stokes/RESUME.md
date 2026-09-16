@@ -82,7 +82,7 @@ giving eigenvalues `-nu (lambda r)^(2 alpha) +/- sqrt(A) sin(phi)` and the frequ
 | EXP-003 | does the repaired cascade model predict the published threshold? | **CONFIRMED** |
 | EXP-004 | does the multi-layer handoff survive in the PDE? | pattern **CONFIRMED** (frozen two-scale, corr 0.999 vs base 0.21); slope systematic characterized; dynamical companion inconclusive |
 | EXP-005 | does the growth, steering and hold cycle work in the PDE? | **DECIDED IN PART**: A, B, C pass (gain to 3e-06, landing 3.7e-04, hold decay to 0.97 percent); committed parameters REFUTED by the background's own instability; D confirms the handoff pattern at 0.808 against a 0.392 control, below its 0.9 gate |
-| EXP-006 | does the Lean KERNEL accept the certificate, not just the elaborator? | Navier-Stokes half replayed CLEAN from a fresh environment (49 min); Euler half running |
+| EXP-006 | does the Lean KERNEL accept the certificate, not just the elaborator? | **CONFIRMED**: both halves replayed from an EMPTY environment (NavierStokes 2,972 s, Euler 1,588 s, exit 0) |
 
 EXP-002: peak rate to 4e-05 relative, band structure present, frequency independence to 2.7e-04 across
 `lambda` in [20, 160], derived dissipative term to 2.6e-04 absolute, three negative controls all
@@ -94,8 +94,9 @@ published threshold) is arithmetically true but tautological, corrected 2026-09-
 
 ## 4. In flight
 
-EXP-006's Euler kernel replay: `E:/_Temp/exp006-fresh.sh`, logs and exit codes in
-`E:/_Temp/exp006/`. The Navier-Stokes half already replayed clean in 49 minutes.
+Nothing running. EXP-006 closed on 2026-09-16: both halves replayed clean
+(`E:/_Temp/exp006-fresh.sh`, logs and exit codes in `E:/_Temp/exp006/`, runner archived in
+`code/exp006-fresh.sh`).
 
 EXP-001 closed on 2026-09-13: the whole certificate BUILDS clean (11,424 jobs, 0 sorryAx). The Euler
 build needed a two-part cache repair (unpack! to fix disk-storm corruption, then an incremental
@@ -111,9 +112,12 @@ convergence loop to ride out Windows read-contention, 5 passes 34->22->11->9->5-
 2. DONE 2026-09-14, in corrected form: the published threshold is derived from the construction's
    own exponent budget (binding constraint: outer velocity on the inner layer, 4.3.4). Our cascade
    model lacks that constraint; adding a force-regularity budget to it is the model-side follow-up.
-3. NS-010: compare exponents the day the Alpoge-Buckmaster hypodissipative paper appears.
+3. NS-016: give our cascade model a force-regularity budget. Round 2 showed why this matters more
+   than it looked: the published budget excludes `R = 1` outright, and our model's schedule IS
+   geometric, so a rigorous version of it would have to move to `M_{n+1} = M_n^R` first.
+4. NS-010: compare exponents the day the Alpoge-Buckmaster hypodissipative paper appears.
 
-Five experiments are closed with verdicts and EXP-006 is running. The open items above are
+Six experiments are closed with verdicts. The open items above are
 next-round scope, not blockers.
 
 ## 6. Where everything lives
