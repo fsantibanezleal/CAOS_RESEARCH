@@ -1,0 +1,105 @@
+{
+  "args": {
+    "part": "B",
+    "n": 512,
+    "device": "cuda",
+    "A0": 4.0,
+    "lam0": 1,
+    "k1": 15,
+    "k2": 26,
+    "Lambda": 1.0,
+    "cp": 3.0,
+    "profile": "sin2",
+    "L_growth": 5.0,
+    "hold": 3.0,
+    "Theta0": -1e-05,
+    "Theta0_D": -0.00025,
+    "cutoff": 8.0,
+    "dt": 0.002,
+    "dt_ode": 0.0002,
+    "n_mu": 200,
+    "alpha": 0.5,
+    "damping_fraction": 0.2,
+    "lam2": 256,
+    "phi2": 0.5235987755982988,
+    "Theta2": 1e-09,
+    "measure2": 0.6,
+    "settle2": 0.6,
+    "mask_frac": 0.35,
+    "out": "../experiments/EXP-005-steered-cycle/result-B-inviscid.json"
+  },
+  "part": "B",
+  "wall_seconds": 236.6,
+  "mu_star": 0.5329338140360864,
+  "design": {
+    "Lambda": 1.0,
+    "cp": 3.0,
+    "profile": "sin2",
+    "satisfies_lemma_37_condition": false
+  },
+  "wave": {
+    "k": [
+      15,
+      26
+    ],
+    "lambda": 30.01666203960727,
+    "sin_s": 0.49972245348957717,
+    "Gamma": 0.9994449069791543,
+    "a": 0.06659267480577137
+  },
+  "main": {
+    "t_b": 7.003887809241696,
+    "Gamma": 0.9994449069791543,
+    "damping": 0.0,
+    "background_drift_under_rotating_gravity": 1.2921212428068528e-15,
+    "background_vorticity_under_rotating_gravity": 0.0,
+    "landing_pde": 0.015795869356312324,
+    "landing_ode": 1.2467026358215522e-12,
+    "gain_across_steering_pde": 3.406683383702025,
+    "gain_across_steering_ode": 3.345923338092,
+    "gain_relative_error": 0.018159425506943317,
+    "Theta_at_t1_pde": -0.0014875268873747807,
+    "Theta_at_tb_pde": -0.005067533130029659,
+    "Theta_at_tb_ode": -0.004912590898056371,
+    "Theta_absolute_ratio_pde_over_ode": 1.0315398198605525,
+    "hold_theta_relative_drift": 0.1470841383620629,
+    "hold_omega_over_peak": 0.14607418700636435,
+    "hold_decay_rate": -0.045771577922355124,
+    "parasite_horizontal_at_tb": 1.7220790516443035e-18,
+    "parasite_over_wave_at_tb": 3.398259088706194e-16,
+    "field_excess_at_tb": 1.0000024975266817,
+    "field_excess_at_end": 1.0000024953583706,
+    "ratio_v_pde": 0.00784534521275674,
+    "ratio_v_ode": -6.284781225324413e-13
+  },
+  "endpoint_map": {
+    "mu_0": {
+      "mu": 0.0,
+      "landing_pde": 0.8042994228165006,
+      "landing_ode": 1.0
+    },
+    "mu_star": {
+      "mu": 0.5329338140360864,
+      "landing_pde": 0.015795869356312324,
+      "landing_ode": 1.2467026358215522e-12
+    },
+    "mu_2star": {
+      "mu": 1.0658676280721728,
+      "landing_pde": 0.8665820016598742,
+      "landing_ode": 0.8988563366956163
+    }
+  },
+  "endpoint_max_gap": 0.19570057718349942,
+  "dt_half_relative_shift_of_gain": 0.008126135606187038,
+  "negative_control_no_steering_landing": 1.0,
+  "gates": {
+    "B1_landing": true,
+    "B1_gain": true,
+    "B2_endpoint_map": false,
+    "B3_hold": false,
+    "B4_dt": false,
+    "B5_no_parasite_takeover": true,
+    "controls_fail_as_required": true
+  },
+  "all_pass": false
+}

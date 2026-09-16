@@ -63,6 +63,56 @@ def predicted_rate_rotated(g1, g2, zeta, rotation: float):
     return torch.sqrt(torch.clamp(-lab_z1(zeta, rotation) * jz_dot_g, min=0.0))
 
 
+def background(args, x2):
+    """The prescribed stratification, and the gradient magnitude it has AT THE ORIGIN.
+
+    `sine` is the Alpoge-Buckmaster stratification with the cutoff dropped, as used by
+    EXP-002 and EXP-004: `theta = -(A/lam0) sin(lam0 x2)`, whose gradient is `-A` at the
+    origin but falls off like `cos(lam0 x2)`.
+
+    `flattened` subtracts an eighth of the second harmonic,
+    `theta = -(A/lam0) (sin(lam0 x2) - (1/8) sin(2 lam0 x2))`, which cancels the
+    quadratic term of the gradient and leaves it constant to fourth order, at three
+    quarters of `A`. Both are functions of `x2` alone, so both are exact steady states of
+    the unforced system with vertical gravity.
+
+    This matters because the modulation reduction assumes the layer sits on an AFFINE
+    background, which the construction arranges by localizing each layer on a scale where
+    that is true. On a torus the background must curve somewhere, and the curvature it has
+    over the layer's support is the leading error of the whole comparison. Running both
+    profiles measures that error instead of asserting it.
+    """
+    if args.background == "sine":
+        return -(args.A0 / args.lam0) * torch.sin(args.lam0 * x2), args.A0
+    if args.background == "flattened":
+        field = -(args.A0 / args.lam0) * (torch.sin(args.lam0 * x2)
+                                          - 0.125 * torch.sin(2.0 * args.lam0 * x2))
+        return field, 0.75 * args.A0
+    raise SystemExit(f"unknown background {args.background}")
+
+
+def parasite_level(theta_hat, k, grid, base_max: float) -> dict:
+    """How much of the field is NOT the layer and NOT the prescribed background.
+
+    The background this construction grows on is Rayleigh-Taylor unstable at rate
+    `sqrt(A)`, while the steered layer only grows at `sqrt(A) sin s`. Every mode at a
+    more favourable angle therefore outruns the layer by a factor `1/sin s` in the
+    exponent, starting from round-off. On a torus with no localization and no force
+    other than the one holding the base, those parasites eventually dominate, and a run
+    that does not watch for them reports their growth as the layer's. Two readings:
+
+      `horizontal_max`  the largest amplitude among the modes (k_1 + d, k_2), which is
+                        where the fast angles live and where the layer puts nothing;
+      `field_excess`    max |theta| divided by the background's own maximum, which is 1
+                        while the run is still about the layer.
+    """
+    n = grid.N
+    hor = max(abs(B.mode_amplitude(theta_hat, (k[0] + d, k[1]), n, "sin"))
+              for d in range(-8, 9) if d != 0)
+    return {"horizontal_max": hor,
+            "field_excess": float(torch.fft.ifft2(theta_hat).real.abs().max()) / base_max}
+
+
 def march(solver, th, om, dt, n_steps, t0=0.0):
     t = t0
     for _ in range(n_steps):
@@ -85,7 +135,7 @@ def run_cycle(args, stage, mu, grid, dev, nu=0.0, alpha=1.0, dt=None, samples=40
 
     x1, x2 = grid.coords()
     k = (args.k1, args.k2)
-    theta_bg = -(args.A0 / args.lam0) * torch.sin(args.lam0 * x2)
+    theta_bg, _ = background(args, x2)
     theta_bg_hat = torch.fft.fft2(theta_bg)
     Theta0, Omega0 = stage.eigen_seed(args.Theta0)
     th = theta_bg_hat + torch.fft.fft2(Theta0 * torch.sin(k[0] * x1 + k[1] * x2))
@@ -105,19 +155,26 @@ def run_cycle(args, stage, mu, grid, dev, nu=0.0, alpha=1.0, dt=None, samples=40
     bg_vorticity = float(torch.fft.ifft2(omp).real.abs().max())
 
     every = max(1, n_steps // samples)
-    ts, Th, Om = [], [], []
+    # The comparison is made at t_1 and t_b, so those two instants are sampled exactly,
+    # whatever the sampling stride is. Reading the nearest grid sample instead charges the
+    # reduction for the sampler: at a growth rate near 1, one stride is already percents.
+    pinned = {int(round(stage.t1 / dt)), int(round(stage.t_b / dt))}
+    ts, Th, Om, par = [], [], [], []
+    base_max = float(torch.fft.ifft2(theta_bg_hat).real.abs().max())
     t = 0.0
     for step in range(n_steps + 1):
-        if step % every == 0 or step == n_steps:
+        if step % every == 0 or step == n_steps or step in pinned:
             a, b = CR.wave_amplitudes(th, om, k, grid, args.cutoff)
             ts.append(t)
             Th.append(a)
             Om.append(b)
+            par.append(parasite_level(th, k, grid, base_max))
         if step < n_steps:
             th, om = solver.step_at(th, om, dt, t)
             t += dt
-    return {"stage": stage, "t": ts, "Theta": Th, "Omega": Om, "bg_drift": bg_drift,
-            "bg_vorticity": bg_vorticity, "theta_hat": th, "omega_hat": om, "t_end": t}
+    return {"stage": stage, "t": ts, "Theta": Th, "Omega": Om, "parasite": par,
+            "bg_drift": bg_drift, "bg_vorticity": bg_vorticity,
+            "theta_hat": th, "omega_hat": om, "t_end": t}
 
 
 def cycle_metrics(run, args, nu=0.0, alpha=1.0):
@@ -132,8 +189,14 @@ def cycle_metrics(run, args, nu=0.0, alpha=1.0):
     landing = abs(Om[i_b]) / peak
 
     ode_t, ode_Th, ode_Om = stage.integrate(args.Theta0, ts[-1], args.dt_ode)
-    j_b = int(round(stage.t_b / args.dt_ode))
-    j_1 = int(round(stage.t1 / args.dt_ode))
+    # Index the ODE at the times the PDE was actually SAMPLED at, not at the nominal
+    # t_1 and t_b. The sampler lands on a grid of spacing t_end/samples, and at a growth
+    # rate near 1 a single sample of offset is already a percent of amplitude: comparing
+    # a sampled PDE value against an ODE value at a different instant charges the
+    # reduction for the sampling grid. This showed up as a spurious dt-refinement shift,
+    # since halving dt also changed which instants were sampled.
+    j_b = min(int(round(ts[i_b] / args.dt_ode)), len(ode_Th) - 1)
+    j_1 = min(int(round(ts[i_1] / args.dt_ode)), len(ode_Th) - 1)
     ode_peak = float(abs(ode_Om).max())
     ode_landing = abs(float(ode_Om[j_b])) / ode_peak
 
@@ -144,7 +207,9 @@ def cycle_metrics(run, args, nu=0.0, alpha=1.0):
     hold = [i for i in range(len(ts)) if ts[i] >= stage.t_b]
     hold_theta_drift = (max(abs(Th[i]) for i in hold) / min(abs(Th[i]) for i in hold)) - 1.0
     hold_omega_max = max(abs(Om[i]) for i in hold) / peak
-    if stage.damping > 0.0:
+    if any(Th[i] * Th[0] <= 0.0 for i in hold):
+        hold_decay_rate = float("nan")            # the amplitude changed sign: not a decay
+    elif stage.damping > 0.0:
         # expected decay over the hold, e^(-d T)
         dT = ts[hold[-1]] - ts[hold[0]]
         measured = math.log(abs(Th[hold[0]]) / abs(Th[hold[-1]]))
@@ -171,6 +236,11 @@ def cycle_metrics(run, args, nu=0.0, alpha=1.0):
         "hold_theta_relative_drift": hold_theta_drift,
         "hold_omega_over_peak": hold_omega_max,
         "hold_decay_rate": hold_decay_rate,
+        "parasite_horizontal_at_tb": run["parasite"][i_b]["horizontal_max"],
+        "parasite_over_wave_at_tb": (run["parasite"][i_b]["horizontal_max"]
+                                     / max(abs(Th[i_b]), 1e-300)),
+        "field_excess_at_tb": run["parasite"][i_b]["field_excess"],
+        "field_excess_at_end": run["parasite"][-1]["field_excess"],
         "ratio_v_pde": (Om[i_b] / Th[i_b]) * stage.sigma / stage.lam,
         "ratio_v_ode": float(ode_Om[j_b] / ode_Th[j_b]) * stage.sigma / stage.lam,
     }
@@ -179,7 +249,8 @@ def cycle_metrics(run, args, nu=0.0, alpha=1.0):
 def build_stage(args, mu):
     knorm = math.hypot(args.k1, args.k2)
     design = S.SteeringDesign(Lam=args.Lambda, cp=args.cp, profile=args.profile)
-    return S.FirstStage(A=args.A0, lam=knorm, sin_s=args.k1 / knorm, design=design,
+    _, A_origin = background(args, torch.zeros(1))
+    return S.FirstStage(A=A_origin, lam=knorm, sin_s=args.k1 / knorm, design=design,
                         mu=mu, L_growth=args.L_growth)
 
 
@@ -258,6 +329,8 @@ def part_b(args, grid, dev) -> dict:
             "B3_hold": bool(m_main["hold_theta_relative_drift"] < 1e-2
                             and m_main["hold_omega_over_peak"] < 3e-2),
             "B4_dt": bool(dt_shift < 1e-3),
+            "B5_no_parasite_takeover": bool(m_main["parasite_over_wave_at_tb"] < 1e-2
+                                            and m_main["field_excess_at_end"] < 1.05),
             "controls_fail_as_required": bool(endpoint["mu_0"]["landing_pde"] > 0.2
                                               and nc_landing > 0.2),
         },
@@ -325,8 +398,7 @@ def part_d(args, grid, dev) -> dict:
     t_now = run1["t_end"]
     rotation = stage.rotation_angle(t_now)          # frozen at s during the hold
     solver = CR.CoRotatingBoussinesq(
-        grid, stage.gravity,
-        torch.fft.fft2(-(args.A0 / args.lam0) * torch.sin(args.lam0 * grid.coords()[1])),
+        grid, stage.gravity, torch.fft.fft2(background(args, grid.coords()[1])[0]),
         nu=0.0, alpha=1.0)
 
     # Layer 2, injected into the holding interval at a laboratory angle phi2.
@@ -335,7 +407,7 @@ def part_d(args, grid, dev) -> dict:
     k2 = (int(round(args.lam2 * math.sin(phi_rot))), int(round(args.lam2 * math.cos(phi_rot))))
     kn2 = math.hypot(*k2)
     zeta2 = (k2[0] / kn2, k2[1] / kn2)
-    A_local = args.A0 + deposit
+    A_local = stage.A + deposit
     Omega2 = kn2 * args.Theta2 / math.sqrt(max(A_local, 1e-12))
     th = th + torch.fft.fft2(args.Theta2 * torch.sin(k2[0] * x1 + k2[1] * x2))
     om = om + torch.fft.fft2(Omega2 * torch.cos(k2[0] * x1 + k2[1] * x2))
@@ -343,7 +415,7 @@ def part_d(args, grid, dev) -> dict:
     cutoff = math.sqrt(stage.lam * kn2)
     g1, g2 = low_pass_gradient(th, grid, cutoff)
     pred_full = predicted_rate_rotated(g1, g2, zeta2, rotation)
-    base_hat = torch.fft.fft2(-(args.A0 / args.lam0) * torch.sin(args.lam0 * x2))
+    base_hat = torch.fft.fft2(background(args, x2)[0])
     b1, b2 = low_pass_gradient(base_hat, grid, cutoff)
     pred_base = predicted_rate_rotated(b1, b2, zeta2, rotation)
 
@@ -405,6 +477,8 @@ def main() -> int:
     ap.add_argument("--Theta0", type=float, default=-1e-5)
     ap.add_argument("--Theta0-D", dest="Theta0_D", type=float, default=-2.5e-4,
                     help="seed for part D, sized so the deposit is comparable with A0")
+    ap.add_argument("--background", default="sine", choices=["sine", "flattened"],
+                    help="stratification profile; flattened is affine to fourth order at the origin")
     ap.add_argument("--cutoff", type=float, default=8.0, help="demodulation radius")
     ap.add_argument("--dt", type=float, default=2e-3)
     ap.add_argument("--dt-ode", dest="dt_ode", type=float, default=2e-4)
