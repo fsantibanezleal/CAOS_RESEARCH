@@ -119,3 +119,20 @@ def test_wiki_page_6_ratio_interval_numbers_come_from_the_code():
 
     for quoted in ("1.143", "5.000", "1.7559", "empty"):
         assert quoted in page, f"{quoted} no longer appears in wiki page 6"
+
+
+def test_the_converse_bound_numbers_match_the_code():
+    """The sharpened claim: one derivative caps the exponent at 1/480."""
+    from nslib import ab_schedule as A
+
+    page = text(PROBLEM / "wiki/08-smoothness-versus-dissipation.md")
+    dossier = text(PROBLEM / "context/2026-09-16-smoothness-versus-dissipation.md")
+
+    assert A.alpha_max_for_derivatives(1) == pytest.approx(1.0 / 480.0)
+    assert A.gap_to_published_threshold(1, 1.0) == pytest.approx(22.2, rel=5e-2)
+    assert A.gap_to_published_threshold(1, A.DELTA_PUBLISHED) == pytest.approx(177.9, rel=5e-2)
+
+    for quoted in ("1/480=0.00208", "twenty-two times", "one hundred and seventy-eight"):
+        assert quoted in page, f"{quoted} no longer appears in wiki page 8"
+    for quoted in ("alpha < delta / (480 k)", "1/480 = 0.00208", "22 times", "178 times"):
+        assert quoted in dossier, f"{quoted} no longer appears in the dossier"
