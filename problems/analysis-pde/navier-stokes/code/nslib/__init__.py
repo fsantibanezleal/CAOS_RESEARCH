@@ -3,10 +3,13 @@
 Modules:
     modulation   the Alpoge-Buckmaster amplitude system and its dissipative extension (numpy)
     cascade      exponent bookkeeping for the layer cascade, with time and hold damping (stdlib)
+    cmz_budget   the Cordoba-Martinez-Zoroa-Zheng exponent budget and its threshold (stdlib)
+    steering     the transcribed first-stage steering control and its schedule (numpy)
     boussinesq   GPU pseudo-spectral 2D Boussinesq solver used as the PDE control (torch)
+    corotating   the same solver with a turning gravity direction, for the steering (torch)
     sweep        batched evaluation of the cascade constraints (torch)
 
-`boussinesq` and `sweep` are imported LAZILY so that `cascade` and `modulation` stay usable
+`boussinesq`, `corotating` and `sweep` are imported LAZILY so that `cascade` and `modulation` stay usable
 without torch. Repository CI installs numpy and sympy but not torch, and the load-bearing
 identities live in the two torch-free modules; an eager import here would have made them
 unreachable from the CI lane, which is the whole point of having them under test.
@@ -21,14 +24,15 @@ from __future__ import annotations
 import importlib
 from typing import TYPE_CHECKING
 
-from . import cascade, cmz_budget, modulation
+from . import cascade, cmz_budget, modulation, steering
 
 if TYPE_CHECKING:  # pragma: no cover
-    from . import boussinesq, sweep
+    from . import boussinesq, corotating, sweep
 
-_LAZY = {"boussinesq", "sweep"}
+_LAZY = {"boussinesq", "corotating", "sweep"}
 
-__all__ = ["boussinesq", "cascade", "cmz_budget", "modulation", "sweep"]
+__all__ = ["boussinesq", "cascade", "cmz_budget", "corotating", "modulation",
+           "steering", "sweep"]
 
 
 def __getattr__(name: str):

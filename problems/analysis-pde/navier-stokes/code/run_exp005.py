@@ -33,6 +33,7 @@ from pathlib import Path
 import torch
 
 from nslib import boussinesq as B
+from nslib import corotating as CR
 from nslib import steering as S
 from run_exp004 import low_pass_gradient, stats
 
@@ -90,7 +91,7 @@ def run_cycle(args, stage, mu, grid, dev, nu=0.0, alpha=1.0, dt=None, samples=40
     th = theta_bg_hat + torch.fft.fft2(Theta0 * torch.sin(k[0] * x1 + k[1] * x2))
     om = torch.fft.fft2(Omega0 * torch.cos(k[0] * x1 + k[1] * x2))
 
-    solver = S.CoRotatingBoussinesq(grid, stage.gravity, theta_bg_hat, nu=nu, alpha=alpha)
+    solver = CR.CoRotatingBoussinesq(grid, stage.gravity, theta_bg_hat, nu=nu, alpha=alpha)
 
     # Guard: the force must actually hold the background. With the wave absent nothing
     # may move at all, however far gravity has turned. The VORTICITY is the load-bearing
@@ -108,7 +109,7 @@ def run_cycle(args, stage, mu, grid, dev, nu=0.0, alpha=1.0, dt=None, samples=40
     t = 0.0
     for step in range(n_steps + 1):
         if step % every == 0 or step == n_steps:
-            a, b = S.wave_amplitudes(th, om, k, grid, args.cutoff)
+            a, b = CR.wave_amplitudes(th, om, k, grid, args.cutoff)
             ts.append(t)
             Th.append(a)
             Om.append(b)
@@ -323,7 +324,7 @@ def part_d(args, grid, dev) -> dict:
     th, om = run1["theta_hat"], run1["omega_hat"]
     t_now = run1["t_end"]
     rotation = stage.rotation_angle(t_now)          # frozen at s during the hold
-    solver = S.CoRotatingBoussinesq(
+    solver = CR.CoRotatingBoussinesq(
         grid, stage.gravity,
         torch.fft.fft2(-(args.A0 / args.lam0) * torch.sin(args.lam0 * grid.coords()[1])),
         nu=0.0, alpha=1.0)

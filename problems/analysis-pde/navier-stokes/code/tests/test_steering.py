@@ -179,10 +179,12 @@ def test_co_rotating_solver_reduces_to_the_base_solver_when_gravity_is_vertical(
     torch = _torch_or_skip()
     from nslib import boussinesq as B
 
+    from nslib import corotating as CR
+
     grid = B.Grid(N=32, device=torch.device("cpu"), dtype=torch.float64)
     th, om = B.layered_initial_data(grid, 4.0, 1, 8, math.pi / 4, 1e-3, 1e-2)
     base = B.Boussinesq2D(grid, nu=0.0, alpha=1.0)
-    rot = S.CoRotatingBoussinesq(grid, lambda t: (0.0, 1.0), None, nu=0.0, alpha=1.0)
+    rot = CR.CoRotatingBoussinesq(grid, lambda t: (0.0, 1.0), None, nu=0.0, alpha=1.0)
     t1, o1 = base.step(th, om, 1e-3)
     t2, o2 = rot.step_at(th, om, 1e-3, 0.0)
     assert torch.allclose(t1, t2, atol=1e-14)
@@ -194,12 +196,14 @@ def test_the_background_force_holds_the_stratification_under_tilted_gravity():
     torch = _torch_or_skip()
     from nslib import boussinesq as B
 
+    from nslib import corotating as CR
+
     grid = B.Grid(N=64, device=torch.device("cpu"), dtype=torch.float64)
     _, x2 = grid.coords()
     bg = torch.fft.fft2(-4.0 * torch.sin(x2))
     zero = torch.zeros_like(bg)
-    tilted = S.CoRotatingBoussinesq(grid, lambda t: (0.5, math.sqrt(0.75)), bg)
-    unforced = S.CoRotatingBoussinesq(grid, lambda t: (0.5, math.sqrt(0.75)), None)
+    tilted = CR.CoRotatingBoussinesq(grid, lambda t: (0.5, math.sqrt(0.75)), bg)
+    unforced = CR.CoRotatingBoussinesq(grid, lambda t: (0.5, math.sqrt(0.75)), None)
 
     held_t, held_o = bg.clone(), zero.clone()
     free_t, free_o = bg.clone(), zero.clone()
@@ -221,11 +225,13 @@ def test_amplitudes_are_read_back_exactly_from_a_planted_wave():
     torch = _torch_or_skip()
     from nslib import boussinesq as B
 
+    from nslib import corotating as CR
+
     grid = B.Grid(N=64, device=torch.device("cpu"), dtype=torch.float64)
     x1, x2 = grid.coords()
     k = (3, 20)
     th = torch.fft.fft2(-2e-3 * torch.sin(k[0] * x1 + k[1] * x2))
     om = torch.fft.fft2(5e-2 * torch.cos(k[0] * x1 + k[1] * x2))
-    Theta, Omega = S.wave_amplitudes(th, om, k, grid, 4.0)
+    Theta, Omega = CR.wave_amplitudes(th, om, k, grid, 4.0)
     assert Theta == pytest.approx(-2e-3, rel=1e-12)
     assert Omega == pytest.approx(5e-2, rel=1e-12)
