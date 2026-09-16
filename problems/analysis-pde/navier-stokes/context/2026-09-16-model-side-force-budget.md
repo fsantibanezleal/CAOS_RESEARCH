@@ -86,6 +86,36 @@ Item 2 is the real work, and it is a reading task on the primary sources before 
 Alpoge-Buckmaster Sections 4 to 10 for the correction hierarchy, and their force estimates. It is
 recorded as the open half of NS-016 rather than guessed at here.
 
+## 4b. Where the missing piece actually lives, and what shape it has
+
+Scoped on 2026-09-16 by reading the section map and the parameter section of the
+Alpoge-Buckmaster paper, so that the open half of NS-016 is entered with its cost known rather than
+discovered.
+
+| what is needed | where it is | what form it takes |
+|---|---|---|
+| the localized profile and the exact datum | 4.1, 4.2 | an even cutoff and an oscillatory profile with a linear interval; a rotating base |
+| the weighted derivative machinery | 5.1 to 5.3 | separated rates, weighted differentiation, coupled-equation bounds over a stage |
+| summation over future stages | 5.4, 5.5 | geometric-sum bounds transferred to the coefficient fields |
+| the corrections | 6.1 to 6.4 | two residual equations in material coordinates, a level-by-level recursion, `J_q = 2 k_q + 8` levels |
+| the force estimates themselves | 7.1 | quantitative mixed-derivative estimates for one layer, conditional on explicit coefficient bounds |
+| the parameter choice | 8.1 | one finite logarithmic threshold `y = log lambda_1` satisfying (8.1) to (8.6) |
+
+**The shape matters for the estimate of effort.** Cordoba-Martinez-Zoroa-Zheng's Section 4.3 states its
+force requirements as four exponent inequalities, which is why the reconstruction of their threshold
+took a session. Alpoge-Buckmaster's Sections 5 to 8 are not written that way: they are weighted
+mixed-derivative bounds with explicit constants and a common logarithmic threshold, and the exponent
+content has to be extracted from them rather than read off. Their (8.1) fixes `log lambda_1` by a list
+of finitely many scalar conditions (`y/log y >= 160 Q^2` among them), not by an optimization over
+exponents.
+
+So the open half of NS-016 is: extract the exponent content of 7.1 under the correction hierarchy of
+6.2, in the Boussinesq variables, and only then optimize. That is a reading unit of the same size as
+the round-1 deep-research pass, not a calculation that can be appended to this dossier. What can
+already be said without it is in `2026-09-16-smoothness-versus-dissipation.md`: their own rule
+`120 k <= Q` fixes the exchange rate between force regularity and frequency ratio, and that alone
+decides the trade-off with dissipation.
+
 ## 5. What this changes in the record
 
 - EXP-003's verdict stands as a statement about the model, and its scope is now sharper: the cap it
