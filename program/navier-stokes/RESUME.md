@@ -94,10 +94,13 @@ published threshold) is arithmetically true but tautological, corrected 2026-09-
 
 ## 4. In flight
 
-EXP-006's Euler kernel replay (`E:/_Temp/exp006-fresh.sh`, logs in `E:/_Temp/exp006/`). EXP-001 fully closed on 2026-09-13: the whole certificate builds clean (11,424
-jobs, 0 sorryAx). The Euler build needed a two-part cache repair (unpack! to fix disk-storm
-corruption, then an incremental convergence loop to ride out Windows read-contention, 5 passes
-34->22->11->9->5->0). Logs: `E:/_Temp/lean-build/build-pass*.log`, loop `E:/_Temp/lean-build-loop.sh`.
+EXP-006's Euler kernel replay: `E:/_Temp/exp006-fresh.sh`, logs and exit codes in
+`E:/_Temp/exp006/`. The Navier-Stokes half already replayed clean in 49 minutes.
+
+EXP-001 closed on 2026-09-13: the whole certificate BUILDS clean (11,424 jobs, 0 sorryAx). The Euler
+build needed a two-part cache repair (unpack! to fix disk-storm corruption, then an incremental
+convergence loop to ride out Windows read-contention, 5 passes 34->22->11->9->5->0). Logs:
+`E:/_Temp/lean-build/build-pass*.log`, loop `E:/_Temp/lean-build-loop.sh`.
 
 ## 5. Next actions
 
@@ -110,8 +113,8 @@ corruption, then an incremental convergence loop to ride out Windows read-conten
    model lacks that constraint; adding a force-regularity budget to it is the model-side follow-up.
 3. NS-010: compare exponents the day the Alpoge-Buckmaster hypodissipative paper appears.
 
-All four experiments are now closed with verdicts; EXP-001 fully confirmed both certificate halves.
-The two items above are next-round scope, not blockers.
+Five experiments are closed with verdicts and EXP-006 is running. The open items above are
+next-round scope, not blockers.
 
 ## 6. Where everything lives
 
