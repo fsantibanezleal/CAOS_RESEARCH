@@ -1,7 +1,7 @@
 {
   "args": {
     "part": "D",
-    "n": 1024,
+    "n": 1536,
     "device": "cuda",
     "A0": 4.0,
     "lam0": 1,
@@ -21,73 +21,75 @@
     "n_mu": 200,
     "alpha": 0.5,
     "damping_fraction": 0.2,
-    "lam2": 256,
+    "lam2": 360,
     "phi2": 0.5235987755982988,
     "Theta2": 1e-09,
     "measure2": 0.6,
     "settle2": 0.6,
+    "rate_window": 3.0,
     "mask_frac": 0.35,
     "out": "../experiments/EXP-005-steered-cycle/result-D-handoff.json"
   },
   "part": "D",
-  "wall_seconds": 283.6,
+  "wall_seconds": 781.9,
   "stage1": {
     "t_b": 8.087393024079264,
     "Gamma": 0.8655446791269228,
     "damping": 0.0,
-    "background_drift_under_rotating_gravity": 1.1096841811016458e-15,
+    "background_drift_under_rotating_gravity": 1.88887547847117e-15,
     "background_vorticity_under_rotating_gravity": 0.0,
-    "landing_pde": 0.0003830319887933942,
+    "landing_pde": 0.00038303198881317336,
     "landing_ode": 3.3273627317033967e-13,
-    "gain_across_steering_pde": 3.312217095653586,
+    "gain_across_steering_pde": 3.3122170956535864,
     "gain_across_steering_ode": 3.312110501006274,
-    "gain_relative_error": 3.218330043022779e-05,
-    "Theta_at_t1_pde": -0.03708112914092967,
-    "Theta_at_tb_pde": -0.12282074986672561,
+    "gain_relative_error": 3.218330043036187e-05,
+    "Theta_at_t1_pde": -0.03708112914092987,
+    "Theta_at_tb_pde": -0.1228207498667263,
     "Theta_at_tb_ode": -0.12281477245147372,
-    "Theta_absolute_ratio_pde_over_ode": 1.0000486701650997,
-    "hold_theta_relative_drift": 0.00905550079011097,
-    "hold_omega_over_peak": 0.008493869886065479,
-    "hold_decay_rate": 0.0026009075583304938,
-    "parasite_horizontal_at_tb": 1.4900387047010325e-15,
-    "parasite_over_wave_at_tb": 1.2131815725908634e-14,
-    "field_excess_at_tb": 1.0000573707336018,
-    "field_excess_at_end": 1.0000572493824889,
-    "ratio_v_pde": -0.00019308029153996875,
+    "Theta_absolute_ratio_pde_over_ode": 1.0000486701651052,
+    "hold_theta_relative_drift": 0.009055500789606263,
+    "hold_omega_over_peak": 0.008493869884484525,
+    "hold_decay_rate": 0.002600907558186177,
+    "parasite_horizontal_at_tb": 8.249579962997856e-16,
+    "parasite_over_wave_at_tb": 6.7167640418655124e-15,
+    "field_excess_at_tb": 1.000062289329927,
+    "field_excess_at_end": 1.0000622261706522,
+    "ratio_v_pde": -0.0001930802915499389,
     "ratio_v_ode": 1.677364451248013e-13,
-    "Theta_at_hold": -0.12282074986672561,
-    "deposit_lambda_Theta": 3.6866689402006423,
-    "deposit_over_A0": 0.9216672350501606
+    "Theta_at_hold": -0.1228207498667263,
+    "deposit_lambda_Theta": 3.6866689402006627,
+    "deposit_over_A0": 0.9216672350501657
   },
   "layer2": {
     "k": [
-      222,
-      128
+      312,
+      180
     ],
-    "lambda": 256.2576828116574,
+    "lambda": 360.1999444752872,
     "phi2_lab": 0.5235987755982988,
     "rotation_at_hold": 0.5232783221319756,
-    "cutoff": 87.70404927943974,
-    "n_masked_points": 552542
+    "cutoff": 103.98076745244767,
+    "rate_window_radius": 90.0499861188218,
+    "n_masked_points": 1243350
   },
   "H1_total_gradient": {
-    "corr": 0.5228192884162337,
-    "slope": 1.1961250509717654,
-    "rmse": 0.6198725826950336,
-    "measured_mean": 0.7653488792382457,
-    "predicted_mean": 0.9898686431380725
+    "corr": 0.8076516604708422,
+    "slope": 1.2581108264045826,
+    "rmse": 0.28741266728511233,
+    "measured_mean": 0.9297225016217361,
+    "predicted_mean": 0.9895439537113441
   },
   "H2_control_base_only": {
-    "corr": 0.321795010679666,
-    "slope": 1.3630371220896846,
-    "rmse": 0.6899682921078899,
-    "measured_mean": 0.7653488792382457,
-    "predicted_mean": 1.0203072547875585
+    "corr": 0.3923613820388487,
+    "slope": 1.1309063115458853,
+    "rmse": 0.4322030857247672,
+    "measured_mean": 0.9297225016217361,
+    "predicted_mean": 1.01995085404852
   },
   "gates": {
     "D0_stage1_landing": true,
     "D1_pattern": false,
-    "D2_control_discriminates": false
+    "D2_control_discriminates": true
   },
   "all_pass": false
 }

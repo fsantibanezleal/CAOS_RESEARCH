@@ -113,3 +113,70 @@ inviscid cycle times `e^(-d t)`. Three consequences, all tested against the PDE 
 Raw: [`result-C-dissipative.json`](result-C-dissipative.json). This is the statement that a
 dissipative cascade may reuse the inviscid steering unchanged, and that a holding interval costs
 exactly `exp(-nu lambda^(2 alpha) T)`, which is the assumption EXP-003's constraint C4 was built on.
+
+## D. The dynamical handoff, with steering (DECIDED IN PART)
+
+This is the run [EXP-004](../EXP-004-multilayer-handoff/verdict.md) Part A could not do. There, layer 1
+was grown and layer 2 injected while layer 1 was still shearing, and the result was inconclusive by
+construction; Part B had to replace the grown layer with a frozen sinusoid. Here layer 1 is grown,
+**steered to rest by the transcribed control**, and then serves as the background for layer 2.
+
+**Stage 1, at the amplitude that matters.** Seeded so that its deposit is comparable with the base
+gradient, layer 1 reaches `lambda_1 |Theta_1| = 3.69`, that is `0.92` of the background it grew on,
+and the steering still works at that amplitude: landing `3.8e-04`, steering gain to `3.2e-05` of the
+ODE, hold drift `0.91` percent, parasites `1.2e-14` of the wave. The cycle is not a small-amplitude
+phenomenon.
+
+**Stage 2, the local rate field.** Layer 2 is injected into the holding interval and its local growth
+rate measured by demodulation, then compared with the rate predicted from the TOTAL low-pass gradient
+(H1) and from the base alone (H2, the discriminating control):
+
+| configuration | H1 correlation | H2 control | H1 RMSE | H2 RMSE |
+|---|---|---|---|---|
+| `lam2 = 192`, window `1.5 lam1` | 0.676 | 0.360 | 0.404 | 0.507 |
+| `lam2 = 192`, window `3 lam1` | 0.755 | 0.335 | 0.348 | 0.485 |
+| `lam2 = 192`, window `4.5 lam1` | 0.327 | 0.667 | 0.369 | 0.288 |
+| **`lam2 = 360`, window `3 lam1`** | **0.808** | **0.392** | **0.287** | **0.432** |
+
+**The pattern is confirmed and the control discriminates**, by 0.42 in correlation and with a
+40 percent worse RMSE, which is gate D2. **Gate D1, correlation above 0.9, is NOT met**, and that is
+reported as not met rather than softened.
+
+What limits it is measurement, and the sweep shows it rather than asserting it. The rate field is read
+through a demodulation window that must resolve an envelope varying on layer 1's own scale while
+excluding layer 1's harmonics, so there is an interior optimum: too narrow and the structure under
+test is smoothed away, too wide and the base-only prediction fits better than the true one, which is
+what the 4.5 row is. At the optimum, raising the scale separation from 6 to 12 moves the correlation
+from 0.755 to 0.808, the same direction EXP-004 reached 0.999 in at separation 12 on a frozen,
+purely vertical background with no steering history. The residual slope, 1.26, is the same
+measurement-geometry systematic EXP-004 characterized at 1.36.
+
+**A trap found here and now guarded.** At `lam2 = 320` with `N = 1024` the wave sits at 0.94 of the
+2/3 dealiasing limit and passes a naive check, but its demodulation WINDOW reaches past the limit, so
+half the envelope is annihilated every step. The only symptom is systematically low rates and a
+correlation falling from 0.68 to 0.42. The guard now counts the window, not just the wave.
+
+## What EXP-005 establishes, and what it does not
+
+**Establishes.**
+
+1. The steering control, transcribed from the source, does what its lemma says, and a PDE realization
+   of it reproduces the reduced model to `3e-06` in the gain and `4e-04` in the landing, with the
+   endpoint map reproduced at a deliberately mis-set pulse as well as at the selected one.
+2. A holding interval under dissipation costs exactly `exp(-nu lambda^(2 alpha) T)`, and the selected
+   pulse does not depend on the viscosity. EXP-003's constraint C4 rested on the first of those.
+3. A steered layer at 0.92 of the background gradient serves as the background for the next layer, and
+   that layer responds to the TOTAL accumulated gradient rather than to the base alone.
+
+**Does not establish.**
+
+- Anything about many layers: two is not a cascade, and the time-compression that makes infinitely
+  many stages fit in finite time is untouched here.
+- Anything at the correlation the D gate asked for. 0.808 is not 0.9.
+- Anything about the viscous problem. This is a 2D Boussinesq model system, and the whole cycle lives
+  at the hypodissipative end.
+
+**And it adds one caveat the exponent bookkeeping cannot see.** The cascade runs against a faster
+instability of its own background, by exactly the factor `1/sin s` in the exponent. The committed
+first run was destroyed by it, and no amount of numerical care would have saved that configuration:
+what saves the real construction is localization and forcing, not speed.

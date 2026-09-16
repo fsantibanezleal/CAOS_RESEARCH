@@ -11,6 +11,8 @@ DECIDED-IN-PART, and a refuted prediction is preserved rather than edited away.
 | [EXP-002](EXP-002-reduction-control/) | Does the reduced modulation model predict the Boussinesq PDE? | **CONFIRMED** |
 | [EXP-003](EXP-003-threshold-sweep/) | Does the repaired cascade model predict the published threshold? | **CONFIRMED** |
 | [EXP-004](EXP-004-multilayer-handoff/) | Does the layer-to-layer handoff survive in the full nonlinear PDE? | pattern **CONFIRMED** (frozen), slope systematic characterized |
+| [EXP-005](EXP-005-steered-cycle/) | Does the growth, steering and hold cycle work in the PDE, and does a steered layer carry the next one? | **DECIDED IN PART** (A, B, C pass; the committed parameters are refuted by the background's own instability; D confirms the pattern at 0.81, below its 0.9 gate) |
+| [EXP-006](EXP-006-kernel-replay/) | Does the Lean KERNEL accept the certificate, not just the elaborator? | running |
 
 ## EXP-001, the Lean replay
 
@@ -56,8 +58,32 @@ shrinking toward flat regions), so the pre-committed slope sub-gate was not met 
 not met. The dynamical companion run is inconclusive by construction, because it does not implement
 the steering that freezes the previous layer; that is recorded honestly.
 
+## EXP-005, the steered cycle
+
+The control the construction uses to return a grown layer to rest, transcribed from Alpoge-Buckmaster
+Lemmas 3.7 and 3.8 and run against the PDE in a co-rotating frame, where the common rotation of the
+background becomes a rotating gravity direction on the torus. On a background flattened so its
+gradient is affine to fourth order, the cycle matches the reduced model to 3e-06 in the steering gain
+and lands the vorticity amplitude at 3.7e-04 of its peak, with both negative controls failing as
+required. The dissipative cycle factorizes exactly as derived: the inviscid pulse still lands, and a
+holding interval decays at `nu lambda^(2 alpha)` to within one percent.
+
+The run at the parameters committed in the hypothesis is refuted, and the reason is worth more than
+the run: the background is Rayleigh-Taylor unstable at `sqrt(A)` while the steered layer grows at
+`sqrt(A) sin s`, so a small insertion angle gives every parasite `1/sin s` times as many e-folds as
+the layer gets. The cascade always runs against a faster instability of its own background, and what
+saves the real construction is localization, not speed.
+
+## EXP-006, the kernel replay
+
+`leanchecker` ships with the Lean toolchain since v4.28.0, and the certificate pins v4.34.0-rc2, so
+the certificate can be re-checked by the kernel alone rather than trusted from a successful build.
+The Navier-Stokes half has already replayed clean from a fresh environment in 49 minutes; the Euler
+half is running.
+
 ## What still remains open
 
-A fully dynamical multi-layer confirmation WITH steering implemented, so each grown layer is held
-frozen while the next grows. EXP-004 Part B establishes the essential physics on a frozen surrogate;
-the dynamical cascade with steering is a larger build and the natural next step.
+EXP-005 closed the dynamical two-layer handoff WITH steering, at 0.81 correlation against a control
+at 0.39. What remains open is a cascade of MANY layers, where the time compression that fits
+infinitely many stages into finite time starts to matter, and a model-side force-regularity budget,
+which is the constraint that actually sets the published threshold (wiki page 6).

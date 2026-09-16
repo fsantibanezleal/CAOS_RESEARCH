@@ -31,6 +31,10 @@ case produced by **OpenAI**. Nothing in this problem is our mechanism.
 6. [Where the published threshold comes from](06-where-the-published-threshold-comes-from.md).
    The Cordoba-Martinez-Zoroa-Zheng exponent budget, the four constraints, the one that binds, and why
    their own heuristic overshoots by exactly one constraint swap.
+7. [Steering, and what a holding interval costs](07-steering-and-the-holding-interval.md).
+   The control that returns a grown layer to rest, transcribed and run against the PDE in a
+   co-rotating frame; the exact cost of a holding interval under dissipation; and the fact that the
+   cascade always runs against a faster instability of its own background.
 
 ## The one-paragraph version
 
