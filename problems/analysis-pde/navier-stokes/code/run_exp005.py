@@ -430,7 +430,7 @@ def part_d(args, grid, dev) -> dict:
     for step in range(n_meas + 1):
         if step % every == 0:
             times.append(t_now)
-            profs.append(B.demodulate(th, k2, grid, 1.5 * stage.lam).abs().clone())
+            profs.append(B.demodulate(th, k2, grid, args.rate_window * stage.lam).abs().clone())
         if step < n_meas:
             th, om, t_now = march(solver, th, om, args.dt, 1, t0=t_now)
     T = torch.tensor(times, dtype=grid.dtype, device=grid.device)
@@ -450,6 +450,7 @@ def part_d(args, grid, dev) -> dict:
                         "deposit_over_A0": deposit / args.A0},
         "layer2": {"k": list(k2), "lambda": kn2, "phi2_lab": args.phi2,
                    "rotation_at_hold": rotation, "cutoff": cutoff,
+                   "rate_window_radius": args.rate_window * stage.lam,
                    "n_masked_points": int(mask.sum())},
         "H1_total_gradient": full,
         "H2_control_base_only": base,
@@ -492,6 +493,8 @@ def main() -> int:
     ap.add_argument("--Theta2", type=float, default=1e-9)
     ap.add_argument("--measure2", type=float, default=0.6)
     ap.add_argument("--settle2", type=float, default=0.6)
+    ap.add_argument("--rate-window", dest="rate_window", type=float, default=1.5,
+                    help="demodulation radius for layer 2 rate field, in units of lambda_1; it must resolve an envelope that varies on layer 1 own scale")
     ap.add_argument("--mask-frac", dest="mask_frac", type=float, default=0.35)
     ap.add_argument("--out", default="")
     args = ap.parse_args()
@@ -510,6 +513,20 @@ def main() -> int:
     if args.part == "D" and args.lam2 < 4 * knorm:
         raise SystemExit(f"lam2 = {args.lam2} needs at least 4x the layer-1 frequency "
                          f"{knorm:.1f} for the scale separation the reduction assumes.")
+    if args.part == "D":
+        # The rate field is read by demodulating a window of radius 1.5 * lambda_1 around
+        # layer 2's wavevector, so the WINDOW, not just the wave, has to fit under the 2/3
+        # limit. A wave at 0.94 of the limit passes a naive check while half its envelope
+        # is annihilated every step, and the measured rates then come out systematically
+        # low with no other symptom: at lam2 = 320, N = 1024 that cost the correlation
+        # 0.68 -> 0.42 and was invisible until the window was written down.
+        reach = args.lam2 + args.rate_window * knorm
+        if reach > kmax:
+            raise SystemExit(
+                f"layer 2 at {args.lam2} plus its demodulation window "
+                f"{args.rate_window * knorm:.0f} "
+                f"reaches |k| = {reach:.0f}, past the dealiasing limit N/3 = {kmax:.0f}. "
+                f"Raise --n to at least {int(3 * reach) + 1} or lower --lam2.")
 
     if args.part == "A":
         out = part_a(args)
