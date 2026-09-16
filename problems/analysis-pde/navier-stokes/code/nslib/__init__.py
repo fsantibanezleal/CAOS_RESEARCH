@@ -4,6 +4,7 @@ Modules:
     modulation   the Alpoge-Buckmaster amplitude system and its dissipative extension (numpy)
     cascade      exponent bookkeeping for the layer cascade, with time and hold damping (stdlib)
     cmz_budget   the Cordoba-Martinez-Zoroa-Zheng exponent budget and its threshold (stdlib)
+    ab_schedule  the Alpoge-Buckmaster frequency schedule, and the dissipation it could carry (stdlib)
     steering     the transcribed first-stage steering control and its schedule (numpy)
     boussinesq   GPU pseudo-spectral 2D Boussinesq solver used as the PDE control (torch)
     corotating   the same solver with a turning gravity direction, for the steering (torch)
@@ -24,15 +25,15 @@ from __future__ import annotations
 import importlib
 from typing import TYPE_CHECKING
 
-from . import cascade, cmz_budget, modulation, steering
+from . import ab_schedule, cascade, cmz_budget, modulation, steering
 
 if TYPE_CHECKING:  # pragma: no cover
     from . import boussinesq, corotating, sweep
 
 _LAZY = {"boussinesq", "corotating", "sweep"}
 
-__all__ = ["boussinesq", "cascade", "cmz_budget", "corotating", "modulation",
-           "steering", "sweep"]
+__all__ = ["ab_schedule", "boussinesq", "cascade", "cmz_budget", "corotating",
+           "modulation", "steering", "sweep"]
 
 
 def __getattr__(name: str):
