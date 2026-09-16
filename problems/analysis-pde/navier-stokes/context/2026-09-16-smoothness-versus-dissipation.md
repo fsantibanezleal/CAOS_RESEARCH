@@ -85,6 +85,26 @@ The general trade-off is one line, `alpha < delta / (4 Q)`. Our own cap of `1/4`
 corner `delta -> 1`, `Q -> 1`; the published smooth-forcing design sits at `delta = 1/8`, `Q >= 200`,
 seven orders of magnitude away, and both budgets were spent on the smoothness of the force.
 
+## 4b. The converse bound: what one derivative costs
+
+Read the same two relations the other way. Their rule is `120 k <= Q`, and the dissipation constraint
+is `alpha < delta / (4 Q)`, so controlling `k` derivatives of the force costs
+
+    alpha < delta / (480 k),
+
+and even with the most generous amplitude margin the amplification identity allows, `delta -> 1`,
+
+    k = 1  =>  alpha < 1/480 = 0.00208.
+
+That is **22 times below the threshold already proved for a `C^{1,eps}` force** by
+Cordoba-Martinez-Zoroa-Zheng (0.0463 in our convention), and 178 times below it at their own margin
+`delta = 1/8`.
+
+So the obstruction is not the published constants. `Q* >= 200` and `delta = 1/8` are design choices
+that could be retuned; the exchange rate of 120 units of frequency ratio per derivative is what keeps
+this correction scheme out of the regime that is already proved. A hypodissipative version has to
+change the rate, which means changing the correction hierarchy itself, not the constants around it.
+
 ## 5. The prediction, and how it fails
 
 **Prediction.** A hypodissipative version of the Alpoge-Buckmaster mechanism must do at least one of:

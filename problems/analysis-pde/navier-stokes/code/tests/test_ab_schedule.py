@@ -109,3 +109,28 @@ def test_the_closed_form_stall_stage_agrees_with_a_direct_search():
         direct = next(q for q in range(1, 20_000)
                       if alpha >= s.alpha_max(q, favourable_angle=False))
         assert closed == direct
+
+
+def test_one_derivative_of_force_regularity_caps_the_exponent_far_below_the_published_one():
+    """The sharpened form: the correction rate, not the constants, is what blocks it."""
+    assert A.alpha_max_for_derivatives(1) == pytest.approx(1.0 / 480.0)
+    assert A.alpha_max_for_derivatives(1) == pytest.approx(0.002083, rel=1e-3)
+    assert A.alpha_max_for_derivatives(1, delta=0.125) == pytest.approx(0.125 / 480.0)
+    assert A.alpha_max_for_derivatives(2) == pytest.approx(1.0 / 960.0)
+    with pytest.raises(ValueError):
+        A.alpha_max_for_derivatives(0)
+    with pytest.raises(ValueError):
+        A.alpha_max_for_derivatives(1, delta=1.5)
+
+
+def test_the_gap_to_the_published_threshold_is_more_than_twentyfold():
+    gap = A.gap_to_published_threshold(k=1, delta=1.0)
+    assert gap > 20.0
+    assert gap == pytest.approx(22.2, rel=5e-2)
+    # and at their own margin it is worse by exactly 1/delta, since the bound is linear
+    # in delta (the first draft of this test asserted a strict inequality where the
+    # relation is an identity, and failed by one part in ten thousand)
+    assert A.gap_to_published_threshold(k=1, delta=A.DELTA_PUBLISHED) == pytest.approx(
+        gap / A.DELTA_PUBLISHED)
+    assert A.gap_to_published_threshold(k=1, delta=A.DELTA_PUBLISHED) == pytest.approx(
+        177.9, rel=5e-3)
