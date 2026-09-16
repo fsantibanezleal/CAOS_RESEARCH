@@ -214,3 +214,27 @@ characters in tracked text, verified against a planted corruption.
 
 Wiki pages 6 (where the published threshold comes from) and 7 (steering, and what a holding interval
 costs) authored with the results.
+
+
+## Done, 2026-09-16 (round 3): the model's cap is unreachable, and a dated prediction
+
+**NS-016, half closed.** Generalizing our cascade to any schedule `log lambda_{q+1} = R log lambda_q`
+moves only C1, which becomes `R < p`; the threshold `alpha_c = 1/(4p)` stands. Importing nothing but
+the admissible-ratio interval from the published force budget then caps it at `1/(4 R_-(alpha))`, and
+above the published threshold no ratio is admissible at all. So EXP-003's cap of `1/4` is correct for
+the model and vacuous as a bound on the real problem: the schedules that approach it are excluded
+before dissipation ever binds. What is still missing is stated precisely (a localization scale, the
+residual of the ansatz, a norm) rather than guessed.
+
+**NS-017, a prediction, dated and falsifiable.** Applying our dissipative extension to the
+Alpoge-Buckmaster schedule as published: their (3.8) gives a layer stopping at `lambda^(-7/8)`, so the
+amplitude margin is `delta = 1/8`, and their `120 k_q <= Q_q` ties the smoothness of the force to the
+frequency ratio. Our growth condition is then `alpha < delta/(4 Q_q)`, tighter by `Q_{q-1}` with their
+own insertion angle. Since `Q_q = Q* + q` is unbounded, no positive alpha survives every stage: the
+first stage already fails above `1.55e-04`, and at the exponent where hypodissipative blowup is
+already proved with a rough force this schedule could not control even one derivative. The trade-off
+is `alpha < delta/(4 Q)`, with our own cap of `1/4` sitting in the corner `delta -> 1`, `Q -> 1`.
+Recorded with its falsification criterion before their hypodissipative paper appeared; NS-010 checks
+it. Wiki page 8, 13 numeric tests plus a CI guard.
+
+**Round 2 merged** to develop as PR #278 with CI green.

@@ -112,7 +112,7 @@ convergence loop to ride out Windows read-contention, 5 passes 34->22->11->9->5-
 2. DONE 2026-09-14, in corrected form: the published threshold is derived from the construction's
    own exponent budget (binding constraint: outer velocity on the inner layer, 4.3.4). Our cascade
    model lacks that constraint; adding a force-regularity budget to it is the model-side follow-up.
-3. NS-016: give our cascade model a force-regularity budget. Round 2 showed why this matters more
+3. NS-016 (half done): give our cascade model a force-regularity budget of its own. Round 2 showed why this matters more
    than it looked: the published budget excludes `R = 1` outright, and our model's schedule IS
    geometric, so a rigorous version of it would have to move to `M_{n+1} = M_n^R` first.
 4. NS-010: compare exponents the day the Alpoge-Buckmaster hypodissipative paper appears.
@@ -182,3 +182,13 @@ next-round scope, not blockers.
 - **A demodulation window has to fit under the 2/3 dealiasing limit**, not just the wave. A wave at
   0.94 of the limit passes a naive check while its window is clipped, and the only symptom is
   systematically low rates.
+
+- **Our cap of 1/4 is unreachable, and that is now the headline about our own model.** It comes from
+  the dissipation constraint alone; the schedules that approach it need a frequency ratio the
+  published force budget excludes. Do not quote 1/4 as a bound on the real problem.
+- **The trade-off to quote instead is `alpha < delta/(4 Q)`**, amplitude margin against frequency
+  ratio. The smooth-forcing design spends both on smoothness (`delta = 1/8`, `Q >= 200`); our cap is
+  the opposite corner.
+- **There is a dated prediction on the record** (NS-017, wiki page 8) about the unreleased
+  Alpoge-Buckmaster hypodissipative paper. When it appears, check it before anything else, and record
+  the outcome either way.
