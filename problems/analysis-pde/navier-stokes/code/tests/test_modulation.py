@@ -139,7 +139,10 @@ def test_published_threshold_corresponds_to_a_clean_frequency_exponent():
           = 9 (22 + 8 sqrt 7) / (2 * 36) = (22 + 8 sqrt 7) / 8 = 11/4 + sqrt 7.
 
     A consistency statement, not a derivation: any threshold corresponds to some p.
-    What is not generic is that this p is a clean algebraic number.
+    CORRECTED 2026-09-14: this identity is tautological along the published family
+    (p = 1/(2 alpha) at every alpha under saturated dissipation) and the clean form is
+    automatic in Q(sqrt 7). It is kept as an arithmetic regression test only; the real
+    account of alpha_0 is `nslib.cmz_budget`.
     """
     p = cascade.implied_p(cascade.ALPHA0_CMZ)
     assert p == pytest.approx(11.0 / 4.0 + math.sqrt(7.0), rel=1e-13)

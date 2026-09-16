@@ -1,0 +1,101 @@
+{
+  "args": {
+    "part": "B",
+    "n": 512,
+    "device": "cuda",
+    "A0": 4.0,
+    "lam0": 1,
+    "k1": 4,
+    "k2": 31,
+    "Lambda": 2.5,
+    "cp": 3.0,
+    "profile": "sin2",
+    "L_growth": 5.0,
+    "hold": 3.0,
+    "Theta0": -1e-05,
+    "Theta0_D": -0.00025,
+    "cutoff": 8.0,
+    "dt": 0.002,
+    "dt_ode": 0.0002,
+    "n_mu": 200,
+    "alpha": 0.5,
+    "damping_fraction": 0.2,
+    "lam2": 256,
+    "phi2": 0.5235987755982988,
+    "Theta2": 1e-09,
+    "measure2": 0.6,
+    "settle2": 0.6,
+    "mask_frac": 0.35,
+    "out": "../experiments/EXP-005-steered-cycle/result-B-inviscid.json"
+  },
+  "part": "B",
+  "wall_seconds": 1772.9,
+  "mu_star": 0.6118866548691901,
+  "design": {
+    "Lambda": 2.5,
+    "cp": 3.0,
+    "profile": "sin2",
+    "satisfies_lemma_37_condition": false
+  },
+  "wave": {
+    "k": [
+      4,
+      31
+    ],
+    "lambda": 31.25699921617557,
+    "sin_s": 0.12797133763019677,
+    "Gamma": 0.25594267526039355,
+    "a": 0.01637666325486182
+  },
+  "main": {
+    "t_b": 25.005599372940456,
+    "Gamma": 0.25594267526039355,
+    "damping": 0.0,
+    "background_drift_under_rotating_gravity": 1.2921212428068528e-15,
+    "background_vorticity_under_rotating_gravity": 0.0,
+    "landing_pde": 0.14002170602711736,
+    "landing_ode": 2.0151126804577205e-13,
+    "gain_across_steering_pde": -31.88034766139956,
+    "gain_across_steering_ode": 2.797238153820676,
+    "gain_relative_error": 12.397080229960046,
+    "Theta_at_t1_pde": -0.0015073581785073756,
+    "Theta_at_tb_pde": 0.048055102781069114,
+    "Theta_at_tb_ode": -0.004151443468861276,
+    "Theta_absolute_ratio_pde_over_ode": -11.575516598387027,
+    "hold_theta_relative_drift": 726.3081400531596,
+    "hold_omega_over_peak": 1.0,
+    "hold_decay_rate": NaN,
+    "ratio_v_pde": -2.4558037477118493,
+    "ratio_v_ode": -1.2020930699212667e-13
+  },
+  "endpoint_map": {
+    "mu_0": {
+      "mu": 0.0,
+      "landing_pde": 0.09150724347951857,
+      "landing_ode": 1.0
+    },
+    "mu_star": {
+      "mu": 0.6118866548691901,
+      "landing_pde": 0.14002170602711736,
+      "landing_ode": 2.0151126804577205e-13
+    },
+    "mu_2star": {
+      "mu": 1.2237733097383803,
+      "landing_pde": 0.2050205512669298,
+      "landing_ode": 0.9513378904639225
+    }
+  },
+  "endpoint_max_gap": 0.9084927565204814,
+  "dt_half_relative_shift_of_gain": 0.6952859621668682,
+  "negative_control_no_steering_landing": NaN,
+  "gates": {
+    "B1_landing": false,
+    "B1_gain": false,
+    "B2_endpoint_map": false,
+    "B3_hold": false,
+    "B4_dt": false,
+    "controls_fail_as_required": false
+  },
+  "all_pass": false,
+  "_note": "Run at the parameters committed in the hypothesis (k = (4, 31), sin s = 0.128, Lambda = 2.5, 36.7 time units). It fails every gate. diagnose_hold.py identified the cause: the background is Rayleigh-Taylor unstable at rate sqrt(A) = 2.0 while the steered layer grows at only sqrt(A) sin s = 0.256, so over this schedule modes at favourable angles, seeded by round-off, gain about 72 e-folds and take the run over (max |theta| goes from 4.0 to 10.0; horizontal neighbours from 1e-07 to 3e-02). Preserved as the primary committed-parameter result. The repaired run, with the insertion angle raised so the layer grows at half the background's own rate, is result-B-inviscid.json."
+}

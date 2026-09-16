@@ -12,8 +12,15 @@ What it flags (precise, to avoid punishing legitimate glyphs):
     NOT touching functional glyphs products do use: the info mark U+24D8 (the ADR-0058 modal button),
     the middot U+00B7 (Felipe's preferred separator), arrows like U+2197, check/cross marks, stars.
 
+  - STRAY CONTROL CHARACTERS: BEL, BS, VT, FF and ESC anywhere in a tracked text file. These do not
+    come from typing; they come from a shell heredoc interpolating a non-raw Python string, where
+    "\\alpha" becomes BEL + "lpha" and "\\frac" becomes FF + "rac". The damage is invisible in most
+    renderers and the surrounding prose still reads, so it ships unless something looks for it. TAB
+    is allowed (Makefiles, Go), and so is anything above U+001F.
+
 Not flagged: the ASCII double hyphen "--" (ubiquitous and legitimate in CLI flags and code) and the
-en-dash U+2013. The rule as stated is em-dash + emoji; keep enforcement to exactly that.
+en-dash U+2013. The rule as stated is em-dash + emoji; keep enforcement to exactly that, plus the
+control-character check above, which is a corruption detector rather than a style rule.
 
 Scanned set = git-tracked text files only. Exit 1 on any hit, printing file:line:col.
 """
@@ -27,6 +34,8 @@ ROOT = Path(__file__).resolve().parent.parent
 SELF = "scripts/check_content_standards.py"
 
 BANNED_DASHES = {0x2014, 0x2015}  # em dash, horizontal bar
+# BEL, BS, VT, FF, ESC: the signature of \a, \b, \v, \f, \e escaping in a heredoc.
+STRAY_CONTROLS = {0x07, 0x08, 0x0B, 0x0C, 0x1B}
 EMOJI_SELECTOR = 0xFE0F
 
 
@@ -63,16 +72,22 @@ def main() -> int:
                     hits.append(f"  {rel}:{lineno}:{col}  em-dash (U+{cp:04X})")
                 elif is_emoji(cp):
                     hits.append(f"  {rel}:{lineno}:{col}  emoji (U+{cp:04X} {ch!r})")
+                elif cp in STRAY_CONTROLS:
+                    hits.append(f"  {rel}:{lineno}:{col}  stray control character "
+                                f"(U+{cp:04X}), usually a backslash escape eaten by a heredoc")
 
     if not hits:
-        print("check_content_standards: OK, no em-dash or emoji in tracked content.")
+        print("check_content_standards: OK, no em-dash, emoji or stray control character "
+              "in tracked content.")
         return 0
 
     print("::error::banned characters found (no em-dash, no emoji in product content, ADR-0067):")
     for h in hits:
         print(h)
     print("\nReplace an em-dash with a comma, colon, semicolon, period, parentheses, or a middot "
-          "as the sense requires. Remove emojis. This applies to code, docs, and UI strings alike.")
+          "as the sense requires. Remove emojis. This applies to code, docs, and UI strings alike. "
+          "A stray control character means a backslash escape was interpreted: rewrite the file from "
+          "a script with raw strings rather than from a shell heredoc.")
     return 1
 
 

@@ -28,6 +28,13 @@ case produced by **OpenAI**. Nothing in this problem is our mechanism.
 5. [What machine verification does and does not establish](05-what-machine-verification-establishes.md).
    The Lean certificates, why third-party provenance of the statement is the strongest fact in them,
    what we audited by hand, and what a faithful statement still does not give you.
+6. [Where the published threshold comes from](06-where-the-published-threshold-comes-from.md).
+   The Cordoba-Martinez-Zoroa-Zheng exponent budget, the four constraints, the one that binds, and why
+   their own heuristic overshoots by exactly one constraint swap.
+7. [Steering, and what a holding interval costs](07-steering-and-the-holding-interval.md).
+   The control that returns a grown layer to rest, transcribed and run against the PDE in a
+   co-rotating frame; the exact cost of a holding interval under dissipation; and the fact that the
+   cascade always runs against a faster instability of its own background.
 
 ## The one-paragraph version
 

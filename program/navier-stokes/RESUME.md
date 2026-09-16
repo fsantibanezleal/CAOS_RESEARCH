@@ -1,7 +1,7 @@
 # navier-stokes: RESUME (zero-loss handoff)
 
-Updated 2026-09-13 (continuation: EXP-004 pattern confirmed; EXP-001 fully CONFIRMED, both
-Navier-Stokes and Euler build clean). First read for any fresh session, per methodology 07. Derived
+Updated 2026-09-14 (round 2: published threshold derived exactly; round-1 calibration withdrawn;
+EXP-005 steered cascade next). First read for any fresh session, per methodology 07. Derived
 view: on conflict, the context dossiers win.
 
 ## 1. State in one screen
@@ -32,7 +32,10 @@ experiments. What we hold:
 - **An exact transcription** of the Alpoge-Buckmaster modulation system, with the growth rate settled
   by computation rather than by reading the PDF, now verified against a full nonlinear PDE simulation.
 - **A derived obstruction and its calibration**: `alpha_c = 1/(4p)`, and the published hypodissipative
-  threshold corresponds to `p = 11/4 + sqrt 7` exactly. A consistency relation, not a derivation.
+  threshold corresponds to `p = 11/4 + sqrt 7` exactly. CORRECTED 2026-09-14: that identity is
+  tautological (it holds at every alpha along the published family). The published threshold is
+  now DERIVED exactly from the construction's outer-velocity constraint (their 4.3.4), with the
+  paper's own frequency ratio as the optimum; see `context/2026-09-14-threshold-reconstruction.md`.
 
 ## 2. The objects table
 
@@ -78,34 +81,44 @@ giving eigenvalues `-nu (lambda r)^(2 alpha) +/- sqrt(A) sin(phi)` and the frequ
 | EXP-002 | does the reduced model predict the Boussinesq PDE? | **CONFIRMED** |
 | EXP-003 | does the repaired cascade model predict the published threshold? | **CONFIRMED** |
 | EXP-004 | does the multi-layer handoff survive in the PDE? | pattern **CONFIRMED** (frozen two-scale, corr 0.999 vs base 0.21); slope systematic characterized; dynamical companion inconclusive |
+| EXP-005 | does the growth, steering and hold cycle work in the PDE? | **DECIDED IN PART**: A, B, C pass (gain to 3e-06, landing 3.7e-04, hold decay to 0.97 percent); committed parameters REFUTED by the background's own instability; D confirms the handoff pattern at 0.808 against a 0.392 control, below its 0.9 gate |
+| EXP-006 | does the Lean KERNEL accept the certificate, not just the elaborator? | **CONFIRMED**: both halves replayed from an EMPTY environment (NavierStokes 2,972 s, Euler 1,588 s, exit 0) |
 
 EXP-002: peak rate to 4e-05 relative, band structure present, frequency independence to 2.7e-04 across
 `lambda` in [20, 160], derived dissipative term to 2.6e-04 absolute, three negative controls all
 failing at a non-degenerate angle.
 
 EXP-003: `alpha_c = 1/(4p)` to 2.59e-06 against the horizon-corrected prediction; both repaired
-omissions non-binding; `p = 11/4 + sqrt 7` exactly at the published threshold; 1,000,000 schedules with
-zero violations.
+omissions non-binding; 1,000,000 schedules with zero violations. Its H3 (`p = 11/4 + sqrt 7` at the
+published threshold) is arithmetically true but tautological, corrected 2026-09-14 in its verdict.
 
 ## 4. In flight
 
-Nothing running. EXP-001 fully closed on 2026-09-13: the whole certificate builds clean (11,424
-jobs, 0 sorryAx). The Euler build needed a two-part cache repair (unpack! to fix disk-storm
-corruption, then an incremental convergence loop to ride out Windows read-contention, 5 passes
-34->22->11->9->5->0). Logs: `E:/_Temp/lean-build/build-pass*.log`, loop `E:/_Temp/lean-build-loop.sh`.
+Nothing running. EXP-006 closed on 2026-09-16: both halves replayed clean
+(`E:/_Temp/exp006-fresh.sh`, logs and exit codes in `E:/_Temp/exp006/`, runner archived in
+`code/exp006-fresh.sh`).
+
+EXP-001 closed on 2026-09-13: the whole certificate BUILDS clean (11,424 jobs, 0 sorryAx). The Euler
+build needed a two-part cache repair (unpack! to fix disk-storm corruption, then an incremental
+convergence loop to ride out Windows read-contention, 5 passes 34->22->11->9->5->0). Logs:
+`E:/_Temp/lean-build/build-pass*.log`, loop `E:/_Temp/lean-build-loop.sh`.
 
 ## 5. Next actions
 
-1. **The fully dynamical multi-layer test WITH steering.** EXP-004 Part B confirmed the handoff on a
-   FROZEN two-scale surrogate (the rate follows the total gradient, corr 0.999). The dynamical version
-   needs the steering that freezes each layer during the next layer's growth; that is a larger build
-   and the natural next step.
-2. Derive `p` from the construction's own localization and correction requirements. That is what would
-   turn the consistency relation into a theorem about the model.
-3. NS-010: compare exponents the day the Alpoge-Buckmaster hypodissipative paper appears.
+1. DONE 2026-09-15 by EXP-005 part D: layer 1 grown, STEERED to rest, deposit 0.92 of the base
+   gradient, layer 2 then following the total gradient at 0.808 against a 0.392 control. What is still
+   open is MANY layers, where the time compression starts to matter, and the correlation gate of 0.9
+   that this run did not reach.
+2. DONE 2026-09-14, in corrected form: the published threshold is derived from the construction's
+   own exponent budget (binding constraint: outer velocity on the inner layer, 4.3.4). Our cascade
+   model lacks that constraint; adding a force-regularity budget to it is the model-side follow-up.
+3. NS-016: give our cascade model a force-regularity budget. Round 2 showed why this matters more
+   than it looked: the published budget excludes `R = 1` outright, and our model's schedule IS
+   geometric, so a rigorous version of it would have to move to `M_{n+1} = M_n^R` first.
+4. NS-010: compare exponents the day the Alpoge-Buckmaster hypodissipative paper appears.
 
-All four experiments are now closed with verdicts; EXP-001 fully confirmed both certificate halves.
-The two items above are next-round scope, not blockers.
+Six experiments are closed with verdicts. The open items above are
+next-round scope, not blockers.
 
 ## 6. Where everything lives
 
@@ -146,9 +159,12 @@ The two items above are next-round scope, not blockers.
   pinned by EXP-002. Do not read it as the rate being 1.36x too big.
 - **The bare threshold question is NOT ours.** Cordoba, Martinez-Zoroa and Zheng published it in 2024
   (ARMA 2026): blowup for every `|grad|^alpha` exponent below `(22 - 8 sqrt 7)/9`, with rough forcing.
-  Our cap is consistent with it and loose by 5.40. What is ours is the calibration relation, and it is
-  a consistency statement rather than a derivation. Alpoge and Buckmaster additionally have an
-  unreleased hypodissipative paper, presumably the smooth-forcing upgrade.
+  Our cap is consistent with it and loose by 5.40. The round-1 "calibration relation" was
+  tautological (withdrawn 2026-09-14). What we hold instead is the exact reconstruction of their
+  constant from their own exponent budget (`nslib/cmz_budget.py`): the outer-velocity constraint
+  binds, localization is slack. Do not revive the calibration as evidence of anything. Alpoge and
+  Buckmaster additionally have an unreleased hypodissipative paper, presumably the smooth-forcing
+  upgrade.
 - **A finite horizon cannot see a late stall.** A bisection truncated at `Q` stages overreports the
   threshold by `1 + 2 log(1/nu) / (g (Q-1))`; at `nu = 1e-10`, `Q = 400` that is 11.5 percent. The
   binding stage is `Q-1`, not `Q`, and the difference is not cosmetic.
@@ -156,3 +172,13 @@ The two items above are next-round scope, not blockers.
   layer or pulse mechanism as ours.
 - The OpenAI announcement and the Buckmaster statement disagree about the history. The source dossier
   records both without taking a position; keep it that way.
+
+
+- **The cascade runs against a faster instability of its own background** (EXP-005). The background is
+  Rayleigh-Taylor unstable at `sqrt(A)`; a layer inserted at angle `s` grows at `sqrt(A) sin s`. Any
+  realization in a plain periodic box must keep the total time short enough that round-off-seeded
+  parasites stay below the layer, or the run is destroyed by its own background rather than by the
+  mechanism. The real construction is protected by localization and forcing, not by speed.
+- **A demodulation window has to fit under the 2/3 dealiasing limit**, not just the wave. A wave at
+  0.94 of the limit passes a naive check while its window is clipped, and the only symptom is
+  systematically low rates.

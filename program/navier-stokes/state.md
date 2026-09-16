@@ -6,8 +6,9 @@
 | 2026-09-11 | scoped | opened | Context dossiers persisted at `3f8d76d`; `plan.md`, `state.md`, `backlog.md`, `RESUME.md` written; strategy chosen and scope limits declared |
 | 2026-09-12 | opened | exploring | Plan validated by Felipe; Phase 0 gate closed; EXP-002 and EXP-003 both CONFIRMED with controls; wiki authored |
 
-- **State:** exploring (2026-09-12). Plan validated by Felipe on 2026-09-12 with the instruction to
-  execute all of it. Two experiments closed with verdicts; EXP-001 (Lean replay) is running.
+- **State:** exploring (since 2026-09-12; heartbeat 2026-09-14). Plan validated by Felipe on
+  2026-09-12 with the instruction to execute all of it. EXP-001 to EXP-004 closed with verdicts;
+  round 2 derived the published threshold and opened EXP-005 (steered cascade).
 - **Area:** analysis-pde. This is the first problem opened in that area; it was previously an area
   name with nothing on disk.
 - **Feasibility:** the portfolio row stays B. The Clay problem is not our target and the 2026-09-05
@@ -86,6 +87,7 @@ the repair was built to fix turn out NOT to move the exponent: the time budget i
 hold-interval damping gives the same exponent as growth positivity because the remaining time shrinks
 at exactly the rate the growth rate rises. Inverting at the published threshold gives
 `p = 11/4 + sqrt 7` exactly, to 6.2e-15. Stated as a consistency relation, not a derivation.
+(Corrected 2026-09-14: tautological along the published family; see the 2026-09-14 section.)
 
 **NS-004.** The unforced Euler certificate audited and found faithful, with maximality pinning the
 lifespan in both directions, local regularity before the endpoint, nonzero compactly supported data,
@@ -145,5 +147,70 @@ remaining items are next-round scope:
 1. The fully dynamical multi-layer test WITH steering, so each grown layer is held frozen while the
    next grows. EXP-004 confirmed the physics on a frozen surrogate; the steered dynamical cascade is
    the larger open build.
-2. Derive `p = 11/4 + sqrt 7` from the construction's own localization and correction requirements,
-   which would turn the consistency relation into a theorem about the model.
+2. (Done 2026-09-14, see below.) The published threshold is derived from the construction's own
+   exponent budget; the round-1 calibration is withdrawn as tautological.
+
+## Done, 2026-09-14 (round 2, part 1): the published threshold, derived
+
+Reading Cordoba-Martinez-Zoroa-Zheng Sections 1.2.4 and 4 in full, the threshold
+`(22 - 8 sqrt 7)/9` is derived exactly from the construction's own exponent bookkeeping, with no fitted
+constants: with dissipation (4.3.5) and self-interaction (4.3.2) saturated, the binding constraint is
+the outer velocity acting on the inner layer (4.3.4), `4s < 2 + 3 alpha - 7 alpha R - 2/R`; its optimum
+over the frequency ratio is exactly the paper's `alpha R^2 = 2/7`, and `s = 0` there is exactly
+`alpha_0`. Localization (4.3.3) is slack by `(sqrt(2 alpha/7) - alpha)/2`. The paper's heuristic binds on
+localization instead and gives `5 - 2 sqrt 6`, so the heuristic-to-proof gap is exactly a swap of the
+binding constraint. Code `nslib/cmz_budget.py` (30 tests), exact sympy guard in CI
+(`tests/test_navier_stokes_threshold.py`), dossier `context/2026-09-14-threshold-reconstruction.md`.
+
+**Correction recorded in place** in EXP-003's verdict, `cascade.py`, wiki page 4, the experiments
+index, RESUME and test docstrings: the round-1 calibration `p = 11/4 + sqrt 7` is tautological, because
+the construction saturates the dissipation constraint at every alpha, and its clean form is automatic
+in `Q(sqrt 7)`. Both reasons previously given for it being non-empty are withdrawn.
+
+
+## Done, 2026-09-15 (round 2, part 2): the steering cycle, and a kernel replay
+
+**EXP-005, DECIDED IN PART.** The control that returns a grown layer to rest is transcribed from
+Alpoge-Buckmaster Lemmas 3.7 and 3.8 (`nslib/steering.py`, kept free of torch so CI guards it) and
+realized in the PDE in a co-rotating frame, where the construction's common rotation becomes a
+rotating gravity direction on the torus and a low-frequency force holds the base
+(`nslib/corotating.py`). Gate A passes every assertion of Lemma 3.7. On a background flattened so its
+gradient is affine to fourth order, the whole growth, steering and hold cycle matches the reduced
+model to 3.06e-06 in the steering gain, lands the vorticity at 3.67e-04 of its peak, holds it there
+(0.36 percent drift), and reproduces the endpoint map at all three trial pulses to 4.7e-04; both
+negative controls fail as required. The dissipative cycle factorizes exactly as derived: reusing the
+INVISCID pulse still lands at 4.1e-04, the hold decays at `nu lambda^(2 alpha)` to 0.97 percent, and
+`e^(d t)` times the viscous run reproduces the inviscid one to 0.24 percent.
+
+**The committed-parameter run is refuted, and the reason is the finding.** The background is
+Rayleigh-Taylor unstable at `sqrt(A)` while the steered layer grows at `sqrt(A) sin s`, so at the
+committed insertion angle every parasite gained `1/sin s` times as many e-folds as the layer, about 72
+over the schedule, and the run was destroyed by its own background. Preserved with a note, plus a new
+parasite gate so this can never be reported as the layer's growth.
+
+**The dynamical handoff EXP-004 could not do.** Layer 1 grown, steered to rest, deposit 0.92 of the
+base gradient, then layer 2 grown on it: the local rate follows the TOTAL gradient at correlation
+0.808 against 0.392 for the base-only control. The committed 0.9 gate is NOT met and is reported as
+not met; the limit is measured (a reading window with an interior optimum, and separation 6 to 12
+moving 0.755 to 0.808).
+
+**EXP-006 CONFIRMED.** `leanchecker` ships with the toolchain since Lean v4.28.0 and the certificate
+pins v4.34.0-rc2, so the kernel can re-check the certificate independently of the elaborator. Both
+halves replay CLEAN from an EMPTY environment, every constant in the closure and mathlib included:
+NavierStokes 2,972 s, Euler 1,588 s, exit 0, at most 6.4 GB resident. A per-module sweep was tried
+first and abandoned for a measured reason (80 minutes wall for 144 seconds of CPU, I/O bound, nothing
+finished), and the swap is recorded in the verdict.
+
+**Derived from the same budget, and new:** the admissible frequency ratios form an interval whose
+discriminant is exactly the polynomial whose root is `alpha_0`, so it closes to a single point at the
+threshold, and that point is the paper's own `R = sqrt(2/(7 alpha))`. Its lower end exceeds 1 at every
+positive alpha, with margin exactly `-alpha` at `R = 1`: a GEOMETRIC cascade, which is what our own
+model uses, is inadmissible at any viscosity. Super-geometric frequency growth is forced, not
+preferred.
+
+**A gate added after a near miss.** Writing wiki page 6 through a shell heredoc turned every `\alpha`
+into a BEL byte; the page still rendered. `scripts/check_content_standards.py` now flags stray control
+characters in tracked text, verified against a planted corruption.
+
+Wiki pages 6 (where the published threshold comes from) and 7 (steering, and what a holding interval
+costs) authored with the results.
