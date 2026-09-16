@@ -166,3 +166,38 @@ binding constraint. Code `nslib/cmz_budget.py` (30 tests), exact sympy guard in 
 index, RESUME and test docstrings: the round-1 calibration `p = 11/4 + sqrt 7` is tautological, because
 the construction saturates the dissipation constraint at every alpha, and its clean form is automatic
 in `Q(sqrt 7)`. Both reasons previously given for it being non-empty are withdrawn.
+
+
+## Done, 2026-09-15 (round 2, part 2): the steering cycle, and a kernel replay
+
+**EXP-005, DECIDED IN PART.** The control that returns a grown layer to rest is transcribed from
+Alpoge-Buckmaster Lemmas 3.7 and 3.8 (`nslib/steering.py`, kept free of torch so CI guards it) and
+realized in the PDE in a co-rotating frame, where the construction's common rotation becomes a
+rotating gravity direction on the torus and a low-frequency force holds the base
+(`nslib/corotating.py`). Gate A passes every assertion of Lemma 3.7. On a background flattened so its
+gradient is affine to fourth order, the whole growth, steering and hold cycle matches the reduced
+model to 3.06e-06 in the steering gain, lands the vorticity at 3.67e-04 of its peak, holds it there
+(0.36 percent drift), and reproduces the endpoint map at all three trial pulses to 4.7e-04; both
+negative controls fail as required. The dissipative cycle factorizes exactly as derived: reusing the
+INVISCID pulse still lands at 4.1e-04, the hold decays at `nu lambda^(2 alpha)` to 0.97 percent, and
+`e^(d t)` times the viscous run reproduces the inviscid one to 0.24 percent.
+
+**The committed-parameter run is refuted, and the reason is the finding.** The background is
+Rayleigh-Taylor unstable at `sqrt(A)` while the steered layer grows at `sqrt(A) sin s`, so at the
+committed insertion angle every parasite gained `1/sin s` times as many e-folds as the layer, about 72
+over the schedule, and the run was destroyed by its own background. Preserved with a note, plus a new
+parasite gate so this can never be reported as the layer's growth.
+
+**The dynamical handoff EXP-004 could not do.** Layer 1 grown, steered to rest, deposit 0.92 of the
+base gradient, then layer 2 grown on it: the local rate follows the TOTAL gradient at correlation
+0.808 against 0.392 for the base-only control. The committed 0.9 gate is NOT met and is reported as
+not met; the limit is measured (a reading window with an interior optimum, and separation 6 to 12
+moving 0.755 to 0.808).
+
+**EXP-006 opened and running.** `leanchecker` ships with the toolchain since Lean v4.28.0 and the
+certificate pins v4.34.0-rc2, so the kernel can re-check the certificate independently of the
+elaborator. The Navier-Stokes half replayed CLEAN from a fresh environment in 49 minutes (every
+constant in its closure, mathlib included); the Euler half is running.
+
+Wiki pages 6 (where the published threshold comes from) and 7 (steering, and what a holding interval
+costs) authored with the results.

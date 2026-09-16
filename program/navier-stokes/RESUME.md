@@ -81,6 +81,8 @@ giving eigenvalues `-nu (lambda r)^(2 alpha) +/- sqrt(A) sin(phi)` and the frequ
 | EXP-002 | does the reduced model predict the Boussinesq PDE? | **CONFIRMED** |
 | EXP-003 | does the repaired cascade model predict the published threshold? | **CONFIRMED** |
 | EXP-004 | does the multi-layer handoff survive in the PDE? | pattern **CONFIRMED** (frozen two-scale, corr 0.999 vs base 0.21); slope systematic characterized; dynamical companion inconclusive |
+| EXP-005 | does the growth, steering and hold cycle work in the PDE? | **DECIDED IN PART**: A, B, C pass (gain to 3e-06, landing 3.7e-04, hold decay to 0.97 percent); committed parameters REFUTED by the background's own instability; D confirms the handoff pattern at 0.808 against a 0.392 control, below its 0.9 gate |
+| EXP-006 | does the Lean KERNEL accept the certificate, not just the elaborator? | Navier-Stokes half replayed CLEAN from a fresh environment (49 min); Euler half running |
 
 EXP-002: peak rate to 4e-05 relative, band structure present, frequency independence to 2.7e-04 across
 `lambda` in [20, 160], derived dissipative term to 2.6e-04 absolute, three negative controls all
@@ -92,17 +94,17 @@ published threshold) is arithmetically true but tautological, corrected 2026-09-
 
 ## 4. In flight
 
-Nothing running. EXP-001 fully closed on 2026-09-13: the whole certificate builds clean (11,424
+EXP-006's Euler kernel replay (`E:/_Temp/exp006-fresh.sh`, logs in `E:/_Temp/exp006/`). EXP-001 fully closed on 2026-09-13: the whole certificate builds clean (11,424
 jobs, 0 sorryAx). The Euler build needed a two-part cache repair (unpack! to fix disk-storm
 corruption, then an incremental convergence loop to ride out Windows read-contention, 5 passes
 34->22->11->9->5->0). Logs: `E:/_Temp/lean-build/build-pass*.log`, loop `E:/_Temp/lean-build-loop.sh`.
 
 ## 5. Next actions
 
-1. **The fully dynamical multi-layer test WITH steering.** EXP-004 Part B confirmed the handoff on a
-   FROZEN two-scale surrogate (the rate follows the total gradient, corr 0.999). The dynamical version
-   needs the steering that freezes each layer during the next layer's growth; that is a larger build
-   and the natural next step.
+1. DONE 2026-09-15 by EXP-005 part D: layer 1 grown, STEERED to rest, deposit 0.92 of the base
+   gradient, layer 2 then following the total gradient at 0.808 against a 0.392 control. What is still
+   open is MANY layers, where the time compression starts to matter, and the correlation gate of 0.9
+   that this run did not reach.
 2. DONE 2026-09-14, in corrected form: the published threshold is derived from the construction's
    own exponent budget (binding constraint: outer velocity on the inner layer, 4.3.4). Our cascade
    model lacks that constraint; adding a force-regularity budget to it is the model-side follow-up.
@@ -163,3 +165,13 @@ The two items above are next-round scope, not blockers.
   layer or pulse mechanism as ours.
 - The OpenAI announcement and the Buckmaster statement disagree about the history. The source dossier
   records both without taking a position; keep it that way.
+
+
+- **The cascade runs against a faster instability of its own background** (EXP-005). The background is
+  Rayleigh-Taylor unstable at `sqrt(A)`; a layer inserted at angle `s` grows at `sqrt(A) sin s`. Any
+  realization in a plain periodic box must keep the total time short enough that round-off-seeded
+  parasites stay below the layer, or the run is destroyed by its own background rather than by the
+  mechanism. The real construction is protected by localization and forcing, not by speed.
+- **A demodulation window has to fit under the 2/3 dealiasing limit**, not just the wave. A wave at
+  0.94 of the limit passes a naive check while its window is clipped, and the only symptom is
+  systematically low rates.
