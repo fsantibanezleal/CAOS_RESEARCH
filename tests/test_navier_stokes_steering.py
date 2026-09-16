@@ -29,10 +29,13 @@ from nslib import steering as S  # noqa: E402
 
 # Their (3.9) and (3.24) with c_p = 3 and the sin-squared profile: Lambda = 2 c_p H = 12.
 PAPER = S.SteeringDesign(Lam=12.0, cp=3.0, profile="sin2")
+# Their (3.9) also bounds the insertion angle: c_p Lambda H sin(s) <= 1/4.
+INSERTION_ANGLE = 1.0 / (4.0 * PAPER.cp * PAPER.Lam * PAPER.H)
 
 
 def test_the_design_used_is_the_one_the_lemma_covers():
     assert PAPER.satisfies_lemma_37_condition
+    assert PAPER.cp * PAPER.Lam * PAPER.H * INSERTION_ANGLE <= 0.25 + 1e-12
     assert PAPER.H == pytest.approx(2.0, abs=1e-6)
     assert PAPER.tau_b == pytest.approx(1.0 + 1.0 / 12.0)
 
@@ -58,8 +61,14 @@ def test_the_pulse_returns_the_vorticity_and_keeps_the_temperature():
     false. A layer that lost its temperature gain would hand the next layer nothing.
     """
     lam = math.hypot(4, 31)
-    stage = S.FirstStage(A=4.0, lam=lam, sin_s=4.0 / lam, design=PAPER,
+    stage = S.FirstStage(A=4.0, lam=lam, sin_s=INSERTION_ANGLE, design=PAPER,
                          mu=S.select_mu(PAPER), L_growth=5.0)
+    # The pulse drives the phase component to -mu Lambda H sin s, so an insertion angle
+    # that ignores their (3.9) asks for a component outside [-1, 1], which no unit vector
+    # has. An earlier version of this test used sin s = 0.128 with Lambda = 12, that is
+    # 2.04, and passed only because the ODE was allowed to follow a request the geometry
+    # cannot realize. Assert the constraint rather than rediscovering it.
+    assert not stage.clips()
     ts, Theta, Omega = stage.integrate(-1e-5, stage.t_b + 3.0 / stage.Gamma, 2e-4)
     j1 = int(round(stage.t1 / 2e-4))
     jb = int(round(stage.t_b / 2e-4))
@@ -79,7 +88,7 @@ def test_dissipation_is_an_exact_exponential_factor_on_the_cycle():
     it is the reason a holding interval costs exactly `exp(-nu lambda^(2 alpha) T)`.
     """
     lam = math.hypot(4, 31)
-    common = {"A": 4.0, "lam": lam, "sin_s": 4.0 / lam, "design": PAPER,
+    common = {"A": 4.0, "lam": lam, "sin_s": INSERTION_ANGLE, "design": PAPER,
               "mu": S.select_mu(PAPER), "L_growth": 5.0}
     inviscid = S.FirstStage(**common)
     viscous = S.FirstStage(**common, nu=1e-3, alpha=0.5)
