@@ -1,16 +1,19 @@
-# navier-stokes: an independent audit of the September 2026 blowup claims
+# navier-stokes: a ceiling for the smooth-forcing mechanism under dissipation
 
-First paper of the navier-stokes research series. Built from the experiment verdicts and context
+First paper of the navier-stokes research series. Its conclusion is Theorem 1: the published
+smooth-forcing design cannot carry a dissipation exponent above 5.38e-04, which is 86 times below
+what a rough-forcing construction already proves. v0.01 and v0.02 are superseded (v0.01 reported the
+audit without stating that bound; v0.02 stated it but its PDF printed the previous DOI). Built from the experiment verdicts and context
 dossiers of [`problems/analysis-pde/navier-stokes/`](../../../problems/analysis-pde/navier-stokes/),
 never from memory, per methodology 09.
 
 | | |
 |---|---|
-| version | 0.01 (2026-09-17) |
-| pages | 9 |
+| version | 0.03 (2026-09-17) |
+| pages | 11 |
 | build | `pdflatex main.tex` twice, MiKTeX; zero errors, zero overfull or underfull boxes |
 | labels | machine-verified `[MV]`, derived `[D]`, conjectural `[C]`, used in-text |
-| Zenodo | published 2026-09-17, version DOI [10.5281/zenodo.22820521](https://doi.org/10.5281/zenodo.22820521), concept DOI [10.5281/zenodo.22820520](https://doi.org/10.5281/zenodo.22820520) |
+| Zenodo | v0.03 published 2026-09-17, version DOI [10.5281/zenodo.22821242](https://doi.org/10.5281/zenodo.22821242), concept DOI [10.5281/zenodo.22820520](https://doi.org/10.5281/zenodo.22820520) (always latest) |
 
 ## What it contains, and where each part comes from
 
