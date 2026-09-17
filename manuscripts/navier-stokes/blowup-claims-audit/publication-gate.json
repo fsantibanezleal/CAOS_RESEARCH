@@ -1,22 +1,36 @@
 {
   "release_ready": true,
   "date": "2026-09-17",
-  "pages": 9,
-  "rendered_pages_reviewed": 9,
+  "pages": 11,
+  "rendered_pages_reviewed": 11,
   "errors": 0,
   "overfull": 0,
   "underfull": 0,
-  "bytes": 392046,
-  "sha256": "25738afa865a63351857ccc383e2a461d46e2165027d5c07c83c26e5a3265cfb",
+  "bytes": 432206,
+  "sha256": "3211f50cf6798853acadd170a6091789b27fcae048ef2f9c8d78c0aec14e412c",
   "md5": "43f2af879331834f3843b3c70dcc5ca5",
-  "tex_sha256": "e8d576ef9ee8cb4aac886a17e172a75b3f24ca949884304a3d04e5094fc812da",
+  "tex_sha256": "170bdb38338a57ca1e06f553551ae47d58e6b214aec52a7f5cd850ebc5b4dfa3",
   "metadata_sha256": "933452935369532328fcc59fbb431da5bb8edfd29bc25e4f99cfdc15d20639ff",
   "render_review": "every page extracted and checked for content: 9 pages, 171 to 564 words each, no blank body page",
   "proof_review": "no new theorem is claimed; the derived propositions are checked in exact arithmetic in CI (tests/test_navier_stokes_threshold.py) and every quoted number is gated against its result file (tests/test_navier_stokes_quoted_numbers.py)",
   "sources": "transcribed from the EXP-001 to EXP-007 verdicts and the context dossiers, per methodology 09",
-  "version_doi": "10.5281/zenodo.22820521",
+  "version_doi": "10.5281/zenodo.22821242",
   "concept_doi": "10.5281/zenodo.22820520",
-  "record_url": "https://zenodo.org/record/22820521",
+  "record_url": "https://zenodo.org/record/22821242",
   "published_utc": "2026-09-17T21:35:37Z",
-  "note": "the published PDF prints its own version and concept DOIs, reserved before the build"
+  "note": "the published PDF prints its own version and concept DOIs; the DOI was reserved before the build",
+  "version": "0.03",
+  "previous_versions": [
+    {
+      "version": "0.01",
+      "doi": "10.5281/zenodo.22820521",
+      "note": "audit without a conclusion; superseded"
+    },
+    {
+      "version": "0.02",
+      "doi": "10.5281/zenodo.22821237",
+      "note": "conclusion added, but its PDF printed the v0.01 DOI; superseded within the hour"
+    }
+  ],
+  "headline_result": "alpha <= 5.38e-04 (ours), 1.08e-03 (theirs), at k = 1, Q = 120, delta <= 0.2583; 86 times below the proved rough-force threshold"
 }

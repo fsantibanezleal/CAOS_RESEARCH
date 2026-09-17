@@ -8,9 +8,9 @@
 \usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
 \usepackage{orcidlink,fancyhdr}
 \hypersetup{
-  pdftitle={An independent audit of the September 2026 fluid blowup claims, with a regularity against dissipation trade-off},
+  pdftitle={A ceiling for the smooth-forcing blowup mechanism under fractional dissipation},
   pdfauthor={Felipe Santibanez-Leal},
-  pdfsubject={Kernel replay of the Lean certificates, reconstruction of the hypodissipative threshold, and a dated prediction},
+  pdfsubject={An upper bound of 5.4e-04 on the dissipation exponent the Alpoge-Buckmaster design can carry, with the audit that supports it},
   pdfkeywords={Navier-Stokes, Boussinesq, finite-time blowup, hypodissipative, Lean, kernel replay, exponent budget}
 }
 \newtheorem{theorem}{Theorem}[section]
@@ -25,23 +25,23 @@
 \newcommand{\MV}{\textsf{[MV]}}
 \newcommand{\Der}{\textsf{[D]}}
 \newcommand{\Con}{\textsf{[C]}}
-\newcommand{\versiondoi}{10.5281/zenodo.22820521}
+\newcommand{\versiondoi}{10.5281/zenodo.22821242}
 \newcommand{\conceptdoi}{10.5281/zenodo.22820520}
 \newcommand{\recordurl}{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/analysis-pde/navier-stokes}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Auditing the 2026 blowup claims\textperiodcentered\ v0.01}
+\fancyhead[R]{\small A ceiling for the smooth-forcing mechanism\textperiodcentered\ v0.03}
 \fancyfoot[C]{\thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
 \allowdisplaybreaks[1]
 
-\title{An independent audit of the September 2026 fluid blowup claims,\\
-and a trade-off between force regularity and dissipation}
+\title{A ceiling for the smooth-forcing blowup mechanism\\
+under fractional dissipation}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program\\
 \small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-09-17\\[2pt]\normalsize Version 0.01}
+\date{2026-09-17\\[2pt]\normalsize Version 0.03}
 
 \begin{document}
 \maketitle
@@ -50,7 +50,8 @@ and a trade-off between force regularity and dissipation}
 \fbox{\parbox{0.92\textwidth}{\centering
 \textbf{PREPRINT}\textperiodcentered\ not peer reviewed\textperiodcentered\ CAOS Research\\
 Navier-Stokes research series, first paper\\
-Version 0.01\textperiodcentered\ 2026-09-17\textperiodcentered\ CC BY 4.0\\
+Supersedes v0.01, which reported the same audit without a conclusion\\
+Version 0.03\textperiodcentered\ 2026-09-17\textperiodcentered\ CC BY 4.0\\
 Version DOI: \href{https://doi.org/\versiondoi}{\versiondoi}\\
 Concept DOI: \href{https://doi.org/\conceptdoi}{\conceptdoi} (latest version)\\
 \href{\recordurl}{Public sources, experiment verdicts, and reproduction harness}
@@ -58,30 +59,116 @@ Concept DOI: \href{https://doi.org/\conceptdoi}{\conceptdoi} (latest version)\\
 \end{center}
 
 \begin{abstract}
-In September 2026 two groups announced finite-time blowup results for fluid equations with
+In September 2026 two groups announced finite-time blowup for fluid equations with
 machine-checked certificates: Alpog\'e and Buckmaster for the two-dimensional inviscid Boussinesq
-system and three-dimensional Euler with smooth forcing, and OpenAI for three-dimensional
-Navier-Stokes with forcing at every positive viscosity together with unforced Euler. Both extend the
-multiscale layer program of C\'ordoba and Mart\'inez-Zoroa. This paper reports an independent audit
-and four quantitative consequences, none of which is a claim about the correctness of the
-mathematics beyond what a machine check establishes.
+system and three-dimensional Euler with \emph{smooth} forcing, and OpenAI for the
+three-dimensional
+Navier-Stokes at every positive viscosity together with unforced Euler. Both extend the multiscale
+layer program of C\'ordoba and Mart\'inez-Zoroa, whose hypodissipative branch already proves blowup
+for every exponent below $(22-8\sqrt7)/9$ with a merely $C^{1,\epsilon}$ force.
 
-First, the Lean certificate of the OpenAI development was rebuilt and then replayed through the Lean
-kernel from an empty environment, both halves, at the toolchain version the development pins. Second,
-the reduced amplitude system of the layer mechanism was transcribed, extended with fractional
-dissipation, and validated against direct pseudospectral simulation of the nonlinear equations,
-including the growth, steering and holding cycle that makes the cascade iterable. Third, the
-published hypodissipative threshold $(22-8\sqrt7)/9$ of C\'ordoba, Mart\'inez-Zoroa and Zheng is
-recovered exactly from their own exponent budget, with the binding constraint identified and with the
-consequence that the admissible frequency ratios form an interval closing precisely at that
-threshold, so that geometric cascades are excluded at every positive dissipation. Fourth, applying
-the dissipative reduction to the published smooth-forcing schedule gives a one-line trade-off
-$\alpha<\delta/(4Q)$ between the amplitude margin, the frequency ratio and the dissipation exponent,
-from which we record a dated and falsifiable prediction about the unreleased hypodissipative sequel.
+\textbf{Result.} The smooth-forcing design cannot be pushed into that regime. Its own correction
+hierarchy, seed rule and frequency-ratio rule, combined with the dissipative growth condition for its
+own amplitude system, cap the dissipation exponent it can carry at
+\[
+\alpha\le 5.38\times10^{-4}\quad\bigl(1.08\times10^{-3}\text{ in the }|\nabla|^{\alpha}\text{ convention}\bigr),
+\]
+attained at exactly one controlled derivative of the force. That is $86$ times below the exponent
+already proved with a rough force, and the gap is structural rather than a matter of constants: the
+amplitude margin saturates at $1/2$ however many derivatives are demanded, while the frequency ratio
+those derivatives cost grows at least linearly, and the exponent is the margin divided by four times
+the ratio.
 
-Each statement is labelled machine-verified \MV, derived \Der, or conjectural \Con. Two claims from
-an earlier round of this work are retracted in place and the retractions are kept.
+\textbf{Evidence.} The bound rests on one ingredient that is ours rather than transcribed, the
+dissipative extension of their amplitude system, so the paper reports the audit that makes it
+credible: the Lean certificate rebuilt and then replayed through the kernel from an empty
+environment, both halves; the amplitude system validated against direct pseudospectral simulation,
+including the growth, steering and holding cycle that makes the cascade iterable; the cost of
+localization to the damping law measured as $3.6\alpha/(\ell\lambda)$ and negligible at the
+separations in use; and the published threshold recovered exactly from its own exponent budget, which
+also shows that the admissible frequency ratios close at that threshold and exclude geometric
+cascades outright.
+
+Statements are labelled machine-verified \MV, derived \Der, or conjectural \Con. Two claims from an
+earlier round are retracted in place, and this version supersedes v0.01, which reported the same
+audit without stating a conclusion.
 \end{abstract}
+
+\section{The result}\label{sec:result}
+
+Write $\lambda_q$ for the frequency of layer $q$, $\delta$ for its \emph{amplitude margin}, meaning
+that a layer stops at temperature amplitude $\lambda_q^{-1+\delta}$ and therefore deposits a gradient
+$\lambda_q^{\delta}$ through the amplification identity $\nabla\vartheta(0)=\lambda\Theta\zeta$, and
+$Q$ for the frequency ratio, $\lambda_q=\lambda_{q-1}^{Q}$. The published smooth-forcing design fixes
+$\delta=1/8$ and $Q\ge200$, controls $k$ derivatives of the force with $120k\le Q$, and corrects the
+localization error through $J=2k+8$ levels, each gaining a factor $\Pi^{5}\lambda^{-(1-\delta)}$ with
+$\Pi\le\lambda^{5/Q}$; its seed is chosen so that the remaining force sits below $\lambda^{-6}$.
+
+\begin{theorem}[\Der]\label{thm:ceiling}
+Let a layer cascade of this design carry fractional dissipation $-\nu(-\Delta)^{\alpha}$. Then the
+force budget forces
+\[
+J\Bigl[(1-\delta)-\frac5Q\Bigr]\ \ge\ k+6,
+\]
+and the dissipative growth condition forces $\alpha<\delta/(4Q)$. With $Q=120k$, the smallest ratio
+the design's own rule allows, these give
+\[
+\delta\le 1-\frac{k+6}{2k+8}-\frac{1}{24k},
+\qquad
+\alpha\le\frac{1}{4\cdot120k}\Bigl(1-\frac{k+6}{2k+8}-\frac{1}{24k}\Bigr),
+\]
+whose maximum over $k\ge1$ is attained at $k=1$ and equals
+\[
+\boxed{\ \alpha_{\max}=5.38\times10^{-4}\ \ (\text{ours}),\qquad 1.08\times10^{-3}\ \ (\text{theirs}),\ }
+\]
+with margin $\delta\le0.2583$ at $Q=120$.
+\end{theorem}
+
+The two halves of the trade-off pull against each other and neither wins: raising $k$ buys margin,
+since more correction levels gain more, but the margin saturates,
+\[
+\delta\le1-\frac{k+6}{2k+8}-\frac1{24k}\ \longrightarrow\ \frac12\qquad(k\to\infty),
+\]
+while the ratio those derivatives cost grows at least linearly, and the ratio divides. The exponent
+therefore falls monotonically in $k$:
+
+\begin{center}
+\begin{tabular}{rrrrr}
+\toprule
+$k$ & $J=2k+8$ & $Q=120k$ & $\delta\le$ & $\alpha\le$ \\
+\midrule
+$1$ & $10$ & $120$ & $0.2583$ & $5.38\times10^{-4}$ \\
+$2$ & $12$ & $240$ & $0.3125$ & $3.26\times10^{-4}$ \\
+$3$ & $14$ & $360$ & $0.3433$ & $2.38\times10^{-4}$ \\
+$10$ & $28$ & $1200$ & $0.4244$ & $8.84\times10^{-5}$ \\
+$1000$ & $2008$ & $120000$ & $0.4990$ & $1.04\times10^{-6}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{remark}[the comparison that makes this a conclusion]
+Blowup is already proved for every exponent below $0.0463$ in our convention with a force in
+$L^{1}_{t}C^{1,\epsilon}_{x}\cap L^{\infty}_{t}L^{2}_{x}$. Theorem~\ref{thm:ceiling} puts the
+smooth-forcing design $86$ times below that, and the separation does not close by retuning: at the
+proved threshold the ratio rule cannot buy even one derivative. \emph{Smoothness of the force and
+fractional dissipation are bought from one budget in this mechanism, and the published design spends
+essentially all of it on smoothness.}
+\end{remark}
+
+\begin{remark}[what would move it]
+Exactly three levers appear in the proof, so a hypodissipative version of this mechanism must use one
+of them: decouple the correction levels from the ratio, so that $Q$ need not grow with $k$; raise the
+margin past $1/2$, which the hierarchy as stated forbids; or change the growth law, since the factor
+$4$ in $\alpha<\delta/(4Q)$ comes from a rate $\sqrt A$, and a mechanism whose layers grow at the
+background gradient itself, as the vortex-layer construction does, pays a different price. This is
+the dated prediction of Section~\ref{sec:tradeoff}, now with a number attached.
+\end{remark}
+
+The ingredient of Theorem~\ref{thm:ceiling} that is not transcribed from the published design is the
+dissipative growth condition, and Sections~\ref{sec:mv} to~\ref{sec:budget} are the audit that makes
+it credible: the certificate is machine-checked to the kernel, the amplitude system is validated
+against the equations it reduces, the localization correction is measured, and the one published
+threshold that can be recovered independently is recovered exactly.
 
 \section{Scope, and what is not claimed}
 
@@ -465,6 +552,15 @@ and a harness rebuilds the command line from that block rather than from prose, 
 numeric leaf. That distinction is not cosmetic. Rerunning one experiment from its documented command
 gave a correlation of $0.9920$ against a recorded $0.9995$, purely because two settings of the
 recorded run differed from the runner's defaults, which is indistinguishable from a regression.
+
+\section{Conclusion}
+
+An audit is only worth its DOI if it concludes something. This one concludes a number:
+Theorem~\ref{thm:ceiling}. The smooth-forcing mechanism of the September 2026 Boussinesq result,
+taken with its own correction hierarchy and its own ratio rule, cannot carry a dissipation exponent
+above $5.38\times10^{-4}$, which is $86$ times below what a rough-forcing construction already
+achieves. Everything else reported here is the evidence that the one non-transcribed ingredient of
+that bound is sound.
 
 \section{What is not claimed}
 
