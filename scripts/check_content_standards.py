@@ -46,6 +46,10 @@ def is_emoji(cp: int) -> bool:
 TEXT_SUFFIXES = {
     ".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs", ".py", ".md", ".json",
     ".css", ".html", ".yml", ".yaml", ".toml", ".txt", ".cfg", ".ini", ".svg",
+    # .tex belongs here above all: a heredoc that eats a backslash turns lpha into a BEL
+    # byte and rac into a form feed, the document still compiles, and the damage reaches
+    # whatever DOI the PDF is published under.
+    ".tex", ".bib",
 }
 
 
