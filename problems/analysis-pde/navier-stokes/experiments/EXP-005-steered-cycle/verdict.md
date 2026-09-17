@@ -137,6 +137,7 @@ rate measured by demodulation, then compared with the rate predicted from the TO
 | `lam2 = 192`, window `3 lam1` | 0.755 | 0.335 | 0.348 | 0.485 |
 | `lam2 = 192`, window `4.5 lam1` | 0.327 | 0.667 | 0.369 | 0.288 |
 | **`lam2 = 360`, window `3 lam1`** | **0.808** | **0.392** | **0.287** | **0.432** |
+| `lam2 = 512`, window `3 lam1` (added 2026-09-17) | 0.509 | 0.314 | 0.682 | 0.752 |
 
 **The pattern is confirmed and the control discriminates**, by 0.42 in correlation and with a
 40 percent worse RMSE, which is gate D2. **Gate D1, correlation above 0.9, is NOT met**, and that is
@@ -146,9 +147,19 @@ What limits it is measurement, and the sweep shows it rather than asserting it. 
 through a demodulation window that must resolve an envelope varying on layer 1's own scale while
 excluding layer 1's harmonics, so there is an interior optimum: too narrow and the structure under
 test is smoothed away, too wide and the base-only prediction fits better than the true one, which is
-what the 4.5 row is. At the optimum, raising the scale separation from 6 to 12 moves the correlation
-from 0.755 to 0.808, the same direction EXP-004 reached 0.999 in at separation 12 on a frozen,
-purely vertical background with no steering history. The residual slope, 1.26, is the same
+what the 4.5 row is. At the optimum window, raising the scale separation from 6 to 12 moves the correlation from 0.755 to
+0.808, the same direction EXP-004 reached 0.999 in at separation 12 on a frozen, purely vertical
+background with no steering history. Pushing further does NOT continue the trend: at separation 17
+(`lam2 = 512`, N = 2048, 22 minutes) the correlation falls to 0.509 and the measured mean rate drops
+to 0.744 against a prediction of 0.989, the signature of a fit that has not settled rather than of a
+handoff that failed.
+
+**That both knobs have an interior optimum is the evidence for the attribution.** The window peaks
+near `3 lambda_1` and the separation near `lam2 = 360`; a physical failure of the handoff would not
+peak in a measurement parameter, and would not leave the control at 0.31 to 0.39 throughout. What is
+measured here is a local rate read through a window that must resolve an envelope varying on layer
+1's scale while excluding its harmonics, and settle within a fit window short enough that the
+amplitude has not run away. Gate D1 stays reported as not met. The residual slope, 1.26, is the same
 measurement-geometry systematic EXP-004 characterized at 1.36.
 
 **A trap found here and now guarded.** At `lam2 = 320` with `N = 1024` the wave sits at 0.94 of the

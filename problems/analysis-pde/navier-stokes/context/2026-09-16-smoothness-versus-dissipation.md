@@ -125,8 +125,17 @@ square-root growth law. It is also wrong, in a more interesting way, if their di
 does not damp a layer at `nu lambda^(2 alpha)`, which is the one piece of this that is ours rather
 than theirs, and is the piece EXP-002 tested.
 
-**Status: UNVERIFIED, and dated.** Recorded 2026-09-16, before their paper appeared. NS-010 in the
-backlog is the item that checks it.
+**Status: UNVERIFIED, and dated.** Recorded 2026-09-16. NS-010 in the backlog is the item that checks
+it.
+
+**Checks that the paper had not yet appeared**, so that the date on this prediction means something:
+
+| checked | where | result |
+|---|---|---|
+| 2026-09-17 | arXiv listing for math.AP, and a search for the authors with the topic | no hypodissipative paper by these authors is posted |
+
+Each further check goes in this table, and the day one of them finds the paper, the prediction is
+settled here either way before anything else is written.
 
 ## 6. Caveats, plainly
 

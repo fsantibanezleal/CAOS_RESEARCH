@@ -1,6 +1,18 @@
 # EXP-004 verdict: the layer-to-layer handoff CONFIRMED on pattern, with a characterized slope systematic
 
-Date: 2026-09-12. Runner: `code/run_exp004.py`. Raw: `result-frozen.json` (the clean test),
+Date: 2026-09-12. Runner: `code/run_exp004.py`.
+
+> **Reproduction, added 2026-09-17.** The exact settings of the run are the `args` block of
+> the result file, not the defaults of the runner: `code/reproduce_all.py` rebuilds the
+> command line from that block and diffs every numeric leaf of the rerun against the record.
+> Verified on 2026-09-17, after the round-2 and round-3 refactors of `nslib`, with every
+> result leaf identical. The command is
+>
+> ```
+> python run_exp004.py --A0 4.0 --A1 4.0 --Theta1 0.002 --Theta2 1e-07 --alpha 1.0 --dt 0.0004 --grow1 2.4 --lam0 1 --lam1 12 --lam1b 16 --lam2 192 --mask-frac 0.35 --measure2 0.08 --mode frozen --n 1024 --nu 0.0 --phi1 1.5707963267948966 --phi2 1.5707963267948966 --settle 2.0
+> ```
+
+Raw: `result-frozen.json` (the clean test),
 `result-dynamical.json` (the honest inconclusive companion). Hardware: RTX 4070 Laptop, float64.
 
 ## The gap this closes

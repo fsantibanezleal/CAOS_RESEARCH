@@ -1,6 +1,18 @@
 # EXP-003 verdict: CONFIRMED, and the headline claim is downgraded to a consistency relation
 
-Date: 2026-09-12. Runner: `code/run_exp003.py`. Raw output: `result.json`. Hardware: RTX 4070 Laptop,
+Date: 2026-09-12. Runner: `code/run_exp003.py`.
+
+> **Reproduction, added 2026-09-17.** The exact settings of the run are the `args` block of
+> the result file, not the defaults of the runner: `code/reproduce_all.py` rebuilds the
+> command line from that block and diffs every numeric leaf of the rerun against the record.
+> Verified on 2026-09-17, after the round-2 and round-3 refactors of `nslib`, with every
+> result leaf identical. The command is
+>
+> ```
+> python run_exp003.py --batch 1000000 --nu 1e-10 --stages 400
+> ```
+
+Raw output: `result.json`. Hardware: RTX 4070 Laptop,
 float64, 1,000,000 schedules evaluated in 1.46 s using 537 MB of VRAM.
 
 ## Question
