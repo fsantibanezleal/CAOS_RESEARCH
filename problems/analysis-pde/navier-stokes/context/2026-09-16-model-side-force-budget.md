@@ -73,6 +73,12 @@ not have:
 
 1. **A localization scale.** Their `L_n` (constraints S, L, O) is the envelope wavenumber of layer `n`.
    Our model has plane waves, whose envelope is trivial, so there is no `b` exponent to carry.
+   **Partly answered 2026-09-17 by EXP-007**, for the dissipative term specifically: giving the wave an
+   envelope costs the damping law a relative error of `3.6 alpha / (ell lambda)`, first order in the
+   bandwidth ratio and depending on that ratio alone. At the construction's separations that is
+   `lambda_{q-1}^(3 - Q_q)`, so localization does not obstruct the dissipative reduction and cannot set
+   a threshold. What stays open is the INVISCID residual of a localized ansatz, which is items 2 and 3
+   below.
 2. **The residual of the ansatz.** The force is whatever the equation needs beyond the exact
    cancellation: in the Boussinesq setting that is the commutator of the envelope with the transport,
    plus the corrections that cancel oscillatory localization errors to successively higher order

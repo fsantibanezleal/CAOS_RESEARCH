@@ -136,3 +136,28 @@ def test_the_converse_bound_numbers_match_the_code():
         assert quoted in page, f"{quoted} no longer appears in wiki page 8"
     for quoted in ("alpha < delta / (480 k)", "1/480 = 0.00208", "22 times", "178 times"):
         assert quoted in dossier, f"{quoted} no longer appears in the dossier"
+
+
+def test_exp007_localization_numbers_match_the_run():
+    """The damping law's cost under localization, as quoted in its verdict."""
+    d = json.loads((PROBLEM / "experiments/EXP-007-localized-dissipation/result.json")
+                   .read_text(encoding="utf-8"))
+    verdict = text(PROBLEM / "experiments/EXP-007-localized-dissipation/verdict.md")
+
+    assert d["all_pass"] is True
+    assert d["H1_slope_of_log_error_against_log_bandwidth_ratio"] == pytest.approx(-0.9863, abs=5e-4)
+    assert d["H3_control_wide_envelope"]["relative_error"] == pytest.approx(1.90, abs=5e-3)
+
+    # the coefficient is linear in alpha: every case gives the same 2 alpha slope
+    per_alpha = {c["alpha"]: c["coefficient"] for c in d["H2_coefficients_by_alpha"]}
+    for alpha, coefficient in per_alpha.items():
+        assert coefficient / alpha == pytest.approx(3.606, rel=5e-3)
+
+    # and the error depends on the bandwidth ratio alone, not on how it is split
+    same_ratio = [c["relative_error"] for c in d["scan"]
+                  if abs(c["ell_times_lambda"] - 102.4) < 1e-6]
+    assert len(same_ratio) == 3
+    assert max(same_ratio) - min(same_ratio) < 1e-5
+
+    for quoted in ("-0.9863", "3.606", "1.90", r"3.6\,\alpha"):
+        assert quoted in verdict, f"{quoted} no longer appears in the EXP-007 verdict"
