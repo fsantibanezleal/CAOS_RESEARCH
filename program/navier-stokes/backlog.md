@@ -21,6 +21,7 @@ and a kill criterion per methodology 12.
 | NS-015 | EXP-006: independent kernel replay of the certificate with the toolchain's `leanchecker` | validation | done 2026-09-16 (CONFIRMED: both halves replayed from an empty environment) | P1 | L | 6 h wall clock, 4 Lean threads | abandon if resident memory exceeds available RAM or a module exceeds 30 min |
 | NS-016 | Add a force-regularity budget to our cascade model, the constraint that actually sets the published constant | implementation | half done 2026-09-16: general schedules done (C1 becomes R < p), and importing the published admissible-ratio interval shows our 1/4 cap is unreachable; deriving OUR force terms still open | P2 | L | CPU only | n/a |
 | NS-017 | Apply our dissipative extension to the published Alpoge-Buckmaster schedule and record the prediction it implies, with a falsification criterion | research | done 2026-09-16 (prediction UNVERIFIED by construction; NS-010 checks it) | P2 | M | CPU only | n/a |
+| NS-018 | EXP-007: does localization break the dissipative reduction? | validation | done 2026-09-17 (CONFIRMED: cost is 3.6 alpha/(ell lambda), negligible at their separations) | P1 | S | GPU seconds, no time stepping | n/a |
 | NS-010 | Re-read the Alpoge-Buckmaster hypo-dissipative paper the day it appears and compare its exponent with ours; record whoever is first | research | blocked | P2 | S | none | unblocks when they post |
 
 ## Standing obligations

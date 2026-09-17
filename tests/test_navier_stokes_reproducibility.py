@@ -40,7 +40,8 @@ def test_the_harness_covers_every_runner_with_a_recorded_result():
     covered = {c["runner"] for c in cases.values()}
     # EXP-005 has its own multi-part runner and is covered by the quoted-number gate;
     # EXP-001 and EXP-006 are Lean builds, not Python runs.
-    assert covered == {"run_exp002.py", "run_exp003.py", "run_exp004.py"}
+    assert covered == {"run_exp002.py", "run_exp003.py", "run_exp004.py",
+                       "run_exp007.py"}
     for case in cases.values():
         record = EXPERIMENTS / case["record"]
         assert record.is_file(), f"{record} is missing"
@@ -62,10 +63,10 @@ def test_every_recorded_result_stores_the_settings_it_was_run_with():
 
 def test_the_three_verdicts_say_how_to_rerun_themselves():
     for name in ("EXP-002-reduction-control", "EXP-003-threshold-sweep",
-                 "EXP-004-multilayer-handoff"):
+                 "EXP-004-multilayer-handoff", "EXP-007-localized-dissipation"):
         verdict = (EXPERIMENTS / name / "verdict.md").read_text(encoding="utf-8")
         assert "reproduce_all.py" in verdict, f"{name} does not point at the harness"
-        assert "Reproduction, added 2026-09-17" in verdict
+        assert "Reproduction" in verdict
 
 
 def test_the_stored_reproduction_report_is_clean():

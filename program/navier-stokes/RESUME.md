@@ -83,6 +83,7 @@ giving eigenvalues `-nu (lambda r)^(2 alpha) +/- sqrt(A) sin(phi)` and the frequ
 | EXP-004 | does the multi-layer handoff survive in the PDE? | pattern **CONFIRMED** (frozen two-scale, corr 0.999 vs base 0.21); slope systematic characterized; dynamical companion inconclusive |
 | EXP-005 | does the growth, steering and hold cycle work in the PDE? | **DECIDED IN PART**: A, B, C pass (gain to 3e-06, landing 3.7e-04, hold decay to 0.97 percent); committed parameters REFUTED by the background's own instability; D confirms the handoff pattern at 0.808 against a 0.392 control, below its 0.9 gate |
 | EXP-006 | does the Lean KERNEL accept the certificate, not just the elaborator? | **CONFIRMED**: both halves replayed from an EMPTY environment (NavierStokes 2,972 s, Euler 1,588 s, exit 0) |
+| EXP-007 | does localization break the dissipative reduction? | **CONFIRMED**: the cost is `3.6 alpha / (ell lambda)`, slope -0.9863, negligible at the construction's separations |
 
 EXP-002: peak rate to 4e-05 relative, band structure present, frequency independence to 2.7e-04 across
 `lambda` in [20, 160], derived dissipative term to 2.6e-04 absolute, three negative controls all
@@ -192,3 +193,8 @@ next-round scope, not blockers.
 - **There is a dated prediction on the record** (NS-017, wiki page 8) about the unreleased
   Alpoge-Buckmaster hypodissipative paper. When it appears, check it before anything else, and record
   the outcome either way.
+
+- **Every experiment reproduces from its own record** (`code/reproduce_all.py`, report
+  `experiments/reproduction-2026-09-17.json`). Rerun from the record, never from a command retyped
+  into prose: EXP-004's recorded run used non-default `measure2` and `settle`, and rerunning with the
+  defaults looks exactly like a regression.

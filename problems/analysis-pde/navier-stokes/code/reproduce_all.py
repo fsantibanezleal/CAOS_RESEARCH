@@ -50,6 +50,15 @@ CASES = {
             "H3.abs_diff",
         ],
     },
+    "exp007": {
+        "runner": "run_exp007.py",
+        "record": EXPERIMENTS / "EXP-007-localized-dissipation/result.json",
+        "keys": [
+            "H1_slope_of_log_error_against_log_bandwidth_ratio",
+            "H2_coefficient_max",
+            "H3_control_wide_envelope.relative_error",
+        ],
+    },
     "exp004": {
         "runner": "run_exp004.py",
         "record": EXPERIMENTS / "EXP-004-multilayer-handoff/result-frozen.json",

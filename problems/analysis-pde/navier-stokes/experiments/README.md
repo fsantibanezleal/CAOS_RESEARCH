@@ -13,6 +13,7 @@ DECIDED-IN-PART, and a refuted prediction is preserved rather than edited away.
 | [EXP-004](EXP-004-multilayer-handoff/) | Does the layer-to-layer handoff survive in the full nonlinear PDE? | pattern **CONFIRMED** (frozen), slope systematic characterized |
 | [EXP-005](EXP-005-steered-cycle/) | Does the growth, steering and hold cycle work in the PDE, and does a steered layer carry the next one? | **DECIDED IN PART** (A, B, C pass; the committed parameters are refuted by the background's own instability; D confirms the pattern at 0.81, below its 0.9 gate) |
 | [EXP-006](EXP-006-kernel-replay/) | Does the Lean KERNEL accept the certificate, not just the elaborator? | **CONFIRMED**, both halves replayed from an empty environment |
+| [EXP-007](EXP-007-localized-dissipation/) | Does localization break the dissipative reduction? | **CONFIRMED**: the cost is `3.6 alpha / (ell lambda)`, negligible at the construction's separations |
 
 ## EXP-001, the Lean replay
 
@@ -82,6 +83,16 @@ Both halves replay clean from an EMPTY environment: NavierStokes in 2,972 s and 
 exit 0 for both, at most 6.4 GB resident. That closes the gap EXP-001 left open, since a build and an
 axiom report both read the environment the elaborator produced. The tool's own scope statement is
 kept rather than inflated: it detects environment hacking, it is not an external verifier.
+
+## EXP-007, localization against the damping law
+
+Our dissipative term is exact for a plane wave, and every layer of the construction is localized, so
+the damping law is applied to a band rather than a frequency. Measured with no time stepping: the
+relative error is `3.6 alpha / (ell lambda)`, first order in the bandwidth ratio (slope -0.9863), and
+it depends on that ratio ALONE, since cases splitting it differently between frequency and envelope
+agree to four digits. The coefficient is exactly linear in `alpha`, which is what the symbol expansion
+gives. At the construction's own separations the error is `lambda_{q-1}^(3 - Q_q)` with `Q_q >= 201`,
+so localization cannot be what sets a hypodissipative threshold.
 
 ## What still remains open
 

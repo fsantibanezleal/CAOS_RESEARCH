@@ -238,3 +238,27 @@ Recorded with its falsification criterion before their hypodissipative paper app
 it. Wiki page 8, 13 numeric tests plus a CI guard.
 
 **Round 2 merged** to develop as PR #278 with CI green.
+
+
+## Done, 2026-09-17: reproduction pass, and EXP-007
+
+**Reproduction.** EXP-002, EXP-003 and EXP-004 rerun at the settings stored in their own result files,
+after two rounds of refactoring underneath them: 13, 21 and 18 numeric leaves, zero mismatches. The
+defect found was in the RECORD, not the code: the verdicts named the runner but not its settings, and
+the recorded EXP-004 run used `measure2 = 0.08`, `settle = 2.0` against defaults of 0.25 and 1.0, so
+rerunning from the documented command gave 0.9920 instead of 0.9995. Each verdict now carries a
+command rebuilt from its own args block, and `code/reproduce_all.py` reads its command line from the
+record.
+
+**EXP-005 part D, the one unmet gate, rerun at separation 17:** correlation 0.509, down from 0.808 at
+separation 12. The trend does not continue, and both measurement knobs now show an interior optimum,
+which locates the limit in the instrument rather than in the handoff. D1 stays reported as not met.
+
+**EXP-007 CONFIRMED.** Localization costs the damping law a relative error of
+`3.6 alpha / (ell lambda)`: first order in the bandwidth ratio (slope -0.9863), dependent on that
+ratio alone (cases splitting it differently agree to four digits), and exactly linear in alpha. At the
+construction's separations, `ell_q lambda_q = lambda_{q-1}^(Q_q - 3)` with `Q_q >= 201`, the error is
+negligible, so localization cannot set a hypodissipative threshold. This answers, for the dissipative
+term, one of the three objects NS-016 listed as missing from our model.
+
+**NS-010 checked 2026-09-17:** the Alpoge-Buckmaster hypodissipative paper is still not posted.
