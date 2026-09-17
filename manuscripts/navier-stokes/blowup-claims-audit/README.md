@@ -10,7 +10,7 @@ never from memory, per methodology 09.
 | pages | 9 |
 | build | `pdflatex main.tex` twice, MiKTeX; zero errors, zero overfull or underfull boxes |
 | labels | machine-verified `[MV]`, derived `[D]`, conjectural `[C]`, used in-text |
-| Zenodo | not yet deposited |
+| Zenodo | published 2026-09-17, version DOI [10.5281/zenodo.22820521](https://doi.org/10.5281/zenodo.22820521), concept DOI [10.5281/zenodo.22820520](https://doi.org/10.5281/zenodo.22820520) |
 
 ## What it contains, and where each part comes from
 
