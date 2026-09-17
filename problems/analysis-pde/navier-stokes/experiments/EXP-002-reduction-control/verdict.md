@@ -1,6 +1,18 @@
 # EXP-002 verdict: CONFIRMED
 
-Date: 2026-09-12. Runner: `code/run_exp002.py`. Raw outputs: `result.json` (phi = pi/2),
+Date: 2026-09-12. Runner: `code/run_exp002.py`.
+
+> **Reproduction, added 2026-09-17.** The exact settings of the run are the `args` block of
+> the result file, not the defaults of the runner: `code/reproduce_all.py` rebuilds the
+> command line from that block and diffs every numeric leaf of the rerun against the record.
+> Verified on 2026-09-17, after the round-2 and round-3 refactors of `nslib`, with every
+> result leaf identical. The command is
+>
+> ```
+> python run_exp002.py --A0 4.0 --Theta0 1e-06 --dt 0.0005 --lam 40 --lam0 1 --mode all --n 768 --phi 1.5707963267948966 --t-end 0.6
+> ```
+
+Raw outputs: `result.json` (phi = pi/2),
 `rate-phi-pi4.json` and `controls-phi-pi4.json` (phi = pi/4). Hardware: RTX 4070 Laptop, 8 GB,
 float64, N = 768, dt = 5e-4, t_end = 0.6. Total wall time about 8 minutes.
 

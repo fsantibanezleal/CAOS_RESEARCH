@@ -1,0 +1,74 @@
+{
+  "tolerance": 1e-09,
+  "results": [
+    {
+      "name": "exp002",
+      "exit_code": 0,
+      "seconds": 359.4,
+      "headline": {
+        "cases.P1_inviscid.p1_max_rel_err": [
+          0.019007173583017643,
+          0.019007173583017643
+        ],
+        "cases.P3_lambda_sweep.peak_spread_rel": [
+          0.00026986272450416575,
+          0.00026986272450416575
+        ]
+      },
+      "argv": "--A0 4.0 --Theta0 1e-06 --dt 0.0005 --lam 40 --lam0 1 --mode all --n 768 --phi 1.5707963267948966 --t-end 0.6",
+      "n_leaves_compared": 13,
+      "mismatches": [],
+      "missing_from_rerun": [],
+      "ok": true
+    },
+    {
+      "name": "exp003",
+      "exit_code": 0,
+      "seconds": 4.7,
+      "headline": {
+        "H1.max_rel_err_vs_corrected": [
+          2.5921080295709857e-06,
+          2.5921080295709857e-06
+        ],
+        "H2.n_c4_binds_while_c2_holds": [
+          0,
+          0
+        ],
+        "H3.abs_diff": [
+          6.217248937900877e-15,
+          6.217248937900877e-15
+        ]
+      },
+      "argv": "--batch 1000000 --nu 1e-10 --stages 400",
+      "n_leaves_compared": 21,
+      "mismatches": [],
+      "missing_from_rerun": [],
+      "ok": true
+    },
+    {
+      "name": "exp004",
+      "exit_code": 1,
+      "seconds": 35.9,
+      "headline": {
+        "H1_full_two_scale_gradient.corr": [
+          0.9994526918648524,
+          0.9994526918648524
+        ],
+        "H2_control_base_only.corr": [
+          0.21160061302515992,
+          0.21160061302515992
+        ],
+        "H1_full_two_scale_gradient.slope": [
+          1.3575948848796744,
+          1.3575948848796744
+        ]
+      },
+      "argv": "--A0 4.0 --A1 4.0 --Theta1 0.002 --Theta2 1e-07 --alpha 1.0 --dt 0.0004 --grow1 2.4 --lam0 1 --lam1 12 --lam1b 16 --lam2 192 --mask-frac 0.35 --measure2 0.08 --mode frozen --n 1024 --nu 0.0 --phi1 1.5707963267948966 --phi2 1.5707963267948966 --settle 2.0",
+      "n_leaves_compared": 18,
+      "mismatches": [],
+      "missing_from_rerun": [],
+      "ok": true
+    }
+  ],
+  "all_reproduce": true
+}

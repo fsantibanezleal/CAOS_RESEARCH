@@ -25,13 +25,17 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 EXPERIMENTS = HERE.parent / "experiments"
 
-# Each entry: the runner, the recorded result to diff against, the CLI reproducing it, and
-# the (dotted) paths of the numbers that carry the verdict.
+# Each entry: the runner, the recorded result to diff against, and the (dotted) paths of the
+# numbers that carry the verdict. The COMMAND LINE is not written here: it is rebuilt from
+# the `args` block the record itself stores, because a hand-written command drifts from the
+# run it claims to reproduce. That is not hypothetical: the first version of this file
+# reran EXP-004 with the runner's defaults for `measure2` and `settle` while the recorded
+# run used 0.08 and 2.0, and the correlation came out 0.9920 instead of 0.9995. The record
+# knows what it was run with; ask it.
 CASES = {
     "exp002": {
         "runner": "run_exp002.py",
         "record": EXPERIMENTS / "EXP-002-reduction-control/result.json",
-        "argv": ["--n", "768", "--A0", "4.0", "--lam0", "1", "--dt", "5e-4", "--mode", "all"],
         "keys": [
             "cases.P1_inviscid.p1_max_rel_err",
             "cases.P3_lambda_sweep.peak_spread_rel",
@@ -40,7 +44,6 @@ CASES = {
     "exp003": {
         "runner": "run_exp003.py",
         "record": EXPERIMENTS / "EXP-003-threshold-sweep/result.json",
-        "argv": ["--stages", "400", "--batch", "1000000", "--nu", "1e-10"],
         "keys": [
             "H1.max_rel_err_vs_corrected",
             "H2.n_c4_binds_while_c2_holds",
@@ -50,8 +53,6 @@ CASES = {
     "exp004": {
         "runner": "run_exp004.py",
         "record": EXPERIMENTS / "EXP-004-multilayer-handoff/result-frozen.json",
-        "argv": ["--n", "1024", "--mode", "frozen", "--lam1b", "16", "--lam2", "192",
-                 "--dt", "4e-4"],
         "keys": [
             "H1_full_two_scale_gradient.corr",
             "H2_control_base_only.corr",
@@ -111,9 +112,35 @@ def compare(old: dict, new: dict, tolerance: float) -> tuple[list[str], list[str
     return mismatches, missing
 
 
+# `out` is where the record went, `device` is this machine. Everything else is a setting.
+NON_SETTINGS = {"out", "device"}
+
+
+def argv_from_record(record: dict) -> list[str]:
+    """Rebuild the exact command line from the `args` block the record stores.
+
+    argparse dests use underscores while the flags use dashes, and the dest keeps its
+    capitalization (`--L-growth` has dest `L_growth`), so the flag is the dest with
+    underscores swapped for dashes.
+    """
+    argv: list[str] = []
+    for key, value in sorted(record.get("args", {}).items()):
+        if key in NON_SETTINGS:
+            continue
+        flag = "--" + key.replace("_", "-")
+        if isinstance(value, bool):
+            if value:
+                argv.append(flag)
+            continue
+        argv += [flag, repr(value) if isinstance(value, float) else str(value)]
+    return argv
+
+
 def run_case(name: str, case: dict, tolerance: float, python: str) -> dict:
     out_path = HERE / f"_reproduce_{name}.json"
-    cmd = [python, "-u", str(HERE / case["runner"]), *case["argv"], "--out", str(out_path)]
+    old = json.loads(case["record"].read_text(encoding="utf-8"))
+    cmd = [python, "-u", str(HERE / case["runner"]), *argv_from_record(old),
+           "--out", str(out_path)]
     print(f"--- {name}: {' '.join(cmd[2:])}", flush=True)
     started = time.time()
     proc = subprocess.run(cmd, cwd=HERE, capture_output=True, text=True)
@@ -124,7 +151,6 @@ def run_case(name: str, case: dict, tolerance: float, python: str) -> dict:
                 "stderr_tail": proc.stderr.strip().splitlines()[-5:]}
 
     new = json.loads(out_path.read_text(encoding="utf-8"))
-    old = json.loads(case["record"].read_text(encoding="utf-8"))
     mismatches, missing = compare(old, new, tolerance)
     headline = {k: (dig(old, k), dig(new, k)) for k in case["keys"]}
     out_path.unlink()
@@ -133,6 +159,7 @@ def run_case(name: str, case: dict, tolerance: float, python: str) -> dict:
         "exit_code": proc.returncode,       # a runner exits nonzero when a gate fails
         "seconds": seconds,
         "headline": headline,
+        "argv": " ".join(argv_from_record(old)),
         "n_leaves_compared": len(leaves(old)),
         "mismatches": mismatches,
         "missing_from_rerun": missing,
