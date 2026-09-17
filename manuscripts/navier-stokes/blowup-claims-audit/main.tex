@@ -1,0 +1,508 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs}
+\microtypesetup{expansion=false}
+\usepackage[margin=1.05in,headheight=14pt]{geometry}
+\usepackage{xcolor}
+\definecolor{linknavy}{RGB}{25,55,125}
+\usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
+\usepackage{orcidlink,fancyhdr}
+\hypersetup{
+  pdftitle={An independent audit of the September 2026 fluid blowup claims, with a regularity against dissipation trade-off},
+  pdfauthor={Felipe Santibanez-Leal},
+  pdfsubject={Kernel replay of the Lean certificates, reconstruction of the hypodissipative threshold, and a dated prediction},
+  pdfkeywords={Navier-Stokes, Boussinesq, finite-time blowup, hypodissipative, Lean, kernel replay, exponent budget}
+}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{claimbox}[theorem]{Claim}
+\DeclareMathOperator{\supp}{supp}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\MV}{\textsf{[MV]}}
+\newcommand{\Der}{\textsf{[D]}}
+\newcommand{\Con}{\textsf{[C]}}
+\newcommand{\recordurl}{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/analysis-pde/navier-stokes}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small CAOS Research Preprint}
+\fancyhead[R]{\small Auditing the 2026 blowup claims\textperiodcentered\ v0.01}
+\fancyfoot[C]{\thepage}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
+\allowdisplaybreaks[1]
+
+\title{An independent audit of the September 2026 fluid blowup claims,\\
+and a trade-off between force regularity and dissipation}
+\author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\small CAOS Research program\\
+\small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
+\date{2026-09-17\\[2pt]\normalsize Version 0.01}
+
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+\begin{center}\small
+\fbox{\parbox{0.92\textwidth}{\centering
+\textbf{PREPRINT}\textperiodcentered\ not peer reviewed\textperiodcentered\ CAOS Research\\
+Navier-Stokes research series, first paper\\
+Version 0.01\textperiodcentered\ 2026-09-17\textperiodcentered\ CC BY 4.0\\
+\href{\recordurl}{Public sources, experiment verdicts, and reproduction harness}
+}}
+\end{center}
+
+\begin{abstract}
+In September 2026 two groups announced finite-time blowup results for fluid equations with
+machine-checked certificates: Alpog\'e and Buckmaster for the two-dimensional inviscid Boussinesq
+system and three-dimensional Euler with smooth forcing, and OpenAI for three-dimensional
+Navier-Stokes with forcing at every positive viscosity together with unforced Euler. Both extend the
+multiscale layer program of C\'ordoba and Mart\'inez-Zoroa. This paper reports an independent audit
+and four quantitative consequences, none of which is a claim about the correctness of the
+mathematics beyond what a machine check establishes.
+
+First, the Lean certificate of the OpenAI development was rebuilt and then replayed through the Lean
+kernel from an empty environment, both halves, at the toolchain version the development pins. Second,
+the reduced amplitude system of the layer mechanism was transcribed, extended with fractional
+dissipation, and validated against direct pseudospectral simulation of the nonlinear equations,
+including the growth, steering and holding cycle that makes the cascade iterable. Third, the
+published hypodissipative threshold $(22-8\sqrt7)/9$ of C\'ordoba, Mart\'inez-Zoroa and Zheng is
+recovered exactly from their own exponent budget, with the binding constraint identified and with the
+consequence that the admissible frequency ratios form an interval closing precisely at that
+threshold, so that geometric cascades are excluded at every positive dissipation. Fourth, applying
+the dissipative reduction to the published smooth-forcing schedule gives a one-line trade-off
+$\alpha<\delta/(4Q)$ between the amplitude margin, the frequency ratio and the dissipation exponent,
+from which we record a dated and falsifiable prediction about the unreleased hypodissipative sequel.
+
+Each statement is labelled machine-verified \MV, derived \Der, or conjectural \Con. Two claims from
+an earlier round of this work are retracted in place and the retractions are kept.
+\end{abstract}
+
+\section{Scope, and what is not claimed}
+
+The Clay Millennium problem asks for one of four alternatives in Fefferman's official statement; the
+forced alternatives (C) and (D) are among them. Nothing in this paper bears on whether any announced
+proof is correct as mathematics. What is offered is an audit that a third party can run, a validated
+reduced model, and exponent bookkeeping whose every constant comes from a displayed formula in a
+published paper.
+
+The layer mechanism is due to Diego C\'ordoba and Luis Mart\'inez-Zoroa, pushed to smooth forcing by
+Levent Alpog\'e and Tristan Buckmaster, with a different mechanism used by OpenAI for the viscous
+case. Nothing here is our mechanism. Throughout, our dissipation convention is
+$-\nu(-\Delta)^{\alpha}$, so classical viscosity is $\alpha=1$; C\'ordoba, Mart\'inez-Zoroa and Zheng
+write $|\nabla|^{\alpha}$, so their exponent is twice ours and their threshold
+$(22-8\sqrt7)/9=0.09267$ is $0.04633$ in our convention.
+
+\section{Machine verification of the Lean certificate}\label{sec:mv}
+
+\paragraph{Statement audit \MV.} The development \texttt{openai/NavierStokesAndEuler} contains
+$2{,}659$ files and $641{,}332$ lines. Its headline statements were checked clause by clause against
+Fefferman's alternatives (C) and (D). The strongest single fact is not the size of the development:
+the reference statement is adapted from DeepMind's Formal Conjectures, so the definitions that decide
+whether the formalized theorem is the intended theorem were written by a third party before the claim
+existed. The unforced Euler half inherits the same reference.
+
+\paragraph{Build \MV.} The full development builds cleanly on an independent machine: $11{,}424$
+jobs, zero occurrences of \texttt{sorryAx}, and all four headline theorems depending on exactly
+\texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}.
+
+\paragraph{Kernel replay \MV.} A successful build and a clean axiom report both read the environment
+that the \emph{elaborator} produced. Since Lean v4.28.0 the kernel checker ships with the toolchain as
+\texttt{leanchecker}, and the development pins \texttt{leanprover/\allowbreak lean4:\allowbreak v4.34.0-rc2}, so the check is
+available at the pinned version with no third-party build. Replaying every constant in the closure of
+each root module into an \emph{empty} kernel environment succeeds for both halves:
+
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+target & wall clock & exit \\
+\midrule
+\texttt{NavierStokes} & $2{,}972$ s & 0 \\
+\texttt{Euler} & $1{,}588$ s & 0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+at most $6.4$ GB resident. The tool's own scope statement is retained rather than inflated: it detects
+environment hacking, it is not an external verifier. A per-module sweep was attempted first and
+abandoned for a measured reason: it loads one import closure per module and was input-output bound on
+this machine, accumulating $144$ seconds of processor time in $80$ minutes.
+
+\paragraph{What this does not establish.} Nothing about whether the statements are the intended ones
+beyond the clause-by-clause audit, and nothing about the mathematics in the sense a referee means.
+
+\section{The reduced model, and what it costs to reduce}\label{sec:reduction}
+
+\subsection{The amplitude system and its dissipative extension \Der}
+
+On a background that is affine near the origin, $u_{\mathrm{old}}=D(t)x$ and
+$\theta_{\mathrm{old}}=G(t)\cdot x$, a temperature wave and a vorticity wave sharing one phase
+$s=\lambda\zeta(t)\cdot x$ satisfy a closed system,
+\begin{equation}\label{eq:mod}
+\dot\zeta=-D^{T}\zeta,\qquad
+\dot\Theta=-\frac{J\zeta\cdot G}{\lambda|\zeta|^{2}}\,\Omega,\qquad
+\dot\Omega=\lambda\,\zeta_{1}\,\Theta,
+\end{equation}
+exact where the envelope is one and the profile is linear. In the frozen configuration $D=0$,
+$G=-Ae_{2}$, $\zeta=re(\varphi)$ the growth rate is $\sqrt A\sin\varphi$, which carries no $\lambda$:
+the frequency in $\dot\Omega$ cancels the reciprocal frequency in $\dot\Theta$. Frequency buys
+gradient, not growth, through the amplification identity $\nabla\vartheta(0)=\lambda\Theta\zeta$.
+
+Adding $-\nu(-\Delta)^{\alpha}$ to both equations is diagonal on the phase, so the whole effect is one
+damping term per amplitude,
+\begin{equation}\label{eq:diss}
+\dot\Theta=\cdots-\nu(\lambda|\zeta|)^{2\alpha}\Theta,\qquad
+\dot\Omega=\cdots-\nu(\lambda|\zeta|)^{2\alpha}\Omega,
+\end{equation}
+with eigenvalues $-\nu(\lambda r)^{2\alpha}\pm\sqrt A\sin\varphi$ and therefore the frequency cap
+$\lambda\lesssim A^{1/(4\alpha)}\nu^{-1/(2\alpha)}$. Equation~\eqref{eq:diss} is derived here; it is
+the one analytic ingredient of this paper that is not transcribed.
+
+\subsection{Validation against the equations \MV}
+
+Direct pseudospectral simulation of the nonlinear two-dimensional Boussinesq system, in double
+precision with two-thirds dealiasing, reproduces the reduced model: peak growth rate to
+$4\times10^{-5}$ relative at two insertion angles, frequency independence to $2.7\times10^{-4}$ across
+an eightfold range of $\lambda$, and the derived dissipative term of~\eqref{eq:diss} tracking the
+measured rate to $2.6\times10^{-4}$ absolute across $\alpha\in\{1/4,1/2,1\}$ and
+$\nu\in\{10^{-5},10^{-4}\}$. Three negative controls fail as required, after a first attempt was found
+vacuous at an angle where the corruption changed nothing.
+
+The cascade premise, that a layer responds to the \emph{total} accumulated low-frequency gradient
+rather than to the base stratification, was tested on a frozen two-scale background that is an exact
+steady state (measured drift $1.45\times10^{-15}$): the local rate follows the total gradient at
+correlation $0.99945$ and the base alone at $0.212$.
+
+\subsection{The steering cycle, realized on a torus \MV}
+
+The mechanism is iterable only because a grown layer can be returned to rest: growth leaves both the
+temperature gradient the next layer needs and a shear with coefficient $\Omega$ that would keep
+deforming it. The construction removes the shear by rotating $G$ and $\zeta$ \emph{together}, which
+preserves $J\zeta\cdot G$ and $|\zeta|$ but moves the laboratory component $\zeta_{1}$ that multiplies
+$\Theta$ in $\dot\Omega$. In normalized time the control is a smooth ramp of $\zeta_1$ to zero
+followed by a short negative pulse whose amplitude is \emph{selected} so that the vorticity amplitude
+lands on zero.
+
+A rigid rotation of the background does not fit on a torus. In two dimensions it does not have to: in
+the co-rotating frame the Coriolis and centrifugal accelerations are gradients and are absorbed by the
+pressure, and the Euler acceleration shifts only the spatially uniform mean vorticity, which induces
+no velocity on a torus. What remains is the Boussinesq system with a \emph{rotating gravity
+direction}, in which every wavevector stays an exact grid mode and the buoyancy torque reproduces the
+transcribed coefficient exactly. A low-frequency force holds the prescribed stratification, which is
+what the forcing in the theorem being modelled does anyway.
+
+On a background flattened so that its gradient is affine to fourth order at the origin, the full
+cycle reproduces the reduced model:
+
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+ & sinusoidal background & flattened background \\
+\midrule
+vorticity landing, $|\Omega(t_b)|/\max|\Omega|$ & $1.57\times10^{-2}$ & $3.67\times10^{-4}$ \\
+steering gain against the reduced model & $1.80\times10^{-2}$ & $3.06\times10^{-6}$ \\
+hold: drift over three growth times & $14.7\%$ & $0.36\%$ \\
+endpoint map, worst gap of three pulses & $0.196$ & $4.7\times10^{-4}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The two columns differ only in the curvature of the background over the layer's support, so that
+curvature is the entire residual: the reduction assumes an affine background, which the construction
+arranges by localizing each layer where its background is affine. Both negative controls fail as they
+must: without the pulse the vorticity is still at $0.99985$ of its peak, and with gravity frozen it
+never turns.
+
+With equal dissipation on both fields the damping enters both amplitude equations on the diagonal, so
+the whole cycle factorizes as $e^{-dt}$ times the inviscid cycle with $d=\nu\lambda^{2\alpha}$. Three
+consequences were tested and hold: the \emph{inviscid} pulse amplitude still lands the vorticity at
+zero (measured $4.1\times10^{-4}$), a holding interval decays at exactly $d$ (measured to $0.97\%$),
+and rescaling the viscous run by $e^{dt}$ reproduces the inviscid one to $0.24\%$.
+
+\subsection{A property of the mechanism that the bookkeeping cannot see \MV}
+
+The first attempt at the cycle, at a small insertion angle, was destroyed by its own background. The
+stratification the mechanism grows on is Rayleigh-Taylor unstable at rate $\sqrt A$, while a layer
+inserted at angle $s$ grows at $\sqrt A\sin s$. Every mode at a more favourable angle therefore gains
+$1/\sin s$ times as many e-folds as the layer does; over the schedule that run needed, about $72$
+e-folds from round-off, and the measured amplitude grew by a factor $726$ in a holding interval that
+should have been stationary, with $\max|\theta|$ going from $4.0$ to $10.0$.
+
+The construction is not vulnerable to this, because each layer is localized and the force controls
+what happens elsewhere. But it is worth stating plainly: \emph{the cascade always runs against a
+faster instability of its own background, and what keeps it alive is localization, not speed.}
+
+\subsection{What localization costs the dissipative reduction \MV}\label{sec:loc}
+
+Equation~\eqref{eq:diss} is exact for a plane wave, and every layer of the construction is localized,
+so the damping law is applied to a band of frequencies. Measuring the residual of a compactly
+supported smooth envelope of radius $\ell$ on a wave of frequency $\lambda$ gives a relative error
+first order in the bandwidth ratio, with slope $-0.9863$ against a predicted $-1$, and depending on
+that ratio alone: cases sharing $\ell\lambda=102.4$ but splitting it differently between frequency and
+envelope agree to four digits. The coefficient is exactly linear in the exponent, $3.606\,\alpha$,
+which is what the symbol expansion gives, leaving $1.80$ as the shape constant of this envelope:
+\begin{equation}\label{eq:loc}
+\frac{\bigl\lVert(-\Delta)^{\alpha}\bigl(g\,e^{i\lambda\zeta\cdot x}\bigr)
+-(\lambda|\zeta|)^{2\alpha}g\,e^{i\lambda\zeta\cdot x}\bigr\rVert}
+{\bigl\lVert(\lambda|\zeta|)^{2\alpha}g\bigr\rVert}\;\approx\;\frac{3.6\,\alpha}{\ell\lambda}.
+\end{equation}
+A control with an envelope as wide as the wave is wrong by $190\%$, so the measurement can see the
+failure it tests for. At the separations the published construction uses, $\ell_q^{-1}=\lambda_{q-1}^{3}$
+and $\lambda_q=\lambda_{q-1}^{Q_q}$ with $Q_q\ge201$, the error is $\lambda_{q-1}^{3-Q_q}$:
+localization does not obstruct the dissipative reduction and cannot be what sets a hypodissipative
+threshold.
+
+\section{The published threshold, recovered from its own budget}\label{sec:budget}
+
+C\'ordoba, Mart\'inez-Zoroa and Zheng prove blowup for the forced fractional Navier-Stokes equations
+for every exponent below $\alpha_0=(22-8\sqrt7)/9$, with a force in
+$L^{1}_{t}C^{1,\epsilon}_{x}\cap L^{\infty}_{t}L^{2}_{x}$. Their introduction gives a
+back-of-the-envelope value $5-2\sqrt6=0.10102$ and says plainly that the real calculation has other
+error sources. This section identifies which one.
+
+\subsection{Four constraints \Der}
+
+Every quantity in their construction is a power of one base: the frequency of layer $n$ is
+$M_n=N^{R^{n}}$, the amplitude $A_n=N^{aR^{n}}$, the localization scale $L_n=N^{bR^{n}}$, and $s>0$ is
+the H\"older margin of the force. Their Section 4.3 gives four requirements:
+
+\begin{center}
+\begin{tabular}{llc}
+\toprule
+ & source & constraint \\
+\midrule
+\textbf{D} dissipation & 4.3.5 & $a=\alpha R$ \\
+\textbf{S} self-interaction & 4.3.2 & $2a-a/R+b+s-1\le0$ \\
+\textbf{L} localization & 4.3.3 & $b\ge a+1/R+s$ \\
+\textbf{O} outer velocity on the inner layer & 4.3.4 & $a+2/R+s+1-3b\le0$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{proposition}[\Der]\label{prop:threshold}
+With \textbf{D} and \textbf{S} saturated, \textbf{O} reduces to
+\[
+4s<2+3\alpha-7\alpha R-\frac2R,
+\]
+whose maximum over the frequency ratio is at $\alpha R^{2}=2/7$, which is exactly the value the paper
+chooses. At that optimum $s(\alpha)=\bigl(2+3\alpha-2\sqrt{14\alpha}\bigr)/4$, and $s>0$ is
+$9\alpha^{2}-44\alpha+4>0$, whose smaller root is $\alpha_0=(22-8\sqrt7)/9$.
+\end{proposition}
+
+No coefficient in that chain is fitted; each comes from a displayed exponent. At the published point
+the localization constraint is \emph{not} active, with margin
+$\tfrac12\bigl(\sqrt{2\alpha/7}-\alpha\bigr)=0.0350$ at $\alpha_0$. The introduction's heuristic keeps
+\textbf{D}, \textbf{S} and \textbf{L} and does not contain \textbf{O}; saturating \textbf{L} instead
+and optimizing the same way gives $\alpha R^{2}=1/3$, $s(\alpha)=(1+\alpha)/2-\sqrt{3\alpha}$ and the
+bound $5-2\sqrt6$. \emph{The entire gap between the heuristic and the proved threshold is a swap of
+which constraint binds.}
+
+\subsection{The admissible frequency ratios \Der}\label{sec:ratios}
+
+Proposition~\ref{prop:threshold} is a quadratic in the frequency ratio, and reading it that way gives
+a statement we have not seen made explicit.
+
+\begin{proposition}[\Der]\label{prop:ratios}
+A positive force margin requires $7\alpha R^{2}-(2+3\alpha)R+2<0$, so the admissible ratios form the
+interval with endpoints
+\[
+R_{\pm}=\frac{(2+3\alpha)\pm\sqrt{9\alpha^{2}-44\alpha+4}}{14\alpha}.
+\]
+The discriminant is exactly the polynomial whose root is $\alpha_0$, so the interval closes to a
+single point precisely at the published threshold, and that point is the paper's own
+$R=\sqrt{2/(7\alpha)}$. Moreover $R_{-}>1$ for every $\alpha>0$, and at $R=1$ the margin is exactly
+$-\alpha$.
+\end{proposition}
+
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+$\alpha$ & admissible $R$ & the paper's choice \\
+\midrule
+$0.001$ & $(1.002,\ 285.1)$ & $16.90$ \\
+$0.01$ & $(1.021,\ 27.98)$ & $5.345$ \\
+$0.05$ & $(1.143,\ 5.000)$ & $2.390$ \\
+$\alpha_0=0.09267$ & $\{1.7559\}$ & $1.7559$ \\
+$0.10$ & empty & none \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The consequence is structural: a cascade whose frequencies grow geometrically, so that $\log M_n$ is
+linear in $n$, is the case $R=1$, and it is inadmissible at every positive dissipation. Read off the
+constraints directly, $R=1$ forces $b\ge a+1+s$ from localization against $b\le1-a-s$ from
+self-interaction, hence $\alpha+s\le0$. \emph{Super-geometric frequency growth is forced, not
+preferred, and more of it is forced as the dissipation rises.}
+
+Proposition~\ref{prop:threshold} and Proposition~\ref{prop:ratios} are verified in exact arithmetic,
+by computer algebra, in the public repository's continuous integration.
+
+\section{A reduced cascade model, and the retraction of one of its claims}
+
+\subsection{The model and its threshold \Der}
+
+With a geometric background $A_q=A_0e^{gq}$, a frequency schedule $\lambda_q=cA_q^{p}$ and amplitudes
+fixed by the amplification identity, four constraints govern the cascade: summable amplitudes,
+positive growth at every stage, a finite total time, and survival of each layer's gradient to the
+blowup time. The time budget turns out not to bind, because stage times decay geometrically, and layer
+survival coincides with growth positivity, because the remaining time shrinks at exactly the rate the
+growth rate rises. The threshold is $\alpha_c=1/(4p)$, measured against a horizon-corrected prediction
+to $2.59\times10^{-6}$ over $10^{6}$ schedules with zero violations \MV.
+
+\subsection{A retraction \Der}
+
+An earlier round of this work inverted $\alpha_c=1/(4p)$ at the published threshold, obtained
+$p=11/4+\sqrt7$ exactly, and argued that this was informative because the relation came from
+constraints not tuned to hit a number and because the resulting $p$ is a clean algebraic number.
+\emph{Both arguments are withdrawn.} The relation is constraint \textbf{D} saturated, and the
+published family saturates \textbf{D} at every $\alpha$, so $2p=1/\alpha$ holds identically along it:
+evaluating at $\alpha_0$ says nothing about $\alpha_0$. And the clean form is automatic, since
+$\alpha_0\in\Q(\sqrt7)$, inverses stay in $\Q(\sqrt7)$, and the result is tidy only because the norm
+of $22-8\sqrt7$ is $36$, a perfect square. The retraction is kept here because it is part of the
+record.
+
+\subsection{The cap is unreachable \Der}
+
+Allowing any schedule $\log\lambda_{q+1}=R\log\lambda_q$ moves only the amplitude constraint, which
+becomes $R<p$; the threshold $\alpha_c=1/(4p)$ stands. Importing nothing but
+Proposition~\ref{prop:ratios} then gives $\alpha_c\le1/(4R_{-}(\alpha))$, and above the published
+threshold there is no admissible ratio at all. So the cap of $1/4$ that the model measures is correct
+for the model and vacuous as a bound on the real problem: the schedules that approach it are excluded
+by the force budget before the dissipation constraint ever binds.
+
+\section{Force regularity against dissipation, and a dated prediction}\label{sec:tradeoff}
+
+\subsection{The exchange rate \Der}
+
+The smooth-forcing construction fixes, in its Subsection 3.3, a frequency ratio
+$\lambda_q=\lambda_{q-1}^{Q_q}$ with $Q_q=Q^{*}+q$ and $Q^{*}\ge200$, a derivative order
+$k_q=\max\{k:120k\le Q_q,\dots\}$, and a seed and gain whose stated consequence is that a layer stops
+at temperature amplitude $\lambda_q^{-7/8}$. Two facts follow immediately. By the amplification
+identity the layer deposits a gradient $\lambda_q^{1/8}$, so the \emph{amplitude margin} is
+$\delta=1/8$. And the rule $120k_q\le Q_q$ ties the smoothness of the force to the frequency ratio:
+each further derivative costs another $120$ in the ratio, and a $C^{\infty}$ force needs
+$k_q\to\infty$, which is why $Q_q$ grows with the stage.
+
+Applying~\eqref{eq:diss} stage by stage, growth requires
+$\nu\lambda_q^{2\alpha}<\sqrt{A_q}\sin s_q$ with $A_q=\lambda_{q-1}^{\delta}$, hence
+\begin{equation}\label{eq:tradeoff}
+\boxed{\ \alpha<\frac{\delta}{4Q_q}\ }
+\end{equation}
+with an insertion angle of order one, and a factor $Q_{q-1}$ tighter with the construction's own
+angle, which is itself a negative power of the frequency. In the notation of the reduced model this is
+nothing new: $\lambda_q=A_q^{p}$ with $p=Q_q/\delta$, and~\eqref{eq:tradeoff} is growth positivity.
+
+\begin{claimbox}[\Der]
+Since $Q_q=Q^{*}+q$ is unbounded, no positive $\alpha$ satisfies~\eqref{eq:tradeoff} at every stage: a
+cascade with this schedule and any fixed dissipation runs finitely many stages and stops, and a finite
+cascade produces a finite gradient.
+\end{claimbox}
+
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+with the published constants & value \\
+\midrule
+largest $\alpha$ the first stage carries, favourable angle & $1.55\times10^{-4}$ \\
+the same with the construction's own insertion angle & $7.70\times10^{-7}$ \\
+stages before stalling at $\alpha=10^{-4}$ & $113$ \\
+frequency ratio compatible with $\alpha=0.0463$ & $0.675$, below one \\
+derivatives of the force affordable there & $0.006$, none \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Read the other way, $120k\le Q$ with~\eqref{eq:tradeoff} gives $\alpha<\delta/(480k)$, so even at the
+most generous margin the amplification identity allows, $\delta\to1$, controlling a single derivative
+caps the exponent at $1/480=0.00208$: twenty-two times below the threshold already proved for a
+$C^{1,\epsilon}$ force, and one hundred and seventy-eight times below it at $\delta=1/8$. The
+obstruction is therefore not the published constants, which are design choices, but the exchange rate
+of $120$ units of frequency ratio per derivative.
+
+Our own cap of $1/4$ is the corner $\delta\to1$, $Q\to1$ of the same trade-off; the smooth-forcing
+design sits at $\delta=1/8$, $Q\ge200$. Section~\ref{sec:ratios} shows the other corner is closed too,
+since $R=1$ is inadmissible.
+
+\subsection{The prediction \Con}
+
+\begin{claimbox}[\Con, recorded 2026-09-16]\label{claim:prediction}
+A hypodissipative version of the smooth-forcing mechanism must do at least one of: bound the frequency
+ratio $Q$, which by $120k\le Q$ bounds the derivatives controlled and therefore gives a force of
+finite regularity rather than $C^{\infty}$; raise the amplitude margin $\delta$ toward $1$; or change
+the growth law to one whose rate is the background gradient itself rather than its square root, which
+is what the vortex-layer construction uses. Its threshold should scale like $\delta/(4Q)$.
+\end{claimbox}
+
+The prediction is wrong if a hypodissipative result appears with a positive threshold while keeping a
+stage-dependent unbounded $Q_q$, an amplitude margin near $1/8$, and the same square-root growth law.
+It is also wrong, in a more interesting way, if the dissipative analysis does not damp a layer at
+$\nu\lambda^{2\alpha}$, which is the one ingredient here that is ours rather than transcribed, and is
+the ingredient Section~\ref{sec:reduction} tested. The sequel had not appeared when this was recorded,
+checked against the preprint listings on 2026-09-16 and again on 2026-09-17.
+
+\section{Method notes}
+
+Every experiment in this program commits its hypothesis and its pass criteria before the run, keeps
+its raw output, and ends in a verdict that may be CONFIRMED, REFUTED, INCONCLUSIVE or DECIDED IN PART.
+Two consequences are visible in this paper: a gate that was not met is reported as not met, and the
+run at the parameters committed for the steering cycle is reported as refuted, with the reason.
+
+Several defects were found by construction rather than by luck, and all are of one family, a check
+that cannot see what it claims to test: a negative control evaluated where the corruption changed
+nothing; a slope fitted where the amplitude crosses zero; a horizon too short to see the effect;
+a wave placed above the dealiasing limit; a measurement window reaching past that limit while the
+wave itself passed the check; a guard asserting that a background drifts in temperature when the
+runaway is entirely in the vorticity; and a schedule demanding a phase component of $1.07$, which no
+unit vector has, followed by the reduced model but not by the simulation.
+
+All results reproduce from their own records: each result file stores the settings it was run with,
+and a harness rebuilds the command line from that block rather than from prose, then diffs every
+numeric leaf. That distinction is not cosmetic. Rerunning one experiment from its documented command
+gave a correlation of $0.9920$ against a recorded $0.9995$, purely because two settings of the
+recorded run differed from the runner's defaults, which is indistinguishable from a regression.
+
+\section{What is not claimed}
+
+This paper does not prove finite-time blowup for any equation; does not verify the mathematics of
+either announced proof beyond what a kernel replay of a formalization establishes; does not improve
+any published threshold; and does not claim the layer mechanism, which belongs to C\'ordoba and
+Mart\'inez-Zoroa. The threshold reconstruction of Section~\ref{sec:budget} is exponent bookkeeping
+with $\delta\to0$, logarithms dropped and constants ignored, reproducing the authors' own stated
+choices; the trade-off of Section~\ref{sec:tradeoff} applies a reduction we derived to a schedule
+designed for an inviscid theorem, which is a statement about what that design costs in a setting it
+was not built for, not a claim that it fails.
+
+\section*{Data and code}
+
+Sources, hypotheses, raw outputs, verdicts, the reproduction harness and the exact-arithmetic checks
+are public at \href{\recordurl}{the project repository}. The Lean development audited in
+Section~\ref{sec:mv} is
+\texttt{openai/\allowbreak NavierStokesAndEuler}; the checker is the \texttt{leanchecker}
+binary shipped with \texttt{leanprover/\allowbreak lean4:\allowbreak v4.34.0-rc2}.
+
+\begin{thebibliography}{9}
+\bibitem{fefferman} C. L. Fefferman, \emph{Existence and smoothness of the Navier-Stokes equation},
+Clay Mathematics Institute Millennium Prize problem description.
+\bibitem{cmz} D. C\'ordoba, L. Mart\'inez-Zoroa and F. Zheng, \emph{Finite time blow-up for the
+hypodissipative Navier Stokes equations with a force in $L^{1}_{t}C^{1,\epsilon}_{x}$ and
+$L^{\infty}_{t}L^{2}_{x}$}, Arch. Ration. Mech. Anal. \textbf{250} (2026), article 38;
+\href{https://arxiv.org/abs/2407.06776}{arXiv:2407.06776}.
+\bibitem{ab-boussinesq} L. Alpog\'e and T. Buckmaster, \emph{Blowup for the Boussinesq equations with
+smooth forcing}, preprint, 2026-09-07.
+\bibitem{ab-euler} L. Alpog\'e and T. Buckmaster, \emph{Blowup for the three-dimensional Euler
+equations with smooth forcing}, preprint, 2026-09-07.
+\bibitem{ab-ipm} L. Alpog\'e and T. Buckmaster, \emph{Blowup for the incompressible porous media
+equation with smooth forcing}, preprint, 2026-09-07.
+\bibitem{clsmz} D. C\'ordoba, C. La\'in-Sanclemente and L. Mart\'inez-Zoroa, \emph{Blowup for the
+Boussinesq equations with an infinite chain of degenerate pendula}, Adv. Math. \textbf{480} (2026);
+\href{https://arxiv.org/abs/2505.20988}{arXiv:2505.20988}.
+\bibitem{openai-ns} OpenAI, \emph{Finite-time blowup for forced three-dimensional Navier-Stokes},
+manuscript, 2026-09-08.
+\bibitem{openai-euler} OpenAI, \emph{Finite-time blowup for three-dimensional Euler}, manuscript,
+2026-09-08.
+\bibitem{leanchecker} Lean 4 toolchain, \texttt{leanchecker} (built in since v4.28.0, superseding the
+archived \texttt{lean4checker} repository).
+\end{thebibliography}
+
+\end{document}

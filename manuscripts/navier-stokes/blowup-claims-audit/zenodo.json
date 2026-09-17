@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "title": "An independent audit of the September 2026 fluid blowup claims, and a trade-off between force regularity and dissipation",
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "publication_date": "2026-09-17",
+    "version": "0.01",
+    "language": "eng",
+    "creators": [{
+      "name": "Santibañez-Leal, Felipe",
+      "orcid": "0000-0002-0150-3246",
+      "affiliation": "CAOS Research program"
+    }],
+    "description": "<p>In September 2026 two groups announced finite-time blowup results for fluid equations with machine-checked certificates: Alpoge and Buckmaster for the two-dimensional inviscid Boussinesq system and three-dimensional Euler with smooth forcing, and OpenAI for three-dimensional Navier-Stokes with forcing at every positive viscosity together with unforced Euler. Both extend the multiscale layer program of Cordoba and Martinez-Zoroa. This preprint reports an independent audit and four quantitative consequences.</p><p>First, the Lean certificate of the OpenAI development was rebuilt (11,424 jobs, zero sorryAx, three standard axioms) and then replayed through the Lean kernel from an empty environment, both halves, at the toolchain version the development pins: NavierStokes in 2,972 s and Euler in 1,588 s, exit 0. Second, the reduced amplitude system of the layer mechanism was transcribed, extended with fractional dissipation, and validated against direct pseudospectral simulation, including the growth, steering and holding cycle that makes the cascade iterable; on a background flattened to fourth order the cycle reproduces the reduced model to 3.06e-06 in the steering gain. Third, the published hypodissipative threshold (22 - 8 sqrt 7)/9 of Cordoba, Martinez-Zoroa and Zheng is recovered exactly from their own exponent budget, the binding constraint is identified as the outer layers' velocity acting on the inner layer, and the admissible frequency ratios are shown to form an interval whose discriminant is exactly the polynomial whose root is the threshold, so that the interval closes there and geometric cascades are excluded at every positive dissipation. Fourth, applying the dissipative reduction to the published smooth-forcing schedule gives the trade-off alpha &lt; delta/(4Q) between amplitude margin, frequency ratio and dissipation exponent, with the consequence that controlling one derivative of the force caps the exponent at 1/480, twenty-two times below the threshold already proved for a rough force; a dated and falsifiable prediction about the unreleased hypodissipative sequel is recorded.</p><p>Statements are labelled machine-verified, derived or conjectural. Two claims from an earlier round of this work are retracted in the text and the retractions are kept. The paper does not prove blowup for any equation, does not verify the mathematics of either announced proof beyond what a kernel replay establishes, does not improve any published threshold, and does not claim the layer mechanism, which belongs to Cordoba and Martinez-Zoroa. This is a self-published preprint and has not received external peer review.</p>",
+    "keywords": [
+      "Navier-Stokes equations",
+      "Boussinesq equations",
+      "finite-time blowup",
+      "hypodissipative",
+      "Lean 4",
+      "kernel replay",
+      "formal verification",
+      "exponent budget",
+      "multiscale construction"
+    ],
+    "license": "cc-by-4.0",
+    "access_right": "open",
+    "related_identifiers": [
+      {"identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH", "relation": "isSupplementTo", "resource_type": "software"},
+      {"identifier": "10.48550/arXiv.2407.06776", "relation": "cites", "resource_type": "publication-preprint"},
+      {"identifier": "10.48550/arXiv.2505.20988", "relation": "cites", "resource_type": "publication-preprint"}
+    ]
+  }
+}
