@@ -9,6 +9,17 @@ hypodissipative threshold of Cordoba-Martinez-Zoroa-Zheng is `0.0463`.
 **This dossier contains a prediction about work that has not been released.** It is written so that it
 can be checked and, if wrong, seen to be wrong: the criterion is in Section 5.
 
+> **Correction, 2026-09-17.** The rule `120 k <= Q` used below is a sufficient simplification
+> in the published design, not a structural exchange rate. Transcribing the full force budget
+> ([`2026-09-17-force-estimates-exponent-content.md`](2026-09-17-force-estimates-exponent-content.md)) shows that
+> the ratio floor the estimates actually force is `Q >= 9d + 42`, from the derivative range of the
+> coefficient bounds, and that the margin is capped near `1/2` by the remainder and near `1/4` by the
+> leading phase means at the published target. The bound `1/480` below therefore holds for the
+> design as published, but not for every retuning: at one derivative the most favourable reading of
+> the architecture reaches `3.69e-03` (ours). The conclusion, that the design stays at least ten
+> times below the proved threshold, is unchanged and now rests on the full budget. The text below is
+> kept as written.
+
 ## 1. The question
 
 Alpoge and Buckmaster prove blowup for 2D Boussinesq with a **smooth** force, inviscid. Cordoba,

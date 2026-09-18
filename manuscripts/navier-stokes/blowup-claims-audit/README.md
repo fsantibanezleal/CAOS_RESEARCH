@@ -1,19 +1,21 @@
 # navier-stokes: how much dissipation can a multiscale layer cascade carry?
 
-First paper of the navier-stokes research series. Its conclusion is Theorem 1: the published
-smooth-forcing design cannot carry a dissipation exponent above 5.38e-04, which is 86 times below
-what a rough-forcing construction already proves. v0.01 and v0.02 are superseded (v0.01 reported the
-audit without stating that bound; v0.02 stated it but its PDF printed the previous DOI). Built from the experiment verdicts and context
+First paper of the navier-stokes research series. Theorem 3.1: a layer cascade growing at sqrt(A)
+cannot carry more than alpha = 1/2, and one growing at A no more than alpha = 1 (|grad|^alpha
+convention, classical viscosity 2). Theorem 4.1: the force estimates of the smooth-forcing design
+certify at most 5.29e-04 at the published choices and 8.96e-03 under any retuning, at least ten
+times below the proved rough-force threshold. v0.05 replaces the v0.04 design bound (1.08e-03),
+which rested on a misread inequality; earlier versions are superseded. Built from the experiment verdicts and context
 dossiers of [`problems/analysis-pde/navier-stokes/`](../../../problems/analysis-pde/navier-stokes/),
 never from memory, per methodology 09.
 
 | | |
 |---|---|
-| version | 0.04 (2026-09-17) |
+| version | 0.05 (2026-09-17) |
 | pages | 8 |
 | build | `pdflatex main.tex` twice, MiKTeX; zero errors, zero overfull or underfull boxes |
 | labels | machine-verified `[MV]`, derived `[D]`, conjectural `[C]`, used in-text |
-| Zenodo | v0.04, version DOI [10.5281/zenodo.22821790](https://doi.org/10.5281/zenodo.22821790), concept DOI [10.5281/zenodo.22820520](https://doi.org/10.5281/zenodo.22820520) (always latest) |
+| Zenodo | v0.05, version DOI [10.5281/zenodo.22822133](https://doi.org/10.5281/zenodo.22822133), concept DOI [10.5281/zenodo.22820520](https://doi.org/10.5281/zenodo.22820520) (always latest) |
 
 ## What it contains, and where each part comes from
 
@@ -27,6 +29,8 @@ never from memory, per methodology 09.
 | admissible frequency ratios, and the exclusion of geometric cascades | `nslib/cmz_budget.py`, exact checks in CI |
 | our cascade cap, and why it is unreachable | `context/2026-09-16-model-side-force-budget.md` |
 | the regularity-against-dissipation trade-off and the dated prediction | `context/2026-09-16-smoothness-versus-dissipation.md` |
+| the design bound, from the full force budget | `context/2026-09-17-force-estimates-exponent-content.md`, `nslib/ab_force_budget.py` |
+| the class ceiling and its numerical confirmation | `nslib/class_ceiling.py`, EXP-008 verdict |
 
 Every number quoted in the paper is also gated in continuous integration against the result files it
 came from (`tests/test_navier_stokes_quoted_numbers.py`), and every experiment reproduces from its own

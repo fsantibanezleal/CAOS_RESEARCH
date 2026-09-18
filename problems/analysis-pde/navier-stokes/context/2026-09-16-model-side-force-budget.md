@@ -129,3 +129,10 @@ decides the trade-off with dissipation.
 - Wiki page 4's landscape row for our cap keeps its meaning (necessary, not sufficient) and gains the
   reason it is loose.
 - The bare threshold question remains not ours, as recorded at the Phase 0 gate.
+
+## 6. Closed, 2026-09-17
+
+The open half of NS-016 was done as scoped in Section 4b: the exponent content of the force
+estimates is transcribed in
+[`2026-09-17-force-estimates-exponent-content.md`](2026-09-17-force-estimates-exponent-content.md),
+with code in `nslib/ab_force_budget.py`. It also corrected the design bound published in v0.04.

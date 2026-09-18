@@ -1,6 +1,6 @@
 """Ceilings for the multiscale layer program, independent of any design constants.
 
-`ab_ceiling` bounds one published DESIGN. This module bounds the MECHANISM CLASSES, which
+`ab_force_budget` bounds one published DESIGN. This module bounds the MECHANISM CLASSES, which
 is the statement that does not move when constants are retuned, and it answers the question
 the whole program is aimed at: can a layer cascade reach classical viscosity?
 
@@ -92,10 +92,10 @@ def in_their_convention(alpha_ours: float) -> float:
 
 def summary() -> list[dict]:
     """The table the conclusion rests on."""
-    from . import ab_ceiling, cascade
+    from . import ab_force_budget, cascade
 
     published = {
-        "Boussinesq pendulum": ab_ceiling.ceiling()[1],
+        "Boussinesq pendulum": ab_force_budget.PUBLISHED.ceiling()["best"]["alpha"],
         "vortex stretching": cascade.ALPHA0_CMZ / 2.0,
     }
     rows = []
