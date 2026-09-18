@@ -104,3 +104,21 @@ completion; undecided orders are listed.
 - REFUTED (of P2) if some `k` is SAT with a checker-accepted `(H, f)` and `H` is refuted for
   Petersen colorability with a verified proof: a new counterexample on `k` vertices.
 - INCONCLUSIVE for the orders that hit the cap.
+
+## Addendum declared 2026-09-18 09:25, before any target instance ran
+
+Tooling measurement on the controls and one timing probe (`G52`, `k = 44`, stopped after 22
+rounds, no decision used): each restart of the external solver costs about 8 seconds at this
+size and the models found first have the unused target vertices in a separate component.
+Method changes, fixed before the target runs:
+
+- the lazy cut loop runs in-process with PySAT's CaDiCaL 1.9.5 (`run_inc.py`); when it reports
+  UNSAT, the FINAL formula (base, static attach clauses, every learned cut) is written out and
+  certified by WSL CaDiCaL with a DRAT proof checked by drat-trim, so the certificate does not
+  depend on the in-process solver;
+- a static, sound clause family is added: if class `i` is the first unused class, some slot
+  pair joins a class below `i` to a class from `i` on (a connected target cannot have the used
+  classes closed under the matching while unused vertices exist);
+- the controls were re-run under the new runner with identical outcomes (Petersen `k = 6, 8`
+  UNSAT with verified proofs after 82 and 139 rounds; `J5`, `k = 10` SAT with a checker-accepted
+  target that is itself Petersen colorable).

@@ -130,10 +130,115 @@
         "status": "UNSAT",
         "verified": true
       },
+      "25": {
+        "cnf_sha256": "f4327c56543f5f1191d94c96cd79dd619d61f8c6449dbfb465530063ec949331",
+        "critical": false,
+        "seconds": 372.386,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "26": {
+        "cnf_sha256": "4f03339f9bcba678effa33aa6c0bec02ab6748a37a4c1061e19c25c1e6845193",
+        "critical": false,
+        "seconds": 270.994,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "27": {
+        "cnf_sha256": "7116c2b5363b8f773a086fbcd3dda7af10ff9712cb906a06dcc15b8dc52fef3c",
+        "critical": false,
+        "seconds": 250.646,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "28": {
+        "cnf_sha256": "7d6570e67343305472becd7a693a06b8d753b7612f4a7a551f9be734491d177b",
+        "critical": false,
+        "seconds": 222.583,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "29": {
+        "cnf_sha256": "aaddad8b90d05c28e5e222d7f42b78c00e70ecd744b49b4a7d3ddca0e929ce49",
+        "critical": false,
+        "seconds": 233.197,
+        "status": "UNSAT",
+        "verified": true
+      },
       "3": {
         "cnf_sha256": "bb144952264b6f66c5965a2502cd5dda61886bffabab061aa133bc4466af0dea",
         "critical": false,
         "seconds": 137.377,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "30": {
+        "cnf_sha256": "ef41f617be495a615b23927e6263ab295dde52834c2e5deba46fd7ad607c390c",
+        "critical": false,
+        "seconds": 165.429,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "31": {
+        "cnf_sha256": "77d37d1eea36a5cc8a22783427a8a40b429412734a07dbc78910deec99e82b98",
+        "critical": false,
+        "seconds": 122.89,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "32": {
+        "cnf_sha256": "24950bb11680ca0bc2f6504458b3ba1c8311aa0ecc54303aac084064fc04e56c",
+        "critical": false,
+        "seconds": 116.803,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "33": {
+        "cnf_sha256": "a11afe06245c0d5fc24d332c718810b27c7ea8f0010803f9ddb90a37153fe11b",
+        "critical": false,
+        "seconds": 175.035,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "34": {
+        "cnf_sha256": "368c004d51b060620bb9091527735e1be84b7034ed71e71d658cfc52ee0876a8",
+        "critical": false,
+        "seconds": 176.556,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "35": {
+        "cnf_sha256": "692ce603eccb522e6fb44cf0e39b8bfb0388b97b9b1d20669ae00121ced3586c",
+        "critical": false,
+        "seconds": 169.518,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "36": {
+        "cnf_sha256": "2356110621b8a4715faa9869588272066d016348b8c3e0345d215e34c85acfc7",
+        "critical": false,
+        "seconds": 313.458,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "37": {
+        "cnf_sha256": "772714ea87e0de4f729f8051f291c4b0dd3ef1ad354d726071faaa6875481fa2",
+        "critical": false,
+        "seconds": 207.629,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "38": {
+        "cnf_sha256": "e45a610d6ad4706c243a5f100106087cd672425a42dce93bed4db190c83eadf8",
+        "critical": false,
+        "seconds": 218.179,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "39": {
+        "cnf_sha256": "2d8a0e56070a2e4ee6ae8ef70467512c727e105857b40875e20b3901c2fc1a3d",
+        "critical": false,
+        "seconds": 226.762,
         "status": "UNSAT",
         "verified": true
       },
@@ -143,6 +248,11 @@
         "seconds": 197.797,
         "status": "UNSAT",
         "verified": true
+      },
+      "40": {
+        "cnf_sha256": "37e4a4f2e657f3548ab51c81831bcd9ed70baa5829c8eb3dd3fe55ac64e24f9f",
+        "seconds": 894.128,
+        "status": "ERROR"
       },
       "5": {
         "cnf_sha256": "299a83bee920d7aa38635633548b647650729122116f8becf897f0c6eb57b5ea",
