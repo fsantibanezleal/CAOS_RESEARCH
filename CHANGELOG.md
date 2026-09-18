@@ -3,6 +3,27 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.69.000] - 2026-09-18
+
+### Added
+- jacobian-conjecture: EXP-136, the cascade audited at the level of dimension indices. Each
+  implication is taken with the index its primary source states (transcriptions and PDF hashes in
+  its `artifacts/sources.md`); 14 exact checks, two runs byte-identical.
+  - Dixmier and Poisson are false for every n >= 3 and open at 1 and 2.
+  - Mathieu is false for SU(N), N >= 24 (the 24-variable homogeneous form of EXP-041) and for
+    SU(2) (Long's explicit example, checked for n <= 12); for 3 <= N <= 23 it is not decided,
+    since F is not affinely of homogeneous type (Groebner certificate).
+  - The Gaussian moments conjecture is false for every n >= 3 (Long's explicit example, checked
+    for m <= 10), true for n = 1, and a proof of n = 2 is claimed.
+- Manuscripts: jacobian-conjecture cascade v0.06 (10.5281/zenodo.22834179), foundational v0.13
+  (10.5281/zenodo.22834207) and planar v0.34 (10.5281/zenodo.22834215), with the author name
+  printed as Santibáñez-Leal.
+
+### Fixed
+- jacobian-conjecture: EXP-016 item 5 and the EXP-018 board read the falsity of JC(4) as
+  deciding Dixmier(2), and EXP-016 item 1 stated the Mathieu conjecture false for SU(3). Both are
+  restated by EXP-136 in the wiki, the web cascade table and the Jacobian page.
+
 ## [0.68.000] - 2026-09-18
 
 ### Added
