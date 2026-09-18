@@ -24,7 +24,8 @@ def rows(graph: str) -> list[str]:
             continue
         out.append(" & ".join([
             "$" + NAMES[graph] + "$", str(d["k"]), fmt(d["variables"]), fmt(d["clauses"]),
-            f"{d['certify_solve_seconds']:,.0f}".replace(",", "{,}"), fmt(d["proof_bytes"]),
+            (f"{d['certify_solve_seconds']:,.0f}".replace(",", "{,}") if d.get("certify_solve_seconds") is not None else "n/a"),
+            fmt(d["proof_bytes"]),
             f"{d['check_seconds']:,.0f}".replace(",", "{,}"),
         ]) + " " + BS + BS)
     return out
