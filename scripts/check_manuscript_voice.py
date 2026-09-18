@@ -63,6 +63,13 @@ ALWAYS = [
     ("process-vocabulary", r"\bcommissioned\b"),
     ("process-vocabulary", r"\badversarial (review|audit|validation|pass|reasoning|calibration|support|check|control|corruption|mutation|negation|novelty)s?\b"),
     ("process-vocabulary", r"\bRESUME\b|\bwip/|\bmethodology/\d"),
+    # run bookkeeping (2026-09-18: found in an appendix the rules above passed)
+    ("process-vocabulary", r"\b(execution )?receipts?\b"),
+    ("process-vocabulary", r"\bfro(ze|zen) (three |two |the )?(rational )?candidates?\b|\bfrozen (candidate|input) lists?\b"),
+    ("process-vocabulary", r"\bdesign pass\b"),
+    ("process-vocabulary", r"\bwere not run\b"),
+    ("process-vocabulary", r"\b\d+ passing tests?\b"),
+    ("process-vocabulary", r"\bacceptance criterion for (stage|the run|run)\b"),
     ("self-assessment", r"\bhonest(ly|y)?\b"),
     ("self-assessment", r"\bon the record\b"),
     ("self-assessment", r"\bover-?claim"),

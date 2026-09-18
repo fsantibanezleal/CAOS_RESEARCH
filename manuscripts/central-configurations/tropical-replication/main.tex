@@ -16,45 +16,59 @@
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 
+% Avoid single lines stranded at the top or bottom of a page.
+\widowpenalty=10000
+\clubpenalty=10000
+
+% Page-1 header block (conventions/manuscript-header-standard.md). The four document
+% macros are set by the publishing tool when the version DOI is reserved.
+\newcommand{\doctype}{Preprint}
+\newcommand{\docversion}{v0.09}
+\newcommand{\docdate}{18 September 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.22823642}
+\newcommand{\conceptdoi}{10.5281/zenodo.21542483}
+\newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
+\newcommand{\headerblock}{%
+\begin{center}
+\fbox{\parbox{0.94\textwidth}{\small\raggedright
+\textbf{\doctype} \quad$\cdot$\quad \docversion, \docdate \quad$\cdot$\quad Licence CC BY 4.0\\[2pt]
+CAOS Research open-problems programme \quad$\cdot$\quad problem \texttt{central-configurations}\\[2pt]
+Version DOI \href{https://doi.org/\versiondoi}{\texttt{\versiondoi}} \quad$\cdot$\quad
+concept DOI (always latest) \href{https://doi.org/\conceptdoi}{\texttt{\conceptdoi}}\\[2pt]
+Not peer reviewed. Source code, data and computational records: \href{https://\docrepo}{\texttt{\docrepo}}
+}}
+\end{center}
+\vspace{4pt}}
+
 \title{Exact replication and screening of tropical finiteness certificates
 for central configurations}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-01\\[2pt]\normalsize Version 0.08}
+\date{\docdate}
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Tropical Certificates for Central Configurations \textperiodcentered\ v0.08}
+\fancyhead[L]{\small CAOS Research \doctype}
+\fancyhead[R]{\small Tropical Certificates for Central Configurations \textperiodcentered\ \docversion}
 \fancyfoot[C]{\small \thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
 
 \begin{document}
 \maketitle
 \thispagestyle{plain}
-
-\begin{center}
-\small
-\fbox{\parbox{0.92\textwidth}{\centering
-\textbf{Preprint: a machine research record, not peer reviewed.}\\[2pt]
-Replication-first: the finiteness theorems reproduced here are due to
-Hampton--Moeckel, Albouy--Kaloshin and Jensen--Leykin, and the equal-mass censuses
-to Moczurad--Zgliczy\'nski. Our own contributions are the exact instruments, the
-measured facts and the independent reproductions, each labelled as such. Every
-number is reproducible from the versioned repository; hypotheses are committed
-before their runs and refutations are kept in the record.}}
-\end{center}
-\vspace{4pt}
+\headerblock
 
 \begin{abstract}
-We report an exact, fully replayable machine record around Smale's 6th problem
-(finiteness of planar central configurations). Contributions of this record:
+We report an exact, fully reproducible replication and screening study around
+Smale's 6th problem (finiteness of planar central configurations), with the
+following contributions:
 (i) an exact calibration of the Albouy--Chenciner mutual-distance equations in
 open tooling, including a machine rediscovery of their dimension-blindness (the
 regular tetrahedron coexists with the square in the equal-mass rhombus stratum
 of the 4-body distance system until the Cayley--Menger equation is adjoined,
-after which the square, with side $a$ satisfying $32a^6-32a^3+7=0$, is the
-unique positive point of the stratum); (ii) a machine measurement of the
+after which the square, with side $a$ satisfying $a^3=(4+\sqrt2)/8$, the larger of
+the two positive roots of $32a^6-32a^3+7=0$, is the unique positive point of the
+stratum); (ii) a machine measurement of the
 \emph{enrichment law}: adjoining the asymmetric (Roberts) equations and the
 energy--inertia relation renders the $n=3$ distance ideal zero-dimensional
 directly, eliminating the coordinate-line components of the bare symmetric
@@ -76,10 +90,9 @@ the energy--inertia relation to be tropically inert; and two censuses that defea
 our own engine are closed by an independent solver with exact cross-verification.
 All computations are exact (rational or integer arithmetic, or
 certified polyhedral computation); every stated number is reproducible from
-committed code and hashes. This is a replication-and-instruments record: the
-theorems replicated are due to Hampton--Moeckel, Albouy--Kaloshin, and
-Jensen--Leykin; the measurements in (i), (ii) and (iv) are, to our knowledge,
-recorded here at this level of explicitness for the first time.
+the released code and recorded hashes. The finiteness theorems replicated are due
+to Hampton--Moeckel, Albouy--Kaloshin, and Jensen--Leykin; the measurements in
+(i), (ii) and (iv) are, to our knowledge, new at this level of explicitness.
 \end{abstract}
 
 \section{Introduction}
@@ -109,14 +122,11 @@ censuses for $n\le 7$ are due to Moczurad--Zgliczy\'nski \cite{MZ19}; with one
 negative mass a continuum exists (Roberts \cite{Roberts99}), so positivity is
 essential.
 
-This paper is a \emph{machine record}: it documents, with exact artifacts, a
-replication-first program whose goal is to place every certificate of the
-ladder inside one open, replayable toolchain, and then to run the experiments
-the frontier papers themselves call for. We follow a strict discipline:
-hypotheses are declared and committed before every run; verdicts record
-refutations as prominently as confirmations; every quantitative claim below is
-reproducible from the versioned repository, and the git and Zenodo timestamps
-constitute the priority record of the work.
+This paper is a replication and screening study: it places the certificates of
+this ladder inside one open, reproducible toolchain, with exact artifacts, and
+then runs the experiments that the frontier papers themselves call for. Negative
+results are reported alongside positive ones, and every quantitative claim below is
+reproducible from the repository.
 
 \section{Exact calibration of the Albouy--Chenciner system (EXP-001)}
 
@@ -135,8 +145,8 @@ positive collinear solution per ordering (Euler--Moulton; for equal masses the
 symbolic Euler eliminant persisted. For $n=4$ each cleared AC polynomial has
 exactly 14 monomials, matching the count stated in \cite{HM06}.
 
-The instructive result of the calibration is a machine \emph{refutation} of a
-declared prediction. In the equal-mass rhombus stratum
+The instructive result of the calibration concerns the equal-mass rhombus
+stratum. In the stratum
 $r_{12}=r_{23}=r_{34}=r_{14}=a$, $r_{13}=r_{24}=b$ of $n=4$, the bare AC system
 has \emph{two} positive solutions: the planar square, with $b^2=2a^2$ and
 $a^3=(4+\sqrt2)/8$ (minimal polynomial $32a^6-32a^3+7$), and the regular
@@ -148,13 +158,13 @@ scale-free invariant $J=UI^{1/2}/M^{5/2}$ at both anchors:
 $J_{\square}=\tfrac1{16}+\tfrac{\sqrt2}{8}$,
 $J_{\mathrm{tet}}=\tfrac{3\sqrt6}{32}$.
 
-Two toolchain findings of independent interest were caught and are now
-regression-gated in the repository: \texttt{sympy}'s
+Two toolchain findings of independent interest are covered by regression tests
+in the repository: \texttt{sympy}'s
 \texttt{solve\_poly\_system} silently returns incomplete solution lists on
 these systems (it missed the square, whose eliminant factor $4b^6-4b^3-7$ is
 even radical-solvable), and \texttt{is\_positive} returns \texttt{None} on
-nested algebraic numbers, so naive filters silently drop genuine solutions.
-Verdict-grade counting in our pipeline therefore uses univariate eliminants
+nested algebraic numbers, so naive filters silently drop valid solutions.
+Counting in our pipeline therefore uses univariate eliminants
 that are provably elements of the ideal (lex Gr\"obner elimination, or
 Stickelberger multiplication-matrix characteristic polynomials), complete real
 root isolation, and exact residual acceptance.
@@ -179,7 +189,7 @@ their tropical cones \cite{HJ11}; and Jensen--Leykin explicitly call for
 ``different versions of the Albouy--Chenciner equations'' at $n=6$ \cite{JL25}.
 Section~\ref{sec:screening} quantifies this pattern at the prevariety level.
 
-\section{Exact reproduction of the Jensen--Leykin $n=5$ certificate (EXP-003)}
+\section{Exact reproduction of the Jensen--Leykin \texorpdfstring{$n=5$}{n=5} certificate (EXP-003)}
 
 Jensen--Leykin \cite{JL25} prove generic-mass finiteness of planar CCs for
 $n\le5$ by a purely polyhedral computation: specialize the masses into the
@@ -260,7 +270,7 @@ Section~3, and it agrees with the historical record: \cite{HM06} could not run
 their method on the six AC equations alone, and \cite{HJ11} kept the redundant
 family deliberately.
 
-\emph{(c) $n=4$ falls in seconds, and the hard case is exactly the predicted
+\emph{(c) $n=4$ falls in seconds, and the hard case is the equal-valuation
 one.} With valuations $(1,3,9,27)$ and $(1,2,4,8)$ the $n=4$ prevariety is
 globally pointed (10 comets each; 4 and 2 seconds), a purely polyhedral
 replication of generic-mass finiteness for the four-body problem; arithmetic
@@ -271,25 +281,25 @@ to the original computation of \cite{HM06}.
 
 \subsection{Every comet decided exactly (EXP-007)}
 
-The screening above was reported with an explicit weakness: on the failing controls
-the heuristic returned neither certificate, so those cells read ``no certificate''
-rather than ``not pointed''. We closed that gap. A cone is pointed exactly when the
+On the failing controls the heuristic of the screening returns neither certificate,
+so those cells read ``no certificate'' rather than ``not pointed''. An exact decision
+closes that gap. A cone is pointed exactly when the
 only nonnegative solution of $\sum_i \lambda_i g_i = 0$ is $\lambda = 0$, which is a
 single linear feasibility question; we decide it with a phase-I simplex in exact
 rational arithmetic (Bland's rule, so termination is guaranteed). Feasibility
 returns an explicit nonnegative zero combination, infeasibility returns a separating
 vector, and both are re-verified by exact substitution outside the decider.
 
-All sixteen cells are now decided in 33 seconds total, with zero
-certificate-verification failures. Every comet previously certified pointed is
+All sixteen cells are decided in 33 seconds total, with zero
+certificate-verification failures. Every comet certified pointed by the screening is
 confirmed (no flips), and each failing control has exactly one comet that is
-provably UNPOINTED: at $n=5$ the arithmetic valuations $(0,1,2,3,4)$ (180 pointed,
+provably \emph{unpointed}: at $n=5$ the arithmetic valuations $(0,1,2,3,4)$ (180 pointed,
 one unpointed) and the repeated valuations, and at $n=4$ the equal valuations. Our
 data therefore independently confirms, rather than merely being consistent with, the
 failure of arithmetic valuations reported in \cite{JL25}, and localises it to a
 single component out of 181.
 
-We keep the logical direction straight: pointedness of every comet is a
+The logical direction matters: pointedness of every comet is a
 \emph{sufficient} condition for dimension zero, so an unpointed comet proves only
 that this certificate route does not close, never that finiteness fails. The
 prevariety over-approximates the tropical variety.
@@ -302,15 +312,15 @@ and Dziobek's equations are therefore available (they are what
 Hampton--Moeckel~\cite{HM06} needed when the Albouy--Chenciner equations alone
 defeated their method), we ran the baseline against three enrichments.
 
-Two declared predictions failed, informatively. First, we predicted that adding
-equations shrinks the $f$-vector; it does at equal valuations (a 25 percent
-reduction) but GROWS it at powers of two and at arithmetic valuations. The
-prediction confused the prevariety as a set with the subdivision that represents it:
+Two results run against intuition. First, adding equations does not always shrink the
+$f$-vector: it shrinks it at equal valuations (a 25 percent reduction) but
+\emph{grows} it at powers of two and at arithmetic valuations. The prevariety as a set
+must not be confused with the subdivision that represents it:
 intersecting more tropical hypersurfaces can only shrink the set while refining the
 fan, so cone counts may rise. The invariant that behaves monotonically in our data
 is the comet count, which falls from 10 to 7 and from 9 to 6 when Dziobek is
-adjoined. Second, we predicted that Dziobek's equations would rescue the hard
-equal-valuation case. They do not: the prevariety shrinks by a quarter and its
+adjoined. Second, Dziobek's equations do not rescue the hard equal-valuation case: the
+prevariety shrinks by a quarter and its
 single comet stays provably unpointed. The enrichment that rescued the
 \emph{algebraic} proof therefore does not rescue the \emph{tropical} certificate at
 the same specialisation, which separates two roles that are easy to conflate.
@@ -322,8 +332,8 @@ lesson above, and it lets us drop that equation from expensive runs at no cost.
 
 \section{Censuses across two independent engines (EXP-006)}
 
-Two of the $n=3$ censuses had been left inconclusive at our own engine's budget. We
-recomputed them with msolve (Gr\"obner bases, rational univariate representation and
+Two of the $n=3$ censuses do not finish within a 900-second limit in our own engine. % voice-ok
+We recomputed them with msolve (Gr\"obner bases, rational univariate representation and
 certified real-root isolation), keeping our exact machinery as the verification
 layer: msolve returns rational isolating boxes, and containment of an exact
 algebraic point in a rational box is decided exactly. Both open cells close in under
@@ -333,9 +343,9 @@ every one of our independently computed exact points inside a distinct box and n
 unexplained boxes. Two implementations that share no code agree on every decided
 instance.
 
-The same experiment refuted its own third prediction. We expected the enriched
-planar $n=4$ system to admit an isolated census matching the published equal-mass
-class count; msolve reports the affine system to have dimension one, so there is no
+The same computation shows that the enriched planar $n=4$ system does not admit an
+isolated census to compare with the published equal-mass class count: msolve reports
+the affine system to have dimension one, so there is no
 isolated census to compare. Diagnostics exclude the vanishing-distance loci as the
 cause, which leaves the reading the literature already acts on: the census belongs in
 the torus, where all mutual distances are invertible, which is precisely the setting
@@ -346,19 +356,19 @@ Following that lesson, we attempted the $n=4$ equal-mass census where it belongs
 in the torus, by two independent exact formulations: the enriched planar system
 under a Rabinowitsch saturation of the distance product (seven unknowns) and the
 z-system of~\cite{HM06} (twelve unknowns, the mutual distances joined by the
-Dziobek variables). The exact square of Section~2 passes the smoke test of the
-first system by exact residual substitution. Neither formulation produced any
-msolve output within a declared and mechanically enforced budget of 3600 seconds
+Dziobek variables). The exact square of Section~2 satisfies the first system,
+checked by exact residual substitution. Neither formulation produced any
+msolve output within a mechanically enforced time limit of 3600 seconds % voice-ok
 per route (EXP-009), so the published equal-mass counts remain untested by us.
 We note that the literature contains, to our knowledge, no direct algebraic
 solve of this census either: \cite{HM06} bound the count by a mixed volume
 rather than solving, and the rigorous equal-mass counts of~\cite{MZ19} come from
 interval methods. The measured cliff between $n=3$ (both censuses close in under
-a second) and $n=4$ (no output in an hour, twice) redirects our counting work to
-the bounding rung and our finiteness work to dimension computations, as follows.
+a second) and $n=4$ (no output in an hour, twice) points counting towards bounds
+rather than solutions, and finiteness towards dimension computations, as follows.
 
 \medskip
-\noindent\textbf{The incidence-dimension lane (EXP-010, declared and launched).}
+\noindent\textbf{Dimension of the $n=4$ Dziobek variety (EXP-010).}
 The object is the Dziobek variety of $n=4$: the vanishing of the cleared Dziobek
 differences $S_{12}S_{34}=S_{13}S_{24}=S_{14}S_{23}$ together with the planar
 Cayley--Menger determinant, in the torus of the six mutual distances. Masses do
@@ -368,94 +378,85 @@ instrument keeps every algebraic call zero-dimensional by construction: recorded
 random integer linear sections of codimension three (which should meet the
 variety in finitely many points, whose number is degree data) and codimension
 four (which should miss it), decided by msolve under caps, with a deterministic
-Gr\"obner staircase rung run separately. The declared smoke gate discriminates
+Gr\"obner staircase computation run separately. A validation test discriminates
 three exact anchors in one second: the exact square of Section~2 lies on the
 variety (certified by polynomial reduction modulo $8a^3=4+\sqrt{2}$ written as
 two polynomial relations, no radical heuristics), the unit tetrahedron satisfies
 the Dziobek equations but is excluded by Cayley--Menger, and the $3$-$4$-$5$
 rectangle satisfies Cayley--Menger but violates the Dziobek equations.
 
-The probes decided the experiment the same day, with an asymmetry that is
-itself the finding. Two independent codimension-four random sections
+The probes show an asymmetry that is itself the finding. Two independent
+codimension-four random sections
 (coefficients drawn uniformly from $[-10^6,10^6]$ by a seeded generator, the
-draws archived verbatim) came back EMPTY in one second each (msolve's
+draws archived verbatim) came back \emph{empty} in one second each (msolve's
 dimension $-1$ output), which is probabilistic-exact support for the Dziobek
 variety having dimension at most three, exactly the value the generic
 finiteness picture predicts and exactly the direction such arguments consume
 (what must be excluded is excess dimension). By contrast, both
 codimension-three census probes and a deterministic Gr\"obner staircase
-computation walled at their declared caps (900 and 1800 seconds), so no degree
-data and no dimension lower bound beyond the exact witness were produced, and
-the declared kill criterion closed the census half of the instrument at this
-size. Since only an a-priori degree ceiling is available (B\'ezout with the
-stripped degrees $9\cdot 9\cdot 6 = 486$), the emptiness result carries a
-failure estimate of order $10^{-3}$ per draw; it is evidence, not proof. The
-lane continues with cheap emptiness probes and the partial-Gr\"obner
-upper-bound device of Dias--Pan~\cite{DP18} (dimension bounds from the union
-of leading monomials of tractable subideal bases), with certified witness
-sets planned for the lower-bound direction; the next rung is the spatial
-five-body Dziobek variety, executing the proof shape of~\cite{DP18} with
-exact instruments.
+computation did not finish within their time limits (900 and 1800 seconds), so
+no degree data and no dimension lower bound beyond the exact witness were
+produced, and the census half of the instrument is not pursued at this size. Since only an a-priori degree ceiling is
+available (B\'ezout with the stripped degrees $9\cdot 9\cdot 6 = 486$), the
+emptiness result carries a failure estimate of order $10^{-3}$ per draw; it is
+evidence, not proof. For the upper-bound direction the natural tools are cheap
+emptiness probes and the partial-Gr\"obner device of Dias--Pan~\cite{DP18}
+(dimension bounds from the union of leading monomials of tractable subideal
+bases); certified witness sets serve the lower-bound direction. The next case is
+the spatial five-body Dziobek variety, following the proof shape of~\cite{DP18}
+with exact instruments.
 
 \medskip
-\noindent\textbf{The scaling test at $n=5$ (EXP-011).} That rung ran the same
-day and measured the wall. The object is the fifteen cleared Dziobek product
-differences over all quadruples of five bodies together with the spatial
-Cayley--Menger equation, in the torus of the ten mutual distances; the cut is
-declared honestly as an overvariety of the spatial Dziobek central
-configurations (degenerate strata satisfy the products trivially, a phenomenon
-the smoke gate documents with an exact point: the unit-side, unit-slant
-bipyramid with $r_{45}^2 = 8/3$, whose membership reduces to rational
-arithmetic). The three-anchor smoke gate passed in four seconds; every msolve
-section probe, including the codimension-five emptiness probes that cost one
-second at $n=4$, capped at 300 seconds; and a first live run of the
+\noindent\textbf{The scaling test at $n=5$ (EXP-011).} At $n=5$ the same
+instruments meet a computational wall. The object is the fifteen cleared Dziobek
+product differences over all quadruples of five bodies together with the spatial
+Cayley--Menger equation, in the torus of the ten mutual distances; the cut is an
+overvariety of the spatial Dziobek central configurations (degenerate strata
+satisfy the products trivially, as an exact point of the validation set shows:
+the unit-side, unit-slant bipyramid with $r_{45}^2 = 8/3$, whose membership
+reduces to rational arithmetic). The three-anchor validation passed in four
+seconds; every msolve section probe, including the codimension-five emptiness
+probes that cost one second at $n=4$, capped at 300 seconds; and a run of the
 partial-Gr\"obner instrument (fifteen subideals, each one product plus
 Cayley--Menger plus the saturation, 120 seconds apiece under sympy) completed
 a single subideal, leaving a vacuous union bound. Nothing refuted the expected
 dimension four; nothing supported it either. We read the wall as an engine
 fact rather than a mathematical one: \cite{DP18} report completing the
 identical leading-term pattern on an eleven-variable system in minutes under
-Singular, so the instrument's next version swaps the Gr\"obner engine
-(msolve's basis mode, already installed and hash-recorded) and lightens the
-subideal menu to product pairs, with certified witness sets promoted for
-everything sections cannot see. All budgets were declared in advance and are
-reported as spent; no caps were extended.
+Singular, which motivates a change of Gr\"obner engine.
 
 \medskip
-\noindent\textbf{The engine round (EXP-012, EXP-013, EXP-014).} Three further
-experiments, all decided the same day, settled the engine question and
-sharpened the $n=5$ state to a single open decision. First, the engine
-hypothesis was confirmed: Singular over $\mathbb{Q}$ (version and binary hash
-recorded) completes twelve of the identical fifteen subideal jobs at 0.4--1
-seconds each against sympy's one completer near 100 seconds, and an
-exact-reproduction control caught a genuine harvester bug on its first outing
-(sympy's Gr\"obner output defaults to lexicographic ordering whatever order
-was requested, so the previous run had harvested lex leads of grevlex
-elements; the tainted harvest was vacuous, nothing consumed it, and the
-correction is recorded beside the retained artifact). msolve's basis mode was
-identified as modular and pinned screen-only before any run, since an unlucky
-prime can enlarge a leading ideal and fake a LOWER dimension bound. Second,
-the union bound improved to dimension at most 5, and the fifteen-product
-system without Cayley--Menger terminated completely in nine seconds, so its
-staircase dimension is the true Krull dimension: EXACTLY 5, matching the
+\noindent\textbf{Engine comparison and the $n=5$ dimension (EXP-012, EXP-013,
+EXP-014).} Three further computations settle the engine question and reduce the
+$n=5$ question to a single open decision. First, the wall is an engine effect:
+Singular over $\mathbb{Q}$ (version and binary hash recorded) completes twelve of
+the identical fifteen subideal jobs at 0.4--1 seconds each, against one completion
+near 100 seconds under sympy. An exact-reproduction control also shows that
+sympy's Gr\"obner output uses lexicographic ordering whatever order is requested,
+so the leading terms harvested in the EXP-011 run were lex leads of grevlex
+elements; that harvest gave only a vacuous bound, and no result depends on it.
+msolve's basis mode is modular, so it is used for screening only: an unlucky
+prime can enlarge a leading ideal and fake a \emph{lower} dimension bound.
+Second, the union bound gives dimension at most 5, and the fifteen-product
+system without Cayley--Menger terminates completely in nine seconds, so its
+staircase dimension is the true Krull dimension: \emph{exactly} 5, matching the
 rank-one parametrization count. The cost law is sharp: every computation
 without Cayley--Menger runs in seconds, every mix of the products with
 Cayley--Menger caps. Third, the incremental extension of the completed
 products basis by Cayley--Menger (whose normal form against that basis is
-nonzero, so the cut is a proper subvariety) also ran a fresh 1800-second
-budget without terminating. The deterministic record for the spatial
-five-body Dziobek cut therefore stands at: products variety of dimension
-exactly 5, cut of dimension at most 5, expected value 4 undecided; the
-remaining decision (does Cayley--Menger vanish identically on a top
-component?) passes to certified witness sets, and the symmetric-strata
-programme proceeds with the twice-measured cost law.
+nonzero, so the cut is a proper subvariety) also did not terminate within
+1800 seconds. The deterministic results for the spatial five-body Dziobek cut
+are therefore: products variety of dimension exactly 5, cut of dimension at
+most 5, expected value 4 undecided. The remaining decision (does Cayley--Menger
+vanish identically on a top component?) calls for certified witness sets, and
+the cost law, measured twice, guides the work on the symmetric strata below.
 
-\section{The two-pair symmetric stratum of the six-body problem (EXP-015--018, in progress)}
+\section{The two-pair symmetric stratum of the six-body problem (EXP-015--018)}
 
-Dias--Pan~\cite{DP18} proved generic finiteness for the CROSS symmetric class
-of the planar six-body problem (four bodies on the reflection axis, one
-mirror pair). We opened the neighbouring class with two bodies on the axis
-and TWO mirror pairs, for which our recorded searches found no published
+Dias--Pan~\cite{DP18} proved generic finiteness for the \emph{cross} symmetric
+class of the planar six-body problem (four bodies on the reflection axis, one
+mirror pair). We study the neighbouring class, with two bodies on the axis
+and \emph{two} mirror pairs, for which our literature searches found no published
 finiteness result. The exact quotient derivation gives nine distance
 variables; the relation $c_x^2-c_s^2=w_A w_B$ between the cross-side and
 same-side pair distances and the pair widths; a pair-equality lemma in
@@ -463,40 +464,41 @@ closed form (the pair equations factor as the mass difference times
 $(q-v)$ times $(c_x^3-c_s^3)$, forcing pair-equal masses whenever the two
 pairs sit at different heights, with the equal-heights sub-stratum
 explicitly excluded from scope); and, by a pure symmetry argument, a
-reduced system of SIX mass-linear equations.
+reduced system of \emph{six} mass-linear equations.
 
 Machine stages, all exact: the gauged shape variety has dimension 4 (one
 second per engine run, two independent dimension readings agreeing, the
 analogue of the cross case's $\dim E=4$); the $6\times4$ mass-coefficient
 matrix has full rank 4 at two exact rational geometries (pure radical
-arithmetic, no truncation budgets); the equal-mass regular hexagon is
+arithmetic, with no truncation); the equal-mass regular hexagon is
 verified to lie in the stratum through the reduced system and its dihedral
 symmetry degenerates the rank to exactly 3 (nonzero $3\times3$ minor in
 closed form, all $4\times4$ minors vanishing). Three Gr\"obner
-formulations of the rank-deficiency loci walled at declared budgets, with
-the cost see-saw measured from both sides and a decisive modular
-feasibility screen, so the remaining work moved to proof-writing with
-machine-verified identities.
+formulations of the rank-deficiency loci did not finish within their time
+limits, with the cost see-saw measured from both sides and a decisive modular
+feasibility screen; the remaining steps are therefore approached by written
+proofs with machine-verified identities.
 
-That transition paid immediately. The complete catalogue of the 84 nonzero
+This route settles a first case. The complete catalogue of the 84 nonzero
 $2\times2$ minors, computed with the inverse-cube differences as abstract
 symbols, contains four minors that factor into monomials times products of
 two such symbols; their Boolean analysis shows that rank below 2 forces
 one of two explicit branches (body 1, or body 2, at distance $r_{12}$ from
-BOTH pairs), and on each branch five further explicit degenerations are
+\emph{both} pairs), and on each branch five further explicit degenerations are
 all violated by an exact 3-4-5 witness geometry. Hence the rank-at-most-1
 locus meets the shape variety in dimension at most one: the $k=2$ case of
-the fiber-dimension case chain is PROVEN. The remaining cases are
-enumerated with declared routes ($k=1$ by the same technique one level
+the fiber-dimension case chain is proved. The remaining cases are open, each
+with a proposed route ($k=1$ by the same technique one level
 deeper; $k=3$ by bordered minors inheriting the proven clean entries;
 $k=4$ by a rank-4 central-configuration witness, the hexagon being
-excluded by its own symmetry). No statement is claimed until the chain
-closes; every identity above is committed with its machine verification.
+excluded by its own symmetry). We claim no finiteness statement for this
+stratum until the chain closes; every identity above is in the repository
+with its machine verification.
 
-\section{The $n=6$ attempt (EXP-005, in progress)}
+\section{The \texorpdfstring{$n=6$}{n=6} attempt (EXP-005)}
 
 The screening of Section~\ref{sec:screening} turns the $n=6$ question into a
-design problem with two dials. What we have measured since is a \emph{tooling}
+design problem with two dials. What we have measured is a \emph{tooling}
 barrier, characterized on four attempts with \texttt{gfan}~0.7. On the
 machine-integer fast path the computation aborts within minutes on a
 \emph{detected} overflow (the benign failure mode: \texttt{gfan} raises rather
@@ -505,36 +507,42 @@ powers of two alike, although the latter caps the valuation exponents at 32
 instead of 243, so the failure is not a matter of valuation magnitude. On the
 arbitrary-precision path, the powers-of-two run died after fifteen wall-hours
 (about six cpu-days) on an internal assertion in the hypersurface-intersection
-code. Version 0.7 therefore fails at $n=6$ in both arithmetic modes, in two
+code. \texttt{gfan}~0.7 therefore fails at $n=6$ in both arithmetic modes, in two
 distinct ways, while the same binary reproduces the published $n=5$ certificates
 exactly; \cite{JL25} report their own $n=6$ computation as completing (and
 inconclusive on pointedness), so their run differed in version, flags, or
 valuation. We rebuilt the pipeline on the 0.8beta release, validated it against
 our $n=5$ control (exact f-vector agreement), and confirmed that it clears
-0.7's first failure point. Two 0.8beta runs are in progress with checkpointing
-(powers of two on the fast path; powers of three with arbitrary-precision
-integers). The outcome, positive or negative, will be reported with its exact
-certificates in the next version of this record; a positive outcome would
-extend generic-mass finiteness to $n=6$, and a negative one localizes the
-obstruction to specific comets, data that has not been published for any failed
-attempt.
+0.7's first failure point. No 0.8beta run at $n=6$ has completed (powers of two
+on the fast path and powers of three with arbitrary-precision integers, both
+with checkpointing), so the $n=6$ case remains open here. A completed run would
+either extend generic-mass finiteness to $n=6$ or localize the obstruction to
+specific comets, data that has not been published for any failed attempt.
 
-\section{Honesty ledger}
+\section{Scope and data availability}
 
-This record is replication-first. The finiteness theorems replicated are due
+The study is replication-first. The finiteness theorems replicated are due
 to Hampton--Moeckel, Albouy--Kaloshin, and Jensen--Leykin; the equal-mass
 censuses to Moczurad--Zgliczy\'nski. Our measurements (the dimension-blindness
 anchors with their exact minimal polynomials and $J$-invariants; the
 enrichment law at affine and prevariety level; the screening tables) are
-machine facts about known objects, stated with their complete provenance. Open
-items are tracked in the repository backlog; in particular, censuses for two
-integer-separated mass vectors are inconclusive under our current
-sympy engine caps were closed by an independent engine
-(\texttt{msolve}) with the sympy layer retained as exact verification, while
-the $n=4$ torus censuses and the Dziobek census probes remain honestly capped
-as reported above. No claim in
-this paper depends on an unverified literature statement; the repository
-flags every such statement as UNVERIFIED until read from its primary source.
+machine facts about known objects, stated with their complete provenance. The
+censuses for two integer-separated mass vectors, which our sympy engine does not
+finish, are closed by an independent engine (\texttt{msolve}) with
+the sympy layer retained as exact verification, while the $n=4$ torus censuses
+and the Dziobek census probes remain capped as reported above. No claim in this
+paper depends on a literature statement that we have not read in its primary
+source.
+
+{\raggedright
+Code, artifacts and experiment records are available at
+\url{https://github.com/fsantibanezleal/CAOS_RESEARCH} under
+\path{problems/dynamical-systems/central-configurations/}. The identifiers
+EXP-001 to EXP-018 in the section titles and the text denote the experiment
+records in its \path{experiments/} folder; each record holds the code, the
+artifacts and the result. Tool
+versions and binary hashes (\texttt{gfan}, \texttt{msolve}, Singular) are
+recorded with the experiments that use them.\par}
 
 \begin{thebibliography}{99}
 \bibitem{Smale98} S.~Smale, \emph{Mathematical problems for the next century},
