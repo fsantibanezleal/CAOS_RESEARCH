@@ -16,7 +16,7 @@ const PARITY_EXP = `${PROBLEM}/experiments/EXP-004-parity-density-transfer`;
 const PARITY_PROOF = `${REPO}/blob/main/${PARITY_EXP}/mathematical-proof.md`;
 const REPLAY_GUIDE = `${REPO}/blob/main/docs/guides/riemann-replay.md`;
 const PAPER = `${REPO}/blob/main/manuscripts/riemann-hypothesis/short-interval-stability/main.pdf`;
-const DOI = 'https://doi.org/10.5281/zenodo.22823615';
+const DOI = 'https://doi.org/10.5281/zenodo.22835172';
 const CONCEPT_DOI = 'https://doi.org/10.5281/zenodo.22727388';
 
 function SourceLink({ href, children }: { href: string; children: ReactNode }) {
@@ -242,7 +242,7 @@ export default function RiemannHypothesis() {
         <Callout variant="honest" title={t('What the result establishes', 'Qué establece el resultado')}>
           {t('The confirmed repository deduction is a qualitative extension below the cosine positivity threshold plus a separate numerical pressure refinement. RH remains open. No numerical new exponent, effective starting height, global record or universal simplicity follows. The manuscript series awaits external review; automated audits, finite certificates and publication do not constitute peer acceptance or an end-to-end formal proof.', 'La deducción confirmada en el repositorio es una extensión cualitativa bajo el umbral de positividad coseno junto con un refinamiento numérico separado por presión. RH sigue abierta. No se obtiene un nuevo exponente numérico, una altura inicial efectiva, un récord global ni simplicidad universal. La serie de manuscritos espera revisión externa; las auditorías automatizadas, los certificados finitos y la publicación no constituyen aceptación por pares ni una prueba formal de extremo a extremo.')}
         </Callout>
-        <div className="rh-source-links"><SourceLink href={PARITY_PROOF}>{t('Full EXP-004 parity proof', 'Prueba completa de paridad de EXP-004')}</SourceLink><SourceLink href={PRESSURE_PROOF}>{t('Full EXP-003 pressure proof', 'Prueba completa de presión de EXP-003')}</SourceLink><SourceLink href={PAPER}>{t('Read the manuscript PDF', 'Leer el manuscrito PDF')}</SourceLink><SourceLink href={DOI}>{t('Current Zenodo version (0.03)', 'Versión actual en Zenodo (0.03)')}</SourceLink><SourceLink href={CONCEPT_DOI}>{t('Zenodo record and versions', 'Registro y versiones de Zenodo')}</SourceLink><SourceLink href="https://doi.org/10.5281/zenodo.22727389">{t('First published version (0.01)', 'Primera versión publicada (0.01)')}</SourceLink></div>
+        <div className="rh-source-links"><SourceLink href={PARITY_PROOF}>{t('Full EXP-004 parity proof', 'Prueba completa de paridad de EXP-004')}</SourceLink><SourceLink href={PRESSURE_PROOF}>{t('Full EXP-003 pressure proof', 'Prueba completa de presión de EXP-003')}</SourceLink><SourceLink href={PAPER}>{t('Read the manuscript PDF', 'Leer el manuscrito PDF')}</SourceLink><SourceLink href={DOI}>{t('Current Zenodo version (0.04)', 'Versión actual en Zenodo (0.04)')}</SourceLink><SourceLink href={CONCEPT_DOI}>{t('Zenodo record and versions', 'Registro y versiones de Zenodo')}</SourceLink><SourceLink href="https://doi.org/10.5281/zenodo.22727389">{t('First published version (0.01)', 'Primera versión publicada (0.01)')}</SourceLink></div>
         <Refs label={refsLabel} ids={['riemann-karatsuba1985', 'riemann-wang2026', 'riemann-ainta2026', 'riemann-lamzouri2026', 'riemann-refinement2026', 'riemann-pressure2026', 'riemann-parity2026']} />
       </section>,
     },
