@@ -68,3 +68,14 @@ graphs have released the machine.
 
 Each prediction PASS, REFUTED or UNDECIDED on its own; the experiment is CONFIRMED if P1, P2, P4
 pass and P3, P5, P6 are decided (whatever their direction, with refuted expectations preserved).
+
+## Addendum 1 (2026-09-18, 12:15): the edge-orbit stage of P6 is withdrawn
+
+The lower bound 2 of P6 needs no computation. Mattiolo, Mazzuoccolo, Mkrtchyan (arXiv:2104.09241,
+Proposition 3, read 2026-09-18 `[V]`) prove that no proper 5-edge-coloring of a cubic graph has
+exactly one abnormal edge; independently, Lemma 1 of `context/2026-09-18-defect-unbounded.md`
+(`pd <= ab`) with the parity theorem (`pd` is never 1) gives `ab >= 2` for every cubic graph
+without a Petersen coloring `[D]`. So `ab = 2` for a counterexample as soon as a witness with two
+abnormal edges exists. The edge stage was stopped after its first instances hit the 15-minute
+limit on a machine saturated by EXP-007 (two TIMEOUT entries per graph, no decision, logs kept);
+P6 is decided by the battery witnesses plus the cited proposition.

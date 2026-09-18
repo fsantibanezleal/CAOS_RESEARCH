@@ -91,3 +91,11 @@ machine was loaded with the EXP-007 runs (no decision recorded for edge 42; log 
 How could this be wrong? The symmetry step uses only that the listed permutations are
 automorphisms, which `is_automorphism` re-checks from the edge list; an error there would have to
 be an error in a ten-line checker. The refuted edges rest on drat-trim.
+
+Note added 2026-09-18 (literature): the lower bound "no proper 5-edge-coloring has exactly one
+abnormal edge" is Proposition 3 of Mattiolo, Mazzuoccolo, Mkrtchyan (arXiv:2104.09241) for every
+cubic graph, so the orbit argument above is an independent machine confirmation of a known
+statement on `G52`, not a new bound; with the two-abnormal-edge witnesses it gives normal-5 defect
+exactly 2 for `G112` and `H112` as well. The parity theorem of this experiment is the vertex
+analogue for maps into `E(P)` and implies that proposition through `pd <= ab`
+(`context/2026-09-18-defect-unbounded.md`, Lemma 1).
