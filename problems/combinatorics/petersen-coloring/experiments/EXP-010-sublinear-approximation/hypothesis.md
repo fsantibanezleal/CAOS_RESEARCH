@@ -85,3 +85,27 @@ CPU only. 10 minutes per 4-pole; 6 hours overall; the cyclic connectivity check 
 
 CONFIRMED if P1, P2 pass and P3 holds with P4; REFUTED (of P3) if every orbit representative of
 all five graphs is colorable; INCONCLUSIVE if budget stops the sweep before either.
+
+## Addendum 1 declared 2026-09-18, before any instance of the kind named here ran
+
+State of step 1 when this was written: about 300 of the 482 orbit representatives of `G52` decided,
+all SAT (no non-colorable 4-pole `M` so far).
+
+Second family of 4-poles, same purpose. For an edge `uv` of a counterexample `G`, let
+`N(G; uv) = G - {u, v}` with its four dangling edges `d1, d2` (at the other neighbours of `u`) and
+`d3, d4` (at the other neighbours of `v`). The cut-space argument leaves, for a coloring of `N`
+with all vertices good, only boundary patterns that cannot be completed to `G`:
+`s(d1) = s(d2)` and `s(d3) = s(d4)`; crossed equal pairs with two non-adjacent labels; four
+distinct labels around an edge of `P` split one and one at `u`. Whether any of them occurs is a
+finite question per edge orbit.
+
+If some `N(G; uv)` has no Petersen coloring, the necklace of `t` copies (the two dangling edges at
+the `v` side of copy `i` joined to the two at the `u` side of copy `i + 1`, cyclically) has a bad
+vertex in every copy under every map, so `ab >= pd >= t`; with `t = 10` and a machine check of
+cyclic 4-edge-connectivity this settles statement (e).
+
+- P5 (control): for `J5` every `N(J5; uv)` is colorable (restriction of a coloring of `J5`).
+- P6: committed expectation, low confidence (one third): some edge of one of the five
+  counterexamples gives a non-colorable `N`. One representative per edge orbit, all five graphs,
+  10 minutes per instance. SAT witnesses are checked and their boundary pattern is tabulated; a
+  witness whose pattern can be completed to `G` refutes the encoder (it would color `G`).
