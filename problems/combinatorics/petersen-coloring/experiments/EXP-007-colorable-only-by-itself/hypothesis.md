@@ -122,3 +122,35 @@ Method changes, fixed before the target runs:
 - the controls were re-run under the new runner with identical outcomes (Petersen `k = 6, 8`
   UNSAT with verified proofs after 82 and 139 rounds; `J5`, `k = 10` SAT with a checker-accepted
   target that is itself Petersen colorable).
+
+## Addendum 2 declared 2026-09-18 10:20, after attempt 1 was stopped without any decision
+
+Attempt 1 (the runner above, all 25 orders, ten at a time) was stopped after about 35 minutes:
+the ten orders that had started (`k` from 32 to 50) had each learned 1,800 to 2,400 lazy cuts, more
+than 95 percent of them bridge cuts, at roughly one cut per second with no sign of convergence; no
+order was decided and no outcome is used. Logs are kept under `artifacts/attempt-1/`. Diagnosis:
+unused target vertices form a free part of `H` that the graph `G` does not constrain, and the
+solver enumerates its bridged completions one by one.
+
+Method change, fixed before any new target run, justified by two lemmas proved in
+`context/2026-09-18-hcoloring-reduction-lemmas.md`:
+
+- Lemma A (fiber parity): all fibers of the vertex map have the same parity. Encoded with one
+  variable `q` and one XOR chain per target vertex.
+- Lemma B (unused vertices): if some connected bridgeless cubic multigraph on fewer than `n`
+  vertices colors `G`, then one with at most one unused vertex does (splitting lemma). Encoded as
+  the unit clause "the last but one class is used".
+- For `k - 1 > n/2` the even mode is impossible, so `q` is fixed to odd.
+
+The reduced formula is therefore equisatisfiable with the question "is `G` colored by some
+connected bridgeless cubic multigraph on at most `k` vertices in the modes O, E0, E1", and the
+union over all even `k < 52` still decides the original question. One-sidedness is unchanged,
+except that an UNSAT verdict now also depends on Lemmas A and B (proofs on file) and on the
+splitting lemma as cited there.
+
+New control, added to P1: the reduced and the unreduced runner must agree on every even
+`k < n` for `K4`, the prism, the Petersen graph, the flower snark `J3`-free list `J5` (orders up
+to 18) and `petersen_minus_adjacent_pair`-free small cubic graphs available in `pcclib.graphs`;
+a disagreement refutes a lemma or exposes an encoding error and blocks the target runs.
+Budget and verdict rules are unchanged (6 hours per order, 24 hours overall, counted from the
+restart).
