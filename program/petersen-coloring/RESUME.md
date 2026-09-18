@@ -1,6 +1,6 @@
 # petersen-coloring: RESUME (zero-loss handoff)
 
-Updated 2026-09-03 (round 1, six experiments). First read for any fresh session, per methodology
+Updated 2026-09-18 (round 2 opened: EXP-007 running; round 1 closed 2026-09-03). First read for any fresh session, per methodology
 07. Derived view: on conflict, experiment verdicts win.
 
 ## 1. State in one screen
@@ -63,6 +63,15 @@ Key formula (oddness encoding): $\mathrm{oddness}(G) = \min_{M,\mathrm{col}} \#\
 | 006 | critical vertices and pairs | CONFIRMED as redirected (P1, P2 refuted by theorem) | parity theorem; defect 2 on all three; all three universally 2-critical |
 
 ## 4. In flight
+
+- ROUND 2 (2026-09-18): literature moved: arXiv:2608.10028v3 (2026-09-11) raises the lower bound
+  to 40, reports the same consequence checks eight days after our v0.01, and asks whether the
+  52-vertex counterexamples are colorable only by themselves (`context/2026-09-18-v3-and-h3-dossier.md`).
+  EXP-007 decides that for `G52`: `experiments/EXP-007-colorable-only-by-itself/run_inc.py --graph G52 --k <k>`
+  for every even `k` from 2 to 50 (worktree `.venv` with python-sat; results in
+  `artifacts/result-G52-k<k>.json`; final formulas and DRAT proofs under
+  `E:/_Datos/caos-research/petersen-coloring/EXP-007/`). A SAT order is a NEW counterexample
+  below 52 vertices; all UNSAT proves `G52` is in `H_3`.
 
 - EXP-006 edge relaxations of `G52` (`run.py --skip-vertices`, log `artifacts/run-edges-G52.log`,
   13 of 78 UNSAT at this update); pair sweeps complete.
