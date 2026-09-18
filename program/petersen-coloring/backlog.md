@@ -18,11 +18,13 @@
 | PCB-013 | Cyclically 5-edge-connected counterexamples (GJMMM Problem 5) | todo | P3 | only after PCB-009 |
 | PCB-015 | Full 6,216-pair sweeps of G112 and H112 (EXP-006 addendum 3, P9) | done | P2 | 2026-09-03: every pair critical in both |
 | PCB-016 | Explain universal 2-criticality (PCR-3): is every pair critical in every counterexample? structure of the two bad stars in pair witnesses | todo | P1 | after PCB-015: the pair set is complete, so the object is the witnesses |
-| PCB-017 | EXP-007: is G52 colorable only by itself (membership in H_3; any smaller coloring graph is a new counterexample) | running | P0 | declared 2026-09-18; 25 even orders 2..50, incremental cut loop, final formulas certified by DRAT |
-| PCB-018 | Next manuscript version must cite arXiv:2608.10028v3 (2026-09-11) for the overlapping consequence checks and state the concurrency; add lower bound 40 | todo | P1 | context/2026-09-18-v3-and-h3-dossier.md |
+| PCB-017 | EXP-007: is `G52` colored by a smaller bridgeless cubic graph? | doing | P1 | `G52`: orders 2, 4, 30 to 50 refuted (complete under the conditional form); `G52b`: 44 to 50 refuted, 40 and 42 certifying; verdict pending |
+| PCB-018 | Cite arXiv:2608.10028v3 and state the concurrency in the next manuscript version | done | P1 | audit v0.04 (10.5281/zenodo.22836612) |
 | PCB-019 | Close the normal-5 defect of G52 at exactly 2 | done | P2 | EXP-006 addendum 4: orbit argument over 42 refuted edges (6 automorphisms, 14 edge orbits) plus explicit two-abnormal-edge witnesses |
-| PCB-020 | EXP-008: the full invariant battery on `G52b` (HoG 57278) and `G68` (HoG 57280) | doing | P1 | hypothesis committed before the run; battery, pair sweep, edge-orbit sweep |
-| PCB-021 | EXP-007 scope extension: `G52b`, `G68`, then `G112` and `H112` (probe `k = 52` first) | doing | P1 | addendum 3 |
-| PCB-022 | Second manuscript: colorable only by itself (lemmas A and B, encoding, results); audit manuscript new version citing v3 and adding the normal-5 defect and the two new graphs | todo | P1 | scientific voice; Zenodo |
-| PCB-023 | EXP-009: unbounded Petersen defect and abnormal-edge number (rings, frames); exact values on small instances | doing | P1 | theorems in `context/2026-09-18-defect-unbounded.md` |
-| PCB-024 | EXP-010: Conjecture 3 of Mattiolo-Mazzuoccolo-Mkrtchyan (sublinear approximations): non-colorable 4-poles `G - e1 - e2`, cyclic joins, statement (e) | doing | P1 | statements (c), (d) already false by the ring and frame theorems |
+| PCB-020 | EXP-008: the full invariant battery on `G52b` (HoG 57278) and `G68` (HoG 57280) | done | P1 | CONFIRMED: same invariants as `G52`; all pairs critical |
+| PCB-021 | EXP-007 scope extension: `G52b`, `G68`, then `G112` and `H112` (probe `k = 52` first) | doing | P1 | `G68` orders 64, 66 refuted, 40 to 62 running; 112-vertex probes not started |
+| PCB-022 | Manuscripts: audit new version (done, v0.04); second manuscript on colorability only by itself | doing | P1 | second manuscript drafted, waits for `G52b` orders 40 and 42 |
+| PCB-023 | EXP-009: unbounded Petersen defect and abnormal-edge number (rings, frames); exact values on small instances | done | P1 | CONFIRMED; `ab` values beyond `ab >= pd` undecided |
+| PCB-024 | EXP-010: Conjecture 3 of Mattiolo-Mazzuoccolo-Mkrtchyan: non-colorable 4-poles, cyclic joins, statement (e) | doing | P1 | 4-poles of `G52`, `G52b`, `G68` all colorable; threshold proposition (`pd >= 3` suffices); H112 sweep until the budget ends |
+| PCB-025 | PCR-7: find a cyclically 4-edge-connected cubic graph with Petersen defect at least 3, or prove `pd <= 2` on that class | todo | P1 | would settle Conjecture 3 of Mattiolo et al.; see research lines PCR-7, PCR-9 |
+| PCB-026 | Exact `ab` of the rings `R_t` (is `ab(R_t) = t`?) on a free machine | todo | P3 | EXP-009 P4 undecided |
