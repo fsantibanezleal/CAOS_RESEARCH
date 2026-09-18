@@ -210,3 +210,15 @@ state two results and keep them apart:
 
 For `G68`, `G112`, `H112` the runs are restricted accordingly to the orders from `n - 2` down to
 40, largest first.
+
+## Incident note (2026-09-18 14:10)
+
+The shell driver of attempt 1 survived the stop command issued at 09:55: only its children had
+been killed, and it kept starting instances with the code that was on disk when each one started.
+Nine instances started at 09:57:09 ran the attempt-1 (unreduced) code for four hours, shared log
+files with the reduced instances of the same orders (12 to 30), and took about a third of the
+machine. They were found from the process list at 14:08 and killed together with the driver. No
+result file came from them: every result file on disk carries `"reduced": true` and its own
+verified certificate. The reduced instance of order 14 had died at start (its log stops after the
+first line) and was restarted at 14:10 with a fresh 6-hour limit. The logs of orders 12 to 30 may
+contain interleaved lines from the two writers and are not used as evidence; the result files are.
