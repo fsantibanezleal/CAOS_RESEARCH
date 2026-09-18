@@ -169,7 +169,7 @@ settles statement (e), whereas a colorable 4-pole of `H112` decides nothing.
 - P9: committed expectation, low confidence (one fifth): for some `e0` two distance sets are
   disjoint. The table of distance sets is the output either way (research line PCR-9).
 
-Budget note, written when the addendum-4 workers were launched (16:40) and before any of their
+Budget note, written when the addendum-4 workers were launched (16:26) and before any of their
 output was read: 2,847 formulas at about 10 s each on six workers need about 80 minutes, which
 passes the experiment's 6-hour mark (17:43) by some minutes. The limit for this addendum is set to
 18:30; whatever is undecided then is reported as undecided. The `H112` sweep stopped with 540
