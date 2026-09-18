@@ -292,3 +292,21 @@
 - EXP-013 (additive residual) continues; a batched engine is under
   exact regression against the partitions the per-state engine already
   completed before it is allowed to contribute new results.
+
+## 2026-09-18 - EXP-013 verdict: the additive ninth gate is empty on the window
+
+- The production scan had finished on 2026-08-25 (last partition 20:21 local) after the last commit
+  of that day; 46 of the 256 partition records were still untracked in the run's working tree. They
+  were copied in, and the 210 committed ones were byte-identical to the working-tree copies.
+- Completeness audit (`EXP-013-additive-residual/audit.py`, 7 checks PASS): part000 to part255,
+  each partition's state count equal to its frontier file's in the EXP-011 SHA-256 manifest, total
+  1,048,460,912 states, zero hits, 1,272,725 candidates promoted to exact construction, partitions
+  0 and 1 equal to the engine regression records.
+- **EXP-013 (confirmed, windowed):** no 9-gate program whose final gate is + or - has 7 distinct
+  integer roots all in [-32, 32]. With EXP-011 and EXP-012, a nine-gate seven-rooter would need an
+  additive last gate, a root outside the window and |c| >= 396 (the confinement lemma), the
+  0.002% residual measured by EXP-014. The threshold is 10 unless that residual holds a
+  seven-rooter; strictly it stays in {9, 10}. Queued: an exhaustive pass over the residual.
+- The scheduled task `tau_keepalive` was still firing every 15 minutes with nothing to launch; it
+  was disabled (not deleted).
+- Census paper v0.05 states the windowed theorem and prints the author name as Santibáñez-Leal.

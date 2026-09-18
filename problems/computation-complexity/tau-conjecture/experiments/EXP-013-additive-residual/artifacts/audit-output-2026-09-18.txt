@@ -1,0 +1,8 @@
+[PASS] M: the frontier7 manifest lists 256 partitions whose states sum to its stated total  256 rows, 1,048,460,912 states
+[PASS] 1: exactly part000..part255, no gap, no extra file  256 files; missing []; extra []
+[PASS] 2: every file is well formed and names its own partition  bad []
+[PASS] 3: every partition's scanned states equal its frontier file's states (manifest)  mismatches []
+[PASS] 4: the scanned states total the frontier's 1,048,460,912  1,048,460,912
+[PASS] 5: no partition reports a hit at threshold 7  hits 0; promoted 1,272,725
+[PASS] 6: partitions 0 and 1 equal the batched engine's exact regression records
+written artifacts/audit.json; 0 failed check(s)
