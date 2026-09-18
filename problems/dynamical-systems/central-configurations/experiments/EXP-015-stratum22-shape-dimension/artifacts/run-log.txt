@@ -1,0 +1,8 @@
+[15:08:50] EXP-015 runner start
+[15:08:51] RESULT smoke-witness: FAIL all-even-monomials:False witness-zero:False perturbed-violates:True
+[15:08:51] SMOKE FAILED; stopping
+[15:09:39] EXP-015 runner start
+[15:09:39] RESULT smoke-witness: pass witness-values:[0, 0, 0, 0, 0] perturbed-violates:True
+[15:09:41] RESULT p2-ungauged-dim: decided 1s; ours=5 singular=5 agree=True
+[15:09:42] RESULT p3-gauged-dim: decided 1s; ours=4 singular=4 agree=True
+[15:09:42] runner done

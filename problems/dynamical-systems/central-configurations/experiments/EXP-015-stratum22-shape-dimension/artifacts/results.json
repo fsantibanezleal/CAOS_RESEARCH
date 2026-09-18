@@ -1,0 +1,14 @@
+{
+  "smoke-witness": {
+    "status": "pass",
+    "detail": "witness-values:[0, 0, 0, 0, 0] perturbed-violates:True"
+  },
+  "p2-ungauged-dim": {
+    "status": "decided",
+    "detail": "1s; ours=5 singular=5 agree=True"
+  },
+  "p3-gauged-dim": {
+    "status": "decided",
+    "detail": "1s; ours=4 singular=4 agree=True"
+  }
+}

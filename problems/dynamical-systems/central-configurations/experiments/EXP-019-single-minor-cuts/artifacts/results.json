@@ -1,0 +1,14 @@
+{
+  "smoke-minors-nonzero-at-W1": {
+    "status": "pass",
+    "detail": "all three chosen minors nonzero at W1"
+  },
+  "p1-k4-cut": {
+    "status": "inconclusive-cap",
+    "detail": "1964s"
+  },
+  "p2-first-3x3-cut": {
+    "status": "inconclusive-cap",
+    "detail": "1960s"
+  }
+}

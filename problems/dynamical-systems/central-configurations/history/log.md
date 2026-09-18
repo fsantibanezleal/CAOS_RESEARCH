@@ -310,3 +310,571 @@
   n = 6 is generically closed, their theorem statement misprints "open" for a
   closed exceptional set; journal search found no published version). CCB-037
   minted from their Lemma 7.5. Known-results ladder row added.
+
+## 2026-08-01 - EXP-011 decided; the frontier read opens; the engine lesson lands
+
+- EXP-011 VERDICT: SMOKE AND CAP-SIGNATURE CONFIRMED, EMPTINESS AND PARTIAL-GB
+  RUNGS FAILED TO SCALE AT DECLARED BUDGETS. Smoke in 4 s (bipyramid exactly ON
+  the products+CM cut; 4-simplex excluded by CM = -5; collinear control
+  excluded by all 15 products). All four msolve section probes capped at 300 s
+  (the declared kill criterion for the emptiness instrument at n = 5 fired);
+  the partial-GB menu completed 1/15 subideals, union bound vacuous
+  (d_pgb = 10). No algebraic refutation of the expected dimension 4; the
+  6-to-10-variable wall is measured. Engine reading: Dias-Pan ran the same
+  leading-term pattern in minutes under Singular; our worker used sympy
+  Buchberger with the 130-term Cayley-Menger in every subideal. CCB-037 v2 =
+  engine swap (msolve -g already installed) + product-pair menu; CCB-034
+  witness sets promoted to next instrument spike; the n = 6 strata campaign
+  (9-variable quotients) waits on those engines, exactly as Dias-Pan's own
+  computations demonstrate is sufficient.
+- CCB-004 stage 1 DONE: Chang-Chen programme preprint (117 pp) archived with
+  SHA-256; pages 1-6 and 41-46 read. The residual 24 upgraded to a QUOTED
+  statement (stated twice); one of the 62 mass-relation diagrams impossible
+  for positive masses; the complete n = 4 mass-relation ladder transcribed
+  (matches AK12 5.1-5.4); n = 5 sharpened (Algorithm I: 20 diagrams, II kills
+  9/11/13/17, leaving AK12's 16). Cross-engine re-derivation of the n = 4
+  relations with our exact stack is the declared calibration gate before any
+  n = 6 residual-diagram spend.
+- CCB-036 stage 2: the reflection-strata map of planar n = 6 persisted
+  (collinear closed classically; CROSS closed by Dias-Pan; the 2+2-pair and
+  3-pair types OPEN per two recorded searches; the flagged hit examined and
+  cleared, a (1+4)-vortex paper). Both open types collapse to 9-variable
+  quotients.
+- Strategy answer persisted for Felipe's direct question: the ranked
+  real-advance paths are (1) the symmetric-strata campaign, (2) the tropical
+  n = 6 pointedness hunt (both gfan08 runs healthy, 34 and 55 cpu-hours), and
+  (3) the Chang-Chen residual diagrams; census/dimension work is
+  infrastructure, not advance, and today's caps SELECTED the surviving
+  toolkit rather than killing the program.
+
+## 2026-08-01 - Round 8: EXP-012 decided, the engine hypothesis confirmed
+
+- EXP-012 VERDICT: ENGINE HYPOTHESIS CONFIRMED, UNION BOUND INFORMATIVE-WEAK
+  AT DIM <= 7. Singular 4.3.2 (installed and hashed today) completes 12 of the
+  IDENTICAL 15 subideal jobs sympy walled on, at 0.4-1 s each (sympy baseline
+  1/15 at about 100 s): the EXP-011 wall was an engine artifact. The lighter
+  16-subideal menu completed 16/16; the union of 466 grevlex-correct QQ
+  leading monomials from 28 subideals gives the lane's first sound
+  deterministic bound, dim <= 7 for the n = 5 spatial Dziobek cut (target 4
+  not reached; the declared menu-growth follow-up applies). Cost pattern
+  recorded: the three Singular-capping subideals are all _bc pairings sharing
+  the body pair {1,2}.
+- THE CONTROL DISCIPLINE FIRED ON ITS FIRST OUTING: EXP-012's
+  exact-reproduction control caught a lex-vs-grevlex harvester bug in
+  EXP-011's pgb worker (sympy gb.polys default to lex; monoms() must be told
+  the order). Impact audit: EXP-011's harvested monomials were
+  order-inconsistent but its bound was vacuous and nothing consumed them
+  (correction note beside the retained artifact; verdict amended in place
+  same day); EXP-010's P3 never completed, so nothing there depended on the
+  bug. All three harvesters fixed; msolve's -g mode identified as MOD-P and
+  pinned screen-only in the hypothesis BEFORE the run.
+- Consequences: CCB-037 v2 VALIDATED (Singular workhorse, sympy verification
+  layer); EXP-013 = menu growth (triples, mixed pairings, pairs with CM), 
+  hypothesis first; the n = 6 symmetric-strata campaign is engine-unblocked.
+
+## 2026-08-01 - EXP-013 decided: the products ideal has exact dimension 5; the n = 5 question localizes to the CM cut
+
+- EXP-013 VERDICT: FULL SYSTEM CAPPED (600 s), MENU CONFIRMED AT DIM <= 5,
+  PRODUCTS DIMENSION EXACT AT 5. The all-fifteen-products system (with
+  saturation, without Cayley-Menger) completed a FULL reduced grevlex basis in
+  nine seconds (2436 leading monomials): its staircase dimension is the true
+  Krull dimension, 5, matching the rank-one parametrization count. The menu
+  union (4615 leads from 11 completing subideals) confirms dim <= 5 for the
+  cut. Cost law now sharp: everything without CM runs in seconds, everything
+  mixing products WITH CM caps at 120 s. The whole n = 5 dimension question
+  is now ONE algebraic event: does CM vanish identically on any top component
+  of the products variety? EXP-014 (incremental std from the completed basis)
+  is the declared next rung.
+
+## 2026-08-01 - EXP-014 decided: the 5-to-4 question resists both Groebner routes; the lane hands it to witness sets
+
+- EXP-014 VERDICT: SANITY AND NONZERO NORMAL FORM CONFIRMED, INCREMENTAL
+  EXTENSION INCONCLUSIVE-CAP. The products basis reproduced in-session
+  (2436), Cayley-Menger has a NONZERO normal form against it (so the cut is a
+  proper subvariety, re-confirming the 4-simplex separation), and std(S, cm)
+  ran its full new 1800 s budget without terminating, joining the
+  from-scratch route as measured-out-of-reach. Deterministic state at n = 5:
+  dim(products) = 5 exact, dim(cut) <= 5 proven, expected 4 undecided. Per
+  the declared ladder the 5-vs-4 test moves to CCB-034 witness sets (list
+  the top components, evaluate CM on witness points), and the k = 2, p = 2
+  stratum campaign proceeds regardless with the twice-measured cost law
+  (realizability equations out of the Groebner core, adjoined last).
+
+## 2026-08-01 - Round 10: the stratum campaign opens and clears its first stage same day
+
+- Novelty pass: no published closure of the k = 2, p = 2 stratum surfaced
+  (recorded search; an unverifiable summary-level diagram count NOT imported).
+- EXACT DERIVATION persisted (dossier + script): nine quotient distances;
+  c_x^2 - c_s^2 = wA wB verified; THE PAIR-EQUALITY LEMMA in closed form
+  (L34 and L56 factor through (m5 - m6) and (m3 - m4) times (q - v) times
+  (c_x^3 - c_s^3)), forcing pair-equal masses on the open stratum with the
+  honest q = v gap flagged; the reduced Laura-Andoyer block proved SIX
+  independent mass-linear equations by a pure symmetry argument (reflection
+  invariance + L_ji = L_ij), with the background computational cross-check
+  still running.
+- EXP-015 VERDICT: CONFIRMED ON ALL PREDICTIONS in about one second per run:
+  shape variety dimension 5 ungauged, 4 gauged (two-way engine agreement),
+  exactly the Dias-Pan dim(E) = 4 analogue; ghosts do not dominate; the cost
+  law held. Stage (i) of the stratum pipeline is DONE. Next: EXP-016 (the
+  6 x 4 mass-Jacobian rank analysis with determinantal loci) and EXP-017
+  (the exact rank-4 witness); a completed chain is the stratum theorem, and
+  its wording goes to Felipe first. A smoke evaluator bug (odd-term
+  handling) was caught by the gate itself at zero solver cost and fixed in
+  one commit.
+
+## 2026-08-01 - Round 11: EXP-016 decided, the rank stage lands
+
+- EXP-016 VERDICT: GENERIC RANK 4 CONFIRMED AT TWO EXACT WITNESSES (one
+  second each, pure radical arithmetic, no truncation budgets), COMPONENT
+  DECOMPOSITION CAPPED (minAssGTZ at 300 s; primary decomposition is far
+  heavier than the one-second std of the same ideal). The smoke gate's
+  pairing check doubled as the computational confirmation of the dossier's
+  symmetry proof (all six partner identities exact at the witness), closing
+  what the teardown-killed derivation script left open. The capped rung does
+  not block the chain: EXP-017 is declared as dimension bounds on
+  shape-intersect-Delta_k with the minors pushed to distance form,
+  sidestepping irreducibility entirely; EXP-018 anchors the top case with a
+  genuine CC witness. n = 6 note: the pow3 arbitrary-precision gfan08 run
+  passed 7 cpu-days, outliving gfan 0.7's second failure mode; both runs
+  healthy and checkpointed.
+
+## 2026-08-01 - Round 12: EXP-018 decided; the chain re-weights onto the loci bounds
+
+- EXP-018 VERDICT: HEXAGON VERIFIED AS STRATUM CC (all six reduced equations
+  exactly zero at equal masses, in Q(sqrt(3)), one second), RANK DEGENERATES
+  TO 3 at its symmetry (every 4x4 minor vanishes; a nonzero 3x3 minor is
+  displayed in closed form). The declared second branch fired. Structural
+  consequence: the theorem chain needs NO CC witness if EXP-017's dimension
+  bounds land for all k (components with k-dim shape projection cannot sit
+  inside Delta_k when dim(shape meet Delta_k) < k); the Dias-Pan witness
+  route was their workaround for not computing the Delta_4 bound, and our
+  route already chose the bounds. EXP-018b (a less symmetric witness) is
+  demoted to redundancy.
+- Session infrastructure: the shared checkout moved to a third problem's
+  branch (work/huneke-wiegand/open, after tau-conjecture PRs 136-137);
+  central-configurations work continues from an isolated git worktree on the
+  same lineage branch, touching nothing of the parallel session's tree. A
+  curation commit by the other session (52668e4, preserving the EXP-010
+  tuple API correction) is acknowledged.
+
+## 2026-08-02 - Round 13: EXP-017 decided (all caps, smokes green); the formulation lesson
+
+- EXP-017 VERDICT: SMOKES CONFIRMED (the enlarged ghost-free ring gives shape
+  dim 4 in a second; the mass matrix cross-validates entrywise against
+  EXP-016 at W1), ALL FOUR LOCI BOUNDS INCONCLUSIVE-CAP (full std at 300 s
+  and every per-minor subideal at 60 s walled: 13 + 80 + 84 + 20 subideals).
+  One pipeline fix before any outcome: fractions serialized as fake rational
+  exponents and Singular's exit-0-after-parse-error faked the OK sentinel;
+  fixed, error markers now fatal. THE DIAGNOSIS: premature elimination.
+  Row-LCM clearing inflates minors to degree near 100; Dias-Pan kept their
+  S-quantities as ring variables exactly to avoid this (their minors stay
+  degree <= 6 and completed in minutes). EXP-017b = the s-variable model
+  (about 20 extra variables with sparse defining relations s a^3 b^3 =
+  b^3 - a^3), declared next. The chain stands: stages (i) + (ii-rank)
+  proven, case arithmetic unchanged, no theorem claimed.
+
+## 2026-08-02 - Round 14: EXP-017b decided at the gate; the see-saw is measured
+
+- EXP-017b VERDICT: THE BASE IDEAL ITSELF CAPS IN THE S-MODEL. The smoke gate
+  (dim of shape + 22 degree-7 defining relations in 34 variables) walled at
+  600 s and stopped everything before any minor time. Combined with EXP-017
+  this measures the cost see-saw from both sides: eliminate the s-factors and
+  the minors reach degree near 100; retain them and the base ideal explodes.
+  Structural root: Dias-Pan's matrix entries were single-term, ours sum over
+  mirror-pair members. EXP-017c declared: a mod-p feasibility SCREEN
+  (screen-only, never verdict-carrying) over both formulations and all four
+  rungs, then ONE long declared-budget QQ run on the most promising cell,
+  with the Prop 7.2-style sign-analysis lemma prepared in parallel as the
+  Groebner-free fallback for the low-rank cases.
+
+## 2026-08-02 - Round 14 close: the screen is decisive; the theorem moves from compute to proof-writing
+
+- EXP-017c VERDICT: all ten mod-p cells capped at both primes (P1 confirmed,
+  P2 refuted): per the declared decision rule the Groebner route to the loci
+  bounds is CLOSED at human budgets in both formulations. The obstruction is
+  structural (the reduced block sums over mirror-pair members). The stratum
+  theorem's remaining gap is now a PROOF task in the Dias-Pan Prop 7.2
+  style: a rank-floor lemma on physical fibers by sign analysis over the
+  shape inequalities (machine-verified, Groebner-free), plus for the top
+  case either a rank-4 CC witness (EXP-018b, census machinery) or the
+  image-dimension argument. Three exact anchor points exist (ranks 4, 4, 3
+  at the two geometries and the hexagon). This is the normal shape of such
+  results: Dias-Pan's own 7.2 was manual. Nothing is claimed.
+
+## 2026-08-02 - Round 15 opens: the rank-floor lemma's first piece is PROVEN
+
+- Lemma piece 1 (dossier 2026-08-02): on the open stratum, the {L35, L36} x
+  {m1, m2} minor of the mass matrix factors EXACTLY as
+  s(d1A,d1B) s(d2A,d2B) (-2 u p (v-q)(a1-a2)); the polynomial part never
+  vanishes there, so rank J >= 2 everywhere off the explicit exceptional set
+  {d1A = d1B} union {d2A = d2B}. Proof by radical factor-out plus one
+  polynomial identity, machine-verified in milliseconds. This is the
+  Dias-Pan Prop 7.2 pattern working for our stratum, and it vindicates the
+  compute-to-proof transition: what three Groebner formulations could not
+  reach in hours fell to one structured minor in closed form. The remaining
+  case tree (equidistant exceptional sets, then the rank >= 3 floor) is
+  enumerated in the dossier.
+
+## 2026-08-02 - Round 21-22: the endgame's computational door closes; the proof door stays open
+
+- EXP-019 decided (both single-minor cuts capped at 1800 s despite a
+  32-term increment over a one-second base) and its mod-p screen addendum
+  (all four cells capped): the Groebner route to the k = 3 and k = 4 loci
+  bounds is now measured CLOSED at every granularity, formulation and
+  characteristic tried. The CM/Krull reduction remains the frame: the shape
+  ideal is a complete intersection, hence unmixed, so single-polynomial
+  properness statements suffice, and properness can be established by
+  EXACT WITNESSES instead of dimension computations, exactly as lemma
+  pieces 4 and 5 did. The bordered-minor closed-form program for k = 3 is
+  the sole active route, with the EXP-016 rank-4 geometries as the ready
+  properness witnesses.
+
+## 2026-08-19 (round 31): the covering-programme restructure
+
+- EXP-005 n=6: both gfan runs found dead again (WSL restart); pow2 resumed
+  from the fresh 1.2 GB checkpoint, pow3 relaunched fresh (still no
+  checkpoint file ever written by its --saveas; loss recorded); resume
+  tooling persisted (run08-resume.sh, relaunch-both.sh).
+- Ladder correction: the chain needs dim(R_j) <= j for j = 0, 1, 2. R_0
+  closed globally (exact two-line lemma: J = 0 forces v = q = 0, off the
+  stratum; EXP-022/r0-lemma.py). Ball certificates extended with rank-2
+  witnesses so R_1 meets no ball.
+- Closure-hole correction: the slice-limit collar route abandoned BEFORE
+  use (a 2-dim low-rank set can hide in a shrinking tube at every nearby
+  slice value; the boundary-slice bound controls nothing off the slice).
+- The simplification: collars BECOME coverings (band needs no rescaling;
+  collision tube gets the polar blow-up with all 1/rho^3 cancelled
+  algebraically; pair-collapse rescales the mA column by 4u^2). Dossier
+  section: THE COVERING PROGRAMME RESTRUCTURE.
+- EXP-021 integrated rerun launched (four pentagon balls, both
+  certificates at radius 2^-8, all four certified in 0.1 s each; zero
+  residual failures required; 12 h budget).
+- EXP-022 opened: hypothesis (region atlas + trap certificates), band
+  covering launched, tube blow-up algebra machine-verified (six exact
+  polynomial identities; four face limits with linear convergence; NEW
+  face finding: rank-2 degeneracy curve w^2 + v^2 = 1 on the rho = 0
+  face, the coincident double-pair on the circle through the axis
+  bodies), shared pipeline with the generalized trap certificate, tube
+  covering launched on both angle charts after 5-point crosschecks.
+- Mirrored CC-F32 (pentagon + piece 8) and CC-F33 (the restructure) to
+  CAOS_MANAGE; wiki 05 rows added for EXP-019/020/021.
+
+## 2026-08-20 (round 33): ulow certified; fa2 design error caught and fixed
+
+- ulow (pair-collapse) DONE ok=true, zero failures: 880,947 boxes, 26,090
+  traps. The trapped set is the near-collision CONDITIONING collar
+  (v ~ +-1, u in [0.03, 0.25], d1A^-3 entry blow-up): sigma_3 is ORDER ONE
+  at trapped midpoints (0.60), no rank-2 structure (probe + descent);
+  contrast pentagon (exact rank 2) and cross (sigma_3 ~ 1.7e-3). A_plow
+  free by the swap identity.
+- fa2 FAILED BY DESIGN (272k structural failures, killed): the absolute
+  far-tube criterion was wrong; CS vanishes identically on the whole
+  double-infinity face, making boxes touching it uncertifiable. Root
+  cause: the tube geometry is scale-RELATIVE (cs small vs R_A). Fix:
+  fa2b ratio parametrization (r = epsA/epsB in [0,1]): CS^ = |dirA - r
+  dirB| analytic, vanishing only on the true far-tube; discards {CS^ <
+  1/16} (far-tube) and {CX^ < 1/16} (vertical far-corner) deferred to the
+  blow-up chart. Crosschecked 5/5, launched.
+- The sq() dependency bug resurfaced in fa2's discard (tau*tau on
+  straddling intervals): fixed with .sq(); pipeline discard hardened
+  (AssertionError -> not discarded).
+
+## 2026-08-20 (round 34): the mini-chart cascade, derived end to end
+
+- Certified today: tube extension BOTH charts (w in [1/8, 7/32], zero
+  failures). Running: fa1-resume, fa2b, cb1, uplow, deep, both bi-corners
+  (all checkpoint-fresh; slow under 7-way CPU sharing with two gfan runs).
+- Derived, machine-verified (crosscheck gate 5/5 each), and queued:
+  M1 (quadruple cluster; REUSED the fartube generated polynomials via the
+  (c,s) <-> (a,b) identification, verified exactly; new Wronskian W1 and
+  G5 extractions), M2 (collinear quadruple; the deepest singular point is
+  UNPHYSICAL so the cascade terminates there), M3 (vertical far-corner;
+  codim-3 center, rational 2-sphere blow-up, 9-quantity generator; the
+  gate caught the signed-radius hemisphere error, fixed with the odd-hat
+  convention), M1-vert (vertical collision corner at body 1; the M3
+  pattern verbatim; seam bound rhoy <= sqrt3/8 < 1/4 exact).
+- Remaining mathematics: M1v2 alone (the two cones inside M1-vert where
+  the pairs ALSO merge; both centers are point-pairs on the blow-up
+  sphere; same generator recipe). Then the atlas is complete and the
+  chain assembles.
+- The crosscheck gate's running tally: SEVEN real errors caught before
+  any run (fa2 L36 sign, fa2 tau*tau dependency, cb1f misplaced eps^3
+  twice, bicorner-opp L25 signs, m3 hemisphere composition, and the
+  m2 grid-floor sampling artifact diagnosed as such).
+
+## 2026-08-20 (round 35): the collision-collar gap closed; the atlas gate
+
+- Diagnosed ALL residual covering failures to one cause: boxes CONTAINING
+  an excluded face. Measured: every dyadic shell at positive distance
+  certifies (6 halvings, both corner charts). Proven: LEMMA PIECE 10, the
+  corner-face rank floor, uniform in the shell index, with a complete
+  branch table; the two branches with no surviving minor are exactly the
+  two collisions the open stratum excludes.
+- Found and fixed a catastrophic cancellation in the naive s(r12, d) form
+  (d -> 2 on the corner face); the exact identity d2B^2 - 4 =
+  rhoc(4 ssig + rhoc) gives a cancellation-free evaluator, now used by
+  cb1 and cb1f.
+- deep's 13,354 failures traced to a WRONG-CHART sliver just outside the
+  declared M2 discard; boundary shifted (M2 to Rc <= 3/32, deep's corner
+  discard to {w < 1/32, rho < 1/16}), rerun certifying with ZERO failures.
+- bicorner-same's 1020 failures traced to a dependency-inflated discard
+  test at the 1/16 seam; threshold widened to 1/8 with the seam re-proven
+  (rhoq <= 0.2795 < 3/8), both charts rerun fresh.
+- ASSEMBLY record written (atlas table, the face principle, the dimension
+  count term by term, the draft statement).
+- ATLAS SEAM GATE: 40k samples (half adversarial, near every face), zero
+  unclaimed points, with ELEVEN negative controls all firing. The controls
+  caught a double-cover transcription bug (manual swap images alongside
+  the Klein-orbit closure) and a sampler blind spot (the collinear
+  quadruple region was never sampled).
+- Fleet: eight coverings running, all at zero failures.
+
+## 2026-08-20 (round 36): the face table completed; pieces 11 and 12
+
+- LEMMA PIECE 11, the pair-collapse face: both pairs onto the axis. The
+  mass-column rescales leave only the mA, mB columns, so the face is rank
+  2; but the m1, m2 columns vanish to FIRST order, and dividing them by
+  the collapse parameter makes the face matrix generically RANK 4, with
+  the closed form C2 = 4ab[phi(1-v)phi(-1-q) - phi(-1-v)phi(1-q)],
+  phi(x) = x(1/8 - 1/|x|^3), verified to 8 digits, plus a branch table on
+  its zero curve (six points located, each with a surviving minor).
+- THE FACE-RANK GATE: evaluate every chart's matrix ON its face and
+  measure sigma_3. Eleven charts full rank (the reason they certify with
+  no residual failures); two at exactly zero, NAMED by the gate rather
+  than assumed: M1 and fartube.
+- The entry-order probe diagnosed both: five rows scaled correctly, L35
+  under-scaled by exactly one power, giving the piece-11 face structure.
+- LEMMA PIECE 12 closes them by the piece-11 mechanism, verified at three
+  scales and forty samples per face (sigma_3 = 1.0 throughout, with a
+  structural reason).
+- The atlas's face table is now COMPLETE: every face is either full rank
+  or closed in closed form by pieces 10, 11, 12.
+- Fleet: m1, bicorner-same, fartube, uplow, deep all at zero failures;
+  m2's residue is exactly piece 11's face and is covered by it.
+
+## 2026-08-20 (round 38): piece 11 made effective; the (0,3) stratum opened
+
+- THE COLLAPSE CHART: lemma piece 11's column rescale implemented as an
+  actual chart, so the collar is certified INCLUDING its face (19/19 face
+  points certify rank >= 3 at eps = 0). No threshold left implicit.
+- Its discard was corrected: |f| < 1/16 rejected precisely the region m2's
+  residue occupies; the true criterion is cs < 1/32, since
+  cs^2 = eps^2 (c-s)^2 + f^2 is bounded below whenever either term is.
+  With the fix the chart certifies m2's residue DIRECTLY.
+- final-gates.py runs all four gates in sequence. ALL 20 chart artifacts
+  re-verify independently with negative controls firing (one blank result
+  was the gate tripping over guarded entries, fixed).
+- EXPLORATION (persisted): the machinery reaches ALL FOUR
+  reflection-symmetric strata of n = 6, because every one of them has a
+  4-dimensional shape space after gauge; only the mass count differs
+  (6, 5, 4, 3). The no-axis case is the easiest unsolved one.
+- EXP-023 OPENED, the (0, 3) stratum (three mirror pairs):
+  * the mirror symmetry kills L12, L34, L56 identically and pairs off the
+    rest, leaving SIX independent equations over THREE masses: a 6 x 3
+    matrix. Verified to 40 digits at random shapes.
+  * GENERIC RANK IS 3 = full rank, so the kernel is trivial and a generic
+    shape admits NO masses: central configurations of this stratum are
+    confined to the rank <= 2 locus, a codimension-2 subvariety.
+  * INSTRUMENT VALIDATED on a known member: the regular hexagon has rank
+    exactly 2 with kernel the equal-mass ray, reproducing the classical
+    regular-hexagon central configuration.
+  * the covering was built (matrix assembled generically from the six
+    positions, crosschecked 5/5 against the independent mpmath
+    derivation) and launched.
+
+## 2026-08-20 (round 40): the (0,3) stratum's face structure is COMPLETE
+
+- Merge chart built and verified: the merge is TWO simultaneous collisions
+  (mirror-forced), row orders match tube.py's pattern exactly, both
+  singular factors cleared algebraically, crosscheck 5/5, and the MERGE
+  FACE certifies rank 3 at 40/40. The S3 symmetry makes this one chart
+  cover both merge types (re-gauging to the third pair turns "A and B
+  merge" into "the other two merge").
+- NO REGION AT INFINITY: the outer region rescales onto the all-narrow
+  (near-collinear) region, which is a collapse region. Measured full rank
+  there, sigma_3 = 2.0 flat over four orders of magnitude.
+- The (0,3) face inventory is now complete and EVERY entry is full rank:
+  pair collapse 27/27, pair-pair merge 40/40, all-narrow flat at 2.0.
+  This stratum needs NO face lemma and NO chart at infinity, against the
+  (2,2) stratum's three lemmas plus inverted charts. The whole difference
+  is the absence of axis-body mass columns.
+- Fleet: twelve coverings running across both strata, all zero failures
+  (the four pending (2,2) charts were rerun on request; cb1 and cb1f now
+  use the tighter intersected evaluation).
+
+## 2026-08-23 (round 51): the collinear locus, and a merge residue that stays
+
+- THE COLLINEAR FINDING (finding 21, CC-F54): chasing a collapse-chart
+  failure cluster showed the matrix is IDENTICALLY ZERO where all three
+  pairs share a height, because every Laura-Andoyer coefficient carries a
+  triangle area and six collinear bodies span none. Rank 0 at 19/19 on the
+  locus, rank 3 at 20/20 just off it. So the equations are VACUOUS there.
+  It corrects an earlier claim: that locus is R_0 with dimension 2, and
+  the count needs dim R_0 <= 0, so the count fails there - because of the
+  FORMULATION, not the geometry. Moulton settles the collinear case
+  classically, so the architecture is a split: Moulton for collinear, the
+  covering for the complement. The discard is now in the shared predicate
+  and in mergeBC.
+- The (2,2) stratum is unaffected: with two bodies on the axis and pairs
+  off it, all six can never be collinear.
+- The collapse discard bug (masking a pair width disabled its merge test)
+  was fixed and those charts run clean.
+- mergeBC's interior cluster was probed and REJECTED as a central
+  configuration: sigma_3 plateaus at 1e-3 under a descent that holds the
+  pair separation fixed, and the near-kernel is not sign-definite. It is a
+  resolution limit (20 of 27 descendants discharge under ten more
+  halvings) and a small residue persists there.
+- Records hygiene: CC-F54 was DROPPED by a parallel session merge that
+  touched the same anchor; detected by grepping the pushed file rather
+  than trusting the commit graph, and restored deliberately with a note.
+
+## Round 52 (2026-08-23): the residues are resolution, not mathematics
+
+- The mergeBC residue was diagnosed to the merge FACE, not to any interior
+  point: all 977 failures touch rho = 0 and NONE fails at positive rho.
+  The trap fires unchanged on every shell from rho = 2.4e-7 down to
+  7.5e-9, so the punctured collar is covered.
+- LEMMA PIECE 13. Measuring the vanishing order of each row shows the
+  chart's clearing is correct (the merging row really does vanish to order
+  exactly 2) but that it crushes the fixed pair's mass column to zero in
+  five of six rows. One entry, row (2,4) column 0, carries the whole
+  rank-3 certificate, and it has a closed form:
+  E = -(3/2) sum_k sin(2 phi_k)/|g_k|^3, with phi_k the angle from the
+  merge direction to the fixed pair's bodies. Validated against the chart
+  to 2.5e-12 relative at five points.
+- Unlike pieces 10, 11 and 12, this floor is NOT bounded below: E changes
+  sign three times along every line scanned in tau, so E = 0 is a surface
+  inside the face, and the residue sits on it (E = 1.7e-5 against
+  row-mates of 3.2e-3, matching the sigma_3 = 4.4e-3 measured
+  independently on the raw matrix). That costs the cheap one-box closure,
+  not the mathematics; mergeBC's depth cap went from 80 to 120.
+- THE FAMILY. Only (0,3) among the reflection-symmetric strata of n = 6
+  has an interior collinear locus. (6,0) is the collinear case itself;
+  in (4,1) and (2,2) collinearity always forces a collision, on the axis
+  or on a perpendicular line. That is why the (2,2) covering never met the
+  degeneracy.
+- CORRECTION to finding 21. It said the dimension count FAILS on the
+  collinear locus. That is right about the L-equations and wrong about the
+  geometry: those equations are vacuous there, so they measure nothing. By
+  Moulton every collinear shape is central for exactly one positive mass
+  ray, verified here on an exhibited collision-free witness (rank 6 of 7,
+  mass ray (0.288, 0.054, 0.236), all positive and mirror-symmetric). The
+  central configurations on the locus form a set of dimension 2, which
+  MEETS the bound rather than breaking it, as the centred pentagon does in
+  (2,2).
+- THE RESIDUE MEASUREMENT that reframes the whole (2,2) atlas: for every
+  chart with any failures, the failures share EXACTLY ONE box width, the
+  width the seed reaches at the depth cap. Not one residue in the atlas
+  failed before the cap. Fifteen charts are at exactly zero; cb1 (5) and
+  cb1f (2) are entirely face-touching and closed by piece 10; m2-L/R cover
+  a region the collapse chart covers at zero. fa2b's 200 boxes tile a
+  curve at ratio r = 0.9375, a dyadic value, so it is the bisection grid
+  crossing the locus and not a feature of it.
+- Residue re-runs were built for fa2b (depth 76) and band (depth 88 via a
+  depth-0 reseed), each writing to a separate artifact so the original
+  runs stay on the record. fa2b-residue is at 313 processed with ZERO
+  failures.
+- Process hygiene: three mergeBC processes were found running against one
+  artifact. pkill does not reach these Windows processes; they were killed
+  by PID through CIM and a single clean run relaunched.
+
+## Round 53 (2026-08-23): a residue that was mathematics
+
+- fa2b's residue re-run at depth 76 finished ok=True, 1544 boxes, ZERO
+  failures. Its whole 200-box residue was a depth-cap artifact, exactly as
+  the box-width measurement predicted.
+- band's residue did NOT discharge, and following it produced the
+  campaign's first residue that is mathematics rather than resolution.
+- THE CROSS POINT. All of band's failures sit at v = q = 0, both mirror
+  pairs at height zero, so the six bodies form a doubly symmetric cross.
+  On that face sigma_4 vanishes identically (1e-51 everywhere), so the
+  rank is 3 and each point determines a unique mass ray, positive over a
+  substantial region: the cross face carries a two-parameter family of
+  central configurations. band's residue is where sigma_3 collapses too.
+- At u = 0.6309181371067367971679885968642467138842 and
+  p = 1.450907465908073057191660806806502905941 the rank is EXACTLY 2.
+  sigma_3 falls in exact proportion to the search bracket over thirteen
+  orders of magnitude, which is linear vanishing, not a plateau. The three
+  earlier near-misses all plateaued; this one does not.
+- Confirmed independently by a 3 x 4 linear system in (m1, mA, mB, lambda)
+  built from scratch, no Laura-Andoyer reduction and no shared code:
+  sigma_3/sigma_1 = 8.6e-34 against controls at 8.6e-3, 6.6e-3 and 5.8e-2.
+  The two-dimensional kernel meets the positive orthant in an arc of width
+  1.2 rad, residuals 5e-34 to 2.4e-33. One configuration, a one-parameter
+  family of positive masses: a DEGENERATE central configuration. No
+  collisions, smallest mutual distance 0.82.
+- Rank <= 2 for a 3 x 4 matrix is codimension 2 and the face is
+  2-dimensional, so these points are isolated. A census over the face
+  (5607 grid points, 7 basins) finds exactly ONE, with four basins
+  converging to it.
+- CONSEQUENCE. The dimension count is untouched, since an isolated point
+  has dimension 0. But the draft statement named the centred pentagon as
+  THE sharp degenerate point of the stratum, and that is false as written.
+  The draft is WITHDRAWN rather than patched, and section 7 now records
+  the three questions that must be answered before another is drafted.
+- UNVERIFIED and flagged as such: whether this configuration is known.
+  No literature check has been run and it must not be presented as new.
+- A methodological note worth keeping: this was found by re-seeding a
+  covering with ONLY its failing boxes at a deeper cap, which costs 200
+  boxes instead of the 1.3 million the chart had already certified. The
+  same driver discharged fa2b and exposed band.
+
+## Round 54 (2026-08-24): the degenerate set is finite, and the atlas has exactly one open region
+
+- THE CROSS POINT IS EXACT. Newton at 260 working digits gives residuals
+  at 1e-256 and a rank-2 ratio at 1e-257. PSLQ found nothing real: it
+  returned a degree-9 relation for every quantity tried and the best
+  candidate misses by 6.0e-41 against the 1e-180 tolerance it was
+  supposedly found at, so all of it was rejected.
+- THE EXACT SYSTEM. Symmetry reduces the equations to three conditions,
+  each LINEAR in (m1, mA, mB, lambda), with the half-powers made algebraic
+  by C^2(u^2+1)^3 = 1 and D^2(p^2+1)^3 = 1. Eliminating C and D by
+  resultants leaves two integer-coefficient polynomials in (u, p) of 2027
+  and 936 terms, both vanishing at the point to relative 3.6e-60 and
+  2.6e-65.
+- FINITENESS, PROVED. g1 is the square of an irreducible curve of total
+  degree 40, g2 is irreducible of total degree 56, and gcd(g1, g2) has
+  total degree 0. Coprime, so the common zero set is zero-dimensional:
+  the degenerate configurations of the doubly symmetric cross family are
+  FINITE, at most 40 x 56 = 2240 over C with multiplicity. A common factor
+  would have been a curve of degenerate configurations and would have
+  broken the dimension count; there is none. The polynomials are
+  resultants so they may carry extraneous factors, which puts the true
+  set INSIDE their common zero set, the direction finiteness needs.
+- BAND'S RESIDUE IS CLOSED. band certifies only rank >= 3 and has no trap,
+  which is why a rank-2 point defeated it forever. EXP-021's certify_ball
+  confines R_2 to a codimension-2 manifold, which is dimension 2 and
+  exactly the bound. It fires on all 92 residual boxes (44 + 48) with zero
+  open, witnesses at [0.3668, 0.3668] and [-105.5, -105.4], and the
+  negative control declines at 2^18 wider.
+- A COVERAGE CLAIM CORRECTED, AND A FALSE ALARM WITHDRAWN. The assembly
+  recorded m2's residue as covered by the collapse chart, on the strength
+  of collapse's own docstring. A first check compared the two charts' box
+  coordinates directly, reported a total hole, and was WRONG: the charts
+  do not share a parametrisation. With the real map, which gives
+  cs = Rc * st exactly, 6208 of each m2 chart's boxes are covered and the
+  rest are rejected by collapse's cs < 1/32 test. Following that
+  delegation closes into a loop: tube needs w >= 7/32, tube-ext w >= 1/8,
+  and deep covers w in [0, 1/8] but discards the quadruple corner and
+  hands it to m2, the chart that fails there.
+- THE LAST OPEN REGION, DIAGNOSED. Two causes, neither mathematics.
+  (1) A missing column rescale: the m1 and m2 columns are O(s) while mA
+  and mB are O(s^-2), a ratio of exactly s^3, and both small right
+  singular vectors live ENTIRELY on (m1, m2) with the other components at
+  zero to six decimals. On a failing box the chart's column maxima run
+  5.4e-6, 6.6e-7, 1.0, 1.0. (2) Boxes straddling the physical boundary
+  uh, ph >= 0, which is the curve ct = st alpha and is NOT axis aligned,
+  so bisection can approach but never resolve it: 51.3% of m2-R's residue
+  and 45.4% of m2-L's straddle it. Re-seeding at depth 84 confirms it,
+  m2-R produced ZERO certificates in 462 boxes.
+- THE FIX IS SPECIFIED. Reparametrise the corner by alpha = ct w / st, so
+  uh = ct(1+w)/2 and ph = ct(1-w)/2 and the physical region becomes
+  w in [-1, 1], axis aligned; and divide the two axis-mass columns by
+  their common factor of u, which exists because the measured entry order
+  is exactly +1.
+- fa2b's own cap was raised from 44 to 76, since its residue provably
+  discharges there (1544 boxes, zero failures).
+- (0,3) unchanged in structure: collapse1's 14485 failures are ALL
+  face-touching, the same vanishing-floor situation as the merge face, so
+  that stratum still has its two faces open and its blow-up sub-chart
+  unbuilt.

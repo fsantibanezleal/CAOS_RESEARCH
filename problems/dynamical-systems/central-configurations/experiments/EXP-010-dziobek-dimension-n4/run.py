@@ -61,7 +61,7 @@ def build_system():
     """Stripped Dziobek differences + planar CM + Rabinowitsch; these exact
     polynomials go to msolve, the smoke test, and P3 alike."""
     h = dziobek4()
-    eqs = [strip_monomial_factors(v, GENS6) for v in h.values()]
+    eqs = [strip_monomial_factors(v, GENS6)[0] for v in h.values()]
     eqs.append(sp.expand(cayley_menger_planar4()))
     sat = T * sp.prod(GENS6) - 1
     return eqs, sat
