@@ -67,8 +67,8 @@ New open questions:
 5. Is there a cyclically 4-edge-connected cubic graph with Petersen defect at least 3
    (equivalently, by the threshold proposition and Theorem 4 of Mattiolo et al., would Conjecture 3
    of their paper hold in full)? Every 4-pole $G - e_1 - e_2$ of the two 52-vertex graphs is
-   colorable, and adjacent boundary labels are always available at the ends of a deleted edge
-   (EXP-010), so the known counterexamples give no such graph by cyclic joining.
+   colorable (EXP-010), and those with a crossed boundary pattern chain around rings of even
+   length, so the known counterexamples give no such graph by cyclic joining.
 6. Is every vertex pair of every counterexample critical? True for all five known graphs.
 7. Are the 68-vertex and the 112-vertex counterexamples colorable only by themselves?
 

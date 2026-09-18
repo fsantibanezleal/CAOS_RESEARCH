@@ -96,7 +96,9 @@ exactly one abnormal edge) is implied by Lemma 1 together with the parity theore
 
 The cyclic joining of copies of `G - e1 - e2` used in their Theorem 4 does not force bad
 vertices by itself: a 4-pole `G - e1 - e2` that admits a crossed boundary pattern can be chained
-around the ring, the line graph of `P` being distance-transitive. EXP-010 looks for 4-poles of the
+around a ring with an even number of copies (alternate the coloring with its image under an
+automorphism of `P` exchanging the two labels; every pair of edges of `P` is exchanged by some
+automorphism, checked on all 105 pairs). EXP-010 looks for 4-poles of the
 known counterexamples with no Petersen coloring at all.
 
 ## Proposition 5 (a threshold for statement (e)) `[D]`

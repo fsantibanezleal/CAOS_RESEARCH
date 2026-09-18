@@ -61,7 +61,7 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \title{Berge--Fulkerson Covers, Cycle Double Covers, Flows\\
 and Exact Normality Defects of the First\\
 Counterexamples to the Petersen Coloring Conjecture}
-\author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
 \date{\docdate}
 
@@ -505,11 +505,14 @@ on $M$. So its defect is at least $t$.
 \end{proof}
 
 The cyclic joining of copies of $G - e_1 - e_2$ used
-in~\cite{MMM2021} for that class does not force bad vertices by itself: for $\Gfty$ and for
-$\Gftyb$, every 4-pole obtained by deleting two independent edges has a Petersen coloring (one
-representative per orbit of edge pairs, 482 4-poles for each graph, computation EXP-010), and the boundary
+in~\cite{MMM2021} for that class does not force bad vertices by itself: for $\Gfty$, $\Gftyb$ and $\Gsix$,
+every 4-pole obtained by deleting two independent edges has a Petersen coloring (one
+representative per orbit of edge pairs, 482, 482 and 4{,}947 4-poles, computation EXP-010), and the boundary
 labels of the colorings found are of two kinds only, as the cut space predicts: two crossed equal
-pairs, or the four edges adjacent to one edge of $\PG$.
+pairs, or the four edges adjacent to one edge of $\PG$. A 4-pole with a crossed pattern can be chained around a ring with an even number of copies,
+because any two edges of $\PG$ are exchanged by an automorphism, so these cyclic joins are
+Petersen colorable. In all 73 4-poles of $\Gfty$ that contain a fixed deleted edge, the two
+labels at the ends of that edge can be chosen adjacent in $\PG$. Ten dot products of $\Gfty$ with itself, cubic graphs on 102 vertices, have no Petersen coloring (checked proofs) and defect exactly~2.
 
 The bounds of Theorems~\ref{thm:rings} and~\ref{thm:frames} are attained on the smallest
 instances (computation EXP-009): for the rings $R_t$ of $t$ copies of $\Gfty$ opened at one edge,

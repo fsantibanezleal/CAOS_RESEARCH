@@ -66,13 +66,23 @@ So (a), (b), (c), (d) are all false, and the conjectured equivalence now amounts
 (e): **is there a cyclically 4-edge-connected cubic graph with $\mathrm{ab} \ge 10$?** All five
 known counterexamples are cyclically 4-edge-connected with $\mathrm{ab} = 2$.
 
+**Proposition 5 (threshold) [D].** If one cyclically 4-edge-connected cubic graph $G^*$ has
+$\mathrm{pd}(G^*) \ge 3$, then $\mathrm{pd}$ and $\mathrm{ab}$ are unbounded on that class and (e)
+is false. Proof: let $e_1 = ab$, $e_2 = cd$ be the end-edges of a path of length three. A coloring
+of the 4-pole $G^* - e_1 - e_2$ with all vertices good, extended by giving $e_1$ the pendant label
+at $a$ and $e_2$ the pendant label at $c$, has at most the two bad vertices $b$ and $d$; so the
+4-pole is not colorable, and every copy of it in the cyclic join of Mattiolo et al. (cyclically
+4-edge-connected by their Proposition 2) contains a bad vertex. So on that class either
+$\mathrm{pd} \le 2$ everywhere or $\mathrm{pd}$ is unbounded.
+
 EXP-010 tested the natural route. The cyclic joining of copies of $G - e_1 - e_2$ (their Theorem 4)
 forces a bad vertex per copy only if the 4-pole $G - e_1 - e_2$ has no Petersen coloring. For
-$G_{52}$ and $G'_{52}$ every such 4-pole is colorable (482 orbit representatives each), with
+$G_{52}$, $G'_{52}$ and $G_{68}$ every such 4-pole is colorable (482, 482 and 4,947 orbit
+representatives), with
 exactly the two boundary patterns the cut space allows: two crossed equal pairs (about 72 percent
 of the witnesses found) or the four edges around one edge of $P$. A crossed pattern can be chained
-around a ring, because any two edges of $P$ can be swapped by an automorphism (checked on the 120
-automorphisms). The 4-poles $G - \{u, v\}$ for an edge $uv$ are colorable as well: this is the
+around a ring with an even number of copies, because any two edges of $P$ can be swapped by an
+automorphism (checked on the 120 automorphisms), so those cyclic joins are Petersen colorable. The 4-poles $G - \{u, v\}$ for an edge $uv$ are colorable as well: this is the
 universal 2-criticality of page 04 read at adjacent pairs.
 
 ## Exact values on small instances (EXP-009)
@@ -91,6 +101,9 @@ Petersen-colorable snark $J_5$ are Petersen colorable (controls).
 
 - Statement (e): a cyclically 4-edge-connected cubic graph with $\mathrm{ab} \ge 10$, or a proof
   that $\mathrm{ab} \le 9$ on that class.
+- By Proposition 5, a cyclically 4-edge-connected cubic graph with Petersen defect at least 3
+  would be enough. Ten dot products of $G_{52}$ with itself (102 vertices, new counterexamples with
+  checked proofs) all have defect 2.
 - Is $\mathrm{pd}$ bounded on cyclically 4-edge-connected cubic graphs? A superposition approach
   (superedges $G - \{u, v\}$ with $u, v$ far apart carry a nonzero class of
   $\mathbb{F}_2^{E(P)}$ modulo the cut space from one connector to the other) is recorded as
