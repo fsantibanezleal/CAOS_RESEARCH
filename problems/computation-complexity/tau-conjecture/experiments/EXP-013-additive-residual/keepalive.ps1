@@ -22,8 +22,8 @@
 # Never kill a shard process because it shows no CPU. Count shard NUMBERS, and
 # let a shard's absence from the running set be the only trigger to launch it.
 
-$wd   = "E:\_Temp\caos-research-tau\problems\computation-complexity\tau-conjecture\experiments\EXP-013-additive-residual"
-$py   = "D:\_Repos\Research_Caos\CAOS_RESEARCH\.venv\Scripts\python.exe"
+$wd   = $PSScriptRoot
+$py   = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot "..\..\..\..\..\.venv\Scripts\python.exe"))
 $N    = 20        # shard count (partition p belongs to shard p mod N)
 $want = 20        # how many shards to keep running; 32 cores here, another
                   # session holds 8, so 20 leaves the machine shared but busy

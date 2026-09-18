@@ -164,7 +164,7 @@ def test_exp007_localization_numbers_match_the_run():
 
 
 def test_the_manuscript_design_bound_numbers_come_from_the_force_budget():
-    """Theorem 4.1 of the manuscript (v0.05) quotes ab_force_budget; the prose must match the code."""
+    """Theorem 4.1 of the manuscript quotes ab_force_budget; the prose must match the code."""
     from nslib import ab_force_budget as F
 
     tex = text(ROOT / "manuscripts/navier-stokes/blowup-claims-audit/main.tex")
@@ -193,6 +193,6 @@ def test_the_manuscript_design_bound_numbers_come_from_the_force_budget():
     from nslib import class_ceiling as K
     pend = {r["mechanism"]: r for r in K.summary()}["Boussinesq pendulum"]
     assert f"by a factor ${round(pend['published_below_own_ceiling'])}$" in tex
-    # the withdrawn number may appear only in the correction paragraph
-    assert tex.count("1.08" + times + "10^{-3}") == 1
-    assert "Relation to version 0.04" in tex
+    # the superseded design bound is not quoted; its correction is recorded in the deposit history
+    assert tex.count("1.08" + times + "10^{-3}") == 0
+    assert "Relation to version" not in tex
