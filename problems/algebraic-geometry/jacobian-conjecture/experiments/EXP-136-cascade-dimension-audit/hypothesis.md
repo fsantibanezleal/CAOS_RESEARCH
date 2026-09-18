@@ -78,3 +78,27 @@
   check fails.
 
 Declared 2026-09-18 before the run.
+
+## Accepted amendment (declared 2026-09-18, after the search pass, before Parts D and E ran)
+
+The bounded search pass found three results that post-date EXP-018 and bear on rows of the
+board: C. D. Long, "Counterexamples to the xz-Conjecture and the Mathieu Conjecture for SU(2)",
+arXiv:2607.19012 (explicit regular functions F, G on SU(2) with all pure moments of F zero and
+the mixed moments nonzero); M. Wilson, "A face-isolation proof of the two-variable Gaussian
+Moments Conjecture", arXiv:2607.23887 (a proof of GMC(2)); A. Zheglov, "The Conjecture of
+Dixmier for the first Weyl algebra is true", arXiv:2410.06959v5 (a proof of Dixmier(1)). All
+three are preprints. Added predictions and checks:
+
+5. **Mathieu for SU(2).** Long's example satisfies, exactly, int F^n dg = 0 and
+   int F^n G dg = (-1)^(n-1)/(n+1) for n = 1..12 (Part D: g = [[a, c], [b, d]] = [[alpha,
+   -conj(beta)], [beta, conj(alpha)]], F = (1 + c)(ad + b), G = -c, Haar moments
+   int |alpha|^(2i) |beta|^(2k) dg = i! k! / (i + k + 1)!).
+6. **GMC(3), explicit.** Long's P3 = (1 + Z)(W - (2 + Z) T^2 / 2), Q3 = Z (eq. (10) there;
+   Z = (X1 + i X2)/sqrt 2, W = conj(Z), T real, all standard) satisfies, exactly,
+   E(P3^m) = 0 and E(Q3 P3^m) = m! for m = 1..10 (Part E: E(Z^a W^b) = a! if a = b, else 0;
+   E(T^(2k)) = (2k - 1)!!, odd moments 0).
+
+One-sidedness: D and E are finite checks of families the authors prove for every power; a FAIL
+refutes the transcription or the claim, a PASS confirms the finite range only. Wilson's GMC(2)
+proof and Zheglov's Dixmier(1) proof are recorded as claimed, not verified here. Budget: D and
+E under 60 s together.
