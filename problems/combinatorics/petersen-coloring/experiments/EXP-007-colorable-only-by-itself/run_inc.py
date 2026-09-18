@@ -55,6 +55,7 @@ def main() -> None:
     ap.add_argument("--cap", type=int, default=6 * 3600)
     ap.add_argument("--unreduced", action="store_true", help="attempt-1 formula, without Lemmas A and B")
     ap.add_argument("--suffix", default="")
+    ap.add_argument("--no-direct", action="store_true", help="skip the single external solve and go straight to the incremental loop")
     args = ap.parse_args()
     ARTIFACTS.mkdir(exist_ok=True)
     HEAVY.mkdir(parents=True, exist_ok=True)
@@ -79,6 +80,27 @@ def main() -> None:
     base = inst.f
     static = attach_clauses(inst)
     log(f"{tag}: base {base.nvars} vars, {len(base.clauses)} clauses, {len(static)} attach clauses ({round(time.time()-t0,1)} s)")
+    if not args.no_direct and not args.unreduced:
+        # Direct attempt: the reduced formula has been unsatisfiable without any lazy cut in every
+        # decided instance, so solve it once with a proof before entering the incremental loop.
+        f0 = CNF()
+        f0.nvars = base.nvars
+        f0.names = base.names
+        f0.clauses = list(base.clauses) + list(static)
+        cnf_path = HEAVY / f"{tag}.cnf"
+        f0.write(cnf_path, [f"EXP-007 {tag} final formula: base + {len(static)} attach + 0 learned cuts"])
+        rec = solver.solve(cnf_path, HEAVY / f"{tag}.drat", max(600, int(args.cap - (time.time() - t0))), want_proof=True)
+        log(f"{tag}: direct solve {rec['status']} in {rec['seconds']} s")
+        if rec["status"] == "UNSAT":
+            timer.cancel()
+            result = {"graph": name, "k": k, "status": "UNSAT", "verified": rec.get("drat_trim_verified"),
+                      "proof_bytes": rec.get("proof_bytes"), "proof_sha256": rec.get("proof_sha256"), "cnf_sha256": rec.get("cnf_sha256"),
+                      "reduced": True, "direct": True, "variables": f0.nvars, "clauses": len(f0.clauses),
+                      "certify_solve_seconds": rec.get("seconds"), "check_seconds": rec.get("drat_trim_seconds"),
+                      "rounds": 1, "learned_cuts": 0, "seconds": round(time.time() - t0, 1), "learned": []}
+            out_path.write_text(json.dumps(result, indent=1) + "\n", encoding="utf-8")
+            log("RESULT " + json.dumps({kk: vv for kk, vv in result.items() if kk != "learned"}))
+            return
     s = Cadical195()
     for cl in base.clauses:
         s.add_clause(list(cl))

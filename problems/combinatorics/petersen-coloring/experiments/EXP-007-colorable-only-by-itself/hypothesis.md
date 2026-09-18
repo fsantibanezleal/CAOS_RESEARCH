@@ -177,3 +177,13 @@ Scope extension, same reduced method, same certificates, 6 hours per order:
 Before the target runs on a new graph, EXP-001-style refutations of its Petersen colorability are
 reproduced with our encoder (P0: `G52b` and `G68` have no Petersen coloring, UNSAT with verified
 proofs), since only our own certificate makes the reading of a SAT outcome independent.
+
+## Addendum 4 (2026-09-18 13:05): tooling only
+
+Every instance decided so far was unsatisfiable without a single lazy cut, so the two-step route
+(in-process solve, then an external solve of the same formula with a proof) spends a third of its
+time on a solve that adds nothing. From this point a newly started instance first solves the
+reduced formula once, externally, with a DRAT proof; UNSAT is certified by drat-trim as before; a
+SAT answer falls through to the incremental loop unchanged. Instances already running are not
+restarted. The formula, the certificates and the verdict rules are unchanged; the change was
+tested on `J5` with `k = 14` (UNSAT, verified) and `k = 12` (SAT, checker-accepted target).
