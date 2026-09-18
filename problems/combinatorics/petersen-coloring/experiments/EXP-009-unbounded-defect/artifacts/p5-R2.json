@@ -78,6 +78,48 @@
    "verified": true,
    "seconds": 113.13,
    "same_copy": true
+  },
+  "12-42": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 59.337,
+   "same_copy": true
+  },
+  "14-35": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 90.017,
+   "same_copy": true
+  },
+  "14-44": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 94.882,
+   "same_copy": true
+  },
+  "16-37": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 82.802,
+   "same_copy": true
+  },
+  "16-46": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 122.441,
+   "same_copy": true
+  },
+  "18-39": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 125.83,
+   "same_copy": true
+  },
+  "18-48": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 146.196,
+   "same_copy": true
   }
  }
 }
