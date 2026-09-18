@@ -1,25 +1,25 @@
 {
   "release_ready": true,
-  "date": "2026-09-17",
-  "pages": 8,
-  "rendered_pages_reviewed": 8,
+  "date": "2026-09-18",
+  "pages": 10,
+  "rendered_pages_reviewed": 10,
   "errors": 0,
   "overfull": 0,
   "underfull": 0,
-  "bytes": 370897,
-  "sha256": "7eaa4e6336a989a61f220f9a074c32226c2d4770ce808a9cb13ca2900e41874e",
-  "md5": "85d9a060bdd4d3cb8b372f4cf060bc99",
-  "tex_sha256": "79e71fa4933b21b17eb99bab4ca6adaeafe309ce60910d4478aac381a43ab537",
-  "metadata_sha256": "429fb39b44f2223fdca2806cc58fee2bd4ed54ce40290dc7c37cbd18cbe27daf",
-  "render_review": "every page rendered and read: 8 pages, theorem, table and correction paragraph laid out correctly",
-  "proof_review": "Theorem 4.1 is exponent arithmetic on estimates transcribed from the primary source (pages 39-69), with a transcription check (the published margin passes the published constraints for every order); every quoted number is gated in CI against nslib/ab_force_budget.py",
-  "sources": "EXP-001 to EXP-008 verdicts and the context dossiers, including 2026-09-17-force-estimates-exponent-content.md",
-  "version_doi": "10.5281/zenodo.22822133",
+  "bytes": 425503,
+  "sha256": "47a79d3cadedbeead8e31d68e447e77dfca0ff751838c237cb18e7e2dcba9a3a",
+  "md5": "e7722f0642aff8f69ab919660d33cb61",
+  "tex_sha256": "d5381f4a3a35f59f93418c7f155b9ace2a21dd6ea701e0c6661f18e640e64b5a",
+  "metadata_sha256": "2fd25dc072c9b90fd9d2152fa7e94f1907c5098c70b3171ad3d52da9b1e22cea",
+  "render_review": "trial build rendered and read, pages 1-7 including the new Section 4.2, Theorem 4.2 and its proof; publish tool verified the PDF prints its DOI and version, no em-dash, voice gate clean",
+  "proof_review": "Theorem 4.1 and Theorem 4.2 are exponent arithmetic on estimates transcribed from the primary sources (Boussinesq pp. 39-69; Euler pp. 2-27 and 95-104), each with a transcription check (the published constants pass the published targets); every quoted number is gated in CI against nslib/ab_force_budget.py and nslib/ab_euler_budget.py",
+  "sources": "EXP-001 to EXP-008 verdicts and the context dossiers, including 2026-09-17-force-estimates-exponent-content.md and 2026-09-18-euler-force-budget.md",
+  "version_doi": "10.5281/zenodo.22830171",
   "concept_doi": "10.5281/zenodo.22820520",
-  "record_url": "https://zenodo.org/record/22822133",
-  "published_utc": "2026-09-18T02:02:09Z",
+  "record_url": "https://zenodo.org/records/22830171",
+  "published_utc": "2026-09-18T12:04:50Z",
   "note": "the published PDF prints its own version and concept DOIs; the DOI was reserved before the build",
-  "version": "0.05",
+  "version": "0.07",
   "previous_versions": [
     {
       "version": "0.01",
@@ -40,8 +40,18 @@
       "version": "0.04",
       "doi": "10.5281/zenodo.22821790",
       "note": "design bound 1.08e-03 derived from a misread inequality; replaced by the full force budget in v0.05"
+    },
+    {
+      "version": "0.05",
+      "doi": "10.5281/zenodo.22822133",
+      "note": "Boussinesq design bound only"
+    },
+    {
+      "version": "0.06",
+      "doi": "10.5281/zenodo.22823734",
+      "note": "scientific-voice revision"
     }
   ],
-  "headline_result": "Theorem 3.1: layer cascades cannot exceed alpha = 1/2 (sqrt(A) growth) or alpha = 1 (A growth) in the |grad|^alpha convention, both below classical 2; Theorem 4.1: the smooth-forcing design's force estimates certify at most 5.29e-04 as published and 8.96e-03 under any retuning, at least 10 times below the proved rough-force threshold",
+  "headline_result": "Theorem 3.1: layer cascades cannot exceed alpha = 1/2 (sqrt(A) growth) or alpha = 1 (A growth) in the |grad|^alpha convention, both below classical 2; Theorems 4.1 and 4.2: both smooth-forcing designs (Boussinesq, Euler) are pendulum-class and their force estimates certify at most 5.3e-04 and 6e-08 as published, 9.0e-03 and 7.5e-03 under any retuning, at least 10 times below the proved rough-force threshold",
   "review": "rewritten to address the problem only: no workflow narration, no self-referential version commentary beyond one withdrawn claim stated scientifically; the strictness step of Theorem 3.1 corrected so the final bounds are strict because p > 1/delta"
 }
