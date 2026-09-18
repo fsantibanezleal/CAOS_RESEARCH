@@ -70,6 +70,35 @@ which is a star because `P` is cyclically 5-edge-connected (the argument of the 
 Restoring `v_x` with these three labels on its edges gives a Petersen coloring of `G_x`. The
 connectivity statement is the standard 3-cut substitution. QED
 
+## Relation to Mattiolo, Mazzuoccolo, Mkrtchyan (arXiv:2104.09241, read 2026-09-18) `[V]`
+
+Their paper "On sublinear approximations for the Petersen coloring conjecture" (Bull. Inst.
+Combin. Appl. 92 (2021) 78-90) uses the same two constructions (cyclic joining of copies of
+`G - e`, their Theorem 2; a 3-connected bipartite cubic frame with vertices replaced by `G - v`,
+their Theorem 3) with a weaker conclusion: a copy without abnormal edges yields a proper
+5-edge-coloring of `G` with at most 5, respectively 7, abnormal edges. Hence their equivalences
+"a sublinear bound on `ab` exists on 2-connected (3-connected) cubic graphs if and only if
+`ab <= 5` (`ab <= 7`) on that class". The cut-space argument above upgrades the conclusion to a
+genuine Petersen coloring of `G`, which replaces the constants 5 and 7 by 0:
+
+**Corollary 4 `[D]`.** On the class of 2-connected cubic graphs, and on the class of 3-connected
+cubic graphs, a sublinear bound on `ab` exists if and only if every graph of the class has a
+normal 5-edge-coloring. Since `G52` is 3-connected and has none, no sublinear bound exists on
+either class: `ab(R_t) >= n/52` on the rings and `ab >= n/51` on the frames built from `G52`.
+So statements (c) and (d) of their Conjecture 3 are false, as are (a) (the disproof) and (b)
+(their Theorem 1).
+
+Their Conjecture 3 asserts that (a) to (e) are equivalent. With (a) to (d) false it is now
+equivalent to the falsity of (e), that is, by their Theorem 4, to the existence of a cyclically
+4-edge-connected cubic graph with `ab >= 10`. Their Proposition 3 (no proper 5-edge-coloring has
+exactly one abnormal edge) is implied by Lemma 1 together with the parity theorem, and gives
+`ab = 2` for the five known counterexamples, which v3 shows to have `ab <= 2`.
+
+The cyclic joining of copies of `G - e1 - e2` used in their Theorem 4 does not force bad
+vertices by itself: a 4-pole `G - e1 - e2` that admits a crossed boundary pattern can be chained
+around the ring, the line graph of `P` being distance-transitive. EXP-010 looks for 4-poles of the
+known counterexamples with no Petersen coloring at all.
+
 ## Consequences
 
 - There is no constant bounding the Petersen defect of bridgeless cubic graphs, and none bounding
