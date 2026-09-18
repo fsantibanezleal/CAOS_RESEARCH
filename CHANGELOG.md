@@ -3,6 +3,25 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.69.001] - 2026-09-18
+
+### Changed
+- Manuscripts: ten papers print the author as Santibáñez-Leal, as on the ORCID record, and are
+  published at new versions with unchanged content: bougard-joret tree-strip 0.04 and
+  next-matching 0.03, central-configurations tropical-replication 0.10, huneke-wiegand
+  frobenius-minimality 0.25, curvilinear-fiber-cones 0.04 and integral-connecting-annihilators
+  0.03, navier-stokes blowup-claims-audit 0.08, petersen-coloring consequence-audit 0.03,
+  riemann-hypothesis short-interval-stability 0.04 and unsplittable-flow-cost
+  counterexample-verification 0.03. The index, the record copies and the Riemann page's
+  current-version link point at them.
+
+### Fixed
+- Site: user-facing copy on five pages no longer uses self-assessment wording ("honest",
+  "Honesty gate"), in English and Spanish.
+- Site: the template's five placeholder SVGs under `frontend/public/svg/tech/`, unreferenced but
+  shipped in every build, are removed; the two guides that pointed at them describe the inline
+  diagrams of `frontend/src/lib/architecture.ts`.
+
 ## [0.69.000] - 2026-09-18
 
 ### Added
