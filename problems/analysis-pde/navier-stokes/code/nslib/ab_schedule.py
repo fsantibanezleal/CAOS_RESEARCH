@@ -184,6 +184,10 @@ def alpha_max_for_derivatives(k: int, delta: float = 1.0) -> float:
     below the threshold already proved for a `C^{1,eps}` force by
     Cordoba-Martinez-Zoroa-Zheng (0.0463 in our convention).
 
+    Correction 2026-09-17: `120 k <= Q` is their sufficient rule, not a structural rate; the
+    floor the estimates force is `Q >= 9d + 42` (see `ab_force_budget`). This bound holds for
+    the design as published; the full budget bounds every retuning at 3.69e-03 for k = 1.
+
     The reading: it is not the constants of the published design that keep this scheme out
     of the hypodissipative regime, it is the correction hierarchy's exchange rate of 120
     ratio per derivative. A hypodissipative version has to change that rate, not retune

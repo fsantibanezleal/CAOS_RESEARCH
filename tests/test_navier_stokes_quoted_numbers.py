@@ -161,3 +161,38 @@ def test_exp007_localization_numbers_match_the_run():
 
     for quoted in ("-0.9863", "3.606", "1.90", r"3.6\,\alpha"):
         assert quoted in verdict, f"{quoted} no longer appears in the EXP-007 verdict"
+
+
+def test_the_manuscript_design_bound_numbers_come_from_the_force_budget():
+    """Theorem 4.1 of the manuscript (v0.05) quotes ab_force_budget; the prose must match the code."""
+    from nslib import ab_force_budget as F
+
+    tex = text(ROOT / "manuscripts/navier-stokes/blowup-claims-audit/main.tex")
+    s = {r["reading"]: r for r in F.summary()}
+
+    times = chr(92) + "times"     # built by concatenation so no tool can eat the backslash
+
+    def sci(x: float) -> str:
+        mant, exp = f"{x:.2e}".split("e")
+        return f"${mant}{times}10^{{{int(exp)}}}$"
+
+    for reading in ("published", "relaxed", "optimistic"):
+        assert sci(s[reading]["best"]["alpha"]).strip("$") in tex, reading
+        assert sci(2 * s[reading]["best"]["alpha"]).strip("$") in tex, reading
+    rows = {name: {r["d"]: r for r in arch.ceiling(10)["rows"]}
+            for name, arch in (("published", F.PUBLISHED), ("relaxed", F.RELAXED))}
+    for d in (0, 1, 2, 5, 10):
+        p, r = rows["published"][d], rows["relaxed"][d]
+        line = (f"${d}$ & ${p['Q']}$ & ${p['margin']:.3f}$ & {sci(p['alpha'])} & "
+                f"${r['Q']}$ & ${r['margin']:.3f}$ & {sci(r['alpha'])} \\\\")
+        assert line in tex, line
+    assert "factors of $175$,\n$21$ and $10$" in tex
+    assert round(s["published"]["best_times_below_proved"]) == 175
+    assert round(s["relaxed"]["best_times_below_proved"]) == 21
+    assert round(s["optimistic"]["best_times_below_proved"]) == 10
+    from nslib import class_ceiling as K
+    pend = {r["mechanism"]: r for r in K.summary()}["Boussinesq pendulum"]
+    assert f"by a factor ${round(pend['published_below_own_ceiling'])}$" in tex
+    # the withdrawn number may appear only in the correction paragraph
+    assert tex.count("1.08" + times + "10^{-3}") == 1
+    assert "Relation to version 0.04" in tex

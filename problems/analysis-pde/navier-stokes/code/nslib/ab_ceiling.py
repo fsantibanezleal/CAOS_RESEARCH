@@ -1,4 +1,13 @@
-"""The ceiling of the Alpoge-Buckmaster mechanism under fractional dissipation.
+"""SUPERSEDED 2026-09-17 by `ab_force_budget`; kept unchanged below as the record of v0.04.
+
+The inequality this module encodes, `J[(1 - delta) - 5/Q] >= k + 6`, misreads the primary
+source in two places: the seed rule `lambda^(-k-6)` bounds the activation contribution, not
+the remainder (whose target is `lambda^(-3/2)`, their (7.26)), and the per-level parameter is
+`Pi^5 lambda^(-7/8) <= lambda^(-7/8 + 25/Q)`, not `lambda^(-7/8 + 5/Q)`. It also omits the
+nonoscillatory phase means, which bind at the published choices. Its number, 1.08e-03 in the
+`|grad|^alpha` convention, was published in v0.04 and is corrected in v0.05.
+
+The ceiling of the Alpoge-Buckmaster mechanism under fractional dissipation.
 
 This is the conclusion of the audit, not another observation about it: a single number
 bounding what that published design can carry, derived from its own displayed constants.

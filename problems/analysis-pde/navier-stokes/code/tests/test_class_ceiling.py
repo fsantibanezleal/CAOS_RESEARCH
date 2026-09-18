@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from nslib import ab_ceiling, cascade
+from nslib import ab_force_budget, cascade
 from nslib import class_ceiling as K
 
 
@@ -50,7 +50,7 @@ def test_the_design_bound_is_the_class_bound_in_other_variables():
 def test_the_published_constructions_sit_below_their_own_ceilings():
     rows = {r["mechanism"]: r for r in K.summary()}
     pend, stretch = rows["Boussinesq pendulum"], rows["vortex stretching"]
-    assert pend["best_published"] == pytest.approx(ab_ceiling.ceiling()[1])
+    assert pend["best_published"] == pytest.approx(ab_force_budget.PUBLISHED.ceiling()["best"]["alpha"])
     assert stretch["best_published"] == pytest.approx(cascade.ALPHA0_CMZ / 2.0)
-    assert pend["published_below_own_ceiling"] == pytest.approx(464.5, rel=1e-2)
+    assert pend["published_below_own_ceiling"] == pytest.approx(945.2, rel=1e-2)
     assert stretch["published_below_own_ceiling"] == pytest.approx(10.8, rel=1e-2)
