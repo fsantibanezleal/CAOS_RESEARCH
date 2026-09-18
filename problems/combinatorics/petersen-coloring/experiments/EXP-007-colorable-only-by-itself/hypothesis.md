@@ -187,3 +187,26 @@ reduced formula once, externally, with a DRAT proof; UNSAT is certified by drat-
 SAT answer falls through to the incremental loop unchanged. Instances already running are not
 restarted. The formula, the certificates and the verdict rules are unchanged; the change was
 tested on `J5` with `k = 14` (UNSAT, verified) and `k = 12` (SAT, checker-accepted target).
+
+## Addendum 5 (2026-09-18 13:55): how the verdict will use the lower bound 40 of v3, stated before the mid-range orders end
+
+State: for `G52` the orders 2 and 30 to 50 are refuted with verified proofs; 26 and 28 are
+unsatisfiable in-process and in certification; the orders 4 to 24 have been solving for more than
+three hours and may reach the 6-hour limit undecided. For `G52b` the orders 46 to 50 are refuted
+and 40 to 44 are in progress.
+
+The original premise list says that the lower bound 40 of v3 (Observation 9: a smallest
+counterexample has at least 40 vertices, from their exhaustive check of the weak snarks on 38
+vertices) is not used. That stays true for the unconditional statement. Since any graph that
+colors a counterexample is a counterexample, and a counterexample with parallel edges reduces to a
+smaller one (suppress the 2-edge cut around a digon; the two cut edges carry equal labels in any
+Petersen coloring), Observation 9 excludes every target order below 40. The verdict will therefore
+state two results and keep them apart:
+
+- (U) unconditional, from our certificates alone: the list of target orders refuted with verified
+  proofs, whatever it is when the limits expire;
+- (C) conditional on Observation 9 of v3 `[V as a statement of v3; their computation is not
+  reproduced here]`: membership in `H_3` as soon as every even order from 40 to `n - 2` is refuted.
+
+For `G68`, `G112`, `H112` the runs are restricted accordingly to the orders from `n - 2` down to
+40, largest first.
