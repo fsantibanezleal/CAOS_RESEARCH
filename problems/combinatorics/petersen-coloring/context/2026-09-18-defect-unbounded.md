@@ -99,6 +99,27 @@ vertices by itself: a 4-pole `G - e1 - e2` that admits a crossed boundary patter
 around the ring, the line graph of `P` being distance-transitive. EXP-010 looks for 4-poles of the
 known counterexamples with no Petersen coloring at all.
 
+## Proposition 5 (a threshold for statement (e)) `[D]`
+
+If some cyclically 4-edge-connected cubic graph `G*` has `pd(G*) >= 3`, then `pd` and `ab` are
+unbounded on cyclically 4-edge-connected cubic graphs, and statement (e) is false. Equivalently,
+on that class either `pd <= 2` everywhere or `pd` is unbounded.
+
+Proof. Let `e1 = ab`, `e2 = cd` be the end-edges of a path of length three of `G*`. Suppose the
+4-pole `G* - e1 - e2` (with a pendant edge at each of `a, b, c, d`) has a map to `E(P)` with all
+vertices good. Give `e1` the label of the pendant edge at `a` and `e2` the label of the pendant
+edge at `c`, and keep the other labels. Then `a`, `c` and every vertex other than `b`, `d` are
+good, so `pd(G*) <= 2`, a contradiction. So the 4-pole has no Petersen coloring. In the cyclic join
+`H_t` of `t` copies of `G* - e1 - e2` (Mattiolo et al., Figure 1; cyclically 4-edge-connected by
+their Proposition 2) a copy with only good vertices would restrict to a Petersen coloring of the
+4-pole. Hence `ab(H_t) >= pd(H_t) >= t`, and `t = 10` contradicts the bound 9 of their
+Theorem 4. QED
+
+So the remaining part of Conjecture 3 would follow from ONE cyclically 4-edge-connected cubic graph
+in which no vertex pair is critical. All five known counterexamples have `pd = 2` with every pair
+critical, and all 482 + 482 4-poles of `G52` and `G52b` examined in EXP-010 are colorable,
+consistently with the proposition.
+
 ## Consequences
 
 - There is no constant bounding the Petersen defect of bridgeless cubic graphs, and none bounding
