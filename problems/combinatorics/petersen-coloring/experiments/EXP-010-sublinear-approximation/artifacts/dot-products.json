@@ -32,5 +32,56 @@
    "seconds": 15.24,
    "checker_defect": 2
   }
+ },
+ "D_0_5_0": {
+  "n": 102,
+  "cubic": true,
+  "girth": 5,
+  "edge_connectivity": 3,
+  "digest": "c17acfaf876e4928f14f3f1293931161a04d270fbc1e7516a99e85db37713d45",
+  "bound0": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 432.783
+  },
+  "bound2": {
+   "status": "SAT",
+   "seconds": 29.892,
+   "checker_defect": 2
+  }
+ },
+ "D_0_7_0": {
+  "n": 102,
+  "cubic": true,
+  "girth": 5,
+  "edge_connectivity": 3,
+  "digest": "392a8402d18b29ee51dbb59a26f33b5f74437515b5e181c6eab8f57d6af30c93",
+  "bound0": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 450.413
+  },
+  "bound2": {
+   "status": "SAT",
+   "seconds": 12.12,
+   "checker_defect": 2
+  }
+ },
+ "D_0_8_0": {
+  "n": 102,
+  "cubic": true,
+  "girth": 5,
+  "edge_connectivity": 3,
+  "digest": "019b72315cf1cafcb3afbf91bb165187545814dd84984244bf54dafddc61e9ed",
+  "bound0": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 340.713
+  },
+  "bound2": {
+   "status": "SAT",
+   "seconds": 14.281,
+   "checker_defect": 2
+  }
  }
 }

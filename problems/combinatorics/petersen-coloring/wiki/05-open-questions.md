@@ -38,3 +38,38 @@ Sources: GJMMM Section 5; EXP-005 and EXP-006 verdicts; `program/petersen-colori
 PCR-1 (perfect matching index along the infinite families), PCR-2 (oddness along the families),
 PCR-3 (critical-pair structure), PCR-4b/4c (convergent composition search), PCR-5 (cyclic
 5-connectivity via rigid 5-poles).
+
+## Round 2 update (2026-09-18)
+
+Sources: `context/2026-09-18-v3-and-h3-dossier.md`, `context/2026-09-18-defect-unbounded.md`,
+EXP-007 to EXP-010.
+
+Literature. arXiv:2608.10028v3 (2026-09-11) raises the lower bound of item 1 to 40 (window
+$[40, 52]$), adds a second 52-vertex counterexample and counterexamples of every even order at
+least 60, and reports for five graphs several invariants that round 1 had computed for three
+(Berge-Fulkerson covers, perfect matching index at most 4, 5-cycle double covers, strong normal
+6-edge-colorings, colorings with two abnormal edges). The 68-vertex graph is now retrievable
+(House of Graphs 57280) and is covered by EXP-008.
+
+New exact results (pages 06 and 07):
+
+- Fiber parity and the unused-vertex reduction for $H$-colorings with an unknown target (Lemmas A
+  and B), and the certified list of target orders that do not color the 52-vertex
+  counterexamples (EXP-007).
+- $\mathrm{pd} \le \mathrm{ab}$; $\mathrm{pd} = \mathrm{ab} = 2$ on all five counterexamples; rings and
+  frames with $\mathrm{pd} \ge t$; no sublinear bound on $\mathrm{ab}$ for 2-connected or
+  3-connected cubic graphs (statements (c), (d) of Conjecture 3 of Mattiolo, Mazzuoccolo and
+  Mkrtchyan are false); the threshold proposition: one cyclically 4-edge-connected cubic graph with
+  $\mathrm{pd} \ge 3$ would refute statement (e).
+
+New open questions:
+
+5. Is there a cyclically 4-edge-connected cubic graph with Petersen defect at least 3
+   (equivalently, by the threshold proposition and Theorem 4 of Mattiolo et al., would Conjecture 3
+   of their paper hold in full)? Every 4-pole $G - e_1 - e_2$ of the two 52-vertex graphs is
+   colorable, and adjacent boundary labels are always available at the ends of a deleted edge
+   (EXP-010), so the known counterexamples give no such graph by cyclic joining.
+6. Is every vertex pair of every counterexample critical? True for all five known graphs.
+7. Are the 68-vertex and the 112-vertex counterexamples colorable only by themselves?
+
+The item "the 68-vertex counterexample was not retrievable" of the round-1 list is closed.
