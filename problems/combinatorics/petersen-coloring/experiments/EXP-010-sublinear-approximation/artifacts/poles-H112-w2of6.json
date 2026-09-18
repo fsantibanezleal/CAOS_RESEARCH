@@ -561,6 +561,146 @@
    "cnf_sha256": "81fbc38aedcd649fd5a1fe01c3c6678d81a51e6c151694543560e978924561d3",
    "checker_ok": true,
    "pattern": "crossed"
+  },
+  "3-18": {
+   "status": "SAT",
+   "seconds": 34.342,
+   "cnf_sha256": "a9e85f2fafa90b99a416450be4e8ff283cd4908b486c6543dca5e08d31445ee2",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-24": {
+   "status": "SAT",
+   "seconds": 36.012,
+   "cnf_sha256": "6efd4d22f161e820443eb7ca31366a24e196a32d366e4baa658e8f6698b4aa01",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-33": {
+   "status": "SAT",
+   "seconds": 29.034,
+   "cnf_sha256": "299cff3f9ff24d18fae7648b3cb4ad235231fc12ea77465d460b3f3489299017",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "3-39": {
+   "status": "SAT",
+   "seconds": 31.335,
+   "cnf_sha256": "cc83f6a75706925d0d28cd47f03c7df51602f6d5ebb02642cbc03d1623386a98",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "3-45": {
+   "status": "SAT",
+   "seconds": 20.038,
+   "cnf_sha256": "7428ada9936d801464193f72bd260fa5b948d333c1524aeb64abd3b23e1f06f0",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-51": {
+   "status": "SAT",
+   "seconds": 23.051,
+   "cnf_sha256": "06cf1125003b098d399f5bb4be7932df57aa079682a5c6543848b637ef4cdbbe",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "3-60": {
+   "status": "SAT",
+   "seconds": 40.969,
+   "cnf_sha256": "53957a80a7d22bea5e022f2d7cb4488f4ef2b02a2a3cac9eee14703bece71987",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-66": {
+   "status": "SAT",
+   "seconds": 28.204,
+   "cnf_sha256": "0e005186c128cb39e0dac3c88af804dae7bb1b746ca0e2db400ccd67e65065c1",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-72": {
+   "status": "SAT",
+   "seconds": 70.367,
+   "cnf_sha256": "235ca97a69a532dadf0511e12964e49622b4dc00c639afea7a99e48405e7cb91",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-78": {
+   "status": "SAT",
+   "seconds": 3.38,
+   "cnf_sha256": "5b3387282cf14d18cc6c57217285cbd6170717b710e49acb51ceaa42f5f2f295",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-87": {
+   "status": "SAT",
+   "seconds": 31.24,
+   "cnf_sha256": "468833b77e00e1881e703f9866774b8a4f2c95979afda11685bd14a9f02a52d7",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "3-93": {
+   "status": "SAT",
+   "seconds": 13.175,
+   "cnf_sha256": "848bb8ea6119d06caacab73b260f58d99754074588fc4fe0fb0be4fa73da8546",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "3-99": {
+   "status": "SAT",
+   "seconds": 18.396,
+   "cnf_sha256": "a4e12b38fb86b139cc35c095fb031490808f8218640434a13852abcc0ddb99ac",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-105": {
+   "status": "SAT",
+   "seconds": 64.923,
+   "cnf_sha256": "88bf9c98a265de7c81a5c2121ba7cdfb97f5dba7e58ca9a2e90a6d0869d4f282",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "3-115": {
+   "status": "SAT",
+   "seconds": 113.05,
+   "cnf_sha256": "b2d3e965035824f4305297a2d81f939805da12f1472d942fbab9e30678e46812",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-121": {
+   "status": "SAT",
+   "seconds": 57.361,
+   "cnf_sha256": "1b23b300636654fa9d4d09f5a2f484f66407a641d66aa2cdc43e36b3793d14d1",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "3-127": {
+   "status": "SAT",
+   "seconds": 36.725,
+   "cnf_sha256": "4445d772f2c84cb99d553dbe412ac3657ba0caf4e897b1a66fae8163a3586338",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-133": {
+   "status": "SAT",
+   "seconds": 4.425,
+   "cnf_sha256": "d634a6e8a252550e3ac5da419e1a1e2e4ba95670b78df969f86ec741361814c5",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-142": {
+   "status": "SAT",
+   "seconds": 16.171,
+   "cnf_sha256": "6649fee4fd58b322f735979cbe54025c3d2c8d0aa036e744eab3b39cef12e1b8",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-148": {
+   "status": "SAT",
+   "seconds": 15.7,
+   "cnf_sha256": "fa28d93d976ee9abd841f0ba4e339b4bb84c1308a58cbb4a5139c8173049fa23",
+   "checker_ok": true,
+   "pattern": "crossed"
   }
  }
 }
