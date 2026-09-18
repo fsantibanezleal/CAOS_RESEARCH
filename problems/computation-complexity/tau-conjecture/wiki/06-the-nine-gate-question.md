@@ -1,8 +1,9 @@
 # 06: The nine-gate question (the seven-root threshold)
 
 Transcribed 2026-08-24 from the EXP-011/012 verdicts, the growth-rhythm
-note and the scaling-gap note. The additive half is still running; this
-page states exactly what is decided and what is not.
+note and the scaling-gap note; updated 2026-09-18 with the EXP-013 verdict
+(the additive half is empty on the window). This page states exactly what
+is decided and what is not.
 
 ## The question
 
@@ -42,9 +43,16 @@ distinct integer roots**. The scan was gated first: the same machinery at
 threshold 6 found 793 unions on a single partition, so it detects unions
 when they exist.
 
-## The additive case: in progress
+## The additive case: empty on the window (EXP-013)
 
-Root sets are useless here, so the instrument works with VALUES: every
+EXP-013 scanned all 1,048,460,912 depth-7 states (256 partitions, each
+audited against its frontier file's state count in the EXP-011 manifest):
+1,272,725 candidates reached seven window agreements and were constructed
+exactly, and none has 7 distinct integer roots. So **no 9-gate program whose
+last gate is an addition or a subtraction has 7 distinct integer roots that
+all lie in $[-32, 32]$**. The instrument:
+
+root sets are useless here, so it works with VALUES: every
 operand and every extension is evaluated on the window [-32, 32] modulo
 a 31-bit prime, and f = v8 +- b vanishes at a point only if the residues
 agree, so counting modular agreements never misses a witness. Only
@@ -88,14 +96,17 @@ would be LOW. Fifth refutation in this problem.
 
 The census increments (+1, +1, 0 repeating) fit a closed form predicting
 z_max(9) = 7, i.e. the rhythm predicts a nine-gate seven-rooter. That
-prediction is already refuted on the multiplicative side. If the
-additive side is also empty:
+prediction is refuted on the multiplicative side, and on the additive
+side within the window (EXP-013). Therefore:
 
-- the seven-root threshold is 10, unconditionally on the multiplicative side
-  and on 99.998% of the additive side, windowed only on the measured 0.002%
-  residual above,
-- z_max(9) = 6, a THIRD plateau, and the 2-roots-per-3-gates rhythm
-  breaks for the first time at tau = 9.
+- a 9-gate seven-rooter, if one exists, has an additive last gate and a root
+  outside $[-32, 32]$, so by the confinement lemma its trailing coefficient
+  has $|c| \ge 396$ (and $|c| \ge 1188$ when $0$ is not a root): the measured
+  0.002% residual above. The seven-root threshold is 10 unless that residual
+  holds a seven-rooter; strictly it stays in $\{9, 10\}$ until the residual
+  is scanned exhaustively (queued);
+- on the window, z_max(9) = 6, a THIRD plateau, and the 2-roots-per-3-gates
+  rhythm breaks for the first time at tau = 9.
 
 The q-ladder arithmetic anticipates exactly this: the ladder's next
 factor needs the constant 12, which costs two gates to build rather than

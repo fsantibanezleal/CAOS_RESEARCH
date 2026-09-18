@@ -29,9 +29,9 @@
 % Page-1 header block (conventions/manuscript-header-standard.md). The four document
 % macros are set by the publishing tool when the version DOI is reserved.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.04}
+\newcommand{\docversion}{v0.05}
 \newcommand{\docdate}{18 September 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.22823635}
+\newcommand{\versiondoi}{10.5281/zenodo.22836450}
 \newcommand{\conceptdoi}{10.5281/zenodo.21753438}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\headerblock}{%
@@ -49,7 +49,7 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \title{The Bottom of the Shub--Smale Tau Conjecture:\\
 an Exact Census of Integer Roots for Constant-Free\\
 Straight-Line Programs of Length at Most Eight}
-\author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
 \date{\docdate}
 
@@ -84,7 +84,11 @@ explicit verified witness: $q(q-2)(q-6)$ for $q = x^2 - x$, computable in $8$ ga
 chained subtraction sharing; the growth function has plateaus at $\tau = 4$ and
 $\tau = 7$, so an extra gate does not always buy an extra root, and
 $z_{\max}(8) = 6$ exactly: no $8$-gate program of any shape has $7$
-distinct integer roots, so the seven-root threshold lies in $\{9, 10\}$.
+distinct integer roots, so the seven-root threshold lies in $\{9, 10\}$. At the
+ninth gate, no program whose final gate is a multiplication reaches $7$ roots, and
+no program whose final gate is an addition or a subtraction reaches $7$ roots inside
+the window $[-32,32]$; a nine-gate seven-rooter would need a root outside that window
+and a trailing coefficient of absolute value at least $396$.
 The censuses are decision-complete: depth $6$ required the exact construction of
 all $25{,}844{,}905$ reachable computation states; depth $7$ a complete scan of
 $2{,}013{,}706$ new polynomials, using a ``last-gate'' lemma that decides one depth
@@ -225,7 +229,12 @@ depth-$7$ states (maximum union size exactly $6$). We also prove a confinement
 lemma turning the additive case's evaluation window into a decidable criterion:
 if $f$ has $7$ distinct integer roots and trailing coefficient $c$ with
 $|c| \le 395$, or with $|c| \le 1187$ when $0$ is not a root, every root lies in
-$[-32,32]$; the constant $395$ is sharp. The additive case remains open.
+$[-32,32]$; the constant $395$ is sharp. An exhaustive scan of the additive case
+over the same states finds no program whose final gate is an addition or a
+subtraction with $7$ distinct integer roots in $[-32,32]$. A nine-gate seven-rooter
+would therefore need a root outside the window and $|c| \ge 396$, a class measured at
+about $0.002\%$ of the additive candidates, so the threshold is $10$ unless that
+residual holds a seven-rooter.
 \item \textbf{The three worlds} (Section~\ref{sec:fp}): on the same enumerated
 programs, $\zpmax(\tau) = 2^{\tau-1}$ exactly for every $\tau$ [D], while
 $\zrmax(1..6) = 1,2,3,4,6,8$ [MV] and the integer census stays linear. What limits
@@ -588,8 +597,8 @@ $c \le 200$; C beyond].
 
 Theorem~\ref{thm:depth8} left the threshold for $7$ distinct integer roots at
 $9$ or $10$. This section closes the upper side constructively, decides the
-multiplicative half of the ninth gate exhaustively, and analyses the additive half,
-which remains open.
+multiplicative half of the ninth gate exhaustively, and decides the additive half on
+an evaluation window, which leaves a narrow and measured residual.
 
 \subsection{Two ten-gate witnesses}\label{sec:seven:upper}
 
@@ -707,8 +716,8 @@ more. The side-condition matters, because a $9$-gate polynomial can have degree
 up to $2^8$, and discarding full agreement unconditionally would throw
 away exactly the high-degree witnesses the instrument is designed to find.
 
-An empty result from this instrument would be \emph{windowed}: on its own it would
-exclude only witnesses all of whose roots lie in $[-32,32]$, and a $9$-gate program
+An empty result from this instrument is \emph{windowed}: on its own it excludes
+only witnesses all of whose roots lie in $[-32,32]$, and a $9$-gate program
 can build constants as large as $2^{256}$ by repeated squaring. The following turns
 that caveat from an unknown into a decidable criterion.
 
@@ -761,10 +770,31 @@ independently of the evaluation window, and the residual is a structurally
 narrow class (degrees $8$, $9$ and $12$; $64$ distinct trailing coefficients
 between $512$ and $38{,}220$).
 
-The additive case remains open: whether a $9$-gate program whose final
-gate is an addition or a subtraction can have $7$ distinct integer roots is not
-decided here, and the seven-root threshold remains in $\{9, 10\}$. The fractions
-above are sample estimates from four of $256$ partitions, not exhaustive counts.
+The fractions above are sample estimates from four of $256$ partitions, not
+exhaustive counts; the scan of the next theorem is exhaustive.
+
+\begin{theorem}[MV, windowed]\label{thm:nine-add}
+No $9$-gate constant-free program whose final gate is an addition or a subtraction
+computes a polynomial with $7$ distinct integer roots that all lie in $[-32,32]$.
+Over all $1{,}048{,}460{,}912$ depth-$7$ states, every one-gate extension, every
+operand and both signs, $1{,}272{,}725$ candidates reach seven agreements on the
+window, and none of them has $7$ distinct integer roots.
+\end{theorem}
+
+The scan was gated before production: at threshold $5$ on $20{,}000$ states of one
+partition it returns $41$ witnesses, each verified exactly, so it finds witnesses
+when they exist. Its $256$ partition records each match the state count of the
+corresponding frontier file in the frontier's SHA-256 manifest, so no partition was
+scanned partially.
+
+Together with Theorem~\ref{thm:nine-mult}, $\zmax(8) = 6$ and
+Lemma~\ref{lem:confine}, a $9$-gate program computing a polynomial with $7$
+distinct integer roots, if one exists, has an additive final gate and a root
+outside $[-32,32]$, hence a trailing coefficient with $|c| \ge 396$, and
+$|c| \ge 1188$ when $0$ is not a root. The seven-root threshold is therefore $10$
+unless this residual class contains a seven-rooter; strictly, it remains in
+$\{9, 10\}$. An exhaustive pass over the residual, with each survivor root-counted
+exactly over the divisors of its trailing coefficient, would decide it.
 
 \section{The three worlds, measured}\label{sec:fp}
 
@@ -979,9 +1009,9 @@ the best known factory, linear-rate, exactly as when Rojas noted that the conjec
 fails for $\kappa < 1$ \cite{Rojas2003}.
 
 The census makes the following open items precise:
-(i) the $\{9, 10\}$ window for the seven-root threshold, and $\zmax(9)$ (a
-depth-$8$ frontier build would need $\sim\!1$ TB of scratch: a construction
-hunt with the corrected cost model is the nearer route);
+(i) the seven-root threshold, now reduced to the residual class of nine-gate
+candidates with an additive final gate and $|c| \ge 396$
+(Section~\ref{sec:seven:add}), and $\zmax(9)$ beyond the evaluation window;
 (ii) extend the integer frontier past Markstr\"om's length $11$ \cite{Markstrom2014},
 including his monotonicity question for $\tau(n!)$;
 (iii) measure the growth of the valuation-spectrum bound
@@ -1014,7 +1044,8 @@ arithmetic with no floating point at any stage.
 Compute is dominated by the two largest scans, on one desktop machine with
 $32$ cores. The depth-$8$ pipeline took $2$h$50$m to build the frontier and
 $6$h$48$m to scan it with $20$ processes; the multiplicative nine-gate scan took
-$13.1$h; the earlier experiments together add roughly $17$h, of which $6.7$h went
+$13.1$h, and the additive nine-gate scan about $74$h of wall-clock time with $8$ to
+$20$ processes, interruptions included; the earlier experiments together add roughly $17$h, of which $6.7$h went
 to the inconclusive solver runs. The co-occurrence scan that decides the six-root
 threshold took $2$h$23$m on one core, and the depth-$6$ real ladder $180$\,s.
 Peak RAM was $\sim$12 GB.
