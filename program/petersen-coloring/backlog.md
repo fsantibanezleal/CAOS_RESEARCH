@@ -24,3 +24,4 @@
 | PCB-020 | EXP-008: the full invariant battery on `G52b` (HoG 57278) and `G68` (HoG 57280) | doing | P1 | hypothesis committed before the run; battery, pair sweep, edge-orbit sweep |
 | PCB-021 | EXP-007 scope extension: `G52b`, `G68`, then `G112` and `H112` (probe `k = 52` first) | doing | P1 | addendum 3 |
 | PCB-022 | Second manuscript: colorable only by itself (lemmas A and B, encoding, results); audit manuscript new version citing v3 and adding the normal-5 defect and the two new graphs | todo | P1 | scientific voice; Zenodo |
+| PCB-023 | EXP-009: unbounded Petersen defect and abnormal-edge number (rings, frames); exact values on small instances | doing | P1 | theorems in `context/2026-09-18-defect-unbounded.md` |

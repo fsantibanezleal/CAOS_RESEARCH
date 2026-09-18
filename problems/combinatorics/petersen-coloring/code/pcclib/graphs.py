@@ -134,3 +134,33 @@ def petersen_minus_adjacent_pair() -> tuple[Graph, list[int]]:
     owners = [relabel[x] for x in keep if len([y for y in adj[x] if y in relabel]) == 2]
     assert g.n == 8 and len(g.edges) == 10 and len(owners) == 4
     return g, owners
+
+
+def ring_join(g: Graph, edge_index: int, t: int) -> Graph:
+    """Ring of t copies of g, each opened at edge a-b; copy i's a is joined to copy i+1's b."""
+    a, b = g.edges[edge_index]
+    edges = []
+    for i in range(t):
+        off = i * g.n
+        edges += [(u + off, v + off) for j, (u, v) in enumerate(g.edges) if j != edge_index]
+        edges.append((a + off, b + ((i + 1) % t) * g.n))
+    return Graph.from_edges(edges)
+
+
+def frame_substitution(frame: Graph, g: Graph, vertex: int) -> Graph:
+    """Replace every vertex of the cubic frame by a copy of g minus `vertex`; the three frame edges
+    at a frame vertex (incidence order) are attached to the three neighbours of `vertex` (sorted)."""
+    nbrs = g.adjacency()[vertex]
+    keep = [v for v in range(g.n) if v != vertex]
+    local = {v: i for i, v in enumerate(keep)}
+    size = g.n - 1
+    edges = []
+    for x in range(frame.n):
+        off = x * size
+        edges += [(local[u] + off, local[v] + off) for u, v in g.edges if vertex not in (u, v)]
+    finc = frame.incidence()
+    for j, (x, y) in enumerate(frame.edges):
+        px = local[nbrs[finc[x].index(j)]] + x * size
+        py = local[nbrs[finc[y].index(j)]] + y * size
+        edges.append((px, py))
+    return Graph.from_edges(edges)
