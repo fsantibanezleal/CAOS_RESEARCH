@@ -4,12 +4,12 @@
     "upload_type": "publication",
     "publication_type": "preprint",
     "publication_date": "2026-09-18",
-    "version": "0.02",
+    "version": "0.03",
     "creators": [
       {
-        "name": "Santibanez-Leal, Felipe",
+        "name": "Santibáñez-Leal, Felipe",
         "orcid": "0000-0002-0150-3246",
-        "affiliation": "CAOS Research program"
+        "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
     "description": "<p>Let T(d, m) be the maximum number of edges in a triangle-free graph with maximum degree at most d and matching number at most m, with no restriction on its order. We prove T(d, d + 1) = d² + d + 2 for every integer d ≥ 7. A shortest-odd-cycle deficit bound, followed by a five-type equality obstruction, first gives the same maximum on 2d + 3 vertices. The Tutte-Berge formula extends this bound to arbitrary order.</p><p>The attaining construction is due to Banak, Ekim and Taşkın; the contribution is the uniform upper bound. This settles the next-matching slice of the Ahanjideh-Ekim-Yıldız conjecture and, in particular, resolves the published bounds 184 ≤ T(13, 14) ≤ 185 in favor of 184.</p><p>As a consequence, we obtain a one-edge bracket for the Bougard-Joret extremal function at (n, α, k) = (2d + 3, 2, d + 2), giving an unbounded strict-interior discrepancy from the degree-sum prediction. The full AEY conjecture and the exact endpoint of that bracket remain unresolved. Exact finite certificates and independent implementation checks support, but do not replace, the proof.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/combinatorics/bougard-joret).</p>",
@@ -55,7 +55,7 @@
         "scheme": "url"
       }
     ],
-    "version_notes": "Editorial revision. The text states the results and their verification without process commentary: it no longer cites the commit in which the computation was planned, the status of the repository test suite, or whether a companion paper remains unchanged; the internal check of the proof is described by what it covered, and the closing sentence on the complement shortcut states why the shortcut fails. The data-availability paragraph states what the identifier EXP-003 denotes, the statement on tool use is replaced by a formal declaration of generative AI use naming the same uses, the references cite the companion paper by its concept DOI and the experiment record on the main branch of the repository, and describe that record as an independent re-implementation, and a page-1 header block states the document type, version, licence and DOIs. Methods, data, results and conclusions are unchanged."
+    "version_notes": "The author name is printed as Santibáñez-Leal, as on the author's ORCID record (0000-0002-0150-3246). The content is unchanged."
   },
   "publication": {
     "record_id": 22343022,

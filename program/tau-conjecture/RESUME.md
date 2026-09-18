@@ -3,6 +3,11 @@
 Updated 2026-08-20, round 10 close (THE DEPTH-8 CASE RESOLVED; paper v0.03). First read for any fresh session, per
 methodology 07. Derived view: on conflict, experiment verdicts win.
 
+2026-09-18: EXP-013 is verdicted (CONFIRMED, windowed: no additive nine-gate seven-rooter with all
+roots in [-32,32]; audit of all 256 partitions against the frontier manifest). The seven-root
+threshold is 10 unless the |c| >= 396 residual holds a seven-rooter (TCB-039). Census paper v0.05
+states it. The scheduled task tau_keepalive is disabled.
+
 ## 1. State in one screen
 
 The problem: for $f \in \mathbb{Z}[x]$ computed by a constant-free SLP

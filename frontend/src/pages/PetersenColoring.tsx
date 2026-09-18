@@ -454,7 +454,7 @@ export default function PetersenColoring() {
               )}
             </li>
           </ul>
-          <Callout variant="note" title={t('Honest scope', 'Alcance honesto')}>
+          <Callout variant="note" title={t('Scope', 'Alcance')}>
             {t(
               'The counterexamples are not ours: discovery priority belongs to Putman, to Goedgebeur, Jooken, Macajova, Mattiolo and Mazzuoccolo, and to Jooken for the human-checkable proof. What is ours is the independent certification with a second encoding, and the audit: perfect matching covers and index, cycle double covers, flows, oddness, resistance, normal 6-edge-colorings and exact defects, each with a certificate. The ring and frame constructions are those of Mattiolo, Mazzuoccolo and Mkrtchyan; ours is the cut-space argument that strengthens their conclusion. Nothing here bears on the general covering and flow conjectures beyond these five graphs.',
               'Los contraejemplos no son nuestros: la prioridad de descubrimiento pertenece a Putman, a Goedgebeur, Jooken, Macajova, Mattiolo y Mazzuoccolo, y a Jooken por la prueba verificable a mano. Nuestro es la certificacion independiente con una segunda codificacion, y la auditoria: cubiertas e indice de emparejamientos perfectos, dobles cubiertas por ciclos, flujos, imparidad, resistencia, 6-arista-coloraciones normales y defectos exactos, cada uno con certificado. Las construcciones de anillo y marco son las de Mattiolo, Mazzuoccolo y Mkrtchyan; nuestro es el argumento del espacio de cortes que refuerza su conclusion. Nada aqui incide en las conjeturas generales de cubiertas y flujos mas alla de estos cinco grafos.',

@@ -1,8 +1,8 @@
 {
  "artifact": {
-  "bytes": 3582,
+  "bytes": 3831,
   "path": "research/jacobian.json",
-  "sha256": "c8a269dcfbcb69555370e23003888865f868283ab19860c4b6e54dc8b8d112e0"
+  "sha256": "1c719c90e7796e4585e26f79f6cd0c700cc902659270b323870a62afd7a21023"
  },
  "case_id": "jacobian",
  "gate": {

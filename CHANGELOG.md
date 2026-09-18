@@ -3,6 +3,75 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.69.002] - 2026-09-18
+
+### Added
+- tau-conjecture: EXP-013 verdict, CONFIRMED on the window. Over all 1,048,460,912 depth-7 states,
+  no 9-gate program whose final gate is an addition or a subtraction has 7 distinct integer roots
+  that all lie in [-32, 32] (1,272,725 candidates checked exactly). The last 46 partition records
+  are committed, and `audit.py` checks all 256 against the frontier's SHA-256 manifest. With EXP-011,
+  EXP-012 and the confinement lemma, a nine-gate seven-rooter would need |c| >= 396, the 0.002%
+  residual of EXP-014; the exhaustive residual pass is queued (TCB-039).
+- Manuscripts: tau-conjecture census v0.05 (10.5281/zenodo.22836450) states the windowed theorem
+  and prints the author name as Santibáñez-Leal.
+
+## [0.69.001] - 2026-09-18
+
+### Changed
+- Manuscripts: ten papers print the author as Santibáñez-Leal, as on the ORCID record, and are
+  published at new versions with unchanged content: bougard-joret tree-strip 0.04 and
+  next-matching 0.03, central-configurations tropical-replication 0.10, huneke-wiegand
+  frobenius-minimality 0.25, curvilinear-fiber-cones 0.04 and integral-connecting-annihilators
+  0.03, navier-stokes blowup-claims-audit 0.08, petersen-coloring consequence-audit 0.03,
+  riemann-hypothesis short-interval-stability 0.04 and unsplittable-flow-cost
+  counterexample-verification 0.03. The index, the record copies and the Riemann page's
+  current-version link point at them.
+
+### Fixed
+- Site: user-facing copy on five pages no longer uses self-assessment wording ("honest",
+  "Honesty gate"), in English and Spanish.
+- Site: the template's five placeholder SVGs under `frontend/public/svg/tech/`, unreferenced but
+  shipped in every build, are removed; the two guides that pointed at them describe the inline
+  diagrams of `frontend/src/lib/architecture.ts`.
+
+## [0.69.000] - 2026-09-18
+
+### Added
+- jacobian-conjecture: EXP-136, the cascade audited at the level of dimension indices. Each
+  implication is taken with the index its primary source states (transcriptions and PDF hashes in
+  its `artifacts/sources.md`); 14 exact checks, two runs byte-identical.
+  - Dixmier and Poisson are false for every n >= 3 and open at 1 and 2.
+  - Mathieu is false for SU(N), N >= 24 (the 24-variable homogeneous form of EXP-041) and for
+    SU(2) (Long's explicit example, checked for n <= 12); for 3 <= N <= 23 it is not decided,
+    since F is not affinely of homogeneous type (Groebner certificate).
+  - The Gaussian moments conjecture is false for every n >= 3 (Long's explicit example, checked
+    for m <= 10), true for n = 1, and a proof of n = 2 is claimed.
+- Manuscripts: jacobian-conjecture cascade v0.06 (10.5281/zenodo.22834179), foundational v0.13
+  (10.5281/zenodo.22834207) and planar v0.34 (10.5281/zenodo.22834215), with the author name
+  printed as Santibáñez-Leal.
+
+### Fixed
+- jacobian-conjecture: EXP-016 item 5 and the EXP-018 board read the falsity of JC(4) as
+  deciding Dixmier(2), and EXP-016 item 1 stated the Mathieu conjecture false for SU(3). Both are
+  restated by EXP-136 in the wiki, the web cascade table and the Jacobian page.
+
+## [0.68.000] - 2026-09-18
+
+### Added
+- navier-stokes: the growth class and force estimates of the axisymmetric Euler smooth-forcing
+  construction, transcribed from its Sections 3, 6 and 12 (`nslib/ab_euler_budget.py`).
+  - Its amplitude law grows at the square root of the circulation gradient, so it is pendulum-class
+    and capped at `alpha <= 1/4` (ours) by Theorem 3.1.
+  - Its force estimates certify at most `6e-08` as published (`|grad|^alpha` convention) and
+    `7.5e-03` under any retuning, 12 times below the proved rough-force threshold. The binding
+    constraint is the centre row `2 h* > beta/2`, and the ratio floor is `Q >= 9k + 51`.
+  - Manuscript v0.07 carries this result as Theorem 4.2.
+
+### Fixed
+- navier-stokes: the 2026-09-17 dossier quoted the Euler design constants as `q_0 >= 220` and
+  `c_Q >= 218`. A text extraction had dropped their superscripts; the true values are `2^20` and
+  `2^18`.
+
 ## [0.67.000] - 2026-09-18
 
 ### Added

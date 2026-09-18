@@ -2,20 +2,20 @@
 
 First paper of the navier-stokes research series. Theorem 3.1: a layer cascade growing at sqrt(A)
 cannot carry more than alpha = 1/2, and one growing at A no more than alpha = 1 (|grad|^alpha
-convention, classical viscosity 2). Theorem 4.1: the force estimates of the smooth-forcing design
-certify at most 5.29e-04 at the published choices and 8.96e-03 under any retuning, at least ten
-times below the proved rough-force threshold. v0.05 replaces the v0.04 design bound (1.08e-03),
-which rested on a misread inequality; earlier versions are superseded. Built from the experiment verdicts and context
+convention, classical viscosity 2). Theorems 4.1 and 4.2: both smooth-forcing designs, Boussinesq
+and axisymmetric Euler, are pendulum-class, and their force estimates certify at most 5.3e-04 and
+6e-08 as published, 9.0e-03 and 7.5e-03 under any retuning, at least ten times below the proved
+rough-force threshold. Built from the experiment verdicts and context
 dossiers of [`problems/analysis-pde/navier-stokes/`](../../../problems/analysis-pde/navier-stokes/),
 never from memory, per methodology 09.
 
 | | |
 |---|---|
-| version | 0.05 (2026-09-17) |
-| pages | 8 |
+| version | 0.07 (2026-09-18) |
+| pages | 10 |
 | build | `pdflatex main.tex` twice, MiKTeX; zero errors, zero overfull or underfull boxes |
 | labels | machine-verified `[MV]`, derived `[D]`, conjectural `[C]`, used in-text |
-| Zenodo | v0.05, version DOI [10.5281/zenodo.22822133](https://doi.org/10.5281/zenodo.22822133), concept DOI [10.5281/zenodo.22820520](https://doi.org/10.5281/zenodo.22820520) (always latest) |
+| Zenodo | v0.07, version DOI [10.5281/zenodo.22830171](https://doi.org/10.5281/zenodo.22830171), concept DOI [10.5281/zenodo.22820520](https://doi.org/10.5281/zenodo.22820520) (always latest) |
 
 ## What it contains, and where each part comes from
 
@@ -30,6 +30,7 @@ never from memory, per methodology 09.
 | our cascade cap, and why it is unreachable | `context/2026-09-16-model-side-force-budget.md` |
 | the regularity-against-dissipation trade-off and the dated prediction | `context/2026-09-16-smoothness-versus-dissipation.md` |
 | the design bound, from the full force budget | `context/2026-09-17-force-estimates-exponent-content.md`, `nslib/ab_force_budget.py` |
+| the Euler design: its growth class and force estimates | `context/2026-09-18-euler-force-budget.md`, `nslib/ab_euler_budget.py` |
 | the class ceiling and its numerical confirmation | `nslib/class_ceiling.py`, EXP-008 verdict |
 
 Every number quoted in the paper is also gated in continuous integration against the result files it

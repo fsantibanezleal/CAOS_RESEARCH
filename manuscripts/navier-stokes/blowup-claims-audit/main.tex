@@ -9,7 +9,7 @@
 \usepackage{orcidlink,fancyhdr}
 \hypersetup{
   pdftitle={How much dissipation can a multiscale layer cascade carry},
-  pdfauthor={Felipe Santibanez-Leal},
+  pdfauthor={Felipe Santibáñez-Leal},
   pdfsubject={Upper bounds on the fractional dissipation exponent compatible with layer-cascade blowup constructions},
   pdfkeywords={Navier-Stokes, Boussinesq, finite-time blowup, hypodissipative, multiscale construction, fractional Laplacian}
 }
@@ -24,9 +24,9 @@
 % macros are set by the publishing tool when the version DOI is reserved. At this text
 % width the two DOIs do not fit on one line of the box, so each has its own line.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.06}
+\newcommand{\docversion}{v0.08}
 \newcommand{\docdate}{18 September 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.22823734}
+\newcommand{\versiondoi}{10.5281/zenodo.22835133}
 \newcommand{\conceptdoi}{10.5281/zenodo.22820520}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\recordurl}{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/analysis-pde/navier-stokes}
@@ -50,7 +50,7 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \allowdisplaybreaks[1]
 
 \title{How much dissipation can a multiscale layer cascade carry?}
-\author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program\\
 \small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
 \date{\docdate}
@@ -72,11 +72,13 @@ independent of every design constant: a cascade whose layers grow at rate $\sqrt
 gradient $A$ cannot exceed $\alpha=1/2$, and one whose layers grow at rate $A$ cannot exceed
 $\alpha=1$, both in the $|\nabla|^{\alpha}$ convention in which classical viscosity is $\alpha=2$.
 Neither mechanism reaches classical viscosity, by factors of four and two respectively. The second
-bound applies to the smooth-forcing design used for the inviscid Boussinesq result: transcribing the
-exponent content of its force estimates, we show that they certify dissipation only up to
-$\alpha\le5.3\times10^{-4}$ at the published choices, and only up to $\alpha\le9.0\times10^{-3}$
-when every constant of the design is retuned in its favour, at least ten times below the exponent
-already achieved with a force of finite regularity. In every reading the ceiling is highest when the
+bound applies to the smooth-forcing designs used for the inviscid Boussinesq and Euler results:
+both are of the pendulum class, and transcribing the exponent content of their force estimates we
+show that they certify dissipation only up to $\alpha\le5.3\times10^{-4}$ (Boussinesq) and
+$\alpha\le6\times10^{-8}$ (Euler) at the published choices, and only up to
+$\alpha\le9.0\times10^{-3}$ and $\alpha\le7.5\times10^{-3}$ when every constant of the design is
+retuned in its favour, at least ten times below the exponent already achieved with a force of
+finite regularity. In every reading the ceiling is highest when the
 fewest derivatives of the force are controlled.
 
 Both bounds follow from the amplitude system of the construction together with one additional
@@ -101,7 +103,7 @@ $\nu\lambda^{2\alpha}$ in the convention $-\nu(-\Delta)^{\alpha}$, while its gro
 background gradient alone. Frequency therefore buys gradient but not growth, and the question of how
 much dissipation a cascade tolerates becomes a question about the exponents relating amplitude,
 frequency and gradient. This paper answers it at two levels: for the mechanism classes
-(Section~\ref{sec:class}) and for one published design (Section~\ref{sec:design}).
+(Section~\ref{sec:class}) and for two published designs (Section~\ref{sec:design}).
 
 \paragraph{Conventions.} We write dissipation as $-\nu(-\Delta)^{\alpha}$, so classical viscosity is
 $\alpha=1$; results quoted from the literature in the $|\nabla|^{\alpha}$ convention have twice our
@@ -154,8 +156,9 @@ simulation of the nonlinear equations.
 amplitude pair obeys a second-order equation whose coefficient is the background gradient. The
 vortex layers of the hypodissipative Navier-Stokes construction instead grow at rate $A_{n-1}$, the
 background gradient itself, which is why its dissipation constraint reads $a=\alpha R$ in the
-exponent notation of Section~\ref{sec:budget} rather than carrying a square root. Both laws are
-treated below.
+exponent notation of Section~\ref{sec:budget} rather than carrying a square root. The swirl layers
+of the axisymmetric Euler construction obey the pendulum law, with the circulation gradient in
+place of the temperature gradient (Section~\ref{sec:euler}). Both laws are treated below.
 
 \section{A bound independent of design constants}\label{sec:class}
 
@@ -207,8 +210,8 @@ design.
 The two ceilings differ by exactly the growth law: a layer that grows at the background gradient,
 rather than at its square root, gains a factor of two and nothing else in the argument changes. The
 published constructions sit well below their own class ceilings, the hypodissipative vortex-layer
-threshold by a factor $10.8$ and the design of Section~\ref{sec:design}, at its published choices,
-by a factor $945$.
+threshold by a factor $10.8$ and the Boussinesq design of Section~\ref{sec:boussinesq}, at its
+published choices, by a factor $945$.
 
 \begin{remark}
 Corollary~\ref{cor:classical} is consistent with a choice visible in the literature: the construction
@@ -216,7 +219,9 @@ aimed at the viscous case does not use a layer cascade, but a self-similar core 
 scale-local Reynolds number stays of order one.
 \end{remark}
 
-\section{A bound for the smooth-forcing design}\label{sec:design}
+\section{Bounds for the smooth-forcing designs}\label{sec:design}
+
+\subsection{The Boussinesq design}\label{sec:boussinesq}
 
 The smooth-forcing Boussinesq construction~\cite{ab-boussinesq} controls the force of each layer in
 $C^{k}_{x,t}$ for $k\le d=k_{q}$ through a finite hierarchy of corrections, and its estimates are
@@ -306,14 +311,84 @@ each gaining $\lambda^{-(1-m)}$, drive the remainder bound on $m$ down to $1/2$ 
 published target the leading phase means, which are quadratic in the amplitude and gain nothing from
 the hierarchy, hold it near $1/4$.
 
+\subsection{The Euler design}\label{sec:euler}
+
+In the axisymmetric Euler construction~\cite{ab-euler}, written in the volume coordinates
+$y=(z,r^{2}/2)$, the circulation $\Gamma=ru^{\varphi}$ takes the place of the temperature. The
+principal amplitudes of a layer of frequency $N$ obey
+\[
+\partial_{t}\begin{pmatrix}T\\ \widehat\Omega\end{pmatrix}
+=\begin{pmatrix}0&-d/(\sigma\kappa)\\ \sigma c\,\zeta_{1}&0\end{pmatrix}
+\begin{pmatrix}T\\ \widehat\Omega\end{pmatrix},
+\qquad d=(J\zeta)\cdot\nabla_{y}\Gamma_{<},\qquad c=2W\Gamma_{<},
+\]
+with $c$ bounded above and below on the support of the layer. The growth rate is the square root of
+the product of the off-diagonal entries and scales as $|\nabla\Gamma|^{1/2}$: the Euler layers belong
+to the pendulum class of Theorem~\ref{thm:class}, with $\gamma=1/2$ in the variable $\nabla\Gamma$
+whose norm diverges. On the constructed sequence the growth scale is $\sigma_{i}\asymp N_{i}^{\beta/2}$
+against a deposited circulation gradient of order $N_{i}^{\beta}$, in agreement with this law.
+
+The force estimates of this construction are stated with explicit exponents. Write $\beta$ for the
+amplitude margin (amplitude $N^{-(1-\beta)}$), $h=1-\beta$, $N_{i}=N_{i-1}^{Q}$, $\Pi\le N^{v}$ with
+$v=p/Q$ for the coefficient scale, $\delta=\Pi^{\mathsf d}N^{-h}$ for the per-level parameter,
+$h_{*}=h-\mathsf dv$, $J=2k+8$ correction levels and $u\ge kv$. The activation, remainder and mean
+contributions to the force of one layer at order $k$ then carry the exponents
+\[
+1-e+2u+v,\qquad -(2h_{*}-1)k+\beta-9h_{*}+2u+v,\qquad -2h+3u+6v
+\]
+of $N$, where $e$ is the exponent of the seed. The estimates further require thirteen coefficient
+quotients of the form $\Pi^{A-B\mathsf d}N^{-n\beta}$ to be at most one, the localization exponent
+$a$ of $\ell=N_{i-1}^{-a}$ to satisfy $a>5\beta/2$ with $p\ge a$, the centre condition
+$2h_{*}>\beta/2$, and coefficient derivatives through the orders the correction recursion consumes,
+which are available uniformly only when $9k+51\le Q$. The construction chooses $\beta=1/8$,
+$\mathsf d=16$, $p=8$, $a=4$ and $Q_{i}=q_{0}+i$ with $q_{0}\ge2^{20}$; with these choices the three
+exponents are $-7.00$, $-10.75$ and $-1.75$, within its targets $-6$, $-6$ and $-3/2$, and every side
+condition holds.
+
+\begin{theorem}\label{thm:euler}
+Under the Euler design, carrying dissipation $-\nu(-\Delta)^{\alpha}$ at an insertion angle of order
+one requires $\alpha\le\beta/(4Q)$. Consequently, in our convention:
+\begin{enumerate}
+\item[(i)] at the published choices $\alpha\le2.98\times10^{-8}$ at the first stage, and no positive
+exponent is admissible at every stage, since $Q_{i}$ is unbounded;
+\item[(ii)] with every free choice released, that is, force exponents only required to be negative,
+$\mathsf d$ at the least value the coefficient quotients permit and $Q\ge9k+51$, the exponent
+satisfies $\alpha\le3.64\times10^{-3}$, attained at $k=0$, $Q=51$, $\beta=0.742$, where the centre
+condition binds;
+\item[(iii)] with the localization at the previous wavelength, $a=1$, it satisfies
+$\alpha\le3.77\times10^{-3}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Growth at frequency $N_{i}$ on the circulation gradient deposited by the previous layer requires
+$\nu N_{i}^{2\alpha}<\sigma_{i-1}\sin s_{i}$ with $\sigma_{i-1}\asymp N_{i-1}^{\beta/2}$ and
+$N_{i}=N_{i-1}^{Q}$, which is $\alpha<\beta/(4Q)$; this is Theorem~\ref{thm:class} with $p=Q/\beta$
+and $\gamma=1/2$. The first consequence is this bound at $Q=2^{20}+1$ and $\beta=1/8$. For the
+others, each listed condition is an inequality in $\beta$ at fixed $k$ and $Q$; $\mathsf d$ is taken
+as the least value for which every coefficient quotient is at most one, which is $\mathsf d=2$ in the
+maximizing range because the quotients carrying no power of $N$ are $\Pi^{2-\mathsf d}$; and
+$\beta/(4Q)$ is maximized over $k\ge0$ and integer $Q\ge9k+51$.
+\end{proof}
+
+In the $|\nabla|^{\alpha}$ convention the ceilings of (ii) and (iii) are $7.27\times10^{-3}$ and
+$7.53\times10^{-3}$, below the proved threshold $0.0927$ by factors of $12.7$ and $12.3$; with one
+controlled derivative of the force, (ii) gives $3.12\times10^{-3}$. The two smooth-forcing designs
+therefore behave alike: both are of the pendulum class, both tie the frequency ratio to the
+regularity of the force through the range of their coefficient bounds, $Q\ge9d+42$ and $Q\ge9k+51$,
+and both certify at most a few thousandths, more than ten times below the rough-force threshold. For
+a Navier-Stokes version of the Euler design the damping of a localized swirl layer is taken at its
+leading symbol $\nu(N|\zeta|)^{2\alpha}$; the verification of Section~\ref{sec:validation} concerns
+the Boussinesq system.
+
 \begin{remark}\label{rem:levers}
-A dissipative version of this design must therefore change one of three things: the range of
+A dissipative version of either design must therefore change one of three things: the range of
 uniform coefficient bounds, which is what forces $Q$ to grow with $d$; the treatment of the
 nonoscillatory phase means, which no number of correction levels reduces; or the growth law, since
 the factor four in $\alpha\le m/(4Q)$ comes from the rate $\sqrt A$ and becomes a factor two for
-vortex stretching. The bound concerns what the estimates of the design can certify, not the existence
-of any solution: a different correction scheme is not covered, and Theorem~\ref{thm:class} is the only
-statement here independent of the design.
+vortex stretching. The bounds concern what the estimates of each design can certify, not the
+existence of any solution: a different correction scheme is not covered, and Theorem~\ref{thm:class}
+is the only statement here independent of the designs.
 \end{remark}
 
 \section{The exponent budget behind the published threshold}\label{sec:budget}
@@ -385,7 +460,7 @@ algebra in the accompanying repository.
 
 \section{Verification of the dissipative extension}\label{sec:validation}
 
-Theorems~\ref{thm:class} and~\ref{thm:design} rest on~\eqref{eq:diss}, which is derived rather than
+Theorems~\ref{thm:class}, \ref{thm:design} and~\ref{thm:euler} rest on~\eqref{eq:diss}, which is derived rather than
 taken from the constructions. It was tested against direct pseudospectral simulation of the nonlinear
 two-dimensional Boussinesq system in double precision with two-thirds dealiasing.
 
@@ -450,9 +525,9 @@ detects environment manipulation rather than serving as an external verifier.
 
 The bound of Section~\ref{sec:class} is a necessary condition for growth in the layer mechanism,
 derived from the amplitude system, the amplification identity and the dissipative
-term~\eqref{eq:diss}. The bound of Section~\ref{sec:design} concerns what the estimates of one design
-can certify: it tracks that design's corrections through the exponents of its published estimates,
-but not constants or logarithmic factors, and it assumes the most favourable insertion angle. Neither
+term~\eqref{eq:diss}. The bounds of Section~\ref{sec:design} concern what the estimates of two designs
+can certify: they track each design's corrections through the exponents of its published estimates,
+but not constants or logarithmic factors, and they assume the most favourable insertion angle. Neither
 bound affects the published inviscid results, which carry no dissipation. The mechanism is due to C\'ordoba
 and Mart\'inez-Zoroa~\cite{clsmz,cmz}, extended to smooth forcing by Alpog\'e and
 Buckmaster~\cite{ab-boussinesq,ab-euler,ab-ipm}; nothing in this paper
@@ -468,7 +543,7 @@ $22-8\sqrt7$ is a perfect square.
 
 The numerical data, the simulations, the exact-arithmetic verifications of
 Propositions~\ref{prop:threshold} and~\ref{prop:ratios}, and the computations behind
-Theorems~\ref{thm:class} and~\ref{thm:design} are public at \href{\recordurl}{the project repository}.
+Theorems~\ref{thm:class}, \ref{thm:design} and~\ref{thm:euler} are public at \href{\recordurl}{the project repository}.
 
 \begin{thebibliography}{9}
 \bibitem{fefferman} C. L. Fefferman, \emph{Existence and smoothness of the Navier-Stokes equation},

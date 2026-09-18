@@ -1,0 +1,19 @@
+{
+ "experiment": "EXP-013",
+ "failures": [],
+ "frontier_total": 1048460912,
+ "hits": 0,
+ "manifest": "experiments/EXP-011-depth8-pipeline/artifacts/frontier7.manifest.md",
+ "partitions": 256,
+ "promoted": 1272725,
+ "promoted_per_partition": {
+  "max": 6286,
+  "min": 4268
+ },
+ "states": 1048460912,
+ "threshold": 7,
+ "window": [
+  -32,
+  32
+ ]
+}
