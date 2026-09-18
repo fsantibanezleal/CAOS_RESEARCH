@@ -3,6 +3,36 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.66.000] - 2026-09-17
+
+### Added
+- navier-stokes, analysis-pde: the first problem in this area, opened on the September 2026 finite-time
+  blowup announcements for fluid equations.
+- A bound on the dissipation a multiscale layer cascade can carry, independent of every design
+  constant: layers growing at `sqrt(A)` cannot exceed `alpha = 1/2` and layers growing at `A` cannot
+  exceed `alpha = 1` in the `|grad|^alpha` convention, so neither mechanism reaches classical viscosity
+  (`alpha = 2`), by factors of four and two. Confirmed numerically for both growth laws (EXP-008, to
+  `1.8e-09`).
+- A bound for the published smooth-forcing design, `alpha <= 1.08e-03`, attained at one controlled
+  derivative of the force and 86 times below the threshold already proved with a rough force.
+- The published hypodissipative threshold `(22 - 8 sqrt 7)/9` reconstructed exactly from its own
+  exponent budget, the binding constraint identified, and the admissible frequency ratios shown to
+  close at that threshold, excluding geometric cascades; checked in exact arithmetic in CI.
+- The dissipative extension of the layer amplitude system, verified against direct pseudospectral
+  simulation, including the growth, steering and holding cycle (EXP-002, EXP-004, EXP-005) and the
+  cost of localization, `3.6 alpha / (ell lambda)` (EXP-007).
+- Independent verification of the OpenAI Lean certificate: rebuilt, and replayed through the Lean
+  kernel from an empty environment, both halves (EXP-001, EXP-006).
+- Manuscript *How much dissipation can a multiscale layer cascade carry?*, v0.04,
+  [10.5281/zenodo.22821790](https://doi.org/10.5281/zenodo.22821790).
+- `code/reproduce_all.py`: every experiment reruns from the settings stored in its own result file
+  and is diffed leaf by leaf against the record.
+
+### Changed
+- `check_content_standards.py` also flags stray control characters and now scans `.tex` and `.bib`,
+  since a backslash lost in a shell heredoc turns a LaTeX command into a control byte that still
+  compiles.
+
 ## [0.65.000] - 2026-09-12
 
 ### Added
