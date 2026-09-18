@@ -2,15 +2,15 @@
   "metadata": {
     "upload_type": "publication",
     "publication_type": "preprint",
-    "title": "A quadratic family of integral two-torsion classes in a Huneke-Wiegand Koszul presentation",
+    "title": "A quadratic family of integral two-torsion classes in a Huneke–Wiegand Koszul presentation",
     "creators": [
       {
-        "name": "Santiba\u00f1ez-Leal, Felipe",
+        "name": "Santibañez-Leal, Felipe",
         "orcid": "0000-0002-0150-3246",
         "affiliation": "CAOS Research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>For every integer p&gt;=8, we prove that an explicit integral Koszul presentation associated with a previously constructed Huneke-Wiegand family has a direct summand (Z/2)^q, where q=floor(((p-2)^2+3)/12). The classes are indexed by the strictly increasing nonnegative triples i&lt;j&lt;k with i+j+k=p-2. Reflection-symmetric interval potentials give complete original-domain integer sources for twice each class; relative parity functionals with ten to twelve supporting K rows detect the classes independently. An elementary six-step counting argument gives the quadratic growth, and a vector-space extension argument gives the splitting. No explicit uniform global retraction or complete Smith form is claimed.</p><p>The proof includes an exhaustive classification of every source that can meet the functionals and a complete reconstruction of the D-kernel in every relevant high-variable sector, including the free diagonal potentials at the endpoint sector. It also proves exact order two for a previously tracked four-row connecting representative, constructs its original signed annihilator and its transfer to one triangle class, and gives a complete integral potential basis of rank binomial(p-1,2) in a neighboring sector with at most seven K rows per basis image.</p><p>Independent exact audits verify all 70 declared triangle sources, five representative-transfer identities, and 364 complete triangle-sector parity certificates at p=8,...,12. These certificates concern 27 functionals on 65 distinct sectors containing 23,695 distinct original S sources; repeated sector incidences are not counted as distinct matrices. Separate campaigns check 861 neighboring-sector chains, 18 full annihilators, and 2,123 complete-kernel potential chains. Every tested signed source is preserved in deterministic lossless archives. The uniform theorems follow from the complete symbolic proofs, not extrapolation from these finite checks.</p><p>Scope: this is a partial direct-summand decomposition of the full explicit integral presentation, not a classification of its entire cokernel, an upper bound, an identification with an isolated or relative-completion quotient, or a proof of the lower-strand recurrence. The family-to-presentation identification is an explicitly imported premise. Son Pham retains priority for the original public counterexample; this is a separate homological companion to the CAOS family record. The Jacobian conjecture is not addressed. Preprint, not peer reviewed.</p>",
+    "description": "<p>We study an explicit integral Koszul presentation arising in the graded-syzygy analysis of a previously constructed Huneke-Wiegand family. For every integer p&gt;=8, its cokernel contains a direct summand isomorphic to (Z/2)^floor(((p-2)^2+3)/12). The classes are indexed by all strictly increasing nonnegative triples of sum p-2. Reflection-symmetric interval potentials give explicit original integral sources for twice each class. Relative parity functionals, supported on ten to twelve original rows, detect the classes independently and vanish on every complete connecting image; extension over the remaining target gives a nonconstructive retraction.</p><p>A previously tracked four-row vector is integrally congruent to one selected class, with an explicit source for the difference. We also give its full twice-source, two short kernel-domain corrections, and a neighboring integral potential basis of rank binomial(p-1,2) with at most seven-row images.</p><p>Independent finite computations check the signed identities and complete-sector parity certificates, preserving all tested sources in lossless archives. A failed local search yields an exact locality obstruction. The uniform theorem follows from signed reconstruction, exhaustive source classification, and an elementary counting recurrence, not finite rank extrapolation. The full cokernel, an upper bound, and identification with earlier isolated subpresentations remain unresolved.</p><p>The family-to-presentation identification is an imported premise. Son Pham retains priority for the original public Huneke-Wiegand counterexample.</p><p>Source code, computation records and archived sources: https://github.com/fsantibanezleal/CAOS_RESEARCH .</p>",
     "keywords": [
       "Huneke-Wiegand conjecture",
       "Koszul homology",
@@ -42,8 +42,9 @@
         "resource_type": "software"
       }
     ],
-    "version": "0.01",
+    "version": "0.02",
     "language": "eng",
-    "publication_date": "2026-09-05"
+    "publication_date": "2026-09-18",
+    "version_notes": "Editorial revision. The verification section describes the computations as verification runs, independent recomputations and negative controls instead of process vocabulary, states running times as facts and no longer counts software tests, two failing variants of the annihilator are stated as results, and the appendix states once what the EXP identifiers denote. The names of the sixteen labelled results now print correctly: the source wrote [[D] Name] as an optional argument, which LaTeX closed at the first bracket, so the previous PDF printed '([D).' followed by the name inside the statement. The Bruns-Herzog reference now gives its DOI. A page-1 header block states the document type, version, licence and DOIs, and the running header and the date use the same values. The companion Frobenius-minimality paper is cited by its concept DOI, which resolves to its latest version, instead of an earlier version DOI. Methods, data, results and conclusions are unchanged."
   }
 }

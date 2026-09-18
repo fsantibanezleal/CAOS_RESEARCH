@@ -2,7 +2,7 @@
   "metadata": {
     "upload_type": "publication",
     "publication_type": "preprint",
-    "title": "The Jacobian counterexample, validated and extended: structure, an infinite family, exact escape geometry, and characteristic-p certificates",
+    "title": "The Jacobian Conjecture after the Three-Dimensional Counterexample: Exact Validation, a General Seed Family, the Geometry of Non-Properness, and Two-Dimensional Equivariant Rigidity",
     "creators": [
       {
         "name": "Santibañez-Leal, Felipe",
@@ -10,7 +10,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Paper A of a three-paper research record on the Jacobian conjecture after the Alpöge 2026 counterexample in dimension 3. This foundational paper validates the counterexample independently in exact rational arithmetic and builds on it: the structural analysis of the mechanism, an infinite family of new counterexamples, the exact escape geometry and real census, characteristic-p certificates, a rigidity theorem in dimension 2, and a uniqueness result for the mechanism. Every claim is backed by a persisted, hash-manifested machine experiment; refuted predictions remain in the record. The two-variable case remains open.</p><p>All scripts, artifacts and verdicts: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
+    "description": "<p>On 2026-07-20, Levent Alpöge announced (crediting the language model Claude Fable 5 and a question posed by Akhil) an explicit polynomial map F from C^3 to C^3 with constant Jacobian determinant -2 and a repeated value, refuting the Jacobian conjecture for every N ≥ 3. We report an exact-arithmetic study of this map.</p><p>First, we validate the counterexample independently and compute the full fiber over the announced target: it consists of exactly the three announced points. Second, we reverse-engineer the structure of F: it is a weighted skew-product over the invariants v = xy, t = x^2 z, its Keller property reduces to a two-variable identity, and its fibers are governed by a cubic in a single composite variable. Third, we derive and verify a general constructor: every admissible triple (seed polynomial p, scale k, section q) yields a Keller map with determinant -k p(1)^2 and generic fiber degree deg p + 1; we exhibit new explicit counterexamples with rational collision certificates in fiber degrees 4, 5 and 6, plus a section-tail instance beyond the announced family shape, prove the degree law (5d - 3, 5d - 4, 4) within the family, and show that the announced map is its smallest member.</p><p>Fourth, we make the failure geometry exact: a preimage escapes to infinity precisely when its fiber root is a multiple root, so the asymptotic variety of F is the plane C = 0 together with the explicit discriminant surface 27A^2C^2 - 18ABC + 16A + B^3C - B^2 = 0; over the reals this wall separates a three-sheet from a one-sheet region, and F restricts to a surjective, non-injective real Keller map. The counterexamples reduce at suitable primes to non-injective Keller maps over finite fields F_l of degree below the characteristic.</p><p>Fifth, we prove that the mechanism cannot reach the still-open two-variable case: for opposite-sign or one-zero weights, every G_m-equivariant Keller map of C^2 is linear (a classification with a positive-factor kill at the top degree), so a planar counterexample, if any, must be non-equivariant. Shaska's contemporaneous independent all-signature classification is reconciled explicitly: same-sign actions may give nonlinear triangular automorphisms, while equivariant planar Keller maps remain automorphisms in every signature. All computations are exact (over Q, over finite fields, or symbolic) and reproducible from the repository; every claim is labeled as machine-verified, derived, or conjectural.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
     "keywords": [
       "Jacobian conjecture",
       "Keller maps",
@@ -33,9 +33,16 @@
         "relation": "isSupplementedBy",
         "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
         "resource_type": "software"
+      },
+      {
+        "relation": "cites",
+        "identifier": "10.48550/arXiv.2607.20210",
+        "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.08",
-    "language": "eng"
+    "version": "0.12",
+    "language": "eng",
+    "publication_date": "2026-09-18",
+    "version_notes": "Revision. The text states the mathematics directly, without narrative about the research programme, the three-paper split or earlier revisions: the repository-folder pointers to the planar and cascade papers are replaced by citations of those companion papers, the section that only redirected to the planar companion is removed and its summary moved to the introduction, the failed parity law in the weighted landscape is stated as a result, the theorem previously named Constructor v2 is named Constructor, an opinion on which open question matters most is restated as the open question itself, and a data-availability paragraph states what the EXP identifiers denote. The record title now matches the title printed in the paper. The title is set on balanced lines, two section headings no longer break inside a computation identifier, and a page-1 header block states the document type, version, licence and DOIs. Corrections. (1) The Dixmier consequence in the Discussion is corrected. Dixmier(n) implies JC(n), so Dixmier(n) is false for every n ≥ 3, while ranks 1 and 2 remain open. The previous text concluded that Dixmier(2) is false from the falsity of JC(4), which the implication from JC(2n) to Dixmier(n) (Belov-Kanel and Kontsevich; Tsuchimoto) does not support, and it described that implication as an equivalence. (2) The announcement date is 2026-07-20 throughout, as in the cited announcement and its press coverage. (3) The reproducibility statement includes the finite-field computations behind the characteristic-p statements (EXP-009). Methods, data and the other results are unchanged."
   }
 }

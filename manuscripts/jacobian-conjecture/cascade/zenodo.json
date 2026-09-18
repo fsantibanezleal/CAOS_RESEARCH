@@ -2,7 +2,7 @@
   "metadata": {
     "upload_type": "publication",
     "publication_type": "preprint",
-    "title": "The consequence cascade of the Jacobian counterexample, with an explicit dimension-48 witness against the Hessian conjecture",
+    "title": "The Collateral Impact of the Three-Dimensional Jacobian Counterexample: a Source-Verified Cascade",
     "creators": [
       {
         "name": "Santibañez-Leal, Felipe",
@@ -10,7 +10,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Paper C of a three-paper research record. The 2026 counterexample to the Jacobian conjecture propagates through the known reduction network; this paper records the cascade with machine verification at each edge. The centerpiece is explicit: starting from Thompson's cubic-homogeneous form in dimension 24 (verified independently; nilpotency index corrected from 17 to 18), the de Bondt-van den Essen construction yields a homogeneous Hessian-nilpotent quartic potential in 48 variables (382 monomials over Q(i)) whose gradient map has an exact two-point collision. The Hessian conjecture therefore fails in dimension 48 with an explicit witness, and Zhao's vanishing conjecture fails at an explicit polynomial. All steps are exact rational arithmetic, scripted and persisted.</p><p>All scripts, artifacts and verdicts: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
+    "description": "<p>On 2026-07-20, Levent Alpöge announced an explicit counterexample to the Jacobian conjecture in dimension 3, found working with the language model Claude Fable 5 (Anthropic). The credit for every consequence documented here belongs to that single map. This paper documents what else that map decides: through implication chains published over five decades, each re-verified against its primary source (EXP-001, EXP-016, EXP-018), the counterexample resolves or partially resolves the Mathieu conjecture, the Dixmier conjecture, the Poisson conjecture, the Gaussian moments conjecture, Zhao's vanishing conjecture, the Image conjecture, and the symmetric (gradient) form of the Jacobian conjecture. We state each corollary with its chain and its reference, list precisely what remains open, and describe the verification method, which turns a one-line certificate into a status map of a whole neighborhood of problems.</p><p>The symmetric/gradient and vanishing corollaries are made explicit: a non-invertible gradient Keller map id + grad f on C^48, with f a homogeneous Hessian-nilpotent quartic (382 monomials over Q(i)) and an exact two-point collision, built from Thompson's dimension-24 cubic-homogeneous form by the de Bondt-van den Essen construction and verified end to end in exact arithmetic.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/algebraic-geometry/jacobian-conjecture).</p>",
     "keywords": [
       "Jacobian conjecture",
       "Hessian conjecture",
@@ -35,7 +35,9 @@
         "resource_type": "software"
       }
     ],
-    "version": "0.03",
-    "language": "eng"
+    "version": "0.05",
+    "language": "eng",
+    "publication_date": "2026-09-18",
+    "version_notes": "Revision. The text states the mathematics directly, without narrative about earlier revisions or the research programme: the abstract describes the explicit dimension-48 witness as a result of the paper, the first section is retitled The counterexample and its verification, the two corollaries point to the explicit witness directly, the difference from the nilpotency index stated in Thompson's source (18, not 17) is given as a fact, a closing paragraph of general advice is removed, and the closing method note becomes a method and data-availability section that states what the EXP identifiers denote. The record title now matches the title printed in the paper. The title is set on balanced lines, a long repository path in the references no longer stretches its line, the reference labels are aligned, and a page-1 header block states the document type, version, licence and DOIs. Corrections. (1) Corollary 3 (Dixmier) is corrected. Dixmier(n) implies JC(n), so Dixmier(n) is false for every n ≥ 3, and ranks 1 and 2 remain open. The previous text concluded that Dixmier(2) is false from the falsity of JC(4), which the implication from JC(2n) to Dixmier(n) does not support; the list of open problems now names ranks 1 and 2. (2) The Gaussian moments corollary now cites the explicit three-variable counterexample of C. D. Long (arXiv:2607.18186): the moments conjecture is false in every dimension n ≥ 3, and only the dimensions below 3 remain open. (3) The statement that the paper contains no original mathematics now separates the corollaries, which compose published implications, from the explicit witness of Section 3, a construction from published ingredients. (4) The announcement date is 2026-07-20 and the model is named as in the announcement (Claude Fable 5). Methods, data and the other results are unchanged."
   }
 }

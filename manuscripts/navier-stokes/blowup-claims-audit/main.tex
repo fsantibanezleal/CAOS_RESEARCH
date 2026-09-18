@@ -20,13 +20,31 @@
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 \newcommand{\Q}{\mathbb Q}
-\newcommand{\versiondoi}{10.5281/zenodo.22822133}
+% Page-1 header block (conventions/manuscript-header-standard.md). The four document
+% macros are set by the publishing tool when the version DOI is reserved. At this text
+% width the two DOIs do not fit on one line of the box, so each has its own line.
+\newcommand{\doctype}{Preprint}
+\newcommand{\docversion}{v0.06}
+\newcommand{\docdate}{18 September 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.22823734}
 \newcommand{\conceptdoi}{10.5281/zenodo.22820520}
+\newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\recordurl}{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/analysis-pde/navier-stokes}
+\newcommand{\headerblock}{%
+\begin{center}
+\fbox{\parbox{0.94\textwidth}{\small\raggedright
+\textbf{\doctype} \quad$\cdot$\quad \docversion, \docdate \quad$\cdot$\quad Licence CC BY 4.0\\[2pt]
+CAOS Research open-problems programme \quad$\cdot$\quad problem \texttt{navier-stokes}\\[2pt]
+Version DOI \href{https://doi.org/\versiondoi}{\texttt{\versiondoi}}\\[2pt]
+Concept DOI (always latest) \href{https://doi.org/\conceptdoi}{\texttt{\conceptdoi}}\\[2pt]
+Not peer reviewed. Source code, data and computational records: \href{https://\docrepo}{\texttt{\docrepo}}
+}}
+\end{center}
+\vspace{4pt}}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Dissipation limits of layer cascades\textperiodcentered\ v0.05}
+\fancyhead[L]{\small CAOS Research \doctype}
+\fancyhead[R]{\small Dissipation limits of layer cascades\textperiodcentered\ \docversion}
 \fancyfoot[C]{\thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
 \allowdisplaybreaks[1]
@@ -35,20 +53,12 @@
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program\\
 \small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-09-17\\[2pt]\normalsize Version 0.05}
+\date{\docdate}
 
 \begin{document}
 \maketitle
 \thispagestyle{plain}
-\begin{center}\small
-\fbox{\parbox{0.92\textwidth}{\centering
-\textbf{PREPRINT}\textperiodcentered\ not peer reviewed\textperiodcentered\ CAOS Research\\
-Version 0.05\textperiodcentered\ 2026-09-17\textperiodcentered\ CC BY 4.0\\
-Version DOI: \href{https://doi.org/\versiondoi}{\versiondoi}\\
-Concept DOI: \href{https://doi.org/\conceptdoi}{\conceptdoi} (latest version)\\
-\href{\recordurl}{Sources, numerical data, and machine-checked computations}
-}}
-\end{center}
+\headerblock
 
 \begin{abstract}
 Multiscale layer constructions produce finite-time blowup for several fluid equations: for the
@@ -95,9 +105,9 @@ frequency and gradient. This paper answers it at two levels: for the mechanism c
 
 \paragraph{Conventions.} We write dissipation as $-\nu(-\Delta)^{\alpha}$, so classical viscosity is
 $\alpha=1$; results quoted from the literature in the $|\nabla|^{\alpha}$ convention have twice our
-exponent, and we state which convention is in use whenever a number appears. The published
-hypodissipative threshold $(22-8\sqrt7)/9=0.09267$ in the $|\nabla|^{\alpha}$ convention is
-$0.04633$ in ours.
+exponent, and we state which convention is in use whenever a number appears. The
+hypodissipative threshold $(22-8\sqrt7)/9=0.09267$ of~\cite{cmz}, stated in the $|\nabla|^{\alpha}$
+convention, is $0.04633$ in ours.
 
 \section{The layer mechanism and its dissipative extension}\label{sec:mechanism}
 
@@ -306,16 +316,9 @@ of any solution: a different correction scheme is not covered, and Theorem~\ref{
 statement here independent of the design.
 \end{remark}
 
-\paragraph{Relation to version 0.04.} Version 0.04 stated this bound as $1.08\times10^{-3}$ in the
-$|\nabla|^{\alpha}$ convention, from the single inequality $J[(1-m)-5/Q]\ge k+6$. That inequality
-takes the target of the remainder to be the seed rule $\lambda^{-k-6}$, which in the construction
-governs the activation term; it uses $\Pi\le\lambda^{5/Q}$ where the per-level parameter carries
-$\Pi^{5}$; and it omits the phase means. Theorem~\ref{thm:design} replaces it. The conclusion that
-the design falls more than an order of magnitude short of the proved threshold is unchanged.
-
 \section{The exponent budget behind the published threshold}\label{sec:budget}
 
-The hypodissipative Navier-Stokes construction writes every quantity as a power of one base: the
+The hypodissipative Navier-Stokes construction~\cite{cmz} writes every quantity as a power of one base: the
 frequency of layer $n$ is $M_{n}=N^{R^{n}}$, the amplitude $A_{n}=N^{aR^{n}}$, the localization scale
 $L_{n}=N^{bR^{n}}$, and $s>0$ is the H\"older margin of the force. Its force estimates give four
 constraints:
@@ -432,9 +435,10 @@ enough for the layer to stay ahead.
 
 \section{The status of the announced results}
 
-The two September 2026 announcements are accompanied by machine-checked certificates. For the
+The two September 2026 announcements~\cite{openai-ns,openai-euler} are accompanied by
+machine-checked certificates. For the
 Navier-Stokes and Euler development, the headline statements match the forced alternatives of the
-official problem statement clause by clause; the development builds with no incomplete proofs and
+official problem statement~\cite{fefferman} clause by clause; the development builds with no incomplete proofs and
 its four headline theorems depend only on the three standard axioms; and every constant in the closure
 of both root modules replays through the Lean kernel from an empty environment at the pinned toolchain
 version. The reference statement is adapted from an independently maintained collection of formalized
@@ -450,15 +454,15 @@ term~\eqref{eq:diss}. The bound of Section~\ref{sec:design} concerns what the es
 can certify: it tracks that design's corrections through the exponents of its published estimates,
 but not constants or logarithmic factors, and it assumes the most favourable insertion angle. Neither
 bound affects the published inviscid results, which carry no dissipation. The mechanism is due to C\'ordoba
-and Mart\'inez-Zoroa, extended to smooth forcing by Alpog\'e and Buckmaster; nothing in this paper
+and Mart\'inez-Zoroa~\cite{clsmz,cmz}, extended to smooth forcing by Alpog\'e and
+Buckmaster~\cite{ab-boussinesq,ab-euler,ab-ipm}; nothing in this paper
 establishes blowup for any equation or improves any published threshold.
 
-An earlier version of this paper stated that the value $p=11/4+\sqrt7$, obtained by evaluating the
-relation $\alpha_{c}=1/(4p)$ at the published threshold, carried information about that threshold. It
-does not: the relation is constraint \textbf{D} saturated, which the construction saturates at every
-$\alpha$, so the identity holds along the whole family, and its algebraic form is automatic because
-$\alpha_{0}\in\Q(\sqrt7)$ and the norm of $22-8\sqrt7$ is a perfect square. That statement is
-withdrawn.
+Evaluating the relation $\alpha_{c}=1/(4p)$ at the published threshold gives $p=11/4+\sqrt7$. This
+value carries no information about the threshold: the relation is constraint \textbf{D} saturated,
+which the construction saturates at every $\alpha$, so the identity holds along the whole family,
+and its algebraic form is automatic because $\alpha_{0}\in\Q(\sqrt7)$ and the norm of
+$22-8\sqrt7$ is a perfect square.
 
 \section*{Data and code}
 
