@@ -200,8 +200,8 @@ export default function CentralConfigurations() {
             </li>
             <li>
               {t(
-                'Our census for two integer-separated mass vectors at n = 3 is honestly inconclusive under the sympy engine caps; the msolve re-run is queued.',
-                'Nuestro censo para dos vectores de masas separadas enteras en n = 3 es honestamente inconcluso bajo los topes del motor sympy; la repeticion con msolve esta en cola.',
+                'Our census for two integer-separated mass vectors at n = 3 is inconclusive under the sympy engine caps; the msolve re-run is queued.',
+                'Nuestro censo para dos vectores de masas separadas enteras en n = 3 es inconcluso bajo los topes del motor sympy; la repeticion con msolve esta en cola.',
               )}
             </li>
           </ul>

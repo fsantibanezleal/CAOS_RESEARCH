@@ -108,7 +108,7 @@ export default function UnsplittableFlowCost() {
               '. No traia preprint ni confirmacion experta, por eso este programa lo trato como una hipotesis a decidir por maquina y no como un estado a reportar.',
             )}
           </p>
-          <Callout variant="note" title={t('How the adjudication was kept honest', 'Como se mantuvo honesta la adjudicacion')}>
+          <Callout variant="note" title={t('How the adjudication was checked', 'Como se verifico la adjudicacion')}>
             {t(
               'Our checker was written from the published conjecture statement, not from the proposer materials. Their verifier was archived and hashed but never imported or executed, and the instance was re-typed by hand rather than parsed from their file, so that agreement counts as evidence rather than as a shared-code artifact.',
               'Nuestro verificador se escribio desde el enunciado publicado de la conjetura, no desde los materiales del proponente. Su verificador fue archivado y hasheado pero nunca importado ni ejecutado, y la instancia se retipeo a mano en vez de leerse de su archivo, para que la coincidencia cuente como evidencia y no como artefacto de codigo compartido.',
@@ -301,7 +301,7 @@ export default function UnsplittableFlowCost() {
               )}
             </li>
           </ul>
-          <Callout variant="note" title={t('Honest scope', 'Alcance honesto')}>
+          <Callout variant="note" title={t('Scope', 'Alcance')}>
             {t(
               'The counterexample instance is not ours. What is ours is the independent exact verification, the constant it forces, the consistency battery against every proved result, the class-boundary and planar statements, the optimality of the published prices, the single-terminal theorem, and the null result showing the instance is extremal in its family. We make no claim about priority or attribution.',
               'La instancia del contraejemplo no es nuestra. Nuestro es la verificacion exacta independiente, la constante que fuerza, la bateria de consistencia contra cada resultado probado, los enunciados de frontera de clase y planaridad, la optimalidad de los precios publicados, el teorema de un terminal, y el resultado nulo que muestra que la instancia es extremal en su familia. No hacemos ninguna afirmacion sobre prioridad o atribucion.',

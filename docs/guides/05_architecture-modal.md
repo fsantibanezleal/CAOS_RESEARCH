@@ -11,21 +11,22 @@ Binding decision: [`conventions/architecture/0-archetype/ADR-0058-in-app-archite
 
 - **Chrome**, `@fasl-work/caos-app-shell` (≥ **0.1.2**) exposes the ⓘ button + the `ArchitectureModal`. The
   `ShellConfig` gained an `architecture` field; when it is present the button appears, when absent it is hidden.
-- **Five themed placeholder SVGs** in [`frontend/public/svg/tech/`](../../frontend/public/svg/tech/):
-  `01-the-app.svg`, `02-lanes.svg`, `03-web-flow.svg`, `04-the-science.svg`, `05-data-contracts.svg`. Every colour is
-  a shell CSS-variable token (`--color-surface`, `--color-border`, `--color-accent`, `--color-fg`, `--color-good`,
-  `--color-warn`, …) so the diagram repaints with the active light/dark theme.
+- **Themed diagrams.** The template shipped five placeholder SVGs under `frontend/public/svg/tech/`; this
+  repository draws its diagrams inline instead, in [`frontend/src/lib/architecture.ts`](../../frontend/src/lib/architecture.ts)
+  (the programme-wide modal) and [`frontend/src/lib/riemannArchitecture.ts`](../../frontend/src/lib/riemannArchitecture.ts)
+  (the Riemann page), and the unused placeholders were removed (2026-09-18). Every colour is a shell CSS-variable
+  token (`--color-surface`, `--color-border`, `--color-accent`, `--color-fg`, `--color-good`, `--color-warn`, …) so
+  the diagram repaints with the active light/dark theme.
 - **A paste-ready config**, [`frontend/src/architecture.ts.txt`](../../frontend/src/architecture.ts.txt) with the
   five ADR-0058 tabs already wired to the SVGs and bilingual ES/EN bodies.
 
 ## How to wire it (per product)
 
-1. **Copy** `frontend/src/architecture.ts.txt` → `frontend/src/architecture.ts`.
+1. **Copy** `frontend/src/architecture.ts.txt` to `frontend/src/architecture.ts`.
 2. **Specialise** the product-specific tabs:
-   - Replace `public/svg/tech/01-the-app.svg` with a diagram of THIS product's domain (problem → input → method →
-     value) and edit the `app` tab's `body_en` / `body_es`.
-   - Replace `public/svg/tech/04-the-science.svg` with THIS product's real algorithm + equations and edit the
-     `science` tab body.
+   - Draw the `app` tab's diagram for THIS product's domain (problem, input, method, value) and edit its
+     `body_en` / `body_es`.
+   - Draw the `science` tab's diagram with THIS product's real algorithm + equations and edit its body.
    - Tabs `lanes`, `web-flow`, `design` are archetype-generic, the shipped SVGs + copy are reusable as-is. Keep
      them; tweak only if your product deviates from the archetype.
    - Add domain tabs if useful (never *fewer* than the five).
@@ -49,7 +50,7 @@ Binding decision: [`conventions/architecture/0-archetype/ADR-0058-in-app-archite
 
 | id | tab | generic? | what it must show |
 |----|-----|----------|-------------------|
-| `app` | The app | **product** | the domain problem → input → method → value; why it is real, not a demo |
+| `app` | The app | **product** | the domain problem, its input, the method and the value; why it is real, not a demo |
 | `lanes` | Lanes, web / offline / compute | generic | what runs **live in the web** vs **offline/compute** (bake + train) vs **replay** |
 | `web-flow` | Web-app flow | generic | App recomputes live; the 6 pages; contract mirror; copy-data overlay; deploy |
 | `science` | The science | **product** | the real algorithm step by step, with the genuine equations |

@@ -5,7 +5,7 @@
     "title": "Frobenius Minimality, Minimum-Layer Uniqueness, and an Infinite Family of Huneke-Wiegand Counterexamples",
     "creators": [
       {
-        "name": "Santibañez-Leal, Felipe",
+        "name": "Santibáñez-Leal, Felipe",
         "orcid": "0000-0002-0150-3246",
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
@@ -157,9 +157,9 @@
       }
     ],
     "description_addendum": "<p>Version 0.15 completes the second graded Betti row of the conductor special fiber for every p&gt;=4 and over every field: beta_(2,5)=p(2p-3), beta_(2,6)=0, with the complete three-block multigraded support and multiplicity profile. Integral lexicographic matching and unit Smith normal forms prove characteristic independence. Higher interior rows remain open.</p>",
-    "version": "0.24",
+    "version": "0.25",
     "language": "eng",
     "publication_date": "2026-09-18",
-    "version_notes": "Editorial revision. The text states the mathematics and the supporting computations without process commentary: the working vocabulary of the programme is replaced by the scientific terms (computation, independent recomputation, negative controls, a stated time limit); anecdotes about superseded implementations are removed; the p=24 case of the bounded state-graph computation for the defining ideal is stated as a passing run without independent recomputation, outside the verified range p=4,...,23; the claim labels [MV+D] and [D/MV] are defined in the introduction next to [MV] and [D]; the field in the abstract is set in the same blackboard-bold symbol as in the body; the two refuted tail formulas for v(T_p) and v(T_p^2) are stated as remarks; computations are cited by their record identifiers, and the data-availability section states what the identifiers and the printed SHA-256 aggregates denote. The abstract and the scope section no longer chain clauses added version by version. The toolchain table becomes a captioned float with ragged-right cells, a forced page break that left half a page empty is removed, centred displays stay with the sentence that introduces them, the record title now matches the capitalization of the printed title, and a page-1 header block states the document type, version, licence and DOIs (the attribution of the counterexample to Son Pham remains in the abstract, the introduction, the scope section and the acknowledgments). Theorem statements, formulas, table values, hashes and references are unchanged, and proofs change only in the wording around the computations they cite. Methods, data, results and conclusions are unchanged."
+    "version_notes": "The author name is printed as Santibáñez-Leal, as on the author's ORCID record (0000-0002-0150-3246). The content is unchanged."
   }
 }

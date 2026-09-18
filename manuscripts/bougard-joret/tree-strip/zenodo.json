@@ -4,12 +4,12 @@
     "upload_type": "publication",
     "publication_type": "preprint",
     "publication_date": "2026-09-18",
-    "version": "0.03",
+    "version": "0.04",
     "creators": [
       {
-        "name": "Santibanez-Leal, Felipe",
+        "name": "Santibáñez-Leal, Felipe",
         "orcid": "0000-0002-0150-3246",
-        "affiliation": "CAOS Research program"
+        "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
     "description": "<p>Let f(n, α, k) be the minimum size of a k-connected graph of order n and independence number α. Das and Gupta recently determined the boundary n = α + k and disproved the proposed Bougard-Joret formula there.</p><p>We determine the entire admissible first interior shell: f(α + k + 1, α, k) = ⌈k(α + k + 1)/2⌉ for every k ≥ 3 and 2 ≤ α ≤ k + 1. The construction augments classical Harary graphs with complement matchings and attaches an independent set through distinct missing-neighbor pairs. An elementary cyclic-gap proof controls connectivity, including all parity cases. We characterize all extremizers when α = 2 as complements of unions of cycles of lengths at least five, and give the complete nonstar-tree characterization when α = k - 1.</p><p>The full-shell result is supported by 75 exact finite constructions, an independent re-implementation of the checks, and negative controls. The universal statement follows from the proof, not from finite computation. The general revised first regime and second regime remain unresolved.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/combinatorics/bougard-joret).</p>",
@@ -45,7 +45,7 @@
         "scheme": "doi"
       }
     ],
-    "version_notes": "Editorial revision. The abstract, introduction and validation sections state the results without version or process commentary: they no longer refer to earlier versions of the paper, a hypothesis committed before the run, a tooling error in a pilot run, the history of an internal review, or which record owns the evidence. The adjacent-diagonal theorem is presented with the other results, proved here, and the references cite the experiment records on the main branch of the repository instead of a work branch or an earlier version of this paper. The validation section is titled Exact validation and negative controls, the reproducibility paragraph states what the identifiers EXP-001 and EXP-002 denote, the run command fits on one line, and a page-1 header block states the document type, version, licence and DOIs. Methods, data, results and conclusions are unchanged."
+    "version_notes": "The author name is printed as Santibáñez-Leal, as on the author's ORCID record (0000-0002-0150-3246). The content is unchanged."
   },
   "previous_publications": [
     {
