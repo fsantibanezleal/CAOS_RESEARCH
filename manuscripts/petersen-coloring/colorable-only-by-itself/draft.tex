@@ -69,7 +69,25 @@ Are Colorable Only by Themselves?}
 \headerblock
 
 \begin{abstract}
-Draft.
+For cubic graphs $G$ and $H$, an $H$-coloring of $G$ is a map from the edges of $G$ to the edges
+of $H$ that sends every vertex star of $G$ bijectively onto a vertex star of $H$; a Petersen
+coloring is the case where $H$ is the Petersen graph. Ma, Mattiolo, Steffen and Wolf showed that
+there is a unique minimal set $\mathcal{H}_3$ of connected bridgeless cubic graphs that color
+every bridgeless cubic graph, and that a graph belongs to it exactly when no bridgeless cubic
+graph of smaller order colors it. Since the Petersen coloring conjecture was refuted in 2026,
+$\mathcal{H}_3$ is infinite and contains every smallest counterexample. Goedgebeur, Jooken,
+M\'a\v{c}ajov\'a, Mattiolo, Mazzuoccolo and Ulyanov asked whether their two counterexamples on 52
+vertices, the smallest known, are colorable only by themselves. We prove two lemmas on the vertex
+map of an $H$-coloring: all its fibers have the same parity, and target vertices that are not
+used can be reduced to at most one by the splitting lemma. They leave three kinds of colorings,
+in none of which the target graph has a part unconstrained by $G$, and they turn the question
+into one propositional formula per target order, with the target graph as part of the unknown.
+For both 52-vertex counterexamples, every even target order from 40 to 50 is refuted with a DRAT
+proof checked by \texttt{drat-trim}; several smaller orders are refuted as well. Together with the
+result of Goedgebeur et al.\ that every bridgeless cubic graph on at most 38 vertices has a
+Petersen coloring, this shows that both graphs belong to $\mathcal{H}_3$: they are colorable
+only by themselves. Without the two lemmas the same search decided no target order of the first
+graph within comparable time.
 \end{abstract}
 
 
@@ -296,9 +314,83 @@ and cyclically 4-edge-connected. Their non-colorability by the Petersen graph wa
 independently of the published proofs: the edge-map formula with target $\PG$ is refuted with
 checked proofs for both graphs, and so is the formula for normal 5-edge-colorings.
 
-%%RESULTS_THEOREM%%
+\begin{theorem}[machine-verified]\label{thm:orders}
+For every even $k$ listed in Table~\ref{tab:orders}, no loopless cubic graph on $k$ vertices colors
+the corresponding graph with a vertex map of kind \textup{(O)}, \textup{(E0)} or \textup{(E1)}.
+The list contains every even $k$ with $40 \le k \le 50$ for both $\Ga$ and $\Gb$%%EXTRA_ORDERS%%.
+\end{theorem}
 
-%%RESULTS_TABLE%%
+Goedgebeur et al.\ established by an exhaustive computation that every bridgeless cubic graph on
+at most 38 vertices has a Petersen coloring~\cite[Observation~9]{GJMMMU2026}. The statement
+extends to graphs with parallel edges.
+
+\begin{lemma}\label{lem:digon}
+If a connected bridgeless cubic graph with parallel edges has no Petersen coloring, then a
+connected bridgeless cubic graph of smaller order has none either.
+\end{lemma}
+
+\begin{proof}
+Let $x, y$ be joined by two parallel edges; they are not joined by three, since the graph on two
+vertices is Petersen colorable. Let $xx'$ and $yy'$ be the remaining edges at $x$ and $y$. Then
+$x' \ne y'$, because otherwise the third edge at $x'$ would be a bridge. Delete $x$ and $y$ and
+add the edge $x'y'$. Every edge cut of the new graph corresponds to an edge cut of the same size
+of the old one, so the new graph is connected, bridgeless and cubic. If it had a Petersen
+coloring $\sigma$ with $\sigma(x'y') = m$, then labelling $xx'$ and $yy'$ by $m$ and the two
+parallel edges by the two other edges at one end of $m$ would give a Petersen coloring of the
+old graph.
+\end{proof}
+
+\begin{theorem}\label{thm:h3}
+The graphs $\Ga$ and $\Gb$ are colorable only by themselves: both belong to $\Hthree$.
+\end{theorem}
+
+\begin{proof}
+Let $G$ be one of the two graphs and suppose that some connected bridgeless cubic graph of order
+less than 52 colors $G$. By Corollary~\ref{cor:modes} there is one, say $H$, of even order
+$k < 52$ with a vertex map of kind (O), (E0) or (E1). Since $H$ colors a graph without a Petersen
+coloring, $H$ has no Petersen coloring. By Lemma~\ref{lem:digon}, applied repeatedly, there is a
+simple connected bridgeless cubic graph of order at most $k$ without a Petersen coloring, so
+$k \ge 40$ by~\cite[Observation~9]{GJMMMU2026}. This contradicts Theorem~\ref{thm:orders}.
+Theorem~\ref{thm:mmsw} gives the conclusion.
+\end{proof}
+
+Theorem~\ref{thm:orders} does not depend on the computation of~\cite{GJMMMU2026}; only the orders
+below 40 in Theorem~\ref{thm:h3} do. The orders below 40 that are listed in
+Table~\ref{tab:orders} were refuted directly, and the remaining ones were not decided within six
+hours each.
+
+
+\begin{table}[h]\centering\small
+\begin{tabular}{lrrrrrr}
+\toprule
+graph & $k$ & variables & clauses & solve (s) & proof (bytes) & check (s)\\
+\midrule
+$\Ga$ & 50 & 67{,}092 & 1{,}916{,}592 & 46 & 17{,}999{,}280 & 64 \\
+$\Ga$ & 48 & 63{,}129 & 1{,}769{,}986 & 64 & 28{,}953{,}154 & 127 \\
+$\Ga$ & 46 & 59{,}274 & 1{,}629{,}212 & 208 & 44{,}331{,}332 & 250 \\
+$\Ga$ & 44 & 55{,}527 & 1{,}494{,}270 & 293 & 49{,}206{,}463 & 270 \\
+$\Ga$ & 42 & 51{,}888 & 1{,}365{,}160 & 347 & 60{,}624{,}579 & 615 \\
+$\Ga$ & 40 & 48{,}357 & 1{,}241{,}882 & 758 & 88{,}201{,}023 & 665 \\
+$\Ga$ & 38 & 44{,}934 & 1{,}124{,}436 & 1{,}141 & 122{,}739{,}483 & 1{,}685 \\
+$\Ga$ & 36 & 41{,}619 & 1{,}012{,}822 & 1{,}831 & 189{,}001{,}378 & 1{,}246 \\
+$\Ga$ & 34 & 38{,}412 & 907{,}040 & 2{,}570 & 315{,}072{,}154 & 1{,}302 \\
+$\Ga$ & 32 & 35{,}313 & 807{,}090 & 3{,}007 & 359{,}772{,}266 & 1{,}595 \\
+$\Ga$ & 30 & 32{,}322 & 712{,}972 & 2{,}597 & 451{,}748{,}771 & 4{,}210 \\
+$\Ga$ & 4 & 3{,}111 & 20{,}045 & 1{,}843 & 434{,}204{,}743 & 6{,}979 \\
+$\Ga$ & 2 & 1{,}724 & 7{,}615 & 3 & 1{,}247{,}206 & 5 \\
+\midrule
+$\Gb$ & 50 & 67{,}092 & 1{,}916{,}592 & 73 & 17{,}037{,}541 & 129 \\
+$\Gb$ & 48 & 63{,}129 & 1{,}769{,}986 & 460 & 42{,}390{,}272 & 687 \\
+$\Gb$ & 46 & 59{,}274 & 1{,}629{,}212 & 1{,}991 & 120{,}499{,}030 & 599 \\
+$\Gb$ & 44 & 55{,}527 & 1{,}494{,}270 & 3{,}476 & 363{,}213{,}799 & 8{,}930 \\
+\midrule
+$\Gsix$ & 66 & 116{,}540 & 4{,}279{,}152 & 218 & 59{,}635{,}574 & 349 \\
+$\Gsix$ & 64 & 111{,}297 & 4{,}028{,}562 & 878 & 80{,}324{,}045 & 1{,}893 \\
+\bottomrule
+\end{tabular}
+\caption{Target orders $k$ refuted with DRAT proofs accepted by \texttt{drat-trim}. The formula of order $k$ is unsatisfiable: no loopless cubic graph on $k$ vertices colors the graph with a vertex map of kind (O), (E0) or (E1). Times were measured while other computations shared the machine.}\label{tab:orders}
+\end{table}
+
 
 In kind (O) with $k$ close to 52 almost all fibers are singletons and the refutation is short; the
 instances become harder as $k$ decreases and the fibers grow, and the certification of the final

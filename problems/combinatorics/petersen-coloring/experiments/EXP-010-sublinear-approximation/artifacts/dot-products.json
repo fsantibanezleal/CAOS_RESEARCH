@@ -83,5 +83,90 @@
    "seconds": 14.281,
    "checker_defect": 2
   }
+ },
+ "D_0_3_1": {
+  "n": 102,
+  "cubic": true,
+  "girth": 5,
+  "edge_connectivity": 3,
+  "digest": "d6d4c83798352447c83036986bb7a07d9b78b12a6810b3f2461870808a5c84a0",
+  "bound0": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 410.314
+  },
+  "bound2": {
+   "status": "SAT",
+   "seconds": 2.383,
+   "checker_defect": 2
+  }
+ },
+ "D_0_4_1": {
+  "n": 102,
+  "cubic": true,
+  "girth": 5,
+  "edge_connectivity": 3,
+  "digest": "270a0d512a15ac4afa7aaaced20a69b353a5e3e2ee579e587549338a9db1a257",
+  "bound0": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 531.759
+  },
+  "bound2": {
+   "status": "SAT",
+   "seconds": 7.155,
+   "checker_defect": 2
+  }
+ },
+ "D_0_5_1": {
+  "n": 102,
+  "cubic": true,
+  "girth": 5,
+  "edge_connectivity": 3,
+  "digest": "deb9acdf435347b3f6a20917aee1cdf79006b2a63df5f058a097f1304ad138ba",
+  "bound0": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 555.422
+  },
+  "bound2": {
+   "status": "SAT",
+   "seconds": 23.558,
+   "checker_defect": 2
+  }
+ },
+ "D_0_7_1": {
+  "n": 102,
+  "cubic": true,
+  "girth": 5,
+  "edge_connectivity": 3,
+  "digest": "29e78d6d4cead385fa1704976e7c412e4f9561a7cd9e49a59f49d5ae06410b44",
+  "bound0": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 447.267
+  },
+  "bound2": {
+   "status": "SAT",
+   "seconds": 6.909,
+   "checker_defect": 2
+  }
+ },
+ "D_0_8_1": {
+  "n": 102,
+  "cubic": true,
+  "girth": 5,
+  "edge_connectivity": 3,
+  "digest": "4289fb95e64f0cd6d3345bb938f9bdbe97e502599bec52ef7d3bbb567797e5ba",
+  "bound0": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 527.107
+  },
+  "bound2": {
+   "status": "SAT",
+   "seconds": 3.35,
+   "checker_defect": 2
+  }
  }
 }
