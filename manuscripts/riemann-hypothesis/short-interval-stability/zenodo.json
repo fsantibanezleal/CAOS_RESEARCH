@@ -4,13 +4,13 @@
     "upload_type": "publication",
     "publication_type": "preprint",
     "publication_date": "2026-09-18",
-    "version": "0.03",
+    "version": "0.04",
     "language": "eng",
     "creators": [
       {
-        "name": "Santibañez-Leal, Felipe",
+        "name": "Santibáñez-Leal, Felipe",
         "orcid": "0000-0002-0150-3246",
-        "affiliation": "CAOS Research program"
+        "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
     "description": "<p>Let c(θ) = 2 - θ/2 - cot(θ/√2)/√2, and let θ_0 be its unique zero in (0,1). We combine the finite stable rank-trace inequality underlying recent zeta-zero results with a classical positive density of distinct odd-multiplicity critical zeros. If κ &gt; 0 is one fixed Selberg density constant packed into every longer interval, then, for each fixed 0.51 &lt; θ &lt; 1, the lower asymptotic simple-critical proportion in (T, T + T^θ] is at least max{0, c(θ), (c(θ) + 2κ)/3}. Consequently it is positive at some fixed exponent strictly below θ_0. A separate multiplicity identity gives the correct distinct-zero companion, including a proportion greater than one half at another exponent below θ_0. The new exponents are expressed in terms of the unevaluated classical constant; no new decimal exponent is claimed.</p><p>We also strengthen the entire positive cosine curve by an odd-frame pressure transfer. A two-variable interval certificate at θ = 3/4 yields the simple-critical bound 0.4190878881701117... and distinct bound 0.7095439440850558....</p><p>The finite stability inequality, the classical sign-change theorems, and the global pressure methods are prior work. Wang's fixed-test pair-correlation theorem supplies the arithmetic input; all smoothing and support limits follow the height limit. The qualitative parity result requires no numerical zero sampling or kernel optimization. No global record, effective starting height, or solution of the Riemann hypothesis is claimed.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/number-theory/riemann-hypothesis).</p>",
@@ -42,6 +42,6 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version_notes": "Editorial revision. The text states the mathematics and the computations directly, without narrative about earlier versions or about the research process: the section on changes from version 0.01 becomes a summary of results; results first given in version 0.01 are presented as results of this paper, the comparison table labels the bounds by method and by the corollary that proves them, and the bibliography entry for version 0.01 is removed; theorem and corollary names carry no version or history labels; the verification note states what the checks consist of and that they are not peer review; the certificate appendices state what each computation establishes and how, without research stages, acceptance criteria, time limits that were not reached, test counts or tooling anecdotes; the bibliography entries for the repository records describe their contents; and the AI-use statement is replaced by a formal declaration of generative AI use. The Conclusions section, previously lettered as Appendix E, is now Section 8; a data-availability paragraph states what the EXP identifiers denote; the reproduction commands no longer split a path across a line continuation; two typographical slips are corrected; and a page-1 header block states the document type, version, licence and DOIs. Methods, data, results and conclusions are unchanged."
+    "version_notes": "The author name is printed as Santibáñez-Leal, as on the author's ORCID record (0000-0002-0150-3246). The content is unchanged."
   }
 }

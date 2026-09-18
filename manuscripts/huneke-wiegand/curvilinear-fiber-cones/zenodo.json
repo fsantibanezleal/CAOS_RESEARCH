@@ -5,7 +5,7 @@
     "title": "Curvilinear Geometry, Primary Structure, and Gröbner Degenerations of Conductor Fiber Cones in a Huneke–Wiegand Family",
     "creators": [
       {
-        "name": "Santibañez-Leal, Felipe",
+        "name": "Santibáñez-Leal, Felipe",
         "orcid": "0000-0002-0150-3246",
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
@@ -67,9 +67,9 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.03",
+    "version": "0.04",
     "language": "eng",
     "publication_date": "2026-09-18",
-    "version_notes": "Editorial revision. The computations are described as parameter sweeps, independent recomputations and negative controls instead of process vocabulary, the imported input theorems are no longer called frozen, the verification section names the repository folder of the computation records, and the closing authorship sentence of the acknowledgments is replaced by a declaration of generative AI use. A page-1 header block states the document type, version, licence and DOIs; the attribution of the first public counterexample to Son Pham, and of its independent verification to Craig Huneke, that the former page-1 box carried now appears in the introduction. The title is set on three balanced lines and two range conditions in the display of reduced cubic tails are aligned with the others. The companion Frobenius-minimality paper is cited by its concept DOI, which resolves to its latest version, instead of an earlier version DOI. Methods, data, results and conclusions are unchanged."
+    "version_notes": "The author name is printed as Santibáñez-Leal, as on the author's ORCID record (0000-0002-0150-3246). The content is unchanged."
   }
 }

@@ -113,7 +113,7 @@ describe('Riemann pressure replay presentation', () => {
     for (const id of ids) expect(CITATIONS.some((citation) => citation.id === id)).toBe(true);
     expect(CITATIONS.find((citation) => citation.id === 'riemann-refinement2026')?.doi)
       .toBe('10.5281/zenodo.22727389');
-    expect(pageSource).toContain('10.5281/zenodo.22823615');
+    expect(pageSource).toContain('10.5281/zenodo.22835172');
   });
 });
 

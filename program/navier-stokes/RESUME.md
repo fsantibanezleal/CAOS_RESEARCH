@@ -4,6 +4,10 @@ Updated 2026-09-18 (manuscript v0.07, 10.5281/zenodo.22830171: Theorem 4.2, the 
 pendulum-class and its force estimates certify at most 3.8e-3 ours; NS-016 and NS-019 closed). First read for any fresh session, per methodology 07. Derived
 view: on conflict, the context dossiers win.
 
+Manuscript v0.08 (10.5281/zenodo.22835133, 2026-09-18) is v0.07 with the author name printed as
+Santibáñez-Leal (the manuscripts campaign; the publish tool now refuses any other spelling on page 1).
+Its content equals v0.07, so the next content revision is v0.09.
+
 ## 1. State in one screen
 
 The problem row. `navier-stokes`, area `analysis-pde`, portfolio feasibility B, opened 2026-09-11.

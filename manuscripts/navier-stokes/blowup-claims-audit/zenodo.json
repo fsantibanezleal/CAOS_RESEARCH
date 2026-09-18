@@ -4,13 +4,13 @@
     "upload_type": "publication",
     "publication_type": "preprint",
     "publication_date": "2026-09-18",
-    "version": "0.07",
+    "version": "0.08",
     "language": "eng",
     "creators": [
       {
-        "name": "Santibañez-Leal, Felipe",
+        "name": "Santibáñez-Leal, Felipe",
         "orcid": "0000-0002-0150-3246",
-        "affiliation": "CAOS Research program"
+        "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
     "description": "<p>Multiscale layer constructions produce finite-time blowup for several fluid equations: for the incompressible porous media equation, for the two-dimensional Boussinesq system, for three-dimensional Euler, and, with fractional dissipation |∇|^α of order α &lt; (22 − 8√7)/9, for the forced Navier-Stokes equations. The exponent in the last of these is small, and it is natural to ask what limits it.</p><p>We give two upper bounds on the dissipation exponent such constructions can carry. The first is independent of every design constant: a cascade whose layers grow at rate √A on a background gradient A cannot exceed α = 1/2, and one whose layers grow at rate A cannot exceed α = 1, both in the |∇|^α convention in which classical viscosity is α = 2. Neither mechanism reaches classical viscosity, by factors of four and two respectively. The second bound applies to the smooth-forcing designs used for the inviscid Boussinesq and Euler results: both are of the pendulum class, and transcribing the exponent content of their force estimates we show that they certify dissipation only up to α ≤ 5.3×10^−4 (Boussinesq) and α ≤ 6×10^−8 (Euler) at the published choices, and only up to α ≤ 9.0×10^−3 and α ≤ 7.5×10^−3 when every constant of the design is retuned in its favour, at least ten times below the exponent already achieved with a force of finite regularity. In every reading the ceiling is highest when the fewest derivatives of the force are controlled.</p><p>Both bounds follow from the amplitude system of the construction together with one additional ingredient, the effect of fractional dissipation on a single layer, which we derive and then verify against direct simulation of the nonlinear equations, including the effect of the spatial localization the constructions use. We also reconstruct the exponent budget behind the published hypodissipative threshold, identify the constraint that determines it, and show that the admissible frequency ratios form an interval that closes exactly at that threshold, so that cascades with geometrically growing frequencies are excluded at every positive dissipation.</p><p>The mechanism is due to Córdoba and Martínez-Zoroa, extended to smooth forcing by Alpogé and Buckmaster; nothing here establishes blowup for any equation or improves any published threshold.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/analysis-pde/navier-stokes).</p>",
@@ -41,6 +41,6 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version_notes": "Adds Section 4.2 and Theorem 4.2: the axisymmetric Euler smooth-forcing construction is shown to be of the pendulum class (its amplitude law grows at the square root of the circulation gradient), and the exponent content of its force estimates (Section 12 of that construction) bounds the dissipation it can carry: 6e-8 at the published choices and 7.5e-3 (|grad|^alpha) under any retuning, 12 times below the proved rough-force threshold. Abstract, growth-law paragraph, scope and data statement updated to cover both designs."
+    "version_notes": "The author name is printed as Santibáñez-Leal, as on the author's ORCID record (0000-0002-0150-3246). The content is unchanged."
   }
 }
