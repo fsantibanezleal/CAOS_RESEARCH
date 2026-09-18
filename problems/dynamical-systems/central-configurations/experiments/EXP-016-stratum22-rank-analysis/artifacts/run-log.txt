@@ -1,0 +1,6 @@
+[21:50:21] EXP-016 runner start
+[21:50:21] RESULT smoke-pairing-identities: pass partner rows equal negatives at W1: [True, True, True, True, True, True] (0s)
+[21:50:22] RESULT p1-rank-witness1: decided rank=4 at (3, -1, 2, 1, 1, -2) in 1s
+[21:50:23] RESULT p2-rank-witness2: decided rank=4 at (2, -2, 1, 2, 3, -1) in 1s
+[21:55:50] RESULT p3-minass: inconclusive-cap 326s at 300s
+[21:55:50] runner done

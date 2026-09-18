@@ -30,47 +30,48 @@
 \newcommand{\Gfty}{G_{52}}
 \newcommand{\Zfive}{\mathbb{Z}_5}
 
+% Page-1 header block (conventions/manuscript-header-standard.md). The four document
+% macros are set by the publishing tool when the version DOI is reserved. At this text
+% width the subtype and the two DOIs do not fit on one line of the box, so each has its
+% own line.
 \newcommand{\doctype}{Preprint}
 \newcommand{\docsubtype}{independent certification and consequence audit}
-\newcommand{\docversion}{v0.01}
-\newcommand{\docdate}{3 September 2026}
-\newcommand{\doclicense}{CC BY 4.0}
-\newcommand{\docdoi}{10.5281/zenodo.22285165}
-\newcommand{\docconceptdoi}{10.5281/zenodo.22285164}
+\newcommand{\docversion}{v0.02}
+\newcommand{\docdate}{18 September 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.22823416}
+\newcommand{\conceptdoi}{10.5281/zenodo.22285164}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
+\newcommand{\headerblock}{%
+\begin{center}
+\fbox{\parbox{0.94\textwidth}{\small\raggedright
+\textbf{\doctype} (\docsubtype)\\[2pt]
+\docversion, \docdate \quad$\cdot$\quad Licence CC BY 4.0\\[2pt]
+CAOS Research open-problems programme \quad$\cdot$\quad problem \texttt{petersen-coloring}\\[2pt]
+Version DOI \href{https://doi.org/\versiondoi}{\texttt{\versiondoi}}\\[2pt]
+Concept DOI (always latest) \href{https://doi.org/\conceptdoi}{\texttt{\conceptdoi}}\\[2pt]
+Not peer reviewed. Source code, data and computational records: \href{https://\docrepo}{\texttt{\docrepo}}
+}}
+\end{center}
+\vspace{4pt}}
 
-\title{Berge--Fulkerson Covers, Cycle Double Covers, Flows and Exact Normality Defects\\
-of the First Counterexamples to the Petersen Coloring Conjecture}
+\title{Berge--Fulkerson Covers, Cycle Double Covers, Flows\\
+and Exact Normality Defects of the First\\
+Counterexamples to the Petersen Coloring Conjecture}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-09-03\\[2pt]\normalsize Version 0.01}
+\date{\docdate}
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Petersen Coloring Counterexamples: Audit \textperiodcentered\ v0.01}
+\fancyhead[L]{\small CAOS Research \doctype}
+\fancyhead[R]{\small Petersen Coloring Counterexamples: Audit \textperiodcentered\ \docversion}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
 
 \begin{document}
 \maketitle
-\begin{center}
-\fbox{\parbox{0.94\textwidth}{\small\raggedright
-\textbf{\doctype} (\docsubtype) \quad$\cdot$\quad \docversion, \docdate \quad$\cdot$\quad
-Licence \doclicense\\[2pt]
-CAOS Research open-problems programme \quad$\cdot$\quad problem \texttt{petersen-coloring},
-experiments 001--006\\[2pt]
-Version DOI \href{https://doi.org/\docdoi}{\texttt{\docdoi}} \quad$\cdot$\quad
-concept DOI (always latest) \href{https://doi.org/\docconceptdoi}{\texttt{\docconceptdoi}}\\[2pt]
-Not peer reviewed. Source, declared hypotheses, artifacts and verdicts: \texttt{\docrepo}\\[2pt]
-\textbf{Provenance.} The counterexamples are due to Putman (two graphs on 112 vertices, August
-2026), with a human-checkable proof by Jooken, and to Goedgebeur, Jooken, M\'a\v{c}ajov\'a,
-Mattiolo and Mazzuoccolo (52 vertices and infinite families). This paper contributes an
-independent certification and the audit of what the conjecture used to imply.
-}}
-\end{center}
-\vspace{4pt}
+\headerblock
 
 \begin{abstract}
 Jaeger's Petersen coloring conjecture (1988), which asserted that every bridgeless cubic graph
@@ -98,9 +99,8 @@ while every one of its 1{,}326 vertex pairs does (explicit witnesses); the same 
 no counterexample consists solely of copies of the Petersen 4-pole $F$ from which all known
 counterexamples are built, and report a counterexample-guided search over compositions of $F$
 with free vertices below 52 vertices. All computations are
-propositional with checked DRAT certificates or explicit witnesses; hypotheses were declared
-before each run, and a refuted prediction of ours (oddness 2 for the 112-vertex graphs) is
-preserved. The paper decides nothing about the general conjectures and says so.
+propositional with checked DRAT certificates or explicit witnesses. The paper decides nothing about the
+general conjectures.
 \end{abstract}
 
 \section{Introduction}
@@ -155,14 +155,14 @@ Petersen route to a Berge--Fulkerson cover or a 5-cycle double cover is closed. 
 ask, for each of $\Gmain$, $\Gsym$ and $\Gfty$, which of the conjectures below the top of the
 ladder still hold, and how far each graph is from being colorable. Every answer is exact: a
 positive answer is an explicit witness re-verified by a standard-library checker that reads only
-the graph, and a negative answer is a DRAT proof checked by \texttt{drat-trim}. Section~2 records
-the independent certification (a replication, labeled as such), Section~3 the perfect matching
-covers, Section~4 the cycle double covers, flows, oddness and resistance, Section~5 the normal
-6-edge-colorings and the exact defects, and Section~6 the open questions. Hypotheses were
-declared and committed before each run; one of our committed predictions was refuted by the
-machine and is reported.
+the graph, and a negative answer is a DRAT proof checked by \texttt{drat-trim}.
+Section~\ref{sec:certify} gives the independent certification (a replication of the published
+refutations), Section~\ref{sec:covers} the perfect matching covers, Section~\ref{sec:cdc} the
+cycle double covers, flows, oddness and resistance, Section~\ref{sec:normal} the normal
+6-edge-colorings and the exact defects, Section~\ref{sec:compositions} the compositions of
+copies of the Petersen 4-pole, and Section~\ref{sec:open} the open questions.
 
-\section{Independent certification}
+\section{Independent certification}\label{sec:certify}
 
 \subsection{The graphs}
 
@@ -220,7 +220,7 @@ $\Gfty$ normal-5 & 1{,}248 & 5{,}148 & 178.8 & 226{,}490{,}830 & 231.8\\
 \texttt{s VERIFIED}.}\label{tab:certify}
 \end{table}
 
-\section{Perfect matching covers}
+\section{Perfect matching covers}\label{sec:covers}
 
 \begin{theorem}[machine-verified]\label{thm:covers}
 Each of $\Gmain$, $\Gsym$, $\Gfty$ admits a Berge--Fulkerson cover, a Berge cover by five perfect
@@ -229,8 +229,8 @@ matchings. Consequently their perfect matching index equals~4.
 \end{theorem}
 
 \begin{proof}
-The matchings are explicit (the repository file \texttt{witnesses.json} of experiment~002 lists
-them as edge index sets) and were re-verified by a checker that tests each set to be a perfect
+The matchings are explicit (the repository file \texttt{witnesses.json} of computation EXP-002
+lists them as edge index sets) and were re-verified by a checker that tests each set to be a perfect
 matching and then counts the coverage of every edge. The index is at least~4 because the graphs
 are not 3-edge-colorable (Theorem~\ref{thm:certify} and the trivial direction of the conjecture).
 \end{proof}
@@ -240,7 +240,7 @@ recovers with a verified refutation of the four-matching instance. Thus, on the 
 counterexamples, the Berge--Fulkerson, Berge and Fan--Raspaud conjectures all hold, and the
 graphs are in this sense better behaved than the Petersen graph.
 
-\section{Cycle double covers, flows, oddness and resistance}
+\section{Cycle double covers, flows, oddness and resistance}\label{sec:cdc}
 
 \begin{theorem}[machine-verified]\label{thm:cdc}
 Each of $\Gmain$, $\Gsym$, $\Gfty$ admits a 5-cycle double cover (five even subgraphs covering
@@ -264,12 +264,12 @@ Resistance uses a deletion indicator per edge and a proper 3-edge-coloring of th
 edges, with the same two-sided protocol.
 \end{proof}
 
-Our committed prediction was oddness~2 for all three graphs; it was refuted for the 112-vertex
-graphs. The value is consistent with the theorem that the smallest snarks with oddness at
+The oddness~4 of the 112-vertex graphs
+is consistent with the theorem that the smallest snarks with oddness at
 least~4 and cyclic connectivity~4 have order~44~\cite{GMS2019}. The 52-vertex graph, by contrast,
 has the least possible oddness of a snark.
 
-\section{Normal 6-edge-colorings and the Petersen defect}
+\section{Normal 6-edge-colorings and the Petersen defect}\label{sec:normal}
 
 \subsection{Normal chromatic index}
 
@@ -293,8 +293,10 @@ Define the \emph{Petersen defect} of a cubic graph $G$ as the least number of ve
 the star condition fails, over all maps $E(G) \to E(\PG)$ (equivalently, the least number of
 vertices whose star constraints must be dropped for a coloring to exist); a Petersen coloring is
 a map of defect~0. Encoding the defect through a cardinality constraint over all vertices proved
-hard for the solver (the bound-1 instances of all three graphs exceeded a 30-minute cap), so we
-decided it by \emph{designated relaxation}: for each vertex $v$, a formula whose star
+hard for the solver (computation EXP-004): the bound-1 instances of $\Gmain$ and $\Gsym$ reached a
+30-minute cap without a decision, and the bound-1 instance of $\Gfty$ was refuted in $532.4$
+seconds, with a verified proof. We therefore decided the defect by \emph{designated relaxation}:
+for each vertex $v$, a formula whose star
 constraints are dropped at $v$ only; and for each pair $\{u, v\}$, a formula relaxed at both.
 
 \begin{theorem}[machine-verified]\label{thm:defect52}
@@ -332,10 +334,10 @@ the star condition after all, a contradiction.
 
 The argument gives more: for any map, the sum of $\chi_v$ over the bad vertices lies in the cut
 space of $\PG$. For the 112-vertex graphs the theorem already gives defect at least~2; whether
-it equals~2 is decided by pair relaxations, reported in the repository record (experiment 006)
-for the pairs of vertices outside the twelve disjoint copies of $F$: all $120$ such pairs of
+it equals~2 is decided by pair relaxations (computation EXP-006) for the pairs of vertices
+outside the twelve disjoint copies of $F$: all $120$ such pairs of
 $\Gmain$ and all $120$ of $\Gsym$ are critical (explicit witnesses, at most $3.1$ seconds each),
-so both 112-vertex graphs have Petersen defect exactly~2 as well. The full sweeps then showed
+so both 112-vertex graphs have Petersen defect exactly~2 as well. The full sweeps show
 that, as for $\Gfty$, every one of their $6{,}216$ vertex pairs is critical (explicit
 witnesses, slowest $20$ seconds; the checker reports exactly the two relaxed vertices as bad in
 all $13{,}758$ pair witnesses of the three graphs). We call this property, verified here for the
@@ -364,26 +366,36 @@ carries $x$ at both ends, and every vertex star is a star of a copy of $F$, henc
 $\PG$.
 \end{proof}
 
-The counterexample-guided search of experiment 005 (join formula for the matching; structural
+The counterexample-guided search (computation EXP-005: join formula for the matching; structural
 check; Petersen-colorability of each candidate; sound blocking clauses learned from every
 coloring found, each recorded with its witness) exhausted $\mathcal C(5,0)$ and $\mathcal C(6,0)$
 in seconds by exactly such a universal coloring, but did not converge on classes with free
-vertices: the 26-vertex control $\mathcal C(3,2)$ stopped at its 15-minute budget after
+vertices: the 26-vertex control $\mathcal C(3,2)$ stopped at a 15-minute time limit after
 $1{,}059$ iterations and $29{,}052$ learned clauses, and $\mathcal C(5,2)$ (42 vertices) stopped at
-its two-hour budget after $1{,}992$ iterations and $80{,}832$ learned clauses, both without
-finding a counterexample and without exhausting; $\mathcal C(6,2)$ was running when this version
-was frozen. We do not claim anything about classes the search did not exhaust; a symmetry-broken
-enumeration is the declared next step.
+a two-hour time limit after $1{,}992$ iterations and $80{,}832$ learned clauses, both without
+finding a counterexample and without exhausting; $\mathcal C(6,2)$ was not decided. We do not
+claim anything about classes the search did not exhaust; a symmetry-broken enumeration is a
+natural next step.
 
-\section{Open questions and non-claims}
+\section{Scope and open questions}\label{sec:open}
 
 Nothing here bears on the general Berge--Fulkerson, cycle double cover, 5-flow or normal
 6-edge-coloring conjectures: the audit concerns three graphs. The questions left open by the
 disproof, the smallest counterexample in $[38, 52]$, cyclically 5-edge-connected counterexamples,
 and Conjecture~6 of~\cite{GJMMM2026}, remain open. The 68-vertex graph announced on a social
-network is not covered. Every claim above is traceable to an experiment folder with a declared
-hypothesis, a deterministic runner, artifacts with SHA-256 digests, and a verdict, under the
-repository folder \texttt{problems/} \texttt{combinatorics/} \texttt{petersen-coloring/}.
+network is not covered.
+
+\section*{Data availability}
+
+{\raggedright
+The edge lists, encoders, checkers, witnesses and computation manifests are in the repository
+\url{https://github.com/fsantibanezleal/CAOS_RESEARCH}, under
+\path{problems/combinatorics/petersen-coloring/}. An identifier EXP-nnn denotes the archived
+computation in the folder \path{experiments/EXP-nnn-*} of that directory, with a deterministic
+runner and its artifacts with SHA-256 digests. Section~\ref{sec:certify} rests on EXP-001,
+Section~\ref{sec:covers} on EXP-002, Section~\ref{sec:cdc} on EXP-003,
+Section~\ref{sec:normal} on EXP-004 and EXP-006, and Section~\ref{sec:compositions} on EXP-005.
+\par}
 
 \begin{thebibliography}{9}
 \bibitem{Jaeger1988} F.~Jaeger, Nowhere-zero flow problems, in: L.~W. Beineke, R.~J. Wilson

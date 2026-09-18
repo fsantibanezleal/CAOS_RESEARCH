@@ -1,0 +1,28 @@
+[23:22:54] EXP-017 runner start
+[23:22:55] RESULT p0a-shape-dim: pass dim=4 two-way in 0s
+[23:22:56] J built in 0s; entry term counts: [[0, 2, 2, 8], [0, 2, 7, 4], [2, 0, 4, 13], [2, 0, 12, 6], [6, 10, 2, 2], [6, 10, 2, 2]]
+[23:22:58] RESULT p0b-cross-validation: pass entrywise agreement with EXP-016 at W1
+[23:41:44] 4x4 minors: 13 nonzero in 1126s
+[23:41:52] RESULT p1-delta4: ENGINE-DISAGREEMENT FULL basis 0s; dim=None (ours 13); threshold 3; bound NOT MET
+[23:42:45] 3x3 minors: 80 nonzero in 53s
+[23:42:54] RESULT p2-delta3: ENGINE-DISAGREEMENT FULL basis 0s; dim=None (ours 13); threshold 2; bound NOT MET
+[23:43:01] 2x2 minors: 84 nonzero in 7s
+[23:43:04] RESULT p3-delta2: ENGINE-DISAGREEMENT FULL basis 0s; dim=None (ours 13); threshold 1; bound NOT MET
+[23:43:05] RESULT p4-delta1: ENGINE-DISAGREEMENT FULL basis 0s; dim=None (ours 13); threshold 0; bound NOT MET
+[23:43:05] runner done
+[23:44:37] EXP-017 runner start
+[23:44:39] RESULT p0a-shape-dim: pass dim=4 two-way in 1s
+[23:44:39] J built in 0s; entry term counts: [[0, 2, 2, 8], [0, 2, 7, 4], [2, 0, 4, 13], [2, 0, 12, 6], [6, 10, 2, 2], [6, 10, 2, 2]]
+[23:44:41] RESULT p0b-cross-validation: pass entrywise agreement with EXP-016 at W1
+[00:03:51] 4x4 minors: 13 nonzero in 1150s
+[00:10:08]   p1-delta4: full std capped (328s); pgb fallback over 13 minors
+[00:24:43] RESULT p1-delta4: inconclusive-cap full and all 13 subideals capped
+[00:25:30] 3x3 minors: 80 nonzero in 47s
+[00:31:50]   p2-delta3: full std capped (327s); pgb fallback over 80 minors
+[02:01:33] RESULT p2-delta3: inconclusive-cap full and all 80 subideals capped
+[02:01:39] 2x2 minors: 84 nonzero in 6s
+[02:07:21]   p3-delta2: full std capped (333s); pgb fallback over 84 minors
+[03:41:40] RESULT p3-delta2: inconclusive-cap full and all 84 subideals capped
+[03:47:08]   p4-delta1: full std capped (327s); pgb fallback over 20 minors
+[04:09:37] RESULT p4-delta1: inconclusive-cap full and all 20 subideals capped
+[04:09:37] runner done

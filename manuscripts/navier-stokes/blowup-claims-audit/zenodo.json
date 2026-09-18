@@ -1,34 +1,46 @@
 {
   "metadata": {
-    "title": "An independent audit of the September 2026 fluid blowup claims, and a trade-off between force regularity and dissipation",
+    "title": "How much dissipation can a multiscale layer cascade carry?",
     "upload_type": "publication",
     "publication_type": "preprint",
-    "publication_date": "2026-09-17",
-    "version": "0.01",
+    "publication_date": "2026-09-18",
+    "version": "0.06",
     "language": "eng",
-    "creators": [{
-      "name": "Santibañez-Leal, Felipe",
-      "orcid": "0000-0002-0150-3246",
-      "affiliation": "CAOS Research program"
-    }],
-    "description": "<p>In September 2026 two groups announced finite-time blowup results for fluid equations with machine-checked certificates: Alpoge and Buckmaster for the two-dimensional inviscid Boussinesq system and three-dimensional Euler with smooth forcing, and OpenAI for three-dimensional Navier-Stokes with forcing at every positive viscosity together with unforced Euler. Both extend the multiscale layer program of Cordoba and Martinez-Zoroa. This preprint reports an independent audit and four quantitative consequences.</p><p>First, the Lean certificate of the OpenAI development was rebuilt (11,424 jobs, zero sorryAx, three standard axioms) and then replayed through the Lean kernel from an empty environment, both halves, at the toolchain version the development pins: NavierStokes in 2,972 s and Euler in 1,588 s, exit 0. Second, the reduced amplitude system of the layer mechanism was transcribed, extended with fractional dissipation, and validated against direct pseudospectral simulation, including the growth, steering and holding cycle that makes the cascade iterable; on a background flattened to fourth order the cycle reproduces the reduced model to 3.06e-06 in the steering gain. Third, the published hypodissipative threshold (22 - 8 sqrt 7)/9 of Cordoba, Martinez-Zoroa and Zheng is recovered exactly from their own exponent budget, the binding constraint is identified as the outer layers' velocity acting on the inner layer, and the admissible frequency ratios are shown to form an interval whose discriminant is exactly the polynomial whose root is the threshold, so that the interval closes there and geometric cascades are excluded at every positive dissipation. Fourth, applying the dissipative reduction to the published smooth-forcing schedule gives the trade-off alpha &lt; delta/(4Q) between amplitude margin, frequency ratio and dissipation exponent, with the consequence that controlling one derivative of the force caps the exponent at 1/480, twenty-two times below the threshold already proved for a rough force; a dated and falsifiable prediction about the unreleased hypodissipative sequel is recorded.</p><p>Statements are labelled machine-verified, derived or conjectural. Two claims from an earlier round of this work are retracted in the text and the retractions are kept. The paper does not prove blowup for any equation, does not verify the mathematics of either announced proof beyond what a kernel replay establishes, does not improve any published threshold, and does not claim the layer mechanism, which belongs to Cordoba and Martinez-Zoroa. This is a self-published preprint and has not received external peer review.</p>",
+    "creators": [
+      {
+        "name": "Santibañez-Leal, Felipe",
+        "orcid": "0000-0002-0150-3246",
+        "affiliation": "CAOS Research program"
+      }
+    ],
+    "description": "<p>Multiscale layer constructions produce finite-time blowup for several fluid equations: for the incompressible porous media equation, for the two-dimensional Boussinesq system, for three-dimensional Euler, and, with fractional dissipation |∇|^α of order α &lt; (22 − 8√7)/9, for the forced Navier-Stokes equations. The exponent in the last of these is small, and it is natural to ask what limits it.</p><p>We give two upper bounds on the dissipation exponent such constructions can carry. The first is independent of every design constant: a cascade whose layers grow at rate √A on a background gradient A cannot exceed α = 1/2, and one whose layers grow at rate A cannot exceed α = 1, both in the |∇|^α convention in which classical viscosity is α = 2. Neither mechanism reaches classical viscosity, by factors of four and two respectively. The second bound applies to the smooth-forcing design used for the inviscid Boussinesq result: transcribing the exponent content of its force estimates, we show that they certify dissipation only up to α ≤ 5.3×10^−4 at the published choices, and only up to α ≤ 9.0×10^−3 when every constant of the design is retuned in its favour, at least ten times below the exponent already achieved with a force of finite regularity. In every reading the ceiling is highest when the fewest derivatives of the force are controlled.</p><p>Both bounds follow from the amplitude system of the construction together with one additional ingredient, the effect of fractional dissipation on a single layer, which we derive and then verify against direct simulation of the nonlinear equations, including the effect of the spatial localization the constructions use. We also reconstruct the exponent budget behind the published hypodissipative threshold, identify the constraint that determines it, and show that the admissible frequency ratios form an interval that closes exactly at that threshold, so that cascades with geometrically growing frequencies are excluded at every positive dissipation.</p><p>The mechanism is due to Córdoba and Martínez-Zoroa, extended to smooth forcing by Alpogé and Buckmaster; nothing here establishes blowup for any equation or improves any published threshold.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/analysis-pde/navier-stokes).</p>",
     "keywords": [
-      "Navier-Stokes equations",
-      "Boussinesq equations",
+      "Navier-Stokes",
+      "Boussinesq",
       "finite-time blowup",
       "hypodissipative",
-      "Lean 4",
-      "kernel replay",
-      "formal verification",
-      "exponent budget",
-      "multiscale construction"
+      "multiscale construction",
+      "fractional Laplacian"
     ],
     "license": "cc-by-4.0",
     "access_right": "open",
     "related_identifiers": [
-      {"identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH", "relation": "isSupplementTo", "resource_type": "software"},
-      {"identifier": "10.48550/arXiv.2407.06776", "relation": "cites", "resource_type": "publication-preprint"},
-      {"identifier": "10.48550/arXiv.2505.20988", "relation": "cites", "resource_type": "publication-preprint"}
-    ]
+      {
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "relation": "isSupplementTo",
+        "resource_type": "software"
+      },
+      {
+        "identifier": "10.48550/arXiv.2407.06776",
+        "relation": "cites",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "identifier": "10.48550/arXiv.2505.20988",
+        "relation": "cites",
+        "resource_type": "publication-preprint"
+      }
+    ],
+    "version_notes": "Editorial revision. The text states the results without version narrative: the paragraph comparing the design bound with the one stated in version 0.04 is removed (version 0.05 replaced that bound, 1.08e-3 in the |grad|^alpha convention, which rested on a single inequality that took the remainder target to be the seed rule, used the per-level factor Pi instead of Pi^5 and omitted the phase means, by the transcription of the full force budget in Theorem 4.1; the conclusion that the design falls more than an order of magnitude short of the proved threshold was unchanged), and the paragraph that withdrew an earlier statement about the value p = 11/4 + sqrt 7 is restated as the remark that this value carries no information about the threshold. Seven of the eight references were listed without being cited; they are now cited where the text names the works (the hypodissipative threshold and construction of Cordoba, Martinez-Zoroa and Zheng, the mechanism and its smooth-forcing extensions, the two September 2026 announcements and the Clay problem statement). The threshold is attributed to its source in the Conventions paragraph. A page-1 header block states the document type, version, licence and DOIs in the standard form, and the running header and the date use the same values. Methods, data, results and conclusions are unchanged."
   }
 }

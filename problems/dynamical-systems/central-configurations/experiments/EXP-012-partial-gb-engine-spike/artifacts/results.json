@@ -1,0 +1,22 @@
+{
+  "p1a-toy-three-engines": {
+    "status": "pass",
+    "detail": "singular [(0, 2), (2, 0)]; sympy [(0, 2), (2, 0)]; msolve mod 1073741827: True"
+  },
+  "p1b-job3-exact-reproduction": {
+    "status": "pass",
+    "detail": "singular ok in 0s, 16 leads; sympy grevlex-correct recomputation 16 leads; exact match: True"
+  },
+  "p2-ab-singular": {
+    "status": "decided",
+    "detail": "completed 12/15 at 120s caps (sympy baseline 1/15); times {'ab-0': 0.6, 'ab-1': 130.7, 'ab-2': 0.5, 'ab-3': 0.4, 'ab-4': 130.7, 'ab-5': 0.5, 'ab-6': 0.4, 'ab-7': 130.8, 'ab-8': 0.5, 'ab-9': 0.5, 'ab-10': 0.4, 'ab-11': 0.4, 'ab-12': 0.5, 'ab-13': 0.4, 'ab-14': 0.5}"
+  },
+  "p3-menu-v2": {
+    "status": "decided",
+    "detail": "completed 16/16 at 120s caps"
+  },
+  "p4-union-bound": {
+    "status": "decided",
+    "detail": "union leads 466 from 28 subideals; d_pgb=7; independent set [0, 3, 6, 7, 8, 9, 10]"
+  }
+}

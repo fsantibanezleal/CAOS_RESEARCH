@@ -26,13 +26,30 @@
 \newcommand{\HS}{\mathrm{HS}}
 \newcommand{\cE}{\mathcal E}
 \newcommand{\cC}{\mathcal C}
-\newcommand{\versiondoi}{10.5281/zenodo.22728744}
+% Page-1 header block (conventions/manuscript-header-standard.md). The four document
+% macros are set by the publishing tool when the version DOI is reserved. At this text
+% width the two DOIs do not fit on one line of the box, so each has its own line.
+\newcommand{\doctype}{Preprint}
+\newcommand{\docversion}{v0.03}
+\newcommand{\docdate}{18 September 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.22823615}
 \newcommand{\conceptdoi}{10.5281/zenodo.22727388}
-\newcommand{\recordurl}{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis}
+\newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
+\newcommand{\headerblock}{%
+\begin{center}
+\fbox{\parbox{0.94\textwidth}{\small\raggedright
+\textbf{\doctype} \quad$\cdot$\quad \docversion, \docdate \quad$\cdot$\quad Licence CC BY 4.0\\[2pt]
+CAOS Research open-problems programme \quad$\cdot$\quad problem \texttt{riemann-hypothesis}\\[2pt]
+Version DOI \href{https://doi.org/\versiondoi}{\texttt{\versiondoi}}\\[2pt]
+Concept DOI (always latest) \href{https://doi.org/\conceptdoi}{\texttt{\conceptdoi}}\\[2pt]
+Not peer reviewed. Source code, data and computational records: \href{https://\docrepo}{\texttt{\docrepo}}
+}}
+\end{center}
+\vspace{4pt}}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Stability, pressure, and parity\textperiodcentered\ v0.02}
+\fancyhead[L]{\small CAOS Research \doctype}
+\fancyhead[R]{\small Stability, pressure, and parity\textperiodcentered\ \docversion}
 \fancyfoot[C]{\thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
 \allowdisplaybreaks[1]
@@ -41,21 +58,12 @@
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program\\
 \small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-09-12\\[2pt]\normalsize Version 0.02}
+\date{\docdate}
 
 \begin{document}
 \maketitle
 \thispagestyle{plain}
-\begin{center}\small
-\fbox{\parbox{0.92\textwidth}{\centering
-\textbf{PREPRINT}\textperiodcentered\ not peer reviewed\textperiodcentered\ CAOS Research\\
-Riemann-hypothesis research series, first paper\\
-Version 0.02\textperiodcentered\ 2026-09-12\textperiodcentered\ CC BY 4.0\\
-Version DOI: \href{https://doi.org/\versiondoi}{\versiondoi}\\
-Concept DOI: \href{https://doi.org/\conceptdoi}{\conceptdoi} (latest version)\\
-\href{\recordurl}{Public sources, proof audit, and reproducible certificates}
-}}
-\end{center}
+\headerblock
 
 \begin{abstract}
 Let $c(\theta)=2-\theta/2-\cot(\theta/\sqrt2)/\sqrt2$, and let
@@ -74,8 +82,8 @@ exponent is claimed. We also strengthen the entire positive cosine curve by
 an odd-frame pressure transfer. A two-variable interval certificate at
 $\theta=3/4$ yields the simple-critical bound
 $0.4190878881701117\ldots$ and distinct bound
-$0.7095439440850558\ldots$. The finite stability, classical sign-change
-theorems, and prior global pressure methods are explicitly attributed.
+$0.7095439440850558\ldots$. The finite stability inequality, the classical
+sign-change theorems, and the global pressure methods are prior work.
 Wang's fixed-test pair-correlation theorem supplies the arithmetic input;
 all smoothing and support limits follow the height limit. The qualitative
 parity result requires no numerical zero sampling or kernel optimization.
@@ -83,9 +91,9 @@ No global record, effective starting height, or solution of the Riemann
 hypothesis is claimed.
 \end{abstract}
 
-\section*{Changes in version 0.02}
+\section*{Summary of results}
 
-The central addition is a parity transfer from classical odd-multiplicity
+The central result is a parity transfer from classical odd-multiplicity
 critical zeros to simple critical zeros. Retaining multiplicity excess in
 the known finite stability inequality yields a qualitative extension below
 the zero of Wang's cosine bound. This changes the admissible interval-length
@@ -93,21 +101,23 @@ range rather than only a numerical proportion. The explicit dependence on
 the classical density constant and the separate distinct-zero argument are
 proved below.
 
-Version 0.01's finite Hilbert transfer and explicit compact energy bound
-are retained with their source attribution~\cite{FirstVersion}. Further
-additions are the odd-frame pressure theorem, its stronger consequence
-throughout the positive short-interval curve, reuse of the earlier finite
-certificate, and a new certified two-variable pressure bound. The published
-version 0.01 PDF and its artifacts remain unchanged. The following table
-compares the separate quantitative outcomes; the parity range theorem has
-no certified decimal exponent and is not represented by a numerical row.
+Further results are the direct finite Hilbert transfer with its explicit
+compact energy bound, the odd-frame pressure theorem, its stronger
+consequence throughout the positive short-interval curve, an odd-frame
+bound from the compact finite certificate, and a certified two-variable
+pressure bound.
+The following table compares the separate quantitative outcomes; the parity
+range theorem has no certified decimal exponent and is not represented by
+a numerical row.
 
 \begin{quote}\small
-\textbf{Recorded verification.} EXP-003's two pressure stages and EXP-004's
-parity deduction are confirmed in their separate scientific verdicts
-\cite{RecordIII,RecordIV}. Exact finite checks, primary-source interfaces,
-and mathematical reviews are recorded separately. These research verdicts
-do not constitute external peer review or end-to-end formal verification.
+\textbf{Verification.} For the pressure bounds and the parity deduction
+(computations EXP-003 and EXP-004~\cite{RecordIII,RecordIV}), the
+verification consists of exact finite checks, complete 256-bit replays of
+the interval certificates, checks of the imported statements against their
+primary sources, and independent step-by-step checks of the proofs,
+including an independent recomputation of every census row. It is not
+external peer review or end-to-end formal verification.
 \end{quote}
 
 \begin{center}\small
@@ -116,9 +126,9 @@ do not constitute external peer review or end-to-end formal verification.
 Bound at $\theta=3/4$ & Simple-critical proportion & Gain above Wang\\
 \midrule
 Wang & $0.4190750129754\ldots$ & $0$\\
-Version 0.01 & $0.4190768284253\ldots$ & $1.8154498796\ldots\times10^{-6}$\\
-Odd-frame reuse & $0.4190777360205\ldots$ & $2.7230451445\ldots\times10^{-6}$\\
-New pressure certificate & $0.4190878881701\ldots$ & $1.2875194687\ldots\times10^{-5}$\\
+Direct transfer, Cor.~\ref{cor:example} & $0.4190768284253\ldots$ & $1.8154498796\ldots\times10^{-6}$\\
+Odd-frame bound, Cor.~\ref{cor:pressureexample} & $0.4190777360205\ldots$ & $2.7230451445\ldots\times10^{-6}$\\
+Two-variable pressure certificate, Cor.~\ref{cor:pressureexample} & $0.4190878881701\ldots$ & $1.2875194687\ldots\times10^{-5}$\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -132,7 +142,7 @@ complex zeros, each once. Let $N_{\rm odd}(T,H)$ count distinct critical
 zeros of odd multiplicity, also each once. It does not count their
 multiplicity. Every proportion below has denominator $N(T,H)$.
 
-The recent argument discovered by Claude and communicated by Alp\"oge and
+The recent argument discovered by Claude and communicated by Alp\"oge and % voice-ok: external attribution, as the cited paper states it
 Furman~\cite{AF} made the optimized Montgomery--Taylor simple-critical
 proportion $0.672500703679\ldots$ unconditional. Lamzouri~\cite{Lamzouri}
 replaced its finite-compression machinery by a Hilbert-space inequality for
@@ -161,10 +171,10 @@ cosine-root non-additivity used here are prior work in the
 frames, nonuniform pair capacities, spectral envelopes, and combinations
 of certificates are developed in~\cite{Trmdy,Tawan,Shi}. The alternating
 schedule used below is a simple choice within this established framework.
-We do not claim these ingredients or an improved global record. Version
-0.01 gave their direct finite-Hilbert transfer, an explicit quantitative
-three-point bound, and a strict refinement of Wang's positive
-short-interval curve. This version develops two consequences. First,
+We do not claim these ingredients or an improved global record. Our
+contributions are their direct finite-Hilbert transfer, an explicit
+quantitative three-point bound, a strict refinement of Wang's positive
+short-interval curve, and two consequences. First,
 classical odd-multiplicity density and the retained multiplicity excess
 extend the positivity range qualitatively. Second, odd-frame pressure
 strengthens the positive curve quantitatively, with independently replayed
@@ -185,7 +195,7 @@ $\theta_0$.
 The labels [D] and [MV] distinguish mathematical deductions from finite
 machine-verifiable statements. The following main range result is a
 deduction from the stated primary analytic inputs. Exact finite checks
-audit its algebra; they do not replace those inputs or prove all-height
+verify its algebra; they do not replace those inputs or prove all-height
 statements by enumeration.
 
 \begin{theorem}[Parity transfer and qualitative range extension, D]
@@ -225,7 +235,7 @@ follows from the classical odd-zero theorem. Theorem~\ref{thm:parity}
 does not give an effective value of $\kappa$, a numerical value of either
 new exponent, or a uniform theorem when $\theta$ varies with $T$.
 
-\begin{theorem}[Retained version 0.01 refinement, D]\label{thm:main}
+\begin{theorem}[Explicit three-point refinement, D]\label{thm:main}
 Fix $\theta_0<\theta<1$ and $R>2/c(\theta)$. Define
 \begin{equation}\label{eq:explicit}
 \begin{aligned}
@@ -279,7 +289,7 @@ is available for every fixed $\theta_0<\theta<1$.
 The conservative gap in Theorem~\ref{thm:main} requires no numerical
 search. A stronger finite certificate gives the following example.
 
-\begin{corollary}[Retained version 0.01 example, D+MV]\label{cor:example}
+\begin{corollary}[Compact-certificate example, D+MV]\label{cor:example}
 Set $\theta=3/4$, $R=21/4$, $d=1/7000$, and
 \[
  C_*:=\frac{3c(3/4)-2d/R}{3-d}
@@ -294,14 +304,15 @@ The improvement in the simple-critical proportion is
 $0.000001815449879663002112176828\ldots$.
 \end{corollary}
 
-\begin{corollary}[Odd-frame reuse and new certificate, D+MV]\label{cor:pressureexample}
-At $\theta=3/4$, the existing compact energy certificate with $d=1/7000$
-and $R=21/4$ gives, with $k=7000$,
+\begin{corollary}[Odd-frame bound and two-variable pressure certificate, D+MV]\label{cor:pressureexample}
+At $\theta=3/4$, the compact energy certificate of
+Section~\ref{sec:certificate}, with $d=1/7000$ and $R=21/4$, gives, with
+$k=7000$,
 \begin{equation}\label{eq:reuseexample}
  C_A=c(3/4)+\frac{c(3/4)-8/21}{14000}
  =0.419077736020568836833221725071\ldots.
 \end{equation}
-The new all-gap pressure certificate has
+The all-gap pressure certificate of Appendix~\ref{sec:pressurecert} has
 \begin{equation}\label{eq:newparams}
  p=\frac1{12500},\qquad\varepsilon=\frac{443239}{10^9},
  \qquad k=2256,\qquad 2k+1=4513.
@@ -494,7 +505,7 @@ point of multiplicity three has $(N,s,D_Z)=(3,0,1)$. The exact difference
 is $2D_Z-N-s=2k-E$. Thus one cannot take one half of one plus the parity
 simple-zero bound to obtain \eqref{eq:paritydistinct}.
 
-Both residuals can vanish in a genuine finite Hilbert model. Take the
+Both residuals can vanish in an actual finite Hilbert model. Take the
 probability density $\mathbf1_{[-1/2,1/2]}$ and distinct integer support
 points with multiplicities one or two. Their features are orthonormal,
 so $Q=s+4r$, $N=s+2r$, $O=s$, and $E=k=D(G)=\sigma=0$.
@@ -799,7 +810,7 @@ By \eqref{eq:uniform}, every sufficiently large $j$ has triple energy
 at least $d'$. Fix such a $j$ before letting $T$ grow.
 
 Write $s=N_0^s(T,H)$, $N=N(T,H)$, and $Q$ for the pair sum with this
-fixed kernel. Propositions~\ref{prop:finite} and Lemma~\ref{lem:triples},
+fixed kernel. Proposition~\ref{prop:finite} and Lemma~\ref{lem:triples},
 with actual span at most $X_T$, imply
 \[
  \left(1-\frac{d'}3\right)\frac sN
@@ -906,12 +917,10 @@ The zeros in this count are distinct and of odd order on the critical
 line. Karatsuba's stronger main theorem, p.~524, gives the same kind of
 bound for $\alpha=27/82+\epsilon$, $0<\epsilon\le0.001$. His final
 argument in Section~12, p.~536, selects disjoint sign-changing intervals;
-this confirms the distinct-count convention. The main theorem and final
-counting passage were checked in the actual PDF as well as its extracted
-text. We import the classical theorem and its analytic estimates; we do
-not reprove them. The older original Selberg paper was not independently
-acquired, so our source for its exact statement is Karatsuba's primary
-article.
+this confirms the distinct-count convention. We import the classical
+theorem and its analytic estimates; we do not reprove them. Selberg's
+original paper was not consulted, so our source for its exact statement
+is Karatsuba's primary article.
 
 Fix $\alpha<\theta<1$ and put $H=T^\theta$. Starting at $t_0=T$, define
 $t_{j+1}=t_j+t_j^\alpha$ and keep all complete adjacent intervals lying
@@ -1028,9 +1037,9 @@ margin and continuity, without a new pair-correlation support estimate.
 Its numerical size remains unknown because the imported fixed classical
 constant has not been evaluated.
 
-\section{The inherited compact certificate}\label{sec:certificate}
+\section{The compact certificate}\label{sec:certificate}
 
-For $\theta=3/4$ and $R=21/4$, the recorded finite computation proves
+For $\theta=3/4$ and $R=21/4$, a finite interval computation proves
 \begin{equation}\label{eq:numericalgap}
  2\{K_{3/4}(u)^2+K_{3/4}(v)^2+K_{3/4}(u+v)^2\}\ge\frac1{7000}
  \quad(u,v\ge0,\ u+v\le21/4).
@@ -1040,7 +1049,7 @@ Every endpoint and threshold is rational. A box is either subdivided,
 proved wholly outside the triangle, or accepted using an energy lower
 bound valid on the entire box. The final tree contains 48,761 nodes,
 24,252 accepted energy leaves, 129 outside leaves, and no unresolved
-boxes~\cite{Record}.
+boxes (computation EXP-002~\cite{Record}).
 
 For completeness, the analytic enclosure used at each leaf is simple.
 Since $f_\theta$ is a probability density on $[-\theta/2,\theta/2]$,
@@ -1105,15 +1114,44 @@ $\theta>\theta_0$ using its explicit analytic gap. Conversely, the
 finite numerical inequality alone does not prove a theorem about zeta
 zeros without the finite operator and fixed-test analytic transfer.
 
+\section{Conclusions and further questions}
+
+Finite stability retains two different kinds of information. The Gram
+defect yields quantitative gains when simple critical points occur close
+enough for certified pressure windows to interact. Multiplicity excess,
+combined with distinct odd-multiplicity density, yields a qualitative
+range extension even at the zero of the baseline cosine bound. The
+two mechanisms have separate hypotheses, certificates, and distinct-zero
+consequences; neither proves the Riemann hypothesis.
+
+The next analytic task for the parity route is to make one classical
+seed constant explicit enough to evaluate $\theta_1$. A further localized
+short-mollifier argument might supply stronger seed information, but the
+necessary general derivative theorem and precise zero count must first
+be proved. For the pressure route, richer windows may improve constants
+within the established framework; their existence does not establish
+global optimality. These are open tasks rather than conclusions of this
+paper.
+
+\medskip
+\noindent\textbf{Declaration of generative AI use.} Generative AI tools
+were used for derivation, source research, review, and implementation.
+The author reviewed and verified all content and takes full
+responsibility for the work.
+
 \appendix
 \section{Reproducibility, provenance, and scope}
 
-The public record~\cite{Record}, experiment
-\texttt{EXP-002-short-interval-stability}, contains the mathematical proof,
-an adversarial audit, the interval runner, the canonical partition tree,
-and rational enclosures for the constants. The hypothesis and permitted
-parameter family were declared before computation in repository commit
-\texttt{266486f}. A
+The repository
+\href{https://github.com/fsantibanezleal/CAOS_RESEARCH}{\nolinkurl{github.com/fsantibanezleal/CAOS_RESEARCH}}
+archives each computation cited here under an identifier EXP-nnn, in the
+folder whose name starts with that identifier under
+\path{problems/number-theory/riemann-hypothesis/experiments/}. Each such
+folder contains the statement tested, the proof, the code, its outputs,
+and the verification of the result. The folder of computation
+EXP-002~\cite{Record} contains the mathematical proof, an independent
+verification of the proof, the interval runner, the canonical partition
+tree, and rational enclosures for the constants. A
 deterministic floating grid selected candidate radii; its sampled values
 were never used as certified lower bounds. The final certification used
 CPU arithmetic; no GPU was necessary.
@@ -1129,31 +1167,30 @@ pytest tests/test_riemann_certificates.py
 The displayed backslashes indicate line continuation for readability;
 use one command line on shells with different continuation syntax.
 The runner fails with an exact resumable checkpoint if its time or node
-budget expires while boxes remain. It does not report a certificate in
-that state. A separate bounded trial exercised termination and exact
-resume behavior.
+limit is reached while boxes remain. It does not report a certificate in
+that state.
 
 The tree replay checks its hash, reconstructs every box, verifies all
 accepted leaves, and rejects missing, trailing, unknown, or miscounted
 nodes. A hash protects accidental corruption; geometric replay is still
-required when a modified tree has a recomputed hash. Adversarial checks
-rejected false whole-square acceptance, a false outside-domain claim,
-truncation, appended data, altered counts, an unresolved flag, an invalid
-exponent, and an inflated threshold. Nineteen focused tests, including
-one complete 256-bit certificate replay, passed in the recorded run.
-These are implementation checks, not formal verification of the entire
-analytic proof.
+required when a modified tree has a recomputed hash. Negative controls
+confirmed the rejection of false whole-square acceptance, a false
+outside-domain claim, truncation, appended data, altered counts, an
+unresolved flag, an invalid exponent, and an inflated threshold. The
+focused tests include one complete 256-bit certificate replay. These are
+implementation checks, not formal verification of the entire analytic
+proof.
 
 The canonical preorder tree has SHA-256 digest
 \begin{center}\small\ttfamily
 78829635026aeacd69c02213cc899b5029ef2566bbfaf1c86b757cc5f92ffe55
 \end{center}
 
-\section{The new pressure certificate and separate stage outcomes}
+\section{The two-variable pressure certificate}\label{sec:pressurecert}
 
 For the rational parameters \eqref{eq:newparams}, pressure alone proves
 \eqref{eq:pressure} when $u+v\ge R_{\rm cut}=\varepsilon/p=443239/80000$.
-The new finite computation certifies the remaining closed triangle. It
+A finite interval computation certifies the remaining closed triangle. It
 reconstructs a complete binary partition of the square
 $[0,R_{\rm cut}]^2$. Each leaf is either accepted by an outward-rounded
 energy-plus-pressure bound on its entire rectangle, or by the exact
@@ -1169,84 +1206,78 @@ separately derived sinc-Taylor evaluator. These evaluators share Arb,
 geometric subdivision, and the Lipschitz estimate; this is not a wholly
 independent verifier or a formal proof of the analytic theorem.
 
-The declared EXP-003 campaign had two independent stages. Stage A reused
-the earlier 48,761-node certificate, checked two symbolic identities and
-328 small-index incidence/boundary cases, and established $C_A$ in
-\eqref{eq:reuseexample}. Its complete 256-bit replay took about 26.9
-seconds, below the one-minute cap. Stage B required a new pressure
-certificate whose gain exceeded $5/4$ of the Stage A gain. The new result
-has
+Both bounds of Corollary~\ref{cor:pressureexample} are established in
+computation EXP-003~\cite{RecordIII}. For $C_A$ in \eqref{eq:reuseexample},
+the computation replays the 48,761-node compact certificate of
+Section~\ref{sec:certificate} completely at 256 bits, in about 26.9
+seconds, and checks two symbolic identities and 328 small-index
+incidence\slash boundary cases. For $C_B$, it constructs the two-variable
+certificate described above and replays every accepted leaf, in about 5.2
+seconds in total. The gain of $C_B$ above Wang's bound is
 \[
  C_B-c(3/4)=0.000012875194687394224537573076\ldots,
 \]
-and
+and it exceeds $5/4$ of the gain of $C_A$:
 \[
  (C_B-c(3/4))-\tfrac54(C_A-c(3/4))
  =0.000009471388256765351202430110\ldots>0.
 \]
 Together with $k\varepsilon=999947184/10^9<1$, the finite certificate and
-Theorem~\ref{thm:pressure} prove the new part of
-Corollary~\ref{cor:pressureexample}.
+Theorem~\ref{thm:pressure} prove the statements on $C_B$ in
+Corollary~\ref{cor:pressureexample}. Floating-point sampling was used only
+to choose the rational parameters \eqref{eq:newparams}, which are not
+claimed to be optimal; every inequality in the certificates is certified in
+exact rational or ball arithmetic.
 
-The single floating design pass took about 0.25 seconds and froze three
-rational candidates before certification. Samples were used only to
-choose parameters. The first candidate completed construction and full
-replay in about 5.2 seconds, within the combined ten-minute and two-million
-node cap. Candidates two and three were not run after this success; they
-remain neither confirmed nor refuted. No global optimization claim follows.
+Construction checkpoints are candidate proof state; a completed
+certificate is accepted only after the final arithmetic replay, and a
+replay restarted from a checkpoint checks the checkpoint identity and
+revalidates its entire prefix. The focused tests include tampering
+controls: a forged completed prefix with recomputed hashes is rejected by
+the leaf arithmetic.
 
-An initial ten-node smoke run demonstrated flushed progress, checkpoint
-creation, resume equal to a fresh construction, and rejection of mismatched
-parameters. Construction checkpoints are candidate proof state; completed
-certificates require final arithmetic replay. A replay restart checks the
-checkpoint identity and revalidates its entire prefix. It does not claim
-to save the prefix's arithmetic work. Restoration and rechecking count
-inside the remaining budget. A forged completed prefix with recomputed
-hashes is rejected by the leaf arithmetic. The recorded focused suite had
-29 passing tests at this milestone.
-
-The canonical result, frozen candidates, pressure proof tree, provenance
-hashes, budget receipts, and exact rational endpoints are preserved in
-EXP-003~\cite{RecordIII}. Mathematical artifacts use deterministic UTF-8/LF
+The canonical result, the pressure proof tree, provenance hashes, and the
+exact rational endpoints are archived in the EXP-003
+record~\cite{RecordIII}. Mathematical artifacts use deterministic UTF-8/LF
 bytes; elapsed-time logs are separate metadata. To reproduce with the
 repository virtual environment, run each command with a fresh output
-directory:
+directory. The first command recomputes $C_A$, the second tests
+checkpointing and restart, and the third runs the focused tests:
 \begin{verbatim}
 python problems/number-theory/riemann-hypothesis/experiments/\
-  EXP-003-odd-frame-pressure/run.py --stage A \
+EXP-003-odd-frame-pressure/run.py --stage=A \
   --output-dir tmp/riemann-a
 python problems/number-theory/riemann-hypothesis/experiments/\
-  EXP-003-odd-frame-pressure/run.py --stage smoke \
+EXP-003-odd-frame-pressure/run.py --stage=smoke \
   --output-dir tmp/riemann-smoke
 python -m pytest tests/test_riemann_pressure.py
 \end{verbatim}
-The Stage B command and its frozen-candidate arguments are given in the
-experiment verdict to avoid an overlong shell line here. The displayed
-backslashes are typographical line continuations; combine each command
-on shells that use another continuation convention.
+The full command line for the two-variable certificate is in the EXP-003
+record~\cite{RecordIII}. The displayed backslashes are typographical line
+continuations; combine each command on shells that use another
+continuation convention.
 
 \section{Parity verification and its analytic boundary}
 
-The parity hypothesis and source preflight were committed before any
-finite checking as \texttt{e03413b}. The EXP-004 record~\cite{RecordIV}
-separates the exact certificates \eqref{eq:parityresidual}--
+The EXP-004 record~\cite{RecordIV}
+separates the exact certificates \eqref{eq:parityresidual}--%
 \eqref{eq:distinctresidual}, universal atom formulas, finite regression
 censuses, the scalar relaxation \eqref{eq:relaxedLP}, sharpness examples,
-and the analytic source audit. No interval optimization, zeta-zero
+and the check of the analytic sources. No interval optimization, zeta-zero
 sampling, or GPU computation is needed for this route. In particular,
 the classical $\kappa$ and the new numerical exponent are deliberately
 unevaluated fields, not outputs of a finite census.
 
-The completed scientific verdict confirms the qualitative range theorem
-within the stated analytic inputs. The full paper proof and coordinating
-audit were committed as \texttt{6984177}. Its independent reviews cover the
-signed finite operator, multiplicity charges, distinct-odd convention,
-interval packing, exact deweighting, and legal limiting sequence. A separate
-\href{https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/proof-review.json}{proof-review record}
-binds the proof, audit, hypothesis, result, and verdict by their hashes.
+Independent checks of the proof of the qualitative range theorem, within
+the stated analytic inputs, cover the signed finite operator,
+multiplicity charges, distinct-odd convention, interval packing, exact
+deweighting, and legal limiting sequence. A separate
+\href{https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/proof-review.json}{proof-review file}
+lists the SHA-256 hashes of the proof, the proof checks, the statement
+tested, the computed result, and the summary of the outcome.
 
-The single declared arithmetic run passed in about 8.04 seconds, within the
-fixed 60-second budget. It verified two symbolic residual identities and
+The arithmetic run took about 8.04 seconds. It verified two symbolic
+residual identities and
 nonnegative arbitrary-multiplicity atom families, supplemented by 24
 single-atom cases through multiplicity 12. The full census consists of
 19,683 count vectors in $\{0,1,2\}^9$, with 59,049 evaluations at three
@@ -1256,36 +1287,37 @@ simple/double-support examples attain equality, while a real triple point
 rejects the false distinct half-sum with residual $-1$. The exact derivative
 identity and rational comparisons in \eqref{eq:derivativecap} passed.
 
-The focused software suite had 36 passing tests, including count tampering,
-exact committed-source bytes, preservation of an incomplete census prefix,
-input rejection, and overwrite refusal. Two reviewers separately parsed
-every stored census row with direct formulas without importing the runner;
-all count vectors, residuals, linked artifact hashes, and intentionally null
-numerical constants matched. No failed full run, replacement parameter
-search, or budget extension occurred. The original process outputs were
-copied unchanged into the public experiment record. Operational timing is
-kept separate from deterministic mathematical bytes.
+The focused software tests check tampered counts, the exact bytes of the
+committed source files, preservation of an incomplete census prefix, input
+rejection, and protection of existing outputs against overwriting.
+In two independent recomputations, every stored census row was parsed
+with direct formulas without importing the runner; all count vectors,
+residuals, linked artifact hashes, and intentionally null numerical
+constants matched. The original run outputs are archived unchanged in the
+experiment record. Operational timing is kept separate from deterministic
+mathematical bytes.
 
 The canonical result has SHA-256 digest
 \begin{center}\small\ttfamily
 bc9e28ca1792657e24da77268e6e2108c3f52684b7e16504f07b32cfce014d6e
 \end{center}
-To reproduce the declared finite campaign in a fresh directory, use
+To reproduce the finite computation in a fresh directory, use
 \begin{verbatim}
 python problems/number-theory/riemann-hypothesis/experiments/\
-  EXP-004-parity-density-transfer/run.py \
+EXP-004-parity-density-transfer/run.py \
   --output tmp/riemann-parity-replay
 pytest tests/test_riemann_parity.py
 \end{verbatim}
-The displayed backslashes are typographical line continuations. The exact
-receipt certifies the recorded algebra and finite controls. The universal
-atom argument, Selberg's theorem, interval packing, Wang's fixed-test
-transfer, and the approximation limits supply the unbounded quantifiers.
-A finite PASS cannot establish those analytic statements by enumeration.
+The displayed backslashes are typographical line continuations. The run
+verifies the algebra and the finite controls above in exact arithmetic. The
+universal atom argument, Selberg's theorem, interval packing, Wang's
+fixed-test transfer, and the approximation limits supply the unbounded
+quantifiers. A finite computation cannot establish those analytic
+statements by enumeration.
 The census slack samples are not claimed to be geometric realizations of
 zeta zeros, and the scalar optimum concerns only the stated relaxation.
 
-\section{Source audit and limitations}
+\section{Source comparison and limitations}
 
 The source comparison was completed on 2026-09-12. It used the full
 Wang v1 manuscript, Lamzouri v2, the current Alp\"oge--Furman paper,
@@ -1303,8 +1335,9 @@ stability inequality and cosine-root mechanism are explicitly credited
 to the repository identifier \texttt{ainta}; no personal author identity
 is inferred from that identifier.
 
-The parity preflight additionally inspected Karatsuba's complete primary
-paper, Steuding's archived dissertation and published abstract, and
+For the parity theorem, the source comparison also covered Karatsuba's
+complete primary paper, Steuding's archived dissertation and published
+abstract, and
 \emph{Short mollifiers of the Riemann zeta-function}~\cite{CFKL}.
 The short-mollifier result concerns critical-zero density
 using higher derivatives; it supplies no automatic simple-zero theorem.
@@ -1333,33 +1366,11 @@ does not give its decimal value, an effective starting height, uniformity
 for moving exponents, a global-record proportion, or elimination of all
 off-line zeros.
 
-AI assistance was used for derivation, source research, adversarial
-review, and implementation. These automated reviews do not constitute
-independent peer review. The new manuscript and original research
-exposition are released under CC BY 4.0; code follows the repository's
-MIT license. Cited third-party materials
-retain their own licenses. In particular, local copies of arXiv texts
-with nonexclusive-distribution licenses are not relicensed by this
-manuscript.
-
-\section{Conclusions and further questions}
-
-Finite stability retains two different kinds of information. The Gram
-defect yields quantitative gains when simple critical points occur close
-enough for certified pressure windows to interact. Multiplicity excess,
-combined with distinct odd-multiplicity density, yields a qualitative
-range extension even at the zero of the baseline cosine bound. The
-two mechanisms have separate hypotheses, certificates, and distinct-zero
-consequences; neither proves the Riemann hypothesis.
-
-The next analytic task for the parity route is to make one classical
-seed constant explicit enough to evaluate $\theta_1$. A further localized
-short-mollifier argument might supply stronger seed information, but the
-necessary general derivative theorem and precise zero count must first
-be proved. For the pressure route, richer windows may improve constants
-within the established framework; their existence does not establish
-global optimality. These are open tasks rather than conclusions of the
-present manuscript.
+This paper and the original research exposition in the repository are
+released under CC BY 4.0; code follows the repository's MIT license.
+Cited third-party materials retain their own licenses. In particular,
+local copies of arXiv texts with nonexclusive-distribution licenses are
+not relicensed.
 
 \begin{thebibliography}{99}\small\raggedright
 
@@ -1367,7 +1378,7 @@ present manuscript.
 L.~Alp\"oge and R.~Furman,
 \emph{More than two thirds of the zeta zeros are simple and on the
 critical line}, arXiv:2608.13637v2 (2026).
-Proof discovered by Claude and verified and communicated by the listed
+Proof discovered by Claude and verified and communicated by the listed % voice-ok: external attribution, as the cited paper states it
 authors, as described in the paper's provenance.
 \url{https://arxiv.org/abs/2608.13637v2}.
 
@@ -1474,31 +1485,22 @@ corrected error term in the earlier Montgomery theorem.
 F.~Santiba\~nez-Leal,
 \emph{Riemann-hypothesis research record, EXP-002: short-interval
 stability}, CAOS Research, 2026. Proof, source comparisons, code, exact
-partition certificate, and adversarial audit.
+partition certificate, and independent verification of the proof.
 \url{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis}.
 
 \bibitem{RecordIII}
 F.~Santiba\~nez-Leal,
 \emph{EXP-003: odd-frame amplification and pressure certificates},
-CAOS Research, 2026. Declaration committed before computation, complete
-paper proof, independent audits, exact incidence checks, frozen candidates,
-and exhaustive two-path certificates.
+CAOS Research, 2026. Complete proof, independent proof checks, exact
+incidence checks, and exhaustive two-path certificates.
 \href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure}{Public experiment record}.
 
 \bibitem{RecordIV}
 F.~Santiba\~nez-Leal,
 \emph{EXP-004: parity-density transfer}, CAOS Research, 2026.
-Declared hypothesis, primary-source audit, complete finite and asymptotic
-proof, exact-check campaign, and confirmed coordinating verdict, dated
-2026-09-12. Confirmation is within the stated mathematical inputs and
-does not assert external peer acceptance or exhaustive priority.
+Primary-source comparison, complete finite and asymptotic proof, exact
+finite checks, and independent proof checks, dated 2026-09-12.
 \href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer}{Public experiment record}.
-
-\bibitem{FirstVersion}
-F.~Santiba\~nez-Leal,
-\emph{A stability refinement for simple critical zeros in short intervals},
-version 0.01, CAOS Research preprint, 2026.
-\url{https://doi.org/10.5281/zenodo.22727389}.
 
 \end{thebibliography}
 \end{document}

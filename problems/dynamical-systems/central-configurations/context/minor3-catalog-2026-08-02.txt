@@ -1,0 +1,162 @@
+# 3x3 minor catalog, FACTORED-ONLY report (abstract s-symbols)
+== ['L13', 'L15', 'L23'] x ['m1', 'm2', 'mA'] (mixed, 4 factors)
+   s_d1A_r12*u**2*(a1 - a2)**2*(-a1*p*s_cs_d1A*s_d2A_r12 - a1*p*s_cx_d1A*s_d2A_r12 - 2*a1*p*s_d1A_wA*s_d2B_r12 + a1*s_cs_d1A*s_d2A_r12*u - a1*s_cx_d1A*s_d2A_r12*u + p*s_cs_d1A*s_d2A_r12*v + p*s_cx_d1A*s_d2A_r12*v + 2*p*s_d1A_wA*s_d2B_r12*v - q*s_cs_d1A*s_d2A_r12*u + q*s_cx_d1A*s_d2A_r12*u)
+== ['L13', 'L15', 'L23'] x ['m1', 'm2', 'mB'] (mixed, 5 factors)
+   p*s_d1A_r12*u*(a1 - a2)**2*(-a1*p*s_cs_d1B*s_d2B_r12 + a1*p*s_cx_d1B*s_d2B_r12 + a1*s_cs_d1B*s_d2B_r12*u + a1*s_cx_d1B*s_d2B_r12*u + 2*a1*s_d1B_wB*s_d2A_r12*u + p*s_cs_d1B*s_d2B_r12*v - p*s_cx_d1B*s_d2B_r12*v - q*s_cs_d1B*s_d2B_r12*u - q*s_cx_d1B*s_d2B_r12*u - 2*q*s_d1B_wB*s_d2A_r12*u)
+== ['L13', 'L15', 'L23'] x ['m1', 'mA', 'mB'] (mixed, 4 factors)
+   -s_d1A_r12*u*(a1 - a2)*(a1**2*p**2*s_cs_d1A*s_cs_d1B - a1**2*p**2*s_cs_d1A*s_cx_d1B + a1**2*p**2*s_cs_d1B*s_cx_d1A - a1**2*p**2*s_cx_d1A*s_cx_d1B - 2*a1**2*p*s_cs_d1A*s_cs_d1B*u - 2*a1**2*p*s_cx_d1A*s_cx_d1B*u + 4*a1**2*p*s_d1A_wA*s_d1B_wB*u + a1**2*s_cs_d1A*s_cs_d1B*u**2 + a1**2*s_cs_d1A*s_cx_d1B*u
+== ['L13', 'L15', 'L23'] x ['m2', 'mA', 'mB'] (mixed, 3 factors)
+   -u*(a1 - a2)*(a1*a2*p**2*s_cs_d1A*s_cs_d2B*s_d2A_r12 - a1*a2*p**2*s_cs_d1A*s_cx_d2B*s_d2A_r12 - 2*a1*a2*p**2*s_cs_d1B*s_d2A_wA*s_d2B_r12 + a1*a2*p**2*s_cs_d2B*s_cx_d1A*s_d2A_r12 + 2*a1*a2*p**2*s_cs_d2B*s_d1A_wA*s_d2B_r12 - a1*a2*p**2*s_cx_d1A*s_cx_d2B*s_d2A_r12 + 2*a1*a2*p**2*s_cx_d1B*s_d2A_wA*s_d2B
+== ['L13', 'L15', 'L25'] x ['m1', 'm2', 'mA'] (mixed, 5 factors)
+   p*s_d1B_r12*u*(a1 - a2)**2*(-a1*p*s_cs_d1A*s_d2A_r12 - a1*p*s_cx_d1A*s_d2A_r12 - 2*a1*p*s_d1A_wA*s_d2B_r12 + a1*s_cs_d1A*s_d2A_r12*u - a1*s_cx_d1A*s_d2A_r12*u + p*s_cs_d1A*s_d2A_r12*v + p*s_cx_d1A*s_d2A_r12*v + 2*p*s_d1A_wA*s_d2B_r12*v - q*s_cs_d1A*s_d2A_r12*u + q*s_cx_d1A*s_d2A_r12*u)
+== ['L13', 'L15', 'L25'] x ['m1', 'm2', 'mB'] (mixed, 4 factors)
+   p**2*s_d1B_r12*(a1 - a2)**2*(-a1*p*s_cs_d1B*s_d2B_r12 + a1*p*s_cx_d1B*s_d2B_r12 + a1*s_cs_d1B*s_d2B_r12*u + a1*s_cx_d1B*s_d2B_r12*u + 2*a1*s_d1B_wB*s_d2A_r12*u + p*s_cs_d1B*s_d2B_r12*v - p*s_cx_d1B*s_d2B_r12*v - q*s_cs_d1B*s_d2B_r12*u - q*s_cx_d1B*s_d2B_r12*u - 2*q*s_d1B_wB*s_d2A_r12*u)
+== ['L13', 'L15', 'L25'] x ['m1', 'mA', 'mB'] (mixed, 4 factors)
+   -p*s_d1B_r12*(a1 - a2)*(a1**2*p**2*s_cs_d1A*s_cs_d1B - a1**2*p**2*s_cs_d1A*s_cx_d1B + a1**2*p**2*s_cs_d1B*s_cx_d1A - a1**2*p**2*s_cx_d1A*s_cx_d1B - 2*a1**2*p*s_cs_d1A*s_cs_d1B*u - 2*a1**2*p*s_cx_d1A*s_cx_d1B*u + 4*a1**2*p*s_d1A_wA*s_d1B_wB*u + a1**2*s_cs_d1A*s_cs_d1B*u**2 + a1**2*s_cs_d1A*s_cx_d1B*u
+== ['L13', 'L15', 'L25'] x ['m2', 'mA', 'mB'] (mixed, 3 factors)
+   -p*(a1 - a2)*(a1*a2*p**2*s_cs_d1B*s_cs_d2A*s_d2B_r12 + a1*a2*p**2*s_cs_d1B*s_cx_d2A*s_d2B_r12 - a1*a2*p**2*s_cs_d2A*s_cx_d1B*s_d2B_r12 - a1*a2*p**2*s_cx_d1B*s_cx_d2A*s_d2B_r12 + 2*a1*a2*p*s_cs_d1A*s_d2A_r12*s_d2B_wB*u - 2*a1*a2*p*s_cs_d1B*s_cs_d2A*s_d2B_r12*u - 2*a1*a2*p*s_cs_d2A*s_d1B_wB*s_d2A_r12*
+== ['L13', 'L15', 'L35'] x ['m1', 'm2', 'mA'] (mixed, 5 factors)
+   s_d1A_d1B*u*(a1 - a2)*(-a1*p + a1*u + p*v - q*u)*(-a1*p*s_cs_d1A*s_d2A_r12 - a1*p*s_cx_d1A*s_d2A_r12 - 2*a1*p*s_d1A_wA*s_d2B_r12 + a1*s_cs_d1A*s_d2A_r12*u - a1*s_cx_d1A*s_d2A_r12*u + p*s_cs_d1A*s_d2A_r12*v + p*s_cx_d1A*s_d2A_r12*v + 2*p*s_d1A_wA*s_d2B_r12*v - q*s_cs_d1A*s_d2A_r12*u + q*s_cx_d1A*s_d2
+== ['L13', 'L15', 'L35'] x ['m1', 'm2', 'mB'] (mixed, 5 factors)
+   p*s_d1A_d1B*(a1 - a2)*(-a1*p + a1*u + p*v - q*u)*(-a1*p*s_cs_d1B*s_d2B_r12 + a1*p*s_cx_d1B*s_d2B_r12 + a1*s_cs_d1B*s_d2B_r12*u + a1*s_cx_d1B*s_d2B_r12*u + 2*a1*s_d1B_wB*s_d2A_r12*u + p*s_cs_d1B*s_d2B_r12*v - p*s_cx_d1B*s_d2B_r12*v - q*s_cs_d1B*s_d2B_r12*u - q*s_cx_d1B*s_d2B_r12*u - 2*q*s_d1B_wB*s_d2
+== ['L13', 'L15', 'L35'] x ['m1', 'mA', 'mB'] (mixed, 3 factors)
+   -s_d1A_d1B*(-a1*p + a1*u + p*v - q*u)*(a1**2*p**2*s_cs_d1A*s_cs_d1B - a1**2*p**2*s_cs_d1A*s_cx_d1B + a1**2*p**2*s_cs_d1B*s_cx_d1A - a1**2*p**2*s_cx_d1A*s_cx_d1B - 2*a1**2*p*s_cs_d1A*s_cs_d1B*u - 2*a1**2*p*s_cx_d1A*s_cx_d1B*u + 4*a1**2*p*s_d1A_wA*s_d1B_wB*u + a1**2*s_cs_d1A*s_cs_d1B*u**2 + a1**2*s_cs
+== ['L13', 'L15', 'L35'] x ['m2', 'mA', 'mB'] (mixed, 1 factors)
+   a1**2*a2*p**3*s_cs_d1A*s_cs_d1B*s_d2A_d2B - a1**2*a2*p**3*s_cs_d1A*s_cx_d1B*s_d2A_d2B + a1**2*a2*p**3*s_cs_d1B*s_cx_d1A*s_d2A_d2B - a1**2*a2*p**3*s_cx_d1A*s_cx_d1B*s_d2A_d2B - 3*a1**2*a2*p**2*s_cs_d1A*s_cs_d1B*s_d2A_d2B*u + a1**2*a2*p**2*s_cs_d1A*s_cx_d1B*s_d2A_d2B*u - a1**2*a2*p**2*s_cs_d1B*s_cx_d1
+== ['L13', 'L15', 'L36'] x ['m1', 'm2', 'mA'] (mixed, 5 factors)
+   -s_d1A_d1B*u*(a1 - a2)*(-a1*p - a1*u + p*v + q*u)*(-a1*p*s_cs_d1A*s_d2A_r12 - a1*p*s_cx_d1A*s_d2A_r12 - 2*a1*p*s_d1A_wA*s_d2B_r12 + a1*s_cs_d1A*s_d2A_r12*u - a1*s_cx_d1A*s_d2A_r12*u + p*s_cs_d1A*s_d2A_r12*v + p*s_cx_d1A*s_d2A_r12*v + 2*p*s_d1A_wA*s_d2B_r12*v - q*s_cs_d1A*s_d2A_r12*u + q*s_cx_d1A*s_d
+== ['L13', 'L15', 'L36'] x ['m1', 'm2', 'mB'] (mixed, 5 factors)
+   -p*s_d1A_d1B*(a1 - a2)*(-a1*p - a1*u + p*v + q*u)*(-a1*p*s_cs_d1B*s_d2B_r12 + a1*p*s_cx_d1B*s_d2B_r12 + a1*s_cs_d1B*s_d2B_r12*u + a1*s_cx_d1B*s_d2B_r12*u + 2*a1*s_d1B_wB*s_d2A_r12*u + p*s_cs_d1B*s_d2B_r12*v - p*s_cx_d1B*s_d2B_r12*v - q*s_cs_d1B*s_d2B_r12*u - q*s_cx_d1B*s_d2B_r12*u - 2*q*s_d1B_wB*s_d
+== ['L13', 'L15', 'L36'] x ['m1', 'mA', 'mB'] (mixed, 3 factors)
+   s_d1A_d1B*(-a1*p - a1*u + p*v + q*u)*(a1**2*p**2*s_cs_d1A*s_cs_d1B - a1**2*p**2*s_cs_d1A*s_cx_d1B + a1**2*p**2*s_cs_d1B*s_cx_d1A - a1**2*p**2*s_cx_d1A*s_cx_d1B - 2*a1**2*p*s_cs_d1A*s_cs_d1B*u - 2*a1**2*p*s_cx_d1A*s_cx_d1B*u + 4*a1**2*p*s_d1A_wA*s_d1B_wB*u + a1**2*s_cs_d1A*s_cs_d1B*u**2 + a1**2*s_cs_
+== ['L13', 'L15', 'L36'] x ['m2', 'mA', 'mB'] (mixed, 1 factors)
+   -a1**2*a2*p**3*s_cs_d1A*s_cs_d1B*s_d2A_d2B + a1**2*a2*p**3*s_cs_d1A*s_cx_d1B*s_d2A_d2B - a1**2*a2*p**3*s_cs_d1B*s_cx_d1A*s_d2A_d2B + a1**2*a2*p**3*s_cx_d1A*s_cx_d1B*s_d2A_d2B + a1**2*a2*p**2*s_cs_d1A*s_cs_d1B*s_d2A_d2B*u + a1**2*a2*p**2*s_cs_d1A*s_cx_d1B*s_d2A_d2B*u - a1**2*a2*p**2*s_cs_d1B*s_cx_d1A
+== ['L13', 'L23', 'L25'] x ['m1', 'm2', 'mA'] (mixed, 4 factors)
+   -s_d2A_r12*u**2*(a1 - a2)**2*(-a2*p*s_cs_d2A*s_d1A_r12 - a2*p*s_cx_d2A*s_d1A_r12 - 2*a2*p*s_d1B_r12*s_d2A_wA + a2*s_cs_d2A*s_d1A_r12*u - a2*s_cx_d2A*s_d1A_r12*u + p*s_cs_d2A*s_d1A_r12*v + p*s_cx_d2A*s_d1A_r12*v + 2*p*s_d1B_r12*s_d2A_wA*v - q*s_cs_d2A*s_d1A_r12*u + q*s_cx_d2A*s_d1A_r12*u)
+== ['L13', 'L23', 'L25'] x ['m1', 'm2', 'mB'] (mixed, 5 factors)
+   -p*s_d2A_r12*u*(a1 - a2)**2*(-a2*p*s_cs_d2B*s_d1B_r12 + a2*p*s_cx_d2B*s_d1B_r12 + a2*s_cs_d2B*s_d1B_r12*u + a2*s_cx_d2B*s_d1B_r12*u + 2*a2*s_d1A_r12*s_d2B_wB*u + p*s_cs_d2B*s_d1B_r12*v - p*s_cx_d2B*s_d1B_r12*v - q*s_cs_d2B*s_d1B_r12*u - q*s_cx_d2B*s_d1B_r12*u - 2*q*s_d1A_r12*s_d2B_wB*u)
+== ['L13', 'L23', 'L25'] x ['m1', 'mA', 'mB'] (mixed, 3 factors)
+   u*(a1 - a2)*(a1*a2*p**2*s_cs_d1B*s_cs_d2A*s_d1A_r12 + a1*a2*p**2*s_cs_d1B*s_cx_d2A*s_d1A_r12 + 2*a1*a2*p**2*s_cs_d1B*s_d1B_r12*s_d2A_wA - a1*a2*p**2*s_cs_d2A*s_cx_d1B*s_d1A_r12 - 2*a1*a2*p**2*s_cs_d2B*s_d1A_wA*s_d1B_r12 - a1*a2*p**2*s_cx_d1B*s_cx_d2A*s_d1A_r12 - 2*a1*a2*p**2*s_cx_d1B*s_d1B_r12*s_d2A
+== ['L13', 'L23', 'L25'] x ['m2', 'mA', 'mB'] (mixed, 4 factors)
+   s_d2A_r12*u*(a1 - a2)*(a2**2*p**2*s_cs_d2A*s_cs_d2B - a2**2*p**2*s_cs_d2A*s_cx_d2B + a2**2*p**2*s_cs_d2B*s_cx_d2A - a2**2*p**2*s_cx_d2A*s_cx_d2B - 2*a2**2*p*s_cs_d2A*s_cs_d2B*u - 2*a2**2*p*s_cx_d2A*s_cx_d2B*u + 4*a2**2*p*s_d2A_wA*s_d2B_wB*u + a2**2*s_cs_d2A*s_cs_d2B*u**2 + a2**2*s_cs_d2A*s_cx_d2B*u*
+== ['L13', 'L23', 'L35'] x ['m1', 'm2', 'mA'] (mixed, 3 factors)
+   -2*u**2*(a1 - a2)*(a1*a2*p*s_d1A_d1B*s_d2A_r12*s_d2A_wA - a1*a2*p*s_d1A_r12*s_d1A_wA*s_d2A_d2B - a1*a2*s_d1A_d1B*s_d2A_r12*s_d2A_wA*u + a1*a2*s_d1A_r12*s_d1A_wA*s_d2A_d2B*u - a1*p*s_d1A_d1B*s_d2A_r12*s_d2A_wA*v + a1*p*s_d1A_r12*s_d1A_wA*s_d2A_d2B*v + a1*q*s_cx_wA*s_d1A_r12*s_d2A_r12*u - a1*q*s_d1A_r
+== ['L13', 'L23', 'L35'] x ['m1', 'm2', 'mB'] (mixed, 3 factors)
+   u*(a1 - a2)*(a1*a2*p**2*s_cs_d1B*s_d1A_r12*s_d2A_d2B - a1*a2*p**2*s_cs_d2B*s_d1A_d1B*s_d2A_r12 - a1*a2*p**2*s_cx_d1B*s_d1A_r12*s_d2A_d2B + a1*a2*p**2*s_cx_d2B*s_d1A_d1B*s_d2A_r12 - 2*a1*a2*p*s_cs_d1B*s_d1A_r12*s_d2A_d2B*u + 2*a1*a2*p*s_cs_d2B*s_d1A_d1B*s_d2A_r12*u + a1*a2*s_cs_d1B*s_d1A_r12*s_d2A_d2
+== ['L13', 'L23', 'L35'] x ['m1', 'mA', 'mB'] (mixed, 2 factors)
+   2*u*(-a1**2*a2*p**2*s_cs_d1B*s_d1A_d1B*s_d2A_wA + a1**2*a2*p**2*s_cs_d2B*s_d1A_d1B*s_d1A_wA + a1**2*a2*p**2*s_cx_d1B*s_d1A_d1B*s_d2A_wA - a1**2*a2*p**2*s_cx_d2B*s_d1A_d1B*s_d1A_wA + 2*a1**2*a2*p*s_cs_d1B*s_d1A_d1B*s_d2A_wA*u - 2*a1**2*a2*p*s_cs_d2B*s_d1A_d1B*s_d1A_wA*u - a1**2*a2*s_cs_d1B*s_d1A_d1B*
+== ['L13', 'L23', 'L35'] x ['m2', 'mA', 'mB'] (mixed, 2 factors)
+   2*u*(-a1*a2**2*p**2*s_cs_d1B*s_d2A_d2B*s_d2A_wA + a1*a2**2*p**2*s_cs_d2B*s_d1A_wA*s_d2A_d2B + a1*a2**2*p**2*s_cx_d1B*s_d2A_d2B*s_d2A_wA - a1*a2**2*p**2*s_cx_d2B*s_d1A_wA*s_d2A_d2B + 2*a1*a2**2*p*s_cs_d1B*s_d2A_d2B*s_d2A_wA*u - 2*a1*a2**2*p*s_cs_d2B*s_d1A_wA*s_d2A_d2B*u - a1*a2**2*s_cs_d1B*s_d2A_d2B*
+== ['L13', 'L23', 'L36'] x ['m1', 'm2', 'mA'] (mixed, 3 factors)
+   2*u**2*(a1 - a2)*(a1*a2*p*s_d1A_d1B*s_d2A_r12*s_d2A_wA - a1*a2*p*s_d1A_r12*s_d1A_wA*s_d2A_d2B + a1*a2*s_d1A_d1B*s_d2A_r12*s_d2A_wA*u - a1*a2*s_d1A_r12*s_d1A_wA*s_d2A_d2B*u - a1*p*s_d1A_d1B*s_d2A_r12*s_d2A_wA*v + a1*p*s_d1A_r12*s_d1A_wA*s_d2A_d2B*v - a1*q*s_cs_wA*s_d1A_r12*s_d2A_r12*u + a1*q*s_d1A_r1
+== ['L13', 'L23', 'L36'] x ['m1', 'm2', 'mB'] (mixed, 3 factors)
+   -u*(a1 - a2)*(a1*a2*p**2*s_cs_d1B*s_d1A_r12*s_d2A_d2B - a1*a2*p**2*s_cs_d2B*s_d1A_d1B*s_d2A_r12 - a1*a2*p**2*s_cx_d1B*s_d1A_r12*s_d2A_d2B + a1*a2*p**2*s_cx_d2B*s_d1A_d1B*s_d2A_r12 - 2*a1*a2*p*s_cx_d1B*s_d1A_r12*s_d2A_d2B*u + 2*a1*a2*p*s_cx_d2B*s_d1A_d1B*s_d2A_r12*u - a1*a2*s_cs_d1B*s_d1A_r12*s_d2A_d
+== ['L13', 'L23', 'L36'] x ['m1', 'mA', 'mB'] (mixed, 2 factors)
+   -2*u*(-a1**2*a2*p**2*s_cs_d1B*s_d1A_d1B*s_d2A_wA + a1**2*a2*p**2*s_cs_d2B*s_d1A_d1B*s_d1A_wA + a1**2*a2*p**2*s_cx_d1B*s_d1A_d1B*s_d2A_wA - a1**2*a2*p**2*s_cx_d2B*s_d1A_d1B*s_d1A_wA + 2*a1**2*a2*p*s_cx_d1B*s_d1A_d1B*s_d2A_wA*u - 2*a1**2*a2*p*s_cx_d2B*s_d1A_d1B*s_d1A_wA*u + a1**2*a2*s_cs_d1B*s_d1A_d1B
+== ['L13', 'L23', 'L36'] x ['m2', 'mA', 'mB'] (mixed, 2 factors)
+   -2*u*(-a1*a2**2*p**2*s_cs_d1B*s_d2A_d2B*s_d2A_wA + a1*a2**2*p**2*s_cs_d2B*s_d1A_wA*s_d2A_d2B + a1*a2**2*p**2*s_cx_d1B*s_d2A_d2B*s_d2A_wA - a1*a2**2*p**2*s_cx_d2B*s_d1A_wA*s_d2A_d2B + 2*a1*a2**2*p*s_cx_d1B*s_d2A_d2B*s_d2A_wA*u - 2*a1*a2**2*p*s_cx_d2B*s_d1A_wA*s_d2A_d2B*u + a1*a2**2*s_cs_d1B*s_d2A_d2B
+== ['L13', 'L25', 'L35'] x ['m1', 'm2', 'mA'] (mixed, 3 factors)
+   u*(a1 - a2)*(a1*a2*p**2*s_cs_d2A*s_d1A_d1B*s_d2A_r12 + a1*a2*p**2*s_cx_d2A*s_d1A_d1B*s_d2A_r12 + 2*a1*a2*p**2*s_d1A_wA*s_d1B_r12*s_d2A_d2B - 2*a1*a2*p*s_cs_d2A*s_d1A_d1B*s_d2A_r12*u - 2*a1*a2*p*s_d1A_wA*s_d1B_r12*s_d2A_d2B*u + a1*a2*s_cs_d2A*s_d1A_d1B*s_d2A_r12*u**2 - a1*a2*s_cx_d2A*s_d1A_d1B*s_d2A_
+== ['L13', 'L25', 'L35'] x ['m1', 'm2', 'mB'] (mixed, 3 factors)
+   p*(a1 - a2)*(a1*a2*p**2*s_cs_d1B*s_d1B_r12*s_d2A_d2B - a1*a2*p**2*s_cx_d1B*s_d1B_r12*s_d2A_d2B - 2*a1*a2*p*s_cs_d1B*s_d1B_r12*s_d2A_d2B*u - 2*a1*a2*p*s_d1A_d1B*s_d2A_r12*s_d2B_wB*u + a1*a2*s_cs_d1B*s_d1B_r12*s_d2A_d2B*u**2 + a1*a2*s_cx_d1B*s_d1B_r12*s_d2A_d2B*u**2 + 2*a1*a2*s_d1A_d1B*s_d2A_r12*s_d2B
+== ['L13', 'L25', 'L35'] x ['m1', 'mA', 'mB'] (mixed, 1 factors)
+   a1**2*a2*p**3*s_cs_d1B*s_cs_d2A*s_d1A_d1B + a1**2*a2*p**3*s_cs_d1B*s_cx_d2A*s_d1A_d1B - a1**2*a2*p**3*s_cs_d2A*s_cx_d1B*s_d1A_d1B - a1**2*a2*p**3*s_cx_d1B*s_cx_d2A*s_d1A_d1B - 3*a1**2*a2*p**2*s_cs_d1B*s_cs_d2A*s_d1A_d1B*u - a1**2*a2*p**2*s_cs_d1B*s_cx_d2A*s_d1A_d1B*u + a1**2*a2*p**2*s_cs_d2A*s_cx_d1
+== ['L13', 'L25', 'L35'] x ['m2', 'mA', 'mB'] (mixed, 1 factors)
+   a1*a2**2*p**3*s_cs_d1B*s_cs_d2A*s_d2A_d2B + a1*a2**2*p**3*s_cs_d1B*s_cx_d2A*s_d2A_d2B - a1*a2**2*p**3*s_cs_d2A*s_cx_d1B*s_d2A_d2B - a1*a2**2*p**3*s_cx_d1B*s_cx_d2A*s_d2A_d2B - 3*a1*a2**2*p**2*s_cs_d1B*s_cs_d2A*s_d2A_d2B*u - a1*a2**2*p**2*s_cs_d1B*s_cx_d2A*s_d2A_d2B*u + a1*a2**2*p**2*s_cs_d2A*s_cx_d1
+== ['L13', 'L25', 'L36'] x ['m1', 'm2', 'mA'] (mixed, 3 factors)
+   -u*(a1 - a2)*(a1*a2*p**2*s_cs_d2A*s_d1A_d1B*s_d2A_r12 + a1*a2*p**2*s_cx_d2A*s_d1A_d1B*s_d2A_r12 + 2*a1*a2*p**2*s_d1A_wA*s_d1B_r12*s_d2A_d2B + 2*a1*a2*p*s_cx_d2A*s_d1A_d1B*s_d2A_r12*u + 2*a1*a2*p*s_d1A_wA*s_d1B_r12*s_d2A_d2B*u - a1*a2*s_cs_d2A*s_d1A_d1B*s_d2A_r12*u**2 + a1*a2*s_cx_d2A*s_d1A_d1B*s_d2A
+== ['L13', 'L25', 'L36'] x ['m1', 'm2', 'mB'] (mixed, 3 factors)
+   -p*(a1 - a2)*(a1*a2*p**2*s_cs_d1B*s_d1B_r12*s_d2A_d2B - a1*a2*p**2*s_cx_d1B*s_d1B_r12*s_d2A_d2B - 2*a1*a2*p*s_cx_d1B*s_d1B_r12*s_d2A_d2B*u - 2*a1*a2*p*s_d1A_d1B*s_d2A_r12*s_d2B_wB*u - a1*a2*s_cs_d1B*s_d1B_r12*s_d2A_d2B*u**2 - a1*a2*s_cx_d1B*s_d1B_r12*s_d2A_d2B*u**2 - 2*a1*a2*s_d1A_d1B*s_d2A_r12*s_d2
+== ['L13', 'L25', 'L36'] x ['m1', 'mA', 'mB'] (mixed, 1 factors)
+   -a1**2*a2*p**3*s_cs_d1B*s_cs_d2A*s_d1A_d1B - a1**2*a2*p**3*s_cs_d1B*s_cx_d2A*s_d1A_d1B + a1**2*a2*p**3*s_cs_d2A*s_cx_d1B*s_d1A_d1B + a1**2*a2*p**3*s_cx_d1B*s_cx_d2A*s_d1A_d1B + a1**2*a2*p**2*s_cs_d1B*s_cs_d2A*s_d1A_d1B*u - a1**2*a2*p**2*s_cs_d1B*s_cx_d2A*s_d1A_d1B*u + a1**2*a2*p**2*s_cs_d2A*s_cx_d1B
+== ['L13', 'L25', 'L36'] x ['m2', 'mA', 'mB'] (mixed, 1 factors)
+   -a1*a2**2*p**3*s_cs_d1B*s_cs_d2A*s_d2A_d2B - a1*a2**2*p**3*s_cs_d1B*s_cx_d2A*s_d2A_d2B + a1*a2**2*p**3*s_cs_d2A*s_cx_d1B*s_d2A_d2B + a1*a2**2*p**3*s_cx_d1B*s_cx_d2A*s_d2A_d2B + a1*a2**2*p**2*s_cs_d1B*s_cs_d2A*s_d2A_d2B*u - a1*a2**2*p**2*s_cs_d1B*s_cx_d2A*s_d2A_d2B*u + a1*a2**2*p**2*s_cs_d2A*s_cx_d1B
+== ['L13', 'L35', 'L36'] x ['m1', 'm2', 'mA'] (mixed, 5 factors)
+   -2*s_d1A_d1B*u**2*(a1 - a2)*(q - v)*(-a1*p*s_cs_wA*s_d2A_r12 - a1*p*s_cx_wA*s_d2A_r12 + 2*a1*p*s_d1A_wA*s_d2A_d2B + a1*s_cs_wA*s_d2A_r12*u - a1*s_cx_wA*s_d2A_r12*u + p*s_cs_wA*s_d2A_r12*v + p*s_cx_wA*s_d2A_r12*v - 2*p*s_d1A_wA*s_d2A_d2B*v - q*s_cs_wA*s_d2A_r12*u + q*s_cx_wA*s_d2A_r12*u)
+== ['L13', 'L35', 'L36'] x ['m1', 'm2', 'mB'] (mixed, 6 factors)
+   2*p*s_d1A_d1B*u*(a1 - a2)*(q - v)*(-a1*p*s_cs_d1B*s_d2A_d2B + a1*p*s_cs_wB*s_d2A_r12 + a1*p*s_cx_d1B*s_d2A_d2B - a1*p*s_cx_wB*s_d2A_r12 + a1*s_cs_d1B*s_d2A_d2B*u - a1*s_cs_wB*s_d2A_r12*u + a1*s_cx_d1B*s_d2A_d2B*u - a1*s_cx_wB*s_d2A_r12*u + p*s_cs_d1B*s_d2A_d2B*v - p*s_cs_wB*s_d2A_r12*v - p*s_cx_d1B*
+== ['L13', 'L35', 'L36'] x ['m1', 'mA', 'mB'] (mixed, 4 factors)
+   2*s_d1A_d1B*u*(q - v)*(a1**2*p**2*s_cs_d1B*s_cs_wA + a1**2*p**2*s_cs_d1B*s_cx_wA - a1**2*p**2*s_cs_wA*s_cx_d1B - 2*a1**2*p**2*s_cs_wB*s_d1A_wA - a1**2*p**2*s_cx_d1B*s_cx_wA + 2*a1**2*p**2*s_cx_wB*s_d1A_wA - 2*a1**2*p*s_cs_d1B*s_cs_wA*u + 2*a1**2*p*s_cs_wB*s_d1A_wA*u - 2*a1**2*p*s_cx_d1B*s_cx_wA*u + 
+== ['L13', 'L35', 'L36'] x ['m2', 'mA', 'mB'] (mixed, 3 factors)
+   2*u*(q - v)*(a1*a2*p**2*s_cs_d1B*s_cs_wA*s_d2A_d2B + a1*a2*p**2*s_cs_d1B*s_cx_wA*s_d2A_d2B - a1*a2*p**2*s_cs_wA*s_cx_d1B*s_d2A_d2B - 2*a1*a2*p**2*s_cs_wB*s_d1A_wA*s_d2A_d2B - a1*a2*p**2*s_cx_d1B*s_cx_wA*s_d2A_d2B + 2*a1*a2*p**2*s_cx_wB*s_d1A_wA*s_d2A_d2B - 2*a1*a2*p*s_cs_d1B*s_cs_wA*s_d2A_d2B*u + 2*
+== ['L15', 'L23', 'L25'] x ['m1', 'm2', 'mA'] (mixed, 5 factors)
+   -p*s_d2B_r12*u*(a1 - a2)**2*(-a2*p*s_cs_d2A*s_d1A_r12 - a2*p*s_cx_d2A*s_d1A_r12 - 2*a2*p*s_d1B_r12*s_d2A_wA + a2*s_cs_d2A*s_d1A_r12*u - a2*s_cx_d2A*s_d1A_r12*u + p*s_cs_d2A*s_d1A_r12*v + p*s_cx_d2A*s_d1A_r12*v + 2*p*s_d1B_r12*s_d2A_wA*v - q*s_cs_d2A*s_d1A_r12*u + q*s_cx_d2A*s_d1A_r12*u)
+== ['L15', 'L23', 'L25'] x ['m1', 'm2', 'mB'] (mixed, 4 factors)
+   -p**2*s_d2B_r12*(a1 - a2)**2*(-a2*p*s_cs_d2B*s_d1B_r12 + a2*p*s_cx_d2B*s_d1B_r12 + a2*s_cs_d2B*s_d1B_r12*u + a2*s_cx_d2B*s_d1B_r12*u + 2*a2*s_d1A_r12*s_d2B_wB*u + p*s_cs_d2B*s_d1B_r12*v - p*s_cx_d2B*s_d1B_r12*v - q*s_cs_d2B*s_d1B_r12*u - q*s_cx_d2B*s_d1B_r12*u - 2*q*s_d1A_r12*s_d2B_wB*u)
+== ['L15', 'L23', 'L25'] x ['m1', 'mA', 'mB'] (mixed, 3 factors)
+   p*(a1 - a2)*(a1*a2*p**2*s_cs_d1A*s_cs_d2B*s_d1B_r12 - a1*a2*p**2*s_cs_d1A*s_cx_d2B*s_d1B_r12 + a1*a2*p**2*s_cs_d2B*s_cx_d1A*s_d1B_r12 - a1*a2*p**2*s_cx_d1A*s_cx_d2B*s_d1B_r12 - 2*a1*a2*p*s_cs_d1A*s_cs_d2B*s_d1B_r12*u - 2*a1*a2*p*s_cs_d1A*s_d1A_r12*s_d2B_wB*u + 2*a1*a2*p*s_cs_d2A*s_d1A_r12*s_d1B_wB*u
+== ['L15', 'L23', 'L25'] x ['m2', 'mA', 'mB'] (mixed, 4 factors)
+   p*s_d2B_r12*(a1 - a2)*(a2**2*p**2*s_cs_d2A*s_cs_d2B - a2**2*p**2*s_cs_d2A*s_cx_d2B + a2**2*p**2*s_cs_d2B*s_cx_d2A - a2**2*p**2*s_cx_d2A*s_cx_d2B - 2*a2**2*p*s_cs_d2A*s_cs_d2B*u - 2*a2**2*p*s_cx_d2A*s_cx_d2B*u + 4*a2**2*p*s_d2A_wA*s_d2B_wB*u + a2**2*s_cs_d2A*s_cs_d2B*u**2 + a2**2*s_cs_d2A*s_cx_d2B*u*
+== ['L15', 'L23', 'L35'] x ['m1', 'm2', 'mA'] (mixed, 3 factors)
+   -u*(a1 - a2)*(a1*a2*p**2*s_cs_d1A*s_d1A_r12*s_d2A_d2B + a1*a2*p**2*s_cx_d1A*s_d1A_r12*s_d2A_d2B + 2*a1*a2*p**2*s_d1A_d1B*s_d2A_wA*s_d2B_r12 - 2*a1*a2*p*s_cs_d1A*s_d1A_r12*s_d2A_d2B*u - 2*a1*a2*p*s_d1A_d1B*s_d2A_wA*s_d2B_r12*u + a1*a2*s_cs_d1A*s_d1A_r12*s_d2A_d2B*u**2 - a1*a2*s_cx_d1A*s_d1A_r12*s_d2A
+== ['L15', 'L23', 'L35'] x ['m1', 'm2', 'mB'] (mixed, 3 factors)
+   -p*(a1 - a2)*(a1*a2*p**2*s_cs_d2B*s_d1A_d1B*s_d2B_r12 - a1*a2*p**2*s_cx_d2B*s_d1A_d1B*s_d2B_r12 - 2*a1*a2*p*s_cs_d2B*s_d1A_d1B*s_d2B_r12*u - 2*a1*a2*p*s_d1A_r12*s_d1B_wB*s_d2A_d2B*u + a1*a2*s_cs_d2B*s_d1A_d1B*s_d2B_r12*u**2 + a1*a2*s_cx_d2B*s_d1A_d1B*s_d2B_r12*u**2 + 2*a1*a2*s_d1A_r12*s_d1B_wB*s_d2A
+== ['L15', 'L23', 'L35'] x ['m1', 'mA', 'mB'] (mixed, 1 factors)
+   -a1**2*a2*p**3*s_cs_d1A*s_cs_d2B*s_d1A_d1B + a1**2*a2*p**3*s_cs_d1A*s_cx_d2B*s_d1A_d1B - a1**2*a2*p**3*s_cs_d2B*s_cx_d1A*s_d1A_d1B + a1**2*a2*p**3*s_cx_d1A*s_cx_d2B*s_d1A_d1B + 3*a1**2*a2*p**2*s_cs_d1A*s_cs_d2B*s_d1A_d1B*u - a1**2*a2*p**2*s_cs_d1A*s_cx_d2B*s_d1A_d1B*u + a1**2*a2*p**2*s_cs_d2B*s_cx_d
+== ['L15', 'L23', 'L35'] x ['m2', 'mA', 'mB'] (mixed, 1 factors)
+   -a1*a2**2*p**3*s_cs_d1A*s_cs_d2B*s_d2A_d2B + a1*a2**2*p**3*s_cs_d1A*s_cx_d2B*s_d2A_d2B - a1*a2**2*p**3*s_cs_d2B*s_cx_d1A*s_d2A_d2B + a1*a2**2*p**3*s_cx_d1A*s_cx_d2B*s_d2A_d2B + 3*a1*a2**2*p**2*s_cs_d1A*s_cs_d2B*s_d2A_d2B*u - a1*a2**2*p**2*s_cs_d1A*s_cx_d2B*s_d2A_d2B*u + a1*a2**2*p**2*s_cs_d2B*s_cx_d
+== ['L15', 'L23', 'L36'] x ['m1', 'm2', 'mA'] (mixed, 3 factors)
+   u*(a1 - a2)*(a1*a2*p**2*s_cs_d1A*s_d1A_r12*s_d2A_d2B + a1*a2*p**2*s_cx_d1A*s_d1A_r12*s_d2A_d2B + 2*a1*a2*p**2*s_d1A_d1B*s_d2A_wA*s_d2B_r12 + 2*a1*a2*p*s_cx_d1A*s_d1A_r12*s_d2A_d2B*u + 2*a1*a2*p*s_d1A_d1B*s_d2A_wA*s_d2B_r12*u - a1*a2*s_cs_d1A*s_d1A_r12*s_d2A_d2B*u**2 + a1*a2*s_cx_d1A*s_d1A_r12*s_d2A_
+== ['L15', 'L23', 'L36'] x ['m1', 'm2', 'mB'] (mixed, 3 factors)
+   p*(a1 - a2)*(a1*a2*p**2*s_cs_d2B*s_d1A_d1B*s_d2B_r12 - a1*a2*p**2*s_cx_d2B*s_d1A_d1B*s_d2B_r12 - 2*a1*a2*p*s_cx_d2B*s_d1A_d1B*s_d2B_r12*u - 2*a1*a2*p*s_d1A_r12*s_d1B_wB*s_d2A_d2B*u - a1*a2*s_cs_d2B*s_d1A_d1B*s_d2B_r12*u**2 - a1*a2*s_cx_d2B*s_d1A_d1B*s_d2B_r12*u**2 - 2*a1*a2*s_d1A_r12*s_d1B_wB*s_d2A_
+== ['L15', 'L23', 'L36'] x ['m1', 'mA', 'mB'] (mixed, 1 factors)
+   a1**2*a2*p**3*s_cs_d1A*s_cs_d2B*s_d1A_d1B - a1**2*a2*p**3*s_cs_d1A*s_cx_d2B*s_d1A_d1B + a1**2*a2*p**3*s_cs_d2B*s_cx_d1A*s_d1A_d1B - a1**2*a2*p**3*s_cx_d1A*s_cx_d2B*s_d1A_d1B - a1**2*a2*p**2*s_cs_d1A*s_cs_d2B*s_d1A_d1B*u - a1**2*a2*p**2*s_cs_d1A*s_cx_d2B*s_d1A_d1B*u + a1**2*a2*p**2*s_cs_d2B*s_cx_d1A*
+== ['L15', 'L23', 'L36'] x ['m2', 'mA', 'mB'] (mixed, 1 factors)
+   a1*a2**2*p**3*s_cs_d1A*s_cs_d2B*s_d2A_d2B - a1*a2**2*p**3*s_cs_d1A*s_cx_d2B*s_d2A_d2B + a1*a2**2*p**3*s_cs_d2B*s_cx_d1A*s_d2A_d2B - a1*a2**2*p**3*s_cx_d1A*s_cx_d2B*s_d2A_d2B - a1*a2**2*p**2*s_cs_d1A*s_cs_d2B*s_d2A_d2B*u - a1*a2**2*p**2*s_cs_d1A*s_cx_d2B*s_d2A_d2B*u + a1*a2**2*p**2*s_cs_d2B*s_cx_d1A*
+== ['L15', 'L25', 'L35'] x ['m1', 'm2', 'mA'] (mixed, 3 factors)
+   -p*(a1 - a2)*(a1*a2*p**2*s_cs_d1A*s_d1B_r12*s_d2A_d2B - a1*a2*p**2*s_cs_d2A*s_d1A_d1B*s_d2B_r12 + a1*a2*p**2*s_cx_d1A*s_d1B_r12*s_d2A_d2B - a1*a2*p**2*s_cx_d2A*s_d1A_d1B*s_d2B_r12 - 2*a1*a2*p*s_cs_d1A*s_d1B_r12*s_d2A_d2B*u + 2*a1*a2*p*s_cs_d2A*s_d1A_d1B*s_d2B_r12*u + a1*a2*s_cs_d1A*s_d1B_r12*s_d2A_d
+== ['L15', 'L25', 'L35'] x ['m1', 'm2', 'mB'] (mixed, 3 factors)
+   -2*p**2*(a1 - a2)*(a1*a2*p*s_d1A_d1B*s_d2B_r12*s_d2B_wB - a1*a2*p*s_d1B_r12*s_d1B_wB*s_d2A_d2B - a1*a2*s_d1A_d1B*s_d2B_r12*s_d2B_wB*u + a1*a2*s_d1B_r12*s_d1B_wB*s_d2A_d2B*u - a1*p*q*s_cx_wB*s_d1B_r12*s_d2B_r12 - a1*p*q*s_d1A_d1B*s_d2B_r12*s_d2B_wB + a1*p*s_cx_wB*s_d1B_r12*s_d2B_r12*v + a1*p*s_d1B_r1
+== ['L15', 'L25', 'L35'] x ['m1', 'mA', 'mB'] (mixed, 2 factors)
+   2*p*(-a1**2*a2*p**2*s_cs_d1A*s_d1A_d1B*s_d2B_wB + a1**2*a2*p**2*s_cs_d2A*s_d1A_d1B*s_d1B_wB - a1**2*a2*p**2*s_cx_d1A*s_d1A_d1B*s_d2B_wB + a1**2*a2*p**2*s_cx_d2A*s_d1A_d1B*s_d1B_wB + 2*a1**2*a2*p*s_cs_d1A*s_d1A_d1B*s_d2B_wB*u - 2*a1**2*a2*p*s_cs_d2A*s_d1A_d1B*s_d1B_wB*u - a1**2*a2*s_cs_d1A*s_d1A_d1B*
+== ['L15', 'L25', 'L35'] x ['m2', 'mA', 'mB'] (mixed, 2 factors)
+   2*p*(-a1*a2**2*p**2*s_cs_d1A*s_d2A_d2B*s_d2B_wB + a1*a2**2*p**2*s_cs_d2A*s_d1B_wB*s_d2A_d2B - a1*a2**2*p**2*s_cx_d1A*s_d2A_d2B*s_d2B_wB + a1*a2**2*p**2*s_cx_d2A*s_d1B_wB*s_d2A_d2B + 2*a1*a2**2*p*s_cs_d1A*s_d2A_d2B*s_d2B_wB*u - 2*a1*a2**2*p*s_cs_d2A*s_d1B_wB*s_d2A_d2B*u - a1*a2**2*s_cs_d1A*s_d2A_d2B*
+== ['L15', 'L25', 'L36'] x ['m1', 'm2', 'mA'] (mixed, 3 factors)
+   p*(a1 - a2)*(a1*a2*p**2*s_cs_d1A*s_d1B_r12*s_d2A_d2B - a1*a2*p**2*s_cs_d2A*s_d1A_d1B*s_d2B_r12 + a1*a2*p**2*s_cx_d1A*s_d1B_r12*s_d2A_d2B - a1*a2*p**2*s_cx_d2A*s_d1A_d1B*s_d2B_r12 + 2*a1*a2*p*s_cx_d1A*s_d1B_r12*s_d2A_d2B*u - 2*a1*a2*p*s_cx_d2A*s_d1A_d1B*s_d2B_r12*u - a1*a2*s_cs_d1A*s_d1B_r12*s_d2A_d2
+== ['L15', 'L25', 'L36'] x ['m1', 'm2', 'mB'] (mixed, 3 factors)
+   2*p**2*(a1 - a2)*(a1*a2*p*s_d1A_d1B*s_d2B_r12*s_d2B_wB - a1*a2*p*s_d1B_r12*s_d1B_wB*s_d2A_d2B + a1*a2*s_d1A_d1B*s_d2B_r12*s_d2B_wB*u - a1*a2*s_d1B_r12*s_d1B_wB*s_d2A_d2B*u - a1*p*q*s_cs_wB*s_d1B_r12*s_d2B_r12 - a1*p*q*s_d1A_d1B*s_d2B_r12*s_d2B_wB + a1*p*s_cs_wB*s_d1B_r12*s_d2B_r12*v + a1*p*s_d1B_r12
+== ['L15', 'L25', 'L36'] x ['m1', 'mA', 'mB'] (mixed, 2 factors)
+   -2*p*(-a1**2*a2*p**2*s_cs_d1A*s_d1A_d1B*s_d2B_wB + a1**2*a2*p**2*s_cs_d2A*s_d1A_d1B*s_d1B_wB - a1**2*a2*p**2*s_cx_d1A*s_d1A_d1B*s_d2B_wB + a1**2*a2*p**2*s_cx_d2A*s_d1A_d1B*s_d1B_wB - 2*a1**2*a2*p*s_cx_d1A*s_d1A_d1B*s_d2B_wB*u + 2*a1**2*a2*p*s_cx_d2A*s_d1A_d1B*s_d1B_wB*u + a1**2*a2*s_cs_d1A*s_d1A_d1B
+== ['L15', 'L25', 'L36'] x ['m2', 'mA', 'mB'] (mixed, 2 factors)
+   -2*p*(-a1*a2**2*p**2*s_cs_d1A*s_d2A_d2B*s_d2B_wB + a1*a2**2*p**2*s_cs_d2A*s_d1B_wB*s_d2A_d2B - a1*a2**2*p**2*s_cx_d1A*s_d2A_d2B*s_d2B_wB + a1*a2**2*p**2*s_cx_d2A*s_d1B_wB*s_d2A_d2B - 2*a1*a2**2*p*s_cx_d1A*s_d2A_d2B*s_d2B_wB*u + 2*a1*a2**2*p*s_cx_d2A*s_d1B_wB*s_d2A_d2B*u + a1*a2**2*s_cs_d1A*s_d2A_d2B
+== ['L15', 'L35', 'L36'] x ['m1', 'm2', 'mA'] (mixed, 6 factors)
+   -2*p*s_d1A_d1B*u*(a1 - a2)*(q - v)*(-a1*p*s_cs_d1A*s_d2A_d2B - a1*p*s_cs_wA*s_d2B_r12 - a1*p*s_cx_d1A*s_d2A_d2B - a1*p*s_cx_wA*s_d2B_r12 + a1*s_cs_d1A*s_d2A_d2B*u + a1*s_cs_wA*s_d2B_r12*u - a1*s_cx_d1A*s_d2A_d2B*u - a1*s_cx_wA*s_d2B_r12*u + p*s_cs_d1A*s_d2A_d2B*v + p*s_cs_wA*s_d2B_r12*v + p*s_cx_d1A
+== ['L15', 'L35', 'L36'] x ['m1', 'm2', 'mB'] (mixed, 5 factors)
+   -2*p**2*s_d1A_d1B*(a1 - a2)*(q - v)*(-a1*p*s_cs_wB*s_d2B_r12 + a1*p*s_cx_wB*s_d2B_r12 + a1*s_cs_wB*s_d2B_r12*u + a1*s_cx_wB*s_d2B_r12*u + 2*a1*s_d1B_wB*s_d2A_d2B*u + p*s_cs_wB*s_d2B_r12*v - p*s_cx_wB*s_d2B_r12*v - q*s_cs_wB*s_d2B_r12*u - q*s_cx_wB*s_d2B_r12*u - 2*q*s_d1B_wB*s_d2A_d2B*u)
+== ['L15', 'L35', 'L36'] x ['m1', 'mA', 'mB'] (mixed, 4 factors)
+   2*p*s_d1A_d1B*(q - v)*(a1**2*p**2*s_cs_d1A*s_cs_wB - a1**2*p**2*s_cs_d1A*s_cx_wB + a1**2*p**2*s_cs_wB*s_cx_d1A - a1**2*p**2*s_cx_d1A*s_cx_wB - 2*a1**2*p*s_cs_d1A*s_cs_wB*u + 2*a1**2*p*s_cs_wA*s_d1B_wB*u - 2*a1**2*p*s_cx_d1A*s_cx_wB*u + 2*a1**2*p*s_cx_wA*s_d1B_wB*u + a1**2*s_cs_d1A*s_cs_wB*u**2 + a1*
+== ['L15', 'L35', 'L36'] x ['m2', 'mA', 'mB'] (mixed, 3 factors)
+   2*p*(q - v)*(a1*a2*p**2*s_cs_d1A*s_cs_wB*s_d2A_d2B - a1*a2*p**2*s_cs_d1A*s_cx_wB*s_d2A_d2B + a1*a2*p**2*s_cs_wB*s_cx_d1A*s_d2A_d2B - a1*a2*p**2*s_cx_d1A*s_cx_wB*s_d2A_d2B - 2*a1*a2*p*s_cs_d1A*s_cs_wB*s_d2A_d2B*u + 2*a1*a2*p*s_cs_wA*s_d1B_wB*s_d2A_d2B*u - 2*a1*a2*p*s_cx_d1A*s_cx_wB*s_d2A_d2B*u + 2*a1
+== ['L23', 'L25', 'L35'] x ['m1', 'm2', 'mA'] (mixed, 5 factors)
+   s_d2A_d2B*u*(a1 - a2)*(-a2*p + a2*u + p*v - q*u)*(-a2*p*s_cs_d2A*s_d1A_r12 - a2*p*s_cx_d2A*s_d1A_r12 - 2*a2*p*s_d1B_r12*s_d2A_wA + a2*s_cs_d2A*s_d1A_r12*u - a2*s_cx_d2A*s_d1A_r12*u + p*s_cs_d2A*s_d1A_r12*v + p*s_cx_d2A*s_d1A_r12*v + 2*p*s_d1B_r12*s_d2A_wA*v - q*s_cs_d2A*s_d1A_r12*u + q*s_cx_d2A*s_d1
+== ['L23', 'L25', 'L35'] x ['m1', 'm2', 'mB'] (mixed, 5 factors)
+   p*s_d2A_d2B*(a1 - a2)*(-a2*p + a2*u + p*v - q*u)*(-a2*p*s_cs_d2B*s_d1B_r12 + a2*p*s_cx_d2B*s_d1B_r12 + a2*s_cs_d2B*s_d1B_r12*u + a2*s_cx_d2B*s_d1B_r12*u + 2*a2*s_d1A_r12*s_d2B_wB*u + p*s_cs_d2B*s_d1B_r12*v - p*s_cx_d2B*s_d1B_r12*v - q*s_cs_d2B*s_d1B_r12*u - q*s_cx_d2B*s_d1B_r12*u - 2*q*s_d1A_r12*s_d
+== ['L23', 'L25', 'L35'] x ['m1', 'mA', 'mB'] (mixed, 1 factors)
+   a1*a2**2*p**3*s_cs_d2A*s_cs_d2B*s_d1A_d1B - a1*a2**2*p**3*s_cs_d2A*s_cx_d2B*s_d1A_d1B + a1*a2**2*p**3*s_cs_d2B*s_cx_d2A*s_d1A_d1B - a1*a2**2*p**3*s_cx_d2A*s_cx_d2B*s_d1A_d1B - 3*a1*a2**2*p**2*s_cs_d2A*s_cs_d2B*s_d1A_d1B*u + a1*a2**2*p**2*s_cs_d2A*s_cx_d2B*s_d1A_d1B*u - a1*a2**2*p**2*s_cs_d2B*s_cx_d2
+== ['L23', 'L25', 'L35'] x ['m2', 'mA', 'mB'] (mixed, 3 factors)
+   -s_d2A_d2B*(-a2*p + a2*u + p*v - q*u)*(a2**2*p**2*s_cs_d2A*s_cs_d2B - a2**2*p**2*s_cs_d2A*s_cx_d2B + a2**2*p**2*s_cs_d2B*s_cx_d2A - a2**2*p**2*s_cx_d2A*s_cx_d2B - 2*a2**2*p*s_cs_d2A*s_cs_d2B*u - 2*a2**2*p*s_cx_d2A*s_cx_d2B*u + 4*a2**2*p*s_d2A_wA*s_d2B_wB*u + a2**2*s_cs_d2A*s_cs_d2B*u**2 + a2**2*s_cs
+== ['L23', 'L25', 'L36'] x ['m1', 'm2', 'mA'] (mixed, 5 factors)
+   -s_d2A_d2B*u*(a1 - a2)*(-a2*p - a2*u + p*v + q*u)*(-a2*p*s_cs_d2A*s_d1A_r12 - a2*p*s_cx_d2A*s_d1A_r12 - 2*a2*p*s_d1B_r12*s_d2A_wA + a2*s_cs_d2A*s_d1A_r12*u - a2*s_cx_d2A*s_d1A_r12*u + p*s_cs_d2A*s_d1A_r12*v + p*s_cx_d2A*s_d1A_r12*v + 2*p*s_d1B_r12*s_d2A_wA*v - q*s_cs_d2A*s_d1A_r12*u + q*s_cx_d2A*s_d
+== ['L23', 'L25', 'L36'] x ['m1', 'm2', 'mB'] (mixed, 5 factors)
+   -p*s_d2A_d2B*(a1 - a2)*(-a2*p - a2*u + p*v + q*u)*(-a2*p*s_cs_d2B*s_d1B_r12 + a2*p*s_cx_d2B*s_d1B_r12 + a2*s_cs_d2B*s_d1B_r12*u + a2*s_cx_d2B*s_d1B_r12*u + 2*a2*s_d1A_r12*s_d2B_wB*u + p*s_cs_d2B*s_d1B_r12*v - p*s_cx_d2B*s_d1B_r12*v - q*s_cs_d2B*s_d1B_r12*u - q*s_cx_d2B*s_d1B_r12*u - 2*q*s_d1A_r12*s_
+== ['L23', 'L25', 'L36'] x ['m1', 'mA', 'mB'] (mixed, 1 factors)
+   -a1*a2**2*p**3*s_cs_d2A*s_cs_d2B*s_d1A_d1B + a1*a2**2*p**3*s_cs_d2A*s_cx_d2B*s_d1A_d1B - a1*a2**2*p**3*s_cs_d2B*s_cx_d2A*s_d1A_d1B + a1*a2**2*p**3*s_cx_d2A*s_cx_d2B*s_d1A_d1B + a1*a2**2*p**2*s_cs_d2A*s_cs_d2B*s_d1A_d1B*u + a1*a2**2*p**2*s_cs_d2A*s_cx_d2B*s_d1A_d1B*u - a1*a2**2*p**2*s_cs_d2B*s_cx_d2A
+== ['L23', 'L25', 'L36'] x ['m2', 'mA', 'mB'] (mixed, 3 factors)
+   s_d2A_d2B*(-a2*p - a2*u + p*v + q*u)*(a2**2*p**2*s_cs_d2A*s_cs_d2B - a2**2*p**2*s_cs_d2A*s_cx_d2B + a2**2*p**2*s_cs_d2B*s_cx_d2A - a2**2*p**2*s_cx_d2A*s_cx_d2B - 2*a2**2*p*s_cs_d2A*s_cs_d2B*u - 2*a2**2*p*s_cx_d2A*s_cx_d2B*u + 4*a2**2*p*s_d2A_wA*s_d2B_wB*u + a2**2*s_cs_d2A*s_cs_d2B*u**2 + a2**2*s_cs_
+== ['L23', 'L35', 'L36'] x ['m1', 'm2', 'mA'] (mixed, 5 factors)
+   -2*s_d2A_d2B*u**2*(a1 - a2)*(q - v)*(-a2*p*s_cs_wA*s_d1A_r12 - a2*p*s_cx_wA*s_d1A_r12 + 2*a2*p*s_d1A_d1B*s_d2A_wA + a2*s_cs_wA*s_d1A_r12*u - a2*s_cx_wA*s_d1A_r12*u + p*s_cs_wA*s_d1A_r12*v + p*s_cx_wA*s_d1A_r12*v - 2*p*s_d1A_d1B*s_d2A_wA*v - q*s_cs_wA*s_d1A_r12*u + q*s_cx_wA*s_d1A_r12*u)
+== ['L23', 'L35', 'L36'] x ['m1', 'm2', 'mB'] (mixed, 6 factors)
+   2*p*s_d2A_d2B*u*(a1 - a2)*(q - v)*(-a2*p*s_cs_d2B*s_d1A_d1B + a2*p*s_cs_wB*s_d1A_r12 + a2*p*s_cx_d2B*s_d1A_d1B - a2*p*s_cx_wB*s_d1A_r12 + a2*s_cs_d2B*s_d1A_d1B*u - a2*s_cs_wB*s_d1A_r12*u + a2*s_cx_d2B*s_d1A_d1B*u - a2*s_cx_wB*s_d1A_r12*u + p*s_cs_d2B*s_d1A_d1B*v - p*s_cs_wB*s_d1A_r12*v - p*s_cx_d2B*
+== ['L23', 'L35', 'L36'] x ['m1', 'mA', 'mB'] (mixed, 3 factors)
+   2*u*(q - v)*(a1*a2*p**2*s_cs_d2B*s_cs_wA*s_d1A_d1B + a1*a2*p**2*s_cs_d2B*s_cx_wA*s_d1A_d1B - a1*a2*p**2*s_cs_wA*s_cx_d2B*s_d1A_d1B - 2*a1*a2*p**2*s_cs_wB*s_d1A_d1B*s_d2A_wA - a1*a2*p**2*s_cx_d2B*s_cx_wA*s_d1A_d1B + 2*a1*a2*p**2*s_cx_wB*s_d1A_d1B*s_d2A_wA - 2*a1*a2*p*s_cs_d2B*s_cs_wA*s_d1A_d1B*u + 2*
+== ['L23', 'L35', 'L36'] x ['m2', 'mA', 'mB'] (mixed, 4 factors)
+   2*s_d2A_d2B*u*(q - v)*(a2**2*p**2*s_cs_d2B*s_cs_wA + a2**2*p**2*s_cs_d2B*s_cx_wA - a2**2*p**2*s_cs_wA*s_cx_d2B - 2*a2**2*p**2*s_cs_wB*s_d2A_wA - a2**2*p**2*s_cx_d2B*s_cx_wA + 2*a2**2*p**2*s_cx_wB*s_d2A_wA - 2*a2**2*p*s_cs_d2B*s_cs_wA*u + 2*a2**2*p*s_cs_wB*s_d2A_wA*u - 2*a2**2*p*s_cx_d2B*s_cx_wA*u + 
+== ['L25', 'L35', 'L36'] x ['m1', 'm2', 'mA'] (mixed, 6 factors)
+   -2*p*s_d2A_d2B*u*(a1 - a2)*(q - v)*(-a2*p*s_cs_d2A*s_d1A_d1B - a2*p*s_cs_wA*s_d1B_r12 - a2*p*s_cx_d2A*s_d1A_d1B - a2*p*s_cx_wA*s_d1B_r12 + a2*s_cs_d2A*s_d1A_d1B*u + a2*s_cs_wA*s_d1B_r12*u - a2*s_cx_d2A*s_d1A_d1B*u - a2*s_cx_wA*s_d1B_r12*u + p*s_cs_d2A*s_d1A_d1B*v + p*s_cs_wA*s_d1B_r12*v + p*s_cx_d2A
+== ['L25', 'L35', 'L36'] x ['m1', 'm2', 'mB'] (mixed, 5 factors)
+   -2*p**2*s_d2A_d2B*(a1 - a2)*(q - v)*(-a2*p*s_cs_wB*s_d1B_r12 + a2*p*s_cx_wB*s_d1B_r12 + a2*s_cs_wB*s_d1B_r12*u + a2*s_cx_wB*s_d1B_r12*u + 2*a2*s_d1A_d1B*s_d2B_wB*u + p*s_cs_wB*s_d1B_r12*v - p*s_cx_wB*s_d1B_r12*v - q*s_cs_wB*s_d1B_r12*u - q*s_cx_wB*s_d1B_r12*u - 2*q*s_d1A_d1B*s_d2B_wB*u)
+== ['L25', 'L35', 'L36'] x ['m1', 'mA', 'mB'] (mixed, 3 factors)
+   2*p*(q - v)*(a1*a2*p**2*s_cs_d2A*s_cs_wB*s_d1A_d1B - a1*a2*p**2*s_cs_d2A*s_cx_wB*s_d1A_d1B + a1*a2*p**2*s_cs_wB*s_cx_d2A*s_d1A_d1B - a1*a2*p**2*s_cx_d2A*s_cx_wB*s_d1A_d1B - 2*a1*a2*p*s_cs_d2A*s_cs_wB*s_d1A_d1B*u + 2*a1*a2*p*s_cs_wA*s_d1A_d1B*s_d2B_wB*u - 2*a1*a2*p*s_cx_d2A*s_cx_wB*s_d1A_d1B*u + 2*a1
+== ['L25', 'L35', 'L36'] x ['m2', 'mA', 'mB'] (mixed, 4 factors)
+   2*p*s_d2A_d2B*(q - v)*(a2**2*p**2*s_cs_d2A*s_cs_wB - a2**2*p**2*s_cs_d2A*s_cx_wB + a2**2*p**2*s_cs_wB*s_cx_d2A - a2**2*p**2*s_cx_d2A*s_cx_wB - 2*a2**2*p*s_cs_d2A*s_cs_wB*u + 2*a2**2*p*s_cs_wA*s_d2B_wB*u - 2*a2**2*p*s_cx_d2A*s_cx_wB*u + 2*a2**2*p*s_cx_wA*s_d2B_wB*u + a2**2*s_cs_d2A*s_cs_wB*u**2 + a2*
+# total nonzero: 80, fully-clean: 0

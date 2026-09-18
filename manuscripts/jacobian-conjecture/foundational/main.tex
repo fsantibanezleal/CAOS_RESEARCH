@@ -22,38 +22,52 @@
 \newcommand{\Gm}{\mathbb{G}_m}
 \newcommand{\detJ}{\det JF}
 
-\title{The Jacobian Conjecture after the Three-Dimensional Counterexample:\\
-Exact Validation, a General Seed Family, the Geometry of Non-Properness,\\
+% Page-1 header block (conventions/manuscript-header-standard.md). The four document
+% macros are set by the publishing tool when the version DOI is reserved. At this text
+% width the two DOIs do not fit on one line of the box, so each has its own line.
+\newcommand{\doctype}{Preprint}
+\newcommand{\docversion}{v0.12}
+\newcommand{\docdate}{18 September 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.22822772}
+\newcommand{\conceptdoi}{10.5281/zenodo.21503365}
+\newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
+
+\newcommand{\headerblock}{%
+\begin{center}
+\fbox{\parbox{0.94\textwidth}{\small\raggedright
+\textbf{\doctype} \quad$\cdot$\quad \docversion, \docdate \quad$\cdot$\quad Licence CC BY 4.0\\[2pt]
+CAOS Research open-problems programme \quad$\cdot$\quad problem \texttt{jacobian-conjecture}\\[2pt]
+Version DOI \href{https://doi.org/\versiondoi}{\texttt{\versiondoi}}\\[2pt]
+Concept DOI (always latest) \href{https://doi.org/\conceptdoi}{\texttt{\conceptdoi}}\\[2pt]
+Not peer reviewed. Source code, data and computational records: \href{https://\docrepo}{\texttt{\docrepo}}
+}}
+\end{center}
+\vspace{4pt}}
+
+\title{The Jacobian Conjecture after the\\ Three-Dimensional Counterexample:\\
+Exact Validation, a General Seed Family,\\ the Geometry of Non-Properness,\\
 and Two-Dimensional Equivariant Rigidity}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-07-25\\[2pt]\normalsize Version 0.11}
+\date{\docdate}
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Jacobian Counterexample: Foundations \textperiodcentered\ v0.11}
+\fancyhead[L]{\small CAOS Research \doctype}
+\fancyhead[R]{\small Jacobian Counterexample: Foundations \textperiodcentered\ \docversion}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small \thepage}\renewcommand{\headrulewidth}{0pt}}
 
 \begin{document}
 \maketitle
-\begin{center}\small
-\fbox{\parbox{0.92\textwidth}{\centering
-\textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-Paper A of a three-paper record \textperiodcentered\ version 0.11 \textperiodcentered\ 2026-07-25\\
-DOI \href{https://doi.org/10.5281/zenodo.21503365}{10.5281/zenodo.21503365} (concept DOI, resolves to the latest version)\\
-Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}
-}}
-\end{center}
-
+\headerblock
 
 \begin{abstract}
-On 2026-07-19, Levent Alp\"oge announced (crediting the language model Claude Fable 5 and a
+On 2026-07-20, Levent Alp\"oge announced (crediting the language model Claude Fable 5 and a % voice-ok: external attribution, as the announcement states it
 question posed by Akhil) an explicit polynomial map $F : \C^3 \to \C^3$ with constant Jacobian
 determinant $-2$ and a repeated value, refuting the Jacobian conjecture for every $N \ge 3$. We
-report the results of an exact-arithmetic experimental program built on this event. First, we
+report an exact-arithmetic study of this map. First, we
 validate the counterexample independently and compute the full fiber over the announced target:
 it consists of exactly the three announced points. Second, we reverse-engineer the structure of
 $F$: it is a weighted skew-product over the invariants $v = xy$, $t = x^2 z$, its Keller
@@ -72,11 +86,11 @@ counterexamples reduce at suitable primes to non-injective Keller maps over $\ma
 of degree below the characteristic. Fifth, we prove that the mechanism cannot reach the
 still-open two-variable case: for opposite-sign or one-zero weights, every
 $\Gm$-equivariant Keller map of $\C^2$ is linear (a classification with a positive-factor kill
-at the top degree), so a planar counterexample, if any, must be genuinely non-equivariant.
+at the top degree), so a planar counterexample, if any, must be non-equivariant.
 Shaska's contemporaneous independent all-signature classification is reconciled explicitly:
 same-sign actions may give nonlinear triangular automorphisms, while equivariant planar Keller
-maps remain automorphisms in every signature \cite{Shaska2026}. All computations are exact (rational
-or symbolic) and reproducible from the repository; every claim below is labeled as
+maps remain automorphisms in every signature \cite{Shaska2026}. All computations are exact (over
+$\Q$, over finite fields, or symbolic) and reproducible from the repository; every claim below is labeled as
 machine-verified, derived, or conjectural.
 \end{abstract}
 
@@ -90,33 +104,36 @@ Keller in 1939 \cite{Keller1939}, asserted that every Keller map has a polynomia
 $\C$, invertibility is equivalent to injectivity, so a refutation requires exactly one repeated
 value. The classical positive ladder includes Wang's degree-2 theorem, Moh's analysis discarding
 planar counterexamples of degree up to 100 (with complete published detail only for the
-largest exceptional case; the modern audited floor is discussed in the planar companion),
+largest exceptional case; the current degree floor is discussed in the planar companion
+paper \cite{SLplanar}),
 the Bass--Connell--Wright reduction to cubic homogeneous form \cite{BCW1982}, and
 Dru\.zkowski's cubic-linear form \cite{Druzkowski1983}; Pinchuk \cite{Pinchuk1994} refuted
 the strong real variant by a non-proper local diffeomorphism with non-constant Jacobian. The
 conjecture is Problem 16 of Smale's list \cite{Smale1998}.
 
-This is the \emph{foundational} paper of a three-manuscript record, split so each audience
-reads a self-contained document while the repository log preserves the full history: (A)
-this paper, the three-dimensional aftermath (validation, structure, the seed family, the
-geometry of non-properness, the real census, characteristic $p$, the weighted landscape,
-and two-dimensional equivariant rigidity as the bridge out); (B) the planar-program paper
-(\texttt{manuscript-planar/}: the $JC(2)$ machine, the unconditional Newton-polygon
-exclusion theorems, the staircase transport, and the recalibrated frontier); (C) the
-cascade companion (\texttt{manuscript-cascade/}: the source-verified consequence cascade
-and the explicit dimension-48 symmetric witness).
+This paper studies the three-dimensional counterexample itself: validation, structure, the
+seed family, the geometry of non-properness, the real census, characteristic $p$, the
+weighted landscape, and two-dimensional equivariant rigidity as the bridge to the planar
+case. Two companion papers continue it. The planar paper \cite{SLplanar} develops the $JC(2)$
+machine built on the linearity of the Keller condition in one component, the uniform closure
+of the $\min\deg \le 2$ columns with one closed inverse, the unconditional Newton-polygon
+exclusion theorems and the annihilation lemma, the diagonal-corner reduction and the
+staircase transport, and a recalibration of the $\gcd$ and degree-floor landscape against
+the primary sources. The cascade paper \cite{SLcascade} derives the consequences of the
+counterexample for related conjectures, each implication checked against its primary
+source, and gives an explicit dimension-48 symmetric witness.
 
-On 2026-07-19/20, Alp\"oge announced the map, with $u = 1 + xy$,
+On 2026-07-20, Alp\"oge announced the map, with $u = 1 + xy$,
 \begin{equation}\label{eq:F}
 F = \bigl(\,u^3 z + y^2 u (4 + 3xy),\;\; y + 3x u^2 z + 3x y^2 (4 + 3xy),\;\; 2x - 3x^2 y - x^3 z\,\bigr),
 \end{equation}
 with $\detJ \equiv -2$ and
 $F(0, 0, -\tfrac14) = F(1, -\tfrac32, \tfrac{13}{2}) = F(-1, \tfrac32, \tfrac{13}{2}) =
 (-\tfrac14, 0, 0)$ \cite{Alpoge2026}. Appending identity coordinates refutes $JC(N)$ for all
-$N \ge 3$; the case $N = 2$ remains open. At the time of writing no formal paper exists; the
-announcement is a machine-checkable certificate, which makes an exact experimental program both
-possible and necessary. This manuscript maps the findings of the CAOS\_RESEARCH Jacobian
-Conjecture program; experiments are cited as EXP-$nnn$. Each claim is labeled:
+$N \ge 3$; the case $N = 2$ remains open. The announcement consists of the map and its
+collision, both machine-checkable, and every property of $F$ used below is established by
+exact computation. Each computer-assisted result cites the archived computation that
+establishes it as EXP-$nnn$ (see the section on reproducibility). Each claim is labeled:
 \textbf{[MV]} machine-verified exact identity,
 \textbf{[D]} derived analytically and certified on instances, \textbf{[C]} conjecture.
 
@@ -168,13 +185,15 @@ preimages' $w$-values $(1, 0, 0)$ \textbf{[MV]}. Injectivity dies by \emph{non-p
 Keller map is a local diffeomorphism, so sheets merge only at infinity; this is Pinchuk's
 loophole and the modern face of Kraus's gap.
 
-\section{The seed family: a general counterexample constructor (EXP-003/004)}
+\section[The seed family: a general counterexample constructor (EXP-003/004)]{The seed
+family: a general counterexample constructor\\ (EXP-003/004)}
 
-The identification $c_1 = h(v) - t$ with $h = p/w$ is a degree-2 coincidence: an initial
-constructor built on it is \emph{provably unsolvable} for $\deg p \ge 3$ (EXP-003, an exact
-unsolvability statement). The failure analysis yields the correct \emph{potential form}.
+The identification $c_1 = h(v) - t$ with $h = p/w$ is a degree-2 coincidence: a constructor
+built on it is \emph{provably unsolvable} for $\deg p \ge 3$ (EXP-003, an exact
+unsolvability statement). Analyzing this obstruction leads to the correct \emph{potential
+form}.
 
-\begin{theorem}[Constructor v2, {[D]}, certified on instances {[MV]}]\label{thm:family}
+\begin{theorem}[Constructor, {[D]}, certified on instances {[MV]}]\label{thm:family}
 Let $p(w) = \sum_{i=1}^{d} p_i w^i$ satisfy
 \[
 p(0) = 0, \qquad \int_0^1 p = 0, \qquad p(1) \ne 0, \qquad p'(1) \ne 2 p(1),
@@ -245,7 +264,8 @@ The $d = 3$ instance reduces mod $\ell = 13$ and $\ell = 101$ to explicit non-in
 maps over $\mathbb{F}_\ell$ of total degree $12 < \ell$ (the rational collision reduces to
 distinct points with a common image, e.g. mod 13: $(6,5,8)$ and $(6,8,6)$ both to $(11,11,1)$).
 Unlike the classical char-$p$ example $x - x^p$ (degree $= p$), the degree sits strictly below
-the characteristic; expected from standard integer-model reductions, now explicitly certified.
+the characteristic, as expected from standard integer-model reductions; here it is certified
+explicitly.
 \end{remark}
 
 \section{The asymptotic variety: where sheets merge}
@@ -268,7 +288,9 @@ codimension 1. Kraus's ``ramification at infinity'' is, for this family, the dis
 univariate polynomial.
 \end{theorem}
 
-\section{The two-dimensional frontier: obstruction, rigidity, real census (EXP-005/006/010/011)}
+\section[The two-dimensional frontier: obstruction, rigidity, real census
+(EXP-005/006/010/011)]{The two-dimensional frontier: obstruction, rigidity,\\ real census
+(EXP-005/006/010/011)}
 
 \begin{theorem}[{[MV]} with generic symbolic $f, g$]\label{thm:2d}
 Let $\Gm$ act on $\C^2$ with weights $(1, -a)$, $a \ge 1$, and let $F = (x^{b_1} f(v),\,
@@ -317,18 +339,18 @@ constrained solves for all exact bidegrees $\le 5$ over eight weight pairs).
 The independent enumeration EXP-006 (216 polynomial Keller instances over a bounded window, all
 648 exactly-computed in-image fibers single-point, every instance linear \textbf{[MV]}) is the
 experimental companion of Theorem~\ref{thm:rigidity}. Consequence: a two-variable
-counterexample, if one exists, must be genuinely non-equivariant: the symmetry class behind the
+counterexample, if one exists, must be non-equivariant: the symmetry class behind the
 entire three-dimensional family is completely closed in dimension 2.
 
 \paragraph{Scope and independent classification.}
 The word ``linear'' in Theorem~\ref{thm:rigidity} is restricted to the displayed
 opposite-sign/one-zero scope. Same-sign actions admit nonlinear triangular equivariant
-automorphisms. Shaska \cite{Shaska2026}, submitted on 2026-07-22 after EXP-010 was declared,
-independently proves the full classification: triangular for same-sign weights, affine when
-one weight is zero, and linear for opposite-sign weights. We make no priority or novelty claim
-for the classification. Our contribution here is the independently derived determinant
-factorization and exact experiment record on the hyperbolic scope relevant to the
-three-dimensional mechanism.
+automorphisms. Shaska \cite{Shaska2026}, in work submitted on 2026-07-22, independently
+proves the full classification: triangular for same-sign weights, affine when one weight is
+zero, and linear for opposite-sign weights. We make no priority or novelty claim for the
+classification. Our contribution here is the independently derived determinant factorization
+and the exact computations on the hyperbolic scope relevant to the three-dimensional
+mechanism.
 
 \begin{theorem}[Real fiber census of $F$, {[MV]}]\label{thm:realcensus}
 Over $\mathbb{R}$, the announced $F$ restricts to a surjective, orientation-reversing
@@ -339,28 +361,17 @@ fiber cubic plus reconstruction, versus Gr\"obner elimination) agree at all samp
 empty real fiber exists on a 36-target rational grid (an odd-degree argument makes this
 structural). In particular the constant-Jacobian \emph{real} statement in dimension 3 falls
 with the same example; Pinchuk's planar counterexample (1994) concerned the non-constant case.
-\end{theorem} The honest map of remaining
-routes to a hypothetical 2D counterexample: no symmetry at all; non-reductive
-($\mathbb{G}_a$) structures, which face the same one-invariant collapse in naive form; or
-gradings at infinity in the Newton-polygon/Abhyankar sense. Conversely, a proof of $JC(2)$ in
-this program's terms is a properness statement: the reconstruction inverse of
+\end{theorem}
+
+The remaining routes to a hypothetical two-dimensional counterexample are: no symmetry at all;
+non-reductive ($\mathbb{G}_a$) structures, which face the same one-invariant collapse in naive
+form; or gradings at infinity in the Newton-polygon/Abhyankar sense. Conversely, a proof of
+$JC(2)$ in these terms is a properness statement: the reconstruction inverse of
 Theorem~\ref{thm:family} shows exactly how asymptotic values are produced in dimension 3
-(denominators $BC = k^2 p(w)$), and whether one-invariant geometry leaves room for such escape
-is, in our view, the sharpest transferable open question.
+(denominators $BC = k^2 p(w)$). Whether one-invariant geometry in the plane leaves room for
+such an escape is the question that the three-dimensional mechanism leaves open for $JC(2)$.
 
-\section{The planar program (moved to the companion)}
-
-The planar arc of this program (the $JC(2)$ machine built on the linearity of the Keller
-condition in one component; the uniform closure of the $\min\deg \le 2$ columns with one
-closed inverse; the four unconditional Newton-polygon exclusion theorems and the
-annihilation lemma; the diagonal-corner reduction and the staircase-transport instrument;
-and the source-audited recalibration of the $\gcd$ and degree-floor landscape) now lives in
-the companion manuscript \texttt{manuscript-planar/}, where it can grow with the active
-program without destabilizing this foundational record. Every result there keeps its
-experiment label (EXP-013 through EXP-043 at the time of this revision), and the repository
-history log remains the single chronological record for both papers.
-
-\section{Discussion and program}
+\section{Discussion and open problems}
 
 \textbf{Why the conjecture is false.} In the equivariant class, being Keller is a two-variable
 potential identity, satisfiable for free at any fiber degree $\ge 3$; nothing in the
@@ -370,15 +381,16 @@ the potential form; valuation conditions at the origin. \textbf{Consequence casc
 1997: Mathieu for $SU(N)$ implies $JC(N)$; abelian case Duistermaat--van der Kallen 1998); the
 Gaussian moments conjecture is false (GMC implies JC, Derksen--van den Essen--Zhao 2017); Zhao's
 vanishing conjecture is false (equivalent to JC); the Image conjecture is false in some
-dimension (implies the vanishing conjecture); and the full Dixmier conjecture is false (stable
-equivalence $JC(2n) \Leftrightarrow \mathrm{Dixmier}(n)$, Belov-Kanel--Kontsevich and
-Tsuchimoto: $JC(4)$ false gives $\mathrm{Dixmier}(2)$ false; $\mathrm{Dixmier}(1)$ remains
-open). The cascade is documented, with the explicit dimension-48 symmetric witness
-(a gradient Keller map $\mathrm{id} + \nabla f$ with Hessian-nilpotent quartic potential and
-an exact two-point collision over $\Q(i)$, record EXP-041), in the cascade companion.
-\textbf{Standing work} lives in the planar companion: the transport closure of the fifth
-exclusion, the $B = 16$ normal-form attack, and the $(72, 108)$ system; on this paper's side,
-the global-minimality search in degrees 3 to 6 remains the one open experimental thread.
+dimension (implies the vanishing conjecture); and the full Dixmier conjecture is false
+($\mathrm{Dixmier}(n)$ implies $JC(n)$, so $\mathrm{Dixmier}(n)$ fails for every $n \ge 3$; the
+converse direction $JC(2n) \Rightarrow \mathrm{Dixmier}(n)$ of Belov-Kanel--Kontsevich and
+Tsuchimoto yields only stable equivalence, and ranks $1$ and $2$ remain open). The cascade is documented in the companion paper \cite{SLcascade}, together with an
+explicit dimension-48 symmetric witness (a gradient Keller map $\mathrm{id} + \nabla f$ with
+Hessian-nilpotent quartic potential and an exact two-point collision over $\Q(i)$, EXP-041).
+\textbf{Open problems.} In the plane, the companion paper \cite{SLplanar} treats the transport
+closure of the fifth exclusion, the $B = 16$ normal form, and the $(72, 108)$ system. In
+dimension three, global minimality remains open: it is not known whether a Keller
+counterexample of total degree $3$ to $6$ exists (Theorem~\ref{thm:degrees}).
 
 
 \subsection*{The weighted landscape: uniqueness of the mechanism (EXP-012)}
@@ -390,21 +402,26 @@ a \emph{bridge} to $JC(2)$ (93 scanned instances, all injective; a collision the
 $JC(2)$); at $m = 3$ the class $o = (-2,-2,1)$ is \emph{empty} (a one-line valuation proof,
 machine-certified) and $o = (-3,-1,1)$ is rigid in scans (60 instances); at $m = 4$ the
 potential-form family does \emph{not} exist: with seed degree up to 5 the admissibility system
-has Gr\"obner basis $[1]$ under $\mu \ne 0$ \textbf{[MV]}. Our design hypothesis (a parity law
-producing families at every even $m$) was thereby refuted by its own experiment; the finding is
-stronger: \emph{within the scanned weighted landscape, the announced counterexample's weight
+has Gr\"obner basis $[1]$ under $\mu \ne 0$ \textbf{[MV]}. In particular, a parity law
+producing families at every even $m$ does not hold: $m = 4$ admits no such family. More
+strongly, \emph{within the scanned weighted landscape, the announced counterexample's weight
 system is the unique collision-capable mechanism}. Scope: sparse bounded scans, quantified in
-the experiment record; wider weight systems and higher-degree seeds are queued.
+EXP-012; wider weight systems and higher-degree seeds are not covered.
 
-\subsection*{Reproducibility}
-Every theorem labeled [MV] is an exact sympy computation over $\Q$ with a persisted script and
-output in the repository. The supporting records are experiments EXP-001 through EXP-012 in the
-Jacobian Conjecture problem tree. Each experiment declares its hypothesis before the run and
-records an adversarial-validation route with its verdict.
+\subsection*{Reproducibility and data availability}
+Every theorem labeled [MV] is an exact sympy computation, over $\Q$ or, for the
+characteristic-$p$ statements (EXP-009), over $\mathbb{F}_\ell$, whose script and output are
+archived in the repository \url{https://github.com/fsantibanezleal/CAOS_RESEARCH}. An
+identifier EXP-$nnn$ denotes one archived record in the experiment folders of the problem,
+\path{problems/algebraic-geometry/jacobian-conjecture/experiments/}; each record states its
+question, method and result, with the script and output of any computation. The results of
+this paper rest on EXP-001 through EXP-012, each of which also records an independent
+verification route; the Discussion also cites EXP-016 (the cited implications checked against
+their primary sources) and EXP-041 (the dimension-48 witness).
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
 \bibitem{Alpoge2026} L. Alp\"oge, announcement of the counterexample, X (@\_\_alpoge\_\_),
-2026-07-20; question posed by Akhil, map produced with Claude Fable 5. Independent press
+2026-07-20; question posed by Akhil, map produced with Claude Fable 5. Independent press % voice-ok: external attribution, as the announcement states it
 coverage: M. Sparkes, \emph{New Scientist}, 2026-07-20.
 \bibitem{BCW1982} H. Bass, E. H. Connell, D. Wright, The Jacobian conjecture: reduction of
 degree and formal expansion of the inverse, \emph{Bull. Amer. Math. Soc. (N.S.)} \textbf{7}
@@ -417,6 +434,13 @@ conjecture, \emph{Math. Ann.} \textbf{264} (1983), 303--313.
 \emph{Math. Z.} \textbf{217} (1994), 1--4.
 \bibitem{Rodriguez2026} L. O. Rodr\'iguez D\'iaz, On the origin of the Jacobian conjecture,
 \emph{C. R. Math.} \textbf{364} (2026), 363--370. arXiv:2512.23614.
+\bibitem{SLplanar} F. Santiba\~nez-Leal, Planar Keller maps after the counterexample:
+machine-certified Newton-polygon exclusions, the staircase transport, and the recalibrated
+frontier, preprint, 2026.
+\href{https://doi.org/10.5281/zenodo.21503367}{doi:10.5281/zenodo.21503367}.
+\bibitem{SLcascade} F. Santiba\~nez-Leal, The collateral impact of the three-dimensional
+Jacobian counterexample: a source-verified cascade, preprint, 2026.
+\href{https://doi.org/10.5281/zenodo.21503371}{doi:10.5281/zenodo.21503371}.
 \bibitem{Smale1998} S. Smale, Mathematical problems for the next century, \emph{Math.
 Intelligencer} \textbf{20} (1998), 7--15.
 \bibitem{Shaska2026} T. Shaska, Graded Keller maps and the Jacobian Conjecture,

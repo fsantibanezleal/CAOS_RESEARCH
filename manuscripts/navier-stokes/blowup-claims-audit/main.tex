@@ -20,13 +20,31 @@
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 \newcommand{\Q}{\mathbb Q}
-\newcommand{\versiondoi}{10.5281/zenodo.22821790}
+% Page-1 header block (conventions/manuscript-header-standard.md). The four document
+% macros are set by the publishing tool when the version DOI is reserved. At this text
+% width the two DOIs do not fit on one line of the box, so each has its own line.
+\newcommand{\doctype}{Preprint}
+\newcommand{\docversion}{v0.06}
+\newcommand{\docdate}{18 September 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.22823734}
 \newcommand{\conceptdoi}{10.5281/zenodo.22820520}
+\newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\recordurl}{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/analysis-pde/navier-stokes}
+\newcommand{\headerblock}{%
+\begin{center}
+\fbox{\parbox{0.94\textwidth}{\small\raggedright
+\textbf{\doctype} \quad$\cdot$\quad \docversion, \docdate \quad$\cdot$\quad Licence CC BY 4.0\\[2pt]
+CAOS Research open-problems programme \quad$\cdot$\quad problem \texttt{navier-stokes}\\[2pt]
+Version DOI \href{https://doi.org/\versiondoi}{\texttt{\versiondoi}}\\[2pt]
+Concept DOI (always latest) \href{https://doi.org/\conceptdoi}{\texttt{\conceptdoi}}\\[2pt]
+Not peer reviewed. Source code, data and computational records: \href{https://\docrepo}{\texttt{\docrepo}}
+}}
+\end{center}
+\vspace{4pt}}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Dissipation limits of layer cascades\textperiodcentered\ v0.04}
+\fancyhead[L]{\small CAOS Research \doctype}
+\fancyhead[R]{\small Dissipation limits of layer cascades\textperiodcentered\ \docversion}
 \fancyfoot[C]{\thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
 \allowdisplaybreaks[1]
@@ -35,20 +53,12 @@
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program\\
 \small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-09-17\\[2pt]\normalsize Version 0.04}
+\date{\docdate}
 
 \begin{document}
 \maketitle
 \thispagestyle{plain}
-\begin{center}\small
-\fbox{\parbox{0.92\textwidth}{\centering
-\textbf{PREPRINT}\textperiodcentered\ not peer reviewed\textperiodcentered\ CAOS Research\\
-Version 0.04\textperiodcentered\ 2026-09-17\textperiodcentered\ CC BY 4.0\\
-Version DOI: \href{https://doi.org/\versiondoi}{\versiondoi}\\
-Concept DOI: \href{https://doi.org/\conceptdoi}{\conceptdoi} (latest version)\\
-\href{\recordurl}{Sources, numerical data, and machine-checked computations}
-}}
-\end{center}
+\headerblock
 
 \begin{abstract}
 Multiscale layer constructions produce finite-time blowup for several fluid equations: for the
@@ -62,10 +72,12 @@ independent of every design constant: a cascade whose layers grow at rate $\sqrt
 gradient $A$ cannot exceed $\alpha=1/2$, and one whose layers grow at rate $A$ cannot exceed
 $\alpha=1$, both in the $|\nabla|^{\alpha}$ convention in which classical viscosity is $\alpha=2$.
 Neither mechanism reaches classical viscosity, by factors of four and two respectively. The second
-bound applies to the smooth-forcing design used for the inviscid Boussinesq and Euler results: its
-correction hierarchy, seed rule and frequency-ratio rule cap the exponent at
-$\alpha\le1.08\times10^{-3}$, attained when exactly one derivative of the force is controlled, which
-is $86$ times below the exponent already achieved with a force of finite regularity.
+bound applies to the smooth-forcing design used for the inviscid Boussinesq result: transcribing the
+exponent content of its force estimates, we show that they certify dissipation only up to
+$\alpha\le5.3\times10^{-4}$ at the published choices, and only up to $\alpha\le9.0\times10^{-3}$
+when every constant of the design is retuned in its favour, at least ten times below the exponent
+already achieved with a force of finite regularity. In every reading the ceiling is highest when the
+fewest derivatives of the force are controlled.
 
 Both bounds follow from the amplitude system of the construction together with one additional
 ingredient, the effect of fractional dissipation on a single layer, which we derive and then verify
@@ -93,9 +105,9 @@ frequency and gradient. This paper answers it at two levels: for the mechanism c
 
 \paragraph{Conventions.} We write dissipation as $-\nu(-\Delta)^{\alpha}$, so classical viscosity is
 $\alpha=1$; results quoted from the literature in the $|\nabla|^{\alpha}$ convention have twice our
-exponent, and we state which convention is in use whenever a number appears. The published
-hypodissipative threshold $(22-8\sqrt7)/9=0.09267$ in the $|\nabla|^{\alpha}$ convention is
-$0.04633$ in ours.
+exponent, and we state which convention is in use whenever a number appears. The
+hypodissipative threshold $(22-8\sqrt7)/9=0.09267$ of~\cite{cmz}, stated in the $|\nabla|^{\alpha}$
+convention, is $0.04633$ in ours.
 
 \section{The layer mechanism and its dissipative extension}\label{sec:mechanism}
 
@@ -183,7 +195,8 @@ gives $\alpha\le\gamma/(2p)<\gamma\delta/2<\gamma/2$.
 In the variables of Section~\ref{sec:design}, where frequencies satisfy
 $\lambda_{q}=\lambda_{q-1}^{Q}$, the exponents are related by $Q=p\delta$, and the bound
 $\alpha\le\gamma/(2p)$ reads $\alpha\le\gamma\delta/(2Q)$, which for $\gamma=1/2$ is the constraint
-$\alpha\le\delta/(4Q)$ used there.
+$\alpha\le m/(4Q)$ used there; the margin $\delta$ of (A1) is written $m$ in that section, where
+$\delta$ denotes the per-level parameter of the correction hierarchy.
 
 \begin{corollary}\label{cor:classical}
 No cascade of either type reaches classical viscosity. The pendulum mechanism falls short by a factor
@@ -194,7 +207,8 @@ design.
 The two ceilings differ by exactly the growth law: a layer that grows at the background gradient,
 rather than at its square root, gains a factor of two and nothing else in the argument changes. The
 published constructions sit well below their own class ceilings, the hypodissipative vortex-layer
-threshold by a factor $10.8$ and the design of Section~\ref{sec:design} by a factor $465$.
+threshold by a factor $10.8$ and the design of Section~\ref{sec:design}, at its published choices,
+by a factor $945$.
 
 \begin{remark}
 Corollary~\ref{cor:classical} is consistent with a choice visible in the literature: the construction
@@ -204,78 +218,107 @@ scale-local Reynolds number stays of order one.
 
 \section{A bound for the smooth-forcing design}\label{sec:design}
 
-The inviscid Boussinesq and Euler constructions with smooth forcing fix their design as follows. The
-frequencies satisfy $\lambda_{q}=\lambda_{q-1}^{Q_{q}}$ with $Q_{q}=Q^{\ast}+q$ and $Q^{\ast}\ge200$;
-the number of derivatives of the force controlled uniformly is $k_{q}$, constrained by
-$120k_{q}\le Q_{q}$; the localization error is cancelled through $J=2k+8$ correction levels, each
-gaining a factor $\Pi^{5}\lambda^{-(1-\delta)}$ where $\Pi\le\lambda^{5/Q}$; and the seed is chosen so
-that the remaining force stays below $\lambda^{-6}$. With the published amplitude rule a layer stops at
-$\lambda^{-7/8}$, so the margin of (A1) is $\delta=1/8$.
+The smooth-forcing Boussinesq construction~\cite{ab-boussinesq} controls the force of each layer in
+$C^{k}_{x,t}$ for $k\le d=k_{q}$ through a finite hierarchy of corrections, and its estimates are
+powers of the layer frequency $\lambda=\lambda_{q}$. The inputs, all displayed in that paper, are:
+the amplitude $Y\le C\lambda^{-(1-m)}$, with margin $m=1/8$; the frequency ratio
+$\lambda_{q}=\lambda_{q-1}^{Q}$ and the coefficient scale $\Pi\le\lambda^{5/Q}$; the per-level small
+parameter $\delta=\Pi^{5}Y$; $J=2d+8$ correction levels, so that the uncancelled remainder begins at
+grade $J+1$; a cost of $\lambda\Pi^{2}$ per physical derivative of an oscillatory profile and of
+$\Pi^{2}$ per derivative of a phase-independent one; and coefficient derivatives through order
+$9d+41$, which are available uniformly only through order $Q-1$ because the sums over future stages
+converge only in that range. The force of one layer at order $k\le d$ then consists of the following
+contributions.
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+contribution & size \\
+\midrule
+activation & $\Pi\lambda^{-d-6}(\lambda\Pi^{2})^{k}$, set by the choice of seed \\
+leading phase means & $\Pi^{2k+3}Y^{2}$ \\
+higher phase means & $\lambda Y\Pi^{2k-2}\delta^{4}$ and $Y\Pi^{2k-2}\delta^{3}$ \\
+remainders & $(\lambda\Pi^{2})^{k}\,\lambda Y\,\delta^{2d+9}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Each must be at most $\lambda^{-\tau}$ for some $\tau>0$ for the force series to converge. The
+construction takes $\tau=3/2$, which absorbs its constants into a logarithm, together with the
+sufficient rules $Q\ge201$ and $120d\le Q$.
 
 \begin{theorem}\label{thm:design}
-Under that design, carrying dissipation $-\nu(-\Delta)^{\alpha}$ requires
+Write $\pi=5/Q$. The estimates behind the table hold uniformly only if $Q\ge9d+42$, and its bounds
+are at most $\lambda^{-\tau}$ for all large $\lambda$ only if
 \[
-J\Bigl[(1-\delta)-\frac5Q\Bigr]\ \ge\ k+6
-\qquad\text{and}\qquad
-\alpha\le\frac{\delta}{4Q},
+m\le\frac{d+9-2d\pi-5\pi(2d+9)-\tau}{2d+10},\qquad
+m\le1-\frac{(2d+3)\pi+\tau}{2},\qquad
+m\le\frac{4-\tau-(2d+18)\pi}{5},
 \]
-the first from the force budget and the second from~\eqref{eq:growth}. With $Q=120k$, the smallest
-ratio the design permits, these give
-\[
-\delta\le1-\frac{k+6}{2k+8}-\frac1{24k},
-\qquad
-\alpha\le\frac{1}{480k}\Bigl(1-\frac{k+6}{2k+8}-\frac1{24k}\Bigr),
-\]
-whose maximum over $k\ge1$ is attained at $k=1$:
-\[
-\boxed{\ \alpha\le5.38\times10^{-4}\ \ \bigl(1.08\times10^{-3}\ \text{in the }|\nabla|^{\alpha}\ \text{convention}\bigr),\quad \delta\le0.2583,\ Q=120 .\ }
-\]
+and carrying dissipation $-\nu(-\Delta)^{\alpha}$ requires in addition $\alpha\le m/(4Q)$.
+Consequently, in our convention:
+\begin{enumerate}
+\item[(i)] at the published choices $\tau=3/2$, $Q\ge\max(201,120d)$, the exponent satisfies
+$\alpha\le2.65\times10^{-4}$, attained at $d=0$, $Q=201$, where the leading phase means bind;
+\item[(ii)] with every free choice released, $\tau\to0$ and only $Q\ge9d+42$, it satisfies
+$\alpha\le2.22\times10^{-3}$, attained at $d=0$, $Q=45$;
+\item[(iii)] even with the coefficient scale reduced to the previous wavelength, $\Pi\le\lambda^{1/Q}$,
+and the per-level parameter to $\Pi^{3}Y$, the least the correction estimates tolerate, it satisfies
+$\alpha\le4.48\times10^{-3}$.
+\end{enumerate}
+In each case the exponent is largest when the fewest derivatives are controlled, and it is at least
+ten times below the threshold $0.04633$ already reached with a force of finite regularity.
 \end{theorem}
 
 \begin{proof}
-Each correction level gains the factor $\Pi^{5}\lambda^{-(1-\delta)}$ and there are $J$ of them, so
-the residual force carries the exponent $-J[(1-\delta)-5/Q]$ in $\lambda$ after using
-$\Pi\le\lambda^{5/Q}$. Controlling $k$ derivatives of a field oscillating at frequency $\lambda$ costs
-$\lambda^{k}$, and the design requires the result to stay below $\lambda^{-6}$, which is the first
-display. The second is~\eqref{eq:growth} with $A_{q}=\lambda_{q-1}^{\delta}$ and
-$\lambda_{q}=\lambda_{q-1}^{Q}$, taking the insertion angle of order one, which is the most favourable
-case. Eliminating $\delta$ and setting $Q=120k$ gives the displayed formula; it is decreasing in $k$,
-since the bracket increases to $1/2$ while the prefactor decreases like $1/k$, so the maximum is at
-$k=1$.
+Taking the exponent of $\lambda$ in each row and requiring it to be at most $-\tau$ gives one linear
+inequality in $m$ per row; every exponent increases with $k$, so $k=d$ is the binding order. The
+remainder row gives the first display, the leading means the second, the vorticity higher means the
+third; the scalar higher means and the requirement that each level gain, $m<1-25/Q$, are weaker in
+every case considered. The activation row is met by the choice of seed and constrains nothing
+else. The condition $Q\ge9d+42$ is the requirement that order $9d+41$ lie within the range $Q-1$. The
+dissipation condition is~\eqref{eq:growth} with $A_{q}=\lambda_{q-1}^{m}$ and an insertion angle of
+order one, the most favourable case, which is Theorem~\ref{thm:class} with $p=Q/m$ and $\gamma=1/2$.
+The three consequences follow by maximizing $m/(4Q)$ over $d\ge0$ and integer $Q$ above each floor.
+As a check on the transcription, the published margin $m=1/8$ satisfies all three displayed
+inequalities at the published choices for every $d$, and at $\tau=3/2$ the second inequality is the
+construction's own condition $\Pi^{2d+3}\le\lambda^{1/4}$.
 \end{proof}
 
 \begin{center}
-\begin{tabular}{rrrrr}
+\begin{tabular}{rrrrrrr}
 \toprule
-$k$ & $J=2k+8$ & $Q=120k$ & $\delta\le$ & $\alpha\le$ \\
+ & \multicolumn{3}{c}{published choices} & \multicolumn{3}{c}{free choices released} \\
+$d$ & $Q$ & $m\le$ & $\alpha\le$ & $Q$ & $m\le$ & $\alpha\le$ \\
 \midrule
-$1$ & $10$ & $120$ & $0.2583$ & $5.38\times10^{-4}$ \\
-$2$ & $12$ & $240$ & $0.3125$ & $3.26\times10^{-4}$ \\
-$3$ & $14$ & $360$ & $0.3433$ & $2.38\times10^{-4}$ \\
-$10$ & $28$ & $1200$ & $0.4244$ & $8.84\times10^{-5}$ \\
-$1000$ & $2008$ & $120000$ & $0.4990$ & $1.04\times10^{-6}$ \\
+$0$ & $201$ & $0.213$ & $2.65\times10^{-4}$ & $45$ & $0.400$ & $2.22\times10^{-3}$ \\
+$1$ & $201$ & $0.188$ & $2.34\times10^{-4}$ & $57$ & $0.417$ & $1.83\times10^{-3}$ \\
+$2$ & $240$ & $0.177$ & $1.84\times10^{-4}$ & $63$ & $0.395$ & $1.57\times10^{-3}$ \\
+$5$ & $600$ & $0.196$ & $8.16\times10^{-5}$ & $87$ & $0.398$ & $1.14\times10^{-3}$ \\
+$10$ & $1200$ & $0.202$ & $4.21\times10^{-5}$ & $132$ & $0.425$ & $8.05\times10^{-4}$ \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-The bound is $86$ times below the exponent $0.04633$ already reached with a force in
-$L^{1}_{t}C^{1,\epsilon}_{x}\cap L^{\infty}_{t}L^{2}_{x}$, and the shortfall does not close by
-retuning: at that exponent the ratio rule cannot buy even one derivative. Smoothness of the force and
-fractional dissipation are purchased from a single budget in this design, with the frequency ratio as
-the currency: $120$ units of ratio per derivative, and the exponent inversely proportional to the
-ratio.
+In the $|\nabla|^{\alpha}$ convention the three ceilings are $5.29\times10^{-4}$,
+$4.44\times10^{-3}$ and $8.96\times10^{-3}$, against a proved threshold of $0.0927$: factors of $175$,
+$21$ and $10$. What ties the regularity of the force to the frequency ratio is the derivative range
+$Q\ge9d+42$, and what caps the margin is the correction hierarchy itself: two levels per derivative,
+each gaining $\lambda^{-(1-m)}$, drive the remainder bound on $m$ down to $1/2$ as $d$ grows, and at the
+published target the leading phase means, which are quadratic in the amplitude and gain nothing from
+the hierarchy, hold it near $1/4$.
 
 \begin{remark}\label{rem:levers}
-Three quantities enter the proof, so a dissipative version of this design must move one of them:
-decouple the correction levels from the frequency ratio, so that $Q$ need not grow with $k$; raise the
-amplitude margin beyond $1/2$, which the hierarchy as stated forbids; or change the growth law, since
-the factor four in $\alpha\le\delta/(4Q)$ comes from the rate $\sqrt A$ and becomes a factor two for
-vortex stretching.
+A dissipative version of this design must therefore change one of three things: the range of
+uniform coefficient bounds, which is what forces $Q$ to grow with $d$; the treatment of the
+nonoscillatory phase means, which no number of correction levels reduces; or the growth law, since
+the factor four in $\alpha\le m/(4Q)$ comes from the rate $\sqrt A$ and becomes a factor two for
+vortex stretching. The bound concerns what the estimates of the design can certify, not the existence
+of any solution: a different correction scheme is not covered, and Theorem~\ref{thm:class} is the only
+statement here independent of the design.
 \end{remark}
 
 \section{The exponent budget behind the published threshold}\label{sec:budget}
 
-The hypodissipative Navier-Stokes construction writes every quantity as a power of one base: the
+The hypodissipative Navier-Stokes construction~\cite{cmz} writes every quantity as a power of one base: the
 frequency of layer $n$ is $M_{n}=N^{R^{n}}$, the amplitude $A_{n}=N^{aR^{n}}$, the localization scale
 $L_{n}=N^{bR^{n}}$, and $s>0$ is the H\"older margin of the force. Its force estimates give four
 constraints:
@@ -392,9 +435,10 @@ enough for the layer to stay ahead.
 
 \section{The status of the announced results}
 
-The two September 2026 announcements are accompanied by machine-checked certificates. For the
+The two September 2026 announcements~\cite{openai-ns,openai-euler} are accompanied by
+machine-checked certificates. For the
 Navier-Stokes and Euler development, the headline statements match the forced alternatives of the
-official problem statement clause by clause; the development builds with no incomplete proofs and
+official problem statement~\cite{fefferman} clause by clause; the development builds with no incomplete proofs and
 its four headline theorems depend only on the three standard axioms; and every constant in the closure
 of both root modules replays through the Lean kernel from an empty environment at the pinned toolchain
 version. The reference statement is adapted from an independently maintained collection of formalized
@@ -404,20 +448,21 @@ detects environment manipulation rather than serving as an external verifier.
 
 \section{Scope}
 
-The bounds of Sections~\ref{sec:class} and~\ref{sec:design} are necessary conditions for growth in
-the layer mechanism, derived from the amplitude system, the amplification identity and the
-dissipative term~\eqref{eq:diss}. They are exponent statements: constants, logarithmic factors and the
-corrections that make the localized ansatz exact are not tracked, and the published inviscid results
-are not affected by them, since those results carry no dissipation. The mechanism is due to C\'ordoba
-and Mart\'inez-Zoroa, extended to smooth forcing by Alpog\'e and Buckmaster; nothing in this paper
+The bound of Section~\ref{sec:class} is a necessary condition for growth in the layer mechanism,
+derived from the amplitude system, the amplification identity and the dissipative
+term~\eqref{eq:diss}. The bound of Section~\ref{sec:design} concerns what the estimates of one design
+can certify: it tracks that design's corrections through the exponents of its published estimates,
+but not constants or logarithmic factors, and it assumes the most favourable insertion angle. Neither
+bound affects the published inviscid results, which carry no dissipation. The mechanism is due to C\'ordoba
+and Mart\'inez-Zoroa~\cite{clsmz,cmz}, extended to smooth forcing by Alpog\'e and
+Buckmaster~\cite{ab-boussinesq,ab-euler,ab-ipm}; nothing in this paper
 establishes blowup for any equation or improves any published threshold.
 
-An earlier version of this paper stated that the value $p=11/4+\sqrt7$, obtained by evaluating the
-relation $\alpha_{c}=1/(4p)$ at the published threshold, carried information about that threshold. It
-does not: the relation is constraint \textbf{D} saturated, which the construction saturates at every
-$\alpha$, so the identity holds along the whole family, and its algebraic form is automatic because
-$\alpha_{0}\in\Q(\sqrt7)$ and the norm of $22-8\sqrt7$ is a perfect square. That statement is
-withdrawn.
+Evaluating the relation $\alpha_{c}=1/(4p)$ at the published threshold gives $p=11/4+\sqrt7$. This
+value carries no information about the threshold: the relation is constraint \textbf{D} saturated,
+which the construction saturates at every $\alpha$, so the identity holds along the whole family,
+and its algebraic form is automatic because $\alpha_{0}\in\Q(\sqrt7)$ and the norm of
+$22-8\sqrt7$ is a perfect square.
 
 \section*{Data and code}
 

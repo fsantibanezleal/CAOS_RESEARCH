@@ -3,6 +3,37 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.67.000] - 2026-09-18
+
+### Added
+- navier-stokes: the force budget of the smooth-forcing Boussinesq construction transcribed into
+  exponent form from its Sections 5 to 8 (`nslib/ab_force_budget.py`). Its estimates can certify
+  dissipation only up to `5.29e-04` as published (`|grad|^alpha` convention) and `8.96e-03` under any
+  retuning, at least ten times below the proved rough-force threshold. The ratio floor they force is
+  `Q >= 9d + 42`. This replaces the v0.04 design bound of `1.08e-03`, which came from a misread
+  inequality. Manuscript v0.05 was published with the corrected Theorem 4.1, then v0.06 in scientific
+  voice.
+- central-configurations: the two-pair stratum campaign for `n = 6`. It includes the rank-floor lemma
+  pieces 1 to 13, verified interval coverings of the core, collision tube, far, corner and merge
+  regions, and the compact-gauge atlas with a seam gate. Every residue of the (2,2) atlas is
+  classified. The degenerate cross configurations are proved finite, and the collinear degeneracy is
+  shown to be unique to (0,3). Manuscript v0.06 to v0.08.
+- tau-conjecture: the nine-gate multiplicative case is decided (EXP-012, 1,048,460,912 states, no
+  seven-rooter). The additive window decides 99.998% of the space (EXP-014). Other results:
+  - `zpmax(tau) = 2^(tau-1)` over `F_p`;
+  - the real root ladder to `tau = 6`;
+  - `zmax(7) = 5` and `zmax(8) = 6` confirmed from stored histograms;
+  - a fail-safe cross-document consistency gate over 59 documents.
+
+### Changed
+- Manuscripts are written in scientific voice. Thirteen papers were revised and republished on
+  Zenodo.
+- Corrections found by adversarial passes are recorded in place, with the original text kept:
+  - tau-conjecture: the refutation count, the Chebyshev comparison, the zpmax proof gap, and the
+    count 134,497 to 134,494;
+  - navier-stokes: the design bound, with correction notes on wiki page 8 and the 2026-09-16
+    dossiers.
+
 ## [0.66.000] - 2026-09-17
 
 ### Added
