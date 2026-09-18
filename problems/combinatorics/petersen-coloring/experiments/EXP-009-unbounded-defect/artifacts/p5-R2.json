@@ -1,0 +1,71 @@
+{
+ "object": "R2",
+ "pairs": {
+  "0-21": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 144.366,
+   "same_copy": true
+  },
+  "0-30": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 294.175,
+   "same_copy": true
+  },
+  "2-23": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 154.892,
+   "same_copy": true
+  },
+  "2-32": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 198.549,
+   "same_copy": true
+  },
+  "4-25": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 87.203,
+   "same_copy": true
+  },
+  "4-34": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 109.495,
+   "same_copy": true
+  },
+  "6-27": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 181.822,
+   "same_copy": true
+  },
+  "6-36": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 140.155,
+   "same_copy": true
+  },
+  "8-29": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 135.237,
+   "same_copy": true
+  },
+  "8-38": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 81.403,
+   "same_copy": true
+  },
+  "10-31": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 92.986,
+   "same_copy": true
+  }
+ }
+}

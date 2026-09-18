@@ -1,0 +1,30 @@
+{
+ "object": "R2",
+ "copies": 2,
+ "structure": {
+  "n": 104,
+  "m": 156,
+  "cubic": true,
+  "digest": "0fdb023107fddff5a6953d30be0bbca42321ca0a5be7b2ef65c5fea90d67d0c4",
+  "girth": 5,
+  "edge_connectivity": 2
+ },
+ "bounds": {
+  "2": {
+   "instance": "R2_ab_le2",
+   "status": "TIMEOUT",
+   "seconds": 1800.159,
+   "cnf_sha256": "e4d61532ab77fb932a2f951e1bd7b971c9cb443fd963e6cc5b4732f1b1932273",
+   "variables": 2964,
+   "clauses": 11073
+  },
+  "3": {
+   "instance": "R2_ab_le3",
+   "status": "TIMEOUT",
+   "seconds": 1802.596,
+   "cnf_sha256": "3b170fc68fc2c0f5fed327a28b52b72ec380f0d08194f98b63af91f339429c9f",
+   "variables": 3120,
+   "clauses": 11384
+  }
+ }
+}

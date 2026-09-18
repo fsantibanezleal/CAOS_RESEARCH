@@ -28,6 +28,10 @@
 \newcommand{\Gmain}{G_{112}}
 \newcommand{\Gsym}{H_{112}}
 \newcommand{\Gfty}{G_{52}}
+\newcommand{\Gftyb}{G'_{52}}
+\newcommand{\Gsix}{G_{68}}
+\newcommand{\pd}{\mathrm{pd}}
+\newcommand{\ab}{\mathrm{ab}}
 \newcommand{\Zfive}{\mathbb{Z}_5}
 
 % Page-1 header block (conventions/manuscript-header-standard.md). The four document
@@ -127,8 +131,8 @@ Berge conjecture (perfect matching index at most~5) and the Fan--Raspaud conject
 perfect matchings with empty intersection) follow from Berge--Fulkerson. Every 3-edge-colorable
 cubic graph is trivially Petersen colorable, so the whole ladder concerns snarks. Exhaustive
 generation had verified the conjecture for every snark on at most 36 vertices~\cite{BGHM2013} and
-for every weak snark on 36 vertices~\cite{GMS2019}, so any counterexample has at least 38
-vertices~\cite{GJMMM2026}.
+for every weak snark on 36 vertices~\cite{GMS2019}; an exhaustive check of the weak snarks on 38
+vertices shows that any counterexample has at least 40 vertices~\cite{GJMMMU2026}.
 
 \subsection{The disproof}
 
@@ -140,13 +144,18 @@ composes copies of the 4-pole $F$ (the Petersen graph minus the endpoints of one
 six-poles: $L = 4F + C$ and $\Gmain = 3L + C$. Jooken~\cite{Jooken2026} gave a human-checkable
 proof through the Petersen-coloring sets of $F$ and $L$ and a 4-clique obstruction in the line
 graph of $\PG$. Goedgebeur, Jooken, M\'a\v{c}ajov\'a, Mattiolo and Mazzuoccolo~\cite{GJMMM2026}
-then gave a cyclically 4-edge-connected girth-5 counterexample $\Gfty$ on 52 vertices, infinite
-cyclically 4-edge-connected families, and the frontier $38 \le n_{\min} \le 52$ for the smallest
-counterexample; they verified a strong normal 6-edge-coloring of one 112-vertex graph and left
-open whether every bridgeless cubic graph has a normal 6-edge-coloring (their Conjecture~6,
-attributed to \v{S}\'amal) and whether cyclically 5-edge-connected counterexamples exist. A
-68-vertex counterexample was announced on a social network without a retrievable edge list and is
-not treated here.
+then gave a cyclically 4-edge-connected girth-5 counterexample $\Gfty$ on 52 vertices and infinite
+cyclically 4-edge-connected families. The extended account by the same authors and
+Ulyanov~\cite{GJMMMU2026} gives a second counterexample $\Gftyb$ on 52 vertices, a purely
+theoretical proof for both, counterexamples of every even order at least 60, and the bounds
+$40 \le n_{\min} \le 52$ for the order of a smallest counterexample. It leaves open whether every
+bridgeless cubic graph has a normal 6-edge-coloring (a conjecture attributed to \v{S}\'amal) and
+whether cyclically 5-edge-connected counterexamples exist. A further counterexample $\Gsix$ on 68
+vertices, credited there to an announcement on a social network, is available with the other
+four from the House of Graphs~\cite{HoG}. For these five graphs~\cite{GJMMMU2026} reports
+Berge--Fulkerson covers, perfect matching index at most~4, 5-cycle double covers, strong normal
+6-edge-colorings, and proper 5-edge-colorings with exactly two abnormal edges; the corresponding
+statements below were obtained independently.
 
 \subsection{What this paper does}
 
@@ -410,6 +419,14 @@ Petersen coloring conjecture, arXiv:2608.10028v2 (2026).
 \bibitem{GJMMM2026} J.~Goedgebeur, J.~Jooken, E.~M\'a\v{c}ajov\'a, D.~Mattiolo, G.~Mazzuoccolo,
 A smaller counterexample and infinite family of counterexamples to the Petersen Coloring
 Conjecture, Zenodo (2026), \href{https://doi.org/10.5281/zenodo.21933785}{doi:10.5281/zenodo.21933785}.
+\bibitem{GJMMMU2026} J.~Goedgebeur, J.~Jooken, E.~M\'a\v{c}ajov\'a, D.~Mattiolo, G.~Mazzuoccolo,
+S.~Ulyanov, Disproving the Petersen Coloring Conjecture: theoretical analysis and an infinite
+family of counterexamples, arXiv:2608.10028v3 (2026).
+\bibitem{MMM2021} D.~Mattiolo, G.~Mazzuoccolo, V.~Mkrtchyan, On sublinear approximations for the
+Petersen coloring conjecture, Bull. Inst. Combin. Appl. 92 (2021), 78--90; arXiv:2104.09241.
+\bibitem{HoG} K.~Coolsaet, S.~D'hondt, J.~Goedgebeur, House of Graphs 2.0: a database of
+interesting graphs and more, Discrete Appl. Math. 325 (2023), 97--107;
+\url{https://houseofgraphs.org}.
 \bibitem{MazzMkrt2020} G.~Mazzuoccolo, V.~V. Mkrtchyan, Normal edge-colorings of cubic graphs,
 J. Graph Theory 94 (2020), 75--91, \href{https://doi.org/10.1002/jgt.22507}{doi:10.1002/jgt.22507}.
 \bibitem{BGHM2013} G.~Brinkmann, J.~Goedgebeur, J.~H\"agglund, K.~Markstr\"om, Generation and

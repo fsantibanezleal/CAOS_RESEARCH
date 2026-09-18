@@ -1,0 +1,30 @@
+{
+ "object": "K4G52",
+ "copies": 4,
+ "structure": {
+  "n": 204,
+  "m": 306,
+  "cubic": true,
+  "digest": "16cf80ec5c7f61405704aef62ecc54469b37804a99decb5ea8575780a7e2efb0",
+  "girth": 5,
+  "edge_connectivity": 3
+ },
+ "bounds": {
+  "4": {
+   "instance": "K4G52_ab_le4",
+   "status": "TIMEOUT",
+   "seconds": 1803.312,
+   "cnf_sha256": "c7f46457b7d95b4384a9827d306bcc732b5eeed9c4180b06c01aa847a9aa596b",
+   "variables": 6426,
+   "clauses": 22945
+  },
+  "5": {
+   "instance": "K4G52_ab_le5",
+   "status": "TIMEOUT",
+   "seconds": 1802.01,
+   "cnf_sha256": "9ed6727b3965723cab3c2976c7862a4150589c4126bb14c8ce93f6c0d3dccfa1",
+   "variables": 6732,
+   "clauses": 23556
+  }
+ }
+}
