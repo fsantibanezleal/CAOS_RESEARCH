@@ -65,3 +65,12 @@ undecided and the least satisfiable bound is then an upper bound only.
 
 CONFIRMED if P2 and P5 pass and P3 is decided for `R_2` and `R_3` at least; refuted expectations
 are preserved with their values.
+
+## Addendum 1 (2026-09-18 12:40), before the instances named here ran
+
+The cardinality instance `pd(R_4) <= 4` hit the 30-minute limit on a saturated machine; bound 5
+is SAT (checker defect 5, two bad vertices in one copy). To decide whether 4 is attained, a
+witness search by designated relaxation is added: relax exactly one vertex in each copy (the
+local indices of the bad vertices found for `R_3` and `R_4`, a few combinations), which is fast
+when satisfiable. A SAT answer with checker defect 4 gives `pd(R_4) = 4`; UNSAT answers decide
+nothing about `pd(R_4)`. Budget 10 minutes per combination, at most 12 combinations.

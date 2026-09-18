@@ -66,6 +66,12 @@
    "verified": true,
    "seconds": 92.986,
    "same_copy": true
+  },
+  "10-40": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 113.302,
+   "same_copy": true
   }
  }
 }
