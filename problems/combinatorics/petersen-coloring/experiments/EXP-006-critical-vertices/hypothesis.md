@@ -115,3 +115,31 @@ was critical, the natural strengthening is declared:
   critical pair? Committed expectation: yes for both. A single verified UNSAT pair refutes the
   expectation and is reported as a structural distinction from `G52`. Budget: 10 minutes per
   instance, whole sweep per graph under 8 hours; undecided pairs listed.
+
+## Addendum 4 declared 2026-09-18 10:25, before any bound-2 normal-5 instance ran
+
+State: the single-edge relaxation sweep of `G52` (a proper 5-edge-coloring that is normal at every
+edge except possibly one designated edge) has 42 of 78 edges refuted with verified proofs (edges 0
+to 41); the sweep keeps running as a redundancy.
+
+Symmetry reduction, fixed now. If `a` is an automorphism of `G` and the instance with designated
+edge `e` is unsatisfiable, so is the instance with designated edge `a(e)` (compose a coloring with
+`a`). `pcclib/automorphisms.py` lists automorphisms; downstream only the re-checked fact that each
+listed permutation is an automorphism is used. Observation made from the graph alone (no solver
+run): `G52` has 6 listed automorphisms and 14 edge orbits, `H112` has 6 and 30, `G112` has only the
+identity.
+
+Predictions:
+
+- P7: every one of the 14 edge orbits of `G52` contains an edge already refuted with a verified
+  proof, so no proper 5-edge-coloring of `G52` has exactly one abnormal edge, and the normal-5
+  defect of `G52` is at least 2.
+- P8: each of the three graphs has a proper 5-edge-coloring with exactly two abnormal edges
+  (bound 2 of the EXP-004 cardinality encoding is SAT, and the independent checker counts 2).
+  Goedgebeur et al. (arXiv:2608.10028v3, 2026-09-11) report such colorings, so P8 is a
+  reproduction with our own witness; P7 is the matching lower bound, which v3 does not state.
+  Committed expectation: both hold, so the normal-5 defect of `G52` is exactly 2.
+
+One-sidedness: P7 is a proof (DRAT certificates plus checked automorphisms); P8 is an explicit
+witness. The 112-vertex graphs get the upper bound only; their single-edge sweeps (168 and 30
+orbit representatives) are not run in this addendum. Budget: 30 minutes per bound-2 instance.
