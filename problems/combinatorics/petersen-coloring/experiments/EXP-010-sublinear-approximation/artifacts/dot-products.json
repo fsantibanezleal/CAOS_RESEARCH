@@ -15,5 +15,22 @@
    "seconds": 32.637,
    "checker_defect": 2
   }
+ },
+ "D_0_4_0": {
+  "n": 102,
+  "cubic": true,
+  "girth": 5,
+  "edge_connectivity": 3,
+  "digest": "43e48e7abdbad09fb7b1f10fbd2dc5c1f966bbe2f37de60e9b1b5ef87ae6f81a",
+  "bound0": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 459.566
+  },
+  "bound2": {
+   "status": "SAT",
+   "seconds": 15.24,
+   "checker_defect": 2
+  }
  }
 }

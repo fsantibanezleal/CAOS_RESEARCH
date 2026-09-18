@@ -72,6 +72,204 @@
     1,
     2
    ]
+  },
+  "26": {
+   "1": {
+    "status": "SAT",
+    "seconds": 6.599,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 14.1,
+    "verified": true,
+    "proof_sha256": "19c11f967eb43fa0af1d1d8e75dc0076c141174caa739ac2f2513a4ed5f4b03d"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 10.517,
+    "verified": true,
+    "proof_sha256": "da4cf34c0af07d17520a8aa941463dbc317440bdfec93771f7a0956b98af97ea"
+   },
+   "dist_set": [
+    1
+   ]
+  },
+  "32": {
+   "1": {
+    "status": "SAT",
+    "seconds": 1.723,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "SAT",
+    "seconds": 5.195,
+    "checker_ok": true
+   },
+   "3": {
+    "status": "SAT",
+    "seconds": 4.259,
+    "checker_ok": true
+   },
+   "dist_set": [
+    1,
+    2,
+    3
+   ]
+  },
+  "38": {
+   "1": {
+    "status": "SAT",
+    "seconds": 2.888,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "SAT",
+    "seconds": 11.143,
+    "checker_ok": true
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 7.238,
+    "verified": true,
+    "proof_sha256": "b7e69190e29d34a8fe6393bcc1b7f6eebf1aa0d45a29c48f337d8da4c98cb054"
+   },
+   "dist_set": [
+    1,
+    2
+   ]
+  },
+  "44": {
+   "1": {
+    "status": "SAT",
+    "seconds": 2.988,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "SAT",
+    "seconds": 5.419,
+    "checker_ok": true
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 11.276,
+    "verified": true,
+    "proof_sha256": "171560de0345ab85f3ca2a5e3cf00ce28c6774e79a8104c39b6cad83a2bcf6f7"
+   },
+   "dist_set": [
+    1,
+    2
+   ]
+  },
+  "50": {
+   "1": {
+    "status": "SAT",
+    "seconds": 4.699,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 34.618,
+    "verified": true,
+    "proof_sha256": "092864cfd96bbd88077e30d2016b59756295ede4bab403b8a7cd4c19b3a98fd9"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 22.61,
+    "verified": true,
+    "proof_sha256": "d4fe7a25cb1407a099f64a58ed53133ca0c25d2b7517de7a646a3c97ea858719"
+   },
+   "dist_set": [
+    1
+   ]
+  },
+  "56": {
+   "1": {
+    "status": "SAT",
+    "seconds": 4.148,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 12.145,
+    "verified": true,
+    "proof_sha256": "145426b2d31ebb23dea28a1acb18a0c575ce9f4e72eca8eab9dea16a9d1f8ce5"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 10.781,
+    "verified": true,
+    "proof_sha256": "dee3b36835f1f4c38c17901c7fbd1c6adc14475522a66b5f51d7b2039b3d764c"
+   },
+   "dist_set": [
+    1
+   ]
+  },
+  "62": {
+   "1": {
+    "status": "SAT",
+    "seconds": 1.965,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 12.574,
+    "verified": true,
+    "proof_sha256": "0a574a5ad75c66e749b7489acfb83125ff7b8004788cfbabe65c73079d04591e"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 7.996,
+    "verified": true,
+    "proof_sha256": "c9672e0d84c07ecb300a3a9fed2f95186382de639d6fea8f57bbb2a3e493ad6e"
+   },
+   "dist_set": [
+    1
+   ]
+  },
+  "68": {
+   "1": {
+    "status": "SAT",
+    "seconds": 1.832,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 12.362,
+    "verified": true,
+    "proof_sha256": "09dd583562d0b714d4d3a738e0da2af9add3fba4d80ce7eb3c11bf879c1bb514"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 8.513,
+    "verified": true,
+    "proof_sha256": "e98270c1ff73df0f517640313920cb635d55a592146724c9a5ff0b13589edc06"
+   },
+   "dist_set": [
+    1
+   ]
+  },
+  "74": {
+   "1": {
+    "status": "SAT",
+    "seconds": 1.981,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 13.717,
+    "verified": true,
+    "proof_sha256": "0ed154116b809bd46ed54b75d287abe09c670df69d8ff8ddfbd46a98e602c00a"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 13.303,
+    "verified": true,
+    "proof_sha256": "6850afabb7f0743b73baedc054bc53d800bf3923e041c1495ee01a7f7fdd5ee7"
+   },
+   "dist_set": [
+    1
+   ]
   }
  }
 }

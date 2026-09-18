@@ -1,0 +1,79 @@
+\section{Results}\label{sec:results}
+
+The graphs are $\Ga$ and $\Gb$ (House of Graphs entries 57244 and 57278), both cubic of girth~5
+and cyclically 4-edge-connected. Their non-colorability by the Petersen graph was confirmed
+independently of the published proofs: the edge-map formula with target $\PG$ is refuted with
+checked proofs for both graphs, and so is the formula for normal 5-edge-colorings.
+
+%%RESULTS_THEOREM%%
+
+%%RESULTS_TABLE%%
+
+In kind (O) with $k$ close to 52 almost all fibers are singletons and the refutation is short; the
+instances become harder as $k$ decreases and the fibers grow, and the certification of the final
+formula dominates the running time. No instance required a connectivity or bridge clause: every
+formula was already unsatisfiable without them, so the statement holds for colorings of kinds (O),
+(E0), (E1) by arbitrary loopless cubic graphs, connected or not.
+
+\section{Remarks and questions}\label{sec:remarks}
+
+\emph{Smallest counterexamples.} A smallest counterexample to the Petersen coloring conjecture
+belongs to $\Hthree$, and its order lies between 40 and 52~\cite{GJMMMU2026}. Membership of $\Ga$
+and $\Gb$ in $\Hthree$ is necessary for them to be smallest counterexamples; it is not sufficient,
+since $\Hthree$ may contain graphs of different orders that do not color one another.
+
+\emph{The other known counterexamples.} The same question is open for the counterexample on 68
+vertices and for the two on 112 vertices. An affirmative answer to ``is it colored by a smaller
+bridgeless cubic graph'' would exhibit a smaller counterexample, possibly one of $\Ga$, $\Gb$. The
+formulas of Section~\ref{sec:encoding} apply without change; the largest has target order 110.
+
+\emph{Why the fiber lemmas matter.} Without Lemmas~\ref{lem:parity} and~\ref{lem:unused} the
+unknown target has vertices and edges that no edge of $G$ constrains. For $\Ga$ the loop of
+Section~\ref{sec:encoding} then produced, for each of the ten target orders from 32 to 50, about
+two thousand targets with a bridge in half an hour, each excluded by one clause, without deciding
+any order. With the lemmas every edge of the target is the image of an edge of $G$, and every
+order was decided without a single such clause.
+
+\emph{A question.} Is there a counterexample to the Petersen coloring conjecture that is colored
+by a smaller counterexample? By Lemma~\ref{lem:parity} the fibers of such a coloring are all odd
+or all even, and by Proposition~\ref{prop:nminus2} a coloring with every target vertex used needs
+target order at most $n - 4$ when the graph has no triangles.
+
+\section*{Data availability}
+
+{\raggedright
+The edge lists, encoders, checkers, runners, results and the hashes of all formulas and proofs
+are in the repository \url{https://github.com/fsantibanezleal/CAOS_RESEARCH}, under
+\path{problems/combinatorics/petersen-coloring/}. The computations of this paper are archived in
+the folder \path{experiments/EXP-007-colorable-only-by-itself} of that directory (runner
+\path{run_inc.py}, encoder \path{code/pcclib/hcolor.py}); the controls of
+Section~\ref{sec:encoding} are in its \path{artifacts/agreement} folder. The solvers are CaDiCaL
+1.7.3 and the CaDiCaL 1.9.5 build of PySAT; proofs were checked with \texttt{drat-trim}.
+\par}
+
+\begin{thebibliography}{99}
+\bibitem{Jaeger1988} F.~Jaeger, Nowhere-zero flow problems, in: L.~W. Beineke, R.~J. Wilson
+(eds.), Selected Topics in Graph Theory 3, Academic Press, London, 1988, 71--95.
+\bibitem{Putman2026} B.~Putman, A 112-vertex counterexample to the Petersen Coloring Conjecture,
+Zenodo v1.1.0 (2026), \href{https://doi.org/10.5281/zenodo.21845291}{doi:10.5281/zenodo.21845291};
+arXiv:2608.10012.
+\bibitem{GJMMMU2026} J.~Goedgebeur, J.~Jooken, E.~M\'a\v{c}ajov\'a, D.~Mattiolo, G.~Mazzuoccolo,
+S.~Ulyanov, Disproving the Petersen Coloring Conjecture: theoretical analysis and an infinite
+family of counterexamples, arXiv:2608.10028v3 (2026).
+\bibitem{MMSW2025} Y.~Ma, D.~Mattiolo, E.~Steffen, I.~H. Wolf, Sets of $r$-graphs that color all
+$r$-graphs, Combinatorica 45 (2025), Article 16,
+\href{https://doi.org/10.1007/s00493-025-00144-4}{doi:10.1007/s00493-025-00144-4}; arXiv:2305.08619.
+\bibitem{Fleischner1992} H.~Fleischner, Spanning eulerian subgraphs, the splitting lemma, and
+Petersen's theorem, Discrete Math. 101 (1992), 33--37.
+\bibitem{KaiserKLW2007} T.~Kaiser, R.~Ku\v{z}el, H.~Li, G.~Wang, A note on $k$-walks in bridgeless
+graphs, Graphs Combin. 23 (2007), 303--308.
+\bibitem{HoG} K.~Coolsaet, S.~D'hondt, J.~Goedgebeur, House of Graphs 2.0: a database of
+interesting graphs and more, Discrete Appl. Math. 325 (2023), 97--107;
+\url{https://houseofgraphs.org}.
+\bibitem{CaDiCaL} A.~Biere, T.~Faller, K.~Fazekas, M.~Fleury, N.~Froleyks, F.~Pollitt, CaDiCaL 2.0,
+in: Computer Aided Verification (CAV 2024), Lecture Notes in Comput. Sci. 14681, Springer, 2024,
+133--152.
+\bibitem{DRATtrim} N.~Wetzler, M.~J.~H. Heule, W.~A. Hunt Jr., DRAT-trim: efficient checking and
+trimming using expressive clausal proofs, in: Theory and Applications of Satisfiability Testing
+(SAT 2014), Lecture Notes in Comput. Sci. 8561, Springer, 2014, 422--429.
+\end{thebibliography}
