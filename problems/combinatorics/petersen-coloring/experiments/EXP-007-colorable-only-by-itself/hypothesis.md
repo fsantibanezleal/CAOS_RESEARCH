@@ -123,7 +123,7 @@ Method changes, fixed before the target runs:
   UNSAT with verified proofs after 82 and 139 rounds; `J5`, `k = 10` SAT with a checker-accepted
   target that is itself Petersen colorable).
 
-## Addendum 2 declared 2026-09-18 10:20, after attempt 1 was stopped without any decision
+## Addendum 2 declared 2026-09-18 09:59 (commit 755fe329), after attempt 1 was stopped without any decision
 
 Attempt 1 (the runner above, all 25 orders, ten at a time) was stopped after about 35 minutes:
 the ten orders that had started (`k` from 32 to 50) had each learned 1,800 to 2,400 lazy cuts, more

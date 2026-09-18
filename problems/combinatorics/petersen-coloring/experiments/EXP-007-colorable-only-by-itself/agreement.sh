@@ -12,5 +12,5 @@ for k in 2 4 6 8 10 12 14 16 18; do jobs="$jobs J5:$k"; done
 for j in $jobs; do for m in red unred; do echo "$j:$m"; done; done | xargs -P 14 -I{} sh -c '
   g=$(echo {} | cut -d: -f1); k=$(echo {} | cut -d: -f2); m=$(echo {} | cut -d: -f3)
   flag=""; [ "$m" = "unred" ] && flag="--unreduced"
-  .venv/Scripts/python.exe '$EXP'/run_inc.py --graph $g --k $k --cap 3600 --suffix -$m $flag > '$EXP'/artifacts/agreement/$g-k$k-$m.log 2>&1'
+  .venv/Scripts/python.exe '$EXP'/run_inc.py --graph $g --k $k --cap 3600 --suffix=-$m $flag > '$EXP'/artifacts/agreement/$g-k$k-$m.log 2>&1'
 echo done > $EXP/artifacts/agreement/all.done

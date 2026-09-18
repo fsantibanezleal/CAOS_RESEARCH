@@ -1,0 +1,18 @@
+{
+ "graph": "J3",
+ "k": 6,
+ "status": "UNSAT",
+ "verified": true,
+ "proof_bytes": 142603,
+ "proof_sha256": "cf36f64c9aac67651bac8f2f15e6be688b7354d73e31996335b37ea9ce79ba3b",
+ "cnf_sha256": "f5bd61054130d0d181f77d7e735eb2d99ad9f46e73ade6d7d4ff8f646d4d607d",
+ "reduced": true,
+ "variables": 1414,
+ "clauses": 9451,
+ "certify_solve_seconds": 1.571,
+ "check_seconds": 1.905,
+ "rounds": 1,
+ "learned_cuts": 0,
+ "seconds": 4.9,
+ "learned": []
+}
