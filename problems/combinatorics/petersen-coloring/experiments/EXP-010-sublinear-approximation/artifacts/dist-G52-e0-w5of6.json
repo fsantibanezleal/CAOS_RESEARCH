@@ -1,0 +1,33 @@
+{
+ "graph": "G52",
+ "e0": 0,
+ "label_representatives": {
+  "1": 1,
+  "2": 4,
+  "3": 3
+ },
+ "edges": {
+  "10": {
+   "1": {
+    "status": "SAT",
+    "seconds": 5.358,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 132.586,
+    "verified": true,
+    "proof_sha256": "ec7123f49423448b80c523ac0618522d6be382e70c4050462cbf2b9e9a11b65d"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 67.048,
+    "verified": true,
+    "proof_sha256": "ec1624c8fd9cc688f75ae31a56c1f68e8e25e1cd3a62b130440f1cabc44abf5f"
+   },
+   "dist_set": [
+    1
+   ]
+  }
+ }
+}

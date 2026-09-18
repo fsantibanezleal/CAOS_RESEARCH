@@ -69,7 +69,7 @@ graphs have released the machine.
 Each prediction PASS, REFUTED or UNDECIDED on its own; the experiment is CONFIRMED if P1, P2, P4
 pass and P3, P5, P6 are decided (whatever their direction, with refuted expectations preserved).
 
-## Addendum 1 (2026-09-18, 12:15): the edge-orbit stage of P6 is withdrawn
+## Addendum 1 (2026-09-18, 12:10): the edge-orbit stage of P6 is withdrawn
 
 The lower bound 2 of P6 needs no computation. Mattiolo, Mazzuoccolo, Mkrtchyan (arXiv:2104.09241,
 Proposition 3, read 2026-09-18 `[V]`) prove that no proper 5-edge-coloring of a cubic graph has

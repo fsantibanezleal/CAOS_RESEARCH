@@ -86,7 +86,7 @@ CPU only. 10 minutes per 4-pole; 6 hours overall; the cyclic connectivity check 
 CONFIRMED if P1, P2 pass and P3 holds with P4; REFUTED (of P3) if every orbit representative of
 all five graphs is colorable; INCONCLUSIVE if budget stops the sweep before either.
 
-## Addendum 1 declared 2026-09-18, before any instance of the kind named here ran
+## Addendum 1 declared 2026-09-18 12:06, before any instance of the kind named here ran
 
 State of step 1 when this was written: about 300 of the 482 orbit representatives of `G52` decided,
 all SAT (no non-colorable 4-pole `M` so far).
@@ -110,7 +110,7 @@ cyclic 4-edge-connectivity this settles statement (e).
   10 minutes per instance. SAT witnesses are checked and their boundary pattern is tabulated; a
   witness whose pattern can be completed to `G` refutes the encoder (it would color `G`).
 
-## Addendum 2 declared 2026-09-18 13:20, before any instance of the kind named here ran
+## Addendum 2 declared 2026-09-18 13:14, before any instance of the kind named here ran
 
 Reduction `[D]`, recorded in the context note: if a cyclically 4-edge-connected cubic graph `G*`
 has `pd(G*) >= 5`, then every 4-pole `G* - e1 - e2` is non-colorable (a coloring of the 4-pole plus
@@ -130,7 +130,7 @@ cardinality bounds 2, 3, 4 (witness search only, 10 minutes each).
   expectation `pd = 2` (bound 2 SAT). An instance with bounds 2, 3, 4 all undecided or UNSAT is
   the interesting case and would be pursued with designated relaxations.
 
-## Addendum 3 declared 2026-09-18 13:40, before any instance of the kind named here ran
+## Addendum 3 declared 2026-09-18 13:19, before any instance of the kind named here ran
 
 Sharper reduction `[D]` (context note, Proposition 5): one cyclically 4-edge-connected cubic graph
 with `pd >= 3` refutes statement (e). A route to such a graph through boundary patterns:

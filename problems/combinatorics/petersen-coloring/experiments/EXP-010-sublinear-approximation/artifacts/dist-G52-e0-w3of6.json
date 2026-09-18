@@ -1,0 +1,77 @@
+{
+ "graph": "G52",
+ "e0": 0,
+ "label_representatives": {
+  "1": 1,
+  "2": 4,
+  "3": 3
+ },
+ "edges": {
+  "7": {
+   "1": {
+    "status": "SAT",
+    "seconds": 8.024,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 48.186,
+    "verified": true,
+    "proof_sha256": "f525c1cff173585bbc4b9e76b0a15109fb7452f29a78f9ca10ea5b5541ca952b"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 44.875,
+    "verified": true,
+    "proof_sha256": "de6df313b5a41e8033647ca4f7c3af47fde9e418c509b1a2e4fa64a15385ad92"
+   },
+   "dist_set": [
+    1
+   ]
+  },
+  "14": {
+   "1": {
+    "status": "SAT",
+    "seconds": 2.056,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "SAT",
+    "seconds": 7.089,
+    "checker_ok": true
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 9.179,
+    "verified": true,
+    "proof_sha256": "421c917f2739a05c03ead60fedcc129e4d952cdb027a0327a38360b3f0fb6f20"
+   },
+   "dist_set": [
+    1,
+    2
+   ]
+  },
+  "20": {
+   "1": {
+    "status": "SAT",
+    "seconds": 1.976,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "SAT",
+    "seconds": 2.497,
+    "checker_ok": true
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 8.909,
+    "verified": true,
+    "proof_sha256": "1781567796e1f0ec373d644ae32fa7c44a6016987c8aada1331e80b900c7b46b"
+   },
+   "dist_set": [
+    1,
+    2
+   ]
+  }
+ }
+}
