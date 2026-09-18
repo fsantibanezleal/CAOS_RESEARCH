@@ -19,11 +19,10 @@
    (a drift fails `tsc`); build the visualizations in `frontend/src/render` + `App.tsx`.
 8. **Activate only the lanes you need.** Leave the rest dormant with a README marker ("this solution does not
    require it at the moment"), e.g. `app/` for a static product; `frontend/` for a pipeline-only product.
-9. **Verify**: `scripts/setup` → `scripts/precompute` → `pytest` → `cd frontend && npm run build`. CI guards green.
+9. **Verify**: run `scripts/setup`, then `scripts/precompute`, `pytest` and `cd frontend && npm run build`. CI guards green.
 10. **Version** from day 1: `CHANGELOG.md` (`X.XX.XXX`, `0.x` while synthetic) + a tag per release.
 11. **Ship the Architecture modal** (ADR-0058, MANDATORY): copy `frontend/src/architecture.ts.txt` to
-    `architecture.ts`, specialise the product-specific SVGs (`public/svg/tech/01-the-app.svg`,
-    `04-the-science.svg`) + tab copy, pass `architecture` to the `AppShell` config in `main.tsx`, and pin
+    `architecture.ts`, draw the product-specific diagrams (the `app` and `science` tabs) + tab copy, pass `architecture` to the `AppShell` config in `main.tsx`, and pin
     `@fasl-work/caos-app-shell` `^0.3.0`. See [guide 05](05_architecture-modal.md). Verified in screenshot-verify.
 
 The base is frozen, you should be editing only the **core** (engine/stages, visualizations, cases/content),

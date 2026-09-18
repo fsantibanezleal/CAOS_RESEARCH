@@ -242,7 +242,7 @@ export default function Jacobian() {
             <li>{t('The consequence cascade is verified from primary sources with every dimension index checked (EXP-016, EXP-018, EXP-136). It leaves open Dixmier and Poisson at ranks 1 and 2, Mathieu for SU(3) to SU(23), and GMC(2), for which a proof is claimed.', 'La cascada de consecuencias esta verificada con fuentes primarias, con cada indice de dimension revisado (EXP-016, EXP-018, EXP-136). Deja abiertos Dixmier y Poisson en rangos 1 y 2, Mathieu para SU(3) a SU(23) y GMC(2), para la que se anuncia una demostracion.')}</li>
             <li>{t('Widenings queued: general weight systems (1, -2, -m), higher-degree seeds, the m = 4 lattice scan, and an optional Lean hardening of the rigidity theorem.', 'Ampliaciones en cola: sistemas de pesos generales (1, -2, -m), semillas de mayor grado, el barrido de reticula m = 4 y un endurecimiento opcional en Lean del teorema de rigidez.')}</li>
           </ul>
-          <Callout variant="honest" title={t('Honesty gate', 'Compuerta de honestidad')}>
+          <Callout variant="honest" title={t('Scope of the claims', 'Alcance de las afirmaciones')}>
             {t('Every claim on this page carries the label of its experiment verdict; scans are bounded and their windows are stated in the corresponding verdict files. Null results and refuted hypotheses are part of the record.', 'Cada afirmacion de esta pagina lleva la etiqueta del veredicto de su experimento; los barridos son acotados y sus ventanas se declaran en los archivos de veredicto correspondientes. Los resultados nulos y las hipotesis refutadas son parte del registro.')}
           </Callout>
         </section>
