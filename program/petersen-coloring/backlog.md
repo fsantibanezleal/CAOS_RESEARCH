@@ -20,4 +20,7 @@
 | PCB-016 | Explain universal 2-criticality (PCR-3): is every pair critical in every counterexample? structure of the two bad stars in pair witnesses | todo | P1 | after PCB-015: the pair set is complete, so the object is the witnesses |
 | PCB-017 | EXP-007: is G52 colorable only by itself (membership in H_3; any smaller coloring graph is a new counterexample) | running | P0 | declared 2026-09-18; 25 even orders 2..50, incremental cut loop, final formulas certified by DRAT |
 | PCB-018 | Next manuscript version must cite arXiv:2608.10028v3 (2026-09-11) for the overlapping consequence checks and state the concurrency; add lower bound 40 | todo | P1 | context/2026-09-18-v3-and-h3-dossier.md |
-| PCB-019 | Finish the single-edge relaxation sweep of G52 (38 edges left) to close the normal-5 defect at exactly 2 (v3 gives the upper bound) | todo | P2 | parallelize; about 3.5 minutes per edge |
+| PCB-019 | Close the normal-5 defect of G52 at exactly 2 | done | P2 | EXP-006 addendum 4: orbit argument over 42 refuted edges (6 automorphisms, 14 edge orbits) plus explicit two-abnormal-edge witnesses |
+| PCB-020 | EXP-008: the full invariant battery on `G52b` (HoG 57278) and `G68` (HoG 57280) | doing | P1 | hypothesis committed before the run; battery, pair sweep, edge-orbit sweep |
+| PCB-021 | EXP-007 scope extension: `G52b`, `G68`, then `G112` and `H112` (probe `k = 52` first) | doing | P1 | addendum 3 |
+| PCB-022 | Second manuscript: colorable only by itself (lemmas A and B, encoding, results); audit manuscript new version citing v3 and adding the normal-5 defect and the two new graphs | todo | P1 | scientific voice; Zenodo |
