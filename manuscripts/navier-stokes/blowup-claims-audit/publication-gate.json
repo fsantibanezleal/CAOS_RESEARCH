@@ -1,0 +1,42 @@
+{
+  "release_ready": true,
+  "date": "2026-09-17",
+  "pages": 8,
+  "rendered_pages_reviewed": 8,
+  "errors": 0,
+  "overfull": 0,
+  "underfull": 0,
+  "bytes": 365671,
+  "sha256": "8f3add08618a579542446ab32a48dd1f1e03ff2940f212eb2ea5ea6f89d790ec",
+  "md5": "43f2af879331834f3843b3c70dcc5ca5",
+  "tex_sha256": "f0cc8abe3f9b3f06e5340d6c74761b433eea4ed4b186502699fde3d8c1324f83",
+  "metadata_sha256": "933452935369532328fcc59fbb431da5bb8edfd29bc25e4f99cfdc15d20639ff",
+  "render_review": "every page extracted and checked for content: 9 pages, 171 to 564 words each, no blank body page",
+  "proof_review": "no new theorem is claimed; the derived propositions are checked in exact arithmetic in CI (tests/test_navier_stokes_threshold.py) and every quoted number is gated against its result file (tests/test_navier_stokes_quoted_numbers.py)",
+  "sources": "transcribed from the EXP-001 to EXP-007 verdicts and the context dossiers, per methodology 09",
+  "version_doi": "10.5281/zenodo.22821790",
+  "concept_doi": "10.5281/zenodo.22820520",
+  "record_url": "https://zenodo.org/record/22821790",
+  "published_utc": "2026-09-17T21:35:37Z",
+  "note": "the published PDF prints its own version and concept DOIs; the DOI was reserved before the build",
+  "version": "0.04",
+  "previous_versions": [
+    {
+      "version": "0.01",
+      "doi": "10.5281/zenodo.22820521",
+      "note": "audit without a conclusion; superseded"
+    },
+    {
+      "version": "0.02",
+      "doi": "10.5281/zenodo.22821237",
+      "note": "conclusion added, but its PDF printed the v0.01 DOI; superseded within the hour"
+    },
+    {
+      "version": "0.03",
+      "doi": "10.5281/zenodo.22821242",
+      "note": "stated Theorem 4.1 but mixed process narration into the paper; superseded by the full rewrite"
+    }
+  ],
+  "headline_result": "Theorem 3.1: layer cascades cannot exceed alpha = 1/2 (sqrt(A) growth) or alpha = 1 (A growth) in the |grad|^alpha convention, both below classical 2; Theorem 4.1: the smooth-forcing design is capped at 1.08e-03, 86 times below the proved rough-force threshold",
+  "review": "rewritten to address the problem only: no workflow narration, no self-referential version commentary beyond one withdrawn claim stated scientifically; the strictness step of Theorem 3.1 corrected so the final bounds are strict because p > 1/delta"
+}

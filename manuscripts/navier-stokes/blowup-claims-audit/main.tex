@@ -1,0 +1,450 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs}
+\microtypesetup{expansion=false}
+\usepackage[margin=1.05in,headheight=14pt]{geometry}
+\usepackage{xcolor}
+\definecolor{linknavy}{RGB}{25,55,125}
+\usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
+\usepackage{orcidlink,fancyhdr}
+\hypersetup{
+  pdftitle={How much dissipation can a multiscale layer cascade carry},
+  pdfauthor={Felipe Santibanez-Leal},
+  pdfsubject={Upper bounds on the fractional dissipation exponent compatible with layer-cascade blowup constructions},
+  pdfkeywords={Navier-Stokes, Boussinesq, finite-time blowup, hypodissipative, multiscale construction, fractional Laplacian}
+}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\versiondoi}{10.5281/zenodo.22821790}
+\newcommand{\conceptdoi}{10.5281/zenodo.22820520}
+\newcommand{\recordurl}{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/analysis-pde/navier-stokes}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small CAOS Research Preprint}
+\fancyhead[R]{\small Dissipation limits of layer cascades\textperiodcentered\ v0.04}
+\fancyfoot[C]{\thepage}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
+\allowdisplaybreaks[1]
+
+\title{How much dissipation can a multiscale layer cascade carry?}
+\author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\small CAOS Research program\\
+\small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
+\date{2026-09-17\\[2pt]\normalsize Version 0.04}
+
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+\begin{center}\small
+\fbox{\parbox{0.92\textwidth}{\centering
+\textbf{PREPRINT}\textperiodcentered\ not peer reviewed\textperiodcentered\ CAOS Research\\
+Version 0.04\textperiodcentered\ 2026-09-17\textperiodcentered\ CC BY 4.0\\
+Version DOI: \href{https://doi.org/\versiondoi}{\versiondoi}\\
+Concept DOI: \href{https://doi.org/\conceptdoi}{\conceptdoi} (latest version)\\
+\href{\recordurl}{Sources, numerical data, and machine-checked computations}
+}}
+\end{center}
+
+\begin{abstract}
+Multiscale layer constructions produce finite-time blowup for several fluid equations: for the
+incompressible porous media equation, for the two-dimensional Boussinesq system, for
+three-dimensional Euler, and, with fractional dissipation $|\nabla|^{\alpha}$ of order
+$\alpha<(22-8\sqrt7)/9$, for the forced Navier-Stokes equations. The exponent in the last of these is
+small, and it is natural to ask what limits it.
+
+We give two upper bounds on the dissipation exponent such constructions can carry. The first is
+independent of every design constant: a cascade whose layers grow at rate $\sqrt A$ on a background
+gradient $A$ cannot exceed $\alpha=1/2$, and one whose layers grow at rate $A$ cannot exceed
+$\alpha=1$, both in the $|\nabla|^{\alpha}$ convention in which classical viscosity is $\alpha=2$.
+Neither mechanism reaches classical viscosity, by factors of four and two respectively. The second
+bound applies to the smooth-forcing design used for the inviscid Boussinesq and Euler results: its
+correction hierarchy, seed rule and frequency-ratio rule cap the exponent at
+$\alpha\le1.08\times10^{-3}$, attained when exactly one derivative of the force is controlled, which
+is $86$ times below the exponent already achieved with a force of finite regularity.
+
+Both bounds follow from the amplitude system of the construction together with one additional
+ingredient, the effect of fractional dissipation on a single layer, which we derive and then verify
+against direct simulation of the nonlinear equations, including the effect of the spatial
+localization the constructions use. We also reconstruct the exponent budget behind the published
+hypodissipative threshold, identify the constraint that determines it, and show that the admissible
+frequency ratios form an interval that closes exactly at that threshold, so that cascades with
+geometrically growing frequencies are excluded at every positive dissipation.
+\end{abstract}
+
+\section{The question}
+
+Let $\theta$ and $u$ solve the forced two-dimensional Boussinesq system, or let $u$ solve the forced
+three-dimensional Navier-Stokes equations with fractional dissipation. Multiscale constructions in the
+style introduced by C\'ordoba and Mart\'inez-Zoroa build blowup by stacking oscillatory layers: each
+layer grows on the gradient deposited by its predecessors and hands a larger gradient to its
+successor, with infinitely many stages compressed into finite time.
+
+Dissipation opposes this directly. A layer of frequency $\lambda$ is damped at rate
+$\nu\lambda^{2\alpha}$ in the convention $-\nu(-\Delta)^{\alpha}$, while its growth rate is set by the
+background gradient alone. Frequency therefore buys gradient but not growth, and the question of how
+much dissipation a cascade tolerates becomes a question about the exponents relating amplitude,
+frequency and gradient. This paper answers it at two levels: for the mechanism classes
+(Section~\ref{sec:class}) and for one published design (Section~\ref{sec:design}).
+
+\paragraph{Conventions.} We write dissipation as $-\nu(-\Delta)^{\alpha}$, so classical viscosity is
+$\alpha=1$; results quoted from the literature in the $|\nabla|^{\alpha}$ convention have twice our
+exponent, and we state which convention is in use whenever a number appears. The published
+hypodissipative threshold $(22-8\sqrt7)/9=0.09267$ in the $|\nabla|^{\alpha}$ convention is
+$0.04633$ in ours.
+
+\section{The layer mechanism and its dissipative extension}\label{sec:mechanism}
+
+On a background that is affine near the origin, $u_{\mathrm{old}}=D(t)x$ and
+$\theta_{\mathrm{old}}=G(t)\cdot x$, a temperature wave and a vorticity wave sharing one phase
+$s=\lambda\zeta(t)\cdot x$, with $\vartheta=\Theta F(s)$, $\varpi=\Omega F'(s)$ and
+$\psi=\Omega P(s)/(\lambda^{2}|\zeta|^{2})$, satisfy a closed system of amplitude equations,
+\begin{equation}\label{eq:mod}
+\dot\zeta=-D^{T}\zeta,\qquad
+\dot\Theta=-\frac{J\zeta\cdot G}{\lambda|\zeta|^{2}}\,\Omega,\qquad
+\dot\Omega=\lambda\,\zeta_{1}\,\Theta ,
+\end{equation}
+where $J(x_{1},x_{2})=(-x_{2},x_{1})$. The wave velocity is perpendicular to $\zeta$ while both wave
+gradients are parallel to it, so the wave does not advect itself and the ansatz is exact where the
+envelope is one and the profile is linear. In the frozen configuration $D=0$, $G=-Ae_{2}$,
+$\zeta=re(\varphi)$, the growth rate is $\sqrt A\sin\varphi$: it carries no $\lambda$, because the
+frequency in $\dot\Omega$ cancels the reciprocal frequency in $\dot\Theta$. The gradient the layer
+deposits is governed by the amplification identity
+\begin{equation}\label{eq:amp}
+\nabla\vartheta(0,t)=\lambda\Theta\zeta ,
+\end{equation}
+which is why a short wave can carry a small amplitude and a large gradient, and is what makes the
+cascade possible.
+
+\paragraph{Dissipation.} Adding $-\nu(-\Delta)^{\alpha}$ to both equations leaves the two geometric
+cancellations untouched and is diagonal on the phase, since
+$(-\Delta)^{\alpha}F(\lambda\zeta\cdot x)=(\lambda|\zeta|)^{2\alpha}F(\lambda\zeta\cdot x)$. The
+amplitude system therefore acquires one damping term per amplitude,
+\begin{equation}\label{eq:diss}
+\dot\Theta=-\frac{J\zeta\cdot G}{\lambda|\zeta|^{2}}\,\Omega-\nu(\lambda|\zeta|)^{2\alpha}\Theta,
+\qquad
+\dot\Omega=\lambda\zeta_{1}\Theta-\nu(\lambda|\zeta|)^{2\alpha}\Omega ,
+\end{equation}
+with eigenvalues $-\nu(\lambda r)^{2\alpha}\pm\sqrt A\sin\varphi$ in the frozen configuration. Growth
+at frequency $\lambda$ on background gradient $A$ therefore requires
+\begin{equation}\label{eq:growth}
+\nu(\lambda r)^{2\alpha}<\sqrt A\,\sin\varphi .
+\end{equation}
+Equation~\eqref{eq:diss} is the one ingredient of this paper that does not appear in the
+constructions themselves; Section~\ref{sec:validation} reports its verification against direct
+simulation of the nonlinear equations.
+
+\paragraph{Two growth laws.} The Boussinesq layers above grow at $\sqrt A$, a pendulum law: the
+amplitude pair obeys a second-order equation whose coefficient is the background gradient. The
+vortex layers of the hypodissipative Navier-Stokes construction instead grow at rate $A_{n-1}$, the
+background gradient itself, which is why its dissipation constraint reads $a=\alpha R$ in the
+exponent notation of Section~\ref{sec:budget} rather than carrying a square root. Both laws are
+treated below.
+
+\section{A bound independent of design constants}\label{sec:class}
+
+\begin{theorem}\label{thm:class}
+Consider a layer cascade with the following structure:
+\begin{enumerate}
+\item[(A1)] each layer stops at amplitude $\lambda_{q}^{-1+\delta}$ with $\delta<1$;
+\item[(A2)] it deposits a background gradient $A_{q+1}=\lambda_{q}^{\delta}$, by~\eqref{eq:amp};
+\item[(A3)] frequencies and background gradients are related by $\lambda_{q}=A_{q}^{p}$ for a fixed $p$;
+\item[(A4)] layers grow at rate $A^{\gamma}$ with $\gamma=1/2$ or $\gamma=1$;
+\item[(A5)] a layer of frequency $\lambda$ is damped at $\nu\lambda^{2\alpha}$, as in~\eqref{eq:diss}.
+\end{enumerate}
+Then $p\delta>1$, and growth at every stage requires
+\[
+\alpha\le\frac{\gamma}{2p}<\frac{\gamma\,\delta}{2}<\frac{\gamma}{2},
+\]
+that is $\alpha<1/4$ for $\gamma=1/2$ and $\alpha<1/2$ for $\gamma=1$. In the $|\nabla|^{\alpha}$
+convention these ceilings are $1/2$ and $1$, against a classical viscosity of $2$.
+\end{theorem}
+
+\begin{proof}
+By (A2) and (A3), $A_{q+1}=\lambda_{q}^{\delta}=A_{q}^{p\delta}$. The gradients must grow without bound
+for the cascade to produce blowup, so $p\delta>1$; with $\delta<1$ from (A1), which is required because
+the field itself stays bounded while its gradient diverges, this gives $p>1/\delta>1$.
+
+By (A5) and (A4), stage $q$ grows only while $\nu\lambda_{q}^{2\alpha}<c\,A_{q}^{\gamma}$ for a
+constant $c$ independent of $q$. Taking logarithms and using (A3),
+\[
+\log\nu+2\alpha p\log A_{q}<\log c+\gamma\log A_{q},
+\]
+and since $A_{q}\to\infty$ the inequality can hold for all large $q$ only if $2\alpha p\le\gamma$,
+that is $\alpha\le\gamma/(2p)$. At equality the condition reduces to $\nu<c$, which a small viscosity
+satisfies, so this step is not strict; strictness of the final bounds comes from $p>1/\delta$, which
+gives $\alpha\le\gamma/(2p)<\gamma\delta/2<\gamma/2$.
+\end{proof}
+
+In the variables of Section~\ref{sec:design}, where frequencies satisfy
+$\lambda_{q}=\lambda_{q-1}^{Q}$, the exponents are related by $Q=p\delta$, and the bound
+$\alpha\le\gamma/(2p)$ reads $\alpha\le\gamma\delta/(2Q)$, which for $\gamma=1/2$ is the constraint
+$\alpha\le\delta/(4Q)$ used there.
+
+\begin{corollary}\label{cor:classical}
+No cascade of either type reaches classical viscosity. The pendulum mechanism falls short by a factor
+of four and the vortex-stretching mechanism by a factor of two, uniformly in every constant of the
+design.
+\end{corollary}
+
+The two ceilings differ by exactly the growth law: a layer that grows at the background gradient,
+rather than at its square root, gains a factor of two and nothing else in the argument changes. The
+published constructions sit well below their own class ceilings, the hypodissipative vortex-layer
+threshold by a factor $10.8$ and the design of Section~\ref{sec:design} by a factor $465$.
+
+\begin{remark}
+Corollary~\ref{cor:classical} is consistent with a choice visible in the literature: the construction
+aimed at the viscous case does not use a layer cascade, but a self-similar core in which the
+scale-local Reynolds number stays of order one.
+\end{remark}
+
+\section{A bound for the smooth-forcing design}\label{sec:design}
+
+The inviscid Boussinesq and Euler constructions with smooth forcing fix their design as follows. The
+frequencies satisfy $\lambda_{q}=\lambda_{q-1}^{Q_{q}}$ with $Q_{q}=Q^{\ast}+q$ and $Q^{\ast}\ge200$;
+the number of derivatives of the force controlled uniformly is $k_{q}$, constrained by
+$120k_{q}\le Q_{q}$; the localization error is cancelled through $J=2k+8$ correction levels, each
+gaining a factor $\Pi^{5}\lambda^{-(1-\delta)}$ where $\Pi\le\lambda^{5/Q}$; and the seed is chosen so
+that the remaining force stays below $\lambda^{-6}$. With the published amplitude rule a layer stops at
+$\lambda^{-7/8}$, so the margin of (A1) is $\delta=1/8$.
+
+\begin{theorem}\label{thm:design}
+Under that design, carrying dissipation $-\nu(-\Delta)^{\alpha}$ requires
+\[
+J\Bigl[(1-\delta)-\frac5Q\Bigr]\ \ge\ k+6
+\qquad\text{and}\qquad
+\alpha\le\frac{\delta}{4Q},
+\]
+the first from the force budget and the second from~\eqref{eq:growth}. With $Q=120k$, the smallest
+ratio the design permits, these give
+\[
+\delta\le1-\frac{k+6}{2k+8}-\frac1{24k},
+\qquad
+\alpha\le\frac{1}{480k}\Bigl(1-\frac{k+6}{2k+8}-\frac1{24k}\Bigr),
+\]
+whose maximum over $k\ge1$ is attained at $k=1$:
+\[
+\boxed{\ \alpha\le5.38\times10^{-4}\ \ \bigl(1.08\times10^{-3}\ \text{in the }|\nabla|^{\alpha}\ \text{convention}\bigr),\quad \delta\le0.2583,\ Q=120 .\ }
+\]
+\end{theorem}
+
+\begin{proof}
+Each correction level gains the factor $\Pi^{5}\lambda^{-(1-\delta)}$ and there are $J$ of them, so
+the residual force carries the exponent $-J[(1-\delta)-5/Q]$ in $\lambda$ after using
+$\Pi\le\lambda^{5/Q}$. Controlling $k$ derivatives of a field oscillating at frequency $\lambda$ costs
+$\lambda^{k}$, and the design requires the result to stay below $\lambda^{-6}$, which is the first
+display. The second is~\eqref{eq:growth} with $A_{q}=\lambda_{q-1}^{\delta}$ and
+$\lambda_{q}=\lambda_{q-1}^{Q}$, taking the insertion angle of order one, which is the most favourable
+case. Eliminating $\delta$ and setting $Q=120k$ gives the displayed formula; it is decreasing in $k$,
+since the bracket increases to $1/2$ while the prefactor decreases like $1/k$, so the maximum is at
+$k=1$.
+\end{proof}
+
+\begin{center}
+\begin{tabular}{rrrrr}
+\toprule
+$k$ & $J=2k+8$ & $Q=120k$ & $\delta\le$ & $\alpha\le$ \\
+\midrule
+$1$ & $10$ & $120$ & $0.2583$ & $5.38\times10^{-4}$ \\
+$2$ & $12$ & $240$ & $0.3125$ & $3.26\times10^{-4}$ \\
+$3$ & $14$ & $360$ & $0.3433$ & $2.38\times10^{-4}$ \\
+$10$ & $28$ & $1200$ & $0.4244$ & $8.84\times10^{-5}$ \\
+$1000$ & $2008$ & $120000$ & $0.4990$ & $1.04\times10^{-6}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The bound is $86$ times below the exponent $0.04633$ already reached with a force in
+$L^{1}_{t}C^{1,\epsilon}_{x}\cap L^{\infty}_{t}L^{2}_{x}$, and the shortfall does not close by
+retuning: at that exponent the ratio rule cannot buy even one derivative. Smoothness of the force and
+fractional dissipation are purchased from a single budget in this design, with the frequency ratio as
+the currency: $120$ units of ratio per derivative, and the exponent inversely proportional to the
+ratio.
+
+\begin{remark}\label{rem:levers}
+Three quantities enter the proof, so a dissipative version of this design must move one of them:
+decouple the correction levels from the frequency ratio, so that $Q$ need not grow with $k$; raise the
+amplitude margin beyond $1/2$, which the hierarchy as stated forbids; or change the growth law, since
+the factor four in $\alpha\le\delta/(4Q)$ comes from the rate $\sqrt A$ and becomes a factor two for
+vortex stretching.
+\end{remark}
+
+\section{The exponent budget behind the published threshold}\label{sec:budget}
+
+The hypodissipative Navier-Stokes construction writes every quantity as a power of one base: the
+frequency of layer $n$ is $M_{n}=N^{R^{n}}$, the amplitude $A_{n}=N^{aR^{n}}$, the localization scale
+$L_{n}=N^{bR^{n}}$, and $s>0$ is the H\"older margin of the force. Its force estimates give four
+constraints:
+
+\begin{center}
+\begin{tabular}{llc}
+\toprule
+ & origin & constraint \\
+\midrule
+\textbf{D} & dissipation & $a=\alpha R$ \\
+\textbf{S} & self-interaction & $2a-a/R+b+s-1\le0$ \\
+\textbf{L} & localization & $b\ge a+1/R+s$ \\
+\textbf{O} & outer velocity on the inner layer & $a+2/R+s+1-3b\le0$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{proposition}\label{prop:threshold}
+With \textbf{D} and \textbf{S} saturated, \textbf{O} reduces to $4s<2+3\alpha-7\alpha R-2/R$, whose
+maximum over the frequency ratio is at $\alpha R^{2}=2/7$. At that optimum
+$s(\alpha)=\bigl(2+3\alpha-2\sqrt{14\alpha}\bigr)/4$, and $s>0$ is equivalent to
+$9\alpha^{2}-44\alpha+4>0$, whose smaller root is $(22-8\sqrt7)/9$.
+\end{proposition}
+
+The optimizing ratio $R=\sqrt{2/(7\alpha)}$ is the one the construction uses, and no coefficient in
+the chain is fitted. At the threshold the localization constraint is inactive, with margin
+$\tfrac12(\sqrt{2\alpha/7}-\alpha)=0.0350$; a budget that saturates \textbf{L} instead and omits
+\textbf{O} yields $\alpha R^{2}=1/3$ and the weaker bound $5-2\sqrt6=0.10102$, the value given by an
+order-of-magnitude estimate in the source. The difference between the two is precisely which
+constraint is active.
+
+\begin{proposition}\label{prop:ratios}
+A positive force margin requires $7\alpha R^{2}-(2+3\alpha)R+2<0$, so the admissible ratios form the
+interval with endpoints
+$R_{\pm}=\bigl[(2+3\alpha)\pm\sqrt{9\alpha^{2}-44\alpha+4}\bigr]/(14\alpha)$. The discriminant is the
+polynomial of Proposition~\ref{prop:threshold}, so the interval closes to a single point exactly at the
+threshold, and that point is $\sqrt{2/(7\alpha)}$. Moreover $R_{-}>1$ for every $\alpha>0$, and at
+$R=1$ the margin equals $-\alpha$.
+\end{proposition}
+
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+$\alpha$ ($|\nabla|^{\alpha}$) & admissible $R$ & optimizing $R$ \\
+\midrule
+$0.001$ & $(1.002,\ 285.1)$ & $16.90$ \\
+$0.01$ & $(1.021,\ 27.98)$ & $5.345$ \\
+$0.05$ & $(1.143,\ 5.000)$ & $2.390$ \\
+$0.09267$ & $\{1.7559\}$ & $1.7559$ \\
+$0.10$ & empty & none \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{corollary}
+Cascades with geometrically growing frequencies, the case $R=1$, are inadmissible at every positive
+dissipation: localization requires $b\ge a+1+s$ while self-interaction permits only $b\le1-a-s$,
+forcing $\alpha+s\le0$. Super-geometric frequency growth is therefore necessary, and more of it is
+necessary as the dissipation rises, until at the threshold a single ratio remains.
+\end{corollary}
+
+Propositions~\ref{prop:threshold} and~\ref{prop:ratios} are verified in exact arithmetic by computer
+algebra in the accompanying repository.
+
+\section{Verification of the dissipative extension}\label{sec:validation}
+
+Theorems~\ref{thm:class} and~\ref{thm:design} rest on~\eqref{eq:diss}, which is derived rather than
+taken from the constructions. It was tested against direct pseudospectral simulation of the nonlinear
+two-dimensional Boussinesq system in double precision with two-thirds dealiasing.
+
+\paragraph{The amplitude system.} On the stratification $\theta=-(A/\lambda_{0})\sin(\lambda_{0}x_{2})$
+the measured peak growth rate matches $\sqrt A\sin\varphi$ to $4\times10^{-5}$ relative at two
+insertion angles; the predicted independence of the rate from $\lambda$ holds to $2.7\times10^{-4}$
+across an eightfold range; and the damping term of~\eqref{eq:diss} tracks the measured rate to
+$2.6\times10^{-4}$ absolute across $\alpha\in\{1/4,1/2,1\}$ and $\nu\in\{10^{-5},10^{-4}\}$.
+
+\paragraph{The cascade premise.} On a two-scale background that is an exact steady state, with drift
+$1.45\times10^{-15}$, the local growth rate of a fine wave follows the total gradient at correlation
+$0.99945$ and the base stratification alone at $0.212$: a layer responds to the accumulated
+low-frequency gradient rather than to the base.
+
+\paragraph{The growth, steering and holding cycle.} The control that returns a grown layer to rest
+rotates the background gradient and the phase direction together, so that the laboratory component
+$\zeta_{1}$ changes sign while $J\zeta\cdot G$ and $|\zeta|$ are preserved. In the co-rotating frame it
+becomes a rotating gravity direction, with the stratification held by a low-frequency force. On a
+background whose gradient is affine to fourth order the cycle reproduces the amplitude system to
+$3.06\times10^{-6}$ in the steering gain and returns the vorticity amplitude to $3.67\times10^{-4}$ of
+its peak, where it holds to $0.36\%$ over three growth times; on a plain sinusoidal background the
+same quantities are $1.80\times10^{-2}$ and $1.57\times10^{-2}$, the difference being the curvature of
+the background over the layer's support. Under dissipation the cycle factorizes as $e^{-dt}$ times the
+inviscid cycle with $d=\nu\lambda^{2\alpha}$: a holding interval decays at $d$ to within $0.97\%$, and
+the rescaled viscous run reproduces the inviscid one to $0.24\%$.
+
+\paragraph{Localization.} Since the constructions localize each layer, \eqref{eq:diss} is applied to
+a band rather than to a single frequency. For an envelope of radius $\ell$ on a wave of frequency
+$\lambda$ the relative error of the damping law is
+\[
+\frac{\bigl\lVert(-\Delta)^{\alpha}(g\,e^{i\lambda\zeta\cdot x})-(\lambda|\zeta|)^{2\alpha}g\,e^{i\lambda\zeta\cdot x}\bigr\rVert}{\bigl\lVert(\lambda|\zeta|)^{2\alpha}g\bigr\rVert}
+\;\approx\;\frac{3.6\,\alpha}{\ell\lambda},
+\]
+first order in the bandwidth ratio, with measured slope $-0.9863$, and depending on that ratio alone:
+configurations sharing $\ell\lambda$ but splitting it differently between frequency and envelope agree
+to four digits. The coefficient is linear in $\alpha$, as the symbol expansion predicts. At the
+separations the constructions use, $\ell_{q}^{-1}=\lambda_{q-1}^{3}$ against
+$\lambda_{q}=\lambda_{q-1}^{Q_{q}}$ with $Q_{q}\ge201$, the error is $\lambda_{q-1}^{3-Q_{q}}$, so
+localization does not affect the bounds above.
+
+\paragraph{A property of the mechanism in an unforced periodic setting.} The stratification these
+layers grow on is Rayleigh-Taylor unstable at rate $\sqrt A$, while a layer inserted at angle $s$
+grows at $\sqrt A\sin s$. Perturbations at more favourable angles therefore gain $1/\sin s$ times as
+many e-foldings as the layer. The constructions are unaffected, since each layer is localized and the
+force controls the exterior, but any realization without that control must keep its schedule short
+enough for the layer to stay ahead.
+
+\section{The status of the announced results}
+
+The two September 2026 announcements are accompanied by machine-checked certificates. For the
+Navier-Stokes and Euler development, the headline statements match the forced alternatives of the
+official problem statement clause by clause; the development builds with no incomplete proofs and
+its four headline theorems depend only on the three standard axioms; and every constant in the closure
+of both root modules replays through the Lean kernel from an empty environment at the pinned toolchain
+version. The reference statement is adapted from an independently maintained collection of formalized
+conjectures, so the definitions that determine whether the formalized statement is the intended one
+predate the claim. None of this speaks to the mathematics outside the formalization, and kernel replay
+detects environment manipulation rather than serving as an external verifier.
+
+\section{Scope}
+
+The bounds of Sections~\ref{sec:class} and~\ref{sec:design} are necessary conditions for growth in
+the layer mechanism, derived from the amplitude system, the amplification identity and the
+dissipative term~\eqref{eq:diss}. They are exponent statements: constants, logarithmic factors and the
+corrections that make the localized ansatz exact are not tracked, and the published inviscid results
+are not affected by them, since those results carry no dissipation. The mechanism is due to C\'ordoba
+and Mart\'inez-Zoroa, extended to smooth forcing by Alpog\'e and Buckmaster; nothing in this paper
+establishes blowup for any equation or improves any published threshold.
+
+An earlier version of this paper stated that the value $p=11/4+\sqrt7$, obtained by evaluating the
+relation $\alpha_{c}=1/(4p)$ at the published threshold, carried information about that threshold. It
+does not: the relation is constraint \textbf{D} saturated, which the construction saturates at every
+$\alpha$, so the identity holds along the whole family, and its algebraic form is automatic because
+$\alpha_{0}\in\Q(\sqrt7)$ and the norm of $22-8\sqrt7$ is a perfect square. That statement is
+withdrawn.
+
+\section*{Data and code}
+
+The numerical data, the simulations, the exact-arithmetic verifications of
+Propositions~\ref{prop:threshold} and~\ref{prop:ratios}, and the computations behind
+Theorems~\ref{thm:class} and~\ref{thm:design} are public at \href{\recordurl}{the project repository}.
+
+\begin{thebibliography}{9}
+\bibitem{fefferman} C. L. Fefferman, \emph{Existence and smoothness of the Navier-Stokes equation},
+Clay Mathematics Institute Millennium Prize problem description.
+\bibitem{cmz} D. C\'ordoba, L. Mart\'inez-Zoroa and F. Zheng, \emph{Finite time blow-up for the
+hypodissipative Navier Stokes equations with a force in $L^{1}_{t}C^{1,\epsilon}_{x}$ and
+$L^{\infty}_{t}L^{2}_{x}$}, Arch. Ration. Mech. Anal. \textbf{250} (2026), article 38;
+\href{https://arxiv.org/abs/2407.06776}{arXiv:2407.06776}.
+\bibitem{clsmz} D. C\'ordoba, C. La\'in-Sanclemente and L. Mart\'inez-Zoroa, \emph{Blowup for the
+Boussinesq equations with an infinite chain of degenerate pendula}, Adv. Math. \textbf{480} (2026);
+\href{https://arxiv.org/abs/2505.20988}{arXiv:2505.20988}.
+\bibitem{ab-boussinesq} L. Alpog\'e and T. Buckmaster, \emph{Blowup for the Boussinesq equations with
+smooth forcing}, preprint, 2026.
+\bibitem{ab-euler} L. Alpog\'e and T. Buckmaster, \emph{Blowup for the three-dimensional Euler
+equations with smooth forcing}, preprint, 2026.
+\bibitem{ab-ipm} L. Alpog\'e and T. Buckmaster, \emph{Blowup for the incompressible porous media
+equation with smooth forcing}, preprint, 2026.
+\bibitem{openai-ns} OpenAI, \emph{Finite-time blowup for forced three-dimensional Navier-Stokes},
+manuscript, 2026.
+\bibitem{openai-euler} OpenAI, \emph{Finite-time blowup for three-dimensional Euler}, manuscript,
+2026.
+\end{thebibliography}
+
+\end{document}

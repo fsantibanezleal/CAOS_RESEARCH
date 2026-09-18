@@ -1,0 +1,32 @@
+{
+  "args": {
+    "n": 768,
+    "device": "cuda",
+    "A0": 4.0,
+    "lam0": 1,
+    "lam": 40,
+    "phi": 0.7853981633974483,
+    "Theta0": 1e-06,
+    "t_end": 0.6,
+    "dt": 0.0005,
+    "mode": "rate",
+    "out": "../experiments/EXP-002-reduction-control/rate-phi-pi4.json"
+  },
+  "cases": {
+    "P1_inviscid": {
+      "lam": 40,
+      "nu": 0.0,
+      "alpha": 1.0,
+      "corrupt": "none",
+      "knorm": 39.59797974644666,
+      "damp": 0.0,
+      "peak_measured": 1.414271764546335,
+      "peak_predicted": 1.4142135623730951,
+      "p1_max_rel_err": 0.024670323630719502,
+      "p1_median_rel_err": 0.006098777573557935,
+      "p2_unstable_growth_factor": 2.3362894399447622,
+      "p2_stable_growth_factor": 0.7044782113503998
+    }
+  },
+  "wall_seconds": 25.7
+}

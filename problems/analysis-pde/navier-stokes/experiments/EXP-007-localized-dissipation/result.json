@@ -1,0 +1,261 @@
+{
+  "args": {
+    "n": 4096,
+    "device": "cuda",
+    "alpha": 0.5,
+    "mask_level": 0.5,
+    "out": "../experiments/EXP-007-localized-dissipation/result.json"
+  },
+  "scan": [
+    {
+      "k": [
+        0,
+        64
+      ],
+      "lambda": 64.0,
+      "ell": 0.4,
+      "ell_times_lambda": 25.6,
+      "alpha": 0.5,
+      "relative_error": 0.06918526690965537,
+      "n_core_points": 87421,
+      "reach": 71.5
+    },
+    {
+      "k": [
+        0,
+        64
+      ],
+      "lambda": 64.0,
+      "ell": 0.8,
+      "ell_times_lambda": 51.2,
+      "alpha": 0.5,
+      "relative_error": 0.03438907708267051,
+      "n_core_points": 349801,
+      "reach": 67.75
+    },
+    {
+      "k": [
+        0,
+        64
+      ],
+      "lambda": 64.0,
+      "ell": 1.6,
+      "ell_times_lambda": 102.4,
+      "alpha": 0.5,
+      "relative_error": 0.017181872161078592,
+      "n_core_points": 1399225,
+      "reach": 65.875
+    },
+    {
+      "k": [
+        0,
+        128
+      ],
+      "lambda": 128.0,
+      "ell": 0.4,
+      "ell_times_lambda": 51.2,
+      "alpha": 0.5,
+      "relative_error": 0.034386341908472375,
+      "n_core_points": 87421,
+      "reach": 135.5
+    },
+    {
+      "k": [
+        0,
+        128
+      ],
+      "lambda": 128.0,
+      "ell": 0.8,
+      "ell_times_lambda": 102.4,
+      "alpha": 0.5,
+      "relative_error": 0.017178781179627522,
+      "n_core_points": 349801,
+      "reach": 131.75
+    },
+    {
+      "k": [
+        0,
+        128
+      ],
+      "lambda": 128.0,
+      "ell": 1.6,
+      "ell_times_lambda": 204.8,
+      "alpha": 0.5,
+      "relative_error": 0.008803592148903127,
+      "n_core_points": 1399225,
+      "reach": 129.875
+    },
+    {
+      "k": [
+        0,
+        256
+      ],
+      "lambda": 256.0,
+      "ell": 0.4,
+      "ell_times_lambda": 102.4,
+      "alpha": 0.5,
+      "relative_error": 0.0171787811786796,
+      "n_core_points": 87421,
+      "reach": 263.5
+    },
+    {
+      "k": [
+        0,
+        256
+      ],
+      "lambda": 256.0,
+      "ell": 0.8,
+      "ell_times_lambda": 204.8,
+      "alpha": 0.5,
+      "relative_error": 0.008803592148892885,
+      "n_core_points": 349801,
+      "reach": 259.75
+    },
+    {
+      "k": [
+        0,
+        256
+      ],
+      "lambda": 256.0,
+      "ell": 1.6,
+      "ell_times_lambda": 409.6,
+      "alpha": 0.5,
+      "relative_error": 0.0044553164512398545,
+      "n_core_points": 1399225,
+      "reach": 257.875
+    },
+    {
+      "k": [
+        0,
+        512
+      ],
+      "lambda": 512.0,
+      "ell": 0.4,
+      "ell_times_lambda": 204.8,
+      "alpha": 0.5,
+      "relative_error": 0.008801552943969001,
+      "n_core_points": 87421,
+      "reach": 519.5
+    },
+    {
+      "k": [
+        0,
+        512
+      ],
+      "lambda": 512.0,
+      "ell": 0.8,
+      "ell_times_lambda": 409.6,
+      "alpha": 0.5,
+      "relative_error": 0.004455316451211169,
+      "n_core_points": 349801,
+      "reach": 515.75
+    },
+    {
+      "k": [
+        0,
+        512
+      ],
+      "lambda": 512.0,
+      "ell": 1.6,
+      "ell_times_lambda": 819.2,
+      "alpha": 0.5,
+      "relative_error": 0.0022276287656598248,
+      "n_core_points": 1399225,
+      "reach": 513.875
+    }
+  ],
+  "H1_slope_of_log_error_against_log_bandwidth_ratio": -0.9862644350364579,
+  "H2_coefficients_by_alpha": [
+    {
+      "k": [
+        0,
+        256
+      ],
+      "lambda": 256.0,
+      "ell": 0.8,
+      "ell_times_lambda": 204.8,
+      "alpha": 0.05,
+      "relative_error": 0.0008803833355499134,
+      "n_core_points": 349801,
+      "reach": 259.75,
+      "coefficient": 0.18030250712062226
+    },
+    {
+      "k": [
+        0,
+        256
+      ],
+      "lambda": 256.0,
+      "ell": 0.8,
+      "ell_times_lambda": 204.8,
+      "alpha": 0.1,
+      "relative_error": 0.0017607598358673924,
+      "n_core_points": 349801,
+      "reach": 259.75,
+      "coefficient": 0.360603614385642
+    },
+    {
+      "k": [
+        0,
+        256
+      ],
+      "lambda": 256.0,
+      "ell": 0.8,
+      "ell_times_lambda": 204.8,
+      "alpha": 0.25,
+      "relative_error": 0.0044018537781444185,
+      "n_core_points": 349801,
+      "reach": 259.75,
+      "coefficient": 0.901499653763977
+    },
+    {
+      "k": [
+        0,
+        256
+      ],
+      "lambda": 256.0,
+      "ell": 0.8,
+      "ell_times_lambda": 204.8,
+      "alpha": 0.5,
+      "relative_error": 0.008803592148892885,
+      "n_core_points": 349801,
+      "reach": 259.75,
+      "coefficient": 1.8029756720932628
+    },
+    {
+      "k": [
+        0,
+        256
+      ],
+      "lambda": 256.0,
+      "ell": 0.8,
+      "ell_times_lambda": 204.8,
+      "alpha": 1.0,
+      "relative_error": 0.01760700779676643,
+      "n_core_points": 349801,
+      "reach": 259.75,
+      "coefficient": 3.605915196777765
+    }
+  ],
+  "H2_coefficient_min": 0.18030250712062226,
+  "H2_coefficient_max": 3.605915196777765,
+  "H3_control_wide_envelope": {
+    "k": [
+      0,
+      4
+    ],
+    "lambda": 4.0,
+    "ell": 0.35,
+    "ell_times_lambda": 1.4,
+    "alpha": 0.5,
+    "relative_error": 1.9005490091612,
+    "n_core_points": 66929,
+    "reach": 12.571428571428571
+  },
+  "gates": {
+    "H1_first_order": true,
+    "H2_coefficient_bounded": true,
+    "H3_control_is_order_one": true
+  },
+  "all_pass": true
+}
