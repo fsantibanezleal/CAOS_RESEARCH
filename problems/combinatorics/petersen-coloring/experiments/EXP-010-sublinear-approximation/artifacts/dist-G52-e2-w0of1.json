@@ -358,6 +358,204 @@
     1,
     2
    ]
+  },
+  "19": {
+   "1": {
+    "status": "SAT",
+    "seconds": 2.091,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 89.813,
+    "verified": true,
+    "proof_sha256": "1ee8cea3a07372035fa5c5c2995b66c21b1b70c128f0643701a82c07bf4ea041"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 84.996,
+    "verified": true,
+    "proof_sha256": "ce12693092f71c1df80c939121cbec8c3c653d082ac99ea3a9c708de86226c97"
+   },
+   "dist_set": [
+    1
+   ]
+  },
+  "20": {
+   "1": {
+    "status": "SAT",
+    "seconds": 4.172,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "SAT",
+    "seconds": 3.641,
+    "checker_ok": true
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 42.478,
+    "verified": true,
+    "proof_sha256": "1888a3a56dd25af0a3ebc74203c45fda9928e26e662c8a482be4f09f54d63bee"
+   },
+   "dist_set": [
+    1,
+    2
+   ]
+  },
+  "21": {
+   "1": {
+    "status": "SAT",
+    "seconds": 20.841,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "SAT",
+    "seconds": 3.707,
+    "checker_ok": true
+   },
+   "3": {
+    "status": "SAT",
+    "seconds": 2.382,
+    "checker_ok": true
+   },
+   "dist_set": [
+    1,
+    2,
+    3
+   ]
+  },
+  "24": {
+   "1": {
+    "status": "SAT",
+    "seconds": 2.1,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 52.99,
+    "verified": true,
+    "proof_sha256": "6eda427e5c096041d5b87cddef4d7d1348b245c50901fc62bd25e8a4f84db399"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 41.048,
+    "verified": true,
+    "proof_sha256": "c8cdb55927c9d09c2071e1c15ea6870c09bb8fbbdd74a95603df033cc4dd0434"
+   },
+   "dist_set": [
+    1
+   ]
+  },
+  "25": {
+   "1": {
+    "status": "SAT",
+    "seconds": 8.689,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 28.711,
+    "verified": true,
+    "proof_sha256": "152b0ce4836441e4225b8441dfb5c601a5af517da46ed298f7f1a36014e5d6c5"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 22.453,
+    "verified": true,
+    "proof_sha256": "bdff82ca3aa20c219dbd3f3acf686c8a48297036a6a00fb713a856077a37c9f9"
+   },
+   "dist_set": [
+    1
+   ]
+  },
+  "26": {
+   "1": {
+    "status": "SAT",
+    "seconds": 1.918,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 11.95,
+    "verified": true,
+    "proof_sha256": "a381b97a15f28be49c5e4a70f46beda843b9c379dd296f59df52a9db8c647bb4"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 12.625,
+    "verified": true,
+    "proof_sha256": "f8150fbc452623a87535219aefb6f47ac809bc06c2b53d2dfe863fd3632a72a2"
+   },
+   "dist_set": [
+    1
+   ]
+  },
+  "27": {
+   "1": {
+    "status": "SAT",
+    "seconds": 2.499,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 57.311,
+    "verified": true,
+    "proof_sha256": "415bba9b13e0093d9f6e294f683361d2a64f090a0ba83e7e7b09083eb618bf3c"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 43.192,
+    "verified": true,
+    "proof_sha256": "37e6dfef21a96cbce33424201af84dcc9251966c030d857ee27ca8caccdffa5f"
+   },
+   "dist_set": [
+    1
+   ]
+  },
+  "28": {
+   "1": {
+    "status": "SAT",
+    "seconds": 1.053,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 21.455,
+    "verified": true,
+    "proof_sha256": "1aec8e74c4f5d8dfcb0f767998b562cdb1e0f67e9451b74583f22106108ae65d"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 35.462,
+    "verified": true,
+    "proof_sha256": "8e2c6bf4d26f10440ea2f78910028e5540276218d79a382461ae56cdf61a844c"
+   },
+   "dist_set": [
+    1
+   ]
+  },
+  "29": {
+   "1": {
+    "status": "SAT",
+    "seconds": 1.308,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 16.913,
+    "verified": true,
+    "proof_sha256": "59584ed21c0723fac58e266033fa0c268940df24fa41c086de412404a9b80919"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 24.216,
+    "verified": true,
+    "proof_sha256": "f027a9e9ee76ef4aa6fdda796805916ff3cfe729f076f10b17fc150f39c86e6a"
+   },
+   "dist_set": [
+    1
+   ]
   }
  }
 }
