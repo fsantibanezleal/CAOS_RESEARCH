@@ -3,6 +3,18 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.69.002] - 2026-09-18
+
+### Added
+- tau-conjecture: EXP-013 verdict, CONFIRMED on the window. Over all 1,048,460,912 depth-7 states,
+  no 9-gate program whose final gate is an addition or a subtraction has 7 distinct integer roots
+  that all lie in [-32, 32] (1,272,725 candidates checked exactly). The last 46 partition records
+  are committed, and `audit.py` checks all 256 against the frontier's SHA-256 manifest. With EXP-011,
+  EXP-012 and the confinement lemma, a nine-gate seven-rooter would need |c| >= 396, the 0.002%
+  residual of EXP-014; the exhaustive residual pass is queued (TCB-039).
+- Manuscripts: tau-conjecture census v0.05 (10.5281/zenodo.22836450) states the windowed theorem
+  and prints the author name as Santibáñez-Leal.
+
 ## [0.69.001] - 2026-09-18
 
 ### Changed
