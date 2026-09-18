@@ -59,6 +59,11 @@ CASES = {
             "H3_control_wide_envelope.relative_error",
         ],
     },
+    "exp008": {
+        "runner": "run_exp008.py",
+        "record": EXPERIMENTS / "EXP-008-growth-law-ceiling/result.json",
+        "keys": ["worst_relative_error", "stretching_over_pendulum_ratio"],
+    },
     "exp004": {
         "runner": "run_exp004.py",
         "record": EXPERIMENTS / "EXP-004-multilayer-handoff/result-frozen.json",

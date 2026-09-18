@@ -102,7 +102,8 @@ def alpha_c(p: float) -> float:
     return 1.0 / (4.0 * p)
 
 
-def detectable_alpha_p(nu: float, g: float = 1.0, stages: int = 400) -> float:
+def detectable_alpha_p(nu: float, g: float = 1.0, stages: int = 400,
+                       gamma: float = 0.5) -> float:
     """Largest product alpha*p whose stall is still visible within `stages`.
 
     A supercritical schedule does not stall immediately. The growth rate stays
@@ -126,8 +127,8 @@ def detectable_alpha_p(nu: float, g: float = 1.0, stages: int = 400) -> float:
     threshold is compared with the closed form.
     """
     if nu <= 0.0:
-        return 0.25
-    return 0.25 + math.log(1.0 / nu) / (2.0 * g * max(1, stages - 1))
+        return gamma / 2.0
+    return gamma / 2.0 + math.log(1.0 / nu) / (2.0 * g * max(1, stages - 1))
 
 
 def alpha_c_finite_horizon(p: float, nu: float, g: float = 1.0, stages: int = 400) -> float:
@@ -154,6 +155,10 @@ class Schedule:
     log_c_lam: float = 0.0
     phi: float = math.pi / 2.0
     log_gain: float = 1.0   # log of the per-stage amplification factor
+    # Growth law: the rate is A^gamma. 1/2 is the Boussinesq pendulum law this model was
+    # built for; 1 is vortex stretching, the law of the hypodissipative Navier-Stokes
+    # construction. Theorem 3.1 of the paper predicts alpha_c = gamma/(2p) for both.
+    gamma: float = 0.5
 
     # --------------------------------------------------------------- log fields
 
@@ -170,7 +175,7 @@ class Schedule:
         s = math.sin(self.phi)
         if s <= 0.0:
             return _NEG_INF
-        return 0.5 * self.log_A(q) + math.log(s)
+        return self.gamma * self.log_A(q) + math.log(s)
 
     def log_damping(self, q: int) -> float:
         if self.nu <= 0.0:

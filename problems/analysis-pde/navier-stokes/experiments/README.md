@@ -14,6 +14,7 @@ DECIDED-IN-PART, and a refuted prediction is preserved rather than edited away.
 | [EXP-005](EXP-005-steered-cycle/) | Does the growth, steering and hold cycle work in the PDE, and does a steered layer carry the next one? | **DECIDED IN PART** (A, B, C pass; the committed parameters are refuted by the background's own instability; D confirms the pattern at 0.81, below its 0.9 gate) |
 | [EXP-006](EXP-006-kernel-replay/) | Does the Lean KERNEL accept the certificate, not just the elaborator? | **CONFIRMED**, both halves replayed from an empty environment |
 | [EXP-007](EXP-007-localized-dissipation/) | Does localization break the dissipative reduction? | **CONFIRMED**: the cost is `3.6 alpha / (ell lambda)`, negligible at the construction's separations |
+| [EXP-008](EXP-008-growth-law-ceiling/) | Does the cascade's critical exponent follow gamma/(2p) for both growth laws, as the paper's Theorem 3.1 predicts? | **CONFIRMED**: pendulum to 1.1e-07, stretching to 1.8e-09, exact factor two between the laws |
 
 ## EXP-001, the Lean replay
 
