@@ -78,3 +78,28 @@ proof checked by drat-trim.
 
 See the EXP-007 verdict; the table below is transcribed from it.
 
+State on 2026-09-18 (the verdict is written when the last certification ends; the table is then
+replaced by the verdict's):
+
+| graph | target orders refuted with verified proofs | remaining |
+|---|---|---|
+| `G52` | 2, 4, and every even order from 30 to 50 | 26, 28: proofs complete, post-hoc check running; 6 to 24: reached or approaching the 6-hour limit |
+| `G52b` | 44, 46, 48, 50 | 42: in-process UNSAT after 14,448 s, external proof being written; 40: long run; below 40 stopped undecided |
+| `G68` | 64, 66 | 40 to 62 running |
+
+Two forms of the statement (fixed in addendum 5 of the hypothesis before the mid-range orders
+ended):
+
+- **Unconditional.** For each listed order `k`, no loopless cubic graph on `k` vertices colors the
+  graph with a vertex map of kind (O), (E0) or (E1). By the corollary above, the union of these
+  statements over all even `k < n` is equivalent to "no connected bridgeless cubic graph of smaller
+  order colors the graph".
+- **Conditional on Observation 9 of arXiv:2608.10028v3** (every bridgeless cubic graph on at most
+  38 vertices has a Petersen coloring). A graph that colors a counterexample is a counterexample,
+  and a counterexample with parallel edges yields a smaller one (suppress the digon; the two edges
+  of the 2-edge cut around it carry equal labels). So only target orders from 40 to 50 can occur,
+  and they are all refuted for `G52`: **`G52` is colorable only by itself, that is, it belongs to
+  $\mathcal{H}_3$.** The same conclusion for `G52b` needs its orders 40 and 42.
+
+No decided instance needed a connectivity or bridge cut. For the same target order `G52b` is 10 to
+25 times harder than `G52`.

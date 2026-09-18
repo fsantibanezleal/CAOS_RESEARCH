@@ -36,8 +36,10 @@ export default function PetersenColoring() {
   ];
 
   // Transcribed from the EXP-007 verdict (decided target orders and the two forms of the statement).
-  const h3En = 'PENDING-EXP-007-VERDICT';
-  const h3Es = 'PENDING-EXP-007-VERDICT';
+  const h3En =
+    'For the first 52-vertex graph every even target order from 30 to 50, and the orders 2 and 4, are refuted with proofs checked by drat-trim, and no order needed a connectivity or bridge cut. A graph that colors a counterexample is itself a counterexample, and Goedgebeur and coauthors showed that no counterexample has fewer than 40 vertices, so target orders below 40 cannot occur: the first 52-vertex counterexample is colorable only by itself. The list of refuted orders stands on our certificates alone; only the orders below 40 that were not decided rely on that lower bound. For the second 52-vertex graph the orders 44 to 50 are refuted, and for the 68-vertex graph the orders 64 and 66; their remaining orders from 40 up are being certified (for the same order the second graph is 10 to 25 times harder than the first).';
+  const h3Es =
+    'Para el primer grafo de 52 vertices todo orden par del blanco de 30 a 50, y los ordenes 2 y 4, estan refutados con pruebas verificadas por drat-trim, y ningun orden necesito un corte de conexidad o de puente. Un grafo que colorea a un contraejemplo es el mismo un contraejemplo, y Goedgebeur y coautores mostraron que ningun contraejemplo tiene menos de 40 vertices, asi que los ordenes bajo 40 no pueden ocurrir: el primer contraejemplo de 52 vertices es coloreable solo por si mismo. La lista de ordenes refutados se sostiene solo en nuestros certificados; unicamente los ordenes bajo 40 no decididos dependen de esa cota inferior. Para el segundo grafo de 52 vertices estan refutados los ordenes 44 a 50, y para el grafo de 68 vertices los ordenes 64 y 66; sus ordenes restantes desde 40 se estan certificando (para el mismo orden el segundo grafo es de 10 a 25 veces mas dificil que el primero).';
 
   const tabs: TabDef[] = [
     {
@@ -340,7 +342,7 @@ export default function PetersenColoring() {
                 </tr>
               </thead>
               <tbody>
-                <tr><td>{t('Ring of 2 copies of G52', 'Anillo de 2 copias de G52')}</td><td className="num">104</td><td className="num">2</td><td className="num">2</td><td className="num">2 to 4</td></tr>
+                <tr><td>{t('Ring of 2 copies of G52', 'Anillo de 2 copias de G52')}</td><td className="num">104</td><td className="num">2</td><td className="num">2</td><td className="num">{t('2 to 4', '2 a 4')}</td></tr>
                 <tr><td>{t('Ring of 3 copies', 'Anillo de 3 copias')}</td><td className="num">156</td><td className="num">2</td><td className="num">3</td><td className="num">{t('at least 3', 'al menos 3')}</td></tr>
                 <tr><td>{t('Ring of 4 copies', 'Anillo de 4 copias')}</td><td className="num">208</td><td className="num">2</td><td className="num">4</td><td className="num">{t('at least 4', 'al menos 4')}</td></tr>
                 <tr><td>{t('K4 frame of G52 minus a vertex', 'Marco K4 de G52 menos un vertice')}</td><td className="num">204</td><td className="num">3</td><td className="num">4</td><td className="num">{t('at least 4', 'al menos 4')}</td></tr>
