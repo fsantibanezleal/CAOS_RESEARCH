@@ -131,15 +131,18 @@ identity.
 
 Predictions:
 
-- P7: every one of the 14 edge orbits of `G52` contains an edge already refuted with a verified
+- P10: every one of the 14 edge orbits of `G52` contains an edge already refuted with a verified
   proof, so no proper 5-edge-coloring of `G52` has exactly one abnormal edge, and the normal-5
   defect of `G52` is at least 2.
-- P8: each of the three graphs has a proper 5-edge-coloring with exactly two abnormal edges
+- P11: each of the three graphs has a proper 5-edge-coloring with exactly two abnormal edges
   (bound 2 of the EXP-004 cardinality encoding is SAT, and the independent checker counts 2).
-  Goedgebeur et al. (arXiv:2608.10028v3, 2026-09-11) report such colorings, so P8 is a
-  reproduction with our own witness; P7 is the matching lower bound, which v3 does not state.
+  Goedgebeur et al. (arXiv:2608.10028v3, 2026-09-11) report such colorings, so P11 is a
+  reproduction with our own witness; P10 is the matching lower bound, which v3 does not state.
   Committed expectation: both hold, so the normal-5 defect of `G52` is exactly 2.
 
-One-sidedness: P7 is a proof (DRAT certificates plus checked automorphisms); P8 is an explicit
+One-sidedness: P10 is a proof (DRAT certificates plus checked automorphisms); P11 is an explicit
 witness. The 112-vertex graphs get the upper bound only; their single-edge sweeps (168 and 30
 orbit representatives) are not run in this addendum. Budget: 30 minutes per bound-2 instance.
+
+Numbering note: the two predictions of this addendum were first committed as P7 and P8, which
+collide with addendum 2; they were renumbered P10 and P11 without any change of content.
