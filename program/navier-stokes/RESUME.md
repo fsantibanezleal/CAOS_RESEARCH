@@ -1,7 +1,7 @@
 # navier-stokes: RESUME (zero-loss handoff)
 
-Updated 2026-09-14 (round 2: published threshold derived exactly; round-1 calibration withdrawn;
-EXP-005 steered cascade next). First read for any fresh session, per methodology 07. Derived
+Updated 2026-09-17 (class ceiling Theorem 3.1 published in manuscript v0.04, 10.5281/zenodo.22821790;
+EXP-008 confirmed it for both growth laws; released in 0.66.000). First read for any fresh session, per methodology 07. Derived
 view: on conflict, the context dossiers win.
 
 ## 1. State in one screen
@@ -36,6 +36,16 @@ experiments. What we hold:
   tautological (it holds at every alpha along the published family). The published threshold is
   now DERIVED exactly from the construction's outer-velocity constraint (their 4.3.4), with the
   paper's own frequency ratio as the optimum; see `context/2026-09-14-threshold-reconstruction.md`.
+- **The class ceiling (Theorem 3.1 of v0.04).** A layer cascade with `lambda = A^p` and growth rate
+  `A^gamma` carries dissipation only up to `alpha <= gamma/(2p) < gamma/2`: 1/4 for the pendulum
+  mechanism, 1/2 for stretching (`(-Laplacian)^alpha`; 1/2 and 1 in `|grad|^alpha`). Neither reaches
+  classical viscosity. Code `code/nslib/class_ceiling.py`; confirmed numerically by EXP-008.
+- **The design ceiling (Theorem 4.1).** The smooth-forcing construction as designed carries at most
+  `alpha = 5.38e-4` ours (1.08e-3 theirs), 86 times below the proved rough-force threshold. Code
+  `code/nslib/ab_ceiling.py`.
+- **The manuscript.** `manuscripts/navier-stokes/blowup-claims-audit/`, v0.04 on Zenodo
+  (version 10.5281/zenodo.22821790, concept 10.5281/zenodo.22820520). It is about the problem only;
+  no process narration belongs in it.
 
 ## 2. The objects table
 
@@ -84,6 +94,9 @@ giving eigenvalues `-nu (lambda r)^(2 alpha) +/- sqrt(A) sin(phi)` and the frequ
 | EXP-005 | does the growth, steering and hold cycle work in the PDE? | **DECIDED IN PART**: A, B, C pass (gain to 3e-06, landing 3.7e-04, hold decay to 0.97 percent); committed parameters REFUTED by the background's own instability; D confirms the handoff pattern at 0.808 against a 0.392 control, below its 0.9 gate |
 | EXP-006 | does the Lean KERNEL accept the certificate, not just the elaborator? | **CONFIRMED**: both halves replayed from an EMPTY environment (NavierStokes 2,972 s, Euler 1,588 s, exit 0) |
 | EXP-007 | does localization break the dissipative reduction? | **CONFIRMED**: the cost is `3.6 alpha / (ell lambda)`, slope -0.9863, negligible at the construction's separations |
+| EXP-008 | does the critical exponent follow `gamma/(2p)` for BOTH growth laws? | **CONFIRMED**: pendulum to 1.1e-07, stretching to 1.8e-09, factor two exact; prediction published before the run |
+
+Every experiment reproduces from the `args` block of its own result file: `code/reproduce_all.py`.
 
 EXP-002: peak rate to 4e-05 relative, band structure present, frequency independence to 2.7e-04 across
 `lambda` in [20, 160], derived dissipative term to 2.6e-04 absolute, three negative controls all
@@ -95,7 +108,7 @@ published threshold) is arithmetically true but tautological, corrected 2026-09-
 
 ## 4. In flight
 
-Nothing running. EXP-006 closed on 2026-09-16: both halves replayed clean
+Nothing running. EXP-008 closed on 2026-09-17 (CPU, seconds). EXP-006 closed on 2026-09-16: both halves replayed clean
 (`E:/_Temp/exp006-fresh.sh`, logs and exit codes in `E:/_Temp/exp006/`, runner archived in
 `code/exp006-fresh.sh`).
 
@@ -116,9 +129,12 @@ convergence loop to ride out Windows read-contention, 5 passes 34->22->11->9->5-
 3. NS-016 (half done): give our cascade model a force-regularity budget of its own. Round 2 showed why this matters more
    than it looked: the published budget excludes `R = 1` outright, and our model's schedule IS
    geometric, so a rigorous version of it would have to move to `M_{n+1} = M_n^R` first.
-4. NS-010: compare exponents the day the Alpoge-Buckmaster hypodissipative paper appears.
+4. NS-010: compare exponents the day the Alpoge-Buckmaster hypodissipative paper appears; the class
+   ceiling predicts it cannot exceed 1/2 ours for a stretching mechanism, 1/4 for a pendulum one.
+5. NS-016, inviscid half: extract the exponent content of the smooth-force estimates, the one object
+   of the three that is still open after EXP-007.
 
-Six experiments are closed with verdicts. The open items above are
+Eight experiments are closed with verdicts. The open items above are
 next-round scope, not blockers.
 
 ## 6. Where everything lives
@@ -132,6 +148,8 @@ next-round scope, not blockers.
 | preflight smoke test | `problems/analysis-pde/navier-stokes/code/modulation_smoke.py` |
 | plan, state, backlog | `program/navier-stokes/` |
 | management mirror | CAOS_MANAGE `plans/caos-research/navier-stokes/` |
+| manuscript source and gate | `manuscripts/navier-stokes/blowup-claims-audit/` |
+| reproduction harness | `problems/analysis-pde/navier-stokes/code/reproduce_all.py` |
 | local PDF mirror, NOT in git | `E:/_Temp/ns-research/pdfs/` |
 | OpenAI Lean clone, NOT in git | `E:/_Temp/lean-ns/` |
 
