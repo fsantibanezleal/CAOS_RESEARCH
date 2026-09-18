@@ -103,10 +103,12 @@ anyone has proposed; it bounds what retuning the constants of this architecture 
 - The favourable insertion angle is assumed. The published angle `s_q = L_q sigma_{q-2}/sigma_{q-1}`
   is a negative power of the frequency and tightens every row by a further factor.
 - **Euler.** The Euler paper (Section 12) uses the same shape: amplitude `N^(-7/8)`, `J = 2k + 8`,
-  `Q_i = q_0 + i` with `q_0 >= 220`, and `k <= Q / c_Q` with `c_Q >= 218`. Its growth rate is
+  `Q_i = q_0 + i` with `q_0 >= 2^20`, and `k <= Q / c_Q` with `c_Q >= 2^18` (read from the page
+  image on 2026-09-18; a text extraction had dropped the superscripts to `220` and `218`). Its growth rate is
   written `sigma_{i-1} sin s_i`, the same form as the Boussinesq `Gamma_q = sigma_{q-1} sin s_q`,
   where Theorem 3.2 fixes `sigma_q^2 = |G_{<q+1}|`, the pendulum law. Whether the Euler `sigma` is
   likewise the square root of the background gradient (as the Boussinesq analogy for axisymmetric
-  swirl suggests, which would make `1/4` rather than `1/2` the class ceiling that applies) is
-  UNVERIFIED. It belongs to the full extraction of that paper's budget, a separate reading unit
-  (112 pages, a different continuation architecture) that is not claimed here.
+  swirl suggests, which would make `1/4` rather than `1/2` the class ceiling that applies) was
+  UNVERIFIED here. It is settled, with the full extraction of that paper's force exponents, in
+  [`2026-09-18-euler-force-budget.md`](2026-09-18-euler-force-budget.md): the Euler law is the
+  pendulum.
