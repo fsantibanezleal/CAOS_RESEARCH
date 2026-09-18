@@ -5,7 +5,7 @@
     "title": "Planar Keller Maps after the Counterexample: Machine-Certified Newton-Polygon Exclusions, the Staircase Transport, and the Recalibrated Frontier",
     "creators": [
       {
-        "name": "Santibañez-Leal, Felipe",
+        "name": "Santibáñez-Leal, Felipe",
         "orcid": "0000-0002-0150-3246",
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
@@ -55,9 +55,9 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.33",
+    "version": "0.34",
     "language": "eng",
     "publication_date": "2026-09-18",
-    "version_notes": "Revision. The text states the mathematics directly, without narrative about earlier versions, the research programme or its working process: the passages that described withdrawn statements and a retracted computation are replaced by the correct mathematical statements (the Krylov-closure dimension is not known to bound the degree of a covector, so the degree-by-degree search is not known to be a finite decision procedure; at degree two every pair support is feasible and a triple obstructs), the heading of the (72,108) subsection now matches its content (the three reduced branches are certificate-covered, which is evidence toward and not a proof of the closure), process terms around time limits are replaced by the stated limits (180, 240, 300 seconds, five minutes), the closing priority list becomes a list of open problems, a data-availability section states what the EXP identifiers denote, and the companion foundational paper is cited. Capitalized emphasis is set in italics. The record title now matches the title printed in the paper. Computation identifiers no longer break across lines, an author list split by a line break in the source is repaired, and a page-1 header block states the document type, version, licence and DOIs. Corrections. (1) The closing remark that excludes the chain (8,40)/(8,28)/(11/4,7) is cited to its source, Guccione, Guccione and Valqui, arXiv:1605.09430; it was attributed to their J. Algebra 471 paper (arXiv:1401.1784). (2) The statement that several of the twenty-four configurations in [125,150] may be settled in the same way is replaced by the recorded outcome: four configurations that share a corner with that remark fail its hypotheses (EXP-094), none of the other twenty-three is decided by these sources, and for sixteen of them the last lower corner has to be derived first (EXP-083). (3) The verification method names the modular computations, with Chinese-remainder reconstruction and explicit degree and height bounds, from which statements over Q are derived. (4) The announcement date is 2026-07-20, as in the cited announcement. Methods, data and the other results are unchanged."
+    "version_notes": "The author name is printed as Santibáñez-Leal, as on the author's ORCID record (0000-0002-0150-3246). The content is unchanged."
   }
 }

@@ -1724,3 +1724,22 @@
   `3c4c4a0c4f96a634de4018410b5871c3` matches the local artifact. Local
   SHA-256 is
   `2f96164a7d6efee5b43e6988cbb3578a586e995b9e439b9bbd777f5db515c229`.
+
+## 2026-09-18 - EXP-136 audits the cascade at the level of dimension indices
+
+- **EXP-136 (confirmed):** every cascade implication re-read with the dimension index its
+  source states. Dixmier and Poisson are false for every n >= 3 and open at 1 and 2; the
+  falsity of JC(4) says nothing about Dixmier(2), which restates EXP-016 item 5. Mathieu: the
+  located proof (arXiv:2511.16561, Theorems 4.16 and 4.23) covers Keller maps x - h with h
+  homogeneous at fixed N; F is not affinely of that type (Groebner certificate) while the
+  24-variable form of EXP-041 is, so the conjecture is false for SU(N), N >= 24, and for SU(2)
+  by Long's explicit example (arXiv:2607.19012, checked exactly for n <= 12); 3 <= N <= 23 is
+  not decided (restates EXP-016 item 1). Gaussian moments: false for every n >= 3 (Long,
+  arXiv:2607.18186, checked exactly for m <= 10), true for n = 1, a proof of n = 2 claimed
+  (Wilson, arXiv:2607.23887) (restates EXP-016 item 2).
+- Record restated from the EXP-136 board: wiki/01 cascade section; wiki/05 rows EXP-016,
+  EXP-018 and EXP-136; the web cascade table (export stage and baked payload) and the Jacobian
+  page text; backlog JCB-095 (done), JCB-096 and JCB-097 (queued).
+- Manuscripts published with the restated statements and the author name printed as
+  Santibáñez-Leal: cascade v0.06 (10.5281/zenodo.22834179), foundational v0.13
+  (10.5281/zenodo.22834207), planar v0.34 (10.5281/zenodo.22834215, author name only).
