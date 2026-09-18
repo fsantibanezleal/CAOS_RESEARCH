@@ -83,7 +83,10 @@ So the normal-5 defect of `G52` is exactly 2, from both sides with certificates.
 `H112` it is at most 2 and at least 1. The upper bound reproduces, with our own witnesses, the
 two-abnormal-edge colorings reported by Goedgebeur et al. (arXiv:2608.10028v3, 2026-09-11); the
 lower bound for `G52` is not stated there. This closes P4 and P8 above for `G52`. The direct sweep
-of the remaining 36 edges keeps running as a redundancy and is not needed for the statement.
+of the remaining 36 edges is not needed for the statement; it was left running as a redundancy and
+ended at edge 42 when the proof check of that instance exceeded the runner's time limit while the
+machine was loaded with the EXP-007 runs (no decision recorded for edge 42; log in
+`artifacts/run-edges-G52-resume.log`).
 
 How could this be wrong? The symmetry step uses only that the listed permutations are
 automorphisms, which `is_automorphism` re-checks from the edge list; an error there would have to
