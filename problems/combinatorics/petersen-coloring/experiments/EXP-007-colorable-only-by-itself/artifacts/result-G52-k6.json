@@ -1,0 +1,8 @@
+{
+ "graph": "G52",
+ "k": 6,
+ "status": "TIMEOUT",
+ "rounds": 26,
+ "learned_cuts": 25,
+ "seconds": 21600.0
+}

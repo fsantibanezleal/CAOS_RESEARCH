@@ -1,0 +1,103 @@
+{
+ "graph": "G52",
+ "e0": 11,
+ "label_representatives": {
+  "1": 1,
+  "2": 4,
+  "3": 3
+ },
+ "edges": {
+  "0": {
+   "1": {
+    "status": "SAT",
+    "seconds": 1.163,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 143.499,
+    "verified": true,
+    "proof_sha256": "80c70baa7902331b3a52aaa69e5791fa660540a5d606df6018f428ea5b6a2f2a"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 91.054,
+    "verified": true,
+    "proof_sha256": "f161997c70e57fc4c40b1399256e08e793a947a6f6b203889dbaaa8e9e4ca0c4"
+   },
+   "dist_set": [
+    1
+   ],
+   "undecided": []
+  },
+  "2": {
+   "1": {
+    "status": "SAT",
+    "seconds": 1.163,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 44.789,
+    "verified": true,
+    "proof_sha256": "091a8de59b189447564c910555a7cda83f3fecd251d22159fbf7ebe5bd664866"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 24.216,
+    "verified": true,
+    "proof_sha256": "4712864c2353a6e1b25dad7ec1f8d013435f862389fe0f06b61315058d51ace1"
+   },
+   "dist_set": [
+    1
+   ],
+   "undecided": []
+  },
+  "3": {
+   "1": {
+    "status": "SAT",
+    "seconds": 1.534,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 70.416,
+    "verified": true,
+    "proof_sha256": "b0ca30794d6bc4e6697d17527aac302e4aad29695549f5e686bf0078c044334d"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 25.166,
+    "verified": true,
+    "proof_sha256": "8d0fa36148da7317df600f778b5967d77f60349d7f68000fe4852bbb8a9b45c6"
+   },
+   "dist_set": [
+    1
+   ],
+   "undecided": []
+  },
+  "4": {
+   "1": {
+    "status": "SAT",
+    "seconds": 1.106,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 45.404,
+    "verified": true,
+    "proof_sha256": "67e8d554f2c05cb8a25277ac941c5874c211e7fb53733b8c9bc0aa1ffd1436fa"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 20.213,
+    "verified": true,
+    "proof_sha256": "396f12d0d86b4576dfe09675539884fd6d547628be6eaf67fd06f26240cd1534"
+   },
+   "dist_set": [
+    1
+   ],
+   "undecided": []
+  }
+ }
+}

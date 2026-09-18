@@ -56,10 +56,13 @@ def main() -> None:
     path = HERE / "artifacts" / f"dist-{args.graph}-e{args.e0}-w{args.worker}of{args.workers}.json"
     res = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {"graph": args.graph, "e0": args.e0, "label_representatives": rep, "edges": {}}
     for e in mine:
-        if str(e) in res["edges"]:
+        prev = res["edges"].get(str(e))
+        if prev and all(prev[str(d)]["status"] in ("SAT", "UNSAT") for d in (1, 2, 3)):
             continue
-        entry = {}
+        entry = dict(prev) if prev else {}
         for d in (1, 2, 3):
+            if prev and prev[str(d)]["status"] in ("SAT", "UNSAT"):
+                continue
             f, y = multipole_formula(g, args.e0, e, symmetry=False)
             f.add(y[("pend", a, args.e0), 0])
             f.add(y[("pend", b, args.e0), rep[d]])
@@ -76,6 +79,7 @@ def main() -> None:
                 item["proof_sha256"] = rec.get("proof_sha256")
             entry[str(d)] = item
         entry["dist_set"] = [d for d in (1, 2, 3) if entry[str(d)]["status"] == "SAT"]
+        entry["undecided"] = [d for d in (1, 2, 3) if entry[str(d)]["status"] not in ("SAT", "UNSAT")]
         res["edges"][str(e)] = entry
         print(time.strftime("%H:%M:%S"), args.graph, "e0", args.e0, "e", e, g.edges[e], "Dist", entry["dist_set"], flush=True)
         path.write_text(json.dumps(res, indent=1) + "\n", encoding="utf-8", newline="\n")
