@@ -421,6 +421,286 @@
    "cnf_sha256": "deb1a68d6ba1093fc9d0451845987cd442a3ecb4241784ae702a08623e383fac",
    "checker_ok": true,
    "pattern": "crossed"
+  },
+  "2-53": {
+   "status": "SAT",
+   "seconds": 17.397,
+   "cnf_sha256": "5192179b3ffa4244ebb72cb5d384424c39f03914358d9651a5bdbab7f1d00e57",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-61": {
+   "status": "SAT",
+   "seconds": 19.478,
+   "cnf_sha256": "3dee349c1bfd3e71479b14225a552ffdaa9ae51178e38cb6ae32b8053f67c8d1",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "2-67": {
+   "status": "SAT",
+   "seconds": 34.648,
+   "cnf_sha256": "a43d21fc71d465e3288bf5c9bcb71f10f30f6ac49b5b1bc22b318e97ea9d3829",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "2-73": {
+   "status": "SAT",
+   "seconds": 11.917,
+   "cnf_sha256": "71de4b7fe82c727f6c9ff8a25dd328c7d692c94ffaa3feff291273354820486a",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-79": {
+   "status": "SAT",
+   "seconds": 16.861,
+   "cnf_sha256": "40c003f6e13f8d34e66ad3e7a65a6b684c1675801a42dbab20f666785cf677c4",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-87": {
+   "status": "SAT",
+   "seconds": 2.825,
+   "cnf_sha256": "9d2db172d9cc711846058f051e961d5c9faed5fa28da08a70845ca4c45876bef",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "2-93": {
+   "status": "SAT",
+   "seconds": 4.21,
+   "cnf_sha256": "f73d24953a35d943375639f5a0abe9efcfa80dcd885c12a87cf7dff42b874df4",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "2-99": {
+   "status": "SAT",
+   "seconds": 83.436,
+   "cnf_sha256": "842695dbf5f06a900c2ef1832610c49392b096af727d0b72ef5a118ed74350ab",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-105": {
+   "status": "SAT",
+   "seconds": 2.997,
+   "cnf_sha256": "08be351202f35c27dbf564da932363bedc10b5c030af6b326fc60cc27748bff0",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "2-114": {
+   "status": "SAT",
+   "seconds": 17.223,
+   "cnf_sha256": "006b1c29219d3fc4fb502b9ad11960806e7c4fb780bab0f2fd62f6215b7256e0",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-120": {
+   "status": "SAT",
+   "seconds": 12.497,
+   "cnf_sha256": "a5e6aa85289c94c905b855ad4d92f15c5e8982b2ee36b4578bab44bea25e8158",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-126": {
+   "status": "SAT",
+   "seconds": 43.828,
+   "cnf_sha256": "076bf5ef0789a478c73ef91b70563e01d75a92fc656f2ff83cc2af0cfff978f1",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "2-132": {
+   "status": "SAT",
+   "seconds": 32.138,
+   "cnf_sha256": "9111d260c4604e51056c1359f49aa31ceb786951485a3afd76d6f765a9c956f2",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-140": {
+   "status": "SAT",
+   "seconds": 16.678,
+   "cnf_sha256": "0e42b693ada037eb05da7d2c741ef64645957328ba99d44da26b167802dc09f2",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "2-146": {
+   "status": "SAT",
+   "seconds": 99.802,
+   "cnf_sha256": "d236a208fcef30b56ce56da623f20675d7528dc051f2ed907e4b114d131ab6f7",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "2-152": {
+   "status": "SAT",
+   "seconds": 17.848,
+   "cnf_sha256": "04f351d9cbf490c9c515a0718b7ee6a45bb3b0d0537e2cd4cfa559b5c584d847",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "2-158": {
+   "status": "SAT",
+   "seconds": 5.185,
+   "cnf_sha256": "870b55255af209014706dc2bb209966eb5d2d28b0532ba8d6fae7dbf90d6bd67",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-164": {
+   "status": "SAT",
+   "seconds": 15.897,
+   "cnf_sha256": "bae75262cedd5aa56ba5d60507ae2ee734e62f2011387fa54c8689e2a88458e7",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-9": {
+   "status": "SAT",
+   "seconds": 36.461,
+   "cnf_sha256": "c12b58cfb9ef3e9b307cf3120f48a252fce5f786bd136095c43c2968bcc0312a",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "3-15": {
+   "status": "SAT",
+   "seconds": 22.51,
+   "cnf_sha256": "a1e85431c2e65859ca3eb70b9d754993c0917c5ad13c54ffbaff54c4631fb722",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-21": {
+   "status": "SAT",
+   "seconds": 13.652,
+   "cnf_sha256": "9d2cd973edac730fe89d35d627c0dbecd608a96e018062942bf17b28d8917431",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-30": {
+   "status": "SAT",
+   "seconds": 36.465,
+   "cnf_sha256": "91323af4e6837e7ee11ab386b13c88fd94af4de548a870693507aa2db5e2042b",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-36": {
+   "status": "SAT",
+   "seconds": 25.288,
+   "cnf_sha256": "8f835fd98fa9cde8fcb6fa27008fe5d5f171a2e5ba602e2c7df4cef4bf300ea9",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-42": {
+   "status": "SAT",
+   "seconds": 18.498,
+   "cnf_sha256": "f90cc8e3e818c4eafacc7e2c15796110cbf062fcc7e466fa1fae55eb97f5526b",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "3-48": {
+   "status": "SAT",
+   "seconds": 81.556,
+   "cnf_sha256": "231dd5e7d3fa83e9f35fc18436b5d950e97115f7834552e3d9f0ae6b528ec4d0",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-54": {
+   "status": "SAT",
+   "seconds": 42.438,
+   "cnf_sha256": "06e4edf7b9186bfbb43398e4847d5228bba302b9435a750fc955072eabc01245",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "3-63": {
+   "status": "SAT",
+   "seconds": 33.989,
+   "cnf_sha256": "3a92a6ec0b89a4531b5b4f5318e36a8101535eb43a5f3bab5b5e09d8e3a65cfd",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-69": {
+   "status": "SAT",
+   "seconds": 3.8,
+   "cnf_sha256": "d5106d14bdabb0fd30c593ed077ea0d33b3d6c275f632cf656ffde759cc7edbf",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-75": {
+   "status": "SAT",
+   "seconds": 25.098,
+   "cnf_sha256": "faca8b4164ad6f5f7a669d2082452a2c8062324a07c8d82d97d84e72d767a599",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "3-81": {
+   "status": "SAT",
+   "seconds": 4.997,
+   "cnf_sha256": "133b059db7df9f25fc456c7fce1bd318185d2a9b16c45e5d71e2af6646050a87",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-90": {
+   "status": "SAT",
+   "seconds": 22.116,
+   "cnf_sha256": "ec9a012de36ef4cec6b4acfceffdcce8d424c78465152f8f2559c03d3ca74de8",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "3-96": {
+   "status": "SAT",
+   "seconds": 43.969,
+   "cnf_sha256": "0614d1989cb103083b392b81d1162e5fd8b061c73ffee67c230b45530825a680",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-102": {
+   "status": "SAT",
+   "seconds": 13.712,
+   "cnf_sha256": "6cc69c62e180975d325fe5652f33cfaf73881fe9d2098158a2203032d49f1a8e",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "3-108": {
+   "status": "SAT",
+   "seconds": 48.585,
+   "cnf_sha256": "a9c83fbaa6fcb1f1732e729fe3ec60bd863919108293c3bf72bbfa4efe049e5a",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "3-118": {
+   "status": "SAT",
+   "seconds": 8.445,
+   "cnf_sha256": "2d23b51006207507d60f061c8e3f83d64ec8d441befd5d426d60739df8a1b95a",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "3-124": {
+   "status": "SAT",
+   "seconds": 95.877,
+   "cnf_sha256": "4edaa954e3be9ece02d64e23f9ff0d99e9c6803388733720d730f8ce6f85e089",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-130": {
+   "status": "SAT",
+   "seconds": 39.903,
+   "cnf_sha256": "2fd7f23f66f96a13ac3663026a8b3e6989c97091976ef3208dc8d6a11166aa84",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "3-139": {
+   "status": "SAT",
+   "seconds": 3.065,
+   "cnf_sha256": "1af2e16094020b4fcee7967a1f6a3bb4066246beadbe9b1517b0546c3b5c1a66",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-145": {
+   "status": "SAT",
+   "seconds": 84.77,
+   "cnf_sha256": "f3ac20661ac0c0d008598134e46326cb783c749207ff203a8bcd4b2088222cf5",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "3-151": {
+   "status": "SAT",
+   "seconds": 8.421,
+   "cnf_sha256": "af9487b5e1b2722efdac31293ad771eba159a341e1219329f49e41e356b81949",
+   "checker_ok": true,
+   "pattern": "four-distinct"
   }
  }
 }

@@ -281,6 +281,286 @@
    "cnf_sha256": "6920578c0f700a64e4aa1c2456b44dc3a707b322d5ad9456ecb48662288be64c",
    "checker_ok": true,
    "pattern": "four-distinct"
+  },
+  "1-87": {
+   "status": "SAT",
+   "seconds": 40.093,
+   "cnf_sha256": "b00fcfc2803c7bf1b36c0e1ddfda6377635d485dfef7e65474743409c669db24",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "1-93": {
+   "status": "SAT",
+   "seconds": 4.737,
+   "cnf_sha256": "e296a92dedee9bc4b1dc369641fed2bdeef0e43e48848e2fd3c7bc84a748b777",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "1-99": {
+   "status": "SAT",
+   "seconds": 33.767,
+   "cnf_sha256": "ff1dc7eb854ec282c253b0270f3f46e32425add169a671e2d734077837010cb1",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "1-105": {
+   "status": "SAT",
+   "seconds": 13.416,
+   "cnf_sha256": "9602bb60bab11c3a26864a25a7e52636c9baf94c00547fa2cd25a5aaf3c96b5d",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "1-113": {
+   "status": "SAT",
+   "seconds": 32.421,
+   "cnf_sha256": "0921a6a0ec83a6cbe0a133fc23ab9443cf379d2d7b094916a89093cfdb2ecf5c",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "1-119": {
+   "status": "SAT",
+   "seconds": 35.476,
+   "cnf_sha256": "fcc4ebf478bf7c470db2842e711ad974e72eaba414f449e46b41881468be33a5",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "1-125": {
+   "status": "SAT",
+   "seconds": 76.976,
+   "cnf_sha256": "7ee21736d4b3b994245edf31cb387cccf332689282c57980aa339249a709aa5e",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "1-131": {
+   "status": "SAT",
+   "seconds": 15.067,
+   "cnf_sha256": "8a9548f725e051d16920aafd7d36092ad36d1b3880059b92360a2adb8bb4b42f",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "1-138": {
+   "status": "SAT",
+   "seconds": 201.958,
+   "cnf_sha256": "44f48d34d31140b93c61230e191b231ee61e2a13c9f4abc8f4182292d216292e",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "1-144": {
+   "status": "SAT",
+   "seconds": 121.376,
+   "cnf_sha256": "ee5087a54cd48ea91c3c46f1d5a55bdd85a8c4d2441851ac076462de15bfe07d",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "1-150": {
+   "status": "SAT",
+   "seconds": 35.017,
+   "cnf_sha256": "b483c42fcb5a5fbc9cf41a4262fce87f2beddb95f7074fc1e59cf10f3e8f8c99",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "1-156": {
+   "status": "SAT",
+   "seconds": 3.806,
+   "cnf_sha256": "13f2ade4fe96ec670725eea9db3c2d2eb305a9a6b09ddb0797a57a0f3dc6977c",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "1-162": {
+   "status": "SAT",
+   "seconds": 43.068,
+   "cnf_sha256": "83a4d65b9c7279010a5fa0abce68a728c3a7b32e80dac4a5b68b8935e07e1aa8",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "2-3": {
+   "status": "SAT",
+   "seconds": 33.885,
+   "cnf_sha256": "6058e03c35c9556b66b7af43e456f4c57f583120bda42307e7e7278d3baa9c55",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-9": {
+   "status": "SAT",
+   "seconds": 68.383,
+   "cnf_sha256": "c88fa2ae855d4b65f2ea762122c693e03ef26a8a73d9cb15afbc242765db47b2",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-15": {
+   "status": "SAT",
+   "seconds": 51.095,
+   "cnf_sha256": "00a48aa866f075e35d69219b2fdf596eaaf6997a6b938d99c07d1e8b70a62c6f",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-21": {
+   "status": "SAT",
+   "seconds": 61.786,
+   "cnf_sha256": "2be83bd3ef61d8e5801c003534f10cee0e946ff6bc04d4c54bafce731158c95c",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-29": {
+   "status": "SAT",
+   "seconds": 29.414,
+   "cnf_sha256": "b7273ae880a3392581bbd5d63acc6c66320951f02dbad7bd46c8d379fae3839e",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-35": {
+   "status": "SAT",
+   "seconds": 4.201,
+   "cnf_sha256": "0056e76bd9e33196f0d985b808db38b159024fe45cb9bab02d4e5f2d0339182c",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-41": {
+   "status": "SAT",
+   "seconds": 25.3,
+   "cnf_sha256": "9bf7323e9501d31fdaa3929b6ab0c65439bbbf8026d106ad37a61579ea0729f6",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-47": {
+   "status": "SAT",
+   "seconds": 40.627,
+   "cnf_sha256": "4ed9b7d2962e9272589c4cf8c01d18443c9439ff769a38fbb308f1a5bc7d1af1",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-55": {
+   "status": "SAT",
+   "seconds": 50.953,
+   "cnf_sha256": "161809f5b71568fa60ff6d3ddedd10d37f33a4589bc5a383c2e6e9900095272b",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-63": {
+   "status": "SAT",
+   "seconds": 33.206,
+   "cnf_sha256": "5926e412cfe5b2e7d8803f2d4e5b0544865924d642c71a01c4ee9e607f104ea8",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "2-69": {
+   "status": "SAT",
+   "seconds": 14.621,
+   "cnf_sha256": "76262400beeed7b3db1ccfa9af27b31e6661215ea1851926189ea2ce95bb5b42",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-75": {
+   "status": "SAT",
+   "seconds": 92.107,
+   "cnf_sha256": "e8cf196cbf3aa5ca5ad639c5c285040636f93799c9f75e976ca0ea516ebc8d06",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "2-81": {
+   "status": "SAT",
+   "seconds": 24.28,
+   "cnf_sha256": "7ff634c6f86c6144d630096fdfc7e20727dde59b58801bd33458640c263ec3c1",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "2-89": {
+   "status": "SAT",
+   "seconds": 55.059,
+   "cnf_sha256": "bc4e19dc33eed306e9e234d096697b4d05378f9341ad81a4aee4a2a5e0940f8f",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-95": {
+   "status": "SAT",
+   "seconds": 34.358,
+   "cnf_sha256": "ee55ee139500dd4be55d7d82ae555d62a7c78fcc509dd1e87d4438d0023e6160",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-101": {
+   "status": "SAT",
+   "seconds": 39.185,
+   "cnf_sha256": "b561c950e90995d057d39502c3fac79bddffef895294d2466392baadf87bfaba",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "2-107": {
+   "status": "SAT",
+   "seconds": 4.133,
+   "cnf_sha256": "a58d7e9b07fc3b3dcb58e4375749e61016a2a4a3b574faf28a83611f96c79976",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-116": {
+   "status": "SAT",
+   "seconds": 10.546,
+   "cnf_sha256": "4d5d16c5431c0dac0270c751085a56fedcde0ef559c2e8eb303bd5b68b1b87df",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-122": {
+   "status": "SAT",
+   "seconds": 40.058,
+   "cnf_sha256": "407191fb27bdcedfd1df6b7363901393be311a0ea4065e6f6942b18a1753b107",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "2-128": {
+   "status": "SAT",
+   "seconds": 117.117,
+   "cnf_sha256": "5e7473db3a2559103548625433f7f0d13697966ec47cc14337a287e69c64ab4b",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-134": {
+   "status": "SAT",
+   "seconds": 95.844,
+   "cnf_sha256": "6b7db63bca2a670b254345d84ca0df3b7f1876ec4597b0e8918cdedebb4e4900",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-142": {
+   "status": "SAT",
+   "seconds": 24.999,
+   "cnf_sha256": "734b55878ad37dc955477cf5c05b46b4d15e386ea64f484561183338222e18ea",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-148": {
+   "status": "SAT",
+   "seconds": 9.819,
+   "cnf_sha256": "72653190d41727fa5a249509e41ee083b89e401d47598c43e4a5092fe0e1da88",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-154": {
+   "status": "SAT",
+   "seconds": 2.472,
+   "cnf_sha256": "119014274cb5a4453413195cb37d31a026099a598c562d5a75507b9aff8030dd",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "2-160": {
+   "status": "SAT",
+   "seconds": 4.157,
+   "cnf_sha256": "e3c30c0b6cc3019bf506959aa6d4db36842d4cec597f69cd99e7cc22bbf09cf3",
+   "checker_ok": true,
+   "pattern": "four-distinct"
+  },
+  "2-166": {
+   "status": "SAT",
+   "seconds": 3.604,
+   "cnf_sha256": "8a43a62525108408d52d1db0dadeca10328e6774bc8718c28ae9fe4d47129dd8",
+   "checker_ok": true,
+   "pattern": "crossed"
+  },
+  "3-11": {
+   "status": "SAT",
+   "seconds": 22.975,
+   "cnf_sha256": "7e2d3f9712234cd5f24df6168373e93c5164b9e6575b711960ebeefc8e873646",
+   "checker_ok": true,
+   "pattern": "crossed"
   }
  }
 }
