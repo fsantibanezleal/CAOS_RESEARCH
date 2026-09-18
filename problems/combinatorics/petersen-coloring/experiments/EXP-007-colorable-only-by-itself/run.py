@@ -35,6 +35,8 @@ def log(msg: str) -> None:
 def load(name: str) -> graphs.Graph:
     table = {
         "G52": lambda: graphs.load_edgelist(DATA / "gjmmm-52.edgelist"),
+        "G52b": lambda: graphs.load_edgelist(DATA / "gjmmmu-52-b.edgelist"),
+        "G68": lambda: graphs.load_edgelist(DATA / "hog-57280-68.edgelist"),
         "G112": lambda: graphs.load_edgelist(DATA / "putman-112-main.edgelist"),
         "H112": lambda: graphs.load_edgelist(DATA / "putman-112-d3.edgelist"),
         "petersen": graphs.petersen,

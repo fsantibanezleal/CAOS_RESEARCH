@@ -154,3 +154,26 @@ graph and the flower snark `J5` (wording of this sentence corrected right after 
 any run); a disagreement refutes a lemma or exposes an encoding error and blocks the target runs.
 Budget and verdict rules are unchanged (6 hours per order, 24 hours overall, counted from the
 restart).
+
+## Addendum 3 declared 2026-09-18, before any instance on the graphs named here ran
+
+House of Graphs became reachable on 2026-09-18. Entries 57244 and 57237, 57279 are isomorphic to
+our `G52`, `G112`, `H112` (checked); two graphs are new to this record and were added to `data/`:
+`G52b` (entry 57278, the second 52-vertex counterexample of v3, digest `d30a423a...1477`) and `G68`
+(entry 57280, the 68-vertex counterexample, digest `19c7c22a...5ab2`); both are cubic, girth 5,
+edge connectivity 3, cyclically 4-edge-connected.
+
+Scope extension, same reduced method, same certificates, 6 hours per order:
+
+- `G52b`: every even `k < 52`. Committed expectation: all UNSAT (it is in `H_3`), moderate
+  confidence, by analogy with `G52`.
+- `G68`: every even `k < 68`. No committed direction: a SAT order would show that the 68-vertex
+  graph is colored by a smaller counterexample (possibly one of the 52-vertex graphs at `k = 52`,
+  possibly a new one below 52); all UNSAT puts it in `H_3`.
+- `G112`, `H112`: every even `k < 112`, run after the smaller graphs, largest formulas about
+  18 million clauses; same reading. For these, before the full sweep, the single order `k = 52` is
+  run first as a probe of "colored by a 52-vertex counterexample".
+
+Before the target runs on a new graph, EXP-001-style refutations of its Petersen colorability are
+reproduced with our encoder (P0: `G52b` and `G68` have no Petersen coloring, UNSAT with verified
+proofs), since only our own certificate makes the reading of a SAT outcome independent.

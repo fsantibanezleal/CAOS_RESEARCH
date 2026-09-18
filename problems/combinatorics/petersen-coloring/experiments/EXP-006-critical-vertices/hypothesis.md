@@ -116,7 +116,7 @@ was critical, the natural strengthening is declared:
   expectation and is reported as a structural distinction from `G52`. Budget: 10 minutes per
   instance, whole sweep per graph under 8 hours; undecided pairs listed.
 
-## Addendum 4 declared 2026-09-18 10:25, before any bound-2 normal-5 instance ran
+## Addendum 4 declared 2026-09-18 10:07, before any bound-2 normal-5 instance ran
 
 State: the single-edge relaxation sweep of `G52` (a proper 5-edge-coloring that is normal at every
 edge except possibly one designated edge) has 42 of 78 edges refuted with verified proofs (edges 0
