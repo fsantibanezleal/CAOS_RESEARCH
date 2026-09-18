@@ -22,11 +22,27 @@ memory (wiki 04/05 and experiment verdicts are the sources).
   committed; two-pass pdflatex; MiKTeX).
 - Author block: Felipe Santibanez-Leal with \orcidlink{0000-0002-0150-3246}
   (usepackage orcidlink after hyperref) + the CAOS Research program line.
-- Honest labeling in-text: machine-verified [MV], derived [D], conjectural
-  [C]; refuted predictions and retractions stay in the paper (they are part
-  of the record and the method).
-- Manuscript versions in the \date line (v0.0X) bump with each substantive
-  expansion.
+- Claim-status labels in-text: machine-verified [MV], derived [D], conjectural
+  [C]. Refuted predictions, counterexamples and negative results stay in the
+  paper, written AS RESULTS (a remark with its counterexample), never as the
+  story of an earlier claim being withdrawn.
+- Page-1 header block and version macros (\docversion, \docdate, \versiondoi,
+  \conceptdoi): _CAOS_MANAGE/conventions/manuscript-header-standard.md. The
+  version bumps with each substantive expansion.
+
+## Scientific voice (binding, adopted 2026-09-17 on Felipe's directive)
+
+A manuscript describes the problem, the method, the experiments or
+computations, the results, their limits and the conclusions. Its body never
+talks about the document itself (its versions, "this version", "an earlier
+version stated"), about its Zenodo deposit or DOIs (those live only in the
+page-1 header block), or about the working vocabulary of this programme
+(campaign, verdict, ledger, dossier, declared hypotheses, smoke run or gate,
+session, adversarial audit of our own work, "honest"). Experiment identifiers
+may be cited as archived computations ("computation EXP-118"). Rules and the
+replacement table: _CAOS_MANAGE/conventions/manuscript-scientific-voice.md.
+Gate, run before every build that will be deposited and enforced in CI:
+`python scripts/check_manuscript_voice.py manuscripts/<problem>/<paper>`.
 
 ## Zenodo publication (the upload rule)
 
@@ -35,7 +51,9 @@ memory (wiki 04/05 and experiment verdicts are the sources).
   next to main.tex AND mirrored in _CAOS_MANAGE/manuscripts/<problem>/<paper>/
   (metadata.md with DOIs, version history, next-version trigger).
 - Upload via the vault tooling (_CAOS_MANAGE/tools/zenodo/, token in
-  credentials/providers/zenodo/): create the deposit via API; publishing is
+  credentials/providers/zenodo/): a new version goes through
+  publish_revision.py (voice gate, DOI reserved first, the PDF prints its
+  own DOI, live checksum verified); publishing is
   AUTHORIZED to run autonomously (Felipe reviews after publication and
   requests changes as further versions). Record id + DOIs go into the
   metadata.md the same session.
@@ -48,8 +66,10 @@ memory (wiki 04/05 and experiment verdicts are the sources).
   cite frozen states.
 - Web/app links use the CONCEPT DOI; papers cite version DOIs.
 - A claim UPGRADE (scope strengthening) always means a new version whose
-  changelog names the upgrade and the experiments behind it; a RETRACTION or
-  correction likewise ships as a new version prominently labeled, never a
-  silent swap.
+  VERSION NOTES on the Zenodo record (and the vault metadata.md) name the
+  upgrade and the experiments behind it; a RETRACTION or correction likewise
+  ships as a new version labeled in its version notes, never a silent swap.
+  The PDF body states the corrected science directly and does not narrate
+  the change.
 - Trigger inventory per paper lives in the mirror metadata.md
   (next-version trigger line): keep it current.

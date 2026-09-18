@@ -20,6 +20,11 @@
 - **Manuscript:** `manuscripts/<problem>/<slug>/` LaTeX; findings enter the manuscript only
   after adversarial validation; the manuscript distinguishes clearly between (a)
   reproduced/validated external results, (b) our verified results, (c) our conjectures.
+- **Manuscript voice (binding, 2026-09-17):** the manuscript is a scientific paper, not a
+  record of how it was produced. No version narrative, no Zenodo or DOI talk outside the
+  page-1 header block, no programme vocabulary (campaign, verdict, ledger, dossier, declared
+  hypotheses, smoke gate, session, "honest"). See methodology/09 and
+  `scripts/check_manuscript_voice.py` (CI gate).
 
 ## Manuscript front-matter standard (binding; a reader must never have to guess what the document is)
 
@@ -38,8 +43,10 @@ document-type marking. Every manuscript in `manuscripts/` carries ALL of:
 3. **Author line with ORCID**: `\usepackage{orcidlink}` and
    `\author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\ \small CAOS
    Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}`.
-4. **Version in the date block**: `\date{YYYY-MM-DD\\[2pt]\normalsize Version X.YY}`,
-   matching the version in the Zenodo deposit and in the vault metadata file.
+4. **Version macros**: `\docversion`, `\docdate`, `\versiondoi` and `\conceptdoi`, exactly as
+   in `_CAOS_MANAGE/conventions/manuscript-header-standard.md`; the date block, the running
+   header and the page-1 header block use them, and `publish_revision.py` patches them with
+   the reserved DOI so the published PDF prints its own identifier.
 5. **Navy colored links** (`linknavy`, `colorlinks=true`), never `hidelinks`.
 
 Exemplar to copy: `manuscripts/jacobian-conjecture/foundational/main.tex` preamble.
@@ -54,9 +61,8 @@ able to tell what it is, what version, and whether it has been refereed.
 
 Required, in this order:
 1. Title, author with `\orcidlink{...}`, and the programme affiliation line.
-2. `\date{<YYYY-MM-DD>\[2pt]
-ormalsize Version <X.YY>}`. The date field
-   carries ONLY the date and the version. Do NOT bury the document type or a
+2. `\date{\docdate\\[2pt]\normalsize Version \docversion}` (or the date inside the header
+   block only). The date field carries ONLY the date and the version. Do NOT bury the document type or a
    changelog sentence in it (both were done before this standard and read badly).
 3. A boxed status banner immediately after `\maketitle`, centred, containing:
    - the DOCUMENT TYPE in bold (`PREPRINT`, or `TECHNICAL NOTE` / `REPORT` as
