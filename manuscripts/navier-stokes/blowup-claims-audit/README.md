@@ -1,4 +1,4 @@
-# navier-stokes: a ceiling for the smooth-forcing mechanism under dissipation
+# navier-stokes: how much dissipation can a multiscale layer cascade carry?
 
 First paper of the navier-stokes research series. Its conclusion is Theorem 1: the published
 smooth-forcing design cannot carry a dissipation exponent above 5.38e-04, which is 86 times below
@@ -9,11 +9,11 @@ never from memory, per methodology 09.
 
 | | |
 |---|---|
-| version | 0.03 (2026-09-17) |
-| pages | 11 |
+| version | 0.04 (2026-09-17) |
+| pages | 8 |
 | build | `pdflatex main.tex` twice, MiKTeX; zero errors, zero overfull or underfull boxes |
 | labels | machine-verified `[MV]`, derived `[D]`, conjectural `[C]`, used in-text |
-| Zenodo | v0.03 published 2026-09-17, version DOI [10.5281/zenodo.22821242](https://doi.org/10.5281/zenodo.22821242), concept DOI [10.5281/zenodo.22820520](https://doi.org/10.5281/zenodo.22820520) (always latest) |
+| Zenodo | v0.04, version DOI [10.5281/zenodo.22821790](https://doi.org/10.5281/zenodo.22821790), concept DOI [10.5281/zenodo.22820520](https://doi.org/10.5281/zenodo.22820520) (always latest) |
 
 ## What it contains, and where each part comes from
 
