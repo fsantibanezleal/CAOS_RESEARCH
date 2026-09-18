@@ -59,7 +59,7 @@ def pair_orbit_representatives(g: graphs.Graph) -> list[tuple[int, int]]:
     return reps
 
 
-def multipole_formula(g: graphs.Graph, e1: int, e2: int) -> tuple[CNF, dict]:
+def multipole_formula(g: graphs.Graph, e1: int, e2: int, symmetry: bool = True) -> tuple[CNF, dict]:
     """Edge map to E(P): kept edges and four pendant edges; pairwise adjacency at every vertex of G."""
     p = graphs.petersen()
     padj = [[j for j in range(15) if j != i and set(p.edges[i]) & set(p.edges[j])] for i in range(15)]
@@ -83,8 +83,9 @@ def multipole_formula(g: graphs.Graph, e1: int, e2: int) -> tuple[CNF, dict]:
                 for t in range(15):
                     if s == t or t not in padj[s]:
                         f.add(-y[k1, s], -y[k2, t])
-    # symmetry: P is edge-transitive
-    f.add(y[("edge", kept[0]), 0])
+    # symmetry: P is edge-transitive (switched off when the caller fixes pendant labels itself)
+    if symmetry:
+        f.add(y[("edge", kept[0]), 0])
     return f, y
 
 

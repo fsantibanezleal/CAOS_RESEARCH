@@ -60,7 +60,7 @@ def main() -> None:
             continue
         entry = {}
         for d in (1, 2, 3):
-            f, y = multipole_formula(g, args.e0, e)
+            f, y = multipole_formula(g, args.e0, e, symmetry=False)
             f.add(y[("pend", a, args.e0), 0])
             f.add(y[("pend", b, args.e0), rep[d]])
             cnf = out_dir / f"M_{args.e0}_{e}_d{d}.cnf"

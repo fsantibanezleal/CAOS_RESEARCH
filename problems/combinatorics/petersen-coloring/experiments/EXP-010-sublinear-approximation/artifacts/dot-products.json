@@ -1,0 +1,19 @@
+{
+ "D_0_3_0": {
+  "n": 102,
+  "cubic": true,
+  "girth": 5,
+  "edge_connectivity": 3,
+  "digest": "89a8ec596f160e730b91c08fb654b63b114424235834bd1c5406eff091369d4d",
+  "bound0": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 175.237
+  },
+  "bound2": {
+   "status": "SAT",
+   "seconds": 32.637,
+   "checker_defect": 2
+  }
+ }
+}
