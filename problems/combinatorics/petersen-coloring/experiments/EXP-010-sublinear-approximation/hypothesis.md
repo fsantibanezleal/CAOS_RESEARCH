@@ -109,3 +109,23 @@ cyclic 4-edge-connectivity this settles statement (e).
   counterexamples gives a non-colorable `N`. One representative per edge orbit, all five graphs,
   10 minutes per instance. SAT witnesses are checked and their boundary pattern is tabulated; a
   witness whose pattern can be completed to `G` refutes the encoder (it would color `G`).
+
+## Addendum 2 declared 2026-09-18 13:20, before any instance of the kind named here ran
+
+Reduction `[D]`, recorded in the context note: if a cyclically 4-edge-connected cubic graph `G*`
+has `pd(G*) >= 5`, then every 4-pole `G* - e1 - e2` is non-colorable (a coloring of the 4-pole plus
+arbitrary labels on `e1`, `e2` has at most the four ends as bad vertices), so the cyclic joins of
+Mattiolo et al. have one bad vertex per copy and statement (e) fails. All five known
+counterexamples have `pd = 2`. Probe: are there cyclically 4-edge-connected graphs with larger
+defect among dot products of two counterexamples?
+
+Objects: the dot product `D(e1, e2; uv) = (G52 - e1 - e2) + (G52 - {u, v})`, with `e1 = ab`,
+`e2 = cd` independent edges of the first copy and `uv` an edge of the second, joined by
+`a-u1, b-u2, c-v1, d-v2` (`u1, u2` the other neighbours of `u`, `v1, v2` those of `v`); 100 vertices.
+Ten instances: `uv` the edge of index 0, 1 and `(e1, e2)` the first five orbit representatives of
+independent pairs. For each: Petersen colorability (bound 0, with proof when UNSAT), then the
+cardinality bounds 2, 3, 4 (witness search only, 10 minutes each).
+
+- P7: no direction committed on colorability; if an instance is not colorable, committed
+  expectation `pd = 2` (bound 2 SAT). An instance with bounds 2, 3, 4 all undecided or UNSAT is
+  the interesting case and would be pursued with designated relaxations.
