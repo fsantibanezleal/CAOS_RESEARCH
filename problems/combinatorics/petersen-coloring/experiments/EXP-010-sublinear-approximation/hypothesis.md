@@ -129,3 +129,28 @@ cardinality bounds 2, 3, 4 (witness search only, 10 minutes each).
 - P7: no direction committed on colorability; if an instance is not colorable, committed
   expectation `pd = 2` (bound 2 SAT). An instance with bounds 2, 3, 4 all undecided or UNSAT is
   the interesting case and would be pursued with designated relaxations.
+
+## Addendum 3 declared 2026-09-18 13:40, before any instance of the kind named here ran
+
+Sharper reduction `[D]` (context note, Proposition 5): one cyclically 4-edge-connected cubic graph
+with `pd >= 3` refutes statement (e). A route to such a graph through boundary patterns:
+
+Let `e0 = ab` be an edge of `G52` and `e` an edge independent of `e0`. In a coloring of the 4-pole
+`M(G52; e0, e)` the pendant labels `s(a) != s(b)` at the ends of `e0` are at distance 1, 2 or 3 in
+the line graph of `P`; let `Dist(e0, e)` be the set of distances that occur. The line graph of `P`
+is distance-transitive (all ordered pairs of edges at the same distance are equivalent under the
+120 automorphisms; checked), so `Dist` determines which ordered pairs of labels can appear at
+`(a, b)`. Take two copies of `G52`, open both at `e0` and join them as a ring of two blocks
+(`a1-b2`, `a2-b1`), then delete `e` in the first block and `e'` in the second. The resulting
+connected 4-pole `Y(e, e')` has a Petersen coloring if and only if
+`Dist(e0, e)` and `Dist(e0, e')` intersect. If they are disjoint for some `e, e'`, `Y(e, e')` is a
+non-colorable 4-pole whose cyclic joins have one bad vertex per copy and no 2-edge cut through the
+ring edges, which would settle (e) after a machine check of cyclic 4-edge-connectivity.
+
+Computation: `Dist(e0, e)` for `e0` the edge of index 0 and every `e` independent of it (three
+formulas per `e`: `s(a)` fixed to edge 0 of `P`, `s(b)` fixed to one edge at distance 1, 2, 3).
+UNSAT answers carry checked proofs.
+
+- P8: committed expectation, low confidence (one quarter): two edges `e, e'` with disjoint distance
+  sets exist for `e0` of index 0. If every `Dist(e0, e)` contains a common distance, this route is
+  closed for that `e0` and the table is the output (research line PCR-9).
