@@ -154,3 +154,17 @@ UNSAT answers carry checked proofs.
 - P8: committed expectation, low confidence (one quarter): two edges `e, e'` with disjoint distance
   sets exist for `e0` of index 0. If every `Dist(e0, e)` contains a common distance, this route is
   closed for that `e0` and the table is the output (research line PCR-9).
+
+## Addendum 4 declared 2026-09-18, before any instance of the kind named here ran
+
+Outcome of addendum 3 for `e0` of index 0: all 73 distance sets contain the distance 1 (40 sets
+`{1}`, 29 sets `{1, 2}`, 1 set `{1, 3}`, 3 sets `{1, 2, 3}`), so P8 is refuted for that `e0`.
+
+Reallocation inside the same budget: the `H112` 4-pole sweep (about 35 s per instance, 2,324
+representatives, all SAT so far) is stopped and its six workers compute `Dist(e0, e)` for one
+representative `e0` of each of the other 13 edge orbits of `G52` and every `e` independent of it.
+Reason: a pair `(e0; e, e')` with disjoint distance sets gives a non-colorable connected 4-pole and
+settles statement (e), whereas a colorable 4-pole of `H112` decides nothing.
+
+- P9: committed expectation, low confidence (one fifth): for some `e0` two distance sets are
+  disjoint. The table of distance sets is the output either way (research line PCR-9).
