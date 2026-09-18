@@ -5,7 +5,7 @@
     "title": "The Jacobian Conjecture after the Three-Dimensional Counterexample: Exact Validation, a General Seed Family, the Geometry of Non-Properness, and Two-Dimensional Equivariant Rigidity",
     "creators": [
       {
-        "name": "Santibañez-Leal, Felipe",
+        "name": "Santibáñez-Leal, Felipe",
         "orcid": "0000-0002-0150-3246",
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
@@ -40,9 +40,9 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version": "0.12",
+    "version": "0.13",
     "language": "eng",
     "publication_date": "2026-09-18",
-    "version_notes": "Revision. The text states the mathematics directly, without narrative about the research programme, the three-paper split or earlier revisions: the repository-folder pointers to the planar and cascade papers are replaced by citations of those companion papers, the section that only redirected to the planar companion is removed and its summary moved to the introduction, the failed parity law in the weighted landscape is stated as a result, the theorem previously named Constructor v2 is named Constructor, an opinion on which open question matters most is restated as the open question itself, and a data-availability paragraph states what the EXP identifiers denote. The record title now matches the title printed in the paper. The title is set on balanced lines, two section headings no longer break inside a computation identifier, and a page-1 header block states the document type, version, licence and DOIs. Corrections. (1) The Dixmier consequence in the Discussion is corrected. Dixmier(n) implies JC(n), so Dixmier(n) is false for every n ≥ 3, while ranks 1 and 2 remain open. The previous text concluded that Dixmier(2) is false from the falsity of JC(4), which the implication from JC(2n) to Dixmier(n) (Belov-Kanel and Kontsevich; Tsuchimoto) does not support, and it described that implication as an equivalence. (2) The announcement date is 2026-07-20 throughout, as in the cited announcement and its press coverage. (3) The reproducibility statement includes the finite-field computations behind the characteristic-p statements (EXP-009). Methods, data and the other results are unchanged."
+    "version_notes": "The consequence-cascade paragraph of the Discussion states the Mathieu range that the published proof supports (false for SU(N), N ≥ 24, and for SU(2); not decided for 3 ≤ N ≤ 23, EXP-136) and that the Gaussian moments conjecture fails in every dimension n ≥ 3 (explicit example of Long, 2026). The author name is printed as Santibáñez-Leal, as on the author's ORCID record (0000-0002-0150-3246)."
   }
 }

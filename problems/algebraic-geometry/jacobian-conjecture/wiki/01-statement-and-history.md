@@ -37,16 +37,32 @@ thing only: a Keller map with a repeated value.
 - **Open.** JC(2). The evidential status of the 2-variable case has always been distinguished
   from the general one; see [04-two-dimensional-frontier.md](04-two-dimensional-frontier.md).
 
-## Consequence cascade (verified from primary sources, EXP-016)
+## Consequence cascade (primary sources: EXP-016, EXP-018; dimension indices: EXP-136)
 
-The refutation propagates through implications now checked against their primary records:
-the **Mathieu conjecture is false for SU(3)** (Mathieu 1997: Mathieu for SU(N) implies JC(N);
-abelian case Duistermaat-van der Kallen 1998; review arXiv:2511.16561); the **Gaussian moments
-conjecture is false** (GMC implies JC: Derksen-van den Essen-Zhao, Israel J. Math. 2017,
-arXiv:1506.05192); **Zhao's vanishing conjecture is false** (equivalent to JC:
-arXiv:math/0409534, arXiv:0704.1691); the **Image conjecture is false in some dimension**
-(implies the vanishing conjecture: van den Essen, arXiv:1006.5801); and the **full Dixmier
-conjecture is false** (stable equivalence JC(2n) iff Dixmier(n): Belov-Kanel-Kontsevich
-arXiv:math/0512171, independently Tsuchimoto, Osaka J. Math. 2005; JC(4) false gives Dixmier(2)
-false; Dixmier(1) remains open). An explicit failing Hessian-nilpotent quartic is a queued
-computational target (JCB-024).
+The refutation propagates through implications checked against their primary records, each
+taken with the dimension index its source states (EXP-136):
+
+- **Mathieu conjecture: false for SU(2) and for SU(N), N >= 24.** Mathieu's argument
+  (Mathieu 1997, expounded in arXiv:2511.16561, Theorems 4.16 and 4.23) shows that the
+  conjecture for SU(N) makes every Keller map x - h of C^N with h homogeneous invertible; the
+  24-variable cubic-homogeneous form verified in EXP-041 is such a map and is not injective.
+  SU(2) fails by an explicit example (Long, arXiv:2607.19012). For 3 <= N <= 23 the located
+  proofs do not decide it: F is not affinely of homogeneous type (EXP-136), and the reduction to
+  that type adds variables. Abelian case: Duistermaat-van der Kallen 1998.
+- **Gaussian moments conjecture: false for every n >= 3**, with an explicit three-variable
+  counterexample (Long, arXiv:2607.18186); GMC implies JC (Derksen-van den Essen-Zhao, Israel J.
+  Math. 2017, arXiv:1506.05192), and GMC(1) holds (their Proposition 4.2); a proof of GMC(2)
+  is claimed (Wilson, arXiv:2607.23887).
+- **Zhao's vanishing conjecture: false** (equivalent to JC: arXiv:math/0409534,
+  arXiv:0704.1691), with an explicit Hessian-nilpotent quartic in 48 variables (EXP-041).
+- **Image conjecture: false in some dimension** (implies the vanishing conjecture: van den
+  Essen, arXiv:1006.5801).
+- **Dixmier conjecture: false for every rank n >= 3**, since Dixmier(n) implies JC(n). The
+  converse direction JC(2n) implies Dixmier(n) (Belov-Kanel-Kontsevich arXiv:math/0512171;
+  independently Tsuchimoto, Osaka J. Math. 2005) gives only stable equivalence and says nothing
+  about rank 2 from the falsity of JC(4). Ranks 1 and 2 remain open; a proof of rank 1 is
+  claimed (Zheglov, arXiv:2410.06959).
+- **Poisson conjecture: false for every index n >= 3** (JC(2n) implies Poisson(n) implies
+  Dixmier(n) implies JC(n): Adjamagbo-van den Essen, arXiv:math/0608009, Theorem 7); indices 1
+  and 2 remain open. A proof of JC(2) would give Dixmier(1) and Poisson(1); a counterexample to
+  JC(2) would refute Dixmier(2) and Poisson(2).

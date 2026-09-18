@@ -1,0 +1,41 @@
+==============================================================================
+Part A: closure of the located implications (JC, Dixmier DC, Poisson PC)
+==============================================================================
+[PASS] A1: the closure is consistent (no statement forced both ways)  0
+  JC(1)=true  JC(2)=undecided  JC(3)=false  JC(4)=false  JC(5)=false  JC(6)=false  JC(7)=false  JC(8)=false
+  DC(1)=undecided  DC(2)=undecided  DC(3)=false  DC(4)=false  DC(5)=false  DC(6)=false  DC(7)=false  DC(8)=false
+  PC(1)=undecided  PC(2)=undecided  PC(3)=false  PC(4)=false  PC(5)=false  PC(6)=false  PC(7)=false  PC(8)=false
+[PASS] A2: the closure with JC(2) = True is consistent
+  if JC(2) = True: DC(1)=true, DC(2)=undecided, PC(1)=true, PC(2)=undecided
+[PASS] A2: the closure with JC(2) = False is consistent
+  if JC(2) = False: DC(1)=undecided, DC(2)=false, PC(1)=undecided, PC(2)=false
+==============================================================================
+Part B: F (EXP-001) is not affinely equivalent to x - h with h homogeneous
+==============================================================================
+[PASS] B1: total degrees of the components  [7, 6, 4]; deg F = 7
+[PASS] B2: the second-derivative ideal is the unit ideal (no base point)  13 nonzero generators, basis [1]
+[PASS] B3: direct certificate d2F3/dxdy = -6x, d2F3/dx2|x=0 = -6y, d2F1/dy2|x=y=0 = 8
+==============================================================================
+Part C: Thompson's G = x + H on Q^24 (EXP-041 input) is of homogeneous type
+==============================================================================
+[PASS] C1: sha256(cubic_map.txt) matches the EXP-041 record  10f416c2bf813771
+[PASS] C1: sha256(collision_points.txt) matches the EXP-041 record  0e02c18a6cf2ca9a
+[PASS] C2: all 24 components parsed
+[PASS] C3: H is homogeneous cubic, so G = x + H = x - h with h = -H homogeneous  54 monomials
+[PASS] C4: G(P) = G(Q) exactly with P != Q
+==============================================================================
+Part D: Long's Mathieu counterexample on SU(2), exact Haar moments for n = 1..12
+==============================================================================
+[PASS] D1: int F^n dg = 0 and int F^n G dg = (-1)^(n-1)/(n+1) for n = 1..12  n = 12: -1/13
+==============================================================================
+Part E: Long's explicit GMC(3) counterexample, exact Gaussian moments for m = 1..10
+==============================================================================
+[PASS] E1: P3 expands to the printed five-term quartic
+[PASS] E2: E(P3^m) = 0 and E(Q3 P3^m) = m! for m = 1..10  m = 10: 3628800
+==============================================================================
+RESULT Dixmier: {'false': [3, 4, 5, 6, 7, 8], 'undecided': [1, 2]}
+RESULT Poisson: {'false': [3, 4, 5, 6, 7, 8], 'undecided': [1, 2]}
+RESULT Mathieu: {'F_reached_by_located_proof': False, 'false_for_SU(N)': 'N >= 24', 'SU(2)': 'false (Long, arXiv:2607.19012; finite check n <= 12: match)', 'not_established': 'SU(N), 3 <= N <= 23'}
+RESULT GaussianMoments: {'true': [1], 'false': 'n >= 3 (Long, Theorem 5.1 and dummy variables; finite check m <= 10: match)', 'n=2': 'proof claimed (Wilson, arXiv:2607.23887, preprint; not verified here)', 'note': 'literature facts, transcribed in artifacts/sources.md'}
+RESULT Dixmier_rank_1_claim: proof claimed (Zheglov, arXiv:2410.06959v5, preprint; not verified here)
+written artifacts/result.json; 0 failed check(s)

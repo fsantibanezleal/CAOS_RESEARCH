@@ -1,0 +1,239 @@
+{
+ "derived_rows": {
+  "Dixmier": {
+   "false": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "undecided": [
+    1,
+    2
+   ]
+  },
+  "Dixmier_rank_1_claim": "proof claimed (Zheglov, arXiv:2410.06959v5, preprint; not verified here)",
+  "GaussianMoments": {
+   "false": "n >= 3 (Long, Theorem 5.1 and dummy variables; finite check m <= 10: match)",
+   "n=2": "proof claimed (Wilson, arXiv:2607.23887, preprint; not verified here)",
+   "note": "literature facts, transcribed in artifacts/sources.md",
+   "true": [
+    1
+   ]
+  },
+  "Mathieu": {
+   "F_reached_by_located_proof": false,
+   "SU(2)": "false (Long, arXiv:2607.19012; finite check n <= 12: match)",
+   "false_for_SU(N)": "N >= 24",
+   "not_established": "SU(N), 3 <= N <= 23"
+  },
+  "Poisson": {
+   "false": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "undecided": [
+    1,
+    2
+   ]
+  }
+ },
+ "experiment": "EXP-136",
+ "failures": [],
+ "part_a": {
+  "conditional_on_jc2": {
+   "JC(2)=false": {
+    "DC(1)": "undecided",
+    "DC(2)": "false",
+    "PC(1)": "undecided",
+    "PC(2)": "false"
+   },
+   "JC(2)=true": {
+    "DC(1)": "true",
+    "DC(2)": "undecided",
+    "PC(1)": "true",
+    "PC(2)": "undecided"
+   }
+  },
+  "ground_facts": {
+   "JC(1)": "true (BKK introduction)",
+   "JC(2)": "open",
+   "JC(n), n >= 3": "false (EXP-001 plus dummy coordinates)"
+  },
+  "nmax": 8,
+  "status": {
+   "DC(1)": "undecided",
+   "DC(2)": "undecided",
+   "DC(3)": "false",
+   "DC(4)": "false",
+   "DC(5)": "false",
+   "DC(6)": "false",
+   "DC(7)": "false",
+   "DC(8)": "false",
+   "JC(1)": "true",
+   "JC(2)": "undecided",
+   "JC(3)": "false",
+   "JC(4)": "false",
+   "JC(5)": "false",
+   "JC(6)": "false",
+   "JC(7)": "false",
+   "JC(8)": "false",
+   "PC(1)": "undecided",
+   "PC(2)": "undecided",
+   "PC(3)": "false",
+   "PC(4)": "false",
+   "PC(5)": "false",
+   "PC(6)": "false",
+   "PC(7)": "false",
+   "PC(8)": "false"
+  }
+ },
+ "part_b": {
+  "affinely_homogeneous_type": false,
+  "component_total_degrees": [
+   7,
+   6,
+   4
+  ],
+  "groebner_basis": [
+   "1"
+  ],
+  "second_derivative_generators": 13,
+  "total_degree": 7
+ },
+ "part_c": {
+  "collision_exact": true,
+  "cubic_monomials": 54,
+  "dimension": 24,
+  "homogeneous_cubic": true,
+  "keller": "det(I + JH) = 1 by the nilpotency of JH (EXP-041, index 18)"
+ },
+ "part_d": {
+  "all_match": true,
+  "moments": [
+   {
+    "int_F^n": "0",
+    "int_F^n_G": "1/2",
+    "n": 1
+   },
+   {
+    "int_F^n": "0",
+    "int_F^n_G": "-1/3",
+    "n": 2
+   },
+   {
+    "int_F^n": "0",
+    "int_F^n_G": "1/4",
+    "n": 3
+   },
+   {
+    "int_F^n": "0",
+    "int_F^n_G": "-1/5",
+    "n": 4
+   },
+   {
+    "int_F^n": "0",
+    "int_F^n_G": "1/6",
+    "n": 5
+   },
+   {
+    "int_F^n": "0",
+    "int_F^n_G": "-1/7",
+    "n": 6
+   },
+   {
+    "int_F^n": "0",
+    "int_F^n_G": "1/8",
+    "n": 7
+   },
+   {
+    "int_F^n": "0",
+    "int_F^n_G": "-1/9",
+    "n": 8
+   },
+   {
+    "int_F^n": "0",
+    "int_F^n_G": "1/10",
+    "n": 9
+   },
+   {
+    "int_F^n": "0",
+    "int_F^n_G": "-1/11",
+    "n": 10
+   },
+   {
+    "int_F^n": "0",
+    "int_F^n_G": "1/12",
+    "n": 11
+   },
+   {
+    "int_F^n": "0",
+    "int_F^n_G": "-1/13",
+    "n": 12
+   }
+  ],
+  "n_checked": 12
+ },
+ "part_e": {
+  "all_match": true,
+  "m_checked": 10,
+  "moments": [
+   {
+    "E_P3^m": "0",
+    "E_Q3_P3^m": "1",
+    "m": 1
+   },
+   {
+    "E_P3^m": "0",
+    "E_Q3_P3^m": "2",
+    "m": 2
+   },
+   {
+    "E_P3^m": "0",
+    "E_Q3_P3^m": "6",
+    "m": 3
+   },
+   {
+    "E_P3^m": "0",
+    "E_Q3_P3^m": "24",
+    "m": 4
+   },
+   {
+    "E_P3^m": "0",
+    "E_Q3_P3^m": "120",
+    "m": 5
+   },
+   {
+    "E_P3^m": "0",
+    "E_Q3_P3^m": "720",
+    "m": 6
+   },
+   {
+    "E_P3^m": "0",
+    "E_Q3_P3^m": "5040",
+    "m": 7
+   },
+   {
+    "E_P3^m": "0",
+    "E_Q3_P3^m": "40320",
+    "m": 8
+   },
+   {
+    "E_P3^m": "0",
+    "E_Q3_P3^m": "362880",
+    "m": 9
+   },
+   {
+    "E_P3^m": "0",
+    "E_Q3_P3^m": "3628800",
+    "m": 10
+   }
+  ]
+ }
+}

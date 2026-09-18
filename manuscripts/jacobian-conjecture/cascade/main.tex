@@ -15,9 +15,9 @@
 % macros are set by the publishing tool when the version DOI is reserved. At this text
 % width the two DOIs do not fit on one line of the box, so each has its own line.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.05}
+\newcommand{\docversion}{v0.06}
 \newcommand{\docdate}{18 September 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.22822774}
+\newcommand{\versiondoi}{10.5281/zenodo.22834179}
 \newcommand{\conceptdoi}{10.5281/zenodo.21503371}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 
@@ -34,7 +34,7 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \vspace{4pt}}
 
 \title{The Collateral Impact of the\\ Three-Dimensional Jacobian Counterexample:\\ a Source-Verified Cascade}
-\author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
 \date{\docdate}
 
@@ -55,7 +55,7 @@ On 2026-07-20, Levent Alp\"oge announced an explicit counterexample to the Jacob
 in dimension 3, found working with the language model Claude Fable 5 (Anthropic). The credit for % voice-ok: external attribution, as the announcement states it
 every consequence documented here belongs to that single map. This paper documents what else
 that map decides: through implication chains published over five decades, each re-verified
-against its primary source (EXP-001, EXP-016, \mbox{EXP-018}), the counterexample resolves or
+against its primary source (EXP-001, EXP-016, EXP-018, \mbox{EXP-136}), the counterexample resolves or
 partially resolves the Mathieu conjecture, the Dixmier conjecture, the Poisson conjecture, the
 Gaussian moments conjecture, Zhao's vanishing conjecture, the Image conjecture, and the
 symmetric (gradient) form of the Jacobian conjecture. We state each corollary with its chain
@@ -79,9 +79,11 @@ $F(0, 0, -\tfrac14) = F(1, -\tfrac32, \tfrac{13}{2}) = F(-1, \tfrac32, \tfrac{13
 \cite{Alpoge2026}. We validated it independently in exact rational arithmetic and computed the
 full fiber over the repeated value: it consists of exactly the three announced points
 (EXP-001). Every consequence below is a corollary of this validation plus one or more published
-implications; for each implication the primary source was located and its direction confirmed
-(EXP-016 and EXP-018). The corollaries of Section~\ref{sec:cascade} add no mathematics beyond
-this verification and the composition of the published implications; the explicit witness of
+implications; for each implication the primary source was located and its direction and
+dimension index confirmed (EXP-016, EXP-018 and EXP-136). The corollaries of
+Section~\ref{sec:cascade} add no mathematics beyond this verification and the composition of the
+published implications, except the statement that $F$ is not affinely of homogeneous type,
+checked by a Gr\"obner basis computation (EXP-136); the explicit witness of
 Section~\ref{sec:witness} is a construction from published ingredients (Thompson's
 cubic-homogeneous form and the de Bondt--van den Essen reduction).
 
@@ -92,10 +94,17 @@ The Jacobian conjecture is false for every $N \ge 3$; the two-variable case rema
 \end{corollary}
 
 \begin{corollary}[Mathieu conjecture, 1997]
-Mathieu proved that his conjecture for $SU(N)$ implies $JC(N)$ \cite{Mathieu1997, Zwart2025};
-Duistermaat and van der Kallen proved the abelian case \cite{DvdK1998}. By contraposition the
-Mathieu conjecture is \textbf{false for $SU(N)$, $N \ge 3$}. It remains open for $SU(2)$ and
-for the other compact connected groups.
+Mathieu proved that his conjecture, taken for all compact connected Lie groups, implies the
+Jacobian conjecture \cite{Mathieu1997}; Duistermaat and van der Kallen proved the abelian case
+\cite{DvdK1998}. At a fixed $N$ the argument shows that the conjecture for $SU(N)$ makes every
+Keller map $x - h$ of $\C^N$ with $h$ homogeneous invertible
+\cite[Theorems~4.16 and~4.23]{Zwart2025}. The cubic-homogeneous form of the counterexample on
+$\C^{24}$ (Section~\ref{sec:witness}) is such a map and is not injective, so the Mathieu
+conjecture is \textbf{false for $SU(N)$, $N \ge 24$}. For $SU(2)$ an explicit counterexample is
+given in \cite{LongSU2}. For $3 \le N \le 23$ the argument does not reach $F$: its components
+have total degrees $7, 6, 4$ and its second partial derivatives have no common zero, so $F$ is
+not affinely equivalent to a map $x - h$ with $h$ homogeneous (EXP-136), and the reduction of
+$F$ to that form adds variables \cite{BCW1982}.
 \end{corollary}
 
 \begin{corollary}[Dixmier conjecture, 1968]
@@ -104,13 +113,15 @@ $JC(2n)$ implies $\mathrm{Dixmier}(n)$, and $\mathrm{Dixmier}(n)$ implies $JC(n)
 implication gives that $\mathrm{Dixmier}(n)$ is false for every $n \ge 3$: the
 \textbf{full Dixmier conjecture is false}. Ranks $1$ (Dixmier's original question) and $2$
 remain open; the first implication gives no information on rank $2$, because it runs from
-$JC(4)$ to $\mathrm{Dixmier}(2)$.
+$JC(4)$ to $\mathrm{Dixmier}(2)$. A proof of rank $1$ is claimed in \cite{Zheglov2024}.
 \end{corollary}
 
 \begin{corollary}[Poisson conjecture, 2007]
-The Jacobian, Dixmier and Poisson conjectures are equivalent in any characteristic
-\cite{AvdE2007}. Hence the \textbf{full Poisson conjecture is false}; the minimal failing
-dimension is open.
+For each $n$, $JC(2n) \Rightarrow \mathrm{Poisson}(n) \Rightarrow \mathrm{Dixmier}(n)
+\Rightarrow JC(n)$ in any characteristic, where $\mathrm{Poisson}(n)$ concerns the canonical
+Poisson algebra in $2n$ variables \cite[Theorem~7]{AvdE2007}. Hence $\mathrm{Poisson}(n)$ is
+false for every $n \ge 3$: the \textbf{full Poisson conjecture is false}. Indices $1$ and $2$
+remain open, for the same reason as the Dixmier ranks.
 \end{corollary}
 
 \begin{corollary}[Gaussian moments conjecture]
@@ -118,6 +129,8 @@ GMC implies JC \cite{DEZ2017}; hence \textbf{GMC is false} at some finite dimens
 \end{corollary}
 \noindent An explicit counterexample in three variables, with $P$ of five terms and total
 degree $4$, is given in \cite{Long2026}; GMC is therefore false in every dimension $n \ge 3$.
+GMC holds in dimension $1$ \cite[Proposition~4.2]{DEZ2017}, and a proof of the two-variable case
+is claimed in \cite{Wilson2026}.
 
 \begin{corollary}[Zhao's vanishing conjecture]
 The vanishing conjecture for Hessian-nilpotent polynomials is equivalent to JC
@@ -174,9 +187,11 @@ between those bounds and 48.
 
 \section{What remains open}
 
-The two-variable Jacobian conjecture; Dixmier at ranks 1 and 2; Mathieu for $SU(2)$ and the
-remaining compact groups; the moments statement in dimensions below $3$; the minimal failing
-dimensions of the Poisson, vanishing and Image statements (for the symmetric/vanishing pair the
+The two-variable Jacobian conjecture; Dixmier and Poisson at ranks 1 and 2 (a proof of
+Dixmier's rank 1 is claimed in \cite{Zheglov2024}); Mathieu for $SU(N)$ with $3 \le N \le 23$
+and for the other non-abelian compact groups; the moments statement in dimension $2$ (a proof is
+claimed in \cite{Wilson2026}); the minimal failing
+dimensions of the vanishing and Image statements (for the symmetric/vanishing pair the
 witness of Section~\ref{sec:witness} pins the failing dimension at $\le 48$, with the known
 positive results leaving the minimum open above $5$); and explicit witnesses for the remaining
 non-constructive rows. Not included in this list: the Markus--Yamabe conjecture (refuted
@@ -193,14 +208,21 @@ archived record in the experiment folders of the problem,
 script and output, or a check of published implications against their primary sources; each
 record states its question, method and result. The records used here are EXP-001 (exact
 validation, full fiber), EXP-016 and EXP-018 (each implication located in its primary source and
-its direction confirmed) and EXP-041 (the dimension-48 witness, with its input data, script and
-outputs).\par}
+its direction confirmed), EXP-041 (the dimension-48 witness, with its input data, script and
+outputs) and EXP-136 (the dimension index of each implication; the homogeneous-type test of $F$;
+exact checks of the explicit counterexamples of \cite{Long2026, LongSU2} for the first powers).\par}
 
 \begin{thebibliography}{99}\raggedright
 \bibitem{Alpoge2026} L. Alp\"oge, announcement of the counterexample, X (@\_\_alpoge\_\_),
 2026-07-20; found working with Claude Fable 5 (Anthropic); question posed by Akhil. % voice-ok: external attribution, as the announcement states it
 \bibitem{Mathieu1997} O. Mathieu, Some conjectures about invariant theory and their
-applications, 1997.
+applications, in \emph{Alg\`ebre non commutative, groupes quantiques et invariants} (Reims,
+1995), S\'emin. Congr. 2, Soc. Math. France, 1997, 263--279.
+\bibitem{LongSU2} C. D. Long, Counterexamples to the $xz$-conjecture and the Mathieu conjecture
+for $SU(2)$, arXiv:2607.19012, 2026.
+\bibitem{BCW1982} H. Bass, E. H. Connell, D. Wright, The Jacobian conjecture: reduction of
+degree and formal expansion of the inverse, \emph{Bull. Amer. Math. Soc. (N.S.)} 7 (1982),
+287--330.
 \bibitem{DvdK1998} J. J. Duistermaat, W. van der Kallen, Constant terms in powers of a Laurent
 polynomial, \emph{Indag. Math.} 9 (1998), 221--231.
 \bibitem{Zwart2025} K. Zwart, Mathieu's approach to the Jacobian Conjecture (review),
@@ -209,6 +231,8 @@ arXiv:2511.16561.
 to the Dixmier conjecture, arXiv:math/0512171; \emph{Mosc. Math. J.} 7 (2007).
 \bibitem{Tsuchimoto2005} Y. Tsuchimoto, Endomorphisms of Weyl algebra and $p$-curvatures,
 \emph{Osaka J. Math.} 42 (2005), 435--452.
+\bibitem{Zheglov2024} A. Zheglov, The conjecture of Dixmier for the first Weyl algebra is true,
+arXiv:2410.06959, 2024 (revised 2026).
 \bibitem{AvdE2007} P. K. Adjamagbo, A. van den Essen, On the equivalence of the Jacobian,
 Dixmier and Poisson conjectures in any characteristic, arXiv:math/0608009; \emph{Acta Math.
 Vietnam.} 32 (2007), 209--218.
@@ -216,6 +240,8 @@ Vietnam.} 32 (2007), 209--218.
 the Jacobian conjecture, \emph{Israel J. Math.} 219 (2017), 917--928; arXiv:1506.05192.
 \bibitem{Long2026} C. D. Long, Small counterexamples to the Gaussian moments conjecture,
 arXiv:2607.18186, 2026.
+\bibitem{Wilson2026} M. Wilson, A face-isolation proof of the two-variable Gaussian moments
+conjecture, arXiv:2607.23887, 2026.
 \bibitem{Zhao2004} W. Zhao, Hessian nilpotent polynomials and the Jacobian conjecture,
 arXiv:math/0409534; \emph{Trans. Amer. Math. Soc.} 359 (2007).
 \bibitem{Zhao2007} W. Zhao, A vanishing conjecture on differential operators with constant
