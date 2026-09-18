@@ -196,3 +196,34 @@ def test_the_manuscript_design_bound_numbers_come_from_the_force_budget():
     # the superseded design bound is not quoted; its correction is recorded in the deposit history
     assert tex.count("1.08" + times + "10^{-3}") == 0
     assert "Relation to version" not in tex
+
+
+def test_the_manuscript_euler_bound_numbers_come_from_the_euler_budget():
+    """Theorem 4.2 of the manuscript quotes ab_euler_budget; the prose must match the code."""
+    from nslib import ab_euler_budget as E
+    from nslib import cascade
+
+    tex = text(ROOT / "manuscripts/navier-stokes/blowup-claims-audit/main.tex")
+    times = chr(92) + "times"
+
+    def sci(x: float, digits: int = 2) -> str:
+        mant, exp = f"{x:.{digits}e}".split("e")
+        return f"{mant}{times}10^{{{int(exp)}}}"
+
+    pub = E.published_check()
+    assert pub["passes"]
+    assert sci(pub["alpha_first_stage"]) in tex
+    for key, quoted in (("activation", "$-7.00$"), ("terminal", "$-10.75$"), ("means", "$-1.75$")):
+        assert f"{pub[key]:.2f}" == quoted.strip("$")
+        assert quoted in tex
+    rel = E.RELAXED.ceiling(k_max=1)
+    opt = E.OPTIMISTIC.ceiling(k_max=0)
+    best = rel["best"]
+    beta = chr(92) + "beta"
+    assert (best["k"], best["Q"]) == (0, 51) and f"${beta}={best['margin']:.3f}$" in tex
+    assert sci(best["alpha"]) in tex and sci(2 * best["alpha"]) in tex
+    assert sci(opt["best"]["alpha"]) in tex and sci(2 * opt["best"]["alpha"]) in tex
+    one = next(r for r in rel["rows"] if r["k"] == 1)
+    assert sci(one["alpha"]) in tex
+    proved = cascade.ALPHA0_CMZ / 2.0
+    assert f"factors of ${proved / best['alpha']:.1f}$ and ${proved / opt['best']['alpha']:.1f}$" in tex

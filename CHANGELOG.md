@@ -3,6 +3,23 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.68.000] - 2026-09-18
+
+### Added
+- navier-stokes: the growth class and force estimates of the axisymmetric Euler smooth-forcing
+  construction, transcribed from its Sections 3, 6 and 12 (`nslib/ab_euler_budget.py`).
+  - Its amplitude law grows at the square root of the circulation gradient, so it is pendulum-class
+    and capped at `alpha <= 1/4` (ours) by Theorem 3.1.
+  - Its force estimates certify at most `6e-08` as published (`|grad|^alpha` convention) and
+    `7.5e-03` under any retuning, 12 times below the proved rough-force threshold. The binding
+    constraint is the centre row `2 h* > beta/2`, and the ratio floor is `Q >= 9k + 51`.
+  - Manuscript v0.07 carries this result as Theorem 4.2.
+
+### Fixed
+- navier-stokes: the 2026-09-17 dossier quoted the Euler design constants as `q_0 >= 220` and
+  `c_Q >= 218`. A text extraction had dropped their superscripts; the true values are `2^20` and
+  `2^18`.
+
 ## [0.67.000] - 2026-09-18
 
 ### Added
