@@ -222,3 +222,12 @@ result file came from them: every result file on disk carries `"reduced": true` 
 verified certificate. The reduced instance of order 14 had died at start (its log stops after the
 first line) and was restarted at 14:10 with a fresh 6-hour limit. The logs of orders 12 to 30 may
 contain interleaved lines from the two writers and are not used as evidence; the result files are.
+
+## Limit note (2026-09-18 18:36)
+
+The 6-hour watchdog of `run_inc.py` is a Python timer thread; it cannot fire while the in-process
+solver call holds the interpreter lock, so five `G52` instances (orders 8, 10, 12, 16, 18) and the
+first `G52b` instance of order 40 were still solving 1 to 2 hours past their limit. They were
+stopped by hand and recorded as TIMEOUT (the `G52b` order 40 continues only as the declared
+long-cap direct run). The direct mode of addendum 4 waits on an external process, where the timer
+works.
