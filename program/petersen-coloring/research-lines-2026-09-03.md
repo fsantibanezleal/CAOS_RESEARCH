@@ -95,3 +95,13 @@ It explains why counterexamples are built from multipoles with 4 or more danglin
 boundaries restore colorings), and it gives a vocabulary (classes modulo the cut space) for PCR-7.
 The weakest point of the round is compute discipline: five experiments shared one machine, which
 turned several instances into timeouts that decided nothing.
+
+Link between PCR-10 and PCR-7 (2026-09-18, late). If `G` is universally 2-critical then `G - X` is
+Petersen colorable for every vertex set `X` with at least two vertices (restrict a witness of a
+critical pair inside `X`). So from the five known counterexamples the only non-colorable pieces
+are `G - e` (2 dangling edges) and `G - v` (3 dangling edges), and everything assembled from them
+has cyclic edge connectivity at most 3: universal 2-criticality is exactly the obstacle to a
+cyclically 4-edge-connected graph of defect 3. Conversely ONE counterexample with a non-critical
+pair of adjacent vertices gives a non-colorable 4-pole `G - {u, v}`. EXP-011 tests the adjacent
+pairs of the ten 102-vertex dot products; the members of order 60 to 66 of the v3 family are the
+next candidates.
