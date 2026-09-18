@@ -11,6 +11,17 @@ Everything here is exponent bookkeeping on published constants; the prediction a
 is dated and falsifiable. Full derivation:
 [`context/2026-09-16-smoothness-versus-dissipation.md`](../context/2026-09-16-smoothness-versus-dissipation.md).
 
+> **Correction, 2026-09-17.** The rule `120 k <= Q` used below is a sufficient simplification
+> in the published design, not a structural exchange rate. Transcribing the full force budget
+> ([`2026-09-17-force-estimates-exponent-content.md`](../context/2026-09-17-force-estimates-exponent-content.md)) shows that
+> the ratio floor the estimates actually force is `Q >= 9d + 42`, from the derivative range of the
+> coefficient bounds, and that the margin is capped near `1/2` by the remainder and near `1/4` by the
+> leading phase means at the published target. The bound `1/480` below therefore holds for the
+> design as published, but not for every retuning: at one derivative the most favourable reading of
+> the architecture reaches `3.69e-03` (ours). The conclusion, that the design stays at least ten
+> times below the proved threshold, is unchanged and now rests on the full budget. The text below is
+> kept as written.
+
 ## What their schedule fixes
 
 From Alpoge-Buckmaster (3.7) and (3.8):

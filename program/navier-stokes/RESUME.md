@@ -1,6 +1,7 @@
 # navier-stokes: RESUME (zero-loss handoff)
 
-Updated 2026-09-17 (class ceiling Theorem 3.1 published in manuscript v0.04, 10.5281/zenodo.22821790;
+Updated 2026-09-17 (manuscript v0.05, 10.5281/zenodo.22822133: class ceiling Theorem 3.1 and the design
+bound rebuilt from the full force budget, NS-016 closed;
 EXP-008 confirmed it for both growth laws; released in 0.66.000). First read for any fresh session, per methodology 07. Derived
 view: on conflict, the context dossiers win.
 
@@ -36,15 +37,18 @@ experiments. What we hold:
   tautological (it holds at every alpha along the published family). The published threshold is
   now DERIVED exactly from the construction's outer-velocity constraint (their 4.3.4), with the
   paper's own frequency ratio as the optimum; see `context/2026-09-14-threshold-reconstruction.md`.
-- **The class ceiling (Theorem 3.1 of v0.04).** A layer cascade with `lambda = A^p` and growth rate
+- **The class ceiling (Theorem 3.1).** A layer cascade with `lambda = A^p` and growth rate
   `A^gamma` carries dissipation only up to `alpha <= gamma/(2p) < gamma/2`: 1/4 for the pendulum
   mechanism, 1/2 for stretching (`(-Laplacian)^alpha`; 1/2 and 1 in `|grad|^alpha`). Neither reaches
   classical viscosity. Code `code/nslib/class_ceiling.py`; confirmed numerically by EXP-008.
-- **The design ceiling (Theorem 4.1).** The smooth-forcing construction as designed carries at most
-  `alpha = 5.38e-4` ours (1.08e-3 theirs), 86 times below the proved rough-force threshold. Code
-  `code/nslib/ab_ceiling.py`.
-- **The manuscript.** `manuscripts/navier-stokes/blowup-claims-audit/`, v0.04 on Zenodo
-  (version 10.5281/zenodo.22821790, concept 10.5281/zenodo.22820520). It is about the problem only;
+- **The design ceiling (Theorem 4.1 of v0.05).** Transcribed from the full force budget of the
+  smooth-forcing construction: its estimates certify at most `alpha = 2.65e-4` ours at the published
+  choices (175 times below the proved threshold), `2.22e-3` with every free choice released, and
+  `4.48e-3` under the most favourable structural reading (10 times below). Code
+  `code/nslib/ab_force_budget.py`; dossier `context/2026-09-17-force-estimates-exponent-content.md`.
+  v0.04 had published `1.08e-3` (theirs) from a misread inequality; `ab_ceiling.py` keeps that record.
+- **The manuscript.** `manuscripts/navier-stokes/blowup-claims-audit/`, v0.05 on Zenodo
+  (version 10.5281/zenodo.22822133, concept 10.5281/zenodo.22820520). It is about the problem only;
   no process narration belongs in it.
 
 ## 2. The objects table
@@ -131,8 +135,9 @@ convergence loop to ride out Windows read-contention, 5 passes 34->22->11->9->5-
    geometric, so a rigorous version of it would have to move to `M_{n+1} = M_n^R` first.
 4. NS-010: compare exponents the day the Alpoge-Buckmaster hypodissipative paper appears; the class
    ceiling predicts it cannot exceed 1/2 ours for a stretching mechanism, 1/4 for a pendulum one.
-5. NS-016, inviscid half: extract the exponent content of the smooth-force estimates, the one object
-   of the three that is still open after EXP-007.
+5. Extract the Euler paper's force budget the same way (its Section 12 has the same shape:
+   `J = 2k + 8`, amplitude `N^(-7/8)`, `Q_i = q_0 + i`, `k <= Q/c_Q`), and settle whether its growth
+   scale is the square root of the background gradient (UNVERIFIED).
 
 Eight experiments are closed with verdicts. The open items above are
 next-round scope, not blockers.

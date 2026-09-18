@@ -6,20 +6,20 @@
   "errors": 0,
   "overfull": 0,
   "underfull": 0,
-  "bytes": 365671,
-  "sha256": "8f3add08618a579542446ab32a48dd1f1e03ff2940f212eb2ea5ea6f89d790ec",
-  "md5": "43f2af879331834f3843b3c70dcc5ca5",
-  "tex_sha256": "f0cc8abe3f9b3f06e5340d6c74761b433eea4ed4b186502699fde3d8c1324f83",
-  "metadata_sha256": "933452935369532328fcc59fbb431da5bb8edfd29bc25e4f99cfdc15d20639ff",
-  "render_review": "every page extracted and checked for content: 9 pages, 171 to 564 words each, no blank body page",
-  "proof_review": "no new theorem is claimed; the derived propositions are checked in exact arithmetic in CI (tests/test_navier_stokes_threshold.py) and every quoted number is gated against its result file (tests/test_navier_stokes_quoted_numbers.py)",
-  "sources": "transcribed from the EXP-001 to EXP-007 verdicts and the context dossiers, per methodology 09",
-  "version_doi": "10.5281/zenodo.22821790",
+  "bytes": 370897,
+  "sha256": "7eaa4e6336a989a61f220f9a074c32226c2d4770ce808a9cb13ca2900e41874e",
+  "md5": "85d9a060bdd4d3cb8b372f4cf060bc99",
+  "tex_sha256": "79e71fa4933b21b17eb99bab4ca6adaeafe309ce60910d4478aac381a43ab537",
+  "metadata_sha256": "429fb39b44f2223fdca2806cc58fee2bd4ed54ce40290dc7c37cbd18cbe27daf",
+  "render_review": "every page rendered and read: 8 pages, theorem, table and correction paragraph laid out correctly",
+  "proof_review": "Theorem 4.1 is exponent arithmetic on estimates transcribed from the primary source (pages 39-69), with a transcription check (the published margin passes the published constraints for every order); every quoted number is gated in CI against nslib/ab_force_budget.py",
+  "sources": "EXP-001 to EXP-008 verdicts and the context dossiers, including 2026-09-17-force-estimates-exponent-content.md",
+  "version_doi": "10.5281/zenodo.22822133",
   "concept_doi": "10.5281/zenodo.22820520",
-  "record_url": "https://zenodo.org/record/22821790",
-  "published_utc": "2026-09-17T21:35:37Z",
+  "record_url": "https://zenodo.org/record/22822133",
+  "published_utc": "2026-09-18T02:02:09Z",
   "note": "the published PDF prints its own version and concept DOIs; the DOI was reserved before the build",
-  "version": "0.04",
+  "version": "0.05",
   "previous_versions": [
     {
       "version": "0.01",
@@ -35,8 +35,13 @@
       "version": "0.03",
       "doi": "10.5281/zenodo.22821242",
       "note": "stated Theorem 4.1 but mixed process narration into the paper; superseded by the full rewrite"
+    },
+    {
+      "version": "0.04",
+      "doi": "10.5281/zenodo.22821790",
+      "note": "design bound 1.08e-03 derived from a misread inequality; replaced by the full force budget in v0.05"
     }
   ],
-  "headline_result": "Theorem 3.1: layer cascades cannot exceed alpha = 1/2 (sqrt(A) growth) or alpha = 1 (A growth) in the |grad|^alpha convention, both below classical 2; Theorem 4.1: the smooth-forcing design is capped at 1.08e-03, 86 times below the proved rough-force threshold",
+  "headline_result": "Theorem 3.1: layer cascades cannot exceed alpha = 1/2 (sqrt(A) growth) or alpha = 1 (A growth) in the |grad|^alpha convention, both below classical 2; Theorem 4.1: the smooth-forcing design's force estimates certify at most 5.29e-04 as published and 8.96e-03 under any retuning, at least 10 times below the proved rough-force threshold",
   "review": "rewritten to address the problem only: no workflow narration, no self-referential version commentary beyond one withdrawn claim stated scientifically; the strictness step of Theorem 3.1 corrected so the final bounds are strict because p > 1/delta"
 }
