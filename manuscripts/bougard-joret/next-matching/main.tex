@@ -12,27 +12,42 @@
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 \newcommand{\e}{\mathrm{e}}
+
+% Page-1 header block (conventions/manuscript-header-standard.md). The four document
+% macros are set by the publishing tool when the version DOI is reserved. At this text
+% width the two DOIs do not fit on one line of the box, so each has its own line.
+\newcommand{\doctype}{Preprint}
+\newcommand{\docversion}{v0.02}
+\newcommand{\docdate}{18 September 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.22823418}
+\newcommand{\conceptdoi}{10.5281/zenodo.22343021}
+\newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
+\newcommand{\headerblock}{%
+\begin{center}
+\fbox{\parbox{0.94\textwidth}{\small\raggedright
+\textbf{\doctype} \quad$\cdot$\quad \docversion, \docdate \quad$\cdot$\quad Licence CC BY 4.0\\[2pt]
+CAOS Research open-problems programme \quad$\cdot$\quad problem \texttt{bougard-joret}\\[2pt]
+Version DOI \href{https://doi.org/\versiondoi}{\texttt{\versiondoi}}\\[2pt]
+Concept DOI (always latest) \href{https://doi.org/\conceptdoi}{\texttt{\conceptdoi}}\\[2pt]
+Not peer reviewed. Source code, data and computational records: \href{https://\docrepo}{\texttt{\docrepo}}
+}}
+\end{center}
+\vspace{4pt}}
+
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Next matching level\textperiodcentered\ v0.01}
+\fancyhead[L]{\small CAOS Research \doctype}
+\fancyhead[R]{\small Next matching level\textperiodcentered\ \docversion}
 \fancyfoot[C]{\thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
 \title{The next matching level for triangle-free\\graphs with bounded degree}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program\\
 \small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-09-05\\[2pt]\normalsize Version 0.01}
+\date{\docdate}
 \begin{document}
 \maketitle
-\begin{center}\small
-\fbox{\parbox{0.92\textwidth}{\centering
-\textbf{PREPRINT}\textperiodcentered\ not peer reviewed\textperiodcentered\ CAOS Research\\
-Bougard--Joret research series, second paper\textperiodcentered\ v0.01\\
-\href{https://doi.org/10.5281/zenodo.22343021}{Concept DOI: 10.5281/zenodo.22343021} (latest version)\\
-CC BY 4.0\textperiodcentered\ \href{https://github.com/fsantibanezleal/CAOS_RESEARCH}{Public sources and exact verification record}
-}}
-\end{center}
+\headerblock
 \begin{abstract}
 Let $T(d,m)$ be the maximum number of edges in a triangle-free graph with maximum degree at most $d$ and matching number at most $m$, with no restriction on its order. We prove
 $T(d,d+1)=d^2+d+2$ for every integer $d\ge7$.
@@ -66,7 +81,7 @@ T(d,d+1)=d^2+d+2.
 \]
 \end{theorem}
 
-Our universal deductions are labeled [D] and exact finite checks [MV]. The proof and certificates form EXP-003 of the public record~\cite{Record}. This paper is separate from the earlier first-shell Bougard--Joret preprint~\cite{Shell}, which remains unchanged.
+Our universal deductions are labeled [D] and exact finite checks [MV]. The proof and certificates are archived as computation EXP-003~\cite{Record}. The first interior shell of the Bougard--Joret problem is the subject of the companion paper~\cite{Shell}.
 
 \section{The fixed-order upper bound}
 
@@ -250,21 +265,23 @@ In fact equality holds. A cut of size at most $d$ would leave a complete biparti
 \[
 \kappa(\overline{Q_d})=d+1.
 \]
-This failed shortcut is retained because extremality under a degree bound does not supply the needed complement connectivity.
+The shortcut fails because extremality under a degree bound does not supply the needed complement connectivity.
 
 \section{Exact checks, scope and remaining questions}
 
-The universal assertions follow from the proofs above. EXP-003~\cite{Record} additionally contains deterministic exact verification for $d=7,\ldots,30$, declared before computation in hypothesis commit \texttt{f3fdda6}.
+The universal assertions follow from the proofs above. EXP-003~\cite{Record} additionally contains deterministic exact verification for $d=7,\ldots,30$.
 For each degree, it saves both full edge lists, explicit matching witnesses, degrees, complement data and the rejected cut. A standard-library implementation checks all 48 graphs and performs direct flow checks on 24 graphs with $d\le18$. It also checks 287,564 positive five-type tuples with a designated singleton; no equality candidate survives.
 
-A separate implementation reconstructs all saved graphs in NetworkX 3.4.1 without importing the CAOS graph routines. It independently checks maximum matching, clique number, all 48 complement connectivities and all 24 negative cuts. It enumerates all 17,040 positive five-part compositions for $d=7,\ldots,10$, with no singleton-containing equality survivor. The all-large case is already excluded symbolically. Both implementations detect a deliberately inserted triangle and verify the degree-six boundary control. Source and certificate hashes are persisted with the results. A regression test reproduces the main certificate; all 101 repository tests passed in the validated research checkout.
+A separate implementation reconstructs all saved graphs in NetworkX 3.4.1 without importing the CAOS graph routines. It independently checks maximum matching, clique number, all 48 complement connectivities and all 24 negative cuts. It enumerates all 17,040 positive five-part compositions for $d=7,\ldots,10$, with no singleton-containing equality survivor. The all-large case is already excluded symbolically. Both implementations detect a deliberately inserted triangle and verify the degree-six boundary control. Source and certificate hashes are persisted with the results. A regression test reproduces the main certificate.
 
-Independent internal mathematical review checked the full proof, including the odd-degree cases, the complete singleton case split, the matching-budget reduction and both connectivity arguments. This is neither external peer review nor formal proof-assistant verification. Finite checks cannot rule out a gap in an all-parameter argument, and bounded literature searching cannot guarantee priority.
+A separate reading of the full proof checked the odd-degree cases, the complete singleton case split, the matching-budget reduction and both connectivity arguments. The proof has not been formalized in a proof assistant. Finite checks cannot rule out a gap in an all-parameter argument, and bounded literature searching cannot guarantee priority.
 
 Theorem~\ref{thm:main} settles the next-matching slice for every $d\ge7$. It does not settle the remaining intermediate matching levels or classify all extremizers. Corollary~\ref{cor:bj} leaves one edge of uncertainty. Determining whether a fixed-order maximizer can meet the required complement connectivity, or proving that none can, is the immediate remaining question. The general revised Bougard--Joret regimes remain open. The earlier first interior shell result~\cite{Shell} is a separate theorem.
 
-\paragraph{Data and tool use.}
-The proof, source dossier, certificate generators, independent audit and full edge lists are publicly archived in the repository~\cite{Record}. Automated assistants were used for literature triage, derivation exploration, code drafting and internal adversarial review. Their output is represented as tools and evidence, not as external peer review or human co-authorship.
+\paragraph{Data availability.}
+The proof, the review of the cited sources, the certificate generators, the independent re-implementation and the full edge lists are publicly archived in the repository~\cite{Record}. The identifier EXP-003 denotes the archived computation in the folder \path{problems/combinatorics/bougard-joret/experiments/EXP-003-triangle-free-next-matching/}.
+
+\paragraph{Declaration of generative AI use.} Generative AI tools were used for literature triage, derivation exploration, code drafting and internal review of the proofs and the text. The author reviewed and verified all content and takes full responsibility for the work.
 
 \begin{thebibliography}{10}
 \bibitem{AEY} M. Ahanjideh, T. Ekim and M. A. Y\i ld\i z.
@@ -299,11 +316,11 @@ Journal of Graph Theory 58 (2008), 1--13.
 \href{https://arxiv.org/abs/2608.18828}{arXiv:2608.18828v1}, 2026.
 \bibitem{Shell} F. Santiba\~nez-Leal.
 \emph{The first interior shell of the Bougard--Joret extremal problem}.
-CAOS Research preprint, version 0.02, 2026.
-\href{https://doi.org/10.5281/zenodo.22341644}{doi:10.5281/zenodo.22341644}.
+CAOS Research preprint, 2026.
+\href{https://doi.org/10.5281/zenodo.22315251}{doi:10.5281/zenodo.22315251}.
 \bibitem{Record} F. Santiba\~nez-Leal.
 \emph{CAOS Research, Bougard--Joret EXP-003: triangle-free next matching level}.
-Proof, source review, exact certificates and independent audit, 2026.
-\href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/develop/problems/combinatorics/bougard-joret/experiments/EXP-003-triangle-free-next-matching}{Public experiment record}.
+Proof, source review, exact certificates and independent re-implementation, 2026.
+\href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/combinatorics/bougard-joret/experiments/EXP-003-triangle-free-next-matching}{Public experiment record}.
 \end{thebibliography}
 \end{document}

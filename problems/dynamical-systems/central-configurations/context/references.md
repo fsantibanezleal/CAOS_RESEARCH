@@ -35,15 +35,17 @@ Problem-level bibliography (methodology/05). Tags: [V] primary source fetched/re
   [Vs: ADS/scispace abstract + citations in HJ11 and Moeckel notes; PDF U; exact
   negative mass value U]
 - [CC23] K.-M. Chang, K.-C. Chen, Toward finiteness of central configurations for the
-  planar six-body problem by symbolic computations, arXiv:2303.02853. Part (I)
-  Determine diagrams and orders, J. Symbolic Comput. 123 (2024) 102277
-  [V: bibliographic data pinned by the Jensen-Leykin reference list, primary PDF
-  read 2026-07-24]. A second part on mass relations is announced in the same
-  programme; its journal volume/pages appeared only in a search summary and remain
-  [U] until read. Abstract-level content [V: arXiv abstract fetched]: 117 zw-diagrams,
-  31 eliminated by the second algorithm, 62 by the last; the residual count of 24 is
-  OUR arithmetic from those three published numbers, not a quoted statement.
-  Per-diagram tables [U] until read.
+  planar six-body problem by symbolic computations, arXiv:2303.02853 (117-page
+  programme preprint, PDF archived on E: with SHA-256 a4cd360f..., pages 1-6 read
+  2026-08-01, first-read dossier same day). Part (I) Determine diagrams and orders,
+  J. Symbolic Comput. 123 (2024) 102277 [V: bibliographic data pinned by the
+  Jensen-Leykin reference list]. A second part on mass relations is announced in
+  the same programme; its journal volume/pages appeared only in a search summary
+  and remain [U] until read. UPGRADED 2026-08-01: the 24 is now QUOTED VERBATIM
+  from the preprint ("leaving 24 cases unsolved", abstract, and "This leaves
+  finiteness of 24 cases unsolved", p. 4); of the 62 mass-relation diagrams, one
+  is impossible for positive masses [V: read]. Per-diagram tables (Sections 9-11,
+  Appendix IV) still [U] until the deep read.
 - [MZ19] M. Moczurad, P. Zgliczynski, Central configurations in planar n-body problem
   with equal masses for n = 5, 6, 7, Celest. Mech. Dyn. Astron. 131 (2019); arXiv:
   1812.07279. DOI 10.1007/s10569-019-9920-6. Counts 2, 4, 5, 9, 14 for n = 3..7.

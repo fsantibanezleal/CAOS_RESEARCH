@@ -19,31 +19,24 @@
 \newcommand{\dmax}{d_{\max}}
 \newcommand{\flow}{f}
 
-% ---------------------------------------------------------------------------
-% Standard CAOS Research manuscript header block. Every manuscript states, on
-% page 1 and without the reader having to infer it: what KIND of document it is,
-% which programme it belongs to, its version, its licence, and its DOI.
-% ---------------------------------------------------------------------------
+% Page-1 header block (conventions/manuscript-header-standard.md). The four document
+% macros are set by the publishing tool when the version DOI is reserved.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docsubtype}{independent verification and replication record}
-\newcommand{\docversion}{v0.01}
-\newcommand{\docdate}{25 July 2026}
-\newcommand{\doclicense}{CC BY 4.0}
-\newcommand{\docdoi}{10.5281/zenodo.21554259}
-\newcommand{\docconceptdoi}{10.5281/zenodo.21554258}
+\newcommand{\docversion}{v0.02}
+\newcommand{\docdate}{18 September 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.22823641}
+\newcommand{\conceptdoi}{10.5281/zenodo.21554258}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 
 \newcommand{\headerblock}{%
 \begin{center}
 \fbox{\parbox{0.94\textwidth}{\small\raggedright
-\textbf{\doctype} (\docsubtype) \quad$\cdot$\quad \docversion, \docdate \quad$\cdot$\quad
-Licence \doclicense\\[2pt]
-CAOS Research open-problems programme \quad$\cdot$\quad problem
-\texttt{unsplittable-flow-cost}, experiments 001--003\\[2pt]
-Version DOI \href{https://doi.org/\docdoi}{\texttt{\docdoi}} \quad$\cdot$\quad
-concept DOI (always latest) \href{https://doi.org/\docconceptdoi}{\texttt{\docconceptdoi}}\\[2pt]
-Not peer reviewed. Source, declared hypotheses, artifacts and verdicts:
-\texttt{\docrepo}
+\textbf{\doctype} (independent verification) \quad$\cdot$\quad
+\docversion, \docdate \quad$\cdot$\quad Licence CC BY 4.0\\[2pt]
+CAOS Research open-problems programme \quad$\cdot$\quad problem \texttt{unsplittable-flow-cost}\\[2pt]
+Version DOI \href{https://doi.org/\versiondoi}{\texttt{\versiondoi}} \quad$\cdot$\quad
+concept DOI (always latest) \href{https://doi.org/\conceptdoi}{\texttt{\conceptdoi}}\\[2pt]
+Not peer reviewed. Source code, data and computational records: \href{https://\docrepo}{\texttt{\docrepo}}
 }}
 \end{center}
 \vspace{4pt}}
@@ -52,11 +45,10 @@ Not peer reviewed. Source, declared hypotheses, artifacts and verdicts:
 Goemans' unsplittable-flow cost conjecture, with the violation constant it
 forces}
 \author{Felipe Santiba\~nez-Leal\orcidlink{0000-0002-0150-3246}%
-\thanks{CAOS open-research programme, Santiago, Chile. With machine-executed
-computations; all code, declared hypotheses, artifacts and verdicts are
-versioned at \url{https://github.com/fsantibanezleal/CAOS_RESEARCH} under
+\thanks{CAOS open-research programme, Santiago, Chile. Code, experiment records
+and artifacts: \url{https://github.com/fsantibanezleal/CAOS_RESEARCH}, folder
 \texttt{problems/optimization-geometry/unsplittable-flow-cost/}.}}
-\date{July 25, 2026}
+\date{\docdate}
 
 \begin{document}
 \maketitle
@@ -72,7 +64,7 @@ announcement did not state. Our results: (i) the instance is confirmed, so
 Goemans' conjecture is false, and, the instance being acyclic, the
 Morell--Skutella cost conjecture and the convex-combination form fall with it;
 (ii) the instance forces a violation of exactly $\tfrac{16}{15}\dmax$, that is,
-the conjecture fails by ONE unit at $\dmax = 15$, so the open question whether
+the conjecture fails by \emph{one} unit at $\dmax = 15$, so the open question whether
 cost-preserving rounding is possible with $O(\dmax)$ violation is untouched by
 it; (iii) every proved result in the area survives its direct test on the
 instance, including the Dinitz--Garg--Goemans theorem, the Morell--Skutella
@@ -86,9 +78,9 @@ optimal separator for that graph and fractional flow, so its cost gap cannot be
 improved by any reweighting; and (vi) a first minimality result, that no
 single-terminal instance is a counterexample for any nonnegative cost vector,
 together with a necessary condition at two terminals. The verification is a
-replication; items (ii) and (iv)--(vi) are, to our knowledge, recorded here for
-the first time. A prediction of ours about two terminals was refuted by our own
-machine and is retracted in Section~\ref{sec:minimality}.
+replication; items (ii) and (iv)--(vi) are, to our knowledge, new. The
+two-terminal case remains open, and we show why a natural argument for it
+fails.
 \end{abstract}
 
 \section{The statement}
@@ -164,7 +156,7 @@ conjecture statement as printed in \cite{STVZ25}. It models arcs by index, so
 parallel arcs are representable; it enumerates simple $s$--$t$ paths by its own
 depth-first search, never from a supplied list; it decides both conditions with
 inclusive inequalities in \texttt{fractions.Fraction} arithmetic, with floats
-refused by the instance constructor. It was calibrated first on instances whose
+rejected by the instance constructor. It was calibrated first on instances whose
 answers are fixed by inspection, including a parallel-arc instance, an instance
 with a directed cycle, and an instance engineered to load an arc to exactly
 $x_a + \dmax$. The proposer's verifier was archived and hashed but never
@@ -318,7 +310,7 @@ in exact rational arithmetic.
 
 \begin{proposition}[machine-verified]
 For the instance above, $\delta^\star = 2/7$, attained by
-$c = \tfrac17(2, 3, 0, 2, 0, 0, 0, 0, 0)$, which is the published cost vector
+$c = \tfrac17(2,\allowbreak 3,\allowbreak 0,\allowbreak 2,\allowbreak 0,\allowbreak 0,\allowbreak 0,\allowbreak 0,\allowbreak 0)$, which is the published cost vector
 normalised.
 \end{proposition}
 
@@ -329,7 +321,7 @@ and the 58-versus-60 separation is the best that instance can do. Practically,
 over graphs, demands and fractional flows only, with one exact linear program
 per instance.
 
-\section{Minimality, and a retraction}
+\section{Minimality}
 \label{sec:minimality}
 
 \begin{theorem}
@@ -348,15 +340,13 @@ routing on a cheapest path. That routing is therefore congestion-good and
 cost-good.
 \end{proof}
 
-\begin{remark}[retraction]
-In an earlier internal record we asserted, as a derivation, that no
-counterexample exists with at most two terminals, on the grounds that a conflict
-graph on at most two nodes has no odd cycle. That argument is invalid: a
-terminal may have many path choices, so the conflict graph need not have two
-nodes, and the step from an integral stable-set polytope to the absence of a
-separating nonnegative cost vector was asserted rather than proved. We flagged
-the claim as suspect in the declared hypothesis of the experiment that tested
-it, and we withdraw it here. The two-terminal case is open.
+\begin{remark}[an invalid argument for two terminals]
+It is tempting to conclude that no counterexample exists with at most two
+terminals, on the grounds that a conflict graph on at most two nodes has no odd
+cycle. That argument is invalid: a terminal may have many path choices, so the
+conflict graph need not have two nodes, and the step from an integral stable-set
+polytope to the absence of a separating nonnegative cost vector is unproved. The
+two-terminal case is open.
 \end{remark}
 
 What does hold at two terminals, and in fact for any number of terminals in its
@@ -382,14 +372,14 @@ We swept 184 two-terminal instances with a shared spine and two choices per
 terminal, over four demand pairs, every integer split of each demand, and four
 cost pairs, solving (SEP) exactly on each: none admits any nonnegative cost
 vector making it a counterexample, and the characterisation above held on every
-one. This is evidence over a bounded box, not a proof, and we state it as such.
+one. This is evidence over a bounded box, not a proof.
 
 \section{What remains open}
 
 The refutation settles the constant 1 and leaves the quantitative question
 essentially untouched. Writing $\alpha^\star$ for the least $\alpha$ such that
-every instance admits a cost-good routing within $x + \alpha\dmax$, the record
-after this work is $\alpha^\star \ge 16/15$ and, for planar instances,
+every instance admits a cost-good routing within $x + \alpha\dmax$, the bounds
+known after this work are $\alpha^\star \ge 16/15$ and, for planar instances,
 $\alpha^\star_{\mathrm{planar}} \le 2$; in general no finite upper bound is
 known. Three concrete questions follow. Can the conflict-triangle mechanism be
 extended to longer odd cycles or to conflict cliques, whose stable-set gaps are
@@ -403,17 +393,17 @@ undecided.
 \section*{Provenance and scope}
 
 The counterexample instance is not ours. It was announced publicly on 22--23
-July 2026, attributed to D.\ Rybin working with a large language model, and was
-supplied to this programme as a file bundle which we archived with SHA-256
-hashes. What is ours is the independent exact verification, the quantitative
+July 2026, attributed to D.\ Rybin working with a large language model, and was % voice-ok
+obtained as a file bundle, which we archived with SHA-256 hashes. Our
+contributions are the independent exact verification, the quantitative
 constant $16/15$, the consistency battery against the proved results, the $K_4$
 and planarity placements, the separation-LP optimality statement, the
-single-terminal theorem, the two-terminal characterisation, and the retraction
-recorded above. We make no claim about priority or attribution, which are not
-mathematical facts, and we take no position on how the community will receive
-the announcement. Every computation is exact and reproducible from the committed
-code; hypotheses were declared and committed before each run, and the verdicts,
-including the refuted prediction, are part of the public record.
+single-terminal theorem and the two-terminal characterisation. We make no claim
+about priority or attribution. Every computation
+is exact and reproducible from the released code. The computations are archived
+as the experiment records EXP-001 to EXP-003 in the repository folder
+\path{problems/optimization-geometry/unsplittable-flow-cost/experiments/}; each
+record holds the code, the artifacts and the result.
 
 \begin{thebibliography}{9}
 

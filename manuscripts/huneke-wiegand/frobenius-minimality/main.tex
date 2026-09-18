@@ -4,6 +4,7 @@
 \usepackage[margin=1.05in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{booktabs}
+\usepackage{array}
 \usepackage{microtype}
 % MiKTeX's ORCID icon font is not scalable; protrusion remains enabled while
 % font expansion is disabled to keep pdfTeX builds portable and deterministic.
@@ -28,26 +29,54 @@
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 
+% Every centred display in this paper (hash lists, small tables, the repository path) continues the
+% sentence that introduces it, so no page break is allowed immediately before one; the
+% lead-in line moves to the next page with the display instead.
+\makeatletter
+\renewcommand\center{\@beginparpenalty\@M\trivlist\centering\item\relax}
+\makeatother
+
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\kfield}{\Bbbk}
 \newcommand{\one}{\mathbf{1}}
+
+% Page-1 header block (conventions/manuscript-header-standard.md). The four document
+% macros are set by the publishing tool when the version DOI is reserved. At this text
+% width the two DOIs do not fit on one line of the box, so each has its own line.
+\newcommand{\doctype}{Preprint}
+\newcommand{\docversion}{v0.24}
+\newcommand{\docdate}{18 September 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.22823618}
+\newcommand{\conceptdoi}{10.5281/zenodo.21763582}
+\newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
+\newcommand{\headerblock}{%
+\begin{center}
+\fbox{\parbox{0.94\textwidth}{\small\raggedright
+\textbf{\doctype} \quad$\cdot$\quad \docversion, \docdate \quad$\cdot$\quad Licence CC BY 4.0\\[2pt]
+CAOS Research open-problems programme \quad$\cdot$\quad problem \texttt{huneke-wiegand}\\[2pt]
+Version DOI \href{https://doi.org/\versiondoi}{\texttt{\versiondoi}}\\[2pt]
+Concept DOI (always latest) \href{https://doi.org/\conceptdoi}{\texttt{\conceptdoi}}\\[2pt]
+Not peer reviewed. Source code, data and computational records: \href{https://\docrepo}{\texttt{\docrepo}}
+}}
+\end{center}
+\vspace{4pt}}
 
 \title{Frobenius Minimality, Minimum-Layer Uniqueness,\\
 and an Infinite Family of Huneke--Wiegand Counterexamples}
 \author{Felipe Santiba\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program, \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
-\date{2026-08-30\\[2pt]\normalsize Version 0.23}
+\date{\docdate}
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small CAOS Research Preprint}
-\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.23}
+\fancyhead[L]{\small CAOS Research \doctype}
+\fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ \docversion}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{%
   \fancyhf{}%
-  \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.23}%
+  \fancyhead[L]{\small CAOS Research \doctype}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ \docversion}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -60,26 +89,15 @@ and an Infinite Family of Huneke--Wiegand Counterexamples}
 \begin{document}
 \maketitle
 \thispagestyle{titlepage}
-\begin{center}\small
-\fbox{\parbox{0.92\textwidth}{\centering
-\textbf{PREPRINT} \textperiodcentered\ not peer reviewed \textperiodcentered\ CAOS Research programme\\
-First paper of the Huneke--Wiegand extension record \textperiodcentered\ version 0.23 \textperiodcentered\ 2026-08-30\\
-Concept DOI \href{https://doi.org/10.5281/zenodo.21763582}{10.5281/zenodo.21763582} (resolves to latest) \textperiodcentered\ version DOI \href{https://doi.org/10.5281/zenodo.22181972}{10.5281/zenodo.22181972}\\
-Licensed CC BY 4.0 \textperiodcentered\ sources and machine records: \texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}\\[2pt]
-\textbf{Provenance.} Son Pham discovered the counterexample; Professor Craig Huneke independently
-verified it. This paper contributes certified Frobenius minimality, minimum-layer uniqueness, a
-separate explicit infinite family, and its uniform endomorphism, type, trace, conductor, stability,
-reduction, tangent-cone, fiber-cone, defining-ideal, syzygy, and characteristic-dependence anatomy.
-}}
-\end{center}
+\headerblock
 
-% Reassert the manuscript page styles after \maketitle, which can reset the
+% Reassert the page styles after \maketitle, which can reset the
 % class plain style on later output pages.
 \pagestyle{fancy}
 \fancypagestyle{plain}{%
   \fancyhf{}%
-  \fancyhead[L]{\small CAOS Research Preprint}%
-  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ v0.23}%
+  \fancyhead[L]{\small CAOS Research \doctype}%
+  \fancyhead[R]{\small Minimality, Uniqueness, and a Family \textperiodcentered\ \docversion}%
   \fancyfoot[C]{\small \thepage}%
   \renewcommand{\headrulewidth}{0.4pt}%
 }
@@ -97,19 +115,19 @@ independent Boolean route checks $1{,}156$ fixed-pair UNSAT certificates for the
 introduce a one-hot shift-selector CNF that asks one existence question per Frobenius number. Its
 DRAT certificates exclude every odd value from $69$ through $179$, while the formula at $181$ is
 satisfiable and decodes exactly to the public semigroup and shift. A separately generated fixed-pair
-formula returns the same model. An independent audit rehashes all $228$ files in the minimality
-search, totaling $760{,}081{,}739$ bytes, rechecks both SAT models, and reproduces the strict-order
-manifest with no mismatch. Complete theorem-tree enumeration at $F=69,71,73,75$ provides an
-object-level cross-check on another $79{,}790$ semigroups and $2{,}933{,}163$ gap cases. A second
-projected enumeration proves that shift $14$ is the only feasible shift at $F=181$ and that the
-public membership vector is the only semigroup there. Both terminal DRAT proofs are freshly
-rechecked in an independent 12-file audit. Thus Pham's pair is the unique normalized pair attaining
-the Frobenius minimum in this class. Finally, for every integer $p\ge4$ we construct a symmetric
-numerical semigroup $\Gamma_p$ of multiplicity $24p$, Frobenius number $78p-1$, conductor $78p$,
-and embedding dimension $11p$, for which
-$I_p=(t^{24p},t^{30p})$ is nonprincipal and rigid. This family theorem is deductive: seven exact
+formula returns the same model. An independent verification rehashes all $228$ files in the
+minimality search, totaling $760{,}081{,}739$ bytes, rechecks both SAT models, and reproduces the
+strict-order manifest with no mismatch. Complete theorem-tree enumeration at $F=69,71,73,75$
+provides an object-level cross-check on another $79{,}790$ semigroups and $2{,}933{,}163$ gap cases.
+A second projected enumeration proves that shift $14$ is the only feasible shift at $F=181$ and
+that the public membership vector is the only semigroup there. An independent verification of the
+$12$ files of this classification rechecks both terminal DRAT proofs. Thus Pham's pair is the
+unique normalized pair attaining the Frobenius minimum in this class. Turning to the second
+question, for every integer $p\ge4$ we construct a symmetric numerical semigroup $\Gamma_p$ of
+multiplicity $24p$, Frobenius number $78p-1$, conductor $78p$, and embedding dimension $11p$, for
+which $I_p=(t^{24p},t^{30p})$ is nonprincipal and rigid. This family theorem is deductive: seven exact
 interval-sum identities prove closure, symmetry, and $D_s=E_s+E_s$; a finite sweep through
-$p=300$ and an independently implemented audit are supporting checks. For every family member we
+$p=300$ and an independent re-implementation are supporting checks. For every family member we
 also determine the value semigroup of the endomorphism ring exactly. It has multiplicity $24p$,
 Frobenius number $54p-1$, conductor $54p$, genus $38p-1$, and embedding dimension $12p$.
 It is nonsymmetric, and the endomorphism ring is strictly larger than the original ring. Recent
@@ -117,7 +135,7 @@ endomorphism-center criteria then show uniformly that the ideal remains rigid ov
 endomorphism ring but is not reflexive there, with the adjacent Ext and Tor obstruction groups
 nonzero. We further prove that this endomorphism semigroup has Cohen--Macaulay type and reduced
 type $10p$, hence maximal reduced type, and that its completed semigroup ring is not almost
-Gorenstein. Finally, the traces of the ideal and its endomorphism ring both equal the conductor of
+Gorenstein. The traces of the ideal and its endomorphism ring both equal the conductor of
 the finite birational extension. We determine that common value ideal exactly and prove the
 identity
 \[
@@ -136,24 +154,24 @@ The associated graded ring of $T_p$ nevertheless has depth zero: its complete
 Valabrega--Valla module is concentrated in one degree, where it has length $p$. We compute
 the exact Hilbert series and show that its numerator has only positive coefficients despite this
 failure of Cohen--Macaulayness. We then determine the complete zeroth local cohomology: it is
-$k^p$, concentrated in degree zero and annihilated by the full homogeneous maximal ideal. Hence
+$\kfield^p$, concentrated in degree zero and annihilated by the full homogeneous maximal ideal. Hence
 the tangent cone is Buchsbaum but not Cohen--Macaulay, with unbounded Buchsbaum invariant $p$;
 its quotient by the finite-length torsion is Cohen--Macaulay with an exact Hilbert series. Over the
 polynomial Noether normalization induced by the minimal reduction, we determine the entire graded
 module: the torsion consists of $p$ exponent-one cyclic summands, while the free quotient has rank
 $24p$ and explicit shifts. This yields the complete minimal resolution, projective dimension one,
 regularity four, top-local-cohomology $a$-invariant three, and the exact parameter-section identity
-$\ell(G_p/x_pG_p)=25p=e_0(T_p)+I(G_p)$. Finally, the exact identity
+$\ell(G_p/x_pG_p)=25p=e_0(T_p)+I(G_p)$. The exact identity
 $T_p^2=\mathfrak m_pT_p$ identifies the special fiber canonically with
 $G_p/H^0(G_p)$. It is Cohen--Macaulay of type $10p+1$, but its Artinian socle lies in degrees two
 and four, so it is neither level nor Gorenstein. We then determine its defining ideal: in the
 polynomial ring on its $10p$ minimal degree-one generators, it has exactly $50p^2-17p$ minimal
 quadrics and the single additional cubic $X_0^2X_{3p}-X_p^3$, with no other minimal equation.
 Thus its relation type is three and it is not Koszul. The all-parameter component calculation is
-an exact Presburger verification, supported by a separately encoded graph audit; its solver trust
-boundary is stated explicitly. From the same exact h-vector, Artinian socle, and first Betti row,
-we then determine the homological edges over the full presentation ring. Its projective dimension
-is $10p-1$, its regularity is four,
+an exact Presburger verification, supported by a separately encoded graph check; it relies on the
+soundness of the solver, whose UNSAT answers carry no independently checked proof. From the same
+exact h-vector, Artinian socle, and first Betti row, we then determine the homological edges over
+the full presentation ring. Its projective dimension is $10p-1$, its regularity is four,
 \[
 \beta_{2,3}=\frac{2p(500p^2-330p+31)}{3},
 \]
@@ -189,7 +207,7 @@ unit Smith form, so the result again holds over every field. This completes one 
   \[
   \beta_{4,5}=\frac{2p(5p-1)(10p-3)(100p^2-110p+13)}{3},
   \]
-  completing internal degree five over every field. Finally, we identify the complete cubic-colon
+  completing internal degree five over every field. We also identify the complete cubic-colon
   quotient with the canonical idealization of the $p$-th Veronese rational normal curve ring.
   Its multigraded Hilbert numerator and an integral relative normal form give
   \[
@@ -227,7 +245,7 @@ unit Smith form, so the result again holds over every field. This completes one 
   \]
   Consequently the complete regularity-three and regularity-four strands of the special fiber are
   explicit binomial convolutions of the displayed colon polynomial, over every field. This removes
-  every comparison-rank ambiguity from the cubic cone. Finally, put
+  every comparison-rank ambiguity from the cubic cone. For the lower strands, put
   \(\tau_p=8p-1+p(p+1)/2\). The Artinian reduction of the high-variable kernel is a two-layer
   incidence module. Its first missing offset gives a unique primitive cokernel cell, and a
   separate unit pivot proves that the connecting map from the colon quotient cannot hit it. Thus,
@@ -253,8 +271,8 @@ unit Smith form, so the result again holds over every field. This completes one 
   phenomenon through $(p,t)=(9,2)$. On the tested $t=2$ diagonal with $5\le p\le9$, the kernel
   cokernel has the same dimension over $\mathbf F_2$ and $\mathbf F_3$, while the connecting image
   is smaller over $\mathbf F_2$; the resulting excesses are $4,9,18,31,49$. Two formulas suggested
-  by shorter initial segments are explicitly refuted. For every $p\ge4$ and $2\le t\le p-2$, a
-  separate offset inequality shows that the shifted cubic source is absent, so the exact
+  by shorter initial segments are refuted by the later values. For every $p\ge4$ and
+  $2\le t\le p-2$, a separate offset inequality shows that the shifted cubic source is absent, so the exact
   quadratic-quotient and special-fiber values agree at every target in this family. This is not
   an infinite characteristic-dependence theorem. The results do not determine the two complete
   lower strands, the
@@ -281,9 +299,11 @@ number $181$. The discovery settles the original conjecture negatively, but does
 whether $181$ is small, minimal, or typical.
 
 This paper reports computer-assisted classification theorems and a deductive family theorem.
-Claims are labeled \textbf{[MV]} when
-they are verified by exact machine computation and independently checked artifacts, and
-\textbf{[D]} when derived in the text. No conjectural claim is needed for the main theorem.
+Claims are labeled \textbf{[MV]} when they are verified by exact machine computation and
+independently checked artifacts, \textbf{[D]} when derived in the text, \textbf{[MV+D]} when a
+proof combines machine-verified steps with steps derived in the text, and \textbf{[D/MV]} when a
+theorem joins assertions derived for all parameters with exact finite machine-verified
+assertions. No conjectural claim is needed for the main theorem.
 
 \paragraph{Contributions.}
 \begin{enumerate}
@@ -293,7 +313,7 @@ they are verified by exact machine computation and independently checked artifac
   Blanco--Rosales tree and checked DRAT proofs.
   \item We certify UNSAT for every odd $F=69,71,\ldots,179$, then recover the exact public model at
   $(F,s)=(181,14)$.
-  \item We independently rehash and inspect the complete search artifact set, and cross-check the
+  \item We independently rehash and inspect the complete set of search files, and cross-check the
   first four new odd Frobenius values by explicit theorem-tree enumeration.
   \item We classify the complete minimum layer by projected enumeration: the only feasible shift
   at $F=181$ is $14$, and the public semigroup is the only membership vector at that shift.
@@ -301,7 +321,7 @@ they are verified by exact machine computation and independently checked artifac
   arithmetic-sequence positive family, and the visible fixed-offset generator blocks do not extend
   to a naive parametric family.
   \item We use the failed fixed-width ansatz to derive and prove an explicit infinite family for
-  every integer $p\ge4$, with a separate exact implementation and independent audit.
+  every integer $p\ge4$, with a separate exact implementation and an independent recomputation.
   \item We compute the endomorphism overring of every family member and prove that the
   nonreflexive Ext/Tor escape identified in the public seed persists uniformly.
   \item We compute the complete pseudo-Frobenius set of every endomorphism semigroup, proving
@@ -350,10 +370,10 @@ they are verified by exact machine computation and independently checked artifac
   classes in homological degrees $p+1,\ldots,2p-3$, and prove that the first complete target
   quotient has characteristic-dependent multigraded Betti number: four over $\mathbf F_2$ and
   three over $\mathbf F_3$ for both the quadratic quotient and the special fiber.
-  \item We extend the exact target campaign through $(p,t)=(9,2)$, distinguish kernel-incidence
+  \item We extend the exact target computations through $(p,t)=(9,2)$, distinguish kernel-incidence
   rank defects from characteristic dependence created by the connecting quotient, localize the
   first factor-two residual, refute two finite-data formulas, and prove that the cubic source is
-  absent at every target in the declared two-parameter family.
+  absent at every target $(p,t)$ with $p\ge4$ and $2\le t\le p-2$.
 \end{enumerate}
 
 \section{The finite semigroup problem}
@@ -409,7 +429,7 @@ If $F$ were even, symmetry at $n=F/2$ would require $F/2$ to belong to $\Gamma$ 
 does not belong to $\Gamma$.
 \end{proof}
 
-\section{The public model and independent calibration}
+\section{The public model and its independent verification}
 
 Pham's public semigroup is
 \begin{align*}
@@ -419,16 +439,17 @@ Pham's public semigroup is
 with the ideal generated by $t^{56}$ and $t^{70}$, hence normalized shift $s=14$
 \cite{Pham2026}. An independent Singular/4ti2 calculation and a separate standard-library finite
 route verify $F=181$, conductor $182$, genus $91$, symmetry, and equality~\eqref{eq:rigidity}
-\textbf{[MV]}. The Singular route uses a $322$-generator toric standard basis; both reduced ideal
-differences vanish. The hypersurface control $\langle4,5\rangle$ rejects equality with explicit
-residues \textbf{[MV]}.
+\textbf{[MV]} (computation EXP-001). The Singular route uses a $322$-generator toric standard
+basis; both reduced ideal differences vanish. For the hypersurface semigroup $\langle4,5\rangle$,
+used as a negative control, the check rejects equality with explicit residues \textbf{[MV]}.
 
 The endomorphism overring of the ideal has value semigroup
 \[
   v(\operatorname{End}_R(I))=\Gamma\cup\{101,107,181\},
 \]
-with Frobenius number $125$, genus $88$, and type $24$ \textbf{[MV]}. This explains why positive
-criteria that require a Gorenstein endomorphism ring do not apply, but it does not imply minimality.
+with Frobenius number $125$, genus $88$, and type $24$ \textbf{[MV]} (computation EXP-002). This
+explains why positive criteria that require a Gorenstein endomorphism ring do not apply, but it
+does not imply minimality.
 
 \section{Complete reproduction below 69}
 
@@ -443,15 +464,17 @@ child conditions, completeness, and a unique parent.
 Our direct implementation validates every node for closure, symmetry, genus, minimal generators,
 and its theorem parent. It then checks every gap by Lemma~\ref{lem:window} and retains a first
 element of $D_s\setminus(E_s+E_s)$ whenever equality fails. The full range $F=1,3,\ldots,67$
-contains $48{,}954$ semigroups and $1{,}503{,}391$ gap cases; none is rigid \textbf{[MV]}. At
-$F=11$ the implementation returns the six nodes listed by Blanco--Rosales, while an invalid
-mutation is rejected by closure at $(1,1)$.
+contains $48{,}954$ semigroups and $1{,}503{,}391$ gap cases; none is rigid \textbf{[MV]}
+(computation EXP-004). At $F=11$ the implementation returns the six nodes listed by
+Blanco--Rosales, while a deliberately altered node, used as a negative control, is rejected by the
+closure check at $(1,1)$.
 
 An independent route generates one fixed-pair DIMACS formula for each $(F,s)$, including shifts
 that are forced not to be gaps. CaDiCaL emits a DRAT proof for every UNSAT result, and DRAT-trim
 checks each proof against the exact CNF \cite{Cadical2023,DRAT2014}. All $1{,}156$ formulas are
-UNSAT and independently verified \textbf{[MV]}. A committed auditor rehashes $4{,}624$ external
-files totaling $211{,}671{,}241$ bytes with zero mismatch.
+UNSAT and independently verified \textbf{[MV]} (also computation EXP-004). An independent checker
+rehashes the $4{,}624$ stored files of this proof suite, totaling $211{,}671{,}241$ bytes, with zero
+mismatch.
 
 \section{One selector formula per Frobenius value}
 
@@ -495,14 +518,16 @@ equality. Conversely, from a rigid pair assign $h$ and $q$ from the pair, assign
 definitions, and assign each $p$ by its conjunction. Every clause is then true.
 \end{proof}
 
-The selector encoding passes two adversarial calibrations \textbf{[MV]}. Every odd $F\le67$ is
-UNSAT with an accepted proof, while $F=181$ is SAT. The latter formula has $34{,}397$ variables and
-$363{,}912$ clauses, selects $s=14$, and decodes exactly to the public membership vector. A newly
+Two calibration tests validate the selector encoding \textbf{[MV]} (computation EXP-005). Every
+odd $F\le67$ is UNSAT with an accepted proof, while $F=181$ is SAT. The latter formula has
+$34{,}397$ variables and $363{,}912$ clauses, selects $s=14$, and decodes exactly to the public
+membership vector. A newly
 generated fixed-pair formula at $(181,14)$ returns the same vector.
 
 \section{The certified search and minimality theorem}
 
-We scan odd $F$ in strict increasing order. Table~\ref{tab:search} summarizes the closed run.
+We scan odd $F$ in strict increasing order (computation EXP-005). Table~\ref{tab:search}
+summarizes the completed run.
 
 \begin{table}[ht]
 \centering
@@ -537,9 +562,10 @@ selector and fixed-pair models at $(181,14)$ provide existence. These cases exha
 positive Frobenius values.
 \end{proof}
 
-The search audit independently rehashes all $228$ expected CNF, proof, solver-log, and checker-log
-files, totaling $760{,}081{,}739$ bytes. It also reconstructs both SAT membership masks, validates
-closure, symmetry, and rigidity, checks strict odd ordering, and recomputes aggregate SHA-256
+An independent verification rehashes all $228$ expected CNF, proof, solver-log, and checker-log
+files of the search, totaling $760{,}081{,}739$ bytes. It also reconstructs both SAT membership
+masks, validates closure, symmetry, and rigidity, checks strict odd ordering, and recomputes
+aggregate SHA-256
 \[
 \texttt{0f580de2707a00fdd52e1b3c04e7767b97ce7b0a826593b119e9a49ae04da743}.
 \]
@@ -598,28 +624,29 @@ Normalized rigid pairs & $1$\\
 Distinct membership vectors & $1$\\
 Support terminal proof bytes & $45{,}867{,}741$\\
 Fixed-class terminal proof bytes & $1{,}608{,}691$\\
-Audited external files & $12$\\
-Audited external bytes & $63{,}609{,}504$\\
-Fresh proof-recheck time & $232.88$ seconds\\
+Independently verified files & $12$\\
+Independently verified bytes & $63{,}609{,}504$\\
+Proof recheck time & $232.88$ seconds\\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The independent auditor reconstructs all four CNFs byte-for-byte, decodes both SAT logs, reruns
-closure, symmetry, minimal-generator and full-window/tail rigidity checks, and freshly checks both
-terminal proofs \textbf{[MV]}. It accounts for every external file and reproduces manifest SHA-256
+An independent verification program reconstructs all four CNFs byte-for-byte, decodes both SAT
+logs, reruns closure, symmetry, minimal-generator and full-window/tail rigidity checks, and
+rechecks both terminal proofs \textbf{[MV]} (computation EXP-007). It accounts for every stored
+file and reproduces the manifest SHA-256
 \[
 \texttt{02d1265b75e886bc6ec693e60b367b661476170c755e38a220342396564ef5d3}.
 \]
-The compact classification aggregate is
+The aggregate SHA-256 of the compact classification output is
 \[
 \texttt{b37d9410fa07c00f22ccc0f83796644db3b44f0dd654c06933aa5d22cb1ed788}.
 \]
 
-\section{Independent object-level checks beyond the old frontier}
+\section{Independent object-level checks beyond the published range}
 
-The theorem-tree route was continued beyond $67$ without consulting SAT models. Table~\ref{tab:tree}
-lists the first four new odd values.
+The theorem-tree route was continued beyond $67$ without consulting SAT models (computation
+EXP-005). Table~\ref{tab:tree} lists the first four new odd values.
 
 \begin{table}[ht]
 \centering
@@ -639,8 +666,9 @@ Total & 79,790 & 2,933,163 & 0 & 1,035.68\\
 \end{tabular}
 \end{table}
 
-This is not needed to trust a DRAT derivation, but it attacks the custom encoding at the object
-level and supplies explicit failed-rigidity witnesses for every tested gap. The routes agree.
+The DRAT derivations do not depend on this enumeration, but it tests the custom encoding at the
+level of the semigroups themselves and supplies explicit failed-rigidity witnesses for every
+tested gap. The two routes agree.
 
 \section{From a failed ansatz to an infinite family}
 
@@ -655,18 +683,18 @@ The seed also displays $56=4s$ and $181=13s-1$ at $s=14$, with generator blocks
 4s+\{0,1,2,7,8\},\qquad 5s+[0,s-1],\qquad
 6s+\{3,5,6,9,11,12,13\}.
 \]
-A predeclared exact sweep refutes the naive fixed-offset lift \textbf{[MV]}. Only $s=14$ passes
-among even $s\le100$. At $s=16$, the generated semigroup has $F=205$ rather than $207$; at
-$s=28$ the predicted Frobenius value returns but symmetry fails. This negative result prevents the
-minimality theorem from being overinterpreted as evidence of an immediate family.
+An exact sweep refutes the naive fixed-offset lift \textbf{[MV]} (computation EXP-006). Only
+$s=14$ passes among even $s\le100$. At $s=16$, the generated semigroup has $F=205$ rather than
+$207$; at $s=28$ the predicted Frobenius value returns but symmetry fails. This negative result
+shows that the minimality theorem is not, by itself, evidence of an immediate family.
 
-We next retained only the structural scaffold $m=4s$, $F=13s-1$, the full interval
+We next retain only the structural scaffold $m=4s$, $F=13s-1$, the full interval
 $[5s,6s-1]\subseteq\Gamma$, and rigidity at shift $s$. A proof-carrying Boolean search certifies
 that the scaffold is infeasible at $s=16,18$ and returns independently validated models for every
-even $s=20,22,\ldots,40$ \textbf{[MV]}. The eleven non-seed models justified a separate extraction
-stage, but did not themselves prove recurrence. The first fixed-width interval formula passed
-three parameters and then failed: at $s=38$, $9s+7$ lies in $D_s$ but not in $E_s+E_s$. For every
-later parameter in that formula, carried sums from the first block end at residue $6$, while the
+even $s=20,22,\ldots,40$ \textbf{[MV]} (also computation EXP-006). The eleven non-seed models
+motivate a separate extraction step, but do not themselves prove a recurrence. The first
+fixed-width interval formula passes three parameters and then fails (computation EXP-008): at
+$s=38$, $9s+7$ lies in $D_s$ but not in $E_s+E_s$. For every later parameter in that formula, carried sums from the first block end at residue $6$, while the
 next summand block begins at residue at least $8$. This uniform obstruction suggests widening the
 first interval with the parameter.
 
@@ -731,9 +759,9 @@ infinite family of counterexamples in the two-generated monomial-ideal class.
 We first prove the semigroup assertions. The only sums of positive displayed members that can stay
 below the conductor have starting levels among $4,5,6,8$. Lemma~\ref{lem:residues} handles the
 non-full target blocks: $A_p+A_p$ produces $8s+C_p$ and part of level $9$;
-$A_p+B_p$, $B_p+B_p$, and $A_p+C_p$ land exactly inside the declared high blocks and never produce
+$A_p+B_p$, $B_p+B_p$, and $A_p+C_p$ land exactly inside the listed high blocks and never produce
 the Frobenius residue $s-1$ in level $12$. Sums involving the full level $5$ block either fill a
-declared level or enter the conductor tail. Thus $\Gamma_p$ is closed.
+listed level or enter the conductor tail. Thus $\Gamma_p$ is closed.
 
 Conversely, the lower three blocks generate every displayed member. The identity
 $\operatorname{low}(A_p+A_p)=C_p$ generates level $8$. The presence of $0\in A_p$ makes
@@ -794,17 +822,18 @@ The multiplicities $24p$ are distinct, so the family contains infinitely many di
 
 \subsection{Exact support and boundaries}
 
-The proof of Theorem~\ref{thm:family} is independent of a finite sweep. As adversarial support, the
-implementation evaluated every $p=2,3,\ldots,300$ \textbf{[MV]}. Exactly the predicted boundary
-values $p=2,3$ fail, while all $297$ values $p\ge4$ pass the seven identities, closure, generation,
-symmetry, invariants, and full-window/tail rigidity. The instances $p=4,5$ reproduce independently
-generated Boolean models byte-for-byte. Two corrupted positive controls are rejected. A separate
-auditor reconstructs all $297$ positive membership hashes from the formula and performs fresh
-semantic checks at $p=4,5,17,73,151,300$. The campaign aggregate is
+The proof of Theorem~\ref{thm:family} is independent of a finite sweep. As a supporting check,
+the implementation evaluates every $p=2,3,\ldots,300$ \textbf{[MV]} (computation EXP-009).
+Exactly the predicted boundary values $p=2,3$ fail, while all $297$ values $p\ge4$ pass the seven
+identities, closure, generation, symmetry, invariants, and full-window/tail rigidity. The
+instances $p=4,5$ reproduce independently generated Boolean models byte-for-byte. Two negative
+controls, obtained by altering positive instances, are rejected. A separate implementation
+reconstructs all $297$ positive membership hashes from the formula and repeats the semantic checks
+at $p=4,5,17,73,151,300$. The aggregate SHA-256 of the sweep is
 \[
 \texttt{81d5a8eb6cf2e848807323e3b0bdba58c464779d25cdc788cef027585540dce2}.
 \]
-The independent-audit aggregate is
+The aggregate SHA-256 of the independent recomputation is
 \[
 \texttt{eb2aaf17650ed99f4e220a43c53bdd8835c82688a37567bb154c30a1ae520ce9}.
 \]
@@ -887,10 +916,12 @@ makes rigidity descend to $E_p$; the contrapositives of their Theorems 4.2--4.4 
 nonreflexivity, Ext, and Tor conclusions \cite{DeyLyle2025}.
 \end{proof}
 
-The symbolic argument is independent of a parameter sweep. As adversarial support, two exact
-implementations agree for every $p=4,\ldots,300$ \textbf{[MV]}. A separate auditor rehashes all
-$297$ rows, reconstructs complete semantic windows at $p=4,5,17,73,151,300$, and rejects a missing
-$Q_p$ value and a missing terminal singleton. The deterministic campaign and audit aggregates are
+The symbolic argument is independent of a parameter sweep. As a supporting check, two exact
+implementations agree for every $p=4,\ldots,300$ \textbf{[MV]} (computation EXP-011). A separate
+implementation rehashes all $297$ rows, reconstructs complete semantic windows at
+$p=4,5,17,73,151,300$, and rejects two negative controls, one missing a $Q_p$ value and one missing
+the terminal singleton. The deterministic aggregate hashes of the computation and of its
+independent recomputation are
 \[
 \texttt{e21926a689178a6c70b3b6e8319053edd0fd13f164ced9565d3b976e6159c0b0}
 \]
@@ -949,9 +980,10 @@ Reduced type counts the gaps in the last multiplicity window, so it is also $10p
 The almost-symmetric genus identity therefore fails, giving the final claims.
 \end{proof}
 
-Two exact implementations confirm the displayed set for all $p=4,\ldots,300$ \textbf{[MV]}.
-One checks every gap against the full minimal-generator set; the other extracts maximal elements
-of the Ap\'ery poset modulo $4s$. The campaign and independent-audit aggregates are
+Two exact implementations confirm the displayed set for all $p=4,\ldots,300$ \textbf{[MV]}
+(computation EXP-012). One checks every gap against the full minimal-generator set; the other
+extracts maximal elements of the Ap\'ery poset modulo $4s$. The aggregate hashes of the
+computation and of its independent recomputation are
 \[
 \texttt{9bed38fb1c786c3740e000dde7ea7d79a7e7c83fa584ff12fc2c4623b5d503ec}
 \]
@@ -1030,11 +1062,12 @@ as in Herzog--Kumashiro, Proposition~3.1, Claim~1 \cite{HerzogKumashiro2022}. Th
 family-specific data in Theorem~\ref{thm:trace} are the exact common ideal and the evaluation of
 both lengths as $p+1$.
 
-The first declared shorthand used the tail $[9s,\infty)$ and was refuted at $13s-1$ by the
-$p=4$ smoke check \textbf{[MV]}. That point is the Frobenius gap of $\Gamma_p$, so no $R_p$-ideal
-can contain it. The corrected formula above was then checked by two exact routes for all
-$p=4,\ldots,300$, with independent reconstruction at six parameters and three rejected
-corruptions. The campaign and audit aggregates are
+The last two blocks of $v(T_p)$ cannot be merged into the tail $[9s,\infty)$: the computation at
+$p=4$ shows that $13s-1\notin v(T_p)$ \textbf{[MV]}; indeed $13s-1$ is the Frobenius gap of
+$\Gamma_p$, so no $R_p$-ideal can contain it. The formula of Theorem~\ref{thm:trace} is
+checked by two exact routes for all $p=4,\ldots,300$ (computation EXP-013), with independent
+reconstruction at six parameters and three negative controls rejected. The aggregate hashes of
+the computation and of its independent recomputation are
 \[
 \texttt{77448398a26b958c66818b7ac4aaa4b542bad11cdba5ec7c8f7fe76db37526e2}
 \]
@@ -1096,10 +1129,10 @@ Shifting Theorem~\ref{thm:trace} by $4s$ and subtracting its blocks from the squ
 displayed defect. The six block cardinalities are $2p,p,3p,6p,2p-1,1$, whose sum is $14p$.
 \end{proof}
 
-The first EXP-015 prediction incorrectly replaced the two tail intervals by $[9s,\infty)$.
-The $p=4$ smoke gate refuted it at $13s-1$ before a campaign artifact was written
-\textbf{[MV]}. EXP-016 retained that gap, proved the corrected formula above, and checked two exact
-routes for all $p=4,\ldots,300$. Its campaign and independent-audit aggregates are
+As for $v(T_p)$, the two tail intervals of $v(T_p^2)$ cannot be replaced by $[9s,\infty)$: at
+$p=4$ the value $13s-1$ is absent from $v(T_p^2)$ \textbf{[MV]} (computation EXP-015). Computation
+EXP-016 checks the formula of Theorem~\ref{thm:stability} by two exact routes for all
+$p=4,\ldots,300$. The aggregate hashes of the computation and of its independent recomputation are
 \[
 \texttt{8c280bf1db017f678896d473461ae245b4fce57d680be94094b0884556d91853}
 \]
@@ -1167,9 +1200,10 @@ $(23p-1)+14p+2p+1=39p$ proves the Hilbert formula and coefficients.
 \end{proof}
 
 Two exact representations confirm every displayed set and length for all $p=4,\ldots,300$
-\textbf{[MV]}. A separate tail-set implementation rehashes all $297$ rows, reconstructs six
-parameters, and rejects deleted-terminal, false-stabilization, altered-interval, and
-perturbed-length controls. The campaign and audit aggregates are
+\textbf{[MV]} (computation EXP-017). A separate tail-set implementation rehashes all $297$ rows,
+reconstructs six parameters, and rejects four negative controls: a deleted terminal value, a false
+stabilization, an altered interval, and a perturbed length. The aggregate hashes of the
+computation and of its independent recomputation are
 \[
 \texttt{e9c3c887648f08cf67c614b381f00c8c6520dcd1bb89f8cdece62293bfd06030}
 \]
@@ -1178,7 +1212,6 @@ and
 \texttt{0f6ed70676ffb8972b8b167ad52c4f9d2851f69c3b1d96f4023e5e3d5825c781}.
 \]
 
-\newpage
 \section{The depth-zero conductor tangent cone}
 
 Let
@@ -1266,10 +1299,10 @@ $\sum h_nz^n$ by $1-z$ gives the displayed numerator.
 \end{proof}
 
 Two exact implementations verify every intersection, length, and Hilbert coefficient for all
-$p=4,\ldots,300$ \textbf{[MV]}. A separately written bounded-bitset audit reconstructs six
-parameters and rehashes all $297$ campaign rows. Deleted-witness, false-later-defect,
-false-Cohen--Macaulay, and perturbed-numerator controls are rejected. The campaign and audit
-aggregates are
+$p=4,\ldots,300$ \textbf{[MV]} (computation EXP-018). A separately written bounded-bitset
+implementation reconstructs six parameters and rehashes all $297$ rows. Negative controls with a
+deleted witness, a false later defect, a false Cohen--Macaulay claim, and a perturbed numerator
+are rejected. The aggregate hashes of the computation and of its independent recomputation are
 \[
 \texttt{9631c644732f0921be3b3027e18a01110f23dad897fbf2cb14dd3a493eda5971}
 \]
@@ -1357,10 +1390,11 @@ from Theorem~\ref{thm:tangent}'s Hilbert series gives the asserted numerator.
 \end{proof}
 
 Two exact implementations verify the full colon saturation and both maximal-ideal actions for all
-$p=4,\ldots,300$ \textbf{[MV]}. An independently written bounded-bitset audit reconstructs six
-parameters and rehashes all $297$ rows. Unit, deleted-torsion, false-positive-degree,
-degree-zero-action, false-invariant, and perturbed-series controls are rejected. The campaign and
-audit aggregates are
+$p=4,\ldots,300$ \textbf{[MV]} (computation EXP-019). An independently written bounded-bitset
+implementation reconstructs six parameters and rehashes all $297$ rows. Six negative controls
+(unit, deleted-torsion, false-positive-degree, degree-zero-action, false-invariant, and
+perturbed-series) are rejected. The aggregate hashes of the computation and of its independent
+recomputation are
 \[
 \texttt{854d7889d9d7b911b462e4d483e021210ae2873ae0ec0091ec30e8fb29d6dbf7}
 \]
@@ -1435,13 +1469,13 @@ Finally, modulo $x_p$ every cyclic summand contributes one $\kfield$-dimension. 
 and the torsion contributes $p=I(G_p)$. This proves the parameter-section identity.
 \end{proof}
 
-For an independent exact reconstruction, EXP-020 forms the Apery table of
+For an independent exact reconstruction, computation EXP-020 forms the Ap\'ery table of
 $R_p,T_p,\ldots,T_p^5$ modulo $24p$. Each column splits into finite and infinite strings under
 multiplication by $x_p$, recovering every cyclic summand. The recursive-power and Hilbert/torsion
 routes agree for all $p=4,\ldots,300$ \textbf{[MV]}; a separate closed-form implementation rebuilds
-six parameters and rehashes all $297$ rows. Exponent-two-torsion, deleted-free-summand,
-perturbed-Betti, false-regularity, and false-section-length controls are rejected. The campaign and
-audit aggregates are
+six parameters and rehashes all $297$ rows. Five negative controls (exponent-two torsion, a deleted
+free summand, perturbed Betti numbers, a false regularity, and a false section length) are
+rejected. The aggregate hashes of the computation and of its independent recomputation are
 \[
 \texttt{02cf6f62a71de1a897cd46149e8c89d1c55bf810d28dddc02fc6c5330b9c1aed}
 \]
@@ -1521,11 +1555,10 @@ unique degree-four class. That class is socle because degree five vanishes. Henc
 dimensions are $10p$ in degree two and one in degree four, proving the final claims.
 \end{proof}
 
-EXP-021 reconstructs the square, natural kernel, Artinian basis, and socle for all
-$p=4,\ldots,300$ \textbf{[MV]}. The first full attempt passed through $p=225$ but exceeded its
-declared budget and is preserved as inconclusive. An exact bitset implementation then completed
-all $297$ parameters, and an independently encoded audit rebuilt six parameters and rehashed every
-row. The campaign and audit aggregates are
+Computation EXP-021, an exact bitset implementation, reconstructs the square, natural kernel,
+Artinian basis, and socle for all $p=4,\ldots,300$ \textbf{[MV]}; an independently encoded
+recomputation rebuilds six parameters and rehashes every row. The aggregate hashes of the
+computation and of its independent recomputation are
 \[
 \texttt{3857877586143a3be5f14852feb12bd9efbfdf7c1cde458f30e8cd689155a95b}
 \]
@@ -1651,10 +1684,11 @@ through the generator \(1\), or through \(2\) when \(a=1\), gives a state with a
 Hence the degree-five defect is also zero.
 
 The degree-three table and every boundary assertion in the degree-four and degree-five reductions
-were encoded as negated Presburger formulas over all integers \(p\ge4\) \textbf{[MV]}. The exact
-solver closed all $133$ terminal formulas as UNSAT, after four affine-cell bisections, with no SAT
-or unresolved result. A separately encoded total-by-total graph rehashed the complete campaign and
-rebuilt three spaced parameters. Thus \eqref{eq:component-defect} gives one cubic and no new
+were encoded as negated Presburger formulas over all integers \(p\ge4\) \textbf{[MV]}
+(computation EXP-023). The exact solver closed all $133$ terminal formulas as UNSAT, after four
+affine-cell bisections, with no SAT or unresolved result. A separately encoded total-by-total graph
+implementation rehashed every row of the computation and rebuilt three spaced parameters. Thus
+\eqref{eq:component-defect} gives one cubic and no new
 equation in degrees four or five.
 
 Finally, \(T_p\) has reduction number four by Theorem~\ref{thm:reduction}, and
@@ -1665,10 +1699,10 @@ row and relation type. A standard graded Koszul algebra has a quadratic defining
 \(f_p\) is a necessary minimal cubic, so \(\mathcal F_p\) is not Koszul.
 \end{proof}
 
-The bounded state-graph campaign passes every \(p=4,\ldots,23\) \textbf{[MV]}. Its first requested
-extension through \(p=24\) completed that row but crossed the declared five-minute budget, and is
-preserved as inconclusive. The successful campaign, independent audit, and Presburger-query
-aggregates are respectively
+The bounded state-graph computation passes every \(p=4,\ldots,23\) \textbf{[MV]}. A run at
+\(p=24\) also passes, but only its row hash is stored and it has no independent recomputation, so
+the verified range is \(p=4,\ldots,23\). The aggregate hashes of the bounded computation, of its
+independent recomputation, and of the Presburger queries are respectively
 \[
 \texttt{d23792c47a2e07785a27ebc71e99619705f7aa53a38ebe7f66ffa03b0518ce83},
 \]
@@ -1789,11 +1823,12 @@ $P_p(-j)$ contributes in degree $N-j$. The $10p$ last summands with $j=c+2=N+1$ 
 degree $-1$, and the single summand with $j=c+4=N+3$ gives degree $-3$.
 \end{proof}
 
-EXP-024 checks both derivations of \eqref{eq:linear-first-syzygies}, every selected coefficient in
-\eqref{eq:betti-polynomial}, and the socle-to-last-row transfer for all
+Computation EXP-024 checks both derivations of \eqref{eq:linear-first-syzygies}, every selected
+coefficient in \eqref{eq:betti-polynomial}, and the socle-to-last-row transfer for all
 $p=4,\ldots,300$ {\bf[MV]}. Its independent implementation rebuilds all 297 rows, reconstructs
-six spaced EXP-021 socle cases, cross-checks all twenty persisted EXP-023 first rows, and rejects
-seven adversarial corruptions. The campaign and audit aggregates are
+six spaced socle cases of computation EXP-021, cross-checks all twenty stored first rows of
+computation EXP-023, and rejects seven negative controls. The aggregate hashes of the computation
+and of its independent recomputation are
 \begin{center}
 {\fontsize{7}{8}\selectfont\ttfamily
 baf6200a442be9476cd083fde753bbdd9e623c06aa2528f3a7f138ee825637eb}
@@ -1803,13 +1838,13 @@ and
 {\fontsize{7}{8}\selectfont\ttfamily
 b6035f615f2b2092351b5a42e5a734c72ba4783adf82943ed41b38fe07ef17e2}.
 \end{center}
-The symbolic argument above, not the finite campaign, proves the theorem. Equation
+The symbolic argument above, not the finite computation, proves the theorem. Equation
 \eqref{eq:betti-polynomial} is alternating data and does not determine the unresolved interior of
 the Betti table.
 
 \subsection{The first interior Betti strand}
 
-We retain the offset in~\eqref{eq:fiber-e1} by declaring
+We retain the offset in~\eqref{eq:fiber-e1} by setting
 \(\deg X_a=(1,a)\). Write \(\beta_{i,(j,b)}\) for the resulting bigraded Betti number and
 \(\beta_{i,j}=\sum_b\beta_{i,(j,b)}\). Let
 \[
@@ -1962,12 +1997,13 @@ shifts exclude homological degree at least four from internal degree four. The c
 Substitution of \(\beta_{2,4}=8p\) gives the second formula in~\eqref{eq:first-interior}.
 \end{proof}
 
-EXP-027 checks the complete offset chain profile for \(p=4,5,6\), with totals
+Computation EXP-027 checks the complete offset chain profile for \(p=4,5,6\), with totals
 \(32,40,48\), and the smallest case agrees over \(\operatorname{GF}(2)\) and
 \(\operatorname{GF}(1000003)\) \textbf{[MV]}. The closed formulas and explicit quadratic paths
 pass every \(p=4,\ldots,300\); six all-parameter counterexample queries are UNSAT. An independently
-written audit reconstructs the full \(p=4\) chain profile and six spaced formula rows. The
-campaign, symbolic, and audit aggregates are
+written recomputation reconstructs the full \(p=4\) chain profile and six spaced formula rows. The
+aggregate hashes of the computation, of the symbolic queries, and of the independent
+recomputation are
 \[
 \texttt{9bc93c41d899df4a39b85a452257d114000df84730d44f0661c19b7dd8322b63},
 \]
@@ -1978,7 +2014,7 @@ and
 \[
 \texttt{f30b94ce86638732a407a3bb5abb4dfde8a1258441df71a36138dd0ae129d454}.
 \]
-The finite campaigns validate the implementation. The relative-chain and matching arguments,
+The finite computations validate the implementation. The relative-chain and matching arguments,
 together with the colon and mapping cone, prove the theorem.
 
 \subsection{The complete second Betti row}
@@ -2102,12 +2138,12 @@ to be three, while \(\operatorname{reg}\mathcal F_p=4\) forces it to be at most 
 degree-three and degree-four entries and~\eqref{eq:second-betti-tail} therefore exhaust the row.
 \end{proof}
 
-EXP-028 checks all formula identities for \(p=4,\ldots,300\) and complete degree-five offset
-profiles for \(p=4,5,6\), whose totals are \(20,35,54\) \textbf{[MV]}. At \(p=4\), complete
+Computation EXP-028 checks all formula identities for \(p=4,\ldots,300\) and complete degree-five
+offset profiles for \(p=4,5,6\), whose totals are \(20,35,54\) \textbf{[MV]}. At \(p=4\), complete
 degree-five and degree-six profiles agree over \(\operatorname{GF}(2)\) and
 \(\operatorname{GF}(1000003)\). An independent SymPy route obtains the same rational ranks and
-unit Smith factors without importing the canonical rank code. The canonical campaign aggregate
-is
+unit Smith factors without reusing the primary rank code. The aggregate hash of the primary
+computation is
 \[
 \texttt{45f08e6a15e321512629fa4b6ab07161ddcc766ddf56e1d9579175f3444ec32f}.
 \]
@@ -2236,13 +2272,13 @@ Substitution and expansion yield the third formula in~\eqref{eq:degree-five-diag
 displayed factors is divisible by three in every residue class of \(p\) modulo three.
 \end{proof}
 
-EXP-029 checks all pair profiles, endpoints, totals, and Hilbert-coefficient identities for
-\(p=4,\ldots,300\) \textbf{[MV]}. Complete exact relative \(H_2\) profiles at \(p=4,5,6\) have
+Computation EXP-029 checks all pair profiles, endpoints, totals, and Hilbert-coefficient
+identities for \(p=4,\ldots,300\) \textbf{[MV]}. Complete exact relative \(H_2\) profiles at \(p=4,5,6\) have
 totals \(496,780,1128\), and the complete \(p=4\) profile agrees over
 \(\operatorname{GF}(2)\) and \(\operatorname{GF}(1000003)\). An independent rational route
 reconstructs the left support boundary, and a constant-memory arithmetic/Z3 certificate checks the
-support-chain and coefficient identities through \(p=10000\). The campaign, audit, and symbolic
-aggregates are, respectively,
+support-chain and coefficient identities through \(p=10000\). The aggregate hashes of the
+computation, of its independent recomputation, and of the symbolic certificate are, respectively,
 \begin{center}
 {\fontsize{7}{8}\selectfont\ttfamily 7564f15534e8a29f875a367d3a324b95041e8eef836d15deac3e35130e1ad37d},
 \end{center}
@@ -2253,10 +2289,7 @@ and
 \begin{center}
 {\fontsize{7}{8}\selectfont\ttfamily 605733497d6fb0ead97bfd25e26daaa66d546c297751960e1c427f29ff69f279}.
 \end{center}
-The first symbolic implementation exceeded its route budget because it materialized every support
-integer; it is preserved as non-evidence. The optimized endpoint implementation checks the same
-obligations. These calculations validate the implementation; the integral normal form proves the
-theorem.
+These calculations validate the implementation; the integral normal form proves the theorem.
 
 \subsection{The cubic-colon idealization and degree-six third strand}
 
@@ -2394,20 +2427,19 @@ s_p(1)=\frac{c(c-2)(c+2)}3=\frac{8p(p-1)(p-2)}3.
 Adding $8p\,r_p(1)$ gives \eqref{eq:beta-three-six}.
 \end{proof}
 
-EXP-030 checks all colon and scalar formulas for $p=4,\ldots,300$ and complete exact degree-six
-profiles at $p=4,5,6$, with totals $(704,1560,2912)$ \textbf{[MV]}. The complete $p=4$
+Computation EXP-030 checks all colon and scalar formulas for $p=4,\ldots,300$ and complete exact
+degree-six profiles at $p=4,5,6$, with totals $(704,1560,2912)$ \textbf{[MV]}. The complete $p=4$
 profile agrees over $\operatorname{GF}(2)$ and $\operatorname{GF}(1000003)$. An independent
 idealization-Hilbert implementation matches every coefficient of all three profiles and separately
-reconstructs selected offsets over $\mathbb Q$. Its first attempt incorrectly inserted the
-forbidden generator $8p-1$; that invalid implementation is preserved as non-evidence, and the
-corrected route passes. The canonical, audit, and symbolic aggregates are
+reconstructs selected offsets over $\mathbb Q$. The aggregate hashes of the primary computation,
+of the independent recomputation, and of the symbolic checks are
 \begin{center}
 {\fontsize{7}{8}\selectfont\ttfamily de439ff5cf0784b332fcf811b17217579221afca42510f755963c81ff8beaa4d},\\
 {\fontsize{7}{8}\selectfont\ttfamily bf5034efc37ec23edbd60d87c1eca36d437a9f9fc1e9d38f59816d8a7d3a7a16},\\
 {\fontsize{7}{8}\selectfont\ttfamily c519356b98ea0c76ec3d49d5f04e3512f711e601fa6491a8bf28dd337454968c}.
 \end{center}
-The calculations validate the implementation; the colon, Hilbert-numerator, and integral normal-
-form arguments prove the theorem.
+The calculations validate the implementation; the colon, Hilbert-numerator, and integral
+normal-form arguments prove the theorem.
 
 \subsection{Integral degree-seven contraction and the complete third row}
 
@@ -2480,15 +2512,14 @@ degrees greater than seven. This proves~\eqref{eq:complete-third-row}. Adding it
 entries and simplifying gives~\eqref{eq:beta-three-total}.
 \end{proof}
 
-EXP-031 checks the residual identities for $p=4,\ldots,300$, verifies every unit filler for
-$p=4,\ldots,12$, and computes complete exact degree-seven profiles at $p=4,5$ \textbf{[MV]}.
+Computation EXP-031 checks the residual identities for $p=4,\ldots,300$, verifies every unit
+filler for $p=4,\ldots,12$, and computes complete exact degree-seven profiles at $p=4,5$
+\textbf{[MV]}.
 All 374 offsets for $p=4$ vanish over both $\operatorname{GF}(2)$ and
 $\operatorname{GF}(1000003)$, and all 470 offsets for $p=5$ vanish over
 $\operatorname{GF}(2)$. An independent implementation reverses the filler order and matches all
-critical counts and offset ranges for $p=4,\ldots,12$. The first smoke implementation keyed a
-tetrahedron globally instead of by offset, falsely treating reuse in different multigraded
-complexes as a collision; it is preserved as invalid non-evidence. The canonical, audit, and
-symbolic aggregates are
+critical counts and offset ranges for $p=4,\ldots,12$. The aggregate hashes of the primary
+computation, of the independent recomputation, and of the symbolic checks are
 \begin{center}
 {\fontsize{7}{8}\selectfont\ttfamily d68afbb5c54ebb86abbf420c389e1cacf666071cb35f83e5d2b67eccbc354858},\\
 {\fontsize{7}{8}\selectfont\ttfamily 0be4b659126064328b5ef14a40e488a836f874d2eed9b048d4d3f19da971346e},\\
@@ -2596,14 +2627,12 @@ which proves \eqref{eq:full-colon-betti} and \eqref{eq:full-colon-rows}. The end
 and evaluation at \(x=z=1\) give \eqref{eq:colon-pd-reg} and \eqref{eq:colon-total-rank}.
 \end{proof}
 
-EXP-032 checks all \(297\) parameters \(p=4,\ldots,300\), stores complete tables at \(p=4,5,6\),
-and verifies Hilbert reconstruction, Gorenstein symmetry, positivity, endpoints, total ranks, and
-four corrupted controls \textbf{[MV]}. An independent implementation reconstructs every rank from
-the alternating coefficients of~\eqref{eq:colon-hilbert-numerator} without importing canonical
-code; a symbolic route checks the closed identities. Two budget-limited attempts are retained as
-inconclusive. The audit also rejected a wrong post-Koszul Hilbert target and a nonintegral
-\texttt{-0.0} serialization before the final artifacts were regenerated. The canonical, audit,
-and symbolic aggregates are
+Computation EXP-032 checks all \(297\) parameters \(p=4,\ldots,300\), stores complete tables at
+\(p=4,5,6\), verifies Hilbert reconstruction, Gorenstein symmetry, positivity, endpoints, and total
+ranks, and rejects four negative controls \textbf{[MV]}. An independent implementation reconstructs
+every rank from the alternating coefficients of~\eqref{eq:colon-hilbert-numerator} without reusing
+the primary code; a symbolic route checks the closed identities. The aggregate hashes of the
+primary computation, of the independent recomputation, and of the symbolic checks are
 \begin{center}
 {\fontsize{7}{8}\selectfont\ttfamily 907438b249b98ca9ffef689b7edb9574cdb0044cc3dd4cb52de523129f7d37ee},\\
 {\fontsize{7}{8}\selectfont\ttfamily 43635c8497dfe57904997326e983c7477e7320809cb2fee661c7933041f47b09},\\
@@ -2736,18 +2765,18 @@ binomial support give the stated endpoints. Summing the convolution and using
 \eqref{eq:special-fiber-upper-totals}.
 \end{proof}
 
-EXP-033 checks every parameter \(p=4,\ldots,300\), stores complete upper strands at
-\(p=4,5,6\), verifies all Hilbert identities and prior Betti anchors, and rejects six adversarial
-mutations \textbf{[MV]}. An independent implementation reconstructs all 297 coefficient arrays;
-a structural audit checks the kernel and the \(X_0\)-action at 25 parameters; and a symbolic route
-checks the closed identities. Three exact budget stops, at \(p=102,209,267\), are preserved as
-inconclusive non-evidence. The final canonical, independent, and symbolic aggregates are
+Computation EXP-033 checks every parameter \(p=4,\ldots,300\), stores complete upper strands at
+\(p=4,5,6\), verifies all Hilbert identities and the earlier Betti values, and rejects six
+negative controls \textbf{[MV]}. An independent implementation reconstructs all 297 coefficient
+arrays; a structural check verifies the kernel and the \(X_0\)-action at 25 parameters; and a
+symbolic route checks the closed identities. The aggregate hashes of the primary computation, of
+the independent recomputation, and of the symbolic checks are
 \begin{center}
 {\fontsize{7}{8}\selectfont\ttfamily 67bff9217c89f212916220e858ef5168abe2d64cdbd789488e0ce5f49204092a},\\
 {\fontsize{7}{8}\selectfont\ttfamily 6593291efaf092333bc42972c2f05712a151efb46f3f52ed9d28afd329585a4c},\\
 {\fontsize{7}{8}\selectfont\ttfamily 58ab24887c79c3c075fdefea1f38ff2e1c1ef539490f7f52359149ed2bb1a4c8}.
 \end{center}
-The all-parameter conclusion is deductive. The campaigns validate its implementations and frozen
+The all-parameter conclusion is deductive. The computations validate its implementations and
 premises; they do not replace the colon-intersection, depth, regularity, and grading-gap proof.
 
 \subsection{The first surviving lower-strand class}
@@ -2861,20 +2890,23 @@ add at this offset only a shifted diagonal wedge of \(p-1\) high variables. Its 
 rank \(\binom{8p}{p-1}\) proves~\eqref{eq:first-surviving-ordinary}.
 \end{proof}
 
-EXP-034 verifies the frozen premises and all 297 parameters \(p=4,\ldots,300\) \textbf{[MV]}.
+Computation EXP-034 verifies the premises and all 297 parameters \(p=4,\ldots,300\)
+\textbf{[MV]}.
 Exact rank probes pass through \(p=8\) over \(\mathbf F_2\) and \(\mathbf F_{1000003}\). An
 independent numerical-semigroup reconstruction matches the two Artinian layers through \(p=25\)
 and enumerates the rational unit sources through \(p=9\). Eight symbolic interval negations are
-UNSAT, and 299 separate arithmetic rows pass through \(p=1000\). The canonical, finite-rank,
-independent, and symbolic aggregates are
+UNSAT, and 299 separate arithmetic rows pass through \(p=1000\). The aggregate hashes of the
+primary computation, of the finite-rank checks, of the independent reconstruction, and of the
+symbolic checks are
 \begin{center}
 {\fontsize{7}{8}\selectfont\ttfamily 65ef176dcd9f5bd5467c09e763fdb20c67798de9743443ce5d0e34958c1645ce},\\
 {\fontsize{7}{8}\selectfont\ttfamily 31d70c09d251bb6009b610be05c33a42ccd50e417b84aff2c0db561018e6acc5},\\
 {\fontsize{7}{8}\selectfont\ttfamily 31479abd3c7247fe0ba464eefe06e437a595812c3d6055d0de8d0ced25d12794},\\
 {\fontsize{7}{8}\selectfont\ttfamily b3f461298706a394cc0f1a296557e10f52435f78d2f1039452fb726871b79a4d}.
 \end{center}
-The theorem is deductive. These campaigns audit the bases, unit pivots, interval exclusions, and
-adversarial mutations; they do not replace the displayed all-parameter argument.
+The theorem is deductive. These computations check the bases, unit pivots, and interval
+exclusions, and reject negative controls; they do not replace the displayed all-parameter
+argument.
 
 \subsection{Primitive zero rows and characteristic dependence}
 
@@ -2883,8 +2915,8 @@ For $b\in B_p$, define the representation set
 R_b=\{g\in\mathcal E_{p,1}\setminus\{0\}:b-g\in H_p\}.
 \label{eq:representation-set}
 \end{equation}
-The EXP-034 cell is the case $R_{8p-1}=\{1,\ldots,p\}$. The same invariant classifies a
-canonical part of every incidence cokernel.
+The cell of Theorem~\ref{thm:first-surviving-lower} is the case $R_{8p-1}=\{1,\ldots,p\}$. The
+same invariant classifies a canonical part of every incidence cokernel.
 
 \begin{theorem}[Zero-row summands and a characteristic-dependent cell, {\bf[D/MV]}]
 \label{thm:zero-row-characteristic}
@@ -2958,7 +2990,8 @@ It remains to compute the first complete target. Here
 \[
 b=42,\qquad F=\{2,4,12,13,14\},\qquad i=5,\qquad\tau=87.
 \]
-The selected coordinate is not protected by the EXP-034 unit-pivot argument. With a fixed high
+The selected coordinate is not protected by the unit-pivot argument of
+Theorem~\ref{thm:first-surviving-lower}. With a fixed high
 exterior factor $e_{40}$, an exact ten-term low Koszul cycle has coefficient one on
 $e_F\otimes X_2$, and its connecting image therefore reaches $e_F\otimes v_{42}$.
 This refutes coordinatewise survival, but not survival of the full target quotient.
@@ -2995,12 +3028,12 @@ diagonal at shifted offset $87-3p=75$. Its smallest possible offset is
 $24+25+26+27=102$. That source is absent, so the $C_4$ values equal the $A_4$ values.
 \end{proof}
 
-EXP-035 checks the zero-row and interval formulas for every $p=4,\ldots,300$
-\textbf{[MV]}. The first failed pivot is retained as an explicit integral cycle. The complete
+Computation EXP-035 checks the zero-row and interval formulas for every $p=4,\ldots,300$
+\textbf{[MV]} and stores the first failed pivot as an explicit integral cycle. The complete
 target matrices are rebuilt independently from numerical-semigroup ideal powers, using reversed
 column and pivot orders; all three basis hashes and every rank agree. Nine symbolic interval
-negations are UNSAT. The classification aggregate and target, independent, and symbolic artifact
-hashes are
+negations are UNSAT. The aggregate hash of the classification and the hashes of the target
+computation, of the independent reconstruction, and of the symbolic checks are
 \begin{center}
 {\fontsize{7}{8}\selectfont\ttfamily cc98154e60bdc00fe1f503020aa7d5c66b53ff0cc4ce2158f199d03c2a5fda8b},\\
 {\fontsize{7}{8}\selectfont\ttfamily 4072a9fb7844d07763fae1b08e99da3d94d38cf3a40f980316c38f0931091276},\\
@@ -3008,7 +3041,7 @@ hashes are
 {\fontsize{7}{8}\selectfont\ttfamily b1bfc105f3e9ace368f181ccf10f367fe1f4d23199e49c14275bd8e9b941569e}.
 \end{center}
 The zero-row theorem is deductive for all $p\ge4$. The characteristic-dependent theorem is the
-complete exact target at $p=4$; no extension of its torsion statement to $p>4$ is claimed.
+complete exact target at $p=4$; we do not extend its torsion statement to $p>4$.
 
 \subsection{Repeated characteristic dependence and two rank mechanisms}
 
@@ -3066,9 +3099,10 @@ the independent odd control $\mathbf F_{1000003}$ agrees with $\mathbf F_3$.}
 \end{table}
 
 \begin{proof}
-For each cell, fixed-cardinality subsets are enumerated only at the exact required offset. The
-canonical route first reproduces the frozen $(4,2)$ basis hashes, all $79$ kernel rows, all $119$
-kernel-boundary columns, all $710$ connecting-source columns, and every earlier field rank. For
+For each cell, fixed-cardinality subsets are enumerated only at the exact required offset.
+Computation EXP-036 first reproduces the stored $(4,2)$ basis hashes of computation EXP-035, all
+$79$ kernel rows, all $119$ kernel-boundary columns, all $710$ connecting-source columns, and every
+earlier field rank. For
 the larger targets it constructs the complete matrices $\delta_K$, $d_D$, and
 \[
 M=\begin{pmatrix}d_D&0\\J&\delta_K\end{pmatrix}.
@@ -3092,7 +3126,7 @@ The difference between this minimum and the required shifted offset is
 g(p,t)=10p^2-8pt-20p+t^2+2t+3.
 \label{eq:cubic-family-gap}
 \end{equation}
-Since $g(p,t+1)-g(p,t)=2t-8p+3<0$ on the declared interval, its minimum occurs at $t=p-2$ and is
+Since $g(p,t+1)-g(p,t)=2t-8p+3<0$ on this interval, its minimum occurs at $t=p-2$ and is
 \[
 g(p,p-2)=3(p-1)^2>0.
 \]
@@ -3102,9 +3136,10 @@ The shifted diagonal is absent, and the minimal cone gives~\eqref{eq:cubic-famil
 At $(4,2)$, exact unimodular cancellation removes $74$ unit pivots from the integral
 $79$-by-$119$ matrix. The residual is $5$ by $45$, has four zero rows, and has only two nonzero
 entries, both $-2$, in its remaining row. This compactly recovers
-$\mathbb Z^4\oplus\mathbb Z/2\mathbb Z$. The traced active support in this deterministic reduction
-uses seven low variables, not the six predicted by the exploratory real-projective-plane analogy;
-that recognition is not obtained. This does not exclude every alternative unimodular reduction.
+$\mathbb Z^4\oplus\mathbb Z/2\mathbb Z$. The active support traced in this deterministic reduction
+uses seven low variables, not the six that an analogy with the real projective plane would
+suggest, so this reduction does not realize that analogy. This does not exclude every alternative
+unimodular reduction.
 
 The $t=2$ excesses for $p=4,\ldots,9$ are
 \[
@@ -3113,26 +3148,37 @@ The $t=2$ excesses for $p=4,\ldots,9$ are
 The first three suggest $(p-3)^2$, which predicts $16$ instead of $18$ at $p=7$. The next four
 values fit $2p^2-17p+39$, which predicts $48$ instead of $49$ at $p=9$. Both formulas are rejected.
 Independent semigroup-basis reconstruction, dynamic exact sums, reverse pivots, and an additional
-$\mathbf F_5$ control reproduce all eight cells through $(8,2)$. The independent $(9,2)$ attempt
-crossed a $47.5$-GB resource boundary before producing a rank and is retained as inconclusive
-non-evidence. The canonical $(9,2)$ calculation retains the two agreeing odd-prime controls. Thus
-the finite characteristic result stops at the displayed cells; only the cubic-source exclusion is
-proved for all parameters.
+$\mathbf F_5$ control reproduce all eight cells through $(8,2)$. At $(9,2)$ the independent
+reconstruction exceeded a $47.5$\,GB resource limit before producing a rank, so that cell rests on
+the primary calculation, in which the two odd-prime fields agree. Thus the finite characteristic
+result stops at the displayed cells; only the cubic-source exclusion is proved for all parameters.
 
-\section{\texorpdfstring{\enspace}{}Reproducibility and trust boundary}
+\section{\texorpdfstring{\enspace}{}Data availability and trusted base}
 
-All compact code, hypotheses, manifests, audits, and verdicts are in the public repository under
+The code, outputs, and independent recomputations for every computer-assisted claim are in the
+public repository under
 \begin{center}
 \url{problems/commutative-algebra/huneke-wiegand/}.
 \end{center}
-Heavy CNFs and proofs are retained outside Git with hashes committed in the manifests. The
-minimum-layer archive adds $12$ fully accounted files and a reconstruction auditor. The record
-also includes the compact EXP-011--036 campaigns, independent reconstruction audits, symbolic
-proofs, the preserved EXP-013 correction, the EXP-015 refutation, and the EXP-022 quadratic
-refutation. The proof toolchain is
-pinned as follows:
-\begin{center}
-\begin{tabular}{@{}lp{0.65\textwidth}@{}}
+The identifiers EXP-nnn cited in the text denote the experiment records in its
+\path{experiments/} subfolder, one record per computation. Each record contains the code and
+outputs of that computation and, where applicable, its independent recomputation and a written
+proof. Every
+hexadecimal string printed in the text is a SHA-256 digest stored in the corresponding record,
+computed over a file manifest or over the canonically serialized per-parameter results or checks,
+so that a rerun can be compared against it. Heavy CNFs and proofs are stored outside Git, with
+their hashes in the manifests; the minimum-layer classification adds $12$ such files and a
+reconstruction program. The records also contain the symbolic proofs and three negative results:
+EXP-013 and EXP-015 record that the tail $[9s,\infty)$ fails at $13s-1$ for $v(T_p)$ and
+$v(T_p^2)$, and EXP-022 records that the defining ideal of the special fiber is not generated by
+quadrics. The proof toolchain is pinned in Table~\ref{tab:toolchain}, which also summarizes the
+contents of the later computation records.
+
+\begin{table}[tb]
+\centering
+\caption{Pinned proof toolchain and contents of the later computation records.}
+\label{tab:toolchain}
+\begin{tabular}{@{}l>{\raggedright\arraybackslash}p{0.65\textwidth}@{}}
 \toprule
 Component & Identity\\
 \midrule
@@ -3142,130 +3188,130 @@ DRAT-trim commit & {\fontsize{7}{8}\selectfont\ttfamily 2e3b2dc0ecf938addbd779d4
 DRAT-trim binary SHA-256 & {\fontsize{7}{8}\selectfont\ttfamily 92f0aa9575ed519d66a99b8b1b3dde6ece4618ae4c202a3a4b200265dda0aa7a}\\
 Z3 & 4.16.0; exact integer Presburger queries for EXP-023\\
 EXP-023 query aggregate & {\fontsize{7}{8}\selectfont\ttfamily 832c8421fe66359b8c246e3465e27de6ea7829215f892ab815e72b1f44787194}\\
-EXP-024 campaign/audit & exact integer coefficient and dimension routes; 297 rows plus independent rebuild\\
+EXP-024 & exact integer coefficient and dimension routes; 297 rows plus independent rebuild\\
 EXP-027 & relative-chain profiles, six exact Presburger queries, 297 formula rows, and independent reconstruction\\
 EXP-028 & integral degree-five/six matching, 297 formula rows, two-field profiles, and independent Smith forms\\
-EXP-029 & integral pair-basis normal form, 297 formula rows, exact small profiles, and independent boundary audit\\
-EXP-030 & canonical-idealization profile, exact degree-six homology, corrected independent audit, and symbolic support certificate\\
-EXP-031 & integral degree-seven contraction, exact small profiles, independent filler audit, and arithmetic certificate\\
-EXP-032 & complete colon Betti polynomial, 297 exact rows, independent coefficient audit, and symbolic identities\\
-EXP-033 & minimal cubic cone, 297 upper-strand rows, kernel audit, independent reconstruction, and symbolic identities\\
+EXP-029 & integral pair-basis normal form, 297 formula rows, exact small profiles, and independent boundary check\\
+EXP-030 & canonical-idealization profile, exact degree-six homology, independent recomputation, and symbolic support certificate\\
+EXP-031 & integral degree-seven contraction, exact small profiles, independent filler check, and arithmetic certificate\\
+EXP-032 & complete colon Betti polynomial, 297 exact rows, independent coefficient recomputation, and symbolic identities\\
+EXP-033 & minimal cubic cone, 297 upper-strand rows, kernel check, independent reconstruction, and symbolic identities\\
 EXP-034 & two-layer incidence class, 297 exact rows, two-field ranks, semigroup reconstruction, and symbolic exclusions\\
 EXP-035 & zero-row classification, complete characteristic target, Smith form, semigroup reconstruction, and symbolic exclusions\\
 EXP-036 & exact-sum target ranks, compact unit residual, independent ranks through $(8,2)$, and all-parameter cubic exclusion\\
 \bottomrule
 \end{tabular}
-\end{center}
+\end{table}
 
-The trusted base comprises the cited tree theorem, the finite reduction proved here, the small
-standard-library model checker, and DRAT-trim's verification of each proof against its exact CNF.
-The SAT solver need not be trusted for UNSAT. For SAT, the independently extracted model is checked
-without consulting solver internals.
+The trusted base of Theorems~\ref{thm:minimal} and~\ref{thm:unique} comprises the cited tree
+theorem, the finite reduction proved here, the small standard-library model checker, and
+DRAT-trim's verification of each proof against its exact CNF. The SAT solver need not be trusted
+for UNSAT. For SAT, the independently extracted model is checked without consulting solver
+internals.
 
-The EXP-023 trust boundary is different. Z3's UNSAT leaves do not carry a separately checked proof
-object. The exact Presburger encoding, the explicit interval reductions in the proof, the separate
-total-graph implementation, and the finite stress campaign reduce implementation risk, but do not
-remove reliance on solver soundness. The one-cubic theorem is therefore labeled \textbf{[MV]}, not
-presented as a proof-assistant theorem or a proof-carrying UNSAT result.
+Theorem~\ref{thm:presentation} (computation EXP-023) has a different trusted base. Z3's UNSAT
+leaves do not carry a separately checked proof object. The exact Presburger encoding, the explicit
+interval reductions in the proof, the separate total-graph implementation, and the bounded
+state-graph computation for $p=4,\ldots,23$ reduce implementation risk, but do not remove reliance
+on solver soundness. The one-cubic theorem is therefore labeled \textbf{[MV]}; it is not a
+proof-assistant theorem or a proof-carrying UNSAT result.
 
-EXP-024 introduces no additional solver dependency. Its scripts verify arithmetic identities and
-the frozen hashes of the EXP-021/023 premises; Theorem~\ref{thm:homological-edge} is a deductive
-consequence of those premises and standard homological arguments. Any defect in an imported
-premise would still propagate, and the theorem does not erase EXP-023's disclosed boundary.
+Computation EXP-024 introduces no additional solver dependency. Its scripts verify arithmetic
+identities and the stored hashes of the EXP-021 and EXP-023 results that it uses as premises;
+Theorem~\ref{thm:homological-edge} is a deductive consequence of those premises and standard
+homological arguments. A defect in either premise would propagate; in particular, the theorem
+inherits the solver dependency of Theorem~\ref{thm:presentation}.
 
-EXP-027 uses Z3 only to adversarially negate six interval statements. The proof of
+Computation EXP-027 uses Z3 only to refute the negations of six interval statements. The proof of
 Theorem~\ref{thm:interior-strand} does not infer the theorem from those finite or solver results:
 the relative-chain identification, integral matching, explicit quadratic paths, parity
-obstruction, and minimal mapping cone are given above. The independent audit does not import the
-canonical rank implementation. The remaining trust boundary is the correctness of the frozen
-EXP-021/023/025 premises and the ordinary algebraic arguments displayed in the proof.
+obstruction, and minimal mapping cone are given above. The independent recomputation does not
+reuse the primary rank implementation. The theorem therefore relies on the correctness of the
+EXP-021, EXP-023, and EXP-025 premises and of the algebraic arguments displayed in the proof.
 
-EXP-028 reuses the integral relative-chain identification but independently freezes its imported
-premises. Its finite-field ranks are audits, not the source of characteristic independence. That
-claim rests on the displayed unit matching and Smith normal form. The arithmetic/Z3 certificate
-checks endpoints and count identities without replacing the all-parameter interval argument.
+Computation EXP-028 reuses the integral relative-chain identification and records its own hashes
+of the premises it imports. Its finite-field ranks are checks, not the source of characteristic
+independence, which rests on the displayed unit matching and Smith normal form. The arithmetic/Z3
+certificate checks endpoints and count identities without replacing the all-parameter interval
+argument.
 
-EXP-029 likewise uses finite and solver checks only as adversarial validation. The theorem rests on
-the integral normal form~\eqref{eq:degree-five-normal-form}, whose unit block proves both
+Computation EXP-029 likewise uses finite and solver checks only for verification. The theorem
+rests on the integral normal form~\eqref{eq:degree-five-normal-form}, whose unit block proves both
 completeness and freeness. The arithmetic/Z3 certificate checks the pair-sum support chain and the
-Hilbert-coefficient identity, but does not certify the relative matching itself. The first
-over-budget symbolic implementation is retained explicitly as non-evidence.
+Hilbert-coefficient identity, but does not certify the relative matching itself.
 
-EXP-030 introduces no solver dependency. Its first independent audit accidentally filled the
-missing generator offset (8p-1), failed against the canonical profile, and is retained as invalid
-non-evidence. The corrected audit matches every coefficient and selected rational ranks. The
-theorem rests on the nonzerodivisor proof of the canonical idealization, the multigraded Hilbert
-numerator, and the displayed integral unit normal form, not on the finite profiles.
+Computation EXP-030 introduces no solver dependency. Its independent recomputation matches every
+coefficient and selected rational ranks. The theorem rests on the nonzerodivisor proof of the
+canonical idealization, the multigraded Hilbert numerator, and the displayed integral unit normal
+form, not on the finite profiles.
 
-EXP-031 also introduces no solver dependency. Its characteristic-independent vanishing is not
-extrapolated from the small finite-field profiles: it rests on the all-parameter acyclic matching
-and the signed identity block in Theorem~\ref{thm:complete-third-row}. The corrected implementation
-keys cells by both multigraded offset and tetrahedron; the earlier tuple-only collision is retained
-as invalid non-evidence.
+Computation EXP-031 also introduces no solver dependency. Its characteristic-independent vanishing
+is not extrapolated from the small finite-field profiles: it rests on the all-parameter acyclic
+matching and the signed identity block in Theorem~\ref{thm:complete-third-row}.
 
-EXP-032 introduces no solver dependency. The finite campaigns test the coefficient implementation,
-including corrupted controls, but do not prove the theorem. The proof uses the frozen EXP-030
-canonical-idealization premise, standard Gorenstein self-duality, coefficient extraction from the
-Hilbert numerator, and the minimal Koszul tensor product. The claim is the complete graded Betti
-polynomial, not explicit differential matrices or the full special-fiber resolution.
+Computation EXP-032 introduces no solver dependency. The finite computations test the coefficient
+implementation, including negative controls, but do not prove the theorem. The proof uses the
+canonical idealization of Theorem~\ref{thm:colon-idealization-six} (computation EXP-030),
+standard Gorenstein self-duality, coefficient extraction from the Hilbert numerator, and the
+minimal Koszul tensor product. The claim is the complete graded Betti polynomial, not explicit
+differential matrices or the full special-fiber resolution.
 
-EXP-033 has no solver dependency. Its theorem imports the frozen colon, Hilbert-series, and
-regular-element premises from EXP-023/024/026/030/032. The proof then uses an exact colon
-intersection, its pullback, the depth and regularity lemmas, the Auslander--Buchsbaum formula, and
-the strict grading gap in the comparison map. Finite, structural, independent, and symbolic routes
-audit these steps but are not extrapolated into the theorem. The minimal cone fixes both upper
-regularity strands; it does not determine the two lower strands of the quadratic quotient.
+Computation EXP-033 has no solver dependency. Its theorem uses the colon, Hilbert-series, and
+regular-element results of EXP-023, EXP-024, EXP-026, EXP-030, and EXP-032 as premises. The proof
+then uses an exact colon intersection, its pullback, the depth and regularity lemmas, the
+Auslander--Buchsbaum formula, and the strict grading gap in the comparison map. Finite,
+structural, independent, and symbolic computations check these steps but are not extrapolated
+into the theorem. The minimal cone fixes both upper regularity strands; it does not determine the
+two lower strands of the quadratic quotient.
 
-EXP-034 uses Z3 only to negate eight elementary interval inequalities; its theorem does not rely
-on solver output or finite extrapolation. The proof rests on regular reduction, the displayed
-two-layer incidence map, uniqueness of the minimum-offset target, a characteristic-free unit
-source boundary, and the long exact Tor sequence. The independent route reconstructs the
-Artinian fiber bases from numerical-semigroup ideal powers rather than importing the canonical
-offset functions. The result is one exact lower-strand class, not a complete strand.
+Computation EXP-034 uses Z3 only to refute the negations of eight elementary interval
+inequalities; its theorem does not rely on solver output or finite extrapolation. The proof rests
+on regular reduction, the displayed two-layer incidence map, uniqueness of the minimum-offset
+target, a characteristic-free unit source boundary, and the long exact Tor sequence. The
+independent route reconstructs the Artinian fiber bases from numerical-semigroup ideal powers
+rather than reusing the primary offset functions. The result is one exact lower-strand class, not
+a complete strand.
 
-EXP-035 preserves the first failed connecting pivot rather than hiding it. The all-parameter
-zero-row theorem follows directly from the displayed integral incidence formula and interval
-partition. Characteristic dependence is an exact finite-target statement: the canonical route
-uses every row and column, the independent route reconstructs the Artinian bases from semigroup
-ideal powers and reverses the elimination order, and Smith form identifies the single factor two.
-The result proves one characteristic-dependent multigraded cell at $p=4$, not a complete lower
-strand or an all-parameter torsion theorem.
+Computation EXP-035 stores the first failed connecting pivot as an explicit integral cycle. The
+all-parameter zero-row theorem follows directly from the displayed integral incidence formula and
+interval partition. Characteristic dependence is an exact finite-target statement: the primary
+computation uses every row and column, the independent one reconstructs the Artinian bases from
+semigroup ideal powers and reverses the elimination order, and Smith form identifies the single
+factor two. The result proves one characteristic-dependent multigraded cell at $p=4$, not a
+complete lower strand or an all-parameter torsion theorem.
 
-EXP-036 introduces no solver dependency. Its finite claims use complete target matrices, exact
-prime-field elimination, and a separately encoded semigroup-basis/reverse-pivot audit through
-$(8,2)$. The independent $(9,2)$ resource stop is disclosed and contributes no evidence. The
+Computation EXP-036 introduces no solver dependency. Its finite claims use complete target
+matrices, exact prime-field elimination, and a separately encoded semigroup-basis/reverse-pivot
+recomputation through $(8,2)$; the cell $(9,2)$ has no independent recomputation. The
 all-parameter statement is only~\eqref{eq:cubic-family-transfer}, proved by the displayed offset
 inequality; the characteristic-dependent table is not extrapolated. The equal tested odd-prime
-ranks do not assert equality in every odd characteristic. Neither rejected finite formula is used
+ranks do not assert equality in every odd characteristic. Neither refuted finite formula is used
 as a premise.
 
 \section{\texorpdfstring{\enspace}{}Scope, attribution, and open questions}
 
 Son Pham retains discovery priority for the counterexample. Professor Craig Huneke's verification
-is independent external evidence. The contributions proved here are Frobenius minimality,
-uniqueness of the normalized pair at that minimum, the separate infinite family in
-Theorem~\ref{thm:family}, and its uniform endomorphism anatomy in
-Theorem~\ref{thm:endomorphism}, pseudo-Frobenius anatomy in Theorem~\ref{thm:type}, exact
-trace/conductor formula in Theorem~\ref{thm:trace}, stability defect in
-Theorem~\ref{thm:stability}, and conductor reduction/Hilbert data in
-Theorem~\ref{thm:reduction}, tangent-cone depth in Theorem~\ref{thm:tangent}, and complete
-graded-torsion/Buchsbaum anatomy in Theorem~\ref{thm:buchsbaum}, and the complete
-Noether-normalization module in Theorem~\ref{thm:module}, and the canonical fiber cone and type in
-Theorem~\ref{thm:fiber}, and its complete defining ideal in
-Theorem~\ref{thm:presentation}, and its exact homological edges in
-Theorem~\ref{thm:homological-edge}, its first interior Betti strand in
-Theorem~\ref{thm:interior-strand}, and its complete second Betti row in
-Theorem~\ref{thm:second-betti-row}, and the colon--Koszul degree-five diagonal in
-Theorem~\ref{thm:colon-koszul-diagonal}, and the cubic-colon idealization and degree-six strand in
-Theorem~\ref{thm:colon-idealization-six}, and the complete third homological row in
-Theorem~\ref{thm:complete-third-row}, and the complete cubic-colon Betti polynomial in
-Theorem~\ref{thm:colon-betti-polynomial}, and the minimal cubic mapping cone and complete upper
-special-fiber strands in Theorem~\ref{thm:minimal-cubic-cone}, and the first surviving
-lower-strand class in Theorem~\ref{thm:first-surviving-lower}, and the zero-row and
-characteristic-dependence theorem in Theorem~\ref{thm:zero-row-characteristic}, and the
-repeated-target and cubic-exclusion theorem in
-Theorem~\ref{thm:repeated-characteristic}, together with
-their reproducible records.
+is independent external evidence. The contributions proved here are Frobenius minimality
+(Theorem~\ref{thm:minimal}), uniqueness of the normalized pair at that minimum
+(Theorem~\ref{thm:unique}), the separate infinite family (Theorem~\ref{thm:family}), and the
+following properties of that family: its uniform endomorphism anatomy
+(Theorem~\ref{thm:endomorphism}), pseudo-Frobenius anatomy (Theorem~\ref{thm:type}), exact
+trace/conductor formula (Theorem~\ref{thm:trace}), stability defect
+(Theorem~\ref{thm:stability}), conductor reduction/Hilbert data (Theorem~\ref{thm:reduction}),
+tangent-cone depth (Theorem~\ref{thm:tangent}), complete graded-torsion/Buchsbaum anatomy
+(Theorem~\ref{thm:buchsbaum}), complete Noether-normalization module (Theorem~\ref{thm:module}),
+canonical fiber cone and type (Theorem~\ref{thm:fiber}), complete defining ideal
+(Theorem~\ref{thm:presentation}), exact homological edges (Theorem~\ref{thm:homological-edge}),
+first interior Betti strand (Theorem~\ref{thm:interior-strand}), complete second Betti row
+(Theorem~\ref{thm:second-betti-row}), colon--Koszul degree-five diagonal
+(Theorem~\ref{thm:colon-koszul-diagonal}), cubic-colon idealization and degree-six strand
+(Theorem~\ref{thm:colon-idealization-six}), complete third homological row
+(Theorem~\ref{thm:complete-third-row}), complete cubic-colon Betti polynomial
+(Theorem~\ref{thm:colon-betti-polynomial}), minimal cubic mapping cone and complete upper
+special-fiber strands (Theorem~\ref{thm:minimal-cubic-cone}), first surviving lower-strand class
+(Theorem~\ref{thm:first-surviving-lower}), zero-row classification and characteristic dependence
+(Theorem~\ref{thm:zero-row-characteristic}), and repeated characteristic dependence with
+cubic-source exclusion (Theorem~\ref{thm:repeated-characteristic}).
 
 Theorems~\ref{thm:minimal}, \ref{thm:unique}, \ref{thm:family}, \ref{thm:endomorphism},
 \ref{thm:type}, \ref{thm:trace}, \ref{thm:stability}, \ref{thm:reduction},

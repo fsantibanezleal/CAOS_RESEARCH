@@ -48,8 +48,16 @@
   census probes and staircase refuted by cap (kill criterion honored). Zenodo
   v0.05 published (DOI 10.5281/zenodo.21739944). Dias-Pan arXiv:1811.08681 read
   in full; CCB-037 (partial-GB dimension bounds) minted.
-- **Next experiments:** EXP-011 = the n = 5 spatial Dziobek variety in the
-  Dias-Pan proof shape (cheap emptiness probes + partial-GB union bounds +
-  exact witness); separately reproduce HM06's mixed volume 25380.
+- **Next experiments:** EXP-012/013/014 DECIDED in one day. Deterministic
+  state at n = 5: dim(products) = 5 EXACT (complete 9 s basis), dim(cut) <= 5
+  proven, expected 4 undecided (both the from-scratch and the incremental
+  Groebner routes capped; Cayley-Menger has a nonzero normal form against
+  the products basis). Next: the k = 2, p = 2 symmetric-stratum campaign
+  (engine and cost law established: realizability equations out of the
+  Groebner core, adjoined last), the CCB-034 witness-set spike (now carrying
+  the 5-vs-4 decision AND lower bounds), the Chang-Chen n = 4 relation
+  re-derivation (calibration gate), manuscript v0.07 consolidating the
+  EXP-012/013/014 arc with one Zenodo version. Separately reproduce HM06's
+  mixed volume 25380.
 - **Isolation note:** rounds close with NO version bump (methodology/08); the release
   step is serialized and owned elsewhere; a parallel session runs jacobian-conjecture.

@@ -243,8 +243,8 @@ export const CITATIONS: Citation[] = [
     id: 'ccmanuscript',
     label: 'Replication record 2026',
     citation:
-      'Santibañez-Leal F. (2026). Exact replication and screening of tropical finiteness certificates for central configurations. Machine record, versioned with this repository.',
-    url: 'https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/manuscripts/central-configurations/tropical-replication',
+      'Santibañez-Leal F. (2026). Exact replication and screening of tropical finiteness certificates for central configurations. Preprint, CC BY 4.0.',
+    doi: '10.5281/zenodo.21542483',
   },
   {
     id: 'dgg1999',
@@ -297,7 +297,7 @@ export const CITATIONS: Citation[] = [
     id: 'ufcverification',
     label: 'Verification record 2026',
     citation:
-      'Santibañez-Leal F. (2026). An independent exact verification of the 2026 counterexample to Goemans unsplittable-flow cost conjecture, with the violation constant it forces. Preprint, CC BY 4.0, v0.01.',
+      'Santibañez-Leal F. (2026). An independent exact verification of the 2026 counterexample to Goemans unsplittable-flow cost conjecture, with the violation constant it forces. Preprint, CC BY 4.0.',
     doi: '10.5281/zenodo.21554258',
   },
   {
@@ -360,7 +360,7 @@ export const CITATIONS: Citation[] = [
     id: 'pccaudit',
     label: 'Audit record 2026',
     citation:
-      'Santibañez-Leal F. (2026). Berge-Fulkerson covers, cycle double covers, flows and exact normality defects of the first counterexamples to the Petersen coloring conjecture. Preprint, CC BY 4.0, v0.01.',
+      'Santibañez-Leal F. (2026). Berge-Fulkerson covers, cycle double covers, flows and exact normality defects of the first counterexamples to the Petersen coloring conjecture. Preprint, CC BY 4.0.',
     doi: '10.5281/zenodo.22285164',
   },
 ];

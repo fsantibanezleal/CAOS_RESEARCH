@@ -1,0 +1,16 @@
+   ? `poly` ^ `number` failed
+   ? expected `poly` ^ `int`
+   ? error occurred in or before p3-delta2-full.sing line 95: `d1A^6*d1B^6*d2A^6*d2B^6*f^2*wA^4*wB^7+2*d1A^6*d1B^6*d2A^6*d2B^6*f^2*wA^7*wB^7;`
+   ? expected ideal-expression. type 'help ideal;'
+   ? `I` is not defined
+   ? error occurred in or before p3-delta2-full.sing line 96: `ideal S=std(I);`
+   ? expected ideal-expression. type 'help ideal;'
+   ? `S` is not defined
+   ? error occurred in or before p3-delta2-full.sing line 97: `string("SINGDIM=",dim(S));`
+   ? wrong type declaration. type 'help string;'
+   ? `S` is not defined
+   ? error occurred in or before p3-delta2-full.sing line 98: `ideal L=lead(S);`
+   ? expected ideal-expression. type 'help ideal;'
+   ? `L` is undefined
+   ? error occurred in or before p3-delta2-full.sing line 99: `L;`
+SING_OK

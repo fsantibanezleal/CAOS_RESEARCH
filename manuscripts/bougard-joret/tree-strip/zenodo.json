@@ -3,8 +3,8 @@
     "title": "The first interior shell of the Bougard-Joret extremal problem",
     "upload_type": "publication",
     "publication_type": "preprint",
-    "publication_date": "2026-09-05",
-    "version": "0.02",
+    "publication_date": "2026-09-18",
+    "version": "0.03",
     "creators": [
       {
         "name": "Santibanez-Leal, Felipe",
@@ -12,7 +12,7 @@
         "affiliation": "CAOS Research program"
       }
     ],
-    "description": "<p>Version 0.02 proves the entire admissible first interior shell: for every integer k at least 3 and every independence number a from 2 through k+1, the minimum size of a k-connected graph of order a+k+1 and independence number a is ceiling(k(a+k+1)/2). The construction combines classical Harary graphs, complement matchings and injective missing-neighbor pairs, with a self-contained connectivity proof for all parity cases. All extremizers at a=2 are complements of disjoint cycles of lengths at least five. The complete nonstar-tree characterization at a=k-1 from version 0.01 is retained. Exact finite controls cover 75 graphs and include an independent NetworkX audit. The original disproof remains credited to Das and Gupta; classical and previously published parameter overlaps are identified. This settles a restricted infinite shell, not the general revised first regime or second regime. Preprint, not peer reviewed.</p>",
+    "description": "<p>Let f(n, α, k) be the minimum size of a k-connected graph of order n and independence number α. Das and Gupta recently determined the boundary n = α + k and disproved the proposed Bougard-Joret formula there.</p><p>We determine the entire admissible first interior shell: f(α + k + 1, α, k) = ⌈k(α + k + 1)/2⌉ for every k ≥ 3 and 2 ≤ α ≤ k + 1. The construction augments classical Harary graphs with complement matchings and attaches an independent set through distinct missing-neighbor pairs. An elementary cyclic-gap proof controls connectivity, including all parity cases. We characterize all extremizers when α = 2 as complements of unions of cycles of lengths at least five, and give the complete nonstar-tree characterization when α = k - 1.</p><p>The full-shell result is supported by 75 exact finite constructions, an independent re-implementation of the checks, and negative controls. The universal statement follows from the proof, not from finite computation. The general revised first regime and second regime remain unresolved.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/combinatorics/bougard-joret).</p>",
     "access_right": "open",
     "license": "cc-by-4.0",
     "keywords": [
@@ -44,7 +44,8 @@
         "relation": "references",
         "scheme": "doi"
       }
-    ]
+    ],
+    "version_notes": "Editorial revision. The abstract, introduction and validation sections state the results without version or process commentary: they no longer refer to earlier versions of the paper, a hypothesis committed before the run, a tooling error in a pilot run, the history of an internal review, or which record owns the evidence. The adjacent-diagonal theorem is presented with the other results, proved here, and the references cite the experiment records on the main branch of the repository instead of a work branch or an earlier version of this paper. The validation section is titled Exact validation and negative controls, the reproducibility paragraph states what the identifiers EXP-001 and EXP-002 denote, the run command fits on one line, and a page-1 header block states the document type, version, licence and DOIs. Methods, data, results and conclusions are unchanged."
   },
   "previous_publications": [
     {

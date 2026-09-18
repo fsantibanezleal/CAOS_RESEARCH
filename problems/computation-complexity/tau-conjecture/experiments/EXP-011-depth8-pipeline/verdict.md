@@ -1,5 +1,7 @@
 # EXP-011 verdict: CONFIRMED: $z_{\max}(8) = 6$: the census is decision-complete through depth 8
 
+<!-- consistency-gate: quotes-defects -- the 2026-08-25 addendum restates the wrong catalog count on purpose -->
+
 Runs 2026-08-20: validate 185 s; build7 2 h 50 m; scan8 smoke 463 s;
 scan8 final 6 h 48 m (20 workers). Artifacts: `artifacts/pipeline.json`,
 `artifacts/scan8_smoke.json`, `artifacts/scan8_final.json`,
@@ -79,3 +81,17 @@ blind spot, hedged as before.
   (build8 would be ~$4 \times 10^{10}$ states, ~1.1 TB of shards:
   out of scope on this disk; the {9,10} window may instead fall to a
   construction hunt with the corrected cost model).
+
+## Addendum 2026-08-25 (adversarial validation pass)
+
+The frontier had no hash manifest, only the catalog did, while the manuscript
+claimed manifests for both assets. The missing one is now generated:
+`artifacts/frontier7.manifest.md`, 256 per-file SHA-256 digests plus an
+aggregate fingerprint 7a3b4484fa33498960885781a0662efcac8b7929f13c350c4063cdf96baaf174.
+Its state count is DERIVED from the file sizes (29,356,905,536 bytes / 28) and
+comes to 1,048,460,912, matching the figure this experiment reported, so the
+asset now certifies its own headline number rather than being described by it.
+
+The catalog manifest was also found to state 2,161,169 entries where the file
+holds 2,161,049; its hash and size matched exactly, so the asset had not
+drifted and only the prose was wrong. Corrected in place.

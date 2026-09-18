@@ -1,0 +1,138 @@
+# EXP-022: the collar coverings (hypothesis, declared before the runs)
+
+2026-08-19. The k = 3 chain step needs the ladder dim(R_j meet shape+) <= j
+for j = 0, 1, 2 on the WHOLE open gauged stratum (u, p > 0, f = v - q != 0),
+not only on the EXP-021 core. The slice-limit route (prove a rank bound on
+the boundary slice, transfer by semicontinuity) has a closure hole: a
+low-rank 2-dim set can hide in a shrinking tube near the limit slice, and
+controlling the limit slice alone does not control nearby slices. We
+therefore EXTEND THE COVERINGS instead: every collar becomes a certified
+interval covering of a rescaled-analytic matrix on a region that includes
+its boundary face, and only genuine singular sets (collisions) are excised
+into lower-dimensional blow-up coverings or exact lemmas.
+
+## Ladder level j = 0 (CLOSED here)
+
+r0-lemma.py: J = 0 forces d1A = d2A and d1B = d2B (four single-s-term
+entries with monomial brackets), hence v = 0 = q, hence f = 0: OFF the
+stratum. R_0 meet stratum = EMPTY, globally, exactly. Levels j = 1, 2 off
+the exceptional balls follow from the rank >= 3 coverings; on the balls
+from the rank-2 + gradient-pair certificates (EXP-021 addendum).
+
+## The region atlas (u, p > 0 after the gauge a1 = 1, a2 = -1)
+
+Bounded part (u, p <= 3, |v|, |q| <= 3):
+- A_core: u, p in [1/4,3], |f| >= 1/4. EXP-021 integrated (running).
+- A_band: u, p in [1/4,3], |f| <= 1/4, max(|u-p|, |f|) >= 1/16. THIS
+  experiment, part (a): same entry matrix (nonsingular: cs >= 1/16), same
+  menu/mean-value/bisection machinery, no exclusion balls (the pentagon
+  has |f| = sqrt5 > 1/4).
+- A_tube: |u-p| <= 1/16, |f| <= 1/16, (u+p)/2 in [1/8, 3]: the collision
+  set {u = p, f = 0} (bodies A+ B+ and A- B- coincide). Part (b): polar
+  blow-up (u-p = rho cos phi, f = rho sin phi), rows carrying cs^-3
+  rescaled by rho^2, covering over (w, v, phi) x rho in [0, 1/16].
+- A_ulow: u in [0, 1/4], p in [1/4, 3], minus the corner tubes
+  {u <= 1/16, |v -+ 1| <= 1/16} (A collides with an axis body) and minus
+  the A_tube sliver: mA column rescaled by 4u^2 (analytic at u = 0; the
+  face matrix has generic rank 4: L13 -> (0,0,h1,0), L15/L25/L35-L36 span
+  the rest). Part (c). A_plow: by the pair-swap identity (verified once,
+  exactly): no separate run.
+- A_uplow (u, p both <= 1/4) and the corner tubes: deferred to part (d);
+  the double-collapse corner {u = p -> 0, f -> 0} needs a two-step
+  blow-up. Declared pending, not assumed.
+
+Outer part (u > 3 or p > 3 or |v| > 3 or |q| > 3): inverted-coordinate
+charts (u = 1/u^, etc.), row/column rescalings chosen so the chart matrix
+is analytic on the closed chart including the infinity faces; one covering
+per chart; the pair-swap and mirror symmetries fold the chart count.
+Deferred to part (e); declared pending.
+
+## Success criteria (declared)
+
+Per covering: zero residual failures at depth cap 44 within a 12 h budget,
+checkpointed and resumable; any stubborn cluster is investigated as a
+potential rank-degeneracy discovery (the pentagon precedent) and, if
+confirmed, gets ball certificates (rank-2 witness + gradient pair). A
+budget exhaustion is a recorded FAILURE of that part; no silent extension.
+
+## Order
+
+(a) band first (largest region, no new mathematics), then (b) tube blow-up
+(new leading-order derivation, machine-verified before the run), then (c)
+ulow + swap identity, then (d) corners, (e) outer charts. Findings mirror
+to CAOS_MANAGE as CC-F33+ as they land.
+
+## Addendum (2026-08-20): fa1 resume declaration
+
+The fa1 covering exhausted its declared 12 h budget with 8 boxes left on
+the stack (zero depth-cap failures; 59,972 trap certificates made the run
+an order of magnitude costlier per box than the band). Per the standing
+rule this is recorded as a FAILED run under its original declaration. NEW
+declaration: ONE resume from the last checkpoint with a fresh 4 h budget,
+same depth cap 44, same success criterion (zero residual failures). If the
+resume also exhausts, the remaining boxes are investigated individually
+before any further declaration.
+
+## Addendum (2026-08-20b): bicorner-same resume declaration
+
+bicorner-same exhausted its declared 6 h budget with 20 boxes on the
+stack (zero depth-cap failures; the widened 7/32 seed and CPU contention
+across eight concurrent coverings slowed it). Recorded as FAILED under
+the original declaration. NEW declaration: ONE resume from the last
+checkpoint, fresh 3 h budget, same depth cap and criteria.
+
+## Addendum (2026-08-20c): fa2b resume declaration
+
+fa2b exhausted its declared 12 h budget with 23 boxes on the stack (zero
+depth-cap failures; eight concurrent coverings shared the machine).
+Recorded as FAILED under the original declaration. NEW declaration: ONE
+resume from the last checkpoint, fresh 3 h budget, same criteria.
+
+## Addendum (2026-08-20d): the deep/M2 boundary shift
+
+deep-R hit 13,354 GENUINE depth-cap failures concentrated in the sliver
+w in [1/64, 1/40], v ~ 3, tau ~ 1, rho ~ 1e-3: just OUTSIDE the declared
+M2 discard, where deep's rho^2 row scalings crush the rows (entries
+~1e-6) while the configurations approach the coincident-pairs structure
+(mA and mB columns merge as rho -> 0, so rank sits at exactly 3 and the
+tiny-entry minors cannot be certified at that conditioning). M2's joint
+Rc-rescaling is the right chart there. AMENDMENT (before any rerun): M2's
+region enlarges to Rc <= 3/32 and deep's corner discard widens to
+{w < 1/32, rho < 1/16}; the union argument is unchanged (the enlarged M2
+ball contains the enlarged discard square). deep reruns FRESH under the
+amended region with the original budgets; deep-R's 10,086 certificates
+remain valid for their boxes but the definitive artifact is the rerun.
+
+## Addendum (2026-08-20e): m1 resume declaration
+
+m1 exhausted its declared 6 h budget with 22 boxes on the stack (zero
+depth-cap failures). NEW declaration: ONE resume, fresh 3 h budget.
+
+## Addendum (2026-08-20f): blanket resume policy + pow3 parked
+
+The budget exhaustions of fa1, bicorner-same, fa2b, m1, and cb1 all left
+ordinary DFS subtree stacks (depths 1-28, no depth-cap failures): they are
+contention economics (up to ten concurrent coverings plus two 10-thread
+gfan runs), not mathematics. BLANKET DECLARATION: each remaining covering
+continues under resumes up to a per-chart TOTAL of 24 h wall clock,
+stopping early on an empty stack or on any depth-cap failure (which gets
+the postprocess + investigation flow). To free threads, EXP-005 pow3 is
+PARKED (killed; it has never reached its first checkpoint across four
+launches; pow2 keeps running from its checkpoint and remains the n = 6
+instrument).
+
+## Addendum (2026-08-20g): the bicorner-same/M1 seam widening
+
+bicorner-same's re-resume produced 1020 GENUINE depth-cap failures, all
+in one cluster: taua = taub (pairs on a common ray from body 1), rr in
+[0.9377, 0.9387], rhoa ~ 2e-4. There CSc = |1 - rr| ~ 0.0618, just BELOW
+the 1/16 discard threshold, but interval dependency inflates CSc.hi above
+1/16 so the discard never fires while the geometry is already
+near-collision: a seam-boundary artifact, not mathematics. FIX (declared
+before rerun): bicorner-same discards CSc < 1/8 (was 1/16) and M1's rhoq
+range widens to [0, 3/8] (was [0, 1/4]). Seam re-proven for the new
+threshold: CSc <= 1/8 gives |1 - rr| <= 1/8 and |dirA - dirB| <= 1/4,
+and the chord formula on tau in [-1, 1] gives |taua - taub| <= 1/4, so
+rhoq <= sqrt(1/64 + 1/16) = 0.2795 < 3/8. Both charts rerun FRESH under
+the amended declaration (their prior certificates remain valid for their
+boxes; the definitive artifacts are the reruns).
