@@ -55,3 +55,43 @@ PCR-1/2 (structure along the infinite families), which reuse the round-1 tooling
 - The defect result reshapes PCR-3: the obstruction in `G52` needs two relaxed vertices and the
   pairs are plentiful; the critical-pair structure (which pairs, at what distance) is the next
   anatomical object.
+
+## Exploration moment of round 2 (2026-09-18, EXP-007 to EXP-010)
+
+What changed the map of the problem this round, in order of weight:
+
+1. The literature moved: arXiv:2608.10028v3 (2026-09-11) reports, for five graphs, several
+   invariants that round 1 had computed for three; the CAOS-specific items shrank to oddness,
+   resistance, flows, the Petersen defect with its parity theorem and universal 2-criticality,
+   and the pure-`F` proposition. Reading v3 and Ma-Mattiolo-Steffen-Wolf produced the round's main
+   question (membership in `H_3`).
+2. A method lesson (EXP-007): an unknown target with a free part is hopeless for lazy cuts; two
+   short lemmas (fiber parity; at most one unused target vertex, by the splitting lemma) removed
+   the free part and turned 2,000-cut non-convergence into zero-cut refutations. Rule: before a
+   lazy-constraint search over an unknown structure, prove that the structure has no part
+   unconstrained by the data.
+3. A theory step that came from asking "is universal 2-criticality a general phenomenon?": the
+   cut-space argument is a transfer principle. A block with only good vertices pushes a cut of
+   `P` onto its boundary labels; with boundary 2 or 3 this restores a coloring of the block's
+   graph, so rings and frames have one bad vertex per block. With `pd <= ab` this refutes
+   statements (c) and (d) of the sublinear approximation conjecture of Mattiolo, Mazzuoccolo and
+   Mkrtchyan and reduces their Conjecture 3 to one question on cyclically 4-edge-connected graphs.
+4. A literature check that arrived AFTER the theorem was written down showed that the same two
+   constructions were already in the 2021 paper with a weaker conclusion, and that `ab != 1` was
+   their Proposition 3. The record was corrected the same hour. Rule kept: search the literature
+   for the construction, not only for the statement.
+
+New lines:
+
+| id | question | lenses | first step | status |
+|---|---|---|---|---|
+| PCR-7 | Statement (e): a cyclically 4-edge-connected cubic graph with `ab >= 10` (or `pd >= 10`). Superposition: superedges `G - {u, v}` (`u`, `v` far apart) carry a NONZERO class of `F_2^{E(P)}` modulo the cut space from one 3-connector to the other whenever all their vertices are good; design supervertices in which three nonzero classes cannot meet, so that every superedge or supervertex region contains a bad vertex | reformulation (class-valued flows, after Kochol), anatomy | enumerate by SAT the connector label triples realized by `G52 - {u, v}` for one pair at distance 3, as classes in the 6-dimensional quotient; then search small 9-poles with three connectors whose all-good colorings force a zero class | todo |
+| PCR-8 | `H_3` membership of `G68`, `G112`, `H112` and of the members of order 60 to 66 of the v3 family; is every known counterexample in `H_3`, or does some counterexample color another? | exclusion with certificates | EXP-007 addendum 3 runs; for `G112` and `H112` start with the single order `k = 52` | doing |
+| PCR-9 | Boundary-pattern calculus: for the 4-poles `G - e1 - e2` the cut space leaves two patterns (crossed; four edges around an edge). Which pairs of independent edges of a counterexample admit only ONE pattern? Such rigid 4-poles are candidates for new gluing rules | anatomy | tabulate all patterns per 4-pole by SAT enumeration on `G52` | todo |
+| PCR-10 | Is universal 2-criticality a theorem? Every vertex pair of all five known counterexamples is critical (EXP-006, EXP-008). Find a counterexample with a non-critical pair, or prove criticality for graphs built from `W` by the v3 gluing rules | two-sided | members of order 60 to 66 of the v3 family | todo |
+
+Self-questioning (round 2): the strongest unexploited asset is the transfer principle of item 3.
+It explains why counterexamples are built from multipoles with 4 or more dangling edges (smaller
+boundaries restore colorings), and it gives a vocabulary (classes modulo the cut space) for PCR-7.
+The weakest point of the round is compute discipline: five experiments shared one machine, which
+turned several instances into timeouts that decided nothing.

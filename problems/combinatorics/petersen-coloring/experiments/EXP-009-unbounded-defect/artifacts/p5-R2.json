@@ -72,6 +72,12 @@
    "verified": true,
    "seconds": 113.302,
    "same_copy": true
+  },
+  "12-33": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 113.13,
+   "same_copy": true
   }
  }
 }

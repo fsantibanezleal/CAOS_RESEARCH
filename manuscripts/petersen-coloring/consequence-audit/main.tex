@@ -352,6 +352,127 @@ witnesses, slowest $20$ seconds; the checker reports exactly the two relaxed ver
 all $13{,}758$ pair witnesses of the three graphs). We call this property, verified here for the
 three graphs and unexplained by the parity argument, \emph{universal 2-criticality}.
 
+\subsection{Abnormal edges and sublinear approximations}\label{sec:abnormal}
+
+For a proper 5-edge-coloring $c$ of a cubic graph $G$, an edge is \emph{abnormal} if it is neither
+poor nor rich, and $\ab(G)$ denotes the least number of abnormal edges over all proper
+5-edge-colorings of $G$; write $\pd(G)$ for the Petersen defect. Mattiolo, Mazzuoccolo and
+Mkrtchyan~\cite{MMM2021} proved that no proper 5-edge-coloring of a cubic graph has exactly one
+abnormal edge and asked whether $\ab(G) \le 2$ implies that $G$ has a normal 5-edge-coloring; the
+five counterexamples have colorings with exactly two abnormal edges and answer the question in the
+negative~\cite{GJMMMU2026}. The two defects are related as follows.
+
+\begin{lemma}[derived]\label{lem:pdab}
+$\pd(G) \le \ab(G)$ for every cubic graph $G$.
+\end{lemma}
+
+\begin{proof}
+View $\PG$ as the Kneser graph on the 2-subsets of $\{1,\dots,5\}$: two subsets are adjacent when
+disjoint, and the \emph{color} of the edge $\{A, B\}$ is the element outside $A \cup B$, so that
+the three edges at $A$ carry the three colors outside $A$. Let $c$ be a proper 5-edge-coloring with
+set of abnormal edges $N$, and for a vertex $v$ let $A_v$ be the complement of $c(\partial(v))$.
+For an edge $e = uv$, the \emph{view from $u$} is the edge of $\PG$ at $A_u$ of color $c(e)$. If
+$e$ is poor then $A_u = A_v$; if $e$ is rich then $A_u$ and $A_v$ are disjoint and avoid $c(e)$; in
+both cases the two views coincide. Let $\sigma(e)$ be the common view if $e$ is normal and the view
+from one chosen end if $e$ is abnormal. A vertex all of whose edges carry its own view satisfies
+the star condition, so every bad vertex is the end not chosen of an abnormal edge, and there are
+at most $|N|$ of them.
+\end{proof}
+
+If $c$ has a single abnormal edge $uv$ and the view from $u$ is chosen, then $v$ is bad: the view
+from $u$ is an edge at $A_v$ only if $A_u = A_v$ or $A_u \cap A_v = \emptyset$, that is, only if
+$uv$ is poor or rich. The map $\sigma$ would then have exactly one bad vertex, so
+Theorem~\ref{thm:parity} implies the proposition of~\cite{MMM2021} quoted above. In particular
+$\ab(G) \ge \pd(G) \ge 2$ for every cubic graph without a Petersen coloring. All five counterexamples have explicit proper 5-edge-colorings with exactly two abnormal
+edges (computations EXP-006 and EXP-008), hence
+\[
+\pd = \ab = 2 \quad\text{for each of } \Gmain,\ \Gsym,\ \Gfty,\ \Gftyb,\ \Gsix .
+\]
+For $\Gfty$ the lower bound $\ab \ge 2$ was also confirmed directly: the 42 single-edge
+relaxations refuted with checked proofs meet all 14 edge orbits of its automorphism group of
+order~6.
+
+Neither defect is bounded. The constructions are those of~\cite{MMM2021}; the argument through the
+cut space of $\PG$ gives a stronger conclusion than the one drawn there.
+
+\begin{theorem}[derived]\label{thm:rings}
+Let $G_1, \dots, G_t$, $t \ge 2$, be cubic graphs without a Petersen coloring, $e_i = a_ib_i$ an
+edge of $G_i$, and let $R$ be obtained from the disjoint union of the graphs $G_i - e_i$ by adding
+the edges $a_ib_{i+1}$, indices modulo $t$. Then every map $E(R) \to E(\PG)$ has a bad vertex in
+every $V(G_i)$; hence $\ab(R) \ge \pd(R) \ge t$. If every $G_i$ is bridgeless, so is $R$.
+\end{theorem}
+
+\begin{proof}
+Suppose every vertex of $V(G_i)$ satisfies the star condition under $\sigma$. With the notation of
+the proof of Theorem~\ref{thm:parity}, $\sum_{v \in V(G_i)} \chi_v$ is the sum of the indicators of
+the labels of the two edges leaving $V(G_i)$, because an edge inside $V(G_i)$ is counted twice.
+Each $\chi_v$ is the indicator of a star, so the sum is a cut of $\PG$ with at most two edges, hence
+empty, since $\PG$ is 3-edge-connected. The two leaving edges therefore carry the same label $x$,
+and giving $e_i$ the label $x$ turns the restriction of $\sigma$ into a Petersen coloring of
+$G_i$, a contradiction. If $f$ is an edge of $G_i - e_i$, any two vertices of $V(G_i)$ are joined
+in $G_i - f$ by a path, in which $e_i$ can be replaced by the detour around the ring; the added
+edges lie on a cycle through all the blocks. So $R$ is bridgeless.
+\end{proof}
+
+\begin{theorem}[derived]\label{thm:frames}
+Let $K$ be a cubic graph with $t$ vertices and, for each vertex $x$ of $K$, let $G_x$ be a cubic
+graph without a Petersen coloring and $v_x$ a vertex of $G_x$. Replace every vertex $x$ of $K$ by
+$G_x - v_x$, attaching the three edges of $K$ at $x$ to the three neighbours of $v_x$. Every map
+from the edges of the resulting cubic graph to $E(\PG)$ has a bad vertex in every
+$V(G_x - v_x)$; hence $\ab \ge \pd \ge t$. If $K$ and all $G_x$ are 3-connected, so is the result.
+\end{theorem}
+
+\begin{proof}
+If all vertices of $V(G_x - v_x)$ satisfy the star condition, the sum of their vectors $\chi_v$ is
+a cut of $\PG$ equal to the sum of the indicators of the labels of the three leaving edges. It has
+odd weight, since $|V(G_x)| - 1$ is odd. Weight~1 is impossible in a bridgeless graph, so the
+three labels are distinct and form a 3-edge cut of $\PG$, which is a star by the argument in the
+proof of Theorem~\ref{thm:parity}. Restoring $v_x$ with these labels on its edges gives a Petersen
+coloring of $G_x$. The connectivity statement is the usual substitution along 3-edge cuts.
+\end{proof}
+
+In~\cite{MMM2021} it is conjectured that five statements are equivalent: the Petersen coloring
+conjecture, and the existence of a sublinear function $f$ such that $\ab(G) \le f(|V(G)|)$ for
+all bridgeless, all 2-connected, all 3-connected, respectively all cyclically 4-edge-connected
+cubic graphs $G$. It is proved there that the second statement is equivalent to the first, and
+that on the last three classes a sublinear bound exists if and only if $\ab$ is bounded by 5, 7
+and 9 respectively. The rings of Theorem~\ref{thm:rings} built from $\Gfty$ are 2-connected with
+$\ab \ge |V|/52$, and the graphs of Theorem~\ref{thm:frames} built from $\Gfty$ over 3-connected
+cubic graphs $K$ are 3-connected with $\ab \ge |V|/51$.
+
+\begin{theorem}[derived]\label{thm:sublinear}
+On the class of 2-connected cubic graphs, and on the class of 3-connected cubic graphs, there is
+no sublinear function $f$ with $\ab(G) \le f(|V(G)|)$ for all $G$ in the class. More precisely, on
+either class such a function exists if and only if every graph of the class has a normal
+5-edge-coloring.
+\end{theorem}
+
+\begin{proof}
+If every graph of the class has a normal 5-edge-coloring, the zero function is a bound. Otherwise
+let $G$ be a graph of the class without one. The rings of $t$ copies of $G$ are 2-connected, and
+the graphs of Theorem~\ref{thm:frames} over the prisms with $t$ vertices, $t \ge 6$ even, with
+every $G_x = G$, are 3-connected when $G$ is; both have $\ab \ge t$ and at most $t\,|V(G)|$
+vertices, so $\ab$ is at least linear in the order along these sequences. The graph $\Gfty$ is
+3-connected without a normal 5-edge-coloring (Theorem~\ref{thm:certify}).
+\end{proof}
+
+Thus the first four of the five statements of~\cite{MMM2021} are false, and their conjectured
+equivalence now amounts to the falsity of the fifth: by their Theorem~4, to the existence of a
+cyclically 4-edge-connected cubic graph with $\ab \ge 10$. All five known counterexamples are
+cyclically 4-edge-connected with $\ab = 2$. The cyclic joining of copies of $G - e_1 - e_2$ used
+in~\cite{MMM2021} for that class does not force bad vertices by itself: for $\Gfty$ and for
+$\Gftyb$, every 4-pole obtained by deleting two independent edges has a Petersen coloring (one
+representative per orbit of edge pairs, 482 4-poles for each graph, computation EXP-010), and the boundary
+labels of the colorings found are of two kinds only, as the cut space predicts: two crossed equal
+pairs, or the four edges adjacent to one edge of $\PG$.
+
+The bounds of Theorems~\ref{thm:rings} and~\ref{thm:frames} are attained on the smallest
+instances (computation EXP-009): for the rings $R_t$ of $t$ copies of $\Gfty$ opened at one edge,
+$\pd(R_2) = 2$ and $\pd(R_3) = 3$, and for $K_4$ with each vertex replaced by $\Gfty$ minus a
+vertex (204 vertices, 3-connected, girth~5) the defect is exactly~4; each witness has exactly one
+bad vertex in every copy. For $R_4$ the defect is exactly~4 as well, with a witness found by relaxing one designated vertex in every copy. As a check of Theorem~\ref{thm:rings}, twenty relaxations of
+$R_2$ at two vertices of the same copy were refuted with checked proofs.
+
 \section{Compositions of copies of the Petersen 4-pole}\label{sec:compositions}
 
 All known counterexamples contain the 4-pole $F$~\cite{GJMMM2026}. A packing computation
