@@ -109,3 +109,21 @@ known counterexamples with no Petersen coloring at all.
   cyclically 4-edge-connected cubic graphs? All five known counterexamples with that connectivity
   have `pd = 2`.
 - Exact values for small rings and frames built from `G52`: EXP-009.
+
+## Probe: classes modulo the cut space on the stored witnesses (2026-09-18) `[MV]`
+
+Script `code/probes/classes_mod_cut_space.py` (reads `EXP-006/artifacts/pairs-G52.json`; no solver).
+
+- The quotient `Q = F_2^{E(P)} / Cut(P)` has 64 classes (the cut space has dimension 9). Under
+  the 120 automorphisms of `P` the classes fall into six orbits: the zero class; 15 classes of
+  single edges; 15 and 30 classes whose lightest representative has two edges; one invariant
+  class and one orbit of two classes whose lightest representatives have three edges.
+- Transfer principle, observed: in every one of the 1,326 pair witnesses of `G52` the label
+  vectors of the two bad vertices lie in the SAME nonzero class, as the parity argument requires
+  (the sum over the bad vertices is a cut). 1,279 witnesses carry a single-edge class, 37 a class
+  of the orbit of size 30, 8 one of the second orbit of size 15, and 2 one of the orbit of size 2.
+- Zero-sum triples of nonzero classes exist inside the single-edge orbit (30 of them, the ten
+  stars among them) and in most mixed orbit types. So a superposition argument that only tracks
+  classes (every superedge `G - {u, v}` passes a nonzero class, every supervertex needs three
+  classes summing to zero) does NOT yield a contradiction by itself: PCR-7 needs the actual
+  label triples realized at the connectors, not only their classes.
