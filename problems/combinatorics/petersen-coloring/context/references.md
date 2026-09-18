@@ -25,8 +25,20 @@ Status marks: `[V]` read in the primary source; `[U]` cited only through another
 - G. Mazzuoccolo, V. V. Mkrtchyan, Normal 6-edge-colorings of some bridgeless cubic graphs,
   Discrete Appl. Math. 277 (2020), 252-262. `[U]` (states the normal 6 conjecture)
 - Y. Ma, D. Mattiolo, E. Steffen, I. H. Wolf, Sets of r-graphs that color all r-graphs,
-  Combinatorica 45 (2025), Article 16, doi:10.1007/s00493-025-00144-4. `[U]` (used by Putman
-  Corollary 5.1 `[V]`)
+  Combinatorica 45 (2025), Article 16, doi:10.1007/s00493-025-00144-4, arXiv:2305.08619.
+  `[V, Sections 1 and 3.2 read 2026-09-18]` (Theorems 3.4 and 3.7; used by Putman Corollary 5.1 and
+  by EXP-007)
+- J. Goedgebeur, J. Jooken, E. Macajova, D. Mattiolo, G. Mazzuoccolo, S. Ulyanov, Disproving the
+  Petersen Coloring Conjecture: Theoretical Analysis and an Infinite Family of Counterexamples,
+  arXiv:2608.10028v3 (2026-09-11). `[V, read in full 2026-09-18]` (supersedes Jooken's v2 note;
+  lower bound 40; Section 5.4 question attacked by EXP-007; House of Graphs entries 57244, 57278,
+  57280, 57237, 57279)
+- H. Fleischner, Spanning eulerian subgraphs, the splitting lemma, and Petersen's theorem,
+  Discrete Math. 101 (1992), 33-37. `[U, cited through Kaiser et al.]`
+- T. Kaiser, R. Kuzel, H. Li, G. Wang, A note on k-walks in bridgeless graphs, Graphs Combin. 23
+  (2007), 303-308 (journal data `[U]`). `[V, Lemma 1 read in the authors' PDF]` (bridgeless form of the splitting lemma used in Lemma B)
+- K. Coolsaet, S. D'hondt, J. Goedgebeur, House of Graphs 2.0, Discrete Appl. Math. 325 (2023),
+  97-107, https://houseofgraphs.org. `[V, entries downloaded 2026-09-18]`
 - Open Problem Garden, Petersen coloring conjecture,
   https://www.openproblemgarden.org/op/petersen_coloring_conjecture. `[V]`
 

@@ -29,7 +29,7 @@ if `m` is odd, and an `H'`-coloring of `G` with the same vertex map `phi`. In pa
 `|V(H')| <= |V(H)|`.
 
 Splitting lemma, in the form of Kaiser, Kuzel, Li, Wang, "A note on k-walks in bridgeless
-graphs", Graphs Combin. 23 (2007), Lemma 1 `[V, read in the authors' PDF, SHA-256 94bda692...946f]`,
+graphs", Graphs Combin. 23 (2007) (journal data `[U]`), Lemma 1 `[V, read in the authors' PDF, SHA-256 94bda692...946f]`,
 who derive it from Fleischner's Splitting Lemma (Discrete Math. 101 (1992) 33-37) and Zhang,
 "Integer flows and cycle covers of graphs", Theorem A.5.2: graphs are finite and loopless with
 multiple edges allowed; if `v` has degree at least 4 in a bridgeless graph `K`, there are edges
