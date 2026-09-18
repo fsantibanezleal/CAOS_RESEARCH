@@ -1,0 +1,125 @@
+{
+ "object": "R2",
+ "pairs": {
+  "0-21": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 144.366,
+   "same_copy": true
+  },
+  "0-30": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 294.175,
+   "same_copy": true
+  },
+  "2-23": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 154.892,
+   "same_copy": true
+  },
+  "2-32": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 198.549,
+   "same_copy": true
+  },
+  "4-25": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 87.203,
+   "same_copy": true
+  },
+  "4-34": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 109.495,
+   "same_copy": true
+  },
+  "6-27": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 181.822,
+   "same_copy": true
+  },
+  "6-36": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 140.155,
+   "same_copy": true
+  },
+  "8-29": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 135.237,
+   "same_copy": true
+  },
+  "8-38": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 81.403,
+   "same_copy": true
+  },
+  "10-31": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 92.986,
+   "same_copy": true
+  },
+  "10-40": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 113.302,
+   "same_copy": true
+  },
+  "12-33": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 113.13,
+   "same_copy": true
+  },
+  "12-42": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 59.337,
+   "same_copy": true
+  },
+  "14-35": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 90.017,
+   "same_copy": true
+  },
+  "14-44": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 94.882,
+   "same_copy": true
+  },
+  "16-37": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 82.802,
+   "same_copy": true
+  },
+  "16-46": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 122.441,
+   "same_copy": true
+  },
+  "18-39": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 125.83,
+   "same_copy": true
+  },
+  "18-48": {
+   "status": "UNSAT",
+   "verified": true,
+   "seconds": 146.196,
+   "same_copy": true
+  }
+ }
+}

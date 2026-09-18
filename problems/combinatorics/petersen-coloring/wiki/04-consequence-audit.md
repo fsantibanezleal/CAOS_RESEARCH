@@ -57,3 +57,23 @@ Bold entries are the ones that differ from the Petersen graph.
 
 Witness files: `experiments/EXP-002-perfect-matching-covers/artifacts/witnesses.json`,
 `experiments/EXP-003-cycle-covers-flows-oddness/artifacts/witnesses.json`.
+
+## The two graphs added in round 2 (EXP-008, CONFIRMED)
+
+`G52b` (the second 52-vertex counterexample, House of Graphs 57278) and `G68` (House of Graphs
+57280) agree with the `G52` column of every table on this page: Berge-Fulkerson cover, Berge cover
+by 5 and by 4 perfect matchings (none by 3, checked proof), perfect matching index 4, Fan-Raspaud
+triple, 5-cycle double cover, nowhere-zero 5-flow, no 4-flow (checked proof), oddness 2 and
+resistance 2 (bound 1 refuted, bound 2 witnessed), normal and strong normal 6-edge-colorings
+(normal chromatic index 6), Petersen defect exactly 2. Every vertex pair is critical: 1,326 of
+1,326 for `G52b` and 2,278 of 2,278 for `G68`, each witness with exactly the two relaxed vertices
+bad. Universal 2-criticality therefore holds on all five known counterexamples (17,362 pair
+witnesses with EXP-006). On the 1,326 stored witnesses of `G52` the label vectors of the two bad
+vertices always lie in the same nonzero class modulo the cut space of `P`
+(`code/probes/classes_mod_cut_space.py`), as the parity argument requires.
+
+arXiv:2608.10028v3 (2026-09-11) reports, for the same five graphs, Berge-Fulkerson covers, perfect
+matching index at most 4, 5-cycle double covers, strong normal 6-edge-colorings and colorings with
+two abnormal edges; round 1 of this record (2026-09-03) had obtained those items for the first
+three graphs independently. The abnormal-edge number, its relation to the Petersen defect, and the
+graphs of large defect are on page 07.

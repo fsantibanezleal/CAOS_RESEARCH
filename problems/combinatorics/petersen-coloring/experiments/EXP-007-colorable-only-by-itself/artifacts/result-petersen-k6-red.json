@@ -1,0 +1,18 @@
+{
+ "graph": "petersen",
+ "k": 6,
+ "status": "UNSAT",
+ "verified": true,
+ "proof_bytes": 54780,
+ "proof_sha256": "85dc5bad0eec1b7387d29eb561464abd7f4b51407f7a98bf25172c42d31fa24f",
+ "cnf_sha256": "d84e5c197eb9d3f52bc155ecdb9646a23962030b86136c556abae4d39b4a0140",
+ "reduced": true,
+ "variables": 1242,
+ "clauses": 8001,
+ "certify_solve_seconds": 1.116,
+ "check_seconds": 1.968,
+ "rounds": 1,
+ "learned_cuts": 0,
+ "seconds": 4.9,
+ "learned": []
+}

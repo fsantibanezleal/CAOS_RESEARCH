@@ -1,0 +1,41 @@
+{
+ "graph": "K4",
+ "k": 2,
+ "status": "SAT",
+ "rounds": 1,
+ "learned": [],
+ "check": {
+  "cubic_loopless": true,
+  "coloring": true,
+  "connected": true,
+  "bridge": null,
+  "ok": true
+ },
+ "used_target_vertices": 2,
+ "target_edges": [
+  [
+   0,
+   1
+  ],
+  [
+   0,
+   1
+  ],
+  [
+   0,
+   1
+  ]
+ ],
+ "vertex_map": [
+  0,
+  1,
+  1,
+  1
+ ],
+ "seconds": 2.7,
+ "target_petersen": {
+  "status": "SAT",
+  "verified": null,
+  "seconds": 0.218
+ }
+}

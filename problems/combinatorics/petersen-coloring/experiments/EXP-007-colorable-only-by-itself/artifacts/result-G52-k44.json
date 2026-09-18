@@ -1,0 +1,18 @@
+{
+ "graph": "G52",
+ "k": 44,
+ "status": "UNSAT",
+ "verified": true,
+ "proof_bytes": 49206463,
+ "proof_sha256": "dc812433a47e3d3df27aee1cd7bee209d205169f77d6cdab2fd83041874addad",
+ "cnf_sha256": "d3edaa17bd2d59cffabb6ba356fe42986db1400b9bac65b3280754d9dde81b6d",
+ "reduced": true,
+ "variables": 55527,
+ "clauses": 1494270,
+ "certify_solve_seconds": 293.321,
+ "check_seconds": 270.227,
+ "rounds": 1,
+ "learned_cuts": 0,
+ "seconds": 748.6,
+ "learned": []
+}

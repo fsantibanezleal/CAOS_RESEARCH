@@ -1,0 +1,121 @@
+{
+ "graph": "G52",
+ "e0": 10,
+ "label_representatives": {
+  "1": 1,
+  "2": 4,
+  "3": 3
+ },
+ "edges": {
+  "0": {
+   "1": {
+    "status": "SAT",
+    "seconds": 3.544,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 128.139,
+    "verified": true,
+    "proof_sha256": "a12009466bcf708686649862cc41fd91f3ffe0c0576553b1d78a4628053b637d"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 85.219,
+    "verified": true,
+    "proof_sha256": "adf81ae5c3de70342e6b3d020e19631894d7cb3771db34e714eadebddcfea25b"
+   },
+   "dist_set": [
+    1
+   ]
+  },
+  "2": {
+   "1": {
+    "status": "SAT",
+    "seconds": 1.155,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 32.952,
+    "verified": true,
+    "proof_sha256": "6f47c148bc834d15335dac48fb177b9d069e52379a79a1abdd0e826e91858b8c"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 24.288,
+    "verified": true,
+    "proof_sha256": "6d35acc76d68de314f97a6b0be01ccae8d4ef88d944460349be7615c805bc1cf"
+   },
+   "dist_set": [
+    1
+   ]
+  },
+  "4": {
+   "1": {
+    "status": "SAT",
+    "seconds": 2.021,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 37.114,
+    "verified": true,
+    "proof_sha256": "4aa7b944a2bc4c8b2711d50b1aadb1064dcd90cb26580d18d9e1ed129b167a08"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 23.484,
+    "verified": true,
+    "proof_sha256": "d50d04cc1f13a6f804eccc4aa08e73687a58511c6dcdd26ef39708d1929e2895"
+   },
+   "dist_set": [
+    1
+   ]
+  },
+  "5": {
+   "1": {
+    "status": "SAT",
+    "seconds": 1.206,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "UNSAT",
+    "seconds": 37.644,
+    "verified": true,
+    "proof_sha256": "77f52882a76e77d178f3c4ad787a5882f5c2cbac03aa8e06fa8c89f9c9af6dd8"
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 26.686,
+    "verified": true,
+    "proof_sha256": "e5a6b52907162048926b942ddd74a04cc975868c499f9c02cf04ebc2669b31c6"
+   },
+   "dist_set": [
+    1
+   ]
+  },
+  "6": {
+   "1": {
+    "status": "SAT",
+    "seconds": 8.06,
+    "checker_ok": true
+   },
+   "2": {
+    "status": "SAT",
+    "seconds": 7.312,
+    "checker_ok": true
+   },
+   "3": {
+    "status": "UNSAT",
+    "seconds": 87.378,
+    "verified": true,
+    "proof_sha256": "9746eb8030f06b6cb92d00e6b389af7dd474770cb83aeaed8ba9f0ca791bdf02"
+   },
+   "dist_set": [
+    1,
+    2
+   ]
+  }
+ }
+}

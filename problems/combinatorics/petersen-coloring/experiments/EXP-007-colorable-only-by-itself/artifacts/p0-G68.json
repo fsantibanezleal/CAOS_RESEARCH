@@ -1,0 +1,26 @@
+{
+ "n": 68,
+ "m": 102,
+ "digest": "19c7c22a2f0a11adb46e06267a0fed25eb98658e62dc23245bc253c7e5aa5ab2",
+ "girth": 5,
+ "edge_connectivity": 3,
+ "cyclic_cut_below_4": null,
+ "petersen": {
+  "status": "UNSAT",
+  "drat_trim_verified": true,
+  "seconds": 18.879,
+  "drat_trim_seconds": 10.336,
+  "cnf_sha256": "786b4764ead6d0274c46148d127271476b7a449a27a591bd1af10eae0ccaf42e",
+  "proof_sha256": "825e67a82f0248f4fb89c2e87c0b9234785d22fb6b07a16ca5eea3ae787eb91c",
+  "proof_bytes": 9916665
+ },
+ "normal5": {
+  "status": "UNSAT",
+  "drat_trim_verified": true,
+  "seconds": 3588.662,
+  "drat_trim_seconds": 4492.678,
+  "cnf_sha256": "ab2e3c36ec8175f252289e328ef464c654baa748970cff906fc8ccee3b485782",
+  "proof_sha256": "594d2c9cca2a423edee21774878b5b6f9dd9cf6efad0fdb2e45242fccdb2c39d",
+  "proof_bytes": 345057921
+ }
+}
