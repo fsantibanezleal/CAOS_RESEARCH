@@ -7,33 +7,33 @@
    "prior": "open (1939)"
   },
   {
-   "chain": "Mathieu(SU(N)) implies JC(N)",
+   "chain": "Mathieu(SU(N)) implies invertibility of Keller maps x - h of C^N, h homogeneous",
    "name": "Mathieu conjecture",
-   "now": "false for SU(N), N >= 3; SU(2) and other groups open",
+   "now": "false for SU(2) and for SU(N), N >= 24; SU(N) for 3 <= N <= 23 and other groups not decided (EXP-136)",
    "prior": "open (1997)"
   },
   {
-   "chain": "JC(2n) equivalent to Dixmier(n)",
+   "chain": "Dixmier(n) implies JC(n); JC(2n) implies Dixmier(n)",
    "name": "Dixmier conjecture",
-   "now": "full conjecture false (rank 2 false); rank 1 open",
+   "now": "false for rank n >= 3; ranks 1 and 2 open (EXP-136)",
    "prior": "open (1968)"
   },
   {
-   "chain": "JC equivalent to Dixmier equivalent to Poisson",
+   "chain": "JC(2n) implies Poisson(n) implies Dixmier(n) implies JC(n)",
    "name": "Poisson conjecture",
-   "now": "full conjecture false; minimal failing dimension open",
+   "now": "false for index n >= 3; indices 1 and 2 open (EXP-136)",
    "prior": "open (2007)"
   },
   {
    "chain": "GMC implies JC",
    "name": "Gaussian moments conjecture",
-   "now": "false at some finite dimension",
+   "now": "false for n >= 3 (explicit); true for n = 1; n = 2 proof claimed (EXP-136)",
    "prior": "open (2015)"
   },
   {
    "chain": "vanishing equivalent to JC",
    "name": "Zhao vanishing conjecture",
-   "now": "false",
+   "now": "false; explicit witness in 48 variables (EXP-041)",
    "prior": "open (2004)"
   },
   {
@@ -45,7 +45,7 @@
   {
    "chain": "symmetric JC stably equivalent to JC",
    "name": "Symmetric / gradient JC",
-   "now": "false in some dimension",
+   "now": "false; explicit witness in dimension 48 (EXP-041)",
    "prior": "open reduction (2005)"
   }
  ],
