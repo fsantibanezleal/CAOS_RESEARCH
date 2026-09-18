@@ -298,7 +298,7 @@ export default function PetersenColoring() {
               )}
             </li>
           </ul>
-          <Callout variant="note" title={t('Honest scope', 'Alcance honesto')}>
+          <Callout variant="note" title={t('Scope', 'Alcance')}>
             {t(
               'The counterexamples are not ours: discovery priority belongs to Putman, to Goedgebeur, Jooken, Macajova, Mattiolo and Mazzuoccolo, and to Jooken for the human-checkable proof. What is ours is the independent certification with a second encoding, and the audit: perfect matching covers and index, cycle double covers, flows, oddness, resistance, normal 6-edge-colorings and exact defects, each with a certificate. Nothing here bears on the general conjectures beyond these three graphs.',
               'Los contraejemplos no son nuestros: la prioridad de descubrimiento pertenece a Putman, a Goedgebeur, Jooken, Macajova, Mattiolo y Mazzuoccolo, y a Jooken por la prueba verificable a mano. Nuestro es la certificacion independiente con una segunda codificacion, y la auditoria: cubiertas e indice de emparejamientos perfectos, dobles cubiertas por ciclos, flujos, imparidad, resistencia, 6-arista-coloraciones normales y defectos exactos, cada uno con certificado. Nada aqui incide en las conjeturas generales mas alla de estos tres grafos.',

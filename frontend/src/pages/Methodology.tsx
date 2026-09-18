@@ -9,8 +9,8 @@ export default function Methodology() {
       <h1>{t('Methodology', 'Metodologia')}</h1>
       <p className="rs-lead">
         {t(
-          'Every problem in the repository is worked under one fixed operating system, so the record stays honest, reproducible and adversarially validated, independent of who (or what) runs a given session.',
-          'Cada problema del repositorio se trabaja bajo un mismo sistema operativo, para que el registro se mantenga honesto, reproducible y validado adversarialmente, independiente de quien (o que) corra una sesion.',
+          'Every problem in the repository is worked under one fixed operating system, so the record stays reproducible and adversarially validated, independent of who (or what) runs a given session.',
+          'Cada problema del repositorio se trabaja bajo un mismo sistema operativo, para que el registro se mantenga reproducible y validado adversarialmente, independiente de quien (o que) corra una sesion.',
         )}
       </p>
 
