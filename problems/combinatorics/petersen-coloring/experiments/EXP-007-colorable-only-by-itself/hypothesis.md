@@ -149,8 +149,8 @@ except that an UNSAT verdict now also depends on Lemmas A and B (proofs on file)
 splitting lemma as cited there.
 
 New control, added to P1: the reduced and the unreduced runner must agree on every even
-`k < n` for `K4`, the prism, the Petersen graph, the flower snark `J3`-free list `J5` (orders up
-to 18) and `petersen_minus_adjacent_pair`-free small cubic graphs available in `pcclib.graphs`;
-a disagreement refutes a lemma or exposes an encoding error and blocks the target runs.
+`k < n` for the small cubic graphs available in `pcclib.graphs`: `K4`, the prism, the Petersen
+graph and the flower snark `J5` (wording of this sentence corrected right after the commit, before
+any run); a disagreement refutes a lemma or exposes an encoding error and blocks the target runs.
 Budget and verdict rules are unchanged (6 hours per order, 24 hours overall, counted from the
 restart).

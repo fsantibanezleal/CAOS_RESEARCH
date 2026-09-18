@@ -53,12 +53,14 @@ def main() -> None:
     ap.add_argument("--graph", default="G52")
     ap.add_argument("--k", type=int, required=True)
     ap.add_argument("--cap", type=int, default=6 * 3600)
+    ap.add_argument("--unreduced", action="store_true", help="attempt-1 formula, without Lemmas A and B")
+    ap.add_argument("--suffix", default="")
     args = ap.parse_args()
     ARTIFACTS.mkdir(exist_ok=True)
     HEAVY.mkdir(parents=True, exist_ok=True)
     name, k = args.graph, args.k
-    tag = f"{name}_k{k}"
-    out_path = ARTIFACTS / f"result-{name}-k{k}.json"
+    tag = f"{name}_k{k}{args.suffix}"
+    out_path = ARTIFACTS / f"result-{name}-k{k}{args.suffix}.json"
     t0 = time.time()
     state = {"rounds": 0, "cuts": 0}
 
@@ -73,7 +75,7 @@ def main() -> None:
     timer.start()
 
     g = load(name)
-    inst = hcolor.HColorInstance(g, k)
+    inst = hcolor.HColorInstance(g, k, reduced=not args.unreduced)
     base = inst.f
     static = attach_clauses(inst)
     log(f"{tag}: base {base.nvars} vars, {len(base.clauses)} clauses, {len(static)} attach clauses ({round(time.time()-t0,1)} s)")
@@ -106,7 +108,7 @@ def main() -> None:
             learned.append({"kind": "bridge", "bridge": [list(a), list(b)], "side": side, "clause": list(clause)})
         else:
             H = hcolor.target_as_graph(k, hedges)
-            result = {"graph": name, "k": k, "status": "SAT", "check": {kk: vv for kk, vv in chk.items() if kk != "components"},
+            result = {"graph": name, "k": k, "status": "SAT", "fibers_odd": (inst.q in model) if inst.q else None, "check": {kk: vv for kk, vv in chk.items() if kk != "components"},
                       "used_target_vertices": len(set(vmap)), "target_edges": [list(e) for e in H.edges], "vertex_map": vmap}
             pf = encoders.petersen_coloring(H, symmetry=False)
             pc = HEAVY / f"{tag}_target_petersen.cnf"
@@ -137,7 +139,7 @@ def main() -> None:
         rec = solver.solve(cnf_path, HEAVY / f"{tag}.drat", remaining, want_proof=True)
         result = {"graph": name, "k": k, "status": rec["status"], "verified": rec.get("drat_trim_verified"),
                   "proof_bytes": rec.get("proof_bytes"), "proof_sha256": rec.get("proof_sha256"), "cnf_sha256": rec.get("cnf_sha256"),
-                  "variables": f.nvars, "clauses": len(f.clauses), "certify_solve_seconds": rec.get("seconds"),
+                  "reduced": not args.unreduced, "variables": f.nvars, "clauses": len(f.clauses), "certify_solve_seconds": rec.get("seconds"),
                   "check_seconds": rec.get("drat_trim_seconds")}
     timer.cancel()
     result.update({"rounds": state["rounds"], "learned_cuts": len(learned), "seconds": round(time.time() - t0, 1)})

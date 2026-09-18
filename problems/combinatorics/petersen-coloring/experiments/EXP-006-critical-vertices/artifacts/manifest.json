@@ -251,8 +251,17 @@
       },
       "40": {
         "cnf_sha256": "37e4a4f2e657f3548ab51c81831bcd9ed70baa5829c8eb3dd3fe55ac64e24f9f",
-        "seconds": 894.128,
-        "status": "ERROR"
+        "critical": false,
+        "seconds": 514.398,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "41": {
+        "cnf_sha256": "733f0f80096dca1db710701a6ddfc46cef0c5b6336f0ca03852759c070f61c7e",
+        "critical": false,
+        "seconds": 446.321,
+        "status": "UNSAT",
+        "verified": true
       },
       "5": {
         "cnf_sha256": "299a83bee920d7aa38635633548b647650729122116f8becf897f0c6eb57b5ea",
@@ -395,13 +404,13 @@
   "predictions": {},
   "reproduction_G52_bound0": {
     "cnf_sha256": "cab78f29332625d2b93f955845d5289a3e0dc95edc3ee8c68d4c4fc3a298b437",
-    "drat_trim_seconds": 1.213,
-    "drat_trim_tail": "with 1170 variables and 34010 clauses\n\nc finished parsing, read 4094201 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 25507 of 34010 clauses in core                            \n\nc 40307 of 77212 lemmas in core using 1330095 resolution steps\n\nc 0 RAT lemmas in core; 17340 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.969 seconds\n",
+    "drat_trim_seconds": 2.393,
+    "drat_trim_tail": "with 1170 variables and 34010 clauses\n\nc finished parsing, read 4094201 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 25507 of 34010 clauses in core                            \n\nc 40307 of 77212 lemmas in core using 1330095 resolution steps\n\nc 0 RAT lemmas in core; 17340 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 1.708 seconds\n",
     "drat_trim_verified": true,
     "exit_code": 20,
     "proof_bytes": 4094201,
     "proof_sha256": "2776f61ab51997c65a967996374e325340da47bb04a67800de089c256bf82727",
-    "seconds": 1.282,
+    "seconds": 3.343,
     "solver_stderr_tail": "",
     "solver_stdout_tail": "s UNSATISFIABLE\n",
     "status": "UNSAT"

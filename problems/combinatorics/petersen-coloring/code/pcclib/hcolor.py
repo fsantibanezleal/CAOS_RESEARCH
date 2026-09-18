@@ -37,7 +37,7 @@ def exactly_one_ladder(f: CNF, lits: list[int]) -> None:
 
 
 class HColorInstance:
-    def __init__(self, g: Graph, k: int):
+    def __init__(self, g: Graph, k: int, reduced: bool = False):
         if any(len(s) != 3 for s in g.incidence()):
             raise ValueError("G must be cubic")
         self.g, self.k = g, k
@@ -53,6 +53,9 @@ class HColorInstance:
             if a[0] != b[0]:
                 self.p[(a, b)] = f.var(f"p_{a[0]}_{a[1]}_{b[0]}_{b[1]}")
         self._build()
+        self.q = None
+        if reduced:
+            self._reduce()
 
     def pvar(self, a, b) -> int:
         return self.p[(a, b)] if a < b else self.p[(b, a)]
@@ -122,6 +125,31 @@ class HColorInstance:
                 for r in range(3):
                     f.add(-x[v, i], *prior, z[v, r, r])
         self.used = used
+
+    def _reduce(self) -> None:
+        """Sound restrictions (context/2026-09-18-hcoloring-reduction-lemmas.md): all fibers of the
+        vertex map have the same parity q (Lemma A); at most one target vertex is unused (Lemma B);
+        even fibers need at most n/2 used vertices."""
+        f, k, n = self.f, self.k, self.g.n
+        q = f.var("q_fibers_odd")
+        self.q = q
+        for i in range(k):
+            acc = self.x[0, i]
+            for v in range(1, n):
+                t = f.fresh()
+                a, b = acc, self.x[v, i]
+                f.add(-t, a, b)
+                f.add(-t, -a, -b)
+                f.add(t, -a, b)
+                f.add(t, a, -b)
+                acc = t
+            f.add(-acc, q)
+            f.add(acc, -q)
+            f.add(-q, self.used[n - 1, i])
+        if k >= 2:
+            f.add(self.used[n - 1, k - 2])
+        if 2 * (k - 1) > n:
+            f.add(q)
 
     def decode(self, model: set[int]):
         g, k = self.g, self.k

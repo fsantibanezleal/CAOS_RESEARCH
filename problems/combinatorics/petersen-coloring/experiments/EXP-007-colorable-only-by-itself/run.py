@@ -40,6 +40,8 @@ def load(name: str) -> graphs.Graph:
         "petersen": graphs.petersen,
         "J5": lambda: graphs.flower_snark(5),
         "K4": graphs.k4,
+        "prism": graphs.prism,
+        "J3": lambda: graphs.flower_snark(3),
     }
     return table[name]()
 
