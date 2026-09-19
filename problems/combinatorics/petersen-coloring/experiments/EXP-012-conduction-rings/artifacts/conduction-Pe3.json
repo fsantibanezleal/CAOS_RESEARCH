@@ -1,0 +1,124 @@
+{
+ "family": "Pe3",
+ "poles": {
+  "P-e0-e3": {
+   "dangling": [
+    [
+     0,
+     0
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     5,
+     3
+    ]
+   ],
+   "pairings": {
+    "01|23": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.128,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.173,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "UNSAT",
+      "seconds": 0.148,
+      "verified": true,
+      "proof_sha256": "f102912ce16261026e09881454b3386f64e5328211c2956fcc45b2d2fa0452f2"
+     },
+     "3": {
+      "status": "UNSAT",
+      "seconds": 0.133,
+      "verified": true,
+      "proof_sha256": "962cb9c7c7f205f4ae34a6c62160af84737e32c2b04303a25c895dbac1e427ee"
+     },
+     "D": [
+      0,
+      1
+     ],
+     "undecided": []
+    },
+    "02|13": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.141,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.148,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.155,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "SAT",
+      "seconds": 0.159,
+      "checker_ok": true,
+      "other_connector_distance": 3
+     },
+     "D": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "undecided": []
+    },
+    "03|12": {
+     "0": {
+      "status": "SAT",
+      "seconds": 0.164,
+      "checker_ok": true,
+      "other_connector_distance": 0
+     },
+     "1": {
+      "status": "SAT",
+      "seconds": 0.121,
+      "checker_ok": true,
+      "other_connector_distance": 1
+     },
+     "2": {
+      "status": "SAT",
+      "seconds": 0.18,
+      "checker_ok": true,
+      "other_connector_distance": 2
+     },
+     "3": {
+      "status": "SAT",
+      "seconds": 0.147,
+      "checker_ok": true,
+      "other_connector_distance": 3
+     },
+     "D": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "undecided": []
+    }
+   }
+  }
+ }
+}
