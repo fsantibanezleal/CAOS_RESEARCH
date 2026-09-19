@@ -28,4 +28,5 @@
 | PCB-024 | EXP-010: Conjecture 3 of Mattiolo-Mazzuoccolo-Mkrtchyan: non-colorable 4-poles, cyclic joins, statement (e) | doing | P1 | 4-poles of `G52`, `G52b`, `G68` all colorable; threshold proposition (`pd >= 3` suffices); H112 sweep until the budget ends |
 | PCB-025 | PCR-7: find a cyclically 4-edge-connected cubic graph with Petersen defect at least 3, or prove `pd <= 2` on that class | todo | P1 | would settle Conjecture 3 of Mattiolo et al.; see research lines PCR-7, PCR-9 |
 | PCB-026 | Exact `ab` of the rings `R_t` (is `ab(R_t) = t`?) on a free machine | todo | P3 | EXP-009 P4 undecided |
-| PCB-027 | EXP-011: criticality of the adjacent pairs of the ten 102-vertex dot products (a non-critical adjacent pair gives a non-colorable 4-pole) | doing | P1 | links PCR-10 to PCR-7 |
+| PCB-027 | EXP-011: criticality of the adjacent pairs of the ten 102-vertex dot products | done | P1 | CONFIRMED: 1,530 of 1,530 critical; the dot products have cyclic edge connectivity exactly 4 |
+| PCB-028 | Theorem 6 ((e) equivalent to defect at most 2 on cyclically 4-edge-connected graphs) into the audit manuscript (next version) and the page | doing | P1 | context note written 2026-09-19 |

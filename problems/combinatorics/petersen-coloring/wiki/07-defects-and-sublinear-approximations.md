@@ -85,6 +85,36 @@ around a ring with an even number of copies, because any two edges of $P$ can be
 automorphism (checked on the 120 automorphisms), so those cyclic joins are Petersen colorable. The 4-poles $G - \{u, v\}$ for an edge $uv$ are colorable as well: this is the
 universal 2-criticality of page 04 read at adjacent pairs.
 
+## Statement (e) is a two-defect statement (Theorem 6, 2026-09-19)
+
+**Theorem 6 [D]** (assuming Proposition 2 of Mattiolo et al., stated there without proof: cyclic
+joins of copies of $G - e_1 - e_2$ are cyclically 4-edge-connected). The following are equivalent:
+
+1. statement (e): a sublinear function bounds $\mathrm{ab}$ on cyclically 4-edge-connected cubic
+   graphs;
+2. $\mathrm{ab}(G) \le 18$ for every cyclically 4-edge-connected cubic graph $G$;
+3. $\mathrm{pd}(G) \le 2$ for every cyclically 4-edge-connected cubic graph $G$;
+4. for every such $G$ and every path $abcd$, the 4-pole $G - ab - cd$ is Petersen colorable.
+
+*Proof idea.* (3) gives (2): color each edge by the Kneser color of its image; the coloring is
+proper and every edge with two good ends is poor or rich; recoloring the three edges at each of
+the at most two bad vertices keeps the coloring proper and can make abnormal only the 9 edges
+within distance one of each. (2) gives (1) trivially. (1) gives (3) by Proposition 5. (4) gives
+(3) by the relabeling in the proof of Proposition 5, and (3) gives (4) because a non-colorable
+$G - ab - cd$ would give joins of defect at least 3.
+
+**Consequence.** Given the disproof, Conjecture 3 of Mattiolo et al. holds if and only if some
+cyclically 4-edge-connected cubic graph has Petersen defect at least 3. If every such graph can be
+mapped into $E(P)$ with at most two bad vertices, (e) holds with a constant bound and the
+conjecture is false.
+
+**Evidence (EXP-010, EXP-011).** In all fifteen cyclically 4-edge-connected counterexamples
+examined (the five public ones and the ten dot products $G_{52} \cdot G_{52}$, which have cyclic
+edge connectivity exactly 4) every adjacent vertex pair is critical, and every 4-pole
+$G - e_1 - e_2$ of $G_{52}$, $G'_{52}$, $G_{68}$ is colorable. This points to (e) being true, against
+the conjecture; it decides nothing. A single cyclically 4-edge-connected counterexample with a
+non-critical adjacent pair would reverse the picture.
+
 ## Exact values on small instances (EXP-009)
 
 | graph | order | connectivity | pd | ab |
