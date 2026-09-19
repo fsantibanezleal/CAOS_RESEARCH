@@ -4,5 +4,11 @@
   "digest": "363f828d98f5ad3f6a54099db6fd304fed2da1891d8b8d1926a5085b2539d76e",
   "cycle_separating_cut_below_4": null,
   "seconds": 32.3
+ },
+ "R2": {
+  "n": 204,
+  "digest": "d4100510729c62df6f62c500197376877c7cbb5f37384542bea3900269baf5f0",
+  "cycle_separating_cut_below_4": null,
+  "seconds": 509.0
  }
 }

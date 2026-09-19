@@ -126,3 +126,13 @@ Additional checks, cheaper and fixed now:
   ring theorem says every map has bad vertices in at least three blocks).
 - P6 (independent cut check): the exhaustive routine of EXP-001 (all edge sets of size at most
   three) finds no cycle-separating cut in `R_1` and `R_2`, as the bridge search did.
+
+## Addendum 3 (2026-09-19 12:52): tooling only
+
+The cardinality solves for `R_3` (bounds 2 and 3) are slow (more than 20 minutes each so far).
+The ten P5 pairs are therefore run in parallel by `run_r3_pairs.py`, with the same seed and the
+same selection code as `run_r3_checks.py`; results in `artifacts/r3-pairs.json`. A note on P4
+added before its result: with exactly one bad vertex per bad block the bad blocks must be the three
+`B`-blocks, since an `A`-block with one bad vertex between two good `B`-blocks would have both
+connectors at distance 0, forcing the class of its bad vertex to be zero, which a bad vertex never
+has.
