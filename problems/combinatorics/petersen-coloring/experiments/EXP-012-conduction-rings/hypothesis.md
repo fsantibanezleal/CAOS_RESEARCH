@@ -108,3 +108,21 @@ critical, EXP-006 and EXP-011, so `B` has a Petersen coloring). What remains to 
 set `{1}` in EXP-010 order, and `uv` the first edge of `G52` disjoint from `e0`, `e` and from their
 neighbourhoods (so that the blocks are cut from `G52` independently of each other; any choice is
 allowed by the theorem).
+
+## Addendum 2 (2026-09-19 12:35), before the runs named here
+
+Outcome so far (read before this addendum): `D(A) = {1}`, `D(B) = {0}` with checked proofs; `R_1`
+non-colorable; `R_1`, `R_2` without cycle-separating cuts below 4; `pd(R_2) = 2` with the two bad
+vertices in the two `B`-blocks. The solver consistency check "at most 2 bad vertices" on `R_3`
+(cardinality encoding, 2-hour limit) is running and may time out.
+
+Additional checks, cheaper and fixed now:
+- P4 (upper bound): `R_3` has a map with exactly three bad vertices (cardinality bound 3, 1-hour
+  limit; SAT expected, the checker must count 3 bad vertices in three different blocks, and by
+  the ring theorem these blocks are pairwise non-consecutive).
+- P5 (sampled lower bound): ten designated pairs of vertices of `R_3`, drawn with a fixed seed
+  (`random.Random(12)`), five inside a single block and five in two different blocks: relaxing the
+  star condition at exactly these two vertices is UNSAT with a verified proof in every case (the
+  ring theorem says every map has bad vertices in at least three blocks).
+- P6 (independent cut check): the exhaustive routine of EXP-001 (all edge sets of size at most
+  three) finds no cycle-separating cut in `R_1` and `R_2`, as the bridge search did.
