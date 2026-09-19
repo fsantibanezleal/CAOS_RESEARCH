@@ -87,3 +87,24 @@ check of P3).
 CONFIRMED if P1, P2, P3 pass (then statement (e) is false under the stated premises); REFUTED (of
 P2) if every candidate conducts 1 under every pairing; the table of conducted sets is the output
 either way.
+
+## Addendum 1 (2026-09-19 12:20), before any result of candidate family 3 was read
+
+A short argument settles part of P2 in advance `[D]`. Let `G` have no Petersen coloring, `uv` an
+edge, `B = G - {u, v}`, with connectors `{u1, u2}` (the ends of `uu1`, `uu2`) and `{v1, v2}` (the
+u|v pairing). If a map with every vertex of `B` good had distance 1 at `{u1, u2}`, the two labels
+would share a vertex `x` of `P` with third edge `z`; by Lemma 3 the other connector also has
+distance 1, with third edge `z'` at its common vertex, and the equal classes give `z = z'`
+(distinct edges have distinct classes). Labelling `uv` by `z` would then make `u` and `v` good: a
+Petersen coloring of `G`. So `1` is not in `D(G - {u, v})` under the u|v pairing.
+
+Together with `D(G52 - e0 - e) = {1}` for the 282 edge pairs of EXP-010, Theorem 4 of the context
+note applies with `A = G52 - e0 - e` and `B = G52 - {u, v}`, joined connector `{c, d}` of `A` to
+connector `{u1, u2}` of `B` and connector `{v1, v2}` of `B` to connector `{a, b}` of the next `A`:
+`pd(R_t(A, B)) >= t` for every `t`, provided `D(B)` is not empty (every adjacent pair of `G52` is
+critical, EXP-006 and EXP-011, so `B` has a Petersen coloring). What remains to be tested is P3:
+`R_1` non-colorable, `R_2`, `R_3` cyclically 4-edge-connected, and the consistency check that
+`R_3` has no map with at most two bad vertices. The pair used: the first `(e0, e)` with distance
+set `{1}` in EXP-010 order, and `uv` the first edge of `G52` disjoint from `e0`, `e` and from their
+neighbourhoods (so that the blocks are cut from `G52` independently of each other; any choice is
+allowed by the theorem).
