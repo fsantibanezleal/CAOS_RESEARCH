@@ -231,3 +231,20 @@ first `G52b` instance of order 40 were still solving 1 to 2 hours past their lim
 stopped by hand and recorded as TIMEOUT (the `G52b` order 40 continues only as the declared
 long-cap direct run). The direct mode of addendum 4 waits on an external process, where the timer
 works.
+
+## Addendum 6 (2026-09-19 11:55): tooling only, before the runs named here
+
+State: `G52` orders 2, 4, 28 to 50 refuted with verified proofs (28 by the post-hoc check);
+`G52b` orders 44 to 50 refuted; `G68` orders 62 to 66 refuted. On 2026-09-18 at 21:18 the WSL
+virtual machine stopped and killed three proof checks at once (orders 24 and 26 of `G52`, order
+42 of `G52b`); their proofs had been written completely (each ends with the empty clause), so
+they are checked again with `certify_existing.py`, unchanged. The direct solve of `G52b` order
+40 (6.4 hours, no answer) was killed at the same time and left a truncated proof, which is
+discarded.
+
+`G52b` order 40 is solved again on the same final formula (`G52b_k40-long.cnf`, base plus 39
+attach clauses, SHA-256 recorded in the result) by a portfolio of three CaDiCaL configurations
+in parallel (default, `--unsat`, `--seed=7`), each writing its own DRAT proof, with a 24-hour
+limit; the first configuration that reports UNSAT is kept, the others are stopped, and its
+proof is checked by drat-trim (limit 36 hours). `portfolio_certify.sh` does this and writes
+`artifacts/result-G52b-k40.json`. Formulas, certificates and verdict rules are unchanged.
