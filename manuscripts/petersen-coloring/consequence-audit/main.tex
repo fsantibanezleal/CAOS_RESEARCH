@@ -18,6 +18,7 @@
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{conjecture}[theorem]{Conjecture}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
@@ -104,9 +105,13 @@ counterexamples joined through 2-edge cuts, and cubic frames whose vertices are 
 counterexamples minus a vertex, need one bad vertex in every block, with equality on the
 instances computed. Consequently no sublinear function bounds the number of abnormal edges on
 2-connected or on 3-connected cubic graphs, so four of the five statements whose equivalence was
-conjectured by Mattiolo, Mazzuoccolo and Mkrtchyan are false, and the conjectured equivalence
-reduces to one question on cyclically 4-edge-connected cubic graphs, for which a single graph of
-Petersen defect at least 3 would suffice. Finally, no counterexample consists solely of copies of
+conjectured by Mattiolo, Mazzuoccolo and Mkrtchyan are false. The fifth, a sublinear bound on
+cyclically 4-edge-connected cubic graphs, is equivalent to every such graph having Petersen
+defect at most 2, so the conjectured equivalence holds if and only if some cyclically
+4-edge-connected cubic graph has defect at least 3. In fifteen cyclically 4-edge-connected
+counterexamples, the five public ones and ten new ones on 102 vertices, every pair of adjacent
+vertices is critical, which is consistent with the defect bound 2 on that class and against the
+conjectured equivalence. Finally, no counterexample consists solely of copies of
 the Petersen 4-pole $F$ from which all known counterexamples are built. All computations are
 propositional with checked DRAT certificates or explicit witnesses. The paper decides nothing
 about the general covering and flow conjectures.
@@ -456,10 +461,10 @@ proof of Theorem~\ref{thm:parity}. Restoring $v_x$ with these labels on its edge
 coloring of $G_x$. The connectivity statement is the usual substitution along 3-edge cuts.
 \end{proof}
 
-In~\cite{MMM2021} it is conjectured that five statements are equivalent: the Petersen coloring
-conjecture, and the existence of a sublinear function $f$ such that $\ab(G) \le f(|V(G)|)$ for
-all bridgeless, all 2-connected, all 3-connected, respectively all cyclically 4-edge-connected
-cubic graphs $G$. It is proved there that the second statement is equivalent to the first, and
+In~\cite{MMM2021} it is conjectured that five statements are equivalent: (a) the Petersen
+coloring conjecture, and the existence of a sublinear function $f$ such that
+$\ab(G) \le f(|V(G)|)$ for (b) all bridgeless, (c) all 2-connected, (d) all 3-connected,
+respectively (e) all cyclically 4-edge-connected cubic graphs $G$. It is proved there that the second statement is equivalent to the first, and
 that on the last three classes a sublinear bound exists if and only if $\ab$ is bounded by 5, 7
 and 9 respectively. The rings of Theorem~\ref{thm:rings} built from $\Gfty$ are 2-connected with
 $\ab \ge |V|/52$, and the graphs of Theorem~\ref{thm:frames} built from $\Gfty$ over 3-connected
@@ -481,8 +486,8 @@ vertices, so $\ab$ is at least linear in the order along these sequences. The gr
 3-connected without a normal 5-edge-coloring (Theorem~\ref{thm:certify}).
 \end{proof}
 
-Thus the first four of the five statements of~\cite{MMM2021} are false, and their conjectured
-equivalence now amounts to the falsity of the fifth: by their Theorem~4, to the existence of a
+Thus statements (a) to (d) of~\cite{MMM2021} are false, and their conjectured equivalence now
+amounts to the falsity of (e): by their Theorem~4, to the existence of a
 cyclically 4-edge-connected cubic graph with $\ab \ge 10$. All five known counterexamples are
 cyclically 4-edge-connected with $\ab = 2$. A much smaller defect would suffice.
 
@@ -504,6 +509,53 @@ $E(\PG)$ has a bad vertex in every copy, since a copy without bad vertices would
 on $M$. So its defect is at least $t$.
 \end{proof}
 
+The dichotomy is in fact an equivalence, and it identifies statement~(e) with a statement about
+two bad vertices.
+
+\begin{theorem}[derived]\label{thm:twodefect}
+Assume Proposition~2 of~\cite{MMM2021} (the cyclic joins used above are cyclically
+4-edge-connected; its proof is omitted there). Then the following are equivalent:
+\begin{enumerate}
+\item[\textup{(i)}] some sublinear function $f$ satisfies $\ab(G) \le f(|V(G)|)$ for every
+cyclically 4-edge-connected cubic graph $G$;
+\item[\textup{(ii)}] $\ab(G) \le 18$ for every cyclically 4-edge-connected cubic graph $G$;
+\item[\textup{(iii)}] $\pd(G) \le 2$ for every cyclically 4-edge-connected cubic graph $G$;
+\item[\textup{(iv)}] for every cyclically 4-edge-connected cubic graph $G$ and every path $abcd$ in
+$G$, the 4-pole $G - ab - cd$ has a Petersen coloring.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(iii) implies (ii). Let $\sigma$ be a map whose bad vertices lie in $\{u, v\}$, and color every
+edge by the color of its image in the Kneser model of $\PG$ (proof of Lemma~\ref{lem:pdab}). The
+three colors at a good vertex are distinct, and an edge with two good ends is poor or rich,
+because its two views coincide. Recolor the three edges at $u$: each has at most two colors
+forbidden at its other end, so distinct admissible colors can be chosen greedily; then recolor the
+edges at $v$ in the same way (if $uv$ is an edge, two and one admissible colors remain). The
+result is a proper 5-edge-coloring in which only the edges with an end in $u$, in $v$, or in one
+of their neighbors can be abnormal, at most $9 + 9$ edges. (ii) implies (i) trivially. (i)
+implies (iii) by Proposition~\ref{prop:threshold}. (iv) implies (iii) by the relabeling in the
+proof of Proposition~\ref{prop:threshold}. (iii) implies (iv): if some $G - ab - cd$ had no
+Petersen coloring, the cyclic join of three copies of it would be cyclically 4-edge-connected
+with defect at least~3.
+\end{proof}
+
+\begin{corollary}[derived]\label{cor:mmm}
+Conjecture~3 of~\cite{MMM2021}, the equivalence of statements (a) to (e), holds if and only if
+some cyclically 4-edge-connected cubic graph has Petersen defect at least~3 (under the assumption
+of Theorem~\ref{thm:twodefect}).
+\end{corollary}
+
+\begin{proof}
+Statement (a) is false, (b) is equivalent to it by~\cite[Theorem~1]{MMM2021}, and (c) and (d)
+are false by Theorem~\ref{thm:sublinear}. So the five statements are equivalent exactly when (e),
+which is statement (i) of Theorem~\ref{thm:twodefect}, is false.
+\end{proof}
+
+If, on the contrary, every cyclically 4-edge-connected cubic graph can be mapped into $E(\PG)$
+with at most two bad vertices, then (e) holds with a constant bound and the conjectured
+equivalence fails.
+
 The cyclic joining of copies of $G - e_1 - e_2$ used
 in~\cite{MMM2021} for that class does not force bad vertices by itself: for $\Gfty$, $\Gftyb$ and $\Gsix$,
 every 4-pole obtained by deleting two independent edges has a Petersen coloring (one
@@ -512,7 +564,18 @@ labels of the colorings found are of two kinds only, as the cut space predicts: 
 pairs, or the four edges adjacent to one edge of $\PG$. A 4-pole with a crossed pattern can be chained around a ring with an even number of copies,
 because any two edges of $\PG$ are exchanged by an automorphism, so these cyclic joins are
 Petersen colorable. In all 73 4-poles of $\Gfty$ that contain a fixed deleted edge, the two
-labels at the ends of that edge can be chosen adjacent in $\PG$. Ten dot products of $\Gfty$ with itself, cubic graphs on 102 vertices, have no Petersen coloring (checked proofs) and defect exactly~2.
+labels at the ends of that edge can be chosen adjacent in $\PG$. Ten dot products of $\Gfty$ with
+itself, cubic graphs on 102 vertices with girth~5 and cyclic edge connectivity exactly~4, have no
+Petersen coloring (checked proofs) and defect exactly~2, and in each of them every one of the
+153 pairs of adjacent vertices is critical (computation EXP-011). A pair $\{u, v\}$ of adjacent
+vertices of a counterexample $G$ is critical exactly when the 4-pole $G - \{u, v\}$ has a Petersen
+coloring. So in all fifteen cyclically 4-edge-connected counterexamples examined, the five of
+Section~\ref{sec:certify} and these ten, every 4-pole obtained by deleting two adjacent vertices is
+colorable, and for $\Gfty$, $\Gftyb$ and $\Gsix$ so is every 4-pole obtained by deleting two
+independent edges. In the terms of Theorem~\ref{thm:twodefect} these computations are consistent
+with (iii), and hence with statement (e) and the failure of the conjectured equivalence; they do
+not decide it. A single cyclically 4-edge-connected counterexample with a non-critical pair of
+adjacent vertices would point the other way.
 
 The bounds of Theorems~\ref{thm:rings} and~\ref{thm:frames} are attained on the smallest
 instances (computation EXP-009): for the rings $R_t$ of $t$ copies of $\Gfty$ opened at one edge,
@@ -562,10 +625,12 @@ Nothing here bears on the general Berge--Fulkerson, cycle double cover, 5-flow o
 disproof, the order of a smallest counterexample in $[40, 52]$, cyclically 5-edge-connected
 counterexamples, and the normal 6-edge-coloring conjecture, remain open. Two questions arise from
 Section~\ref{sec:abnormal}. Is there a cyclically 4-edge-connected cubic graph with Petersen defect
-at least~3? By Proposition~\ref{prop:threshold} one such graph would show that no sublinear
-function bounds $\ab$ on that class, and would complete the proof of the equivalence conjectured
-in~\cite{MMM2021}. And is every pair of vertices of every counterexample critical, as it is for
-the five known ones?
+at least~3? By Corollary~\ref{cor:mmm} this is exactly the question whether the equivalence
+conjectured in~\cite{MMM2021} holds; a negative answer would give every cyclically
+4-edge-connected cubic graph a map into $E(\PG)$ with at most two bad vertices. And is every pair
+of adjacent vertices of every cyclically 4-edge-connected counterexample critical, as it is in the
+fifteen examined here (every pair, adjacent or not, in the five graphs of
+Section~\ref{sec:certify})?
 
 \section*{Data availability}
 
@@ -576,7 +641,7 @@ The edge lists, encoders, checkers, witnesses and computation manifests are in t
 computation in the folder \path{experiments/EXP-nnn-*} of that directory, with a deterministic
 runner and its artifacts with SHA-256 digests. Section~\ref{sec:certify} rests on EXP-001,
 Section~\ref{sec:covers} on EXP-002, Section~\ref{sec:cdc} on EXP-003,
-Section~\ref{sec:normal} on EXP-004, EXP-006, EXP-009 and EXP-010, and
+Section~\ref{sec:normal} on EXP-004, EXP-006, EXP-009, EXP-010 and EXP-011, and
 Section~\ref{sec:compositions} on EXP-005. The values for $\Gftyb$ and $\Gsix$ in
 Sections~\ref{sec:covers} to~\ref{sec:normal} come from EXP-008, and their certification in
 Section~\ref{sec:certify} from the first part of EXP-007.
