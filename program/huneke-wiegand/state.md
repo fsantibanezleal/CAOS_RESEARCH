@@ -2,10 +2,11 @@
 
 Current heartbeat: 2026-09-20. **The program has completed a strategic and
 manuscript reconciliation after EXP-066.** The broad conjecture is already
-false and is not a CAOS target. The currently active item is the bounded
-`HW-F6` preflight on counterexample-mechanism classification in Kunz
-coordinates. It must pass a fresh primary-source review and a smallest-case
-invariant test before EXP-067 may be declared.
+false and is not a CAOS target. The Kunz preflight corrected the proposed
+single-face formulation because the family multiplicity varies as `24p`.
+`HW-F6` is redirected. The currently active item is frozen EXP-067 under
+`HW-F7`, a general simple-gluing transfer theorem for symmetry and the
+two-generated `D=E+E` rigidity identity. No result is yet claimed.
 
 The prior carrier path is retained as `HW-F5` but gated. It reopens only for a
 canonical comparison plus a complete kernel, complete 2-primary quotient, or

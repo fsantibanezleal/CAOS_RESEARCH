@@ -2094,3 +2094,14 @@
   focused submissions with explicit ownership, dependency, overlap, and
   readiness gates. No duplicate manuscript, experiment, Zenodo version, or new
   mathematical claim is created by this documentation and governance round.
+
+## 2026-09-20 - EXP-067 simple-gluing transfer declared
+
+- The primary-source preflight corrects the original Kunz question: the family
+  multiplicity is `24p`, so its members cannot lie in one fixed Kunz cone.
+- Small diagnostics find one-dimensional faces for `p=4,...,8`, but the useful
+  invariant is the simple gluing `m*N+q*Gamma`. No diagnostic output is treated
+  as theorem evidence.
+- EXP-067 is frozen before implementation. It targets a general symbolic
+  transfer of symmetry and `D=E+E`, an independently checked two-parameter CAOS
+  corollary, and a focused manuscript only if all gates pass.

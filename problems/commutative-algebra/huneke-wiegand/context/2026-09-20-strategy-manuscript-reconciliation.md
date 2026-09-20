@@ -39,6 +39,13 @@ necessary and sufficient linear or sumset conditions. This focus reconnects
 the work to classification of counterexamples rather than another invariant of
 one presentation.
 
+Subsequent same-day preflight corrected this wording. The multiplicity is
+`24p`, so the family lies in different Kunz cones rather than one face. Small
+face diagnostics exposed the stronger simple-gluing invariant, and the active
+route is now `HW-F7` / EXP-067. See
+`2026-09-20-kunz-gluing-preflight.md`. The four items below are retained as the
+historical admission gate that caused the correction before computation.
+
 No experiment is declared by this review. Before computation, the focus needs:
 
 1. a source-complete Kunz-polyhedron and numerical-semigroup rigidity review;

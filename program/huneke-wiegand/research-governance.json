@@ -9,7 +9,7 @@
     "prohibited_reframing": "No CAOS extension, replication, or presentation theorem may be described as solving or redisproving the original conjecture."
   },
   "mission": "Classify and explain counterexample mechanisms, prove family-level structural theorems, and publish only results that pass exact validation, a current primary-source overlap check, and a theorem-sized value gate.",
-  "current_focus": "HW-F6",
+  "current_focus": "HW-F7",
   "stop_policy": {
     "review_after_consecutive_low_value_rounds": 3,
     "requires_user_visible_redirect": true,
@@ -104,15 +104,30 @@
     {
       "id": "HW-F6",
       "title": "Counterexample-mechanism classification in Kunz coordinates",
-      "status": "active-preflight",
+      "status": "redirected",
       "priority": 1,
-      "target": "Determine whether the CAOS infinite family lies in a positive-dimensional Kunz face on which the two-generated rigidity identity is characterized by explicit linear and sumset conditions.",
-      "value": "Returns the program to the central counterexample mechanism and could classify families rather than continue presentation-specific invariants.",
-      "success_gate": "A necessary-and-sufficient face criterion, a maximal stable face theorem, or a proof that no nontrivial stable face contains the family under the declared block model.",
-      "stop_conditions": ["The primary-source sweep finds the classification already known.", "Small exact cases show no stable face or no invariant stronger than re-enumeration.", "The proposed criterion cannot be stated independently of the existing parameter formula."],
-      "novelty_status": "Candidate new focus only. A source-complete preflight and expert relevance check are required before any novelty claim.",
-      "manuscript_route": "new counterexample-mechanism manuscript only after the success gate; otherwise research record",
-      "first_bounded_action": "Persist a source-complete Kunz-face preflight, then test the smallest distinguishing invariant on p=4 through p=8 before declaring an experiment."
+      "target": "Find a uniform block template for the different faces F_p inside C_(24p) and determine whether it controls rigidity.",
+      "value": "Corrected the fixed-cone misconception and exposed the simple-gluing transfer, but face classification is no longer the shortest route to a theorem.",
+      "success_gate": "A uniform family of Kunz nilsemigroups plus a rigidity criterion not reducible to the existing block formula.",
+      "stop_conditions": ["The varying multiplicities make a single-face statement ill-posed.", "A simpler congruence invariant yields a stronger transfer theorem.", "The face data only restate the existing parameter formula."],
+      "novelty_status": "Primary Kunz-face and ideal-class sources were reviewed. The original single-face formulation was corrected before experiment declaration.",
+      "manuscript_route": "research record unless the stronger face-classification gate is later met",
+      "first_bounded_action": "Completed by the 2026-09-20 Kunz/gluing preflight; redirected to HW-F7.",
+      "evidence": ["context/2026-09-20-kunz-gluing-preflight.md"]
+    },
+    {
+      "id": "HW-F7",
+      "title": "Simple-gluing transfer of two-generated rigidity",
+      "status": "active-experiment",
+      "priority": 1,
+      "target": "Prove that m*N+q*Gamma transfers symmetry and the D=E+E rigidity identity at shift q*s whenever gcd(q,m)=1.",
+      "value": "Would amplify any symmetric numerical-semigroup counterexample into infinitely many gluing descendants and turn the CAOS family into a genuine two-parameter family.",
+      "success_gate": "A general symbolic transfer lemma, independent exact validation, adverse controls, and the explicit all-parameter CAOS corollary.",
+      "stop_conditions": ["The representation-alignment lemma fails.", "A coprime exact case violates either exponent-set formula.", "Primary literature already contains the same rigidity-transfer theorem."],
+      "novelty_status": "Simple gluing is standard. No reviewed primary source states the rigidity-transfer lemma; this is not proof of novelty and specialist review remains required.",
+      "manuscript_route": "focused gluing-transfer manuscript if EXP-067 passes all symbolic and exact gates",
+      "first_bounded_action": "Run the frozen EXP-067 hypothesis after its declaration commit is pushed.",
+      "evidence": ["EXP-067"]
     }
   ],
   "manuscripts": [

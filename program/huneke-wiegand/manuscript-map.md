@@ -82,11 +82,16 @@ fiber-cone literature comparison, and candidate C remains significance-gated.
 
 ## Current research routing
 
-The active focus is `HW-F6`, counterexample-mechanism classification in Kunz
-coordinates. It is a preflight, not an experiment and not a novelty claim. Its
-first step is a source-complete review followed by one smallest-case invariant
-test. A new manuscript is created only if a theorem characterizes a stable
-positive-dimensional face or proves a meaningful maximality result.
+The Kunz preflight corrected a category error: because the family multiplicity
+is `24p`, its members lie in different Kunz cones. Small exact cases lie on
+one-dimensional faces, but the stronger invariant is the simple gluing
+`m*N+q*Gamma`. Focus `HW-F6` is therefore redirected, not silently abandoned.
+
+The active focus is `HW-F7`, the general transfer of the two-generated rigidity
+identity through that simple gluing. EXP-067 is declared and frozen. A focused
+gluing-transfer manuscript is created only if the symbolic exponent-set lemma,
+independent exact validation, adverse controls, and two-parameter corollary all
+pass. Standard gluing itself is not claimed as new.
 
 The prior endpoint/cokernel route is `HW-F5` and is gated. It may resume only
 with a theorem preflight aimed at a canonical comparison plus a complete kernel

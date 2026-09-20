@@ -7,8 +7,10 @@ target. The latest endpoint theorem below is closed, and its carrier route is
 now gated as `HW-F5`: it may resume only for a canonical comparison plus a
 complete kernel, quotient, upper bound, or reusable general matching theorem.
 
-The active bounded preflight is `HW-F6`, counterexample-mechanism
-classification in Kunz coordinates. No EXP-067 is declared. Read the
+The Kunz preflight redirected `HW-F6`: varying multiplicities prevent one face
+from containing the family. The active focus is `HW-F7`, simple-gluing transfer
+of two-generated rigidity, and EXP-067 is declared but has no result yet. Read
+the [Kunz/gluing preflight](../context/2026-09-20-kunz-gluing-preflight.md), the
 [strategy reconciliation](../context/2026-09-20-strategy-manuscript-reconciliation.md),
 the [research governance record](../../../../program/huneke-wiegand/research-governance.json),
 and the [manuscript map](../../../../program/huneke-wiegand/manuscript-map.md)

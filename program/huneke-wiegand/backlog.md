@@ -5,15 +5,15 @@
 | id | priority | status | item | gate |
 |---|---:|---|---|---|
 | HWB-088 | 0 | done | reconcile purpose, focus, result disposition, and manuscript ownership | `research-governance.json`, `manuscript-map.md`, context review, and automated guard agree |
-| HWB-089 | 0 | active-preflight | classify the counterexample mechanism in Kunz coordinates | source-complete review plus one invariant-first test must support a necessary-and-sufficient, maximal-face, or no-stable-face theorem target before EXP-067 |
+| HWB-089 | 0 | redirected | classify the counterexample mechanism in Kunz coordinates | varying multiplicities refute the single-face formulation; one-dimensional face diagnostics expose the stronger gluing route |
+| HWB-093 | 0 | active-experiment | EXP-067 simple-gluing transfer of two-generated rigidity | symbolic transfer, independent exact validation, controls, and two-parameter CAOS corollary |
 | HWB-090 | 1 | gated | canonical comparison and complete projected kernel or 2-primary quotient | no finite-only carrier campaign; reopen only with a uniform map and upper-bound target |
 | HWB-091 | 1 | planned | split consolidated v0.25 into three focused submission narratives | dependency and overlap audits first; no duplicate Zenodo publication for rearranged content |
 | HWB-092 | 1 | pending-external | specialist significance and novelty review | record reviewed claims and corrections separately for direct extensions, conductor algebra, and homological results |
 
-The first executable action is HWB-089's literature and invariant preflight.
-There is no EXP-067 declaration and no authorized compute campaign. The full
-focus definitions, stop conditions, and manuscript routes are in
-`research-governance.json`.
+The first executable action is the frozen EXP-067 producer and independent
+auditor. No broader Kunz sweep is authorized. The full focus definitions, stop
+conditions, and manuscript routes are in `research-governance.json`.
 
 ## Superseded dispatch after EXP-064, 2026-09-20
 

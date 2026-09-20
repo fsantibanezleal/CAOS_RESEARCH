@@ -20,11 +20,16 @@ may resume only with a preflight targeting a canonical comparison plus a
 complete kernel, complete 2-primary quotient, or reusable integral matching
 theorem. Another finite carrier table is a stop condition.
 
-The active preflight is `HW-F6`: classify the counterexample mechanism in Kunz
-coordinates. The target is a necessary-and-sufficient stable-face criterion,
-a maximal positive-dimensional face theorem, or a meaningful proof that the
-declared block model has no such face. No EXP-067 is declared. First perform a
-source-complete review and one smallest-case invariant test.
+The Kunz preflight found that the multiplicity varies as `24p`, so no single
+fixed-multiplicity face contains the family. Tested points lie on
+one-dimensional faces, and the resulting congruence invariant exposes a
+stronger route: simple-gluing transfer of rigidity. `HW-F6` is redirected.
+
+The active focus is `HW-F7`. EXP-067 is declared and frozen to prove that
+`m*N+q*Gamma` transfers symmetry and `D=E+E` at the scaled shift whenever
+`gcd(q,m)=1`. If confirmed, this gives a two-parameter extension of EXP-009 and
+a focused manuscript. No EXP-067 result is claimed before its producer,
+independent audit, and symbolic proof close.
 
 Read [`research-governance.json`](research-governance.json),
 [`manuscript-map.md`](manuscript-map.md), and the

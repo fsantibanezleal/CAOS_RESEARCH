@@ -15,8 +15,9 @@ The line may reopen only for one of three theorem-sized objectives:
    beyond this family.
 
 Failure to reach one of these targets in the next bounded theorem attempt is a
-stop condition, not a reason for a wider sweep. The active program focus has
-moved to `HW-F6`, counterexample-mechanism classification in Kunz coordinates.
+stop condition, not a reason for a wider sweep. The program first moved to
+Kunz preflight `HW-F6`; that route corrected its varying-multiplicity premise
+and redirected to active `HW-F7`, simple-gluing transfer of rigidity.
 See `research-governance.json` and `manuscript-map.md`.
 
 The integral companion v0.04 already includes EXP-063--066 at DOI

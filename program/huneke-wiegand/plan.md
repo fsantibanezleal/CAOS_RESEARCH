@@ -8,12 +8,11 @@ ongoing CAOS work.
 
 Priority order:
 
-1. **HW-F6, counterexample-mechanism classification.** Complete a current
-   primary-source review of Kunz polyhedra, numerical-semigroup faces, and
-   two-generated rigidity criteria. State one face or block model independently
-   of the existing parameter formula. Run only the smallest distinguishing
-   invariant on `p=4,...,8`. Declare EXP-067 only if this preflight yields a
-   theorem-sized necessary-and-sufficient, maximality, or no-stable-face target.
+1. **HW-F7, simple-gluing rigidity transfer.** Run the already declared and
+   frozen EXP-067. Prove the Apery, exponent-set, and `D=E+E` transfer formulas;
+   validate them independently; retain the `<4,5>` negative control. This
+   supersedes the ill-posed idea that one face contains all varying
+   multiplicities.
 2. **Focused manuscript preparation.** Freeze consolidated v0.25 as the source
    record. Prepare three future submission narratives only after dependency and
    overlap audits: direct counterexample extensions, conductor algebra, and
