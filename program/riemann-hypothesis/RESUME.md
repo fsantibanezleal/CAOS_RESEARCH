@@ -4,8 +4,9 @@
 
 Read [state.md](state.md), [backlog.md](backlog.md), [plan.md](plan.md), then the
 latest source verdicts. Evidence outranks this handoff. Public release v0.65.000
-is released and live-verified; v0.02 is published at DOI 10.5281/zenodo.22728744
-and the four-record replay is integrated. The release commit
+is released and live-verified. EXP-005 is confirmed with an explicit
+simple-critical positivity threshold in $(0.5459,0.546)$; manuscript and public
+replay integration of this fifth experiment are in flight. The release commit
 `24a2cb250e44fa59c9f6a56c86eefdf009258e70` (tag `v0.65.000`), CI and Pages runs,
 and the live receipt are recorded below; the general RH remains open.
 
@@ -19,7 +20,7 @@ and the live receipt are recorded below; the general RH remains open.
 | EXP-002 certificate | Three-point compact energy certificate | Published v0.01 archive |
 | EXP-003 pressure certificate | Odd-frame pressure improvement at $\theta=3/4$ | Confirmed 16,797-node replay |
 | EXP-004 parity transfer | Qualitative fixed-exponent range extension | Confirmed exact run and proof review |
-| EXP-005 local Selberg transfer | Candidate explicit odd-density curve and theta=0.546 simplicity consequence | Declared; canonical certificate and proof review pending |
+| EXP-005 local Selberg transfer | Explicit odd-density curve and theta=0.546 simplicity consequence | Confirmed proof, exact certificate and adversarial review |
 | Alternative route dossiers | Spectral, Nyman--Beurling, Li/Weil, heat-flow and mollifier options | Source-reviewed proposals with open gates |
 
 ## 3. Experiment index
@@ -31,7 +32,7 @@ and the live receipt are recorded below; the general RH remains open.
 | EXP-003 A | Odd-frame amplification with the prior certificate | confirmed |
 | EXP-003 B | New pressure inequality and more than 25% gain over A | confirmed |
 | EXP-004 | Parity density transfer below the cosine positivity threshold | confirmed; proof review and exact arithmetic committed in fbc4f9f |
-| EXP-005 | Localize Pearce-Crump's optimized sign detector and combine it with EXP-004 | declared 2026-09-19; unexecuted |
+| EXP-005 | Localize Pearce-Crump's optimized sign detector and combine it with EXP-004 | confirmed; threshold in $(0.5459,0.546)$ and fixed-point certificate at $0.546$ |
 
 The [EXP-003 verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/verdict.md), [proof](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/mathematical-proof.md),
 [audit](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/adversarial-audit.md), and [results](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/artifacts/result.json) give the
@@ -50,15 +51,26 @@ on a nearby range. The constants $\kappa$, $\theta_1$ and the effective onset re
 unquantified. See [the complete proof](../../problems/number-theory/riemann-hypothesis/wiki/07-parity-density-transfer.md)
 and [confirmed verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/verdict.md).
 
+## 3b. Confirmed EXP-005 result
+
+For every fixed $1/2<\theta<1$, the local Selberg theorem proves
+
+$$
+\liminf O(T,T^\theta)/N(T,T^\theta)\ge(\theta-1/2)/(4eC_3).
+$$
+
+The EXP-004 transfer then gives an explicit simple-critical positivity threshold
+in $(0.5459,0.546)$. At $\theta=0.546$, fixed $u=0.02299$ proves
+$\liminf S/N>0.00009762394133453968$. The canonical result hash is
+`3f0ca476c0e2fe688e4e4f43fc11861d9491b3066d067e46bf88d1a441c696a5`.
+See the [complete proof](../../problems/number-theory/riemann-hypothesis/wiki/08-local-selberg-transfer.md)
+and [confirmed verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/verdict.md).
+
 ## 4. In flight
 
-The user's latest request explicitly asks for alternatives across mathematical areas
-and a more relevant result. EXP-005 is now declared from a new post-cutoff source.
-Pearce-Crump's coefficient-uniform arbitrary-subinterval estimate suggests an
-explicit odd-critical density for every fixed interval exponent above one half.
-The frozen target combines that density with EXP-004 and tests a positive
-simple-critical proportion at theta=0.546. Source preflight is complete;
-implementation, the canonical certificate, proof review, and verdict are pending.
+The research result is closed. In flight are the required manuscript expansion,
+Zenodo new version, public replay integration, scoped promotion and serialized
+release verification. The current live v0.65.000 evidence remains immutable.
 
 Completed source dossiers also investigate:
 
@@ -82,11 +94,12 @@ The published v0.01 archive remains byte-identical.
 
 ## 5. Next actions
 
-Implement and run EXP-005 exactly as declared, then adjudicate every localization
-error term independently before writing a verdict. Preserve the released
-v0.65.000 evidence. Publication and a new serialized release are considered only
-if the explicit short-interval theorem survives both the certificate and proof
-review; existing rendered QA and live verification receipts remain immutable.
+1. Expand the manuscript from the EXP-005 verdict and audit, pass the scientific
+   voice gate, build twice, render every page and publish a Zenodo new version.
+2. Bake EXP-005 into the public replay, run the full repository and frontend gates,
+   and complete rendered desktop/phone checks.
+3. Promote through the scoped research and serialized release PRs, then record
+   exact live hashes and UI verification. Preserve v0.65.000 receipts unchanged.
 
 ## 6. Where everything lives
 
@@ -108,3 +121,5 @@ counts differ. The Hilbert pair sum uses ordinary complex squares. Test function
 support are fixed before height limits. A numerical energy certificate is a finite
 premise, not a stand-alone zeta theorem. Imported pressure/stability frameworks retain
 their authorship; dated source searches do not guarantee priority or peer acceptance.
+For EXP-005, keep $u$ fixed during the height limit; the boundary choice
+$1/2+2u=\theta$ is rejected because it loses off-diagonal decay.

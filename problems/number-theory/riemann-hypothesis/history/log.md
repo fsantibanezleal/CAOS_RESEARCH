@@ -1,5 +1,25 @@
 # Riemann hypothesis history
 
+## 2026-09-19: EXP-005 confirmed an explicit threshold below 0.546
+
+Declaration `6fd59fec51dda399de40e0327107dba42deb5b45` preceded implementation
+and all canonical execution. Pearce-Crump's coefficient-uniform Selberg
+detector was localized by retaining the arbitrary-subinterval form of its
+rational-frequency estimate. For every fixed $1/2<\theta<1$, the resulting
+distinct odd-critical lower proportion is $(\theta-1/2)/(4eC_3)$. Combining it
+with EXP-004 gives an explicit simple-critical positivity threshold in
+$(0.5459,0.546)$, improving Wang's reported cosine threshold.
+
+At $\theta=0.546$, a fixed legal mollifier exponent proves odd-critical
+proportion above $0.00643869330937194$ and simple-critical proportion above
+$0.0000976239413345397$. The exact certificate passed all fourteen controls;
+its result hash is
+`3f0ca476c0e2fe688e4e4f43fc11861d9491b3066d067e46bf88d1a441c696a5`.
+The analytic audit checked every shortened-interval error term, normalization,
+count convention and limit order. Two serialization attempts are retained as
+failed/superseded evidence. The result is asymptotic, recent-preprint dependent,
+and not a solution of RH.
+
 ## 2026-09-12: EXP-004 confirmed and v0.02 published
 
 Declaration `e03413b2301bf45ca68ff6e945f25add9a1c3a89` preceded implementation and

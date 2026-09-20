@@ -17,6 +17,8 @@ The primary baseline consists of the original and revised Anthropic PDFs, Alpoge
 arXiv:2608.13637, Lamzouri arXiv:2609.02882v1/v2, Wang arXiv:2609.07918v1, the BGSTB
 pair-correlation papers, AxiomMath/ZetaZerosV2, and anthropics/formal-math. The later
 ainta/trmdy stability candidates are audited separately from the established source theorem.
+The September 19 extension also includes Pearce-Crump arXiv:2609.15329v1 and
+the open AxiomMath unconditional-formalization pull request at its pinned head.
 Version-pinned downloads, source licenses, hashes, and reproducibility instructions belong
 in `problems/number-theory/riemann-hypothesis/context/`.
 
@@ -76,3 +78,15 @@ now frozen and published as v0.02 at DOI 10.5281/zenodo.22728744 after a two-pas
 21-page rendered review. Finish the bilingual replay, scoped promotion, serialized
 release, all-page/rendered checks and exact live verification in the same delivery
 round. The v0.01 publication and archive remain unchanged.
+
+## Confirmed explicit local transfer
+
+EXP-005 was declared in `6fd59fec` before implementation and canonical
+execution. It is confirmed in `5132beed`. The source's arbitrary-subinterval
+rational-frequency estimate gives an off-diagonal exponent
+$1/2+2u-\theta$ and therefore an explicit odd-critical density throughout
+$\theta>1/2$. The EXP-004 parity identity converts it into a simple-critical
+positivity threshold in $(0.5459,0.546)$. The exact certificate, retained
+serialization failures, analytic audit and proof-review binding are committed.
+The remaining delivery work is the manuscript version, public replay, scoped
+promotion and live release verification; none changes the open status of RH.

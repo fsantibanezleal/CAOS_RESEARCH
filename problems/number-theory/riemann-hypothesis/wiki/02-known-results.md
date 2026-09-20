@@ -163,6 +163,23 @@ $o(N)$ and therefore does not alone refute the asymptotic theorem. The
 [exact reproduction verdict](../experiments/EXP-001-source-and-constant-audit/verdict.md)
 records this limited conclusion.
 
+## Optimized Selberg detector and explicit localization
+
+Pearce-Crump's 2026 preprint gives a coefficient-uniform sign-preserving
+Selberg detector with a certified rank-three diagonal constant and an
+off-diagonal lemma formulated for arbitrary subintervals of a dyadic block.
+The global source theorem exceeds seven percent on the critical line. EXP-005
+uses the arbitrary-subinterval quantifier to retain the true averaging length
+$H=T^\theta$, producing a normalized error
+$O(T^{1/2+2u-\theta}\log T)$.
+
+The resulting [local theorem](08-local-selberg-transfer.md) gives explicit
+distinct odd-critical density throughout $\theta>1/2$ and, after the EXP-004
+parity transfer, a simple-critical positivity threshold in $(0.5459,0.546)$.
+The source's global percentage, detector construction and certified profile
+remain attributed prior work; the localized theorem and its parity combination
+are the scoped derived contribution.
+
 [Previous: statement](01-statement.md) | [Next: full proof](03-mechanism.md)
 
 

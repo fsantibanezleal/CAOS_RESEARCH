@@ -1,5 +1,23 @@
 # Riemann hypothesis: short-interval zero proportions
 
+[D+MV] EXP-005 supplies the first explicit interval-range improvement in this
+record. For every fixed $1/2<\theta<1$, it proves
+
+$$
+\liminf\frac{O(T,T^\theta)}{N(T,T^\theta)}
+\ge\frac{\theta-1/2}{4eC_3},
+$$
+
+where $O$ counts distinct odd-multiplicity critical zeros and $C_3$ is
+Pearce-Crump's certified rank-three constant. Combining this with EXP-004
+places the simple-critical positivity threshold in $(0.5459,0.546)$, below
+Wang's reported cosine threshold $0.550193964744154\ldots$. At
+$\theta=0.546$, a fixed legal mollifier proves
+$\liminf S/N>9.7623941\times10^{-5}$. The
+[complete local proof](08-local-selberg-transfer.md) and
+[confirmed verdict](../experiments/EXP-005-local-selberg-transfer/verdict.md)
+state the assumptions and limits. General RH remains open.
+
 [D+MV] EXP-004 proves a qualitative extension of the interval range for a
 positive proportion of simple critical zeros. Let
 
@@ -78,6 +96,7 @@ did not locate an identical short-interval theorem; it does not guarantee priori
 5. [Open questions and rejected approaches](05-open-questions.md)
 6. [Complete odd-frame pressure theorem](06-odd-frame-pressure.md)
 7. [Complete parity density transfer and interval-range theorem](07-parity-density-transfer.md)
+8. [Explicit local Selberg transfer and numerical positivity threshold](08-local-selberg-transfer.md)
 
 The new certificate uses $p=1/12500$, $\epsilon=443239/10^9$, $k=2256$ and
 frame size $4513$. All 16,797 partition nodes were checked, with 8,351 energy-plus-pressure
@@ -86,7 +105,7 @@ leaves, 48 pressure-only leaves and no unresolved cells. Construction used Arb a
 Both paths share Arb, partition geometry and a Lipschitz estimate. They are not an
 independent complete verifier or an end-to-end Lean proof.
 
-The [source manifest](../context/source-manifest.json) records 62 source documents/pages and six
+The [source manifest](../context/source-manifest.json) records 64 source documents/pages and seven
 licensed repository snapshots with versions, sizes, hashes and licenses. Original
 documents remain in the local repository cache where redistribution rights were
 not identified. Licensed snapshots retain their notices. The [bibliography](../references.md)
@@ -101,5 +120,6 @@ peer review or mathematical community acceptance.
 
 Evidence labels: **[D]** derived with a persisted proof and refutation attempt;
 **[MV]** machine-verified finite assertion; **[C]** conjectural direction. This work
-establishes a qualitative positivity-range extension. It does not give a new
-decimal exponent, effective height, global record, or solution of RH.
+establishes an explicit positivity threshold below $0.546$. It does not give
+an effective height, global record, universal simplicity theorem, or solution
+of RH.

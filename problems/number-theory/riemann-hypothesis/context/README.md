@@ -17,7 +17,7 @@ reported honestly in the dossiers and was concentrated on theorem dependencies a
 | [Spectral and optimization alternatives](2026-09-12-spectral-optimization-alternatives.md) | Negative spectrum, witnesses, conditioning and missing higher moments |
 | [Alternative RH reformulations](2026-09-12-alternative-rh-reformulations.md) | Approximation, positivity, spectral and heat-flow criteria with obstructions |
 | [Pressure-frame prior art](2026-09-12-pressure-frame-prior-art.md) | Multi-point pressure, mixed certificates, global capacity methods and the next short-interval question |
-| [Local optimized Selberg transfer](2026-09-19-local-selberg-transfer.md) | Pearce-Crump's explicit detector, the Axiom unconditional-formalization update, and the EXP-005 short-interval localization preflight |
+| [Local optimized Selberg transfer](2026-09-19-local-selberg-transfer.md) | Pearce-Crump's explicit detector, the Axiom unconditional-formalization update, and the now-confirmed EXP-005 short-interval localization |
 
 Full text whose public redistribution permission was not identified is retained locally in
 `source-cache/`. The public record contains provenance and independently authored analysis.

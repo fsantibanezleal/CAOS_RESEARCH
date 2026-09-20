@@ -1,14 +1,17 @@
 # Riemann hypothesis state
 
 Updated: 2026-09-19. Release: **0.65.000**, released and live-verified from release commit `24a2cb250e44fa59c9f6a56c86eefdf009258e70` (tag `v0.65.000`).
-Current research round: **EXP-005 declared; local optimized-Selberg transfer pending canonical validation**.
+Current research round: **EXP-005 confirmed; explicit local Selberg transfer and threshold below 0.546**.
 
 EXP-005 responds to Pearce-Crump arXiv:2609.15329v1, which appeared after the
-prior source cutoff. Its coefficient-uniform arbitrary-subinterval estimate may
-localize the sign-preserving Selberg detector to every fixed exponent above one
-half. Combined with EXP-004, the declared target is an explicit positive
-simple-critical proportion at theta=0.546. Source preflight is complete; no
-canonical run or confirmed new theorem is recorded yet.
+prior source cutoff. Its coefficient-uniform arbitrary-subinterval estimate
+localizes the sign-preserving Selberg detector to every fixed exponent above one
+half. The confirmed theorem gives odd-critical liminf at least
+$(\theta-1/2)/(4eC_3)$. Combined with EXP-004, exact controls place the new
+simple-critical positivity threshold in $(0.5459,0.546)$. At theta=0.546, a
+fixed legal mollifier proves simple-critical proportion above
+$0.00009762394133453968$. The canonical result hash is
+`3f0ca476c0e2fe688e4e4f43fc11861d9491b3066d067e46bf88d1a441c696a5`.
 
 EXP-004 has a separate confirmed verdict and proof-review record. It proves a
 qualitative extension of the simple-critical positivity range below Wang's
@@ -47,12 +50,14 @@ reformulations. Commit be5aac4 preserves the cross-area review and verified arch
 EXP-004 was declared and pushed in e03413b before implementation or computation.
 Its finite parity certificates, source conventions, seed packing and legal support
 limits, complete proof, exact runner, final proof review and verdict are confirmed.
-No further computational family is declared.
+EXP-005 is confirmed in `5132beed` after a source-bound exact certificate and
+term-by-term analytic audit. No further computational family is declared.
 
 EXP-003 does not lower the positivity exponent or solve RH. EXP-004 confirms a
-qualitative extension below the zero of Wang's cosine curve. Its imported classical
-density is positive but unspecified; no new decimal exponent is claimed. General
-RH remains open.
+qualitative extension below the zero of Wang's cosine curve. EXP-005 replaces
+the unspecified density for $\theta>1/2$ by an explicit curve and proves the
+decimal threshold bracket above. The result has no effective onset height.
+General RH remains open.
 
 The first release closure is recorded in [its live receipt](release-0.64.000/live-verification.json):
 public PRs #263/#264 merged, main 08660dc, tag v0.64.000, successful Pages run

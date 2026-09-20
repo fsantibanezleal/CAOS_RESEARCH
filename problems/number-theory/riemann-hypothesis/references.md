@@ -230,6 +230,23 @@ apparently new short-interval consequence from inherited global methods.
 
 ## Local derived record and publication status
 
+23. **Andrew Pearce-Crump.** *Optimising Selberg's method for critical
+    zeros.* [arXiv:2609.15329v1](https://arxiv.org/abs/2609.15329v1).
+    Submitted September 14, 2026. The sign-preserving positive-semidefinite
+    detector, coefficient-uniform approximate functional equation,
+    arbitrary-subinterval rational-frequency estimate, and certified
+    rank-three profile are imported by EXP-005. The source states a global
+    critical-line proportion above seven percent; the short-interval
+    localization is the separate derived result recorded here.
+
+24. **AxiomMath.** *ZetaZerosV2*, pull request
+    [#1](https://github.com/AxiomMath/ZetaZerosV2/pull/1), inspected at head
+    `02dfc0b1c63d12e6d39649a0bbe08dfc7ef6cf75`.
+    The inspected CI run passed and the new unconditional exports report only
+    standard Lean axioms. The pull request formalizes global inputs and four
+    headline bounds; it does not formalize Wang's short-interval theorem,
+    EXP-004, or the EXP-005 localization.
+
 The [EXP-001 verdict](experiments/EXP-001-source-and-constant-audit/verdict.md)
 is the authority for exact formula reproduction, source-integrity checks,
 and the normalization correction. The

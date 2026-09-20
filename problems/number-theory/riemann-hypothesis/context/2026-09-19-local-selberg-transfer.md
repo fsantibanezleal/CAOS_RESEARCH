@@ -1,7 +1,9 @@
 # Localizing the optimized Selberg detector
 
-Date: 2026-09-19. Status: primary-source preflight and candidate derivation for
-EXP-005. No canonical certificate run has occurred at this stage.
+Date: 2026-09-19. Status: source preflight frozen before EXP-005; the later
+[confirmed verdict](../experiments/EXP-005-local-selberg-transfer/verdict.md)
+and [adversarial audit](../experiments/EXP-005-local-selberg-transfer/adversarial-audit.md)
+are the authority for the completed result.
 
 ## 1. New source and why it changes the route
 
@@ -187,3 +189,20 @@ if every localization step survives proof review. It is not a proof of RH, an
 effective starting height, a claim that all critical zeros are simple, or a new
 global record. The finite certificate will verify constants and inequalities;
 it cannot substitute for the analytic localization proof.
+
+## 8. Post-preflight adjudication
+
+EXP-005 passed its exact certificate and term-by-term analytic review. For every
+fixed $1/2<\theta<1$, the confirmed deduction is
+
+$$
+\liminf_{T\to\infty}\frac{A(T,T^\theta)}{N(T,T^\theta)}
+\ge\frac{\theta-1/2}{4eC[q_3]}.
+$$
+
+Combining it with EXP-004 gives the simple-critical curve in (5). Exact rational
+enclosures prove that its new term is negative at $0.5459$ and positive at
+$0.546$; symbolic differentiation proves strict monotonicity. The unique new
+positivity threshold is therefore in $(0.5459,0.546)$. At $0.546$, a fixed
+strictly legal mollifier exponent proves a simple-critical lower proportion
+above $9.7623941\times10^{-5}$. General RH remains open.
