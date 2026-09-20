@@ -21,8 +21,8 @@ though their pressure-only bound is much stronger. The declaration made that
 case diagnostic, so the corrected gate classifies and records its sign instead
 of assuming it is positive.
 
-The final run passed from clean commit
-`d63111ffa8a348c51eb4fd06f5a1e70a51211576`. Machine artifacts certify exact
+The portable canonical run passed from clean commit
+`5d7e7a6a73e433a7ff9f6628815d54243425afa9`. Machine artifacts certify exact
 finite arithmetic and numerical enclosures. The universal theorem depends on
 `mathematical-proof.md` and `adversarial-audit.md`.
 

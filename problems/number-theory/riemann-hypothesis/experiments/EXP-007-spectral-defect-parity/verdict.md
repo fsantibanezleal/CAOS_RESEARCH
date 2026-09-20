@@ -2,8 +2,8 @@
 
 Date: 2026-09-20. The declaration was committed at
 `a2abdcc8360399b3fa42aaea9245e4b83352c30f` before implementation or
-computation. The canonical certificate ran from clean commit
-`d63111ffa8a348c51eb4fd06f5a1e70a51211576`.
+computation. The portable canonical certificate ran from clean commit
+`5d7e7a6a73e433a7ff9f6628815d54243425afa9`.
 
 **Verdict: confirmed.** This is an internally reviewed finite deduction and
 short-interval consequence from attributed inputs. It does not establish
@@ -114,8 +114,9 @@ objective rather than imported from a different headline.
 [MV] The canonical result is
 [`artifacts/canonical/result.json`](artifacts/canonical/result.json), schema
 `riemann-exp007-results-v1`, SHA-256
-`ad635c5b60c4bcae63199fb54a7979a02206ce0ee572853b2df13933dafc320c`.
-It records PASS from a clean commit in 94.719 seconds.
+`98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947`.
+It records PASS from a clean commit in 95.468 seconds. The exact CRLF result
+bytes cited by manuscript v0.07 remain in `artifacts/windows-canonical-v1/`.
 
 The runner checked 652,260 rational spectral profiles, 18,479 multiplicity
 profiles, exact source hashes, a correlated directed-rational gain, and overlap
