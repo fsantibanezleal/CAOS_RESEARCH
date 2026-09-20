@@ -1,0 +1,175 @@
+{
+  "schema": "riemann-release-qa-v4",
+  "release": "0.71.000",
+  "recorded_utc": "2026-09-20T04:56:17.775047Z",
+  "base_develop_merge": "56ef56e9bc11e6ed66db42c58abec25b7d549335",
+  "tests": {
+    "research_pr_ci": {
+      "passed": 428,
+      "run": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/35489209884"
+    },
+    "riemann_scoped": "107 passed",
+    "exporter": "PASS",
+    "frontend": "18 passed",
+    "ruff": "PASS",
+    "content_guard": "PASS",
+    "structure_guard": "PASS",
+    "template_guard": "PASS",
+    "artifact_contract": "PASS",
+    "pipeline_bake": "PASS",
+    "typescript_build": "PASS"
+  },
+  "browser": {
+    "harness": "scripts/verify_riemann_ui.mjs",
+    "scenarios": 20,
+    "research_tab_visits": 120,
+    "screenshots": 2632,
+    "failures": 0,
+    "console_errors": 0,
+    "console_warnings": 0,
+    "page_errors": 0,
+    "request_failures": 0,
+    "http_errors": 0,
+    "matrix": [
+      "1440x1000",
+      "390x844",
+      "1280x800",
+      "1600x900",
+      "2560x1440"
+    ],
+    "languages": [
+      "en",
+      "es"
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "content": "all successive content viewports, proof stages, six experiment records, disclosures and architecture panels",
+    "raw_receipt": {
+      "path": "tmp/riemann-ui-v071-pass/receipt.json",
+      "bytes": 74077417,
+      "sha256": "ee9b36966490deb3ee8dcf0887c5f832d9b712fb8b417ab11034deea99904492"
+    }
+  },
+  "build_files": [
+    {
+      "path": "frontend/dist/index.html",
+      "bytes": 591,
+      "sha256": "05ac56cf7dfe9519aacd6106783d03c2ebdc7f8c12fe2e6332f384ecb8462fea"
+    },
+    {
+      "path": "frontend/dist/assets/ExperimentModal-CGr_8vRY.js",
+      "bytes": 176791,
+      "sha256": "25deacef175ebd46e3bdff02a5346efcec29dfb9279af88b6a2c6fddbecdcedf"
+    },
+    {
+      "path": "frontend/dist/assets/index-CcxjCEZM.js",
+      "bytes": 777234,
+      "sha256": "5dc0ce397f48b36084932a17b41061e9251c9b4dc8b11ee1572570c90cdce7d3"
+    },
+    {
+      "path": "frontend/dist/assets/index-CftVb1pP.css",
+      "bytes": 64941,
+      "sha256": "8c6d51e7dca5b59c12f7754bd5b316540ebe217d043d67bc4fe6e8e2247b3e78"
+    }
+  ],
+  "data_files": [
+    {
+      "path": "data/derived/research/experiments.json",
+      "bytes": 2111463,
+      "sha256": "5d7c97cd06ebd0300c3c3429a0fbcb07c24b8b7b91f09449d9e9de2bcd588b1e"
+    },
+    {
+      "path": "data/derived/research/jacobian.json",
+      "bytes": 3831,
+      "sha256": "1c719c90e7796e4585e26f79f6cd0c700cc902659270b323870a62afd7a21023"
+    },
+    {
+      "path": "data/derived/research/portfolio.json",
+      "bytes": 3782,
+      "sha256": "6fdc0a23d814dd9f7d665123a42dec1acc9c25b84ef887cf3eb38c5478abc7bc"
+    },
+    {
+      "path": "data/derived/research/riemann.json",
+      "bytes": 866860,
+      "sha256": "7afb078f8ac7d33adb192556f50b06bedf6ae22fa2a527f6310f2783de93b9bf"
+    },
+    {
+      "path": "data/derived/manifests/index.json",
+      "bytes": 385,
+      "sha256": "c7876e573a0f4f0cd662351aed089fe3fd685b55f660881f5dfb85480ce7f337"
+    },
+    {
+      "path": "data/derived/manifests/riemann.json",
+      "bytes": 18727,
+      "sha256": "0fc79aeee375e0d34c3622c459c0ca66366175c8606d06d2701c7f74e0b94082"
+    }
+  ],
+  "manuscript": {
+    "path": "manuscripts/riemann-hypothesis/short-interval-stability/main.pdf",
+    "bytes": 545773,
+    "sha256": "dde6f2c9a6c0a9b46e66c9d44efc5786d1239dd1ada7664083a6d2134c452082",
+    "doi": "10.5281/zenodo.22852479",
+    "pages": 26
+  },
+  "canonical_result": {
+    "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/artifacts/canonical/result.json",
+    "bytes": 681484,
+    "sha256": "82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf",
+    "schema": "riemann-exp006-results-v2",
+    "expected_sha256": "82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf"
+  },
+  "representative_screenshots": [
+    {
+      "path": "program/riemann-hypothesis/release-0.71.000/screenshots/desktop-en-light-exp006-threshold.png",
+      "bytes": 119069,
+      "sha256": "9f1a7b27617a8de626819755bbfb23e47dd1507f83537895c90c88990079abcd"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.71.000/screenshots/desktop-en-light-exp006-verdict.png",
+      "bytes": 238223,
+      "sha256": "d1f2261a67a46593e4d03998334ef575090111228c833227e8ac570c085827c0"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.71.000/screenshots/desktop-en-light-results.png",
+      "bytes": 108784,
+      "sha256": "bc0ba539f8ee9c18589b281f0611d848040d2fc92821dbefb400baff41d4c92a"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.71.000/screenshots/desktop-en-light-science.png",
+      "bytes": 121470,
+      "sha256": "987b9afaf3b0e9618ef01dee9f3d598c6b5d0a6f8f21245f96a44bcba1e7c29d"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.71.000/screenshots/desktop-en-light-summary.png",
+      "bytes": 114691,
+      "sha256": "97ac596ddc3f5a58ab929c1a0b0e2e7ce91a1df4debf34942dd310885ac9e2d9"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.71.000/screenshots/phone-es-dark-exp006-threshold.png",
+      "bytes": 59652,
+      "sha256": "1548d55f028aee7200a80eafff66e4b639c9e33bd0b714415a95737c6523ffac"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.71.000/screenshots/phone-es-dark-exp006-verdict.png",
+      "bytes": 52190,
+      "sha256": "e49af11d1cdeaf1070e9fb2c7b3dd97dec861b803618f3ef6fc45a1d2d346df9"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.71.000/screenshots/phone-es-dark-summary.png",
+      "bytes": 57308,
+      "sha256": "bd4d48d3e658774921956a394286590a0143e9c9074c3f0efa44286af2d7d137"
+    }
+  ],
+  "deployment": {
+    "status": "candidate",
+    "research_pr": "https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/316",
+    "main_commit": null,
+    "tag": "v0.71.000",
+    "release": null,
+    "ci_run": null,
+    "pages_run": null,
+    "live_receipt": null
+  }
+}

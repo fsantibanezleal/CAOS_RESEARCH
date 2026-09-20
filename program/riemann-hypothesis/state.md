@@ -43,10 +43,13 @@ witness, and independent 100-digit replay passed.
 The declaration commit is
 `b1febcf8a6d5830218e1df386af1e8a92c3037be`. The original broad-bracket and
 weaker-transfer runs remain preserved. The proof, audit, verdict and source
-bindings are committed and pushed on the scoped research branch. Replay v5 is baked and tested. Manuscript v0.06 is published at
+bindings merged through research PR #316 into `develop`. Replay v5 is baked
+and tested. The release 0.71.000 candidate passed 428 Linux tests, 107 scoped
+Riemann tests, 18 frontend tests, and 20 rendered browser scenarios with zero
+failures. Manuscript v0.06 is published at
 [10.5281/zenodo.22852479](https://doi.org/10.5281/zenodo.22852479); its reviewed
-PDF matches a fresh public download. Promotion and live release verification
-remain separate delivery gates.
+PDF matches a fresh public download. Promotion to `main`, Pages byte comparison,
+and live release verification remain separate delivery gates.
 
 EXP-005 remains the analytic seed: for every fixed `1/2<theta<1`, it gives odd
 critical support density at least `(theta-1/2)/(4eC3)`. EXP-004 provides the
@@ -60,6 +63,9 @@ The latest completed public release is recorded in
 research PR #309, release PR #310, promotion PR #311, successful CI and Pages,
 and eight live EN/ES light/dark desktop/phone scenarios. That release stays
 immutable while EXP-006 advances through its own publication and release.
+
+The reviewed 0.71.000 release candidate and its representative rendered
+evidence are recorded in [release-0.71.000](release-0.71.000/README.md).
 
 The result is asymptotic for each fixed exponent and has no effective starting
 height. The imported 2026 preprints have been source-audited, but the work has

@@ -111,5 +111,7 @@ $0.0000168381638551244569880374399$ at theta=0.5459. The proof, exact
 certificate, scalar barrier witness, independent interval replay, audit and
 proof-review bindings are committed. Manuscript v0.06 is published at DOI 10.5281/zenodo.22852479 after a
 clean 26-page render review and exact public-byte verification. Replay v5 is
-baked and tested. Scoped promotion and live verification remain; they do not
-change the open status of RH.
+baked and tested. Research PR #316 is merged, and the 0.71.000 release candidate
+passed 428 Linux tests plus the full 20-scenario rendered matrix. Main promotion,
+Pages byte comparison, and live verification remain; they do not change the open
+status of RH.
