@@ -132,6 +132,32 @@ The exporter requires the execution receipt and proof-review bindings for the
 hypothesis, runner, focused tests, proof, audit, result and verdict. The original
 declared inequality and both superseded runs remain preserved.
 
+## Reproduce spectral-defect parity coupling
+
+EXP-007 retains `D(G)=tr Psi(G)` in the EXP-006 product and couples it to the
+pressure-frame lower bound. Its canonical theorem is
+`(Q-S-D(G))(N-O)>=2(N-S)^2`. Run the exact certificate and focused tests in
+fresh paths:
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/run.py --output-dir tmp/riemann-exp007-replay --budget-seconds 180
+python -m pytest -q tests/test_riemann_spectral_defect_parity.py
+```
+
+The run checks 652,260 rational spectral profiles, 18,479 multiplicity
+profiles, a directed-rational correlated gain, source hashes, and overlap with
+an independent 100-digit interval implementation. At theta=0.5459 it proves
+`H-h3>1.3732525985593292701164661575215e-70`. The strict gain does not lower
+the onset exponent or justify another printed decimal for the baseline bound.
+The canonical result SHA-256 is
+`7b254608198f0025e490c2c169603ae68637f60d6a685a63370bc062323b0bf3`.
+
+The artifact directory preserves two failed attempts. One rejected an
+incorrect containment relation between independently rounded enclosures. The
+other rejected a positive-sign assumption for the historical theta=3/4
+sensitivity control. Fresh replay must target an empty directory and start
+from a tracked-clean commit.
+
 ## Bake and inspect the public replay
 
 After committing the source artifacts, run `python -m researchlab.pipeline all`. The Riemann

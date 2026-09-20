@@ -349,3 +349,33 @@ The [proof review](../experiments/EXP-006-hilbert-parity-compression/proof-revie
 binds the amended hypothesis, runner, focused tests, proof, audit, canonical
 result and verdict. The finite census is diagnostic; the written argument proves
 universality and the asymptotic transfer.
+
+## EXP-007: spectral-defect parity coupling
+
+The [seventh verdict](../experiments/EXP-007-spectral-defect-parity/verdict.md)
+is confirmed. The finite theorem retains the simple-real spectral defect:
+
+$$
+(Q-S-D(G))(N-O)\ge2(N-S)^2.
+$$
+
+The pressure transfer then proves `H(theta)>h3(theta)` for every fixed exponent
+where `h3` is positive. At `theta=0.5459`, the correlated exact gain exceeds
+`1.3732525985593292701164661575215e-70`. This is a strict full-curve
+improvement, not a lower onset exponent or a new printed headline decimal.
+
+The canonical run checked 652,260 rational spectra and 18,479 multiplicity
+profiles in 95.172 seconds. Its result SHA-256 is
+`7b254608198f0025e490c2c169603ae68637f60d6a685a63370bc062323b0bf3`.
+Every shared exact interval overlaps an independent 100-digit replay. The
+historical theta=3/4 control makes the coupled root worse while leaving the
+pressure-only theorem stronger, and the result records that boundary.
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/run.py --output-dir tmp/riemann-exp007-replay --budget-seconds 180
+python -m pytest -q tests/test_riemann_spectral_defect_parity.py
+```
+
+The [proof review](../experiments/EXP-007-spectral-defect-parity/proof-review.json)
+binds the declaration, runner, focused tests, proof, audit, canonical result,
+and verdict. The two failed attempts remain preserved as audit evidence.

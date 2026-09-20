@@ -8,6 +8,7 @@ reported honestly in the dossiers and was concentrated on theorem dependencies a
 | Record | Scope |
 |---|---|
 | [Source manifest](source-manifest.json) | Original URLs, versions, licenses, exact byte counts and SHA-256 |
+| [EXP-007 source manifest extension](source-manifest-exp007.json) | Additive post-release source records without changing the manifest pinned by earlier experiments |
 | [Original and successor review](2026-09-12-original-and-successor-review.md) | Historical record, original argument, later candidates and objections |
 | [Lamzouri analysis](2026-09-12-lamzouri-analysis.md) | Finite Hilbert framework, constants and prior-art barriers |
 | [Formalization audit](2026-09-12-formalization-audit.md) | Pinned Lean sources, explicit assumptions and current CI coverage |

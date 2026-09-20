@@ -231,3 +231,19 @@ range qualitatively; a separate inequality also extends distinct density above
 one half. It does not improve the already much shorter classical range for
 merely positive distinct density. The finite spectral inequalities and imported
 classical theorems retain their original attribution.
+
+## Spectral defect retained through parity
+
+EXP-007 keeps the same simple-real Gram defect used by the stability program
+through the EXP-006 product. Its finite theorem is
+
+$$
+(Q-S-D(G))(N-O)\ge2(N-S)^2.
+$$
+
+Together with the analytic pressure estimate, this strictly improves every
+positive point of the EXP-006 `h3(theta)` curve. The positivity onset remains
+unchanged because the construction needs `h3>0`. The arbitrary-parameter
+rank-trace theorem and spectral profile are attributed; the defect-parity
+coupling is the scoped deduction. See the
+[complete proof](10-spectral-defect-parity.md).

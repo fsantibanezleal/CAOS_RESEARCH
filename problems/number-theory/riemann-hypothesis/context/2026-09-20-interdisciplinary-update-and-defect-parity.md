@@ -21,7 +21,7 @@ their live heads.
 | teal-sea, [zeta-lab](https://github.com/teal-sea/zeta-lab/tree/f402358c6c3f3c838605e71dd97cb6401a6963f0) | head `f402358c6c3f3c838605e71dd97cb6401a6963f0`, September 18 | Post-September-12 changes concern prime-pair-error and Davenport-Heilbronn campaigns, not an identical short-interval parity product. The older stable rank-trace bridge is decisive prior art for the parameterized spectral defect used below. |
 
 The two new arXiv PDFs are retained in the local `source-cache` with byte sizes
-and SHA-256 hashes in `source-manifest.json`. Their arXiv license is the
+and SHA-256 hashes in `source-manifest-exp007.json`. Their arXiv license is the
 perpetual non-exclusive distribution license, so the public repository records
 provenance and hashes without relicensing or tracking the PDFs.
 

@@ -34,7 +34,7 @@ MAX_SECONDS = 180.0
 
 PINNED_INPUTS = {
     "problems/number-theory/riemann-hypothesis/context/2026-09-20-interdisciplinary-update-and-defect-parity.md":
-        "ac9381b5039c5e140a43e2723da651410c0553439019ffb71d77878faed448c0",
+        "da64258b4ecba32ab352983cdbb6de47fbe75f37c59e2d783194b5a1d8da4c11",
     "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/hypothesis.md":
         "1041a7ecb357b47a448f3c75a3aa1f3328dad982fe223be7ee7a789698c2e27b",
     "problems/number-theory/riemann-hypothesis/experiments/EXP-002-short-interval-stability/mathematical-proof.md":

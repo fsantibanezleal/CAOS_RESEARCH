@@ -2,8 +2,23 @@
 
 Updated: 2026-09-20. Public release: **0.71.000**, released and live-verified
 from main commit `8302be35cb96280692ad1333d690a63cb220f8b2` (tag
-`v0.71.000`). Current research round: **EXP-007 declared; spectral-defect
-parity coupling is under proof review and has not been computed**.
+`v0.71.000`). Current research round: **EXP-007 confirmed locally; manuscript
+and release integration are in progress**.
+
+EXP-007 strengthens the finite theorem to
+
+$$
+(Q-S-D(G))(N-O)\ge2(N-S)^2,
+$$
+
+where `D(G)=tr Psi(G)` is the simple-real Gram spectral defect already present
+in the attributed rank-trace framework. Combining it with the EXP-003 pressure
+estimate proves a strict improvement `H(theta)>h3(theta)` for every fixed
+`theta` where `h3(theta)>0`. At theta=0.5459, the correlated exact gain exceeds
+`1.3732525985593292701164661575215e-70`. This improves the complete positive
+curve but does not lower its onset exponent or justify another printed decimal.
+The canonical result SHA-256 is
+`7b254608198f0025e490c2c169603ae68637f60d6a685a63370bc062323b0bf3`.
 
 EXP-006 proves the sharp finite product
 

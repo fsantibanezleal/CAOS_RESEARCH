@@ -1,5 +1,32 @@
 # Riemann hypothesis history
 
+## 2026-09-20: EXP-007 confirmed a spectral-defect parity coupling
+
+Declaration `a2abdcc8360399b3fa42aaea9245e4b83352c30f` preceded implementation
+and computation. The proof retains the full simple-real Gram defect through
+the EXP-006 parity product:
+
+$$
+(Q-S-D(G))(N-O)\ge2(N-S)^2.
+$$
+
+The parameterized rank-trace theorem and spectral profile are attributed prior
+work. The new candidate contribution is their coupling to odd support and the
+resulting strict improvement of every positive point of the EXP-006 curve.
+At theta=0.5459 the correlated directed-rational certificate proves
+`H-h3>1.3732525985593292701164661575215e-70`. The onset bracket remains
+`(0.545884,0.545885)`.
+
+The canonical CPU run started from clean commit
+`d246eb723f1df7998bde2101007cc63b0b84266c`, checked 652,260 rational spectra
+and 18,479 multiplicity profiles, and overlapped every shared quantity with an
+independent 100-digit interval replay. Its result hash is
+`7b254608198f0025e490c2c169603ae68637f60d6a685a63370bc062323b0bf3`.
+Two failed attempts remain preserved: one corrected the relation between two
+independent interval enclosures, and one removed an unjustified positive-sign
+expectation from a diagnostic sensitivity control. The result does not solve
+RH, lower the onset exponent, or establish external priority.
+
 ## 2026-09-20: EXP-006 manuscript v0.06 published and verified
 
 The 26-page manuscript includes the sharp finite product, its complete proof,

@@ -121,6 +121,8 @@ did not locate an identical short-interval theorem; it does not guarantee priori
 7. [Complete parity density transfer and interval-range theorem](07-parity-density-transfer.md)
 8. [Explicit local Selberg transfer and numerical positivity threshold](08-local-selberg-transfer.md)
 9. [Hilbert dimension, parity compression, and the improved threshold](09-hilbert-parity-compression.md)
+10. [Spectral-defect parity coupling and the strict full-curve improvement](10-spectral-defect-parity.md)
+10. [Spectral-defect parity coupling and the strict full-curve improvement](10-spectral-defect-parity.md)
 
 The new certificate uses $p=1/12500$, $\epsilon=443239/10^9$, $k=2256$ and
 frame size $4513$. All 16,797 partition nodes were checked, with 8,351 energy-plus-pressure

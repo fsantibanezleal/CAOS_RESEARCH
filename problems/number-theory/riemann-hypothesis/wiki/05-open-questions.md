@@ -2,8 +2,10 @@
 
 The current confirmed results include the explicit pressure improvement in
 [EXP-003](../experiments/EXP-003-odd-frame-pressure/verdict.md), the parity and
-localized Selberg transfers in EXP-004/005, and the Hilbert-parity compression
-in [EXP-006](../experiments/EXP-006-hilbert-parity-compression/verdict.md).
+localized Selberg transfers in EXP-004/005, the Hilbert-parity compression in
+[EXP-006](../experiments/EXP-006-hilbert-parity-compression/verdict.md), and the
+spectral-defect coupling in
+[EXP-007](../experiments/EXP-007-spectral-defect-parity/verdict.md).
 The Riemann hypothesis remains open. The questions below go beyond those proved results.
 
 ## Further improve the explicit short-interval example
@@ -62,9 +64,10 @@ two consecutive triples.
 
 ## Push the explicit threshold closer to one half
 
-[D] EXP-005 supplied the quantitative odd-support seed, and EXP-006 retained
-the Hilbert dimension before scalar compression. The resulting explicit root
-lies in $(0.545884,0.545885)$. The scalar headline bounds alone still permit
+[D] EXP-005 supplied the quantitative odd-support seed, EXP-006 retained the
+Hilbert dimension before scalar compression, and EXP-007 retained the full
+simple-real spectral defect. EXP-007 strictly raises every positive point but
+does not move the root in $(0.545884,0.545885)$. The scalar headline bounds alone still permit
 $S=0$ at $\theta=0.5459$; the exact triple/double witness records that barrier.
 
 [C] A further threshold gain now requires a stronger reproducible odd-support
@@ -147,7 +150,7 @@ and verification command were checked.
 |---|---|
 | Reoptimize the single cosine density | The Montgomery-Taylor extremal problem and broader bandlimited optimum are already solved. |
 | Certify more digits of $C_0,C_1,C_2$ | Arithmetic reproduction does not improve the theorem. |
-| Claim the free coefficient in the multiplicity block inequality | Anthropic's pinned `RankTraceMult.lean` already proves the arbitrary-parameter result, with abstract sharpness in `TightMult.lean`; EXP-006 attributes it and claims only the parity-compressed product and transfer. |
+| Claim the free coefficient in the multiplicity block inequality | Anthropic's pinned `RankTraceMult.lean` already proves the arbitrary-parameter result, with abstract sharpness in `TightMult.lean`; EXP-006 and EXP-007 attribute it and claim only their parity couplings and transfers. |
 | Claim the additive-root obstruction itself | It occurs in the inspected Ainta line of work. |
 | Transfer a higher conditional pair-correlation constant unconditionally | The missing analytic hypothesis does not follow from finite optimization. |
 | Infer the distinct bound from a naive simple-zero count inequality | Higher multiplicities invalidate that heuristic; the valid companion uses the stronger signed-operator inequality. |
@@ -161,9 +164,10 @@ this program has independently validated.
 
 ## Priority and review
 
-The live search cutoff is 2026-09-12. Searches included the exact Wang arXiv
+The live search cutoff is 2026-09-20. Searches included the exact Wang arXiv
 identifier, short intervals with stability, simple zeros with Gram methods,
-and the direct Ainta/trmdy successor sources. No matching short-interval
+the direct Ainta/trmdy/teal-sea successor sources, and the September 14-15
+arXiv updates. No matching short-interval
 strict-improvement theorem was located. This is positive evidence for a
 candidate contribution, not proof that no earlier or concurrent result exists.
 

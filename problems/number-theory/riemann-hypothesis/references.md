@@ -247,6 +247,26 @@ apparently new short-interval consequence from inherited global methods.
     headline bounds; it does not formalize Wang's short-interval theorem,
     EXP-004, or the EXP-005 localization.
 
+25. **Eric Dubon.** *Zero-Density Concentration for Dirichlet Polynomials.*
+    [arXiv:2609.17875v1](https://arxiv.org/abs/2609.17875v1), submitted
+    September 15, 2026. The Jessen-potential, Bohr-lift, and
+    anti-concentration results concern zeros of finite Dirichlet truncations.
+    They do not by themselves transfer to nontrivial zeros of zeta.
+
+26. **Joseph Najnudel and Ashkan Nikeghbali.** *Cauchy laws associated with
+    the zeros of the Riemann zeta function.*
+    [arXiv:2609.15862v1](https://arxiv.org/abs/2609.15862v1), submitted
+    September 14, 2026. The projected-ordinate Cauchy limit is unconditional.
+    Its stronger log-derivative comparison requires a separate small-total-
+    horizontal-displacement condition, so it is recorded as a possible
+    interface rather than evidence for RH.
+
+27. **teal-sea.** *zeta-lab*, inspected at
+    [`f402358c6c3f3c838605e71dd97cb6401a6963f0`](https://github.com/teal-sea/zeta-lab/tree/f402358c6c3f3c838605e71dd97cb6401a6963f0).
+    The stable bridge identifies Ainta's `Psi` with the `c=2` eigenbasis form
+    of Anthropic's `gc`. EXP-007 treats that parameterized spectral content as
+    prior art and claims only the defect-parity coupling and its transfer.
+
 The [EXP-001 verdict](experiments/EXP-001-source-and-constant-audit/verdict.md)
 is the authority for exact formula reproduction, source-integrity checks,
 and the normalization correction. The
