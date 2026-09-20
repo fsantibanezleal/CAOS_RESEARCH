@@ -1,6 +1,25 @@
 # Huneke-Wiegand extensions - state
 
-Current heartbeat: 2026-09-20. **EXP-062 is CONFIRMED and committed/pushed at
+Current heartbeat: 2026-09-20. **The program has completed a strategic and
+manuscript reconciliation after EXP-066.** The broad conjecture is already
+false and is not a CAOS target. The currently active item is the bounded
+`HW-F6` preflight on counterexample-mechanism classification in Kunz
+coordinates. It must pass a fresh primary-source review and a smallest-case
+invariant test before EXP-067 may be declared.
+
+The prior carrier path is retained as `HW-F5` but gated. It reopens only for a
+canonical comparison plus a complete kernel, complete 2-primary quotient, or
+reusable integral Morse theorem. More bounded carrier tables do not qualify.
+The authoritative strategy and publication routing are
+`research-governance.json` and `manuscript-map.md`.
+
+Publication state is reconciled: consolidated v0.25 DOI
+`10.5281/zenodo.22835108`, curvilinear v0.04 DOI
+`10.5281/zenodo.22835118`, and integral companion v0.04 DOI
+`10.5281/zenodo.22859408`. EXP-066 is included in the last paper. No new
+mathematics or Zenodo version is created by the reconciliation.
+
+Superseded mathematical heartbeat: **EXP-062 is CONFIRMED and committed/pushed at
 `ebcfa20`: the full original integral cokernel has a direct summand `(Z/2)^q`
 for every p>=8, with `q=floor(((p-2)^2+3)/12)`.** The explicit classes are
 indexed by all distinct nonnegative triples of sum p-2. Signed twice-class
@@ -41,13 +60,11 @@ Next rank is explicit all-parameter witnesses and transformed duals for the two
 named endpoint triangles, then the upper bound, then structural parameter
 transport. No next experiment is declared.
 
-The complementary manuscript, **A quadratic family of integral two-torsion
-classes in a Huneke-Wiegand Koszul presentation**, is published at DOI
-`10.5281/zenodo.22835126` (v0.03; concept `10.5281/zenodo.22342975`). Fresh
-public metadata and all 504,764 PDF bytes passed unauthenticated verification
-on 2026-09-20, SHA-256
-`18566d72619b18f174c69cc34abb5ee2b78ff25481ff5d098ec9570d29bbc0ac`.
-EXP-063/064 do not meet the next-version gate. The 18-page all-page QA and
+Historical publication checkpoint: the complementary manuscript, **A quadratic
+family of integral two-torsion classes in a Huneke-Wiegand Koszul
+presentation**, was then published at DOI `10.5281/zenodo.22835126` as v0.03.
+It was later superseded by v0.04, DOI `10.5281/zenodo.22859408`, without
+overwriting the earlier version. The 18-page v0.03 all-page QA and
 mathematical gates remain complete. PR #253 merged at `4073d73`; checked PR #257
 promoted to main at `4aed2b0`, followed by work/develop synchronization.
 Issue #252 is closed. Management PR #616 merged at `7ff09f87`, with its

@@ -46,7 +46,9 @@ affecting these claims, or a material reproducibility improvement. Priorities
 are explicit integral maps to the isolated/relative presentations, then a
 primitive complement or upper bound, then recurrence. Additional finite ranks
 alone do not meet this gate. A new paper is unnecessary until the mathematical
-scope genuinely separates from this source/dual theory.
+scope genuinely separates from this source/dual theory. The authoritative
+current scope audit is `claim-audit-v0.04.md`; research focus `HW-F5` is gated
+by `program/huneke-wiegand/research-governance.json`.
 
 The DOI was reserved under an earlier annihilator-only draft title. The title
 and scope were strengthened before initial publication; the reservation receipt

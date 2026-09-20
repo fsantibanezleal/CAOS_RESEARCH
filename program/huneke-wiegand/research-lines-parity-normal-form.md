@@ -1,6 +1,29 @@
 # Parity-normal-form research lines
 
-## Current route after the exact finite carrier comparison, 2026-09-20
+## Current disposition after EXP-066, 2026-09-20
+
+This research line is **gated** under focus `HW-F5`. EXP-066 supplies uniform
+support-one sources for the two endpoint rows in the semantic projection, so
+another endpoint search or bounded carrier table has no adequate success gate.
+
+The line may reopen only for one of three theorem-sized objectives:
+
+1. a canonical all-parameter comparison with the persistent isolated or
+   relative presentation;
+2. a complete projected kernel or complete 2-primary quotient;
+3. a reusable finite-state integral Morse or matching theorem that applies
+   beyond this family.
+
+Failure to reach one of these targets in the next bounded theorem attempt is a
+stop condition, not a reason for a wider sweep. The active program focus has
+moved to `HW-F6`, counterexample-mechanism classification in Kunz coordinates.
+See `research-governance.json` and `manuscript-map.md`.
+
+The integral companion v0.04 already includes EXP-063--066 at DOI
+`10.5281/zenodo.22859408`. No further manuscript version is triggered by this
+route unless its structural gate is met.
+
+## Superseded route after the exact finite carrier comparison, 2026-09-20
 
 EXP-062 closes the all-triangle lower-bound route uniformly for the full
 explicit integral presentation: `(Z/2)^q` is a direct summand, with
@@ -38,12 +61,11 @@ constructive-comparison bottleneck. No next numerical campaign is declared.
 Keep complete original faces, use declaration-first bounded exact experiments,
 and do not return to unrestricted HNF or undirected coefficient searches.
 
-EXP-062--064's independent audits pass. The 18-page companion has completed
-manuscript QA and the repository has 421 passing tests. Current v0.03 DOI
-`10.5281/zenodo.22835126` is published; its 504,764-byte PDF passed fresh
-unauthenticated public metadata/download verification on 2026-09-20 at SHA-256
-`18566d72619b18f174c69cc34abb5ee2b78ff25481ff5d098ec9570d29bbc0ac`.
-EXP-063/064 do not trigger v0.04. Research PRs #253/#257 merged
+EXP-062--064's independent audits pass. At this superseded checkpoint, the
+18-page companion had completed manuscript QA as v0.03 at DOI
+`10.5281/zenodo.22835126`, and the repository had 421 passing tests. EXP-066
+later triggered v0.04, as recorded in the current disposition above. Research
+PRs #253/#257 merged
 with green guards/tests, including pipeline smoke, and work/develop/main
 synchronized at `4aed2b0`. Management PR #616 merged at `7ff09f8`, with
 develop/main synchronized and 32 dirty Rajo paths untouched. The core round

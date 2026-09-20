@@ -1,6 +1,40 @@
 # Huneke-Wiegand extensions - session handoff
 
-## Current checkpoint: exact finite integral carrier comparison, 2026-09-20
+## Current checkpoint: strategy and manuscript reconciliation, 2026-09-20
+
+**The original conjecture is not the active target. It was disproved
+externally before this extension program began.** Son Pham retains priority for
+the first public numerical-semigroup counterexample. CAOS has internally proved
+separate extension results, most directly Frobenius minimality, minimum-layer
+uniqueness, an infinite family, and family-level structural theorems.
+
+EXP-066 is the latest closed experiment. For every `p>=8` and `r=1,2`, one
+explicit source column satisfies
+`Pi_58 d(s_(p,r))=-x_(0,r,p-2-r)`. This gives uniform support-one sources for
+two endpoint rows in the four-type semantic projection. It does not identify
+that projection uniformly with the persistent isolated component, give an
+upper bound, or classify the complete cokernel.
+
+The open-ended endpoint route is now **gated**, not automatically active. It
+may resume only with a preflight targeting a canonical comparison plus a
+complete kernel, complete 2-primary quotient, or reusable integral matching
+theorem. Another finite carrier table is a stop condition.
+
+The active preflight is `HW-F6`: classify the counterexample mechanism in Kunz
+coordinates. The target is a necessary-and-sufficient stable-face criterion,
+a maximal positive-dimensional face theorem, or a meaningful proof that the
+declared block model has no such face. No EXP-067 is declared. First perform a
+source-complete review and one smallest-case invariant test.
+
+Read [`research-governance.json`](research-governance.json),
+[`manuscript-map.md`](manuscript-map.md), and the
+[strategy reconciliation](../../problems/commutative-algebra/huneke-wiegand/context/2026-09-20-strategy-manuscript-reconciliation.md)
+before selecting any new action. The manuscript portfolio is current at
+v0.25, v0.04, and v0.04. The 53-page consolidated paper is frozen and routed
+into three future focused submission papers; the existing focused companions
+remain intact.
+
+## Superseded checkpoint: exact finite integral carrier comparison, 2026-09-20
 
 **EXP-054--062 are closed. For every integer p>=8, the full original integer
 cokernel contains a direct summand `(Z/2)^q`, where
@@ -80,15 +114,11 @@ HNF-source labels remain unread; no global HNF/SNF was needed.
 
 ### Publication and repository delivery
 
-The complementary manuscript is **A quadratic family of integral two-torsion
-classes in a Huneke-Wiegand Koszul presentation**, under
-`manuscripts/huneke-wiegand/integral-connecting-annihilators/`. Current v0.03
-is published at DOI `10.5281/zenodo.22835126`, concept
-`10.5281/zenodo.22342975`. Fresh unauthenticated metadata and download checks
-on 2026-09-20 match the committed 504,764-byte PDF, SHA-256
-`18566d72619b18f174c69cc34abb5ee2b78ff25481ff5d098ec9570d29bbc0ac`.
-Versions 0.01 and 0.02 remain immutable. EXP-063/064 are finite and do not meet
-the next-version trigger, so no v0.04 was created. The original theorem-round
+At this superseded checkpoint, the complementary manuscript **A quadratic
+family of integral two-torsion classes in a Huneke-Wiegand Koszul
+presentation** was at v0.03, DOI `10.5281/zenodo.22835126`. EXP-066 later
+triggered v0.04 at DOI `10.5281/zenodo.22859408`, as recorded in the current
+checkpoint above. All prior versions remain immutable. The original theorem-round
 claim/build/all-page-render/publication gates are complete. Research PR #253
 merged into develop at `4073d73`; PR #257 passed both fresh CI jobs and merged
 into main at `4aed2b0`. Work/develop/main were synchronized to that merge.

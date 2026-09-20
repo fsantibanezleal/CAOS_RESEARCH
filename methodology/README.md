@@ -2,7 +2,7 @@
 
 Every problem in this repository is worked under one fixed operating system. It exists so that the
 record stays honest, reproducible and adversarially validated, independent of who (or what) runs a
-given session. The twelve documents below are binding where applicable for every problem folder.
+given session. The thirteen documents below are binding where applicable for every problem folder.
 
 | Doc | Governs |
 |---|---|
@@ -18,6 +18,7 @@ given session. The twelve documents below are binding where applicable for every
 | [10-research-lenses.md](10-research-lenses.md) | The systematic spine plus complementary lenses and the invariant-first rule. |
 | [11-exploration-cadence.md](11-exploration-cadence.md) | The required new-viewpoint or honest-null exploration moment in every round. |
 | [12-preflight-and-cost-discipline.md](12-preflight-and-cost-discipline.md) | Source, premise, tooling, one-sidedness, invariant, and compute-budget checks. |
+| [13-strategy-value-and-manuscript-control.md](13-strategy-value-and-manuscript-control.md) | Stable purpose, focus admission, stop/go reviews, result disposition, and manuscript coherence. |
 
 ## Principles (non-negotiable)
 
@@ -34,3 +35,6 @@ given session. The twelve documents below are binding where applicable for every
    replays persisted, versioned artifacts.
 6. **Primary sources only in claims.** Every transcribed claim cites DOI/arXiv/official URL, or is
    flagged UNVERIFIED until it does. Secondary sources may guide, never certify.
+7. **Purpose before continuation.** Every long-running problem declares its active focus, value,
+   success gate, stop conditions, novelty status, and manuscript route. A solved subproblem does
+   not silently authorize an open-ended chain of derived experiments.

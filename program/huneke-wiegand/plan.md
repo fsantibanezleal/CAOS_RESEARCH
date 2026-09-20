@@ -1,6 +1,35 @@
 # Huneke-Wiegand extensions - research plan
 
-## Current priority after EXP-064, 2026-09-20
+## Current priority after strategic reconciliation, 2026-09-20
+
+The program now uses the focus gates in `research-governance.json`. The broad
+conjecture is externally disproved and cannot be used as the description of
+ongoing CAOS work.
+
+Priority order:
+
+1. **HW-F6, counterexample-mechanism classification.** Complete a current
+   primary-source review of Kunz polyhedra, numerical-semigroup faces, and
+   two-generated rigidity criteria. State one face or block model independently
+   of the existing parameter formula. Run only the smallest distinguishing
+   invariant on `p=4,...,8`. Declare EXP-067 only if this preflight yields a
+   theorem-sized necessary-and-sufficient, maximality, or no-stable-face target.
+2. **Focused manuscript preparation.** Freeze consolidated v0.25 as the source
+   record. Prepare three future submission narratives only after dependency and
+   overlap audits: direct counterexample extensions, conductor algebra, and
+   homological syzygies. Do not create duplicate Zenodo records merely by
+   rearranging already published text.
+3. **HW-F5, canonical carrier quotient, gated.** Resume the endpoint path only
+   with a preflight for a canonical comparison and complete kernel or upper
+   bound. Another finite table, mask, or endpoint identity is a stop outcome.
+4. **External validation.** Seek specialist review of the direct-extension and
+   homological theorem blocks before using strong global novelty language.
+
+No experiment is currently declared. Every new focus or material redirect must
+update `research-governance.json`, `manuscript-map.md`, RESUME, state, backlog,
+history, and the management mirror in the same round.
+
+## Superseded priority after EXP-064, 2026-09-20
 
 EXP-064 upgrades the finite comparison to exact integral structure. Sixteen
 modular-Hadamard certificates prove all carrier rational ranks, and equality

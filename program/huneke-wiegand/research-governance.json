@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "problem": "huneke-wiegand",
+  "updated": "2026-09-20",
+  "original_problem": {
+    "status": "disproved externally",
+    "statement": "The broad Huneke-Wiegand conjecture is false.",
+    "priority": "Son Pham retains priority for the first public numerical-semigroup counterexample; Christensen, Gerko, and Iyengar give an independent field-extension construction.",
+    "prohibited_reframing": "No CAOS extension, replication, or presentation theorem may be described as solving or redisproving the original conjecture."
+  },
+  "mission": "Classify and explain counterexample mechanisms, prove family-level structural theorems, and publish only results that pass exact validation, a current primary-source overlap check, and a theorem-sized value gate.",
+  "current_focus": "HW-F6",
+  "stop_policy": {
+    "review_after_consecutive_low_value_rounds": 3,
+    "requires_user_visible_redirect": true,
+    "no_finite_sweep_without_uniform_target": true,
+    "no_new_manuscript_without_coherence_gate": true
+  },
+  "focuses": [
+    {
+      "id": "HW-F0",
+      "title": "Independent validation of the public counterexample",
+      "status": "closed",
+      "priority": 0,
+      "target": "Reproduce the decisive colon and tensor-torsion certificate independently.",
+      "value": "Establish a trusted baseline without claiming discovery priority.",
+      "success_gate": "Two independent exact routes and an adversarial positive control.",
+      "stop_conditions": ["The public certificate fails exact reconstruction.", "The work reduces to a duplicate of upstream code."],
+      "novelty_status": "Replication, not novelty.",
+      "manuscript_route": "frobenius-minimality as provenance and baseline only",
+      "first_bounded_action": "EXP-001",
+      "evidence": ["EXP-001", "EXP-002"]
+    },
+    {
+      "id": "HW-F1",
+      "title": "Minimality, minimum-layer uniqueness, and an infinite counterexample family",
+      "status": "closed",
+      "priority": 1,
+      "target": "Determine the least Frobenius value, classify its normalized minimizer, and replace the isolated example by an explicit infinite family.",
+      "value": "Directly strengthens the public counterexample inside the same semigroup and ideal class.",
+      "success_gate": "Certified minimality, complete minimum-layer classification, and an all-parameter family theorem.",
+      "stop_conditions": ["Primary literature already proves the same three results.", "Only finite family evidence survives."],
+      "novelty_status": "No exact overlap was found in the recorded primary-source searches; external expert confirmation remains pending.",
+      "manuscript_route": "focused future submission A; immutable consolidated source is frobenius-minimality v0.25",
+      "first_bounded_action": "Completed by EXP-004, EXP-005, EXP-007, and EXP-009.",
+      "evidence": ["EXP-004", "EXP-005", "EXP-007", "EXP-009", "EXP-011", "EXP-012", "EXP-013"]
+    },
+    {
+      "id": "HW-F2",
+      "title": "Conductor, tangent-cone, and special-fiber algebra",
+      "status": "closed",
+      "priority": 2,
+      "target": "Determine the conductor, reduction sequence, tangent cone, local cohomology, special fiber, and defining equations uniformly across the family.",
+      "value": "Gives a coherent commutative-algebra anatomy of a new explicit family, but is secondary to counterexample classification.",
+      "success_gate": "All-parameter structural formulas with exact proofs and independent checks.",
+      "stop_conditions": ["Only parameter sweeps remain.", "The results cease to share the conductor-algebra question."],
+      "novelty_status": "Family-specific formulas appear absent from the searched sources; external novelty confirmation remains pending.",
+      "manuscript_route": "focused future submission B; immutable consolidated source is frobenius-minimality v0.25",
+      "first_bounded_action": "Completed by EXP-014 through EXP-024.",
+      "evidence": ["EXP-014", "EXP-016", "EXP-017", "EXP-018", "EXP-019", "EXP-020", "EXP-021", "EXP-023", "EXP-024"]
+    },
+    {
+      "id": "HW-F3",
+      "title": "Curvilinear fiber-cone geometry",
+      "status": "closed",
+      "priority": 2,
+      "target": "Identify the primary, curvilinear, differential, and Groebner geometry of the conductor fiber cones.",
+      "value": "A coherent focused geometric result with an audience distinct from the counterexample-classification paper.",
+      "success_gate": "Primary decomposition, sharp nilpotence, curvilinear model, differential signature, and complete reduced Groebner basis.",
+      "stop_conditions": ["The description is only computational at bounded parameters."],
+      "novelty_status": "Internally proved and primary-source scoped; external expert confirmation remains pending.",
+      "manuscript_route": "curvilinear-fiber-cones v0.04",
+      "first_bounded_action": "Completed by EXP-025 and EXP-026.",
+      "evidence": ["EXP-025", "EXP-026"]
+    },
+    {
+      "id": "HW-F4",
+      "title": "Betti and syzygy anatomy of the special fiber",
+      "status": "gated",
+      "priority": 3,
+      "target": "Complete a mathematically coherent part of the graded resolution rather than accumulating isolated Betti entries.",
+      "value": "Potentially useful homological algebra, but increasingly remote from the original counterexample question.",
+      "success_gate": "A complete row, strand, resolution, or reusable integral matching theorem.",
+      "stop_conditions": ["A result is one finite cell without a uniform theorem.", "Three rounds fail to improve a complete-row or complete-resolution gate."],
+      "novelty_status": "Several uniform rows are internally proved; their broader significance and external novelty need specialist review.",
+      "manuscript_route": "focused future submission C; immutable consolidated source is frobenius-minimality v0.25",
+      "first_bounded_action": "No new experiment. First obtain an external significance review of EXP-027 through EXP-036.",
+      "evidence": ["EXP-027", "EXP-028", "EXP-029", "EXP-030", "EXP-031", "EXP-032", "EXP-033", "EXP-034", "EXP-035", "EXP-036"]
+    },
+    {
+      "id": "HW-F5",
+      "title": "Canonical integral torsion and carrier quotient",
+      "status": "gated",
+      "priority": 2,
+      "target": "Identify the semantic projection canonically with the persistent carrier and determine the complete projected kernel or 2-primary quotient.",
+      "value": "Would turn the current presentation-specific lower bound into a structural classification; endpoint formulas alone are insufficient.",
+      "success_gate": "A uniform comparison map plus either a complete kernel theorem, a complete 2-primary quotient, or a reusable finite-state integral Morse theorem.",
+      "stop_conditions": ["The next result is another bounded-parameter carrier table.", "The comparison remains projection-dependent after one bounded theorem attempt.", "No full upper bound or canonical map is obtained."],
+      "novelty_status": "The direct-summand and endpoint-source theorems are internally proved; no exact overlap was found in the recorded source review, but peer validation is absent.",
+      "manuscript_route": "integral-connecting-annihilators; no further version without the success gate",
+      "first_bounded_action": "Write a theorem preflight for the canonical comparison map before declaring EXP-067.",
+      "evidence": ["EXP-060", "EXP-061", "EXP-062", "EXP-063", "EXP-064", "EXP-065", "EXP-066"]
+    },
+    {
+      "id": "HW-F6",
+      "title": "Counterexample-mechanism classification in Kunz coordinates",
+      "status": "active-preflight",
+      "priority": 1,
+      "target": "Determine whether the CAOS infinite family lies in a positive-dimensional Kunz face on which the two-generated rigidity identity is characterized by explicit linear and sumset conditions.",
+      "value": "Returns the program to the central counterexample mechanism and could classify families rather than continue presentation-specific invariants.",
+      "success_gate": "A necessary-and-sufficient face criterion, a maximal stable face theorem, or a proof that no nontrivial stable face contains the family under the declared block model.",
+      "stop_conditions": ["The primary-source sweep finds the classification already known.", "Small exact cases show no stable face or no invariant stronger than re-enumeration.", "The proposed criterion cannot be stated independently of the existing parameter formula."],
+      "novelty_status": "Candidate new focus only. A source-complete preflight and expert relevance check are required before any novelty claim.",
+      "manuscript_route": "new counterexample-mechanism manuscript only after the success gate; otherwise research record",
+      "first_bounded_action": "Persist a source-complete Kunz-face preflight, then test the smallest distinguishing invariant on p=4 through p=8 before declaring an experiment."
+    }
+  ],
+  "manuscripts": [
+    {
+      "slug": "frobenius-minimality",
+      "path": "manuscripts/huneke-wiegand/frobenius-minimality",
+      "version": "0.25",
+      "version_doi": "10.5281/zenodo.22835108",
+      "concept_doi": "10.5281/zenodo.21763582",
+      "status": "published-consolidated-source",
+      "split_action": "Freeze as the immutable consolidated source. Prepare focused submission A for direct counterexample extensions, B for conductor algebra, and C for Betti and syzygy anatomy. Do not duplicate Zenodo publication until each focused paper has an independent coherent narrative and overlap statement."
+    },
+    {
+      "slug": "curvilinear-fiber-cones",
+      "path": "manuscripts/huneke-wiegand/curvilinear-fiber-cones",
+      "version": "0.04",
+      "version_doi": "10.5281/zenodo.22835118",
+      "concept_doi": "10.5281/zenodo.21997377",
+      "status": "published-focused",
+      "split_action": "No split required."
+    },
+    {
+      "slug": "integral-connecting-annihilators",
+      "path": "manuscripts/huneke-wiegand/integral-connecting-annihilators",
+      "version": "0.04",
+      "version_doi": "10.5281/zenodo.22859408",
+      "concept_doi": "10.5281/zenodo.22342975",
+      "status": "published-focused-gated",
+      "split_action": "Keep intact. Publish another version only for a canonical comparison, complete quotient, or reusable general theorem."
+    }
+  ],
+  "experiment_dispositions": [
+    {
+      "start": 1,
+      "end": 37,
+      "classification": "primary-manuscript-or-essential-context",
+      "manuscripts": ["frobenius-minimality", "curvilinear-fiber-cones"]
+    },
+    {
+      "start": 38,
+      "end": 53,
+      "classification": "research-record-and-bridge-evidence",
+      "manuscripts": []
+    },
+    {
+      "start": 54,
+      "end": 66,
+      "classification": "primary-manuscript-or-essential-context",
+      "manuscripts": ["integral-connecting-annihilators"]
+    }
+  ]
+}

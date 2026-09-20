@@ -60,3 +60,5 @@ jobs:
         run: python scripts/check_manuscript_voice.py manuscripts
       - name: Per-problem research persistence contract
         run: python scripts/check_research_structure.py
+      - name: Research focus and manuscript routing contract
+        run: python scripts/check_research_governance.py

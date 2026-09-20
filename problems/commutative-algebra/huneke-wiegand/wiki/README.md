@@ -1,5 +1,19 @@
 # Huneke-Wiegand extensions - research wiki
 
+## Current strategic routing, 2026-09-20
+
+The broad conjecture was already disproved externally and is not an open CAOS
+target. The latest endpoint theorem below is closed, and its carrier route is
+now gated as `HW-F5`: it may resume only for a canonical comparison plus a
+complete kernel, quotient, upper bound, or reusable general matching theorem.
+
+The active bounded preflight is `HW-F6`, counterexample-mechanism
+classification in Kunz coordinates. No EXP-067 is declared. Read the
+[strategy reconciliation](../context/2026-09-20-strategy-manuscript-reconciliation.md),
+the [research governance record](../../../../program/huneke-wiegand/research-governance.json),
+and the [manuscript map](../../../../program/huneke-wiegand/manuscript-map.md)
+before selecting new work.
+
 ## Current closed result: uniform support-one endpoint sources, 2026-09-20
 
 [EXP-066](../experiments/EXP-066-uniform-endpoint-face-collapse/verdict.md)
@@ -31,9 +45,8 @@ matches the committed 516,963-byte PDF at SHA-256
 The scope is narrower than a full carrier theorem: no uniform identification
 with the persistent isolated component, no independence or upper bound for the
 remaining projected triangle rows, and no complete complementary cokernel is
-proved. The strongest next route is to transport or construct uniform dual
-functionals for the non-endpoint triangles and thereby decide whether the
-mask-58 triangle kernel is exactly the two endpoint classes.
+proved. That route is retained but gated; it is no longer the automatic next
+program action. Reopening it requires the `HW-F5` structural success gate.
 
 ## Prior closed result: exact finite integral carrier comparison, 2026-09-20
 
@@ -103,14 +116,11 @@ The full quotient, a matching upper bound, free rank, additional torsion, and
 uniform integral identification with earlier isolated/relative presentations
 remain open. EXP-063 later supplies the finite labelled bridge described above.
 
-The 18-page companion *A quadratic family of integral two-torsion classes in
-a Huneke-Wiegand Koszul presentation* has passed manuscript QA. Current v0.03
-is published under version DOI
-[`10.5281/zenodo.22835126`](https://doi.org/10.5281/zenodo.22835126), concept
-DOI `10.5281/zenodo.22342975`. Fresh unauthenticated public metadata and PDF
-download verification on 2026-09-20 matched all 504,764 bytes, SHA-256
-`18566d72619b18f174c69cc34abb5ee2b78ff25481ff5d098ec9570d29bbc0ac`.
-Versions 0.01/0.02 remain immutable; EXP-063/064 do not trigger v0.04.
+At this historical checkpoint, the 18-page companion *A quadratic family of
+integral two-torsion classes in a Huneke-Wiegand Koszul presentation* had
+passed manuscript QA as v0.03 at DOI `10.5281/zenodo.22835126`. It was later
+superseded by the 20-page v0.04 endpoint-theorem version recorded at the top of
+this wiki; all earlier versions remain immutable.
 The source/PDF is in commit `422e942`. Research PR #253 merged at
 `4073d730158ea8bf239f85e5d83ed2bbfd234657`, followed by PR #257 at
 `4aed2b050ccd282d13e5389a4ee732e8859ce09f` on 2026-09-05 at 13:46:22 UTC.

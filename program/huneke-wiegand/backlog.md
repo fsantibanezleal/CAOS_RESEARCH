@@ -1,6 +1,21 @@
 # Huneke-Wiegand extensions - backlog
 
-## Current dispatch after EXP-064, 2026-09-20
+## Current dispatch after strategic reconciliation, 2026-09-20
+
+| id | priority | status | item | gate |
+|---|---:|---|---|---|
+| HWB-088 | 0 | done | reconcile purpose, focus, result disposition, and manuscript ownership | `research-governance.json`, `manuscript-map.md`, context review, and automated guard agree |
+| HWB-089 | 0 | active-preflight | classify the counterexample mechanism in Kunz coordinates | source-complete review plus one invariant-first test must support a necessary-and-sufficient, maximal-face, or no-stable-face theorem target before EXP-067 |
+| HWB-090 | 1 | gated | canonical comparison and complete projected kernel or 2-primary quotient | no finite-only carrier campaign; reopen only with a uniform map and upper-bound target |
+| HWB-091 | 1 | planned | split consolidated v0.25 into three focused submission narratives | dependency and overlap audits first; no duplicate Zenodo publication for rearranged content |
+| HWB-092 | 1 | pending-external | specialist significance and novelty review | record reviewed claims and corrections separately for direct extensions, conductor algebra, and homological results |
+
+The first executable action is HWB-089's literature and invariant preflight.
+There is no EXP-067 declaration and no authorized compute campaign. The full
+focus definitions, stop conditions, and manuscript routes are in
+`research-governance.json`.
+
+## Superseded dispatch after EXP-064, 2026-09-20
 
 EXP-062 is closed: for every `p>=8`, the full explicit integral cokernel has
 a direct summand `(Z/2)^q`, where `q=floor(((p-2)^2+3)/12)`. Its selected
@@ -28,12 +43,11 @@ integral sources and transformed duals for those two endpoints; then HWB-085's
 complementary-quotient upper bound; then HWB-065 recurrence. No next experiment
 is declared by this navigation update.
 
-HWB-083's core delivery is complete: the 18-page companion passed manuscript QA.
-Its current editorial v0.03 is published at DOI `10.5281/zenodo.22835126`;
-fresh public metadata and download verification on 2026-09-20 matched all
-504,764 PDF bytes and SHA-256
-`18566d72619b18f174c69cc34abb5ee2b78ff25481ff5d098ec9570d29bbc0ac`.
-The current repository suite has 421 tests. EXP-063/064 do not trigger v0.04.
+At this superseded checkpoint, HWB-083's 18-page companion had passed
+manuscript QA as v0.03 at DOI `10.5281/zenodo.22835126`. It was later
+superseded by v0.04 after EXP-066; earlier versions remain immutable. The
+repository suite at that checkpoint had 421 tests. EXP-063/064 alone did not
+trigger v0.04.
 Source/PDF commit: `422e942`. Research PRs #253/#257 merged with green guards
 and tests, including pipeline smoke; work/develop/main synchronized at
 `4aed2b050ccd282d13e5389a4ee732e8859ce09f`. Management PR #616 merged at

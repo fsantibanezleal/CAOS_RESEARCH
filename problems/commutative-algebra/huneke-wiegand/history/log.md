@@ -2077,3 +2077,20 @@
   The management checkout remained on `develop`; no management work branch or
   worktree was created. Existing Petersen publication/deposit state was
   preserved and committed separately.
+
+## 2026-09-20 - strategy and manuscript portfolio reconciled
+
+- The program now records the externally settled original conjecture separately
+  from CAOS extension focuses. `HW-F6`, mechanism classification in Kunz
+  coordinates, is the sole active preflight; no EXP-067 is declared.
+- The endpoint/carrier route is retained as gated focus `HW-F5`. It may reopen
+  only for a canonical comparison and complete kernel, quotient, upper bound,
+  or reusable general matching theorem. Another finite carrier table is a stop
+  outcome.
+- All 66 closed experiments receive exactly one strategic disposition. The
+  three current manuscript versions and DOIs are reconciled across TeX,
+  manuscript READMEs, the global index, and the result map by a new CI guard.
+- The immutable 53-page consolidated paper is routed into three possible
+  focused submissions with explicit ownership, dependency, overlap, and
+  readiness gates. No duplicate manuscript, experiment, Zenodo version, or new
+  mathematical claim is created by this documentation and governance round.
