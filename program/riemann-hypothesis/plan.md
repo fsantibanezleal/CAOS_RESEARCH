@@ -75,9 +75,9 @@ infinite-limit inputs explicit.
 
 The release owner preserved EXP-003 while the reviews ran. The revised manuscript is
 now frozen and published as v0.02 at DOI 10.5281/zenodo.22728744 after a two-pass,
-21-page rendered review. Finish the bilingual replay, scoped promotion, serialized
-release, all-page/rendered checks and exact live verification in the same delivery
-round. The v0.01 publication and archive remain unchanged.
+21-page rendered review. The bilingual replay, scoped promotion, serialized
+release, rendered checks, and exact live verification were completed in that
+delivery round. The v0.01 publication and archive remain unchanged.
 
 ## Confirmed explicit local transfer
 
@@ -90,8 +90,8 @@ positivity threshold in $(0.5459,0.546)$. The exact certificate, retained
 serialization failures, analytic audit and proof-review binding are committed.
 Manuscript v0.05 is published at DOI 10.5281/zenodo.22851518 after a clean
 three-pass build, full 24-page render review and exact public-byte verification.
-The remaining delivery work is the public replay, scoped promotion and live
-release verification; none changes the open status of RH.
+Release 0.70.000 completed the public replay, scoped promotion, and live
+verification; none changes the open status of RH.
 
 ## Confirmed Hilbert-parity compression
 
@@ -111,7 +111,7 @@ $0.0000168381638551244569880374399$ at theta=0.5459. The proof, exact
 certificate, scalar barrier witness, independent interval replay, audit and
 proof-review bindings are committed. Manuscript v0.06 is published at DOI 10.5281/zenodo.22852479 after a
 clean 26-page render review and exact public-byte verification. Replay v5 is
-baked and tested. Research PR #316 is merged, and the 0.71.000 release candidate
-passed 428 Linux tests plus the full 20-scenario rendered matrix. Main promotion,
-Pages byte comparison, and live verification remain; they do not change the open
-status of RH.
+baked and tested. Research PR #316, release PR #317, and promotion PR #318 are
+merged. Release 0.71.000 is tagged from exact main commit `8302be35`; main CI,
+Pages, ten live byte comparisons, and eight live browser scenarios passed. This
+delivery does not change the open status of RH.
