@@ -1,8 +1,8 @@
 # EXP-005 mathematical proof: local optimized Selberg transfer
 
-Date: 2026-09-19. Status before the canonical run: complete candidate proof,
-pending adversarial adjudication and verdict. Source attribution and exact
-interfaces are in the [2026-09-19 dossier](../../context/2026-09-19-local-selberg-transfer.md).
+Date: 2026-09-19. Status: proof frozen for the EXP-005 adversarial review.
+Source attribution and exact interfaces are in the
+[2026-09-19 dossier](../../context/2026-09-19-local-selberg-transfer.md).
 
 ## 1. Statement
 
@@ -87,11 +87,20 @@ $$
 \pi(1/2-\delta)A(T,H)+o(H).
 $$
 
-The source's horizontal estimate is
-$O(U\operatorname{polylog}T)$ for each boundary. This is $o(H)$ under (5).
-On the right auxiliary edge, the absolutely convergent logarithmic Dirichlet
-series have integrals bounded by a polylogarithm uniformly in the starting
-height; this is also $o(H)$. Therefore, for $x=1-2\delta$,
+For the regularized rank-three profile, source Lemma 5.4 gives the explicit
+bound
+
+$$
+O\!\left(U\log(2T)\{\log^2(2T)+\eta_U+1\}\right)
+$$
+
+for each horizontal boundary, where $\eta_U=O_\varepsilon(1)$ when the
+regularization parameter $\varepsilon>0$ is fixed. This is $o(H)$ under (5).
+The auxiliary $\zeta$ and mollifier increments are $O(\log T)$ and $O(U)$.
+On the right auxiliary edge, expand the principal logarithms at real part
+three. Absolute convergence and termwise integration give $O(1)$ for the
+vertical integrals, uniformly in the starting height and interval length.
+These terms are also $o(H)$. Therefore, for $x=1-2\delta$,
 
 $$
 \frac{\pi x}{2}A(T,H)
@@ -106,6 +115,8 @@ $o(H\log T)$.
 ## 4. Local mean square
 
 The diagonal estimate used in Proposition 5.8 is pointwise before averaging.
+Its remainder is
+$O(T^{-1/2}R_C(U))=O(T^{-1/2}U^2\log^2(2U))=o(1)$ under $u<1/4$.
 It therefore gives the same main bound on $[T,T+H]$:
 
 $$
@@ -146,7 +157,10 @@ $$
 \tag{9}
 $$
 
-Every parameter in this argument is fixed before $T\to\infty$.
+Every parameter in this argument is fixed before $T\to\infty$. In particular,
+one first fixes the profile regularization $\varepsilon>0$ and obtains (9)
+with $C[q_{3,\varepsilon}]$. After the height limit, source Remark 11.4 and
+dominated convergence permit $\varepsilon\downarrow0$, giving $C_3$.
 
 ## 5. Optimization and odd-zero density
 
@@ -189,6 +203,23 @@ $$
 
 This holds for every fixed $u$ satisfying (5). Taking the supremum over those
 fixed choices proves (1). No mollifier exponent moves with $T$.
+
+The combined numerator in the third term of (2),
+
+$$
+F(\theta)=c(\theta)+\frac{\theta-1/2}{2eC_3},
+$$
+
+is strictly increasing because
+
+$$
+F'(\theta)=\frac12\left\{\csc^2(\theta/\sqrt2)-1\right\}
++\frac1{2eC_3}>0.
+$$
+
+The exact EXP-005 certificate proves $F(0.5459)<0<F(0.546)$, so its unique
+zero lies in $(0.5459,0.546)$. Hence (2) is positive for every fixed
+$\theta\ge0.546$ (and for every fixed $\theta$ above that unique zero).
 
 ## 6. Transfer to simple critical zeros
 
