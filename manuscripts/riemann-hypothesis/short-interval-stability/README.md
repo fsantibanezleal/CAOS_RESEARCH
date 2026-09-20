@@ -1,28 +1,42 @@
-# Simple critical zeros in short intervals: stability, pressure, and parity
+# Simple critical zeros in short intervals: stability, pressure, parity, and localization
 
-Published version 0.02, 2026-09-12. Sole author: Felipe Santibanez-Leal,
+Published version 0.05, 2026-09-20. Sole author: Felipe Santibáñez-Leal,
 ORCID [0000-0002-0150-3246](https://orcid.org/0000-0002-0150-3246).
 
-This preprint combines the attributed finite stability inequality with an odd-multiplicity
-parity transfer and a pressure certificate. EXP-004 proves a qualitative extension of the
-simple-critical positivity range below Wang's cosine root, with an unspecified fixed
-classical density constant. EXP-003 gives a certified theta=3/4 simple-critical lower
-proportion of 0.4190878881701117279 and distinct companion 0.7095439440850558640.
-It does not prove RH or claim a global record. Automated adversarial review is distinguished
-from external peer review and end-to-end formalization.
+The new result localizes Pearce-Crump's optimized Selberg detector. For every fixed
+`1/2 < theta < 1`, it gives a lower asymptotic proportion
+`(theta-1/2)/(4 e C3)` of distinct odd-multiplicity critical zeros in
+`(T,T+T^theta]`, where the reproducible rank-three constant is
+`C3 = 0.6567752140190419405677628751089899133...`.
+
+Combining the local odd-zero density with the finite parity transfer proves the
+simple-critical lower bound
+
+`max(0, c(theta), (c(theta)+(theta-1/2)/(2 e C3))/3)`.
+
+Its third numerator is strictly increasing, and exact interval arithmetic places its
+unique zero in `(0.5459,0.546)`. At `theta=0.546`, a fixed legal mollifier witness gives
+a simple-critical lower proportion greater than `0.0000976239413345`; direct evaluation
+of the optimized curve gives `0.0000994910410327`. This improves the previously available
+explicit positivity threshold `0.550193964744154...` for this short-interval result.
+
+This is a self-published preprint. It does not prove the Riemann hypothesis, give an
+effective starting height, or establish a global zero-density record. Automated
+adversarial review is separate from external peer review and end-to-end formalization.
 
 - [Paper PDF](main.pdf) and [LaTeX source](main.tex).
-- [EXP-004 proof and exact certificate](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/).
-- [EXP-003 pressure proof and certificate](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/).
-- [Publication gate](publication-gate.json) records final content, PDF, rendered-page hashes and checks.
-- Version DOI: [10.5281/zenodo.22728744](https://doi.org/10.5281/zenodo.22728744).
+- [EXP-005 proof and exact certificate](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/).
+- [EXP-004 parity transfer](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/).
+- [EXP-003 pressure certificate](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/).
+- [Publication gate](publication-gate.json), [render review](render-review.json), and
+  [public download receipt](publication-receipt.json).
+- Version DOI: [10.5281/zenodo.22851518](https://doi.org/10.5281/zenodo.22851518).
 - Latest-version concept DOI: [10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388).
 
-[The publication receipt](publication-receipt.json) records a fresh unauthenticated download
-matching all 498,500 published PDF bytes and verifies metadata, author, ORCID, license and both DOIs.
-Version 0.01 remains byte-identical in [the archive](versions/v0.01/); future corrections require
-a new version and receipt. The manuscript is CC BY 4.0 and research code is MIT.
+The public receipt records an unauthenticated download matching all 526,178 published
+PDF bytes. The previously published v0.04 source, PDF, and metadata remain byte-identical
+in [the archive](versions/v0.04/). The manuscript is CC BY 4.0 and research code is MIT.
 
-Build from this directory using two passes of `pdflatex -interaction=nonstopmode
--halt-on-error main.tex`, then render every page with `pdftoppm -png` and inspect it.
-The publication gate is tied to the reviewed PDF bytes, not merely a successful compilation.
+Build from this directory with three passes of
+`pdflatex -interaction=nonstopmode -halt-on-error main.tex`, then render every page with
+`pdftoppm -png` and inspect it. The publication gate is tied to the reviewed PDF bytes.

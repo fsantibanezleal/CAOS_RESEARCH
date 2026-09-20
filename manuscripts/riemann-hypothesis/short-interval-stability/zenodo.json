@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "title": "Simple critical zeros in short intervals: stability, pressure, and parity",
+    "title": "Simple critical zeros in short intervals: stability, pressure, parity, and localization",
     "upload_type": "publication",
     "publication_type": "preprint",
-    "publication_date": "2026-09-18",
-    "version": "0.04",
+    "publication_date": "2026-09-20",
+    "version": "0.05",
     "language": "eng",
     "creators": [
       {
@@ -13,12 +13,14 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Let c(θ) = 2 - θ/2 - cot(θ/√2)/√2, and let θ_0 be its unique zero in (0,1). We combine the finite stable rank-trace inequality underlying recent zeta-zero results with a classical positive density of distinct odd-multiplicity critical zeros. If κ &gt; 0 is one fixed Selberg density constant packed into every longer interval, then, for each fixed 0.51 &lt; θ &lt; 1, the lower asymptotic simple-critical proportion in (T, T + T^θ] is at least max{0, c(θ), (c(θ) + 2κ)/3}. Consequently it is positive at some fixed exponent strictly below θ_0. A separate multiplicity identity gives the correct distinct-zero companion, including a proportion greater than one half at another exponent below θ_0. The new exponents are expressed in terms of the unevaluated classical constant; no new decimal exponent is claimed.</p><p>We also strengthen the entire positive cosine curve by an odd-frame pressure transfer. A two-variable interval certificate at θ = 3/4 yields the simple-critical bound 0.4190878881701117... and distinct bound 0.7095439440850558....</p><p>The finite stability inequality, the classical sign-change theorems, and the global pressure methods are prior work. Wang's fixed-test pair-correlation theorem supplies the arithmetic input; all smoothing and support limits follow the height limit. The qualitative parity result requires no numerical zero sampling or kernel optimization. No global record, effective starting height, or solution of the Riemann hypothesis is claimed.</p><p>Source code, data and computational records: https://github.com/fsantibanezleal/CAOS_RESEARCH (problems/number-theory/riemann-hypothesis).</p>",
+    "description": "<p>Let C<sub>3</sub> = 0.6567752140190419405677628751089899133... be the reproducible rank-three optimized Selberg constant. For every fixed 1/2 &lt; theta &lt; 1, localization of the Selberg detector to (T,T+T<sup>theta</sup>] gives a lower asymptotic proportion (theta-1/2)/(4eC<sub>3</sub>) of distinct odd-multiplicity critical zeros. Combining this estimate with a finite rank-trace inequality yields the simple-critical lower bound max{0,c(theta),(c(theta)+(theta-1/2)/(2eC<sub>3</sub>))/3}, where c(theta)=2-theta/2-cot(theta/sqrt(2))/sqrt(2).</p><p>The combined numerator is strictly increasing. Exact interval arithmetic places its unique zero in (0.5459,0.546), below the positivity threshold 0.550193964744154... of the unaugmented cosine curve. At theta=0.546 the certified simple-critical lower proportion exceeds 0.0000976239413345; direct optimization of the displayed curve gives 0.0000994910410327.</p><p>The localization uses the arbitrary-subinterval mean-value estimate in Pearce-Crump's optimized Selberg framework, together with a fixed mollifier length u &lt; (theta-1/2)/2. The stability, pressure, and parity transfers are also developed with reproducible exact certificates. No effective starting height, global zero-density record, or proof of the Riemann hypothesis is claimed. Source code, data, and computational records are available at https://github.com/fsantibanezleal/CAOS_RESEARCH under problems/number-theory/riemann-hypothesis.</p>",
     "keywords": [
       "Riemann zeta function",
       "short intervals",
       "simple critical zeros",
       "odd multiplicity",
+      "Selberg method",
+      "mollifiers",
       "pair correlation",
       "Gram matrix stability",
       "interval arithmetic"
@@ -42,6 +44,6 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version_notes": "The author name is printed as Santibáñez-Leal, as on the author's ORCID record (0000-0002-0150-3246). The content is unchanged."
+    "version_notes": "Adds the explicit local Selberg transfer proved in EXP-005, the exact threshold bracket 0.5459 < theta_* < 0.546, a fixed legal mollifier witness at theta = 0.546, and the resulting positive simple-critical proportion. The source comparison and limitations are updated. The author name remains Santibanez-Leal with the diacritics printed on the manuscript, as on ORCID 0000-0002-0150-3246."
   }
 }

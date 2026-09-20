@@ -12,8 +12,9 @@ awaiting external mathematical review.
 - [EXP-002: stability refinement and certified example](experiments/EXP-002-short-interval-stability/verdict.md).
 - [EXP-003: odd-frame amplification and certified pressure](experiments/EXP-003-odd-frame-pressure/verdict.md).
 - [EXP-004: parity transfer and qualitative range improvement](experiments/EXP-004-parity-density-transfer/verdict.md).
+- [EXP-005: explicit local Selberg transfer and threshold below 0.546](experiments/EXP-005-local-selberg-transfer/verdict.md).
 - [Reproduction code](code/README.md) and [bibliography](references.md).
-- [Published preprint](https://doi.org/10.5281/zenodo.22728744), v0.02, 2026-09-12.
+- [Published preprint](https://doi.org/10.5281/zenodo.22851518), v0.05, 2026-09-20.
   The immutable v0.01 baseline remains at [10.5281/zenodo.22727389](https://doi.org/10.5281/zenodo.22727389).
 - [Current state and handoff](../../../program/riemann-hypothesis/RESUME.md).
 

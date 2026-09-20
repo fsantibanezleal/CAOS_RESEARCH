@@ -4,8 +4,9 @@
 
 Read [state.md](state.md), [backlog.md](backlog.md), [plan.md](plan.md), then the
 latest source verdicts. Evidence outranks this handoff. Public release v0.65.000
-is released and live-verified; v0.02 is published at DOI 10.5281/zenodo.22728744
-and the four-record replay is integrated. The release commit
+is released and live-verified. EXP-005 is confirmed with an explicit
+simple-critical positivity threshold in $(0.5459,0.546)$. Manuscript v0.05 is
+published at DOI 10.5281/zenodo.22851518; public replay integration is in flight. The release commit
 `24a2cb250e44fa59c9f6a56c86eefdf009258e70` (tag `v0.65.000`), CI and Pages runs,
 and the live receipt are recorded below; the general RH remains open.
 
@@ -19,6 +20,7 @@ and the live receipt are recorded below; the general RH remains open.
 | EXP-002 certificate | Three-point compact energy certificate | Published v0.01 archive |
 | EXP-003 pressure certificate | Odd-frame pressure improvement at $\theta=3/4$ | Confirmed 16,797-node replay |
 | EXP-004 parity transfer | Qualitative fixed-exponent range extension | Confirmed exact run and proof review |
+| EXP-005 local Selberg transfer | Explicit odd-density curve and theta=0.546 simplicity consequence | Confirmed proof, exact certificate and adversarial review |
 | Alternative route dossiers | Spectral, Nyman--Beurling, Li/Weil, heat-flow and mollifier options | Source-reviewed proposals with open gates |
 
 ## 3. Experiment index
@@ -30,6 +32,7 @@ and the live receipt are recorded below; the general RH remains open.
 | EXP-003 A | Odd-frame amplification with the prior certificate | confirmed |
 | EXP-003 B | New pressure inequality and more than 25% gain over A | confirmed |
 | EXP-004 | Parity density transfer below the cosine positivity threshold | confirmed; proof review and exact arithmetic committed in fbc4f9f |
+| EXP-005 | Localize Pearce-Crump's optimized sign detector and combine it with EXP-004 | confirmed; threshold in $(0.5459,0.546)$ and fixed-point certificate at $0.546$ |
 
 The [EXP-003 verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/verdict.md), [proof](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/mathematical-proof.md),
 [audit](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/adversarial-audit.md), and [results](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/artifacts/result.json) give the
@@ -48,10 +51,28 @@ on a nearby range. The constants $\kappa$, $\theta_1$ and the effective onset re
 unquantified. See [the complete proof](../../problems/number-theory/riemann-hypothesis/wiki/07-parity-density-transfer.md)
 and [confirmed verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/verdict.md).
 
+## 3b. Confirmed EXP-005 result
+
+For every fixed $1/2<\theta<1$, the local Selberg theorem proves
+
+$$
+\liminf O(T,T^\theta)/N(T,T^\theta)\ge(\theta-1/2)/(4eC_3).
+$$
+
+The EXP-004 transfer then gives an explicit simple-critical positivity threshold
+in $(0.5459,0.546)$. At $\theta=0.546$, fixed $u=0.02299$ proves
+$\liminf S/N>0.00009762394133453968$. The canonical result hash is
+`3f0ca476c0e2fe688e4e4f43fc11861d9491b3066d067e46bf88d1a441c696a5`.
+See the [complete proof](../../problems/number-theory/riemann-hypothesis/wiki/08-local-selberg-transfer.md)
+and [confirmed verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/verdict.md).
+
 ## 4. In flight
 
-The user's latest request explicitly asks for alternatives across mathematical areas
-and a more relevant result. Completed source dossiers investigate:
+The research result and manuscript publication are closed. In flight are public
+replay integration, scoped promotion and serialized release verification. The
+current live v0.65.000 evidence remains immutable.
+
+Completed source dossiers also investigate:
 
 1. Parity, multiplicity slack, and existing positive critical-zero mass as a possible
    route to a stronger positivity range. Exact seed theorem definitions, uniformity,
@@ -66,18 +87,17 @@ and a more relevant result. Completed source dossiers investigate:
 EXP-004 is confirmed in fbc4f9f after complete exact checks, independent proof review
 and verdict. The full-operator,
 approximation/tail, heat-flow and generalized short-mollifier routes remain separate
-source/paper proposals. Preserve every rejected route. The v0.02 manuscript is frozen
-and published at DOI 10.5281/zenodo.22728744; all 21 rendered pages were reviewed,
-the PDF is 498,500 bytes, and the local publication helper's 43 boundary tests pass.
-The published v0.01 archive remains byte-identical.
+source/paper proposals. Preserve every rejected route. Manuscript v0.05 is published
+at DOI 10.5281/zenodo.22851518; all 24 final pages were reviewed, and the fresh
+public download matches all 526,178 repository bytes. The published v0.04 source,
+PDF and metadata are archived unchanged, and the v0.01 archive remains byte-identical.
 
 ## 5. Next actions
 
-Continue the remaining cross-area source preflight while preserving the released
-v0.65.000 evidence. The public release, tag, CI, Pages deployment, live browser
-receipt, and private mirror promotion are complete. Future substantive work needs
-a new declared experiment and a new release decision. Publication, serialized
-release, rendered QA and live verification receipts remain immutable evidence.
+1. Bake EXP-005 into the public replay, run the full repository and frontend gates,
+   and complete rendered desktop/phone checks.
+2. Promote through the scoped research and serialized release PRs, then record
+   exact live hashes and UI verification. Preserve v0.65.000 receipts unchanged.
 
 ## 6. Where everything lives
 
@@ -99,3 +119,5 @@ counts differ. The Hilbert pair sum uses ordinary complex squares. Test function
 support are fixed before height limits. A numerical energy certificate is a finite
 premise, not a stand-alone zeta theorem. Imported pressure/stability frameworks retain
 their authorship; dated source searches do not guarantee priority or peer acceptance.
+For EXP-005, keep $u$ fixed during the height limit; the boundary choice
+$1/2+2u=\theta$ is rejected because it loses off-diagonal decay.

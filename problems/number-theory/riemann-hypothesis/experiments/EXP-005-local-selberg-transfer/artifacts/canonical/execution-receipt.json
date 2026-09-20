@@ -1,0 +1,11 @@
+{
+  "budget_seconds": 60.0,
+  "elapsed_seconds": 0.3130000000237487,
+  "git": {
+    "head": "864fe6b7bee69c6bdac72e72fbfb88b49ac0fef2",
+    "tracked_clean_at_start": true
+  },
+  "result_sha256": "3f0ca476c0e2fe688e4e4f43fc11861d9491b3066d067e46bf88d1a441c696a5",
+  "schema": "riemann-exp005-execution-receipt-v1",
+  "status": "pass"
+}

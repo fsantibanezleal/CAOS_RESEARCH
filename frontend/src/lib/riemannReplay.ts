@@ -39,3 +39,34 @@ export function parityEvidence(data: RiemannData | null) {
   )) return undefined;
   return { result, review };
 }
+
+function compareExact(left: { numerator: string; denominator: string }, right: { numerator: string; denominator: string }) {
+  return BigInt(left.numerator) * BigInt(right.denominator) -
+    BigInt(right.numerator) * BigInt(left.denominator);
+}
+
+/** EXP-005 has a finite exact certificate and a separate analytic proof review.
+ * Require both records and their exported byte bindings before showing the threshold. */
+export function localSelbergEvidence(data: RiemannData | null) {
+  const result = data?.local_result;
+  const review = data?.local_review;
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v4' ||
+      result.schema !== 'riemann-exp005-results-v1' || result.status !== 'pass' || !result.passed ||
+      Object.values(result.checks).some((passed) => passed !== true) ||
+      result.claim_boundary.rh_solved !== false || result.boundary_control.accepted !== false ||
+      review.schema !== 'riemann-exp005-proof-review-v1' || review.scientific_verdict !== 'confirmed' ||
+      !review.analytic_localization_reviewed || !review.exact_certificate_reviewed ||
+      result.execution_identity.head !== review.canonical_commit) return undefined;
+  if (compareExact(result.positive_point.fixed_u_simple_lower, result.parameters.simple_gate) <= 0n ||
+      BigInt(result.positive_point.localization_exponent_margin.numerator) <= 0n ||
+      BigInt(result.negative_control.simple_curve_upper.numerator) >= 0n) return undefined;
+  const roles = {
+    hypothesis: 'local_hypothesis', mathematical_proof: 'local_proof',
+    adversarial_audit: 'local_audit', result: 'local_result', verdict: 'local_verdict',
+  } as const;
+  if (!Object.entries(roles).every(([reviewRole, sourceRole]) =>
+    data.provenance.some((source) => source.role === sourceRole &&
+      source.sha256 === review.source_sha256[reviewRole as keyof typeof roles]),
+  )) return undefined;
+  return { result, review };
+}

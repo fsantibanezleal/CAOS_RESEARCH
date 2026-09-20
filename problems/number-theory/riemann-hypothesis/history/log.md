@@ -1,5 +1,37 @@
 # Riemann hypothesis history
 
+## 2026-09-20: EXP-005 manuscript v0.05 published and verified
+
+The 24-page manuscript integrates the explicit local Selberg theorem, its proof,
+the threshold bracket $(0.5459,0.546)$, and the fixed $\theta=0.546$ witness. It
+passed the scientific-voice gate, a three-pass build with zero warnings or box
+errors, and a full final-page render review. Zenodo published v0.05 at
+[10.5281/zenodo.22851518](https://doi.org/10.5281/zenodo.22851518). A fresh
+unauthenticated download matches all 526,178 local bytes, SHA-256
+`bcfefac4b138d2b41c5fe232c64590e3b6f0c309455d40e01451d9251c1e8acc`.
+The v0.04 source, PDF and metadata are archived unchanged. Publication does not
+constitute external peer review, an effective-height result, or a proof of RH.
+
+## 2026-09-19: EXP-005 confirmed an explicit threshold below 0.546
+
+Declaration `6fd59fec51dda399de40e0327107dba42deb5b45` preceded implementation
+and all canonical execution. Pearce-Crump's coefficient-uniform Selberg
+detector was localized by retaining the arbitrary-subinterval form of its
+rational-frequency estimate. For every fixed $1/2<\theta<1$, the resulting
+distinct odd-critical lower proportion is $(\theta-1/2)/(4eC_3)$. Combining it
+with EXP-004 gives an explicit simple-critical positivity threshold in
+$(0.5459,0.546)$, improving Wang's reported cosine threshold.
+
+At $\theta=0.546$, a fixed legal mollifier exponent proves odd-critical
+proportion above $0.00643869330937194$ and simple-critical proportion above
+$0.0000976239413345397$. The exact certificate passed all fourteen controls;
+its result hash is
+`3f0ca476c0e2fe688e4e4f43fc11861d9491b3066d067e46bf88d1a441c696a5`.
+The analytic audit checked every shortened-interval error term, normalization,
+count convention and limit order. Two serialization attempts are retained as
+failed/superseded evidence. The result is asymptotic, recent-preprint dependent,
+and not a solution of RH.
+
 ## 2026-09-12: EXP-004 confirmed and v0.02 published
 
 Declaration `e03413b2301bf45ca68ff6e945f25add9a1c3a89` preceded implementation and

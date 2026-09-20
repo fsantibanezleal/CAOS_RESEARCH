@@ -1,0 +1,30 @@
+{
+  "analytic_localization_reviewed": true,
+  "canonical_commit": "864fe6b7bee69c6bdac72e72fbfb88b49ac0fef2",
+  "confirmed_conclusion": "For every fixed theta in (1/2,1), the distinct odd-multiplicity critical-zero proportion in (T,T^theta+T] has liminf at least (theta-1/2)/(4 e C3); combined with EXP-004 this gives a simple-critical positivity threshold in (0.5459,0.546).",
+  "declaration_commit": "6fd59fec51dda399de40e0327107dba42deb5b45",
+  "exact_certificate_reviewed": true,
+  "imported_inputs": [
+    "Pearce-Crump arXiv:2609.15329v1 coefficient-uniform Selberg detector and certified rank-three profile",
+    "Wang arXiv:2609.07918v1 fixed-test short-interval pair theorem",
+    "Confirmed EXP-004 parity-density transfer",
+    "Riemann-von Mangoldt formula"
+  ],
+  "novelty_scope": "Dated bounded primary-source and web search found no matching localization and parity combination; no absolute priority guarantee.",
+  "review_scope": "Exact source-interface re-derivation, term-by-term localization attack, exact rational certificate, independent interval implementation, negative and boundary controls; not external peer review or end-to-end formal verification.",
+  "reviewed_utc": "2026-09-20T00:45:01.8375171Z",
+  "schema": "riemann-exp005-proof-review-v1",
+  "scientific_verdict": "confirmed",
+  "source_sha256": {
+    "adversarial_audit": "71d467d2744bdb1e7d68a079810d5b3d93041686187547107cfaae1c3c07e177",
+    "hypothesis": "57895f0ba34970379c84ffe96ed2d9b1edf316167998b31885549a39398acc2f",
+    "mathematical_proof": "45d96b904efdf74e49df53a069540047bcd75799118a03a129850e3ab8ab5511",
+    "result": "3f0ca476c0e2fe688e4e4f43fc11861d9491b3066d067e46bf88d1a441c696a5",
+    "verdict": "ed7c23551146c48d38d7c1a07b8b576ad36e5e4ec056f311533769e12f98c568"
+  },
+  "unquantified": [
+    "effective onset height",
+    "absolute novelty priority",
+    "external peer acceptance"
+  ]
+}

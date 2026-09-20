@@ -1,0 +1,5 @@
+[0.000000s] stage 1/4: validate committed identity and source hashes
+[0.109000s] stage 2/4: build exact rational Taylor certificate
+[0.250000s] stage 3/4: require every declared control
+[0.281000s] stage 4/4: write canonical result and execution receipt
+[0.343000s] PASS: finite EXP-005 certificate completed
