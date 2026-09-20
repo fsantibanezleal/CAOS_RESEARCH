@@ -1,12 +1,12 @@
 {
   "budget_seconds": 120.0,
-  "elapsed_seconds": 64.85899999999674,
+  "elapsed_seconds": 65.81200000003446,
   "git": {
-    "head": "a26ba0d403d14d6d08f042503ce52b774c38bdfd",
+    "head": "46f258cdab9487db829ab96bd5267360bd656d91",
     "tracked_clean_at_start": true
   },
-  "result_sha256": "b0be3834b6ddc6d0573e55d957c9bc65f96cfbcb274a591d82d06f50169a0fac",
-  "runner_sha256": "bcf8b6de0c6e91e34764eb786140d8849ad551579b5b908625f9c3a2c384696e",
+  "result_sha256": "1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781",
+  "runner_sha256": "cc8acd61729f93fe0f59241b1746875bdadff15801940c856095941e569edd0e",
   "schema": "riemann-exp008-execution-receipt-v1",
   "status": "pass"
 }

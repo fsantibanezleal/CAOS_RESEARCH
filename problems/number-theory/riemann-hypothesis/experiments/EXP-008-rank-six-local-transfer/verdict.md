@@ -2,7 +2,7 @@
 
 Date: 2026-09-20. The declaration was committed at `2297d2fc` before the
 EXP-008 runner and authoritative computation. The portable canonical certificate
-ran from clean commit `a26ba0d403d14d6d08f042503ce52b774c38bdfd`.
+ran from clean commit `46f258cdab9487db829ab96bd5267360bd656d91`.
 
 **Verdict: confirmed relative to the attributed rank-six source input.** The
 localization and downstream exact consequences pass internal adversarial
@@ -109,8 +109,8 @@ odd-support input.
 The canonical result is
 [`artifacts/canonical/result.json`](artifacts/canonical/result.json), schema
 `riemann-exp008-results-v1`, SHA-256
-`b0be3834b6ddc6d0573e55d957c9bc65f96cfbcb274a591d82d06f50169a0fac`.
-It records PASS from a clean commit in 64.859 seconds. The exact CRLF result
+`1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781`.
+It records PASS from a clean commit in 65.812 seconds. The exact CRLF result
 bytes cited by manuscript v0.07 remain in `artifacts/windows-canonical-v1/`.
 
 The runner validates pinned source hashes, directed rational intervals for both

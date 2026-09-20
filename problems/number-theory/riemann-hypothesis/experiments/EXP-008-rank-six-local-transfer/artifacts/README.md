@@ -11,7 +11,7 @@ The canonical evidence is in `canonical/`:
 - `stdout.txt`: flushed stage log.
 
 The portable canonical run passed from clean commit
-`a26ba0d403d14d6d08f042503ce52b774c38bdfd`. The machine artifacts certify the
+`46f258cdab9487db829ab96bd5267360bd656d91`. The machine artifacts certify the
 scalar consequences and interval computations. The rank-independent analytic
 argument is in `mathematical-proof.md`. Pearce-Crump's rank-six profile and
 constant remain an attributed source input because the public paper does not
