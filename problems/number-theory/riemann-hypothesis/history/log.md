@@ -1,5 +1,14 @@
 # Riemann hypothesis history
 
+## 2026-09-20: replay v7 merged and release 0.72.000 prepared
+
+Research PR #325 merged the source-bound EXP-007/008 replay, the eight-record
+bilingual workbench, and updated program documentation into `develop` after
+the complete Linux repository gate passed. Release candidate 0.72.000 records
+the fixed-finite-rank transfer, the attributed rank-six onset, the strict
+spectral companion, and manuscript v0.07. Rendered and live deployment gates
+remain required before the release can be called complete.
+
 ## 2026-09-20: EXP-008 confirmed an earlier source-certified rank-six onset
 
 Declaration `2297d2fc` preceded implementation and computation. EXP-008 proves
