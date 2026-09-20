@@ -27,8 +27,8 @@ if hasattr(sys, "set_int_max_str_digits"):
 
 SCHEMA = "riemann-exp006-results-v1"
 THETA = Fraction(5459, 10000)
-ROOT_LOWER_THETA = Fraction(2729, 5000)
-ROOT_UPPER_THETA = THETA
+ROOT_LOWER_THETA = Fraction(136471, 250000)
+ROOT_UPPER_THETA = Fraction(109177, 200000)
 SIMPLE_GATE = Fraction(1, 100000)
 MAX_SECONDS = 120.0
 

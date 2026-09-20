@@ -48,10 +48,11 @@ def test_declared_target_and_root_bracket() -> None:
     exp_bounds = MODULE.exp_one_interval()
     target = MODULE.theta_certificate(MODULE.THETA, sqrt2, exp_bounds)
     lower = MODULE.theta_certificate(MODULE.ROOT_LOWER_THETA, sqrt2, exp_bounds)
+    upper = MODULE.theta_certificate(MODULE.ROOT_UPPER_THETA, sqrt2, exp_bounds)
     assert target.c_upper < 0
     assert target.old_linear_upper < 0
     assert target.new_simple_lower > MODULE.SIMPLE_GATE
-    assert lower.root_function_upper < 0 < target.root_function_lower
+    assert lower.root_function_upper < 0 < upper.root_function_lower
 
 
 def test_scalar_headlines_retain_zero_simple_witness() -> None:
