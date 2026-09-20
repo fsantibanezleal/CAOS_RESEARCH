@@ -16,6 +16,11 @@ Canonical training run:
 .venv/Scripts/python.exe problems/commutative-algebra/huneke-wiegand/experiments/EXP-065-dual-guided-endpoint-decoder/run.py --p-min 8 --p-max 10 --target-limit 2 --max-rounds 6 --max-columns 900 --budget-seconds 900 --memory-gib 8
 ```
 
+Independent audit:
+
+```powershell
+.venv/Scripts/python.exe problems/commutative-algebra/huneke-wiegand/experiments/EXP-065-dual-guided-endpoint-decoder/audit.py
+```
+
 The `p=11` carrier is a locked holdout for a later experiment. EXP-065 does not
 run it and does not claim an all-parameter formula.
-
