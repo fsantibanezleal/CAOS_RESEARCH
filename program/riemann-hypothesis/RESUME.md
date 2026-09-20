@@ -5,8 +5,8 @@
 Read [state.md](state.md), [backlog.md](backlog.md), [plan.md](plan.md), then the
 latest source verdicts. Evidence outranks this handoff. Public release v0.65.000
 is released and live-verified. EXP-005 is confirmed with an explicit
-simple-critical positivity threshold in $(0.5459,0.546)$; manuscript and public
-replay integration of this fifth experiment are in flight. The release commit
+simple-critical positivity threshold in $(0.5459,0.546)$. Manuscript v0.05 is
+published at DOI 10.5281/zenodo.22851518; public replay integration is in flight. The release commit
 `24a2cb250e44fa59c9f6a56c86eefdf009258e70` (tag `v0.65.000`), CI and Pages runs,
 and the live receipt are recorded below; the general RH remains open.
 
@@ -68,9 +68,9 @@ and [confirmed verdict](../../problems/number-theory/riemann-hypothesis/experime
 
 ## 4. In flight
 
-The research result is closed. In flight are the required manuscript expansion,
-Zenodo new version, public replay integration, scoped promotion and serialized
-release verification. The current live v0.65.000 evidence remains immutable.
+The research result and manuscript publication are closed. In flight are public
+replay integration, scoped promotion and serialized release verification. The
+current live v0.65.000 evidence remains immutable.
 
 Completed source dossiers also investigate:
 
@@ -87,18 +87,16 @@ Completed source dossiers also investigate:
 EXP-004 is confirmed in fbc4f9f after complete exact checks, independent proof review
 and verdict. The full-operator,
 approximation/tail, heat-flow and generalized short-mollifier routes remain separate
-source/paper proposals. Preserve every rejected route. The v0.02 manuscript is frozen
-and published at DOI 10.5281/zenodo.22728744; all 21 rendered pages were reviewed,
-the PDF is 498,500 bytes, and the local publication helper's 43 boundary tests pass.
-The published v0.01 archive remains byte-identical.
+source/paper proposals. Preserve every rejected route. Manuscript v0.05 is published
+at DOI 10.5281/zenodo.22851518; all 24 final pages were reviewed, and the fresh
+public download matches all 526,178 repository bytes. The published v0.04 source,
+PDF and metadata are archived unchanged, and the v0.01 archive remains byte-identical.
 
 ## 5. Next actions
 
-1. Expand the manuscript from the EXP-005 verdict and audit, pass the scientific
-   voice gate, build twice, render every page and publish a Zenodo new version.
-2. Bake EXP-005 into the public replay, run the full repository and frontend gates,
+1. Bake EXP-005 into the public replay, run the full repository and frontend gates,
    and complete rendered desktop/phone checks.
-3. Promote through the scoped research and serialized release PRs, then record
+2. Promote through the scoped research and serialized release PRs, then record
    exact live hashes and UI verification. Preserve v0.65.000 receipts unchanged.
 
 ## 6. Where everything lives

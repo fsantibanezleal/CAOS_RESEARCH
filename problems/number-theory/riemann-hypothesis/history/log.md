@@ -1,5 +1,17 @@
 # Riemann hypothesis history
 
+## 2026-09-20: EXP-005 manuscript v0.05 published and verified
+
+The 24-page manuscript integrates the explicit local Selberg theorem, its proof,
+the threshold bracket $(0.5459,0.546)$, and the fixed $\theta=0.546$ witness. It
+passed the scientific-voice gate, a three-pass build with zero warnings or box
+errors, and a full final-page render review. Zenodo published v0.05 at
+[10.5281/zenodo.22851518](https://doi.org/10.5281/zenodo.22851518). A fresh
+unauthenticated download matches all 526,178 local bytes, SHA-256
+`bcfefac4b138d2b41c5fe232c64590e3b6f0c309455d40e01451d9251c1e8acc`.
+The v0.04 source, PDF and metadata are archived unchanged. Publication does not
+constitute external peer review, an effective-height result, or a proof of RH.
+
 ## 2026-09-19: EXP-005 confirmed an explicit threshold below 0.546
 
 Declaration `6fd59fec51dda399de40e0327107dba42deb5b45` preceded implementation

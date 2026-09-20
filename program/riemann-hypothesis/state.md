@@ -38,10 +38,11 @@ The theorem, separate-stage verdict, source audit, scientific code, candidates a
 canonical results are committed and pushed in the pressure work branch. Research
 [PR #266](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/266) merged to develop
 at `65980d33f40c291c86a384420afa888b53abbea0`; release PR [#267](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/267), develop synchronization [#268](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/268), live receipt [#269](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/269), and main promotion [#270](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/270) are merged.
-the expanded preprint is published at [10.5281/zenodo.22728744](https://doi.org/10.5281/zenodo.22728744)
+the EXP-005 manuscript is published as v0.05 at [10.5281/zenodo.22851518](https://doi.org/10.5281/zenodo.22851518)
 the public replay release is live-verified in
 [release-0.65.000](release-0.65.000/README.md). The v0.01 record remains immutable
-at DOI 10.5281/zenodo.22727389.
+at DOI 10.5281/zenodo.22727389. The v0.05 public download matches the reviewed
+24-page PDF at SHA-256 `bcfefac4b138d2b41c5fe232c64590e3b6f0c309455d40e01451d9251c1e8acc`.
 
 The user's latest direction broadened the investigation beyond constant tuning.
 Three primary-source dossiers now cover classical odd/critical zero counts and

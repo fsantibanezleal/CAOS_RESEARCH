@@ -8,9 +8,9 @@
 \usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
 \usepackage{orcidlink,fancyhdr}
 \hypersetup{
-  pdftitle={Simple critical zeros in short intervals: stability, pressure, parity, and localization},
+  pdftitle={Simple critical zeros in short intervals: stability, pressure, and parity},
   pdfauthor={Felipe Santibáñez-Leal},
-  pdfsubject={Short-interval simple critical zeros, local Selberg detectors, finite stability, pressure certificates, and odd-multiplicity density},
+  pdfsubject={Short-interval simple critical zeros, finite stability, pressure certificates, and odd-multiplicity density},
   pdfkeywords={Riemann zeta function, simple zeros, short intervals, pair correlation, Gram matrix, interval arithmetic}
 }
 \newtheorem{theorem}{Theorem}[section]
@@ -30,9 +30,9 @@
 % macros are set by the publishing tool when the version DOI is reserved. At this text
 % width the two DOIs do not fit on one line of the box, so each has its own line.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.05}
-\newcommand{\docdate}{20 September 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.22851518}
+\newcommand{\docversion}{v0.04}
+\newcommand{\docdate}{18 September 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.22835172}
 \newcommand{\conceptdoi}{10.5281/zenodo.22727388}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\headerblock}{%
@@ -49,12 +49,12 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research \doctype}
-\fancyhead[R]{\small Stability, parity, and localization\textperiodcentered\ \docversion}
+\fancyhead[R]{\small Stability, pressure, and parity\textperiodcentered\ \docversion}
 \fancyfoot[C]{\thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
 \allowdisplaybreaks[1]
 
-\title{Simple critical zeros in short intervals:\\stability, pressure, parity, and localization}
+\title{Simple critical zeros in short intervals:\\stability, pressure, and parity}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program\\
 \small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
@@ -66,69 +66,59 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \headerblock
 
 \begin{abstract}
-Let $C_3=0.6567752140190419405\ldots$ be the certified rank-three
-diagonal constant of Pearce-Crump's sign-preserving Selberg detector. We
-localize that detector and prove that, for every fixed $1/2<\theta<1$, the
-lower asymptotic proportion of distinct odd-multiplicity critical zeros in
-$(T,T+T^\theta]$ is at least $(\theta-1/2)/(4eC_3)$. Combining this result
-with a parity refinement of the stable rank--trace inequality gives
-\[
- \liminf\frac{N_0^s(T,T^\theta)}{N(T,T^\theta)}
- \ge\max\left\{0,c(\theta),
- \frac{c(\theta)+(\theta-1/2)/(2eC_3)}3\right\},
-\]
-where $c(\theta)=2-\theta/2-\cot(\theta/\sqrt2)/\sqrt2$. Exact rational
-enclosures place the new positivity threshold in $(0.5459,0.546)$, below
-the cosine threshold $0.5501939647\ldots$. At $\theta=0.546$, a fixed
-legal mollifier proves a simple-critical proportion above
-$0.0000976239413345$. We also strengthen the positive cosine curve by an
-odd-frame pressure transfer; at $\theta=3/4$, a two-variable interval
-certificate gives the simple-critical bound $0.4190878881701117\ldots$.
-The finite stability inequality, Selberg detector, and global pressure
-methods are prior work. The localization uses an arbitrary-subinterval
-rational-frequency estimate from Pearce-Crump and Wang's fixed-test pair
-theorem. No global record, effective starting height, universal simplicity
-theorem, or solution of the Riemann hypothesis is claimed.
+Let $c(\theta)=2-\theta/2-\cot(\theta/\sqrt2)/\sqrt2$, and let
+$\theta_0$ be its unique zero in $(0,1)$. We combine the finite stable
+rank--trace inequality underlying recent zeta-zero results with a classical
+positive density of distinct odd-multiplicity critical zeros. If $\kappa>0$
+is one fixed Selberg density constant packed into every longer interval,
+then, for each fixed $0.51<\theta<1$, the lower asymptotic simple-critical
+proportion in $(T,T+T^\theta]$ is at least
+$\max\{0,c(\theta),(c(\theta)+2\kappa)/3\}$. Consequently it is positive
+at some fixed exponent strictly below $\theta_0$. A separate multiplicity
+identity gives the correct distinct-zero companion, including a proportion
+greater than one half at another exponent below $\theta_0$. The new exponents
+are expressed in terms of the unevaluated classical constant; no new decimal
+exponent is claimed. We also strengthen the entire positive cosine curve by
+an odd-frame pressure transfer. A two-variable interval certificate at
+$\theta=3/4$ yields the simple-critical bound
+$0.4190878881701117\ldots$ and distinct bound
+$0.7095439440850558\ldots$. The finite stability inequality, the classical
+sign-change theorems, and the global pressure methods are prior work.
+Wang's fixed-test pair-correlation theorem supplies the arithmetic input;
+all smoothing and support limits follow the height limit. The qualitative
+parity result requires no numerical zero sampling or kernel optimization.
+No global record, effective starting height, or solution of the Riemann
+hypothesis is claimed.
 \end{abstract}
 
 \section*{Summary of results}
 
-The central result is an explicit localization of Pearce-Crump's optimized
-Selberg detector. Retaining the actual interval length in its
-rational-frequency estimate gives positive density of distinct odd critical
-zeros for every fixed exponent above one half. A parity transfer then turns
-that input into a numerical simple-critical positivity threshold below the
-zero of Wang's cosine bound.
+The central result is a parity transfer from classical odd-multiplicity
+critical zeros to simple critical zeros. Retaining multiplicity excess in
+the known finite stability inequality yields a qualitative extension below
+the zero of Wang's cosine bound. This changes the admissible interval-length
+range rather than only a numerical proportion. The explicit dependence on
+the classical density constant and the separate distinct-zero argument are
+proved below.
 
 Further results are the direct finite Hilbert transfer with its explicit
 compact energy bound, the odd-frame pressure theorem, its stronger
 consequence throughout the positive short-interval curve, an odd-frame
 bound from the compact finite certificate, and a certified two-variable
-pressure bound. The earlier classical parity theorem remains useful as a
-weaker-input qualitative result and gives a separate distinct-zero consequence.
+pressure bound.
+The following table compares the separate quantitative outcomes; the parity
+range theorem has no certified decimal exponent and is not represented by
+a numerical row.
 
 \begin{quote}\small
-\textbf{Verification.} For the pressure bounds, parity deduction, and local
-Selberg transfer (computations EXP-003, EXP-004, and EXP-005
-~\cite{RecordIII,RecordIV,RecordV}), the
+\textbf{Verification.} For the pressure bounds and the parity deduction
+(computations EXP-003 and EXP-004~\cite{RecordIII,RecordIV}), the
 verification consists of exact finite checks, complete 256-bit replays of
 the interval certificates, checks of the imported statements against their
 primary sources, and independent step-by-step checks of the proofs,
 including an independent recomputation of every census row. It is not
 external peer review or end-to-end formal verification.
 \end{quote}
-
-\begin{center}\small
-\begin{tabular}{lr}
-\toprule
-Interval-range quantity & Certified value\\
-\midrule
-Wang cosine positivity threshold & $0.550193964744154\ldots$\\
-Localized Selberg--parity threshold & $(0.5459,0.546)$\\
-Simple-critical lower bound at $\theta=0.546$ & $>0.0000976239413345$\\
-\bottomrule
-\end{tabular}
-\end{center}
 
 \begin{center}\small
 \begin{tabular}{lrr}
@@ -184,13 +174,12 @@ schedule used below is a simple choice within this established framework.
 We do not claim these ingredients or an improved global record. Our
 contributions are their direct finite-Hilbert transfer, an explicit
 quantitative three-point bound, a strict refinement of Wang's positive
-short-interval curve, and three consequences. Classical odd-multiplicity
-density and the retained multiplicity excess extend the positivity range
-qualitatively. Odd-frame pressure strengthens the positive curve
-quantitatively. Finally, Pearce-Crump's coefficient-uniform Selberg detector
-localizes to every fixed power interval above one half, giving an explicit
-odd-density curve and a numerical positivity threshold. The finite proof
-keeps off-line signs, multiplicities, and singular Gram matrices explicit.
+short-interval curve, and two consequences. First,
+classical odd-multiplicity density and the retained multiplicity excess
+extend the positivity range qualitatively. Second, odd-frame pressure
+strengthens the positive curve quantitatively, with independently replayed
+numerical inputs. The finite proof keeps off-line signs, multiplicities,
+and singular Gram matrices explicit.
 
 Selberg's positive density theorem at lengths $T^{1/2+\epsilon}$ is
 reproduced as Theorem B in Karatsuba's primary article~\cite{Karatsuba}.
@@ -198,54 +187,16 @@ Karatsuba's own theorem works at $T^{27/82+\epsilon}$. These count distinct
 odd-order critical zeros. They do not already assert a positive simple-zero
 proportion. Steuding's later simple-critical theorem gives the explicit
 exponent $0.552$~\cite{Steuding,SteudingThesis}; Wang gives the smaller
-explicit threshold $\theta_0$. Pearce-Crump~\cite{PearceCrump} later gave a
-coefficient-uniform sign detector with a certified diagonal constant. Its
-global theorem exceeds seven percent on the critical line. The localization
-below uses the paper's arbitrary-subinterval off-diagonal estimate; it does
-not alter the detector or claim the global percentage as a new result.
+explicit threshold $\theta_0$. The combination below uses only the
+convenient fixed classical seed $\alpha=51/100$, and neither improves
+Karatsuba's odd-zero theorem nor computes a replacement decimal for
+$\theta_0$.
 
 The labels [D] and [MV] distinguish mathematical deductions from finite
 machine-verifiable statements. The following main range result is a
 deduction from the stated primary analytic inputs. Exact finite checks
 verify its algebra; they do not replace those inputs or prove all-height
 statements by enumeration.
-
-\begin{theorem}[Explicit local Selberg transfer, D+MV]
-\label{thm:localselberg}
-Let
-\[
-C_3=C[q_3]\in
-0.6567752140190419405677628751089899133\pm10^{-17}
-\]
-be the certified rank-three diagonal constant of Pearce-Crump's detector.
-For every fixed $1/2<\theta<1$,
-\begin{equation}\label{eq:localodd}
- \liminf_{T\to\infty}
- \frac{N_{\rm odd}(T,T^\theta)}{N(T,T^\theta)}
- \ge\frac{\theta-1/2}{4eC_3}.
-\end{equation}
-Consequently,
-\begin{equation}\label{eq:localsimple}
- \liminf_{T\to\infty}
- \frac{N_0^s(T,T^\theta)}{N(T,T^\theta)}
- \ge\max\left\{0,c(\theta),
- \frac{c(\theta)+(\theta-1/2)/(2eC_3)}3\right\}.
-\end{equation}
-The unique zero of the third numerator in \eqref{eq:localsimple} lies in
-$(0.5459,0.546)$. At $\theta=0.546$, the fixed mollifier exponent
-$u=0.02299$ proves
-\begin{equation}\label{eq:localpoint}
- \liminf_{T\to\infty}
- \frac{N_0^s(T,T^{0.546})}{N(T,T^{0.546})}
- >0.0000976239413345396825264438351212564.
-\end{equation}
-The optimized limiting curve gives the stronger lower bound
-$0.0000994910410327$ at this exponent.
-\end{theorem}
-
-Theorem~\ref{thm:localselberg} refines the simple-critical range numerically
-for $\theta>1/2$. The next theorem uses only a fixed classical sign-change
-seed and remains a separate qualitative statement under weaker input.
 
 \begin{theorem}[Parity transfer and qualitative range extension, D]
 \label{thm:parity}
@@ -1086,121 +1037,6 @@ margin and continuity, without a new pair-correlation support estimate.
 Its numerical size remains unknown because the imported fixed classical
 constant has not been evaluated.
 
-\section{Localizing the optimized Selberg detector}
-\label{sec:localselberg}
-
-Pearce-Crump~\cite{PearceCrump} constructs a positive-semidefinite sum of
-three squared mollifiers whose critical-line value is Hardy's real function
-times a nonnegative weight. Sign changes therefore detect distinct
-odd-multiplicity critical zeros. Write $\beta_U$ for the analytic half and
-$U\asymp T^u$ for the mollifier length. The source normalization is
-\begin{equation}\label{eq:selbergnormalization}
- \aleph(s)Y_U(s)=2\operatorname{Re}\beta_U(s)
- \qquad (\operatorname{Re}s=1/2).
-\end{equation}
-For the rank-three profile, the diagonal quadratic form satisfies
-\begin{equation}\label{eq:c3diagonal}
- S_C(1,U)\le\frac{C_3+o(1)}{\log U}.
-\end{equation}
-The profile is first regularized by a fixed $\varepsilon>0$ so that the
-terminal coefficient needed by the horizontal Jensen estimate is nonzero.
-The limit $T\to\infty$ is taken first, followed by
-$\varepsilon\downarrow0$; no estimate uniform in $\varepsilon$ is used.
-
-Fix $1/2<\theta<1$, put $H=T^\theta$, and choose a fixed
-\begin{equation}\label{eq:localurange}
- 0<u<\frac{\theta-1/2}{2}.
-\end{equation}
-Bertrand's postulate supplies a prime $U$ with
-$T^u\le U\le2T^u$, hence $\log U=u\log T+O(1)$. Use the source's fixed
-analytic half on the dyadic block $[T,2T]$ and apply Littlewood's rectangle
-argument only on $[T,T+H]$. Since $H<T$ for all sufficiently large $T$,
-the shorter rectangle stays inside the same block.
-
-Put $x=1-2\delta\asymp1/\log T$. The horizontal increment bound in the
-source is
-\[
- O\!\left(U\log(2T)\{\log^2(2T)+\eta_U+1\}\right),
-\]
-where $\eta_U=O_\varepsilon(1)$ for fixed regularization. This is $o(H)$
-under \eqref{eq:localurange}. The auxiliary zeta and mollifier increments
-are $O(\log T)$ and $O(U)$. On the right auxiliary edge, the principal
-logarithms have absolutely convergent Dirichlet expansions with no constant
-term. Termwise integration therefore gives a uniform $O(1)$ contribution.
-The short rectangle inequality is consequently
-\begin{equation}\label{eq:shortrectangle}
- \frac{\pi x}{2}N_{\rm odd}(T,H)
- \ge-\int_T^{T+H}\log|\beta_U(\delta+it)|\,dt
-       -H\log2-o(H).
-\end{equation}
-
-It remains to retain the mean-square constant on the shorter interval. The
-diagonal estimate is pointwise before averaging. Its remainder is
-\[
- O(T^{-1/2}U^2\log^2(2U))=o(1)
-\]
-because $u<1/4$. The approximate-functional-equation remainder is also
-pointwise:
-\[
- O(T^{-1/4}U\log^3T)=o(1).
-\]
-The source's rational-frequency lemma applies to arbitrary intervals
-$I_{\xi,\eta}\subseteq[T,2T]$. For the moving square-root truncation
-$X\asymp T^{1/2}$, divide its off-diagonal estimate by $H$ instead of $T$.
-Since $T^{\delta-1/2}=T^{-x/2}=O(1)$, the result is
-\begin{equation}\label{eq:localoffdiagonal}
- O\!\left(T^{1/2+2u-\theta}\log T\right)=o(1),
-\end{equation}
-precisely by \eqref{eq:localurange}. Thus
-\begin{equation}\label{eq:localmeansquare}
- \frac1H\int_T^{T+H}|\beta_U(\delta+it)|^2dt
- \le\frac{C_3+o(1)}{x\log U}.
-\end{equation}
-
-Jensen's inequality, \eqref{eq:shortrectangle}, and
-\eqref{eq:localmeansquare} give
-\[
- N_{\rm odd}(T,H)\ge\frac{H}{\pi x}
- \left\{\log\frac{x\log U}{C_3}-2\log2+o(1)\right\}.
-\]
-The factor $2\log2$ is forced by \eqref{eq:selbergnormalization}. The
-right side is optimized at $x=4eC_3/\log U$, yielding
-\begin{equation}\label{eq:localsignchanges}
- N_{\rm odd}(T,H)\ge
- \frac{H\log U}{4\pi eC_3}(1+o(1)).
-\end{equation}
-Since
-$N(T,T^\theta)\sim T^\theta\log T/(2\pi)$,
-\eqref{eq:localsignchanges} gives
-\[
- \liminf\frac{N_{\rm odd}(T,T^\theta)}{N(T,T^\theta)}
- \ge\frac{u}{2eC_3}.
-\]
-This holds for every fixed $u$ in \eqref{eq:localurange}. Taking the
-supremum over those fixed choices proves \eqref{eq:localodd}; the mollifier
-exponent never varies with $T$.
-
-Apply the pointwise parity inequality
-$3N_0^s\ge2N-Q+2N_{\rm odd}+D$ with $D\ge0$. Wang's fixed-test limit gives
-the $c(\theta)$ contribution from $(2N-Q)/N$, and \eqref{eq:localodd}
-supplies the odd support. This proves \eqref{eq:localsimple}.
-
-For the threshold, put
-\[
- F(\theta)=c(\theta)+\frac{\theta-1/2}{2eC_3}.
-\]
-It is strictly increasing because
-\[
- F'(\theta)=\frac12\{\csc^2(\theta/\sqrt2)-1\}
-             +\frac1{2eC_3}>0.
-\]
-Exact rational Taylor enclosures prove
-$F(0.5459)<0<F(0.546)$, giving the asserted root bracket. At
-$\theta=0.546$, the fixed choice $u=0.02299$ has strict exponent margin
-$\theta-1/2-2u=0.00002$ and gives \eqref{eq:localpoint}. The boundary
-choice $u=0.023$ is excluded because it leaves no decay in
-\eqref{eq:localoffdiagonal}.
-
 \section{The compact certificate}\label{sec:certificate}
 
 For $\theta=3/4$ and $R=21/4$, a finite interval computation proves
@@ -1286,18 +1122,16 @@ enough for certified pressure windows to interact. Multiplicity excess,
 combined with distinct odd-multiplicity density, yields a qualitative
 range extension even at the zero of the baseline cosine bound. The
 two mechanisms have separate hypotheses, certificates, and distinct-zero
-consequences. The localized Selberg detector makes the odd density explicit
-for every fixed exponent above one half and gives a simple-critical positivity
-threshold below $0.546$. None of these results proves the Riemann hypothesis.
+consequences; neither proves the Riemann hypothesis.
 
-The next analytic task is to reduce the $T^{1/2}U^2/H$ off-diagonal barrier.
-A stronger rational-frequency spacing estimate or a different local mean
-square could move the explicit threshold toward one half. Pearce-Crump's
-rank-six benchmark gives a slightly smaller diagonal constant, but the full
-rank-six profile data are not printed; the fully reproducible rank-three
-profile is used here. For the pressure route, richer windows may improve
-constants within the established framework; their existence does not
-establish global optimality.
+The next analytic task for the parity route is to make one classical
+seed constant explicit enough to evaluate $\theta_1$. A further localized
+short-mollifier argument might supply stronger seed information, but the
+necessary general derivative theorem and precise zero count must first
+be proved. For the pressure route, richer windows may improve constants
+within the established framework; their existence does not establish
+global optimality. These are open tasks rather than conclusions of this
+paper.
 
 \medskip
 \noindent\textbf{Declaration of generative AI use.} Generative AI tools
@@ -1483,44 +1317,10 @@ statements by enumeration.
 The census slack samples are not claimed to be geometric realizations of
 zeta zeros, and the scalar optimum concerns only the stated relaxation.
 
-\section{Local Selberg verification}
-
-The EXP-005 computation~\cite{RecordV} verifies the finite constants in
-Theorem~\ref{thm:localselberg}. Its primary evaluator uses exact rational
-Taylor enclosures for $\sqrt2$, $e$, sine, and cosine. A separate
-100-decimal interval implementation must lie inside those rational bounds.
-The run also checks the exact source bytes for Pearce-Crump's PDF and TeX
-archive, the strict localization exponent, a negative point at
-$\theta=0.5459$, and rejection of the zero-margin mollifier boundary.
-
-The canonical result has SHA-256 digest
-\begin{center}\small\ttfamily
-3f0ca476c0e2fe688e4e4f43fc11861d9491b3066d067e46bf88d1a441c696a5
-\end{center}
-and passed all fourteen checks. Its fixed parameters are
-$\theta=273/500$, $u=2299/100000$, and source radius $10^{-17}$ for
-$C_3$. To reproduce the computation in a fresh directory, use
-\begin{verbatim}
-python problems/number-theory/riemann-hypothesis/experiments/\
-EXP-005-local-selberg-transfer/run.py \
-  --output-dir tmp/riemann-exp005-replay --budget-seconds 60
-pytest tests/test_riemann_local_selberg.py
-\end{verbatim}
-
-The finite computation does not establish the all-height localization. A
-separate proof check follows the source argument term by term and verifies
-the arbitrary-subinterval quantifier and square-root cutoff. It also checks
-the diagonal and approximate functional equation remainders, horizontal bounds,
-right-edge integrals, factor-two normalization, regularization order,
-prime mollifier selection, endpoint convention, and the match between
-distinct sign changes and the parity count. The recent analytic preprints
-remain imported mathematical inputs rather than machine-formalized theorems.
-
 \section{Source comparison and limitations}
 
-The source comparison was updated on 2026-09-19. It used the full
+The source comparison was completed on 2026-09-12. It used the full
 Wang v1 manuscript, Lamzouri v2, the current Alp\"oge--Furman paper,
-Pearce-Crump v1,
 and pinned snapshots of the directly relevant global stability,
 pressure-frame, Bellman-coboundary, and mixed-certificate repositories.
 Queries combining the Wang identifier, short intervals, pressure,
@@ -1549,19 +1349,21 @@ Likewise, weighted all-critical Gram defects and negative off-line spectral
 mass are separate research directions, not premises of the parity theorem.
 
 A bounded search of primary literature and the pinned contributor sources
-did not locate the exact short-interval parity combination or the localization
-of Pearce-Crump's detector. The finite accounting is already a consequence
-of known general multiplicity inequalities; the contribution is its proved
-asymptotic consequence with classical and explicit odd-zero inputs. This is
-not an assertion of exhaustive priority or a replacement for specialist peer
-review.
+did not locate the exact short-interval parity combination. The finite
+accounting is already a consequence of known general multiplicity
+inequalities; the claimed contribution is its stated and proved asymptotic
+consequence with a classical odd-zero seed. This is not an assertion of
+exhaustive priority or a replacement for specialist peer review. In
+particular, no numerical improvement on the best explicit published
+positivity exponent is asserted.
 
-The analytic inputs include the recent Wang and Pearce-Crump preprints and
-the classical sign-change theorems, not an end-to-end machine formalization.
-The mathematical and numerical checks can still contain errors, and some
-numerical evaluators share arithmetic components. The explicit local theorem
-does not give an effective starting height, uniformity for moving exponents,
-a global-record proportion, universal simplicity, or elimination of all
+The analytic inputs include Wang's recent preprint and the classical
+sign-change theorems, not an end-to-end machine formalization. The
+mathematical and numerical reviews can still contain errors, and the
+two numerical evaluators share arithmetic and geometric components.
+The parity theorem gives an existentially smaller fixed exponent; it
+does not give its decimal value, an effective starting height, uniformity
+for moving exponents, a global-record proportion, or elimination of all
 off-line zeros.
 
 This paper and the original research exposition in the repository are
@@ -1591,14 +1393,6 @@ B.~Wang,
 \emph{Simple critical zeros and distinct zeros of the Riemann
 zeta-function in short intervals}, arXiv:2609.07918v1 (2026).
 \url{https://arxiv.org/abs/2609.07918v1}.
-
-\bibitem{PearceCrump}
-A.~Pearce-Crump,
-\emph{Optimising Selberg's method for critical zeros},
-arXiv:2609.15329v1 (2026). Lemma 5.7 gives the arbitrary-subinterval
-rational-frequency estimate; Proposition 11.1 and Theorem 11.5 give the
-positive-semidefinite detector and certified rank-three profile.
-\url{https://arxiv.org/abs/2609.15329v1}.
 
 \bibitem{Karatsuba}
 A.~A.~Karatsuba,
@@ -1707,14 +1501,6 @@ F.~Santib\'a\~nez-Leal,
 Primary-source comparison, complete finite and asymptotic proof, exact
 finite checks, and independent proof checks, dated 2026-09-12.
 \href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer}{Public experiment record}.
-
-\bibitem{RecordV}
-F.~Santib\'a\~nez-Leal,
-\emph{EXP-005: local Selberg transfer}, CAOS Research, 2026.
-Complete localization proof, exact rational and interval certificate,
-negative controls, source hashes, and independent proof checks, dated
-2026-09-19.
-\href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer}{Public experiment record}.
 
 \end{thebibliography}
 \end{document}

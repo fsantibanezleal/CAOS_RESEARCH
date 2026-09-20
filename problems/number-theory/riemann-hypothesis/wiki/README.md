@@ -111,10 +111,10 @@ documents remain in the local repository cache where redistribution rights were
 not identified. Licensed snapshots retain their notices. The [bibliography](../references.md)
 distinguishes source theorems, un-replayed candidate claims and formal hypotheses.
 
-The manuscript series is [A stability refinement for simple critical zeros in short intervals](https://doi.org/10.5281/zenodo.22727388).
+The manuscript series is [Simple critical zeros in short intervals: stability, pressure, parity, and localization](https://doi.org/10.5281/zenodo.22727388).
 The first published version is [v0.01](https://doi.org/10.5281/zenodo.22727389);
-The confirmed pressure and parity results form the published v0.02 expansion,
-with version DOI [10.5281/zenodo.22728744](https://doi.org/10.5281/zenodo.22728744). The [manuscript directory](../../../../manuscripts/riemann-hypothesis/short-interval-stability/)
+The explicit local Selberg transfer forms the published v0.05 expansion,
+with version DOI [10.5281/zenodo.22851518](https://doi.org/10.5281/zenodo.22851518). The [manuscript directory](../../../../manuscripts/riemann-hypothesis/short-interval-stability/)
 and publication receipts record the actual publication state. A preprint is not
 peer review or mathematical community acceptance.
 

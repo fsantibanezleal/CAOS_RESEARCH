@@ -88,5 +88,7 @@ $1/2+2u-\theta$ and therefore an explicit odd-critical density throughout
 $\theta>1/2$. The EXP-004 parity identity converts it into a simple-critical
 positivity threshold in $(0.5459,0.546)$. The exact certificate, retained
 serialization failures, analytic audit and proof-review binding are committed.
-The remaining delivery work is the manuscript version, public replay, scoped
-promotion and live release verification; none changes the open status of RH.
+Manuscript v0.05 is published at DOI 10.5281/zenodo.22851518 after a clean
+three-pass build, full 24-page render review and exact public-byte verification.
+The remaining delivery work is the public replay, scoped promotion and live
+release verification; none changes the open status of RH.
