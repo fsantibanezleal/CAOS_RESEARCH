@@ -1,6 +1,6 @@
 # Riemann hypothesis state
 
-Updated: 2026-09-19. Release: **0.65.000**, released and live-verified from release commit `24a2cb250e44fa59c9f6a56c86eefdf009258e70` (tag `v0.65.000`).
+Updated: 2026-09-19. Release: **0.70.000**, released and live-verified from main commit `159ec22a6200938d6d8da1bba395f81014ca70e5` (tag `v0.70.000`).
 Current research round: **EXP-005 confirmed; explicit local Selberg transfer and threshold below 0.546**.
 
 EXP-005 responds to Pearce-Crump arXiv:2609.15329v1, which appeared after the
@@ -38,9 +38,9 @@ The theorem, separate-stage verdict, source audit, scientific code, candidates a
 canonical results are committed and pushed in the pressure work branch. Research
 [PR #266](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/266) merged to develop
 at `65980d33f40c291c86a384420afa888b53abbea0`; release PR [#267](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/267), develop synchronization [#268](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/268), live receipt [#269](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/269), and main promotion [#270](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/270) are merged.
-the EXP-005 manuscript is published as v0.05 at [10.5281/zenodo.22851518](https://doi.org/10.5281/zenodo.22851518)
-the public replay release is live-verified in
-[release-0.65.000](release-0.65.000/README.md). The v0.01 record remains immutable
+The EXP-005 manuscript is published as v0.05 at [10.5281/zenodo.22851518](https://doi.org/10.5281/zenodo.22851518).
+The public replay release is live-verified in
+[release-0.70.000](release-0.70.000/README.md). The v0.01 record remains immutable
 at DOI 10.5281/zenodo.22727389. The v0.05 public download matches the reviewed
 24-page PDF at SHA-256 `bcfefac4b138d2b41c5fe232c64590e3b6f0c309455d40e01451d9251c1e8acc`.
 
@@ -64,3 +64,5 @@ The first release closure is recorded in [its live receipt](release-0.64.000/liv
 public PRs #263/#264 merged, main 08660dc, tag v0.64.000, successful Pages run
 34706614866, 13 exact live-file comparisons and eight passing live UI scenarios.
 The expanded release closure is recorded in [the v0.65 live receipt](release-0.65.000/live-verification.json): CI and Pages runs 34718338752, 34718338730, 34719132932, and 34719132914 passed; deployed assets and data hashes matched; eight EN/ES light/dark desktop/phone scenarios visited all six research tabs, with 48 tab visits, 288 screenshots, and zero failures. Private coordination PRs #631/#632/#635/#636 are merged; private main/develop now contain the synchronized v0.65 records. Unrelated original worktrees remain preserved.
+
+The EXP-005 release closure is recorded in [the v0.70 live receipt](release-0.70.000/live-verification.json): research PR #309, release PR #310 and promotion PR #311 are merged; main CI run 35484332573 and Pages run 35484332614 passed; production byte-matched the release root, three hashed assets and six data files. Eight EN/ES light/dark desktop/phone scenarios visited all six research tabs, with 48 tab visits, 304 screenshots, and zero failures. Private archive PRs #665 and #667 are merged through private main. The Riemann Hypothesis remains open.
