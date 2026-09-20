@@ -86,6 +86,29 @@ are retained. Fresh replay rechecks all arithmetic; a saved prefix is not truste
 as a mathematical certificate. Exact CPU arithmetic completed the declared run
 in 8.0353704 seconds; GPU acceleration was unnecessary.
 
+## Reproduce the explicit local Selberg transfer
+
+EXP-005 localizes Pearce-Crump's optimized Selberg sign detector and combines
+its explicit odd-zero curve with the EXP-004 parity inequality. Run the exact
+certificate and focused adversarial tests in fresh paths:
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/run.py --output-dir tmp/riemann-exp005-replay --budget-seconds 60
+pytest tests/test_riemann_local_selberg.py tests/test_riemann_parity.py
+```
+
+The run checks all 14 declared controls, the source hashes, the rank-three
+constant enclosure, the negative point at theta=0.5459, the positive point at
+theta=0.546, the fixed legal mollifier exponent u=0.02299, and rejection of the
+zero-margin boundary u=0.023. Its independent interval replay uses a separate
+high-precision implementation. The canonical result SHA-256 is
+`3f0ca476c0e2fe688e4e4f43fc11861d9491b3066d067e46bf88d1a441c696a5`.
+
+The finite certificate does not establish the all-height theorem by itself.
+The exporter also requires the separate analytic localization proof review and
+binds its hypothesis to declaration commit `6fd59fec`. CPU arithmetic completed
+the canonical run in 0.313 seconds; no GPU workload was justified.
+
 ## Bake and inspect the public replay
 
 After committing the source artifacts, run `python -m researchlab.pipeline all`. The Riemann
@@ -126,4 +149,4 @@ research sections, proof stages, all released experiment records and the archite
 It records viewport containment, single-row navigation, browser errors, equation rendering,
 source links and screenshot hashes. It captures successive content viewports, including long
 experiment records. Automated success and visual inspection are recorded separately.
-The published QA record is under `program/riemann-hypothesis/release-0.64.000/`.
+Published QA records are versioned under `program/riemann-hypothesis/release-*/`.

@@ -12,6 +12,7 @@ import hashlib
 import json
 import re
 import subprocess
+from decimal import Decimal
 from fractions import Fraction
 from pathlib import Path
 
@@ -21,6 +22,8 @@ ROOT = Path(__file__).resolve().parents[3]
 DERIVED = ROOT / "data" / "derived"
 MANIFESTS = DERIVED / "manifests"
 EXP004_DECLARATION = "e03413b2301bf45ca68ff6e945f25add9a1c3a89"
+EXP005_DECLARATION = "6fd59fec51dda399de40e0327107dba42deb5b45"
+EXP005_CANONICAL = "864fe6b7bee69c6bdac72e72fbfb88b49ac0fef2"
 
 
 def _read_portfolio() -> dict:
@@ -213,6 +216,7 @@ def _riemann_payload() -> dict:
     exp_two = "EXP-002-short-interval-stability"
     exp_three = "EXP-003-odd-frame-pressure"
     exp_four = "EXP-004-parity-density-transfer"
+    exp_five = "EXP-005-local-selberg-transfer"
     specifications = [
         ("constant_audit", exp_one, f"experiments/{exp_one}/artifacts/result.json"),
         ("result", exp_two, f"experiments/{exp_two}/artifacts/result.json"),
@@ -238,8 +242,17 @@ def _riemann_payload() -> dict:
         ("parity_audit", exp_four, f"experiments/{exp_four}/adversarial-audit.md"),
         ("parity_verdict", exp_four, f"experiments/{exp_four}/verdict.md"),
         ("parity_review", exp_four, f"experiments/{exp_four}/proof-review.json"),
+        ("local_result", exp_five, f"experiments/{exp_five}/artifacts/canonical/result.json"),
+        ("local_receipt", exp_five,
+         f"experiments/{exp_five}/artifacts/canonical/execution-receipt.json"),
+        ("local_hypothesis", exp_five, f"experiments/{exp_five}/hypothesis.md"),
+        ("local_runner", exp_five, f"experiments/{exp_five}/run.py"),
+        ("local_proof", exp_five, f"experiments/{exp_five}/mathematical-proof.md"),
+        ("local_audit", exp_five, f"experiments/{exp_five}/adversarial-audit.md"),
+        ("local_verdict", exp_five, f"experiments/{exp_five}/verdict.md"),
+        ("local_review", exp_five, f"experiments/{exp_five}/proof-review.json"),
     ]
-    payload: dict = {"schema": "riemann-replay-v3", "provenance": []}
+    payload: dict = {"schema": "riemann-replay-v4", "provenance": []}
     source_bytes: dict[str, bytes] = {}
 
     def read_source(role: str, experiment: str, relative: str) -> bytes:
@@ -259,7 +272,8 @@ def _riemann_payload() -> dict:
 
     for role, experiment, relative in specifications:
         content = read_source(role, experiment, relative)
-        if role in {"constant_audit", "result", "pressure_result", "parity_result"}:
+        if role in {"constant_audit", "result", "pressure_result", "parity_result",
+                    "local_result"}:
             payload[role] = json.loads(content)
         elif role == "source_manifest":
             payload["reviewed_on"] = json.loads(content)["reviewed_on"]
@@ -425,6 +439,87 @@ def _riemann_payload() -> dict:
         if review["source_sha256"][role] != hashlib.sha256(source_bytes[role]).hexdigest():
             raise ValueError(f"EXP-004 proof review no longer matches: {role}")
     payload["parity_review"] = review
+
+    local = payload["local_result"]
+    if (local.get("schema") != "riemann-exp005-results-v1"
+            or local.get("status") != "pass" or local.get("passed") is not True):
+        raise ValueError("EXP-005 requires its passing canonical result")
+    expected_checks = {
+        "baseline_negative", "boundary_rejected", "c3_interval_ordered",
+        "curve_simple_positive", "e_interval", "fixed_u_simple_positive",
+        "interval_contains_c", "interval_contains_curve", "interval_contains_fixed",
+        "mollifier_below_quarter", "negative_theta_control", "source_hashes",
+        "sqrt2_interval", "strict_localization_margin",
+    }
+    if set(local.get("checks", {})) != expected_checks or not all(local["checks"].values()):
+        raise ValueError("EXP-005 canonical result omits a declared exact control")
+    if (local["claim_boundary"].get("rh_solved") is not False
+            or local["boundary_control"].get("accepted") is not False
+            or local["boundary_control"]["margin"]["numerator"] != "0"):
+        raise ValueError("EXP-005 claim or mollifier-boundary control differs from the verdict")
+    parameters = local["parameters"]
+    if (parameters["theta"]["numerator"] != "273"
+            or parameters["theta"]["denominator"] != "500"
+            or parameters["negative_control_theta"]["numerator"] != "5459"
+            or parameters["negative_control_theta"]["denominator"] != "10000"
+            or parameters["mollifier_exponent_u"]["numerator"] != "2299"
+            or parameters["mollifier_exponent_u"]["denominator"] != "100000"):
+        raise ValueError("EXP-005 threshold or fixed mollifier parameters changed")
+
+    def certified_decimal(record: dict) -> Decimal:
+        # EXP-005 keeps very large exact numerator/denominator strings. Their
+        # independently checked decimal fields avoid Python's defensive
+        # integer-string limit during a public-data bake.
+        return Decimal(record["decimal"])
+
+    positive = local["positive_point"]
+    if (certified_decimal(positive["fixed_u_simple_lower"])
+            <= certified_decimal(parameters["simple_gate"])
+            or certified_decimal(positive["simple_curve_lower"]) <= 0
+            or certified_decimal(positive["localization_exponent_margin"]) <= 0
+            or certified_decimal(local["negative_control"]["simple_curve_upper"]) >= 0):
+        raise ValueError("EXP-005 exact positive, negative, or strict-margin gate failed")
+    identity = local["execution_identity"]
+    if (identity.get("head") != EXP005_CANONICAL
+            or identity.get("tracked_clean_at_start") is not True
+            or identity.get("hypothesis_sha256")
+            != hashlib.sha256(source_bytes["local_hypothesis"]).hexdigest()
+            or identity.get("run_py_sha256")
+            != hashlib.sha256(source_bytes["local_runner"]).hexdigest()):
+        raise ValueError("EXP-005 execution identity differs from committed evidence")
+    local_hypothesis_path = f"{problem}/experiments/{exp_five}/hypothesis.md"
+    if _revision_bytes(local_hypothesis_path, EXP005_DECLARATION) != source_bytes["local_hypothesis"]:
+        raise ValueError("EXP-005 hypothesis differs from its declaration revision")
+    result_sha256 = hashlib.sha256(source_bytes["local_result"]).hexdigest()
+    receipt = json.loads(source_bytes["local_receipt"])
+    if (receipt.get("schema") != "riemann-exp005-execution-receipt-v1"
+            or receipt.get("status") != "pass"
+            or receipt.get("result_sha256") != result_sha256
+            or receipt.get("git", {}).get("head") != EXP005_CANONICAL
+            or receipt.get("git", {}).get("tracked_clean_at_start") is not True):
+        raise ValueError("EXP-005 execution receipt does not bind the canonical result")
+    local_review = json.loads(source_bytes["local_review"])
+    if (local_review.get("schema") != "riemann-exp005-proof-review-v1"
+            or local_review.get("declaration_commit") != EXP005_DECLARATION
+            or local_review.get("canonical_commit") != EXP005_CANONICAL
+            or local_review.get("scientific_verdict") != "confirmed"
+            or local_review.get("analytic_localization_reviewed") is not True
+            or local_review.get("exact_certificate_reviewed") is not True):
+        raise ValueError("EXP-005 requires separate analytic and exact-certificate review")
+    local_review_roles = {
+        "hypothesis": "local_hypothesis",
+        "mathematical_proof": "local_proof",
+        "adversarial_audit": "local_audit",
+        "result": "local_result",
+        "verdict": "local_verdict",
+    }
+    if set(local_review.get("source_sha256", {})) != set(local_review_roles):
+        raise ValueError("EXP-005 proof review omits required scientific evidence")
+    for reviewed_name, role in local_review_roles.items():
+        if (local_review["source_sha256"][reviewed_name]
+                != hashlib.sha256(source_bytes[role]).hexdigest()):
+            raise ValueError(f"EXP-005 proof review no longer matches: {role}")
+    payload["local_review"] = local_review
     return payload
 
 

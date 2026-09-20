@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { renderToString } from 'katex';
 import type { RiemannData } from '../api/data';
-import { decimalCenter, parityEvidence, pressureWinner } from '../lib/riemannReplay';
+import { decimalCenter, localSelbergEvidence, parityEvidence, pressureWinner } from '../lib/riemannReplay';
 import { riemannArchitecture } from '../lib/riemannArchitecture';
 import { ARCHITECTURE } from '../lib/architecture';
 import { CITATIONS } from '../data/citations';
@@ -16,7 +16,7 @@ function parityFixture(): RiemannData {
   const data = replay();
   const roles = ['parity_result', 'parity_hypothesis', 'parity_proof', 'parity_audit', 'parity_verdict'] as const;
   const sourceSha256 = Object.fromEntries(roles.map((role) => [role, `${role}-hash`])) as Record<typeof roles[number], string>;
-  data.schema = 'riemann-replay-v3';
+  data.schema = 'riemann-replay-v4';
   data.parity_result = {
     schema: 'riemann-exp004-results-v1', experiment: 'EXP-004-parity-density-transfer',
     arithmetic_status: 'verified',
@@ -80,6 +80,24 @@ describe('Riemann pressure replay presentation', () => {
     expect(parityEvidence(clean)).toBeUndefined();
   });
 
+  it('surfaces EXP-005 only with its exact controls and separate analytic review', () => {
+    const data = replay();
+    const evidence = localSelbergEvidence(data);
+    expect(evidence?.result.parameters.theta.decimal).toBe('0.546');
+    expect(evidence?.result.positive_point.fixed_u_simple_lower.decimal)
+      .toContain('0.0000976239413345396825264438351212564');
+    expect(evidence?.review.scientific_verdict).toBe('confirmed');
+  });
+
+  it('rejects a failed EXP-005 control or a mismatched reviewed source', () => {
+    const failed = replay();
+    failed.local_result.checks.strict_localization_margin = false;
+    expect(localSelbergEvidence(failed)).toBeUndefined();
+    const mismatched = replay();
+    mismatched.provenance.find((source) => source.role === 'local_result')!.sha256 = '0'.repeat(64);
+    expect(localSelbergEvidence(mismatched)).toBeUndefined();
+  });
+
   it.each(['unverified', 'missing-second-evaluator', 'wrong-certificate'] as const)(
     'does not surface a pressure winner with %s evidence',
     (failure) => {
@@ -112,8 +130,8 @@ describe('Riemann pressure replay presentation', () => {
     const ids = [...pageSource.matchAll(/<Cite id="([^"]+)"/g)].map((m) => m[1]);
     for (const id of ids) expect(CITATIONS.some((citation) => citation.id === id)).toBe(true);
     expect(CITATIONS.find((citation) => citation.id === 'riemann-refinement2026')?.doi)
-      .toBe('10.5281/zenodo.22727389');
-    expect(pageSource).toContain('10.5281/zenodo.22835172');
+      .toBe('10.5281/zenodo.22851518');
+    expect(pageSource).toContain('10.5281/zenodo.22851518');
   });
 });
 
@@ -128,11 +146,14 @@ describe('Riemann contextual architecture', () => {
     const science = config.tabs.find((tab) => tab.id === 'science')!;
     const method = config.tabs.find((tab) => tab.id === 'method')!;
     expect(science.svg).toContain('EXP-004-parity-density-transfer/mathematical-proof.md');
-    expect(science.svg).toContain(lang === 'en' ? 'Classical odd-zero seed' : 'Densidad clásica de ceros impares');
+    expect(science.svg).toContain('EXP-005-local-selberg-transfer/mathematical-proof.md');
+    expect(science.svg).toContain(lang === 'en' ? 'Localized Selberg odd-zero curve' : 'Curva local de Selberg para ceros impares');
     expect(method.svg).toContain('docs/guides/riemann-replay.md');
-    expect(method.svg).toContain('EXP-001 · EXP-002 · EXP-003 · EXP-004');
+    expect(method.svg).toContain('EXP-001 · EXP-002 · EXP-003 · EXP-004 · EXP-005');
     expect(method.svg).toContain(lang === 'en' ? 'Audit parity and pressure' : 'Auditar paridad y presión');
-    expect(science.body_en).toContain('not overlapping triples');
-    expect(science.body_es).toContain('no entre ternas superpuestas');
+    expect(method.body_en).toContain('F(0.5459) < 0 < F(0.546)');
+    expect(science.body_en).toContain('None of these results proves RH');
+    expect(method.body_es).toContain('F(0.5459) < 0 < F(0.546)');
+    expect(science.body_es).toContain('Ninguno de estos resultados prueba RH');
   });
 });

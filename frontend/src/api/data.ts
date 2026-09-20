@@ -96,8 +96,41 @@ export type RiemannParityReview = {
   review_scope: string; novelty_scope: string; imported_inputs: string[]; unquantified: string[];
   source_sha256: Record<'parity_result' | 'parity_hypothesis' | 'parity_proof' | 'parity_audit' | 'parity_verdict', string>;
 };
+export type RiemannExact = { decimal: string; numerator: string; denominator: string };
+export type RiemannLocalResult = {
+  schema: 'riemann-exp005-results-v1'; status: 'pass'; passed: true;
+  checks: Record<string, boolean>;
+  claim_boundary: { analytic_theorem: string; finite_certificate: string; rh_solved: false };
+  boundary_control: { accepted: false; margin: RiemannExact; u: RiemannExact };
+  parameters: {
+    theta: RiemannExact; negative_control_theta: RiemannExact;
+    mollifier_exponent_u: RiemannExact; simple_gate: RiemannExact;
+  };
+  positive_point: {
+    c_lower: RiemannExact; c_upper: RiemannExact;
+    fixed_u_kappa_lower: RiemannExact; fixed_u_kappa_upper: RiemannExact;
+    fixed_u_simple_lower: RiemannExact; fixed_u_simple_upper: RiemannExact;
+    kappa_curve_lower: RiemannExact; kappa_curve_upper: RiemannExact;
+    simple_curve_lower: RiemannExact; simple_curve_upper: RiemannExact;
+    localization_exponent_margin: RiemannExact;
+  };
+  negative_control: { simple_curve_lower: RiemannExact; simple_curve_upper: RiemannExact };
+  source_constant: { name: string; center: RiemannExact; lower: RiemannExact; upper: RiemannExact; radius: RiemannExact };
+  execution_identity: {
+    head: string; hypothesis_sha256: string; run_py_sha256: string;
+    tracked_clean_at_start: boolean; python: string;
+  };
+};
+export type RiemannLocalReview = {
+  schema: 'riemann-exp005-proof-review-v1'; scientific_verdict: 'confirmed';
+  declaration_commit: string; canonical_commit: string; reviewed_utc: string;
+  analytic_localization_reviewed: true; exact_certificate_reviewed: true;
+  confirmed_conclusion: string; review_scope: string; novelty_scope: string;
+  imported_inputs: string[]; unquantified: string[];
+  source_sha256: Record<'hypothesis' | 'mathematical_proof' | 'adversarial_audit' | 'result' | 'verdict', string>;
+};
 export type RiemannData = {
-  schema: 'riemann-replay-v3';
+  schema: 'riemann-replay-v4';
   reviewed_on: string;
   result: {
     theta: string; radius: string; delta: string;
@@ -133,6 +166,8 @@ export type RiemannData = {
   };
   parity_result: RiemannParityResult;
   parity_review: RiemannParityReview;
+  local_result: RiemannLocalResult;
+  local_review: RiemannLocalReview;
   provenance: {
     role: string; source_exp: string; path: string; source_commit: string;
     bytes: number; sha256: string;

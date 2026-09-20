@@ -24,6 +24,11 @@ export const CITATIONS: Citation[] = [
     url: 'https://arxiv.org/abs/2609.07918v1',
   },
   {
+    id: 'riemann-pearcecrump2026', label: 'Pearce-Crump 2026',
+    citation: 'Pearce-Crump A. (2026). Optimising Selberg\'s method for critical zeros. arXiv:2609.15329v1. Source of the positive-semidefinite sign detector, coefficient-uniform approximate functional equation, arbitrary-subinterval mean-value estimate, and certified rank-three profile localized in EXP-005.',
+    url: 'https://arxiv.org/abs/2609.15329v1',
+  },
+  {
     id: 'riemann-karatsuba1985', label: 'Karatsuba 1985',
     citation: 'Karatsuba A. A. (1985). On the zeros of the Riemann zeta-function on the critical line. Mathematics of the USSR-Izvestiya 24(3), 523–537. Theorem B restates Selberg’s distinct odd-order critical-zero density; the paper also proves a stronger shorter seed exponent.',
     url: 'https://www.mathnet.ru/eng/im1456',
@@ -60,8 +65,13 @@ export const CITATIONS: Citation[] = [
   },
   {
     id: 'riemann-refinement2026', label: 'CAOS short-interval refinement',
-    citation: 'Santibáñez-Leal F. (2026). A stability refinement for simple critical zeros in short intervals, version 0.01. First published EXP-002 proof and compact certificate; a separate sinc-Taylor evaluator shares Arb and geometry with the certifier.',
-    doi: '10.5281/zenodo.22727389',
+    citation: 'Santibáñez-Leal F. (2026). Simple critical zeros in short intervals: stability, pressure, parity, and localization, version 0.05. The explicit local Selberg transfer, threshold certificate, prior pressure and parity results, and stated analytic boundaries are included.',
+    doi: '10.5281/zenodo.22851518',
+  },
+  {
+    id: 'riemann-local2026', label: 'CAOS EXP-005: local Selberg transfer',
+    citation: 'Santibáñez-Leal F. (2026). Local optimized Selberg transfer. CAOS Research EXP-005: complete analytic localization, exact threshold bracket, fixed mollifier witness, independent interval replay, adversarial review, and source-bound proof review. RH remains open.',
+    url: 'https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/mathematical-proof.md',
   },
   {
     id: 'riemann-pressure2026', label: 'CAOS EXP-003: odd-frame pressure',
