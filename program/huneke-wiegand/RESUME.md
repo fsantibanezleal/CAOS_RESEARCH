@@ -1,12 +1,27 @@
 # Huneke-Wiegand extensions - session handoff
 
-## Current checkpoint: uniform quadratic torsion theorem, 2026-09-05
+## Current checkpoint: finite labelled triangle comparison, 2026-09-20
 
 **EXP-054--062 are closed. For every integer p>=8, the full original integer
 cokernel contains a direct summand `(Z/2)^q`, where
 `q=floor(((p-2)^2+3)/12)`. The full quotient is not yet classified.**
 EXP-062 is CONFIRMED, with hypothesis `8daa0d4` frozen before execution and
 result `ebcfa20` committed and pushed on `work/huneke-wiegand/open`.
+
+**EXP-063 is now CONFIRMED FINITELY at `p=8,9,10,11`.** All 19 exact
+EXP-062 triangle rows survive the certified unit contraction as literal `R5`
+coordinates in the persistent isolated component. In carrier masks 59 and 62
+they have quotient ranks `3,4,5,7` and no mod-two relations. Mask 58 has ranks
+`1,2,3,5`; its complete relation space on the tested range is the span of the
+two endpoint triangles `(0,1,p-3)` and `(0,2,p-4)`. Mask 56 has ranks
+`0,0,0,1`. The independent audit rebuilds all four components, exhausts every
+triangle combination in all 16 mask cases, verifies the 19 `+/-2x_T`
+boundaries, and passes 12 adversarial controls.
+
+This closes a finite labelled target bridge, not the uniform integral map.
+Mod-two vanishing does not exclude an order-two element being twice an
+order-four element. The two endpoint relations therefore remain candidates
+for the exact integral relative kernel rather than a proved integral kernel.
 
 The classes are indexed by all nonnegative triples `T=(i<j<k)` of sum `p-2`.
 Explicit signed interval sources give `M W_T=2x_ij`; complete relative parity
@@ -22,7 +37,8 @@ one member of the quadratic family, not a distinct extra generator.
 
 ### Read first and validation
 
-Start with the primary [EXP-062 proof](../../problems/commutative-algebra/huneke-wiegand/experiments/EXP-062-triangle-torsion-family/proof.md)
+Start with the [EXP-063 verdict](../../problems/commutative-algebra/huneke-wiegand/experiments/EXP-063-triangle-isolated-comparison/verdict.md)
+and [finite proof](../../problems/commutative-algebra/huneke-wiegand/experiments/EXP-063-triangle-isolated-comparison/proof.md), then the primary [EXP-062 proof](../../problems/commutative-algebra/huneke-wiegand/experiments/EXP-062-triangle-torsion-family/proof.md)
 and [verdict](../../problems/commutative-algebra/huneke-wiegand/experiments/EXP-062-triangle-torsion-family/verdict.md),
 then EXP-061's complete parity proof and EXP-060's original signed source.
 The producer preserves all 70 declared signed sources and five exact eta
@@ -36,18 +52,17 @@ HNF-source labels remain unread; no global HNF/SNF was needed.
 
 ### Next research, in order
 
-1. Construct explicit integral maps between the triangle classes in the full
-   original presentation and the exact isolated/relative-completion
-   presentations. Determine which classes descend and what they detect there.
-   The counts `3,4,5,7` agree with earlier finite isolated torsion counts, but
-   this is NOT an identification. The second class in each stable relative
-   completion and its uniform rank-two theorem remain open.
+1. Upgrade EXP-063's literal finite target bridge to an all-parameter integral
+   relative theorem. Construct exact mask-58 witnesses and transformed duals
+   for the two endpoint triangles `(0,1,p-3)` and `(0,2,p-4)`, deciding whether
+   they vanish integrally or are divisible order-two classes. Do not infer this
+   from their mod-two-zero images.
 2. After those maps, prove a primitive complement or a complete signed normal
    form for the specified presentation. This is the missing upper-bound gate;
    the direct summand alone does not exhaust torsion, free rank, or Smith factors.
 3. Only then revisit parameter transport, the degree-six relation and the full
-   lower-strand recurrence. Keep `56->58` separate. No EXP-063 is declared or
-   running; freeze any next hypothesis before computation.
+   lower-strand recurrence. Keep `56->58` separate. Freeze EXP-064 before any
+   new computation; a larger finite sweep is not the priority.
 
 ### Publication and repository delivery
 

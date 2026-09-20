@@ -1972,3 +1972,18 @@
   deletion viewpoints but supply no problem-specific comparison theorem. The
   finite experiment remains separate from any all-parameter, upper-bound,
   recurrence, manuscript, or Zenodo claim.
+
+## 2026-09-20 - EXP-063 finite labelled comparison confirmed
+
+- All 19 triangle rows at `p=8,...,11` survive the unit contraction literally
+  as `R5` coordinates. Masks 59/62 retain full triangle ranks `3,4,5,7`; mask
+  58 has ranks `1,2,3,5` and exactly the endpoint relations
+  `(0,1,p-3),(0,2,p-4)` over `F2`; mask 56 has ranks `0,0,0,1`.
+- The independent audit rebuilds four labelled components, checks 19 frozen
+  `+/-2x_T` boundaries, exhausts 16 triangle relation spaces and passes 12
+  adversarial controls. Its first pre-run attempt incorrectly required sign
+  `+2` at odd `p`; that failure and correction are preserved.
+- The result closes a finite target bridge but not the uniform integral map:
+  mod-two vanishing does not distinguish integral zero from twice an
+  order-four class. The next route is an exact endpoint witness/dual theorem,
+  not a larger sweep. No manuscript or Zenodo revision is triggered.
