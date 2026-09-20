@@ -57,9 +57,12 @@ state the complete boundary.
 
 ## 4. In flight
 
-1. Mirror the final public state into the private coordination repository.
+1. EXP-007 is declared to test whether the attributed parameterized spectral
+   defect survives EXP-006's parity compression and strictly improves its
+   positive short-interval curve.
 2. Seek independent mathematical review of the EXP-006 proof and attribution.
-3. Keep alternative routes separate until they pass declaration and proof gates.
+3. Keep other alternative routes separate until they pass declaration and
+   proof gates.
 
 Completed in this round: replay v5 is baked and tested; manuscript v0.06 is
 published at DOI 10.5281/zenodo.22852479 and its 26-page PDF matches a fresh
@@ -69,9 +72,12 @@ browser scenarios passed.
 
 ## 5. Next actions
 
-1. Mirror the final public release state into the private coordination repository.
-2. Submit the manuscript for independent specialist review when a venue is chosen.
-3. Start no successor experiment without a committed declaration and source audit.
+1. Commit the EXP-007 declaration and source audit before implementing its
+   runner or evaluating the frozen numerical target.
+2. Prove or refute the defect-parity product, then run its bounded exact
+   certificate only if the proof survives review.
+3. Decide manuscript integration or splitting from the confirmed dependency
+   graph, and submit for independent specialist review when a venue is chosen.
 
 ## 6. Where everything lives
 

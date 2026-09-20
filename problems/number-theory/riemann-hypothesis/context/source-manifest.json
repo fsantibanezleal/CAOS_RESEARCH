@@ -1,6 +1,6 @@
 {
   "schema": "riemann-source-manifest-v1",
-  "reviewed_on": "2026-09-19",
+  "reviewed_on": "2026-09-20",
   "documents": [
     {
       "filename": "claude-original-20260810.pdf",
@@ -1205,6 +1205,44 @@
       },
       "review_dossier": "2026-09-19-local-selberg-transfer.md",
       "note": "TeX source inspected to resolve exact factors, quantifiers and interval-uniform estimates."
+    },
+    {
+      "filename": "dubon-2609.17875v1.pdf",
+      "source_url": "https://arxiv.org/pdf/2609.17875v1",
+      "bytes": 310554,
+      "sha256": "a9cac7a820cc2c8b0965eb9caa4eb0eaa6e3159321a90e4e43960cbe764597f2",
+      "pages": 28,
+      "note": "Finite Dirichlet-polynomial vertical zero-density concentration; not a theorem about zeros of the completed zeta function.",
+      "retrieved_on": "2026-09-20",
+      "license": {
+        "status": "arXiv perpetual non-exclusive license",
+        "redistribution_basis": "local research archive; source not relicensed; public manifest links original"
+      },
+      "version": "arXiv:2609.17875v1; submitted September 15, 2026",
+      "cache_path": "source-cache/dubon-2609.17875v1.pdf",
+      "tracked_fulltext": false,
+      "text_cache_path": "source-cache/dubon-2609.17875v1.txt",
+      "text_sha256": "9024baaae018abe3a8237a5c0eb45d65102da08f183e2e2dd599073845836cab",
+      "review_dossier": "2026-09-20-interdisciplinary-update-and-defect-parity.md"
+    },
+    {
+      "filename": "najnudel-nikeghbali-2609.15862v1.pdf",
+      "source_url": "https://arxiv.org/pdf/2609.15862v1",
+      "bytes": 368653,
+      "sha256": "90678b4de243500602f493be36a0ab05ef9fc71f1c7d464389216b8968fc1f92",
+      "pages": 36,
+      "note": "Unconditional Cauchy law for projected ordinates; logarithmic-derivative comparison requires o(T) total right-side horizontal displacement.",
+      "retrieved_on": "2026-09-20",
+      "license": {
+        "status": "arXiv perpetual non-exclusive license",
+        "redistribution_basis": "local research archive; source not relicensed; public manifest links original"
+      },
+      "version": "arXiv:2609.15862v1; submitted September 14, 2026",
+      "cache_path": "source-cache/najnudel-nikeghbali-2609.15862v1.pdf",
+      "tracked_fulltext": false,
+      "text_cache_path": "source-cache/najnudel-nikeghbali-2609.15862v1.txt",
+      "text_sha256": "e446b0f5d2d5442325a22607fe8d17fa37bb957eca688ef789694be890314f85",
+      "review_dossier": "2026-09-20-interdisciplinary-update-and-defect-parity.md"
     }
   ],
   "repositories": [

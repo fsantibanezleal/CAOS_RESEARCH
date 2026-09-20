@@ -2,8 +2,8 @@
 
 Updated: 2026-09-20. Public release: **0.71.000**, released and live-verified
 from main commit `8302be35cb96280692ad1333d690a63cb220f8b2` (tag
-`v0.71.000`). Current research round: **EXP-006 confirmed; Hilbert-parity
-compression and explicit threshold below 0.545885**.
+`v0.71.000`). Current research round: **EXP-007 declared; spectral-defect
+parity coupling is under proof review and has not been computed**.
 
 EXP-006 proves the sharp finite product
 
