@@ -6,8 +6,8 @@
   "version": "0.07",
   "version_doi": "10.5281/zenodo.22860012",
   "concept_doi": "10.5281/zenodo.22727388",
-  "publication_performed": false,
-  "canonical_promotion_ready": false,
+  "publication_performed": true,
+  "canonical_promotion_ready": true,
   "source": {
     "path": "manuscripts/riemann-hypothesis/short-interval-stability/main.tex",
     "sha256": "12717ffa801482b81dd767535375d7f60a5f293e9d7997ddb0336a59c474f3eb",
@@ -95,5 +95,12 @@
     "source_profile_matrix_reconstructed": false,
     "external_peer_review_or_formal_verification_claimed": false,
     "global_record_or_RH_solution_claimed": false
+  },
+  "publication_verification": {
+    "record_id": "22860012",
+    "public_url": "https://zenodo.org/records/22860012",
+    "fresh_unauthenticated_download": true,
+    "exact_pdf_bytes": true,
+    "verified_utc": "2026-09-20T15:41:54.490076Z"
   }
 }

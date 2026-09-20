@@ -37,5 +37,4 @@ Evidence:
 - [EXP-007 spectral-defect parity](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/).
 - [EXP-006 Hilbert-parity compression](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/).
 - Concept DOI: [10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388).
-- The v0.07 version DOI is reserved before the final build and inserted into
-  the manuscript header.
+- Version DOI: [10.5281/zenodo.22860012](https://doi.org/10.5281/zenodo.22860012).

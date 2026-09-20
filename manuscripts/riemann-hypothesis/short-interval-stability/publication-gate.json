@@ -1,6 +1,6 @@
 {
   "release_ready": true,
-  "publication_performed": false,
+  "publication_performed": true,
   "date": "2026-09-20",
   "version": "0.07",
   "pages": 30,
@@ -14,11 +14,11 @@
   "md5": "b22e0f81c5f6d1a9eb09ba71ec9c9b60",
   "tex_sha256": "12717ffa801482b81dd767535375d7f60a5f293e9d7997ddb0336a59c474f3eb",
   "metadata_sha256": "91fcc6e176d64a4c3f9edb2a74b96273e11a4cc72c6918cbf5ab8c8cfe2c601b",
-  "render_review_sha256": "7d9474a3f00faf56f5bc06c43377f2560057c15ff4f1b5db02951711ef8e7f94",
-  "publication_receipt_sha256": null,
+  "render_review_sha256": "6e1465d0413b38e95a394a03006850335feed951d93854580914b3a11ea1e58f",
+  "publication_receipt_sha256": "36bef344374a11fed7d872824b81f82734d9777be7517ff0a9066231cbea4542",
   "render_review": "render-review.json; all 30 final DOI-bearing pages inspected",
   "proof_review": "EXP-007 and EXP-008 confirmed proof reviews and directed exact certificates, bound to canonical result SHA-256 values ad635c5b60c4bcae63199fb54a7979a02206ce0ee572853b2df13933dafc320c and 56db06037e0b36ed519919c352fb0a5419e2b6ba29629d65948f399c1d3bf4ba; internal automated review, not external peer review",
-  "public_download_verified": false,
+  "public_download_verified": true,
   "version_doi": "10.5281/zenodo.22860012",
   "concept_doi": "10.5281/zenodo.22727388",
   "archived_previous_version": {
