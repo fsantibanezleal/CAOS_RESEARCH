@@ -46,6 +46,17 @@ and its fresh public download matched the reviewed 526,178-byte PDF.
 
 ## Deployment
 
-The release PR, tag, Pages run and live-file/browser verification are recorded
-after main promotion in `live-verification.json`. Until that receipt exists,
-this directory proves candidate validation rather than deployment.
+Release PR [#310](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/310)
+and promotion PR [#311](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/311)
+are merged. Tag `v0.70.000` points exactly to main commit
+`159ec22a6200938d6d8da1bba395f81014ca70e5`; the GitHub release, 415-test main
+CI run and Pages deployment all passed.
+
+The [live verification](live-verification.json) byte-matched the root, three
+hashed assets and six research data files against the release build. Eight
+desktop/phone EN/ES light/dark scenarios visited all six research tabs and
+captured 304 screenshots with zero failed checks, console errors, page errors,
+request failures or HTTP errors. The live payload contains the exact EXP-005
+certificate hash and threshold bracket. The static direct route returns the
+committed Pages 404 shim; browser navigation restored and verified the client
+route from the 200 root.
