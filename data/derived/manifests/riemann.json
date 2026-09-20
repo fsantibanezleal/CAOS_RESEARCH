@@ -2,7 +2,7 @@
  "artifact": {
   "bytes": 181518,
   "path": "research/riemann.json",
-  "sha256": "30dd6e857360be04b16ae9fb7cfdb5b27cd944c98dd2401a75f6f17584657280"
+  "sha256": "fa035e274949b433549907fa31d88f8dd7e37071f42582e204724c9e41e46cfc"
  },
  "case_id": "riemann",
  "gate": {
@@ -52,11 +52,11 @@
    "source_exp": "EXP-002-short-interval-stability"
   },
   {
-   "bytes": 75764,
+   "bytes": 75762,
    "path": "problems/number-theory/riemann-hypothesis/context/source-manifest.json",
    "role": "source_manifest",
-   "sha256": "b75c227e83009384e5200a851eff1ca2568cbb8ad5983a50362efe6877e3743f",
-   "source_commit": "6fd59fec51dda399de40e0327107dba42deb5b45",
+   "sha256": "5e436bc857e24fc868aa2e3f334a6fdd658756f6ae3de459b55b417f82d8aa18",
+   "source_commit": "d077c97faaff5269d993183e2cab0bf7e43039c5",
    "source_exp": "source-review"
   },
   {

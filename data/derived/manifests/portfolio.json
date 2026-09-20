@@ -1,8 +1,8 @@
 {
  "artifact": {
-  "bytes": 3754,
+  "bytes": 3782,
   "path": "research/portfolio.json",
-  "sha256": "ec19ec6a8fdde230db4dbb70e042359b832c615a5b95dd21cf55d14da68dfc0e"
+  "sha256": "6fdc0a23d814dd9f7d665123a42dec1acc9c25b84ef887cf3eb38c5478abc7bc"
  },
  "case_id": "portfolio",
  "gate": {
