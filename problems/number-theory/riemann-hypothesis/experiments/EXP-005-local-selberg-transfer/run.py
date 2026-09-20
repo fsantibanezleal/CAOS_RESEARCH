@@ -60,8 +60,8 @@ def fraction_record(value: Fraction, digits: int = 45) -> dict[str, object]:
         context.prec = digits + 15
         decimal = Decimal(value.numerator) / Decimal(value.denominator)
     return {
-        "numerator": value.numerator,
-        "denominator": value.denominator,
+        "numerator": str(value.numerator),
+        "denominator": str(value.denominator),
         "decimal": format(decimal, f".{digits}g"),
     }
 
@@ -344,12 +344,12 @@ def compute_certificate(repo: Path) -> dict[str, object]:
     assert isinstance(replay_c, dict)
     assert isinstance(replay_curve, dict)
     assert isinstance(replay_fixed, dict)
-    c_iv_lower = Fraction(replay_c["lower"]["numerator"], replay_c["lower"]["denominator"])  # type: ignore[index]
-    c_iv_upper = Fraction(replay_c["upper"]["numerator"], replay_c["upper"]["denominator"])  # type: ignore[index]
-    curve_iv_lower = Fraction(replay_curve["lower"]["numerator"], replay_curve["lower"]["denominator"])  # type: ignore[index]
-    curve_iv_upper = Fraction(replay_curve["upper"]["numerator"], replay_curve["upper"]["denominator"])  # type: ignore[index]
-    fixed_iv_lower = Fraction(replay_fixed["lower"]["numerator"], replay_fixed["lower"]["denominator"])  # type: ignore[index]
-    fixed_iv_upper = Fraction(replay_fixed["upper"]["numerator"], replay_fixed["upper"]["denominator"])  # type: ignore[index]
+    c_iv_lower = Fraction(int(replay_c["lower"]["numerator"]), int(replay_c["lower"]["denominator"]))  # type: ignore[index]
+    c_iv_upper = Fraction(int(replay_c["upper"]["numerator"]), int(replay_c["upper"]["denominator"]))  # type: ignore[index]
+    curve_iv_lower = Fraction(int(replay_curve["lower"]["numerator"]), int(replay_curve["lower"]["denominator"]))  # type: ignore[index]
+    curve_iv_upper = Fraction(int(replay_curve["upper"]["numerator"]), int(replay_curve["upper"]["denominator"]))  # type: ignore[index]
+    fixed_iv_lower = Fraction(int(replay_fixed["lower"]["numerator"]), int(replay_fixed["lower"]["denominator"]))  # type: ignore[index]
+    fixed_iv_upper = Fraction(int(replay_fixed["upper"]["numerator"]), int(replay_fixed["upper"]["denominator"]))  # type: ignore[index]
 
     checks = {
         "source_hashes": check_source_hashes(repo)["passed"],
