@@ -193,10 +193,11 @@ def verify_complete_torsion() -> dict[int, int]:
     result: dict[int, int] = {}
     for row in payload["rows"]:
         p = int(row["p"])
-        torsion_type = row["two_primary_type"]
-        if not row["complete_two_primary_torsion"] or any(int(value) != 2 for value in torsion_type):
+        rank = int(row["first_bockstein_rank"])
+        torsion_type = str(row["two_primary_type"])
+        if not row["complete_two_primary_torsion"] or torsion_type != f"(Z/2)^{rank}":
             raise AssertionError({"p": p, "complete_two_primary_torsion": False})
-        result[p] = len(torsion_type)
+        result[p] = rank
     return result
 
 
