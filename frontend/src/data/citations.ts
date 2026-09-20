@@ -24,6 +24,11 @@ export const CITATIONS: Citation[] = [
     url: 'https://arxiv.org/abs/2609.07918v1',
   },
   {
+    id: 'riemann-pearcecrump2026', label: 'Pearce-Crump 2026',
+    citation: 'Pearce-Crump A. (2026). Optimising Selberg\'s method for critical zeros. arXiv:2609.15329v1. Source of the positive-semidefinite sign detector, coefficient-uniform approximate functional equation, arbitrary-subinterval mean-value estimate, and certified rank-three profile localized in EXP-005.',
+    url: 'https://arxiv.org/abs/2609.15329v1',
+  },
+  {
     id: 'riemann-karatsuba1985', label: 'Karatsuba 1985',
     citation: 'Karatsuba A. A. (1985). On the zeros of the Riemann zeta-function on the critical line. Mathematics of the USSR-Izvestiya 24(3), 523–537. Theorem B restates Selberg’s distinct odd-order critical-zero density; the paper also proves a stronger shorter seed exponent.',
     url: 'https://www.mathnet.ru/eng/im1456',
@@ -60,8 +65,13 @@ export const CITATIONS: Citation[] = [
   },
   {
     id: 'riemann-refinement2026', label: 'CAOS short-interval refinement',
-    citation: 'Santibáñez-Leal F. (2026). A stability refinement for simple critical zeros in short intervals, version 0.01. First published EXP-002 proof and compact certificate; a separate sinc-Taylor evaluator shares Arb and geometry with the certifier.',
-    doi: '10.5281/zenodo.22727389',
+    citation: 'Santibáñez-Leal F. (2026). Simple critical zeros in short intervals: stability, pressure, parity, and localization, version 0.05. The explicit local Selberg transfer, threshold certificate, prior pressure and parity results, and stated analytic boundaries are included.',
+    doi: '10.5281/zenodo.22851518',
+  },
+  {
+    id: 'riemann-local2026', label: 'CAOS EXP-005: local Selberg transfer',
+    citation: 'Santibáñez-Leal F. (2026). Local optimized Selberg transfer. CAOS Research EXP-005: complete analytic localization, exact threshold bracket, fixed mollifier witness, independent interval replay, adversarial review, and source-bound proof review. RH remains open.',
+    url: 'https://github.com/fsantibanezleal/CAOS_RESEARCH/blob/main/problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/mathematical-proof.md',
   },
   {
     id: 'riemann-pressure2026', label: 'CAOS EXP-003: odd-frame pressure',
@@ -355,6 +365,41 @@ export const CITATIONS: Citation[] = [
     citation:
       'Mazzuoccolo G., Mkrtchyan V. V. (2020). Normal edge-colorings of cubic graphs. Journal of Graph Theory 94(1), 75-91. Every simple cubic graph has a normal 7-edge-coloring; the normal 6 question.',
     doi: '10.1002/jgt.22507',
+  },
+  {
+    id: 'gjmmmu2026',
+    label: 'Goedgebeur, Jooken, Macajova, Mattiolo, Mazzuoccolo & Ulyanov 2026',
+    citation:
+      'Goedgebeur J., Jooken J., Macajova E., Mattiolo D., Mazzuoccolo G., Ulyanov S. (2026). Disproving the Petersen Coloring Conjecture: theoretical analysis and an infinite family of counterexamples. arXiv:2608.10028v3, 2026-09-11. Two 52-vertex counterexamples with a theoretical proof, counterexamples of every even order at least 60, the bounds 40 to 52 for a smallest counterexample, and the question whether the 52-vertex graphs are colorable only by themselves.',
+    url: 'https://arxiv.org/abs/2608.10028v3',
+  },
+  {
+    id: 'mmsw2025',
+    label: 'Ma, Mattiolo, Steffen & Wolf 2025',
+    citation:
+      'Ma Y., Mattiolo D., Steffen E., Wolf I. H. (2025). Sets of r-graphs that color all r-graphs. Combinatorica 45, Article 16. The unique minimal set of bridgeless cubic graphs coloring every bridgeless cubic graph, and its characterization: a graph belongs to it if and only if no smaller bridgeless cubic graph colors it.',
+    doi: '10.1007/s00493-025-00144-4',
+  },
+  {
+    id: 'mmm2021',
+    label: 'Mattiolo, Mazzuoccolo & Mkrtchyan 2021',
+    citation:
+      'Mattiolo D., Mazzuoccolo G., Mkrtchyan V. (2021). On sublinear approximations for the Petersen coloring conjecture. Bulletin of the Institute of Combinatorics and its Applications 92, 78-90. Abnormal edges of proper 5-edge-colorings, the conjectured equivalence of five statements on sublinear bounds, and the proposition that a coloring never has exactly one abnormal edge.',
+    url: 'https://arxiv.org/abs/2104.09241',
+  },
+  {
+    id: 'hog2023',
+    label: 'Coolsaet, D\'hondt & Goedgebeur 2023',
+    citation:
+      'Coolsaet K., D\'hondt S., Goedgebeur J. (2023). House of Graphs 2.0: a database of interesting graphs and more. Discrete Applied Mathematics 325, 97-107. Source of the second 52-vertex and the 68-vertex counterexample (entries 57278 and 57280).',
+    url: 'https://houseofgraphs.org',
+  },
+  {
+    id: 'kaiser2007',
+    label: 'Kaiser, Kuzel, Li & Wang 2007',
+    citation:
+      'Kaiser T., Kuzel R., Li H., Wang G. (2007). A note on k-walks in bridgeless graphs. Graphs and Combinatorics 23, 303-308. Lemma 1: the bridgeless form of Fleischner\'s splitting lemma used to reduce unused target vertices.',
+    url: 'http://home.zcu.cz/~kaisert/papers/deg-walk.pdf',
   },
   {
     id: 'pccaudit',

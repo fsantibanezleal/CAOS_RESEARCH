@@ -1,9 +1,10 @@
 # 4. Experiments, certificates, and reproduction
 
-The mathematical evidence consists of four declared experiments. EXP-001/002
+The mathematical evidence consists of five declared experiments. EXP-001/002
 hypotheses were committed as `266486f`; EXP-003 was declared in `8ed806d`,
 with its complete pressure-method source preflight before computation. EXP-004
-was declared in e03413b before its implementation and exact census.
+was declared in e03413b before its implementation and exact census. EXP-005
+was declared in 6fd59fec before implementation and canonical execution.
 The [first verdict](../experiments/EXP-001-source-and-constant-audit/verdict.md)
 is a reproduction and algebraic audit. The
 [second verdict](../experiments/EXP-002-short-interval-stability/verdict.md)
@@ -286,3 +287,33 @@ pytest tests/test_riemann_parity.py
 The elementary primal/dual result proves optimality only in its declared scalar
 relaxation, not among all Gram methods or zeta arguments. Checkpoint prefixes
 record interrupted work; the complete census is rechecked on fresh replay.
+
+## EXP-005: explicit local Selberg transfer
+
+The [fifth verdict](../experiments/EXP-005-local-selberg-transfer/verdict.md) is
+confirmed. The paper proof localizes Pearce-Crump's optimized sign detector by
+retaining the source's arbitrary-subinterval off-diagonal estimate. It gives
+an explicit odd-critical density for every fixed exponent above one half and,
+through EXP-004, brackets the new simple-critical positivity threshold in
+$(0.5459,0.546)$.
+
+The canonical certificate passed fourteen exact and interval controls. At
+$\theta=0.546$, the fixed legal exponent $u=0.02299$ has strict localization
+margin $1/50000$ and proves a simple-critical proportion above
+$0.0000976239413345396825264438351212564$. The result JSON has SHA-256
+`3f0ca476c0e2fe688e4e4f43fc11861d9491b3066d067e46bf88d1a441c696a5`.
+
+Two earlier artifacts are retained: one failed at Python's integer-to-string
+serialization cap, and one passed mathematically but used nonportable JSON
+number tokens. The final exact rationals use decimal strings and parse under
+both Python and PowerShell. Five focused tests and Ruff passed.
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/run.py --output-dir tmp/riemann-exp005-replay --budget-seconds 60
+pytest tests/test_riemann_local_selberg.py
+```
+
+The [proof review](../experiments/EXP-005-local-selberg-transfer/proof-review.json)
+binds the hypothesis, proof, audit, result and verdict. The computation cannot
+replace the analytic localization proof, and neither constitutes external peer
+review or an effective-height theorem.

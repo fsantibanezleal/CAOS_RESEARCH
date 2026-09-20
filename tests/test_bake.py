@@ -3,6 +3,7 @@ import json
 import hashlib
 import subprocess
 import sys
+from decimal import Decimal
 from pathlib import Path
 
 import pytest
@@ -39,6 +40,7 @@ def test_bake_writes_valid_registry(tmp_path, monkeypatch):
         "EXP-001-source-and-constant-audit", "EXP-002-short-interval-stability", "source-review",
         "EXP-003-odd-frame-pressure",
         "EXP-004-parity-density-transfer",
+        "EXP-005-local-selberg-transfer",
     }
 
 
@@ -56,6 +58,7 @@ def committed_riemann(tmp_path, monkeypatch):
     exp_two = problem / "experiments/EXP-002-short-interval-stability"
     exp_three = problem / "experiments/EXP-003-odd-frame-pressure"
     exp_four = problem / "experiments/EXP-004-parity-density-transfer"
+    exp_five = problem / "experiments/EXP-005-local-selberg-transfer"
     files = {
         exp_one / "artifacts/result.json": {"status": "PASS"},
         exp_two / "artifacts/result.json": {
@@ -87,6 +90,11 @@ def committed_riemann(tmp_path, monkeypatch):
         problem / "context/2026-09-12-critical-mass-and-multiplicity-route.md": "# Classical seed fixture\n",
         problem / "context/2026-09-12-parity-transfer-adversarial-audit.md": "# Independent preflight fixture\n",
         problem / "context/2026-09-12-wang-transfer-audit.md": "# Arithmetic transfer fixture\n",
+        exp_five / "hypothesis.md": "# Frozen local Selberg declaration\n",
+        exp_five / "run.py": "# Local Selberg exact runner fixture\n",
+        exp_five / "mathematical-proof.md": "# Reviewed localization proof fixture\n",
+        exp_five / "adversarial-audit.md": "# Reviewed localization audit fixture\n",
+        exp_five / "verdict.md": "# EXP-005 verdict: confirmed\n",
     }
     for path, content in files.items():
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -123,6 +131,8 @@ def committed_riemann(tmp_path, monkeypatch):
     commit()
     declaration = git("rev-parse", "HEAD").decode().strip()
     monkeypatch.setattr(export_registry, "EXP004_DECLARATION", declaration)
+    monkeypatch.setattr(export_registry, "EXP005_DECLARATION", declaration)
+    monkeypatch.setattr(export_registry, "EXP005_CANONICAL", "fixture-canonical")
     premise_names = (
         "context/2026-09-12-critical-mass-and-multiplicity-route.md",
         "context/2026-09-12-parity-transfer-adversarial-audit.md",
@@ -168,6 +178,64 @@ def committed_riemann(tmp_path, monkeypatch):
         "scientific_verdict": "confirmed", "universal_finite_proof_reviewed": True,
         "asymptotic_transfer_reviewed": True, "numerical_exponent_claimed": False,
         "source_sha256": {role: checksum(path) for role, path in role_paths.items()},
+    })
+    def exact(numerator, denominator=1):
+        return {
+            "numerator": str(numerator), "denominator": str(denominator),
+            "decimal": str(Decimal(numerator) / Decimal(denominator)),
+        }
+    checks = {
+        name: True for name in (
+            "baseline_negative", "boundary_rejected", "c3_interval_ordered",
+            "curve_simple_positive", "e_interval", "fixed_u_simple_positive",
+            "interval_contains_c", "interval_contains_curve", "interval_contains_fixed",
+            "mollifier_below_quarter", "negative_theta_control", "source_hashes",
+            "sqrt2_interval", "strict_localization_margin",
+        )
+    }
+    local_result = {
+        "schema": "riemann-exp005-results-v1", "status": "pass", "passed": True,
+        "checks": checks,
+        "claim_boundary": {"rh_solved": False},
+        "boundary_control": {"accepted": False, "margin": exact(0), "u": exact(23, 1000)},
+        "parameters": {
+            "theta": exact(273, 500), "negative_control_theta": exact(5459, 10000),
+            "mollifier_exponent_u": exact(2299, 100000), "simple_gate": exact(9, 100000),
+        },
+        "positive_point": {
+            "fixed_u_simple_lower": exact(98, 1000000),
+            "simple_curve_lower": exact(99, 1000000),
+            "localization_exponent_margin": exact(2, 100000),
+        },
+        "negative_control": {"simple_curve_upper": exact(-1, 100000)},
+        "source_constant": {"name": "C[q3]", "center": exact(656775, 1000000)},
+        "execution_identity": {
+            "head": "fixture-canonical", "tracked_clean_at_start": True,
+            "hypothesis_sha256": checksum(exp_five / "hypothesis.md"),
+            "run_py_sha256": checksum(exp_five / "run.py"),
+        },
+    }
+    local_result_path = exp_five / "artifacts/canonical/result.json"
+    local_result_path.parent.mkdir(parents=True, exist_ok=True)
+    _write_json(local_result_path, local_result)
+    local_result_sha = checksum(local_result_path)
+    _write_json(exp_five / "artifacts/canonical/execution-receipt.json", {
+        "schema": "riemann-exp005-execution-receipt-v1", "status": "pass",
+        "result_sha256": local_result_sha,
+        "git": {"head": "fixture-canonical", "tracked_clean_at_start": True},
+    })
+    local_roles = {
+        "hypothesis": exp_five / "hypothesis.md",
+        "mathematical_proof": exp_five / "mathematical-proof.md",
+        "adversarial_audit": exp_five / "adversarial-audit.md",
+        "result": local_result_path,
+        "verdict": exp_five / "verdict.md",
+    }
+    _write_json(exp_five / "proof-review.json", {
+        "schema": "riemann-exp005-proof-review-v1", "declaration_commit": declaration,
+        "canonical_commit": "fixture-canonical", "scientific_verdict": "confirmed",
+        "analytic_localization_reviewed": True, "exact_certificate_reviewed": True,
+        "source_sha256": {role: checksum(path) for role, path in local_roles.items()},
     })
     commit()
     monkeypatch.setattr(export_registry, "ROOT", tmp_path)
@@ -337,9 +405,11 @@ def test_riemann_modal_records_survive_deleted_worktree_directories(
 def test_parity_export_binds_all_evidence_without_promoting_runner_to_proof(committed_riemann):
     _, exp_two, _, _ = committed_riemann
     payload = export_registry._riemann_payload()
-    assert payload["schema"] == "riemann-replay-v3"
+    assert payload["schema"] == "riemann-replay-v4"
     assert payload["parity_result"]["proof_status"]["all_height_theorem"].startswith("Not proved")
     assert payload["parity_review"]["scientific_verdict"] == "confirmed"
+    assert payload["local_review"]["scientific_verdict"] == "confirmed"
+    assert payload["local_result"]["positive_point"]["fixed_u_simple_lower"]["numerator"] == "98"
     sources = {item["role"]: item for item in payload["provenance"]}
     for section in ("symbolic", "census", "relaxation", "sharpness"):
         record = payload["parity_result"][section]

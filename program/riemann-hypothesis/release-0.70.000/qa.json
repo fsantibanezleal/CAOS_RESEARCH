@@ -1,0 +1,169 @@
+{
+  "schema": "riemann-release-qa-v3",
+  "release": "0.70.000",
+  "recorded_utc": "2026-09-20T02:22:25.871951Z",
+  "base_develop_merge": "c0a0d030dab24f9e721646304ef8f524adf0ada2",
+  "tests": {
+    "research_pr_ci": {
+      "passed": 415,
+      "run": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/35482319391"
+    },
+    "riemann_scoped": "106 passed",
+    "exporter": "PASS",
+    "frontend": "16 passed",
+    "ruff": "PASS",
+    "content_guard": "PASS",
+    "structure_guard": "PASS",
+    "template_guard": "PASS",
+    "pipeline_bake": "PASS",
+    "typescript_build": "PASS",
+    "local_full_python": {
+      "passed": 414,
+      "failed": 1,
+      "scope": "unrelated Windows nanosecond-budget timing assertion",
+      "test": "tests/test_hw_potential_connecting.py::test_resource_stop_preserves_checkpoint"
+    }
+  },
+  "browser": {
+    "harness": "scripts/verify_riemann_ui.mjs",
+    "scenarios": 20,
+    "research_tab_visits": 120,
+    "screenshots": 2370,
+    "failures": 0,
+    "console_errors": 0,
+    "page_errors": 0,
+    "request_failures": 0,
+    "http_errors": 0,
+    "matrix": [
+      "1440x1000",
+      "390x844",
+      "1280x800",
+      "1600x900",
+      "2560x1440"
+    ],
+    "languages": [
+      "en",
+      "es"
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "content": "all successive content viewports, proof stages, five experiment records, disclosures and architecture panels",
+    "raw_receipt": {
+      "path": "tmp/riemann-ui-v070-pass/receipt.json",
+      "bytes": 64270168,
+      "sha256": "d336c6ed971b180d5d5bedad58d1f72014799a7389bcd2e34af89e767086104f"
+    }
+  },
+  "build_files": [
+    {
+      "path": "frontend/dist/index.html",
+      "bytes": 591,
+      "sha256": "0401426381ac180df1d1d0ebc311e923a5ec5d608bcab70443013bf5755fd5df"
+    },
+    {
+      "path": "frontend/dist/assets/ExperimentModal-BkNmGeYt.js",
+      "bytes": 176791,
+      "sha256": "1aa42db2afb59cc5aee479f6076b63b973b4caaaf0139fc3d555f77ba90a8492"
+    },
+    {
+      "path": "frontend/dist/assets/index-BStHtBGQ.js",
+      "bytes": 774063,
+      "sha256": "109f80e6e6fbb936c2910d939e4e9b7f30a364429db3926970cd80243f9b12b2"
+    },
+    {
+      "path": "frontend/dist/assets/index-CftVb1pP.css",
+      "bytes": 64941,
+      "sha256": "8c6d51e7dca5b59c12f7754bd5b316540ebe217d043d67bc4fe6e8e2247b3e78"
+    }
+  ],
+  "data_files": [
+    {
+      "path": "data/derived/research/experiments.json",
+      "bytes": 2085347,
+      "sha256": "e4522c666e21078b0786b7a9c4c1467506181e5340e49436f99996a2727462b9"
+    },
+    {
+      "path": "data/derived/research/jacobian.json",
+      "bytes": 3831,
+      "sha256": "1c719c90e7796e4585e26f79f6cd0c700cc902659270b323870a62afd7a21023"
+    },
+    {
+      "path": "data/derived/research/portfolio.json",
+      "bytes": 3782,
+      "sha256": "6fdc0a23d814dd9f7d665123a42dec1acc9c25b84ef887cf3eb38c5478abc7bc"
+    },
+    {
+      "path": "data/derived/research/riemann.json",
+      "bytes": 181518,
+      "sha256": "fa035e274949b433549907fa31d88f8dd7e37071f42582e204724c9e41e46cfc"
+    },
+    {
+      "path": "data/derived/manifests/index.json",
+      "bytes": 385,
+      "sha256": "c7876e573a0f4f0cd662351aed089fe3fd685b55f660881f5dfb85480ce7f337"
+    },
+    {
+      "path": "data/derived/manifests/riemann.json",
+      "bytes": 15385,
+      "sha256": "eb9438acf72fd9d9eef1e1917385ff2f2381d41824799d37f651f828b516f6b3"
+    }
+  ],
+  "manuscript": {
+    "doi": "10.5281/zenodo.22851518",
+    "pages": 24,
+    "path": "manuscripts/riemann-hypothesis/short-interval-stability/main.pdf",
+    "bytes": 526178,
+    "sha256": "bcfefac4b138d2b41c5fe232c64590e3b6f0c309455d40e01451d9251c1e8acc"
+  },
+  "canonical_result": {
+    "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/artifacts/canonical/result.json",
+    "bytes": 136217,
+    "sha256": "3f0ca476c0e2fe688e4e4f43fc11861d9491b3066d067e46bf88d1a441c696a5",
+    "expected_sha256": "3f0ca476c0e2fe688e4e4f43fc11861d9491b3066d067e46bf88d1a441c696a5"
+  },
+  "representative_screenshots": [
+    {
+      "path": "program/riemann-hypothesis/release-0.70.000/screenshots/desktop-en-light-exp005-verdict.png",
+      "bytes": 243074,
+      "sha256": "51cb57a0697d6630c70a8e31562895b1c5f6cb663c5cda1322cf5bf189f9e254"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.70.000/screenshots/desktop-en-light-results.png",
+      "bytes": 110352,
+      "sha256": "cc89d20111fdca56f684508aeb9eb686fb66f08a9c81d66e7422ad35d9a5d6c7"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.70.000/screenshots/desktop-en-light-science.png",
+      "bytes": 128186,
+      "sha256": "c0f4fe9c4ba69f4d9eff92ae159fa5b2294543165ac27a9520ce12abd96667d3"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.70.000/screenshots/desktop-en-light-summary.png",
+      "bytes": 131026,
+      "sha256": "6328b15df45467057138347bfdd7812e0361a2a8153fb22bf606f46ed8448f9c"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.70.000/screenshots/phone-es-dark-exp005-verdict.png",
+      "bytes": 51374,
+      "sha256": "947eec623fc500162e840456a00a48555a0c570fe19462d54511cc1887c8be3f"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.70.000/screenshots/phone-es-dark-summary.png",
+      "bytes": 58054,
+      "sha256": "c78588c9161bb6a86d367b8b8eef7f2737837a126c7186bc587534a7010c84c7"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.70.000/screenshots/phone-es-dark-threshold.png",
+      "bytes": 58411,
+      "sha256": "1d95c68a278d86eaefc3a668b40c9f57ca9e9b4433347ae30591e51192d14c30"
+    }
+  ],
+  "deployment": {
+    "status": "candidate-validated",
+    "main_commit": null,
+    "tag": null,
+    "pages_run": null
+  }
+}

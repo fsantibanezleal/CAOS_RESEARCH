@@ -1,8 +1,8 @@
 {
  "artifact": {
-  "bytes": 41149,
+  "bytes": 181518,
   "path": "research/riemann.json",
-  "sha256": "d8815db7876f455e68951ced726bda8222f9ec61cf65dda2d9bdf18d182b6006"
+  "sha256": "fa035e274949b433549907fa31d88f8dd7e37071f42582e204724c9e41e46cfc"
  },
  "case_id": "riemann",
  "gate": {
@@ -52,11 +52,11 @@
    "source_exp": "EXP-002-short-interval-stability"
   },
   {
-   "bytes": 72384,
+   "bytes": 75762,
    "path": "problems/number-theory/riemann-hypothesis/context/source-manifest.json",
    "role": "source_manifest",
-   "sha256": "89e6eaad9ce95a2c89fc5f89c5631d3a820bfd8574ff93ca029305808e9270c9",
-   "source_commit": "1e7840368169db8cdee3670e71cee144b6d881f4",
+   "sha256": "5e436bc857e24fc868aa2e3f334a6fdd658756f6ae3de459b55b417f82d8aa18",
+   "source_commit": "d077c97faaff5269d993183e2cab0bf7e43039c5",
    "source_exp": "source-review"
   },
   {
@@ -202,6 +202,70 @@
    "sha256": "5db05d81e239abf9fd9beb8c4f20687ba137c6d94bae32d3bcd52c56cee12722",
    "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
    "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 136217,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/artifacts/canonical/result.json",
+   "role": "local_result",
+   "sha256": "3f0ca476c0e2fe688e4e4f43fc11861d9491b3066d067e46bf88d1a441c696a5",
+   "source_commit": "eed4a00337d91c2c71ddc6f8fcb216b3e329c41b",
+   "source_exp": "EXP-005-local-selberg-transfer"
+  },
+  {
+   "bytes": 335,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/artifacts/canonical/execution-receipt.json",
+   "role": "local_receipt",
+   "sha256": "ab3c6da2cc236de054d74b532a8c496187471918ac9ab75728cc128162526a58",
+   "source_commit": "d566536332cd28dac9f0dea34f77829d0ba879a5",
+   "source_exp": "EXP-005-local-selberg-transfer"
+  },
+  {
+   "bytes": 8319,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/hypothesis.md",
+   "role": "local_hypothesis",
+   "sha256": "57895f0ba34970379c84ffe96ed2d9b1edf316167998b31885549a39398acc2f",
+   "source_commit": "6fd59fec51dda399de40e0327107dba42deb5b45",
+   "source_exp": "EXP-005-local-selberg-transfer"
+  },
+  {
+   "bytes": 20243,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/run.py",
+   "role": "local_runner",
+   "sha256": "799be6f05ba87a4fba3d59b3fa8a5ad09a6ab87615bdb56ff932e8b4edbf84e1",
+   "source_commit": "864fe6b7bee69c6bdac72e72fbfb88b49ac0fef2",
+   "source_exp": "EXP-005-local-selberg-transfer"
+  },
+  {
+   "bytes": 7255,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/mathematical-proof.md",
+   "role": "local_proof",
+   "sha256": "45d96b904efdf74e49df53a069540047bcd75799118a03a129850e3ab8ab5511",
+   "source_commit": "5132beedddca56b0f57cdd7cf32688fb7b5a5ca7",
+   "source_exp": "EXP-005-local-selberg-transfer"
+  },
+  {
+   "bytes": 7796,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/adversarial-audit.md",
+   "role": "local_audit",
+   "sha256": "71d467d2744bdb1e7d68a079810d5b3d93041686187547107cfaae1c3c07e177",
+   "source_commit": "5132beedddca56b0f57cdd7cf32688fb7b5a5ca7",
+   "source_exp": "EXP-005-local-selberg-transfer"
+  },
+  {
+   "bytes": 5342,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/verdict.md",
+   "role": "local_verdict",
+   "sha256": "ed7c23551146c48d38d7c1a07b8b576ad36e5e4ec056f311533769e12f98c568",
+   "source_commit": "5132beedddca56b0f57cdd7cf32688fb7b5a5ca7",
+   "source_exp": "EXP-005-local-selberg-transfer"
+  },
+  {
+   "bytes": 1894,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/proof-review.json",
+   "role": "local_review",
+   "sha256": "33f7c863c6b8a73f204dc7e4d34898935ba5036e178ed949abe0cdbd3e5734e5",
+   "source_commit": "5132beedddca56b0f57cdd7cf32688fb7b5a5ca7",
+   "source_exp": "EXP-005-local-selberg-transfer"
   },
   {
    "bytes": 17333,

@@ -1,0 +1,30 @@
+{
+ "object": "R3",
+ "copies": 3,
+ "structure": {
+  "n": 156,
+  "m": 234,
+  "cubic": true,
+  "digest": "5c409d4eae514b308629ba314692c1896489d0bf829aaa3b98d9c300046c3145",
+  "girth": 5,
+  "edge_connectivity": 2
+ },
+ "bounds": {
+  "3": {
+   "instance": "R3_ab_le3",
+   "status": "TIMEOUT",
+   "seconds": 1800.312,
+   "cnf_sha256": "2540fc899823b0d12f2e7e6b98731668ceaa3a5b922f55a5bac54ab8469e3732",
+   "variables": 4680,
+   "clauses": 17078
+  },
+  "4": {
+   "instance": "R3_ab_le4",
+   "status": "TIMEOUT",
+   "seconds": 1802.585,
+   "cnf_sha256": "caffe0c22da37a154cf8480024a18ae8b765f4004f803690a7300faad166c996",
+   "variables": 4914,
+   "clauses": 17545
+  }
+ }
+}

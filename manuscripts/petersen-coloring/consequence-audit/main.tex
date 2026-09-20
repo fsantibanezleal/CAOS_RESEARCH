@@ -28,6 +28,10 @@
 \newcommand{\Gmain}{G_{112}}
 \newcommand{\Gsym}{H_{112}}
 \newcommand{\Gfty}{G_{52}}
+\newcommand{\Gftyb}{G'_{52}}
+\newcommand{\Gsix}{G_{68}}
+\newcommand{\pd}{\mathrm{pd}}
+\newcommand{\ab}{\mathrm{ab}}
 \newcommand{\Zfive}{\mathbb{Z}_5}
 
 % Page-1 header block (conventions/manuscript-header-standard.md). The four document
@@ -36,9 +40,9 @@
 % own line.
 \newcommand{\doctype}{Preprint}
 \newcommand{\docsubtype}{independent certification and consequence audit}
-\newcommand{\docversion}{v0.03}
+\newcommand{\docversion}{v0.04}
 \newcommand{\docdate}{18 September 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.22835152}
+\newcommand{\versiondoi}{10.5281/zenodo.22836612}
 \newcommand{\conceptdoi}{10.5281/zenodo.22285164}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\headerblock}{%
@@ -78,29 +82,34 @@ Jaeger's Petersen coloring conjecture (1988), which asserted that every bridgele
 admits an edge map onto the Petersen graph sending every vertex star onto a vertex star, was
 refuted in August 2026: Putman exhibited two nonisomorphic 112-vertex counterexamples with
 SAT-solver certificates, Jooken gave a human-checkable proof, and Goedgebeur, Jooken,
-M\'a\v{c}ajov\'a, Mattiolo and Mazzuoccolo found a 52-vertex counterexample together with
-infinite families, placing the smallest counterexample between 38 and 52 vertices. The
+M\'a\v{c}ajov\'a, Mattiolo, Mazzuoccolo and Ulyanov found two 52-vertex counterexamples and
+infinite families, placing the order of a smallest counterexample between 40 and 52. The
 conjecture had been the strongest known sufficient condition for the Berge--Fulkerson
-conjecture and the 5-cycle double cover conjecture. We audit, by exact proof-carrying
-computation, what survives on the three retrievable counterexamples. First, independent
-encodings sharing no variable scheme with the public ones refute Petersen colorings and normal
-5-edge-colorings of all three graphs with proofs checked by \texttt{drat-trim}; five colorable
-controls are accepted, and Putman's four public proofs verify under our checker. Second, every
-one of the three graphs admits a Berge--Fulkerson cover, a Berge cover by five perfect
-matchings, a Fan--Raspaud triple, a 5-cycle double cover and a nowhere-zero 5-flow, all given
-as explicit witnesses re-verified from the graph alone; none admits a nowhere-zero 4-flow. Their
-perfect matching index is exactly 4, one below the Petersen graph's value. The two 112-vertex
-graphs have oddness 4 and resistance 3, whereas the 52-vertex graph has oddness 2 and
-resistance 2, every value certified from both sides. All three admit normal and strong normal
-6-edge-colorings, so their normal chromatic index is exactly 6. Defining the Petersen defect as
-the least number of vertices at which the star condition must fail, we prove that the 52-vertex
-graph has defect exactly~2: no single vertex absorbs the obstruction (52 checked refutations),
-while every one of its 1{,}326 vertex pairs does (explicit witnesses); the same holds for the two 112-vertex graphs at every one of their 6{,}216 pairs. A parity argument explains the first half in general: for any edge map into the Petersen graph the number of bad vertices is never exactly one, so every counterexample has defect at least~2 and the three known counterexamples are extremal. Finally, we prove that
-no counterexample consists solely of copies of the Petersen 4-pole $F$ from which all known
-counterexamples are built, and report a counterexample-guided search over compositions of $F$
-with free vertices below 52 vertices. All computations are
-propositional with checked DRAT certificates or explicit witnesses. The paper decides nothing about the
-general conjectures.
+conjecture and the 5-cycle double cover conjecture. We determine, by exact proof-carrying
+computation, what survives on the five retrievable counterexamples (orders 52, 52, 68, 112, 112).
+Independent encodings refute Petersen colorings and normal 5-edge-colorings of all five graphs
+with proofs checked by \texttt{drat-trim}. Every one of the five graphs admits a Berge--Fulkerson
+cover, a Berge cover by five perfect matchings, a Fan--Raspaud triple, a 5-cycle double cover and
+a nowhere-zero 5-flow, all given as explicit witnesses re-verified from the graph alone; none
+admits a nowhere-zero 4-flow. Their perfect matching index is exactly 4, one below the Petersen
+graph's value. The two 112-vertex graphs have oddness 4 and resistance 3, whereas the other three
+have oddness 2 and resistance 2, every value certified from both sides. All five admit normal and
+strong normal 6-edge-colorings, so their normal chromatic index is exactly 6. Defining the
+Petersen defect as the least number of vertices at which the star condition must fail, we prove
+that for any edge map into the Petersen graph the number of bad vertices is never exactly one,
+and we find that all five graphs have defect exactly 2 with every vertex pair critical
+(17{,}362 explicit witnesses). The defect is at most the least number of abnormal edges of a
+proper 5-edge-coloring, and both equal 2 on the five graphs. Neither is bounded: rings of $t$
+counterexamples joined through 2-edge cuts, and cubic frames whose vertices are replaced by
+counterexamples minus a vertex, need one bad vertex in every block, with equality on the
+instances computed. Consequently no sublinear function bounds the number of abnormal edges on
+2-connected or on 3-connected cubic graphs, so four of the five statements whose equivalence was
+conjectured by Mattiolo, Mazzuoccolo and Mkrtchyan are false, and the conjectured equivalence
+reduces to one question on cyclically 4-edge-connected cubic graphs, for which a single graph of
+Petersen defect at least 3 would suffice. Finally, no counterexample consists solely of copies of
+the Petersen 4-pole $F$ from which all known counterexamples are built. All computations are
+propositional with checked DRAT certificates or explicit witnesses. The paper decides nothing
+about the general covering and flow conjectures.
 \end{abstract}
 
 \section{Introduction}
@@ -127,8 +136,8 @@ Berge conjecture (perfect matching index at most~5) and the Fan--Raspaud conject
 perfect matchings with empty intersection) follow from Berge--Fulkerson. Every 3-edge-colorable
 cubic graph is trivially Petersen colorable, so the whole ladder concerns snarks. Exhaustive
 generation had verified the conjecture for every snark on at most 36 vertices~\cite{BGHM2013} and
-for every weak snark on 36 vertices~\cite{GMS2019}, so any counterexample has at least 38
-vertices~\cite{GJMMM2026}.
+for every weak snark on 36 vertices~\cite{GMS2019}; an exhaustive check of the weak snarks on 38
+vertices shows that any counterexample has at least 40 vertices~\cite{GJMMMU2026}.
 
 \subsection{The disproof}
 
@@ -140,26 +149,34 @@ composes copies of the 4-pole $F$ (the Petersen graph minus the endpoints of one
 six-poles: $L = 4F + C$ and $\Gmain = 3L + C$. Jooken~\cite{Jooken2026} gave a human-checkable
 proof through the Petersen-coloring sets of $F$ and $L$ and a 4-clique obstruction in the line
 graph of $\PG$. Goedgebeur, Jooken, M\'a\v{c}ajov\'a, Mattiolo and Mazzuoccolo~\cite{GJMMM2026}
-then gave a cyclically 4-edge-connected girth-5 counterexample $\Gfty$ on 52 vertices, infinite
-cyclically 4-edge-connected families, and the frontier $38 \le n_{\min} \le 52$ for the smallest
-counterexample; they verified a strong normal 6-edge-coloring of one 112-vertex graph and left
-open whether every bridgeless cubic graph has a normal 6-edge-coloring (their Conjecture~6,
-attributed to \v{S}\'amal) and whether cyclically 5-edge-connected counterexamples exist. A
-68-vertex counterexample was announced on a social network without a retrievable edge list and is
-not treated here.
+then gave a cyclically 4-edge-connected girth-5 counterexample $\Gfty$ on 52 vertices and infinite
+cyclically 4-edge-connected families. The extended account by the same authors and
+Ulyanov~\cite{GJMMMU2026} gives a second counterexample $\Gftyb$ on 52 vertices, a purely
+theoretical proof for both, counterexamples of every even order at least 60, and the bounds
+$40 \le n_{\min} \le 52$ for the order of a smallest counterexample. It leaves open whether every
+bridgeless cubic graph has a normal 6-edge-coloring (a conjecture attributed to \v{S}\'amal) and
+whether cyclically 5-edge-connected counterexamples exist. A further counterexample $\Gsix$ on 68
+vertices, credited there to an announcement on a social network, is available with the other
+four from the House of Graphs~\cite{HoG}. For these five graphs~\cite{GJMMMU2026} reports
+Berge--Fulkerson covers, perfect matching index at most~4, 5-cycle double covers, strong normal
+6-edge-colorings, and proper 5-edge-colorings with exactly two abnormal edges; the corresponding
+statements below were obtained independently.
 
 \subsection{What this paper does}
 
-The three retrievable counterexamples are the first bridgeless cubic graphs for which the
+The five counterexamples $\Gmain$, $\Gsym$, $\Gfty$, $\Gftyb$, $\Gsix$ are the first bridgeless
+cubic graphs for which the
 Petersen route to a Berge--Fulkerson cover or a 5-cycle double cover is closed. We therefore
-ask, for each of $\Gmain$, $\Gsym$ and $\Gfty$, which of the conjectures below the top of the
+ask, for each of them, which of the conjectures below the top of the
 ladder still hold, and how far each graph is from being colorable. Every answer is exact: a
 positive answer is an explicit witness re-verified by a standard-library checker that reads only
 the graph, and a negative answer is a DRAT proof checked by \texttt{drat-trim}.
 Section~\ref{sec:certify} gives the independent certification (a replication of the published
 refutations), Section~\ref{sec:covers} the perfect matching covers, Section~\ref{sec:cdc} the
 cycle double covers, flows, oddness and resistance, Section~\ref{sec:normal} the normal
-6-edge-colorings and the exact defects, Section~\ref{sec:compositions} the compositions of
+6-edge-colorings, the exact defects, and graphs of arbitrarily large defect with their
+consequence for sublinear approximations of the conjecture, Section~\ref{sec:compositions} the
+compositions of
 copies of the Petersen 4-pole, and Section~\ref{sec:open} the open questions.
 
 \section{Independent certification}\label{sec:certify}
@@ -167,18 +184,23 @@ copies of the Petersen 4-pole, and Section~\ref{sec:open} the open questions.
 \subsection{The graphs}
 
 We use Putman's normalized digest: the SHA-256 of the compact JSON serialization of the sorted
-edge list with $u < v$. The three graphs are
+edge list with $u < v$. The five graphs are
 $\Gmain$ (digest \texttt{dc16cc18\ldots{}e8b}), $\Gsym$ (digest \texttt{0f2d8858\ldots{}35c7}),
-both transcribed from Putman's CC0 archive, and $\Gfty$, transcribed from the appendix
+both transcribed from Putman's CC0 archive; $\Gfty$, transcribed from the appendix
 of~\cite{GJMMM2026} with vertices renumbered from $1..52$ to $0..51$ (digest
-\texttt{27db5d3b\ldots}); the full edge lists are in the repository.
+\texttt{27db5d3b\ldots}); and $\Gftyb$ (digest \texttt{d30a423a\ldots{}1477}) and $\Gsix$ (digest
+\texttt{19c7c22a\ldots{}5ab2}), taken from entries 57278 and 57280 of the House of
+Graphs~\cite{HoG}. Entries 57237, 57279 and 57244 of that database are isomorphic to $\Gmain$,
+$\Gsym$ and $\Gfty$. The full edge lists are in the repository.
 
 \begin{proposition}[machine-verified]\label{prop:structure}
-Each of $\Gmain$, $\Gsym$, $\Gfty$ is simple, cubic, connected, has edge connectivity~3, girth~5,
+Each of the five graphs is simple, cubic, connected, has edge connectivity~3, girth~5,
 and cyclic edge connectivity exactly~4: no set of at most three edges is cycle-separating
 (exhaustive search over all edge subsets of size at most three), and an explicit cycle-separating
-4-cut exists (edges $\{2,6,9,12\}$ of the sorted edge lists of both 112-vertex graphs and
-$\{2,3,8,14\}$ of $\Gfty$).
+4-cut exists (edges $\{2,6,9,12\}$ of the sorted edge lists of both 112-vertex graphs,
+$\{2,3,8,14\}$ of $\Gfty$, $\{0,11,70,71\}$ of $\Gftyb$ and $\{2,11,90,97\}$ of $\Gsix$). The
+automorphism groups of $\Gmain$ and $\Gsix$ are trivial; those of $\Gsym$, $\Gfty$ and $\Gftyb$
+have order~6.
 \end{proposition}
 
 \subsection{Encodings}
@@ -195,9 +217,9 @@ $p_{e,c} \leftrightarrow q_{e,c}$ for every $c$. Neither encoding shares a varia
 Putman's vertex-witness and missing-pair encodings.
 
 \begin{theorem}[machine-verified, replication]\label{thm:certify}
-$\Gmain$, $\Gsym$ and $\Gfty$ admit no Petersen coloring and no normal 5-edge-coloring. All six
-refutations, and the three Petersen refutations with symmetry breaking removed, carry DRAT
-proofs accepted by \texttt{drat-trim} (Table~\ref{tab:certify}). The same encoders accept the
+None of the five graphs admits a Petersen coloring or a normal 5-edge-coloring. All ten
+refutations, and the Petersen refutations of $\Gmain$, $\Gsym$, $\Gfty$ with symmetry breaking
+removed, carry DRAT proofs accepted by \texttt{drat-trim} (Table~\ref{tab:certify}). The same encoders accept the
 Petersen graph, $K_4$, the prism and the flower snarks $J_5$, $J_7$ with checker-validated
 colorings. Putman's four archived proofs are accepted by our \texttt{drat-trim} binary against
 his archived formulas.
@@ -214,23 +236,27 @@ $\Gsym$ Petersen & 2{,}520 & 73{,}250 & 29.5 & 95{,}632{,}373 & 24.5\\
 $\Gsym$ normal-5 & 2{,}688 & 11{,}088 & 977.2 & 868{,}156{,}862 & 1{,}293.5\\
 $\Gfty$ Petersen & 1{,}170 & 34{,}010 & 1.8 & 4{,}094{,}201 & 1.2\\
 $\Gfty$ normal-5 & 1{,}248 & 5{,}148 & 178.8 & 226{,}490{,}830 & 231.8\\
+$\Gftyb$ Petersen & 1{,}170 & 34{,}010 & 13.1 & 4{,}038{,}980 & 5.0\\
+$\Gftyb$ normal-5 & 1{,}248 & 5{,}148 & 1{,}977.8 & 177{,}769{,}817 & 1{,}476.4\\
+$\Gsix$ Petersen & 1{,}530 & 44{,}474 & 18.9 & 9{,}916{,}665 & 10.3\\
+$\Gsix$ normal-5 & 1{,}632 & 6{,}732 & 3{,}588.7 & 345{,}057{,}921 & 4{,}492.7\\
 \bottomrule
 \end{tabular}
 \caption{Certified refutations (CaDiCaL 1.7.3 under WSL, \texttt{drat-trim}); every check printed
-\texttt{s VERIFIED}.}\label{tab:certify}
+\texttt{s VERIFIED}. The last four rows were timed while other computations shared the machine.}\label{tab:certify}
 \end{table}
 
 \section{Perfect matching covers}\label{sec:covers}
 
 \begin{theorem}[machine-verified]\label{thm:covers}
-Each of $\Gmain$, $\Gsym$, $\Gfty$ admits a Berge--Fulkerson cover, a Berge cover by five perfect
+Each of the five graphs admits a Berge--Fulkerson cover, a Berge cover by five perfect
 matchings, three perfect matchings with empty intersection, and a cover by four perfect
 matchings. Consequently their perfect matching index equals~4.
 \end{theorem}
 
 \begin{proof}
-The matchings are explicit (the repository file \texttt{witnesses.json} of computation EXP-002
-lists them as edge index sets) and were re-verified by a checker that tests each set to be a perfect
+The matchings are explicit (the repository files of computations EXP-002 and EXP-008
+list them as edge index sets) and were re-verified by a checker that tests each set to be a perfect
 matching and then counts the coverage of every edge. The index is at least~4 because the graphs
 are not 3-edge-colorable (Theorem~\ref{thm:certify} and the trivial direction of the conjecture).
 \end{proof}
@@ -243,12 +269,14 @@ graphs are in this sense better behaved than the Petersen graph.
 \section{Cycle double covers, flows, oddness and resistance}\label{sec:cdc}
 
 \begin{theorem}[machine-verified]\label{thm:cdc}
-Each of $\Gmain$, $\Gsym$, $\Gfty$ admits a 5-cycle double cover (five even subgraphs covering
+Each of the five graphs admits a 5-cycle double cover (five even subgraphs covering
 every edge exactly twice) and a nowhere-zero $\Zfive$-flow, and none admits a nowhere-zero
 $\mathbb{Z}_4$-flow. The oddness and resistance are
 \[
-\mathrm{odd}(\Gmain) = \mathrm{odd}(\Gsym) = 4,\quad \mathrm{odd}(\Gfty) = 2,\qquad
-\mathrm{res}(\Gmain) = \mathrm{res}(\Gsym) = 3,\quad \mathrm{res}(\Gfty) = 2 .
+\mathrm{odd}(\Gmain) = \mathrm{odd}(\Gsym) = 4,\qquad \mathrm{res}(\Gmain) = \mathrm{res}(\Gsym) = 3,
+\]
+\[
+\mathrm{odd} = \mathrm{res} = 2 \quad\text{for } \Gfty,\ \Gftyb \text{ and } \Gsix .
 \]
 \end{theorem}
 
@@ -259,15 +287,16 @@ and a vertex 2-coloring of the 2-factor $E \setminus M$ with at most $b$ monochr
 odd cycle forces at least one monochromatic edge and an even cycle admits none, so the least
 satisfiable $b$ is the oddness. Bounds $1, 2, 3$ are refuted with checked proofs for the
 112-vertex graphs and bound~$4$ is satisfied by a perfect matching whose 2-factor has exactly four
-odd cycles (counted by the checker); for $\Gfty$ bound~$1$ is refuted and bound~$2$ satisfied.
+odd cycles (counted by the checker); for $\Gfty$, $\Gftyb$ and $\Gsix$ bound~$1$ is refuted and
+bound~$2$ satisfied.
 Resistance uses a deletion indicator per edge and a proper 3-edge-coloring of the remaining
 edges, with the same two-sided protocol.
 \end{proof}
 
 The oddness~4 of the 112-vertex graphs
 is consistent with the theorem that the smallest snarks with oddness at
-least~4 and cyclic connectivity~4 have order~44~\cite{GMS2019}. The 52-vertex graph, by contrast,
-has the least possible oddness of a snark.
+least~4 and cyclic connectivity~4 have order~44~\cite{GMS2019}. The two 52-vertex graphs and the
+68-vertex graph, by contrast, have the least possible oddness of a snark.
 
 \section{Normal 6-edge-colorings and the Petersen defect}\label{sec:normal}
 
@@ -275,17 +304,17 @@ has the least possible oddness of a snark.
 
 Mazzuoccolo and Mkrtchyan proved that every simple cubic graph admits a normal 7-edge-coloring
 and asked whether 6 colors always suffice for bridgeless cubic graphs~\cite{MazzMkrt2020}; the
-question is restated as Conjecture~6 in~\cite{GJMMM2026}, who verified a strong normal
-6-edge-coloring (every edge rich) of one 112-vertex graph.
+question is restated as a conjecture in~\cite{GJMMM2026, GJMMMU2026}, where strong normal
+6-edge-colorings (every edge rich) of the five graphs are reported.
 
 \begin{theorem}[machine-verified]\label{thm:normal6}
-Each of $\Gmain$, $\Gsym$, $\Gfty$ admits a normal 6-edge-coloring and a strong normal
+Each of the five graphs admits a normal 6-edge-coloring and a strong normal
 6-edge-coloring. Since none admits a normal 5-edge-coloring (Theorem~\ref{thm:certify}), their
 normal chromatic index is exactly~6.
 \end{theorem}
 
 The colorings are explicit witnesses re-verified by a checker that recomputes, for every edge,
-the number of colors on its two end stars. All six instances solved in well under a second.
+the number of colors on its two end stars. All ten instances solved within two seconds.
 
 \subsection{How far from colorable: the Petersen defect}
 
@@ -339,9 +368,158 @@ outside the twelve disjoint copies of $F$: all $120$ such pairs of
 $\Gmain$ and all $120$ of $\Gsym$ are critical (explicit witnesses, at most $3.1$ seconds each),
 so both 112-vertex graphs have Petersen defect exactly~2 as well. The full sweeps show
 that, as for $\Gfty$, every one of their $6{,}216$ vertex pairs is critical (explicit
-witnesses, slowest $20$ seconds; the checker reports exactly the two relaxed vertices as bad in
-all $13{,}758$ pair witnesses of the three graphs). We call this property, verified here for the
-three graphs and unexplained by the parity argument, \emph{universal 2-criticality}.
+witnesses, slowest $20$ seconds), and the same holds for every one of the $1{,}326$ pairs of
+$\Gftyb$ and of the $2{,}278$ pairs of $\Gsix$ (computation EXP-008). The checker reports exactly
+the two relaxed vertices as bad in all $17{,}362$ pair witnesses of the five graphs. We call this
+property, verified here for the five graphs and unexplained by the parity argument,
+\emph{universal 2-criticality}. In every one of the $1{,}326$ witnesses of $\Gfty$ the vectors
+$\chi_u$, $\chi_v$ of the two bad vertices lie in the same nonzero class modulo the cut space of
+$\PG$, as the argument above requires; in $1{,}279$ of them this is the class of a single edge of
+$\PG$.
+
+\subsection{Abnormal edges and sublinear approximations}\label{sec:abnormal}
+
+For a proper 5-edge-coloring $c$ of a cubic graph $G$, an edge is \emph{abnormal} if it is neither
+poor nor rich, and $\ab(G)$ denotes the least number of abnormal edges over all proper
+5-edge-colorings of $G$; write $\pd(G)$ for the Petersen defect. Mattiolo, Mazzuoccolo and
+Mkrtchyan~\cite{MMM2021} proved that no proper 5-edge-coloring of a cubic graph has exactly one
+abnormal edge and asked whether $\ab(G) \le 2$ implies that $G$ has a normal 5-edge-coloring; the
+five counterexamples have colorings with exactly two abnormal edges and answer the question in the
+negative~\cite{GJMMMU2026}. The two defects are related as follows.
+
+\begin{lemma}[derived]\label{lem:pdab}
+$\pd(G) \le \ab(G)$ for every cubic graph $G$.
+\end{lemma}
+
+\begin{proof}
+View $\PG$ as the Kneser graph on the 2-subsets of $\{1,\dots,5\}$: two subsets are adjacent when
+disjoint, and the \emph{color} of the edge $\{A, B\}$ is the element outside $A \cup B$, so that
+the three edges at $A$ carry the three colors outside $A$. Let $c$ be a proper 5-edge-coloring with
+set of abnormal edges $N$, and for a vertex $v$ let $A_v$ be the complement of $c(\partial(v))$.
+For an edge $e = uv$, the \emph{view from $u$} is the edge of $\PG$ at $A_u$ of color $c(e)$. If
+$e$ is poor then $A_u = A_v$; if $e$ is rich then $A_u$ and $A_v$ are disjoint and avoid $c(e)$; in
+both cases the two views coincide. Let $\sigma(e)$ be the common view if $e$ is normal and the view
+from one chosen end if $e$ is abnormal. A vertex all of whose edges carry its own view satisfies
+the star condition, so every bad vertex is the end not chosen of an abnormal edge, and there are
+at most $|N|$ of them.
+\end{proof}
+
+If $c$ has a single abnormal edge $uv$ and the view from $u$ is chosen, then $v$ is bad: the view
+from $u$ is an edge at $A_v$ only if $A_u = A_v$ or $A_u \cap A_v = \emptyset$, that is, only if
+$uv$ is poor or rich. The map $\sigma$ would then have exactly one bad vertex, so
+Theorem~\ref{thm:parity} implies the proposition of~\cite{MMM2021} quoted above. In particular
+$\ab(G) \ge \pd(G) \ge 2$ for every cubic graph without a Petersen coloring. All five counterexamples have explicit proper 5-edge-colorings with exactly two abnormal
+edges (computations EXP-006 and EXP-008), hence
+\[
+\pd = \ab = 2 \quad\text{for each of } \Gmain,\ \Gsym,\ \Gfty,\ \Gftyb,\ \Gsix .
+\]
+For $\Gfty$ the lower bound $\ab \ge 2$ was also confirmed directly: the 42 single-edge
+relaxations refuted with checked proofs meet all 14 edge orbits of its automorphism group of
+order~6.
+
+Neither defect is bounded. The constructions are those of~\cite{MMM2021}; the argument through the
+cut space of $\PG$ gives a stronger conclusion than the one drawn there.
+
+\begin{theorem}[derived]\label{thm:rings}
+Let $G_1, \dots, G_t$, $t \ge 2$, be cubic graphs without a Petersen coloring, $e_i = a_ib_i$ an
+edge of $G_i$, and let $R$ be obtained from the disjoint union of the graphs $G_i - e_i$ by adding
+the edges $a_ib_{i+1}$, indices modulo $t$. Then every map $E(R) \to E(\PG)$ has a bad vertex in
+every $V(G_i)$; hence $\ab(R) \ge \pd(R) \ge t$. If every $G_i$ is bridgeless, so is $R$.
+\end{theorem}
+
+\begin{proof}
+Suppose every vertex of $V(G_i)$ satisfies the star condition under $\sigma$. With the notation of
+the proof of Theorem~\ref{thm:parity}, $\sum_{v \in V(G_i)} \chi_v$ is the sum of the indicators of
+the labels of the two edges leaving $V(G_i)$, because an edge inside $V(G_i)$ is counted twice.
+Each $\chi_v$ is the indicator of a star, so the sum is a cut of $\PG$ with at most two edges, hence
+empty, since $\PG$ is 3-edge-connected. The two leaving edges therefore carry the same label $x$,
+and giving $e_i$ the label $x$ turns the restriction of $\sigma$ into a Petersen coloring of
+$G_i$, a contradiction. If $f$ is an edge of $G_i - e_i$, any two vertices of $V(G_i)$ are joined
+in $G_i - f$ by a path, in which $e_i$ can be replaced by the detour around the ring; the added
+edges lie on a cycle through all the blocks. So $R$ is bridgeless.
+\end{proof}
+
+\begin{theorem}[derived]\label{thm:frames}
+Let $K$ be a cubic graph with $t$ vertices and, for each vertex $x$ of $K$, let $G_x$ be a cubic
+graph without a Petersen coloring and $v_x$ a vertex of $G_x$. Replace every vertex $x$ of $K$ by
+$G_x - v_x$, attaching the three edges of $K$ at $x$ to the three neighbours of $v_x$. Every map
+from the edges of the resulting cubic graph to $E(\PG)$ has a bad vertex in every
+$V(G_x - v_x)$; hence $\ab \ge \pd \ge t$. If $K$ and all $G_x$ are 3-connected, so is the result.
+\end{theorem}
+
+\begin{proof}
+If all vertices of $V(G_x - v_x)$ satisfy the star condition, the sum of their vectors $\chi_v$ is
+a cut of $\PG$ equal to the sum of the indicators of the labels of the three leaving edges. It has
+odd weight, since $|V(G_x)| - 1$ is odd. Weight~1 is impossible in a bridgeless graph, so the
+three labels are distinct and form a 3-edge cut of $\PG$, which is a star by the argument in the
+proof of Theorem~\ref{thm:parity}. Restoring $v_x$ with these labels on its edges gives a Petersen
+coloring of $G_x$. The connectivity statement is the usual substitution along 3-edge cuts.
+\end{proof}
+
+In~\cite{MMM2021} it is conjectured that five statements are equivalent: the Petersen coloring
+conjecture, and the existence of a sublinear function $f$ such that $\ab(G) \le f(|V(G)|)$ for
+all bridgeless, all 2-connected, all 3-connected, respectively all cyclically 4-edge-connected
+cubic graphs $G$. It is proved there that the second statement is equivalent to the first, and
+that on the last three classes a sublinear bound exists if and only if $\ab$ is bounded by 5, 7
+and 9 respectively. The rings of Theorem~\ref{thm:rings} built from $\Gfty$ are 2-connected with
+$\ab \ge |V|/52$, and the graphs of Theorem~\ref{thm:frames} built from $\Gfty$ over 3-connected
+cubic graphs $K$ are 3-connected with $\ab \ge |V|/51$.
+
+\begin{theorem}[derived]\label{thm:sublinear}
+On the class of 2-connected cubic graphs, and on the class of 3-connected cubic graphs, there is
+no sublinear function $f$ with $\ab(G) \le f(|V(G)|)$ for all $G$ in the class. More precisely, on
+either class such a function exists if and only if every graph of the class has a normal
+5-edge-coloring.
+\end{theorem}
+
+\begin{proof}
+If every graph of the class has a normal 5-edge-coloring, the zero function is a bound. Otherwise
+let $G$ be a graph of the class without one. The rings of $t$ copies of $G$ are 2-connected, and
+the graphs of Theorem~\ref{thm:frames} over the prisms with $t$ vertices, $t \ge 6$ even, with
+every $G_x = G$, are 3-connected when $G$ is; both have $\ab \ge t$ and at most $t\,|V(G)|$
+vertices, so $\ab$ is at least linear in the order along these sequences. The graph $\Gfty$ is
+3-connected without a normal 5-edge-coloring (Theorem~\ref{thm:certify}).
+\end{proof}
+
+Thus the first four of the five statements of~\cite{MMM2021} are false, and their conjectured
+equivalence now amounts to the falsity of the fifth: by their Theorem~4, to the existence of a
+cyclically 4-edge-connected cubic graph with $\ab \ge 10$. All five known counterexamples are
+cyclically 4-edge-connected with $\ab = 2$. A much smaller defect would suffice.
+
+\begin{proposition}[derived]\label{prop:threshold}
+If some cyclically 4-edge-connected cubic graph $G^*$ has $\pd(G^*) \ge 3$, then $\pd$ and $\ab$
+are unbounded on the class of cyclically 4-edge-connected cubic graphs. Hence on that class either
+$\pd \le 2$ everywhere, or no sublinear function bounds $\ab$.
+\end{proposition}
+
+\begin{proof}
+Let $e_1 = ab$ and $e_2 = cd$ be the end-edges of a path of length three of $G^*$, and let $M$ be
+the 4-pole obtained from $G^* - e_1 - e_2$ by attaching a pendant edge at each of $a, b, c, d$.
+If $M$ had a map to $E(\PG)$ satisfying the star condition at every vertex, then giving $e_1$ the
+label of the pendant edge at $a$ and $e_2$ that of the pendant edge at $c$ would produce a map on
+$G^*$ whose only possible bad vertices are $b$ and $d$, so $\pd(G^*) \le 2$. Hence $M$ has no such
+map. Join $t$ copies of $G^* - e_1 - e_2$ cyclically as in~\cite{MMM2021}; the result is
+cyclically 4-edge-connected~\cite[Proposition~2]{MMM2021}, and every map from its edges to
+$E(\PG)$ has a bad vertex in every copy, since a copy without bad vertices would restrict to a map
+on $M$. So its defect is at least $t$.
+\end{proof}
+
+The cyclic joining of copies of $G - e_1 - e_2$ used
+in~\cite{MMM2021} for that class does not force bad vertices by itself: for $\Gfty$, $\Gftyb$ and $\Gsix$,
+every 4-pole obtained by deleting two independent edges has a Petersen coloring (one
+representative per orbit of edge pairs, 482, 482 and 4{,}947 4-poles, computation EXP-010), and the boundary
+labels of the colorings found are of two kinds only, as the cut space predicts: two crossed equal
+pairs, or the four edges adjacent to one edge of $\PG$. A 4-pole with a crossed pattern can be chained around a ring with an even number of copies,
+because any two edges of $\PG$ are exchanged by an automorphism, so these cyclic joins are
+Petersen colorable. In all 73 4-poles of $\Gfty$ that contain a fixed deleted edge, the two
+labels at the ends of that edge can be chosen adjacent in $\PG$. Ten dot products of $\Gfty$ with itself, cubic graphs on 102 vertices, have no Petersen coloring (checked proofs) and defect exactly~2.
+
+The bounds of Theorems~\ref{thm:rings} and~\ref{thm:frames} are attained on the smallest
+instances (computation EXP-009): for the rings $R_t$ of $t$ copies of $\Gfty$ opened at one edge,
+$\pd(R_2) = 2$ and $\pd(R_3) = 3$, and for $K_4$ with each vertex replaced by $\Gfty$ minus a
+vertex (204 vertices, 3-connected, girth~5) the defect is exactly~4; each witness has exactly one
+bad vertex in every copy. For $R_4$ the defect is exactly~4 as well, with a witness found by relaxing one designated vertex in every copy. As a check of Theorem~\ref{thm:rings}, twenty relaxations of
+$R_2$ at two vertices of the same copy were refuted with checked proofs.
 
 \section{Compositions of copies of the Petersen 4-pole}\label{sec:compositions}
 
@@ -380,10 +558,14 @@ natural next step.
 \section{Scope and open questions}\label{sec:open}
 
 Nothing here bears on the general Berge--Fulkerson, cycle double cover, 5-flow or normal
-6-edge-coloring conjectures: the audit concerns three graphs. The questions left open by the
-disproof, the smallest counterexample in $[38, 52]$, cyclically 5-edge-connected counterexamples,
-and Conjecture~6 of~\cite{GJMMM2026}, remain open. The 68-vertex graph announced on a social
-network is not covered.
+6-edge-coloring conjectures: the computations concern five graphs. The questions left open by the
+disproof, the order of a smallest counterexample in $[40, 52]$, cyclically 5-edge-connected
+counterexamples, and the normal 6-edge-coloring conjecture, remain open. Two questions arise from
+Section~\ref{sec:abnormal}. Is there a cyclically 4-edge-connected cubic graph with Petersen defect
+at least~3? By Proposition~\ref{prop:threshold} one such graph would show that no sublinear
+function bounds $\ab$ on that class, and would complete the proof of the equivalence conjectured
+in~\cite{MMM2021}. And is every pair of vertices of every counterexample critical, as it is for
+the five known ones?
 
 \section*{Data availability}
 
@@ -394,10 +576,13 @@ The edge lists, encoders, checkers, witnesses and computation manifests are in t
 computation in the folder \path{experiments/EXP-nnn-*} of that directory, with a deterministic
 runner and its artifacts with SHA-256 digests. Section~\ref{sec:certify} rests on EXP-001,
 Section~\ref{sec:covers} on EXP-002, Section~\ref{sec:cdc} on EXP-003,
-Section~\ref{sec:normal} on EXP-004 and EXP-006, and Section~\ref{sec:compositions} on EXP-005.
+Section~\ref{sec:normal} on EXP-004, EXP-006, EXP-009 and EXP-010, and
+Section~\ref{sec:compositions} on EXP-005. The values for $\Gftyb$ and $\Gsix$ in
+Sections~\ref{sec:covers} to~\ref{sec:normal} come from EXP-008, and their certification in
+Section~\ref{sec:certify} from the first part of EXP-007.
 \par}
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
 \bibitem{Jaeger1988} F.~Jaeger, Nowhere-zero flow problems, in: L.~W. Beineke, R.~J. Wilson
 (eds.), Selected Topics in Graph Theory 3, Academic Press, London, 1988, 71--95.
 \bibitem{Jaeger1985} F.~Jaeger, On five-edge-colorings of cubic graphs and nowhere-zero flow
@@ -410,6 +595,14 @@ Petersen coloring conjecture, arXiv:2608.10028v2 (2026).
 \bibitem{GJMMM2026} J.~Goedgebeur, J.~Jooken, E.~M\'a\v{c}ajov\'a, D.~Mattiolo, G.~Mazzuoccolo,
 A smaller counterexample and infinite family of counterexamples to the Petersen Coloring
 Conjecture, Zenodo (2026), \href{https://doi.org/10.5281/zenodo.21933785}{doi:10.5281/zenodo.21933785}.
+\bibitem{GJMMMU2026} J.~Goedgebeur, J.~Jooken, E.~M\'a\v{c}ajov\'a, D.~Mattiolo, G.~Mazzuoccolo,
+S.~Ulyanov, Disproving the Petersen Coloring Conjecture: theoretical analysis and an infinite
+family of counterexamples, arXiv:2608.10028v3 (2026).
+\bibitem{MMM2021} D.~Mattiolo, G.~Mazzuoccolo, V.~Mkrtchyan, On sublinear approximations for the
+Petersen coloring conjecture, Bull. Inst. Combin. Appl. 92 (2021), 78--90; arXiv:2104.09241.
+\bibitem{HoG} K.~Coolsaet, S.~D'hondt, J.~Goedgebeur, House of Graphs 2.0: a database of
+interesting graphs and more, Discrete Appl. Math. 325 (2023), 97--107;
+\url{https://houseofgraphs.org}.
 \bibitem{MazzMkrt2020} G.~Mazzuoccolo, V.~V. Mkrtchyan, Normal edge-colorings of cubic graphs,
 J. Graph Theory 94 (2020), 75--91, \href{https://doi.org/10.1002/jgt.22507}{doi:10.1002/jgt.22507}.
 \bibitem{BGHM2013} G.~Brinkmann, J.~Goedgebeur, J.~H\"agglund, K.~Markstr\"om, Generation and

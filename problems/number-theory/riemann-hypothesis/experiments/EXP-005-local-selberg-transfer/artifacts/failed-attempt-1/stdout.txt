@@ -1,0 +1,5 @@
+[0.000000s] stage 1/4: validate committed identity and source hashes
+[0.094000s] stage 2/4: build exact rational Taylor certificate
+[0.235000s] stage 3/4: require every declared control
+[0.266000s] stage 4/4: write canonical result and execution receipt
+[0.266000s] FAIL: ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit

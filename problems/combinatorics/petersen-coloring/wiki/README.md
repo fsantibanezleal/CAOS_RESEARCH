@@ -7,9 +7,11 @@ round that produces their content.
 |---|---|---|
 | [01-statement-and-history.md](01-statement-and-history.md) | the conjecture, normal colorings, the implication ladder, the 2026 disproof timeline | written at open (sources: context dossier) |
 | [02-implication-ladder.md](02-implication-ladder.md) | what the conjecture implied and what survives after the disproof | written (EXP-002, EXP-003) |
-| [03-the-counterexamples.md](03-the-counterexamples.md) | the three graphs, gadgets, our certification | written (EXP-001) |
+| [03-the-counterexamples.md](03-the-counterexamples.md) | the five graphs, gadgets, our certification | written (EXP-001; EXP-007 part P0 for the two added graphs) |
 | [04-consequence-audit.md](04-consequence-audit.md) | Berge-Fulkerson, Berge, Fan-Raspaud, double covers, flows, oddness, resistance (normal 6 and defects pending EXP-004) | written (EXP-002, EXP-003) |
 | [05-open-questions.md](05-open-questions.md) | minimality in [38,52], cyclic 5-connectivity, normal 6 conjecture, our nulls and budget stops | written (round 1 close) |
+| [06-colorable-only-by-itself.md](06-colorable-only-by-itself.md) | H-colorings with an unknown target, the fiber parity and unused-vertex lemmas, the encoding, the certified target orders | written (EXP-007; results table follows the verdict) |
+| [07-defects-and-sublinear-approximations.md](07-defects-and-sublinear-approximations.md) | `pd <= ab`, rings and frames of unbounded defect, the sublinear approximation conjecture, the threshold proposition, exact values | written (EXP-008, EXP-009, EXP-010) |
 
 | record | status | result |
 |---|---|---|
@@ -21,3 +23,9 @@ round that produces their content.
 | EXP-005 | INCONCLUSIVE on the question | classes of k copies of F plus m free vertices: (5,0), (6,0) exhausted by a universal coloring (pure-F proposition); (3,2) control, (5,2) and (6,2) budget-stopped without exhausting and without a counterexample |
 | EXP-006 | CONFIRMED as redirected | parity THEOREM: the Petersen defect is never 1; G52: all 52 singles refuted, all 1,326 pairs critical (defect exactly 2); G112, H112: all 6,216 pairs critical each (defect exactly 2; universal 2-criticality on all three graphs); the G52 edge sweep (normal-5 defect) running |
 | preprint v0.01 | published 2026-09-03 | consequence audit, parity theorem, universal 2-criticality, pure-F proposition; DOI [`10.5281/zenodo.22285165`](https://doi.org/10.5281/zenodo.22285165) (concept [`10.5281/zenodo.22285164`](https://doi.org/10.5281/zenodo.22285164)) |
+| EXP-006 addendum 4 | PASS | normal-5 defect of `G52` exactly 2: 42 refuted single-edge relaxations meet all 14 edge orbits; two-abnormal-edge witnesses on all graphs; the lower bound is also Proposition 3 of Mattiolo, Mazzuoccolo, Mkrtchyan (2021) |
+| EXP-007 | in certification | Lemmas A and B; `G52`: target orders 2, 4, 30 to 50 refuted with verified proofs, so `G52` is colorable only by itself given the lower bound 40 of arXiv:2608.10028v3; `G52b`: 44 to 50 refuted; `G68`: 64, 66 refuted |
+| EXP-008 | CONFIRMED | `G52b` and `G68` match `G52` on every invariant; all 1,326 and 2,278 vertex pairs critical |
+| EXP-009 | CONFIRMED | Petersen defect equals the number of blocks on `R_2`, `R_3`, `R_4`, `K_4[G52]`; abnormal-edge numbers undecided beyond `ab >= pd` |
+| EXP-010 | see verdict | all 4-poles `G - e1 - e2` of `G52`, `G52b`, `G68` colorable; dot products `G52 . G52` are new counterexamples with defect 2; threshold proposition |
+| preprint v0.04 | published 2026-09-18 | five graphs, abnormal edges, unbounded defects, sublinear approximation consequence; DOI [`10.5281/zenodo.22836612`](https://doi.org/10.5281/zenodo.22836612) (v0.02 scientific-voice revision and v0.03 author-name release by the manuscripts session) |

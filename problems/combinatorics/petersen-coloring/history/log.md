@@ -71,3 +71,40 @@
   10.5281/zenodo.22285164. Public download verified against the committed PDF.
 - EXP-005 closed INCONCLUSIVE on its question: `(6,2)` also budget-stopped (1,498 iterations,
   75,286 clauses, no counterexample); verdict written.
+
+## 2026-09-18 - round 2
+
+- Literature: arXiv:2608.10028v3 (2026-09-11) and Ma-Mattiolo-Steffen-Wolf read in full
+  (`context/2026-09-18-v3-and-h3-dossier.md`); v3 overlaps round 1 on several invariants, raises
+  the lower bound to 40, and asks whether the 52-vertex graphs are colorable only by themselves.
+- EXP-007 declared and run. Attempt 1 (unknown target with a free part, lazy connectivity and
+  bridge cuts) learned about 2,000 cuts per order in 35 minutes and decided nothing. Lemmas A
+  (fiber parity) and B (at most one unused target vertex, splitting lemma) were proved
+  (`context/2026-09-18-hcoloring-reduction-lemmas.md`), the reduced encoding agreed with the
+  unreduced one on 21 controls, and every decided order became a zero-cut refutation. `G52`:
+  orders 2, 4, 30 to 50 refuted with verified proofs by the evening.
+- House of Graphs became reachable: `G52b` (57278) and `G68` (57280) added to `data/` and certified
+  (four checked proofs). EXP-008: both match `G52` on every invariant; all 1,326 and 2,278 vertex
+  pairs critical.
+- `G52` has 6 automorphisms and 14 edge orbits; the 42 edge relaxations already refuted meet every
+  orbit (EXP-006 addendum 4). Later the same day the lower bound turned out to be Proposition 3 of
+  Mattiolo, Mazzuoccolo, Mkrtchyan (2021); recorded as such.
+- Theory: `pd <= ab`; ring and frame theorems (one bad vertex per block); Corollary: statements
+  (c), (d) of the sublinear approximation conjecture of Mattiolo et al. are false; threshold
+  proposition (`pd >= 3` on one cyclically 4-edge-connected graph refutes (e))
+  (`context/2026-09-18-defect-unbounded.md`). The ring and frame constructions were found in their
+  2021 paper AFTER the theorems were written; the record states that the constructions are theirs
+  and the cut-space conclusion is ours. EXP-009: defect equals the number of blocks on `R_2`,
+  `R_3`, `R_4`, `K_4[G52]`.
+- EXP-010: all 4-poles `G - e1 - e2` of `G52`, `G52b`, `G68` colorable; ten dot products of `G52`
+  with itself are new 102-vertex counterexamples with defect 2; distance sets always contain 1.
+  A symmetry-breaking conflict in the distance-set runner was caught before any result was read.
+- Incident: the driver of EXP-007 attempt 1 survived the stop command and ran old code for four
+  hours next to the rerun (shared log files, a third of the machine). No result file affected;
+  recorded in the EXP-007 hypothesis.
+- A wording error of our own was caught before publication: "4-poles can be chained around a
+  ring" holds for rings of even length only; corrected in the manuscript, wiki, context note and
+  page.
+- Audit manuscript v0.04 PUBLISHED (10.5281/zenodo.22836612): five graphs, Section 5.3 on
+  abnormal edges, unbounded defects and the sublinear approximation consequence. (v0.03 of the
+  same record was another session's author-name release of the same day.)

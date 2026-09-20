@@ -130,6 +130,41 @@
         "status": "UNSAT",
         "verified": true
       },
+      "25": {
+        "cnf_sha256": "f4327c56543f5f1191d94c96cd79dd619d61f8c6449dbfb465530063ec949331",
+        "critical": false,
+        "seconds": 372.386,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "26": {
+        "cnf_sha256": "4f03339f9bcba678effa33aa6c0bec02ab6748a37a4c1061e19c25c1e6845193",
+        "critical": false,
+        "seconds": 270.994,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "27": {
+        "cnf_sha256": "7116c2b5363b8f773a086fbcd3dda7af10ff9712cb906a06dcc15b8dc52fef3c",
+        "critical": false,
+        "seconds": 250.646,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "28": {
+        "cnf_sha256": "7d6570e67343305472becd7a693a06b8d753b7612f4a7a551f9be734491d177b",
+        "critical": false,
+        "seconds": 222.583,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "29": {
+        "cnf_sha256": "aaddad8b90d05c28e5e222d7f42b78c00e70ecd744b49b4a7d3ddca0e929ce49",
+        "critical": false,
+        "seconds": 233.197,
+        "status": "UNSAT",
+        "verified": true
+      },
       "3": {
         "cnf_sha256": "bb144952264b6f66c5965a2502cd5dda61886bffabab061aa133bc4466af0dea",
         "critical": false,
@@ -137,10 +172,94 @@
         "status": "UNSAT",
         "verified": true
       },
+      "30": {
+        "cnf_sha256": "ef41f617be495a615b23927e6263ab295dde52834c2e5deba46fd7ad607c390c",
+        "critical": false,
+        "seconds": 165.429,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "31": {
+        "cnf_sha256": "77d37d1eea36a5cc8a22783427a8a40b429412734a07dbc78910deec99e82b98",
+        "critical": false,
+        "seconds": 122.89,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "32": {
+        "cnf_sha256": "24950bb11680ca0bc2f6504458b3ba1c8311aa0ecc54303aac084064fc04e56c",
+        "critical": false,
+        "seconds": 116.803,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "33": {
+        "cnf_sha256": "a11afe06245c0d5fc24d332c718810b27c7ea8f0010803f9ddb90a37153fe11b",
+        "critical": false,
+        "seconds": 175.035,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "34": {
+        "cnf_sha256": "368c004d51b060620bb9091527735e1be84b7034ed71e71d658cfc52ee0876a8",
+        "critical": false,
+        "seconds": 176.556,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "35": {
+        "cnf_sha256": "692ce603eccb522e6fb44cf0e39b8bfb0388b97b9b1d20669ae00121ced3586c",
+        "critical": false,
+        "seconds": 169.518,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "36": {
+        "cnf_sha256": "2356110621b8a4715faa9869588272066d016348b8c3e0345d215e34c85acfc7",
+        "critical": false,
+        "seconds": 313.458,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "37": {
+        "cnf_sha256": "772714ea87e0de4f729f8051f291c4b0dd3ef1ad354d726071faaa6875481fa2",
+        "critical": false,
+        "seconds": 207.629,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "38": {
+        "cnf_sha256": "e45a610d6ad4706c243a5f100106087cd672425a42dce93bed4db190c83eadf8",
+        "critical": false,
+        "seconds": 218.179,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "39": {
+        "cnf_sha256": "2d8a0e56070a2e4ee6ae8ef70467512c727e105857b40875e20b3901c2fc1a3d",
+        "critical": false,
+        "seconds": 226.762,
+        "status": "UNSAT",
+        "verified": true
+      },
       "4": {
         "cnf_sha256": "d9b85e4513904077eee3bda774de09c3a61adf9d14f21d6156b703c49b2928bf",
         "critical": false,
         "seconds": 197.797,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "40": {
+        "cnf_sha256": "37e4a4f2e657f3548ab51c81831bcd9ed70baa5829c8eb3dd3fe55ac64e24f9f",
+        "critical": false,
+        "seconds": 514.398,
+        "status": "UNSAT",
+        "verified": true
+      },
+      "41": {
+        "cnf_sha256": "733f0f80096dca1db710701a6ddfc46cef0c5b6336f0ca03852759c070f61c7e",
+        "critical": false,
+        "seconds": 446.321,
         "status": "UNSAT",
         "verified": true
       },
@@ -285,13 +404,13 @@
   "predictions": {},
   "reproduction_G52_bound0": {
     "cnf_sha256": "cab78f29332625d2b93f955845d5289a3e0dc95edc3ee8c68d4c4fc3a298b437",
-    "drat_trim_seconds": 1.213,
-    "drat_trim_tail": "with 1170 variables and 34010 clauses\n\nc finished parsing, read 4094201 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 25507 of 34010 clauses in core                            \n\nc 40307 of 77212 lemmas in core using 1330095 resolution steps\n\nc 0 RAT lemmas in core; 17340 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.969 seconds\n",
+    "drat_trim_seconds": 2.393,
+    "drat_trim_tail": "with 1170 variables and 34010 clauses\n\nc finished parsing, read 4094201 bytes from proof file\n\nc detected empty clause; start verification via backward checking\n\nc 25507 of 34010 clauses in core                            \n\nc 40307 of 77212 lemmas in core using 1330095 resolution steps\n\nc 0 RAT lemmas in core; 17340 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 1.708 seconds\n",
     "drat_trim_verified": true,
     "exit_code": 20,
     "proof_bytes": 4094201,
     "proof_sha256": "2776f61ab51997c65a967996374e325340da47bb04a67800de089c256bf82727",
-    "seconds": 1.282,
+    "seconds": 3.343,
     "solver_stderr_tail": "",
     "solver_stdout_tail": "s UNSATISFIABLE\n",
     "status": "UNSAT"

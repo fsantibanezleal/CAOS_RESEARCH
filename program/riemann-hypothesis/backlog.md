@@ -26,3 +26,5 @@ The new bound is 0.419087888170111727959091183775 at theta=3/4.
 | RH-010 | Source-complete alternative methods, including parity/multiplicity, spectral witnesses and approximation criteria | done for declared scope; dossiers and verified archive committed | P0 |
 | RH-011 | Declare and adversarially test the strongest relevant alternative | done; EXP-004 confirmed in fbc4f9f with proof-review binding | P0 |
 | RH-012 | Consolidate the expanded manuscript, public replay, publication and release evidence | done; v0.65.000 released and live-verified | P0 |
+| RH-013 | EXP-005: localize the optimized Selberg detector and test an explicit simple-critical bound at theta=0.546 | done; theorem, exact certificate, audit and proof-review binding confirmed | P0 |
+| RH-014 | Expand and publish the manuscript with EXP-005, then integrate the public replay and serialized release | manuscript v0.05 published; replay merged in PR #309; release 0.70.000 in progress | P0 |

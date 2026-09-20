@@ -1,0 +1,44 @@
+\begin{theorem}[machine-verified]\label{thm:orders}
+For every even $k$ listed in Table~\ref{tab:orders}, no loopless cubic graph on $k$ vertices colors
+the corresponding graph with a vertex map of kind \textup{(O)}, \textup{(E0)} or \textup{(E1)}.
+The list contains every even $k$ with $40 \le k \le 50$ for both $\Ga$ and $\Gb$%%EXTRA_ORDERS%%.
+\end{theorem}
+
+Goedgebeur et al.\ established by an exhaustive computation that every bridgeless cubic graph on
+at most 38 vertices has a Petersen coloring~\cite[Observation~9]{GJMMMU2026}. The statement
+extends to graphs with parallel edges.
+
+\begin{lemma}\label{lem:digon}
+If a connected bridgeless cubic graph with parallel edges has no Petersen coloring, then a
+connected bridgeless cubic graph of smaller order has none either.
+\end{lemma}
+
+\begin{proof}
+Let $x, y$ be joined by two parallel edges; they are not joined by three, since the graph on two
+vertices is Petersen colorable. Let $xx'$ and $yy'$ be the remaining edges at $x$ and $y$. Then
+$x' \ne y'$, because otherwise the third edge at $x'$ would be a bridge. Delete $x$ and $y$ and
+add the edge $x'y'$. Every edge cut of the new graph corresponds to an edge cut of the same size
+of the old one, so the new graph is connected, bridgeless and cubic. If it had a Petersen
+coloring $\sigma$ with $\sigma(x'y') = m$, then labelling $xx'$ and $yy'$ by $m$ and the two
+parallel edges by the two other edges at one end of $m$ would give a Petersen coloring of the
+old graph.
+\end{proof}
+
+\begin{theorem}\label{thm:h3}
+The graphs $\Ga$ and $\Gb$ are colorable only by themselves: both belong to $\Hthree$.
+\end{theorem}
+
+\begin{proof}
+Let $G$ be one of the two graphs and suppose that some connected bridgeless cubic graph of order
+less than 52 colors $G$. By Corollary~\ref{cor:modes} there is one, say $H$, of even order
+$k < 52$ with a vertex map of kind (O), (E0) or (E1). Since $H$ colors a graph without a Petersen
+coloring, $H$ has no Petersen coloring. By Lemma~\ref{lem:digon}, applied repeatedly, there is a
+simple connected bridgeless cubic graph of order at most $k$ without a Petersen coloring, so
+$k \ge 40$ by~\cite[Observation~9]{GJMMMU2026}. This contradicts Theorem~\ref{thm:orders}.
+Theorem~\ref{thm:mmsw} gives the conclusion.
+\end{proof}
+
+Theorem~\ref{thm:orders} does not depend on the computation of~\cite{GJMMMU2026}; only the orders
+below 40 in Theorem~\ref{thm:h3} do. The orders below 40 that are listed in
+Table~\ref{tab:orders} were refuted directly, and the remaining ones were not decided within six
+hours each.

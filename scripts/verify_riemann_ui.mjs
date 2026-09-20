@@ -371,9 +371,9 @@ async function proofControls(page, panel, scenario, tab) {
 }
 async function experimentViews(page, panel, scenario, text) {
   const buttons = panel.locator('.rh-experiments .rs-exp-open');
-  check(scenario, 'all four experiment launch controls present', await buttons.count() === 4);
-  requireCondition(await buttons.count() === 4, 'Expected all four experiment records');
-  for (const id of ['001', '002', '003', '004']) {
+  check(scenario, 'all five experiment launch controls present', await buttons.count() === 5);
+  requireCondition(await buttons.count() === 5, 'Expected all five experiment records');
+  for (const id of ['001', '002', '003', '004', '005']) {
     const launch = buttons.filter({ hasText: new RegExp(`^EXP-${id}:`) });
     await pointerClick(page, launch, scenario, `open EXP-${id}`);
     const dialog = page.locator('.rs-modal[role="dialog"]');
@@ -474,6 +474,7 @@ async function runScenario(viewport, lang, theme) {
     await page.evaluate(() => document.fonts.ready);
     check(scenario, 'recorded numerical result loaded', (await page.locator('.rh-results').innerText()).includes('0.4190768284253039967'));
     check(scenario, 'qualitative EXP-004 result is rendered', norm(await page.locator('.rh-page').innerText()).includes('EXP-004'));
+    check(scenario, 'explicit EXP-005 threshold is rendered', norm(await page.locator('.rh-page').innerText()).includes('0.5459'));
     const tablist = page.locator('.rh-page > .tabs > .tablist');
     check(scenario, 'six research sections present', await tablist.getByRole('tab').count() === 6);
     for (let index = 0; index < tabIds.length; index += 1) {

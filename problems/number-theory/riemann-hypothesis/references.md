@@ -230,6 +230,23 @@ apparently new short-interval consequence from inherited global methods.
 
 ## Local derived record and publication status
 
+23. **Andrew Pearce-Crump.** *Optimising Selberg's method for critical
+    zeros.* [arXiv:2609.15329v1](https://arxiv.org/abs/2609.15329v1).
+    Submitted September 14, 2026. The sign-preserving positive-semidefinite
+    detector, coefficient-uniform approximate functional equation,
+    arbitrary-subinterval rational-frequency estimate, and certified
+    rank-three profile are imported by EXP-005. The source states a global
+    critical-line proportion above seven percent; the short-interval
+    localization is the separate derived result recorded here.
+
+24. **AxiomMath.** *ZetaZerosV2*, pull request
+    [#1](https://github.com/AxiomMath/ZetaZerosV2/pull/1), inspected at head
+    `02dfc0b1c63d12e6d39649a0bbe08dfc7ef6cf75`.
+    The inspected CI run passed and the new unconditional exports report only
+    standard Lean axioms. The pull request formalizes global inputs and four
+    headline bounds; it does not formalize Wang's short-interval theorem,
+    EXP-004, or the EXP-005 localization.
+
 The [EXP-001 verdict](experiments/EXP-001-source-and-constant-audit/verdict.md)
 is the authority for exact formula reproduction, source-integrity checks,
 and the normalization correction. The
@@ -239,17 +256,16 @@ and [verdict](experiments/EXP-002-short-interval-stability/verdict.md)
 are the authority for the candidate strict short-interval refinement and
 certified numerical example. The [wiki](wiki/README.md) transcribes them.
 
-**Felipe Santibañez-Leal.** *A stability refinement for simple critical zeros
-in short intervals.* CAOS Research Preprint, version 0.01, September 12, 2026.
-[Public record](https://zenodo.org/records/22727389), version DOI
-[10.5281/zenodo.22727389](https://doi.org/10.5281/zenodo.22727389), and concept DOI
+**Felipe Santibáñez-Leal.** *Simple critical zeros in short intervals: stability,
+pressure, parity, and localization.* CAOS Research Preprint, version 0.05,
+September 20, 2026. [Public record](https://zenodo.org/records/22851518), version DOI
+[10.5281/zenodo.22851518](https://doi.org/10.5281/zenodo.22851518), and concept DOI
 [10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388).
 The [publication receipt](../../../manuscripts/riemann-hypothesis/short-interval-stability/publication-receipt.json)
-records verification of fresh public metadata and the downloaded v0.02 PDF:
-498,500 bytes, SHA-256
-`56b0ce29935fe3d115d9d40432f87f82b030355b028f3ea942fd3d3c671e2b1c`, version DOI
-[10.5281/zenodo.22728744](https://doi.org/10.5281/zenodo.22728744). The immutable
-v0.01 baseline remains at [10.5281/zenodo.22727389](https://doi.org/10.5281/zenodo.22727389)
+records verification of fresh public metadata and the downloaded v0.05 PDF:
+526,178 bytes, SHA-256
+`bcfefac4b138d2b41c5fe232c64590e3b6f0c309455d40e01451d9251c1e8acc`.
+The immutable v0.01 baseline remains at [10.5281/zenodo.22727389](https://doi.org/10.5281/zenodo.22727389)
 and its archived 10-page PDF is unchanged. This self-published preprint is not peer
 reviewed. The dated novelty search does not guarantee priority against undiscovered
 concurrent work.

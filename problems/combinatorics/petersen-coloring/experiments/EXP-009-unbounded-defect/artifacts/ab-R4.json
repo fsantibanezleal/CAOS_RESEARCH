@@ -1,0 +1,30 @@
+{
+ "object": "R4",
+ "copies": 4,
+ "structure": {
+  "n": 208,
+  "m": 312,
+  "cubic": true,
+  "digest": "43169b73c4471c1d3d0807bbe5478a7bcfc31c98cec2dbdf6de830e49ee4c05f",
+  "girth": 5,
+  "edge_connectivity": 2
+ },
+ "bounds": {
+  "4": {
+   "instance": "R4_ab_le4",
+   "status": "TIMEOUT",
+   "seconds": 1803.314,
+   "cnf_sha256": "075a79386932e9a8ae444f28902f63d59f54a3afec54a3e3558d3bfe51ef5b4b",
+   "variables": 6552,
+   "clauses": 23395
+  },
+  "5": {
+   "instance": "R4_ab_le5",
+   "status": "TIMEOUT",
+   "seconds": 1802.475,
+   "cnf_sha256": "cc4de9fc45751d2ad4cad2ab59433203ec88715d23394b535ec7ab5a11a6fb1d",
+   "variables": 6864,
+   "clauses": 24018
+  }
+ }
+}
