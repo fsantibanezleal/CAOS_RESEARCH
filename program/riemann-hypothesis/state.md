@@ -1,7 +1,14 @@
 # Riemann hypothesis state
 
-Updated: 2026-09-12. Release: **0.65.000**, released and live-verified from release commit `24a2cb250e44fa59c9f6a56c86eefdf009258e70` (tag `v0.65.000`).
-Current research round: **EXP-003 and EXP-004 confirmed; v0.02 published on Zenodo and replay integrated**.
+Updated: 2026-09-19. Release: **0.65.000**, released and live-verified from release commit `24a2cb250e44fa59c9f6a56c86eefdf009258e70` (tag `v0.65.000`).
+Current research round: **EXP-005 declared; local optimized-Selberg transfer pending canonical validation**.
+
+EXP-005 responds to Pearce-Crump arXiv:2609.15329v1, which appeared after the
+prior source cutoff. Its coefficient-uniform arbitrary-subinterval estimate may
+localize the sign-preserving Selberg detector to every fixed exponent above one
+half. Combined with EXP-004, the declared target is an explicit positive
+simple-critical proportion at theta=0.546. Source preflight is complete; no
+canonical run or confirmed new theorem is recorded yet.
 
 EXP-004 has a separate confirmed verdict and proof-review record. It proves a
 qualitative extension of the simple-critical positivity range below Wang's

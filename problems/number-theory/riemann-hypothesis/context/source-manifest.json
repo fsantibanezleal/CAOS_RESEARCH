@@ -1,6 +1,6 @@
 {
   "schema": "riemann-source-manifest-v1",
-  "reviewed_on": "2026-09-12",
+  "reviewed_on": "2026-09-19",
   "documents": [
     {
       "filename": "claude-original-20260810.pdf",
@@ -1166,6 +1166,45 @@
       "tracked_fulltext": false,
       "redistribution_basis": "CC BY 4.0 reported by the arXiv source; retained as local reference archive.",
       "note": "Primary PDF pinned by exact bytes. New paper-only localization lead; no numerical result or generalized Steuding moment transfer claimed. Section 7 leaves the full-range 2u/3 target open."
+    },
+    {
+      "title": "Optimising Selberg's method for critical zeros",
+      "source_url": "https://arxiv.org/pdf/2609.15329v1",
+      "bytes": 734652,
+      "sha256": "1476f60cf5f4a12239d0db3fdaaaf2b9d4de604c27f1a57b5a95f7b9f2a9f0be",
+      "cache_path": "source-cache/pearce-crump-2609.15329v1.pdf",
+      "text_cache_path": "source-cache/pearce-crump-2609.15329v1.txt",
+      "text_sha256": "f9547e61c08646640428c8291f211f1f067e66c8cb35bdeb96e3a94b8029ef09",
+      "filename": "pearce-crump-2609.15329v1.pdf",
+      "retrieved_on": "2026-09-19",
+      "version": "arXiv:2609.15329v1",
+      "tracked_fulltext": false,
+      "pages": 43,
+      "license": {
+        "status": "CC BY 4.0 linked from arXiv landing page",
+        "redistribution_basis": "local research archive; source remains attributed and is not relicensed",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "review_dossier": "2026-09-19-local-selberg-transfer.md",
+      "note": "Full primary paper inspected. Global theorem gives kappa_0 greater than 0.0700162; arbitrary-subinterval frequency estimate is the new localization input."
+    },
+    {
+      "title": "Optimising Selberg's method for critical zeros - TeX source",
+      "source_url": "https://arxiv.org/src/2609.15329v1",
+      "bytes": 46115,
+      "sha256": "24550f470d116b9a63148061e441d634a014d58dba1ce2dd6abe6edcfea061e4",
+      "cache_path": "source-cache/pearce-crump-2609.15329v1.tar.gz",
+      "filename": "pearce-crump-2609.15329v1.tar.gz",
+      "retrieved_on": "2026-09-19",
+      "version": "arXiv:2609.15329v1 source",
+      "tracked_fulltext": false,
+      "license": {
+        "status": "CC BY 4.0 linked from arXiv landing page",
+        "redistribution_basis": "local research archive; source remains attributed and is not relicensed",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "review_dossier": "2026-09-19-local-selberg-transfer.md",
+      "note": "TeX source inspected to resolve exact factors, quantifiers and interval-uniform estimates."
     }
   ],
   "repositories": [
@@ -1323,6 +1362,34 @@
           "source_url": "https://raw.githubusercontent.com/yuhangshi888/zeta-simple-zeros-673316977/1aeda8e9f0678166a824c75313a813b09eb478cd/lean/README.md"
         }
       ]
+    },
+    {
+      "source_url": "https://github.com/AxiomMath/ZetaZerosV2/pull/1",
+      "repository_url": "https://github.com/AxiomMath/ZetaZerosV2",
+      "commit": "02dfc0b1c63d12e6d39649a0bbe08dfc7ef6cf75",
+      "base_commit": "4c73b317232173a5e6d4253702c9870ee66c2c7b",
+      "commit_date": "2026-09-15T22:14:10-07:00",
+      "retrieved_on": "2026-09-19",
+      "pull_request_state": "open",
+      "review_decision": "none",
+      "ci": {
+        "workflow": "Lean",
+        "run": 35058718927,
+        "job": 104674273265,
+        "conclusion": "success",
+        "completed_at": "2026-09-16T05:24:43Z"
+      },
+      "archive_path": "source-snapshots/axiom-zeta-zeros-v2-pr1-02dfc0b1c63d.zip",
+      "bytes": 768318,
+      "sha256": "fffe603e469b6ede81913b03d055b4b41eedc623c524d1275d8fafff1437dba7",
+      "license": "Apache-2.0",
+      "license_sha256": "47b2b7375318c574ef44d0def1e28d296e8bac5940d24d2694f5d99e7053b780",
+      "scope": [
+        "entire tracked pull-request head"
+      ],
+      "redistribution": "upstream license and NOTICE retained inside snapshot",
+      "review_dossier": "2026-09-19-local-selberg-transfer.md",
+      "note": "Open PR adds assumption-free global Riemann-von Mangoldt and pair-correlation proofs. It does not formalize the short-interval or local Selberg transfer."
     }
   ],
   "storage_policy": "Full-text documents are downloaded locally into source-cache; public provenance and permissively licensed code snapshots are tracked. No source is relicensed."
