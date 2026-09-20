@@ -1178,7 +1178,7 @@
       "filename": "pearce-crump-2609.15329v1.pdf",
       "retrieved_on": "2026-09-19",
       "version": "arXiv:2609.15329v1",
-      "tracked_fulltext": false,
+      "tracked_fulltext": true,
       "pages": 43,
       "license": {
         "status": "CC BY 4.0 linked from arXiv landing page",
@@ -1197,7 +1197,7 @@
       "filename": "pearce-crump-2609.15329v1.tar.gz",
       "retrieved_on": "2026-09-19",
       "version": "arXiv:2609.15329v1 source",
-      "tracked_fulltext": false,
+      "tracked_fulltext": true,
       "license": {
         "status": "CC BY 4.0 linked from arXiv landing page",
         "redistribution_basis": "local research archive; source remains attributed and is not relicensed",

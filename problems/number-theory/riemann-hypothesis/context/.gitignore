@@ -1,1 +1,4 @@
-source-cache/
+source-cache/*
+!source-cache/pearce-crump-2609.15329v1.pdf
+!source-cache/pearce-crump-2609.15329v1.tar.gz
+!source-cache/pearce-crump-2609.15329v1.txt
