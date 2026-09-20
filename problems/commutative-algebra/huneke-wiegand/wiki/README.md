@@ -68,13 +68,14 @@ The full quotient, a matching upper bound, free rank, additional torsion, and
 uniform integral identification with earlier isolated/relative presentations
 remain open. EXP-063 later supplies the finite labelled bridge described above.
 
-The new 18-page companion *A quadratic family of integral two-torsion classes
-in a Huneke-Wiegand Koszul presentation* has passed manuscript QA; 213
-repository tests pass. It was published on 2026-09-05 at 13:35:34 UTC under
-version DOI [`10.5281/zenodo.22342976`](https://doi.org/10.5281/zenodo.22342976),
-concept DOI `10.5281/zenodo.22342975`. Fresh unauthenticated public/latest
-metadata and download checks passed at 13:36:50 UTC for all 503,686 bytes,
-SHA-256 `c4b73414eb06d141c09a2980a7c349043bdc576326a9018e800a0b6e349a0ec8`.
+The 18-page companion *A quadratic family of integral two-torsion classes in
+a Huneke-Wiegand Koszul presentation* has passed manuscript QA. Current v0.03
+is published under version DOI
+[`10.5281/zenodo.22835126`](https://doi.org/10.5281/zenodo.22835126), concept
+DOI `10.5281/zenodo.22342975`. Fresh unauthenticated public metadata and PDF
+download verification on 2026-09-20 matched all 504,764 bytes, SHA-256
+`18566d72619b18f174c69cc34abb5ee2b78ff25481ff5d098ec9570d29bbc0ac`.
+Versions 0.01/0.02 remain immutable; EXP-063/064 do not trigger v0.04.
 The source/PDF is in commit `422e942`. Research PR #253 merged at
 `4073d730158ea8bf239f85e5d83ed2bbfd234657`, followed by PR #257 at
 `4aed2b050ccd282d13e5389a4ee732e8859ce09f` on 2026-09-05 at 13:46:22 UTC.

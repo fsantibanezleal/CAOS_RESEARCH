@@ -82,12 +82,14 @@ HNF-source labels remain unread; no global HNF/SNF was needed.
 
 The complementary manuscript is **A quadratic family of integral two-torsion
 classes in a Huneke-Wiegand Koszul presentation**, under
-`manuscripts/huneke-wiegand/integral-connecting-annihilators/`. Its published
-version DOI is `10.5281/zenodo.22342976`, concept `10.5281/zenodo.22342975`.
-Published 2026-09-05T13:35:34Z; public/latest metadata and a fresh unauthenticated
-download passed at 13:36:50Z. The frozen 18-page PDF is 503686 bytes, SHA-256
-`c4b73414eb06d141c09a2980a7c349043bdc576326a9018e800a0b6e349a0ec8`.
-Claim/build/all-page-render/publication gates are complete. Research PR #253
+`manuscripts/huneke-wiegand/integral-connecting-annihilators/`. Current v0.03
+is published at DOI `10.5281/zenodo.22835126`, concept
+`10.5281/zenodo.22342975`. Fresh unauthenticated metadata and download checks
+on 2026-09-20 match the committed 504,764-byte PDF, SHA-256
+`18566d72619b18f174c69cc34abb5ee2b78ff25481ff5d098ec9570d29bbc0ac`.
+Versions 0.01 and 0.02 remain immutable. EXP-063/064 are finite and do not meet
+the next-version trigger, so no v0.04 was created. The original theorem-round
+claim/build/all-page-render/publication gates are complete. Research PR #253
 merged into develop at `4073d73`; PR #257 passed both fresh CI jobs and merged
 into main at `4aed2b0`. Work/develop/main were synchronized to that merge.
 Issue #252 is closed. Existing main v0.23 and curvilinear companion v0.02
@@ -95,8 +97,8 @@ remain frozen. Management PR #616 merged at `7ff09f87`, with develop/main
 synchronized. CAOS_MANAGE stays on `develop`, preserving
 concurrent Rajo edits. No global version bump, bake, or frontend release is included.
 
-To resume: read root `Entry_point.md`, this checkpoint, the EXP-062 primary
-proof/verdict and the ranked items above. The chronological material below is
+To resume: read root `Entry_point.md`, this checkpoint, EXP-064/063, the
+EXP-062 primary proof/verdict and the ranked items above. The chronological material below is
 preserved evidence, not a command queue. The broad Huneke-Wiegand conjecture
 was already disproved; Son Pham's discovery priority is unchanged.
 

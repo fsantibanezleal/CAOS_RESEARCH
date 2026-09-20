@@ -43,10 +43,12 @@ transport. No next experiment is declared.
 
 The complementary manuscript, **A quadratic family of integral two-torsion
 classes in a Huneke-Wiegand Koszul presentation**, is published at DOI
-`10.5281/zenodo.22342976` (concept `10.5281/zenodo.22342975`). Published
-2026-09-05T13:35:34Z; fresh public/latest metadata and all 503686 PDF bytes
-passed unauthenticated verification at 13:36:50Z. The 18-page all-page QA and
-mathematical gates are complete. PR #253 merged at `4073d73`; checked PR #257
+`10.5281/zenodo.22835126` (v0.03; concept `10.5281/zenodo.22342975`). Fresh
+public metadata and all 504,764 PDF bytes passed unauthenticated verification
+on 2026-09-20, SHA-256
+`18566d72619b18f174c69cc34abb5ee2b78ff25481ff5d098ec9570d29bbc0ac`.
+EXP-063/064 do not meet the next-version gate. The 18-page all-page QA and
+mathematical gates remain complete. PR #253 merged at `4073d73`; checked PR #257
 promoted to main at `4aed2b0`, followed by work/develop synchronization.
 Issue #252 is closed. Management PR #616 merged at `7ff09f87`, with its
 develop/main synchronized and all 32 unrelated dirty Rajo paths preserved.

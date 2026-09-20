@@ -2014,3 +2014,15 @@
   prefixes, 16 mutations, two exponent controls and 16 triangle consequences.
   Uniform source formulas, the complementary quotient and recurrence remain
   open; no manuscript or Zenodo revision is triggered.
+
+## 2026-09-20 - companion v0.03 metadata and public receipt reconciled
+
+- Zenodo record `22835126` confirms current version 0.03, concept DOI
+  `22342975`, sole human author Felipe Santibáñez-Leal and one 504,764-byte PDF.
+  A fresh unauthenticated download matches the committed PDF at SHA-256
+  `18566d72619b18f174c69cc34abb5ee2b78ff25481ff5d098ec9570d29bbc0ac`.
+- Research metadata and navigation now distinguish current v0.03 from the
+  immutable v0.01/v0.02 history. EXP-063/064 remain below the all-parameter
+  next-version gate, so no new Zenodo deposit was created.
+- Full repository validation passes: 421 tests, Ruff, pipeline smoke, template,
+  content, manuscript-voice, research-structure and artifact-contract guards.

@@ -28,10 +28,12 @@ integral sources and transformed duals for those two endpoints; then HWB-085's
 complementary-quotient upper bound; then HWB-065 recurrence. No next experiment
 is declared by this navigation update.
 
-HWB-083's core delivery is complete: the new 18-page companion passed manuscript QA and
-213 repository tests pass. It was published at version DOI
-`10.5281/zenodo.22342976` on 2026-09-05 at 13:35:34 UTC; the fresh public
-latest/download check passed at 13:36:50 UTC for all 503,686 PDF bytes.
+HWB-083's core delivery is complete: the 18-page companion passed manuscript QA.
+Its current editorial v0.03 is published at DOI `10.5281/zenodo.22835126`;
+fresh public metadata and download verification on 2026-09-20 matched all
+504,764 PDF bytes and SHA-256
+`18566d72619b18f174c69cc34abb5ee2b78ff25481ff5d098ec9570d29bbc0ac`.
+The current repository suite has 421 tests. EXP-063/064 do not trigger v0.04.
 Source/PDF commit: `422e942`. Research PRs #253/#257 merged with green guards
 and tests, including pipeline smoke; work/develop/main synchronized at
 `4aed2b050ccd282d13e5389a4ee732e8859ce09f`. Management PR #616 merged at
