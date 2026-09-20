@@ -65,8 +65,8 @@ export const CITATIONS: Citation[] = [
   },
   {
     id: 'riemann-refinement2026', label: 'CAOS short-interval refinement',
-    citation: 'Santibáñez-Leal F. (2026). Simple critical zeros in short intervals: stability, pressure, parity, and localization, version 0.05. The explicit local Selberg transfer, threshold certificate, prior pressure and parity results, and stated analytic boundaries are included.',
-    doi: '10.5281/zenodo.22851518',
+    citation: 'Santibáñez-Leal F. (2026). Simple critical zeros in short intervals: stability, parity, localization, and Hilbert compression, version 0.06. The sharp Hilbert-parity product, quadratic transfer, explicit threshold certificate, earlier stability results, and analytic boundaries are included.',
+    doi: '10.5281/zenodo.22852479',
   },
   {
     id: 'riemann-local2026', label: 'CAOS EXP-005: local Selberg transfer',

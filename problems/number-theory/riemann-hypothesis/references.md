@@ -256,15 +256,15 @@ and [verdict](experiments/EXP-002-short-interval-stability/verdict.md)
 are the authority for the candidate strict short-interval refinement and
 certified numerical example. The [wiki](wiki/README.md) transcribes them.
 
-**Felipe Santibáñez-Leal.** *Simple critical zeros in short intervals: stability,
-pressure, parity, and localization.* CAOS Research Preprint, version 0.05,
-September 20, 2026. [Public record](https://zenodo.org/records/22851518), version DOI
-[10.5281/zenodo.22851518](https://doi.org/10.5281/zenodo.22851518), and concept DOI
-[10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388).
+**Felipe Santib??ez-Leal.** *Simple critical zeros in short intervals: stability,
+parity, localization, and Hilbert compression.* CAOS Research Preprint, version
+0.06, September 20, 2026. [Public record](https://zenodo.org/records/22852479),
+version DOI [10.5281/zenodo.22852479](https://doi.org/10.5281/zenodo.22852479),
+and concept DOI [10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388).
 The [publication receipt](../../../manuscripts/riemann-hypothesis/short-interval-stability/publication-receipt.json)
-records verification of fresh public metadata and the downloaded v0.05 PDF:
-526,178 bytes, SHA-256
-`bcfefac4b138d2b41c5fe232c64590e3b6f0c309455d40e01451d9251c1e8acc`.
+records verification of fresh public metadata and the downloaded v0.06 PDF:
+545,773 bytes, SHA-256
+`dde6f2c9a6c0a9b46e66c9d44efc5786d1239dd1ada7664083a6d2134c452082`.
 The immutable v0.01 baseline remains at [10.5281/zenodo.22727389](https://doi.org/10.5281/zenodo.22727389)
 and its archived 10-page PDF is unchanged. This self-published preprint is not peer
 reviewed. The dated novelty search does not guarantee priority against undiscovered

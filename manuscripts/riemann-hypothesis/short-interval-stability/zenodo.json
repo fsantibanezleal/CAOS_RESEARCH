@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "title": "Simple critical zeros in short intervals: stability, pressure, parity, and localization",
+    "title": "Simple critical zeros in short intervals: stability, parity, localization, and Hilbert compression",
     "upload_type": "publication",
     "publication_type": "preprint",
     "publication_date": "2026-09-20",
-    "version": "0.05",
+    "version": "0.06",
     "language": "eng",
     "creators": [
       {
@@ -13,7 +13,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>Let C<sub>3</sub> = 0.6567752140190419405677628751089899133... be the reproducible rank-three optimized Selberg constant. For every fixed 1/2 &lt; theta &lt; 1, localization of the Selberg detector to (T,T+T<sup>theta</sup>] gives a lower asymptotic proportion (theta-1/2)/(4eC<sub>3</sub>) of distinct odd-multiplicity critical zeros. Combining this estimate with a finite rank-trace inequality yields the simple-critical lower bound max{0,c(theta),(c(theta)+(theta-1/2)/(2eC<sub>3</sub>))/3}, where c(theta)=2-theta/2-cot(theta/sqrt(2))/sqrt(2).</p><p>The combined numerator is strictly increasing. Exact interval arithmetic places its unique zero in (0.5459,0.546), below the positivity threshold 0.550193964744154... of the unaugmented cosine curve. At theta=0.546 the certified simple-critical lower proportion exceeds 0.0000976239413345; direct optimization of the displayed curve gives 0.0000994910410327.</p><p>The localization uses the arbitrary-subinterval mean-value estimate in Pearce-Crump's optimized Selberg framework, together with a fixed mollifier length u &lt; (theta-1/2)/2. The stability, pressure, and parity transfers are also developed with reproducible exact certificates. No effective starting height, global zero-density record, or proof of the Riemann hypothesis is claimed. Source code, data, and computational records are available at https://github.com/fsantibanezleal/CAOS_RESEARCH under problems/number-theory/riemann-hypothesis.</p>",
+    "description": "<p>For a conjugation-invariant finite multiset, let N count copies, S simple real support, O distinct odd-multiplicity real support, and Q the squared-kernel pair sum. The paper proves the sharp inequality (Q-S)(N-O) &gt;= 2(N-S)^2 by retaining Lamzouri's first Hilbert-subspace dimension and coupling it to odd support.</p><p>Combined with Wang's short-interval pair theorem and the localized rank-three Selberg detector, it gives liminf S/N &gt;= max{0,c(theta),(c(theta)+2k3(theta))/3,h3(theta)}. Exact directed rational arithmetic places the unique positivity root of h3 in (0.545884,0.545885). At theta=0.5459, where the previous linear term remains negative, the new lower bound exceeds 0.0000168381638551244569880374399.</p><p>The coefficient two is sharp, and a scalar zero-simple witness explains why retaining the Hilbert dimension matters. The result is asymptotic and depends on recent attributed preprints. No effective starting height, global zero-density record, external peer review, or proof of the Riemann hypothesis is claimed. Source code, data, and computational records are available at https://github.com/fsantibanezleal/CAOS_RESEARCH.</p>",
     "keywords": [
       "Riemann zeta function",
       "short intervals",
@@ -23,7 +23,9 @@
       "mollifiers",
       "pair correlation",
       "Gram matrix stability",
-      "interval arithmetic"
+      "interval arithmetic",
+      "Hilbert space",
+      "parity compression"
     ],
     "license": "cc-by-4.0",
     "access_right": "open",
@@ -44,6 +46,6 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version_notes": "Adds the explicit local Selberg transfer proved in EXP-005, the exact threshold bracket 0.5459 < theta_* < 0.546, a fixed legal mollifier witness at theta = 0.546, and the resulting positive simple-critical proportion. The source comparison and limitations are updated. The author name remains Santibanez-Leal with the diacritics printed on the manuscript, as on ORCID 0000-0002-0150-3246."
+    "version_notes": "Adds the sharp Hilbert-parity product (Q-S)(N-O) >= 2(N-S)^2, its quadratic short-interval transfer, the exact positivity bracket 0.545884 < theta_HP < 0.545885, the positive bound at theta = 0.5459, the scalar barrier witness, and EXP-006 reproducibility evidence. The Riemann hypothesis remains open."
   }
 }

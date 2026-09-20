@@ -3,6 +3,32 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.71.000] - 2026-09-20
+
+### Added
+- Riemann EXP-006 proves the sharp finite Hilbert-parity product
+  `(Q-S)(N-O) >= 2(N-S)^2`. The attributed arbitrary-parameter Hilbert
+  inequality is separated from the new parity compression, and multiplicities
+  two and three certify sharpness of the coefficient two.
+- Combining that product with Wang's fixed-test pair theorem and EXP-005 gives
+  the quadratic term `h3(theta)`. Exact directed rational arithmetic proves its
+  unique positivity threshold lies in `(0.545884,0.545885)` and gives
+  `S/N > 0.0000168381638551244569880374399` at `theta = 0.5459`, where the
+  earlier linear parity term remains negative.
+- Replay schema v5 binds EXP-006's amended hypothesis, clean execution receipt,
+  canonical result, focused tests, complete proof, adversarial audit, verdict,
+  proof review, scalar barrier witness, and independent 100-digit interval
+  replay before the browser displays the result.
+- Manuscript v0.06 is published at DOI `10.5281/zenodo.22852479`. The reviewed
+  26-page PDF matches a fresh public download at SHA-256
+  `dde6f2c9a6c0a9b46e66c9d44efc5786d1239dd1ada7664083a6d2134c452082`.
+
+### Boundaries
+- The theorem is asymptotic for each fixed exponent, supplies no effective
+  starting height, and imports recent attributed preprints. It does not improve
+  a global simple-zero percentage, establish external peer review or absolute
+  priority, or prove the Riemann Hypothesis.
+
 ## [0.70.000] - 2026-09-20
 
 ### Added
