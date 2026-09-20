@@ -4,3 +4,5 @@
 # Preserve the exact canonical EXP-005 evidence bytes bound by its execution
 # receipt and proof review; the original Windows run emitted CRLF JSON.
 problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/artifacts/canonical/result.json -text
+# The extracted primary-source text is also hash-pinned in source-manifest.json.
+problems/number-theory/riemann-hypothesis/context/source-cache/pearce-crump-2609.15329v1.txt -text
