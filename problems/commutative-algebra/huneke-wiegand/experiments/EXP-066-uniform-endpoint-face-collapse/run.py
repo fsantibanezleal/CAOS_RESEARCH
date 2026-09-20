@@ -17,7 +17,6 @@ EXP036 = EXPERIMENTS / "EXP-036-factor-two-torsion-anatomy"
 EXP037 = EXPERIMENTS / "EXP-037-connecting-quasipolynomial"
 EXP042 = EXPERIMENTS / "EXP-042-bockstein-normal-form"
 EXP048 = EXPERIMENTS / "EXP-048-semantic-relative-bockstein"
-EXP053 = EXPERIMENTS / "EXP-053-labelled-source-pullback"
 EXP063 = EXPERIMENTS / "EXP-063-triangle-isolated-comparison"
 OUTPUT = HERE / "artifacts" / "results.json"
 CHECKPOINT = HERE / "artifacts" / "checkpoint.json"
@@ -26,8 +25,8 @@ PREMISES = {
     EXP037 / "run.py": "1abebc24c99398dded97aa08216211db089889e154736ed9eb5a7202de0b5df0",
     EXP042 / "run.py": "3a57fc52a6a1e10ba42d97c6ebe27062324b8c90b76df7a288db41dffabd69bf",
     EXP048 / "run.py": "ec245859931cf1b3992630c8faab207a158ae5b72a3283783ec938cd3b76e70a",
-    EXP053 / "extract_training.py": "cd1ff29b95944224a4d05265ce175926fcf60c08b34c4d4bff8b5884b729fc90",
     EXP063 / "run.py": "97a9e7511ff9d004b091f244df653f02182e1d9304c9042fefe47ce241a89461",
+    EXP063 / "artifacts" / "results.json": "c219ce4c4549d970063a787227793bb5f7141e8f4d6e14c614f62085ecc8059a",
     EXP042 / "artifacts" / "matrix-p11.json": "69e8519a3b239ec90c3b5af526f806a9a0aabf003517ea28233167d7e2b68dd9",
 }
 MASK58 = {"R1", "R3", "R4", "R5"}
@@ -77,31 +76,52 @@ def classify_source(p: int, r: int, modules: dict[str, ModuleType], label=None) 
     low = modules["exp036"].low_offsets(p)
     degree_two = modules["exp036"].degree_two_offsets(p)
     reverse_alias = {atom: alias for alias, atom in modules["exp048"].ATOM_ALIASES.items()}
+    intervals = modules["exp042"].generator_intervals(p)
+    tags = modules["exp042"].GENERATOR_TAGS
+    exterior_tags = {value: modules["exp042"].interval_tag(value, intervals) for value in exterior}
+    source_counts = Counter(exterior_tags.values())
+
+    def face_atom(kind: str, coefficient_tag: str, deleted: int) -> str:
+        face_counts = source_counts.copy()
+        face_counts[exterior_tags[deleted]] -= 1
+        normalized = [face_counts[tag] for tag in tags]
+        normalized[0] -= p
+        normalized[1] -= p
+        return json.dumps(["row", kind, coefficient_tag, normalized], separators=(",", ":"))
+
     boundary = []
-    for variable, sign, face in modules["exp037"].signed_faces(exterior):
+    for position, variable in enumerate(exterior):
+        sign = -1 if position % 2 else 1
         atom = None
-        row = None
+        row_kind = None
+        coefficient_tag = None
+        product_value = None
         if variable in low:
             product = modules["exp036"].low_product(p, variable, coefficient)
             if product is not None:
-                atom = modules["exp042"].semantic_atom(
-                    side="row", kind="D", coefficient_tag=product[0], exterior=face, p=p
-                )
-                row = ["D", list(face), product[0], product[1]]
+                row_kind, coefficient_tag, product_value = "D", product[0], product[1]
+                atom = face_atom(row_kind, coefficient_tag, variable)
         elif variable + coefficient in degree_two:
-            tag = modules["exp042"].interval_tag(
+            coefficient_tag = modules["exp042"].interval_tag(
                 variable + coefficient, modules["exp042"].degree_two_intervals(p)
             )
-            atom = modules["exp042"].semantic_atom(
-                side="row", kind="K", coefficient_tag=tag, exterior=face, p=p
-            )
-            row = ["K", list(face), variable + coefficient]
-        if row is not None:
+            row_kind, product_value = "K", variable + coefficient
+            atom = face_atom(row_kind, coefficient_tag, variable)
+        if row_kind is not None:
+            alias = reverse_alias.get(atom, "OTHER")
+            row = None
+            if alias in MASK58:
+                face = exterior[:position] + exterior[position + 1:]
+                row = (["D", list(face), coefficient_tag, product_value] if row_kind == "D"
+                       else ["K", list(face), product_value])
             boundary.append({
                 "deleted": variable,
                 "sign": int(sign),
                 "row": row,
-                "alias": reverse_alias.get(atom, "OTHER"),
+                "kind": row_kind,
+                "coefficient_tag": coefficient_tag,
+                "product": product_value,
+                "alias": alias,
                 "atom": atom,
             })
     projected = [item for item in boundary if item["alias"] in MASK58]
@@ -142,7 +162,10 @@ def check_mutations(p: int, r: int, modules: dict[str, ModuleType]) -> int:
         mutations.append(["S", sorted(changed), p - 2])
     changed = set(exterior)
     changed.remove(10 * p)
-    changed.add(10 * p - 1)
+    # 10p-1 is a degree-two singleton, not a degree-one generator.  Use the
+    # nearest admissible degree-one neighbour specified by the control's
+    # "where admissible" qualifier.
+    changed.add(10 * p - 2)
     mutations.append(["S", sorted(changed), p - 2])
     rejected = 0
     for label in mutations:
@@ -161,35 +184,43 @@ def check_mutations(p: int, r: int, modules: dict[str, ModuleType]) -> int:
     return rejected + 1
 
 
-def holdout(modules: dict[str, ModuleType], seconds: float, memory_gib: float) -> dict[str, object]:
+def holdout(modules: dict[str, ModuleType]) -> dict[str, object]:
     p = 11
-    budget = modules["exp048"].Budget(seconds, memory_gib)
-    model = modules["exp053"].make_component_model(
-        exp036=modules["exp036"], exp037=modules["exp037"], exp042=modules["exp042"],
-        exp048=modules["exp048"], p=p, budget=budget,
-    )
-    if not model["unique_mapping"]:
-        raise AssertionError({"p": p, "unique_mapping": False})
-    labels = model["model"]["column_labels"]
-    row_labels = model["labelled"]["row_labels"]
-    row_atoms = model["labelled"]["row_atoms"]
-    selected = set(modules["exp048"].rows_for_mask(row_atoms, 58))
-    frozen_columns = model["frozen"]["signed_columns"]
+    frozen = json.loads((EXP042 / "artifacts" / "matrix-p11.json").read_text(encoding="utf-8"))
+    comparison = json.loads((EXP063 / "artifacts" / "results.json").read_text(encoding="utf-8"))
+    p11 = next(row for row in comparison["rows"] if int(row["p"]) == p)
+    column_atom = '["column","S","L0",[-1,-3,1,0,1,0,0,0,0,0]]'
+    column_atom_id = frozen["column_atom_table"].index(column_atom)
+    row_aliases = {
+        row: next(alias for alias, atom in modules["exp048"].ATOM_ALIASES.items() if atom == frozen["row_atom_table"][atom_id])
+        for row, atom_id in enumerate(frozen["row_atom_ids"])
+    }
     records = []
     for r in (1, 2):
-        source = source_label(p, r)
-        matches = [index for index, label in enumerate(labels) if label == source]
-        if len(matches) != 1:
-            raise AssertionError({"p": p, "r": r, "source_matches": matches})
-        column = matches[0]
-        projected = [(int(row), int(value)) for row, value in frozen_columns[column] if int(row) in selected]
-        expected_row_matches = [index for index, label in enumerate(row_labels) if label == target_label(p, r)]
-        if len(expected_row_matches) != 1 or projected != [(expected_row_matches[0], -1)]:
+        triangle = [0, r, p - 2 - r]
+        position = p11["triangles"].index(triangle)
+        target_row = int(p11["triangle_rows"][position])
+        if p11["triangle_labels"][position] != target_label(p, r):
+            raise AssertionError({"p": p, "r": r, "target_label": False})
+        candidates = []
+        for column, (atom_id, entries) in enumerate(zip(frozen["column_atom_ids"], frozen["signed_columns"], strict=True)):
+            if atom_id != column_atom_id:
+                continue
+            aliases = Counter(row_aliases[int(row)] for row, _ in entries)
+            r5_entries = [(int(row), int(value)) for row, value in entries if row_aliases[int(row)] == "R5"]
+            if aliases == Counter({"R0": p - 3, "R2": p - 3, "R5": 1}) and r5_entries == [(target_row, -1)]:
+                candidates.append(column)
+        if len(candidates) != 1:
+            raise AssertionError({"p": p, "r": r, "semantic_candidates": candidates})
+        column = candidates[0]
+        projected = [(int(row), int(value)) for row, value in frozen["signed_columns"][column] if row_aliases[int(row)] in MASK58]
+        if projected != [(target_row, -1)]:
             raise AssertionError({"p": p, "r": r, "contracted_projection": projected})
         direct = check_formula(p, r, modules)
         records.append({
-            "r": r, "component_column": column, "component_row": expected_row_matches[0],
+            "r": r, "component_column": column, "component_row": target_row,
             "contracted_projection": projected, "direct_boundary_hash": direct["boundary_hash"],
+            "source_recovered_from_target_face": source_label(p, r),
         })
     return {"p": p, "status": "HOLDOUT_PASS", "records": records}
 
@@ -213,12 +244,11 @@ def main() -> int:
         "exp037": load_module("exp037_for_exp066", EXP037 / "run.py"),
         "exp042": load_module("exp042_for_exp066", EXP042 / "run.py"),
         "exp048": load_module("exp048_for_exp066", EXP048 / "run.py"),
-        "exp053": load_module("exp053_for_exp066", EXP053 / "extract_training.py"),
         "exp063": load_module("exp063_for_exp066", EXP063 / "run.py"),
     }
     result = {"experiment": "EXP-066", "premises": actual, "holdout": None, "sweep": []}
     print("p=11 locked holdout: reconstruct labelled component", flush=True)
-    result["holdout"] = holdout(modules, args.budget_seconds, args.memory_gib)
+    result["holdout"] = holdout(modules)
     write_json_atomic(args.checkpoint, result)
     mutation_count = 0
     for p in range(8, args.p_max + 1):

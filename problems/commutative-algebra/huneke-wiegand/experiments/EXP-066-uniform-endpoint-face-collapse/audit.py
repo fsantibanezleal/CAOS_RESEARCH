@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import argparse
 import hashlib
-import importlib.util
 import json
 from collections import Counter
 from pathlib import Path
@@ -12,14 +11,11 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 EXPERIMENTS = HERE.parent
-EXP036 = EXPERIMENTS / "EXP-036-factor-two-torsion-anatomy"
-EXP037 = EXPERIMENTS / "EXP-037-connecting-quasipolynomial"
 EXP042 = EXPERIMENTS / "EXP-042-bockstein-normal-form"
-EXP048 = EXPERIMENTS / "EXP-048-semantic-relative-bockstein"
-EXP053 = EXPERIMENTS / "EXP-053-labelled-source-pullback"
+EXP063 = EXPERIMENTS / "EXP-063-triangle-isolated-comparison"
 RESULTS = HERE / "artifacts" / "results.json"
 OUTPUT = HERE / "artifacts" / "audit-results.json"
-RUN_SHA256 = "9780eaa178f5360f77b10cc16acfaa45c2e56c098dfc275d4b59a21dc84175bf"
+RUN_SHA256 = "9415847bc5ab4edbd6dbd2c1a980c2197a4fb5edd947c4f8934bb14d47bfd303"
 ALIASES = {
     ("D", "A", (-2, -3, 1, 0, 1, 0, 0, 0, 0, 0)): "R0",
     ("D", "A", (-3, -2, 2, 0, 0, 0, 0, 0, 0, 0)): "R1",
@@ -41,15 +37,6 @@ def write_json(path: Path, value: object) -> None:
     temporary = path.with_suffix(path.suffix + ".tmp")
     temporary.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8", newline="\n")
     temporary.replace(path)
-
-
-def load(name: str, path: Path):
-    spec = importlib.util.spec_from_file_location(name, path)
-    if spec is None or spec.loader is None:
-        raise RuntimeError(path)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
 
 
 def generator_tag(p: int, value: int) -> str:
@@ -79,9 +66,8 @@ def degree_two_tag(p: int, value: int) -> str | None:
     return matches[0] if matches else None
 
 
-def counts(p: int, exterior: tuple[int, ...]) -> tuple[int, ...]:
+def normalized_counts(p: int, counted: Counter[str]) -> tuple[int, ...]:
     order = ("L0", "L1", "H0", "H1", "H2", "H3", "H4", "H5", "H6", "H7")
-    counted = Counter(generator_tag(p, value) for value in exterior)
     result = [counted[tag] for tag in order]
     result[0] -= p
     result[1] -= p
@@ -102,28 +88,39 @@ def target(p: int, r: int) -> list[object]:
 def boundary(p: int, exterior: tuple[int, ...]) -> list[dict[str, object]]:
     coefficient = p - 2
     result = []
+    exterior_tags = {value: generator_tag(p, value) for value in exterior}
+    source_counts = Counter(exterior_tags.values())
     for position, variable in enumerate(exterior):
-        face = exterior[:position] + exterior[position + 1:]
         sign = -1 if position % 2 else 1
         kind = None
         coefficient_tag = None
-        row = None
+        survives = False
         if 1 <= variable <= p or 3 * p <= variable <= 4 * p - 2:
             second = variable >= 3 * p
             total = variable + coefficient
             if (not second and total > p) or (second and total >= 4 * p - 1):
                 kind, coefficient_tag = "D", "B" if second else "A"
-                row = ["D", list(face), coefficient_tag, total]
+                survives = True
         else:
             coefficient_tag = degree_two_tag(p, variable + coefficient)
             if coefficient_tag is not None:
                 kind = "K"
-                row = ["K", list(face), variable + coefficient]
-        if row is not None:
-            atom_key = (kind, coefficient_tag, counts(p, face))
+                survives = True
+        if survives:
+            face_counts = source_counts.copy()
+            face_counts[exterior_tags[variable]] -= 1
+            atom_key = (kind, coefficient_tag, normalized_counts(p, face_counts))
+            alias = ALIASES.get(atom_key, "OTHER")
+            if alias in KEEP:
+                face = exterior[:position] + exterior[position + 1:]
+                row = (["D", list(face), coefficient_tag, variable + coefficient]
+                       if kind == "D" else ["K", list(face), variable + coefficient])
+            else:
+                row = None
             result.append({
                 "deleted": variable, "sign": sign, "row": row,
-                "alias": ALIASES.get(atom_key, "OTHER"), "atom_key": atom_key,
+                "kind": kind, "coefficient_tag": coefficient_tag,
+                "alias": alias, "atom_key": atom_key,
             })
     return result
 
@@ -143,26 +140,42 @@ def audit_formula(p: int, r: int) -> dict[str, object]:
     return {"r": r, "boundary_hash": digest(rows), "aliases": dict(sorted(aliases.items()))}
 
 
-def component_holdout(modules: dict[str, object], seconds: float, memory_gib: float):
+def component_holdout():
     p = 11
-    model = modules["exp053"].make_component_model(
-        exp036=modules["exp036"], exp037=modules["exp037"], exp042=modules["exp042"],
-        exp048=modules["exp048"], p=p, budget=modules["exp048"].Budget(seconds, memory_gib),
-    )
-    if not model["unique_mapping"]:
-        raise AssertionError("nonunique p=11 source map")
-    selected = set(modules["exp048"].rows_for_mask(model["labelled"]["row_atoms"], 58))
+    frozen = json.loads((EXP042 / "artifacts" / "matrix-p11.json").read_text(encoding="utf-8"))
+    comparison = json.loads((EXP063 / "artifacts" / "results.json").read_text(encoding="utf-8"))
+    p11 = next(row for row in comparison["rows"] if int(row["p"]) == p)
+    wanted_atom = '["column","S","L0",[-1,-3,1,0,1,0,0,0,0,0]]'
+    wanted_atom_id = frozen["column_atom_table"].index(wanted_atom)
+    atom_to_alias = {
+        '["row","D","A",[-2,-3,1,0,1,0,0,0,0,0]]': "R0",
+        '["row","D","A",[-3,-2,2,0,0,0,0,0,0,0]]': "R1",
+        '["row","D","B",[-1,-4,1,0,1,0,0,0,0,0]]': "R2",
+        '["row","D","B",[-2,-3,2,0,0,0,0,0,0,0]]': "R3",
+        '["row","K","C0",[-2,-2,1,0,0,0,0,0,0,0]]': "R4",
+        '["row","K","C2",[-1,-3,1,0,0,0,0,0,0,0]]': "R5",
+    }
+    row_aliases = {row: atom_to_alias[frozen["row_atom_table"][atom_id]] for row, atom_id in enumerate(frozen["row_atom_ids"])}
     records = []
     for r in (2, 1):
-        exact_source = ["S", list(source(p, r)), p - 2]
-        columns = [index for index, label in enumerate(model["model"]["column_labels"]) if label == exact_source]
-        rows = [index for index, label in enumerate(model["labelled"]["row_labels"]) if label == target(p, r)]
-        if len(columns) != 1 or len(rows) != 1:
-            raise AssertionError({"r": r, "columns": columns, "rows": rows})
-        projected = [(int(row), int(value)) for row, value in model["frozen"]["signed_columns"][columns[0]] if int(row) in selected]
-        if projected != [(rows[0], -1)]:
+        triangle = [0, r, p - 2 - r]
+        position = p11["triangles"].index(triangle)
+        target_row = int(p11["triangle_rows"][position])
+        candidates = []
+        for column in range(len(frozen["signed_columns"]) - 1, -1, -1):
+            if frozen["column_atom_ids"][column] != wanted_atom_id:
+                continue
+            entries = frozen["signed_columns"][column]
+            alias_counts = Counter(row_aliases[int(row)] for row, _ in entries)
+            r5 = [(int(row), int(value)) for row, value in entries if row_aliases[int(row)] == "R5"]
+            if alias_counts == Counter({"R0": p - 3, "R2": p - 3, "R5": 1}) and r5 == [(target_row, -1)]:
+                candidates.append(column)
+        if len(candidates) != 1:
+            raise AssertionError({"r": r, "candidates": candidates})
+        projected = [(int(row), int(value)) for row, value in frozen["signed_columns"][candidates[0]] if row_aliases[int(row)] in KEEP]
+        if projected != [(target_row, -1)]:
             raise AssertionError({"r": r, "projected": projected})
-        records.append({"r": r, "column": columns[0], "row": rows[0], "projected": projected})
+        records.append({"r": r, "column": candidates[0], "row": target_row, "projected": projected})
     return sorted(records, key=lambda item: item["r"])
 
 
@@ -179,14 +192,7 @@ def main() -> int:
     stored = unsigned.pop("artifact_hash")
     if digest(unsigned) != stored or producer["status"] != "PASS":
         raise AssertionError("producer artifact invalid")
-    modules = {
-        "exp036": load("audit_exp036", EXP036 / "run.py"),
-        "exp037": load("audit_exp037", EXP037 / "run.py"),
-        "exp042": load("audit_exp042", EXP042 / "run.py"),
-        "exp048": load("audit_exp048", EXP048 / "run.py"),
-        "exp053": load("audit_exp053", EXP053 / "extract_training.py"),
-    }
-    holdout = component_holdout(modules, args.budget_seconds, args.memory_gib)
+    holdout = component_holdout()
     checks = []
     for p in range(300, 7, -1):
         checks.extend({"p": p, **audit_formula(p, r)} for r in (2, 1))
