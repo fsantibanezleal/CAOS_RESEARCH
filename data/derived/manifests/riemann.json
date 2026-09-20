@@ -1,8 +1,8 @@
 {
  "artifact": {
-  "bytes": 866860,
+  "bytes": 39940951,
   "path": "research/riemann.json",
-  "sha256": "7afb078f8ac7d33adb192556f50b06bedf6ae22fa2a527f6310f2783de93b9bf"
+  "sha256": "76ad13bec9a74db2ed2569fda8c18030c21f9c6a4916a125fa3a4d9779e9fd28"
  },
  "case_id": "riemann",
  "gate": {
@@ -56,7 +56,7 @@
    "path": "problems/number-theory/riemann-hypothesis/context/source-manifest.json",
    "role": "source_manifest",
    "sha256": "5e436bc857e24fc868aa2e3f334a6fdd658756f6ae3de459b55b417f82d8aa18",
-   "source_commit": "d077c97faaff5269d993183e2cab0bf7e43039c5",
+   "source_commit": "d63111ffa8a348c51eb4fd06f5a1e70a51211576",
    "source_exp": "source-review"
   },
   {
@@ -332,6 +332,134 @@
    "source_exp": "EXP-006-hilbert-parity-compression"
   },
   {
+   "bytes": 17854057,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/artifacts/canonical/result.json",
+   "role": "spectral_result",
+   "sha256": "98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947",
+   "source_commit": "05fec7d35a3f542573d428c59fa20412b3983814",
+   "source_exp": "EXP-007-spectral-defect-parity"
+  },
+  {
+   "bytes": 335,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/artifacts/canonical/execution-receipt.json",
+   "role": "spectral_receipt",
+   "sha256": "9a7ec6da2d78ddf0bc18594d385c24c22fc1cf821efee8fcac3576453108dbbf",
+   "source_commit": "05fec7d35a3f542573d428c59fa20412b3983814",
+   "source_exp": "EXP-007-spectral-defect-parity"
+  },
+  {
+   "bytes": 5149,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/hypothesis.md",
+   "role": "spectral_hypothesis",
+   "sha256": "1041a7ecb357b47a448f3c75a3aa1f3328dad982fe223be7ee7a789698c2e27b",
+   "source_commit": "a2abdcc8360399b3fa42aaea9245e4b83352c30f",
+   "source_exp": "EXP-007-spectral-defect-parity"
+  },
+  {
+   "bytes": 28674,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/run.py",
+   "role": "spectral_runner",
+   "sha256": "1304e98f540aac2e11efc453bbc42feb0f9e1478618e86b4848ebfacf04ba90c",
+   "source_commit": "5d7e7a6a73e433a7ff9f6628815d54243425afa9",
+   "source_exp": "EXP-007-spectral-defect-parity"
+  },
+  {
+   "bytes": 8134,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/mathematical-proof.md",
+   "role": "spectral_proof",
+   "sha256": "1d987d1e736cfdde07d86c39bbf8a1dc3ebcaec31abf02324091d24d7e719685",
+   "source_commit": "7d7d7729f88f5e7371b721cb5036d2cbb8030957",
+   "source_exp": "EXP-007-spectral-defect-parity"
+  },
+  {
+   "bytes": 8059,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/adversarial-audit.md",
+   "role": "spectral_audit",
+   "sha256": "6bad136f83257514efc874e59297c1ac13dd80cb4bc39b08ac3f6c3c1f30656f",
+   "source_commit": "05fec7d35a3f542573d428c59fa20412b3983814",
+   "source_exp": "EXP-007-spectral-defect-parity"
+  },
+  {
+   "bytes": 4816,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/verdict.md",
+   "role": "spectral_verdict",
+   "sha256": "38c10761e73b5c1740056632f656dd59bd41eaa7f62a2c105462ce81aded6477",
+   "source_commit": "05fec7d35a3f542573d428c59fa20412b3983814",
+   "source_exp": "EXP-007-spectral-defect-parity"
+  },
+  {
+   "bytes": 2821,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/proof-review.json",
+   "role": "spectral_review",
+   "sha256": "b4deaedfafe2190a8dd5878263bcc00ec4367122db9f72e85874433da9b34832",
+   "source_commit": "05fec7d35a3f542573d428c59fa20412b3983814",
+   "source_exp": "EXP-007-spectral-defect-parity"
+  },
+  {
+   "bytes": 21218322,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/artifacts/canonical/result.json",
+   "role": "rank_six_result",
+   "sha256": "1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781",
+   "source_commit": "67eccd5bff0ed4055cad3036aaf6f18ccccbc069",
+   "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
+   "bytes": 422,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/artifacts/canonical/execution-receipt.json",
+   "role": "rank_six_receipt",
+   "sha256": "8ea74decaa7d56610c61fc6277ba03d018eab98d71614fafcafdea2bab523491",
+   "source_commit": "67eccd5bff0ed4055cad3036aaf6f18ccccbc069",
+   "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
+   "bytes": 5461,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/hypothesis.md",
+   "role": "rank_six_hypothesis",
+   "sha256": "70960ea00af0f8086034cf0ed388e520822306af3d3248f99cd6d7914927a40d",
+   "source_commit": "2297d2fc5cb6a65b2a3aa48b019934d002ef242b",
+   "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
+   "bytes": 19817,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/run.py",
+   "role": "rank_six_runner",
+   "sha256": "cc8acd61729f93fe0f59241b1746875bdadff15801940c856095941e569edd0e",
+   "source_commit": "a26ba0d403d14d6d08f042503ce52b774c38bdfd",
+   "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
+   "bytes": 5676,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/mathematical-proof.md",
+   "role": "rank_six_proof",
+   "sha256": "cb263549a8134dc22a48ed4f662c25410070e667f46b70a0d58a339c11d2bef4",
+   "source_commit": "5f4885c70188a7126f0b47ea954e589a7583b358",
+   "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
+   "bytes": 7036,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/adversarial-audit.md",
+   "role": "rank_six_audit",
+   "sha256": "17de19c8c38f09552ca502d75e817590313e42e2a80b6d87e955397d4af496e2",
+   "source_commit": "67eccd5bff0ed4055cad3036aaf6f18ccccbc069",
+   "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
+   "bytes": 4253,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/verdict.md",
+   "role": "rank_six_verdict",
+   "sha256": "f667c08c61b102d1594719c76a7af404a53918616d938a4d97d30a365060981f",
+   "source_commit": "67eccd5bff0ed4055cad3036aaf6f18ccccbc069",
+   "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
+   "bytes": 2409,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/proof-review.json",
+   "role": "rank_six_review",
+   "sha256": "970d89ea4fb9713586ae5812081a90f1608bb2c5866dfe3ef2c64659cec703cb",
+   "source_commit": "67eccd5bff0ed4055cad3036aaf6f18ccccbc069",
+   "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
    "bytes": 17333,
    "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/artifacts/stage-b/candidate-1/pressure-certificate.json",
    "role": "pressure_certificate_1",
@@ -410,6 +538,22 @@
    "sha256": "7cac00920201cb937a850996c8f5f542100c9449fc2d60452679c62e0b82f911",
    "source_commit": "0d736fa22ce7e833200381a32e8cc89f77c660e8",
    "source_exp": "EXP-006-hilbert-parity-compression"
+  },
+  {
+   "bytes": 2775,
+   "path": "tests/test_riemann_spectral_defect_parity.py",
+   "role": "spectral_test",
+   "sha256": "b0a723fe75a174f096d5465d00c21222d38acb979db63e3632c5a17213f6cb70",
+   "source_commit": "d63111ffa8a348c51eb4fd06f5a1e70a51211576",
+   "source_exp": "EXP-007-spectral-defect-parity"
+  },
+  {
+   "bytes": 2869,
+   "path": "tests/test_riemann_rank_six_local.py",
+   "role": "rank_six_test",
+   "sha256": "969b093ea9359a62b00b205c27956d0a08eaa66f0ce5f601f5e7893e2f587cf9",
+   "source_commit": "4f201e0e77a76f98027511e4e78a7bc751f7f489",
+   "source_exp": "EXP-008-rank-six-local-transfer"
   }
  ]
 }

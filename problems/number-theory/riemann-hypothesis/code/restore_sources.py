@@ -17,8 +17,11 @@ def main() -> None:
     parser.add_argument('--verify-only', action='store_true')
     args = parser.parse_args()
     context = Path(__file__).resolve().parents[1] / 'context'
-    manifest = json.loads((context / 'source-manifest.json').read_text())
-    for row in manifest['documents']:
+    manifests = [
+        json.loads(path.read_text())
+        for path in sorted(context.glob('source-manifest*.json'))
+    ]
+    for row in (row for manifest in manifests for row in manifest['documents']):
         target = (context / row['cache_path']).resolve()
         if not target.is_relative_to((context / 'source-cache').resolve()):
             raise ValueError('Source path escapes its cache')
@@ -34,7 +37,7 @@ def main() -> None:
         if len(payload) != row['bytes'] or hashlib.sha256(payload).hexdigest() != row['sha256']:
             raise ValueError('Cached source differs: ' + row['filename'])
         print('verified: ' + row['filename'], flush=True)
-    for row in manifest['repositories']:
+    for row in (row for manifest in manifests for row in manifest['repositories']):
         target = context / row['archive_path']
         if hashlib.sha256(target.read_bytes()).hexdigest() != row['sha256']:
             raise ValueError('Code snapshot differs: ' + row['archive_path'])

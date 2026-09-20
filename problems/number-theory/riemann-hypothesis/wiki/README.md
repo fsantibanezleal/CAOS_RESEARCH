@@ -1,5 +1,28 @@
 # Riemann hypothesis: short-interval zero proportions
 
+[D+MV] EXP-008 proves that the optimized Selberg detector localizes at every
+fixed finite rank. Inserting Pearce-Crump's stated source-certified rank-six
+constant into the EXP-006 Hilbert-parity product gives
+
+$$
+\liminf\frac ON\ge k_6(\theta)=\frac{\theta-1/2}{4eC_6},\qquad
+h_6(\theta)=\frac{3+k_6(\theta)-
+\sqrt{(1-k_6(\theta))(9-k_6(\theta)-8c(\theta))}}4.
+$$
+
+Its unique positivity threshold satisfies
+$0.5458837<\theta_6<0.5458838$. At $\theta=0.545884$, the rank-six term is
+positive while the rank-three term is negative. At $\theta=0.5459$, the
+rank-six lower bound exceeds
+$0.0000177645181613023236390595079$ and improves the rank-three value by
+more than $9.263543061777356\times10^{-7}$.
+
+The public source prints the $C_6$ interval but not the rank-six coefficient
+matrix. The result is therefore confirmed relative to that attributed input,
+not as an independent reconstruction. The [rank-six chapter](11-rank-six-local-transfer.md)
+and [confirmed verdict](../experiments/EXP-008-rank-six-local-transfer/verdict.md)
+state the source and claim boundaries. General RH remains open.
+
 [D+MV] EXP-006 strengthens the finite transfer by keeping Lamzouri's Hilbert
 dimension before scalar compression. For every conjugation-invariant finite
 multiset in the kernel setting,
@@ -121,6 +144,8 @@ did not locate an identical short-interval theorem; it does not guarantee priori
 7. [Complete parity density transfer and interval-range theorem](07-parity-density-transfer.md)
 8. [Explicit local Selberg transfer and numerical positivity threshold](08-local-selberg-transfer.md)
 9. [Hilbert dimension, parity compression, and the improved threshold](09-hilbert-parity-compression.md)
+10. [Spectral-defect parity coupling and the strict full-curve improvement](10-spectral-defect-parity.md)
+11. [Rank-six local transfer and the earlier onset](11-rank-six-local-transfer.md)
 
 The new certificate uses $p=1/12500$, $\epsilon=443239/10^9$, $k=2256$ and
 frame size $4513$. All 16,797 partition nodes were checked, with 8,351 energy-plus-pressure
@@ -137,8 +162,9 @@ distinguishes source theorems, un-replayed candidate claims and formal hypothese
 
 The manuscript series is [Simple critical zeros in short intervals: stability, parity, localization, and Hilbert compression](https://doi.org/10.5281/zenodo.22727388).
 The first published version is [v0.01](https://doi.org/10.5281/zenodo.22727389);
-The Hilbert-parity theorem forms the published v0.06 expansion, with version
-DOI [10.5281/zenodo.22852479](https://doi.org/10.5281/zenodo.22852479). The [manuscript directory](../../../../manuscripts/riemann-hypothesis/short-interval-stability/)
+The spectral-defect and rank-six theorems form the published v0.07 expansion,
+with version DOI [10.5281/zenodo.22860012](https://doi.org/10.5281/zenodo.22860012).
+The [manuscript directory](../../../../manuscripts/riemann-hypothesis/short-interval-stability/)
 and publication receipts record the actual publication state. A preprint is not
 peer review or mathematical community acceptance.
 

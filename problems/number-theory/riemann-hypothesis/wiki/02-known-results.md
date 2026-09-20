@@ -231,3 +231,36 @@ range qualitatively; a separate inequality also extends distinct density above
 one half. It does not improve the already much shorter classical range for
 merely positive distinct density. The finite spectral inequalities and imported
 classical theorems retain their original attribution.
+
+## Spectral defect retained through parity
+
+EXP-007 keeps the same simple-real Gram defect used by the stability program
+through the EXP-006 product. Its finite theorem is
+
+$$
+(Q-S-D(G))(N-O)\ge2(N-S)^2.
+$$
+
+Together with the analytic pressure estimate, this strictly improves every
+positive point of the EXP-006 `h3(theta)` curve. The positivity onset remains
+unchanged because the construction needs `h3>0`. The arbitrary-parameter
+rank-trace theorem and spectral profile are attributed; the defect-parity
+coupling is the scoped deduction. See the
+[complete proof](10-spectral-defect-parity.md).
+
+## Rank-independent local transfer and the source-certified rank-six onset
+
+EXP-008 proves that the EXP-005 short-rectangle localization works for every
+fixed finite detector rank $q$. It gives
+
+$$
+\liminf\frac ON\ge k_q(\theta)=\frac{\theta-1/2}{4eC_q}.
+$$
+
+Pearce-Crump's public paper states a certified $C_6$ interval below $C_3$.
+Using that attributed input in the EXP-006 quadratic transfer yields
+$0.5458837<\theta_6<0.5458838$, strictly earlier than the independently
+certified rank-three bracket $0.5458846<\theta_3<0.5458847$. The public paper
+does not print the rank-six coefficient matrix, so this is not an independent
+reconstruction of $C_6$. The [rank-six chapter](11-rank-six-local-transfer.md)
+states the exact theorem, arithmetic, and source boundary.

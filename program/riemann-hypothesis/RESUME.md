@@ -2,106 +2,111 @@
 
 ## 1. State in one screen
 
-Read [state.md](state.md), [backlog.md](backlog.md), and [plan.md](plan.md), then
-the latest experiment verdicts. Evidence outranks this handoff. Public release
-v0.71.000 is released and live-verified from main commit `8302be35`. EXP-006
-improves the explicit simple-critical positivity threshold to
-`0.545884<theta_HP<0.545885`. The general Riemann hypothesis remains open.
+Read [state.md](state.md), [backlog.md](backlog.md), and the latest EXP-007/008
+verdicts. Public application release 0.71.000 remains live-verified. EXP-007 and
+EXP-008 are confirmed, manuscript v0.07 is published, and replay v7 integration
+is being prepared for the next serialized release. General RH remains open.
+
+EXP-007 proves the finite spectral-defect product
+
+$$
+(Q-S-D(G))(N-O)\ge2(N-S)^2.
+$$
+
+EXP-008 proves fixed finite-rank localization and applies Pearce-Crump's stated
+rank-six constant. It certifies
+`0.5458837<theta6<0.5458838`, strictly earlier than
+`0.5458846<theta3<0.5458847`. At theta=0.5459, the rank-six lower bound exceeds
+`0.0000177645181613023236390595079`. The public source does not print the
+rank-six coefficient matrix, so $C_6$ remains an attributed theorem input.
 
 ## 2. The objects table
 
 | Object | Role | Current evidence |
 |---|---|---|
 | `N,S,O,Q` | Copies, simple real support, odd real support, pair sum | EXP-006 finite proof |
-| `d=r+k` | First Hilbert-subspace dimension | Lamzouri interface and EXP-006 audit |
-| `c(theta)` | Wang cosine baseline | Wang source and prior experiments |
-| `k3(theta)` | Explicit local odd-support curve | Confirmed EXP-005 |
-| `h3(theta)` | EXP-006 quadratic simple-zero term | Exact root and target certificate |
-| EXP-006 canonical result | 18,479 profiles and exact interval gates | SHA-256 `82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf` |
+| `D(G)` | Simple-real Gram spectral defect | EXP-007 finite proof |
+| `Cq` | Fixed finite-rank Selberg detector constant | Pearce-Crump theorem input |
+| `kq(theta)` | Local odd-support curve `(theta-1/2)/(4eCq)` | EXP-008 localization proof |
+| `hq(theta)` | Hilbert-parity quadratic lower term | EXP-008 transfer |
+| `theta6` | Unique rank-six positivity onset | `(0.5458837,0.5458838)` |
+| EXP-007 portable result | 652,260 spectra and 18,479 profiles | SHA-256 `98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947` |
+| EXP-008 portable result | Rank-six onset, point comparison, spectral companion | SHA-256 `1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781` |
+| Manuscript v0.07 | 30-page published preprint | DOI `10.5281/zenodo.22860012` |
 
 ## 3. Experiment index
 
-| Experiment | Scope | Outcome |
-|---|---|---|
-| EXP-001 | Source constants and normalization | confirmed |
-| EXP-002 | First short-interval stability theorem | confirmed and released |
-| EXP-003 | Odd-frame pressure improvement | confirmed and released |
-| EXP-004 | Qualitative parity range extension | confirmed and released |
-| EXP-005 | Local Selberg odd-support curve | confirmed; old threshold in `(0.5459,0.546)` |
-| EXP-006 | Hilbert dimension and parity compression | confirmed; new threshold in `(0.545884,0.545885)` |
+| Experiment | Outcome |
+|---|---|
+| EXP-001 | source constants and normalization confirmed |
+| EXP-002 | first short-interval stability theorem confirmed |
+| EXP-003 | odd-frame pressure improvement confirmed |
+| EXP-004 | qualitative parity range extension confirmed |
+| EXP-005 | rank-three local Selberg curve confirmed |
+| EXP-006 | sharp Hilbert-parity product confirmed |
+| EXP-007 | spectral-defect parity product and strict full-curve gain confirmed |
+| EXP-008 | fixed-rank localization and attributed rank-six onset confirmed |
 
-## 3a. Confirmed EXP-006 result
-
-For every nonempty finite conjugation-invariant multiset in Lamzouri's kernel
-setting,
-
-$$
-(Q-S)(N-O)\ge2(N-S)^2.
-$$
-
-The coefficient two is sharp. For every fixed `1/2<theta<1`, this yields the
-new term
-
-$$
-h_3(\theta)=\frac{3+k_3(\theta)-
-\sqrt{(1-k_3(\theta))(9-k_3(\theta)-8c(\theta))}}4.
-$$
-
-At theta=0.5459, the exact lower bound is greater than
-`0.0000168381638551244569880374399`; the old linear parity term is still
-negative. The [proof](../../problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/mathematical-proof.md),
-[audit](../../problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/adversarial-audit.md),
-[verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/verdict.md),
-and [proof review](../../problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/proof-review.json)
-state the complete boundary.
+The EXP-007 portable result hash is
+`98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947`.
+The EXP-008 portable result hash is
+`1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781`.
 
 ## 4. In flight
 
-1. Mirror the final public state into the private coordination repository.
-2. Seek independent mathematical review of the EXP-006 proof and attribution.
-3. Keep alternative routes separate until they pass declaration and proof gates.
+1. Replay v7 and the bilingual EXP-007/008 workbench are implemented on the
+   scoped research branch.
+2. Research PR #325 targets `develop`; CI and contract repair are active.
+3. The next serialized release must bump to 0.72.000, promote `develop` to
+   `main`, and record rendered and live verification.
+4. The private CAOS_MANAGE mirror and Zenodo deposit ledger still need the
+   final release receipts.
 
-Completed in this round: replay v5 is baked and tested; manuscript v0.06 is
-published at DOI 10.5281/zenodo.22852479 and its 26-page PDF matches a fresh
-public download byte for byte. Research PR #316, release PR #317, and promotion
-PR #318 are merged. Main CI, Pages, ten live byte comparisons, and eight live
-browser scenarios passed.
+Manuscript v0.07 is already published at
+[10.5281/zenodo.22860012](https://doi.org/10.5281/zenodo.22860012). Its 575,351
+byte repository PDF and a fresh public download share SHA-256
+`c7bda5f1acc0b34ac33b6a071e66586b4032ae6e385d93f7fdd2d197411dbf81`.
 
 ## 5. Next actions
 
-1. Mirror the final public release state into the private coordination repository.
-2. Submit the manuscript for independent specialist review when a venue is chosen.
-3. Start no successor experiment without a committed declaration and source audit.
+1. Make PR #325 green and merge it into `develop`.
+2. Prepare the 0.72.000 version, changelog, replay data, and release evidence.
+3. Run repository, frontend, and rendered browser gates.
+4. Promote `develop` to `main`, tag the exact release commit, and verify Pages
+   bytes plus live EN/ES light/dark desktop/phone scenarios.
+5. Mirror the publication and release receipts into CAOS_MANAGE.
+6. Pursue independent rank-six coefficient reconstruction as the next bounded
+   mathematical target.
 
 ## 6. Where everything lives
 
-Problem: `problems/number-theory/riemann-hypothesis/`. EXP-006 proof, audit,
-verdict, runner, and immutable outputs are below its `experiments/` directory.
-Replay instructions: `docs/guides/riemann-replay.md`. Release receipts belong in
-`program/riemann-hypothesis/release-0.71.000/`; prior release evidence remains
-immutable. Manuscript v0.06 and its archived predecessors are under
-`manuscripts/riemann-hypothesis/short-interval-stability/`. Private coordination
-is mirrored under `plans/caos-research/riemann-hypothesis/` in CAOS_MANAGE.
+Problem evidence: `problems/number-theory/riemann-hypothesis/`.
+EXP-007 and EXP-008 proofs, audits, verdicts, runners, and immutable outputs are
+under their `experiments/` directories. Replay instructions are in
+[docs/guides/riemann-replay.md](../../docs/guides/riemann-replay.md).
+The manuscript and publication receipts are under
+`manuscripts/riemann-hypothesis/short-interval-stability/`. Release evidence
+belongs under `program/riemann-hypothesis/release-0.72.000/`. Private
+coordination is mirrored under `plans/caos-research/riemann-hypothesis/` in
+CAOS_MANAGE.
 
-## Reproduction
-
-From the repository root:
+Reproduce the two new certificates from the repository root:
 
 ```text
-python problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/run.py --output-dir tmp/riemann-exp006-replay --budget-seconds 120
-pytest tests/test_riemann_hilbert_parity.py tests/test_riemann_local_selberg.py tests/test_riemann_parity.py
+python problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/run.py --output-dir tmp/riemann-exp007-replay --budget-seconds 180
+python problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/run.py --output-dir tmp/riemann-exp008-replay --budget-seconds 120
+python -m pytest -q tests/test_riemann_spectral_defect_parity.py tests/test_riemann_rank_six_local.py
 ```
-
-The runner refuses overwrite, pins predecessor and source hashes, and separates
-finite arithmetic from the universal proof. CPU arithmetic is sufficient; no
-GPU workload is justified.
 
 ## 7. Gotchas
 
-`N` counts copies; `S` and `O` count support points. The pair sum uses ordinary
-complex squares before conjugation symmetry makes the total real. The current
-hypothesis file includes a post-run strengthening, so the original declaration
-must be inspected at commit `b1febcf8a6d5830218e1df386af1e8a92c3037be`.
-Test functions and support stay fixed before height limits. The rank-six value
-is sensitivity only because its full profile is unavailable. A DOI, finite
-census, or passing build is not external mathematical acceptance.
+`N` counts copies; `S` and `O` count support points. Fixed finite rank means
+rank is chosen before the height limit. The public source prints the certified
+$C_6$ interval but not its coefficient matrix, so do not describe EXP-008 as an
+independent reconstruction. The runners require fresh output directories,
+clean canonical source commits, and exact source hashes. Historical Windows
+byte streams cited by v0.07 are preserved separately from the portable LF
+canonical outputs. CPU arithmetic is sufficient; GPU acceleration is not
+justified for these low-dimensional exact certificates. A DOI, finite census,
+passing build, or successful deployment does not prove RH or establish external
+peer acceptance.

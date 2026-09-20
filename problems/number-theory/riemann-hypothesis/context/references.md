@@ -13,3 +13,9 @@ The [2026-09-19 local Selberg preflight](2026-09-19-local-selberg-transfer.md)
 adds Pearce-Crump arXiv:2609.15329v1 and the open AxiomMath/ZetaZerosV2 PR #1.
 It separates their established global results from the newly declared
 short-interval localization in EXP-005.
+
+The [2026-09-20 interdisciplinary update](2026-09-20-interdisciplinary-update-and-defect-parity.md)
+adds Dubon arXiv:2609.17875v1, Najnudel--Nikeghbali arXiv:2609.15862v1,
+the current Axiom PR state, and the live teal-sea head. It identifies the
+parameterized spectral defect as prior art and declares only its new coupling
+to the EXP-006 parity product for testing in EXP-007.
