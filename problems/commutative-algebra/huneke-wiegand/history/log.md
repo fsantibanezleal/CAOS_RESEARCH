@@ -1958,3 +1958,17 @@
   documentation-only commit or PR identities. Mathematical priorities remain explicit comparison
   maps, complementary quotient/upper bound, then recurrence; no new experiment,
   manuscript, computation or live API action is introduced by this reconciliation.
+
+## 2026-09-20 - EXP-063 comparison hypothesis declared
+
+- Reconciled EXP-042--054 with the EXP-062 all-triangle theorem. Matching
+  finite torsion ranks were never an identification; the next exact gate is a
+  labelled map through the already certified unit contractions.
+- EXP-063 is declared before computation. It tests whether every chosen
+  triangle row survives literally as an `R5` coordinate and whether those
+  classes exhaust the isolated `2`-torsion at `p=8,...,11`, including the
+  precise losses under masks `59/62 -> 58 -> 56`.
+- Algebraic Morse and modules-over-rings sources support the contraction and
+  deletion viewpoints but supply no problem-specific comparison theorem. The
+  finite experiment remains separate from any all-parameter, upper-bound,
+  recurrence, manuscript, or Zenodo claim.
