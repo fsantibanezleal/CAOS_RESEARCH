@@ -2026,3 +2026,39 @@
   next-version gate, so no new Zenodo deposit was created.
 - Full repository validation passes: 421 tests, Ruff, pipeline smoke, template,
   content, manuscript-voice, research-structure and artifact-contract guards.
+
+## 2026-09-20 - EXP-065 extracts support-one endpoint witnesses
+
+- Exact dual-guided decoding on the frozen training range `p=8,9,10` finds all
+  six mask-58 endpoint targets with a single source column and coefficient
+  `-1`. The normalized source skeleton is identical in every case.
+- An independent original-boundary reconstruction verifies every complete
+  carrier column and rejects twelve source/target mutations. The training
+  formula is frozen before opening `p=11`; finite extraction alone does not
+  open a publication gate.
+
+## 2026-09-20 - EXP-066 proves uniform endpoint face collapse
+
+- For every `p>=8` and `r=1,2`, the explicit source
+  `s_(p,r)=[S,(L minus {p-r,3p,3p+r}) union {6p,10p};p-2]` has complete
+  nonzero boundary `R0^(p-3),R2^(p-3),-R5`. Hence
+  `Pi_58 d(s_(p,r))=-x_(0,r,p-2-r)` before contraction.
+- The untouched `p=11` carrier selects unique matching columns 210 and 308.
+  The producer checks 586 endpoint identities through `p=300` and rejects
+  2,930 perturbations; an independent reverse-order audit passes.
+- The result is an all-parameter constructive theorem in the full semantic
+  projection. It is not a uniform persistent-component identification, an
+  upper bound, or a complete cokernel theorem.
+
+## 2026-09-20 - integral connecting companion v0.04 published
+
+- The existing companion was expanded in place with the support-one semantic
+  projection theorem; no manuscript split was needed. The 20-page PDF passed
+  the scientific-voice gate, a clean three-pass build with zero overfull boxes,
+  and rendered page review.
+- Zenodo version 0.04 is published at DOI `10.5281/zenodo.22859408` under
+  concept DOI `10.5281/zenodo.22342975`. Fresh unauthenticated download
+  verification matches all 516,963 bytes at SHA-256
+  `1570bf3c3f48d6949cda18a32b1ba6ebd63dc9a674ce074d88c42926f284e5bf`.
+- Versions 0.01--0.03 remain immutable. The next mathematical gate is a
+  uniform dual/upper-bound theorem for the remaining projected triangle rows.

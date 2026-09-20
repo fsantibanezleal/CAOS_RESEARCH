@@ -1,6 +1,41 @@
 # Huneke-Wiegand extensions - research wiki
 
-## Current closed result: exact finite integral carrier comparison, 2026-09-20
+## Current closed result: uniform support-one endpoint sources, 2026-09-20
+
+[EXP-066](../experiments/EXP-066-uniform-endpoint-face-collapse/verdict.md)
+proves that for every `p>=8` and `r=1,2`, the explicit single source
+
+```text
+s_(p,r) = [S,(([1,p] union [3p,4p-2])
+              minus {p-r,3p,3p+r}) union {6p,10p};p-2]
+```
+
+satisfies `Pi_58 d(s_(p,r))=-x_(0,r,p-2-r)` in the full original semantic
+row projection retaining `R1,R3,R4,R5`. Its complete boundary has `p-3` rows
+of type `R0`, `p-3` of type `R2`, and one negative `R5` endpoint row. The
+proof is a direct all-parameter face classification before contraction.
+
+The untouched `p=11` carrier independently selects unique matching component
+columns 210 and 308 and rows 12559 and 12560. Exact sweeps check 586 endpoint
+identities through `p=300`, reject 2,930 perturbations, and pass an independent
+reverse-order audit. EXP-065 records how the one-column formula was extracted
+from the `p=8,9,10` training range; it was frozen before the holdout.
+
+The 20-page companion manuscript v0.04 incorporates the theorem and is
+published at version DOI
+[`10.5281/zenodo.22859408`](https://doi.org/10.5281/zenodo.22859408), under
+concept DOI `10.5281/zenodo.22342975`. Fresh public download verification
+matches the committed 516,963-byte PDF at SHA-256
+`1570bf3c3f48d6949cda18a32b1ba6ebd63dc9a674ce074d88c42926f284e5bf`.
+
+The scope is narrower than a full carrier theorem: no uniform identification
+with the persistent isolated component, no independence or upper bound for the
+remaining projected triangle rows, and no complete complementary cokernel is
+proved. The strongest next route is to transport or construct uniform dual
+functionals for the non-endpoint triangles and thereby decide whether the
+mask-58 triangle kernel is exactly the two endpoint classes.
+
+## Prior closed result: exact finite integral carrier comparison, 2026-09-20
 
 [EXP-064](../experiments/EXP-064-exact-carrier-two-primary/verdict.md)
 proves the exact finite 2-primary types of masks `56,58,59,62` at

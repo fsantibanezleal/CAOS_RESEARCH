@@ -1,11 +1,11 @@
 # Quadratic integral two-torsion companion
 
 <!-- current:start -->
-- **Current version**: v0.03, published 2026-09-18
+- **Current version**: v0.04, published 2026-09-20
 - **Title**: A quadratic family of integral two-torsion classes in a Huneke–Wiegand Koszul presentation
-- **Version DOI**: [10.5281/zenodo.22835126](https://doi.org/10.5281/zenodo.22835126)
+- **Version DOI**: [10.5281/zenodo.22859408](https://doi.org/10.5281/zenodo.22859408)
 - **Concept DOI (always latest)**: [10.5281/zenodo.22342975](https://doi.org/10.5281/zenodo.22342975)
-- **Record**: <https://zenodo.org/records/22835126> (file `huneke-wiegand-integral-connecting-annihilators-v0.03.pdf`)
+- **Record**: <https://zenodo.org/records/22859408> (file `huneke-wiegand-integral-connecting-annihilators-v0.04.pdf`)
 <!-- current:end -->
 
 - Title: A quadratic family of integral two-torsion classes in a Huneke-Wiegand Koszul presentation
@@ -29,6 +29,9 @@ For every integer p>=8, the specified full integral presentation has a direct
 summand `(Z/2)^floor(((p-2)^2+3)/12)`. EXP-060--062 prove the signed
 annihilators, complete relative parity detection, independence, exact count and
 existence splitting. EXP-062 also gives the exact transfer of eta to x_02.
+EXP-066 adds a uniform support-one source for each of the two endpoint triangle
+rows after the four-type semantic projection, with an exact locked `p=11`
+carrier comparison.
 
 This is not the full cokernel, an upper bound, a computed global retraction,
 an isolated/relative-presentation identification or the lower-strand recurrence.
@@ -56,8 +59,9 @@ changing published metadata or files.
 - v0.01 = [10.5281/zenodo.22342976](https://doi.org/10.5281/zenodo.22342976), published 2026-09-05 (initial theorem version)
 - v0.02 = [10.5281/zenodo.22823627](https://doi.org/10.5281/zenodo.22823627), published 2026-09-18 (scientific-voice revision, theorem-name typesetting repair and reference corrections; mathematics unchanged)
 - v0.03 = [10.5281/zenodo.22835126](https://doi.org/10.5281/zenodo.22835126), published 2026-09-18 (author name printed as Santibáñez-Leal, matching the ORCID record; content unchanged)
+- v0.04 = [10.5281/zenodo.22859408](https://doi.org/10.5281/zenodo.22859408), published 2026-09-20 (uniform support-one endpoint sources in the four-type semantic projection; locked carrier comparison and independent audit)
 
 Fresh unauthenticated metadata and PDF verification on 2026-09-20 matched the
-committed 504,764-byte PDF at SHA-256
-`18566d72619b18f174c69cc34abb5ee2b78ff25481ff5d098ec9570d29bbc0ac`;
-see `public-verification-v0.03.json`.
+committed 516,963-byte PDF at SHA-256
+`1570bf3c3f48d6949cda18a32b1ba6ebd63dc9a674ce074d88c42926f284e5bf`;
+see `public-verification-v0.04.json`.
