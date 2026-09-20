@@ -106,6 +106,28 @@ Hilbert subspace. The proof review must verify each implication:
 Any missing implication makes the analytic prediction inconclusive even if
 the numeric target passes.
 
+## Audit strengthening after the declared prediction
+
+The post-run consistency audit recovered the nonnegative simple-real term
+already present in Lamzouri's arbitrary-parameter inequality. It strengthens
+the declared finite target (A) to
+
+$$
+\boxed{(Q-S)(N-O)\ge 2(N-S)^2.} \tag{A+}
+$$
+
+This was not used to select the frozen exponent or root bracket. It leaves the
+positivity condition (C) unchanged, but replaces the square-root term in (B)
+by the smaller root of
+
+$$
+2(1-s)^2=(1-k_3(\theta))(2-c(\theta)-s).
+$$
+
+The earlier passed artifact must be retained as superseded evidence. A new
+clean-commit canonical run, universal proof revision, and independent interval
+replay are required before (A+) or its stronger numerical bound can pass.
+
 ## Exact computational scope
 
 After this declaration is committed and pushed, implement deterministic

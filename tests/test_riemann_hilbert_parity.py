@@ -51,7 +51,8 @@ def test_declared_target_and_root_bracket() -> None:
     upper = MODULE.theta_certificate(MODULE.ROOT_UPPER_THETA, sqrt2, exp_bounds)
     assert target.c_upper < 0
     assert target.old_linear_upper < 0
-    assert target.new_simple_lower > MODULE.SIMPLE_GATE
+    assert target.weak_simple_lower > MODULE.SIMPLE_GATE
+    assert target.strong_simple_lower > target.weak_simple_upper
     assert lower.root_function_upper < 0 < upper.root_function_lower
 
 
@@ -73,6 +74,12 @@ def test_finite_census_has_equality_strict_and_empty_dimension_cases() -> None:
     assert census["equality_cases"] > 0
     assert census["strict_cases"] > 0
     assert census["empty_dimension_cases"] > 0
+
+
+def test_retained_simple_term_strengthens_the_finite_certificate() -> None:
+    row = MODULE.profile_certificate((1, 2), ())
+    assert Fraction(row["q_min"]) == Fraction(5)
+    assert Fraction(row["hilbert_residual"]) == 0
 
 
 def test_certificate_passes_with_pinned_inputs() -> None:

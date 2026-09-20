@@ -25,7 +25,7 @@ if hasattr(sys, "set_int_max_str_digits"):
     sys.set_int_max_str_digits(0)
 
 
-SCHEMA = "riemann-exp006-results-v1"
+SCHEMA = "riemann-exp006-results-v2"
 THETA = Fraction(5459, 10000)
 ROOT_LOWER_THETA = Fraction(136471, 250000)
 ROOT_UPPER_THETA = Fraction(109177, 200000)
@@ -197,8 +197,12 @@ class ThetaCertificate:
     old_linear_upper: Fraction
     radicand_lower: Fraction
     radicand_upper: Fraction
-    new_simple_lower: Fraction
-    new_simple_upper: Fraction
+    weak_simple_lower: Fraction
+    weak_simple_upper: Fraction
+    strong_discriminant_lower: Fraction
+    strong_discriminant_upper: Fraction
+    strong_simple_lower: Fraction
+    strong_simple_upper: Fraction
 
 
 def theta_certificate(
@@ -227,8 +231,23 @@ def theta_certificate(
     radicand_upper = (2 - c_lower) * (1 - k_lower) / 2
     sqrt_lower = sqrt_fraction_interval(radicand_lower)[0]
     sqrt_upper = sqrt_fraction_interval(radicand_upper)[1]
-    new_lower = 1 - sqrt_upper
-    new_upper = 1 - sqrt_lower
+    weak_lower = 1 - sqrt_upper
+    weak_upper = 1 - sqrt_lower
+
+    # The retained simple-real contribution strengthens the finite theorem to
+    # (Q-S)(N-O) >= 2(N-S)^2.  If A=2-c and b=1-k, its smaller quadratic root
+    # is (4-b-sqrt(b(b+8(A-1))))/4.  The expression decreases in A and b on
+    # the certified range, so the endpoint choices below are directed.
+    a_lower = 2 - c_upper
+    a_upper = 2 - c_lower
+    b_lower = 1 - k_upper
+    b_upper = 1 - k_lower
+    strong_discriminant_lower = b_lower * (b_lower + 8 * (a_lower - 1))
+    strong_discriminant_upper = b_upper * (b_upper + 8 * (a_upper - 1))
+    strong_sqrt_lower = sqrt_fraction_interval(strong_discriminant_lower)[0]
+    strong_sqrt_upper = sqrt_fraction_interval(strong_discriminant_upper)[1]
+    strong_lower = (4 - b_upper - strong_sqrt_upper) / 4
+    strong_upper = (4 - b_lower - strong_sqrt_lower) / 4
     return ThetaCertificate(
         theta=theta,
         c_lower=c_lower,
@@ -241,8 +260,12 @@ def theta_certificate(
         old_linear_upper=old_upper,
         radicand_lower=radicand_lower,
         radicand_upper=radicand_upper,
-        new_simple_lower=new_lower,
-        new_simple_upper=new_upper,
+        weak_simple_lower=weak_lower,
+        weak_simple_upper=weak_upper,
+        strong_discriminant_lower=strong_discriminant_lower,
+        strong_discriminant_upper=strong_discriminant_upper,
+        strong_simple_lower=strong_lower,
+        strong_simple_upper=strong_upper,
     )
 
 
@@ -271,8 +294,10 @@ def profile_certificate(real: tuple[int, ...], pairs: tuple[int, ...]) -> dict[s
         q_min: Fraction | None = None
         hilbert_residual: Fraction | None = None
     else:
-        q_min = Fraction((total - simple) ** 2, dimension)
-        hilbert_residual = q_min * (total - odd) - 2 * (total - simple) ** 2
+        q_min = simple + Fraction((total - simple) ** 2, dimension)
+        hilbert_residual = (
+            (q_min - simple) * (total - odd) - 2 * (total - simple) ** 2
+        )
         passed = mass_residual >= 0 and dimension_residual >= 0 and hilbert_residual >= 0
     return {
         "real": list(real),
@@ -405,7 +430,11 @@ def independent_interval_replay(
     root_iv = c_iv + (2 - c_iv) * k_iv
     old_iv = (c_iv + 2 * k_iv) / 3
     radicand_iv = (2 - c_iv) * (1 - k_iv) / 2
-    new_iv = 1 - mp.iv.sqrt(radicand_iv)
+    weak_iv = 1 - mp.iv.sqrt(radicand_iv)
+    a_iv = 2 - c_iv
+    b_iv = 1 - k_iv
+    strong_discriminant_iv = b_iv * (b_iv + 8 * (a_iv - 1))
+    strong_iv = (4 - b_iv - mp.iv.sqrt(strong_discriminant_iv)) / 4
     records: dict[str, object] = {"mpmath_version": mp.__version__, "dps": 100}
     for name, interval in {
         "c": c_iv,
@@ -413,7 +442,9 @@ def independent_interval_replay(
         "root_function": root_iv,
         "old_linear": old_iv,
         "radicand": radicand_iv,
-        "new_simple": new_iv,
+        "weak_simple": weak_iv,
+        "strong_discriminant": strong_discriminant_iv,
+        "strong_simple": strong_iv,
     }.items():
         lower, upper = interval_endpoints(interval)
         records[name] = {
@@ -477,8 +508,12 @@ def certificate_record(value: ThetaCertificate) -> dict[str, object]:
             "old_linear_upper",
             "radicand_lower",
             "radicand_upper",
-            "new_simple_lower",
-            "new_simple_upper",
+            "weak_simple_lower",
+            "weak_simple_upper",
+            "strong_discriminant_lower",
+            "strong_discriminant_upper",
+            "strong_simple_lower",
+            "strong_simple_upper",
         )
     }
 
@@ -496,7 +531,10 @@ def compute_certificate(repo: Path) -> dict[str, object]:
 
     replay_ranges = {
         name: record_interval(replay, name)
-        for name in ("c", "k", "root_function", "old_linear", "radicand", "new_simple")
+        for name in (
+            "c", "k", "root_function", "old_linear", "radicand",
+            "weak_simple", "strong_discriminant", "strong_simple",
+        )
     }
     exact_ranges = {
         "c": (target.c_lower, target.c_upper),
@@ -504,7 +542,12 @@ def compute_certificate(repo: Path) -> dict[str, object]:
         "root_function": (target.root_function_lower, target.root_function_upper),
         "old_linear": (target.old_linear_lower, target.old_linear_upper),
         "radicand": (target.radicand_lower, target.radicand_upper),
-        "new_simple": (target.new_simple_lower, target.new_simple_upper),
+        "weak_simple": (target.weak_simple_lower, target.weak_simple_upper),
+        "strong_discriminant": (
+            target.strong_discriminant_lower,
+            target.strong_discriminant_upper,
+        ),
+        "strong_simple": (target.strong_simple_lower, target.strong_simple_upper),
     }
     interval_contains_replay = all(
         exact_ranges[name][0] <= replay_ranges[name][0]
@@ -526,7 +569,11 @@ def compute_certificate(repo: Path) -> dict[str, object]:
         ),
         "target_below_wang_root": target.c_upper < 0,
         "old_linear_negative": target.old_linear_upper < 0,
-        "new_bound_positive": target.new_simple_lower > SIMPLE_GATE,
+        "weak_bound_positive": target.weak_simple_lower > SIMPLE_GATE,
+        "strong_bound_positive": target.strong_simple_lower > SIMPLE_GATE,
+        "strong_bound_improves_weak": (
+            target.strong_simple_lower > target.weak_simple_upper
+        ),
         "root_lower_negative": root_lower.root_function_upper < 0,
         "root_upper_positive": root_upper.root_function_lower > 0,
         "root_monotone_conditions": (
@@ -534,7 +581,9 @@ def compute_certificate(repo: Path) -> dict[str, object]:
             and root_upper.k_upper < 1 and root_upper.c_upper < 2
         ),
         "scalar_headlines_allow_zero": scalar_witness["passed"],
-        "rank_six_sensitivity_stronger": rank_six.new_simple_lower > target.new_simple_lower,
+        "rank_six_sensitivity_stronger": (
+            rank_six.strong_simple_lower > target.strong_simple_lower
+        ),
         "independent_interval_contained": interval_contains_replay,
     }
     passed = all(bool(value) for value in checks.values())
