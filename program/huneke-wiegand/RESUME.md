@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - session handoff
 
-## Current checkpoint: finite labelled triangle comparison, 2026-09-20
+## Current checkpoint: exact finite integral carrier comparison, 2026-09-20
 
 **EXP-054--062 are closed. For every integer p>=8, the full original integer
 cokernel contains a direct summand `(Z/2)^q`, where
@@ -23,6 +23,19 @@ Mod-two vanishing does not exclude an order-two element being twice an
 order-four element. The two endpoint relations therefore remain candidates
 for the exact integral relative kernel rather than a proved integral kernel.
 
+**EXP-064 closes that exponent ambiguity finitely.** Modular-Hadamard
+certificates prove the exact rational ranks of masks 56, 58, 59 and 62 for all
+four parameters. In every carrier, rational-rank minus mod-two rank equals the
+first Bockstein rank, so every even Smith factor has valuation exactly one.
+Thus masks 59/62 have complete 2-primary types `(Z/2)^(3,4,5,7)`, mask 58 has
+`(Z/2)^(1,2,3,5)`, and mask 56 has `0,0,0,(Z/2)`.
+
+Consequently the two endpoint triangles vanish **integrally** in mask 58, and
+all remaining triangles form its complete 2-primary subgroup. Every triangle
+generates the complete 2-primary subgroup in masks 59/62. Mask 56 kills every
+triangle through `p=10`; at `p=11`, only `(2,3,4)` survives and generates.
+This is exact finite integral structure, still not an all-parameter formula.
+
 The classes are indexed by all nonnegative triples `T=(i<j<k)` of sum `p-2`.
 Explicit signed interval sources give `M W_T=2x_ij`; complete relative parity
 functionals pair as the identity with these classes. Their relation lattice is
@@ -37,7 +50,8 @@ one member of the quadratic family, not a distinct extra generator.
 
 ### Read first and validation
 
-Start with the [EXP-063 verdict](../../problems/commutative-algebra/huneke-wiegand/experiments/EXP-063-triangle-isolated-comparison/verdict.md)
+Start with the [EXP-064 verdict](../../problems/commutative-algebra/huneke-wiegand/experiments/EXP-064-exact-carrier-two-primary/verdict.md)
+and [certificate proof](../../problems/commutative-algebra/huneke-wiegand/experiments/EXP-064-exact-carrier-two-primary/proof.md), then the [EXP-063 verdict](../../problems/commutative-algebra/huneke-wiegand/experiments/EXP-063-triangle-isolated-comparison/verdict.md)
 and [finite proof](../../problems/commutative-algebra/huneke-wiegand/experiments/EXP-063-triangle-isolated-comparison/proof.md), then the primary [EXP-062 proof](../../problems/commutative-algebra/huneke-wiegand/experiments/EXP-062-triangle-torsion-family/proof.md)
 and [verdict](../../problems/commutative-algebra/huneke-wiegand/experiments/EXP-062-triangle-torsion-family/verdict.md),
 then EXP-061's complete parity proof and EXP-060's original signed source.
@@ -52,17 +66,17 @@ HNF-source labels remain unread; no global HNF/SNF was needed.
 
 ### Next research, in order
 
-1. Upgrade EXP-063's literal finite target bridge to an all-parameter integral
-   relative theorem. Construct exact mask-58 witnesses and transformed duals
-   for the two endpoint triangles `(0,1,p-3)` and `(0,2,p-4)`, deciding whether
-   they vanish integrally or are divisible order-two classes. Do not infer this
-   from their mod-two-zero images.
+1. Upgrade EXP-064's exact finite integral classification to an all-parameter
+   constructive theorem. Build explicit mask-58 sources for the two endpoint
+   triangles `(0,1,p-3)` and `(0,2,p-4)` and transformed duals for every other
+   triangle. The finite exponent argument proves vanishing but supplies no
+   uniform witness coefficients.
 2. After those maps, prove a primitive complement or a complete signed normal
    form for the specified presentation. This is the missing upper-bound gate;
    the direct summand alone does not exhaust torsion, free rank, or Smith factors.
 3. Only then revisit parameter transport, the degree-six relation and the full
-   lower-strand recurrence. Keep `56->58` separate. Freeze EXP-064 before any
-   new computation; a larger finite sweep is not the priority.
+   lower-strand recurrence. Keep `56->58` separate. Freeze any next experiment
+   before computation; a larger finite sweep is not the priority.
 
 ### Publication and repository delivery
 
