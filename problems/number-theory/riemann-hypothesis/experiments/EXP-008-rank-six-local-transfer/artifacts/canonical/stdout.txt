@@ -1,4 +1,4 @@
-[0.000000s] stage 1/4: validate clean identity and pinned inputs
+[0.015000s] stage 1/4: validate clean identity and pinned inputs
 [0.125000s] stage 2/4: compute directed rank-three and rank-six intervals
-[64.406000s] stage 3/4: write canonical result
-[64.563000s] stage 4/4: bind execution receipt
+[64.719000s] stage 3/4: write canonical result
+[64.828000s] stage 4/4: bind execution receipt

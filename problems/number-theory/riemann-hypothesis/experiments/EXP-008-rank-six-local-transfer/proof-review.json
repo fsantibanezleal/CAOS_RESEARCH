@@ -1,9 +1,9 @@
 {
   "schema": "riemann-exp008-proof-review-v1",
-  "reviewed_utc": "2026-09-20T16:10:00Z",
+  "reviewed_utc": "2026-09-20T15:55:51.909501Z",
   "scientific_verdict": "confirmed-relative-to-attributed-rank-six-input",
   "declaration_commit": "2297d2fc",
-  "canonical_commit": "5f4885c70188a7126f0b47ea954e589a7583b358",
+  "canonical_commit": "a26ba0d403d14d6d08f042503ce52b774c38bdfd",
   "confirmed_conclusion": "The fixed finite-rank Selberg detector localizes to every fixed exponent theta>1/2. Using Pearce-Crump's source-certified C6 moves the Hilbert-parity onset to (0.5458837,0.5458838), with h6(0.545884)>2.5541123454645702e-7 and h6(0.5459)>0.0000177645181613023236390595079.",
   "spectral_companion": "With rho=11/5, EXP-007 gives H6-h6>1.7766622541125682e-68 at theta=0.5459.",
   "imported_inputs": [
@@ -19,11 +19,11 @@
   "source_sha256": {
     "hypothesis": "06b4c954283d2c7db765ff2727cd270d3859d508d56496fa8930eb698a409414",
     "mathematical_proof": "04145838213be7d42490ee81a958ebb1adb10d3e3da360b0370d83d075f2d5c8",
-    "runner": "5a11320260db3c7e4b8479a8c4f639f7b21234dde3170fff25267999732ec4e8",
-    "focused_test": "c74ceede847a4a5d9e625ace239e5e408e23b55fcbdb462fadda9ee296144016",
-    "result": "56db06037e0b36ed519919c352fb0a5419e2b6ba29629d65948f399c1d3bf4ba",
-    "adversarial_audit": "d2e1abafa95faafb8ee9093c7ac802caf88b2d6acdd29cfe172b4e151d7443d9",
-    "verdict": "e67541ecde71f3bfcd30fd82673d89b13d303cf4af8d19b07d8f3069c12ae5ec"
+    "runner": "bcf8b6de0c6e91e34764eb786140d8849ad551579b5b908625f9c3a2c384696e",
+    "focused_test": "b88ac11a08154975fc4d68b9bd6ec44914358e1a1aedca615e3f6efbcdf39b5d",
+    "result": "b0be3834b6ddc6d0573e55d957c9bc65f96cfbcb274a591d82d06f50169a0fac",
+    "adversarial_audit": "a7cdb1c1e92bc2e20c83ab3f70a120bbd1b120b6e95b0654bbbef6b0d9f47319",
+    "verdict": "3ee5c73dbc723f3f11e85f83b601e03c706d0c5965264c53ca4ff67818285136"
   },
   "unquantified": [
     "effective onset height",

@@ -1,7 +1,7 @@
 ﻿# EXP-008 adversarial validation record
 
-Date: 2026-09-20. Declaration commit: `2297d2fc`. Canonical execution
-commit: `5f4885c70188a7126f0b47ea954e589a7583b358`. This is an internal
+Date: 2026-09-20. Declaration commit: `2297d2fc`. Portable canonical execution
+commit: `a26ba0d403d14d6d08f042503ce52b774c38bdfd`. This is an internal
 source-interface, proof, and interval audit. It is not external peer review or
 an independent reconstruction of Pearce-Crump's rank-six contraction.
 
@@ -56,7 +56,7 @@ proof is rank-independent for every fixed admissible source profile.
 | Direct subtraction of spectral roots might lose the sign | The certificate uses the correlated mean-value bound `(1-k_6)(alpha h_6-beta)/4`, whose exact lower endpoint is `1.7766622541125682e-68`. |
 | The near-asymptotic radius choice might be advertised as globally optimal | It is not. `rho=11/5` is a frozen rational selected from an exploratory one-dimensional scan. The theorem needs only `rho>2`. |
 | Independent arithmetic might share the directed implementation | The replay separately uses 100-decimal `mpmath.iv` transcendental functions. Every shared interval has nonempty overlap with the rational Taylor implementation. |
-| A dirty worktree might contaminate the canonical result | The receipt records `tracked_clean_at_start=true` at commit `5f4885c70188a7126f0b47ea954e589a7583b358`. |
+| A dirty worktree might contaminate the canonical result | The receipt records `tracked_clean_at_start=true` at commit `a26ba0d403d14d6d08f042503ce52b774c38bdfd`. |
 | The result might imply RH or an effective threshold | It does neither. It is an asymptotic lower-density statement conditional on the correctness of cited recent analytic preprints. |
 
 No fatal defect remained within this scope.
@@ -64,8 +64,10 @@ No fatal defect remained within this scope.
 ## Canonical evidence
 
 The canonical result has SHA-256
-`56db06037e0b36ed519919c352fb0a5419e2b6ba29629d65948f399c1d3bf4ba`.
-It passed in 64.406 seconds under a 120-second CPU budget. No GPU was justified.
+`b0be3834b6ddc6d0573e55d957c9bc65f96cfbcb274a591d82d06f50169a0fac`.
+It passed in 64.859 seconds under a 120-second CPU budget. No GPU was justified.
+The numerical and scope objects are identical to the preserved v1 run; only
+the execution identity, predecessor binding, and fixed LF serialization changed.
 
 The exact certificate proves
 
