@@ -1987,3 +1987,16 @@
   mod-two vanishing does not distinguish integral zero from twice an
   order-four class. The next route is an exact endpoint witness/dual theorem,
   not a larger sweep. No manuscript or Zenodo revision is triggered.
+
+## 2026-09-20 - EXP-064 exact carrier-exponent test declared
+
+- EXP-064 is frozen before computation to distinguish integral zero from twice
+  an order-four class. It applies EXP-043's modular-Hadamard rational-rank
+  certificate to masks 56, 58, 59 and 62 at `p=8,...,11`.
+- The decisive equality is rational-rank gap equals first-Bockstein rank; a
+  `[4]` control prevents the invalid inference that every even Smith factor is
+  already two. If the predicted elementary types pass, EXP-063's endpoint
+  mod-two relations become exact finite integral vanishings.
+- The experiment is finite and nonconstructive at the endpoint-witness level;
+  no all-parameter, upper-bound, recurrence, manuscript or Zenodo claim is
+  authorized by its declaration.
