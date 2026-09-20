@@ -41,7 +41,7 @@ PINNED_INPUTS = {
     "problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/artifacts/canonical/result.json":
         "82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf",
     "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/artifacts/canonical/result.json":
-        "ad635c5b60c4bcae63199fb54a7979a02206ce0ee572853b2df13933dafc320c",
+        "98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947",
 }
 
 Interval = tuple[Fraction, Fraction]
