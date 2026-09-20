@@ -1,0 +1,17 @@
+EXP-063 independent audit attempt 1
+Date: 2026-09-20
+Status: FAILED BEFORE PARAMETER RECONSTRUCTION
+
+Command:
+  .venv/Scripts/python.exe problems/commutative-algebra/huneke-wiegand/experiments/EXP-063-triangle-isolated-comparison/audit.py --budget-seconds 900 --memory-gib 12
+
+Failure:
+  AssertionError: {'p': 9, 'EXP062_boundary': False}
+
+Cause:
+  The auditor required coefficient +2 in every persisted EXP-062 boundary.
+  The frozen signed convention gives +2 for even p and -2 for odd p. Exact
+  order two and the selected row label are unchanged. The corrected audit
+  requires absolute coefficient two and preserves the exact-label comparison.
+
+No EXP-063 parameter reconstruction or quotient-rank check ran in this attempt.
