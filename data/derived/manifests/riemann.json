@@ -1,8 +1,8 @@
 {
  "artifact": {
-  "bytes": 181518,
+  "bytes": 866860,
   "path": "research/riemann.json",
-  "sha256": "fa035e274949b433549907fa31d88f8dd7e37071f42582e204724c9e41e46cfc"
+  "sha256": "7afb078f8ac7d33adb192556f50b06bedf6ae22fa2a527f6310f2783de93b9bf"
  },
  "case_id": "riemann",
  "gate": {
@@ -268,6 +268,70 @@
    "source_exp": "EXP-005-local-selberg-transfer"
   },
   {
+   "bytes": 681484,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/artifacts/canonical/result.json",
+   "role": "hilbert_result",
+   "sha256": "82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf",
+   "source_commit": "04cc1c0650a6c89db58d0a6e04b401c975e393f2",
+   "source_exp": "EXP-006-hilbert-parity-compression"
+  },
+  {
+   "bytes": 336,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/artifacts/canonical/execution-receipt.json",
+   "role": "hilbert_receipt",
+   "sha256": "da70a4cd349e9acb75ce1a4f3d2019d0b8518d4d364eb21341223e87e043ba7b",
+   "source_commit": "250e805fd40bd5dc018ce4d4712bcb50177927fb",
+   "source_exp": "EXP-006-hilbert-parity-compression"
+  },
+  {
+   "bytes": 7711,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/hypothesis.md",
+   "role": "hilbert_hypothesis",
+   "sha256": "673ccbe47618c43ec3519369e711e86068cdf59bce5137f5c97cc63273a77687",
+   "source_commit": "0d736fa22ce7e833200381a32e8cc89f77c660e8",
+   "source_exp": "EXP-006-hilbert-parity-compression"
+  },
+  {
+   "bytes": 28577,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/run.py",
+   "role": "hilbert_runner",
+   "sha256": "5e935429aabda9585d317c20fdd6cde25739b2c8729aa5f373057b6dfb34a6bf",
+   "source_commit": "0d736fa22ce7e833200381a32e8cc89f77c660e8",
+   "source_exp": "EXP-006-hilbert-parity-compression"
+  },
+  {
+   "bytes": 9660,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/mathematical-proof.md",
+   "role": "hilbert_proof",
+   "sha256": "0bf7030413b85e4541876884451aca0b010145de71f3c61fb8b45067e1c6b99b",
+   "source_commit": "250e805fd40bd5dc018ce4d4712bcb50177927fb",
+   "source_exp": "EXP-006-hilbert-parity-compression"
+  },
+  {
+   "bytes": 8328,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/adversarial-audit.md",
+   "role": "hilbert_audit",
+   "sha256": "14d3f6e2e7aefdc890e4392926ba5c75e25a92ec6bc4564fbacd61151cfe4dd0",
+   "source_commit": "250e805fd40bd5dc018ce4d4712bcb50177927fb",
+   "source_exp": "EXP-006-hilbert-parity-compression"
+  },
+  {
+   "bytes": 4988,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/verdict.md",
+   "role": "hilbert_verdict",
+   "sha256": "456d342ce08b8f1e9ed0091cd7a85e90e161dd52572790c0de2871dec09239b9",
+   "source_commit": "250e805fd40bd5dc018ce4d4712bcb50177927fb",
+   "source_exp": "EXP-006-hilbert-parity-compression"
+  },
+  {
+   "bytes": 2641,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/proof-review.json",
+   "role": "hilbert_review",
+   "sha256": "c8ab93be3307e66a9c6b46da7fad43c001a0db4c4a190d088ef6cf1216c4e8ff",
+   "source_commit": "250e805fd40bd5dc018ce4d4712bcb50177927fb",
+   "source_exp": "EXP-006-hilbert-parity-compression"
+  },
+  {
    "bytes": 17333,
    "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/artifacts/stage-b/candidate-1/pressure-certificate.json",
    "role": "pressure_certificate_1",
@@ -338,6 +402,14 @@
    "sha256": "2b19910ae6685716972bd66facc9cfafeee2c882be3f9138df10f76ac7c4c26b",
    "source_commit": "fbc4f9f48c21540a3551ea0c00fec4e2fe453aa6",
    "source_exp": "EXP-004-parity-density-transfer"
+  },
+  {
+   "bytes": 3181,
+   "path": "tests/test_riemann_hilbert_parity.py",
+   "role": "hilbert_test",
+   "sha256": "7cac00920201cb937a850996c8f5f542100c9449fc2d60452679c62e0b82f911",
+   "source_commit": "0d736fa22ce7e833200381a32e8cc89f77c660e8",
+   "source_exp": "EXP-006-hilbert-parity-compression"
   }
  ]
 }
