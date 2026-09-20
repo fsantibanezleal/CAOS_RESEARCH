@@ -484,7 +484,7 @@ def test_riemann_modal_records_survive_deleted_worktree_directories(
 def test_parity_export_binds_all_evidence_without_promoting_runner_to_proof(committed_riemann):
     _, exp_two, _, _ = committed_riemann
     payload = export_registry._riemann_payload()
-    assert payload["schema"] == "riemann-replay-v4"
+    assert payload["schema"] == "riemann-replay-v5"
     assert payload["parity_result"]["proof_status"]["all_height_theorem"].startswith("Not proved")
     assert payload["parity_review"]["scientific_verdict"] == "confirmed"
     assert payload["local_review"]["scientific_verdict"] == "confirmed"
