@@ -20,7 +20,7 @@ const HILBERT_EXP = `${PROBLEM}/experiments/EXP-006-hilbert-parity-compression`;
 const HILBERT_PROOF = `${REPO}/blob/main/${HILBERT_EXP}/mathematical-proof.md`;
 const REPLAY_GUIDE = `${REPO}/blob/main/docs/guides/riemann-replay.md`;
 const PAPER = `${REPO}/blob/main/manuscripts/riemann-hypothesis/short-interval-stability/main.pdf`;
-const DOI = 'https://doi.org/10.5281/zenodo.22851518';
+const DOI = 'https://doi.org/10.5281/zenodo.22852479';
 const CONCEPT_DOI = 'https://doi.org/10.5281/zenodo.22727388';
 
 function SourceLink({ href, children }: { href: string; children: ReactNode }) {

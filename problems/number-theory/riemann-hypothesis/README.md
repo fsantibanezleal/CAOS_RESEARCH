@@ -15,7 +15,7 @@ awaiting external mathematical review.
 - [EXP-005: explicit local Selberg transfer and threshold below 0.546](experiments/EXP-005-local-selberg-transfer/verdict.md).
 - [EXP-006: Hilbert-parity compression and threshold below 0.545885](experiments/EXP-006-hilbert-parity-compression/verdict.md).
 - [Reproduction code](code/README.md) and [bibliography](references.md).
-- [Published preprint](https://doi.org/10.5281/zenodo.22851518), v0.05, 2026-09-20.
+- [Published preprint](https://doi.org/10.5281/zenodo.22852479), v0.06, 2026-09-20.
   The immutable v0.01 baseline remains at [10.5281/zenodo.22727389](https://doi.org/10.5281/zenodo.22727389).
 - [Current state and handoff](../../../program/riemann-hypothesis/RESUME.md).
 

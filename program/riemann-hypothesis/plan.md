@@ -109,6 +109,7 @@ The short-interval transfer has a unique positivity root in
 $(0.545884,0.545885)$ and proves a simple-critical lower proportion above
 $0.0000168381638551244569880374399$ at theta=0.5459. The proof, exact
 certificate, scalar barrier witness, independent interval replay, audit and
-proof-review bindings are committed. Manuscript v0.06, replay v5, publication,
-promotion and live verification are the remaining delivery gates. They do not
+proof-review bindings are committed. Manuscript v0.06 is published at DOI 10.5281/zenodo.22852479 after a
+clean 26-page render review and exact public-byte verification. Replay v5 is
+baked and tested. Scoped promotion and live verification remain; they do not
 change the open status of RH.

@@ -43,9 +43,10 @@ witness, and independent 100-digit replay passed.
 The declaration commit is
 `b1febcf8a6d5830218e1df386af1e8a92c3037be`. The original broad-bracket and
 weaker-transfer runs remain preserved. The proof, audit, verdict and source
-bindings are committed and pushed on the scoped research branch. Replay v5,
-manuscript v0.06, publication, promotion, and live release verification remain
-separate delivery gates.
+bindings are committed and pushed on the scoped research branch. Replay v5 is baked and tested. Manuscript v0.06 is published at
+[10.5281/zenodo.22852479](https://doi.org/10.5281/zenodo.22852479); its reviewed
+PDF matches a fresh public download. Promotion and live release verification
+remain separate delivery gates.
 
 EXP-005 remains the analytic seed: for every fixed `1/2<theta<1`, it gives odd
 critical support density at least `(theta-1/2)/(4eC3)`. EXP-004 provides the

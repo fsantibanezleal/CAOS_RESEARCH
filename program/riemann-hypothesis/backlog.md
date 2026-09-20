@@ -29,4 +29,4 @@ The new bound is 0.419087888170111727959091183775 at theta=3/4.
 | RH-013 | EXP-005: localize the optimized Selberg detector and test an explicit simple-critical bound at theta=0.546 | done; theorem, exact certificate, audit and proof-review binding confirmed | P0 |
 | RH-014 | Expand and publish the manuscript with EXP-005, then integrate the public replay and serialized release | done; v0.05 published and release 0.70.000 live-verified | P0 |
 | RH-015 | EXP-006: test Hilbert dimension and parity compression below theta=0.5459 | done; strengthened theorem, exact certificate, audit and proof-review binding confirmed | P0 |
-| RH-016 | Publish manuscript v0.06 and integrate replay v5 into the next serialized release | in progress | P0 |
+| RH-016 | Publish manuscript v0.06 and integrate replay v5 into the next serialized release | publication and replay done; promotion and live QA in progress | P0 |

@@ -57,11 +57,13 @@ state the complete boundary.
 
 ## In flight
 
-1. Expand the manuscript to v0.06, compile it, and inspect every rendered page.
-2. Publish the validated version under the existing Zenodo concept record.
-3. Bake replay schema v5 from committed source bytes and run repository/frontend gates.
-4. Promote through scoped develop/main PRs and verify the deployed public replay.
-5. Mirror the final public state into the private coordination repository.
+1. Promote the scoped branch through develop and main pull requests.
+2. Verify release 0.71.000 CI, Pages bytes, and the deployed Riemann replay.
+3. Mirror the final public state into the private coordination repository.
+
+Completed in this round: replay v5 is baked and tested; manuscript v0.06 is
+published at DOI 10.5281/zenodo.22852479 and its 26-page PDF matches a fresh
+public download byte for byte.
 
 ## Reproduction
 

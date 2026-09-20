@@ -1,5 +1,18 @@
 # Riemann hypothesis history
 
+## 2026-09-20: EXP-006 manuscript v0.06 published and verified
+
+The 26-page manuscript includes the sharp finite product, its complete proof,
+the quadratic short-interval transfer, the root bracket, the scalar barrier,
+and the EXP-006 verification appendix. Three DOI-bearing compilation passes
+had zero warnings, undefined references, and box errors. All 26 pages were
+inspected in seven uncropped contact sheets. Zenodo published v0.06 at
+[10.5281/zenodo.22852479](https://doi.org/10.5281/zenodo.22852479). A fresh
+unauthenticated download matches all 545,773 local bytes, SHA-256
+`dde6f2c9a6c0a9b46e66c9d44efc5786d1239dd1ada7664083a6d2134c452082`.
+The v0.05 source, PDF, metadata and receipts are archived unchanged. Publication
+is not external peer review and does not change the open status of RH.
+
 ## 2026-09-20: EXP-006 confirmed a sharper threshold below 0.545885
 
 Declaration `b1febcf8a6d5830218e1df386af1e8a92c3037be` preceded all
