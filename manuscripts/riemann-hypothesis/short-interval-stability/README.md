@@ -1,32 +1,32 @@
-# Simple critical zeros in short intervals: stability, parity, localization, and Hilbert compression
+﻿# Simple critical zeros in short intervals: stability, parity, localization, Hilbert compression, and spectral defect
 
-Version `v0.06`, dated 20 September 2026.
+Version `v0.07`, dated 20 September 2026.
 
-The main new result is the sharp finite inequality
+The new result retains the simple-real Gram spectral defect in the sharp
+Hilbert-parity product:
 
-`(Q-S)(N-O) >= 2(N-S)^2`,
+`(Q-S-D(G))(N-O) >= 2(N-S)^2`.
 
-where `N` counts copies, `S` simple real support, `O` distinct odd real
-support, and `Q` the squared-kernel pair sum. Combining it with Wang's
-short-interval theorem and the EXP-005 local Selberg density gives
+The arbitrary-parameter rank-trace theorem and its spectral interpretation are
+attributed prior work. The proposed contribution is their coupling to odd
+support, the resulting finite product, and its short-interval transfer.
 
-`liminf S/N >= max(0,c(theta),(c(theta)+2k3(theta))/3,h3(theta))`.
+For every fixed exponent where the EXP-006 term `h3(theta)` is positive, the
+new coupled root satisfies `H(theta)>h3(theta)`. At `theta=0.5459`, directed
+rational arithmetic proves
 
-The unique positivity root of `h3` lies in `(0.545884,0.545885)`. At
-`theta=0.5459`, the previous linear term is negative while the new bound is
-greater than `0.0000168381638551244569880374399`.
+`H-h3 > 1.3732525985593292701164661575215e-70`.
 
-The finite coefficient is sharp. The manuscript attributes Lamzouri's
-arbitrary-parameter Hilbert inequality, Wang's pair limit, and
-Pearce-Crump's rank-three detector. The proposed contribution is the
-parity-compressed product, its quadratic transfer, and the lower threshold.
-The result is asymptotic, internally reviewed, and not peer reviewed. It does
-not solve the Riemann hypothesis.
+This is a strict improvement of the complete positive curve. It does not lower
+the onset bracket `(0.545884,0.545885)` or justify another printed decimal for
+the near-threshold proportion. The result is asymptotic, internally reviewed,
+and not peer reviewed. It does not solve the Riemann hypothesis.
 
 Evidence:
 
-- [EXP-006 proof and exact certificate](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/).
-- [EXP-005 local Selberg transfer](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/).
-- [EXP-004 parity transfer](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/).
+- [EXP-007 proof and exact certificate](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/).
+- [EXP-006 Hilbert-parity compression](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/).
+- [EXP-003 pressure-frame theorem](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/).
 - Concept DOI: [10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388).
-- Version DOI: [10.5281/zenodo.22852479](https://doi.org/10.5281/zenodo.22852479).
+- The v0.07 version DOI is reserved before the final build and inserted into
+  the manuscript header.
