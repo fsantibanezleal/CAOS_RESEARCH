@@ -1,0 +1,1025 @@
+{
+  "experiment": "EXP-065",
+  "route": "dual-guided exact column generation",
+  "parameters": [
+    8,
+    9,
+    10
+  ],
+  "mask": 58,
+  "premises": {
+    "EXP-065-dual-guided-endpoint-decoder\\hypothesis.md": "9497374dc88acfd4c4e7175cb45296b18bd51d7d0eca07840f1b339a1a1d8b73",
+    "EXP-036-factor-two-torsion-anatomy\\run.py": "1c6923c7c6456673402b5bdd3dada137970f6d01985690f29c960af65a981d03",
+    "EXP-037-connecting-quasipolynomial\\run.py": "1abebc24c99398dded97aa08216211db089889e154736ed9eb5a7202de0b5df0",
+    "EXP-042-bockstein-normal-form\\run.py": "3a57fc52a6a1e10ba42d97c6ebe27062324b8c90b76df7a288db41dffabd69bf",
+    "EXP-048-semantic-relative-bockstein\\run.py": "ec245859931cf1b3992630c8faab207a158ae5b72a3283783ec938cd3b76e70a",
+    "EXP-053-labelled-source-pullback\\extract_training.py": "cd1ff29b95944224a4d05265ce175926fcf60c08b34c4d4bff8b5884b729fc90",
+    "EXP-058-local-endpoint-source\\proof.md": "5fdafaaf478626972e452949106dca708b3877b0939b7cf29273e8daddd4e7df",
+    "EXP-063-triangle-isolated-comparison\\artifacts\\results.json": "c219ce4c4549d970063a787227793bb5f7141e8f4d6e14c614f62085ecc8059a",
+    "EXP-064-exact-carrier-two-primary\\artifacts\\results.json": "9304c81487b29688c9fcf3524998db15f6faf7b50a9448cff197b6177bc4f5c4"
+  },
+  "rows": [
+    {
+      "p": 8,
+      "selected_rows": 2596,
+      "component_columns": 1094,
+      "semantic_column_map_unique": true,
+      "targets": [
+        {
+          "p": 8,
+          "triangle": [
+            0,
+            1,
+            5
+          ],
+          "label": [
+            "K",
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              8,
+              26,
+              27,
+              28,
+              29,
+              30,
+              48
+            ],
+            86
+          ],
+          "component_row": 2612,
+          "projected_row": 2533,
+          "rounds": [
+            {
+              "rank_qq": 9,
+              "unit_pivots": 9,
+              "nonunit_pivots": 0,
+              "active_columns": 9,
+              "classification": "INTEGRAL_SECTION",
+              "denominator_lcm": 1,
+              "round": 1,
+              "solution_route": "unit-first-rational-section"
+            }
+          ],
+          "status": "INTEGRAL_WITNESS",
+          "active_columns": 9,
+          "reverse_order_membership_agrees": true,
+          "target_mutation_rejected": true,
+          "witness_mutation_rejected": true,
+          "witness": {
+            "support_size": 1,
+            "max_abs_coefficient": 1,
+            "skeleton_count": 1,
+            "skeletons": [
+              {
+                "coefficient": [
+                  "L0",
+                  "R",
+                  "#"
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    "#"
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    "#"
+                  ]
+                ],
+                "kind": "S",
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    "#"
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    "#"
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    "#"
+                  ]
+                ]
+              }
+            ],
+            "support": [
+              {
+                "column": 82,
+                "coefficient": -1,
+                "exact_label": [
+                  "S",
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    8,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    48,
+                    80
+                  ],
+                  6
+                ],
+                "normalized_label": {
+                  "kind": "S",
+                  "coefficient": [
+                    "L0",
+                    "R",
+                    2
+                  ],
+                  "l0_missing": [
+                    [
+                      "L0",
+                      "R",
+                      1
+                    ]
+                  ],
+                  "l1_missing": [
+                    [
+                      "L1",
+                      "L",
+                      0
+                    ],
+                    [
+                      "L1",
+                      "L",
+                      1
+                    ]
+                  ],
+                  "high_selected": [
+                    [
+                      "H0",
+                      "L",
+                      0
+                    ],
+                    [
+                      "H2",
+                      "L",
+                      0
+                    ]
+                  ]
+                }
+              }
+            ],
+            "witness_hash": "47e6c014820475ca45f409f758baf5a3c749fce6651be6fc9f881dfe6632602e"
+          }
+        },
+        {
+          "p": 8,
+          "triangle": [
+            0,
+            2,
+            4
+          ],
+          "label": [
+            "K",
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              7,
+              8,
+              25,
+              27,
+              28,
+              29,
+              30,
+              48
+            ],
+            86
+          ],
+          "component_row": 2613,
+          "projected_row": 2534,
+          "rounds": [
+            {
+              "rank_qq": 9,
+              "unit_pivots": 9,
+              "nonunit_pivots": 0,
+              "active_columns": 9,
+              "classification": "INTEGRAL_SECTION",
+              "denominator_lcm": 1,
+              "round": 1,
+              "solution_route": "unit-first-rational-section"
+            }
+          ],
+          "status": "INTEGRAL_WITNESS",
+          "active_columns": 9,
+          "reverse_order_membership_agrees": true,
+          "target_mutation_rejected": true,
+          "witness_mutation_rejected": true,
+          "witness": {
+            "support_size": 1,
+            "max_abs_coefficient": 1,
+            "skeleton_count": 1,
+            "skeletons": [
+              {
+                "coefficient": [
+                  "L0",
+                  "R",
+                  "#"
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    "#"
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    "#"
+                  ]
+                ],
+                "kind": "S",
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    "#"
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    "#"
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    "#"
+                  ]
+                ]
+              }
+            ],
+            "support": [
+              {
+                "column": 122,
+                "coefficient": -1,
+                "exact_label": [
+                  "S",
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    7,
+                    8,
+                    25,
+                    27,
+                    28,
+                    29,
+                    30,
+                    48,
+                    80
+                  ],
+                  6
+                ],
+                "normalized_label": {
+                  "kind": "S",
+                  "coefficient": [
+                    "L0",
+                    "R",
+                    2
+                  ],
+                  "l0_missing": [
+                    [
+                      "L0",
+                      "R",
+                      2
+                    ]
+                  ],
+                  "l1_missing": [
+                    [
+                      "L1",
+                      "L",
+                      0
+                    ],
+                    [
+                      "L1",
+                      "L",
+                      2
+                    ]
+                  ],
+                  "high_selected": [
+                    [
+                      "H0",
+                      "L",
+                      0
+                    ],
+                    [
+                      "H2",
+                      "L",
+                      0
+                    ]
+                  ]
+                }
+              }
+            ],
+            "witness_hash": "5a5311eaeca148945cd8088ac3639009925be7d29ed22261130dd40e480f60ca"
+          }
+        }
+      ]
+    },
+    {
+      "p": 9,
+      "selected_rows": 4653,
+      "component_columns": 1729,
+      "semantic_column_map_unique": true,
+      "targets": [
+        {
+          "p": 9,
+          "triangle": [
+            0,
+            1,
+            6
+          ],
+          "label": [
+            "K",
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              9,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              54
+            ],
+            97
+          ],
+          "component_row": 4670,
+          "projected_row": 4566,
+          "rounds": [
+            {
+              "rank_qq": 10,
+              "unit_pivots": 10,
+              "nonunit_pivots": 0,
+              "active_columns": 10,
+              "classification": "INTEGRAL_SECTION",
+              "denominator_lcm": 1,
+              "round": 1,
+              "solution_route": "unit-first-rational-section"
+            }
+          ],
+          "status": "INTEGRAL_WITNESS",
+          "active_columns": 10,
+          "reverse_order_membership_agrees": true,
+          "target_mutation_rejected": true,
+          "witness_mutation_rejected": true,
+          "witness": {
+            "support_size": 1,
+            "max_abs_coefficient": 1,
+            "skeleton_count": 1,
+            "skeletons": [
+              {
+                "coefficient": [
+                  "L0",
+                  "R",
+                  "#"
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    "#"
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    "#"
+                  ]
+                ],
+                "kind": "S",
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    "#"
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    "#"
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    "#"
+                  ]
+                ]
+              }
+            ],
+            "support": [
+              {
+                "column": 116,
+                "coefficient": -1,
+                "exact_label": [
+                  "S",
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    9,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    54,
+                    90
+                  ],
+                  7
+                ],
+                "normalized_label": {
+                  "kind": "S",
+                  "coefficient": [
+                    "L0",
+                    "R",
+                    2
+                  ],
+                  "l0_missing": [
+                    [
+                      "L0",
+                      "R",
+                      1
+                    ]
+                  ],
+                  "l1_missing": [
+                    [
+                      "L1",
+                      "L",
+                      0
+                    ],
+                    [
+                      "L1",
+                      "L",
+                      1
+                    ]
+                  ],
+                  "high_selected": [
+                    [
+                      "H0",
+                      "L",
+                      0
+                    ],
+                    [
+                      "H2",
+                      "L",
+                      0
+                    ]
+                  ]
+                }
+              }
+            ],
+            "witness_hash": "99d2569076b5906a219938603d5e2877964aae670b805068a5509a086b90ac72"
+          }
+        },
+        {
+          "p": 9,
+          "triangle": [
+            0,
+            2,
+            5
+          ],
+          "label": [
+            "K",
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              8,
+              9,
+              28,
+              30,
+              31,
+              32,
+              33,
+              34,
+              54
+            ],
+            97
+          ],
+          "component_row": 4671,
+          "projected_row": 4567,
+          "rounds": [
+            {
+              "rank_qq": 10,
+              "unit_pivots": 10,
+              "nonunit_pivots": 0,
+              "active_columns": 10,
+              "classification": "INTEGRAL_SECTION",
+              "denominator_lcm": 1,
+              "round": 1,
+              "solution_route": "unit-first-rational-section"
+            }
+          ],
+          "status": "INTEGRAL_WITNESS",
+          "active_columns": 10,
+          "reverse_order_membership_agrees": true,
+          "target_mutation_rejected": true,
+          "witness_mutation_rejected": true,
+          "witness": {
+            "support_size": 1,
+            "max_abs_coefficient": 1,
+            "skeleton_count": 1,
+            "skeletons": [
+              {
+                "coefficient": [
+                  "L0",
+                  "R",
+                  "#"
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    "#"
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    "#"
+                  ]
+                ],
+                "kind": "S",
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    "#"
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    "#"
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    "#"
+                  ]
+                ]
+              }
+            ],
+            "support": [
+              {
+                "column": 171,
+                "coefficient": -1,
+                "exact_label": [
+                  "S",
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    8,
+                    9,
+                    28,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    54,
+                    90
+                  ],
+                  7
+                ],
+                "normalized_label": {
+                  "kind": "S",
+                  "coefficient": [
+                    "L0",
+                    "R",
+                    2
+                  ],
+                  "l0_missing": [
+                    [
+                      "L0",
+                      "R",
+                      2
+                    ]
+                  ],
+                  "l1_missing": [
+                    [
+                      "L1",
+                      "L",
+                      0
+                    ],
+                    [
+                      "L1",
+                      "L",
+                      2
+                    ]
+                  ],
+                  "high_selected": [
+                    [
+                      "H0",
+                      "L",
+                      0
+                    ],
+                    [
+                      "H2",
+                      "L",
+                      0
+                    ]
+                  ]
+                }
+              }
+            ],
+            "witness_hash": "c290833227371b4776c5588e5629ed6caed26aac8a593ee1af65e758fcda580b"
+          }
+        }
+      ]
+    },
+    {
+      "p": 10,
+      "selected_rows": 7841,
+      "component_columns": 2607,
+      "semantic_column_map_unique": true,
+      "targets": [
+        {
+          "p": 10,
+          "triangle": [
+            0,
+            1,
+            7
+          ],
+          "label": [
+            "K",
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              10,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              60
+            ],
+            108
+          ],
+          "component_row": 7856,
+          "projected_row": 7724,
+          "rounds": [
+            {
+              "rank_qq": 11,
+              "unit_pivots": 11,
+              "nonunit_pivots": 0,
+              "active_columns": 11,
+              "classification": "INTEGRAL_SECTION",
+              "denominator_lcm": 1,
+              "round": 1,
+              "solution_route": "unit-first-rational-section"
+            }
+          ],
+          "status": "INTEGRAL_WITNESS",
+          "active_columns": 11,
+          "reverse_order_membership_agrees": true,
+          "target_mutation_rejected": true,
+          "witness_mutation_rejected": true,
+          "witness": {
+            "support_size": 1,
+            "max_abs_coefficient": 1,
+            "skeleton_count": 1,
+            "skeletons": [
+              {
+                "coefficient": [
+                  "L0",
+                  "R",
+                  "#"
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    "#"
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    "#"
+                  ]
+                ],
+                "kind": "S",
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    "#"
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    "#"
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    "#"
+                  ]
+                ]
+              }
+            ],
+            "support": [
+              {
+                "column": 158,
+                "coefficient": -1,
+                "exact_label": [
+                  "S",
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    10,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    60,
+                    100
+                  ],
+                  8
+                ],
+                "normalized_label": {
+                  "kind": "S",
+                  "coefficient": [
+                    "L0",
+                    "R",
+                    2
+                  ],
+                  "l0_missing": [
+                    [
+                      "L0",
+                      "R",
+                      1
+                    ]
+                  ],
+                  "l1_missing": [
+                    [
+                      "L1",
+                      "L",
+                      0
+                    ],
+                    [
+                      "L1",
+                      "L",
+                      1
+                    ]
+                  ],
+                  "high_selected": [
+                    [
+                      "H0",
+                      "L",
+                      0
+                    ],
+                    [
+                      "H2",
+                      "L",
+                      0
+                    ]
+                  ]
+                }
+              }
+            ],
+            "witness_hash": "500c71e5cbe3b09d4c3e583bac7731efd31d843dfe55702ee8688019401dafcc"
+          }
+        },
+        {
+          "p": 10,
+          "triangle": [
+            0,
+            2,
+            6
+          ],
+          "label": [
+            "K",
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              9,
+              10,
+              31,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              60
+            ],
+            108
+          ],
+          "component_row": 7857,
+          "projected_row": 7725,
+          "rounds": [
+            {
+              "rank_qq": 11,
+              "unit_pivots": 11,
+              "nonunit_pivots": 0,
+              "active_columns": 11,
+              "classification": "INTEGRAL_SECTION",
+              "denominator_lcm": 1,
+              "round": 1,
+              "solution_route": "unit-first-rational-section"
+            }
+          ],
+          "status": "INTEGRAL_WITNESS",
+          "active_columns": 11,
+          "reverse_order_membership_agrees": true,
+          "target_mutation_rejected": true,
+          "witness_mutation_rejected": true,
+          "witness": {
+            "support_size": 1,
+            "max_abs_coefficient": 1,
+            "skeleton_count": 1,
+            "skeletons": [
+              {
+                "coefficient": [
+                  "L0",
+                  "R",
+                  "#"
+                ],
+                "high_selected": [
+                  [
+                    "H0",
+                    "L",
+                    "#"
+                  ],
+                  [
+                    "H2",
+                    "L",
+                    "#"
+                  ]
+                ],
+                "kind": "S",
+                "l0_missing": [
+                  [
+                    "L0",
+                    "R",
+                    "#"
+                  ]
+                ],
+                "l1_missing": [
+                  [
+                    "L1",
+                    "L",
+                    "#"
+                  ],
+                  [
+                    "L1",
+                    "L",
+                    "#"
+                  ]
+                ]
+              }
+            ],
+            "support": [
+              {
+                "column": 232,
+                "coefficient": -1,
+                "exact_label": [
+                  "S",
+                  [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    9,
+                    10,
+                    31,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    60,
+                    100
+                  ],
+                  8
+                ],
+                "normalized_label": {
+                  "kind": "S",
+                  "coefficient": [
+                    "L0",
+                    "R",
+                    2
+                  ],
+                  "l0_missing": [
+                    [
+                      "L0",
+                      "R",
+                      2
+                    ]
+                  ],
+                  "l1_missing": [
+                    [
+                      "L1",
+                      "L",
+                      0
+                    ],
+                    [
+                      "L1",
+                      "L",
+                      2
+                    ]
+                  ],
+                  "high_selected": [
+                    [
+                      "H0",
+                      "L",
+                      0
+                    ],
+                    [
+                      "H2",
+                      "L",
+                      0
+                    ]
+                  ]
+                }
+              }
+            ],
+            "witness_hash": "48b4cdc1dab63ecfe79a5e1e975a29cefca11f837aeb4ae89beec0159d6448f1"
+          }
+        }
+      ]
+    }
+  ],
+  "status": "COMPLETE",
+  "p1_status": "PASS_FINITE",
+  "p2_status": "PASS_FINITE",
+  "p3_status": "PASS",
+  "semantic_skeleton_union": 1,
+  "artifact_hash": "87a12064f758ba94a208c0b269f67101bbfc1ba4356741b632d8546139aba993"
+}
