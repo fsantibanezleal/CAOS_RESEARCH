@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { renderToString } from 'katex';
 import type { RiemannData } from '../api/data';
-import { decimalCenter, hilbertParityEvidence, localSelbergEvidence, parityEvidence, pressureWinner } from '../lib/riemannReplay';
+import { decimalCenter, hilbertParityEvidence, localSelbergEvidence, parityEvidence, pressureWinner, rankSixEvidence, spectralDefectEvidence } from '../lib/riemannReplay';
 import { riemannArchitecture } from '../lib/riemannArchitecture';
 import { ARCHITECTURE } from '../lib/architecture';
 import { CITATIONS } from '../data/citations';
@@ -16,7 +16,7 @@ function parityFixture(): RiemannData {
   const data = replay();
   const roles = ['parity_result', 'parity_hypothesis', 'parity_proof', 'parity_audit', 'parity_verdict'] as const;
   const sourceSha256 = Object.fromEntries(roles.map((role) => [role, `${role}-hash`])) as Record<typeof roles[number], string>;
-  data.schema = 'riemann-replay-v5';
+  data.schema = 'riemann-replay-v7';
   data.parity_result = {
     schema: 'riemann-exp004-results-v1', experiment: 'EXP-004-parity-density-transfer',
     arithmetic_status: 'verified',
@@ -117,6 +117,42 @@ describe('Riemann pressure replay presentation', () => {
     expect(hilbertParityEvidence(mismatched)).toBeUndefined();
   });
 
+  it('surfaces EXP-007 only with its strict gain and complete source bindings', () => {
+    const evidence = spectralDefectEvidence(replay());
+    expect(evidence?.result.target.certified_gain_floor.lower.decimal)
+      .toMatch(/^1\.3732525985593292701164661575.*e-70$/);
+    expect(evidence?.result.spectral_census.spectra).toBe(652260);
+    expect(evidence?.review.scientific_verdict).toBe('confirmed');
+  });
+
+  it('rejects a failed or source-mismatched EXP-007 certificate', () => {
+    const failed = replay();
+    failed.spectral_result.checks.spectral_census = false;
+    expect(spectralDefectEvidence(failed)).toBeUndefined();
+    const mismatched = replay();
+    mismatched.provenance.find((source) => source.role === 'spectral_result')!.sha256 = '0'.repeat(64);
+    expect(spectralDefectEvidence(mismatched)).toBeUndefined();
+  });
+
+  it('surfaces EXP-008 with the earlier rank-six onset and attributed-input boundary', () => {
+    const evidence = rankSixEvidence(replay());
+    expect(evidence?.result.root_brackets.rank_six_fine.lower.theta.decimal).toBe('0.5458837');
+    expect(evidence?.result.root_brackets.rank_six_fine.upper.theta.decimal).toBe('0.5458838');
+    expect(evidence?.result.point_theta.rank_six.strong_simple.lower.decimal)
+      .toContain('0.0000177645181613023236390595079');
+    expect(evidence?.review.scientific_verdict)
+      .toBe('confirmed-relative-to-attributed-rank-six-input');
+  });
+
+  it('rejects a failed or source-mismatched EXP-008 certificate', () => {
+    const failed = replay();
+    failed.rank_six_result.checks.strictly_earlier_onset = false;
+    expect(rankSixEvidence(failed)).toBeUndefined();
+    const mismatched = replay();
+    mismatched.provenance.find((source) => source.role === 'rank_six_result')!.sha256 = '0'.repeat(64);
+    expect(rankSixEvidence(mismatched)).toBeUndefined();
+  });
+
   it.each(['unverified', 'missing-second-evaluator', 'wrong-certificate'] as const)(
     'does not surface a pressure winner with %s evidence',
     (failure) => {
@@ -149,8 +185,8 @@ describe('Riemann pressure replay presentation', () => {
     const ids = [...pageSource.matchAll(/<Cite id="([^"]+)"/g)].map((m) => m[1]);
     for (const id of ids) expect(CITATIONS.some((citation) => citation.id === id)).toBe(true);
     expect(CITATIONS.find((citation) => citation.id === 'riemann-refinement2026')?.doi)
-      .toBe('10.5281/zenodo.22852479');
-    expect(pageSource).toContain('10.5281/zenodo.22852479');
+      .toBe('10.5281/zenodo.22860012');
+    expect(pageSource).toContain('10.5281/zenodo.22860012');
   });
 });
 
@@ -164,15 +200,15 @@ describe('Riemann contextual architecture', () => {
     }
     const science = config.tabs.find((tab) => tab.id === 'science')!;
     const method = config.tabs.find((tab) => tab.id === 'method')!;
-    expect(science.svg).toContain('EXP-005-local-selberg-transfer/mathematical-proof.md');
-    expect(science.svg).toContain('EXP-006-hilbert-parity-compression/mathematical-proof.md');
-    expect(science.svg).toContain(lang === 'en' ? 'Hilbert-parity compression' : 'Compresión de Hilbert y paridad');
+    expect(science.svg).toContain('EXP-007-spectral-defect-parity/mathematical-proof.md');
+    expect(science.svg).toContain('EXP-008-rank-six-local-transfer/mathematical-proof.md');
+    expect(science.svg).toContain(lang === 'en' ? 'Rank-six Hilbert-parity onset' : 'Umbral Hilbert-paridad de rango seis');
     expect(method.svg).toContain('docs/guides/riemann-replay.md');
-    expect(method.svg).toContain('EXP-001 · EXP-002 · EXP-003 · EXP-004 · EXP-005 · EXP-006');
+    expect(method.svg).toContain('EXP-001 · EXP-002 · EXP-003 · EXP-004 · EXP-005 · EXP-006 · EXP-007 · EXP-008');
     expect(method.svg).toContain(lang === 'en' ? 'Audit parity and pressure' : 'Auditar paridad y presión');
-    expect(method.body_en).toContain('0.545884 < θHP < 0.545885');
+    expect(method.body_en).toContain('0.5458837 < θ6 < 0.5458838');
     expect(science.body_en).toContain('None of these results proves RH');
-    expect(method.body_es).toContain('0.545884 < θHP < 0.545885');
+    expect(method.body_es).toContain('0.5458837 < θ6 < 0.5458838');
     expect(science.body_es).toContain('Ninguno de estos resultados prueba RH');
   });
 });

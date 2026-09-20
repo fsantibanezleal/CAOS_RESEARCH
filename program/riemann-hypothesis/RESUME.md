@@ -1,143 +1,86 @@
 # Riemann hypothesis handoff
 
-## 1. State in one screen
+## 1. Current state
 
-Read [state.md](state.md), [backlog.md](backlog.md), and [plan.md](plan.md), then
-the latest experiment verdicts. Evidence outranks this handoff. Public release
-v0.71.000 is released and live-verified from main commit `8302be35`. EXP-007 is
-confirmed locally and awaits manuscript/release integration. It retains the
-spectral defect through the EXP-006 parity product and strictly improves every
-positive point of the EXP-006 curve. The onset remains
-`0.545884<theta_HP<0.545885`. The general Riemann hypothesis remains open.
+Read [state.md](state.md), [backlog.md](backlog.md), and the latest EXP-007/008
+verdicts. Public application release 0.71.000 remains live-verified. EXP-007 and
+EXP-008 are confirmed, manuscript v0.07 is published, and replay v7 integration
+is being prepared for the next serialized release. General RH remains open.
 
-## 2. The objects table
+## 2. Confirmed new results
 
-| Object | Role | Current evidence |
-|---|---|---|
-| `N,S,O,Q` | Copies, simple real support, odd real support, pair sum | EXP-006 finite proof |
-| `d=r+k` | First Hilbert-subspace dimension | Lamzouri interface and EXP-006 audit |
-| `c(theta)` | Wang cosine baseline | Wang source and prior experiments |
-| `k3(theta)` | Explicit local odd-support curve | Confirmed EXP-005 |
-| `h3(theta)` | EXP-006 quadratic simple-zero term | Exact root and target certificate |
-| EXP-006 canonical result | 18,479 profiles and exact interval gates | SHA-256 `82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf` |
-| `D(G)` | Simple-real Gram spectral defect | Attributed rank-trace profile and EXP-003 pressure estimate |
-| `H(theta)` | EXP-007 coupled quadratic root | Strictly above `h3` wherever `h3>0` |
-| EXP-007 canonical result | 652,260 spectra, 18,479 profiles, correlated exact gain | SHA-256 `ad635c5b60c4bcae63199fb54a7979a02206ce0ee572853b2df13933dafc320c` |
-
-## 3. Experiment index
-
-| Experiment | Scope | Outcome |
-|---|---|---|
-| EXP-001 | Source constants and normalization | confirmed |
-| EXP-002 | First short-interval stability theorem | confirmed and released |
-| EXP-003 | Odd-frame pressure improvement | confirmed and released |
-| EXP-004 | Qualitative parity range extension | confirmed and released |
-| EXP-005 | Local Selberg odd-support curve | confirmed; old threshold in `(0.5459,0.546)` |
-| EXP-006 | Hilbert dimension and parity compression | confirmed; new threshold in `(0.545884,0.545885)` |
-| EXP-007 | Spectral-defect parity coupling | confirmed; strict full-curve gain, onset unchanged |
-
-## 3a. Confirmed EXP-006 result
-
-For every nonempty finite conjugation-invariant multiset in Lamzouri's kernel
-setting,
-
-$$
-(Q-S)(N-O)\ge2(N-S)^2.
-$$
-
-The coefficient two is sharp. For every fixed `1/2<theta<1`, this yields the
-new term
-
-$$
-h_3(\theta)=\frac{3+k_3(\theta)-
-\sqrt{(1-k_3(\theta))(9-k_3(\theta)-8c(\theta))}}4.
-$$
-
-At theta=0.5459, the exact lower bound is greater than
-`0.0000168381638551244569880374399`; the old linear parity term is still
-negative. The [proof](../../problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/mathematical-proof.md),
-[audit](../../problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/adversarial-audit.md),
-[verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/verdict.md),
-and [proof review](../../problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/proof-review.json)
-state the complete boundary.
-
-## 3b. Confirmed EXP-007 result
-
-For the same finite multiset and the simple-real Gram matrix `G`,
+EXP-007 retains the simple-real Gram defect:
 
 $$
 (Q-S-D(G))(N-O)\ge2(N-S)^2.
 $$
 
-For every fixed exponent with `h3(theta)>0`, a pressure certificate chosen at
-`R=4/h3(theta)` yields a coupled root `H(theta)>h3(theta)`. At theta=0.5459,
-the exact relative gain exceeds
-`1.3732525985593292701164661575215e-70`. This is a structural strict
-improvement and does not support another headline decimal. The
-[proof](../../problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/mathematical-proof.md),
-[audit](../../problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/adversarial-audit.md),
-[verdict](../../problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/verdict.md),
-and [proof review](../../problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/proof-review.json)
-state the boundary.
+It gives a strict full-curve improvement where the scalar EXP-006 term is
+positive. The portable result hash is
+`98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947`.
 
-## 4. In flight
+EXP-008 proves fixed finite-rank localization and applies Pearce-Crump's stated
+rank-six constant. It certifies
+`0.5458837<theta6<0.5458838`, strictly earlier than
+`0.5458846<theta3<0.5458847`. At theta=0.5459, the rank-six lower bound exceeds
+`0.0000177645181613023236390595079`. Its portable result hash is
+`1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781`.
 
-1. Integrate EXP-007 into manuscript v0.07 and publish only after the complete
-   render and metadata review passes.
-2. Bake replay v6, promote it through the scoped PR flow, and run live QA.
-3. Seek independent mathematical review of the EXP-006/007 proofs and attribution.
-4. Keep other alternative routes separate until they pass declaration and
-   proof gates.
+The public source does not print the rank-six coefficient matrix. Treat $C_6$
+as an attributed theorem input until it is independently reconstructed.
 
-Completed in this round: replay v5 is baked and tested; manuscript v0.06 is
-published at DOI 10.5281/zenodo.22852479 and its 26-page PDF matches a fresh
-public download byte for byte. Research PR #316, release PR #317, and promotion
-PR #318 are merged. Main CI, Pages, ten live byte comparisons, and eight live
-browser scenarios passed.
+## 3. Publication
 
-## 5. Next actions
+Version 0.07 of *Simple critical zeros in short intervals: stability, parity,
+localization, Hilbert compression, and spectral defect* is published at DOI
+[10.5281/zenodo.22860012](https://doi.org/10.5281/zenodo.22860012). The 575,351
+byte repository PDF and a fresh public download share SHA-256
+`c7bda5f1acc0b34ac33b6a071e66586b4032ae6e385d93f7fdd2d197411dbf81`.
 
-1. Build and visually review manuscript v0.07 with the EXP-007 theorem,
-   sensitivity boundary, and verification appendix.
-2. Publish v0.07 under the existing concept DOI if every publication gate
-   passes; keep v0.06 immutable.
-3. Export replay v6, run repository tests and rendered browser QA, then promote
-   through develop and main.
-4. Pursue the next onset-changing experiment only with a statistic that remains
-   informative when `S=0`.
+## 4. Evidence map
 
-## 6. Where everything lives
+| Experiment | Outcome |
+|---|---|
+| EXP-001 | source constants and normalization confirmed |
+| EXP-002 | first short-interval stability theorem confirmed |
+| EXP-003 | odd-frame pressure improvement confirmed |
+| EXP-004 | qualitative parity range extension confirmed |
+| EXP-005 | rank-three local Selberg curve confirmed |
+| EXP-006 | sharp Hilbert-parity product confirmed |
+| EXP-007 | spectral-defect parity product and strict full-curve gain confirmed |
+| EXP-008 | fixed-rank localization and attributed rank-six onset confirmed |
 
-Problem: `problems/number-theory/riemann-hypothesis/`. EXP-006 and EXP-007
-proofs, audits, verdicts, runners, and immutable outputs are below their
-`experiments/` directories.
-Replay instructions: `docs/guides/riemann-replay.md`. Release receipts belong in
-`program/riemann-hypothesis/release-0.71.000/`; prior release evidence remains
-immutable. Manuscript v0.06 and its archived predecessors are under
-`manuscripts/riemann-hypothesis/short-interval-stability/`. Private coordination
-is mirrored under `plans/caos-research/riemann-hypothesis/` in CAOS_MANAGE.
+The complete proofs, audits, verdicts, runners, and immutable outputs are under
+`problems/number-theory/riemann-hypothesis/experiments/`. Replay instructions
+are in [docs/guides/riemann-replay.md](../../docs/guides/riemann-replay.md).
 
-## Reproduction
+## 5. Remaining release work
 
-From the repository root:
+1. Finish replay v7 and frontend integration for EXP-007/008.
+2. Rebase the scoped branch on the latest `develop` without absorbing unrelated
+   work.
+3. Run the repository, frontend, and rendered browser gates.
+4. Promote through the repository's develop and main PR flow, then verify Pages
+   bytes and live EN/ES light/dark desktop/phone scenarios.
+5. Mirror the publication and release receipts into CAOS_MANAGE.
+
+## 6. Next mathematical target
+
+Independently reconstruct the rank-six coefficient matrix or obtain a public
+source artifact that permits exact $C_6$ replay. After that, test a broader
+finite-rank profile family. Any growing-rank proposal needs uniform control in
+the rank before the height limit. Alternative Nyman-Beurling, Weil-positivity,
+spectral, and heat-flow routes remain separate until their missing infinite
+limits or arithmetic inputs are proved.
+
+## 7. Reproduction
 
 ```text
-python problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/run.py --output-dir tmp/riemann-exp006-replay --budget-seconds 120
 python problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/run.py --output-dir tmp/riemann-exp007-replay --budget-seconds 180
-pytest tests/test_riemann_hilbert_parity.py tests/test_riemann_local_selberg.py tests/test_riemann_parity.py
-python -m pytest -q tests/test_riemann_spectral_defect_parity.py
+python problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/run.py --output-dir tmp/riemann-exp008-replay --budget-seconds 120
+python -m pytest -q tests/test_riemann_spectral_defect_parity.py tests/test_riemann_rank_six_local.py
 ```
 
-The runner refuses overwrite, pins predecessor and source hashes, and separates
-finite arithmetic from the universal proof. CPU arithmetic is sufficient; no
-GPU workload is justified.
-
-## 7. Gotchas
-
-`N` counts copies; `S` and `O` count support points. The pair sum uses ordinary
-complex squares before conjugation symmetry makes the total real. The current
-hypothesis file includes a post-run strengthening, so the original declaration
-must be inspected at commit `b1febcf8a6d5830218e1df386af1e8a92c3037be`.
-Test functions and support stay fixed before height limits. The rank-six value
-is sensitivity only because its full profile is unavailable. A DOI, finite
-census, or passing build is not external mathematical acceptance.
+The runners require fresh output directories, clean canonical source commits,
+and exact source hashes. CPU arithmetic is sufficient; GPU acceleration is not
+justified for these exact low-dimensional certificates.

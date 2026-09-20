@@ -5,7 +5,9 @@ The current confirmed results include the explicit pressure improvement in
 localized Selberg transfers in EXP-004/005, the Hilbert-parity compression in
 [EXP-006](../experiments/EXP-006-hilbert-parity-compression/verdict.md), and the
 spectral-defect coupling in
-[EXP-007](../experiments/EXP-007-spectral-defect-parity/verdict.md).
+[EXP-007](../experiments/EXP-007-spectral-defect-parity/verdict.md), and the
+rank-six local transfer in
+[EXP-008](../experiments/EXP-008-rank-six-local-transfer/verdict.md).
 The Riemann hypothesis remains open. The questions below go beyond those proved results.
 
 ## Further improve the explicit short-interval example
@@ -65,17 +67,19 @@ two consecutive triples.
 ## Push the explicit threshold closer to one half
 
 [D] EXP-005 supplied the quantitative odd-support seed, EXP-006 retained the
-Hilbert dimension before scalar compression, and EXP-007 retained the full
-simple-real spectral defect. EXP-007 strictly raises every positive point but
-does not move the root in $(0.545884,0.545885)$. The scalar headline bounds alone still permit
-$S=0$ at $\theta=0.5459$; the exact triple/double witness records that barrier.
+Hilbert dimension before scalar compression, EXP-007 retained the full
+simple-real spectral defect, and EXP-008 proved rank-independent localization.
+Using Pearce-Crump's source-certified $C_6$ moves the root to
+$(0.5458837,0.5458838)$. The source prints the certified interval but not the
+coefficient matrix, so the value is attributed rather than independently
+reconstructed.
 
-[C] A further threshold gain now requires a stronger reproducible odd-support
-constant, a new analytic input coupled to multiplicity geometry, or information
-beyond the first Hilbert dimension. Pearce-Crump's printed rank-six constant is
-a sensitivity only because its complete profile is not printed. It cannot be
-used as a theorem premise until the profile or an equivalent certified object
-is available.
+[C] The first reproducibility target is to reconstruct the rank-six matrix or
+obtain an equivalent source artifact and reproduce $C_6$ independently. A
+further threshold gain then requires a stronger finite-rank profile, a new
+analytic input coupled to multiplicity geometry, or information beyond the
+first Hilbert dimension. Any growing-rank proposal must control its constants
+uniformly before the height limit; fixed-rank localization alone does not do so.
 
 ## Cross-area routes and their unresolved interfaces
 
@@ -178,7 +182,7 @@ those steps would affect the theorem. Improving the conservative numerical
 constant would affect the example without invalidating the analytic proof
 of a positive gain.
 
-The [published preprint](https://zenodo.org/records/22727389) provides versioned
+The [published preprint](https://zenodo.org/records/22860012) provides versioned
 dissemination. It does not replace independent mathematical acceptance. Any
 later correction should preserve the original experiment artifacts and state
 whether it changes the theorem, numerical example, attribution, or release

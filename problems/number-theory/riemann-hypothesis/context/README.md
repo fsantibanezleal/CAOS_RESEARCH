@@ -20,6 +20,7 @@ reported honestly in the dossiers and was concentrated on theorem dependencies a
 | [Pressure-frame prior art](2026-09-12-pressure-frame-prior-art.md) | Multi-point pressure, mixed certificates, global capacity methods and the next short-interval question |
 | [Local optimized Selberg transfer](2026-09-19-local-selberg-transfer.md) | Pearce-Crump's explicit detector, the Axiom unconditional-formalization update, and the now-confirmed EXP-005 short-interval localization |
 | [Hilbert dimension and parity compression](2026-09-20-hilbert-parity-compression.md) | EXP-006 preflight for retaining Lamzouri's first-subspace dimension in the odd-multiplicity transfer |
+| [Rank-six local transfer](2026-09-20-rank-six-local-transfer.md) | EXP-008 source boundary, fixed-rank localization, onset comparison, and interdisciplinary next routes |
 | [Interdisciplinary update and defect-parity seam](2026-09-20-interdisciplinary-update-and-defect-parity.md) | Post-cutoff sources, cross-area route evaluation, and the EXP-007 spectral-defect parity preflight |
 
 Full text whose public redistribution permission was not identified is retained locally in

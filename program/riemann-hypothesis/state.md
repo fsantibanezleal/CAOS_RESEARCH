@@ -1,85 +1,79 @@
 # Riemann hypothesis state
 
-Updated: 2026-09-20. Public release: **0.71.000**, released and live-verified
-from main commit `8302be35cb96280692ad1333d690a63cb220f8b2` (tag
-`v0.71.000`). Current research round: **EXP-007 confirmed locally; manuscript
-and release integration are in progress**.
+Updated: 2026-09-20. Latest completed public application release:
+**0.71.000**, live-verified from main commit
+`8302be35cb96280692ad1333d690a63cb220f8b2`. Current research round:
+**EXP-007 and EXP-008 confirmed, manuscript v0.07 published, replay v7 release
+integration in progress**.
 
-EXP-007 strengthens the finite theorem to
+The Riemann hypothesis remains open.
 
-$$
-(Q-S-D(G))(N-O)\ge2(N-S)^2,
-$$
+## Current strongest result
 
-where `D(G)=tr Psi(G)` is the simple-real Gram spectral defect already present
-in the attributed rank-trace framework. Combining it with the EXP-003 pressure
-estimate proves a strict improvement `H(theta)>h3(theta)` for every fixed
-`theta` where `h3(theta)>0`. At theta=0.5459, the correlated exact gain exceeds
-`1.3732525985593292701164661575215e-70`. This improves the complete positive
-curve but does not lower its onset exponent or justify another printed decimal.
-The canonical result SHA-256 is
-`ad635c5b60c4bcae63199fb54a7979a02206ce0ee572853b2df13933dafc320c`.
-
-EXP-006 proves the sharp finite product
+EXP-008 proves that the local Selberg detector transfer works for every fixed
+finite rank $q$:
 
 $$
-(Q-S)(N-O)\ge2(N-S)^2,
+\liminf_{T\to\infty}\frac{O(T,T^\theta)}{N(T,T^\theta)}
+\ge k_q(\theta)=\frac{\theta-1/2}{4eC_q}.
 $$
 
-where `N` counts copies in a conjugation-invariant finite multiset, `S` counts
-simple real support points, `O` counts distinct odd-multiplicity real support,
-and `Q` is Lamzouri's squared-kernel pair sum. The proof attributes the known
-arbitrary-parameter Hilbert estimate, retains its simple-real term, and combines
-the first-subspace dimension with parity.
-
-With Wang's fixed-test short-interval pair theorem and the confirmed EXP-005
-odd-support curve, the theorem gives
+Using Pearce-Crump's stated source-certified rank-six interval in the EXP-006
+Hilbert-parity product gives
 
 $$
-\liminf S/N\ge\max\left\{0,c(\theta),
-\frac{c(\theta)+2k_3(\theta)}3,
-h_3(\theta)\right\},
+0.5458837<\theta_6<0.5458838
+<0.5458846<\theta_3<0.5458847.
 $$
 
+At theta=0.545884, the rank-six term exceeds
+`2.5541123454645702e-7` while the rank-three term remains negative. At
+theta=0.5459, the rank-six lower bound exceeds
+`0.0000177645181613023236390595079` and its pointwise gain over rank three
+exceeds `9.263543061777356e-7`.
+
+The source prints the certified $C_6$ interval but not the coefficient matrix.
+The result is therefore confirmed relative to that attributed input. CAOS has
+not independently reconstructed $C_6$.
+
+## Spectral companion
+
+EXP-007 proves
+
 $$
-h_3(\theta)=\frac{3+k_3(\theta)-
-\sqrt{(1-k_3(\theta))(9-k_3(\theta)-8c(\theta))}}4.
+(Q-S-D(G))(N-O)\ge2(N-S)^2.
 $$
 
-The exact certificate proves a unique positivity root in
-`(0.545884,0.545885)`. At theta=0.5459 the earlier linear term is negative,
-while `h3` exceeds `0.0000168381638551244569880374399`. The canonical result
-SHA-256 is `82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf`.
-It was executed from clean commit
-`0d736fa22ce7e833200381a32e8cc89f77c660e8` after the strengthening was
-committed. The 18,479-profile census, exact directed intervals, scalar barrier
-witness, and independent 100-digit replay passed.
+It strictly improves every positive point of the scalar curve. With the
+rank-six input and optimized fixed radius `rho=11/5`, the gain at theta=0.5459
+exceeds `1.7766622541125682e-68`. This does not move the onset.
 
-The declaration commit is
-`b1febcf8a6d5830218e1df386af1e8a92c3037be`. The original broad-bracket and
-weaker-transfer runs remain preserved. The proof, audit, verdict and source
-bindings merged through research PR #316 into `develop`. Replay v5 is baked
-and tested. Release 0.71.000 passed 428 Linux tests, 107 scoped
-Riemann tests, 18 frontend tests, and 20 rendered browser scenarios with zero
-failures. Manuscript v0.06 is published at
-[10.5281/zenodo.22852479](https://doi.org/10.5281/zenodo.22852479); its reviewed
-PDF matches a fresh public download. Main promotion, Pages, ten live byte
-comparisons, and eight live browser scenarios passed.
+## Portable evidence
 
-EXP-005 remains the analytic seed: for every fixed `1/2<theta<1`, it gives odd
-critical support density at least `(theta-1/2)/(4eC3)`. EXP-004 provides the
-linear parity transfer, EXP-003 the pressure improvement at theta=3/4, and
-EXP-002 the original compact stability certificate. The detailed history and
-immutable prior artifacts remain in their experiment and release directories.
+| Evidence | Current portable canonical SHA-256 |
+|---|---|
+| EXP-007 result | `98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947` |
+| EXP-008 result | `1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781` |
+| Manuscript v0.07 PDF | `c7bda5f1acc0b34ac33b6a071e66586b4032ae6e385d93f7fdd2d197411dbf81` |
 
-The latest completed public release is recorded in
-[release-0.71.000](release-0.71.000/README.md). It includes manuscript v0.06 at
-[10.5281/zenodo.22852479](https://doi.org/10.5281/zenodo.22852479), merged
-research PR #316, release PR #317, promotion PR #318, successful CI and Pages,
-ten byte-matched live files, and eight live EN/ES light/dark desktop/phone
-scenarios. Release 0.70.000 and its receipts remain immutable.
+The runners write explicit UTF-8/LF bytes. The historical Windows byte streams
+cited by manuscript v0.07 remain preserved under
+`artifacts/windows-canonical-v1/`. Replay v7 reads committed bytes, validates
+execution receipts and proof-review hashes, and fails closed on weakened claims
+or stale evidence.
+
+## Publication and release
+
+Manuscript v0.07 is published at
+[10.5281/zenodo.22860012](https://doi.org/10.5281/zenodo.22860012). The reviewed
+30-page PDF matches a fresh unauthenticated public download byte for byte.
+Publication is not peer acceptance.
+
+The next serialized application release will expose EXP-007 and EXP-008 in the
+bilingual workbench and record rendered browser and live deployment QA. Until
+that release is promoted, 0.71.000 remains the latest completed application
+release.
 
 The result is asymptotic for each fixed exponent and has no effective starting
-height. The imported 2026 preprints have been source-audited, but the work has
-not received external peer review or an end-to-end formal proof. The Riemann
-hypothesis remains open.
+height. Imported 2026 preprints remain attributed. No finite census, exact
+certificate, DOI, or passing build proves RH.
