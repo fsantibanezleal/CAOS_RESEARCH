@@ -1,8 +1,16 @@
 # Quadratic integral two-torsion companion
 
+<!-- current:start -->
+- **Current version**: v0.03, published 2026-09-18
+- **Title**: A quadratic family of integral two-torsion classes in a Huneke–Wiegand Koszul presentation
+- **Version DOI**: [10.5281/zenodo.22835126](https://doi.org/10.5281/zenodo.22835126)
+- **Concept DOI (always latest)**: [10.5281/zenodo.22342975](https://doi.org/10.5281/zenodo.22342975)
+- **Record**: <https://zenodo.org/records/22835126> (file `huneke-wiegand-integral-connecting-annihilators-v0.03.pdf`)
+<!-- current:end -->
+
 - Title: A quadratic family of integral two-torsion classes in a Huneke-Wiegand Koszul presentation
-- Sole author: Felipe Santibañez-Leal, ORCID 0000-0002-0150-3246
-- Version: 0.01; preprint, not peer reviewed; CC BY 4.0
+- Sole author: Felipe Santibáñez-Leal, ORCID 0000-0002-0150-3246
+- Initial version: 0.01; preprint, not peer reviewed; CC BY 4.0
 - Status: published and independently public-file verified
 - Published UTC: 2026-09-05T13:35:34Z
 - Public/latest and fresh unauthenticated download checked: 2026-09-05T13:36:50Z
@@ -42,3 +50,14 @@ and scope were strengthened before initial publication; the reservation receipt
 is historical, not the current metadata. The public verifier explicitly requests
 modern InvenioRDM JSON; a legacy default-response mismatch was corrected without
 changing published metadata or files.
+
+## Version history
+
+- v0.01 = [10.5281/zenodo.22342976](https://doi.org/10.5281/zenodo.22342976), published 2026-09-05 (initial theorem version)
+- v0.02 = [10.5281/zenodo.22823627](https://doi.org/10.5281/zenodo.22823627), published 2026-09-18 (scientific-voice revision, theorem-name typesetting repair and reference corrections; mathematics unchanged)
+- v0.03 = [10.5281/zenodo.22835126](https://doi.org/10.5281/zenodo.22835126), published 2026-09-18 (author name printed as Santibáñez-Leal, matching the ORCID record; content unchanged)
+
+Fresh unauthenticated metadata and PDF verification on 2026-09-20 matched the
+committed 504,764-byte PDF at SHA-256
+`18566d72619b18f174c69cc34abb5ee2b78ff25481ff5d098ec9570d29bbc0ac`;
+see `public-verification-v0.03.json`.

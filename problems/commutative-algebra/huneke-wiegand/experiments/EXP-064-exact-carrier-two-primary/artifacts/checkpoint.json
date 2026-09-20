@@ -1,0 +1,5298 @@
+{
+  "experiment": "EXP-064",
+  "status": "PARTIAL",
+  "scope": {
+    "p_min": 8,
+    "p_max": 11
+  },
+  "completed": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "rows": [
+    {
+      "p": 8,
+      "source_matrix_sha256": "7bffc81eeb39d637660a06a68fe314a573172e7249ab286f2e3fc7bb64e08cff",
+      "certificates": [
+        {
+          "mask": 56,
+          "rows": 1769,
+          "columns": 1094,
+          "nonzero_columns": 1082,
+          "nonzeros": 4733,
+          "projection_hash": "9b36b5f0a74944c4a29c684b5e4a8a82405ac110ed0046e161aa8aabe34e639c",
+          "target_rational_rank": 963,
+          "rank_mod_two": 963,
+          "first_bockstein_rank": 0,
+          "rank_gap": 0,
+          "maximum_squared_column_norm": 8,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 963
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 963
+            }
+          ],
+          "prime_count": 24,
+          "prime_product_hex": "0xfffffffffffe3d300000000176d8727fffff3c4c72559c0047f660611702ec2f15c177a19d12caeff25aab02ce14ba6a621fbb9ccb2374d0295453cd0dc0df05b67f70b944a50fc47bd1ec5fd6f364b4763964c92d221c0290b809737065e181cae869b9a54928ab8efd9f89799cd3fc1e5f8ad9372cb719f1600eea8bfb9812816dd9dea4fa0fe0a959ebe0c6c636fc43f0cad46b25b4064160744924e256127d84aa4f7da0e123ebc04ff17561fa5f66a0411342a4ab",
+          "prime_product_bits": 1464,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^0"
+        },
+        {
+          "mask": 58,
+          "rows": 2596,
+          "columns": 1094,
+          "nonzero_columns": 1082,
+          "nonzeros": 6586,
+          "projection_hash": "d1468cc0f616affc85ac7805e013451388d3c4c05b78c5135d3c0db141169203",
+          "target_rational_rank": 980,
+          "rank_mod_two": 979,
+          "first_bockstein_rank": 1,
+          "rank_gap": 1,
+          "maximum_squared_column_norm": 13,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692737",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692671",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692653",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692601",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692581",
+              "rank": 980
+            },
+            {
+              "prime": "2305843009213692527",
+              "rank": 980
+            }
+          ],
+          "prime_count": 30,
+          "prime_product_hex": "0x3fffffffffff514000000000e4069ecfffff42b7bd3ef400703fe2d3cb39315e820faa0707598c0b367b897977f6d06de0ecd91e4f6be6f07b7687564ccf1ee9012d1df71035b750978cecc39a16150d6a92d8c2c862494995dead59206f1e0e7572219cb2a00d69a2bba9fc1abb33f741caca74051f3398d4a51a6a63750dd0bf5f9f6fd8c59a6e498f4c4387d877e34508ec1847af730668735b8db2d798e86ccad532e52f9af4d5b9255d9614024c3983474911dd18b14435827e6bc39f3b6e8a73ef6e651dc9564444adc6007ae3b3668505b6e2e17ccbaed32a54fd4edeab1a159643",
+          "prime_product_bits": 1830,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^1"
+        },
+        {
+          "mask": 59,
+          "rows": 2624,
+          "columns": 1094,
+          "nonzero_columns": 1085,
+          "nonzeros": 6642,
+          "projection_hash": "a40ec869e4a6390fc713e578a9d5d3107b47b8ca3a582fa90ba3646ea1b1659b",
+          "target_rational_rank": 993,
+          "rank_mod_two": 990,
+          "first_bockstein_rank": 3,
+          "rank_gap": 3,
+          "maximum_squared_column_norm": 13,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692737",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692671",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692653",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692601",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692581",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692527",
+              "rank": 993
+            },
+            {
+              "prime": "2305843009213692463",
+              "rank": 993
+            }
+          ],
+          "prime_count": 31,
+          "prime_product_hex": "0x7ffffffffffe8b3c000000020793e99ffffe328ad2626b01254eda6be3def9eecaba35fd9430acee9b37e4d6f274cd5d792ffa1075b2dc4cdd3f79ed6ffa71f03bc76ca2153edaa3b8653932ad386e032a53d651e9bd620529d10bba0619ec11a8000cdf0062f941781f4d48e69631362b1a5f705caa54d6e11167b81f385cd439d4f217f435824ae038ffc9ba3d3828e2688b9e6e49d7c44293238c2deead786a1d77924a5937dd2f517a4a8de363a6d4e139337da45bba3f5104ee67bd4d9b2954d2d20fb7b0b377c34f49e9dcf4db35959e40e1195c9222a24288cfe22ff2189097a730842decd4871044d",
+          "prime_product_bits": 1891,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^3"
+        },
+        {
+          "mask": 62,
+          "rows": 2647,
+          "columns": 1094,
+          "nonzero_columns": 1094,
+          "nonzeros": 6691,
+          "projection_hash": "b57a766b4ff8e4496d14ae98d1b3cf7ef558a85368034ea68c78a013ae48a3c8",
+          "target_rational_rank": 1002,
+          "rank_mod_two": 999,
+          "first_bockstein_rank": 3,
+          "rank_gap": 3,
+          "maximum_squared_column_norm": 13,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692737",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692671",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692653",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692601",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692581",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692527",
+              "rank": 1002
+            },
+            {
+              "prime": "2305843009213692463",
+              "rank": 1002
+            }
+          ],
+          "prime_count": 31,
+          "prime_product_hex": "0x7ffffffffffe8b3c000000020793e99ffffe328ad2626b01254eda6be3def9eecaba35fd9430acee9b37e4d6f274cd5d792ffa1075b2dc4cdd3f79ed6ffa71f03bc76ca2153edaa3b8653932ad386e032a53d651e9bd620529d10bba0619ec11a8000cdf0062f941781f4d48e69631362b1a5f705caa54d6e11167b81f385cd439d4f217f435824ae038ffc9ba3d3828e2688b9e6e49d7c44293238c2deead786a1d77924a5937dd2f517a4a8de363a6d4e139337da45bba3f5104ee67bd4d9b2954d2d20fb7b0b377c34f49e9dcf4db35959e40e1195c9222a24288cfe22ff2189097a730842decd4871044d",
+          "prime_product_bits": 1891,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^3"
+        }
+      ],
+      "triangle_consequences": [
+        {
+          "mask": 56,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              2,
+              4
+            ],
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "complete_two_primary_generators": [],
+          "generator_count": 0
+        },
+        {
+          "mask": 58,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              2,
+              4
+            ]
+          ],
+          "complete_two_primary_generators": [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "generator_count": 1
+        },
+        {
+          "mask": 59,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [],
+          "complete_two_primary_generators": [
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              2,
+              4
+            ],
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "generator_count": 3
+        },
+        {
+          "mask": 62,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [],
+          "complete_two_primary_generators": [
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              0,
+              2,
+              4
+            ],
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          "generator_count": 3
+        }
+      ]
+    },
+    {
+      "p": 9,
+      "source_matrix_sha256": "00c20e30d81861a599448535c2ecc7625b56b1951fe863e64d40ce6f56ff218c",
+      "certificates": [
+        {
+          "mask": 56,
+          "rows": 3176,
+          "columns": 1729,
+          "nonzero_columns": 1715,
+          "nonzeros": 8341,
+          "projection_hash": "8910ae33d6dc885b86afb5c0a6875909396a99d2ac66c0e4e163dcf83c7164cb",
+          "target_rational_rank": 1561,
+          "rank_mod_two": 1561,
+          "first_bockstein_rank": 0,
+          "rank_gap": 0,
+          "maximum_squared_column_norm": 9,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692737",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692671",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692653",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692601",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692581",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692527",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692463",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692427",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692419",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692409",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692343",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692331",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692283",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692211",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692199",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692139",
+              "rank": 1561
+            },
+            {
+              "prime": "2305843009213692107",
+              "rank": 1561
+            }
+          ],
+          "prime_count": 41,
+          "prime_product_hex": "0x1fffffffffff61c3000000017acbc87ffffdb733e7f63a028e746e66c7546e36b96e6b803982bbada7d4a30011d1137dd28ed053a8ea209b0fa3511c957ea2513b1162981906e713da195d8c2be667caab8405aa5f942e56792f4ddfaad58de6a1151d45e53a915548289dccadbf69b79a9c2f09c5d10982ccab2a2aebdb387a88e2735fa7637fd01c846fdafa38d8a61bee9eaab34ecd6507c6a117505f5a4d9114c19379934949f0311e5dc9cea9237fcb418ac82a35adf0c05bcda7fc5f4d099dac5d7bb29813d6c56d4ecb3419ac15796e1edd60bec1144e2efc3dc13cba5af96cba2e96f2a71e201619740034bb824606615b90240487721fcfcc95a8dfb37c8fa8670a2cae2e69c1276bcc80c04fc3c60fe55670d884714fd3fbb5978a022e451cc365892787f5a97773fa457692626c1b9fc0a8395f",
+          "prime_product_bits": 2501,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^0"
+        },
+        {
+          "mask": 58,
+          "rows": 4653,
+          "columns": 1729,
+          "nonzero_columns": 1715,
+          "nonzeros": 11638,
+          "projection_hash": "0eb636f0ff40b4cf5da1bfae63c2c512dbd1eb39bdc1474436c69eec1c17be19",
+          "target_rational_rank": 1581,
+          "rank_mod_two": 1579,
+          "first_bockstein_rank": 2,
+          "rank_gap": 2,
+          "maximum_squared_column_norm": 15,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692737",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692671",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692653",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692601",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692581",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692527",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692463",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692427",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692419",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692409",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692343",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692331",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692283",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692211",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692199",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692139",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692107",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692103",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692097",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692089",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692083",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692043",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692031",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692029",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213692007",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213691993",
+              "rank": 1581
+            },
+            {
+              "prime": "2305843009213691929",
+              "rank": 1581
+            }
+          ],
+          "prime_count": 51,
+          "prime_product_hex": "0x7ffffffffffc5c5c0000000ce9cba45fffe23b30db503d32213e1643cadaa2e8cde0064d9da086294162354d2d61ce4c8b5eb2a4bdb7e2f980c496efae50f27a822ae1d9bd5681987bf8eb5f9f733c32cc6738158b47cf2d236c754e6e49af22721cb385dd43a0e2be56e3a0b122fb07591daa3763455feeb7f9fe38188fbbbe417a572d400abffda2f36b6808408dc059bca3326e94404a8bf78ca91fe0f09bacb685e5723e01f59f16eae67c23dbbf6ec1b79bfb518ec225bb3b36fc0fbdff23b9a5bfa72696c4334567792c82364199811bd08bbaf12b6bdae79252303e1a062c7b295901e2994c43a23359ef240c2a863f4a84423134c53d2c5ddeec4fc07922627c3aa39a23d79aaa244265152f1ee3d056a3f4ed1fba5f9c5b26bd5c7b2bae14bbed47d7c59a02ca6ef2cf05dbeaaf9e000f63adae1b7e2c51203c9ac33b85d8a442218784f915211973bffe12c265ad4accbd61d7cb2bdb2130399cbfd932dbd7faaac70cbb8b821d9e33d05a0af8633c1c8249db71ce7991ab400b86378b82cc65",
+          "prime_product_bits": 3111,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^2"
+        },
+        {
+          "mask": 59,
+          "rows": 4689,
+          "columns": 1729,
+          "nonzero_columns": 1718,
+          "nonzeros": 11710,
+          "projection_hash": "046dc964bc4e95e5b810c59a06cbff52f3b632d14fc944317197b889ccd79f03",
+          "target_rational_rank": 1596,
+          "rank_mod_two": 1592,
+          "first_bockstein_rank": 4,
+          "rank_gap": 4,
+          "maximum_squared_column_norm": 15,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692737",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692671",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692653",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692601",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692581",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692527",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692463",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692427",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692419",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692409",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692343",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692331",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692283",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692211",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692199",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692139",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692107",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692103",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692097",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692089",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692083",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692043",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692031",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692029",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213692007",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213691993",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213691929",
+              "rank": 1596
+            },
+            {
+              "prime": "2305843009213691869",
+              "rank": 1596
+            }
+          ],
+          "prime_count": 52,
+          "prime_product_hex": "0xfffffffffff877a00000001bad5f3f7fffbde53c76f8e873660243ffb7965789d8cd72e22b884820258fd201488981a8f54235c54e5638d2c91006a468e4a2c90ad3c03db05d561ec936ebc5d0debcd9f29bbf44ac628907890375d847e799d12c519455a1c6ed5d842223cb8de4a6e2e2590c59cc81f33ba9f3f1a45966414d10fc875ce7cbaf0edeb183ce98fe4f32894a4eb289123ef279b0e3b63b4ff8296594c9e4b01fd9062bf636c40fa89ea765ee58f67a52b36127e6d38f6e56206e204645300cddfd8d6d906821693885b05773484e9f7e66167f60b11582db374aa9b53d26c96ee92ed9a52d730e71f29fb0000148bb5f7289652aa39954729972e644c82aa87882ad82bfc73671d71029466150298033f3b9fa3c29352f24265ed8088eb46e17cc449cda4322ec933e758a0cefe576fc94f307d2b0cebf963aeb3ce22fb3b24ee634d10e39d17a650cba160639086675997381473c43d1414bdd54e5c6f9a8eebdd4e9ea1e71834dd71413b556943f7fc942b2a5d163d490ce1c3ea441522823aea0bd6bae631",
+          "prime_product_bits": 3172,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^4"
+        },
+        {
+          "mask": 62,
+          "rows": 4721,
+          "columns": 1729,
+          "nonzero_columns": 1729,
+          "nonzeros": 11777,
+          "projection_hash": "3ec8703505f5f15af93a6c1ca83050a0626d222a90bddafd5b4e8d7dc890d415",
+          "target_rational_rank": 1607,
+          "rank_mod_two": 1603,
+          "first_bockstein_rank": 4,
+          "rank_gap": 4,
+          "maximum_squared_column_norm": 15,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692737",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692671",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692653",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692601",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692581",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692527",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692463",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692427",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692419",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692409",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692343",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692331",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692283",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692211",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692199",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692139",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692107",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692103",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692097",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692089",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692083",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692043",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692031",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692029",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213692007",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213691993",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213691929",
+              "rank": 1607
+            },
+            {
+              "prime": "2305843009213691869",
+              "rank": 1607
+            }
+          ],
+          "prime_count": 52,
+          "prime_product_hex": "0xfffffffffff877a00000001bad5f3f7fffbde53c76f8e873660243ffb7965789d8cd72e22b884820258fd201488981a8f54235c54e5638d2c91006a468e4a2c90ad3c03db05d561ec936ebc5d0debcd9f29bbf44ac628907890375d847e799d12c519455a1c6ed5d842223cb8de4a6e2e2590c59cc81f33ba9f3f1a45966414d10fc875ce7cbaf0edeb183ce98fe4f32894a4eb289123ef279b0e3b63b4ff8296594c9e4b01fd9062bf636c40fa89ea765ee58f67a52b36127e6d38f6e56206e204645300cddfd8d6d906821693885b05773484e9f7e66167f60b11582db374aa9b53d26c96ee92ed9a52d730e71f29fb0000148bb5f7289652aa39954729972e644c82aa87882ad82bfc73671d71029466150298033f3b9fa3c29352f24265ed8088eb46e17cc449cda4322ec933e758a0cefe576fc94f307d2b0cebf963aeb3ce22fb3b24ee634d10e39d17a650cba160639086675997381473c43d1414bdd54e5c6f9a8eebdd4e9ea1e71834dd71413b556943f7fc942b2a5d163d490ce1c3ea441522823aea0bd6bae631",
+          "prime_product_bits": 3172,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^4"
+        }
+      ],
+      "triangle_consequences": [
+        {
+          "mask": 56,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [
+            [
+              0,
+              1,
+              6
+            ],
+            [
+              0,
+              2,
+              5
+            ],
+            [
+              0,
+              3,
+              4
+            ],
+            [
+              1,
+              2,
+              4
+            ]
+          ],
+          "complete_two_primary_generators": [],
+          "generator_count": 0
+        },
+        {
+          "mask": 58,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [
+            [
+              0,
+              1,
+              6
+            ],
+            [
+              0,
+              2,
+              5
+            ]
+          ],
+          "complete_two_primary_generators": [
+            [
+              0,
+              3,
+              4
+            ],
+            [
+              1,
+              2,
+              4
+            ]
+          ],
+          "generator_count": 2
+        },
+        {
+          "mask": 59,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [],
+          "complete_two_primary_generators": [
+            [
+              0,
+              1,
+              6
+            ],
+            [
+              0,
+              2,
+              5
+            ],
+            [
+              0,
+              3,
+              4
+            ],
+            [
+              1,
+              2,
+              4
+            ]
+          ],
+          "generator_count": 4
+        },
+        {
+          "mask": 62,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [],
+          "complete_two_primary_generators": [
+            [
+              0,
+              1,
+              6
+            ],
+            [
+              0,
+              2,
+              5
+            ],
+            [
+              0,
+              3,
+              4
+            ],
+            [
+              1,
+              2,
+              4
+            ]
+          ],
+          "generator_count": 4
+        }
+      ]
+    },
+    {
+      "p": 10,
+      "source_matrix_sha256": "c7d6bbf0ec655296a0dafe81ab41ce70300c0fa4a837e5c141f55811e29f6f4d",
+      "certificates": [
+        {
+          "mask": 56,
+          "rows": 5354,
+          "columns": 2607,
+          "nonzero_columns": 2591,
+          "nonzeros": 13855,
+          "projection_hash": "eb93cfc209705ae05d21c242ace8571db1bb36fc923069cd1c1fba97dcbfe247",
+          "target_rational_rank": 2397,
+          "rank_mod_two": 2397,
+          "first_bockstein_rank": 0,
+          "rank_gap": 0,
+          "maximum_squared_column_norm": 10,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692737",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692671",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692653",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692601",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692581",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692527",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692463",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692427",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692419",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692409",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692343",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692331",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692283",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692211",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692199",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692139",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692107",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692103",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692097",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692089",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692083",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692043",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692031",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692029",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213692007",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213691993",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213691929",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213691869",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213691837",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213691819",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213691767",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213691581",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213691579",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213691569",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213691567",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213691551",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213691413",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213691401",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213691357",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213691347",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213691287",
+              "rank": 2397
+            },
+            {
+              "prime": "2305843009213691257",
+              "rank": 2397
+            }
+          ],
+          "prime_count": 66,
+          "prime_product_hex": "0x3ffffffffffd145000000010bb7dd5afffc1576badd3ecac7d5408d199c9e8e3c5b7795c78d3c61e070ecf69d0a4f712413f30cb8e46f2e325829a6d5855b733e3bf54e865d7e37327b54771595e937e54b752bd9d9681694fc32401e6641a5d7fa357327f6ebce409f14cf9cfef4272ffdaf39a67d58cfa0bae653dd56d9b4fbca3c3f0c5573371f8af6c8dde2e26f0bc8b2fc2c5d638ee4b858bedcf12af0719fac853df259ba4d1e1013408dc5a52fa49aa485c2583eea3788a7fe3bddcc62e7a77a9af031b7cc32c78dd0df115965cc0ae2682b3d53b0d68089e3d82c4f0a65d3a20516d20df222b5f80d7ebff899086a65995467aa94dcc97136361179cb8f6cb100b9e32515e86af48166634578164978cf0bcc30c8507726b50093070ab3d3e9f6e76376847a458f12b506a6be2ed7ede1bc1dc628954fc46863fb83d70ceb37d1e41673b911137024b275bb3cd0b8066ba48ebffd295c3003bb275d5aa396744236af64a16ffa8851cf82b22f8eec5d8b236afde0b5b9e77aa21fb695a023e227aac8b7f78dfd14b4e4516745b1df57b5daba85294ededb4ae06b5a12951e16a1f872bdca4cfa1d7204abf2571c5a5dd6f7ec95e3137e53179977099e31741356ea00ed81c4381886a90de28bd5ee632fa82be3b724465973c994c1835fdd28d5b5043e7091620d785d294bbe9ec97c1e6c3643",
+          "prime_product_bits": 4026,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^0"
+        },
+        {
+          "mask": 58,
+          "rows": 7841,
+          "columns": 2607,
+          "nonzero_columns": 2591,
+          "nonzeros": 19387,
+          "projection_hash": "d141e4541e03e65673331f8366b3468c1febcf0a121c052b2a252c91b7f99649",
+          "target_rational_rank": 2420,
+          "rank_mod_two": 2417,
+          "first_bockstein_rank": 3,
+          "rank_gap": 3,
+          "maximum_squared_column_norm": 17,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692737",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692671",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692653",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692601",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692581",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692527",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692463",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692427",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692419",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692409",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692343",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692331",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692283",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692211",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692199",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692139",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692107",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692103",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692097",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692089",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692083",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692043",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692031",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692029",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213692007",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691993",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691929",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691869",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691837",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691819",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691767",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691581",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691579",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691569",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691567",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691551",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691413",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691401",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691357",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691347",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691287",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691257",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691041",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213691033",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213690937",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213690907",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213690883",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213690873",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213690871",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213690847",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213690813",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213690801",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213690799",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213690769",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213690657",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213690627",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213690621",
+              "rank": 2420
+            },
+            {
+              "prime": "2305843009213690591",
+              "rank": 2420
+            }
+          ],
+          "prime_count": 82,
+          "prime_product_hex": "0x3ffffffffffb8c6c000000270281348fff1fb6a9f66f8bb79c4c37376956559482a113685a8a139455f446717856286bd339d1ea32da19f6d22f5ff5db52731726fd8ef1264af249f311ee4cb4890fa380ff47952992d864412903e3882b0dc9fcb6c004008f7a135ee8ef77ad99ba12232a0ba84eee7ca9453a4c007b057103c4c9a96ae9d934e226162ebe05dd82f35eb8a0bbb4a2cba0ad7b411597cebb2a8760487ff1e0e3e085a295a93936daef0d3f2082811cd05f159870f4d2aca5be10689dce64a831a6e333d87a535772a5108f4cfb3bb2101fb8eaa7351c2ad105149850f183aba23a682f08d57eebf10983873af58ea6e2782294f2c41fbc14684637ec03bbf4dd7ce8d5a30ea9956932cbd01cadf64f7277922ace7910c7ee280e9cbecc579542209bd597d11312a139a8736db3a8989f324209874740a5a757c7708b10211375d8f7b2fde63f55e85b817cd90f73b5c9989bdb6c3c1b931e47c75bb455f1ec00649f21bda9dab5db66082e9b38223f31bbfa523607f3e748c2dbe980fbab42853f4efe5c62b069dd93083cf0b1987bc562b1e266fe1023fe3e0fde5f36a9dfc5ec4fec886a9614000356548b1535838429df3e1345aff86a8a35912db915ca660c22541f03c0df33f4d2c6ebd323cc028e830f7ce27f00361b9b6910240c7d87be39b5bd99bcb6382e5e3105c7c040716b72c006d274ff57f4cd91ccd53ce6dead16d7b294c335d7f65842fd6b05c41f1dc5bef6a90ad884dd63665eb14b319adde88efeda72dbd0a6d8be79c4b2acaceb9009fd2878049989dfdd3f968407f5797870ae3940dca406cb419032f5fbff7560f77a4c21919506ecbedcf61d50ca93605ed32700d7f616781",
+          "prime_product_bits": 5002,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^3"
+        },
+        {
+          "mask": 59,
+          "rows": 7886,
+          "columns": 2607,
+          "nonzero_columns": 2594,
+          "nonzeros": 19477,
+          "projection_hash": "eaa80001066a82c2f247dd99dea541a3c190b7d0f996debf798f6b7da1b5a85f",
+          "target_rational_rank": 2437,
+          "rank_mod_two": 2432,
+          "first_bockstein_rank": 5,
+          "rank_gap": 5,
+          "maximum_squared_column_norm": 17,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692737",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692671",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692653",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692601",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692581",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692527",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692463",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692427",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692419",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692409",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692343",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692331",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692283",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692211",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692199",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692139",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692107",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692103",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692097",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692089",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692083",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692043",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692031",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692029",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213692007",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691993",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691929",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691869",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691837",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691819",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691767",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691581",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691579",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691569",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691567",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691551",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691413",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691401",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691357",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691347",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691287",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691257",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691041",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213691033",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213690937",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213690907",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213690883",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213690873",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213690871",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213690847",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213690813",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213690801",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213690799",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213690769",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213690657",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213690627",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213690621",
+              "rank": 2437
+            },
+            {
+              "prime": "2305843009213690591",
+              "rank": 2437
+            }
+          ],
+          "prime_count": 82,
+          "prime_product_hex": "0x3ffffffffffb8c6c000000270281348fff1fb6a9f66f8bb79c4c37376956559482a113685a8a139455f446717856286bd339d1ea32da19f6d22f5ff5db52731726fd8ef1264af249f311ee4cb4890fa380ff47952992d864412903e3882b0dc9fcb6c004008f7a135ee8ef77ad99ba12232a0ba84eee7ca9453a4c007b057103c4c9a96ae9d934e226162ebe05dd82f35eb8a0bbb4a2cba0ad7b411597cebb2a8760487ff1e0e3e085a295a93936daef0d3f2082811cd05f159870f4d2aca5be10689dce64a831a6e333d87a535772a5108f4cfb3bb2101fb8eaa7351c2ad105149850f183aba23a682f08d57eebf10983873af58ea6e2782294f2c41fbc14684637ec03bbf4dd7ce8d5a30ea9956932cbd01cadf64f7277922ace7910c7ee280e9cbecc579542209bd597d11312a139a8736db3a8989f324209874740a5a757c7708b10211375d8f7b2fde63f55e85b817cd90f73b5c9989bdb6c3c1b931e47c75bb455f1ec00649f21bda9dab5db66082e9b38223f31bbfa523607f3e748c2dbe980fbab42853f4efe5c62b069dd93083cf0b1987bc562b1e266fe1023fe3e0fde5f36a9dfc5ec4fec886a9614000356548b1535838429df3e1345aff86a8a35912db915ca660c22541f03c0df33f4d2c6ebd323cc028e830f7ce27f00361b9b6910240c7d87be39b5bd99bcb6382e5e3105c7c040716b72c006d274ff57f4cd91ccd53ce6dead16d7b294c335d7f65842fd6b05c41f1dc5bef6a90ad884dd63665eb14b319adde88efeda72dbd0a6d8be79c4b2acaceb9009fd2878049989dfdd3f968407f5797870ae3940dca406cb419032f5fbff7560f77a4c21919506ecbedcf61d50ca93605ed32700d7f616781",
+          "prime_product_bits": 5002,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^5"
+        },
+        {
+          "mask": 62,
+          "rows": 7928,
+          "columns": 2607,
+          "nonzero_columns": 2607,
+          "nonzeros": 19564,
+          "projection_hash": "8545a8838691157279404b6c435b82db2f981c695b3614213470d1b5803fce87",
+          "target_rational_rank": 2450,
+          "rank_mod_two": 2445,
+          "first_bockstein_rank": 5,
+          "rank_gap": 5,
+          "maximum_squared_column_norm": 17,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692737",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692671",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692653",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692601",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692581",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692527",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692463",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692427",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692419",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692409",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692343",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692331",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692283",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692211",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692199",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692139",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692107",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692103",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692097",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692089",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692083",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692043",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692031",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692029",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213692007",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691993",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691929",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691869",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691837",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691819",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691767",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691581",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691579",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691569",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691567",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691551",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691413",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691401",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691357",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691347",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691287",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691257",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691041",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213691033",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213690937",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213690907",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213690883",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213690873",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213690871",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213690847",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213690813",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213690801",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213690799",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213690769",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213690657",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213690627",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213690621",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213690591",
+              "rank": 2450
+            },
+            {
+              "prime": "2305843009213690589",
+              "rank": 2450
+            }
+          ],
+          "prime_count": 83,
+          "prime_product_hex": "0x7ffffffffff6e44c00000051aca77cdffe1f65f577871d275ecec2691d25da8531ac580422b048280bc94f0cb2b8f68526dd59d728642c709b55464b44738f7c086171df8ab7524097573df8c0440804b926f4b00a9ea24ee9bc3fb4cf4b4b541c8c1fab27bcacf9720a95b98e28aca766370477f6673513750257b28710a780bc4cadd44bf821a1f962e59c059f984166f09d069a5165ec247e64cbc60d79e56c40a66bd775ccbaadbe9eea9d54ce25ad3d605b48587b0de6afbb87cd0439f1079338e3a8fb6634e156cbafce6aaf9effd1aaa91af339b6c9d0c856f5b896670007b6d29fd9e89c0168c65f82958da8e8fdabc5c556c542ad7168789a6725ebe15d71393be85dd2c793f53b3790d3faafcf9f7f904f803835c98846c6c44ffd97d37721885100c1e5c3c97949ea1c80e250e28e7571b7663e711c91b2163b175c1f45bc3fd189a23838ada45459bcd7bd2336fe8eb4f1d0863f78a765b1401856c9cec8096b71caa3232ac2c0d919648c74512e146b8da030934571a5290aef58165a65e1778d8fd6661718b30cd07a98ff9a2b455b6271dae5fd9a0128040f0ccd058cc670f7313c0c5f3bc1d70a27a8681311df444ae2348aacab74ddb419a3af9407659b723d21edd7736415517a3456f2bb051f724e535f8ed0eda709fbef78e9a21c8e44d3207ae2322888f15ad4c661eea44050e105911c7c00df47a29189ae3b13c66ed208521138b877f2bb779676cf4647aba40b0c9e861f64c7ef0ca7d2caf0ccb0af343eccc81b608eecc99df85b8af95cc23c79caddc9cf8ac08c2fd522c1400775793bf7eb38dd9c7a92777e74c40baae8dd5a1d416c54fa80a8c4581c8315f5a5cbb2541c3c5d0b7d152269feafa36d4c5d",
+          "prime_product_bits": 5063,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^5"
+        }
+      ],
+      "triangle_consequences": [
+        {
+          "mask": 56,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [
+            [
+              0,
+              1,
+              7
+            ],
+            [
+              0,
+              2,
+              6
+            ],
+            [
+              0,
+              3,
+              5
+            ],
+            [
+              1,
+              2,
+              5
+            ],
+            [
+              1,
+              3,
+              4
+            ]
+          ],
+          "complete_two_primary_generators": [],
+          "generator_count": 0
+        },
+        {
+          "mask": 58,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [
+            [
+              0,
+              1,
+              7
+            ],
+            [
+              0,
+              2,
+              6
+            ]
+          ],
+          "complete_two_primary_generators": [
+            [
+              0,
+              3,
+              5
+            ],
+            [
+              1,
+              2,
+              5
+            ],
+            [
+              1,
+              3,
+              4
+            ]
+          ],
+          "generator_count": 3
+        },
+        {
+          "mask": 59,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [],
+          "complete_two_primary_generators": [
+            [
+              0,
+              1,
+              7
+            ],
+            [
+              0,
+              2,
+              6
+            ],
+            [
+              0,
+              3,
+              5
+            ],
+            [
+              1,
+              2,
+              5
+            ],
+            [
+              1,
+              3,
+              4
+            ]
+          ],
+          "generator_count": 5
+        },
+        {
+          "mask": 62,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [],
+          "complete_two_primary_generators": [
+            [
+              0,
+              1,
+              7
+            ],
+            [
+              0,
+              2,
+              6
+            ],
+            [
+              0,
+              3,
+              5
+            ],
+            [
+              1,
+              2,
+              5
+            ],
+            [
+              1,
+              3,
+              4
+            ]
+          ],
+          "generator_count": 5
+        }
+      ]
+    },
+    {
+      "p": 11,
+      "source_matrix_sha256": "69e8519a3b239ec90c3b5af526f806a9a0aabf003517ea28233167d7e2b68dd9",
+      "certificates": [
+        {
+          "mask": 56,
+          "rows": 8580,
+          "columns": 3785,
+          "nonzero_columns": 3767,
+          "nonzeros": 21939,
+          "projection_hash": "f757b881b0f7db865908386e73c650fbac480afa4478ce50109b10ceff5fb1a3",
+          "target_rational_rank": 3526,
+          "rank_mod_two": 3525,
+          "first_bockstein_rank": 1,
+          "rank_gap": 1,
+          "maximum_squared_column_norm": 11,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692737",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692671",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692653",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692601",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692581",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692527",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692463",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692427",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692419",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692409",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692343",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692331",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692283",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692211",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692199",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692139",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692107",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692103",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692097",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692089",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692083",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692043",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692031",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692029",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213692007",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691993",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691929",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691869",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691837",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691819",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691767",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691581",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691579",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691569",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691567",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691551",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691413",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691401",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691357",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691347",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691287",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691257",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691041",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213691033",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690937",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690907",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690883",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690873",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690871",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690847",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690813",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690801",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690799",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690769",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690657",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690627",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690621",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690591",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690589",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690579",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690543",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690511",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690487",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690327",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690283",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690159",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690153",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690117",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690087",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690057",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690039",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690021",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213690019",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213689949",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213689937",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213689877",
+              "rank": 3526
+            },
+            {
+              "prime": "2305843009213689833",
+              "rank": 3526
+            }
+          ],
+          "prime_count": 101,
+          "prime_product_hex": "0x1ffffffffffcaed50000002b72f6e98ffe897b0223a7ddd5a261c9a455ce88bd890f95e8fd70d9850256f821904808ccfc9b8898e9f6848e5e134fd988689be0dd1b7bd0b6c093b70a364dfe69164271feb84ae040c9fd425fded17ff278112a21a73e6a47be2aad368ac147ac5db02558836ca33a912defa9708fcb62c95eb14397ac4bec667826c9ac8c6b14822eee4cdd45f2d4a865114f64460ea28d182167eb7423b7c4d8dd1d660c11c937470b89ff38037f124dc21eb20fe72169d438a219fb9fce11e29f9c737fc787c0ebfbb51035f40d6cd7254fcee848ed4bec1444319899cb4ea24c8a073c2733db91bd652368834eb1ffd7c0eff82d1e90ccf2b6efef31954c3a6e0ab1f3bab92ae10346975aba1d57ba205d6a0241df2c1ef2fd2129f0e7b35b0d20cc2484ab075e9ed5ed3c431932f24db5817b37d75ff3d3b8ab4c0a2141bb80ffd131811919b958e606a08c0fb4350943606be221e2d009fa54d7b6c5119015092a178b684d75b7278968f929311b8009287ca1c98736123a20df30b4c72a891009e89917129ae15a99eddaa023ff307f2d948913f4184a0ccaf0546b01b600654bcf3de7918c0ec58e6424f99d94622f4c8b563e1d46eab00b378c97865bbcf9b995aebfadc00abbedc128a2229222a78829e720451040f335f3ce59e8281d1c5506fe80d9dd2ecc627fd362b1fbfb822fca3f8f26f01848717f5bd9ed04aad03804438477e1bce15b00ebd025758432a20e4e4637e0ee26372152c4a2250d11de9e26e595dda40e95761560fda192affd2fccfd38d5157f38291bda05aacbef4b898c7a0b4c8a8d7dd50a710fa1020c84037437a65fb3e125d6100f05d7168a055719c3bacc3b0d9b28025596d7021763e48dabb7b690b935e1b5c89eb0064f472bdeec6550116063578a093b5db97f915f65b60319c1e5e32f620ee3846acd25cf9ae348a9a48d4852133d5d3e1a1aaa0cf37a77ef2c60ebca5b6eff3e7fa2bd0393b8eba5f1bb606a7c0b48a0f6950b651a09647608401b505af9166f9af7ff48d6917e16c7d20c4360faca0d0b31a82418dee7b9451a9d9",
+          "prime_product_bits": 6161,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^1"
+        },
+        {
+          "mask": 58,
+          "rows": 12548,
+          "columns": 3785,
+          "nonzero_columns": 3767,
+          "nonzeros": 30744,
+          "projection_hash": "0837a508c3726043c64b4607432f929631828b57b98c4c2786231e90612a4a96",
+          "target_rational_rank": 3552,
+          "rank_mod_two": 3547,
+          "first_bockstein_rank": 5,
+          "rank_gap": 5,
+          "maximum_squared_column_norm": 19,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692737",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692671",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692653",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692601",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692581",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692527",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692463",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692427",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692419",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692409",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692343",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692331",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692283",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692211",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692199",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692139",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692107",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692103",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692097",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692089",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692083",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692043",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692031",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692029",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213692007",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691993",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691929",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691869",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691837",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691819",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691767",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691581",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691579",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691569",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691567",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691551",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691413",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691401",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691357",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691347",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691287",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691257",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691041",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213691033",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690937",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690907",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690883",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690873",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690871",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690847",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690813",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690801",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690799",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690769",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690657",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690627",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690621",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690591",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690589",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690579",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690543",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690511",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690487",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690327",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690283",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690159",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690153",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690117",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690087",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690057",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690039",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690021",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213690019",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689949",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689937",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689877",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689833",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689811",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689767",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689733",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689709",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689601",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689593",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689559",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689521",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689509",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689493",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689487",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689479",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689427",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689377",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689353",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689293",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689229",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689223",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689203",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689163",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689157",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689133",
+              "rank": 3552
+            },
+            {
+              "prime": "2305843009213689089",
+              "rank": 3552
+            }
+          ],
+          "prime_count": 124,
+          "prime_product_hex": "0xffffffffffd8c510000002f97e93acffd9e9354e779055ec255cfeee65f594aa967bae662076692b4fba595095776dc27b8535fffe4b55cd7ab83aae62d7eb7575defbb87f452f5309b652a1ab31e046116ad662f5deedf4e86b43b7831526d9550ee9f78af6b3625e3bfb118ce5e76fc8980548bb07ba5db3b7e8e8cf2a0329beb332a2a86fce6a8e2d9a5b0a98d62ac1e04fa185b18f3cbe28e73f28a7146eba8b668da477e6472dc778ae8a231092a03378197e5c7fa2f14e98cf4bb13aa8dfb5b3df0e6e4d8e28f04ceb296adf321d557d1a72904f57fc3c8fc13961e4f59c9ec849b443888ef7784bc73aa36e71ddf2d7584d05c00c25d4dfe84700a426c5cbf4d3b0cb9a0268abd8dc7456bb63e19d356097937a245e9a317927cf13dcafc7a71cd5c9eb63ee74807dfb437a1fc56baea5fb5065b9d079eae87e94def2baf7c88b8cecd95088b4941f474c1fa9a8cc5bd4ed1af4bd5641e20fdba6799753bd1a0c886b091bbf785da6d9683765269dba0353e59ef6c1d2f97dec876b471a2ef314d0067b0f52dc38e15cb12dbad706cf6440cba58d2a594ed521cac8841954b8f89186f8a5b6819d12613150eca742849ed886a7022a562ffda3f6a14761f131c182c85b59ec5291948989572208f8a3884c08442d184af126e0e317e31c4b4e62b6ef6cde818a44556d94ab0d45ba454365fc1a76a0271349743384fd51f8d9e4a60be5e8b1d98305e05335822405285f7ec4f3074d5486c7b8087bbdf13ea262d3b213e9d78ce29e905dfc9835d1ff52e752170128db1b82e68553c4ba6426d4714b0bf34c8fe96d3b0bd45908dd13cf8004f9b01c4f509af4a05374b4b8850eab1a378150ca6447a8d9af84653e9c95fe17791854e1055723d4065c2e60123771a6d8acdc51b8ade150b0deb6f8956e85c0bca30fb69902a850a9b740168969e4c07f90273e33dac269cd747601ef34b483c9dc0b5808fa2eed14ee0842cb3c169ae6bde534edcf06f55037807fa22f90a09db2e9d875e17084a51b0bdb303b2af3b4d4586e5d04bf71005d4796484b21b30e9344bf752588e4c5755b75c98b51c9a00f7c3894640f929119d9442aa984de102bbda87f7c376d526ec37904f8fbf8d1734b39beb13e4390f56ebe504fa6e20f14d157e1e4f145541273a1b52800a06f27cc9d822eb902d88b29c1b7e49c003701b9d164a40d9694e348a9baaa684deca4b51dea45cbbea7eb8a3977dab8e650f74710338b487a4497ca1b428570e4bf76d52345cab88993f6c04e51831d86c1f4b3e39e7c2b96d3f2b5d91ae564b22ced190eeb6e73e05343def",
+          "prime_product_bits": 7564,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^5"
+        },
+        {
+          "mask": 59,
+          "rows": 12603,
+          "columns": 3785,
+          "nonzero_columns": 3770,
+          "nonzeros": 30854,
+          "projection_hash": "83a01ebea80385d11ab8952d854ddc09e7f9c509b710f4c06a33ad2afec25bf9",
+          "target_rational_rank": 3571,
+          "rank_mod_two": 3564,
+          "first_bockstein_rank": 7,
+          "rank_gap": 7,
+          "maximum_squared_column_norm": 19,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692737",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692671",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692653",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692601",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692581",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692527",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692463",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692427",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692419",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692409",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692343",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692331",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692283",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692211",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692199",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692139",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692107",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692103",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692097",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692089",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692083",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692043",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692031",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692029",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213692007",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691993",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691929",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691869",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691837",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691819",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691767",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691581",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691579",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691569",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691567",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691551",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691413",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691401",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691357",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691347",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691287",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691257",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691041",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213691033",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690937",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690907",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690883",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690873",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690871",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690847",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690813",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690801",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690799",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690769",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690657",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690627",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690621",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690591",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690589",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690579",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690543",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690511",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690487",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690327",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690283",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690159",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690153",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690117",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690087",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690057",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690039",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690021",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213690019",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689949",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689937",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689877",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689833",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689811",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689767",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689733",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689709",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689601",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689593",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689559",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689521",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689509",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689493",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689487",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689479",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689427",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689377",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689353",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689293",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689229",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689223",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689203",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689163",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689157",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689133",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689089",
+              "rank": 3571
+            },
+            {
+              "prime": "2305843009213689067",
+              "rank": 3571
+            }
+          ],
+          "prime_count": 125,
+          "prime_product_hex": "0x1ffffffffffb058d000000621c6a1b4ffb0463cd76fddc9455956d8e47871f705b42daad2ce0f1fbe3e068609f2a163ff086580bdfd7fa9aaa67997658ceb377f1441dd2edb89d88293d72bfa23630806e1693d49fff44b441607a19396ff28423ceb0769ec085483630eec37c0fb8ddca851ac37857af3cf99a28442f6e025ed37703db385f9e396050797343d5437a4c099eb2fa4774020a7597bbbfe2a07534ccc49ef85617db3fad02426d5735d5c4b4947140b05209680714a1ae66970e7b2ccadc84e9713ceedcba3f065f7233123eec45f9fd02a13f3b584c0b7232ae83f0b6ed3d826e4c3d0b230c1aa79db601405a391906353149d364074a266cb6f1a4e34796dd1b63f02eaf9ef169077525027ff417eca6545ef7ba02c3d02a7a61a6e7fef8433b464106b6d4395fb55ec39591d920d0ac750a4398187aad792730ef729a02db4d6056e0c39bc55ab634974b129f1e0b2e25a733e6318814ae43f348eaa7315f2c82907cfa8db8b838700100a66dd8d3a6b4f87bddafd0ee92c854730e8025eebb9b48770af69febea4f3697758ec72bd6688057b5d2363b4a5768fd4e213fac9e5d59229471579f77f9fd9e10db3903a10c9cfe1ae5f30df7d70d9c633e6f25844b4e0fe09df7f9fff9bd8b1d0c8fc55c107280d652025f727bd57dbeeb09771ce0e73286dde6fa2383c54d568466db7f0b489933501ae17701a09c129639a8c6dfe4a5584c3b00456688ef75ea5c0c9207933f2a9af2cf95212037f341a0950300cac0f4823cf5c264e359e4318b753e6524ee4a784b5fb157fa488c01c001e885b0790957ca5670e72afa61223745983fe0eee38d7fa37ce26119f3c3de0ac4f3a5164ba1f9d60f55e69c4829bde0b5c316da26814e90c37fdbf11a7841577e14ac4e9b1a07657b93b37604b157f90dbaec7b5d220e3a81ac10ad117771618a2816dba4d14b0b0ff1b8ccc086c9a2f9ebae817866af12beb94a250b6610d2fab41a167c1e8709a470351214c62b00609f59b93919652f5d9b21f9ff2f523be9814d7e7295fb84881036fdcd704cea6ddb61e66cfaa357787fd20853f434cd4b97b0e8330cd5870aa5d780ebf808d0efc695f2fb2b258317a3c826735176691e96651b54b604d3b51438f3fde0d58f268864987c51267ee2439c7ab0f51026c9cc7cdddbf1e1b7489deba3116c3031ef5c69b01f3fb1992eada06fc8de02a2a88b07dcc790628332095d6fc9227a02888a4e45f5c726284a03f11bd782a8fdb37b40780c661a17abedbdf704dd0a6c64bb000308dd18ffc811b04bebf0e77bdf359b53a2235288c219522b7d56d86b21e2e65",
+          "prime_product_bits": 7625,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^7"
+        },
+        {
+          "mask": 62,
+          "rows": 12656,
+          "columns": 3785,
+          "nonzero_columns": 3785,
+          "nonzeros": 30963,
+          "projection_hash": "566d7e10b867143fb178406f37ae3fb4100d438e5162c8b9e12a01af9ac3359d",
+          "target_rational_rank": 3586,
+          "rank_mod_two": 3579,
+          "first_bockstein_rank": 7,
+          "rank_gap": 7,
+          "maximum_squared_column_norm": 19,
+          "prime_tests": [
+            {
+              "prime": "2305843009213693951",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693921",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693907",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693723",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693693",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693669",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693613",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693561",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693549",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693487",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693421",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693373",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693277",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693193",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693153",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693133",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693123",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693109",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693093",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213693013",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692967",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692937",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692799",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692757",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692737",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692671",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692653",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692601",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692581",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692527",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692463",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692427",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692419",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692409",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692343",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692331",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692283",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692211",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692199",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692139",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692107",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692103",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692097",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692089",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692083",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692043",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692031",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692029",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213692007",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691993",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691929",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691869",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691837",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691819",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691767",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691581",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691579",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691569",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691567",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691551",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691413",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691401",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691357",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691347",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691287",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691257",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691041",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213691033",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690937",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690907",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690883",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690873",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690871",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690847",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690813",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690801",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690799",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690769",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690657",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690627",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690621",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690591",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690589",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690579",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690543",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690511",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690487",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690327",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690283",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690159",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690153",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690117",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690087",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690057",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690039",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690021",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213690019",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689949",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689937",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689877",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689833",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689811",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689767",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689733",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689709",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689601",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689593",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689559",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689521",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689509",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689493",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689487",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689479",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689427",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689377",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689353",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689293",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689229",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689223",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689203",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689163",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689157",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689133",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689089",
+              "rank": 3586
+            },
+            {
+              "prime": "2305843009213689067",
+              "rank": 3586
+            }
+          ],
+          "prime_count": 125,
+          "prime_product_hex": "0x1ffffffffffb058d000000621c6a1b4ffb0463cd76fddc9455956d8e47871f705b42daad2ce0f1fbe3e068609f2a163ff086580bdfd7fa9aaa67997658ceb377f1441dd2edb89d88293d72bfa23630806e1693d49fff44b441607a19396ff28423ceb0769ec085483630eec37c0fb8ddca851ac37857af3cf99a28442f6e025ed37703db385f9e396050797343d5437a4c099eb2fa4774020a7597bbbfe2a07534ccc49ef85617db3fad02426d5735d5c4b4947140b05209680714a1ae66970e7b2ccadc84e9713ceedcba3f065f7233123eec45f9fd02a13f3b584c0b7232ae83f0b6ed3d826e4c3d0b230c1aa79db601405a391906353149d364074a266cb6f1a4e34796dd1b63f02eaf9ef169077525027ff417eca6545ef7ba02c3d02a7a61a6e7fef8433b464106b6d4395fb55ec39591d920d0ac750a4398187aad792730ef729a02db4d6056e0c39bc55ab634974b129f1e0b2e25a733e6318814ae43f348eaa7315f2c82907cfa8db8b838700100a66dd8d3a6b4f87bddafd0ee92c854730e8025eebb9b48770af69febea4f3697758ec72bd6688057b5d2363b4a5768fd4e213fac9e5d59229471579f77f9fd9e10db3903a10c9cfe1ae5f30df7d70d9c633e6f25844b4e0fe09df7f9fff9bd8b1d0c8fc55c107280d652025f727bd57dbeeb09771ce0e73286dde6fa2383c54d568466db7f0b489933501ae17701a09c129639a8c6dfe4a5584c3b00456688ef75ea5c0c9207933f2a9af2cf95212037f341a0950300cac0f4823cf5c264e359e4318b753e6524ee4a784b5fb157fa488c01c001e885b0790957ca5670e72afa61223745983fe0eee38d7fa37ce26119f3c3de0ac4f3a5164ba1f9d60f55e69c4829bde0b5c316da26814e90c37fdbf11a7841577e14ac4e9b1a07657b93b37604b157f90dbaec7b5d220e3a81ac10ad117771618a2816dba4d14b0b0ff1b8ccc086c9a2f9ebae817866af12beb94a250b6610d2fab41a167c1e8709a470351214c62b00609f59b93919652f5d9b21f9ff2f523be9814d7e7295fb84881036fdcd704cea6ddb61e66cfaa357787fd20853f434cd4b97b0e8330cd5870aa5d780ebf808d0efc695f2fb2b258317a3c826735176691e96651b54b604d3b51438f3fde0d58f268864987c51267ee2439c7ab0f51026c9cc7cdddbf1e1b7489deba3116c3031ef5c69b01f3fb1992eada06fc8de02a2a88b07dcc790628332095d6fc9227a02888a4e45f5c726284a03f11bd782a8fdb37b40780c661a17abedbdf704dd0a6c64bb000308dd18ffc811b04bebf0e77bdf359b53a2235288c219522b7d56d86b21e2e65",
+          "prime_product_bits": 7625,
+          "exact_squared_hadamard_coverage": true,
+          "rational_rank_certified": true,
+          "complete_two_primary_type": "(Z/2)^7"
+        }
+      ],
+      "triangle_consequences": [
+        {
+          "mask": 56,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [
+            [
+              0,
+              1,
+              8
+            ],
+            [
+              0,
+              2,
+              7
+            ],
+            [
+              0,
+              3,
+              6
+            ],
+            [
+              0,
+              4,
+              5
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              3,
+              5
+            ]
+          ],
+          "complete_two_primary_generators": [
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "generator_count": 1
+        },
+        {
+          "mask": 58,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [
+            [
+              0,
+              1,
+              8
+            ],
+            [
+              0,
+              2,
+              7
+            ]
+          ],
+          "complete_two_primary_generators": [
+            [
+              0,
+              3,
+              6
+            ],
+            [
+              0,
+              4,
+              5
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              3,
+              5
+            ],
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "generator_count": 5
+        },
+        {
+          "mask": 59,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [],
+          "complete_two_primary_generators": [
+            [
+              0,
+              1,
+              8
+            ],
+            [
+              0,
+              2,
+              7
+            ],
+            [
+              0,
+              3,
+              6
+            ],
+            [
+              0,
+              4,
+              5
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              3,
+              5
+            ],
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "generator_count": 7
+        },
+        {
+          "mask": 62,
+          "reason": "elementary 2-primary torsion injects into cokernel modulo two",
+          "integrally_zero_triangles": [],
+          "complete_two_primary_generators": [
+            [
+              0,
+              1,
+              8
+            ],
+            [
+              0,
+              2,
+              7
+            ],
+            [
+              0,
+              3,
+              6
+            ],
+            [
+              0,
+              4,
+              5
+            ],
+            [
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              3,
+              5
+            ],
+            [
+              2,
+              3,
+              4
+            ]
+          ],
+          "generator_count": 7
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 199.26987309998367
+}
