@@ -1,0 +1,6 @@
+[0.000000s] stage 1/5: validate committed identity and pinned inputs
+[0.140000s] stage 2/5: enumerate exact multiplicity profiles
+[0.312000s] stage 3/5: build rational transcendental certificate
+[0.906000s] stage 4/5: require every declared control
+[0.953000s] stage 5/5: write canonical result and receipt
+[1.000000s] PASS: finite EXP-006 certificate completed

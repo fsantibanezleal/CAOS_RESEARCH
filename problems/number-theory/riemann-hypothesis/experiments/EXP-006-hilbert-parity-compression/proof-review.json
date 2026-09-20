@@ -1,0 +1,35 @@
+{
+  "analytic_transfer_reviewed": true,
+  "canonical_commit": "0d736fa22ce7e833200381a32e8cc89f77c660e8",
+  "confirmed_conclusion": "For every fixed theta above the unique root theta_HP in (0.545884,0.545885), a positive proportion of zeros in (T,T+T^theta] are simple and critical; at theta=0.5459 the liminf proportion exceeds 0.0000168381638551244569880374399.",
+  "declaration_commit": "b1febcf8a6d5830218e1df386af1e8a92c3037be",
+  "exact_certificate_reviewed": true,
+  "finite_theorem": "(Q-S)(N-O) >= 2(N-S)^2 for every nonempty finite conjugation-invariant multiset in the Lamzouri kernel setting; coefficient 2 is sharp.",
+  "imported_inputs": [
+    "Lamzouri arXiv:2609.02882v2 Hilbert-space pair-kernel construction and arbitrary-parameter coefficient inequality",
+    "Wang arXiv:2609.07918v1 fixed-test short-interval pair theorem",
+    "Pearce-Crump arXiv:2609.15329v1 coefficient-uniform Selberg detector and certified rank-three profile",
+    "Confirmed EXP-005 local odd-multiplicity support theorem",
+    "Riemann-von Mangoldt formula"
+  ],
+  "novelty_scope": "Dated bounded primary-source, repository, exact-phrase, and web searches found no matching parity-compressed product or quadratic transfer; no absolute priority guarantee.",
+  "review_scope": "Source-interface re-derivation, universal finite proof, pointwise limit audit, exact rational certificate, independent 100-digit interval implementation, scalar barrier witness, equality controls, and regression tests; not external peer review or end-to-end formal verification.",
+  "reviewed_utc": "2026-09-20T03:36:16.169320Z",
+  "schema": "riemann-exp006-proof-review-v1",
+  "scientific_verdict": "confirmed",
+  "source_sha256": {
+    "adversarial_audit": "14d3f6e2e7aefdc890e4392926ba5c75e25a92ec6bc4564fbacd61151cfe4dd0",
+    "focused_test": "7cac00920201cb937a850996c8f5f542100c9449fc2d60452679c62e0b82f911",
+    "hypothesis": "673ccbe47618c43ec3519369e711e86068cdf59bce5137f5c97cc63273a77687",
+    "mathematical_proof": "0bf7030413b85e4541876884451aca0b010145de71f3c61fb8b45067e1c6b99b",
+    "result": "82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf",
+    "runner": "5e935429aabda9585d317c20fdd6cde25739b2c8729aa5f373057b6dfb34a6bf",
+    "verdict": "456d342ce08b8f1e9ed0091cd7a85e90e161dd52572790c0de2871dec09239b9"
+  },
+  "strengthening_history": "The original declared inequality Q(N-O)>=2(N-S)^2 passed, then was superseded during consistency review by retaining the simple-real term. Both earlier runs remain archived.",
+  "unquantified": [
+    "effective onset height",
+    "absolute novelty priority",
+    "external peer acceptance"
+  ]
+}
