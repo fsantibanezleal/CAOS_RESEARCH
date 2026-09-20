@@ -3,6 +3,29 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.70.000] - 2026-09-20
+
+### Added
+- Riemann EXP-005 localizes Pearce-Crump's optimized Selberg detector to every fixed
+  interval exponent `1/2 < theta < 1`. It proves an odd-critical lower density
+  `(theta-1/2)/(4 e C3)` and, with the exact EXP-004 parity identity and Wang's
+  short-interval calculation, the simple-critical bound
+  `max(0, c(theta), (c(theta)+(theta-1/2)/(2 e C3))/3)`.
+- Exact rational and directed-interval certificates place the unique new positivity
+  threshold in `(0.5459,0.546)`. At `theta = 0.546`, a fixed admissible mollifier gives
+  `S/N > 0.0000976239413345396825`; the optimized curve gives
+  `S/N > 0.0000994910410327771597`.
+- The `riemann-replay-v4` export binds the EXP-005 declaration, execution identity,
+  exact result, source hashes, proof review, strict localization margin, positive and
+  negative controls, and rejected boundary before presenting the result.
+- The primary arXiv v1 PDF and TeX archive are persisted with exact hashes. Manuscript
+  v0.05 is published at DOI `10.5281/zenodo.22851518`.
+
+### Boundaries
+- The result has no effective starting height, does not reach `theta = 1/2`, and does
+  not prove that all zeta zeros are simple or prove the Riemann Hypothesis. Automated
+  replay and publication remain separate from external peer review and formalization.
+
 ## [0.69.002] - 2026-09-18
 
 ### Added
