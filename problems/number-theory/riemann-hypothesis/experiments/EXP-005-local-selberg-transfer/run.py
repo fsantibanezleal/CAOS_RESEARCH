@@ -20,6 +20,12 @@ from fractions import Fraction
 from pathlib import Path
 
 
+if hasattr(sys, "set_int_max_str_digits"):
+    # Exact Taylor endpoints legitimately exceed Python's defensive decimal
+    # conversion cap.  The experiment has a separate 60-second run budget.
+    sys.set_int_max_str_digits(0)
+
+
 SCHEMA = "riemann-exp005-results-v1"
 THETA = Fraction(273, 500)
 MOLLIFIER_EXPONENT = Fraction(2299, 100000)
