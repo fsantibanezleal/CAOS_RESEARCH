@@ -2062,3 +2062,18 @@
   `1570bf3c3f48d6949cda18a32b1ba6ebd63dc9a674ce074d88c42926f284e5bf`.
 - Versions 0.01--0.03 remain immutable. The next mathematical gate is a
   uniform dual/upper-bound theorem for the remaining projected triangle rows.
+
+## 2026-09-20 - endpoint theorem round promoted and remotely verified
+
+- Research PR #321 merged the EXP-065/066 theorem and manuscript v0.04 into
+  `develop` at `b86efe89774fe7c07b32f0db85d82d57e66f7d64`. Promotion PR #322
+  merged to `main` at `0467d57e198ce946e2e50358d8a35588745593d4`.
+- The post-merge main CI run `35518161781` passed both test and guard jobs,
+  including the pipeline smoke, artifact contract, manuscript voice, content,
+  template and research-structure checks.
+- Management PR #674 promoted the Zenodo ledger/metadata state to `main` at
+  `741bffd695af29c2f8b65825c95ee620ba2e2ae8`; PR #675 promoted the public
+  verification receipt at `4d2500a192ca7884858d7a34310e89b53289148f`.
+  The management checkout remained on `develop`; no management work branch or
+  worktree was created. Existing Petersen publication/deposit state was
+  preserved and committed separately.
