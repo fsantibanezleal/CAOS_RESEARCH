@@ -180,6 +180,27 @@ The source's global percentage, detector construction and certified profile
 remain attributed prior work; the localized theorem and its parity combination
 are the scoped derived contribution.
 
+## Hilbert dimension and parity compression
+
+EXP-006 returns to the arbitrary-parameter coefficient inequality that was
+correctly classified above as prior work. Instead of relabeling that premise,
+it combines its optimized form
+
+$$Q\ge S+\frac{(N-S)^2}{r+k}$$
+
+with the new parity count $2(r+k)\le N-O$. The result is the sharp product
+
+$$
+(Q-S)(N-O)\ge2(N-S)^2.
+$$
+
+After Wang's pair limit and the EXP-005 odd-support curve, this product becomes
+a quadratic lower bound for the simple-critical proportion. The exact root is
+bracketed by $0.545884<\theta_{\rm HP}<0.545885$, and the bound is already
+positive at $\theta=0.5459$. The arbitrary-parameter premise is attributed;
+the parity-compressed product and short-interval consequence are the scoped
+deduction. See the [complete proof](09-hilbert-parity-compression.md).
+
 [Previous: statement](01-statement.md) | [Next: full proof](03-mechanism.md)
 
 

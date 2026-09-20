@@ -1,5 +1,28 @@
 # Riemann hypothesis: short-interval zero proportions
 
+[D+MV] EXP-006 strengthens the finite transfer by keeping Lamzouri's Hilbert
+dimension before scalar compression. For every conjugation-invariant finite
+multiset in the kernel setting,
+
+$$
+(Q-S)(N-O)\ge2(N-S)^2.
+$$
+
+Together with EXP-005, this gives the explicit short-interval term
+
+$$
+h_3(\theta)=\frac{3+k_3(\theta)-
+\sqrt{(1-k_3(\theta))(9-k_3(\theta)-8c(\theta))}}4.
+$$
+
+Its unique positivity threshold satisfies
+$0.545884<\theta_{\rm HP}<0.545885$. At the previously excluded exponent
+$\theta=0.5459$, the exact certificate proves
+$\liminf S/N>0.0000168381638551244569880374399$, while the EXP-005 linear
+term remains negative. The [complete proof](09-hilbert-parity-compression.md)
+and [confirmed verdict](../experiments/EXP-006-hilbert-parity-compression/verdict.md)
+state the attribution and limits. General RH remains open.
+
 [D+MV] EXP-005 supplies the first explicit interval-range improvement in this
 record. For every fixed $1/2<\theta<1$, it proves
 
@@ -97,6 +120,7 @@ did not locate an identical short-interval theorem; it does not guarantee priori
 6. [Complete odd-frame pressure theorem](06-odd-frame-pressure.md)
 7. [Complete parity density transfer and interval-range theorem](07-parity-density-transfer.md)
 8. [Explicit local Selberg transfer and numerical positivity threshold](08-local-selberg-transfer.md)
+9. [Hilbert dimension, parity compression, and the improved threshold](09-hilbert-parity-compression.md)
 
 The new certificate uses $p=1/12500$, $\epsilon=443239/10^9$, $k=2256$ and
 frame size $4513$. All 16,797 partition nodes were checked, with 8,351 energy-plus-pressure
@@ -120,6 +144,6 @@ peer review or mathematical community acceptance.
 
 Evidence labels: **[D]** derived with a persisted proof and refutation attempt;
 **[MV]** machine-verified finite assertion; **[C]** conjectural direction. This work
-establishes an explicit positivity threshold below $0.546$. It does not give
+establishes an explicit positivity threshold below $0.545885$. It does not give
 an effective height, global record, universal simplicity theorem, or solution
 of RH.

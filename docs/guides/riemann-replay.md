@@ -109,6 +109,29 @@ The exporter also requires the separate analytic localization proof review and
 binds its hypothesis to declaration commit `6fd59fec`. CPU arithmetic completed
 the canonical run in 0.313 seconds; no GPU workload was justified.
 
+## Reproduce Hilbert-parity compression
+
+EXP-006 combines the first Hilbert-subspace dimension with distinct odd support.
+Its canonical theorem is `(Q-S)(N-O)>=2(N-S)^2`; the exact certificate checks
+the frozen threshold point and root bracket without promoting the finite census
+to a universal proof.
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/run.py --output-dir tmp/riemann-exp006-replay --budget-seconds 120
+pytest tests/test_riemann_hilbert_parity.py tests/test_riemann_local_selberg.py tests/test_riemann_parity.py
+```
+
+The run checks 18,479 atom profiles, equality and empty-dimension branches,
+directed rational enclosures for the threshold, the scalar zero-simple witness,
+and a separate 100-digit interval replay. At theta=0.5459 the strengthened lower
+bound exceeds `0.0000168381638551244569880374399`, and the unique root lies in
+`(0.545884,0.545885)`. The canonical result SHA-256 is
+`82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf`.
+
+The exporter requires the execution receipt and proof-review bindings for the
+hypothesis, runner, focused tests, proof, audit, result and verdict. The original
+declared inequality and both superseded runs remain preserved.
+
 ## Bake and inspect the public replay
 
 After committing the source artifacts, run `python -m researchlab.pipeline all`. The Riemann

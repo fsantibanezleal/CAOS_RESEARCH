@@ -1,5 +1,29 @@
 # Riemann hypothesis history
 
+## 2026-09-20: EXP-006 confirmed a sharper threshold below 0.545885
+
+Declaration `b1febcf8a6d5830218e1df386af1e8a92c3037be` preceded all
+implementation and computation. The first exact run confirmed the declared
+product inequality. A consistency audit then retained the simple-real term in
+the attributed arbitrary-parameter Hilbert bound, strengthening the theorem to
+
+$$
+(Q-S)(N-O)\ge2(N-S)^2.
+$$
+
+The amended runner was committed before the canonical run at
+`0d736fa22ce7e833200381a32e8cc89f77c660e8`. Its 18,479-profile census,
+directed rational threshold calculation, scalar barrier witness and independent
+100-digit interval replay all passed. The canonical result hash is
+`82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf`.
+
+The short-interval consequence has a unique positivity root in
+$(0.545884,0.545885)$. At $\theta=0.5459$, where the EXP-005 linear term remains
+negative, it proves a simple-critical lower proportion above
+$0.0000168381638551244569880374399$. The result is asymptotic, recent-preprint
+dependent, and internally reviewed. It does not solve RH or establish external
+priority or peer acceptance.
+
 ## 2026-09-20: EXP-005 manuscript v0.05 published and verified
 
 The 24-page manuscript integrates the explicit local Selberg theorem, its proof,

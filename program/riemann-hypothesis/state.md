@@ -1,68 +1,66 @@
 # Riemann hypothesis state
 
-Updated: 2026-09-19. Release: **0.70.000**, released and live-verified from main commit `159ec22a6200938d6d8da1bba395f81014ca70e5` (tag `v0.70.000`).
-Current research round: **EXP-005 confirmed; explicit local Selberg transfer and threshold below 0.546**.
+Updated: 2026-09-20. Public release: **0.70.000**, released and live-verified
+from main commit `159ec22a6200938d6d8da1bba395f81014ca70e5` (tag
+`v0.70.000`). Current research round: **EXP-006 confirmed; Hilbert-parity
+compression and explicit threshold below 0.545885**.
 
-EXP-005 responds to Pearce-Crump arXiv:2609.15329v1, which appeared after the
-prior source cutoff. Its coefficient-uniform arbitrary-subinterval estimate
-localizes the sign-preserving Selberg detector to every fixed exponent above one
-half. The confirmed theorem gives odd-critical liminf at least
-$(\theta-1/2)/(4eC_3)$. Combined with EXP-004, exact controls place the new
-simple-critical positivity threshold in $(0.5459,0.546)$. At theta=0.546, a
-fixed legal mollifier proves simple-critical proportion above
-$0.00009762394133453968$. The canonical result hash is
-`3f0ca476c0e2fe688e4e4f43fc11861d9491b3066d067e46bf88d1a441c696a5`.
+EXP-006 proves the sharp finite product
 
-EXP-004 has a separate confirmed verdict and proof-review record. It proves a
-qualitative extension of the simple-critical positivity range below Wang's
-cosine root: for one fixed classical density constant $\kappa>0$, a fixed
-$\theta_1<\theta_0$ has $\liminf S/N\ge\kappa/3$ for every fixed
-$\theta\in[\theta_1,1)$. A distinct-count inequality gives an analogous
-above-one-half consequence below the root. No numerical $\kappa$, $\theta_1$,
-effective height, or new decimal exponent is claimed.
+$$
+(Q-S)(N-O)\ge2(N-S)^2,
+$$
 
-[D+MV] [EXP-003](../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/verdict.md) confirms a stronger odd-frame theorem throughout
-the complete positive short-interval cosine curve and a new pressure certificate.
-At theta=3/4, its bound is 0.419087888170111727959091183775, with distinct companion
-0.709543944085055863979545591887. The Wang baseline is 0.419075012975424333734553610698;
-the first published EXP-002 example is 0.419076828425303996736665787527.
+where `N` counts copies in a conjugation-invariant finite multiset, `S` counts
+simple real support points, `O` counts distinct odd-multiplicity real support,
+and `Q` is Lamzouri's squared-kernel pair sum. The proof attributes the known
+arbitrary-parameter Hilbert estimate, retains its simple-real term, and combines
+the first-subspace dimension with parity.
 
-The new certificate has 16,797 nodes, 8,351 energy-plus-pressure leaves, 48 pressure
-leaves and zero unresolved cells. Construction at 160 bits and complete sinc-Taylor
-replay at 256 bits passed. Stage A also replayed all 48,761 earlier nodes and checked
-328 incidence/boundary cases. The full repository suite passed **288 tests** after
-the new committed-source export gates. Shared Arb/geometry and external analytic
-premises remain explicit; this is not end-to-end Lean verification or peer review.
+With Wang's fixed-test short-interval pair theorem and the confirmed EXP-005
+odd-support curve, the theorem gives
 
-The theorem, separate-stage verdict, source audit, scientific code, candidates and
-canonical results are committed and pushed in the pressure work branch. Research
-[PR #266](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/266) merged to develop
-at `65980d33f40c291c86a384420afa888b53abbea0`; release PR [#267](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/267), develop synchronization [#268](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/268), live receipt [#269](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/269), and main promotion [#270](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/270) are merged.
-The EXP-005 manuscript is published as v0.05 at [10.5281/zenodo.22851518](https://doi.org/10.5281/zenodo.22851518).
-The public replay release is live-verified in
-[release-0.70.000](release-0.70.000/README.md). The v0.01 record remains immutable
-at DOI 10.5281/zenodo.22727389. The v0.05 public download matches the reviewed
-24-page PDF at SHA-256 `bcfefac4b138d2b41c5fe232c64590e3b6f0c309455d40e01451d9251c1e8acc`.
+$$
+\liminf S/N\ge\max\left\{0,c(\theta),
+\frac{c(\theta)+2k_3(\theta)}3,
+h_3(\theta)\right\},
+$$
 
-The user's latest direction broadened the investigation beyond constant tuning.
-Three primary-source dossiers now cover classical odd/critical zero counts and
-multiplicity, spectral negative-mass/optimization witnesses, and alternative RH
-reformulations. Commit be5aac4 preserves the cross-area review and verified archive.
-EXP-004 was declared and pushed in e03413b before implementation or computation.
-Its finite parity certificates, source conventions, seed packing and legal support
-limits, complete proof, exact runner, final proof review and verdict are confirmed.
-EXP-005 is confirmed in `5132beed` after a source-bound exact certificate and
-term-by-term analytic audit. No further computational family is declared.
+$$
+h_3(\theta)=\frac{3+k_3(\theta)-
+\sqrt{(1-k_3(\theta))(9-k_3(\theta)-8c(\theta))}}4.
+$$
 
-EXP-003 does not lower the positivity exponent or solve RH. EXP-004 confirms a
-qualitative extension below the zero of Wang's cosine curve. EXP-005 replaces
-the unspecified density for $\theta>1/2$ by an explicit curve and proves the
-decimal threshold bracket above. The result has no effective onset height.
-General RH remains open.
+The exact certificate proves a unique positivity root in
+`(0.545884,0.545885)`. At theta=0.5459 the earlier linear term is negative,
+while `h3` exceeds `0.0000168381638551244569880374399`. The canonical result
+SHA-256 is `82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf`.
+It was executed from clean commit
+`0d736fa22ce7e833200381a32e8cc89f77c660e8` after the strengthening was
+committed. The 18,479-profile census, exact directed intervals, scalar barrier
+witness, and independent 100-digit replay passed.
 
-The first release closure is recorded in [its live receipt](release-0.64.000/live-verification.json):
-public PRs #263/#264 merged, main 08660dc, tag v0.64.000, successful Pages run
-34706614866, 13 exact live-file comparisons and eight passing live UI scenarios.
-The expanded release closure is recorded in [the v0.65 live receipt](release-0.65.000/live-verification.json): CI and Pages runs 34718338752, 34718338730, 34719132932, and 34719132914 passed; deployed assets and data hashes matched; eight EN/ES light/dark desktop/phone scenarios visited all six research tabs, with 48 tab visits, 288 screenshots, and zero failures. Private coordination PRs #631/#632/#635/#636 are merged; private main/develop now contain the synchronized v0.65 records. Unrelated original worktrees remain preserved.
+The declaration commit is
+`b1febcf8a6d5830218e1df386af1e8a92c3037be`. The original broad-bracket and
+weaker-transfer runs remain preserved. The proof, audit, verdict and source
+bindings are committed and pushed on the scoped research branch. Replay v5,
+manuscript v0.06, publication, promotion, and live release verification remain
+separate delivery gates.
 
-The EXP-005 release closure is recorded in [the v0.70 live receipt](release-0.70.000/live-verification.json): research PR #309, release PR #310 and promotion PR #311 are merged; main CI run 35484332573 and Pages run 35484332614 passed; production byte-matched the release root, three hashed assets and six data files. Eight EN/ES light/dark desktop/phone scenarios visited all six research tabs, with 48 tab visits, 304 screenshots, and zero failures. Private archive PRs #665 and #667 are merged through private main. The Riemann Hypothesis remains open.
+EXP-005 remains the analytic seed: for every fixed `1/2<theta<1`, it gives odd
+critical support density at least `(theta-1/2)/(4eC3)`. EXP-004 provides the
+linear parity transfer, EXP-003 the pressure improvement at theta=3/4, and
+EXP-002 the original compact stability certificate. The detailed history and
+immutable prior artifacts remain in their experiment and release directories.
+
+The latest completed public release is recorded in
+[release-0.70.000](release-0.70.000/README.md). It includes manuscript v0.05 at
+[10.5281/zenodo.22851518](https://doi.org/10.5281/zenodo.22851518), merged
+research PR #309, release PR #310, promotion PR #311, successful CI and Pages,
+and eight live EN/ES light/dark desktop/phone scenarios. That release stays
+immutable while EXP-006 advances through its own publication and release.
+
+The result is asymptotic for each fixed exponent and has no effective starting
+height. The imported 2026 preprints have been source-audited, but the work has
+not received external peer review or an end-to-end formal proof. The Riemann
+hypothesis remains open.

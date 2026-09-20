@@ -92,3 +92,23 @@ Manuscript v0.05 is published at DOI 10.5281/zenodo.22851518 after a clean
 three-pass build, full 24-page render review and exact public-byte verification.
 The remaining delivery work is the public replay, scoped promotion and live
 release verification; none changes the open status of RH.
+
+## Confirmed Hilbert-parity compression
+
+EXP-006 was declared at `b1febcf8` before implementation. The first run passed
+the declared weaker product. A subsequent consistency audit recovered the
+simple-real contribution in the attributed arbitrary-parameter Hilbert bound;
+the amended runner and tests were committed before a new canonical run. The
+confirmed theorem is
+
+$$
+(Q-S)(N-O)\ge2(N-S)^2.
+$$
+
+The short-interval transfer has a unique positivity root in
+$(0.545884,0.545885)$ and proves a simple-critical lower proportion above
+$0.0000168381638551244569880374399$ at theta=0.5459. The proof, exact
+certificate, scalar barrier witness, independent interval replay, audit and
+proof-review bindings are committed. Manuscript v0.06, replay v5, publication,
+promotion and live verification are the remaining delivery gates. They do not
+change the open status of RH.
