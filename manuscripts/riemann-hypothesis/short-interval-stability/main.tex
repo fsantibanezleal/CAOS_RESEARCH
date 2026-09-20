@@ -9,7 +9,7 @@
 \usepackage{orcidlink,fancyhdr}
 \hypersetup{
   pdftitle={Simple critical zeros in short intervals: stability, parity, localization, Hilbert compression, and spectral defect},
-  pdfauthor={Felipe SantibÃ¡Ã±ez-Leal},
+  pdfauthor={Felipe Santibanez-Leal},
   pdfsubject={Short-interval simple critical zeros, Hilbert dimension, spectral defect, parity compression, local Selberg detectors, and exact certificates},
   pdfkeywords={Riemann zeta function, simple zeros, short intervals, Hilbert space, spectral defect, parity, pair correlation, interval arithmetic}
 }
@@ -32,7 +32,7 @@
 \newcommand{\doctype}{Preprint}
 \newcommand{\docversion}{v0.07}
 \newcommand{\docdate}{20 September 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.PENDING}
+\newcommand{\versiondoi}{10.5281/zenodo.22860012}
 \newcommand{\conceptdoi}{10.5281/zenodo.22727388}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\headerblock}{%
@@ -74,52 +74,54 @@ defect--parity inequality
 \[
  (Q-S-D(G))(N-O)\ge 2(N-S)^2.
 \]
-It retains the parameterized spectral term in the attributed rank--trace
-argument and couples that term and the first Hilbert dimension to odd support.
-Combining the inequality with Wang's short-interval pair theorem, the localized
-rank-three Selberg detector, and a pressure-frame estimate gives, for every
-fixed $\theta$ at which $h_3(\theta)>0$, a new term $H(\theta)$ satisfying
+We also prove that Pearce-Crump's vector-profile Selberg detector localizes to
+every fixed finite rank. Applying this rank-independent transfer to the
+source-certified six-square constant $C_6$ and then using the Hilbert--parity
+product gives
 \[
  \liminf\frac{N_0^s(T,T^\theta)}{N(T,T^\theta)}
- \ge\max\left\{0,c(\theta),\frac{c(\theta)+2k_3(\theta)}3,
- H(\theta)\right\},\qquad H(\theta)>h_3(\theta),
+ \ge\max\left\{0,c(\theta),\frac{c(\theta)+2k_6(\theta)}3,
+ h_6(\theta)\right\},
 \]
-where $k_3(\theta)=(\theta-1/2)/(4eC_3)$ and
+where $k_6(\theta)=(\theta-1/2)/(4eC_6)$ and
 \[
- h_3(\theta)=\frac{3+k_3(\theta)-
- \sqrt{(1-k_3(\theta))(9-k_3(\theta)-8c(\theta))}}4.
+ h_6(\theta)=\frac{3+k_6(\theta)-
+ \sqrt{(1-k_6(\theta))(9-k_6(\theta)-8c(\theta))}}4.
 \]
-Exact rational enclosures retain the positivity threshold between $0.545884$
-and $0.545885$. At $\theta=0.5459$, the correlated certificate proves
-$H-h_3>1.3732525985\ldots\times10^{-70}$. This is a strict full-curve
-improvement, but it does not justify another printed decimal for the
-near-threshold proportion. The coefficient two in the finite theorem is
-sharp. The result is asymptotic and depends
-on recent attributed preprints. No global percentage record, effective
-starting height, external peer review, or solution of the Riemann hypothesis
-is claimed.
+Exact rational enclosures place the unique positivity onset in
+$(0.5458837,0.5458838)$. At $\theta=0.545884$, where the rank-three term is
+negative, $h_6>2.5541123454\ldots\times10^{-7}$; at $\theta=0.5459$,
+$h_6>0.0000177645181613023236$. A radius-optimized pressure transfer further
+gives a spectral term $H_6>h_6$ throughout the positive curve. The finite
+coefficient two is sharp. The six-square profile and constant are attributed
+to the source; its coefficient matrix is not printed and is not independently
+reconstructed here. The results are asymptotic and depend on recent preprints.
+No global percentage record, effective starting height, external peer review,
+or solution of the Riemann hypothesis is claimed.
 \end{abstract}
 
 \section*{Summary of results}
 
-The central result is a sharp finite compression that retains both the
-simple-real Gram spectral defect and Lamzouri's first Hilbert-subspace
-dimension, then uses parity to compare the dimension with distinct odd
-support. Its short-interval transfer strictly raises the complete positive
-EXP-006 curve. The explicit positivity threshold remains
-$(0.545884,0.545885)$.
+The central finite result retains both the simple-real Gram spectral defect
+and Lamzouri's first Hilbert-subspace dimension, then uses parity to compare
+the dimension with distinct odd support. The new analytic result shows that
+the local Selberg transfer is valid for every fixed finite-rank vector profile.
+Using the smaller source-certified six-square constant moves the explicit
+positivity onset from the rank-three interval $(0.5458846,0.5458847)$ to
+$(0.5458837,0.5458838)$.
 
-The localized Selberg detector remains the odd-support input. Further results
-are the direct finite stability transfer, the odd-frame pressure theorem, its
-stronger consequence throughout the positive short-interval curve, an
-odd-frame bound from the compact finite certificate, and a certified
-two-variable pressure bound. The earlier classical parity theorem remains a
-separate weaker-input qualitative result.
+The spectral-defect transfer remains a secondary strict improvement of the
+complete positive curve. Its rational radius ratio $11/5$ gives a larger
+correlated certificate than the earlier transparent choice $4$. Further
+results are the direct finite stability transfer, the odd-frame pressure
+theorem, its stronger consequence throughout the positive short-interval
+curve, and a certified two-variable pressure bound. The earlier classical
+parity theorem remains a separate weaker-input qualitative result.
 
 \begin{quote}\small
 \textbf{Verification.} For the pressure bounds, parity deduction, and local
 Selberg, Hilbert--parity, and defect--parity transfers (computations EXP-003
-through EXP-007~\cite{RecordIII,RecordIV,RecordV,RecordVI,RecordVII}), the
+through EXP-008~\cite{RecordIII,RecordIV,RecordV,RecordVI,RecordVII,RecordVIII}), the
 verification consists of exact finite checks, complete 256-bit replays of
 the interval certificates, checks of the imported statements against their
 primary sources, and independent step-by-step checks of the proofs,
@@ -134,9 +136,11 @@ Interval-range quantity & Certified value\\
 \midrule
 Wang cosine positivity threshold & $0.550193964744154\ldots$\\
 Localized Selberg--parity threshold & $(0.5459,0.546)$\\
-Hilbert--parity positivity threshold & $(0.545884,0.545885)$\\
-Simple-critical lower bound at $\theta=0.5459$ & $>0.0000168381638551$\\
-Defect--parity gain at $\theta=0.5459$ & $>1.3732525985\times10^{-70}$\\
+Rank-three Hilbert--parity onset & $(0.5458846,0.5458847)$\\
+Rank-six Hilbert--parity onset & $(0.5458837,0.5458838)$\\
+Rank-six lower bound at $\theta=0.545884$ & $>2.5541123454\times10^{-7}$\\
+Rank-six lower bound at $\theta=0.5459$ & $>0.0000177645181613$\\
+Optimized spectral gain at $\theta=0.5459$ & $>1.7766622541\times10^{-68}$\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -222,97 +226,103 @@ deduction from the stated primary analytic inputs. Exact finite checks
 verify its algebra; they do not replace those inputs or prove all-height
 statements by enumeration.
 
-\begin{theorem}[Explicit local Selberg transfer, D+MV]
+\begin{theorem}[Finite-rank local Selberg transfer, D+MV]
 \label{thm:localselberg}
-Let
-\[
-C_3=C[q_3]\in
-0.6567752140190419405677628751089899133\pm10^{-17}
-\]
-be the certified rank-three diagonal constant of Pearce-Crump's detector.
-For every fixed $1/2<\theta<1$,
+Let $q$ be any fixed finite-rank admissible vector profile covered by
+Pearce-Crump's vector-profile theorem, with diagonal constant $C[q]$. For every
+fixed $1/2<\theta<1$,
 \begin{equation}\label{eq:localodd}
  \liminf_{T\to\infty}
  \frac{N_{\rm odd}(T,T^\theta)}{N(T,T^\theta)}
- \ge\frac{\theta-1/2}{4eC_3}.
+ \ge\frac{\theta-1/2}{4eC[q]}.
 \end{equation}
-Consequently,
+For the fully printed rank-three profile,
+\[
+ C_3\in0.6567752140190419405677628751089899133\pm10^{-17}.
+\]
+The source also states that a fixed ten-direction, six-square profile has
+\begin{equation}\label{eq:c6}
+ C_6\in0.6566338678379319741683641732\pm5.63\times10^{-18}.
+\end{equation}
+Its coefficient matrix is not printed, so \eqref{eq:c6} is an attributed
+source-certified input rather than an independently reconstructed certificate.
+With
+\[
+ k_6(\theta)=\frac{\theta-1/2}{4eC_6},
+\]
+one obtains
 \begin{equation}\label{eq:localsimple}
  \liminf_{T\to\infty}
  \frac{N_0^s(T,T^\theta)}{N(T,T^\theta)}
- \ge\max\left\{0,c(\theta),
- \frac{c(\theta)+(\theta-1/2)/(2eC_3)}3\right\}.
+ \ge\max\left\{0,c(\theta),\frac{c(\theta)+2k_6(\theta)}3\right\}.
 \end{equation}
-The unique zero of the third numerator in \eqref{eq:localsimple} lies in
-$(0.5459,0.546)$. At $\theta=0.546$, the fixed mollifier exponent
-$u=0.02299$ proves
-\begin{equation}\label{eq:localpoint}
- \liminf_{T\to\infty}
- \frac{N_0^s(T,T^{0.546})}{N(T,T^{0.546})}
- >0.0000976239413345396825264438351212564.
-\end{equation}
-The optimized limiting curve gives the stronger lower bound
-$0.0000994910410327$ at this exponent.
 \end{theorem}
 
-\begin{theorem}[Hilbert--parity compression, D+MV]
+\begin{theorem}[Rank-six Hilbert--parity compression, D+MV]
 \label{thm:hilbertparity}
-For every fixed $1/2<\theta<1$, put
+Put
 \[
- k_3(\theta)=\frac{\theta-1/2}{4eC_3},\qquad
- h_3(\theta)=\frac{3+k_3(\theta)-
- \sqrt{(1-k_3(\theta))(9-k_3(\theta)-8c(\theta))}}4.
+ h_6(\theta)=\frac{3+k_6(\theta)-
+ \sqrt{(1-k_6(\theta))(9-k_6(\theta)-8c(\theta))}}4.
 \]
 Then
 \begin{equation}\label{eq:hilbertsimple}
  \liminf_{T\to\infty}\frac{N_0^s(T,T^\theta)}{N(T,T^\theta)}
- \ge\max\left\{0,c(\theta),\frac{c(\theta)+2k_3(\theta)}3,
- h_3(\theta)\right\}.
+ \ge\max\left\{0,c(\theta),\frac{c(\theta)+2k_6(\theta)}3,
+ h_6(\theta)\right\}.
 \end{equation}
-The new term has a unique zero $\theta_{\rm HP}$ and
+The new term has a unique zero $\theta_6$ and
 \begin{equation}\label{eq:hproot}
- 0.545884<\theta_{\rm HP}<0.545885.
+ 0.5458837<\theta_6<0.5458838.
 \end{equation}
-At $\theta=0.5459$ the earlier linear term is negative, while
+For comparison, the corresponding rank-three root lies in
+$(0.5458846,0.5458847)$. At $\theta=0.545884$ the rank-three term is negative,
+while
+\begin{equation}\label{eq:hpedge}
+ h_6(0.545884)>2.5541123454645702\times10^{-7}.
+\end{equation}
+At $\theta=0.5459$,
 \begin{equation}\label{eq:hppoint}
  \liminf_{T\to\infty}\frac{N_0^s(T,T^{0.5459})}{N(T,T^{0.5459})}
- >0.0000168381638551244569880374399.
+ >0.0000177645181613023236390595079.
 \end{equation}
+The improvement over the rank-three term exceeds
+$9.2635430617773560\times10^{-7}$.
 \end{theorem}
 
 \begin{theorem}[Spectral-defect parity improvement, D+MV]
 \label{thm:defectparity}
-Fix $1/2<\theta<1$ with $h=h_3(\theta)>0$. In
-\eqref{eq:explicit}, take $R=4/h$ and write
+Fix $1/2<\theta<1$ with $h=h_6(\theta)>0$. In \eqref{eq:explicit}, take
+$R=11/(5h)$ and write
 \[
  d_\theta=(b/B)^2,\qquad
  \alpha_\theta=\frac{2d_\theta}{5},\qquad
- \beta_\theta=\frac{d_\theta h}{5},\qquad
- \kappa_\theta=k_3(\theta),\qquad q_\theta=2-c(\theta).
+ \beta_\theta=\frac{4d_\theta h}{11},\qquad
+ \kappa_\theta=k_6(\theta),\qquad q_\theta=2-c(\theta).
 \]
 Let
 \begin{equation}\label{eq:defectroot}
- H(\theta)=\frac{4-(1+\alpha_\theta)(1-\kappa_\theta)
+ H_6(\theta)=\frac{4-(1+\alpha_\theta)(1-\kappa_\theta)
  -\sqrt{[4-(1+\alpha_\theta)(1-\kappa_\theta)]^2
  -8[2-(1-\kappa_\theta)(q_\theta+\beta_\theta)]}}{4}.
 \end{equation}
 Then
 \begin{equation}\label{eq:defectsimple}
  \liminf_{T\to\infty}\frac{N_0^s(T,T^\theta)}{N(T,T^\theta)}
- \ge\max\left\{0,c(\theta),\frac{c(\theta)+2k_3(\theta)}3,
- H(\theta)\right\},
+ \ge\max\left\{0,c(\theta),\frac{c(\theta)+2k_6(\theta)}3,
+ H_6(\theta)\right\},
 \end{equation}
 and
 \begin{equation}\label{eq:defectstrict}
- H(\theta)-h_3(\theta)\ge
- \frac{(1-k_3(\theta))\beta_\theta}{4}>0.
+ H_6(\theta)-h_6(\theta)\ge
+ \frac{(1-k_6(\theta))(\alpha_\theta h_6(\theta)-\beta_\theta)}4>0.
 \end{equation}
 At $\theta=0.5459$, exact directed rational arithmetic proves
 \begin{equation}\label{eq:defectpoint}
- H(0.5459)-h_3(0.5459)>
- 1.3732525985593292701164661575215\times10^{-70}.
+ H_6(0.5459)-h_6(0.5459)>
+ 1.7766622541125682\times10^{-68}.
 \end{equation}
-The positivity onset remains the one in \eqref{eq:hproot}.
+The spectral correction does not change the onset in \eqref{eq:hproot}.
 \end{theorem}
 
 Theorem~\ref{thm:localselberg} refines the simple-critical range numerically
@@ -1265,18 +1275,19 @@ constant has not been evaluated.
 \section{Localizing the optimized Selberg detector}
 \label{sec:localselberg}
 
-Pearce-Crump~\cite{PearceCrump} constructs a positive-semidefinite sum of
-three squared mollifiers whose critical-line value is Hardy's real function
-times a nonnegative weight. Sign changes therefore detect distinct
-odd-multiplicity critical zeros. Write $\beta_U$ for the analytic half and
+Pearce-Crump~\cite{PearceCrump} constructs positive-semidefinite vector
+profiles whose sums of squared mollifiers equal Hardy's real function times a
+nonnegative weight on the critical line. Sign changes therefore detect
+distinct odd-multiplicity critical zeros. For a fixed admissible profile
+$q:[0,1]\to\mathbb R^J$, write $\beta_{q,U}$ for the analytic half and
 $U\asymp T^u$ for the mollifier length. The source normalization is
 \begin{equation}\label{eq:selbergnormalization}
- \aleph(s)Y_U(s)=2\operatorname{Re}\beta_U(s)
+ \aleph(s)Y_{q,U}(s)=2\operatorname{Re}\beta_{q,U}(s)
  \qquad (\operatorname{Re}s=1/2).
 \end{equation}
-For the rank-three profile, the diagonal quadratic form satisfies
+The vector-profile diagonal theorem gives
 \begin{equation}\label{eq:c3diagonal}
- S_C(1,U)\le\frac{C_3+o(1)}{\log U}.
+ S_q(1,U)\le\frac{C[q]+o(1)}{\log U}.
 \end{equation}
 The profile is first regularized by a fixed $\varepsilon>0$ so that the
 terminal coefficient needed by the horizontal Jensen estimate is nonzero.
@@ -1289,149 +1300,121 @@ Fix $1/2<\theta<1$, put $H=T^\theta$, and choose a fixed
 \end{equation}
 Bertrand's postulate supplies a prime $U$ with
 $T^u\le U\le2T^u$, hence $\log U=u\log T+O(1)$. Use the source's fixed
-analytic half on the dyadic block $[T,2T]$ and apply Littlewood's rectangle
-argument only on $[T,T+H]$. Since $H<T$ for all sufficiently large $T$,
-the shorter rectangle stays inside the same block.
+analytic vector on the dyadic block $[T,2T]$ and apply Littlewood's rectangle
+argument only on $[T,T+H]$.
 
-Put $x=1-2\delta\asymp1/\log T$. The horizontal increment bound in the
-source is
+The horizontal increment bound applies componentwise. For fixed $J$, summing
+the finitely many terms changes only a profile-dependent constant, so it is
 \[
- O\!\left(U\log(2T)\{\log^2(2T)+\eta_U+1\}\right),
+ O_q\!\left(U\log(2T)\{\log^2(2T)+\eta_U+1\}\right)=o(H)
 \]
-where $\eta_U=O_\varepsilon(1)$ for fixed regularization. This is $o(H)$
-under \eqref{eq:localurange}. The auxiliary zeta and mollifier increments
-are $O(\log T)$ and $O(U)$. On the right auxiliary edge, the principal
-logarithms have absolutely convergent Dirichlet expansions with no constant
-term. Termwise integration therefore gives a uniform $O(1)$ contribution.
-The short rectangle inequality is consequently
+under \eqref{eq:localurange}. The auxiliary zeta and mollifier increments are
+also finite componentwise sums. On the right auxiliary edge, absolute
+convergence gives $O_q(1)$. Consequently
 \begin{equation}\label{eq:shortrectangle}
  \frac{\pi x}{2}N_{\rm odd}(T,H)
- \ge-\int_T^{T+H}\log|\beta_U(\delta+it)|\,dt
+ \ge-\int_T^{T+H}\log|\beta_{q,U}(\delta+it)|\,dt
        -H\log2-o(H).
 \end{equation}
 
-It remains to retain the mean-square constant on the shorter interval. The
-diagonal estimate is pointwise before averaging. Its remainder is
-\[
- O(T^{-1/2}U^2\log^2(2U))=o(1)
-\]
-because $u<1/4$. The approximate-functional-equation remainder is also
-pointwise:
-\[
- O(T^{-1/4}U\log^3T)=o(1).
-\]
-The source's rational-frequency lemma applies to arbitrary intervals
-$I_{\xi,\eta}\subseteq[T,2T]$. For the moving square-root truncation
-$X\asymp T^{1/2}$, divide its off-diagonal estimate by $H$ instead of $T$.
-Since $T^{\delta-1/2}=T^{-x/2}=O(1)$, the result is
+The diagonal remainder is pointwise and is
+$O_q(T^{-1/2}U^2\log^2(2U))=o(1)$. Pearce-Crump's rational-frequency lemma
+applies to arbitrary intervals in $[T,2T]$ and to every fixed mixed component.
+After division by $H$, each off-diagonal entry is
 \begin{equation}\label{eq:localoffdiagonal}
- O\!\left(T^{1/2+2u-\theta}\log T\right)=o(1),
+ O_q\!\left(T^{1/2+2u-\theta}\log T\right)=o(1).
 \end{equation}
-precisely by \eqref{eq:localurange}. Thus
+There are finitely many entries, so the exponent is unchanged. The
+approximate-functional-equation error is componentwise $o(1)$ because
+\eqref{eq:localurange} implies $u<1/4$. Thus
 \begin{equation}\label{eq:localmeansquare}
- \frac1H\int_T^{T+H}|\beta_U(\delta+it)|^2dt
- \le\frac{C_3+o(1)}{x\log U}.
+ \frac1H\int_T^{T+H}|\beta_{q,U}(\delta+it)|^2dt
+ \le\frac{C[q]+o(1)}{x\log U}.
 \end{equation}
 
 Jensen's inequality, \eqref{eq:shortrectangle}, and
 \eqref{eq:localmeansquare} give
 \[
  N_{\rm odd}(T,H)\ge\frac{H}{\pi x}
- \left\{\log\frac{x\log U}{C_3}-2\log2+o(1)\right\}.
+ \left\{\log\frac{x\log U}{C[q]}-2\log2+o(1)\right\}.
 \]
-The factor $2\log2$ is forced by \eqref{eq:selbergnormalization}. The
-right side is optimized at $x=4eC_3/\log U$, yielding
+The right side is optimized at $x=4eC[q]/\log U$, yielding
 \begin{equation}\label{eq:localsignchanges}
  N_{\rm odd}(T,H)\ge
- \frac{H\log U}{4\pi eC_3}(1+o(1)).
+ \frac{H\log U}{4\pi eC[q]}(1+o(1)).
 \end{equation}
-Since
-$N(T,T^\theta)\sim T^\theta\log T/(2\pi)$,
-\eqref{eq:localsignchanges} gives
+Since $N(T,T^\theta)\sim T^\theta\log T/(2\pi)$, this gives
 \[
  \liminf\frac{N_{\rm odd}(T,T^\theta)}{N(T,T^\theta)}
- \ge\frac{u}{2eC_3}.
+ \ge\frac{u}{2eC[q]}.
 \]
-This holds for every fixed $u$ in \eqref{eq:localurange}. Taking the
-supremum over those fixed choices proves \eqref{eq:localodd}; the mollifier
-exponent never varies with $T$.
+Taking the supremum over fixed $u$ in \eqref{eq:localurange} proves
+\eqref{eq:localodd}; the rank and mollifier exponent never vary with $T$.
 
 Apply the pointwise parity inequality
 $3N_0^s\ge2N-Q+2N_{\rm odd}+D$ with $D\ge0$. Wang's fixed-test limit gives
 the $c(\theta)$ contribution from $(2N-Q)/N$, and \eqref{eq:localodd}
-supplies the odd support. This proves \eqref{eq:localsimple}.
-
-For the threshold, put
-\[
- F(\theta)=c(\theta)+\frac{\theta-1/2}{2eC_3}.
-\]
-It is strictly increasing because
-\[
- F'(\theta)=\frac12\{\csc^2(\theta/\sqrt2)-1\}
-             +\frac1{2eC_3}>0.
-\]
-Exact rational Taylor enclosures prove
-$F(0.5459)<0<F(0.546)$, giving the asserted root bracket. At
-$\theta=0.546$, the fixed choice $u=0.02299$ has strict exponent margin
-$\theta-1/2-2u=0.00002$ and gives \eqref{eq:localpoint}. The boundary
-choice $u=0.023$ is excluded because it leaves no decay in
-\eqref{eq:localoffdiagonal}.
+supplies the odd support. Specializing to the source profile $q_6$ proves
+\eqref{eq:localsimple}. The source prints the interval \eqref{eq:c6} but not
+the ten-direction coefficient matrix. The use of $C_6$ is therefore a normal
+attributed analytic premise, while the rank-independent localization above is
+the deduction proved here.
 
 \section{Hilbert--parity transfer and the lower threshold}
 \label{sec:hilberttransfer}
 
-Apply Proposition~\ref{prop:hilbertproduct} to Wang's scaled zero multiset
-in $(T,T+T^\theta]$. With
+Apply Proposition~\ref{prop:hilbertproduct} to Wang's scaled zero multiset in
+$(T,T+T^\theta]$. With
 \[
  q_T=\frac{Q_T}{N(T,T^\theta)},\qquad
  s_T=\frac{N_0^s(T,T^\theta)}{N(T,T^\theta)},\qquad
  o_T=\frac{N_{\rm odd}(T,T^\theta)}{N(T,T^\theta)},
 \]
-division by $N(T,T^\theta)^2$ gives the pointwise inequality
+division by $N(T,T^\theta)^2$ gives
 \begin{equation}\label{eq:normalizedproduct}
  (q_T-s_T)(1-o_T)\ge2(1-s_T)^2.
 \end{equation}
-No product of liminf values is used. For a fixed smooth test, Wang supplies
-an eventual upper bound $q_T\le\mathcal C(f)+\varepsilon$, while
-Theorem~\ref{thm:localselberg} supplies an eventual lower bound
-$o_T\ge k_3(\theta)-\varepsilon$. Inserting these bounds in
-\eqref{eq:normalizedproduct} before letting $\varepsilon\downarrow0$ yields
-\[
- 2(1-s)^2\le(\mathcal C(f)-s)(1-k_3(\theta)).
-\]
-The smaller root is
+No product of liminf values is used. Along a subsequence realizing the lower
+limit of $s_T$, Wang supplies an eventual fixed-test upper bound for $q_T$ and
+Theorem~\ref{thm:localselberg} supplies
+$o_T\ge k_6(\theta)-\varepsilon$. Insert both bounds before sending
+$\varepsilon$ to zero. The smaller root of the resulting quadratic is
 \begin{equation}\label{eq:quadraticroot}
  R(A,b)=\frac{4-b-\sqrt{b\{b+8(A-1)\}}}{4}.
 \end{equation}
-Use Wang's legal order: fix the smooth test, take the height limit, approximate
-the normalized cosine density, and finally let the fixed bandwidth increase
-to $\theta$. Since $\mathcal C_\theta=2-c(\theta)$, formula
-\eqref{eq:quadraticroot} becomes $h_3(\theta)$ and proves
-\eqref{eq:hilbertsimple}.
+Use Wang's legal smoothing order. Since the limiting pair term is
+$A=2-c(\theta)$ and $b=1-k_6(\theta)$, \eqref{eq:quadraticroot} becomes
+$h_6(\theta)$ and proves \eqref{eq:hilbertsimple}.
 
 The new term is positive exactly when
 \begin{equation}\label{eq:hpfunction}
- F_{\rm HP}(\theta):=c(\theta)+(2-c(\theta))k_3(\theta)>0.
+ F_6(\theta):=c(\theta)+(2-c(\theta))k_6(\theta)>0.
 \end{equation}
 On $(1/2,1)$,
 \[
- F_{\rm HP}'(\theta)=c'(\theta)(1-k_3(\theta))+
- (2-c(\theta))k_3'(\theta)>0.
+ F_6'(\theta)=c'(\theta)(1-k_6(\theta))+
+ (2-c(\theta))k_6'(\theta)>0,
 \]
-Exact directed rational enclosures prove opposite signs at $0.545884$ and
-$0.545885$, giving \eqref{eq:hproot}. At $\theta=0.5459$, the old linear
-term is less than $-0.0000107367174936433552040195369$, while exact
-evaluation of the smaller root gives \eqref{eq:hppoint}. The weaker product
-without the retained $S$ term would give only
-$0.0000126556179972388281537305037$; retaining it improves the frozen lower
-bound by more than $33$ percent.
+so the onset is unique. Exact directed rational enclosures prove opposite
+signs at $0.5458837$ and $0.5458838$, giving \eqref{eq:hproot}. Repeating the
+same calculation with the fully printed $C_3$ profile places its root in
+$(0.5458846,0.5458847)$. At the separating exponent $0.545884$, the
+rank-three term is negative and \eqref{eq:hpedge} is positive.
 
-The improvement cannot be recovered from the published scalar headlines
-alone. At $\theta=0.5459$, a normalized mixture of real triple points of
-support density $k_3(\theta)$ and real double points of density
-$(1-3k_3(\theta))/2$ has $S=0$ and satisfies every applicable scalar
-constraint. The product \eqref{eq:hilbertproduct} rules it out at Wang's
-actual pair level because it retains $d=r+k$ before compression.
+At $\theta=0.5459$, exact evaluation gives \eqref{eq:hppoint} and
+\[
+ h_6(0.5459)-h_3(0.5459)>
+ 9.2635430617773560\times10^{-7}.
+\]
+Here $h_3$ denotes the same root formula with
+$k_3=(\theta-1/2)/(4eC_3)$. The improvement is about $5.5$ percent relative
+to the old lower bound at this point.
+
+The improvement cannot be recovered from the scalar pair and odd-support
+headlines alone. A normalized mixture of real triple and double points can
+satisfy the scalar constraints with zero simple support. The product
+\eqref{eq:hilbertproduct} rules it out at Wang's actual pair level because it
+retains the first Hilbert dimension before compression.
 
 \section{Spectral-defect parity transfer}
 \label{sec:defecttransfer}
@@ -1449,65 +1432,65 @@ $\ell\varepsilon\le1$. Put
  \qquad \alpha=\frac{\ell\varepsilon}{M},
  \qquad \beta=\frac{2\ell p}{M}.
 \]
-The disjoint-frame and span argument used in
-Theorem~\ref{thm:pressure} gives
+The disjoint-frame and span argument used in Theorem~\ref{thm:pressure} gives
 \begin{equation}\label{eq:defectdensity}
- \liminf_{T\to\infty} d_T\ge\alpha s-\beta,
+ \liminf_{T\to\infty}d_T\ge\alpha s-\beta,
  \qquad s=\liminf_{T\to\infty}s_T.
 \end{equation}
 
 Choose a subsequence on which $s_T\to s$. For every positive $\eta$, the
-odd-support theorem and \eqref{eq:defectdensity} give eventually
-$o_T\ge\kappa_\theta-\eta$ and
+rank-six odd-support theorem and \eqref{eq:defectdensity} give eventually
+$o_T\ge k_6(\theta)-\eta$ and
 $d_T\ge\alpha s-\beta-\eta$. Wang's fixed-test theorem gives
-$q_T\to q_\theta$ in the legal smoothing order. Inserting the eventual bounds
-into the two nonnegative factors of \eqref{eq:normalizeddefectproduct} before
-sending $\eta$ to zero yields
+$q_T\to q_\theta$ in the legal smoothing order. Insert the eventual bounds
+into the nonnegative factors of \eqref{eq:normalizeddefectproduct} before
+sending $\eta$ to zero. This yields
 \begin{equation}\label{eq:defectquadratic}
- 2(1-s)^2\le(1-\kappa_\theta)
+ 2(1-s)^2\le(1-k_6(\theta))
  \{q_\theta+\beta-(1+\alpha)s\}.
 \end{equation}
-The smaller root is the expression in \eqref{eq:defectroot}.
+The smaller root is \eqref{eq:defectroot}.
 
 For the universal choice in Theorem~\ref{thm:defectparity}, use the analytic
-triangle estimate behind \eqref{eq:explicit}. At $R=4/h$ it gives
-$d_\theta=(b/B)^2>0$. Set
+triangle estimate behind \eqref{eq:explicit}. Put $h=h_6(\theta)>0$,
+$R=11/(5h)$, and
 \[
- \varepsilon=d_\theta,\qquad p=d_\theta/R,
+ \varepsilon=d_\theta=(b/B)^2,
+ \qquad p=d_\theta/R,
  \qquad \ell=2.
 \]
-The proof of Corollary~\ref{cor:wholecurve} shows $d_\theta<1/4$, so this
+The proof of Corollary~\ref{cor:wholecurve} gives $d_\theta<1/4$, so this
 choice is admissible, and
 \[
  \alpha_\theta=\frac{2d_\theta}{5},
- \qquad \beta_\theta=\frac{d_\theta h}{5},
- \qquad \alpha_\theta h-\beta_\theta=\beta_\theta>0.
+ \qquad \beta_\theta=\frac{4d_\theta h}{11},
+ \qquad \alpha_\theta h-\beta_\theta
+ =\frac{2d_\theta h}{55}>0.
 \]
+The ratio $11/5$ was frozen before the authoritative computation. It is a
+simple rational near the large-radius asymptotic optimum; no global optimality
+claim is needed.
 
 Let $F$ be the left side minus the right side of
 \eqref{eq:defectquadratic}. The old root $h$ makes the same equation with
-$\alpha=\beta=0$ an equality, and hence
+$\alpha=\beta=0$ an equality, so
 \[
- F(h)=(1-\kappa_\theta)(\alpha_\theta h-\beta_\theta)>0.
+ F(h)=(1-k_6(\theta))(\alpha_\theta h-\beta_\theta)>0.
 \]
-On the other hand, $F(1)<0$: direct differentiation gives
-$c(\theta)<c(1)<7/10$, so $q_\theta>13/10$, while
-$\alpha_\theta<1/10$. Thus the larger new root exceeds one, and $h$ lies
-strictly below the smaller root $H$. Moreover, on $[h,H]$,
+As in EXP-007, $F(1)<0$, the larger root exceeds one, and on the interval from
+$h$ to the smaller new root $H_6$ one has $-4\le F'<0$. The mean value theorem
+gives
 \[
- -4\le F'(s)=4s-4+(1-\kappa_\theta)(1+\alpha_\theta)<0.
+ H_6-h\ge\frac{(1-k_6(\theta))
+ (\alpha_\theta h-\beta_\theta)}4>0.
 \]
-The mean value theorem gives
-\[
- H-h\ge\frac{F(h)}4
- =\frac{(1-\kappa_\theta)\beta_\theta}{4}>0,
-\]
-which proves Theorem~\ref{thm:defectparity} before numerical evaluation.
+This proves Theorem~\ref{thm:defectparity} before numerical evaluation.
 
-The construction does not change the onset. At $h_3(\theta)=0$, the radius
-$4/h_3(\theta)$ is unavailable and the simple-real Gram defect may vanish.
-An onset improvement therefore requires a statistic that remains informative
-when $S=0$ or a stronger independent odd-support input.
+The construction does not change the onset. At $h_6(\theta)=0$, the radius
+$11/(5h_6(\theta))$ is unavailable and the simple-real Gram defect may vanish.
+An onset improvement requires a stronger independent input, which the
+source-certified $C_6$ supplies, or a statistic that remains informative when
+$S=0$.
 
 \section{The compact certificate}\label{sec:certificate}
 
@@ -1589,22 +1572,22 @@ zeros without the finite operator and fixed-test analytic transfer.
 \section{Conclusions and further questions}
 
 The spectral-defect product \eqref{eq:defectproduct} is the strongest finite
-result of this paper. It retains both a continuous Gram defect and the finite
-dimension that scalar multiplicity bounds discard, then couples them to
-distinct odd support. Together with the localized Selberg detector and the
-pressure-frame estimate, it strictly strengthens the simple-critical lower
-bound at every positive point of the Hilbert--parity curve. The unique
-positivity threshold remains in $(0.545884,0.545885)$. The coefficient two is
-sharp, and the proof separates the newly coupled ingredients from the
-attributed parameterized rank--trace theorem. None of these results proves the
-Riemann hypothesis.
+result of this paper. The rank-independent localization is the new analytic
+interface: it permits the source-certified six-square detector to replace the
+fully printed rank-three profile. Together they move the unique positivity
+onset to $(0.5458837,0.5458838)$. The optimized spectral transfer then strictly
+strengthens every positive point of that new curve. The finite coefficient two
+is sharp, and the proof separates the deductions from the attributed
+rank--trace and six-square inputs. None of these results proves the Riemann
+hypothesis.
 
 The next analytic task is to reduce the $T^{1/2}U^2/H$ off-diagonal barrier or
-supply a stronger reproducible odd-support profile. Either change would move
-the threshold toward one half. Pearce-Crump's printed rank-six constant would
-improve the numerical value at $\theta=0.5459$, but the complete rank-six
-profile is unavailable and is therefore excluded from the theorem. Another
-direction is to find a statistic that survives when the simple support is zero.
+independently reconstruct and improve the six-square profile. The published
+$C_6$ interval is usable as a cited theorem, but the missing coefficient matrix
+prevents a local reconstruction. A broader semidefinite search with a printed
+rational profile would make the new onset fully replayable from first
+principles. Another direction is to find a statistic that survives when the
+simple support is zero.
 Signed Krein-space inertia by itself is insufficient because a conjugate pair
 can approach the critical line with arbitrarily small negative eigenvalue.
 Semidefinite optimization can improve kernels only within an unconditional
@@ -1638,6 +1621,7 @@ deterministic floating grid selected candidate radii; its sampled values
 were never used as certified lower bounds. The final certification used
 CPU arithmetic; no GPU was necessary.
 
+\begin{samepage}
 From the repository root, with the problem's pinned requirements installed,
 a fresh output directory preserves the canonical artifacts:
 \begin{verbatim}
@@ -1646,6 +1630,7 @@ EXP-002-short-interval-stability/run.py \
   --output-dir tmp/riemann-replay --radius 21/4 --threshold 1/7000
 pytest tests/test_riemann_certificates.py
 \end{verbatim}
+\end{samepage}
 The displayed backslashes indicate line continuation for readability;
 use one command line on shells with different continuation syntax.
 The runner fails with an exact resumable checkpoint if its time or node
@@ -1865,8 +1850,11 @@ arithmetic sufficed; no GPU workload was justified.
 
 The EXP-007 record~\cite{RecordVII} separates the universal operator proof,
 the limiting argument, and the finite arithmetic. The canonical run began
-from clean commit
-\nolinkurl{d63111ffa8a348c51eb4fd06f5a1e70a51211576}; its result has SHA-256
+from the clean commit
+\begin{center}\small\ttfamily
+d63111ffa8a348c51eb4fd06f5a1e70a51211576
+\end{center}
+Its result has SHA-256
 \begin{center}\small\ttfamily
 ad635c5b60c4bcae63199fb54a7979a02206ce0ee572853b2df13933dafc320c
 \end{center}
@@ -1906,6 +1894,46 @@ Two failed attempts remain archived: one corrected the consistency relation
 between independently rounded enclosures, and one exposed the negative
 sensitivity control. CPU arithmetic was sufficient; no GPU workload was
 justified.
+
+\section{Rank-six local-transfer verification}
+
+The EXP-008 record~\cite{RecordVIII} audits the finite-rank localization
+separately from the imported six-square constant. Its canonical run began from
+the clean commit
+\begin{center}\small\ttfamily
+5f4885c70188a7126f0b47ea954e589a7583b358
+\end{center}
+Its result has SHA-256
+\begin{center}\small\ttfamily
+56db06037e0b36ed519919c352fb0a5419e2b6ba29629d65948f399c1d3bf4ba
+\end{center}
+and records PASS in 64.406 seconds under a 120-second CPU budget.
+
+Directed rational arithmetic proves the disjoint onset brackets
+\[
+ 0.5458837<\theta_6<0.5458838,
+ \qquad 0.5458846<\theta_3<0.5458847,
+\]
+the separating sign at $0.545884$, \eqref{eq:hppoint}, and
+\[
+ h_6(0.5459)-h_3(0.5459)>
+ 9.2635430617773560\times10^{-7}.
+\]
+For the spectral companion, it proves
+$d_\theta>1.1072486681807148\times10^{-61}$ and the correlated gain
+\eqref{eq:defectpoint}. A separate 100-decimal \texttt{mpmath.iv}
+implementation overlaps every shared enclosure. Four focused calculation
+tests plus the canonical artifact-binding check pass. Reproduce the record with
+\begin{verbatim}
+python problems/number-theory/riemann-hypothesis/experiments/\
+EXP-008-rank-six-local-transfer/run.py \
+  --output-dir tmp/riemann-exp008-replay --budget-seconds 120
+python -m pytest -q tests/test_riemann_rank_six_local.py
+\end{verbatim}
+The six-square coefficient matrix is not printed in the source. The audit
+therefore validates the localization and scalar consequences relative to the
+attributed $C_6$ input; it does not claim an independent reconstruction of that
+profile. CPU interval arithmetic sufficed, so no GPU workload was justified.
 
 \section{Source comparison and limitations}
 
@@ -1986,6 +2014,8 @@ local copies of arXiv texts with nonexclusive-distribution licenses are
 not relicensed.
 
 \begin{thebibliography}{99}\small\raggedright
+\setlength{\itemsep}{1pt}
+\setlength{\parsep}{0pt}
 
 \bibitem{AF}
 L.~Alp\"oge and R.~Furman,
@@ -2029,7 +2059,9 @@ A.~Pearce-Crump,
 \emph{Optimising Selberg's method for critical zeros},
 arXiv:2609.15329v1 (2026). Lemma 5.7 gives the arbitrary-subinterval
 rational-frequency estimate; Proposition 11.1 and Theorem 11.5 give the
-positive-semidefinite detector and certified rank-three profile.
+positive-semidefinite detector and certified rank-three profile. Its
+stronger-benchmark subsection states the source-certified ten-direction,
+six-square interval \eqref{eq:c6}, without printing that profile's matrix.
 \url{https://arxiv.org/abs/2609.15329v1}.
 
 \bibitem{Dubon}
@@ -2175,6 +2207,14 @@ Sharp defect--parity product, complete short-interval transfer, directed
 rational certificate, independent interval replay, negative control, source
 bindings, and adversarial review, dated 2026-09-20.
 \href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity}{Public experiment record}.
+
+\bibitem{RecordVIII}
+F.~Santib\'a\~nez-Leal,
+\emph{EXP-008: rank-six local Selberg transfer}, CAOS Research, 2026.
+Finite-rank localization proof, directed rank-three and rank-six onset
+certificates, optimized spectral companion, independent interval replay,
+source boundary, and adversarial review, dated 2026-09-20.
+\href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer}{Public experiment record}.
 
 \end{thebibliography}
 \end{document}

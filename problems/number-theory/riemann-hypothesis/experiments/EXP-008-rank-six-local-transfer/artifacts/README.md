@@ -8,7 +8,7 @@ The canonical evidence is in `canonical/`:
 - `execution-receipt.json`: clean commit, runtime, budget, runner hash, and
   result hash;
 - `checkpoint.json`: terminal stage marker; and
-- `run.log`: flushed stage log.
+- `stdout.txt`: flushed stage log.
 
 The final run passed from clean commit
 `5f4885c70188a7126f0b47ea954e589a7583b358`. The machine artifacts certify the

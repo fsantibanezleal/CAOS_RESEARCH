@@ -13,7 +13,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>For a conjugation-invariant finite multiset, let N count copies, S simple real support, O distinct odd-multiplicity real support, Q the squared-kernel pair sum, and D(G)=tr Psi_2(G) the retained simple-real Gram spectral defect. The paper proves the finite inequality (Q-S-D(G))(N-O) &gt;= 2(N-S)^2 by coupling an attributed rank-trace theorem to odd support.</p><p>Combined with Wang's short-interval pair theorem and a localized rank-three Selberg detector, this yields a coupled quadratic lower bound for the lower asymptotic proportion of simple critical zeros. It strictly improves the complete positive EXP-006 curve. At theta=0.5459, directed rational arithmetic certifies H-h3 &gt; 1.3732525985593292701164661575215e-70. The positivity onset remains in (0.545884,0.545885); the new spectral term does not lower it.</p><p>The product coefficient two is sharp. An analytic construction proves strict improvement wherever h3(theta)&gt;0, and exact enumeration plus independent high-precision interval checks certify the finite and numerical components. The result is asymptotic and depends on recent attributed preprints. No effective starting height, global zero-density record, external peer review, or proof of the Riemann hypothesis is claimed. Source code, data, and computational records are available at https://github.com/fsantibanezleal/CAOS_RESEARCH.</p>",
+    "description": "<p>For a conjugation-invariant finite multiset, let N count copies, S simple real support, O distinct odd-multiplicity real support, Q the squared-kernel pair sum, and D(G)=tr Psi_2(G) the retained simple-real Gram spectral defect. The paper proves the finite inequality (Q-S-D(G))(N-O) &gt;= 2(N-S)^2 by coupling an attributed rank-trace theorem to odd support.</p><p>The paper also proves that Pearce-Crump's vector-profile Selberg detector localizes to every fixed finite rank. Applying this transfer to the source-certified six-square constant C6 and then to the Hilbert-parity product places the unique positivity onset in (0.5458837,0.5458838). At theta=0.545884, where the rank-three term remains negative, the new lower bound exceeds 2.5541123454645702e-7. At theta=0.5459 it exceeds 0.0000177645181613023236390595079, improving the rank-three term by more than 9.2635430617773560e-7.</p><p>A radius-optimized spectral transfer strictly improves every positive point of the rank-six curve; its certified gain at theta=0.5459 exceeds 1.7766622541125682e-68. The six-square constant is an attributed source input whose coefficient matrix is not printed, so it is not independently reconstructed here. The results are asymptotic and depend on recent preprints. No effective starting height, global zero-density record, external peer review, or proof of the Riemann hypothesis is claimed. Source code, data, and computational records are available at https://github.com/fsantibanezleal/CAOS_RESEARCH.</p>",
     "keywords": [
       "Riemann zeta function",
       "short intervals",
@@ -26,7 +26,9 @@
       "spectral defect",
       "interval arithmetic",
       "Hilbert space",
-      "parity compression"
+      "parity compression",
+      "finite-rank localization",
+      "six-square Selberg detector"
     ],
     "license": "cc-by-4.0",
     "access_right": "open",
@@ -57,6 +59,6 @@
         "resource_type": "publication-preprint"
       }
     ],
-    "version_notes": "Adds the spectral-defect parity product (Q-S-D(G))(N-O) >= 2(N-S)^2, an arbitrary-parameter finite proof, and its coupled short-interval transfer. The new root strictly improves the complete positive v0.06 curve, with an exact gain certificate at theta=0.5459, while leaving the positivity onset in (0.545884,0.545885). Adds EXP-007 exact enumeration and independent high-precision interval evidence, and evaluates post-cutoff Dirichlet-polynomial and projected-ordinate approaches. The Riemann hypothesis remains open."
+    "version_notes": "Adds a rank-independent short-interval localization theorem for fixed finite-rank Selberg vector profiles. Using Pearce-Crump's source-certified six-square constant moves the Hilbert-parity positivity onset to (0.5458837,0.5458838), proves a positive bound at theta=0.545884 where the rank-three term is negative, and raises the theta=0.5459 bound by more than 9.2635430617773560e-7. Also adds the spectral-defect parity product and an optimized strict full-curve correction. EXP-007 and EXP-008 provide directed exact certificates and independent interval replays. The Riemann hypothesis remains open."
   }
 }
