@@ -22,7 +22,7 @@ positive point of the EXP-006 curve. The onset remains
 | EXP-006 canonical result | 18,479 profiles and exact interval gates | SHA-256 `82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf` |
 | `D(G)` | Simple-real Gram spectral defect | Attributed rank-trace profile and EXP-003 pressure estimate |
 | `H(theta)` | EXP-007 coupled quadratic root | Strictly above `h3` wherever `h3>0` |
-| EXP-007 canonical result | 652,260 spectra, 18,479 profiles, correlated exact gain | SHA-256 `7b254608198f0025e490c2c169603ae68637f60d6a685a63370bc062323b0bf3` |
+| EXP-007 canonical result | 652,260 spectra, 18,479 profiles, correlated exact gain | SHA-256 `ad635c5b60c4bcae63199fb54a7979a02206ce0ee572853b2df13933dafc320c` |
 
 ## 3. Experiment index
 

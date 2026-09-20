@@ -18,10 +18,10 @@ At theta=0.5459 the correlated directed-rational certificate proves
 `(0.545884,0.545885)`.
 
 The canonical CPU run started from clean commit
-`d246eb723f1df7998bde2101007cc63b0b84266c`, checked 652,260 rational spectra
+`d63111ffa8a348c51eb4fd06f5a1e70a51211576`, checked 652,260 rational spectra
 and 18,479 multiplicity profiles, and overlapped every shared quantity with an
 independent 100-digit interval replay. Its result hash is
-`7b254608198f0025e490c2c169603ae68637f60d6a685a63370bc062323b0bf3`.
+`ad635c5b60c4bcae63199fb54a7979a02206ce0ee572853b2df13933dafc320c`.
 Two failed attempts remain preserved: one corrected the relation between two
 independent interval enclosures, and one removed an unjustified positive-sign
 expectation from a diagnostic sensitivity control. The result does not solve

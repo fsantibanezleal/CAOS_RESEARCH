@@ -365,8 +365,8 @@ where `h3` is positive. At `theta=0.5459`, the correlated exact gain exceeds
 improvement, not a lower onset exponent or a new printed headline decimal.
 
 The canonical run checked 652,260 rational spectra and 18,479 multiplicity
-profiles in 95.172 seconds. Its result SHA-256 is
-`7b254608198f0025e490c2c169603ae68637f60d6a685a63370bc062323b0bf3`.
+profiles in 94.719 seconds. Its result SHA-256 is
+`ad635c5b60c4bcae63199fb54a7979a02206ce0ee572853b2df13933dafc320c`.
 Every shared exact interval overlaps an independent 100-digit replay. The
 historical theta=3/4 control makes the coupled root worse while leaving the
 pressure-only theorem stronger, and the result records that boundary.

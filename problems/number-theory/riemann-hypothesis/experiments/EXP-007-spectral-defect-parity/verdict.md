@@ -3,7 +3,7 @@
 Date: 2026-09-20. The declaration was committed at
 `a2abdcc8360399b3fa42aaea9245e4b83352c30f` before implementation or
 computation. The canonical certificate ran from clean commit
-`d246eb723f1df7998bde2101007cc63b0b84266c`.
+`d63111ffa8a348c51eb4fd06f5a1e70a51211576`.
 
 **Verdict: confirmed.** This is an internally reviewed finite deduction and
 short-interval consequence from attributed inputs. It does not establish
@@ -114,8 +114,8 @@ objective rather than imported from a different headline.
 [MV] The canonical result is
 [`artifacts/canonical/result.json`](artifacts/canonical/result.json), schema
 `riemann-exp007-results-v1`, SHA-256
-`7b254608198f0025e490c2c169603ae68637f60d6a685a63370bc062323b0bf3`.
-It records PASS from a clean commit in 95.172 seconds.
+`ad635c5b60c4bcae63199fb54a7979a02206ce0ee572853b2df13933dafc320c`.
+It records PASS from a clean commit in 94.719 seconds.
 
 The runner checked 652,260 rational spectral profiles, 18,479 multiplicity
 profiles, exact source hashes, a correlated directed-rational gain, and overlap

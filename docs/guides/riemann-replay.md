@@ -150,7 +150,7 @@ an independent 100-digit interval implementation. At theta=0.5459 it proves
 `H-h3>1.3732525985593292701164661575215e-70`. The strict gain does not lower
 the onset exponent or justify another printed decimal for the baseline bound.
 The canonical result SHA-256 is
-`7b254608198f0025e490c2c169603ae68637f60d6a685a63370bc062323b0bf3`.
+`ad635c5b60c4bcae63199fb54a7979a02206ce0ee572853b2df13933dafc320c`.
 
 The artifact directory preserves two failed attempts. One rejected an
 incorrect containment relation between independently rounded enclosures. The

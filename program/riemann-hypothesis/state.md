@@ -18,7 +18,7 @@ estimate proves a strict improvement `H(theta)>h3(theta)` for every fixed
 `1.3732525985593292701164661575215e-70`. This improves the complete positive
 curve but does not lower its onset exponent or justify another printed decimal.
 The canonical result SHA-256 is
-`7b254608198f0025e490c2c169603ae68637f60d6a685a63370bc062323b0bf3`.
+`ad635c5b60c4bcae63199fb54a7979a02206ce0ee572853b2df13933dafc320c`.
 
 EXP-006 proves the sharp finite product
 

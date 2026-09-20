@@ -22,6 +22,6 @@ case diagnostic, so the corrected gate classifies and records its sign instead
 of assuming it is positive.
 
 The final run passed from clean commit
-`d246eb723f1df7998bde2101007cc63b0b84266c`. Machine artifacts certify exact
+`d63111ffa8a348c51eb4fd06f5a1e70a51211576`. Machine artifacts certify exact
 finite arithmetic and numerical enclosures. The universal theorem depends on
 `mathematical-proof.md` and `adversarial-audit.md`.

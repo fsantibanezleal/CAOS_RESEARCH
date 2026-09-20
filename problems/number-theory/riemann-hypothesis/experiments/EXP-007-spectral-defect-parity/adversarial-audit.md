@@ -2,7 +2,7 @@
 
 Date: 2026-09-20. Declaration commit:
 `a2abdcc8360399b3fa42aaea9245e4b83352c30f`. Canonical execution commit:
-`d246eb723f1df7998bde2101007cc63b0b84266c`. This is an internal proof,
+`d63111ffa8a348c51eb4fd06f5a1e70a51211576`. This is an internal proof,
 source, and artifact audit. It is not external peer review or an end-to-end
 formal verification.
 
@@ -56,7 +56,7 @@ not a guarantee of priority.
 | The near-threshold gain might justify another printed decimal | It does not. The certified relative gain is only greater than `1.3732525985593292701164661575e-70`, while the independent baseline enclosure is much wider. The verdict reports a strict symbolic and correlated interval improvement, not a new decimal value for the proportion. |
 | The historical pressure control might be silently cherry-picked | At `theta=3/4`, the frozen EXP-003 pressure parameters lower the coupled-product root by about `1.6909e-5`; their direct pressure-only bound remains stronger. The canonical result records this negative control. |
 | Independent interval disagreement might be hidden | The first run failed because three 100-digit replay intervals slightly exceeded narrower 110-digit rational intervals near their last digit. The audit preserved the failure and changed the comparison to nonempty overlap, the correct consistency relation for two valid enclosures. Every shared interval overlaps in the final run. |
-| A later runner change might be mistaken for the canonical code | The execution receipt binds the run to clean commit `d246eb723f1df7998bde2101007cc63b0b84266c`, the declaration commit, the runner hash, predecessor hashes, and the result hash. |
+| A later runner change might be mistaken for the canonical code | The execution receipt binds the run to clean commit `d63111ffa8a348c51eb4fd06f5a1e70a51211576`, the declaration commit, the runner hash, predecessor hashes, and the result hash. |
 | The result might lower the positivity onset | It does not. At `h_3=0`, the construction `R=4/h_3` is unavailable and the Gram defect may vanish. The canonical claim boundary records `onset_exponent_improved=false`. |
 
 No fatal defect remained after these attacks.
@@ -64,8 +64,8 @@ No fatal defect remained after these attacks.
 ## Computational evidence
 
 The canonical result `artifacts/canonical/result.json` has SHA-256
-`7b254608198f0025e490c2c169603ae68637f60d6a685a63370bc062323b0bf3`.
-It ran from a clean worktree in 95.172 seconds under the 180-second CPU budget.
+`ad635c5b60c4bcae63199fb54a7979a02206ce0ee572853b2df13933dafc320c`.
+It ran from a clean worktree in 94.719 seconds under the 180-second CPU budget.
 
 The exact checks covered 652,260 rational spectral profiles and 18,479
 multiplicity profiles. The latter produced 270 equality trials, 55,155 strict
