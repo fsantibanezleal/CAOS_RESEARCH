@@ -1,0 +1,85 @@
+{
+  "schema": "riemann-manuscript-render-review-v2",
+  "reviewed_utc": "2026-09-20T01:05:58.0197024Z",
+  "reviewer": "Codex automated render and visual audit",
+  "title": "Simple critical zeros in short intervals: stability, pressure, parity, and localization",
+  "version": "0.05",
+  "version_doi": "10.5281/zenodo.22851518",
+  "concept_doi": "10.5281/zenodo.22727388",
+  "publication_performed": true,
+  "canonical_promotion_ready": true,
+  "source": {
+    "path": "manuscripts/riemann-hypothesis/short-interval-stability/main.tex",
+    "sha256": "e45cbb499b8273187e5bcb7088fff2fc45fd454285e3b2bdf9523829563350fa",
+    "bytes": 78146,
+    "encoding": "UTF-8",
+    "line_endings": "LF"
+  },
+  "pdf": {
+    "path": "manuscripts/riemann-hypothesis/short-interval-stability/main.pdf",
+    "sha256": "bcfefac4b138d2b41c5fe232c64590e3b6f0c309455d40e01451d9251c1e8acc",
+    "md5": "d479704691232d59812fa3c2fec6b4ba",
+    "bytes": 526178,
+    "pages": 24
+  },
+  "build": {
+    "compiler": "MiKTeX-pdfTeX 4.19 (MiKTeX 24.4)",
+    "passes_after_final_doi": 3,
+    "exit_codes": [0, 0, 0],
+    "log_sha256": "0a21b9a94ee756590d2e149759ed32fc0a90a8488256028db95b4b1eb71d7432",
+    "warnings": 0,
+    "overfull_boxes": 0,
+    "underfull_boxes": 0,
+    "undefined_references": 0,
+    "multiply_defined_labels": 0
+  },
+  "render": {
+    "renderer": "Poppler pdftoppm 24.04.0",
+    "format": "PNG",
+    "dpi": 110,
+    "page_dimensions_pixels": [935, 1210],
+    "command": "pdftoppm -png -r 110 manuscripts/riemann-hypothesis/short-interval-stability/main.pdf tmp/pdfs/riemann-v005-final/page",
+    "page_sha256": [
+      "21fc8c4d76733a39c9edfc131067e6da57ce5b054651236c5a4439e0b0d9cd39",
+      "e0b16137e82364cb8ea9e69fe5f40fa1be123b83ffcd3a9a9c59cfa8a9bbc9c5",
+      "ccd70fa10c7a4c11658df1c107962b3878930d2607bd9c5f723f99c7d7c5539a",
+      "4786f3f2c68fea918668573edd639f34ab4a5993c4fae9ec089b6ae776482aa1",
+      "c93ed3ac657a2f6206eada2d89eff0bbc5ab027a8c78703e6a88f9956163a4a3",
+      "83b7faced94bb8310c6125e2485057499c72d70a3b1b2dc9a3b6df15eb0ddd72",
+      "29c747d96be4601e48ad4f9c6e31fe3155f19ee929a15228b35157055b78e4af",
+      "aefcef4c7bec3c0e90e9dcfc568ac71c9aa82b83f053c5c885d8813f36b519e9",
+      "7deff43f80e81d528ebd86fe679d598971f15866c734ba1d770472d2cb3f6c9e",
+      "f38e2e5379c1171dc3ab90bf3ac149274cb62ffbb9f98f02fc0d3f97be87eba2",
+      "2b03c900f8c8e4ad7eea4c3e2faac146d07f4a20e37a351a15e3e60c7dad55b8",
+      "5747076417e2ca57ece6f190e3cd54a147c586c4df0dfbf01133486e76c79d1b",
+      "2d0596f3b4c7cb25c80d71899bbbdca6babb19112885f72808c2949f35c6ced5",
+      "c0597cc36024b6c805239e687ead8e7e7349f04969c2c89342f6d057cc84caad",
+      "bb963b78b3d0685e8a2b1ecdc1a6cc5bd49b9efa45044070026a900b86658c7f",
+      "a853ed5d6886a615a73bec568e8ee9a16e5c8ccdb9fc79129fbcaa9d7a956f87",
+      "9010b5dd963ed04d2b604789ce8c9d54cdf9a98a439c6f5ec91c3798a58a4e5d",
+      "914e400ecc3f2a71f66d5006a6f8d601bd08913785af812db43a9783fbf3d876",
+      "29f1cba511280463422b29f5234386107fe080855f2af8228fe9bbc402e2e167",
+      "6d41bd31bc34a0f96eb1cd69200012185038df9e01da6f0f7a96b407cb8a7b72",
+      "86d8b6b52876378e345b6cc725cbb2fcff43337c78b97a350534839c803dfbc0",
+      "22dbfad38882d79d0fc9ecf5f0025a5741f5f9b8fd71632a7b598d3d9cd14302",
+      "8577c4505f930ca9f9777df23c8e5fd80af327fd1ed731fcc056ac222701efff",
+      "38d5f6034f885af9e20e0ec7abe79a0ce9e919e927ddee16cd2cab523e24bf79"
+    ]
+  },
+  "visual_review": {
+    "all_pages_reviewed": true,
+    "page_count": 24,
+    "method": "All pages inspected in six uncropped four-page contact sheets after the final DOI build.",
+    "contact_sheets": 6,
+    "clipping_or_overlap_observed": false,
+    "missing_glyphs_observed": false,
+    "page_numbering": "continuous 1-24",
+    "result": "pass"
+  },
+  "scientific_scope": {
+    "new_result": "Explicit local Selberg odd-zero density and simple-critical threshold in (0.5459,0.546)",
+    "finite_computation_vs_asymptotic_proof": "Separated in the theorem, proof, verification appendix, and limitations.",
+    "external_peer_review_or_formal_verification_claimed": false,
+    "global_record_or_RH_solution_claimed": false
+  }
+}

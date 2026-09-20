@@ -1,42 +1,32 @@
-# Simple critical zeros in short intervals: stability, pressure, parity, and localization
+# Simple critical zeros in short intervals: stability, parity, localization, and Hilbert compression
 
-Published version 0.05, 2026-09-20. Sole author: Felipe Santibáñez-Leal,
-ORCID [0000-0002-0150-3246](https://orcid.org/0000-0002-0150-3246).
+Version `v0.06`, dated 20 September 2026.
 
-The new result localizes Pearce-Crump's optimized Selberg detector. For every fixed
-`1/2 < theta < 1`, it gives a lower asymptotic proportion
-`(theta-1/2)/(4 e C3)` of distinct odd-multiplicity critical zeros in
-`(T,T+T^theta]`, where the reproducible rank-three constant is
-`C3 = 0.6567752140190419405677628751089899133...`.
+The main new result is the sharp finite inequality
 
-Combining the local odd-zero density with the finite parity transfer proves the
-simple-critical lower bound
+`(Q-S)(N-O) >= 2(N-S)^2`,
 
-`max(0, c(theta), (c(theta)+(theta-1/2)/(2 e C3))/3)`.
+where `N` counts copies, `S` simple real support, `O` distinct odd real
+support, and `Q` the squared-kernel pair sum. Combining it with Wang's
+short-interval theorem and the EXP-005 local Selberg density gives
 
-Its third numerator is strictly increasing, and exact interval arithmetic places its
-unique zero in `(0.5459,0.546)`. At `theta=0.546`, a fixed legal mollifier witness gives
-a simple-critical lower proportion greater than `0.0000976239413345`; direct evaluation
-of the optimized curve gives `0.0000994910410327`. This improves the previously available
-explicit positivity threshold `0.550193964744154...` for this short-interval result.
+`liminf S/N >= max(0,c(theta),(c(theta)+2k3(theta))/3,h3(theta))`.
 
-This is a self-published preprint. It does not prove the Riemann hypothesis, give an
-effective starting height, or establish a global zero-density record. Automated
-adversarial review is separate from external peer review and end-to-end formalization.
+The unique positivity root of `h3` lies in `(0.545884,0.545885)`. At
+`theta=0.5459`, the previous linear term is negative while the new bound is
+greater than `0.0000168381638551244569880374399`.
 
-- [Paper PDF](main.pdf) and [LaTeX source](main.tex).
-- [EXP-005 proof and exact certificate](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/).
+The finite coefficient is sharp. The manuscript attributes Lamzouri's
+arbitrary-parameter Hilbert inequality, Wang's pair limit, and
+Pearce-Crump's rank-three detector. The proposed contribution is the
+parity-compressed product, its quadratic transfer, and the lower threshold.
+The result is asymptotic, internally reviewed, and not peer reviewed. It does
+not solve the Riemann hypothesis.
+
+Evidence:
+
+- [EXP-006 proof and exact certificate](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/).
+- [EXP-005 local Selberg transfer](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/).
 - [EXP-004 parity transfer](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/).
-- [EXP-003 pressure certificate](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/).
-- [Publication gate](publication-gate.json), [render review](render-review.json), and
-  [public download receipt](publication-receipt.json).
-- Version DOI: [10.5281/zenodo.22851518](https://doi.org/10.5281/zenodo.22851518).
-- Latest-version concept DOI: [10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388).
-
-The public receipt records an unauthenticated download matching all 526,178 published
-PDF bytes. The previously published v0.04 source, PDF, and metadata remain byte-identical
-in [the archive](versions/v0.04/). The manuscript is CC BY 4.0 and research code is MIT.
-
-Build from this directory with three passes of
-`pdflatex -interaction=nonstopmode -halt-on-error main.tex`, then render every page with
-`pdftoppm -png` and inspect it. The publication gate is tied to the reviewed PDF bytes.
+- Concept DOI: [10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388).
+- Version DOI: [10.5281/zenodo.22852479](https://doi.org/10.5281/zenodo.22852479).

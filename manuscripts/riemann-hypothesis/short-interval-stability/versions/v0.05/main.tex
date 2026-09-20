@@ -8,10 +8,10 @@
 \usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
 \usepackage{orcidlink,fancyhdr}
 \hypersetup{
-  pdftitle={Simple critical zeros in short intervals: stability, parity, localization, and Hilbert compression},
+  pdftitle={Simple critical zeros in short intervals: stability, pressure, parity, and localization},
   pdfauthor={Felipe Santibáñez-Leal},
-  pdfsubject={Short-interval simple critical zeros, Hilbert dimension, parity compression, local Selberg detectors, and exact certificates},
-  pdfkeywords={Riemann zeta function, simple zeros, short intervals, Hilbert space, parity, pair correlation, interval arithmetic}
+  pdfsubject={Short-interval simple critical zeros, local Selberg detectors, finite stability, pressure certificates, and odd-multiplicity density},
+  pdfkeywords={Riemann zeta function, simple zeros, short intervals, pair correlation, Gram matrix, interval arithmetic}
 }
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -30,9 +30,9 @@
 % macros are set by the publishing tool when the version DOI is reserved. At this text
 % width the two DOIs do not fit on one line of the box, so each has its own line.
 \newcommand{\doctype}{Preprint}
-\newcommand{\docversion}{v0.06}
+\newcommand{\docversion}{v0.05}
 \newcommand{\docdate}{20 September 2026}
-\newcommand{\versiondoi}{10.5281/zenodo.22852479}
+\newcommand{\versiondoi}{10.5281/zenodo.22851518}
 \newcommand{\conceptdoi}{10.5281/zenodo.22727388}
 \newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
 \newcommand{\headerblock}{%
@@ -49,12 +49,12 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small CAOS Research \doctype}
-\fancyhead[R]{\small Hilbert compression and localization\textperiodcentered\ \docversion}
+\fancyhead[R]{\small Stability, parity, and localization\textperiodcentered\ \docversion}
 \fancyfoot[C]{\thepage}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
 \allowdisplaybreaks[1]
 
-\title{Simple critical zeros in short intervals:\\stability, parity, localization, and Hilbert compression}
+\title{Simple critical zeros in short intervals:\\stability, pressure, parity, and localization}
 \author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
 \small CAOS Research program\\
 \small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
@@ -66,58 +66,51 @@ Not peer reviewed. Source code, data and computational records: \href{https://\d
 \headerblock
 
 \begin{abstract}
-Let $N$, $S$, and $O$ count, respectively, all copies, simple critical
-zeros, and distinct odd-multiplicity critical zeros in a fixed power
-interval. Let $Q$ be the squared-kernel pair sum. We prove the sharp finite
-Hilbert--parity inequality
-\[
- (Q-S)(N-O)\ge 2(N-S)^2.
-\]
-It retains the first Gram--Schmidt dimension in Lamzouri's attributed
-coefficient argument and couples that dimension to odd support. Combining
-this inequality with Wang's short-interval pair theorem and the localized
-rank-three Selberg detector gives, for every fixed $1/2<\theta<1$,
+Let $C_3=0.6567752140190419405\ldots$ be the certified rank-three
+diagonal constant of Pearce-Crump's sign-preserving Selberg detector. We
+localize that detector and prove that, for every fixed $1/2<\theta<1$, the
+lower asymptotic proportion of distinct odd-multiplicity critical zeros in
+$(T,T+T^\theta]$ is at least $(\theta-1/2)/(4eC_3)$. Combining this result
+with a parity refinement of the stable rank--trace inequality gives
 \[
  \liminf\frac{N_0^s(T,T^\theta)}{N(T,T^\theta)}
- \ge\max\left\{0,c(\theta),\frac{c(\theta)+2k_3(\theta)}3,
- h_3(\theta)\right\},
+ \ge\max\left\{0,c(\theta),
+ \frac{c(\theta)+(\theta-1/2)/(2eC_3)}3\right\},
 \]
-where $k_3(\theta)=(\theta-1/2)/(4eC_3)$ and
-\[
- h_3(\theta)=\frac{3+k_3(\theta)-
- \sqrt{(1-k_3(\theta))(9-k_3(\theta)-8c(\theta))}}4.
-\]
-Exact rational enclosures place the unique positivity threshold of the new
-term between $0.545884$ and $0.545885$. At $\theta=0.5459$, where the earlier linear
-parity term remains negative, the simple-critical proportion is greater than
-$1.6838163855\ldots\times10^{-5}$. The coefficient two in the finite
-theorem is sharp. The proof also records a scalar zero-simple witness showing
-why the dimension cannot be discarded. The result is asymptotic and depends
-on recent attributed preprints. No global percentage record, effective
-starting height, external peer review, or solution of the Riemann hypothesis
-is claimed.
+where $c(\theta)=2-\theta/2-\cot(\theta/\sqrt2)/\sqrt2$. Exact rational
+enclosures place the new positivity threshold in $(0.5459,0.546)$, below
+the cosine threshold $0.5501939647\ldots$. At $\theta=0.546$, a fixed
+legal mollifier proves a simple-critical proportion above
+$0.0000976239413345$. We also strengthen the positive cosine curve by an
+odd-frame pressure transfer; at $\theta=3/4$, a two-variable interval
+certificate gives the simple-critical bound $0.4190878881701117\ldots$.
+The finite stability inequality, Selberg detector, and global pressure
+methods are prior work. The localization uses an arbitrary-subinterval
+rational-frequency estimate from Pearce-Crump and Wang's fixed-test pair
+theorem. No global record, effective starting height, universal simplicity
+theorem, or solution of the Riemann hypothesis is claimed.
 \end{abstract}
 
 \section*{Summary of results}
 
-The central result is a sharp finite compression that retains Lamzouri's
-first Hilbert-subspace dimension and then uses parity to compare that
-dimension with distinct odd support. Its short-interval transfer lowers the
-explicit simple-critical positivity threshold from the EXP-005 bracket
-$(0.5459,0.546)$ to $(0.545884,0.545885)$ without changing the analytic
-constants.
+The central result is an explicit localization of Pearce-Crump's optimized
+Selberg detector. Retaining the actual interval length in its
+rational-frequency estimate gives positive density of distinct odd critical
+zeros for every fixed exponent above one half. A parity transfer then turns
+that input into a numerical simple-critical positivity threshold below the
+zero of Wang's cosine bound.
 
-The localized Selberg detector remains the odd-support input. Further results
-are the direct finite stability transfer, the odd-frame pressure theorem, its
-stronger consequence throughout the positive short-interval curve, an
-odd-frame bound from the compact finite certificate, and a certified
-two-variable pressure bound. The earlier classical parity theorem remains a
-separate weaker-input qualitative result.
+Further results are the direct finite Hilbert transfer with its explicit
+compact energy bound, the odd-frame pressure theorem, its stronger
+consequence throughout the positive short-interval curve, an odd-frame
+bound from the compact finite certificate, and a certified two-variable
+pressure bound. The earlier classical parity theorem remains useful as a
+weaker-input qualitative result and gives a separate distinct-zero consequence.
 
 \begin{quote}\small
 \textbf{Verification.} For the pressure bounds, parity deduction, and local
-Selberg and Hilbert--parity transfers (computations EXP-003 through
-EXP-006~\cite{RecordIII,RecordIV,RecordV,RecordVI}), the
+Selberg transfer (computations EXP-003, EXP-004, and EXP-005
+~\cite{RecordIII,RecordIV,RecordV}), the
 verification consists of exact finite checks, complete 256-bit replays of
 the interval certificates, checks of the imported statements against their
 primary sources, and independent step-by-step checks of the proofs,
@@ -132,8 +125,7 @@ Interval-range quantity & Certified value\\
 \midrule
 Wang cosine positivity threshold & $0.550193964744154\ldots$\\
 Localized Selberg--parity threshold & $(0.5459,0.546)$\\
-Hilbert--parity positivity threshold & $(0.545884,0.545885)$\\
-Simple-critical lower bound at $\theta=0.5459$ & $>0.0000168381638551$\\
+Simple-critical lower bound at $\theta=0.546$ & $>0.0000976239413345$\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -190,16 +182,15 @@ frames, nonuniform pair capacities, spectral envelopes, and combinations
 of certificates are developed in~\cite{Trmdy,Tawan,Shi}. The alternating
 schedule used below is a simple choice within this established framework.
 We do not claim these ingredients or an improved global record. Our
-contributions are the parity-compressed product inequality, its quadratic
-short-interval transfer, the explicit threshold below $0.545885$, the direct
-finite-stability transfer, and the certified pressure refinements. Classical
-odd-multiplicity density and retained multiplicity excess extend the range
-qualitatively. Pearce-Crump's coefficient-uniform detector localizes to every
-fixed power interval above one half and supplies the explicit odd-support
-curve. The new product retains Lamzouri's attributed first-subspace dimension
-before scalar compression; its coefficient inequality itself is not claimed
-as new. All finite proofs keep off-line signs, multiplicities, and singular
-Gram matrices explicit.
+contributions are their direct finite-Hilbert transfer, an explicit
+quantitative three-point bound, a strict refinement of Wang's positive
+short-interval curve, and three consequences. Classical odd-multiplicity
+density and the retained multiplicity excess extend the positivity range
+qualitatively. Odd-frame pressure strengthens the positive curve
+quantitatively. Finally, Pearce-Crump's coefficient-uniform Selberg detector
+localizes to every fixed power interval above one half, giving an explicit
+odd-density curve and a numerical positivity threshold. The finite proof
+keeps off-line signs, multiplicities, and singular Gram matrices explicit.
 
 Selberg's positive density theorem at lengths $T^{1/2+\epsilon}$ is
 reproduced as Theorem B in Karatsuba's primary article~\cite{Karatsuba}.
@@ -250,31 +241,6 @@ $u=0.02299$ proves
 \end{equation}
 The optimized limiting curve gives the stronger lower bound
 $0.0000994910410327$ at this exponent.
-\end{theorem}
-
-\begin{theorem}[Hilbert--parity compression, D+MV]
-\label{thm:hilbertparity}
-For every fixed $1/2<\theta<1$, put
-\[
- k_3(\theta)=\frac{\theta-1/2}{4eC_3},\qquad
- h_3(\theta)=\frac{3+k_3(\theta)-
- \sqrt{(1-k_3(\theta))(9-k_3(\theta)-8c(\theta))}}4.
-\]
-Then
-\begin{equation}\label{eq:hilbertsimple}
- \liminf_{T\to\infty}\frac{N_0^s(T,T^\theta)}{N(T,T^\theta)}
- \ge\max\left\{0,c(\theta),\frac{c(\theta)+2k_3(\theta)}3,
- h_3(\theta)\right\}.
-\end{equation}
-The new term has a unique zero $\theta_{\rm HP}$ and
-\begin{equation}\label{eq:hproot}
- 0.545884<\theta_{\rm HP}<0.545885.
-\end{equation}
-At $\theta=0.5459$ the earlier linear term is negative, while
-\begin{equation}\label{eq:hppoint}
- \liminf_{T\to\infty}\frac{N_0^s(T,T^{0.5459})}{N(T,T^{0.5459})}
- >0.0000168381638551244569880374399.
-\end{equation}
 \end{theorem}
 
 Theorem~\ref{thm:localselberg} refines the simple-critical range numerically
@@ -608,58 +574,6 @@ $e=0$ and $s\ge c$; otherwise $s-2e=3s-2o\ge c$. This proves
 feasibility and the stated relaxation optimum. Extra total-mass or Gram
 constraints are not included, so no optimum over actual zero configurations
 is claimed.
-
-\subsection{Hilbert-dimension parity compression}
-
-The next proposition returns to Lamzouri's Hilbert construction rather than
-the stable inequality above. Its arbitrary-parameter coefficient estimate is
-an attributed input~\cite{Lamzouri,AF}; the parity-compressed product is the
-new deduction.
-
-\begin{proposition}[Sharp Hilbert--parity product]\label{prop:hilbertproduct}
-For a nonempty conjugation-invariant finite multiset, let $N$ count copies,
-$S$ count simple real support points, and $O$ count distinct real support
-points of odd multiplicity. With the squared-kernel pair sum $Q$ defined in
-\eqref{eq:trace},
-\begin{equation}\label{eq:hilbertproduct}
- (Q-S)(N-O)\ge2(N-S)^2.
-\end{equation}
-The coefficient two is sharp.
-\end{proposition}
-\begin{proof}
-List the nonsimple real points and nonreal conjugate pairs as in Lamzouri's
-proof of Proposition 2.1~\cite{Lamzouri}. The first Gram--Schmidt range has
-exact dimension $d=r+k$ by linear independence of distinct exponentials on
-the positive-measure set where the kernel factor is nonzero. If
-$A_U,A_M,A_L$ are the coefficient sums in the first, middle, and last ranges,
-that proof gives
-\[
- A_U+A_M+A_L=N,\qquad A_M\le S,
- \qquad \alpha_j\le0\ \hbox{in the last range}.
-\]
-Bessel's inequality and, for any $t\ge1$, the scalar bounds
-$x^2\ge2tx-t^2$, $x^2\ge2x-1$, and $x^2\ge2tx$ on the three ranges give
-\begin{equation}\label{eq:hilbertparameter}
- Q\ge2tN-(2t-1)S-t^2d.
-\end{equation}
-This is the attributed arbitrary-parameter inequality. If $d=0$, then
-$N=S=O$ and \eqref{eq:hilbertproduct} is immediate. Otherwise multiplicity
-gives $N-S\ge2d$, so $t=(N-S)/d\ge2$ is admissible. Substitution in
-\eqref{eq:hilbertparameter} yields
-\begin{equation}\label{eq:hilbertoptimized}
- Q\ge S+\frac{(N-S)^2}{d}.
-\end{equation}
-If $o=O-S$ counts odd nonsimple real support points, then each such point
-costs one copy beyond the two-copy floor. Hence
-\[
- N-S\ge2r+o+2k=2d+O-S,
- \qquad 2d\le N-O.
-\]
-Combining this with \eqref{eq:hilbertoptimized} proves
-\eqref{eq:hilbertproduct}. A single real point of multiplicity two has
-$(N,S,O,Q)=(2,0,0,4)$, and multiplicity three has $(3,0,1,9)$; both give
-equality.
-\end{proof}
 
 \section{From three-point energy to a density gain}
 
@@ -1287,62 +1201,6 @@ $\theta-1/2-2u=0.00002$ and gives \eqref{eq:localpoint}. The boundary
 choice $u=0.023$ is excluded because it leaves no decay in
 \eqref{eq:localoffdiagonal}.
 
-\section{Hilbert--parity transfer and the lower threshold}
-\label{sec:hilberttransfer}
-
-Apply Proposition~\ref{prop:hilbertproduct} to Wang's scaled zero multiset
-in $(T,T+T^\theta]$. With
-\[
- q_T=\frac{Q_T}{N(T,T^\theta)},\qquad
- s_T=\frac{N_0^s(T,T^\theta)}{N(T,T^\theta)},\qquad
- o_T=\frac{N_{\rm odd}(T,T^\theta)}{N(T,T^\theta)},
-\]
-division by $N(T,T^\theta)^2$ gives the pointwise inequality
-\begin{equation}\label{eq:normalizedproduct}
- (q_T-s_T)(1-o_T)\ge2(1-s_T)^2.
-\end{equation}
-No product of liminf values is used. For a fixed smooth test, Wang supplies
-an eventual upper bound $q_T\le\mathcal C(f)+\varepsilon$, while
-Theorem~\ref{thm:localselberg} supplies an eventual lower bound
-$o_T\ge k_3(\theta)-\varepsilon$. Inserting these bounds in
-\eqref{eq:normalizedproduct} before letting $\varepsilon\downarrow0$ yields
-\[
- 2(1-s)^2\le(\mathcal C(f)-s)(1-k_3(\theta)).
-\]
-The smaller root is
-\begin{equation}\label{eq:quadraticroot}
- R(A,b)=\frac{4-b-\sqrt{b\{b+8(A-1)\}}}{4}.
-\end{equation}
-Use Wang's legal order: fix the smooth test, take the height limit, approximate
-the normalized cosine density, and finally let the fixed bandwidth increase
-to $\theta$. Since $\mathcal C_\theta=2-c(\theta)$, formula
-\eqref{eq:quadraticroot} becomes $h_3(\theta)$ and proves
-\eqref{eq:hilbertsimple}.
-
-The new term is positive exactly when
-\begin{equation}\label{eq:hpfunction}
- F_{\rm HP}(\theta):=c(\theta)+(2-c(\theta))k_3(\theta)>0.
-\end{equation}
-On $(1/2,1)$,
-\[
- F_{\rm HP}'(\theta)=c'(\theta)(1-k_3(\theta))+
- (2-c(\theta))k_3'(\theta)>0.
-\]
-Exact directed rational enclosures prove opposite signs at $0.545884$ and
-$0.545885$, giving \eqref{eq:hproot}. At $\theta=0.5459$, the old linear
-term is less than $-0.0000107367174936433552040195369$, while exact
-evaluation of the smaller root gives \eqref{eq:hppoint}. The weaker product
-without the retained $S$ term would give only
-$0.0000126556179972388281537305037$; retaining it improves the frozen lower
-bound by more than $33$ percent.
-
-The improvement cannot be recovered from the published scalar headlines
-alone. At $\theta=0.5459$, a normalized mixture of real triple points of
-support density $k_3(\theta)$ and real double points of density
-$(1-3k_3(\theta))/2$ has $S=0$ and satisfies every applicable scalar
-constraint. The product \eqref{eq:hilbertproduct} rules it out at Wang's
-actual pair level because it retains $d=r+k$ before compression.
-
 \section{The compact certificate}\label{sec:certificate}
 
 For $\theta=3/4$ and $R=21/4$, a finite interval computation proves
@@ -1422,23 +1280,24 @@ zeros without the finite operator and fixed-test analytic transfer.
 
 \section{Conclusions and further questions}
 
-The Hilbert--parity product \eqref{eq:hilbertproduct} is the strongest result
-of this paper. It retains a finite dimension that scalar multiplicity bounds
-discard and couples it to distinct odd support. Together with the localized
-Selberg detector, it proves positive simple-critical density for every fixed
-$\theta$ above a unique threshold in $(0.545884,0.545885)$. The coefficient
-two is sharp, and a scalar witness identifies the exact information responsible
-for the improvement. None of these results proves the Riemann hypothesis.
+Finite stability retains two different kinds of information. The Gram
+defect yields quantitative gains when simple critical points occur close
+enough for certified pressure windows to interact. Multiplicity excess,
+combined with distinct odd-multiplicity density, yields a qualitative
+range extension even at the zero of the baseline cosine bound. The
+two mechanisms have separate hypotheses, certificates, and distinct-zero
+consequences. The localized Selberg detector makes the odd density explicit
+for every fixed exponent above one half and gives a simple-critical positivity
+threshold below $0.546$. None of these results proves the Riemann hypothesis.
 
-The next analytic task is to reduce the $T^{1/2}U^2/H$ off-diagonal barrier or
-supply a stronger reproducible odd-support profile. Either change would move
-the threshold toward one half. Pearce-Crump's printed rank-six constant would
-improve the numerical value at $\theta=0.5459$, but the complete rank-six
-profile is unavailable and is therefore excluded from the theorem. Another
-direction is to retain more than the first Hilbert-subspace dimension and
-identify a zeta-compatible statistic beyond the scalar pair sum. Such a
-statistic must survive the fixed-test limiting process and must be supported
-by a complete analytic interface, not only finite optimization.
+The next analytic task is to reduce the $T^{1/2}U^2/H$ off-diagonal barrier.
+A stronger rational-frequency spacing estimate or a different local mean
+square could move the explicit threshold toward one half. Pearce-Crump's
+rank-six benchmark gives a slightly smaller diagonal constant, but the full
+rank-six profile data are not printed; the fully reproducible rank-three
+profile is used here. For the pressure route, richer windows may improve
+constants within the established framework; their existence does not
+establish global optimality.
 
 \medskip
 \noindent\textbf{Declaration of generative AI use.} Generative AI tools
@@ -1657,38 +1516,9 @@ prime mollifier selection, endpoint convention, and the match between
 distinct sign changes and the parity count. The recent analytic preprints
 remain imported mathematical inputs rather than machine-formalized theorems.
 
-\section{Hilbert--parity verification}
-
-The EXP-006 record~\cite{RecordVI} separates the universal proof from its
-finite and transcendental checks. The canonical run began from clean commit
-\texttt{0d736fa22ce7e833200381a32e8cc89f77c660e8}; its result has SHA-256
-\begin{center}\small\ttfamily
-82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf
-\end{center}
-and records PASS in 0.953 seconds. The exact census checked 18,479
-multiplicity profiles: 135 equality cases, 18,340 strict positive-dimension
-cases, and four empty-dimension cases. The census is diagnostic; the proof of
-Proposition~\ref{prop:hilbertproduct} supplies the unbounded quantifiers.
-
-The numerical certificate uses exact fractions, directed Taylor enclosures
-for $e$, $\sqrt2$, sine, and cosine, and an exact rational square-root
-enclosure. A separate 100-decimal interval evaluation lies inside every
-reported rational enclosure. It also verifies the scalar zero-simple witness,
-endpoint signs in \eqref{eq:hproot}, the negative old bound, and the positive
-new bound in \eqref{eq:hppoint}. Seven focused tests include tampered source,
-weakened-bound, and invalid-branch controls. Reproduce it with
-\begin{verbatim}
-python problems/number-theory/riemann-hypothesis/experiments/\
-EXP-006-hilbert-parity-compression/run.py \
-  --output-dir tmp/riemann-exp006-replay --budget-seconds 120
-pytest tests/test_riemann_hilbert_parity.py
-\end{verbatim}
-The earlier broad-bracket and weaker-transfer runs remain archived. CPU
-arithmetic sufficed; no GPU workload was justified.
-
 \section{Source comparison and limitations}
 
-The source comparison was updated on 2026-09-20. It used the full
+The source comparison was updated on 2026-09-19. It used the full
 Wang v1 manuscript, Lamzouri v2, the current Alp\"oge--Furman paper,
 Pearce-Crump v1,
 and pinned snapshots of the directly relevant global stability,
@@ -1719,11 +1549,8 @@ Likewise, weighted all-critical Gram defects and negative off-line spectral
 mass are separate research directions, not premises of the parity theorem.
 
 A bounded search of primary literature and the pinned contributor sources
-did not locate the exact Hilbert--parity product \eqref{eq:hilbertproduct},
-its quadratic short-interval transfer, the earlier short-interval parity
-combination, or the localization of Pearce-Crump's detector. The exact-phrase
-search included the AxiomMath formalization snapshot and the dated successor
-repositories. The finite accounting is already a consequence
+did not locate the exact short-interval parity combination or the localization
+of Pearce-Crump's detector. The finite accounting is already a consequence
 of known general multiplicity inequalities; the contribution is its proved
 asymptotic consequence with classical and explicit odd-zero inputs. This is
 not an assertion of exhaustive priority or a replacement for specialist peer
@@ -1732,12 +1559,10 @@ review.
 The analytic inputs include the recent Wang and Pearce-Crump preprints and
 the classical sign-change theorems, not an end-to-end machine formalization.
 The mathematical and numerical checks can still contain errors, and some
-numerical evaluators share arithmetic components. The explicit local and Hilbert--parity theorems
-do not give an effective starting height, uniformity for moving exponents,
+numerical evaluators share arithmetic components. The explicit local theorem
+does not give an effective starting height, uniformity for moving exponents,
 a global-record proportion, universal simplicity, or elimination of all
-off-line zeros. The finite product is elementary once the attributed
-coefficient inequality is granted, but the short-interval consequence still
-depends on the recent Wang and Pearce-Crump preprints.
+off-line zeros.
 
 This paper and the original research exposition in the repository are
 released under CC BY 4.0; code follows the repository's MIT license.
@@ -1890,14 +1715,6 @@ Complete localization proof, exact rational and interval certificate,
 negative controls, source hashes, and independent proof checks, dated
 2026-09-19.
 \href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer}{Public experiment record}.
-
-\bibitem{RecordVI}
-F.~Santib\'a\~nez-Leal,
-\emph{EXP-006: Hilbert--parity compression}, CAOS Research, 2026.
-Sharp finite product, complete short-interval proof, exact threshold
-certificate, scalar barrier witness, source bindings, and adversarial review,
-dated 2026-09-20.
-\href{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression}{Public experiment record}.
 
 \end{thebibliography}
 \end{document}
