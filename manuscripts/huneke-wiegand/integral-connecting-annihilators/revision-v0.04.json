@@ -1,0 +1,16 @@
+{
+  "title": "A quadratic family of integral two-torsion classes in a Huneke-Wiegand Koszul presentation",
+  "description_html": "<p>We study an explicit integral Koszul presentation arising in the graded-syzygy analysis of a previously constructed Huneke-Wiegand family. For every integer p&gt;=8, its cokernel contains a direct summand isomorphic to (Z/2)^floor(((p-2)^2+3)/12). The classes are indexed by strictly increasing nonnegative triples of sum p-2. Reflection-symmetric interval potentials give explicit original integral sources for twice each class, while relative parity functionals detect them independently.</p><p>For a semantic row projection retaining four of six recurring row types, we prove a new uniform constructive identity: two endpoint triangle rows vanish for every p&gt;=8, each by a single explicitly labelled source column of coefficient height one. The proof classifies every face before contraction. A locked p=11 frozen-carrier comparison and independent exact sweeps through p=300 validate the implementation without replacing the symbolic proof.</p><p>A tracked four-row vector is integrally congruent to one selected triangle class. We also give its full twice-source, two short kernel-domain corrections, and an integral potential basis of rank binomial(p-1,2). The complete cokernel, a matching upper bound, and a uniform identification with earlier isolated subpresentations remain unresolved.</p><p>The family-to-presentation identification is an imported premise. Son Pham retains priority for the original public Huneke-Wiegand counterexample. Source code, computation records and archived sources: https://github.com/fsantibanezleal/CAOS_RESEARCH .</p>",
+  "version_notes": "Adds a uniform support-one source theorem for two endpoint triangle rows in the four-type semantic projection, with a locked p=11 frozen-carrier comparison, independent audit, and exact regression checks through p=300. The scope boundary is explicit: no uniform isolated-component identification or complete projected cokernel is claimed.",
+  "keywords": [
+    "Huneke-Wiegand conjecture",
+    "Koszul homology",
+    "integral connecting maps",
+    "uniform annihilators",
+    "integral two-torsion",
+    "semantic row projection",
+    "explicit source certificates",
+    "numerical semigroups",
+    "exact certificates"
+  ]
+}
