@@ -4,9 +4,8 @@
 
 Read [state.md](state.md), [backlog.md](backlog.md), and [plan.md](plan.md), then
 the latest experiment verdicts. Evidence outranks this handoff. Public release
-v0.70.000 is live-verified. EXP-006 is confirmed and merged to `develop`; its
-0.71.000 release candidate passed local rendered QA. The result improves the
-explicit simple-critical positivity threshold to
+v0.71.000 is released and live-verified from main commit `8302be35`. EXP-006
+improves the explicit simple-critical positivity threshold to
 `0.545884<theta_HP<0.545885`. The general Riemann hypothesis remains open.
 
 ## 2. The objects table
@@ -58,19 +57,21 @@ state the complete boundary.
 
 ## 4. In flight
 
-1. Promote the reviewed release candidate from `develop` to `main`.
-2. Verify release 0.71.000 CI, Pages bytes, and the deployed Riemann replay.
-3. Mirror the final public state into the private coordination repository.
+1. Mirror the final public state into the private coordination repository.
+2. Seek independent mathematical review of the EXP-006 proof and attribution.
+3. Keep alternative routes separate until they pass declaration and proof gates.
 
 Completed in this round: replay v5 is baked and tested; manuscript v0.06 is
 published at DOI 10.5281/zenodo.22852479 and its 26-page PDF matches a fresh
-public download byte for byte.
+public download byte for byte. Research PR #316, release PR #317, and promotion
+PR #318 are merged. Main CI, Pages, ten live byte comparisons, and eight live
+browser scenarios passed.
 
 ## 5. Next actions
 
-1. Complete PR, CI, and Pages promotion for release 0.71.000.
-2. Record the deployed byte comparison and desktop/phone replay verification.
-3. Mirror the final public release state into the private coordination repository.
+1. Mirror the final public release state into the private coordination repository.
+2. Submit the manuscript for independent specialist review when a venue is chosen.
+3. Start no successor experiment without a committed declaration and source audit.
 
 ## 6. Where everything lives
 

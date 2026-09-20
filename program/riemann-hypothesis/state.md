@@ -1,8 +1,8 @@
 # Riemann hypothesis state
 
-Updated: 2026-09-20. Public release: **0.70.000**, released and live-verified
-from main commit `159ec22a6200938d6d8da1bba395f81014ca70e5` (tag
-`v0.70.000`). Current research round: **EXP-006 confirmed; Hilbert-parity
+Updated: 2026-09-20. Public release: **0.71.000**, released and live-verified
+from main commit `8302be35cb96280692ad1333d690a63cb220f8b2` (tag
+`v0.71.000`). Current research round: **EXP-006 confirmed; Hilbert-parity
 compression and explicit threshold below 0.545885**.
 
 EXP-006 proves the sharp finite product
@@ -44,12 +44,12 @@ The declaration commit is
 `b1febcf8a6d5830218e1df386af1e8a92c3037be`. The original broad-bracket and
 weaker-transfer runs remain preserved. The proof, audit, verdict and source
 bindings merged through research PR #316 into `develop`. Replay v5 is baked
-and tested. The release 0.71.000 candidate passed 428 Linux tests, 107 scoped
+and tested. Release 0.71.000 passed 428 Linux tests, 107 scoped
 Riemann tests, 18 frontend tests, and 20 rendered browser scenarios with zero
 failures. Manuscript v0.06 is published at
 [10.5281/zenodo.22852479](https://doi.org/10.5281/zenodo.22852479); its reviewed
-PDF matches a fresh public download. Promotion to `main`, Pages byte comparison,
-and live release verification remain separate delivery gates.
+PDF matches a fresh public download. Main promotion, Pages, ten live byte
+comparisons, and eight live browser scenarios passed.
 
 EXP-005 remains the analytic seed: for every fixed `1/2<theta<1`, it gives odd
 critical support density at least `(theta-1/2)/(4eC3)`. EXP-004 provides the
@@ -58,14 +58,11 @@ EXP-002 the original compact stability certificate. The detailed history and
 immutable prior artifacts remain in their experiment and release directories.
 
 The latest completed public release is recorded in
-[release-0.70.000](release-0.70.000/README.md). It includes manuscript v0.05 at
-[10.5281/zenodo.22851518](https://doi.org/10.5281/zenodo.22851518), merged
-research PR #309, release PR #310, promotion PR #311, successful CI and Pages,
-and eight live EN/ES light/dark desktop/phone scenarios. That release stays
-immutable while EXP-006 advances through its own publication and release.
-
-The reviewed 0.71.000 release candidate and its representative rendered
-evidence are recorded in [release-0.71.000](release-0.71.000/README.md).
+[release-0.71.000](release-0.71.000/README.md). It includes manuscript v0.06 at
+[10.5281/zenodo.22852479](https://doi.org/10.5281/zenodo.22852479), merged
+research PR #316, release PR #317, promotion PR #318, successful CI and Pages,
+ten byte-matched live files, and eight live EN/ES light/dark desktop/phone
+scenarios. Release 0.70.000 and its receipts remain immutable.
 
 The result is asymptotic for each fixed exponent and has no effective starting
 height. The imported 2026 preprints have been source-audited, but the work has
