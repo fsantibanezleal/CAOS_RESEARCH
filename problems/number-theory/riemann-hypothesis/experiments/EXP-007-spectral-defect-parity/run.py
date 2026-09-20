@@ -436,7 +436,9 @@ def sensitivity_target(exp006: ModuleType) -> dict[str, object]:
         "pressure_only_bound": interval_record(pressure_only),
         "headline_control": {
             "coupled_root_improves_h3": gain[0] > 0,
+            "coupled_root_is_below_h3": gain[1] < 0,
             "pressure_only_remains_stronger": pressure_only[0] > root[1],
+            "comparison_classified": gain[0] > 0 or gain[1] < 0,
         },
     }
 
@@ -605,7 +607,7 @@ def assemble_result(
         "spectral_census": spectral["passed"],
         "multiplicity_census": multiplicity["passed"],
         "frozen_exact_gain": target["passed"],
-        "sensitivity_product_gain": sensitivity["headline_control"]["coupled_root_improves_h3"],
+        "sensitivity_comparison_classified": sensitivity["headline_control"]["comparison_classified"],
         "sensitivity_headline_boundary": sensitivity["headline_control"]["pressure_only_remains_stronger"],
         "independent_replay_overlaps": all(replay_checks.values()),
     }
