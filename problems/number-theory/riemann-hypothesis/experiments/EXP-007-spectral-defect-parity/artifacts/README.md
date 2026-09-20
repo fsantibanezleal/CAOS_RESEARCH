@@ -25,3 +25,7 @@ The final run passed from clean commit
 `d63111ffa8a348c51eb4fd06f5a1e70a51211576`. Machine artifacts certify exact
 finite arithmetic and numerical enclosures. The universal theorem depends on
 `mathematical-proof.md` and `adversarial-audit.md`.
+
+`windows-canonical-v1/` preserves the exact CRLF result bytes cited by
+manuscript v0.07. The current canonical run uses fixed LF serialization so its
+receipt hash is identical to the immutable Git blob on every platform.

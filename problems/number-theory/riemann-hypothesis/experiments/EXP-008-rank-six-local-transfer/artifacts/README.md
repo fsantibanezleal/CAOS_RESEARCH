@@ -16,3 +16,7 @@ scalar consequences and interval computations. The rank-independent analytic
 argument is in `mathematical-proof.md`. Pearce-Crump's rank-six profile and
 constant remain an attributed source input because the public paper does not
 print its coefficient matrix.
+
+`windows-canonical-v1/` preserves the exact CRLF result bytes cited by
+manuscript v0.07. The current canonical run uses fixed LF serialization so its
+receipt hash is identical to the immutable Git blob on every platform.

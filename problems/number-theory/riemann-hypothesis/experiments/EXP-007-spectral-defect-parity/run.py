@@ -646,7 +646,11 @@ def compute(repo: Path) -> dict[str, object]:
 
 
 def write_json(path: Path, payload: object) -> None:
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    path.write_text(
+        json.dumps(payload, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
 
 
 def main() -> int:
@@ -738,7 +742,9 @@ def main() -> int:
             },
         )
         log("PASS: EXP-007 exact certificate completed")
-        (output / "stdout.txt").write_text("\n".join(log_lines) + "\n", encoding="utf-8")
+        (output / "stdout.txt").write_text(
+            "\n".join(log_lines) + "\n", encoding="utf-8", newline="\n",
+        )
         return 0
     except Exception as error:
         log(f"FAIL: {type(error).__name__}: {error}")
@@ -751,7 +757,9 @@ def main() -> int:
                 "elapsed_seconds": time.monotonic() - started,
             },
         )
-        (output / "stdout.txt").write_text("\n".join(log_lines) + "\n", encoding="utf-8")
+        (output / "stdout.txt").write_text(
+            "\n".join(log_lines) + "\n", encoding="utf-8", newline="\n",
+        )
         return 1
 
 

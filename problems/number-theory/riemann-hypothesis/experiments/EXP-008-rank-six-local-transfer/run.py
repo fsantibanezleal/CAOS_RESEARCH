@@ -427,7 +427,11 @@ def compute_certificate(repo: Path) -> dict[str, object]:
 
 
 def write_json(path: Path, payload: object) -> None:
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    path.write_text(
+        json.dumps(payload, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
 
 
 def main() -> int:
@@ -493,7 +497,9 @@ def main() -> int:
         }
         write_json(output / "execution-receipt.json", receipt)
         write_json(output / "checkpoint.json", {"schema": SCHEMA, "stage": "complete"})
-        (output / "run.log").write_text("\n".join(log_lines) + "\n", encoding="utf-8")
+        (output / "stdout.txt").write_text(
+            "\n".join(log_lines) + "\n", encoding="utf-8", newline="\n",
+        )
         return 0
     except Exception as exc:
         log(f"FAIL: {type(exc).__name__}: {exc}")
@@ -503,7 +509,9 @@ def main() -> int:
             "error": str(exc),
             "elapsed_seconds": time.monotonic() - started,
         })
-        (output / "run.log").write_text("\n".join(log_lines) + "\n", encoding="utf-8")
+        (output / "stdout.txt").write_text(
+            "\n".join(log_lines) + "\n", encoding="utf-8", newline="\n",
+        )
         return 1
 
 
