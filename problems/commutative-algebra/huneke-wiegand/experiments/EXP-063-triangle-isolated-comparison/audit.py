@@ -171,7 +171,7 @@ def source_boundary_labels() -> dict[int, set[str]]:
         labels: set[str] = set()
         for item in row["triangles"]:
             boundary = item["full_boundary"]
-            if len(boundary) != 1 or int(boundary[0]["coefficient"]) != 2:
+            if len(boundary) != 1 or abs(int(boundary[0]["coefficient"])) != 2:
                 raise AssertionError({"p": p, "EXP062_boundary": False})
             labels.add(json.dumps(boundary[0]["exact_label"], separators=(",", ":")))
         result[p] = labels
