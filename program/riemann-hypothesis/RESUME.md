@@ -4,8 +4,9 @@
 
 Read [state.md](state.md), [backlog.md](backlog.md), and [plan.md](plan.md), then
 the latest experiment verdicts. Evidence outranks this handoff. Public release
-v0.70.000 is live-verified. EXP-006 is confirmed on the scoped branch and
-improves the explicit simple-critical positivity threshold to
+v0.70.000 is live-verified. EXP-006 is confirmed and merged to `develop`; its
+0.71.000 release candidate passed local rendered QA. The result improves the
+explicit simple-critical positivity threshold to
 `0.545884<theta_HP<0.545885`. The general Riemann hypothesis remains open.
 
 ## 2. The objects table
@@ -57,7 +58,7 @@ state the complete boundary.
 
 ## 4. In flight
 
-1. Promote the scoped branch through develop and main pull requests.
+1. Promote the reviewed release candidate from `develop` to `main`.
 2. Verify release 0.71.000 CI, Pages bytes, and the deployed Riemann replay.
 3. Mirror the final public state into the private coordination repository.
 
