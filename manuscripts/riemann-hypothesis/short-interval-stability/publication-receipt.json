@@ -1,23 +1,23 @@
 {
-  "record_id": "22851518",
-  "version_doi": "10.5281/zenodo.22851518",
+  "record_id": "22852479",
+  "version_doi": "10.5281/zenodo.22852479",
   "concept_doi": "10.5281/zenodo.22727388",
-  "version": "0.05",
-  "verified_utc": "2026-09-20T01:05:58.0197024Z",
-  "public_url": "https://zenodo.org/records/22851518",
-  "api_url": "https://zenodo.org/api/records/22851518",
-  "filename": "riemann-hypothesis-short-interval-stability-v0.05.pdf",
+  "version": "0.06",
+  "verified_utc": "2026-09-20T04:16:11.809664Z",
+  "public_url": "https://zenodo.org/records/22852479",
+  "api_url": "https://zenodo.org/api/records/22852479",
+  "filename": "riemann-hypothesis-short-interval-stability-v0.06.pdf",
   "fresh_unauthenticated_download": true,
   "public_metadata": {
-    "title": "Simple critical zeros in short intervals: stability, pressure, parity, and localization",
+    "title": "Simple critical zeros in short intervals: stability, parity, localization, and Hilbert compression",
     "creator": "Santibáñez-Leal, Felipe",
     "orcid": "0000-0002-0150-3246",
     "affiliation": "CAOS open-research programme, Santiago, Chile",
     "publication_date": "2026-09-20",
-    "version": "0.05",
+    "version": "0.06",
     "license": "cc-by-4.0",
     "access": "open",
-    "resource_type": "publication-preprint"
+    "resource_type": "publication"
   },
   "verified_fields": [
     "published_status",
@@ -38,8 +38,8 @@
     "public_access",
     "exact_pdf_bytes"
   ],
-  "bytes": 526178,
-  "sha256": "bcfefac4b138d2b41c5fe232c64590e3b6f0c309455d40e01451d9251c1e8acc",
-  "md5": "d479704691232d59812fa3c2fec6b4ba",
+  "bytes": 545773,
+  "sha256": "dde6f2c9a6c0a9b46e66c9d44efc5786d1239dd1ada7664083a6d2134c452082",
+  "md5": "21e53864d9b90ac77c14d6bd8f5c505d",
   "repository_pdf_matches_download": true
 }

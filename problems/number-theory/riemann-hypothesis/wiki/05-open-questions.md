@@ -1,8 +1,9 @@
 # 5. Open questions, rejected routes, and falsification targets
 
-The current confirmed results are the explicit pressure improvement in
-[EXP-003](../experiments/EXP-003-odd-frame-pressure/verdict.md) and the qualitative
-interval-range improvement in [EXP-004](../experiments/EXP-004-parity-density-transfer/verdict.md).
+The current confirmed results include the explicit pressure improvement in
+[EXP-003](../experiments/EXP-003-odd-frame-pressure/verdict.md), the parity and
+localized Selberg transfers in EXP-004/005, and the Hilbert-parity compression
+in [EXP-006](../experiments/EXP-006-hilbert-parity-compression/verdict.md).
 The Riemann hypothesis remains open. The questions below go beyond those proved results.
 
 ## Further improve the explicit short-interval example
@@ -59,18 +60,19 @@ coefficient one is unjustified. EXP-002's factor $1/3$ comes from three actual
 partitions; it cannot be changed to $1/2$ merely because each gap belongs to
 two consecutive triples.
 
-## Quantify the new positivity range
+## Push the explicit threshold closer to one half
 
-[D] EXP-004 answers the qualitative range question by supplying the missing
-odd-zero input and retaining multiplicity excess. Its [complete proof](07-parity-density-transfer.md)
-gives a fixed $\theta_1<\theta_0$, with no numerical value assigned to the
-classical density $\kappa$. Pressure amplification by itself still requires a
-positive baseline and does not prove this extension.
+[D] EXP-005 supplied the quantitative odd-support seed, and EXP-006 retained
+the Hilbert dimension before scalar compression. The resulting explicit root
+lies in $(0.545884,0.545885)$. The scalar headline bounds alone still permit
+$S=0$ at $\theta=0.5459$; the exact triple/double witness records that barrier.
 
-[C] A certified decimal exponent would require a quantitative classical seed
-and explicit control of its conversion to $O/N$. Assigning a convenient small
-number to an unspecified positive constant is invalid. The scalar parity
-relaxation is already sharp; a stronger transfer needs additional information.
+[C] A further threshold gain now requires a stronger reproducible odd-support
+constant, a new analytic input coupled to multiplicity geometry, or information
+beyond the first Hilbert dimension. Pearce-Crump's printed rank-six constant is
+a sensitivity only because its complete profile is not printed. It cannot be
+used as a theorem premise until the profile or an equivalent certified object
+is available.
 
 ## Cross-area routes and their unresolved interfaces
 
@@ -145,7 +147,7 @@ and verification command were checked.
 |---|---|
 | Reoptimize the single cosine density | The Montgomery-Taylor extremal problem and broader bandlimited optimum are already solved. |
 | Certify more digits of $C_0,C_1,C_2$ | Arithmetic reproduction does not improve the theorem. |
-| Introduce a free coefficient in the multiplicity block inequality | Anthropic's pinned `RankTraceMult.lean` already proves the arbitrary-parameter result, with abstract sharpness in `TightMult.lean`. |
+| Claim the free coefficient in the multiplicity block inequality | Anthropic's pinned `RankTraceMult.lean` already proves the arbitrary-parameter result, with abstract sharpness in `TightMult.lean`; EXP-006 attributes it and claims only the parity-compressed product and transfer. |
 | Claim the additive-root obstruction itself | It occurs in the inspected Ainta line of work. |
 | Transfer a higher conditional pair-correlation constant unconditionally | The missing analytic hypothesis does not follow from finite optimization. |
 | Infer the distinct bound from a naive simple-zero count inequality | Higher multiplicities invalidate that heuristic; the valid companion uses the stronger signed-operator inequality. |

@@ -4,3 +4,4 @@
 # Preserve the exact canonical EXP-005 evidence bytes bound by its execution
 # receipt and proof review; the original Windows run emitted CRLF JSON.
 problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/artifacts/canonical/result.json -text
+problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/artifacts/canonical/result.json binary

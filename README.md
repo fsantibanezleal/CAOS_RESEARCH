@@ -62,7 +62,7 @@ certified arithmetic; floats are exploration-only). See `methodology/02-experime
 For the Riemann source archive, short-interval proof and interval certificate, use the
 [reproduction guide](docs/guides/riemann-replay.md). The general hypothesis remains open;
 the result concerns lower asymptotic proportions in fixed short intervals.
-The [rendered QA record](program/riemann-hypothesis/release-0.70.000/) includes the
+The [rendered QA record](program/riemann-hypothesis/release-0.71.000/) includes the
 browser matrix, visual reviews and representative desktop/phone screenshots.
 
 ## Versioning

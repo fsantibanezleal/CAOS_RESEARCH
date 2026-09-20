@@ -41,6 +41,7 @@ def test_bake_writes_valid_registry(tmp_path, monkeypatch):
         "EXP-003-odd-frame-pressure",
         "EXP-004-parity-density-transfer",
         "EXP-005-local-selberg-transfer",
+        "EXP-006-hilbert-parity-compression",
     }
 
 
@@ -59,6 +60,7 @@ def committed_riemann(tmp_path, monkeypatch):
     exp_three = problem / "experiments/EXP-003-odd-frame-pressure"
     exp_four = problem / "experiments/EXP-004-parity-density-transfer"
     exp_five = problem / "experiments/EXP-005-local-selberg-transfer"
+    exp_six = problem / "experiments/EXP-006-hilbert-parity-compression"
     files = {
         exp_one / "artifacts/result.json": {"status": "PASS"},
         exp_two / "artifacts/result.json": {
@@ -95,6 +97,12 @@ def committed_riemann(tmp_path, monkeypatch):
         exp_five / "mathematical-proof.md": "# Reviewed localization proof fixture\n",
         exp_five / "adversarial-audit.md": "# Reviewed localization audit fixture\n",
         exp_five / "verdict.md": "# EXP-005 verdict: confirmed\n",
+        exp_six / "hypothesis.md": "# Frozen Hilbert declaration\nQ(N-O)\n0.5458<theta<0.5459\n",
+        exp_six / "run.py": "# Hilbert parity exact runner fixture\n",
+        exp_six / "mathematical-proof.md": "# Reviewed Hilbert parity proof fixture\n",
+        exp_six / "adversarial-audit.md": "# Reviewed Hilbert parity audit fixture\n",
+        exp_six / "verdict.md": "# EXP-006 verdict: confirmed\n",
+        tmp_path / "tests/test_riemann_hilbert_parity.py": "# Focused Hilbert parity tests\n",
     }
     for path, content in files.items():
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -133,6 +141,8 @@ def committed_riemann(tmp_path, monkeypatch):
     monkeypatch.setattr(export_registry, "EXP004_DECLARATION", declaration)
     monkeypatch.setattr(export_registry, "EXP005_DECLARATION", declaration)
     monkeypatch.setattr(export_registry, "EXP005_CANONICAL", "fixture-canonical")
+    monkeypatch.setattr(export_registry, "EXP006_DECLARATION", declaration)
+    monkeypatch.setattr(export_registry, "EXP006_CANONICAL", "fixture-hilbert-canonical")
     premise_names = (
         "context/2026-09-12-critical-mass-and-multiplicity-route.md",
         "context/2026-09-12-parity-transfer-adversarial-audit.md",
@@ -236,6 +246,75 @@ def committed_riemann(tmp_path, monkeypatch):
         "canonical_commit": "fixture-canonical", "scientific_verdict": "confirmed",
         "analytic_localization_reviewed": True, "exact_certificate_reviewed": True,
         "source_sha256": {role: checksum(path) for role, path in local_roles.items()},
+    })
+    # The real EXP-006 declaration was later amended after a consistency audit.
+    # Keep that two-commit history in the fixture as well.
+    (exp_six / "hypothesis.md").write_text(
+        "# Frozen Hilbert declaration\nQ(N-O)\n0.5458<theta<0.5459\n"
+        "## Audit strengthening after the declared prediction\n(Q-S)(N-O)\n",
+        encoding="utf-8", newline="\n",
+    )
+    hilbert_checks = {name: True for name in (
+        "c3_interval_ordered", "c6_interval_ordered", "e_interval",
+        "finite_census", "finite_census_has_all_regimes",
+        "independent_interval_contained", "old_linear_negative",
+        "rank_six_sensitivity_stronger", "root_lower_negative",
+        "root_monotone_conditions", "root_upper_positive",
+        "scalar_headlines_allow_zero", "source_hashes", "sqrt2_interval",
+        "strong_bound_improves_weak", "strong_bound_positive",
+        "target_below_wang_root", "weak_bound_positive",
+    )}
+    hilbert_result = {
+        "schema": "riemann-exp006-results-v2", "status": "pass", "passed": True,
+        "checks": hilbert_checks,
+        "claim_boundary": {"rh_solved": False},
+        "parameters": {
+            "theta": exact(5459, 10000), "root_lower_theta": exact(136471, 250000),
+            "root_upper_theta": exact(109177, 200000), "simple_gate": exact(1, 100000),
+        },
+        "target": {
+            "c_upper": exact(-1, 100), "old_linear_upper": exact(-1, 100000),
+            "weak_simple_upper": exact(13, 1000000),
+            "strong_simple_lower": exact(17, 1000000),
+        },
+        "root_bracket": {
+            "lower": {"root_function_upper": exact(-1, 1000000)},
+            "upper": {"root_function_lower": exact(1, 1000000)},
+        },
+        "finite_census": {
+            "cases": 18479, "equality_cases": 135, "strict_cases": 18340,
+            "empty_dimension_cases": 4,
+        },
+        "scalar_headline_barrier": {"passed": True, "checks": {"witness": True}},
+        "execution_identity": {
+            "head": "fixture-hilbert-canonical", "tracked_clean_at_start": True,
+            "hypothesis_sha256": checksum(exp_six / "hypothesis.md"),
+            "run_py_sha256": checksum(exp_six / "run.py"),
+        },
+    }
+    hilbert_result_path = exp_six / "artifacts/canonical/result.json"
+    hilbert_result_path.parent.mkdir(parents=True, exist_ok=True)
+    _write_json(hilbert_result_path, hilbert_result)
+    hilbert_result_sha = checksum(hilbert_result_path)
+    _write_json(exp_six / "artifacts/canonical/execution-receipt.json", {
+        "schema": "riemann-exp006-execution-receipt-v1", "status": "pass",
+        "result_sha256": hilbert_result_sha,
+        "git": {"head": "fixture-hilbert-canonical", "tracked_clean_at_start": True},
+    })
+    hilbert_roles = {
+        "hypothesis": exp_six / "hypothesis.md",
+        "mathematical_proof": exp_six / "mathematical-proof.md",
+        "adversarial_audit": exp_six / "adversarial-audit.md",
+        "result": hilbert_result_path,
+        "verdict": exp_six / "verdict.md",
+        "runner": exp_six / "run.py",
+        "focused_test": tmp_path / "tests/test_riemann_hilbert_parity.py",
+    }
+    _write_json(exp_six / "proof-review.json", {
+        "schema": "riemann-exp006-proof-review-v1", "declaration_commit": declaration,
+        "canonical_commit": "fixture-hilbert-canonical", "scientific_verdict": "confirmed",
+        "analytic_transfer_reviewed": True, "exact_certificate_reviewed": True,
+        "source_sha256": {role: checksum(path) for role, path in hilbert_roles.items()},
     })
     commit()
     monkeypatch.setattr(export_registry, "ROOT", tmp_path)
@@ -405,7 +484,7 @@ def test_riemann_modal_records_survive_deleted_worktree_directories(
 def test_parity_export_binds_all_evidence_without_promoting_runner_to_proof(committed_riemann):
     _, exp_two, _, _ = committed_riemann
     payload = export_registry._riemann_payload()
-    assert payload["schema"] == "riemann-replay-v4"
+    assert payload["schema"] == "riemann-replay-v5"
     assert payload["parity_result"]["proof_status"]["all_height_theorem"].startswith("Not proved")
     assert payload["parity_review"]["scientific_verdict"] == "confirmed"
     assert payload["local_review"]["scientific_verdict"] == "confirmed"

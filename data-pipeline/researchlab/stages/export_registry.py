@@ -24,6 +24,8 @@ MANIFESTS = DERIVED / "manifests"
 EXP004_DECLARATION = "e03413b2301bf45ca68ff6e945f25add9a1c3a89"
 EXP005_DECLARATION = "6fd59fec51dda399de40e0327107dba42deb5b45"
 EXP005_CANONICAL = "864fe6b7bee69c6bdac72e72fbfb88b49ac0fef2"
+EXP006_DECLARATION = "b1febcf8a6d5830218e1df386af1e8a92c3037be"
+EXP006_CANONICAL = "0d736fa22ce7e833200381a32e8cc89f77c660e8"
 
 
 def _read_portfolio() -> dict:
@@ -217,6 +219,7 @@ def _riemann_payload() -> dict:
     exp_three = "EXP-003-odd-frame-pressure"
     exp_four = "EXP-004-parity-density-transfer"
     exp_five = "EXP-005-local-selberg-transfer"
+    exp_six = "EXP-006-hilbert-parity-compression"
     specifications = [
         ("constant_audit", exp_one, f"experiments/{exp_one}/artifacts/result.json"),
         ("result", exp_two, f"experiments/{exp_two}/artifacts/result.json"),
@@ -251,8 +254,17 @@ def _riemann_payload() -> dict:
         ("local_audit", exp_five, f"experiments/{exp_five}/adversarial-audit.md"),
         ("local_verdict", exp_five, f"experiments/{exp_five}/verdict.md"),
         ("local_review", exp_five, f"experiments/{exp_five}/proof-review.json"),
+        ("hilbert_result", exp_six, f"experiments/{exp_six}/artifacts/canonical/result.json"),
+        ("hilbert_receipt", exp_six,
+         f"experiments/{exp_six}/artifacts/canonical/execution-receipt.json"),
+        ("hilbert_hypothesis", exp_six, f"experiments/{exp_six}/hypothesis.md"),
+        ("hilbert_runner", exp_six, f"experiments/{exp_six}/run.py"),
+        ("hilbert_proof", exp_six, f"experiments/{exp_six}/mathematical-proof.md"),
+        ("hilbert_audit", exp_six, f"experiments/{exp_six}/adversarial-audit.md"),
+        ("hilbert_verdict", exp_six, f"experiments/{exp_six}/verdict.md"),
+        ("hilbert_review", exp_six, f"experiments/{exp_six}/proof-review.json"),
     ]
-    payload: dict = {"schema": "riemann-replay-v4", "provenance": []}
+    payload: dict = {"schema": "riemann-replay-v5", "provenance": []}
     source_bytes: dict[str, bytes] = {}
 
     def read_source(role: str, experiment: str, relative: str) -> bytes:
@@ -273,7 +285,7 @@ def _riemann_payload() -> dict:
     for role, experiment, relative in specifications:
         content = read_source(role, experiment, relative)
         if role in {"constant_audit", "result", "pressure_result", "parity_result",
-                    "local_result"}:
+                    "local_result", "hilbert_result"}:
             payload[role] = json.loads(content)
         elif role == "source_manifest":
             payload["reviewed_on"] = json.loads(content)["reviewed_on"]
@@ -520,6 +532,114 @@ def _riemann_payload() -> dict:
                 != hashlib.sha256(source_bytes[role]).hexdigest()):
             raise ValueError(f"EXP-005 proof review no longer matches: {role}")
     payload["local_review"] = local_review
+
+    # EXP-006 keeps the analytic theorem separate from the finite exact
+    # certificate. The exporter checks identities and byte bindings only; it
+    # does not rerun or promote the mathematical proof.
+    hilbert_test_path = "tests/test_riemann_hilbert_parity.py"
+    hilbert_test = _committed_bytes(hilbert_test_path)
+    hilbert_test_commit = subprocess.run(
+        ["git", "log", "-1", "--format=%H", "HEAD", "--", hilbert_test_path],
+        cwd=ROOT, check=True, capture_output=True, text=True,
+    ).stdout.strip()
+    payload["provenance"].append({
+        "role": "hilbert_test", "source_exp": exp_six, "path": hilbert_test_path,
+        "source_commit": hilbert_test_commit, "bytes": len(hilbert_test),
+        "sha256": hashlib.sha256(hilbert_test).hexdigest(),
+    })
+    source_bytes["hilbert_test"] = hilbert_test
+
+    hilbert = payload["hilbert_result"]
+    if (hilbert.get("schema") != "riemann-exp006-results-v2"
+            or hilbert.get("status") != "pass" or hilbert.get("passed") is not True):
+        raise ValueError("EXP-006 requires its passing strengthened canonical result")
+    expected_hilbert_checks = {
+        "c3_interval_ordered", "c6_interval_ordered", "e_interval",
+        "finite_census", "finite_census_has_all_regimes",
+        "independent_interval_contained", "old_linear_negative",
+        "rank_six_sensitivity_stronger", "root_lower_negative",
+        "root_monotone_conditions", "root_upper_positive",
+        "scalar_headlines_allow_zero", "source_hashes", "sqrt2_interval",
+        "strong_bound_improves_weak", "strong_bound_positive",
+        "target_below_wang_root", "weak_bound_positive",
+    }
+    if (set(hilbert.get("checks", {})) != expected_hilbert_checks
+            or not all(hilbert["checks"].values())):
+        raise ValueError("EXP-006 canonical result omits a declared exact control")
+    if hilbert["claim_boundary"].get("rh_solved") is not False:
+        raise ValueError("EXP-006 claim boundary changed")
+    if hilbert["finite_census"] != {
+            **hilbert["finite_census"], "cases": 18479, "equality_cases": 135,
+            "strict_cases": 18340, "empty_dimension_cases": 4}:
+        raise ValueError("EXP-006 finite census differs from the declared scope")
+    hilbert_parameters = hilbert["parameters"]
+    expected_parameters = {
+        "theta": ("5459", "10000"),
+        "root_lower_theta": ("136471", "250000"),
+        "root_upper_theta": ("109177", "200000"),
+    }
+    for name, (numerator, denominator) in expected_parameters.items():
+        if (hilbert_parameters[name]["numerator"] != numerator
+                or hilbert_parameters[name]["denominator"] != denominator):
+            raise ValueError(f"EXP-006 parameter changed: {name}")
+    target = hilbert["target"]
+    if (certified_decimal(target["c_upper"]) >= 0
+            or certified_decimal(target["old_linear_upper"]) >= 0
+            or certified_decimal(target["strong_simple_lower"])
+            <= certified_decimal(hilbert_parameters["simple_gate"])
+            or certified_decimal(target["strong_simple_lower"])
+            <= certified_decimal(target["weak_simple_upper"])
+            or certified_decimal(hilbert["root_bracket"]["lower"]["root_function_upper"]) >= 0
+            or certified_decimal(hilbert["root_bracket"]["upper"]["root_function_lower"]) <= 0):
+        raise ValueError("EXP-006 target, improvement, or root-bracket gate failed")
+    if (hilbert["scalar_headline_barrier"].get("passed") is not True
+            or not all(hilbert["scalar_headline_barrier"]["checks"].values())):
+        raise ValueError("EXP-006 scalar barrier witness is incomplete")
+    hilbert_identity = hilbert["execution_identity"]
+    if (hilbert_identity.get("head") != EXP006_CANONICAL
+            or hilbert_identity.get("tracked_clean_at_start") is not True
+            or hilbert_identity.get("hypothesis_sha256")
+            != hashlib.sha256(source_bytes["hilbert_hypothesis"]).hexdigest()
+            or hilbert_identity.get("run_py_sha256")
+            != hashlib.sha256(source_bytes["hilbert_runner"]).hexdigest()):
+        raise ValueError("EXP-006 execution identity differs from committed evidence")
+    hilbert_result_sha256 = hashlib.sha256(source_bytes["hilbert_result"]).hexdigest()
+    hilbert_receipt = json.loads(source_bytes["hilbert_receipt"])
+    if (hilbert_receipt.get("schema") != "riemann-exp006-execution-receipt-v1"
+            or hilbert_receipt.get("status") != "pass"
+            or hilbert_receipt.get("result_sha256") != hilbert_result_sha256
+            or hilbert_receipt.get("git", {}).get("head") != EXP006_CANONICAL
+            or hilbert_receipt.get("git", {}).get("tracked_clean_at_start") is not True):
+        raise ValueError("EXP-006 execution receipt does not bind the canonical result")
+    original_hypothesis = _revision_bytes(
+        f"{problem}/experiments/{exp_six}/hypothesis.md", EXP006_DECLARATION,
+    )
+    if b"Q(N-O)" not in original_hypothesis or b"0.5458<" not in original_hypothesis:
+        raise ValueError("EXP-006 original declaration does not contain the frozen target")
+    hilbert_review = json.loads(source_bytes["hilbert_review"])
+    if (hilbert_review.get("schema") != "riemann-exp006-proof-review-v1"
+            or hilbert_review.get("declaration_commit") != EXP006_DECLARATION
+            or hilbert_review.get("canonical_commit") != EXP006_CANONICAL
+            or hilbert_review.get("scientific_verdict") != "confirmed"
+            or hilbert_review.get("analytic_transfer_reviewed") is not True
+            or hilbert_review.get("exact_certificate_reviewed") is not True):
+        raise ValueError("EXP-006 requires separate theorem and certificate review")
+    hilbert_review_roles = {
+        "hypothesis": "hilbert_hypothesis",
+        "mathematical_proof": "hilbert_proof",
+        "adversarial_audit": "hilbert_audit",
+        "result": "hilbert_result",
+        "verdict": "hilbert_verdict",
+        "runner": "hilbert_runner",
+        "focused_test": "hilbert_test",
+    }
+    if set(hilbert_review.get("source_sha256", {})) != set(hilbert_review_roles):
+        raise ValueError("EXP-006 proof review omits required scientific evidence")
+    for reviewed_name, role in hilbert_review_roles.items():
+        if (hilbert_review["source_sha256"][reviewed_name]
+                != hashlib.sha256(source_bytes[role]).hexdigest()):
+            raise ValueError(f"EXP-006 proof review no longer matches: {role}")
+    payload["hilbert_review"] = hilbert_review
     return payload
 
 

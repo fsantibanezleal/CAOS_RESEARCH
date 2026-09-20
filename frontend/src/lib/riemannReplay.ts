@@ -50,7 +50,7 @@ function compareExact(left: { numerator: string; denominator: string }, right: {
 export function localSelbergEvidence(data: RiemannData | null) {
   const result = data?.local_result;
   const review = data?.local_review;
-  if (!data || !result || !review || data.schema !== 'riemann-replay-v4' ||
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v5' ||
       result.schema !== 'riemann-exp005-results-v1' || result.status !== 'pass' || !result.passed ||
       Object.values(result.checks).some((passed) => passed !== true) ||
       result.claim_boundary.rh_solved !== false || result.boundary_control.accepted !== false ||
@@ -63,6 +63,36 @@ export function localSelbergEvidence(data: RiemannData | null) {
   const roles = {
     hypothesis: 'local_hypothesis', mathematical_proof: 'local_proof',
     adversarial_audit: 'local_audit', result: 'local_result', verdict: 'local_verdict',
+  } as const;
+  if (!Object.entries(roles).every(([reviewRole, sourceRole]) =>
+    data.provenance.some((source) => source.role === sourceRole &&
+      source.sha256 === review.source_sha256[reviewRole as keyof typeof roles]),
+  )) return undefined;
+  return { result, review };
+}
+
+/** EXP-006 combines a universal proof with exact finite and interval checks.
+ * Display it only when every reviewed source hash is present in the replay. */
+export function hilbertParityEvidence(data: RiemannData | null) {
+  const result = data?.hilbert_result;
+  const review = data?.hilbert_review;
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v5' ||
+      result.schema !== 'riemann-exp006-results-v2' || result.status !== 'pass' || !result.passed ||
+      Object.values(result.checks).some((passed) => passed !== true) ||
+      result.claim_boundary.rh_solved !== false ||
+      review.schema !== 'riemann-exp006-proof-review-v1' || review.scientific_verdict !== 'confirmed' ||
+      !review.analytic_transfer_reviewed || !review.exact_certificate_reviewed ||
+      result.execution_identity.head !== review.canonical_commit) return undefined;
+  if (compareExact(result.target.strong_simple_lower, result.parameters.simple_gate) <= 0n ||
+      compareExact(result.target.strong_simple_lower, result.target.weak_simple_upper) <= 0n ||
+      BigInt(result.target.old_linear_upper.numerator) >= 0n ||
+      BigInt(result.root_bracket.lower.root_function_upper.numerator) >= 0n ||
+      BigInt(result.root_bracket.upper.root_function_lower.numerator) <= 0n ||
+      !result.scalar_headline_barrier.passed) return undefined;
+  const roles = {
+    hypothesis: 'hilbert_hypothesis', mathematical_proof: 'hilbert_proof',
+    adversarial_audit: 'hilbert_audit', result: 'hilbert_result', verdict: 'hilbert_verdict',
+    runner: 'hilbert_runner', focused_test: 'hilbert_test',
   } as const;
   if (!Object.entries(roles).every(([reviewRole, sourceRole]) =>
     data.provenance.some((source) => source.role === sourceRole &&

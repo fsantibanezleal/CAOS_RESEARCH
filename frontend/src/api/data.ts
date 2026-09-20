@@ -129,8 +129,46 @@ export type RiemannLocalReview = {
   imported_inputs: string[]; unquantified: string[];
   source_sha256: Record<'hypothesis' | 'mathematical_proof' | 'adversarial_audit' | 'result' | 'verdict', string>;
 };
+export type RiemannHilbertResult = {
+  schema: 'riemann-exp006-results-v2'; status: 'pass'; passed: true;
+  checks: Record<string, boolean>;
+  claim_boundary: { analytic_theorem: string; finite_certificate: string; rank_six: string; rh_solved: false };
+  parameters: {
+    theta: RiemannExact; root_lower_theta: RiemannExact;
+    root_upper_theta: RiemannExact; simple_gate: RiemannExact;
+  };
+  target: {
+    c_upper: RiemannExact; k_lower: RiemannExact; old_linear_upper: RiemannExact;
+    weak_simple_lower: RiemannExact; weak_simple_upper: RiemannExact;
+    strong_simple_lower: RiemannExact; strong_simple_upper: RiemannExact;
+  };
+  root_bracket: {
+    lower: { root_function_upper: RiemannExact };
+    upper: { root_function_lower: RiemannExact };
+    monotonicity: string;
+  };
+  finite_census: {
+    cases: number; equality_cases: number; strict_cases: number;
+    empty_dimension_cases: number; universal_status: string;
+  };
+  scalar_headline_barrier: { passed: true; checks: Record<string, boolean>; description: string };
+  execution_identity: {
+    head: string; hypothesis_sha256: string; run_py_sha256: string;
+    tracked_clean_at_start: boolean; python: string;
+  };
+  source_constants: { C3: { center: RiemannExact }; C6: { center: RiemannExact; role: string } };
+};
+export type RiemannHilbertReview = {
+  schema: 'riemann-exp006-proof-review-v1'; scientific_verdict: 'confirmed';
+  declaration_commit: string; canonical_commit: string; reviewed_utc: string;
+  analytic_transfer_reviewed: true; exact_certificate_reviewed: true;
+  confirmed_conclusion: string; finite_theorem: string; review_scope: string;
+  novelty_scope: string; imported_inputs: string[]; unquantified: string[];
+  source_sha256: Record<'hypothesis' | 'mathematical_proof' | 'adversarial_audit' |
+    'result' | 'verdict' | 'runner' | 'focused_test', string>;
+};
 export type RiemannData = {
-  schema: 'riemann-replay-v4';
+  schema: 'riemann-replay-v5';
   reviewed_on: string;
   result: {
     theta: string; radius: string; delta: string;
@@ -168,6 +206,8 @@ export type RiemannData = {
   parity_review: RiemannParityReview;
   local_result: RiemannLocalResult;
   local_review: RiemannLocalReview;
+  hilbert_result: RiemannHilbertResult;
+  hilbert_review: RiemannHilbertReview;
   provenance: {
     role: string; source_exp: string; path: string; source_commit: string;
     bytes: number; sha256: string;

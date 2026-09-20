@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "title": "Simple critical zeros in short intervals: stability, pressure, parity, and localization",
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "publication_date": "2026-09-20",
+    "version": "0.05",
+    "language": "eng",
+    "creators": [
+      {
+        "name": "Santibáñez-Leal, Felipe",
+        "orcid": "0000-0002-0150-3246",
+        "affiliation": "CAOS open-research programme, Santiago, Chile"
+      }
+    ],
+    "description": "<p>Let C<sub>3</sub> = 0.6567752140190419405677628751089899133... be the reproducible rank-three optimized Selberg constant. For every fixed 1/2 &lt; theta &lt; 1, localization of the Selberg detector to (T,T+T<sup>theta</sup>] gives a lower asymptotic proportion (theta-1/2)/(4eC<sub>3</sub>) of distinct odd-multiplicity critical zeros. Combining this estimate with a finite rank-trace inequality yields the simple-critical lower bound max{0,c(theta),(c(theta)+(theta-1/2)/(2eC<sub>3</sub>))/3}, where c(theta)=2-theta/2-cot(theta/sqrt(2))/sqrt(2).</p><p>The combined numerator is strictly increasing. Exact interval arithmetic places its unique zero in (0.5459,0.546), below the positivity threshold 0.550193964744154... of the unaugmented cosine curve. At theta=0.546 the certified simple-critical lower proportion exceeds 0.0000976239413345; direct optimization of the displayed curve gives 0.0000994910410327.</p><p>The localization uses the arbitrary-subinterval mean-value estimate in Pearce-Crump's optimized Selberg framework, together with a fixed mollifier length u &lt; (theta-1/2)/2. The stability, pressure, and parity transfers are also developed with reproducible exact certificates. No effective starting height, global zero-density record, or proof of the Riemann hypothesis is claimed. Source code, data, and computational records are available at https://github.com/fsantibanezleal/CAOS_RESEARCH under problems/number-theory/riemann-hypothesis.</p>",
+    "keywords": [
+      "Riemann zeta function",
+      "short intervals",
+      "simple critical zeros",
+      "odd multiplicity",
+      "Selberg method",
+      "mollifiers",
+      "pair correlation",
+      "Gram matrix stability",
+      "interval arithmetic"
+    ],
+    "license": "cc-by-4.0",
+    "access_right": "open",
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/fsantibanezleal/CAOS_RESEARCH",
+        "relation": "isSupplementTo",
+        "resource_type": "software"
+      },
+      {
+        "identifier": "10.48550/arXiv.2609.07918",
+        "relation": "cites",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "identifier": "10.48550/arXiv.2609.02882",
+        "relation": "cites",
+        "resource_type": "publication-preprint"
+      }
+    ],
+    "version_notes": "Adds the explicit local Selberg transfer proved in EXP-005, the exact threshold bracket 0.5459 < theta_* < 0.546, a fixed legal mollifier witness at theta = 0.546, and the resulting positive simple-critical proportion. The source comparison and limitations are updated. The author name remains Santibanez-Leal with the diacritics printed on the manuscript, as on ORCID 0000-0002-0150-3246."
+  }
+}

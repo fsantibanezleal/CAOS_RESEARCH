@@ -317,3 +317,35 @@ The [proof review](../experiments/EXP-005-local-selberg-transfer/proof-review.js
 binds the hypothesis, proof, audit, result and verdict. The computation cannot
 replace the analytic localization proof, and neither constitutes external peer
 review or an effective-height theorem.
+
+## EXP-006: Hilbert dimension and parity compression
+
+The [sixth verdict](../experiments/EXP-006-hilbert-parity-compression/verdict.md)
+is confirmed. The original declared product passed, then the consistency audit
+restored the simple-real term already present in the attributed Hilbert bound.
+The final sharp theorem is
+
+$$
+(Q-S)(N-O)\ge2(N-S)^2.
+$$
+
+The earlier broad-bracket and weaker-transfer runs remain under the artifact
+directory. The strengthened canonical run started from clean commit
+`0d736fa22ce7e833200381a32e8cc89f77c660e8`, checked 18,479 multiplicity
+profiles, directed rational transcendental bounds, a scalar barrier witness,
+and containment of a separate 100-digit interval replay. Its result SHA-256 is
+`82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf`.
+
+At $\theta=0.5459$, EXP-006 proves the simple-critical lower proportion exceeds
+$0.0000168381638551244569880374399$. It brackets the unique positivity root in
+$(0.545884,0.545885)$.
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/run.py --output-dir tmp/riemann-exp006-replay --budget-seconds 120
+pytest tests/test_riemann_hilbert_parity.py tests/test_riemann_local_selberg.py tests/test_riemann_parity.py
+```
+
+The [proof review](../experiments/EXP-006-hilbert-parity-compression/proof-review.json)
+binds the amended hypothesis, runner, focused tests, proof, audit, canonical
+result and verdict. The finite census is diagnostic; the written argument proves
+universality and the asymptotic transfer.
