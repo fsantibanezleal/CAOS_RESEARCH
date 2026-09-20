@@ -1,6 +1,6 @@
 # Riemann hypothesis handoff
 
-## State in one screen
+## 1. State in one screen
 
 Read [state.md](state.md), [backlog.md](backlog.md), and [plan.md](plan.md), then
 the latest experiment verdicts. Evidence outranks this handoff. Public release
@@ -8,7 +8,7 @@ v0.70.000 is live-verified. EXP-006 is confirmed on the scoped branch and
 improves the explicit simple-critical positivity threshold to
 `0.545884<theta_HP<0.545885`. The general Riemann hypothesis remains open.
 
-## Current objects
+## 2. The objects table
 
 | Object | Role | Current evidence |
 |---|---|---|
@@ -19,7 +19,7 @@ improves the explicit simple-critical positivity threshold to
 | `h3(theta)` | EXP-006 quadratic simple-zero term | Exact root and target certificate |
 | EXP-006 canonical result | 18,479 profiles and exact interval gates | SHA-256 `82c4761b5c97011ff86cdd379d647ad0f94643a7eb8324a4a09aa37f58848bbf` |
 
-## Experiment index
+## 3. Experiment index
 
 | Experiment | Scope | Outcome |
 |---|---|---|
@@ -30,7 +30,7 @@ improves the explicit simple-critical positivity threshold to
 | EXP-005 | Local Selberg odd-support curve | confirmed; old threshold in `(0.5459,0.546)` |
 | EXP-006 | Hilbert dimension and parity compression | confirmed; new threshold in `(0.545884,0.545885)` |
 
-## Confirmed EXP-006 result
+## 3a. Confirmed EXP-006 result
 
 For every nonempty finite conjugation-invariant multiset in Lamzouri's kernel
 setting,
@@ -55,7 +55,7 @@ negative. The [proof](../../problems/number-theory/riemann-hypothesis/experiment
 and [proof review](../../problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/proof-review.json)
 state the complete boundary.
 
-## In flight
+## 4. In flight
 
 1. Promote the scoped branch through develop and main pull requests.
 2. Verify release 0.71.000 CI, Pages bytes, and the deployed Riemann replay.
@@ -64,6 +64,22 @@ state the complete boundary.
 Completed in this round: replay v5 is baked and tested; manuscript v0.06 is
 published at DOI 10.5281/zenodo.22852479 and its 26-page PDF matches a fresh
 public download byte for byte.
+
+## 5. Next actions
+
+1. Complete PR, CI, and Pages promotion for release 0.71.000.
+2. Record the deployed byte comparison and desktop/phone replay verification.
+3. Mirror the final public release state into the private coordination repository.
+
+## 6. Where everything lives
+
+Problem: `problems/number-theory/riemann-hypothesis/`. EXP-006 proof, audit,
+verdict, runner, and immutable outputs are below its `experiments/` directory.
+Replay instructions: `docs/guides/riemann-replay.md`. Release receipts belong in
+`program/riemann-hypothesis/release-0.71.000/`; prior release evidence remains
+immutable. Manuscript v0.06 and its archived predecessors are under
+`manuscripts/riemann-hypothesis/short-interval-stability/`. Private coordination
+is mirrored under `plans/caos-research/riemann-hypothesis/` in CAOS_MANAGE.
 
 ## Reproduction
 
@@ -78,7 +94,7 @@ The runner refuses overwrite, pins predecessor and source hashes, and separates
 finite arithmetic from the universal proof. CPU arithmetic is sufficient; no
 GPU workload is justified.
 
-## Gotchas
+## 7. Gotchas
 
 `N` counts copies; `S` and `O` count support points. The pair sum uses ordinary
 complex squares before conjugation symmetry makes the total real. The current
