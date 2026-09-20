@@ -146,7 +146,9 @@ def check_formula(p: int, r: int, modules: dict[str, ModuleType]) -> dict[str, o
         "source_hash": digest(record["source"]),
         "boundary_hash": digest(record["boundary"]),
         "counts": dict(sorted(counts.items())),
-        "projected": record["projected"],
+        "projected_hash": digest(record["projected"]),
+        "projected_sign": int(record["projected"][0]["sign"]),
+        "projected_row_hash": digest(record["projected"][0]["row"]),
     }
 
 

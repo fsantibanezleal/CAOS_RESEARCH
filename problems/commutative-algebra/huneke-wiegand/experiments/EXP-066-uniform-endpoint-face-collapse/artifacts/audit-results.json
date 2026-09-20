@@ -1,7 +1,7 @@
 {
   "experiment": "EXP-066 independent audit",
   "status": "INDEPENDENT_AUDIT_PASS",
-  "producer_artifact_hash": "7d1b4f27872afe02f56b7343adef7dbaeaac36be00de4b7de427922b869e6dfa",
+  "producer_artifact_hash": "f68ea2c9349b350c5b8c8de01f021b45dbc08416d50f0b4eff302321413cf9b9",
   "holdout": [
     {
       "r": 1,
@@ -29,5 +29,5 @@
   "endpoint_checks": 586,
   "reverse_parameter_order": true,
   "formula_checks_hash": "fb4e654da68f7571c50025347586405a0db9a87a2854372493115ad17e0ef779",
-  "artifact_hash": "e803f4bf6273ae1e044a53d2b5b460c50ec6a51d10efeff8b38c7d1614d1b4e7"
+  "artifact_hash": "0bbf3086b64042644e7c262171c6411704769dc5757b4599314f18c2e276316b"
 }

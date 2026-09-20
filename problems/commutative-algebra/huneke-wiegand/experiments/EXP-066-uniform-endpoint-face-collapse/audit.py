@@ -15,7 +15,7 @@ EXP042 = EXPERIMENTS / "EXP-042-bockstein-normal-form"
 EXP063 = EXPERIMENTS / "EXP-063-triangle-isolated-comparison"
 RESULTS = HERE / "artifacts" / "results.json"
 OUTPUT = HERE / "artifacts" / "audit-results.json"
-RUN_SHA256 = "9415847bc5ab4edbd6dbd2c1a980c2197a4fb5edd947c4f8934bb14d47bfd303"
+RUN_SHA256 = "5d3017da4abf71e493a818e6a7887289b08f6a71b0276332041ca5845e9da588"
 ALIASES = {
     ("D", "A", (-2, -3, 1, 0, 1, 0, 0, 0, 0, 0)): "R0",
     ("D", "A", (-3, -2, 2, 0, 0, 0, 0, 0, 0, 0)): "R1",

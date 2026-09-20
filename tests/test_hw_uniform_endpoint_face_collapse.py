@@ -37,8 +37,8 @@ def test_uniform_face_counts_and_endpoint_projection():
         for r in (1, 2):
             record = module.check_formula(p, r, modules)
             assert record["counts"] == {"R0": p - 3, "R2": p - 3, "R5": 1}
-            assert record["projected"][0]["sign"] == -1
-            assert record["projected"][0]["row"] == module.target_label(p, r)
+            assert record["projected_sign"] == -1
+            assert record["projected_row_hash"] == module.digest(module.target_label(p, r))
 
 
 def test_negative_controls_are_rejected():
