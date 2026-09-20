@@ -175,6 +175,31 @@
      3
     ]
    }
+  },
+  "R3": {
+   "n": 306,
+   "m": 459,
+   "cubic": true,
+   "digest": "137c855ecde9ac978f2f8d3ec8fd1f50e2ce979dc0a303e7f2a184cb996ae2fc",
+   "girth": 5,
+   "edge_connectivity": 3,
+   "cyclic_cuts_below_4": [],
+   "cut_search_seconds": 13.6,
+   "block0_boundary": [
+    2,
+    5,
+    10,
+    19
+   ],
+   "block0_boundary_cycle_separating": true,
+   "pd_le2": {
+    "status": "UNSAT",
+    "drat_trim_verified": true,
+    "seconds": 5802.479,
+    "drat_trim_seconds": 2265.333,
+    "proof_sha256": "28cb23616cd9ffbb7f86174aa39ffd48dea4be8d5497c5f24bcfec5a754e9ab8",
+    "cnf_sha256": "3ad1eb4a79f7e17ac9379188cf636f034923b00f0a50e664a617ec9130f4be4c"
+   }
   }
  }
 }

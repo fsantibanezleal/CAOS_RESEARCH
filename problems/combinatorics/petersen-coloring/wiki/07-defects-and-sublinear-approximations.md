@@ -115,6 +115,48 @@ $G - e_1 - e_2$ of $G_{52}$, $G'_{52}$, $G_{68}$ is colorable. This points to (e
 the conjecture; it decides nothing. A single cyclically 4-edge-connected counterexample with a
 non-critical adjacent pair would reverse the picture.
 
+## Resolution: statement (e) is false (EXP-012, 2026-09-19)
+
+Sources: `context/2026-09-19-conduction.md`; EXP-012 hypothesis, addenda and verdict.
+
+**Conduction.** For edges $x, y$ of $P$, the class of $\mathbf 1_x + \mathbf 1_y$ modulo the cut
+space determines the distance $d(x, y) \in \{0,1,2,3\}$ in the line graph of $P$ (the symmetric
+difference of two pairs with equal classes is a cut of weight at most 4: empty, or the four edges
+around an edge). In a 4-pole whose vertices are all good, the sum of the four dangling labels is a
+sum of stars, so its two connectors carry the same class and hence the same distance. The set
+$D(M)$ of distances a 4-pole can transmit is a signature of the 4-pole with its pairing.
+
+**Restoration.** For a graph $G$ without a Petersen coloring: $G - ab - cd$ (connectors $\{a,b\}$,
+$\{c,d\}$) never transmits distance 0, and $G - \{u, v\}$ (connectors: the ends at $u$, the ends at
+$v$) never transmits distance 1; in both cases the transmitted labels would restore a Petersen
+coloring of $G$.
+
+**Rings.** If $D(A) \cap D(B) = \emptyset$, the ring alternating $t$ copies of $A$ and $t$ copies of
+$B$ has, under every map, bad vertices in at least $t$ of its $2t$ blocks: two consecutive good
+blocks would share a connector with a distance in both sets.
+
+**The instance.** $A = G_{52} - \{0,3\} - \{1,9\}$ has $D(A) = \{1\}$ and $B = G_{52} - \{2,7\}$
+has $D(B) = \{0\}$ (every excluded distance refuted with a verified proof; each exclusion alone
+suffices, together with the restoration lemma for the other block). The rings $R_1$, $R_2$ have no
+cycle-separating cut with at most three edges (bridge search, cross-checked), $R_1$ has no Petersen
+coloring and $\mathrm{pd}(R_2) = 2$ with the bad vertices in the two $B$-blocks. A short argument
+(the ring carries four edge-disjoint paths between any two blocks; a small cycle-separating cut
+would be confined to at most three consecutive blocks, a configuration already present in $R_2$)
+gives cyclic 4-edge-connectivity of every $R_t$, $t \ge 2$.
+
+**Theorem.** For every $t \ge 2$, $R_t$ is a cyclically 4-edge-connected cubic graph of girth 5 on
+$102t$ vertices with $\mathrm{ab}(R_t) \ge \mathrm{pd}(R_t) \ge t$. So no sublinear function
+bounds $\mathrm{ab}$ on cyclically 4-edge-connected cubic graphs: statement (e) is false, all five
+statements of Conjecture 3 of Mattiolo, Mazzuoccolo and Mkrtchyan are false, and the conjectured
+equivalence holds.
+
+**What the earlier evidence missed.** The fifteen cyclically 4-edge-connected counterexamples of
+EXP-006, EXP-008 and EXP-011 all had every adjacent pair critical, and the record called this
+"consistent with (e)". $R_2$ is cyclically 4-edge-connected and has non-critical adjacent pairs
+(two bad vertices must sit in non-consecutive blocks), and $R_3$ has no critical pair at all. The
+inference from the known counterexamples to the class was wrong; the conduction signature, not
+criticality, is what separates the two behaviours.
+
 ## Exact values on small instances (EXP-009)
 
 | graph | order | connectivity | pd | ab |
