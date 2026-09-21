@@ -7,6 +7,8 @@ the producer, independent auditor, or manuscript text is written.
 
 Let `Gamma` be a numerical semigroup of multiplicity `m`, let `s>0` be a gap,
 and suppose the normalized two-generated monomial ideal `(1,t^s)` is rigid.
+Choose any `a` with `a,a+s in Gamma`, so its integral translate is
+`(t^a,t^(a+s))`.
 For an integer `q>=1` with `gcd(q,m)=1`, does the simple gluing
 
 ```text
@@ -53,8 +55,8 @@ D^(q) = m*N + q*D.
 
 Consequently `D=E+E` implies
 `D^(q)=E^(q)+E^(q)`. The ideal
-`(t^(qm),t^(q(m+s)))` in the localized semigroup ring of `Gamma^(q)` is
-nonprincipal and rigid.
+`(t^(qa),t^(q(a+s)))` in the localized semigroup ring of `Gamma^(q)` is
+nonprincipal and rigid. For the CAOS family, `a=m`.
 
 ### P3: two-parameter CAOS consequence
 
