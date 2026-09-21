@@ -1,5 +1,72 @@
 # Riemann hypothesis history
 
+## 2026-09-20: EXP-008 confirmed an earlier source-certified rank-six onset
+
+Declaration `2297d2fc` preceded implementation and computation. EXP-008 proves
+that the local Selberg detector transfer works for every fixed finite rank and
+then applies Pearce-Crump's stated $C_6$ interval. The public source does not
+print the rank-six coefficient matrix, so the input remains attributed.
+
+The exact certificate proves
+`0.5458837<theta6<0.5458838`, compared with
+`0.5458846<theta3<0.5458847`. At theta=0.545884, the rank-six term exceeds
+`2.5541123454645702e-7` while the rank-three term is negative. At theta=0.5459,
+the pointwise gain exceeds `9.263543061777356e-7`. The optimized EXP-007
+companion is also strictly positive. The portable canonical result SHA-256 is
+`1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781`.
+
+## 2026-09-20: manuscript v0.07 published and verified
+
+The 30-page manuscript integrates the spectral-defect parity theorem,
+rank-independent localization, and the source-certified rank-six onset. Three
+DOI-bearing compilation passes had zero warnings, undefined references, and
+box errors. All pages were rendered and visually inspected after the final
+author-metadata correction. Zenodo published v0.07 at
+[10.5281/zenodo.22860012](https://doi.org/10.5281/zenodo.22860012). A fresh
+unauthenticated download matches all 575,351 local bytes, SHA-256
+`c7bda5f1acc0b34ac33b6a071e66586b4032ae6e385d93f7fdd2d197411dbf81`.
+Publication is not external peer review and does not change the open status of
+RH.
+
+## 2026-09-20: canonical JSON made byte-portable
+
+The EXP-007 and EXP-008 runners now write explicit UTF-8/LF bytes, so canonical
+hashes survive Git checkout normalization on Windows and Unix. Fresh clean-run
+receipts bind EXP-007 to
+`98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947`
+and EXP-008 to
+`1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781`.
+The exact Windows byte streams cited by the already published v0.07 manuscript
+remain archived under each experiment's `artifacts/windows-canonical-v1/`
+directory.
+
+## 2026-09-20: EXP-007 confirmed a spectral-defect parity coupling
+
+Declaration `a2abdcc8360399b3fa42aaea9245e4b83352c30f` preceded implementation
+and computation. The proof retains the full simple-real Gram defect through
+the EXP-006 parity product:
+
+$$
+(Q-S-D(G))(N-O)\ge2(N-S)^2.
+$$
+
+The parameterized rank-trace theorem and spectral profile are attributed prior
+work. The new candidate contribution is their coupling to odd support and the
+resulting strict improvement of every positive point of the EXP-006 curve.
+At theta=0.5459 the correlated directed-rational certificate proves
+`H-h3>1.3732525985593292701164661575215e-70`. The onset bracket remains
+`(0.545884,0.545885)`.
+
+The canonical CPU run started from clean commit
+`d63111ffa8a348c51eb4fd06f5a1e70a51211576`, checked 652,260 rational spectra
+and 18,479 multiplicity profiles, and overlapped every shared quantity with an
+independent 100-digit interval replay. Its result hash is
+`ad635c5b60c4bcae63199fb54a7979a02206ce0ee572853b2df13933dafc320c`.
+Two failed attempts remain preserved: one corrected the relation between two
+independent interval enclosures, and one removed an unjustified positive-sign
+expectation from a diagnostic sensitivity control. The result does not solve
+RH, lower the onset exponent, or establish external priority.
+
 ## 2026-09-20: EXP-006 manuscript v0.06 published and verified
 
 The 26-page manuscript includes the sharp finite product, its complete proof,

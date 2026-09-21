@@ -349,3 +349,69 @@ The [proof review](../experiments/EXP-006-hilbert-parity-compression/proof-revie
 binds the amended hypothesis, runner, focused tests, proof, audit, canonical
 result and verdict. The finite census is diagnostic; the written argument proves
 universality and the asymptotic transfer.
+
+## EXP-007: spectral-defect parity coupling
+
+The [seventh verdict](../experiments/EXP-007-spectral-defect-parity/verdict.md)
+is confirmed. The finite theorem retains the simple-real spectral defect:
+
+$$
+(Q-S-D(G))(N-O)\ge2(N-S)^2.
+$$
+
+The pressure transfer then proves `H(theta)>h3(theta)` for every fixed exponent
+where `h3` is positive. At `theta=0.5459`, the correlated exact gain exceeds
+`1.3732525985593292701164661575215e-70`. This is a strict full-curve
+improvement, not a lower onset exponent or a new printed headline decimal.
+
+The portable canonical run checked 652,260 rational spectra and 18,479
+multiplicity profiles. Its result SHA-256 is
+`98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947`.
+Every shared exact interval overlaps an independent 100-digit replay. The
+historical theta=3/4 control makes the coupled root worse while leaving the
+pressure-only theorem stronger, and the result records that boundary.
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/run.py --output-dir tmp/riemann-exp007-replay --budget-seconds 180
+python -m pytest -q tests/test_riemann_spectral_defect_parity.py
+```
+
+The [proof review](../experiments/EXP-007-spectral-defect-parity/proof-review.json)
+binds the declaration, runner, focused tests, proof, audit, canonical result,
+and verdict. The two failed attempts remain preserved as audit evidence.
+
+## EXP-008: rank-six local transfer
+
+The [eighth verdict](../experiments/EXP-008-rank-six-local-transfer/verdict.md)
+is confirmed relative to Pearce-Crump's stated source-certified rank-six
+constant. The written proof first removes the rank-three restriction from the
+EXP-005 localization argument. For every fixed finite rank $q$,
+
+$$
+\liminf\frac ON\ge\frac{\theta-1/2}{4eC_q}.
+$$
+
+Combining the $q=6$ curve with EXP-006 gives the onset brackets
+
+$$
+0.5458837<\theta_6<0.5458838
+<0.5458846<\theta_3<0.5458847.
+$$
+
+At $\theta=0.545884$ the rank-six term is positive and the rank-three term is
+negative. At $\theta=0.5459$, the rank-six lower bound exceeds
+`0.0000177645181613023236390595079` and its improvement over rank three
+exceeds `9.263543061777356e-7`. The optimized EXP-007 companion at
+`rho=11/5` has a strict gain floor above `1.7766622541125682e-68`.
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/run.py --output-dir tmp/riemann-exp008-replay --budget-seconds 120
+python -m pytest -q tests/test_riemann_rank_six_local.py
+```
+
+The portable canonical result SHA-256 is
+`1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781`.
+The source prints the $C_6$ interval but not its coefficient matrix, so the
+certificate validates the transfer and downstream arithmetic without claiming
+an independent reconstruction. The [proof review](../experiments/EXP-008-rank-six-local-transfer/proof-review.json)
+binds this limitation to the displayed result.

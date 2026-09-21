@@ -132,6 +132,60 @@ The exporter requires the execution receipt and proof-review bindings for the
 hypothesis, runner, focused tests, proof, audit, result and verdict. The original
 declared inequality and both superseded runs remain preserved.
 
+## Reproduce spectral-defect parity coupling
+
+EXP-007 retains `D(G)=tr Psi(G)` in the EXP-006 product and couples it to the
+pressure-frame lower bound. Its canonical theorem is
+`(Q-S-D(G))(N-O)>=2(N-S)^2`. Run the exact certificate and focused tests in
+fresh paths:
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/run.py --output-dir tmp/riemann-exp007-replay --budget-seconds 180
+python -m pytest -q tests/test_riemann_spectral_defect_parity.py
+```
+
+The run checks 652,260 rational spectral profiles, 18,479 multiplicity
+profiles, a directed-rational correlated gain, source hashes, and overlap with
+an independent 100-digit interval implementation. At theta=0.5459 it proves
+`H-h3>1.3732525985593292701164661575215e-70`. The strict gain does not lower
+the onset exponent or justify another printed decimal for the baseline bound.
+The portable canonical result SHA-256 is
+`98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947`.
+The originally published Windows byte stream is preserved under
+`artifacts/windows-canonical-v1/` with its historical hash.
+
+The artifact directory preserves two failed attempts. One rejected an
+incorrect containment relation between independently rounded enclosures. The
+other rejected a positive-sign assumption for the historical theta=3/4
+sensitivity control. Fresh replay must target an empty directory and start
+from a tracked-clean commit.
+
+## Reproduce the rank-six local transfer
+
+EXP-008 proves that the local Selberg detector argument works for every fixed
+finite rank and then applies Pearce-Crump's stated source-certified rank-six
+constant. Run the exact certificate and focused tests in fresh paths:
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/run.py --output-dir tmp/riemann-exp008-replay --budget-seconds 120
+python -m pytest -q tests/test_riemann_rank_six_local.py
+```
+
+The run proves the rank-six onset bracket
+`0.5458837<theta6<0.5458838`, the disjoint rank-three bracket
+`0.5458846<theta3<0.5458847`, a positive rank-six lower bound at
+`theta=0.545884`, and a pointwise improvement above
+`9.263543061777356e-7` at `theta=0.5459`. It also checks the optimized
+spectral companion at `rho=11/5` with an independent 100-digit interval
+implementation. The portable canonical result SHA-256 is
+`1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781`.
+The originally published Windows byte stream is preserved separately.
+
+The public source prints the C6 interval but not the coefficient matrix.
+Reproduction therefore validates the CAOS transfer and all downstream
+arithmetic while retaining C6 as an attributed theorem input. It does not
+independently reconstruct the source profile.
+
 ## Bake and inspect the public replay
 
 After committing the source artifacts, run `python -m researchlab.pipeline all`. The Riemann
@@ -168,7 +222,7 @@ node scripts/verify_riemann_ui.mjs --base-url http://127.0.0.1:4182/ --output-di
 ```
 
 The harness drives real pointer navigation from Program, language/theme controls, all six
-research sections, proof stages, all released experiment records and the architecture modal.
+research sections, proof stages, all eight released experiment records and the architecture modal.
 It records viewport containment, single-row navigation, browser errors, equation rendering,
 source links and screenshot hashes. It captures successive content viewports, including long
 experiment records. Automated success and visual inspection are recorded separately.

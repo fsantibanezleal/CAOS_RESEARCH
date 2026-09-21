@@ -1,32 +1,40 @@
-# Simple critical zeros in short intervals: stability, parity, localization, and Hilbert compression
+# Simple critical zeros in short intervals: stability, parity, localization, Hilbert compression, and spectral defect
 
-Version `v0.06`, dated 20 September 2026.
+Version `v0.07`, dated 20 September 2026.
 
-The main new result is the sharp finite inequality
+This version contains two new linked results. First, the local Selberg argument
+is proved for every fixed finite-rank admissible vector profile. Applying it to
+Pearce-Crump's source-certified six-square constant and then to the sharp
+Hilbert-parity product gives
 
-`(Q-S)(N-O) >= 2(N-S)^2`,
+`0.5458837 < theta_6 < 0.5458838`.
 
-where `N` counts copies, `S` simple real support, `O` distinct odd real
-support, and `Q` the squared-kernel pair sum. Combining it with Wang's
-short-interval theorem and the EXP-005 local Selberg density gives
+At `theta=0.545884`, where the fully reproducible rank-three term is still
+negative, the rank-six term is greater than
+`2.5541123454645702e-7`. At `theta=0.5459`, it is greater than
+`0.0000177645181613023236390595079`, improving the rank-three value by more
+than `9.2635430617773560e-7`.
 
-`liminf S/N >= max(0,c(theta),(c(theta)+2k3(theta))/3,h3(theta))`.
+Second, the manuscript retains the simple-real Gram spectral defect in the
+sharp finite product
 
-The unique positivity root of `h3` lies in `(0.545884,0.545885)`. At
-`theta=0.5459`, the previous linear term is negative while the new bound is
-greater than `0.0000168381638551244569880374399`.
+`(Q-S-D(G))(N-O) >= 2(N-S)^2`.
 
-The finite coefficient is sharp. The manuscript attributes Lamzouri's
-arbitrary-parameter Hilbert inequality, Wang's pair limit, and
-Pearce-Crump's rank-three detector. The proposed contribution is the
-parity-compressed product, its quadratic transfer, and the lower threshold.
-The result is asymptotic, internally reviewed, and not peer reviewed. It does
-not solve the Riemann hypothesis.
+Using the radius ratio `11/5` gives a strict spectral correction at every
+positive point of the rank-six curve. At `theta=0.5459`, the correlated exact
+gain is greater than `1.7766622541125682e-68`.
+
+The six-square profile and constant are attributed to Pearce-Crump. The public
+source prints the certified constant interval but not the profile matrix, so
+the localization and scalar consequences are independently checked while the
+constant itself is not independently reconstructed. The result is asymptotic,
+internally reviewed, and not peer reviewed. It does not solve the Riemann
+hypothesis.
 
 Evidence:
 
-- [EXP-006 proof and exact certificate](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/).
-- [EXP-005 local Selberg transfer](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/).
-- [EXP-004 parity transfer](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-004-parity-density-transfer/).
+- [EXP-008 rank-six local transfer](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/).
+- [EXP-007 spectral-defect parity](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/).
+- [EXP-006 Hilbert-parity compression](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/).
 - Concept DOI: [10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388).
-- Version DOI: [10.5281/zenodo.22852479](https://doi.org/10.5281/zenodo.22852479).
+- Version DOI: [10.5281/zenodo.22860012](https://doi.org/10.5281/zenodo.22860012).

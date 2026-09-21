@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "title": "Simple critical zeros in short intervals: stability, parity, localization, and Hilbert compression",
+    "title": "Simple critical zeros in short intervals: stability, parity, localization, Hilbert compression, and spectral defect",
     "upload_type": "publication",
     "publication_type": "preprint",
     "publication_date": "2026-09-20",
-    "version": "0.06",
+    "version": "0.07",
     "language": "eng",
     "creators": [
       {
@@ -13,7 +13,7 @@
         "affiliation": "CAOS open-research programme, Santiago, Chile"
       }
     ],
-    "description": "<p>For a conjugation-invariant finite multiset, let N count copies, S simple real support, O distinct odd-multiplicity real support, and Q the squared-kernel pair sum. The paper proves the sharp inequality (Q-S)(N-O) &gt;= 2(N-S)^2 by retaining Lamzouri's first Hilbert-subspace dimension and coupling it to odd support.</p><p>Combined with Wang's short-interval pair theorem and the localized rank-three Selberg detector, it gives liminf S/N &gt;= max{0,c(theta),(c(theta)+2k3(theta))/3,h3(theta)}. Exact directed rational arithmetic places the unique positivity root of h3 in (0.545884,0.545885). At theta=0.5459, where the previous linear term remains negative, the new lower bound exceeds 0.0000168381638551244569880374399.</p><p>The coefficient two is sharp, and a scalar zero-simple witness explains why retaining the Hilbert dimension matters. The result is asymptotic and depends on recent attributed preprints. No effective starting height, global zero-density record, external peer review, or proof of the Riemann hypothesis is claimed. Source code, data, and computational records are available at https://github.com/fsantibanezleal/CAOS_RESEARCH.</p>",
+    "description": "<p>For a conjugation-invariant finite multiset, let N count copies, S simple real support, O distinct odd-multiplicity real support, Q the squared-kernel pair sum, and D(G)=tr Psi_2(G) the retained simple-real Gram spectral defect. The paper proves the finite inequality (Q-S-D(G))(N-O) &gt;= 2(N-S)^2 by coupling an attributed rank-trace theorem to odd support.</p><p>The paper also proves that Pearce-Crump's vector-profile Selberg detector localizes to every fixed finite rank. Applying this transfer to the source-certified six-square constant C6 and then to the Hilbert-parity product places the unique positivity onset in (0.5458837,0.5458838). At theta=0.545884, where the rank-three term remains negative, the new lower bound exceeds 2.5541123454645702e-7. At theta=0.5459 it exceeds 0.0000177645181613023236390595079, improving the rank-three term by more than 9.2635430617773560e-7.</p><p>A radius-optimized spectral transfer strictly improves every positive point of the rank-six curve; its certified gain at theta=0.5459 exceeds 1.7766622541125682e-68. The six-square constant is an attributed source input whose coefficient matrix is not printed, so it is not independently reconstructed here. The results are asymptotic and depend on recent preprints. No effective starting height, global zero-density record, external peer review, or proof of the Riemann hypothesis is claimed. Source code, data, and computational records are available at https://github.com/fsantibanezleal/CAOS_RESEARCH.</p>",
     "keywords": [
       "Riemann zeta function",
       "short intervals",
@@ -23,9 +23,12 @@
       "mollifiers",
       "pair correlation",
       "Gram matrix stability",
+      "spectral defect",
       "interval arithmetic",
       "Hilbert space",
-      "parity compression"
+      "parity compression",
+      "finite-rank localization",
+      "six-square Selberg detector"
     ],
     "license": "cc-by-4.0",
     "access_right": "open",
@@ -44,8 +47,18 @@
         "identifier": "10.48550/arXiv.2609.02882",
         "relation": "cites",
         "resource_type": "publication-preprint"
+      },
+      {
+        "identifier": "10.48550/arXiv.2609.17875",
+        "relation": "cites",
+        "resource_type": "publication-preprint"
+      },
+      {
+        "identifier": "10.48550/arXiv.2609.15862",
+        "relation": "cites",
+        "resource_type": "publication-preprint"
       }
     ],
-    "version_notes": "Adds the sharp Hilbert-parity product (Q-S)(N-O) >= 2(N-S)^2, its quadratic short-interval transfer, the exact positivity bracket 0.545884 < theta_HP < 0.545885, the positive bound at theta = 0.5459, the scalar barrier witness, and EXP-006 reproducibility evidence. The Riemann hypothesis remains open."
+    "version_notes": "Adds a rank-independent short-interval localization theorem for fixed finite-rank Selberg vector profiles. Using Pearce-Crump's source-certified six-square constant moves the Hilbert-parity positivity onset to (0.5458837,0.5458838), proves a positive bound at theta=0.545884 where the rank-three term is negative, and raises the theta=0.5459 bound by more than 9.2635430617773560e-7. Also adds the spectral-defect parity product and an optimized strict full-curve correction. EXP-007 and EXP-008 provide directed exact certificates and independent interval replays. The Riemann hypothesis remains open."
   }
 }

@@ -247,6 +247,26 @@ apparently new short-interval consequence from inherited global methods.
     headline bounds; it does not formalize Wang's short-interval theorem,
     EXP-004, or the EXP-005 localization.
 
+25. **Eric Dubon.** *Zero-Density Concentration for Dirichlet Polynomials.*
+    [arXiv:2609.17875v1](https://arxiv.org/abs/2609.17875v1), submitted
+    September 15, 2026. The Jessen-potential, Bohr-lift, and
+    anti-concentration results concern zeros of finite Dirichlet truncations.
+    They do not by themselves transfer to nontrivial zeros of zeta.
+
+26. **Joseph Najnudel and Ashkan Nikeghbali.** *Cauchy laws associated with
+    the zeros of the Riemann zeta function.*
+    [arXiv:2609.15862v1](https://arxiv.org/abs/2609.15862v1), submitted
+    September 14, 2026. The projected-ordinate Cauchy limit is unconditional.
+    Its stronger log-derivative comparison requires a separate small-total-
+    horizontal-displacement condition, so it is recorded as a possible
+    interface rather than evidence for RH.
+
+27. **teal-sea.** *zeta-lab*, inspected at
+    [`f402358c6c3f3c838605e71dd97cb6401a6963f0`](https://github.com/teal-sea/zeta-lab/tree/f402358c6c3f3c838605e71dd97cb6401a6963f0).
+    The stable bridge identifies Ainta's `Psi` with the `c=2` eigenbasis form
+    of Anthropic's `gc`. EXP-007 treats that parameterized spectral content as
+    prior art and claims only the defect-parity coupling and its transfer.
+
 The [EXP-001 verdict](experiments/EXP-001-source-and-constant-audit/verdict.md)
 is the authority for exact formula reproduction, source-integrity checks,
 and the normalization correction. The
@@ -256,15 +276,16 @@ and [verdict](experiments/EXP-002-short-interval-stability/verdict.md)
 are the authority for the candidate strict short-interval refinement and
 certified numerical example. The [wiki](wiki/README.md) transcribes them.
 
-**Felipe Santib??ez-Leal.** *Simple critical zeros in short intervals: stability,
-parity, localization, and Hilbert compression.* CAOS Research Preprint, version
-0.06, September 20, 2026. [Public record](https://zenodo.org/records/22852479),
-version DOI [10.5281/zenodo.22852479](https://doi.org/10.5281/zenodo.22852479),
+**Felipe Santibanez-Leal.** *Simple critical zeros in short intervals: stability,
+parity, localization, Hilbert compression, and spectral defect.* CAOS Research
+Preprint, version 0.07, September 20, 2026.
+[Public record](https://zenodo.org/records/22860012), version DOI
+[10.5281/zenodo.22860012](https://doi.org/10.5281/zenodo.22860012),
 and concept DOI [10.5281/zenodo.22727388](https://doi.org/10.5281/zenodo.22727388).
 The [publication receipt](../../../manuscripts/riemann-hypothesis/short-interval-stability/publication-receipt.json)
-records verification of fresh public metadata and the downloaded v0.06 PDF:
-545,773 bytes, SHA-256
-`dde6f2c9a6c0a9b46e66c9d44efc5786d1239dd1ada7664083a6d2134c452082`.
+records verification of fresh public metadata and the downloaded v0.07 PDF:
+575,351 bytes, SHA-256
+`c7bda5f1acc0b34ac33b6a071e66586b4032ae6e385d93f7fdd2d197411dbf81`.
 The immutable v0.01 baseline remains at [10.5281/zenodo.22727389](https://doi.org/10.5281/zenodo.22727389)
 and its archived 10-page PDF is unchanged. This self-published preprint is not peer
 reviewed. The dated novelty search does not guarantee priority against undiscovered

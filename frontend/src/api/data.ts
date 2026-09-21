@@ -167,8 +167,78 @@ export type RiemannHilbertReview = {
   source_sha256: Record<'hypothesis' | 'mathematical_proof' | 'adversarial_audit' |
     'result' | 'verdict' | 'runner' | 'focused_test', string>;
 };
+export type RiemannInterval = { lower: RiemannExact; upper: RiemannExact; width: RiemannExact };
+export type RiemannSpectralResult = {
+  schema: 'riemann-exp007-results-v1'; status: 'pass'; passed: true;
+  checks: Record<string, boolean>;
+  claim_boundary: {
+    finite_theorem: string; global_record: false; numerical_certificate: string;
+    onset_exponent_improved: false; rh_solved: false;
+  };
+  execution_identity: {
+    declaration_commit: string; head: string; hypothesis_sha256: string;
+    run_py_sha256: string; tracked_clean_at_start: boolean; python: string;
+  };
+  target: {
+    theta: RiemannExact; h3: RiemannInterval; H: RiemannInterval;
+    gain_H_minus_h3: RiemannInterval; certified_gain_floor: RiemannInterval; passed: true;
+  } & Record<string, unknown>;
+  multiplicity_census: { profiles: number; defect_trials: number; passed: true } & Record<string, unknown>;
+  spectral_census: { spectra: number; strict_eigenvalues: number; passed: true } & Record<string, unknown>;
+};
+export type RiemannSpectralReview = {
+  schema: 'riemann-exp007-proof-review-v1'; scientific_verdict: 'confirmed';
+  declaration_commit: string; canonical_commit: string; reviewed_utc: string;
+  analytic_transfer_reviewed: true; exact_certificate_reviewed: true;
+  confirmed_conclusion: string; finite_theorem: string; review_scope: string;
+  novelty_scope: string; imported_inputs: string[]; unquantified: string[];
+  source_sha256: Record<'hypothesis' | 'mathematical_proof' | 'adversarial_audit' |
+    'result' | 'verdict' | 'runner' | 'focused_test', string>;
+};
+export type RiemannRankPoint = {
+  theta: RiemannExact; strong_simple: RiemannInterval; old_linear: RiemannInterval;
+} & Record<string, unknown>;
+export type RiemannRankSixResult = {
+  schema: 'riemann-exp008-results-v1'; status: 'pass'; passed: true;
+  checks: Record<string, boolean>;
+  claim_boundary: {
+    effective_starting_height: false; localization: string; rank_six_profile: string;
+    rh_solved: false; scalar_certificate: string;
+  };
+  execution: {
+    declaration_commit: string; device: string; elapsed_seconds: number;
+    git: { head: string; tracked_clean_at_start: boolean };
+  } & Record<string, unknown>;
+  source_constants: {
+    C3: { lower: RiemannExact; upper: RiemannExact };
+    C6: { lower: RiemannExact; upper: RiemannExact };
+  };
+  root_brackets: {
+    rank_six_coarse: { lower: RiemannRankPoint; upper: RiemannRankPoint };
+    rank_six_fine: { lower: RiemannRankPoint; upper: RiemannRankPoint };
+    rank_three_fine: { lower: RiemannRankPoint; upper: RiemannRankPoint };
+    uniqueness: string;
+  };
+  edge_theta: { rank_six: RiemannRankPoint; rank_three: RiemannRankPoint };
+  point_theta: {
+    h6_minus_h3: RiemannInterval; rank_six: RiemannRankPoint; rank_three: RiemannRankPoint;
+  };
+  spectral_optimized: {
+    rho: RiemannExact; h6: RiemannInterval; H6: RiemannInterval;
+    gain_floor: RiemannInterval; reserve_alpha_h_minus_beta: RiemannInterval; passed: true;
+  } & Record<string, unknown>;
+};
+export type RiemannRankSixReview = {
+  schema: 'riemann-exp008-proof-review-v1';
+  scientific_verdict: 'confirmed-relative-to-attributed-rank-six-input';
+  declaration_commit: string; canonical_commit: string; reviewed_utc: string;
+  confirmed_conclusion: string; critical_limitation: string; spectral_companion: string;
+  manuscript_decision: string; review_scope: string; imported_inputs: string[]; unquantified: string[];
+  source_sha256: Record<'hypothesis' | 'mathematical_proof' | 'adversarial_audit' |
+    'result' | 'verdict' | 'runner' | 'focused_test', string>;
+};
 export type RiemannData = {
-  schema: 'riemann-replay-v5';
+  schema: 'riemann-replay-v7';
   reviewed_on: string;
   result: {
     theta: string; radius: string; delta: string;
@@ -208,6 +278,10 @@ export type RiemannData = {
   local_review: RiemannLocalReview;
   hilbert_result: RiemannHilbertResult;
   hilbert_review: RiemannHilbertReview;
+  spectral_result: RiemannSpectralResult;
+  spectral_review: RiemannSpectralReview;
+  rank_six_result: RiemannRankSixResult;
+  rank_six_review: RiemannRankSixReview;
   provenance: {
     role: string; source_exp: string; path: string; source_commit: string;
     bytes: number; sha256: string;

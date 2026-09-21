@@ -42,12 +42,16 @@ def test_bake_writes_valid_registry(tmp_path, monkeypatch):
         "EXP-004-parity-density-transfer",
         "EXP-005-local-selberg-transfer",
         "EXP-006-hilbert-parity-compression",
+        "EXP-007-spectral-defect-parity",
+        "EXP-008-rank-six-local-transfer",
     }
+    assert riemann["schema"] == "riemann-replay-v7"
 
 
 @pytest.fixture
 def committed_riemann(tmp_path, monkeypatch):
     """An isolated Git source demonstrates that dirty files never become public evidence."""
+    monkeypatch.setattr(export_registry, "RIEMANN_EXPERIMENT_MAX", 6)
     def git(*args):
         return subprocess.run(
             ["git", *args], cwd=tmp_path, check=True, capture_output=True,

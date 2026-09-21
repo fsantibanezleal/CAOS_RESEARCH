@@ -5,3 +5,8 @@
 # receipt and proof review; the original Windows run emitted CRLF JSON.
 problems/number-theory/riemann-hypothesis/experiments/EXP-005-local-selberg-transfer/artifacts/canonical/result.json -text
 problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/artifacts/canonical/result.json binary
+# Preserve the original Windows-run bytes cited by manuscript v0.07. The live
+# canonical files were regenerated with fixed LF serialization for portable
+# Git-blob hashing.
+problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/artifacts/windows-canonical-v1/result.json -text
+problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/artifacts/windows-canonical-v1/result.json -text
