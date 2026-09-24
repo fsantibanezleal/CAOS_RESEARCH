@@ -6,13 +6,16 @@
 |---|---:|---|---|---|
 | HWB-088 | 0 | done | reconcile purpose, focus, result disposition, and manuscript ownership | `research-governance.json`, `manuscript-map.md`, context review, and automated guard agree |
 | HWB-089 | 0 | redirected | classify the counterexample mechanism in Kunz coordinates | varying multiplicities refute the single-face formulation; one-dimensional face diagnostics expose the stronger gluing route |
-| HWB-093 | 0 | active-experiment | EXP-067 simple-gluing transfer of two-generated rigidity | symbolic transfer, independent exact validation, controls, and two-parameter CAOS corollary |
+| HWB-093 | 0 | done | EXP-067 simple-gluing transfer of two-generated rigidity | CONFIRMED; 72 of 72 cases in producer and independent audit; pre-merge review recorded in the verdict |
+| HWB-094 | 0 | active | flat-base-change novelty assessment for EXP-067 | written assessment of whether faithfully flat base change over `k[Gamma]` already gives the rigidity transfer; decides focused manuscript versus corollary |
 | HWB-090 | 1 | gated | canonical comparison and complete projected kernel or 2-primary quotient | no finite-only carrier campaign; reopen only with a uniform map and upper-bound target |
-| HWB-091 | 1 | planned | split consolidated v0.25 into three focused submission narratives | dependency and overlap audits first; no duplicate Zenodo publication for rearranged content |
+| HWB-091 | 1 | planned | split consolidated v0.25 into three focused submission narratives | dependency and overlap audits first; no duplicate Zenodo publication for rearranged content; resolve EXP-013 being claimed by candidates A and B and the EXP-037 classification |
 | HWB-092 | 1 | pending-external | specialist significance and novelty review | record reviewed claims and corrections separately for direct extensions, conductor algebra, and homological results |
+| HWB-095 | 1 | planned | EXP-067 validation hardening, as an addendum experiment | audit recomputes the `E` and `D` transfer sets and reruns controls; noncoprime controls exercise real rejection; premise compares full base masks; embedding dimension counted by minimality; non-gap shifts recorded as failures instead of raising |
+| HWB-096 | 2 | planned | tighten `check_research_governance.py` | version checks match the manuscript's own row, not any substring; disposition classifications use the methodology 13 vocabulary; decide whether every long-running problem must carry a governance record |
 
-The first executable action is the frozen EXP-067 producer and independent
-auditor. No broader Kunz sweep is authorized. The full focus definitions, stop
+EXP-067 is CONFIRMED. The first executable action is the `HWB-094` novelty
+assessment. No broader Kunz sweep is authorized. The full focus definitions, stop
 conditions, and manuscript routes are in `research-governance.json`.
 
 ## Superseded dispatch after EXP-064, 2026-09-20

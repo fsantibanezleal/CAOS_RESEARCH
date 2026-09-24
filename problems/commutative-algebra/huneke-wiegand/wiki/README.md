@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - research wiki
 
-## Current strategic routing, 2026-09-20
+## Current strategic routing, 2026-09-24
 
 The broad conjecture was already disproved externally and is not an open CAOS
 target. The latest endpoint theorem below is closed, and its carrier route is
@@ -9,14 +9,40 @@ complete kernel, quotient, upper bound, or reusable general matching theorem.
 
 The Kunz preflight redirected `HW-F6`: varying multiplicities prevent one face
 from containing the family. The active focus is `HW-F7`, simple-gluing transfer
-of two-generated rigidity, and EXP-067 is declared but has no result yet. Read
+of two-generated rigidity. EXP-067 is confirmed, and the focus now assesses its
+novelty before any manuscript is created. Read
 the [Kunz/gluing preflight](../context/2026-09-20-kunz-gluing-preflight.md), the
 [strategy reconciliation](../context/2026-09-20-strategy-manuscript-reconciliation.md),
 the [research governance record](../../../../program/huneke-wiegand/research-governance.json),
 and the [manuscript map](../../../../program/huneke-wiegand/manuscript-map.md)
 before selecting new work.
 
-## Current closed result: uniform support-one endpoint sources, 2026-09-20
+## Current closed result: simple-gluing rigidity transfer, 2026-09-20
+
+[EXP-067](../experiments/EXP-067-simple-gluing-rigidity-transfer/verdict.md)
+proves that for a numerical semigroup `Gamma` of multiplicity `m` and
+`gcd(q,m)=1`, the simple gluing `Delta=m*N+q*Gamma` has
+`Ap(Delta,m)=q*Ap(Gamma,m)`, preserves symmetry with `F(Delta)=q(F+m)-m`,
+keeps `q*s` a gap, and satisfies
+
+```text
+C_r(Delta,q*s) = m*N + q*C_r(Gamma,s)
+```
+
+for every consecutive-shift exponent set. For symmetric `Gamma` this transfers
+the two-generated rigidity identity `D=E+E`. Applied to EXP-009, every `p>=4`
+and every `q>=1` coprime to `24p` give a symmetric counterexample with
+multiplicity `24p`, embedding dimension `11p`, Frobenius number
+`q(102p-1)-24p`, and ideal exponents `24pq` and `30pq`; `q=1` is EXP-009.
+
+The producer and an independent auditor accept all 72 cases for `p=4,...,12`,
+and the `<4,5>` control stays nonrigid. The 2026-09-24 pre-merge review
+restricted the rigidity statement to symmetric `Gamma`, disclosed a P2
+amendment committed with the results, and recorded that faithfully flat base
+change may already give the rigidity transfer. Novelty is unassessed, and no
+manuscript contains the result yet.
+
+## Prior closed result: uniform support-one endpoint sources, 2026-09-20
 
 [EXP-066](../experiments/EXP-066-uniform-endpoint-face-collapse/verdict.md)
 proves that for every `p>=8` and `r=1,2`, the explicit single source

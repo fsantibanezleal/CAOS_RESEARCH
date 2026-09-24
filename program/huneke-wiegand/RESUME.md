@@ -1,6 +1,33 @@
 # Huneke-Wiegand extensions - session handoff
 
-## Current checkpoint: strategy and manuscript reconciliation, 2026-09-20
+## Current checkpoint: EXP-067 confirmed and reviewed, 2026-09-24
+
+**EXP-067 is CONFIRMED.** For a numerical semigroup `Gamma` of multiplicity
+`m` and `gcd(q,m)=1`, the simple gluing `Delta=m*N+q*Gamma` satisfies
+`Ap(Delta,m)=q*Ap(Gamma,m)`, preserves symmetry with `F(Delta)=q(F+m)-m`,
+keeps `q*s` a gap, and transfers every consecutive-shift exponent set:
+`C_r(Delta,q*s)=m*N+q*C_r(Gamma,s)`. For symmetric `Gamma` this transfers
+two-generated rigidity. Applied to EXP-009, every `p>=4` and every `q>=1`
+coprime to `24p` give a symmetric counterexample with multiplicity `24p`,
+embedding dimension `11p`, Frobenius number `q(102p-1)-24p`, and ideal
+exponents `24pq` and `30pq`. The producer and the independent audit accept all
+72 cases for `p=4,...,12`. The hypothesis was frozen at `45827216`; the
+results were committed at `db5f4179`.
+
+The 2026-09-24 pre-merge review changed no computed result. It disclosed the
+P2 amendment committed with the results, restricted theorem item 4 to
+symmetric `Gamma`, stated exactly which checks the independent audit performs,
+and found an unassessed novelty route: `k[Delta]` is free of rank `q` over a
+copy of `k[Gamma]`, so faithfully flat base change may already give the
+rigidity transfer. See the review section of the
+[EXP-067 verdict](../../problems/commutative-algebra/huneke-wiegand/experiments/EXP-067-simple-gluing-rigidity-transfer/verdict.md).
+
+Next action, `HW-F7` and `HWB-094`: write the flat-base-change novelty
+assessment, then decide between a focused gluing-transfer manuscript and a
+corollary in an existing paper. EXP-067 validation hardening is `HWB-095`. The
+per-problem management mirror still needs this round.
+
+## Superseded checkpoint: strategy and manuscript reconciliation, 2026-09-20
 
 **The original conjecture is not the active target. It was disproved
 externally before this extension program began.** Son Pham retains priority for

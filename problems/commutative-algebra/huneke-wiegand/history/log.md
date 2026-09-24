@@ -2105,3 +2105,30 @@
 - EXP-067 is frozen before implementation. It targets a general symbolic
   transfer of symmetry and `D=E+E`, an independently checked two-parameter CAOS
   corollary, and a focused manuscript only if all gates pass.
+
+## 2026-09-20 - EXP-067 simple-gluing transfer confirmed
+
+- The producer and the independent auditor accept all 72 cases, `p=4,...,12`
+  with the first eight admissible `q` values each; aggregate SHA-256 values are
+  recorded in the verdict. The `<4,5>` control stays nonrigid.
+- The symbolic proof gives the Apery, symmetry, gap, and consecutive-shift
+  exponent-set transfer for every admissible `q`, and with it the rigidity
+  transfer for symmetric `Gamma`. Applied to EXP-009 it yields the
+  two-parameter family with Frobenius number `q(102p-1)-24p`.
+- The results were committed on 2026-09-21 in `db5f4179`.
+
+## 2026-09-24 - EXP-067 pre-merge review and close-out
+
+- A review before promotion to `develop` kept the verdict CONFIRMED and changed
+  no computed result.
+- `hypothesis.md` again shows the frozen declaration and records, in a dated
+  amendment, the P2 correction that `db5f4179` made inline. `proof.md` restricts
+  theorem item 4 to symmetric `Gamma` and states exactly which checks the
+  independent audit performs.
+- The review found an unassessed novelty route: `k[Delta]` is free of rank `q`
+  over a copy of `k[Gamma]`, so faithfully flat base change may already give the
+  rigidity transfer. `HW-F7` becomes an active novelty assessment (`HWB-094`)
+  before any gluing-transfer manuscript is created.
+- Governance: EXP-067 is dispositioned as `companion-manuscript` with no
+  manuscript yet, and `HW-F5` no longer names EXP-067 as its next experiment.
+  Validation hardening (`HWB-095`) and guard tightening (`HWB-096`) are queued.

@@ -88,10 +88,14 @@ one-dimensional faces, but the stronger invariant is the simple gluing
 `m*N+q*Gamma`. Focus `HW-F6` is therefore redirected, not silently abandoned.
 
 The active focus is `HW-F7`, the general transfer of the two-generated rigidity
-identity through that simple gluing. EXP-067 is declared and frozen. A focused
-gluing-transfer manuscript is created only if the symbolic exponent-set lemma,
-independent exact validation, adverse controls, and two-parameter corollary all
-pass. Standard gluing itself is not claimed as new.
+identity through that simple gluing. EXP-067 is CONFIRMED, with the rigidity
+transfer proved for symmetric `Gamma`, and its disposition is
+`companion-manuscript` with no manuscript yet. Its pre-merge review found that
+`k[Delta]` is free of rank `q` over a copy of `k[Gamma]`, so faithfully flat
+base change may already give the rigidity transfer. A focused gluing-transfer
+manuscript is created only after that novelty assessment; otherwise the
+two-parameter family becomes a corollary in an existing paper. Standard gluing
+itself is not claimed as new.
 
 The prior endpoint/cokernel route is `HW-F5` and is gated. It may resume only
 with a theorem preflight aimed at a canonical comparison plus a complete kernel

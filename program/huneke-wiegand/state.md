@@ -1,12 +1,16 @@
 # Huneke-Wiegand extensions - state
 
-Current heartbeat: 2026-09-20. **The program has completed a strategic and
-manuscript reconciliation after EXP-066.** The broad conjecture is already
-false and is not a CAOS target. The Kunz preflight corrected the proposed
+Current heartbeat: 2026-09-24. **EXP-067 is CONFIRMED: the simple gluing
+`m*N+q*Gamma` with `gcd(q,m)=1` preserves symmetry and transfers the
+two-generated `D=E+E` rigidity identity at the scaled shift, which turns the
+CAOS family into a two-parameter family.** A pre-merge review disclosed the P2
+amendment committed with the results, restricted theorem item 4 to symmetric
+`Gamma`, and recorded an unassessed flat-base-change route to the rigidity
+transfer. `HW-F7` remains active as a novelty assessment, and no
+gluing-transfer manuscript exists yet. The broad conjecture is already false
+and is not a CAOS target. The Kunz preflight corrected the proposed
 single-face formulation because the family multiplicity varies as `24p`.
-`HW-F6` is redirected. The currently active item is frozen EXP-067 under
-`HW-F7`, a general simple-gluing transfer theorem for symmetry and the
-two-generated `D=E+E` rigidity identity. No result is yet claimed.
+`HW-F6` is redirected.
 
 The prior carrier path is retained as `HW-F5` but gated. It reopens only for a
 canonical comparison plus a complete kernel, complete 2-primary quotient, or
@@ -258,6 +262,8 @@ symbolic gate, not yet an experiment. Issue #252 and PR #253 own promotion. Late
 | 2026-09-20 | declared | confirmed finitely | EXP-063 identifies all 19 tested triangle rows as literal surviving R5 coordinates; masks 59/62 have no triangle relations and mask 58 has exactly the two endpoint relations over F2; independent exhaustive audit passes |
 | 2026-09-20 | declared | confirmed finitely | EXP-064 proves exact elementary 2-primary types for all 16 carrier matrices and upgrades the two mask-58 endpoint relations to integral vanishings; 1,100 independent prime/rank checks pass |
 | 2026-09-05 | confirmed | structural identification open | Prioritize explicit maps to isolated/relative presentations before complement/upper-bound work and recurrence; matching q=3,4,5,7 is not a chain identification |
+| 2026-09-20 | declared | confirmed | EXP-067 proves Apery, symmetry, gap, and consecutive-shift exponent-set transfer under simple gluing, with rigidity transfer for symmetric Gamma; producer and independent audit accept all 72 cases for p=4,...,12 |
+| 2026-09-24 | confirmed | novelty assessment | Pre-merge review discloses the P2 amendment, restricts theorem item 4 to symmetric Gamma, states the audit scope, and records the flat-base-change novelty route; HW-F7 is active-novelty-assessment |
 
 Historical state narrative through EXP-053 (superseded by the current heartbeat): **EXP-053 refutes generic HNF pullback as the semantic proof route but retains one common source class across both completions; EXP-052 is confirmed finitely with an untouched semantic holdout; EXP-051 and EXP-050 are refuted overall with decisive finite constructions retained; EXP-049 is refuted overall with P3 and a bounded dual mechanism retained; EXP-048 is refuted overall with four semantic completion chains retained; EXP-047 is confirmed finitely; EXP-046 is refuted overall with P3 retained; EXP-043 and EXP-042 are confirmed finitely; EXP-041 is refuted overall with P1 finite classification retained; EXP-040 is refuted with P1 finite localization retained; EXP-039 is refuted with a sector redirect; EXP-038 is
 inconclusive with two finite passes; EXP-037 is refuted; EXP-036 remains confirmed with structural

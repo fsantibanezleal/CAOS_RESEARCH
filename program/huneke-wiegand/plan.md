@@ -1,6 +1,6 @@
 # Huneke-Wiegand extensions - research plan
 
-## Current priority after strategic reconciliation, 2026-09-20
+## Current priority after EXP-067, 2026-09-24
 
 The program now uses the focus gates in `research-governance.json`. The broad
 conjecture is externally disproved and cannot be used as the description of
@@ -8,10 +8,11 @@ ongoing CAOS work.
 
 Priority order:
 
-1. **HW-F7, simple-gluing rigidity transfer.** Run the already declared and
-   frozen EXP-067. Prove the Apery, exponent-set, and `D=E+E` transfer formulas;
-   validate them independently; retain the `<4,5>` negative control. This
-   supersedes the ill-posed idea that one face contains all varying
+1. **HW-F7, simple-gluing rigidity transfer.** EXP-067 is CONFIRMED. Write
+   the flat-base-change novelty assessment recorded by its pre-merge review,
+   then decide between a focused gluing-transfer manuscript and a corollary in
+   an existing paper. Harden the EXP-067 validation gaps queued as `HWB-095`.
+   This supersedes the ill-posed idea that one face contains all varying
    multiplicities.
 2. **Focused manuscript preparation.** Freeze consolidated v0.25 as the source
    record. Prepare three future submission narratives only after dependency and

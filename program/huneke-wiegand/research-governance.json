@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "problem": "huneke-wiegand",
-  "updated": "2026-09-20",
+  "updated": "2026-09-24",
   "original_problem": {
     "status": "disproved externally",
     "statement": "The broad Huneke-Wiegand conjecture is false.",
@@ -98,7 +98,7 @@
       "stop_conditions": ["The next result is another bounded-parameter carrier table.", "The comparison remains projection-dependent after one bounded theorem attempt.", "No full upper bound or canonical map is obtained."],
       "novelty_status": "The direct-summand and endpoint-source theorems are internally proved; no exact overlap was found in the recorded source review, but peer validation is absent.",
       "manuscript_route": "integral-connecting-annihilators; no further version without the success gate",
-      "first_bounded_action": "Write a theorem preflight for the canonical comparison map before declaring EXP-067.",
+      "first_bounded_action": "Write a theorem preflight for the canonical comparison map before declaring any new experiment.",
       "evidence": ["EXP-060", "EXP-061", "EXP-062", "EXP-063", "EXP-064", "EXP-065", "EXP-066"]
     },
     {
@@ -118,15 +118,15 @@
     {
       "id": "HW-F7",
       "title": "Simple-gluing transfer of two-generated rigidity",
-      "status": "active-experiment",
+      "status": "active-novelty-assessment",
       "priority": 1,
       "target": "Prove that m*N+q*Gamma transfers symmetry and the D=E+E rigidity identity at shift q*s whenever gcd(q,m)=1.",
       "value": "Would amplify any symmetric numerical-semigroup counterexample into infinitely many gluing descendants and turn the CAOS family into a genuine two-parameter family.",
       "success_gate": "A general symbolic transfer lemma, independent exact validation, adverse controls, and the explicit all-parameter CAOS corollary.",
       "stop_conditions": ["The representation-alignment lemma fails.", "A coprime exact case violates either exponent-set formula.", "Primary literature already contains the same rigidity-transfer theorem."],
-      "novelty_status": "Simple gluing is standard. No reviewed primary source states the rigidity-transfer lemma; this is not proof of novelty and specialist review remains required.",
-      "manuscript_route": "focused gluing-transfer manuscript if EXP-067 passes all symbolic and exact gates",
-      "first_bounded_action": "Run the frozen EXP-067 hypothesis after its declaration commit is pushed.",
+      "novelty_status": "Simple gluing is standard. No reviewed primary source states the rigidity-transfer lemma; this is not proof of novelty and specialist review remains required. The 2026-09-24 pre-merge review of EXP-067 found an unassessed route: k[Delta] is free of rank q over a copy of k[Gamma], so faithfully flat base change may already give the rigidity transfer.",
+      "manuscript_route": "EXP-067 passed its symbolic and exact gates. A focused gluing-transfer manuscript follows only after the flat-base-change novelty assessment; otherwise the family becomes a corollary in an existing paper.",
+      "first_bounded_action": "Write the flat-base-change novelty assessment for EXP-067 and decide between a focused gluing-transfer manuscript and a corollary in an existing paper.",
       "evidence": ["EXP-067"]
     }
   ],
@@ -177,6 +177,12 @@
       "end": 66,
       "classification": "primary-manuscript-or-essential-context",
       "manuscripts": ["integral-connecting-annihilators"]
+    },
+    {
+      "start": 67,
+      "end": 67,
+      "classification": "companion-manuscript",
+      "manuscripts": []
     }
   ]
 }
