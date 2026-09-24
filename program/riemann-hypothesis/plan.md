@@ -130,5 +130,12 @@ not printed by the source, so independent reconstruction remains open.
 Manuscript v0.07 is published at DOI 10.5281/zenodo.22860012 and matches a
 fresh public download byte for byte. Research PR #325 merged replay v7, both
 new experiment records, and the bilingual workbench into `develop` after its
-full Linux gate passed. Release 0.72.000 must still pass rendered QA, promotion,
-main CI, Pages deployment, and exact live verification before it is complete.
+full Linux gate passed. At candidate freeze, rendered QA, promotion, main CI,
+Pages deployment, and exact live verification remained as release gates.
+
+Release and promotion PRs #330 and #331 are merged. Tag `v0.72.000` points to
+exact main commit `45c34c81`. Main CI and Pages passed; eleven public files
+byte-match the exact-main build, and eight live desktop/phone EN/ES light/dark
+scenarios passed with 352 screenshots and no failures. Release 0.72.000 is
+therefore live-verified. This deployment does not change the open status of RH
+or remove the attributed-input boundary for the rank-six constant.
