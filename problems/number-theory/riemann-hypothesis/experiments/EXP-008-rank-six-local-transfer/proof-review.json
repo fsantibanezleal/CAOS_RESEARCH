@@ -1,0 +1,34 @@
+{
+  "schema": "riemann-exp008-proof-review-v1",
+  "reviewed_utc": "2026-09-20T16:02:21.419388Z",
+  "scientific_verdict": "confirmed-relative-to-attributed-rank-six-input",
+  "declaration_commit": "2297d2fc",
+  "canonical_commit": "46f258cdab9487db829ab96bd5267360bd656d91",
+  "confirmed_conclusion": "The fixed finite-rank Selberg detector localizes to every fixed exponent theta>1/2. Using Pearce-Crump's source-certified C6 moves the Hilbert-parity onset to (0.5458837,0.5458838), with h6(0.545884)>2.5541123454645702e-7 and h6(0.5459)>0.0000177645181613023236390595079.",
+  "spectral_companion": "With rho=11/5, EXP-007 gives H6-h6>1.7766622541125682e-68 at theta=0.5459.",
+  "imported_inputs": [
+    "Pearce-Crump arXiv:2609.15329v1 vector-profile theorem and stated source-certified six-square constant",
+    "Wang arXiv:2609.07918v1 fixed-test short-interval pair theorem",
+    "Confirmed EXP-005 local short-rectangle bookkeeping",
+    "Confirmed EXP-006 Hilbert-parity product",
+    "Confirmed EXP-007 spectral-defect parity product"
+  ],
+  "critical_limitation": "The public source does not print the rank-six coefficient matrix, so EXP-008 does not independently reconstruct C6.",
+  "review_scope": "Rank-independent localization proof, source boundary, directed onset brackets, frozen point comparisons, optimized spectral radius, independent 100-digit interval overlap, and focused regression tests; not external peer review.",
+  "manuscript_decision": "Integrate into v0.07; split only after an independent rank-six profile reconstruction or a broader profile-family theorem.",
+  "source_sha256": {
+    "hypothesis": "70960ea00af0f8086034cf0ed388e520822306af3d3248f99cd6d7914927a40d",
+    "mathematical_proof": "cb263549a8134dc22a48ed4f662c25410070e667f46b70a0d58a339c11d2bef4",
+    "runner": "cc8acd61729f93fe0f59241b1746875bdadff15801940c856095941e569edd0e",
+    "focused_test": "969b093ea9359a62b00b205c27956d0a08eaa66f0ce5f601f5e7893e2f587cf9",
+    "result": "1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781",
+    "adversarial_audit": "17de19c8c38f09552ca502d75e817590313e42e2a80b6d87e955397d4af496e2",
+    "verdict": "f667c08c61b102d1594719c76a7af404a53918616d938a4d97d30a365060981f"
+  },
+  "unquantified": [
+    "effective onset height",
+    "independent reconstruction of the source rank-six profile",
+    "absolute novelty priority",
+    "external peer acceptance"
+  ]
+}

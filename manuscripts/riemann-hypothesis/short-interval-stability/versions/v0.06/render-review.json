@@ -1,0 +1,94 @@
+{
+  "schema": "riemann-manuscript-render-review-v3",
+  "reviewed_utc": "2026-09-20T04:16:11.809664Z",
+  "reviewer": "Codex automated render and visual audit",
+  "title": "Simple critical zeros in short intervals: stability, parity, localization, and Hilbert compression",
+  "version": "0.06",
+  "version_doi": "10.5281/zenodo.22852479",
+  "concept_doi": "10.5281/zenodo.22727388",
+  "publication_performed": true,
+  "canonical_promotion_ready": true,
+  "source": {
+    "path": "manuscripts/riemann-hypothesis/short-interval-stability/main.tex",
+    "sha256": "93ca20b88cd10ce855cc64ab6844996d53061a1b92fcd0ca3ca16bafbf234e65",
+    "bytes": 86168,
+    "encoding": "UTF-8",
+    "line_endings": "LF"
+  },
+  "pdf": {
+    "path": "manuscripts/riemann-hypothesis/short-interval-stability/main.pdf",
+    "sha256": "dde6f2c9a6c0a9b46e66c9d44efc5786d1239dd1ada7664083a6d2134c452082",
+    "md5": "21e53864d9b90ac77c14d6bd8f5c505d",
+    "bytes": 545773,
+    "pages": 26
+  },
+  "build": {
+    "compiler": "MiKTeX-pdfTeX 4.19 (MiKTeX 24.4)",
+    "passes_after_final_doi": 3,
+    "exit_codes": [
+      0,
+      0,
+      0
+    ],
+    "log_sha256": "c76d1bf9215d3c45b50794b20fadc18c5205f5dafef8d2b89346d0e0258e253e",
+    "warnings": 0,
+    "overfull_boxes": 0,
+    "underfull_boxes": 0,
+    "undefined_references": 0,
+    "multiply_defined_labels": 0
+  },
+  "render": {
+    "renderer": "Poppler pdftoppm 24.04.0",
+    "format": "PNG",
+    "dpi": 110,
+    "page_dimensions_pixels": [
+      935,
+      1210
+    ],
+    "command": "pdftoppm -png -r 110 manuscripts/riemann-hypothesis/short-interval-stability/main.pdf tmp/pdfs/riemann-v006-final-doi-22852479/page",
+    "page_sha256": [
+      "4401dfb5ecdf0a3be8f6472af251054f7b636d1377db5a548e6e303b4f08d3c8",
+      "ec1a96efffe76bdb8c91a2eea2064b21fcfe9cc6000ad27f97bd1d21da48155a",
+      "1898bc9fb19a0131e8f387ec1f404d95662bcf48067ae8f59cd7424cde8dbb4c",
+      "ad008948216dbae7261931ffd84ba6ef2f03d5ca63927d9c7cf210aed476df30",
+      "502a5f5482246beb47e56d4afc75ff90c572177297dee22f22e575157b8c2abe",
+      "511c0d6cac21a6f5ba8d2f9bdde115d367132387585f334927a353114f905e76",
+      "ad14db4a6079170c351a2985a7c204cdd807e2240f5934455d3bce1f9434274f",
+      "f5ec999be66b3f2c110d9a6bde49ac916ba9c002b9d40462212b2e95efed4d73",
+      "00fb7464544ebbc255980f0cfba2b763ead1bdd0f68fbc6754427fa6f4ea50ce",
+      "db3a90632a42b5530ebffbf648f9dd28b592848491a0138ba795c1c5913c8f31",
+      "ae58ff805da04d86417efa3c7cd02dc9eb71c7331bbec85042eea135ff90a887",
+      "6ba95a647e4fd86996c762f45e8985759b17ad5f3d3659936f24a23313a3e895",
+      "e2caf0a6e6f3a169c1648980fd645d6693576d6613f4609c088c84af997beda8",
+      "fc256f90a3f505accb33cf4bc1c13e4fbab3158fd57c34668c3d8a636d7b69d3",
+      "a4a526ac5d7f7972352314f533861141e5dc95cd52b51f743fda4fbb6742121e",
+      "b6b035e6fc557cbdbd93b4042a3c593293b626868dc21a30f83f99b670bd871e",
+      "1411fdcc0059b448692e7bbede30ef2ee4e6a490ecaf595178f549736364d8ac",
+      "7719ca96ab4bd748725dca558770290c982abb2c3f61ad7c0be3ea6d24f5df69",
+      "e01c2e339f80a1f0b693e7a975ce55a01b60de47df04db81a6d2b2eaed8766e1",
+      "9a1a0e66bba905d68c25cd4ef282a5d1d97a9bf8e38132a0353d93a429d88eaa",
+      "f22bf1ee1364e9e0d5868ea743a51127638d46e59bb9b0213cc18e72345091f1",
+      "3026ee1439d8e36b32e1a336895f9c9ad7e8220cf138791353a985bc71fc01ef",
+      "cf9ec333c81668e7dd44c76ee86d94597054951e7a0658ad49d2067852f2cb24",
+      "7b88ebe8e2a0c8a58cfa32016d429496d79c33f06491db45d1454e238cc6a8e5",
+      "443f3b424f68026a28585f11532cb482d0afcd4cc49a2efb9db19623e954e8ef",
+      "ae2573a51b4364af6d0c3688b42532ee26673f5494341ba674a4e83622933b06"
+    ]
+  },
+  "visual_review": {
+    "all_pages_reviewed": true,
+    "page_count": 26,
+    "method": "All pages inspected in seven uncropped contact sheets after the final DOI build.",
+    "contact_sheets": 7,
+    "clipping_or_overlap_observed": false,
+    "missing_glyphs_observed": false,
+    "page_numbering": "continuous 1-26",
+    "result": "pass"
+  },
+  "scientific_scope": {
+    "new_result": "Sharp Hilbert-parity product and explicit positivity threshold in (0.545884,0.545885)",
+    "finite_computation_vs_asymptotic_proof": "Separated in the theorem, universal proof, transfer proof, verification appendix, and limitations.",
+    "external_peer_review_or_formal_verification_claimed": false,
+    "global_record_or_RH_solution_claimed": false
+  }
+}

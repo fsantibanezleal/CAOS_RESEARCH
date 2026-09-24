@@ -30,3 +30,8 @@ The new bound is 0.419087888170111727959091183775 at theta=3/4.
 | RH-014 | Expand and publish the manuscript with EXP-005, then integrate the public replay and serialized release | done; v0.05 published and release 0.70.000 live-verified | P0 |
 | RH-015 | EXP-006: test Hilbert dimension and parity compression below theta=0.5459 | done; strengthened theorem, exact certificate, audit and proof-review binding confirmed | P0 |
 | RH-016 | Publish manuscript v0.06 and integrate replay v5 into the next serialized release | done; v0.06 published and release 0.71.000 live-verified | P0 |
+| RH-017 | EXP-007: retain the spectral Gram defect through Hilbert-dimension parity compression and test the strict short-interval gain | done; theorem, correlated exact gain, audit and proof-review binding confirmed | P0 |
+| RH-018 | Integrate EXP-007 into manuscript v0.07 and publish after rendered review | done; v0.07 published and public bytes verified | P0 |
+| RH-019 | EXP-008: prove fixed-rank localization and test the source-certified rank-six onset | done; theorem, exact certificate, audit and attributed-input review confirmed | P0 |
+| RH-020 | Export replay v7, integrate EXP-007/008 into the public workbench, and complete serialized release QA | in progress | P0 |
+| RH-021 | Independently reconstruct the rank-six coefficient matrix or obtain a source artifact that permits exact C6 replay | open | P1 |

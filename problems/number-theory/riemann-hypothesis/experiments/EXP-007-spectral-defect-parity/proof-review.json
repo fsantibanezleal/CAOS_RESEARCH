@@ -1,0 +1,36 @@
+{
+  "analytic_transfer_reviewed": true,
+  "canonical_commit": "5d7e7a6a73e433a7ff9f6628815d54243425afa9",
+  "confirmed_conclusion": "For every fixed theta with h_3(theta)>0, the spectral-defect parity coupling gives a simple-critical lower proportion H(theta)>h_3(theta); at theta=0.5459 the correlated exact gain exceeds 1.3732525985593292701164661575215e-70 without changing the onset exponent.",
+  "declaration_commit": "a2abdcc8360399b3fa42aaea9245e4b83352c30f",
+  "exact_certificate_reviewed": true,
+  "finite_theorem": "(Q-S-D(G))(N-O) >= 2(N-S)^2, with D(G)=tr Psi_2(G), for every nonempty finite conjugation-invariant multiset in the inherited Hilbert kernel setting; coefficient 2 is sharp.",
+  "imported_inputs": [
+    "Anthropic formal-math RankTraceMult.lean arbitrary-parameter multiplicity-aware rank-trace theorem",
+    "teal-sea zeta-lab eigenbasis identification of the t=2 Ainta spectral profile",
+    "Wang arXiv:2609.07918v1 fixed-test short-interval pair theorem",
+    "Confirmed EXP-003 pressure-frame spectral-defect estimate",
+    "Confirmed EXP-005 local odd-multiplicity support theorem",
+    "Confirmed EXP-006 Hilbert-parity product and short-interval normalization"
+  ],
+  "manuscript_decision": "Integrate into the existing manuscript as v0.07; do not split unless the finite operator theorem is generalized beyond the current zeta-zero kernel setting.",
+  "novelty_scope": "Dated bounded primary-source, repository, exact-formula, and web searches found no matching defect-parity product or strict full-curve consequence; no absolute priority guarantee.",
+  "review_scope": "Pinned source-interface re-derivation, finite proof, liminf and quadratic-root audit, exact correlated gain, 652260-spectrum census, 18479-profile multiplicity census, independent 100-digit interval overlap, negative sensitivity control, and focused regression tests; not external peer review or end-to-end formal verification.",
+  "reviewed_utc": "2026-09-20T15:51:08.737733Z",
+  "schema": "riemann-exp007-proof-review-v1",
+  "scientific_verdict": "confirmed",
+  "source_sha256": {
+    "hypothesis": "1041a7ecb357b47a448f3c75a3aa1f3328dad982fe223be7ee7a789698c2e27b",
+    "mathematical_proof": "1d987d1e736cfdde07d86c39bbf8a1dc3ebcaec31abf02324091d24d7e719685",
+    "runner": "1304e98f540aac2e11efc453bbc42feb0f9e1478618e86b4848ebfacf04ba90c",
+    "focused_test": "b0a723fe75a174f096d5465d00c21222d38acb979db63e3632c5a17213f6cb70",
+    "result": "98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947",
+    "adversarial_audit": "6bad136f83257514efc874e59297c1ac13dd80cb4bc39b08ac3f6c3c1f30656f",
+    "verdict": "38c10761e73b5c1740056632f656dd59bd41eaa7f62a2c105462ce81aded6477"
+  },
+  "unquantified": [
+    "effective onset height",
+    "absolute novelty priority",
+    "external peer acceptance"
+  ]
+}
