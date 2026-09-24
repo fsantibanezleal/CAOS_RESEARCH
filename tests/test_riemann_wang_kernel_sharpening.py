@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import functools
+import hashlib
 import importlib.util
+import json
 import sys
 from fractions import Fraction
 from pathlib import Path
@@ -91,3 +93,14 @@ def test_execution_contract_is_cpu_bounded() -> None:
     assert MODULE.GLOBAL_H == Fraction(372019, 100000)
     assert MODULE.SHORT_H == 140730
 
+
+def test_canonical_receipt_binds_clean_pass() -> None:
+    result_path = EXPERIMENT / "artifacts/canonical/result.json"
+    receipt_path = EXPERIMENT / "artifacts/canonical/execution-receipt.json"
+    result = json.loads(result_path.read_text(encoding="utf-8"))
+    receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+    assert result["passed"] is True
+    assert all(result["checks"].values())
+    assert receipt["status"] == "pass"
+    assert receipt["git"]["tracked_clean_at_start"] is True
+    assert receipt["result_sha256"] == hashlib.sha256(result_path.read_bytes()).hexdigest()
