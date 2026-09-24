@@ -1,0 +1,191 @@
+{
+  "schema": "riemann-release-qa-v5",
+  "release": "0.72.000",
+  "recorded_utc": "2026-09-24T02:42:12.421765Z",
+  "base_develop_merge": "fe5515bac5400872467af3c1f4a9fe4766daa829",
+  "candidate_prepare_commit": "93bcb176",
+  "tests": {
+    "research_pr_ci": {
+      "passed": 443,
+      "run": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/35523811159"
+    },
+    "riemann_scoped": "66 passed",
+    "frontend": "22 passed",
+    "ruff": "PASS in research PR CI",
+    "content_guard": "PASS",
+    "structure_guard": "PASS",
+    "template_guard": "PASS",
+    "manuscript_voice": "PASS",
+    "artifact_contract": "PASS",
+    "typescript_build": "PASS"
+  },
+  "browser": {
+    "harness": "scripts/verify_riemann_ui.mjs",
+    "scenarios": 20,
+    "research_tab_visits": 120,
+    "screenshots": 3072,
+    "failures": 0,
+    "console_errors": 0,
+    "console_warnings": 0,
+    "page_errors": 0,
+    "request_failures": 0,
+    "http_errors": 0,
+    "matrix": [
+      "1440x1000",
+      "390x844",
+      "1280x800",
+      "1600x900",
+      "2560x1440"
+    ],
+    "languages": [
+      "en",
+      "es"
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "content": "all successive content viewports, proof stages, eight experiment records, disclosures and architecture panels",
+    "raw_receipt": {
+      "path": "tmp/riemann-ui-v072-final/receipt.json",
+      "bytes": 91615727,
+      "sha256": "a4b1eb2165b340138e5e34034c2c90eb92f476491577b64b028be83d14ecdca4"
+    }
+  },
+  "build_files": [
+    {
+      "path": "frontend/dist/index.html",
+      "bytes": 591,
+      "sha256": "e1a162fff2fe7a6c18c11e179c1a8409623136bc104cf361035cebb08191014f"
+    },
+    {
+      "path": "frontend/dist/assets/ExperimentModal-CaYoJHhC.js",
+      "bytes": 176791,
+      "sha256": "d7b2f599ddea4f08323f153ad53ac28f10940dce970df2527cb6319357378117"
+    },
+    {
+      "path": "frontend/dist/assets/index-DcH0r5bd.js",
+      "bytes": 784233,
+      "sha256": "ee60dd1ce1b7113836d3365dc3a0cc1e7f9d6fe8ef9ba4477296a1d1eb57fb73"
+    },
+    {
+      "path": "frontend/dist/assets/index-CftVb1pP.css",
+      "bytes": 64941,
+      "sha256": "8c6d51e7dca5b59c12f7754bd5b316540ebe217d043d67bc4fe6e8e2247b3e78"
+    }
+  ],
+  "data_files": [
+    {
+      "path": "data/derived/research/experiments.json",
+      "bytes": 2148237,
+      "sha256": "771c13263c60b0dac3a7ee331429edfc7c3c39ba77422f990cb7e449e6b2fab0"
+    },
+    {
+      "path": "data/derived/research/jacobian.json",
+      "bytes": 3831,
+      "sha256": "1c719c90e7796e4585e26f79f6cd0c700cc902659270b323870a62afd7a21023"
+    },
+    {
+      "path": "data/derived/research/portfolio.json",
+      "bytes": 3782,
+      "sha256": "6fdc0a23d814dd9f7d665123a42dec1acc9c25b84ef887cf3eb38c5478abc7bc"
+    },
+    {
+      "path": "data/derived/research/riemann.json",
+      "bytes": 39940951,
+      "sha256": "76ad13bec9a74db2ed2569fda8c18030c21f9c6a4916a125fa3a4d9779e9fd28"
+    },
+    {
+      "path": "data/derived/manifests/index.json",
+      "bytes": 385,
+      "sha256": "c7876e573a0f4f0cd662351aed089fe3fd685b55f660881f5dfb85480ce7f337"
+    },
+    {
+      "path": "data/derived/manifests/experiments.json",
+      "bytes": 305,
+      "sha256": "f7ca4849b26fc45b493cfe0cfe95d4e7dee6095b51bb2f5005c299d1d4cff91d"
+    },
+    {
+      "path": "data/derived/manifests/riemann.json",
+      "bytes": 25324,
+      "sha256": "dd9f5a2e8017493f58d7d6ede25c77a1b0e229ba29536694a60be7cf16869a98"
+    }
+  ],
+  "manuscript": {
+    "path": "manuscripts/riemann-hypothesis/short-interval-stability/main.pdf",
+    "bytes": 575351,
+    "sha256": "c7bda5f1acc0b34ac33b6a071e66586b4032ae6e385d93f7fdd2d197411dbf81",
+    "doi": "10.5281/zenodo.22860012",
+    "pages": 30
+  },
+  "canonical_results": [
+    {
+      "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/artifacts/canonical/result.json",
+      "bytes": 17854057,
+      "sha256": "98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947",
+      "schema": "riemann-exp007-results-v1",
+      "expected_sha256": "98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947"
+    },
+    {
+      "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/artifacts/canonical/result.json",
+      "bytes": 21218322,
+      "sha256": "1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781",
+      "schema": "riemann-exp008-results-v1",
+      "expected_sha256": "1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781"
+    }
+  ],
+  "representative_screenshots": [
+    {
+      "path": "program/riemann-hypothesis/release-0.72.000/screenshots/desktop-en-light-exp007-verdict.png",
+      "bytes": 229690,
+      "sha256": "6af9529023f1da7cfb3dc0831298fea425dd64579bf3a8f32efa9da37e5e98b8"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.72.000/screenshots/desktop-en-light-exp008-verdict.png",
+      "bytes": 232266,
+      "sha256": "9ed76aa77f4b6dd4bd97730dbdc1f1d0830467e9ba050a026ccd43507a5f464a"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.72.000/screenshots/desktop-en-light-method.png",
+      "bytes": 117149,
+      "sha256": "5efbeda4f1868c99ced32667c66200afe4b3cb188c90581b2bee49ff346c12e9"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.72.000/screenshots/desktop-en-light-results.png",
+      "bytes": 104687,
+      "sha256": "89acb2c42a149d92cdb31bb371e835bc5f6fe2079501f59ac1a0115d49018451"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.72.000/screenshots/desktop-en-light-summary.png",
+      "bytes": 116604,
+      "sha256": "e007feb3b7d1c208737e5114d283099cff4c1813e15d25fc19c9610d3cea78ef"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.72.000/screenshots/phone-es-dark-exp008-verdict.png",
+      "bytes": 50750,
+      "sha256": "d56711863ee53441d30c7fa6ae690c66a383d857e3fb0fb0ef8b2715b3222647"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.72.000/screenshots/phone-es-dark-method.png",
+      "bytes": 59593,
+      "sha256": "02d5c298cca5c62c5592d16d8f334e45c1488fd0d0ffb2f20176093b37318961"
+    },
+    {
+      "path": "program/riemann-hypothesis/release-0.72.000/screenshots/phone-es-dark-summary.png",
+      "bytes": 57885,
+      "sha256": "d75625c78522e20ef7d0e01b67ecdcf8ec83555d837debe7ec97696e02226c8d"
+    }
+  ],
+  "deployment": {
+    "status": "candidate-validated",
+    "main_commit": null,
+    "tag": "v0.72.000",
+    "release": null,
+    "research_pr": "https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/325",
+    "release_pr": null,
+    "promotion_pr": null,
+    "ci_run": null,
+    "pages_run": null,
+    "live_receipt": null
+  }
+}

@@ -14,7 +14,7 @@ function diagram(kind: 'science' | 'method', lang: Lang) {
     [t('Finite-rank local Selberg curve', 'Curva local de Selberg de rango finito'), 'O / N ≥ (θ − 1/2)/(4eCq)'],
     [t('Rank-six Hilbert-parity onset', 'Umbral Hilbert-paridad de rango seis'), '0.5458837 < θ₆ < 0.5458838'],
   ] : [
-    [t('Declare before computation', 'Declarar antes del cálculo'), 'EXP-001 · EXP-002 · EXP-003 · EXP-004 · EXP-005 · EXP-006 · EXP-007 · EXP-008'],
+    [t('Declare before computation', 'Declarar antes del cálculo'), 'EXP-001 · EXP-002 · EXP-003 · EXP-004|EXP-005 · EXP-006 · EXP-007 · EXP-008'],
     [t('Replay finite certificates', 'Reproducir certificados finitos'), t('Pair incidence · spans · all offsets', 'Incidencia · extensiones · desplazamientos')],
     [t('Audit parity and pressure', 'Auditar paridad y presión'), t('Exact census · Arb · source binding', 'Censo exacto · Arb · vinculación de fuentes')],
     [t('Review, persist, then replay', 'Revisar, persistir y reproducir'), t('Adversarial tests · verdict · SHA-256', 'Pruebas adversariales · veredicto · SHA-256')],
@@ -40,7 +40,7 @@ function diagram(kind: 'science' | 'method', lang: Lang) {
     ${nodes.map(([label, sub], i) => `<g>
       <rect x="10" y="${14 + i * 108}" width="340" height="72" rx="9" fill="var(--color-surface-2)" stroke="var(--color-accent)"/>
       <text x="180" y="${43 + i * 108}" text-anchor="middle" fill="currentColor" font-size="14" font-weight="600">${label}</text>
-      <text x="180" y="${68 + i * 108}" text-anchor="middle" fill="currentColor" font-size="12">${sub}</text>
+      <text x="180" y="${(sub.includes('|') ? 61 : 68) + i * 108}" text-anchor="middle" fill="currentColor" font-size="${sub.includes('|') ? 10 : 12}">${sub.includes('|') ? sub.split('|').map((line, j) => `<tspan x="180" dy="${j ? 13 : 0}">${line}</tspan>`).join('') : sub}</text>
       ${i < 3 ? `<path d="M180 ${88 + i * 108}v29" stroke="currentColor" marker-end="url(#rh-arch-arrow)"/><text x="192" y="${107 + i * 108}" fill="currentColor" font-size="11">${arrows[i]}</text>` : ''}
     </g>`).join('')}
     <text x="180" y="433" text-anchor="middle" fill="currentColor" font-size="12">${t('Sources and evidence', 'Fuentes y evidencia')}</text>
