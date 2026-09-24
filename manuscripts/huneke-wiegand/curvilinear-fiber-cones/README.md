@@ -1,8 +1,12 @@
 # Curvilinear conductor fiber cones
 
-Current publication/dependency review:
-[2026-09-04 scope audit](../frobenius-minimality/scope-audit-2026-09-04.md).
-The existing v0.02 public PDF was freshly downloaded and matched; it is unchanged.
+Current public version: v0.04, published 2026-09-18 at
+[10.5281/zenodo.22835118](https://doi.org/10.5281/zenodo.22835118), under
+concept DOI [10.5281/zenodo.21997377](https://doi.org/10.5281/zenodo.21997377).
+The 453,812-byte committed PDF has SHA-256
+`c7a948f5bd5dd5a2df29f697419ff259d667eb9a4ef1a1af14c1d827428311eb`.
+Versions 0.03 and 0.04 are editorial identity and scientific-voice revisions;
+their Zenodo metadata states that the mathematics is unchanged from v0.02.
 
 Focused companion preprint for EXP-025 and EXP-026. Version 0.01 is the frozen, published,
 fresh-download-verified six-page primary-structure paper. Version 0.02 is the frozen, published,
@@ -22,11 +26,11 @@ Evidence owners:
 - `problems/commutative-algebra/huneke-wiegand/experiments/EXP-025-curvilinear-primary-structure/`
 - `problems/commutative-algebra/huneke-wiegand/experiments/EXP-026-grevlex-staircase/`
 
-Current version state:
+Last mathematics-changing version state:
 
 - version: `0.02`
 - licence: CC BY 4.0
-- status: published and independently public-download verified
+- status: frozen; superseded editorially by public v0.04
 - version DOI: `10.5281/zenodo.22002907`
 - concept DOI: `10.5281/zenodo.21997377`
 - record id: `22002907`
@@ -50,7 +54,7 @@ Frozen version 0.01:
 - SHA-256: `e9d51bb63492c37eae4ddb7a6790e50c1a3292006bd23660a0bbe2c69c19be4a`
 - version DOI: `10.5281/zenodo.21997378`
 - concept DOI: `10.5281/zenodo.21997377`
-- Zenodo: published record [`21997378`](https://zenodo.org/records/21997378); the concept DOI
-  resolves to this version
+- Zenodo: immutable published record [`21997378`](https://zenodo.org/records/21997378); the concept
+  DOI now resolves to editorial v0.04
 - QA: after DOI insertion, the clean two-pass build, complete final 150-DPI six-page inspection,
   claim audit, identity, sole-authorship, public metadata, and fresh-download gates all pass
