@@ -115,3 +115,20 @@ baked and tested. Research PR #316, release PR #317, and promotion PR #318 are
 merged. Release 0.71.000 is tagged from exact main commit `8302be35`; main CI,
 Pages, ten live byte comparisons, and eight live browser scenarios passed. This
 delivery does not change the open status of RH.
+
+## Rank-six local transfer and spectral correction
+
+EXP-007 proves the finite spectral-defect refinement
+`(Q-S-D(G))(N-O) >= 2(N-S)^2` and certifies a strict, very small improvement
+wherever the scalar Hilbert-parity curve is positive. EXP-008 proves the local
+Selberg transfer for every fixed finite rank and applies Pearce-Crump's stated
+rank-six constant interval. Its exact certificate moves the positivity onset
+to `(0.5458837,0.5458838)` and gives a positive rank-six lower term at
+`theta=0.545884`, where rank three remains negative. The coefficient matrix is
+not printed by the source, so independent reconstruction remains open.
+
+Manuscript v0.07 is published at DOI 10.5281/zenodo.22860012 and matches a
+fresh public download byte for byte. Research PR #325 merged replay v7, both
+new experiment records, and the bilingual workbench into `develop` after its
+full Linux gate passed. Release 0.72.000 must still pass rendered QA, promotion,
+main CI, Pages deployment, and exact live verification before it is complete.
