@@ -3,6 +3,34 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.72.000] - 2026-09-20
+
+### Added
+- Riemann EXP-007 proves the finite spectral-defect refinement
+  `(Q-S-D(G))(N-O) >= 2(N-S)^2`. It strictly improves every positive point of
+  the scalar Hilbert-parity curve, while its optimized certified gain at
+  `theta = 0.5459` is numerically tiny.
+- Riemann EXP-008 proves that the local Selberg detector transfer works at
+  every fixed finite rank. Applying Pearce-Crump's stated rank-six interval
+  moves the positivity onset from `(0.5458846,0.5458847)` to
+  `(0.5458837,0.5458838)`. At `theta = 0.545884` the rank-six lower term is
+  already greater than `2.5541123454645702e-7` while the rank-three term is
+  negative.
+- Replay schema v7 binds both declarations, portable exact results, execution
+  receipts, focused tests, proofs, adversarial audits, verdicts, proof reviews,
+  and independent interval checks before the browser exposes eight experiment
+  records.
+- Manuscript v0.07 is published at DOI `10.5281/zenodo.22860012`. Its reviewed
+  30-page PDF matches a fresh public download at SHA-256
+  `c7bda5f1acc0b34ac33b6a071e66586b4032ae6e385d93f7fdd2d197411dbf81`.
+
+### Boundaries
+- The source prints the certified rank-six constant interval but not its
+  coefficient matrix, so the numerical application is attributed rather than
+  independently reconstructed. The theorem is asymptotic for each fixed
+  exponent, has no effective starting height, and does not prove the Riemann
+  Hypothesis or universal simplicity.
+
 ## [0.71.000] - 2026-09-20
 
 ### Added

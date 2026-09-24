@@ -204,7 +204,8 @@ describe('Riemann contextual architecture', () => {
     expect(science.svg).toContain('EXP-008-rank-six-local-transfer/mathematical-proof.md');
     expect(science.svg).toContain(lang === 'en' ? 'Rank-six Hilbert-parity onset' : 'Umbral Hilbert-paridad de rango seis');
     expect(method.svg).toContain('docs/guides/riemann-replay.md');
-    expect(method.svg).toContain('EXP-001 · EXP-002 · EXP-003 · EXP-004 · EXP-005 · EXP-006 · EXP-007 · EXP-008');
+    expect(method.svg).toContain('EXP-001 · EXP-002 · EXP-003 · EXP-004');
+    expect(method.svg).toContain('EXP-005 · EXP-006 · EXP-007 · EXP-008');
     expect(method.svg).toContain(lang === 'en' ? 'Audit parity and pressure' : 'Auditar paridad y presión');
     expect(method.body_en).toContain('0.5458837 < θ6 < 0.5458838');
     expect(science.body_en).toContain('None of these results proves RH');

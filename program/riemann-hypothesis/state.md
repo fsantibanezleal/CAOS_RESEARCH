@@ -3,8 +3,8 @@
 Updated: 2026-09-20. Latest completed public application release:
 **0.71.000**, live-verified from main commit
 `8302be35cb96280692ad1333d690a63cb220f8b2`. Current research round:
-**EXP-007 and EXP-008 confirmed, manuscript v0.07 published, replay v7 release
-integration in progress**.
+**EXP-007 and EXP-008 confirmed, manuscript v0.07 published, release 0.72.000
+candidate rendered QA passed; promotion pending**.
 
 The Riemann hypothesis remains open.
 
@@ -69,9 +69,10 @@ Manuscript v0.07 is published at
 30-page PDF matches a fresh unauthenticated public download byte for byte.
 Publication is not peer acceptance.
 
-The next serialized application release will expose EXP-007 and EXP-008 in the
-bilingual workbench and record rendered browser and live deployment QA. Until
-that release is promoted, 0.71.000 remains the latest completed application
+Release candidate 0.72.000 exposes EXP-007 and EXP-008 in the bilingual
+workbench. Its 20-scenario rendered browser matrix passed with 3,072 captures
+and no failures. Scoped promotion and live deployment verification remain.
+Until those gates pass, 0.71.000 remains the latest completed application
 release.
 
 The result is asymptotic for each fixed exponent and has no effective starting

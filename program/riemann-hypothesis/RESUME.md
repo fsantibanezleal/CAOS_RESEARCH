@@ -4,8 +4,8 @@
 
 Read [state.md](state.md), [backlog.md](backlog.md), and the latest EXP-007/008
 verdicts. Public application release 0.71.000 remains live-verified. EXP-007 and
-EXP-008 are confirmed, manuscript v0.07 is published, and replay v7 integration
-is being prepared for the next serialized release. General RH remains open.
+EXP-008 are confirmed, manuscript v0.07 is published, research PR #325 is
+merged, and release 0.72.000 is the active candidate. General RH remains open.
 
 EXP-007 proves the finite spectral-defect product
 
@@ -54,11 +54,12 @@ The EXP-008 portable result hash is
 
 ## 4. In flight
 
-1. Replay v7 and the bilingual EXP-007/008 workbench are implemented on the
-   scoped research branch.
-2. Research PR #325 targets `develop`; CI and contract repair are active.
-3. The next serialized release must bump to 0.72.000, promote `develop` to
-   `main`, and record rendered and live verification.
+1. Replay v7 and the bilingual EXP-007/008 workbench are merged into `develop`
+   through research PR #325, whose full Linux CI passed.
+2. Release 0.72.000 passed its 20-scenario rendered browser matrix after a
+   visual-review fix to the eight-experiment workflow label.
+3. The candidate must promote through `develop` and `main`, then record exact
+   live verification.
 4. The private CAOS_MANAGE mirror and Zenodo deposit ledger still need the
    final release receipts.
 
@@ -69,13 +70,11 @@ byte repository PDF and a fresh public download share SHA-256
 
 ## 5. Next actions
 
-1. Make PR #325 green and merge it into `develop`.
-2. Prepare the 0.72.000 version, changelog, replay data, and release evidence.
-3. Run repository, frontend, and rendered browser gates.
-4. Promote `develop` to `main`, tag the exact release commit, and verify Pages
+1. Open and merge the 0.72.000 release PR into `develop`.
+2. Promote `develop` to `main`, tag the exact release commit, and verify Pages
    bytes plus live EN/ES light/dark desktop/phone scenarios.
-5. Mirror the publication and release receipts into CAOS_MANAGE.
-6. Pursue independent rank-six coefficient reconstruction as the next bounded
+3. Mirror the publication and release receipts into CAOS_MANAGE.
+4. Pursue independent rank-six coefficient reconstruction as the next bounded
    mathematical target.
 
 ## 6. Where everything lives

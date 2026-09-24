@@ -1,5 +1,23 @@
 # Riemann hypothesis history
 
+## 2026-09-23: release 0.72.000 candidate passed rendered QA
+
+The versioned candidate passed 66 scoped Riemann/export tests, 22 frontend
+tests, the production build, and all repository guards. Its final pointer-driven
+browser matrix passed 20 scenarios, 120 tab visits, and 3,072 screenshots in
+both languages, both themes, and five viewport sizes with zero failures. Visual
+inspection found and corrected an overflowing eight-experiment workflow label
+before the final receipt was recorded. Promotion and live verification remain.
+
+## 2026-09-20: replay v7 merged and release 0.72.000 prepared
+
+Research PR #325 merged the source-bound EXP-007/008 replay, the eight-record
+bilingual workbench, and updated program documentation into `develop` after
+the complete Linux repository gate passed. Release candidate 0.72.000 records
+the fixed-finite-rank transfer, the attributed rank-six onset, the strict
+spectral companion, and manuscript v0.07. Rendered and live deployment gates
+remain required before the release can be called complete.
+
 ## 2026-09-20: EXP-008 confirmed an earlier source-certified rank-six onset
 
 Declaration `2297d2fc` preceded implementation and computation. EXP-008 proves
