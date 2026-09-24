@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { renderToString } from 'katex';
 import type { RiemannData } from '../api/data';
-import { decimalCenter, hilbertParityEvidence, localSelbergEvidence, parityEvidence, pressureWinner, rankSixEvidence, spectralDefectEvidence } from '../lib/riemannReplay';
+import { decimalCenter, hilbertParityEvidence, localSelbergEvidence, parityEvidence, pressureWinner, rankSixEvidence, spectralDefectEvidence, wangKernelEvidence } from '../lib/riemannReplay';
 import { riemannArchitecture } from '../lib/riemannArchitecture';
 import { ARCHITECTURE } from '../lib/architecture';
 import { CITATIONS } from '../data/citations';
@@ -16,7 +16,7 @@ function parityFixture(): RiemannData {
   const data = replay();
   const roles = ['parity_result', 'parity_hypothesis', 'parity_proof', 'parity_audit', 'parity_verdict'] as const;
   const sourceSha256 = Object.fromEntries(roles.map((role) => [role, `${role}-hash`])) as Record<typeof roles[number], string>;
-  data.schema = 'riemann-replay-v7';
+  data.schema = 'riemann-replay-v8';
   data.parity_result = {
     schema: 'riemann-exp004-results-v1', experiment: 'EXP-004-parity-density-transfer',
     arithmetic_status: 'verified',
@@ -151,6 +151,30 @@ describe('Riemann pressure replay presentation', () => {
     const mismatched = replay();
     mismatched.provenance.find((source) => source.role === 'rank_six_result')!.sha256 = '0'.repeat(64);
     expect(rankSixEvidence(mismatched)).toBeUndefined();
+  });
+
+  it('surfaces EXP-009 with its sharp global gain and Wang-v1 boundary', () => {
+    const evidence = wangKernelEvidence(replay());
+    expect(evidence?.result.global.simple_proportion.lower.decimal)
+      .toContain('0.672500799594675755828355056296');
+    expect(evidence?.result.global.distinct_proportion.lower.decimal)
+      .toContain('0.836250399797337877914177528148');
+    expect(evidence?.result.short_interval.certified_gain.lower.decimal)
+      .toMatch(/^3\.0867809983334187.*e-31$/);
+    expect(evidence?.review.scientific_verdict)
+      .toBe('confirmed-relative-to-wang-v1-framework');
+  });
+
+  it('rejects failed, overclaimed, or source-mismatched EXP-009 evidence', () => {
+    const failed = replay();
+    failed.wang_kernel_result.checks.ratio_final_square_is_X2_minus_2_squared = false;
+    expect(wangKernelEvidence(failed)).toBeUndefined();
+    const overclaimed = replay();
+    overclaimed.wang_kernel_result.claim_boundary.rh_solved = true as never;
+    expect(wangKernelEvidence(overclaimed)).toBeUndefined();
+    const mismatched = replay();
+    mismatched.provenance.find((source) => source.role === 'wang_kernel_result')!.sha256 = '0'.repeat(64);
+    expect(wangKernelEvidence(mismatched)).toBeUndefined();
   });
 
   it.each(['unverified', 'missing-second-evaluator', 'wrong-certificate'] as const)(

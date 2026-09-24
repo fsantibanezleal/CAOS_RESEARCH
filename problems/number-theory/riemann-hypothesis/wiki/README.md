@@ -1,5 +1,21 @@
 # Riemann hypothesis: short-interval zero proportions
 
+[D+MV] EXP-009 proves the sharp auxiliary inequality
+
+$$
+\sup_{\alpha,\beta\ge0}R(\alpha,\beta)=\sqrt2,
+$$
+
+with equality exactly at $(0,1)$ and $(1,0)$. Substitution into Wang's pinned
+arXiv:2609.24167v1 framework gives global lower proportions
+$0.6725007995946757558\ldots$ for simple critical zeros and
+$0.8362503997973378779\ldots$ for distinct zeros. The exact gain above the
+baseline exceeds $9.5915\times10^{-8}$. The elementary ratio theorem is
+internal; the global transfer depends on Wang's recent unreviewed v1 proof.
+See the [sharp-kernel chapter](12-sharp-three-point-kernel.md),
+[verdict](../experiments/EXP-009-wang-kernel-sharpening/verdict.md), and
+[published preprint](https://doi.org/10.5281/zenodo.22940291). RH remains open.
+
 [D+MV] EXP-008 proves that the optimized Selberg detector localizes at every
 fixed finite rank. Inserting Pearce-Crump's stated source-certified rank-six
 constant into the EXP-006 Hilbert-parity product gives
@@ -146,6 +162,7 @@ did not locate an identical short-interval theorem; it does not guarantee priori
 9. [Hilbert dimension, parity compression, and the improved threshold](09-hilbert-parity-compression.md)
 10. [Spectral-defect parity coupling and the strict full-curve improvement](10-spectral-defect-parity.md)
 11. [Rank-six local transfer and the earlier onset](11-rank-six-local-transfer.md)
+12. [Sharp three-point kernel and improved global proportions](12-sharp-three-point-kernel.md)
 
 The new certificate uses $p=1/12500$, $\epsilon=443239/10^9$, $k=2256$ and
 frame size $4513$. All 16,797 partition nodes were checked, with 8,351 energy-plus-pressure
@@ -160,13 +177,17 @@ documents remain in the local repository cache where redistribution rights were
 not identified. Licensed snapshots retain their notices. The [bibliography](../references.md)
 distinguishes source theorems, un-replayed candidate claims and formal hypotheses.
 
-The manuscript series is [Simple critical zeros in short intervals: stability, parity, localization, and Hilbert compression](https://doi.org/10.5281/zenodo.22727388).
+The short-interval manuscript series is [Simple critical zeros in short intervals: stability, parity, localization, and Hilbert compression](https://doi.org/10.5281/zenodo.22727388).
 The first published version is [v0.01](https://doi.org/10.5281/zenodo.22727389);
 The spectral-defect and rank-six theorems form the published v0.07 expansion,
 with version DOI [10.5281/zenodo.22860012](https://doi.org/10.5281/zenodo.22860012).
 The [manuscript directory](../../../../manuscripts/riemann-hypothesis/short-interval-stability/)
 and publication receipts record the actual publication state. A preprint is not
 peer review or mathematical community acceptance.
+
+The separate global note [A sharp three-point kernel bound and improved
+proportions of zeta zeros](https://doi.org/10.5281/zenodo.22940291) records
+EXP-009. Its source-bound transfer is not external peer review or a proof of RH.
 
 Evidence labels: **[D]** derived with a persisted proof and refutation attempt;
 **[MV]** machine-verified finite assertion; **[C]** conjectural direction. This work

@@ -1,6 +1,6 @@
 {
   "release_ready": true,
-  "publication_performed": false,
+  "publication_performed": true,
   "date": "2026-09-24",
   "version": "0.01",
   "record_id": 22940291,
@@ -19,5 +19,7 @@
   "metadata_sha256": "ec1fc5bc44e4a335c6a705167c8c85850c7a6d664beeea61c79394e831a7e19d",
   "render_review_sha256": "b55a60e77e06ee255f0912c473782da3d8b18f0e59c4edc20797308ec2746a26",
   "proof_review_sha256": "dc6c3c88ef04e8d658c6363554b2f6a671a8ca43cd690f8c2e6dc2b3b1a1acdb",
-  "scope": "Publish the v0.01 preprint containing the exact sharp auxiliary ratio theorem, its source-attributed global consequence, the short-interval corollary, complete dependency boundaries, and the EXP-009 reproducibility record. Sole human authorship; CC BY 4.0; not peer reviewed; no RH claim."
+  "scope": "Publish the v0.01 preprint containing the exact sharp auxiliary ratio theorem, its source-attributed global consequence, the short-interval corollary, complete dependency boundaries, and the EXP-009 reproducibility record. Sole human authorship; CC BY 4.0; not peer reviewed; no RH claim.",
+  "public_download_verified": true,
+  "publication_receipt_sha256": "ffab4c1c4b708828d1491e7a39765a2edf36b38c96974986271d27539553aad6"
 }

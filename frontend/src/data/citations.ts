@@ -24,6 +24,16 @@ export const CITATIONS: Citation[] = [
     url: 'https://arxiv.org/abs/2609.07918v1',
   },
   {
+    id: 'riemann-wangglobal2026', label: 'Wang global refinement 2026',
+    citation: 'Wang B. (2026). A refinement of the two-thirds theorem for simple critical zeros of the Riemann zeta-function. arXiv:2609.24167v1, submitted September 21. EXP-009 imports its global framework and replaces one non-sharp auxiliary estimate.',
+    url: 'https://arxiv.org/abs/2609.24167v1',
+  },
+  {
+    id: 'riemann-sharpkernel2026', label: 'CAOS EXP-009: sharp kernel',
+    citation: 'Santibáñez-Leal F. (2026). A sharp three-point kernel bound and improved proportions of zeta zeros. CAOS Research preprint v0.01. The elementary sharp ratio theorem is proved directly; the zeta transfer is relative to Wang arXiv:2609.24167v1.',
+    url: 'https://doi.org/10.5281/zenodo.22940291',
+  },
+  {
     id: 'riemann-pearcecrump2026', label: 'Pearce-Crump 2026',
     citation: 'Pearce-Crump A. (2026). Optimising Selberg\'s method for critical zeros. arXiv:2609.15329v1. Source of the positive-semidefinite sign detector, coefficient-uniform approximate functional equation, arbitrary-subinterval mean-value estimate, and certified rank-three profile localized in EXP-005.',
     url: 'https://arxiv.org/abs/2609.15329v1',

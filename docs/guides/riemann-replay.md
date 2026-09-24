@@ -186,6 +186,23 @@ Reproduction therefore validates the CAOS transfer and all downstream
 arithmetic while retaining C6 as an attributed theorem input. It does not
 independently reconstruct the source profile.
 
+## Reproduce the sharp three-point kernel result
+
+EXP-009 proves the exact `sqrt(2)` supremum, evaluates the new Wang parameter,
+and certifies both the global proportion and its short-interval companion:
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/run.py --output-dir tmp/riemann-exp009-replay --budget-seconds 600
+python -m pytest -q tests/test_riemann_wang_kernel_sharpening.py
+```
+
+The portable result has SHA-256
+`0cea78e847d1bcec62eb8cd809b704ceaebd58f78f1c405f13ec40838fbb5a66`.
+It uses exact fractions, directed Taylor bounds, and an independent 120-digit
+interval overlap. The ratio theorem is proved in the repository. The global
+zeta conclusion retains Wang arXiv:2609.24167v1 as an attributed analytic
+input and supplies neither an effective height nor a proof of RH.
+
 ## Bake and inspect the public replay
 
 After committing the source artifacts, run `python -m researchlab.pipeline all`. The Riemann

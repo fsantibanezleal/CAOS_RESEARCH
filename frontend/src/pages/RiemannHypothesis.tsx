@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Callout, Cite, Equation, InlineMath, Refs, Tabs, type TabDef } from '@fasl-work/caos-app-shell';
 import { useT } from '../lib/i18n';
 import { loadExperiments, loadRiemann, type ExperimentRec, type RiemannData } from '../api/data';
-import { decimalCenter as center, hilbertParityEvidence, localSelbergEvidence, parityEvidence, pressureWinner, rankSixEvidence, spectralDefectEvidence } from '../lib/riemannReplay';
+import { decimalCenter as center, hilbertParityEvidence, localSelbergEvidence, parityEvidence, pressureWinner, rankSixEvidence, spectralDefectEvidence, wangKernelEvidence } from '../lib/riemannReplay';
 
 const ExperimentModal = lazy(() => import('../components/ExperimentModal'));
 const REPO = 'https://github.com/fsantibanezleal/CAOS_RESEARCH';
@@ -22,10 +22,14 @@ const SPECTRAL_EXP = `${PROBLEM}/experiments/EXP-007-spectral-defect-parity`;
 const SPECTRAL_PROOF = `${REPO}/blob/main/${SPECTRAL_EXP}/mathematical-proof.md`;
 const RANK_SIX_EXP = `${PROBLEM}/experiments/EXP-008-rank-six-local-transfer`;
 const RANK_SIX_PROOF = `${REPO}/blob/main/${RANK_SIX_EXP}/mathematical-proof.md`;
+const WANG_KERNEL_EXP = `${PROBLEM}/experiments/EXP-009-wang-kernel-sharpening`;
+const WANG_KERNEL_PROOF = `${REPO}/blob/main/${WANG_KERNEL_EXP}/mathematical-proof.md`;
 const REPLAY_GUIDE = `${REPO}/blob/main/docs/guides/riemann-replay.md`;
 const PAPER = `${REPO}/blob/main/manuscripts/riemann-hypothesis/short-interval-stability/main.pdf`;
 const DOI = 'https://doi.org/10.5281/zenodo.22860012';
 const CONCEPT_DOI = 'https://doi.org/10.5281/zenodo.22727388';
+const WANG_KERNEL_PAPER = `${REPO}/blob/main/manuscripts/riemann-hypothesis/sharp-three-point-kernel/main.pdf`;
+const WANG_KERNEL_DOI = 'https://doi.org/10.5281/zenodo.22940291';
 
 function SourceLink({ href, children }: { href: string; children: ReactNode }) {
   return <a href={href} target="_blank" rel="noreferrer">{children}</a>;
@@ -174,12 +178,12 @@ export default function RiemannHypothesis() {
     let active = true;
     setError(false); setRecordsError(false);
     loadRiemann().then((value) => { if (active) setData(value); }).catch(() => { if (active) setError(true); });
-    loadExperiments().then((value) => { if (active) setExps(value.filter((e) => e.problem === 'riemann-hypothesis' && ['001', '002', '003', '004', '005', '006', '007', '008'].includes(e.id))); }).catch(() => { if (active) setRecordsError(true); });
+    loadExperiments().then((value) => { if (active) setExps(value.filter((e) => e.problem === 'riemann-hypothesis' && ['001', '002', '003', '004', '005', '006', '007', '008', '009'].includes(e.id))); }).catch(() => { if (active) setRecordsError(true); });
     return () => { active = false; };
   }, [attempt]);
   const result = data?.result;
   // Keep a readable fallback while an older baked replay is being replaced by
-  // the v7 export. The page must not throw when the optional new branch is
+  // the current export. The page must not throw when an optional new branch is
   // absent during a deployment roll-forward.
   const stageA = data?.pressure_result?.stage_a;
   const winner = pressureWinner(data);
@@ -188,6 +192,7 @@ export default function RiemannHypothesis() {
   const hilbert = hilbertParityEvidence(data);
   const spectral = spectralDefectEvidence(data);
   const rankSix = rankSixEvidence(data);
+  const wangKernel = wangKernelEvidence(data);
   const sourceRole = (role: string) => ({
     local_result: t('EXP-005 exact threshold certificate', 'Certificado exacto del umbral de EXP-005'),
     local_receipt: t('EXP-005 canonical execution receipt', 'Comprobante de ejecución canónica de EXP-005'),
@@ -224,6 +229,16 @@ export default function RiemannHypothesis() {
     rank_six_verdict: t('EXP-008 attributed-input verdict', 'Veredicto con entrada atribuida de EXP-008'),
     rank_six_review: t('EXP-008 proof review and source binding', 'Revisión y vinculación de fuentes de EXP-008'),
     rank_six_test: t('EXP-008 focused regression tests', 'Pruebas de regresión focalizadas de EXP-008'),
+    wang_kernel_result: t('EXP-009 sharp-kernel certificate', 'Certificado del núcleo óptimo de EXP-009'),
+    wang_kernel_receipt: t('EXP-009 canonical execution receipt', 'Comprobante de ejecución canónica de EXP-009'),
+    wang_kernel_hypothesis: t('EXP-009 declaration before computation', 'Declaración de EXP-009 antes del cálculo'),
+    wang_kernel_amendment: t('EXP-009 strengthened target', 'Meta fortalecida de EXP-009'),
+    wang_kernel_runner: t('EXP-009 exact runner', 'Programa exacto de EXP-009'),
+    wang_kernel_proof: t('EXP-009 complete proof', 'Prueba completa de EXP-009'),
+    wang_kernel_audit: t('EXP-009 adversarial review', 'Revisión adversarial de EXP-009'),
+    wang_kernel_verdict: t('EXP-009 source-bounded verdict', 'Veredicto con límites de fuente de EXP-009'),
+    wang_kernel_review: t('EXP-009 proof review and source binding', 'Revisión y vinculación de fuentes de EXP-009'),
+    wang_kernel_test: t('EXP-009 focused regression tests', 'Pruebas de regresión focalizadas de EXP-009'),
     constant_audit: t('constant audit', 'auditoría de constantes'),
     result: t('arithmetic result', 'resultado aritmético'),
     certificate: t('finite certificate', 'certificado finito'),
@@ -274,6 +289,16 @@ export default function RiemannHypothesis() {
   const tabs: TabDef[] = [
     {
       id: 'summary', label: t('Summary', 'Resumen'), content: <section>
+        <p className="rh-lead">{t('EXP-009 proves the sharp constant √2 in a three-point kernel ratio left non-optimal in Wang’s new global refinement. Substituting the exact constant into Wang’s pinned v1 framework raises the certified global lower proportion of simple critical zeros to more than 0.6725007995946757558 and the distinct-zero companion to more than 0.8362503997973378779.', 'EXP-009 prueba la constante óptima √2 en un cociente de núcleo de tres puntos que no estaba optimizado en el nuevo refinamiento global de Wang. Sustituir la constante exacta en el marco v1 fijado de Wang eleva la proporción global inferior certificada de ceros críticos simples a más de 0.6725007995946757558 y la cota complementaria de ceros distintos a más de 0.8362503997973378779.')}</p>
+        <Equation tex={String.raw`R(\alpha,\beta)\le\sqrt2,\qquad d_\dagger=\frac{\sqrt{2+8\sqrt2}-(2+\sqrt2)}{2(\sqrt2-1)}`} />
+        {wangKernel ? <>
+          <p className="rh-number">{t('Global simple-critical proportion: ', 'Proporción global de ceros críticos simples: ')}<strong>{wangKernel.result.global.simple_proportion.lower.decimal}</strong></p>
+          <p className="rh-number">{t('Certified gain over the baseline: ', 'Ganancia certificada sobre la cota base: ')}<strong>{wangKernel.result.global.gain.lower.decimal}</strong></p>
+          <p className="rh-number">{t('Distinct-zero companion: ', 'Cota complementaria de ceros distintos: ')}<strong>{wangKernel.result.global.distinct_proportion.lower.decimal}</strong></p>
+          <p className="small">{t('Scientific verdict: the auxiliary inequality and arithmetic are confirmed. The global transfer is conditional on the correctness of Wang’s recent unreviewed arXiv v1 framework. This is not a proof of RH.', 'Veredicto científico: la desigualdad auxiliar y la aritmética están confirmadas. La transferencia global depende de la corrección del reciente marco v1 no revisado de Wang en arXiv. Esto no es una prueba de RH.')}</p>
+        </> : <p role="status">{t('Loading the source-bound EXP-009 evidence.', 'Cargando la evidencia de EXP-009 vinculada a sus fuentes.')}</p>}
+        <div className="rh-source-links"><SourceLink href={WANG_KERNEL_PROOF}>{t('Full EXP-009 proof', 'Prueba completa de EXP-009')}</SourceLink><SourceLink href={`${REPO}/blob/main/${WANG_KERNEL_EXP}/verdict.md`}>{t('EXP-009 verdict and limitations', 'Veredicto y limitaciones de EXP-009')}</SourceLink><SourceLink href={WANG_KERNEL_PAPER}>{t('Sharp-kernel manuscript PDF', 'PDF del manuscrito del núcleo óptimo')}</SourceLink><SourceLink href={WANG_KERNEL_DOI}>{t('Published Zenodo record', 'Registro publicado en Zenodo')}</SourceLink></div>
+        <h2>{t('Short-interval rank-six result', 'Resultado de rango seis en intervalos cortos')}</h2>
         <p className="rh-lead">{t('EXP-008 proves that the localized Selberg transfer works at every fixed finite rank and inserts Pearce-Crump’s published rank-six constant. The source-certified input moves the simple-critical positivity threshold to (0.5458837, 0.5458838). At θ = 0.5459 the rank-six bound is over 5% larger than the rank-three value.', 'EXP-008 prueba que la transferencia local de Selberg funciona para todo rango finito fijo e inserta la constante publicada de rango seis de Pearce-Crump. La entrada certificada por la fuente mueve el umbral de positividad de ceros críticos simples a (0.5458837, 0.5458838). En θ = 0.5459 la cota de rango seis es más de 5% mayor que el valor de rango tres.')}</p>
         <Equation tex={String.raw`k_q(\theta)=\frac{\theta-1/2}{4eC_q},\qquad h_q(\theta)=\frac{3+k_q(\theta)-\sqrt{(1-k_q(\theta))(9-k_q(\theta)-8c(\theta))}}4`} />
         {rankSix ? <>

@@ -44,8 +44,9 @@ def test_bake_writes_valid_registry(tmp_path, monkeypatch):
         "EXP-006-hilbert-parity-compression",
         "EXP-007-spectral-defect-parity",
         "EXP-008-rank-six-local-transfer",
+        "EXP-009-wang-kernel-sharpening",
     }
-    assert riemann["schema"] == "riemann-replay-v7"
+    assert riemann["schema"] == "riemann-replay-v8"
 
 
 @pytest.fixture

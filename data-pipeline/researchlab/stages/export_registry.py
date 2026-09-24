@@ -30,7 +30,10 @@ EXP007_DECLARATION = "a2abdcc8360399b3fa42aaea9245e4b83352c30f"
 EXP007_CANONICAL = "5d7e7a6a73e433a7ff9f6628815d54243425afa9"
 EXP008_DECLARATION = "2297d2fc5cb6a65b2a3aa48b019934d002ef242b"
 EXP008_CANONICAL = "46f258cdab9487db829ab96bd5267360bd656d91"
-RIEMANN_EXPERIMENT_MAX = 8
+EXP009_DECLARATION = "123eee0d49969226201e68d6c32746087a91e6fc"
+EXP009_AMENDMENT = "edd689fef41ee5986353f6b62e8c34f81d55ae0f"
+EXP009_CANONICAL = "6b8e009c73f87047a2bc2c237991d241bd3b08c0"
+RIEMANN_EXPERIMENT_MAX = 9
 
 
 def _read_portfolio() -> dict:
@@ -227,6 +230,7 @@ def _riemann_payload() -> dict:
     exp_six = "EXP-006-hilbert-parity-compression"
     exp_seven = "EXP-007-spectral-defect-parity"
     exp_eight = "EXP-008-rank-six-local-transfer"
+    exp_nine = "EXP-009-wang-kernel-sharpening"
     specifications = [
         ("constant_audit", exp_one, f"experiments/{exp_one}/artifacts/result.json"),
         ("result", exp_two, f"experiments/{exp_two}/artifacts/result.json"),
@@ -299,7 +303,23 @@ def _riemann_payload() -> dict:
             ("rank_six_verdict", exp_eight, f"experiments/{exp_eight}/verdict.md"),
             ("rank_six_review", exp_eight, f"experiments/{exp_eight}/proof-review.json"),
         ])
-    replay_version = min(max(RIEMANN_EXPERIMENT_MAX - 1, 5), 7)
+    if RIEMANN_EXPERIMENT_MAX >= 9:
+        specifications.extend([
+            ("wang_kernel_result", exp_nine,
+             f"experiments/{exp_nine}/artifacts/canonical/result.json"),
+            ("wang_kernel_receipt", exp_nine,
+             f"experiments/{exp_nine}/artifacts/canonical/execution-receipt.json"),
+            ("wang_kernel_hypothesis", exp_nine, f"experiments/{exp_nine}/hypothesis.md"),
+            ("wang_kernel_amendment", exp_nine,
+             f"experiments/{exp_nine}/amendment-001-optimal-ratio.md"),
+            ("wang_kernel_runner", exp_nine, f"experiments/{exp_nine}/run.py"),
+            ("wang_kernel_proof", exp_nine,
+             f"experiments/{exp_nine}/mathematical-proof.md"),
+            ("wang_kernel_audit", exp_nine, f"experiments/{exp_nine}/adversarial-audit.md"),
+            ("wang_kernel_verdict", exp_nine, f"experiments/{exp_nine}/verdict.md"),
+            ("wang_kernel_review", exp_nine, f"experiments/{exp_nine}/proof-review.json"),
+        ])
+    replay_version = min(max(RIEMANN_EXPERIMENT_MAX - 1, 5), 8)
     payload: dict = {"schema": f"riemann-replay-v{replay_version}", "provenance": []}
     source_bytes: dict[str, bytes] = {}
 
@@ -322,7 +342,7 @@ def _riemann_payload() -> dict:
         content = read_source(role, experiment, relative)
         if role in {"constant_audit", "result", "pressure_result", "parity_result",
                     "local_result", "hilbert_result", "spectral_result",
-                    "rank_six_result"}:
+                    "rank_six_result", "wang_kernel_result"}:
             payload[role] = json.loads(content)
         elif role == "source_manifest":
             payload["reviewed_on"] = json.loads(content)["reviewed_on"]
@@ -821,6 +841,82 @@ def _riemann_payload() -> dict:
                 != hashlib.sha256(source_bytes[role]).hexdigest()):
             raise ValueError(f"EXP-008 proof review no longer matches: {role}")
     payload["rank_six_review"] = rank_six_review
+    if RIEMANN_EXPERIMENT_MAX <= 8:
+        return payload
+
+    add_focused_test("wang_kernel_test", exp_nine,
+                     "tests/test_riemann_wang_kernel_sharpening.py")
+    wang_kernel = payload["wang_kernel_result"]
+    expected_wang_kernel_checks = {
+        "d_dagger_above_three_halves_constant", "global_gain_above_9_5915e_8",
+        "global_gain_strictly_above_wang", "independent_interval_overlap",
+        "ratio_derivative_factor_positive_for_X_gt_1",
+        "ratio_endpoint_equality_R_0_1_is_sqrt2",
+        "ratio_final_square_is_X2_minus_2_squared", "short_cell_condition",
+        "short_gain_above_exp008", "short_gain_positive", "short_reserve_positive",
+        "source_hashes", "three_halves_constant_above_wang",
+        "wang_delta_above_printed_6_66624e_8", "wang_delta_below_6_66625e_8",
+    }
+    if (wang_kernel.get("schema") != "riemann-exp009-results-v1"
+            or wang_kernel.get("status") != "pass" or wang_kernel.get("passed") is not True
+            or set(wang_kernel.get("checks", {})) != expected_wang_kernel_checks
+            or not all(wang_kernel["checks"].values())
+            or wang_kernel.get("claim_boundary", {}).get("rh_solved") is not False
+            or wang_kernel.get("claim_boundary", {}).get("peer_reviewed") is not False
+            or wang_kernel.get("claim_boundary", {}).get("onset_exponent_improved") is not False
+            or Decimal(wang_kernel["global"]["gain"]["lower"]["decimal"])
+            <= Decimal("9.5915e-8")
+            or Decimal(wang_kernel["global"]["simple_proportion"]["lower"]["decimal"])
+            <= Decimal(wang_kernel["wang_reproduction"]["simple_proportion"]["upper"]["decimal"])
+            or Decimal(wang_kernel["short_interval"]["certified_gain"]["lower"]["decimal"]) <= 0):
+        raise ValueError("EXP-009 canonical result fails its declared evidence boundary")
+    wang_kernel_execution = wang_kernel.get("execution", {})
+    if (wang_kernel_execution.get("declaration_commit") != EXP009_DECLARATION
+            or wang_kernel_execution.get("amendment_commit") != EXP009_AMENDMENT
+            or wang_kernel_execution.get("git", {}).get("head") != EXP009_CANONICAL
+            or wang_kernel_execution.get("git", {}).get("tracked_clean_at_start") is not True):
+        raise ValueError("EXP-009 execution identity differs from committed evidence")
+    wang_kernel_result_sha256 = hashlib.sha256(source_bytes["wang_kernel_result"]).hexdigest()
+    wang_kernel_receipt = json.loads(source_bytes["wang_kernel_receipt"])
+    if (wang_kernel_receipt.get("schema") != "riemann-exp009-execution-receipt-v1"
+            or wang_kernel_receipt.get("status") != "pass"
+            or wang_kernel_receipt.get("result_sha256") != wang_kernel_result_sha256
+            or wang_kernel_receipt.get("runner_sha256")
+            != hashlib.sha256(source_bytes["wang_kernel_runner"]).hexdigest()
+            or wang_kernel_receipt.get("git", {}).get("head") != EXP009_CANONICAL
+            or wang_kernel_receipt.get("git", {}).get("tracked_clean_at_start") is not True):
+        raise ValueError("EXP-009 execution receipt does not bind the canonical result")
+    if (_revision_bytes(
+            f"{problem}/experiments/{exp_nine}/hypothesis.md", EXP009_DECLARATION,
+            ) != source_bytes["wang_kernel_hypothesis"]):
+        raise ValueError("EXP-009 hypothesis differs from its declaration revision")
+    if (_revision_bytes(
+            f"{problem}/experiments/{exp_nine}/amendment-001-optimal-ratio.md",
+            EXP009_AMENDMENT,
+            ) != source_bytes["wang_kernel_amendment"]):
+        raise ValueError("EXP-009 amendment differs from its declared revision")
+    wang_kernel_review = json.loads(source_bytes["wang_kernel_review"])
+    if (wang_kernel_review.get("schema") != "riemann-exp009-proof-review-v1"
+            or wang_kernel_review.get("declaration_commit") != EXP009_DECLARATION
+            or wang_kernel_review.get("amendment_commit") != EXP009_AMENDMENT
+            or wang_kernel_review.get("canonical_execution_commit") != EXP009_CANONICAL
+            or wang_kernel_review.get("scientific_verdict")
+            != "confirmed-relative-to-wang-v1-framework"):
+        raise ValueError("EXP-009 review does not retain Wang's source boundary")
+    wang_kernel_review_roles = {
+        "hypothesis": "wang_kernel_hypothesis", "amendment": "wang_kernel_amendment",
+        "mathematical_proof": "wang_kernel_proof", "runner": "wang_kernel_runner",
+        "focused_test": "wang_kernel_test", "result": "wang_kernel_result",
+        "execution_receipt": "wang_kernel_receipt",
+        "adversarial_audit": "wang_kernel_audit",
+    }
+    if set(wang_kernel_review.get("source_sha256", {})) != set(wang_kernel_review_roles):
+        raise ValueError("EXP-009 proof review omits required scientific evidence")
+    for reviewed_name, role in wang_kernel_review_roles.items():
+        if (wang_kernel_review["source_sha256"][reviewed_name]
+                != hashlib.sha256(source_bytes[role]).hexdigest()):
+            raise ValueError(f"EXP-009 proof review no longer matches: {role}")
+    payload["wang_kernel_review"] = wang_kernel_review
     return payload
 
 
