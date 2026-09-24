@@ -62,6 +62,22 @@ public download matched the reviewed 575,351-byte PDF exactly.
 
 ## Deployment
 
-The candidate has not yet been promoted to `main`. Release and promotion PRs,
-the exact tag, main CI, Pages deployment, and live byte/browser verification
-will be recorded here after those gates pass.
+Release PR [#330](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/330)
+and promotion PR
+[#331](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/331) are merged.
+Tag `v0.72.000` points exactly to main commit
+`45c34c810ffb20a03afbb32fccd63c3e7abd82f5`; the
+[GitHub release](https://github.com/fsantibanezleal/CAOS_RESEARCH/releases/tag/v0.72.000),
+[main CI](https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/35948883726),
+and [Pages deployment](https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/35948883705)
+all passed.
+
+The [live verification](live-verification.json) byte-matched the root, three
+hashed assets, and seven replay/manifests files against the exact-main build.
+Eight desktop/phone EN/ES light/dark scenarios visited all six research tabs
+and captured 352 screenshots with zero failed checks, console warnings or
+errors, page errors, request failures, or HTTP errors. The live payload exposes
+replay v7, both portable canonical hashes, the rank-six and rank-three onset
+brackets, and the pointwise and spectral gains. The static direct route returns
+the expected Pages 404 response; pointer navigation from the 200 root reached
+and verified the client route.
