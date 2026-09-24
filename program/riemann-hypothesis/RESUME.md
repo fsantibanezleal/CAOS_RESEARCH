@@ -3,9 +3,9 @@
 ## 1. State in one screen
 
 Read [state.md](state.md), [backlog.md](backlog.md), and the latest EXP-007/008
-verdicts. Public application release 0.71.000 remains live-verified. EXP-007 and
-EXP-008 are confirmed, manuscript v0.07 is published, research PR #325 is
-merged, and release 0.72.000 is the active candidate. General RH remains open.
+verdicts. Public application release 0.72.000 is live-verified from main commit
+`45c34c81`. EXP-007 and EXP-008 are confirmed, manuscript v0.07 is published,
+and replay v7 is deployed. General RH remains open.
 
 EXP-007 proves the finite spectral-defect product
 
@@ -56,10 +56,10 @@ The EXP-008 portable result hash is
 
 1. Replay v7 and the bilingual EXP-007/008 workbench are merged into `develop`
    through research PR #325, whose full Linux CI passed.
-2. Release 0.72.000 passed its 20-scenario rendered browser matrix after a
-   visual-review fix to the eight-experiment workflow label.
-3. The candidate must promote through `develop` and `main`, then record exact
-   live verification.
+2. Release and promotion PRs #330 and #331 are merged; tag `v0.72.000` points
+   to exact main commit `45c34c81`.
+3. Main CI, Pages, eleven byte comparisons, and eight live browser scenarios
+   passed. The release is live-verified.
 4. The private CAOS_MANAGE mirror and Zenodo deposit ledger still need the
    final release receipts.
 
@@ -70,11 +70,8 @@ byte repository PDF and a fresh public download share SHA-256
 
 ## 5. Next actions
 
-1. Open and merge the 0.72.000 release PR into `develop`.
-2. Promote `develop` to `main`, tag the exact release commit, and verify Pages
-   bytes plus live EN/ES light/dark desktop/phone scenarios.
-3. Mirror the publication and release receipts into CAOS_MANAGE.
-4. Pursue independent rank-six coefficient reconstruction as the next bounded
+1. Mirror the publication and release receipts into CAOS_MANAGE.
+2. Pursue independent rank-six coefficient reconstruction as the next bounded
    mathematical target.
 
 ## 6. Where everything lives

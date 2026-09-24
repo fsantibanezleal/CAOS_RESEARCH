@@ -1,10 +1,10 @@
 # Riemann hypothesis state
 
-Updated: 2026-09-20. Latest completed public application release:
-**0.71.000**, live-verified from main commit
-`8302be35cb96280692ad1333d690a63cb220f8b2`. Current research round:
-**EXP-007 and EXP-008 confirmed, manuscript v0.07 published, release 0.72.000
-candidate rendered QA passed; promotion pending**.
+Updated: 2026-09-23. Latest completed public application release:
+**0.72.000**, live-verified from main commit
+`45c34c810ffb20a03afbb32fccd63c3e7abd82f5`. Current research round:
+**EXP-007 and EXP-008 confirmed, manuscript v0.07 published, replay v7
+deployed and live-verified**.
 
 The Riemann hypothesis remains open.
 
@@ -69,11 +69,11 @@ Manuscript v0.07 is published at
 30-page PDF matches a fresh unauthenticated public download byte for byte.
 Publication is not peer acceptance.
 
-Release candidate 0.72.000 exposes EXP-007 and EXP-008 in the bilingual
-workbench. Its 20-scenario rendered browser matrix passed with 3,072 captures
-and no failures. Scoped promotion and live deployment verification remain.
-Until those gates pass, 0.71.000 remains the latest completed application
-release.
+Release 0.72.000 exposes EXP-007 and EXP-008 in the bilingual workbench. Its
+20-scenario rendered browser matrix passed with 3,072 captures and no failures.
+Release and promotion PRs #330 and #331 are merged; exact-main CI, Pages, eleven
+public byte comparisons, and eight live browser scenarios also passed. Tag
+`v0.72.000` points to the verified main commit.
 
 The result is asymptotic for each fixed exponent and has no effective starting
 height. Imported 2026 preprints remain attributed. No finite census, exact

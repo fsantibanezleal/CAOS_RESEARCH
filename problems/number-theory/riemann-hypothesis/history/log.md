@@ -1,5 +1,14 @@
 # Riemann hypothesis history
 
+## 2026-09-24: release 0.72.000 live-verified
+
+Release PR #330 and promotion PR #331 merged. Tag `v0.72.000` points exactly to
+main commit `45c34c81`. Main CI and Pages passed on that commit. Eleven public
+files byte-match the exact-main build, and eight live desktop/phone EN/ES
+light/dark scenarios visited all six research tabs and captured 352 screenshots
+with zero failures. The compact live receipt preserves replay v7, both portable
+canonical result hashes, the onset brackets, and the explicit source boundary.
+
 ## 2026-09-23: release 0.72.000 candidate passed rendered QA
 
 The versioned candidate passed 66 scoped Riemann/export tests, 22 frontend

@@ -177,15 +177,25 @@
     }
   ],
   "deployment": {
-    "status": "candidate-validated",
-    "main_commit": null,
+    "status": "live-verified",
+    "main_commit": "45c34c810ffb20a03afbb32fccd63c3e7abd82f5",
     "tag": "v0.72.000",
-    "release": null,
+    "release": "https://github.com/fsantibanezleal/CAOS_RESEARCH/releases/tag/v0.72.000",
     "research_pr": "https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/325",
-    "release_pr": null,
-    "promotion_pr": null,
-    "ci_run": null,
-    "pages_run": null,
-    "live_receipt": null
+    "release_pr": "https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/330",
+    "promotion_pr": "https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/331",
+    "ci_run": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/35948883726",
+    "pages_run": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/35948883705",
+    "live_receipt": {
+      "path": "program/riemann-hypothesis/release-0.72.000/live-verification.json",
+      "bytes": 8993,
+      "sha256": "466b259e9dce02dce1d856ac0c26e0cdcb3f677d335ae559a53b4069074bcc0f",
+      "browser_receipt_sha256": "d598a898c917f9ec0aabc20e84aa2763bfc998ea65cb03c8a256b5ef0bc84a9b",
+      "byte_matched_files": 11,
+      "scenarios": 8,
+      "tabs_visited": 48,
+      "screenshots": 352,
+      "failures": 0
+    }
   }
 }
