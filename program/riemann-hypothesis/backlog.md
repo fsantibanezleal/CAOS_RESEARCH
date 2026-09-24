@@ -35,3 +35,4 @@ The new bound is 0.419087888170111727959091183775 at theta=3/4.
 | RH-019 | EXP-008: prove fixed-rank localization and test the source-certified rank-six onset | done; theorem, exact certificate, audit and attributed-input review confirmed | P0 |
 | RH-020 | Export replay v7, integrate EXP-007/008 into the public workbench, and complete serialized release QA | done; release 0.72.000 live-verified from exact main | P0 |
 | RH-021 | Independently reconstruct the rank-six coefficient matrix or obtain a source artifact that permits exact C6 replay | open | P1 |
+| RH-022 | EXP-009: audit Wang's global refinement, sharpen its three-point kernel constant, and transfer the result through the parity product | declared; source and hypothesis frozen before computation | P0 |
