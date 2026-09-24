@@ -1,6 +1,48 @@
 # Huneke-Wiegand extensions - research wiki
 
-## Current closed result: uniform support-one endpoint sources, 2026-09-20
+## Current strategic routing, 2026-09-24
+
+The broad conjecture was already disproved externally and is not an open CAOS
+target. The latest endpoint theorem below is closed, and its carrier route is
+now gated as `HW-F5`: it may resume only for a canonical comparison plus a
+complete kernel, quotient, upper bound, or reusable general matching theorem.
+
+The Kunz preflight redirected `HW-F6`: varying multiplicities prevent one face
+from containing the family. The active focus is `HW-F7`, simple-gluing transfer
+of two-generated rigidity. EXP-067 is confirmed, and the focus now assesses its
+novelty before any manuscript is created. Read
+the [Kunz/gluing preflight](../context/2026-09-20-kunz-gluing-preflight.md), the
+[strategy reconciliation](../context/2026-09-20-strategy-manuscript-reconciliation.md),
+the [research governance record](../../../../program/huneke-wiegand/research-governance.json),
+and the [manuscript map](../../../../program/huneke-wiegand/manuscript-map.md)
+before selecting new work.
+
+## Current closed result: simple-gluing rigidity transfer, 2026-09-20
+
+[EXP-067](../experiments/EXP-067-simple-gluing-rigidity-transfer/verdict.md)
+proves that for a numerical semigroup `Gamma` of multiplicity `m` and
+`gcd(q,m)=1`, the simple gluing `Delta=m*N+q*Gamma` has
+`Ap(Delta,m)=q*Ap(Gamma,m)`, preserves symmetry with `F(Delta)=q(F+m)-m`,
+keeps `q*s` a gap, and satisfies
+
+```text
+C_r(Delta,q*s) = m*N + q*C_r(Gamma,s)
+```
+
+for every consecutive-shift exponent set. For symmetric `Gamma` this transfers
+the two-generated rigidity identity `D=E+E`. Applied to EXP-009, every `p>=4`
+and every `q>=1` coprime to `24p` give a symmetric counterexample with
+multiplicity `24p`, embedding dimension `11p`, Frobenius number
+`q(102p-1)-24p`, and ideal exponents `24pq` and `30pq`; `q=1` is EXP-009.
+
+The producer and an independent auditor accept all 72 cases for `p=4,...,12`,
+and the `<4,5>` control stays nonrigid. The 2026-09-24 pre-merge review
+restricted the rigidity statement to symmetric `Gamma`, disclosed a P2
+amendment committed with the results, and recorded that faithfully flat base
+change may already give the rigidity transfer. Novelty is unassessed, and no
+manuscript contains the result yet.
+
+## Prior closed result: uniform support-one endpoint sources, 2026-09-20
 
 [EXP-066](../experiments/EXP-066-uniform-endpoint-face-collapse/verdict.md)
 proves that for every `p>=8` and `r=1,2`, the explicit single source
@@ -31,9 +73,8 @@ matches the committed 516,963-byte PDF at SHA-256
 The scope is narrower than a full carrier theorem: no uniform identification
 with the persistent isolated component, no independence or upper bound for the
 remaining projected triangle rows, and no complete complementary cokernel is
-proved. The strongest next route is to transport or construct uniform dual
-functionals for the non-endpoint triangles and thereby decide whether the
-mask-58 triangle kernel is exactly the two endpoint classes.
+proved. That route is retained but gated; it is no longer the automatic next
+program action. Reopening it requires the `HW-F5` structural success gate.
 
 ## Prior closed result: exact finite integral carrier comparison, 2026-09-20
 
@@ -103,14 +144,11 @@ The full quotient, a matching upper bound, free rank, additional torsion, and
 uniform integral identification with earlier isolated/relative presentations
 remain open. EXP-063 later supplies the finite labelled bridge described above.
 
-The 18-page companion *A quadratic family of integral two-torsion classes in
-a Huneke-Wiegand Koszul presentation* has passed manuscript QA. Current v0.03
-is published under version DOI
-[`10.5281/zenodo.22835126`](https://doi.org/10.5281/zenodo.22835126), concept
-DOI `10.5281/zenodo.22342975`. Fresh unauthenticated public metadata and PDF
-download verification on 2026-09-20 matched all 504,764 bytes, SHA-256
-`18566d72619b18f174c69cc34abb5ee2b78ff25481ff5d098ec9570d29bbc0ac`.
-Versions 0.01/0.02 remain immutable; EXP-063/064 do not trigger v0.04.
+At this historical checkpoint, the 18-page companion *A quadratic family of
+integral two-torsion classes in a Huneke-Wiegand Koszul presentation* had
+passed manuscript QA as v0.03 at DOI `10.5281/zenodo.22835126`. It was later
+superseded by the 20-page v0.04 endpoint-theorem version recorded at the top of
+this wiki; all earlier versions remain immutable.
 The source/PDF is in commit `422e942`. Research PR #253 merged at
 `4073d730158ea8bf239f85e5d83ed2bbfd234657`, followed by PR #257 at
 `4aed2b050ccd282d13e5389a4ee732e8859ce09f` on 2026-09-05 at 13:46:22 UTC.

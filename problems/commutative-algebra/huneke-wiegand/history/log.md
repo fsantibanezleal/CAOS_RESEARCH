@@ -2077,3 +2077,58 @@
   The management checkout remained on `develop`; no management work branch or
   worktree was created. Existing Petersen publication/deposit state was
   preserved and committed separately.
+
+## 2026-09-20 - strategy and manuscript portfolio reconciled
+
+- The program now records the externally settled original conjecture separately
+  from CAOS extension focuses. `HW-F6`, mechanism classification in Kunz
+  coordinates, is the sole active preflight; no EXP-067 is declared.
+- The endpoint/carrier route is retained as gated focus `HW-F5`. It may reopen
+  only for a canonical comparison and complete kernel, quotient, upper bound,
+  or reusable general matching theorem. Another finite carrier table is a stop
+  outcome.
+- All 66 closed experiments receive exactly one strategic disposition. The
+  three current manuscript versions and DOIs are reconciled across TeX,
+  manuscript READMEs, the global index, and the result map by a new CI guard.
+- The immutable 53-page consolidated paper is routed into three possible
+  focused submissions with explicit ownership, dependency, overlap, and
+  readiness gates. No duplicate manuscript, experiment, Zenodo version, or new
+  mathematical claim is created by this documentation and governance round.
+
+## 2026-09-20 - EXP-067 simple-gluing transfer declared
+
+- The primary-source preflight corrects the original Kunz question: the family
+  multiplicity is `24p`, so its members cannot lie in one fixed Kunz cone.
+- Small diagnostics find one-dimensional faces for `p=4,...,8`, but the useful
+  invariant is the simple gluing `m*N+q*Gamma`. No diagnostic output is treated
+  as theorem evidence.
+- EXP-067 is frozen before implementation. It targets a general symbolic
+  transfer of symmetry and `D=E+E`, an independently checked two-parameter CAOS
+  corollary, and a focused manuscript only if all gates pass.
+
+## 2026-09-20 - EXP-067 simple-gluing transfer confirmed
+
+- The producer and the independent auditor accept all 72 cases, `p=4,...,12`
+  with the first eight admissible `q` values each; aggregate SHA-256 values are
+  recorded in the verdict. The `<4,5>` control stays nonrigid.
+- The symbolic proof gives the Apery, symmetry, gap, and consecutive-shift
+  exponent-set transfer for every admissible `q`, and with it the rigidity
+  transfer for symmetric `Gamma`. Applied to EXP-009 it yields the
+  two-parameter family with Frobenius number `q(102p-1)-24p`.
+- The results were committed on 2026-09-21 in `db5f4179`.
+
+## 2026-09-24 - EXP-067 pre-merge review and close-out
+
+- A review before promotion to `develop` kept the verdict CONFIRMED and changed
+  no computed result.
+- `hypothesis.md` again shows the frozen declaration and records, in a dated
+  amendment, the P2 correction that `db5f4179` made inline. `proof.md` restricts
+  theorem item 4 to symmetric `Gamma` and states exactly which checks the
+  independent audit performs.
+- The review found an unassessed novelty route: `k[Delta]` is free of rank `q`
+  over a copy of `k[Gamma]`, so faithfully flat base change may already give the
+  rigidity transfer. `HW-F7` becomes an active novelty assessment (`HWB-094`)
+  before any gluing-transfer manuscript is created.
+- Governance: EXP-067 is dispositioned as `companion-manuscript` with no
+  manuscript yet, and `HW-F5` no longer names EXP-067 as its next experiment.
+  Validation hardening (`HWB-095`) and guard tightening (`HWB-096`) are queued.

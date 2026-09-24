@@ -39,7 +39,8 @@ and fresh unauthenticated public download/latest-version verification.
 The earlier published versions and the other Huneke-Wiegand papers remain
 immutable.
 
-The [claim audit](claim-audit-v0.01.md) explains the new manuscript split and
-the scope boundaries. The draft was reserved before these final strengthenings;
+The [v0.04 claim audit](claim-audit-v0.04.md) records the current theorem and
+scope boundaries; the [v0.01 audit](claim-audit-v0.01.md) preserves the initial
+split decision. The draft was reserved before these final strengthenings;
 its title changed while still unpublished, without changing version 0.01 or
 reserved DOI 22342976/concept 22342975. No published file is overwritten.

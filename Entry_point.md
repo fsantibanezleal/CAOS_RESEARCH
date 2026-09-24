@@ -52,6 +52,7 @@ Before any write:
    - `program/<slug>/state.md`
    - `program/<slug>/backlog.md`
    - `program/<slug>/plan.md`
+   - `program/<slug>/research-governance.json` and `manuscript-map.md`, when present
    - any strategy, route, lens, or research-line files named by `RESUME.md`
    - the latest entries in `problems/<area>/<slug>/history/log.md`
    - the hypotheses and verdicts for the in-flight and immediately preceding experiments
@@ -74,16 +75,20 @@ Do the mandatory start, then:
 1. Treat `RESUME.md` as the navigation page, not as proof.
 2. Reconcile its in-flight and next-action claims against `state.md`, `backlog.md`, the latest
    history entry, and the relevant experiment verdicts.
-3. Check whether a run is already active or an artifact is still changing before launching,
+3. If `research-governance.json` exists, confirm that the requested action advances its active
+   focus and success gate. Do not treat an exposed invariant or unfinished sequence as automatic
+   authorization for another experiment. A materially different target requires a visible
+   strategy review and a manuscript route before work begins.
+4. Check whether a run is already active or an artifact is still changing before launching,
    editing, or committing related files.
-4. Continue the highest-priority unblocked action. Do not start a different problem or a global
+5. Continue the highest-priority unblocked action. Do not start a different problem or a global
    release as a side effect.
-5. Declare a new `EXP-NNN` hypothesis before any experimental run. Complete every preflight field
+6. Declare a new `EXP-NNN` hypothesis before any experimental run. Complete every preflight field
    required by methodology 02 and 12.
-6. Persist results vertically in the same round: artifacts, verdict, code and tests when applicable,
+7. Persist results vertically in the same round: artifacts, verdict, code and tests when applicable,
    wiki transcription, manuscript update when triggered, history, backlog, state, `RESUME.md`, and
    the per-problem management mirror.
-7. Close the round with focused commits, push the problem branch, and promote it to `develop` through
+8. Close the round with focused commits, push the problem branch, and promote it to `develop` through
    a pull request. Do not bump the global version, bake cross-problem data, tag, or open the
    `develop` to `main` release PR unless the session explicitly owns the serialized release step.
 
@@ -93,7 +98,7 @@ Read [`methodology/README.md`](methodology/README.md) for the complete index. At
 
 | Work being done | Required reads |
 |---|---|
-| Any problem work | 01 lifecycle, 07 handoff, 08 parallel sessions, 10 lenses, 11 exploration cadence |
+| Any problem work | 01 lifecycle, 07 handoff, 08 parallel sessions, 10 lenses, 11 exploration cadence, 13 strategy/value/manuscript control |
 | Declaring or running an experiment | 02 experiment standard, 03 adversarial validation, 04 code standards, 12 preflight and cost discipline |
 | Writing dossiers, wiki, or mathematical narrative | 03 adversarial validation, 05 writing standards |
 | Updating the web app | 06 web publication plus the applicable management ADRs and product-quality rules |
@@ -197,6 +202,8 @@ Before ending a working session, reconcile and persist:
 - `program/<slug>/state.md`;
 - `program/<slug>/RESUME.md`, including formulas, objects, experiment index, exact run state, ordered
   commands, path map, gotchas, and the lenses ledger;
+- `program/<slug>/research-governance.json` and `manuscript-map.md`, when present, including the
+  experiment disposition and any focus or publication-gate change;
 - the per-problem management mirror: `status.md`, `findings.md`, and `history.md`.
 
 Then:
