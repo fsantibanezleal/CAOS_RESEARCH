@@ -80,3 +80,34 @@ The result meets the gate for a focused gluing-transfer manuscript. It does not
 trigger a revision of the integral connecting-annihilator paper and does not by
 itself authorize a Zenodo publication before claim, overlap, build, render, and
 external-significance review.
+
+## Pre-merge review (2026-09-24)
+
+A review before promotion to `develop` checked this record against the code and
+the frozen declaration. It changes no computed result, and the verdict remains
+CONFIRMED.
+
+- P2 was amended in the results commit `db5f4179`. `hypothesis.md` now keeps
+  the declared text and discloses the amendment: the declared ideal is
+  ill-posed for general `Gamma`, and for the CAOS family both statements
+  coincide.
+- Theorem item 4 in `proof.md` is now restricted to symmetric `Gamma`, which is
+  what the colon-criterion argument proves. The CAOS consequence is unaffected
+  because the EXP-009 base semigroups are symmetric.
+- The auditor independently confirms Apery sets, Frobenius numbers, symmetry,
+  the gap `q*s`, and the rigidity sumset. It does not recompute the `E` and `D`
+  transfer sets or rerun the controls. The five noncoprime controls record
+  `gcd(24p,q)>1` for pairs chosen with that property and exercise no rejection
+  path, so the evidential weight of P4 rests on the `<4,5>` control.
+- Novelty risk. Since `m in Gamma` and `gcd(q,m)=1`, `Delta` is the disjoint
+  union of the translates `i*m+q*Gamma` for `0<=i<q`. Hence `k[Delta]` is free
+  of rank `q` over `k[t^(q*Gamma)]`, which is isomorphic to `k[Gamma]`, with
+  closed fiber `k[x]/(x^q)`. Faithfully flat base change would then transfer
+  rigidity, nonprincipality, and the Gorenstein property. The novelty review
+  did not consider this route. If the sketch is complete, the rigidity transfer
+  is a standard consequence, and the remaining new content is the explicit
+  exponent-set description and the two-parameter family.
+
+Before the focused gluing-transfer manuscript is created, the flat-base-change
+route needs a written assessment and a decision on whether the family belongs
+in a focused paper or as a corollary in an existing one.

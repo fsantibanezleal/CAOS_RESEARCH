@@ -24,8 +24,8 @@ Then:
 2. if `Gamma` is symmetric with Frobenius number `F`, then `Delta` is symmetric
    with Frobenius number `q(F+m)-m`;
 3. `q*s` is a gap of `Delta`; and
-4. `(t^(qa),t^(q(a+s)))` is a nonprincipal rigid ideal in the localized
-   semigroup ring of `Delta`.
+4. if `Gamma` is symmetric, `(t^(qa),t^(q(a+s)))` is a nonprincipal rigid
+   ideal in the localized semigroup ring of `Delta`.
 
 Thus every symmetric two-generated monomial counterexample has infinitely many
 simple-gluing descendants.
@@ -133,7 +133,8 @@ D = C_2(Gamma,s).
 
 For a two-generated monomial ideal over a one-dimensional Gorenstein numerical
 semigroup ring, the established colon criterion identifies rigidity with
-`D=E+E`. Applying (2.1) for `r=1,2` gives
+`D=E+E`. Assume `Gamma` is symmetric. Then `Delta` is symmetric by item 2, so
+the criterion applies in both semigroup rings. Applying (2.1) for `r=1,2` gives
 
 ```text
 E_Delta = m*N+q*E,
@@ -176,12 +177,14 @@ coprime to `24p`, so this is a genuine two-parameter counterexample family.
 
 ## 5. Exact supporting checks
 
-The producer and independent auditor test 72 cases: `p=4,...,12` and the first
-eight admissible `q` values for each `p`. They reconstruct Apery sets by two
-different algorithms, check the Frobenius and symmetry formulas, compare the
-complete `E` and `D` transfer sets through `2F+1`, and independently verify the
-rigidity sumset. The `<4,5>` nonrigid control remains nonrigid for
-`q=1,3,5,7`; noncoprime controls fail the numerical-semigroup gcd gate.
+The producer and independent auditor test the same 72 cases: `p=4,...,12` and
+the first eight admissible `q` values for each `p`. Both reconstruct Apery sets,
+by two different algorithms, and check the Apery transfer, the Frobenius and
+symmetry formulas, the gap `q*s`, and the rigidity sumset through `2F+1`. Only
+the producer compares the complete `E` and `D` transfer sets with (2.1) and runs
+the adverse controls. The `<4,5>` nonrigid control remains nonrigid for
+`q=1,3,5,7`. The five noncoprime controls record `gcd(24p,q)>1` for pairs chosen
+with that property; they document the P4 premise but exercise no rejection path.
 
 These checks validate the implementations. The all-parameter conclusion is the
 deductive argument above.

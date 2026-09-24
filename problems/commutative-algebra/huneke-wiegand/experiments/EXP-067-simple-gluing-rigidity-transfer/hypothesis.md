@@ -7,8 +7,6 @@ the producer, independent auditor, or manuscript text is written.
 
 Let `Gamma` be a numerical semigroup of multiplicity `m`, let `s>0` be a gap,
 and suppose the normalized two-generated monomial ideal `(1,t^s)` is rigid.
-Choose any `a` with `a,a+s in Gamma`, so its integral translate is
-`(t^a,t^(a+s))`.
 For an integer `q>=1` with `gcd(q,m)=1`, does the simple gluing
 
 ```text
@@ -55,8 +53,8 @@ D^(q) = m*N + q*D.
 
 Consequently `D=E+E` implies
 `D^(q)=E^(q)+E^(q)`. The ideal
-`(t^(qa),t^(q(a+s)))` in the localized semigroup ring of `Gamma^(q)` is
-nonprincipal and rigid. For the CAOS family, `a=m`.
+`(t^(qm),t^(q(m+s)))` in the localized semigroup ring of `Gamma^(q)` is
+nonprincipal and rigid.
 
 ### P3: two-parameter CAOS consequence
 
@@ -145,3 +143,19 @@ rigidity-transfer lemma, state the negative novelty-search boundary, and cite
 the existing CAOS family rather than duplicate its proof. Do not publish to
 Zenodo until claim, overlap, build, render, and external-significance gates are
 complete.
+
+## Amendment (recorded 2026-09-24): P2 ideal well-posedness
+
+The declared P2 ideal `(t^(qm),t^(q(m+s)))` lies in the glued semigroup ring
+only when `m+s in Gamma`, which the declaration does not assume. For
+`Gamma=<3,5>` and `s=1`, `m+s=4` is not in `Gamma`, so `t^(4q)` is not in the
+ring of `Gamma^(q)`. The corrected statement chooses any `a` with
+`a,a+s in Gamma`, uses the integral translate `(t^a,t^(a+s))` of `(1,t^s)`,
+and predicts that `(t^(qa),t^(q(a+s)))` is nonprincipal and rigid. For the CAOS
+family `a=m`, so the declared and corrected ideals coincide in every tested
+case.
+
+The correction was committed together with the results in `db5f4179`, not
+before the run, so the record does not show that it preceded the producer. The
+question, the exponent-set formulas, and the kill criteria are unchanged. The
+verdict evaluates P2 against the corrected statement.
