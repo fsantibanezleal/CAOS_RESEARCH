@@ -1,6 +1,6 @@
 # Levinson's method in short intervals and simple zeros of the zeta function
 
-Version `v0.01`, dated 26 September 2026. Not yet deposited.
+Version `v0.01`, dated 26 September 2026.
 
 The manuscript localizes Levinson's method, with Conrey's general operator
 polynomial `Q`, to the intervals `(T,T+T^theta]` for mollifier exponents
@@ -15,11 +15,9 @@ The onset uses Wang's short-interval pair theorem (arXiv:2609.07918v1, a
 recent unreviewed preprint). The result is asymptotic and does not prove the
 Riemann hypothesis.
 
-The header block prints the DOIs as "assigned at deposit". The Zenodo deposit
-reserves the DOI, rebuilds the PDF with it and records the receipt; until
-then the committed `main.pdf` is the reviewed pre-deposit build.
-
 Evidence:
 
 - [EXP-010 localized Levinson parity transfer](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/).
 - [EXP-006 Hilbert-parity compression](../../../problems/number-theory/riemann-hypothesis/experiments/EXP-006-hilbert-parity-compression/).
+- Version DOI: [10.5281/zenodo.22984155](https://doi.org/10.5281/zenodo.22984155).
+- Concept DOI: [10.5281/zenodo.22984154](https://doi.org/10.5281/zenodo.22984154).
