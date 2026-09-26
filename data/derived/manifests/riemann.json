@@ -2,7 +2,7 @@
  "artifact": {
   "bytes": 44060070,
   "path": "research/riemann.json",
-  "sha256": "c0ad0b3a11317bbead431c80a522552008665cdfed9e0c353f1dc1cde1445b0b"
+  "sha256": "28787e940fccf8f2613546bcd08354c839a62acd782efaea658a1ecb57773ad1"
  },
  "case_id": "riemann",
  "gate": {
@@ -57,14 +57,6 @@
    "role": "source_manifest",
    "sha256": "5e436bc857e24fc868aa2e3f334a6fdd658756f6ae3de459b55b417f82d8aa18",
    "source_commit": "d077c97faaff5269d993183e2cab0bf7e43039c5",
-   "source_exp": "source-review"
-  },
-  {
-   "bytes": 1229,
-   "path": "problems/number-theory/riemann-hypothesis/context/source-manifest-exp009.json",
-   "role": "wang_kernel_source_manifest",
-   "sha256": "36d9c99db37c22adff41533a569275bd534751707d5c4a6bc48aa926e48793b9",
-   "source_commit": "123eee0d49969226201e68d6c32746087a91e6fc",
    "source_exp": "source-review"
   },
   {
@@ -466,6 +458,14 @@
    "sha256": "970d89ea4fb9713586ae5812081a90f1608bb2c5866dfe3ef2c64659cec703cb",
    "source_commit": "67eccd5bff0ed4055cad3036aaf6f18ccccbc069",
    "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
+   "bytes": 1229,
+   "path": "problems/number-theory/riemann-hypothesis/context/source-manifest-exp009.json",
+   "role": "wang_kernel_source_manifest",
+   "sha256": "36d9c99db37c22adff41533a569275bd534751707d5c4a6bc48aa926e48793b9",
+   "source_commit": "123eee0d49969226201e68d6c32746087a91e6fc",
+   "source_exp": "source-review"
   },
   {
    "bytes": 4114968,
