@@ -1,0 +1,36 @@
+{
+  "schema": "riemann-exp009-proof-review-v1",
+  "reviewed_utc": "2026-09-24T18:00:00Z",
+  "scientific_verdict": "confirmed-relative-to-wang-v1-framework",
+  "declaration_commit": "123eee0d49969226201e68d6c32746087a91e6fc",
+  "amendment_commit": "edd689fef41ee5986353f6b62e8c34f81d55ae0f",
+  "canonical_execution_commit": "6b8e009c73f87047a2bc2c237991d241bd3b08c0",
+  "canonical_artifact_commit": "61bfc39ebe5944f177041b738240443c4ecfae98",
+  "confirmed_conclusion": "The auxiliary ratio in Wang's three-point kernel proof has sharp supremum sqrt(2), attained exactly at (0,1) and (1,0). Substitution yields a certified global simple-critical-zero proportion at least 0.6725007995946757558... and the companion distinct-zero proportion 0.8362503997973378779....",
+  "short_interval_companion": "At theta=0.5459 and cell length 140730, the rank-six defect-parity curve gains more than 3.0867809983334187e-31, without changing its onset.",
+  "imported_inputs": [
+    "Wang arXiv:2609.24167v1 finite spectral inequality, block lemma, analytic pair statistic, smoothing argument, and triple packing",
+    "Wang arXiv:2609.07918v1 short-interval fixed-test pair theorem through EXP-007",
+    "Pearce-Crump arXiv:2609.15329v1 attributed rank-six constant through EXP-008",
+    "Confirmed EXP-007 defect-parity product and EXP-008 rank-six local transfer"
+  ],
+  "critical_limitation": "The global transfer depends on a recent unreviewed Wang v1 proof, and the local rank-six coefficient vector is not printed in its source.",
+  "review_scope": "Full elementary ratio proof and equality cases; Wang substitution point; directed constants; exact comparison with Wang's printed delta; short-interval packing and correlated gain; independent 120-digit interval overlap; not external peer review.",
+  "manuscript_decision": "Prepare a separate concise global manuscript and state the local transfer as a corollary.",
+  "source_sha256": {
+    "hypothesis": "02141969ff11605d8cdf747521aa1655f7924f6182b1a5f7a85bec1a7636392b",
+    "amendment": "6640871e942e55cc9fe04959d2fb8560c89131f42f1f51cfe79cffda78cd4845",
+    "mathematical_proof": "2b3223fb6f9830831510bc212df558b9245f82e5a14e0a47813587c2f7c35767",
+    "runner": "3cd4b2e7f0f805f5549cd2a2e90c0b329603a3041995f867429c4c880947ddd3",
+    "focused_test": "e491639de533bd4a83f459745ac8feb1683a25e4bd4a9933d9a7d87d53877f3d",
+    "result": "0cea78e847d1bcec62eb8cd809b704ceaebd58f78f1c405f13ec40838fbb5a66",
+    "execution_receipt": "86e6c02c7469d7635400057cc9fed484ecef60365dd2b7d3a07d2d5b36e66136",
+    "adversarial_audit": "08c06d7839c2aff01978c43ba76f7bd146f07c57afbb638c4e110a9822b74eb0"
+  },
+  "unquantified": [
+    "effective starting height",
+    "absolute novelty priority",
+    "external peer acceptance",
+    "independent reconstruction of the rank-six profile"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "riemann-source-manifest-extension-v1",
+  "reviewed_on": "2026-09-24",
+  "documents": [
+    {
+      "filename": "wang-global-refinement-2609.24167v1.pdf",
+      "source_url": "https://arxiv.org/pdf/2609.24167v1",
+      "bytes": 372759,
+      "sha256": "1c3803d1a825327186ed9a0888baf8ccdbaa8f07454291b357a3af682bfe0e6a",
+      "pages": 11,
+      "note": "First stated post-Montgomery--Taylor global proportion improvement; spectral-defect triple packing and an explicit kernel bound.",
+      "retrieved_on": "2026-09-24",
+      "license": {
+        "status": "arXiv perpetual non-exclusive license",
+        "redistribution_basis": "local research archive; source not relicensed; public manifest links original"
+      },
+      "version": "arXiv:2609.24167v1; submitted September 21, 2026",
+      "cache_path": "source-cache/wang-global-refinement-2609.24167v1.pdf",
+      "tracked_fulltext": true,
+      "source_bundle_path": "source-cache/wang-global-refinement-2609.24167v1.tar.gz",
+      "source_bundle_bytes": 12273,
+      "source_bundle_sha256": "e28eb09c8bb1ec5e94a5460b1d384503cbd1a375ec518d931f753060a205b987",
+      "review_dossier": "2026-09-24-wang-global-refinement.md"
+    }
+  ],
+  "repositories": []
+}

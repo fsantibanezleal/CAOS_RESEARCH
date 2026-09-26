@@ -44,8 +44,14 @@ def test_bake_writes_valid_registry(tmp_path, monkeypatch):
         "EXP-006-hilbert-parity-compression",
         "EXP-007-spectral-defect-parity",
         "EXP-008-rank-six-local-transfer",
+        "EXP-009-wang-kernel-sharpening",
     }
-    assert riemann["schema"] == "riemann-replay-v7"
+    assert riemann["schema"] == "riemann-replay-v8"
+    assert riemann["reviewed_on"] == "2026-09-24"
+    exp009 = next(record for record in exps["experiments"]
+                  if record["slug"] == "EXP-009-wang-kernel-sharpening")
+    assert any(artifact["name"] == "canonical/result.json"
+               for artifact in exp009["artifacts"])
 
 
 @pytest.fixture

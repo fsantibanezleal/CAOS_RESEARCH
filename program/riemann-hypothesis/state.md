@@ -1,80 +1,73 @@
 # Riemann hypothesis state
 
-Updated: 2026-09-23. Latest completed public application release:
+Updated: 2026-09-26. Latest completed public application release:
 **0.72.000**, live-verified from main commit
-`45c34c810ffb20a03afbb32fccd63c3e7abd82f5`. Current research round:
-**EXP-007 and EXP-008 confirmed, manuscript v0.07 published, replay v7
-deployed and live-verified**.
+`45c34c810ffb20a03afbb32fccd63c3e7abd82f5`. Current release candidate:
+**0.73.000**, with EXP-009 confirmed, manuscript v0.01 published, replay v8
+built, and exact-candidate browser QA passed.
 
 The Riemann hypothesis remains open.
 
 ## Current strongest result
 
-EXP-008 proves that the local Selberg detector transfer works for every fixed
-finite rank $q$:
+EXP-009 proves the sharp auxiliary theorem
 
 $$
-\liminf_{T\to\infty}\frac{O(T,T^\theta)}{N(T,T^\theta)}
-\ge k_q(\theta)=\frac{\theta-1/2}{4eC_q}.
+R(\alpha,\beta)\le \sqrt 2\qquad (\alpha,\beta\ge0),
 $$
 
-Using Pearce-Crump's stated source-certified rank-six interval in the EXP-006
-Hilbert-parity product gives
+with equality exactly at $(0,1)$ and $(1,0)$. With
+$\alpha=\sinh u$, $\beta=\sinh v$, the proof reduces to a one-variable
+endpoint and then to $(X^2-2)^2\ge0$.
 
-$$
-0.5458837<\theta_6<0.5458838
-<0.5458846<\theta_3<0.5458847.
-$$
+Under the global framework attributed to Wang, arXiv:2609.24167v1, this gives
 
-At theta=0.545884, the rank-six term exceeds
-`2.5541123454645702e-7` while the rank-three term remains negative. At
-theta=0.5459, the rank-six lower bound exceeds
-`0.0000177645181613023236390595079` and its pointwise gain over rank three
-exceeds `9.263543061777356e-7`.
+```text
+d_dagger = 0.283165430808537327...
+simple-critical proportion >= 0.6725007995946757558283550562963947865...
+distinct-critical proportion >= 0.8362503997973378779141775281481973932...
+```
 
-The source prints the certified $C_6$ interval but not the coefficient matrix.
-The result is therefore confirmed relative to that attributed input. CAOS has
-not independently reconstructed $C_6$.
+The gain over the source baseline exceeds `9.5915e-8`. The independently
+reproduced Wang correction lies between `6.66624e-8` and `6.66625e-8`.
+The global transfer is attributed to a recent unreviewed preprint; it is not an
+independent reproof of that framework.
 
-## Spectral companion
+## Short-interval companion
 
-EXP-007 proves
-
-$$
-(Q-S-D(G))(N-O)\ge2(N-S)^2.
-$$
-
-It strictly improves every positive point of the scalar curve. With the
-rank-six input and optimized fixed radius `rho=11/5`, the gain at theta=0.5459
-exceeds `1.7766622541125682e-68`. This does not move the onset.
+The same sharp kernel transfers through the existing Hilbert-parity product.
+At `theta=0.5459`, its positive gain over EXP-008 is certified between
+`3.0867809983334187e-31` and `6.1735619966669657e-31`. It does not move the
+rank-six positivity onset. The pair-correlation and rank-six inputs remain
+attributed.
 
 ## Portable evidence
 
-| Evidence | Current portable canonical SHA-256 |
+| Evidence | Current portable SHA-256 |
 |---|---|
-| EXP-007 result | `98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947` |
-| EXP-008 result | `1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781` |
-| Manuscript v0.07 PDF | `c7bda5f1acc0b34ac33b6a071e66586b4032ae6e385d93f7fdd2d197411dbf81` |
+| EXP-009 canonical result | `0cea78e847d1bcec62eb8cd809b704ceaebd58f78f1c405f13ec40838fbb5a66` |
+| EXP-009 execution receipt | `86e6c02c7469d7635400057cc9fed484ecef60365dd2b7d3a07d2d5b36e66136` |
+| Sharp-kernel manuscript PDF | `a60e2c21ebe3237d867ca94b682f86bb24a9cec868393e7d6a9e6eb31b510d82` |
 
-The runners write explicit UTF-8/LF bytes. The historical Windows byte streams
-cited by manuscript v0.07 remain preserved under
-`artifacts/windows-canonical-v1/`. Replay v7 reads committed bytes, validates
-execution receipts and proof-review hashes, and fails closed on weakened claims
-or stale evidence.
+Replay v8 reads committed bytes, binds both source reviews, validates source,
+execution, proof-review, and publication hashes, and fails closed on weakened
+claims. The exact certificate used CPU rational and interval arithmetic; a GPU
+was not useful for this low-dimensional proof.
 
 ## Publication and release
 
-Manuscript v0.07 is published at
-[10.5281/zenodo.22860012](https://doi.org/10.5281/zenodo.22860012). The reviewed
-30-page PDF matches a fresh unauthenticated public download byte for byte.
-Publication is not peer acceptance.
+The sharp-kernel preprint is published at
+[10.5281/zenodo.22940291](https://doi.org/10.5281/zenodo.22940291). The reviewed
+seven-page repository PDF matches a fresh unauthenticated public download byte
+for byte. Publication is not peer acceptance.
 
-Release 0.72.000 exposes EXP-007 and EXP-008 in the bilingual workbench. Its
-20-scenario rendered browser matrix passed with 3,072 captures and no failures.
-Release and promotion PRs #330 and #331 are merged; exact-main CI, Pages, eleven
-public byte comparisons, and eight live browser scenarios also passed. Tag
-`v0.72.000` points to the verified main commit.
+Release candidate 0.73.000 exposes all nine experiments in the bilingual
+workbench. The scoped Python suite passed 64 tests and the frontend passed 24
+tests plus TypeScript and production build. The exact-candidate browser matrix
+passed eight desktop/phone EN/ES light/dark scenarios, 48 research-tab visits,
+and 1,586 screenshots with no failures. Remote PR, exact-main CI, Pages, tag,
+and live verification remain to be completed.
 
-The result is asymptotic for each fixed exponent and has no effective starting
-height. Imported 2026 preprints remain attributed. No finite census, exact
-certificate, DOI, or passing build proves RH.
+The result is asymptotic, has no effective starting height, and does not prove
+RH or universal simplicity. Imported 2026 preprints remain attributed. No
+finite census, DOI, passing build, or successful deployment proves RH.

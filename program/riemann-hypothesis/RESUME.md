@@ -2,37 +2,29 @@
 
 ## 1. State in one screen
 
-Read [state.md](state.md), [backlog.md](backlog.md), and the latest EXP-007/008
-verdicts. Public application release 0.72.000 is live-verified from main commit
-`45c34c81`. EXP-007 and EXP-008 are confirmed, manuscript v0.07 is published,
-and replay v7 is deployed. General RH remains open.
+Read [state.md](state.md), [backlog.md](backlog.md), and the EXP-009 verdict.
+EXP-009 is confirmed, its seven-page preprint is public at
+[10.5281/zenodo.22940291](https://doi.org/10.5281/zenodo.22940291), replay v8
+is built, and release candidate 0.73.000 has passed local and rendered QA.
+General RH remains open.
 
-EXP-007 proves the finite spectral-defect product
-
-$$
-(Q-S-D(G))(N-O)\ge2(N-S)^2.
-$$
-
-EXP-008 proves fixed finite-rank localization and applies Pearce-Crump's stated
-rank-six constant. It certifies
-`0.5458837<theta6<0.5458838`, strictly earlier than
-`0.5458846<theta3<0.5458847`. At theta=0.5459, the rank-six lower bound exceeds
-`0.0000177645181613023236390595079`. The public source does not print the
-rank-six coefficient matrix, so $C_6$ remains an attributed theorem input.
+EXP-009 proves `R(alpha,beta) <= sqrt(2)` for nonnegative inputs, with equality
+only at `(0,1)` and `(1,0)`. Under Wang's attributed global framework this
+improves the lower proportion of simple critical zeros to
+`0.6725007995946757558283550562963947865...`, a gain exceeding `9.5915e-8`
+over the source baseline. The source framework is recent and unreviewed.
 
 ## 2. The objects table
 
 | Object | Role | Current evidence |
 |---|---|---|
-| `N,S,O,Q` | Copies, simple real support, odd real support, pair sum | EXP-006 finite proof |
-| `D(G)` | Simple-real Gram spectral defect | EXP-007 finite proof |
-| `Cq` | Fixed finite-rank Selberg detector constant | Pearce-Crump theorem input |
-| `kq(theta)` | Local odd-support curve `(theta-1/2)/(4eCq)` | EXP-008 localization proof |
-| `hq(theta)` | Hilbert-parity quadratic lower term | EXP-008 transfer |
-| `theta6` | Unique rank-six positivity onset | `(0.5458837,0.5458838)` |
-| EXP-007 portable result | 652,260 spectra and 18,479 profiles | SHA-256 `98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947` |
-| EXP-008 portable result | Rank-six onset, point comparison, spectral companion | SHA-256 `1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781` |
-| Manuscript v0.07 | 30-page published preprint | DOI `10.5281/zenodo.22860012` |
+| `R(alpha,beta)` | Three-point kernel ratio | Sharp theorem in EXP-009 |
+| `sqrt(2)` | Optimal universal ratio constant | Equality only at `(0,1)` and `(1,0)` |
+| `d_dagger` | Sharpened global optimization parameter | `0.283165430808537327...` |
+| `C_simple` | Attributed global simple-critical lower proportion | `0.6725007995946757558283550562963947865...` |
+| `C_distinct` | Attributed distinct-critical companion | `0.8362503997973378779141775281481973932...` |
+| EXP-009 portable result | Exact theorem checks, source replay, global and local transfers | SHA-256 `0cea78e847d1bcec62eb8cd809b704ceaebd58f78f1c405f13ec40838fbb5a66` |
+| Manuscript v0.01 | Seven-page published preprint | DOI `10.5281/zenodo.22940291` |
 
 ## 3. Experiment index
 
@@ -46,63 +38,51 @@ rank-six coefficient matrix, so $C_6$ remains an attributed theorem input.
 | EXP-006 | sharp Hilbert-parity product confirmed |
 | EXP-007 | spectral-defect parity product and strict full-curve gain confirmed |
 | EXP-008 | fixed-rank localization and attributed rank-six onset confirmed |
-
-The EXP-007 portable result hash is
-`98094f267a78b88b8a976de6b6d816fbb25231869a6ad5dc8c941411bfa45947`.
-The EXP-008 portable result hash is
-`1ccfa56face643fb96148856c4608577b3afa75947383cf738423ce13eeb5781`.
+| EXP-009 | sharp three-point ratio, attributed global gain, and onset-neutral local companion confirmed |
 
 ## 4. In flight
 
-1. Replay v7 and the bilingual EXP-007/008 workbench are merged into `develop`
-   through research PR #325, whose full Linux CI passed.
-2. Release and promotion PRs #330 and #331 are merged; tag `v0.72.000` points
-   to exact main commit `45c34c81`.
-3. Main CI, Pages, eleven byte comparisons, and eight live browser scenarios
-   passed. The release is live-verified.
-4. The private CAOS_MANAGE mirror and Zenodo deposit ledger still need the
-   final release receipts.
-
-Manuscript v0.07 is already published at
-[10.5281/zenodo.22860012](https://doi.org/10.5281/zenodo.22860012). Its 575,351
-byte repository PDF and a fresh public download share SHA-256
-`c7bda5f1acc0b34ac33b6a071e66586b4032ae6e385d93f7fdd2d197411dbf81`.
+1. The scoped candidate branch includes the EXP-009 evidence, published
+   manuscript receipt, replay v8, nine-record workbench, and release QA.
+2. Python replay/bake passed 64 tests; the frontend passed 24 tests, TypeScript,
+   and production build.
+3. Eight exact-candidate desktop/phone, EN/ES, light/dark scenarios passed with
+   48 tab visits and 1,586 screenshots.
+4. Push, develop PR, main promotion, tag, CI/Pages, and live-byte verification
+   remain to be completed.
 
 ## 5. Next actions
 
-1. Mirror the publication and release receipts into CAOS_MANAGE.
-2. Pursue independent rank-six coefficient reconstruction as the next bounded
-   mathematical target.
+1. Run the final repository guards and freeze the candidate commit.
+2. Promote the scoped public and private branches through their develop and
+   main gates.
+3. Tag `v0.73.000`, create the GitHub release, and verify exact-main CI, Pages,
+   public bytes, routes, and the live browser matrix.
 
 ## 6. Where everything lives
 
-Problem evidence: `problems/number-theory/riemann-hypothesis/`.
-EXP-007 and EXP-008 proofs, audits, verdicts, runners, and immutable outputs are
-under their `experiments/` directories. Replay instructions are in
-[docs/guides/riemann-replay.md](../../docs/guides/riemann-replay.md).
-The manuscript and publication receipts are under
-`manuscripts/riemann-hypothesis/short-interval-stability/`. Release evidence
-belongs under `program/riemann-hypothesis/release-0.72.000/`. Private
+Problem evidence is under `problems/number-theory/riemann-hypothesis/`.
+EXP-009 proof, audit, verdict, runner, and immutable outputs are under
+`experiments/EXP-009-wang-kernel-sharpening/`. Replay instructions are in
+[docs/guides/riemann-replay.md](../../docs/guides/riemann-replay.md). The
+manuscript and publication receipt are under
+`manuscripts/riemann-hypothesis/sharp-three-point-kernel/`. Candidate release
+evidence is under `program/riemann-hypothesis/release-0.73.000/`. Private
 coordination is mirrored under `plans/caos-research/riemann-hypothesis/` in
 CAOS_MANAGE.
 
-Reproduce the two new certificates from the repository root:
+Reproduce the new certificate from the repository root:
 
 ```text
-python problems/number-theory/riemann-hypothesis/experiments/EXP-007-spectral-defect-parity/run.py --output-dir tmp/riemann-exp007-replay --budget-seconds 180
-python problems/number-theory/riemann-hypothesis/experiments/EXP-008-rank-six-local-transfer/run.py --output-dir tmp/riemann-exp008-replay --budget-seconds 120
-python -m pytest -q tests/test_riemann_spectral_defect_parity.py tests/test_riemann_rank_six_local.py
+python problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/run.py --output-dir tmp/riemann-exp009-replay --budget-seconds 600
+python -m pytest -q tests/test_riemann_wang_kernel_sharpening.py tests/test_bake.py
 ```
 
 ## 7. Gotchas
 
-`N` counts copies; `S` and `O` count support points. Fixed finite rank means
-rank is chosen before the height limit. The public source prints the certified
-$C_6$ interval but not its coefficient matrix, so do not describe EXP-008 as an
-independent reconstruction. The runners require fresh output directories,
-clean canonical source commits, and exact source hashes. Historical Windows
-byte streams cited by v0.07 are preserved separately from the portable LF
-canonical outputs. CPU arithmetic is sufficient; GPU acceleration is not
-justified for these low-dimensional exact certificates. A DOI, finite census,
-passing build, or successful deployment does not prove RH or establish external
-peer acceptance.
+The ratio theorem is an exact CAOS result. The global proportion transfers
+through Wang's attributed arXiv:2609.24167v1 framework; it is not an independent
+proof of that preprint. The short-interval companion still uses attributed pair
+and rank-six inputs, and it does not change the onset. CPU arithmetic is
+sufficient. A DOI, finite census, passing build, or successful deployment does
+not prove RH or establish external peer acceptance.

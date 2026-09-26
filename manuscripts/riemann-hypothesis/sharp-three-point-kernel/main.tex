@@ -1,0 +1,480 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs}
+\microtypesetup{expansion=false}
+\usepackage[margin=1.05in,headheight=14pt]{geometry}
+\usepackage{xcolor}
+\definecolor{linknavy}{RGB}{25,55,125}
+\usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
+\usepackage{orcidlink,fancyhdr}
+\hypersetup{
+  pdftitle={A sharp three-point kernel bound and improved proportions of zeta zeros},
+  pdfauthor={Felipe Santibanez-Leal},
+  pdfsubject={A sharp auxiliary ratio in Wang's three-point kernel argument and its consequences for simple critical and distinct zeta zeros},
+  pdfkeywords={Riemann zeta function, simple zeros, distinct zeros, critical line, three-point kernel, spectral defect, interval arithmetic}
+}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\tr}{tr}
+\newcommand{\R}{\mathbb R}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\dsharp}{d_{\dagger}}
+\newcommand{\edag}{e_{\dagger}}
+\newcommand{\adag}{a_{\dagger}}
+\newcommand{\udag}{u_{\dagger}}
+\newcommand{\doctype}{Preprint}
+\newcommand{\docversion}{v0.01}
+\newcommand{\docdate}{24 September 2026}
+\newcommand{\versiondoi}{10.5281/zenodo.22940291}
+\newcommand{\conceptdoi}{10.5281/zenodo.22940290}
+\newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
+\newcommand{\headerblock}{%
+\begin{center}
+\fbox{\parbox{0.94\textwidth}{\small\raggedright
+\textbf{\doctype} \quad$\cdot$\quad \docversion, \docdate \quad$\cdot$\quad Licence CC BY 4.0\\[2pt]
+CAOS Research open-problems programme \quad$\cdot$\quad problem \texttt{riemann-hypothesis}\\[2pt]
+Version DOI \href{https://doi.org/\versiondoi}{\texttt{\versiondoi}}\\[2pt]
+Concept DOI (always latest) \href{https://doi.org/\conceptdoi}{\texttt{\conceptdoi}}\\[2pt]
+Not peer reviewed. Source code, data and computational records: \href{https://\docrepo}{\texttt{\docrepo}}
+}}
+\end{center}
+\vspace{4pt}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small CAOS Research \doctype}
+\fancyhead[R]{\small Sharp three-point kernel\textperiodcentered\ \docversion}
+\fancyfoot[C]{\thepage}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
+\allowdisplaybreaks[1]
+
+\title{A sharp three-point kernel bound and\\improved proportions of zeta zeros}
+\author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\small CAOS Research program\\
+\small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
+\date{\docdate}
+
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+\headerblock
+
+\begin{abstract}
+Wang recently refined Lamzouri's Hilbert-space method by retaining a convex
+spectral defect and proved that at least
+$0.6725007703418699\ldots$ of the nontrivial zeros of the Riemann zeta
+function are simple and on the critical line.  The quantitative input is a
+three-point lower bound for a limiting Fourier kernel.  We determine the sharp
+constant in the elementary ratio that controls this bound.  For all
+$\alpha,\beta\ge0$,
+\[
+ \frac{\sqrt{(1+\alpha^2)(1+\beta^2)}
+ +\alpha\sqrt{1+\alpha^2}+\beta\sqrt{1+\beta^2}}
+ {1+\alpha^2+\alpha\beta+\beta^2}\le\sqrt2,
+\]
+with equality only at $(0,1)$ and $(1,0)$.  Substitution into Wang's argument
+gives the simple-critical proportion
+\[
+ 0.6725007995946757558283550562963947\ldots
+\]
+and the distinct-zero proportion
+$0.8362503997973378779141775281481973\ldots$.  The new correction above the
+Montgomery--Taylor constant is about $43.88\%$ larger than Wang's correction.
+We also give a short-interval corollary for the source-certified rank-six
+parity curve.  All numerical comparisons use directed rational enclosures and
+an independent 120-decimal interval replay.  The global transfer depends on
+Wang's recent unreviewed preprint.  No effective height, density-one result,
+universal simplicity statement, or proof of the Riemann hypothesis is claimed.
+\end{abstract}
+
+\section{Introduction}
+
+Let $N(T)$ count the nontrivial zeros $\rho=\beta+i\gamma$ of the Riemann
+zeta function with $0<\gamma\le T$, including multiplicity.  Let $N_0^s(T)$
+count the simple zeros among them on $\beta=1/2$, and let $N_d(T)$ count
+distinct zeros, each once.  Define
+\begin{equation}\label{eq:C0}
+ C_0=\frac32-\frac1{\sqrt2}\cot(1/\sqrt2)
+ =0.6725007036794116457343797908032951\ldots .
+\end{equation}
+
+Alp\"oge and Furman~\cite{AF}, through a proof whose central optimization was
+found computationally, established that the lower density of simple critical
+zeros is at least $C_0$.  Lamzouri~\cite{Lamzouri} gave a direct Hilbert-space
+proof.  Wang~\cite{WangGlobal} retained a nonnegative spectral defect in
+Lamzouri's finite inequality and combined it with disjoint three-point blocks.
+His result is
+\[
+ \liminf_{T\to\infty}\frac{N_0^s(T)}{N(T)}
+ \ge C_0+6.66624\ldots\times10^{-8}.
+\]
+
+The only change made here to Wang's analytic framework is an exact
+optimization inside his three-point kernel lemma.  Wang obtains an auxiliary
+ratio and bounds it above by $2$.  Theorem~\ref{thm:ratio} shows that its exact
+maximum is $\sqrt2$.  This raises the kernel energy, and all subsequent steps
+of the global proof remain valid with the new constant.
+
+Our main consequence is the following.
+
+\begin{theorem}\label{thm:global}
+Assuming the analytic and finite-dimensional framework of
+Wang~\cite{WangGlobal},
+\begin{align}
+ \liminf_{T\to\infty}\frac{N_0^s(T)}{N(T)}
+ &\ge
+ 0.6725007995946757558283550562963947\ldots,
+ \label{eq:global-simple}\\
+ \liminf_{T\to\infty}\frac{N_d(T)}{N(T)}
+ &\ge
+ 0.8362503997973378779141775281481973\ldots .
+ \label{eq:global-distinct}
+\end{align}
+The displayed decimals are certified lower bounds after downward rounding.
+\end{theorem}
+
+The dependency phrase in Theorem~\ref{thm:global} is deliberate.  The sharp
+ratio theorem below is self-contained, while the passage to zeta zeros uses a
+September 2026 v1 preprint that has not been peer reviewed.  We inspect the
+substitution point and reproduce the numerical constants, but do not relabel
+the imported framework as independently established literature.
+
+\section{The sharp auxiliary ratio}
+
+For $\alpha,\beta\ge0$, set
+\begin{equation}\label{eq:ratio}
+ R(\alpha,\beta)=
+ \frac{\sqrt{(1+\alpha^2)(1+\beta^2)}
+ +\alpha\sqrt{1+\alpha^2}+\beta\sqrt{1+\beta^2}}
+ {1+\alpha^2+\alpha\beta+\beta^2}.
+\end{equation}
+
+\begin{theorem}[Sharp ratio theorem]\label{thm:ratio}
+For every $\alpha,\beta\ge0$,
+\[
+ R(\alpha,\beta)\le\sqrt2.
+\]
+Equality holds exactly at $(\alpha,\beta)=(0,1)$ and $(1,0)$.
+\end{theorem}
+
+\begin{proof}
+Write
+\[
+ \alpha=\sinh u,\qquad \beta=\sinh v,
+ \qquad u,v\ge0,
+\]
+and put
+\[
+ X=\cosh(u+v),\qquad Y=\cosh(u-v),\qquad
+ S=\sinh(u+v)=\sqrt{X^2-1}.
+\]
+Then $X\ge Y\ge1$.  Product-to-sum identities give
+\[
+ \cosh u\cosh v=\frac{X+Y}{2},
+ \qquad
+ \sinh u\cosh u+\sinh v\cosh v=SY.
+\]
+Hence the numerator of~\eqref{eq:ratio} is
+\begin{equation}\label{eq:num}
+ \frac X2+Y\left(S+\frac12\right).
+\end{equation}
+A direct expansion gives the denominator as
+\begin{equation}\label{eq:den}
+ 1+\sinh^2u+\sinh u\sinh v+\sinh^2v
+ =\frac X2+Y\left(X-\frac12\right).
+\end{equation}
+
+Fix $X>1$.  The derivative of the quotient of~\eqref{eq:num} and
+\eqref{eq:den} with respect to $Y$ has the sign of
+\[
+ 1+S-X.
+\]
+This is positive, since $S>X-1$ follows by squaring from
+$X^2-1>(X-1)^2$.  The quotient is therefore largest at $Y=X$.
+Equality $Y=X$ means $\cosh(u-v)=\cosh(u+v)$, and for $u,v\ge0$ this is
+equivalent to $u=0$ or $v=0$.
+
+On this boundary the ratio is
+\[
+ \frac{1+\sqrt{X^2-1}}{X}.
+\]
+All quantities are nonnegative, and comparison with $\sqrt2$ reduces, after
+two legitimate squarings, to
+\[
+ 4(X^2-1)\le X^4
+ \quad\Longleftrightarrow\quad
+ (X^2-2)^2\ge0.
+\]
+Equality requires $X=\sqrt2$.  Together with $u=0$ or $v=0$, this gives the
+two stated points.  If $X=1$, then $u=v=0$ and $R=1$.
+\end{proof}
+
+\begin{remark}
+The parametrization is onto the whole nonnegative quadrant and the argument
+includes all unbounded directions.  The proof is exact; no grid,
+compactification, or numerical optimizer is used.
+\end{remark}
+
+\section{The improved three-point kernel bound}
+
+We recall the exact point at which Theorem~\ref{thm:ratio} enters Wang's
+argument.  Let $f_0$ be the limiting compactly supported cosine profile in
+\cite{Lamzouri,WangGlobal}, let $K_0=\widehat f_0$, and define
+\[
+ a=\sqrt2\pi\cot(1/\sqrt2),
+ \qquad \cF(x)=ax\sin(\pi x)-\cos(\pi x).
+\]
+The Fourier transform has the identity
+\begin{equation}\label{eq:FK}
+ \cF(x)=(2\pi^2x^2-1)K_0(x).
+\end{equation}
+
+For $u,v\ge0$, Wang sets
+\[
+ d=\max\{|\cF(u)|,|\cF(v)|,|\cF(u+v)|\},
+ \qquad \alpha=au,\quad\beta=av.
+\]
+His vector triangle estimates and trigonometric addition identity yield
+\begin{equation}\label{eq:wang-ratio-step}
+ (1-d)^2\le d(1+d)R(\alpha,\beta)
+\end{equation}
+when $d<1$; the desired lower bound is automatic when $d\ge1$.
+Wang then uses $R\le2$.  Theorem~\ref{thm:ratio} instead gives
+\[
+ (1-d)^2\le\sqrt2\,d(1+d).
+\]
+The positive equality root is
+\begin{equation}\label{eq:ddag}
+ \dsharp=
+ \frac{\sqrt{2+8\sqrt2}-(2+\sqrt2)}{2(\sqrt2-1)}
+ =0.2831654308085373270052981480781329\ldots .
+\end{equation}
+Thus $d\ge\dsharp$.  Exact directed enclosures also prove
+\[
+ \dsharp>\frac{\sqrt{57}-7}{2}>\sqrt5-2,
+\]
+so the result strictly improves both our initially declared fallback and
+Wang's constant.
+
+Combining~\eqref{eq:FK} with $u+v\le H$ gives the sharpened kernel lemma.
+
+\begin{corollary}\label{cor:kernel}
+For every $H>0$ and $u,v\ge0$ with $u+v\le H$,
+\begin{equation}\label{eq:energy}
+ K_0(u)^2+K_0(v)^2+K_0(u+v)^2
+ \ge \edag(H):=
+ \frac{\dsharp^2}{(1+2\pi^2H^2)^2}.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+At least one of the three $\cF$ values has modulus at least $\dsharp$.  For its
+argument $x$, $|x|\le H$ and
+$|2\pi^2x^2-1|\le1+2\pi^2H^2$.  Equation~\eqref{eq:FK} therefore makes the
+corresponding squared kernel value at least the right side of
+\eqref{eq:energy}.
+\end{proof}
+
+\section{Global proportions}
+
+We give enough of the transfer to identify every dependence and constant.
+For a conjugation-invariant finite zero multiset $\cZ$, let $n$ denote the
+number of simple real elements and let
+\[
+ G_K=(K(x_j-x_\ell))_{1\le j,\ell\le n}
+\]
+be their Gram matrix.  Wang defines a nonnegative convex spectral defect
+\[
+ \Delta_K(\cZ)=\tr\Psi(G_K),
+ \qquad
+ \Psi(t)=
+ \begin{cases}
+ (t-1)^2,&0\le t\le2,\\
+ 2t-3,&t\ge2.
+ \end{cases}
+\]
+His finite inequality is
+\begin{equation}\label{eq:finite}
+ n\ge2|\cZ|-\sum_{z,s\in\cZ}K(z-s)^2+\Delta_K(\cZ),
+\end{equation}
+with multiplicity in the sums.  A companion inequality gives the distinct
+count.  His block lemma says that each disjoint simple-real triple whose
+three squared pair kernels sum to at least $e$ contributes at least $2e$ to
+the defect.
+
+Partition the scaled ordinate interval into cells of length at most $H$ and
+form disjoint triples in each cell.  At most two simple points per cell are
+unused.  Corollary~\ref{cor:kernel} and the Riemann--von Mangoldt asymptotic
+then give, after the same smoothing and ordered limits as in
+\cite{WangGlobal},
+\begin{equation}\label{eq:globalformula}
+ \liminf_{T\to\infty}\frac{N_0^s(T)}{N(T)}
+ \ge\udag(H):=
+ \frac{C_0-2\adag(H)/H}{1-\adag(H)},
+ \qquad
+ \adag(H)=\frac{2\edag(H)}3.
+\end{equation}
+The smoothing parameter remains fixed while $T$ tends to infinity and is
+removed only afterward.  Since~\eqref{eq:energy} is uniform on every fixed
+cell, the sharper constant does not alter that order of limits.
+
+Choose the rational value
+\begin{equation}\label{eq:Hstar}
+ H_*=\frac{372019}{100000}=3.72019.
+\end{equation}
+Directed arithmetic gives
+\begin{align*}
+ \udag(H_*)-C_0
+ &=0.0000000959152641100939752654930995979\ldots,\\
+ \udag(H_*)
+ &=0.6725007995946757558283550562963947865\ldots .
+\end{align*}
+This proves~\eqref{eq:global-simple}.
+
+For comparison, using Wang's $\sqrt5-2$ and his exact
+$H_0=372018941724/10^{11}$ in the same certificate gives
+\[
+ \delta_0=
+ 0.0000000666624583334125249521207539241\ldots,
+\]
+strictly between $6.66624\times10^{-8}$ and
+$6.66625\times10^{-8}$.  The lower endpoint of the new gain interval exceeds
+the upper endpoint of this reproduced value.  Their ratio shows that the new
+correction is about $43.88\%$ larger.  We make no claim that the convenient
+rational $H_*$ is the exact optimizer.
+
+Wang's distinct-zero inequality, with the same replacement, is
+\[
+ \liminf_{T\to\infty}\frac{N_d(T)}{N(T)}
+ \ge\frac{1+\udag(H)}2.
+\]
+Inserting~\eqref{eq:Hstar} proves~\eqref{eq:global-distinct}.
+
+\section{A short-interval corollary}
+
+The same cell packing can be placed inside the fixed-power intervals used in
+the companion CAOS manuscript~\cite{CAOSShort}.  Let $h_6(\theta)$ be its
+rank-six Hilbert--parity lower curve, $k_6(\theta)$ the attributed odd-support
+term, and $q(\theta)$ the pair statistic.  If $h_6(\theta)>0$, choose a fixed
+cell length $H>2/h_6(\theta)$ and set
+\[
+ \alpha_H=\frac{2\edag(H)}3,
+ \qquad
+ \beta_H=\frac{2\alpha_H}{H}.
+\]
+The number of cells divided by the local zero count tends to $1/H$.  The
+triple count and Wang's block lemma therefore give
+\[
+ \liminf\frac{\Delta_K}{N}\ge\alpha_Hs-\beta_H,
+\]
+where $s$ is the lower simple-critical proportion.  Substitution into the
+finite defect--parity product of~\cite{CAOSShort} yields
+\begin{equation}\label{eq:shortquad}
+ 2(1-s)^2\le(1-k_6(\theta))
+ \{q(\theta)+\beta_H-(1+\alpha_H)s\}.
+\end{equation}
+
+At $\theta=0.5459$ and the integer cell length $H=140730$, the exact
+certificate proves $H>2/h_6$.  The smaller root $J_6$ of equality in
+\eqref{eq:shortquad} satisfies
+\begin{equation}\label{eq:shortgain}
+ J_6-h_6>
+ 3.08678099833341875132438420197419\times10^{-31}.
+\end{equation}
+The bound is correlated: it follows from the value of the strengthened
+quadratic at the old root and a derivative bound, rather than subtraction of
+two independently rounded roots.  It exceeds the earlier spectral correction
+$1.776662254114\ldots\times10^{-68}$ by more than 37 orders of magnitude.
+It remains too small to alter the useful decimals of $h_6$ and does not move
+the positivity onset.
+
+\section{Exact certificate and limitations}
+
+The machine-readable record~\cite{RecordIX} pins both files of
+arXiv:2609.24167v1, the experiment declaration and amendment, the preceding
+rank-six certificate, the runner, and the canonical output.  The principal
+calculation uses exact fractions, integer square-root enclosures, and directed
+Taylor bounds for elementary functions.  A separate implementation using
+120-decimal \texttt{mpmath.iv} intervals overlaps every headline interval.
+The canonical CPU run completed in 37.157 seconds from a clean Git commit.
+
+The certificate verifies
+\begin{itemize}
+\item the exact ordering of all three kernel constants;
+\item Wang's printed correction at his rational cell length;
+\item strict interval separation between the new and old global gains;
+\item the short-interval cell condition and positive correlated reserve;
+\item strict dominance over the preceding spectral correction; and
+\item all pinned source and execution hashes.
+\end{itemize}
+
+Theorem~\ref{thm:ratio} is unconditional.  The global transfer is conditional
+on the correctness of the cited Wang v1 argument, although the exact
+substitution point and downstream algebra were rechecked.  The short-interval
+corollary additionally imports a rank-six constant whose source does not print
+its coefficient vector.  The statements are asymptotic and supply no
+effective starting height.  They neither show that every zero lies on the
+critical line nor that every zero is simple.
+
+\section*{Computational assistance disclosure}
+
+ChatGPT-6 Astra was used to search the recent literature, explore the
+hyperbolic substitution, implement interval certificates, and check the
+manuscript.  The author inspected the primary sources, verified the proof and
+equality cases, reviewed every stated dependency and limitation, and takes
+responsibility for the content.  No artificial-intelligence system is listed
+as an author.
+
+\begin{thebibliography}{99}
+\raggedright
+
+\bibitem{AF}
+L. Alp\"oge and R. Furman,
+\emph{More than two thirds of the zeta zeros are simple and on the critical line},
+arXiv:2608.13637v2 (2026),
+\url{https://arxiv.org/abs/2608.13637v2}.
+
+\bibitem{CAOSShort}
+F. Santib\'a\~nez-Leal,
+\emph{Simple critical zeros in short intervals: stability, parity,
+localization, Hilbert compression, and spectral defect}, v0.07,
+Zenodo (2026),
+\url{https://doi.org/10.5281/zenodo.22860012}.
+
+\bibitem{Lamzouri}
+Y. Lamzouri,
+\emph{A new proof that more than $2/3$ of the zeros of the Riemann zeta
+function are simple and on the critical line},
+arXiv:2609.02882v2 (2026),
+\url{https://arxiv.org/abs/2609.02882v2}.
+
+\bibitem{RecordIX}
+F. Santib\'a\~nez-Leal,
+\emph{EXP-009: Wang kernel sharpening and parity transfer},
+CAOS Research computational record (2026),
+\url{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening}.
+
+\bibitem{Titchmarsh}
+E. C. Titchmarsh,
+\emph{The Theory of the Riemann Zeta-function}, second edition,
+revised by D. R. Heath-Brown, Oxford University Press, 1986.
+
+\bibitem{WangGlobal}
+B. Wang,
+\emph{Proportions of the non-trivial zeros of the Riemann zeta function},
+arXiv:2609.24167v1 (2026),
+\url{https://arxiv.org/abs/2609.24167v1}.
+
+\bibitem{WangShort}
+B. Wang,
+\emph{Simple critical zeros and distinct zeros of the Riemann zeta-function
+in short intervals},
+arXiv:2609.07918v1 (2026),
+\url{https://arxiv.org/abs/2609.07918v1}.
+
+\end{thebibliography}
+\end{document}
