@@ -60,7 +60,22 @@ archive and is bound by size and SHA-256 in `qa.json`.
 
 ## Deployment
 
-The candidate starts from develop commit
-`f31d5ac37ee08fd2ea98bbd16001be4ebde97b11`. PR, exact-main CI, Pages,
-release-tag, and live-byte verification fields will be filled only after their
-corresponding remote events pass.
+Research PR [#337](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/337)
+and promotion PR
+[#338](https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/338) are merged.
+Tag `v0.73.000` points exactly to main commit
+`e6f905f8509adbb9be7e9470b88b5071a4a08d9e`; the
+[GitHub release](https://github.com/fsantibanezleal/CAOS_RESEARCH/releases/tag/v0.73.000),
+[main CI](https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/36268684854),
+and [Pages deployment](https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/36268684851)
+all passed.
+
+The [live verification](live-verification.json) byte-matched the root, three
+hashed assets, and seven replay/manifest files against the exact-main build.
+Eight desktop/phone EN/ES light/dark scenarios visited all six research tabs
+and captured 368 screenshots with zero failed checks, console warnings or
+errors, page errors, request failures, or HTTP errors. The live payload exposes
+replay v8, the exact EXP-009 canonical hash, the sharp equality cases, the
+global and short-interval gains, and the explicit attribution and non-claim
+boundary. The static direct route returns the expected Pages 404 response;
+pointer navigation from the 200 root reached and verified the client route.

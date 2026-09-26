@@ -74,13 +74,26 @@
     {"path": "program/riemann-hypothesis/release-0.73.000/screenshots/phone-es-dark-summary.png", "bytes": 56934, "sha256": "2d544dbe1a4ae37ae53a418e073de3493228a2c7b0797324d9dff85d5b6af3ff"}
   ],
   "deployment": {
-    "status": "candidate",
+    "status": "live-verified",
     "tag": "v0.73.000",
-    "research_pr": null,
-    "promotion_pr": null,
-    "main_commit": null,
-    "ci_run": null,
-    "pages_run": null,
-    "live_receipt": null
+    "release": "https://github.com/fsantibanezleal/CAOS_RESEARCH/releases/tag/v0.73.000",
+    "research_pr": "https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/337",
+    "promotion_pr": "https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/338",
+    "develop_commit": "22b5d795f584494f4ba99efdf51ca8d4dc61876b",
+    "main_commit": "e6f905f8509adbb9be7e9470b88b5071a4a08d9e",
+    "develop_ci_run": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/36268572713",
+    "ci_run": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/36268684854",
+    "pages_run": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/36268684851",
+    "live_receipt": {
+      "path": "program/riemann-hypothesis/release-0.73.000/live-verification.json",
+      "bytes": 9119,
+      "sha256": "576bb579f76545ec5b14d59c0ec38b2f0a845cd9f6a59a70bf11584c0837ddf9",
+      "browser_receipt_sha256": "bcb355292ae426c98512ed4b3d332a05041f54a1a4a9d69437153d45d724de1a",
+      "byte_matched_files": 11,
+      "scenarios": 8,
+      "tabs_visited": 48,
+      "screenshots": 368,
+      "failures": 0
+    }
   }
 }
