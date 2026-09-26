@@ -47,6 +47,7 @@ def test_bake_writes_valid_registry(tmp_path, monkeypatch):
         "EXP-009-wang-kernel-sharpening",
     }
     assert riemann["schema"] == "riemann-replay-v8"
+    assert riemann["reviewed_on"] == "2026-09-24"
     exp009 = next(record for record in exps["experiments"]
                   if record["slug"] == "EXP-009-wang-kernel-sharpening")
     assert any(artifact["name"] == "canonical/result.json"

@@ -239,6 +239,7 @@ export default function RiemannHypothesis() {
     wang_kernel_verdict: t('EXP-009 source-bounded verdict', 'Veredicto con límites de fuente de EXP-009'),
     wang_kernel_review: t('EXP-009 proof review and source binding', 'Revisión y vinculación de fuentes de EXP-009'),
     wang_kernel_test: t('EXP-009 focused regression tests', 'Pruebas de regresión focalizadas de EXP-009'),
+    wang_kernel_source_manifest: t('EXP-009 pinned source manifest', 'Manifiesto de fuentes fijadas de EXP-009'),
     constant_audit: t('constant audit', 'auditoría de constantes'),
     result: t('arithmetic result', 'resultado aritmético'),
     certificate: t('finite certificate', 'certificado finito'),
@@ -290,7 +291,7 @@ export default function RiemannHypothesis() {
     {
       id: 'summary', label: t('Summary', 'Resumen'), content: <section>
         <p className="rh-lead">{t('EXP-009 proves the sharp constant √2 in a three-point kernel ratio left non-optimal in Wang’s new global refinement. Substituting the exact constant into Wang’s pinned v1 framework raises the certified global lower proportion of simple critical zeros to more than 0.6725007995946757558 and the distinct-zero companion to more than 0.8362503997973378779.', 'EXP-009 prueba la constante óptima √2 en un cociente de núcleo de tres puntos que no estaba optimizado en el nuevo refinamiento global de Wang. Sustituir la constante exacta en el marco v1 fijado de Wang eleva la proporción global inferior certificada de ceros críticos simples a más de 0.6725007995946757558 y la cota complementaria de ceros distintos a más de 0.8362503997973378779.')}</p>
-        <Equation tex={String.raw`R(\alpha,\beta)\le\sqrt2,\qquad d_\dagger=\frac{\sqrt{2+8\sqrt2}-(2+\sqrt2)}{2(\sqrt2-1)}`} />
+        <Equation tex={String.raw`\begin{aligned}R(\alpha,\beta)&\le\sqrt2,\\[3pt]d_\dagger&=\frac{\sqrt{2+8\sqrt2}-(2+\sqrt2)}{2(\sqrt2-1)}\end{aligned}`} />
         {wangKernel ? <>
           <p className="rh-number">{t('Global simple-critical proportion: ', 'Proporción global de ceros críticos simples: ')}<strong>{wangKernel.result.global.simple_proportion.lower.decimal}</strong></p>
           <p className="rh-number">{t('Certified gain over the baseline: ', 'Ganancia certificada sobre la cota base: ')}<strong>{wangKernel.result.global.gain.lower.decimal}</strong></p>

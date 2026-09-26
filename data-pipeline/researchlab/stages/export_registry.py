@@ -238,6 +238,8 @@ def _riemann_payload() -> dict:
         ("proof", exp_two, f"experiments/{exp_two}/mathematical-proof.md"),
         ("verdict", exp_two, f"experiments/{exp_two}/verdict.md"),
         ("source_manifest", "source-review", "context/source-manifest.json"),
+        ("wang_kernel_source_manifest", "source-review",
+         "context/source-manifest-exp009.json"),
         ("pressure_result", exp_three, f"experiments/{exp_three}/artifacts/result.json"),
         ("pressure_proof", exp_three, f"experiments/{exp_three}/mathematical-proof.md"),
         ("pressure_verdict", exp_three, f"experiments/{exp_three}/verdict.md"),
@@ -344,8 +346,9 @@ def _riemann_payload() -> dict:
                     "local_result", "hilbert_result", "spectral_result",
                     "rank_six_result", "wang_kernel_result"}:
             payload[role] = json.loads(content)
-        elif role == "source_manifest":
-            payload["reviewed_on"] = json.loads(content)["reviewed_on"]
+        elif role in {"source_manifest", "wang_kernel_source_manifest"}:
+            payload["reviewed_on"] = max(
+                payload.get("reviewed_on", ""), json.loads(content)["reviewed_on"])
     if payload["constant_audit"]["status"] != "PASS":
         raise ValueError("Riemann source and constant audit has not passed")
     audit = payload["result"]["audit"]
