@@ -36,4 +36,4 @@ The new bound is 0.419087888170111727959091183775 at theta=3/4.
 | RH-020 | Export replay v7, integrate EXP-007/008 into the public workbench, and complete serialized release QA | done; release 0.72.000 live-verified from exact main | P0 |
 | RH-021 | Independently reconstruct the rank-six coefficient matrix or obtain a source artifact that permits exact C6 replay | open | P1 |
 | RH-022 | EXP-009: audit Wang's global refinement, sharpen its three-point kernel constant, and transfer the result through the parity product | done; sharp ratio theorem, exact global gain, proof review, and Zenodo preprint confirmed | P0 |
-| RH-023 | Export replay v8, integrate EXP-009 into the public workbench, and complete release 0.73.000 QA | in progress | P0 |
+| RH-023 | Export replay v8, integrate EXP-009 into the public workbench, and complete release 0.73.000 QA | candidate QA passed; remote promotion and live verification in progress | P0 |
