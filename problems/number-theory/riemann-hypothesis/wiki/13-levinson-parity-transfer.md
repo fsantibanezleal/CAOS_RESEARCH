@@ -85,3 +85,4 @@ positivity condition hold for every `theta>1/2`.
 - [Adversarial audit](../experiments/EXP-010-levinson-parity-transfer/adversarial-audit.md)
 - [Verdict](../experiments/EXP-010-levinson-parity-transfer/verdict.md)
 - [Preflight dossier](../context/2026-09-26-levinson-localization-preflight.md)
+- [Published preprint](https://doi.org/10.5281/zenodo.22984155)

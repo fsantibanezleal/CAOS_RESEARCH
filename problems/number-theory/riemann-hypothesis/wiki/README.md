@@ -16,8 +16,8 @@ lower bound exceeds $0.0177638$, about 1000 times the EXP-008 value. The moment
 and counting theorems are internal; the onset also uses Wang's
 arXiv:2609.07918v1 pair theorem. See the
 [Levinson chapter](13-levinson-parity-transfer.md) and the
-[verdict](../experiments/EXP-010-levinson-parity-transfer/verdict.md). RH
-remains open.
+[verdict](../experiments/EXP-010-levinson-parity-transfer/verdict.md), and the
+[published preprint](https://doi.org/10.5281/zenodo.22984155). RH remains open.
 
 [D+MV] EXP-009 proves the sharp auxiliary inequality
 

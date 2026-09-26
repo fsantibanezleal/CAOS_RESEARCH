@@ -154,8 +154,8 @@ The EXP-006 product then gives a positive simple-critical proportion for every
 fixed `theta` in `[0.534,1)`, with about 1000 times the EXP-008 density at
 `theta=0.5459`.
 
-The new manuscript `short-interval-levinson` is built from the verdict; its
-Zenodo deposit runs through the vault tooling. The public workbench (replay
+The new manuscript `short-interval-levinson` is built from the verdict and
+published at DOI 10.5281/zenodo.22984155. The public workbench (replay
 v9) and a serialized release are separate later gates.
 
 Next routes, in order of expected onset gain: a uniform two-shift

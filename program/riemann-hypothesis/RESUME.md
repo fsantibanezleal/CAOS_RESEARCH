@@ -9,8 +9,9 @@ the localized Levinson detector with degree-201 operator polynomials gives a
 positive proportion of simple critical zeros in `(T,T+T^theta]` for every
 fixed `theta` in `[0.534,1)` (previous onset `0.5458838`), and about 1000 times
 the EXP-008 density at `theta=0.5459`. Its manuscript
-`manuscripts/riemann-hypothesis/short-interval-levinson/` v0.01 is built and
-awaits the vault Zenodo deposit. Release 0.73.000 (EXP-009) is the latest
+`manuscripts/riemann-hypothesis/short-interval-levinson/` v0.01 is published at
+[10.5281/zenodo.22984155](https://doi.org/10.5281/zenodo.22984155), byte-verified,
+and EXP-010 is promoted to `develop` and `main`. Release 0.73.000 (EXP-009) is the latest
 live release. General RH remains open.
 
 ## 2. The objects table
@@ -27,7 +28,7 @@ live release. General RH remains open.
 | `kappa(P,Q,R,nu)` | Localized Levinson distinct sign-change density | `>0.7170 nu` at eight frozen `nu`; EXP-010 |
 | `h(theta;kappa)` | Parity transfer of the Levinson density | positive for every `theta` in `[0.534,1)`; `>0.0177638` at `0.5459` |
 | EXP-010 canonical result | Exact admissibility, Arb constants, anchors, onset | SHA-256 `74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464` |
-| `short-interval-levinson` v0.01 | Nine-page manuscript of EXP-010 | built; Zenodo deposit pending |
+| `short-interval-levinson` v0.01 | Ten-page manuscript of EXP-010 | DOI `10.5281/zenodo.22984155` (concept `10.5281/zenodo.22984154`), public bytes verified |
 
 ## 3. Experiment index
 
@@ -46,21 +47,19 @@ live release. General RH remains open.
 
 ## 4. In flight
 
-1. EXP-010 evidence, proof, audit, controls, verdict, wiki chapter 13 and the
-   manuscript source are on the work branch and go to `develop` by PR.
-2. The manuscript needs the vault deposit (DOI reservation, PDF with its DOI,
-   receipt); the header block shows the DOI as assigned at deposit.
-3. The public workbench and data bake still show nine experiments; replay v9
-   and a serialized release are RH-026.
+1. EXP-010 is merged to `develop` (PR #341) and promoted to `main` (PR #342);
+   the manuscript deposit records follow in the deposit PRs.
+2. The manuscript is published and byte-verified at DOI `10.5281/zenodo.22984155`.
+3. The public workbench still shows nine experiments; replay v9 and a
+   versioned release are RH-026.
 
 ## 5. Next actions
 
-1. Deposit `short-interval-levinson` v0.01 (RH-025).
-2. RH-027: a uniform two-shift short-window moment for general `Q` in
+1. RH-027: a uniform two-shift short-window moment for general `Q` in
    Steuding's range `nu<(3theta-1)/4`, which would make positivity hold for
    every `theta>1/2`.
-3. RH-026: replay v9 and release.
-4. Pursue independent rank-six reconstruction (RH-021) and external review of
+2. RH-026: replay v9 and release.
+3. Pursue independent rank-six reconstruction (RH-021) and external review of
    Wang's frameworks before strengthening any attributed claim.
 
 ## 6. Where everything lives

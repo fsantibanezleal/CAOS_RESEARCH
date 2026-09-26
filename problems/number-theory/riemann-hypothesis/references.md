@@ -330,3 +330,12 @@ proportions of zeta zeros.* CAOS Research Preprint, version 0.01, September 24,
 seven-page PDF has SHA-256
 `a60e2c21ebe3237d867ca94b682f86bb24a9cec868393e7d6a9e6eb31b510d82`.
 The publication is not external peer review.
+
+**Felipe Santibanez-Leal.** *Levinson's method in short intervals and simple
+zeros of the zeta function.* CAOS Research Preprint, version 0.01, September
+26, 2026. [Public record](https://zenodo.org/records/22984155), version DOI
+[10.5281/zenodo.22984155](https://doi.org/10.5281/zenodo.22984155), concept DOI
+[10.5281/zenodo.22984154](https://doi.org/10.5281/zenodo.22984154). The
+ten-page PDF has SHA-256
+`4fd71686d6dada90c41a2156f5cbecb428d4f1acd372028020896113b1033d67`.
+The publication is not external peer review.
