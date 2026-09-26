@@ -415,3 +415,28 @@ The source prints the $C_6$ interval but not its coefficient matrix, so the
 certificate validates the transfer and downstream arithmetic without claiming
 an independent reconstruction. The [proof review](../experiments/EXP-008-rank-six-local-transfer/proof-review.json)
 binds this limitation to the displayed result.
+
+## EXP-009: sharp Wang kernel ratio
+
+The [ninth verdict](../experiments/EXP-009-wang-kernel-sharpening/verdict.md)
+confirms the exact bound `R(alpha,beta) <= sqrt(2)` with equality exactly at
+`(0,1)` and `(1,0)`. The hyperbolic substitution reduces the two-variable
+problem to monotonicity in one compact coordinate and the residual square
+`(X^2-2)^2`.
+
+Substitution into Wang's pinned v1 global framework certifies a simple-critical
+proportion above `0.672500799594675755828355056296...`, a distinct-zero
+companion above `0.836250399797337877914177528148...`, and a gain above the
+baseline greater than `9.5915264110093975e-8`. The global transfer remains
+relative to Wang arXiv:2609.24167v1.
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/run.py --output-dir tmp/riemann-exp009-replay --budget-seconds 600
+python -m pytest -q tests/test_riemann_wang_kernel_sharpening.py
+```
+
+The canonical result SHA-256 is
+`0cea78e847d1bcec62eb8cd809b704ceaebd58f78f1c405f13ec40838fbb5a66`.
+The proof review binds the declaration, strengthened amendment, runner,
+focused tests, result, execution receipt, proof and audit. A separate
+seven-page preprint is published at DOI `10.5281/zenodo.22940291`.

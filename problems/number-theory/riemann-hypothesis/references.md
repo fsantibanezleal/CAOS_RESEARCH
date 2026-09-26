@@ -267,6 +267,14 @@ apparently new short-interval consequence from inherited global methods.
     of Anthropic's `gc`. EXP-007 treats that parameterized spectral content as
     prior art and claims only the defect-parity coupling and its transfer.
 
+28. **Biao Wang.** *A refinement of the two-thirds theorem for simple
+    critical zeros of the Riemann zeta-function.*
+    [arXiv:2609.24167v1](https://arxiv.org/abs/2609.24167v1), submitted
+    September 21, 2026. EXP-009 imports the finite spectral framework, block
+    lemma, analytic pair statistic, smoothing argument and triple packing. It
+    independently proves the sharp replacement for the auxiliary three-point
+    ratio. The source is a recent unreviewed v1.
+
 The [EXP-001 verdict](experiments/EXP-001-source-and-constant-audit/verdict.md)
 is the authority for exact formula reproduction, source-integrity checks,
 and the normalization correction. The
@@ -290,3 +298,12 @@ The immutable v0.01 baseline remains at [10.5281/zenodo.22727389](https://doi.or
 and its archived 10-page PDF is unchanged. This self-published preprint is not peer
 reviewed. The dated novelty search does not guarantee priority against undiscovered
 concurrent work.
+
+**Felipe Santibanez-Leal.** *A sharp three-point kernel bound and improved
+proportions of zeta zeros.* CAOS Research Preprint, version 0.01, September 24,
+2026. [Public record](https://zenodo.org/records/22940291), version DOI
+[10.5281/zenodo.22940291](https://doi.org/10.5281/zenodo.22940291), concept DOI
+[10.5281/zenodo.22940290](https://doi.org/10.5281/zenodo.22940290). The reviewed
+seven-page PDF has SHA-256
+`a60e2c21ebe3237d867ca94b682f86bb24a9cec868393e7d6a9e6eb31b510d82`.
+The publication is not external peer review.

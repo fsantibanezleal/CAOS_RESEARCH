@@ -50,7 +50,7 @@ function compareExact(left: { numerator: string; denominator: string }, right: {
 export function localSelbergEvidence(data: RiemannData | null) {
   const result = data?.local_result;
   const review = data?.local_review;
-  if (!data || !result || !review || data.schema !== 'riemann-replay-v7' ||
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v8' ||
       result.schema !== 'riemann-exp005-results-v1' || result.status !== 'pass' || !result.passed ||
       Object.values(result.checks).some((passed) => passed !== true) ||
       result.claim_boundary.rh_solved !== false || result.boundary_control.accepted !== false ||
@@ -76,7 +76,7 @@ export function localSelbergEvidence(data: RiemannData | null) {
 export function hilbertParityEvidence(data: RiemannData | null) {
   const result = data?.hilbert_result;
   const review = data?.hilbert_review;
-  if (!data || !result || !review || data.schema !== 'riemann-replay-v7' ||
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v8' ||
       result.schema !== 'riemann-exp006-results-v2' || result.status !== 'pass' || !result.passed ||
       Object.values(result.checks).some((passed) => passed !== true) ||
       result.claim_boundary.rh_solved !== false ||
@@ -106,7 +106,7 @@ export function hilbertParityEvidence(data: RiemannData | null) {
 export function spectralDefectEvidence(data: RiemannData | null) {
   const result = data?.spectral_result;
   const review = data?.spectral_review;
-  if (!data || !result || !review || data.schema !== 'riemann-replay-v7' ||
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v8' ||
       result.schema !== 'riemann-exp007-results-v1' || result.status !== 'pass' || !result.passed ||
       Object.values(result.checks).some((passed) => passed !== true) ||
       result.claim_boundary.rh_solved !== false || result.claim_boundary.global_record !== false ||
@@ -132,7 +132,7 @@ export function spectralDefectEvidence(data: RiemannData | null) {
 export function rankSixEvidence(data: RiemannData | null) {
   const result = data?.rank_six_result;
   const review = data?.rank_six_review;
-  if (!data || !result || !review || data.schema !== 'riemann-replay-v7' ||
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v8' ||
       result.schema !== 'riemann-exp008-results-v1' || result.status !== 'pass' || !result.passed ||
       Object.values(result.checks).some((passed) => passed !== true) ||
       result.claim_boundary.rh_solved !== false ||
@@ -149,6 +149,38 @@ export function rankSixEvidence(data: RiemannData | null) {
     hypothesis: 'rank_six_hypothesis', mathematical_proof: 'rank_six_proof',
     adversarial_audit: 'rank_six_audit', result: 'rank_six_result', verdict: 'rank_six_verdict',
     runner: 'rank_six_runner', focused_test: 'rank_six_test',
+  } as const;
+  if (!Object.entries(roles).every(([reviewRole, sourceRole]) =>
+    data.provenance.some((source) => source.role === sourceRole &&
+      source.sha256 === review.source_sha256[reviewRole as keyof typeof roles]),
+  )) return undefined;
+  return { result, review };
+}
+
+/** EXP-009 proves the sharp auxiliary ratio internally, then applies it inside
+ * Wang's pinned v1 global framework. The helper preserves that source boundary. */
+export function wangKernelEvidence(data: RiemannData | null) {
+  const result = data?.wang_kernel_result;
+  const review = data?.wang_kernel_review;
+  if (!data || !result || !review || data.schema !== 'riemann-replay-v8' ||
+      result.schema !== 'riemann-exp009-results-v1' || result.status !== 'pass' || !result.passed ||
+      Object.values(result.checks).some((passed) => passed !== true) ||
+      result.claim_boundary.rh_solved !== false || result.claim_boundary.peer_reviewed !== false ||
+      result.claim_boundary.onset_exponent_improved !== false ||
+      review.schema !== 'riemann-exp009-proof-review-v1' ||
+      review.scientific_verdict !== 'confirmed-relative-to-wang-v1-framework' ||
+      result.execution.git.head !== review.canonical_execution_commit ||
+      result.execution.declaration_commit !== review.declaration_commit ||
+      result.execution.amendment_commit !== review.amendment_commit ||
+      compareExact(result.global.simple_proportion.lower,
+        result.wang_reproduction.simple_proportion.upper) <= 0n ||
+      BigInt(result.global.gain.lower.numerator) <= 0n ||
+      BigInt(result.short_interval.certified_gain.lower.numerator) <= 0n) return undefined;
+  const roles = {
+    hypothesis: 'wang_kernel_hypothesis', amendment: 'wang_kernel_amendment',
+    mathematical_proof: 'wang_kernel_proof', runner: 'wang_kernel_runner',
+    focused_test: 'wang_kernel_test', result: 'wang_kernel_result',
+    execution_receipt: 'wang_kernel_receipt', adversarial_audit: 'wang_kernel_audit',
   } as const;
   if (!Object.entries(roles).every(([reviewRole, sourceRole]) =>
     data.provenance.some((source) => source.role === sourceRole &&

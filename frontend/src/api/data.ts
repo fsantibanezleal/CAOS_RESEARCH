@@ -237,8 +237,42 @@ export type RiemannRankSixReview = {
   source_sha256: Record<'hypothesis' | 'mathematical_proof' | 'adversarial_audit' |
     'result' | 'verdict' | 'runner' | 'focused_test', string>;
 };
+export type RiemannWangKernelResult = {
+  schema: 'riemann-exp009-results-v1'; status: 'pass'; passed: true;
+  checks: Record<string, boolean>;
+  claim_boundary: {
+    effective_height: false; global_framework: string; onset_exponent_improved: false;
+    peer_reviewed: false; ratio_theorem: string; rh_solved: false;
+    short_interval_pair_and_rank_six_inputs: string;
+  };
+  execution: {
+    declaration_commit: string; amendment_commit: string; device: string; elapsed_seconds: number;
+    git: { head: string; tracked_clean_at_start: boolean };
+  } & Record<string, unknown>;
+  constants: { d_dagger: RiemannInterval; d_wang: RiemannInterval } & Record<string, unknown>;
+  ratio_theorem: { equality_cases: string[]; proof_type: string } & Record<string, unknown>;
+  global: {
+    H: RiemannExact; simple_proportion: RiemannInterval;
+    distinct_proportion: RiemannInterval; gain: RiemannInterval;
+  } & Record<string, unknown>;
+  wang_reproduction: { simple_proportion: RiemannInterval; gain: RiemannInterval } & Record<string, unknown>;
+  short_interval: {
+    theta: RiemannExact; cell_length: number; certified_gain: RiemannInterval;
+  } & Record<string, unknown>;
+};
+export type RiemannWangKernelReview = {
+  schema: 'riemann-exp009-proof-review-v1';
+  scientific_verdict: 'confirmed-relative-to-wang-v1-framework';
+  declaration_commit: string; amendment_commit: string;
+  canonical_execution_commit: string; canonical_artifact_commit: string;
+  reviewed_utc: string; confirmed_conclusion: string; critical_limitation: string;
+  short_interval_companion: string; manuscript_decision: string; review_scope: string;
+  imported_inputs: string[]; unquantified: string[];
+  source_sha256: Record<'hypothesis' | 'amendment' | 'mathematical_proof' | 'runner' |
+    'focused_test' | 'result' | 'execution_receipt' | 'adversarial_audit', string>;
+};
 export type RiemannData = {
-  schema: 'riemann-replay-v7';
+  schema: 'riemann-replay-v8';
   reviewed_on: string;
   result: {
     theta: string; radius: string; delta: string;
@@ -282,6 +316,8 @@ export type RiemannData = {
   spectral_review: RiemannSpectralReview;
   rank_six_result: RiemannRankSixResult;
   rank_six_review: RiemannRankSixReview;
+  wang_kernel_result: RiemannWangKernelResult;
+  wang_kernel_review: RiemannWangKernelReview;
   provenance: {
     role: string; source_exp: string; path: string; source_commit: string;
     bytes: number; sha256: string;

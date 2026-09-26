@@ -19,3 +19,9 @@ adds Dubon arXiv:2609.17875v1, Najnudel--Nikeghbali arXiv:2609.15862v1,
 the current Axiom PR state, and the live teal-sea head. It identifies the
 parameterized spectral defect as prior art and declares only its new coupling
 to the EXP-006 parity product for testing in EXP-007.
+
+The [2026-09-24 Wang update](2026-09-24-wang-global-refinement.md) adds
+arXiv:2609.24167v1, the first stated post-Montgomery--Taylor global proportion
+improvement. It records the overlap with EXP-007, archives the PDF and TeX
+source, and freezes EXP-009's sharper three-point kernel target before
+computation.

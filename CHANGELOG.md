@@ -3,6 +3,26 @@
 All notable changes to this repository. Format: `X.XX.XXX` (display), see `researchlab.__version__`.
 Tag every release. Pre-1.0 while the first problem is not `published`.
 
+## [0.73.000] - 2026-09-24
+
+### Added
+- Riemann EXP-009 proves that Wang's auxiliary three-point kernel ratio has
+  sharp supremum `sqrt(2)`, attained exactly at `(0,1)` and `(1,0)`.
+- Substitution into Wang's pinned arXiv:2609.24167v1 framework gives the
+  certified global lower proportions `0.6725007995946757558...` for simple
+  critical zeros and `0.8362503997973378779...` for distinct zeros.
+- Replay schema v8 binds the declaration, strengthened target, exact result,
+  execution receipt, focused tests, proof, adversarial audit and proof review.
+- The separate seven-page preprint is published at DOI
+  `10.5281/zenodo.22940291`; its reviewed PDF and fresh public download have
+  SHA-256 `a60e2c21ebe3237d867ca94b682f86bb24a9cec868393e7d6a9e6eb31b510d82`.
+
+### Boundaries
+- The elementary sharp ratio theorem is proved in the repository. Its global
+  zeta transfer depends on Wang's recent unreviewed v1 framework. The result is
+  asymptotic, gives no effective height, and does not prove RH or universal
+  simplicity.
+
 ## [0.72.000] - 2026-09-20
 
 ### Added
