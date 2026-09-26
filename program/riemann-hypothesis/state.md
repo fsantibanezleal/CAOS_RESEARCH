@@ -3,8 +3,10 @@
 Updated: 2026-09-26. Latest completed public application release:
 **0.73.000**, live-verified from main commit
 `e6f905f8509adbb9be7e9470b88b5071a4a08d9e`. EXP-010 is confirmed on its work
-branch after two referee passes; its manuscript `short-interval-levinson` v0.01 is built and awaits
-the vault deposit, and the public workbench does not yet show it.
+branch after two referee passes, merged to `develop` and promoted to `main`; its
+manuscript `short-interval-levinson` v0.01 is published at
+[10.5281/zenodo.22984155](https://doi.org/10.5281/zenodo.22984155). The public
+workbench does not yet show it.
 
 The Riemann hypothesis remains open.
 

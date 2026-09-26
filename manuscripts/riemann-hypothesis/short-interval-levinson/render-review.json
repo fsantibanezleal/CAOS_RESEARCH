@@ -1,11 +1,22 @@
 {
   "schema": "caos-manuscript-render-review-v1",
-  "reviewed_utc": "2026-09-26T23:20:00Z",
+  "reviewed_utc": "2026-09-26T23:34:00Z",
   "pdf": "main.pdf",
-  "pdf_sha256": "5112c4ccb7fbcae5ce5b27d35340fef0f75d716aa67571c169a614afbfde194b",
+  "pdf_sha256": "4fd71686d6dada90c41a2156f5cbecb428d4f1acd372028020896113b1033d67",
   "pages": 10,
-  "render_dpi": 70,
-  "pages_reviewed": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "render_dpi": 90,
+  "pages_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
   "checks": {
     "title_and_author_legible": true,
     "doi_header_legible": true,
@@ -25,8 +36,8 @@
     "underfull_boxes": 0,
     "undefined_references": 0,
     "manuscript_voice": "clean",
-    "doi_placeholders": 2
+    "doi_placeholders": 0
   },
-  "disposition": "pass-pre-deposit",
-  "notes": "All ten pre-deposit pages were rendered and inspected. The two DOI lines of the header block read 'assigned at deposit'; the deposit build must replace them and be rendered again."
+  "disposition": "pass",
+  "notes": "All ten pages were rendered and inspected before deposit; the deposit build differs from that build only in the two DOI lines of the page-1 header, which were rendered and inspected again."
 }

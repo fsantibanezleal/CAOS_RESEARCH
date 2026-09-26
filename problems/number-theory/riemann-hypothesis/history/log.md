@@ -1,5 +1,18 @@
 # Riemann hypothesis history
 
+## 2026-09-26: Levinson manuscript v0.01 published and EXP-010 promoted
+
+EXP-010 merged to `develop` through PR #341 and was promoted to `main` through
+PR #342. The ten-page manuscript *Levinson's method in short intervals and
+simple zeros of the zeta function* is published at
+[10.5281/zenodo.22984155](https://doi.org/10.5281/zenodo.22984155) (concept
+[10.5281/zenodo.22984154](https://doi.org/10.5281/zenodo.22984154)). The DOI was
+reserved first and printed in the header; the deposit build differs from the
+reviewed build only in those two lines. A fresh unauthenticated download
+matches all 387,975 bytes, SHA-256
+`4fd71686d6dada90c41a2156f5cbecb428d4f1acd372028020896113b1033d67`.
+Publication is not external peer review.
+
 ## 2026-09-26: EXP-010 moved the simple-critical onset to 0.534
 
 Declaration `2f7aaa6b` froze the question, eight degree-201 detector
