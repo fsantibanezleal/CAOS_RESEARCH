@@ -1,0 +1,21 @@
+{
+  "release_ready": false,
+  "publication_performed": false,
+  "date": "2026-09-26",
+  "version": "0.01",
+  "pages": 10,
+  "rendered_pages_reviewed": 10,
+  "warnings": 0,
+  "overfull": 0,
+  "underfull": 0,
+  "undefined_references": 0,
+  "bytes": 387707,
+  "md5": "34093716d4fed6242c3e2845059ae71c",
+  "sha256": "5112c4ccb7fbcae5ce5b27d35340fef0f75d716aa67571c169a614afbfde194b",
+  "tex_sha256": "08fded630815fbf70ff3c9fd0459b45022c40589c196f15116ffdac66b83e052",
+  "metadata_sha256": "ce41e61f3187c4038a1c9b2e30bfefaf8e289d4e7aaca4f148371fce4992f757",
+  "render_review_sha256": "920f890c1c4dec641897b1d83988e5f039d44243f3e1e1abd5d3332b2ed900c8",
+  "proof_review": "EXP-010 confirmed proof review with two independent referee passes; internal review, not external peer review",
+  "blocking": "DOI reservation, deposit build with the printed DOI, rendered review of that build, and publication receipt through the vault tooling",
+  "scope": "Publish the v0.01 preprint containing the short-window Levinson-Conrey moment for general Q, the distinct sign-change count, the certified degree-201 detector constants, and the parity-transfer onset 0.534. Sole human authorship; CC BY 4.0; not peer reviewed; no RH claim."
+}

@@ -440,3 +440,28 @@ The canonical result SHA-256 is
 The proof review binds the declaration, strengthened amendment, runner,
 focused tests, result, execution receipt, proof and audit. A separate
 seven-page preprint is published at DOI `10.5281/zenodo.22940291`.
+
+## EXP-010: localized Levinson detector
+
+The [tenth verdict](../experiments/EXP-010-levinson-parity-transfer/verdict.md)
+records three results. Young's short proof of the mollified second moment runs
+on the window `(T,T+T^theta]` for mollifier exponents `nu<theta-1/2`; the
+localized Levinson method with any `Q` satisfying `Q(x)+Q(1-x)` constant
+counts distinct sign changes of `Z` with density `kappa=1-log(c)/R`; and
+degree-201 detectors certify `kappa>0.7170 nu`. The EXP-006 product then gives
+a positive proportion of simple critical zeros for every fixed `theta` in
+`[0.534,1)`, with `h>0.0177638` at `theta=0.5459`.
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/run.py --output-dir tmp/riemann-exp010-replay
+python problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/audit.py --canonical tmp/riemann-exp010-replay/result.json --output-dir tmp/riemann-exp010-audit
+python problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/controls.py --output-dir tmp/riemann-exp010-controls
+python -m pytest -q tests/test_riemann_levinson_parity.py
+```
+
+The canonical result SHA-256 is
+`74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464`. The
+auditor never forms the exact moment reduction; it integrates the original
+integrand by validated quadrature from the Chebyshev generators. The controls
+check the counting lemma on zeta windows at three heights and on test
+functions with planted double and triple zeros.

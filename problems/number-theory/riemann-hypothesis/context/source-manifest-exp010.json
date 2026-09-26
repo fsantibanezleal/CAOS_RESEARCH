@@ -1,0 +1,55 @@
+{
+ "schema": "riemann-source-manifest-extension-v1",
+ "reviewed_on": "2026-09-26",
+ "documents": [
+  {
+   "filename": "young-1002.4403v1.pdf",
+   "source_url": "https://arxiv.org/pdf/1002.4403v1",
+   "bytes": 142679,
+   "sha256": "be6d2be2b51ff77a3730fd88d16356f98fc14180de85651232cd7aceee50a4a7",
+   "note": "Young, A short proof of Levinson's theorem. Lemmas 1-6 are the template for the EXP-010 short-interval moment (Prediction A).",
+   "retrieved_on": "2026-09-26",
+   "license": {
+    "status": "arXiv perpetual non-exclusive license",
+    "redistribution_basis": "local research archive; source not relicensed; public manifest links original"
+   },
+   "version": "arXiv:1002.4403v1 (Arch. Math. 95 (2010) 539-548)",
+   "cache_path": "source-cache/young-1002.4403v1.pdf",
+   "tracked_fulltext": false,
+   "review_dossier": "2026-09-26-levinson-localization-preflight.md"
+  },
+  {
+   "filename": "cfkl-2508.11108v1.pdf",
+   "source_url": "https://arxiv.org/pdf/2508.11108v1",
+   "bytes": 3641829,
+   "sha256": "8a6f1d62af8d64dcca09ddc2a319f1d1d3aa0bc88e72e4db262a1d7dec43c38c",
+   "note": "Conrey-Farmer-Kwan-Lin-Turnage-Butterbaugh, Short mollifiers of the Riemann zeta-function. Source of the high-degree Q family and eqs. (3)-(18); critical zeros only, no simplicity claim for high degree.",
+   "retrieved_on": "2026-09-26",
+   "license": {
+    "status": "arXiv perpetual non-exclusive license",
+    "redistribution_basis": "local research archive; source not relicensed; public manifest links original"
+   },
+   "version": "arXiv:2508.11108v1",
+   "cache_path": "source-cache/cfkl-2508.11108v1.pdf",
+   "tracked_fulltext": false,
+   "review_dossier": "2026-09-26-levinson-localization-preflight.md"
+  },
+  {
+   "filename": "bcy-1002.4127v1.pdf",
+   "source_url": "https://arxiv.org/pdf/1002.4127v1",
+   "bytes": 303570,
+   "sha256": "9c2d37ca72d0588bdec8962254d3d0a72f457d625deeb3e5fcfa2ce26e7f7b85",
+   "note": "Bui-Conrey-Young. Independent quotation of Conrey's Theorem 2 constant (eq. 3.2) and the Q(0)=1, Q(x)+Q(1-x)=constant convention.",
+   "retrieved_on": "2026-09-26",
+   "license": {
+    "status": "arXiv perpetual non-exclusive license",
+    "redistribution_basis": "local research archive; source not relicensed; public manifest links original"
+   },
+   "version": "arXiv:1002.4127v1 (Acta Arith. 150 (2011) 35-64)",
+   "cache_path": "source-cache/bcy-1002.4127v1.pdf",
+   "tracked_fulltext": false,
+   "review_dossier": "2026-09-26-levinson-localization-preflight.md"
+  }
+ ],
+ "repositories": []
+}

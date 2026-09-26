@@ -275,6 +275,29 @@ apparently new short-interval consequence from inherited global methods.
     independently proves the sharp replacement for the auxiliary three-point
     ratio. The source is a recent unreviewed v1.
 
+29. **Matthew P. Young.** *A short proof of Levinson's theorem.* Arch. Math.
+    95 (2010), 539-548; [arXiv:1002.4403v1](https://arxiv.org/abs/1002.4403v1).
+    EXP-010 reruns its Lemmas 4-7 with a weight on `(T,T+T^theta]`; the
+    rendered numbering and the `(1+x/t)^(-A)` reading of its (4.3) are
+    recorded in the EXP-010 audit. Pinned in
+    [`source-manifest-exp010.json`](context/source-manifest-exp010.json).
+
+30. **J. Brian Conrey.** *More than two fifths of the zeros of the Riemann
+    zeta function are on the critical line.* J. Reine Angew. Math. 399 (1989),
+    1-26. Theorem 2 supplies the constant `c(P,Q,R,theta)`; eqs. (32) and
+    (40)-(43) the counting conventions. The scan is retained locally only; its
+    SHA-256 is in the EXP-010 preflight dossier.
+
+31. **Conrey, Farmer, Kwan, Lin and Turnage-Butterbaugh.** *Short mollifiers
+    of the Riemann zeta-function.* [arXiv:2508.11108v1](https://arxiv.org/abs/2508.11108v1).
+    Motivation for high-degree `Q` at short mollifiers; no theorem of it is an
+    EXP-010 premise. Two table and sign errata are noted in the preflight.
+
+32. **H. M. Bui, J. B. Conrey and M. P. Young.** *More than 41% of the zeros
+    of the zeta function are on the critical line.*
+    [arXiv:1002.4127v1](https://arxiv.org/abs/1002.4127v1). Cross-check of the
+    constant and of the degree-one restriction for simple zeros.
+
 The [EXP-001 verdict](experiments/EXP-001-source-and-constant-audit/verdict.md)
 is the authority for exact formula reproduction, source-integrity checks,
 and the normalization correction. The

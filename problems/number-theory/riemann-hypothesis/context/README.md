@@ -9,6 +9,7 @@ reported honestly in the dossiers and was concentrated on theorem dependencies a
 |---|---|
 | [Source manifest](source-manifest.json) | Original URLs, versions, licenses, exact byte counts and SHA-256 |
 | [EXP-007 source manifest extension](source-manifest-exp007.json) | Additive post-release source records without changing the manifest pinned by earlier experiments |
+| [EXP-010 source manifest extension](source-manifest-exp010.json) | Additive records for Young, CFKL and Bui-Conrey-Young, the arXiv sources of the localized Levinson detector |
 | [Original and successor review](2026-09-12-original-and-successor-review.md) | Historical record, original argument, later candidates and objections |
 | [Lamzouri analysis](2026-09-12-lamzouri-analysis.md) | Finite Hilbert framework, constants and prior-art barriers |
 | [Formalization audit](2026-09-12-formalization-audit.md) | Pinned Lean sources, explicit assumptions and current CI coverage |
@@ -22,6 +23,7 @@ reported honestly in the dossiers and was concentrated on theorem dependencies a
 | [Hilbert dimension and parity compression](2026-09-20-hilbert-parity-compression.md) | EXP-006 preflight for retaining Lamzouri's first-subspace dimension in the odd-multiplicity transfer |
 | [Rank-six local transfer](2026-09-20-rank-six-local-transfer.md) | EXP-008 source boundary, fixed-rank localization, onset comparison, and interdisciplinary next routes |
 | [Interdisciplinary update and defect-parity seam](2026-09-20-interdisciplinary-update-and-defect-parity.md) | Post-cutoff sources, cross-area route evaluation, and the EXP-007 spectral-defect parity preflight |
+| [Localized Levinson-Conrey preflight](2026-09-26-levinson-localization-preflight.md) | EXP-010 sources and gates: short-interval shifted moment, distinct sign-change counting, certified detector constants, route decision |
 
 Full text whose public redistribution permission was not identified is retained locally in
 `source-cache/`. The public record contains provenance and independently authored analysis.

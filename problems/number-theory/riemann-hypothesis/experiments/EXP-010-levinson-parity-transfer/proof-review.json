@@ -1,0 +1,67 @@
+{
+  "schema": "riemann-exp010-proof-review-v1",
+  "reviewed_utc": "2026-09-26T23:25:00Z",
+  "scientific_verdict": "confirmed-with-scope-correction-to-prediction-A",
+  "declaration_commit": "2f7aaa6b",
+  "baseline_commit": "7a0711adb7e0f93b3a9429f6304f74f8951f8d69",
+  "canonical_execution_commit": "3dba086fed900d5a828bb78182fc68541b641d8a",
+  "controls_execution_commit": "770003367350b04be70e672d076ba0e5d3d99ecf",
+  "confirmed_conclusion": "For 1/2<theta<1 and nu<theta-1/2 the Levinson-mollified second moment on (T,T+T^theta] equals Conrey's constant times w-hat(0) up to O(H/L) when Q(0)=1; for Q with Q(x)+Q(1-x) a nonzero constant the localized method counts distinct sign changes of Z with density kappa=1-log(c)/R; certified degree-201 detectors give kappa>0.7170 nu; through the EXP-006 product every fixed theta in [0.534,1) has a positive proportion of simple critical zeros, with h(0.5459)>0.0177638490.",
+  "scope_correction": "Prediction A as declared extends the constant 1+(1/nu)int int(...)^2 to arbitrary real Q; the correct constant is Q(0)^2+(1/nu)int int(...)^2. Every polynomial used has Q(0)=1.",
+  "declaration_citation_corrections": [
+    "Young 'Lemmas 1-6' should read Theorem 2 and Lemmas 3-7 of the rendered arXiv v1",
+    "The weight-one counting precedent is Conrey 1989 eq. (32) with (40)-(41), not Conrey-Iwaniec-Soundararajan (A.16)-(A.18), which pass on-line zeros from the east"
+  ],
+  "imported_inputs": [
+    "Young arXiv:1002.4403v1 Lemmas 4-7, Sections 3, 5-7 (rerun with a window weight)",
+    "Conrey 1989 Theorem 2 constant and counting conventions",
+    "Wang arXiv:2609.07918v1 fixed-test short-interval pair theorem (Theorem D only)",
+    "Confirmed EXP-006 Hilbert-parity product (Theorem D only)",
+    "Classical Littlewood lemma, Backlund-Jensen, Riemann-von Mangoldt, Stirling"
+  ],
+  "referee_passes": [
+    {
+      "scope": "Theorem A",
+      "verdict": "sound with fixes",
+      "fatal": 0,
+      "major_mathematical": 0,
+      "major_declaration": 1,
+      "minor": 5,
+      "all_fixes_applied": true
+    },
+    {
+      "scope": "Theorems B and D",
+      "verdict": "sound with fixes",
+      "fatal": 0,
+      "major_mathematical": 0,
+      "minor": 6,
+      "optional": 1,
+      "all_fixes_applied": true
+    }
+  ],
+  "critical_limitation": "Theorem D depends on Wang's recent unreviewed short-interval pair theorem; all statements are asymptotic with astronomically large implied constants for the frozen detectors.",
+  "review_scope": "Internal source and proof audit, two independent referee passes with their own numerical checks, exact admissibility, Arb constants with relative radius below 1e-30, independent validated-quadrature and mpmath.iv replay, counting-lemma controls on zeta windows and planted multiple-zero toys; not external peer review.",
+  "manuscript_decision": "New manuscript short-interval-levinson v0.01; deposit through the vault tooling.",
+  "source_sha256": {
+    "hypothesis": "4d4a6051f155c99d296cfa43fed972c844c01cede93bef25b61fcfe6147514de",
+    "frozen_parameters": "602ab84cb40c4ebc786d33fba1c0976e5fa8f9b4c072e20a65d09a2a24fa2e4d",
+    "mathematical_proof": "d7fed000d944c4a57d83c9505e229ee3453829bb4632e6d1c01df2339502323e",
+    "runner": "b6ee96ce409150f56f9c34757354e1addb417d2fc1be7c7e281a2c97ee1a27df",
+    "auditor": "e6c73074f29e45c417fb0185584969ae0ef74c1c83c33c8c18c79f3e3b990f06",
+    "controls": "e2448c4b29aeade6faac6728382e560d36692ea3c935f72f63afea017e3a44b2",
+    "focused_test": "6286030676c31bd876a25faac1a83ae59ce1efd4cce38baf4a5888015f82110a",
+    "result": "74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464",
+    "execution_receipt": "e0270d54d2003636648b0bd2981a5985fc941f3a36dc2b6ab10f2f26a632666e",
+    "audit_output": "b3a5fa0ae2ea54bcd1c4f323acfae3c81c87202780018ea8c29e798c674a4df1",
+    "controls_output": "6ecab20fcd1c90632d2d4c20c9fe41ae51e40e05eee0e1540c82e9934aea375c",
+    "adversarial_audit": "60e18e4aed52de051322c43f2594202ad42d2b02b1b2fc34b422274e1c0e6ef8",
+    "verdict": "2b46382257b80e135cac287421e58995060815a112153d669750dff14ee03562",
+    "source_manifest": "c55194b34987210fc1cd780257590c031dd4372ae99ce4a61c82bd221e5131fe"
+  },
+  "unquantified": [
+    "effective starting height",
+    "absolute novelty priority",
+    "external peer acceptance",
+    "optimality of the slope 0.7173 for the mollifier shape"
+  ]
+}
