@@ -1,8 +1,8 @@
 {
  "artifact": {
-  "bytes": 44059731,
+  "bytes": 44060070,
   "path": "research/riemann.json",
-  "sha256": "002b58a8727319e71a7fd3bbd459b4ce636ad9bc9e98d24d33ab9781af6d8537"
+  "sha256": "c0ad0b3a11317bbead431c80a522552008665cdfed9e0c353f1dc1cde1445b0b"
  },
  "case_id": "riemann",
  "gate": {
@@ -57,6 +57,14 @@
    "role": "source_manifest",
    "sha256": "5e436bc857e24fc868aa2e3f334a6fdd658756f6ae3de459b55b417f82d8aa18",
    "source_commit": "d077c97faaff5269d993183e2cab0bf7e43039c5",
+   "source_exp": "source-review"
+  },
+  {
+   "bytes": 1229,
+   "path": "problems/number-theory/riemann-hypothesis/context/source-manifest-exp009.json",
+   "role": "wang_kernel_source_manifest",
+   "sha256": "36d9c99db37c22adff41533a569275bd534751707d5c4a6bc48aa926e48793b9",
+   "source_commit": "123eee0d49969226201e68d6c32746087a91e6fc",
    "source_exp": "source-review"
   },
   {
