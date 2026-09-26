@@ -144,7 +144,7 @@ def _read_experiments() -> list[dict]:
                 rec["artifacts"] = sorted(
                     [{"name": p[len(art_prefix):], "bytes": len(_committed_bytes(p))}
                      for p in source_paths
-                     if p.startswith(art_prefix) and "/" not in p[len(art_prefix):]],
+                     if p.startswith(art_prefix)],
                     key=lambda r: r["name"])
             elif arts.is_dir():
                 rec["artifacts"] = sorted(
