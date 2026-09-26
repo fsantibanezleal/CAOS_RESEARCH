@@ -5,8 +5,8 @@
 Read [state.md](state.md), [backlog.md](backlog.md), and the EXP-009 verdict.
 EXP-009 is confirmed, its seven-page preprint is public at
 [10.5281/zenodo.22940291](https://doi.org/10.5281/zenodo.22940291), replay v8
-is built, and release candidate 0.73.000 has passed local and rendered QA.
-General RH remains open.
+is deployed, and release 0.73.000 is live-verified from main commit
+`e6f905f8`. General RH remains open.
 
 EXP-009 proves `R(alpha,beta) <= sqrt(2)` for nonnegative inputs, with equality
 only at `(0,1)` and `(1,0)`. Under Wang's attributed global framework this
@@ -42,22 +42,21 @@ over the source baseline. The source framework is recent and unreviewed.
 
 ## 4. In flight
 
-1. The scoped candidate branch includes the EXP-009 evidence, published
-   manuscript receipt, replay v8, nine-record workbench, and release QA.
+1. The merged release includes the EXP-009 evidence, published manuscript
+   receipt, replay v8, nine-record workbench, and release QA.
 2. Python replay/bake passed 64 tests; the frontend passed 24 tests, TypeScript,
    and production build.
 3. Eight exact-candidate desktop/phone, EN/ES, light/dark scenarios passed with
    48 tab visits and 1,586 screenshots.
-4. Push, develop PR, main promotion, tag, CI/Pages, and live-byte verification
-   remain to be completed.
+4. PRs #337 and #338, exact-main CI, Pages, tag `v0.73.000`, eleven live byte
+   comparisons, and eight live browser scenarios passed.
 
 ## 5. Next actions
 
-1. Run the final repository guards and freeze the candidate commit.
-2. Promote the scoped public and private branches through their develop and
-   main gates.
-3. Tag `v0.73.000`, create the GitHub release, and verify exact-main CI, Pages,
-   public bytes, routes, and the live browser matrix.
+1. Pursue independent rank-six coefficient reconstruction or a source artifact
+   that permits exact `C6` replay (RH-021).
+2. Subject the attributed global Wang framework to independent external review
+   or reconstruction before strengthening any global claim.
 
 ## 6. Where everything lives
 

@@ -1,0 +1,214 @@
+{
+  "schema": "riemann-live-verification-v4",
+  "release": "0.73.000",
+  "verified_utc": "2026-09-26T20:20:17.410772Z",
+  "main_commit": "e6f905f8509adbb9be7e9470b88b5071a4a08d9e",
+  "tag": "v0.73.000",
+  "release_url": "https://github.com/fsantibanezleal/CAOS_RESEARCH/releases/tag/v0.73.000",
+  "research_pr": "https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/337",
+  "promotion_pr": "https://github.com/fsantibanezleal/CAOS_RESEARCH/pull/338",
+  "ci_run": {
+    "url": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/36268684854",
+    "status": "success",
+    "profile": "ADR-0074 trunk lint, artifact consistency and repository guards"
+  },
+  "pages_run": {
+    "url": "https://github.com/fsantibanezleal/CAOS_RESEARCH/actions/runs/36268684851",
+    "status": "success"
+  },
+  "base_url": "https://research.fasl-work.com/",
+  "route": {
+    "in_app_path": "/problems/riemann-hypothesis",
+    "status": 404,
+    "bytes": 360,
+    "sha256": "416ae20ffab5d6b5fe6fa932fa286106b1b5b731bf7b3052dadca6cd8e6792d2",
+    "final_url": "https://research.fasl-work.com/problems/riemann-hypothesis",
+    "behavior": "GitHub Pages returns its static 404 response for a direct deep link; pointer navigation from the 200 root reached and verified the client route"
+  },
+  "root": {
+    "path": "/",
+    "status": 200,
+    "bytes": 591,
+    "sha256": "2b4b63232e91473109aef1dd644e494e387824a2491a586ccd922aafd491c70e",
+    "local_path": "frontend/dist/index.html",
+    "local_sha256": "2b4b63232e91473109aef1dd644e494e387824a2491a586ccd922aafd491c70e",
+    "matches_local": true,
+    "final_url": "https://research.fasl-work.com/"
+  },
+  "assets": [
+    {
+      "path": "/assets/index-CftVb1pP.css",
+      "status": 200,
+      "bytes": 64941,
+      "sha256": "8c6d51e7dca5b59c12f7754bd5b316540ebe217d043d67bc4fe6e8e2247b3e78",
+      "local_path": "frontend/dist/assets/index-CftVb1pP.css",
+      "local_sha256": "8c6d51e7dca5b59c12f7754bd5b316540ebe217d043d67bc4fe6e8e2247b3e78",
+      "matches_local": true,
+      "final_url": "https://research.fasl-work.com/assets/index-CftVb1pP.css"
+    },
+    {
+      "path": "/assets/index-9Q9zc22D.js",
+      "status": 200,
+      "bytes": 791616,
+      "sha256": "e0a07bac785a65f42b314e61e5a7eac7fd03ceed92dcdb022574b5b10e100e9a",
+      "local_path": "frontend/dist/assets/index-9Q9zc22D.js",
+      "local_sha256": "e0a07bac785a65f42b314e61e5a7eac7fd03ceed92dcdb022574b5b10e100e9a",
+      "matches_local": true,
+      "final_url": "https://research.fasl-work.com/assets/index-9Q9zc22D.js"
+    },
+    {
+      "path": "/assets/ExperimentModal-B6jtldXf.js",
+      "status": 200,
+      "bytes": 176791,
+      "sha256": "080fbb9253f177d2af2e9351bb7bade1d72ada49ed1f0dea57f84ae29c82c639",
+      "local_path": "frontend/dist/assets/ExperimentModal-B6jtldXf.js",
+      "local_sha256": "080fbb9253f177d2af2e9351bb7bade1d72ada49ed1f0dea57f84ae29c82c639",
+      "matches_local": true,
+      "final_url": "https://research.fasl-work.com/assets/ExperimentModal-B6jtldXf.js"
+    }
+  ],
+  "data": [
+    {
+      "path": "/data/research/experiments.json",
+      "status": 200,
+      "bytes": 2174214,
+      "sha256": "c411458673e631a91cc210da1212c1e19f58c16a378d6e5e5fbcdabb3c3edb29",
+      "local_path": "data/derived/research/experiments.json",
+      "local_sha256": "c411458673e631a91cc210da1212c1e19f58c16a378d6e5e5fbcdabb3c3edb29",
+      "matches_local": true,
+      "final_url": "https://research.fasl-work.com/data/research/experiments.json"
+    },
+    {
+      "path": "/data/research/jacobian.json",
+      "status": 200,
+      "bytes": 3831,
+      "sha256": "1c719c90e7796e4585e26f79f6cd0c700cc902659270b323870a62afd7a21023",
+      "local_path": "data/derived/research/jacobian.json",
+      "local_sha256": "1c719c90e7796e4585e26f79f6cd0c700cc902659270b323870a62afd7a21023",
+      "matches_local": true,
+      "final_url": "https://research.fasl-work.com/data/research/jacobian.json"
+    },
+    {
+      "path": "/data/research/portfolio.json",
+      "status": 200,
+      "bytes": 3782,
+      "sha256": "6fdc0a23d814dd9f7d665123a42dec1acc9c25b84ef887cf3eb38c5478abc7bc",
+      "local_path": "data/derived/research/portfolio.json",
+      "local_sha256": "6fdc0a23d814dd9f7d665123a42dec1acc9c25b84ef887cf3eb38c5478abc7bc",
+      "matches_local": true,
+      "final_url": "https://research.fasl-work.com/data/research/portfolio.json"
+    },
+    {
+      "path": "/data/research/riemann.json",
+      "status": 200,
+      "bytes": 44060070,
+      "sha256": "28787e940fccf8f2613546bcd08354c839a62acd782efaea658a1ecb57773ad1",
+      "local_path": "data/derived/research/riemann.json",
+      "local_sha256": "28787e940fccf8f2613546bcd08354c839a62acd782efaea658a1ecb57773ad1",
+      "matches_local": true,
+      "final_url": "https://research.fasl-work.com/data/research/riemann.json"
+    },
+    {
+      "path": "/data/manifests/index.json",
+      "status": 200,
+      "bytes": 385,
+      "sha256": "c7876e573a0f4f0cd662351aed089fe3fd685b55f660881f5dfb85480ce7f337",
+      "local_path": "data/derived/manifests/index.json",
+      "local_sha256": "c7876e573a0f4f0cd662351aed089fe3fd685b55f660881f5dfb85480ce7f337",
+      "matches_local": true,
+      "final_url": "https://research.fasl-work.com/data/manifests/index.json"
+    },
+    {
+      "path": "/data/manifests/experiments.json",
+      "status": 200,
+      "bytes": 305,
+      "sha256": "56057c80b6afb18f7ff970243b62f9ae27b3022aad686fc977b5b4a1b1b14b70",
+      "local_path": "data/derived/manifests/experiments.json",
+      "local_sha256": "56057c80b6afb18f7ff970243b62f9ae27b3022aad686fc977b5b4a1b1b14b70",
+      "matches_local": true,
+      "final_url": "https://research.fasl-work.com/data/manifests/experiments.json"
+    },
+    {
+      "path": "/data/manifests/riemann.json",
+      "status": 200,
+      "bytes": 29370,
+      "sha256": "8b00393a17ce420bf5f88207d4bf1ca255b2a47899821c3f5937df90853f610c",
+      "local_path": "data/derived/manifests/riemann.json",
+      "local_sha256": "8b00393a17ce420bf5f88207d4bf1ca255b2a47899821c3f5937df90853f610c",
+      "matches_local": true,
+      "final_url": "https://research.fasl-work.com/data/manifests/riemann.json"
+    }
+  ],
+  "all_public_bytes_match_exact_main_build": true,
+  "riemann_payload": {
+    "schema": "riemann-replay-v8",
+    "reviewed_on": "2026-09-24",
+    "wang_kernel_result_schema": "riemann-exp009-results-v1",
+    "wang_kernel_result_status": "pass",
+    "wang_kernel_canonical_sha256": "0cea78e847d1bcec62eb8cd809b704ceaebd58f78f1c405f13ec40838fbb5a66",
+    "ratio_proof_type": "exact symbolic reduction",
+    "ratio_equality_cases": [
+      [
+        "alpha=0",
+        "beta=1"
+      ],
+      [
+        "alpha=1",
+        "beta=0"
+      ]
+    ],
+    "d_dagger_lower": "0.28316543080853732700529814807813297344840057863661225551445110715252419370924404547405782617064075166962280425",
+    "simple_proportion_lower": "0.67250079959467575582835505629639478651766935951506284604778243354773012309973719571168623691492321791085697159",
+    "distinct_proportion_lower": "0.83625039979733787791417752814819739325883467975753142302389121677386506154986859785584311845746160895542848580",
+    "global_gain_lower": "9.5915264110093975265493099597924266330888798767118193563675068155996070532152157471617476825693018201802692661e-8",
+    "short_interval_gain_lower": "3.0867809983334187513243842019741942166656371953537592822807791829848294963671233377339575104166190583626047512e-31",
+    "claim_boundary": {
+      "effective_height": false,
+      "global_framework": "attributed to Wang arXiv:2609.24167v1",
+      "onset_exponent_improved": false,
+      "peer_reviewed": false,
+      "ratio_theorem": "proved exactly in mathematical-proof.md",
+      "rh_solved": false,
+      "short_interval_pair_and_rank_six_inputs": "attributed and source-pinned"
+    }
+  },
+  "browser_receipt": {
+    "local_only_path": "tmp/riemann-live-v073/receipt.json",
+    "sha256": "bcb355292ae426c98512ed4b3d332a05041f54a1a4a9d69437153d45d724de1a",
+    "bytes": 8638046,
+    "scenarios": 8,
+    "tabs_visited": 48,
+    "screenshots": 368,
+    "failed_checks": 0,
+    "console_errors": 0,
+    "console_warnings": 0,
+    "page_errors": 0,
+    "request_failures": 0,
+    "http_errors": 0,
+    "fatal_error": null,
+    "languages": [
+      "en",
+      "es"
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ]
+  },
+  "manuscript": {
+    "doi": "10.5281/zenodo.22940291",
+    "sha256": "a60e2c21ebe3237d867ca94b682f86bb24a9cec868393e7d6a9e6eb31b510d82",
+    "bytes": 323565,
+    "pages": 7
+  },
+  "limitations": [
+    "The direct static deep link returns the Pages 404 response; the passing browser run confirms pointer navigation and client routing from the 200 root.",
+    "The compact receipt retains hashes and counts; the full screenshot and DOM receipt remains local because it is large.",
+    "The global transfer is attributed to Wang arXiv:2609.24167v1; the short-interval pair and rank-six inputs are also attributed.",
+    "Deployment verification is not external peer review and does not prove the Riemann hypothesis."
+  ]
+}

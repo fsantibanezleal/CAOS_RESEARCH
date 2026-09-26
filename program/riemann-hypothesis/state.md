@@ -1,10 +1,9 @@
 # Riemann hypothesis state
 
 Updated: 2026-09-26. Latest completed public application release:
-**0.72.000**, live-verified from main commit
-`45c34c810ffb20a03afbb32fccd63c3e7abd82f5`. Current release candidate:
-**0.73.000**, with EXP-009 confirmed, manuscript v0.01 published, replay v8
-built, and exact-candidate browser QA passed.
+**0.73.000**, live-verified from main commit
+`e6f905f8509adbb9be7e9470b88b5071a4a08d9e`. EXP-009 is confirmed,
+manuscript v0.01 is published, and replay v8 is deployed and live-verified.
 
 The Riemann hypothesis remains open.
 
@@ -61,12 +60,13 @@ The sharp-kernel preprint is published at
 seven-page repository PDF matches a fresh unauthenticated public download byte
 for byte. Publication is not peer acceptance.
 
-Release candidate 0.73.000 exposes all nine experiments in the bilingual
+Release 0.73.000 exposes all nine experiments in the bilingual
 workbench. The scoped Python suite passed 64 tests and the frontend passed 24
 tests plus TypeScript and production build. The exact-candidate browser matrix
 passed eight desktop/phone EN/ES light/dark scenarios, 48 research-tab visits,
-and 1,586 screenshots with no failures. Remote PR, exact-main CI, Pages, tag,
-and live verification remain to be completed.
+and 1,586 screenshots with no failures. PRs #337 and #338 are merged; exact-main
+CI, Pages, eleven public byte comparisons, and eight live browser scenarios
+also passed. Tag `v0.73.000` points to the verified main commit.
 
 The result is asymptotic, has no effective starting height, and does not prove
 RH or universal simplicity. Imported 2026 preprints remain attributed. No
