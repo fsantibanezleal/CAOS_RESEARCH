@@ -1,0 +1,13 @@
+{
+ "accepted": true,
+ "budget_seconds": 900.0,
+ "elapsed_seconds": 1.63,
+ "experiment": "EXP-010",
+ "git": {
+  "head": "3dba086fed900d5a828bb78182fc68541b641d8a",
+  "tracked_tree_clean": true
+ },
+ "python": "3.11.15",
+ "python_flint": "0.9.0",
+ "result_sha256": "74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464"
+}

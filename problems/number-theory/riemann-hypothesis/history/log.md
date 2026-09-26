@@ -1,5 +1,34 @@
 # Riemann hypothesis history
 
+## 2026-09-26: EXP-010 moved the simple-critical onset to 0.534
+
+Declaration `2f7aaa6b` froze the question, eight degree-201 detector
+parameter sets and all thresholds before any runner existed. EXP-010 proves
+that Levinson's method with Conrey's general operator polynomial localizes to
+`(T,T+T^theta]` for mollifier exponents `nu<theta-1/2` (Young's short proof
+with a window weight), and that on such windows it counts distinct sign
+changes of `Z` with density `kappa=1-log(c)/R` for every `Q` with
+`Q(x)+Q(1-x)` constant. Certified constants give `kappa>0.7170 nu`, five times
+the Selberg slope. Through the EXP-006 product this gives a positive
+proportion of simple critical zeros for every fixed `theta` in `[0.534,1)`,
+against `0.5458838` for EXP-008; at `theta=0.5459` the bound exceeds
+`0.0177638`, about 1000 times the EXP-008 value. The canonical run
+(`3dba086f`), the independent quadrature audit and the counting-lemma controls
+(`77000336`) all passed. Writing the proof exposed and fixed two gaps of the
+first draft (the off-diagonal tail and the reflected factor) and wrong lemma
+numbers for Young's paper. Two independent referee passes found no fatal or
+major error; their minor fixes are applied, and Prediction A's extension to
+arbitrary `Q` was corrected (the constant term is `Q(0)^2`).
+
+## 2026-09-24: EXP-009 confirmed and release 0.73.000 live-verified
+
+EXP-009 proved the sharp three-point ratio `R(alpha,beta)<=sqrt(2)` and, under
+Wang's arXiv:2609.24167v1 framework, the global simple-critical proportion
+`0.6725007995946757558...`. The seven-page preprint is public at
+[10.5281/zenodo.22940291](https://doi.org/10.5281/zenodo.22940291). Release
+0.73.000 is live-verified from main; the details are in
+[state.md](../../../../program/riemann-hypothesis/state.md).
+
 ## 2026-09-24: release 0.72.000 live-verified
 
 Release PR #330 and promotion PR #331 merged. Tag `v0.72.000` points exactly to

@@ -203,6 +203,29 @@ interval overlap. The ratio theorem is proved in the repository. The global
 zeta conclusion retains Wang arXiv:2609.24167v1 as an attributed analytic
 input and supplies neither an effective height nor a proof of RH.
 
+## Reproduce the localized Levinson detector
+
+EXP-010 certifies the degree-201 Levinson-Conrey detector constants, the
+published Young and Conrey anchors, and the parity onset. The auditor replays
+every constant by validated quadrature from the Chebyshev generators, and the
+controls check the counting lemma on zeta windows and on test functions with
+planted double and triple zeros:
+
+```text
+python problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/run.py --output-dir tmp/riemann-exp010-replay
+python problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/audit.py --canonical tmp/riemann-exp010-replay/result.json --output-dir tmp/riemann-exp010-audit
+python problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer/controls.py --output-dir tmp/riemann-exp010-controls
+python -m pytest -q tests/test_riemann_levinson_parity.py
+```
+
+The producer needs a clean tracked tree and runs in about two seconds; the
+audit takes about fifteen seconds and the controls about ten minutes on four
+CPU cores. The canonical result has SHA-256
+`74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464`. The
+short-window moment and the sign-change count are proved in the repository;
+the onset additionally uses Wang arXiv:2609.07918v1 through the EXP-006
+product.
+
 ## Bake and inspect the public replay
 
 After committing the source artifacts, run `python -m researchlab.pipeline all`. The Riemann

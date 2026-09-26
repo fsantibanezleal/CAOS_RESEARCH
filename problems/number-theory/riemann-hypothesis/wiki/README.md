@@ -1,5 +1,24 @@
 # Riemann hypothesis: short-interval zero proportions
 
+[D+MV] EXP-010 localizes Levinson's method with Conrey's general operator
+polynomial to $(T,T+T^\theta]$ for mollifier exponents $\nu<\theta-1/2$ and
+proves that it counts distinct sign changes of $Z$:
+
+$$
+\liminf\frac{O(T,T^\theta)}{N(T,T^\theta)}\ge\kappa=1-\frac1R\log c(P,Q,R,\nu).
+$$
+
+Certified degree-201 detectors give $\kappa>0.7170\,\nu$, five times the
+Selberg slope. Through the EXP-006 product, every fixed
+$\theta\in[0.534,1)$ has a positive proportion of simple critical zeros in
+$(T,T+T^\theta]$; the previous onset was $0.5458838$. At $\theta=0.5459$ the
+lower bound exceeds $0.0177638$, about 1000 times the EXP-008 value. The moment
+and counting theorems are internal; the onset also uses Wang's
+arXiv:2609.07918v1 pair theorem. See the
+[Levinson chapter](13-levinson-parity-transfer.md) and the
+[verdict](../experiments/EXP-010-levinson-parity-transfer/verdict.md). RH
+remains open.
+
 [D+MV] EXP-009 proves the sharp auxiliary inequality
 
 $$

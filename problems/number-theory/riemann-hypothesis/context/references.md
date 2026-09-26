@@ -25,3 +25,10 @@ arXiv:2609.24167v1, the first stated post-Montgomery--Taylor global proportion
 improvement. It records the overlap with EXP-007, archives the PDF and TeX
 source, and freezes EXP-009's sharper three-point kernel target before
 computation.
+
+The [2026-09-26 Levinson preflight](2026-09-26-levinson-localization-preflight.md)
+adds Young arXiv:1002.4403v1, Conrey 1989, CFKL arXiv:2508.11108v1 and
+Bui-Conrey-Young arXiv:1002.4127v1, sweeps the sources published since the
+September 20 cutoff, and records the three gates of EXP-010: the
+short-window mollified moment, the distinct sign-change count, and the
+certified detector constant.

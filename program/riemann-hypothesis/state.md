@@ -2,12 +2,47 @@
 
 Updated: 2026-09-26. Latest completed public application release:
 **0.73.000**, live-verified from main commit
-`e6f905f8509adbb9be7e9470b88b5071a4a08d9e`. EXP-009 is confirmed,
-manuscript v0.01 is published, and replay v8 is deployed and live-verified.
+`e6f905f8509adbb9be7e9470b88b5071a4a08d9e`. EXP-010 is confirmed on its work
+branch after two referee passes; its manuscript `short-interval-levinson` v0.01 is built and awaits
+the vault deposit, and the public workbench does not yet show it.
 
 The Riemann hypothesis remains open.
 
-## Current strongest result
+## Current strongest short-interval result
+
+EXP-010 localizes Levinson's method with Conrey's general operator polynomial
+`Q` to `(T,T+T^theta]`. For mollifier exponents `nu<theta-1/2` the mollified
+second moment is `c(P,Q,R,nu) w-hat(0)+O(H/L)` (Young's short proof with a
+window weight), and for every `Q` with `Q(x)+Q(1-x)` constant the method
+counts distinct sign changes of `Z`:
+
+```text
+liminf O(T,T^theta)/N(T,T^theta) >= kappa = 1 - log(c(P,Q,R,nu))/R
+```
+
+Degree-201 detectors certify `kappa>0.7170 nu`, against the rank-six Selberg
+slope `0.140`. Through the EXP-006 product:
+
+```text
+every fixed theta in [0.534,1): positive proportion of simple critical zeros
+theta=0.534   h > 1.4806994e-5     theta=0.5459  h > 0.0177638490
+theta=0.535   h > 0.0015246940     theta=0.55    h > 0.0237708528
+theta=0.54    h > 0.0090231376
+```
+
+The previous onset was `0.5458838` (EXP-008). At `theta=0.5459` the new bound
+is about 1000 times the EXP-008 value. Above about `theta=0.567` Wang's
+`c(theta)` remains the largest term. The moment and counting theorems are
+internal; the onset uses Wang's arXiv:2609.07918v1 pair theorem through the
+EXP-006 product.
+
+| Evidence | SHA-256 |
+|---|---|
+| EXP-010 canonical result | `74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464` |
+| EXP-010 independent audit | `b3a5fa0ae2ea54bcd1c4f323acfae3c81c87202780018ea8c29e798c674a4df1` |
+| EXP-010 counting-lemma controls | `6ecab20fcd1c90632d2d4c20c9fe41ae51e40e05eee0e1540c82e9934aea375c` |
+
+## Current strongest global result
 
 EXP-009 proves the sharp auxiliary theorem
 

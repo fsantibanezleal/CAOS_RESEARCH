@@ -7,8 +7,29 @@ localized Selberg transfers in EXP-004/005, the Hilbert-parity compression in
 spectral-defect coupling in
 [EXP-007](../experiments/EXP-007-spectral-defect-parity/verdict.md), and the
 rank-six local transfer in
-[EXP-008](../experiments/EXP-008-rank-six-local-transfer/verdict.md).
+[EXP-008](../experiments/EXP-008-rank-six-local-transfer/verdict.md), and the
+localized Levinson detector in
+[EXP-010](../experiments/EXP-010-levinson-parity-transfer/verdict.md).
 The Riemann hypothesis remains open. The questions below go beyond those proved results.
+
+## Push the Levinson detector below the 0.534 onset
+
+[C] EXP-010's onset is limited by the mollifier range `nu<theta-1/2`, which
+comes only from the off-diagonal of the short-window twisted moment. Steuding
+proved a short-window moment with error `O(T^(1/3+eps)M^(4/3))` for
+`zeta+zeta'/L`, which allows `nu<(3theta-1)/4`, but only for `Q(x)=1-x` and fixed
+shifts. A uniform two-shift version for general `Q` would, with the same
+certified slope `0.7173`, make the positivity condition
+`kappa>1-2/(2-c(theta))` hold at every `theta>1/2` (the exploratory root of the
+condition is near `0.494`). By contrast, any range `nu<a(theta-1/2)` that
+vanishes at `theta=1/2` leaves the onset above one half: about `0.5293` for
+`a=3/2` and `0.5257` for `a=2`. The falsification target is a failure of
+uniformity in the shifts, which the `Q`-derivatives need at radius `1/L`.
+
+[C] At small `nu` the single-piece mollifier appears to saturate at
+`kappa/nu` near `0.7173`. A two-piece mollifier of Feng type, localized to the
+window, could raise the slope; its short-window diagonal terms have not been
+derived.
 
 ## Further improve the explicit short-interval example
 

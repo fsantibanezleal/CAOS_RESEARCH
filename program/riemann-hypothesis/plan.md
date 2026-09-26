@@ -139,3 +139,27 @@ byte-match the exact-main build, and eight live desktop/phone EN/ES light/dark
 scenarios passed with 352 screenshots and no failures. Release 0.72.000 is
 therefore live-verified. This deployment does not change the open status of RH
 or remove the attributed-input boundary for the rank-six constant.
+
+## Localized Levinson detector (EXP-010)
+
+The 2026-09-26 preflight showed that the onset is governed by the slope of
+the odd-support detector near `theta=1/2`, not by the Selberg constant `C_q`
+(at most about `1e-5` of onset) or by the product inequality, which is sharp.
+EXP-010 was declared at `2f7aaa6b` before implementation. It localizes
+Levinson's method with Conrey's general `Q` to `(T,T+T^theta]` for
+`nu<theta-1/2` by rerunning Young's short proof with a window weight, proves
+that the localized method counts distinct sign changes of `Z`, and certifies
+degree-201 detectors with `kappa>0.7170 nu`, five times the Selberg slope.
+The EXP-006 product then gives a positive simple-critical proportion for every
+fixed `theta` in `[0.534,1)`, with about 1000 times the EXP-008 density at
+`theta=0.5459`.
+
+The new manuscript `short-interval-levinson` is built from the verdict; its
+Zenodo deposit runs through the vault tooling. The public workbench (replay
+v9) and a serialized release are separate later gates.
+
+Next routes, in order of expected onset gain: a uniform two-shift
+short-window moment for general `Q` in Steuding's range `nu<(3theta-1)/4`,
+which would make positivity hold for every `theta>1/2`; a localized
+two-piece mollifier to raise the slope above `0.7173`; and the independent
+rank-six reconstruction (RH-021), which remains an integrity task.
