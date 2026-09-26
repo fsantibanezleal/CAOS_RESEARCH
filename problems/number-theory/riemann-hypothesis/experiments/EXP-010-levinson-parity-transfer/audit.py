@@ -4,7 +4,7 @@ Device: CPU. The producer (run.py) expands P and Q into monomials and evaluates 
 constant through exact exponential moments, c = A e^(2R) + B. This auditor never forms the
 monomial expansion and never uses exact moments:
 
-  * Q is evaluated by the Clenshaw recurrence directly from its Chebyshev coefficients x_j,
+  * Q is evaluated by the three-term Chebyshev recurrence directly from its coefficients x_j,
     P by its truncated sinh series, and both derivatives by the corresponding recurrences;
   * every integral of the ORIGINAL integrand (w(v) P'(u) + nu w'(v) P(u))^2 is computed by
     validated Arb quadrature (acb.integral, rigorous error bounds), after the exact separation
@@ -204,6 +204,18 @@ def main() -> int:
     ):
         raise RuntimeError("frozen parameter file differs from the one bound by the producer")
     producer = {Fraction(row["nu"]): row for row in canonical["detector_constants"]}
+    source_manifest = HERE.parents[1] / "context" / "source-manifest-exp010.json"
+    bindings = {
+        name: hashlib.sha256(path.read_bytes()).hexdigest()
+        for name, path in (
+            ("audit.py", Path(__file__).resolve()),
+            ("mathematical-proof.md", HERE / "mathematical-proof.md"),
+            ("context/source-manifest-exp010.json", source_manifest),
+        )
+    }
+    for name in ("hypothesis.md", "run.py"):
+        if canonical["bindings_sha256"][name] != hashlib.sha256((HERE / name).read_bytes()).hexdigest():
+            raise RuntimeError(f"{name} differs from the one bound by the producer")
 
     log("stage 1/2: detector constants by validated quadrature from the generators")
     constants = []
@@ -280,7 +292,8 @@ def main() -> int:
     result = {
         "experiment": "EXP-010",
         "schema": "exp010-audit-v1",
-        "method": "Clenshaw/series evaluation from generators, acb.integral validated quadrature, mpmath.iv at 100 digits",
+        "method": "Chebyshev-recurrence and series evaluation from generators, acb.integral validated quadrature, mpmath.iv at 100 digits",
+        "bindings_sha256": bindings,
         "precision_bits": PREC_BITS,
         "canonical_result_sha256": hashlib.sha256(args.canonical.read_bytes()).hexdigest(),
         "constants": constants,
