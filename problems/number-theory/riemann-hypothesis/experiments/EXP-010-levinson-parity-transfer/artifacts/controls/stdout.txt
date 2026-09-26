@@ -1,0 +1,25 @@
+[    0.00s] stage 1/3: exact identities
+[    2.75s]   identity T=10000 Q1: rows=9
+[    5.51s]   identity T=10000 Q1bcy: rows=18
+[   13.74s]   identity T=10000 Q3: rows=27
+[   29.52s]   identity T=10000 Q5przz: rows=36
+[   53.59s]   identity T=10000 Q7con: rows=45
+[   56.78s]   identity T=100000 Q1: rows=54
+[   67.02s]   identity T=100000 Q3: rows=63
+[  106.64s]   identity T=100000 Q5przz: rows=72
+[  109.31s]   identity T=1e+06 Q1: rows=81
+[  117.19s]   identity T=1e+06 Q3: rows=90
+[  117.19s] stage 2/3: zeta windows
+[  147.86s]   zeta T=10000 Q1: N=31 sc=31 crossings=31 N_>=-0.000000 lemma=True
+[  227.95s]   zeta T=10000 Q3: N=31 sc=31 crossings=31 N_>=0.000000 lemma=True
+[  236.94s]   zeta T=100000 Q1: N=15 sc=15 crossings=15 N_>=-0.000000 lemma=True
+[  263.61s]   zeta T=100000 Q3: N=15 sc=15 crossings=15 N_>=-0.000000 lemma=True
+[  269.31s]   zeta T=1e+06 Q1: N=9 sc=9 crossings=9 N_>=-0.000000 lemma=True
+[  285.63s]   zeta T=1e+06 Q3: N=9 sc=9 crossings=9 N_>=0.000000 lemma=True
+[  285.63s] stage 3/3: toy functions with planted multiple zeros
+[  356.86s]   toy A double zeros Q1: N_f=38 sc=24 N-form=24 strict=36.363 lemma=True strict_holds=False
+[  451.28s]   toy A double zeros Q3: N_f=38 sc=24 N-form=24 strict=22.325 lemma=True strict_holds=True
+[  485.99s]   toy B triple zeros Q1: N_f=37 sc=31 N-form=25 strict=35.379 lemma=True strict_holds=False
+[  590.37s]   toy B triple zeros Q3: N_f=37 sc=31 N-form=31 strict=29.347 lemma=True strict_holds=True
+[  590.41s] checks={'operator_identity': True, 'omega_E_real': True, 'beta_Z_identity': True, 'zeta_sign_changes_equal_crossings_and_N': True, 'lemma_holds_everywhere': True, 'N_right_integral': True, 'double_zeros_never_counted': True, 'strict_variant_fails_for_degree_one_toys': True, 'no_tracking_warnings': True}
+[  590.41s] accepted=True
