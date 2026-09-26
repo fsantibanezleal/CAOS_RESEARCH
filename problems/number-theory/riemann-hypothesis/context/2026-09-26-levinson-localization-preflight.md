@@ -163,3 +163,15 @@ Balasubramanian-Conrey-Heath-Brown 1985 (SHA-256
 dissertation is already pinned in `source-cache/critical-mass-source-downloads.json`.
 The arXiv sources Young, CFKL and Bui-Conrey-Young are pinned in
 [`source-manifest-exp010.json`](source-manifest-exp010.json).
+
+## 9. Correction after the EXP-010 referee pass
+
+The table in Section 4 lists Conrey-Iwaniec-Soundararajan (A.16)-(A.18) beside
+Conrey's eqs. (40)-(41) as weight-one precedents. That is not accurate. CIS
+pass the zeros of their detector on the critical line "from the east side",
+which gives those zeros weight zero, and then read (A.16) as a count of simple
+zeros; with weight zero that reading is the strict variant that EXP-010's
+controls show to fail at double zeros. The correct precedent for the
+full-weight convention is Conrey's eq. (32) together with eqs. (40)-(41). The
+EXP-010 proof does not use CIS. The same citation appears in the frozen
+EXP-010 premise table; the verdict records the correction.

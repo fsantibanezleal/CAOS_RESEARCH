@@ -3,7 +3,7 @@
  "bindings_sha256": {
   "audit.py": "e6c73074f29e45c417fb0185584969ae0ef74c1c83c33c8c18c79f3e3b990f06",
   "context/source-manifest-exp010.json": "c55194b34987210fc1cd780257590c031dd4372ae99ce4a61c82bd221e5131fe",
-  "mathematical-proof.md": "0d77f7e09ab3e6ef98d104c2b445bbbd41426a1a71434fa817556fbd0fb39688"
+  "mathematical-proof.md": "d7fed000d944c4a57d83c9505e229ee3453829bb4632e6d1c01df2339502323e"
  },
  "canonical_result_sha256": "74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464",
  "checks": {

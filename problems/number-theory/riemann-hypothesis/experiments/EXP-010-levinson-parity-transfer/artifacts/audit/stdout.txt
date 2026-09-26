@@ -1,17 +1,17 @@
 [    0.00s] stage 1/2: detector constants by validated quadrature from the generators
-[    1.94s]   nu= 199/10000 kappa=[0.01427299118820739777907683 +/- 2.87e-28] overlap=True threshold=True
-[    3.69s]   nu= 299/10000 kappa=[0.02144830107160461829756580 +/- 2.53e-27] overlap=True threshold=True
-[    5.31s]   nu= 339/10000 kappa=[0.02431764197988143277823702 +/- 7.52e-28] overlap=True threshold=True
-[    7.01s]   nu= 349/10000 kappa=[0.02503497665228033293076057 +/- 2.28e-27] overlap=True threshold=True
-[    8.75s]   nu= 399/10000 kappa=[0.02862164964681450058004673 +/- 3.06e-27] overlap=True threshold=True
-[   10.52s]   nu=  229/5000 kappa=[0.03285392367255858089368600 +/- 6.93e-29] overlap=True threshold=True
-[   12.23s]   nu= 499/10000 kappa=[0.03579499548791817334727168 +/- 3.99e-27] overlap=True threshold=True
-[   13.98s]   nu= 999/10000 kappa=[0.07166400518009452424270000 +/- 7.65e-28] overlap=True threshold=True
-[   13.98s] stage 2/2: pair term and parity root by mpmath.iv at 100 digits
-[   13.98s]   theta=   267/500 h_L>=1.48069943749e-05 target>1/100000 pass=True
-[   13.98s]   theta=   107/200 h_L>=0.00152469402435 target>3/2000 pass=True
-[   13.99s]   theta=     27/50 h_L>=0.00902313762222 target>9/1000 pass=True
-[   13.99s]   theta=5459/10000 h_L>=0.0177638490345 target>177/10000 pass=True
-[   13.99s]   theta=     11/20 h_L>=0.023770852888 target>237/10000 pass=True
-[   13.99s]   theta=       3/5 h_L>=0.0929528998665 target>929/10000 pass=True
-[   13.99s] accepted=True
+[    1.91s]   nu= 199/10000 kappa=[0.01427299118820739777907683 +/- 2.87e-28] overlap=True threshold=True
+[    3.58s]   nu= 299/10000 kappa=[0.02144830107160461829756580 +/- 2.53e-27] overlap=True threshold=True
+[    5.25s]   nu= 339/10000 kappa=[0.02431764197988143277823702 +/- 7.52e-28] overlap=True threshold=True
+[    6.89s]   nu= 349/10000 kappa=[0.02503497665228033293076057 +/- 2.28e-27] overlap=True threshold=True
+[    8.51s]   nu= 399/10000 kappa=[0.02862164964681450058004673 +/- 3.06e-27] overlap=True threshold=True
+[   10.25s]   nu=  229/5000 kappa=[0.03285392367255858089368600 +/- 6.93e-29] overlap=True threshold=True
+[   11.94s]   nu= 499/10000 kappa=[0.03579499548791817334727168 +/- 3.99e-27] overlap=True threshold=True
+[   13.62s]   nu= 999/10000 kappa=[0.07166400518009452424270000 +/- 7.65e-28] overlap=True threshold=True
+[   13.62s] stage 2/2: pair term and parity root by mpmath.iv at 100 digits
+[   13.62s]   theta=   267/500 h_L>=1.48069943749e-05 target>1/100000 pass=True
+[   13.62s]   theta=   107/200 h_L>=0.00152469402435 target>3/2000 pass=True
+[   13.62s]   theta=     27/50 h_L>=0.00902313762222 target>9/1000 pass=True
+[   13.62s]   theta=5459/10000 h_L>=0.0177638490345 target>177/10000 pass=True
+[   13.62s]   theta=     11/20 h_L>=0.023770852888 target>237/10000 pass=True
+[   13.62s]   theta=       3/5 h_L>=0.0929528998665 target>929/10000 pass=True
+[   13.62s] accepted=True

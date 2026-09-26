@@ -37,7 +37,7 @@ The new bound is 0.419087888170111727959091183775 at theta=3/4.
 | RH-021 | Independently reconstruct the rank-six coefficient matrix or obtain a source artifact that permits exact C6 replay | open | P1 |
 | RH-022 | EXP-009: audit Wang's global refinement, sharpen its three-point kernel constant, and transfer the result through the parity product | done; sharp ratio theorem, exact global gain, proof review, and Zenodo preprint confirmed | P0 |
 | RH-023 | Export replay v8, integrate EXP-009 into the public workbench, and complete release 0.73.000 QA | done; release 0.73.000 live-verified from exact main | P0 |
-| RH-024 | EXP-010: localize Levinson's method with general `Q`, prove the distinct sign-change count, certify degree-201 detectors and move the parity onset | in progress; canonical certificate, independent audit and controls passed; referee review running | P0 |
+| RH-024 | EXP-010: localize Levinson's method with general `Q`, prove the distinct sign-change count, certify degree-201 detectors and move the parity onset | done; canonical certificate, independent audit, controls and two referee passes confirmed; Prediction A scope corrected to `Q(0)=1` | P0 |
 | RH-025 | Deposit the `short-interval-levinson` manuscript v0.01 on Zenodo through the vault tooling and record the receipt | open; needs the vault publication step | P0 |
 | RH-026 | Export replay v9, integrate EXP-010 into the public workbench, and complete a serialized release with rendered QA | open | P1 |
 | RH-027 | Uniform two-shift short-window mollified moment for general `Q` in Steuding's range `nu<(3theta-1)/4`; with the certified slope this would give positivity for every `theta>1/2` | open | P1 |

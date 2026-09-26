@@ -1,6 +1,6 @@
 # Riemann hypothesis history
 
-## 2026-09-26: EXP-010 certified an onset of 0.534 (referee review in progress)
+## 2026-09-26: EXP-010 moved the simple-critical onset to 0.534
 
 Declaration `2f7aaa6b` froze the question, eight degree-201 detector
 parameter sets and all thresholds before any runner existed. EXP-010 proves
@@ -16,7 +16,9 @@ against `0.5458838` for EXP-008; at `theta=0.5459` the bound exceeds
 (`3dba086f`), the independent quadrature audit and the counting-lemma controls
 (`77000336`) all passed. Writing the proof exposed and fixed two gaps of the
 first draft (the off-diagonal tail and the reflected factor) and wrong lemma
-numbers for Young's paper.
+numbers for Young's paper. Two independent referee passes found no fatal or
+major error; their minor fixes are applied, and Prediction A's extension to
+arbitrary `Q` was corrected (the constant term is `Q(0)^2`).
 
 ## 2026-09-24: EXP-009 confirmed and release 0.73.000 live-verified
 

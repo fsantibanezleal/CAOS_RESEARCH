@@ -215,7 +215,7 @@ Young's Section 3, it suffices to prove
  |\psi(\sigma_0+it)|^2dt=c(\alpha,\beta)\,\wh+O(H/L)
 \end{equation}
 uniformly for $\alpha,\beta\ll1/L$, with $c(\alpha,\beta)$ Young's (3.3)
-with $\vartheta$ replaced by $\nu$. We first work on the annuli
+with $\vartheta$ replaced by $\nu$ and $M$ by $y$. We first work on the annuli
 $\alpha,\beta\asymp1/L$, $|\alpha+\beta|\gg1/L$ of Young's Lemma 6. There the
 factor $G(s)=e^{s^2}p(s)$, $p(s)=((\alpha+\beta)^2-4s^2)/(\alpha+\beta)^2$, of
 Young's approximate functional equation (Lemma 4) satisfies
@@ -227,7 +227,11 @@ factor $X_{\alpha,\beta,t}$ of that lemma obey, for $t\ge T/2$,
 \end{equation}
 The first bound is Young's (4.3), whose decay factor is printed as
 $(1+|t/x|)^{-A}$; the Mellin representation (4.1) gives $(1+x/t)^{-A}$,
-which is the form used in his proof of Lemma 5.
+which is the form used in his proof of Lemma 5. The Stirling expansion (4.2)
+of $g_{\alpha,\beta}(s,t)$ is uniform only for $|s|=o(t^{1/2})$; on every
+vertical line used below, the part $|\Im s|\ge T^{1/3}$ is negligible because
+$|G(s)|\ll L^2e^{-(\Im s)^2/2}$ there, while
+$|g_{\alpha,\beta}(s,t)|\ll(t+|s|)^{O(1)}$.
 
 \begin{lemma}[Twisted integral]\label{lem:twisted}
 Let $h,k\le y$ and let $\alpha,\beta$ lie on the annuli. Then
@@ -275,7 +279,8 @@ and
 \]
 Bounding with absolute values, the contribution of $\rho$ to $I_2$ is
 $\ll H(H/T)L^6=o(H/L)$ because $\theta<1$. Since $(2\pi)^{\alpha+\beta}=1+O(1/L)$
-and $|I_1(-\beta,-\alpha)|\ll H$ by the next lemma,
+and $|I_1(-\beta,-\alpha)|\ll H$ by the next lemma (the region of the annuli
+is invariant under $(\alpha,\beta)\mapsto(-\beta,-\alpha)$),
 \begin{equation}\label{eq:I1I2}
  I(\alpha,\beta)=I_1(\alpha,\beta)+T^{-\alpha-\beta}I_1(-\beta,-\alpha)+O(H/L).
 \end{equation}
@@ -291,15 +296,16 @@ Uniformly on the annuli, $I_1(\alpha,\beta)=c_1(\alpha,\beta)\wh+O(H/L)$ with
 \begin{proof}
 Follow Young's Section 6. After the Mellin representation (6.1) and the
 arithmetic identity (6.2), move the $u,v$-contours to $\Re=\delta$ and the
-$s$-contour to $\Re s=-\delta+\epsilon$. The only pole crossed is $s=0$,
+$s$-contour to $\Re s=-\delta+\epsilon_1$ with a fixed small $\epsilon_1>0$. The only pole crossed is $s=0$,
 because $G$ vanishes at the pole $s=-(\alpha+\beta)/2$ of
 $\zeta(1+\alpha+\beta+2s)$. The only factor involving $w$ is
 $\int w(t)g_{\alpha,\beta}(s,t)dt$, and by Young's (4.2),
-$|g_{\alpha,\beta}(s,t)|\ll(t/2\pi)^{-\delta+\epsilon}(1+|s|^2)$ on the new
-contour. This factor is therefore $\ll HT^{-\delta+\epsilon}(1+|s|^2)$, while
-$|y^{u+v}|=y^{2\delta}$; the remaining factors are as in Young. The new
-contour contributes $\ll HT^{-\delta(1-2\nu)+\epsilon}L^{O(1)}=o(H/L)$ for
-$\epsilon<\delta(1-2\nu)/2$, since $\nu<1/2$. The residue at $s=0$ has
+$|g_{\alpha,\beta}(s,t)|\ll(t/2\pi)^{-\delta+\epsilon_1}(1+|s|^2)$ on the new
+contour for $|\Im s|\le T^{1/3}$. This factor is therefore
+$\ll HT^{-\delta+\epsilon_1}(1+|s|^2)$, while $|y^{u+v}|=y^{2\delta}$; the
+remaining factors are as in Young. The new contour contributes
+$\ll HT^{-\delta(1-2\nu)+\epsilon_1}L^{O(1)}=o(H/L)$ for
+$\epsilon_1<\delta(1-2\nu)/2$, since $\nu<1/2$. The residue at $s=0$ has
 $g_{\alpha,\beta}(0,t)=G(0)=1$ and equals $\wh$ times the expression in
 Young's (6.3). Young's Lemma 7 and Section 7 involve neither $w$ nor $T$ and
 give the main term with relative error $O(1/L)$.
@@ -331,11 +337,14 @@ this is the stated constant.
 \end{proof}
 
 \begin{remark}\label{rem:uses}
-The hypothesis $\nu<\theta-1/2$ is used only in Lemma~\ref{lem:twisted}; the
-bound $\nu<1/2$ only in Lemma~\ref{lem:diagonal}; and $\theta<1$ only in the
-bound for $\rho$. The normalization $Q(0)=1$ enters only in the final form of
-the constant: for every real polynomial $Q$ the same argument gives
-$\int w|V\psi(\sigma_0+it)|^2dt=O(H)$.
+The hypothesis $\nu<\theta-1/2$ is used only in Lemma~\ref{lem:twisted}, and
+the bound $\nu<1/2$ only in Lemma~\ref{lem:diagonal}. The hypothesis
+$\theta<1$, through $H=o(T)$, places the support of $w$ in $[T/2,2T]$, so that
+$t^{-1}\le\Delta^{-1}$, and bounds $\rho$. The normalization $Q(0)=1$ enters
+only through the constant term: the operator maps the term $1$ of
+$c(\alpha,\beta)$ to $Q(0)^2$, so for every real polynomial $Q$ the moment is
+$\bigl(Q(0)^2+\nu^{-1}\int_0^1\!\int_0^1(w_RP'+\nu w_R'P)^2\bigr)\wh+O(H/L)$,
+and in particular $O(H)$.
 \end{remark}
 
 \section{Distinct sign changes}\label{sec:signs}
@@ -378,9 +387,11 @@ and $2\Re(\omega V)$ are real, so $\omega E_\beta$ is real, and
 The identity \eqref{eq:real} holds for every real $Q$; the symmetry of $Q$
 makes $E_\beta$ small. By Stirling's formula, $\lambda(s)=\log(|t|/2\pi)+
 O(1/|t|)$ and $\lambda^{(j)}(s)\ll1/|t|$ for $j\ge1$, uniformly in fixed
-vertical strips, so $\lambda-L=O(1)$ for $t\asymp T$. Every term of
-$(D+L)^k-(D+\lambda)^k$ contains a factor $L-\lambda$ or a derivative of
-$\lambda$, and at most $k-1$ further factors of size $\ll L$. Therefore
+vertical strips, so $\lambda-L=O(1)$ for $t\asymp T$. In normal-ordered form
+$(D+\lambda)^k=\sum_{m\le k}c_{k,m}D^m$, where $c_{k,m}$ is
+$\binom km\lambda^{k-m}$ plus a polynomial in $\lambda,\lambda',\dots$ of
+weight $k-m$ whose terms contain a derivative of $\lambda$. Hence the
+coefficient of $D^m$ in $(D+L)^k-(D+\lambda)^k$ is $O(L^{k-m-1})$, and
 \begin{equation}\label{eq:Esize}
  E_\beta=\sum_{j<\deg Q}\varepsilon_j(s)L^{-j}\zeta^{(j)}(s),\qquad
  \varepsilon_j(s)\ll1/L,
@@ -400,10 +411,11 @@ $E_\beta$ is normalized by $\beta$.
 \subsection{The counting lemma}
 
 \begin{lemma}\label{lem:count}
-Let $\sigma_1=\sigma_1(Q)$ be fixed and large, and let $N_{\Vt}$ count, with
-multiplicity, the zeros of $\Vt$ in $[1/2,\sigma_1]\times(T,T+H]$, including
-those on $\sigma=1/2$. For $T$ and $T+H$ avoiding ordinates of zeros of $\Vt$
-and $Z$,
+Let $\sigma_1=\sigma_1(P,Q)$ be fixed and large, let $L=\log T_0$ be fixed with
+$T_0$ large, and let $|T-T_0|\le1$, $H\asymp T_0^\theta$, where $T$ and $T+H$
+are not ordinates of zeros of $Z$ or of $\Vt$ in $[1/2,\sigma_1]$. Let
+$N_{\Vt}$ count, with multiplicity, the zeros of $\Vt$ in
+$[1/2,\sigma_1]\times(T,T+H]$, including those on $\sigma=1/2$. Then
 \[
  O(T,H)\ge N(T,H)-2N_{\Vt}-O(L).
 \]
@@ -452,6 +464,13 @@ Since $J\le K$ and $N_{\Vt}=N_>+K$,
 \]
 \end{proof}
 
+For a general window we keep $L=\log T$ and move both endpoints inward by less
+than one unit to avoid the finitely many exceptional ordinates, including those
+of zeros of $\psi\Vt$; each unit interval contains $O(L)$ zeros of $\zeta$ and,
+by Jensen's formula, $O(L)$ zeros of $\Vt$ and of $\psi\Vt$ in
+$[\sigma_0,\sigma_1]$, so every count changes by $O(L)$. The quantity $J$ in
+the proof may be replaced by the number of $t_j$ of odd order.
+
 A double zero of $Z$ is not a sign change and is never counted; it is paid
 for in $N_{\Vt}$, as an on-line zero of $\Vt$ when $\deg Q=1$ and, in the
 examples of Section~\ref{sec:certify}, as a zero of $\Vt$ to the right of the
@@ -467,8 +486,10 @@ gives
  \int_T^{T+H}\log|F_1(\sigma_0+it)|dt-\int_T^{T+H}\log|F_1(\sigma_1+it)|dt+O(L),
 \]
 where $n(\sigma)$ counts the zeros of $F_1$ in the rectangle with real part
-greater than $\sigma$, and $O(L)$ bounds the horizontal argument integrals by
-the same Backlund--Jensen argument. Each zero counted in $N_{\Vt}$ has real
+greater than $\sigma$, and $O(L)$ bounds the horizontal argument integrals:
+$\psi$ and $\Vt$ are polynomially bounded and have real part at least $1/2$ at
+$\sigma_1+iT$ and $\sigma_1+i(T+H)$, so the Backlund--Jensen argument bounds
+the variation of $\arg\psi$ and of $\arg\Vt$, hence of $\arg F_1$. Each zero counted in $N_{\Vt}$ has real
 part at least $1/2=\sigma_0+R/L$, and every other zero contributes
 nonnegatively, so the left side is at least $2\pi(R/L)N_{\Vt}$.
 
@@ -477,7 +498,7 @@ $|b_n|\ll d(n)(\log n)^{\deg Q}$, so its logarithm is an absolutely
 convergent Dirichlet series for $\sigma_1$ large and
 $\int\log|\psi V(\sigma_1+it)|dt=O(1)$; moreover $|E_\beta/(2V)|\ll1/L$ there,
 which contributes $O(H/L)$. On $\sigma=\sigma_0$, concavity of the logarithm,
-$w\ge1$ on $[T,T+H]$, the inequality
+$w=1$ on $[T,T+H]$ with $w\ge0$, the inequality
 $|a+b|^2\le(1+L^{-1/2})|a|^2+(1+L^{1/2})|b|^2$, Theorem~\ref{thm:moment} and
 \eqref{eq:Emean} give
 \[
@@ -486,6 +507,15 @@ $|a+b|^2\le(1+L^{-1/2})|a|^2+(1+L^{1/2})|b|^2$, Theorem~\ref{thm:moment} and
 \]
 Hence $N_{\Vt}\le(HL/4\pi R)\log c+o(HL)$. Since $N(T,H)=(HL/2\pi)(1+o(1))$,
 Lemma~\ref{lem:count} gives $O/N\ge1-R^{-1}\log c-o(1)$. \qed
+
+\begin{remark}
+The number $\sigma_1$ and all implied constants depend on $P$, $Q$, $R$ and
+$\nu$. For the polynomials of Section~\ref{sec:certify} the monomial
+coefficients of $Q$ have size about $10^{120}$ and $R$ is about $28$, so the
+constants are very large, and for $\eta=\theta-1/2-\nu=10^{-4}$ the factor
+$2LT^{-3\eta/4}$ of Lemma~\ref{lem:twisted} is below one only when $\log T$
+exceeds about $1.7\cdot10^5$. The results are purely asymptotic.
+\end{remark}
 
 \section{Transfer to simple zeros}\label{sec:transfer}
 
@@ -502,8 +532,11 @@ let $Q_T$ be the pair sum of $f=\eta^2$ over the scaled zeros of the window;
 it is unrelated to the polynomial $Q$ of the previous sections. With
 $q_T,s_T,o_T$ the ratios of $Q_T,S,O$ to $N$, the Hilbert--parity inequality
 \cite[Proposition 2.5]{CAOSShort} reads $(q_T-s_T)(1-o_T)\ge2(1-s_T)^2$, and
-Wang's theorem~\cite[Theorem 2.2]{WangShort} gives $q_T\to\mathcal C(f)$. For
-every $\epsilon>0$ and all large $T$, enlarging nonnegative factors,
+Wang's theorem~\cite[Theorem 2.2]{WangShort} gives $q_T\to\mathcal C(f)$. If
+$O=N$, every zero of the window is simple and critical and $s_T=1$. Otherwise
+$1-o_T>0$ and the inequality gives $q_T\ge s_T$; for every $\epsilon>0$ and all
+large $T$, $q_T\le\mathcal C(f)+\epsilon$ and $o_T\ge k-\epsilon$, and enlarging
+the nonnegative factors gives
 $2(1-s_T)^2\le(\mathcal C(f)+\epsilon-s_T)(1-k+\epsilon)$. Hence
 $\liminf s_T\ge R(\mathcal C(f),1-k)$ with
 $R(A,b)=(4-b-\sqrt{b(b+8(A-1))})/4$, the smaller root. Letting $f$ tend to the

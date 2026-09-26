@@ -25,8 +25,9 @@ V(s)=Q(-D/L)\zeta(s),\qquad
 P\Bigl(\frac{\log(y/h)}{\log y}\Bigr).
 $$
 
-All implied constants may depend on `theta, nu, R, P, Q` and on the auxiliary
-parameters named in each step, never on `T`. `Z(t)=e^{i\vartheta(t)}\zeta(1/2+it)`
+All implied constants may depend on `theta, nu, P, Q`, on the auxiliary
+parameters named in each step and on `R` (in Theorem A only through a compact
+set containing `R`), never on `T`. `Z(t)=e^{i\vartheta(t)}\zeta(1/2+it)`
 is Hardy's function, so `chi(1/2+it)=e^{-2i\vartheta(t)}`. `N(T,H)` counts zero
 copies with `T<gamma<=T+H`; `O(T,H)` counts distinct `t in (T,T+H]` at which `Z`
 changes sign; `S(T,H)` counts simple critical zeros in the same window.
@@ -94,7 +95,11 @@ $$
 
 The first is Young's (4.3) and the second is his (4.2). As printed, (4.3) has the
 decay factor `(1+|t/x|)^{-A}`; the Mellin representation (4.1) gives
-`(1+x/t)^{-A}`, which is also the form used in the proof of his Lemma 5.
+`(1+x/t)^{-A}`, which is also the form used in the proof of his Lemma 5. The
+Stirling expansion (4.2) is uniform only for `|s|=o(t^{1/2})`; wherever it is
+used on a vertical line below, the part `|Im s|>=T^{1/3}` is handled by the
+decay `|G(s)|<<L^2 exp(-(Im s)^2/2)` against the crude bound
+`|g_{alpha,beta}(s,t)|<<(t+|s|)^{O(1)}`, and is negligible.
 
 ### 2.2 The twisted integral (replacing Young's Lemma 5)
 
@@ -171,8 +176,8 @@ $$
 With `|V_{-beta,-alpha}(x,t)|<<L^2(1+x/T)^{-A}` and `|P|<<1` on `[0,1]`, the `rho`-part
 of `I_2` is `<<H(H/T)L^6=o(H/L)`, because `theta<1`. Hence
 `I=I_1(alpha,beta)+(T/2pi)^{-alpha-beta}I_1(-beta,-alpha)+o(H/L)`. Finally
-`(2pi)^{alpha+beta}=1+O(1/L)` and `|I_1(-beta,-alpha)|<<H` by Lemma 2.2 below (the
-annuli are invariant under `(alpha,beta)->(-beta,-alpha)`), so
+`(2pi)^{alpha+beta}=1+O(1/L)` and `|I_1(-beta,-alpha)|<<H` by Lemma 2.2 below (the region
+`alpha,beta asymp 1/L`, `|alpha+beta|>>1/L` is invariant under `(alpha,beta)->(-beta,-alpha)`), so
 
 $$
 I(\alpha,\beta)=I_1(\alpha,\beta)+T^{-\alpha-\beta}I_1(-\beta,-\alpha)+O(H/L),
@@ -191,16 +196,18 @@ $$
 
 *Proof.* Follow Young, Section 6, with `M` replaced by `y`. After the Mellin
 representation (6.1) and the arithmetic identity (6.2), the `u,v`-contours are
-moved to `Re=delta` and then the `s`-contour to `Re s=-delta+epsilon`. The only pole
+moved to `Re=delta` and then the `s`-contour to `Re s=-delta+epsilon_1`, with a
+fixed small `epsilon_1>0` (unrelated to the `epsilon` of Lemma 2.1). The only pole
 crossed is at `s=0`, because `G` vanishes at the pole `s=-(alpha+beta)/2` of
 `zeta(1+alpha+beta+2s)`. The only factor that depends on `w` is
-`int w(t) g_{alpha,beta}(s,t) dt`. On the new contour
-`|g_{alpha,beta}(s,t)|<<(t/2pi)^{-delta+epsilon}(1+|s|^2)` by (4.2), so this integral is
-`<<H T^{-delta+epsilon}(1+|s|^2)`, while `M^{u+v}` becomes `y^{2delta}` in absolute value.
+`int w(t) g_{alpha,beta}(s,t) dt`. On the new contour with `|Im s|<=T^{1/3}`,
+`|g_{alpha,beta}(s,t)|<<(t/2pi)^{-delta+epsilon_1}(1+|s|^2)` by (4.2), so this integral is
+`<<H T^{-delta+epsilon_1}(1+|s|^2)`; the part `|Im s|>T^{1/3}` is negligible as
+explained in Section 2.1. Meanwhile `M^{u+v}` becomes `y^{2delta}` in absolute value.
 The decay of `G(s)`, the bounds for the zeta quotients and the arithmetic factor
 are unchanged, so the new contour contributes
-`<<H y^{2delta}T^{-delta+epsilon}L^{O(1)}=H T^{-delta(1-2nu)+epsilon}L^{O(1)}`, which is `o(H/L)`
-for `epsilon<delta(1-2nu)/2` because `nu<1/2`. The residue at `s=0` has
+`<<H y^{2delta}T^{-delta+epsilon_1}L^{O(1)}=H T^{-delta(1-2nu)+epsilon_1}L^{O(1)}`, which is
+`o(H/L)` for `epsilon_1<delta(1-2nu)/2` because `nu<1/2`. The residue at `s=0` has
 `g_{alpha,beta}(0,t)=1` and `G(0)=1`, hence contributes exactly
 `widehat w(0) zeta(1+alpha+beta) sum_{i,j}(...)J_{alpha,beta}(y)` as in Young's (6.3). Young's
 Lemma 7 (the asymptotic for `J`) and Section 7 (the arithmetic factor equals one
@@ -213,7 +220,7 @@ As in Young's proof that his Lemma 6 implies his Lemma 3: `c_1(alpha,beta)+c_1(-
 =int_0^1 2P'P=P(1)^2-P(0)^2=1`, and
 `(1-T^{-alpha-beta})/((alpha+beta)log y)=nu^{-1}int_0^1T^{-v(alpha+beta)}dv`. Hence
 `I(alpha,beta)=c(alpha,beta) widehat w(0)+O(H/L)` on the annuli, with `c(alpha,beta)` given
-by Young's (3.3) with `theta` replaced by `nu`. Both sides are holomorphic for
+by Young's (3.3) with his `theta` replaced by `nu` and `M` by `y`. Both sides are holomorphic for
 `alpha,beta<<1/L`, so the maximum modulus principle extends the error bound to
 discs of radius `asymp 1/L`. Finally, by Young's (3.4),
 
@@ -231,11 +238,26 @@ so Young's form equals the form of Theorem A. Uniformity in `R` on compact sets
 follows because every bound above is uniform for `alpha,beta` in discs of radius
 `<<1/L`. `[]`
 
-**Remark.** The only use of `nu<theta-1/2` is Lemma 2.1; the only use of `nu<1/2`
-is the contour shift in Lemma 2.2; the only use of `theta<1` is the bound for
-`rho` in Section 2.3. No other step depends on the window length. The condition
-`Q(0)=1` is used only to evaluate the operator in the final form; for any real
-polynomial `Q` the same argument gives `int w|V psi|^2=O(H)`.
+**Remark.** The only use of `nu<theta-1/2` is Lemma 2.1, and the only use of
+`nu<1/2` is the contour shift in Lemma 2.2. The hypothesis `theta<1` (through
+`H=o(T)`) places the support of `w` in `[T/2,2T]`, which gives `t^{-1}<=Delta^{-1}`,
+and bounds `rho` in Section 2.3. No other step depends on the window length.
+
+**Remark (general `Q`).** The operator `Q(-L^{-1}d/dalpha)Q(-L^{-1}d/dbeta)` maps
+the constant term `1` of `c(alpha,beta)` to `Q(0)^2` and acts on the double
+integral exactly as above. For an arbitrary real polynomial `Q` the same proof
+therefore gives
+
+$$
+\int w|V\psi(\sigma_0+it)|^2dt=\Bigl(Q(0)^2+\frac1\nu\int_0^1\!\!\int_0^1
+\bigl(w_R(v)P'(u)+\nu w_R'(v)P(u)\bigr)^2du\,dv\Bigr)\widehat w(0)+O(H/L).
+$$
+
+In particular the left side is `O(H)` for every real `Q`. The declaration's
+Prediction A extended the constant `c(P,Q,R,nu)`, whose first term is `1`, to
+arbitrary real `Q`; that extension is false when `Q(0)^2!=1` (for example
+`P=0.7x+0.3x^2`, `Q=2-0.9x+0.4x^2`, `R=1.1`, `nu=0.2` gives `61.0999...` against
+`58.0999...`). Every polynomial used in this experiment has `Q(0)=1`.
 
 ## 3. Proof of Theorem B
 
@@ -278,9 +300,12 @@ This holds for every real `Q`; the symmetry of `Q` only controls the size of
 
 By Stirling, uniformly for `sigma` in a fixed strip and `|t| asymp T`,
 `lambda(s)=log(|t|/2pi)+O(1/|t|)` and `lambda^{(j)}(s)<<1/|t|` for `j>=1`. Hence
-`lambda-L=O(1)` there. Expanding the compositions in (3.1), every term of
-`(D+L)^k-(D+lambda)^k` contains a factor `L-lambda` or a derivative of `lambda`,
-and at most `k-1` further factors of size `<<L`. Therefore
+`lambda-L=O(1)` there. In normal-ordered form `(D+lambda)^k=sum_{m<=k}c_{k,m}D^m`,
+where `c_{k,m}` is a polynomial in `lambda,lambda',...` of weight `k-m` (a
+derivative `lambda^{(j)}` has weight `j+1`) equal to `binom(k,m)lambda^(k-m)` plus
+terms that contain a derivative of `lambda`. Since `lambda-L=O(1)` and
+`lambda^{(j)}<<1/|t|`, the coefficient of `D^m` in `(D+L)^k-(D+lambda)^k` is
+`O(L^(k-m-1))`. Therefore
 
 $$
 E_\beta=\sum_{j<\deg Q}\varepsilon_j(s)L^{-j}\zeta^{(j)}(s),\qquad
@@ -301,16 +326,21 @@ $$
 
 ### 3.3 Distinct sign changes
 
-**Lemma 3.1.** For `T` avoiding the ordinates of zeros of `Vt` (a set of
-arbitrarily small perturbations of `T` and `T+H` suffices),
+**Lemma 3.1.** Let `L=log T_0` be fixed, with `T_0` large, and let
+`|T-T_0|<=1` and `H asymp T_0^theta`, where `T` and `T+H` are not ordinates of
+zeros of `Z` or of `Vt` in `[1/2,sigma_1]`. Then
 
 $$
 O(T,H)\ge N(T,H)-2N_{Vt}-O(L),
 $$
 
 where `N_Vt` counts zeros of `Vt` with multiplicity in the closed-left rectangle
-`[1/2,sigma_1]x(T,T+H]`, zeros on `sigma=1/2` included, and `sigma_1=sigma_1(Q)` is
-fixed large.
+`[1/2,sigma_1]x(T,T+H]`, zeros on `sigma=1/2` included, and `sigma_1=sigma_1(P,Q)` is
+fixed large. For general `T` keep `L=log T` and move both endpoints inward by
+less than one unit so that they avoid the finitely many exceptional ordinates
+(and, for Section 3.4, the zeros of `psi Vt`); every unit interval contains
+`O(L)` zeros of `zeta` and, by Jensen's formula, `O(L)` zeros of `Vt` and of
+`psi Vt` in `[sigma_0,sigma_1]`, so all counts change by `O(L)`.
 
 *Proof.* Let `t_1<...<t_J` be the zeros of `Vt(1/2+it)` in `(T,T+H)`, of orders
 `k_1,...,k_J`, `K=sum k_j`. Write `Vt(s)=prod_j(s-1/2-it_j)^{k_j}F(s)` with `F`
@@ -353,7 +383,8 @@ with `N_>` the zeros of `Vt` with `sigma>1/2`. Riemann-von Mangoldt gives
 sides the classical Backlund-Jensen argument gives `O(L)`, because
 `Vt=(beta zeta+V-chi V(1-s))/2=sum_{j<=deg Q}a_j(s)zeta^{(j)}(s)` with each `a_j` a
 polynomial in `L^{-1}`, `lambda` and its derivatives, so `Vt` is holomorphic and
-polynomially bounded near the window and `Re Vt>=1/2` at `sigma_1+iT`. Since `J<=K`,
+polynomially bounded near the window and `Re Vt>=1/2` at `sigma_1+iT`. Since `J<=K`
+(indeed `J` may be replaced by the number of `t_j` with `k_j` odd),
 
 $$
 O(T,H)\ge N(T,H)-2(N_>+K)-O(L)=N(T,H)-2N_{Vt}-O(L). \qquad[]
@@ -376,7 +407,10 @@ $$
 $$
 
 where `n(sigma)` counts zeros of `F_1` with real part `>sigma` and the `O(L)`
-collects the horizontal argument integrals (Backlund-Jensen again). Every zero of
+collects the horizontal argument integrals: `psi` and `Vt` are polynomially
+bounded and both have real part at least `1/2` at `sigma_1+iT` and
+`sigma_1+i(T+H)` for `sigma_1` large, so Backlund-Jensen bounds the variation of
+`arg psi` and `arg Vt`, hence of `arg F_1`, by `O(L)` on the horizontal sides. Every zero of
 `Vt` counted in `N_Vt` is a zero of `F_1` with real part `>=1/2>sigma` for all
 `sigma<1/2`, so the left side is `>=2pi(R/L)N_Vt`.
 
@@ -384,7 +418,7 @@ On `sigma=sigma_1`: `psi V` is a Dirichlet series `1+sum_{n>=2}b_n n^{-s}` whose
 logarithm has absolutely convergent coefficients small for large `sigma_1`, so
 `int_T^{T+H}log|psi V(sigma_1+it)|dt=O(1)`; and `|E_beta/(2V)|<<1/L` there, so
 `int log|1+E_beta/(2V)|=O(H/L)`. On `sigma=sigma_0`, by concavity of the logarithm,
-`w>=1` on `[T,T+H]`, the inequality `|a+b|^2<=(1+L^{-1/2})|a|^2+(1+L^{1/2})|b|^2`,
+`w=1` on `[T,T+H]` with `w>=0`, the inequality `|a+b|^2<=(1+L^{-1/2})|a|^2+(1+L^{1/2})|b|^2`,
 Theorem A and (3.4),
 
 $$
@@ -401,6 +435,14 @@ $$
 
 which is Theorem B. `[]`
 
+**Remark on constants.** `sigma_1` and every implied constant depend on `P`,
+`Q`, `R` and `nu`. For the frozen degree-201 `Q` the monomial coefficients are
+of size about `10^120` and `R` is about 28, so these constants are
+astronomically large; and at the frozen gap `eta=theta-1/2-nu=10^-4` the factor
+`2L T^(-3eta/4)` of Lemma 2.1 falls below one only when `log T` exceeds about
+`1.7e5`. This is harmless for the limits above, but the statements give no
+effective starting height.
+
 ## 4. Proof of Theorem D
 
 Section 2 of the EXP-006 proof applies its finite inequality
@@ -411,7 +453,10 @@ the number of distinct odd-multiplicity critical zeros, i.e. `O(T,H)`. With
 `q_T,s_T,o_T` the ratios to `N(T,H)`, its (13) reads
 `(q_T-s_T)(1-o_T)>=2(1-s_T)^2`, Wang's theorem gives `q_T->C(f)` (its (14)), and the
 detector enters only through its (15), `liminf o_T>=k_3(theta)`. Replacing (15) by
-`liminf o_T>=k` changes nothing else: for every `epsilon>0` and all large `T`,
+`liminf o_T>=k` changes nothing else. If `O=N`, every zero of the window is
+simple and critical and `s_T=1`. Otherwise `1-o_T>0`, so (13) gives `q_T>=s_T`;
+for every `epsilon>0` and all large `T`, `q_T<=C(f)+epsilon` and
+`o_T>=k-epsilon`, and enlarging the nonnegative factors of (13) gives
 
 $$
 2(1-s_T)^2\le(\mathcal C(f)+\epsilon-s_T)(1-k+\epsilon),
@@ -444,6 +489,10 @@ validated quadrature from the Chebyshev generators and by `mpmath.iv`.
 | 0.5459 | 0.0458 | 0.03285392367255 | 0.0177638490 |
 | 0.55 | 0.0499 | 0.03579499548791 | 0.0237708528 |
 | 0.60 | 0.0999 | 0.07166400518009 | 0.0929528998 |
+
+At every row with `theta<=0.55`, `c(theta)<0` and `h_L` is the largest term of
+the bound `max{0,c,(c+2kappa)/3,h_L}`. At `theta=0.60`, `c(0.60)=0.13455...`
+exceeds `h_L`, so that row is a certified value, not an improvement.
 
 With `nu_*=0.0339` and `theta_*=0.534`, Section 4 gives a positive proportion of
 simple critical zeros in `(T,T+T^theta]` for every fixed `theta` in `[0.534,1)`. At

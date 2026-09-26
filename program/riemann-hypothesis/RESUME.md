@@ -3,8 +3,8 @@
 ## 1. State in one screen
 
 Read [state.md](state.md), [backlog.md](backlog.md), and the EXP-010 verdict.
-EXP-010 is certified on branch `work/riemann-hypothesis/levinson-parity-20260926`
-(referee review of the proof in progress):
+EXP-010 is confirmed on branch `work/riemann-hypothesis/levinson-parity-20260926`
+(two referee passes, minor fixes applied):
 the localized Levinson detector with degree-201 operator polynomials gives a
 positive proportion of simple critical zeros in `(T,T+T^theta]` for every
 fixed `theta` in `[0.534,1)` (previous onset `0.5458838`), and about 1000 times
@@ -42,7 +42,7 @@ live release. General RH remains open.
 | EXP-007 | spectral-defect parity product and strict full-curve gain confirmed |
 | EXP-008 | fixed-rank localization and attributed rank-six onset confirmed |
 | EXP-009 | sharp three-point ratio, attributed global gain, and onset-neutral local companion confirmed |
-| EXP-010 | short-window Levinson moment, distinct sign-change count, certified degree-201 detectors, onset `0.534`; referee review in progress |
+| EXP-010 | short-window Levinson moment, distinct sign-change count, certified degree-201 detectors, onset `0.534` confirmed (Prediction A scope corrected to `Q(0)=1`) |
 
 ## 4. In flight
 

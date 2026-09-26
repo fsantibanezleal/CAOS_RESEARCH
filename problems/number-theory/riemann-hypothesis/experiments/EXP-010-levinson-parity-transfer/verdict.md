@@ -1,4 +1,4 @@
-# EXP-010 verdict draft: localized Levinson detector and onset 0.534
+# EXP-010 verdict: confirmed localized Levinson detector and onset 0.534
 
 Date: 2026-09-26. Declared at `2f7aaa6b` (baseline
 `7a0711adb7e0f93b3a9429f6304f74f8951f8d69`) before any runner, proof or
@@ -6,10 +6,14 @@ output existed. Canonical execution from clean commit
 `3dba086fed900d5a828bb78182fc68541b641d8a`; counting-lemma controls from clean
 commit `770003367350b04be70e672d076ba0e5d3d99ecf`.
 
-**Status: pending referee review.** Predictions A and B are proved in
-[`mathematical-proof.md`](mathematical-proof.md), and that proof is under two
-independent referee passes. Predictions C and D pass every frozen threshold
-in exact and ball arithmetic, with an independent replay. Theorem D is relative to Wang's short-interval pair theorem
+**Verdict: confirmed, with one scope correction to Prediction A.**
+Predictions A and B are proved in [`mathematical-proof.md`](mathematical-proof.md);
+two independent referee passes found no fatal or major mathematical error.
+Predictions C and D pass every frozen threshold in exact and ball arithmetic,
+with an independent replay. Prediction A's parenthetical extension to an
+arbitrary real `Q` is false as declared: the constant term is `Q(0)^2`, not
+`1` (see below). Every polynomial used here has `Q(0)=1`, so no conclusion
+changes. Theorem D is relative to Wang's short-interval pair theorem
 (arXiv:2609.07918v1, a recent unreviewed preprint) through the confirmed
 EXP-006 product.
 
@@ -26,7 +30,9 @@ $$
 
 The proof reruns Young's Lemmas 4-7. The window length enters only through
 the off-diagonal integration by parts (`nu<theta-1/2`), the reflected factor
-`X_{alpha,beta,t}` (`theta<1`) and the contour shift (`nu<1/2`).
+`X_{alpha,beta,t}` and the support of the weight (`theta<1`), and the contour
+shift (`nu<1/2`). For an arbitrary real `Q` the same proof gives the constant
+`Q(0)^2+(1/nu) int int (w_R P'+nu w_R' P)^2`.
 
 **B. Distinct sign changes.** If moreover `Q(x)+Q(1-x)=beta` is a nonzero
 constant, then
@@ -88,7 +94,7 @@ exploratory slope `0.7173`, `h` stays above `c` up to about `theta=0.567`.
 
 | Check | Outcome |
 |---|---|
-| 1. Complete proofs of (A) and (B) referenced to source lemmas, audit and referee review | Proofs and internal audit written; referee passes in progress |
+| 1. Complete proofs of (A) and (B) referenced to source lemmas, audit and referee review | Passed: internal audit and two independent referee passes (sound with minor fixes, all applied); see [`adversarial-audit.md`](adversarial-audit.md) and [`proof-review.json`](proof-review.json) |
 | 2. Exact admissibility of every frozen set | Passed in `fmpq` arithmetic |
 | 3. Exact `c=A e^(2R)+B`, Arb enclosures, relative radius below `1e-30` | Passed |
 | 4. Directed evaluation of `c(theta)`, `h_L` and the EXP-008 comparison | Passed |
@@ -97,11 +103,25 @@ exploratory slope `0.7173`, `h` stays above `c` up to about `theta=0.567`.
 | 7. Numerical controls for (B) | Passed: nine checks, including tight double-zero cases and failure of the strict variant |
 | 8. SHA-256 binding | Passed; see below |
 
-The declaration cites "Young, Lemmas 1-6" for the approximate functional
-equation, twisted and diagonal lemmas. In the rendered arXiv v1 these are
-Lemmas 4-7 (Lemma 3 is the shifted-moment statement). The steps are the same;
-only the numbering in the declaration is imprecise, and the proof cites the
-rendered numbers.
+## Corrections to the declaration
+
+The declaration is frozen; these corrections are recorded here and do not
+change any frozen parameter, target or conclusion.
+
+1. **Prediction A scope.** The declaration states (A) with the constant
+   `c(P,Q,R,nu)`, whose first term is `1`, and adds that `Q` "need only be a
+   real polynomial". The operator `Q(-L^-1 d/dalpha)Q(-L^-1 d/dbeta)` maps that
+   term to `Q(0)^2`, so the extension is false when `Q(0)^2!=1` (for
+   `P=0.7x+0.3x^2`, `Q=2-0.9x+0.4x^2`, `R=1.1`, `nu=0.2`: `61.0999...` against
+   `58.0999...`). The proved general constant is `Q(0)^2+(1/nu)int int(...)^2`.
+   (A) as used, with `Q(0)=1` for `1`, `1+x^j` and every frozen `Q`, is confirmed.
+2. **Young numbering.** "Young, Lemmas 1-6" should read Theorem 2 and Lemmas
+   3-7 of the rendered arXiv v1 (one counter for theorems and lemmas). The
+   steps are the same; the proof cites the rendered numbers.
+3. **Counting precedent.** The premise table cites Conrey-Iwaniec-Soundararajan
+   (A.16)-(A.18) for the weight-one convention. CIS pass on-line zeros from the
+   east side, which is weight zero. The precedent is Conrey 1989 eq. (32) with
+   eqs. (40)-(41). The proof does not use CIS.
 
 ## Evidence
 
@@ -109,14 +129,16 @@ rendered numbers.
 |---|---|
 | `artifacts/canonical/result.json` | `74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464` |
 | `artifacts/canonical/execution-receipt.json` | `e0270d54d2003636648b0bd2981a5985fc941f3a36dc2b6ab10f2f26a632666e` |
-| `artifacts/audit/audit.json` | `349f55bfaa92d9945b852aec92b1bdf113944d6c9e6dc7433f762390a97fe04e` |
+| `artifacts/audit/audit.json` | `b3a5fa0ae2ea54bcd1c4f323acfae3c81c87202780018ea8c29e798c674a4df1` |
+| `mathematical-proof.md` (bound by the audit) | `d7fed000d944c4a57d83c9505e229ee3453829bb4632e6d1c01df2339502323e` |
 | `artifacts/controls/controls.json` | `6ecab20fcd1c90632d2d4c20c9fe41ae51e40e05eee0e1540c82e9934aea375c` |
 | `hypothesis.md` | `4d4a6051f155c99d296cfa43fed972c844c01cede93bef25b61fcfe6147514de` |
 | `frozen-parameters.json` | `602ab84cb40c4ebc786d33fba1c0976e5fa8f9b4c072e20a65d09a2a24fa2e4d` |
 | `run.py` | `b6ee96ce409150f56f9c34757354e1addb417d2fc1be7c7e281a2c97ee1a27df` |
 
 The producer ran in 1.63 s of a 900 s budget, the audit in 14 s of 1800 s,
-and the controls in 590 s of 1800 s, all on CPU.
+and the controls in 590 s of 1800 s, all on CPU. The audit was rerun after the
+referee fixes so that it binds the final proof; its numbers are unchanged.
 
 Replay from the repository root:
 

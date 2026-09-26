@@ -7,8 +7,9 @@ windows `(T,T+T^theta]`.
 ## Three results
 
 **Short-window mollified moment (Theorem A).** For `1/2<theta<1`, a mollifier
-of length `y=T^nu` with `nu<theta-1/2`, and a smooth weight equal to one on the
-window with derivative scale `Delta=T^theta/log T`,
+of length `y=T^nu` with `nu<theta-1/2`, an operator polynomial with `Q(0)=1`,
+and a smooth weight equal to one on the window with derivative scale
+`Delta=T^theta/log T`,
 
 $$
 \int w(t)\,|V\psi(\sigma_0+it)|^2dt=c(P,Q,R,\nu)\,\widehat w(0)+O(H/L),
@@ -23,8 +24,10 @@ $$
 
 The proof is Young's short proof with three local changes: the off-diagonal
 integration by parts (the only place where `nu<theta-1/2` is needed), the
-reflected factor `X_{alpha,beta,t}` (the only use of `theta<1`), and the
-contour shift (saving `T^(-delta(1-2nu))`).
+reflected factor `X_{alpha,beta,t}` (where, with the support of the weight,
+`theta<1` is used), and the contour shift (saving `T^(-delta(1-2nu))`). For a
+general real `Q` the constant term `1` becomes `Q(0)^2`; the declaration had
+omitted this, and every polynomial used here has `Q(0)=1`.
 
 **Distinct sign changes (Theorem B).** If `Q(0)=1` and `Q(x)+Q(1-x)=beta` is a
 nonzero constant, then

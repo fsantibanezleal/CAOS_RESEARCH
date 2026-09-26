@@ -2,8 +2,8 @@
 
 Updated: 2026-09-26. Latest completed public application release:
 **0.73.000**, live-verified from main commit
-`e6f905f8509adbb9be7e9470b88b5071a4a08d9e`. EXP-010 is certified on its work
-branch and its proof is under referee review; its manuscript `short-interval-levinson` v0.01 is built and awaits
+`e6f905f8509adbb9be7e9470b88b5071a4a08d9e`. EXP-010 is confirmed on its work
+branch after two referee passes; its manuscript `short-interval-levinson` v0.01 is built and awaits
 the vault deposit, and the public workbench does not yet show it.
 
 The Riemann hypothesis remains open.
@@ -39,7 +39,7 @@ EXP-006 product.
 | Evidence | SHA-256 |
 |---|---|
 | EXP-010 canonical result | `74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464` |
-| EXP-010 independent audit | `349f55bfaa92d9945b852aec92b1bdf113944d6c9e6dc7433f762390a97fe04e` |
+| EXP-010 independent audit | `b3a5fa0ae2ea54bcd1c4f323acfae3c81c87202780018ea8c29e798c674a4df1` |
 | EXP-010 counting-lemma controls | `6ecab20fcd1c90632d2d4c20c9fe41ae51e40e05eee0e1540c82e9934aea375c` |
 
 ## Current strongest global result

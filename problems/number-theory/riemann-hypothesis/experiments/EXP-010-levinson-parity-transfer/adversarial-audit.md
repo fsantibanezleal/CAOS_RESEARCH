@@ -54,7 +54,46 @@ EXP-006 product enter only Theorem D.
 ## Independent referee passes
 
 Two independent referee passes were run on the committed proof, one on
-Theorem A and one on Theorems B and D, with instructions to break the proof.
-Their findings and dispositions are recorded below.
+Theorem A and one on Theorems B and D, with instructions to break it. Each
+wrote its own code. Neither found a fatal or major mathematical error; both
+returned "sound with fixes". Every fix below is applied in the final proof,
+whose SHA-256 is bound by the rerun audit.
 
-(pending)
+### Theorem A referee
+
+| Finding | Severity | Disposition |
+|---|---|---|
+| Prediction A extends `c(P,Q,R,nu)`, whose constant term is `1`, to every real `Q`. The operator maps that term to `Q(0)^2`, so the declared statement is false when `Q(0)^2!=1` (`P=0.7x+0.3x^2`, `Q=2-0.9x+0.4x^2`, `R=1.1`, `nu=0.2`: `61.0999...` against `58.0999...`, rechecked here) | major for declaration compliance, not a gap | Recorded as a scope correction in the verdict; the proof now states the general constant `Q(0)^2+...`. Every polynomial used has `Q(0)=1` |
+| Stirling (4.2) is uniform only for `abs(s)=o(t^(1/2))` | minor | Added: for `abs(Im s)>=T^(1/3)` the Gaussian decay of `G` beats the crude bound on `g` |
+| The remark on where `theta<1` enters was incomplete | minor | Reworded: `H=o(T)` also places the support in `[T/2,2T]` |
+| `epsilon` used twice; `M` must also become `y` in (3.3); dependence on `R`; the invariance applies to the annulus region | minor | Fixed (`epsilon_1` for the contour offset) |
+| The declaration's "Young, Lemmas 1-6" should read Theorem 2 and Lemmas 3-7 | minor | Recorded in the verdict; every citation inside the proof matched the TeX |
+| Section 2.3 is tighter than Young's own global step, which would need Lemma 6 rerun with a modified weight | informational | Noted |
+| At `eta=1e-4` the factor `2L T^(-3eta/4)` is below one only for `log T` above about `1.7e5` | informational | Added to the remark on constants |
+
+The referee also sampled 655,346 values of `zeta` and `zeta'` at `T=1e6`,
+`theta=0.75`, and found the smoothed short-window moment equal to the
+finite-`y` residue predictor to relative `2e-4` for `nu<=0.4` in four disjoint
+windows; the off-diagonal and contour remainders are negligible even at this
+height. The gap to the asymptotic constant is `O(1/L)` with a large constant.
+This is exploratory evidence, not part of the proof.
+
+### Theorems B and D referee
+
+| Finding | Severity | Disposition |
+|---|---|---|
+| The perturbation clause of Lemma 3.1 was garbled; `L` must stay fixed while endpoints move, and the endpoints must also avoid critical zeros and zeros of `psi` | minor | Restated with `L=log T_0` fixed, endpoints moved inward by less than one unit, cost `O(L)` by Jensen |
+| Enlarging the factors in Theorem D needs `q_T>=s_T` and `C(f)+epsilon-s_T>=0` | minor | Added EXP-006's case split (`O=N` gives `s_T=1`) |
+| The declaration's premise table cites CIS (A.16)-(A.18) for weight one, but CIS pass on-line zeros from the east (weight zero) | minor (citation) | Recorded in the verdict and in a dated correction to the preflight; Conrey (32) with (40)-(41) is the precedent; the proof never used CIS |
+| `w>=1` should read `w=1` with `w>=0`; Backlund for `psi Vt` should be stated for both factors | minor | Fixed |
+| "At most `k-1` further factors" was loose | minor | Replaced by the normal-ordered coefficient bound `O(L^(k-m-1))` |
+| The constants are astronomically large for the frozen `Q` | minor | Remark on constants added |
+| `J` can be replaced by the number of odd `k_j` | optional | Noted |
+
+This referee reproduced the identities to relative `3e-35` at `T=1e4,1e5,1e6`,
+confirmed that `epsilon_j L` stays bounded from `T=1e4` to `1e30`, tested
+Lemma 3.1 on toys with an off-line pair, a clustered on-line pair and a double
+zero, recomputed `kappa` and `h` by Gauss-Legendre quadrature from the
+Chebyshev form (agreement to all printed digits), confirmed that
+`h(theta;kappa(0.0339))` increases on 4001 points of `[0.534,0.9999]`, and
+recomputed the cosine limit `C(f)=2-c(lambda)`.
