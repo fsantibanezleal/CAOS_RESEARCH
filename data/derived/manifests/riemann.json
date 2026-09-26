@@ -1,8 +1,8 @@
 {
  "artifact": {
-  "bytes": 39940951,
+  "bytes": 44059731,
   "path": "research/riemann.json",
-  "sha256": "76ad13bec9a74db2ed2569fda8c18030c21f9c6a4916a125fa3a4d9779e9fd28"
+  "sha256": "002b58a8727319e71a7fd3bbd459b4ce636ad9bc9e98d24d33ab9781af6d8537"
  },
  "case_id": "riemann",
  "gate": {
@@ -56,7 +56,7 @@
    "path": "problems/number-theory/riemann-hypothesis/context/source-manifest.json",
    "role": "source_manifest",
    "sha256": "5e436bc857e24fc868aa2e3f334a6fdd658756f6ae3de459b55b417f82d8aa18",
-   "source_commit": "d63111ffa8a348c51eb4fd06f5a1e70a51211576",
+   "source_commit": "d077c97faaff5269d993183e2cab0bf7e43039c5",
    "source_exp": "source-review"
   },
   {
@@ -460,6 +460,78 @@
    "source_exp": "EXP-008-rank-six-local-transfer"
   },
   {
+   "bytes": 4114968,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/artifacts/canonical/result.json",
+   "role": "wang_kernel_result",
+   "sha256": "0cea78e847d1bcec62eb8cd809b704ceaebd58f78f1c405f13ec40838fbb5a66",
+   "source_commit": "61bfc39ebe5944f177041b738240443c4ecfae98",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 422,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/artifacts/canonical/execution-receipt.json",
+   "role": "wang_kernel_receipt",
+   "sha256": "86e6c02c7469d7635400057cc9fed484ecef60365dd2b7d3a07d2d5b36e66136",
+   "source_commit": "61bfc39ebe5944f177041b738240443c4ecfae98",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 5102,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/hypothesis.md",
+   "role": "wang_kernel_hypothesis",
+   "sha256": "02141969ff11605d8cdf747521aa1655f7924f6182b1a5f7a85bec1a7636392b",
+   "source_commit": "123eee0d49969226201e68d6c32746087a91e6fc",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 2156,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/amendment-001-optimal-ratio.md",
+   "role": "wang_kernel_amendment",
+   "sha256": "6640871e942e55cc9fe04959d2fb8560c89131f42f1f51cfe79cffda78cd4845",
+   "source_commit": "edd689fef41ee5986353f6b62e8c34f81d55ae0f",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 22118,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/run.py",
+   "role": "wang_kernel_runner",
+   "sha256": "3cd4b2e7f0f805f5549cd2a2e90c0b329603a3041995f867429c4c880947ddd3",
+   "source_commit": "6b8e009c73f87047a2bc2c237991d241bd3b08c0",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 8143,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/mathematical-proof.md",
+   "role": "wang_kernel_proof",
+   "sha256": "2b3223fb6f9830831510bc212df558b9245f82e5a14e0a47813587c2f7c35767",
+   "source_commit": "6b8e009c73f87047a2bc2c237991d241bd3b08c0",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 5033,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/adversarial-audit.md",
+   "role": "wang_kernel_audit",
+   "sha256": "08c06d7839c2aff01978c43ba76f7bd146f07c57afbb638c4e110a9822b74eb0",
+   "source_commit": "6b8e009c73f87047a2bc2c237991d241bd3b08c0",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 3694,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/verdict.md",
+   "role": "wang_kernel_verdict",
+   "sha256": "54b8240eb102983c22943b9a1e169c0631ead9d717ef0d7b2a9e8482f8cdf355",
+   "source_commit": "c922076b610faddccaaa421263acb754ced6e2e2",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
+   "bytes": 2816,
+   "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-009-wang-kernel-sharpening/proof-review.json",
+   "role": "wang_kernel_review",
+   "sha256": "dc6c3c88ef04e8d658c6363554b2f6a671a8ca43cd690f8c2e6dc2b3b1a1acdb",
+   "source_commit": "c922076b610faddccaaa421263acb754ced6e2e2",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
+  },
+  {
    "bytes": 17333,
    "path": "problems/number-theory/riemann-hypothesis/experiments/EXP-003-odd-frame-pressure/artifacts/stage-b/candidate-1/pressure-certificate.json",
    "role": "pressure_certificate_1",
@@ -554,6 +626,14 @@
    "sha256": "969b093ea9359a62b00b205c27956d0a08eaa66f0ce5f601f5e7893e2f587cf9",
    "source_commit": "4f201e0e77a76f98027511e4e78a7bc751f7f489",
    "source_exp": "EXP-008-rank-six-local-transfer"
+  },
+  {
+   "bytes": 3830,
+   "path": "tests/test_riemann_wang_kernel_sharpening.py",
+   "role": "wang_kernel_test",
+   "sha256": "e491639de533bd4a83f459745ac8feb1683a25e4bd4a9933d9a7d87d53877f3d",
+   "source_commit": "61bfc39ebe5944f177041b738240443c4ecfae98",
+   "source_exp": "EXP-009-wang-kernel-sharpening"
   }
  ]
 }
