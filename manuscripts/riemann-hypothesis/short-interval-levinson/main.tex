@@ -1,0 +1,694 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs}
+\microtypesetup{expansion=false}
+\usepackage[margin=1.05in,headheight=14pt]{geometry}
+\usepackage{xcolor}
+\definecolor{linknavy}{RGB}{25,55,125}
+\usepackage[colorlinks=true,linkcolor=linknavy,citecolor=linknavy,urlcolor=linknavy]{hyperref}
+\usepackage{orcidlink,fancyhdr}
+\hypersetup{
+  pdftitle={Levinson's method in short intervals and simple zeros of the zeta function},
+  pdfauthor={Felipe Santibanez-Leal},
+  pdfsubject={A localized Levinson-Conrey detector of distinct sign changes and its consequence for simple critical zeros of the Riemann zeta function in short intervals},
+  pdfkeywords={Riemann zeta function, simple zeros, critical line, short intervals, Levinson method, mollifier, interval arithmetic}
+}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Vt}{\widetilde V}
+\newcommand{\wh}{\widehat w(0)}
+\newcommand{\doctype}{Preprint}
+\newcommand{\docversion}{v0.01}
+\newcommand{\docdate}{26 September 2026}
+\newcommand{\versiondoi}{assigned at deposit}
+\newcommand{\conceptdoi}{assigned at deposit}
+\newcommand{\docrepo}{github.com/fsantibanezleal/CAOS\_RESEARCH}
+\newcommand{\headerblock}{%
+\begin{center}
+\fbox{\parbox{0.94\textwidth}{\small\raggedright
+\textbf{\doctype} \quad$\cdot$\quad \docversion, \docdate \quad$\cdot$\quad Licence CC BY 4.0\\[2pt]
+CAOS Research open-problems programme \quad$\cdot$\quad problem \texttt{riemann-hypothesis}\\[2pt]
+Version DOI \versiondoi\\[2pt]
+Concept DOI (always latest) \conceptdoi\\[2pt]
+Not peer reviewed. Source code, data and computational records: \href{https://\docrepo}{\texttt{\docrepo}}
+}}
+\end{center}
+\vspace{4pt}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small CAOS Research \doctype}
+\fancyhead[R]{\small Levinson's method in short intervals\textperiodcentered\ \docversion}
+\fancyfoot[C]{\thepage}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0pt}}
+\allowdisplaybreaks[1]
+
+\title{Levinson's method in short intervals and\\simple zeros of the zeta function}
+\author{Felipe Santib\'a\~nez-Leal\,\orcidlink{0000-0002-0150-3246}\\
+\small CAOS Research program\\
+\small\texttt{github.com/fsantibanezleal/CAOS\_RESEARCH}}
+\date{\docdate}
+
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+\headerblock
+
+\begin{abstract}
+Fix $1/2<\theta<1$. We localize Levinson's method, with Conrey's general
+operator polynomial $Q$, to the intervals $(T,T+T^\theta]$ for mollifiers of
+length $T^\nu$ with $\nu<\theta-1/2$, by running Young's short proof of the
+mollified second moment with a weight supported on the window. We then show
+that on such windows the method counts distinct sign changes of Hardy's
+function, that is, distinct critical zeros of odd order, with lower density
+$\kappa=1-R^{-1}\log c(P,Q,R,\nu)$ for every $Q$ with $Q(x)+Q(1-x)$ constant.
+For operator polynomials of degree $201$ we certify $\kappa>0.7170\,\nu$ for
+$\nu$ between $0.0199$ and $0.0999$. Used as the odd-support input of the
+Hilbert--parity inequality $(Q-S)(N-O)\ge2(N-S)^2$, together with Wang's
+short-interval pair-correlation theorem, this gives a positive proportion of
+simple zeros on the critical line in $(T,T+T^\theta]$ for every fixed
+$\theta\in[0.534,1)$. The previous exponents for this statement were $0.552$
+(Steuding), $0.55019\ldots$ (Wang) and $0.5458838$ (the same parity inequality
+with a rank-six Selberg detector). At $\theta=0.5459$ the lower density
+exceeds $0.017763$, about one thousand times the previous bound, and
+numerically the new bound improves the previous ones for $\theta$ below about
+$0.567$.
+All constants are certified with exact rational and ball arithmetic and
+replayed independently by validated quadrature. The results are asymptotic,
+use Wang's recent preprint for the pair term, and do not prove the Riemann
+hypothesis.
+\end{abstract}
+
+\section{Introduction}
+
+Let $\rho=\beta+i\gamma$ denote the nontrivial zeros of the Riemann zeta
+function. For $T,H>0$ let $N(T,H)$ count the zeros with $T<\gamma\le T+H$,
+with multiplicity; let $S(T,H)$ count the simple zeros among them with
+$\beta=1/2$; and let $O(T,H)$ count the distinct points $t\in(T,T+H]$ at which
+Hardy's function $Z(t)=e^{i\vartheta(t)}\zeta(1/2+it)$ changes sign, that is,
+the distinct critical zeros of odd multiplicity. Throughout, $H=T^\theta$ with
+a fixed $\theta\in(1/2,1)$ and $L=\log T$.
+
+Selberg proved that $O(T,T^\theta)\gg N(T,T^\theta)$ for every
+$\theta>1/2$, and Karatsuba extended this to $\theta>27/82$~\cite{Karatsuba}.
+These theorems do not give simple zeros. For simple critical zeros, Steuding
+localized Levinson's method with a linear operator polynomial, proved a
+short-window mollified moment with error $O(T^{1/3+\epsilon}M^{4/3})$, and
+obtained a positive proportion for $\theta\ge0.552$~\cite{Steuding,SteudingThesis};
+he also observed that the mollifier range available from the classical
+off-diagonal treatment gives only $\theta\ge0.693$ for linear $Q$. Wang's short-interval
+pair-correlation theorem~\cite{WangShort} gives the lower density
+\begin{equation}\label{eq:wangc}
+ c(\theta)=2-\frac\theta2-\frac1{\sqrt2}\cot\frac{\theta}{\sqrt2},
+\end{equation}
+which is positive for $\theta>\theta_0=0.550193964744\ldots$. The finite
+Hilbert--parity inequality of~\cite[Proposition 2.5]{CAOSShort} converts any
+lower density $k$ for $O/N$ into the simple-critical density
+\begin{equation}\label{eq:h}
+ h(\theta;k)=\frac{3+k-\sqrt{(1-k)(9-k-8c(\theta))}}4 .
+\end{equation}
+With the rank-six Selberg detector of Pearce-Crump~\cite{PearceCrump},
+$k_6(\theta)=(\theta-1/2)/(4eC_6)$ with $C_6=0.65663\ldots$, the resulting
+term is positive exactly for $\theta>\theta_6$, where
+$0.5458837<\theta_6<0.5458838$~\cite[Theorem 1.2]{CAOSShort}. Since the
+positivity condition is $k>1-2/(2-c(\theta))$, the onset is governed by the
+size of the odd-support density near $\theta=1/2$, where $k_6$ has slope only
+$1/(4eC_6)\approx0.140$.
+
+This paper replaces the Selberg detector by Levinson's. The mollified second
+moment behind Levinson's method is available in short windows (Theorem
+\ref{thm:moment}); the localized method counts distinct sign changes of $Z$
+for Conrey's operator polynomials of every degree (Theorem \ref{thm:signs});
+and polynomials of high degree push the density to about $0.717(\theta-1/2)$,
+five times the Selberg slope. The labels [D] and [MV] mark deductions and
+finite machine-verified statements.
+
+\begin{theorem}[Simple critical zeros from $T^{0.534}$, D+MV]
+\label{thm:main}
+For every fixed $\theta\in[0.534,1)$,
+\begin{equation}\label{eq:main}
+ \liminf_{T\to\infty}\frac{S(T,T^\theta)}{N(T,T^\theta)}
+ \ge\max\left\{0,\;c(\theta),\;\frac{c(\theta)+2\kappa_\theta}3,\;
+ h(\theta;\kappa_\theta)\right\}>0,
+\end{equation}
+where $\kappa_\theta$ is any certified value of Table~\ref{tab:kappa} with
+$\nu<\theta-1/2$. In particular the right side is at least
+$h(\theta;\kappa_{0.0339})$ with $\kappa_{0.0339}>0.0243176419$, which is
+positive and increasing on $[0.534,1)$, and with $\nu=\theta-1/2-10^{-4}$
+\[
+\begin{array}{c|cccccc}
+\theta&0.534&0.535&0.54&0.5459&0.55\\\hline
+h(\theta;\kappa_\theta)>&1.4806\cdot10^{-5}&0.0015246&0.0090231&0.0177638&0.0237708
+\end{array}
+\]
+\end{theorem}
+
+At every point of the table $c(\theta)<0$ and $h(\theta;\kappa_\theta)$ is the
+largest term. Numerically, $h$ with $\kappa\approx0.7173(\theta-1/2)$ stays
+above $c(\theta)$ up to $\theta\approx0.567$; beyond that point Wang's term
+$c(\theta)$ is the largest in \eqref{eq:main}. The two analytic inputs are the
+following.
+
+\begin{theorem}[Mollified moment on a short window, D]\label{thm:moment}
+Let $0<\nu<\theta-1/2$, $R>0$, let $P$ be a real polynomial with $P(0)=0$,
+$P(1)=1$, and let $Q$ be a real polynomial with $Q(0)=1$. Put
+$\sigma_0=1/2-R/L$, $y=T^\nu$, $\Delta=H/L$,
+\[
+ V(s)=Q\Bigl(-\frac1L\frac{d}{ds}\Bigr)\zeta(s),\qquad
+ \psi(s)=\sum_{h\le y}\frac{\mu(h)}{h^{s+1/2-\sigma_0}}
+ P\Bigl(\frac{\log(y/h)}{\log y}\Bigr).
+\]
+Let $w$ be smooth with $0\le w\le1$, $w=1$ on $[T,T+H]$, support in
+$[T-\Delta,T+H+\Delta]$ and $w^{(j)}\ll_j\Delta^{-j}$. Then
+\[
+ \int_\R w(t)\,|V\psi(\sigma_0+it)|^2\,dt=c(P,Q,R,\nu)\,\wh+O(H/L),
+\]
+\[
+ c(P,Q,R,\nu)=1+\frac1\nu\int_0^1\!\!\int_0^1
+ \bigl(w_R(v)P'(u)+\nu w_R'(v)P(u)\bigr)^2du\,dv,\qquad w_R(v)=e^{Rv}Q(v).
+\]
+\end{theorem}
+
+\begin{theorem}[Distinct sign changes, D]\label{thm:signs}
+In the setting of Theorem~\ref{thm:moment}, suppose that $Q(x)+Q(1-x)$ is a
+nonzero constant. Then
+\[
+ \liminf_{T\to\infty}\frac{O(T,T^\theta)}{N(T,T^\theta)}\ge
+ \kappa(P,Q,R,\nu):=1-\frac1R\log c(P,Q,R,\nu).
+\]
+\end{theorem}
+
+Theorem~\ref{thm:moment} is Conrey's constant~\cite{Conrey} in the form given
+by Young~\cite{Young}, on a window of length $T^\theta$. The only place where
+the window length restricts the mollifier is the off-diagonal term, which
+forces $\nu<\theta-1/2$, the analogue of Levinson's range $\nu<1/2$ for
+$\theta=1$. Theorem~\ref{thm:signs} is a sign-change sharpening of the
+classical counting argument: zeros of the Levinson function on the critical
+line carry full weight, and the argument of the detector is followed through
+its level crossings. The classical sources conclude simple zeros only for
+$\deg Q=1$~\cite{Conrey,BCY}; for higher degree the method does not separate
+simple zeros from zeros of odd order at least three, and that is exactly the
+information the parity inequality requires.
+
+We could not locate a statement of Theorem~\ref{thm:moment} for general $Q$
+on windows shorter than $T$, or of Theorem~\ref{thm:signs} for $\deg Q\ge3$;
+Conrey's Gaussian-window proposition~\cite{Conrey} applies to windows
+$T^{1-\delta}$ with $\delta<1/7-\nu/4$. The search was bounded and is not a
+priority determination.
+
+\section{The mollified moment on a short window}\label{sec:moment}
+
+We follow Young~\cite{Young}. His Theorem 2 treats a weight supported in
+$[T/4,2T]$ with $w^{(j)}\ll(T/L)^{-j}$ and a mollifier of length $M=T^{\vartheta}$,
+$\vartheta<1/2$. Here the weight has support of length at most $2H$, the
+derivative scale is $\Delta=H/L$, and $M$ is replaced by $y=T^\nu$. We list
+every step in which the length enters; all others are used verbatim. As in
+Young's Section 3, it suffices to prove
+\begin{equation}\label{eq:Iab}
+ I(\alpha,\beta):=\int w(t)\zeta(\tfrac12+\alpha+it)\zeta(\tfrac12+\beta-it)
+ |\psi(\sigma_0+it)|^2dt=c(\alpha,\beta)\,\wh+O(H/L)
+\end{equation}
+uniformly for $\alpha,\beta\ll1/L$, with $c(\alpha,\beta)$ Young's (3.3)
+with $\vartheta$ replaced by $\nu$. We first work on the annuli
+$\alpha,\beta\asymp1/L$, $|\alpha+\beta|\gg1/L$ of Young's Lemma 6. There the
+factor $G(s)=e^{s^2}p(s)$, $p(s)=((\alpha+\beta)^2-4s^2)/(\alpha+\beta)^2$, of
+Young's approximate functional equation (Lemma 4) satisfies
+$p(s)\ll L^2(1+|s|^2)$. Hence the weight $V_{\alpha,\beta}(x,t)$ and the
+factor $X_{\alpha,\beta,t}$ of that lemma obey, for $t\ge T/2$,
+\begin{equation}\label{eq:Vbound}
+ t^j\partial_t^jV_{\alpha,\beta}(x,t)\ll_{A,j}L^2(1+x/t)^{-A},\qquad
+ X_{\alpha,\beta,t}=(t/2\pi)^{-\alpha-\beta}(1+O(t^{-1})).
+\end{equation}
+The first bound is Young's (4.3), whose decay factor is printed as
+$(1+|t/x|)^{-A}$; the Mellin representation (4.1) gives $(1+x/t)^{-A}$,
+which is the form used in his proof of Lemma 5.
+
+\begin{lemma}[Twisted integral]\label{lem:twisted}
+Let $h,k\le y$ and let $\alpha,\beta$ lie on the annuli. Then
+\begin{multline*}
+ \int w(t)\Bigl(\frac hk\Bigr)^{-it}\zeta(\tfrac12+\alpha+it)\zeta(\tfrac12+\beta-it)dt
+ =\sum_{hm=kn}\frac{\int V_{\alpha,\beta}(mn,t)w(t)dt}{m^{1/2+\alpha}n^{1/2+\beta}}\\
+ +\sum_{hm=kn}\frac{\int V_{-\beta,-\alpha}(mn,t)X_{\alpha,\beta,t}w(t)dt}{m^{1/2-\beta}n^{1/2-\alpha}}
+ +O_A(T^{-A}).
+\end{multline*}
+\end{lemma}
+
+\begin{proof}
+Insert the approximate functional equation. Its error term contributes
+$O(HT^{-A})$ and the terms with $hm=kn$ are the main terms. For $hm\ne kn$,
+the bounds \eqref{eq:Vbound} and $w^{(j)}\ll\Delta^{-j}$ give
+$\partial_t^j[w(t)V_{\alpha,\beta}(x,t)]\ll L^2(1+x/T)^{-A}\Delta^{-j}$ on the
+support, so $j$ integrations by parts give
+\[
+ \int w(t)\Bigl(\frac{hm}{kn}\Bigr)^{-it}V_{\alpha,\beta}(mn,t)dt
+ \ll HL^2\frac{(1+mn/T)^{-A}}{(\Delta|\log(hm/kn)|)^j}
+ \le HL^2(1+mn/T)^{-A}\Bigl(\frac{2\sqrt{hkmn}}{\Delta}\Bigr)^j,
+\]
+since $|\log(hm/kn)|\ge1/(2\sqrt{hkmn})$ for $hm\ne kn$. Put
+$\eta=\theta-1/2-\nu>0$ and $\epsilon=\eta/2$. If $mn\le T^{1+\epsilon}$ then
+$2\sqrt{hkmn}/\Delta\le2yT^{(1+\epsilon)/2}L/T^\theta=2LT^{-3\eta/4}$, and there
+are at most $T^{2}$ such pairs $(m,n)$, so these terms contribute
+$O(T^{-A})$ once $j>4(A+5)/(3\eta)$. If $mn>T^{1+\epsilon}$ we do not integrate
+by parts: the trivial bound $HL^2(mn/T)^{-A'}$ summed against
+$(mn)^{-1/2+O(1/L)}$ gives $O(HL^3T^{(1+\epsilon)/2-\epsilon A'+o(1)})$, which is
+$O(T^{-A})$ for $A'\ge(A+3)/\epsilon$. The reflected part is identical because
+$t^j\partial_t^jX_{\alpha,\beta,t}\ll|X_{\alpha,\beta,t}|\ll1$.
+\end{proof}
+
+Inserting the mollifier, $I=I_1+I_2+O(T^{-A})$, where $I_1$ is Young's (5.1)
+with $M$ replaced by $y$ and $I_2$ is $I_1(-\beta,-\alpha)$ with
+$X_{\alpha,\beta,t}$ inserted in the $t$-integral. On the support of $w$ we have
+$t=T(1+O(H/T))$, so by \eqref{eq:Vbound}
+$X_{\alpha,\beta,t}=(T/2\pi)^{-\alpha-\beta}(1+\rho(t))$ with $\rho\ll H/T$.
+Write $h=gh'$, $k=gk'$ with $(h',k')=1$; then $hm=kn$ means $m=k'r$, $n=h'r$,
+and
+\[
+ \sum_{h,k\le y}\frac1{\sqrt{hk}}\sum_{hm=kn}
+ \frac{(1+mn/T)^{-A}}{(mn)^{1/2-O(1/L)}}
+ \ll L\sum_{g\le y}\frac1g\Bigl(\sum_{h'\le y}\frac1{h'}\Bigr)^2\ll L^4.
+\]
+Bounding with absolute values, the contribution of $\rho$ to $I_2$ is
+$\ll H(H/T)L^6=o(H/L)$ because $\theta<1$. Since $(2\pi)^{\alpha+\beta}=1+O(1/L)$
+and $|I_1(-\beta,-\alpha)|\ll H$ by the next lemma,
+\begin{equation}\label{eq:I1I2}
+ I(\alpha,\beta)=I_1(\alpha,\beta)+T^{-\alpha-\beta}I_1(-\beta,-\alpha)+O(H/L).
+\end{equation}
+
+\begin{lemma}[Diagonal]\label{lem:diagonal}
+Uniformly on the annuli, $I_1(\alpha,\beta)=c_1(\alpha,\beta)\wh+O(H/L)$ with
+\[
+ c_1(\alpha,\beta)=\frac1{(\alpha+\beta)\log y}\int_0^1
+ \bigl(P'(u)+\alpha\log y\,P(u)\bigr)\bigl(P'(u)+\beta\log y\,P(u)\bigr)du .
+\]
+\end{lemma}
+
+\begin{proof}
+Follow Young's Section 6. After the Mellin representation (6.1) and the
+arithmetic identity (6.2), move the $u,v$-contours to $\Re=\delta$ and the
+$s$-contour to $\Re s=-\delta+\epsilon$. The only pole crossed is $s=0$,
+because $G$ vanishes at the pole $s=-(\alpha+\beta)/2$ of
+$\zeta(1+\alpha+\beta+2s)$. The only factor involving $w$ is
+$\int w(t)g_{\alpha,\beta}(s,t)dt$, and by Young's (4.2),
+$|g_{\alpha,\beta}(s,t)|\ll(t/2\pi)^{-\delta+\epsilon}(1+|s|^2)$ on the new
+contour. This factor is therefore $\ll HT^{-\delta+\epsilon}(1+|s|^2)$, while
+$|y^{u+v}|=y^{2\delta}$; the remaining factors are as in Young. The new
+contour contributes $\ll HT^{-\delta(1-2\nu)+\epsilon}L^{O(1)}=o(H/L)$ for
+$\epsilon<\delta(1-2\nu)/2$, since $\nu<1/2$. The residue at $s=0$ has
+$g_{\alpha,\beta}(0,t)=G(0)=1$ and equals $\wh$ times the expression in
+Young's (6.3). Young's Lemma 7 and Section 7 involve neither $w$ nor $T$ and
+give the main term with relative error $O(1/L)$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:moment}]
+As in Young's deduction of his Lemma 3 from Lemma 6,
+\[
+ c_1(\alpha,\beta)+c_1(-\beta,-\alpha)=\int_0^12PP'=1,\qquad
+ \frac{1-T^{-\alpha-\beta}}{(\alpha+\beta)\log y}=\frac1\nu\int_0^1T^{-v(\alpha+\beta)}dv .
+\]
+With \eqref{eq:I1I2} and Lemma~\ref{lem:diagonal} this gives \eqref{eq:Iab} on
+the annuli, and the maximum modulus principle extends it to $\alpha,\beta\ll1/L$
+because both sides are holomorphic. By Young's (3.4), the left side of
+Theorem~\ref{thm:moment} equals
+\[
+ Q\Bigl(-\frac1L\frac{\partial}{\partial\alpha}\Bigr)
+ Q\Bigl(-\frac1L\frac{\partial}{\partial\beta}\Bigr)I(\alpha,\beta)
+ \Big|_{\alpha=\beta=-R/L};
+\]
+the derivatives are Cauchy integrals over circles of radius $\asymp1/L$ on
+which the error is uniform, and the operator applied to $c(\alpha,\beta)$ gives
+Young's (1.3) with $\vartheta$ replaced by $\nu$. Since
+\[
+ \frac{d}{dx}\Bigl[e^{R\nu x}P(x+u)Q(v+\nu x)\Bigr]_{x=0}
+ =e^{-Rv}\bigl(w_R(v)P'(u)+\nu w_R'(v)P(u)\bigr),
+\]
+this is the stated constant.
+\end{proof}
+
+\begin{remark}\label{rem:uses}
+The hypothesis $\nu<\theta-1/2$ is used only in Lemma~\ref{lem:twisted}; the
+bound $\nu<1/2$ only in Lemma~\ref{lem:diagonal}; and $\theta<1$ only in the
+bound for $\rho$. The normalization $Q(0)=1$ enters only in the final form of
+the constant: for every real polynomial $Q$ the same argument gives
+$\int w|V\psi(\sigma_0+it)|^2dt=O(H)$.
+\end{remark}
+
+\section{Distinct sign changes}\label{sec:signs}
+
+\subsection{An exact identity on the critical line}
+
+Let $\chi(s)=\pi^{s-1/2}\Gamma((1-s)/2)/\Gamma(s/2)$, so that
+$\zeta(s)=\chi(s)\zeta(1-s)$, and put $\lambda(s)=-\chi'(s)/\chi(s)$. Write
+$D=d/ds$ and $Q(x)=\sum_kq_kx^k$.
+
+\begin{lemma}\label{lem:identity}
+For every $k\ge0$, $\chi(s)\zeta^{(k)}(1-s)=(-1)^k(D+\lambda)^k\zeta(s)$, where
+$(D+\lambda)^k$ is the $k$-fold composition of $f\mapsto f'+\lambda f$.
+Consequently $\chi(s)V(1-s)=\sum_kq_kL^{-k}(D+\lambda)^k\zeta(s)$. If
+$Q(x)+Q(1-x)=\beta$ identically, then
+\begin{equation}\label{eq:Ebeta}
+ E_\beta:=\beta\zeta-V-\chi(s)V(1-s)=\sum_kq_kL^{-k}
+ \bigl[(D+L)^k-(D+\lambda)^k\bigr]\zeta(s),
+\end{equation}
+and with $\Vt=V+E_\beta/2$ and $\omega(t)=e^{i\vartheta(t)}$,
+\begin{equation}\label{eq:real}
+ \beta Z(t)=2\,\Re\bigl(\omega(t)\Vt(\tfrac12+it)\bigr)\qquad(t\in\R).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Put $f(s)=\zeta(1-s)=\chi(1-s)\zeta(s)$ and note $-\chi'(1-s)/\chi(1-s)=
+\lambda(s)$ because $\chi(s)\chi(1-s)=1$. Then $f'=\chi(1-s)(D+\lambda)\zeta$ and,
+inductively, $f^{(k)}=\chi(1-s)(D+\lambda)^k\zeta$; since
+$\zeta^{(k)}(1-s)=(-1)^kf^{(k)}(s)$, the first claim follows, and the second by
+linearity. The polynomial identity $Q(-x)+Q(1+x)=\beta$ with $x=D/L$ gives
+$\beta\zeta=V+\sum_kq_kL^{-k}(D+L)^k\zeta$, which is \eqref{eq:Ebeta}. On
+$s=1/2+it$ we have $1-s=\bar s$, $V(\bar s)=\overline{V(s)}$ and
+$\chi(s)=\omega^{-2}$, so $\omega\chi(s)V(1-s)=\overline{\omega V(s)}$ and
+$\omega\zeta=Z$. Hence $\beta Z=2\Re(\omega V)+\omega E_\beta$. The left side
+and $2\Re(\omega V)$ are real, so $\omega E_\beta$ is real, and
+\eqref{eq:real} follows.
+\end{proof}
+
+The identity \eqref{eq:real} holds for every real $Q$; the symmetry of $Q$
+makes $E_\beta$ small. By Stirling's formula, $\lambda(s)=\log(|t|/2\pi)+
+O(1/|t|)$ and $\lambda^{(j)}(s)\ll1/|t|$ for $j\ge1$, uniformly in fixed
+vertical strips, so $\lambda-L=O(1)$ for $t\asymp T$. Every term of
+$(D+L)^k-(D+\lambda)^k$ contains a factor $L-\lambda$ or a derivative of
+$\lambda$, and at most $k-1$ further factors of size $\ll L$. Therefore
+\begin{equation}\label{eq:Esize}
+ E_\beta=\sum_{j<\deg Q}\varepsilon_j(s)L^{-j}\zeta^{(j)}(s),\qquad
+ \varepsilon_j(s)\ll1/L,
+\end{equation}
+uniformly for $\sigma_0\le\sigma\le\sigma_1$ and $T/2\le t\le2T$. For $j\ge1$,
+$L^{-j}\zeta^{(j)}=(-1)^j(V_{1+x^j}-\zeta)$, where $V_{1+x^j}$ is the $V$ of
+the polynomial $1+x^j$, so Theorem~\ref{thm:moment} for the polynomials $1$
+and $1+x^j$ and Cauchy--Schwarz give
+\begin{equation}\label{eq:Emean}
+ \int w\,|\psi E_\beta(\sigma_0+it)|^2dt\ll H/L^2 .
+\end{equation}
+Published admissible polynomials often have $\beta\ne1$; for instance
+Conrey's polynomial of degree seven has $\beta=0.984$. For them the
+unnormalized difference $\zeta-V-\chi V(1-s)$ is not small, which is why
+$E_\beta$ is normalized by $\beta$.
+
+\subsection{The counting lemma}
+
+\begin{lemma}\label{lem:count}
+Let $\sigma_1=\sigma_1(Q)$ be fixed and large, and let $N_{\Vt}$ count, with
+multiplicity, the zeros of $\Vt$ in $[1/2,\sigma_1]\times(T,T+H]$, including
+those on $\sigma=1/2$. For $T$ and $T+H$ avoiding ordinates of zeros of $\Vt$
+and $Z$,
+\[
+ O(T,H)\ge N(T,H)-2N_{\Vt}-O(L).
+\]
+\end{lemma}
+
+\begin{proof}
+Let $t_1<\dots<t_J$ be the zeros of $\Vt(1/2+it)$ in $(T,T+H)$, of orders
+$k_1,\dots,k_J$, and $K=\sum k_j$. Write
+$\Vt(s)=\prod_j(s-1/2-it_j)^{k_j}F(s)$ with $F$ holomorphic and zero-free on the
+segment. On the line $\omega\Vt=i^Kp(t)\omega F$ with
+$p(t)=\prod_j(t-t_j)^{k_j}$ real, so by \eqref{eq:real}
+$\beta Z=2p\,\Re W_0$, where $W_0=i^K\omega F$ is continuous and zero-free on
+$[T,T+H]$.
+
+Let $\phi$ be a continuous argument of $W_0$; assume $\phi(T)<\phi(T+H)$, the
+other case being symmetric, and let $c_1<\dots<c_M$ be the points of
+$\pi/2+\pi\Z$ in $(\phi(T),\phi(T+H))$, so that $M\ge|\Delta\phi|/\pi-1$. Put
+$\tau_0=T$, $\tau_M=T+H$, and for $0<i<M$ let $\tau_i$ be the first point with
+$\phi(\tau_i)=c_i+\pi/2$. Then $\tau_0<\dots<\tau_M$ and $\cos\phi(\tau_i)$ alternates in
+sign, since $\phi(\tau_0)\in(c_1-\pi,c_1)$, $\phi(\tau_M)\in(c_M,c_M+\pi)$ and
+$\phi(\tau_i)=c_i+\pi/2$. After moving the interior $\tau_i$ slightly, none of them
+is a $t_j$. As $\operatorname{sgn}Z(\tau_i)=\operatorname{sgn}(\beta)
+\operatorname{sgn}p(\tau_i)\operatorname{sgn}\cos\phi(\tau_i)$ and $p$ changes sign
+only at the $t_j$, the function $Z$ has opposite signs at the ends of at least
+$M-J$ of the disjoint intervals $(\tau_{i-1},\tau_i)$, and each such interval
+contains a sign change. Hence $O(T,H)\ge|\Delta\phi|/\pi-1-J$.
+
+Apply the argument principle to $F$ on $[1/2,\sigma_1]\times[T,T+H]$. It is
+zero-free on the left side, and its zeros inside are the $N_>$ zeros of $\Vt$
+with $\sigma>1/2$. On the bottom, right and top sides
+$\arg F=\arg\Vt-\sum_jk_j\arg(s-1/2-it_j)$, and each factor turns by exactly
+$+\pi$ along these sides. Therefore
+\[
+ \Delta\phi=\Delta\vartheta+\Delta_{\rm brt}\arg\Vt-\pi K-2\pi N_> .
+\]
+The Riemann--von Mangoldt formula gives $\Delta\vartheta/\pi=N(T,H)+O(L)$. On
+$\sigma=\sigma_1$ we have $|V-1|\le1/4$ and $|E_\beta|\ll1/L$, so $\Re\Vt>0$ and
+that side contributes $O(1)$. On the horizontal sides the Backlund--Jensen
+argument gives $O(L)$, because $\Vt=(\beta\zeta+V-\chi V(1-s))/2=
+\sum_{j\le\deg Q}a_j(s)\zeta^{(j)}(s)$ with each $a_j$ a polynomial in
+$L^{-1}$, $\lambda$ and its derivatives, so $\Vt$ is holomorphic and
+polynomially bounded near the window and $\Re\Vt\ge1/2$ at $\sigma_1+iT$.
+Since $J\le K$ and $N_{\Vt}=N_>+K$,
+\[
+ O(T,H)\ge N(T,H)-2(N_>+K)-O(L)=N(T,H)-2N_{\Vt}-O(L).\qedhere
+\]
+\end{proof}
+
+A double zero of $Z$ is not a sign change and is never counted; it is paid
+for in $N_{\Vt}$, as an on-line zero of $\Vt$ when $\deg Q=1$ and, in the
+examples of Section~\ref{sec:certify}, as a zero of $\Vt$ to the right of the
+line when $\deg Q=3$. If the on-line zeros of $\Vt$ are omitted from
+$N_{\Vt}$, the inequality fails (Section~\ref{sec:certify}).
+
+\subsection{Proof of Theorem~\ref{thm:signs}}
+
+Let $F_1=\psi\Vt$. Littlewood's lemma on $[\sigma_0,\sigma_1]\times[T,T+H]$
+gives
+\[
+ 2\pi\int_{\sigma_0}^{\sigma_1}n(\sigma)d\sigma=
+ \int_T^{T+H}\log|F_1(\sigma_0+it)|dt-\int_T^{T+H}\log|F_1(\sigma_1+it)|dt+O(L),
+\]
+where $n(\sigma)$ counts the zeros of $F_1$ in the rectangle with real part
+greater than $\sigma$, and $O(L)$ bounds the horizontal argument integrals by
+the same Backlund--Jensen argument. Each zero counted in $N_{\Vt}$ has real
+part at least $1/2=\sigma_0+R/L$, and every other zero contributes
+nonnegatively, so the left side is at least $2\pi(R/L)N_{\Vt}$.
+
+On $\sigma=\sigma_1$, $\psi V=1+\sum_{n\ge2}b_nn^{-s}$ with
+$|b_n|\ll d(n)(\log n)^{\deg Q}$, so its logarithm is an absolutely
+convergent Dirichlet series for $\sigma_1$ large and
+$\int\log|\psi V(\sigma_1+it)|dt=O(1)$; moreover $|E_\beta/(2V)|\ll1/L$ there,
+which contributes $O(H/L)$. On $\sigma=\sigma_0$, concavity of the logarithm,
+$w\ge1$ on $[T,T+H]$, the inequality
+$|a+b|^2\le(1+L^{-1/2})|a|^2+(1+L^{1/2})|b|^2$, Theorem~\ref{thm:moment} and
+\eqref{eq:Emean} give
+\[
+ \int_T^{T+H}\log|F_1(\sigma_0+it)|dt\le\frac H2\log\Bigl(\frac1H\int
+ w|\psi\Vt|^2\Bigr)\le\frac H2\log c(P,Q,R,\nu)+O(HL^{-1/2}).
+\]
+Hence $N_{\Vt}\le(HL/4\pi R)\log c+o(HL)$. Since $N(T,H)=(HL/2\pi)(1+o(1))$,
+Lemma~\ref{lem:count} gives $O/N\ge1-R^{-1}\log c-o(1)$. \qed
+
+\section{Transfer to simple zeros}\label{sec:transfer}
+
+\begin{theorem}[D]\label{thm:transfer}
+If $\liminf O(T,T^\theta)/N(T,T^\theta)\ge k\ge0$, then
+$\liminf S(T,T^\theta)/N(T,T^\theta)\ge h(\theta;k)$.
+\end{theorem}
+
+\begin{proof}
+This is the argument of~\cite[proof of Theorem 1.2]{CAOSShort} with the
+odd-support input replaced by $k$. For a real even $\eta\in
+C_c^\infty((-\lambda/2,\lambda/2))$, $0<\lambda<\theta$, with $\int\eta^2=1$,
+let $Q_T$ be the pair sum of $f=\eta^2$ over the scaled zeros of the window;
+it is unrelated to the polynomial $Q$ of the previous sections. With
+$q_T,s_T,o_T$ the ratios of $Q_T,S,O$ to $N$, the Hilbert--parity inequality
+\cite[Proposition 2.5]{CAOSShort} reads $(q_T-s_T)(1-o_T)\ge2(1-s_T)^2$, and
+Wang's theorem~\cite[Theorem 2.2]{WangShort} gives $q_T\to\mathcal C(f)$. For
+every $\epsilon>0$ and all large $T$, enlarging nonnegative factors,
+$2(1-s_T)^2\le(\mathcal C(f)+\epsilon-s_T)(1-k+\epsilon)$. Hence
+$\liminf s_T\ge R(\mathcal C(f),1-k)$ with
+$R(A,b)=(4-b-\sqrt{b(b+8(A-1))})/4$, the smaller root. Letting $f$ tend to the
+cosine density at fixed $\lambda$, so that $\mathcal C(f)\to2-c(\lambda)$, and
+then $\lambda\to\theta$, gives $R(2-c(\theta),1-k)=h(\theta;k)$.
+\end{proof}
+
+For fixed $k<1$, $h(\theta;k)$ increases with $c$ and with $k$, since
+$\partial_k[(1-k)(9-k-8c)]=-(10-2k-8c)<0$ for $c<1$. As
+$c'(\theta)=\frac12\cot^2(\theta/\sqrt2)>0$, if $h(\theta_*;\kappa)>0$ for a
+detector with $\nu<\theta_*-1/2$, then the same detector is admissible and
+$h(\theta;\kappa)>0$ for every $\theta\in[\theta_*,1)$. The linear branch
+$(c+2k)/3$ in \eqref{eq:main} is the transfer of~\cite[Theorem 1.4]{CAOSShort}
+with the same input.
+
+\section{Certified detector constants}\label{sec:certify}
+
+We use $Q$ in the Chebyshev family
+\[
+ Q(y)=1-y+\sum_{j=1}^{100}x_j\bigl(T_{2j+1}(1-2y)-(1-2y)\bigr),
+\]
+which has degree $201$, $Q(0)=1$, $Q(1)=0$ and $Q(y)+Q(1-y)=1$ for all rational
+$x_j$, because $T_{2j+1}$ is odd with $T_{2j+1}(1)=1$,
+and $P(x)=S(rx)/S(r)$ with $S$ the Taylor polynomial of $\sinh$ of degree
+$13$. The coefficients $x_j$ are rationals with denominator $10^{40}$ obtained
+by minimizing $c$ numerically, and $R$, $r$, $\nu$ are rational. With
+$B_P=\int_0^1P^2$, $C_P=\int_0^1P'^2$ and $\int_0^1PP'=1/2$, and since
+$\int_0^1w_Rw_R'=(e^{2R}Q(1)^2-Q(0)^2)/2=-1/2$,
+\[
+ c(P,Q,R,\nu)=\frac12+\frac{C_P}\nu\int_0^1e^{2Rv}Q(v)^2dv
+ +\nu B_P\int_0^1e^{2Rv}\bigl(RQ(v)+Q'(v)\bigr)^2dv .
+\]
+Each integral $\int_0^1e^{2Rv}F(v)dv$ of a rational polynomial equals
+$e^{2R}a(F)+b(F)$ with rational $a,b$, by the recursion
+$\int_0^1e^{tv}v^kdv=e^ta_k+b_k$, $a_k=1/t-(k/t)a_{k-1}$,
+$b_k=-(k/t)b_{k-1}$, $a_0=1/t$, $b_0=-1/t$. Hence $c=Ae^{2R}+B$ with exact
+rationals $A,B$, and $\kappa=1-R^{-1}\log c$ needs one exponential and one
+logarithm in ball arithmetic (Arb, $4000$ bits). The admissibility identities
+are verified in exact rational arithmetic.
+
+\begin{table}[ht]
+\centering
+\caption{Certified detector constants. Lower bounds are rounded down.}
+\label{tab:kappa}
+\begin{tabular}{llllll}
+\toprule
+$\nu$ & $R$ & $r$ & $c(P,Q,R,\nu)$ & $\kappa>$ & $\kappa/\nu>$\\
+\midrule
+$0.0199$ & $48.391$ & $0.7702$ & $5.1998\cdot10^{20}$ & $0.0142729911$ & $0.717235$\\
+$0.0299$ & $32.244$ & $0.7708$ & $5.0471\cdot10^{13}$ & $0.0214483010$ & $0.717334$\\
+$0.0339$ & $28.439$ & $0.7708$ & $1.1235\cdot10^{12}$ & $0.0243176419$ & $0.717334$\\
+$0.0349$ & $27.625$ & $0.7709$ & $4.9777\cdot10^{11}$ & $0.0250349766$ & $0.717334$\\
+$0.0399$ & $24.163$ & $0.7709$ & $1.5614\cdot10^{10}$ & $0.0286216496$ & $0.717334$\\
+$0.0458$ & $21.05$ & $0.7708$ & $6.9431\cdot10^{8}$ & $0.0328539236$ & $0.717334$\\
+$0.0499$ & $19.321$ & $0.7709$ & $1.2321\cdot10^{8}$ & $0.0357949954$ & $0.717334$\\
+$0.0999$ & $9.648$ & $0.7707$ & $7.7588\cdot10^{3}$ & $0.0716640051$ & $0.717357$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In our numerical optimization the ratio $\kappa/\nu$ did not exceed about
+$0.7173$ for this mollifier shape at small $\nu$; the polynomials of Conrey,
+Farmer, Kwan, Lin and Turnage-Butterbaugh~\cite{CFKL} give about $0.682\nu$.
+Linear $Q$ does not suffice at these lengths: $Q=1-x$, $P=x$ needs
+$\nu>0.1928$ for $\kappa>0$. The same code reproduces Young's
+$c=2.35006777\ldots$ for $P=x$, $Q=1-x$, $R=1.3$, $\nu=1/2$, and Conrey's
+$\kappa>0.4088$ for his polynomial of degree seven with $\nu=4/7$.
+
+An independent program evaluates $Q$ by the Chebyshev recurrence directly
+from the $x_j$ and $P$ by its series, separates the double integral by
+Fubini into one-dimensional integrals, computes each by validated Arb
+quadrature, and recomputes $c(\theta)$ and $h$ with $100$-digit interval
+arithmetic in \texttt{mpmath}. Every enclosure overlaps the primary one, and
+all thresholds hold again. With $\nu=\theta-1/2-10^{-4}$, the directed values
+of $h(\theta;\kappa)$ at $\theta=0.534,0.535,0.54,0.5459,0.55$ exceed
+$1.4806994\cdot10^{-5}$, $0.0015246940$, $0.0090231376$, $0.0177638490$ and
+$0.0237708528$; at $\theta=0.5459$ the ratio to the rank-six Selberg value
+$1.7764518\cdot10^{-5}$ exceeds $999.96$.
+
+Numerical controls support Lemma~\ref{lem:count}. At $T=10^4,10^5,10^6$ and
+for $Q$ of degrees $1,3,5,7$, including Conrey's polynomial and polynomials
+with $\beta\ne1$, the direct evaluation of $\chi(s)V(1-s)$ agrees with
+Lemma~\ref{lem:identity}, $\omega E_\beta$ is real and \eqref{eq:real} holds to
+the working precision. On windows at these heights the sign changes of $Z$,
+the level crossings of $\arg W_0$ and the zero counts coincide. For the test
+functions $f=\zeta\prod_j((s-1/2)^2+\gamma_j^2)^{e_j}$ with planted double
+($e_j=1$) and triple ($e_j=2$) critical zeros, the inequality of
+Lemma~\ref{lem:count} holds with equality in the double-zero cases, double
+zeros are not counted, and the variant that omits the on-line zeros of $\Vt$
+fails for $\deg Q=1$.
+
+\section{Scope}
+
+Theorems~\ref{thm:moment} and~\ref{thm:signs} are unconditional and use only
+classical tools together with Young's argument. Theorem~\ref{thm:main} also
+uses Wang's short-interval pair theorem~\cite{WangShort}, a recent preprint,
+through the finite inequality of~\cite{CAOSShort}. All statements are
+asymptotic and give no effective starting height. They do not show that
+every zero in the window is simple or on the critical line, and they do not
+prove the Riemann hypothesis.
+
+The onset is limited by the mollifier range $\nu<\theta-1/2$, which is the
+classical range; with linear $Q$ it gives only $\theta\ge0.693$. The gain
+comes from operator polynomials of high degree, which lose the simple-zero
+information, together with the parity inequality, which restores it. A
+mollified moment with general $Q$ in the range $\nu<(3\theta-1)/4$, which
+Steuding established for $Q(x)=1-x$~\cite{SteudingThesis}, would, by a
+numerical evaluation with slopes as in Table~\ref{tab:kappa}, make the
+positivity condition $\kappa>1-2/(2-c(\theta))$ hold for every $\theta>1/2$;
+we do not prove such a moment here.
+
+\medskip
+\noindent\textbf{Data availability.} The programs, exact parameters, outputs
+and independent replays are archived as computation EXP-010 in the
+repository~\cite{Record}.
+
+\medskip
+\noindent\textbf{Declaration of generative AI use.} Generative AI tools were
+used for source research, derivation, review and implementation. The author
+reviewed and verified all content and takes full responsibility for the work.
+
+\begin{thebibliography}{99}
+\raggedright
+
+\bibitem{BCY}
+H. M. Bui, J. B. Conrey and M. P. Young,
+\emph{More than 41\% of the zeros of the zeta function are on the critical
+line}, Acta Arith. \textbf{150} (2011), 35--64; arXiv:1002.4127.
+
+\bibitem{CAOSShort}
+F. Santib\'a\~nez-Leal,
+\emph{Simple critical zeros in short intervals: stability, parity,
+localization, Hilbert compression, and spectral defect},
+Zenodo preprint (2026),
+\url{https://doi.org/10.5281/zenodo.22860012}.
+
+\bibitem{CFKL}
+J. B. Conrey, D. W. Farmer, C.-H. Kwan, Y. Lin and
+C. L. Turnage-Butterbaugh,
+\emph{Short mollifiers of the Riemann zeta-function},
+arXiv:2508.11108v1 (2025).
+
+\bibitem{Conrey}
+J. B. Conrey,
+\emph{More than two fifths of the zeros of the Riemann zeta function are on
+the critical line}, J. Reine Angew. Math. \textbf{399} (1989), 1--26.
+
+\bibitem{Karatsuba}
+A. A. Karatsuba,
+\emph{On the zeros of the function $\zeta(s)$ on short intervals of the
+critical line}, Math. USSR-Izv. \textbf{24} (1985), 523--537.
+
+\bibitem{PearceCrump}
+A. Pearce-Crump,
+\emph{Optimising Selberg's method for critical zeros},
+arXiv:2609.15329v1 (2026),
+\url{https://arxiv.org/abs/2609.15329v1}.
+
+\bibitem{Record}
+F. Santib\'a\~nez-Leal,
+\emph{EXP-010: localized Levinson parity transfer},
+CAOS Research computational record (2026),
+\url{https://github.com/fsantibanezleal/CAOS_RESEARCH/tree/main/problems/number-theory/riemann-hypothesis/experiments/EXP-010-levinson-parity-transfer}.
+
+\bibitem{Steuding}
+J. Steuding,
+\emph{On simple zeros of the Riemann zeta-function in short intervals},
+Acta Math. Hungar. \textbf{96} (2002), 259--308.
+
+\bibitem{SteudingThesis}
+J. Steuding,
+\emph{On simple zeros of the Riemann zeta-function},
+doctoral dissertation, Universit\"at Hannover (1999).
+
+\bibitem{WangShort}
+B. Wang,
+\emph{Simple critical zeros and distinct zeros of the Riemann zeta-function
+in short intervals},
+arXiv:2609.07918v1 (2026),
+\url{https://arxiv.org/abs/2609.07918v1}.
+
+\bibitem{Young}
+M. P. Young,
+\emph{A short proof of Levinson's theorem},
+Arch. Math. \textbf{95} (2010), 539--548; arXiv:1002.4403.
+
+\end{thebibliography}
+\end{document}

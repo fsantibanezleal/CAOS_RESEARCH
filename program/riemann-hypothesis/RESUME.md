@@ -2,17 +2,16 @@
 
 ## 1. State in one screen
 
-Read [state.md](state.md), [backlog.md](backlog.md), and the EXP-009 verdict.
-EXP-009 is confirmed, its seven-page preprint is public at
-[10.5281/zenodo.22940291](https://doi.org/10.5281/zenodo.22940291), replay v8
-is deployed, and release 0.73.000 is live-verified from main commit
-`e6f905f8`. General RH remains open.
-
-EXP-009 proves `R(alpha,beta) <= sqrt(2)` for nonnegative inputs, with equality
-only at `(0,1)` and `(1,0)`. Under Wang's attributed global framework this
-improves the lower proportion of simple critical zeros to
-`0.6725007995946757558283550562963947865...`, a gain exceeding `9.5915e-8`
-over the source baseline. The source framework is recent and unreviewed.
+Read [state.md](state.md), [backlog.md](backlog.md), and the EXP-010 verdict.
+EXP-010 is certified on branch `work/riemann-hypothesis/levinson-parity-20260926`
+(referee review of the proof in progress):
+the localized Levinson detector with degree-201 operator polynomials gives a
+positive proportion of simple critical zeros in `(T,T+T^theta]` for every
+fixed `theta` in `[0.534,1)` (previous onset `0.5458838`), and about 1000 times
+the EXP-008 density at `theta=0.5459`. Its manuscript
+`manuscripts/riemann-hypothesis/short-interval-levinson/` v0.01 is built and
+awaits the vault Zenodo deposit. Release 0.73.000 (EXP-009) is the latest
+live release. General RH remains open.
 
 ## 2. The objects table
 
@@ -25,6 +24,10 @@ over the source baseline. The source framework is recent and unreviewed.
 | `C_distinct` | Attributed distinct-critical companion | `0.8362503997973378779141775281481973932...` |
 | EXP-009 portable result | Exact theorem checks, source replay, global and local transfers | SHA-256 `0cea78e847d1bcec62eb8cd809b704ceaebd58f78f1c405f13ec40838fbb5a66` |
 | Manuscript v0.01 | Seven-page published preprint | DOI `10.5281/zenodo.22940291` |
+| `kappa(P,Q,R,nu)` | Localized Levinson distinct sign-change density | `>0.7170 nu` at eight frozen `nu`; EXP-010 |
+| `h(theta;kappa)` | Parity transfer of the Levinson density | positive for every `theta` in `[0.534,1)`; `>0.0177638` at `0.5459` |
+| EXP-010 canonical result | Exact admissibility, Arb constants, anchors, onset | SHA-256 `74ed14a925bdd10f27d09d6fb23a8e43f9474f8e0e5280fceafac33e06f49464` |
+| `short-interval-levinson` v0.01 | Nine-page manuscript of EXP-010 | built; Zenodo deposit pending |
 
 ## 3. Experiment index
 
@@ -39,28 +42,33 @@ over the source baseline. The source framework is recent and unreviewed.
 | EXP-007 | spectral-defect parity product and strict full-curve gain confirmed |
 | EXP-008 | fixed-rank localization and attributed rank-six onset confirmed |
 | EXP-009 | sharp three-point ratio, attributed global gain, and onset-neutral local companion confirmed |
+| EXP-010 | short-window Levinson moment, distinct sign-change count, certified degree-201 detectors, onset `0.534`; referee review in progress |
 
 ## 4. In flight
 
-1. The merged release includes the EXP-009 evidence, published manuscript
-   receipt, replay v8, nine-record workbench, and release QA.
-2. Python replay/bake passed 64 tests; the frontend passed 24 tests, TypeScript,
-   and production build.
-3. Eight exact-candidate desktop/phone, EN/ES, light/dark scenarios passed with
-   48 tab visits and 1,586 screenshots.
-4. PRs #337 and #338, exact-main CI, Pages, tag `v0.73.000`, eleven live byte
-   comparisons, and eight live browser scenarios passed.
+1. EXP-010 evidence, proof, audit, controls, verdict, wiki chapter 13 and the
+   manuscript source are on the work branch and go to `develop` by PR.
+2. The manuscript needs the vault deposit (DOI reservation, PDF with its DOI,
+   receipt); the header block shows the DOI as assigned at deposit.
+3. The public workbench and data bake still show nine experiments; replay v9
+   and a serialized release are RH-026.
 
 ## 5. Next actions
 
-1. Pursue independent rank-six coefficient reconstruction or a source artifact
-   that permits exact `C6` replay (RH-021).
-2. Subject the attributed global Wang framework to independent external review
-   or reconstruction before strengthening any global claim.
+1. Deposit `short-interval-levinson` v0.01 (RH-025).
+2. RH-027: a uniform two-shift short-window moment for general `Q` in
+   Steuding's range `nu<(3theta-1)/4`, which would make positivity hold for
+   every `theta>1/2`.
+3. RH-026: replay v9 and release.
+4. Pursue independent rank-six reconstruction (RH-021) and external review of
+   Wang's frameworks before strengthening any attributed claim.
 
 ## 6. Where everything lives
 
 Problem evidence is under `problems/number-theory/riemann-hypothesis/`.
+EXP-010 proof, audit, controls, verdict, runners and immutable outputs are
+under `experiments/EXP-010-levinson-parity-transfer/`; its manuscript source
+is under `manuscripts/riemann-hypothesis/short-interval-levinson/`.
 EXP-009 proof, audit, verdict, runner, and immutable outputs are under
 `experiments/EXP-009-wang-kernel-sharpening/`. Replay instructions are in
 [docs/guides/riemann-replay.md](../../docs/guides/riemann-replay.md). The

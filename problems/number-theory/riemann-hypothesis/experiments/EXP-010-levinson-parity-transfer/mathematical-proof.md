@@ -322,14 +322,14 @@ holomorphic and zero-free on the segment. On the line,
 Let `phi` be a continuous argument of `W_0` on `[T,T+H]`; after a small
 perturbation of `T` and `T+H`, `cos phi` is nonzero at both ends. Assume
 `phi(T)<phi(T+H)` (the other case is symmetric) and let `c_1<...<c_M` be the levels
-of `pi/2+pi Z` in `(phi(T),phi(T+H))`, so `M>=|Delta phi|/pi-1`. Put `p_0=T`,
-`p_M=T+H`, and for `0<i<M` let `p_i` be the first point where `phi=c_i+pi/2`. Then
-`p_0<p_1<...<p_M`, and `cos phi(p_i)` alternates in sign, because `phi(p_0)` lies in
-`(c_1-pi,c_1)`, `phi(p_M)` lies in `(c_M,c_M+pi)` and `phi(p_i)=c_i+pi/2`. Moving
-each interior `p_i` slightly, no `p_i` is a `t_j`. Now
-`sgn Z(p_i)=sgn(beta) sgn p(p_i) sgn cos phi(p_i)`, and `p` changes sign only at the
+of `pi/2+pi Z` in `(phi(T),phi(T+H))`, so `M>=|Delta phi|/pi-1`. Put `tau_0=T`,
+`tau_M=T+H`, and for `0<i<M` let `tau_i` be the first point where `phi=c_i+pi/2`. Then
+`tau_0<tau_1<...<tau_M`, and `cos phi(tau_i)` alternates in sign, because `phi(tau_0)` lies in
+`(c_1-pi,c_1)`, `phi(tau_M)` lies in `(c_M,c_M+pi)` and `phi(tau_i)=c_i+pi/2`. Moving
+each interior `tau_i` slightly, no `tau_i` is a `t_j`. Now
+`sgn Z(tau_i)=sgn(beta) sgn p(tau_i) sgn cos phi(tau_i)`, and `p` changes sign only at the
 `t_j`, so `Z` has opposite signs at the ends of at least `M-J` of the disjoint
-intervals `(p_{i-1},p_i)`. Each such interval contains a point where `Z` changes
+intervals `(tau_{i-1},tau_i)`. Each such interval contains a point where `Z` changes
 sign, hence
 
 $$
