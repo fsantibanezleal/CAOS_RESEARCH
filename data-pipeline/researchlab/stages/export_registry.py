@@ -238,8 +238,6 @@ def _riemann_payload() -> dict:
         ("proof", exp_two, f"experiments/{exp_two}/mathematical-proof.md"),
         ("verdict", exp_two, f"experiments/{exp_two}/verdict.md"),
         ("source_manifest", "source-review", "context/source-manifest.json"),
-        ("wang_kernel_source_manifest", "source-review",
-         "context/source-manifest-exp009.json"),
         ("pressure_result", exp_three, f"experiments/{exp_three}/artifacts/result.json"),
         ("pressure_proof", exp_three, f"experiments/{exp_three}/mathematical-proof.md"),
         ("pressure_verdict", exp_three, f"experiments/{exp_three}/verdict.md"),
@@ -307,6 +305,8 @@ def _riemann_payload() -> dict:
         ])
     if RIEMANN_EXPERIMENT_MAX >= 9:
         specifications.extend([
+            ("wang_kernel_source_manifest", "source-review",
+             "context/source-manifest-exp009.json"),
             ("wang_kernel_result", exp_nine,
              f"experiments/{exp_nine}/artifacts/canonical/result.json"),
             ("wang_kernel_receipt", exp_nine,
