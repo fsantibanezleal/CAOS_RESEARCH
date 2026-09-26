@@ -239,7 +239,7 @@ node scripts/verify_riemann_ui.mjs --base-url http://127.0.0.1:4182/ --output-di
 ```
 
 The harness drives real pointer navigation from Program, language/theme controls, all six
-research sections, proof stages, all eight released experiment records and the architecture modal.
+research sections, proof stages, all nine released experiment records and the architecture modal.
 It records viewport containment, single-row navigation, browser errors, equation rendering,
 source links and screenshot hashes. It captures successive content viewports, including long
 experiment records. Automated success and visual inspection are recorded separately.
