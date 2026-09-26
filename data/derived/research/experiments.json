@@ -8453,6 +8453,50 @@
     {
      "bytes": 8391,
      "name": "result.json"
+    },
+    {
+     "bytes": 690,
+     "name": "smoke/construction-checkpoint.json"
+    },
+    {
+     "bytes": 779,
+     "name": "smoke/replay-checkpoint.json"
+    },
+    {
+     "bytes": 723,
+     "name": "smoke/smoke-result.json"
+    },
+    {
+     "bytes": 43,
+     "name": "stage-a/operational.json"
+    },
+    {
+     "bytes": 3595,
+     "name": "stage-a/stage-a-result.json"
+    },
+    {
+     "bytes": 17489,
+     "name": "stage-b/candidate-1/construction-checkpoint.json"
+    },
+    {
+     "bytes": 211,
+     "name": "stage-b/candidate-1/operational.json"
+    },
+    {
+     "bytes": 17333,
+     "name": "stage-b/candidate-1/pressure-certificate.json"
+    },
+    {
+     "bytes": 17578,
+     "name": "stage-b/candidate-1/replay-checkpoint.json"
+    },
+    {
+     "bytes": 3548,
+     "name": "stage-b/candidate-1/result.json"
+    },
+    {
+     "bytes": 4228,
+     "name": "stage-b/stage-b-result.json"
     }
    ],
    "date": "2026-09-12",
@@ -8519,6 +8563,50 @@
     {
      "bytes": 700,
      "name": "README.md"
+    },
+    {
+     "bytes": 77,
+     "name": "canonical/checkpoint.json"
+    },
+    {
+     "bytes": 335,
+     "name": "canonical/execution-receipt.json"
+    },
+    {
+     "bytes": 136217,
+     "name": "canonical/result.json"
+    },
+    {
+     "bytes": 630,
+     "name": "canonical/stdout.txt"
+    },
+    {
+     "bytes": 77,
+     "name": "failed-attempt-1/checkpoint.json"
+    },
+    {
+     "bytes": 248,
+     "name": "failed-attempt-1/failure.json"
+    },
+    {
+     "bytes": 402,
+     "name": "failed-attempt-1/stdout.txt"
+    },
+    {
+     "bytes": 77,
+     "name": "superseded-attempt-2/checkpoint.json"
+    },
+    {
+     "bytes": 336,
+     "name": "superseded-attempt-2/execution-receipt.json"
+    },
+    {
+     "bytes": 135785,
+     "name": "superseded-attempt-2/result.json"
+    },
+    {
+     "bytes": 309,
+     "name": "superseded-attempt-2/stdout.txt"
     }
    ],
    "date": "2026-09-19",
@@ -8536,6 +8624,54 @@
     {
      "bytes": 1220,
      "name": "README.md"
+    },
+    {
+     "bytes": 77,
+     "name": "canonical/checkpoint.json"
+    },
+    {
+     "bytes": 336,
+     "name": "canonical/execution-receipt.json"
+    },
+    {
+     "bytes": 681484,
+     "name": "canonical/result.json"
+    },
+    {
+     "bytes": 362,
+     "name": "canonical/stdout.txt"
+    },
+    {
+     "bytes": 77,
+     "name": "superseded-broad-bracket/checkpoint.json"
+    },
+    {
+     "bytes": 336,
+     "name": "superseded-broad-bracket/execution-receipt.json"
+    },
+    {
+     "bytes": 542059,
+     "name": "superseded-broad-bracket/result.json"
+    },
+    {
+     "bytes": 362,
+     "name": "superseded-broad-bracket/stdout.txt"
+    },
+    {
+     "bytes": 77,
+     "name": "superseded-weaker-transfer/checkpoint.json"
+    },
+    {
+     "bytes": 336,
+     "name": "superseded-weaker-transfer/execution-receipt.json"
+    },
+    {
+     "bytes": 542158,
+     "name": "superseded-weaker-transfer/result.json"
+    },
+    {
+     "bytes": 362,
+     "name": "superseded-weaker-transfer/stdout.txt"
     }
    ],
    "date": "2026-09-20",
@@ -8553,6 +8689,54 @@
     {
      "bytes": 1614,
      "name": "README.md"
+    },
+    {
+     "bytes": 89,
+     "name": "canonical/checkpoint.json"
+    },
+    {
+     "bytes": 335,
+     "name": "canonical/execution-receipt.json"
+    },
+    {
+     "bytes": 17854057,
+     "name": "canonical/result.json"
+    },
+    {
+     "bytes": 447,
+     "name": "canonical/stdout.txt"
+    },
+    {
+     "bytes": 83,
+     "name": "failed-attempt-001/checkpoint.json"
+    },
+    {
+     "bytes": 167,
+     "name": "failed-attempt-001/failure.json"
+    },
+    {
+     "bytes": 412,
+     "name": "failed-attempt-001/stdout.txt"
+    },
+    {
+     "bytes": 89,
+     "name": "failed-attempt-002/checkpoint.json"
+    },
+    {
+     "bytes": 161,
+     "name": "failed-attempt-002/failure.json"
+    },
+    {
+     "bytes": 467,
+     "name": "failed-attempt-002/stdout.txt"
+    },
+    {
+     "bytes": 335,
+     "name": "windows-canonical-v1/execution-receipt.json"
+    },
+    {
+     "bytes": 17855023,
+     "name": "windows-canonical-v1/result.json"
     }
    ],
    "date": "2026-09-20",
@@ -8570,6 +8754,30 @@
     {
      "bytes": 1047,
      "name": "README.md"
+    },
+    {
+     "bytes": 67,
+     "name": "canonical/checkpoint.json"
+    },
+    {
+     "bytes": 422,
+     "name": "canonical/execution-receipt.json"
+    },
+    {
+     "bytes": 21218322,
+     "name": "canonical/result.json"
+    },
+    {
+     "bytes": 233,
+     "name": "canonical/stdout.txt"
+    },
+    {
+     "bytes": 422,
+     "name": "windows-canonical-v1/execution-receipt.json"
+    },
+    {
+     "bytes": 21220511,
+     "name": "windows-canonical-v1/result.json"
     }
    ],
    "date": "2026-09-20",
@@ -8583,7 +8791,24 @@
   },
   {
    "area": "number-theory",
-   "artifacts": [],
+   "artifacts": [
+    {
+     "bytes": 67,
+     "name": "canonical/checkpoint.json"
+    },
+    {
+     "bytes": 422,
+     "name": "canonical/execution-receipt.json"
+    },
+    {
+     "bytes": 4114968,
+     "name": "canonical/result.json"
+    },
+    {
+     "bytes": 232,
+     "name": "canonical/stdout.txt"
+    }
+   ],
    "date": "2026-09-24",
    "hypothesis_md": "# EXP-009: Wang kernel sharpening and parity transfer\n\nDeclared: 2026-09-24. Device: CPU. Baseline: public `develop` commit\n`07373317d188bc4f8536afe1d5a2c6a91018751c` and release `v0.72.000`.\n\nStatus at declaration: Wang arXiv:2609.24167v1 has been archived and read;\nno optimization runner, interval certificate, or result has been implemented or\nexecuted. This declaration must be committed before computation.\n\n## New source and question\n\nWang's September 21 preprint proves the first stated global improvement over\nthe Montgomery--Taylor/Alpoge--Furman constant. Its finite defect\n`Delta_K=tr Psi(G_K)` overlaps the spectral term retained independently in\nEXP-007, while its explicit three-point kernel lemma is new to the CAOS source\nbaseline.\n\nThe source bounds an auxiliary ratio\n\n$$\nR(alpha,beta)=\\frac{\\sqrt{(1+alpha^2)(1+beta^2)}\n+alpha\\sqrt{1+alpha^2}+beta\\sqrt{1+beta^2}}\n{1+alpha^2+alpha beta+beta^2}\n$$\n\nby `2`. This gives `d >= sqrt(5)-2` and the kernel energy\n\n$$\ne(H)=\\frac{(\\sqrt5-2)^2}{(1+2\\pi^2H^2)^2}.\n$$\n\nEXP-009 asks whether the ratio bound can be sharpened rigorously and whether\nthe resulting three-point energy improves both Wang's global proportion and\nthe EXP-007/008 short-interval parity product.\n\n## Prediction A: sharpen the auxiliary ratio\n\nProve for all `alpha,beta >= 0` that\n\n$$\n\\boxed{R(alpha,beta)\\le\\frac32.}\n\\tag{A}\n$$\n\nThe proof may be symbolic or a finite exact/Arb interval certificate after a\ncompactification with separately proved boundary estimates. A grid or floating\noptimizer is discovery evidence only.\n\nIf (A) holds, Wang's derivation gives\n\n$$\n(1-d)^2\\le\\frac32d(1+d),\n\\qquad\n\\boxed{d\\ge d_*:=\\frac{\\sqrt{57}-7}{2}>\\sqrt5-2.}\n\\tag{B}\n$$\n\nHence every three-point block of span at most `H` has energy at least\n\n$$\n\\boxed{e_*(H)=\\frac{d_*^2}{(1+2\\pi^2H^2)^2}.}\n\\tag{C}\n$$\n\n## Prediction B: new global proportion\n\nLet\n\n$$\na_*(H)=\\frac{2e_*(H)}3,\n\\qquad\nu_*(H)=\\frac{C_0-2a_*(H)/H}{1-a_*(H)}.\n$$\n\nUse a directed global search followed by an exact rational interval proof on a\nfrozen interval for `H` to certify some explicit `H_*` with\n\n$$\n\\boxed{\\nu_*(H_*)>C_0+\\delta_0,}\n\\tag{D}\n$$\n\nwhere `delta_0` is Wang's printed improvement. The final claim will use a\nrationally rounded value of `H_*` and a downward-rounded proportion. A merely\nbetter floating value does not pass.\n\nThe distinct-zero companion is `(1+nu_*(H_*))/2` by the same finite argument.\n\n## Prediction C: stronger short-interval spectral-parity curve\n\nFor each fixed `theta` where the EXP-008 rank-six Hilbert-parity term\n`h_6(theta)` is positive, take any fixed `H>2/h_6(theta)`, put\n\n$$\nalpha_H=\\frac{2e_*(H)}3,\n\\qquad beta_H=\\frac{2alpha_H}{H},\n$$\n\nand let `J_6(theta,H)` be the smaller root of\n\n$$\n2(1-s)^2=(1-k_6(theta))\n\\{q(theta)+beta_H-(1+alpha_H)s\\}.\n\\tag{E}\n$$\n\nThen EXP-007's finite defect-parity product predicts\n\n$$\n\\boxed{J_6(theta,H)>h_6(theta).}\n\\tag{F}\n$$\n\nAt the frozen point `theta=0.5459`, optimize only over a declared compact\ninterval derived from the scale `H=x/h_6`, certify the selected rational `H`,\nand prove that the resulting gain is strictly larger than the v0.07 spectral\ngain `1.7766622541125682978e-68`.\n\nThis branch is expected to improve the positive curve but not its onset,\nbecause the cell condition requires an already positive simple-zero term.\n\n## Required checks\n\n1. Reproduce Wang's `C0`, `H0`, `a0`, and `delta0` with directed arithmetic.\n2. Check every inequality in the proof of (A), including axes, infinity, and\n   all compactified cells; record unresolved boxes and subdivision depth.\n3. Derive (B) without decimal substitution and verify `d_*>sqrt(5)-2` exactly.\n4. Optimize the global `H` only for discovery, freeze a rational candidate,\n   then certify (D) with outward intervals.\n5. Re-derive the triple packing count in a short interval and combine it with\n   EXP-007 before taking limits.\n6. Certify the pointwise short-interval gain and replay all transcendental\n   signs independently at at least 100 decimal digits.\n7. Bind source, declaration, runner, proof, audit, and output hashes in the\n   canonical result.\n\n## Budget and stop rules\n\nThe declared run is CPU-only and capped at 600 seconds per canonical attempt.\nA GPU is unjustified unless tensor or interval batches exceed that budget and a\nseparate exact validation path exists. The result is refuted if (A) has a\ncounterexample. It is inconclusive if any compactification boundary, interval\nbox, or downstream sign remains unresolved. In either case, preserve the\nattempt and do not weaken `3/2` without a new committed amendment.\n\n## Attribution and claim boundary\n\nWang owns the published global spectral-defect/triple-packing framework and\nthe `R<=2` proof. EXP-007 predates this source in the CAOS history but absolute\npriority for the defect term is not claimed. The scoped candidate contribution\nis the sharper ratio theorem (A), its global quantitative consequence (D), and\nits coupling to the EXP-007 parity product in (E)--(F).\n\nNo effective height, density-one theorem, universal simplicity, peer-review\nstatus, or proof of the Riemann hypothesis is predicted.\n",
    "id": "009",
