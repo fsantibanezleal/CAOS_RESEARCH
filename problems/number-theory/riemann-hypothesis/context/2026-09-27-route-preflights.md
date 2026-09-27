@@ -131,3 +131,65 @@ should also vanish as `nu->0`.
 Decision: RH-028 is closed as `research-record` (gain far below the 1% bar).
 Reopen only if a small-`theta` evaluation of Feng's formula shows a gain above
 1% of `kappa`.
+
+## RH-035: the route below `theta=1/2` is closed
+
+Below `theta=1/2` every detector the program uses is unavailable: the
+localized Selberg density `k_q=(theta-1/2)/(4eC_q)` is negative, and the
+localized Levinson range `nu<theta-1/2` is empty. The only odd-order input is
+Karatsuba's theorem (`H=T^(27/82+eps)`, Math. USSR-Izv. 24 (1985), main
+theorem p. 524, read in the 2026-09-12 dossier), whose density `a_eps` is
+positive but not explicit.
+
+Wang's pair term `c(theta)` holds for every `0<theta<1`, so the EXP-006
+product still applies. The odd-support density it needs is `1-2/A(theta)`,
+`A=2-c(theta)` (scratch values):
+
+| `theta` | `c(theta)` | needed `k` (EXP-006 product) | needed `k` (RH-034 linear candidate, if proved) |
+|---|---|---|---|
+| 0.3303 | -1.1377 | 0.3626 | 0.3792 |
+| 0.40 | -0.6330 | 0.2404 | 0.2110 |
+| 0.45 | -0.3717 | 0.1567 | 0.1239 |
+| 0.48 | -0.2427 | 0.1082 | 0.0809 |
+| 0.50 | -0.1660 | 0.0766 | 0.0553 |
+
+The best explicit Selberg-method proportion is Pearce-Crump's global 7%
+(arXiv:2609.15329v1, read in full for EXP-008); localized constants are
+smaller, and Karatsuba's are not explicit. An odd-order critical density of
+8% to 36% in intervals shorter than `T^(1/2)` is far beyond any located
+method. The 2026-09-27 report's crude conversion
+`simple>=(c-(Q-1)/6)N` gives the same order (17% to 19%) and is superseded
+here by the product, which is the program's sharp finite inequality.
+
+Decision: RH-035 is closed as `research-record`. Reopen only if an explicit
+odd-order critical proportion above the tabulated threshold appears for some
+`theta<1/2`.
+
+## RH-032: Cohn-Elkies kernels are outside the unconditional framework
+
+Lamzouri's Proposition 2.1 (arXiv:2609.02882v2, read in full) needs
+`K=(eta^2)^` with `eta` real, even, in `L^2`, and `supp eta` in
+`(-lambda,lambda)`. The zero sum enters only as `Q=sum K(z-s)^2=||F||^2`,
+a Hilbert-space norm (EXP-006 proof, eq. (3)), and it is evaluated through
+BGSTB Lemma 5, which needs a test function supported in `[-1,1]`. The
+positivity used is that of a norm, not a sign of the pair-correlation
+function `F(alpha)`.
+
+A Cohn-Elkies relaxation uses test functions `r>=0` whose Fourier transform
+is not compactly supported and is nonpositive outside the support, and it
+drops the tail using `F(alpha)>=0` there. Unconditionally two facts block it:
+
+1. Off-line zeros make `z-s` complex, `F` has no sign, and Lamzouri shows no
+   nonconstant entire kernel has `Re K>=0` on all of `C`; this is exactly why
+   his proof avoids pointwise positivity.
+2. No unconditional asymptotic exists for the pair sum with test functions of
+   unbounded Fourier support; that is Montgomery's conjecture.
+
+The admissible class `eta^2*eta^2` is contained in the Montgomery-Taylor class
+`g*g~`, and its optimum is the Montgomery-Taylor constant, which is why the
+2026 unconditional constants coincide with the RH bandlimited ones. Under RH
+the Cohn-Elkies improvement is prior art (Chirre-Goncalves-de Laat 0.6792).
+
+Decision: RH-032 is closed with the obstruction recorded; focus `RH-F5` is
+closed. Reopen only with a Hilbert-space (norm-type) representation of a
+sign-constrained tail.
