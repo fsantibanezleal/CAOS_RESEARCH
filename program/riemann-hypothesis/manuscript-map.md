@@ -1,6 +1,6 @@
 # Riemann hypothesis result and manuscript map
 
-Updated 2026-09-27. This map separates mathematical evidence, strategic value,
+Updated 2026-09-27 (after the route preflights). This map separates mathematical evidence, strategic value,
 manuscript coverage and external novelty. Experiment verdicts remain the
 authority for proofs and refutations; the machine-readable record is
 [`research-governance.json`](research-governance.json).
@@ -44,8 +44,10 @@ Current focus: **RH-F4**, the short-interval onset toward `theta>1/2`.
   `short-interval-levinson`.
 - A proved general-`Q`, uniform-shift short-window moment (RH-027) is a
   standalone theorem and would trigger a new coherent paper.
-- A global gain from unconditional Cohn-Elkies kernels (gated focus RH-F5)
-  goes to the next version of `sharp-three-point-kernel`; a negative answer
-  stays in the research record.
-- Closure notes and certificate replays (RH-034 to RH-036) are research
-  records unless they prove a theorem-sized barrier.
+- Focus RH-F5 (unconditional Cohn-Elkies kernels) was closed on 2026-09-27
+  with its obstruction in the research record.
+- A proof of the finite inequality `Q>=2N+3O-4S` (RH-034) with its onset
+  consequence goes to the next version of `short-interval-levinson`, or to a
+  focused paper if it holds for a whole window class.
+- Closed route preflights (RH-028, RH-032, RH-033, RH-035, RH-036) are
+  research records.

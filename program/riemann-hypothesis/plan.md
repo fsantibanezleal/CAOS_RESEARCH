@@ -192,16 +192,21 @@ Findings that change the plan:
 Retained focus: `RH-F4`, the short-interval simple-critical onset and density
 (see [research-governance.json](research-governance.json)). Ordered routes:
 
-| Order | Item | Kind | Decision it makes |
-|---|---|---|---|
-| done | RH-030 | source gate | Completed 2026-09-27; dossier section 6 |
-| 1 | RH-031 | invariant-first computation | Which RH-027 target (Tang-type `2theta-1` or Steuding-type) is worth proving |
-| 2 | RH-027 | analytic theorem attempt, time-boxed | A longer admissible mollifier in short windows |
-| 3 | RH-033 | constant check | Whether Wang's `Delta_K` adds to EXP-010 |
-| 4 | RH-028 | main-term optimization | Whether a second mollifier piece beats the `0.7173` ceiling by 1% |
-| 5 | RH-032 | admissibility note | Cohn-Elkies kernels without RH (low prior after RH-030) |
-| 6 | RH-034 | moment LP | Price of a multi-point input |
-| 7 | RH-035, RH-036 | closure note, certificate replay | Documented barriers |
+| Order | Item | Status 2026-09-27 |
+|---|---|---|
+| done | RH-030 source gate | Completed; dossier section 6 |
+| done | RH-031 value of information | Tang-type onset 0.5257; Steuding-type positive for every `theta>1/2` |
+| done | RH-033 `Delta_K` | Closed: cannot move any onset |
+| done | RH-028 second piece | Closed: gain below `1e-9` at short length |
+| done | RH-032 Cohn-Elkies | Closed: no unconditional sign beyond the support |
+| done | RH-035 below 1/2 | Closed: needs an explicit odd density of 8% to 36% |
+| done | RH-036 Zhu replay | Closed: `2.047e-17` inside Zhu's window, no proportion channel |
+| next | RH-027 target A' | Declaration candidate: `nu<(2/3)(2theta-1)`, onset about 0.5307 |
+| next | RH-034 inequality (L) | Declaration candidate: `Q>=2N+3O-4S` for the Montgomery-Taylor window, onset about 0.5296 |
+| then | RH-026 | Serialized release with replay v9 |
+
+Details: [route preflights](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-route-preflights.md).
+Combined, A' and (L) would give an onset near 0.5262 (scratch).
 
 Every route reproduces a known value before any new number is trusted. Each
 new experiment still needs its own declaration and methodology 12 preflight.

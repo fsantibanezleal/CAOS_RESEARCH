@@ -1,5 +1,25 @@
 # Riemann hypothesis history
 
+## 2026-09-27: route preflights RH-028 to RH-037
+
+Every route in the post-review plan was worked with exploratory,
+floating-point preflights (scripts in `context/2026-09-27-preflights/`).
+RH-031 reproduced the EXP-010 onset and Steuding's 0.590 and 0.552, and
+priced the RH-027 targets: a Tang-type range would move the onset to about
+0.5257; a Steuding-type range would give positivity for every `theta>1/2`.
+Closed with recorded reasons: RH-033 (Wang's `Delta_K` vanishes at the onset),
+RH-028 (a Bui-Conrey-Young second piece gains below `1e-9` at short length;
+the published 0.4105 implies a second-piece contribution twice ours, recorded),
+RH-032 (no unconditional sign for Cohn-Elkies tails), RH-035 (below `1/2` needs
+an explicit odd density of 8% to 36%), RH-036 (Zhu's window infimum replayed at
+`2.047e-17`, no proportion channel). RH-037 fixed the records. Two declaration
+candidates remain: RH-027 target A' (`nu<(2/3)(2theta-1)`, onset about 0.5307)
+and RH-034, the finite inequality `Q>=2N+3O-4S`, which is false for
+edge-concentrated windows but survives every stress test for the
+Montgomery-Taylor window and would move the onset to about 0.5296. No
+experiment was declared and no verdict changed.
+[Route preflights](../context/2026-09-27-route-preflights.md).
+
 ## 2026-09-27: RH-030 primary-source verification
 
 After network access was restored, the pinned archive was re-verified (68

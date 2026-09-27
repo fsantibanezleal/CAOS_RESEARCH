@@ -63,17 +63,17 @@ found no external result above EXP-009 or EXP-010 and re-scoped RH-027:
 Steuding's short-window moment is proved only for degree-one `Q`, fixed
 shifts and `nu<3/8`; `(3theta-1)/4` is inferred. Active focus `RH-F4`.
 
-1. RH-030 is done: the key sources were read in full after network access
-   was restored (dossier section 6, `context/source-manifest-rh030.json`).
-2. RH-031: value of information for RH-027. Reproduce Steuding's `0.552` and
-   `0.591` with `Q(x)=1-x`, `P(x)=x`, then find the minimal degree of `Q` that
-   moves the onset at `nu=2theta-1` (Tang-type) and at
-   `nu=min{(3theta-1)/4,3/8}` (Steuding-type).
-3. RH-032: short Cohn-Elkies admissibility note (gated focus `RH-F5`, low prior).
-4. RH-027 (time-boxed theorem attempt), RH-033 (`Delta_K`), RH-028
-   (benchmark first), RH-034 to RH-036.
-5. RH-037 records hygiene, then RH-026 replay v9 and release. RH-021 remains
-   an integrity task.
+1. Done 2026-09-27: RH-030 (full-text verification), RH-031 (value of
+   information), and the route preflights RH-028, RH-032, RH-033, RH-035,
+   RH-036 (all closed with recorded reasons), RH-037 (records hygiene); see
+   [route preflights](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-route-preflights.md).
+2. Declaration candidate RH-027 target A': a short-window moment for
+   `nu<(2/3)(2theta-1)` from Tang-Khan reciprocity with a trivial bound on the
+   dual moments (scratch onset about 0.5307).
+3. Declaration candidate RH-034: the finite inequality `Q>=2N+3O-4S` for the
+   Montgomery-Taylor window, which survives all stress tests and fails for
+   edge-concentrated windows (scratch onset about 0.5296 with the proved range).
+4. RH-026 replay v9 and release. RH-021 remains an integrity task.
 
 No experiment is declared. EXP-011 needs its own declaration and preflight.
 

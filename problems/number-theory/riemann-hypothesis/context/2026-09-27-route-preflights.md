@@ -283,3 +283,69 @@ Gram-type detectors follows.
 
 Decision: RH-036 is closed as `research-record` (independent upper-bound
 replay consistent with Zhu; no proportion channel).
+
+## RH-034: a linear Hilbert-parity inequality beyond the EXP-006 product
+
+Scripts: [`rh034_linear_inequality_search.py`](2026-09-27-preflights/rh034_linear_inequality_search.py),
+[`rh034_stress.py`](2026-09-27-preflights/rh034_stress.py),
+[`rh034_window_control.py`](2026-09-27-preflights/rh034_window_control.py).
+
+Where the product loses. EXP-006 proves `(Q-S)(N-O)>=2(N-S)^2` from Lamzouri's
+arbitrary-parameter inequality `Q>=2tN-(2t-1)S-t^2 d` (one linear inequality
+per `t`, EXP-006 proof eq. (5)) and the parity bound `2d<=N-O`. The product is
+the envelope of that family. With `S=0` and `k=O/N` it gives
+`Q/N>=2/(1-k)`, tight only for a single double or triple point. For separated
+real clusters without simple points the true minimum is the chord
+`Q/N>=2+3k` (doubles and triples), strictly larger for `0<k<1/3`. The loss is
+the Cauchy-Schwarz step `sum alpha_j^2>=(sum alpha_j)^2/d` over the first
+Gram-Schmidt range.
+
+Candidate. For every conjugation-invariant finite multiset,
+
+$$
+Q\ge2N+3O-4S. \tag{L}
+$$
+
+It is tight for single points of multiplicity one, two and three, for widely
+spaced simple points, and for doubles and triples at real zeros of `K`. It is
+strictly stronger than every member of Lamzouri's family for `0<k<1/3`, so it
+cannot follow from EXP-006's inputs alone.
+
+Tests (floating point):
+
+1. Exhaustive small types (up to three real points of multiplicity 1-3 and
+   two conjugate pairs), `cos^2` window: minimum slack `0` (reached only in
+   degenerate limits where off-line pairs collapse onto the line).
+2. Random stress, 601 trials over `cos^2`, `tent^2` and truncated Gaussian
+   windows, up to four real clusters of multiplicity 1-4 and three pairs of
+   multiplicity 1-2: minimum slack `0` to machine precision.
+3. Random stress, 201 trials with the Montgomery-Taylor window used by
+   Lamzouri (`eta^2` proportional to `cos(sqrt2 u)` on `(-1/2,1/2)`): minimum
+   slack `0` to machine precision.
+4. Local analysis and control. For a real triple and a conjugate pair near a
+   real zero `x0` of `K`, `Q-13=4pi^2 y^2(8mu2-12|int u eta^2 e^(-2pi i x0 u)|^2)+O(y^3)`,
+   so (L) fails for small `y` exactly when the ratio
+   `|int u eta^2 e^(-2pi i x0 u)|^2/mu2` exceeds `2/3`. Montgomery-Taylor
+   window: ratios `0.252, 0.058, 0.025` at the first three zeros, slack
+   positive. Edge-concentrated control window (`eta^2` proportional to `u^8`):
+   ratios `0.969, 0.826`, and (L) fails with `Q-13=-0.246`. The tests
+   therefore detect violations when they exist.
+
+Conclusion. (L) is false for general admissible windows and survives every
+test for the Montgomery-Taylor window. Any proof must use window-specific
+information, at least the local condition above, beyond Lamzouri's argument.
+
+Value (scratch; `s>=(2+3k-A)/4` with `A=2-c(theta)`):
+
+| Mollifier range | Onset with the product | Onset with (L) | density at 0.534 with (L) |
+|---|---|---|---|
+| `theta-1/2` (proved) | 0.53396 | 0.52964 | 0.0058 (product: 0.00006) |
+| `(2/3)(2theta-1)` (target A') | 0.53067 | 0.52617 | 0.0119 |
+| `2theta-1` (target A) | 0.52571 | 0.52124 | 0.0241 |
+
+Decision. (L) for the Montgomery-Taylor window, and for the smooth
+approximants `eta_eps` of Lamzouri's kernel-construction lemma, is the second declaration
+candidate beside RH-027 target A'. It is a finite statement, so a proof or a
+counterexample is decisive. The first bounded action is a proof attempt that
+refines the first Gram-Schmidt range per cluster; the local ratio condition
+shows which property of the window the proof must use.
