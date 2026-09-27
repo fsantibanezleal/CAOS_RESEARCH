@@ -20,6 +20,10 @@ Goettingen host of Steuding's dissertation. Labels:
 No [S] item may enter a declaration, runner or verdict before it is read in the
 primary source (RH-030).
 
+The underlying working notes, the full synthesis report and the two
+floating-point exploration scripts are retained in
+[`2026-09-27-sweep/`](2026-09-27-sweep/README.md).
+
 ## 1. External standing
 
 No located 2026 preprint improves the program's short-interval onset
