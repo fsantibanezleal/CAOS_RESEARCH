@@ -248,3 +248,38 @@ today: EXP-011 is declared only with a written proof plan whose steps are
 referenced to Tang's and Khan's lemmas, per methodology 02 and 12. Target B
 (Steuding-type) stays behind it: it needs an Atkinson-Motohashi evaluation of
 the off-diagonal uniform in shifts and in general `Q`, a much larger project.
+
+## RH-036: bounded replay of Zhu's window infimum
+
+Script: [`rh036_weil_window_upper.py`](2026-09-27-preflights/rh036_weil_window_upper.py).
+It evaluates Zhu's geometric-side Weil form (arXiv:2608.24827v2, eqs. (2)-(3)
+and the exact time-domain archimedean term of Lemma 2.5, read in full) on the
+span of the first `N` even Legendre modes of `L^2[-0.8,0.8]`: the pole term
+`2F(i/2)^2`, the archimedean integral, and the prime powers `n=2,3,4` (the only
+ones with `log n<1.6`). The autocorrelations are exact rational polynomials;
+the transcendental parts are evaluated with mpmath at 80 digits. The minimum
+eigenvalue is a variational upper bound for `lambda*(0.8)`. This is a
+multiprecision replay, not an interval certificate, and it replays only the
+upper-bound half; the lower-bound certificate (200 Legendre modes, a
+frequency cutoff `T=200`) is not replayed.
+
+| `N` even modes | `lambda_min` | second eigenvalue |
+|---|---|---|
+| 8 | `3.24e-11` | `4.08e-7` |
+| 14 | `2.87e-15` | `3.23e-10` |
+| 20 | `2.047e-17` | `1.03e-11` |
+
+Zhu's certified window is `8.9e-18<=lambda*(0.8)<=2.27e-17`. The `N=20` value
+lies inside it and slightly below his upper bound, consistent with his remark
+that the sine basis behind that upper bound loses a little through the
+boundary condition `f(+-L)=0`. The spectral gap to the second eigenvalue
+(about six orders) is consistent with his simple, even ground state.
+
+Landau-Widom question. The replay confirms the scale of the window's lower
+spectral edge but gives no map from window positivity to a zero-proportion
+functional: the program's detectors use pair-correlation sums with support
+`lambda<theta`, not Weil positivity on a window. No barrier statement for
+Gram-type detectors follows.
+
+Decision: RH-036 is closed as `research-record` (independent upper-bound
+replay consistent with Zhu; no proportion channel).
