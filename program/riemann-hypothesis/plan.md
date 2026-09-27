@@ -194,16 +194,23 @@ Retained focus: `RH-F4`, the short-interval simple-critical onset and density
 
 | Order | Item | Kind | Decision it makes |
 |---|---|---|---|
-| 1 | RH-030 | source gate | Which snippet statements may be used |
-| 2 | RH-031 | invariant-first computation | Whether a partial Steuding extension is worth proving |
-| 3 | RH-032 | invariant-first computation plus lemma search | Whether Cohn-Elkies kernels survive without RH (global stake about `+0.0067`) |
-| 4 | RH-027 | analytic theorem attempt, time-boxed | Positivity for every `theta>1/2` |
-| 5 | RH-033 | constant check | Whether `Delta_K` adds to EXP-010 |
-| 6 | RH-028 | numerical benchmark first | Close or pursue the two-piece mollifier |
-| 7 | RH-034 | moment LP | Price of a multi-point input |
-| 8 | RH-035, RH-036 | closure note, certificate replay | Documented barriers |
+| done | RH-030 | source gate | Completed 2026-09-27; dossier section 6 |
+| 1 | RH-031 | invariant-first computation | Which RH-027 target (Tang-type `2theta-1` or Steuding-type) is worth proving |
+| 2 | RH-027 | analytic theorem attempt, time-boxed | A longer admissible mollifier in short windows |
+| 3 | RH-033 | constant check | Whether Wang's `Delta_K` adds to EXP-010 |
+| 4 | RH-028 | main-term optimization | Whether a second mollifier piece beats the `0.7173` ceiling by 1% |
+| 5 | RH-032 | admissibility note | Cohn-Elkies kernels without RH (low prior after RH-030) |
+| 6 | RH-034 | moment LP | Price of a multi-point input |
+| 7 | RH-035, RH-036 | closure note, certificate replay | Documented barriers |
 
 Every route reproduces a known value before any new number is trusted. Each
 new experiment still needs its own declaration and methodology 12 preflight.
 RH-021 stays an integrity task. RH-026 waits for the RH-037 records hygiene.
+
+RH-030 was completed later the same day after network access was restored:
+the Steuding correction is confirmed and sharpened (the theorem also fixes
+`P(x)=x`), Tang's short-window reciprocity gives a cheaper intermediate
+target `nu<2theta-1` for RH-027, the RH-028 benchmark was already met by
+the 2026-09-26 preflight, and Lamzouri's Proposition 2.1 weakens the
+Cohn-Elkies route.
 

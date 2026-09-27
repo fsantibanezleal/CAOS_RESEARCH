@@ -1,5 +1,19 @@
 # Riemann hypothesis history
 
+## 2026-09-27: RH-030 primary-source verification
+
+After network access was restored, the pinned archive was re-verified (68
+documents) and six new sources were pinned. Full-text reading confirmed
+Wang's short-interval theorem and pair formula as used, and sharpened the
+Steuding correction: Theorem 2.1 fixes `P(x)=x` and `F=zeta+zeta'/L`, and the
+`theta<3/8` cap comes from the constraint `G<=T^(5/6)` in the error balance.
+Tang's short-window reciprocity constrains only `max{p,q}`, which suggests a
+Tang-type target `nu<2theta-1` for RH-027. The RH-028 benchmark was already
+met on 2026-09-26. Lamzouri's Proposition 2.1 requires compactly supported
+`eta`, weakening RH-032. Two pinned documents (Anthropic page, Karatsuba URL)
+no longer reproduce from their URLs. No verdict changed.
+[Dossier section 6](../context/2026-09-27-literature-and-representation-sweep.md).
+
 ## 2026-09-27: literature sweep, RH-027 correction and strategic review
 
 A sweep of 2026 zero-proportion results, short-interval moment technology,

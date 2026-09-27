@@ -63,14 +63,13 @@ found no external result above EXP-009 or EXP-010 and re-scoped RH-027:
 Steuding's short-window moment is proved only for degree-one `Q`, fixed
 shifts and `nu<3/8`; `(3theta-1)/4` is inferred. Active focus `RH-F4`.
 
-1. RH-030: read the snippet-level inputs in primary sources (Wang
-   2609.07918, Steuding 2002, Tang 2608.14852, arXiv:2508.11108, Lamzouri v2
-   section 1). arXiv was unreachable from the cloud session; add the PDFs or
-   tarballs to `context/source-cache/`.
+1. RH-030 is done: the key sources were read in full after network access
+   was restored (dossier section 6, `context/source-manifest-rh030.json`).
 2. RH-031: value of information for RH-027. Reproduce Steuding's `0.552` and
-   `0.591` with `Q(x)=1-x`, then find the minimal degree of `Q` that moves the
-   onset at `nu=min{(3theta-1)/4,3/8}`.
-3. RH-032: Cohn-Elkies admissibility without RH (gated focus `RH-F5`).
+   `0.591` with `Q(x)=1-x`, `P(x)=x`, then find the minimal degree of `Q` that
+   moves the onset at `nu=2theta-1` (Tang-type) and at
+   `nu=min{(3theta-1)/4,3/8}` (Steuding-type).
+3. RH-032: short Cohn-Elkies admissibility note (gated focus `RH-F5`, low prior).
 4. RH-027 (time-boxed theorem attempt), RH-033 (`Delta_K`), RH-028
    (benchmark first), RH-034 to RH-036.
 5. RH-037 records hygiene, then RH-026 replay v9 and release. RH-021 remains

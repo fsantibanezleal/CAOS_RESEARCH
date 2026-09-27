@@ -174,3 +174,26 @@ the focus and manuscript routing in
 No new experiment is declared. The first actions are source reading (RH-030)
 and two invariant-first computations (RH-031 and RH-032), each of which
 reproduces a known value before any new number is trusted.
+
+## 6. RH-030 primary-source verification (2026-09-27, network restored)
+
+The environment's network access was widened the same day. The pinned
+archive was restored (68 documents verified by size and SHA-256), the new
+sources were pinned in [`source-manifest-rh030.json`](source-manifest-rh030.json),
+and the load-bearing statements were read in full text. This section
+supersedes the `[S]` labels above wherever they overlap.
+
+| Item | Primary-text finding [V] | Consequence |
+|---|---|---|
+| Versions | arXiv 2608.13637v2, 2609.02882v2, 2609.07918v1, 2609.15329v1, 2609.24167v1 and 2508.11108v1 are still the latest versions; the pinned bytes stand. New: 2608.14852v1, 2608.24827v2, 2607.00282v1. | No re-pinning of tracked sources. |
+| Wang, arXiv:2609.07918v1 | Theorem 1.1: `c(theta)=2-theta/2-cot(theta/sqrt2)/sqrt2`, `d(theta)=(1+c)/2` for every fixed `0<theta<1`; `theta_0=0.550193964744154...`, `theta_d=0.346658926139761...` (`zeros.tex` l. 173-215). Theorem 2.1: pair formula for fixed `0<lambda<theta<1`, `supp g` in `[-lambda,lambda]`, error `O_g(H+T^lambda L^2)` (l. 277-290). It restates Steuding's mollifier condition as `vartheta<3/8` (l. 136-144). | Confirms every use in EXP-002 to EXP-010. |
+| Steuding 1999 dissertation | Theorem 2.1 (printed p. 11): for `theta<3/8`, the mean square of `A F` with `F=zeta+zeta'/L` and `a(n)=mu(n)n^(a-1/2)(1-log n/log M)`, i.e. `P(x)=x`, has error `O(T^(1/3+eps)M^(4/3))`. The cap arises on printed p. 48: `E(T)<<min_{L<=G<=T^(5/6)}{G+G^(-1/2)T^(1/2+eps)M^2}`, balanced at `G=T^(1/3+eps)M^(4/3)`, which needs `G<=T^(5/6)`, i.e. `theta<3/8`. The off-diagonal is bounded with the trivial factor `M^2`. The 2002 journal text is paywalled and was not read. | The RH-027 correction holds and is sharper: the theorem fixes the mollifier (`P(x)=x`) as well as `Q`. Because the `M^2` bound ignores the coefficients, extending the error term to general `P` looks routine [I]; the substantive work is general `Q` with uniform shifts. |
+| Tang, arXiv:2608.14852v1 | Theorem 1: distinct odd primes `p,q`, Gaussian window of width `H=T^delta`, `delta` in `(1/2,1)`, no shifts. The twisted moment equals a main term of size `H(pq)^(-1/2)log(T/pq)`, plus a dual moment of `|L(1/2+it,chi)|^2` over characters mod `p` on a range of length about `T/H`, plus `O((T/H)(pqT)^eps[(p/q)^(1/2)+(q/p)^(1/2)])`. Admissibility: `H^2/max{p,q}>T^(1+eps)` (`main.tex` l. 160-206). | The constraint is on `max{p,q}`, not on the product. With mollifier weights `a_h a_k/sqrt(hk)` the summed error is `(T/H)M^(1+eps)`, so Tang's error term alone allows `nu<2theta-1`, twice the localized Young range `theta-1/2` [I]. The open questions are general coprime twists, shifts, and whether the summed dual moments are negligible or contribute a main term. |
+| Short mollifiers, arXiv:2508.11108v1 | Theorem 1.1: there is `theta_0>0` such that for `theta<theta_0` some `Q_theta` in `C^1` with `Q(0)=1`, `Q(y)+Q(1-y)=1` and `P(x)=x` gives `kappa>2theta/3`; numerics suggest this for all `theta<=1/2`. | The benchmark proposed for RH-028 was already done in the 2026-09-26 preflight (section 5): their parameters give `0.6824 nu`; EXP-010's `0.7170 nu` sits at the single-piece Euler-Lagrange ceiling `0.7173`. Any further slope gain must come from a second mollifier piece. |
+| Lamzouri, arXiv:2609.02882v2 | The "internal research version of Claude" passage is Lamzouri's own abstract and introduction crediting Alpoge-Furman; no attribution problem. Proposition 2.1: `eta` in `L^2`, real, even, `supp eta` in `(-lambda,lambda)`, `K=(eta^2)^`; lower bounds in terms of `sum K(z-s)^2` for any conjugation-invariant finite multiset. Positivity comes from a Hilbert-space (Bessel) argument, and the pair formula it feeds (BGSTB Lemma 5) needs support in `[-1,1]`. | RH-032 premise weakened: a Cohn-Elkies kernel has no compactly supported `eta`, so it lies outside Proposition 2.1 as stated. RH-032 becomes a short admissibility note unless a Gram representation for a sign-constrained tail appears. |
+| Archive drift | Two pinned documents no longer reproduce from their URLs: the Anthropic research page (174,655 bytes now against 176,754 pinned) and the Karatsuba 1985 URL (now 27,789 bytes, not the 518,106-byte PDF). | Neither is an input to an open route; recorded, not re-pinned. |
+
+Net effect on the plan: RH-027 gains a cheaper intermediate target (a
+Tang-type range `nu<2theta-1`) beside the Steuding-type target; RH-028's
+benchmark is closed; RH-032 is downgraded; RH-031 remains the first
+computation.

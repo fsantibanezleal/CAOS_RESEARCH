@@ -106,12 +106,12 @@
       "success_gate": "A proved onset below 0.534 with certified constants, or a written obstruction for the general-Q short-window moment (RH-027) plus closure notes RH-034 and RH-035.",
       "stop_conditions": [
         "RH-031 shows that no partial Steuding extension moves the onset.",
-        "RH-030 shows that the needed engines (Steuding 2002, Tang) do not reach the required range and RH-027 hits an off-diagonal main term not uniform in the shifts.",
+        "RH-027 hits a summed dual-moment main term (Tang-type) or an off-diagonal main term not uniform in the shifts (Steuding-type).",
         "Three consecutive experiments fail to move the onset."
       ],
-      "novelty_status": "2026-09-27 sweep found no external onset below 0.534; full-text arXiv access was blocked, so RH-030 must verify the snippet-level inputs.",
+      "novelty_status": "2026-09-27 sweep and RH-030 full-text verification found no external onset below 0.534.",
       "manuscript_route": "short-interval-levinson next version if the gain uses the Levinson detector; a new paper only if a general-Q short-window moment theorem is proved",
-      "first_bounded_action": "RH-030 source gate, then RH-031: reproduce Steuding's 0.552 and 0.591 onsets with Q(x)=1-x before sweeping the degree of Q.",
+      "first_bounded_action": "RH-031: reproduce Steuding's 0.552 and 0.591 onsets with Q(x)=1-x, P(x)=x, then find the minimal degree of Q at nu=2theta-1 (Tang-type) and nu=min{(3theta-1)/4,3/8} (Steuding-type).",
       "evidence": [
         "EXP-010"
       ]
@@ -126,9 +126,10 @@
       "success_gate": "A lemma controlling the sign-constrained tail with certified constants, or a proof that the term is uncontrolled.",
       "stop_conditions": [
         "The invariant reproduction of 0.67250, 0.6727, 0.6792 and 0.55019 fails.",
-        "The tail term needs localization hypotheses."
+        "The tail term needs localization hypotheses.",
+        "No Gram representation exists for a kernel without compactly supported eta, as Lamzouri's Proposition 2.1 requires."
       ],
-      "novelty_status": "Floating-point exploration only; the RH-conditional kernels are prior art (Cohn-Elkies, Chirre-Goncalves-de Laat).",
+      "novelty_status": "Floating-point exploration only; the RH-conditional kernels are prior art. RH-030 read Lamzouri's Proposition 2.1: its kernels are (eta^2)^ with compactly supported eta, so the prior for this focus is low.",
       "manuscript_route": "sharp-three-point-kernel next version for a global gain; research record for a negative answer",
       "first_bounded_action": "RH-032 invariant reproduction and the Cheer-Goldston discrepancy.",
       "evidence": []
