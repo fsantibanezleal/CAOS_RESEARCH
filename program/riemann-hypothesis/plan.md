@@ -158,8 +158,52 @@ The new manuscript `short-interval-levinson` is built from the verdict and
 published at DOI 10.5281/zenodo.22984155. The public workbench (replay
 v9) and a serialized release are separate later gates.
 
-Next routes, in order of expected onset gain: a uniform two-shift
-short-window moment for general `Q` in Steuding's range `nu<(3theta-1)/4`,
-which would make positivity hold for every `theta>1/2`; a localized
-two-piece mollifier to raise the slope above `0.7173`; and the independent
-rank-six reconstruction (RH-021), which remains an integrity task.
+The next routes are set by the 2026-09-27 strategic review below.
+
+## Strategic review after EXP-010 (2026-09-27)
+
+A methodology 13 review followed a literature and cross-field sweep
+([dossier](../../problems/number-theory/riemann-hypothesis/context/2026-09-27-literature-and-representation-sweep.md)).
+Full-text arXiv, Zenodo and Springer access was blocked in that session, so
+its snippet-level statements are inputs to verify, not premises.
+
+Findings that change the plan:
+
+1. No external 2026 result improves the EXP-010 onset `0.534` or the EXP-009
+   constant. Wang's printed global gain is `delta_0=6.66624e-8`; EXP-009 sits
+   about `2.9e-8` above `C_0+delta_0`. Wang also states that his `Delta_K`
+   refinement transfers to short intervals.
+2. The Steuding range behind RH-027 was overstated. His short-window error
+   `O(T^(1/3+eps)M^(4/3))` is proved for degree-one `Q`, fixed shifts,
+   `nu<3/8`, orders at most two. `(3theta-1)/4` is inferred. The general-`Q`,
+   uniform-shift version is a new theorem.
+3. Kernel choice is nearly exhausted: the Montgomery-Taylor threshold is the
+   recorded `0.55019`, and a Cohn-Elkies relaxation reaches only about
+   `0.5487` in floating point. EXP-010 is already below both. Onset gains come
+   from second-order inequalities (EXP-006 product, `Delta_K`, multi-point
+   constraints) or from longer admissible mollifiers.
+4. Of the cross-field representations reviewed, only finite compressions of
+   Weil's Hermitian form have a proportion channel. Families and function
+   fields support reading `theta=1/2` as an artifact of the approximate
+   functional equation. Spectral triples, heat flow, Jensen polynomials,
+   horocycles, Lee-Yang stability and multiplicative chaos remain a watch
+   list.
+
+Retained focus: `RH-F4`, the short-interval simple-critical onset and density
+(see [research-governance.json](research-governance.json)). Ordered routes:
+
+| Order | Item | Kind | Decision it makes |
+|---|---|---|---|
+| 1 | RH-030 | source gate | Which snippet statements may be used |
+| 2 | RH-031 | invariant-first computation | Whether a partial Steuding extension is worth proving |
+| 3 | RH-032 | invariant-first computation plus lemma search | Whether Cohn-Elkies kernels survive without RH (global stake about `+0.0067`) |
+| 4 | RH-027 | analytic theorem attempt, time-boxed | Positivity for every `theta>1/2` |
+| 5 | RH-033 | constant check | Whether `Delta_K` adds to EXP-010 |
+| 6 | RH-028 | numerical benchmark first | Close or pursue the two-piece mollifier |
+| 7 | RH-034 | moment LP | Price of a multi-point input |
+| 8 | RH-035, RH-036 | closure note, certificate replay | Documented barriers |
+
+Every route reproduces a known value before any new number is trusted. Each
+new experiment still needs its own declaration and methodology 12 preflight.
+RH-021 stays an integrity task. RH-026 waits for the RH-037 records hygiene.
+

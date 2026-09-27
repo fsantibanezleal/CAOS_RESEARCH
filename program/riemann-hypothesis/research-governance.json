@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "problem": "riemann-hypothesis",
+  "updated": "2026-09-27",
+  "original_problem": {
+    "status": "open",
+    "statement": "The Riemann hypothesis: every nontrivial zero of the Riemann zeta function has real part 1/2.",
+    "priority": "The 2026 unconditional simple-critical proportion is due to Alpoge-Furman (argument found by Claude, arXiv:2608.13637), with Lamzouri's direct proof (arXiv:2609.02882) and Wang's short-interval and global extensions (arXiv:2609.07918, arXiv:2609.24167).",
+    "prohibited_reframing": "No proportion theorem, finite certificate, DOI or release may be described as progress toward proving or disproving RH itself."
+  },
+  "mission": "Prove independently checkable improvements of zero-proportion theorems, chiefly positive proportions of simple critical zeros in short intervals (T,T+T^theta], with exact or certified arithmetic, attributed inputs kept explicit, and one manuscript home per validated theorem.",
+  "current_focus": "RH-F4",
+  "stop_policy": {
+    "review_after_consecutive_low_value_rounds": 3,
+    "requires_user_visible_redirect": true,
+    "no_finite_sweep_without_uniform_target": true,
+    "no_new_manuscript_without_coherence_gate": true
+  },
+  "focuses": [
+    {
+      "id": "RH-F0",
+      "title": "Source audit and baseline reproduction",
+      "status": "closed",
+      "priority": 0,
+      "target": "Reproduce the 2026 baseline constants and normalizations and audit the proof and formalization scope.",
+      "value": "A trusted baseline without claiming priority.",
+      "success_gate": "Exact reproduction of the published constants and an algebraic audit.",
+      "stop_conditions": [
+        "A published constant fails exact reproduction."
+      ],
+      "novelty_status": "Replication, not novelty.",
+      "manuscript_route": "short-interval-stability as provenance only",
+      "first_bounded_action": "Completed by EXP-001.",
+      "evidence": [
+        "EXP-001"
+      ]
+    },
+    {
+      "id": "RH-F1",
+      "title": "Short-interval stability, parity and localization",
+      "status": "closed",
+      "priority": 1,
+      "target": "Strengthen the short-interval simple-critical curve and move its positivity onset through finite Hilbert, parity, Selberg and spectral-defect transfers.",
+      "value": "Every-interval statements are stronger than global averages and were not covered by the external sources.",
+      "success_gate": "A proved onset below Wang's cosine threshold with certified constants.",
+      "stop_conditions": [
+        "The onset stops moving under second-order refinements.",
+        "A located prior source proves the same transfer."
+      ],
+      "novelty_status": "No exact overlap found in the recorded primary-source searches; external expert confirmation pending. The rank-six constant is an attributed input.",
+      "manuscript_route": "short-interval-stability v0.07",
+      "first_bounded_action": "Completed by EXP-002 through EXP-008.",
+      "evidence": [
+        "EXP-002",
+        "EXP-003",
+        "EXP-004",
+        "EXP-005",
+        "EXP-006",
+        "EXP-007",
+        "EXP-008"
+      ]
+    },
+    {
+      "id": "RH-F2",
+      "title": "Global three-point kernel sharpening",
+      "status": "closed",
+      "priority": 2,
+      "target": "Replace the non-sharp auxiliary ratio in Wang's global framework by its sharp value.",
+      "value": "A sharp theorem and a global proportion above Wang's printed bound.",
+      "success_gate": "Proof of R(alpha,beta)<=sqrt(2) with equality cases and the certified global transfer.",
+      "stop_conditions": [
+        "The ratio is already sharp in the source."
+      ],
+      "novelty_status": "The ratio theorem is internal; the global proportion is attributed to Wang's framework and sits about 2.9e-8 above his printed C_0+delta_0.",
+      "manuscript_route": "sharp-three-point-kernel v0.01",
+      "first_bounded_action": "Completed by EXP-009.",
+      "evidence": [
+        "EXP-009"
+      ]
+    },
+    {
+      "id": "RH-F3",
+      "title": "Localized Levinson-Conrey detector",
+      "status": "closed",
+      "priority": 3,
+      "target": "Localize Levinson's method with general Q to (T,T+T^theta] and transfer the distinct sign-change density through the parity product.",
+      "value": "Moved the onset from 0.5458838 to 0.534 with about 1000 times the density at theta=0.5459.",
+      "success_gate": "Proved localized moment for nu<theta-1/2, counting lemma, certified detectors, onset below 0.5458838.",
+      "stop_conditions": [
+        "The localized moment fails for general Q."
+      ],
+      "novelty_status": "No short-interval Levinson paper with general Q located through 2026-09-27; external review pending. The onset uses Wang's pair theorem.",
+      "manuscript_route": "short-interval-levinson v0.01",
+      "first_bounded_action": "Completed by EXP-010.",
+      "evidence": [
+        "EXP-010"
+      ]
+    },
+    {
+      "id": "RH-F4",
+      "title": "Short-interval onset toward theta>1/2",
+      "status": "active",
+      "priority": 4,
+      "target": "Lower the simple-critical positivity onset below 0.534, ideally to every theta>1/2, or prove a documented barrier for the available methods.",
+      "value": "Positivity for every theta>1/2 would close the short-interval question for these methods; a documented barrier prevents wasted rounds.",
+      "success_gate": "A proved onset below 0.534 with certified constants, or a written obstruction for the general-Q short-window moment (RH-027) plus closure notes RH-034 and RH-035.",
+      "stop_conditions": [
+        "RH-031 shows that no partial Steuding extension moves the onset.",
+        "RH-030 shows that the needed engines (Steuding 2002, Tang) do not reach the required range and RH-027 hits an off-diagonal main term not uniform in the shifts.",
+        "Three consecutive experiments fail to move the onset."
+      ],
+      "novelty_status": "2026-09-27 sweep found no external onset below 0.534; full-text arXiv access was blocked, so RH-030 must verify the snippet-level inputs.",
+      "manuscript_route": "short-interval-levinson next version if the gain uses the Levinson detector; a new paper only if a general-Q short-window moment theorem is proved",
+      "first_bounded_action": "RH-030 source gate, then RH-031: reproduce Steuding's 0.552 and 0.591 onsets with Q(x)=1-x before sweeping the degree of Q.",
+      "evidence": [
+        "EXP-010"
+      ]
+    },
+    {
+      "id": "RH-F5",
+      "title": "Unconditional Cohn-Elkies kernels",
+      "status": "gated",
+      "priority": 5,
+      "target": "Decide whether the Lamzouri/Weil-form framework admits kernels with r-hat<=0 beyond the support without RH.",
+      "value": "A yes would raise the global simple-critical constant by about 0.0067; a no explains why the 2026 unconditional constants equal the RH bandlimited constants.",
+      "success_gate": "A lemma controlling the sign-constrained tail with certified constants, or a proof that the term is uncontrolled.",
+      "stop_conditions": [
+        "The invariant reproduction of 0.67250, 0.6727, 0.6792 and 0.55019 fails.",
+        "The tail term needs localization hypotheses."
+      ],
+      "novelty_status": "Floating-point exploration only; the RH-conditional kernels are prior art (Cohn-Elkies, Chirre-Goncalves-de Laat).",
+      "manuscript_route": "sharp-three-point-kernel next version for a global gain; research record for a negative answer",
+      "first_bounded_action": "RH-032 invariant reproduction and the Cheer-Goldston discrepancy.",
+      "evidence": []
+    }
+  ],
+  "manuscripts": [
+    {
+      "slug": "short-interval-stability",
+      "path": "manuscripts/riemann-hypothesis/short-interval-stability",
+      "version": "0.07",
+      "version_doi": "10.5281/zenodo.22860012",
+      "concept_doi": "10.5281/zenodo.22727388",
+      "status": "published",
+      "split_action": "none; immutable versions retained"
+    },
+    {
+      "slug": "sharp-three-point-kernel",
+      "path": "manuscripts/riemann-hypothesis/sharp-three-point-kernel",
+      "version": "0.01",
+      "version_doi": "10.5281/zenodo.22940291",
+      "concept_doi": "10.5281/zenodo.22940290",
+      "status": "published",
+      "split_action": "none"
+    },
+    {
+      "slug": "short-interval-levinson",
+      "path": "manuscripts/riemann-hypothesis/short-interval-levinson",
+      "version": "0.01",
+      "version_doi": "10.5281/zenodo.22984155",
+      "concept_doi": "10.5281/zenodo.22984154",
+      "status": "published",
+      "split_action": "none"
+    }
+  ],
+  "experiment_dispositions": [
+    {
+      "start": 1,
+      "end": 1,
+      "classification": "research-record",
+      "manuscripts": []
+    },
+    {
+      "start": 2,
+      "end": 8,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "short-interval-stability"
+      ]
+    },
+    {
+      "start": 9,
+      "end": 9,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "sharp-three-point-kernel"
+      ]
+    },
+    {
+      "start": 10,
+      "end": 10,
+      "classification": "primary-manuscript",
+      "manuscripts": [
+        "short-interval-levinson"
+      ]
+    }
+  ]
+}
