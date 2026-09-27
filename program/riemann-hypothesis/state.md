@@ -62,7 +62,9 @@ with equality exactly at $(0,1)$ and $(1,0)$. With
 $\alpha=\sinh u$, $\beta=\sinh v$, the proof reduces to a one-variable
 endpoint and then to $(X^2-2)^2\ge0$.
 
-Under the global framework attributed to Wang, arXiv:2609.24167v1, this gives
+Under the global framework attributed to Wang, arXiv:2609.24167v1, whose own
+printed bound is `C_0+delta_0=0.6725007703...`, this gives a value about
+`2.9e-8` higher:
 
 ```text
 d_dagger = 0.283165430808537327...

@@ -144,7 +144,8 @@ certificate of this unit's entire short-interval theorem.
     is part of the analytic lineage cited by the recent theorem.
 
 13. **Daniel A. Goldston and Ade Irma Suriajaya.**
-    [arXiv:2511.20059](https://arxiv.org/abs/2511.20059) and
+    [arXiv:2511.20059](https://arxiv.org/abs/2511.20059) (published in
+    Analysis Mathematica, 2026, DOI 10.1007/s10476-026-00186-w) and
     [arXiv:2603.28104](https://arxiv.org/abs/2603.28104).
     The double-sum criterion and narrow-box consequences explain earlier
     ways of relating complex zero geometry to simple-critical counts.

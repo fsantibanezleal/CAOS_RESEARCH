@@ -25,7 +25,7 @@ export const CITATIONS: Citation[] = [
   },
   {
     id: 'riemann-wangglobal2026', label: 'Wang global refinement 2026',
-    citation: 'Wang B. (2026). A refinement of the two-thirds theorem for simple critical zeros of the Riemann zeta-function. arXiv:2609.24167v1, submitted September 21. EXP-009 imports its global framework and replaces one non-sharp auxiliary estimate.',
+    citation: 'Wang B. (2026). Proportions of the non-trivial zeros of the Riemann zeta function. arXiv:2609.24167v1, submitted September 21. EXP-009 imports its global framework and replaces one non-sharp auxiliary estimate.',
     url: 'https://arxiv.org/abs/2609.24167v1',
   },
   {
