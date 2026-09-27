@@ -20,7 +20,7 @@ import math
 
 import numpy as np
 from numpy.polynomial import chebyshev as C
-from scipy.optimize import brentq, minimize_scalar
+from scipy.optimize import brentq, minimize, minimize_scalar
 
 NODES, WEIGHTS = np.polynomial.legendre.leggauss(400)
 V = 0.5 * (NODES + 1.0)
@@ -54,7 +54,9 @@ def p_moments(lam: float) -> tuple[float, float]:
     return float(W @ dp**2), float(W @ p**2)
 
 
-def c_value(r: float, nu: float, q: np.ndarray, dq: np.ndarray, lam: float | None = None) -> tuple[float, float]:
+def c_value(
+    r: float, nu: float, q: np.ndarray, dq: np.ndarray, lam: float | None = None
+) -> tuple[float, float]:
     e2 = np.exp(2 * r * V)
     u = r * q + dq
     a, e, b = W @ (e2 * q * q), W @ (e2 * q * u), W @ (e2 * u * u)
@@ -93,7 +95,9 @@ def optimize_q(r: float, nu: float, k_terms: int, iters: int = 8, linear_p: bool
     return c, lam, x
 
 
-def kappa_opt(nu: float, k_terms: int, linear_p: bool = False, q_fixed: str | None = None) -> tuple[float, float]:
+def kappa_opt(
+    nu: float, k_terms: int, linear_p: bool = False, q_fixed: str | None = None
+) -> tuple[float, float]:
     def neg(r: float) -> float:
         if q_fixed == "1-x":
             q = 1.0 - V
@@ -105,6 +109,24 @@ def kappa_opt(nu: float, k_terms: int, linear_p: bool = False, q_fixed: str | No
 
     res = minimize_scalar(neg, bounds=(0.05, 60.0), method="bounded", options={"xatol": 1e-7})
     return -res.fun, res.x
+
+
+def kappa_linear_free(nu: float) -> float:
+    """Best kappa for linear Q = 1 - a y (beta = 2 - a free) with P(x) = x."""
+
+    def neg(params: np.ndarray) -> float:
+        a, r = params
+        if r <= 0.05:
+            return 10.0
+        c, _ = c_value(r, nu, 1.0 - a * V, -a * np.ones_like(V), lam=0.0)
+        return 10.0 if c <= 0 else -(1.0 - math.log(c) / r)
+
+    starts = [(a0, r0) for a0 in (0.5, 1.0, 1.5) for r0 in (1.0, 2.0, 4.0)]
+    runs = [
+        minimize(neg, s0, method="Nelder-Mead", options={"xatol": 1e-9, "fatol": 1e-12, "maxiter": 4000})
+        for s0 in starts
+    ]
+    return -min(run.fun for run in runs)
 
 
 def wang_c(theta: float) -> float:
@@ -119,9 +141,16 @@ def h_l(k: float, c: float) -> float:
 def main() -> None:
     print("Invariant: Steuding-type range, degree-one Q")
     for label, lin in (("Q=1-x, P=x", True), ("Q=1-x, optimal P", False)):
-        f = lambda th: kappa_opt((3 * th - 1) / 4, 0, linear_p=lin, q_fixed="1-x")[0]
+
+        def f(th: float, lin: bool = lin) -> float:
+            return kappa_opt((3 * th - 1) / 4, 0, linear_p=lin, q_fixed="1-x")[0]
+
         print(f"  {label}: onset theta = {brentq(f, 0.52, 0.70, xtol=1e-7):.5f}")
-    # best linear Q is Q=1-x within the admissible class (Q(0)=1, Q(y)+Q(1-y)=1 forces 1-y).
+
+    def f_lin(th: float) -> float:
+        return kappa_linear_free((3 * th - 1) / 4)
+
+    print(f"  Q=1-a y (free a), P=x: onset theta = {brentq(f_lin, 0.52, 0.62, xtol=1e-6):.5f}")
     print("kappa*(nu) with the Chebyshev family")
     grid = [0.01, 0.02, 0.034, 0.05, 0.068, 0.10, 0.125, 0.15, 0.1875, 0.25, 0.3, 0.375]
     kap = {}
@@ -143,7 +172,10 @@ def main() -> None:
     }
     print("Onset of h_L > 0 and sample values")
     for name, rng in ranges.items():
-        g = lambda th: kappa_at(rng(th)) - (1 - 2 / (2 - wang_c(th)))
+
+        def g(th: float, rng=rng) -> float:
+            return kappa_at(rng(th)) - (1 - 2 / (2 - wang_c(th)))
+
         lo = 0.5005
         onset = None
         if g(lo) > 0:
